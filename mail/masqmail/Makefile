@@ -20,6 +20,8 @@ MAN5=		masqmail.aliases.5 masqmail.conf.5 masqmail.get.5 masqmail.route.5
 MAN8=		masqmail.8 mservdetect.8
 .endif
 
+USE_GNOME=	glib20
+USE_RC_SUBR=	masqmail
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-trigraphs
 CONFIGURE_ARGS+=	--with-user=mailnull --with-group=mail \
@@ -29,6 +31,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 .if !defined (NOPORTDOCS)
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README TODO
 .endif
+
+OPTIONS +=	LIBCRYPTO	"Use libcrypto"		on
+OPTIONS +=	POP3		"Enable POP3"		on
+OPTIONS +=	SMTP		"Enable SMTP server"	on
+OPTIONS +=	Resolver	"Resolver"		on
+OPTIONS +=	MAILDIR		"Maildir support"	on
+OPTIONS	+=	MSERVER		"Enable mserver support"	off
+OPTIONS +=	AUTH		"SMTP AUTH (RFC2554) support"	on
+OPTIONS +=	IDENT		"Ident (RFC 1413) support"	off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_LIBCRYPTO)
 CONFIGURE_ARGS+=	--with-libcrypto
@@ -55,9 +68,6 @@ CONFIGURE_ARGS+=	--enable-auth
 CONFIGURE_ARGS+=	--enable-ident
 .endif
 
-USE_GNOME=	glib20
-USE_RC_SUBR=	masqmail	
-
 post-install:
 	${MKDIR} ${PREFIX}/etc/masqmail
 	${CHOWN} mailnull:mail ${PREFIX}/etc/masqmail
@@ -72,4 +82,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
