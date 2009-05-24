@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2009-03-28 23:00:23.000000000 +0200
++++ Makefile.in	2009-03-28 23:00:39.000000000 +0200
+@@ -54,8 +54,7 @@
+ 	$(INSTALL_DATA) rules.mk $(DESTDIR)$(repcommonexecdir)
+ 	$(INSTALL_SCRIPT) install-aliases $(DESTDIR)$(repcommonexecdir)
+ 	$(INSTALL_DATA) rep-debugger.el $(DESTDIR)$(emacssitelispdir)
+-	mkdir -p $(DESTDIR)$(libdir)/pkgconfig
+-	$(INSTALL_DATA) $(top_srcdir)/librep.pc $(DESTDIR)$(libdir)/pkgconfig/
++	$(INSTALL_DATA) $(top_srcdir)/librep.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
+ 
+ installdirs : mkinstalldirs
+ 	$(SHELL) $< $(DESTDIR)$(repdir)/$(version) \
