@@ -7,6 +7,7 @@
 
 PORTNAME=	smplayer
 DISTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF
 
@@ -17,8 +18,8 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${LOCALBASE}/share/smplayer/themes:${PORTSDIR}/multimedia/smplayer-themes
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build \
-		uic3_build porting_build opengl linguist
+QT_COMPONENTS=	gui network xml qmake_build moc_build rcc_build uic_build \
+		uic3_build porting_build linguist_build
 
 ALL_TARGET=	src/smplayer
 
