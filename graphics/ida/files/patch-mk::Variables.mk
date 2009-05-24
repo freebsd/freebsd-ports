@@ -1,30 +1,21 @@
---- mk/Variables.mk.orig	Sun Feb 22 14:27:19 2004
-+++ mk/Variables.mk	Sat Oct 22 22:54:34 2005
-@@ -4,10 +4,10 @@
+--- mk/Variables.mk.orig	2008-06-09 17:56:36.000000000 +0300
++++ mk/Variables.mk	2009-05-24 19:03:04.000000000 +0300
+@@ -4,12 +4,12 @@
  # directories
  DESTDIR	=
  srcdir	?= .
 -prefix	?= /usr/local
 -bindir	=  $(DESTDIR)$(prefix)/bin
--mandir	=  $(DESTDIR)$(prefix)/share/man
--locdir  =  $(DESTDIR)$(prefix)/share/locale
+-sbindir	=  $(DESTDIR)$(prefix)/sbin
+-libdir  =  $(DESTDIR)$(prefix)/$(LIB)
+-shrdir  =  $(DESTDIR)$(prefix)/share
+-mandir	=  $(shrdir)/man
 +prefix	?= $(PREFIX)
 +bindir	=  $(DESTDIR)$(PREFIX)/bin
++sbindir	=  $(DESTDIR)$(PREFIX)/sbin
++libdir  =  $(DESTDIR)$(PREFIX)/$(LIB)
++shrdir  =  $(DESTDIR)$(PREFIX)/share
 +mandir	=  $(DESTDIR)$(PREFIX)/man
-+locdir  =  $(DESTDIR)$(PREFIX)/share/locale
+ locdir  =  $(shrdir)/locale
+ appdir  =  $(shrdir)/applications
  
- # package + version
- empty	:=
-@@ -34,9 +34,9 @@
- 	   -Wpointer-arith -Wunused
- 
- # add /usr/local to the search path if something is in there ...
--ifneq ($(wildcard /usr/local/include/*.h),)
--  CFLAGS  += -I/usr/local/include
--  LDFLAGS += -L/usr/local/$(LIB)
-+ifneq ($(wildcard $(LOCALBASE)/include/*.h),)
-+  CFLAGS  += -I$(LOCALBASE)/include
-+  LDFLAGS += -L$(LOCALBASE)/$(LIB)
- endif
- 
- # fixup include path for $(srcdir) != "."

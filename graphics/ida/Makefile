@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ida
-PORTVERSION=	0.21
-PORTREVISION=	6
+PORTVERSION=	2.07
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/fbida/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	fbida-${PORTVERSION}
 
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Small and fast motif-based image viewer and editor
@@ -27,7 +26,7 @@ USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 MAKEFILE=	${WRKSRC}/GNUmakefile
 
-MAN1=		ida.1
+MAN1=		exiftran.1 ida.1
 PORTDOCS=	README TODO INSTALL
 
 PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida
