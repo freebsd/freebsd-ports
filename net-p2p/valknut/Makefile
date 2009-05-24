@@ -9,6 +9,7 @@
 
 PORTNAME=	valknut
 PORTVERSION=	0.4.9
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wxdcgui
@@ -25,14 +26,16 @@ WRKSRC=	${WRKDIR}/${DISTNAME}
 MAN1=	valknut.1
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network qt3support moc uic rcc linguist
+QT_COMPONENTS=	corelib gui network qt3support \
+		moc_build uic_build rcc_build linguist_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV+=	CFLAGS=-I${QT_INCDIR} LDFLAGS=-L${QT_LIBDIR} \
-		DCLIB_CFLAGS=-I${LOCALBASE}/include
+CFLAGS+=	-I${QT_INCDIR}
+LDFLAGS=	-L${QT_LIBDIR}
+CONFIGURE_ENV+=	DCLIB_CFLAGS=-I${LOCALBASE}/include
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g;\
