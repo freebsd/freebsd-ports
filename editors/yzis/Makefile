@@ -7,6 +7,7 @@
 
 PORTNAME=	yzis
 PORTVERSION=	1.0.a.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
 		http://contribs.martymac.com/FreeBSD-ports/distfiles/
@@ -21,7 +22,7 @@ USE_XORG=	x11 xext ice
 USE_LUA=	5.1
 LUA_COMPS=	lua
 USE_QT_VER=	4
-QT_COMPONENTS=	qtestlib qmake rcc uic moc gui xml
+QT_COMPONENTS=	qtestlib qmake_build rcc_build uic_build moc_build gui xml
 USE_PERL5=	yes
 
 USE_CMAKE=	yes

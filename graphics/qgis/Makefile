@@ -7,7 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/qgis/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -26,7 +26,8 @@ USE_QT_VER=	4
 USE_SQLITE=	yes
 CMAKE_USE_PTHREAD=	yes
 CMAKE_ENV+=	QMAKESPEC=${QMAKESPEC}
-QT_COMPONENTS=	qmake gui moc rcc uic svg xml network sql linguist
+QT_COMPONENTS=	gui svg xml network sql linguist_build \
+		qmake_build moc_build rcc_build uic_build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qtdir=${QTDIR}
