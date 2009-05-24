@@ -7,6 +7,7 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	0.9.26.2
+PORTREVISION=	1
 CATEGORIES=	editors devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-0/}
@@ -22,16 +23,18 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	#
-WANT_FPC_ALL=	yes
+USE_FPC=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-xml \
+		iconvenc pasjpeg x11
 
 MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib ${OPT_EXTRA}"
 MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 PLIST=		${WRKDIR}/pkg-plist
+SUB_FILES=	pkg-message
+SUB_LIST+=	PORTSDIR="${PORTSDIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	GTK2	"Use gtk20 interface instead of gtk12"	off \
-		QT4	"Use qt4 interface" off \
-		BIGIDE	"Compile additional components"	off
+OPTIONS=	GTK2	"Use gtk20 interface instead of gtk12"	on \
+		QT4	"Use qt4 interface" off
 
 .include <bsd.port.pre.mk>
 
@@ -40,9 +43,11 @@ IGNORE=		Please select only one option QT4 or GTK2, don't select both options
 .endif
 
 .if defined(WITH_GTK2)
+USE_FPC+=	gtk2
 USE_GNOME=	gtk20
 LCL_PLATFORM=	gtk2
 .else
+USE_FPC+=	gtk1
 USE_GNOME=	gtk12 gdkpixbuf
 LCL_PLATFORM=	gtk
 .endif
@@ -51,10 +56,6 @@ LCL_PLATFORM=	gtk
 BUILD_DEPENDS+=	${LOCALBASE}/lib/qt4/libqt4intf.so:${PORTSDIR}/x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
 OPT_EXTRA=	"-dUSE_QT_44"
-.endif
-
-.if defined(WITH_BIGIDE)
-LAZARUS_TARGET=	bigide lazbuilder
 .endif
 
 post-extract:
@@ -71,7 +72,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_PLATFORM} ${LAZARUS_TARGET}
+		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_PLATFORM}
 
 post-build:
 	@cd ${WRKSRC} && \
@@ -85,7 +86,7 @@ pre-install:
 
 	@${RM} -f ${PLIST}
 
-.	for FILE in bin/lazarus bin/lazbuild
+.	for FILE in bin/lazarus bin/lazbuild etc/lazbuild.cfg
 		@${ECHO_CMD} ${FILE} >> ${PLIST}
 .	endfor
 
@@ -145,5 +146,11 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${MAN1PREFIX}/man/man1
 .endfor
 	${LN} -s ${DATADIR}/lazbuild ${PREFIX}/bin/lazbuild
+
+	@${ECHO_CMD} "# Current lazarus interface" > ${PREFIX}/etc/lazbuild.cfg
+	@${ECHO_CMD} "LCL_PLATFORM=${LCL_PLATFORM}" >> ${PREFIX}/etc/lazbuild.cfg
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
