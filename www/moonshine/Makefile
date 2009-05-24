@@ -28,6 +28,10 @@ WEBPLUGINS_FILES=	libmoonshine-plugin.so
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
+.if ${ARCH} == "amd64"
+BROKEN=		does not configure
+.endif
+
 .if defined(WITH_XPI_PLUGIN_ONLY)
 CONFIGURE_ARGS+=--enable-xpi-build
 PLIST=		${NONEXISTENT}
