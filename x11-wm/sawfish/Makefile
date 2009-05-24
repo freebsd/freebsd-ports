@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTVERSION=	1.3.5.2
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
@@ -27,17 +26,14 @@ PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
 USE_XORG=	x11
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier gnomehack esound
-USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:15:env
-WANT_GNOME=	yes
+USE_GNOME=	esound
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share \
-		--enable-capplet \
-		--disable-themer \
+		--disable-gnome-widgets \
 		--with-esd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -47,6 +43,7 @@ INFO=		sawfish
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|prog_name|program_name|g' \
-	    	${WRKSRC}/src/main.c
+	${WRKSRC}/src/main.c
+	@${MKDIR} ${WRKSRC}/m4
 
 .include <bsd.port.mk>

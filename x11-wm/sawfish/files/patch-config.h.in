@@ -1,0 +1,116 @@
+--- config.h.in.orig
++++ config.h.in
+@@ -1,8 +1,5 @@
+ /* config.h.in.  Generated from configure.in by autoheader.  */
+ 
+-/* Define if building universal (internal helper macro) */
+-#undef AC_APPLE_UNIVERSAL_BUILD
+-
+ /* Define to one of `_getb67', `GETB67', `getb67' for Cray-2 and Cray-YMP
+    systems. This function is required for `alloca.c' support on those systems.
+    */
+@@ -24,13 +21,13 @@
+ /* Define to 1 if you don't have `vprintf' but do have `_doprnt.' */
+ #undef HAVE_DOPRNT
+ 
+-/* Have esound */
++/* Have ESD */
+ #undef HAVE_ESD
+ 
+ /* Define to 1 if you have the <fcntl.h> header file. */
+ #undef HAVE_FCNTL_H
+ 
+-/* gdk pixbuf */
++/* Have gdk-pixbuf */
+ #undef HAVE_GDK_PIXBUF
+ 
+ /* Define to 1 if you have the `gethostname' function. */
+@@ -39,13 +36,16 @@
+ /* Define to 1 if you have the `getpagesize' function. */
+ #undef HAVE_GETPAGESIZE
+ 
+-/* have imlib */
++/* Have GTK */
++#undef HAVE_GTK
++
++/* Have Imlib1 */
+ #undef HAVE_IMLIB
+ 
+ /* Define to 1 if you have the <inttypes.h> header file. */
+ #undef HAVE_INTTYPES_H
+ 
+-/* have libaudiofile */
++/* Have libaudiofile */
+ #undef HAVE_LIBAUDIOFILE
+ 
+ /* Define to 1 if you have the `nsl' library (-lnsl). */
+@@ -57,6 +57,15 @@
+ /* Define to 1 if you have the <memory.h> header file. */
+ #undef HAVE_MEMORY_H
+ 
++/* Have pango */
++#undef HAVE_PANGO
++
++/* Have pangox */
++#undef HAVE_PANGO_X
++
++/* Have pangoxft */
++#undef HAVE_PANGO_XFT
++
+ /* Define to 1 if you have the `snprintf' function. */
+ #undef HAVE_SNPRINTF
+ 
+@@ -96,7 +105,7 @@
+ /* Define to 1 if you have the `vprintf' function. */
+ #undef HAVE_VPRINTF
+ 
+-/* have x11 */
++/* Have X11 */
+ #undef HAVE_X11
+ 
+ /* Define to 1 if you have the <X11/extensions/Xdbe.h> header file. */
+@@ -108,13 +117,19 @@
+ /* Define to 1 if you have the <X11/extensions/Xrandr.h> header file. */
+ #undef HAVE_X11_EXTENSIONS_XRANDR_H
+ 
++/* Define to 1 if you have the <X11/ICE/ICE.h> header file. */
++#undef HAVE_X11_ICE_ICE_H
++
+ /* Define to 1 if you have the <X11/SM/SMlib.h> header file. */
+ #undef HAVE_X11_SM_SMLIB_H
+ 
++/* Have xft */
++#undef HAVE_X11_XFT_XFT_H
++
+ /* libc malloc */
+ #undef LIBC_MALLOC
+ 
+-/* pixmap cache */
++/* Need pixmap cache */
+ #undef NEED_PIXMAP_CACHE
+ 
+ /* Define to the address where bug reports for this package should be sent. */
+@@ -146,19 +161,11 @@
+ /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
+ #undef TIME_WITH_SYS_TIME
+ 
+-/* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
+-   significant byte first (like Motorola and SPARC, unlike Intel). */
+-#if defined AC_APPLE_UNIVERSAL_BUILD
+-# if defined __BIG_ENDIAN__
+-#  define WORDS_BIGENDIAN 1
+-# endif
+-#else
+-# ifndef WORDS_BIGENDIAN
+-#  undef WORDS_BIGENDIAN
+-# endif
+-#endif
++/* Define to 1 if your processor stores words with the most significant byte
++   first (like Motorola and SPARC, unlike Intel and VAX). */
++#undef WORDS_BIGENDIAN
+ 
+-/* Define to 1 if the X Window System is missing or not being used. */
++/* Have x11 */
+ #undef X_DISPLAY_MISSING
+ 
+ /* Define to empty if `const' does not conform to ANSI C. */
