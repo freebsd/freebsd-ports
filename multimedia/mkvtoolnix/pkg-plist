@@ -4,7 +4,8 @@ bin/mkvmerge
 %%GUI%%bin/mmg
 share/locale/de/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
-share/locale/zh/LC_MESSAGES/mkvtoolnix.mo
+share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
+share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 %%DATADIR%%/images/addingremovingattachments.gif
 %%DATADIR%%/images/addremovefiles.gif
 %%DATADIR%%/images/attachmentoptions.gif
