@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.6-20090418
+DISTVERSION=	2.7-20090519
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
-		ftp://postfix.mirrors.pair.com/official/ \
-		ftp://ftp.tux.org/pub/net/postfix/official/ \
-		http://mirrors.rootservices.net/postfix/official/ \
-		ftp://ftp.samurai.com/pub/postfix/official/ \
-		http://ftp.unicamp.br/pub/postfix/official/
+MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
+		ftp://postfix.mirrors.pair.com/experimental/ \
+		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
+		http://mirrors.rootservices.net/postfix/experimental/ \
+		ftp://ftp.samurai.com/pub/postfix/experimental/ \
+		http://ftp.unicamp.br/pub/postfix/experimental/
 PKGNAMESUFFIX=	-current
-DISTNAME=	postfix-2.6.0-RC2
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-current-2.[0-57-9]* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-current-2.[0-68-9]* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
 USE_SUBMAKE=	yes
@@ -221,7 +220,7 @@ do-configure:
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
 
-pre-install:
+pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
