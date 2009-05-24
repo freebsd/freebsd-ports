@@ -17,6 +17,8 @@ COMMENT=	A static html image gallery generator for *nix
 RUN_DEPENDS=	${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
+CONFLICTS=	igal2-*
+
 MAN1=	igal.1
 
 post-patch:
