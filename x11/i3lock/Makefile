@@ -8,7 +8,8 @@
 PORTNAME=	i3lock
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://mirror.4bit.ws/ \
+MASTER_SITES=	http://i3.zekjur.net/${PORTNAME}/ \
+		http://mirror.4bit.ws/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
 
