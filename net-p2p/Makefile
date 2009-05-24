@@ -124,6 +124,7 @@
     SUBDIR += transmission-cli
     SUBDIR += transmission-daemon
     SUBDIR += transmission-gtk2
+    SUBDIR += transmisson-remote-gui
     SUBDIR += tribler
     SUBDIR += tvrss
     SUBDIR += unworkable
