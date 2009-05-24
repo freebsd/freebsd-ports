@@ -1,22 +1,18 @@
 This program provides an interactive interface for the pkg_add(1) tool.
 
 It's purpose is to search for a package pattern, making easier for the user
-to find a package and install it. This tool is not a clone of pkg_add(1).
+to find a package and install it. This is not a clone of the pkg_add(1) tool.
 It uses pkg_add(1) to install packages while providing an interactive 
 interface, so the user could easily choose and install a given package.
-
-This tool is written in C and does not require any additional packages to be
-installed. It should build and run on any system which supports pkg_add(1).
 
 The pkg_add_it(1) tool supports local and remote pattern search:
 
    * Local pattern search - recursively scanning a directory for 
      a given package pattern
-   * Remote pattern search - accomplished by searching the INDEX file.
-     If INDEX is not in current directory pkg_add_it(1) fetches it and
-     then scans the INDEX file for a pattern
-     
+   * Remote pattern search - accomplished by scannig the INDEX file
+     for every package that matches the pattern
+
 To learn more about the pkg_add_it(1) tool read the manual page.
 
-Author: Marin Atanasov <dnaeon@gmail.com>
-WWW: http://www.unix-heaven.org/pkg_add_it.html
+Author: Marin Atanasov Nikolov <dnaeon@gmail.com>
+WWW: http://www.unix-heaven.org/index.php?page=pkg_add_it
