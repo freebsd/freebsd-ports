@@ -1,14 +1,7 @@
-%%GNOME:%%libexec/rep/%%GNUHOST%%/gui/gtk-2/gnome-canvas.la
-%%GNOME:%%libexec/rep/%%GNUHOST%%/gui/gtk-2/gnome-canvas.so
-%%GNOME:%%libexec/rep/%%GNUHOST%%/gui/gtk-2/gnome-lib.la
-%%GNOME:%%libexec/rep/%%GNUHOST%%/gui/gtk-2/gnome-lib.so
-%%GNOME:%%libexec/rep/%%GNUHOST%%/gui/gtk-2/gnome-ui.la
-%%GNOME:%%libexec/rep/%%GNUHOST%%/gui/gtk-2/gnome-ui.so
 libexec/rep/%%GNUHOST%%/gui/gtk-2/gtk.la
 libexec/rep/%%GNUHOST%%/gui/gtk-2/gtk.so
-libexec/rep/%%GNUHOST%%/gui/gtk-2/libglade.la
-libexec/rep/%%GNUHOST%%/gui/gtk-2/libglade.so
 libexec/rep/%%GNUHOST%%/gui/gtk-2/types.la
 libexec/rep/%%GNUHOST%%/gui/gtk-2/types.so
+libdata/pkgconfig/rep-gtk.pc
 @dirrm libexec/rep/%%GNUHOST%%/gui/gtk-2
 @dirrm libexec/rep/%%GNUHOST%%/gui

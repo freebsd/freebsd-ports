@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2009-01-18 23:17:15.000000000 +0200
++++ Makefile.in	2009-03-29 00:45:17.000000000 +0200
+@@ -72,8 +72,7 @@
+ 	  printf "\nrep_open_globally=yes\n" >>$(DESTDIR)$(installdir)/$$f; \
+ 	done
+ 	$(rep_INSTALL_ALIASES) -c . $(DESTDIR)$(installdir)
+-	install -d $(DESTDIR)$(libdir)/pkgconfig/
+-	install -m644 rep-gtk.pc $(DESTDIR)$(libdir)/pkgconfig/
++	install -m644 rep-gtk.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
+ 
+ installdirs : $(top_srcdir)/mkinstalldirs
+ 	$(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(installdir)/gui/gtk-2
