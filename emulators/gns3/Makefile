@@ -1,12 +1,12 @@
-# New ports collection makefile for:	gns3
-# Date created:		14 mar 2009
+# Update ports collection makefile for:	gns3
+# Date created:		24 may 2009
 # Whom:			Olivier Cochard-Labbe <olivier@cochard.me>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gns3
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/gns-3
 DISTNAME=	GNS3-${PORTVERSION}-src
@@ -27,6 +27,7 @@ WRKSRC=			${WRKDIR}/${DISTNAME}
 MAN1=			gns3.1
 
 post-install:
+.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/docs/man/gns3.1 ${MANPREFIX}/man/man1
-
+.endif
 .include <bsd.port.mk>
