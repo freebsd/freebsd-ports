@@ -1,0 +1,26 @@
+###############################################################################
+
+The Lazarus RAD was installed
+
+1) You can run it using:
+
+   # lazarus
+
+2) The first time that lazarus is running, you should set the path to fpc 
+   source directory at lazarus configuration environment. Also it could be 
+   setting later.
+
+3) You can obtain freepascal source code from:
+
+   %%PORTSDIR%%/distfiles/freepascal
+
+   It could be extracted to your home directory.
+
+4) A lazbuild.cfg file is installed at ${PREFIX}/etc directory. It contains the
+   current value of LCL_PLATFORM (gtk, gtk2, qt), it is the interface used by 
+   Lazarus. This value will be used by some ports that depend of Lazarus and
+   those will be compiled using the interface defined by LCL_PLATFORM.
+
+5) Enjoy it ;)
+
+###############################################################################
