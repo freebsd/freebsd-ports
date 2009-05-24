@@ -25,4 +25,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nqc ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/nqc-man-2.1r1-0.man ${PREFIX}/man/man1/nqc.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
