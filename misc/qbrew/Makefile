@@ -7,7 +7,7 @@
 
 PORTNAME=	qbrew
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.usermode.org/code/
 
@@ -15,7 +15,7 @@ MAINTAINER=	david@usermode.org
 COMMENT=	A homebrewer's recipe calculator
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc uic rcc xml gui
+QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build xml gui
 PORTDOCS=	*
 HAS_CONFIGURE=	yes
 
