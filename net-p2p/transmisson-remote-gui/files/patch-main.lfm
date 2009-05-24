@@ -1,0 +1,11 @@
+--- main.lfm	2009-05-21 17:53:53.000000000 -0500
++++ main.lfm	2009-05-21 17:54:04.000000000 -0500
+@@ -214,8 +214,6 @@
+         Top = 26
+         Width = 772
+         Align = alClient
+-        ClientHeight = 222
+-        ClientWidth = 751
+         TabOrder = 0
+         OnResize = sbGenInfoResize
+         object panGeneralInfo: TPanel
