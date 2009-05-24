@@ -18,7 +18,7 @@ upgrades.
   AFFECTS: users of print/cups-base and portupgrade
   AUTHOR: dinoex@FreeBSD.org
 
-  print/cups has been splitten in mutiple ports. If upgrading
+  print/cups has been split in multiple ports. If upgrading
   from 1.3.10_1 and below you must remove the installed version first.
 
 20090412:
