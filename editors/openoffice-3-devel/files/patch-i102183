@@ -1,0 +1,33 @@
+--- redland/rasqal-0.9.15.patch	2009-05-24 16:12:11.000000000 +0900
++++ redland/rasqal-0.9.15.patch	2009-05-24 16:12:20.000000000 +0900
+@@ -240,7 +240,7 @@
+ -	  major=".$current"
+ -	  versuffix=".$current";
+ +	  major=.`expr $current - $age`
+-+	  versuffix="$major.$age.$revision"
+++	  versuffix="$major"
+  	  ;;
+  
+  	irix | nonstopux)
+--- redland/raptor-1.4.17.patch	2009-05-24 16:15:47.000000000 +0900
++++ redland/raptor-1.4.17.patch	2009-05-24 16:08:28.000000000 +0900
+@@ -284,7 +284,7 @@
+ -	  major=".$current"
+ -	  versuffix=".$current";
+ +	  major=.`expr $current - $age`
+-+	  versuffix="$major.$age.$revision"
+++	  versuffix="$major"
+  	  ;;
+  
+  	irix | nonstopux)
+--- redland/redland-1.0.7.patch	2009-05-04 12:28:07.000000000 +0900
++++ redland/redland-1.0.7.patch	2009-05-24 16:13:23.000000000 +0900
+@@ -734,7 +734,7 @@
+ -	  major=".$current"
+ -	  versuffix=".$current";
+ +	  major=.`expr $current - $age`
+-+	  versuffix="$major.$age.$revision"
+++	  versuffix="$major"
+  	  ;;
+  
+  	irix | nonstopux)

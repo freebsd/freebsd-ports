@@ -39,7 +39,6 @@ USE_GNOME+=		glib20
 .endif
 
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
-CONFIGURE_ARGS+=	--with-system-freetype=yes
 
 .if defined(ALL_LOCALIZED_LANGS)
 CONFIGURE_ARGS+=	--with-lang=ALL
