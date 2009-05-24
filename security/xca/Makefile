@@ -7,6 +7,7 @@
 
 PORTNAME=	xca
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -16,7 +17,7 @@ COMMENT=	Graphical certification authority
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc uic qmake rcc linguist
+QT_COMPONENTS=	gui moc_build uic_build qmake_build rcc_build linguist_build
 CC?=		gcc
 CXX?=		g++
 

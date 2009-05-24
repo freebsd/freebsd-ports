@@ -7,7 +7,7 @@
 
 PORTNAME=	tipp10
 PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	german
 MASTER_SITES=	http://www.tipp10.de/download/
 DISTNAME=	tipp10_source_v2-0-1
@@ -20,7 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite2.so:${PORTSDIR}/
 
 USE_ZIP=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake sql corelib network script qtestlib rcc uic moc gui
+QT_COMPONENTS=	gui sql corelib network script qtestlib \
+		qmake_build rcc_build uic_build moc_build
 WRKSRC=		${WRKDIR}/source
 
 do-configure:

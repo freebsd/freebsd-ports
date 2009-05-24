@@ -6,7 +6,7 @@
 
 PORTNAME=	qprog
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://bfoz.net/projects/${PORTNAME}/release/
 DISTNAME=	QProg_${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Cross-platform software for the DIY line of PIC programmers
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc gui network
+QT_COMPONENTS=	qmake_build moc_build gui network
 
 WRKSRC=		${WRKDIR}/QProg
 
