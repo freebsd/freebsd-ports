@@ -40,7 +40,7 @@ IGNORE=	incompatible fpc ${FPC_CURRENT_VER} compiler, please install ${FPC_VER} 
 .	endif
 .endif
 
-BUILD_DEPENDS=		ppc386:${PORTSDIR}/lang/fpc
+BUILD_DEPENDS+=		ppc386:${PORTSDIR}/lang/fpc
 
 BUILDNAME=		${ARCH}-freebsd
 UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
