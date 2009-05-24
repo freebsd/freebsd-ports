@@ -1,0 +1,12 @@
+bin/igal
+bin/igal2
+bin/igal2.sh
+lib/igal2/COPYING
+lib/igal2/ChangeLog
+lib/igal2/README
+lib/igal2/directoryline2.html
+lib/igal2/igal2.css
+lib/igal2/indextemplate2.html
+lib/igal2/slidetemplate2.html
+lib/igal2/tile.png
+@dirrm lib/igal2
