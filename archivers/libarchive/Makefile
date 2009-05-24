@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 PORTEPOCH=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
@@ -16,18 +16,18 @@ COMMENT=	Library to create and read several streaming archive formats
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	BSDCPIO		"Enable bsdcpio"	on
-
-PLIST_FILES=	bin/bsdtar \
+PLIST_FILES=	bin/bsdcpio \
+		bin/bsdtar \
 		include/archive.h \
 		include/archive_entry.h \
 		lib/libarchive.a \
 		lib/libarchive.la \
 		lib/libarchive.so \
-		lib/libarchive.so.8
+		lib/libarchive.so.9
 
 MANCOMPRESSED=	no
-MAN1=		bsdtar.1
+MAN1=		bsdcpio.1 \
+		bsdtar.1
 MAN3=		archive_entry.3 \
 		archive_read.3 \
 		archive_util.3 \
@@ -41,12 +41,6 @@ MAN5=		cpio.5 \
 		tar.5
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_BSDCPIO)
-CONFIGURE_ARGS+=	--enable-bsdcpio=yes
-PLIST_FILES+=		bin/bsdcpio
-MAN1+=			bsdcpio.1
-.endif
 
 regression-test:
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)
