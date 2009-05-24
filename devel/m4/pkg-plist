@@ -2,6 +2,7 @@ bin/gm4
 %%EXAMPLESDIR%%/capitalize.m4
 %%EXAMPLESDIR%%/capitalize2.m4
 %%EXAMPLESDIR%%/comments.m4
+%%EXAMPLESDIR%%/curry.m4 
 %%EXAMPLESDIR%%/ddivert.m4
 %%EXAMPLESDIR%%/debug.m4
 %%EXAMPLESDIR%%/esyscmd.m4
@@ -15,10 +16,11 @@ bin/gm4
 %%EXAMPLESDIR%%/foreachq4.m4
 %%EXAMPLESDIR%%/forloop.m4
 %%EXAMPLESDIR%%/forloop2.m4
+%%EXAMPLESDIR%%/forloop3.m4 
 %%EXAMPLESDIR%%/fstab.m4
 %%EXAMPLESDIR%%/hanoi.m4
-%%EXAMPLESDIR%%/incl.m4
 %%EXAMPLESDIR%%/incl-test.m4
+%%EXAMPLESDIR%%/incl.m4
 %%EXAMPLESDIR%%/include.m4
 %%EXAMPLESDIR%%/indir.m4
 %%EXAMPLESDIR%%/join.m4
@@ -30,6 +32,8 @@ bin/gm4
 %%EXAMPLESDIR%%/quote.m4
 %%EXAMPLESDIR%%/regexp.m4
 %%EXAMPLESDIR%%/reverse.m4
+%%EXAMPLESDIR%%/stack.m4 
+%%EXAMPLESDIR%%/stack_sep.m4 
 %%EXAMPLESDIR%%/sync-lines.m4
 %%EXAMPLESDIR%%/sysv-args.m4
 %%EXAMPLESDIR%%/trace.m4
