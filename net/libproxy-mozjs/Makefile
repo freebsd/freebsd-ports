@@ -19,7 +19,7 @@ BUILD_WRKSRC=	${WRKSRC}/src/plugins
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-USE_GECKO=	firefox
+USE_GECKO=	firefox libxul
 CONFIGURE_ARGS=--without-gnome --without-kde --without-webkit \
 		--with-mozjs --without-networkmanager --without-python \
 		--without-envvar --without-file
