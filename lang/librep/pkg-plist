@@ -8,6 +8,7 @@ include/rep_gh.h
 include/rep_lisp.h
 include/rep_regexp.h
 include/rep_subrs.h
+lib/librep.a
 lib/librep.la
 lib/librep.so
 lib/librep.so.13
@@ -51,6 +52,7 @@ libexec/rep/%%GNUHOST%%/install-aliases
 libexec/rep/%%GNUHOST%%/libtool
 libexec/rep/%%GNUHOST%%/rep_config.h
 libexec/rep/%%GNUHOST%%/rules.mk
+libdata/pkgconfig/librep.pc
 share/aclocal/rep.m4
 share/emacs/site-lisp/rep-debugger.el
 share/rep/%%VERSION%%/lisp/cgi-get.jl
@@ -282,9 +284,9 @@ share/rep/%%VERSION%%/lisp/unscheme/syntax.jlc
 @dirrm share/rep/%%VERSION%%/lisp
 @dirrm share/rep/%%VERSION%%
 @dirrm share/rep
-@dirrm share/emacs/site-lisp
-@dirrm share/emacs
-@dirrm libexec/rep/%%GNUHOST%%
+@dirrmtry share/emacs/site-lisp
+@dirrmtry share/emacs
+@dirrmtry libexec/rep/%%GNUHOST%%
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang
@@ -295,4 +297,4 @@ share/rep/%%VERSION%%/lisp/unscheme/syntax.jlc
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/rep/%%VERSION%%
-@dirrm libexec/rep
+@dirrmtry libexec/rep
