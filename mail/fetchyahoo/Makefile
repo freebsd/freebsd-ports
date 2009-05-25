@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fetchyahoo
-PORTVERSION=	2.13.3
+PORTVERSION=	2.13.4
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.twizzler.org/
 
