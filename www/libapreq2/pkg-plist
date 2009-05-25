@@ -15,6 +15,7 @@ lib/libapreq2.so.%%SHLIB_MAJOR%%
 %%APACHEMODDIR%%/mod_apreq2.a
 %%APACHEMODDIR%%/mod_apreq2.la
 %%APACHEMODDIR%%/mod_apreq2.so
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/DummyVersions.pm
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pm
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pod
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pm
