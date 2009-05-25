@@ -24,4 +24,10 @@ USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 PYDISTUTILS_PKGNAME=	pylibpcap
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800074
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
