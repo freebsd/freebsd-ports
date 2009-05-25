@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fortuneru
-PORTVERSION=	20090520
+PORTVERSION=	20090524
 CATEGORIES=	russian
 MASTER_SITES=	ftp://bestia.kiev.ua/pub/files/ ftp://hosting.cvu.kiev.ua/pub/files/
 DISTNAME=	fortune.ru-${PORTVERSION}

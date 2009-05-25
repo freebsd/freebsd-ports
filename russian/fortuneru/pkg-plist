@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 share/games/fortune/rus/advert
 share/games/fortune/rus/advert.dat
 share/games/fortune/rus/auto
@@ -26,6 +27,8 @@ share/games/fortune/rus/life_m
 share/games/fortune/rus/life_m.dat
 share/games/fortune/rus/marazm
 share/games/fortune/rus/marazm.dat
+share/games/fortune/rus/maxfrei
+share/games/fortune/rus/maxfrei.dat
 share/games/fortune/rus/murphy
 share/games/fortune/rus/murphy.dat
 share/games/fortune/rus/nodes
