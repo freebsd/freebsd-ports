@@ -6,7 +6,7 @@
 
 PORTNAME=	libfwbuilder
 PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 .if defined(BUILD)
 MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-3.0/build-${BUILD}/
@@ -28,7 +28,7 @@ QT_COMPONENTS=	corelib \
 		gui \
 		iconengines \
 		inputmethods \
-		linguist \
+		linguist_build \
 		moc_build \
 		qmake_build \
 		svg \
