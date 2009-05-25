@@ -15,33 +15,27 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Formular processing tool written in perl
 
-CGI_UID?=	www
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
-USE_APACHE=	yes
+USE_APACHE=	1.3
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 PORTDOCS=	BLURB COPYING feedback.fcn feedback.html formication.txt
 PLIST_FILES=	www/cgi-bin/formication.pl
+SUB_FILES+=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/usr/local/bin/perl,#!${PERL},g" \
-		-e "s,authorized_uid = 1031;,authorized_uid = ${CGI_UID};,g" \
+		-e "s,authorized_uid = 1031;,authorized_uid = ${WWWOWN};,g" \
 		${WRKSRC}/formication.pl
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/formication.pl ${PREFIX}/www/cgi-bin
+	@${INSTALL_DATA} ${WRKSRC}/formication.pl ${LOCALBASE}/www/cgi-bin
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/
 .	for i in ${PORTDOCS}
-	  @${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	  @${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .	endfor
 .endif
-
-pre-install:
-	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%DOCSDIR%%|${DOCSDIR}|g' <${.CURDIR}/pkg-message >${PKGMESSAGE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
