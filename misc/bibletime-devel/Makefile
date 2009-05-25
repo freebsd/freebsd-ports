@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.0.b3
+PORTVERSION=	2.0.r1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/.beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/.rc/}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	An opensource Bible study application
