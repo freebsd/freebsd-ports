@@ -20,12 +20,9 @@
 name="cpupowerd"
 rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/${name}
+start_precmd="${name}_precmd"
 
 load_rc_config $name
-
-if [ ! -c "/dev/cpu0" -a ! -c "/dev/cpuctl0" ]; then
-    kldload cpu
-fi
 
 # set default
 : ${cpupowerd_enable="NO"}
@@ -33,5 +30,12 @@ fi
 : ${cpupowerd_flags=""}
 
 command_args="-d -c ${cpupowerd_config} ${cpupowerd_flags}"
+
+cpupowerd_precmd()
+{
+	if [ ! -c "/dev/%%CPUCTL%%0" ]; then
+		kldload %%CPUCTL%%
+	fi
+}
 
 run_rc_command "$1"
