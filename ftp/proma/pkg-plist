@@ -1,6 +1,6 @@
-@unexec if cmp -s %D/%%WWWDIR%%/config.inc.php-example %D/%%WWWDIR%%/config.inc.php; then rm -f %D/%%WWWDIR%%/config.inc.php; fi
+@unexec if cmp %B/%%WWWDIR%%/config.inc.php-example %B/%%WWWDIR%%/config.inc.php; then rm -f %B/%%WWWDIR%%/config.inc.php; fi
+@exec if [ ! -f %B/%%WWWDIR%%/config.inc.php ] ; then cp -p %D/%F %B/config.inc.php; fi
 %%WWWDIR%%/config.inc.php-example
-@exec if [ ! -f %D/%%WWWDIR%%/config.inc.php ] ; then cp -p %D/%F %B/config.inc.php; fi
 %%WWWDIR%%/index.php
 %%WWWDIR%%/style.css
 %%WWWDIR%%/libs/admin.lib.php

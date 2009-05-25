@@ -32,37 +32,36 @@ SUB_FILES=	pkg-message
 RUN_DEPENDS+=	proftpd:${PORTSDIR}/ftp/proftpd-mysql
 .endif
 .if defined(WITH_APACHE)
-RUN_DEPENDS+=	apachectl:${PORTSDIR}/www/apache22
+USE_APACHE=	2.2
 .endif
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql50-server
+USE_MYSQL=	yes
 .endif
 .if defined(WITH_PHP)
-RUN_DEPENDS+=	php:${PORTSDIR}/lang/php5
+USE_PHP=    mysql pcre xml gd
 .endif
 
 do-install:
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
 	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
-	@${INSTALL} -d ${WWWDIR}
+	@${MKDIR} ${WWWDIR}/
 	@${INSTALL_DATA} ${FILES:S,^,${WRKSRC}/,} ${WWWDIR}/
 	@${INSTALL} -d ${WWWDIR}/libs
 	@${INSTALL_DATA} ${LIBS:S,^,${WRKSRC}/libs/,} ${WWWDIR}/libs/
 	@${INSTALL} -d ${WWWDIR}/pages
 	@${INSTALL_DATA} ${PAGES:S,^,${WRKSRC}/pages/,} ${WWWDIR}/pages/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR}' >> ${TMPPLIST}
 
 post-install:
 	@if [ ! -f ${WWWDIR}/config.inc.php ]; then \
-	${CP} -p ${WWWDIR}/config.inc.php-example ${WWWDIR}/config.inc.php ; \
-	${CHMOD} 640 ${WWWDIR}/config.inc.php ; \
+		${CP} -p ${WRKSRC}/config.inc.php-example ${WWWDIR}/config.inc.php ; \
+		${CP} -p ${WRKSRC}/config.inc.php-example ${WWWDIR}/config.inc.php-example ; \
+		${CHMOD} 640 ${WWWDIR}/config.inc.php* ; \
 	fi
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
