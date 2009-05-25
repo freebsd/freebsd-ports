@@ -7,6 +7,7 @@
 
 PORTNAME=	cpupowerd
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -23,8 +24,11 @@ OPTIONS=	CREATELOAD "Install createload.sh for stability testing" Off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800042
+.if (${OSVERSION} < 800042 && ${OSVERSION} >= 800000) || ${OSVERSION} < 701102
 BUILD_DEPENDS+=	${LOCALBASE}/include/cpu.h:${PORTSDIR}/sysutils/devcpu
+SUB_LIST+=	CPUCTL="cpu"
+.else
+SUB_LIST+=	CPUCTL="cpuctl"
 .endif
 
 .if defined(WITH_CREATELOAD)
