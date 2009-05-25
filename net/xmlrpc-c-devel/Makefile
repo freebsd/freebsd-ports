@@ -10,16 +10,17 @@ PORTNAME=	xmlrpc-c
 PORTVERSION=	1.18.00
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/chinsan/xmlrpc-c
+PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-PKGNAMESUFFIX=	-devel
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
 OPTIONS=	DEBUG "Compile with debugging information" off \
 		CURL "Compile with curl support" on \
-		LIBWWW "Compile with libwww support" on
+		LIBWWW "Compile with libwww support" on \
+		CPLUSPLUS "Enable cpp headers and libs" off
 
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-[0-9]*
 
@@ -38,6 +39,12 @@ USE_LDCONFIG=	yes
 
 .if !defined(WITH_DEBUG)
 CFLAGS+=	-DNDEBUG
+.endif
+
+.if defined(WITH_CPLUSPLUS)
+CONFIGURE_ARGS+=	--enable-cplusplus
+.else
+CONFIGURE_ARGS+=	--disable-cplusplus
 .endif
 
 .if defined(WITHOUT_CURL)
