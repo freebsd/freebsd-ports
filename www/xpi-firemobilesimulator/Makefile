@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firemobilesimulator
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.6
 CATEGORIES=	www
 MASTER_SITES=	https://ss1.xrea.com/poly.s49.xrea.com/dev.ohirune.net/firefox/
 DISTNAME=	${XPI_DISTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
