@@ -32,6 +32,29 @@
  	echo '#define BUILD "' `date +%y%m%d` '"' >build.h
 --- src/config.c.orig	2005-05-24 16:49:29.000000000 +0100
 +++ src/config.c	2009-03-18 14:35:31.000000000 +0000
+@@ -39,16 +39,16 @@
+                                       
+ // Structure to keep configuration for VIFs...    
+ struct vifconfig {
+-    char*               name;
+-    short               state;
+-    int                 ratelimit;
+-    int                 threshold;
++    char	name[IFNAMSIZ];
++    short	state;
++    int		ratelimit;
++    int		threshold;
+ 
+     // Keep allowed nets for VIF.
+-    struct SubnetList*  allowednets;
++    struct SubnetList*	allowednets;
+     
+     // Next config in list...
+-    struct vifconfig*   next;
++    struct vifconfig*	next;
+ };
+                  
+ // Structure to keep vif configuration
 @@ -177,7 +177,7 @@
      }
  
@@ -41,7 +64,21 @@
          if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {
  
              // Now try to find a matching config...
-@@ -255,7 +255,7 @@
+@@ -240,12 +240,7 @@
+     tmpPtr->state = IF_STATE_DOWNSTREAM;
+     tmpPtr->allowednets = NULL;
+ 
+-    // Make a copy of the token to store the IF name
+-    tmpPtr->name = (char *)malloc( sizeof(char) * strlen(token) );
+-    if(tmpPtr->name == NULL) {
+-        log(LOG_ERR, 0, "Out of memory.");
+-    }
+-    strcpy(tmpPtr->name, token);
++    strlcpy(tmpPtr->name, token, sizeof(tmpPtr->name));
+ 
+     // Set the altnet pointer to the allowednets pointer.
+     anetPtr = &tmpPtr->allowednets;
+@@ -255,7 +250,7 @@
      while(token != NULL) {
          if(strcmp("altnet", token)==0) {
              // Altnet...
@@ -50,7 +87,7 @@
  
              token = nextConfigToken();
              IF_DEBUG log(LOG_DEBUG, 0, "Config: IF: Got altnet token %s.",token);
-@@ -347,7 +347,7 @@
+@@ -347,7 +342,7 @@
          mask <<= (32 - bitcnt);
      }
  
@@ -61,7 +98,7 @@
      }
 --- src/defs.h.orig	2005-08-20 13:44:47.000000000 +0100
 +++ src/defs.h	2009-03-18 14:35:31.000000000 +0000
-@@ -40,10 +40,18 @@
+@@ -40,27 +40,46 @@
  #include <stdlib.h>
  #include <syslog.h>
  #include <signal.h>
@@ -81,13 +118,16 @@
  
  #include <net/if.h>
  
-@@ -52,15 +60,25 @@
+-// The multicats API needs linux spesific headers !!!                  
++// The multicats API needs linux specific headers !!!                  
+ #ifdef USE_LINUX_IN_H
      #include <linux/in.h>
      #include <linux/mroute.h>
  #else
 +#ifdef __FreeBSD__
 +    #include <alias.h>
 +    #include <net/route.h>
++    #include <sys/queue.h>
      #include <netinet/in.h>
 +    #include <netinet/ip_mroute.h>
 +#endif
@@ -108,7 +148,7 @@
  #define     ENABLE_DEBUG    1
  
  /*
-@@ -72,9 +90,31 @@
+@@ -72,9 +91,31 @@
  
  #define MAX_MC_VIFS    32     // !!! check this const in the specific includes
  
@@ -140,7 +180,7 @@
  #define VCMC( Vc )  (sizeof( Vc ) / sizeof( (Vc)[ 0 ] ))
  #define VCEP( Vc )  (&(Vc)[ VCMC( Vc ) ])
  
-@@ -126,7 +166,12 @@
+@@ -126,7 +167,12 @@
  
  #define	    IF_DEBUG	if(Log2Stderr & LOG_DEBUG)
  
@@ -154,7 +194,16 @@
  
  /* ifvc.c
   */
-@@ -196,6 +241,7 @@
+@@ -161,7 +207,7 @@
+ };
+ 
+ struct IfDesc {
+-    char                Name[ sizeof( ((struct ifreq *)NULL)->ifr_name ) ];
++    char                Name[IFNAMSIZ];
+     struct in_addr      InAdr;          /* == 0 for non IP interfaces */            
+     short               Flags;
+     short               state;
+@@ -196,6 +242,7 @@
  struct IfDesc *getIfByName( const char *IfName );
  struct IfDesc *getIfByIx( unsigned Ix );
  struct IfDesc *getIfByAddress( uint32 Ix );
@@ -162,7 +211,7 @@
  
  /* mroute-api.c
   */
-@@ -235,7 +281,7 @@
+@@ -235,7 +282,7 @@
  char   *fmtInAdr( char *St, struct in_addr InAdr );
  char   *inetFmt(uint32 addr, char *s);
  char   *inetFmts(uint32 addr, uint32 mask, char *s);
@@ -171,7 +220,7 @@
  
  /* kern.c
   */
-@@ -264,7 +310,7 @@
+@@ -264,7 +311,7 @@
  void initRouteTable();
  void clearAllRoutes();
  int insertRoute(uint32 group, int ifx);
