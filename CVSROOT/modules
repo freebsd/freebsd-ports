@@ -22124,6 +22124,7 @@ transmission-cli                ports/net-p2p/transmission-cli
 transmission-daemon             ports/net-p2p/transmission-daemon
 transmission-gtk2               ports/net-p2p/transmission-gtk2
 transmission-web                ports/www/transmission-web
+transmisson-remote-gui          ports/net-p2p/transmisson-remote-gui
 transproxy                      ports/www/transproxy
 transset-df                     ports/x11-wm/transset-df
 trapproto                       ports/x11/trapproto
