@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ftwin
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://meroware.com/~joke/sources/ftwin/
+MASTER_SITES=	http://download.meroware.org/ftwin/
 
 MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	A useful tool to find duplicate files
@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262 aclocal:110 automake:110 autoheader:262
 CONFIGURE_ARGS+=	--with-check=${LOCALBASE} --with-puzzle=${LOCALBASE}
 PLIST_FILES=	bin/ftwin
+
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION LICENSE README
