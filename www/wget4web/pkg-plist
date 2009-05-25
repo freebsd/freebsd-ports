@@ -1,14 +1,14 @@
-%%INSTALLDIR%%/add.cgi
-%%INSTALLDIR%%/admin.lib
-%%INSTALLDIR%%/admincenter.cgi
-%%INSTALLDIR%%/admindel.cgi
-%%INSTALLDIR%%/adminfiles.cgi
-%%INSTALLDIR%%/data/info.cgi
-%%INSTALLDIR%%/data/users.cgi
-%%INSTALLDIR%%/progress.cgi
-%%INSTALLDIR%%/showlog.cgi
-@dirrm %%INSTALLDIR%%/data
-@dirrm %%INSTALLDIR%%
-@unexec rmdir %%LOGSDIR%% 2> /dev/null | true
-@unexec rmdir %%FILESDIR%% 2> /dev/null | true
-@unexec rmdir %%TASKDIR%% 2> /dev/null | true
+%%WWWDIR%%/add.cgi
+%%WWWDIR%%/admin.lib
+%%WWWDIR%%/admincenter.cgi
+%%WWWDIR%%/admindel.cgi
+%%WWWDIR%%/adminfiles.cgi
+%%WWWDIR%%/data/info.cgi
+%%WWWDIR%%/data/users.cgi
+%%WWWDIR%%/progress.cgi
+%%WWWDIR%%/showlog.cgi
+@dirrm %%WWWDIR%%/data
+@dirrm %%WWWDIR%%
+@dirrmtry %%LOGSDIR%%
+@dirrmtry %%FILESDIR%%
+@dirrmtry %%TASKDIR%%
