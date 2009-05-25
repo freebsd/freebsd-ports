@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Digest-SHA1
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,9 +20,9 @@ MAN3=		Digest::SHA1.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/Digest.pm:${PORTSDIR}/security/p5-Digest
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+.if ${PERL_LEVEL} < 500803
+BUILD_DEPENDS+=	p5-Digest>=1.00:${PORTSDIR}/security/p5-Digest
+RUN_DEPENDS+=	p5-Digest>=1.00:${PORTSDIR}/security/p5-Digest
 .endif
 
 .include <bsd.port.post.mk>
