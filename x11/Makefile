@@ -294,6 +294,7 @@
     SUBDIR += videoproto
     SUBDIR += viewres
     SUBDIR += wbar
+    SUBDIR += wbarconf
     SUBDIR += wdm
     SUBDIR += widgetfactory
     SUBDIR += wmappl

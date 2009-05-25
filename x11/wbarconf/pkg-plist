@@ -1,0 +1,22 @@
+bin/wbarconf
+share/applications/wbarconf.desktop
+share/locale/de/LC_MESSAGES/wbarconf.mo
+share/locale/de/LC_MESSAGES/wbarconf.po
+share/locale/fi/LC_MESSAGES/wbarconf.mo
+share/locale/fi/LC_MESSAGES/wbarconf.po
+share/pixmaps/wbarconf.png
+%%DATADIR%%/messages.pot
+%%DATADIR%%/wbarbacks/README
+%%DATADIR%%/wbarbacks/wbarback10.png
+%%DATADIR%%/wbarbacks/wbarback11.png
+%%DATADIR%%/wbarbacks/wbarback12.png
+%%DATADIR%%/wbarbacks/wbarback2.png
+%%DATADIR%%/wbarbacks/wbarback3.png
+%%DATADIR%%/wbarbacks/wbarback4.png
+%%DATADIR%%/wbarbacks/wbarback5.png
+%%DATADIR%%/wbarbacks/wbarback7.png
+%%DATADIR%%/wbarbacks/wbarback8.png
+%%DATADIR%%/wbarbacks/wbarback9.png
+@dirrm %%DATADIR%%/wbarbacks
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
