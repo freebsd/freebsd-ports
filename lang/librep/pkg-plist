@@ -53,7 +53,6 @@ libexec/rep/%%GNUHOST%%/libtool
 libexec/rep/%%GNUHOST%%/rep_config.h
 libexec/rep/%%GNUHOST%%/rules.mk
 libdata/pkgconfig/librep.pc
-share/aclocal/rep.m4
 share/emacs/site-lisp/rep-debugger.el
 share/rep/%%VERSION%%/lisp/cgi-get.jl
 share/rep/%%VERSION%%/lisp/cgi-get.jlc
