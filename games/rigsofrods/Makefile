@@ -59,6 +59,12 @@ LIB_FILES=	dependencies/ogrenew/OgreMain/libOgreMain.so.1 \
 		dependencies/hydrax/libhydrax.so \
 		dependencies/mysocketw/libmysocketw.so
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-extract:
 	@${RM} -rf ${WRKSRC}/dependencies/ogrenew/Dependencies
 
@@ -102,4 +108,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
