@@ -24,6 +24,8 @@ MAKE_ARGS+=	LIBTUNER_LIB=${LOCALBASE}/lib/libtuner LIBTUNER_HEADER=${LOCALBASE}/
 
 .if ${OSVERSION} < 700055
 IGNORE=		requires FreeBSD 7.0-RELEASE or later
+.elif ${OSVERSION} >= 800000
+BROKEN=		does not build
 .endif
 
 .if !exists(/usr/src/sys/Makefile)
