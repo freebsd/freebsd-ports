@@ -121,6 +121,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
 		imake:${PORTSDIR}/devel/imake \
+		gtar:${PORTSDIR}/archivers/gtar \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf #i85469#
 
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
