@@ -7,6 +7,7 @@
 
 PORTNAME=	fvwm-crystal
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.gna.org/fvwm-crystal/${PORTVERSION}/
 
@@ -75,6 +76,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile_NODOC
 post-patch:
 	@${REINPLACE_CMD} -e 's|cp -r -d|cp -r|; s|cp -d|cp|' \
 		${WRKSRC}/${MAKEFILE}
+.for i in addons/* bin/* fvwm/scripts/speed_value
+	@${REINPLACE_CMD} -e 's|/bin/bash|${PREFIX}/bin/bash|g' ${WRKSRC}/${i}
+.endfor
 
 scrivi:
 	${ECHO_CMD} ${LOCALBASE}
