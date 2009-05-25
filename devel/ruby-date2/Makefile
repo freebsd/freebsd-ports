@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	date2
-PORTVERSION=	4.0
+PORTVERSION=	4.0.18
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,11 +24,6 @@ DOCS_JA=	MANUAL MANUAL.rd MANUAL.html README
 EXAMPLES_EN=	cal.rb daylight.rb goodfriday.rb
 EXAMPLES_JA=	ncal.rb
 
-.include <bsd.port.pre.mk>
-
-#.if ${RUBY_VER} >= 1.7
-#IGNORE=		is part of ruby ${RUBY_VER} distribution
-#.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -48,4 +43,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
