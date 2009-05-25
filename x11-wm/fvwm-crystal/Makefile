@@ -78,6 +78,7 @@ post-patch:
 		${WRKSRC}/${MAKEFILE}
 .for i in addons/* bin/* fvwm/scripts/speed_value
 	@${REINPLACE_CMD} -e 's|/bin/bash|${PREFIX}/bin/bash|g' ${WRKSRC}/${i}
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 .endfor
 
 scrivi:
