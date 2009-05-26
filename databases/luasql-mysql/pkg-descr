@@ -1,0 +1,7 @@
+LuaSQL is a simple interface from Lua to a DBMS. It enables a Lua program to:
+
+    * Connect to ODBC, ADO, Oracle, MySQL, SQLite and PostgreSQL databases;
+    * Execute arbitrary SQL statements;
+    * Retrieve results in a row-by-row cursor fashion.
+
+WWW: http://www.keplerproject.org/luasql/

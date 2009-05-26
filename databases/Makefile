@@ -155,6 +155,7 @@
     SUBDIR += linux-oracle-instantclient-sdk
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += lsdb
+    SUBDIR += luasql-mysql
     SUBDIR += ludia
     SUBDIR += maatkit
     SUBDIR += mantis
