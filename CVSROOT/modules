@@ -5415,6 +5415,7 @@ ifstated                        ports/net/ifstated
 iftop                           ports/net-mgmt/iftop
 ifxetex                         ports/print/ifxetex
 igal                            ports/www/igal
+igal2                           ports/www/igal2
 iglooftp                        ports/ftp/IglooFTP
 igmpproxy                       ports/net/igmpproxy
 igraph                          ports/math/igraph
