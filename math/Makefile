@@ -228,6 +228,7 @@
     SUBDIR += octave-forge-nan
     SUBDIR += octave-forge-nlwing2
     SUBDIR += octave-forge-nnet
+    SUBDIR += octave-forge-nurbs
     SUBDIR += octave-forge-ocs
     SUBDIR += octave-forge-octcdf
     SUBDIR += octave-forge-octgpr
