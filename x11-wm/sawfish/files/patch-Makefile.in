@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2008-08-05 08:16:24.000000000 +0300
++++ Makefile.in	2009-05-25 15:44:44.000000000 +0300
+@@ -46,9 +46,8 @@
+ 	for f in ./DOC*; do \
+ 	  $(INSTALL_DATA) $$f $(DESTDIR)$(sawfishexecdir); \
+ 	done
+-	rm -f $(DESTDIR)$(GNOMEDIR)/share/gnome/wm-properties/Sawmill.desktop
+ 	$(INSTALL_DATA) $(srcdir)/sawfish.desktop \
+-	  $(DESTDIR)$(GNOMEDIR)/share/gnome/wm-properties
++	  $(DESTDIR)$(PREFIX)/share/applications
+ 	-for f in $(OLD_BINARIES); do \
+ 	  if [ -x $(DESTDIR)$(bindir)/$$f ]; then \
+ 	    rm -f $(DESTDIR)$(bindir)/$$f; \
+@@ -59,7 +58,7 @@
+ installdirs : mkinstalldirs
+ 	$(SHELL) $< $(DESTDIR)$(sawfishdir)/$(version) \
+ 	  $(DESTDIR)$(bindir) $(DESTDIR)$(sawfishexecdir) \
+-	  $(DESTDIR)$(GNOMEDIR)/share/gnome/wm-properties
++	  $(DESTDIR)/$(PREFIX)/share/applications
+ 
+ uninstall :
+ 	for dir in $(SUBDIRS); do \
