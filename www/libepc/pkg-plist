@@ -37,13 +37,13 @@ libdata/pkgconfig/libepc-ui-1.0.pc
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/libepc-1.0.devhelp
 %%DOCSDIR%%/libepc-1.0.devhelp2
-%%DOCSDIR%%/libepc-10-EpcAuthContext.html
-%%DOCSDIR%%/libepc-10-EpcContents.html
-%%DOCSDIR%%/libepc-10-EpcProtocol.html
-%%DOCSDIR%%/libepc-10-EpcServiceInfo.html
-%%DOCSDIR%%/libepc-10-EpcServiceType.html
-%%DOCSDIR%%/libepc-10-EpcShell.html
-%%DOCSDIR%%/libepc-10-EpcTls.html
+%%DOCSDIR%%/libepc-1.0-EpcAuthContext.html
+%%DOCSDIR%%/libepc-1.0-EpcContents.html
+%%DOCSDIR%%/libepc-1.0-EpcProtocol.html
+%%DOCSDIR%%/libepc-1.0-EpcServiceInfo.html
+%%DOCSDIR%%/libepc-1.0-EpcServiceType.html
+%%DOCSDIR%%/libepc-1.0-EpcShell.html
+%%DOCSDIR%%/libepc-1.0-EpcTls.html
 %%DOCSDIR%%/publishing.html
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
@@ -64,6 +64,7 @@ share/locale/pl/LC_MESSAGES/libepc.mo
 share/locale/pt_BR/LC_MESSAGES/libepc.mo
 share/locale/sl/LC_MESSAGES/libepc.mo
 share/locale/sv/LC_MESSAGES/libepc.mo
+share/locale/th/LC_MESSAGES/libepc.mo
 @dirrmtry share/locale/sl/LC_MESSAGES
 @dirrmtry share/locale/sl
 @dirrmtry share/locale/pl/LC_MESSAGES
