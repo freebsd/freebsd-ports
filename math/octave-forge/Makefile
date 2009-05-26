@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20080831
-PORTREVISION=	1
+PORTVERSION=	20090504
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -22,7 +21,7 @@ COMMENT=	Octave-forge metaport for math/octave
 #  * vrml builds, but is non functional, as it depends on freewrl, which is
 #    not yet available on FreeBSD.
 
-OPTIONS= \
+OPTIONS=	\
 	ANN "Install package: ann" On \
 	AUDIO "Install package: audio" On \
 	BENCHMARK "Install package: benchmark" On \
@@ -59,7 +58,7 @@ OPTIONS= \
 	PHYSICALCONSTANTS "Install package: physicalconstants" On \
 	PLOT "Install package: plot" On \
 	SIGNAL "Install package: signal" On \
-	SYMBOLIC "Install package: symbolic" On \
+	SIMP "Install package: simp" On \
 	SOCKETS "Install package: sockets" On \
 	SPECFUN "Install package: specfun" On \
 	SPECIAL_MATRIX "Install package: special-matrix" On \
@@ -67,6 +66,7 @@ OPTIONS= \
 	STATISTICS "Install package: statistics" On \
 	STRINGS "Install package: strings" On \
 	STRUCT "Install package: struct" On \
+	SYMBOLIC "Install package: symbolic" On \
 	TIME "Install package: time" On \
 	VIDEO "Install package: video" On \
 	VRML "Install package: vrml" On \
@@ -86,7 +86,9 @@ OPTIONS= \
 	MULTICORE "Install package: multicore" On \
 	NAN "Install package: nan" On \
 	NLWING2 "Install package: nlwing2" On \
+	NURBS "Install package: nurbs" On \
 	OCS "Install package: ocs" On \
+	OCT2MAT "Install package: oct2mat" On \
 	PDB "Install package: pdb" On \
 	SECS1D "Install package: secs1d" On \
 	SECS2D "Install package: secs2d" On \
@@ -97,6 +99,7 @@ OPTIONS= \
 	WINDOWS "Install package: windows" On \
 	XRAYLIB "Install package: xraylib" On \
 	\
+	SPANISH "Install package: spanish" On \
 	PT_BR "Install package: pt_br" On \
 	\
 	ARPACK "Install package: arpack" Off \
@@ -111,7 +114,7 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/ann.tar.gz:${PORTSDIR}/math/octave-forge-ann
 RUN_DEPENDS+=	${TARBALLS_DIR}/audio.tar.gz:${PORTSDIR}/math/octave-forge-audio
 .endif
 .if defined(WITH_BENCHMARK)
-RUN_DEPENDS+=  ${TARBALLS_DIR}/benchmark.tar.gz:${PORTSDIR}/benchmarks/octave-forge-benchmark
+RUN_DEPENDS+=	${TARBALLS_DIR}/benchmark.tar.gz:${PORTSDIR}/benchmarks/octave-forge-benchmark
 .endif
 .if defined(WITH_BIOINFO)
 RUN_DEPENDS+=	${TARBALLS_DIR}/bioinfo.tar.gz:${PORTSDIR}/math/octave-forge-bioinfo
@@ -212,6 +215,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/plot.tar.gz:${PORTSDIR}/math/octave-forge-plot
 .if defined(WITH_SIGNAL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
 .endif
+.if defined(WITH_SIMP)
+RUN_DEPENDS+=	${TARBALLS_DIR}/simp.tar.gz:${PORTSDIR}/math/octave-forge-simp
+.endif
 .if defined(WITH_SYMBOLIC)
 RUN_DEPENDS+=	${TARBALLS_DIR}/symbolic.tar.gz:${PORTSDIR}/math/octave-forge-symbolic
 .endif
@@ -289,10 +295,16 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/multicore.tar.gz:${PORTSDIR}/math/octave-forge-mul
 RUN_DEPENDS+=	${TARBALLS_DIR}/nan.tar.gz:${PORTSDIR}/math/octave-forge-nan
 .endif
 .if defined(WITH_NLWING2)
-RUN_DEPENDS+=  ${TARBALLS_DIR}/nlwing2.tar.gz:${PORTSDIR}/math/octave-forge-nlwing2
+RUN_DEPENDS+=	${TARBALLS_DIR}/nlwing2.tar.gz:${PORTSDIR}/math/octave-forge-nlwing2
+.endif
+.if defined(WITH_NURBS)
+RUN_DEPENDS+=	${TARBALLS_DIR}/nurbs.tar.gz:${PORTSDIR}/math/octave-forge-nurbs
 .endif
 .if defined(WITH_OCS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/ocs.tar.gz:${PORTSDIR}/math/octave-forge-ocs
+.endif
+.if defined(WITH_OCT2MAT)
+RUN_DEPENDS+=	${TARBALLS_DIR}/oct2mat.tar.gz:${PORTSDIR}/math/octave-forge-oct2mat
 .endif
 .if defined(WITH_PDB)
 RUN_DEPENDS+=	${TARBALLS_DIR}/pdb.tar.gz:${PORTSDIR}/math/octave-forge-pdb
@@ -322,6 +334,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/windows.tar.gz:${PORTSDIR}/math/octave-forge-windo
 RUN_DEPENDS+=	${TARBALLS_DIR}/xraylib.tar.gz:${PORTSDIR}/math/octave-forge-xraylib
 .endif
 
+.if defined(WITH_SPANISH)
+RUN_DEPENDS+=	${TARBALLS_DIR}/spanish.tar.gz:${PORTSDIR}/math/octave-forge-spanish
+.endif
 .if defined(WITH_PT_BR)
 RUN_DEPENDS+=	${TARBALLS_DIR}/pt_br.tar.gz:${PORTSDIR}/math/octave-forge-pt_br
 .endif
