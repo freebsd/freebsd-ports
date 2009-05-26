@@ -1,9 +1,12 @@
+include/libgdata/gdata/gdata-access-handler.h
+include/libgdata/gdata/gdata-access-rule.h
 include/libgdata/gdata/gdata-atom.h
 include/libgdata/gdata/gdata-entry.h
 include/libgdata/gdata/gdata-enums.h
 include/libgdata/gdata/gdata-feed.h
 include/libgdata/gdata/gdata-gdata.h
 include/libgdata/gdata/gdata-media-rss.h
+include/libgdata/gdata/gdata-parsable.h
 include/libgdata/gdata/gdata-parser.h
 include/libgdata/gdata/gdata-query.h
 include/libgdata/gdata/gdata-service.h
@@ -11,22 +14,27 @@ include/libgdata/gdata/gdata-types.h
 include/libgdata/gdata/gdata.h
 include/libgdata/gdata/services/calendar/gdata-calendar-calendar.h
 include/libgdata/gdata/services/calendar/gdata-calendar-event.h
+include/libgdata/gdata/services/calendar/gdata-calendar-feed.h
 include/libgdata/gdata/services/calendar/gdata-calendar-query.h
 include/libgdata/gdata/services/calendar/gdata-calendar-service.h
 include/libgdata/gdata/services/contacts/gdata-contacts-contact.h
 include/libgdata/gdata/services/contacts/gdata-contacts-query.h
 include/libgdata/gdata/services/contacts/gdata-contacts-service.h
 include/libgdata/gdata/services/youtube/gdata-youtube-enums.h
+include/libgdata/gdata/services/youtube/gdata-youtube-query.h
 include/libgdata/gdata/services/youtube/gdata-youtube-service.h
 include/libgdata/gdata/services/youtube/gdata-youtube-video.h
 include/libgdata/gdata/services/youtube/gdata-youtube.h
 lib/libgdata.a
 lib/libgdata.la
 lib/libgdata.so
-lib/libgdata.so.3
+lib/libgdata.so.4
 libdata/pkgconfig/libgdata.pc
+share/doc/gdata/GDataAccessHandler.html
+share/doc/gdata/GDataAccessRule.html
 share/doc/gdata/GDataCalendarCalendar.html
 share/doc/gdata/GDataCalendarEvent.html
+share/doc/gdata/GDataCalendarFeed.html
 share/doc/gdata/GDataCalendarQuery.html
 share/doc/gdata/GDataCalendarService.html
 share/doc/gdata/GDataContactsContact.html
@@ -34,8 +42,10 @@ share/doc/gdata/GDataContactsQuery.html
 share/doc/gdata/GDataContactsService.html
 share/doc/gdata/GDataEntry.html
 share/doc/gdata/GDataFeed.html
+share/doc/gdata/GDataParsable.html
 share/doc/gdata/GDataQuery.html
 share/doc/gdata/GDataService.html
+share/doc/gdata/GDataYouTubeQuery.html
 share/doc/gdata/GDataYouTubeService.html
 share/doc/gdata/GDataYouTubeVideo.html
 share/doc/gdata/api-index-full.html
@@ -44,23 +54,38 @@ share/doc/gdata/ch02.html
 share/doc/gdata/ch03.html
 share/doc/gdata/ch04.html
 share/doc/gdata/ch05.html
+share/doc/gdata/ch06.html
+share/doc/gdata/ch07.html
 share/doc/gdata/gdata-Atom-API.html
 share/doc/gdata/gdata-GData-API.html
 share/doc/gdata/gdata-GData-Types.html
+share/doc/gdata/gdata-Media-RSS-API.html
 share/doc/gdata/gdata-YouTube-API.html
+share/doc/gdata/gdata-overview.html
 share/doc/gdata/gdata.devhelp
 share/doc/gdata/gdata.devhelp2
 share/doc/gdata/home.png
 share/doc/gdata/index.html
 share/doc/gdata/index.sgml
+share/doc/gdata/ix02.html
+share/doc/gdata/ix03.html
+share/doc/gdata/ix04.html
 share/doc/gdata/left.png
 share/doc/gdata/object-tree.html
 share/doc/gdata/right.png
+share/doc/gdata/structure.png
 share/doc/gdata/style.css
 share/doc/gdata/up.png
 share/locale/de/LC_MESSAGES/gdata.mo
+share/locale/el/LC_MESSAGES/gdata.mo
 share/locale/en_GB/LC_MESSAGES/gdata.mo
+share/locale/es/LC_MESSAGES/gdata.mo
+share/locale/gl/LC_MESSAGES/gdata.mo
 share/locale/sv/LC_MESSAGES/gdata.mo
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
 @dirrm share/doc/gdata
 @dirrm include/libgdata/gdata/services/youtube
 @dirrm include/libgdata/gdata/services/contacts
