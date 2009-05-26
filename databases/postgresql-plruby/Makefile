@@ -7,11 +7,16 @@ ftp://moulon.inra.fr/pub/ruby/# New ports collection makefile for:	PL/Ruby
 
 PORTNAME=	plruby
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	ruby
+
+PATCHFILES=	3b3cc0786b0814eaa792cec65cedd54e1e43e9bd.diff
+PATCH_SITES=	http://github.com/knu/postgresql-plruby/commit/
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
