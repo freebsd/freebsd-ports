@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-data-smoothing
-PORTVERSION=	1.1.1
-CATEGORIES=     math
+PORTVERSION=	1.2.0
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:${PORTSDIR}/math/octave-forge-optim
 
