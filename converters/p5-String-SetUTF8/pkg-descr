@@ -1,0 +1,8 @@
+String::SetUTF8 lets you directly set or unset the UTF-8 flag
+for your strings. Sometimes you get binary data that
+Perl doesn't treat as UTF-8, so instead of doing a trick
+with pack and unpack you can just use this module.
+
+WWW: http://search.cpan.org/dist/String-SetUTF8/
+
+Andrei V. Shetuhin <reki@reki.ru>
