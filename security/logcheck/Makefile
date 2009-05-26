@@ -15,7 +15,14 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 
+# If docbook-to-man is present, use it.  Otherwise, install
+# docbook2X (docbook2man) because it's much lighter weight.
+# If docbook-to-man is present and docbook2X is installed,
+# the man page conversion will fail. docbook2X and docbook-4.1
+# conflict with each other.
+.if !exists(/usr/local/bin/docbook-to-man)
 BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook2X
+.endif
 RUN_DEPENDS=	lockfile:${PORTSDIR}/mail/procmail \
 		bash:${PORTSDIR}/shells/bash
 
@@ -47,10 +54,15 @@ do-build:
 	@${REINPLACE_CMD} -e 's!/etc/logcheck!${ETCDIR}!' \
 		-e 's!/usr/share/doc/logcheck-database/README.logcheck-database.gz!${DOCSDIR}/README.logcheck-database!' \
 		${WRKSRC}/docs/logcheck.sgml
+.if exists(/usr/local/bin/docbook-to-man)
+	@docbook-to-man ${WRKSRC}/docs/logcheck.sgml > \
+		${WRKSRC}/docs/logcheck.8 2> /dev/null
+.else
 	@cd ${WRKSRC}/docs && docbook2man -s \
-		/usr/local/share/docbook2X/xslt/man/docbook.xsl \
+		${LOCALBASE}/share/docbook2X/xslt/man/docbook.xsl \
 		--sgml logcheck.sgml 2> /dev/null \
 		&& ${MV} Logcheck.8 logcheck.8
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${PREFIX}/sbin
