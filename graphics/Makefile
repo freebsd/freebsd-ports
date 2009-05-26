@@ -388,6 +388,7 @@
     SUBDIR += lcdtest
     SUBDIR += lcms
     SUBDIR += leafpak
+    SUBDIR += lensfun
     SUBDIR += lfview
     SUBDIR += lib3ds
     SUBDIR += libGL
