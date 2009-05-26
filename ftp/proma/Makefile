@@ -10,7 +10,7 @@ PORTVERSION=	0.8.3
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	Administrate a ProFTPd server storing users in a MySQL database
 
 USE_BZIP2=	yes
