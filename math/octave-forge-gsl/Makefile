@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	octave-forge-gsl
-PORTVERSION=	1.0.7
-PORTREVISION=	1
-CATEGORIES=     math
+PORTVERSION=	1.0.8
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl
 
