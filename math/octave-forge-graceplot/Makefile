@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-graceplot
-PORTVERSION=	1.0.6
-CATEGORIES=     math
+PORTVERSION=	1.0.7
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:${PORTSDIR}/math/octave-forge-io
 
