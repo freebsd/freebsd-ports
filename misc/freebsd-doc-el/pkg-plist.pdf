@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.pdf

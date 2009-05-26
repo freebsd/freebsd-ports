@@ -28,7 +28,7 @@
 #
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	20090417
+PORTVERSION=	20090525
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
 PKGNAMEPREFIX?=	en-
@@ -52,6 +52,12 @@ DOCLANG_PREFIX?=	${DOCLANG:C/_.*$//}
 DOCBASE?=		share/doc/freebsd
 
 PLIST=		${WRKDIR}/pkg-plist
+
+OPTIONS=	HTML		"Single HTML file per document" Off \
+		HTML_SPLIT	"The default HTML format used on www.FreeBSD.org" On \
+		PDF		"PDF format" On \
+		PS		"PostScript format" Off \
+		TXT		"Plain text" Off
 
 .include <bsd.port.pre.mk>
 
@@ -82,6 +88,8 @@ BUILD_DEPENDS=	docproj-jadetex>=1.17:${PORTSDIR}/textproc/docproj-jadetex
 .else
 BUILD_DEPENDS=	docproj-nojadetex>=1.17:${PORTSDIR}/textproc/docproj-nojadetex
 .endif
+
+MAKE_JOBS_SAFE=	yes
 
 .for F in ${DOCFORMAT:L}
 PLIST_FORMATS+=	${F:L}

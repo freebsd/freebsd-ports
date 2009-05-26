@@ -28,6 +28,7 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles

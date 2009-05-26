@@ -116,6 +116,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/commercial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-drives.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-kbd-mice.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-memory.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-networking.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-other.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-processors.html
@@ -263,7 +264,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/editors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-email.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-news.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-shell.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-web.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems.html
@@ -276,6 +276,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/floppies.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/freebsd-glossary.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/fs-acl.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-ggate.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-gjournal.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-intro.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-mirror.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-striping.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/getting-started.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/history.html
