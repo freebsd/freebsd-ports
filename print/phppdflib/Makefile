@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.potentialtech.com/
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	An easy to use API for creating PDF files dynamically
 
 USE_PHP=	yes
