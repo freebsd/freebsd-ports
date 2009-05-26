@@ -17,7 +17,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 OPTIONS=	CSCOPE	"Enable CScope integration" OFF
 
-USE_WX=	2.8
+USE_WX=		2.8
 WX_UNICODE=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
@@ -25,9 +25,9 @@ HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
-SVN_REVISION=	2822
+SVN_REVISION=	2841
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
@@ -37,8 +37,7 @@ post-patch:
 .if ${ARCH} == "amd64"
 	${REINPLACE_CMD} -e '58s|=|= -fPIC|' ${WRKSRC}/configure
 .endif
-	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' \
-	    ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' ${WRKSRC}/configure
 #	Configure script does not respect --prefix
 	${REINPLACE_CMD} -e '/^prefix/s|/usr|${PREFIX}|; \
 	    /^plugins_dir/s|/usr/lib/codelite|${DATADIR}/plugins|' \
