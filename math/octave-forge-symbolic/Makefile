@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-symbolic
-PORTVERSION=	1.0.7
-CATEGORIES=     math
+PORTVERSION=	1.0.8
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 LIB_DEPENDS+=	ginac:${PORTSDIR}/math/GiNaC
 
