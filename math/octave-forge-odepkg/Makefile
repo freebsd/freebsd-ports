@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-odepkg
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.6
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
