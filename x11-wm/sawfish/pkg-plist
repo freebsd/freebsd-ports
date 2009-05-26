@@ -23,6 +23,7 @@ libexec/sawfish/%%VERSION%%/%%GNUHOST%%/selection.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/selection.so
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.so
+share/applications/sawfish.desktop
 share/locale/am/LC_MESSAGES/sawfish.mo
 share/locale/ar/LC_MESSAGES/sawfish.mo
 share/locale/az/LC_MESSAGES/sawfish.mo
@@ -75,6 +76,7 @@ share/locale/vi/LC_MESSAGES/sawfish.mo
 share/locale/wa/LC_MESSAGES/sawfish.mo
 share/locale/zh_CN/LC_MESSAGES/sawfish.mo
 share/locale/zh_TW/LC_MESSAGES/sawfish.mo
+share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/anim-outline.jl
 %%DATADIR%%/%%VERSION%%/lisp/anim-outline.jlc
 %%DATADIR%%/%%VERSION%%/lisp/audio-events.jl
@@ -428,8 +430,6 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/%%VERSION%%/themes/mxflat.tar.gz
 %%DATADIR%%/%%VERSION%%/themes/simple.tar.gz
 %%DATADIR%%/%%VERSION%%/themes/smaker.tar.gz
-@dirrmtry %%DATADIR%%/%%VERSION%%/themes
-@dirrm %%DATADIR%%/%%VERSION%%/sounds
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/theming
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/state
@@ -447,6 +447,10 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish
 @dirrm %%DATADIR%%/%%VERSION%%/lisp
+@dirrmtry %%DATADIR%%/%%VERSION%%/themes
+@dirrmtry %%DATADIR%%/%%VERSION%%/sounds
+@dirrmtry %%DATADIR%%/themes
+@dirrmtry %%DATADIR%%/sounds
 @dirrmtry %%DATADIR%%/%%VERSION%%
 @dirrmtry %%DATADIR%%
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm/util
