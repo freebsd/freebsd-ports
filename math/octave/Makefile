@@ -86,6 +86,15 @@ CONFIGURE_ARGS=	--host=${GNU_HOST} \
 SUB_FILES=	octave
 SUB_LIST=	OCTAVE_VERSION="${OCTAVE_VERSION}" GNU_HOST="${GNU_HOST}"
 
+.if (${OSVERSION} <= 700000)
+WITH_PTMALLOC=yes
+.endif
+
+.if defined(WITH_PTMALLOC)
+LIB_DEPENDS+=	ptmalloc:${PORTSDIR}/devel/ptmalloc
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lptmalloc"
+.endif
+
 pre-configure:
 	@cd ${WRKSRC}/scripts ; ${AUTOCONF}
 
