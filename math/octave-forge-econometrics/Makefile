@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-econometrics
-PORTVERSION=	1.0.7
-CATEGORIES=     math
+PORTVERSION=	1.0.8
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:${PORTSDIR}/math/octave-forge-optim
 
