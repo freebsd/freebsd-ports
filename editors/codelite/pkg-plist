@@ -3,7 +3,6 @@ bin/codelite_exec
 bin/codelite_fix_files
 bin/codelite_indexer
 bin/codelite_kill_children
-%%DATADIR%%/src/unittest++1.3.tar.gz
 %%DATADIR%%/astyle.sample
 %%DATADIR%%/config/accelerators.conf.default
 %%DATADIR%%/config/build_settings.xml.default
@@ -64,6 +63,7 @@ bin/codelite_kill_children
 %%DATADIR%%/plugins/resources/wxfb_ok.png
 %%DATADIR%%/plugins/wxformbuilder.so
 %%DATADIR%%/rc/menu.xrc
+%%DATADIR%%/src/unittest++1.3.tar.gz
 %%DATADIR%%/svnreport.html
 %%DATADIR%%/templates/formbuilder/DialogTemplate.fbp
 %%DATADIR%%/templates/formbuilder/DialogTemplateWithButtons.fbp
@@ -80,34 +80,82 @@ bin/codelite_kill_children
 %%DATADIR%%/templates/gizmos/wxmain.project.wizard
 %%DATADIR%%/templates/gizmos/wxproject.project.wizard
 %%DATADIR%%/templates/projects/UnitTest++/UnitTest++.project
+%%DATADIR%%/templates/projects/UnitTest++/icon.png
 %%DATADIR%%/templates/projects/UnitTest++/main.cpp
 %%DATADIR%%/templates/projects/custom-makefile/custom-makefile.project
+%%DATADIR%%/templates/projects/custom-makefile/icon.png
 %%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/icon.png
 %%DATADIR%%/templates/projects/dynamic-library/dynamic-library.project
+%%DATADIR%%/templates/projects/dynamic-library/icon.png
+%%DATADIR%%/templates/projects/executable-console-wx-enabled/executable-console-wx-enabled.project
+%%DATADIR%%/templates/projects/executable-console-wx-enabled/icon.png
+%%DATADIR%%/templates/projects/executable-console-wx-enabled/main.cpp
+%%DATADIR%%/templates/projects/executable-gcc/executable-gcc.project
+%%DATADIR%%/templates/projects/executable-gcc/icon.png
+%%DATADIR%%/templates/projects/executable-gcc/main.c
+%%DATADIR%%/templates/projects/executable-qt-enabled/executable-qt-enabled.project
+%%DATADIR%%/templates/projects/executable-qt-enabled/icon.png
+%%DATADIR%%/templates/projects/executable-qt-enabled/main.cpp
+%%DATADIR%%/templates/projects/executable-qt-qmake-enabled/executable-qt-qmake-enabled.project
+%%DATADIR%%/templates/projects/executable-qt-qmake-enabled/icon.png
+%%DATADIR%%/templates/projects/executable-qt-qmake-enabled/main.cpp
+%%DATADIR%%/templates/projects/executable-wx-dialog/executable-wx-dialog.project
+%%DATADIR%%/templates/projects/executable-wx-dialog/gui.cpp
+%%DATADIR%%/templates/projects/executable-wx-dialog/gui.fbp
+%%DATADIR%%/templates/projects/executable-wx-dialog/gui.h
+%%DATADIR%%/templates/projects/executable-wx-dialog/icon.png
+%%DATADIR%%/templates/projects/executable-wx-dialog/main.cpp
+%%DATADIR%%/templates/projects/executable-wx-dialog/main.h
+%%DATADIR%%/templates/projects/executable-wx-enabled/executable-wx-enabled.project
+%%DATADIR%%/templates/projects/executable-wx-enabled/icon.png
+%%DATADIR%%/templates/projects/executable-wx-enabled/main.cpp
+%%DATADIR%%/templates/projects/executable-wx-frame/executable-wx-frame.project
+%%DATADIR%%/templates/projects/executable-wx-frame/gui.cpp
+%%DATADIR%%/templates/projects/executable-wx-frame/gui.fbp
+%%DATADIR%%/templates/projects/executable-wx-frame/gui.h
+%%DATADIR%%/templates/projects/executable-wx-frame/icon.png
+%%DATADIR%%/templates/projects/executable-wx-frame/main.cpp
+%%DATADIR%%/templates/projects/executable-wx-frame/main.h
 %%DATADIR%%/templates/projects/executable/executable.project
+%%DATADIR%%/templates/projects/executable/icon.png
 %%DATADIR%%/templates/projects/executable/main.cpp
+%%DATADIR%%/templates/projects/non-code-project/icon.png
 %%DATADIR%%/templates/projects/non-code-project/non-code.project
+%%DATADIR%%/templates/projects/static-library-wx-enabled/icon.png
 %%DATADIR%%/templates/projects/static-library-wx-enabled/static-library-wx-enabled.project
+%%DATADIR%%/templates/projects/static-library/icon.png
 %%DATADIR%%/templates/projects/static-library/static-library.project
+%%DATADIR%%/templates/projects/vc-dynamic-library/icon.png
 %%DATADIR%%/templates/projects/vc-dynamic-library/vc-dynamic-library.project
+%%DATADIR%%/templates/projects/vc-executable/icon.png
 %%DATADIR%%/templates/projects/vc-executable/vc-executable.project
+%%DATADIR%%/templates/projects/vc-static-lib/icon.png
 %%DATADIR%%/templates/projects/vc-static-lib/vc-static-lib.project
 share/applications/codelite.desktop
-@dirrm %%DATADIR%%/templates/projects/non-code-project
-@dirrm %%DATADIR%%/templates/projects/custom-makefile
 @dirrm %%DATADIR%%/templates/projects/vc-static-lib
 @dirrm %%DATADIR%%/templates/projects/vc-executable
 @dirrm %%DATADIR%%/templates/projects/vc-dynamic-library
 @dirrm %%DATADIR%%/templates/projects/static-library-wx-enabled
 @dirrm %%DATADIR%%/templates/projects/static-library
+@dirrm %%DATADIR%%/templates/projects/non-code-project
+@dirrm %%DATADIR%%/templates/projects/executable-wx-frame
+@dirrm %%DATADIR%%/templates/projects/executable-wx-enabled
+@dirrm %%DATADIR%%/templates/projects/executable-wx-dialog
+@dirrm %%DATADIR%%/templates/projects/executable-qt-qmake-enabled
+@dirrm %%DATADIR%%/templates/projects/executable-qt-enabled
+@dirrm %%DATADIR%%/templates/projects/executable-gcc
+@dirrm %%DATADIR%%/templates/projects/executable-console-wx-enabled
 @dirrm %%DATADIR%%/templates/projects/executable
 @dirrm %%DATADIR%%/templates/projects/dynamic-library-wx-enabled
 @dirrm %%DATADIR%%/templates/projects/dynamic-library
+@dirrm %%DATADIR%%/templates/projects/custom-makefile
 @dirrm %%DATADIR%%/templates/projects/UnitTest++
 @dirrm %%DATADIR%%/templates/projects
 @dirrm %%DATADIR%%/templates/gizmos
 @dirrm %%DATADIR%%/templates/formbuilder
 @dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%/rc
 @dirrm %%DATADIR%%/plugins/resources
 @dirrm %%DATADIR%%/plugins/debuggers
@@ -115,8 +163,7 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/lexers/Default
 @dirrm %%DATADIR%%/lexers/BlackTheme
 @dirrm %%DATADIR%%/lexers
-@dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
