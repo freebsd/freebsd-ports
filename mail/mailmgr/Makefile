@@ -10,7 +10,7 @@ PORTVERSION=	1.2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://sarg.sourceforge.net/
 
-MAINTAINER=	sexbear@tmu.edu.tw
+MAINTAINER=	ports@FreeBSd.org
 COMMENT=	Sendmail Analysis Report Generator
 
 GNU_CONFIGURE=	yes

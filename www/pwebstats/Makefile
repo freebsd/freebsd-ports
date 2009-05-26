@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.psg.com/pub/pwebstats/
 
-MAINTAINER=	sexbear@tmu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyse a web server log
 
 RUN_DEPENDS=	fly:${PORTSDIR}/graphics/fly
