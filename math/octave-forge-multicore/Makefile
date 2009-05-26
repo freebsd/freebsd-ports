@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-multicore
-PORTVERSION=	0.2.13
-CATEGORIES=     math
+PORTVERSION=	0.2.14
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
