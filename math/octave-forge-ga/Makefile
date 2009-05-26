@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-ga
-PORTVERSION=	0.9.4
-CATEGORIES=     math
+PORTVERSION=	0.9.6
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/communications.tar.gz:${PORTSDIR}/math/octave-forge-communications
 
