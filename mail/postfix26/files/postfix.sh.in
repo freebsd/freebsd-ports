@@ -25,10 +25,10 @@ rcvar=${name}_enable
 
 load_rc_config $name
 
-: ${postfix_enable="NO"}
-: ${postfix_pidfile="/var/spool/postfix/pid/master.pid"}
-: ${postfix_procname="%%PREFIX%%/libexec/postfix/master"}
-: ${postfix_flags=""}
+: ${postfix_enable:="NO"}
+: ${postfix_pidfile:="/var/spool/postfix/pid/master.pid"}
+: ${postfix_procname:="%%PREFIX%%/libexec/postfix/master"}
+: ${postfix_flags:=""}
 
 start_cmd=${name}_start
 stop_cmd=${name}_stop

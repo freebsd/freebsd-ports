@@ -1,28 +1,19 @@
-@unexec if cmp -s %D/etc/postfix/main.cf %D/etc/postfix/dist/main.cf; then rm -f %D/etc/postfix/main.cf; fi
-@unexec if cmp -s %D/etc/postfix/master.cf %D/etc/postfix/dist/master.cf; then rm -f %D/etc/postfix/master.cf; fi
-@unexec if cmp -s %D/etc/postfix/access %D/etc/postfix/dist/access; then rm -f %D/etc/postfix/access; fi
-@unexec if cmp -s %D/etc/postfix/aliases %D/etc/postfix/dist/aliases; then rm -f %D/etc/postfix/aliases; fi
-@unexec if cmp -s %D/etc/postfix/canonical %D/etc/postfix/dist/canonical; then rm -f %D/etc/postfix/canonical; fi
-@unexec if cmp -s %D/etc/postfix/header_checks %D/etc/postfix/dist/header_checks; then rm -f %D/etc/postfix/header_checks; fi
-@unexec if cmp -s %D/etc/postfix/relocated %D/etc/postfix/dist/relocated; then rm -f %D/etc/postfix/relocated; fi
-@unexec if cmp -s %D/etc/postfix/transport %D/etc/postfix/dist/transport; then rm -f %D/etc/postfix/transport; fi
-@unexec if cmp -s %D/etc/postfix/virtual %D/etc/postfix/dist/virtual; then rm -f %D/etc/postfix/virtual; fi
-@unexec if cmp -s %D/etc/postfix/generic %D/etc/postfix/dist/generic; then rm -f %D/etc/postfix/generic; fi
-etc/postfix/LICENSE
-etc/postfix/TLS_LICENSE
-etc/postfix/bounce.cf.default
-etc/postfix/main.cf.default
-etc/postfix/makedefs.out
-etc/postfix/dist/main.cf
-etc/postfix/dist/master.cf
-etc/postfix/dist/access
-etc/postfix/dist/aliases
-etc/postfix/dist/canonical
-etc/postfix/dist/header_checks
-etc/postfix/dist/relocated
-etc/postfix/dist/transport
-etc/postfix/dist/virtual
-etc/postfix/dist/generic
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/main.cf %D/%%ETCDIR%%/main.cf; then rm -f %D/%%ETCDIR%%/main.cf; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/master.cf %D/%%ETCDIR%%/master.cf; then rm -f %D/%%ETCDIR%%/master.cf; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/access %D/%%ETCDIR%%/access; then rm -f %D/%%ETCDIR%%/access; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/aliases %D/%%ETCDIR%%/aliases; then rm -f %D/%%ETCDIR%%/aliases; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/canonical %D/%%ETCDIR%%/canonical; then rm -f %D/%%ETCDIR%%/canonical; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/header_checks %D/%%ETCDIR%%/header_checks; then rm -f %D/%%ETCDIR%%/header_checks; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/relocated %D/%%ETCDIR%%/relocated; then rm -f %D/%%ETCDIR%%/relocated; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/transport %D/%%ETCDIR%%/transport; then rm -f %D/%%ETCDIR%%/transport; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/virtual %D/%%ETCDIR%%/virtual; then rm -f %D/%%ETCDIR%%/virtual; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/generic %D/%%ETCDIR%%/generic; then rm -f %D/%%ETCDIR%%/generic; fi
+%%ETCDIR%%/LICENSE
+%%ETCDIR%%/TLS_LICENSE
+%%ETCDIR%%/bounce.cf.default
+%%ETCDIR%%/main.cf.default
+%%ETCDIR%%/makedefs.out
+@dirrmtry %%ETCDIR%%
 libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -55,6 +46,15 @@ libexec/postfix/trivial-rewrite
 libexec/postfix/verify
 libexec/postfix/virtual
 libexec/postfix/tlsmgr
+@dirrm libexec/postfix
+bin/mailq
+bin/newaliases
+bin/qshape
+bin/rmail
+%%TEST%%bin/qmqp-sink
+%%TEST%%bin/qmqp-source
+%%TEST%%bin/smtp-sink
+%%TEST%%bin/smtp-source
 sbin/postalias
 sbin/postcat
 sbin/postconf
@@ -68,14 +68,6 @@ sbin/postmulti
 sbin/postqueue
 sbin/postsuper
 sbin/sendmail
-%%SUB_TEST%%bin/qmqp-sink
-%%SUB_TEST%%bin/qmqp-source
-%%SUB_TEST%%bin/smtp-sink
-%%SUB_TEST%%bin/smtp-source
-bin/rmail
-bin/qshape
-bin/newaliases
-bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/AAAREADME
 %%PORTDOCS%%%%DOCSDIR%%/ADDRESS_CLASS_README
 %%PORTDOCS%%%%DOCSDIR%%/ADDRESS_CLASS_README.html
@@ -164,6 +156,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/ULTRIX_README
 %%PORTDOCS%%%%DOCSDIR%%/UUCP_README
 %%PORTDOCS%%%%DOCSDIR%%/UUCP_README.html
+%%VDA%%%%PORTDOCS%%%%DOCSDIR%%/VDA_README
 %%PORTDOCS%%%%DOCSDIR%%/VERP_README
 %%PORTDOCS%%%%DOCSDIR%%/VERP_README.html
 %%PORTDOCS%%%%DOCSDIR%%/VIRTUAL_README
@@ -244,6 +237,3 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/generic.5.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/postfix
-@dirrm etc/postfix/dist
-@dirrmtry etc/postfix
