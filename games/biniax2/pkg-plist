@@ -11,6 +11,7 @@ bin/biniax2
 %%DATADIR%%/graphics/elementB.png
 %%DATADIR%%/graphics/font.png
 %%DATADIR%%/graphics/help.png
+%%DATADIR%%/graphics/keyboard.png
 %%DATADIR%%/graphics/logo.png
 %%DATADIR%%/graphics/marker0.png
 %%DATADIR%%/graphics/marker1.png

@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	biniax2
-PORTVERSION=	1.0
+PORTVERSION=	1.30
 CATEGORIES=	games
 MASTER_SITES=	http://mordred.dir.bg/biniax/ \
 		http://mirror.amdmi3.ru/
-DISTNAME=	${PORTNAME}-fullsrc
+DISTNAME=	${PORTNAME}-${PORTVERSION}-fullsrc
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Original logic game with arcade and tactics modes
 
 USE_SDL=	sdl mixer image
-
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 post-patch:
 	@${RM} -f ${WRKSRC}/data/Thumbs.db
