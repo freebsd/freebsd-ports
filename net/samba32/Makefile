@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.2.10
+PORTVERSION?=		3.2.11
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -95,10 +95,7 @@ CONFIGURE_ARGS+=	--with-pam --with-readline --with-included-iniparser \
 			--without-libsmbclient \
 			--without-libsmbsharemodes \
 			--without-libaddns
-# Sanity checks
-.if exists(${LOCALBASE}/include/tdb.h)
-#IGNORE=			doesn't compile when tdb is installed. Uninstall databases/tdb port
-.endif
+
 # Let process generate meaningful backtrace on a core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
@@ -107,7 +104,7 @@ SAMBA_WANT_LDAP=	yes
 .endif
 
 .if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups --enable-iprint
 SUB_LIST+=		CUPS=""
 .else
@@ -454,9 +451,7 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.if defined(WITH_MAX_DEBUG)
 test:
 	(cd ${WRKSRC} && ${MAKE} test_nss_modules test_pam_modules && ${MAKE} test)
-.endif
 
 .include <bsd.port.post.mk>
