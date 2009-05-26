@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-tsa
-PORTVERSION=	4.0.0
-CATEGORIES=     math
+PORTVERSION=	4.0.1
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/nan.tar.gz:${PORTSDIR}/math/octave-forge-nan
 
