@@ -72,11 +72,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		11
+MILESTONE?=		12
 OOOTAG?=		OOO310_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20090425
+SNAPDATE=		20090526
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
@@ -138,7 +138,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAXPROCESSES?=	1
 MAXMODULES?=	1
 
-USE_AUTOTOOLS=		autoconf:262
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
