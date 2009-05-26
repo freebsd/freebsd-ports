@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.3.3
+PORTVERSION?=		3.3.4
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -72,10 +72,12 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		DNSUPDATE	"With dynamic DNS update(require ADS)" off \
 		DNSSD		"With DNS service discovery support" off \
 		EXP_MODULES	"With experimental modules" off \
-		SHARED_LIBS	"With shared libraries" off \
 		POPT		"With system-wide POPT library" on \
 		MAX_DEBUG	"With maximum debugging" off \
 		SMBTORTURE	"With smbtorture" off
+
+# Disable for now on
+.undef WITH_SHARED_LIBS
 
 .include <bsd.port.pre.mk>
 
@@ -116,7 +118,7 @@ SAMBA_WANT_LDAP=	yes
 .endif
 
 .if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups --enable-iprint
 SUB_LIST+=		CUPS=""
 .else

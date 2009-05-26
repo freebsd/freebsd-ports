@@ -264,6 +264,7 @@ share/swat/help/manpages/vfs_cap.8.html
 share/swat/help/manpages/vfs_catia.8.html
 share/swat/help/manpages/vfs_commit.8.html
 share/swat/help/manpages/vfs_default_quota.8.html
+share/swat/help/manpages/vfs_dirsort.8.html
 share/swat/help/manpages/vfs_extd_audit.8.html
 share/swat/help/manpages/vfs_fake_perms.8.html
 share/swat/help/manpages/vfs_fileid.8.html
