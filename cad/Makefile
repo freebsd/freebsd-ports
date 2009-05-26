@@ -63,6 +63,7 @@
     SUBDIR += opencascade-tutorial
     SUBDIR += oregano
     SUBDIR += p5-GDS2
+    SUBDIR += p5-Verilog-Perl
     SUBDIR += pcb
     SUBDIR += pdnmesh
     SUBDIR += pythoncad

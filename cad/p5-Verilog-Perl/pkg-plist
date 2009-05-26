@@ -1,0 +1,33 @@
+bin/vhier
+bin/vpassert
+bin/vppreproc
+bin/vrename
+%%SITE_PERL%%/mach/Verilog/EditFiles.pm
+%%SITE_PERL%%/mach/Verilog/Getopt.pm
+%%SITE_PERL%%/mach/Verilog/Language.pm
+%%SITE_PERL%%/mach/Verilog/Netlist.pm
+%%SITE_PERL%%/mach/Verilog/Netlist/Cell.pm
+%%SITE_PERL%%/mach/Verilog/Netlist/File.pm
+%%SITE_PERL%%/mach/Verilog/Netlist/Interface.pm
+%%SITE_PERL%%/mach/Verilog/Netlist/Logger.pm
+%%SITE_PERL%%/mach/Verilog/Netlist/Module.pm
+%%SITE_PERL%%/mach/Verilog/Netlist/Net.pm
+%%SITE_PERL%%/mach/Verilog/Netlist/Pin.pm
+%%SITE_PERL%%/mach/Verilog/Netlist/Port.pm
+%%SITE_PERL%%/mach/Verilog/Netlist/Subclass.pm
+%%SITE_PERL%%/mach/Verilog/Parser.pm
+%%SITE_PERL%%/mach/Verilog/Preproc.pm
+%%SITE_PERL%%/mach/Verilog/SigParser.pm
+%%SITE_PERL%%/mach/Verilog/Std.pm
+%%SITE_PERL%%/mach/Verilog/Verilog-Perl.pod
+%%SITE_PERL%%/mach/auto/Verilog/Language/.packlist
+%%SITE_PERL%%/mach/auto/Verilog/Parser/Parser.bs
+%%SITE_PERL%%/mach/auto/Verilog/Parser/Parser.so
+%%SITE_PERL%%/mach/auto/Verilog/Preproc/Preproc.bs
+%%SITE_PERL%%/mach/auto/Verilog/Preproc/Preproc.so
+@dirrm %%SITE_PERL%%/mach/auto/Verilog/Preproc
+@dirrm %%SITE_PERL%%/mach/auto/Verilog/Parser
+@dirrm %%SITE_PERL%%/mach/auto/Verilog/Language
+@dirrm %%SITE_PERL%%/mach/auto/Verilog
+@dirrm %%SITE_PERL%%/mach/Verilog/Netlist
+@dirrm %%SITE_PERL%%/mach/Verilog

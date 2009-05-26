@@ -1,0 +1,19 @@
+The Verilog-Perl library is a building point for Verilog support in the Perl 
+language. It includes:
+* Verilog::Getopt which parses command line options similar to C++ and VCS.
+* Verilog::Language which knows the language keywords and parses numbers.
+* Verilog::Netlist which builds netlists out of Verilog files. This allows 
+  easy scripts to determine things such as the hierarchy of modules.
+* Verilog::Parser invokes callbacks for language tokens.
+* Verilog::Preproc preprocesses the language, and allows reading 
+  post-processed files right from Perl without temporary files.
+* vpassert inserts PLIish warnings and assertions for any simulator.
+* vppreproc preprocesses the complete Verilog 2001 and SystemVerilog language.
+* vrename renames and cross-references Verilog symbols. Vrename creates Verilog
+  cross references and makes it easy to rename signal and module names across 
+  multiple files. Vrename uses a simple and efficient three step process. 
+  First, you run vrename to create a list of signals in the design. You then 
+  edit this list, changing as many symbols as you wish. Vrename is then run a 
+  second time to apply the changes.
+
+WWW:	http://www.veripool.org/wiki/verilog-perl
