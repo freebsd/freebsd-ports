@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	octave-forge-tcl-octave
-PORTVERSION=	0.1.7
-PORTREVISION=	1
-CATEGORIES=     math
+PORTVERSION=	0.1.8
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 USE_TCL_WRAPPER=	yes
 
