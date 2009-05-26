@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-nlwing2
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
