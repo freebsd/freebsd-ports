@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-optiminterp
-PORTVERSION=	0.3.1
-CATEGORIES=     math
+PORTVERSION=	0.3.2
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
