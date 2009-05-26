@@ -248,6 +248,7 @@
     SUBDIR += octave-forge-signal
     SUBDIR += octave-forge-simp
     SUBDIR += octave-forge-sockets
+    SUBDIR += octave-forge-spanish
     SUBDIR += octave-forge-specfun
     SUBDIR += octave-forge-special-matrix
     SUBDIR += octave-forge-spline-gcvspl
