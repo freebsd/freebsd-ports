@@ -157,6 +157,7 @@
     SUBDIR += lsdb
     SUBDIR += luasql-mysql
     SUBDIR += luasql-postgres
+    SUBDIR += luasql-sqlite3
     SUBDIR += ludia
     SUBDIR += maatkit
     SUBDIR += mantis
