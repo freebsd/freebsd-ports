@@ -16,6 +16,7 @@ COMMENT=	Building point for Verilog support in the Perl language
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_BISON=	yes
 
 PERL_CONFIGURE=	yes
 
