@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-financial
-PORTVERSION=	0.3.0
-CATEGORIES=     math
+PORTVERSION=	0.3.1
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/time.tar.gz:${PORTSDIR}/math/octave-forge-time
 RUN_DEPENDS+=	${TARBALLS_DIR}/miscellaneous.tar.gz:${PORTSDIR}/math/octave-forge-miscellaneous
