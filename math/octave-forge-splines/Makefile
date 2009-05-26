@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	octave-forge-splines
-PORTVERSION=	1.0.6
-CATEGORIES=     math
+PORTVERSION=	1.0.7
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
