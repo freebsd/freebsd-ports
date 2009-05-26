@@ -1,0 +1,2 @@
+%%LUA_MODLIBDIR%%/luasql/%%LUASQL_DRIVER%%.so
+@dirrmtry %%LUA_MODLIBDIR%%/luasql

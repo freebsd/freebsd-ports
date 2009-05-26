@@ -1,0 +1,11 @@
+--- Makefile.orig	2007-10-29 22:44:54.000000000 +0100
++++ Makefile	2009-05-25 23:14:26.604465716 +0200
+@@ -24,7 +24,7 @@
+ lib: src/$(LIBNAME)
+ 
+ src/$(LIBNAME): $(OBJS)
+-	export MACOSX_DEPLOYMENT_TARGET="10.3"; $(CC) $(CFLAGS) -o $@ $(LIB_OPTION) $(OBJS) $(DRIVER_LIBS)
++	$(LD) $(LDFLAGS) -o $@ $(LIB_OPTION) $(OBJS) $(DRIVER_LIBS)
+ 
+ $(COMPAT_DIR)/compat-5.1.o: $(COMPAT_DIR)/compat-5.1.c
+ 	$(CC) -c $(CFLAGS) -o $@ $(COMPAT_DIR)/compat-5.1.c
