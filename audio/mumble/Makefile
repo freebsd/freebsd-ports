@@ -7,6 +7,7 @@
 
 PORTNAME=	mumble
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -18,7 +19,7 @@ LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex \
 
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui opengl dbus xml sql network linguist l10n \
+QT_COMPONENTS=	gui opengl dbus xml sql network linguist_build l10n \
 		moc_build qmake_build rcc_build uic_build
 
 USE_XORG=	ice

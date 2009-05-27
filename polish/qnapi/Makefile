@@ -7,6 +7,7 @@
 
 PORTNAME=	qnapi
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	polish multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qnapi
@@ -17,7 +18,7 @@ COMMENT=	Unoffical napiprojekt.pl qt4 client
 RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network qmake_build moc_build uic_build rcc
+QT_COMPONENTS=	corelib gui network qmake_build moc_build uic_build rcc_build
 INSTALLS_ICONS=	yes
 
 MAN1=		qnapi.1
