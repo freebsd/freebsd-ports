@@ -7,7 +7,7 @@
 
 PORTNAME=	tokyodystopia
 PORTVERSION=	0.9.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SOURCEFORGE \
 		http://tokyocabinet.sourceforge.net/dystopiapkg/
