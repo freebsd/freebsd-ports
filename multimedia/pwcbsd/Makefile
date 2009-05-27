@@ -7,7 +7,7 @@
 
 PORTNAME=	pwcbsd
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \
@@ -26,10 +26,6 @@ OPTIONS=	PROGRAMS	"Build the programs"			on \
 		MMAP		"Enable mmap support (MAY CRASH YOUR SYSTEM)"	off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 800063
-BROKEN=		Does not build with USB2
-.endif
 
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		requires kernel source files
