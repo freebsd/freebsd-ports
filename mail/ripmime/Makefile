@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ripmime
-PORTVERSION=	1.4.0.6
+PORTVERSION=	1.4.0.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pldaniels.com/ripmime/ \
 		${MASTER_SITE_GENTOO}
