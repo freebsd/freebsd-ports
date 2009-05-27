@@ -189,7 +189,7 @@ share/irssi/scripts/modelist-r.pl
 share/irssi/scripts/modelist.pl
 share/irssi/scripts/mood.pl
 share/irssi/scripts/morse.pl
-share/irssi/scripts/mouse_soliton.pl
+share/irssi/scripts/mouse.pl
 share/irssi/scripts/mpg123.pl
 share/irssi/scripts/multipaste.pl
 share/irssi/scripts/my_beep.pl
