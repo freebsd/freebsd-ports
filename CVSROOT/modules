@@ -7060,6 +7060,7 @@ lemmatizer                      ports/textproc/lemmatizer
 lemmatizer2                     ports/textproc/lemmatizer2
 lemon                           ports/devel/lemon
 lens                            ports/mail/lens
+lensfun                         ports/graphics/lensfun
 lensnns                         ports/math/lensnns
 leo                             ports/editors/leo
 leocad                          ports/cad/leocad
@@ -8189,6 +8190,9 @@ lua50-pty                       ports/devel/lua50-pty
 luabind                         ports/devel/luabind
 luajava                         ports/devel/luajava
 luasocket                       ports/net/luasocket
+luasql-mysql                    ports/databases/luasql-mysql
+luasql-postgres                 ports/databases/luasql-postgres
+luasql-sqlite3                  ports/databases/luasql-sqlite3
 lucene                          ports/textproc/lucene
 lucidlife                       ports/games/lucidlife
 luckybackup                     ports/sysutils/luckybackup
@@ -12692,6 +12696,7 @@ p5-String-Parity                ports/devel/p5-String-Parity
 p5-String-Random                ports/devel/p5-String-Random
 p5-String-RexxParse             ports/devel/p5-String-RexxParse
 p5-String-Scanf                 ports/textproc/p5-String-Scanf
+p5-String-SetUTF8               ports/converters/p5-String-SetUTF8
 p5-String-ShellQuote            ports/textproc/p5-String-ShellQuote
 p5-String-ShowDiff              ports/textproc/p5-String-ShowDiff
 p5-String-Similarity            ports/devel/p5-String-Similarity
@@ -13120,6 +13125,7 @@ p5-VCS-CVS                      ports/devel/p5-VCS-CVS
 p5-VCS-Lite                     ports/devel/p5-VCS-Lite
 p5-Validate-Net                 ports/net/p5-Validate-Net
 p5-Variable-Magic               ports/devel/p5-Variable-Magic
+p5-Verilog-Perl                 ports/cad/p5-Verilog-Perl
 p5-Video-Info                   ports/multimedia/p5-Video-Info
 p5-Video-OpenQuicktime          ports/multimedia/p5-Video-OpenQuicktime
 p5-Visio                        ports/graphics/p5-Visio
@@ -16157,6 +16163,7 @@ p5-string-parity                ports/devel/p5-String-Parity
 p5-string-random                ports/devel/p5-String-Random
 p5-string-rexxparse             ports/devel/p5-String-RexxParse
 p5-string-scanf                 ports/textproc/p5-String-Scanf
+p5-string-setutf8               ports/converters/p5-String-SetUTF8
 p5-string-shellquote            ports/textproc/p5-String-ShellQuote
 p5-string-showdiff              ports/textproc/p5-String-ShowDiff
 p5-string-similarity            ports/devel/p5-String-Similarity
@@ -16622,6 +16629,7 @@ p5-vcp-source-cvsbk             ports/devel/p5-VCP-Source-cvsbk
 p5-vcs                          ports/devel/p5-VCS
 p5-vcs-cvs                      ports/devel/p5-VCS-CVS
 p5-vcs-lite                     ports/devel/p5-VCS-Lite
+p5-verilog-perl                 ports/cad/p5-Verilog-Perl
 p5-version                      ports/devel/p5-version
 p5-video-info                   ports/multimedia/p5-Video-Info
 p5-video-openquicktime          ports/multimedia/p5-Video-OpenQuicktime
@@ -22762,6 +22770,7 @@ wavplay                         ports/audio/wavplay
 wb                              ports/mbone/wb
 wb0                             ports/www/wb0
 wbar                            ports/x11/wbar
+wbarconf                        ports/x11/wbarconf
 wbl                             ports/mail/wbl
 wbxml2                          ports/textproc/wbxml2
 wcalc                           ports/math/wcalc
