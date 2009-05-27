@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	konversation
-PORTVERSION=	1.1
+DISTVERSION=	1.2-alpha1
 CATEGORIES=	irc kde
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A user friendly IRC client for KDE
 
-USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+LATEST_LINK=	${PORTNAME}-kde4
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_XORG=	x11 xscrnsaver
+USE_KDE4=	kdeprefix pimlibs automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>
