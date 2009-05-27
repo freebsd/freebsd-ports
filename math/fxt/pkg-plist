@@ -266,6 +266,7 @@ include/fxt/convolution/realconvolution.h
 include/fxt/convolution/slowcnvl.h
 include/fxt/convolution/slowcnvla.h
 include/fxt/convolution/slowcnvlhalf.h
+include/fxt/convolution/slowcnvl-lin.h
 include/fxt/convolution/slowconvolution.h
 include/fxt/convolution/slowtwodimcnvl.h
 include/fxt/convolution/slowweightedcnvl.h
@@ -360,6 +361,8 @@ include/fxt/perm/permcompose.h
 include/fxt/perm/perminvert.h
 include/fxt/perm/permq.h
 include/fxt/perm/permrand.h
+include/fxt/perm/permrand-cyclic.h
+include/fxt/perm/permrand-parity.h
 include/fxt/perm/permrand-cycle-type.h
 include/fxt/perm/permrand-derange.h
 include/fxt/perm/permrand-self-inverse.h
