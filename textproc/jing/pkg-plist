@@ -1,19 +1,20 @@
+bin/jing
 %%JAVAJARDIR%%/jing.jar
-%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/build.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/datatype-sample.jar
-%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/datatype-sample.rng
-%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/index.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/invalid.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/src/META-INF/services/org.relaxng.datatype.DatatypeLibraryFactory
-%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype/sample/BalancedString.java
-%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype/sample/SimpleDatatypeLibrary.java
-%%PORTDOCS%%%%EXAMPLESDIR%%/datatype/valid.xml
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype/sample
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/com/thaiopensource
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/com
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/META-INF/services
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src/META-INF
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype/src
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/datatype
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatype/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatype/datatype-sample.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatype/datatype-sample.rng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatype/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatype/invalid.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatype/src/META-INF/services/org.relaxng.datatype.DatatypeLibraryFactory
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype/sample/BalancedString.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype/sample/SimpleDatatypeLibrary.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatype/valid.xml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype/sample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatype/src/com/thaiopensource/datatype
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatype/src/com/thaiopensource
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatype/src/com
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatype/src/META-INF/services
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatype/src/META-INF
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatype/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatype
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
