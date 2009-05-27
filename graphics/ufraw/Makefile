@@ -7,7 +7,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -30,19 +30,29 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS=	--enable-mime
-
 PC_FALSE+=	cinepaint
-.ifndef WITHOUT_EXIV2
+
+OPTIONS=	EXIV2	"EXIF support via exiv2 library"	on	\
+		GIMP	"Install GIMP UFRaw plugin"		on	\
+		LENSFUN	"Build with LenFun library support"	on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_EXIV2)
 LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
 .else
 PC_FALSE+=	exiv2
 .endif
-.ifndef WITHOUT_GIMP
+.if !defined(WITHOUT_GIMP)
 LIB_DEPENDS+=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app
 PLIST_SUB+=	GIMP=""
 .else
 PC_FALSE+=	gimp
 PLIST_SUB+=	GIMP="@comment "
+.endif
+.if !defined(WITHOUT_LENSFUN)
+LIB_DEPENDS+=	lensfun.0:${PORTSDIR}/graphics/lensfun
+CONFIGURE_ARGS+=	--with-lensfun
 .endif
 
 MAN1=	ufraw.1
@@ -54,4 +64,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/PKG_CONFIG.*$i/s|$$PKG_CONFIG|${FALSE}|' ${WRKSRC}/configure
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
