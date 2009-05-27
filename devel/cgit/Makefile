@@ -19,6 +19,8 @@ COMMENT=	A fast webinterface for git
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl
 
+BROKEN=		does not fetch
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
