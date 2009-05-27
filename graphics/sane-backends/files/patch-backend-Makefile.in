@@ -6,7 +6,7 @@
  am_libxerox_mfp_la_OBJECTS = libxerox_mfp_la-xerox_mfp.lo
  libxerox_mfp_la_OBJECTS = $(am_libxerox_mfp_la_OBJECTS)
 -DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include/sane
-+DEFAULT_INCLUDES = -I$(top_builddir)/include/sane -I.@am__isrc@ 
++DEFAULT_INCLUDES = -I$(top_builddir)/include/sane -I$(top_builddir)/include -I.@am__isrc@ 
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
  COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
