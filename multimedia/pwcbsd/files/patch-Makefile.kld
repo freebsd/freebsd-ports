@@ -1,0 +1,11 @@
+--- Makefile.kld.orig	2006-02-17 00:18:15.000000000 +0100
++++ Makefile.kld	2009-05-27 20:22:49.137318240 +0200
+@@ -1,6 +1,7 @@
+ SRCS=bus_if.h device_if.h opt_usb.h pwc.c pwc-ctrl.c \
+      pwc-dec1.c pwc-dec23.c pwc-kiara.c pwc-misc.c \
+-     pwc-timon.c pwc-uncompress.c pwc-v4l.c
++     pwc-timon.c pwc-uncompress.c pwc-v4l.c opt_bus.h \
++     usb_if.h
+ KMOD=pwc
+ KMODDIR?=/boot/modules
+ #DEBUG_FLAGS=-g
