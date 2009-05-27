@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	samesame
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.akruijff.dds.nl/samesame/ \
+MASTER_SITES=	http://samesame.kruijff.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
 
@@ -27,13 +27,9 @@ USE_BZIP2=	yes
 OPTIONS=	DEBUG "Enables debugging support" Off \
 		DISK_STORAGE "Allow temporarily storage paths on disk" On \
 		LOGIC "Determine results by using logic when posible" On \
-		TEST "Run quality assurance test" On
+		TEST "Run quality assurance test" Off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800064
-BROKEN=	does not build
-.endif
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-DDEBUG
@@ -51,6 +47,9 @@ CFLAGS+=	-DWITH_MMAP
 CFLAGS+=	-D'TEMP_STORAGE_DIR=\"/tmp\"'
 CFLAGS+=	-DPATH_INIT=256
 CFLAGS+=	-DSTATIC_CACHE_CAPACITY=8192
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@||g' ${WRKSRC}/Makefile
 
 post-build:
 .if defined(WITH_TEST)

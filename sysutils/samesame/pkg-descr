@@ -19,4 +19,4 @@ Typical usage would be:
 This would search for identical files and clean up wasted disk space by
 linking them together. Add the option -n after samelink for a dry-run.
 
-WWW: http://www.akruijff.dds.nl/samesame/
+WWW:	http://www.akruijff.dds.nl/samesame/
