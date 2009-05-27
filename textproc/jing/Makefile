@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	jing
-PORTVERSION=	2003.06.19
-PORTREVISION=	2
+PORTVERSION=	2008.10.28
 CATEGORIES=	textproc java
-MASTER_SITES=	http://www.thaiopensource.com/download/
+MASTER_SITES=	http://jing-trang.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	A RELAX NG validator in Java
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
+SUB_FILES=	jing.sh
+
 do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/jing.sh ${PREFIX}/bin/jing
 	${INSTALL_DATA} ${WRKSRC}/bin/jing.jar ${JAVAJARDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
