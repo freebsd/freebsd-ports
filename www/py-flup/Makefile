@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flup
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	www python
 MASTER_SITES=	http://www.saddi.com/software/flup/dist/ \
 		CHEESESHOP
