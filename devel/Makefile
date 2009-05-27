@@ -2367,6 +2367,7 @@
     SUBDIR += py-polib
     SUBDIR += py-pp
     SUBDIR += py-pqueue
+    SUBDIR += py-protobuf
     SUBDIR += py-protocols
     SUBDIR += py-protocols-devel
     SUBDIR += py-psyco
