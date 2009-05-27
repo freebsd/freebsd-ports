@@ -22,4 +22,10 @@ MAKE_ENV+=	MANDIR=${PREFIX}/man/man
 do-patch:
 	@${REINPLACE_CMD} 's/-Werror//' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
