@@ -24,6 +24,10 @@ IGNORE=		Requires kernel source (/usr/src/sys) to build
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build
+.endif
+
 post-build:
 	@${REINPLACE_CMD} -e 's|%%INITIAL_INSTALLDIR%%|${PREFIX}/lib|g' ${BUILD_WRKSRC}/uppcsetup
 	@${REINPLACE_CMD} -e 's|%%INITIAL_MODDIR%%|${KMODDIR}|g' ${WRKSRC}/uppcsetup
