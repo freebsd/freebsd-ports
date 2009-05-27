@@ -7,7 +7,7 @@ ftp://moulon.inra.fr/pub/ruby/# New ports collection makefile for:	PL/Ruby
 
 PORTNAME=	plruby
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
