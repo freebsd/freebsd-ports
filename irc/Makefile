@@ -66,6 +66,7 @@
     SUBDIR += keitairc
     SUBDIR += kmyirc
     SUBDIR += konversation
+    SUBDIR += konversation-kde4
     SUBDIR += kvirc
     SUBDIR += kvirc-devel
     SUBDIR += kwirc
