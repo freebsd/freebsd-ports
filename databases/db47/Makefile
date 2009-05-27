@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db47
-PORTVERSION=	4.7.25.3
+PORTVERSION=	4.7.25.4
 CATEGORIES=	databases
 MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 		http://download-east.oracle.com/berkeley-db/ \
@@ -20,12 +20,15 @@ PATCHFILES=	patch.4.7.25.1 patch.4.7.25.2 patch.4.7.25.3
 PATCH_DIST_STRIP=	-d .. --ignore-whitespace
 # * patch.4.7.25.1: -----------------------------------------------------------
 # # [#16406] Replication clients should be able to open a sequence.
-#
 # * patch.4.7.25.2: -----------------------------------------------------------
 # # [#16415] DB_ENV->lock_get may self deadlock if user defined locks
 #	     are used and there is only one lock partition defined.
 # * patch.4.7.25.3: -----------------------------------------------------------
 # # [#16541] Fix for dd segfaults.
+# * patch.4.7.25.4: -----------------------------------------------------------
+# # [#16299] Fix a bug which could cause a SEGV in __repmgr_available_site if a
+#            site becomes master after winning an election but is still
+#            processing client messages.
 
 # I allow matthias.andree@gmx.de and all freebsd committer to do changes
 # to this package.
