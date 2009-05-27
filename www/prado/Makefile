@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prado
-PORTVERSION=	3.1.4.r2603
+PORTVERSION=	3.1.5.r2662
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	prado3
@@ -28,9 +28,8 @@ USE_ZIP=	yes
 USE_APACHE=	2.0+
 
 NO_BUILD=	yes
-IGNORE_WITH_PHP=4
-USE_PHP=	session
 WANT_PHP_WEB=	yes
+USE_PHP=	session
 
 SUB_FILES=	pkg-message
 
@@ -45,6 +44,9 @@ CONFDIR_REL=	${APACHEETCDIR}/Includes
 
 .include <bsd.port.pre.mk>
 
+DEFAULT_PHP_VER=5
+IGNORE_WITH_PHP=4
+
 WITH_PHP_CGI?=	/cgi-bin/php
 
 .if ${PHP_SAPI:Mcgi} == "cgi" && ${PHP_SAPI:Mmod} == ""
@@ -52,9 +54,6 @@ CGI_EXT=	-cgi
 .else
 CGI_EXT=
 .endif
-
-DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
@@ -71,7 +70,7 @@ SUB_LIST+=	HASHMARK=
 .endif
 
 .if defined(NOPORTEXAMPLES)
-DEMOS=		
+DEMOS=
 .else
 DEMOS=		demos
 .endif
@@ -87,6 +86,16 @@ USE_PHP+=	dom spl ctype pcre
 USE_PHP+=	pdo iconv zlib sqlite memcache mcrypt xsl soap
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
 .endif
+
+# Maintainer-mode target to speed up fixup of output from genplist
+fix-new-plist:
+	@if [ -f pkg-plist.new ]; then \
+		${PERL} -ni.bak -e \
+			's#^(.*%%WWWDIR%%/demos)#%%PORTEXAMPLES%%$$1#g; \
+			print;' pkg-plist.new; \
+	else \
+		${ECHO_CMD} Please run genplist to create pkg-plist.new; \
+	fi
 
 confighelp:
 	@${ECHO_MSG} ""
@@ -104,7 +113,7 @@ confighelp:
 	@${ECHO_MSG} ""
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "index.html ${DEMOS} editors \
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "index.html ${DEMOS} \
 		framework requirements tests" ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
