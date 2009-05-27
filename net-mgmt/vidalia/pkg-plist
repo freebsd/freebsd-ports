@@ -1,3 +1,23 @@
 bin/vidalia
 share/applications/vidalia.desktop
+share/icons/hicolor/128x128/apps/vidalia.png
+share/icons/hicolor/16x16/apps/vidalia.png
+share/icons/hicolor/22x22/apps/vidalia.png
+share/icons/hicolor/32x32/apps/vidalia.png
+share/icons/hicolor/48x48/apps/vidalia.png
+share/icons/hicolor/64x64/apps/vidalia.png
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications

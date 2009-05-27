@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vidalia
-PORTVERSION=	0.1.11
-PORTREVISION=	1
+PORTVERSION=	0.1.12
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.vidalia-project.net:8001/vidalia/
 
@@ -17,7 +16,7 @@ COMMENT=	A graphical Tor controller based on Qt 4.x
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build network xml linguist
+QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build network xml linguist_build
 
 HAVE_TOR!=	if pkg_info -I tor-\* >/dev/null 2>&1 ; then ${ECHO} YES; fi
 
