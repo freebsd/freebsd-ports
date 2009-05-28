@@ -2390,6 +2390,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Amf/Value/MessageHeader.php
 %%DATADIR%%/library/Zend/Amf/Value/Messaging/AbstractMessage.php
 %%DATADIR%%/library/Zend/Amf/Value/Messaging/AcknowledgeMessage.php
+%%DATADIR%%/library/Zend/Amf/Value/Messaging/ArrayCollection.php
 %%DATADIR%%/library/Zend/Amf/Value/Messaging/AsyncMessage.php
 %%DATADIR%%/library/Zend/Amf/Value/Messaging/CommandMessage.php
 %%DATADIR%%/library/Zend/Amf/Value/Messaging/ErrorMessage.php
@@ -6081,6 +6082,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Server/ReflectionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/AkismetTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/AbstractTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/AvailabilityzonesTest.php
