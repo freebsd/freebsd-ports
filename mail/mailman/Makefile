@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.11
+DISTVERSION=	2.1.12
 CATEGORIES?=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://www.list.org/
-MASTER_SITE_SUBDIR=	mailman
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
@@ -27,6 +26,7 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 
 HAS_CONFIGURE=	yes
 USE_PYTHON=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS+=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
