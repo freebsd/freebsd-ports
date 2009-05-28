@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vshnu
-PORTVERSION=	1.0304
+PORTVERSION=	1.0305
 CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
