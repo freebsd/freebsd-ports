@@ -1,0 +1,11 @@
+--- gatling_features.h.orig	2009-04-13 16:18:09.000000000 +0200
++++ gatling_features.h	2009-04-13 16:19:18.000000000 +0200
+@@ -6,7 +6,7 @@
+ // #define SUPPORT_BITTORRENT
+ 
+ #define SUPPORT_SERVERSTATUS
+-#define SUPPORT_SMB
++#undef SUPPORT_SMB
+ #define SUPPORT_FTP
+ #define SUPPORT_PROXY
+ /* #define DEBUG to enable more verbose debug messages for tracking fd

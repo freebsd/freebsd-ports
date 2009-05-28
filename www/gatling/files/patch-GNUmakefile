@@ -1,7 +1,7 @@
---- GNUmakefile.orig	Wed Jan 31 18:05:38 2007
-+++ GNUmakefile	Mon Aug 27 16:49:36 2007
-@@ -1,21 +1,26 @@
- #DEBUG=1
+--- GNUmakefile.orig	2009-04-09 19:00:23.000000000 +0200
++++ GNUmakefile	2009-04-10 17:46:56.000000000 +0200
+@@ -1,24 +1,23 @@
+-#DEBUG=1
 -ZLIB=1
 -prefix=/opt/diet
 +prefix=${PREFIX}
@@ -10,34 +10,33 @@
  man1dir=$(MANDIR)/man1
  
 -TARGETS=gatling httpbench bindbench dl ioerr bench tlsgatling \
--pthreadbench cgi getlinks rellink acc hcat
+-pthreadbench cgi
 -TARGETS2=mktestdata mmapbench manymapbench forkbench forksbench
-+TARGETS=cgi dl gatling getlinks rellink acc hcat referrer
++TARGETS=gatling dl \
++cgi
 +TARGETS2=
 +ifdef BENCHMARKS
-+TARGETS+=httpbench bindbench ioerr pthreadbench
++TARGETS+=httpbench bindbench ioerr bench pthreadbench
 +TARGETS2+=mktestdata mmapbench manymapbench forkbench forksbench
 +endif
 +ifdef TLSGATLING
 +TARGETS+=tlsgatling
 +endif
+ ALLTARGETS=$(TARGETS) acc hcat referrer hitprofile matchiprange getlinks \
+ rellink $(TARGETS2)
  
--all: $(TARGETS) $(TARGETS2)
-+all: checklibs $(TARGETS) $(TARGETS2)
+ all: $(ALLTARGETS)
  
 -CROSS=
-+#CROSS=
- #CROSS=i686-mingw32-
+-#CROSS=i686-mingw32-
 -CC=$(CROSS)gcc
 -CFLAGS=-pipe -Wall
 -LDFLAGS=
-+#CC=$(CROSS)gcc
-+#CFLAGS=-pipe -Wall
-+#LDFLAGS=
- 
+-
  path = $(subst :, ,$(PATH))
  diet_path = $(foreach dir,$(path),$(wildcard $(dir)/diet))
-@@ -32,15 +37,11 @@
+ ifeq ($(strip $(diet_path)),)
+@@ -34,15 +33,11 @@
  # to build without diet libc support, use $ make DIET=
  # see http://www.fefe.de/dietlibc/ for details about the diet libc
  
@@ -55,7 +54,7 @@
  endif
  
  LDLIBS=-lowfat
-@@ -66,7 +67,7 @@
+@@ -68,7 +63,7 @@
  CC:=$(DIET) $(CC)
  
  pthreadbench: pthreadbench.o
@@ -64,16 +63,20 @@
  
  forksbench: forkbench.o
  	$(CC) -static -o $@ forkbench.o $(LDFLAGS) $(LDLIBS)
-@@ -74,7 +75,7 @@
- gatling.o: version.h havesetresuid.h
+@@ -86,9 +81,11 @@
+ gatling: gatling.o $(OBJS) md5lib
+ 	$(CC) $(LDFLAGS) $@.o $(OBJS) -o $@ $(LDLIBS) `cat md5lib`
  
- tlsgatling: gatling.c ssl.o mime.o
--	-$(CC) -o $@ gatling.c ssl.o mime.o $(CFLAGS) -DSUPPORT_HTTPS $(LDFLAGS) -lssl -lcrypto $(LDLIBS)
-+	$(CC) -o $@ gatling.c ssl.o mime.o $(CFLAGS) -DSUPPORT_HTTPS $(LDFLAGS) -lssl -lcrypto $(LDLIBS)
- 
- gatling: gatling.o mime.o
- 	$(CC) $(LDFLAGS) $@.o mime.o -o $@ $(LDLIBS)
-@@ -107,9 +108,13 @@
++dl: dl.c havestrndup havestrndup.h
++	$(CC) $(CFLAGS) dl.c `cat havestrndup` $(LDFLAGS) -lowfat -o $@
++
+ httpbench: httpbench.o
+ bindbench: bindbench.o
+-dl: dl.o
+ ioerr: ioerr.o
+ bench: bench.o
+ getlinks: getlinks.o
+@@ -121,9 +118,13 @@
  	rm -f trysocket
  
  libiconv: tryiconv.c
@@ -81,7 +84,7 @@
 -	if $(CC) $(CFLAGS) -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-liconv"; \
 -	fi; fi > libiconv
 +ifdef ICONV
-+	if $(CC) $(CFLAGS) -L$(LOCALBASE)/lib -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-L$(LOCALBASE)/lib -liconv"; else \
++	if $(CC) $(CFLAGS) $(LDFLAGS) -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-L$(LDFLAGS) -liconv"; else \
 +	echo ""; \
 +	fi > libiconv
 +else
@@ -90,25 +93,14 @@
  	rm -f tryiconv
  
  libcrypt: trycrypt.c
-@@ -130,9 +135,11 @@
- 	ar q $@ dummy.o
- 	-ranlib $@
+@@ -144,6 +145,10 @@
+ 	if $(CC) $(CFLAGS) -o tryresuid $^ >/dev/null 2>&1; then echo "#define LIBC_HAS_SETRESUID"; fi > $@
+ 	-rm -f tryresuid
  
-+checklibs: libsocket libiconv libcrypt
++havestrndup havestrndup.h: trystrndup.c
++	if $(CC) $(CFLAGS) -o trystrndup $^ >/dev/null 2>&1; then echo "">havestrndup; echo "#define LIBC_HAS_STRNDUP">havestrndup.h; else echo "strndup.c">havestrndup; echo "">havestrndup.h; fi
++	rm -f trystrndup
 +
- LDLIBS+=`cat libsocket libiconv libcrypt`
+ dummy.c:
+ 	touch $@
  
--$(TARGETS): libsocketkludge.a libsocket libiconv libcrypt
-+$(TARGETS): libsocketkludge.a
- 
- install: gatling dl getlinks
- 	install -d $(DESTDIR)$(BINDIR) $(man1dir)
-@@ -144,7 +151,7 @@
- 	rm -f $(DESTDIR)$(BINDIR)/gatling $(DESTDIR)$(BINDIR)/tlsgatling $(DESTDIR)$(man1dir)/gatling.1 $(DESTDIR)$(man1dir)/bench.1
- 
- clean:
--	rm -f $(TARGETS) *.o version.h core *.core libsocket libsocketkludge.a dummy.c libiconv libcrypt havesetresuid.h
-+	rm -f $(TARGETS) $(TARGETS2) *.o version.h core *.core libsocket libsocketkludge.a dummy.c libiconv libcrypt havesetresuid.h
- 
- VERSION=gatling-$(shell head -n 1 CHANGES|sed 's/://')
- CURNAME=$(notdir $(shell pwd))

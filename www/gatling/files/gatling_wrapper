@@ -1,0 +1,91 @@
+#!/bin/sh -T
+#
+#-
+# Copyright 2009 Thomas-Martin Seck. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted providing that the following conditions 
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 
+# THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# $FreeBSD$
+#
+# gatling_wrapper {gatling|tlsgatling} [options]
+#
+# A simple wrapper script for gatling (or any other program that does not
+# daemonize itself and logs to stdout).
+#
+# This wrapper tries to emulate part of the functionality usually supplied
+# by software like daemontools or runit.
+# It can be used by a FreeBSD port rc.d script to start a program
+# that does not daemonize itself and logs to stdout/stderr. It redirects stdout
+# and stderr to logger(1) via a fifo.
+#
+# Note: We need a shell that can offer us asynchronous trap handling in order
+# to be able to abort the infinite loop from outside.  FreeBSD's /bin/sh offers
+# the "-T" switch for this purpose.
+#
+# TODO: send fd 2 output to never-never land to get rid of "Terminated" when we
+# kill this script but provide a way for errx() to communicate with the outside
+# world via stderr.
+
+errx() {
+	echo "${me}: $@" >&2
+	exit 1
+}
+
+cleanup() {
+	rm -rf ${tmpdir}
+	rm -f ${pidfile}
+}
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+me=${0##*/}
+logger=/usr/bin/logger
+daemon_log_facility=daemon.notice
+self_log_facility=daemon.notice
+pidfile=/var/run/${me}.pid
+daemon_name=gatling
+daemon_program="$1"
+shift
+
+test -x "${daemon_program}" || errx "cannot execute ${daemon_program}!"
+test -x ${logger} || errx "cannot execute ${logger}!"
+test -f ${pidfile} && errx "${pidfile} is already present -- is another instance of ${me} running?"
+echo $$ >${pidfile} || errx "cannot write to ${pidfile}!"
+tmpdir=`mktemp -d /tmp/${me}.XXXXXXXXXX` || errx "cannot generate tmpdir!"
+
+logfifo=${tmpdir}/fifo
+mkfifo -m 0600 ${logfifo} || errx "cannot generate fifo!"
+
+while true; do
+	trap 'break' 1 2 3 6 9 15
+	${logger} -i -p ${daemon_log_facility} -t ${daemon_name} <${logfifo} &
+	log_pid=$!
+	"${daemon_program}" $@ >${logfifo} 2>&1 &
+	daemon_pid=$!
+	wait ${daemon_pid}
+	${logger} -i -p ${self_log_facility} -t ${me} "${daemon_program} died -- restarting..."
+	sleep 2
+done
+
+kill -TERM ${daemon_pid} 2>/dev/null
+wait
+cleanup
