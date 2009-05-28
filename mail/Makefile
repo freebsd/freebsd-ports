@@ -491,7 +491,6 @@
     SUBDIR += postfix24
     SUBDIR += postfixadmin
     SUBDIR += postgrey
-    SUBDIR += postilion
     SUBDIR += prayer
     SUBDIR += premail
     SUBDIR += prepflog
