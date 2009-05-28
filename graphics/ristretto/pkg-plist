@@ -25,21 +25,20 @@ share/locale/id/LC_MESSAGES/ristretto.mo
 share/locale/it/LC_MESSAGES/ristretto.mo
 share/locale/ja/LC_MESSAGES/ristretto.mo
 share/locale/lv/LC_MESSAGES/ristretto.mo
-share/locale/nb_NO/LC_MESSAGES/ristretto.mo
+share/locale/nb/LC_MESSAGES/ristretto.mo
 share/locale/nl/LC_MESSAGES/ristretto.mo
 share/locale/pl/LC_MESSAGES/ristretto.mo
+share/locale/pt/LC_MESSAGES/ristretto.mo
 share/locale/pt_BR/LC_MESSAGES/ristretto.mo
-share/locale/pt_PT/LC_MESSAGES/ristretto.mo
 share/locale/ru/LC_MESSAGES/ristretto.mo
 share/locale/sk/LC_MESSAGES/ristretto.mo
+share/locale/sv/LC_MESSAGES/ristretto.mo
 share/locale/tr/LC_MESSAGES/ristretto.mo
 share/locale/uk/LC_MESSAGES/ristretto.mo
 share/locale/ur/LC_MESSAGES/ristretto.mo
 share/locale/zh_CN/LC_MESSAGES/ristretto.mo
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
 @dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
