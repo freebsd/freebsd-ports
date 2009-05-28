@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.4.9
+PORTVERSION=	0.4.11
 CATEGORIES=	news
 MASTER_SITES=	SF/sabnzbdplus
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -21,8 +21,8 @@ RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PYTHON=	2.4+
-NO_BUILD=yes
-WRKSRC=	${WRKDIR}/SABnzbd-${PORTVERSION}
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/SABnzbd-${PORTVERSION}
 PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_LIST+=	PORTNAME=${PORTNAME}
 CONFLICTS=	sabzndb-0.*
@@ -68,7 +68,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in CHANGELOG.txt INSTALL.txt   ISSUES.txt    LICENSE.txt   README.txt
+.for i in CHANGELOG.txt INSTALL.txt ISSUES.txt LICENSE.txt README.txt
 	${CP} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
