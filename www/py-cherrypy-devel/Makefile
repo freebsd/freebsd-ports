@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherrypy
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	www python
 MASTER_SITES=	http://download.cherrypy.org/cherrypy/${PORTVERSION}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
