@@ -9,7 +9,7 @@ PORTVERSION=	0.12.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A fast, simple event-processing library for Ruby programs
 
 USE_RUBY=	yes

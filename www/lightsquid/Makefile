@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A light and fast web based squid proxy traffic analyser
 
 OPTIONS=	GDSUPPORT	"Graphics report support"	on

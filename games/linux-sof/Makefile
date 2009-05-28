@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-cdrom-x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Soldier of Fortune for Linux
 
 PATCH_DEPENDS=	xdelta:${PORTSDIR}/misc/xdelta

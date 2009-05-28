@@ -10,7 +10,7 @@ PORTVERSION=	0.6.3.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A Ruby module to generate Microsoft Excel compatible files
 
 RUN_DEPENDS=	rubygem-ruby-ole>=1.0.2:${PORTSDIR}/devel/rubygem-ruby-ole

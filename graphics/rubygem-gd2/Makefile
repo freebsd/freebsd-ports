@@ -9,7 +9,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Ruby binding for Thomas Boutell's gd 2.x graphics library #'
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

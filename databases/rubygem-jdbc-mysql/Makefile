@@ -10,7 +10,7 @@ CATEGORIES=	databases rubygems java
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	jruby-extras
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	MySQL JDBC driver for JRuby
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby

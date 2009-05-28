@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://0xbadc0de.be/libssh/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A library implementing the SSH1 and SSH2 protocol
 
 MAKE_JOBS_SAFE=	yes

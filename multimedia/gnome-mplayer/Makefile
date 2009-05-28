@@ -10,7 +10,7 @@ PORTVERSION=	0.9.5
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GNOME frontend for MPlayer
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib

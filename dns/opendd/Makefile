@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.bsdmon.com/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A small DynDNS client
 
 OPTIONS=	OPENSSL	"Build with SSL support"	on \

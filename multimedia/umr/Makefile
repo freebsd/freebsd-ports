@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://pages.cthome.net/chrismp/umr/
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Unreal Media Ripper
 
 MAKE_JOBS_SAFE=	yes

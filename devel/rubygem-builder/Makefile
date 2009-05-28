@@ -11,7 +11,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Facilitate programatic generation of XML markup
 
 USE_RUBY=	yes

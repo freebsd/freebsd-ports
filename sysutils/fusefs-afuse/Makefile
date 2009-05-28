@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	An automounting file system implemented in user-space using FUSE
 
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod

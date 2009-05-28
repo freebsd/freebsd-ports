@@ -10,7 +10,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GVFS module for access Windows Mobile devices
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2

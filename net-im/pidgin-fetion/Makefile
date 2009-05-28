@@ -11,7 +11,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/
 PKGNAMEPREFIX=	pidgin-
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Fetion protocol plugin for libpurple
 
 LIB_DEPENDS=	purple.5:${PORTSDIR}/net-im/libpurple

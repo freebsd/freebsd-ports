@@ -10,7 +10,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=     mongrel
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Gem Based Plugin System
 
 RUN_DEPENDS=	${BUILD_DEPENDS}

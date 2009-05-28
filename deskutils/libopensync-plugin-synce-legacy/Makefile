@@ -11,7 +11,7 @@ CATEGORIES=	deskutils palm
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	-legacy
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	SynCE legacy plugin for the OpenSync framework
 
 LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \

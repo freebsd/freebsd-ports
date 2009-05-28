@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.thp.uni-duisburg.de/pub/source/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	List processes as a tree
 
 NO_WRKSUBDIR=	yes

@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 PKGNAMEPREFIX=	synce-
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Listener daemon for connections from WinCE devices
 
 LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce

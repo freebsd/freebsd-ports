@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Evolution 2 plugin for the OpenSync framework
 
 LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync

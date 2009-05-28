@@ -10,7 +10,7 @@ PORTVERSION=	0.9.5
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Multimedia browser plugin for Gecko based browsers
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib

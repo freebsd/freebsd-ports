@@ -15,7 +15,7 @@ MASTER_SITES=	http://ftp.belnet.be/packages/dries.ulyssis.org/fedora/fc4/i386/RP
 PKGNAMESUFFIX=	-c2
 DISTNAME=	${PORTNAME}-c-${PORTVERSION}-1.fc4.rf
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project (linux version)
 
 USE_LINUX_RPM=	yes

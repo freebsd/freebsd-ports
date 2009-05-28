@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A toolbar button to close all open tabs
 
 XPI_DISTNAME=	close_all_tabs

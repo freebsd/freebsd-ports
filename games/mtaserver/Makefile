@@ -14,7 +14,7 @@ MASTER_SITES=	http://files.gonnaplay.com/201/:main \
 DISTFILES=	${MTANAME}0_5-linux.tar.gz:main,both ${MTANAME}0_5-linux-patch1.tar.gz:patch,both
 DIST_SUBDIR=	mta
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Multi Theft Auto: Vice City and GTA3 dedicated server
 
 USE_LINUX=	yes

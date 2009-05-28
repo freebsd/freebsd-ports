@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A command line client for the OpenSync framework
 
 LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync

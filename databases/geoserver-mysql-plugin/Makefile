@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 PKGNAMESUFFIX=	-mysql-plugin
 DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A MySQL DataStore implementation for GeoServer
 
 RUN_DEPENDS=	${LOCALBASE}/geoserver/start.jar:${PORTSDIR}/graphics/geoserver

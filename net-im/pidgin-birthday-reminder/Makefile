@@ -11,7 +11,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	SF/pidgin-birthday
 PKGNAMEPREFIX=	pidgin-
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	The birthday reminder for Pidgin
 
 LIB_DEPENDS=	purple.5:${PORTSDIR}/net-im/libpurple

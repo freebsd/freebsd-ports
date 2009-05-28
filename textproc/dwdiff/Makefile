@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A delimited word diff program
 
 OPTIONS=	UNICODE	"Build with Unicode support"	on

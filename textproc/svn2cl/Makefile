@@ -10,7 +10,7 @@ PORTVERSION=	0.11
 CATEGORIES=	textproc
 MASTER_SITES=	http://ch.tudelft.nl/~arthur/svn2cl/
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Subversion ChangeLog generator
 
 RUN_DEPENDS=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \

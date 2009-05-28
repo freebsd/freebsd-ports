@@ -9,7 +9,7 @@ PORTVERSION=	0.0.11
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Easy to use and customize/extend implementation of captcha
 
 BUILD_DEPENDS=	rubygem-gd2>=1.0.0:${PORTSDIR}/graphics/rubygem-gd2
