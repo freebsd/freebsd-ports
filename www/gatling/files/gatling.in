@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: gatling
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Set "gatling_enable=yes" in either /etc/rc.conf, /etc/rc.conf.local or
+# /etc/rc.conf.d/gatling to enable gatling.
+#
+# Set gatling_root if you want to serve files from other locations than
+# the default (%%PREFIX%%/www/data).
+#
+# Set gatling_ftp_enable=yes to make gatling serve files via FTP, too.
+#
+# Set gatling_ssl_enable=yes to serve files via HTTPS/SSL (needs tlsgatling).
+#
+# Additionally, you can set gatling_effective_user and gatling_flags; please
+# see gatling(8) for further information about possible gatling_flags.
+
+check_user() {
+	/usr/sbin/pw usershow -n ${gatling_effective_user} -q >/dev/null
+}
+
+. %%RC_SUBR%%
+
+name=gatling
+rcvar=`set_rcvar`
+
+load_rc_config ${name}
+
+gatling_enable=${gatling_enable-"NO"}
+gatling_root=${gatling_root:-%%PREFIX%%/www/data}
+# needed to bind privileged ports at startup:
+gatling_user=root
+gatling_effective_user=${gatling_effective_user:-www}
+gatling_flags="-u ${gatling_effective_user} -c ${gatling_root} ${gatling_flags}"
+case "${gatling_ftp_enable}" in
+	[Yy][Ee][Ss])
+	gatling_flags="-f ${gatling_flags}"
+	;;
+	*)
+	gatling_flags="-F ${gatling_flags}"
+	;;
+esac
+
+case "${gatling_ssl_enable}" in
+	[Yy][Ee][Ss])
+	which_gatling="%%PREFIX%%/sbin/tlsgatling"
+	;;
+	*)
+	which_gatling="%%PREFIX%%/sbin/gatling"
+	;;
+esac
+
+gatling_flags="${which_gatling} ${gatling_flags} &"
+command="%%PREFIX%%/sbin/gatling_wrapper"
+command_interpreter="/bin/sh -T"
+pidfile=/var/run/gatling_wrapper.pid
+required_dirs="${gatling_root}"
+required_files="${which_gatling}"
+
+start_precmd=check_user
+run_rc_command "$1"
+
