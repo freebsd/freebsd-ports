@@ -25,6 +25,10 @@ ERROR_ADDRESS=root@localhost
 SCP_DEST_HOST=root@localhost
 SCP_DEST_TMP=/tmp
 SCP_DEST_DIR=/usr/local/www/ports
+SNAP_DIR=a/snap/ports
+
+# Privileged zfs command
+ZFSCMD="/usr/local/bin/sudo /sbin/zfs"
 
 # Location of ports tree and source trees
 export BASEDIR=/local0/tmp/kris/tindex
@@ -45,28 +49,19 @@ export SSHKEY="-i /home/kris/.ssh/id_dsa-index"
 
 blame() {
   # Find out who is responsible for current version of file $1
-
-  # Fastest way to extract is from the CVS "FreeBSD" tag
-  ident=$(ident $1 2>/dev/null | grep '$FreeBSD')
+  ident=$(ident ${BASEDIR}/$1 2>/dev/null | grep '$FreeBSD')
   who=$(echo $ident | awk '{print $6}')
 
-  if [ -z "$ident" ]; then
-    # No FreeBSD tag, fall back to slower method of parsing cvs logs.
-    rev=$(cvs status $1 2>/dev/null | grep 'Working revision:' | awk '{print $3}')
-    if [ "$rev" != "No" ]; then    # "No" means not under CVS control
-      ident=$(cvs -Rq log -r$rev $1 | grep "^date:" | head -1 | sed 's,;,,g')
-      who=$(echo $ident | awk '{print $5}')
-    fi
+  if [ ! -z $who ]; then
+  	echo $who
   fi
-
-  echo $who
 }
 
 indexfail() {
   BRANCH=$1
 
   # Leave a cookie behind so that we know when the index is fixed
-  touch ${PORTSDIR}/broken.${BRANCH}
+  touch ${BASEDIR}/broken.${BRANCH}
 
   (
     echo "INDEX build failed with errors:";
@@ -90,9 +85,9 @@ indexfail() {
 
     # Find out which committers are on the hook
 
-    commits=$(grep ^U ${PORTSDIR}/cvs.log | grep -v INDEX | awk '{print $2}')
+    commits=$(grep Edit ${PORTSDIR}/cvsup.log | awk '{print $2}')
     for i in ${commits}; do
-	blame $i >> ${PORTSDIR}/hook
+       blame $i >> ${PORTSDIR}/hook
     done
     sort -u ${PORTSDIR}/hook > ${PORTSDIR}/hook.new
     mv ${PORTSDIR}/hook.new ${PORTSDIR}/hook
@@ -102,7 +97,7 @@ indexfail() {
     echo
     echo 
     echo "Most recent CVS update was:";
-    grep -v '/work$' cvs.log | grep -v '^\?'
+    grep 'Edit' ${PORTSDIR}/cvsup.log | awk '{print $2}'
   ) | mail -s "INDEX build failed for ${BRANCH}" ${REPORT_ADDRESS}
   exit 1
 }
@@ -112,8 +107,8 @@ checkfixed() {
 
   # If the cookie exists that means that this is the first build for which the
   # INDEX succeeded, so announce this.
-  if [ -e ${PORTSDIR}/broken.${BRANCH} ]; then
-    rm -f ${PORTSDIR}/broken.${BRANCH}
+  if [ -e ${BASEDIR}/broken.${BRANCH} ]; then
+    rm -f ${BASEDIR}/broken.${BRANCH}
     mail -s "INDEX now builds successfully on ${BRANCH}" ${REPORT_ADDRESS} < /dev/null
   fi
 }
@@ -125,8 +120,38 @@ createtmpdir() {
 	exit 1
     fi
 }
-    
 
+get_parent() {
+    local fs=$1
+
+    # Check whether this filesystem has a parent
+    /sbin/zfs get -H -o value origin ${fs}
+}
+
+now() {
+    date +%Y%m%d%H%M%S
+}
+
+do_portsupdate() {
+   do_destroy
+
+   now=$(now)
+   ${ZFSCMD} snapshot ${SNAP_DIR}@${now}
+   ${ZFSCMD} clone ${SNAP_DIR}@${now} ${PORTSDIR#?}
+}
+
+do_destroy() {
+    if [ -d ${PORTSDIR} ]; then
+	parent=$(get_parent ${PORTSDIR#?})
+        ${ZFSCMD} destroy ${PORTSDIR#?} || exit 1 
+	if [ ! -z "${parent}" ]; then
+            ${ZFSCMD} destroy ${parent} || exit 1 
+	fi
+    fi
+}
+    
+    
+do_run() {
 # Sanitize the environment so that the indexes aren't customized by the
 # local machine settinge
 export __MAKE_CONF=/dev/null
@@ -152,12 +177,6 @@ OSVERSION8=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR8
 
 cd ${PORTSDIR}
 rm -f INDEX-6 INDEX-6.bz2 INDEX-7 INDEX-7.bz2 INDEX-8 INDEX-8.bz2 
-(cvs -Rq update -PdA 2>1 ) > cvs.log
-if grep -q ^C cvs.log ; then
-  (echo "cvs update failed with conflicts:";
-    grep ^C cvs.log) | mail -s "Ports cvsup failed" ${ERROR_ADDRESS}
-    exit 1
-fi
 
 for branch in 6.x 7.x 8.x; do
     release=$(echo $branch | sed -e 's,.x,,')
@@ -179,5 +198,37 @@ for branch in 6.x 7.x 8.x; do
     ssh ${SCP_DEST_HOST} "/bin/mv ${TMPDIR}/INDEX-${release} ${SCP_DEST_DIR}; /bin/mv ${TMPDIR}/INDEX-${release}.bz2 ${SCP_DEST_DIR}; rmdir ${TMPDIR}" || mail -s "Cannot move INDEX-${release} to final dir" ${ERROR_ADDRESS}
 done
 
-# All indexes built successfully, clear the hook
-rm -f ${PORTSDIR}/hook
+}
+
+usage () {
+    echo "usage: tindex <command>"
+    exit 1
+}
+
+
+#############################
+
+if [ $# -lt 1 ]; then
+  usage
+fi
+
+cmd=$1
+shift
+
+# Unprivileged commands
+case "$cmd" in
+    run)
+        do_run
+	;;
+    portsupdate)
+        do_portsupdate
+        ;;
+    destroy)
+        do_destroy
+	;;
+    *)
+        echo "Invalid command: $cmd"
+	exit 1
+	;;
+esac
+
