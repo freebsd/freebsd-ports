@@ -1,0 +1,6 @@
+bin/cscope
+bin/ocs
+%%XCSCOPE%%share/emacs/site-lisp/xcscope.el
+%%XCSCOPE%%lib/xemacs/site-lisp/xcscope.el
+%%XCSCOPE%%@dirrmtry lib/xemacs/site-lisp
+%%XCSCOPE%%@dirrmtry lib/xemacs
