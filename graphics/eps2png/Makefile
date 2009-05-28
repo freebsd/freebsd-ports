@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	eps2png
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	graphics
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/J/JV/JV
+MASTER_SITES=	CPAN/../../authors/id/J/JV/JV
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts EPS images to PNG
 
 USE_GHOSTSCRIPT=	yes
-
 PERL_CONFIGURE=	yes
+MAKE_ARGS=	INSTLLSCRIPT="${PREFIX}/bin"
 
 MAN1=		eps2png.1
-
-do-install:
-	@cd ${WRKSRC}; ${SETENV} ${INSTALL_ENV} ${MAKE} INSTALLSCRIPT=${PREFIX}/bin install
 
 .include <bsd.port.mk>
