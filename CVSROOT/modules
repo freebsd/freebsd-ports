@@ -9638,7 +9638,9 @@ octave-forge-multicore          ports/math/octave-forge-multicore
 octave-forge-nan                ports/math/octave-forge-nan
 octave-forge-nlwing2            ports/math/octave-forge-nlwing2
 octave-forge-nnet               ports/math/octave-forge-nnet
+octave-forge-nurbs              ports/math/octave-forge-nurbs
 octave-forge-ocs                ports/math/octave-forge-ocs
+octave-forge-oct2mat            ports/math/octave-forge-oct2mat
 octave-forge-octcdf             ports/math/octave-forge-octcdf
 octave-forge-octgpr             ports/math/octave-forge-octgpr
 octave-forge-odebvp             ports/math/octave-forge-odebvp
@@ -9654,7 +9656,9 @@ octave-forge-pt_br              ports/math/octave-forge-pt_br
 octave-forge-secs1d             ports/math/octave-forge-secs1d
 octave-forge-secs2d             ports/math/octave-forge-secs2d
 octave-forge-signal             ports/math/octave-forge-signal
+octave-forge-simp               ports/math/octave-forge-simp
 octave-forge-sockets            ports/math/octave-forge-sockets
+octave-forge-spanish            ports/math/octave-forge-spanish
 octave-forge-specfun            ports/math/octave-forge-specfun
 octave-forge-special-matrix     ports/math/octave-forge-special-matrix
 octave-forge-spline-gcvspl      ports/math/octave-forge-spline-gcvspl
@@ -19040,6 +19044,7 @@ py-pqueue                       ports/devel/py-pqueue
 py-prewikka                     ports/www/py-prewikka
 py-probstat                     ports/math/py-probstat
 py-prolog                       ports/lang/py-prolog
+py-protobuf                     ports/devel/py-protobuf
 py-protocols                    ports/devel/py-protocols
 py-protocols-devel              ports/devel/py-protocols-devel
 py-psyco                        ports/devel/py-psyco
