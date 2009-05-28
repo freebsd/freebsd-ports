@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	urjtag
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.10
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -17,10 +16,11 @@ COMMENT=	Extended utility to work with JTAG-aware boards
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LEX=${LOCALBASE}/bin/flex
+CONFIGURE_ENV=	LEX=${LOCALBASE}/bin/flex \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 CFLAGS+=	--std=c99
 
@@ -54,5 +54,16 @@ LIB_DEPENDS+=	ftdi.15:${PORTSDIR}/devel/libftdi
 .if exists(${LOCALBASE}/lib/libreadline.so.6)
 LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=--disable-nls
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^SVN=.*|SVN=''|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

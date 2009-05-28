@@ -1,5 +1,8 @@
 bin/bsdl2jtag
 bin/jtag
+%%NLS%%share/locale/fr/LC_MESSAGES/urjtag.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/urjtag.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/urjtag.mo
 %%DATADIR%%/MANUFACTURERS
 %%DATADIR%%/admtek/adm5120/adm5120
 %%DATADIR%%/altera/PARTS
@@ -10,6 +13,7 @@ bin/jtag
 %%DATADIR%%/altera/ep1c12/q240
 %%DATADIR%%/altera/ep1c20f400/STEPPINGS
 %%DATADIR%%/altera/ep1c20f400/ep1c20f400
+%%DATADIR%%/altera/ep1c6q240/STEPPINGS
 %%DATADIR%%/altera/ep1c6q240/ep1c6q240
 %%DATADIR%%/altera/ep2c8/STEPPINGS
 %%DATADIR%%/altera/ep2c8/ep2c8
@@ -24,6 +28,8 @@ bin/jtag
 %%DATADIR%%/altera/epm7128aetc100/STEPPINGS
 %%DATADIR%%/altera/epm7128aetc100/epm7128aetc100
 %%DATADIR%%/analog/PARTS
+%%DATADIR%%/analog/bf518/STEPPINGS
+%%DATADIR%%/analog/bf518/bf518
 %%DATADIR%%/analog/bf527/STEPPINGS
 %%DATADIR%%/analog/bf527/bf527
 %%DATADIR%%/analog/bf533/STEPPINGS
@@ -61,6 +67,8 @@ bin/jtag
 %%DATADIR%%/broadcom/bcm4712/bcm4712
 %%DATADIR%%/broadcom/bcm5421s/STEPPINGS
 %%DATADIR%%/broadcom/bcm5421s/bcm5421s
+%%DATADIR%%/broadcom/bcm6358/STEPPINGS
+%%DATADIR%%/broadcom/bcm6358/bcm6358
 %%DATADIR%%/bsdl/STD_1149_1_1990
 %%DATADIR%%/bsdl/STD_1149_1_1994
 %%DATADIR%%/bsdl/STD_1149_1_2001
@@ -98,8 +106,12 @@ bin/jtag
 %%DATADIR%%/lattice/PARTS
 %%DATADIR%%/lattice/lc4032v-tqfp48/STEPPINGS
 %%DATADIR%%/lattice/lc4032v-tqfp48/lc4032v-tqfp48
+%%DATADIR%%/lattice/lc4064zc/STEPPINGS
+%%DATADIR%%/lattice/lc4064zc/lc4064zc
 %%DATADIR%%/lattice/lc4128c-tqfp100/STEPPINGS
 %%DATADIR%%/lattice/lc4128c-tqfp100/lc4128c-tqfp100
+%%DATADIR%%/lattice/lfec2-12e/STEPPINGS
+%%DATADIR%%/lattice/lfec2-12e/lfec2-12e
 %%DATADIR%%/lattice/m4a3-256.192-fpbga256/STEPPINGS
 %%DATADIR%%/lattice/m4a3-256.192-fpbga256/m4a3-256.192-fpbga256
 %%DATADIR%%/lattice/m4a3-64.32-tqfp48/STEPPINGS
@@ -107,6 +119,12 @@ bin/jtag
 %%DATADIR%%/lexra/PARTS
 %%DATADIR%%/lexra/lx5280/STEPPINGS
 %%DATADIR%%/lexra/lx5280/lx5280
+%%DATADIR%%/marvell/88e1118/88e1118
+%%DATADIR%%/marvell/88e1118/STEPPINGS
+%%DATADIR%%/marvell/88f5182/88f5182-a2
+%%DATADIR%%/marvell/88f5182/STEPPINGS
+%%DATADIR%%/marvell/PARTS
+%%DATADIR%%/motorola/mpc8241/1.2
 %%DATADIR%%/motorola/mpc8245/1.2
 %%DATADIR%%/philips/PARTS
 %%DATADIR%%/philips/xcr3128xl-cs144/STEPPINGS
@@ -120,6 +138,11 @@ bin/jtag
 %%DATADIR%%/sigma/PARTS
 %%DATADIR%%/sigma/smp8634/STEPPINGS
 %%DATADIR%%/sigma/smp8634/smp8634
+%%DATADIR%%/ti/PARTS
+%%DATADIR%%/ti/tnetv1060/STEPPINGS
+%%DATADIR%%/ti/tnetv1060/tnetv1060
+%%DATADIR%%/ti/tnetv1061/STEPPINGS
+%%DATADIR%%/ti/tnetv1061/tnetv1061
 %%DATADIR%%/toshiba/PARTS
 %%DATADIR%%/toshiba/tx4925/STEPPINGS
 %%DATADIR%%/toshiba/tx4925/tx4925
@@ -221,9 +244,6 @@ bin/jtag
 %%DATADIR%%/xilinx/xcr3128xl-vq100/xcr3128xl-vq100
 %%DATADIR%%/xilinx/xcr3256xl-ft256/STEPPINGS
 %%DATADIR%%/xilinx/xcr3256xl-ft256/xcr3256xl-ft256
-share/locale/fr/LC_MESSAGES/urjtag.mo
-share/locale/rw/LC_MESSAGES/urjtag.mo
-share/locale/sk/LC_MESSAGES/urjtag.mo
 @dirrm %%DATADIR%%/xilinx/xcr3256xl-ft256
 @dirrm %%DATADIR%%/xilinx/xcr3128xl-vq100
 @dirrm %%DATADIR%%/xilinx/xcr3128xl-cs144
@@ -253,6 +273,9 @@ share/locale/sk/LC_MESSAGES/urjtag.mo
 @dirrm %%DATADIR%%/toshiba/tx4926
 @dirrm %%DATADIR%%/toshiba/tx4925
 @dirrm %%DATADIR%%/toshiba
+@dirrm %%DATADIR%%/ti/tnetv1061
+@dirrm %%DATADIR%%/ti/tnetv1060
+@dirrm %%DATADIR%%/ti
 @dirrm %%DATADIR%%/sigma/smp8634
 @dirrm %%DATADIR%%/sigma
 @dirrm %%DATADIR%%/sharp/lh7a400
@@ -263,12 +286,18 @@ share/locale/sk/LC_MESSAGES/urjtag.mo
 @dirrm %%DATADIR%%/philips/xcr3128xl-cs144
 @dirrm %%DATADIR%%/philips
 @dirrm %%DATADIR%%/motorola/mpc8245
+@dirrm %%DATADIR%%/motorola/mpc8241
 @dirrm %%DATADIR%%/motorola
+@dirrm %%DATADIR%%/marvell/88f5182
+@dirrm %%DATADIR%%/marvell/88e1118
+@dirrm %%DATADIR%%/marvell
 @dirrm %%DATADIR%%/lexra/lx5280
 @dirrm %%DATADIR%%/lexra
 @dirrm %%DATADIR%%/lattice/m4a3-64.32-tqfp48
 @dirrm %%DATADIR%%/lattice/m4a3-256.192-fpbga256
+@dirrm %%DATADIR%%/lattice/lfec2-12e
 @dirrm %%DATADIR%%/lattice/lc4128c-tqfp100
+@dirrm %%DATADIR%%/lattice/lc4064zc
 @dirrm %%DATADIR%%/lattice/lc4032v-tqfp48
 @dirrm %%DATADIR%%/lattice
 @dirrm %%DATADIR%%/intel/sa1110
@@ -289,6 +318,7 @@ share/locale/sk/LC_MESSAGES/urjtag.mo
 @dirrm %%DATADIR%%/dec/sa1100
 @dirrm %%DATADIR%%/dec
 @dirrm %%DATADIR%%/bsdl
+@dirrm %%DATADIR%%/broadcom/bcm6358
 @dirrm %%DATADIR%%/broadcom/bcm5421s
 @dirrm %%DATADIR%%/broadcom/bcm4712
 @dirrm %%DATADIR%%/broadcom/bcm3310
@@ -310,6 +340,7 @@ share/locale/sk/LC_MESSAGES/urjtag.mo
 @dirrm %%DATADIR%%/analog/bf537
 @dirrm %%DATADIR%%/analog/bf533
 @dirrm %%DATADIR%%/analog/bf527
+@dirrm %%DATADIR%%/analog/bf518
 @dirrm %%DATADIR%%/analog
 @dirrm %%DATADIR%%/altera/epm7128aetc100
 @dirrm %%DATADIR%%/altera/epm3064a
@@ -320,6 +351,6 @@ share/locale/sk/LC_MESSAGES/urjtag.mo
 @dirrm %%DATADIR%%/altera
 @dirrm %%DATADIR%%/admtek/adm5120
 @dirrm %%DATADIR%%/admtek
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
 @dirrm %%DATADIR%%
+%%NLS%%@dirrm share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrm share/locale/rw
