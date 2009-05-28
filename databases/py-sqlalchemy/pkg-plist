@@ -73,6 +73,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/associationproxy.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/associationproxy.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/associationproxy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/compiler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/compiler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/compiler.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/declarative.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/declarative.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/declarative.pyo
@@ -136,6 +139,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/shard.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/shard.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/shard.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/state.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/state.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/state.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/strategies.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/strategies.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/strategies.pyo
@@ -210,12 +216,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/reference/dialects/sqlite.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/dialects/sybase.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/associationproxy.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/ext/compiler.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/declarative.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/index.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/orderinglist.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/serializer.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/sqlsoup.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/index.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/orm/collections.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/orm/index.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/orm/interfaces.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/orm/mapping.html
