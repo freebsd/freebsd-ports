@@ -526,7 +526,6 @@
     SUBDIR += sls
     SUBDIR += smssend
     SUBDIR += snowflake
-    SUBDIR += sonytv
     SUBDIR += spamcalc
     SUBDIR += splitvt
     SUBDIR += sshbuddy

@@ -163,7 +163,6 @@
     SUBDIR += p5-GtkXmHTML
     SUBDIR += p5-Prima
     SUBDIR += p5-Tcl-Tk
-    SUBDIR += p5-TclTk
     SUBDIR += p5-Tk
     SUBDIR += p5-Tk-Autoscroll
     SUBDIR += p5-Tk-ColourChooser

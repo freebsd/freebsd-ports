@@ -1,8 +1,0 @@
-This is a Sony-compatible TV remote control implemented in Tcl/Tk.
-It should work on laptops/notebooks with a built-in serial IR port.
-The range isn't as good as a "real" remote; 2m, if you're lucky.
-
-WWW: http://tools.ana.com/demos/
-
---Eric
-eps+sonytv@ana.com
