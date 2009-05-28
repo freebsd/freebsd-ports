@@ -12,6 +12,9 @@
     SUBDIR += appres
     SUBDIR += apwal
     SUBDIR += aterm
+    SUBDIR += avant-window-navigator
+    SUBDIR += avant-window-navigator-gnome
+    SUBDIR += avant-window-navigator-xfce4
     SUBDIR += babl
     SUBDIR += bbappconf
     SUBDIR += bbdock

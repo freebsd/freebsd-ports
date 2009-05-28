@@ -1,0 +1,193 @@
+bin/avant-window-navigator
+bin/awn-applet-activation
+bin/awn-applets-migration
+bin/awn-autostart
+bin/awn-launcher-editor
+bin/awn-manager
+bin/awn-schema-to-gconf
+include/libawn/awn-applet-dialog.h
+include/libawn/awn-applet-simple.h
+include/libawn/awn-applet.h
+include/libawn/awn-cairo-utils.h
+include/libawn/awn-config-client.h
+include/libawn/awn-defines.h
+include/libawn/awn-desktop-item.h
+include/libawn/awn-effects.h
+include/libawn/awn-enum-types.h
+include/libawn/awn-icons.h
+include/libawn/awn-plug.h
+include/libawn/awn-settings.h
+include/libawn/awn-title.h
+include/libawn/awn-vfs.h
+lib/libawn.a
+lib/libawn.la
+lib/libawn.so
+lib/libawn.so.0
+%%PYTHON_SITELIBDIR%%/awn/__init__.py
+%%PYTHON_SITELIBDIR%%/awn/__init__.pyc
+%%PYTHON_SITELIBDIR%%/awn/__init__.pyo
+%%PYTHON_SITELIBDIR%%/awn/awn.a
+%%PYTHON_SITELIBDIR%%/awn/awn.la
+%%PYTHON_SITELIBDIR%%/awn/awn.so
+libdata/pkgconfig/awn.pc
+share/applications/avant-window-navigator.desktop
+share/applications/awn-manager.desktop
+%%DATADIR%%/active/glow.png
+%%DATADIR%%/active/glow2.png
+%%DATADIR%%/active/glow3.png
+%%DATADIR%%/active/glow4.png
+%%DATADIR%%/active/glow5.png
+%%DATADIR%%/active/glow6.png
+%%DATADIR%%/active/glow7.png
+%%DATADIR%%/active/glow8.png
+%%DATADIR%%/active/glow9.png
+%%DATADIR%%/active/spotlight1.png
+%%DATADIR%%/active/spotlight2.png
+%%DATADIR%%/applets/taskman.desktop
+%%DATADIR%%/awn-manager/awnApplet.py
+%%DATADIR%%/awn-manager/awnDefs.py
+%%DATADIR%%/awn-manager/awnLauncher.py
+%%DATADIR%%/awn-manager/awnLauncherEditor.py
+%%DATADIR%%/awn-manager/awnPreferences.py
+%%DATADIR%%/awn-manager/awnTheme.py
+%%DATADIR%%/awn-manager/launcher-editor.glade
+%%DATADIR%%/awn-manager/window.glade
+%%DATADIR%%/defs/awn.defs
+%%DATADIR%%/index.theme
+%%DATADIR%%/schemas/awn.schema-ini
+%%DATADIR%%/schemas/shared.schema-ini
+%%DATADIR%%/themes/default-theme/theme.awn
+%%DATADIR%%/themes/default-theme/thumb.png
+share/gtk-doc/html/libawn/AwnApplet.html
+share/gtk-doc/html/libawn/AwnAppletDialog.html
+share/gtk-doc/html/libawn/AwnAppletSimple.html
+share/gtk-doc/html/libawn/AwnPlug.html
+share/gtk-doc/html/libawn/AwnTitle.html
+share/gtk-doc/html/libawn/ch01.html
+share/gtk-doc/html/libawn/home.png
+share/gtk-doc/html/libawn/index.html
+share/gtk-doc/html/libawn/index.sgml
+share/gtk-doc/html/libawn/left.png
+share/gtk-doc/html/libawn/libawn-awn-cairo-utils.html
+share/gtk-doc/html/libawn/libawn-awn-config-client.html
+share/gtk-doc/html/libawn/libawn-awn-defines.html
+share/gtk-doc/html/libawn/libawn-awn-desktop-item.html
+share/gtk-doc/html/libawn/libawn-awn-effects.html
+share/gtk-doc/html/libawn/libawn-awn-settings.html
+share/gtk-doc/html/libawn/libawn-awn-vfs.html
+share/gtk-doc/html/libawn/libawn.devhelp
+share/gtk-doc/html/libawn/libawn.devhelp2
+share/gtk-doc/html/libawn/right.png
+share/gtk-doc/html/libawn/style.css
+share/gtk-doc/html/libawn/up.png
+share/icons/hicolor/24x24/apps/avant-window-navigator.png
+share/icons/hicolor/32x32/apps/avant-window-navigator.png
+share/icons/hicolor/48x48/apps/avant-window-navigator.png
+share/icons/hicolor/48x48/apps/awn-manager.png
+share/icons/hicolor/scalable/apps/avant-window-navigator.svg
+share/icons/hicolor/scalable/apps/awn-manager.svg
+share/locale/af/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ar/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ast/LC_MESSAGES/avant-window-navigator.mo
+share/locale/be/LC_MESSAGES/avant-window-navigator.mo
+share/locale/bg/LC_MESSAGES/avant-window-navigator.mo
+share/locale/bn/LC_MESSAGES/avant-window-navigator.mo
+share/locale/bs/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ca/LC_MESSAGES/avant-window-navigator.mo
+share/locale/cs/LC_MESSAGES/avant-window-navigator.mo
+share/locale/csb/LC_MESSAGES/avant-window-navigator.mo
+share/locale/da/LC_MESSAGES/avant-window-navigator.mo
+share/locale/de/LC_MESSAGES/avant-window-navigator.mo
+share/locale/el/LC_MESSAGES/avant-window-navigator.mo
+share/locale/en_AU/LC_MESSAGES/avant-window-navigator.mo
+share/locale/en_CA/LC_MESSAGES/avant-window-navigator.mo
+share/locale/en_GB/LC_MESSAGES/avant-window-navigator.mo
+share/locale/eo/LC_MESSAGES/avant-window-navigator.mo
+share/locale/es/LC_MESSAGES/avant-window-navigator.mo
+share/locale/et/LC_MESSAGES/avant-window-navigator.mo
+share/locale/eu/LC_MESSAGES/avant-window-navigator.mo
+share/locale/fa/LC_MESSAGES/avant-window-navigator.mo
+share/locale/fi/LC_MESSAGES/avant-window-navigator.mo
+share/locale/fr/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ga/LC_MESSAGES/avant-window-navigator.mo
+share/locale/gl/LC_MESSAGES/avant-window-navigator.mo
+share/locale/gu/LC_MESSAGES/avant-window-navigator.mo
+share/locale/he/LC_MESSAGES/avant-window-navigator.mo
+share/locale/hi/LC_MESSAGES/avant-window-navigator.mo
+share/locale/hr/LC_MESSAGES/avant-window-navigator.mo
+share/locale/hu/LC_MESSAGES/avant-window-navigator.mo
+share/locale/id/LC_MESSAGES/avant-window-navigator.mo
+share/locale/is/LC_MESSAGES/avant-window-navigator.mo
+share/locale/it/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ja/LC_MESSAGES/avant-window-navigator.mo
+share/locale/jv/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ka/LC_MESSAGES/avant-window-navigator.mo
+share/locale/kab/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ko/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ku/LC_MESSAGES/avant-window-navigator.mo
+share/locale/lt/LC_MESSAGES/avant-window-navigator.mo
+share/locale/lv/LC_MESSAGES/avant-window-navigator.mo
+share/locale/mk/LC_MESSAGES/avant-window-navigator.mo
+share/locale/mr/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ms/LC_MESSAGES/avant-window-navigator.mo
+share/locale/nb/LC_MESSAGES/avant-window-navigator.mo
+share/locale/nds/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ne/LC_MESSAGES/avant-window-navigator.mo
+share/locale/nl/LC_MESSAGES/avant-window-navigator.mo
+share/locale/nn/LC_MESSAGES/avant-window-navigator.mo
+share/locale/oc/LC_MESSAGES/avant-window-navigator.mo
+share/locale/pl/LC_MESSAGES/avant-window-navigator.mo
+share/locale/pt/LC_MESSAGES/avant-window-navigator.mo
+share/locale/pt_BR/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ro/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ru/LC_MESSAGES/avant-window-navigator.mo
+share/locale/sk/LC_MESSAGES/avant-window-navigator.mo
+share/locale/sl/LC_MESSAGES/avant-window-navigator.mo
+share/locale/sq/LC_MESSAGES/avant-window-navigator.mo
+share/locale/sr/LC_MESSAGES/avant-window-navigator.mo
+share/locale/sv/LC_MESSAGES/avant-window-navigator.mo
+share/locale/ta/LC_MESSAGES/avant-window-navigator.mo
+share/locale/te/LC_MESSAGES/avant-window-navigator.mo
+share/locale/th/LC_MESSAGES/avant-window-navigator.mo
+share/locale/tr/LC_MESSAGES/avant-window-navigator.mo
+share/locale/uk/LC_MESSAGES/avant-window-navigator.mo
+share/locale/vi/LC_MESSAGES/avant-window-navigator.mo
+share/locale/zh_CN/LC_MESSAGES/avant-window-navigator.mo
+share/locale/zh_HK/LC_MESSAGES/avant-window-navigator.mo
+share/locale/zh_TW/LC_MESSAGES/avant-window-navigator.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/kab/LC_MESSAGES
+@dirrmtry share/locale/kab
+@dirrmtry share/locale/jv/LC_MESSAGES
+@dirrmtry share/locale/jv
+@dirrmtry share/locale/csb/LC_MESSAGES
+@dirrmtry share/locale/csb
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm share/gtk-doc/html/libawn
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm %%DATADIR%%/themes/default-theme
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/schemas
+@dirrm %%DATADIR%%/defs
+@dirrm %%DATADIR%%/awn-manager
+@dirrm %%DATADIR%%/applets
+@dirrm %%DATADIR%%/active
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/awn
+@dirrm include/libawn
