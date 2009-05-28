@@ -2234,6 +2234,14 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 .endif
 
+.if defined(USE_FPC) || defined(WANT_FPC_BASE) || defined(WANT_FPC_ALL)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.fpc.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.fpc.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.fpc.mk"
+.endif
+.endif
+
 .if defined(WANT_GECKO) || defined(USE_GECKO)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.gecko.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.gecko.mk"
@@ -3044,6 +3052,19 @@ maintainer:
 
 .if !target(check-makefile)
 check-makefile::
+.if !exists(/usr/share/mk/bsd.port.options.mk)
+	@${ECHO_CMD} "!!! Detected system without bsd.port.options.mk (probably old FreeBSD version)"
+	@${ECHO_CMD} "!!! Dropping bsd.port.options.mk into /usr/share/mk"
+	-@${ECHO_CMD} "USEOPTIONSMK=   yes" > /usr/share/mk/bsd.port.options.mk 2>/dev/null
+	-@${ECHO_CMD} "INOPTIONSMK=    yes" >> /usr/share/mk/bsd.port.options.mk 2>/dev/null
+	-@${ECHO_CMD} ".include <bsd.port.mk>" >> /usr/share/mk/bsd.port.options.mk 2>/dev/null
+	-@${ECHO_CMD} ".undef INOPTIONSMK" >> /usr/share/mk/bsd.port.options.mk 2>/dev/null
+.if exists(/usr/share/mk/bsd.port.options.mk)
+	@${ECHO_CMD} "!!! Done"
+.else
+	@${ECHO_CMD} "!!! Failed"
+.endif
+.endif
 	@${DO_NADA}
 .endif
 
