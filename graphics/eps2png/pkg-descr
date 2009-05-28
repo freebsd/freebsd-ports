@@ -1,4 +1,4 @@
-eps2png takes an EPS image and transforms it into a
-PNG image.
+epf2png converts files from EPS format (Encapsulated PostScript) to
+PNG (Portable Network Graphics), JPEG or GIF formats.
 
-WWW: http://www.squirrel.nl/people/jvromans/sw_eps2png.html
+WWW: http://www.vromans.org/johan/software/sw_eps2png.html
