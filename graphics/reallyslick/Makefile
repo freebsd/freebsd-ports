@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	reallyslick
-PORTVERSION=	0.8.1
-PORTREVISION=	5
+PORTVERSION=	0.9.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	rss-glx
+MASTER_SITES=	SF/rss-glx
 DISTNAME=	rss-glx_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,32 +16,37 @@ COMMENT=	OpenGL screensaver collection
 
 LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 
+OPTIONS=	FREEALUT "Enable freealut support" off \
+		GLEW "Enable GLEW support" off
+
 USE_BZIP2=	yes
-USE_GL=		yes
+USE_GL=		glu
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15:env
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CPPFLAGS+=	-I${LOCALBASE}/include `Magick-config --cflags`
-LDFLAGS+=	-L${LOCALBASE}/lib `Magick-config --libs`
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+MAN1=		biof.1 busyspheres.1 colorfire.1 cyclone.1 drempels.1 \
+		euphoria.1 feedback.1 fieldlines.1 flocks.1 flux.1 \
+		helios.1 hufo_smoke.1 hufo_tunnel.1 hyperspace.1 lattice.1 \
+		lorenz.1 matrixview.1 plasma.1 skyrocket.1 solarwinds.1 \
+		spirographx.1 sundancer2.1
 
-MAN1=	biof.1 busyspheres.1 colorfire.1 cyclone.1 euphoria.1 fieldlines.1 flocks.1 \
-	flux.1 helios.1 hufo_smoke.1 hufo_tunnel.1 lattice.1 matrixview.1 \
-	plasma.1 skyrocket.1 solarwinds.1 spirographx.1 sundancer2.1
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
-post-patch:
-.for file in config.guess config.sub ltmain.sh
-	${RM} ${WRKSRC}/${file}
-	${LN} -s ${LOCALBASE}/share/libtool/${file} ${WRKSRC}
-.endfor
-.for file in oglc_src/Makefile.in other_src/Makefile.in \
-		reallyslick/c_src/Makefile.in reallyslick/cpp_src/Makefile.in
-	@${REINPLACE_CMD} -E -e 's|(@LIBS@)|\1 -lXext|' ${WRKSRC}/${file}
-.endfor
-# fix lib detection
-	@${REINPLACE_CMD} -E -e 's@^(LIBS.*-l(GL|MesaGL|GLU))@\1 -lXext@' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if defined(WITH_FREEALUT)
+LIB_DEPENDS+=	alut.1:${PORTSDIR}/audio/freealut
+.else
+CONFIGURE_ARGS+=	--disable-sound
+.endif
+
+.if defined(WITH_GLEW)
+LIB_DEPENDS+=	GLEW.1:${PORTSDIR}/graphics/glew
+.else
+CONFIGURE_ENV+=	ac_cv_header_GL_glew_h=no
+.endif
+
+.include <bsd.port.post.mk>

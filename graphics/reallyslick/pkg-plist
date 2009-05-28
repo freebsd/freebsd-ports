@@ -2,7 +2,9 @@ bin/biof
 bin/busyspheres
 bin/colorfire
 bin/cyclone
+bin/drempels
 bin/euphoria
+bin/feedback
 bin/fieldlines
 bin/flocks
 bin/flux
@@ -11,6 +13,7 @@ bin/hufo_smoke
 bin/hufo_tunnel
 bin/hyperspace
 bin/lattice
+bin/lorenz
 bin/matrixview
 bin/plasma
 bin/rss-glx_install.pl
@@ -18,7 +21,7 @@ bin/skyrocket
 bin/solarwinds
 bin/spirographx
 bin/sundancer2
-lib/libImplicit.la
 lib/libImplicit.a
-lib/librsMath.la
+lib/libImplicit.la
 lib/librsMath.a
+lib/librsMath.la
