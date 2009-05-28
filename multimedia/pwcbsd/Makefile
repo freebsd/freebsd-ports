@@ -7,7 +7,7 @@
 
 PORTNAME=	pwcbsd
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \
@@ -26,6 +26,18 @@ OPTIONS=	PROGRAMS	"Build the programs"			on \
 		MMAP		"Enable mmap support (MAY CRASH YOUR SYSTEM)"	off
 
 .include <bsd.port.pre.mk>
+
+.if (${OSVERSION} > 800063) && (${OSVERSION} < 800090)
+BROKEN=		Please update to a newer version of FreeBSD 8-CURRENT
+.endif
+
+.if ${OSVERSION} >= 800090
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.kld \
+		${FILESDIR}/extra-patch-pwc-ctrl.c \
+		${FILESDIR}/extra-patch-pwc-v4l.c \
+		${FILESDIR}/extra-patch-pwc.c \
+		${FILESDIR}/extra-patch-pwc.h
+.endif
 
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		requires kernel source files
