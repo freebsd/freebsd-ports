@@ -6,6 +6,9 @@
 %%SITE_PERL%%/IO/Async/DetachedCode.pm
 %%SITE_PERL%%/IO/Async/DetachedCode/FlatMarshaller.pm
 %%SITE_PERL%%/IO/Async/DetachedCode/StorableMarshaller.pm
+%%SITE_PERL%%/IO/Async/Handle.pm
+%%SITE_PERL%%/IO/Async/Internals/SignalProxy.pm
+%%SITE_PERL%%/IO/Async/Internals/TimeQueue.pm
 %%SITE_PERL%%/IO/Async/Listener.pm
 %%SITE_PERL%%/IO/Async/Loop.pm
 %%SITE_PERL%%/IO/Async/Loop/IO_Poll.pm
@@ -14,13 +17,12 @@
 %%SITE_PERL%%/IO/Async/Notifier.pm
 %%SITE_PERL%%/IO/Async/Resolver.pm
 %%SITE_PERL%%/IO/Async/Sequencer.pm
-%%SITE_PERL%%/IO/Async/SignalProxy.pm
+%%SITE_PERL%%/IO/Async/Signal.pm
 %%SITE_PERL%%/IO/Async/Stream.pm
 %%SITE_PERL%%/IO/Async/Test.pm
-%%SITE_PERL%%/IO/Async/TimeQueue.pm
-%%SITE_PERL%%/IO/Async/TimeQueue/Elem.pm
-@dirrmtry %%SITE_PERL%%/IO/Async/TimeQueue
+%%SITE_PERL%%/IO/Async/Timer.pm
 @dirrmtry %%SITE_PERL%%/IO/Async/Loop
+@dirrmtry %%SITE_PERL%%/IO/Async/Internals
 @dirrmtry %%SITE_PERL%%/IO/Async/DetachedCode
 @dirrmtry %%SITE_PERL%%/IO/Async
 @dirrmtry %%SITE_PERL%%/IO
