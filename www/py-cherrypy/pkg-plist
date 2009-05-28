@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/cherryd
 %%PYTHON_SITELIBDIR%%/cherrypy/LICENSE.txt
 %%PYTHON_SITELIBDIR%%/cherrypy/__init__.py
 %%PYTHON_SITELIBDIR%%/cherrypy/__init__.pyc
@@ -77,9 +78,6 @@
 %%PYTHON_SITELIBDIR%%/cherrypy/lib/safemime.py
 %%PYTHON_SITELIBDIR%%/cherrypy/lib/safemime.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/lib/safemime.pyo
-%%PYTHON_SITELIBDIR%%/cherrypy/lib/sessions-r2062.py
-%%PYTHON_SITELIBDIR%%/cherrypy/lib/sessions-r2062.pyc
-%%PYTHON_SITELIBDIR%%/cherrypy/lib/sessions-r2062.pyo
 %%PYTHON_SITELIBDIR%%/cherrypy/lib/sessions.py
 %%PYTHON_SITELIBDIR%%/cherrypy/lib/sessions.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/lib/sessions.pyo
@@ -198,9 +196,6 @@
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_safe_multipart.py
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_safe_multipart.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_safe_multipart.pyo
-%%PYTHON_SITELIBDIR%%/cherrypy/test/test_session-r2062.py
-%%PYTHON_SITELIBDIR%%/cherrypy/test/test_session-r2062.pyc
-%%PYTHON_SITELIBDIR%%/cherrypy/test/test_session-r2062.pyo
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_session.py
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_session.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_session.pyo
