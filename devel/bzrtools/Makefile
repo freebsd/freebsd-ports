@@ -7,6 +7,7 @@
 
 PORTNAME=	bzrtools
 PORTVERSION=	1.14.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/25223897/
 
