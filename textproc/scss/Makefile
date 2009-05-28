@@ -7,22 +7,23 @@
 #
 
 PORTNAME=	scss
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTVERSION=	0.3.2
+PORTREVISION=	0
 CATEGORIES=	textproc scheme
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Scheme module for W3C Cascading Stylesheets recommendation
 
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 NO_BUILD=	yes
 
-FILES=	lexer.scm parser.scm scss.scm
+FILES=	lexer.scm parser.scm scss.scm srfi-32.scm
 PLIST_FILES=	share/guile/scss/lexer.scm \
 		share/guile/scss/parser.scm \
-		share/guile/scss/scss.scm
+		share/guile/scss/scss.scm \
+		share/guile/scss/srfi-32.scm
 PLIST_DIRS=	share/guile/scss
 
 INFO=	scss
