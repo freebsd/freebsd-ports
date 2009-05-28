@@ -17,6 +17,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
+IGNORE=		The same version available in www/nginx
+
 OPTIONS=	DEBUG "Enable nginx debugging" off \
 		IPV6 "Enable IPv6" off \
 		GOOGLE_PERFTOOLS "Enable google perftools module" off \
@@ -69,7 +71,7 @@ NGINX_RUNDIR?=	${NGINX_VARDIR}/run
 NGINX_TMPDIR?=	${NGINX_VARDIR}/tmp/nginx
 HTTP_PORT?=	80
 
-CONFLICTS?=	nginx-0.6.*
+CONFLICTS?=	nginx-0.7.*
 USE_RC_SUBR=	nginx.sh
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX} WWWOWN=${WWWOWN}
 

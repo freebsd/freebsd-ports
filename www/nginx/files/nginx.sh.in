@@ -9,8 +9,8 @@
 # Add the following lines to /etc/rc.conf to enable nginx:
 # nginx_enable (bool):		Set to "NO" by default.
 #				Set it to "YES" to enable nginx
-# nginx_profiles (str):		Set to "NO" by default.
-#				Unsupported feature, reserved for future releases.
+# nginx_profiles (str):		Set to "" by default.
+#				Define your profiles here.
 # nginxlimits_enable (bool):	Set to "NO" by default.
 #				Set it to yes to run `limits $limits_args`
 #				just before nginx starts.
@@ -35,17 +35,46 @@ _pidprefix="/var/run/nginx"
 pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/nginx/nginx.conf
 
-[ -z "$nginx_enable" ]       && nginx_enable="NO"
-[ -z "$nginx_profiles" ]     && nginx_profiles="NO"
-[ -z "$nginx_flags" ]        && nginx_flags=""
-[ -z "$nginxlimits_enable" ] && nginxlimits_enable="NO"
-[ -z "$nginxlimits_args" ]   && nginxlimits_args="-e -U %%WWWOWN%%"
+[ -z "$nginx_enable" ]		&& nginx_enable="NO"
+[ -z "$nginx_profiles" ]	&& nginx_profiles=""
+[ -z "$nginx_flags" ]		&& nginx_flags=""
+[ -z "$nginxlimits_enable" ]	&& nginxlimits_enable="NO"
+[ -z "$nginxlimits_args" ]	&& nginxlimits_args="-e -U %%WWWOWN%%"
 
 load_rc_config $name
 
 if [ -n "$2" ]; then
-	echo "Profiles are unsupported by this version, exit..."
-	exit 1
+	profile="$2"
+	if [ "x${nginx_profiles}" != "x" ]; then
+		pidfile="${_pidprefix}.${profile}.pid"
+		eval nginx_configfile="\${nginx_${profile}_configfile:-}"
+		if [ "x${nginx_configfile}" = "x" ]; then
+			echo "You must define a configuration file (nginx_${profile}_configfile)"
+			exit 1
+		fi
+		required_files="${nginx_configfile}"
+		eval nginx_enable="\${nginx_${profile}_enable:-${nginx_enable}}"
+		eval nginx_flags="\${nginx_${profile}_flags:-${nginx_flags}}"
+		eval nginxlimits_enable="\${nginxlimits_${profile}_enable:-${nginxlimits_enable}}"
+		eval nginxlimits_args="\${nginxlimits_${profile}_args:-${nginxlimits_args}}"
+		nginx_flags="-c ${nginx_configfile} -g \"pid ${pidfile};\" ${nginx_flags}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ "x${nginx_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${nginx_profiles}; do
+			echo "===> nginx profile: ${profile}"
+			%%PREFIX%%/etc/rc.d/nginx%%RC_SUBR_SUFFIX%% $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
 fi
 
 nginx_checkconfig()
@@ -80,7 +109,7 @@ nginx_precmd()
 		eval `/usr/bin/limits ${nginxlimits_args}` 2>/dev/null
 	else
 		return 0
-        fi
+	fi
 }
 
 extra_commands="reload configtest upgrade"
