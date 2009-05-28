@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otk
-PORTVERSION=	0.81
+PORTVERSION=	0.85
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_lib_${PORTVERSION}
@@ -22,7 +22,7 @@ USE_GL=		glut glu gl
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/gadget_lib.h include/otk_lib.h \
-		lib/libotk.so lib/libotk.so.0 
+		lib/libotk.so lib/libotk.so.0
 
 CPPFLAGS=	-I${LOCALBASE}/include -fPIC
 LDFLAGS=	-lGLU -lGL -lXmu -lXext -lX11 -L${LOCALBASE}/lib
