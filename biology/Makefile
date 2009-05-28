@@ -41,6 +41,7 @@
     SUBDIR += lagan
     SUBDIR += lamarc
     SUBDIR += libgenome
+    SUBDIR += libsbml
     SUBDIR += linux-foldingathome
     SUBDIR += lsysexp
     SUBDIR += mafft

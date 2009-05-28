@@ -1,0 +1,238 @@
+libdata/pkgconfig/libsbml.pc
+include/sbml/Compartment.h
+include/sbml/CompartmentType.h
+include/sbml/Constraint.h
+include/sbml/Delay.h
+include/sbml/Event.h
+include/sbml/EventAssignment.h
+include/sbml/FunctionDefinition.h
+include/sbml/InitialAssignment.h
+include/sbml/KineticLaw.h
+include/sbml/ListOf.h
+include/sbml/Model.h
+include/sbml/Parameter.h
+include/sbml/Reaction.h
+include/sbml/Rule.h
+include/sbml/SBMLDocument.h
+include/sbml/SBMLError.h
+include/sbml/SBMLErrorLog.h
+include/sbml/SBMLErrorTable.h
+include/sbml/SBMLReader.h
+include/sbml/SBMLTypeCodes.h
+include/sbml/SBMLTypes.h
+include/sbml/SBMLVisitor.h
+include/sbml/SBMLWriter.h
+include/sbml/SBO.h
+include/sbml/SBase.h
+include/sbml/Species.h
+include/sbml/SpeciesReference.h
+include/sbml/SpeciesType.h
+include/sbml/StoichiometryMath.h
+include/sbml/Trigger.h
+include/sbml/Unit.h
+include/sbml/UnitDefinition.h
+include/sbml/UnitKind.h
+include/sbml/annotation/CVTerm.h
+include/sbml/annotation/ModelHistory.h
+include/sbml/annotation/RDFAnnotation.h
+include/sbml/common/common.h
+include/sbml/common/extern.h
+include/sbml/common/libsbml-config-unix.h
+include/sbml/common/libsbml-config-win.h
+include/sbml/common/libsbml-config.h
+include/sbml/common/libsbml-version.h
+include/sbml/common/sbmlfwd.h
+include/sbml/compress/CompressCommon.h
+include/sbml/compress/InputDecompressor.h
+include/sbml/compress/OutputCompressor.h
+include/sbml/compress/bzfstream.h
+include/sbml/compress/crypt.h
+include/sbml/compress/ioapi.h
+include/sbml/compress/iowin32.h
+include/sbml/compress/unzip.h
+include/sbml/compress/zfstream.h
+include/sbml/compress/zip.h
+include/sbml/compress/zipfstream.h
+include/sbml/math/ASTNode.h
+include/sbml/math/FormulaFormatter.h
+include/sbml/math/FormulaParser.h
+include/sbml/math/FormulaTokenizer.h
+include/sbml/math/MathML.h
+include/sbml/units/FormulaUnitsData.h
+include/sbml/units/UnitFormulaFormatter.h
+include/sbml/units/UnitKindList.h
+include/sbml/util/List.h
+include/sbml/util/Stack.h
+include/sbml/util/StringBuffer.h
+include/sbml/util/memory.h
+include/sbml/util/util.h
+include/sbml/validator/ConsistencyValidator.h
+include/sbml/validator/ConstraintMacros.h
+include/sbml/validator/IdentifierConsistencyValidator.h
+include/sbml/validator/InternalConsistencyValidator.h
+include/sbml/validator/L1CompatibilityValidator.h
+include/sbml/validator/L2v1CompatibilityValidator.h
+include/sbml/validator/L2v2CompatibilityValidator.h
+include/sbml/validator/L2v3CompatibilityValidator.h
+include/sbml/validator/L2v4CompatibilityValidator.h
+include/sbml/validator/MathMLConsistencyValidator.h
+include/sbml/validator/ModelingPracticeValidator.h
+include/sbml/validator/OverdeterminedValidator.h
+include/sbml/validator/SBOConsistencyValidator.h
+include/sbml/validator/UnitConsistencyValidator.h
+include/sbml/validator/VConstraint.h
+include/sbml/validator/Validator.h
+include/sbml/validator/constraints/IdBase.h
+include/sbml/validator/constraints/IdList.h
+include/sbml/validator/constraints/MathMLBase.h
+include/sbml/validator/constraints/OverDeterminedCheck.h
+include/sbml/validator/constraints/UniqueIdBase.h
+include/sbml/validator/constraints/UniqueMetaId.h
+include/sbml/validator/constraints/UnitsBase.h
+include/sbml/xml/LibXMLAttributes.h
+include/sbml/xml/LibXMLHandler.h
+include/sbml/xml/LibXMLNamespaces.h
+include/sbml/xml/LibXMLParser.h
+include/sbml/xml/LibXMLTranscode.h
+include/sbml/xml/XMLAttributes.h
+include/sbml/xml/XMLBuffer.h
+include/sbml/xml/XMLError.h
+include/sbml/xml/XMLErrorLog.h
+include/sbml/xml/XMLExtern.h
+include/sbml/xml/XMLFileBuffer.h
+include/sbml/xml/XMLHandler.h
+include/sbml/xml/XMLInputStream.h
+include/sbml/xml/XMLMemoryBuffer.h
+include/sbml/xml/XMLNamespaces.h
+include/sbml/xml/XMLNode.h
+include/sbml/xml/XMLOutputStream.h
+include/sbml/xml/XMLParser.h
+include/sbml/xml/XMLToken.h
+include/sbml/xml/XMLTokenizer.h
+include/sbml/xml/XMLTriple.h
+lib/libsbml.3.3.2.so
+lib/libsbml.so
+lib/libsbml.a
+@dirrm include/sbml/annotation
+@dirrm include/sbml/common
+@dirrm include/sbml/compress
+@dirrm include/sbml/math
+@dirrm include/sbml/units
+@dirrm include/sbml/util
+@dirrm include/sbml/validator/constraints
+@dirrm include/sbml/validator
+@dirrm include/sbml/xml
+@dirrm include/sbml/
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/_libsbml.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/libsbml.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/libsbml.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml.pth
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/%%SBML_EGGINFO%%
+%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/libsbml
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/libSBML.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/FormulaGraphvizFormatter.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/convertSBML.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/drawMath.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/echoSBML.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/evaluateMath.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printMath.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printSBML.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/readSBML.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/translateMath.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/util.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/util.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/validateSBML.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addCVTerms.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addModelHistory.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/appendAnnotation.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/convertSBML.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/createExampleSBML.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/echoSBML.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printAnnotation.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printMath.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printNotes.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printSBML.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printUnits.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/readSBML.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/translateMath.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/unsetAnnotation.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/unsetNotes.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/util.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/util.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/validateSBML.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/echoSBML.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/validateSBML.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addCVTerms.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addModelHistory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/appendAnnotation.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/convertSBML.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/echoSBML.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/evaluateMath.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printAnnotation.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printMath.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printNotes.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printSBML.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printUnits.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/readSBML.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/translateMath.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/unsetAnnotation.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/unsetNotes.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/validateSBML.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/example1.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/example1.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/example1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/example2.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/example3.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/layout2svg.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/convertSBML.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/evaluateMath.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/extractReactionInfo.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/extractReactions.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printMath.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printSBML.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/readSBML.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/translateMath.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/validateSBML.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/echoSBML.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/validateSBML.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/convertSBML.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/echoSBML.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/printMath.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/validateSBML.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/algebraicrules.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/assignmentrules.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/boundarycondition.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/delay.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/dimerization.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/enzymekinetics.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/events.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/functiondef.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/multicomp.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/overdetermined.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/twodimensional.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/units.xml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csharp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/python
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ruby
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec/level-2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

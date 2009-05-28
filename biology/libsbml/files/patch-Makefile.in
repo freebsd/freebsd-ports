@@ -1,0 +1,34 @@
+--- Makefile.in.orig	2009-05-27 23:09:33.000000000 +0800
++++ Makefile.in	2009-05-27 23:33:47.000000000 +0800
+@@ -413,7 +413,7 @@
+ endif
+ 
+ install-pc: libsbml.pc
+-	$(INSTALL_SH) libsbml.pc -m 0644 "$(DESTDIR)$(LIBDIR)/pkgconfig/libsbml.pc"
++	$(INSTALL_SH) libsbml.pc -m 0644 "/usr/local/libdata/pkgconfig/libsbml.pc"
+ 
+ install-la: libsbml.la
+ ifeq "$(HOST_TYPE)" "cygwin"
+@@ -449,17 +449,17 @@
+ 	$(warning $(uninstall-warning-msg))
+ 
+ uninstall-libsbml-pc:
+-	@target="$(DESTDIR)$(LIBDIR)/pkgconfig/libsbml.pc"; \
++	@target="/usr/local/libdata/pkgconfig/libsbml.pc"; \
+ 	if test -f $$target ; then \
+ 	  echo rm $$target; \
+ 	  rm $$target; \
+ 	fi; \
+-	if test -d "$(DESTDIR)$(LIBDIR)/pkgconfig"; then \
++	if test -d "/usr/local/libdata/pkgconfig"; then \
+ 	  if test -n "`find $(DESTDIR)$(LIBDIR) -maxdepth 0 -empty`"; then \
+-	    echo rmdir "$(DESTDIR)$(LIBDIR)/pkgconfig"; \
+-	    rmdir "$(DESTDIR)$(LIBDIR)/pkgconfig"; \
++	    echo rmdir "/usr/local/libdata/pkgconfig"; \
++	    rmdir "/usr/local/libdata/pkgconfig"; \
+ 	  else \
+-	    echo "Directory $(DESTDIR)$(LIBDIR)/pkgconfig not empty; leaving it alone"; \
++	    echo "Directory /usr/local/libdata/pkgconfig not empty; leaving it alone"; \
+ 	  fi; \
+ 	fi;
+ 
