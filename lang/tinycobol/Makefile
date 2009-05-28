@@ -10,10 +10,12 @@ PORTVERSION=	0.64
 CATEGORIES=	lang
 MASTER_SITES=	SF/tiny-cobol
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny COBOL compiler for IA32 platforms
 
 BROKEN=		Missing htcobol compiler binary
+DEPRECATED=		no longer being developed; consider using lang/open-cobol instead
+EXPIRATION_DATE=	2009-07-28
 
 ONLY_FOR_ARCHS=	i386
 
