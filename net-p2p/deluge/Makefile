@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.8
 CATEGORIES=	net-p2p python
-MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/
+MASTER_SITES=	http://download.deluge-torrent.org/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
@@ -25,11 +25,11 @@ USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
 USE_GCC=	4.3+
+MAKE_ENV=	PYTHONPATH="${PYTHONPREFIX_SITELIBDIR}"
 
-MAKE_ENV+=	PYTHONPATH=${PYTHONPREFIX_SITELIBDIR}
-
-DOCS=		ChangeLog LICENSE README
 MAN1=		deluge.1 deluged.1
+
+PLIST_SUB=	VERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
 
 .if !defined(WITHOUT_PYGTK)
 RUN_DEPENDS+=	xdg-open:${PORTSDIR}/devel/xdg-utils \
@@ -73,9 +73,9 @@ post-install:
 .if !defined(WITHOUT_PYGTK)
 	@-update-desktop-database
 .endif
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
+.for i in ChangeLog LICENSE README
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
