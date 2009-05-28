@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osh
-DISTVERSION=	20081213
+DISTVERSION=	20090527
 CATEGORIES=	shells
 MASTER_SITES=	http://v6shell.org/src/ \
 		http://freebsd.unixfreunde.de/sources/
