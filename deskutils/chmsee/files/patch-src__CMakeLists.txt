@@ -1,0 +1,10 @@
+--- src/CMakeLists.txt.orig	2009-05-17 15:48:23.000000000 +0900
++++ src/CMakeLists.txt	2009-05-19 01:37:10.000000000 +0900
+@@ -49,6 +49,7 @@
+   ${CHMSEE_LIBRARIES}
+   chm
+   gcrypt
++  md
+   )
+ 
+ add_executable(chmsee main.cpp)
