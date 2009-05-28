@@ -7,7 +7,7 @@
 # ex: ts=8
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.4
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
@@ -188,9 +188,9 @@ post-build:
 
 pre-su-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	${MKDIR}  ${PREFIX}/etc/${PORTNAME}
-	${MKDIR}  ${DATADIR}/help
-	${MKDIR}  ${PREFIX}/lib/${PORTNAME}/modules
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${MKDIR} ${DATADIR}/help
+	${MKDIR} ${PREFIX}/lib/${PORTNAME}/modules
 
 post-install:
 .if !defined(NOPORTDOCS)

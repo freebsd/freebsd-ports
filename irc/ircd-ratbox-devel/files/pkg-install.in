@@ -107,12 +107,15 @@ mkdir -p %%DBDIR%%		\
 && chmod 750 %%DBDIR%%
 
 # Secure permissions if we think this is a fresh install
-
-if [ ! -f %%PREFIX%%/etc/ircd-ratbox/ircd.conf ]; then
+conffile="%%PREFIX%%/etc/ircd-ratbox/ircd.conf"
+samplefile="%%PREFIX%%/etc/ircd-ratbox/ircd.conf.sample"
+if cmp -s $conffile $samplefile; then
 	echo "Setting permissions for config dir and files."
-	chown -R ircd:ircd %%PREFIX%%/etc/ircd-ratbox/
+	chown -R root:ircd %%PREFIX%%/etc/ircd-ratbox/
 	chmod 750 %%PREFIX%%/etc/ircd-ratbox/
 	chmod 640 %%PREFIX%%/etc/ircd-ratbox/*
+else
+	echo "Modified ircd.conf file found, skipping perms setting."
 fi
 
 #-----------------------------------------------------------------------
