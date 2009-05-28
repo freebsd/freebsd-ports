@@ -121,6 +121,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq7.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq8.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq9.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/fmpar6.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmradio.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmsweep.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmtime.png
