@@ -1,0 +1,56 @@
+--- configure.bak	2009-05-22 00:53:12.000000000 +0900
++++ configure	2009-05-22 00:55:34.000000000 +0900
+@@ -3357,7 +3357,7 @@
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS="$CFLAGS"
+   else
+     CFLAGS=
+   fi
+@@ -5047,7 +5047,7 @@
+ 
+ 
+ if test "x$GCC" = xyes; then
+-	CFLAGS="-O2"
++	CFLAGS="$CFLAGS"
+ fi
+ # Check whether --enable-debug was given.
+ if test "${enable_debug+set}" = set; then
+@@ -5411,7 +5411,7 @@
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS="$CXXFLAGS"
+   else
+     CXXFLAGS=
+   fi
+@@ -5532,7 +5532,7 @@
+ 
+ 
+ if test "x$GXX" = xyes; then
+-	CXXFLAGS="-O2"
++	CXXFLAGS="$CXXFLAGS"
+ fi
+ # Check whether --enable-debug was given.
+ if test "${enable_debug+set}" = set; then
+@@ -7080,7 +7080,7 @@
+   fi
+ else
+   if test "x$ac_cv_f77_compiler_gnu" = xyes; then
+-    FFLAGS="-O2"
++    FFLAGS="$FFLAGS"
+   else
+     FFLAGS=
+   fi
+@@ -22414,7 +22414,7 @@
+ fi
+ 
+ 
+-if test "x${ac_cv_have_x:0:10}" != "xhave_x=yes"; then
++if test "x${ac_cv_have_x+set}" = set; then
+ 	{ { echo "$as_me:$LINENO: error: X11 is missing but required." >&5
+ echo "$as_me: error: X11 is missing but required." >&2;}
+    { (exit 1); exit 1; }; }
