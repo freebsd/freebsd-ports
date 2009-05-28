@@ -9,7 +9,7 @@ PORTVERSION=	2.3.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	jw@innerewut.de
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Object-relational mapping layer for Rails MVC Framework
 
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-2.3.2.gemspec:${PORTSDIR}/devel/rubygem-activesupport
