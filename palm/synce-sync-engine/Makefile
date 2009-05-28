@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 DISTNAME=	sync-engine-${PORTVERSION}
 
-MAINTAINER?=	ports@logvinov.com
+MAINTAINER?=	avl@FreeBSD.org
 COMMENT?=	Synchronization Engine for Windows Mobile devices
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \

@@ -10,7 +10,7 @@ CATEGORIES=	palm
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Wrapper for pppd to initiate communications with Windows Mobile devices
 
 RUN_DEPENDS=	vdccm:${PORTSDIR}/palm/synce-vdccm

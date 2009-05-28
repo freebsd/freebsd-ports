@@ -9,7 +9,7 @@ PORTVERSION=	1.0.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A toolkit to convert your script to a controllable daemon
 
 USE_RUBY=	yes

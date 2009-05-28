@@ -9,7 +9,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	net gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GTK+/GNOME remote desktop client
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop

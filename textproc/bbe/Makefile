@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}-
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A sed-like editor for binary files
 
 MAKE_JOBS_SAFE=	yes

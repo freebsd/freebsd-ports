@@ -9,7 +9,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	http://www.deveiate.org/code/
 DISTNAME=	BlueCloth-${PORTVERSION}
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Ruby implementation of Markdown, a text-to-HTML conversion tool
 
 GEM_NAME=	${DISTNAME}

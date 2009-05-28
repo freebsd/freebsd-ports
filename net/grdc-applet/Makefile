@@ -11,7 +11,7 @@ MASTER_SITES=	SF/grdc
 PKGNAMESUFFIX=	-applet
 DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A GNOME Desktop applet for GTK+/GNOME remote desktop client
 
 RUN_DEPENDS=	grdc:${PORTSDIR}/net/grdc

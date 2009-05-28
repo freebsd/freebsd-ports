@@ -11,7 +11,7 @@ CATEGORIES=	www deskutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	anyremote
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A web interface for anyRemote
 
 RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote

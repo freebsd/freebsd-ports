@@ -10,7 +10,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://files.sa-mp.com/
 DISTNAME=	samp02Xsvr
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
 
 USE_LINUX=	yes

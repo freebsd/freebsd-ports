@@ -13,7 +13,7 @@ MASTER_SITES=	http://marklyon.org/gmail/old/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Mbox & Maildir to Gmail loader
 
 USE_PYTHON_RUN=	yes

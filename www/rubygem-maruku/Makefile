@@ -9,7 +9,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A Markdown and PHP Markdown extra interpreter for Ruby
 
 BUILD_DEPENDS=	rubygem-syntax>=1.0.0:${PORTSDIR}/textproc/rubygem-syntax

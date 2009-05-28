@@ -11,7 +11,7 @@ CATEGORIES=	deskutils comms gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	anyremote
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GNOME frontend for anyRemote
 
 RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote

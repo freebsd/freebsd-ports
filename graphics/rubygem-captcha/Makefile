@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A simple CAPTCHA written in Ruby
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/GD.so:${PORTSDIR}/graphics/ruby-gd

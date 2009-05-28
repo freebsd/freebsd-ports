@@ -17,7 +17,7 @@ DISTFILES=	${MAINFILE}:p436 ${PATCH451FILE}:p451
 DIST_SUBDIR=	linux-ut
 EXTRACT_ONLY=	${MAINFILE}
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Unreal Tournament Dedicated Server for Linux
 
 OPTIONS=	BONUSPACKS	"install the official bonus packs collection" on

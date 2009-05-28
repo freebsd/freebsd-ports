@@ -10,7 +10,7 @@ CATEGORIES=	devel rubygems java
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	caldersphere
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A constructor of .war files of Rails applications
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby

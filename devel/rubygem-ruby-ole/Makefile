@@ -10,7 +10,7 @@ PORTVERSION=	1.2.8.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A library for easy read/write access to OLE compound documents
 
 USE_RUBY=	yes

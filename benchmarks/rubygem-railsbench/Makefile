@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Scripts designed for benchmarking of Rails applications
 
 BUILD_DEPENDS=	rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe

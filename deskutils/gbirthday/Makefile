@@ -10,7 +10,7 @@ PORTVERSION=	0.4.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A birthday reminder for Evolution contacts
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb

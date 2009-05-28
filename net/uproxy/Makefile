@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/8155/uproxy/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Proxy for UDP protocols
 
 USE_ZIP=	yes

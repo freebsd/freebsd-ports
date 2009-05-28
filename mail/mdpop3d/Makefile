@@ -10,7 +10,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.corpit.ru/home/mjt/mdpop3d/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A simple and small POP3 daemon implementation with Maildir support
 
 MAN8=		mdpop3d.8

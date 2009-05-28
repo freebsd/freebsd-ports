@@ -10,7 +10,7 @@ CATEGORIES=	databases rubygems java
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	jruby-extras
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	An ActiveRecord driver for MySQL using JDBC running under JRuby
 
 BUILD_DEPENDS=	rubygem-jdbc-mysql>=5.0.4:${PORTSDIR}/databases/rubygem-jdbc-mysql \

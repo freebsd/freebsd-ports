@@ -10,7 +10,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Queries information from Unreal Tournament 2004 game servers
 
 MAKE_JOBS_SAFE=	yes

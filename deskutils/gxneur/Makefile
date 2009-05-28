@@ -10,7 +10,7 @@ PORTVERSION=	0.9.4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${PORTVERSION}/tgz/
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GTK frontend for XNeur keyboard layout switcher
 
 BUILD_DEPENDS=	xneur:${PORTSDIR}/deskutils/xneur

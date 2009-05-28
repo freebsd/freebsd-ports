@@ -11,7 +11,7 @@ CATEGORIES?=	archivers
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT?=	LZRTF compression library
 
 MAKE_JOBS_SAFE=	yes

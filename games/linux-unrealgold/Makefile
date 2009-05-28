@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-install-${PORTVERSION}
 EXTRACT_SUFX=	.run
 DIST_SUBDIR=	linux-ut
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Unreal Gold for Linux
 
 BUILD_DEPENDS=	ut:${PORTSDIR}/games/linux-ut

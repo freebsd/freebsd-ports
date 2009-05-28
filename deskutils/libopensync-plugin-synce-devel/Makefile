@@ -9,7 +9,7 @@ PORTNAME=	libopensync-plugin-synce
 CATEGORIES=	deskutils palm
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	SynCE plugin for the OpenSync framework
 
 RUN_DEPENDS=	sync-engine:${PORTSDIR}/palm/synce-sync-engine \

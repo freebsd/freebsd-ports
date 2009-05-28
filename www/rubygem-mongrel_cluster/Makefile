@@ -10,7 +10,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	mongrel
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Manages multiple Mongrel processes
 
 BUILD_DEPENDS=	rubygem-mongrel>=1.0.2:${PORTSDIR}/www/rubygem-mongrel

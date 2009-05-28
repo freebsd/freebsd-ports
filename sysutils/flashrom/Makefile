@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://qa.coreboot.org/releases/
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A utility for reading, writing, verifying and erasing flash ROM chips
 
 LIB_DEPENDS=	pci.2:${PORTSDIR}/devel/libpci

@@ -10,7 +10,7 @@ PORTVERSION=	3.0.5
 DISTVERSIONSUFFIX=	-fx+tb+sm
 CATEGORIES=	www
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Control cookie permissions
 
 XPI_ID=		{9D23D0AA-D8F5-11DA-B3FC-0928ABF316DD}

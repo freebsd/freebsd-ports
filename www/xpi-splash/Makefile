@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 DISTVERSIONSUFFIX=	-fx+tb+sb
 CATEGORIES=	www
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A splash screen for most Mozilla and Mozilla Based products
 
 XPI_DISTNAME=	splash!

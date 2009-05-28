@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.infis.univ.ts.it/~riccardo/downloads/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	FUR-${PORTVERSION}
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	FUSE-based filesystem for Windows CE based devices
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2 \

@@ -10,7 +10,7 @@ CATEGORIES=	palm
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GNOME system tray app for monitoring connected WinCE based devices
 
 LIB_DEPENDS=	rra.0:${PORTSDIR}/palm/synce-librra \

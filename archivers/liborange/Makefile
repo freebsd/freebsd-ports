@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Library to extract CAB files from self-extracting installers
 
 RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \

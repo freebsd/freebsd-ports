@@ -9,7 +9,7 @@ PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A fast, flexible, easy to use logging service for Ruby
 
 BUILD_DEPENDS=	rubygem-eventmachine>=0.7.0:${PORTSDIR}/devel/rubygem-eventmachine
