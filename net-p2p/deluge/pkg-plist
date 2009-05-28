@@ -1,10 +1,10 @@
 bin/deluge
 bin/deluged
-%%PYTHON_SITELIBDIR%%/deluge-1.1.5-py2.5.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/deluge-1.1.5-py2.5.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/deluge-1.1.5-py2.5.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/deluge-1.1.5-py2.5.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/deluge-1.1.5-py2.5.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/deluge/SimpleXMLRPCServer.py
 %%PYTHON_SITELIBDIR%%/deluge/SimpleXMLRPCServer.pyc
 %%PYTHON_SITELIBDIR%%/deluge/SimpleXMLRPCServer.pyo
@@ -427,8 +427,8 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/pluginmanagerbase.py
 %%PYTHON_SITELIBDIR%%/deluge/pluginmanagerbase.pyc
 %%PYTHON_SITELIBDIR%%/deluge/pluginmanagerbase.pyo
-%%PYTHON_SITELIBDIR%%/deluge/plugins/Blocklist-1.0-py2.5.egg
-%%PYTHON_SITELIBDIR%%/deluge/plugins/Label-0.1-py2.5.egg
+%%PYTHON_SITELIBDIR%%/deluge/plugins/Blocklist-1.0-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/deluge/plugins/Label-0.1-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/deluge/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/deluge/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deluge/plugins/__init__.pyo
@@ -1174,7 +1174,7 @@ share/pixmaps/deluge.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/data
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/core
-@dirrm %%PYTHON_SITELIBDIR%%/deluge-1.1.5-py2.5.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info
 @dirrm %%PYTHON_SITELIBDIR%%/deluge
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
