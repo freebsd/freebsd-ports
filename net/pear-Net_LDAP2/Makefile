@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	Net_LDAP2
-DISTVERSION=	2.0.0RC6
+PORTVERSION=	2.0.0
+PORTEPOCH=	1
 CATEGORIES=	net pear
 
 MAINTAINER=	wenheping@gmail.com
@@ -19,7 +20,9 @@ USE_PHP=	ldap
 CATEGORY=	Net
 FILES=		LDAP2.php LDAP2/LDIF.php \
 		LDAP2/Entry.php LDAP2/Filter.php LDAP2/RootDSE.php \
-		LDAP2/Schema.php LDAP2/Search.php LDAP2/Util.php
+		LDAP2/Schema.php LDAP2/Search.php LDAP2/Util.php \
+		LDAP2/SchemaCache.interface.php \
+		LDAP2/SimpleFileSchemaCache.php
 DOCS=		README.txt RootDSE.txt Schema.txt utf8.txt manual.html
 _DOCSDIR=	doc
 TESTS=		AllTests.php Net_LDAP2Test.php \
@@ -32,7 +35,8 @@ TESTS=		AllTests.php Net_LDAP2Test.php \
 		ldif_data/sorted_w40.ldif ldif_data/sorted_w50.ldif \
 		ldif_data/unsorted_w30.ldif ldif_data/unsorted_w50.ldif
 EXAMPLES=	add_entry.php connecting.php fetch_entry.php \
-		modify_entry.php modify_entry2.php search_entries.php
+		modify_entry.php modify_entry2.php search_entries.php \
+		schema_cache.php
 _EXAMPLESDIR=	doc/examples
 
 .include <bsd.port.pre.mk>
