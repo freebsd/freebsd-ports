@@ -663,6 +663,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_diff.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_diff.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_diff.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_dpush.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_dpush.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_dpush.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_dump_btree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_dump_btree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_dump_btree.pyo
@@ -762,6 +765,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_reconfigure.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_reconfigure.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_reconfigure.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_reference.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_reference.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_reference.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_remerge.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_remerge.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_remerge.pyo
@@ -1026,6 +1032,12 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_pull.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_pull.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_pull.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_push.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_push.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_push.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_update_revisions.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_update_revisions.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_update_revisions.pyo
@@ -1314,9 +1326,6 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_implementations.py
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_implementations.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_implementations.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_response.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_response.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_response.pyo
