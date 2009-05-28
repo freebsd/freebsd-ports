@@ -9,7 +9,7 @@ PORTVERSION=	2.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	jw@innerewut.de
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Utility classes and extension that are required by Rails MVC Framework
 
 USE_RUBY=	yes

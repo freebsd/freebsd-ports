@@ -9,7 +9,7 @@ PORTVERSION=	2.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	jw@innerewut.de
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Action Controller and Action View of Rails MVC Framework
 
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-2.3.2.gemspec:${PORTSDIR}/devel/rubygem-activesupport

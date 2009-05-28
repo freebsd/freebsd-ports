@@ -9,7 +9,7 @@ PORTVERSION=	2.3.2
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	jw@innerewut.de
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Easy email delivery and testing for Ruby
 
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/actionpack-2.3.2.gemspec:${PORTSDIR}/www/rubygem-actionpack

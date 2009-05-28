@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	codeforpeople
 
-MAINTAINER=	jw@innerewut.de
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Simplistic script which automates rubyforge operations
 
 USE_RUBY=	yes

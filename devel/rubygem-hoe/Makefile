@@ -10,7 +10,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	seattlerb
 
-MAINTAINER=	jw@innerewut.de
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A simple rake/rubygems helper for project Rakefiles
 
 BUILD_DEPENDS=	rubygem-rubyforge>=1.0.3:${PORTSDIR}/devel/rubygem-rubyforge
