@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fsharp
-PORTVERSION=	1.9.6.2
+PORTVERSION=	1.9.6.16
 CATEGORIES=	lang
-MASTER_SITES=	http://download.microsoft.com/download/7/5/c/75c5ac35-9c13-4737-b363-3c930002259a/
+MASTER_SITES=	http://download.microsoft.com/download/F/7/4/F74A3170-261C-4E8F-B1A8-2E352C61A89B/
 DISTNAME=	fsharp
 
 MAINTAINER=	pgj@FreeBSD.org
@@ -34,15 +34,7 @@ WRKSRC=	${WRKDIR}/FSharp-${PORTVERSION}
 USE_ZIP=	yes
 RESTRICTED=	Microsoft Research Shared Source License Agreement
 
-AOT=		Build \
-		Compiler.CodeDom Compiler.Interactive.Settings Compiler.Server.Shared Compiler \
-		Core \
-		LanguageService \
-		PowerPack.Linq PowerPack.Math.Providers PowerPack.Plot.Excel PowerPack.Plot.Neutral \
-		PowerPack.Plot.XCeed PowerPack.Plot PowerPack \
-		ProjectSystem.Base ProjectSystem.FSharp ProjectSystem.PropertyPages \
-		VS.FSI
-
+AOT=		Core Compiler PowerPack
 WRAPPERS=	fsc fsi fslex fsyacc
 
 post-extract:
@@ -57,8 +49,8 @@ do-install:
 .for asm in ${AOT}
 	@ ${GACUTIL_INSTALL} ${WRKSRC}/bin/FSharp.${asm}.dll
 .endfor
-	@ ${MKDIR} ${PREFIX}/${PORTDIR} ${PREFIX}/${PORTDIR}/bin ${PREFIX}/${PORTDIR}/setup ${DOCSDIR}
-	@ (cd ${WRKSRC} && ${COPYTREE_SHARE} "bin setup" ${PREFIX}/${PORTDIR}/)
+	@ ${MKDIR} ${PREFIX}/${PORTDIR} ${PREFIX}/${PORTDIR}/bin ${DOCSDIR}
+	@ (cd ${WRKSRC} && ${COPYTREE_SHARE} "bin" ${PREFIX}/${PORTDIR}/)
 	@ ${INSTALL_DATA} ${WRKSRC}/LICENSE-fsharp.txt ${DOCSDIR}/
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}/doc ${DOCSDIR}/manual
