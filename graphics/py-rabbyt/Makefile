@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=source/R/Rabbyt
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Rabbyt-${PORTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fast sprite library for Python
 
 USE_PYTHON=		2.5+
