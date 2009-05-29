@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject_FormBuilder
-PORTVERSION=	0.18.1
+PORTVERSION=	1.0.0
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -22,9 +22,28 @@ OPTIONS=	PEAR_DATE "PEAR::Date support" off \
 
 CATEGORY=	DB/DataObject
 FILES=		FormBuilder.php FormBuilder/QuickForm.php \
-		FormBuilder/QuickForm/ElementTable.php \
 		FormBuilder/QuickForm/SubForm.php \
-		FormBuilder/QuickForm/SubFormFB.php
+		FormBuilder/QuickForm/SubFormFB.php \
+		tools/fix0.9.0Files.php tools/fixPre1.52CVSFiles.php
+
+TESTS=		array2date.phpt config.php \
+		configAndOverride.phpt create.phpt \
+		createSubmit.phpt createWithDriver.phpt \
+		createWithOptions.phpt dateElement.phpt \
+		dateOptionsCallbacks.phpt elementNamePrefix_Postfix.phpt \
+		enum.phpt existingRecordUpdated.phpt \
+		forceInsert.phpt formHeaderText.phpt \
+		getForm.phpt links.phpt \
+		movie.sql newRecordInserted.phpt \
+		notNullFieldRequired.phpt primaryKeyIsHidden.phpt \
+		submitText.phpt textElement.phpt \
+		typeArrays.phpt
+
+EXAMPLES=	classes/Category.php classes/Manufacturer.php \
+		classes/Product.php classes/formbuilder.ini \
+		classes/formbuilder.links.ini config_inc.php \
+		dataObject.ini index.php \
+		sql/schema.gif sql/schema.sql
 
 .include <bsd.port.pre.mk>
 
