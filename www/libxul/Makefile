@@ -47,6 +47,12 @@ MOZ_PKGCONFIG_FILES=	libxul-embedding-unstable libxul-embedding \
 		libxul-unstable	libxul mozilla-gtkmozembed-embedding \
 		mozilla-gtkmozembed mozilla-js mozilla-nss mozilla-plugin
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
 	    	${WRKSRC}/storage/build/Makefile.in \
@@ -58,4 +64,4 @@ post-build:
 		s|%%MOZ_LIBDIR%%|${PREFIX}/lib/${MOZILLA}|g" \
 	    	${WRKSRC}/xulrunner/installer/*.pc.in || ${TRUE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

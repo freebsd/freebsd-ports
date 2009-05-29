@@ -45,6 +45,10 @@ OPTIONS=	VIDEO "Enable video support" on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if defined(WITH_VIDEO)
 USE_GSTREAMER+=	gnomevfs
 CONFIGURE_ARGS+=--enable-video
