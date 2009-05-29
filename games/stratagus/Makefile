@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

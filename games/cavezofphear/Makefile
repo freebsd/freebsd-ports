@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.x86.no/cavezofphear/ \
 		http://mirror.amdmi3.ru/
 DISTNAME=	phear-${PORTVERSION}
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Boulder Dash / Digger-like game written using ncurses
 
 USE_BZIP2=	yes

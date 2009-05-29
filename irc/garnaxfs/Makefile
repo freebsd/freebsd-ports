@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://garnax.mircx.com/
 DISTNAME=	garnax-f1.1
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file serving bot for IRC
 
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"

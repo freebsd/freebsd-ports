@@ -2,6 +2,3 @@ Boulder Dash / Digger-like game written using ncurses. The game has
 support for custom levels / maps, and a level editor is included.
 
 WWW: http://www.x86.no/cavezofphear/
-
-- Travis Poppe
-tlp@liquidx.org

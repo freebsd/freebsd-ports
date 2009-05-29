@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=games/multiplayer
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer tank artillery game similar to Scorched Earth
 
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi

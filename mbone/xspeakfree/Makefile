@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	mbone net audio
 MASTER_SITES=	http://www.liquidx.org/distfiles/
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk (wish) frontend to Speak Freely
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.4:${PORTSDIR}/x11-toolkits/tk84 \

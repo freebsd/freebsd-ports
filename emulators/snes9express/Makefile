@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK interface for snes9x
 
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
