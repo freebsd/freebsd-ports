@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PORTVERSION}/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/

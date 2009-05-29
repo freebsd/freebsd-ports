@@ -132,6 +132,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stringprep_sup.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/tls.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/translate.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/treap.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/win32_dns.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml_stream.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/%%PORTNAME%%_zlib_drv.so
@@ -182,6 +183,8 @@ sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.2.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.3.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.4.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.5.txt
 %%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
 %%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
 %%PORTDOCS%%%%DOCSDIR%%/yozhikheader.png
