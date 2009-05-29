@@ -28,4 +28,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: uses i386 asm
+.endif
+
+.include <bsd.port.post.mk>
