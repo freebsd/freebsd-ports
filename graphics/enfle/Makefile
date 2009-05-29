@@ -52,6 +52,10 @@ CONFIGURE_ARGS+=	--disable-mmx --disable-sse
 .endif
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if ${OSVERSION} < 700000
 PLIST_SUB+=	DISABLED="@comment "
 .else
