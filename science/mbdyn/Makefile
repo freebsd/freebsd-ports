@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A MultiBody Dynamics analysis system
 
 LIB_DEPENDS=	umfpack:${PORTSDIR}/math/suitesparse
