@@ -394,16 +394,16 @@ bin/palomino
 %%DATADIR%%/data/shaders/aircraft_frag.glsl
 %%DATADIR%%/data/shaders/aircraft_highSpecular_frag.glsl
 %%DATADIR%%/data/shaders/aircraft_highSpecular_vert.glsl
+%%DATADIR%%/data/shaders/aircraft_lowSpecular_frag.glsl
+%%DATADIR%%/data/shaders/aircraft_lowSpecular_vert.glsl
+%%DATADIR%%/data/shaders/aircraft_sr71_frag.glsl
+%%DATADIR%%/data/shaders/aircraft_sr71_vert.glsl
 %%DATADIR%%/data/shaders/aircraft_vert.glsl
 %%DATADIR%%/data/shaders/color_frag.glsl
 %%DATADIR%%/data/shaders/color_vert.glsl
 %%DATADIR%%/data/shaders/default_frag.glsl
 %%DATADIR%%/data/shaders/default_vert.glsl
-%%DATADIR%%/data/shaders/inc_ComputeDiffuseSpecular.glsl
 %%DATADIR%%/data/shaders/inc_ComputeDiffuseSpecular_vert.glsl
-%%DATADIR%%/data/shaders/inc_DirectionalLight_vert.glsl
-%%DATADIR%%/data/shaders/inc_PointLight_vert.glsl
-%%DATADIR%%/data/shaders/inc_SpotLight_vert.glsl
 %%DATADIR%%/data/shaders/inc_aircraft_frag.glsl
 %%DATADIR%%/data/shaders/inc_brightness_frag.glsl
 %%DATADIR%%/data/shaders/inc_color_vert.glsl
@@ -413,6 +413,10 @@ bin/palomino
 %%DATADIR%%/data/shaders/inc_shadow_vert.glsl
 %%DATADIR%%/data/shaders/inc_vert.glsl
 %%DATADIR%%/data/shaders/module.txt
+%%DATADIR%%/data/shaders/reference/inc_DirectionalLight_vert.glsl
+%%DATADIR%%/data/shaders/reference/inc_PointLight_vert.glsl
+%%DATADIR%%/data/shaders/reference/inc_SpotLight_vert.glsl
+%%DATADIR%%/data/shaders/reference/inc_color_vert.glsl
 %%DATADIR%%/data/sounds/README.txt
 %%DATADIR%%/data/sounds/beep1.wav.gz
 %%DATADIR%%/data/sounds/beep2.wav.gz
@@ -479,6 +483,7 @@ bin/palomino
 @dirrm %%DATADIR%%/data/textures
 @dirrm %%DATADIR%%/data/terrain
 @dirrm %%DATADIR%%/data/sounds
+@dirrm %%DATADIR%%/data/shaders/reference
 @dirrm %%DATADIR%%/data/shaders
 @dirrm %%DATADIR%%/data/replays
 @dirrm %%DATADIR%%/data/models/su37
