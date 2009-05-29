@@ -363,5 +363,9 @@ share/X11/xkb/xkbcomp
 @dirrm share/X11/xkb
 @dirrmtry share/X11
 @dirrmtry /var/lib/xkb
+%%NLS%%@dirrmtry share/locale/crh/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/crh
+%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ky
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
