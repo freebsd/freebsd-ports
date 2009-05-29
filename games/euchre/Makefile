@@ -20,9 +20,15 @@ USE_GNOME=	gtk12
 CFLAGS+=	-include "${FILESDIR}/std-namespace.h" -Werror
 MAKE_JOBS_SAFE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's,char,const char,'	\
 		${WRKSRC}/src/pixmaps/*.xpm	\
 		${WRKSRC}/src/pixmaps/pixmaps.?pp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
