@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11 games
 MASTER_SITES=	http://www.liquidx.org/padkey/releases/dist/
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use an authentic SNES controller to play games
 
 USE_XORG=	x11 xtst

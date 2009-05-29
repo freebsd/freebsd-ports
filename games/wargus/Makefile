@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.zip
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

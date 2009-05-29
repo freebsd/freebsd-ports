@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.hackl.dhs.org/data/download/files/ \
 		http://www.liquidx.org/distfiles/
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colorized, small and flexible Tetris(TM)-clone for the console
 
 USE_BZIP2=	yes

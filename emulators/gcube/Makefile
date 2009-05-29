@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.liquidx.org/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gamecube emulator
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg

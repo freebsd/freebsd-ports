@@ -13,7 +13,7 @@ MASTER_SITES=	http://mupen64.emulation64.com/files/0.4/
 PKGNAMESUFFIX=	-rice
 DISTNAME=	riceplugin
 
-MAINTAINER?=	tlp@LiquidX.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Rice Daedalus graphics plugin for Mupen64
 
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm

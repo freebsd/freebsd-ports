@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.alessandropira.org/alienwave/
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shoot'em up game written using ncurses
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

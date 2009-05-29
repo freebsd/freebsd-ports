@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.icculus.org/wolf3d/:wolf \
 DISTNAME=	wolf3d-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wolf
 
-MAINTAINER=	tlp@liquidx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Wolfenstein 3D Linux" by Steven Fuller (1992)
 
 USE_SDL=	sdl
