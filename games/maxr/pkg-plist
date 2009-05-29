@@ -313,6 +313,7 @@ bin/maxr
 %%DATADIR%%/languages/lang_ger.xml
 %%DATADIR%%/languages/lang_hun.xml
 %%DATADIR%%/languages/lang_rus.xml
+%%DATADIR%%/languages/lang_slv.xml
 %%DATADIR%%/maps/Delta.wrl
 %%DATADIR%%/maps/Three Isles.wrl
 %%DATADIR%%/maxr.bmp
@@ -387,6 +388,7 @@ bin/maxr
 %%DATADIR%%/vehicles/assault/store.pcx
 %%DATADIR%%/vehicles/assault/video.flc
 %%DATADIR%%/vehicles/awac/data.xml
+%%DATADIR%%/vehicles/awac/drive.wav
 %%DATADIR%%/vehicles/awac/img0.pcx
 %%DATADIR%%/vehicles/awac/img1.pcx
 %%DATADIR%%/vehicles/awac/img2.pcx
@@ -405,8 +407,11 @@ bin/maxr
 %%DATADIR%%/vehicles/awac/shw5.pcx
 %%DATADIR%%/vehicles/awac/shw6.pcx
 %%DATADIR%%/vehicles/awac/shw7.pcx
+%%DATADIR%%/vehicles/awac/start.wav
+%%DATADIR%%/vehicles/awac/stop.wav
 %%DATADIR%%/vehicles/awac/store.pcx
 %%DATADIR%%/vehicles/awac/video.flc
+%%DATADIR%%/vehicles/awac/wait.wav
 %%DATADIR%%/vehicles/bomber/data.xml
 %%DATADIR%%/vehicles/bomber/img0.pcx
 %%DATADIR%%/vehicles/bomber/img1.pcx
@@ -1012,7 +1017,9 @@ bin/maxr
 %%DATADIR%%/vehicles/sea_transport/shw7.pcx
 %%DATADIR%%/vehicles/sea_transport/store.pcx
 %%DATADIR%%/vehicles/sea_transport/video.flc
+%%DATADIR%%/vehicles/sub/attack.wav
 %%DATADIR%%/vehicles/sub/data.xml
+%%DATADIR%%/vehicles/sub/drive_water.wav
 %%DATADIR%%/vehicles/sub/img0.pcx
 %%DATADIR%%/vehicles/sub/img1.pcx
 %%DATADIR%%/vehicles/sub/img2.pcx
@@ -1030,9 +1037,14 @@ bin/maxr
 %%DATADIR%%/vehicles/sub/shw5.pcx
 %%DATADIR%%/vehicles/sub/shw6.pcx
 %%DATADIR%%/vehicles/sub/shw7.pcx
+%%DATADIR%%/vehicles/sub/start_water.wav
+%%DATADIR%%/vehicles/sub/stop_water.wav
 %%DATADIR%%/vehicles/sub/store.pcx
 %%DATADIR%%/vehicles/sub/video.flc
+%%DATADIR%%/vehicles/sub/wait_water.wav
 %%DATADIR%%/vehicles/surveyor/data.xml
+%%DATADIR%%/vehicles/surveyor/drive.wav
+%%DATADIR%%/vehicles/surveyor/drive_water.wav
 %%DATADIR%%/vehicles/surveyor/img0.pcx
 %%DATADIR%%/vehicles/surveyor/img1.pcx
 %%DATADIR%%/vehicles/surveyor/img2.pcx
@@ -1050,8 +1062,14 @@ bin/maxr
 %%DATADIR%%/vehicles/surveyor/shw5.pcx
 %%DATADIR%%/vehicles/surveyor/shw6.pcx
 %%DATADIR%%/vehicles/surveyor/shw7.pcx
+%%DATADIR%%/vehicles/surveyor/start.wav
+%%DATADIR%%/vehicles/surveyor/start_water.wav
+%%DATADIR%%/vehicles/surveyor/stop.wav
+%%DATADIR%%/vehicles/surveyor/stop_water.wav
 %%DATADIR%%/vehicles/surveyor/store.pcx
 %%DATADIR%%/vehicles/surveyor/video.flc
+%%DATADIR%%/vehicles/surveyor/wait.wav
+%%DATADIR%%/vehicles/surveyor/wait_water.wav
 %%DATADIR%%/vehicles/tank/data.xml
 %%DATADIR%%/vehicles/tank/img0.pcx
 %%DATADIR%%/vehicles/tank/img1.pcx
@@ -1139,6 +1157,7 @@ bin/maxr
 @dirrm %%DATADIR%%/vehicles/trans_gold
 @dirrm %%DATADIR%%/vehicles/tank
 @dirrm %%DATADIR%%/vehicles/surveyor
+@dirrm %%DATADIR%%/vehicles/sub/sub
 @dirrm %%DATADIR%%/vehicles/sub
 @dirrm %%DATADIR%%/vehicles/sea_transport
 @dirrm %%DATADIR%%/vehicles/sea_minelayer
