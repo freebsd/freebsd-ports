@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pygts
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics python
 MASTER_SITES=	SF
 
