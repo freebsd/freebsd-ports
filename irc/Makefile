@@ -38,6 +38,7 @@
     SUBDIR += inspircd
     SUBDIR += insub
     SUBDIR += irc
+    SUBDIR += irc2dc
     SUBDIR += ircII
     SUBDIR += ircd-hybrid
     SUBDIR += ircd-hybrid-ru

@@ -1,0 +1,9 @@
+--- src/irc2dc.conf.dist.orig  2009-05-27 13:19:31.000000000 +0300
++++ src/irc2dc.conf.dist       2009-05-27 13:50:09.000000000 +0300
+@@ -39,3 +39,6 @@
+ ; notices - 8
+ ; state - 16
+ ; commands - 32
++pidfile=/var/run/irc2dc.pid ; don't forget to update rc-script after change
++use_syslog=1
++

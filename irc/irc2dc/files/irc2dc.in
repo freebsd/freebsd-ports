@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# PROVIDE: irc2dc
+# REQUIRE: DAEMON NETWORKING
+
+. /etc/rc.subr
+
+name="irc2dc"
+rcvar=`set_rcvar`
+load_rc_config $name
+command="%%PREFIX%%/bin/irc2dc"
+pidfile="/var/run/irc2dc.pid"
+
+required_files="%%PREFIX%%/etc/irc2dc.conf"
+
+run_rc_command $@
