@@ -21,4 +21,10 @@ RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah
 USE_PYTHON=		2.4+
 USE_PYDISTUTILS=	easy_install
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		leaves files behind on deinstall
+.endif
+
+.include <bsd.port.post.mk>
