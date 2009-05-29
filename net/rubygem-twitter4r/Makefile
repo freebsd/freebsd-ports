@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	twitter4r
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF
 
@@ -19,6 +19,6 @@ RUN_DEPENDS=	rubygem-json>=0.4.3:${PORTSDIR}/devel/rubygem-json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
