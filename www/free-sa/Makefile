@@ -21,6 +21,10 @@ MAN5=	free-sa.conf.5
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64
+.endif
+
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile
 .endif
