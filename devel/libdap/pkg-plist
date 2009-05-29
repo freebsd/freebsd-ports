@@ -5,7 +5,7 @@ sbin/deflate
 lib/libdap.a
 lib/libdap.la
 lib/libdap.so
-lib/libdap.so.9
+lib/libdap.so.10
 lib/libdapclient.a
 lib/libdapclient.la
 lib/libdapclient.so
@@ -13,7 +13,7 @@ lib/libdapclient.so.3
 lib/libdapserver.a
 lib/libdapserver.la
 lib/libdapserver.so
-lib/libdapserver.so.6
+lib/libdapserver.so.7
 include/libdap/AISConnect.h
 include/libdap/AISDatabaseParser.h
 include/libdap/AISExceptions.h
@@ -92,6 +92,7 @@ include/libdap/dods-limits.h
 include/libdap/escaping.h
 include/libdap/expr.h
 include/libdap/gse_parser.h
+include/libdap/outbuf.h
 include/libdap/parser.h
 include/libdap/util.h
 include/libdap/util_mit.h
