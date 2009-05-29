@@ -1,0 +1,36 @@
+*******************************************************************************
+
+Configuration expamle:
+
+1. On the client side in snmpd.conf(5) create a new exec command:
+
+  exec check_puppet %%PREFIX%%/bin/check_puppet
+
+2. On the Nagios node create (if necessary) `check_snmp_oid' checkcommand:
+
+  define command {
+    command_name check_snmp_oid
+    command_line $USER1$/check_snmp -H $HOSTADDRESS$ -o $ARG1$ -w $ARG2$ -c $ARG3$
+  }
+
+Be sure to provide `command_line' here with correct authentication options
+specific to your SNMP installation. You need to have package from
+net-mgmt/nagios-plugins installed on your system compiled with WITH_NETSNMP
+option enabled (disabled by default).
+
+3. Create a new check service:
+
+  define service {
+    use                 generic-service
+    host_name           your_hostname
+    service_description Puppet daemon
+    check_command       check_snmp_oid!.1.3.6.1.4.1.2021.8.1.101.1,.1.3.6.1.4.1.2021.8.1.100.1!,0!,1!
+  }
+ 
+Adjust OID numbers to your SNMP installation by checking the output of
+snmpwalk(1) command. The first OID should be the STRING output from exec, the
+second should point to the INTEGER exit code.
+
+Restart Nagios and SNMP daemons to apply new configuration.
+
+*******************************************************************************

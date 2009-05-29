@@ -1,0 +1,15 @@
+check_puppet - is a very simple Nagios plugin to check Puppet daemon
+availability with SNMP.
+
+Why check_puppet?
+
+1. It does check whether puppetd and puppetmasterd is alive.
+
+2. It does check state.yaml freshness
+
+3. It does not require the full net-mgmt/nagios-plugins package on the client
+side
+
+4. It is written in sh - code interpreter available in a base system
+
+WWW: http://renatasystems.org/freebsd/check_puppet.html
