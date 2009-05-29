@@ -8,7 +8,7 @@
 PORTNAME=	avant-window-navigator
 PORTVERSION=	0.3.2.1
 CATEGORIES=	x11
-MASTER_SITES=	http://launchpad.net/awn/0.2/${PORTVERSION}/+download/ \
+MASTER_SITES=	http://launchpadlibrarian.net/26374006/ \
 		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
