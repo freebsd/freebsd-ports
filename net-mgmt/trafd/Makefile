@@ -37,4 +37,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+post-patch:
+.if	${OSVERSION} >= 800000
+	@${REINPLACE_CMD} -e "s|-DCSLIP|-UCSLIP|" \
+	    ${WRKSRC}/Makefile.inc
+.endif
+
+.include <bsd.port.post.mk>
