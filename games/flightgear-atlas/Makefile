@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flightgear-atlas
-PORTVERSION=	0.3.0.20080504
-PORTREVISION=	2
+PORTVERSION=	0.3.1.20090529
 CATEGORIES=	games
 MASTER_SITES=	http://contribs.martymac.com/FreeBSD-ports/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -28,14 +27,15 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 USE_AUTOTOOLS=	aclocal:19 autoheader:262 automake:15 autoconf:262
 AUTOMAKE_ARGS=	--add-missing
 
-BROKEN=	does not build with simgear
-
 GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11 xext xi xt xmu
-USE_GL=	gl glu glut
+USE_GL=		gl glu glut
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+		-DSG_GLUT_H='<GL/glut.h>' \
+		-DSG_GL_H='<GL/gl.h>' \
+		-DSTL_STRING='<string>'
+LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-fgbase="${LOCALBASE}/share/FlightGear"
 
