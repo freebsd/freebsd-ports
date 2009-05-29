@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maxr
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.maxr.org/downloads/ \
 		http://mirror.amdmi3.ru/
@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer net
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^LIBS=/ s|-lSDL_|`${SDL_CONFIG} --libs` &|' \
