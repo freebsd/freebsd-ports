@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Chooser
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	Takes a string composed of various tests, arguements, and etc and returns a value.
+COMMENT=	Takes a string composed of various tests, arguements, and etc and returns a value
 
 RUN_DEPENDS=	${SITE_PERL}/Net/CIDR/Lite.pm:${PORTSDIR}/net/p5-Net-CIDR-Lite
 
