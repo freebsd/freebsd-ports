@@ -20,12 +20,17 @@ USE_MOTIF=	yes
 
 MAN1=		tcpview.1
 
+.include <bsd.port.pre.mk>
 post-patch:
 .for f in nametoaddr.c addrtoname.c print-nfs.c detail-tcp.c tv_addrtoname.c
 	@${REINPLACE_CMD} -e 's/NTOHL/ntohl/ ; s/NTOHS/ntohs/' ${WRKSRC}/${f}
 .endfor
+.if	${OSVERSION} >= 800000
+	@${REINPLACE_CMD} -e "s|-DCSLIP|-UCSLIP|" \
+	    ${WRKSRC}/Makefile
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/DOC/Tcpview ${LOCALBASE}/lib/X11/app-defaults/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
