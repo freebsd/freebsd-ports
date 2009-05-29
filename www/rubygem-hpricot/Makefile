@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hpricot
-PORTVERSION=	0.6.161
+PORTVERSION=	0.8.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	gems
@@ -15,6 +15,6 @@ COMMENT=	A Fast, Enjoyable HTML Parser for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
