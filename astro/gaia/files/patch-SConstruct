@@ -1,5 +1,5 @@
---- SConstruct~	2006-12-05 13:31:42.000000000 +0100
-+++ SConstruct	2008-06-22 22:40:55.050203635 +0200
+--- SConstruct.orig	2006-12-05 15:31:42.000000000 +0300
++++ SConstruct	2009-05-29 20:45:20.000000000 +0400
 @@ -8,7 +8,7 @@
  #######################################
  # OPTIONS
@@ -9,3 +9,12 @@
  # conditionally build parts of gaia
  #opts.Add(BoolOption('gaia', 'Compile gaia OpenGL client', 1));
  
+@@ -25,7 +25,7 @@
+ #######################################
+ # ENVIRONMENT & SYSTEM_SPECIFIC CONFIGURATION
+ #######################################
+-env = Environment( options = opts )
++env = Environment( options = opts, ENV = os.environ )
+ 
+ if env['prefix'] == "":
+ 	env['prefix'] = '.'
