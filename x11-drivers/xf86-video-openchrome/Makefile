@@ -22,4 +22,6 @@ MAN4=		openchrome.4x
 
 MAKE_ARGS+=	drivermandir=${LOCALBASE}/man/man4
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 .include <bsd.port.mk>
