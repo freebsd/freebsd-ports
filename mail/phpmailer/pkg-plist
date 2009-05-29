@@ -1,44 +1,40 @@
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/PHPMailer/PHPMailer.html
-%%PORTDOCS%%%%DOCSDIR%%/PHPMailer/SMTP.html
-%%PORTDOCS%%%%DOCSDIR%%/PHPMailer/_class_phpmailer_php.html
-%%PORTDOCS%%%%DOCSDIR%%/PHPMailer/_class_smtp_php.html
+%%PORTDOCS%%%%DOCSDIR%%/Note_for_SMTP_debugging.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/blank.html
-%%PORTDOCS%%%%DOCSDIR%%/classtrees_PHPMailer.html
-%%PORTDOCS%%%%DOCSDIR%%/elementindex.html
-%%PORTDOCS%%%%DOCSDIR%%/elementindex_PHPMailer.html
-%%PORTDOCS%%%%DOCSDIR%%/errors.html
+%%PORTDOCS%%%%DOCSDIR%%/aboutus.html
+%%PORTDOCS%%%%DOCSDIR%%/docs.ini
 %%PORTDOCS%%%%DOCSDIR%%/extending.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/li_PHPMailer.html
-%%PORTDOCS%%%%DOCSDIR%%/media/banner.css
-%%PORTDOCS%%%%DOCSDIR%%/media/stylesheet.css
-%%PORTDOCS%%%%DOCSDIR%%/packages.html
-%%PORTDOCS%%%%DOCSDIR%%/phpmailer_sm.gif
 %%PORTDOCS%%%%DOCSDIR%%/pop3_article.txt
 %%PORTDOCS%%%%DOCSDIR%%/use_gmail.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contents.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pop3_before_smtp_test.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_gmail.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_mail.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_sendmail.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/bkgrnd.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/phpmailer.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/phpmailer.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/phpmailer_mini.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_db_smtp_basic.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_mail_advanced.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_mail_basic.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_pop_before_smtp_advanced.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_pop_before_smtp_basic.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_sendmail_advanced.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_sendmail_basic.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_advanced.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_advanced_no_auth.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_basic.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_basic_no_auth.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_gmail_advanced.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_gmail_basic.php
 %%DATADIR%%/class.phpmailer.php
 %%DATADIR%%/class.pop3.php
 %%DATADIR%%/class.smtp.php
+%%DATADIR%%/language/phpmailer.lang-ar.php
 %%DATADIR%%/language/phpmailer.lang-br.php
 %%DATADIR%%/language/phpmailer.lang-ca.php
+%%DATADIR%%/language/phpmailer.lang-ch.php
 %%DATADIR%%/language/phpmailer.lang-cz.php
 %%DATADIR%%/language/phpmailer.lang-de.php
 %%DATADIR%%/language/phpmailer.lang-dk.php
-%%DATADIR%%/language/phpmailer.lang-en.php
 %%DATADIR%%/language/phpmailer.lang-es.php
 %%DATADIR%%/language/phpmailer.lang-et.php
 %%DATADIR%%/language/phpmailer.lang-fi.php
@@ -54,14 +50,15 @@
 %%DATADIR%%/language/phpmailer.lang-ru.php
 %%DATADIR%%/language/phpmailer.lang-se.php
 %%DATADIR%%/language/phpmailer.lang-tr.php
-%%DATADIR%%/test/phpmailer_test.php
-%%DATADIR%%/test/phpunit.php
+%%DATADIR%%/language/phpmailer.lang-zh.php
+%%DATADIR%%/language/phpmailer.lang-zh_cn.php
+%%DATADIR%%/test/contents.html
+%%DATADIR%%/test/phpmailerTest.php
 %%DATADIR%%/test/test.png
+%%DATADIR%%/test/testemail.php
 @dirrm %%DATADIR%%/test
 @dirrm %%DATADIR%%/language
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/media
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/PHPMailer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images
+%%PORTEXAMPLES%%@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%
