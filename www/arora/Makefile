@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	arora
-PORTVERSION=	0.4
+PORTVERSION=	0.7.0
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,9 +14,10 @@ COMMENT=	Simple Qt4 based browser
 
 USE_QT_VER=	4
 QT_COMPONENTS=	network webkit qmake_build moc_build uic_build rcc_build \
-		imageformats gui
+		imageformats gui script sql
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
+MAKE_JOBS_SAFE=	yes
 
 MAN1=	arora.1
 
@@ -31,17 +32,17 @@ do-configure:
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e "/INSTALLS/s|translations||" \
 		${WRKSRC}/src/src.pro
-	@${REINPLACE_CMD} -e "/PRE_TARGETDEPS/s|compiler_updateqm_make_all||" \
+	@${REINPLACE_CMD} -e "s|target_predeps||" \
 		${WRKSRC}/src/locale/locale.pri
 .endif
 	@${REINPLACE_CMD} -e "/INSTALLS/s|man man-compress||" \
 		${WRKSRC}/src/src.pro
 	@${REINPLACE_CMD} -e "/else/s|lrelease|lrelease-qt4|" \
 		${WRKSRC}/src/locale/locale.pri
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS}
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS}
 
 post-configure:
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|' \
 		${WRKSRC}/src/Makefile
 
