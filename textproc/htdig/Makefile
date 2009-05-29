@@ -9,12 +9,7 @@ PORTNAME=	htdig
 PORTVERSION=	3.2.0.b6
 PORTREVISION=	2
 CATEGORIES=	textproc www
-MASTER_SITES=	http://htdig.sourceforge.net/files/ \
-		http://www.htdig.org/files/ \
-		ftp://netmirror.org/ftp.htdig.org/ \
-		ftp://gnu.kookel.org/pub/htdig/ftp.htdig.org/files/ \
-		ftp://ftp.ntua.gr/pub/www/htdig/ \
-		http://dougbarton.us/Downloads/
+MASTER_SITES=	SF
 DISTNAME=	htdig-3.2.0b6
 
 MAINTAINER=	DougB@FreeBSD.org
@@ -43,9 +38,8 @@ OPTIONS=	APACHE "Include ${APACHE_PORT} as a dependency" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	yes
+USE_APACHE=	1.3+
 CONFIGURE_ARGS+=	--with-apache=${LOCALBASE}/sbin
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
 .endif
 
 post-patch:
@@ -64,7 +58,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html
 .for f in ChangeLog ChangeLog.0 README STATUS
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .for f in *.html *.gif
 	@${INSTALL_DATA} ${WRKSRC}/htdoc/${f} ${DOCSDIR}/html
