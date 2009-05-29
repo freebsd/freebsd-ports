@@ -49,6 +49,10 @@ OPTIONS=	UWACOMKLD "Install USB kernel module" On
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_UWACOMKLD)
 PLIST_SUB+=	UWACOMKLD="uwacom.ko"
 PORTTYPE=	usb
