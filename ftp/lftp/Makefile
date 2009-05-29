@@ -42,8 +42,8 @@ OPTIONS=	GNUTLS "With GnutTLS support" off \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 602109 || (${OSVERSION} > 700000 && ${OSVERSION} < 700029)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
-RUN_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.6:${PORTSDIR}/devel/readline
+RUN_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.6:${PORTSDIR}/devel/readline
 .endif
 
 .if defined(WITH_GNUTLS)

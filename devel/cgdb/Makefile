@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 
 # at this time we can not use LIB_DEPENDS, please read ports/99327
 .if ${OSVERSION} < 700016
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.6:${PORTSDIR}/devel/readline
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LDFLAGS+=	-rpath ${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
