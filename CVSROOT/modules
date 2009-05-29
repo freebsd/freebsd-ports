@@ -785,6 +785,9 @@ avahi-sharp                     ports/net/avahi-sharp
 avalon-framework                ports/devel/avalon-framework
 avalon-logkit                   ports/java/avalon-logkit
 avanor                          ports/games/avanor
+avant-window-navigator          ports/x11/avant-window-navigator
+avant-window-navigator-gnome    ports/x11/avant-window-navigator-gnome
+avant-window-navigator-xfce4    ports/x11/avant-window-navigator-xfce4
 avarice                         ports/devel/avarice
 avbin                           ports/multimedia/avbin
 avce00                          ports/devel/avce00
@@ -6850,6 +6853,7 @@ kompozer                        ports/www/kompozer
 konq-plugins                    ports/misc/konq-plugins
 konq-plugins-kde4               ports/misc/konq-plugins-kde4
 konversation                    ports/irc/konversation
+konversation-kde4               ports/irc/konversation-kde4
 konverse                        ports/net-im/konverse
 konverter                       ports/multimedia/konverter
 konwert                         ports/converters/konwert
