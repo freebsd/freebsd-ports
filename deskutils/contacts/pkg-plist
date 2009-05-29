@@ -3,7 +3,6 @@ share/applications/contacts.desktop
 share/icons/hicolor/16x16/apps/contacts.png
 share/icons/hicolor/22x22/apps/contacts.png
 share/icons/hicolor/24x24/apps/contacts.png
-share/icons/hicolor/26x26/apps/contacts.png
 share/icons/hicolor/32x32/apps/contacts.png
 share/icons/hicolor/48x48/apps/contacts.png
 share/icons/hicolor/scalable/apps/contacts.svg
@@ -11,6 +10,7 @@ share/locale/bg/LC_MESSAGES/Contacts.mo
 share/locale/ca/LC_MESSAGES/Contacts.mo
 share/locale/da/LC_MESSAGES/Contacts.mo
 share/locale/de/LC_MESSAGES/Contacts.mo
+share/locale/en_GB/LC_MESSAGES/Contacts.mo
 share/locale/es/LC_MESSAGES/Contacts.mo
 share/locale/et/LC_MESSAGES/Contacts.mo
 share/locale/fi/LC_MESSAGES/Contacts.mo
@@ -23,5 +23,3 @@ share/locale/pt_BR/LC_MESSAGES/Contacts.mo
 share/locale/ru/LC_MESSAGES/Contacts.mo
 share/locale/sv/LC_MESSAGES/Contacts.mo
 @dirrmtry share/applications
-@dirrmtry share/icons/hicolor/26x26/apps
-@dirrmtry share/icons/hicolor/26x26

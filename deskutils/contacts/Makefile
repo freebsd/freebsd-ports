@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	contacts
-PORTVERSION=	0.8
-PORTREVISION=	2
+PORTVERSION=	0.9
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://pimlico-project.org/sources/${PORTNAME}/
 DIST_SUBDIR=	gnome2
@@ -23,7 +22,5 @@ USE_AUTOTOOLS=	libtool:15
 GCONF_SCHEMAS=	contacts.schemas
 MAN1=		${PORTNAME}.1
 # CFLAGS+=	-g
-
-BROKEN=		needs upgrade to work with evolution-data-server 2.24
 
 .include <bsd.port.mk>
