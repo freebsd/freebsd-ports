@@ -7,7 +7,6 @@
 
 PORTNAME=	gnustep-base
 PORTVERSION=	1.18.0
-PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -70,6 +69,8 @@ post-extract:
 		-e "s=%%LDCONFIG_GCC%%=${LDCONFIG_GCC}=" \
 		${FILESDIR}/GNUstep.sh \
 		> ${WRKSRC}/GNUstep.sh
+	@${REINPLACE_CMD} -e "s|/usr/local/|${LOCALBASE}/|" \
+		${WRKSRC}/configure
 
 post-install:
 	-@${MKDIR} ${ETCDIR}/rc.d
