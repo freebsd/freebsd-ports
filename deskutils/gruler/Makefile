@@ -11,14 +11,13 @@ PORTREVISION=	6
 CATEGORIES=	deskutils
 MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A customizable screen ruler for GNOME
+MAINTAINER=	smyru@heron.pl
+COMMENT=	A simple customizable GTK screen ruler
 
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GCC=	3.4
+		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=""||' ${WRKSRC}/configure
