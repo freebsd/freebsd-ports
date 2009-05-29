@@ -12,10 +12,13 @@ MASTER_SITES=	http://tgreiner.net/
 DISTFILES=	amy-${PORTVERSION}.tar.gz ClassicGames.pgn.bz2
 EXTRACT_ONLY=	amy-${PORTVERSION}.tar.gz
 
-MAINTAINER=	thorsten@tgreiner.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A chess program for playing and analyzing games
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2:install
+
+DEPRECATED=		mastersite disappeared, does not build on recent version
+EXPIRATION_DATE=	2009-07-28
 
 NOT_FOR_ARCHS=	sparc64 alpha
 
