@@ -145,6 +145,10 @@ WITH_OPTCFLAGS=	true
 CFLAGS+=	-O2 -pipe
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
