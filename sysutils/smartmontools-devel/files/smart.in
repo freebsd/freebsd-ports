@@ -12,12 +12,21 @@ fi
 smartctl=%%PREFIX%%/sbin/smartctl
 : ${daily_status_smartctl_flags="-H"}
 : ${daily_status_smartctl_extra_status_flags="-a"}
-# no default for ${daily_status_smart_devices}
+
+case "${daily_status_smart_devices}" in
+	# XXX AUTO mode selects only regular ad/da disks 
+	[Aa][Uu][Tt][Oo])
+		daily_status_smart_devices=`ls /dev/da*[0-9] /dev/ad*[0-9] 2>/dev/null`
+		;;
+	*)	;;
+esac
+
 if [ -z "${daily_status_smart_devices}" ]; then
-	: ${daily_status_smart_enabled="NO"}
+	: ${daily_status_smart_enable="NO"}
 else
-	: ${daily_status_smart_enabled="YES"}
+	: ${daily_status_smart_enable="YES"}
 fi
+
 trim_junk="tail -n +4"
 
 tmpfile="$(mktemp /var/run/daily.XXXXXXXX)"
@@ -25,9 +34,7 @@ trap "rm -f ${tmpfile}" 0 1 3 15
 
 rc=0
 case "${daily_status_smart_enable}" in
-	[Nn][Oo])
-		;;
-	*)
+	[Yy][Ee][Ss])
 		for device in ${daily_status_smart_devices}; do
 			if [ -e ${device} ]; then
 				echo 
