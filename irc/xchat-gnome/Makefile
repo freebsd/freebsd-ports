@@ -17,6 +17,7 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	An IRC client for GNOME 2 (development version)
 
 LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
+		canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
 		notify:${PORTSDIR}/devel/libnotify
 
 USE_GETTEXT=	yes
