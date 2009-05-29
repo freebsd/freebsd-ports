@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xchat
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.26.1
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	http://releases.navi.cx/xchat-gnome/
+MASTER_SITES=	GNOME
+MASTER_SITE_SUBDIR=	sources/xchat-gnome/${PORTVERSION:R}
 PKGNAMESUFFIX=	-gnome
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@thepentagon.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	An IRC client for GNOME 2 (development version)
 
 LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \

@@ -31,12 +31,26 @@ share/applications/xchat-gnome.desktop
 share/gnome/help/xchat-gnome/C/figures/xchat-gnome_main_window.png
 share/gnome/help/xchat-gnome/C/legal.xml
 share/gnome/help/xchat-gnome/C/xchat-gnome.xml
-share/omf/xchat-gnome/xchat-gnome-C.omf
+share/gnome/help/xchat-gnome/ca/figures/xchat-gnome_main_window.png
+share/gnome/help/xchat-gnome/ca/xchat-gnome.xml
+share/gnome/help/xchat-gnome/es/figures/xchat-gnome_main_window.png
+share/gnome/help/xchat-gnome/es/xchat-gnome.xml
+share/gnome/help/xchat-gnome/fr/figures/xchat-gnome_main_window.png
+share/gnome/help/xchat-gnome/fr/xchat-gnome.xml
+share/gnome/help/xchat-gnome/it/figures/xchat-gnome_main_window.png
+share/gnome/help/xchat-gnome/it/xchat-gnome.xml
+share/gnome/help/xchat-gnome/oc/figures/xchat-gnome_main_window.png
+share/gnome/help/xchat-gnome/oc/xchat-gnome.xml
+share/gnome/help/xchat-gnome/pt_BR/figures/xchat-gnome_main_window.png
+share/gnome/help/xchat-gnome/pt_BR/xchat-gnome.xml
+share/gnome/help/xchat-gnome/sv/figures/xchat-gnome_main_window.png
+share/gnome/help/xchat-gnome/sv/xchat-gnome.xml
+share/gnome/help/xchat-gnome/th/figures/xchat-gnome_main_window.png
+share/gnome/help/xchat-gnome/th/xchat-gnome.xml
 share/xchat-gnome/channel-list.glade
 share/xchat-gnome/connect-dialog.glade
 share/xchat-gnome/dcc-window.glade
 share/xchat-gnome/irc-network-editor.glade
-share/xchat-gnome/message.wav
 share/xchat-gnome/preferences-dialog.glade
 share/xchat-gnome/preferences-notification.glade
 share/xchat-gnome/setup-dialog.glade
@@ -63,6 +77,7 @@ share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-message-nickname-said.png
 share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-status-halfop.png
 share/xchat-gnome/icons/hicolor/scalable/apps/xchat-gnome-plugin.svg
 share/locale/am/LC_MESSAGES/xchat-gnome.mo
+share/locale/ar/LC_MESSAGES/xchat-gnome.mo
 share/locale/az/LC_MESSAGES/xchat-gnome.mo
 share/locale/bg/LC_MESSAGES/xchat-gnome.mo
 share/locale/bn/LC_MESSAGES/xchat-gnome.mo
@@ -80,6 +95,7 @@ share/locale/eu/LC_MESSAGES/xchat-gnome.mo
 share/locale/fi/LC_MESSAGES/xchat-gnome.mo
 share/locale/fr/LC_MESSAGES/xchat-gnome.mo
 share/locale/gl/LC_MESSAGES/xchat-gnome.mo
+share/locale/he/LC_MESSAGES/xchat-gnome.mo
 share/locale/hi/LC_MESSAGES/xchat-gnome.mo
 share/locale/hr/LC_MESSAGES/xchat-gnome.mo
 share/locale/hu/LC_MESSAGES/xchat-gnome.mo
@@ -88,11 +104,13 @@ share/locale/it/LC_MESSAGES/xchat-gnome.mo
 share/locale/ja/LC_MESSAGES/xchat-gnome.mo
 share/locale/jbo/LC_MESSAGES/xchat-gnome.mo
 share/locale/ka/LC_MESSAGES/xchat-gnome.mo
+share/locale/kn/LC_MESSAGES/xchat-gnome.mo
 share/locale/ko/LC_MESSAGES/xchat-gnome.mo
 share/locale/ku/LC_MESSAGES/xchat-gnome.mo
 share/locale/lt/LC_MESSAGES/xchat-gnome.mo
 share/locale/lv/LC_MESSAGES/xchat-gnome.mo
 share/locale/mk/LC_MESSAGES/xchat-gnome.mo
+share/locale/mr/LC_MESSAGES/xchat-gnome.mo
 share/locale/ms/LC_MESSAGES/xchat-gnome.mo
 share/locale/nb/LC_MESSAGES/xchat-gnome.mo
 share/locale/oc/LC_MESSAGES/xchat-gnome.mo
@@ -106,6 +124,9 @@ share/locale/sl/LC_MESSAGES/xchat-gnome.mo
 share/locale/sq/LC_MESSAGES/xchat-gnome.mo
 share/locale/sr/LC_MESSAGES/xchat-gnome.mo
 share/locale/sv/LC_MESSAGES/xchat-gnome.mo
+share/locale/ta/LC_MESSAGES/xchat-gnome.mo
+share/locale/te/LC_MESSAGES/xchat-gnome.mo
+share/locale/th/LC_MESSAGES/xchat-gnome.mo
 share/locale/tl/LC_MESSAGES/xchat-gnome.mo
 share/locale/tr/LC_MESSAGES/xchat-gnome.mo
 share/locale/uk/LC_MESSAGES/xchat-gnome.mo
@@ -114,6 +135,15 @@ share/locale/wa/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_HK/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_TW/LC_MESSAGES/xchat-gnome.mo
+share/omf/xchat-gnome/xchat-gnome-C.omf
+share/omf/xchat-gnome/xchat-gnome-ca.omf
+share/omf/xchat-gnome/xchat-gnome-es.omf
+share/omf/xchat-gnome/xchat-gnome-fr.omf
+share/omf/xchat-gnome/xchat-gnome-it.omf
+share/omf/xchat-gnome/xchat-gnome-oc.omf
+share/omf/xchat-gnome/xchat-gnome-pt_BR.omf
+share/omf/xchat-gnome/xchat-gnome-sv.omf
+share/omf/xchat-gnome/xchat-gnome-th.omf
 @dirrm share/xchat-gnome/icons/hicolor/scalable/apps
 @dirrm share/xchat-gnome/icons/hicolor/scalable
 @dirrm share/xchat-gnome/icons/hicolor/22x22/apps
@@ -124,6 +154,22 @@ share/locale/zh_TW/LC_MESSAGES/xchat-gnome.mo
 @dirrm share/xchat-gnome/icons
 @dirrm share/xchat-gnome
 @dirrm share/omf/xchat-gnome
+@dirrm share/gnome/help/xchat-gnome/th/figures
+@dirrm share/gnome/help/xchat-gnome/th
+@dirrm share/gnome/help/xchat-gnome/sv/figures
+@dirrm share/gnome/help/xchat-gnome/sv
+@dirrm share/gnome/help/xchat-gnome/pt_BR/figures
+@dirrm share/gnome/help/xchat-gnome/pt_BR
+@dirrm share/gnome/help/xchat-gnome/oc/figures
+@dirrm share/gnome/help/xchat-gnome/oc
+@dirrm share/gnome/help/xchat-gnome/it/figures
+@dirrm share/gnome/help/xchat-gnome/it
+@dirrm share/gnome/help/xchat-gnome/fr/figures
+@dirrm share/gnome/help/xchat-gnome/fr
+@dirrm share/gnome/help/xchat-gnome/es/figures
+@dirrm share/gnome/help/xchat-gnome/es
+@dirrm share/gnome/help/xchat-gnome/ca/figures
+@dirrm share/gnome/help/xchat-gnome/ca
 @dirrm share/gnome/help/xchat-gnome/C/figures
 @dirrm share/gnome/help/xchat-gnome/C
 @dirrm share/gnome/help/xchat-gnome
