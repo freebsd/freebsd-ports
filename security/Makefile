@@ -724,6 +724,7 @@
     SUBDIR += scanhill
     SUBDIR += scanlogd
     SUBDIR += scanssh
+    SUBDIR += scrypt
     SUBDIR += seahorse
     SUBDIR += seahorse-plugins
     SUBDIR += seccure
