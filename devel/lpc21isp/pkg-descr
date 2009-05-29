@@ -1,0 +1,5 @@
+Lpc21isp is an in-circuit programming (ISP) tool for programming
+flash on NXP & Analog Devices ARM7 CPUs over the serial bootloader
+
+WWW:	http://tech.groups.yahoo.com/group/lpc21isp/
+SRC:	http://sourceforge.net/projects/lpc21isp

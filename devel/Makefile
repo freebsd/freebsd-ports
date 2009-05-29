@@ -786,6 +786,7 @@
     SUBDIR += log4shib
     SUBDIR += loki
     SUBDIR += looks
+    SUBDIR += lpc21isp
     SUBDIR += lrmi
     SUBDIR += lua-bitlib
     SUBDIR += lua-filename
