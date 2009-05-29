@@ -7,13 +7,13 @@
 
 PORTNAME=	piwik
 PORTVERSION=	0.2.37
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Open Source Web Analytics Software Program
 
-USE_ZIP=	yes
 USE_PHP=	mysql gd pdo pdo_mysql zlib
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
