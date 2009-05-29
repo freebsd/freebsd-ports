@@ -58,6 +58,10 @@ OPTIONS=	CAMPAIGN "Enable campaign server" On \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
