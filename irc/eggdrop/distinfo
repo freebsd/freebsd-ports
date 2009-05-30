@@ -4,3 +4,6 @@ SIZE (eggdrop1.6.19.tar.bz2) = 811072
 MD5 (eggdrop-1.6.19-ssl-rootie.patch.gz) = 6d477d54e16afff3215b9b53e34a0521
 SHA256 (eggdrop-1.6.19-ssl-rootie.patch.gz) = 94b06c392da5f13c04cc1d3e87b52e3c2ed9af8ba58cf360f121bb0a06f49ce3
 SIZE (eggdrop-1.6.19-ssl-rootie.patch.gz) = 9285
+MD5 (eggdrop1.6.19+ctcpfix.patch.gz) = 86d159a5e3460ec8fb30cb1a27a32acc
+SHA256 (eggdrop1.6.19+ctcpfix.patch.gz) = 2f01f00692c29fb9568721d80cf38289031a09bc15d2fac483ad16aec4b788a7
+SIZE (eggdrop1.6.19+ctcpfix.patch.gz) = 666

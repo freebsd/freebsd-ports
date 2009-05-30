@@ -7,15 +7,16 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.6.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/ \
 		LOCAL/beech
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-ssl-rootie.patch.gz
-PATCH_SITES=	http://www.egghelp.org/files/patches/ \
-		LOCAL/beech
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-ssl-rootie.patch.gz:ssl \
+		eggdrop1.6.19+ctcpfix.patch.gz:ctcpfix
+PATCH_SITES=	http://www.egghelp.org/files/patches/:ssl \
+		ftp://ftp.eggheads.org/pub/eggdrop/patches/official/1.6/:ctcpfix
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
