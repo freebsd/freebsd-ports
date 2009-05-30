@@ -7,6 +7,7 @@
 
 PORTNAME=	viking
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
@@ -30,7 +31,7 @@ OPTIONS=	GPSD	"Enable realtime GPS tracking"	off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GPSD)
-LIB_DEPENDS+=	gps.17:${PORTSDIR}/astro/gpsd
+LIB_DEPENDS+=	gps.18:${PORTSDIR}/astro/gpsd
 .else
 CONFIGURE_ARGS+=	--disable-realtime-gps-tracking
 .endif
