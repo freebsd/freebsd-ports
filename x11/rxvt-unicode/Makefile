@@ -137,6 +137,11 @@ CONFIGURE_ARGS+=	--enable-afterimage
 
 CONFIGURE_ENV+=		LIBS="-lutil"
 
+# enable support for xterm 256 colors
+.if defined(WITH_XTERM_COLOR)
+CONFIGURE_ARGS+=	--enable-xterm-colors=256
+.endif
+
 .include <bsd.port.pre.mk>
 
 # compile in support for additional codeset groups
@@ -179,6 +184,7 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_IMLOCALE_FIX	disable imlocale encoding conversion fix"
 	@${ECHO_MSG} "WITHOUT_TERMINFO	don't register urxvt in the terminfo database"
 	@${ECHO_MSG} "WITHOUT_AFTERIMAGE	disable integration with libAfterImage for background images"
+	@${ECHO_MSG} "WITH_XTERM_COLOR	enable support for xterm 256 colors"
 	@${ECHO_MSG}
 .ifndef(WITH_ENCODING)
 	@${ECHO_MSG} "==> You can compile in support for additional codeset groups by setting the WITH_ENCODING variable"
@@ -192,10 +198,15 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.if !defined(WITHOUT_IMLOCALE_FIX)
+.if !defined(WITHOUT_IMLOCALE_FIX) || defined(WITH_XTERM_COLOR)
 post-patch:
+.if !defined(WITHOUT_IMLOCALE_FIX)
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imlocale
 	@cd ${WRKSRC}/src && ./gentables
+.endif
+.if defined(WITH_XTERM_COLOR)
+	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKSRC}/doc/urxvt-8.2-256color.patch
+.endif
 .endif
 
 pre-configure:
