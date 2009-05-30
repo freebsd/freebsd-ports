@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsd
-PORTVERSION=	2.38
+PORTVERSION=	2.39
 CATEGORIES=	astro geography
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 
 MAN1=	cgps.1 cgpxlogger.1 gps.1 gpscat.1 gpsctl.1 gpsfake.1 gpsflash.1 \
-	gpspipe.1 gpsprof.1 rtcmdecode.1 sirfmon.1 xgps.1 xgpsspeed.1
+	gpspipe.1 gpsprof.1 xgps.1 xgpsspeed.1 gpsdecode.1 gpsmon.1
 MAN3=	libgps.3 libgpsd.3 libgpsmm.3
 MAN5=	rtcm-104.5 srec.5
 MAN8=	gpsd.8
