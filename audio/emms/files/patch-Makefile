@@ -1,22 +1,28 @@
---- Makefile.orig	Sat Apr 29 22:28:28 2006
-+++ Makefile	Wed May 24 03:31:25 2006
+--- ./Makefile.orig	2007-06-29 19:16:24.000000000 +0300
++++ ./Makefile	2009-05-30 12:56:48.565749310 +0300
 @@ -1,4 +1,4 @@
 -EMACS=emacs
 +EMACS=$(EMACS_NAME)-$(EMACS_VER)
  SITEFLAG=--no-site-file
  GZIP=gzip
  ALLSOURCE=$(wildcard *.el)
-@@ -11,10 +11,10 @@
- DESTDIR=
- PREFIX=$(DESTDIR)/usr/local
- INFODIR=$(PREFIX)/info
+@@ -8,13 +8,13 @@
+ TARGET=$(patsubst %.el,%.elc,$(SOURCE))
+ MAN1PAGES=emms-print-metadata.1
+ 
+-DESTDIR=
+-PREFIX=$(DESTDIR)/usr/local
+-INFODIR=$(PREFIX)/info
 -MAN1DIR=$(PREFIX)/share/man/man1
 -SITELISP=$(PREFIX)/share/emacs/site-lisp/emms
-+MAN1DIR=$(PREFIX)/man/man1
-+SITELISP=$(PREFIX)/$(EMACS_SITE_LISPDIR)/emms
++DESTDIR?=
++PREFIX?=$(DESTDIR)/usr/local
++INFODIR?=$(PREFIX)/info
++MAN1DIR?=$(PREFIX)/man/man1
++SITELISP?=$(PREFIX)/$(EMACS_SITE_LISPDIR)/emms
  
 -INSTALLINFO = /usr/sbin/install-info --info-dir=$(INFODIR)
-+INSTALLINFO = /usr/bin/install-info --info-dir=$(INFODIR)
++INSTALLINFO?= /usr/bin/install-info --info-dir=$(INFODIR)
  
  .PHONY: all install deb-install clean
  .PRECIOUS: %.elc %.info %.html
