@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="80f13884-4d4c-11de-8811-0030843d3802">
+    <topic>slim -- local disclosure of X authority magic cookie</topic>
+    <affects>
+      <package>
+	<name>slim</name>
+	<range><lt>1.3.1_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/35132/">
+	  <p>A security issue has been reported in SLiM, which can be
+	    exploited by malicious, local users to disclose sensitive
+	    information.</p>
+	  <p>The security issue is caused due to the application
+	    generating the X authority file by passing the X authority
+	    cookie via the command line to "xauth". This can be exploited
+	    to disclose the X authority cookie by consulting the process
+	    list and e.g. gain access the user's display.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>35015</bid>
+      <cvename>CVE-2009-1756</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=529306</url>
+    </references>
+    <dates>
+      <discovery>2009-05-20</discovery>
+      <entry>2009-05-30</entry>
+    </dates>
+  </vuln>
+
    <vuln vid="4175c811-f690-4898-87c5-755b3cf1bac6">
      <topic>ntp -- stack-based buffer overflow</topic>
      <affects>
