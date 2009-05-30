@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.19
+PORTVERSION=	1.0.20
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 
@@ -43,7 +43,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog NEWS README TODO
+.for file in AUTHORS ChangeLog NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 	${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.in" \
