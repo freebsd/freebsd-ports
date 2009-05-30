@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-05-26 22:51:44.000000000 +0800
++++ Makefile.in	2009-05-26 22:51:55.000000000 +0800
+@@ -927,7 +927,7 @@
+ googleinclude_HEADERS = $(SG_STACKTRACE_INCLUDES) \
+ 	$(SG_TCMALLOC_MINIMAL_INCLUDES) $(am__append_13) \
+ 	$(am__append_18)
+-docdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
++docdir = $(prefix)/share/doc/$(PACKAGE)
+ # This is for HTML and other documentation you want to install.
+ # Add your documentation files (in doc/) in addition to these
+ # top-level boilerplate files.  Also add a TODO file if you have one.
