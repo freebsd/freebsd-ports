@@ -1,6 +1,6 @@
---- hald/freebsd/probing/probe-usb2-device.c.orig	2009-05-23 15:56:54.000000000 -0400
-+++ hald/freebsd/probing/probe-usb2-device.c	2009-05-23 17:14:06.000000000 -0400
-@@ -0,0 +1,204 @@
+--- hald/freebsd/probing/probe-usb2-device.c.orig	2009-05-30 03:09:03.000000000 -0400
++++ hald/freebsd/probing/probe-usb2-device.c	2009-05-30 03:10:48.000000000 -0400
+@@ -0,0 +1,208 @@
 +/***************************************************************************
 + * CVSID: $Id$
 + *
@@ -76,7 +76,11 @@
 +    {
 +      struct LIBUSB20_DEVICE_DESC_DECODED *ddesc;
 +      struct LIBUSB20_CONFIG_DESC_DECODED *cdesc;
++#if __FreeBSD_version >= 800092
++      struct usb_device_info di;
++#else
 +      struct usb2_device_info di;
++#endif
 +      struct libusb20_config *pcfg = NULL;
 +      int curr_config;
 +      int bcdspeed = 0;
