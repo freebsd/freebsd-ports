@@ -1,0 +1,9 @@
+MySQL setup
+===========
+
+Run 'mysql' and then read in the initdb-mysql file using
+'\. %%LXRDIR%%/initdb-mysql'.
+
+This will create the database and a user called lxr with access
+rights to the database.
+

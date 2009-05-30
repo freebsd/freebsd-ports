@@ -1,0 +1,127 @@
+From 5e71b7d7e7b4b7619b156b0fb13e52775ed17ccc Mon Sep 17 00:00:00 2001
+From: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
+Date: Fri, 12 Dec 2008 19:26:20 +0300
+Subject: [PATCH] Fixed some warnings produced by 'perl -w'
+
+Signed-off-by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
+---
+ lib/LXR/Common.pm         |   23 +++++++++++++++++------
+ lib/LXR/Files/Plain.pm    |    1 +
+ lib/LXR/Index/Postgres.pm |    6 ++++++
+ 3 files changed, 24 insertions(+), 6 deletions(-)
+
+diff --git a/lib/LXR/Common.pm b/lib/LXR/Common.pm
+index fea8479..84f38e4 100644
+--- a/lib/LXR/Common.pm
++++ b/lib/LXR/Common.pm
+@@ -120,6 +120,7 @@ sub fileref {
+ 	# jwz: URL-quote any special characters.
+ 	$path =~ s|([^-a-zA-Z0-9.\@/_\r\n])|sprintf("%%%02X", ord($1))|ge;
+ 
++	$line = -1 unless defined($line);
+ 	if ($line > 0 && length($line) < 3) {
+ 		$line = ('0' x (3 - length($line))) . $line;
+ 	}
+@@ -134,7 +135,8 @@ sub diffref {
+ 	my ($desc, $css, $path, $darg) = @_;
+ 	my $dval;
+ 
+-	($darg, $dval) = $darg =~ /(.*?)=(.*)/;
++        ($darg, $dval) = (defined($darg) ?
++	    $darg =~ /(.*?)=(.*)/ : (undef, undef));
+ 	return ("<a class='$css' href=\"$config->{virtroot}/diff$path"
+ 		  . &urlargs(($darg ? "diffvar=$darg" : ""), ($dval ? "diffval=$dval" : ""))
+ 		  . "\"\>$desc</a>");
+@@ -280,6 +282,9 @@ sub markupfile {
+ 		while (defined($frag)) {
+ 			&markspecials($frag);
+ 
++			# Use value that won't match anything
++			# in the next if-else for the undefined $btype
++			$btype = '' unless (defined($btype));
+ 			if ($btype eq 'comment') {
+ 
+ 				# Comment
+@@ -295,7 +300,6 @@ sub markupfile {
+ 				# Include directive
+ 				$lang->processinclude(\$frag, $dir);
+ 			} else {
+-
+ 				# Code
+ 				$lang->processcode(\$frag);
+ 			}
+@@ -371,6 +375,7 @@ sub markupfile {
+ }
+ 
+ sub fixpaths {
++	return '/' unless defined($_[0]);
+ 	my $node = '/' . shift;
+ 
+ 	while ($node =~ s|/[^/]+/\.\./|/|g) { }
+@@ -473,7 +478,9 @@ sub httpinit {
+ 	$HTTP->{'this_url'} = 'http://' . $ENV{'SERVER_NAME'};
+ 	$HTTP->{'this_url'} .= ':' . $ENV{'SERVER_PORT'}
+ 	  if $ENV{'SERVER_PORT'} != 80;
+-	$HTTP->{'this_url'} .= $ENV{'SCRIPT_NAME'} . $ENV{'PATH_INFO'};
++	$HTTP->{'this_url'} .= $ENV{'SCRIPT_NAME'};
++	$HTTP->{'this_url'} .= $ENV{'PATH_INFO'}
++	    if defined($ENV{'PATH_INFO'});
+ 	$HTTP->{'this_url'} .= '?' . $ENV{'QUERY_STRING'}
+ 	  if $ENV{'QUERY_STRING'};
+ 
+@@ -721,9 +728,13 @@ sub varlinks {
+ 				$vallink = &idref($val, "varlink", $identifier, "$var=$val");
+ 			} elsif ($who eq 'search') {
+ 				$vallink =
+-				    "<a class=\"varlink\" href=\"$config->{virtroot}/search"
+-				  . &urlargs("$var=$val", "string=" . $HTTP->{'param'}->{'string'})
+-				  . "\">$val</a>";
++				    "<a class=\"varlink\" href=\"$config->{virtroot}/search";
++				if (defined($HTTP->{'param'}->{'string'})) {
++                                        $vallink .= &urlargs("$var=$val",
++                                            "string=" .
++                                            $HTTP->{'param'}->{'string'});
++                                }
++                                $vallink .= "\">$val</a>";
+ 			}
+ 		}
+ 
+diff --git a/lib/LXR/Files/Plain.pm b/lib/LXR/Files/Plain.pm
+index 27c5dee..ade40fd 100644
+--- a/lib/LXR/Files/Plain.pm
++++ b/lib/LXR/Files/Plain.pm
+@@ -131,6 +131,7 @@ sub getdir {
+ 
+ sub toreal {
+ 	my ($self, $pathname, $release) = @_;
++	$release = "" unless defined($release);
+ 
+ # nearly all (if not all) method calls eventually call toreal(), so this is a good place to block file access
+ 	foreach my $ignoredir ($config->ignoredirs) {
+diff --git a/lib/LXR/Index/Postgres.pm b/lib/LXR/Index/Postgres.pm
+index ae1e11f..4667036 100644
+--- a/lib/LXR/Index/Postgres.pm
++++ b/lib/LXR/Index/Postgres.pm
+@@ -158,6 +158,9 @@ sub getindex {
+ 	my ($self, $symname, $release) = @_;
+ 	my ($rows, @ret);
+ 
++	$release = "" unless defined($release);
++	return () unless defined($symname);
++
+ 	$rows = $indexes_select->execute("$symname", "$release");
+ 
+ 	while ($rows-- > 0) {
+@@ -175,6 +178,9 @@ sub getreference {
+ 	my ($self, $symname, $release) = @_;
+ 	my ($rows, @ret);
+ 
++	$release = "" unless defined($release);
++	return () unless defined($symname);
++
+ 	$rows = $usage_select->execute("$symname", "$release");
+ 
+ 	while ($rows-- > 0) {
+-- 
+1.6.0.4
+

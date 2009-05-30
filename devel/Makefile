@@ -804,6 +804,7 @@
     SUBDIR += luabind
     SUBDIR += luajava
     SUBDIR += lwp
+    SUBDIR += lxr
     SUBDIR += m17n-db
     SUBDIR += m17n-docs
     SUBDIR += m17n-lib
