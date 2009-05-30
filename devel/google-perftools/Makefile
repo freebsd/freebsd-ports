@@ -7,6 +7,7 @@
 
 PORTNAME=	google-perftools
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
@@ -16,8 +17,8 @@ MAINTAINER=	yuri@tsoft.com
 COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 
 GNU_CONFIGURE=	yes
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+USE_LDCONFIG=	yes
+MAN1=		pprof.1
 
 post-patch:
 .if defined(NOPORTDOCS)

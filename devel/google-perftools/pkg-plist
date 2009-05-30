@@ -18,7 +18,6 @@ lib/libtcmalloc_minimal.a
 lib/libtcmalloc_minimal.la
 lib/libtcmalloc_minimal.so
 lib/libtcmalloc_minimal.so.0
-man/man1/pprof.1
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
