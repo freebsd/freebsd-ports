@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Inline
-PORTVERSION=	2.209
+PORTVERSION=	2.210
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -40,7 +40,6 @@ MAN3=	Test::Inline.3 \
 	Test::Inline::IO::File.3 \
 	Test::Inline::Script.3 \
 	Test::Inline::Section.3
-
 
 .include <bsd.port.pre.mk>
 
