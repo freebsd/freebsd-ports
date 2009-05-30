@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="399f4cd7-4d59-11de-8811-0030843d3802">
+    <topic>eggdrop -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>eggdrop</name>
+	<range><lt>1.6.19_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/35104/">
+	  <p>The vulnerability is caused due to an error in the processing of
+	    private messages within the server module
+	    (/mod/server.mod/servrmsg.c). This can be exploited to cause a
+	    crash by sending a specially crafted message to the bot.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>34985</bid>
+      <cvename>CVE-2009-1789</cvename>
+      <url>http://www.eggheads.org/news/2009/05/14/35</url>
+      <url>http://secunia.com/advisories/35104/</url>
+    </references>
+    <dates>
+      <discovery>2009-05-15</discovery>
+      <entry>2009-05-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a2d4a330-4d54-11de-8811-0030843d3802">
     <topic>wireshark -- PCNFSD Dissector Denial of Service Vulnerability</topic>
     <affects>
