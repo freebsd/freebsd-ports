@@ -1,0 +1,51 @@
+From: jan.kiszka@siemens.com (Jan Kiszka)
+Subject: [Qemu-devel] [PATCH 1/5] kqemu: x86-64: Run 16-bit-stack-return in
+	ring 0
+Date: Fri, 29 May 2009 19:18:31 +0200
+Message-ID: <20090529171831.14265.89986.stgit@mchn012c.ww002.siemens.net>
+To: qemu-devel@nongnu.org
+
+The fix-up code for returning to 16 bit stack segments is currently
+executed in ring 1. This has the side effect that the interrupt flag
+remains cleared on return from ring 1 to the guest's ring 3 as its
+IOPL is 0 (ie. iret can only modify IF when run in ring 0).
+
+Fix this by moving the 32 bit return trampoline into ring 0.
+
+Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+---
+
+ common/kernel.c |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/common/kernel.c b/common/kernel.c
+index 6a88452..1d7a69e 100644
+Index: common/kernel.c
+--- a/common/kernel.c
++++ b/common/kernel.c
+@@ -422,8 +422,8 @@ struct kqemu_state *kqemu_init(struct kqemu_init *d,
+ #ifdef __x86_64__
+     s->monitor_ds_sel = 0; /* no need for a specific data segment */
+     /* used for 16 bit esp fix */
+-    s->monitor_cs32_sel = (s->monitor_selector_base + (7 << 3)) | 1;
+-    s->monitor_ss16_sel = (s->monitor_selector_base + (6 << 3)) | 1;
++    s->monitor_cs32_sel = s->monitor_selector_base + (7 << 3);
++    s->monitor_ss16_sel = s->monitor_selector_base + (6 << 3);
+     s->monitor_ss_null_sel = (s->monitor_selector_base + (1 << 3)) | 3;
+ #else
+     s->monitor_ds_sel = s->monitor_selector_base + (1 << 3);
+@@ -495,9 +495,9 @@ struct kqemu_state *kqemu_init(struct kqemu_init *d,
+                 0, 0xfffff, 0xa09a); /* long mode segment */
+         set_seg((uint32_t *)(dt_table + (s->monitor_ss16_sel >> 3)),
+                 (s->monitor_data_vaddr + offsetof(struct kqemu_state, stack)) & ~0xffff, 
+-                0xffff, 0x00b2); /* SS16 segment for 16 bit ESP fix */
++                0xffff, 0x0092); /* SS16 segment for 16 bit ESP fix */
+         set_seg((uint32_t *)(dt_table + (s->monitor_cs32_sel >> 3)),
+-                0, 0xfffff, 0xc0ba); /* CS32 segment for 16 bit ESP fix */
++                0, 0xfffff, 0xc09a); /* CS32 segment for 16 bit ESP fix */
+         set_seg((uint32_t *)(dt_table + (s->monitor_ss_null_sel >> 3)),
+                 0, 0, 0x40f2); /* substitute for null SS segment */
+ #else
+
+
+

@@ -1,0 +1,38 @@
+From: jan.kiszka@siemens.com (Jan Kiszka)
+Subject: [Qemu-devel] [PATCH 3/5] kqemu: Fix forbidden selector range change
+Date: Fri, 29 May 2009 19:18:31 +0200
+Message-ID: <20090529171831.14265.66049.stgit@mchn012c.ww002.siemens.net>
+To: qemu-devel@nongnu.org
+
+Do not bail out on LDT selectors that match the reserved monitor GDT
+selector range. At this chance, improve the related panic message.
+
+Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+---
+
+ common/interp.c |    7 +++++--
+ 1 files changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/common/interp.c b/common/interp.c
+index 088d2b2..4c042e9 100644
+Index: common/interp.c
+--- a/common/interp.c
++++ b/common/interp.c
+@@ -775,9 +775,12 @@ static void load_seg_desc(struct kqemu_state *s,
+ #ifdef DEBUG_SEG
+     monitor_log(s, "load_seg_desc: reg=%d sel=0x%04x\n", seg_reg, selector);
+ #endif
+-    if (selector >= s->monitor_selector_base &&
++    if (!(selector & 0x4) && selector >= s->monitor_selector_base &&
+         selector <= (s->monitor_selector_base + MONITOR_SEL_RANGE)) {
+-        monitor_panic(s, "Trying to load a reserved selector\n");
++        monitor_panic(s, "Trying to load a reserved selector "
++                         "(reg=%d sel=0x%04x cs:ip=%04x:" FMT_lx ")\n",
++                      seg_reg, selector, env->segs[R_CS].selector,
++                      (unsigned long)env->eip);
+     }
+ 
+     if ((selector & 0xfffc) == 0) {
+
+
+

@@ -7,7 +7,7 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.4.0.p1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://bellard.org/qemu/ \
 		http://qemu.org/ \
@@ -48,7 +48,10 @@ KMODDIR=	/boot/modules
 
 MAKE_ENV+=	KMODDIR="${KMODDIR}"
 
-.if !exists(${SRC_BASE}/sys/Makefile)
+SYSDIR?=	${SRC_BASE}/sys
+MAKE_ENV+=	SYSDIR="${SYSDIR}"
+
+.if !exists(${SYSDIR}/Makefile)
 IGNORE=		requires kernel source to be installed
 .endif
 
@@ -73,6 +76,15 @@ post-extract:
 post-patch:
 .if ${OSVERSION} >= 701100 && (${OSVERSION} < 800000 || ${OSVERSION} >= 800046)
 	@cd ${WRKSRC} && ${PATCH} -R --quiet < ${FILESDIR}/patch-tssworkaround
+.endif
+# Apply extra patches from the qemu-devel list; in the unlikely case that
+# these cause regressions please define WITHOUT_EXTRA_PATCHES and post
+# details about your host _and_ guest on freebsd-emulation@freebsd.org
+#  - Thanx!
+.if !defined(WITHOUT_EXTRA_PATCHES)
+	for i in ${FILESDIR}/extra-patch-*; do \
+		${PATCH} -d ${WRKSRC} --quiet <$$i;\
+	done
 .endif
 
 do-build:

@@ -1,0 +1,102 @@
+From: jan.kiszka@siemens.com (Jan Kiszka)
+Subject: [Qemu-devel] [PATCH 2/5] kqemu: i386: Reorder DS and ES on
+	exception stack
+Date: Fri, 29 May 2009 19:18:31 +0200
+Message-ID: <20090529171831.14265.74474.stgit@mchn012c.ww002.siemens.net>
+To: qemu-devel@nongnu.org
+
+This is a KQEMU upstream bug: In case the non-trivial paths of
+LOAD_SEG_CACHE in exception_return are taken for both DS and ES, the
+current code will break as it assumes to read from the monitor's DS in
+the restore code for ES. Fix this by swapping both segments on the stack
+so that ES is always restored before DS.
+
+Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+---
+
+ common/i386/monitor_asm.S |   16 ++++++++--------
+ common/kqemu_int.h        |    6 +++---
+ 2 files changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/common/i386/monitor_asm.S b/common/i386/monitor_asm.S
+index 04f4258..e996553 100644
+Index: common/i386/monitor_asm.S
+--- a/common/i386/monitor_asm.S
++++ b/common/i386/monitor_asm.S
+@@ -214,8 +214,8 @@ __monitor_exception:
+         pushl %edx
+         pushl %ecx
+         pushl %eax
+-        pushl %es
+         pushl %ds
++        pushl %es
+ 
+ /* compute the address of the monitor context */
+         call 1f
+@@ -260,17 +260,17 @@ exception_return:
+         cmpb $3, KQEMU_STATE_cpu_state_cpl(%ebx)
+         je normal_seg_load
+         popl %eax
+-        LOAD_SEG_CACHE(%ds, R_DS, (11 * 4))
++        LOAD_SEG_CACHE(%es, R_ES, (11 * 4))
+         popl %eax
+-        LOAD_SEG_CACHE(%es, R_ES, (10 * 4))
++        LOAD_SEG_CACHE(%ds, R_DS, (10 * 4))
+         jmp 2f
+ normal_seg_load:        
+ #endif        
+ 1:
+-        popl %ds
++        popl %es
+         SEG_EXCEPTION(1b)
+ 1:
+-        popl %es
++        popl %ds
+         SEG_EXCEPTION(1b)
+ 2:      
+                 
+@@ -295,10 +295,10 @@ SEG_EXCEPTION(1b)
+ 
+ exception_return_to_monitor:
+ 1:
+-        popl %ds
++        popl %es
+         SEG_EXCEPTION(1b)
+ 1:
+-        popl %es
++        popl %ds
+         SEG_EXCEPTION(1b)
+         popl %eax
+         popl %ecx
+@@ -363,8 +363,8 @@ __monitor_interrupt:
+         pushl %edx
+         pushl %ecx
+         pushl %eax
+-        pushl %es
+         pushl %ds
++        pushl %es
+         
+ /* compute the address of the monitor context */
+         call 1f
+diff --git a/common/kqemu_int.h b/common/kqemu_int.h
+index f19f7ca..4b59cb3 100644
+Index: common/kqemu_int.h
+--- a/common/kqemu_int.h
++++ b/common/kqemu_int.h
+@@ -367,10 +367,10 @@ struct kqemu_exception_regs {
+ };
+ #else
+ struct kqemu_exception_regs {
+-    uint16_t ds_sel; /* 0 */
+-    uint16_t ds_sel_h;
+-    uint16_t es_sel; /* 1 */
++    uint16_t es_sel; /* 0 */
+     uint16_t es_sel_h;
++    uint16_t ds_sel; /* 1 */
++    uint16_t ds_sel_h;
+     uint32_t eax;    /* 2 */
+     uint32_t ecx;
+     uint32_t edx;
+
+
+

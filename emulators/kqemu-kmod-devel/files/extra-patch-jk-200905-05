@@ -1,0 +1,155 @@
+From: jan.kiszka@siemens.com (Jan Kiszka)
+Subject: [Qemu-devel] [PATCH 5/5] kqemu: Implement lar/lsl in the monitor
+	code interpreter
+Date: Fri, 29 May 2009 19:18:31 +0200
+Message-ID: <20090529171831.14265.17606.stgit@mchn012c.ww002.siemens.net>
+To: qemu-devel@nongnu.org
+
+This avoids user space for handling lar/lsl via TCG.
+
+Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+---
+
+ common/interp.c |  111 ++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 files changed, 109 insertions(+), 2 deletions(-)
+
+diff --git a/common/interp.c b/common/interp.c
+index 4f93bc3..577d666 100644
+Index: common/interp.c
+--- a/common/interp.c
++++ b/common/interp.c
+@@ -1720,6 +1720,93 @@ void helper_lldt(struct kqemu_state *s, int selector)
+     env->ldt.selector = selector;
+ }
+ 
++static int helper_lar(struct kqemu_state *s, int selector)
++{
++    uint32_t e1, e2;
++    int rpl, dpl, cpl, type;
++
++    if ((selector & 0xfffc) == 0)
++        goto fail;
++    if (load_segment(s, &e1, &e2, selector) != 0)
++        goto fail;
++    rpl = selector & 3;
++    dpl = (e2 >> DESC_DPL_SHIFT) & 3;
++    cpl = s->cpu_state.cpl;
++    if (e2 & DESC_S_MASK) {
++        if ((e2 & DESC_CS_MASK) && (e2 & DESC_C_MASK)) {
++            /* conforming */
++        } else {
++            if (dpl < cpl || dpl < rpl)
++                goto fail;
++        }
++    } else {
++        type = (e2 >> DESC_TYPE_SHIFT) & 0xf;
++        switch(type) {
++        case 1:
++        case 2:
++        case 3:
++        case 4:
++        case 5:
++        case 9:
++        case 11:
++        case 12:
++            break;
++        default:
++            goto fail;
++        }
++        if (dpl < cpl || dpl < rpl) {
++        fail:
++            set_reset_eflags(s, 0, CC_Z);
++            return 0;
++        }
++    }
++    set_reset_eflags(s, CC_Z, 0);
++    return e2 & 0x00f0ff00;
++}
++
++static int helper_lsl(struct kqemu_state *s, int selector)
++{
++    unsigned int limit;
++    uint32_t e1, e2;
++    int rpl, dpl, cpl, type;
++
++    if ((selector & 0xfffc) == 0)
++        goto fail;
++    if (load_segment(s, &e1, &e2, selector) != 0)
++        goto fail;
++    rpl = selector & 3;
++    dpl = (e2 >> DESC_DPL_SHIFT) & 3;
++    cpl = s->cpu_state.cpl;
++    if (e2 & DESC_S_MASK) {
++        if ((e2 & DESC_CS_MASK) && (e2 & DESC_C_MASK)) {
++            /* conforming */
++        } else {
++            if (dpl < cpl || dpl < rpl)
++                goto fail;
++        }
++    } else {
++        type = (e2 >> DESC_TYPE_SHIFT) & 0xf;
++        switch(type) {
++        case 1:
++        case 2:
++        case 3:
++        case 9:
++        case 11:
++            break;
++        default:
++            goto fail;
++        }
++        if (dpl < cpl || dpl < rpl) {
++        fail:
++            set_reset_eflags(s, 0, CC_Z);
++            return 0;
++        }
++    }
++    limit = get_seg_limit(e1, e2);
++    set_reset_eflags(s, CC_Z, 0);
++    return limit;
++}
++
+ static void helper_verr(struct kqemu_state *s, int selector)
+ {
+     uint32_t e1, e2;
+@@ -4616,6 +4703,28 @@ QO(                 case OT_LONG | 8:\
+                 goto illegal_op;
+             }
+             goto insn_next;
++        LABEL(102) /* lar */
++        LABEL(103) /* lsl */
++            if (!(s->cpu_state.cr0 & CR0_PE_MASK) || get_eflags_vm(s))
++                goto illegal_op;
++            ot = s->dflag + OT_WORD;
++            modrm = ldub_code(s);
++            mod = (modrm >> 6);
++            if (mod == 3) {
++                rm = (modrm & 7) | REX_B(s);
++                val = get_regS(s, OT_WORD, rm) & 0xffff;
++            } else {
++                addr = get_modrm(s, modrm);
++                val = ldS(s, OT_WORD, addr);
++            }
++            rm = ((modrm >> 3) & 7) | REX_R(s);
++            if (b == 0x102)
++                val = helper_lar(s, val);
++            else
++                val = helper_lsl(s, val);
++            if (s->regs1.eflags & CC_Z)
++                set_regS(s, ot, rm, val);
++            goto insn_next;
+         LABEL(108) /* invd */
+         LABEL(109) /* wbinvd */
+             if (s->cpu_state.cpl != 0) 
+@@ -5214,8 +5323,6 @@ QO(                 case OT_LONG | 8:\
+     LABEL(10b)
+     LABEL(10a)
+     LABEL(104)
+-    LABEL(103)
+-    LABEL(102)
+     LABEL(f1)
+     LABEL(e2)
+     LABEL(e1)
+
+
+
