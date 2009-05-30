@@ -35,8 +35,8 @@
 -	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
 +	$(INSTALL) -d $(prefix)/bin/
 +	$(INSTALL) -d $(prefix)/man/man1/
-+	$(INSTALL) -m 0755 whois $(prefix)/bin/
-+	$(INSTALL) -m 0644 whois.1 $(prefix)/man/man1/
++	$(INSTALL) -m 0755 whois $(prefix)/bin/mwhois
++	$(INSTALL) -m 0644 whois.1 $(prefix)/man/man1/mwhois.1
  
  install-mkpasswd: mkpasswd
 -	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
