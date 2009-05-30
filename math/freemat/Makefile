@@ -22,6 +22,8 @@ LIB_DEPENDS=		lapack.4:${PORTSDIR}/math/lapack	\
 			pcre.0:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkg-config
 
+BROKEN=			does not compile
+
 .ifdef WITH_MPI
 IGNORE=			no MPI support at the moment
 .endif
