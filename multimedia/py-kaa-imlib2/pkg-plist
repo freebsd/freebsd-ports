@@ -1,14 +1,14 @@
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/image.py
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/font.py
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/version.py
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/__init__.py
 %%PYTHON_SITELIBDIR%%/kaa/imlib2/_Imlib2module.so
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/image.pyc
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/font.pyc
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/version.pyc
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/__init__.py
 %%PYTHON_SITELIBDIR%%/kaa/imlib2/__init__.pyc
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/image.pyo
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/font.pyo
-%%PYTHON_SITELIBDIR%%/kaa/imlib2/version.pyo
 %%PYTHON_SITELIBDIR%%/kaa/imlib2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/font.py
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/font.pyc
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/font.pyo
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/image.py
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/image.pyc
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/image.pyo
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/version.py
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/version.pyc
+%%PYTHON_SITELIBDIR%%/kaa/imlib2/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/kaa/imlib2
