@@ -1,0 +1,108 @@
+From: jan.kiszka@siemens.com (Jan Kiszka)
+Subject: [Qemu-devel] [PATCH 4/5] kqemu: Implement verr/verw in the monitor
+	code interpreter
+Date: Fri, 29 May 2009 19:18:31 +0200
+Message-ID: <20090529171831.14265.57241.stgit@mchn012c.ww002.siemens.net>
+To: qemu-devel@nongnu.org
+
+This avoids user space for handling verr/verw via TCG.
+
+Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+---
+
+ common/interp.c |   71 ++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 files changed, 70 insertions(+), 1 deletions(-)
+
+diff --git a/common/interp.c b/common/interp.c
+index 4c042e9..4f93bc3 100644
+Index: common/interp.c
+--- a/common/interp.c
++++ b/common/interp.c
+@@ -1720,6 +1720,65 @@ void helper_lldt(struct kqemu_state *s, int selector)
+     env->ldt.selector = selector;
+ }
+ 
++static void helper_verr(struct kqemu_state *s, int selector)
++{
++    uint32_t e1, e2;
++    int rpl, dpl, cpl;
++
++    if ((selector & 0xfffc) == 0)
++        goto fail;
++    if (load_segment(s, &e1, &e2, selector) != 0)
++        goto fail;
++    if (!(e2 & DESC_S_MASK))
++        goto fail;
++    rpl = selector & 3;
++    dpl = (e2 >> DESC_DPL_SHIFT) & 3;
++    cpl = s->cpu_state.cpl;
++    if (e2 & DESC_CS_MASK) {
++        if (!(e2 & DESC_R_MASK))
++            goto fail;
++        if (!(e2 & DESC_C_MASK)) {
++            if (dpl < cpl || dpl < rpl)
++                goto fail;
++        }
++    } else {
++        if (dpl < cpl || dpl < rpl) {
++        fail:
++            set_reset_eflags(s, 0, CC_Z);
++            return;
++        }
++    }
++    set_reset_eflags(s, CC_Z, 0);
++}
++
++static void helper_verw(struct kqemu_state *s, int selector)
++{
++    uint32_t e1, e2;
++    int rpl, dpl, cpl;
++
++    if ((selector & 0xfffc) == 0)
++        goto fail;
++    if (load_segment(s, &e1, &e2, selector) != 0)
++        goto fail;
++    if (!(e2 & DESC_S_MASK))
++        goto fail;
++    rpl = selector & 3;
++    dpl = (e2 >> DESC_DPL_SHIFT) & 3;
++    cpl = s->cpu_state.cpl;
++    if (e2 & DESC_CS_MASK) {
++        goto fail;
++    } else {
++        if (dpl < cpl || dpl < rpl)
++            goto fail;
++        if (!(e2 & DESC_W_MASK)) {
++        fail:
++            set_reset_eflags(s, 0, CC_Z);
++            return;
++        }
++    }
++    set_reset_eflags(s, CC_Z, 0);
++}
++
+ static void helper_wrmsr(struct kqemu_state *s)
+ {
+ #ifdef __x86_64__
+@@ -4479,7 +4538,17 @@ QO(                 case OT_LONG | 8:\
+             case 5: /* verw */
+                 if (!(s->cpu_state.cr0 & CR0_PE_MASK) || get_eflags_vm(s))
+                     goto illegal_op;
+-                raise_exception(s, KQEMU_RET_SOFTMMU);
++                if (mod == 3) {
++                    rm = (modrm & 7) | REX_B(s);
++                    val = get_regS(s, OT_WORD, rm) & 0xffff;
++                } else {
++                    addr = get_modrm(s, modrm);
++                    val = ldS(s, OT_WORD, addr);
++                }
++                if (op == 4)
++                    helper_verr(s, val);
++                else
++                    helper_verw(s, val);
+                 break;
+             default:
+                 goto illegal_op;
+
+
+

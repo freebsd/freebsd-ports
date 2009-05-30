@@ -1,0 +1,70 @@
+From: 3n4ch3@gmail.com (Enache Adrian)
+Subject: [Qemu-devel] [kqemu patch] get Open/NetBSD to work with the kqemu
+	accelerator
+Date: Mon, 5 Nov 2007 22:00:12 +0200
+Message-ID: <281a8e2bec2c45bce8b89bf96457995c.fa6dd951@aerenchyma>
+To: qemu-devel@nongnu.org
+
+[sorry if this is the wrong list, but I haven't figured out any public
+ address where I could send kqemu bug reports and patches]
+
+Currently, both NetBSD and OpenBSD are hanging or crashing when running
+on qemu with the kqemu accelerator enabled.
+
+This happens because both systems are using a weird scheme where they
+are loading the GDT table with LGDT up-front (with the limit set to
+the maximum), but are growing the table and actually mapping the memory
+behind it only when needed.
+(see src/sys/arch/i386/i386/gdt.c in both source trees)
+
+That is causing the kqemu accelerator to generate a page fault in
+update_dt_cache() when trying to fill its 'soft' tlb with pages that
+are beyond the real end of the GDT table.
+
+With this diff applied, NetBSD and OpenBSD seem to run fine with
+kqemu + user-only virtualization (I've tried netbsd-4.0-rc2 and
+openbsd 4.2).
+
+Full virtualization (-kernel-kqemu) doesn't work yet for different
+reasons (I think).
+
+Regards,
+Adi
+
+Index: common/monitor.c
+--- xx/kqemu-1.3.0pre11/common/monitor.c	Tue Feb  6 23:02:00 2007
++++ kqemu-1.3.0pre11/common/monitor.c	Mon Nov  5 18:59:58 2007
+@@ -990,7 +990,8 @@ static void *map_vaddr(struct kqemu_state *s, unsigned
+     e = &s->soft_tlb[(addr >> PAGE_SHIFT) & (SOFT_TLB_SIZE - 1)];
+  redo:
+     if (e->vaddr[(is_user << 1) + is_write] != (addr & PAGE_MASK)) {
+-        soft_tlb_fill(s, addr, is_write, is_user);
++        if(cpu_x86_handle_mmu_fault(s, addr, is_write, is_user, 1))
++                return NULL;
+         goto redo;
+     } else {
+         taddr = e->addend + addr;
+@@ -1802,6 +1803,11 @@ static void update_dt_cache(struct kqemu_state *s, int
+             page_end = dt_end;
+         sel2 = sel + (page_end - dt_ptr);
+         ptr = map_vaddr(s, dt_ptr, 0, 0);
++        if(!ptr)
++                /* Open/NetBSD have a 'dynamic' GDT, but they load the gdt
++                   register with LGDT only once and with a limit far beyond
++                   the end of the memory actually mapped for the table */
++                goto skip_the_rest;
+         ram_addr = ram_ptr_to_ram_addr(s, ptr);
+         if (dt_changed || 
+             s->dt_ram_addr[dt_type][pindex] != ram_addr ||
+@@ -1818,7 +1824,7 @@ static void update_dt_cache(struct kqemu_state *s, int
+     sel_end = (s->dt_limit[dt_type] + 1) & ~7;
+     if (sel < sel_end)
+         reset_dt_entries(s, dt_type, sel, sel_end);
+-
++skip_the_rest:
+     s->dt_base[dt_type] = base;
+     s->dt_limit[dt_type] = limit;
+ }
+
+
+
