@@ -9,4 +9,4 @@ It is also able to do approximate matches on words, so errors in
 recognition or attempts to obfuscate the text inside the image will not
 cause the detection to fail.
 
-WWW: http://wiki.apache.org/spamassassin/FuzzyOcrPlugin
+WWW: http://fuzzyocr.own-hero.net/
