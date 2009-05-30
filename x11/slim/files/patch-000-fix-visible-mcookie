@@ -1,0 +1,192 @@
+From 72625a9dacfbd448ba7a84725d66bb2bfc9801f0 Mon Sep 17 00:00:00 2001
+From: Eygene Ryabinkin <rea@codelabs.ru>
+Date: Wed, 20 May 2009 18:44:57 +0400
+Subject: [PATCH] Do not specify magic cookie for xauth in the xauth command line
+
+Instead, open xauth as a pipe and feed commands via its stdin.
+
+Signed-off-by: Eygene Ryabinkin <rea@codelabs.ru>
+---
+ Makefile         |    3 ++-
+ Makefile.freebsd |    3 ++-
+ Makefile.netbsd  |    3 ++-
+ Makefile.openbsd |    3 ++-
+ app.cpp          |    5 +++--
+ switchuser.cpp   |    7 ++++---
+ util.cpp         |   32 ++++++++++++++++++++++++++++++++
+ util.h           |   19 +++++++++++++++++++
+ 8 files changed, 66 insertions(+), 9 deletions(-)
+ create mode 100644 util.cpp
+ create mode 100644 util.h
+
+diff --git Makefile b/Makefile
+index f7d3d2d..240669d 100644
+--- Makefile
++++ Makefile
+@@ -25,7 +25,8 @@ VERSION=1.3.1
+ DEFINES=-DPACKAGE=\"$(NAME)\" -DVERSION=\"$(VERSION)\" \
+ 		-DPKGDATADIR=\"$(PREFIX)/share/slim\" -DSYSCONFDIR=\"$(CFGDIR)\"
+ 
+-OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o panel.o
++OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o \
++	panel.o util.o
+ ifdef USE_PAM
+ OBJECTS+=PAM.o
+ endif
+diff --git Makefile.freebsd b/Makefile.freebsd
+index 3ff326e..c925a39 100644
+--- Makefile.freebsd
++++ Makefile.freebsd
+@@ -24,7 +24,8 @@ VERSION=1.3.1
+ DEFINES=-DPACKAGE=\"$(NAME)\" -DVERSION=\"$(VERSION)\" \
+ 		-DPKGDATADIR=\"$(PREFIX)/share/slim\" -DSYSCONFDIR=\"$(CFGDIR)\"
+ 
+-OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o panel.o
++OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o \
++	panel.o util.o
+ .ifdef USE_PAM
+   OBJECTS+=PAM.o 
+ .endif
+diff --git Makefile.netbsd b/Makefile.netbsd
+index ad8bb8b..45f33e6 100644
+--- Makefile.netbsd
++++ Makefile.netbsd
+@@ -24,7 +24,8 @@ VERSION=1.3.1
+ DEFINES=-DPACKAGE=\"$(NAME)\" -DVERSION=\"$(VERSION)\" \
+ 		-DPKGDATADIR=\"$(PREFIX)/share/slim\" -DSYSCONFDIR=\"$(CFGDIR)\"
+ 
+-OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o panel.o
++OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o \
++	panel.o util.o
+ .ifdef USE_PAM
+   OBJECTS+=PAM.o 
+ .endif
+diff --git Makefile.openbsd b/Makefile.openbsd
+index b1829f8..1205b84 100644
+--- Makefile.openbsd
++++ Makefile.openbsd
+@@ -20,7 +20,8 @@ VERSION=1.3.1
+ DEFINES=-DPACKAGE=\"$(NAME)\" -DVERSION=\"$(VERSION)\" \
+ 		-DPKGDATADIR=\"$(PREFIX)/share/slim\" -DSYSCONFDIR=\"$(CFGDIR)\"
+ 
+-OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o panel.o
++OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o \
++	util.o panel.o
+ 
+ .SUFFIXES: .c.o .cpp.o
+ 
+diff --git app.cpp b/app.cpp
+index 83ae947..04caaa1 100644
+--- app.cpp
++++ app.cpp
+@@ -24,6 +24,7 @@
+ #include <algorithm>
+ #include "app.h"
+ #include "numlock.h"
++#include "util.h"
+ 
+ 
+ #ifdef HAVE_SHADOW
+@@ -1185,8 +1186,8 @@ void App::CreateServerAuth() {
+     authfile = cfg->getOption("authfile");
+     remove(authfile.c_str());
+     putenv(StrConcat("XAUTHORITY=", authfile.c_str()));
+-    cmd = cfg->getOption("xauth_path") + " -q -f " + authfile + " add :0 . " + mcookie;
+-    system(cmd.c_str());
++    Util::add_mcookie(mcookie, ":0", cfg->getOption("xauth_path"),
++      authfile);
+ }
+ 
+ char* App::StrConcat(const char* str1, const char* str2) {
+diff --git switchuser.cpp b/switchuser.cpp
+index e72a8fc..ec298e1 100644
+--- switchuser.cpp
++++ switchuser.cpp
+@@ -10,6 +10,7 @@
+ */
+ 
+ #include "switchuser.h"
++#include "util.h"
+ 
+ using namespace std;
+ 
+@@ -53,10 +54,10 @@ void SwitchUser::Execute(const char* cmd) {
+ }
+ 
+ void SwitchUser::SetClientAuth(const char* mcookie) {
+-    int r;
++    bool r;
+     string home = string(Pw->pw_dir);
+     string authfile = home + "/.Xauthority";
+     remove(authfile.c_str());
+-    string cmd = cfg->getOption("xauth_path") + " -q -f " + authfile + " add :0 . " + mcookie;
+-    r = system(cmd.c_str());
++    r = Util::add_mcookie(mcookie, ":0", cfg->getOption("xauth_path"),
++      authfile);
+ }
+diff --git util.cpp b/util.cpp
+new file mode 100644
+index 0000000..309ce4f
+--- /dev/null
++++ util.cpp
+@@ -0,0 +1,32 @@
++/* SLiM - Simple Login Manager
++   Copyright (C) 2009 Eygene Ryabinkin <rea@codelabs.ru>
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++*/
++
++#include <stdio.h>
++#include "util.h"
++
++/*
++ * Adds the given cookie to the specified Xauthority file.
++ * Returns true on success, false on fault.
++ */
++bool Util::add_mcookie(const std::string &mcookie, const char *display,
++    const std::string &xauth_cmd, const std::string &authfile)
++{
++	FILE *fp;
++	std::string cmd = xauth_cmd + " -f " + authfile + " -q";
++
++	fp = popen(cmd.c_str(), "w");
++	if (!fp)
++		return false;
++	fprintf(fp, "remove %s\n", display);
++	fprintf(fp, "add %s %s %s\n", display, ".", mcookie.c_str());
++	fprintf(fp, "exit\n");
++
++	pclose(fp);
++	return true;
++}
+diff --git util.h b/util.h
+new file mode 100644
+index 0000000..8bd52be
+--- /dev/null
++++ util.h
+@@ -0,0 +1,19 @@
++/* SLiM - Simple Login Manager
++   Copyright (C) 2009 Eygene Ryabinkin <rea@codelabs.ru>
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++*/
++#ifndef __UTIL_H__
++#define __UTIL_H__
++
++#include <string>
++
++namespace Util {
++	bool add_mcookie(const std::string &mcookie, const char *display,
++	    const std::string &xauth_cmd, const std::string &authfile);
++};
++
++#endif /* __UTIL_H__ */
+-- 
+1.6.3.1
+
