@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	flo@kasimir.com
 COMMENT=	Compute molecular dynamics
 
 USE_GNOME=	libxml2
@@ -28,21 +28,17 @@ OPTIONS=	FFTW3	"Use FFT routines from math/fftw3"		on  \
 		GSL	"Enable extra analysis using math/gsl"		on  \
 		FLOAT	"Use single instead of double precision"	off \
 		X11	"Build and install X11 programs"		on  \
-		MPICH	"Enable MPI support using net/mpich"		off \
+		MPICH	"Enable MPI support using net/mpich2"		off \
 		OMPI	"Enable MPI support using net/openmpi"		off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 .if !defined(WITHOUT_FFTW3) && defined(WITH_FFTW2)
-IGNORE=		Cannot build with FFTW3 and FFTW2. Run 'make config' again and choose only one of them.
+IGNORE=		cannot build with FFTW3 and FFTW2. Run 'make config' again and choose only one of them
 .endif
 
 .if defined(WITH_MPICH) && defined(WITH_OMPI)
-IGNORE=		Cannot build with MPICH and OpenMPI support. Run 'make config' again and choose only one of them.
+IGNORE=		cannot build with MPICH and OpenMPI support. Run 'make config' again and choose only one of them
 .endif
 
 .if !defined(WITHOUT_FFTW3)
@@ -90,15 +86,15 @@ PLIST_SUB+=	SUFFIX_D=_d SUFFIX_DOUBLE=_double
 
 .if defined(WITH_MPICH) || defined(WITH_OMPI)
 CONFIGURE_ARGS+=	--enable-mpi
-. if defined(WITH_MPICH)
-CONFIGURE_ENV+=	MPICC=${PREFIX}/mpich/bin/mpicc
-BUILD_DEPENDS+=	${PREFIX}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
-RUN_DEPENDS+=	${PREFIX}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
-. else
+.if defined(WITH_MPICH)
+CONFIGURE_ENV+=	MPICC=${PREFIX}/mpich2/bin/mpicc
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+.elif defined(WITH_OMPI)
 CONFIGURE_ENV+=	MPICC=${PREFIX}/mpi/openmpi/bin/mpicc
-BUILD_DEPENDS+=	${PREFIX}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${PREFIX}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
-. endif
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
+.endif
 PLIST_SUB+=	SUFFIX_MPI="_mpi" MPI=""
 .else
 PLIST_SUB+=	SUFFIX_MPI="" MPI="@comment "
