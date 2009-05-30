@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6355efdb-4d4d-11de-8811-0030843d3802">
+    <topic>libsndfile -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libsndfile</name>
+	<range><lt>1.0.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/35076/">
+	  <p>Two vulnerabilities have been reported in libsndfile, which can be
+	    exploited by malicious people to compromise an application using the
+	    library.</p>
+	  <p>A boundary error exists within the "voc_read_header()" function in
+	    src/voc.c. This can be exploited to cause a heap-based buffer overflow
+	    via a specially crafted VOC file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-1788</cvename>
+      <cvename>CVE-2009-1791</cvename>
+      <url>http://secunia.com/advisories/35076/</url>
+      <url>http://www.trapkit.de/advisories/TKADV2009-006.txt</url>
+    </references>
+    <dates>
+      <discovery>2009-05-15</discovery>
+      <entry>2009-05-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80f13884-4d4c-11de-8811-0030843d3802">
     <topic>slim -- local disclosure of X authority magic cookie</topic>
     <affects>
