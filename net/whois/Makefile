@@ -7,11 +7,12 @@
 
 PORTNAME=	whois
 PORTVERSION=	4.7.33
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	lapo@lapo.it
 COMMENT=	Marco d\'Itri whois client
 
 USE_GMAKE=		yes
@@ -26,7 +27,9 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	OPTS=""
 
-MAN1=	whois.1 mkpasswd.1
+MAN1=		mwhois.1 mkpasswd.1
+
+PLIST_FILES=	bin/mwhois bin/mkpasswd
 
 #.if !defined(WITHOUT_NLS)
 #USE_GETTEXT=	yes
