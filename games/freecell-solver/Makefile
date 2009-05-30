@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.26.0
+PORTVERSION=	2.28.1
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		BERLIOS/fc-solve
@@ -18,8 +18,10 @@ COMMENT=	A program that automatically solves games of Freecell
 OPTIONS=	JUDY "Use libJudy for states and stacks storage" off \
 		REDBLACK "Use libredblack for states and stacks storage" off
 
+USE_BZIP2=	yes
 USE_PERL5_BUILD=	yes
 USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 USE_LDCONFIG=	yes
 
 MAN6=	fc-solve-board_gen.6 \
@@ -49,6 +51,10 @@ CMAKE_ARGS+=	-DFCS_STACK_STORAGE="FCS_STACK_STORAGE_LIBREDBLACK_TREE" \
 .endif
 
 post-install:
+.for file in freecell-solver-fc-pro-range-solve \
+	freecell-solver-multi-thread-solve
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS INSTALL README README.win32.txt TODO USAGE

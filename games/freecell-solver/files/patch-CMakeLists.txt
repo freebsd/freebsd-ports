@@ -1,6 +1,23 @@
---- CMakeLists.txt.orig	2009-02-19 11:27:44.292036727 -0500
-+++ CMakeLists.txt	2009-02-19 11:28:03.932046002 -0500
-@@ -156,18 +156,6 @@
+--- CMakeLists.txt.orig	2009-05-18 18:49:56.000000000 +0900
++++ CMakeLists.txt	2009-05-29 06:35:00.000000000 +0900
+@@ -191,7 +191,7 @@
+ 
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+ 
+-SET(COMPILER_FLAGS_TO_CHECK "-Wall" "-Werror=implicit-function-declaration")
++SET(COMPILER_FLAGS_TO_CHECK "-Wall")
+ 
+ IF (CPU_ARCH)
+     LIST(APPEND COMPILER_FLAGS_TO_CHECK "-march=${CPU_ARCH}")
+@@ -257,7 +257,6 @@
+ 
+ IF (CMAKE_USE_PTHREADS_INIT)
+     FCS_ADD_EXEC(freecell-solver-multi-thread-solve threaded_range_solver.c)
+-    TARGET_LINK_LIBRARIES(freecell-solver-multi-thread-solve "pthread")
+ ENDIF (CMAKE_USE_PTHREADS_INIT)
+ 
+ IF (MY_LINK_FLAGS)
+@@ -329,18 +328,6 @@
  
  INSTALL(
      FILES
