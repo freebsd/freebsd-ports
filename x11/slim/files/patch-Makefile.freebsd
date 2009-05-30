@@ -1,5 +1,5 @@
---- Makefile.freebsd.orig	2008-10-04 13:37:07.000000000 +0200
-+++ Makefile.freebsd	2008-10-04 13:40:07.000000000 +0200
+--- Makefile.freebsd.orig	2009-05-20 18:53:00.000000000 +0400
++++ Makefile.freebsd	2009-05-20 18:53:39.000000000 +0400
 @@ -3,18 +3,14 @@
  # Edit the following section to adjust the options
  # to fit into your operating system / distribution
@@ -27,15 +27,15 @@
  DESTDIR=
  #######################################################
  
-@@ -24,10 +20,7 @@
- DEFINES=-DPACKAGE=\"$(NAME)\" -DVERSION=\"$(VERSION)\" \
+@@ -25,10 +21,7 @@
  		-DPKGDATADIR=\"$(PREFIX)/share/slim\" -DSYSCONFDIR=\"$(CFGDIR)\"
  
--OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o panel.o
+ OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o \
+-	panel.o util.o
 -.ifdef USE_PAM
 -  OBJECTS+=PAM.o 
 -.endif
-+OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o panel.o PAM.o
++	panel.o util.o PAM.o
  
  all: slim
  
