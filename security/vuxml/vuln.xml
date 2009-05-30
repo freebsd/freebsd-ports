@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a2d4a330-4d54-11de-8811-0030843d3802">
+    <topic>wireshark -- PCNFSD Dissector Denial of Service Vulnerability</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<range><lt>1.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/35201/">
+	  <p>A vulnerability has been reported in Wireshark, which can be
+	    exploited by malicious people to cause a DoS.</p>
+	  <p>The vulnerability is caused due to an error in the PCNFSD dissector
+	    and can be exploited to cause a crash via a specially crafted PCNFSD
+	    packet.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/35201/</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2009-03.html</url>
+    </references>
+    <dates>
+      <discovery>2009-05-21</discovery>
+      <entry>2009-05-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6355efdb-4d4d-11de-8811-0030843d3802">
     <topic>libsndfile -- multiple vulnerabilities</topic>
     <affects>
