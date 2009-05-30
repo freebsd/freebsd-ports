@@ -5570,6 +5570,7 @@ ipw-firmware                    ports/net/ipw-firmware
 ipw-firmware-kmod               ports/net/ipw-firmware-kmod
 ipython                         ports/devel/ipython
 irc                             ports/irc/irc
+irc2dc                          ports/irc/irc2dc
 ircII                           ports/irc/ircII
 ircd-hybrid                     ports/irc/ircd-hybrid
 ircd-hybrid-ru                  ports/irc/ircd-hybrid-ru
@@ -7580,6 +7581,7 @@ librtfcomp                      ports/archivers/librtfcomp
 libruin                         ports/devel/libruin
 libs11n                         ports/devel/libs11n
 libsamplerate                   ports/audio/libsamplerate
+libsbml                         ports/biology/libsbml
 libsdb                          ports/databases/libsdb
 libsectok                       ports/security/libsectok
 libsexy                         ports/x11-toolkits/libsexy
@@ -12758,7 +12760,6 @@ p5-Task-Math-Symbolic           ports/math/p5-Task-Math-Symbolic
 p5-Task-Weaken                  ports/devel/p5-Task-Weaken
 p5-Tcl                          ports/lang/p5-Tcl
 p5-Tcl-Tk                       ports/x11-toolkits/p5-Tcl-Tk
-p5-TclTk                        ports/x11-toolkits/p5-TclTk
 p5-TeX-Encode                   ports/textproc/p5-TeX-Encode
 p5-TeX-Hyphen                   ports/textproc/p5-TeX-Hyphen
 p5-Telnet-Cisco                 ports/net-mgmt/p5-Telnet-Cisco
@@ -16257,7 +16258,6 @@ p5-task-math-symbolic           ports/math/p5-Task-Math-Symbolic
 p5-task-weaken                  ports/devel/p5-Task-Weaken
 p5-tcl                          ports/lang/p5-Tcl
 p5-tcl-tk                       ports/x11-toolkits/p5-Tcl-Tk
-p5-tcltk                        ports/x11-toolkits/p5-TclTk
 p5-telnet-cisco                 ports/net-mgmt/p5-Telnet-Cisco
 p5-template-alloy               ports/www/p5-Template-Alloy
 p5-template-dbi                 ports/databases/p5-Template-DBI
@@ -18427,7 +18427,6 @@ postgresql83-client             ports/databases/postgresql83-client
 postgresql83-server             ports/databases/postgresql83-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
-postilion                       ports/mail/postilion
 postmark                        ports/benchmarks/postmark
 postnuke                        ports/www/postnuke
 potrace                         ports/graphics/potrace
@@ -20691,6 +20690,7 @@ scrobbler                       ports/audio/scrobbler
 scrollkeeper                    ports/textproc/scrollkeeper
 scrollz                         ports/irc/scrollz
 scrot                           ports/graphics/scrot
+scrypt                          ports/security/scrypt
 scsh                            ports/lang/scsh
 scsh-install-lib                ports/devel/scsh-install-lib
 scss                            ports/textproc/scss
@@ -21129,7 +21129,6 @@ solidpop3d                      ports/mail/solidpop3d
 solitaire                       ports/math/solitaire
 sonata                          ports/audio/sonata
 sonice                          ports/audio/sonice
-sonytv                          ports/misc/sonytv
 soothsayer                      ports/textproc/soothsayer
 soprano                         ports/textproc/soprano
 sopwith                         ports/games/sopwith
