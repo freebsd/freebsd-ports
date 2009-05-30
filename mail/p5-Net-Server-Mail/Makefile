@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Server-Mail
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://cpan.org/authors/id/G/GU/GUIMARD/
 PKGNAMEPREFIX=	p5-
