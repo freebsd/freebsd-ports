@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fabric
-PORTVERSION=	0.1.1
+PORTVERSION=	0.9a2
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	http://distfiles.yzlin.org/ \
+		http://git.fabfile.org/cgit.cgi/fabric/snapshot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Fabric-${PORTVERSION}
 
 MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	A simple pythonic remote deployment tool
