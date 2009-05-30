@@ -52,6 +52,9 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>A boundary error exists within the "voc_read_header()" function in
 	    src/voc.c. This can be exploited to cause a heap-based buffer overflow
 	    via a specially crafted VOC file.</p>
+	  <p>A boundary error exists within the "aiff_read_header()" function in
+	    src/aiff.c. This can be exploited to cause a heap-based buffer overflow
+	    via a specially crafted AIFF file.</p>
 	</blockquote>
       </body>
     </description>
