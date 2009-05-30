@@ -22,6 +22,12 @@ MAN8=	emuctrl.8
 PLIST_FILES=	sbin/emuctrl etc/rc.d/emuctrl.sh
 WRKSRC=	${WRKDIR}/${DISTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 699999
+BROKEN=		does not compile
+.endif
+
 do-install:
 	@${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC} -DMODULES_WITH_WORLD install
 
@@ -31,4 +37,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
