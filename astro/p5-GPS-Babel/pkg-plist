@@ -1,0 +1,5 @@
+%%SITE_PERL%%/GPS/Babel.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/Babel/.packlist
+@dirrmtry %%SITE_PERL%%/GPS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/Babel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS
