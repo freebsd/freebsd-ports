@@ -1,0 +1,18 @@
+--- FuzzyOcr.preps.orig	2009-05-29 23:07:02.000000000 +0300
++++ FuzzyOcr.preps	2009-05-29 23:08:23.000000000 +0300
+@@ -21,10 +21,11 @@
+     command = pamtopnm
+ }
+ 
+-# Uses thresholding on the PAM file
+-preprocessor pamthreshold {
+-    command = pamthreshold
+-    args = -simple -threshold 0.5
++
++# Uses pamditherbw with thresholding on the PAM file
++preprocessor pamditherbw {
++    command = pamditherbw
++    args = -threshold
+ }
+ 
+ # converts PNM to TIFF (this is used for tesseract)
