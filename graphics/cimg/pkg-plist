@@ -1,7 +1,5 @@
 %%PORTDOCS%%bin/CImg_demo
 %%PORTDOCS%%bin/gmic
-%%PORTDOCS%%bin/gmic4gimp
-%%PORTDOCS%%bin/greycstoration4gimp
 %%PORTDOCS%%bin/use_jpeg_buffer
 include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
@@ -58,6 +56,8 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/logoODYSSEE.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard10.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard11.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard12.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard3.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard4.jpg
@@ -148,7 +148,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/news.shtml
 %%PORTDOCS%%%%DOCSDIR%%/reference/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/classes.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/closed.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/reference/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/form_0.png
@@ -156,7 +155,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/form_2.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/formula.repository
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x61.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x62.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x63.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x64.html
@@ -182,7 +180,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x79.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x61.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x62.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x63.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x64.html
@@ -233,7 +230,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/namespacemembers_func.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/namespacemembers_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/namespaces.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/open.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1CImg-members.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1CImg.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1CImgDisplay-members.html
@@ -255,16 +251,13 @@ include/CImg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dtmri_view.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/edge_explorer.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fade_images.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gaussian_fit.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/generate_loop_macros.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic4gimp.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic4gimp_def.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic4gimp_def.raw
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic_def.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic_def.raw
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/greycstoration.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/greycstoration4gimp.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hough_transform.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/image2ascii.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/image_registration.cpp
@@ -285,6 +278,7 @@ include/CImg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/odykill.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pde_TschumperleDeriche2d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pde_heatflow2d.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plotter.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radon_transform.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scene3d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tetris.cpp
@@ -295,7 +289,6 @@ include/CImg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_cimgmatlab.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_cimgmatlab.m
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_draw_gradient.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_greycstoration.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_jpeg_buffer.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_nlmeans.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_skeleton.cpp
