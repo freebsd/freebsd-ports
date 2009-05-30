@@ -16,6 +16,8 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-expathdr=${LOCALBASE}/include \
+		--with-libexpat=${LOCALBASE}/lib
 
 PLIST_FILES=	bin/gpsbabel
 
