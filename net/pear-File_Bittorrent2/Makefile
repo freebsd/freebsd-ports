@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Bittorrent2
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.1
 CATEGORIES=	net pear
 
 MAINTAINER=	bg1tpt@gmail.com
@@ -25,8 +25,8 @@ EXAMPLES=	example.php example_mktorrent.php \
 		scrape.php torrentinfo.php
 
 _TESTSDIR=	Tests
-TESTS=		AllTests.php Bug7406.php Bug8085.php FileBittorrent2.php \
-		Bug14013.php
+TESTS=		AllTests.php Bug7406.php Bug8085.php Bug14013.php \
+		Bug16148.php ticket-19.php FileBittorrent2.php
 
 post-extract:
 	@ cd ${WRKSRC}/File; ${MV} Bittorrent2 ${WRKSRC}
