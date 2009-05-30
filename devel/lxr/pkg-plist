@@ -1,0 +1,60 @@
+%%LXRDIR%%/diff
+%%LXRDIR%%/find
+%%LXRDIR%%/genxref
+%%LXRDIR%%/ident
+%%LXRDIR%%/search
+%%LXRDIR%%/source
+%%LXRDIR%%/swish-e.conf
+%%LXRDIR%%/initdb-postgres
+%%LXRDIR%%/initdb-mysql
+%%LXRDIR%%/templates/html-dir.html
+%%LXRDIR%%/templates/html-find.html
+%%LXRDIR%%/templates/html-head.html
+%%LXRDIR%%/templates/html-ident-refs.html
+%%LXRDIR%%/templates/html-ident.html
+%%LXRDIR%%/templates/html-search-glimpse.html
+%%LXRDIR%%/templates/html-search-swish.html
+%%LXRDIR%%/templates/html-tail.html
+%%LXRDIR%%/templates/lxr.conf
+%%LXRDIR%%/templates/lxr.css
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/RELEASING
+%%PORTDOCS%%%%DOCSDIR%%/notes
+%%SITE_PERL%%/Local.pm
+%%SITE_PERL%%/LXR/Files/Plain.pm
+%%SITE_PERL%%/LXR/Files/BK.pm
+%%SITE_PERL%%/LXR/Files/CVS.pm
+%%SITE_PERL%%/LXR/Files/GIT.pm
+%%SITE_PERL%%/LXR/Common.pm
+%%SITE_PERL%%/LXR/Config.pm
+%%SITE_PERL%%/LXR/Files.pm
+%%SITE_PERL%%/LXR/Index.pm
+%%SITE_PERL%%/LXR/Lang.pm
+%%SITE_PERL%%/LXR/SimpleParse.pm
+%%SITE_PERL%%/LXR/Tagger.pm
+%%SITE_PERL%%/LXR/Index/Mysql.pm
+%%SITE_PERL%%/LXR/Index/DB.pm
+%%SITE_PERL%%/LXR/Index/DBI.pm
+%%SITE_PERL%%/LXR/Index/Oracle.pm
+%%SITE_PERL%%/LXR/Index/Postgres.pm
+%%SITE_PERL%%/LXR/Lang/Cobol.pm
+%%SITE_PERL%%/LXR/Lang/Generic.pm
+%%SITE_PERL%%/LXR/Lang/Java.pm
+%%SITE_PERL%%/LXR/Lang/Perl.pm
+%%SITE_PERL%%/LXR/Lang/Python.pm
+%%SITE_PERL%%/LXR/Lang/ectags.conf
+%%SITE_PERL%%/LXR/Lang/ectags.conf.documentation
+%%SITE_PERL%%/LXR/Lang/generic.conf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%SITE_PERL%%/LXR/Files
+@dirrm %%SITE_PERL%%/LXR/Lang
+@dirrm %%SITE_PERL%%/LXR/Index
+@dirrm %%SITE_PERL%%/LXR
+@dirrm %%LXRDIR%%/templates
+@dirrmtry %%LXRDIR%%
+@dirrmtry %%LXRTOPDIR%%

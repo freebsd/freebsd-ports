@@ -1,0 +1,12 @@
+PostgreSQL setup
+================
+
+Create a user for lxr and give the user permission to create databases:
+           createuser -P lxr
+Create a database for lxr:
+           createdb -O lxr lxr
+Initialise the database:
+           psql -U lxr lxr
+           \i %%LXRDIR%%/initdb-postgres
+Just ignore the errors about unimplemented functions.
+

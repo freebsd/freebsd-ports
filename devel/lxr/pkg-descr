@@ -1,0 +1,7 @@
+LXR -- Linux Cross-Reference
+
+A general purpose source code indexer and cross-referencer that
+provides web-based browsing of source code with links to the
+definition and usage of any identifier.
+
+WWW: http://sourceforge.net/projects/lxr/

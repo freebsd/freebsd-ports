@@ -1,0 +1,28 @@
+Configuring LXR
+===============
+
+First-time installation
+-----------------------
+
+For the first-time installations you should copy the template files
+for LXR to your installation
+
+ cp %%LXRDIR%%/templates/* %%LXRDIR%%/
+
+Then you should glance over configuration file at
+ %%LXRDIR%%/lxr.conf
+
+It has some reasonable values for the helper programs, but you should
+customize variables like 'baseurl', 'virtroot' and others.
+
+Upgrades
+--------
+
+You should look at the contents of the directory
+ %%LXRDIR%%/templates/
+and possibly merge new stuff from it to the corresponding files in
+ %%LXRDIR%%/
+
+
+Happy cross-referencing and code mining!
+
