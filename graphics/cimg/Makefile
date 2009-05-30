@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cimg
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 PORTEPOCH=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
@@ -33,21 +33,17 @@ USE_FORTRAN=	yes
 LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png		\
 		jpeg:${PORTSDIR}/graphics/jpeg		\
 		tiff:${PORTSDIR}/graphics/tiff		\
-		Magick:${PORTSDIR}/graphics/ImageMagick	\
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app	\
-		fftw3:${PORTSDIR}/math/fftw3
+		fftw3:${PORTSDIR}/math/fftw3		\
+		GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
 ALL_TARGET=	oFreeBSD
 . else
 ALL_TARGET=	dFreeBSD
-WITHOUT_GM=	yes
 WITHOUT_MEDCON=	yes
 WITHOUT_FFMPEG=	yes
 WITHOUT_LAPACK=	yes
 . endif
 
-. if !defined(WITHOUT_GM)
-RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
-. endif
 . if !defined(WITHOUT_MEDCON)
 RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
 . endif
@@ -56,7 +52,7 @@ LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
 . endif
 
 DOCBASE=	CHANGES.txt README.txt
-PROGS=		CImg_demo gmic use_jpeg_buffer greycstoration4gimp gmic4gimp
+PROGS=		CImg_demo gmic use_jpeg_buffer
 .else
 NO_BUILD=	yes
 .endif

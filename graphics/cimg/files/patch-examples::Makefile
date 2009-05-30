@@ -1,17 +1,17 @@
---- examples/Makefile.orig	2009-02-17 13:08:45.000000000 +0100
-+++ examples/Makefile	2009-02-21 15:02:01.000000000 +0100
-@@ -78,8 +78,8 @@
+--- examples/Makefile.orig	2009-05-26 18:27:25.000000000 +0200
++++ examples/Makefile	2009-05-29 21:57:25.000000000 +0200
+@@ -77,8 +77,8 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.30
+ CIMG_VERSION = 1.31
 -X11PATH      = /usr/X11R6
 -CC           = g++
 +#X11PATH      = /usr/X11R6
-+#CC           = g++
++CC           = $(CXX)
  CCVER        = `$(CC) -v 2>&1 | tail -n 1`
  EXEPFX       =
  
-@@ -106,7 +106,7 @@
+@@ -105,7 +105,7 @@
  ifeq ($(CC),icc)
  CIMG_OPT_CFLAGS = -O3 -ipo -no-prec-div
  else
@@ -20,7 +20,7 @@
  endif
  
  # Flags to enable OpenMP support.
-@@ -158,8 +158,8 @@
+@@ -157,8 +157,8 @@
  
  # Flags to enable native support for various video files, using the FFMPEG library.
  # ( http://www.ffmpeg.org/ )
@@ -31,7 +31,18 @@
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
  # ( http://www.zlib.net/ )
-@@ -182,14 +182,17 @@
+@@ -167,8 +167,8 @@
+ 
+ # Flags to enable native support of most classical image file formats, using the Magick++ library.
+ # ( http://www.imagemagick.org/Magick++/ )
+-CIMG_MAGICK_CFLAGS = -Dcimg_use_magick `Magick++-config --cppflags` `Magick++-config --cxxflags`
+-CIMG_MAGICK_LDFLAGS = `Magick++-config --ldflags` `Magick++-config --libs`
++CIMG_MAGICK_CFLAGS = -Dcimg_use_magick `GraphicsMagick++-config --cppflags` `GraphicsMagick++-config --cxxflags`
++CIMG_MAGICK_LDFLAGS = `GraphicsMagick++-config --ldflags` `GraphicsMagick++-config --libs`
+ 
+ # Flags to enable faster Discrete Fourier Transform computation, using the FFTW3 library
+ # ( http://www.fftw.org/ )
+@@ -181,14 +181,17 @@
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -52,16 +63,7 @@
  # Flags to compile on Sun Solaris
  CIMG_SOLARIS_LDFLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
-@@ -205,7 +208,7 @@
- 	@echo
- 	@echo "** Compiling '$* ($(CIMG_VERSION))' with '`$(CC) -v 2>&1 | tail -n 1`'"
- 	@echo
--	$(CC) -o $(EXEPFX)$* $< $(CFLAGS) $(LDFLAGS) $(CONF_CFLAGS) $(CONF_LDFLAGS)
-+	$(CXX) -o $(EXEPFX)$* $< $(CFLAGS) $(LDFLAGS) $(CONF_CFLAGS) $(CONF_LDFLAGS)
- ifeq ($(MACOSX_APP),true)
- 	mkdir -p $(EXEPFX)${*}.app/Contents/MacOS
- 	mv $(EXEPFX)${*} $(EXEPFX)${*}.app/Contents/MacOS
-@@ -227,6 +230,9 @@
+@@ -226,6 +229,9 @@
  	@echo "  > mlinux   : Linus/BSD/MacOSX target, no display, minimal features, optimizations enabled."
  	@echo "  > Mlinux   : Linux/BSD/MacOSX target, X11 display, maximal features, optimizations enabled."
  	@echo
@@ -71,36 +73,9 @@
  	@echo "  > solaris  : Sun Solaris target, X11 display, optimizations disabled."
  	@echo "  > dsolaris : Sun Solaris target, X11 display, debug mode."
  	@echo "  > osolaris : Sun Solaris target, X11 display, optimizations enabled."
-@@ -270,7 +276,7 @@
- 	@echo
- 	@echo "** Compiling 'greycstoration4gimp ($(CIMG_VERSION))' with '$(CCVER)'"
- 	@echo
--	$(CC) -I.. -I./plugins -o $(EXEPFX)greycstoration4gimp greycstoration4gimp.cpp `gimptool-2.0 --cflags` `gimptool-2.0 --libs` -lpthread $(CIMG_OPT_CFLAGS) $(CIMG_GIMP_CFLAGS)
-+	$(CXX) -I.. -I./plugins -o $(EXEPFX)greycstoration4gimp greycstoration4gimp.cpp `gimptool-2.0 --cflags` `gimptool-2.0 --libs` -lpthread $(CIMG_OPT_CFLAGS) $(CIMG_GIMP_CFLAGS)
- 
- # Specific targets for the 'gmic4gimp' plug-in for GIMP.
- gmic4gimp_def: gmic4gimp_def.raw
-@@ -281,7 +287,7 @@
- 	$(CC) -I.. -o gmic4gimp.o -c gmic.cpp -Dgmic_minimal $(CIMG_OPT_CFLAGS) $(CIMG_FFTW3_CFLAGS)
- 
- gmic4gimp: gmic4gimp.o gmic4gimp.cpp
--	$(CC) -I.. -I./plugins -o $(EXEPFX)gmic4gimp gmic4gimp.cpp gmic4gimp.o `gimptool-2.0 --cflags` `gimptool-2.0 --libs` -lpthread $(CIMG_OPT_FLAGS) $(CIMG_FFTW3_LDFLAGS) $(CIMG_GIMP_CFLAGS)
-+	$(CXX) -I.. -I./plugins -o $(EXEPFX)gmic4gimp gmic4gimp.cpp gmic4gimp.o `gimptool-2.0 --cflags` `gimptool-2.0 --libs` -lpthread $(CIMG_OPT_CFLAGS) $(CIMG_FFTW3_LDFLAGS) $(CIMG_GIMP_CFLAGS)
- 
- # Specific targets for 'gmic'.
- gmic_def: gmic_def.raw
-@@ -309,7 +315,7 @@
- gmic_double.o: gmic.cpp
- 	$(CC) -o gmic_double.o -c gmic.cpp -I. -Dgmic_separate_compilation -Dgmic_double $(CFLAGS) $(CONF_CFLAGS)
- gmic: gmic_bool.o gmic_uchar.o gmic_char.o gmic_ushort.o gmic_short.o gmic_uint.o gmic_int.o gmic_float.o gmic_double.o gmic.cpp
--	$(CC) -o $(EXEPFX)gmic gmic.cpp -I. -Dgmic_separate_compilation -Dgmic_main \
-+	$(CXX) -o $(EXEPFX)gmic gmic.cpp -I. -Dgmic_separate_compilation -Dgmic_main \
- 		 gmic_bool.o gmic_uchar.o gmic_char.o gmic_ushort.o gmic_short.o \
- 		 gmic_uint.o gmic_int.o gmic_float.o gmic_double.o $(CFLAGS) $(LDFLAGS) $(CONF_CFLAGS) $(CONF_LDFLAGS)
- 
-@@ -399,6 +405,56 @@
+@@ -393,6 +399,56 @@
  "STRIP_EXE=true" \
- all use_jpeg_buffer greycstoration4gimp gmic4gimp
+ all use_jpeg_buffer gmic4gimp gmic
  
 +# FreeBSD targets
 +dFreeBSD:
@@ -150,7 +125,7 @@
 +$(CIMG_LAPACK_LDFLAGS) \
 +$(CIMG_FFTW3_LDFLAGS)" \
 +"STRIP_EXE=true" \
-+all use_jpeg_buffer greycstoration4gimp gmic4gimp
++all use_jpeg_buffer gmic
 +
  # Sun Solaris targets, with X11 display.
  solaris:

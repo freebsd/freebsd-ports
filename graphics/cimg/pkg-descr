@@ -14,8 +14,8 @@ CImg stands for Cool Image: it is simple to use and efficient.
   template pixel types.
 . It depends on a minimal number of libraries: you can compile it with only
   standard C libraries. No need for exotic libraries and complex dependencies.
-. Additional features appear with the use of ImageMagick: install the
-  ImageMagick package to be able to load and save compressed image formats
+. Additional features appear with the use of GraphicsMagick: install the
+  GraphicsMagick package to be able to load and save compressed image formats
   (GIF,BMP,TIF,JPG,PNG,...).
 . Additional features appear with the use of LAPACK: link your code with the
   lapack library to be able to compute eigenvalues or eigenvectors of big
