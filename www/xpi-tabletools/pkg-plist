@@ -9,6 +9,11 @@
 %%XPI_XPIDIR%%/chrome/locale/tabletools/cs-CZ/tabletools.properties
 %%XPI_XPIDIR%%/chrome/locale/tabletools/cs-CZ/tabletoolsOptions.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/cs-CZ/tabletoolsOverlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/da-DK/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/da-DK/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/tabletools/da-DK/tabletools.properties
+%%XPI_XPIDIR%%/chrome/locale/tabletools/da-DK/tabletoolsOptions.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/da-DK/tabletoolsOverlay.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/de-DE/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/de-DE/contents.rdf
 %%XPI_XPIDIR%%/chrome/locale/tabletools/de-DE/tabletools.properties
@@ -29,6 +34,11 @@
 %%XPI_XPIDIR%%/chrome/locale/tabletools/es-ES/tabletools.properties
 %%XPI_XPIDIR%%/chrome/locale/tabletools/es-ES/tabletoolsOptions.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/es-ES/tabletoolsOverlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/fi-FI/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/fi-FI/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/tabletools/fi-FI/tabletools.properties
+%%XPI_XPIDIR%%/chrome/locale/tabletools/fi-FI/tabletoolsOptions.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/fi-FI/tabletoolsOverlay.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/fr-FR/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/fr-FR/contents.rdf
 %%XPI_XPIDIR%%/chrome/locale/tabletools/fr-FR/tabletools.properties
@@ -94,10 +104,12 @@
 @dirrm %%XPI_XPIDIR%%/chrome/content/tabletools
 @dirrm %%XPI_XPIDIR%%/chrome/content
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/cs-CZ
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/da-DK
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/de-DE
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/en-US
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/es-AR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/fi-FI
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/fr-FR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/hr-HR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT
