@@ -3,4 +3,4 @@
 # $FreeBSD$
 #
 # Rhino shell
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "%%RHINOJAR%%" org.mozilla.javascript.tools.shell.Main $@
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "%%RHINOJAR%%%%JLINEJAR%%" org.mozilla.javascript.tools.shell.Main $@
