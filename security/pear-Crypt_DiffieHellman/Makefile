@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_DiffieHellman
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
