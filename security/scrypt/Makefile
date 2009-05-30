@@ -21,4 +21,14 @@ PLIST_FILES=	bin/scrypt
 
 MAN1=	scrypt.1
 
+OPTIONS=	SSE2 "Use SSE2-optimized code" Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SSE2)
+CONFIGURE_ARGS+=	--enable-sse2
+.else
+CONFIGURE_ARGS+=	--disable-sse2
+.endif
+
 .include <bsd.port.mk>
