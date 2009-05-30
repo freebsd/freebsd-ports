@@ -1,0 +1,36 @@
+--- Makefile.orig	2003-05-01 16:12:56.000000000 +0300
++++ Makefile	2009-05-30 15:06:02.000000000 +0300
+@@ -1,25 +1,12 @@
+-# $Id: Makefile,v 1.7 2003/05/01 13:12:56 armin Exp $
+ 
+-PROG=dnsreflector
+-SRCS=dnsreflector.c
+-MAN=dnsreflector.1
++OBJS = dnsreflector.o
++CFLAGS = -g -Wall -Werror
++CC = gcc
++STRIP = strip
+ 
+-BINDIR=/usr/local/sbin
+-MANDIR=/usr/local/man/cat
++all: $(OBJS)
++	$(CC) -o dnsreflector $(OBJS) $(CFLAGS)
+ 
+-CFLAGS+=-g -Wall -Werror
++clean: 
++	rm -f dnsreflector *.o core.* *~
+ 
+-VERS=1.02
+-LVERS="$(PROG) $(VERS) (`date +%Y-%b-%d`)"
+-dist:
+-	rm -rf /tmp/dnsreflector-$(VERS)/
+-	mkdir /tmp/dnsreflector-$(VERS)/
+-	cp -pR * /tmp/dnsreflector-$(VERS)/
+-	cd /tmp/dnsreflector-$(VERS)/ && make cleandir
+-	cd /tmp/dnsreflector-$(VERS)/ && rm -rf ./CVS/
+-	(echo $(LVERS); cat README) >/tmp/dnsreflector-$(VERS)/README
+-	cd /tmp && tar cf dnsreflector-$(VERS).tar ./dnsreflector-$(VERS)/
+-	cd /tmp && gzip -f9 dnsreflector-$(VERS).tar
+-	cd /tmp && rm -rf ./dnsreflector-$(VERS)/
+-
+-.include <bsd.prog.mk>

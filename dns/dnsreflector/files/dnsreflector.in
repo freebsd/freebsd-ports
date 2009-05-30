@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: dnsreflector
+# REQUIRE: NETWORKING SERVERS
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+#
+# Define these dnsreflector_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# dnsreflector_enable="YES"		# Run the dnsreflector(1) daemon (YES/NO).
+# dnsreflector_flags=""		# Extra flags for dnsreflector(1) (if enabled).
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+dnsreflector_enable=${dnsreflector_enable:-"NO"}
+command_args=${dnsreflector_flags:-"-d -a 127.0.0.1 -p 53000"}
+
+. %%RC_SUBR%%
+
+name="dnsreflector"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/dnsreflector"
+
+load_rc_config $name
+run_rc_command "$1"

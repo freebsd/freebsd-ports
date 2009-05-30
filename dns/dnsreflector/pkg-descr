@@ -1,0 +1,5 @@
+The dnsreflector daemon listens for DNS queries on a local UDP port
+and answers with records pointing back to localhost. Combined with
+packet filter pf(4) this works as a bandwidth efficient spamtrap.
+
+WWW: http://www.wolfermann.org/dnsreflector.html
