@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Mail/DKIM/Algorithm/dk_rsa_sha1.pm
 %%SITE_PERL%%/Mail/DKIM/Algorithm/rsa_sha1.pm
 %%SITE_PERL%%/Mail/DKIM/Algorithm/rsa_sha256.pm
+%%SITE_PERL%%/Mail/DKIM/AuthorDomainPolicy.pm
 %%SITE_PERL%%/Mail/DKIM/Canonicalization/Base.pm
 %%SITE_PERL%%/Mail/DKIM/Canonicalization/DkCommon.pm
 %%SITE_PERL%%/Mail/DKIM/Canonicalization/DkimCommon.pm
@@ -17,6 +18,7 @@
 %%SITE_PERL%%/Mail/DKIM/DNS.pm
 %%SITE_PERL%%/Mail/DKIM/DkSignature.pm
 %%SITE_PERL%%/Mail/DKIM/DkimPolicy.pm
+%%SITE_PERL%%/Mail/DKIM/DkPolicy.pm
 %%SITE_PERL%%/Mail/DKIM/Key.pm
 %%SITE_PERL%%/Mail/DKIM/KeyValueList.pm
 %%SITE_PERL%%/Mail/DKIM/MessageParser.pm
