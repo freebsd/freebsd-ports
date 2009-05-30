@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -98,7 +98,7 @@ RUN_DEPENDS+=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
 .endif
 
 .if defined(WITH_DKIM)
-RUN_DEPENDS+=	p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM
+RUN_DEPENDS+=	p5-Mail-DKIM>=0.34:${PORTSDIR}/mail/p5-Mail-DKIM
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.24:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 .endif
@@ -207,7 +207,9 @@ post-patch:
 		-e 's#B_CONFDIR)/v320.pre#B_CONFDIR)/v320.pre.sample#g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
-	@${REINPLACE_CMD} -e '/^CC =/d' ${WRKSRC}/spamc/Makefile.in
+	@${REINPLACE_CMD} -e '/^CC =/d; \
+		s|@SSLCFLAGS@|& $${CFLAGS}|g' ${WRKSRC}/spamc/Makefile.in
+
 
 .if defined(WITH_RAZOR)
 	${REINPLACE_CMD} -e '/Razor2/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
