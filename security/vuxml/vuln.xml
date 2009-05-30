@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="82b55df8-4d5a-11de-8811-0030843d3802">
+    <topic>openssl -- denial of service in DTLS implementation</topic>
+    <affects>
+      <package>
+	<name>opensll</name>
+        <range><ge>0.9.8</ge><lt>0.9.8k_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/35128/">
+	  <p>Some vulnerabilities have been reported in OpenSSL, which can be
+	    exploited by malicious people to cause a DoS.</p>
+	  <p>The library does not limit the number of buffered DTLS records with
+	    a future epoch. This can be exploited to exhaust all available memory
+	    via specially crafted DTLS packets.</p>
+	  <p>An error when processing DTLS messages can be exploited to exhaust
+	    all available memory by sending a large number of out of sequence
+	    handshake messages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-1377</cvename>
+      <cvename>CVE-2009-1378</cvename>
+      <url>http://secunia.com/advisories/35128/</url>
+    </references>
+    <dates>
+      <discovery>2009-05-18</discovery>
+      <entry>2009-05-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="399f4cd7-4d59-11de-8811-0030843d3802">
     <topic>eggdrop -- denial of service vulnerability</topic>
     <affects>
