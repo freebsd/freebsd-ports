@@ -7,4 +7,4 @@ of servers in parallel or serially. These commands are grouped in tasks
 This is called remote automation, and the primary use case is deploying
 applications to multiple similar hosts.
 
-WWW:	http://www.nongnu.org/fab/
+WWW:	http://fabfile.org/
