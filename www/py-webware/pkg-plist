@@ -102,6 +102,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/COMKit/__init__.py
 %%WEBWARE_MASTER_DIR%%/COMKit/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.html
+%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.1.html
 %%WEBWARE_MASTER_DIR%%/DocSupport/.checksrc.config
 %%WEBWARE_MASTER_DIR%%/DocSupport/ClassList.py
 %%WEBWARE_MASTER_DIR%%/DocSupport/ClassList.pyc
@@ -705,34 +706,34 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Properties.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/PropertiesObject.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/PropertiesObject.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/BenchCSVParser.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/BenchCSVParser.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/BenchDataTable.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/BenchDataTable.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/FixPath.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/FixPath.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/Sample1.csv
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/Sample3.xls
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestDateInterval.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestDateInterval.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestCSVParser.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestCSVParser.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestDBPool.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestDBPool.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestDataTable.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestDataTable.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestDictForArgs.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestDictForArgs.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestError.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestError.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestFuncs.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestFuncs.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestNamedValueAccess.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestNamedValueAccess.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestPickleCache.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/TestPickleCache.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/__init__.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Testing/__init__.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/BenchCSVParser.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/BenchCSVParser.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/BenchDataTable.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/BenchDataTable.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/FixPath.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/FixPath.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/Sample1.csv
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/Sample3.xls
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDateInterval.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDateInterval.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestCSVParser.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestCSVParser.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDBPool.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDBPool.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDataTable.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDataTable.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDictForArgs.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDictForArgs.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestError.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestError.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestFuncs.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestFuncs.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestNamedValueAccess.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestNamedValueAccess.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestPickleCache.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestPickleCache.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/__init__.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/__init__.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/inspect.py
@@ -1148,6 +1149,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.9.3.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.9.4.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.9.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.1.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/SampleAdmin.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/SampleError.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/ClassHierarchy.html
@@ -1569,6 +1571,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/ShowTime.rr
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/ListBox.rr
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/stress.py
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/Colors.rr
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/Welcome.rr
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/stress.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/Docs.twill
@@ -1779,7 +1782,7 @@ www/webkit/webkit
 @dirrmtry %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source
 @dirrmtry %%WEBWARE_MASTER_DIR%%/PSP/Docs
 @dirrmtry %%WEBWARE_MASTER_DIR%%/PSP
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Testing
+@dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests
 @dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries
 @dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files
 @dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs
