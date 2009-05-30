@@ -7,7 +7,7 @@
 
 PORTNAME=	gaia
 PORTVERSION=	0.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gaia-clean
@@ -30,7 +30,7 @@ OPTIONS=	GPS "Build with GPS support" off
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GPS)
-LIB_DEPENDS+=	gps.15:${PORTSDIR}/astro/gpsd
+LIB_DEPENDS+=	gps.18:${PORTSDIR}/astro/gpsd
 SCONS_ARGS+=	gpsd=1
 .endif
 
