@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	rhino
-DISTVERSION=	1_7R1
-#PORTREVISION=	0
+DISTVERSION=	1_7R2
+PORTREVISION=	0
 #PORTEPOCH=	0
-PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/js/:rhino \
 		http://java.sun.com/products/jfc/tsc/articles/treetable2/downloads/:swingex \
-		${MASTER_SITE_APACHE}:xmlbeans
+		http://www.apache.org/dist/xmlbeans/binaries/:xmlbeans
 MASTER_SITE_SUBDIR=	xmlbeans/binaries/:xmlbeans
 DISTFILES=	${PORTNAME}${DISTVERSION}.zip:rhino \
 		src.zip:swingex \
@@ -23,6 +22,8 @@ EXTRACT_ONLY=	${PORTNAME}${DISTVERSION}.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	An implementation of JavaScript written in Java
+
+OPTIONS=	LINEDIT	"Enable line editing in the Rhino shell" on
 
 ALL_TARGET=	jar
 
@@ -36,7 +37,7 @@ MAKE_ARGS=	-Dxmlbeans.url=file://${DISTDIR}/${DIST_SUBDIR}/xmlbeans-2.2.0.zip \
 RHINOJAR=	${DATADIR}/${PORTNAME}.jar
 
 SUB_FILES=	rhinoc rhinodbg rhinosh
-SUB_LIST=	RHINOJAR=${RHINOJAR}
+SUB_LIST=	RHINOJAR=${RHINOJAR} JLINEJAR=":${JLINEJAR}"
 
 USE_ANT=	yes
 USE_JAVA=	yes
@@ -52,4 +53,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/$${RHINOSCRIPT} ${PREFIX}/bin/; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_LINEDIT)
+JLINEJAR=	${JAVAJARDIR}/jline.jar
+RUN_DEPENDS+=	${JLINEJAR}:${PORTSDIR}/devel/jline
+.else
+JLINEJAR=""
+.endif
+
+.include <bsd.port.post.mk>
