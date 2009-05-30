@@ -2,21 +2,17 @@
 
 The Frets On Fire was installed
 
-1) Don't try execute FretsOnFire on fullscreen mode, because the FretsOnFire 
-   generate a core dump (a py-game bug). Always execute FretsOnFire on window
-   mode.
-
-2) You can read the documentation about FretsOnFire at:
+1) You can read the documentation about FretsOnFire at:
 
    %%DOCSDIR%%
 
-3) The default resolution of FretsOnFire is 640x480x16 on window mode, but you
+2) The default resolution of FretsOnFire is 640x480x16 on window mode, but you
    can to change it.
 
-4) Run The Frets On Fire using:
+3) Run The Frets On Fire using:
 
    # FretsOnFire
 
-5) Enjoy it ;)
+4) Enjoy it ;)
 
 ###############################################################################
