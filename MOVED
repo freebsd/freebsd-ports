@@ -3969,3 +3969,4 @@ japanese/umefont|japanese/font-ume|2009-05-30|Renamed
 japanese/mplusfonts|japanese/font-mplus|2009-05-30|Renamed
 japanese/vlgothic|japanese/font-vlgothic|2009-05-30|Renamed
 japanese/shinonome|japanese/font-shinonome|2009-05-30|Renamed
+net/tftp-hpa|ftp/tftp-hpa|2009-05-31|Duplicate port
