@@ -1,10 +1,18 @@
---- daemon/Makefile.in.orig	2007-11-02 20:54:53.000000000 -0400
-+++ daemon/Makefile.in	2007-11-02 20:55:08.000000000 -0400
-@@ -451,6 +451,7 @@ test_session_SOURCES = \
- 
- test_session_LDADD = \
+--- daemon/Makefile.in.orig	2009-05-31 15:51:18.000000000 -0400
++++ daemon/Makefile.in	2009-05-31 15:56:32.000000000 -0400
+@@ -525,6 +525,7 @@ test_session_LDADD = \
+ 	$(XLIB_LIBS)		\
+ 	$(EXTRA_DAEMON_LIBS)	\
  	$(DAEMON_LIBS)		\
 +	$(EXTRA_DAEMON_LIBS)	\
  	$(PAM_LIBS)		\
- 	$(top_builddir)/common/libgdmcommon.la	\
  	$(NULL)
+ 
+@@ -660,6 +661,7 @@ gdm_session_worker_SOURCES = session-wor
+ gdm_session_worker_LDFLAGS = \
+ 	$(XLIB_LIBS)				\
+ 	$(PAM_LIBS)				\
++	$(EXTRA_DAEMON_LIBS)			\
+ 	$(NULL)
+ 
+ gdm_session_worker_LDADD = \
