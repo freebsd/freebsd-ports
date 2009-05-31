@@ -204,6 +204,7 @@
     SUBDIR += ng-canna
     SUBDIR += ng-devel
     SUBDIR += ngraph-fonts
+    SUBDIR += nhocr
     SUBDIR += nkf
     SUBDIR += nvi-euc-jp
     SUBDIR += nvi-iso-2022-jp
