@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.4.4
+PORTVERSION=	6.0.2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -23,13 +23,15 @@ USE_GHOSTSCRIPT=yes
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg" \
 		--with-ZLIB=no --with-LIBZ=-lz \
-		--with-TIFFINC="${LOCALBASE}/include" \
+		--with-TIFFINC="-I${LOCALBASE}/include" \
 		--with-GCOPTS=" " --with-GCXXOPTS=" " \
-		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=/usr/include \
+		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=-I/usr/include \
 		--with-DIR_HTML="${DOCSDIR}"
+CFLAGS+=	-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED -Wall -L${LOCALBASE}/lib
 
-PORTDOCS=	RELEASENOTES-4.3.txt RELEASENOTES-4.4.txt
-SUB_FILES=	pkg-message hylafax.sh.sample
+PORTDOCS=	RELEASENOTES-4.3.txt RELEASENOTES-4.4.txt RELEASENOTES-6.0.txt
+SUB_FILES=	pkg-message
+USE_RC_SUBR=	hylafax.sh
 
 # Defaults to "North American Letter".  Use "ISO A4" for A4.
 .if defined(PAGESIZE)
@@ -84,6 +86,13 @@ SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	WITH_NLS=""
+.else
+PLIST_SUB+=	WITH_NLS="@comment "
+.endif
+
 pre-extract:
 	@if [ -d /var/db/pkg/tiff-3.6.1 ]; then \
 		${ECHO_MSG} ""; \
@@ -100,14 +109,13 @@ post-patch:
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,-O hfaxd.conf,-O hfaxd.conf-dist,' \
 		${WRKSRC}/hfaxd/Makefile.in
-	${REINPLACE_CMD} -e 's,-O typerules,-O typerules-dist -src typerules,' \
+	${REINPLACE_CMD} -e 's,-O typerules,-O typerules-dist,' \
 		-e 's,-O pagesizes,-O pagesizes-dist -src pagesizes,' \
-		${WRKSRC}/util/Makefile.in
+		${WRKSRC}/libhylafax/Makefile.in
 
 post-install:
 	${CHOWN} uucp ${SUID_EXES}
 	${CHMOD} 4555 ${SUID_EXES}
-	${INSTALL_SCRIPT} ${WRKDIR}/hylafax.sh.sample ${PREFIX}/etc/rc.d
 .for f in hfaxd.conf pagesizes typerules
 	if [ ! -f ${PREFIX}/lib/fax/${f} ]; then ${CP} -p ${PREFIX}/lib/fax/${f}-dist ${PREFIX}/lib/fax/${f}; fi
 .endfor
