@@ -26,12 +26,16 @@ WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/WINGs"
+CONFIGURE_ARGS+=--x-includes=${LOCALBASE}/include \
+		--x-libraries=${LOCALBASE}/lib \
+		--with-libs-from=-L${LOCALBASE}/lib \
+		--with-incs-from=-I{LOCALBASE}/include
 
 MAN1=		get-wsound-flags.1x getsoundset.1x setsoundset.1x \
 			wsoundplay.1x wsoundserver.1x
 
 post-install:
-	${SH} ${FILESDIR}/configure > ${WRKDIR}/WMSound
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure > ${WRKDIR}/WMSound
 	${MKDIR} ${PREFIX}/etc/WindowMaker
 	${INSTALL_DATA} ${WRKDIR}/WMSound \
 		${PREFIX}/etc/WindowMaker/WMSound
