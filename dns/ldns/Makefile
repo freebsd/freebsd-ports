@@ -7,6 +7,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 
@@ -18,7 +19,8 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	DOCS "With documentation" Off
+OPTIONS=	DOCS "With documentation" Off \
+		EXAMPLES "With example programs" Off
 
 .include <bsd.port.pre.mk>
 
@@ -215,6 +217,31 @@ MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 	ldns_zone_push_rr_list.3 ldns_zone_rr_count.3 ldns_zone_rrs.3 \
 	ldns_zone_set_rrs.3 ldns_zone_set_soa.3 ldns_zone_soa.3 \
 	ldns_zone_sort.3
+.endif
+
+.if defined(WITH_EXAMPLES)
+PLIST_SUB+=             EXAMPLES=""
+NOMANCOMPRESS=	true
+MANCOMPRESSED=	no
+MAN1=	ldns-chaos.1 ldns-nsec3-hash.1 ldns-update.1 ldns-compare-zones.1 \
+	ldns-read-zone.1 ldns-verify-zone.1 ldns-dpa.1 ldns-resolver.1 \
+	ldns-version.1 ldns-key2ds.1 ldns-revoke.1 ldns-walk.1 \
+	ldns-keyfetcher.1 ldns-rrsig.1 ldns-zcat.1 ldns-keygen.1 \
+	ldns-signzone.1 ldns-zsplit.1 ldns-mx.1 ldns-testns.1 ldnsd.1 \
+	ldns-notify.1 
+
+post-configure:
+	@(cd ${WRKSRC}/examples; ./configure --prefix=${PREFIX} \
+		--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man \
+		--build=${CONFIGURE_TARGET})
+
+post-build:
+	@(cd ${WRKSRC}/examples; ${GMAKE})
+
+post-install:
+	@(cd ${WRKSRC}/examples; ${GMAKE} install)
+.else
+PLIST_SUB+=		EXAMPLES="@comment "
 .endif
 
 .include <bsd.port.post.mk>
