@@ -8150,6 +8150,7 @@ love                            ports/games/love
 lp_solve                        ports/math/lp_solve
 lpac                            ports/audio/lpac
 lpairs                          ports/games/lpairs
+lpc21isp                        ports/devel/lpc21isp
 lpe                             ports/editors/lpe
 lphoto                          ports/graphics/lphoto
 lplayer                         ports/audio/lplayer
@@ -9131,6 +9132,7 @@ nagios-base-logos               ports/misc/nagios-base-logos
 nagios-certexp-plugin           ports/net-mgmt/nagios-certexp-plugin
 nagios-check_bacula             ports/net-mgmt/nagios-check_bacula
 nagios-check_ports              ports/net-mgmt/nagios-check_ports
+nagios-check_puppet             ports/net-mgmt/nagios-check_puppet
 nagios-devel                    ports/net-mgmt/nagios-devel
 nagios-geom                     ports/net-mgmt/nagios-geom
 nagios-pf-plugin                ports/net-mgmt/nagios-pf-plugin
