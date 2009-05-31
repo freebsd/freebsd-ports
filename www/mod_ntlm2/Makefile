@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_ntlm2
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	modntlm
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	admin@lissyara.su
 COMMENT=	NTLM authentication module for the Apache2 webserver
 
-BUILD_DEPENDS=	${LOCALBASE}/smbclient:${PORTSDIR}/net/samba3
+BUILD_DEPENDS=	smbclient:${PORTSDIR}/net/samba3
 
 USE_APACHE=	20+
 MAKE_ENV=	APXS=${APXS}
