@@ -1,11 +1,13 @@
---- tools/DedicatedServer/CMakeLists.txt.orig	2009-01-12 21:56:58.000000000 +0300
-+++ tools/DedicatedServer/CMakeLists.txt	2009-01-13 17:24:41.000000000 +0300
-@@ -41,7 +41,7 @@
+--- tools/DedicatedServer/CMakeLists.txt.orig	2009-05-16 16:06:57.000000000 +0400
++++ tools/DedicatedServer/CMakeLists.txt	2009-05-18 21:23:42.000000000 +0400
+@@ -45,7 +45,9 @@
  if (MINGW)
  	TARGET_LINK_LIBRARIES (springserver ws2_32)
  else (MINGW)
--	ADD_DEFINITIONS (-fvisibility=default ) #overwrite hidden visibility
-+	ADD_DEFINITIONS (${VISIBILITY_DEFAULT}) #overwrite hidden visibility
+-	set_target_properties(springserver PROPERTIES COMPILE_FLAGS "-fvisibility=default")
++	IF(VISIBILITY_DEFAULT)
++		set_target_properties(springserver PROPERTIES COMPILE_FLAGS ${VISIBILITY_DEFAULT})
++	ENDIF(VISIBILITY_DEFAULT)
  endif (MINGW)
  
  ADD_EXECUTABLE(spring-dedicated main)
