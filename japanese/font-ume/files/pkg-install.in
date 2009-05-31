@@ -97,5 +97,8 @@ DEINSTALL)
 	exec < fonts.dir; rm -f fonts.dir
 	(echo "${_num}"; cat) > fonts.dir
 	chmod 0444 fonts.dir
+	if [ -r fonts.dir -a `wc -l < fonts.dir` = 1 ]; then
+		rm -f fonts.dir
+	fi
 	;;
 esac
