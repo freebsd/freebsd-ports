@@ -1,5 +1,5 @@
 -
-	Please, adjust the /usr/local/etc/apache/neowebscript.conf
+	Please, adjust the %%APACHEETCDIR%%/neowebscript.conf
 	to your liking and add
 
 		include etc/apache/neowebscript.conf

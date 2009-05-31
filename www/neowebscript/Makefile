@@ -7,24 +7,25 @@
 
 PORTNAME=	neowebscript
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www tcl
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=nws
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 LIB_DEPENDS=	neo82:${PORTSDIR}/devel/tcl-neo
 
+USE_APACHE=	1.3
+USE_TCL=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 WRKSRC=		${WRKDIR}/${DISTNAME}/modules
-TCL_VERSION?=	8.4
-APACHE_COMPAT=	yes
-MAKE_ENV+=	FILESDIR="${FILESDIR}" INSTALL_DATA="${INSTALL_DATA}"
-MAKE_ENV+=	TCL_VERSION=${TCL_VERSION}
+MAKE_ENV+=	FILESDIR="${FILESDIR}" \
+			INSTALL_DATA="${INSTALL_DATA}" \
+			TCL_VERSION=${TCL_VER}
 REINPLACE_ARGS=	-i ""
+SUB_FILES+=	pkg-message neowebscript.conf
 
 SUBDIRS=	modules neowebscript htdocs # tools
 
@@ -43,16 +44,12 @@ pre-install:
 	${FIND} ${WRKSRC}/../neowebscript ${WRKSRC}/../htdocs \
 		\( -type f -name \*.orig -o -type d -empty \) -delete
 
-CONFSCRIPT=	${LOCALBASE}/etc/apache/neowebscript.conf
-PREFIX_CMD=	's^/usr/local^${PREFIX}^g'
-
 post-install:
-	test -e ${CONFSCRIPT} || ${SED} ${PREFIX_CMD} < \
-		${FILESDIR}/neowebscript.conf > ${CONFSCRIPT}
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -Rp ${WRKSRC}/../htdocs/* ${DOCSDIR}
+	@${CP} ${WRKSRC}/../../neowebscript.conf ${LOCALBASE}/${APACHEETCDIR}/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/
+	@${CP} -Rp ${WRKSRC}/../htdocs/* ${DOCSDIR}/
 .endif
-	@${SED} ${PREFIX_CMD} < ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
