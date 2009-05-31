@@ -16,7 +16,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Shinonome Japanese fonts, 12/14/16 dots
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME:C/^font-//}-${PORTVERSION:C/.p.*$//}
 USE_BZIP2=	yes
@@ -25,8 +26,8 @@ PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 SUB_FILES=	pkg-install
 SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR} \
 		FONTSALIAS=${DATADIR}/fonts.alias
-PKGINSTALL=	pkg-install
-PKGDEINSTALL=	pkg-install
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-install
 
 PORTDOCS=	AUTHORS BUGS ChangeLog ChangeLog.0 DESIGN.12 DESIGN.14	\
 		DESIGN.16 DESIGN.18 INSTALL README THANKS TODO LICENSE
