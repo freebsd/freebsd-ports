@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	Algorithm-Cluster
-PORTVERSION=	1.44
+PORTVERSION=	1.45
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A perl interface to C clustering library
+
+MAKE_JOBS_UNSAFE=	yes
 
 PERL_CONFIGURE=	yes
 
