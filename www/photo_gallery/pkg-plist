@@ -1,5 +1,5 @@
-www/data/photo/index.cgi
-www/data/photo/readme.html
-www/data/photo/.header.html
-www/data/photo/.footer.html
-@dirrm www/data/photo
+%%WWWDIR%%/index.cgi
+%%WWWDIR%%/readme.html
+%%WWWDIR%%/.header.html
+%%WWWDIR%%/.footer.html
+@dirrm %%WWWDIR%%
