@@ -20,6 +20,8 @@ COMMENT?=VMware guest OS supporting daemon (VMware Workstation 5.x, FreeBSD vers
 RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd5
 .endif
 
+NO_LATEST_LINK=	yes
+
 DISTDIR=	${MOUNT_PT}
 IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-tools-distrib

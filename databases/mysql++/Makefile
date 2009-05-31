@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
 CONFLICTS=	${PORTNAME}*-1.*
+NO_LATEST_LINK=	yes
 
 NOT_FOR_ARCHS=	amd64 sparc64
 NOT_FOR_ARCHS_REASON_amd64=	Fails to compile

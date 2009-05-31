@@ -36,6 +36,7 @@ PKGNAMESUFFIX=	-mysql
 .else
 CONFLICTS+=	freeradius-mysql-[0-9].* freeradius-[02-9].*
 .endif
+NO_LATEST_LINK=	yes
 
 USE_RC_SUBR=	radiusd.sh
 USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:262

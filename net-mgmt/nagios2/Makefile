@@ -23,6 +23,7 @@ USE_AUTOTOOLS=	autoconf:262 libltdl:15
 USE_RC_SUBR=	nagios
 
 CONFLICTS=	nagios-[13].* nagios-devel-*
+NO_LATEST_LINK=	yes
 
 OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8+]" OFF \
 		NANOSLEEP "Use nanosleep in event timing" OFF

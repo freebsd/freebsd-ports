@@ -19,6 +19,7 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
+NO_LATEST_LINK=	yes
 
 WRKSRC=		${WRKDIR}/netbeans
 

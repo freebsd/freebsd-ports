@@ -16,6 +16,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
 CONFLICTS=	expect-5.43*
+LATEST_LINK=	expect-devel
 
 USE_AUTOTOOLS=	autoconf:262
 

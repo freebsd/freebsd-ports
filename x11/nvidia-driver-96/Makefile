@@ -8,5 +8,6 @@
 DISTVERSION=	96.43.11
 
 MASTERDIR=	${.CURDIR}/../nvidia-driver
+NO_LATEST_LINK=	yes
 
 .include "${MASTERDIR}/Makefile"

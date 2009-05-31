@@ -24,6 +24,8 @@ USE_AUTOTOOLS=	libtool:15
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042

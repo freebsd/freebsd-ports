@@ -22,6 +22,7 @@ BUILD_DEPENDS=	reformime:${PORTSDIR}/mail/maildrop \
 
 MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
 
+NO_LATEST_LINK=	yes
 CONFLICTS=	qmail-scanner-2.*
 
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue

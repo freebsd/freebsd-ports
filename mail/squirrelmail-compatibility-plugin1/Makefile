@@ -19,6 +19,7 @@ COMMENT=	Required by many plugins for compatibility with SquirrelMail
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
 CONFLICTS=	squirrelmail-compatibility-plugin-2.*
+NO_LATEST_LINK=	yes
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 

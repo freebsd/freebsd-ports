@@ -20,6 +20,7 @@ USE_RC_SUBR=	dovecot.sh
 DEPRECATED=	Please use mail/dovecot instead
 
 CONFLICTS?=	${PORTNAME}-1.[02-9].*
+NO_LATEST_LINK=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-shadow --localstatedir=/var

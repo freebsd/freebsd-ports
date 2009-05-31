@@ -17,6 +17,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Database library for PHP
 
 CONFLICTS=	adodb-4.*
+LATEST_LINK=	adodb5
 
 USE_PHP=	pcre
 

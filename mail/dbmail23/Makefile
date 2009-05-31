@@ -20,6 +20,7 @@ LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
 LIB_DEPENDS+=	zdb.6:${PORTSDIR}/databases/libzdb
 
 CONFLICTS=	dbmail-*-2.0.* dbmail-2.1.* dbmail-2.2.*
+NO_LATEST_LINK=	yes
 
 OPTIONS=	MYSQL		"Build with MySQL support" on \
 		POSTGRESQL	"Build with PostgreSQL support"	off \

@@ -20,6 +20,8 @@ USE_GMAKE=	yes
 USE_LUA=	5.0
 WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
 
+NO_LATEST_LINK=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|$${MAKE}|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -Ee \

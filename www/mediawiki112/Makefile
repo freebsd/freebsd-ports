@@ -14,6 +14,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.[0-9].* mediawiki-1.1[0-13-9].*
+NO_LATEST_LINK=	yes
 
 USE_PHP=	iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=	4

@@ -19,6 +19,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 RESTRICTED=	Need agreement before download
 
 CONFLICTS=	ja-flex-sdk-2.* flex-sdk-3.*
+NO_LATEST_LINK=	YES
 USE_ZIP=	YES
 USE_JAVA=	YES
 JAVA_VERSION=	1.4+

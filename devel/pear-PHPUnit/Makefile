@@ -24,6 +24,8 @@ SUB_LIST+=	CHANNEL=${CHANNEL}
 PKGINSTALL=	${WRKDIR}/pear-install
 PKGDEINSTALL=	${WRKDIR}/pear-deinstall
 
+NO_LATEST_LINK=	yes
+
 FILES=		PHPUnit.php PHPUnit/GUI/Gtk.php PHPUnit/GUI/HTML.php \
 		PHPUnit/GUI/HTML.tpl PHPUnit/GUI/SetupDecorator.php \
 		PHPUnit/Assert.php PHPUnit/RepeatedTest.php PHPUnit/Skeleton.php \
