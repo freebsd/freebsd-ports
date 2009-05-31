@@ -1,0 +1,28 @@
+--- ./bmptopnm/Makefile.in.orig	2008-12-31 00:03:50.000000000 +0900
++++ ./bmptopnm/Makefile.in	2009-05-18 16:38:03.000000000 +0900
+@@ -34,7 +34,7 @@
+ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+-bin_PROGRAMS = bmptopnm$(EXEEXT)
++bin_PROGRAMS = bmptopnm-O2$(EXEEXT)
+ subdir = bmptopnm
+ DIST_COMMON = $(dist_man_MANS) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in
+@@ -146,9 +146,15 @@
+ bmptopnm_SOURCES = bmptopnm.cpp
+ AM_CXXFLAGS = -I../include
+ bmptopnm_LDADD = -L../lib -lufp -lsip
+-dist_man_MANS = bmptopnm.1
++dist_man_MANS = bmptopnm-O2.1
+ all: all-am
+ 
++bmptopnm-O2$(EXEEXT): bmptopnm$(EXEEXT)
++	cp bmptopnm$(EXEEXT) bmptopnm-O2$(EXEEXT)
++
++bmptopnm-O2.1: bmptopnm.1
++	cp bmptopnm.1 bmptopnm-O2.1
++
+ .SUFFIXES:
+ .SUFFIXES: .cpp .o .obj
+ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)

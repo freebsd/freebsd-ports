@@ -1,0 +1,18 @@
+Huge image processing tools and libraries.
+
+  Most of the programs in this package were designed carefully to
+  avoid slowing down even for huge images, e.g. 3300x4700.  I hope
+  you will find them better.
+
+  This package contains following programs:
+    bmptopnm-O2 (bmptopnm in original distribution)
+             - convert a BMP(DIB) file into a portable anymap
+    breduce  - read a portable bitmap and reduce it N times
+    makecr   - create circumscribing rectangles (bounding box) in an
+               image
+    makepr   - create Primitive Rectangles in an image
+    prlst2ps - produce  PostScript  data  from  rectangle/line-
+               segment data
+    lpsmooth - smooth an image preserving thin lines
+
+WWW: http://www.imglab.org/p/O2/
