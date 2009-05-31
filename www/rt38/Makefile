@@ -13,7 +13,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	3.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -30,13 +30,13 @@ LATEST_LINK=	rt38
 
 OPTIONS=	MYSQL 		"Enable MySQL backend" 		on  \
 		APACHE		"Enable ${APACHE_PORT} server"		on  \
-		MODPERL2	"Enable mod_perl2 support"	on  \
+		MODPERL		"Enable mod_perl support"	on \
 		POSTGRESQL 	"Enable Postgresql backend"	off \
 		ORACLE		"Enable Oracle backend"		off \
 		SQLITE		"Enable SQLite backend" 	off \
 		DEV 		"Configure for Developers"	off \
 		STANDALONE	"Enable standalone server"	off \
-		MODPERL		"Enable mod_perl support"	off \
+		MODPERL2	"Enable mod_perl2 support"	off  \
 		FASTCGI		"Enable FastCGI support" 	off \
 		GRAPHVIZ	"Enable GraphViz charts"	on
 
