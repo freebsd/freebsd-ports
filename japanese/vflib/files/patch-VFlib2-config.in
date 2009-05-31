@@ -1,0 +1,16 @@
+--- VFlib2-config.in.orig	2009-05-31 23:16:13.000000000 +0900
++++ VFlib2-config.in	2009-05-31 23:17:23.000000000 +0900
+@@ -155,11 +155,11 @@
+ fi
+ 
+ if test "$echo_runtime_dir" = "yes"; then
+-  S="$S $datadir/VFlib/$version"
++  S="$S $prefix/etc/vflib"
+ fi
+ 
+ if test "$echo_vfontcap" = "yes"; then
+-  S="$S $datadir/VFlib/$version/vfontcap"
++  S="$S $prefix/etc/vflib/vfontcap"
+ fi
+ 
+ echo $S

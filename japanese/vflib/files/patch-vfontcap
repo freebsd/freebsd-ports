@@ -1,5 +1,5 @@
---- vfontcap.orig	Mon Jan 14 06:14:01 2002
-+++ vfontcap	Mon Jan 14 06:16:41 2002
+--- vfontcap.orig	1999-07-21 18:17:04.000000000 +0900
++++ vfontcap	2009-06-01 00:03:02.000000000 +0900
 @@ -33,9 +33,9 @@
  ####
  
@@ -23,10 +23,10 @@
 +	:fc=r-sazanami-gothic:
 +r-sazanami-mincho|Sazanami Mincho:\
 +	:ft=freetype:\
-+	:ff=/usr/X11R6/lib/X11/fonts/TrueType/sazanami-mincho.ttf:
++	:ff=/usr/local/share/fonts/TTF/sazanami-mincho.ttf:
 +r-sazanami-gothic|Sazanami Gothic:\
 +	:ft=freetype:\
-+	:ff=/usr/X11R6/lib/X11/fonts/TrueType/sazanami-gothic.ttf:
++	:ff=/usr/local/share/fonts/TTF/sazanami-gothic.ttf:
  
  ### SONY VECTOR FONTS
  r-sony-mincho|Sony Vector Font (Mincho):\

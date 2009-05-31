@@ -1,23 +1,8 @@
-vflib is Japanese vector font library.
-TrueType, Zeit, JG, BDF fonts are supported.
-Watanabe-vector font is used by default for mincho(min) and gothic(goth).
-You can use your own font by installing them (/usr/share/font/ is recommended)
-and modify /usr/local/lib/VFlib/vfontcap file.
+VFlib is a Japanese vector font library which supports TrueType, Zeit,
+JG, BDF fonts.
 
-See /usr/local/lib/VFlib/doc/man.ps or web for more details (in Japanese).
+Sazanami TrueType font is used by default for mincho(min) and gothic(goth).
+You can use your own font by modifying ${PREFIX}/etc/vflib/vfontcap file.
+For details, see ${PREFIX}/doc/vflib/man.ps (in Japanese).
 
-WWW: http://www.se.hiroshima-u.ac.jp/~kakugawa/Hacks/VFlibMan/Index.html
-
-Note this port supports FreeType library from 16/Mar/98.  Freetype makes
-use of Hinting information in TrueType (i.e.clearer output is possible).
-To use Freetype, simply modify /usr/local/lib/VFlib/vfontcap file:
-
-# Before... you may find a entry like:
-r-ricoh-ttw-hg-mincho-l-pro|Ricoh TrueTypeWorld HG Mincho L PRO:\
-	:ft=truetype:\
-	:ff=/usr/local/lib/dp/font/truetype/hgrmlpsj:
-# After... then modify as follows:
-r-ricoh-ttw-hg-mincho-l-pro|Ricoh TrueTypeWorld HG Mincho L PRO:\
-	:ft=freetype:\
-	:ff=/usr/local/lib/dp/font/truetype/hgrmlpsj.ttf:
--> Important point: change 1:truetype -> freetype, 2:add .ttf or .ttc
+WWW: http://www-masu.ist.osaka-u.ac.jp/~kakugawa/VFlib/

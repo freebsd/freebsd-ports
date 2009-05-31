@@ -1,0 +1,15 @@
+--- make-sub.in.orig	2009-05-31 23:03:14.000000000 +0900
++++ make-sub.in	2009-05-31 23:06:52.000000000 +0900
+@@ -16,8 +16,10 @@
+ libdir      = @libdir@
+ bindir      = @bindir@
+ includedir  = @includedir@
+-runtimedir       = @datadir@/VFlib/@vflib2_version@
+-default_vfontcap = @datadir@/VFlib/@vflib2_version@/vfontcap
++docsdir     = @prefix@/share/doc/vflib
++datadir     = @prefix@/share/vflib
++runtimedir       = @prefix@/etc/vflib
++default_vfontcap = @prefix@/etc/vflib/vfontcap
+ 
+ 
+ clean::
