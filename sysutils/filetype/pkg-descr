@@ -1,0 +1,16 @@
+Actually, we're not trying to reinvent the wheel here,
+rather adapt it to suit a slightly different purpose.
+
+Below are a few main points and reasons as to why we've created filetype:
+
+    * file does not work so well for loosely defined filetypes ( ie, vCards )
+    * file uses a text-based type database which can impose unwanted delays
+       in frequently invoked processes
+    * file does not have a heirachial type tree (ie, executable->MSDOS->EXE )
+    * file is not designed to be incorporated at a source level into existing
+      projects
+    * Simpler and broader type detection engine ( 'file' is very good at
+       pulling out every detail about a file, ie, the resolution of an image,
+       however we do not wish to seek out such fine details )
+
+WWW: http://www.pldaniels.com/filetype/
