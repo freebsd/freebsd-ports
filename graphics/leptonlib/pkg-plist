@@ -1,0 +1,26 @@
+include/liblept/allheaders.h
+include/liblept/alltypes.h
+include/liblept/arrayaccess.h
+include/liblept/array.h
+include/liblept/bbuffer.h
+include/liblept/bmf.h
+include/liblept/bmp.h
+include/liblept/ccbord.h
+include/liblept/environ.h
+include/liblept/gplot.h
+include/liblept/imageio.h
+include/liblept/jbclass.h
+include/liblept/leptprotos.h
+include/liblept/list.h
+include/liblept/morph.h
+include/liblept/pheap.h
+include/liblept/pix.h
+include/liblept/pqueue.h
+include/liblept/readbarcode.h
+include/liblept/stack.h
+include/liblept/watershed.h
+lib/liblept.a
+lib/liblept.la
+lib/liblept.so
+lib/liblept.so.0
+@dirrm include/liblept

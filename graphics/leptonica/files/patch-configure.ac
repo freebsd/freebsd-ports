@@ -1,0 +1,11 @@
+--- ./configure.ac.orig	2009-01-19 14:30:19.000000000 +0900
++++ ./configure.ac	2009-05-21 00:15:20.000000000 +0900
+@@ -114,7 +114,7 @@
+ 
+ # Check where all the following programs are and set
+ # variables accordingly:
+-AC_PROG_RANLIB
++AM_PROG_LIBTOOL
+ # AC_PROG_LN_S
+ # AC_PATH_PROG(MV, mv)
+ # AC_PATH_PROG(CP, cp)
