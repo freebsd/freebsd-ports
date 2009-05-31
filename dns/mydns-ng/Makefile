@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	mydns-ng
+PORTREVISION=	1
 PORTVERSION=	1.2.8.27
 CATEGORIES=	dns databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -63,7 +64,7 @@ PKGNAMESUFFIX=	-mysql
 USE_MYSQL=	yes
 .endif
 
-.if defined(WITHOUT_NLS)
+.if !defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--with-included-gettext
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
