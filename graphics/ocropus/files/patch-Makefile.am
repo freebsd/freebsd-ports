@@ -1,0 +1,11 @@
+--- ./Makefile.am.orig	2008-10-16 05:40:47.000000000 +0900
++++ ./Makefile.am	2009-05-26 21:25:34.000000000 +0900
+@@ -110,7 +110,7 @@
+ 
+ # run check-style everytime and give a hint about make check
+ all:
+-	$(srcdir)/utilities/check-style -f $(srcdir)
++#	$(srcdir)/utilities/check-style -f $(srcdir)
+ 	@echo
+ 	@echo "Use 'make check' to run tests!"
+ 	@echo
