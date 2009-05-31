@@ -1,0 +1,17 @@
+--- src/Makefile.in.orig	2009-05-31 23:09:40.000000000 +0900
++++ src/Makefile.in	2009-05-31 23:09:50.000000000 +0900
+@@ -186,14 +186,12 @@
+ 	$(LIBTOOL) $(CP) $(VFLIB) $(libdir)/$(VFLIB)
+ 	$(LIBTOOL) -n --finish $(libdir)
+ 	$(CP) VF.h     $(includedir)/VF.h
+-	$(CP) VF.h     $(runtimedir)/VF.h
+ 	$(LIBTOOL) $(CP) ttindex  $(bindir)/ttindex
+ 	$(LIBTOOL) $(CP) bdfindex $(bindir)/bdfindex
+ 	$(LIBTOOL) $(CP) fwindex  $(bindir)/fwindex
+ uninstall:
+ 	-$(LIBTOOL) $(RM) $(libdir)/$(VFLIB)
+ 	-$(RM)  $(includedir)/VF.h
+-	-$(RM)  $(runtimedir)/VF.h
+ 	-$(LIBTOOL) $(RM)  $(bindir)/ttindex
+ 	-$(LIBTOOL) $(RM)  $(bindir)/bdfindex
+ 	-$(LIBTOOL) $(RM)  $(bindir)/fwindex

@@ -1,0 +1,11 @@
+--- ltconfig.bak	2001-05-30 13:20:36.000000000 +0900
++++ ltconfig	2009-05-31 22:12:23.000000000 +0900
+@@ -1824,7 +1824,7 @@
+   ;;
+   
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case "$version_type" in
+     freebsd-elf*)

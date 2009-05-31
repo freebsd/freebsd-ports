@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	vflib
-PORTVERSION=	${VFLIB_VERSION}
-PORTREVISION=	10
+PORTVERSION=	2.25.6
+PORTREVISION=	11
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
 DISTNAME=	VFlib2-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Vector font library
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 RUN_DEPENDS=	${LOCALBASE}/share/font-sazanami/sazanami-mincho.ttf:${PORTSDIR}/japanese/font-sazanami
-
-VFLIB_VERSION=	2.25.6
-PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
 USE_XORG=	x11 xext
 USE_FREETYPE=	yes
@@ -30,20 +26,25 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-freetype \
 		--with-freetype-includedir=${LOCALBASE}/include/freetype1/freetype \
 		--with-freetype-libdir=${LOCALBASE}/lib
+PLIST_SUB=	ETCDIR=${ETCDIR}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
-
-pre-install:
-	@(cd ${WRKSRC}/tools; \
-	    ${INSTALL_SCRIPT} fmtest disol kban vfperf vftest ${PREFIX}/bin)
-	@(cd ${WRKSRC}; \
-	  ${MKDIR} ${PREFIX}/share/VFlib/${VFLIB_VERSION} ;\
-	  ${CP} COPYING COPYING.LIB README.txt.JP_EUC \
-		${PREFIX}/share/VFlib/${VFLIB_VERSION} ;\
-	  ${CP} -R jTeX ${PREFIX}/share/VFlib/${VFLIB_VERSION})
+PORTDOCS=	${PORTDOCS_WRKSRC} ${PORTDOCS_WRKSRC_DOC}
+PORTDOCS_WRKSRC=	COPYING COPYING.LIB README.txt.JP_EUC
+PORTDOCS_WRKSRC_DOC=	QA.txt QA-english.tex man.ps man.dvi
+ETCDIR=		etc/vflib
 
 post-install:
-	${MV} ${PREFIX}/share/VFlib/${VFLIB_VERSION}/VF.h ${PREFIX}/include
+	cd ${WRKSRC}/tools && \
+		${INSTALL_SCRIPT} fmtest disol kban vfperf vftest \
+			${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	${CP} -R ${WRKSRC}/jTeX ${DATADIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS_WRKSRC} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS_WRKSRC_DOC} ${DOCSDIR}
+.endif
+
+post-install:
 
 .include <bsd.port.mk>

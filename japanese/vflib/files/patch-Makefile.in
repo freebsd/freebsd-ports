@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2009-05-31 23:05:05.000000000 +0900
++++ Makefile.in	2009-05-31 23:05:35.000000000 +0900
+@@ -29,11 +29,13 @@
+ 	    ./recmkdir $(includedir); fi
+ 	@if [ ! -d $(runtimedir) ] ; then \
+ 	    ./recmkdir $(runtimedir); fi
++	@if [ ! -d $(docsdir) ] ; then \
++	    ./recmkdir $(docsdir); fi
+ 	(cd src;   $(MAKE) $@)
+ 	(cd tools; $(MAKE) $@)
+ 	$(LIBTOOL) $(CP) VFlib2-config $(bindir)
+ 	$(CP) vfontcap* $(runtimedir)
+-	$(CP) doc/*.dvi doc/*.ps doc/QA* $(runtimedir)
++	$(CP) doc/*.dvi doc/*.ps doc/QA* $(docsdir)
+ 
+ uninstall:
+ 	-(cd src;   $(MAKE) $@)
