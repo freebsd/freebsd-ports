@@ -175,6 +175,7 @@
     SUBDIR += drupal6-views
     SUBDIR += dtse
     SUBDIR += dummyflash
+    SUBDIR += e107
     SUBDIR += eaccelerator
     SUBDIR += efront
     SUBDIR += eldav.el
