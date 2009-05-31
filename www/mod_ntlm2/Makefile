@@ -9,17 +9,16 @@ PORTNAME=	mod_ntlm2
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	modntlm
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	NTLM authentication module for the Apache2 webserver
 
+BUILD_DEPENDS=	${LOCALBASE}/smbclient:${PORTSDIR}/net/samba3
+
 USE_APACHE=	20+
 MAKE_ENV=	APXS=${APXS}
-SUB_LIST=	APACHEMODDIR=${APACHEMODDIR}
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3
 
 .include <bsd.port.mk>
