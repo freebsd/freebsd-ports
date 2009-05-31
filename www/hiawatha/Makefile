@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	6.11
+PORTVERSION=	6.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/
 
@@ -21,9 +21,14 @@ MANCOMPRESSED=	no
 
 USE_RC_SUBR=	hiawatha
 SUB_FILES=	pkg-message
+WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var webrootdir=${WWWDIR}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 OPTIONS=	COMMAND "Enable the Hiawatha CommandChannel" Off \
 		CACHE "Internal file caching support" On \
@@ -56,6 +61,8 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITH_XSLT)
 CONFIGURE_ARGS+=	--enable-xslt
+USE_GNOME+=	libxslt
+CPPFLAGS+=	-I${LOCALBASE}/include/libxml2
 .endif
 
 post-install:
