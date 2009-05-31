@@ -1,11 +1,11 @@
---- setup.py.orig	2009-01-25 16:03:31.000000000 +0800
-+++ setup.py	2009-01-25 16:04:35.000000000 +0800
+--- setup.py.orig	2009-06-01 03:12:01.000000000 +0800
++++ setup.py	2009-06-01 03:14:23.000000000 +0800
 @@ -34,7 +34,7 @@
  ext_modules = [
      Extension('liblo',
                [with_pyrex and 'src/liblo.pyx' or 'src/liblo.c'],
 -              extra_compile_args = ['-fno-strict-aliasing'],
-+              extra_compile_args = ['-fno-strict-aliasing','-I/usr/local/include'],
++              extra_compile_args = ['-fno-strict-aliasing','-I%%LOCALBASE%%/include/'],
                libraries = ['lo'])
  ]
  
