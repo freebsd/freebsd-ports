@@ -13,7 +13,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	3.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -29,14 +29,13 @@ CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.6*
 LATEST_LINK=	rt38
 
 OPTIONS=	MYSQL 		"Enable MySQL backend" 		on  \
-		APACHE2		"Enable Apache2 server"		on  \
+		APACHE		"Enable ${APACHE_PORT} server"		on  \
 		MODPERL2	"Enable mod_perl2 support"	on  \
 		POSTGRESQL 	"Enable Postgresql backend"	off \
 		ORACLE		"Enable Oracle backend"		off \
 		SQLITE		"Enable SQLite backend" 	off \
 		DEV 		"Configure for Developers"	off \
 		STANDALONE	"Enable standalone server"	off \
-		APACHE		"Enable Apache1.3.x server"	off \
 		MODPERL		"Enable mod_perl support"	off \
 		FASTCGI		"Enable FastCGI support" 	off \
 		GRAPHVIZ	"Enable GraphViz charts"	on
@@ -68,10 +67,6 @@ RUN_DEPENDS+=	${DEV_DEPS}
 .if defined(WITH_STANDALONE)
 BUILD_DEPENDS+=	${STANDALONE_DEPS}
 RUN_DEPENDS+=	${STANDALONE_DEPS}
-.endif
-
-.if defined(WITH_APACHE2)
-USE_APACHE=	2.0+
 .endif
 
 .if defined(WITH_APACHE)
@@ -132,11 +127,6 @@ IGNORE=	you must choose a database backend
 #    (defined(WITH_ORACLE) && (defined(WITH_MYSQL) || defined(WITH_POSTGRELSQL) || defined(WITH_SQLITE)))
 #IGNORE=	Select exactly one of WITH_MYSQL, WITH_POSTGRESQL, WITH_SQLITE, WITH_ORACLE
 #.endif
-
-### APACHE or APACHE2
-.if defined(WITH_APACHE) && defined(WITH_APACHE2)
-IGNORE=	options WITH_APACHE and WITH_APACHE2 are mutually exclusive
-.endif
 
 ### MODPERL or MODPERL2
 .if defined(WITH_MODPERL) && defined(WITH_MODPERL2)
