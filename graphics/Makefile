@@ -334,6 +334,7 @@
     SUBDIR += ipe
     SUBDIR += irit
     SUBDIR += isreal
+    SUBDIR += iulib
     SUBDIR += ivtools
     SUBDIR += jalbum
     SUBDIR += jasper
