@@ -20,6 +20,8 @@ OPTIONS=	GD "Enable support for GD library" on \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=--with-boost-program-options=boost_program_options \
+		--with-boost-thread=boost_thread
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
