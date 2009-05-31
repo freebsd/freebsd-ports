@@ -1,0 +1,24 @@
+--- src/Makefile.am.orig	2009-01-19 08:30:19.000000000 +0300
++++ src/Makefile.am	2009-05-21 21:55:01.000000000 +0400
+@@ -6,10 +6,9 @@
+ MAKE = make -f Makefile
+ AM_CFLAGS = -D_BSD_SOURCE -DANSI -fPIC
+ AM_CPPFLAGS = $(ENDIANNESS)
+-CFLAGS = -O2
+ 
+-lib_LIBRARIES = liblept.a
+-liblept_a_SOURCES = adaptmap.c \
++lib_LTLIBRARIES = liblept.la
++liblept_la_SOURCES = adaptmap.c \
+  affine.c affinecompose.c \
+  arithlow.c arrayaccess.c \
+  bardecode.c \
+@@ -73,7 +72,7 @@
+ 
+ include_HEADERS = allheaders.h alltypes.h arrayaccess.h \
+  array.h bbuffer.h bmf.h bmp.h ccbord.h environ.h \
+- gplot.h imageio.h jbclass.h jmorecfg.h jpeglib.h leptprotos.h list.h \
++ gplot.h imageio.h jbclass.h leptprotos.h list.h \
+  morph.h pheap.h pix.h pqueue.h readbarcode.h stack.h watershed.h
+ 
+ EXTRA_DIST = Makefile.mingw arrayaccess.h.vc arrayaccess.h.vc60 \

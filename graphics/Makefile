@@ -389,6 +389,7 @@
     SUBDIR += lcms
     SUBDIR += leafpak
     SUBDIR += lensfun
+    SUBDIR += leptonlib
     SUBDIR += lfview
     SUBDIR += lib3ds
     SUBDIR += libGL
