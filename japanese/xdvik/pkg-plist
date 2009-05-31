@@ -11,31 +11,5 @@ libexec/xdviprint
 %%XDVIETCDIR%%/xdvipaper.jdvi2kps
 %%XDVIETCDIR%%/XDvi
 @dirrm %%XDVIETCDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.xdvik-jp.html
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.xdvik20a-j1.1
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.xdvik20c-j1.0
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/HEADERS.DOC
-%%PORTDOCS%%%%DOCSDIR%%/InternalVars
-%%PORTDOCS%%%%DOCSDIR%%/README.jp+toc+hal2
-%%PORTDOCS%%%%DOCSDIR%%/README.jp-patch
-%%PORTDOCS%%%%DOCSDIR%%/README.markpage+toc+printdvi
-%%PORTDOCS%%%%DOCSDIR%%/README.markpage+toc+printdvi+paper
-%%PORTDOCS%%%%DOCSDIR%%/README.miyu-beta6
-%%PORTDOCS%%%%DOCSDIR%%/README.ptex
-%%PORTDOCS%%%%DOCSDIR%%/README.src-specials
-%%PORTDOCS%%%%DOCSDIR%%/README.t1fonts
-%%PORTDOCS%%%%DOCSDIR%%/README.t1mapper
-%%PORTDOCS%%%%DOCSDIR%%/README.tasai-ussy
-%%PORTDOCS%%%%DOCSDIR%%/README.vf2ft
-%%PORTDOCS%%%%DOCSDIR%%/README.xdvik-jp
-%%PORTDOCS%%%%DOCSDIR%%/README.xdvik18f-j1.0.patch
-%%PORTDOCS%%%%DOCSDIR%%/README.xdvik18f-j1.1p5.patch
-%%PORTDOCS%%%%DOCSDIR%%/README.xdvik20a-j1.1.patch
-%%PORTDOCS%%%%DOCSDIR%%/README.xdvik20c-j1.0+hal2+dvisel
-%%PORTDOCS%%%%DOCSDIR%%/README.xdvik20c-j1.0p1.patch
-%%PORTDOCS%%%%DOCSDIR%%/README.xdvik-22.15-j1.04.patch
-%%PORTDOCS%%%%DOCSDIR%%/xdvi.icon
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%

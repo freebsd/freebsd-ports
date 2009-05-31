@@ -6,6 +6,54 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090530:
+  AFFECTS: users of Japanese and Chinese fonts
+  AUTHOR: hrs@FreeBSD.org
+
+  Ports for Japanese fonts have been reorganized in the following way:
+
+  japanese/ipa-ttfonts -> japanese/font-mplus-ipa
+  japanese/ipa-ttfonts -> japanese/font-ipa
+  japanese/kochi-ttfonts -> japanese/font-kochi
+  japanese/mplusfonts -> japanese/font-mplus
+  japanese/sazanami-ttf -> japanese/font-sazanami
+  japanese/shinonome -> japanese/font-shinonome
+  japanese/umefont -> japanese/font-ume
+  japanese/vlgothic -> japanese/font-vlgothic
+
+  While basically these are port name changes for consistency,
+  installation directories are also changed:
+
+  font files -> ${PREFIX}/share/${PORTNAME}/*
+  symlinks -> ${PREFIX}/share/fonts/{TTF,OTF,fontname,...}/*
+  symlinks -> ${PREFIX}/lib/X11/fonts/{TTF,OTF,misc,fontname,...}/*
+
+  A user-visible one is that the directory name "TrueType" is replaced
+  with "TTF".
+
+  Also, japanese/font-std and chinese/font-std have been added as
+  standard fonts used in the Ports Collection.  Currently they
+  contain:
+
+  std.ja_JP/Mincho
+  std.ja_JP/Gothic
+  std.ja_JP/Ryumin-Light
+  std.ja_JP/GothicBBB-Medium
+  std.zh_CN/STHeiti-Regular
+  std.zh_CN/STSong-Light
+  std.zh_CN/MSung-Light
+  std.zh_CN/MHei-Medium
+
+  under ${PREFIX}/share/fonts/.  They are just symlinks to
+  corresponding font files.  The symlink names are based on popular
+  PostScript font names.
+
+  Applications should refer the font files via XLFD or fontconfig
+  first.  If they need a direct reference to the font file, please use
+  files in std.*/*.  This is because direct reference to a specific
+  font name in an application configuration file makes the maintenance
+  difficult when the font file name is changed, for example.
+
 20090516:
   AFFECTS: users of devel/viewvc 
   AUTHOR: pgollucci@FreeBSD.org

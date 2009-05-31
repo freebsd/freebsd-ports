@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-jafont
@@ -18,7 +18,8 @@ COMMENT=	Japanese font support for xpdf
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
 		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
-		${FONTSDIR}/ipam.ttf:${PORTSDIR}/japanese/ipa-ttfonts
+		${FONTSDIR}/Ryumin-Light:${PORTSDIR}/japanese/font-std \
+		${FONTSDIR}/GothicBBB-Medium:${PORTSDIR}/japanese/font-std
 
 NO_BUILD=	yes
 SUB_FILES=	dot.xpdfrc
@@ -27,7 +28,7 @@ SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \
 PLIST_SUB=	EXTRARC=${EXTRARC}
 DATADIR=	${PREFIX}/share/xpdf
 
-FONTSDIR=	${LOCALBASE}/share/fonts/TrueType
+FONTSDIR=	${LOCALBASE}/share/fonts/std.ja_JP
 EXTRARC=	${DATADIR}/japanese/dot.xpdfrc
 ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 INSTALL_FILES=	Adobe-Japan1.cidToUnicode ISO-2022-JP.unicodeMap \

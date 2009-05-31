@@ -7,7 +7,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	${VERSION_XDVIK}.${VERSION_JPATCH}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese print
 MASTER_SITES=	SF/xdvi
 PKGNAMEPREFIX=	ja-
@@ -28,8 +28,8 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
-		${LOCALBASE}/${TTFMINCHO}:${PORTSDIR}/japanese/ipa-ttfonts \
-		${LOCALBASE}/${TTFGOTHIC}:${PORTSDIR}/japanese/ipa-ttfonts
+		${LOCALBASE}/${MINCHO}:${PORTSDIR}/japanese/font-std \
+		${LOCALBASE}/${GOTHIC}:${PORTSDIR}/japanese/font-std
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
@@ -80,28 +80,29 @@ XDVIETCDIR=	${TEXMFDIR}/xdvi/ptex
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 
 CIDFONTDIR=	${TEXMFDIR}/dvipdfm/CIDFont
-TTFMINCHO=	lib/X11/fonts/TrueType/ipam.ttf
-TTFGOTHIC=	lib/X11/fonts/TrueType/ipag.ttf
+MINCHO=		share/fonts/std.ja_JP/Ryumin-Light
+GOTHIC=		share/fonts/std.ja_JP/GothicBBB-Medium
 VFONTCAPFT_SRC=	${WRKSRC}/vfontmap.freetype
 VFONTCAPFT_SUB=	CIDFONTDIR=${LOCALBASE}/${CIDFONTDIR} \
-		TTFMINCHO=${LOCALBASE}/${TTFMINCHO} \
-		TTFGOTHIC=${LOCALBASE}/${TTFGOTHIC}
+		MINCHO=${LOCALBASE}/${MINCHO} \
+		GOTHIC=${LOCALBASE}/${GOTHIC}
 
 .include <bsd.port.pre.mk>
 
 BDPI?=		600
 SHRINK?=	6
 DVIPS?=		dvips
+MF_MODES=	118:bitgraph \
+		240:canonlbp \
+		300:cx \
+		360:canonbjc \
+		400:nexthi \
+		600:ljfour
+.for B in ${BDPI}
+MF_MODE?=	${MF_MODES:M${B}*:C/.*://}
+.endfor
 .if !defined(MF_MODE) || empty(MF_MODE)
-MF_MODE!=	case ${BDPI} in\
-		118) ${ECHO_CMD} bitgraph ;;\
-		240) ${ECHO_CMD} canonlbp ;;\
-		300) ${ECHO_CMD} cx ;;\
-		360) ${ECHO_CMD} canonbjc ;;\
-		400) ${ECHO_CMD} nexthi ;;\
-		600) ${ECHO_CMD} ljfour ;;\
-		*) ${ECHO_CMD} cx ;;\
-		esac
+MF_MODE=	cx
 .endif
 
 DOCS=	FAQ xdvi.icon CHANGES.xdvik-jp.html \
@@ -119,6 +120,8 @@ DOCS=	FAQ xdvi.icon CHANGES.xdvik-jp.html \
 	READMEs/README.xdvik20c-j1.0+hal2+dvisel \
 	READMEs/README.xdvik20c-j1.0p1.patch READMEs/README.vf2ft \
 	READMEs/README.xdvik-22.15-j1.04.patch
+
+PORTDOCS=	${DOCS:S,READMEs/,,}
 
 pre-build:
 	@(cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} -f {} \;)
@@ -140,7 +143,8 @@ post-install:
 		${PREFIX}/${XDVIETCDIR}/XDvi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/texk/xdvik/,} ${DOCSDIR}
+	cd ${WRKSRC}/texk/xdvik && \
+		${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 	${MKTEXLSR}
 

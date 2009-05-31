@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	chinese graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN} \
@@ -22,7 +22,9 @@ COMMENT=	Chinese font support for xpdf
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
 		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
-		${FONTSDIR}/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf
+		${FONTSDIR}/STHeiti-Regular:${PORTSDIR}/chinese/font-std \
+		${FONTSDIR}/STSong-Light:${PORTSDIR}/chinese/font-std \
+		${FONTSDIR}/MSung-Light:${PORTSDIR}/chinese/font-std
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -32,7 +34,7 @@ SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \
 PLIST_SUB=	EXTRARC=${EXTRARC}
 DATADIR=	${PREFIX}/share/xpdf
 
-FONTSDIR=	${LOCALBASE}/share/fonts/TrueType
+FONTSDIR=	${LOCALBASE}/share/fonts/std.zh_CN
 EXTRARC=	${DATADIR}/chinese-traditional/dot.xpdfrc
 ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 SIMP_FILES=	Adobe-GB1.cidToUnicode EUC-CN.unicodeMap GBK.unicodeMap \

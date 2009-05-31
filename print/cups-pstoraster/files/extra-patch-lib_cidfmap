@@ -4,8 +4,8 @@
  %   /ShinGo-Bold   /HeiseiKakuGo-W5 ;
  %   /Ryumin-Medium << /FileType /TrueType /Path (H:/AuxFiles/Fonts/BATANG.TTC) /SubfontID 3 /CSI [(Japan1) 2] >> ;
  %
-+/Ryumin-Light << /FileType /TrueType /Path (Ryumin-Light.ttf) /SubfontID 0 /CSI [(Japan1) 3] >> ;
-+/GothicBBB-Medium << /FileType /TrueType /Path (GothicBBB-Medium.ttf) /SubfontID 0 /CSI [(Japan1) 3] >> ;
++/Ryumin-Light << /FileType /TrueType /Path (Ryumin-Light) /SubfontID 0 /CSI [(Japan1) 3] >> ;
++/GothicBBB-Medium << /FileType /TrueType /Path (GothicBBB-Medium) /SubfontID 0 /CSI [(Japan1) 3] >> ;
 +
 +/HeiseiMin-W3		/Ryumin-Light ;
 +%/HeiseiMin-W3		/WadaMin-Regular ;

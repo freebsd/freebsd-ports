@@ -7,7 +7,7 @@
 
 PORTNAME=	alias-fonts
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese x11-fonts
 DISTFILES=	# empty
 
@@ -17,7 +17,7 @@ COMMENT=	A meta-port which setups Japanese fonts
 RUN_DEPENDS=	\
 		${FONTSDIR}/jpnhn4-iso.pcf.gz:${PORTSDIR}/japanese/elisa8x8 \
 		${FONTSDIR}/5x10B.pcf.gz:${PORTSDIR}/japanese/k10 \
-		${FONTSDIR}/shnmk12.pcf.gz:${PORTSDIR}/japanese/shinonome \
+		${LOCALBASE}/share/font-shinonome/shnmk12.pcf.gz:${PORTSDIR}/japanese/font-shinonome \
 		${FONTSDIR}/kanji18.pcf.gz:${PORTSDIR}/japanese/kanji18 \
 		${FONTSDIR}/k20b.pcf.gz:${PORTSDIR}/japanese/kappa20 \
 		${FONTSDIR}/kanji26.pcf.gz:${PORTSDIR}/japanese/kanji26 \

@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript7-jpnfont
 PORTVERSION=	7.07
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print japanese
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -15,7 +15,7 @@ DISTFILES=	# empty
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Japanese font support for Ghostscript 7.x
 
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/ipam.ttf:${PORTSDIR}/japanese/ipa-ttfonts \
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/japanese/font-std \
 		${LOCALBASE}/share/ghostscript/Resource/CIDFont/Ryumin-Light:${PORTSDIR}/print/ghostscript7-commfont
 
 # set these forcibly

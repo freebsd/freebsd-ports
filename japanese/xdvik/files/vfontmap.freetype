@@ -8,7 +8,7 @@
 %    "tfm name2" "{,unicode,adobejapan,cidv}"
 
 %%%CIDFONTDIR%%/HiraMinPro-W3.otf
-%%TTFMINCHO%%
+%%MINCHO%%
 	min
 	tmin
 	nmin
@@ -16,7 +16,7 @@
 	jis-v
 	dm
 %%%CIDFONTDIR%%/HiraKakuPro-W6.otf
-%%TTFGOTHIC%%
+%%GOTHIC%%
 	goth
 	tgoth
 	ngoth
