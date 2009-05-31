@@ -1,0 +1,20 @@
+--- ./configure.ac.orig	2008-10-16 05:40:35.000000000 +0900
++++ ./configure.ac	2009-05-26 21:22:11.000000000 +0900
+@@ -116,6 +116,8 @@
+     AC_MSG_ERROR([no TIFFOpen; please install libtiff4-dev or equivalent]))
+ 
+ AC_LANG_CPLUSPLUS
++# should require CXXCPP before conditional AC_CHECK_HEADER
++AC_PROG_CXXCPP
+ 
+ # --- iulib (required) ---
+ # NB: we can only use functions with C linkage here
+@@ -180,7 +182,7 @@
+     LDFLAGS="$LDFLAGS -L$leptheaders/../../lib"
+     AC_CHECK_LIB(lept,pixCreate,,AC_MSG_ERROR([leptonica not found! Choose --without-leptonica if you don't want to use it.]))
+ fi
+-AM_CONDITIONAL([use_leptonica], [test x$use_leptonica == xyes])
++AM_CONDITIONAL([use_leptonica], [test x$use_leptonica = xyes])
+ 
+ 
+ # --- SDL (optional for graphical debugging in ocroscript) ---
