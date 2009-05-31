@@ -7,7 +7,7 @@
 
 PORTNAME=	moonshine
 PORTVERSION=	0.2
-CATEGORIES=	multimedia www
+CATEGORIES=	www multimedia
 MASTER_SITES=	http://abock.org/${PORTNAME}/releases/
 
 MAINTAINER=	mono@FreeBSD.org
