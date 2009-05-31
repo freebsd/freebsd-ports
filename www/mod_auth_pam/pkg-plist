@@ -1,4 +1,4 @@
-libexec/apache/mod_auth_pam.so
+%%APACHEMODDIR%%/mod_auth_pam.so
 @exec %D/sbin/apxs -e -A -n auth_pam %D/%F
 @unexec %D/sbin/apxs -e -A -n auth_pam %D/%F
 %%PORTDOCS%%%%DOCSDIR%%/configure.txt
