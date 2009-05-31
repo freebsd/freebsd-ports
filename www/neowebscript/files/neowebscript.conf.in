@@ -3,10 +3,10 @@
 #### (uncomment to activate)
 ####
 
-LoadModule	neoscript_module	libexec/apache/mod_neoscript.so
-#LoadModule	neo_userdir_module	libexec/apache/mod_neo_userdir.so
-#LoadModule	log_neo_module		libexec/apache/mod_log_neo.so
-#LoadModule	tcl_auth_module		libexec/apache/mod_auth_tcl.so
+LoadModule	neoscript_module	%%APACHEMODDIR%%/apache/mod_neoscript.so
+#LoadModule	neo_userdir_module	%%APACHEMODDIR%%/apache/mod_neo_userdir.so
+#LoadModule	log_neo_module		%%APACHEMODDIR%%/apache/mod_log_neo.so
+#LoadModule	tcl_auth_module		%%APACHEMODDIR%%/apache/mod_auth_tcl.so
 
 ## Enable the NeoWebScript handler
 AddType		text/html		.nhtml .nws
@@ -22,14 +22,14 @@ AddType		image/png		.gd
 AddHandler	neo-generate-image	.gd
 
 ## Comment this lines out to disable nws-common in VirtualHosts
-Alias	/nws/		/usr/local/share/doc/neowebscript/
-Alias	/neowebscript/	/usr/local/share/doc/neowebscript/
-Alias	/nws-common/	/usr/local/share/doc/neowebscript/nws-common/
+Alias	/nws/		%%DOCSDIR%%/
+Alias	/neowebscript/	%%DOCSDIR%%/
+Alias	/nws-common/	%%DOCSDIR%%/nws-common/
 
 #### End of NeoWebScript configuration ####
 ###########################################
 
-<Directory /usr/local/share/doc/neowebscript>
+<Directory %%DOCSDIR%%>
 	Options Includes
 </Directory>
 
