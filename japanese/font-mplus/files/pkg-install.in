@@ -98,6 +98,9 @@ DEINSTALL)
 	nfonts < fonts.dir.tmp > fonts.dir
 	cat fonts.dir.tmp >> fonts.dir
 	rm -f fonts.dir.tmp
+	if [ -r fonts.dir -a `wc -l < fonts.dir` = 1 ]; then
+		rm -f fonts.dir
+	fi
 
 	cd ${X_FONTSDIR}/misc
 	%%LOCALBASE%%/bin/mkfontdir ${X_FONTSDIR}/misc
