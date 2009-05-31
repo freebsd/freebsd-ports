@@ -67,6 +67,8 @@ PLIST_SUB+=	LOUDMOUTH="@comment "
 .endif
 
 post-extract:
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/cmake/modules/FindMySQLAmarok.cmake
 	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
 		${WRKSRC}/cmake/modules/FindIpod.cmake \
 		${WRKSRC}/cmake/modules/FindLoudmouth.cmake \
