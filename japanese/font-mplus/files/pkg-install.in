@@ -89,7 +89,7 @@ POST-INSTALL)
 	cat fonts.alias.tmp %%FONTSALIAS%% > fonts.alias
 	rm -f fonts.alias.tmp
 	;;
-DEINSTALL)
+POST-DEINSTALL)
 	%%LOCALBASE%%/bin/fc-cache -s -f -v ${X_FONTSDIR}/TTF ${X_FONTSDIR}/misc
 	rm -f ${X_FONTSDIR}/TTF/fonts.cache-1 ${X_FONTSDIR}/misc/fonts.cache-1
 
