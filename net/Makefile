@@ -957,7 +957,6 @@
     SUBDIR += tcpxtract
     SUBDIR += tdetect
     SUBDIR += telserv
-    SUBDIR += tftp-hpa
     SUBDIR += tftpgrab
     SUBDIR += thcrut
     SUBDIR += throttled

@@ -1,6 +1,0 @@
-tftp-hpa is an enhanced version of the BSD TFTP client and server.
-It possesses a number of bugfixes and enhancements over the original.
-It has been made portable and will work on pretty much any modern
-Unix variant.
-
-WWW: http://www.kernel.org/pub/software/network/tftp/
