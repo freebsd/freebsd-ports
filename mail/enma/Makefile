@@ -30,7 +30,6 @@ BIND_SRC_DIR=	${BASENAME} $$(${BIND_PATH_CMD})
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${PREFIX}/man \
 			--with-libbind=${WRKSRC}/build/tmp_build
-USE_OPENSSL=	yes
 USE_RC_SUBR=	milter-enma
 USE_GMAKE=	yes
 MANLANG=	"" ja_JP.UTF-8
@@ -44,6 +43,12 @@ SUB_FILES=	milter-enma
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 CONFIGURE_ARGS+=	--with-libmilter=${MILTERBASE} \
 			--with-ssl=${OPENSSLBASE}
+
+USE_OPENSSL=	yes
+.if ${OSVERSION} < 700000
+WITH_OPENSSL_PORT=	yes
+.endif
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 pre-configure:
 	cd ${PORTSDIR}/dns/bind95 && ${MAKE} -DBATCH patch && \
