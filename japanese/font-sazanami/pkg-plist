@@ -8,8 +8,8 @@
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-sazanami.conf
 etc/fonts/conf.avail/62-fonts-sazanami.conf
-@exec ln -s -f ../conf.avail/20-unhint-sazanami.conf %D/etc/fonts/conf.d/20-unhint-sazanami-ttf.conf
-@exec ln -s -f ../conf.avail/62-fonts-sazanami.conf %D/etc/fonts/conf.d/62-fonts-sazanami-ttf.conf
+@exec ln -s -f ../conf.avail/20-unhint-sazanami.conf %D/etc/fonts/conf.d/20-unhint-sazanami.conf
+@exec ln -s -f ../conf.avail/62-fonts-sazanami.conf %D/etc/fonts/conf.d/62-fonts-sazanami.conf
 @unexec rm -f %D/etc/fonts/conf.d/20-unhint-sazanami.conf
 @unexec rm -f %D/etc/fonts/conf.d/62-fonts-sazanami.conf
 %%X_FONTSDIR%%/TTF/sazanami-mincho.ttf
