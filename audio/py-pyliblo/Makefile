@@ -7,7 +7,7 @@
 
 PORTNAME=	pyliblo
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	http://das.nasophon.de/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,13 +20,17 @@ LIB_DEPENDS=	lo.7:${PORTSDIR}/audio/liblo
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-MAKE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	dump_osc.1 send_osc.1
 
+post-patch:
+	${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' ${WRKSRC}/setup.py
+
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/scripts/dump_osc.1 ${LOCALBASE}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/scripts/send_osc.1 ${LOCALBASE}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/scripts/dump_osc.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/scripts/send_osc.1 ${PREFIX}/man/man1
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
