@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	spring
-PORTVERSION=	0.78.2.1
+PORTVERSION=	0.79.1
 CATEGORIES=	games
-MASTER_SITES=	http://spring.clan-sy.com/dl/ \
+MASTER_SITES=	http://springrts.com/dl/ \
 		http://mirror.amdmi3.ru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
@@ -38,7 +38,8 @@ MAKE_JOBS_SAFE=	yes
 
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
-		-DMARCH_FLAG:STRING=
+		-DMARCH_FLAG:STRING= \
+		-DAIINTERFACES:STRING="NATIVE"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
@@ -47,9 +48,11 @@ PORTDOCS=	*
 post-patch:
 	@${REINPLACE_CMD} -E -e '/FIND_PACKAGE.*(Python|JNI)/ d' \
 		${WRKSRC}/tools/unitsync/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|/etc/\(spring/datadir\)|${PREFIX}/\1|g; \
+		/AddDirs.*GetBinaryPath/ d' \
+		${WRKSRC}/rts/System/FileSystem/DataDirLocater.cpp
 	@${REINPLACE_CMD} -e 's|x1F3F|x0F3F|g' \
 		${WRKSRC}/rts/System/FPUCheck.h
-	@${RM} -f ${WRKSRC}/rts/.gitignore ${WRKSRC}/game/.gitignore
 
 post-install:
 .if !defined(NOPORTDOCS)

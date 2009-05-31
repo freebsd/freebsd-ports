@@ -2,138 +2,146 @@ bin/spring
 bin/spring-dedicated
 lib/libspringserver.so
 lib/libunitsync.so
-lib/spring/AI/Bot-libs/libAAI.so
-lib/spring/AI/Bot-libs/libKAI-0.2.so
-lib/spring/AI/Bot-libs/libKAIK-0.13.so
-lib/spring/AI/Bot-libs/libRAI.so
-lib/spring/AI/Bot-libs/libTestGlobalAI.so
-lib/spring/AI/Helper-libs/libCentralBuildAI.so
-lib/spring/AI/Helper-libs/libEconomyAI.so
-lib/spring/AI/Helper-libs/libMetalMakerAI.so
-lib/spring/AI/Helper-libs/libMexUpgraderAI.so
-lib/spring/AI/Helper-libs/libRadarAI.so
-lib/spring/AI/Helper-libs/libReportIdleAI.so
-lib/spring/AI/Helper-libs/libSimpleFormationAI.so
+lib/spring/AI/Interfaces/C/0.1/InterfaceInfo.lua
+lib/spring/AI/Interfaces/C/0.1/libAIInterface.so
+lib/spring/AI/Skirmish/AAI/0.9/AIInfo.lua
+lib/spring/AI/Skirmish/AAI/0.9/AIOptions.lua
+lib/spring/AI/Skirmish/AAI/0.9/FAQ.txt
+lib/spring/AI/Skirmish/AAI/0.9/ReadMe.txt
+lib/spring/AI/Skirmish/AAI/0.9/cfg/general.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/help/example general.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/help/example mod.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/2Lakes.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/AATA-RumblingForest.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/AavikkoV2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Altored_Divide.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Aquatic_Divide_TNM05-V2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Archers_Valley_v5.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Ashap_Plateau.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Battle_Holms_v4.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/BlackLake_Swamp_v_1.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Blue Planet.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Canyon_Wasteland-v02.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/CenterrockV11.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/CenterrockV12.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Cliff Run-v01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Coast To Coast Remake.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Comet Catcher Redux.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Comet Catcher Remake-v02.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Comet Catcher Remake.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Cooper_Hill_TNM02-V1.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Core_Prime_Industrial_Area.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Craggy Hills v1.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Crimson_Paradise.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Crossing_4_final.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/DarkSide Remake.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Dead Reef v3.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/DeltaSiegeDry.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Deserted_Gully-v02.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Dueling_Bases-v01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Evergreen_Haven-Redux-v02.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Evergreen_Haven-v03.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Expandation v01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/ExpandedTropics.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/FF-AsteroidBattle.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/FF-Surrounded.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Flooded_Canyon-v2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Flooded_Canyon-v3.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Foothill_Basin_Redux-v02.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Foothills-v08.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Four_Lakes_V2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/FunTA-Battle_for_Aqua_Prime-v03.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Gods Of War 2 Remake V2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Green Comet Basic.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Hells Pass.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Ice_Bergs_V2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Iron_Craters_V1.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/IslandAlpha.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/IslandDivide.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Islands_In_War_1.0.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Long_Division-v01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Moon Quartet Remake.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/MoonQ20.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/MoonQ20x.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Mountain Siege.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Mountain_Range-v07.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/No_Mans_Land-V03.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Painted Desert Remake V2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Painted Desert Remake.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Plains_and_passes.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Raised_Divide_v1.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/River Dale-v01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Road_To_Rome.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Rush_Hour-By_Wired.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/SailAway.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Shore2Shore_Remake-v01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Small Supreme Battlefield.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Small Supreme Islands V2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/SmallDivide.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Supreme Battlefield.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Surrounded_Grounds-v2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Tabula-v2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Tactical_Divide_v2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Tangerine.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Tempest.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/The Oasis.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Tropical.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Twilight_Canyon-v01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Vegan_Canyons-v01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Verdant v3.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Whakamutunga_Riri-v01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/Winter_Wonderland.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/aftershock.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/map/cathralda.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/A-A-SBetaPack1.9B.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/AA3.2.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/AA5.0project.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/AAIA10.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BA692.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BA_Installer_Version.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BOTA_13.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BOTA_14.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/CA-BETA1.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/Expand&Exterminate v0.163.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/Expand_and_Exterminate_v_0.171.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/FF 1.21 S.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/KuroTA-v047.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/OTA_Classic_TA.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/OTA_Shiny_TA.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/OTA_with_Evolva_models.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/OTA_with_UTASP_BP.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/PURE0.51.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/S44_Installer_Version.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/SmallMod.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/SpringWD5B65.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/StarWars01.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/TABFForSPRINGv15.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/TBT12.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/TLLv104.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/XTAPE.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/XTAPEV958.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/XTA_Installer_Version.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/gundam_1.1_epic.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/gundam_1.1_tiny.cfg
+lib/spring/AI/Skirmish/AAI/0.9/libSkirmishAI.so
+lib/spring/AI/Skirmish/KAIK/0.13/AIInfo.lua
+lib/spring/AI/Skirmish/KAIK/0.13/AIOptions.lua
+lib/spring/AI/Skirmish/KAIK/0.13/libSkirmishAI.so
+lib/spring/AI/Skirmish/NTai/XE9.81/AIInfo.lua
+lib/spring/AI/Skirmish/NTai/XE9.81/AIOptions.lua
+lib/spring/AI/Skirmish/NTai/XE9.81/libSkirmishAI.so
+lib/spring/AI/Skirmish/NullAI/0.1/AIInfo.lua
+lib/spring/AI/Skirmish/NullAI/0.1/libSkirmishAI.so
+lib/spring/AI/Skirmish/NullLegacyCppAI/0.1/AIInfo.lua
+lib/spring/AI/Skirmish/NullLegacyCppAI/0.1/AIOptions.lua
+lib/spring/AI/Skirmish/NullLegacyCppAI/0.1/libSkirmishAI.so
+lib/spring/AI/Skirmish/RAI/0.601/AIInfo.lua
+lib/spring/AI/Skirmish/RAI/0.601/AIOptions.lua
+lib/spring/AI/Skirmish/RAI/0.601/libSkirmishAI.so
 share/applications/spring.desktop
 share/mime/packages/spring.xml
 share/pixmaps/application-x-spring-demo.png
 share/pixmaps/spring.png
-%%DATADIR%%/AI/AAI/AAI FAQ.txt
-%%DATADIR%%/AI/AAI/AAI ReadMe.txt
-%%DATADIR%%/AI/AAI/cfg/general.cfg
-%%DATADIR%%/AI/AAI/cfg/help/example general.cfg
-%%DATADIR%%/AI/AAI/cfg/help/example mod.cfg
-%%DATADIR%%/AI/AAI/cfg/map/2Lakes.cfg
-%%DATADIR%%/AI/AAI/cfg/map/AATA-RumblingForest.cfg
-%%DATADIR%%/AI/AAI/cfg/map/AavikkoV2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Altored_Divide.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Aquatic_Divide_TNM05-V2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Archers_Valley_v5.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Ashap_Plateau.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Battle_Holms_v4.cfg
-%%DATADIR%%/AI/AAI/cfg/map/BlackLake_Swamp_v_1.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Blue Planet.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Canyon_Wasteland-v02.cfg
-%%DATADIR%%/AI/AAI/cfg/map/CenterrockV11.cfg
-%%DATADIR%%/AI/AAI/cfg/map/CenterrockV12.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Cliff Run-v01.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Coast To Coast Remake.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Comet Catcher Redux.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Comet Catcher Remake-v02.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Comet Catcher Remake.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Cooper_Hill_TNM02-V1.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Core_Prime_Industrial_Area.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Craggy Hills v1.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Crimson_Paradise.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Crossing_4_final.cfg
-%%DATADIR%%/AI/AAI/cfg/map/DarkSide Remake.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Dead Reef v3.cfg
-%%DATADIR%%/AI/AAI/cfg/map/DeltaSiegeDry.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Deserted_Gully-v02.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Dueling_Bases-v01.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Evergreen_Haven-Redux-v02.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Evergreen_Haven-v03.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Expandation v01.cfg
-%%DATADIR%%/AI/AAI/cfg/map/ExpandedTropics.cfg
-%%DATADIR%%/AI/AAI/cfg/map/FF-AsteroidBattle.cfg
-%%DATADIR%%/AI/AAI/cfg/map/FF-Surrounded.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Flooded_Canyon-v2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Flooded_Canyon-v3.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Foothill_Basin_Redux-v02.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Foothills-v08.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Four_Lakes_V2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/FunTA-Battle_for_Aqua_Prime-v03.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Gods Of War 2 Remake V2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Green Comet Basic.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Hells Pass.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Ice_Bergs_V2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Iron_Craters_V1.cfg
-%%DATADIR%%/AI/AAI/cfg/map/IslandAlpha.cfg
-%%DATADIR%%/AI/AAI/cfg/map/IslandDivide.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Islands_In_War_1.0.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Long_Division-v01.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Moon Quartet Remake.cfg
-%%DATADIR%%/AI/AAI/cfg/map/MoonQ20.cfg
-%%DATADIR%%/AI/AAI/cfg/map/MoonQ20x.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Mountain Siege.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Mountain_Range-v07.cfg
-%%DATADIR%%/AI/AAI/cfg/map/No_Mans_Land-V03.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Painted Desert Remake V2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Painted Desert Remake.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Plains_and_passes.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Raised_Divide_v1.cfg
-%%DATADIR%%/AI/AAI/cfg/map/River Dale-v01.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Road_To_Rome.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Rush_Hour-By_Wired.cfg
-%%DATADIR%%/AI/AAI/cfg/map/SailAway.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Shore2Shore_Remake-v01.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Small Supreme Battlefield.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Small Supreme Islands V2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/SmallDivide.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Supreme Battlefield.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Surrounded_Grounds-v2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Tabula-v2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Tactical_Divide_v2.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Tangerine.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Tempest.cfg
-%%DATADIR%%/AI/AAI/cfg/map/The Oasis.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Tropical.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Twilight_Canyon-v01.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Vegan_Canyons-v01.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Verdant v3.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Whakamutunga_Riri-v01.cfg
-%%DATADIR%%/AI/AAI/cfg/map/Winter_Wonderland.cfg
-%%DATADIR%%/AI/AAI/cfg/map/aftershock.cfg
-%%DATADIR%%/AI/AAI/cfg/map/cathralda.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/A-A-SBetaPack1.9B.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/AA3.2.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/AA5.0project.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/AAIA10.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/BA_Installer_Version.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/BOTA_13.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/BOTA_14.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/CA-BETA1.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/Expand&Exterminate v0.163.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/Expand_and_Exterminate_v_0.171.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/FF 1.21 S.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/KuroTA-v047.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/OTA_Classic_TA.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/OTA_Shiny_TA.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/OTA_with_Evolva_models.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/OTA_with_UTASP_BP.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/PURE0.51.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/S44_Installer_Version.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/SmallMod.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/SpringWD5B65.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/StarWars01.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/TABFForSPRINGv15.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/TBT12.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/TLLv104.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/XTAPE.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/XTAPEV95.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/XTA_Installer_Version.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/gundam_1.1_epic.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/gundam_1.1_tiny.cfg
 %%DATADIR%%/LuaUI/CHANGELOG.txt
 %%DATADIR%%/LuaUI/Config/README.txt
 %%DATADIR%%/LuaUI/Fonts/FreeMonoBold_12.lua
@@ -217,8 +225,11 @@ share/pixmaps/spring.png
 %%DATADIR%%/base/springcontent.sdz
 %%DATADIR%%/cmdcolors.txt
 %%DATADIR%%/ctrlpanel.txt
-%%DATADIR%%/fonts/Luxi.ttf
-%%DATADIR%%/fonts/Vera.ttf
+%%DATADIR%%/fonts/AUTHORS
+%%DATADIR%%/fonts/COPYING
+%%DATADIR%%/fonts/CREDITS
+%%DATADIR%%/fonts/FreeSansBold.otf
+%%DATADIR%%/fonts/README
 %%DATADIR%%/luaui.lua
 %%DATADIR%%/selectkeys.txt
 %%DATADIR%%/teamcolors.lua
@@ -235,17 +246,29 @@ share/pixmaps/spring.png
 @dirrm %%DATADIR%%/LuaUI/Fonts
 @dirrm %%DATADIR%%/LuaUI/Config
 @dirrm %%DATADIR%%/LuaUI
-@dirrm %%DATADIR%%/AI/AAI/cfg/mod
-@dirrm %%DATADIR%%/AI/AAI/cfg/map
-@dirrm %%DATADIR%%/AI/AAI/cfg/help
-@dirrm %%DATADIR%%/AI/AAI/cfg
-@dirrm %%DATADIR%%/AI/AAI
-@dirrm %%DATADIR%%/AI
 @dirrm %%DATADIR%%
-@dirrm share/mime/packages
-@dirrm share/mime
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrmtry share/applications
-@dirrm lib/spring/AI/Helper-libs
-@dirrm lib/spring/AI/Bot-libs
+@dirrm lib/spring/AI/Skirmish/RAI/0.601
+@dirrm lib/spring/AI/Skirmish/RAI
+@dirrm lib/spring/AI/Skirmish/NullLegacyCppAI/0.1
+@dirrm lib/spring/AI/Skirmish/NullLegacyCppAI
+@dirrm lib/spring/AI/Skirmish/NullAI/0.1
+@dirrm lib/spring/AI/Skirmish/NullAI
+@dirrm lib/spring/AI/Skirmish/NTai/XE9.81
+@dirrm lib/spring/AI/Skirmish/NTai
+@dirrm lib/spring/AI/Skirmish/KAIK/0.13
+@dirrm lib/spring/AI/Skirmish/KAIK
+@dirrm lib/spring/AI/Skirmish/AAI/0.9/cfg/mod
+@dirrm lib/spring/AI/Skirmish/AAI/0.9/cfg/map
+@dirrm lib/spring/AI/Skirmish/AAI/0.9/cfg/help
+@dirrm lib/spring/AI/Skirmish/AAI/0.9/cfg
+@dirrm lib/spring/AI/Skirmish/AAI/0.9
+@dirrm lib/spring/AI/Skirmish/AAI
+@dirrm lib/spring/AI/Skirmish
+@dirrm lib/spring/AI/Interfaces/C/0.1
+@dirrm lib/spring/AI/Interfaces/C
+@dirrm lib/spring/AI/Interfaces
 @dirrm lib/spring/AI
 @dirrm lib/spring
