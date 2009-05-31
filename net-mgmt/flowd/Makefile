@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flowd
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www2.mindrot.org/files/flowd/
 
@@ -26,6 +26,7 @@ USE_PERL5=	yes
 PLIST_SUB+=	WITH_PERL=""
 #MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 #MAN3=		Flowd.3
+BROKEN=		Incomplete pkg-plist
 .else
 PLIST_SUB+=	WITH_PERL="@comment "
 .endif
@@ -33,6 +34,7 @@ PLIST_SUB+=	WITH_PERL="@comment "
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
 PLIST_SUB+=	WITH_PYTHON=""
+BROKEN=		Incomplete pkg-plist
 .else
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
