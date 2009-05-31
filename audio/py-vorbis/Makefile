@@ -25,6 +25,10 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyvorbis
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+	${WRKSRC}/config_unix.py
+
 do-configure:
 	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py
 
