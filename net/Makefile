@@ -124,6 +124,7 @@
     SUBDIR += dosdetector
     SUBDIR += dtcp
     SUBDIR += dtcpclient
+    SUBDIR += e169-stats
     SUBDIR += easysoap
     SUBDIR += echoping
     SUBDIR += ecore-con
