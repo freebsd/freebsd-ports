@@ -74,6 +74,14 @@
     SUBDIR += flex-sdk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
+    SUBDIR += font-ipa
+    SUBDIR += font-kochi
+    SUBDIR += font-mplus
+    SUBDIR += font-mplus-ipa
+    SUBDIR += font-sazanami
+    SUBDIR += font-shinonome
+    SUBDIR += font-ume
+    SUBDIR += font-vlgothic
     SUBDIR += freepwing
     SUBDIR += fumeikai-fpw
     SUBDIR += gawk
@@ -95,7 +103,6 @@
     SUBDIR += iiimf-le-canna
     SUBDIR += iiimf-le-freewnn
     SUBDIR += im-ja
-    SUBDIR += ipa-ttfonts
     SUBDIR += ipadic
     SUBDIR += ircII
     SUBDIR += ja6
@@ -132,7 +139,6 @@
     SUBDIR += kde4-l10n
     SUBDIR += kdrill
     SUBDIR += kinput2
-    SUBDIR += kochi-ttfonts
     SUBDIR += koffice-i18n
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
@@ -177,7 +183,6 @@
     SUBDIR += monafonts
     SUBDIR += monafonts-ttf
     SUBDIR += mozilla-jlp
-    SUBDIR += mplusfonts
     SUBDIR += mtools
     SUBDIR += multiskkserv
     SUBDIR += mutt
@@ -284,7 +289,6 @@
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
     SUBDIR += samba3
-    SUBDIR += sazanami-ttf
     SUBDIR += scim-anthy
     SUBDIR += scim-canna
     SUBDIR += scim-honoka
@@ -297,7 +301,6 @@
     SUBDIR += scim-uim
     SUBDIR += seaside
     SUBDIR += sed
-    SUBDIR += shinonome
     SUBDIR += sj3-lib
     SUBDIR += sj3-server
     SUBDIR += skk
@@ -339,11 +342,9 @@
     SUBDIR += uim-canna
     SUBDIR += uim-prime
     SUBDIR += uim-tomoe-gtk
-    SUBDIR += umefont
     SUBDIR += vera-fpw
     SUBDIR += vflib
     SUBDIR += vftool
-    SUBDIR += vlgothic
     SUBDIR += w3m
     SUBDIR += w3m-img
     SUBDIR += waeijiro-fpw

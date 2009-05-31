@@ -1,0 +1,123 @@
+#!/bin/sh
+# $FreeBSD$
+
+X_FONTSDIR=%%X_FONTSDIR%%
+
+catfontsdir ()
+{
+    while read _IN
+    do
+      case "${_IN}" in
+      *-mplus-*|[0-9]*|"") ;;
+      *)       echo ${_IN} ;;
+      esac
+    done
+}
+
+ROMA=""
+ITAL="ai=0.15"
+OBLI="ai=0.15"
+RITA="ai=0.08"
+ROBL="ai=0.08"
+
+make_xlfd()
+{
+	_enc=$1
+	_file=$2
+	_vendor=$3
+	_weight=$4
+	_fname=$5
+	_poc=$6
+
+	case "${_poc}:${_enc}" in
+	p:jisx0201.1976-*)	PFIX="bw=0.5" ;;
+	c:jisx0201.1976-*)	PFIX="bw=0.5" ;;
+	p:*)			PFIX="" ;;
+	c:*)			PFIX="" ;;
+	esac
+
+	set --	"${ROMA}"	r \
+		${ITAL}		i \
+		${OBLI}		o \
+		${RITA}		ri \
+		${ROBL}		ro;
+	while [ $# != 0 ]; do
+		_prefix="${PFIX}:$1"; shift
+		_variant=$1; shift
+		printf "%s:%s -%s-%s-%s-%s-normal--0-0-0-0-%s-0-%s\n" \
+			$_prefix $_file $_vendor $_fname $_weight $_variant $_poc $_enc
+	done | sed -e 's,::,:,g' -e 's,^:,,'
+}
+
+addentries ()
+{
+	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0
+	do
+		for W in black bold heavy light medium regular thin
+		do
+			make_xlfd $ENC mplus-1c-${W}.ttf mplus $W  1c p
+			make_xlfd $ENC mplus-2c-${W}.ttf mplus $W  2c p
+			make_xlfd $ENC mplus-1p-${W}.ttf mplus $W  1p p
+			make_xlfd $ENC mplus-2p-${W}.ttf mplus $W  2p p
+			make_xlfd $ENC mplus-1m-${W}.ttf mplus $W  1m c
+			make_xlfd $ENC mplus-1mn-${W}.ttf mplus $W 1mn c
+			make_xlfd $ENC mplus-2m-${W}.ttf mplus $W  2m c
+		done
+	done
+}
+
+nfonts ()
+{
+    _L=0; while read _IN; do _L=$((${_L}+1)); done; echo ${_L}
+}
+
+case "$2" in
+POST-INSTALL)
+	%%LOCALBASE%%/bin/fc-cache -s -f -v ${X_FONTSDIR}/TTF ${X_FONTSDIR}/misc
+
+	cd ${X_FONTSDIR}/TTF
+	touch fonts.dir
+	(catfontsdir < fonts.dir; addentries) > fonts.dir.tmp
+	nfonts < fonts.dir.tmp > fonts.dir
+	cat fonts.dir.tmp >> fonts.dir
+	rm -f fonts.dir.tmp
+
+	cd ${X_FONTSDIR}/misc
+	%%LOCALBASE%%/bin/mkfontdir ${X_FONTSDIR}/misc
+	touch fonts.alias
+	grep -v -- "mplus[_-]" fonts.alias > fonts.alias.tmp
+	cat fonts.alias.tmp %%FONTSALIAS%% > fonts.alias
+	rm -f fonts.alias.tmp
+	;;
+DEINSTALL)
+	%%LOCALBASE%%/bin/fc-cache -s -f -v ${X_FONTSDIR}/TTF ${X_FONTSDIR}/misc
+	rm -f ${X_FONTSDIR}/TTF/fonts.cache-1 ${X_FONTSDIR}/misc/fonts.cache-1
+
+	cd ${X_FONTSDIR}/TTF
+	catfontsdir < fonts.dir > fonts.dir.tmp
+	nfonts < fonts.dir.tmp > fonts.dir
+	cat fonts.dir.tmp >> fonts.dir
+	rm -f fonts.dir.tmp
+
+	cd ${X_FONTSDIR}/misc
+	%%LOCALBASE%%/bin/mkfontdir ${X_FONTSDIR}/misc
+	if [ -r ${X_FONTSDIR}/misc/fonts.dir -a `/usr/bin/wc -l < ${X_FONTSDIR}/misc/fonts.dir` = 1 ]; then
+		rm -f ${X_FONTSDIR}/misc/fonts.dir
+	fi
+	touch fonts.alias
+	grep -v -- "mplus[_-]" fonts.alias > fonts.alias.tmp
+	if [ -s fonts.alias.tmp ]; then
+		mv fonts.alias.tmp fonts.alias
+	else
+		rm -f fonts.alias.tmp fonts.alias
+	fi
+
+	for D in TTF misc
+	do
+		rmdir ${X_FONTSDIR}/${D} > /dev/null 2>&1 || true
+		if [ -d ${X_FONTSDIR}/${D} ]; then
+			%%LOCALBASE%%/bin/fc-cache -s -f -v ${X_FONTSDIR}/${D} || true
+		fi
+	done
+	;;
+esac

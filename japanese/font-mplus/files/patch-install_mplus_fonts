@@ -1,5 +1,5 @@
---- install_mplus_fonts.orig	Mon Aug 18 13:26:45 2003
-+++ install_mplus_fonts	Mon Aug 18 13:32:03 2003
+--- install_mplus_fonts.orig	2005-03-19 23:45:12.000000000 +0900
++++ install_mplus_fonts	2009-05-14 11:07:01.000000000 +0900
 @@ -29,18 +29,6 @@
  
  
@@ -19,12 +19,43 @@
  # Install M+ BITMAP FONTS E
  echo -e "\nInstall M+ BITMAP FONTS E (iso8859-1)..."
  cd fonts_e
-@@ -55,7 +43,7 @@
+@@ -54,8 +42,6 @@
+ 	echo "create: $b.pcf.gz"
  	bdftopcf $f | gzip > $PREFIX/$b.pcf.gz
  done
- echo "create: fonts.alias for M+ BITMAP FONTS E"
+-echo "create: fonts.alias for M+ BITMAP FONTS E"
 -cat fonts.alias > $PREFIX/fonts.alias
-+cat fonts.alias >> $PREFIX/fonts.alias
  cd -
  
  # Install M+ BITMAP FONTS EURO
+@@ -79,8 +65,6 @@
+ 	| gzip > $PREFIX/mplus_h12rw-euro.pcf.gz
+ 
+ #	rm $b-euro.bdf
+-	echo "create: fonts.alias for M+ BITMAP FONTS EURO"
+-	cat fonts.alias >> $PREFIX/fonts.alias
+ 	cd -
+ fi
+ 
+@@ -145,8 +129,6 @@
+ 	done
+ 
+ #	rm mplus_j1*b.bdf
+-	echo "create: fonts.alias for M+ BITMAP FONTS J"
+-	cat fonts.alias >> $PREFIX/fonts.alias
+ 	cd -
+ fi
+ 
+@@ -166,12 +148,3 @@
+ 		echo "ERROR: No such file !"
+ 	fi
+ fi
+-
+-# Finish
+-echo -e "\ncreate: fonts.dir file"
+-mkfontdir $PREFIX
+-if [ -z $DESTDIR ]; then
+-    echo -n "xset fp rehash..."
+-    xset fp rehash &&
+-    echo " done"
+-fi

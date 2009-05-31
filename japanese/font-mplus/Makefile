@@ -5,51 +5,84 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mplusfonts
-PORTVERSION=	2.2.4
-PORTREVISION=	2
+PORTNAME=	font-mplus
+PORTVERSION=	2.2.4.023
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/5030/ \
+MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/5030/:bitmap \
+		http://downloads.sourceforge.jp/mplus-fonts/6650/:outline \
 		http://wids.net/archive/mplusfonts/distfiles/
-DISTNAME=	mplus_bitmap_fonts-${PORTVERSION}
+DISTFILES=	mplus_bitmap_fonts-2.2.4${EXTRACT_SUFX}:bitmap \
+		mplus-TESTFLIGHT-023${EXTRACT_SUFX}:outline
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	12x13 dots X11 kanji fonts with simple and readable design
+COMMENT=	M+ Bitmap and Outline Fonts
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
-RUN_DEPENDES=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_BUILD=	yes
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-install
+SUB_FILES=	pkg-install
+SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR} \
+		FONTSALIAS=${DATADIR}/bitmap/fonts.alias
+PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
+		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
+PATCH_WRKSRC=	${WRKDIR}/mplus_bitmap_fonts-2.2.4
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	INSTALL_E.bitmap LICENSE_E.bitmap README_E.bitmap \
+		INSTALL_J.bitmap LICENSE_J.bitmap README_J.bitmap \
+		LICENSE_E.outline README_E.outline \
+		LICENSE_J.outline README_J.outline
 
-DOCS=		INSTALL_E LICENSE_E README_E \
-		INSTALL_J LICENSE_J README_J
+LOCAL_FONTSDIR=	share/fonts
+X_FONTSDIR=	lib/X11/fonts
 
-FONTSDIR=	${PREFIX}/lib/X11/fonts/local
-PLIST_SUB=	FONTSDIR=${FONTSDIR:S/${PREFIX}\///}
+post-extract:
+	cd ${WRKDIR}/mplus_bitmap_fonts-2.2.4 && \
+		${CAT} fonts_e/fonts.alias fonts_e/euro/fonts.alias \
+		fonts_j/fonts.alias | ${SORT} -r > ${WRKDIR}/fonts.alias
 
-pre-install:
-	@${MKDIR} ${DOCSDIR}
-.for i in e j
-	@${INSTALL_DATA} ${WRKSRC}/fonts_${i}/fonts.alias \
-		${DOCSDIR}/fonts.alias.${i}
-	@${CAT} ${DOCSDIR}/fonts.alias.${i} >> ${DOCSDIR}/fonts.alias
-.endfor
-	@${INSTALL_DATA} ${WRKSRC}/fonts_e/euro/fonts.alias \
-		${DOCSDIR}/fonts.alias.euro
-	@${CAT} ${DOCSDIR}/fonts.alias.euro >> ${DOCSDIR}/fonts.alias
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGREQ} ${PKGNAME} INSTALL
+pre-su-install:
+	${MKDIR} ${DATADIR}/TTF ${DATADIR}/bitmap
 
-do-install:
-	cd ${WRKSRC} && \
-		DESTDIR="${FONTSDIR}" ${WRKSRC}/install_mplus_fonts
+do-install: do-install-bitmap do-install-outline
+
+do-install-bitmap:
+	cd ${WRKDIR}/mplus_bitmap_fonts-2.2.4 && \
+		${SETENV} DESTDIR="${DATADIR}/bitmap" \
+		${SH} ${WRKDIR}/mplus_bitmap_fonts-2.2.4/install_mplus_fonts
+	${INSTALL_DATA} ${WRKDIR}/fonts.alias ${DATADIR}/bitmap
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/mplus
+	${LN} -s -f ${DATADIR}/bitmap/*.pcf.gz ${LOCALBASE}/${LOCAL_FONTSDIR}/mplus/
+	${MKDIR} ${PREFIX}/${X_FONTSDIR}/misc
+	${LN} -s -f ${DATADIR}/bitmap/*.pcf.gz ${LOCALBASE}/${X_FONTSDIR}/misc/
+
+do-install-outline:
+	${INSTALL_DATA} ${WRKDIR}/mplus-TESTFLIGHT-023/*.ttf ${DATADIR}/TTF
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
+	${LN} -s -f ${DATADIR}/TTF/*.ttf ${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
+	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TTF
+	${LN} -s -f ${DATADIR}/TTF/*.ttf ${LOCALBASE}/${X_FONTSDIR}/TTF/
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-mplus.conf \
+		${FILESDIR}/62-fonts-mplus.conf \
+		${PREFIX}/etc/fonts/conf.avail
+	${LN} -s -f ../conf.avail/20-unhint-mplus.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-mplus.conf
+	${LN} -s -f ../conf.avail/62-fonts-mplus.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-mplus.conf
+
+post-install:
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${MKDIR} ${DOCSDIR}
+	for F in ${PORTDOCS:M*.bitmap:S,.bitmap$,,}; do \
+		${INSTALL_DATA} ${WRKDIR}/mplus_bitmap_fonts-2.2.4/$${F} ${DOCSDIR}/$${F}.bitmap; \
+	done
+	for F in ${PORTDOCS:M*.outline:S,.outline$,,}; do \
+		${INSTALL_DATA} ${WRKDIR}/mplus-TESTFLIGHT-023/$${F} ${DOCSDIR}/$${F}.outline; \
+	done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

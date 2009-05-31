@@ -3962,3 +3962,10 @@ net/ntp-rc|net/ntp|2009-05-22|NTP is no longer in release candidate status. Use 
 misc/sonytv||2009-05-28|Has expired: tcl8.3 support is going to be dropped
 mail/postilion||2009-05-28|Has expired: tcl8.3 support is going to be dropped
 x11-toolkits/p5-TclTk||2009-05-28|Has expired: replaced by x11-toolkits/p5-Tcl-Tk
+japanese/ipa-ttfonts|japanese/font-ipa|2009-05-30|Renamed
+japanese/sazanami-ttf|japanese/font-sazanami|2009-05-30|Renamed
+japanese/kochi-ttfonts|japanese/font-kochi|2009-05-30|Renamed
+japanese/umefont|japanese/font-ume|2009-05-30|Renamed
+japanese/mplusfonts|japanese/font-mplus|2009-05-30|Renamed
+japanese/vlgothic|japanese/font-vlgothic|2009-05-30|Renamed
+japanese/shinonome|japanese/font-shinonome|2009-05-30|Renamed

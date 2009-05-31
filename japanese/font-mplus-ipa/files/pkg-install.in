@@ -1,14 +1,14 @@
 #!/bin/sh
 # $FreeBSD$
 
-X_FONTSDIR=%%X_FONTSDIR%%/TrueType
+X_FONTSDIR=%%X_FONTSDIR%%/TTF
 
 catfontsdir ()
 {
     while read _IN
     do
       case "${_IN}" in
-      *-ipa-*|[0-9]*|"") ;;
+      *-ipa-[MU]*|*-ipa-IPAUI*|[0-9]*|"") ;;
       *)       echo ${_IN} ;;
       esac
     done
@@ -58,16 +58,8 @@ addentries ()
 {
 	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0
 	do
-		make_xlfd $ENC ipag.ttf ipa IPAGothic c
-		make_xlfd $ENC ipag.ttf ipa gothic c
-		make_xlfd $ENC ipagp.ttf ipa IPAPGothic p
-		make_xlfd $ENC ipagp.ttf ipa gothic p
 		make_xlfd $ENC ipagui.ttf ipa IPAUIGothic c
 		make_xlfd $ENC ipagui.ttf ipa UIGothic c
-		make_xlfd $ENC ipam.ttf ipa IPAMincho c
-		make_xlfd $ENC ipam.ttf ipa mincho c
-		make_xlfd $ENC ipamp.ttf ipa IPAPMincho p
-		make_xlfd $ENC ipamp.ttf ipa mincho p
 		make_xlfd $ENC M+2VM+IPAG-circle.ttf ipa M+2VM+IPAG_circle c
 		make_xlfd $ENC M+1VM+IPAG-circle.ttf ipa M+1VM+IPAG_circle c
 		make_xlfd $ENC M+1P+IPAG.ttf ipa M+1P+IPAG p

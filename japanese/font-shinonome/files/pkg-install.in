@@ -1,0 +1,41 @@
+#!/bin/sh
+# $FreeBSD$
+
+X_FONTSDIR=%%X_FONTSDIR%%
+
+case "$2" in
+POST-INSTALL)
+	%%LOCALBASE%%/bin/fc-cache -s -f -v ${X_FONTSDIR}/misc
+	cd ${X_FONTSDIR}/misc
+	%%LOCALBASE%%/bin/mkfontdir ${X_FONTSDIR}/misc
+	touch fonts.alias
+	grep -v -- "-shinonome-" fonts.alias > fonts.alias.tmp
+	cat fonts.alias.tmp %%FONTSALIAS%% > fonts.alias
+	rm -f fonts.alias.tmp
+	;;
+DEINSTALL)
+	%%LOCALBASE%%/bin/fc-cache -f -v ${X_FONTSDIR}/misc
+	rm -f ${X_FONTSDIR}/misc/fonts.cache-1
+
+	cd ${X_FONTSDIR}/misc
+	%%LOCALBASE%%/bin/mkfontdir ${X_FONTSDIR}/misc
+	if [ -r ${X_FONTSDIR}/misc/fonts.dir -a `/usr/bin/wc -l < ${X_FONTSDIR}/misc/fonts.dir` = 1 ]; then
+		rm -f ${X_FONTSDIR}/misc/fonts.dir
+	fi
+	touch fonts.alias
+	grep -v -- "-shinonome-" fonts.alias > fonts.alias.tmp
+	if [ -s fonts.alias.tmp ]; then
+		mv fonts.alias.tmp fonts.alias
+	else
+		rm -f fonts.alias.tmp fonts.alias
+	fi
+
+	for D in misc
+	do
+		rmdir ${X_FONTSDIR}/${D} > /dev/null 2>&1 || true
+		if [ -d ${X_FONTSDIR}/${D} ]; then
+			%%LOCALBASE%%/bin/fc-cache -s -f -v ${X_FONTSDIR}/${D} || true
+		fi
+	done
+	;;
+esac

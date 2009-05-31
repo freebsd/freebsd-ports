@@ -5,28 +5,34 @@
 # $FreeBSD$
 #
 
-PORTNAME=	shinonome
-PORTVERSION=	0.9.11p1
+PORTNAME=	font-shinonome
+PORTVERSION=	0.9.11.p1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://openlab.jp/efont/dist/shinonome/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
+DISTNAME=	${PORTNAME:C/^font-//}-${PORTVERSION:C/.p/p/}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Japanese 12,14,16 dot fonts
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	Shinonome Japanese fonts, 12/14/16 dots
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/p.*$//}
-
+WRKSRC=		${WRKDIR}/${PORTNAME:C/^font-//}-${PORTVERSION:C/.p.*$//}
 USE_BZIP2=	yes
+PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
+		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
+SUB_FILES=	pkg-install
+SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR} \
+		FONTSALIAS=${DATADIR}/fonts.alias
+PKGINSTALL=	pkg-install
+PKGDEINSTALL=	pkg-install
 
-PLIST_SUB=	FONTSDIR="${FONTSDIR_REL}"
+PORTDOCS=	AUTHORS BUGS ChangeLog ChangeLog.0 DESIGN.12 DESIGN.14	\
+		DESIGN.16 DESIGN.18 INSTALL README THANKS TODO LICENSE
 
-.include <bsd.port.pre.mk>
-
-FONTSDIR=	${PREFIX}/lib/X11/fonts/local
-FONTSDIR_REL=	${FONTSDIR:S,^${PREFIX}/,,}
+LOCAL_FONTSDIR=	share/fonts
+X_FONTSDIR=	lib/X11/fonts
 
 FONTNAMES=\
 	shnm6x12a    shnm6x12ab   shnm6x12ai   shnm6x12abi   \
@@ -45,34 +51,28 @@ FONTNAMES=\
 	shnmk14min   shnmk14minb  shnmk14mini  shnmk14minbi  \
 	shnmk16      shnmk16b     shnmk16i     shnmk16bi     \
 	shnmk16min   shnmk16minb  shnmk16mini  shnmk16minbi
-DOCS=	AUTHORS BUGS ChangeLog ChangeLog.0 DESIGN.12 DESIGN.14 \
-	DESIGN.16 DESIGN.18 INSTALL README THANKS TODO LICENSE
 
 do-build:
-	@${ECHO_CMD} -n 'Compressing PCF fonts'
-.for i in ${FONTNAMES}
-	@${ECHO_CMD} -n '.'
-	@cd ${WRKSRC}; bdftopcf bdf/${i}.bdf | ${GZIP_CMD} > ${i}.pcf.gz
-.endfor
-	@${ECHO_CMD} 'Done'
-
-pre-su-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${DOCSDIR}
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGREQ} ${PKGNAME} INSTALL
+	@${ECHO_CMD} -n "Compressing PCF fonts"
+	@cd ${WRKSRC} && for F in ${FONTNAMES}; do \
+		${LOCALBASE}/bin/bdftopcf bdf/$${F}.bdf | ${GZIP_CMD} > $${F}.pcf.gz; \
+		${ECHO_CMD} -n "."; \
+	done
+	@${ECHO_CMD} "Done"
 
 do-install:
-# Do not use original install target since it forces to delete fonts.alias
-.for i in ${FONTNAMES}
-	${INSTALL_DATA} ${WRKSRC}/${i}.pcf.gz ${FONTSDIR}
-.endfor
-	@mkfontdir ${FONTSDIR}
-	@${CAT} ${DOCSDIR}/fonts.alias >> ${FONTSDIR}/fonts.alias
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${FONTNAMES:C/$/.pcf.gz/} fonts.alias ${DATADIR}
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/shinonome
+	${LN} -s -f ${DATADIR}/*.pcf.gz ${LOCALBASE}/${LOCAL_FONTSDIR}/shinonome/
+	${MKDIR} ${PREFIX}/${X_FONTSDIR}/misc
+	${LN} -s -f ${DATADIR}/*.pcf.gz ${LOCALBASE}/${X_FONTSDIR}/misc/
+
+post-install:
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
