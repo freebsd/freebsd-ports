@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boinc-milkyway
-PORTVERSION=	0.16
+PORTVERSION=	0.18d
 PORTEPOCH=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://milkyway.cs.rpi.edu/milkyway/download/code_release/
@@ -34,7 +34,7 @@ BOINC_HOME?=	/var/db/boinc
 
 MILKYWAY_SITE=	milkyway.cs.rpi.edu_milkyway
 MILKYWAY_URL=	milkyway.cs.rpi.edu/milkyway
-MILKYWAY_BINARY=milkyway_${PORTVERSION}_${ARCH}-portbuild-freebsd
+MILKYWAY_BINARY=milkyway_${PORTVERSION:S/d//}_${ARCH}-portbuild-freebsd
 
 SUB_FILES=	pkg-message app_info.xml
 SUB_LIST=	MILKYWAY_VERSION=${PORTVERSION:S/0.//} MILKYWAY_BINARY="${MILKYWAY_BINARY}"
@@ -48,6 +48,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/software/boinc-6.3.14-0/pkg/include/boinc|${LOCALBASE}/include/boinc|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|/projects/wcl/software/boinc|${LOCALBASE}/lib|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|/api$$|| ; /^BOINC_LIB_/s|/lib$$||' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|/usr/local/lib|${LOCALBASE}/lib|' ${WRKSRC}/${MAKEFILE}
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's|-ftree-vectorize ||' ${WRKSRC}/${MAKEFILE}
 .endif
@@ -56,7 +57,7 @@ do-install:
 	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects
 	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects/${MILKYWAY_SITE}
 	${INSTALL_DATA} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/app_info.xml ${BOINC_HOME}/projects/${MILKYWAY_SITE}
-	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKSRC}/milkyway_${PORTVERSION}_x86_64-pc-linux-gnu ${BOINC_HOME}/projects/${MILKYWAY_SITE}/${MILKYWAY_BINARY}
+	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKSRC}/milkyway_${PORTVERSION:S/d//}_x86_64-pc-linux-gnu ${BOINC_HOME}/projects/${MILKYWAY_SITE}/${MILKYWAY_BINARY}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
