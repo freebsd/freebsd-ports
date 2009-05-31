@@ -23,7 +23,7 @@ PLIST_FILES=	${FONTSDIR}/std.ja_JP/Ryumin-Light \
 		${FONTSDIR}/std.ja_JP/Mincho \
 		${FONTSDIR}/std.ja_JP/Gothic
 PLIST_DIRS=	${FONTSDIR}/std.ja_JP
-FONTSDIR=	${PREFIX}/share/fonts
+FONTSDIR=	share/fonts
 
 STD=		Mincho Gothic Ryumin-Light GothicBBB-Medium
 STD_Mincho=	${LOCALBASE}/share/font-ipa/ipam.otf
@@ -35,9 +35,9 @@ do-fetch:
 	@${DO_NADA}
 
 do-install:
-	${MKDIR} ${FONTSDIR}/std.ja_JP
+	${MKDIR} ${PREFIX}/${FONTSDIR}/std.ja_JP
 .for F in ${STD}
-	${LN} -s -f ${STD_${F}} ${FONTSDIR}/std.ja_JP/${F}
+	${LN} -s -f ${STD_${F}} ${PREFIX}/${FONTSDIR}/std.ja_JP/${F}
 .endfor
 
 .include <bsd.port.mk>
