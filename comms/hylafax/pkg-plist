@@ -5,7 +5,6 @@ bin/faxrm
 bin/faxstat
 bin/sendfax
 bin/sendpage
-etc/rc.d/hylafax.sh.sample
 lib/fax/faxcover.ps
 lib/fax/faxcover_example_sgi.ps
 lib/fax/faxmail.ps
@@ -58,6 +57,18 @@ sbin/probemodem
 sbin/lockname
 sbin/ondelay
 sbin/hylafax
+%%WITH_NLS%%share/locale/es/LC_MESSAGES/hylafax-client.mo
+%%WITH_NLS%%share/locale/es/LC_MESSAGES/hylafax-server.mo
+%%WITH_NLS%%share/locale/es/LC_MESSAGES/libhylafax.mo
+%%WITH_NLS%%share/locale/id/LC_MESSAGES/hylafax-client.mo
+%%WITH_NLS%%share/locale/id/LC_MESSAGES/hylafax-server.mo
+%%WITH_NLS%%share/locale/id/LC_MESSAGES/libhylafax.mo
+%%WITH_NLS%%share/locale/nl/LC_MESSAGES/hylafax-client.mo
+%%WITH_NLS%%share/locale/nl/LC_MESSAGES/hylafax-server.mo
+%%WITH_NLS%%share/locale/nl/LC_MESSAGES/libhylafax.mo
+%%WITH_NLS%%share/locale/vi/LC_MESSAGES/hylafax-client.mo
+%%WITH_NLS%%share/locale/vi/LC_MESSAGES/hylafax-server.mo
+%%WITH_NLS%%share/locale/vi/LC_MESSAGES/libhylafax.mo
 @cwd /var/spool
 hylafax/COPYRIGHT
 @exec mkfifo %D/hylafax/FIFO
@@ -124,11 +135,13 @@ hylafax/config/ip568x
 hylafax/config/linux-isdn-2
 hylafax/config/lucent
 hylafax/config/lucent-isa
+hylafax/config/lucent-mt-10
 hylafax/config/lucent-mt-2
 hylafax/config/lucent-mt-20
 hylafax/config/lucent-mt-21
-hylafax/config/lucent-mt-10
+hylafax/config/mainpine-10
 hylafax/config/mainpine-2
+hylafax/config/mainpine-20
 hylafax/config/mainpine-21
 hylafax/config/moto-288
 hylafax/config/mt-1432
@@ -187,6 +200,7 @@ hylafax/etc/templates/en/faxrcvd-success.txt
 hylafax/etc/templates/en/notify-blocked.txt
 hylafax/etc/templates/en/notify-done-page.txt
 hylafax/etc/templates/en/notify-done.txt
+hylafax/etc/templates/en/notify-faxmaster.txt
 hylafax/etc/templates/en/notify-failed-page.txt
 hylafax/etc/templates/en/notify-failed.txt
 hylafax/etc/templates/en/notify-format_failed.txt
@@ -207,6 +221,7 @@ hylafax/etc/templates/fr/faxrcvd-success.txt
 hylafax/etc/templates/fr/notify-blocked.txt
 hylafax/etc/templates/fr/notify-done-page.txt
 hylafax/etc/templates/fr/notify-done.txt
+hylafax/etc/templates/fr/notify-faxmaster.txt
 hylafax/etc/templates/fr/notify-failed-page.txt
 hylafax/etc/templates/fr/notify-failed.txt
 hylafax/etc/templates/fr/notify-format_failed.txt
@@ -227,6 +242,7 @@ hylafax/etc/templates/de/faxrcvd-success.txt
 hylafax/etc/templates/de/notify-blocked.txt
 hylafax/etc/templates/de/notify-done-page.txt
 hylafax/etc/templates/de/notify-done.txt
+hylafax/etc/templates/de/notify-faxmaster.txt
 hylafax/etc/templates/de/notify-failed-page.txt
 hylafax/etc/templates/de/notify-failed.txt
 hylafax/etc/templates/de/notify-format_failed.txt
@@ -247,6 +263,7 @@ hylafax/etc/templates/ro/faxrcvd-success.txt
 hylafax/etc/templates/ro/notify-blocked.txt
 hylafax/etc/templates/ro/notify-done-page.txt
 hylafax/etc/templates/ro/notify-done.txt
+hylafax/etc/templates/ro/notify-faxmaster.txt
 hylafax/etc/templates/ro/notify-failed-page.txt
 hylafax/etc/templates/ro/notify-failed.txt
 hylafax/etc/templates/ro/notify-format_failed.txt
@@ -267,6 +284,7 @@ hylafax/etc/templates/pt_BR/faxrcvd-success.txt
 hylafax/etc/templates/pt_BR/notify-blocked.txt
 hylafax/etc/templates/pt_BR/notify-done-page.txt
 hylafax/etc/templates/pt_BR/notify-done.txt
+hylafax/etc/templates/pt_BR/notify-faxmaster.txt
 hylafax/etc/templates/pt_BR/notify-failed-page.txt
 hylafax/etc/templates/pt_BR/notify-failed.txt
 hylafax/etc/templates/pt_BR/notify-format_failed.txt
@@ -287,6 +305,7 @@ hylafax/etc/templates/pt/faxrcvd-success.txt
 hylafax/etc/templates/pt/notify-blocked.txt
 hylafax/etc/templates/pt/notify-done-page.txt
 hylafax/etc/templates/pt/notify-done.txt
+hylafax/etc/templates/pt/notify-faxmaster.txt
 hylafax/etc/templates/pt/notify-failed-page.txt
 hylafax/etc/templates/pt/notify-failed.txt
 hylafax/etc/templates/pt/notify-format_failed.txt
@@ -307,6 +326,7 @@ hylafax/etc/templates/es/faxrcvd-success.txt
 hylafax/etc/templates/es/notify-blocked.txt
 hylafax/etc/templates/es/notify-done-page.txt
 hylafax/etc/templates/es/notify-done.txt
+hylafax/etc/templates/es/notify-faxmaster.txt
 hylafax/etc/templates/es/notify-failed-page.txt
 hylafax/etc/templates/es/notify-failed.txt
 hylafax/etc/templates/es/notify-format_failed.txt
@@ -327,6 +347,7 @@ hylafax/etc/templates/it/faxrcvd-success.txt
 hylafax/etc/templates/it/notify-blocked.txt
 hylafax/etc/templates/it/notify-done-page.txt
 hylafax/etc/templates/it/notify-done.txt
+hylafax/etc/templates/it/notify-faxmaster.txt
 hylafax/etc/templates/it/notify-failed-page.txt
 hylafax/etc/templates/it/notify-failed.txt
 hylafax/etc/templates/it/notify-format_failed.txt
@@ -347,6 +368,7 @@ hylafax/etc/templates/pl/faxrcvd-success.txt
 hylafax/etc/templates/pl/notify-blocked.txt
 hylafax/etc/templates/pl/notify-done-page.txt
 hylafax/etc/templates/pl/notify-done.txt
+hylafax/etc/templates/pl/notify-faxmaster.txt
 hylafax/etc/templates/pl/notify-failed-page.txt
 hylafax/etc/templates/pl/notify-failed.txt
 hylafax/etc/templates/pl/notify-format_failed.txt
@@ -375,6 +397,7 @@ hylafax/etc/templates/html-sample1/hook.sh
 hylafax/etc/templates/html-sample1/job-data.inc
 hylafax/etc/templates/html-sample1/notify-blocked.txt
 hylafax/etc/templates/html-sample1/notify-done.txt
+hylafax/etc/templates/html-sample1/notify-faxmaster.txt
 hylafax/etc/templates/html-sample1/notify-failed.txt
 hylafax/etc/templates/html-sample1/notify-format_failed.txt
 hylafax/etc/templates/html-sample1/session_log.inc

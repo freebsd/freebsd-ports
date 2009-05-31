@@ -1,0 +1,144 @@
+--- configure.orig	2009-05-15 19:50:52.000000000 +0200
++++ configure	2009-05-31 11:46:51.000000000 +0200
+@@ -831,6 +831,7 @@
+ # NB: use ANSI C prototype to weed out non-ANSI compilers.
+ #
+ cat>dummy.c<<EOF
++#include <stdlib.h>
+ main(int argc, char* argv) { exit(0); }
+ EOF
+ 
+@@ -982,6 +983,7 @@
+ # Make dependency information.
+ #
+ cat>dummy.c<<EOF
++#include <stdlib.h>
+ main(int argc, char* argv) { exit(0); }
+ EOF
+ capture cat dummy.c
+@@ -1664,10 +1666,10 @@
+ LIBJBIG=""
+ if [ "$DISABLE_JBIG" != "yes" ]; then
+ 	Note "Checking for JBIG library support"
+-	CheckForLibrary jbg_enc_init -ljbig &&
++	CheckForLibrary jbg_enc_init -L/usr/local/lib -L/usr/local/lib -ljbig &&
+ 		CheckForIncludeFile jbig.h && {
+ 			HAVE_JBIG="#define HAVE_JBIG 1"
+-			LIBJBIG="-ljbig"
++			LIBJBIG="-L/usr/local/lib -L/usr/local/lib -ljbig"
+ 		}
+ 	if [ "x$LIBJBIG" = "x" ]; then
+ 		Note "... not found. Disabling JBIG support"
+@@ -1832,17 +1834,48 @@
+ done
+ if [ "$ISGXX" = yes ]; then
+     if [ -z "$CXXRUNTIME" ]; then
+-	for f in memmove strdup; do
+-	    CheckForLibrary $f -lc || {
+-		CheckForLibrary $f -lg++ && {
++        f="memmove"
++	    CheckForLibraryWithArgs $f '(char *)0L, "", 0' -lc || {
++		CheckForLibraryWithArgs $f '(char *)0L, "", 0' -lg++ && {
++		    Note "Looks like we need -lg++ for $f"
++		    MACHDEPLIBS="$MACHDEPLIBS -lg++"
++		    break;
++		}
++	    }
++        f="strdup"
++	    CheckForLibraryWithArgs $f '""' -lc || {
++		CheckForLibraryWithArgs $f '""' -lg++ && {
+ 		    Note "Looks like we need -lg++ for $f"
+ 		    MACHDEPLIBS="$MACHDEPLIBS -lg++"
+ 		    break;
+ 		}
+ 	    }
+-	done
+     fi
+-    for f in strtoul strerror memmove random; do
++    f="strtoul"
++	CheckForLibraryWithArgs $f '"", &"", 0' -lc || {
++	    CheckForLibraryWithArgs $f  '"", &"", 0' -liberty && {
++		Note "Looks like we need -liberty for $f"
++		MACHDEPLIBS="$MACHDEPLIBS -liberty"
++		break;
++	    }
++	}
++    f="strerror"
++	CheckForLibraryWithArgs $f '""' -lc || {
++	    CheckForLibraryWithArgs $f '""' -liberty && {
++		Note "Looks like we need -liberty for $f"
++		MACHDEPLIBS="$MACHDEPLIBS -liberty"
++		break;
++	    }
++	}
++    f="memmove"
++	CheckForLibraryWithArgs $f '(char *)0L, "", 0' -lc || {
++	    CheckForLibraryWithArgs $f '(char *)0L, "", 0' -liberty && {
++		Note "Looks like we need -liberty for $f"
++		MACHDEPLIBS="$MACHDEPLIBS -liberty"
++		break;
++	    }
++	}
++    f="random"
+ 	CheckForLibrary $f -lc || {
+ 	    CheckForLibrary $f -liberty && {
+ 		Note "Looks like we need -liberty for $f"
+@@ -1850,9 +1883,8 @@
+ 		break;
+ 	    }
+ 	}
+-    done
+ fi
+-CheckForLibrary floor -lm && {
++CheckForLibraryWithArgs floor "0.0" -lm && {
+     Note "Looks like -lm is the library for math functions."
+     MACHDEPLIBS="$MACHDEPLIBS -lm"
+ }
+@@ -2176,11 +2208,13 @@
+ #
+ CheckForFunc()
+ {
+-    echo "extern int $1(); main(){$1($2);exit(0);}" >t.c
++    echo "#include <stdlib.h>" > t.c
++    echo "extern int $1(); main(){$1($2);exit(0);}" >>t.c
+     capture cat t.c
+     runMake t "t:; \${CC} t.c ${MACHDEPLIBS}"
+ }
+ 
++
+ #
+ # Look for a function declaration in system include files.
+ #
+@@ -2397,6 +2431,7 @@
+ EOF
+     }
+ cat<<'EOF'
++#include <stdlib.h>
+ extern char* malloc();
+ static void
+ boom(const char* msg)
+@@ -2532,6 +2567,7 @@
+     tiff_runlen_t=""
+     cat>t.c<<EOF
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "tiffio.h"
+ main()
+ {
+@@ -3233,7 +3269,7 @@
+     strtoul
+     writev
+ "
+-
++FUNCS=""
+ for i in $FUNCS; do
+     CheckForFunc $i || {
+ 	Note "... emulate $i"
+@@ -3291,6 +3327,7 @@
+ # Verify library is compatible.
+ #
+ cat>t.c<<EOF
++#include <stdlib.h>
+ #include "zlib.h"
+ main()
+ {
