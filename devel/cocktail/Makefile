@@ -21,8 +21,8 @@ MAN2=		mtc.2
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-BROKEN=		Segfault during build on FreeBSD >= 7.0
+.if ${OSVERSION} >= 800000
+BROKEN=		Segfault during build on FreeBSD >= 8.0
 .endif
 
 post-extract:
