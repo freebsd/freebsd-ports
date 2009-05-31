@@ -6,6 +6,7 @@
 
 PORTNAME=		photo_gallery
 PORTVERSION=		1.5
+PORTREVISION=	1
 CATEGORIES=		www
 MASTER_SITES=		http://www.capybara.org/~dfraser/photo_gallery/
 DISTNAME=		${PORTNAME}_${PORTVERSION}
@@ -15,20 +16,17 @@ MAINTAINER=		bob@bomar.us
 COMMENT=		Simple web based photo gallery
 
 RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm\
-		${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13\
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info\
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 
-WEBOWN?=	www
-WEBGRP?=	www
-APACHEDIR=	${LOCALBASE}/www/data
-INSTALLDIR=	${APACHEDIR}/photo
-NO_BUILD=	yes
+USE_APACHE=	1.3
 USE_PERL5=	yes
+NO_BUILD=	yes
 
 do-install:
-		${MKDIR} ${INSTALLDIR}
-		cd ${WRKSRC}; ${FIND} . \
-			| ${CPIO} -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
+		${MKDIR} ${WWWDIR}/
+		@cd ${WRKSRC}; ${FIND} . \
+			| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+
 .include <bsd.port.mk>
