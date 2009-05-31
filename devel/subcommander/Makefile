@@ -28,4 +28,6 @@ CONFIGURE_ARGS+=	--with-boost=${LOCALBASE} --with-neon=${LOCALBASE}
 CONFIGURE_ENV=	QTDIR=${LOCALBASE} CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.mk>

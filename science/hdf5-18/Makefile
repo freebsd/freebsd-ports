@@ -15,6 +15,7 @@ MAINTAINER=	koziol@hdfgroup.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
 CONFLICTS=	hdf5-1.6.*
+NO_LATEST_LINK=	yes
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

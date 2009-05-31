@@ -26,6 +26,8 @@ WANT_SDL=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV=	\

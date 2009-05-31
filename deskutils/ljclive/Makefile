@@ -22,6 +22,7 @@ MAN1=	clive.1
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	*clive-[1-9]*
+LATEST_LINK=	ljclive
 
 .include <bsd.port.pre.mk>
 

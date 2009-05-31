@@ -20,4 +20,6 @@ USE_LDCONFIG=	yes
 
 MAN1=		xdelta.1
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.mk>

@@ -31,7 +31,7 @@ CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 
-LATEST_LINK?=	${PORTNAME}2
+LATEST_LINK?=	${PORTNAME}24
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|" ${WRKSRC}/zentimer.h

@@ -21,4 +21,6 @@ USE_GMAKE=	yes
 MAN1=		switch2.1
 PLIST_FILES=	bin/switch2
 
+LATEST_LINK=	gtk-theme-switch2
+
 .include <bsd.port.mk>

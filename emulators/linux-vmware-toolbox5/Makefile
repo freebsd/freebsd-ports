@@ -15,6 +15,8 @@ DISTNAME=	VMwareTools-${VMWARE_VER}-${BUILD_VER}
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=VMware toolbox for guest OS (VMware Workstation 5.x, Linux version)
 
+NO_LATEST_LINK=	yes
+
 DISTDIR=	${MOUNT_PT}
 IGNOREFILES=	${DISTFILES}
 PLIST_FILES=	bin/linux-vmware-toolbox bin/linux-vmware-toolbox-gtk \

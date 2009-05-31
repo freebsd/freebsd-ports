@@ -16,7 +16,7 @@ COMMENT=	Allows Apache to log to a MySQL database
 
 MAKE_JOBS_SAFE=  yes
 
-LATEST_LINK=	mod_log_sql2
+LATEST_LINK=	mod_log_sql2-dtc
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

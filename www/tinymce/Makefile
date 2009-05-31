@@ -19,6 +19,7 @@ COMMENT=	An open source Javascript HTML WYSIWYG editor for web sites
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	YES
+NO_LATEST_LINK=	YES
 
 do-install:
 	${INSTALL} -d -m 0755 ${WWWDIR}

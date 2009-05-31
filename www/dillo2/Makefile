@@ -25,6 +25,7 @@ PORTDOCS=	*
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
 CONFLICTS=	dillo-i18n-[0-9]* \
 		dillo-0*
+LATEST_LINK=	dillo2
 
 OPTIONS=	COOKIES 	"Enable cookies" On \
 		DEBUG		"Enable profiling and extra logging" Off \

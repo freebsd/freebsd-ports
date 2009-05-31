@@ -21,4 +21,6 @@ USE_SDL=	mixer sdl ttf
 
 MAN6=		crimson.6
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.mk>

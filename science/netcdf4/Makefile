@@ -16,6 +16,7 @@ MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Library for machine-independent, array-oriented data access
 
 CONFLICTS=	hdf-4.* netcdf-3.*
+LATEST_LINK=	netcdf4
 
 CONFIGURE_ARGS=	--disable-f77 --disable-f90 \
 		--enable-cxx --enable-cxx-4 --enable-netcdf-4 --enable-shared \

@@ -86,6 +86,7 @@ MAINTAINER=	adrian@freebsd.org
 COMMENT=	HTTP Caching Proxy (Squid Derivative) - Development Release
 
 CONFLICTS=	squid-[0-9]* cacheboy*
+LATEST_LINK=	cacheboy16
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	squid

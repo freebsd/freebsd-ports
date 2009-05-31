@@ -24,7 +24,7 @@ LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		fxscintilla.19:${PORTSDIR}/x11-toolkits/fxscintilla
 
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}12
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}16
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

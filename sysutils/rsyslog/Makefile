@@ -21,6 +21,7 @@ MAN8=	rfc3195d.8 rklogd.8 rsyslogd.8
 MAN5=	rsyslog.conf.5
 .endif
 
+NO_LATEST_LINK=	yes
 CONFLICTS=	rsyslog-3.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

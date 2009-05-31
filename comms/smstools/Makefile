@@ -17,6 +17,7 @@ COMMENT=	Tools to handle Short Message Service
 LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
 
 CONFLICTS=	gnokii-[0-9]* smstools-3.* sendsms-[0-9]*
+NO_LATEST_LINK=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes

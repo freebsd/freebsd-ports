@@ -28,6 +28,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/swt.jar \
 		lib/libswt-awt-gtk-%%BUILD%%.so \
 		lib/libswt-gtk-%%BUILD%%.so \
 		lib/libswt-pi-gtk-%%BUILD%%.so
+NO_LATEST_LINK=	yes
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+

@@ -21,6 +21,7 @@ QT_COMPONENTS=	gui network xml moc_build qmake_build\
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 MAKE_JOBS_UNSAFE=	yes
+LATEST_LINK=	krusader2
 
 post-extract:
 	${MKDIR} ${WRKSRC}

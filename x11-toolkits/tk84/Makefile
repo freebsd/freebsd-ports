@@ -60,7 +60,7 @@ MAN1=	wish${TCL_VER}${THREADS_SUFFIX}.1
 CONFIGURE_ARGS+=	--enable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}${THREADS_SUFFIX}
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			ac_cv_path_tclsh="${LOCALBASE}/bin/tclsh${TK_VER}${THREADS_SUFFIX}"
-LATEST_LINK=		tk85${THREADS_SUFFIX}
+LATEST_LINK=		tk84${THREADS_SUFFIX}
 SUB_LIST+=		TK_PROVIDE="; package provide Tk-threads ${TK_VER}"
 .else
 CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}

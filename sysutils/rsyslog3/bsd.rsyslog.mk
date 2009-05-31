@@ -4,6 +4,7 @@ CATEGORIES?=	sysutils
 MASTER_SITES?=	http://download.rsyslog.com/rsyslog/
 MAINTAINER?=	miwi@FreeBSD.org
 
+NO_LATEST_LINK=	yes
 CONFLICTS=	rsyslog-2.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
