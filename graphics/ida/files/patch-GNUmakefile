@@ -1,6 +1,14 @@
---- GNUmakefile.orig	2009-05-24 18:44:13.000000000 +0300
-+++ GNUmakefile	2009-05-24 18:44:49.000000000 +0300
-@@ -130,8 +130,8 @@
+--- GNUmakefile.orig	2006-06-13 16:35:48.000000000 +0300
++++ GNUmakefile	2009-05-31 12:06:34.000000000 +0300
+@@ -8,7 +8,6 @@
+ 
+ # fixup flags
+ CFLAGS	+= -DVERSION='"$(VERSION)"' -I$(srcdir)
+-CFLAGS	+= -Wno-pointer-sign
+ 
+ # default target
+ all: build
+@@ -130,8 +129,8 @@
  OBJS_IDA += $(call ac_lib_mkvar,$(ida_libs),OBJS)
  
  # for X11 + Motif
