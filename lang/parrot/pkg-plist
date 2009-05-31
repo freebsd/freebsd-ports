@@ -2,327 +2,273 @@ bin/parrot
 bin/parrot_config
 bin/parrot_debugger
 bin/pbc_disassemble
+bin/pbc_dump
 bin/pbc_info
 bin/pbc_merge
 bin/pbc_to_exe
-bin/pdump
-compilers/imcc/imclexer.c
-compilers/json/JSON.pbc
-compilers/json/JSON/grammar.pbc
-compilers/json/JSON/pge2pir.pbc
-compilers/nqp/nqp.pbc
-compilers/tge/TGE/Compiler.pbc
-compilers/tge/TGE/Grammar.pbc
-compilers/tge/TGE/Parser.pbc
-compilers/tge/TGE/Rule.pbc
-compilers/tge/TGE/Tree.pbc
-compilers/tge/tgc.pir
-config/auto/cpu/i386/memcpy_mmx.c
-config/auto/cpu/i386/memcpy_sse.c
-config/gen/platform/ansi/dl.c
-config/gen/platform/ansi/time.c
-config/gen/platform/darwin/memalign.c
-config/gen/platform/generic/stat.c
-config/gen/platform/win32/stat.c
-include/parrot/atomic.h
-include/parrot/atomic/fallback.h
-include/parrot/atomic/gcc_pcc.h
-include/parrot/atomic/gcc_x86.h
-include/parrot/atomic/sparc.h
-include/parrot/caches.h
-include/parrot/cclass.h
-include/parrot/charset.h
-include/parrot/compiler.h
-include/parrot/config.h
-include/parrot/core_pmcs.h
-include/parrot/datatypes.h
-include/parrot/debugger.h
-include/parrot/dod.h
-include/parrot/dynext.h
-include/parrot/embed.h
-include/parrot/encoding.h
-include/parrot/enums.h
-include/parrot/events.h
-include/parrot/exceptions.h
-include/parrot/exec.h
-include/parrot/exit.h
-include/parrot/extend.h
-include/parrot/extend_vtable.h
-include/parrot/feature.h
-include/parrot/global.h
-include/parrot/global_setup.h
-include/parrot/has_header.h
-include/parrot/hash.h
-include/parrot/headers.h
-include/parrot/hll.h
-include/parrot/imcc.h
-include/parrot/inter_call.h
-include/parrot/interpreter.h
-include/parrot/intlist.h
-include/parrot/io.h
-include/parrot/key.h
-include/parrot/library.h
-include/parrot/list.h
-include/parrot/longopt.h
-include/parrot/multidispatch.h
-include/parrot/memory.h
-include/parrot/misc.h
-include/parrot/nci.h
-include/parrot/oo.h
-include/parrot/oo_private.h
-include/parrot/op.h
-include/parrot/oplib.h
-include/parrot/oplib/core_ops.h
-include/parrot/oplib/core_ops_cg.h
-include/parrot/oplib/core_ops_cgp.h
-include/parrot/oplib/core_ops_switch.h
-include/parrot/oplib/ops.h
-include/parrot/packfile.h
-include/parrot/parrot.h
-include/parrot/pic.h
-include/parrot/platform.h
-include/parrot/platform_interface.h
-include/parrot/pmc.h
-include/parrot/pmc_freeze.h
-include/parrot/pobj.h
-include/parrot/register.h
-include/parrot/resources.h
-include/parrot/scheduler.h
-include/parrot/scheduler_private.h
-include/parrot/settings.h
-include/parrot/slice.h
-include/parrot/smallobject.h
-include/parrot/stacks.h
-include/parrot/stat.h
-include/parrot/stm/backend.h
-include/parrot/string.h
-include/parrot/string_funcs.h
-include/parrot/string_primitives.h
-include/parrot/sub.h
-include/parrot/thr_pthread.h
-include/parrot/thr_windows.h
-include/parrot/thread.h
-include/parrot/tsq.h
-include/parrot/vtable.h
-include/parrot/vtables.h
-include/parrot/warnings.h
-include/src/jit_emit.h
-include/src/string_private_cstring.h
+include/parrot/%%PARROT_VER%%/parrot/atomic.h
+include/parrot/%%PARROT_VER%%/parrot/atomic/fallback.h
+include/parrot/%%PARROT_VER%%/parrot/atomic/gcc_pcc.h
+include/parrot/%%PARROT_VER%%/parrot/atomic/gcc_x86.h
+include/parrot/%%PARROT_VER%%/parrot/atomic/sparc.h
+include/parrot/%%PARROT_VER%%/parrot/caches.h
+include/parrot/%%PARROT_VER%%/parrot/call.h
+include/parrot/%%PARROT_VER%%/parrot/cclass.h
+include/parrot/%%PARROT_VER%%/parrot/charset.h
+include/parrot/%%PARROT_VER%%/parrot/compiler.h
+include/parrot/%%PARROT_VER%%/parrot/config.h
+include/parrot/%%PARROT_VER%%/parrot/core_pmcs.h
+include/parrot/%%PARROT_VER%%/parrot/core_types.h
+include/parrot/%%PARROT_VER%%/parrot/datatypes.h
+include/parrot/%%PARROT_VER%%/parrot/debugger.h
+include/parrot/%%PARROT_VER%%/parrot/dynext.h
+include/parrot/%%PARROT_VER%%/parrot/embed.h
+include/parrot/%%PARROT_VER%%/parrot/encoding.h
+include/parrot/%%PARROT_VER%%/parrot/enums.h
+include/parrot/%%PARROT_VER%%/parrot/events.h
+include/parrot/%%PARROT_VER%%/parrot/exceptions.h
+include/parrot/%%PARROT_VER%%/parrot/exec.h
+include/parrot/%%PARROT_VER%%/parrot/exit.h
+include/parrot/%%PARROT_VER%%/parrot/extend.h
+include/parrot/%%PARROT_VER%%/parrot/extend_vtable.h
+include/parrot/%%PARROT_VER%%/parrot/feature.h
+include/parrot/%%PARROT_VER%%/parrot/gc_api.h
+include/parrot/%%PARROT_VER%%/parrot/global.h
+include/parrot/%%PARROT_VER%%/parrot/global_setup.h
+include/parrot/%%PARROT_VER%%/parrot/has_header.h
+include/parrot/%%PARROT_VER%%/parrot/hash.h
+include/parrot/%%PARROT_VER%%/parrot/hll.h
+include/parrot/%%PARROT_VER%%/parrot/imcc.h
+include/parrot/%%PARROT_VER%%/parrot/interpreter.h
+include/parrot/%%PARROT_VER%%/parrot/io.h
+include/parrot/%%PARROT_VER%%/parrot/io_portable.h
+include/parrot/%%PARROT_VER%%/parrot/io_unix.h
+include/parrot/%%PARROT_VER%%/parrot/io_win32.h
+include/parrot/%%PARROT_VER%%/parrot/key.h
+include/parrot/%%PARROT_VER%%/parrot/library.h
+include/parrot/%%PARROT_VER%%/parrot/list.h
+include/parrot/%%PARROT_VER%%/parrot/longopt.h
+include/parrot/%%PARROT_VER%%/parrot/memory.h
+include/parrot/%%PARROT_VER%%/parrot/misc.h
+include/parrot/%%PARROT_VER%%/parrot/multidispatch.h
+include/parrot/%%PARROT_VER%%/parrot/nci.h
+include/parrot/%%PARROT_VER%%/parrot/oo.h
+include/parrot/%%PARROT_VER%%/parrot/oo_private.h
+include/parrot/%%PARROT_VER%%/parrot/op.h
+include/parrot/%%PARROT_VER%%/parrot/oplib.h
+include/parrot/%%PARROT_VER%%/parrot/oplib/core_ops.h
+include/parrot/%%PARROT_VER%%/parrot/oplib/core_ops_cg.h
+include/parrot/%%PARROT_VER%%/parrot/oplib/core_ops_cgp.h
+include/parrot/%%PARROT_VER%%/parrot/oplib/core_ops_switch.h
+include/parrot/%%PARROT_VER%%/parrot/oplib/ops.h
+include/parrot/%%PARROT_VER%%/parrot/packfile.h
+include/parrot/%%PARROT_VER%%/parrot/parrot.h
+include/parrot/%%PARROT_VER%%/parrot/pic.h
+include/parrot/%%PARROT_VER%%/parrot/platform.h
+include/parrot/%%PARROT_VER%%/parrot/platform_interface.h
+include/parrot/%%PARROT_VER%%/parrot/pmc.h
+include/parrot/%%PARROT_VER%%/parrot/pmc_freeze.h
+include/parrot/%%PARROT_VER%%/parrot/pobj.h
+include/parrot/%%PARROT_VER%%/parrot/register.h
+include/parrot/%%PARROT_VER%%/parrot/runcore_api.h
+include/parrot/%%PARROT_VER%%/parrot/runcore_trace.h
+include/parrot/%%PARROT_VER%%/parrot/scheduler.h
+include/parrot/%%PARROT_VER%%/parrot/scheduler_private.h
+include/parrot/%%PARROT_VER%%/parrot/settings.h
+include/parrot/%%PARROT_VER%%/parrot/slice.h
+include/parrot/%%PARROT_VER%%/parrot/stacks.h
+include/parrot/%%PARROT_VER%%/parrot/stat.h
+include/parrot/%%PARROT_VER%%/parrot/string.h
+include/parrot/%%PARROT_VER%%/parrot/string_funcs.h
+include/parrot/%%PARROT_VER%%/parrot/string_primitives.h
+include/parrot/%%PARROT_VER%%/parrot/sub.h
+include/parrot/%%PARROT_VER%%/parrot/thr_pthread.h
+include/parrot/%%PARROT_VER%%/parrot/thr_windows.h
+include/parrot/%%PARROT_VER%%/parrot/thread.h
+include/parrot/%%PARROT_VER%%/parrot/tsq.h
+include/parrot/%%PARROT_VER%%/parrot/vtable.h
+include/parrot/%%PARROT_VER%%/parrot/vtables.h
+include/parrot/%%PARROT_VER%%/parrot/warnings.h
 lib/libparrot.a
 lib/libparrot.so
-lib/libparrot.so.%%SHLIB_VER%%
-lib/parrot/dynext/digest_group.so
-lib/parrot/dynext/dynlexpad.so
-lib/parrot/dynext/libnci_test.so
-lib/parrot/dynext/rational.so
-lib/parrot/dynext/subproxy.so
-lib/parrot/include/fp_equality.pasm
-lib/parrot/include/hllmacros.pir
-lib/parrot/include/sockets.pasm
-lib/parrot/include/test_more.pir
-lib/parrot/library/CGI/QueryHash.pir
-lib/parrot/library/Config/JSON.pir
-lib/parrot/library/Crow.pir
-lib/parrot/library/Data/Dumper.pir
-lib/parrot/library/Data/Dumper/Base.pir
-lib/parrot/library/Data/Dumper/Default.pir
-lib/parrot/library/Data/Escape.pir
-lib/parrot/library/Data/Replace.pir
-lib/parrot/library/Data/Sort.pir
-lib/parrot/library/Digest/MD5.pir
-lib/parrot/library/File/Spec.pir
-lib/parrot/library/File/Spec/Unix.pir
-lib/parrot/library/File/Spec/Win32.pir
-lib/parrot/library/Getopt/Obj.pir
-lib/parrot/library/HTTP/Daemon.pir
-lib/parrot/library/Iter.pir
-lib/parrot/library/JSON.pir
-lib/parrot/library/Math/Random/mt19937ar.pir
-lib/parrot/library/MIME/Base64.pir
-lib/parrot/library/NCI/call_toolkit_init.pir
-lib/parrot/library/OpenGL.pir
-lib/parrot/library/P6object.pir
-lib/parrot/library/PCT/README
-lib/parrot/library/PGE/Dumper.pir
-lib/parrot/library/PGE/Glob.pir
-lib/parrot/library/PGE/Hs.pir
-lib/parrot/library/PGE/Perl6Grammar.pir
-lib/parrot/library/PGE/Text.pir
-lib/parrot/library/PGE/Util.pir
-lib/parrot/library/Parrot/Capture_PIR.pir
-lib/parrot/library/Parrot/Coroutine.pir
-lib/parrot/library/Parrot/Exception.pir
-lib/parrot/library/Pg.pir
-lib/parrot/library/Protoobject.pir
-lib/parrot/library/Range.pir
-lib/parrot/library/SDL.pir
-lib/parrot/library/SDL/App.pir
-lib/parrot/library/SDL/Button.pir
-lib/parrot/library/SDL/Color.pir
-lib/parrot/library/SDL/Constants.pir
-lib/parrot/library/SDL/Event.pir
-lib/parrot/library/SDL/EventHandler.pir
-lib/parrot/library/SDL/Font.pir
-lib/parrot/library/SDL/Image.pir
-lib/parrot/library/SDL/LCD.pir
-lib/parrot/library/SDL/LCD.png
-lib/parrot/library/SDL/Rect.pir
-lib/parrot/library/SDL/Sprite.pir
-lib/parrot/library/SDL/StopWatch.pir
-lib/parrot/library/SDL/Surface.pir
-lib/parrot/library/STM.pir
-lib/parrot/library/Stream/Base.pir
-lib/parrot/library/Stream/Combiner.pir
-lib/parrot/library/Stream/Coroutine.pir
-lib/parrot/library/Stream/Filter.pir
-lib/parrot/library/Stream/Lines.pir
-lib/parrot/library/Stream/ParrotIO.pir
-lib/parrot/library/Stream/Replay.pir
-lib/parrot/library/Stream/Sub.pir
-lib/parrot/library/Stream/Writer.pir
-lib/parrot/library/String/Utils.pir
-lib/parrot/library/Tcl/Glob.pir
-lib/parrot/library/Test/Builder.pir
-lib/parrot/library/Test/Builder/Output.pir
-lib/parrot/library/Test/Builder/Test.pir
-lib/parrot/library/Test/Builder/TestPlan.pir
-lib/parrot/library/Test/Builder/Tester.pir
-lib/parrot/library/Test/Class.pir
-lib/parrot/library/Test/More.pir
-lib/parrot/library/YAML/Dumper/Base.pir
-lib/parrot/library/YAML/Dumper/Default.pir
-lib/parrot/library/YAML/Dumper.pir
-lib/parrot/library/YAML/Parser/Syck.pir
-lib/parrot/library/config.pir
-lib/parrot/library/dumper.pir
-lib/parrot/library/libpcre.pir
-lib/parrot/library/ncurses.declarations
-lib/parrot/library/ncurses.pasm
-lib/parrot/library/ncurses.pir
-lib/parrot/library/parrotlib.pir
-lib/parrot/library/pcore.pir
-lib/parrot/library/pcre.pir
-lib/parrot/library/postgres.declarations
-lib/parrot/library/postgres.pasm
-lib/parrot/library/postgres.pir
-lib/parrot/library/random_lib.pir
-lib/parrot/library/tcpstream.pir
-lib/parrot/library/uuid.pir
-lib/parrot/library/yaml_dumper.pir
-libdata/pkgconfig/parrot.pc
-runtime/parrot/library/CGI/QueryHash.pbc
-runtime/parrot/library/Getopt/Obj.pbc
-runtime/parrot/library/Data/Dumper/Base.pbc
-runtime/parrot/library/Data/Dumper/Default.pbc
-runtime/parrot/library/Data/Dumper.pbc
-runtime/parrot/library/Data/Escape.pbc
-runtime/parrot/library/Data/Sort.pbc
-runtime/parrot/library/Math/Random/mt19937ar.pbc
-runtime/parrot/library/MIME/Base64.pbc
-runtime/parrot/library/NCI/call_toolkit_init.pbc
-runtime/parrot/library/PCT/Grammar.pbc
-runtime/parrot/library/PCT/HLLCompiler.pbc
-runtime/parrot/library/PCT/PAST.pbc
-runtime/parrot/library/PCT.pbc
-runtime/parrot/library/Parrot/Capture_PIR.pbc
-runtime/parrot/library/Parrot/Coroutine.pbc
-runtime/parrot/library/Parrot/Exception.pbc
-runtime/parrot/library/PGE/Glob.pbc
-runtime/parrot/library/PGE/Text.pbc
-runtime/parrot/library/PGE/Util.pbc
-runtime/parrot/library/PGE/Dumper.pbc
-runtime/parrot/library/PGE.pbc
-runtime/parrot/library/P6object.pbc
-runtime/parrot/library/Protoobject.pbc
-runtime/parrot/library/Stream/Base.pbc
-runtime/parrot/library/Stream/Combiner.pbc
-runtime/parrot/library/Stream/Coroutine.pbc
-runtime/parrot/library/Stream/Filter.pbc
-runtime/parrot/library/Stream/Lines.pbc
-runtime/parrot/library/Stream/ParrotIO.pbc
-runtime/parrot/library/Stream/Replay.pbc
-runtime/parrot/library/Stream/Sub.pbc
-runtime/parrot/library/Stream/Writer.pbc
-runtime/parrot/library/TGE.pbc
-runtime/parrot/library/config.pbc
-runtime/parrot/library/dumper.pbc
-runtime/parrot/library/ncurses.pbc
-runtime/parrot/library/parrotlib.pbc
-runtime/parrot/library/pcre.pbc
-runtime/parrot/include/call_bits.pasm
-runtime/parrot/include/cclass.pasm
-runtime/parrot/include/config.fpmc
-runtime/parrot/include/datatypes.pasm
-runtime/parrot/include/errors.pasm
-runtime/parrot/include/except_severity.pasm
-runtime/parrot/include/except_types.pasm
-runtime/parrot/include/iglobals.pasm
-runtime/parrot/include/interpcores.pasm
-runtime/parrot/include/interpdebug.pasm
-runtime/parrot/include/interpflags.pasm
-runtime/parrot/include/interpinfo.pasm
-runtime/parrot/include/interptrace.pasm
-runtime/parrot/include/iotypes.pasm
-runtime/parrot/include/iterator.pasm
-runtime/parrot/include/longopt.pasm
-runtime/parrot/include/mmd.pasm
-runtime/parrot/include/parrotlib.pbc
-runtime/parrot/include/pmctypes.pasm
-runtime/parrot/include/signal.pasm
-runtime/parrot/include/stat.pasm
-runtime/parrot/include/stdio.pasm
-runtime/parrot/include/stringinfo.pasm
-runtime/parrot/include/sysinfo.pasm
-runtime/parrot/include/timer.pasm
-runtime/parrot/include/tm.pasm
-runtime/parrot/include/warnings.pasm
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/RESPONSIBLE_PARTIES
-%%DOCSDIR%%/TODO
-%%PARROT_DOCS%%/art/pp001-intro.pod
-%%PARROT_DOCS%%/art/pp002-pmc.pod
-%%PARROT_DOCS%%/art/pp003-oop.pod
-%%PARROT_DOCS%%/book/README
-%%PARROT_DOCS%%/book/appendix.pod
-%%PARROT_DOCS%%/book/ch01_overview.pod
-%%PARROT_DOCS%%/book/ch02_getting_started.pod
-%%PARROT_DOCS%%/book/ch03_pir_basics.pod
-%%PARROT_DOCS%%/book/ch04_pir_subroutines.pod
-%%PARROT_DOCS%%/book/ch05_pasm.pod
-%%PARROT_DOCS%%/book/ch06_library.pod
-%%PARROT_DOCS%%/book/ch07_testing_and_debugging.pod
-%%PARROT_DOCS%%/book/ch08_architecture.pod
-%%PARROT_DOCS%%/book/ch09_pct.pod
-%%PARROT_DOCS%%/book/ch10_hlls.pod
-%%PARROT_DOCS%%/book/ch11_pmcs.pod
-%%PARROT_DOCS%%/book/ch12_opcodes.pod
-%%PARROT_DOCS%%/book/ch13_reference.pod
-%%PARROT_DOCS%%/book/figs/p6e_0801.png
-%%PARROT_DOCS%%/debugger.pod
-%%PARROT_DOCS%%/dev/byteorder.pod
-%%PARROT_DOCS%%/dev/debugging_with_msvc.pod
-%%PARROT_DOCS%%/dev/headerizer.pod
-%%PARROT_DOCS%%/dev/jit_i386.pod
-%%PARROT_DOCS%%/dev/longopt.pod
-%%PARROT_DOCS%%/dev/optimizer.pod
-%%PARROT_DOCS%%/dev/parrot_api.pod
-%%PARROT_DOCS%%/dev/pcc_state.pod
-%%PARROT_DOCS%%/dev/pccmethods.pod
-%%PARROT_DOCS%%/dev/pmc_obj_design_meeting_notes.pod
-%%PARROT_DOCS%%/dev/seatbelts.pod
-%%PARROT_DOCS%%/embed.pod
-%%PARROT_DOCS%%/extend.pod
+lib/libparrot.so.%%PARROT_VER%%
+lib/parrot/%%PARROT_VER%%/dynext/digest_group.so
+lib/parrot/%%PARROT_VER%%/dynext/dynlexpad.so
+lib/parrot/%%PARROT_VER%%/dynext/libnci_test.so
+lib/parrot/%%PARROT_VER%%/dynext/rational.so
+lib/parrot/%%PARROT_VER%%/dynext/subproxy.so
+lib/parrot/%%PARROT_VER%%/include/call_bits.pasm
+lib/parrot/%%PARROT_VER%%/include/cclass.pasm
+lib/parrot/%%PARROT_VER%%/include/config.fpmc
+lib/parrot/%%PARROT_VER%%/include/datatypes.pasm
+lib/parrot/%%PARROT_VER%%/include/errors.pasm
+lib/parrot/%%PARROT_VER%%/include/except_severity.pasm
+lib/parrot/%%PARROT_VER%%/include/except_types.pasm
+lib/parrot/%%PARROT_VER%%/include/fp_equality.pasm
+lib/parrot/%%PARROT_VER%%/include/hllmacros.pir
+lib/parrot/%%PARROT_VER%%/include/iglobals.pasm
+lib/parrot/%%PARROT_VER%%/include/interpcores.pasm
+lib/parrot/%%PARROT_VER%%/include/interpdebug.pasm
+lib/parrot/%%PARROT_VER%%/include/interpflags.pasm
+lib/parrot/%%PARROT_VER%%/include/interpinfo.pasm
+lib/parrot/%%PARROT_VER%%/include/interptrace.pasm
+lib/parrot/%%PARROT_VER%%/include/iterator.pasm
+lib/parrot/%%PARROT_VER%%/include/longopt.pasm
+lib/parrot/%%PARROT_VER%%/include/mmd.pasm
+lib/parrot/%%PARROT_VER%%/include/parrotlib.pbc
+lib/parrot/%%PARROT_VER%%/include/pmctypes.pasm
+lib/parrot/%%PARROT_VER%%/include/signal.pasm
+lib/parrot/%%PARROT_VER%%/include/sockets.pasm
+lib/parrot/%%PARROT_VER%%/include/stat.pasm
+lib/parrot/%%PARROT_VER%%/include/stdio.pasm
+lib/parrot/%%PARROT_VER%%/include/stringinfo.pasm
+lib/parrot/%%PARROT_VER%%/include/sysinfo.pasm
+lib/parrot/%%PARROT_VER%%/include/test_more.pir
+lib/parrot/%%PARROT_VER%%/include/timer.pasm
+lib/parrot/%%PARROT_VER%%/include/tm.pasm
+lib/parrot/%%PARROT_VER%%/include/warnings.pasm
+lib/parrot/%%PARROT_VER%%/languages/pge/P6Rule.grammar
+lib/parrot/%%PARROT_VER%%/languages/pge/PGE.pir
+lib/parrot/%%PARROT_VER%%/languages/pge/PGE/Exp.pir
+lib/parrot/%%PARROT_VER%%/languages/pge/PGE/Match.pir
+lib/parrot/%%PARROT_VER%%/languages/pge/PGE/OPTable.pir
+lib/parrot/%%PARROT_VER%%/languages/pge/PGE/P5Regex.pir
+lib/parrot/%%PARROT_VER%%/languages/pge/PGE/Perl6Regex.pir
+lib/parrot/%%PARROT_VER%%/languages/pge/PGE/Regex.pir
+lib/parrot/%%PARROT_VER%%/languages/pge/PGE/builtins.pg
+lib/parrot/%%PARROT_VER%%/languages/pge/STATUS
+lib/parrot/%%PARROT_VER%%/languages/pge/demo.pir
+lib/parrot/%%PARROT_VER%%/library/CGI/QueryHash.pbc
+lib/parrot/%%PARROT_VER%%/library/CGI/QueryHash.pir
+lib/parrot/%%PARROT_VER%%/library/Config/JSON.pir
+lib/parrot/%%PARROT_VER%%/library/Crow.pir
+lib/parrot/%%PARROT_VER%%/library/Data/Dumper.pbc
+lib/parrot/%%PARROT_VER%%/library/Data/Dumper.pir
+lib/parrot/%%PARROT_VER%%/library/Data/Dumper/Base.pbc
+lib/parrot/%%PARROT_VER%%/library/Data/Dumper/Base.pir
+lib/parrot/%%PARROT_VER%%/library/Data/Dumper/Default.pbc
+lib/parrot/%%PARROT_VER%%/library/Data/Dumper/Default.pir
+lib/parrot/%%PARROT_VER%%/library/Data/Replace.pir
+lib/parrot/%%PARROT_VER%%/library/Digest/MD5.pir
+lib/parrot/%%PARROT_VER%%/library/Getopt/Obj.pbc
+lib/parrot/%%PARROT_VER%%/library/Getopt/Obj.pir
+lib/parrot/%%PARROT_VER%%/library/HTTP/Daemon.pir
+lib/parrot/%%PARROT_VER%%/library/Iter.pbc
+lib/parrot/%%PARROT_VER%%/library/Iter.pir
+lib/parrot/%%PARROT_VER%%/library/JSON.pbc
+lib/parrot/%%PARROT_VER%%/library/JSON.pir
+lib/parrot/%%PARROT_VER%%/library/MIME/Base64.pbc
+lib/parrot/%%PARROT_VER%%/library/MIME/Base64.pir
+lib/parrot/%%PARROT_VER%%/library/Math/Rand.pbc
+lib/parrot/%%PARROT_VER%%/library/Math/Rand.pir
+lib/parrot/%%PARROT_VER%%/library/Math/Random/mt19937ar.pbc
+lib/parrot/%%PARROT_VER%%/library/Math/Random/mt19937ar.pir
+lib/parrot/%%PARROT_VER%%/library/NCI/call_toolkit_init.pbc
+lib/parrot/%%PARROT_VER%%/library/NCI/call_toolkit_init.pir
+lib/parrot/%%PARROT_VER%%/library/OpenGL.pir
+lib/parrot/%%PARROT_VER%%/library/P6object.pbc
+lib/parrot/%%PARROT_VER%%/library/P6object.pir
+lib/parrot/%%PARROT_VER%%/library/PGE.pbc
+lib/parrot/%%PARROT_VER%%/library/PGE/Dumper.pbc
+lib/parrot/%%PARROT_VER%%/library/PGE/Dumper.pir
+lib/parrot/%%PARROT_VER%%/library/PGE/Glob.pbc
+lib/parrot/%%PARROT_VER%%/library/PGE/Glob.pir
+lib/parrot/%%PARROT_VER%%/library/PGE/Hs.pir
+lib/parrot/%%PARROT_VER%%/library/PGE/Perl6Grammar.pbc
+lib/parrot/%%PARROT_VER%%/library/PGE/Perl6Grammar.pir
+lib/parrot/%%PARROT_VER%%/library/PGE/Text.pbc
+lib/parrot/%%PARROT_VER%%/library/PGE/Text.pir
+lib/parrot/%%PARROT_VER%%/library/PGE/Util.pbc
+lib/parrot/%%PARROT_VER%%/library/PGE/Util.pir
+lib/parrot/%%PARROT_VER%%/library/Parrot/Coroutine.pbc
+lib/parrot/%%PARROT_VER%%/library/Parrot/Coroutine.pir
+lib/parrot/%%PARROT_VER%%/library/Parrot/Exception.pbc
+lib/parrot/%%PARROT_VER%%/library/Parrot/Exception.pir
+lib/parrot/%%PARROT_VER%%/library/Pg.pir
+lib/parrot/%%PARROT_VER%%/library/Protoobject.pbc
+lib/parrot/%%PARROT_VER%%/library/Protoobject.pir
+lib/parrot/%%PARROT_VER%%/library/Range.pbc
+lib/parrot/%%PARROT_VER%%/library/Range.pir
+lib/parrot/%%PARROT_VER%%/library/SDL.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/App.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/Button.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/Color.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/Constants.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/Event.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/EventHandler.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/Font.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/Image.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/LCD.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/LCD.png
+lib/parrot/%%PARROT_VER%%/library/SDL/Rect.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/Sprite.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/StopWatch.pir
+lib/parrot/%%PARROT_VER%%/library/SDL/Surface.pir
+lib/parrot/%%PARROT_VER%%/library/Stream/Base.pbc
+lib/parrot/%%PARROT_VER%%/library/Stream/Base.pir
+lib/parrot/%%PARROT_VER%%/library/Stream/Combiner.pbc
+lib/parrot/%%PARROT_VER%%/library/Stream/Combiner.pir
+lib/parrot/%%PARROT_VER%%/library/Stream/Coroutine.pbc
+lib/parrot/%%PARROT_VER%%/library/Stream/Coroutine.pir
+lib/parrot/%%PARROT_VER%%/library/Stream/Filter.pbc
+lib/parrot/%%PARROT_VER%%/library/Stream/Filter.pir
+lib/parrot/%%PARROT_VER%%/library/Stream/Lines.pbc
+lib/parrot/%%PARROT_VER%%/library/Stream/Lines.pir
+lib/parrot/%%PARROT_VER%%/library/Stream/ParrotIO.pbc
+lib/parrot/%%PARROT_VER%%/library/Stream/ParrotIO.pir
+lib/parrot/%%PARROT_VER%%/library/Stream/Replay.pbc
+lib/parrot/%%PARROT_VER%%/library/Stream/Replay.pir
+lib/parrot/%%PARROT_VER%%/library/Stream/Sub.pbc
+lib/parrot/%%PARROT_VER%%/library/Stream/Sub.pir
+lib/parrot/%%PARROT_VER%%/library/Stream/Writer.pbc
+lib/parrot/%%PARROT_VER%%/library/Stream/Writer.pir
+lib/parrot/%%PARROT_VER%%/library/String/Utils.pir
+lib/parrot/%%PARROT_VER%%/library/Tcl/Glob.pir
+lib/parrot/%%PARROT_VER%%/library/TclLibrary.pbc
+lib/parrot/%%PARROT_VER%%/library/TclLibrary.pir
+lib/parrot/%%PARROT_VER%%/library/Test/Builder.pir
+lib/parrot/%%PARROT_VER%%/library/Test/Builder/Output.pir
+lib/parrot/%%PARROT_VER%%/library/Test/Builder/Test.pir
+lib/parrot/%%PARROT_VER%%/library/Test/Builder/TestPlan.pir
+lib/parrot/%%PARROT_VER%%/library/Test/Builder/Tester.pir
+lib/parrot/%%PARROT_VER%%/library/Test/Class.pir
+lib/parrot/%%PARROT_VER%%/library/Test/More.pir
+lib/parrot/%%PARROT_VER%%/library/YAML/Dumper.pbc
+lib/parrot/%%PARROT_VER%%/library/YAML/Dumper.pir
+lib/parrot/%%PARROT_VER%%/library/YAML/Dumper/Base.pir
+lib/parrot/%%PARROT_VER%%/library/YAML/Dumper/Default.pir
+lib/parrot/%%PARROT_VER%%/library/YAML/Parser/Syck.pir
+lib/parrot/%%PARROT_VER%%/library/config.pbc
+lib/parrot/%%PARROT_VER%%/library/config.pir
+lib/parrot/%%PARROT_VER%%/library/dumper.pbc
+lib/parrot/%%PARROT_VER%%/library/dumper.pir
+lib/parrot/%%PARROT_VER%%/library/libpcre.pir
+lib/parrot/%%PARROT_VER%%/library/ncurses.declarations
+lib/parrot/%%PARROT_VER%%/library/ncurses.pasm
+lib/parrot/%%PARROT_VER%%/library/ncurses.pbc
+lib/parrot/%%PARROT_VER%%/library/ncurses.pir
+lib/parrot/%%PARROT_VER%%/library/parrotlib.pbc
+lib/parrot/%%PARROT_VER%%/library/parrotlib.pir
+lib/parrot/%%PARROT_VER%%/library/pcore.pbc
+lib/parrot/%%PARROT_VER%%/library/pcore.pir
+lib/parrot/%%PARROT_VER%%/library/pcre.pbc
+lib/parrot/%%PARROT_VER%%/library/pcre.pir
+lib/parrot/%%PARROT_VER%%/library/postgres.declarations
+lib/parrot/%%PARROT_VER%%/library/postgres.pasm
+lib/parrot/%%PARROT_VER%%/library/postgres.pir
+lib/parrot/%%PARROT_VER%%/library/random_lib.pir
+lib/parrot/%%PARROT_VER%%/library/tcpstream.pir
+lib/parrot/%%PARROT_VER%%/library/uuid.pir
+lib/parrot/%%PARROT_VER%%/library/yaml_dumper.pir
+@comment libdata/pkgconfig/parrot.pc
+%%DOCSDIR%%/%%PARROT_VER%%/LICENSE
+%%DOCSDIR%%/%%PARROT_VER%%/NEWS
+%%DOCSDIR%%/%%PARROT_VER%%/PBC_COMPAT
+%%DOCSDIR%%/%%PARROT_VER%%/RESPONSIBLE_PARTIES
 %%PARROT_DOCS%%/faq.pod
 %%PARROT_DOCS%%/gettingstarted.pod
 %%PARROT_DOCS%%/glossary.pod
-%%PARROT_DOCS%%/imcc/README
-%%PARROT_DOCS%%/imcc/imcfaq.pod
-%%PARROT_DOCS%%/imcc/operation.pod
 %%PARROT_DOCS%%/intro.pod
-%%PARROT_DOCS%%/jit.pod
-%%PARROT_DOCS%%/multidispatch.pod
-%%PARROT_DOCS%%/memory_internals.pod
-%%PARROT_DOCS%%/native_exec.pod
 %%PARROT_DOCS%%/ops/bit.pod
 %%PARROT_DOCS%%/ops/cmp.pod
 %%PARROT_DOCS%%/ops/core.pod
@@ -338,528 +284,53 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_DOCS%%/ops/string.pod
 %%PARROT_DOCS%%/ops/sys.pod
 %%PARROT_DOCS%%/ops/var.pod
-%%PARROT_DOCS%%/optable.pod
-%%PARROT_DOCS%%/overview.pod
-%%PARROT_DOCS%%/parrot.pod
-%%PARROT_DOCS%%/parrotbyte.pod
-%%PARROT_DOCS%%/parrothist.pod
-%%PARROT_DOCS%%/pct/gettingstarted.pod
-%%PARROT_DOCS%%/pct/past_building_blocks.pod
-%%PARROT_DOCS%%/pct/pct_optable_guide.pod
-%%PARROT_DOCS%%/pdds/README
-%%PARROT_DOCS%%/pdds/draft/pdd01_overview.pod
-%%PARROT_DOCS%%/pdds/draft/pdd04_datatypes.pod
-%%PARROT_DOCS%%/pdds/draft/pdd05_opfunc.pod
-%%PARROT_DOCS%%/pdds/draft/pdd06_pasm.pod
-%%PARROT_DOCS%%/pdds/draft/pdd08_keys.pod
-%%PARROT_DOCS%%/pdds/draft/pdd10_embedding.pod
-%%PARROT_DOCS%%/pdds/draft/pdd11_extending.pod
-%%PARROT_DOCS%%/pdds/draft/pdd14_bignum.pod
-%%PARROT_DOCS%%/pdds/draft/pdd16_native_call.pod
-%%PARROT_DOCS%%/pdds/draft/pdd29_compiler_tools.pod
-%%PARROT_DOCS%%/pdds/draft/pdd30_install.pod
-%%PARROT_DOCS%%/pdds/draft/pdd31_hll_interop.pod
-%%PARROT_DOCS%%/pdds/pdd00_pdd.pod
-%%PARROT_DOCS%%/pdds/pdd03_calling_conventions.pod
-%%PARROT_DOCS%%/pdds/pdd07_codingstd.pod
-%%PARROT_DOCS%%/pdds/pdd09_gc.pod
-%%PARROT_DOCS%%/pdds/pdd13_bytecode.pod
-%%PARROT_DOCS%%/pdds/pdd15_object_metamodel.png
-%%PARROT_DOCS%%/pdds/pdd15_object_metamodel.svg
-%%PARROT_DOCS%%/pdds/pdd15_objects.pod
-%%PARROT_DOCS%%/pdds/pdd17_pmc.pod
-%%PARROT_DOCS%%/pdds/pdd18_security.pod
-%%PARROT_DOCS%%/pdds/pdd19_pir.pod
-%%PARROT_DOCS%%/pdds/pdd20_lexical_vars.pod
-%%PARROT_DOCS%%/pdds/pdd21_namespaces.pod
-%%PARROT_DOCS%%/pdds/pdd22_io.pod
-%%PARROT_DOCS%%/pdds/pdd23_exceptions.pod
-%%PARROT_DOCS%%/pdds/pdd24_events.pod
-%%PARROT_DOCS%%/pdds/pdd25_concurrency.pod
-%%PARROT_DOCS%%/pdds/pdd26_ast.pod
-%%PARROT_DOCS%%/pdds/pdd27_multiple_dispatch.pod
-%%PARROT_DOCS%%/pdds/pdd28_strings.pod
-%%PARROT_DOCS%%/pdds/pdd_template.pod
-%%PARROT_DOCS%%/pmc.pod
 %%PARROT_DOCS%%/pmc/array.pod
 %%PARROT_DOCS%%/pmc/documentation.pod
 %%PARROT_DOCS%%/pmc/struct.pod
 %%PARROT_DOCS%%/pmc/subs.pod
-%%PARROT_DOCS%%/pmc2c.pod
-%%PARROT_DOCS%%/porting_intro.pod
-%%PARROT_DOCS%%/project/branching_guide.pod
-%%PARROT_DOCS%%/project/cage_cleaners_guide.pod
-%%PARROT_DOCS%%/project/committer_guide.pod
-%%PARROT_DOCS%%/project/debian_packaging_guide.pod
-%%PARROT_DOCS%%/project/metacommitter_guide.pod
-%%PARROT_DOCS%%/project/pause_guide.pod
-%%PARROT_DOCS%%/project/release_manager_guide.pod
-%%PARROT_DOCS%%/project/roles_responsibilities.pod
-%%PARROT_DOCS%%/project/ticket_wrangler_guide.pod
-%%PARROT_DOCS%%/req/model_users.pod
-%%PARROT_DOCS%%/resources/favicon.ico
-%%PARROT_DOCS%%/resources/parrot_small.png
-%%PARROT_DOCS%%/resources/perl.css
-%%PARROT_DOCS%%/resources/up.gif
-%%PARROT_DOCS%%/running.pod
-%%PARROT_DOCS%%/stability.pod
-%%PARROT_DOCS%%/stm/atomic.pod
-%%PARROT_DOCS%%/stm/howto.pod
-%%PARROT_DOCS%%/stm/internals.pod
-%%PARROT_DOCS%%/stm/stm_frontend.pod
-%%PARROT_DOCS%%/stm/thread-issues.pod
-%%PARROT_DOCS%%/submissions.pod
-%%PARROT_DOCS%%/tests.pod
-%%PARROT_DOCS%%/vtables.pod
-%%PARROT_EXAMPLES%%/README
-%%PARROT_EXAMPLES%%/benchmarks/addit.pasm
-%%PARROT_EXAMPLES%%/benchmarks/addit.pir
-%%PARROT_EXAMPLES%%/benchmarks/addit.pl
-%%PARROT_EXAMPLES%%/benchmarks/addit.rb
-%%PARROT_EXAMPLES%%/benchmarks/addit2.pir
-%%PARROT_EXAMPLES%%/benchmarks/array_access.pir
-%%PARROT_EXAMPLES%%/benchmarks/arriter.pir
-%%PARROT_EXAMPLES%%/benchmarks/arriter.pl
-%%PARROT_EXAMPLES%%/benchmarks/arriter.rb
-%%PARROT_EXAMPLES%%/benchmarks/arriter_o1.pir
-%%PARROT_EXAMPLES%%/benchmarks/bench_newp.pasm
-%%PARROT_EXAMPLES%%/benchmarks/fib.pir
-%%PARROT_EXAMPLES%%/benchmarks/fib.pl
-%%PARROT_EXAMPLES%%/benchmarks/fib.py
-%%PARROT_EXAMPLES%%/benchmarks/fib.rb
-%%PARROT_EXAMPLES%%/benchmarks/float4.pir
-%%PARROT_EXAMPLES%%/benchmarks/freeze.pasm
-%%PARROT_EXAMPLES%%/benchmarks/freeze.pl
-%%PARROT_EXAMPLES%%/benchmarks/gc_alloc_new.pasm
-%%PARROT_EXAMPLES%%/benchmarks/gc_alloc_reuse.pasm
-%%PARROT_EXAMPLES%%/benchmarks/gc_generations.pasm
-%%PARROT_EXAMPLES%%/benchmarks/gc_header_new.pasm
-%%PARROT_EXAMPLES%%/benchmarks/gc_header_reuse.pasm
-%%PARROT_EXAMPLES%%/benchmarks/gc_waves_headers.pasm
-%%PARROT_EXAMPLES%%/benchmarks/gc_waves_sizeable_data.pasm
-%%PARROT_EXAMPLES%%/benchmarks/gc_waves_sizeable_headers.pasm
-%%PARROT_EXAMPLES%%/benchmarks/mops.pasm
-%%PARROT_EXAMPLES%%/benchmarks/mops.pl
-%%PARROT_EXAMPLES%%/benchmarks/mops_intval.pasm
-%%PARROT_EXAMPLES%%/benchmarks/oo1.pasm
-%%PARROT_EXAMPLES%%/benchmarks/oo1.pl
-%%PARROT_EXAMPLES%%/benchmarks/oo1.py
-%%PARROT_EXAMPLES%%/benchmarks/oo1.rb
-%%PARROT_EXAMPLES%%/benchmarks/oo2.pasm
-%%PARROT_EXAMPLES%%/benchmarks/oo2.pl
-%%PARROT_EXAMPLES%%/benchmarks/oo2.py
-%%PARROT_EXAMPLES%%/benchmarks/oo2.rb
-%%PARROT_EXAMPLES%%/benchmarks/oo3.pasm
-%%PARROT_EXAMPLES%%/benchmarks/oo3.pl
-%%PARROT_EXAMPLES%%/benchmarks/oo3.py
-%%PARROT_EXAMPLES%%/benchmarks/oo3.rb
-%%PARROT_EXAMPLES%%/benchmarks/oo4.pasm
-%%PARROT_EXAMPLES%%/benchmarks/oo4.pl
-%%PARROT_EXAMPLES%%/benchmarks/oo4.py
-%%PARROT_EXAMPLES%%/benchmarks/oo4.rb
-%%PARROT_EXAMPLES%%/benchmarks/oo5.pir
-%%PARROT_EXAMPLES%%/benchmarks/oo5.pl
-%%PARROT_EXAMPLES%%/benchmarks/oo5.py
-%%PARROT_EXAMPLES%%/benchmarks/oo5.rb
-%%PARROT_EXAMPLES%%/benchmarks/oo6.pir
-%%PARROT_EXAMPLES%%/benchmarks/oo6.pl
-%%PARROT_EXAMPLES%%/benchmarks/oo6.py
-%%PARROT_EXAMPLES%%/benchmarks/oo6.rb
-%%PARROT_EXAMPLES%%/benchmarks/oofib.pir
-%%PARROT_EXAMPLES%%/benchmarks/oofib.pl
-%%PARROT_EXAMPLES%%/benchmarks/oofib.py
-%%PARROT_EXAMPLES%%/benchmarks/oofib.rb
-%%PARROT_EXAMPLES%%/benchmarks/oon.txt
-%%PARROT_EXAMPLES%%/benchmarks/overload.pir
-%%PARROT_EXAMPLES%%/benchmarks/overload.pl
-%%PARROT_EXAMPLES%%/benchmarks/primes.c
-%%PARROT_EXAMPLES%%/benchmarks/primes.pasm
-%%PARROT_EXAMPLES%%/benchmarks/primes.pl
-%%PARROT_EXAMPLES%%/benchmarks/primes2.c
-%%PARROT_EXAMPLES%%/benchmarks/primes2.pir
-%%PARROT_EXAMPLES%%/benchmarks/primes2.pl
-%%PARROT_EXAMPLES%%/benchmarks/primes2.py
-%%PARROT_EXAMPLES%%/benchmarks/primes2.rb
-%%PARROT_EXAMPLES%%/benchmarks/primes2_i.pir
-%%PARROT_EXAMPLES%%/benchmarks/primes_i.pasm
-%%PARROT_EXAMPLES%%/benchmarks/shared_ref.pasm
-%%PARROT_EXAMPLES%%/benchmarks/shared_ref.pl
-%%PARROT_EXAMPLES%%/benchmarks/stress.pasm
-%%PARROT_EXAMPLES%%/benchmarks/stress.pl
-%%PARROT_EXAMPLES%%/benchmarks/stress.rb
-%%PARROT_EXAMPLES%%/benchmarks/stress1.pasm
-%%PARROT_EXAMPLES%%/benchmarks/stress1.pl
-%%PARROT_EXAMPLES%%/benchmarks/stress2.pasm
-%%PARROT_EXAMPLES%%/benchmarks/stress2.pl
-%%PARROT_EXAMPLES%%/benchmarks/stress2.rb
-%%PARROT_EXAMPLES%%/benchmarks/stress3.pasm
-%%PARROT_EXAMPLES%%/benchmarks/vpm.pir
-%%PARROT_EXAMPLES%%/benchmarks/vpm.pl
-%%PARROT_EXAMPLES%%/benchmarks/vpm.py
-%%PARROT_EXAMPLES%%/benchmarks/vpm.rb
-%%PARROT_EXAMPLES%%/c/nanoparrot.c
-%%PARROT_EXAMPLES%%/c/test_main.c
-%%PARROT_EXAMPLES%%/compilers/Makefile
-%%PARROT_EXAMPLES%%/compilers/japhc.c
-%%PARROT_EXAMPLES%%/io/async_select.pir
-%%PARROT_EXAMPLES%%/io/echo_client.pir
-%%PARROT_EXAMPLES%%/io/http.pir
-%%PARROT_EXAMPLES%%/io/httpd.pir
-%%PARROT_EXAMPLES%%/io/httpd2.pir
-%%PARROT_EXAMPLES%%/io/net_smtp.pasm
-%%PARROT_EXAMPLES%%/io/pioctl.pasm
-%%PARROT_EXAMPLES%%/io/pipe2.pir
-%%PARROT_EXAMPLES%%/io/pipe3.pir
-%%PARROT_EXAMPLES%%/japh/README
-%%PARROT_EXAMPLES%%/japh/japh1.pasm
-%%PARROT_EXAMPLES%%/japh/japh2.pasm
-%%PARROT_EXAMPLES%%/japh/japh3.pasm
-%%PARROT_EXAMPLES%%/japh/japh4.pasm
-%%PARROT_EXAMPLES%%/japh/japh5.pasm
-%%PARROT_EXAMPLES%%/library/acorn.l
-%%PARROT_EXAMPLES%%/library/getopt_demo.pir
-%%PARROT_EXAMPLES%%/library/md5sum.pir
-%%PARROT_EXAMPLES%%/library/ncurses_life.pir
-%%PARROT_EXAMPLES%%/library/pcre.pir
-%%PARROT_EXAMPLES%%/mops/README
-%%PARROT_EXAMPLES%%/mops/mops.c
-%%PARROT_EXAMPLES%%/mops/mops.cs
-%%PARROT_EXAMPLES%%/mops/mops.il
-%%PARROT_EXAMPLES%%/mops/mops.p6
-%%PARROT_EXAMPLES%%/mops/mops.pl
-%%PARROT_EXAMPLES%%/mops/mops.ps
-%%PARROT_EXAMPLES%%/mops/mops.py
-%%PARROT_EXAMPLES%%/mops/mops.rb
-%%PARROT_EXAMPLES%%/mops/mops.scheme
-%%PARROT_EXAMPLES%%/namespace/namespace_dump.pir
-%%PARROT_EXAMPLES%%/nci/Mysql.pir
-%%PARROT_EXAMPLES%%/nci/PQt.C
-%%PARROT_EXAMPLES%%/nci/QtHelloWorld.pasm
-%%PARROT_EXAMPLES%%/nci/Xlib.pir
-%%PARROT_EXAMPLES%%/nci/Xlibconstants.pir
-%%PARROT_EXAMPLES%%/nci/ls.pir
-%%PARROT_EXAMPLES%%/nci/mysqltest.p6
-%%PARROT_EXAMPLES%%/nci/mysqltest.pir
-%%PARROT_EXAMPLES%%/nci/sdl_blue_rectangle.pir
-%%PARROT_EXAMPLES%%/nci/win32api.pir
-%%PARROT_EXAMPLES%%/nci/xlibtest.nqp
-%%PARROT_EXAMPLES%%/nci/xlibtest.p6
-%%PARROT_EXAMPLES%%/nci/xlibtest.pir
-%%PARROT_EXAMPLES%%/nci/xlibtest.rb
-%%PARROT_EXAMPLES%%/opengl/shapes.pir
-%%PARROT_EXAMPLES%%/opengl/triangle.pir
-%%PARROT_EXAMPLES%%/pasm/cat.pasm
-%%PARROT_EXAMPLES%%/pasm/fact.pasm
-%%PARROT_EXAMPLES%%/pasm/hello.pasm
-%%PARROT_EXAMPLES%%/pasm/nanoforth.pasm
-%%PARROT_EXAMPLES%%/pasm/nanoforth2.pasm
-%%PARROT_EXAMPLES%%/pasm/small.xml
-%%PARROT_EXAMPLES%%/pasm/trace.pasm
-%%PARROT_EXAMPLES%%/pasm/xml_parser.pasm
-%%PARROT_EXAMPLES%%/past/01-sub.pir
-%%PARROT_EXAMPLES%%/past/blocktype_immediate.pir
-%%PARROT_EXAMPLES%%/past/four_plus_one.pir
-%%PARROT_EXAMPLES%%/pge/README
-%%PARROT_EXAMPLES%%/pge/TAP_grammar.pg
-%%PARROT_EXAMPLES%%/pge/benchmarks/ambs1/Makefile
-%%PARROT_EXAMPLES%%/pge/benchmarks/ambs1/ambs1.pg
-%%PARROT_EXAMPLES%%/pge/benchmarks/ambs1/main.pir
-%%PARROT_EXAMPLES%%/pge/benchmarks/ambs1/mktestcase
-%%PARROT_EXAMPLES%%/pge/grammars/IO.pg
-%%PARROT_EXAMPLES%%/pge/grammars/PatchGrammar.pg
-%%PARROT_EXAMPLES%%/pge/simple.pir
-%%PARROT_EXAMPLES%%/pir/circle.pir
-%%PARROT_EXAMPLES%%/pir/euclid.pir
-%%PARROT_EXAMPLES%%/pir/genprog.bas
-%%PARROT_EXAMPLES%%/pir/hanoi.pir
-%%PARROT_EXAMPLES%%/pir/hello-dwim.pir
-%%PARROT_EXAMPLES%%/pir/io.pir
-%%PARROT_EXAMPLES%%/pir/levenshtein.pir
-%%PARROT_EXAMPLES%%/pir/life.pir
-%%PARROT_EXAMPLES%%/pir/local_label.pir
-%%PARROT_EXAMPLES%%/pir/mandel.pir
-%%PARROT_EXAMPLES%%/pir/mysqltest.bas
-%%PARROT_EXAMPLES%%/pir/pirric.pir
-%%PARROT_EXAMPLES%%/pir/queens_r.pir
-%%PARROT_EXAMPLES%%/pir/quine_ord.pir
-%%PARROT_EXAMPLES%%/pir/readline.pir
-%%PARROT_EXAMPLES%%/pir/substr.pir
-%%PARROT_EXAMPLES%%/pir/sudoku.pir
-%%PARROT_EXAMPLES%%/pir/thr-primes.pir
-%%PARROT_EXAMPLES%%/pir/uniq.pir
-%%PARROT_EXAMPLES%%/sdl/blue_rect.pl
-%%PARROT_EXAMPLES%%/sdl/mandel.pir
-%%PARROT_EXAMPLES%%/sdl/minesweeper/README
-%%PARROT_EXAMPLES%%/sdl/minesweeper/eventhandler.pir
-%%PARROT_EXAMPLES%%/sdl/minesweeper/field.pir
-%%PARROT_EXAMPLES%%/sdl/minesweeper/mines.pir
-%%PARROT_EXAMPLES%%/sdl/minesweeper/mines.png
-%%PARROT_EXAMPLES%%/sdl/minesweeper/mines_debug.png
-%%PARROT_EXAMPLES%%/sdl/minesweeper/smiley.png
-%%PARROT_EXAMPLES%%/sdl/tetris/README
-%%PARROT_EXAMPLES%%/sdl/tetris/app.pir
-%%PARROT_EXAMPLES%%/sdl/tetris/block.pir
-%%PARROT_EXAMPLES%%/sdl/tetris/blockdata.pir
-%%PARROT_EXAMPLES%%/sdl/tetris/blocks.pir
-%%PARROT_EXAMPLES%%/sdl/tetris/board.pir
-%%PARROT_EXAMPLES%%/sdl/tetris/boarddata.pir
-%%PARROT_EXAMPLES%%/sdl/tetris/eventhandler.pir
-%%PARROT_EXAMPLES%%/sdl/tetris/tetris.pir
-%%PARROT_EXAMPLES%%/shootout/README
-%%PARROT_EXAMPLES%%/shootout/ack.pir
-%%PARROT_EXAMPLES%%/shootout/ack.pir_output
-%%PARROT_EXAMPLES%%/shootout/ack.py
-%%PARROT_EXAMPLES%%/shootout/binarytrees.pir
-%%PARROT_EXAMPLES%%/shootout/binarytrees.pir_output
-%%PARROT_EXAMPLES%%/shootout/fannkuch.pir
-%%PARROT_EXAMPLES%%/shootout/fannkuch.pir_output
-%%PARROT_EXAMPLES%%/shootout/fannkuch.py
-%%PARROT_EXAMPLES%%/shootout/fasta.pir
-%%PARROT_EXAMPLES%%/shootout/fasta.pir_output
-%%PARROT_EXAMPLES%%/shootout/harmonic.pir
-%%PARROT_EXAMPLES%%/shootout/knucleotide.pir
-%%PARROT_EXAMPLES%%/shootout/knucleotide.pir_input
-%%PARROT_EXAMPLES%%/shootout/knucleotide.pir_output
-%%PARROT_EXAMPLES%%/shootout/mandelbrot.pir
-%%PARROT_EXAMPLES%%/shootout/mandelbrot.pir_output
-%%PARROT_EXAMPLES%%/shootout/nbody.pir
-%%PARROT_EXAMPLES%%/shootout/nbody.pir_output
-%%PARROT_EXAMPLES%%/shootout/nsieve-bits-2.pir
-%%PARROT_EXAMPLES%%/shootout/nsieve-bits-2.pir_output
-%%PARROT_EXAMPLES%%/shootout/nsieve-bits.pir
-%%PARROT_EXAMPLES%%/shootout/nsieve-bits.pir_output
-%%PARROT_EXAMPLES%%/shootout/nsieve.pir
-%%PARROT_EXAMPLES%%/shootout/nsieve.pir_output
-%%PARROT_EXAMPLES%%/shootout/partialsums-2.pir
-%%PARROT_EXAMPLES%%/shootout/partialsums-2.pir_output
-%%PARROT_EXAMPLES%%/shootout/partialsums.pir
-%%PARROT_EXAMPLES%%/shootout/partialsums.pir_output
-%%PARROT_EXAMPLES%%/shootout/pidigits.pir
-%%PARROT_EXAMPLES%%/shootout/pidigits.pir_output
-%%PARROT_EXAMPLES%%/shootout/pidigits.py
-%%PARROT_EXAMPLES%%/shootout/random.pasm
-%%PARROT_EXAMPLES%%/shootout/random.pir
-%%PARROT_EXAMPLES%%/shootout/recursive-2.pir
-%%PARROT_EXAMPLES%%/shootout/recursive-2.pir_output
-%%PARROT_EXAMPLES%%/shootout/recursive.pir
-%%PARROT_EXAMPLES%%/shootout/recursive.pir_output
-%%PARROT_EXAMPLES%%/shootout/regexdna.pir
-%%PARROT_EXAMPLES%%/shootout/regexdna.pir_input
-%%PARROT_EXAMPLES%%/shootout/regexdna.pir_output
-%%PARROT_EXAMPLES%%/shootout/revcomp.pir
-%%PARROT_EXAMPLES%%/shootout/revcomp.pir_input
-%%PARROT_EXAMPLES%%/shootout/revcomp.pir_output
-%%PARROT_EXAMPLES%%/shootout/spectralnorm.pir
-%%PARROT_EXAMPLES%%/shootout/spectralnorm.pir_output
-%%PARROT_EXAMPLES%%/shootout/sumcol.pir
-%%PARROT_EXAMPLES%%/shootout/sumcol.pir_input
-%%PARROT_EXAMPLES%%/shootout/sumcol.pir_output
-%%PARROT_EXAMPLES%%/shootout/takfp.pir
-%%PARROT_EXAMPLES%%/shootout/takfp.pir_output
-%%PARROT_EXAMPLES%%/streams/Bytes.pir
-%%PARROT_EXAMPLES%%/streams/Combiner.pir
-%%PARROT_EXAMPLES%%/streams/Coroutine.pir
-%%PARROT_EXAMPLES%%/streams/FileLines.pir
-%%PARROT_EXAMPLES%%/streams/Filter.pir
-%%PARROT_EXAMPLES%%/streams/Include.pir
-%%PARROT_EXAMPLES%%/streams/Lines.pir
-%%PARROT_EXAMPLES%%/streams/ParrotIO.pir
-%%PARROT_EXAMPLES%%/streams/Replay.pir
-%%PARROT_EXAMPLES%%/streams/SubCounter.pir
-%%PARROT_EXAMPLES%%/streams/SubHello.pir
-%%PARROT_EXAMPLES%%/streams/Writer.pir
-%%PARROT_EXAMPLES%%/subs/bsr_ret.pasm
-%%PARROT_EXAMPLES%%/subs/coroutine.pasm
-%%PARROT_EXAMPLES%%/subs/jsr_ret.pasm
-%%PARROT_EXAMPLES%%/subs/multi_retvals.pir
-%%PARROT_EXAMPLES%%/subs/no_retval.pir
-%%PARROT_EXAMPLES%%/subs/pasm_sub1.pasm
-%%PARROT_EXAMPLES%%/subs/single_retval.pir
-%%PARROT_EXAMPLES%%/tge/README
-%%PARROT_EXAMPLES%%/tge/branch/branch.g
-%%PARROT_EXAMPLES%%/tge/branch/lib/Branch.pir
-%%PARROT_EXAMPLES%%/tge/branch/lib/Leaf.pir
-%%PARROT_EXAMPLES%%/tge/branch/transform.pir
-%%PARROT_EXAMPLES%%/tutorial/00_README.pod
-%%PARROT_EXAMPLES%%/tutorial/01_temp_var.pir
-%%PARROT_EXAMPLES%%/tutorial/02_local_var.pir
-%%PARROT_EXAMPLES%%/tutorial/03_temp_var_basic_pmcs.pir
-%%PARROT_EXAMPLES%%/tutorial/04_pod_comments.pir
-%%PARROT_EXAMPLES%%/tutorial/10_math_ops.pir
-%%PARROT_EXAMPLES%%/tutorial/11_math_ops_self_mod.pir
-%%PARROT_EXAMPLES%%/tutorial/12_math_ops_pasm.pir
-%%PARROT_EXAMPLES%%/tutorial/13_logical_ops.pir
-%%PARROT_EXAMPLES%%/tutorial/20_string_ops.pir
-%%PARROT_EXAMPLES%%/tutorial/21_string_ops_repeat.pir
-%%PARROT_EXAMPLES%%/tutorial/22_string_ops_length.pir
-%%PARROT_EXAMPLES%%/tutorial/23_string_ops_substr.pir
-%%PARROT_EXAMPLES%%/tutorial/24_string_ops_clone.pir
-%%PARROT_EXAMPLES%%/tutorial/30_arrays_basic.pir
-%%PARROT_EXAMPLES%%/tutorial/31_array_ops_split.pir
-%%PARROT_EXAMPLES%%/tutorial/32_array_ops_sprintf.pir
-%%PARROT_EXAMPLES%%/tutorial/33_hashes.pir
-%%PARROT_EXAMPLES%%/tutorial/34_multikey.pir
-%%PARROT_EXAMPLES%%/tutorial/40_file_ops.pir
-%%PARROT_EXAMPLES%%/tutorial/50_goto.pir
-%%PARROT_EXAMPLES%%/tutorial/51_if_unless.pir
-%%PARROT_EXAMPLES%%/tutorial/52_if_compare.pir
-%%PARROT_EXAMPLES%%/tutorial/53_loop.pir
-%%PARROT_EXAMPLES%%/tutorial/55_iterator.pir
-%%PARROT_EXAMPLES%%/tutorial/56_defined.pir
-%%PARROT_EXAMPLES%%/tutorial/57_exists.pir
-%%PARROT_EXAMPLES%%/tutorial/60_subroutines.pir
-%%PARROT_EXAMPLES%%/tutorial/61_namespaces.pir
-%%PARROT_EXAMPLES%%/tutorial/62_namespaces.pir
-%%PARROT_EXAMPLES%%/tutorial/70_class_object.pir
-%%PARROT_EXAMPLES%%/tutorial/80_closure.pir
-%%PARROT_EXAMPLES%%/tutorial/81_continuation.pir
-%%PARROT_EXAMPLES%%/tutorial/82_coroutine.pir
-%%PARROT_EXAMPLES%%/tutorial/83_external_libraries.pir
-%%PARROT_EXAMPLES%%/tutorial/90_writing_tests.pir
-src/nci.c
-src/null_config.c
-src/ops/core_ops_cgp.c
-src/ops/core_ops_switch.c
-src/parrot_config.c
-tools/install/smoke.pl
-@dirrm tools/install
-@dirrm tools
-@dirrm src/ops
-@dirrm src
-@dirrm %%PARROT_EXAMPLES%%/tutorial
-@dirrm %%PARROT_EXAMPLES%%/tge/branch/lib
-@dirrm %%PARROT_EXAMPLES%%/tge/branch
-@dirrm %%PARROT_EXAMPLES%%/tge
-@dirrm %%PARROT_EXAMPLES%%/subs
-@dirrm %%PARROT_EXAMPLES%%/streams
-@dirrm %%PARROT_EXAMPLES%%/shootout
-@dirrm %%PARROT_EXAMPLES%%/sdl/tetris
-@dirrm %%PARROT_EXAMPLES%%/sdl/minesweeper
-@dirrm %%PARROT_EXAMPLES%%/sdl
-@dirrm %%PARROT_EXAMPLES%%/pir
-@dirrm %%PARROT_EXAMPLES%%/pge/grammars
-@dirrm %%PARROT_EXAMPLES%%/pge/benchmarks/ambs1
-@dirrm %%PARROT_EXAMPLES%%/pge/benchmarks
-@dirrm %%PARROT_EXAMPLES%%/pge
-@dirrm %%PARROT_EXAMPLES%%/past
-@dirrm %%PARROT_EXAMPLES%%/pasm
-@dirrm %%PARROT_EXAMPLES%%/opengl
-@dirrm %%PARROT_EXAMPLES%%/nci
-@dirrm %%PARROT_EXAMPLES%%/namespace
-@dirrm %%PARROT_EXAMPLES%%/mops
-@dirrm %%PARROT_EXAMPLES%%/library
-@dirrm %%PARROT_EXAMPLES%%/japh
-@dirrm %%PARROT_EXAMPLES%%/io
-@dirrm %%PARROT_EXAMPLES%%/compilers
-@dirrm %%PARROT_EXAMPLES%%/c
-@dirrm %%PARROT_EXAMPLES%%/benchmarks
-@dirrm %%PARROT_EXAMPLES%%
-@dirrm %%PARROT_DOCS%%/stm
-@dirrm %%PARROT_DOCS%%/resources
-@dirrm %%PARROT_DOCS%%/req
-@dirrm %%PARROT_DOCS%%/project
+%%PARROT_DOCS%%/user/pir/exceptions.pod
+%%PARROT_DOCS%%/user/pir/intro.pod
+%%PARROT_DOCS%%/user/pir/objects.pod
+%%PARROT_DOCS%%/user/pir/pmcs.pod
+@dirrm %%PARROT_DOCS%%/user/pir
+@dirrm %%PARROT_DOCS%%/user
 @dirrm %%PARROT_DOCS%%/pmc
-@dirrm %%PARROT_DOCS%%/pdds/draft
-@dirrm %%PARROT_DOCS%%/pdds
-@dirrm %%PARROT_DOCS%%/pct
 @dirrm %%PARROT_DOCS%%/ops
-@dirrm %%PARROT_DOCS%%/imcc
-@dirrm %%PARROT_DOCS%%/dev
-@dirrm %%PARROT_DOCS%%/book/figs
-@dirrm %%PARROT_DOCS%%/book
-@dirrm %%PARROT_DOCS%%/art
 @dirrm %%PARROT_DOCS%%
+@dirrm %%DOCSDIR%%/%%PARROT_VER%%
 @dirrm %%DOCSDIR%%
-@dirrmtry runtime/parrot/library/Stream
-@dirrmtry runtime/parrot/library/Parrot
-@dirrmtry runtime/parrot/library/PGE
-@dirrmtry runtime/parrot/library/PCT
-@dirrmtry runtime/parrot/library/NCI
-@dirrmtry runtime/parrot/library/MIME
-@dirrmtry runtime/parrot/library/Math/Random
-@dirrmtry runtime/parrot/library/Math
-@dirrmtry runtime/parrot/library/Getopt
-@dirrmtry runtime/parrot/library/Data/Dumper
-@dirrmtry runtime/parrot/library/Data
-@dirrmtry runtime/parrot/library/CGI
-@dirrmtry runtime/parrot/library
-@dirrmtry runtime/parrot/include
-@dirrmtry runtime/parrot
-@dirrmtry runtime
-@dirrm lib/parrot/library/YAML/Parser
-@dirrm lib/parrot/library/YAML/Dumper
-@dirrm lib/parrot/library/YAML
-@dirrm lib/parrot/library/Test/Builder
-@dirrm lib/parrot/library/Test
-@dirrm lib/parrot/library/Tcl
-@dirrm lib/parrot/library/String
-@dirrm lib/parrot/library/Stream
-@dirrm lib/parrot/library/SDL
-@dirrm lib/parrot/library/Parrot
-@dirrm lib/parrot/library/PGE
-@dirrm lib/parrot/library/PCT
-@dirrm lib/parrot/library/NCI
-@dirrm lib/parrot/library/MIME
-@dirrm lib/parrot/library/Math/Random
-@dirrm lib/parrot/library/Math
-@dirrm lib/parrot/library/HTTP
-@dirrm lib/parrot/library/Getopt
-@dirrm lib/parrot/library/File/Spec
-@dirrm lib/parrot/library/File
-@dirrm lib/parrot/library/Digest
-@dirrm lib/parrot/library/Data/Dumper
-@dirrm lib/parrot/library/Data
-@dirrm lib/parrot/library/Config
-@dirrm lib/parrot/library/CGI
-@dirrm lib/parrot/library
-@dirrm lib/parrot/include
-@dirrm lib/parrot/dynext
+@dirrm lib/parrot/%%PARROT_VER%%/library/YAML/Parser
+@dirrm lib/parrot/%%PARROT_VER%%/library/YAML/Dumper
+@dirrm lib/parrot/%%PARROT_VER%%/library/YAML
+@dirrm lib/parrot/%%PARROT_VER%%/library/Test/Builder
+@dirrm lib/parrot/%%PARROT_VER%%/library/Test
+@dirrm lib/parrot/%%PARROT_VER%%/library/Tcl
+@dirrm lib/parrot/%%PARROT_VER%%/library/String
+@dirrm lib/parrot/%%PARROT_VER%%/library/Stream
+@dirrm lib/parrot/%%PARROT_VER%%/library/SDL
+@dirrm lib/parrot/%%PARROT_VER%%/library/Parrot
+@dirrm lib/parrot/%%PARROT_VER%%/library/PGE
+@dirrm lib/parrot/%%PARROT_VER%%/library/NCI
+@dirrm lib/parrot/%%PARROT_VER%%/library/Math/Random
+@dirrm lib/parrot/%%PARROT_VER%%/library/Math
+@dirrm lib/parrot/%%PARROT_VER%%/library/MIME
+@dirrm lib/parrot/%%PARROT_VER%%/library/HTTP
+@dirrm lib/parrot/%%PARROT_VER%%/library/Getopt
+@dirrm lib/parrot/%%PARROT_VER%%/library/Digest
+@dirrm lib/parrot/%%PARROT_VER%%/library/Data/Dumper
+@dirrm lib/parrot/%%PARROT_VER%%/library/Data
+@dirrm lib/parrot/%%PARROT_VER%%/library/Config
+@dirrm lib/parrot/%%PARROT_VER%%/library/CGI
+@dirrm lib/parrot/%%PARROT_VER%%/library
+@dirrm lib/parrot/%%PARROT_VER%%/languages/pge/PGE
+@dirrm lib/parrot/%%PARROT_VER%%/languages/pge
+@dirrm lib/parrot/%%PARROT_VER%%/languages
+@dirrm lib/parrot/%%PARROT_VER%%/include
+@dirrm lib/parrot/%%PARROT_VER%%/dynext
+@dirrm lib/parrot/%%PARROT_VER%%
 @dirrm lib/parrot
-@dirrm languages/squaak
-@dirrm languages/pynie
-@dirrm languages/punie
-@dirrm languages/pipp/src/common
-@dirrm languages/pipp/src
-@dirrm languages/pipp
-@dirrm languages/pheme
-@dirrm languages/perl6
-@dirrm languages/ook
-@dirrm languages/m4
-@dirrm languages/markdown
-@dirrm languages/lua
-@dirrm languages/lolcode
-@dirrm languages/lisp
-@dirrm languages/ecmascript
-@dirrm languages/forth
-@dirrm languages/dotnet
-@dirrm languages/cardinal
-@dirrm languages/bf
-@dirrm languages/befunge
-@dirrm languages/abc
-@dirrm languages/HQ9PLus
-@dirrm languages/PIR
-@dirrm languages/APL
-@dirrm languages
-@dirrm include/src
-@dirrm include/parrot/stm
-@dirrm include/parrot/oplib
-@dirrm include/parrot/atomic
+@dirrm include/parrot/%%PARROT_VER%%/parrot/oplib
+@dirrm include/parrot/%%PARROT_VER%%/parrot/atomic
+@dirrm include/parrot/%%PARROT_VER%%/parrot
+@dirrm include/parrot/%%PARROT_VER%%
 @dirrm include/parrot
-@dirrm config/gen/platform/win32
-@dirrm config/gen/platform/generic
-@dirrm config/gen/platform/darwin
-@dirrm config/gen/platform/ansi
-@dirrm config/gen/platform
-@dirrm config/gen/call_list
-@dirrm config/gen
-@dirrm config/auto/cpu/i386
-@dirrm config/auto/cpu
-@dirrm config/auto
-@dirrm config
-@dirrm compilers/tge/TGE
-@dirrm compilers/tge
-@dirrm compilers/nqp
-@dirrm compilers/json/JSON
-@dirrm compilers/json
-@dirrm compilers/imcc
-@dirrm compilers
