@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	parrot
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	lang
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/P/PA/PARTICLE
+#MASTER_SITES=	CPAN
+#MASTER_SITE_SUBDIR=	../../authors/id/A/AR/ARANDAL
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/${PORTVERSION}/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
@@ -26,24 +26,21 @@ USE_PERL5=	5.8.0+
 USE_GMAKE=	yes
 
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	reallyinstall
 
 CONFIGURE_SCRIPT=	Configure.pl
 CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
 		--ldflags="${LDFLAGS} -L/usr/lib -L${LOCALBASE}/lib" \
 		--icu-config=${LOCALBASE}/bin/icu-config \
-		--optimize --parrot_is_shared \
+		--optimize --parrot_is_shared --inline \
 		--lex=${LOCALBASE}/bin/flex \
 		--yacc=${LOCALBASE}/bin/bison \
 		--verbose \
 		--prefix=${PREFIX}
 
-PARROT_SHARE_DIR=	share/doc/${PORTNAME}
-PARROT_DOCS=		${PARROT_SHARE_DIR}/docs
-PARROT_EXAMPLES=	${PARROT_SHARE_DIR}/examples
-PLIST_SUB+=	SHLIB_VER="${PORTVERSION}" \
-		PARROT_DOCS="${PARROT_DOCS}" \
-		PARROT_EXAMPLES="${PARROT_EXAMPLES}"
+PARROT_SHARE_DIR=	share/doc/${PORTNAME}/${PORTVERSION}
+PARROT_DOCS=		${PARROT_SHARE_DIR}/pod
+PLIST_SUB+=	PARROT_VER="${PORTVERSION}" \
+		PARROT_DOCS="${PARROT_DOCS}"
 
 post-patch:
 	${PERL} -pi -e "s=libdir}, 'pkgconfig=prefix}, 'libdata/pkgconfig=" \
@@ -60,9 +57,8 @@ x-generate-plist:
 	| ${SED} -E \
 		's,.*share/nls/.+$$,,g \
 		;s,${PARROT_DOCS}(/.+)?$$,%%PARROT_DOCS%%\1,g \
-		;s,${PARROT_EXAMPLES}(/.+)?$$,%%PARROT_EXAMPLES%%\1,g \
 		;s,${PARROT_SHARE_DIR}(/.+)?$$,%%DOCSDIR%%\1,g \
-		;s,${PORTVERSION}(/.+)?$$,%%SHLIB_VER%%\1,g \
+		;s,${PORTVERSION}(/.+)?$$,%%PARROT_VER%%\1,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
 .include <bsd.port.pre.mk>
