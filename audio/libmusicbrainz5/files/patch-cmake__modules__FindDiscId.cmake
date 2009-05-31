@@ -1,0 +1,38 @@
+--- ./cmake/modules/FindDiscId.cmake.orig	2007-05-12 07:09:24.000000000 -0400
++++ ./cmake/modules/FindDiscId.cmake	2009-05-20 06:39:11.000000000 -0400
+@@ -1,28 +1,10 @@
+-INCLUDE(UsePkgConfig)
+-PKGCONFIG(libdiscid _DiscIdIncDir _DiscIdLinkDir _DiscIdLinkFlags _DiscIdCflags)
+-
+-FIND_PATH(DISCID_INCLUDE_DIR discid/discid.h
+-    ${_DiscIdIncDir}
+-    /usr/include
+-    /usr/local/include
+-)
++FIND_PATH(DISCID_INCLUDE_DIR NAMES discid/discid.h)
+ 
+-FIND_LIBRARY(DISCID_LIBRARIES discid
+-    ${_DiscIdLinkDir}
+-    /usr/lib
+-    /usr/local/lib
+-)
++FIND_LIBRARY(DISCID_LIBRARY NAMES discid)
+ 
+-IF (DISCID_INCLUDE_DIR AND DISCID_LIBRARIES)
+-    SET(DISCID_FOUND TRUE)
+-ENDIF (DISCID_INCLUDE_DIR AND DISCID_LIBRARIES)
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(DISCID DEFAULT_MSG DISCID_LIBRARY DISCID_INCLUDE_DIR)
+ 
+-IF (DISCID_FOUND)
+-    IF (NOT DiscId_FIND_QUIETLY)
+-	MESSAGE(STATUS "Found DiscId: ${DISCID_LIBRARIES}")
+-    ENDIF (NOT DiscId_FIND_QUIETLY)
+-ELSE (DISCID_FOUND)
+-    IF (DiscId_FIND_REQUIRED)
+-	MESSAGE(FATAL_ERROR "Could not find DiscId")
+-    ENDIF (DiscId_FIND_REQUIRED)
+-ENDIF (DISCID_FOUND)
++IF(DISCID_FOUND)
++  SET(DISCID_LIBRARIES ${DISCID_LIBRARY})
++ENDIF(DISCID_FOUND)
