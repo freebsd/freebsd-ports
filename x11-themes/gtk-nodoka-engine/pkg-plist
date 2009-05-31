@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+lib/gtk-2.0/2.10.0/engines/libnodoka.la
+lib/gtk-2.0/2.10.0/engines/libnodoka.so
+share/themes/Nodoka-Aqua/gtk-2.0/gtkrc
+share/themes/Nodoka-Gilouche/gtk-2.0/gtkrc
+share/themes/Nodoka-Looks/gtk-2.0/gtkrc
+share/themes/Nodoka-Midnight/gtk-2.0/gtkrc
+share/themes/Nodoka-Rounded/gtk-2.0/gtkrc
+share/themes/Nodoka-Silver/gtk-2.0/gtkrc
+share/themes/Nodoka-Squared/gtk-2.0/gtkrc
+share/themes/Nodoka/gtk-2.0/gtkrc
+@dirrm share/themes/Nodoka/gtk-2.0
+@dirrm share/themes/Nodoka-Squared/gtk-2.0
+@dirrm share/themes/Nodoka-Squared
+@dirrm share/themes/Nodoka-Silver/gtk-2.0
+@dirrm share/themes/Nodoka-Silver
+@dirrm share/themes/Nodoka-Rounded/gtk-2.0
+@dirrm share/themes/Nodoka-Rounded
+@dirrm share/themes/Nodoka-Midnight/gtk-2.0
+@dirrm share/themes/Nodoka-Midnight
+@dirrm share/themes/Nodoka-Looks/gtk-2.0
+@dirrm share/themes/Nodoka-Looks
+@dirrm share/themes/Nodoka-Gilouche/gtk-2.0
+@dirrm share/themes/Nodoka-Gilouche
+@dirrm share/themes/Nodoka-Aqua/gtk-2.0
+@dirrm share/themes/Nodoka-Aqua
+@dirrmtry share/themes/Nodoka

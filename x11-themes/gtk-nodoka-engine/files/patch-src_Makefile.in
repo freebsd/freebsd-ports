@@ -1,0 +1,36 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -3,14 +3,22 @@
+ NODOKA_DIR=$(DESTDIR)$(prefix)/share/themes/Nodoka
+ 
+ install: 
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka/gtk-2.0/gtkrc				$(NODOKA_DIR)/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Aqua/gtk-2.0/gtkrc			$(NODOKA_DIR)-Aqua/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Gilouche/gtk-2.0/gtkrc			$(NODOKA_DIR)-Gilouche/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Looks/gtk-2.0/gtkrc			$(NODOKA_DIR)-Looks/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Midnight/gtk-2.0/gtkrc			$(NODOKA_DIR)-Midnight/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Rounded/gtk-2.0/gtkrc			$(NODOKA_DIR)-Rounded/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Silver/gtk-2.0/gtkrc			$(NODOKA_DIR)-Silver/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Squared/gtk-2.0/gtkrc			$(NODOKA_DIR)-Squared/gtk-2.0/gtkrc
++	/usr/bin/install -d ${NODOKA_DIR}/gtk-2.0
++	/usr/bin/install -d ${NODOKA_DIR}-Aqua/gtk-2.0
++	/usr/bin/install -d ${NODOKA_DIR}-Gilouche/gtk-2.0
++	/usr/bin/install -d ${NODOKA_DIR}-Looks/gtk-2.0
++	/usr/bin/install -d ${NODOKA_DIR}-Midnight/gtk-2.0
++	/usr/bin/install -d ${NODOKA_DIR}-Rounded/gtk-2.0
++	/usr/bin/install -d ${NODOKA_DIR}-Silver/gtk-2.0
++	/usr/bin/install -d ${NODOKA_DIR}-Squared/gtk-2.0
++	/usr/bin/install -p -m 0644 GTKThemes/Nodoka/gtk-2.0/gtkrc				$(NODOKA_DIR)/gtk-2.0/gtkrc
++	/usr/bin/install -p -m 0644 GTKThemes/Nodoka-Aqua/gtk-2.0/gtkrc				$(NODOKA_DIR)-Aqua/gtk-2.0/gtkrc
++	/usr/bin/install -p -m 0644 GTKThemes/Nodoka-Gilouche/gtk-2.0/gtkrc			$(NODOKA_DIR)-Gilouche/gtk-2.0/gtkrc
++	/usr/bin/install -p -m 0644 GTKThemes/Nodoka-Looks/gtk-2.0/gtkrc			$(NODOKA_DIR)-Looks/gtk-2.0/gtkrc
++	/usr/bin/install -p -m 0644 GTKThemes/Nodoka-Midnight/gtk-2.0/gtkrc			$(NODOKA_DIR)-Midnight/gtk-2.0/gtkrc
++	/usr/bin/install -p -m 0644 GTKThemes/Nodoka-Rounded/gtk-2.0/gtkrc			$(NODOKA_DIR)-Rounded/gtk-2.0/gtkrc
++	/usr/bin/install -p -m 0644 GTKThemes/Nodoka-Silver/gtk-2.0/gtkrc			$(NODOKA_DIR)-Silver/gtk-2.0/gtkrc
++	/usr/bin/install -p -m 0644 GTKThemes/Nodoka-Squared/gtk-2.0/gtkrc			$(NODOKA_DIR)-Squared/gtk-2.0/gtkrc
+ 
+ uninstall: 
+ 	rm -rf $(NODOKA_DIR)

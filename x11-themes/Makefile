@@ -107,6 +107,7 @@
     SUBDIR += gtk-murrina-lightblue
     SUBDIR += gtk-murrine-engine
     SUBDIR += gtk-murrine-themes
+    SUBDIR += gtk-nodoka-engine
     SUBDIR += gtk-qn-x11-theme
     SUBDIR += gtk-qnxtheme
     SUBDIR += gtk-qt-engine
