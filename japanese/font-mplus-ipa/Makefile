@@ -1,21 +1,19 @@
-# New ports collection makefile for:	IPA TrueType fonts
-# Date created:		18 July 2004
-# Whom:			NAKATA, Maho <maho@FreeBSD.org>
+# New ports collection makefile for:	font-mplus-ipa fonts
+# Date created:		26 April 2009
+# Whom:			hrs
 #
 # $FreeBSD$
 #
 
-PORTNAME=	ipa-ttfonts
+PORTNAME=	font-mplus-ipa
 PORTVERSION=	1.0.20060520.p1
-PORTREVISION=	2
-PORTEPOCH=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
 DISTNAME=	mixfont-mplus-ipa-TrueType-20060520p1
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	IPA Japanese TrueType fonts with M-plus outline font
+COMMENT=	Mixed Japanese font with IPA, M-plus outline, and Bitstream Vera
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
@@ -38,28 +36,26 @@ do-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 	${CP} -R ${WRKSRC}/opfc-ModuleHP-1.1.1_withIPAFonts_and_Mplus/* \
 		${DATADIR}
-	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TrueType/
-	${LN} -s -f \
-		${DATADIR}/fonts/ipa*.ttf ${DATADIR}/fonts/M+*.ttf \
-		${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
-	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TrueType
-	${LN} -s -f \
-		${DATADIR}/fonts/ipa*.ttf ${DATADIR}/fonts/M+*.ttf \
-		${LOCALBASE}/${X_FONTSDIR}/TrueType/
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-ipattfonts.conf \
-		${FILESDIR}/62-fonts-ipattfonts.conf \
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
+	${LN} -s -f ${DATADIR}/fonts/M+*.ttf ${DATADIR}/fonts/ipagui.ttf \
+		${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
+	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TTF
+	${LN} -s -f ${DATADIR}/fonts/M+*.ttf ${DATADIR}/fonts/ipagui.ttf \
+			${LOCALBASE}/${X_FONTSDIR}/TTF/
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-mplus-ipa.conf \
+		${FILESDIR}/62-fonts-mplus-ipa.conf \
 		${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-ipattfonts.conf \
-		${PREFIX}/etc/fonts/conf.d/20-unhint-ipattfonts.conf
-	${LN} -s -f ../conf.avail/62-fonts-ipattfonts.conf \
-		${PREFIX}/etc/fonts/conf.d/62-fonts-ipattfonts.conf
+	${LN} -s -f ../conf.avail/20-unhint-mplus-ipa.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-mplus-ipa.conf
+	${LN} -s -f ../conf.avail/62-fonts-mplus-ipa.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-mplus-ipa.conf
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 post-install:
-	${LOCALBASE}/bin/fc-cache -f -v ${LOCALBASE}/${X_FONTSDIR}/TrueType
+	${LOCALBASE}/bin/fc-cache -s -f -v ${LOCALBASE}/${X_FONTSDIR}/TTF
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

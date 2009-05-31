@@ -68,38 +68,30 @@
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
-%%LOCAL_FONTSDIR%%/TrueType/ipag.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ipagp.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ipagui.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ipam.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ipamp.ttf
-%%LOCAL_FONTSDIR%%/TrueType/M+2VM+IPAG-circle.ttf
-%%LOCAL_FONTSDIR%%/TrueType/M+2P+IPAG.ttf
-%%LOCAL_FONTSDIR%%/TrueType/M+2P+IPAG-circle.ttf
-%%LOCAL_FONTSDIR%%/TrueType/M+1VM+IPAG-circle.ttf
-%%LOCAL_FONTSDIR%%/TrueType/M+1P+IPAG.ttf
-%%LOCAL_FONTSDIR%%/TrueType/M+1P+IPAG-circle.ttf
-@dirrmtry %%LOCAL_FONTSDIR%%/TrueType
+%%LOCAL_FONTSDIR%%/TTF/ipagui.ttf
+%%LOCAL_FONTSDIR%%/TTF/M+2VM+IPAG-circle.ttf
+%%LOCAL_FONTSDIR%%/TTF/M+2P+IPAG.ttf
+%%LOCAL_FONTSDIR%%/TTF/M+2P+IPAG-circle.ttf
+%%LOCAL_FONTSDIR%%/TTF/M+1VM+IPAG-circle.ttf
+%%LOCAL_FONTSDIR%%/TTF/M+1P+IPAG.ttf
+%%LOCAL_FONTSDIR%%/TTF/M+1P+IPAG-circle.ttf
+@dirrmtry %%LOCAL_FONTSDIR%%/TTF
 @dirrmtry %%LOCAL_FONTSDIR%%
-etc/fonts/conf.avail/20-unhint-ipattfonts.conf
-etc/fonts/conf.avail/62-fonts-ipattfonts.conf
-@exec ln -s -f ../conf.avail/20-unhint-ipattfonts.conf %D/etc/fonts/conf.d/20-unhint-ipattfonts.conf
-@exec ln -s -f ../conf.avail/62-fonts-ipattfonts.conf %D/etc/fonts/conf.d/62-fonts-ipattfonts.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-ipattfonts.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-ipattfonts.conf
-%%X_FONTSDIR%%/TrueType/ipag.ttf
-%%X_FONTSDIR%%/TrueType/ipagp.ttf
-%%X_FONTSDIR%%/TrueType/ipagui.ttf
-%%X_FONTSDIR%%/TrueType/ipam.ttf
-%%X_FONTSDIR%%/TrueType/ipamp.ttf
-%%X_FONTSDIR%%/TrueType/M+2VM+IPAG-circle.ttf
-%%X_FONTSDIR%%/TrueType/M+2P+IPAG.ttf
-%%X_FONTSDIR%%/TrueType/M+2P+IPAG-circle.ttf
-%%X_FONTSDIR%%/TrueType/M+1VM+IPAG-circle.ttf
-%%X_FONTSDIR%%/TrueType/M+1P+IPAG.ttf
-%%X_FONTSDIR%%/TrueType/M+1P+IPAG-circle.ttf
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
-@unexec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
-@unexec rm -f %D/%%X_FONTSDIR%%/TrueType/fonts.cache-1
-@dirrmtry %%X_FONTSDIR%%/TrueType
-@unexec if [ -d %D/%%X_FONTSDIR%%/TrueType ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true; fi
+etc/fonts/conf.avail/20-unhint-mplus-ipa.conf
+etc/fonts/conf.avail/62-fonts-mplus-ipa.conf
+@exec ln -s -f ../conf.avail/20-unhint-mplus-ipa.conf %D/etc/fonts/conf.d/20-unhint-mplus-ipa.conf
+@exec ln -s -f ../conf.avail/62-fonts-mplus-ipa.conf %D/etc/fonts/conf.d/62-fonts-mplus-ipa.conf
+@unexec rm -f %D/etc/fonts/conf.d/20-unhint-mplus-ipa.conf
+@unexec rm -f %D/etc/fonts/conf.d/62-fonts-mplus-ipa.conf
+%%X_FONTSDIR%%/TTF/ipagui.ttf
+%%X_FONTSDIR%%/TTF/M+2VM+IPAG-circle.ttf
+%%X_FONTSDIR%%/TTF/M+2P+IPAG.ttf
+%%X_FONTSDIR%%/TTF/M+2P+IPAG-circle.ttf
+%%X_FONTSDIR%%/TTF/M+1VM+IPAG-circle.ttf
+%%X_FONTSDIR%%/TTF/M+1P+IPAG.ttf
+%%X_FONTSDIR%%/TTF/M+1P+IPAG-circle.ttf
+@exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
+@unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
+@unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
+@dirrmtry %%X_FONTSDIR%%/TTF
+@unexec if [ -d %D/%%X_FONTSDIR%%/TTF ]; then %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true; fi

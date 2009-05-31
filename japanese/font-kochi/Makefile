@@ -5,22 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kochi-ttfonts
+PORTNAME=	font-kochi
 PORTVERSION=	20030809
-PORTREVISION=	4
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://downloads.sourceforge.jp/efont/5411/ \
 		${MASTER_SITE_PORTS_JP}
-DISTFILES=	kochi-substitute-${PORTVERSION}.tar.bz2
+DISTNAME=	kochi-substitute-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Free Japanese TrueType fonts named 'Kochi'
+COMMENT=	Kochi Japanese TrueType font
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
@@ -37,28 +35,27 @@ PORTDOCS=	README.ja COPYING docs
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${DATADIR}
-	${MKDIR} ${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
+	${MKDIR} ${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
 	${LN} -s -f \
-		${DATADIR}/*.ttf ${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
-	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TrueType
+		${DATADIR}/*.ttf ${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
+	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TTF
 	${LN} -s -f \
-		${DATADIR}/*.ttf ${LOCALBASE}/${X_FONTSDIR}/TrueType/
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-kochittfonts.conf \
-		${FILESDIR}/62-fonts-kochittfonts.conf \
+		${DATADIR}/*.ttf ${LOCALBASE}/${X_FONTSDIR}/TTF/
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-kochi.conf \
+		${FILESDIR}/62-fonts-kochi.conf \
 		${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-kochittfonts.conf \
-		${PREFIX}/etc/fonts/conf.d/20-unhint-kochittfonts.conf
-	${LN} -s -f ../conf.avail/62-fonts-kochittfonts.conf \
-		${PREFIX}/etc/fonts/conf.d/62-fonts-kochittfonts.conf
+	${LN} -s -f ../conf.avail/20-unhint-kochi.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-kochi.conf
+	${LN} -s -f ../conf.avail/62-fonts-kochi.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-kochi.conf
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${CP} -R ${PORTDOCS} ${DOCSDIR}
 .endif
 
 post-install:
-	${LOCALBASE}/bin/fc-cache -f -v ${LOCALBASE}/${X_FONTSDIR}/TrueType
+	${LOCALBASE}/bin/fc-cache -s -f -v ${LOCALBASE}/${X_FONTSDIR}/TTF
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

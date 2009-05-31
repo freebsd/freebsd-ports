@@ -2,20 +2,20 @@
 %%DATADIR%%/kochi-mincho-subst.ttf
 %%DATADIR%%/kochi-gothic-subst.ttf
 @dirrm %%DATADIR%%
-%%LOCAL_FONTSDIR%%/TrueType/kochi-mincho-subst.ttf
-%%LOCAL_FONTSDIR%%/TrueType/kochi-gothic-subst.ttf
-@dirrmtry %%LOCAL_FONTSDIR%%/TrueType
+%%LOCAL_FONTSDIR%%/TTF/kochi-mincho-subst.ttf
+%%LOCAL_FONTSDIR%%/TTF/kochi-gothic-subst.ttf
+@dirrmtry %%LOCAL_FONTSDIR%%/TTF
 @dirrmtry %%LOCAL_FONTSDIR%%
-etc/fonts/conf.avail/20-unhint-kochittfonts.conf
-etc/fonts/conf.avail/62-fonts-kochittfonts.conf
-@exec ln -s -f ../conf.avail/20-unhint-kochittfonts.conf %D/etc/fonts/conf.d/20-unhint-kochittfonts.conf
-@exec ln -s -f ../conf.avail/62-fonts-kochittfonts.conf %D/etc/fonts/conf.d/62-fonts-kochittfonts.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-kochittfonts.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-kochittfonts.conf
-%%X_FONTSDIR%%/TrueType/kochi-mincho-subst.ttf
-%%X_FONTSDIR%%/TrueType/kochi-gothic-subst.ttf
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
-@unexec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
-@unexec rm -f %D/%%X_FONTSDIR%%/TrueType/fonts.cache-1
-@dirrmtry %%X_FONTSDIR%%/TrueType
-@unexec if [ -d %D/%%X_FONTSDIR%%/TrueType ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true; fi
+etc/fonts/conf.avail/20-unhint-kochi.conf
+etc/fonts/conf.avail/62-fonts-kochi.conf
+@exec ln -s -f ../conf.avail/20-unhint-kochi.conf %D/etc/fonts/conf.d/20-unhint-kochi.conf
+@exec ln -s -f ../conf.avail/62-fonts-kochi.conf %D/etc/fonts/conf.d/62-fonts-kochi.conf
+@unexec rm -f %D/etc/fonts/conf.d/20-unhint-kochi.conf
+@unexec rm -f %D/etc/fonts/conf.d/62-fonts-kochi.conf
+%%X_FONTSDIR%%/TTF/kochi-mincho-subst.ttf
+%%X_FONTSDIR%%/TTF/kochi-gothic-subst.ttf
+@exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
+@unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
+@unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
+@dirrmtry %%X_FONTSDIR%%/TTF
+@unexec if [ -d %D/%%X_FONTSDIR%%/TTF ]; then %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true; fi

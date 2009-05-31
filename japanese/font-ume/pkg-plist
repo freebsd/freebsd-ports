@@ -12,40 +12,40 @@
 %%DATADIR%%/ume-ugo4.ttf
 %%DATADIR%%/ume-ugo5.ttf
 @dirrm %%DATADIR%%
-%%LOCAL_FONTSDIR%%/TrueType/ume-pgc4.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-pgc5.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-pgo4.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-pgo5.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-pmo3.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-tgc4.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-tgc5.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-tgo4.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-tgo5.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-tmo3.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-ugo4.ttf
-%%LOCAL_FONTSDIR%%/TrueType/ume-ugo5.ttf
-@dirrmtry %%LOCAL_FONTSDIR%%/TrueType
+%%LOCAL_FONTSDIR%%/TTF/ume-pgc4.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-pgc5.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-pgo4.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-pgo5.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-pmo3.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-tgc4.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-tgc5.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-tgo4.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-tgo5.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-tmo3.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-ugo4.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-ugo5.ttf
+@dirrmtry %%LOCAL_FONTSDIR%%/TTF
 @dirrmtry %%LOCAL_FONTSDIR%%
-etc/fonts/conf.avail/20-unhint-umefont.conf
-etc/fonts/conf.avail/62-fonts-umefont.conf
-@exec ln -s -f ../conf.avail/20-unhint-umefont.conf %D/etc/fonts/conf.d/20-unhint-umefont.conf
-@exec ln -s -f ../conf.avail/62-fonts-umefont.conf %D/etc/fonts/conf.d/62-fonts-umefont.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-umefont.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-umefont.conf
-%%X_FONTSDIR%%/TrueType/ume-pgc4.ttf
-%%X_FONTSDIR%%/TrueType/ume-pgc5.ttf
-%%X_FONTSDIR%%/TrueType/ume-pgo4.ttf
-%%X_FONTSDIR%%/TrueType/ume-pgo5.ttf
-%%X_FONTSDIR%%/TrueType/ume-pmo3.ttf
-%%X_FONTSDIR%%/TrueType/ume-tgc4.ttf
-%%X_FONTSDIR%%/TrueType/ume-tgc5.ttf
-%%X_FONTSDIR%%/TrueType/ume-tgo4.ttf
-%%X_FONTSDIR%%/TrueType/ume-tgo5.ttf
-%%X_FONTSDIR%%/TrueType/ume-tmo3.ttf
-%%X_FONTSDIR%%/TrueType/ume-ugo4.ttf
-%%X_FONTSDIR%%/TrueType/ume-ugo5.ttf
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
-@unexec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
-@unexec rm -f %D/%%X_FONTSDIR%%/TrueType/fonts.cache-1
-@dirrmtry %%X_FONTSDIR%%/TrueType
-@unexec if [ -d %D/%%X_FONTSDIR%%/TrueType ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true; fi
+etc/fonts/conf.avail/20-unhint-ume.conf
+etc/fonts/conf.avail/62-fonts-ume.conf
+@exec ln -s -f ../conf.avail/20-unhint-ume.conf %D/etc/fonts/conf.d/20-unhint-ume.conf
+@exec ln -s -f ../conf.avail/62-fonts-ume.conf %D/etc/fonts/conf.d/62-fonts-ume.conf
+@unexec rm -f %D/etc/fonts/conf.d/20-unhint-ume.conf
+@unexec rm -f %D/etc/fonts/conf.d/62-fonts-ume.conf
+%%X_FONTSDIR%%/TTF/ume-pgc4.ttf
+%%X_FONTSDIR%%/TTF/ume-pgc5.ttf
+%%X_FONTSDIR%%/TTF/ume-pgo4.ttf
+%%X_FONTSDIR%%/TTF/ume-pgo5.ttf
+%%X_FONTSDIR%%/TTF/ume-pmo3.ttf
+%%X_FONTSDIR%%/TTF/ume-tgc4.ttf
+%%X_FONTSDIR%%/TTF/ume-tgc5.ttf
+%%X_FONTSDIR%%/TTF/ume-tgo4.ttf
+%%X_FONTSDIR%%/TTF/ume-tgo5.ttf
+%%X_FONTSDIR%%/TTF/ume-tmo3.ttf
+%%X_FONTSDIR%%/TTF/ume-ugo4.ttf
+%%X_FONTSDIR%%/TTF/ume-ugo5.ttf
+@exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
+@unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
+@unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
+@dirrmtry %%X_FONTSDIR%%/TTF
+@unexec if [ -d %D/%%X_FONTSDIR%%/TTF ]; then %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true; fi

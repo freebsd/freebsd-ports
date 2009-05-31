@@ -1,25 +1,21 @@
-# New ports collection makefile for:	IPA TrueType fonts
-# Date created:		18 July 2004
-# Whom:			NAKATA, Maho <maho@FreeBSD.org>
-#
+# New ports collection makefile for:	font-ipa
+# Date created:		26 April 2009
+# Whom:			hrs
 # $FreeBSD$
 #
 
-PORTNAME=	ipa-ttfonts
-PORTVERSION=	1.0.20060520.p1
-PORTREVISION=	2
-PORTEPOCH=	2
+PORTNAME=	font-ipa
+PORTVERSION=	00301
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	hrs
-DISTNAME=	mixfont-mplus-ipa-TrueType-20060520p1
+MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/
+DISTNAME=	IPAfont${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPA Japanese TrueType fonts with M-plus outline font
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_BZIP2=	yes
+USE_ZIP=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
@@ -27,39 +23,37 @@ SUB_FILES=	pkg-install
 SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
-PORTDOCS=	Bitstream-COPYRIGHT.txt Mplus-LICENSE_E.txt \
-		Mplus-LICENSE_J.txt README.txt
+PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt \
+		Readme${PORTVERSION}.txt
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
-	${CP} -R ${WRKSRC}/opfc-ModuleHP-1.1.1_withIPAFonts_and_Mplus/* \
-		${DATADIR}
-	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TrueType/
+	${INSTALL_DATA} ${WRKSRC}/*.otf ${DATADIR}
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/OTF
 	${LN} -s -f \
-		${DATADIR}/fonts/ipa*.ttf ${DATADIR}/fonts/M+*.ttf \
-		${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
-	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TrueType
+		${DATADIR}/ipa*.otf \
+		${LOCALBASE}/${LOCAL_FONTSDIR}/OTF/
+	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/OTF
 	${LN} -s -f \
-		${DATADIR}/fonts/ipa*.ttf ${DATADIR}/fonts/M+*.ttf \
-		${LOCALBASE}/${X_FONTSDIR}/TrueType/
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-ipattfonts.conf \
-		${FILESDIR}/62-fonts-ipattfonts.conf \
+		${DATADIR}/ipa*.otf \
+		${LOCALBASE}/${X_FONTSDIR}/OTF/
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-ipa.conf \
+		${FILESDIR}/62-fonts-ipa.conf \
 		${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-ipattfonts.conf \
-		${PREFIX}/etc/fonts/conf.d/20-unhint-ipattfonts.conf
-	${LN} -s -f ../conf.avail/62-fonts-ipattfonts.conf \
-		${PREFIX}/etc/fonts/conf.d/62-fonts-ipattfonts.conf
+	${LN} -s -f ../conf.avail/20-unhint-ipa.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-ipa.conf
+	${LN} -s -f ../conf.avail/62-fonts-ipa.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-ipa.conf
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 post-install:
-	${LOCALBASE}/bin/fc-cache -f -v ${LOCALBASE}/${X_FONTSDIR}/TrueType
+	${LOCALBASE}/bin/fc-cache -f -v ${LOCALBASE}/${X_FONTSDIR}/OTF
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

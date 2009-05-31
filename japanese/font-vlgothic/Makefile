@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vlgothic
-PORTVERSION=	20090204
+PORTNAME=	font-vlgothic
+PORTVERSION=	20090422
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SFJP
-MASTER_SITE_SUBDIR=	vlgothic/37455
+MASTER_SITE_SUBDIR=	vlgothic/38942
 DISTNAME=	VLGothic-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Free Japanese TrueType fonts named 'VLGothic'
+COMMENT=	VLGothic Japanese TrueType fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
@@ -34,14 +34,13 @@ X_FONTSDIR=	lib/X11/fonts
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${DATADIR}
-	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TrueType/
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
 	${LN} -s -f ${DATADIR}/*.ttf \
-		${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
-	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TrueType
+		${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
+	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TTF
 	${LN} -s -f ${DATADIR}/*.ttf \
-		${LOCALBASE}/${X_FONTSDIR}/TrueType/
+		${LOCALBASE}/${X_FONTSDIR}/TTF/
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-vlgothic.conf \
 		${FILESDIR}/62-fonts-vlgothic.conf \
 		${PREFIX}/etc/fonts/conf.avail
@@ -55,7 +54,7 @@ do-install:
 .endif
 
 post-install:
-	${LOCALBASE}/bin/fc-cache -f -v ${LOCALBASE}/${X_FONTSDIR}/TrueType
+	${LOCALBASE}/bin/fc-cache -s -f -v ${LOCALBASE}/${X_FONTSDIR}/TTF
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
