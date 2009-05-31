@@ -211,6 +211,7 @@
     SUBDIR += filelight
     SUBDIR += fileprune
     SUBDIR += fileschanged
+    SUBDIR += filetype
     SUBDIR += finfo
     SUBDIR += fio
     SUBDIR += flasher

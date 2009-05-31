@@ -1,0 +1,27 @@
+--- Makefile.orig	2004-04-06 14:56:41.000000000 +0300
++++ Makefile	2009-05-31 13:52:14.000000000 +0300
+@@ -4,7 +4,7 @@
+ #CC=ccmalloc gcc
+ #CFLAGS=-Wall -g
+ #CFLAGS=-Wall -ggdb
+-CFLAGS=-Wall -Werror -g
++CFLAGS=-Wall -g
+ DEFINES=
+ OBJS=pldstr.o logger.o libfiletype.o
+ 
+@@ -29,15 +29,6 @@
+ clean:	
+ 	rm *.o filetype-compile filetype
+ 
+-install:	filetype-compile filetype	
+-	strip filetype-compile
+-	strip filetype
+-	./filetype-compile filetype.list filetype.spec
+-	cp -v filetype filetype-compile /usr/local/bin
+-	cp -v filetype.spec /etc
+-	cp -v filetype.1 /usr/local/man/man1
+-	cp -v filetype-compile.1 /usr/local/man/man1
+-
+ validate: filetype filetype-compile
+ 	./filetype-compile filetype.list filetype.spec
+ 	cp -v filetype.spec validate
