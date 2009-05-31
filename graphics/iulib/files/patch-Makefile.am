@@ -1,0 +1,48 @@
+--- ./Makefile.am.orig	2008-10-16 03:50:34.000000000 +0900
++++ ./Makefile.am	2009-05-22 09:19:51.000000000 +0900
+@@ -3,9 +3,9 @@
+ includedir = ${prefix}/include/iulib
+ colibdir = ${prefix}/include/colib
+ 
+-lib_LIBRARIES = libiulib.a
++lib_LTLIBRARIES = libiulib.la
+ 
+-libiulib_a_SOURCES  = \
++libiulib_la_SOURCES  = \
+ $(srcdir)/imgio/autoinvert.cc  $(srcdir)/imgio/imgio.cc  $(srcdir)/imgio/io_jpeg.cc  $(srcdir)/imgio/io_pbm.cc  $(srcdir)/imgio/io_png.cc \
+ $(srcdir)/imglib/imgbrushfire.cc  $(srcdir)/imglib/imgedges.cc  $(srcdir)/imglib/imgfilters.cc  $(srcdir)/imglib/imggauss.cc  $(srcdir)/imglib/imglabels.cc  $(srcdir)/imglib/imgmap.cc  $(srcdir)/imglib/imgmisc.cc  $(srcdir)/imglib/imgmorph.cc  $(srcdir)/imglib/imgops.cc  $(srcdir)/imglib/imgrescale.cc  $(srcdir)/imglib/imgthin.cc  $(srcdir)/imglib/imgtrace.cc  $(srcdir)/imglib/imggraymorph.cc \
+ $(srcdir)/imgbits/imgbits.cc $(srcdir)/imgbits/imgbsmp.cc $(srcdir)/imgbits/imgbthin.cc $(srcdir)/imgbits/imgrle.cc $(srcdir)/imgbits/imgblit.cc $(srcdir)/imgbits/imgblit_c.cc
+@@ -21,28 +21,16 @@
+ # conditionals
+ 
+ if have_sdl
+-    libiulib_a_SOURCES += $(srcdir)/utils/dgraphics.cc
++    libiulib_la_SOURCES += $(srcdir)/utils/dgraphics.cc
+ else
+-    libiulib_a_SOURCES += $(srcdir)/utils/dgraphics_nosdl.cc
++    libiulib_la_SOURCES += $(srcdir)/utils/dgraphics_nosdl.cc
+ endif
+ 
+ if have_vidio
+-    libiulib_a_SOURCES += $(srcdir)/vidio/vidio.cc
++    libiulib_la_SOURCES += $(srcdir)/vidio/vidio.cc
+     include_HEADERS += $(srcdir)/vidio/vidio.h
+ endif
+ 
+ if have_v4l2
+-    libiulib_a_SOURCES += $(srcdir)/vidio/v4l2cap.cc
++    libiulib_la_SOURCES += $(srcdir)/vidio/v4l2cap.cc
+ endif
+-
+-# make installation of colib a separate target
+-
+-install-colib:
+-	install -d $(colibdir)
+-	install $(colib_HEADERS) $(colibdir)
+-
+-install: all install-colib
+-	install -d $(includedir)
+-	install -d $(libdir)
+-	install $(include_HEADERS) $(includedir)
+-	install $(lib_LIBRARIES) $(libdir)
+\ No newline at end of file
