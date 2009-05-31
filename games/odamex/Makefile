@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	odamex
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTNAME=	Odamex-${PORTVERSION}-src
+DISTNAME=	odamex-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joshua_rickmar@eumx.net
 COMMENT=	The Standard in Online Multiplayer Doom
 
 USE_BZIP2=	yes
@@ -33,7 +32,10 @@ PLIST_SUB+=	LAUNCHER="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DMDIR%%|${DMDIR}|; \
-		s|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/client/src/d_main.cpp
+		s|%%DATADIR%%|${DATADIR}|' \
+		${WRKSRC}/client/src/d_main.cpp \
+		${WRKSRC}/server/src/d_main.cpp
+
 .if defined(WITH_LAUNCHER)
 	@${REINPLACE_CMD} -e 's|\./odamex|odamex|' \
 		${WRKSRC}/odalaunch/src/misc.cpp
