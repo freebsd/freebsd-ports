@@ -4,7 +4,7 @@ unicodeMap	Big5		%%DATADIR%%/chinese-traditional/Big5.unicodeMap
 unicodeMap	Big5ascii	%%DATADIR%%/chinese-traditional/Big5ascii.unicodeMap
 cMapDir		Adobe-CNS1	%%ADOBECMAPDIR%%
 toUnicodeDir			%%ADOBECMAPDIR%%
-displayCIDFontTT	Adobe-CNS1	%%FONTSDIR%%/bkai00mp.ttf
+displayCIDFontTT	Adobe-CNS1	%%FONTSDIR%%/STHeiti-Regular
 #----- end Chinese Traditional support package
 #----- begin Chinese Simplified support package (2004-jul-27)
 cidToUnicode	Adobe-GB1	%%DATADIR%%/chinese-simplified/Adobe-GB1.cidToUnicode
@@ -13,5 +13,5 @@ unicodeMap	EUC-CN		%%DATADIR%%/chinese-simplified/EUC-CN.unicodeMap
 unicodeMap	GBK		%%DATADIR%%/chinese-simplified/GBK.unicodeMap
 cMapDir		Adobe-GB1	%%ADOBECMAPDIR%%
 toUnicodeDir			%%ADOBECMAPDIR%%
-displayCIDFontTT	Adobe-GB1	%%FONTSDIR%%/gkai00mp.ttf
+displayCIDFontTT	Adobe-GB1	%%FONTSDIR%%/STSong-Light
 #----- end Chinese Simplified support package

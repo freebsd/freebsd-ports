@@ -7,7 +7,7 @@
 
 PORTNAME=	cups-pstoraster
 PORTVERSION=	8.15.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	ghostscript/${PORTVERSION}
@@ -20,7 +20,7 @@ COMMENT=	Postscript interpreter for CUPS printing to non-PS printers
 LIB_DEPENDS=	cupsimage.2:${PORTSDIR}/print/cups-image
 
 .if defined(WITH_CJK)
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/ipag.ttf:${PORTSDIR}/japanese/ipa-ttfonts \
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/japanese/font-std \
 		${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-lib_cidfmap
 .endif

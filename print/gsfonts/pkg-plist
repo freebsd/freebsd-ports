@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%FONTSDIR%%/COPYING
 %%FONTSDIR%%/Fontmap
 %%FONTSDIR%%/a010013l.afm
@@ -152,15 +153,10 @@
 %%FONTSDIR%%/z003034l.afm
 %%FONTSDIR%%/z003034l.pfb
 %%FONTSDIR%%/z003034l.pfm
-%%FONTSDIR%%/Ryumin-Light.ttf
-%%FONTSDIR%%/GothicBBB-Medium.ttf
-%%FONTSDIR%%/STHeiti-Regular.ttf
-%%FONTSDIR%%/STSong-Light.ttf
-%%FONTSDIR%%/MSung-Light.ttf
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.tweaks
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%FONTSDIR%%/Ryumin-Light
+%%FONTSDIR%%/GothicBBB-Medium
+%%FONTSDIR%%/STHeiti-Regular
+%%FONTSDIR%%/STSong-Light
+%%FONTSDIR%%/MSung-Light
 @dirrm %%FONTSDIR%%
 @dirrmtry share/ghostscript

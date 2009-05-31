@@ -1,11 +1,11 @@
---- Resource/Init/cidfmap.orig	2005-12-29 04:56:24.000000000 +0900
-+++ Resource/Init/cidfmap	2008-03-04 07:04:11.000000000 +0900
-@@ -26,3 +26,58 @@
+--- Resource/Init/cidfmap.orig	2008-08-08 13:22:38.000000000 +0900
++++ Resource/Init/cidfmap	2009-05-15 03:26:04.000000000 +0900
+@@ -26,3 +26,59 @@
  %   /ShinGo-Bold   /HeiseiKakuGo-W5 ;
  %   /Ryumin-Medium << /FileType /TrueType /Path (H:/AuxFiles/Fonts/BATANG.TTC) /SubfontID 3 /CSI [(Japan1) 2] >> ;
  %
-+/Ryumin-Light << /FileType /TrueType /Path (Ryumin-Light.ttf) /SubfontID 0 /CSI [(Japan1) 3] >> ;
-+/GothicBBB-Medium << /FileType /TrueType /Path (GothicBBB-Medium.ttf) /SubfontID 0 /CSI [(Japan1) 3] >> ;
++/Ryumin-Light << /FileType /TrueType /Path (Ryumin-Light) /SubfontID 0 /CSI [(Japan1) 3] >> ;
++/GothicBBB-Medium << /FileType /TrueType /Path (GothicBBB-Medium) /SubfontID 0 /CSI [(Japan1) 3] >> ;
 +
 +/Ryumin-Medium		/Ryumin-Light ;
 +/Ryumin-Regular		/Ryumin-Light ;
@@ -56,6 +56,7 @@
 +/HYSMyeongJo-Medium	/Munhwa-Regular ;
 +/HYRGoThic-Medium	/MunhwaGothic-Bold ;
 +
-+/STHeiti-Regular << /FileType /TrueType /Path (STHeiti-Regular.ttf) /SubfontID 0 /CSI [(CNS1) 5] >> ;
-+/STSong-Light << /FileType /TrueType /Path (STSong-Light.ttf) /SubfontID 0 /CSI [(GB1) 5] >> ;
-+/MSung-Light << /FileType /TrueType /Path (MSung-Light.ttf) /SubfontID 0 /CSI [(GB1) 5] >> ;
++/STHeiti-Regular << /FileType /TrueType /Path (STHeiti-Regular) /SubfontID 0 /CSI [(CNS1) 5] >> ;
++/STSong-Light << /FileType /TrueType /Path (STSong-Light) /SubfontID 0 /CSI [(GB1) 5] >> ;
++/MSung-Light << /FileType /TrueType /Path (MSung-Light) /SubfontID 0 /CSI [(CNS1) 5] >> ;
++/MHei-Medium << /FileType /TrueType /Path (MHei-Medium) /SubfontID 0 /CSI [(GB1) 5] >> ;

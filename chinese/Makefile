@@ -38,6 +38,7 @@
     SUBDIR += fcitx
     SUBDIR += firebird
     SUBDIR += fireflyttf
+    SUBDIR += font-std
     SUBDIR += fortunetw
     SUBDIR += fqterm
     SUBDIR += gb2jis
