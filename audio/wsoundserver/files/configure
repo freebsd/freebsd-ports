@@ -9,9 +9,9 @@ DEVICE="/dev/dsp"
 
 (echo "{";\
 echo "  SoundPath = (\"~/GNUstep/Library/WindowMaker/Sounds\",";\
-echo "              \"/usr/X11R6/share/WindowMaker/Sounds\");";\
+echo "              \"${PREFIX}/share/WindowMaker/Sounds\");";\
 echo "  SoundSetsPath = (\"~/GNUstep/Library/WindowMaker/SoundSets\",";\
-echo "              \"/usr/X11R6/share/WindowMaker/SoundSets\");";\
+echo "              \"${PREFIX}/share/WindowMaker/SoundSets\");";\
 echo "  Device = $DEVICE;";\
 echo "  AppExit = appexit.wav;";\
 echo "  AppStart = appstart.wav;";\
