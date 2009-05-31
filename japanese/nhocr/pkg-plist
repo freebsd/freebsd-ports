@@ -1,0 +1,11 @@
+bin/nhocr
+%%DATADIR%%/PLM.dic
+%%DATADIR%%/cctable.utf-8
+include/nhocr.h
+include/ocrbase.h
+include/codelist.h
+lib/libnhocr.a
+share/ocropus/scripts/rec-nhocr.lua
+@dirrm %%DATADIR%%
+@dirrmtry share/ocropus/scripts
+@dirrmtry share/ocropus
