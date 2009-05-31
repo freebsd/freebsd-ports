@@ -19,7 +19,8 @@ COMMENT=	M+ Bitmap and Outline Fonts
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
