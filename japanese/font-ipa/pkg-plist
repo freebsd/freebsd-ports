@@ -12,7 +12,7 @@
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-ipa.conf
 etc/fonts/conf.avail/62-fonts-ipa.conf
-@exec ln -s -f ../conf.avail/20-unhint-ipa.conf %D/etc/fonts/conf.d/20-unhint-ipat.conf
+@exec ln -s -f ../conf.avail/20-unhint-ipa.conf %D/etc/fonts/conf.d/20-unhint-ipa.conf
 @exec ln -s -f ../conf.avail/62-fonts-ipa.conf %D/etc/fonts/conf.d/62-fonts-ipa.conf
 @unexec rm -f %D/etc/fonts/conf.d/20-unhint-ipa.conf
 @unexec rm -f %D/etc/fonts/conf.d/62-fonts-ipa.conf
