@@ -11,7 +11,7 @@ MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/
 DISTNAME=	IPAfont${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	IPA Japanese TrueType fonts with M-plus outline font
+COMMENT=	IPA Japanese fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
