@@ -7,6 +7,7 @@
 
 PORTNAME=	avant-window-navigator
 PORTVERSION=	0.3.2.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://launchpadlibrarian.net/26374006/ \
 		http://mirror.amdmi3.ru/
@@ -68,5 +69,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!/usr/bin/env python|' \
 		${WRKSRC}/awn-manager/awnManager.py.in \
 		${WRKSRC}/awn-manager/awnManager.py
+	@${REINPLACE_CMD} -e '1 s|bash|sh|' \
+		${WRKSRC}/awn-manager/awn-launcher-editor.in
 
 .include <bsd.port.post.mk>
