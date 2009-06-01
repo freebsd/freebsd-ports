@@ -44,6 +44,8 @@ ADDITIONAL_CPPFLAGS=	-D__FREEBSD__
 ADDITIONAL_INCLUDE_DIRS=	-I${WRKSRC}/Kernel -I${WRKSRC}
 ADDITIONAL_LIB_DIRS=	-L${WRKSRC}/Kernel/AdunKernel/AdunKernel.framework -L${LOCALBASE}/MolTalk/MolTalk.framework
 ADDITIONAL_LDFLAGS=	-rpath-link=${WRKSRC}/Kernel/AdunKernel/AdunKernel.framework:${LOCALBASE}/MolTalk/MolTalk.framework
+MAKE_ENV+=	GSL_LIB_DIR=${LOCALBASE}/lib
+MAKE_ENV+=	GSL_INCLUDE_DIR=${LOCALBASE}/include
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DOMAIN|#GNUSTEP_INSTALLATION_DOMAIN|' \
