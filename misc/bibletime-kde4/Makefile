@@ -6,29 +6,33 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.7
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	tabthorpe@FreeBSD.org
-COMMENT=	A Bible study application for KDE4
+COMMENT=	An opensource Bible study application
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword \
-		${LOCALBASE}/lib/libclucene.so:${PORTSDIR}/textproc/clucene
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python \
-		phonon.4:${PORTSDIR}/multimedia/phonon
+		clucene.0:${PORTSDIR}/textproc/clucene
 
 USE_OPENSSL=	yes
 KDE4_BUILDENV=	yes
-USE_KDE4=	kdeprefix kdelibs runtime workspace automoc4
+USE_KDE4=	kdeprefix runtime workspace automoc4
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
 
-CONFLICTS=	bibletime*-2.*
+CONFLICTS=	bibletime-devel-2*
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042
+BROKEN=	does on build on 6.x, use misc/bibletime-kde3
+.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/build
@@ -39,4 +43,4 @@ do-configure:
 		-D CMAKE_INSTALL_PREFIX=${PREFIX} \
 		${WRKSRC}/..
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
