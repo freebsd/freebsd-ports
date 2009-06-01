@@ -24,6 +24,7 @@ USE_GNOME=	gnometarget
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure Watchdog/configure
+USE_GCC=	4.2+
 
 # Only enable C and C++ interfaces. Checks for java, prolog and ocaml
 # have to be added.
