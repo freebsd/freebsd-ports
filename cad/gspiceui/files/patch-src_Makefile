@@ -5,7 +5,7 @@
  # (Arguments can be passed to wx-config to specify the version of wxWidgets to
  # use, whether unicode is required, etc.)
 -WXCFG = wx-config --unicode --version=$(GSPICEUI_WXLIB)
-+WXCFG = /usr/local/bin/wxgtk2u-2.8-config
++WXCFG = %%WX_CONFIG%%
  
  # Dependency file
  DEPS = Makefile.deps
@@ -25,12 +25,12 @@
  
  # Includes
 -INCLUDES = -I/usr/include -I/usr/X11R6/include -I.
-+INCLUDES = -I/usr/include -I${LOCALBASE}/include -I. $(shell /usr/local/bin/wxgtk2u-2.8-config --cxxflags)
++INCLUDES = -I/usr/include -I${LOCALBASE}/include -I. $(shell %%WX_CONFIG%% --cxxflags)
  
  # Libraries
  # (The pkg-config stuff was requested by a user, somehow pangox was missing)
 -LIBS := $(shell $(WXCFG) --libs) $(shell pkg-config --libs pangox)
-+LIBS := $(shell /usr/local/bin/wxgtk2u-2.8-config --libs) $(shell pkg-config --libs pangox)
++LIBS := $(shell %%WX_CONFIG%% --libs) $(shell pkg-config --libs pangox)
  
  # Objects
  OBJS := $(wildcard *.cpp) $(wildcard */*.cpp) $(wildcard */*/*.cpp)
