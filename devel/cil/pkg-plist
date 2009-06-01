@@ -1,8 +1,6 @@
 bin/cilly
 bin/patcher
 bin/teetwo
-libexec/cil/cilly.byte.exe
-libexec/cil/machdep.exe
 %%PORTDOCS%%%%DOCSDIR%%/CIL-API.pdf
 %%PORTDOCS%%%%DOCSDIR%%/CIL.pdf
 %%PORTDOCS%%%%DOCSDIR%%/api/Alpha.html
