@@ -1,4 +1,4 @@
-This port contains packages from a near-minimal installation of Fedora 8
+This port contains packages from a near-minimal installation of Fedora 10
 Linux.  These packages, in conjunction with the linux kernel module,
 form the basis of the Linux compatibility environment. It is designed to
 provide a nice user experience by using the FreeBSD configuration for

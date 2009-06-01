@@ -1,5 +1,9 @@
-usr/X11R6/lib/libMrm.so.3.0.3
-usr/X11R6/lib/libUil.so.3.0.3
-usr/X11R6/lib/libXm.so.3.0.3
-@exec chroot %D /sbin/ldconfig
-@unexec chroot %D /sbin/ldconfig
+usr/lib/libMrm.so
+usr/lib/libMrm.so.4
+usr/lib/libMrm.so.4.0.2
+usr/lib/libUil.so
+usr/lib/libUil.so.4
+usr/lib/libUil.so.4.0.2
+usr/lib/libXm.so
+usr/lib/libXm.so.4
+usr/lib/libXm.so.4.0.2

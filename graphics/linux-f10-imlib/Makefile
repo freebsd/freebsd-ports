@@ -1,5 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f8-imlib
-# Date created:				2008-03-28
+# New ports collection makefile for:	graphics/linux-f10-imlib
+# Date created:				2009-05-03
 # Whom:					bsam
 #
 # $FreeBSD$
@@ -8,15 +8,17 @@
 PORTNAME=	imlib
 PORTVERSION=	1.9.15
 CATEGORIES=	graphics linux
-PKGNAMEPREFIX=	linux-f8-
+PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	RPM of imlib (Linux Fedora 8)
+COMMENT=	RPM of imlib (Linux Fedora 10)
+
+CONFLICTS=	linux-imlib-[0-9]* linux-f8-imlib-[0-9]*
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	8
-RPMVERSION=	6.fc8
+LINUX_DIST_VER=	10
+RPMVERSION=	9.fc10
 BRANDELF_FILES=	usr/bin/imlib_config
 USE_LDCONFIG=	yes
 PLIST=		pkg-plist.${LINUX_RPM_ARCH}

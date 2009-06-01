@@ -1,5 +1,7 @@
 @comment file listing
 etc/ld.so.conf.d/qt-i386.conf
+etc/profile.d/qt.csh
+etc/profile.d/qt.sh
 usr/lib/qt-3.3/lib/libqt-mt.so.3
 usr/lib/qt-3.3/lib/libqt-mt.so.3.3
 usr/lib/qt-3.3/lib/libqt-mt.so.3.3.8
@@ -10,23 +12,40 @@ usr/lib/qt-3.3/plugins/inputmethods/libqimsw-multi.so
 usr/lib/qt-3.3/plugins/inputmethods/libqimsw-none.so
 usr/lib/qt-3.3/plugins/inputmethods/libqsimple.so
 usr/lib/qt-3.3/plugins/inputmethods/libqxim.so
-usr/share/doc/qt-3.3.8b/FAQ
-usr/share/doc/qt-3.3.8b/LICENSE.GPL2
-usr/share/doc/qt-3.3.8b/LICENSE.GPL3
-usr/share/doc/qt-3.3.8b/LICENSE.QPL
-usr/share/doc/qt-3.3.8b/README
-usr/share/doc/qt-3.3.8b/README-QT.TXT
-usr/share/doc/qt-3.3.8b/README.immodule
-usr/share/doc/qt-3.3.8b/changes-3.3.8
-usr/share/doc/qt-3.3.8b/changes-3.3.8b
-usr/share/doc/qt-3.3.8b/changes.immodule
 @comment deal with empty directories installed by the port
 @exec /bin/mkdir -p %D/usr/lib/qt-3.3/bin
 @dirrmtry usr/lib/qt-3.3/bin
 @exec /bin/mkdir -p %D/usr/lib/qt-3.3/plugins/styles
 @dirrmtry usr/lib/qt-3.3/plugins/styles
+usr/lib/qt-3.3/translations/assistant_de.qm
+usr/lib/qt-3.3/translations/qt_ar.qm
+usr/lib/qt-3.3/translations/qt_ca.qm
+usr/lib/qt-3.3/translations/qt_cs.qm
+usr/lib/qt-3.3/translations/qt_de.qm
+usr/lib/qt-3.3/translations/qt_es.qm
+usr/lib/qt-3.3/translations/qt_fr.qm
+usr/lib/qt-3.3/translations/qt_he.qm
+usr/lib/qt-3.3/translations/qt_it.qm
+usr/lib/qt-3.3/translations/qt_ja.qm
+usr/lib/qt-3.3/translations/qt_nb.qm
+usr/lib/qt-3.3/translations/qt_pt-br.qm
+usr/lib/qt-3.3/translations/qt_ru.qm
+usr/lib/qt-3.3/translations/qt_sk.qm
+usr/lib/qt-3.3/translations/qt_zh-cn.qm
+usr/lib/qt-3.3/translations/qt_zh-tw.qm
+usr/share/doc/qt3-3.3.8b/FAQ
+usr/share/doc/qt3-3.3.8b/LICENSE.GPL2
+usr/share/doc/qt3-3.3.8b/LICENSE.GPL3
+usr/share/doc/qt3-3.3.8b/LICENSE.QPL
+usr/share/doc/qt3-3.3.8b/README
+usr/share/doc/qt3-3.3.8b/README-QT.TXT
+usr/share/doc/qt3-3.3.8b/README.immodule
+usr/share/doc/qt3-3.3.8b/changes-3.3.8
+usr/share/doc/qt3-3.3.8b/changes-3.3.8b
+usr/share/doc/qt3-3.3.8b/changes.immodule
 @comment non-empty directory listing in revers order
-@dirrm usr/share/doc/qt-3.3.8b
+@dirrm usr/share/doc/qt3-3.3.8b
+@dirrm usr/lib/qt-3.3/translations
 @dirrm usr/lib/qt-3.3/plugins/inputmethods
 @dirrm usr/lib/qt-3.3/plugins
 @dirrm usr/lib/qt-3.3/lib

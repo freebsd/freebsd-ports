@@ -150,6 +150,8 @@
     SUBDIR += libstdc++_stldoc_3.4.0
     SUBDIR += libstdc++_stldoc_4.2.2
     SUBDIR += libutils
+    SUBDIR += linux-f10-libg2c
+    SUBDIR += linux-f10-tcl85
     SUBDIR += linux-f8-libg2c
     SUBDIR += linux-f8-tcl84
     SUBDIR += linux-j

@@ -1,5 +1,5 @@
-# New ports collection makefile for:	textproc/linux-f8-scim-gtk
-# Date created:				2009-03-30
+# New ports collection makefile for:	textproc/linux-f10-scim-gtk
+# Date created:				2009-05-03
 # Whom:					bsam
 #
 # $FreeBSD$
@@ -8,17 +8,19 @@
 PORTNAME=	scim-gtk
 PORTVERSION=	1.4.7
 CATEGORIES=	textproc linux
-PKGNAMEPREFIX=	linux-f8-
+PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Smart Common Input Method platform, gtk module, (Linux Fedora 8)
+COMMENT=	Smart Common Input Method platform, gtk module, (Linux Fedora 10)
+
+CONFLICTS=	linux-scim-gtk-[0-9]* linux-f8-scim-gtk-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	gtk2 scimlibs
-LINUX_DIST_VER=	8
-RPMVERSION=	7.fc8
+LINUX_DIST_VER=	10
+RPMVERSION=	35.fc10
 USE_LDCONFIG=	yes
 SRC_DISTFILES=	scim-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 

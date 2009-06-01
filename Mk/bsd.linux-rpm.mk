@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.18 2009-04-09 10:35:10 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.19 2009-06-01 17:26:07 bsam Exp $
 #
 
 # Variables:
@@ -67,13 +67,13 @@ LINUX_DIST_VER?=	3
 
 # linux Fedora 8 infrastructure ports should be used with compat.linux.osrelease=2.6.16,
 # linux_base-f8 (or greater) port
-.  if ${LINUX_DIST_VER} == 8
+.  if ${LINUX_DIST_VER} == 8 || ${LINUX_DIST_VER} == 10
 # let's check for apropriate compat.linux.osrelease
 .    if (${LINUX_OSRELEASE} != "2.6.16")
 IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with compat.linux.osrelease=2.6.16, which is supported at 8-CURRENT and has a limitted support at 7-STABLE
 .    endif
 # let's check if an apropriate linux base port is used
-.    if ${USE_LINUX} != f8 && ${USE_LINUX} != f9
+.    if ${USE_LINUX} != f8 && ${USE_LINUX} != f9 && ${USE_LINUX} != f10
 IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with at least linux_base-f8, please read /usr/ports/UPDATING
 .    endif
 # let's check if OVERRIDE_LINUX_NONBASE_PORTS is defined
@@ -95,6 +95,11 @@ MASTER_SITE_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/${LINUX_RPM_ARCH}/
 			../updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}.newkey
 MASTER_SITE_SRC_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/source/SRPMS \
 				../updates/${LINUX_DIST_VER}/SRPMS.newkey
+.        elif ${LINUX_DIST_VER} == 10
+MASTER_SITE_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/${LINUX_RPM_ARCH}/os/Packages \
+			../updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
+MASTER_SITE_SRC_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/source/SRPMS \
+				../updates/${LINUX_DIST_VER}/SRPMS
 .        else
 MASTER_SITE_SUBDIR?=	${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
 			updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
@@ -161,9 +166,11 @@ _LINUX_BASE_SUFFIX=		f7
 _LINUX_BASE_SUFFIX=		f8
 .    elif ${USE_LINUX} == "f9"
 _LINUX_BASE_SUFFIX=		f9
+.    elif ${USE_LINUX} == "f10"
+_LINUX_BASE_SUFFIX=		f10
 .    else
 # other linux_base ports do not provide a pkg-plist file
-IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"fc4\", \"fc6\", \"f7\", \"f8\" and \"f9\"
+IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"fc4\", \"fc6\", \"f7\", \"f8\", \"f9\" and \"f10\"
 .    endif
 
 PLIST?=					${WRKDIR}/.PLIST.linux-rpm

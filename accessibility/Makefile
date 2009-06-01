@@ -19,6 +19,7 @@
     SUBDIR += kdeaccessibility
     SUBDIR += kdeaccessibility4
     SUBDIR += linux-atk
+    SUBDIR += linux-f10-atk
     SUBDIR += linux-f8-atk
     SUBDIR += mousetweaks
     SUBDIR += orca

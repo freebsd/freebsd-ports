@@ -1,10 +1,10 @@
 @comment file listing
 usr/lib/libatk-1.0.so.0
-usr/lib/libatk-1.0.so.0.2009.1
-usr/share/doc/atk-1.20.0/AUTHORS
-usr/share/doc/atk-1.20.0/COPYING
-usr/share/doc/atk-1.20.0/NEWS
-usr/share/doc/atk-1.20.0/README
+usr/lib/libatk-1.0.so.0.2409.1
+usr/share/doc/atk-1.24.0/AUTHORS
+usr/share/doc/atk-1.24.0/COPYING
+usr/share/doc/atk-1.24.0/NEWS
+usr/share/doc/atk-1.24.0/README
 usr/share/locale/af/LC_MESSAGES/atk10.mo
 usr/share/locale/am/LC_MESSAGES/atk10.mo
 usr/share/locale/ar/LC_MESSAGES/atk10.mo
@@ -63,6 +63,7 @@ usr/share/locale/oc/LC_MESSAGES/atk10.mo
 usr/share/locale/or/LC_MESSAGES/atk10.mo
 usr/share/locale/pa/LC_MESSAGES/atk10.mo
 usr/share/locale/pl/LC_MESSAGES/atk10.mo
+usr/share/locale/ps/LC_MESSAGES/atk10.mo
 usr/share/locale/pt/LC_MESSAGES/atk10.mo
 usr/share/locale/pt_BR/LC_MESSAGES/atk10.mo
 usr/share/locale/ro/LC_MESSAGES/atk10.mo
@@ -73,8 +74,8 @@ usr/share/locale/sk/LC_MESSAGES/atk10.mo
 usr/share/locale/sl/LC_MESSAGES/atk10.mo
 usr/share/locale/sq/LC_MESSAGES/atk10.mo
 usr/share/locale/sr/LC_MESSAGES/atk10.mo
-usr/share/locale/sr@Latn/LC_MESSAGES/atk10.mo
 usr/share/locale/sr@ije/LC_MESSAGES/atk10.mo
+usr/share/locale/sr@latin/LC_MESSAGES/atk10.mo
 usr/share/locale/sv/LC_MESSAGES/atk10.mo
 usr/share/locale/ta/LC_MESSAGES/atk10.mo
 usr/share/locale/te/LC_MESSAGES/atk10.mo
@@ -92,4 +93,4 @@ usr/share/locale/zh_CN/LC_MESSAGES/atk10.mo
 usr/share/locale/zh_HK/LC_MESSAGES/atk10.mo
 usr/share/locale/zh_TW/LC_MESSAGES/atk10.mo
 @comment non-empty directory listing in revers order
-@dirrm usr/share/doc/atk-1.20.0
+@dirrm usr/share/doc/atk-1.24.0

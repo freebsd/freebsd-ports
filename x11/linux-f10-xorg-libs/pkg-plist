@@ -38,7 +38,7 @@ usr/lib/libXfixes.so.3.1.0
 usr/lib/libXfont.so.1
 usr/lib/libXfont.so.1.4.1
 usr/lib/libXft.so.2
-usr/lib/libXft.so.2.1.2
+usr/lib/libXft.so.2.1.13
 usr/lib/libXi.so.6
 usr/lib/libXi.so.6.0.0
 usr/lib/libXinerama.so.1
@@ -126,6 +126,9 @@ usr/share/X11/XKeysymDB
 usr/share/X11/locale/C/Compose
 usr/share/X11/locale/C/XI18N_OBJS
 usr/share/X11/locale/C/XLC_LOCALE
+usr/share/X11/locale/am_ET.UTF-8/Compose
+usr/share/X11/locale/am_ET.UTF-8/XI18N_OBJS
+usr/share/X11/locale/am_ET.UTF-8/XLC_LOCALE
 usr/share/X11/locale/armscii-8/Compose
 usr/share/X11/locale/armscii-8/XI18N_OBJS
 usr/share/X11/locale/armscii-8/XLC_LOCALE
@@ -297,35 +300,35 @@ usr/share/X11/locale/zh_TW.big5/XLC_LOCALE
 usr/share/X11/locale/zh_TW/Compose
 usr/share/X11/locale/zh_TW/XI18N_OBJS
 usr/share/X11/locale/zh_TW/XLC_LOCALE
-usr/share/doc/libFS-1.0.0/AUTHORS
-usr/share/doc/libFS-1.0.0/COPYING
-usr/share/doc/libFS-1.0.0/ChangeLog
-usr/share/doc/libFS-1.0.0/README
+usr/share/doc/libFS-1.0.1/AUTHORS
+usr/share/doc/libFS-1.0.1/COPYING
+usr/share/doc/libFS-1.0.1/ChangeLog
+usr/share/doc/libFS-1.0.1/README
 usr/share/doc/libICE-1.0.4/AUTHORS
 usr/share/doc/libICE-1.0.4/COPYING
 usr/share/doc/libICE-1.0.4/ChangeLog
 usr/share/doc/libICE-1.0.4/README
-usr/share/doc/libSM-1.0.2/AUTHORS
-usr/share/doc/libSM-1.0.2/COPYING
-usr/share/doc/libSM-1.0.2/ChangeLog
-usr/share/doc/libSM-1.0.2/README
-usr/share/doc/libX11-1.1.3/AUTHORS
-usr/share/doc/libX11-1.1.3/COPYING
-usr/share/doc/libX11-1.1.3/ChangeLog
-usr/share/doc/libX11-1.1.3/NEWS
-usr/share/doc/libX11-1.1.3/README
-usr/share/doc/libXScrnSaver-1.1.2/AUTHORS
-usr/share/doc/libXScrnSaver-1.1.2/COPYING
-usr/share/doc/libXScrnSaver-1.1.2/ChangeLog
-usr/share/doc/libXScrnSaver-1.1.2/README
+usr/share/doc/libSM-1.1.0/AUTHORS
+usr/share/doc/libSM-1.1.0/COPYING
+usr/share/doc/libSM-1.1.0/ChangeLog
+usr/share/doc/libSM-1.1.0/README
+usr/share/doc/libX11-1.1.5/AUTHORS
+usr/share/doc/libX11-1.1.5/COPYING
+usr/share/doc/libX11-1.1.5/ChangeLog
+usr/share/doc/libX11-1.1.5/NEWS
+usr/share/doc/libX11-1.1.5/README
+usr/share/doc/libXScrnSaver-1.1.3/AUTHORS
+usr/share/doc/libXScrnSaver-1.1.3/COPYING
+usr/share/doc/libXScrnSaver-1.1.3/ChangeLog
+usr/share/doc/libXScrnSaver-1.1.3/README
 usr/share/doc/libXTrap-1.0.0/AUTHORS
 usr/share/doc/libXTrap-1.0.0/COPYING
 usr/share/doc/libXTrap-1.0.0/ChangeLog
 usr/share/doc/libXTrap-1.0.0/README
-usr/share/doc/libXau-1.0.3/AUTHORS
-usr/share/doc/libXau-1.0.3/COPYING
-usr/share/doc/libXau-1.0.3/ChangeLog
-usr/share/doc/libXau-1.0.3/README
+usr/share/doc/libXau-1.0.4/AUTHORS
+usr/share/doc/libXau-1.0.4/COPYING
+usr/share/doc/libXau-1.0.4/ChangeLog
+usr/share/doc/libXau-1.0.4/README
 usr/share/doc/libXaw-1.0.4/AUTHORS
 usr/share/doc/libXaw-1.0.4/COPYING
 usr/share/doc/libXaw-1.0.4/ChangeLog
@@ -350,86 +353,70 @@ usr/share/doc/libXevie-1.0.2/AUTHORS
 usr/share/doc/libXevie-1.0.2/COPYING
 usr/share/doc/libXevie-1.0.2/ChangeLog
 usr/share/doc/libXevie-1.0.2/README
-usr/share/doc/libXext-1.0.1/AUTHORS
-usr/share/doc/libXext-1.0.1/COPYING
-usr/share/doc/libXext-1.0.1/ChangeLog
-usr/share/doc/libXext-1.0.1/README
+usr/share/doc/libXext-1.0.4/AUTHORS
+usr/share/doc/libXext-1.0.4/COPYING
+usr/share/doc/libXext-1.0.4/ChangeLog
 usr/share/doc/libXfixes-4.0.3/AUTHORS
 usr/share/doc/libXfixes-4.0.3/COPYING
 usr/share/doc/libXfixes-4.0.3/ChangeLog
 usr/share/doc/libXfixes-4.0.3/README
-usr/share/doc/libXfont-1.3.1/AUTHORS
-usr/share/doc/libXfont-1.3.1/COPYING
-usr/share/doc/libXfont-1.3.1/ChangeLog
-usr/share/doc/libXft-2.1.12/AUTHORS
-usr/share/doc/libXft-2.1.12/COPYING
-usr/share/doc/libXft-2.1.12/ChangeLog
-usr/share/doc/libXft-2.1.12/NEWS
-usr/share/doc/libXft-2.1.12/README
-usr/share/doc/libXi-1.1.3/AUTHORS
+usr/share/doc/libXfont-1.3.3/AUTHORS
+usr/share/doc/libXfont-1.3.3/COPYING
+usr/share/doc/libXfont-1.3.3/ChangeLog
+usr/share/doc/libXft-2.1.13/AUTHORS
+usr/share/doc/libXft-2.1.13/COPYING
+usr/share/doc/libXft-2.1.13/ChangeLog
+usr/share/doc/libXft-2.1.13/README
 usr/share/doc/libXi-1.1.3/COPYING
 usr/share/doc/libXi-1.1.3/ChangeLog
-usr/share/doc/libXi-1.1.3/README
-usr/share/doc/libXinerama-1.0.2/AUTHORS
-usr/share/doc/libXinerama-1.0.2/COPYING
-usr/share/doc/libXinerama-1.0.2/ChangeLog
-usr/share/doc/libXinerama-1.0.2/README
-usr/share/doc/libXmu-1.0.3/AUTHORS
-usr/share/doc/libXmu-1.0.3/COPYING
-usr/share/doc/libXmu-1.0.3/ChangeLog
-usr/share/doc/libXmu-1.0.3/README
+usr/share/doc/libXinerama-1.0.3/AUTHORS
+usr/share/doc/libXinerama-1.0.3/COPYING
+usr/share/doc/libXinerama-1.0.3/ChangeLog
+usr/share/doc/libXinerama-1.0.3/README
+usr/share/doc/libXmu-1.0.4/COPYING
+usr/share/doc/libXmu-1.0.4/ChangeLog
+usr/share/doc/libXmu-1.0.4/README
 usr/share/doc/libXp-1.0.0/AUTHORS
 usr/share/doc/libXp-1.0.0/COPYING
 usr/share/doc/libXp-1.0.0/ChangeLog
 usr/share/doc/libXp-1.0.0/INSTALL
-usr/share/doc/libXp-1.0.0/README
 usr/share/doc/libXpm-3.5.7/AUTHORS
+usr/share/doc/libXpm-3.5.7/CHANGES
 usr/share/doc/libXpm-3.5.7/COPYING
 usr/share/doc/libXpm-3.5.7/ChangeLog
-usr/share/doc/libXpm-3.5.7/README
-usr/share/doc/libXrandr-1.2.2/AUTHORS
-usr/share/doc/libXrandr-1.2.2/COPYING
-usr/share/doc/libXrandr-1.2.2/ChangeLog
-usr/share/doc/libXrandr-1.2.2/README
+usr/share/doc/libXrandr-1.2.3/AUTHORS
+usr/share/doc/libXrandr-1.2.3/COPYING
+usr/share/doc/libXrandr-1.2.3/ChangeLog
 usr/share/doc/libXrender-0.9.4/AUTHORS
 usr/share/doc/libXrender-0.9.4/COPYING
 usr/share/doc/libXrender-0.9.4/ChangeLog
-usr/share/doc/libXrender-0.9.4/README
 usr/share/doc/libXres-1.0.3/AUTHORS
 usr/share/doc/libXres-1.0.3/COPYING
 usr/share/doc/libXres-1.0.3/ChangeLog
 usr/share/doc/libXres-1.0.3/README
-usr/share/doc/libXt-1.0.4/AUTHORS
-usr/share/doc/libXt-1.0.4/COPYING
-usr/share/doc/libXt-1.0.4/ChangeLog
-usr/share/doc/libXt-1.0.4/NEWS
-usr/share/doc/libXt-1.0.4/README
-usr/share/doc/libXtst-1.0.3/AUTHORS
+usr/share/doc/libXt-1.0.5/COPYING
+usr/share/doc/libXt-1.0.5/ChangeLog
 usr/share/doc/libXtst-1.0.3/COPYING
 usr/share/doc/libXtst-1.0.3/ChangeLog
-usr/share/doc/libXtst-1.0.3/README
-usr/share/doc/libXv-1.0.3/AUTHORS
-usr/share/doc/libXv-1.0.3/COPYING
-usr/share/doc/libXv-1.0.3/ChangeLog
-usr/share/doc/libXv-1.0.3/README
+usr/share/doc/libXv-1.0.4/AUTHORS
+usr/share/doc/libXv-1.0.4/COPYING
+usr/share/doc/libXv-1.0.4/ChangeLog
 usr/share/doc/libXvMC-1.0.4/AUTHORS
 usr/share/doc/libXvMC-1.0.4/COPYING
 usr/share/doc/libXvMC-1.0.4/ChangeLog
 usr/share/doc/libXvMC-1.0.4/README
-usr/share/doc/libXxf86dga-1.0.1/COPYING
-usr/share/doc/libXxf86dga-1.0.1/ChangeLog
+usr/share/doc/libXxf86dga-1.0.2/COPYING
+usr/share/doc/libXxf86dga-1.0.2/ChangeLog
 usr/share/doc/libXxf86misc-1.0.1/COPYING
 usr/share/doc/libXxf86misc-1.0.1/ChangeLog
-usr/share/doc/libXxf86vm-1.0.1/COPYING
-usr/share/doc/libXxf86vm-1.0.1/ChangeLog
+usr/share/doc/libXxf86vm-1.0.2/COPYING
+usr/share/doc/libXxf86vm-1.0.2/ChangeLog
 usr/share/doc/libfontenc-1.0.4/AUTHORS
 usr/share/doc/libfontenc-1.0.4/COPYING
 usr/share/doc/libfontenc-1.0.4/ChangeLog
 usr/share/doc/libfontenc-1.0.4/README
-usr/share/doc/libxkbfile-1.0.4/AUTHORS
 usr/share/doc/libxkbfile-1.0.4/COPYING
 usr/share/doc/libxkbfile-1.0.4/ChangeLog
-usr/share/doc/libxkbfile-1.0.4/README
 usr/share/doc/mesa-libGLw-6.5.1/README
 usr/share/icons/default/index.theme
 @comment deal with empty directories installed by the port
@@ -440,38 +427,38 @@ usr/share/icons/default/index.theme
 @dirrm usr/share/doc/mesa-libGLw-6.5.1
 @dirrm usr/share/doc/libxkbfile-1.0.4
 @dirrm usr/share/doc/libfontenc-1.0.4
-@dirrm usr/share/doc/libXxf86vm-1.0.1
+@dirrm usr/share/doc/libXxf86vm-1.0.2
 @dirrm usr/share/doc/libXxf86misc-1.0.1
-@dirrm usr/share/doc/libXxf86dga-1.0.1
+@dirrm usr/share/doc/libXxf86dga-1.0.2
 @dirrm usr/share/doc/libXvMC-1.0.4
-@dirrm usr/share/doc/libXv-1.0.3
-@dirrm usr/share/doc/libXt-1.0.4
+@dirrm usr/share/doc/libXv-1.0.4
 @dirrm usr/share/doc/libXtst-1.0.3
+@dirrm usr/share/doc/libXt-1.0.5
 @dirrm usr/share/doc/libXres-1.0.3
 @dirrm usr/share/doc/libXrender-0.9.4
-@dirrm usr/share/doc/libXrandr-1.2.2
+@dirrm usr/share/doc/libXrandr-1.2.3
 @dirrm usr/share/doc/libXpm-3.5.7
 @dirrm usr/share/doc/libXp-1.0.0
-@dirrm usr/share/doc/libXmu-1.0.3
-@dirrm usr/share/doc/libXinerama-1.0.2
+@dirrm usr/share/doc/libXmu-1.0.4
+@dirrm usr/share/doc/libXinerama-1.0.3
 @dirrm usr/share/doc/libXi-1.1.3
-@dirrm usr/share/doc/libXft-2.1.12
-@dirrm usr/share/doc/libXfont-1.3.1
+@dirrm usr/share/doc/libXft-2.1.13
+@dirrm usr/share/doc/libXfont-1.3.3
 @dirrm usr/share/doc/libXfixes-4.0.3
-@dirrm usr/share/doc/libXext-1.0.1
+@dirrm usr/share/doc/libXext-1.0.4
 @dirrm usr/share/doc/libXevie-1.0.2
 @dirrm usr/share/doc/libXdmcp-1.0.2
 @dirrm usr/share/doc/libXdamage-1.1.1
 @dirrm usr/share/doc/libXcursor-1.1.9
 @dirrm usr/share/doc/libXcomposite-0.4.0
 @dirrm usr/share/doc/libXaw-1.0.4
-@dirrm usr/share/doc/libXau-1.0.3
+@dirrm usr/share/doc/libXau-1.0.4
 @dirrm usr/share/doc/libXTrap-1.0.0
-@dirrm usr/share/doc/libXScrnSaver-1.1.2
-@dirrm usr/share/doc/libX11-1.1.3
-@dirrm usr/share/doc/libSM-1.0.2
+@dirrm usr/share/doc/libXScrnSaver-1.1.3
+@dirrm usr/share/doc/libX11-1.1.5
+@dirrm usr/share/doc/libSM-1.1.0
 @dirrm usr/share/doc/libICE-1.0.4
-@dirrm usr/share/doc/libFS-1.0.0
+@dirrm usr/share/doc/libFS-1.0.1
 @dirrm usr/share/X11/locale/zh_TW.big5
 @dirrm usr/share/X11/locale/zh_TW.UTF-8
 @dirrm usr/share/X11/locale/zh_TW
@@ -528,6 +515,7 @@ usr/share/icons/default/index.theme
 @dirrm usr/share/X11/locale/en_US.UTF-8
 @dirrm usr/share/X11/locale/el_GR.UTF-8
 @dirrm usr/share/X11/locale/armscii-8
+@dirrm usr/share/X11/locale/am_ET.UTF-8
 @dirrm usr/share/X11/locale/C
 @dirrm usr/share/X11/locale
 @dirrm usr/share/X11

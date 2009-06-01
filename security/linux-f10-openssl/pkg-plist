@@ -1,7 +1,5 @@
 @comment file listing
-etc/pki/tls/cert.pem
 etc/pki/tls/certs/Makefile
-etc/pki/tls/certs/ca-bundle.crt
 etc/pki/tls/certs/make-dummy-cert
 etc/pki/tls/misc/CA
 etc/pki/tls/misc/c_hash
@@ -9,10 +7,10 @@ etc/pki/tls/misc/c_info
 etc/pki/tls/misc/c_issuer
 etc/pki/tls/misc/c_name
 etc/pki/tls/openssl.cnf
-lib/libcrypto.so.0.9.8b
-lib/libcrypto.so.6
-lib/libssl.so.0.9.8b
-lib/libssl.so.6
+lib/libcrypto.so.%%PORTVERSION%%
+lib/libcrypto.so.7
+lib/libssl.so.%%PORTVERSION%%
+lib/libssl.so.7
 usr/bin/openssl
 usr/lib/openssl/engines/lib4758cca.so
 usr/lib/openssl/engines/libaep.so
@@ -23,17 +21,17 @@ usr/lib/openssl/engines/libgmp.so
 usr/lib/openssl/engines/libnuron.so
 usr/lib/openssl/engines/libsureware.so
 usr/lib/openssl/engines/libubsec.so
-usr/share/doc/openssl-0.9.8b/CHANGES
-usr/share/doc/openssl-0.9.8b/FAQ
-usr/share/doc/openssl-0.9.8b/INSTALL
-usr/share/doc/openssl-0.9.8b/LICENSE
-usr/share/doc/openssl-0.9.8b/NEWS
-usr/share/doc/openssl-0.9.8b/README
-usr/share/doc/openssl-0.9.8b/c-indentation.el
-usr/share/doc/openssl-0.9.8b/openssl.txt
-usr/share/doc/openssl-0.9.8b/openssl_button.gif
-usr/share/doc/openssl-0.9.8b/openssl_button.html
-usr/share/doc/openssl-0.9.8b/ssleay.txt
+usr/share/doc/openssl-%%PORTVERSION%%/CHANGES
+usr/share/doc/openssl-%%PORTVERSION%%/FAQ
+usr/share/doc/openssl-%%PORTVERSION%%/INSTALL
+usr/share/doc/openssl-%%PORTVERSION%%/LICENSE
+usr/share/doc/openssl-%%PORTVERSION%%/NEWS
+usr/share/doc/openssl-%%PORTVERSION%%/README
+usr/share/doc/openssl-%%PORTVERSION%%/c-indentation.el
+usr/share/doc/openssl-%%PORTVERSION%%/openssl.txt
+usr/share/doc/openssl-%%PORTVERSION%%/openssl_button.gif
+usr/share/doc/openssl-%%PORTVERSION%%/openssl_button.html
+usr/share/doc/openssl-%%PORTVERSION%%/ssleay.txt
 usr/share/man/man1/asn1parse.1ssl.gz
 usr/share/man/man1/ca.1ssl.gz
 usr/share/man/man1/ciphers.1ssl.gz
@@ -79,7 +77,6 @@ usr/share/man/man1/version.1ssl.gz
 usr/share/man/man1/x509.1ssl.gz
 usr/share/man/man5/config.5ssl.gz
 usr/share/man/man5/x509v3_config.5ssl.gz
-usr/share/man/man7/Modes_of_DES.7ssl.gz
 usr/share/man/man7/des_modes.7ssl.gz
 @comment deal with empty directories installed by the port
 @exec /bin/mkdir -p %D/etc/pki/CA/private
@@ -87,7 +84,7 @@ usr/share/man/man7/des_modes.7ssl.gz
 @exec /bin/mkdir -p %D/etc/pki/tls/private
 @dirrmtry etc/pki/tls/private
 @comment non-empty directory listing in revers order
-@dirrm usr/share/doc/openssl-0.9.8b
+@dirrm usr/share/doc/openssl-%%PORTVERSION%%
 @dirrm usr/lib/openssl/engines
 @dirrm usr/lib/openssl
 @dirrm etc/pki/tls/misc

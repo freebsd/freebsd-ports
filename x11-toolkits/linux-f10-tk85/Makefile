@@ -1,34 +1,29 @@
-# New ports collection makefile for:    x11-toolkits/linux-f8-tk84
-# Date created:				11-08-2008
-# Whom:					Stas Timokhin <stast@bsdportal.ru>
+# New ports collection makefile for:	x11-toolkits/linux-f10-tk85
+# Date created:				2009-05-04
+# Whom:					bsam
 # $FreeBSD$
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.4.17
+PORTVERSION=	8.5.3
 CATEGORIES=	x11-toolkits linux
-PKGNAMEPREFIX=	linux-f8-
-PKGNAMESUFFIX=	84
+PKGNAMEPREFIX=	linux-f10-
+PKGNAMESUFFIX=	85
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	stast@bsdportal.ru
-COMMENT=	Graphical toolkit for TCL (Linux Fedora 8)
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Graphical toolkit for TCL (Linux Fedora 10)
+
+CONFLICTS=	linux-f10-tk84-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
-LINUX_DIST_VER=	8
-RPMVERSION=	2.fc8
-BRANELF_FILES=	usr/bin/wish8.4
+LINUX_DIST_VER=	10
+RPMVERSION=	5.fc10
+BRANELF_FILES=	usr/bin/wish8.5
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../${PORTNAME}${PKGNAMESUFFIX}/pkg-descr
 
-.include <bsd.port.pre.mk>
-
-pre-fetch:
-.if ${OSVERSION}<700055
-	IGNORE= You need at least FreeBSD>=7.0 RELEASE with Linux emulation 2.6.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

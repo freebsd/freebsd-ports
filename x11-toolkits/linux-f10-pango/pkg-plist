@@ -3,15 +3,15 @@ etc/pango/i386-redhat-linux-gnu/pango.modules
 etc/pango/pangox.aliases
 usr/bin/pango-querymodules-32
 usr/lib/libpango-1.0.so.0
-usr/lib/libpango-1.0.so.0.1800.4
+usr/lib/libpango-1.0.so.0.2203.0
 usr/lib/libpangocairo-1.0.so.0
-usr/lib/libpangocairo-1.0.so.0.1800.4
+usr/lib/libpangocairo-1.0.so.0.2203.0
 usr/lib/libpangoft2-1.0.so.0
-usr/lib/libpangoft2-1.0.so.0.1800.4
+usr/lib/libpangoft2-1.0.so.0.2203.0
 usr/lib/libpangox-1.0.so.0
-usr/lib/libpangox-1.0.so.0.1800.4
+usr/lib/libpangox-1.0.so.0.2203.0
 usr/lib/libpangoxft-1.0.so.0
-usr/lib/libpangoxft-1.0.so.0.1800.4
+usr/lib/libpangoxft-1.0.so.0.2203.0
 usr/lib/pango/1.6.0/modules/pango-arabic-fc.so
 usr/lib/pango/1.6.0/modules/pango-arabic-lang.so
 usr/lib/pango/1.6.0/modules/pango-basic-x.so
@@ -22,18 +22,19 @@ usr/lib/pango/1.6.0/modules/pango-indic-lang.so
 usr/lib/pango/1.6.0/modules/pango-khmer-fc.so
 usr/lib/pango/1.6.0/modules/pango-syriac-fc.so
 usr/lib/pango/1.6.0/modules/pango-thai-fc.so
+usr/lib/pango/1.6.0/modules/pango-thai-lang.so
 usr/lib/pango/1.6.0/modules/pango-tibetan-fc.so
-usr/share/doc/pango-1.18.4/AUTHORS
-usr/share/doc/pango-1.18.4/COPYING
-usr/share/doc/pango-1.18.4/HELLO.txt
-usr/share/doc/pango-1.18.4/NEWS
-usr/share/doc/pango-1.18.4/README
+usr/share/doc/pango-1.22.3/AUTHORS
+usr/share/doc/pango-1.22.3/COPYING
+usr/share/doc/pango-1.22.3/HELLO.txt
+usr/share/doc/pango-1.22.3/NEWS
+usr/share/doc/pango-1.22.3/README
 usr/share/man/man1/pango-querymodules.1.gz
 @comment deal with empty directories created by the port
 @exec /bin/mkdir -p %D/etc/pango/i386-redhat-linux-gnu
 @dirrmtry etc/pango/i386-redhat-linux-gnu
 @comment non-empty directory listing in revers order
-@dirrm usr/share/doc/pango-1.18.4
+@dirrm usr/share/doc/pango-1.22.3
 @dirrm usr/lib/pango/1.6.0/modules
 @dirrm usr/lib/pango/1.6.0
 @dirrm usr/lib/pango

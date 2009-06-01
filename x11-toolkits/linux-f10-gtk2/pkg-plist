@@ -16,10 +16,9 @@ usr/lib/gtk-2.0/2.10.0/engines/libmist.so
 usr/lib/gtk-2.0/2.10.0/engines/libmurrine.so
 usr/lib/gtk-2.0/2.10.0/engines/libnodoka.so
 usr/lib/gtk-2.0/2.10.0/engines/libpixmap.so
-usr/lib/gtk-2.0/2.10.0/engines/libqtengine.so
+usr/lib/gtk-2.0/2.10.0/engines/libqt4engine.so
 usr/lib/gtk-2.0/2.10.0/engines/libredmond95.so
 usr/lib/gtk-2.0/2.10.0/engines/librezlooks.so
-usr/lib/gtk-2.0/2.10.0/engines/libsmooth.so
 usr/lib/gtk-2.0/2.10.0/engines/libthinice.so
 usr/lib/gtk-2.0/2.10.0/engines/libxfce.so
 usr/lib/gtk-2.0/2.10.0/immodules/im-am-et.so
@@ -36,7 +35,9 @@ usr/lib/gtk-2.0/2.10.0/immodules/im-xim.so
 usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ani.so
 usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-bmp.so
 usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-gif.so
+usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-icns.so
 usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ico.so
+usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jasper.so
 usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jpeg.so
 usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-pcx.so
 usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-pnm.so
@@ -50,50 +51,63 @@ usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so
 usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-file.so
 usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.so
 usr/lib/gtk-2.0/immodules/.relocation-tag
-usr/lib/kde3/kcm_kcmgtk.la
-usr/lib/kde3/kcm_kcmgtk.so
+usr/lib/gtk-2.0/modules/libferret.la
+usr/lib/gtk-2.0/modules/libferret.so
+usr/lib/gtk-2.0/modules/libgail.la
+usr/lib/gtk-2.0/modules/libgail.so
+usr/lib/kde4/kcm_gtk4.so
+usr/lib/libgailutil.so.18
+usr/lib/libgailutil.so.18.0.1
 usr/lib/libgdk-x11-2.0.so.0
-usr/lib/libgdk-x11-2.0.so.0.1200.8
+usr/lib/libgdk-x11-2.0.so.0.1400.7
 usr/lib/libgdk_pixbuf-2.0.so.0
-usr/lib/libgdk_pixbuf-2.0.so.0.1200.8
+usr/lib/libgdk_pixbuf-2.0.so.0.1400.7
 usr/lib/libgdk_pixbuf_xlib-2.0.so.0
-usr/lib/libgdk_pixbuf_xlib-2.0.so.0.1200.8
+usr/lib/libgdk_pixbuf_xlib-2.0.so.0.1400.7
 usr/lib/libgtk-x11-2.0.so.0
-usr/lib/libgtk-x11-2.0.so.0.1200.8
+usr/lib/libgtk-x11-2.0.so.0.1400.7
+usr/lib/libjasper.so.1
+usr/lib/libjasper.so.1.0.0
+usr/lib/libpixman-1.so.0
+usr/lib/libpixman-1.so.0.12.0
 usr/lib/pkgconfig/gtk-engines-2.pc
-usr/share/applications/kcmgtk.desktop
-usr/share/doc/gtk-murrine-engine-0.52/AUTHORS
-usr/share/doc/gtk-murrine-engine-0.52/COPYING
-usr/share/doc/gtk-murrine-engine-0.52/CREDITS
-usr/share/doc/gtk-murrine-engine-0.52/ChangeLog
-usr/share/doc/gtk-murrine-engine-0.52/NEWS
-usr/share/doc/gtk-nodoka-engine-0.6.2/AUTHORS
-usr/share/doc/gtk-nodoka-engine-0.6.2/COPYING
-usr/share/doc/gtk-nodoka-engine-0.6.2/CREDITS
-usr/share/doc/gtk-nodoka-engine-0.6.2/ChangeLog
-usr/share/doc/gtk-nodoka-engine-0.6.2/NEWS
-usr/share/doc/gtk-nodoka-engine-0.6.2/README
-usr/share/doc/gtk-nodoka-engine-0.6.2/TODO
-usr/share/doc/gtk-qt-engine-0.8/AUTHORS
-usr/share/doc/gtk-qt-engine-0.8/ChangeLog
-usr/share/doc/gtk-qt-engine-0.8/README
+usr/share/applications/kde4/kcmgtk4.desktop
+usr/share/doc/gtk-murrine-engine-0.53.1/AUTHORS
+usr/share/doc/gtk-murrine-engine-0.53.1/COPYING
+usr/share/doc/gtk-murrine-engine-0.53.1/CREDITS
+usr/share/doc/gtk-murrine-engine-0.53.1/ChangeLog
+usr/share/doc/gtk-murrine-engine-0.53.1/NEWS
+usr/share/doc/gtk-nodoka-engine-0.7.2/AUTHORS
+usr/share/doc/gtk-nodoka-engine-0.7.2/COPYING
+usr/share/doc/gtk-nodoka-engine-0.7.2/CREDITS
+usr/share/doc/gtk-nodoka-engine-0.7.2/ChangeLog
+usr/share/doc/gtk-nodoka-engine-0.7.2/NEWS
+usr/share/doc/gtk-nodoka-engine-0.7.2/README
+usr/share/doc/gtk-nodoka-engine-0.7.2/TODO
+usr/share/doc/gtk-qt-engine-1.1/AUTHORS
+usr/share/doc/gtk-qt-engine-1.1/COPYING
+usr/share/doc/gtk-qt-engine-1.1/ChangeLog
 usr/share/doc/gtk-rezlooks-engine-0.6/AUTHORS
 usr/share/doc/gtk-rezlooks-engine-0.6/COPYING
 usr/share/doc/gtk-rezlooks-engine-0.6/CREDITS
 usr/share/doc/gtk-rezlooks-engine-0.6/Changelog
-usr/share/doc/gtk-xfce-engine-2.4.2/AUTHORS
-usr/share/doc/gtk-xfce-engine-2.4.2/COPYING
-usr/share/doc/gtk-xfce-engine-2.4.2/README
-usr/share/doc/gtk2-2.12.8/AUTHORS
-usr/share/doc/gtk2-2.12.8/COPYING
-usr/share/doc/gtk2-2.12.8/NEWS
-usr/share/doc/gtk2-2.12.8/README
-usr/share/doc/gtk2-engines-2.12.2/AUTHORS
-usr/share/doc/gtk2-engines-2.12.2/COPYING
-usr/share/doc/gtk2-engines-2.12.2/COPYING.GPL
-usr/share/doc/gtk2-engines-2.12.2/COPYING.LGPL
-usr/share/doc/gtk2-engines-2.12.2/NEWS
-usr/share/doc/gtk2-engines-2.12.2/README
+usr/share/doc/gtk-xfce-engine-2.4.3/AUTHORS
+usr/share/doc/gtk-xfce-engine-2.4.3/COPYING
+usr/share/doc/gtk-xfce-engine-2.4.3/README
+usr/share/doc/gtk2-2.14.7/AUTHORS
+usr/share/doc/gtk2-2.14.7/COPYING
+usr/share/doc/gtk2-2.14.7/NEWS
+usr/share/doc/gtk2-2.14.7/README
+usr/share/doc/gtk2-engines-2.16.1/AUTHORS
+usr/share/doc/gtk2-engines-2.16.1/COPYING
+usr/share/doc/gtk2-engines-2.16.1/COPYING.GPL
+usr/share/doc/gtk2-engines-2.16.1/COPYING.LGPL
+usr/share/doc/gtk2-engines-2.16.1/NEWS
+usr/share/doc/gtk2-engines-2.16.1/README
+usr/share/doc/jasper-libs-1.900.1/COPYRIGHT
+usr/share/doc/jasper-libs-1.900.1/LICENSE
+usr/share/doc/jasper-libs-1.900.1/NEWS
+usr/share/doc/jasper-libs-1.900.1/README
 usr/share/gtk-engines/clearlooks.xml
 usr/share/gtk-engines/crux-engine.xml
 usr/share/gtk-engines/glide.xml
@@ -101,248 +115,117 @@ usr/share/gtk-engines/hcengine.xml
 usr/share/gtk-engines/industrial.xml
 usr/share/gtk-engines/mist.xml
 usr/share/gtk-engines/redmond95.xml
-usr/share/gtk-engines/smooth.xml
 usr/share/gtk-engines/thinice.xml
-usr/share/locale/af/LC_MESSAGES/gtk20-properties.mo
+usr/share/icons/kcmgtk.png
 usr/share/locale/af/LC_MESSAGES/gtk20.mo
-usr/share/locale/am/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/am/LC_MESSAGES/gtk20.mo
-usr/share/locale/ang/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ang/LC_MESSAGES/gtk20.mo
-usr/share/locale/ar/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/ar/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ar/LC_MESSAGES/gtk20.mo
-usr/share/locale/as/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/as/LC_MESSAGES/gtk20.mo
-usr/share/locale/az/LC_MESSAGES/gtk20-properties.mo
+usr/share/locale/ast/LC_MESSAGES/gtk20.mo
 usr/share/locale/az/LC_MESSAGES/gtk20.mo
-usr/share/locale/az_IR/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/az_IR/LC_MESSAGES/gtk20.mo
-usr/share/locale/be/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/be/LC_MESSAGES/gtk20.mo
-usr/share/locale/be@latin/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/be@latin/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/be@latin/LC_MESSAGES/gtk20.mo
-usr/share/locale/bg/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/bg/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/bg/LC_MESSAGES/gtk20.mo
 usr/share/locale/bg/LC_MESSAGES/gtkqtengine.mo
-usr/share/locale/bn/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/bn/LC_MESSAGES/gtk20.mo
-usr/share/locale/bn_IN/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/bn_IN/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/bn_IN/LC_MESSAGES/gtk20.mo
-usr/share/locale/br/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/br/LC_MESSAGES/gtk20.mo
-usr/share/locale/bs/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/bs/LC_MESSAGES/gtk20.mo
-usr/share/locale/ca/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/ca/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ca/LC_MESSAGES/gtk20.mo
-usr/share/locale/cs/LC_MESSAGES/gtk20-properties.mo
+usr/share/locale/ca@valencia/LC_MESSAGES/gtk20.mo
 usr/share/locale/cs/LC_MESSAGES/gtk20.mo
-usr/share/locale/cy/LC_MESSAGES/gtk20-properties.mo
+usr/share/locale/cs/LC_MESSAGES/gtkqtengine.mo
 usr/share/locale/cy/LC_MESSAGES/gtk20.mo
-usr/share/locale/da/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/da/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/da/LC_MESSAGES/gtk20.mo
-usr/share/locale/de/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/de/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/de/LC_MESSAGES/gtk20.mo
 usr/share/locale/de/LC_MESSAGES/gtkqtengine.mo
-usr/share/locale/dz/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/dz/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/dz/LC_MESSAGES/gtk20.mo
-usr/share/locale/el/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/el/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/el/LC_MESSAGES/gtk20.mo
-usr/share/locale/en_CA/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/en_CA/LC_MESSAGES/gtk20.mo
-usr/share/locale/en_GB/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/en_GB/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/en_GB/LC_MESSAGES/gtk20.mo
-usr/share/locale/eo/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/eo/LC_MESSAGES/gtk20.mo
-usr/share/locale/es/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/es/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/es/LC_MESSAGES/gtk20.mo
 usr/share/locale/es/LC_MESSAGES/gtkqtengine.mo
-usr/share/locale/et/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/et/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/et/LC_MESSAGES/gtk20.mo
-usr/share/locale/eu/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/eu/LC_MESSAGES/gtk20.mo
-usr/share/locale/fa/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/fa/LC_MESSAGES/gtk20.mo
-usr/share/locale/fi/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/fi/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/fi/LC_MESSAGES/gtk20.mo
-usr/share/locale/fr/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/fr/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/fr/LC_MESSAGES/gtk20.mo
 usr/share/locale/fr/LC_MESSAGES/gtkqtengine.mo
-usr/share/locale/ga/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ga/LC_MESSAGES/gtk20.mo
-usr/share/locale/gl/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/gl/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/gl/LC_MESSAGES/gtk20.mo
-usr/share/locale/gu/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/gu/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/gu/LC_MESSAGES/gtk20.mo
-usr/share/locale/he/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/he/LC_MESSAGES/gtk20.mo
-usr/share/locale/hi/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/hi/LC_MESSAGES/gtk20.mo
-usr/share/locale/hr/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/hr/LC_MESSAGES/gtk20.mo
-usr/share/locale/hu/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/hu/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/hu/LC_MESSAGES/gtk20.mo
-usr/share/locale/hy/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/hy/LC_MESSAGES/gtk20.mo
-usr/share/locale/ia/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ia/LC_MESSAGES/gtk20.mo
-usr/share/locale/id/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/id/LC_MESSAGES/gtk20.mo
-usr/share/locale/io/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/io/LC_MESSAGES/gtk20.mo
-usr/share/locale/is/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/is/LC_MESSAGES/gtk20.mo
-usr/share/locale/it/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/it/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/it/LC_MESSAGES/gtk20.mo
 usr/share/locale/it/LC_MESSAGES/gtkqtengine.mo
-usr/share/locale/ja/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/ja/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ja/LC_MESSAGES/gtk20.mo
-usr/share/locale/ka/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ka/LC_MESSAGES/gtk20.mo
-usr/share/locale/kn/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/kn/LC_MESSAGES/gtk20.mo
-usr/share/locale/ko/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/ko/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ko/LC_MESSAGES/gtk20.mo
-usr/share/locale/ku/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ku/LC_MESSAGES/gtk20.mo
-usr/share/locale/li/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/li/LC_MESSAGES/gtk20.mo
-usr/share/locale/lt/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/lt/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/lt/LC_MESSAGES/gtk20.mo
-usr/share/locale/lv/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/lv/LC_MESSAGES/gtk20.mo
-usr/share/locale/mi/LC_MESSAGES/gtk20-properties.mo
+usr/share/locale/mai/LC_MESSAGES/gtk20.mo
 usr/share/locale/mi/LC_MESSAGES/gtk20.mo
-usr/share/locale/mk/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/mk/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/mk/LC_MESSAGES/gtk20.mo
-usr/share/locale/ml/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ml/LC_MESSAGES/gtk20.mo
-usr/share/locale/mn/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/mn/LC_MESSAGES/gtk20.mo
-usr/share/locale/mr/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/mr/LC_MESSAGES/gtk20.mo
-usr/share/locale/ms/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ms/LC_MESSAGES/gtk20.mo
-usr/share/locale/nb/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/nb/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/nb/LC_MESSAGES/gtk20.mo
-usr/share/locale/ne/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ne/LC_MESSAGES/gtk20.mo
-usr/share/locale/nl/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/nl/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/nl/LC_MESSAGES/gtk20.mo
-usr/share/locale/nn/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/nn/LC_MESSAGES/gtk20.mo
 usr/share/locale/nn/LC_MESSAGES/gtkqtengine.mo
-usr/share/locale/nso/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/nso/LC_MESSAGES/gtk20.mo
-usr/share/locale/oc/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/oc/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/oc/LC_MESSAGES/gtk20.mo
-usr/share/locale/or/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/or/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/or/LC_MESSAGES/gtk20.mo
-usr/share/locale/pa/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/pa/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/pa/LC_MESSAGES/gtk20.mo
-usr/share/locale/pl/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/pl/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/pl/LC_MESSAGES/gtk20.mo
-usr/share/locale/pt/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/pt/LC_MESSAGES/gtk20-properties.mo
+usr/share/locale/ps/LC_MESSAGES/gtk20.mo
 usr/share/locale/pt/LC_MESSAGES/gtk20.mo
-usr/share/locale/pt_BR/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/pt_BR/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/pt_BR/LC_MESSAGES/gtk20.mo
-usr/share/locale/ro/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ro/LC_MESSAGES/gtk20.mo
-usr/share/locale/ru/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/ru/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ru/LC_MESSAGES/gtk20.mo
 usr/share/locale/ru/LC_MESSAGES/gtkqtengine.mo
-usr/share/locale/rw/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/rw/LC_MESSAGES/gtk20.mo
-usr/share/locale/si/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/si/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/si/LC_MESSAGES/gtk20.mo
-usr/share/locale/sk/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/sk/LC_MESSAGES/gtk20.mo
-usr/share/locale/sl/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/sl/LC_MESSAGES/gtk20.mo
-usr/share/locale/sq/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/sq/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/sq/LC_MESSAGES/gtk20.mo
-usr/share/locale/sr/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/sr/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/sr/LC_MESSAGES/gtk20.mo
-usr/share/locale/sr@Latn/LC_MESSAGES/gtk20-properties.mo
-usr/share/locale/sr@Latn/LC_MESSAGES/gtk20.mo
-usr/share/locale/sr@ije/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/sr@ije/LC_MESSAGES/gtk20.mo
-usr/share/locale/sv/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/sv/LC_MESSAGES/gtk20-properties.mo
+usr/share/locale/sr@latin/LC_MESSAGES/gtk20.mo
 usr/share/locale/sv/LC_MESSAGES/gtk20.mo
 usr/share/locale/sv/LC_MESSAGES/gtkqtengine.mo
-usr/share/locale/ta/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/ta/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ta/LC_MESSAGES/gtk20.mo
-usr/share/locale/te/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/te/LC_MESSAGES/gtk20.mo
-usr/share/locale/th/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/th/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/th/LC_MESSAGES/gtk20.mo
-usr/share/locale/tk/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/tk/LC_MESSAGES/gtk20.mo
-usr/share/locale/tr/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/tr/LC_MESSAGES/gtk20.mo
 usr/share/locale/tr/LC_MESSAGES/gtkqtengine.mo
-usr/share/locale/tt/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/tt/LC_MESSAGES/gtk20.mo
-usr/share/locale/uk/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/uk/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/uk/LC_MESSAGES/gtk20.mo
-usr/share/locale/ur/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/ur/LC_MESSAGES/gtk20.mo
-usr/share/locale/uz/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/uz/LC_MESSAGES/gtk20.mo
-usr/share/locale/uz@cyrillic/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/uz@cyrillic/LC_MESSAGES/gtk20.mo
-usr/share/locale/vi/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/vi/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/vi/LC_MESSAGES/gtk20.mo
-usr/share/locale/wa/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/wa/LC_MESSAGES/gtk20.mo
-usr/share/locale/xh/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/xh/LC_MESSAGES/gtk20.mo
-usr/share/locale/yi/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/yi/LC_MESSAGES/gtk20.mo
-usr/share/locale/zh_CN/LC_MESSAGES/gtk-engines.mo
-usr/share/locale/zh_CN/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/zh_CN/LC_MESSAGES/gtk20.mo
-usr/share/locale/zh_HK/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/zh_HK/LC_MESSAGES/gtk20.mo
-usr/share/locale/zh_TW/LC_MESSAGES/gtk20-properties.mo
 usr/share/locale/zh_TW/LC_MESSAGES/gtk20.mo
 usr/share/themes/Clearlooks/gtk-2.0/gtkrc
 usr/share/themes/Crux/gtk-2.0/gtkrc
@@ -360,7 +243,7 @@ usr/share/themes/MurrinaLoveGray/gtk-2.0/gtkrc
 usr/share/themes/MurrinaNeoGraphite/gtk-2.0/gtkrc
 usr/share/themes/MurrinaVerdeOlivo/gtk-2.0/gtkrc
 usr/share/themes/Nodoka/gtk-2.0/gtkrc
-usr/share/themes/Qt/gtk-2.0/gtkrc
+usr/share/themes/Qt4/gtk-2.0/gtkrc
 usr/share/themes/Raleigh/gtk-2.0/gtkrc
 usr/share/themes/Rezlooks-Gilouche/gtk-2.0/gtkrc
 usr/share/themes/Rezlooks-Snow/gtk-2.0/gtkrc
@@ -481,8 +364,8 @@ usr/share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm usr/share/themes/Rezlooks-Gilouche
 @dirrm usr/share/themes/Raleigh/gtk-2.0
 @dirrm usr/share/themes/Raleigh
-@dirrm usr/share/themes/Qt/gtk-2.0
-@dirrm usr/share/themes/Qt
+@dirrm usr/share/themes/Qt4/gtk-2.0
+@dirrm usr/share/themes/Qt4
 @dirrm usr/share/themes/Nodoka/gtk-2.0
 @dirrm usr/share/themes/Nodoka
 @dirrm usr/share/themes/MurrinaVerdeOlivo/gtk-2.0
@@ -515,18 +398,18 @@ usr/share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm usr/share/themes/Crux
 @dirrm usr/share/themes/Clearlooks/gtk-2.0
 @dirrm usr/share/themes/Clearlooks
-@dirrm usr/share/locale/uz@cyrillic/LC_MESSAGES
-@dirrm usr/share/locale/uz@cyrillic
 @dirrm usr/share/gtk-engines
-@dirrm usr/share/doc/gtk2-engines-2.12.2
-@dirrm usr/share/doc/gtk2-2.12.8
-@dirrm usr/share/doc/gtk-xfce-engine-2.4.2
+@dirrm usr/share/doc/jasper-libs-1.900.1
+@dirrm usr/share/doc/gtk2-engines-2.16.1
+@dirrm usr/share/doc/gtk2-2.14.7
+@dirrm usr/share/doc/gtk-xfce-engine-2.4.3
 @dirrm usr/share/doc/gtk-rezlooks-engine-0.6
-@dirrm usr/share/doc/gtk-qt-engine-0.8
-@dirrm usr/share/doc/gtk-nodoka-engine-0.6.2
-@dirrm usr/share/doc/gtk-murrine-engine-0.52
+@dirrm usr/share/doc/gtk-qt-engine-1.1
+@dirrm usr/share/doc/gtk-nodoka-engine-0.7.2
+@dirrm usr/share/doc/gtk-murrine-engine-0.53.1
+@dirrm usr/share/applications/kde4
 @dirrm usr/lib/pkgconfig
-@dirrm usr/lib/kde3
+@dirrm usr/lib/kde4
 @dirrm usr/lib/gtk-2.0/immodules
 @dirrm usr/lib/gtk-2.0/2.10.0/printbackends
 @dirrm usr/lib/gtk-2.0/2.10.0/loaders

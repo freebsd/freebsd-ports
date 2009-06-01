@@ -3,22 +3,19 @@ etc/pki/nssdb/cert8.db
 etc/pki/nssdb/key3.db
 etc/pki/nssdb/secmod.db
 etc/prelink.conf.d/nss-prelink.conf
-usr/lib/libfreebl3.so
-usr/lib/libnss3.so
-usr/lib/libnssckbi.so
-usr/lib/libnssdbm3.so
-usr/lib/libnsspem.so
-usr/lib/libnssutil3.so
-usr/lib/libsmime3.so
-usr/lib/libsoftokn3.so
-usr/lib/libssl3.so
+lib/libfreebl3.so
+lib/libnss3.so
+lib/libnssckbi.so
+lib/libnssdbm3.so
+lib/libnsspem.so
+lib/libnssutil3.so
+lib/libsmime3.so
+lib/libsoftokn3.so
+lib/libssl3.so
 usr/lib/nss/unsupported-tools/shlibsign
 @comment non-empty directory listing in revers order
 @dirrm usr/lib/nss/unsupported-tools
 @dirrm usr/lib/nss
-@dirrm usr/lib
-@dirrm usr
 @dirrm etc/prelink.conf.d
 @dirrm etc/pki/nssdb
 @dirrm etc/pki
-@dirrm etc

@@ -1,22 +1,24 @@
-# New ports collection makefile for:	textproc/linux-f8-libxml2
-# Date created:				2008-04-10
+# New ports collection makefile for:	textproc/linux-f10-libxml2
+# Date created:				2009-05-03
 # Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.3
 CATEGORIES=	textproc linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Library providing XML and HTML support (Linux Fedora 8)
+COMMENT=	Library providing XML and HTML support (Linux Fedora 10)
+
+CONFLICTS=	linux-libxml2-[0-9]* linux-f8-libxml2-[0-9]*
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	8
-RPMVERSION=	2.fc8
+LINUX_DIST_VER=	10
+RPMVERSION=	1.fc10
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 

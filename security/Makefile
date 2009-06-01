@@ -260,6 +260,9 @@
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
     SUBDIR += liedentd
+    SUBDIR += linux-f10-libssh2
+    SUBDIR += linux-f10-nss
+    SUBDIR += linux-f10-openssl
     SUBDIR += linux-f8-libssh2
     SUBDIR += linux-f8-nss
     SUBDIR += linux-f8-openssl
