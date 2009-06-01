@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	rspec
-PORTVERSION=	0.7.5.1
+PORTVERSION=	1.2.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	rspec
 
 MAINTAINER=	romanbsd@yahoo.com
 COMMENT=	Behaviour Driven Development in Ruby
@@ -17,6 +16,6 @@ USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/drbspec bin/spec
+PLIST_FILES=	bin/spec bin/autospec
 
 .include <bsd.port.mk>
