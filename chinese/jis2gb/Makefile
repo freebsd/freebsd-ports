@@ -14,14 +14,9 @@ DISTFILES=	jis2gb.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert JIS Kanji to GuoBiao Hanzi
 
-WRKSRC=		${WRKDIR}/jis2gb
+WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=
 
-MAN1=		jis2gb.1
-MANCOMPRESSED=	yes
-
-post-install:
-# install manual
-	@${GZIP_CMD} ${PREFIX}/man/man1/jis2gb.1
+MAN1=		${PORTNAME}.1
 
 .include <bsd.port.mk>
