@@ -14,7 +14,7 @@ MASTER_SITES=	RF
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
 
-RUN_DEPENDS=	rubygem-oauth>=0.3.2:${PORTSDIR}/net/rubygem-oauth \
+RUN_DEPENDS=	rubygem-oauth>=0.3.4:${PORTSDIR}/net/rubygem-oauth \
 		rubygem-mash>=0.0.3:${PORTSDIR}/devel/rubygem-mash \
 		rubygem-httparty>=0.4.3:${PORTSDIR}/www/rubygem-httparty \
 		rubygem-hoe>=0.12.2:${PORTSDIR}/devel/rubygem-hoe
