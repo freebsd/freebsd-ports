@@ -18,7 +18,9 @@ COMMENT=	A simple and fast GBK Chinese XIM server
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cn-locale=eucCN
+CONFIGURE_ARGS=	--with-cn-locale=eucCN \
+		--with-bdb-includes=${BDB_INCLUDE_DIR} \
+		--with-bdb-libraries=${BDB_LIB_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message xsim.sh
 USE_BDB=	40+
@@ -40,7 +42,7 @@ post-patch:
 	@${FIND} ${WRKSRC} ! -type d \
 		-exec ${GREP} -q _CPP_BITS_IOSBASE_H '{}' \; \
 		-exec ${REINPLACE_CMD} 's/#ifdef _CPP_BITS_IOSBASE_H/#if defined(_IOS_BASE_H) || defined(_CPP_BITS_IOSBASE_H)/g' '{}' \;
-	@${REINPLACE_CMD} "s/-O2/${CFLAGS}/g" ${WRKSRC}/configure
+	${REINPLACE_CMD} "s/-O2/${CFLAGS}/g; s,/usr/local,${LOCALBASE},; s|s,@bdblib@,\$$bdblib,|s,@bdblib@,${BDB_LIB_CXX_NAME},|" ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/xsim.sh ${PREFIX}/bin/xsim
