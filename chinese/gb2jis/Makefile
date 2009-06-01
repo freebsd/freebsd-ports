@@ -9,19 +9,14 @@ PORTNAME=	gb2jis
 PORTVERSION=	1.5
 CATEGORIES=	chinese
 MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
-DISTFILES=	gb2jis.tar.Z
+DISTFILES=	${PORTNAME}.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert GuoBiao Hanzi to JIS Kanji
 
-WRKSRC=		${WRKDIR}/gb2jis
+WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=
 
-MAN1=		gb2jis.1
-MANCOMPRESSED=	yes
-
-post-install:
-# install manual
-	@${GZIP_CMD} ${PREFIX}/man/man1/gb2jis.1
+MAN1=		${PORTNAME}.1
 
 .include <bsd.port.mk>
