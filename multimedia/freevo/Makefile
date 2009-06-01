@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	freevo
-PORTVERSION=	1.8.3
+PORTVERSION=	1.9.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	freevo
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Open source digital jukebox
@@ -17,6 +18,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		aumix:${PORTSDIR}/audio/aumix \
 		tv_cat:${PORTSDIR}/textproc/p5-xmltv \
+		${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0_1:${PORTSDIR}/devel/py-zopeInterface \
 		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_SITELIBDIR}/kaa/__init__.py:${PORTSDIR}/multimedia/py-kaa-base \
 		${PYTHON_SITELIBDIR}/kaa/imlib2/__init__.py:${PORTSDIR}/multimedia/py-kaa-imlib2 \
@@ -33,7 +35,6 @@ FREEVO_UID=	523
 FREEVO_GID=	${FREEVO_UID}
 FREEVO_HOME=	/var/db/${FREEVO_USER}
 
-NO_BUILD=	yes
 SUB_LIST+=	PORTVERSION=${PORTVERSION} \
 		FREEVO_USER=${FREEVO_USER} \
 		FREEVO_GROUP=${FREEVO_GROUP} \
@@ -48,10 +49,22 @@ USE_PYDISTUTILS=	yes
 USE_RC_SUBR=	${PORTNAME}
 RC_SCRIPT=	${PREFIX}/etc/rc.d/${PORTNAME}
 
-DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
+DATADIR=	${PREFIX}/share/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e  '451d' ${WRKSRC}/${PORTNAME}
+.endif
+
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/freevo_config.py
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/local_conf.py.example
 
