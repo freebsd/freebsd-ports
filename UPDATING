@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090531:
+  AFFECTS: users of devel/viewvc
+  AUTHOR: pgollucci@FreeBSD.org
+
+  viewvc.conf and templates are not compatible to 1.0.x version, even the
+  database scripts have changed.  For details see:
+  http://viewvc.tigris.org/source/browse/*checkout*/viewvc/trunk/docs/upgrading-howto.html
+
 20090530:
   AFFECTS: users of Japanese and Chinese fonts
   AUTHOR: hrs@FreeBSD.org
