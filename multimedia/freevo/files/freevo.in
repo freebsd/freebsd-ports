@@ -34,22 +34,22 @@ cd ${freevo_dir}
 
 case "$1" in
 start)
-	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} recordserver start"
-	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} webserver start"
-	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command}  start"
+	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} --daemon recordserver"
+	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} --daemon webserver"
+	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command} --daemon"
 	;;
 stop)
-	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} recordserver stop"
-	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} webserver stop"
-	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command}  stop"
+	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} --stop recordserver"
+	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} --stop webserver"
+	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command} --stop"
 	;;
 restart)
-	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} recordserver stop"
-	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} webserver stop"
-	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command}  stop"
-	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} recordserver start"
-	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} webserver start"
-	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command}  start"
+	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} --stop recordserver"
+	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} --stop webserver"
+	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command} --stop"
+	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} --daemon recordserver"
+	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} --daemon webserver"
+	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command} --daemon"
 	;;
 esac
 

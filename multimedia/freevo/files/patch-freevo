@@ -1,15 +1,15 @@
---- freevo.orig	2009-01-11 15:50:59.000000000 -0500
-+++ freevo	2009-01-13 21:39:10.000000000 -0500
-@@ -156,7 +156,7 @@
+--- freevo.orig	2009-05-12 08:59:13.000000000 -0400
++++ freevo	2009-05-12 08:58:04.000000000 -0400
+@@ -232,7 +232,7 @@
      get pid of running 'name'
      """
-     _debug_('getpid(name=%r, arg=%r)' % (name, arg))
+     _debug_('getpid(name=%r, args=%r)' % (name, args))
 -    for fname in ('/var/run/' + name  + '-%s.pid' % os.getuid(),
 +    for fname in ('/var/run/freevo/' + name  + '-%s.pid' % os.getuid(),
                    '/tmp/' + name + '-%s.pid' % os.getuid()):
          if os.path.isfile(fname):
              f = open(fname)
-@@ -259,7 +259,7 @@
+@@ -329,7 +329,7 @@
      if pid:
          if store:
              try:
