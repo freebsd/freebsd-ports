@@ -7,6 +7,7 @@
 
 PORTNAME=	xttmgr
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/xttmgr/
 

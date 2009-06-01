@@ -1,17 +1,17 @@
---- Makefile.orig	Thu May  8 08:41:13 2003
-+++ Makefile	Mon Jun 23 22:44:18 2003
-@@ -1,16 +1,16 @@
+--- Makefile.orig	2003-05-08 04:41:13.000000000 +0400
++++ Makefile	2009-06-01 21:24:03.000000000 +0400
+@@ -1,16 +1,15 @@
 -FREETYPE_BASE=/usr
 -FREETYPE_INCL=$(FREETYPE_BASE)/include/freetype2
-+FREETYPE_BASE=/usr/local
++FREETYPE_BASE=${LOCALBASE}
 +FREETYPE_INCL=-I$(FREETYPE_BASE)/include/freetype2 -I$(FREETYPE_BASE)/include
  FREETYPE_LIB=$(FREETYPE_BASE)/lib
 -prefix=/usr
-+prefix=/usr/local
++prefix=${PREFIX}
  
- CC=gcc
+-CC=gcc
 -CFLAGS=$(RPM_OPT_FLAGS) -Wall -pedantic -I$(FREETYPE_INCL)
-+CFLAGS=$(RPM_OPT_FLAGS) -Wall -pedantic $(FREETYPE_INCL)
++CFLAGS+=$(RPM_OPT_FLAGS) -Wall -pedantic $(FREETYPE_INCL)
  LDFALGS=-L$(FREETYPE_LIB) -lfreetype -lz
  
  all: xttmgr
@@ -22,12 +22,12 @@
  
  xttmgr.o: xttmgr.c
  
-@@ -18,7 +18,7 @@
+@@ -18,7 +17,7 @@
  	-rm -f *.o core xttmgr
  
  install:
 -	-install -s -m 755 xttmgr $(DESTDIR)$(prefix)/sbin/xttmgr
-+	-install -s -m 755 xttmgr $(DESTDIR)$(prefix)/bin/xttmgr
++	-${BSD_INSTALL_PROGRAM} xttmgr $(DESTDIR)$(prefix)/bin/xttmgr
  
  uninstall:
  	-rm -f /usr/sbin/xttmgr
