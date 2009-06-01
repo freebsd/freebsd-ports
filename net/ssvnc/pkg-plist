@@ -1,6 +1,20 @@
-bin/ssvnc
 bin/ssvnc-gui
 bin/ssvnc-stunnel
+bin/ssvncviewer
+lib/ssvnc/lim_accept.so
+lib/ssvnc/ssvnc
+lib/ssvnc/ssvnc_cmd
+lib/ssvnc/ultravnc_dsm_helper
+lib/ssvnc/unwrap.so
+lib/ssvnc/util/ss_vncviewer
+lib/ssvnc/util/ssvnc.tcl
+lib/ssvnc/vncstorepw
+lib/ssvnc/vncviewer
+%%ULTRAFTP%%lib/ssvnc/ultraftp.jar
+share/applications/ssvnc.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/stunnel-server.conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/ssvnc/util
+@dirrmtry lib/ssvnc
+@dirrmtry share/applications

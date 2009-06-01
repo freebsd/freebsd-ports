@@ -2,7 +2,7 @@
 
 SSVNC has been installed, and the following commands are available:
 
-ssvnc		- SSVNC viewer
+ssvncviewer	- SSVNC viewer
 ssvnc-stunnel	- Wrapper script for SSVNC + stunnel (SSH/SSL tunnels)
 ssvnc-gui	- GUI for the previous commands
 

@@ -6,51 +6,57 @@
 #
 
 PORTNAME=	ssvnc
-PORTVERSION=	1.0.20
-PORTREVISION=	7
+PORTVERSION=	1.0.22
 CATEGORIES=	net security
-MASTER_SITES=	http://www.karlrunge.com/x11vnc/etv/
+MASTER_SITES=	SF
+DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhanced TightVNC Viewer (SSVNC: SSL/SSH VNC viewer)
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel
+RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel \
+		xterm:${PORTSDIR}/x11/xterm
 
-USE_XORG=	xi xmu xt xaw
+USE_GMAKE=	yes
+USE_XORG=	xi xmu xt xaw ice xpm xext sm
 USE_TCL_RUN=	84
 USE_TK_RUN=	84
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_PERL5_RUN=	yes
+
+MAN1=		ssvnc-gui.1 ssvncviewer.1
+
+OPTIONS=	ULTRAFTP "UltraVNC File Transfer support (Java required)"	off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_ULTRAFTP)
+USE_JAVA=	yes
+PLIST_SUB+=	ULTRAFTP=""
+.else
+PLIST_SUB+=	ULTRAFTP="@comment "
+.endif
+.if defined(NOPORTDOCS)
+MAKE_ARGS+=	DOCS=""
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr/local|${LOCALBASE}|g; s|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/build.unix
-	@${REINPLACE_CMD} -e \
-		's|exec wish|exec ${WISH}|; \
-		 303,$$s|ss_vncviewer|ssvnc-stunnel|; \
-		 s|ssvnc_cmd|ssvnc-stunnel|' \
-		 ${WRKSRC}/bin/util/ssvnc.tcl
-	@${REINPLACE_CMD} -e \
-		's|ss_vncviewer|ssvnc-stunnel|; \
-		 s|-vncviewer|-ssvnc|; \
-		 s|grep Linux|grep ${OPSYS}|' \
-		 ${WRKSRC}/bin/util/ss_vncviewer
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} UNAME="${OPSYS}" ${SH} build.unix
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${OPSYS}/vncviewer ${PREFIX}/bin/ssvnc
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/util/ss_vncviewer \
-		${PREFIX}/bin/ssvnc-stunnel
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/util/ssvnc.tcl ${PREFIX}/bin/ssvnc-gui
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} README bin/util/stunnel-server.conf \
-		${DOCSDIR}
+	@${REINPLACE_CMD} -e 's|exec wish|exec ${WISH}|' ${WRKSRC}/scripts/util/ssvnc.tcl
+	@${REINPLACE_CMD} -e 's|grep Linux|grep ${OPSYS}|' ${WRKSRC}/scripts/util/ss_vncviewer
+	@${REINPLACE_CMD} -e 's|[[:<:]]ssvnc[[:>:]]|ssvnc-gui|' ${WRKSRC}/man/man1/ssvnc.1
+.if !defined(WITH_ULTRAFTP)
+	@${REINPLACE_CMD} -e "s|sh -c 'type javac'||" \
+		-e "s|sh -c 'type jar'||" \
+		-e 's|cd $$(JSRC);|@#|' \
+		-e 's|cp -p $$(ARCHIVE)|@#|' \
+		${WRKSRC}/Makefile
 .endif
+
+do-configure:
+	@cd ${WRKSRC} && ${GMAKE} config
+
+post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
