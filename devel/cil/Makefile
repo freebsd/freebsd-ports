@@ -6,35 +6,31 @@
 #
 
 PORTNAME=	cil
-PORTVERSION=	1.3.6
-PORTREVISION=	1
+PORTVERSION=	1.3.7
 CATEGORIES=	devel lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://hal.cs.berkeley.edu/cil/distrib/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infrastructure for C Program Analysis and Transformation
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ocamlopt:${PORTSDIR}/lang/ocaml
 
-CONFLICTS=	ccured-*
+CONFLICTS=	ccured-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_PERL5=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 
 BINFILES=	cilly patcher teetwo
 LIBFILES=	Cilly.pm KeptFile.pm OutputFile.pm TempFile.pm
-EXECFILES=	cilly.byte.exe machdep.exe
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:@CILHOME@/lib:${SITE_PERL}/CIL:g; s:\@CILHOME\@:${PREFIX}:g' ${WRKSRC}/bin/CilConfig.pm.in
 	@${REINPLACE_CMD} -e 's|$$::cilhome|${PREFIX}|g; s|obj/$$::archos|libexec/cil|g' ${WRKSRC}/bin/cilly
 	@${REINPLACE_CMD} -e 's|^use Cilly;|use CIL::Cilly|' ${WRKSRC}/bin/cilly
-	@${REINPLACE_CMD} -e 's|^use KeptFile;|use CIL::KeptFile;|; s|^use OutputFile;|use CIL::OutputFile;|; s|^use TempFile;|use CIL::TempFile;|' ${WRKSRC}/lib/Cilly.pm
+	@${REINPLACE_CMD} -e 's|^use KeptFile;|use CIL::KeptFile;|; s|^use OutputFile;|use CIL::OutputFile;|; s|^use TempFile;|use CIL::TempFile;|' ${WRKSRC}/lib/Cilly.pm.in
 	@${REINPLACE_CMD} -e 's|^use OutputFile;|use CIL::OutputFile;|' ${WRKSRC}/lib/KeptFile.pm
 	@${REINPLACE_CMD} -e 's|^use OutputFile;|use CIL::OutputFile;|' ${WRKSRC}/lib/TempFile.pm
 
@@ -53,8 +49,5 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/bin/CilConfig.pm ${SITE_PERL}/
 	${MKDIR} ${PREFIX}/libexec/cil
-.for f in ${EXECFILES}
-	${INSTALL} ${WRKSRC}/obj/${ARCH}_FREEBSD/${f} ${PREFIX}/libexec/cil/
-.endfor
 
 .include <bsd.port.mk>
