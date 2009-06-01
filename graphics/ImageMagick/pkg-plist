@@ -80,6 +80,7 @@ include/ImageMagick/magick/montage.h
 include/ImageMagick/magick/option.h
 include/ImageMagick/magick/paint.h
 include/ImageMagick/magick/pixel.h
+include/ImageMagick/magick/policy.h
 include/ImageMagick/magick/prepress.h
 include/ImageMagick/magick/profile.h
 include/ImageMagick/magick/property.h
@@ -134,6 +135,7 @@ lib/ImageMagick-%%PORTVERSION%%/config/delegates.xml
 lib/ImageMagick-%%PORTVERSION%%/config/english.xml
 lib/ImageMagick-%%PORTVERSION%%/config/francais.xml
 lib/ImageMagick-%%PORTVERSION%%/config/locale.xml
+lib/ImageMagick-%%PORTVERSION%%/config/policy.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type-ghostscript.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type-windows.xml
