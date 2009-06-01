@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# PROVIDE: fail2ban
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+fail2ban_enable=${fail2ban_enable-"NO"}
+fail2ban_flags=${fail2ban_flags-""}
+fail2ban_pidfile=${fail2ban_pidfile-"/var/run/fail2ban/fail2ban.pid"}
+
+. %%RC_SUBR%%
+
+name="fail2ban"
+rcvar=`set_rcvar`
+pidfile="${fail2ban_pidfile}"
+
+command="%%PREFIX%%/bin/fail2ban-server"
+command_interpreter="%%PYTHON_CMD%%"
+client="%%PREFIX%%/bin/fail2ban-client"
+
+extra_commands="reload jailstatus"
+
+start_cmd="${client} ${fail2ban_flags} start"
+stop_cmd="${client} ${fail2ban_flags} stop"
+reload_cmd="${client} ${fail2ban_flags} reload"
+jailstatus_cmd="${client} ${fail2ban_flags} status"
+
+load_rc_config $name
+
+run_rc_command "$1"
