@@ -8,7 +8,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.26.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -68,7 +68,8 @@ CONFIGURE_ARGS+=	--disable-ipv6
 post-patch:
 	@${REINPLACE_CMD} -e 's|root:root|root:wheel|g' \
 		${WRKSRC}/data/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	    	-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    	${WRKSRC}/daemon/gdm-session-worker.c \
 		${WRKSRC}/data/gconf.path
 	@${REINPLACE_CMD} -e 's|/bin/true|/usr/bin/true|g' \
