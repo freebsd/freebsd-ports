@@ -125,6 +125,15 @@ post-patch:
 		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
 		${WRKSRC}/texi2pod.pl
 
+.if ${OSVERSION} >= 800091
+# XXX need to disable usb host code on head while it's not ported to the
+# new usb stack yet
+post-configure:
+	@${REINPLACE_CMD} -E \
+		-e "s|^(HOST_USB=)bsd|\1stub|" \
+		${WRKSRC}/config-host.mak
+.endif
+
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${PREFIX}/etc
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${PREFIX}/etc
