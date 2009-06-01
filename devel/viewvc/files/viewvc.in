@@ -36,7 +36,7 @@ rcvar=${name}_enable
 command="%%PREFIX%%/viewvc/bin/standalone.py"
 
 # we need this, since our script interpreter is python
-command_interpreter="%%PREFIX%%/bin/%%PYTHON_VERSION%%"
+command_interpreter="%%PYTHON_CMD%%"
 
 # extra required arguments
 command_args="2>/dev/null 1>/dev/null &"

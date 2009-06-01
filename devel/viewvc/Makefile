@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/44050/
+MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/45933/
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
-
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS=\
 		SUBVERSION 	"use svn binding" 						on \
@@ -26,7 +23,8 @@ OPTIONS=\
 NO_BUILD=	yes
 USE_PYTHON=	yes
 SUB_FILES=	pkg-message
-SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}"
+SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}" \
+			PYTHON_CMD=${PYTHON_CMD}
 
 INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}
@@ -36,6 +34,8 @@ PLIST_SUB=	INSTDIR=${INSTDIR}
 .if !defined(WITH_APACHE) && !defined(WITH_LIGHTTPD)
 USE_RC_SUBR=	viewvc
 .endif
+
+RUN_DEPENDS+=	${LOCALBASE}/bin/pygmentize:${PORTSDIR}/textproc/py-pygments
 
 # viewvc can support CVS or SVN, controlled with the parameter
 # cvs_roots (for CVS), svn_roots (for Subversion) in viewvc.conf
