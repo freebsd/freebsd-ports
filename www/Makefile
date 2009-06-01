@@ -1318,6 +1318,7 @@
     SUBDIR += py-wsgiref
     SUBDIR += pyblosxom
     SUBDIR += pyjamas
+    SUBDIR += pylot
     SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += qt4-webkit

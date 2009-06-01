@@ -1,0 +1,41 @@
+@comment $FreeBSD$
+bin/pylot
+%%DATADIR%%/__init__.py
+%%DATADIR%%/core/LICENSE.txt
+%%DATADIR%%/core/__init__.py
+%%DATADIR%%/core/config.py
+%%DATADIR%%/core/corestats.py
+%%DATADIR%%/core/engine.py
+%%DATADIR%%/core/graph.py
+%%DATADIR%%/core/reportwriter.py
+%%DATADIR%%/core/results.py
+%%DATADIR%%/core/xmlparse.py
+%%DATADIR%%/run.py
+%%DATADIR%%/scripts/pylot_win_recorder.py
+%%DATADIR%%/testcases.xml
+%%DATADIR%%/ui/__init__.py
+%%DATADIR%%/ui/blocking/__init__.py
+%%DATADIR%%/ui/blocking/pylot_blocking.py
+%%DATADIR%%/ui/console/__init__.py
+%%DATADIR%%/ui/console/pylot_console.py
+%%DATADIR%%/ui/console/win/README.txt
+%%DATADIR%%/ui/console/win/__init__.py
+%%DATADIR%%/ui/console/win/_consolepos25.cpp
+%%DATADIR%%/ui/console/win/_consolepos25.pyd
+%%DATADIR%%/ui/console/win/_consolepos26.cpp
+%%DATADIR%%/ui/console/win/_consolepos26.pyd
+%%DATADIR%%/ui/console/win/cpos.py
+%%DATADIR%%/ui/gui/__init__.py
+%%DATADIR%%/ui/gui/icon.ico
+%%DATADIR%%/ui/gui/wx_gui.py
+%%DATADIR%%/util/__init__.py
+%%DATADIR%%/util/optionparse.py
+@dirrm %%DATADIR%%/util
+@dirrm %%DATADIR%%/ui/gui
+@dirrm %%DATADIR%%/ui/console/win
+@dirrm %%DATADIR%%/ui/console
+@dirrm %%DATADIR%%/ui/blocking
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/core
+@dirrm %%DATADIR%%
