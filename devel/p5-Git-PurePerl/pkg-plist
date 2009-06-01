@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl/.packlist
 %%SITE_PERL%%/Git/PurePerl.pm
+%%SITE_PERL%%/Git/PurePerl/Actor.pm
 %%SITE_PERL%%/Git/PurePerl/DirectoryEntry.pm
 %%SITE_PERL%%/Git/PurePerl/Loose.pm
 %%SITE_PERL%%/Git/PurePerl/NewDirectoryEntry.pm
