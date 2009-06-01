@@ -7,7 +7,7 @@
 
 PORTNAME=	cvs
 PORTVERSION=	1.12.13
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	non-gnu/${PORTNAME}/source/feature/${PORTVERSION}
@@ -36,12 +36,6 @@ post-patch:
 	${REINPLACE_CMD} 's/${PORTVERSION:S/./\./g}/&-devel/g' \
 		${WRKSRC}/configure
 	@${CP} ${FILESDIR}/missing ${WRKSRC}
-
-post-install:
-.for f in cvs cvsbug
-	-${MV} ${PREFIX:S/\/local//}/bin/${f} ${PREFIX:S/\/local//}/bin/${f}.orig
-	-${CP} -p ${PREFIX}/bin/${f} ${PREFIX:S/\/local//}/bin
-.endfor
 
 generate-patch:
 	cvs -R -d ${CVS_SITE} rdiff -u -r ${CVS_VER} -r HEAD \

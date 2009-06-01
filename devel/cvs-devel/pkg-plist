@@ -1,10 +1,6 @@
 @comment $FreeBSD$
-@unexec if [ -x /usr/bin/cvs.orig ]; then mv -f /usr/bin/cvs.orig /usr/bin/cvs; fi
 bin/cvs
-@exec if [ ! -x /usr/bin/cvs.orig ]; then mv /usr/bin/cvs /usr/bin/cvs.orig; cp -p %D/%F /usr/bin/%F; fi
-@unexec if [ -x /usr/bin/cvsbug.orig ]; then mv -f /usr/bin/cvsbug.orig /usr/bin/cvsbug; fi
 bin/cvsbug
-@exec if [ ! -x /usr/bin/cvsbug.orig ]; then mv /usr/bin/cvsbug /usr/bin/cvsbug.orig; cp -p %D/%F /usr/bin/%F; fi
 bin/rcs2log
 share/cvs/contrib/README
 share/cvs/contrib/clmerge
