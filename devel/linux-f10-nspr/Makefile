@@ -1,5 +1,5 @@
-# New ports collection makefile for:	devel/linux-f8-nspr
-# Date created:				2009-04-05
+# New ports collection makefile for:	devel/linux-f10-nspr
+# Date created:				2009-05-04
 # Whom:					bsam
 #
 # $FreeBSD$
@@ -8,17 +8,19 @@
 PORTNAME=	nspr
 PORTVERSION=	4.7.3
 CATEGORIES=	devel linux
-PKGNAMEPREFIX=	linux-f8-
+PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Netscape Portable Runtime (Linux Fedora 8)
+COMMENT=	Netscape Portable Runtime (Linux Fedora 10)
+
+CONFLICTS=	linux-f8-nspr-[0-9]*
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	8
-RPMVERSION=	1.fc8
+LINUX_DIST_VER=	10
+RPMVERSION=	2.fc10
 
-PLIST_FILES=	usr/lib/libnspr4.so usr/lib/libplc4.so usr/lib/libplds4.so
+PLIST_FILES=	lib/libnspr4.so lib/libplc4.so lib/libplds4.so
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

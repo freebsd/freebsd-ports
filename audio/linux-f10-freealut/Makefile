@@ -1,5 +1,5 @@
-# New ports collection makefile for:	audio/linux-f8-freealut
-# Date created:				2008-04-03
+# New ports collection makefile for:	audio/linux-f10-freealut
+# Date created:				2009-05-03
 # Whom:					bsam
 #
 # $FreeBSD$
@@ -8,16 +8,18 @@
 PORTNAME=	freealut
 PORTVERSION=	1.1.0
 CATEGORIES=	audio linux
-PKGNAMEPREFIX=	linux-f8-
+PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	A free implementation of OpenAL's ALUT standard (Linux Fedora 8)
+COMMENT=	A free implementation of OpenAL's ALUT standard (Linux Fedora 10)
+
+CONFLICTS=	linux-freealut-[0-9]* linux-f8-freealut-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	openal
-LINUX_DIST_VER=	8
-RPMVERSION=	5.fc8
+LINUX_DIST_VER=	10
+RPMVERSION=	6.fc9
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 

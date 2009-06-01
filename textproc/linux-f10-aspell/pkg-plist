@@ -92,9 +92,9 @@ usr/lib/libaspell.so.15
 usr/lib/libaspell.so.15.1.4
 usr/lib/libpspell.so.15
 usr/lib/libpspell.so.15.1.4
-usr/share/doc/aspell-0.60.5/COPYING
-usr/share/doc/aspell-0.60.5/README
-usr/share/doc/aspell-0.60.5/TODO
+usr/share/doc/aspell-0.60.6/COPYING
+usr/share/doc/aspell-0.60.6/README
+usr/share/doc/aspell-0.60.6/TODO
 usr/share/info/aspell.info.gz
 usr/share/locale/be/LC_MESSAGES/aspell.mo
 usr/share/locale/ca/LC_MESSAGES/aspell.mo
@@ -112,6 +112,7 @@ usr/share/locale/pt_BR/LC_MESSAGES/aspell.mo
 usr/share/locale/ro/LC_MESSAGES/aspell.mo
 usr/share/locale/ru/LC_MESSAGES/aspell.mo
 usr/share/locale/rw/LC_MESSAGES/aspell.mo
+usr/share/locale/sk/LC_MESSAGES/aspell.mo
 usr/share/locale/sl/LC_MESSAGES/aspell.mo
 usr/share/locale/sr/LC_MESSAGES/aspell.mo
 usr/share/locale/sv/LC_MESSAGES/aspell.mo
@@ -125,5 +126,5 @@ usr/share/man/man1/prezip-bin.1.gz
 usr/share/man/man1/run-with-aspell.1.gz
 usr/share/man/man1/word-list-compress.1.gz
 @comment non-empty directory listing in revers order
-@dirrm usr/share/doc/aspell-0.60.5
+@dirrm usr/share/doc/aspell-0.60.6
 @dirrm usr/lib/aspell-0.60

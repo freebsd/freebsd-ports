@@ -207,6 +207,7 @@
     SUBDIR += libxkbfile
     SUBDIR += libxkbui
     SUBDIR += libxklavier
+    SUBDIR += linux-f10-xorg-libs
     SUBDIR += linux-f8-xorg-libs
     SUBDIR += linux-xorg-libs
     SUBDIR += listres

@@ -1,5 +1,5 @@
-# New ports collection makefile for:	textproc/linux-f8-libxml
-# Date created:				2008-04-10
+# New ports collection makefile for:	textproc/linux-f10-libxml
+# Date created:				2009-05-03
 # Whom:					bsam
 #
 # $FreeBSD$
@@ -8,15 +8,17 @@
 PORTNAME=	libxml
 PORTVERSION=	1.8.17
 CATEGORIES=	textproc linux
-PKGNAMEPREFIX=	linux-f8-
+PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	Old libXML library for Gnome-1 application compatibility (Linux Fedora 8)
+COMMENT=	Old libXML library for Gnome-1 application compatibility (Linux Fedora 10)
+
+CONFLICTS=	linux-libxml-[0-9]* linux-f8-libxml-[0-9]*
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	8
-RPMVERSION=	18.fc8
+LINUX_DIST_VER=	10
+RPMVERSION=	20.fc10
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/lib/libxml.so.1 usr/lib/libxml.so.${PORTVERSION}

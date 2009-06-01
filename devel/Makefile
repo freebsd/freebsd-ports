@@ -756,6 +756,12 @@
     SUBDIR += lightning
     SUBDIR += lincvs
     SUBDIR += linux-allegro
+    SUBDIR += linux-f10-allegro
+    SUBDIR += linux-f10-libglade
+    SUBDIR += linux-f10-libglade2
+    SUBDIR += linux-f10-libsigc++20
+    SUBDIR += linux-f10-nspr
+    SUBDIR += linux-f10-sdl12
     SUBDIR += linux-f8-allegro
     SUBDIR += linux-f8-libglade
     SUBDIR += linux-f8-libglade2

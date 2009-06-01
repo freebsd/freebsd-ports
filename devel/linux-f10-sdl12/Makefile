@@ -1,5 +1,5 @@
-# New ports collection makefile for:	devel/linux-f8-sdl12
-# Date created:				2008-04-03
+# New ports collection makefile for:	devel/linux-f10-sdl12
+# Date created:				2009-05-03
 # Whom:					bsam
 #
 # $FreeBSD$
@@ -8,23 +8,24 @@
 PORTNAME=	sdl
 PORTVERSION=	1.2.13
 CATEGORIES=	devel linux
-PKGNAMEPREFIX=	linux-f8-
+PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	Cross-platform multi-media development API (Linux Fedora 8)
+COMMENT=	Cross-platform multi-media development API (Linux Fedora 10)
+
+CONFLICTS=	linux-sdl12-[0-9]* linux-f8-sdl12-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 INSTALL_SHLIB=	yes
 LINUX_NAME=	SDL
-LINUX_DIST_VER=	8
-RPMVERSION=	2.fc8
+LINUX_DIST_VER=	10
+RPMVERSION=	7.fc10
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	etc/profile.d/SDL_pulseaudio_hack.csh etc/profile.d/SDL_pulseaudio_hack.sh \
-		usr/lib/libSDL-1.2.so.0 usr/lib/libSDL-1.2.so.0.11.2
+PLIST_FILES=	usr/lib/libSDL-1.2.so.0 usr/lib/libSDL-1.2.so.0.11.2
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	BUGS COPYING CREDITS README-SDL.txt
 DESCR=		${.CURDIR}/../${PORTNAME}12/pkg-descr

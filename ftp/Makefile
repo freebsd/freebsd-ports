@@ -51,6 +51,7 @@
     SUBDIR += kwebget
     SUBDIR += lftp
     SUBDIR += linux-curl
+    SUBDIR += linux-f10-curl
     SUBDIR += linux-f8-curl
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp

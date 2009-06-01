@@ -1,24 +1,26 @@
-# New ports collection makefile for:	x11-fonts/linux-f8-fontconfig
-# Date created:				2008-03-28
+# New ports collection makefile for:	x11-fonts/linux-f10-fontconfig
+# Date created:				2009-05-01
 # Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6.0
 CATEGORIES=	x11-fonts linux
-PKGNAMEPREFIX=	linux-f8-
+PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	An XML-based font configuration API for X Windows (Linux Fedora 8)
+COMMENT=	An XML-based font configuration API for X Windows (Linux Fedora 10)
+
+CONFLICTS=	linux-fontconfig-[0-9]* linux-f8-fontconfig-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	expat
-LINUX_DIST_VER=	8
-RPMVERSION=	5.fc8
+LINUX_DIST_VER=	10
+RPMVERSION=	3.fc10
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 

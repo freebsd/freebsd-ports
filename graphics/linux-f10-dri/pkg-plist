@@ -1,23 +1,28 @@
 @comment file listing
+etc/modprobe.d/i915modeset
+etc/udev/rules.d/91-drm-modeset.rules
 usr/lib/dri/i810_dri.so
 usr/lib/dri/i915_dri.so
-usr/lib/dri/i915tex_dri.so
 usr/lib/dri/i965_dri.so
-usr/lib/dri/mach64_dri.so
+usr/lib/dri/libdricore.so
 usr/lib/dri/mga_dri.so
 usr/lib/dri/r128_dri.so
 usr/lib/dri/r200_dri.so
 usr/lib/dri/r300_dri.so
 usr/lib/dri/radeon_dri.so
 usr/lib/dri/savage_dri.so
+usr/lib/dri/sis_dri.so
+usr/lib/dri/swrast_dri.so
 usr/lib/dri/tdfx_dri.so
 usr/lib/dri/unichrome_dri.so
 usr/lib/libGL.so.1
 usr/lib/libGL.so.1.2
 usr/lib/libGLU.so.1
-usr/lib/libGLU.so.1.3.070002
+usr/lib/libGLU.so.1.3.070300
 usr/lib/libdrm.so.2
 usr/lib/libdrm.so.2.3.0
+usr/lib/libdrm_intel.so.1
+usr/lib/libdrm_intel.so.1.0.0
 usr/lib/libglide3-v1.so
 usr/lib/libglide3-v2.so
 usr/lib/libglide3-v3.so
@@ -42,9 +47,12 @@ usr/share/doc/freeglut-2.4.0/index.html
 usr/share/doc/freeglut-2.4.0/ogl_sm.png
 usr/share/doc/freeglut-2.4.0/progress.html
 usr/share/doc/freeglut-2.4.0/structure.html
-usr/share/doc/libdrm-2.3.0/README
+usr/share/doc/libdrm-2.4.0/README
 @comment non-empty directory listing in revers order
-@dirrm usr/share/doc/libdrm-2.3.0
+@dirrm usr/share/doc/libdrm-2.4.0
 @dirrm usr/share/doc/freeglut-2.4.0
 @dirrm usr/share/doc/Glide3-20050815
 @dirrm usr/lib/dri
+@dirrm etc/udev/rules.d
+@dirrm etc/udev
+@dirrm etc/modprobe.d

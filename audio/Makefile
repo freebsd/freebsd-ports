@@ -391,6 +391,15 @@
     SUBDIR += linux-alsa-lib
     SUBDIR += linux-arts
     SUBDIR += linux-esound
+    SUBDIR += linux-f10-alsa-lib
+    SUBDIR += linux-f10-arts
+    SUBDIR += linux-f10-esound
+    SUBDIR += linux-f10-freealut
+    SUBDIR += linux-f10-libaudiofile
+    SUBDIR += linux-f10-libogg
+    SUBDIR += linux-f10-libvorbis
+    SUBDIR += linux-f10-openal
+    SUBDIR += linux-f10-sdl_mixer
     SUBDIR += linux-f8-alsa-lib
     SUBDIR += linux-f8-arts
     SUBDIR += linux-f8-esound

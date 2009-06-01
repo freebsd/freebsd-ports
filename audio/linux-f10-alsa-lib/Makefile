@@ -1,23 +1,25 @@
-# New ports collection makefile for:	audio/linux-f8-alsa-lib
-# Date created:				2008-04-03
+# New ports collection makefile for:	audio/linux-f10-alsa-lib
+# Date created:				2009-05-03
 # Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	alsa-lib
-PORTVERSION=	1.0.15
+PORTVERSION=	1.0.19
 CATEGORIES=	audio linux
-PKGNAMEPREFIX=	linux-f8-
+PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	The Advanced Linux Sound Architecture libraries (Linux Fedora 8)
+COMMENT=	The Advanced Linux Sound Architecture libraries (Linux Fedora 10)
+
+CONFLICTS=	linux-alsa-lib-[0-9]* linux-f8-alsa-lib-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	8
-RPMVERSION=	1.fc8
+LINUX_DIST_VER=	10
+RPMVERSION=	2.fc10
 BRANDELF_FILES=	usr/bin/aserver
 USE_LDCONFIG=	yes
 

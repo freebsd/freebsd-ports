@@ -462,6 +462,17 @@
     SUBDIR += linux-adobesvg
     SUBDIR += linux-cairo
     SUBDIR += linux-dri74
+    SUBDIR += linux-f10-cairo
+    SUBDIR += linux-f10-dri
+    SUBDIR += linux-f10-gdk-pixbuf
+    SUBDIR += linux-f10-imlib
+    SUBDIR += linux-f10-jpeg
+    SUBDIR += linux-f10-libmng
+    SUBDIR += linux-f10-png
+    SUBDIR += linux-f10-png10
+    SUBDIR += linux-f10-sdl_image
+    SUBDIR += linux-f10-tiff
+    SUBDIR += linux-f10-ungif
     SUBDIR += linux-f8-cairo
     SUBDIR += linux-f8-dri
     SUBDIR += linux-f8-gdk-pixbuf
