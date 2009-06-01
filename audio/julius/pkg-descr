@@ -1,0 +1,7 @@
+"Julius" is an open-source high-performance large vocabulary
+continuous speech recognition (LVCSR) decoder software for
+speech-related researchers and developers.  Based on word N-gram and
+triphone context-dependent HMM, it can perform almost real-time
+decoding on most current PCs with small amount of memory.
+
+WWW: http://julius.sourceforge.jp/en_index.php

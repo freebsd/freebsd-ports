@@ -328,6 +328,7 @@
     SUBDIR += jmusic
     SUBDIR += juk
     SUBDIR += juke
+    SUBDIR += julius
     SUBDIR += jxm
     SUBDIR += k3bmonkeyaudioplugin
     SUBDIR += kexis
