@@ -8,7 +8,8 @@
 PORTNAME=	linux-pam-docs
 PORTVERSION=	0.76
 CATEGORIES=	security
-MASTER_SITES=	http://www.kernel.org/pub/linux/libs/pam/pre/doc/
+MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
+MASTER_SITE_SUBDIR=	linux/libs/pam/pre/history
 DISTNAME=	Linux-PAM-${PORTVERSION}-docs
 
 MAINTAINER=	ports@FreeBSD.org
