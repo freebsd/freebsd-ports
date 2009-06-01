@@ -131,10 +131,6 @@ CONFIGURE_ARGS+=	--enable-nls
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
-.if defined(WITH_CLIENT_ONLY) && (${OSVERSION} >= 800000)
-BROKEN=	Does not build due to missing llistxattr
-.endif
-
 # overridden if client install
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.server
 PKGINSTALL=	${PKGDIR}/pkg-install.server
@@ -142,7 +138,8 @@ PKGINSTALL=	${PKGDIR}/pkg-install.server
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
-CONFIGURE_ARGS+=	--enable-client-only
+# --disable-xattr is temporary to allow build with 8-current
+CONFIGURE_ARGS+=	--enable-client-only --disable-xattr
 
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
 PKGINSTALL=	${PKGDIR}/pkg-install.client
