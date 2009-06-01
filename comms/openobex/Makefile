@@ -8,8 +8,8 @@
 PORTNAME=	openobex
 PORTVERSION=	1.4
 CATEGORIES=	comms net
-MASTER_SITES=	http://www.kernel.org/pub/linux/bluetooth/ \
-		http://www.de.kernel.org/pub/linux/bluetooth/
+MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
+MASTER_SITE_SUBDIR=	linux/bluetooth
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Open source implementation of the OBEX protocol
