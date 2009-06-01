@@ -1,0 +1,12 @@
+--- amavisd.orig	2009-06-01 23:08:36.000000000 +0200
++++ amavisd	2009-06-01 23:09:30.000000000 +0200
+@@ -13649,7 +13649,9 @@
+ my(%spam_scanners_used);
+ my($bpscm) = ca('bypass_spam_checks_maps');
+ if (!@{ca('spam_scanners')}) {
++    undef $extra_code_antispam;
+ } elsif (@$bpscm && !ref($bpscm->[0]) && $bpscm->[0]) {  # simple-minded
++    undef $extra_code_antispam;
+ } else {
+   eval $extra_code_antispam or die "Problem in antispam code: $@";
+   $extra_code_antispam = 1;       # release memory occupied by the source code
