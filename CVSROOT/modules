@@ -2329,6 +2329,7 @@ dnsmasq                         ports/dns/dnsmasq
 dnsmax-perl                     ports/dns/dnsmax-perl
 dnsperf                         ports/dns/dnsperf
 dnsproxy                        ports/dns/dnsproxy
+dnsreflector                    ports/dns/dnsreflector
 dnstop                          ports/dns/dnstop
 dnstracer                       ports/dns/dnstracer
 dnsutl                          ports/dns/dnsutl
@@ -2568,6 +2569,7 @@ dzip                            ports/archivers/dzip
 e                               ports/math/e
 e-uae                           ports/emulators/e-uae
 e00compr                        ports/devel/e00compr
+e107                            ports/www/e107
 e16-themes                      ports/x11-themes/e16-themes
 e16utils                        ports/x11-wm/e16utils
 e17-module-bling                ports/x11/e17-module-bling
@@ -3270,6 +3272,7 @@ fileprune                       ports/sysutils/fileprune
 filerunner                      ports/x11-fm/filerunner
 fileschanged                    ports/sysutils/fileschanged
 fileshuffle                     ports/textproc/fileshuffle
+filetype                        ports/sysutils/filetype
 filezilla                       ports/ftp/filezilla
 fillets-ng                      ports/games/fillets-ng
 filtermail                      ports/mail/filtermail
@@ -4863,6 +4866,7 @@ gtk-murrina-fancy-clearlooks    ports/x11-themes/gtk-murrina-fancy-clearlooks
 gtk-murrina-lightblue           ports/x11-themes/gtk-murrina-lightblue
 gtk-murrine-engine              ports/x11-themes/gtk-murrine-engine
 gtk-murrine-themes              ports/x11-themes/gtk-murrine-themes
+gtk-nodoka-engine               ports/x11-themes/gtk-nodoka-engine
 gtk-qn-x11-theme                ports/x11-themes/gtk-qn-x11-theme
 gtk-qnxtheme                    ports/x11-themes/gtk-qnxtheme
 gtk-qt-engine                   ports/x11-themes/gtk-qt-engine
@@ -5745,6 +5749,15 @@ ja-expect                       ports/japanese/expect
 ja-flex-sdk                     ports/japanese/flex-sdk
 ja-flower-fpw                   ports/japanese/flower-fpw
 ja-foldoc-fpw                   ports/japanese/foldoc-fpw
+ja-font-ipa                     ports/japanese/font-ipa
+ja-font-kochi                   ports/japanese/font-kochi
+ja-font-mplus                   ports/japanese/font-mplus
+ja-font-mplus-ipa               ports/japanese/font-mplus-ipa
+ja-font-sazanami                ports/japanese/font-sazanami
+ja-font-shinonome               ports/japanese/font-shinonome
+ja-font-std                     ports/japanese/font-std
+ja-font-ume                     ports/japanese/font-ume
+ja-font-vlgothic                ports/japanese/font-vlgothic
 ja-freepwing                    ports/japanese/freepwing
 ja-freewnn-lib                  ports/japanese/FreeWnn-lib
 ja-freewnn-server               ports/japanese/FreeWnn-server
@@ -5768,7 +5781,6 @@ ja-icanna                       ports/japanese/icanna
 ja-iiimf-le-canna               ports/japanese/iiimf-le-canna
 ja-iiimf-le-freewnn             ports/japanese/iiimf-le-freewnn
 ja-im-ja                        ports/japanese/im-ja
-ja-ipa-ttfonts                  ports/japanese/ipa-ttfonts
 ja-ipadic                       ports/japanese/ipadic
 ja-ircII                        ports/japanese/ircII
 ja-ircii                        ports/japanese/ircII
@@ -5807,7 +5819,6 @@ ja-kde3-i18n                    ports/japanese/kde3-i18n
 ja-kde4-l10n                    ports/japanese/kde4-l10n
 ja-kdrill                       ports/japanese/kdrill
 ja-kinput2                      ports/japanese/kinput2
-ja-kochi-ttfonts                ports/japanese/kochi-ttfonts
 ja-koffice-i18n                 ports/japanese/koffice-i18n
 ja-kon2-14dot                   ports/japanese/kon2-14dot
 ja-kon2-16dot                   ports/japanese/kon2-16dot
@@ -5852,7 +5863,6 @@ ja-mobileimap                   ports/japanese/mobileimap
 ja-monafonts                    ports/japanese/monafonts
 ja-monafonts-ttf                ports/japanese/monafonts-ttf
 ja-mozilla-jlp                  ports/japanese/mozilla-jlp
-ja-mplusfonts                   ports/japanese/mplusfonts
 ja-mtools                       ports/japanese/mtools
 ja-multiskkserv                 ports/japanese/multiskkserv
 ja-mutt                         ports/japanese/mutt
@@ -5982,7 +5992,6 @@ ja-rubygem-jpmobile             ports/japanese/rubygem-jpmobile
 ja-rxvt                         ports/japanese/rxvt
 ja-ryaku-fpw                    ports/japanese/ryaku-fpw
 ja-samba3                       ports/japanese/samba3
-ja-sazanami-ttf                 ports/japanese/sazanami-ttf
 ja-scim-anthy                   ports/japanese/scim-anthy
 ja-scim-canna                   ports/japanese/scim-canna
 ja-scim-honoka                  ports/japanese/scim-honoka
@@ -5995,7 +6004,6 @@ ja-scim-tomoe                   ports/japanese/scim-tomoe
 ja-scim-uim                     ports/japanese/scim-uim
 ja-seaside                      ports/japanese/seaside
 ja-sed                          ports/japanese/sed
-ja-shinonome                    ports/japanese/shinonome
 ja-sj3-lib                      ports/japanese/sj3-lib
 ja-sj3-server                   ports/japanese/sj3-server
 ja-skk                          ports/japanese/skk
@@ -6038,11 +6046,9 @@ ja-uim-anthy                    ports/japanese/uim-anthy
 ja-uim-canna                    ports/japanese/uim-canna
 ja-uim-prime                    ports/japanese/uim-prime
 ja-uim-tomoe-gtk                ports/japanese/uim-tomoe-gtk
-ja-umefont                      ports/japanese/umefont
 ja-vera-fpw                     ports/japanese/vera-fpw
 ja-vflib                        ports/japanese/vflib
 ja-vftool                       ports/japanese/vftool
-ja-vlgothic                     ports/japanese/vlgothic
 ja-vtpsfont                     ports/japanese/VTPSfont
 ja-w3m                          ports/japanese/w3m
 ja-w3m-img                      ports/japanese/w3m-img
@@ -8224,6 +8230,7 @@ lxde-meta                       ports/x11/lxde-meta
 lxdvdrip                        ports/multimedia/lxdvdrip
 lxnb                            ports/security/lxnb
 lxpanel                         ports/x11/lxpanel
+lxr                             ports/devel/lxr
 lxsession                       ports/x11-wm/lxsession
 lxsession-lite                  ports/x11-wm/lxsession-lite
 lxsplit                         ports/sysutils/lxsplit
@@ -11258,6 +11265,7 @@ p5-GDS2                         ports/cad/p5-GDS2
 p5-GIS-Distance                 ports/math/p5-GIS-Distance
 p5-GMail-IMAPD                  ports/mail/p5-GMail-IMAPD
 p5-GPS                          ports/astro/p5-GPS
+p5-GPS-Babel                    ports/astro/p5-GPS-Babel
 p5-GSSAPI                       ports/security/p5-GSSAPI
 p5-GStreamer                    ports/multimedia/p5-GStreamer
 p5-Games-Alak                   ports/games/p5-Games-Alak
@@ -14776,6 +14784,7 @@ p5-google-checkout              ports/devel/p5-Google-Checkout
 p5-google-data-json             ports/textproc/p5-Google-Data-JSON
 p5-gopher-server                ports/net/p5-Gopher-Server
 p5-gps                          ports/astro/p5-GPS
+p5-gps-babel                    ports/astro/p5-GPS-Babel
 p5-graph                        ports/math/p5-Graph
 p5-graph-easy                   ports/graphics/p5-Graph-Easy
 p5-graph-readwrite              ports/graphics/p5-Graph-ReadWrite
@@ -17203,6 +17212,7 @@ pear-Net_Finger                 ports/net/pear-Net_Finger
 pear-Net_Gearman                ports/devel/pear-Net_Gearman
 pear-Net_Geo                    ports/net/pear-Net_Geo
 pear-Net_GeoIP                  ports/net/pear-Net_GeoIP
+pear-Net_IDNA                   ports/net/pear-Net_IDNA
 pear-Net_IMAP                   ports/mail/pear-Net_IMAP
 pear-Net_IPv6                   ports/net/pear-Net_IPv6
 pear-Net_Ident                  ports/net/pear-Net_Ident
@@ -17481,6 +17491,7 @@ pear-net_gearman                ports/devel/pear-Net_Gearman
 pear-net_geo                    ports/net/pear-Net_Geo
 pear-net_geoip                  ports/net/pear-Net_GeoIP
 pear-net_ident                  ports/net/pear-Net_Ident
+pear-net_idna                   ports/net/pear-Net_IDNA
 pear-net_imap                   ports/mail/pear-Net_IMAP
 pear-net_ipv6                   ports/net/pear-Net_IPv6
 pear-net_ldap                   ports/net/pear-Net_LDAP
@@ -24215,6 +24226,7 @@ zh-eterm                        ports/chinese/eterm
 zh-fcitx                        ports/chinese/fcitx
 zh-firebird                     ports/chinese/firebird
 zh-fireflyttf                   ports/chinese/fireflyttf
+zh-font-std                     ports/chinese/font-std
 zh-fortunetw                    ports/chinese/fortunetw
 zh-fqterm                       ports/chinese/fqterm
 zh-freewnn-lib                  ports/chinese/FreeWnn-lib
