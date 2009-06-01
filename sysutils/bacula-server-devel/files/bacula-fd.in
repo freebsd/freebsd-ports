@@ -2,7 +2,7 @@
 #
 # $FreeBSD$
 #
-# PROVIDE: utility
+# PROVIDE: bacula_dir
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
@@ -22,10 +22,9 @@ command=%%PREFIX%%/sbin/bacula-fd
 
 load_rc_config $name
 
-pidfile="${bacula_fd_pidfile}"
-
 : ${bacula_fd_enable="NO"}
 : ${bacula_fd_flags=" -u root -g wheel -v -c %%PREFIX%%/etc/bacula-fd.conf"}
 : ${bacula_fd_pidfile="/var/run/bacula-fd.9102.pid"}
+pidfile="${bacula_fd_pidfile}"
 
 run_rc_command "$1"
