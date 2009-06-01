@@ -18,6 +18,8 @@ COMMENT=	A-A-P GUI IDE: a framework for software development
 RUN_DEPENDS=	${LOCALBASE}/bin/aap:${PORTSDIR}/devel/aap \
 		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim
 
+BROKEN=		does not build
+
 MAN1=		agide.1
 
 NO_BUILD=	yes
