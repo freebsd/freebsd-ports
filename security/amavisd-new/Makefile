@@ -8,6 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
