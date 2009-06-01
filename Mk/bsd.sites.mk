@@ -1472,6 +1472,18 @@ MASTER_SITE_XORG+= \
 	ftp://ftp.x.org/pub/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_KERNEL_ORG)
+MASTER_SITE_KERNEL_ORG+= \
+	http://kernel.org/pub/%SUBDIR%/ \
+	http://www.us.kernel.org/pub/%SUBDIR%/ \
+	http://www.uk.kernel.org/pub/%SUBDIR%/ \
+	http://www.no.kernel.org/pub/%SUBDIR%/ \
+	http://www.de.kernel.org/pub/%SUBDIR%/ \
+	http://www.it.kernel.org/pub/%SUBDIR%/ \
+	http://www.ru.kernel.org/pub/%SUBDIR%/ \
+	http://www.au.kernel.org/pub/%SUBDIR%/
+.endif
+
 # Macro magic
 
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN SF:SOURCEFORGE SFE:SOURCEFORGE_EXTENDED \
