@@ -1,10 +1,10 @@
 lib/sasl2/imspd.conf
 sbin/imspd
-%%PORTDOCS%%share/doc/imspd/Setup-instructions
-%%PORTDOCS%%share/doc/imspd/option.registry
-%%PORTDOCS%%share/doc/imspd/Changes-Todo
-%%PORTDOCS%%share/doc/imspd/imsp.implementation
-%%PORTDOCS%%share/doc/imspd/imsp.implementation.updates
-%%PORTDOCS%%@dirrm share/doc/imspd
+%%PORTDOCS%%%%DOCSDIR%%/Setup-instructions
+%%PORTDOCS%%%%DOCSDIR%%/option.registry
+%%PORTDOCS%%%%DOCSDIR%%/Changes-Todo
+%%PORTDOCS%%%%DOCSDIR%%/imsp.implementation
+%%PORTDOCS%%%%DOCSDIR%%/imsp.implementation.updates
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @cwd /var
 imsp/options.dist
