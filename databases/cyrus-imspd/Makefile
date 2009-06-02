@@ -18,13 +18,17 @@ COMMENT=	The cyrus IMSP (Internet Message Support Protocol) server
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
 GNU_CONFIGURE=	YES
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-sasldir=${LOCALBASE} \
+		--with-sasl=${LOCALBASE} \
 		--with-auth=unix
 
 USE_RC_SUBR=	imspd
+DOCSDIR=	${PREFIX}/share/doc/imspd
 
-pre-configure:
+post-patch:
 		${REINPLACE_CMD} -e "s|<sasl.h>|<sasl2/sasl.h>|" \
 			${WRKSRC}/configure
 
@@ -35,17 +39,13 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/imsp/options.sample \
 			/var/imsp/options.dist
 .if !defined(NOPORTDOCS)
-		${MKDIR} ${PREFIX}/share/doc/imspd
+		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/notes/Setup-instructions \
-			${PREFIX}/share/doc/imspd
-		${INSTALL_DATA} ${WRKSRC}/notes/option.registry \
-			${PREFIX}/share/doc/imspd
-		${INSTALL_DATA} ${WRKSRC}/notes/Changes-Todo \
-			${PREFIX}/share/doc/imspd
-		${INSTALL_DATA} ${WRKSRC}/notes/imsp.implementation \
-			${PREFIX}/share/doc/imspd
-		${INSTALL_DATA} ${WRKSRC}/notes/imsp.implementation.updates \
-			${PREFIX}/share/doc/imspd
+				${WRKSRC}/notes/option.registry \
+				${WRKSRC}/notes/Changes-Todo \
+				${WRKSRC}/notes/imsp.implementation \
+				${WRKSRC}/notes/imsp.implementation.updates \
+			${DOCSDIR}
 .endif
 		@${CAT} ${PKGMESSAGE}
 
