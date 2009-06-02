@@ -1,0 +1,305 @@
+Index: src/version.sh
+===================================================================
+--- src/version.sh	(revision 6820)
++++ src/version.sh	(revision 6838)
+@@ -4,8 +4,8 @@
+ #
+ #	create version.c to define BOGOFILTER_VERSION
+ #
+-#	if VERSION in config.h does not contain 'cvs', use its value.
+-#	if it does contain 'cvs', append a date to it.
++#	if VERSION in config.h does not contain 'svn', use its value.
++#	if it does contain 'svn', append a date to it.
+ #
+ #	We'll first try to find CVS/Entries files and use the most
+ #	current date from the files. To parse, we need Perl 5 and
+Index: src/tests/inputs/mime-qp-cont-with-cr.txt
+===================================================================
+--- src/tests/inputs/mime-qp-cont-with-cr.txt	(revision 0)
++++ src/tests/inputs/mime-qp-cont-with-cr.txt	(revision 6838)
+@@ -0,0 +1,31 @@
++Subject: This is a test message to check bogofilter's qp decoding of 
++	 continuation lines in the presence of spurious CR characters.
++MIME-Version: 1.0
++Content-Type: multipart/alternative;
++	boundary="----=_NextPart_000_0007_01C9DC27.B9F73130"
++
++This is a multi-part message in MIME format.
++
++------=_NextPart_000_0007_01C9DC27.B9F73130
++Content-Type: text/html;
++	charset="iso-8859-2"
++Content-Transfer-Encoding: quoted-printable
++
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
++<HTML><HEAD>
++<META http-equiv=3DContent-Type content=3D"text/html; charset=3Diso-8859-2"=
++>
++<META content=3D"MSHTML 6.00.2800.1506" name=3DGENERATOR>
++<STYLE></STYLE>
++</HEAD>
++<BODY>
++<DIV align=3Dcenter><FONT face=3DArial size=3D2>50mg x 10 pills $6.00 per p=
++ill</FONT></DIV>
++<DIV align=3Dcenter><FONT face=3DArial size=3D2></FONT>&nbsp;</DIV>
++<DIV align=3Dcenter><FONT face=3DArial size=3D2>
++<A href=3D"http://groups.yahoo.com/group/ganebawusexut64/message/1">Visit h=
++ere</A></FONT></DIV>
++</BODY></HTML>
++
++------=_NextPart_000_0007_01C9DC27.B9F73130--
++
+
+Property changes on: src/tests/inputs/mime-qp-cont-with-cr.txt
+___________________________________________________________________
+Added: svn:eol-style
+   + native
+
+Index: src/tests/t.frame
+===================================================================
+--- src/tests/t.frame	(revision 6820)
++++ src/tests/t.frame	(revision 6838)
+@@ -39,7 +39,7 @@
+ export _POSIX2_VERSION
+ 
+ # Obtain data base file suffix
+-DB_NAME=$("$BOGOFILTER" -C -V 2>&1 | sed -n '/Database:/ { p;q }')
++DB_NAME=$("$BOGOFILTER" -C -V 2>&1 | sed -n '/Database:/ {p;q;}')
+ case $DB_NAME in
+     *BerkeleyDB*|*"Berkeley DB"*)
+ 	case $DB_NAME in
+Index: src/tests/outputs/mime-qp-cont-with-cr.exp
+===================================================================
+--- src/tests/outputs/mime-qp-cont-with-cr.exp	(revision 0)
++++ src/tests/outputs/mime-qp-cont-with-cr.exp	(revision 6838)
+@@ -0,0 +1,50 @@
++subj:This
++subj:test
++subj:message
++subj:check
++subj:bogofilter's
++subj:decoding
++subj:continuation
++subj:lines
++subj:the
++subj:presence
++subj:spurious
++subj:characters
++head:MIME-Version
++head:Content-Type
++head:multipart
++head:alternative
++This
++multi-part
++message
++MIME
++format
++mime:Content-Type
++mime:text
++mime:html
++mime:charset
++mime:iso-8859-2
++mime:Content-Transfer-Encoding
++mime:quoted-printable
++face
++Arial
++size
++pills
++$6.00
++per
++pill
++face
++Arial
++size
++nbsp
++face
++Arial
++size
++href
++http
++groups.yahoo.com
++group
++ganebawusexut64
++message
++Visit
++here
+Index: src/tests/t.lexer.qpcr
+===================================================================
+--- src/tests/t.lexer.qpcr	(revision 0)
++++ src/tests/t.lexer.qpcr	(revision 6838)
+@@ -0,0 +1,16 @@
++#! /bin/sh
++
++# This check sees if bogofilter can reassemble lines with spurious CR
++# during QP decoding. It used to fail up to and including 1.2.0 with
++# lines ending in =<CR>, not considering these as continuation.
++
++. ${srcdir:=.}/t.frame
++
++ifn=mime-qp-cont-with-cr.txt
++ofn=mime-qp-cont-with-cr.out
++efn=mime-qp-cont-with-cr.exp
++
++cat "$srcdir/inputs/$ifn" \
++| $BOGOLEXER -p -C > "$TMPDIR/$ofn"
++
++exec diff $DIFF_BRIEF "$OUTPUTS/$efn" "$TMPDIR/$ofn"
+Index: src/tests/Makefile.am
+===================================================================
+--- src/tests/Makefile.am	(revision 6820)
++++ src/tests/Makefile.am	(revision 6838)
+@@ -38,7 +38,7 @@
+ 	t.passthrough-hb \
+ 	t.escaped.html t.escaped.url \
+ 	t.split t.parsing \
+-	t.lexer t.lexer.mbx \
++	t.lexer t.lexer.mbx t.lexer.qpcr \
+ 	t.spam.header.place \
+ 	t.block.on.subnets \
+ 	t.token.count \
+@@ -49,16 +49,19 @@
+ 
+ WORDLIST_TESTS = t.dump.load t.nonascii.replace t.maint t.robx t.regtest t.upgrade.subnet.prefix t.multiple.wordlists t.probe t.bf_compact
+ 
+-SCORING_TESTS = t.query.config t.score1 t.score2 t.systest t.grftest t.wordhist
++SCORING_TESTS = t.score1 t.score2 t.systest t.grftest t.wordhist
+ 
+ BULKMODE_TESTS = t.bulkmode t.MH t.maildir t.bogoutil
+ 
+ INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind
+ # INTEGRITY_TESTS += t.lock2
+ 
++# these tests are built, but must not be shipped:
++BUILT_TESTS = t.query.config
++
+ TESTSCRIPTS = ${ENVIRON_TESTS} ${PARSING_TESTS} ${WORDLIST_TESTS} ${SCORING_TESTS} ${BULKMODE_TESTS} ${INTEGRITY_TESTS}
+ 
+-TESTS=$(TESTSCRIPTS)
++TESTS=$(BUILT_TESTS) $(TESTSCRIPTS)
+ 
+ TESTS_ENVIRONMENT=RUN_FROM_MAKE=1 AWK=$(AWK) srcdir=$(srcdir) SHELL="$(SHELL)" $(SHELL) $(VERBOSE)
+ 
+@@ -73,6 +76,7 @@
+ 	inputs/lexer.inp \
+ 	inputs/lexer.mbx \
+ 	inputs/lexer.out \
++	inputs/mime-qp-cont-with-cr.txt \
+ 	inputs/msg.1.txt \
+ 	inputs/msg.2.txt \
+ 	inputs/msg.3.txt \
+@@ -103,6 +107,7 @@
+ 	outputs/maildir.out \
+ 	outputs/message_addr.ref \
+ 	outputs/message_id.ref \
++	outputs/mime-qp-cont-with-cr.exp \
+ 	outputs/msg.1.v \
+ 	outputs/msg.2a.vv \
+ 	outputs/msg.2a.vvv \
+Index: src/Makefile.am
+===================================================================
+--- src/Makefile.am	(revision 6820)
++++ src/Makefile.am	(revision 6838)
+@@ -254,8 +254,7 @@
+ fgetsl_test_CFLAGS= -DMAIN
+ 
+ # what to distribute
+-EXTRA_DIST = $(bin_SCRIPTS) \
+-	     bogoupgrade.in \
++EXTRA_DIST = bogoupgrade.in \
+ 	     version.sh \
+ 	     strlcat.3 strlcpy.3 \
+ 	     patch.lexer.254.txt patch.lexer.253x.txt
+Index: src/qp.c
+===================================================================
+--- src/qp.c	(revision 6820)
++++ src/qp.c	(revision 6838)
+@@ -41,6 +41,10 @@
+     }
+ }
+ 
++/* Function Prototypes  */
++
++static int qp_eol_check(byte *s, byte *e);
++
+ /* Function Definitions  */
+ 
+ uint qp_decode(word_t *word, qp_mode mode)
+@@ -56,10 +60,13 @@
+ 	int x, y;
+ 	switch (ch) {
+ 	    case '=':
+-		if (mode == RFC2045 && s + 1 <= e && s[0] == '\n') {
+-		    /* continuation line, trailing = */
+-		    s++;
+-		    continue;
++		if (mode == RFC2045) {
++		    int c = qp_eol_check(s, e);
++		    if (c != 0) {
++			/* continuation line, trailing = */
++			s += c;
++			continue;
++		    }
+ 		}
+ 		if (s + 2 <= e && 
+ 			(y = hex_to_bin(s[0])) >= 0 && (x = hex_to_bin(s[1])) >= 0) {
+@@ -129,3 +136,22 @@
+ 
+     return true;
+ }
++
++static int qp_eol_check(byte *s, byte *e)
++{
++    if (s + 1 <= e) {
++	/* test for LF */
++	if (s[0] == '\n')
++	{
++	    /* only LF */
++	    return 1;
++	}
++
++	if (s[0] == '\r'
++		&& s + 2 <= e && s[1] == '\n')
++	    /* CR LF */
++	    return 2;
++    }
++
++    return 0;
++}
+Index: NEWS
+===================================================================
+--- NEWS	(revision 6820)
++++ NEWS	(revision 6838)
+@@ -15,8 +15,19 @@
+ 
+ -------------------------------------------------------------------------------
+ 
+-1.2.0	2009-02-21 (released)
++	2009-05-28
++	* Removed two scripts that are auto-built.
++	* Added test case for Stephen Davies' Q-P EOL problem (see below).
+ 
++	2009-05-25
++	* Fixed EOL problem in quoted_printable text. Problem reported by
++	  Stephen Davies and identified by Pavel Kankovsky.
++
++	2009-03-28
++	* Promoted to "stable"
++
++1.2.0	2009-02-21 (released) 
++
+ 	2009-02-20
+ 	* Flex-2.5.35 has fix for memory allocation problem in 2.5.4,
+           2.5.31, and 2.5.33, making bogofilter's flex patch obsolete.
+@@ -70,8 +81,11 @@
+ 	  systems to do that are reported to be shipped in 1987 by the autoconf
+ 	  manual, so ditch them.
+ 
+-1.1.7	2008-05-04 (released)
++	2008-05-18
++	* Promoted to "stable"
+ 
++1.1.7	2008-05-04 (released) 
++
+ 	2008-04-30
+ 
+ 	* Updated sendmail milter contrib/bogofilter-milter.pl to v1.45
