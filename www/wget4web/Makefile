@@ -15,6 +15,8 @@ COMMENT=	WWW interface for console wget
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
+BROKEN=		fails to install
+
 USE_APACHE=	1.3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
