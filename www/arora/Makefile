@@ -17,7 +17,7 @@ QT_COMPONENTS=	network webkit qmake_build moc_build uic_build rcc_build \
 		imageformats gui script sql
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	arora.1
 
