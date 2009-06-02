@@ -56,8 +56,6 @@ share/doc/luckybackup/manual/data/scheduleFull.png
 share/doc/luckybackup/manual/data/toolBar.png
 share/doc/luckybackup/manual/data/up.png
 share/doc/luckybackup/manual/index.html
-share/doc/luckybackup/readme/changelog.txt
-share/doc/luckybackup/readme/readme_English.txt
 share/luckybackup/translations/luckybackup_cs.qm
 share/luckybackup/translations/luckybackup_cs.ts
 share/luckybackup/translations/luckybackup_el.qm
@@ -70,11 +68,12 @@ share/luckybackup/translations/luckybackup_fr.qm
 share/luckybackup/translations/luckybackup_fr.ts
 share/luckybackup/translations/luckybackup_nl.qm
 share/luckybackup/translations/luckybackup_nl.ts
+share/luckybackup/translations/luckybackup_ru.qm
+share/luckybackup/translations/luckybackup_ru.ts
 share/pixmaps/luckybackup.png
 share/pixmaps/luckybackup.xpm
 @dirrm share/luckybackup/translations
 @dirrm share/luckybackup
-@dirrm share/doc/luckybackup/readme
 @dirrm share/doc/luckybackup/manual/data
 @dirrm share/doc/luckybackup/manual
 @dirrm share/doc/luckybackup/license
