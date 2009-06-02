@@ -18,6 +18,7 @@ share/apps/konversation/scripts/fortune
 share/apps/konversation/scripts/fortunes.dat
 share/apps/konversation/scripts/gauge
 share/apps/konversation/scripts/kdeversion
+share/apps/konversation/scripts/mail
 share/apps/konversation/scripts/media
 share/apps/konversation/scripts/sayclip
 share/apps/konversation/scripts/sysinfo
@@ -132,6 +133,9 @@ share/doc/HTML/en/konversation/serverlist_co.png
 share/doc/HTML/en/konversation/serverlist_screen_co.png
 share/doc/HTML/en/konversation/urlcatcher_screen_co.png
 share/doc/HTML/en/konversation/webbrowser_screen_co.png
+share/doc/HTML/et/konversation/common
+share/doc/HTML/et/konversation/index.cache.bz2
+share/doc/HTML/et/konversation/index.docbook
 share/icons/hicolor/128x128/apps/konversation.png
 share/icons/hicolor/16x16/actions/kimproxyaway.png
 share/icons/hicolor/16x16/actions/kimproxyoffline.png
@@ -174,12 +178,12 @@ share/locale/nl/LC_MESSAGES/konversation.mo
 share/locale/pt/LC_MESSAGES/konversation.mo
 share/locale/pt_BR/LC_MESSAGES/konversation.mo
 share/locale/ru/LC_MESSAGES/konversation.mo
-share/locale/sr/LC_MESSAGES/konversation.mo
 share/locale/sv/LC_MESSAGES/konversation.mo
 share/locale/tr/LC_MESSAGES/konversation.mo
 share/locale/uk/LC_MESSAGES/konversation.mo
 share/locale/zh_CN/LC_MESSAGES/konversation.mo
 share/locale/zh_TW/LC_MESSAGES/konversation.mo
+@dirrm share/doc/HTML/et/konversation
 @dirrm share/doc/HTML/en/konversation
 @dirrm share/apps/konversation/themes/square
 @dirrm share/apps/konversation/themes/smiling
