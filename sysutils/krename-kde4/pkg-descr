@@ -1,11 +1,7 @@
-Krename is a very powerful batch file renamer for KDE3 which
-can rename a list of files based on a set of expressions. It
-can copy/move the files to another directory or simply rename
-the input files. Krename supports many conversion operations,
-including conversion of a filename to lowercase or to
-uppercase, conversion of the first letter of every word to
-uppercase, adding numbers to filenames, finding and replacing
-parts of the filename, and many more. It can also change access
-and modification dates, permissions, and file ownership.
+KRename is a powerful batch renamer for KDE. It allows you to easily
+rename hundreds or even more files in one go. The filenames can be
+created by parts of the original filename, numbering the files or
+accessing hundreds of informations about the file, like creation
+date or Exif informations of an image.
 
-WWW: http://www.krename.net
+WWW:	http://www.krename.net

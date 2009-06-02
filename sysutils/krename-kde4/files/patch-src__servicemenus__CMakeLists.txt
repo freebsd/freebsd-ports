@@ -1,0 +1,6 @@
+--- ./src/servicemenus/CMakeLists.txt.orig	2008-10-31 22:22:14.000000000 +0300
++++ ./src/servicemenus/CMakeLists.txt	2009-06-01 22:03:28.000000000 +0400
+@@ -1,2 +1,2 @@
+ 
+-INSTALL( FILES krename_dir.desktop krenameservicemenu.desktop DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus )
++INSTALL( FILES krenameservicemenu.desktop DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus )

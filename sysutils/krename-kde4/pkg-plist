@@ -1,16 +1,12 @@
 bin/krename
-share/applications/kde/krename.desktop
-share/apps/konqueror/servicemenus/krename_dir.desktop
-share/apps/konqueror/servicemenus/krenameservicemenu.desktop
-share/apps/krename/krename_system_default_tabbed.xml
-share/apps/krename/krename_system_default_wizard.xml
-share/apps/krename/logo.png
-share/doc/HTML/en/krename/index.html
+share/applications/kde4/krename.desktop
 share/icons/hicolor/32x32/apps/krename.png
 share/icons/hicolor/48x48/apps/krename.png
 share/icons/locolor/16x16/apps/krename.png
 share/icons/locolor/32x32/apps/krename.png
+share/kde4/services/ServiceMenus/krenameservicemenu.desktop
 share/locale/bs/LC_MESSAGES/krename.mo
+share/locale/cs/LC_MESSAGES/krename.mo
 share/locale/de/LC_MESSAGES/krename.mo
 share/locale/es/LC_MESSAGES/krename.mo
 share/locale/fr/LC_MESSAGES/krename.mo
@@ -24,8 +20,9 @@ share/locale/ru/LC_MESSAGES/krename.mo
 share/locale/sl/LC_MESSAGES/krename.mo
 share/locale/sv/LC_MESSAGES/krename.mo
 share/locale/tr/LC_MESSAGES/krename.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/krename.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/krename.mo
-@dirrm share/doc/HTML/en/krename
-@dirrm share/apps/krename
-@dirrmtry share/applications/kde
+share/locale/zh_CN/LC_MESSAGES/krename.mo
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
