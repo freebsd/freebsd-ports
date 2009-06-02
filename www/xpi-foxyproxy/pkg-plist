@@ -6,6 +6,8 @@
 %%XPI_XPIDIR%%/chrome/content/alertOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/blockedpagepattern.js
 %%XPI_XPIDIR%%/chrome/content/blockedpagepattern.xul
+%%XPI_XPIDIR%%/chrome/content/chooseproxy.js
+%%XPI_XPIDIR%%/chrome/content/chooseproxy.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOptionsOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/foxyproxy.css
@@ -30,10 +32,14 @@
 %%XPI_XPIDIR%%/chrome/content/overlay.js
 %%XPI_XPIDIR%%/chrome/content/pattern.js
 %%XPI_XPIDIR%%/chrome/content/pattern.xul
+%%XPI_XPIDIR%%/chrome/content/selection.js
 %%XPI_XPIDIR%%/chrome/content/strings.xml
 %%XPI_XPIDIR%%/chrome/content/superadd.js
 %%XPI_XPIDIR%%/chrome/content/superadd.xul
+%%XPI_XPIDIR%%/chrome/content/tbirdOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/torwizhelp.xhtml
+%%XPI_XPIDIR%%/chrome/content/triquestion.js
+%%XPI_XPIDIR%%/chrome/content/triquestion.xul
 %%XPI_XPIDIR%%/chrome/icons/default/foxyproxyaboutdlg2.ico
 %%XPI_XPIDIR%%/chrome/icons/default/foxyproxyaddproxydlg2.ico
 %%XPI_XPIDIR%%/chrome/icons/default/foxyproxyoptions2.ico
@@ -135,10 +141,6 @@
 %%XPI_XPIDIR%%/chrome/locale/sr-RS/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/sr-RS/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/sr-RS/torwizhelp.dtd
-%%XPI_XPIDIR%%/chrome/locale/sr-YU/amo.properties
-%%XPI_XPIDIR%%/chrome/locale/sr-YU/foxyproxy.dtd
-%%XPI_XPIDIR%%/chrome/locale/sr-YU/foxyproxy.properties
-%%XPI_XPIDIR%%/chrome/locale/sr-YU/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/foxyproxy.properties
@@ -202,7 +204,6 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ru-RU
 @dirrm %%XPI_XPIDIR%%/chrome/locale/sk
 @dirrm %%XPI_XPIDIR%%/chrome/locale/sr-RS
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sr-YU
 @dirrm %%XPI_XPIDIR%%/chrome/locale/sv-SE
 @dirrm %%XPI_XPIDIR%%/chrome/locale/th-TH
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tr-TR
