@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.64
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -22,8 +22,7 @@ MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 8.x PostScript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		cupsimage.2:${PORTSDIR}/print/cups-image
+		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,8,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS=	gambc-[0-9]* ghostscript7-[0-9]* ghostscript7-*-[0-9]*
@@ -58,6 +57,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DATADIR=	${PREFIX}/share/${PORTNAME:S,8$,,}
 
 OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
+		CUPS	"Enable CUPS support"	on \
 		FONTCONFIG	"fontconfig support"	on \
 		FT_BRIDGE	"FreeType bridge"	off \
 		X11	"X11 support"	on
@@ -85,6 +85,13 @@ PLIST_SUB+=	GS_${D}=""
 PLIST_SUB+=	GS_${D}="@comment "
 .endif
 .endfor
+
+.if !defined(WITHOUT_CUPS)
+LIB_DEPENDS+=	libcupsimage.so.2:${PORTSDIR}/print/cups-base
+CONFIGURE_ARGS+=	--enable-cups
+.else
+CONFIGURE_ARGS+=	--disable-cups
+.endif
 
 .if !defined(WITHOUT_GS_dmprt)
 .include "${FILESDIR}/Makefile.dmprt"
