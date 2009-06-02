@@ -7,7 +7,7 @@
 
 PORTNAME=	bibletime
 PORTVERSION=	1.6.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-kde3
@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-kde3
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A powerful Bible study application for KDE3
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword \
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword15 \
 		${LOCALBASE}/lib/libclucene.so:${PORTSDIR}/textproc/clucene
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
