@@ -1,0 +1,10 @@
+--- ./src/servicemenus/krenameservicemenu.desktop.orig	2008-10-31 22:22:14.000000000 +0300
++++ ./src/servicemenus/krenameservicemenu.desktop	2009-06-01 22:03:20.000000000 +0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+-Actions=Krename;
++Actions=Rename;
+ Type=Service
+ Icon=
+ Name=
