@@ -7,12 +7,15 @@
 
 PORTNAME=	${LINUX_NAME}33
 PORTVERSION=	3.3.8b
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of QT3 (Linux Fedora 8)
+
+CONFLICTS=	linux-qt33-[0-9]* linux-f10-qt33-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	fontconfig libmng png

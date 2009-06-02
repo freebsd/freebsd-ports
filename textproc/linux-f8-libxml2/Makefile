@@ -7,12 +7,15 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library providing XML and HTML support (Linux Fedora 8)
+
+CONFLICTS=	linux-libxml2-[0-9]* linux-f10-libxml2-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	8

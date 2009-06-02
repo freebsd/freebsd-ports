@@ -7,12 +7,15 @@
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.15
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of imlib (Linux Fedora 8)
+
+CONFLICTS=	linux-imlib-[0-9]* linux-f10-imlib-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	8

@@ -7,12 +7,15 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.13
+PORTREVISION=	1
 CATEGORIES=	devel linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (Linux Fedora 8)
+
+CONFLICTS=	linux-sdl12-[0-9]* linux-f10-sdl12-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

@@ -7,12 +7,15 @@
 
 PORTNAME=	scim-gtk
 PORTVERSION=	1.4.7
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Smart Common Input Method platform, gtk module, (Linux Fedora 8)
+
+CONFLICTS=	linux-scim-gtk-[0-9]* linux-f10-scim-gtk-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

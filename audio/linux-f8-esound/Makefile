@@ -7,12 +7,15 @@
 
 PORTNAME=	esound
 PORTVERSION=	0.2.38
+PORTREVISION=	1
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of esound (Linux Fedora 8)
+
+CONFLICTS=	linux-esound-[0-9]* linux-f10-esound-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	libaudiofile

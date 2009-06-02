@@ -7,12 +7,15 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	6b
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the JPEG lib (Linux Fedora 8)
+
+CONFLICTS=	linux-jpeg-[0-9]* linux-f10-jpeg-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

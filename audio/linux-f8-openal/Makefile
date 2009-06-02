@@ -7,12 +7,15 @@
 
 PORTNAME=	openal
 PORTVERSION=	0.0.9
+PORTREVISION=	1
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	A 3D positional spatialized sound library (Linux Fedora 8)
+
+CONFLICTS=	linux-openal-[0-9]* linux-f10-openal-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

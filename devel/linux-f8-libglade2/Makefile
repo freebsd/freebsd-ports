@@ -7,12 +7,15 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	devel linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of libglade2 (Linux Fedora 8)
+
+CONFLICTS=	linux-libglade2-[0-9]* linux-f10-libglade2-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	8

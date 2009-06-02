@@ -7,12 +7,15 @@
 
 PORTNAME=	ungif
 PORTVERSION=	4.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of gif and ungif libs (Linux Fedora 8)
+
+CONFLICTS=	linux-ungif-[0-9]* linux-f10-ungif-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

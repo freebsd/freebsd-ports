@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.12.8
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 PKGNAMEPREFIX=	linux-f8-
 DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
@@ -19,6 +20,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	GTK+ library, version 2.X (Linux Fedora 8)
+
+CONFLICTS=	linux-gtk2-[0-9]* linux-f10-gtk2-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

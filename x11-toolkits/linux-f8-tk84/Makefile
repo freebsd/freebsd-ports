@@ -6,6 +6,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.4.17
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 PKGNAMEPREFIX=	linux-f8-
 PKGNAMESUFFIX=	84
@@ -13,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	stast@bsdportal.ru
 COMMENT=	Graphical toolkit for TCL (Linux Fedora 8)
+
+CONFLICTS=	linux-f10-tk85-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs

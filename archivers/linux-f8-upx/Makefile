@@ -7,12 +7,15 @@
 
 PORTNAME=		upx
 PORTVERSION=		3.02
+PORTREVISION=		1
 CATEGORIES=		archivers linux
 PKGNAMEPREFIX=		linux-f8-
 DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		UPX, a high-performance executable packer (Linux Fedora 8)
+
+CONFLICTS=		linux-upx-[0-9]* linux-f10-upx-[0-9]*
 
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		ucl

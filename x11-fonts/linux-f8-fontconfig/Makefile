@@ -7,12 +7,15 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-fonts linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	An XML-based font configuration API for X Windows (Linux Fedora 8)
+
+CONFLICTS=	linux-fontconfig-[0-9]* linux-f10-fontconfig-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

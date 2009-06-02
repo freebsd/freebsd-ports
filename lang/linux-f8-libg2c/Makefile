@@ -7,12 +7,15 @@
 
 PORTNAME=	libg2c
 PORTVERSION=	3.4.6
+PORTREVISION=	1
 CATEGORIES=	lang linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Fortran 77 shared library (Linux Fedora 8)
+
+CONFLICTS=	linux-libg2c-[0-9]* linux-f10-libg2c-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

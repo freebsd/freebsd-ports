@@ -7,6 +7,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	7.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 PKGNAMEPREFIX=	linux-f8-
 DISTFILES=	Glide3-20050815-6.fc8.${LINUX_RPM_ARCH}.rpm \
@@ -27,7 +28,7 @@ ALWAYS_KEEP_DISTFILES=  YES
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Mesa libGL runtime libraries and DRI drivers (Linux Fedora 8)
 
-CONFLICTS=	linux_dri-[0-9]* linux_dri-devel-[0-9]*
+CONFLICTS=	linux_dri-[0-9]* linux_dri-devel-[0-9]* linux-dri-[0-9]* linux-f10-dri-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

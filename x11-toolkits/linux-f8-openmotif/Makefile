@@ -6,6 +6,7 @@
 
 PORTNAME=	openmotif
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	ftp://ftp.motifzone.com/%SUBDIR%/ \
 		ftp://ftp.ics.com/openmotif/%SUBDIR%/
@@ -16,6 +17,8 @@ DIST_SUBDIR=	rpm
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries
+
+CONFLICTS=	linux-openmotif-[0-9]* linux-f10-openmotif-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
