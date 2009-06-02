@@ -5,5 +5,5 @@ real time. The zisofs filesystem is supported by recent versions of Linux
 
 mkzftree - creates a zisofs/RockRidge compressed file tree
 
-- Nosov Artem
+- Artyom Nosov
 chip-set@mail.ru
