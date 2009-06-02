@@ -27,7 +27,11 @@ CPPFLAGS+=		-I${LOCALBASE}/include ${PTHREAD_LIBS}
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=		--disable-debug \
-			--disable-optimization
+			--disable-optimization \
+			--with-intl-includes=${LOCALBASE}/include \
+			--with-intl-libraries=${LOCALBASE}/lib \
+			--with-conv-includes=${LOCALBASE}/include \
+			--with-conv-libraries=${LOCALBASE}/lib
 CONFIGURE_WRKSRC?=	${WRKSRC}/main
 BUILD_WRKSRC?=		${WRKSRC}/main
 INSTALL_WRKSRC?=	${WRKSRC}/main
