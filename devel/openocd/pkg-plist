@@ -1,0 +1,129 @@
+bin/openocd
+lib/openocd/board/arm_evaluator7t.cfg
+lib/openocd/board/at91rm9200-dk.cfg
+lib/openocd/board/eir.cfg
+lib/openocd/board/hammer.cfg
+lib/openocd/board/iar_str912_sk.cfg
+lib/openocd/board/imx27ads.cfg
+lib/openocd/board/imx31pdk.cfg
+lib/openocd/board/logicpd_imx27.cfg
+lib/openocd/board/olimex_sam7_ex256.cfg
+lib/openocd/board/pic-p32mx.cfg
+lib/openocd/board/stm3210e_eval.cfg
+lib/openocd/board/stm32f10x_128k_eval.cfg
+lib/openocd/board/x300t.cfg
+lib/openocd/ecos/at91eb40a.elf
+lib/openocd/interface/arm-usb-ocd.cfg
+lib/openocd/interface/at91rm9200.cfg
+lib/openocd/interface/calao-usb-a9260-c01.cfg
+lib/openocd/interface/calao-usb-a9260-c02.cfg
+lib/openocd/interface/calao-usb-a9260.cfg
+lib/openocd/interface/chameleon.cfg
+lib/openocd/interface/dummy.cfg
+lib/openocd/interface/flyswatter.cfg
+lib/openocd/interface/jlink.cfg
+lib/openocd/interface/jtagkey-tiny.cfg
+lib/openocd/interface/jtagkey.cfg
+lib/openocd/interface/luminary-libftdi.cfg
+lib/openocd/interface/luminary-lm3s811.cfg
+lib/openocd/interface/luminary.cfg
+lib/openocd/interface/olimex-arm-usb-ocd.cfg
+lib/openocd/interface/olimex-jtag-tiny-a.cfg
+lib/openocd/interface/openocd-usb.cfg
+lib/openocd/interface/parport.cfg
+lib/openocd/interface/parport_dlc5.cfg
+lib/openocd/interface/rlink.cfg
+lib/openocd/interface/signalyzer.cfg
+lib/openocd/interface/stm32-stick.cfg
+lib/openocd/interface/str9-comstick.cfg
+lib/openocd/interface/turtelizer2.cfg
+lib/openocd/target/aduc702x.cfg
+lib/openocd/target/at91eb40a.cfg
+lib/openocd/target/at91r40008.cfg
+lib/openocd/target/at91rm9200.cfg
+lib/openocd/target/at91sam9260.cfg
+lib/openocd/target/at91sam9260minimal.cfg
+lib/openocd/target/epc9301.cfg
+lib/openocd/target/imote2.cfg
+lib/openocd/target/imx27.cfg
+lib/openocd/target/imx31.cfg
+lib/openocd/target/ipx42x.cfg
+lib/openocd/target/is5114.cfg
+lib/openocd/target/lm3s3748.cfg
+lib/openocd/target/lm3s6965.cfg
+lib/openocd/target/lm3s811.cfg
+lib/openocd/target/lpc2129.cfg
+lib/openocd/target/lpc2148.cfg
+lib/openocd/target/lpc2148_2mhz.cfg
+lib/openocd/target/lpc2148_rclk.cfg
+lib/openocd/target/lpc2294.cfg
+lib/openocd/target/netx500.cfg
+lib/openocd/target/nslu2.cfg
+lib/openocd/target/omap5912.cfg
+lib/openocd/target/pic32mx.cfg
+lib/openocd/target/pxa255.cfg
+lib/openocd/target/pxa255_sst.cfg
+lib/openocd/target/pxa270.cfg
+lib/openocd/target/sam7se512.cfg
+lib/openocd/target/sam7x256.cfg
+lib/openocd/target/samsung_s3c2410.cfg
+lib/openocd/target/samsung_s3c2440.cfg
+lib/openocd/target/samsung_s3c4510.cfg
+lib/openocd/target/samsung_s3c6410.cfg
+lib/openocd/target/sharp_lh79532.cfg
+lib/openocd/target/smdk6410.cfg
+lib/openocd/target/smp8634.cfg
+lib/openocd/target/stm32.cfg
+lib/openocd/target/stm32stick.cfg
+lib/openocd/target/str710.cfg
+lib/openocd/target/str730.cfg
+lib/openocd/target/str750.cfg
+lib/openocd/target/str910-eval.cfg
+lib/openocd/target/str912.cfg
+lib/openocd/target/str9comstick.cfg
+lib/openocd/target/test_reset_syntax_error.cfg
+lib/openocd/target/test_syntax_error.cfg
+lib/openocd/target/wi-9c.cfg
+lib/openocd/target/xba_revA3.cfg
+lib/openocd/target/zy1000.cfg
+lib/openocd/tcl/bitsbytes.tcl
+lib/openocd/tcl/chip/atmel/at91/aic.tcl
+lib/openocd/tcl/chip/atmel/at91/at91sam7x128.tcl
+lib/openocd/tcl/chip/atmel/at91/at91sam7x256.tcl
+lib/openocd/tcl/chip/atmel/at91/pmc.tcl
+lib/openocd/tcl/chip/atmel/at91/rtt.tcl
+lib/openocd/tcl/chip/atmel/at91/usarts.tcl
+lib/openocd/tcl/chip/st/stm32/stm32.tcl
+lib/openocd/tcl/chip/st/stm32/stm32_rcc.tcl
+lib/openocd/tcl/chip/st/stm32/stm32_regs.tcl
+lib/openocd/tcl/cpu/arm/arm7tdmi.tcl
+lib/openocd/tcl/cpu/arm/arm920.tcl
+lib/openocd/tcl/cpu/arm/arm946.tcl
+lib/openocd/tcl/cpu/arm/arm966.tcl
+lib/openocd/tcl/cpu/arm/cortex_m3.tcl
+lib/openocd/tcl/memory.tcl
+lib/openocd/tcl/mmr_helpers.tcl
+lib/openocd/tcl/readable.tcl
+lib/openocd/xscale/debug_handler.bin
+share/openocd/contrib/libdcc/README
+share/openocd/contrib/libdcc/dcc_stdio.c
+share/openocd/contrib/libdcc/dcc_stdio.h
+share/openocd/contrib/libdcc/example.c
+share/openocd/contrib/openocd.udev
+@dirrm share/openocd/contrib/libdcc
+@dirrm share/openocd/contrib
+@dirrm share/openocd
+@dirrm lib/openocd/xscale
+@dirrm lib/openocd/tcl/cpu/arm
+@dirrm lib/openocd/tcl/cpu
+@dirrm lib/openocd/tcl/chip/st/stm32
+@dirrm lib/openocd/tcl/chip/st
+@dirrm lib/openocd/tcl/chip/atmel/at91
+@dirrm lib/openocd/tcl/chip/atmel
+@dirrm lib/openocd/tcl/chip
+@dirrm lib/openocd/tcl
+@dirrm lib/openocd/target
+@dirrm lib/openocd/interface
+@dirrm lib/openocd/ecos
+@dirrm lib/openocd/board
+@dirrm lib/openocd

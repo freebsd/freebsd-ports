@@ -1,0 +1,15 @@
+===============================================================================
+
+Now You can use OpenOCD. Handbook is at: http://openocd.berlios.de/doc/html/
+
+To allow an ordinary user acces to the hotplug USB interface add him
+to the operator group and add these lines to the following files:
+
+/etc/devfs.rules:
+[localrules=10]
+	add path 'ugen*' mode 0660 group operator
+
+/etc/rc.conf:
+devfs_system_ruleset="localrules"
+
+===============================================================================

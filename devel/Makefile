@@ -925,6 +925,7 @@
     SUBDIR += oniguruma5
     SUBDIR += open-beagle
     SUBDIR += opencvs
+    SUBDIR += openocd
     SUBDIR += openwince-include
     SUBDIR += openzz
     SUBDIR += orbitcpp
