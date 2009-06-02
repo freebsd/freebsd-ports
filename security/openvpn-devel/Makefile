@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_rc15
+DISTVERSION=	2.1_rc17
 CATEGORIES=	security net
 MASTER_SITES=	http://openvpn.net/release/
 PKGNAMESUFFIX=	-devel
@@ -75,6 +75,7 @@ CONFIGURE_ARGS+=	--disable-pkcs11
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
+	@${FIND} ${WRKSRC} -name \*.bak -delete
 
 post-build:
 	cd ${WRKSRC}/plugin/down-root && ${MAKE}
