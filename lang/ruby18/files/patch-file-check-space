@@ -1,0 +1,11 @@
+--- file.c	2009/05/26 12:15:23	23584
++++ file.c	2009/05/26 12:20:27	23585
+@@ -3035,7 +3035,7 @@
+ 		p = last;
+ 		break;
+ 	    }
+-	    if (*last == '.') e = dot;
++	    if (*last == '.' || dot > last) e = dot;
+ 	    continue;
+ #else
+ 	    e = p;	  /* get the last dot of the last component */
