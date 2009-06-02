@@ -4,21 +4,18 @@
 # $FreeBSD$
 
 PORTNAME=	irssi-xmpp
-PORTVERSION=	20071214
-PORTREVISION=	1
+PORTVERSION=	20090602
 CATEGORIES=	irc
-MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/irssi-xmpp-snapshot/
+MASTER_SITES=	http://dindin.ru/download/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	dindin@dindin.ru
 COMMENT=	Irssi-xmpp-snapshot is the irssi-xmmp cvs snapshot
 
 BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 LIB_DEPENDS=	loudmouth:${PORTSDIR}/net-im/loudmouth
-
-BROKEN=		does not compile
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 
