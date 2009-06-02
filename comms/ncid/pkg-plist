@@ -18,14 +18,14 @@ etc/rc.d/ncid-mythtv
 etc/rc.d/ncid-speak
 etc/rc.d/ncidd
 etc/rc.d/sip2ncid
-share/ncid/ncidrotate
-share/ncid/ncid-kpopup
-share/ncid/ncid-mythtv
-share/ncid/ncid-page
-share/ncid/ncid-samba
-share/ncid/ncid-skel
-share/ncid/ncid-speak
-share/ncid/ncid-tivo
-share/ncid/ncid-yac
-@dirrm share/ncid
+%%DATADIR%%/ncidrotate
+%%DATADIR%%/ncid-kpopup
+%%DATADIR%%/ncid-mythtv
+%%DATADIR%%/ncid-page
+%%DATADIR%%/ncid-samba
+%%DATADIR%%/ncid-skel
+%%DATADIR%%/ncid-speak
+%%DATADIR%%/ncid-tivo
+%%DATADIR%%/ncid-yac
+@dirrm %%DATADIR%%
 share/pixmaps/ncid.gif

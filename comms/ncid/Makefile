@@ -38,6 +38,13 @@ post-patch:
 		'/install:/s,install-(etc|logrotate),,'
 	@${REINPLACE_CMD} -Ee '/mkdir.*(INIT|ROTATE|BIN|LOG|ETC)/d;\
 		/CFLAGS.*=/s|=|+=|;s|-O||' ${WRKSRC}/Makefile
+# Respect PREFIX/MANPREFIX/DATADIR
+	@${REINPLACE_CMD} -e's|prefix.*= /usr/local|prefix=$${PREFIX}|g' \
+		-e 's|$$(prefix)/bin|$${PREFIX}/bin|g' \
+		-e 's|$$(prefix)/sbin|$${PREFIX}/sbin|g' \
+		-e 's|$$(prefix)/share|$${PREFIX}/share|g' \
+		-e 's|$$(SHARE)/man|$${MANPREFIX}/man/|g' \
+		-e 's|$$(SHARE)/ncid|$${DATADIR}|g' ${WRKSRC}/Makefile
 
 post-install:
 	@${INSTALL} -d ${ETCDIR}/
