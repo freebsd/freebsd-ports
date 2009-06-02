@@ -19,4 +19,10 @@ R_MOD=	yes
 
 .include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: uses i386 assembler
+.endif
+
+.include <bsd.port.post.mk>
