@@ -1,0 +1,347 @@
+
+--- src/globals.c.orig	2007-12-10 18:59:58.297661332 +0300
++++ src/globals.c	2007-12-10 19:00:22.299029091 +0300
+@@ -621,6 +621,7 @@
+ BOOL    helo_verified          = FALSE;
+ BOOL    helo_verify_failed     = FALSE;
+ uschar *helo_verify_hosts      = NULL;
++uschar *xclient_allow_hosts    = NULL;
+ uschar *hex_digits             = US"0123456789abcdef";
+ uschar *hold_domains           = NULL;
+ BOOL    host_checking          = FALSE;
+--- src/globals.h.orig	2007-12-10 19:11:45.337953260 +0300
++++ src/globals.h	2007-12-10 19:12:42.341201691 +0300
+@@ -367,6 +367,7 @@
+ extern BOOL    helo_verified;          /* True if HELO verified */
+ extern BOOL    helo_verify_failed;     /* True if attempt failed */
+ extern uschar *helo_verify_hosts;      /* Hard check HELO argument for these */
++extern uschar *xclient_allow_hosts;    /* Allow XCLIENT command for specified hosts */
+ extern uschar *hex_digits;             /* Used in several places */
+ extern uschar *hold_domains;           /* Hold up deliveries to these */
+ extern BOOL    host_find_failed_syntax;/* DNS syntax check failure */
+--- src/macros.h.orig	2007-08-30 18:31:06.000000000 +0400
++++ src/macros.h	2007-12-10 17:36:29.512226916 +0300
+@@ -714,7 +714,7 @@
+ 
+ enum { SCH_NONE, SCH_AUTH, SCH_DATA, SCH_EHLO, SCH_ETRN, SCH_EXPN, SCH_HELO,
+        SCH_HELP, SCH_MAIL, SCH_NOOP, SCH_QUIT, SCH_RCPT, SCH_RSET, SCH_STARTTLS,
+-       SCH_VRFY };
++       SCH_VRFY, SCH_XCLIENT };
+ 
+ /* Returns from host_find_by{name,dns}() */
+ 
+--- src/readconf.c.orig	2007-12-10 19:03:32.809885687 +0300
++++ src/readconf.c	2007-12-10 19:13:37.344336141 +0300
+@@ -404,7 +404,8 @@
+   { "uucp_from_pattern",        opt_stringptr,   &uucp_from_pattern },
+   { "uucp_from_sender",         opt_stringptr,   &uucp_from_sender },
+   { "warn_message_file",        opt_stringptr,   &warn_message_file },
+-  { "write_rejectlog",          opt_bool,        &write_rejectlog }
++  { "write_rejectlog",          opt_bool,        &write_rejectlog },
++  { "xclient_allow_hosts",      opt_stringptr,   &xclient_allow_hosts },
+ };
+ 
+ static int optionlist_config_size =
+--- src/smtp_in.c.orig	2007-12-10 15:54:30.000000000 +0300
++++ src/smtp_in.c	2009-02-03 17:29:33.181798456 +0300
+@@ -63,10 +63,10 @@
+   /* These commands are required to be synchronized, i.e. to be the last in a
+   block of commands when pipelining. */
+ 
+-  HELO_CMD, EHLO_CMD, DATA_CMD, /* These are listed in the pipelining */
+-  VRFY_CMD, EXPN_CMD, NOOP_CMD, /* RFC as requiring synchronization */
+-  ETRN_CMD,                     /* This by analogy with TURN from the RFC */
+-  STARTTLS_CMD,                 /* Required by the STARTTLS RFC */
++  HELO_CMD, EHLO_CMD, XCLIENT_CMD, DATA_CMD, /* These are listed in the pipelining */
++  VRFY_CMD, EXPN_CMD, NOOP_CMD,              /* RFC as requiring synchronization */
++  ETRN_CMD,                                  /* This by analogy with TURN from the RFC */
++  STARTTLS_CMD,                              /* Required by the STARTTLS RFC */
+ 
+   /* This is a dummy to identify the non-sync commands when pipelining */
+ 
+@@ -152,6 +152,7 @@
+   { "rset",       sizeof("rset")-1,       RSET_CMD, FALSE, FALSE },  /* First */
+   { "helo",       sizeof("helo")-1,       HELO_CMD, TRUE,  FALSE },
+   { "ehlo",       sizeof("ehlo")-1,       EHLO_CMD, TRUE,  FALSE },
++  { "xclient",    sizeof("xclient")-1,    XCLIENT_CMD, TRUE, FALSE },
+   { "auth",       sizeof("auth")-1,       AUTH_CMD, TRUE,  TRUE  },
+   #ifdef SUPPORT_TLS
+   { "starttls",   sizeof("starttls")-1,   STARTTLS_CMD, FALSE, FALSE },
+@@ -184,7 +185,7 @@
+ 
+ static uschar *smtp_names[] =
+   {
+-  US"NONE", US"AUTH", US"DATA", US"EHLO", US"ETRN", US"EXPN", US"HELO",
++  US"NONE", US"AUTH", US"DATA", US"EHLO", US"ETRN", US"EXPN", US"HELO", US"XCLIENT",
+   US"HELP", US"MAIL", US"NOOP", US"QUIT", US"RCPT", US"RSET", US"STARTTLS",
+   US"VRFY" };
+ 
+@@ -847,6 +848,205 @@
+ }
+ 
+ 
++/*************************************************
++*   Check XCLIENT line and set sender_address    *
++*************************************************/
++
++/* Check the format of a XCLIENT line. 
++ * XCLIENT Command syntax
++ *
++ * An example client-server conversation is given at the end of this document.
++ *
++ * In SMTP server EHLO replies, the keyword associated with this extension is XCLIENT. It is followed by the names of the attributes that the XCLIENT implementation supports.
++ *
++ * The XCLIENT command may be sent at any time, except in the middle of a mail delivery transaction (i.e. between MAIL and DOT, or MAIL and RSET). 
++ * The XCLIENT command may be pipelined when the server supports ESMTP command pipelining. 
++ * To avoid triggering spamware detectors, the command should be sent at the end of a command group.
++ *
++ * The syntax of XCLIENT requests is described below. 
++ * Upper case and quoted strings specify terminals, lowercase strings specify meta terminals, and SP is whitespace. 
++ * Although command and attribute names are shown in upper case, they are in fact case insensitive.
++ *
++ *   xclient-command = XCLIENT 1*( SP attribute-name"="attribute-value )
++ *
++ *   attribute-name = ( NAME | ADDR | PORT | HELO | PROTO | LOGIN)
++ *
++ *   attribute-value = xtext
++ *
++ * Attribute values are xtext encoded as per RFC 1891.
++ * The NAME attribute specifies an SMTP client hostname (not an SMTP client address), [UNAVAILABLE] when client hostname lookup failed due to a permanent error, or [TEMPUNAVAIL] when the lookup error condition was transient.
++ *
++ * The ADDR attribute specifies an SMTP client numerical IPv4 network address, an IPv6 address prefixed with IPV6:, or [UNAVAILABLE] when the address information is unavailable. Address information is not enclosed with [].
++ *
++ * The PORT attribute specifies the SMTP client TCP port number as a decimal number, or [UNAVAILABLE] when the information is unavailable.
++ * The HELO attribute specifies an SMTP HELO parameter value, or the value [UNAVAILABLE] when the information is unavailable.
++ * The PROTO attribute specifies either SMTP or ESMTP.
++ * 
++ * Note 1: syntactically valid NAME and HELO attribute-value elements can be up to 255 characters long. 
++ * The client must not send XCLIENT commands that exceed the 512 character limit for SMTP commands. 
++ * To avoid exceeding the limit the client should send the information in multiple XCLIENT commands; for example, send NAME and ADDR first, then HELO and PROTO.
++ *
++ * Note 2: [UNAVAILABLE], [TEMPUNAVAIL] and IPV6: may be specified in upper case, lower case or mixed case.
++Argument:
++  s       the data portion of the line (already past any white space)
++
++Returns: TRUE
++         FALSE
++*/
++
++/* XCLIENT MACROS */
++#define XCLIENT_UNAVAIL US"[UNAVAILABLE]"
++#define XCLIENT_TEMPUNAVAIL US"[TEMPUNAVAIL]"
++
++static BOOL
++smtp_handle_xclient(uschar *s)
++{
++  uschar *p, *end, *arg;
++  int len;
++  p = s;
++  end = s + Ustrlen(s);
++
++  while (p <= end) {
++    /* Addr */
++    if (strncmpic(p, US"ADDR=", 5) == 0) {
++      p += 5;
++      arg = p;
++      while (*p++ != ' ' && p <= end );
++      len = p - arg;
++      /* Strip whitespace */
++      if(*(p - 1) == ' ') {
++        len --;
++      }
++      if (len > 0) {
++        sender_host_address = string_copy_malloc(string_copyn(arg, len));
++      }
++      else {
++        return FALSE;
++      }
++    }
++    /* Name */
++    else if (strncmpic(p, US"NAME=", 5) == 0) {
++      p += 5;
++      arg = p;
++      while (*p++ != ' ' && p <= end );
++      len = p - arg;
++      /* Strip whitespace */
++      if(*(p - 1) == ' ') {
++        len --;
++      }
++      if (len > 0) {
++        if ((len == sizeof(XCLIENT_UNAVAIL) - 1 && strncmpic(arg, XCLIENT_UNAVAIL, sizeof (XCLIENT_UNAVAIL) -1) == 0) ||
++            (len == sizeof(XCLIENT_TEMPUNAVAIL) - 1 && strncmpic(arg, XCLIENT_TEMPUNAVAIL, sizeof (XCLIENT_UNAVAIL) -1) == 0)) {
++          sender_host_name = NULL;
++        }
++        else {
++          sender_host_name = string_copy_malloc(string_copyn(arg, len));
++        }
++      }
++      else {
++        return FALSE;
++      }
++    }
++    /* Helo */
++    else if (strncmpic(p, US"HELO=", 5) == 0) {
++      p += 5;
++      arg = p;
++      while (*p++ != ' ' && p <= end );
++      len = p - arg;
++      /* Strip whitespace */
++      if(*(p - 1) == ' ') {
++        len --;
++      }
++        
++      if (len > 0) {
++        if ((len == sizeof(XCLIENT_UNAVAIL) - 1 && strncmpic(arg, XCLIENT_UNAVAIL, sizeof (XCLIENT_UNAVAIL) -1) == 0) ||
++            (len == sizeof(XCLIENT_TEMPUNAVAIL) - 1 && strncmpic(arg, XCLIENT_TEMPUNAVAIL, sizeof (XCLIENT_UNAVAIL) -1) == 0)) {
++          sender_helo_name = NULL;
++        }
++        else {
++          sender_helo_name = string_copy_malloc(string_copyn(arg, len));
++        }
++      }
++      else {
++        return FALSE;
++      }
++    }
++    /* Port */
++    else if (strncmpic(p, US"PORT=", 5) == 0) {
++      p += 5;
++      arg = p;
++      while (*p++ != ' ' && p <= end);
++      len = p - arg;
++      if(*(p - 1) == ' ') {
++        len --;
++      }
++      if (len > 0) {
++        if ((len == sizeof(XCLIENT_UNAVAIL) - 1 && strncmpic(arg, XCLIENT_UNAVAIL, sizeof (XCLIENT_UNAVAIL) -1) == 0) ||
++            (len == sizeof(XCLIENT_TEMPUNAVAIL) - 1 && strncmpic(arg, XCLIENT_TEMPUNAVAIL, sizeof (XCLIENT_UNAVAIL) -1) == 0)) {
++          sender_host_port = 0;
++        }
++        else {
++          sender_host_port = Uatoi(arg);
++        }
++      }
++      else {
++        return FALSE;
++      }
++    }
++    /* Login */
++    else if (strncmpic(p, US"LOGIN=", 6) == 0) {
++      p += 6;
++      arg = p;
++      while (*p++ != ' ' && p <= end);
++      len = p - arg;
++      if(*(p - 1) == ' ') {
++        len --;
++      }
++      if (len > 0) {
++        if ((len == sizeof(XCLIENT_UNAVAIL) - 1 && strncmpic(arg, XCLIENT_UNAVAIL, sizeof (XCLIENT_UNAVAIL) -1) == 0) ||
++            (len == sizeof(XCLIENT_TEMPUNAVAIL) - 1 && strncmpic(arg, XCLIENT_TEMPUNAVAIL, sizeof (XCLIENT_UNAVAIL) -1) == 0)) {
++          authenticated_id = NULL;
++          sender_host_authenticated = NULL;
++        }
++        else {
++          authenticated_id = string_copy_malloc(string_copyn(arg, len));
++          sender_host_authenticated = "xclient";
++          authentication_failed = FALSE;
++        }
++      }
++      else {
++        return FALSE;
++      }
++    }
++    /* Proto */
++    else if (strncmpic(p, US"PROTO=", 6) == 0) {
++      p += 6;
++      arg = p;
++      while (*p++ != ' ' && p <= end);
++      len = p - arg;
++      if(*(p - 1) == ' ') {
++        len --;
++      }
++      if (len > 0) {
++        if (len == 4 && (strncmpic(arg, US"SMTP", 4) == 0)) {
++          esmtp = FALSE;
++        }
++        else if (len == 5 && (strncmpic(arg, US"ESMTP", 5) == 0)) {
++          esmtp = TRUE;
++        }
++      }
++    }
++    else {
++      return FALSE;
++    }
++  }
++
++  host_build_sender_fullhost();
++  return TRUE;
++}
++
++#undef XCLIENT_UNAVAIL
++#undef XCLIENT_TEMPUNAVAIL
+ 
+ /*************************************************
+ *   Check HELO line and set sender_helo_name     *
+@@ -1131,6 +1331,11 @@
+     bsmtp_transaction_linecount = receive_linecount;
+     break;
+ 
++    /* Handle XCLIENT command */
++    case XCLIENT_CMD:
++    smtp_handle_xclient(smtp_cmd_data);
++    break;
++
+ 
+     /* The MAIL FROM command requires an address as an operand. All we
+     do here is to parse it for syntactic correctness. The form "<>" is
+@@ -3158,7 +3363,50 @@
+     toomany = FALSE;
+     break;   /* HELO/EHLO */
+ 
++    case XCLIENT_CMD:
++    HAD(SCH_XCLIENT);
++    smtp_mailcmd_count++;
++    if (helo_required && !helo_seen)
++      {
++      smtp_printf("503 HELO or EHLO required\r\n");
++      log_write(0, LOG_MAIN|LOG_REJECT, "rejected XCLIENT from %s: no "
++        "HELO/EHLO given", host_and_ident(FALSE));
++      break;
++      }
++
++    /* Check for an operand */
++    if (smtp_cmd_data[0] == 0)
++      {
++      done = synprot_error(L_smtp_syntax_error, 501, NULL,
++        US"XCLIENT must have at least one operand");
++      break;
++      }
++    if(xclient_allow_hosts != NULL) 
++      {
++        if (match_isinlist (sender_host_address, &xclient_allow_hosts, ':', NULL, NULL, MCL_NOEXPAND, FALSE, NULL) != OK) 
++          {
++            done = synprot_error(L_smtp_syntax_error, 550, NULL,
++                  US"XCLIENT is not allowed");
++            break;
++          }
++      }
++    else
++      {
++      done = synprot_error(L_smtp_syntax_error, 550, NULL,
++        US"XCLIENT is not allowed");
++      break;
++      }
++    if(smtp_handle_xclient(smtp_cmd_data) == FALSE) 
++      {
++      done = synprot_error(L_smtp_syntax_error, 501, NULL,
++        US"bad command parameter syntax");
++      break;
++      }
++    smtp_code = US"220";   /* Default status code */
++
++    smtp_printf("%s XCLIENT success\r\n", smtp_code);
+ 
++    break; /* XCLIENT */
+     /* The MAIL command requires an address as an operand. All we do
+     here is to parse it for syntactic correctness. The form "<>" is
+     a special case which converts into an empty string. The start/end
