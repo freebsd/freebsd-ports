@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://transcode.kabewm.com/ \
 		http://fromani.exit1.org/
@@ -284,6 +284,7 @@ post-patch:
 
 	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|g ; \
 		s|FFMPEG_VERSION|LIBAVCODEC_IDENT|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|-lMagick|-lMagickCore|g' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
