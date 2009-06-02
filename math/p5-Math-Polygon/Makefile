@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Polygon
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,7 @@ MAN3=		Math::Polygon.3 \
 		Math::Polygon::Calc.3 \
 		Math::Polygon::Clip.3 \
 		Math::Polygon::Surface.3 \
-		Math::Polygon::Transform.3
+		Math::Polygon::Transform.3 \
+		Math::Polygon::Convex.3
 
 .include <bsd.port.mk>
