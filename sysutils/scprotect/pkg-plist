@@ -1,5 +1,5 @@
 bin/scprotect
 etc/rc.d/scprotect
-@cwd /
-%%KMODDIR%%/scprotect.ko
+@cwd %%KMODDIR%%
+scprotect.ko
 @unexec kldxref %%KMODDIR%%
