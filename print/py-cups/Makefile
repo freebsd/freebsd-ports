@@ -7,6 +7,7 @@
 
 PORTNAME=	cups
 PORTVERSION=	1.9.45
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	http://cyberelk.net/tim/data/pycups/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	CUPS bindings for Python
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 
 USE_PYTHON=	yes
 USE_ICONV=	yes
@@ -24,7 +25,7 @@ USE_PYDISTUTILS=	yes
 CFLAGS+=	-I${LOCALBASE}/include -DVERSION=\\\"${PORTVERSION}\\\"
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-PYDISTUTILS_EGGINFO=${PORTNAME}-1.0-py2.5.egg-info
+PYDISTUTILS_EGGINFO=${PORTNAME}-1.0-py${PYTHON_VER}.egg-info
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cups.so
 
 .include <bsd.port.mk>

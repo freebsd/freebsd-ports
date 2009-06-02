@@ -7,7 +7,7 @@
 
 PORTNAME=	cupsddk
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print devel
 MASTER_SITES=	EASYSW
 MASTER_SITE_SUBDIR=	${PORTNAME}/${DISTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	CUPS Driver Development Kit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		cups.2:${PORTSDIR}/print/cups-base
+		cupsimage.2:${PORTSDIR}/print/cups-image
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 GNU_CONFIGURE=	yes
