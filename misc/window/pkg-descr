@@ -1,0 +1,3 @@
+The window utility implements a window environment on ASCII terminals.
+It was once distributed as part of the base system.  This version includes
+several code fixes such as removal of 'register' keyword.
