@@ -1,0 +1,15 @@
+The Open On-Chip Debugger (OpenOCD) aims to provide debugging, in-system
+programming and boundary-scan testing for embedded target devices. OpenOCD uses
+a "hardware interface dongle" to communicate with the JTAG (IEEE 1149.1)
+compliant taps on your target board. OpenOCD currently supports many types
+of hardware dongles: USB based, parallel port based, and other standalone boxes
+that run OpenOCD internally. It allows ARM7 (ARM7TDMI and ARM720t),
+ARM9 (ARM920T, ARM922T, ARM926EJ-S, ARM966E-S), XScale (PXA25x, IXP42x) and
+Cortex-M3 (Luminary Stellaris LM3 and ST STM32) based cores to be debugged
+via the GDB protocol. Flash writing is supported for external CFI compatible
+NOR flashes (Intel and AMD/Spansion command set) and several internal flashes
+(LPC2000, AT91SAM7, STR7x, STR9x, LM3, and STM32x). Preliminary support for
+various NAND flash controllers (LPC3180, Orion, S3C24xx, more) controller is
+included. 
+
+WWW: http://openocd.berlios.de/
