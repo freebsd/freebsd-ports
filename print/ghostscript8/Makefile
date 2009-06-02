@@ -87,7 +87,7 @@ PLIST_SUB+=	GS_${D}="@comment "
 .endfor
 
 .if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=	libcupsimage.2:${PORTSDIR}/print/cups-image
+LIB_DEPENDS+=	cupsimage.2:${PORTSDIR}/print/cups-image
 CONFIGURE_ARGS+=	--enable-cups
 .else
 CONFIGURE_ARGS+=	--disable-cups
