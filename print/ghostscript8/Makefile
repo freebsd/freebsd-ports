@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.64
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -87,7 +87,7 @@ PLIST_SUB+=	GS_${D}="@comment "
 .endfor
 
 .if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=	libcupsimage.so.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	libcupsimage.2:${PORTSDIR}/print/cups-image
 CONFIGURE_ARGS+=	--enable-cups
 .else
 CONFIGURE_ARGS+=	--disable-cups
