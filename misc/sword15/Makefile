@@ -17,6 +17,9 @@ MASTER_SITE_SUBDIR=	tabthorpe
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A project framework for manipulating Bible texts
 
+CONFLICTS=	sword-1.6*
+NO_LATEST_LINK=	yes
+
 MAKE_JOBS_SAFE=	yes
 
 USE_GNOME=	pkgconfig
@@ -31,7 +34,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--without-curl
 .else
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl
 
 pre-everything::
