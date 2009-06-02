@@ -2,7 +2,7 @@
 #
 # $FreeBSD$
 #
-# PROVIDE: bacula_dir
+# PROVIDE: bacula_fd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
