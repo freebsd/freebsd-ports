@@ -7,6 +7,8 @@
 %%SITE_PERL%%/Math/Polygon/Surface.pod
 %%SITE_PERL%%/Math/Polygon/Calc.pod
 %%SITE_PERL%%/Math/Polygon/Clip.pod
+%%SITE_PERL%%/Math/Polygon/Convex.pm
+%%SITE_PERL%%/Math/Polygon/Convex.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon/.packlist
 %%SITE_PERL%%/Math/Polygon.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
