@@ -9,14 +9,14 @@
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits linux
 DISTNAME=	gtk+-${PORTVERSION}-39
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the Gtk lib
 
-CONFLICTS=	linux-f8-gtk-[0-9]*
+CONFLICTS=	linux-f8-gtk-[0-9]* linux-f10-gtk-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 

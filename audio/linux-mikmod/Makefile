@@ -7,14 +7,14 @@
 
 PORTNAME=	mikmod
 DISTVERSION=	3.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-34
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	MikMod Sound Library (Linux version)
 
-CONFLICTS=	linux-f8-mikmod-[0-9]*
+CONFLICTS=	linux-f8-mikmod-[0-9]* linux-f10-mikmod-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

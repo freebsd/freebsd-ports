@@ -7,14 +7,14 @@
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-24
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of imlib
 
-CONFLICTS=	linux-f8-imlib-[0-9]*
+CONFLICTS=	linux-f8-imlib-[0-9]* linux-f10-imlib-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4

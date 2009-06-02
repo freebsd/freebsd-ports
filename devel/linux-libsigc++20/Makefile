@@ -7,7 +7,7 @@
 
 PORTNAME=		libsigc
 PORTVERSION=		2.0.17
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		devel linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
 DISTNAME=		${PORTNAME}++20-${PORTVERSION}-${RPMVERSION}
@@ -15,7 +15,7 @@ DISTNAME=		${PORTNAME}++20-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=		Callback Framework for C++ (linux version)
 
-CONFLICTS=		linux-f8-libsigc++20-[0-9]*
+CONFLICTS=		linux-f8-libsigc++20-[0-9]* linux-f10-libsigc++20-[0-9]*
 
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX_RPM=		yes

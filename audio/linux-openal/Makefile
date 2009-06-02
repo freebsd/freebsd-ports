@@ -7,14 +7,14 @@
 
 PORTNAME=	openal
 DISTVERSION=	0.0.9-0.6.20060204cvs.fc4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D positional spatialized sound library (Linux version)
 
-CONFLICTS=	linux-f8-openal-[0-9]*
+CONFLICTS=	linux-f8-openal-[0-9]* linux-f10-openal-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

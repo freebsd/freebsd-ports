@@ -6,14 +6,14 @@
 
 PORTNAME=	ungif
 PORTVERSION=	4.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics linux
 DISTNAME=	libungif-${PORTVERSION}-3.fc4.2
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	RPM of the ungif lib
 
-CONFLICTS=	linux-f8-ungif-[0-9]*
+CONFLICTS=	linux-f8-ungif-[0-9]* linux-f10-ungif-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 

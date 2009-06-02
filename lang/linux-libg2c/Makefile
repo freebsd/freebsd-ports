@@ -6,14 +6,14 @@
 
 PORTNAME=	libg2c
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang linux
 DISTNAME=	compat-libf2c-32-${PORTVERSION}-47.fc4
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Fortran 77 compatibility runtime
 
-CONFLICTS=	linux-f8-libg2c-[0-9]*
+CONFLICTS=	linux-f8-libg2c-[0-9]* linux-f10-libg2c-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

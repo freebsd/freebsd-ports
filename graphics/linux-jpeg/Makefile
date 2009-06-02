@@ -7,14 +7,14 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	6b.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 DISTNAME=	libjpeg-6b-34
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the JPEG lib
 
-CONFLICTS=	linux-f8-jpeg-[0-9]*
+CONFLICTS=	linux-f8-jpeg-[0-9]* linux-f10-jpeg-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4

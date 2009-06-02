@@ -7,7 +7,7 @@
 
 PORTNAME=	libGLU
 PORTVERSION=	6.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 DISTNAME=	xorg-x11-Mesa-libGLU-${PORTVERSION}-${RPMVERSION}
 SRC_DISTFILES=	xorg-x11-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
@@ -15,7 +15,8 @@ SRC_DISTFILES=	xorg-x11-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL utility library (Linux version)
 
-CONFLICTS=	linux_dri-[0-9]* linux-f8-libGLU-[0-9]*
+CONFLICTS=	linux_dri-[0-9]* linux-f8-libGLU-[0-9]* linux-dri-[0-9]* \
+		linux-f8-dri-[0-9]* linux-f10-dri-[0-9]*
 
 RPMVERSION=	37.FC4.49.2.1
 ONLY_FOR_ARCHS=	i386 amd64

@@ -8,7 +8,7 @@
 
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}-1
@@ -16,7 +16,7 @@ DISTNAME=	SDL_image-${PORTVERSION}-1
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A simple library to load images as SDL interfaces (linux version)
 
-CONFLICTS=	linux-f8-sdl_image-[0-9]*
+CONFLICTS=	linux-f8-sdl_image-[0-9]* linux-f10-sdl_image-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	sdl12

@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-libs
 PORTVERSION=	# defined below
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc linux
 MASTER_SITE_SUBDIR=	# defined below
 PKGNAMESUFFIX=	-fc${LINUX_DIST_VER}
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTSUBVERSION}.fc${LINUX_DIST_VER}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Smart Common Input Method platform, library part, Linux binary
 
-CONFLICTS=	linux-f8-scim-libs-[0-9]*
+CONFLICTS=	linux-f8-scim-libs-[0-9]* linux-f10-scim-libs-[0-9]*
 
 MASTER_SITE_SRC_SUBDIR=	# defined below
 SRC_DISTFILES=	scim-${PORTVERSION}-${PORTSUBVERSION}.fc${LINUX_DIST_VER}${SRC_SUFX}

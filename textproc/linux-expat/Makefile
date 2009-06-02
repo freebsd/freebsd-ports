@@ -7,14 +7,14 @@
 
 PORTNAME=	expat
 PORTVERSION=	1.95.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-6
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary port of Expat XML-parsing library
 
-CONFLICTS=	linux-f8-expat-[0-9]*
+CONFLICTS=	linux-f8-expat-[0-9]* linux-f10-expat-[0-9]*
 
 BRANDELF_DIRS=	usr/bin
 
