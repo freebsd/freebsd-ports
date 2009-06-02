@@ -8,7 +8,8 @@
 PORTNAME=	zisofs-tools
 PORTVERSION=	1.0.8
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.kernel.org/pub/linux/utils/fs/zisofs/
+MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
+MASTER_SITE_SUBDIR=	linux/utils/fs/zisofs
 
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	User utilities for zisofs
