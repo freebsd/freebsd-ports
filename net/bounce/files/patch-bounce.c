@@ -1,5 +1,5 @@
---- bounce.c.old	2008-09-02 14:10:20.000000000 -0300
-+++ bounce.c	2008-09-02 14:10:29.000000000 -0300
+--- bounce.c.orig	2009-03-08 23:05:57.000000000 +0900
++++ bounce.c	2009-03-08 23:07:09.000000000 +0900
 @@ -1,5 +1,7 @@
  /* socket bouncer, by orabidoo  12 Feb '95 
     using code from mark@cairo.anu.edu.au's general purpose telnet server.
@@ -44,12 +44,12 @@
  
      chead=ctail=cbuf;
      cpos=0;
-@@ -134,31 +142,65 @@
+@@ -134,31 +142,66 @@
  }
  
  int main(int argc,char *argv[]) {
 -    int srv_fd, rem_fd, len, cl_fd, on=1;
-+    int srv_fd, rem_fd, len, cl_fd, on=1, b=0, d=0;
++    int srv_fd, rem_fd, len, cl_fd, on=1, b=0, d=0, q=0;
      int myport=DEFAULT_PORT, remoteport;
 -    struct sockaddr_in rem_addr, srv_addr, cl_addr;
 +    struct sockaddr_in rem_addr, srv_addr, cl_addr, src_addr;
@@ -78,7 +78,7 @@
 +
 +    /* Process arguments */
 +
-+    while( (ch = getopt(argc, argv, "p:a:b:dt:")) != -1  ) {
++    while( (ch = getopt(argc, argv, "p:a:b:dqt:")) != -1  ) {
 +      switch(ch) { 
 +      case 'b': b = 1;
 +	sourcename = malloc( strlen(optarg) + 1);
@@ -98,6 +98,7 @@
 +	break;
 +
 +      case 'd': d = 1; break;
++      case 'q': q = 1; break;
 +      case 'p':
 +	if ((myport=atoi(optarg))==0) {
 +	  fprintf(stderr,"Bad port number.\n");
@@ -119,7 +120,7 @@
 +    argv += optind;
 +
 +    if (argc!=2) {
-+	fprintf(stderr,"Use: %s [-a localaddr | -b localaddr] [-d] [-p localport] [-t timer] machine port \n",myname);
++	fprintf(stderr,"Use: %s [-a localaddr | -b localaddr] [-d] [-q] [-p localport] [-t timer] machine port \n",myname);
  	exit(-1);
      }
 -    if ((remoteport=atoi(argv[2]))<=0) {
@@ -127,7 +128,7 @@
  	fprintf(stderr, "Bad remote port number.\n");
  	exit(-1);
      }
-@@ -166,11 +208,12 @@
+@@ -166,11 +209,12 @@
      memset((char *) &rem_addr, 0, sizeof(rem_addr));
      memset((char *) &srv_addr, 0, sizeof(srv_addr));
      memset((char *) &cl_addr, 0, sizeof(cl_addr));
@@ -142,7 +143,7 @@
  	if (cl_addr.sin_addr.s_addr==-1) {
  	    fprintf(stderr, "Unknown host.\n");
  	    exit(-1);
-@@ -178,19 +221,43 @@
+@@ -178,19 +222,43 @@
      } else
  	cl_addr.sin_addr=*(struct in_addr *)(hp->h_addr_list[0]);
  
@@ -189,7 +190,7 @@
      close(0); close(1); close(2);
      chdir("/");
  #ifdef TIOCNOTTY
-@@ -202,11 +269,13 @@
+@@ -202,11 +270,15 @@
      if (fork()) exit(0);
      while (1) {
  	len=sizeof(rem_addr);
@@ -199,12 +200,14 @@
  	  if (errno==EINTR) continue;
  	  exit(-1);
          }
-+	syslog( LOG_NOTICE, "connection from %s to local port %i.  Bouncing to %s, %i",
-+		inet_ntoa(rem_addr.sin_addr), myport, argv[0], remoteport );
++        if (!q) {
++		syslog( LOG_NOTICE, "connection from %s to local port %i.  Bouncing to %s, %i",
++			inet_ntoa(rem_addr.sin_addr), myport, argv[0], remoteport );
++	}
  	switch(fork()) {
  	  case -1:
  	    /* we're in the background.. no-one to complain to */
-@@ -220,6 +289,17 @@
+@@ -220,6 +292,17 @@
  		close(rem_fd);
  		exit(-1);
  	    }
