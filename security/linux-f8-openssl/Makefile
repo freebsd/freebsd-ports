@@ -7,12 +7,15 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.8b
+PORTREVISION=	1
 CATEGORIES=	security linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	The OpenSSL toolkit (Linux Fedora 8)
+
+CONFLICTS=	linux-openssl-[0-9]* linux-f10-openssl-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	8

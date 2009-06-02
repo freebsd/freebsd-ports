@@ -7,12 +7,15 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	A sample multi-channel audio mixer library (Linux Fedora 8)
+
+CONFLICTS=	linux-sdl_mixer-[0-9]* linux-f10-sdl_mixer-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

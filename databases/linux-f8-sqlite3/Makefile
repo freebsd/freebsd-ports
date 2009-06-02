@@ -7,13 +7,15 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	sqlite-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	The library that implements an embeddable SQL database engine (Linux Fedora 8)
+
+CONFLICTS=	linux-sqlite3-[0-9]* linux-f10-sqlite3-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	8

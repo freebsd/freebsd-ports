@@ -7,12 +7,15 @@
 
 PORTNAME=	libxml
 PORTVERSION=	1.8.17
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Old libXML library for Gnome-1 application compatibility (Linux Fedora 8)
+
+CONFLICTS=	linux-libxml-[0-9]* linux-f10-libxml-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	8

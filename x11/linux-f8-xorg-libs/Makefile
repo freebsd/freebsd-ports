@@ -7,7 +7,7 @@
 
 PORTNAME=		xorg-libs
 PORTVERSION=		7.3
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		x11 linux
 PKGNAMEPREFIX=		linux-f8-
 DISTFILES=	libICE-1.0.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
@@ -88,7 +88,7 @@ SRC_DISTFILES=	libICE-1.0.4-2.fc8.src.rpm \
 ALWAYS_KEEP_DISTFILES=	YES
 .endif
 
-CONFLICTS=		linux-xorg-libs-[0-9]*
+CONFLICTS=		linux-xorg-libs-[0-9]* linux-f10-xorg-libs-[0-9]*
 
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=		Xorg libraries (Linux Fedora 8)

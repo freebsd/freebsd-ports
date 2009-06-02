@@ -7,12 +7,15 @@
 
 PORTNAME=		ucl
 PORTVERSION=		1.03
+PORTREVISION=		1
 CATEGORIES=		archivers linux
 PKGNAMEPREFIX=		linux-f8-
 DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		UCL, a lossless data compression library (Linux Fedora 8)
+
+CONFLICTS=		linux-ucl-[0-9]* linux-f10-ucl-[0-9]*
 
 USE_LINUX_RPM=		yes
 LINUX_DIST_VER=		8

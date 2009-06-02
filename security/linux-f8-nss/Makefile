@@ -7,12 +7,15 @@
 
 PORTNAME=	nss
 PORTVERSION=	3.12.2.0
+PORTREVISION=	1
 CATEGORIES=	security linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Network Security Services (Linux Fedora 8)
+
+CONFLICTS=	linux-nss-[0-9]* linux-f10-nss-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

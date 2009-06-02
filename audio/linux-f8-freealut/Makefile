@@ -7,12 +7,15 @@
 
 PORTNAME=	freealut
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	A free implementation of OpenAL's ALUT standard (Linux Fedora 8)
+
+CONFLICTS=	linux-freealut-[0-9]* linux-f10-freealut-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	openal
