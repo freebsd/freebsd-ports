@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	banshee
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5.0
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://download.banshee-project.org/banshee/
+MASTER_SITES=	http://download.banshee-project.org/banshee/ \
+		http://download.banshee-project.org/banshee/unstable/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
 
 MAINTAINER=	mono@FreeBSD.org
@@ -27,7 +28,8 @@ LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins
 
 OPTIONS=	DOCS "Install documentation" on \
-		MTP "Enable MTP support" on
+		MTP "Enable MTP support" on \
+		BPMDETECT "Enable BPM detection" on
 #		IPOD "Enable iPod support" on \
 
 USE_BZIP2=	yes
@@ -42,7 +44,7 @@ USE_XORG=	xrandr xxf86vm
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--disable-boo
+CONFIGURE_ARGS+=	--disable-boo --disable-shave
 
 # Need absolute path for build/icon-install-theme.
 INSTALL=	/usr/bin/install
@@ -70,6 +72,10 @@ PLIST_SUB+=	OPT_MTP=""
 .else
 CONFIGURE_ARGS+=	--disable-mtp
 PLIST_SUB+=	OPT_MTP="@comment "
+.endif
+
+.if !defined(WITHOUT_BPMDETECT)
+USE_GSTREAMER+=	soundtouch
 .endif
 
 post-patch:
