@@ -172,6 +172,9 @@
 #WITH_ICONV
 # Link with libiconv to enable header charset conversion
 
+#WITH_XCLIENT
+# Enable XCLIENT command in exim: http://www.postfix.org/XCLIENT_README.html
+
 ## AUTOMATICALLY GENERATED FILE - DO NOT CHANGE ANYTHING BELOW THIS LINE ##
 # use `make config' to edit the local configuration
 # use `make makeconfig' to edit the defaults (MAINTAINER only)

@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -250,7 +250,10 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 # Don't install scripts to run exim as a daemon
 # (for example when using option mua_wrapper)
 #WITHOUT_DAEMON=	yes
-
+#
+# Enable XCLIENT command in exim
+#WITH_XCLIENT=		yes
+#
 # You should not need to fiddle with anything below this point.
 
 .if defined(WITH_WISHLIST)
@@ -557,6 +560,10 @@ PLIST_SUB+=	DAEMON=""
 SUB_LIST+=	LOGDIR="${LOGDIR}"
 .else
 PLIST_SUB+=	DAEMON="@comment "
+.endif
+
+.if defined(WITH_XCLIENT)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-xclient
 .endif
 
 .include <bsd.port.pre.mk>
