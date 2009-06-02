@@ -573,6 +573,7 @@
     SUBDIR += voltcraft304
     SUBDIR += wanpipe
     SUBDIR += whichman
+    SUBDIR += window
     SUBDIR += wmScoreBoard
     SUBDIR += wmcalendar
     SUBDIR += wmfirew
