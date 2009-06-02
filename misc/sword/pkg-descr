@@ -1,8 +1,9 @@
-The SWORD Project is an effort to create an ever expanding software
-package for research and study of God and His Word. The SWORD Bible
-Framework allows easy manipulation of Bible texts, commentaries,
-lexicons, dictionaries, etc.  Many frontends are built using this
-framework. An installed module set may be shared between many
-frontends using the framework.
+The SWORD Project is the CrossWire Bible Society's free Bible
+software project. Its purpose is to create cross-platform open-source
+tools, covered by the GNU General Public License, that allow
+programmers and Bible societies to write new Bible software more
+quickly and easily. We also create Bible study software for all
+readers, students, scholars, and translators of the Bible, and have
+a growing collection of over 200 texts in over 50 languages.
 
 WWW: http://www.crosswire.org/sword/

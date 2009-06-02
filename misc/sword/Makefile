@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sword
-PORTVERSION=	1.5.11
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
-		http://crosswire.org/ftpmirror/pub/sword/source/v1.5/ \
+MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.6/ \
+		http://crosswire.org/ftpmirror/pub/sword/source/v1.6/ \
 		LOCAL
 MASTER_SITE_SUBDIR=	tabthorpe
 
@@ -39,8 +38,8 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.10|1.10.1|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|1.10.2|1.10.1|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.63|2.62|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.am
 	@@${REINPLACE_CMD} -e 's|:=|=|' ${WRKSRC}/Makefile.am \
