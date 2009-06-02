@@ -29,4 +29,10 @@ post-extract:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
