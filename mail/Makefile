@@ -458,6 +458,7 @@
     SUBDIR += php5-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
+    SUBDIR += phpmailer2
     SUBDIR += pine-pgp-filters
     SUBDIR += pm-lib
     SUBDIR += pmail
