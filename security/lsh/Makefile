@@ -6,7 +6,7 @@
 
 PORTNAME=	lsh
 PORTVERSION=	2.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
@@ -15,12 +15,11 @@ MASTER_SITE_SUBDIR=	lsh lsh/old
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
 
-BUILD_DEPENDS+=	\
-		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
-LIB_DEPENDS+=	oop:${PORTSDIR}/devel/liboop \
+LIB_DEPENDS=	oop:${PORTSDIR}/devel/liboop \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
 GNU_CONFIGURE=	yes
+USE_XORG=	xau
 USE_GMAKE=	yes
 INSTALL_TARGET=	install
 CONFIGURE_ENV=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
