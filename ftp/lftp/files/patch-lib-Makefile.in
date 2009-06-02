@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	2009-03-09 17:51:32.687581242 +0000
-+++ lib/Makefile.in	2009-03-09 17:59:43.191630779 +0000
-@@ -879,8 +879,6 @@
+--- lib/Makefile.in.orig	2009-05-31 16:43:31.478158732 +0000
++++ lib/Makefile.in	2009-05-31 16:47:08.255450539 +0000
+@@ -886,8 +886,6 @@
  libgnu_la_LDFLAGS = $(AM_LDFLAGS)
  GPERF = gperf
  LINK_WARNING_H = $(top_srcdir)/build-aux/link-warning.h
@@ -9,7 +9,7 @@
  all: $(BUILT_SOURCES) config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  
-@@ -1610,30 +1608,9 @@
+@@ -1626,31 +1624,10 @@
  	fi ; \
  	if $$need_charset_alias; then \
  	  $(mkinstalldirs) $(DESTDIR)$(libdir) ; \
@@ -26,7 +26,8 @@
 -	  fi ; \
  	fi
  
- uninstall-local: all-local
+ uninstall-local: uninstall-localcharset
+ uninstall-localcharset: all-local
 -	if test -f $(charset_alias); then \
 -	  sed -f ref-del.sed $(charset_alias) > $(charset_tmp); \
 -	  if grep '^# Packages using this file: $$' $(charset_tmp) \
