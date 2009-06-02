@@ -7,7 +7,7 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	1.2.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	mail
 MASTER_SITES=	SF
 
@@ -27,14 +27,11 @@ CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]*
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
-PATCH_STRIP=	-p1
 MAKE_JOBS_SAFE=	yes
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 autoheader:262
+ACLOCAL_ARGS=	-Im4
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails self-tests on sparc64
-.endif
 
 BF_LIBS?=		-l${BDB_LIB_NAME}
 BF_CPPFLAGS?=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
@@ -55,6 +52,11 @@ INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \
 		bf_copy.1 bf_compact.1 bf_tar.1
+
+# remove files that were accidentally shipped, but should get rebuilt
+post-extract:
+	${RM} ${WRKSRC}/src/bogoupgrade
+	${RM} ${WRKSRC}/src/tests/t.query.config
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^#!.*perl|#! ${PERL}|' \

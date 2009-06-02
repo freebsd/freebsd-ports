@@ -1,8 +1,0 @@
---- ./src/tests/t.frame
-+++ ./src/tests/t.frame
-@@ -41,4 +41,4 @@
- # Obtain data base file suffix
--DB_NAME=$("$BOGOFILTER" -C -V 2>&1 | sed -n '/Database:/ { p;q }')
-+DB_NAME=$("$BOGOFILTER" -C -V 2>&1 | sed -n '/Database:/ {p;q;}')
- case $DB_NAME in
-     *BerkeleyDB*|*"Berkeley DB"*)
