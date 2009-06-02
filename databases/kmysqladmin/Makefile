@@ -21,4 +21,7 @@ USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
+CONFIGURE_ARGS+=--with-mysql-include=${LOCALBASE}/include/mysql \
+		--with-mysql-lib=${LOCALBASE}/lib/mysql
+
 .include <bsd.port.mk>
