@@ -27,6 +27,8 @@ CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
 		--enable-nested-tables --enable-gzip-help \
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS=	SSL		"SSL support" on \
 		DEFAULT_COLORS	"Colors support" off \
 		IPV6		"IPv6 support" off \
