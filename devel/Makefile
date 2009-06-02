@@ -2169,6 +2169,7 @@
     SUBDIR += pecl-intl
     SUBDIR += pecl-json
     SUBDIR += pecl-mcve
+    SUBDIR += pecl-newt
     SUBDIR += pecl-operator
     SUBDIR += pecl-params
     SUBDIR += pecl-runkit
