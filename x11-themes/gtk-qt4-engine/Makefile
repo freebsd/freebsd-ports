@@ -33,4 +33,10 @@ WRKSRC=		${WRKDIR}/gtk-qt-engine
 USE_GNOME+=	libbonoboui
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/kcm_gtk/searchpaths.cpp
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/src/rcproperties.cpp
+
 .include <bsd.port.post.mk>
