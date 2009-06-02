@@ -13,13 +13,16 @@ bin/osis2mod
 bin/tei2mod
 bin/vpl2mod
 bin/vs2osisref
+bin/vs2osisreftxt
 bin/xml2gbs
-etc/sword.conf
+%%ETCDIR%%.conf
 include/sword/Greek2Greek.h
 include/sword/GreekChars.h
 include/sword/canon.h
+include/sword/canon_abbrevs.h
 include/sword/cipherfil.h
 include/sword/curlftpt.h
+include/sword/curlhttpt.h
 include/sword/defs.h
 include/sword/echomod.h
 include/sword/encfiltmgr.h
@@ -87,7 +90,6 @@ include/sword/regex.h
 include/sword/roman.h
 include/sword/rtfhtml.h
 include/sword/sapphire.h
-include/sword/scsuutf8.h
 include/sword/stringmgr.h
 include/sword/strkey.h
 include/sword/swbasicfilter.h
@@ -116,6 +118,7 @@ include/sword/swtext.h
 include/sword/swunicod.h
 include/sword/swversion.h
 include/sword/sysdata.h
+include/sword/teihtmlhref.h
 include/sword/teiplain.h
 include/sword/teirtf.h
 include/sword/thmlfootnotes.h
@@ -139,6 +142,7 @@ include/sword/unicodertf.h
 include/sword/untgz.h
 include/sword/url.h
 include/sword/utf16utf8.h
+include/sword/utf8arabicpoints.h
 include/sword/utf8arshaping.h
 include/sword/utf8bidireorder.h
 include/sword/utf8cantillation.h
@@ -153,6 +157,7 @@ include/sword/utf8utf16.h
 include/sword/utilstr.h
 include/sword/utilxml.h
 include/sword/versekey.h
+include/sword/versemgr.h
 include/sword/versetreekey.h
 include/sword/zcom.h
 include/sword/zconf.h
@@ -161,7 +166,7 @@ include/sword/zld.h
 include/sword/zstr.h
 include/sword/ztext.h
 include/sword/zverse.h
-lib/libsword-1.5.11.so
+lib/libsword-1.6.0.so
 lib/libsword.a
 lib/libsword.la
 lib/libsword.so
@@ -175,6 +180,8 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/bg_BG-utf8.conf
 %%DATADIR%%/locales.d/cs-utf8.conf
 %%DATADIR%%/locales.d/cs.conf
+%%DATADIR%%/locales.d/cy-utf8.conf
+%%DATADIR%%/locales.d/cy.conf
 %%DATADIR%%/locales.d/da-utf8.conf
 %%DATADIR%%/locales.d/da.conf
 %%DATADIR%%/locales.d/de-utf8.conf
@@ -191,23 +198,30 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/fa-utf8.conf
 %%DATADIR%%/locales.d/fi-utf8.conf
 %%DATADIR%%/locales.d/fi.conf
-%%DATADIR%%/locales.d/fr_abbrev-utf8.conf
-%%DATADIR%%/locales.d/fr_abbrev.conf
 %%DATADIR%%/locales.d/fr-utf8.conf
 %%DATADIR%%/locales.d/fr.conf
+%%DATADIR%%/locales.d/fr_abbrev-utf8.conf
+%%DATADIR%%/locales.d/fr_abbrev.conf
+%%DATADIR%%/locales.d/ga-utf8.conf
 %%DATADIR%%/locales.d/he-utf8.conf
 %%DATADIR%%/locales.d/hu-utf8.conf
 %%DATADIR%%/locales.d/hu.conf
+%%DATADIR%%/locales.d/id-utf8.conf
 %%DATADIR%%/locales.d/id.conf
 %%DATADIR%%/locales.d/it-utf8.conf
 %%DATADIR%%/locales.d/it.conf
-%%DATADIR%%/locales.d/ja.conf
+%%DATADIR%%/locales.d/ja-utf8.conf
 %%DATADIR%%/locales.d/ko-utf8.conf
 %%DATADIR%%/locales.d/ko.conf
 %%DATADIR%%/locales.d/ko_abbrev-utf8.conf
 %%DATADIR%%/locales.d/ko_abbrev.conf
+%%DATADIR%%/locales.d/la-utf8.conf
 %%DATADIR%%/locales.d/la.conf
 %%DATADIR%%/locales.d/lt-utf8.conf
+%%DATADIR%%/locales.d/mt-utf8.conf
+%%DATADIR%%/locales.d/nb-utf8.conf
+%%DATADIR%%/locales.d/nb.conf
+%%DATADIR%%/locales.d/nl-utf8.conf
 %%DATADIR%%/locales.d/nl.conf
 %%DATADIR%%/locales.d/no-utf8.conf
 %%DATADIR%%/locales.d/no.conf
@@ -217,12 +231,14 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/pt.conf
 %%DATADIR%%/locales.d/pt_BR-utf8.conf
 %%DATADIR%%/locales.d/pt_BR.conf
+%%DATADIR%%/locales.d/ro-utf8.conf
 %%DATADIR%%/locales.d/ro.conf
 %%DATADIR%%/locales.d/ru_RU-cp1251.conf
 %%DATADIR%%/locales.d/ru_RU-koi8-r.conf
 %%DATADIR%%/locales.d/ru_RU-utf8.conf
 %%DATADIR%%/locales.d/sk-utf8.conf
 %%DATADIR%%/locales.d/sk.conf
+%%DATADIR%%/locales.d/sl-utf8.conf
 %%DATADIR%%/locales.d/sl.conf
 %%DATADIR%%/locales.d/sv-utf8.conf
 %%DATADIR%%/locales.d/sv.conf
@@ -231,6 +247,8 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/uk_UA-koi8-u.conf
 %%DATADIR%%/locales.d/uk_UA-utf8.conf
 %%DATADIR%%/locales.d/vi-utf8.conf
+%%DATADIR%%/locales.d/zh_TW-utf8.conf
+%%DATADIR%%/locales.d/zh_english-utf8.conf
 @dirrm %%DATADIR%%/mods.d
 @dirrm %%DATADIR%%/locales.d
 @dirrm %%DATADIR%%
