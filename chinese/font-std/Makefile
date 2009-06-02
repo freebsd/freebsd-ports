@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	font-std
-PORTVERSION=	0.0.20090515
+PORTVERSION=	0.0.20090602
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -14,7 +14,7 @@ DISTFILES=	# empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Chinese Standard Fonts
 
-BUILD_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
 		${LOCALBASE}/share/fonts/TrueType/gbsn00lp.ttf:${PORTSDIR}/chinese/arphicttf \
 		${LOCALBASE}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \
 		${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese/arphicttf

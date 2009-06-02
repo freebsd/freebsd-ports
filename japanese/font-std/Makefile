@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	font-std
-PORTVERSION=	0.0.20090515
+PORTVERSION=	0.0.20090602
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -14,7 +14,7 @@ DISTFILES=	# empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese Standard Fonts
 
-BUILD_DEPENDS=	${LOCALBASE}/share/font-ipa/ipam.otf:${PORTSDIR}/japanese/font-ipa \
+RUN_DEPENDS=	${LOCALBASE}/share/font-ipa/ipam.otf:${PORTSDIR}/japanese/font-ipa \
 		${LOCALBASE}/share/font-ipa/ipag.otf:${PORTSDIR}/japanese/font-ipa
 
 NO_BUILD=	yes
