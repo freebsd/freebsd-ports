@@ -6,7 +6,7 @@
 
 PORTNAME=	openmotif
 PORTVERSION=	2.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	ftp://ftp.motifzone.com/%SUBDIR%/ \
 		ftp://ftp.ics.com/pub/Products/Motif/%SUBDIR%/
@@ -21,7 +21,7 @@ COMMENT=	Motif toolkit Linux libraries
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=	linux-f8-openmotif-[0-9]*
+CONFLICTS=	linux-f8-openmotif-[0-9]* linux-f10-openmotif-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes

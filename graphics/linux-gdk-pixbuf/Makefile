@@ -7,14 +7,14 @@
 
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	0.22.0.18.fc4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+)\./\1-/}
 
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Linux version of the graphic library for GTK+
 
-CONFLICTS=	linux-f8-gdk-pixbuf-[0-9]*
+CONFLICTS=	linux-f8-gdk-pixbuf-[0-9]* linux-f10-gdk-pixbuf-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4

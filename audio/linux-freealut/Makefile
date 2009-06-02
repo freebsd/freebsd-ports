@@ -7,7 +7,7 @@
 
 PORTNAME=	freealut
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.fc${LINUX_DIST_VER}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.fc${LINUX_DIST_VER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free implementation of OpenAL's ALUT standard (Linux version)
 
-CONFLICTS=	linux-f8-freealut-[0-9]*
+CONFLICTS=	linux-f8-freealut-[0-9]* linux-f10-freealut-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	openal

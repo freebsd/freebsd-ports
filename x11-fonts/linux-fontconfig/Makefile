@@ -7,14 +7,14 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.2.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-fonts linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-13
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary of Fontconfig
 
-CONFLICTS=	linux-f8-fontconfig-[0-9]*
+CONFLICTS=	linux-f8-fontconfig-[0-9]* linux-f10-fontconfig-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

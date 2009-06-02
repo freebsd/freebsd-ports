@@ -7,7 +7,7 @@
 
 PORTNAME=	allegro
 PORTVERSION=	4.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel linux
 MASTER_SITES=	http://membres.lycos.fr/ebotcazou/allegro/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform game programming library (linux version)
 
-CONFLICTS=	linux-f8-allegro-[0-9]*
+CONFLICTS=	linux-f8-allegro-[0-9]* linux-f10-allegro-[0-9]*
 
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		xorglibs

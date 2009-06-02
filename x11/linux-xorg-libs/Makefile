@@ -7,7 +7,7 @@
 
 PORTNAME=		xorg-libs
 PORTVERSION=		6.8.2
-PORTREVISION=		6
+PORTREVISION=		7
 CATEGORIES=		x11 linux
 DISTFILES=		xorg-x11-libs-${PORTVERSION}-37.FC4.49.2.1.${LINUX_RPM_ARCH}.rpm \
 			xorg-x11-deprecated-libs-6.8.2-31.${LINUX_RPM_ARCH}.rpm
@@ -15,7 +15,7 @@ DISTFILES=		xorg-x11-libs-${PORTVERSION}-37.FC4.49.2.1.${LINUX_RPM_ARCH}.rpm \
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=		Xorg libraries, linux binaries
 
-CONFLICTS=		linux-XFree86-libs-[0-9]* linux-f8-xorg-libs-[0-9]*
+CONFLICTS=		linux-XFree86-libs-[0-9]* linux-f8-xorg-libs-[0-9]* linux-f10-xorg-libs-[0-9]*
 
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		fontconfig

@@ -7,14 +7,14 @@
 
 PORTNAME=	esound
 PORTVERSION=	0.2.36
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0.fc4.1
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of esound
 
-CONFLICTS=	linux-f8-esound-[0-9]*
+CONFLICTS=	linux-f8-esound-[0-9]* linux-f10-esound-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	libaudiofile

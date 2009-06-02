@@ -7,7 +7,7 @@
 
 PORTNAME=		ucl
 PORTVERSION=		1.03
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		archivers linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
 DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
@@ -15,7 +15,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		RPM of UCL, a lossless data compression library
 
-CONFLICTS=		linux-f8-ucl-[0-9]*
+CONFLICTS=		linux-f8-ucl-[0-9]* linux-f10-ucl-[0-9]*
 
 USE_LINUX_RPM=		yes
 RPMVERSION=		3

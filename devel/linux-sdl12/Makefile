@@ -8,7 +8,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.libsdl.org/release/ \
@@ -18,7 +18,7 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}-1
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (linux version)
 
-CONFLICTS=	linux-f8-sdl12-[0-9]*
+CONFLICTS=	linux-f8-sdl12-[0-9]* linux-f10-sdl12-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs

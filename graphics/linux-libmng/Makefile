@@ -7,14 +7,14 @@
 
 PORTNAME=		libmng
 PORTVERSION=		1.0.9
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics linux
 DISTNAME=		${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=		michael@ranner.eu
 COMMENT=		RPM of libmng
 
-CONFLICTS=		linux-f8-libmng-[0-9]*
+CONFLICTS=		linux-f8-libmng-[0-9]* linux-f10-libmng-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	jpeg

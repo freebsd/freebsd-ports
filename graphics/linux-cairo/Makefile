@@ -8,7 +8,7 @@
 PORTNAME=	cairo
 PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	-2.gst.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://gstreamer.freedesktop.org/pkg/%SUBDIR%/ CENKES/myports
 MASTER_SITE_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/RPMS.deps
@@ -17,7 +17,7 @@ MASTER_SITE_SRC_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/SRPMS.
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux cairo binary
 
-CONFLICTS=	linux-f8-cairo-[0-9]*
+CONFLICTS=	linux-f8-cairo-[0-9]* linux-f10-cairo-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 LINUX_DIST_VER=	4

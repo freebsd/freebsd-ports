@@ -7,7 +7,7 @@
 
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes linux
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	linux-
@@ -18,7 +18,7 @@ COMMENT=	A high-color icon theme shell from the FreeDesktop project
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-CONFLICTS=	linux-f8-hicolor-icon-theme-[0-9]*
+CONFLICTS=	linux-f8-hicolor-icon-theme-[0-9]* linux-f10-hicolor-icon-theme-[0-9]*
 
 NO_BUILD=	yes
 USE_LINUX=	yes

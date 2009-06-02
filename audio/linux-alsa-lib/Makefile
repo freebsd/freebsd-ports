@@ -7,14 +7,14 @@
 
 PORTNAME=	alsa-lib
 DISTVERSION=	1.0.10-3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 DISTNAME=	${PORTNAME}-${DISTVERSION}.FC4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Advanced Linux Sound Architecture libraries
 
-CONFLICTS=	linux-f8-alsa-lib-[0-9]*
+CONFLICTS=	linux-f8-alsa-lib-[0-9]* linux-f10-alsa-lib-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

@@ -7,14 +7,14 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	RPM of libglade2
 
-CONFLICTS=	linux-f8-libglade2-[0-9]*
+CONFLICTS=	linux-f8-libglade2-[0-9]* linux-f10-libglade2-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4

@@ -7,13 +7,13 @@
 
 PORTNAME=	libtheora
 DISTVERSION=	1.0alpha4-2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia linux
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video codec
 
-CONFLICTS=	linux-f8-libtheora-[0-9]*
+CONFLICTS=	linux-f8-libtheora-[0-9]* linux-f10-libtheora-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
