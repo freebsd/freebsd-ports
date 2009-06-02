@@ -55,3 +55,8 @@ share/doc/cups/help/ref-ppdcfile.html
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%
 @dirrmtry share/cups/drv
+@dirrmtry share/cups
+@dirrmtry share/doc/cups/help
+@dirrmtry share/doc/cups
+@dirrmtry libexec/cups/driver
+@dirrmtry libexec/cups
