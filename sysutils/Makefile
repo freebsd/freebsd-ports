@@ -392,6 +392,7 @@
     SUBDIR += knutclient
     SUBDIR += komparator
     SUBDIR += krename
+    SUBDIR += krename-kde4
     SUBDIR += kshutdown
     SUBDIR += ksynaptics
     SUBDIR += lavaps
