@@ -7,7 +7,7 @@
 
 PORTNAME=	flac123
 PORTVERSION=	0.0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/flac-tools
 
@@ -23,6 +23,10 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	README.remote
 PLIST_FILES=	bin/flac123
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
