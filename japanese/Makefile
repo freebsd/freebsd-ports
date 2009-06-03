@@ -75,6 +75,7 @@
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
     SUBDIR += font-ipa
+    SUBDIR += font-ipa-uigothic
     SUBDIR += font-kochi
     SUBDIR += font-mplus
     SUBDIR += font-mplus-ipa
