@@ -7,14 +7,13 @@
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.35.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.gdesklets.org/downloads/ \
-		http://www.pycage.de/download/${PORTNAME}/ \
+MASTER_SITES=	http://www.gdesklets.de/files/ \
 		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 DISTNAME=	gDesklets-${PORTVERSION}
 
-MAINTAINER=	klammer@webonaut.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A framework for Gnome 2.x for desktop applets
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
