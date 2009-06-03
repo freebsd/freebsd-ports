@@ -29,7 +29,6 @@ lib/gstreamer-0.10/libfsrtcpfilter.so
 lib/gstreamer-0.10/libfsrtpconference.a
 lib/gstreamer-0.10/libfsrtpconference.la
 lib/gstreamer-0.10/libfsrtpconference.so
-lib/gstreamer-0.10/libfsrtpconference.so.0
 lib/gstreamer-0.10/libfsvideoanyrate.a
 lib/gstreamer-0.10/libfsvideoanyrate.la
 lib/gstreamer-0.10/libfsvideoanyrate.so
