@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmm
-PORTVERSION=	0.9.18
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 CATEGORIES=	audio
 MASTER_SITES=	http://gogglesmm.googlecode.com/files/
 DISTNAME=	musicmanager-${PORTVERSION}
@@ -20,12 +19,12 @@ LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 		\
 		xine.1:${PORTSDIR}/multimedia/libxine		\
 		tag.6:${PORTSDIR}/audio/taglib			\
 		sqlite3.8:${PORTSDIR}/databases/sqlite3		\
-		dbus-1:${PORTSDIR}/devel/dbus			\
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+		dbus-1:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
@@ -33,11 +32,9 @@ INSTALLS_ICONS=	yes
 PORTDOCS=	README AUTHORS
 PLIST_DIRS=	share/applications
 PLIST_FILES=	bin/gmm						\
-		bin/gmm-tray					\
 		share/applications/gmm.desktop			\
-		share/icons/hicolor/24x24/apps/gmm-tray.png	\
-		share/icons/hicolor/48x48/apps/gmm.png  \
-		share/icons/hicolor/48x48/apps/gmm-tray.png
+		share/icons/hicolor/48x48/apps/gmm.png		\
+		share/locale/de/LC_MESSAGES/gogglesmm.mo
 
 CONFIGURE_ENV=	OPT_CFLAGS=" "
 
@@ -52,12 +49,18 @@ post-extract:
 		${WRKSRC}/configure
 
 post-configure:
-	${REINPLACE_CMD} -i '' -e 's|-D -m|-m|' \
+	${REINPLACE_CMD} -i '' -e 's| -D | |' \
+		${WRKSRC}/Makefile
+
+	${REINPLACE_CMD} -i '' -e 's| -T | |' \
 		${WRKSRC}/Makefile
 
 pre-install:
 	[ -d ${PREFIX}/share/applications ] ||	\
 	    ${MKDIR} ${PREFIX}/share/applications
+
+	[ -d ${PREFIX}/share/locale/de/LC_MESSAGES ] ||
+	    ${MKDIR} ${PREFIX}/share/locale/de/LC_MESSAGES
 
 post-install:
 .if !defined(NOPORTDOCS)
