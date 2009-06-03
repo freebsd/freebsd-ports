@@ -18,4 +18,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		BSD::Sysctl.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800070
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
