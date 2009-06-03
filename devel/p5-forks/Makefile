@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	forks
-PORTVERSION=	0.27
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	SOAP/RYBSKEJ
@@ -24,6 +24,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		forks.3 forks::signals.3 \
 		forks::shared.3 \
+		forks::Devel::Symdump.3 \
 		threads::shared::array.3 \
 		threads::shared::handle.3 \
 		threads::shared::hash.3 \
