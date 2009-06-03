@@ -93,5 +93,6 @@ POST-DEINSTALL)
 	if [ -r fonts.dir -a `wc -l < fonts.dir` = 1 ]; then
 		rm -f fonts.dir
 	fi
+	rmdir ${X_FONTSDIR} > /dev/null 2>&1 || true
 	;;
 esac
