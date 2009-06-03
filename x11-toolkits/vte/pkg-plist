@@ -8,7 +8,7 @@ include/vte/vteversion.h
 lib/libvte.a
 lib/libvte.la
 lib/libvte.so
-lib/libvte.so.9
+lib/libvte.so.10
 lib/vte/decset
 lib/vte/interpret
 lib/vte/osc
