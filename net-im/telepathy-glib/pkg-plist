@@ -1,3 +1,4 @@
+include/telepathy-1.0/telepathy-glib/_gen/error-str.h
 include/telepathy-1.0/telepathy-glib/_gen/gtypes.h
 include/telepathy-1.0/telepathy-glib/_gen/telepathy-enums.h
 include/telepathy-1.0/telepathy-glib/_gen/telepathy-interfaces.h
@@ -96,6 +97,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-channel-group.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-channel-media.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-channel-roomlist.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-channel-text.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-channel-tube.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-channel-tubes.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-channel.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-aliasing.html
@@ -131,6 +133,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-group.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-media.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-roomlist.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-text.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-tube.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-tubes.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-connection-manager.html
