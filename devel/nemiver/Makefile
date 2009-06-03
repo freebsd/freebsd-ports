@@ -18,7 +18,6 @@ COMMENT=	A C/C++ Debugger for GNOME
 LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost \
 		gtop-2.0:${PORTSDIR}/devel/libgtop \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		vte.9:${PORTSDIR}/x11-toolkits/vte \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		gtksourceviewmm-2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm
 
@@ -27,7 +26,7 @@ OPTIONS=	GHEX "Enable memory view" off
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intltool gnomedocutils gconf2
+USE_GNOME=	gnomeprefix gnomehack intltool gnomedocutils gconf2 vte
 GCONF_SCHEMAS=	nemiver-workbench.schemas nemiver-dbgperspective.schemas
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
