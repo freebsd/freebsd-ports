@@ -29,12 +29,11 @@ RDFDB_PORT?=	7001
 PLIST_SUB=	RDFDB_DIR=${RDFDB_DIR}
 
 post-patch:
-	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		-e 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS:S/"//g},g' \
 		-e 's,%%BDB_INCLUDE_DIR%%,${BDB_INCLUDE_DIR},g'\
 		-e 's,%%BDB_LIB_NAME%%,${BDB_LIB_NAME},g' \
-		< ${WRKSRC}/makefile > ${WRKSRC}/makefile.new
-	@${MV} ${WRKSRC}/makefile.new ${WRKSRC}/makefile
+		${WRKSRC}/makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/rdfdb ${PREFIX}/bin

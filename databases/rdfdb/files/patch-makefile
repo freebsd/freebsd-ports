@@ -10,7 +10,7 @@ $FreeBSD$
 +CC ?= gcc -g 
 +INCLUDES = -I %%BDB_INCLUDE_DIR%% -I expat/xmltok -I expat/xmlparse
 +LIBS     = -l%%BDB_LIB_NAME%% %%PTHREAD_LIBS%%
-+CPPFLAGS += ${CFLAGS} $(INCLUDES) -L  /usr/local/lib
++CPPFLAGS += ${CFLAGS} $(INCLUDES) -L  %%LOCALBASE%%/lib
  
  OBJS =  utils/hash.o \
  	utils/utils.o \
