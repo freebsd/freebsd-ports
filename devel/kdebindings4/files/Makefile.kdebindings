@@ -47,9 +47,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
 
-#should this be moved to bsd.cmake.mk ?
-CMAKE_ARGS+=	-DDEFAULT_PYTHON_EXECUTABLE=${PYTHON_VERSION}
-
 #keep syncing this with devel/py-sip
 SIPDIR_REL=	share/py-sip
 

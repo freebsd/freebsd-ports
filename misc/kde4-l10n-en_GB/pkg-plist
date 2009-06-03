@@ -747,8 +747,8 @@ share/locale/en_GB/LC_MESSAGES/kio_fish.mo
 share/locale/en_GB/LC_MESSAGES/kio_floppy.mo
 share/locale/en_GB/LC_MESSAGES/kio_groupwise.mo
 share/locale/en_GB/LC_MESSAGES/kio_help4.mo
-share/locale/en_GB/LC_MESSAGES/kio_info.mo
 share/locale/en_GB/LC_MESSAGES/kio_imap4.mo
+share/locale/en_GB/LC_MESSAGES/kio_info.mo
 share/locale/en_GB/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/en_GB/LC_MESSAGES/kio_ldap.mo
 share/locale/en_GB/LC_MESSAGES/kio_man.mo
@@ -1167,5 +1167,3 @@ share/locale/en_GB/entry.desktop
 @dirrm share/apps/klettres/en_GB/alpha
 @dirrm share/apps/klettres/en_GB
 @dirrm share/apps/klettres
-@dirrm share/apps/katepart/syntax
-@dirrm share/apps/katepart

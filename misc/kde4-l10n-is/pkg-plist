@@ -193,6 +193,7 @@ share/locale/is/LC_MESSAGES/kio_floppy.mo
 share/locale/is/LC_MESSAGES/kio_groupwise.mo
 share/locale/is/LC_MESSAGES/kio_help4.mo
 share/locale/is/LC_MESSAGES/kio_imap4.mo
+share/locale/is/LC_MESSAGES/kio_info.mo
 share/locale/is/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/is/LC_MESSAGES/kio_ldap.mo
 share/locale/is/LC_MESSAGES/kio_man.mo
@@ -292,6 +293,7 @@ share/locale/is/LC_MESSAGES/kstyle_config.mo
 share/locale/is/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/is/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/is/LC_MESSAGES/ksysguard.mo
+share/locale/is/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/is/LC_MESSAGES/ksystemlog.mo
 share/locale/is/LC_MESSAGES/ksystraycmd.mo
 share/locale/is/LC_MESSAGES/ksysv.mo
@@ -303,6 +305,7 @@ share/locale/is/LC_MESSAGES/ktimetracker.mo
 share/locale/is/LC_MESSAGES/ktouch.mo
 share/locale/is/LC_MESSAGES/kttsd.mo
 share/locale/is/LC_MESSAGES/ktuberling.mo
+share/locale/is/LC_MESSAGES/kturtle.mo
 share/locale/is/LC_MESSAGES/ktux.mo
 share/locale/is/LC_MESSAGES/kuiviewer.mo
 share/locale/is/LC_MESSAGES/kurifilter.mo
@@ -391,11 +394,13 @@ share/locale/is/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/is/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/is/LC_MESSAGES/plasma_applet_quicklaunch.mo
 share/locale/is/LC_MESSAGES/plasma_applet_skapplet.mo
+share/locale/is/LC_MESSAGES/plasma_applet_system-monitor.mo
 share/locale/is/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/is/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/is/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/is/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/is/LC_MESSAGES/plasma_containment_saverdesktop.mo
+share/locale/is/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/is/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/is/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/is/LC_MESSAGES/plasma_runner_recentdocuments.mo
@@ -406,6 +411,7 @@ share/locale/is/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/is/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/is/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/is/LC_MESSAGES/plasmapkg.mo
+share/locale/is/LC_MESSAGES/powerdevil.mo
 share/locale/is/LC_MESSAGES/printer-applet.mo
 share/locale/is/LC_MESSAGES/solid-bluetooth.mo
 share/locale/is/LC_MESSAGES/solid-hardware.mo

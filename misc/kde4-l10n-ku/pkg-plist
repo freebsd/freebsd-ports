@@ -45,7 +45,6 @@ share/locale/ku/LC_MESSAGES/kcminit.mo
 share/locale/ku/LC_MESSAGES/kcminput.mo
 share/locale/ku/LC_MESSAGES/kcmioslaveinfo.mo
 share/locale/ku/LC_MESSAGES/kcmkclock.mo
-share/locale/ku/LC_MESSAGES/kcolorchooser.mo
 share/locale/ku/LC_MESSAGES/kcmkded.mo
 share/locale/ku/LC_MESSAGES/kcmkdnssd.mo
 share/locale/ku/LC_MESSAGES/kcmkeyboard.mo
@@ -75,6 +74,7 @@ share/locale/ku/LC_MESSAGES/kcmstyle.mo
 share/locale/ku/LC_MESSAGES/kcmusb.mo
 share/locale/ku/LC_MESSAGES/kcmview1394.mo
 share/locale/ku/LC_MESSAGES/kcmxinerama.mo
+share/locale/ku/LC_MESSAGES/kcolorchooser.mo
 share/locale/ku/LC_MESSAGES/kcron.mo
 share/locale/ku/LC_MESSAGES/kdat.mo
 share/locale/ku/LC_MESSAGES/kde-menu.mo
@@ -281,13 +281,13 @@ share/locale/ku/LC_MESSAGES/powerdevil.mo
 share/locale/ku/LC_MESSAGES/printer-applet.mo
 share/locale/ku/LC_MESSAGES/processcore.mo
 share/locale/ku/LC_MESSAGES/processui.mo
-share/locale/ku/LC_MESSAGES/svgpart.mo
 share/locale/ku/LC_MESSAGES/solid-bluetooth.mo
 share/locale/ku/LC_MESSAGES/solid-hardware.mo
 share/locale/ku/LC_MESSAGES/solid-network.mo
 share/locale/ku/LC_MESSAGES/solid-powermanagement.mo
 share/locale/ku/LC_MESSAGES/solidcontrol.mo
 share/locale/ku/LC_MESSAGES/soliduiserver.mo
+share/locale/ku/LC_MESSAGES/svgpart.mo
 share/locale/ku/LC_MESSAGES/systemsettings.mo
 share/locale/ku/LC_MESSAGES/timezones4.mo
 share/locale/ku/LC_MESSAGES/useraccount.mo

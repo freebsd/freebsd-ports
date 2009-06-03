@@ -60,7 +60,7 @@ QT_COMPONENTS=	corelib dbus gui network opengl qt3support \
 		assistant svg qdbusviewer makeqpf imageformats \
 		qmake_build moc_build rcc_build uic_build
 USE_GNOME=	libxml2 libxslt
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DWITH_FAM:BOOL=Off \
 		-DKDE4_PREFIX:String=${KDE4_PREFIX}

@@ -1084,8 +1084,12 @@ share/doc/HTML/uk/lilo-config/common
 share/doc/HTML/uk/lilo-config/index.cache.bz2
 share/doc/HTML/uk/lilo-config/index.docbook
 share/doc/HTML/uk/lokalize/common
+share/doc/HTML/uk/lokalize/glossary.png
 share/doc/HTML/uk/lokalize/index.cache.bz2
 share/doc/HTML/uk/lokalize/index.docbook
+share/doc/HTML/uk/lokalize/original-diff.png
+share/doc/HTML/uk/lokalize/sync.png
+share/doc/HTML/uk/lokalize/tmview.png
 share/doc/HTML/uk/lskat/common
 share/doc/HTML/uk/lskat/index.cache.bz2
 share/doc/HTML/uk/lskat/index.docbook
@@ -1365,8 +1369,8 @@ share/locale/uk/LC_MESSAGES/kio_fish.mo
 share/locale/uk/LC_MESSAGES/kio_floppy.mo
 share/locale/uk/LC_MESSAGES/kio_groupwise.mo
 share/locale/uk/LC_MESSAGES/kio_help4.mo
-share/locale/uk/LC_MESSAGES/kio_info.mo
 share/locale/uk/LC_MESSAGES/kio_imap4.mo
+share/locale/uk/LC_MESSAGES/kio_info.mo
 share/locale/uk/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/uk/LC_MESSAGES/kio_ldap.mo
 share/locale/uk/LC_MESSAGES/kio_man.mo

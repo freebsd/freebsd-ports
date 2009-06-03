@@ -1885,8 +1885,6 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/apps/klettres/pt_BR
 @dirrm share/apps/klettres
 @dirrm share/apps/khangman
-@dirrm share/apps/katepart/syntax
-@dirrm share/apps/katepart
 @dirrmtry man/pt_BR/man8
 @dirrmtry man/pt_BR/man7
 @dirrmtry man/pt_BR/man6

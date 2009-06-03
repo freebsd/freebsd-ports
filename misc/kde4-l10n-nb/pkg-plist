@@ -710,7 +710,5 @@ share/locale/nb/entry.desktop
 @dirrm share/apps/klettres/nb
 @dirrm share/apps/klettres
 @dirrm share/apps/khangman
-@dirrm share/apps/katepart/syntax
-@dirrm share/apps/katepart
 @dirrmtry man/nb/man1
 @dirrmtry man/nb

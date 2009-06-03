@@ -23,7 +23,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl dbus \
 		qmake_build moc_build rcc_build uic_build
 USE_GETTEXT=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=  kdesu.1
 

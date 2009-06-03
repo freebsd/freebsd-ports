@@ -441,7 +441,6 @@ share/locale/lt/LC_MESSAGES/phonon_kde.mo
 share/locale/lt/LC_MESSAGES/plasma-overlay.mo
 share/locale/lt/LC_MESSAGES/plasma-shells-common.mo
 share/locale/lt/LC_MESSAGES/plasma.mo
-share/locale/lt/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_bball.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_binaryclock.mo
@@ -459,6 +458,7 @@ share/locale/lt/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/lt/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_kalzium.mo

@@ -1,3 +1,4 @@
 MAN1=	kappfinder.1 \
 	kbookmarkmerger.1 \
+	kdesu.1 \
 	kfind.1

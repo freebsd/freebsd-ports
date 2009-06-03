@@ -1,4 +1,3 @@
-share/locale/kn/entry.desktop
 share/locale/kn/LC_MESSAGES/display.mo
 share/locale/kn/LC_MESSAGES/dolphin.mo
 share/locale/kn/LC_MESSAGES/drkonqi.mo
@@ -166,3 +165,4 @@ share/locale/kn/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/kn/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/kn/LC_MESSAGES/plasmapkg.mo
 share/locale/kn/LC_MESSAGES/useraccount.mo
+share/locale/kn/entry.desktop

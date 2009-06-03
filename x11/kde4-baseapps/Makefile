@@ -32,7 +32,7 @@ QT_COMPONENTS=	corelib opengl dbus qt3support \
 USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_RAW1394:BOOL=OFF
