@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090603:
+  AFFECTS: users of japanese/font-mplus-ipa (and old japanese/ipa-ttfonts)
+  AUTHOR: hrs@FreeBSD.org
+
+  IPAUIGothic has been updated to a version included in IPA font
+  version 002.03 and added as a separated port
+  "japanese/font-ipa-uigothic".  And the font-mplus-ipa has been
+  updated to remove the old IPAUIGothic.
+
+  Thus the old ipa-ttfonts is almost equivalent to font-ipa +
+  font-ipa-uigothic + font-mplus-ipa.  Note that these three packages
+  have different licenses from each other.
+
 20090601:
   AFFECTS: users of devel/cvs-devel
   AUTHOR: wxs@FreeBSD.org
