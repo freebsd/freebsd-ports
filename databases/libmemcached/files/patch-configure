@@ -1,6 +1,15 @@
---- configure.orig	2009-03-30 13:26:57.000000000 +0800
-+++ configure	2009-03-31 16:57:35.000000000 +0800
-@@ -21054,7 +21054,7 @@
+--- configure.orig	2009-06-01 08:32:47.000000000 +0800
++++ configure	2009-06-03 09:18:16.000000000 +0800
+@@ -22077,7 +22077,7 @@
+ fi
+ 
+ 
+-if test "x$POD2MAN" == "xno"; then
++if test "x$POD2MAN" = "xno"; then
+   { { $as_echo "$as_me:$LINENO: error: \"Could not find pod2man anywhere in path\"" >&5
+ $as_echo "$as_me: error: \"Could not find pod2man anywhere in path\"" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -22325,7 +22325,7 @@
  
      { $as_echo "$as_me:$LINENO: result: $have_htoll" >&5
  $as_echo "$have_htoll" >&6; }
@@ -9,7 +18,7 @@
    BUILD_BYTEORDER_TRUE=
    BUILD_BYTEORDER_FALSE='#'
  else
-@@ -21395,14 +21395,14 @@
+@@ -22669,14 +22669,14 @@
      MEMC_BINARY="$withval"
    fi
  
@@ -26,7 +35,7 @@
    then
      MEMC_BINARY=memcached
    fi
-@@ -21454,11 +21454,10 @@
+@@ -22728,11 +22728,10 @@
  fi
  
  

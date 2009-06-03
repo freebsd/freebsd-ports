@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
@@ -29,6 +29,7 @@ post-patch:
 USE_PERL5_BUILD=yes # pod2man
 MAN1=		memcat.1 \
 		memcp.1 \
+		memdump.1 \
 		memerror.1 \
 		memflush.1 \
 		memrm.1 \
@@ -54,6 +55,7 @@ MAN3=		libmemcached.3 \
 		memcached_decrement_with_initial.3 \
 		memcached_delete.3 \
 		memcached_delete_by_key.3 \
+		memcached_dump.3 \
 		memcached_fetch.3 \
 		memcached_flush_buffers.3 \
 		memcached_fetch_execute.3 \
