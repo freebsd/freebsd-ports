@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Pager/.packlist
+%%SITE_PERL%%/CGI/Pager.pm
+@dirrmtry %%SITE_PERL%%/CGI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Pager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI

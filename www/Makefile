@@ -681,6 +681,7 @@
     SUBDIR += p5-CGI-Framework
     SUBDIR += p5-CGI-Kwiki
     SUBDIR += p5-CGI-Minimal
+    SUBDIR += p5-CGI-Pager
     SUBDIR += p5-CGI-Prototype
     SUBDIR += p5-CGI-Response
     SUBDIR += p5-CGI-SSI
