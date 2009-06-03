@@ -249,7 +249,7 @@ write_row () {
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     if [ $have_duds ]; then
-      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/duds'>" >> ${TMPFILE}
+      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/duds.verbose'>" >> ${TMPFILE}
       echo "$n_duds</a>" >> ${TMPFILE}
     else
       echo "&nbsp;" >> ${TMPFILE}
