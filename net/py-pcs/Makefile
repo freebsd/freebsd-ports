@@ -23,6 +23,10 @@ USE_PYTHON_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800074
+BROKEN=		does not build
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
