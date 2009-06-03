@@ -3,7 +3,6 @@ bin/rhythmbox-client
 %%ITMS_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.a
 %%ITMS_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.la
 %%ITMS_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.so
-lib/librhythmbox-core.a
 lib/librhythmbox-core.la
 lib/librhythmbox-core.so
 lib/librhythmbox-core.so.0
@@ -13,6 +12,9 @@ lib/librhythmbox-core.so.0
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.py
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyo
@@ -29,51 +31,44 @@ lib/librhythmbox-core.so.0
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/rhythmbox-missing-artwork.svg
 lib/rhythmbox/plugins/audiocd/audiocd-ui.xml
 lib/rhythmbox/plugins/audiocd/audiocd.rb-plugin
-lib/rhythmbox/plugins/audiocd/libaudiocd.a
 lib/rhythmbox/plugins/audiocd/libaudiocd.la
 lib/rhythmbox/plugins/audiocd/libaudiocd.so
-lib/rhythmbox/plugins/audiocd/multiple-album.glade
+lib/rhythmbox/plugins/audiocd/multiple-album.ui
 lib/rhythmbox/plugins/audioscrobbler/as-icon.png
-lib/rhythmbox/plugins/audioscrobbler/audioscrobbler-prefs.glade
+lib/rhythmbox/plugins/audioscrobbler/audioscrobbler-prefs.ui
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler-ui.xml
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.rb-plugin
-lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.a
 lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.la
 lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
 lib/rhythmbox/plugins/cd-recorder/cd-recorder.rb-plugin
-lib/rhythmbox/plugins/cd-recorder/libcd-recorder.a
 lib/rhythmbox/plugins/cd-recorder/libcd-recorder.la
 lib/rhythmbox/plugins/cd-recorder/libcd-recorder.so
-%%DAAP%%lib/rhythmbox/plugins/daap/daap-prefs.glade
+%%DAAP%%lib/rhythmbox/plugins/daap/daap-prefs.ui
 %%DAAP%%lib/rhythmbox/plugins/daap/daap-ui.xml
 %%DAAP%%lib/rhythmbox/plugins/daap/daap.rb-plugin
-%%DAAP%%lib/rhythmbox/plugins/daap/libdaap.a
 %%DAAP%%lib/rhythmbox/plugins/daap/libdaap.la
 %%DAAP%%lib/rhythmbox/plugins/daap/libdaap.so
 %%DAAP%%lib/rhythmbox/plugins/daap/rb-daap-glue.h
-%%PYTHON%%lib/rhythmbox/plugins/dontreallyclose/dontreallyclose.py
-%%PYTHON%%lib/rhythmbox/plugins/dontreallyclose/dontreallyclose.pyc
-%%PYTHON%%lib/rhythmbox/plugins/dontreallyclose/dontreallyclose.pyo
-%%PYTHON%%lib/rhythmbox/plugins/dontreallyclose/dontreallyclose.rb-plugin
 lib/rhythmbox/plugins/generic-player/generic-player-ui.xml
 lib/rhythmbox/plugins/generic-player/generic-player.rb-plugin
-lib/rhythmbox/plugins/generic-player/libgeneric-player.a
 lib/rhythmbox/plugins/generic-player/libgeneric-player.la
 lib/rhythmbox/plugins/generic-player/libgeneric-player.so
-%%IPOD%%lib/rhythmbox/plugins/ipod/ipod-info.glade
-%%IPOD%%lib/rhythmbox/plugins/ipod/ipod-init.glade
+%%PYTHON%%lib/rhythmbox/plugins/im-status/__init__.py
+%%PYTHON%%lib/rhythmbox/plugins/im-status/__init__.pyc
+%%PYTHON%%lib/rhythmbox/plugins/im-status/__init__.pyo
+%%PYTHON%%lib/rhythmbox/plugins/im-status/im-status.rb-plugin
+%%IPOD%%lib/rhythmbox/plugins/ipod/ipod-info.ui
+%%IPOD%%lib/rhythmbox/plugins/ipod/ipod-init.ui
 %%IPOD%%lib/rhythmbox/plugins/ipod/ipod-ui.xml
 %%IPOD%%lib/rhythmbox/plugins/ipod/ipod.rb-plugin
-%%IPOD%%lib/rhythmbox/plugins/ipod/libipod.a
 %%IPOD%%lib/rhythmbox/plugins/ipod/libipod.la
 %%IPOD%%lib/rhythmbox/plugins/ipod/libipod.so
 lib/rhythmbox/plugins/iradio/iradio-initial.pls
 lib/rhythmbox/plugins/iradio/iradio-ui.xml
 lib/rhythmbox/plugins/iradio/iradio.rb-plugin
-lib/rhythmbox/plugins/iradio/libiradio.a
 lib/rhythmbox/plugins/iradio/libiradio.la
 lib/rhythmbox/plugins/iradio/libiradio.so
-lib/rhythmbox/plugins/iradio/station-properties.glade
+lib/rhythmbox/plugins/iradio/station-properties.ui
 %%PYTHON%%lib/rhythmbox/plugins/jamendo/JamendoConfigureDialog.py
 %%PYTHON%%lib/rhythmbox/plugins/jamendo/JamendoConfigureDialog.pyc
 %%PYTHON%%lib/rhythmbox/plugins/jamendo/JamendoConfigureDialog.pyo
@@ -86,12 +81,11 @@ lib/rhythmbox/plugins/iradio/station-properties.glade
 %%PYTHON%%lib/rhythmbox/plugins/jamendo/__init__.py
 %%PYTHON%%lib/rhythmbox/plugins/jamendo/__init__.pyc
 %%PYTHON%%lib/rhythmbox/plugins/jamendo/__init__.pyo
-%%PYTHON%%lib/rhythmbox/plugins/jamendo/jamendo-loading.glade
-%%PYTHON%%lib/rhythmbox/plugins/jamendo/jamendo-prefs.glade
 %%PYTHON%%lib/rhythmbox/plugins/jamendo/jamendo.rb-plugin
+%%PYTHON%%lib/rhythmbox/plugins/jamendo/jamendo-loading.ui
+%%PYTHON%%lib/rhythmbox/plugins/jamendo/jamendo-prefs.ui
 %%PYTHON%%lib/rhythmbox/plugins/jamendo/jamendo_logo.png
 %%PYTHON%%lib/rhythmbox/plugins/jamendo/jamendo_logo_medium.png
-%%LIRC%%lib/rhythmbox/plugins/rblirc/librblirc.a
 %%LIRC%%lib/rhythmbox/plugins/rblirc/librblirc.la
 %%LIRC%%lib/rhythmbox/plugins/rblirc/librblirc.so
 %%LIRC%%lib/rhythmbox/plugins/rblirc/lirc.rb-plugin
@@ -120,7 +114,7 @@ lib/rhythmbox/plugins/iradio/station-properties.glade
 %%PYTHON%%lib/rhythmbox/plugins/lyrics/__init__.py
 %%PYTHON%%lib/rhythmbox/plugins/lyrics/__init__.pyc
 %%PYTHON%%lib/rhythmbox/plugins/lyrics/__init__.pyo
-%%PYTHON%%lib/rhythmbox/plugins/lyrics/lyrics-prefs.glade
+%%PYTHON%%lib/rhythmbox/plugins/lyrics/lyrics-prefs.ui
 %%PYTHON%%lib/rhythmbox/plugins/lyrics/lyrics.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/BuyAlbumHandler.py
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/BuyAlbumHandler.pyc
@@ -134,22 +128,19 @@ lib/rhythmbox/plugins/iradio/station-properties.glade
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/__init__.py
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/__init__.pyc
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/__init__.pyo
-%%PYTHON%%lib/rhythmbox/plugins/magnatune/magnatune-loading.glade
-%%PYTHON%%lib/rhythmbox/plugins/magnatune/magnatune-prefs.glade
-%%PYTHON%%lib/rhythmbox/plugins/magnatune/magnatune-purchase.glade
+%%PYTHON%%lib/rhythmbox/plugins/magnatune/magnatune-loading.ui
+%%PYTHON%%lib/rhythmbox/plugins/magnatune/magnatune-prefs.ui
+%%PYTHON%%lib/rhythmbox/plugins/magnatune/magnatune-purchase.ui
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/magnatune.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/magnatune_logo_color_small.png
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/magnatune_logo_color_tiny.png
-lib/rhythmbox/plugins/mmkeys/libmmkeys.a
 lib/rhythmbox/plugins/mmkeys/libmmkeys.la
 lib/rhythmbox/plugins/mmkeys/libmmkeys.so
 lib/rhythmbox/plugins/mmkeys/mmkeys.rb-plugin
-%%MTP%%lib/rhythmbox/plugins/mtpdevice/libmtpdevice.a
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/libmtpdevice.la
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/libmtpdevice.so
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/mtp-ui.xml
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/mtpdevice.rb-plugin
-lib/rhythmbox/plugins/power-manager/libpower-manager.a
 lib/rhythmbox/plugins/power-manager/libpower-manager.la
 lib/rhythmbox/plugins/power-manager/libpower-manager.so
 lib/rhythmbox/plugins/power-manager/power-manager.rb-plugin
@@ -166,6 +157,11 @@ lib/rhythmbox/plugins/power-manager/power-manager.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/rb/__init__.py
 %%PYTHON%%lib/rhythmbox/plugins/rb/__init__.pyc
 %%PYTHON%%lib/rhythmbox/plugins/rb/__init__.pyo
+lib/rhythmbox/plugins/status-icon/libstatus-icon.la
+lib/rhythmbox/plugins/status-icon/libstatus-icon.so
+lib/rhythmbox/plugins/status-icon/status-icon-preferences.ui
+lib/rhythmbox/plugins/status-icon/status-icon-ui.xml
+lib/rhythmbox/plugins/status-icon/status-icon.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/upnp_coherence/MediaPlayer.py
 %%PYTHON%%lib/rhythmbox/plugins/upnp_coherence/MediaPlayer.pyc
 %%PYTHON%%lib/rhythmbox/plugins/upnp_coherence/MediaPlayer.pyo
@@ -179,11 +175,10 @@ lib/rhythmbox/plugins/power-manager/power-manager.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/upnp_coherence/__init__.pyc
 %%PYTHON%%lib/rhythmbox/plugins/upnp_coherence/__init__.pyo
 %%PYTHON%%lib/rhythmbox/plugins/upnp_coherence/coherence.rb-plugin
-lib/rhythmbox/plugins/visualizer/libvisualizer.a
 lib/rhythmbox/plugins/visualizer/libvisualizer.la
 lib/rhythmbox/plugins/visualizer/libvisualizer.so
 lib/rhythmbox/plugins/visualizer/rb-visualizer-glue.h
-lib/rhythmbox/plugins/visualizer/visualizer-controls.glade
+lib/rhythmbox/plugins/visualizer/visualizer-controls.ui
 lib/rhythmbox/plugins/visualizer/visualizer-ui.xml
 lib/rhythmbox/plugins/visualizer/visualizer.rb-plugin
 libexec/rhythmbox-metadata
@@ -226,7 +221,6 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/RBSourceListModel.html
 %%DOCSDIR%%/RBStatusbar.html
 %%DOCSDIR%%/RBStringValueMap.html
-%%DOCSDIR%%/RBTrayIcon.html
 %%DOCSDIR%%/RBURIDialog.html
 %%DOCSDIR%%/RhythmDB.html
 %%DOCSDIR%%/RhythmDBImportJob.html
@@ -247,10 +241,10 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/rhythmbox-RBSourceGroup.html
 %%DOCSDIR%%/rhythmbox-eel-gconf-extensions.html
 %%DOCSDIR%%/rhythmbox-rb-async-queue-watch.html
+%%DOCSDIR%%/rhythmbox-rb-builder-helpers.html
 %%DOCSDIR%%/rhythmbox-rb-debug.html
 %%DOCSDIR%%/rhythmbox-rb-dialog.html
 %%DOCSDIR%%/rhythmbox-rb-file-helpers.html
-%%DOCSDIR%%/rhythmbox-rb-glade-helpers.html
 %%DOCSDIR%%/rhythmbox-rb-header.html
 %%DOCSDIR%%/rhythmbox-rb-rating-helper.html
 %%DOCSDIR%%/rhythmbox-rb-removable-media-source.html
@@ -442,6 +436,7 @@ share/icons/hicolor/24x24/apps/rhythmbox.png
 share/icons/hicolor/32x32/apps/rhythmbox.png
 share/icons/hicolor/48x48/apps/rhythmbox.png
 share/icons/hicolor/scalable/apps/rhythmbox.svg
+share/locale/af/LC_MESSAGES/rhythmbox.mo
 share/locale/am/LC_MESSAGES/rhythmbox.mo
 share/locale/ar/LC_MESSAGES/rhythmbox.mo
 share/locale/az/LC_MESSAGES/rhythmbox.mo
@@ -464,6 +459,7 @@ share/locale/fi/LC_MESSAGES/rhythmbox.mo
 share/locale/fr/LC_MESSAGES/rhythmbox.mo
 share/locale/ga/LC_MESSAGES/rhythmbox.mo
 share/locale/gl/LC_MESSAGES/rhythmbox.mo
+share/locale/gu/LC_MESSAGES/rhythmbox.mo
 share/locale/he/LC_MESSAGES/rhythmbox.mo
 share/locale/hi/LC_MESSAGES/rhythmbox.mo
 share/locale/hr/LC_MESSAGES/rhythmbox.mo
@@ -516,18 +512,8 @@ share/omf/rhythmbox/rhythmbox-oc.omf
 share/omf/rhythmbox/rhythmbox-ru.omf
 share/omf/rhythmbox/rhythmbox-sv.omf
 share/omf/rhythmbox/rhythmbox-zh_CN.omf
-share/rhythmbox/glade/create-playlist.glade
-share/rhythmbox/glade/general-prefs.glade
-share/rhythmbox/glade/library-prefs.glade
-share/rhythmbox/glade/playback-prefs.glade
-share/rhythmbox/glade/playlist-save.glade
-share/rhythmbox/glade/plugins.glade
-share/rhythmbox/glade/podcast-feed-properties.glade
-share/rhythmbox/glade/podcast-prefs.glade
-share/rhythmbox/glade/podcast-properties.glade
-share/rhythmbox/glade/song-info-multiple.glade
-share/rhythmbox/glade/song-info.glade
-share/rhythmbox/glade/uri-new.glade
+share/rhythmbox/create-playlist.ui
+share/rhythmbox/general-prefs.ui
 share/rhythmbox/icons/hicolor/16x16/actions/audio-cd-duplicate.png
 share/rhythmbox/icons/hicolor/16x16/actions/audio-cd-duplicate.svg
 share/rhythmbox/icons/hicolor/16x16/actions/audio-cd-new.png
@@ -581,8 +567,18 @@ share/rhythmbox/icons/hicolor/scalable/places/library-internet-radio.svg
 share/rhythmbox/icons/hicolor/scalable/places/playlist-automatic.svg
 share/rhythmbox/icons/hicolor/scalable/places/playlist.svg
 share/rhythmbox/icons/hicolor/scalable/status/rhythmbox-notplaying.svg
+share/rhythmbox/library-prefs.ui
+share/rhythmbox/playback-prefs.ui
+share/rhythmbox/playlist-save.ui
 share/rhythmbox/playlists.xml
+share/rhythmbox/plugins.ui
+share/rhythmbox/podcast-feed-properties.ui
+share/rhythmbox/podcast-prefs.ui
+share/rhythmbox/podcast-properties.ui
 share/rhythmbox/rhythmbox-ui.xml
+share/rhythmbox/song-info-multiple.ui
+share/rhythmbox/song-info.ui
+share/rhythmbox/uri-new.ui
 @dirrm share/rhythmbox/icons/hicolor/scalable/status
 @dirrm share/rhythmbox/icons/hicolor/scalable/places
 @dirrm share/rhythmbox/icons/hicolor/scalable/actions
@@ -603,7 +599,6 @@ share/rhythmbox/rhythmbox-ui.xml
 @dirrm share/rhythmbox/icons/hicolor/16x16
 @dirrm share/rhythmbox/icons/hicolor
 @dirrm share/rhythmbox/icons/
-@dirrm share/rhythmbox/glade
 @dirrm share/rhythmbox
 @dirrm share/omf/rhythmbox
 @dirrm share/gnome/help/rhythmbox/zh_CN/figures
@@ -634,6 +629,7 @@ share/rhythmbox/rhythmbox-ui.xml
 @dirrm %%DOCSDIR%%
 @dirrm lib/rhythmbox/plugins/visualizer
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/upnp_coherence
+@dirrm lib/rhythmbox/plugins/status-icon
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/rb
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/python-console
 @dirrm lib/rhythmbox/plugins/power-manager
@@ -644,8 +640,8 @@ share/rhythmbox/rhythmbox-ui.xml
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/jamendo
 @dirrm lib/rhythmbox/plugins/iradio
 %%IPOD%%@dirrm lib/rhythmbox/plugins/ipod
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/im-status
 @dirrm lib/rhythmbox/plugins/generic-player
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/dontreallyclose
 %%DAAP%%@dirrm lib/rhythmbox/plugins/daap
 @dirrm lib/rhythmbox/plugins/cd-recorder
 @dirrm lib/rhythmbox/plugins/audioscrobbler
