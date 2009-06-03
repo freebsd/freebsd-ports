@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl module that implements the Rijndael cipher
 
 BUILD_DEPENDS=	p5-Test-Manifest>1.14:${PORTSDIR}/devel/p5-Test-Manifest
