@@ -7,7 +7,7 @@
 
 PORTNAME=	tgif-resource
 PORTVERSION=	4.1.45
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese graphics
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,7 +16,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese Resource and Configuration for TGIF
 
 RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif \
-		${LOCALBASE}/share/fonts/TTF/ipagui.ttf:${PORTSDIR}/japanese/font-mplus-ipa \
+		${LOCALBASE}/share/fonts/TTF/ipagui.ttf:${PORTSDIR}/japanese/font-ipa-uigothic \
 		${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/japanese/font-std
 
 NO_BUILD=	yes
