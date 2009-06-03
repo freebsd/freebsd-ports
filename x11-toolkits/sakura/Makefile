@@ -7,7 +7,7 @@
 
 PORTNAME=	sakura
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/ \
 		LOCAL/chinsan/${PORTNAME}/
@@ -15,10 +15,8 @@ MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/ \
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A terminal emulator based on GTK and VTE
 
-BUILD_DEPENDS=	vte:${PORTSDIR}/x11-toolkits/vte
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_CMAKE=	yes
+USE_GNOME=	vte
 CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
 
 .if !defined(WITHOUT_NLS)

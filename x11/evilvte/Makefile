@@ -7,6 +7,7 @@
 
 PORTNAME=	evilvte
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
 		LOCAL/chinsan/${PORTNAME}/
@@ -14,10 +15,8 @@ MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A VTE based, super lightweight terminal emulator
 
-BUILD_DEPENDS=	vte:${PORTSDIR}/x11-toolkits/vte
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_GMAKE=	yes
+USE_GNOME=	vte
 
 MAN1=		evilvte.1 showvte.1
 
