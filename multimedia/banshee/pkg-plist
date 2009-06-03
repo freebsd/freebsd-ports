@@ -1,6 +1,5 @@
 bin/banshee-1
 lib/banshee-1/Backends/Banshee.GStreamer.dll
-lib/banshee-1/Backends/Banshee.GStreamer.dll.config
 lib/banshee-1/Backends/Banshee.GStreamer.dll.mdb
 lib/banshee-1/Backends/Banshee.Gnome.dll
 lib/banshee-1/Backends/Banshee.Gnome.dll.mdb
@@ -23,7 +22,6 @@ lib/banshee-1/Banshee.Services.addins
 lib/banshee-1/Banshee.Services.dll
 lib/banshee-1/Banshee.Services.dll.mdb
 lib/banshee-1/Banshee.ThickClient.dll
-lib/banshee-1/Banshee.ThickClient.dll.config
 lib/banshee-1/Banshee.ThickClient.dll.mdb
 lib/banshee-1/Banshee.Widgets.dll
 lib/banshee-1/Banshee.Widgets.dll.config
@@ -37,8 +35,6 @@ lib/banshee-1/Extensions/Banshee.AudioCd.dll
 lib/banshee-1/Extensions/Banshee.AudioCd.dll.mdb
 lib/banshee-1/Extensions/Banshee.Bookmarks.dll
 lib/banshee-1/Extensions/Banshee.Bookmarks.dll.mdb
-lib/banshee-1/Extensions/Banshee.Bpm.dll
-lib/banshee-1/Extensions/Banshee.Bpm.dll.mdb
 lib/banshee-1/Extensions/Banshee.CoverArt.dll
 lib/banshee-1/Extensions/Banshee.CoverArt.dll.mdb
 lib/banshee-1/Extensions/Banshee.Daap.dll
@@ -65,12 +61,9 @@ lib/banshee-1/Extensions/Banshee.NotificationArea.dll
 lib/banshee-1/Extensions/Banshee.NotificationArea.dll.config
 lib/banshee-1/Extensions/Banshee.NotificationArea.dll.mdb
 lib/banshee-1/Extensions/Banshee.NowPlaying.dll
-lib/banshee-1/Extensions/Banshee.NowPlaying.dll.config
 lib/banshee-1/Extensions/Banshee.NowPlaying.dll.mdb
 lib/banshee-1/Extensions/Banshee.PlayQueue.dll
 lib/banshee-1/Extensions/Banshee.PlayQueue.dll.mdb
-lib/banshee-1/Extensions/Banshee.PlayerMigration.dll
-lib/banshee-1/Extensions/Banshee.PlayerMigration.dll.mdb
 lib/banshee-1/Extensions/Banshee.Podcasting.dll
 lib/banshee-1/Extensions/Banshee.Podcasting.dll.mdb
 %%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll
@@ -90,8 +83,6 @@ lib/banshee-1/Lastfm.dll
 lib/banshee-1/Lastfm.dll.mdb
 lib/banshee-1/Migo.dll
 lib/banshee-1/Migo.dll.mdb
-lib/banshee-1/Mono.Data.Sqlite.dll
-lib/banshee-1/Mono.Data.Sqlite.dll.mdb
 lib/banshee-1/Mono.Media.dll
 lib/banshee-1/Mono.Media.dll.mdb
 %%OPT_MTP%%lib/banshee-1/Mtp.dll
@@ -161,11 +152,6 @@ share/banshee-1/icons/hicolor/16x16/categories/source-smart-playlist.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-video-black.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-video-white.png
 share/banshee-1/icons/hicolor/16x16/devices/phone-htc-g1-white.png
-share/banshee-1/icons/hicolor/16x16/emblems/creative-commons-by.png
-share/banshee-1/icons/hicolor/16x16/emblems/creative-commons-nc.png
-share/banshee-1/icons/hicolor/16x16/emblems/creative-commons-nd.png
-share/banshee-1/icons/hicolor/16x16/emblems/creative-commons-pd.png
-share/banshee-1/icons/hicolor/16x16/emblems/creative-commons-sa.png
 share/banshee-1/icons/hicolor/16x16/status/podcast-new.png
 share/banshee-1/icons/hicolor/22x22/actions/encode.png
 share/banshee-1/icons/hicolor/22x22/actions/media-import-audio-cd.png
@@ -236,7 +222,6 @@ share/locale/dz/LC_MESSAGES/banshee-1.mo
 share/locale/en_CA/LC_MESSAGES/banshee-1.mo
 share/locale/en_GB/LC_MESSAGES/banshee-1.mo
 share/locale/es/LC_MESSAGES/banshee-1.mo
-share/locale/eu/LC_MESSAGES/banshee-1.mo
 share/locale/fi/LC_MESSAGES/banshee-1.mo
 share/locale/fr/LC_MESSAGES/banshee-1.mo
 share/locale/gl/LC_MESSAGES/banshee-1.mo
@@ -245,7 +230,6 @@ share/locale/he/LC_MESSAGES/banshee-1.mo
 share/locale/hu/LC_MESSAGES/banshee-1.mo
 share/locale/it/LC_MESSAGES/banshee-1.mo
 share/locale/ja/LC_MESSAGES/banshee-1.mo
-share/locale/ko/LC_MESSAGES/banshee-1.mo
 share/locale/lt/LC_MESSAGES/banshee-1.mo
 share/locale/lv/LC_MESSAGES/banshee-1.mo
 share/locale/mk/LC_MESSAGES/banshee-1.mo
@@ -293,7 +277,6 @@ share/locale/zh_TW/LC_MESSAGES/banshee-1.mo
 @dirrm share/banshee-1/icons/hicolor/22x22/actions
 @dirrm share/banshee-1/icons/hicolor/22x22
 @dirrm share/banshee-1/icons/hicolor/16x16/status
-@dirrm share/banshee-1/icons/hicolor/16x16/emblems
 @dirrm share/banshee-1/icons/hicolor/16x16/devices
 @dirrm share/banshee-1/icons/hicolor/16x16/categories
 @dirrm share/banshee-1/icons/hicolor/16x16/actions
