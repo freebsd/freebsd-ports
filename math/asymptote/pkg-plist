@@ -88,6 +88,7 @@ bin/xasy
 %%DATADIR%%/three_margins.asy
 %%DATADIR%%/three_surface.asy
 %%DATADIR%%/tree.asy
+%%DATADIR%%/trembling.asy
 %%DATADIR%%/tube.asy
 %%DATADIR%%/unicode.asy
 %%DATADIR%%/version.asy
@@ -144,6 +145,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/annotation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arrows3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axis3.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basealign.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bezier.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bezier2.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beziercurve.asy
@@ -153,13 +155,16 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/buildcycle.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cardioid.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/centroidfg.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cheese.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/circles.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coag.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colons.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colorplanes.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/condor.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cones.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conicurv.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contextfonts.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/controlsystem.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cos2theta.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cosaddition.asy
@@ -188,6 +193,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorbars.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exp.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalprc.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extrudedcontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fano.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fermi.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filegraph.asy
@@ -197,10 +203,12 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fillcontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fin.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fjortoft.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/floatingdisk.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/floor.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flowchartdemo.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fractaltree.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/functionshading.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/galleon.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gamma.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gamma3.asy
@@ -230,6 +238,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/knots.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/label3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/label3ribbon.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/label3solid.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/labelbox.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/labelsquare.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/laserlattice.asy
@@ -273,6 +282,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricgraph.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricsurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/partialsurface.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathintersectsurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdb.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/penimage.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/phase.asy
@@ -289,6 +299,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/projectrevolution.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quartercircle.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rainbow.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/randompath3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ring.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/roundpath.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sacone.asy
@@ -325,13 +336,16 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/square.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/star.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stroke3.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strokepath.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/strokeshade.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/subpictures.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/superpath.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tanh.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/teapot.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tensor.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textpath.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/thermodynamics.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/threeviews.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tile.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/torus.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/transparency.asy
@@ -342,11 +356,14 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/triangulate.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/triceratops.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tvgen.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/twistedtubes.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unitcircle.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unitcircle3.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unitoctant.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/upint.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vectorfield.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vectorfield3.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vectorfieldsphere.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/venn.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertexshading.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/washermethod.asy
@@ -365,8 +382,12 @@ bin/xasy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/GUI
 @dirrm %%DATADIR%%
+share/texmf-local/tex/context/third/asymptote/colo-asy.tex
 share/texmf-local/tex/latex/asymptote/asycolors.sty
 share/texmf-local/tex/latex/asymptote/asymptote.sty
+share/texmf-local/tex/latex/asymptote/asycolors.sty
 @dirrm share/texmf-local/tex/latex/asymptote
+@dirrm share/texmf-local/tex/context/third/asymptote
+@dirrm share/texmf-local/tex/context/third
 @unexec %%MKTEXLSR%%
 @exec %%MKTEXLSR%%
