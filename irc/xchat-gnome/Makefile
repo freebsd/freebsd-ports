@@ -111,6 +111,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		-e 's|tcl-8.4/lib|lib/tcl8.3|g' \
+		-e 's|-fgnu89-inline||g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
