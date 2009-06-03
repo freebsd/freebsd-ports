@@ -22,7 +22,7 @@ etc/rt38/schema.Oracle
 etc/rt38/schema.Pg
 etc/rt38/schema.SQLite
 etc/rt38/schema.Sybase
-etc/rt38/schema.mysql
+etc/rt38/schema.mysql-4.0
 etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT.pm
 %%SITE_PERL%%/RT/ACE.pm
@@ -106,6 +106,8 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/Groups_Overlay.pm
 %%SITE_PERL%%/RT/Handle.pm
 %%SITE_PERL%%/RT/I18N.pm
+%%SITE_PERL%%/RT/I18N/ar.po
+%%SITE_PERL%%/RT/I18N/bg.po
 %%SITE_PERL%%/RT/I18N/cs.pm
 %%SITE_PERL%%/RT/I18N/cs.po
 %%SITE_PERL%%/RT/I18N/da.po
@@ -127,6 +129,7 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/I18N/pt.po
 %%SITE_PERL%%/RT/I18N/pt_BR.po
 %%SITE_PERL%%/RT/I18N/rt.pot
+%%SITE_PERL%%/RT/I18N/ru.pm
 %%SITE_PERL%%/RT/I18N/ru.po
 %%SITE_PERL%%/RT/I18N/sv.po
 %%SITE_PERL%%/RT/I18N/tr.po
@@ -269,6 +272,7 @@ sbin/rt-server
 sbin/rt-setup-database
 sbin/rt-shredder
 sbin/rt-test-dependencies
+sbin/rt-validator
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/rt38/html/Admin/CustomFields/GroupRights.html
 share/rt38/html/Admin/CustomFields/Modify.html
@@ -343,6 +347,7 @@ share/rt38/html/Admin/Groups/index.html
 share/rt38/html/Admin/Queues/CustomField.html
 share/rt38/html/Admin/Queues/CustomFields.html
 share/rt38/html/Admin/Queues/GroupRights.html
+share/rt38/html/Admin/Queues/History.html
 share/rt38/html/Admin/Queues/Modify.html
 share/rt38/html/Admin/Queues/People.html
 share/rt38/html/Admin/Queues/Scrip.html
@@ -386,10 +391,13 @@ share/rt38/html/Approvals/index.html
 share/rt38/html/CalPopup.html
 share/rt38/html/Dashboards/Elements/DashboardsForObject
 share/rt38/html/Dashboards/Elements/DashboardsForObjects
+share/rt38/html/Dashboards/Elements/Deleted
 share/rt38/html/Dashboards/Elements/HiddenSearches
+share/rt38/html/Dashboards/Elements/ListOfDashboards
 share/rt38/html/Dashboards/Elements/SelectPrivacy
 share/rt38/html/Dashboards/Elements/ShowDashboards
 share/rt38/html/Dashboards/Elements/ShowPortlet/component
+share/rt38/html/Dashboards/Elements/ShowPortlet/dashboard
 share/rt38/html/Dashboards/Elements/ShowPortlet/search
 share/rt38/html/Dashboards/Elements/ShowSubscription
 share/rt38/html/Dashboards/Elements/Tabs
@@ -413,6 +421,7 @@ share/rt38/html/Elements/CollectionListPaging
 share/rt38/html/Elements/ColumnMap
 share/rt38/html/Elements/CreateTicket
 share/rt38/html/Elements/Dashboards
+share/rt38/html/Elements/DashboardTabs
 share/rt38/html/Elements/EditCustomField
 share/rt38/html/Elements/EditCustomFieldAutocomplete
 share/rt38/html/Elements/EditCustomFieldBinary
@@ -423,6 +432,7 @@ share/rt38/html/Elements/EditCustomFieldSelect
 share/rt38/html/Elements/EditCustomFieldText
 share/rt38/html/Elements/EditCustomFieldWikitext
 share/rt38/html/Elements/EditLinks
+share/rt38/html/Elements/EditTimeValue
 share/rt38/html/Elements/EmailInput
 share/rt38/html/Elements/Error
 share/rt38/html/Elements/Footer
@@ -482,6 +492,7 @@ share/rt38/html/Elements/SelectSortOrder
 share/rt38/html/Elements/SelectStatus
 share/rt38/html/Elements/SelectTicketSortBy
 share/rt38/html/Elements/SelectTicketTypes
+share/rt38/html/Elements/SelectPriority
 share/rt38/html/Elements/SelectTimeUnits
 share/rt38/html/Elements/SelectTimezone
 share/rt38/html/Elements/SelectUsers
@@ -761,6 +772,7 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/he.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/hi.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/hr.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/hu.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/is.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/it.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/ja.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/km.js
@@ -855,6 +867,9 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.end
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.expand.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.separator.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.start.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc/ciframe.html
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc/tmpFrameset.html
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc/w.html
 share/rt38/html/NoAuth/RichText/FCKeditor/fckconfig.js
 share/rt38/html/NoAuth/RichText/FCKeditor/fckeditor.js
 share/rt38/html/NoAuth/RichText/FCKeditor/fckpackager.xml
@@ -1050,6 +1065,7 @@ share/rt38/html/Ticket/Elements/EditBasics
 share/rt38/html/Ticket/Elements/EditCustomFields
 share/rt38/html/Ticket/Elements/EditDates
 share/rt38/html/Ticket/Elements/EditPeople
+share/rt38/html/Ticket/Elements/EditTransactionCustomFields
 share/rt38/html/Ticket/Elements/EditWatchers
 share/rt38/html/Ticket/Elements/FindAttachments
 share/rt38/html/Ticket/Elements/LoadTextAttachments
@@ -1066,7 +1082,9 @@ share/rt38/html/Ticket/Elements/ShowHistory
 share/rt38/html/Ticket/Elements/ShowMembers
 share/rt38/html/Ticket/Elements/ShowMessageHeaders
 share/rt38/html/Ticket/Elements/ShowMessageStanza
+share/rt38/html/Ticket/Elements/ShowParents
 share/rt38/html/Ticket/Elements/ShowPeople
+share/rt38/html/Ticket/Elements/ShowPriority
 share/rt38/html/Ticket/Elements/ShowQueue
 share/rt38/html/Ticket/Elements/ShowRequestor
 share/rt38/html/Ticket/Elements/ShowSummary
@@ -1218,6 +1236,7 @@ share/rt38/html/l
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/behaviors
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css
+@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes
