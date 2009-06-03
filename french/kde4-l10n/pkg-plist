@@ -306,6 +306,9 @@ share/doc/HTML/fr/kcontrol/joystick/index.docbook
 share/doc/HTML/fr/kcontrol/kalarmd/common
 share/doc/HTML/fr/kcontrol/kalarmd/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kalarmd/index.docbook
+share/doc/HTML/fr/kcontrol/kamera/common
+share/doc/HTML/fr/kcontrol/kamera/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kamera/index.docbook
 share/doc/HTML/fr/kcontrol/kcmaccess/common
 share/doc/HTML/fr/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kcmaccess/index.docbook
@@ -361,6 +364,9 @@ share/doc/HTML/fr/kcontrol/khtml/nsplugin.docbook
 share/doc/HTML/fr/kcontrol/knetworkconf/common
 share/doc/HTML/fr/kcontrol/knetworkconf/index.cache.bz2
 share/doc/HTML/fr/kcontrol/knetworkconf/index.docbook
+share/doc/HTML/fr/kcontrol/kresources/common
+share/doc/HTML/fr/kcontrol/kresources/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kresources/index.docbook
 share/doc/HTML/fr/kcontrol/kthememgr/common
 share/doc/HTML/fr/kcontrol/kthememgr/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kthememgr/index.docbook
@@ -370,6 +376,9 @@ share/doc/HTML/fr/kcontrol/kwincompositing/index.docbook
 share/doc/HTML/fr/kcontrol/kwindecoration/common
 share/doc/HTML/fr/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kwindecoration/index.docbook
+share/doc/HTML/fr/kcontrol/kxkb/common
+share/doc/HTML/fr/kcontrol/kxkb/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kxkb/index.docbook
 share/doc/HTML/fr/kcontrol/language/common
 share/doc/HTML/fr/kcontrol/language/index.cache.bz2
 share/doc/HTML/fr/kcontrol/language/index.docbook
@@ -1442,6 +1451,9 @@ share/doc/HTML/fr/okular/index.docbook
 share/doc/HTML/fr/parley/common
 share/doc/HTML/fr/parley/index.cache.bz2
 share/doc/HTML/fr/parley/index.docbook
+share/doc/HTML/fr/plasma/common
+share/doc/HTML/fr/plasma/index.cache.bz2
+share/doc/HTML/fr/plasma/index.docbook
 share/doc/HTML/fr/sonnet/common
 share/doc/HTML/fr/sonnet/index.cache.bz2
 share/doc/HTML/fr/sonnet/index.docbook
@@ -1996,6 +2008,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/superkaramba
 @dirrm share/doc/HTML/fr/step
 @dirrm share/doc/HTML/fr/sonnet
+@dirrm share/doc/HTML/fr/plasma
 @dirrm share/doc/HTML/fr/parley
 @dirrm share/doc/HTML/fr/okular
 @dirrm share/doc/HTML/fr/okteta
@@ -2176,9 +2189,11 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/mouse
 @dirrm share/doc/HTML/fr/kcontrol/laptop
 @dirrm share/doc/HTML/fr/kcontrol/language
+@dirrm share/doc/HTML/fr/kcontrol/kxkb
 @dirrm share/doc/HTML/fr/kcontrol/kwindecoration
 @dirrm share/doc/HTML/fr/kcontrol/kwincompositing
 @dirrm share/doc/HTML/fr/kcontrol/kthememgr
+@dirrm share/doc/HTML/fr/kcontrol/kresources
 @dirrm share/doc/HTML/fr/kcontrol/knetworkconf
 @dirrm share/doc/HTML/fr/kcontrol/khtml
 @dirrm share/doc/HTML/fr/kcontrol/keys
@@ -2197,6 +2212,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/kcmdisplay
 @dirrm share/doc/HTML/fr/kcontrol/kcmcss
 @dirrm share/doc/HTML/fr/kcontrol/kcmaccess
+@dirrm share/doc/HTML/fr/kcontrol/kamera
 @dirrm share/doc/HTML/fr/kcontrol/kalarmd
 @dirrm share/doc/HTML/fr/kcontrol/joystick
 @dirrm share/doc/HTML/fr/kcontrol/icons

@@ -194,8 +194,8 @@ share/locale/ro/LC_MESSAGES/kanagram.mo
 share/locale/ro/LC_MESSAGES/kapman.mo
 share/locale/ro/LC_MESSAGES/kappfinder.mo
 share/locale/ro/LC_MESSAGES/kapptemplate.mo
-share/locale/ro/LC_MESSAGES/kate.mo
 share/locale/ro/LC_MESSAGES/kate-ctags-plugin.mo
+share/locale/ro/LC_MESSAGES/kate.mo
 share/locale/ro/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ro/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ro/LC_MESSAGES/katefilebrowserplugin.mo
@@ -375,8 +375,8 @@ share/locale/ro/LC_MESSAGES/kio_fish.mo
 share/locale/ro/LC_MESSAGES/kio_floppy.mo
 share/locale/ro/LC_MESSAGES/kio_groupwise.mo
 share/locale/ro/LC_MESSAGES/kio_help4.mo
-share/locale/ro/LC_MESSAGES/kio_info.mo
 share/locale/ro/LC_MESSAGES/kio_imap4.mo
+share/locale/ro/LC_MESSAGES/kio_info.mo
 share/locale/ro/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/ro/LC_MESSAGES/kio_ldap.mo
 share/locale/ro/LC_MESSAGES/kio_man.mo

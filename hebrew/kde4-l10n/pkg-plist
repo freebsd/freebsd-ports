@@ -102,8 +102,8 @@ share/locale/he/LC_MESSAGES/kcalc.mo
 share/locale/he/LC_MESSAGES/kcertpart.mo
 share/locale/he/LC_MESSAGES/kcharselect.mo
 share/locale/he/LC_MESSAGES/kcm_autostart.mo
-share/locale/he/LC_MESSAGES/kcm_emoticons.mo
 share/locale/he/LC_MESSAGES/kcm_desktopthemedetails.mo
+share/locale/he/LC_MESSAGES/kcm_emoticons.mo
 share/locale/he/LC_MESSAGES/kcm_krfb.mo
 share/locale/he/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/he/LC_MESSAGES/kcm_memory.mo
@@ -162,8 +162,10 @@ share/locale/he/LC_MESSAGES/kcmstyle.mo
 share/locale/he/LC_MESSAGES/kcmusb.mo
 share/locale/he/LC_MESSAGES/kcmview1394.mo
 share/locale/he/LC_MESSAGES/kcmxinerama.mo
+share/locale/he/LC_MESSAGES/kcolorchooser.mo
 share/locale/he/LC_MESSAGES/kcron.mo
 share/locale/he/LC_MESSAGES/kdat.mo
+share/locale/he/LC_MESSAGES/kde-menu.mo
 share/locale/he/LC_MESSAGES/kdebugdialog.mo
 share/locale/he/LC_MESSAGES/kded_phononserver.mo
 share/locale/he/LC_MESSAGES/kdelibs4.mo
@@ -175,7 +177,6 @@ share/locale/he/LC_MESSAGES/kdeqt.mo
 share/locale/he/LC_MESSAGES/kdessh.mo
 share/locale/he/LC_MESSAGES/kdesu.mo
 share/locale/he/LC_MESSAGES/kdesud.mo
-share/locale/he/LC_MESSAGES/kde-menu.mo
 share/locale/he/LC_MESSAGES/kdf.mo
 share/locale/he/LC_MESSAGES/kdgantt1.mo
 share/locale/he/LC_MESSAGES/kdialog.mo
@@ -329,7 +330,6 @@ share/locale/he/LC_MESSAGES/kttsd.mo
 share/locale/he/LC_MESSAGES/ktuberling.mo
 share/locale/he/LC_MESSAGES/kturtle.mo
 share/locale/he/LC_MESSAGES/ktux.mo
-share/locale/he/LC_MESSAGES/kcolorchooser.mo
 share/locale/he/LC_MESSAGES/kuiserver.mo
 share/locale/he/LC_MESSAGES/kurifilter.mo
 share/locale/he/LC_MESSAGES/kuser.mo

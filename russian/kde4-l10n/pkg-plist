@@ -985,8 +985,8 @@ share/locale/ru/LC_MESSAGES/kdessh.mo
 share/locale/ru/LC_MESSAGES/kdesu.mo
 share/locale/ru/LC_MESSAGES/kdesud.mo
 share/locale/ru/LC_MESSAGES/kdf.mo
-share/locale/ru/LC_MESSAGES/kdgantt1.mo
 share/locale/ru/LC_MESSAGES/kdgantt.mo
+share/locale/ru/LC_MESSAGES/kdgantt1.mo
 share/locale/ru/LC_MESSAGES/kdialog.mo
 share/locale/ru/LC_MESSAGES/kdiamond.mo
 share/locale/ru/LC_MESSAGES/kdmconfig.mo
@@ -1537,8 +1537,6 @@ share/locale/ru/entry.desktop
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data
 @dirrm share/apps/kturtle
-@dirrm share/apps/katepart/syntax
-@dirrm share/apps/katepart
 @dirrmtry man/ru/man6
 @dirrmtry man/ru/man1
 @dirrmtry man/ru

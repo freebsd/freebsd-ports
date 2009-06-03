@@ -1755,6 +1755,7 @@ share/apps/cmake/modules/BasicFindPackageVersion.cmake.in
 share/apps/cmake/modules/CheckPointerMember.cmake
 share/apps/cmake/modules/CheckPrototypeExists.cmake
 share/apps/cmake/modules/CheckStructMember.cmake
+share/apps/cmake/modules/CheckCXXSymbolExists.cmake
 share/apps/cmake/modules/FindACL.cmake
 share/apps/cmake/modules/FindAGG.cmake
 share/apps/cmake/modules/FindAkode.cmake

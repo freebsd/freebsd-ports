@@ -190,8 +190,8 @@ share/locale/lv/LC_MESSAGES/kfmclient.mo
 share/locale/lv/LC_MESSAGES/kfontinst.mo
 share/locale/lv/LC_MESSAGES/kfourinline.mo
 share/locale/lv/LC_MESSAGES/kget.mo
-share/locale/lv/LC_MESSAGES/kgpg.mo
 share/locale/lv/LC_MESSAGES/kgoldrunner.mo
+share/locale/lv/LC_MESSAGES/kgpg.mo
 share/locale/lv/LC_MESSAGES/kgreet_classic.mo
 share/locale/lv/LC_MESSAGES/kgreet_generic.mo
 share/locale/lv/LC_MESSAGES/kgreet_winbind.mo
@@ -216,8 +216,8 @@ share/locale/lv/LC_MESSAGES/kio_fish.mo
 share/locale/lv/LC_MESSAGES/kio_floppy.mo
 share/locale/lv/LC_MESSAGES/kio_groupwise.mo
 share/locale/lv/LC_MESSAGES/kio_help4.mo
-share/locale/lv/LC_MESSAGES/kio_info.mo
 share/locale/lv/LC_MESSAGES/kio_imap4.mo
+share/locale/lv/LC_MESSAGES/kio_info.mo
 share/locale/lv/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/lv/LC_MESSAGES/kio_ldap.mo
 share/locale/lv/LC_MESSAGES/kio_man.mo

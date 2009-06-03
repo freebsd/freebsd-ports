@@ -402,8 +402,8 @@ share/locale/sl/LC_MESSAGES/kode.mo
 share/locale/sl/LC_MESSAGES/kolf.mo
 share/locale/sl/LC_MESSAGES/kollision.mo
 share/locale/sl/LC_MESSAGES/kolourpaint.mo
-share/locale/sl/LC_MESSAGES/kompare.mo
 share/locale/sl/LC_MESSAGES/kommander.mo
+share/locale/sl/LC_MESSAGES/kompare.mo
 share/locale/sl/LC_MESSAGES/konqueror.mo
 share/locale/sl/LC_MESSAGES/konquest.mo
 share/locale/sl/LC_MESSAGES/konsole.mo
@@ -676,5 +676,3 @@ share/locale/sl/entry.desktop
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
 @dirrm share/apps/khangman
-@dirrm share/apps/katepart/syntax
-@dirrm share/apps/katepart

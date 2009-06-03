@@ -230,8 +230,8 @@ share/locale/tr/LC_MESSAGES/kio_fish.mo
 share/locale/tr/LC_MESSAGES/kio_floppy.mo
 share/locale/tr/LC_MESSAGES/kio_groupwise.mo
 share/locale/tr/LC_MESSAGES/kio_help4.mo
-share/locale/tr/LC_MESSAGES/kio_info.mo
 share/locale/tr/LC_MESSAGES/kio_imap4.mo
+share/locale/tr/LC_MESSAGES/kio_info.mo
 share/locale/tr/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/tr/LC_MESSAGES/kio_ldap.mo
 share/locale/tr/LC_MESSAGES/kio_man.mo
@@ -445,7 +445,6 @@ share/locale/tr/LC_MESSAGES/phonon-xine.mo
 share/locale/tr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/tr/LC_MESSAGES/phonon_kde.mo
 share/locale/tr/LC_MESSAGES/plasma-overlay.mo
-share/locale/tr/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/tr/LC_MESSAGES/plasma-shells-common.mo
 share/locale/tr/LC_MESSAGES/plasma.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_battery.mo
@@ -465,6 +464,7 @@ share/locale/tr/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_kalzium.mo

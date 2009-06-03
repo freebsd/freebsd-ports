@@ -1694,7 +1694,6 @@ share/locale/da/LC_MESSAGES/timezones4.mo
 share/locale/da/LC_MESSAGES/umbrello.mo
 share/locale/da/LC_MESSAGES/useraccount.mo
 share/locale/da/entry.desktop
-@dirrmtry share/pixmaps
 @dirrm share/doc/HTML/da/xsldbg
 @dirrm share/doc/HTML/da/umbrello
 @dirrm share/doc/HTML/da/superkaramba
