@@ -17,7 +17,7 @@ USE_GNOME=	gnomehack pkgconfig
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=	--infodir=${PREFIX}/${INFO_PATH}
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
 INFO=		libconfig
 
 .include <bsd.port.mk>
