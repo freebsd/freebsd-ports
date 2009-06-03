@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	farsight2
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.12
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://farsight.freedesktop.org/releases/farsight2/
 
