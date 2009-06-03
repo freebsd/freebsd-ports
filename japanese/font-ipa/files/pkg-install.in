@@ -57,7 +57,7 @@ make_xlfd()
 
 addentries ()
 {
-	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0
+	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0 jisx0208.1997-0 jisx0213.2004-1
 	do
 		make_xlfd $ENC ipag.otf ipa IPAGothic c
 		make_xlfd $ENC ipag.otf ipa gothic c
@@ -84,7 +84,7 @@ POST-INSTALL)
 	cat fonts.dir.tmp >> fonts.dir
 	rm -f fonts.dir.tmp
 	;;
-DEINSTALL)
+POST-DEINSTALL)
 	cd ${X_FONTSDIR}
 	catfontsdir < fonts.dir > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
