@@ -6,7 +6,7 @@
 
 PORTNAME=	teTeX-texmf
 PORTVERSION=	3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -63,6 +63,9 @@ do-install:
 	cd ${PREFIX}/${TEXMFDISTDIR} && \
 		${TAR} -x -z -U -f ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF_SRC} \
 			${EXCLUDE_LIST:S,^,--exclude ,g}
+	cd ${PREFIX}/${TEXMFDISTDIR} && \
+		${PATCH} < ${FILESDIR}/extra-patch-latex.ltx && \
+		${RM} -f tex/latex/base/latex.ltx.orig
 	${INSTALL_DATA} ${FILESDIR}/cslatex.ini ${PREFIX}/${TEXMFDISTDIR}/tex/cslatex/cslatex.ini
 	${INSTALL_DATA} ${FILESDIR}/csplain.ini ${PREFIX}/${TEXMFDISTDIR}/tex/csplain/csplain.ini
 	${INSTALL_DATA} ${FILESDIR}/t1code.tex ${PREFIX}/${TEXMFDISTDIR}/tex/csplain/t1code.tex

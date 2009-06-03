@@ -1,0 +1,37 @@
+--- tex/latex/base/latex.ltx.orig	2009-06-03 16:44:07.000000000 +0900
++++ tex/latex/base/latex.ltx	2009-06-03 16:48:28.000000000 +0900
+@@ -525,20 +525,20 @@
+   \advance\count@\month
+   \advance\count@-#2\relax}
+ \expandafter\reserved@a\fmtversion\@nil
+-\ifnum\count@>65
+-  \typeout{^^J%
+-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!^^J%
+-!  You are attempting to make a LaTeX format from a source file^^J%
+-!  That is more than five years old.^^J%
+-!^^J%
+-!  If you enter <return> to scroll past this message then the format^^J%
+-!  will be built, but please consider obtaining newer source files^^J%
+-!  before continuing to build LaTeX.^^J%
+-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!^^J%
+-}
+-   \errhelp{To avoid this error message, obtain new LaTeX sources.}
+-   \errmessage{LaTeX source files more than 5 years old!}
+-\fi
++%\ifnum\count@>65
++%  \typeout{^^J%
++%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!^^J%
++%!  You are attempting to make a LaTeX format from a source file^^J%
++%!  That is more than five years old.^^J%
++%!^^J%
++%!  If you enter <return> to scroll past this message then the format^^J%
++%!  will be built, but please consider obtaining newer source files^^J%
++%!  before continuing to build LaTeX.^^J%
++%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!^^J%
++%}
++%   \errhelp{To avoid this error message, obtain new LaTeX sources.}
++%   \errmessage{LaTeX source files more than 5 years old!}
++%\fi
+ \let\reserved@a\relax
+ \fi
+ \everyjob{\typeout{\fmtname
