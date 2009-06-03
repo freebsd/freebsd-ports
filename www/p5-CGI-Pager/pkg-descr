@@ -1,0 +1,11 @@
+CGI::Pager performs the "dirty work" necessary to program paginated
+data display in a web application.
+
+Based on given resultset size, page size, and offset value sensed from
+current URI, it constructs links for navigation between results pages.
+
+It can be used conveniently from a templating system, has both OO and
+functional interface, and can optionally generate necessary HTML
+itself.
+
+WWW: http://search.cpan.org/dist/CGI-Pager/
