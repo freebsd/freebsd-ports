@@ -12,7 +12,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 
-MAINTAINER=	java@FreeBSD.org
+MAINTAINER=	openjdk@getsnappy.com
 COMMENT=	Sun\'s java 6 virtual machine release under the GPL v2
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
@@ -30,11 +30,11 @@ USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
 
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS+=	${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
 
 .include <bsd.port.pre.mk>
 
