@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Simulate virtual network hosts (honeypots)
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
