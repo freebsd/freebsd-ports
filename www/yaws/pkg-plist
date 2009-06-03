@@ -8,7 +8,6 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/mime_types.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws.app
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws.beam
-%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_404.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_api.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_app.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_appmod_cgi.beam
@@ -24,6 +23,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log_file_h.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ls.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_outmod.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_pam.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_revproxy.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_rpc.beam
@@ -58,7 +58,6 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/mime_type_c.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/mime_types.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws.erl
-%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_404.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_api.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_app.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_appmod_cgi.erl
@@ -78,6 +77,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_log.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_log_file_h.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_ls.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_outmod.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_pam.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_revproxy.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_rpc.erl
@@ -299,7 +299,6 @@ etc/yaws.conf.sample
 %%WWWDIR%%/ssi/dynamic.3
 %%WWWDIR%%/ssi_ex1
 %%WWWDIR%%/static.html
-%%WWWDIR%%/stats.yaws
 %%WWWDIR%%/stats_ex.yaws
 %%WWWDIR%%/stil.css
 %%WWWDIR%%/stream.yaws
