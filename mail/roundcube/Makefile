@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.2.1
+DISTVERSION=	0.2.2
 PORTEPOCH=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail
@@ -86,12 +86,12 @@ post-patch:
 .if defined(WITH_REPLACE_MAIL_URL)
 	@${REINPLACE_CMD} "s/'mail'/'${MAIL}'/g" ${WRKSRC}/index.php \
 		${WRKSRC}/program/include/rcmail.php \
-		${WRKSRC}/program/js/app.js \
 		${WRKSRC}/program/localization/*/labels.inc \
 		${WRKSRC}/program/steps/addressbook/mailto.inc
 	@${REINPLACE_CMD} "s/_task=mail/_task=${MAIL}/g" \
 		${WRKSRC}/program/steps/mail/rss.inc
 	@${REINPLACE_CMD} "s/\"mail\"/\"${MAIL}\"/g" \
+		${WRKSRC}/program/js/app.js \
 		${WRKSRC}/skins/default/includes/header.html \
 		${WRKSRC}/skins/default/includes/taskbar.html
 	@${REINPLACE_CMD} "s/mail.gif/${MAIL}.gif/g" \
