@@ -87,12 +87,6 @@ CONFIGURE_ARGS+=	--enable-install-doc
 CONFIGURE_ARGS+=	--disable-install-doc
 .endif
 
-# This patch can be used for GC performance analysis and tweaking
-# svn://rubyforge.org/var/svn/railsbench/trunk/railsbench/ruby185gc.patch
-.if defined(WITH_GCPATCH)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-gc
-.endif
-
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
