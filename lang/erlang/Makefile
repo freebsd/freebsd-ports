@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r12b5
-PORTREVISION=	3
+PORTVERSION=	r13b
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/        \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://www.erlang.org/download/        \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R12B-5
+DISTNAME=	otp_src_R13B
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -49,8 +48,15 @@ SCRIPT_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
 
 .if !defined(WITHOUT_X11)
 USE_TK_RUN=	yes
+.if !defined(WITHOUT_WX)
+USE_WX=		2.8+
+WX_COMPS=	wx contrib
+WX_UNICODE=	yes
+CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG}
+.endif
 .endif
 
+USE_GCC=	4.3
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	epmd.sh
@@ -69,13 +75,16 @@ LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
 
-ERLANG_MAN=	otp_doc_man_R12B-5.tar.gz
+ERLANG_MAN=	otp_doc_man_R13B.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R12B-5.tar.gz
+ERLANG_DOCS=	otp_doc_html_R13B.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
-CONFIGURE_ARGS+=	--enable-threads --enable-dynamic-ssl-lib --enable-sctp
+# enabling --enable-smp-support crashes the OS when
+# net_kernel:start([node_name, shortnames]) invoked repeatedly
+
+CONFIGURE_ARGS+=	--enable-threads --enable-dynamic-ssl-lib --enable-sctp --enable-smp-support
 NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -118,7 +127,7 @@ pre-configure:
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
 post-install:
-	@${LN} -sf ${LOCALBASE}/lib/erlang/lib/erl_interface-*/bin/erl_call ${LOCALBASE}/bin/erl_call
+#	@${LN} -sf ${LOCALBASE}/lib/erlang/lib/erl_interface-*/bin/erl_call ${LOCALBASE}/bin/erl_call
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
 		-C ${PREFIX}/lib/erlang
 	@${RM} -rf ${PREFIX}/lib/erlang/man/cat?

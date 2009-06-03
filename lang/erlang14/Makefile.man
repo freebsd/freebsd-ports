@@ -112,6 +112,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	ct_master.3 \
 	ct_rpc.3 \
 	ct_snmp.3 \
+	ct_ssh.3 \
 	ct_telnet.3 \
 	dbg.3 \
 	debugger.3 \
@@ -158,6 +159,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	erl_pp.3 \
 	erl_prettypr.3 \
 	erl_prim_loader.3 \
+	erl_prim_loader_stub.3 \
 	erl_recomment.3 \
 	erl_scan.3 \
 	erl_set_memory_block.3 \
@@ -167,6 +169,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	erl_tidy.3 \
 	erlang.3 \
 	erlang_mode.3 \
+	erlang_stub.3 \
 	error_handler.3 \
 	error_logger.3 \
 	erts_alloc.3 \
@@ -193,8 +196,10 @@ MAN3=	CosEventChannelAdmin.3 \
 	gen_server.3 \
 	gen_tcp.3 \
 	gen_udp.3 \
+	gl.3 \
 	global.3 \
 	global_group.3 \
+	glu.3 \
 	gs.3 \
 	heart.3 \
 	http.3 \
@@ -210,6 +215,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	inet.3 \
 	inets.3 \
 	init.3 \
+	init_stub.3 \
 	instrument.3 \
 	int.3 \
 	interceptors.3 \
@@ -284,6 +290,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	regexp.3 \
 	registry.3 \
 	release_handler.3 \
+	reltool.3 \
 	rpc.3 \
 	seq_trace.3 \
 	sets.3 \
@@ -322,6 +329,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	snmpm_user.3 \
 	sofs.3 \
 	ssh.3 \
+	ssh_channel.3 \
 	ssh_connection.3 \
 	ssh_sftp.3 \
 	ssh_sftpd.3 \
@@ -340,11 +348,207 @@ MAN3=	CosEventChannelAdmin.3 \
 	toolbar.3 \
 	ttb.3 \
 	tv.3 \
+	unicode.3 \
 	unix_telnet.3 \
 	user.3 \
 	webtool.3 \
 	win32reg.3 \
 	wrap_log_reader.3 \
+	wx.3 \
+	wxAcceleratorEntry.3 \
+	wxAcceleratorTable.3 \
+	wxArtProvider.3 \
+	wxAuiDockArt.3 \
+	wxAuiManager.3 \
+	wxAuiNotebook.3 \
+	wxAuiPaneInfo.3 \
+	wxAuiTabArt.3 \
+	wxBitmap.3 \
+	wxBitmapButton.3 \
+	wxBitmapDataObject.3 \
+	wxBoxSizer.3 \
+	wxBrush.3 \
+	wxBufferedDC.3 \
+	wxBufferedPaintDC.3 \
+	wxButton.3 \
+	wxCalendarCtrl.3 \
+	wxCalendarDateAttr.3 \
+	wxCalendarEvent.3 \
+	wxCaret.3 \
+	wxCheckBox.3 \
+	wxCheckListBox.3 \
+	wxChildFocusEvent.3 \
+	wxChoice.3 \
+	wxClientDC.3 \
+	wxClipboard.3 \
+	wxCloseEvent.3 \
+	wxColourData.3 \
+	wxColourDialog.3 \
+	wxColourPickerCtrl.3 \
+	wxColourPickerEvent.3 \
+	wxComboBox.3 \
+	wxCommandEvent.3 \
+	wxContextMenuEvent.3 \
+	wxControl.3 \
+	wxControlWithItems.3 \
+	wxCursor.3 \
+	wxDC.3 \
+	wxDataObject.3 \
+	wxDateEvent.3 \
+	wxDatePickerCtrl.3 \
+	wxDialog.3 \
+	wxDirDialog.3 \
+	wxDirPickerCtrl.3 \
+	wxDisplayChangedEvent.3 \
+	wxEraseEvent.3 \
+	wxEvent.3 \
+	wxEvtHandler.3 \
+	wxFileDataObject.3 \
+	wxFileDialog.3 \
+	wxFileDirPickerEvent.3 \
+	wxFilePickerCtrl.3 \
+	wxFindReplaceData.3 \
+	wxFindReplaceDialog.3 \
+	wxFlexGridSizer.3 \
+	wxFocusEvent.3 \
+	wxFont.3 \
+	wxFontData.3 \
+	wxFontDialog.3 \
+	wxFontPickerCtrl.3 \
+	wxFontPickerEvent.3 \
+	wxFrame.3 \
+	wxGBSizerItem.3 \
+	wxGLCanvas.3 \
+	wxGauge.3 \
+	wxGenericDirCtrl.3 \
+	wxGraphicsBrush.3 \
+	wxGraphicsContext.3 \
+	wxGraphicsFont.3 \
+	wxGraphicsMatrix.3 \
+	wxGraphicsObject.3 \
+	wxGraphicsPath.3 \
+	wxGraphicsPen.3 \
+	wxGraphicsRenderer.3 \
+	wxGrid.3 \
+	wxGridBagSizer.3 \
+	wxGridCellAttr.3 \
+	wxGridCellEditor.3 \
+	wxGridCellRenderer.3 \
+	wxGridEvent.3 \
+	wxGridSizer.3 \
+	wxHelpEvent.3 \
+	wxHtmlEasyPrinting.3 \
+	wxIcon.3 \
+	wxIconBundle.3 \
+	wxIconizeEvent.3 \
+	wxIdleEvent.3 \
+	wxImage.3 \
+	wxImageList.3 \
+	wxJoystickEvent.3 \
+	wxKeyEvent.3 \
+	wxLayoutAlgorithm.3 \
+	wxListBox.3 \
+	wxListCtrl.3 \
+	wxListEvent.3 \
+	wxListItem.3 \
+	wxListView.3 \
+	wxMDIChildFrame.3 \
+	wxMDIClientWindow.3 \
+	wxMDIParentFrame.3 \
+	wxMask.3 \
+	wxMaximizeEvent.3 \
+	wxMemoryDC.3 \
+	wxMenu.3 \
+	wxMenuBar.3 \
+	wxMenuEvent.3 \
+	wxMenuItem.3 \
+	wxMessageDialog.3 \
+	wxMiniFrame.3 \
+	wxMirrorDC.3 \
+	wxMouseCaptureChangedEvent.3 \
+	wxMouseEvent.3 \
+	wxMoveEvent.3 \
+	wxMultiChoiceDialog.3 \
+	wxNavigationKeyEvent.3 \
+	wxNcPaintEvent.3 \
+	wxNotebook.3 \
+	wxNotebookEvent.3 \
+	wxNotifyEvent.3 \
+	wxPageSetupDialog.3 \
+	wxPageSetupDialogData.3 \
+	wxPaintDC.3 \
+	wxPaintEvent.3 \
+	wxPalette.3 \
+	wxPaletteChangedEvent.3 \
+	wxPanel.3 \
+	wxPasswordEntryDialog.3 \
+	wxPen.3 \
+	wxPickerBase.3 \
+	wxPostScriptDC.3 \
+	wxPreviewCanvas.3 \
+	wxPreviewControlBar.3 \
+	wxPreviewFrame.3 \
+	wxPrintData.3 \
+	wxPrintDialog.3 \
+	wxPrintDialogData.3 \
+	wxPrintPreview.3 \
+	wxPrinter.3 \
+	wxPrintout.3 \
+	wxProgressDialog.3 \
+	wxQueryNewPaletteEvent.3 \
+	wxRadioBox.3 \
+	wxRadioButton.3 \
+	wxRegion.3 \
+	wxSashEvent.3 \
+	wxSashLayoutWindow.3 \
+	wxSashWindow.3 \
+	wxScreenDC.3 \
+	wxScrollBar.3 \
+	wxScrollEvent.3 \
+	wxScrollWinEvent.3 \
+	wxScrolledWindow.3 \
+	wxSetCursorEvent.3 \
+	wxShowEvent.3 \
+	wxSingleChoiceDialog.3 \
+	wxSizeEvent.3 \
+	wxSizer.3 \
+	wxSizerFlags.3 \
+	wxSizerItem.3 \
+	wxSlider.3 \
+	wxSpinButton.3 \
+	wxSpinCtrl.3 \
+	wxSpinEvent.3 \
+	wxSplashScreen.3 \
+	wxSplitterEvent.3 \
+	wxSplitterWindow.3 \
+	wxStaticBitmap.3 \
+	wxStaticBox.3 \
+	wxStaticBoxSizer.3 \
+	wxStaticLine.3 \
+	wxStaticText.3 \
+	wxStatusBar.3 \
+	wxStdDialogButtonSizer.3 \
+	wxStyledTextCtrl.3 \
+	wxStyledTextEvent.3 \
+	wxSysColourChangedEvent.3 \
+	wxTextAttr.3 \
+	wxTextCtrl.3 \
+	wxTextDataObject.3 \
+	wxTextEntryDialog.3 \
+	wxToggleButton.3 \
+	wxToolBar.3 \
+	wxToolTip.3 \
+	wxTopLevelWindow.3 \
+	wxTreeCtrl.3 \
+	wxTreeEvent.3 \
+	wxUpdateUIEvent.3 \
+	wxWindow.3 \
+	wxWindowCreateEvent.3 \
+	wxWindowDC.3 \
+	wxWindowDestroyEvent.3 \
+	wxXmlResource.3 \
+	wx_misc.3 \
+	wx_object.3 \
 	xmerl.3 \
 	xmerl_eventp.3 \
 	xmerl_scan.3 \
@@ -354,8 +558,9 @@ MAN3=	CosEventChannelAdmin.3 \
 	xref.3 \
 	yecc.3 \
 	zip.3 \
-	zlib.3
-	
+	zlib.3 \
+	zlib_stub.3
+
 MAN4=	app.4 \
 	appup.4 \
 	config.4 \
