@@ -15,6 +15,7 @@ COMMENT=	A Bitzi metadata generator
 
 HAS_CONFIGURE=	yes
 CFLAGS+=	-lm
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_LDCONFIG=	yes
 
 post-patch:
