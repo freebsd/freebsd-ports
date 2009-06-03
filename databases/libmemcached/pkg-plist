@@ -1,5 +1,6 @@
 bin/memcat
 bin/memcp
+bin/memdump
 bin/memerror
 bin/memflush
 bin/memrm
