@@ -1,7 +1,6 @@
 bin/dialyzer
 bin/epmd
 bin/erl
-bin/erl_call
 bin/erlc
 bin/escript
 bin/run_erl
