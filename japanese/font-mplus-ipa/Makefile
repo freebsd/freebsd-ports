@@ -7,6 +7,7 @@
 
 PORTNAME=	font-mplus-ipa
 PORTVERSION=	1.0.20060520.p1
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
@@ -37,10 +38,10 @@ do-install:
 	${CP} -R ${WRKSRC}/opfc-ModuleHP-1.1.1_withIPAFonts_and_Mplus/* \
 		${DATADIR}
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/fonts/M+*.ttf ${DATADIR}/fonts/ipagui.ttf \
+	${LN} -s -f ${DATADIR}/fonts/M+*.ttf \
 		${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
 	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/fonts/M+*.ttf ${DATADIR}/fonts/ipagui.ttf \
+	${LN} -s -f ${DATADIR}/fonts/M+*.ttf \
 			${LOCALBASE}/${X_FONTSDIR}/TTF/
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-mplus-ipa.conf \
 		${FILESDIR}/62-fonts-mplus-ipa.conf \

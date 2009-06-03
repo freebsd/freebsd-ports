@@ -8,7 +8,7 @@ catfontsdir ()
     while read _IN
     do
       case "${_IN}" in
-      *-ipa-[MU]*|*-ipa-IPAUI*|[0-9]*|"") ;;
+      *-ipa-M*|[0-9]*|"") ;;
       *)       echo ${_IN} ;;
       esac
     done
@@ -58,8 +58,6 @@ addentries ()
 {
 	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0
 	do
-		make_xlfd $ENC ipagui.ttf ipa IPAUIGothic c
-		make_xlfd $ENC ipagui.ttf ipa UIGothic c
 		make_xlfd $ENC M+2VM+IPAG-circle.ttf ipa M+2VM+IPAG_circle c
 		make_xlfd $ENC M+1VM+IPAG-circle.ttf ipa M+1VM+IPAG_circle c
 		make_xlfd $ENC M+1P+IPAG.ttf ipa M+1P+IPAG p
@@ -83,7 +81,7 @@ POST-INSTALL)
 	cat fonts.dir.tmp >> fonts.dir
 	rm -f fonts.dir.tmp
 	;;
-DEINSTALL)
+POST-DEINSTALL)
 	cd ${X_FONTSDIR}
 	catfontsdir < fonts.dir > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
