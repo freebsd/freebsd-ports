@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	zoom
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	games
-MASTER_SITES=	http://www.logicalshift.co.uk/unix/zoom/
+MASTER_SITES=	http://www.logicalshift.co.uk/unix/zoom/ \
+		http://mirror.4bit.ws/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Z-Interpreter for X with full V6 support
