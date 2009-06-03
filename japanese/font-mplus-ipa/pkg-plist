@@ -68,7 +68,6 @@
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
-%%LOCAL_FONTSDIR%%/TTF/ipagui.ttf
 %%LOCAL_FONTSDIR%%/TTF/M+2VM+IPAG-circle.ttf
 %%LOCAL_FONTSDIR%%/TTF/M+2P+IPAG.ttf
 %%LOCAL_FONTSDIR%%/TTF/M+2P+IPAG-circle.ttf
@@ -83,7 +82,6 @@ etc/fonts/conf.avail/62-fonts-mplus-ipa.conf
 @exec ln -s -f ../conf.avail/62-fonts-mplus-ipa.conf %D/etc/fonts/conf.d/62-fonts-mplus-ipa.conf
 @unexec rm -f %D/etc/fonts/conf.d/20-unhint-mplus-ipa.conf
 @unexec rm -f %D/etc/fonts/conf.d/62-fonts-mplus-ipa.conf
-%%X_FONTSDIR%%/TTF/ipagui.ttf
 %%X_FONTSDIR%%/TTF/M+2VM+IPAG-circle.ttf
 %%X_FONTSDIR%%/TTF/M+2P+IPAG.ttf
 %%X_FONTSDIR%%/TTF/M+2P+IPAG-circle.ttf
