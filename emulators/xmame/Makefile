@@ -111,6 +111,10 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 #
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_ASM68K)
 ASM_COMMENT=
 .else
