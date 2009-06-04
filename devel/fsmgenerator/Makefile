@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} \
 		${REINPLACE_CMD} -e "s|make$$|${GMAKE}|" \
-			-e "s|^CFLAGS[ 	]+=|CFLAGS		+=|"
+			-e "s|^CFLAGS[ 	]+=|CFLAGS		+=|" \
+			-e "s|/usr/local|${PREFIX}|"
 
 .include <bsd.port.mk>
