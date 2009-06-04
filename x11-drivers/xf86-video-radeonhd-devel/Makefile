@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.2.5.20090605
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-
 LIB_DEPENDS=	pciaccess.0:${PORTSDIR}/devel/libpciaccess
 
 XORG_CAT=	driver
-USE_XORG=	damageproto videoproto xextproto xf86driproto
+USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
 USE_AUTOTOOLS=	aclocal:19 autoconf:262 libtool:15
 
 CONFLICTS=	xf86-video-radeonhd-[0-9]* xf86-video-ati-[0-9]*
