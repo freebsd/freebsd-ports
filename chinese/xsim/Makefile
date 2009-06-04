@@ -42,7 +42,7 @@ post-patch:
 	@${FIND} ${WRKSRC} ! -type d \
 		-exec ${GREP} -q _CPP_BITS_IOSBASE_H '{}' \; \
 		-exec ${REINPLACE_CMD} 's/#ifdef _CPP_BITS_IOSBASE_H/#if defined(_IOS_BASE_H) || defined(_CPP_BITS_IOSBASE_H)/g' '{}' \;
-	${REINPLACE_CMD} "s/-O2/${CFLAGS}/g; s,/usr/local,${LOCALBASE},; s|s,@bdblib@,\$$bdblib,|s,@bdblib@,${BDB_LIB_CXX_NAME},|" ${WRKSRC}/configure
+	${REINPLACE_CMD} "s#-O2#${CFLAGS}#g; s,/usr/local,${LOCALBASE},; s|s,@bdblib@,\$$bdblib,|s,@bdblib@,${BDB_LIB_CXX_NAME},|" ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/xsim.sh ${PREFIX}/bin/xsim
