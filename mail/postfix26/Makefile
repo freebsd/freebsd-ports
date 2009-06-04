@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -28,6 +29,7 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	postfix.sh
+SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 # back compat pull in settings from POSTFIX_OPTIONS for convenience when
 # make config is run (happens first time port is built, too)
@@ -76,9 +78,6 @@ MLINKS=	sendmail.1 mailq.1 \
 	bounce.8 trace.8 \
 	smtp.8 lmtp.8
 
-PORTEXAMPLES=	access aliases canonical generic header_checks \
-		main.cf master.cf relocated transport virtual
-
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
 .endif
@@ -88,7 +87,6 @@ MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 .include <bsd.port.pre.mk>
 
 POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
-			-DDEF_SAMPLE_DIR=\\\"${EXAMPLESDIR}\\\" \
 			-DDEF_DAEMON_DIR=\\\"${PREFIX}/libexec/postfix\\\" \
 			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
 			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
@@ -232,12 +230,13 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		s!^(mailq_path =)!\1 ${PREFIX}/bin/mailq!g;\
 		s!^(setgid_group =)!\1 maildrop!g;\
 		s!^(manpage_directory =)!\1 ${PREFIX}/man!g;\
-		s!^(sample_directory =)!\1 ${EXAMPLESDIR}!g;\
 		s!^((html|readme)_directory =)!\1 ${READMEDIR}!g;\
 		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
 		s!/etc/aliases!/etc/mail/aliases!g;\
 		s!(:|= )/etc/postfix!\1$$config_directory!g;\
-		s!/etc/postfix!${ETCDIR}!g;
+		s!/etc/postfix!${ETCDIR}!g;\
+		s!^(sample_directory =)!\1 ${ETCDIR}!g;\
+		s!($config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
 pre-patch:
 .if defined(POSTFIX_OPTIONS)
@@ -307,13 +306,6 @@ do-install:
 	${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
 	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
 		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 555 -d ${EXAMPLESDIR}
-.for f in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${EXAMPLESDIR}
-.endfor
-	@${ECHO_MSG} "Installed configuration examples in ${EXAMPLESDIR}"
 .endif
 
 post-install:

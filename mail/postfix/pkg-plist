@@ -1,13 +1,5 @@
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/main.cf %D/%%ETCDIR%%/main.cf; then rm -f %D/%%ETCDIR%%/main.cf; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/master.cf %D/%%ETCDIR%%/master.cf; then rm -f %D/%%ETCDIR%%/master.cf; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/access %D/%%ETCDIR%%/access; then rm -f %D/%%ETCDIR%%/access; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/aliases %D/%%ETCDIR%%/aliases; then rm -f %D/%%ETCDIR%%/aliases; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/canonical %D/%%ETCDIR%%/canonical; then rm -f %D/%%ETCDIR%%/canonical; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/header_checks %D/%%ETCDIR%%/header_checks; then rm -f %D/%%ETCDIR%%/header_checks; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/relocated %D/%%ETCDIR%%/relocated; then rm -f %D/%%ETCDIR%%/relocated; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/transport %D/%%ETCDIR%%/transport; then rm -f %D/%%ETCDIR%%/transport; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/virtual %D/%%ETCDIR%%/virtual; then rm -f %D/%%ETCDIR%%/virtual; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/generic %D/%%ETCDIR%%/generic; then rm -f %D/%%ETCDIR%%/generic; fi
+@unexec if cmp -s %D/libexec/postfix/main.cf %D/%%ETCDIR%%/main.cf; then rm -f %D/%%ETCDIR%%/main.cf; fi
+@unexec if cmp -s %D/libexec/postfix/master.cf %D/%%ETCDIR%%/master.cf; then rm -f %D/%%ETCDIR%%/master.cf; fi
 %%ETCDIR%%/LICENSE
 %%ETCDIR%%/TLS_LICENSE
 %%ETCDIR%%/bounce.cf.default
