@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zsh
-PORTVERSION=	4.3.9
-PORTREVISION=	6
+PORTVERSION=	4.3.10
 CATEGORIES=	shells
 MASTER_SITES=	SF
 .if !defined(NOPORTDOCS)
@@ -32,7 +31,7 @@ CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 
-OPTIONS=	ZSH_GDBM	"Enable GDBM support" off \
+OPTIONS=	ZSH_GDBM	"Enable GDBM support (GPL)" off \
 		ZSH_MEM		"Enable zsh-mem and zsh-secure-free options" on \
 		ZSH_MAILDIR	"Enable support for Maildirs in MAIL(PATH)" on \
 		ZSH_MULTIBYTE	"Enable multibyte character support" on \
@@ -136,7 +135,7 @@ post-install:
 		setopt extendedglob; \
 		for i in ${DATADIR}/${ZSH_VER}/functions/**/*(/) ; do \
 			zcompile -U -M $$i.zwc $$i/*~*.zwc(^/) ; \
-			chmod 644 $$i.zwc ; \
+			${CHMOD} 644 $$i.zwc ; \
 		done'
 
 .include <bsd.port.post.mk>
