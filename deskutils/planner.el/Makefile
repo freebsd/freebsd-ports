@@ -108,6 +108,9 @@ PORTDOCS=	AUTHORS ChangeLog.2004 ChangeLog.2005 ChangeLog \
 		COMMENTARY NEWS README
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's,PREFIX   =,PREFIX   ?=,' ${WRKSRC}/Makefile.defs
+
 pre-build:
 	${CP} ${WRKSRC}/contrib/schedule.el ${WRKSRC}/schedule.el
 
