@@ -201,13 +201,18 @@
 %%WWWDIR%%/zp-core/admin-themes.php
 %%WWWDIR%%/zp-core/admin-thumbcrop.php
 %%WWWDIR%%/zp-core/admin-upload.php
+%%WWWDIR%%/zp-core/admin-uploadify/cancel.png
+%%WWWDIR%%/zp-core/admin-uploadify/check.php
+%%WWWDIR%%/zp-core/admin-uploadify/jquery.uploadify.js
+%%WWWDIR%%/zp-core/admin-uploadify/uploader.php
+%%WWWDIR%%/zp-core/admin-uploadify/uploader.swf
+%%WWWDIR%%/zp-core/admin-uploadify/uploadify.css
 %%WWWDIR%%/zp-core/admin.css
 %%WWWDIR%%/zp-core/admin.php
 %%WWWDIR%%/zp-core/album-zip.php
 %%WWWDIR%%/zp-core/archive.php
 %%WWWDIR%%/zp-core/auth_zp.php
 %%WWWDIR%%/zp-core/c.php
-%%WWWDIR%%/zp-core/changelog.html
 %%WWWDIR%%/zp-core/class-album.php
 %%WWWDIR%%/zp-core/class-comment.php
 %%WWWDIR%%/zp-core/class-gallery.php
@@ -227,7 +232,6 @@
 %%WWWDIR%%/zp-core/exif/makers/panasonic.php
 %%WWWDIR%%/zp-core/exif/makers/sanyo.php
 %%WWWDIR%%/zp-core/full-image.php
-%%WWWDIR%%/zp-core/functions-auth.php
 %%WWWDIR%%/zp-core/functions-basic.php
 %%WWWDIR%%/zp-core/functions-controller.php
 %%WWWDIR%%/zp-core/functions-db.php
@@ -252,6 +256,7 @@
 %%WWWDIR%%/zp-core/images/calendar.png
 %%WWWDIR%%/zp-core/images/captcha_background.png
 %%WWWDIR%%/zp-core/images/drag_handle.png
+%%WWWDIR%%/zp-core/images/drag_handle_flag.png
 %%WWWDIR%%/zp-core/images/edit-delete.png
 %%WWWDIR%%/zp-core/images/envelope.png
 %%WWWDIR%%/zp-core/images/err-cachewrite.gif
@@ -279,6 +284,8 @@
 %%WWWDIR%%/zp-core/images/reset1.png
 %%WWWDIR%%/zp-core/images/rss.gif
 %%WWWDIR%%/zp-core/images/searchfields_icon.png
+%%WWWDIR%%/zp-core/images/select_files_button.png
+%%WWWDIR%%/zp-core/images/shape_handles.png
 %%WWWDIR%%/zp-core/images/sortorder.png
 %%WWWDIR%%/zp-core/images/stock_copy.png
 %%WWWDIR%%/zp-core/images/thickbox_loadingAnimation.gif
@@ -297,7 +304,7 @@
 %%WWWDIR%%/zp-core/js/farbtastic.css
 %%WWWDIR%%/zp-core/js/farbtastic.js
 %%WWWDIR%%/zp-core/js/jquery.Jcrop.css
-%%WWWDIR%%/zp-core/js/jquery.Jcrop.pack.js
+%%WWWDIR%%/zp-core/js/jquery.Jcrop.js
 %%WWWDIR%%/zp-core/js/jquery.dimensions.js
 %%WWWDIR%%/zp-core/js/jquery.editinplace.js
 %%WWWDIR%%/zp-core/js/jquery.flashembed.pack.js
@@ -305,32 +312,111 @@
 %%WWWDIR%%/zp-core/js/jquery.tabs.js
 %%WWWDIR%%/zp-core/js/jquery.toggleElements.js
 %%WWWDIR%%/zp-core/js/jquery.tooltip.js
-%%WWWDIR%%/zp-core/js/jquery.ui.zenphoto.js
-%%WWWDIR%%/zp-core/js/jquery.ui.zenphoto.readme.txt
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-ar.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-bg.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-ca.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-cs.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-da.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-de.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-es.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-fi.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-fr-FR.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-fr.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-he.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-hu.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-hy.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-id.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-is.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-it.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-ja.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-ko.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-lt.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-lv.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-nl.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-no.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-pl.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-pt-BR.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-ro.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-ru.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-sk.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-sv.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-th.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-tr.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-uk.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-zh-CN.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/ui.datepicker-zh-TW.js
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_11x11_icon_arrows_leftright.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_11x11_icon_arrows_updown.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_11x11_icon_doc.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_11x11_icon_minus.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_11x11_icon_plus.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_11x11_icon_resize_se.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_7x7_arrow_down.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_7x7_arrow_left.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_7x7_arrow_right.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/222222_7x7_arrow_up.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_11x11_icon_arrows_leftright.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_11x11_icon_arrows_updown.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_11x11_icon_close.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_11x11_icon_doc.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_11x11_icon_folder_closed.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_11x11_icon_folder_open.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_11x11_icon_minus.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_11x11_icon_plus.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_7x7_arrow_down.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_7x7_arrow_left.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_7x7_arrow_right.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/454545_7x7_arrow_up.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_11x11_icon_arrows_leftright.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_11x11_icon_arrows_updown.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_11x11_icon_close.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_11x11_icon_doc.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_11x11_icon_folder_closed.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_11x11_icon_folder_open.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_11x11_icon_minus.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_11x11_icon_plus.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_7x7_arrow_down.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_7x7_arrow_left.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_7x7_arrow_right.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/888888_7x7_arrow_up.gif
+%%WWWDIR%%/zp-core/js/jqueryui/images/dadada_40x100_textures_02_glass_75.png
+%%WWWDIR%%/zp-core/js/jqueryui/images/e6e6e6_40x100_textures_02_glass_75.png
+%%WWWDIR%%/zp-core/js/jqueryui/images/ffffff_40x100_textures_01_flat_75.png
+%%WWWDIR%%/zp-core/js/jqueryui/images/ffffff_40x100_textures_02_glass_65.png
+%%WWWDIR%%/zp-core/js/jqueryui/jquery.ui.zenphoto.js
+%%WWWDIR%%/zp-core/js/jqueryui/readme.txt
+%%WWWDIR%%/zp-core/js/jqueryui/ui.zenphoto.css
 %%WWWDIR%%/zp-core/js/tag.js
 %%WWWDIR%%/zp-core/js/thickbox.css
 %%WWWDIR%%/zp-core/js/thickbox.js
 %%WWWDIR%%/zp-core/js/toggleElements.css
 %%WWWDIR%%/zp-core/js/zenphoto.js.php
 %%WWWDIR%%/zp-core/lib-GD.php
+%%WWWDIR%%/zp-core/lib-auth.php
 %%WWWDIR%%/zp-core/lib-encryption.php
 %%WWWDIR%%/zp-core/lib-gettext/gettext.inc
 %%WWWDIR%%/zp-core/lib-htmlawed.php
 %%WWWDIR%%/zp-core/lib-pclzip.php
 %%WWWDIR%%/zp-core/lib-utf8.php
+%%WWWDIR%%/zp-core/locale/da_DK/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/da_DK/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/da_DK/select_files_button.png
 %%WWWDIR%%/zp-core/locale/de_DE/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/de_DE/LC_MESSAGES/zenphoto.po
-%%WWWDIR%%/zp-core/locale/en_US/place_holder.txt
+%%WWWDIR%%/zp-core/locale/de_DE/select_files_button.png
+%%WWWDIR%%/zp-core/locale/en_US/select_files_button.png
 %%WWWDIR%%/zp-core/locale/fr_FR/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/fr_FR/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/fr_FR/select_files_button.png
 %%WWWDIR%%/zp-core/locale/it_IT/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/it_IT/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES/zenphoto.po
-%%WWWDIR%%/zp-core/locale/zh_CN/LC_MESSAGES/zenphoto.mo
-%%WWWDIR%%/zp-core/locale/zh_CN/LC_MESSAGES/zenphoto.po
-%%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES/zenphoto.mo
-%%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/pl_PL/select_files_button.png
+%%WWWDIR%%/zp-core/locale/sl_SI/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/sl_SI/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/plugins/captcha/zenphoto.php
 %%WWWDIR%%/zp-core/plugins/class-textobject.php
 %%WWWDIR%%/zp-core/plugins/class-textobject/textDefault.png
@@ -341,6 +427,8 @@
 %%WWWDIR%%/zp-core/plugins/dynamic-locale.php
 %%WWWDIR%%/zp-core/plugins/filter-admin_toolbox.php
 %%WWWDIR%%/zp-core/plugins/filter-comments.php
+%%WWWDIR%%/zp-core/plugins/filter-crop_image.php
+%%WWWDIR%%/zp-core/plugins/filter-custom_data.php
 %%WWWDIR%%/zp-core/plugins/filter-file_searches.php
 %%WWWDIR%%/zp-core/plugins/filter-new_objects.php
 %%WWWDIR%%/zp-core/plugins/filter-zenphoto_seo.php
@@ -355,24 +443,39 @@
 %%WWWDIR%%/zp-core/plugins/flowplayer3/flowplayer.audio.swf
 %%WWWDIR%%/zp-core/plugins/flowplayer3/flowplayer.controls.swf
 %%WWWDIR%%/zp-core/plugins/flowplayer3/flowplayer.js
+%%WWWDIR%%/zp-core/plugins/flowplayer3/flowplayer.playlist.pack.js
 %%WWWDIR%%/zp-core/plugins/flowplayer3/flowplayer.swf
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist.php
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/flowplayer.content.swf
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/flowplayer3_playlist.css
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/images/arrow_bottom_blue.png
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/images/arrow_bottom_gray.png
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/images/arrow_top_blue.png
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/images/arrow_top_gray.png
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/images/control_play.png
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/images/control_play_blue.png
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/jquery.mousewheel.pack.js
+%%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/jquery.scrollable.pack.js
 %%WWWDIR%%/zp-core/plugins/flvplayer.php
-%%WWWDIR%%/zp-core/plugins/flvplayer/flvplayer.js
 %%WWWDIR%%/zp-core/plugins/flvplayer/player3.swf
 %%WWWDIR%%/zp-core/plugins/flvplayer/player4.swf
 %%WWWDIR%%/zp-core/plugins/flvplayer/playlist.php
+%%WWWDIR%%/zp-core/plugins/flvplayer/swfobject.js
 %%WWWDIR%%/zp-core/plugins/google_maps.php
 %%WWWDIR%%/zp-core/plugins/google_maps/gmaps.js
 %%WWWDIR%%/zp-core/plugins/google_maps/license.txt
 %%WWWDIR%%/zp-core/plugins/google_maps/phoogle.php
+%%WWWDIR%%/zp-core/plugins/html_meta_tags.php
 %%WWWDIR%%/zp-core/plugins/image_album_statistics.php
 %%WWWDIR%%/zp-core/plugins/paged_thumbs_nav.php
 %%WWWDIR%%/zp-core/plugins/print_album_menu.php
 %%WWWDIR%%/zp-core/plugins/rating.php
 %%WWWDIR%%/zp-core/plugins/rating/alt_star.png
+%%WWWDIR%%/zp-core/plugins/rating/clear.png
 %%WWWDIR%%/zp-core/plugins/rating/functions-rating.php
-%%WWWDIR%%/zp-core/plugins/rating/rating.css
-%%WWWDIR%%/zp-core/plugins/rating/rating.js
+%%WWWDIR%%/zp-core/plugins/rating/jquery.MetaData.js
+%%WWWDIR%%/zp-core/plugins/rating/jquery.rating.css
+%%WWWDIR%%/zp-core/plugins/rating/jquery.rating.js
 %%WWWDIR%%/zp-core/plugins/rating/update.php
 %%WWWDIR%%/zp-core/plugins/register_user.php
 %%WWWDIR%%/zp-core/plugins/register_user/register_user_form.php
@@ -1521,8 +1624,10 @@
 @dirrm %%WWWDIR%%/zp-core/plugins/slideshow
 @dirrm %%WWWDIR%%/zp-core/plugins/register_user
 @dirrm %%WWWDIR%%/zp-core/plugins/rating
-@dirrmtry %%WWWDIR%%/zp-core/plugins/google_maps
+@dirrm %%WWWDIR%%/zp-core/plugins/google_maps
 @dirrm %%WWWDIR%%/zp-core/plugins/flvplayer
+@dirrm %%WWWDIR%%/zp-core/plugins/flowplayer3_playlist/images
+@dirrm %%WWWDIR%%/zp-core/plugins/flowplayer3_playlist
 @dirrm %%WWWDIR%%/zp-core/plugins/flowplayer3
 @dirrm %%WWWDIR%%/zp-core/plugins/flowplayer
 @dirrm %%WWWDIR%%/zp-core/plugins/contact_form
@@ -1530,10 +1635,10 @@
 @dirrm %%WWWDIR%%/zp-core/plugins/class-textobject
 @dirrm %%WWWDIR%%/zp-core/plugins/captcha
 @dirrm %%WWWDIR%%/zp-core/plugins
-@dirrm %%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES
-@dirrm %%WWWDIR%%/zp-core/locale/zh_TW
-@dirrm %%WWWDIR%%/zp-core/locale/zh_CN/LC_MESSAGES
-@dirrm %%WWWDIR%%/zp-core/locale/zh_CN
+@dirrm %%WWWDIR%%/zp-core/locale/sl_SI/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/sl_SI
+@dirrm %%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/pl_PL
 @dirrm %%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/nl_NL
 @dirrm %%WWWDIR%%/zp-core/locale/it_IT/LC_MESSAGES
@@ -1543,12 +1648,18 @@
 @dirrm %%WWWDIR%%/zp-core/locale/en_US
 @dirrm %%WWWDIR%%/zp-core/locale/de_DE/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/de_DE
+@dirrm %%WWWDIR%%/zp-core/locale/da_DK/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/da_DK
 @dirrm %%WWWDIR%%/zp-core/locale
 @dirrm %%WWWDIR%%/zp-core/lib-gettext
+@dirrm %%WWWDIR%%/zp-core/js/jqueryui/images
+@dirrm %%WWWDIR%%/zp-core/js/jqueryui/i18n
+@dirrm %%WWWDIR%%/zp-core/js/jqueryui
 @dirrm %%WWWDIR%%/zp-core/js
 @dirrm %%WWWDIR%%/zp-core/images
 @dirrm %%WWWDIR%%/zp-core/exif/makers
 @dirrm %%WWWDIR%%/zp-core/exif
+@dirrm %%WWWDIR%%/zp-core/admin-uploadify
 @dirrmtry %%WWWDIR%%/zp-core
 @dirrm %%WWWDIR%%/themes/zenpage-default/images
 @dirrm %%WWWDIR%%/themes/zenpage-default
