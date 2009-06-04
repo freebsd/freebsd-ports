@@ -127,7 +127,7 @@ pre-configure:
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
 post-install:
-#	@${LN} -sf ${LOCALBASE}/lib/erlang/lib/erl_interface-*/bin/erl_call ${LOCALBASE}/bin/erl_call
+	@${LN} -sf ${LOCALBASE}/lib/erlang/lib/erl_interface-*/bin/erl_call ${LOCALBASE}/bin/erl_call
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
 		-C ${PREFIX}/lib/erlang
 	@${RM} -rf ${PREFIX}/lib/erlang/man/cat?
