@@ -7,17 +7,14 @@
 
 PORTNAME=	kid
 PORTVERSION=	0.9.6
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.kid-templating.org/dist/${PORTVERSION}/dist/ \
+MASTER_SITES=	http://www.kid-templating.org/dist/${PORTVERSION}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A simple template language for XML based written in Python
-
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
@@ -38,4 +35,11 @@ post-install:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if $(PYTHON_REL) < 250
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>
