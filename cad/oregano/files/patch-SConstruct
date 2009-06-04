@@ -5,7 +5,7 @@
  opts.Add (BoolOption ('RunUpdateMimeDatabase', 'Set to no if you don\'t want to run update-mime-database', 1));
  opts.Add (BoolOption ('Debug', 'Set to yes you want to compile with debug symbolse', 0));
 -opts.Add (PathOption ('PREFIX', 'System base prefix path', '/usr/local'));
-+opts.Add (PathOption ('PREFIX', 'System base prefix path', '/usr/local', PathOption.PathIsDirCreate));
++opts.Add (PathOption ('PREFIX', 'System base prefix path', '%%PREFIX%%', PathOption.PathIsDirCreate));
  opts.Add (PackageOption ('DESTDIR', 'System base installation path', '/'));
  
  # Dependencies #

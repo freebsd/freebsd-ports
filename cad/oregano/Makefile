@@ -31,7 +31,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-Wall|${CFLAGS}|g" ${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e "s|-Wall|${CFLAGS}|g;s|%%PREFIX%%|${PREFIX}|;s|pkg-config|${LOCALBASE}/bin/pkg-config|g" ${WRKSRC}/SConstruct
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e "/^SConscript ('po\/SConscript')/d" ${WRKSRC}/SConstruct
 .endif
