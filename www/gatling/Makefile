@@ -81,6 +81,10 @@ MAKE_ENV+=	DEBUG=1
 STRIP=
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 PLIST_FILES=	${bin:S,^,bin/,} ${sbin:S,^,sbin/,} sbin/gatling_wrapper
 
 pre-install:
