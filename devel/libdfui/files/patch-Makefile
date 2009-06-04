@@ -20,10 +20,10 @@
 -LDFLAGS+=	-L../libaura
 -LDFLAGS+=	-L/usr/local/lib -L/usr/pkg/lib
 -LDFLAGS+=	-laura
-+CFLAGS+=	${EXTRA_CFLAGS} ${WARNS} -fPIC -I%%PREFIX%%/include/aura3
++CFLAGS+=	${EXTRA_CFLAGS} ${WARNS} -fPIC -I%%LOCALBASE%%/include/aura3
 +CFLAGS+=	-DSMP
-+CFLAGS+=	-I/usr/local/include
-+LDFLAGS+=	-L/usr/local/lib
++CFLAGS+=	-I%%LOCALBASE%%/include
++LDFLAGS+=	-L%%LOCALBASE%%/lib
 +LDFLAGS+=	-laura3
  
  # Default target:

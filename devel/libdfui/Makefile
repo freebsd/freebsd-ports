@@ -38,7 +38,7 @@ PORTDOCS=	README
 MAKE_ENV=	SONAME=${SONAME} SOLINK=${SOLINK}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${SONAME} ${PREFIX}/lib/${SONAME}
