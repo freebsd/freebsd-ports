@@ -6,7 +6,7 @@
 
 PORTNAME=		ktagebuch
 PORTVERSION=		0.74
-PORTREVISION=	5
+PORTREVISION=		5
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.theblessing.net/programming/${PORTNAME}/
 
@@ -21,9 +21,13 @@ USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
-USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USE_LDCONFIG=		yes
+INSTALLS_ICONS=		yes
+USE_GETTEXT=		yes
+
+CONFIGURE_ARGS+=	--with-sqlite \
+			--with-sqlite-incdir=${LOCALBASE}/include \
+			--with-sqlite-libdir=${LOCALBASE}/lib
 
 DOCSDIR=	share/doc/HTML
 
