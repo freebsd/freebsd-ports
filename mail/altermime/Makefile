@@ -19,7 +19,7 @@ PLIST_FILES=	bin/altermime
 PORTDOCS=	CHANGELOG LICENCE README
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/CFLAGS=-Wall -g/CFLAGS=-Wall ${CFLAGS}/" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s#CFLAGS=-Wall -g#CFLAGS=-Wall ${CFLAGS}#" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
