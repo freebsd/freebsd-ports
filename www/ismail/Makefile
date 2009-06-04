@@ -9,7 +9,7 @@ PORTNAME=	ismail
 PORTVERSION=	2.1
 PORTREVISION=	2
 CATEGORIES=	www mail
-MASTER_SITES=	http://mail.electro-com.ru/~az/ISMail/
+MASTER_SITES=	http://sunner.semmy.ru/~az/ISMail/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
