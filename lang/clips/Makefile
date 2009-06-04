@@ -29,7 +29,7 @@ post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${MAKEFILE} ${WRKSRC}/
 
 do-patch:
-	${REINPLACE_CMD} -e 's/gcc /${CC} ${CFLAGS} /g' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's#gcc #${CC} ${CFLAGS} #g' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/clips ${PREFIX}/bin/
