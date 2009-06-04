@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.27
+PORTVERSION=	1.0.29
 PORTREVISION=	0
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -38,7 +38,8 @@ INFODIR=	${PREFIX}/${INFO_PATH}
 OSVER_MAJOR=	${OSVERSION:C/([0-9]).*/\1/}
 
 # Empty dirs in distribution to keep
-EMPTY_DIRS=	sb-posix/test-lab
+EMPTY_DIRS=	sb-bsd-sockets/alien sb-posix/alien sb-posix/test-lab \
+		site-systems
 
 DYNAMIC_SPACE_SIZE?=	512
 
@@ -86,11 +87,6 @@ pre-everything::
 	@${ECHO_MSG} "---------------------------------------------------------"
 	@${ECHO_MSG}
 
-post-extract:
-.for DIR in ${EMPTY_DIRS}
-	@${TOUCH} ${WRKSRC}/contrib/${DIR}/.keep_me
-.endfor
-
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|(CFLAGS =) .*|\1 ${CFLAGS}|' \
 		${WRKSRC}/src/runtime/GNUmakefile
@@ -113,7 +109,9 @@ do-install:
 	@${RMDIR} ${DOCSDIR}/html
 
 post-install:
-	@${TOUCH} ${PREFIX}/lib/sbcl/site-systems/.keep_me
+.for DIR in ${EMPTY_DIRS}
+	@${TOUCH} ${PREFIX}/lib/sbcl/${DIR}/.keep_me
+.endfor
 
 test:	build
 	(cd ${WRKSRC}/tests && ${SH} run-tests.sh)
