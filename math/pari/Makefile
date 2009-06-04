@@ -20,7 +20,7 @@ LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=	--prefix=${PREFIX} --share-prefix=${PREFIX}/share --with-gmp
+CONFIGURE_ARGS=	--prefix=${PREFIX} --share-prefix=${PREFIX}/share --with-gmp=${LOCALBASE}
 
 MAKE_ARGS=	gp
 PLIST_SUB=	MAJOR_VERSION=${MAJOR_VERSION} MINOR_VERSION=${MINOR_VERSION} REV_VERSION=${REV_VERSION}
