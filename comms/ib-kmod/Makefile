@@ -26,6 +26,10 @@ PLIST_FILES=	"@cwd ${KMODDIR}" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build
+.endif
+
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
 	@${ECHO} "*************************************************"; \
