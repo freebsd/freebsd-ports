@@ -5752,6 +5752,7 @@ ja-flex-sdk                     ports/japanese/flex-sdk
 ja-flower-fpw                   ports/japanese/flower-fpw
 ja-foldoc-fpw                   ports/japanese/foldoc-fpw
 ja-font-ipa                     ports/japanese/font-ipa
+ja-font-ipa-uigothic            ports/japanese/font-ipa-uigothic
 ja-font-kochi                   ports/japanese/font-kochi
 ja-font-mplus                   ports/japanese/font-mplus
 ja-font-mplus-ipa               ports/japanese/font-mplus-ipa
@@ -10364,6 +10365,7 @@ p5-CGI-FormBuilder              ports/www/p5-CGI-FormBuilder
 p5-CGI-Framework                ports/www/p5-CGI-Framework
 p5-CGI-Kwiki                    ports/www/p5-CGI-Kwiki
 p5-CGI-Minimal                  ports/www/p5-CGI-Minimal
+p5-CGI-Pager                    ports/www/p5-CGI-Pager
 p5-CGI-Prototype                ports/www/p5-CGI-Prototype
 p5-CGI-Response                 ports/www/p5-CGI-Response
 p5-CGI-SSI                      ports/www/p5-CGI-SSI
@@ -13933,6 +13935,7 @@ p5-cgi-framework                ports/www/p5-CGI-Framework
 p5-cgi-kwiki                    ports/www/p5-CGI-Kwiki
 p5-cgi-minimal                  ports/www/p5-CGI-Minimal
 p5-cgi-modules                  ports/www/p5-CGI-modules
+p5-cgi-pager                    ports/www/p5-CGI-Pager
 p5-cgi-prototype                ports/www/p5-CGI-Prototype
 p5-cgi-response                 ports/www/p5-CGI-Response
 p5-cgi-session                  ports/www/p5-CGI-Session
