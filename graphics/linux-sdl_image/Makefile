@@ -8,10 +8,10 @@
 
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
-DISTNAME=	SDL_image-${PORTVERSION}-1
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-1
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A simple library to load images as SDL interfaces (linux version)
@@ -25,5 +25,10 @@ ONLY_FOR_ARCHS=	i386 amd64
 DIST_SUBDIR=	rpm
 PLIST_SUB+=	SDLIMVER=${PORTVERSION}
 MD5_FILE=	${PKGDIR}/distinfo
+LINUX_NAME=	SDL_image
+
+PLIST_FILES=	usr/lib/libSDL_image-1.2.so.0 usr/lib/libSDL_image-1.2.so.0.1.4
+DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
+PORTDOCS=	CHANGES COPYING README
 
 .include <bsd.port.mk>
