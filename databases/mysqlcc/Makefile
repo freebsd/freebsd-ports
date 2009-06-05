@@ -25,7 +25,7 @@ IGNORE_WITH_MYSQL=323
 GNU_CONFIGURE=	yes
 USE_QT_VER=	3
 CONFIGURE_ARGS+=--with-mysql-include=${LOCALBASE}/include/mysql \
-		--with-mysql-lib=${LOCALBSE}/lib/mysql \
+		--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-qt=${QT_PREFIX}
 
 DOCS=	Changelog.txt README.txt TODO.txt
