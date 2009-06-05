@@ -1,4 +1,5 @@
 bin/pom2
+bin/pomdump
 bin/podlint
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/.packlist
 %%SITE_PERL%%/Pod/POM.pm
