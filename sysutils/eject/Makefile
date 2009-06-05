@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 		ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/OD/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Utility for ejecting media from CD or optical disk drive
 
 PLIST_FILES=	sbin/eject
