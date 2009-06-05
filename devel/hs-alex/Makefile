@@ -6,6 +6,7 @@
 
 PORTNAME=	alex
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/alex/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -14,9 +15,11 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Alex is a tool for generating lexical analysers in Haskell
 
 BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
+
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
+
 PLIST_SUB+=	RMLIC="@comment "
 .else
 PLIST_SUB+=	RMLIC=""
@@ -31,6 +34,10 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	LICENSE html
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
 PORTEXAMPLES=	*
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local/share/xsl/docbook|${LOCALBASE}/share/xsl/docbook|' \
+		${WRKSRC}/doc/configure.ac
 
 do-configure:
 	cd ${WRKSRC} && runhaskell Setup.lhs configure ${CONFIGURE_ARGS}
