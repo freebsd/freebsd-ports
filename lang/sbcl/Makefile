@@ -9,13 +9,13 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.29
+PORTVERSION=	1.0.29.2
 PORTREVISION=	0
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
 MASTER_SITE_SUBDIR=	sbcl
-DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-source${SBCLPATCHLEVEL}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
@@ -36,6 +36,14 @@ INFO=		asdf sbcl
 INFODIR=	${PREFIX}/${INFO_PATH}
 
 OSVER_MAJOR=	${OSVERSION:C/([0-9]).*/\1/}
+
+.if ${PORTVERSION:E} == 0
+SBCLPATCHLEVEL=	#empty
+.else
+SBCLPATCHLEVEL=	-r${PORTVERSION:E}
+.endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 # Empty dirs in distribution to keep
 EMPTY_DIRS=	sb-bsd-sockets/alien sb-posix/alien sb-posix/test-lab \
@@ -70,7 +78,7 @@ LISP_EXTRA_ARG=	--dynamic-space-size ${DYNAMIC_SPACE_SIZE}
 
 . for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
 BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH_OS}
-DISTFILES:=	${DISTFILES} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}:binaries
+DISTFILES:=	${DISTNAME}${EXTRACT_SUFX} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}:binaries
 . endfor
 LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core ${LISP_EXTRA_ARG} --disable-debugger --userinit /dev/null --sysinit /dev/null"
 
