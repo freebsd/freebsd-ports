@@ -2,6 +2,7 @@
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/CREDITS
 %%DOCSDIR%%/NEWS
+%%DOCSDIR%%/SUPPORT
 bin/sbcl
 lib/sbcl/asdf-install/.cvsignore
 lib/sbcl/asdf-install/Makefile
