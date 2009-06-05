@@ -17,8 +17,9 @@ COMMENT=	NGPT is a next generation pthread implementation based on GNU pth
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-tests=no --enable-maintainer=no --enable-pthread \
-		--disable-kernel-patch
+CONFIGURE_ARGS=	--enable-tests=no --enable-maintainer=no \
+		--enable-pthread  --disable-kernel-patch \
+		--exec-prefix=${PREFIX} --includedir=${PREFIX}/include
 USE_GMAKE=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
