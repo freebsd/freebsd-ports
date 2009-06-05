@@ -56,11 +56,11 @@ PLIST_FILES+=	lib/ocaml/stublibs/${file}
 .endfor
 
 post-configure:
-# CFLAGS,PREFIX safeness
-	@${REINPLACE_CMD} -E -e \
+# CFLAGS, LOCALBASE safeness
+	${REINPLACE_CMD} -E -e \
 		's|^(EVENT_LIB=).*$$|\1-levent|; \
-		s|^(EVENT_LIBDIR=).$$|\1${LOCALBASE}/lib|;  \
-		s|^(EVENT_INCDIR=).$$|\1${LOCALBASE}/include|; \
+		s|^EVENT_LIBDIR=.*$$|EVENT_LIBDIR=${LOCALBASE}/lib|;  \
+		s|^EVENT_INCDIR=.*$$|EVENT_INCDIR=${LOCALBASE}/include|; \
 		s|^(CFLAGS).*$$|\1=${CFLAGS} -I\$$(EVENT_INCDIR)|' \
 		${WRKSRC}/Makefile
 
