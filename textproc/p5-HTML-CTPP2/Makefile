@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-CTPP2
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN \
 		http://ctpp.havoc.ru/download/
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	reki@reki.ru
 COMMENT=	Perl interface module to CTPP2 library
 
-BUILD_DEPENDS=	ctpp2>=2.4.1:${PORTSDIR}/textproc/ctpp2
+BUILD_DEPENDS=	ctpp2>=2.5.1:${PORTSDIR}/textproc/ctpp2
 LIB_DEPENDS=	ctpp2:${PORTSDIR}/textproc/ctpp2
 
 PERL_CONFIGURE=	yes
