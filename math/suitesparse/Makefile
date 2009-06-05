@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	suitesparse
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
@@ -130,6 +130,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/CXSparse/Include/*.h 	                     ${PREFIX}/include/suitesparse
 	${INSTALL_DATA} ${WRKSRC}/KLU/Include/*.h                            ${PREFIX}/include/suitesparse
 	${INSTALL_DATA} ${WRKSRC}/CAMD/Include/*.h		             ${PREFIX}/include/suitesparse
+	${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.h		             ${PREFIX}/include/suitesparse
+	${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.hpp		             ${PREFIX}/include/suitesparse
 	${INSTALL_DATA} ${WRKDIR}/tmp_static/*.a                             ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKDIR}/tmp_shared/*.so.${SVERSION}                    ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKDIR}/tmp_shared/*.so                    ${PREFIX}/lib
