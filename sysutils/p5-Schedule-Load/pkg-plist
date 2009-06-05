@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Load/.packlist
 bin/rschedule
 bin/slchoosed
@@ -17,11 +16,15 @@ bin/slrsh
 %%SITE_PERL%%/Schedule/Load/ResourceReq.pm
 %%SITE_PERL%%/Schedule/Load/Safe.pm
 %%SITE_PERL%%/Schedule/Load/Schedule.pm
+%%SITE_PERL%%/Schedule/Load/Reporter/Filesys.pm
+%%SITE_PERL%%/Schedule/Load/Reporter/Disk.pm
+%%SITE_PERL%%/Schedule/Load/Reporter/Network.pm
 %%SITE_PERL%%/auto/Schedule/Load/Hosts/Host/autosplit.ix
 %%SITE_PERL%%/auto/Schedule/Load/Hosts/Proc/autosplit.ix
 @dirrmtry lib/rschedule
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Load
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule
+@dirrm %%SITE_PERL%%/Schedule/Load/Reporter
 @dirrmtry %%SITE_PERL%%/Schedule/Load/Hosts
 @dirrmtry %%SITE_PERL%%/Schedule/Load
 @dirrmtry %%SITE_PERL%%/Schedule
@@ -30,7 +33,7 @@ bin/slrsh
 @dirrmtry %%SITE_PERL%%/auto/Schedule/Load/Hosts
 @dirrmtry %%SITE_PERL%%/auto/Schedule/Load
 @dirrmtry %%SITE_PERL%%/auto/Schedule
-%%PORTDOCS%%%%EXAMPLESDIR%%/init.d/slchoosed
-%%PORTDOCS%%%%EXAMPLESDIR%%/init.d/slreportd
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/init.d
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.d/slchoosed
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.d/slreportd
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/init.d
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
