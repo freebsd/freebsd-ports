@@ -1,7 +1,11 @@
 bin/mueller
 bin/muellerfind
-%%DATADIR%%/Mueller7accentGPL.koi
-%%DATADIR%%/Mueller7accentGPL.koi.h
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/Mueller7.txt
+%%DATADIR%%/Mueller7accentGPL.ru_RU.CP1251
+%%DATADIR%%/Mueller7accentGPL.ru_RU.CP1251.h
+%%DATADIR%%/Mueller7accentGPL.ru_RU.KOI8-R
+%%DATADIR%%/Mueller7accentGPL.ru_RU.KOI8-R.h
+%%DATADIR%%/Mueller7accentGPL.ru_RU.UTF-8
+%%DATADIR%%/Mueller7accentGPL.ru_RU.UTF-8.h
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
