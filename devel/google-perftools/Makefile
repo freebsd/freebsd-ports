@@ -42,11 +42,10 @@ check: build
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-# src/stacktrace.cc:81:5: #error Cannnot calculate stack trace: need libunwind (see INSTALL file)
-BROKEN=	Does not build, cannot calculate stack trace: need libunwind (see INSTALL file)
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+=--enable-frame-pointers
 .endif
-.if ${ARCH} == "ia64"
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=	Does not build, ia64 assembly not supported, see PR-94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
 .endif
 
