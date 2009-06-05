@@ -21,6 +21,8 @@ RUN_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDest
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	5.8.1+
 CFLAGS=		-I.
 
