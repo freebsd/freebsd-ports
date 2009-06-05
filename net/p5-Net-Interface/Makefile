@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Interface
-PORTVERSION=	0.11
+PORTVERSION=	1.011
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Perl extension to access network interfaces
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Net::Interface.3
+MAN3=		Net::Interface.3 Net::Interface::Developer.3 \
+  			Net::Interface::NetSymbols.3
 
 .include <bsd.port.mk>
