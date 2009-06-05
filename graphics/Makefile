@@ -762,6 +762,7 @@
     SUBDIR += quat
     SUBDIR += quat-gui
     SUBDIR += quesa
+    SUBDIR += quesoglc
     SUBDIR += qvplay
     SUBDIR += raster3d
     SUBDIR += rawstudio

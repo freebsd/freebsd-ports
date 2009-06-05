@@ -1,0 +1,9 @@
+include/GL/glc.h
+lib/libGLC.a
+lib/libGLC.la
+lib/libGLC.so
+lib/libGLC.so.0
+libdata/pkgconfig/quesoglc.pc
+@dirrm libdata/pkgconfig
+@dirrm libdata
+@dirrm include/GL
