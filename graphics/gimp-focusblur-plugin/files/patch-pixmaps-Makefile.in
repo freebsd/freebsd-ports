@@ -1,0 +1,19 @@
+--- pixmaps/Makefile.in.orig	2008-10-18 18:50:12.000000000 +0400
++++ pixmaps/Makefile.in	2009-06-03 20:31:46.000000000 +0400
+@@ -350,11 +350,12 @@
+ 	{ echo -e '#include <gdk-pixbuf/gdk-pixdata.h>\n' ; \
+ 	$(GDK_PIXBUF_CSOURCE) --struct --rle --build-list \
+ 	$$(for i in $(icons) ; do \
+-		name=$${i%%.*} ; \
+-		name=$${name//-/_} ; \
+-		echo $$name $$i ; \
++    echo $$i | sed -e 's/\..*//g' \
++    -e 's/-/_/g' | tr '\n' ' '; \
++    echo $$i ; \
+ 	done) | \
+-	sed -e '/pixel_data:/a(guint8 *)' ; \
++	sed -e '/pixel_data:/a\
++(guint8 *)' ; \
+ 	} > $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

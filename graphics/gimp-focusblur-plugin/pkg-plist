@@ -1,0 +1,4 @@
+%%PLUGIN_DIR%%/focusblur
+%%NLS%%share/locale/it/LC_MESSAGES/gimp20-focusblur.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gimp20-focusblur.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gimp20-focusblur.mo
