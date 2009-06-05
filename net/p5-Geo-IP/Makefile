@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geo-IP
-PORTVERSION=	1.36
+PORTVERSION=	1.38
 CATEGORIES=	net geography perl5
 MASTER_SITES=	CPAN \
 		http://www.maxmind.com/download/geoip/api/perl/
