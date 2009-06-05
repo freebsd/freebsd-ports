@@ -1,3 +1,1 @@
-Device::USB, Perl wrappers for libusb. This
-port is a dependency for others on the way regarding Lego
-Mindstorms NXT software.
+Device::USB, Perl wrappers for libusb.
