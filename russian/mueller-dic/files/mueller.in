@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -z "${LANG}" -o "${LANG##ru_RU.}" = "${LANG}" ]; then
+    LANG="ru_RU.KOI8-R"
+fi
+
+%%PREFIX%%/bin/muellerfind -d %%DATADIR%%/Mueller7accentGPL.${LANG}
