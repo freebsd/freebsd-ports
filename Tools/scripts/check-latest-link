@@ -3,6 +3,11 @@
 # Iterate over the ports collection, assemble the list of LATEST_LINKs and
 # then look for duplicates.  Send a nag-mail to the responsible maintainers.
 
+# Sanitize environment
+export __MAKE_CONF=/dev/null
+export PORT_DBDIR=/nonexistent
+export PKG_DBDIR=/nonexistent
+
 if [ -z "${PORTSDIR}" ]; then
 	PORTSDIR=/usr/ports
 fi
