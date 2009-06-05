@@ -18,6 +18,8 @@ COMMENT=	Mixed Japanese font with IPA, M-plus outline, and Bitstream Vera
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
+CONFLICTS=	ja-ipa-ttfonts-[0-9]*
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
