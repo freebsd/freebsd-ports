@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.99.4
+PORTVERSION=	1.99.5
 CATEGORIES+=	net games
 MASTER_SITES=	SFE
 
@@ -15,7 +15,7 @@ COMMENT=	A client program to help playing MUDs (devel version)
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-CONFIGURE_ARGS+=	--includedir=${LOCALBASE}/include \
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --includedir=${LOCALBASE}/include \
 			--libdir=${LOCALBASE}/lib
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
