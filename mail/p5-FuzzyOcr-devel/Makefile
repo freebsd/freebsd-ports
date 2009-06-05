@@ -11,6 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/	\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	p5-
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME:L}-${DISTVERSION}
 
 MAINTAINER=	ismail.yenigul@endersys.com.tr
