@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth_OpenID2
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	security www pear
 MASTER_SITES=	http://openidenabled.com/files/php-openid/packages/
 PKGNAMEPREFIX=	php-
