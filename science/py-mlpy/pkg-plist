@@ -63,14 +63,14 @@ bin/canberraq
 %%PYTHON_SITELIBDIR%%/mlpy/_svm.py
 %%PYTHON_SITELIBDIR%%/mlpy/_svm.pyc
 %%PYTHON_SITELIBDIR%%/mlpy/_svm.pyo
-%%PYTHON_SITELIBDIR%%/mlpy/_wavelet.py
-%%PYTHON_SITELIBDIR%%/mlpy/_wavelet.pyc
-%%PYTHON_SITELIBDIR%%/mlpy/_wavelet.pyo
+%%PYTHON_SITELIBDIR%%/mlpy/_uwt.so
 %%PYTHON_SITELIBDIR%%/mlpy/canberracore.so
 %%PYTHON_SITELIBDIR%%/mlpy/cwb.so
 %%PYTHON_SITELIBDIR%%/mlpy/gslpy.so
 %%PYTHON_SITELIBDIR%%/mlpy/hccore.so
+%%PYTHON_SITELIBDIR%%/mlpy/misc.so
 %%PYTHON_SITELIBDIR%%/mlpy/nncore.so
+%%PYTHON_SITELIBDIR%%/mlpy/peaksd.so
 %%PYTHON_SITELIBDIR%%/mlpy/progressbar.py
 %%PYTHON_SITELIBDIR%%/mlpy/progressbar.pyc
 %%PYTHON_SITELIBDIR%%/mlpy/progressbar.pyo

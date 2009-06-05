@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlpy
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.3
 CATEGORIES=	science python
 MASTER_SITES=	https://mlpy.fbk.eu/download/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
