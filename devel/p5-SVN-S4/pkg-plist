@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/S4/.packlist
 bin/s4
 %%SITE_PERL%%/SVN/S4.pm
+%%SITE_PERL%%/SVN/S4/CatOrMods.pm
 %%SITE_PERL%%/SVN/S4/FixProp.pm
 %%SITE_PERL%%/SVN/S4/Getopt.pm
 %%SITE_PERL%%/SVN/S4/Info.pm

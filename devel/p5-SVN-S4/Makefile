@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-S4
-PORTVERSION=	1.031
+PORTVERSION=	1.032
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,6 @@ MAN1=		s4.1
 MAN3=		SVN::S4.3 SVN::S4::FixProp.3 SVN::S4::Getopt.3 \
 		SVN::S4::Info.3 SVN::S4::Path.3 SVN::S4::QuickCommit.3 \
 		SVN::S4::Snapshot.3 SVN::S4::StrongRevert.3 SVN::S4::Update.3 \
-		SVN::S4::ViewSpec.3
+		SVN::S4::ViewSpec.3 SVN::S4::CatOrMods.3
 
 .include <bsd.port.mk>
