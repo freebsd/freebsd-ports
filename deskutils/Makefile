@@ -78,6 +78,7 @@
     SUBDIR += gkrellm-timers
     SUBDIR += glabels
     SUBDIR += glipper
+    SUBDIR += global-menu
     SUBDIR += gmcal
     SUBDIR += gnochm
     SUBDIR += gnome-blog

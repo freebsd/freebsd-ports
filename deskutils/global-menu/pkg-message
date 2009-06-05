@@ -1,0 +1,7 @@
+Before adding the applet to your top/bottom panel, please
+ensure libglobalmenu-gnome is loaded as a Gtk module
+by setting the following gconf key :
+
+   apps/gnome-settings-daemon/gtk-modules/globalmenu-gnome
+
+Before that, you can simply add the applet to your panel.
