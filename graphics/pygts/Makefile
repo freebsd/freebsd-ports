@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	pygts
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics python
 MASTER_SITES=	SF
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Python binding for GNU Triangulated Surface(GTS) Library
 
+BUILD_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	gts.5:${PORTSDIR}/graphics/gts
 
 USE_PYTHON=		yes

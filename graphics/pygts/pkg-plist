@@ -1,4 +1,11 @@
-%%PYTHON_SITELIBDIR%%/gts.py
-%%PYTHON_SITELIBDIR%%/gts.pyc
-%%PYTHON_SITELIBDIR%%/gts.pyo
-%%PYTHON_SITELIBDIR%%/_gts.so
+%%PYTHON_SITELIBDIR%%/gts/__init__.py
+%%PYTHON_SITELIBDIR%%/gts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gts/_gts.so
+%%PYTHON_SITELIBDIR%%/gts/blender.py
+%%PYTHON_SITELIBDIR%%/gts/blender.pyc
+%%PYTHON_SITELIBDIR%%/gts/blender.pyo
+%%PYTHON_SITELIBDIR%%/gts/pygts.py
+%%PYTHON_SITELIBDIR%%/gts/pygts.pyc
+%%PYTHON_SITELIBDIR%%/gts/pygts.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/gts
