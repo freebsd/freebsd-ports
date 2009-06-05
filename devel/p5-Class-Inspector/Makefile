@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Inspector
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ COMMENT=	Provides information about classes
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Class::Inspector.3
+MAN3=		Class::Inspector.3 Class::Inspector::Functions.3
 
 .include <bsd.port.mk>
