@@ -1,0 +1,11 @@
+This module provides a parser which parses and interprets (though
+not fully) LaTeX documents and returns a tree-based representation
+of what it finds. This tree is a LaTeX::TOM::Tree. The tree contains
+LaTeX::TOM::Node nodes.
+
+This module should be especially useful to anyone who wants to do
+processing of LaTeX documents that requires extraction of plain-text
+information, or altering of the plain-text components (or
+alternatively, the math-text components).
+
+WWW:	http://search.cpan.org/dist/LaTeX-TOM/
