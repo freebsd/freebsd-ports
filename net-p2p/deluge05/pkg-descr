@@ -1,8 +1,0 @@
-Deluge is a Bittorrent client written in Python and GTK+. Deluge is intended
-to bring a native, full-featured client to Linux, BSD, and other *NIX GTK
-desktop environments such as Gnome and XFCE.
-
-Deluge uses Rasterbar's version of libtorrent as the main ingredient in its
-bittorrent protocol backend.
-
-WWW: http://deluge-torrent.org/
