@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090605:
+  AFFECTS: users of mail/postfix
+  AUTHOR: itetcu@FreeBSD.org
+
+  Version 2.6.1 introduced a POLA violation by expecting aliases.db to be
+  in /etc/mail/aliases.db (not /etc/aliases.db). With this version the
+  location is reverted to the right place.
+  If you updated your installation to 2.6.1 you need to run newaliases(1)
+  again after you installed 2.6.2.
+
 20090603:
   AFFECTS: users of japanese/font-mplus-ipa (and old japanese/ipa-ttfonts)
   AUTHOR: hrs@FreeBSD.org
