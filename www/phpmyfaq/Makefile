@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	2.0.14
+PORTVERSION=	2.0.15
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 
