@@ -9,16 +9,16 @@ PORTNAME=	Lingua-JA-Kana
 PORTVERSION=	0.04
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
-PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Converts between kanas and romaji
-
-BUILD_DEPENDS=	p5-Test-Simple>=0.80:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	${PORTNAME:S/-/::/g}.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
+
+.include <bsd.port.post.mk>
