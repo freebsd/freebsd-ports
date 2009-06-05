@@ -1,6 +1,12 @@
 bin/release
 %%SITE_PERL%%/Module/Release.pm
+%%SITE_PERL%%/Module/Release/SVN.pm
+%%SITE_PERL%%/Module/Release/PAUSE.pm
+%%SITE_PERL%%/Module/Release/Prereq.pm
+%%SITE_PERL%%/Module/Release/Kwalitee.pm
+%%SITE_PERL%%/Module/Release/FTP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Release/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Release
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module/Release
 @dirrmtry %%SITE_PERL%%/Module
