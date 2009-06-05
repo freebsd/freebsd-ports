@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	speed-dial
-PORTVERSION=	0.7.2
+PORTVERSION=	0.9.0.7
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
+MASTER_SITES=	http://speeddial.uworks.net/
 
-MAINTAINER=	freebsd@omnilan.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Access websites through custom thumbnail views
 
 XPI_DISTNAME=	speed_dial
