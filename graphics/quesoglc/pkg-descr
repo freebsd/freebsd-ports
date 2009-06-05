@@ -1,0 +1,26 @@
+The OpenGL Character Renderer (GLC) is a state machine that provides
+OpenGL programs with character rendering services via an application
+programming interface (API).
+
+The character rendering services provided by GLC has some significant
+advantages over platform specific interface such as GLX or WGL:
+
+1. The GLC API is platform independent. Since most nontrivial GL
+   applications render characters, GLC is an important step toward the
+   goal of truly portable GL applications.
+2. The GLC is simpler to use. Only two lines of GLC commands are
+   required to prepare for rendering characters.
+3. GLC provides more ways to exploit the rendering power of OpenGL.
+   For example, a glyph can be drawn as a bitmap, a set of lines, a
+   set of triangles, or a textured rectangle.
+4. GLC provides better support for glyph transformations. For
+   example, GLC supports rotated text, which is unavailable in GLX.
+5. GLC provides better support for the large coded character set
+   defined by the standards ISO/IEC 10646:2003 and Unicode 4.0.1
+
+QuesoGLC is a free (as in free speech) implementation of the GLC.
+QuesoGLC is based on the FreeType library, provides Unicode support
+and is designed to be easily ported to any platform that supports
+both FreeType and the OpenGL API.
+
+WWW: http://quesoglc.sourceforge.net/
