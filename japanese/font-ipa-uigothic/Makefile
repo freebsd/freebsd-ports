@@ -16,7 +16,8 @@ COMMENT=	IPA Japanese fonts, UIGothic
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 # ja-font-mplus-ipa-1.0.20060520.p1 has an old ipagui.ttf
-CONFLICTS=	ja-font-mplus-ipa-1.0.20060520.p1
+CONFLICTS=	ja-font-mplus-ipa-1.0.20060520.p1 \
+		ja-ipa-ttfonts-[0-9]*
 
 USE_ZIP=	yes
 NO_BUILD=	yes
