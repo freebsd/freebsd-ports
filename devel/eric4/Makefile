@@ -21,6 +21,7 @@ PLIST_FILES=
 do-configure:
 	${SED}  -e 's,PYTHON_SITELIBDIR,${PYTHON_SITELIBDIR},' \
 		-e 's,PREFIX,${PREFIX},' \
+		-e 's,LOCALBASE,${LOCALBASE},' \
 		-e 's,DOCSDIR,${DOCSDIR},' \
 		-e 's,EXAMPLESDIR,${EXAMPLESDIR},' \
 		< ${FILESDIR}/config > ${WRKSRC}/eric4config.freebsd
