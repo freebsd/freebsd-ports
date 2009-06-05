@@ -1,0 +1,17 @@
+bin/csv2pdf
+bin/ltpretty
+%%SITE_PERL%%/LaTeX/Table.pm
+%%SITE_PERL%%/LaTeX/Table/Themes/Booktabs.pm
+%%SITE_PERL%%/LaTeX/Table/Themes/ThemeI.pm
+%%SITE_PERL%%/LaTeX/Table/Themes/Modern.pm
+%%SITE_PERL%%/LaTeX/Table/Themes/Beamer.pm
+%%SITE_PERL%%/LaTeX/Table/Themes/Classic.pm
+%%SITE_PERL%%/LaTeX/Table/Types/Std.pm
+%%SITE_PERL%%/LaTeX/Table/Types/Ctable.pm
+%%SITE_PERL%%/LaTeX/Table/Types/Longtable.pm
+%%SITE_PERL%%/LaTeX/Table/Types/Xtab.pm
+%%SITE_PERL%%/LaTeX/Table/Types/TypeI.pm
+@dirrm %%SITE_PERL%%/LaTeX/Table/Types
+@dirrm %%SITE_PERL%%/LaTeX/Table/Themes
+@dirrm %%SITE_PERL%%/LaTeX/Table
+@dirrmtry %%SITE_PERL%%/LaTeX

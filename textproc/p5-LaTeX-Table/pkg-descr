@@ -1,0 +1,10 @@
+This module supports multipage tables via the xtab and the longtable
+package. For publication quality tables it utilizes the booktabs
+package. It also supports the tabularx and tabulary packages for
+nicer fixed-width tables. Furthermore, it supports the colortbl
+package for colored tables optimized for presentations.  The powerful
+new ctable package is supported and especially recommended when
+footnotes are needed. LaTeX::Table ships with some predefined, good
+looking themes.
+
+WWW:	http://search.cpan.org/dist/LaTeX-Table/

@@ -447,6 +447,7 @@
     SUBDIR += p5-LaTeX-Driver
     SUBDIR += p5-LaTeX-Encode
     SUBDIR += p5-LaTeX-TOM
+    SUBDIR += p5-LaTeX-Table
     SUBDIR += p5-Lingua-Conjunction
     SUBDIR += p5-Lingua-EN-AddressParse
     SUBDIR += p5-Lingua-EN-Fathom
