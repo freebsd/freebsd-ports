@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	port@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ticket and ticket change deletion
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
