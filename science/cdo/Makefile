@@ -7,7 +7,7 @@
 #
 
 PORTNAME=		cdo
-PORTVERSION=		1.3.0
+PORTVERSION=		1.3.1
 CATEGORIES=		science
 MASTER_SITES=		http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 			http://sunpoet.net/distfiles/
@@ -19,7 +19,6 @@ GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS=		--program-transform-name=""
 CONFIGURE_ENV=		CC="${CC}" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
