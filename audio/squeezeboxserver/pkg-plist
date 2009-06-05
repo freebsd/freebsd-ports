@@ -114,8 +114,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Data/URIEncode.pm
 %%SLIMDIR%%/CPAN/Date/Parse.pm
 %%SLIMDIR%%/CPAN/Devel/InnerPackage.pm
-%%SLIMDIR%%/CPAN/Digest/SHA1.pm
-%%SLIMDIR%%/CPAN/Digest/base.pm
 %%SLIMDIR%%/CPAN/Error.pm
 %%SLIMDIR%%/CPAN/Exporter/Lite.pm
 %%SLIMDIR%%/CPAN/File/BOM.pm
@@ -2649,7 +2647,6 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/CPAN/File/Find
 @dirrm %%SLIMDIR%%/CPAN/File
 @dirrm %%SLIMDIR%%/CPAN/Exporter
-@dirrm %%SLIMDIR%%/CPAN/Digest
 @dirrm %%SLIMDIR%%/CPAN/Devel
 @dirrm %%SLIMDIR%%/CPAN/Date
 @dirrm %%SLIMDIR%%/CPAN/Data
