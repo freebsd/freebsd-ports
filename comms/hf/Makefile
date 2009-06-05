@@ -29,7 +29,9 @@ CONFLICTS=	sysutils/lbl-hf-1.*
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
-	${WRKSRC}/hfkernel/Makefile
+	    ${WRKSRC}/hfkernel/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+	    ${WRKSRC}/util/reffreq.c ${WRKSRC}/scripts/Makefile
 
 post-install:
 	@${ECHO} ""
