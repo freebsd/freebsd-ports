@@ -13,8 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.8.3
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -25,7 +24,7 @@ USE_RC_SUBR=	milter-dkim.sh
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-.if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
+.if defined(WITH_POSTFIX) || defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX_CURRENT)
 WITH_SENDMAIL_BASE=	yes
 PKGMESSAGE=	${PKGDIR}/pkg-message.postfix
 
@@ -46,16 +45,16 @@ MAN5=		dkim-filter.conf.5
 MAN8=		dkim-filter.8 dkim-genkey.8 dkim-testkey.8 dkim-testssp.8
 PLIST_FILES=	etc/mail/dkim-filter.conf.sample include/dkim.h \
 		bin/dkim-genkey %%STATS%%bin/dkim-stats bin/dkim-testkey \
-		bin/dkim-testssp %%LIBDKIM%%lib/libdkim.a \
+		bin/dkim-testssp %%ARLIB%%lib/libar.a %%LIBDKIM%%lib/libdkim.a \
 		%%LIBDKIMSHARED%%lib/libdkim.so %%LIBDKIMSHARED%%lib/libdkim.so.0 \
 		libexec/dkim-filter
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
-		draft-hoffman-dac-vbr-05.txt draft-ietf-dkim-deployment-03.txt \
-		draft-ietf-dkim-overview-10.txt draft-ietf-dkim-ssp-09.txt \
-		draft-kucherawy-dkim-reporting-04.txt draft-kucherawy-sender-auth-header-20.txt \
-		draft-shafranovich-feedback-report-06.txt rfc4686.txt rfc4871.txt rfc5016.txt
+		draft-ietf-dkim-deployment-04.txt draft-ietf-dkim-overview-12.txt \
+		draft-ietf-dkim-rfc4871-errata-05.txt draft-ietf-dkim-ssp-10.txt \
+		draft-kucherawy-dkim-reporting-04.txt draft-shafranovich-feedback-report-07.txt \
+		rfc4686.txt rfc4871.txt rfc5016.txt rfc5451.txt rfc5518.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/overview.html \
@@ -143,6 +142,15 @@ PLIST_DIRS+=	${DOCSDIR_REL}/libdkim
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_ARLIB) && !(defined(WITH_UNBOUND) && !defined(WITHOUT_UNBOUND))
+WITH_ARLIB=	yes
+.endif
+
+.if ${OSVERSION} < 700000
+WITH_OPENSSL_PORT=	yes
+.endif
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+
 WITHOUT_MILTER_CFLAGS=	yes
 WITHOUT_MILTER_LDFLAGS=	yes
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
@@ -163,29 +171,37 @@ SITE_SUB+=	-e 's|%%STATIC%%|dnl |g'
 SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}${RC_SUBR_SUFFIX}"
 
 .if defined(WITH_LIBDKIM_SHARED)
+PLIST_SUB+=	LIBDKIM=""
 PLIST_SUB+=	LIBDKIMSHARED=""
 SITE_SUB+=	-e '\|bld_LIBDKIM_SHARED|s/^dnl //g'
 USE_LDCONFIG=	yes
+.if defined(WITH_ARLIB)
+PLIST_SUB+=	ARLIB=""
+.else
+PLIST_SUB+=	ARLIB="@comment "
+.endif
 .else
 PLIST_SUB+=	LIBDKIMSHARED="@comment "
 .endif
 .if defined(WITH_LIBDKIM_INSTALL)
 SITE_SUB+=	-e '\|bld_LIBDKIM_INSTALL|s/^dnl //g'
-.if defined(WITH_LIBDKIM_SHARED)
-PLIST_SUB+=	LIBDKIM="@comment "
-.else
 PLIST_SUB+=	LIBDKIM=""
-.endif
+.if defined(WITH_ARLIB)
+PLIST_SUB+=	ARLIB=""
 .else
+PLIST_SUB+=	ARLIB="@comment "
+.endif
+.endif
+.if !defined(WITH_LIBDKIM_INSTALL) && !defined(WITH_LIBDKIM_SHARED)
 PLIST_SUB+=	LIBDKIM="@comment "
-PLIST_SUB+=	LIBDKIMSHARED="@comment "
+PLIST_SUB+=	ARLIB="@comment "
 .endif
 .if defined(WITH_DEBUG)
 SITE_SUB+=	-e '\|confOPTIMIZE.*-g|s/^dnl //g'
 .endif
 .if defined(WITH_UNBOUND) && !defined(WITHOUT_UNBOUND)
 .if defined(WITH_ARLIB)
-IGNORE=		libar cannot be used simultaneously with unbound
+IGNORE=		libar cannot be used simultaneously with libunbound
 .endif
 LIB_DEPENDS+=	unbound:${PORTSDIR}/dns/unbound
 SITE_SUB+=	-e 's|%%UNBOUND%%||g' \
@@ -252,10 +268,6 @@ pre-fetch:
 	@${ECHO_MSG} "please set WITH_SENDMAIL_BASE=yes instead"
 .endif
 	@${ECHO_MSG}
-	@${ECHO_MSG} "If you do not have OpenSSL 0.9.8 or later installed,"
-	@${ECHO_MSG} "set WITH_OPENSSL_PORT=yes to support rsa-sha256 algorithm"
-	@${ECHO_MSG} "which is required in the latest specification."
-	@${ECHO_MSG}
 	@${ECHO_MSG} "dkim-milter has the following tunable option(s):"
 	@${ECHO_MSG} " WITH_POPAUTH=yes		Query POP-before-SMTP authentication database"
 	@${ECHO_MSG} " WITH_QUERY_CACHE=yes		Cache DNS Query"
@@ -266,7 +278,6 @@ pre-fetch:
 	@${ECHO_MSG} " WITH_LIBDKIM_INSTALL=yes	Install libdkim library"
 	@${ECHO_MSG} " WITH_UNBOUND=yes		Link against libunbound"
 	@${ECHO_MSG}
-	@sleep 5
 
 post-extract:
 	@${CP} ${WRKSRC}/dkim-filter/autorespond.csh ${WRKSRC}
@@ -278,6 +289,11 @@ post-patch:
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e "s|\`-O'|\`${CFLAGS}'|g" \
 		${WRKSRC}/devtools/OS/FreeBSD
+.if !defined(WITHOUT_ARLIB) && (defined(WITH_LIBDKIM_INSTALL) || defined(WITH_LIBDKIM_SHARED)) && !(defined(WITH_UNBOUND) || !defined(WITHOUT_UNBOUND))
+	@${REINPLACE_CMD} -e 's|%%ARLIB%%||' ${WRKSRC}/libar/Makefile.m4
+.else
+	@${REINPLACE_CMD} -e 's|%%ARLIB%%|dnl |' ${WRKSRC}/libar/Makefile.m4
+.endif
 	@${SED} ${SITE_SUB} -e '\|^dnl |d' -e '/^dnl$$/d' \
 		${SITE} > ${WCONF}/site.config.m4
 
