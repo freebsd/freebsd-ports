@@ -444,6 +444,7 @@
     SUBDIR += p5-KinoSearch
     SUBDIR += p5-Kwalify
     SUBDIR += p5-LJ-SpellCheck
+    SUBDIR += p5-LaTeX-Driver
     SUBDIR += p5-LaTeX-Encode
     SUBDIR += p5-LaTeX-TOM
     SUBDIR += p5-Lingua-Conjunction

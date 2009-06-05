@@ -1,0 +1,7 @@
+The LaTeX::Driver module encapsulates the details of invoking the
+Latex programs to format a LaTeX document. Formatting with LaTeX
+is complicated; there are potentially many programs to run and the
+output of those programs must be monitored to determine whether
+further processing is required.
+
+WWW:	http://search.cpan.org/dist/LaTeX-Driver/
