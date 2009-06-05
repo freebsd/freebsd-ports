@@ -1,0 +1,9 @@
+%%SITE_PERL%%/LaTeX/TOM.pm
+%%SITE_PERL%%/LaTeX/TOM/Node.pm
+%%SITE_PERL%%/LaTeX/TOM/Tree.pm
+%%SITE_PERL%%/LaTeX/TOM/Parser.pm
+%%SITE_PERL%%/mach/auto/LaTeX/TOM/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/LaTeX/TOM
+@dirrmtry %%SITE_PERL%%/mach/auto/LaTeX
+@dirrm %%SITE_PERL%%/LaTeX/TOM
+@dirrmtry %%SITE_PERL%%/LaTeX
