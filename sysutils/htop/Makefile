@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	htop
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	A better top(1) - interactive process viewer
+
+OPTIONS=	LSOF "Enable lsof support" On
 
 NOT_FOR_ARCHS=	sparc64
 
@@ -29,6 +30,10 @@ MAN1=	htop.1
 
 .if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
 LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
+.endif
+
+.if !defined(WITHOUT_LSOF)
+RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
 post-patch:
