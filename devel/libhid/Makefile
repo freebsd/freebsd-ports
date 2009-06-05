@@ -25,7 +25,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/bin/swig1.3:${PORTSDIR}/devel/swig13
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man --without-doxygen
+CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${MANPREFIX}/man --without-doxygen
 
 .include <bsd.port.pre.mk>
 
