@@ -25,147 +25,6 @@
 +++ PATCHES	2009-02-17 08:17:03.000000000 +0100
 @@ -0,0 +1 @@
 +patch-1.5.17.sidebar.20080412
---- buffy.c	2008-08-30 01:39:48.000000000 +0200
-+++ buffy.c	2009-02-17 08:13:07.000000000 +0100
-@@ -259,7 +259,7 @@
-   char path[_POSIX_PATH_MAX];
-   struct stat contex_sb;
-   time_t t;
--
-+  CONTEXT *ctx;
- #ifdef USE_IMAP
-   /* update postponed count as well, on force */
-   if (force)
-@@ -294,6 +294,8 @@
-   
-   for (tmp = Incoming; tmp; tmp = tmp->next)
-   {
-+    if ( tmp->new == 1 )
-+      tmp->has_new = 1;
- #ifdef USE_IMAP
-     if (tmp->magic != M_IMAP)
- #endif
-@@ -350,10 +352,27 @@
-       case M_MBOX:
-       case M_MMDF:
- 
--	if (STAT_CHECK)
-+        {
-+        if (STAT_CHECK || tmp->msgcount == 0)
- 	{
--	  BuffyCount++;
--	  tmp->new = 1;
-+ 	  BUFFY b = *tmp;
-+ 	  int msgcount = 0;
-+ 	  int msg_unread = 0;
-+ 	  /* parse the mailbox, to see how much mail there is */
-+ 	  ctx = mx_open_mailbox( tmp->path, M_READONLY | M_QUIET | M_NOSORT | M_PEEK, NULL);
-+ 	  if(ctx)
-+ 	  {
-+            msgcount = ctx->msgcount;
-+ 	    msg_unread = ctx->unread;
-+ 	    mx_close_mailbox(ctx, 0);
-+ 	  }
-+ 	  *tmp = b;
-+ 	  tmp->msgcount = msgcount;
-+ 	  tmp->msg_unread = msg_unread;
-+ 	  if(STAT_CHECK) {
-+ 	    tmp->has_new = tmp->new = 1;
-+	    BuffyCount++;
-+          }
- 	}
- 	else if (option(OPTCHECKMBOXSIZE))
- 	{
-@@ -363,35 +382,82 @@
- 	if (tmp->newly_created &&
- 	    (sb.st_ctime != sb.st_mtime || sb.st_ctime != sb.st_atime))
- 	  tmp->newly_created = 0;
--
-+	}
- 	break;
- 
-       case M_MAILDIR:
- 
-+        /* count new message */
- 	snprintf (path, sizeof (path), "%s/new", tmp->path);
- 	if ((dirp = opendir (path)) == NULL)
- 	{
- 	  tmp->magic = 0;
- 	  break;
- 	}
-+	tmp->msgcount = 0;
-+	tmp->msg_unread = 0;
-+	tmp->msg_flagged = 0;
- 	while ((de = readdir (dirp)) != NULL)
- 	{
- 	  char *p;
- 	  if (*de->d_name != '.' && 
- 	      (!(p = strstr (de->d_name, ":2,")) || !strchr (p + 3, 'T')))
- 	  {
--	    /* one new and undeleted message is enough */
--	    BuffyCount++;
--	    tmp->new = 1;
--	    break;
-+	    tmp->has_new = tmp->new = 1;
-+            tmp->msgcount++;
-+            tmp->msg_unread++;
-+	  }
-+	}
-+        if(tmp->msg_unread)
-+          BuffyCount++;
-+
-+	closedir (dirp);
-+
-+        /*
-+         * count read messages (for folderlist (sidebar) we also need to count
-+         * messages in cur so that we the total number of messages
-+         */
-+	snprintf (path, sizeof (path), "%s/cur", tmp->path);
-+	if ((dirp = opendir (path)) == NULL)
-+	{
-+	  tmp->magic = 0;
-+	  break;
-+	}
-+	while ((de = readdir (dirp)) != NULL)
-+	{
-+	  char *p;
-+	  if (*de->d_name != '.' &&
-+	      (!(p = strstr (de->d_name, ":2,")) || !strchr (p + 3, 'T')))
-+	  {
-+            tmp->msgcount++;
-+             if (p && strchr(p + 3, 'F')) {
-+               tmp->msg_flagged++;
-+             }
- 	  }
- 	}
- 	closedir (dirp);
- 	break;
- 
-       case M_MH:
--	if ((tmp->new = mh_buffy (tmp->path)) > 0)
--	  BuffyCount++;
-+      {
-+      DIR *dp;
-+      struct dirent *de;
-+      if ((tmp->new = mh_buffy (tmp->path)) > 0)
-+        BuffyCount++;
-+
-+      if ((dp = opendir (path)) == NULL)
-+        break;
-+      tmp->msgcount = 0;
-+      while ((de = readdir (dp)))
-+      {
-+        if (mh_valid_message (de->d_name))
-+        {
-+	  tmp->msgcount++;
-+	  tmp->has_new = tmp->new = 1;
-+        }
-+      }
-+      closedir (dp);
-+      }
- 	break;
-       }
-     }
 --- buffy.h	2008-05-22 20:25:19.000000000 +0200
 +++ buffy.h	2009-02-17 08:13:07.000000000 +0100
 @@ -25,7 +25,12 @@
@@ -765,134 +624,6 @@
  };
  
  typedef struct color_line
---- muttlib.c	2009-01-05 20:20:53.000000000 +0100
-+++ muttlib.c	2009-02-17 08:13:07.000000000 +0100
-@@ -1217,32 +1217,80 @@
- 	  pl = pw = 1;
- 
- 	/* see if there's room to add content, else ignore */
--	if ((col < COLS && wlen < destlen) || soft)
-+	if ( DrawFullLine )
- 	{
--	  int pad;
--
--	  /* get contents after padding */
--	  mutt_FormatString (buf, sizeof (buf), 0, src + pl, callback, data, flags);
--	  len = mutt_strlen (buf);
--	  wid = mutt_strwidth (buf);
--
--	  /* try to consume as many columns as we can, if we don't have
--	   * memory for that, use as much memory as possible */
--	  pad = (COLS - col - wid) / pw;
--	  if (pad > 0 && wlen + (pad * pl) + len > destlen)
--	    pad = ((signed)(destlen - wlen - len)) / pl;
--	  if (pad > 0)
-+	  if ((col < COLS && wlen < destlen) || soft)
- 	  {
--	    while (pad--)
-+	    int pad;
-+
-+	    /* get contents after padding */
-+	    mutt_FormatString (buf, sizeof (buf), 0, src + pl, callback, data, flags);
-+	    len = mutt_strlen (buf);
-+	    wid = mutt_strwidth (buf);
-+
-+	    /* try to consume as many columns as we can, if we don't have
-+	     * memory for that, use as much memory as possible */
-+	    pad = (COLS - col - wid) / pw;
-+	    if (pad > 0 && wlen + (pad * pl) + len > destlen)
-+	      pad = ((signed)(destlen - wlen - len)) / pl;
-+	    if (pad > 0)
-+	    {
-+	      while (pad--)
-+	      {
-+	        memcpy (wptr, src, pl);
-+	        wptr += pl;
-+	        wlen += pl;
-+	        col += pw;
-+	      }
-+	    }
-+	    else if (soft && pad < 0)
- 	    {
--	      memcpy (wptr, src, pl);
--	      wptr += pl;
--	      wlen += pl;
--	      col += pw;
-+	      /* set wptr and wlen back just enough bytes to make sure buf
-+	       * fits on screen, \0-terminate dest so mutt_wstr_trunc()
-+	       * can correctly compute string's length */
-+	      if (pad < -wlen)
-+	        pad = -wlen;
-+	      *wptr = 0;
-+	      wlen = mutt_wstr_trunc (dest, wlen + pad, col + pad, &col);
-+	      wptr = dest + wlen;
- 	    }
-+	    if (len + wlen > destlen)
-+	      len = mutt_wstr_trunc (buf, destlen - wlen, COLS - col, NULL);
-+	    memcpy (wptr, buf, len);
-+	    wptr += len;
-+	    wlen += len;
-+	    col += wid;
-+	    src += pl;
- 	  }
--	  else if (soft && pad < 0)
-+        }
-+        else
-+        {
-+	  if ((col < COLS-SidebarWidth && wlen < destlen) || soft)
- 	  {
-+	    int pad;
-+
-+	    /* get contents after padding */
-+	    mutt_FormatString (buf, sizeof (buf), 0, src + pl, callback, data, flags);
-+	    len = mutt_strlen (buf);
-+	    wid = mutt_strwidth (buf);
-+
-+	    /* try to consume as many columns as we can, if we don't have
-+	     * memory for that, use as much memory as possible */
-+	    pad = (COLS - SidebarWidth - col - wid) / pw;
-+	    if (pad > 0 && wlen + (pad * pl) + len > destlen)
-+	      pad = ((signed)(destlen - wlen - len)) / pl;
-+	    if (pad > 0)
-+	    {
-+	      while (pad--)
-+	      {
-+	        memcpy (wptr, src, pl);
-+	        wptr += pl;
-+	        wlen += pl;
-+	        col += pw;
-+	      }
-+	    }
-+	    else if (soft && pad < 0)
-+	    {
- 	    /* \0-terminate dest for length computation in mutt_wstr_trunc() */
- 	    *wptr = 0;
- 	    /* make sure right part is at most as wide as display */
-@@ -1250,15 +1298,16 @@
- 	    /* truncate left so that right part fits completely in */
- 	    wlen = mutt_wstr_trunc (dest, destlen - len, col + pad, &col);
- 	    wptr = dest + wlen;
-+	    }
-+	    if (len + wlen > destlen)
-+	      len = mutt_wstr_trunc (buf, destlen - wlen, COLS - SidebarWidth - col, NULL);
-+	    memcpy (wptr, buf, len);
-+	    wptr += len;
-+	    wlen += len;
-+	    col += wid;
-+	    src += pl;
-+	  }
- 	  }
--	  if (len + wlen > destlen)
--	    len = mutt_wstr_trunc (buf, destlen - wlen, COLS - col, NULL);
--	  memcpy (wptr, buf, len);
--	  wptr += len;
--	  wlen += len;
--	  col += wid;
--	  src += pl;
--	}
- 	break; /* skip rest of input */
-       }
-       else if (ch == '|')
 --- mx.c	2009-01-05 20:20:53.000000000 +0100
 +++ mx.c	2009-02-17 08:13:07.000000000 +0100
 @@ -611,6 +611,7 @@
@@ -934,118 +665,6 @@
  
    if (ctx->mx_close)
      ctx->mx_close (ctx);
---- pager.c	2009-01-05 20:20:53.000000000 +0100
-+++ pager.c	2009-02-17 08:26:41.000000000 +0100
-@@ -29,6 +29,7 @@
- #include "pager.h"
- #include "attach.h"
- #include "mbyte.h"
-+#include "sidebar.h"
- 
- #include "mutt_crypt.h"
- 
-@@ -1060,6 +1061,9 @@
-   mbstate_t mbstate;
- 
-   int wrap_cols = mutt_term_width ((flags & M_PAGER_NOWRAP) ? 0 : Wrap);
-+
-+  wrap_cols -= SidebarWidth;
-+
-   
-   /* FIXME: this should come from lineInfo */
-   memset(&mbstate, 0, sizeof(mbstate));
-@@ -1694,7 +1698,7 @@
-     if ((redraw & REDRAW_BODY) || topline != oldtopline)
-     {
-       do {
--	move (bodyoffset, 0);
-+	move (bodyoffset, SidebarWidth);
- 	curline = oldtopline = topline;
- 	lines = 0;
- 	force_redraw = 0;
-@@ -1707,6 +1711,7 @@
- 			    &QuoteList, &q_level, &force_redraw, &SearchRE) > 0)
- 	    lines++;
- 	  curline++;
-+ 	  move(lines + bodyoffset, SidebarWidth);
- 	}
- 	last_offset = lineInfo[curline].offset;
-       } while (force_redraw);
-@@ -1720,6 +1725,7 @@
- 	  addch ('~');
- 	addch ('\n');
- 	lines++;
-+	move(lines + bodyoffset, SidebarWidth);
-       }
-       /* We are going to update the pager status bar, so it isn't
-        * necessary to reset to normal color now. */
-@@ -1743,22 +1749,22 @@
-       /* print out the pager status bar */
-       SETCOLOR (MT_COLOR_STATUS);
-       BKGDSET (MT_COLOR_STATUS);
--      CLEARLINE (statusoffset);
-+      CLEARLINE_WIN (statusoffset);
-       if (IsHeader (extra))
-       {
--	size_t l1 = COLS * MB_LEN_MAX;
-+	size_t l1 = (COLS * MB_LEN_MAX) - (SidebarWidth * MB_LEN_MAX);
- 	size_t l2 = sizeof (buffer);
- 	hfi.hdr = extra->hdr;
- 	mutt_make_string_info (buffer, l1 < l2 ? l1 : l2, NONULL (PagerFmt), &hfi, M_FORMAT_MAKEPRINT);
-       }
-       else if (IsMsgAttach (extra))
-       {
--	size_t l1 = COLS * MB_LEN_MAX;
-+	size_t l1 = (COLS * MB_LEN_MAX) - (SidebarWidth * MB_LEN_MAX);
- 	size_t l2 = sizeof (buffer);
- 	hfi.hdr = extra->bdy->hdr;
- 	mutt_make_string_info (buffer, l1 < l2 ? l1 : l2, NONULL (PagerFmt), &hfi, M_FORMAT_MAKEPRINT);
-       }
--      mutt_paddstr (COLS, IsHeader (extra) || IsMsgAttach (extra) ?  buffer : banner);
-+      mutt_paddstr (COLS-SidebarWidth, IsHeader (extra) || IsMsgAttach (extra) ?  buffer : banner);
-       BKGDSET (MT_COLOR_NORMAL);
-       SETCOLOR (MT_COLOR_NORMAL);
-     }
-@@ -1768,18 +1774,24 @@
-       /* redraw the pager_index indicator, because the
-        * flags for this message might have changed. */
-       menu_redraw_current (index);
-+      draw_sidebar(MENU_PAGER);
- 
-       /* print out the index status bar */
-       menu_status_line (buffer, sizeof (buffer), index, NONULL(Status));
-  
--      move (indexoffset + (option (OPTSTATUSONTOP) ? 0 : (indexlen - 1)), 0);
-+      move (indexoffset + (option (OPTSTATUSONTOP) ? 0 : (indexlen - 1)),
-+          SidebarWidth);
-       SETCOLOR (MT_COLOR_STATUS);
-       BKGDSET (MT_COLOR_STATUS);
--      mutt_paddstr (COLS, buffer);
-+      mutt_paddstr (COLS-SidebarWidth, buffer);
-       SETCOLOR (MT_COLOR_NORMAL);
-       BKGDSET (MT_COLOR_NORMAL);
-     }
- 
-+    /* if we're not using the index, update every time */
-+    if ( index == 0 )
-+      draw_sidebar(MENU_PAGER);
-+
-     redraw = 0;
- 
-     if (option(OPTBRAILLEFRIENDLY)) {
-@@ -2671,6 +2683,12 @@
- 	mutt_what_key ();
- 	break;
- 
-+      case OP_SIDEBAR_SCROLL_UP:
-+      case OP_SIDEBAR_SCROLL_DOWN:
-+      case OP_SIDEBAR_NEXT:
-+      case OP_SIDEBAR_PREV:
-+	scroll_sidebar(ch, MENU_PAGER);
-+ 	break;
-       default:
- 	ch = -1;
- 	break;
 --- sidebar.c	1970-01-01 01:00:00.000000000 +0100
 +++ sidebar.c	2009-02-17 08:13:08.000000000 +0100
 @@ -0,0 +1,333 @@
@@ -1421,3 +1040,432 @@
 +void set_buffystats(CONTEXT*);
 +
 +#endif /* SIDEBAR_H */
+*** buffy.c.orig	2008-08-29 18:39:48.000000000 -0500
+--- buffy.c	2009-05-22 08:45:01.000000000 -0500
+***************
+*** 259,265 ****
+    char path[_POSIX_PATH_MAX];
+    struct stat contex_sb;
+    time_t t;
+! 
+  #ifdef USE_IMAP
+    /* update postponed count as well, on force */
+    if (force)
+--- 259,265 ----
+    char path[_POSIX_PATH_MAX];
+    struct stat contex_sb;
+    time_t t;
+!   CONTEXT *ctx;
+  #ifdef USE_IMAP
+    /* update postponed count as well, on force */
+    if (force)
+***************
+*** 294,299 ****
+--- 294,301 ----
+    
+    for (tmp = Incoming; tmp; tmp = tmp->next)
+    {
++     if ( tmp->new == 1 )
++       tmp->has_new = 1;
+  #ifdef USE_IMAP
+      if (tmp->magic != M_IMAP)
+  #endif
+***************
+*** 350,359 ****
+        case M_MBOX:
+        case M_MMDF:
+  
+! 	if (STAT_CHECK)
+  	{
+! 	  BuffyCount++;
+! 	  tmp->new = 1;
+  	}
+  	else if (option(OPTCHECKMBOXSIZE))
+  	{
+--- 352,378 ----
+        case M_MBOX:
+        case M_MMDF:
+  
+!         {
+! 	if (STAT_CHECK || tmp->msgcount == 0)
+  	{
+! 	  BUFFY b = *tmp;
+!  	  int msgcount = 0;
+!  	  int msg_unread = 0;
+!  	  /* parse the mailbox, to see how much mail there is */
+!  	  ctx = mx_open_mailbox( tmp->path, M_READONLY | M_QUIET | M_NOSORT | M_PEEK, NULL);
+!  	  if(ctx)
+!  	  {
+!             msgcount = ctx->msgcount;
+!  	    msg_unread = ctx->unread;
+!  	    mx_close_mailbox(ctx, 0);
+!  	  }
+!  	  *tmp = b;
+!  	  tmp->msgcount = msgcount;
+!  	  tmp->msg_unread = msg_unread;
+!  	  if(STAT_CHECK) {
+!  	    tmp->has_new = tmp->new = 1;
+! 	    BuffyCount++;
+!           }  
+  	}
+  	else if (option(OPTCHECKMBOXSIZE))
+  	{
+***************
+*** 363,397 ****
+  	if (tmp->newly_created &&
+  	    (sb.st_ctime != sb.st_mtime || sb.st_ctime != sb.st_atime))
+  	  tmp->newly_created = 0;
+! 
+  	break;
+  
+        case M_MAILDIR:
+  
+  	snprintf (path, sizeof (path), "%s/new", tmp->path);
+  	if ((dirp = opendir (path)) == NULL)
+  	{
+  	  tmp->magic = 0;
+  	  break;
+  	}
+  	while ((de = readdir (dirp)) != NULL)
+  	{
+  	  char *p;
+  	  if (*de->d_name != '.' && 
+  	      (!(p = strstr (de->d_name, ":2,")) || !strchr (p + 3, 'T')))
+  	  {
+! 	    /* one new and undeleted message is enough */
+! 	    BuffyCount++;
+! 	    tmp->new = 1;
+! 	    break;
+  	  }
+  	}
+  	closedir (dirp);
+  	break;
+  
+        case M_MH:
+  	if ((tmp->new = mh_buffy (tmp->path)) > 0)
+  	  BuffyCount++;
+  	break;
+        }
+      }
+--- 382,467 ----
+  	if (tmp->newly_created &&
+  	    (sb.st_ctime != sb.st_mtime || sb.st_ctime != sb.st_atime))
+  	  tmp->newly_created = 0;
+!         }
+  	break;
+  
+        case M_MAILDIR:
+  
++         /* count new message */
+  	snprintf (path, sizeof (path), "%s/new", tmp->path);
+  	if ((dirp = opendir (path)) == NULL)
+  	{
+  	  tmp->magic = 0;
+  	  break;
+  	}
++   	tmp->msgcount = 0;
++   	tmp->msg_unread = 0;
++   	tmp->msg_flagged = 0;
+  	while ((de = readdir (dirp)) != NULL)
+  	{
+  	  char *p;
+  	  if (*de->d_name != '.' && 
+  	      (!(p = strstr (de->d_name, ":2,")) || !strchr (p + 3, 'T')))
+  	  {
+!  	    tmp->has_new = tmp->new = 1;
+!             tmp->msgcount++;
+!             tmp->msg_unread++;
+!  	  }
+!  	}
+!         if(tmp->msg_unread)
+!           BuffyCount++;
+!  
+!  	closedir (dirp);
+!  
+!         /*
+!          * count read messages (for folderlist (sidebar) we also need to count
+!          * messages in cur so that we the total number of messages
+!          */
+!  	snprintf (path, sizeof (path), "%s/cur", tmp->path);
+!  	if ((dirp = opendir (path)) == NULL)
+!   	{
+!   	  tmp->magic = 0;
+!   	  break;
+!   	}
+!   	while ((de = readdir (dirp)) != NULL)
+!   	{
+!   	  char *p;
+!           if (*de->d_name != '.') {
+!                   if ((p = strstr (de->d_name, ":2,"))) {
+!                           if (!strchr (p + 3, 'T')) {
+!                                   tmp->msgcount++;
+!                                   if ( !strchr (p + 3, 'S'))
+!                                           tmp->msg_unread++;
+!                                   if (strchr(p + 3, 'F'))
+!                                           tmp->msg_flagged++;
+!                           }
+!                   } else
+!                           tmp->msgcount++;
+  	  }
+  	}
+  	closedir (dirp);
+  	break;
+  
+        case M_MH:
++       {
++       DIR *dp;
++       struct dirent *de;
+  	if ((tmp->new = mh_buffy (tmp->path)) > 0)
+  	  BuffyCount++;
++     
++       if ((dp = opendir (path)) == NULL)
++         break;
++       tmp->msgcount = 0;
++       while ((de = readdir (dp)))
++       {
++         if (mh_valid_message (de->d_name))
++         {
++ 	  tmp->msgcount++;
++  	  tmp->has_new = tmp->new = 1;
++         }
++       }
++       closedir (dp);
++       }
+  	break;
+        }
+      }
+*** muttlib.c.orig	2009-01-05 13:20:53.000000000 -0600
+--- muttlib.c	2009-05-21 23:08:38.000000000 -0500
+***************
+*** 1217,1222 ****
+--- 1217,1224 ----
+  	  pl = pw = 1;
+  
+  	/* see if there's room to add content, else ignore */
++         if ( DrawFullLine )
++         {
+  	if ((col < COLS && wlen < destlen) || soft)
+  	{
+  	  int pad;
+***************
+*** 1259,1264 ****
+--- 1261,1312 ----
+  	  col += wid;
+  	  src += pl;
+  	}
++         }
++         else
++         {
++ 	if ((col < COLS-SidebarWidth && wlen < destlen) || soft)
++         {
++ 	  int pad;
++ 
++ 	  /* get contents after padding */
++ 	  mutt_FormatString (buf, sizeof (buf), 0, src + pl, callback, data, flags);
++ 	  len = mutt_strlen (buf);
++ 	  wid = mutt_strwidth (buf);
++ 
++ 	  /* try to consume as many columns as we can, if we don't have
++ 	   * memory for that, use as much memory as possible */
++ 	  pad = (COLS - SidebarWidth - col - wid) / pw;
++ 	  if (pad > 0 && wlen + (pad * pl) + len > destlen)
++ 	    pad = ((signed)(destlen - wlen - len)) / pl;
++ 	  if (pad > 0)
++ 	  {
++ 	    while (pad--)
++ 	    {
++ 	      memcpy (wptr, src, pl);
++ 	      wptr += pl;
++ 	      wlen += pl;
++ 	      col += pw;
++ 	    }
++ 	  }
++ 	  else if (soft && pad < 0)
++ 	  {
++ 	    /* \0-terminate dest for length computation in mutt_wstr_trunc() */
++ 	    *wptr = 0;
++ 	    /* make sure right part is at most as wide as display */
++ 	    len = mutt_wstr_trunc (buf, destlen, COLS, &wid);
++ 	    /* truncate left so that right part fits completely in */
++ 	    wlen = mutt_wstr_trunc (dest, destlen - len, col + pad, &col);
++ 	    wptr = dest + wlen;
++ 	  }
++ 	  if (len + wlen > destlen)
++ 	    len = mutt_wstr_trunc (buf, destlen - wlen, COLS - SidebarWidth - col, NULL);
++ 	  memcpy (wptr, buf, len);
++ 	  wptr += len;
++ 	  wlen += len;
++ 	  col += wid;
++ 	  src += pl;
++ 	}
++         }
+  	break; /* skip rest of input */
+        }
+        else if (ch == '|')
+*** pager.c.orig	2009-01-05 13:20:53.000000000 -0600
+--- pager.c	2009-05-21 23:08:38.000000000 -0500
+***************
+*** 29,34 ****
+--- 29,35 ----
+  #include "pager.h"
+  #include "attach.h"
+  #include "mbyte.h"
++ #include "sidebar.h"
+  
+  #include "mutt_crypt.h"
+  
+***************
+*** 1060,1065 ****
+--- 1061,1068 ----
+    mbstate_t mbstate;
+  
+    int wrap_cols = mutt_term_width ((flags & M_PAGER_NOWRAP) ? 0 : Wrap);
++ 
++   wrap_cols -= SidebarWidth;
+    
+    /* FIXME: this should come from lineInfo */
+    memset(&mbstate, 0, sizeof(mbstate));
+***************
+*** 1694,1700 ****
+      if ((redraw & REDRAW_BODY) || topline != oldtopline)
+      {
+        do {
+! 	move (bodyoffset, 0);
+  	curline = oldtopline = topline;
+  	lines = 0;
+  	force_redraw = 0;
+--- 1697,1703 ----
+      if ((redraw & REDRAW_BODY) || topline != oldtopline)
+      {
+        do {
+! 	move (bodyoffset, SidebarWidth);
+  	curline = oldtopline = topline;
+  	lines = 0;
+  	force_redraw = 0;
+***************
+*** 1707,1712 ****
+--- 1710,1716 ----
+  			    &QuoteList, &q_level, &force_redraw, &SearchRE) > 0)
+  	    lines++;
+  	  curline++;
++   	  move(lines + bodyoffset, SidebarWidth);
+  	}
+  	last_offset = lineInfo[curline].offset;
+        } while (force_redraw);
+***************
+*** 1720,1725 ****
+--- 1724,1730 ----
+  	  addch ('~');
+  	addch ('\n');
+  	lines++;
++   	move(lines + bodyoffset, SidebarWidth);
+        }
+        /* We are going to update the pager status bar, so it isn't
+         * necessary to reset to normal color now. */
+***************
+*** 1743,1764 ****
+        /* print out the pager status bar */
+        SETCOLOR (MT_COLOR_STATUS);
+        BKGDSET (MT_COLOR_STATUS);
+!       CLEARLINE (statusoffset);
+        if (IsHeader (extra))
+        {
+! 	size_t l1 = COLS * MB_LEN_MAX;
+  	size_t l2 = sizeof (buffer);
+  	hfi.hdr = extra->hdr;
+  	mutt_make_string_info (buffer, l1 < l2 ? l1 : l2, NONULL (PagerFmt), &hfi, M_FORMAT_MAKEPRINT);
+        }
+        else if (IsMsgAttach (extra))
+        {
+! 	size_t l1 = COLS * MB_LEN_MAX;
+  	size_t l2 = sizeof (buffer);
+  	hfi.hdr = extra->bdy->hdr;
+  	mutt_make_string_info (buffer, l1 < l2 ? l1 : l2, NONULL (PagerFmt), &hfi, M_FORMAT_MAKEPRINT);
+        }
+!       mutt_paddstr (COLS, IsHeader (extra) || IsMsgAttach (extra) ?  buffer : banner);
+        BKGDSET (MT_COLOR_NORMAL);
+        SETCOLOR (MT_COLOR_NORMAL);
+      }
+--- 1748,1769 ----
+        /* print out the pager status bar */
+        SETCOLOR (MT_COLOR_STATUS);
+        BKGDSET (MT_COLOR_STATUS);
+!       CLEARLINE_WIN (statusoffset);
+        if (IsHeader (extra))
+        {
+! 	size_t l1 = (COLS-SidebarWidth) * MB_LEN_MAX;
+  	size_t l2 = sizeof (buffer);
+  	hfi.hdr = extra->hdr;
+  	mutt_make_string_info (buffer, l1 < l2 ? l1 : l2, NONULL (PagerFmt), &hfi, M_FORMAT_MAKEPRINT);
+        }
+        else if (IsMsgAttach (extra))
+        {
+! 	size_t l1 = (COLS-SidebarWidth) * MB_LEN_MAX;
+  	size_t l2 = sizeof (buffer);
+  	hfi.hdr = extra->bdy->hdr;
+  	mutt_make_string_info (buffer, l1 < l2 ? l1 : l2, NONULL (PagerFmt), &hfi, M_FORMAT_MAKEPRINT);
+        }
+!       mutt_paddstr (COLS-SidebarWidth, IsHeader (extra) || IsMsgAttach (extra) ?  buffer : banner);
+        BKGDSET (MT_COLOR_NORMAL);
+        SETCOLOR (MT_COLOR_NORMAL);
+      }
+***************
+*** 1768,1785 ****
+        /* redraw the pager_index indicator, because the
+         * flags for this message might have changed. */
+        menu_redraw_current (index);
+  
+        /* print out the index status bar */
+        menu_status_line (buffer, sizeof (buffer), index, NONULL(Status));
+   
+!       move (indexoffset + (option (OPTSTATUSONTOP) ? 0 : (indexlen - 1)), 0);
+        SETCOLOR (MT_COLOR_STATUS);
+        BKGDSET (MT_COLOR_STATUS);
+!       mutt_paddstr (COLS, buffer);
+        SETCOLOR (MT_COLOR_NORMAL);
+        BKGDSET (MT_COLOR_NORMAL);
+      }
+  
+      redraw = 0;
+  
+      if (option(OPTBRAILLEFRIENDLY)) {
+--- 1773,1795 ----
+        /* redraw the pager_index indicator, because the
+         * flags for this message might have changed. */
+        menu_redraw_current (index);
++       draw_sidebar(MENU_PAGER);
+  
+        /* print out the index status bar */
+        menu_status_line (buffer, sizeof (buffer), index, NONULL(Status));
+   
+!       move (indexoffset + (option (OPTSTATUSONTOP) ? 0 : (indexlen - 1)), SidebarWidth);
+        SETCOLOR (MT_COLOR_STATUS);
+        BKGDSET (MT_COLOR_STATUS);
+!       mutt_paddstr (COLS-SidebarWidth, buffer);
+        SETCOLOR (MT_COLOR_NORMAL);
+        BKGDSET (MT_COLOR_NORMAL);
+      }
+  
++     /* if we're not using the index, update every time */
++     if ( index == 0 )
++       draw_sidebar(MENU_PAGER);
++ 
+      redraw = 0;
+  
+      if (option(OPTBRAILLEFRIENDLY)) {
+***************
+*** 2671,2676 ****
+--- 2681,2693 ----
+  	mutt_what_key ();
+  	break;
+  
++       case OP_SIDEBAR_SCROLL_UP:
++       case OP_SIDEBAR_SCROLL_DOWN:
++       case OP_SIDEBAR_NEXT:
++       case OP_SIDEBAR_PREV:
++ 	scroll_sidebar(ch, MENU_PAGER);
++  	break;
++ 
+        default:
+  	ch = -1;
+  	break;
