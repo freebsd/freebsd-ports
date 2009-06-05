@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lxml
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/lxml/ \
-		CHEESESHOP \
-		http://pypi.python.org/packages/source/l/lxml/
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gogo@cs.uni-sb.de
