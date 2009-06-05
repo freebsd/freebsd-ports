@@ -7,7 +7,7 @@
 
 PORTNAME=	haddock-docs
 PORTVERSION=	2.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/dist/
 PKGNAMEPREFIX=	hs-
@@ -44,7 +44,9 @@ DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 .SILENT:
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/share/sgml/catalog||' ${WRKSRC}/doc/configure.ac
+	@${REINPLACE_CMD} -e 's|/usr/local/share/sgml/catalog|| ; \
+		s|/usr/local/share/xsl/docbook|${LOCALBASE}/share/xsl/docbook|' \
+		${WRKSRC}/doc/configure.ac
 
 do-configure:
 	cd ${WRKSRC} && ${CABAL_CMD} configure --ghc --haddock-options=-w ${CONFIGURE_ARGS}
