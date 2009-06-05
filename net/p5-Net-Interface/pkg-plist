@@ -1,8 +1,10 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Interface.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Interface/Developer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Interface/NetSymbols.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Interface/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Interface/Interface.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Interface/Interface.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/Interface
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Interface
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
