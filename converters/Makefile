@@ -86,6 +86,7 @@
     SUBDIR += p5-Unicode-UTF8simple
     SUBDIR += p5-WAP-wbxml
     SUBDIR += p5-XML-WBXML
+    SUBDIR += p5-bsdconv
     SUBDIR += pdf2djvu
     SUBDIR += pear-Services_JSON
     SUBDIR += pecl-fribidi
