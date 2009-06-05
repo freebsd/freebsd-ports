@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -99,7 +98,6 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_DATA_DIR=\\\"/var/db/postfix\\\" \
 			-DDEF_MAIL_OWNER=\\\"postfix\\\" \
 			-DDEF_SGID_GROUP=\\\"maildrop\\\" \
-			-DALIAS_DB_MAP=\\\"hash:/etc/mail/aliases\\\"
 
 # Default requirement for postfix rc script
 _REQUIRE=		LOGIN cleanvar
@@ -194,6 +192,7 @@ _REQUIRE+=		ypserv
 .endif
 
 .if defined(WITH_VDA)
+IGNORE=			wait for a new VDA patch that works with ${PORTVERSION}
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
 PATCHFILES+=		postfix-${PORTVERSION}-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
@@ -232,7 +231,6 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		s!^(manpage_directory =)!\1 ${PREFIX}/man!g;\
 		s!^((html|readme)_directory =)!\1 ${READMEDIR}!g;\
 		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
-		s!/etc/aliases!/etc/mail/aliases!g;\
 		s!(:|= )/etc/postfix!\1$$config_directory!g;\
 		s!/etc/postfix!${ETCDIR}!g;\
 		s!^(sample_directory =)!\1 ${ETCDIR}!g;\
