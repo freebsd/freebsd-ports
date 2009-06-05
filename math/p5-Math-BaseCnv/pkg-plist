@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Math/BaseCnv.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BaseCnv/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BaseCnv
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math
