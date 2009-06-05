@@ -1,3 +1,6 @@
+include/suitesparse/SuiteSparseQR.hpp
+include/suitesparse/SuiteSparseQR_C.h
+include/suitesparse/SuiteSparseQR_definitions.h
 include/suitesparse/UFconfig.h
 include/suitesparse/amd.h
 include/suitesparse/amd_internal.h
@@ -25,6 +28,7 @@ include/suitesparse/cs.h
 include/suitesparse/klu.h
 include/suitesparse/klu_internal.h
 include/suitesparse/klu_version.h
+include/suitesparse/spqr.hpp
 include/suitesparse/umfpack.h
 include/suitesparse/umfpack_col_to_triplet.h
 include/suitesparse/umfpack_defaults.h

@@ -1,0 +1,11 @@
+--- CHOLMOD/Lib/Makefile.dist	2009-05-26 08:53:07.000000000 +0200
++++ CHOLMOD/Lib/Makefile	2009-05-26 08:53:22.000000000 +0200
+@@ -116,7 +116,7 @@
+ $(OBJ): $(INC)
+ 
+ I = -I../../AMD/Include -I../../AMD/Source -I../../COLAMD/Include \
+-	-I$(METIS_PATH)/Lib -I../../CCOLAMD/Include -I../../CAMD/Include \
++	-I$(METIS_PATH) -I../../CCOLAMD/Include -I../../CAMD/Include \
+ 	-I../Include -I../../UFconfig
+ 
+ #-------------------------------------------------------------------------------
