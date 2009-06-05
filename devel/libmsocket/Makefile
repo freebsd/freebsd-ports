@@ -37,4 +37,8 @@ CFLAGS+=	-fPIC -DPIC
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+post-patch:
+	${REINPLACE_CMD} 's,  withval=$$with_libevent; cf_enable_libevent=$$enableval,   withval=$$with_libevent; cf_enable_libevent=$$with_libevent,' \
+		${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
