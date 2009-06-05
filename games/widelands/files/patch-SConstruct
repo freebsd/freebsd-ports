@@ -1,5 +1,5 @@
 --- SConstruct.orig	2008-10-06 21:43:03.000000000 +0400
-+++ SConstruct	2008-11-09 18:44:06.000000000 +0300
++++ SConstruct	2009-06-05 20:38:30.000000000 +0400
 @@ -101,7 +101,7 @@
  
  opts=cli_options()
@@ -9,3 +9,11 @@
  env.Tool("ctags", toolpath=['build/scons-tools'])
  env.Tool("PNGShrink", toolpath=['build/scons-tools'])
  env.Tool("astyle", toolpath=['build/scons-tools'])
+@@ -195,7 +195,6 @@
+ install=env.Install('installtarget', 'build-widelands.sh') # the second argument is a (neccessary) dummy
+ Alias('install', install)
+ AlwaysBuild(install)
+-env.AddPreAction(install, Action(buildlocale))
+ 
+ uninstall=env.Uninstall('uninstalltarget', 'build-widelands.sh') # the second argument is a (neccessary) dummy
+ Alias('uninstall', uninstall)
