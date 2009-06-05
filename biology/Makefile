@@ -62,9 +62,7 @@
     SUBDIR += p5-Bio-Graphics
     SUBDIR += p5-Bio-Phylo
     SUBDIR += p5-bioperl
-    SUBDIR += p5-bioperl-devel
     SUBDIR += p5-bioperl-run
-    SUBDIR += p5-bioperl-run-devel
     SUBDIR += paml
     SUBDIR += phd2fasta
     SUBDIR += phrap

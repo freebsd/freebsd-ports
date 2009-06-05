@@ -1,8 +1,0 @@
-===============================================================================
-To use the programs in this package, add the path
-%%DATADIR%%/bin to your PATH environment variable.
-
-Then, type
-gmat --job %%DATADIR%%/test/BOOKFILES %%DOCSDIR%%/gmat.sgm
-to format the documentation.
-===============================================================================

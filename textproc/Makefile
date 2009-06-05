@@ -186,7 +186,6 @@
     SUBDIR += gladtex
     SUBDIR += glark
     SUBDIR += glimpse
-    SUBDIR += gmat
     SUBDIR += gmetadom
     SUBDIR += gnome-doc-utils
     SUBDIR += gnome-spell
