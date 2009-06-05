@@ -1,0 +1,5 @@
+BSD licensed charset/encoding converter library with more function than
+libiconv. (Currently only support few codecs)
+This port is a perl wrapper for bsdconv.
+
+WWW: http://github.com/buganini/bsdconv/
