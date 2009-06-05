@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.47
+PORTVERSION=	2.48
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		${MASTER_SITE_GENTOO}
@@ -17,19 +17,17 @@ COMMENT=	Lightweight, easy to configure DNS forwarder and DHCP server
 
 MAN8=		dnsmasq.8
 
-docs=		CHANGELOG FAQ doc.html setup.html
-PORTDOCS=	${docs:T}
+PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}" COPTS="${CFLAGS}"
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 
-OPTIONS=	IPV6 "IPv6 support" off
-OPTIONS+=	DBUS "D_BUS support" off
+OPTIONS=	IPV6 "IPv6 support" on
+OPTIONS+=	DBUS "DBUS support" off
 
 .include <bsd.port.pre.mk>
 
@@ -45,7 +43,7 @@ CFLAGS+=	-DHAVE_DBUS
 USE_RC_SUBR=	dnsmasq.sh
 
 post-patch:
-.if ${OSVERSION} < 700000
+.if ${OSVERSION} < 700000 && defined(WITH_DBUS)
 	@${REINPLACE_CMD} -e 's|DBUS_LIBS="|DBUS_LIBS="${PTHREAD_LIBS} |' ${WRKSRC}/Makefile
 .endif
 
@@ -55,7 +53,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.8 ${PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${docs} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	${MKDIR} ${EXAMPLESDIR}/dynamic-dnsmasq ${EXAMPLESDIR}/dnslist
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl ${EXAMPLESDIR}/dynamic-dnsmasq/
