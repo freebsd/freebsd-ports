@@ -10,9 +10,10 @@ PORTNAME=	autobench
 PORTVERSION=	2.1.2
 PORTREVISION=	2
 CATEGORIES=	benchmarks www
-MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/
+MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/ \
+		http://www.sfr-fresh.com/unix/privat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Automating the process of benchmarking a web server
 
 RUN_DEPENDS=	httperf:${PORTSDIR}/benchmarks/httperf \
