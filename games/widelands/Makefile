@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	widelands
-DISTVERSION=	build13rc
+DISTVERSION=	build13
 CATEGORIES=	games
 MASTER_SITES=	SFE
-DISTNAME=	${PORTNAME}-${DISTVERSION:C/^b/B/}-src
+DISTNAME=	${PORTNAME:C/^w/W/}-${DISTVERSION:C/^b/B/}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
@@ -18,23 +18,19 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		boost_thread.4:${PORTSDIR}/devel/boost
 
 USE_BZIP2=	yes
-USE_PYTHON_BUILD=	2.4+
 USE_GETTEXT=	yes
+USE_PYTHON_BUILD=2.4+
 USE_SDL=	sdl mixer image net ttf gfx
 USE_GCC=	4.2+
 
 PLIST_FILES=	bin/widelands
 
-WRKSRC=		${WRKDIR}/widelands
+WRKSRC=		${WRKDIR}/widelands-${DISTVERSION:C/build/b/}
 
-SCONS_ARGS=	CXXFLAGS="${CXXFLAGS}" LINKFLAGS="${LDFLAGS}" \
-		CPPPATH=${LOCALBASE}/include LIBPATH=${LOCALBASE}/lib \
-		CC="${CC}" CXX="${CXX}" \
-		install_prefix=${PREFIX} bindir=bin datadir=share/widelands \
+USE_SCONS=	yes
+SCONS_ARGS=	install_prefix=${PREFIX} bindir=bin datadir=share/widelands \
 		localedir=share/widelands/locale build=release
-
-post-extract:
-	@cd ${WRKSRC}/utils && ${TAR} xf scons-local-1.0.1.tar.gz
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/prefer_localdata/ s|True|False|' \
@@ -45,12 +41,6 @@ post-patch:
 		${WRKSRC}/utils/buildlocale.py
 	@${REINPLACE_CMD} -e 's|revstring=.*|return "${DISTVERSION}-FreeBSD"|' \
 		${WRKSRC}/build/scons-tools/detect_revision.py
-
-do-build:
-	@cd ${WRKSRC} && ${PYTHON_CMD} utils/scons.py ${SCONS_ARGS}
-
-do-install:
-	@cd ${WRKSRC} && ${PYTHON_CMD} utils/scons.py ${SCONS_ARGS} install
 
 post-install:
 	@${FIND} ${DATADIR} -type f | \
