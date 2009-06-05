@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Finance/Quote/BMONesbittBurns.pm
 %%SITE_PERL%%/Finance/Quote/Bourso.pm
 %%SITE_PERL%%/Finance/Quote/Cdnfundlibrary.pm
+%%SITE_PERL%%/Finance/Quote/Currencies.pm
 %%SITE_PERL%%/Finance/Quote/Cominvest.pm
 %%SITE_PERL%%/Finance/Quote/DWS.pm
 %%SITE_PERL%%/Finance/Quote/Deka.pm
@@ -15,10 +16,12 @@
 %%SITE_PERL%%/Finance/Quote/FinanceCanada.pm
 %%SITE_PERL%%/Finance/Quote/Finanzpartner.pm
 %%SITE_PERL%%/Finance/Quote/Fool.pm
+%%SITE_PERL%%/Finance/Quote/GoldMoney.pm
 %%SITE_PERL%%/Finance/Quote/HEX.pm
 %%SITE_PERL%%/Finance/Quote/IndiaMutual.pm
 %%SITE_PERL%%/Finance/Quote/LeRevenu.pm
 %%SITE_PERL%%/Finance/Quote/ManInvestments.pm
+%%SITE_PERL%%/Finance/Quote/Morningstar.pm
 %%SITE_PERL%%/Finance/Quote/NZX.pm
 %%SITE_PERL%%/Finance/Quote/Platinum.pm
 %%SITE_PERL%%/Finance/Quote/SEB.pm
