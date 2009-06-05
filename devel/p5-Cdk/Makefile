@@ -21,4 +21,7 @@ LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
 
 PERL_CONFIGURE=	yes
 
+post-patch:
+	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
