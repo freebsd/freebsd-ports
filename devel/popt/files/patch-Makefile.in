@@ -1,37 +1,28 @@
---- ./Makefile.in.orig	Sat Aug 31 17:22:18 2002
-+++ ./Makefile.in	Wed Apr  4 12:24:18 2007
-@@ -124,7 +124,7 @@
- 	popt.ps
- 
- 
--SUBDIRS = intl po
-+SUBDIRS = po
- 
- INCLUDES = -I. -I$(top_srcdir)
- 
-@@ -133,13 +133,13 @@
- noinst_PROGRAMS = test1 test2 test3
- test1_SOURCES = test1.c
- test1_LDFLAGS = -all-static
--test1_LDADD = $(lib_LTLIBRARIES)
-+test1_LDADD = $(lib_LTLIBRARIES) $(LTLIBICONV)
- test2_SOURCES = test2.c
- test2_LDFLAGS = -all-static
--test2_LDADD = $(lib_LTLIBRARIES)
-+test2_LDADD = $(lib_LTLIBRARIES) $(LTLIBICONV)
- test3_SOURCES = test3.c
- test3_LDFLAGS = -all-static
--test3_LDADD = $(lib_LTLIBRARIES)
-+test3_LDADD = $(lib_LTLIBRARIES) # $(LTLIBICONV)
- 
- noinst_SCRIPTS = testit.sh
- 
-@@ -164,7 +164,7 @@
- LTLIBRARIES = $(lib_LTLIBRARIES)
- 
- libpopt_la_LDFLAGS =
+--- Makefile.in.old	2009-05-07 15:17:31.000000000 -0500
++++ Makefile.in	2009-05-07 15:21:28.000000000 -0500
+@@ -70,7 +70,7 @@
+ 	"$(DESTDIR)$(includedir)"
+ usrlibLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(usrlib_LTLIBRARIES)
 -libpopt_la_LIBADD =
 +libpopt_la_LIBADD = $(LTLIBINTL)
- am_libpopt_la_OBJECTS = popt.lo findme.lo poptparse.lo poptconfig.lo \
- 	popthelp.lo
+ am_libpopt_la_OBJECTS = popt.lo poptparse.lo poptconfig.lo popthelp.lo \
+ 	poptint.lo
  libpopt_la_OBJECTS = $(am_libpopt_la_OBJECTS)
+@@ -287,13 +287,13 @@
+ noinst_HEADERS = poptint.h system.h
+ test1_SOURCES = test1.c
+ test1_LDFLAGS = 
+-test1_LDADD = $(usrlib_LTLIBRARIES)
++test1_LDADD = $(usrlib_LTLIBRARIES) $(LTLIBICONV)
+ test2_SOURCES = test2.c
+ test2_LDFLAGS = 
+-test2_LDADD = $(usrlib_LTLIBRARIES)
++test2_LDADD = $(usrlib_LTLIBRARIES) $(LTLIBICONV)
+ test3_SOURCES = test3.c
+ test3_LDFLAGS = 
+-test3_LDADD = $(usrlib_LTLIBRARIES)
++test3_LDADD = $(usrlib_LTLIBRARIES) $(LTLIBICONV)
+ noinst_SCRIPTS = testit.sh
+ TESTS_ENVIRONMENT = \
+ test1="./test1"

@@ -6,15 +6,9 @@
 #
 
 PORTNAME=	popt
-PORTVERSION=	1.7
-PORTREVISION=	5
+PORTVERSION=	1.14
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
-		http://rpmfind.net/linux/rpm.org/rpm/dist/%SUBDIR%/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
-		http://gd.tuwien.ac.at/utils/rpm.org/dist/%SUBDIR%/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/rpm/dist/%SUBDIR%/ \
-		ftp://ftp.sunfreeware.com/pub/freeware/SOURCES/
+MASTER_SITES=	ftp://ftp.sunfreeware.com/pub/freeware/SOURCES/
 MASTER_SITE_SUBDIR=	rpm-4.1.x
 
 MAINTAINER=	jpaetzel@FreeBSD.org
