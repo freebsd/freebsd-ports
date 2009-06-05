@@ -1,0 +1,31 @@
+------------------------------------
+Index: ./FEATURES
+diff -u ./FEATURES:1.57 ./FEATURES:1.58
+--- ./FEATURES:1.57	Tue Dec 16 23:18:50 2008
++++ ./FEATURES	Mon Jun  1 23:31:57 2009
+@@ -75,6 +75,9 @@
+ 		to use when signing based on the contents of an arbitrary
+ 		header.  (dkim-filter)
+ 
++SENDER_HEADERS	Optional control over which headers are used by the filter
++		to make the sign vs. verify decision.  (dkim-filter)
++
+ STATS		Optional generation of statistics about pass/fail sorted
+ 		by domain and canonicalization.  Requires Sleepycat DB.
+ 		(dkim-filter, libdkim)
+
+------------------------------------
+Index: ./site.config.m4.dist
+diff -u ./site.config.m4.dist:1.43 ./site.config.m4.dist:1.44
+--- ./site.config.m4.dist:1.43	Fri Feb  6 17:06:41 2009
++++ ./site.config.m4.dist	Mon Jun  1 23:31:57 2009
+@@ -167,6 +167,7 @@
+ dnl APPENDDEF(`confENVDEF', `-D_FFR_REPORT_INTERVALS ')
+ dnl APPENDDEF(`confENVDEF', `-D_FFR_SELECT_CANONICALIZATION ')
+ dnl APPENDDEF(`confENVDEF', `-D_FFR_SELECTOR_HEADER ')
++dnl APPENDDEF(`confENVDEF', `-D_FFR_SENDER_HEADERS ')
+ dnl APPENDDEF(`confENVDEF', `-D_FFR_STATS ')
+ dnl APPENDDEF(`confENVDEF', `-D_FFR_VBR ')
+ dnl APPENDDEF(`confENVDEF', `-D_FFR_ZTAGS ')
+
+------------------------------------

@@ -56,6 +56,10 @@ SITE_SUB+=	-e '/-D_FFR_SELECT_CANONICALIZATION/s|^dnl ||'
 SITE_SUB+=	-e '/-D_FFR_SELECTOR_HEADER/s|^dnl ||'
 .endif
 
+.if defined(WITH_SENDER_HEADERS) && !defined(WITHOUT_SENDER_HEADERS)
+SITE_SUB+=	-e '/-D_FFR_SENDER_HEADERS/s|^dnl ||'
+.endif
+
 .if defined(WITH_STATS) && !defined(WITHOUT_STATS)
 SITE_SUB+=	-e '/-D_FFR_STATS/s|^dnl ||'
 .endif
