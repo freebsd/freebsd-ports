@@ -1,0 +1,11 @@
+--- libgnomenu/Makefile.am.orig	2009-04-27 10:04:37.000000000 +0200
++++ libgnomenu/Makefile.am	2009-04-27 10:05:43.000000000 +0200
+@@ -32,7 +32,7 @@
+ libgnomenu_la_LIBADD = $(GTK_LIBS) $(WNCK_LIBS) $(X11_LIBS) ../libcompat/libcompat.la
+ libgnomenu_la_LDFLAGS = -version-info 2:0:0 -release $(VERSION) -no-undefined -Wl,--as-needed
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libgnomenu.pc
+ 
+ libgnomenu_includedir = $(includedir)/libgnomenu

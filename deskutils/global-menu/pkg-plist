@@ -1,0 +1,60 @@
+include/libgnomenu/application.h
+include/libgnomenu/globalmenu.h
+include/libgnomenu/gnomenu.h
+include/libgnomenu/helper.h
+include/libgnomenu/interface-item.h
+include/libgnomenu/interface-shell.h
+include/libgnomenu/keygrab.h
+include/libgnomenu/label.h
+include/libgnomenu/menu.h
+include/libgnomenu/menubar.h
+include/libgnomenu/menubarbox.h
+include/libgnomenu/menuitem.h
+include/libgnomenu/menushellutils.h
+include/libgnomenu/monitor.h
+include/libgnomenu/parser.h
+include/libgnomenu/serializer.h
+include/libgnomenu/window.h
+lib/bonobo/servers/GlobalMenu_PanelApplet.server
+lib/gtk-2.0/modules/libglobalmenu-gnome-0.7.5.so
+lib/gtk-2.0/modules/libglobalmenu-gnome.la
+lib/gtk-2.0/modules/libglobalmenu-gnome.so
+lib/libgnomenu-0.7.5.so
+lib/libgnomenu-0.7.5.so.2
+lib/libgnomenu.la
+lib/libgnomenu.so
+libdata/pkgconfig/libgnomenu.pc
+libdata/bonobo/servers/GlobalMenu_PanelApplet.server
+libexec/GlobalMenu.PanelApplet
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.GNOME
+%%DOCSDIR%%/README.XFCE
+share/locale/de/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/en_GB/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/es/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/fi/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/fr/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/hu/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/id/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/it/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/ko/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/nl/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/pl/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/pt/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/ru/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/sv/LC_MESSAGES/gnome-globalmenu.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-globalmenu.mo
+share/pixmaps/globalmenu.png
+@dirrmtry share/locale
+@dirrmtry share/pixmaps
+@dirrmtry include/libgnomenu
+@dirrmtry libdata/pkgconfig
+@dirrmtry libexec
+@dirrmtry lib/bonobo/servers
+@dirrmtry libdata/bonobo/servers
+@dirrm %%DOCSDIR%%
