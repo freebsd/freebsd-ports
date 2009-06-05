@@ -115,7 +115,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.19
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -159,9 +159,9 @@ DATADIR?=	${PREFIX}/share/mutt
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
-		--with-sharedir=${PREFIX}/share/mutt --with-docdir=${DOCSDIR} \
-		--sysconfdir=${PREFIX}/etc --enable-external-dotlock \
-		--enable-pop --enable-imap --disable-warnings
+		--with-docdir=${DOCSDIR} --sysconfdir=${PREFIX}/etc \
+		--enable-external-dotlock --enable-pop --enable-imap \
+		--disable-warnings
 .if defined(MUTT_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
@@ -494,7 +494,7 @@ CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
 CONFIGURE_ARGS+=	--disable-hcache
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
-CONFIGURE_ARGS+=	 --disable-inodesort --without-qdbm
+CONFIGURE_ARGS+=	--without-qdbm
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 SCRIPTS_ENV+=	MUTT_SIDEBAR_PATCH="yes"
@@ -540,7 +540,7 @@ post-patch::
 
 .if ${XML_USED} == yes
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${PREFIX}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		lynx:${PORTSDIR}/www/lynx
 post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-xml
