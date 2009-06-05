@@ -7,6 +7,7 @@
     SUBDIR += ascii2binary
     SUBDIR += asr10
     SUBDIR += base64
+    SUBDIR += bsdconv
     SUBDIR += btoa
     SUBDIR += chmview
     SUBDIR += cmios9
