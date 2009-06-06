@@ -17,6 +17,8 @@ COMMENT=	A tabled Logic Programming and Deductive Database system
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
+BROKEN=		does not package
+
 WRKSRC=		${WRKDIR}/XSB/build
 USE_GMAKE=	yes
 
