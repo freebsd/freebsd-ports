@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	base
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.3.1
 CATEGORIES=	security
 MASTER_SITES=	SF/secureideas
 
