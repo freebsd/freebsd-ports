@@ -1180,6 +1180,7 @@ bsd-splash-changer              ports/sysutils/bsd-splash-changer
 bsdadminscripts                 ports/sysutils/bsdadminscripts
 bsdar                           ports/archivers/bsdar
 bsdbktr_tvtune                  ports/multimedia/bsdbktr_tvtune
+bsdconv                         ports/converters/bsdconv
 bsddiff                         ports/textproc/bsddiff
 bsdftpd-ssl                     ports/ftp/bsdftpd-ssl
 bsdgrep                         ports/textproc/bsdgrep
@@ -2145,7 +2146,6 @@ delegate                        ports/net/delegate
 deleted                         ports/sysutils/deleted
 deltup                          ports/sysutils/deltup
 deluge                          ports/net-p2p/deluge
-deluge05                        ports/net-p2p/deluge05
 demeter                         ports/graphics/demeter
 demime                          ports/mail/demime
 demoniac                        ports/misc/demoniac
@@ -4140,6 +4140,7 @@ gimmix                          ports/audio/gimmix
 gimp                            ports/graphics/gimp
 gimp-app                        ports/graphics/gimp-app
 gimp-data-extras                ports/graphics/gimp-data-extras
+gimp-focusblur-plugin           ports/graphics/gimp-focusblur-plugin
 gimp-gap                        ports/graphics/gimp-gap
 gimp-greycstoration             ports/graphics/gimp-greycstoration
 gimp-gutenprint                 ports/print/gimp-gutenprint
@@ -4254,6 +4255,7 @@ glload                          ports/sysutils/glload
 glmaze                          ports/games/glmaze
 glob2                           ports/games/glob2
 global                          ports/devel/global
+global-menu                     ports/deskutils/global-menu
 glog                            ports/devel/glog
 glom                            ports/databases/glom
 gloox                           ports/net-im/gloox
@@ -4276,7 +4278,6 @@ gman                            ports/misc/gman
 gmanedit                        ports/editors/gmanedit
 gmap                            ports/biology/gmap
 gmastermind                     ports/games/gmastermind
-gmat                            ports/textproc/gmat
 gmcal                           ports/deskutils/gmcal
 gmencoder                       ports/multimedia/gmencoder
 gmerlin                         ports/multimedia/gmerlin
@@ -11727,6 +11728,10 @@ p5-LWP-UserAgent-Determined     ports/www/p5-LWP-UserAgent-Determined
 p5-LWP-UserAgent-POE            ports/www/p5-LWP-UserAgent-POE
 p5-LWP-UserAgent-WithCache      ports/www/p5-LWP-UserAgent-WithCache
 p5-LWPx-ParanoidAgent           ports/www/p5-LWPx-ParanoidAgent
+p5-LaTeX-Driver                 ports/textproc/p5-LaTeX-Driver
+p5-LaTeX-Encode                 ports/textproc/p5-LaTeX-Encode
+p5-LaTeX-TOM                    ports/textproc/p5-LaTeX-TOM
+p5-LaTeX-Table                  ports/textproc/p5-LaTeX-Table
 p5-Layout-Manager               ports/graphics/p5-Layout-Manager
 p5-Lchown                       ports/sysutils/p5-Lchown
 p5-Lexical-Alias                ports/devel/p5-Lexical-Alias
@@ -11904,6 +11909,7 @@ p5-Math-Algebra-Symbols         ports/math/p5-Math-Algebra-Symbols
 p5-Math-Base36                  ports/math/p5-Math-Base36
 p5-Math-Base85                  ports/math/p5-Math-Base85
 p5-Math-BaseCalc                ports/math/p5-Math-BaseCalc
+p5-Math-BaseCnv                 ports/math/p5-Math-BaseCnv
 p5-Math-Bezier                  ports/math/p5-Math-Bezier
 p5-Math-Bezier-Convert          ports/math/p5-Math-Bezier-Convert
 p5-Math-BigInt                  ports/math/p5-Math-BigInt
@@ -12333,6 +12339,7 @@ p5-PDF-API2                     ports/textproc/p5-PDF-API2
 p5-PDF-API3                     ports/textproc/p5-PDF-API3
 p5-PDF-Create                   ports/textproc/p5-PDF-Create
 p5-PDF-FromHTML                 ports/textproc/p5-PDF-FromHTML
+p5-PDF-Table                    ports/textproc/p5-PDF-Table
 p5-PDF-Template                 ports/print/p5-PDF-Template
 p5-PDF-Writer                   ports/textproc/p5-PDF-Writer
 p5-PDFLib                       ports/print/p5-PDFLib
@@ -13699,9 +13706,7 @@ p5-bio-glite                    ports/biology/p5-Bio-Glite
 p5-bio-graphics                 ports/biology/p5-Bio-Graphics
 p5-bio-phylo                    ports/biology/p5-Bio-Phylo
 p5-bioperl                      ports/biology/p5-bioperl
-p5-bioperl-devel                ports/biology/p5-bioperl-devel
 p5-bioperl-run                  ports/biology/p5-bioperl-run
-p5-bioperl-run-devel            ports/biology/p5-bioperl-run-devel
 p5-bit-shiftreg                 ports/math/p5-Bit-ShiftReg
 p5-bit-vector                   ports/math/p5-Bit-Vector
 p5-bit-vector-minimal           ports/math/p5-Bit-Vector-Minimal
@@ -13715,6 +13720,7 @@ p5-bsd-jail-object              ports/sysutils/p5-BSD-Jail-Object
 p5-bsd-resource                 ports/devel/p5-BSD-Resource
 p5-bsd-stat                     ports/devel/p5-BSD-stat
 p5-bsd-sysctl                   ports/sysutils/p5-BSD-Sysctl
+p5-bsdconv                      ports/converters/p5-bsdconv
 p5-bundle-perl6                 ports/devel/p5-Bundle-Perl6
 p5-bundle-slash                 ports/www/p5-Bundle-Slash
 p5-bundle-sledge                ports/www/p5-Bundle-Sledge
@@ -15174,6 +15180,10 @@ p5-json1                        ports/converters/p5-JSON1
 p5-kinosearch                   ports/textproc/p5-KinoSearch
 p5-kwalify                      ports/textproc/p5-Kwalify
 p5-kwiki                        ports/www/p5-Kwiki
+p5-latex-driver                 ports/textproc/p5-LaTeX-Driver
+p5-latex-encode                 ports/textproc/p5-LaTeX-Encode
+p5-latex-table                  ports/textproc/p5-LaTeX-Table
+p5-latex-tom                    ports/textproc/p5-LaTeX-TOM
 p5-layout-manager               ports/graphics/p5-Layout-Manager
 p5-lchown                       ports/sysutils/p5-Lchown
 p5-lego-rcx                     ports/misc/p5-LEGO-RCX
@@ -15346,6 +15356,7 @@ p5-math-algebra-symbols         ports/math/p5-Math-Algebra-Symbols
 p5-math-base36                  ports/math/p5-Math-Base36
 p5-math-base85                  ports/math/p5-Math-Base85
 p5-math-basecalc                ports/math/p5-Math-BaseCalc
+p5-math-basecnv                 ports/math/p5-Math-BaseCnv
 p5-math-bezier                  ports/math/p5-Math-Bezier
 p5-math-bezier-convert          ports/math/p5-Math-Bezier-Convert
 p5-math-bigint                  ports/math/p5-Math-BigInt
@@ -15850,6 +15861,7 @@ p5-pdf-api2                     ports/textproc/p5-PDF-API2
 p5-pdf-api3                     ports/textproc/p5-PDF-API3
 p5-pdf-create                   ports/textproc/p5-PDF-Create
 p5-pdf-fromhtml                 ports/textproc/p5-PDF-FromHTML
+p5-pdf-table                    ports/textproc/p5-PDF-Table
 p5-pdf-template                 ports/print/p5-PDF-Template
 p5-pdf-writer                   ports/textproc/p5-PDF-Writer
 p5-pdflib                       ports/print/p5-PDFLib
@@ -17947,6 +17959,7 @@ php4-yp                         ports/net/php4-yp
 php4-zlib                       ports/archivers/php4-zlib
 php5                            ports/lang/php5
 php5-bcmath                     ports/math/php5-bcmath
+php5-bsdconv                    ports/converters/php5-bsdconv
 php5-bz2                        ports/archivers/php5-bz2
 php5-calendar                   ports/misc/php5-calendar
 php5-chartdirector              ports/graphics/php5-chartdirector
