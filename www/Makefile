@@ -323,6 +323,7 @@
     SUBDIR += kompozer
     SUBDIR += larbin
     SUBDIR += libapreq2
+    SUBDIR += libecap
     SUBDIR += libepc
     SUBDIR += libghttp
     SUBDIR += libgtkhtml
