@@ -1,0 +1,30 @@
+@comment $FreeBSD$
+include/libecap/adapter/service.h
+include/libecap/adapter/xaction.h
+include/libecap/common/libecap.h
+include/libecap/common/registry.h
+include/libecap/common/forward.h
+include/libecap/common/errors.h
+include/libecap/common/log.h
+include/libecap/common/memory.h
+include/libecap/common/call.h
+include/libecap/common/area.h
+include/libecap/common/name.h
+include/libecap/common/names.h
+include/libecap/common/header.h
+include/libecap/common/body.h
+include/libecap/common/body_size.h
+include/libecap/common/message.h
+include/libecap/common/version.h
+include/libecap/common/delay.h
+include/libecap/common/autoconf.h
+include/libecap/host/host.h
+include/libecap/host/xaction.h
+@dirrm include/libecap/adapter
+@dirrm include/libecap/common
+@dirrm include/libecap/host
+@dirrm include/libecap
+lib/libecap.a
+lib/libecap.la
+lib/libecap.so
+lib/libecap.so.0
