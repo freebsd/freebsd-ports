@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	180.44
+DISTVERSION?=	180.60
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -79,11 +79,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e \
 		's/suser(CURTHREAD)/priv_check(CURTHREAD, PRIV_DRIVER)/' \
 			${WRKSRC}/src/nvidia_os.c
-.endif
-# minor() is removed in recent -CURRENT
-.if ${OSVERSION} >= 800062
-	${REINPLACE_CMD} -e 's,minor(,dev2unit(,' \
-		${WRKSRC}/src/nvidia_dev.c ${WRKSRC}/src/nvidia_subr.c
 .endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
