@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Engine-Middleware
-PORTVERSION=	0.11
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,15 +15,18 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for official distribution of HTTP::Engine
 
 RUN_DEPENDS=	\
-	p5-Any-Moose>=0.06:${PORTSDIR}/devel/p5-Any-Moose \
+	p5-Any-Moose>=0.08:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-Mouse>=0.20:${PORTSDIR}/devel/p5-Moose \
-	p5-HTTP-Engine>=0.1.6:${PORTSDIR}/www/p5-HTTP-Engine \
-	p5-libwww>0:${PORTSDIR}/www/p5-libwww
+	p5-HTTP-Engine>=0.1.8:${PORTSDIR}/www/p5-HTTP-Engine \
+	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
+	p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	HTTP::Engine::Middleware.3 \
+	HTTP::Engine::Middleware::AccessLog.3 \
 	HTTP::Engine::Middleware::DebugRequest.3 \
 	HTTP::Engine::Middleware::DebugScreen.3 \
 	HTTP::Engine::Middleware::DoCoMoGUID.3 \
@@ -37,6 +40,7 @@ MAN3=	HTTP::Engine::Middleware.3 \
 	HTTP::Engine::Middleware::ReverseProxy.3 \
 	HTTP::Engine::Middleware::Static.3 \
 	HTTP::Engine::Middleware::Status.3 \
-	HTTP::Engine::Middleware::Status::Memory.3
+	HTTP::Engine::Middleware::Status::Memory.3 \
+	HTTP::Engine::Middleware::UploadTemp.3
 
 .include <bsd.port.mk>
