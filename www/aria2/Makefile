@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	1.3.3
+DISTVERSION=	1.4.0
 CATEGORIES=	www
 MASTER_SITES=	SFE
 DISTNAME=	${PORTNAME}-${DISTVERSION}
@@ -27,7 +27,7 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS+=	--disable-nls
 .else
 LINGUAS=	bg ca da de es en@boldquot en@quot el fi fr he hu id it ja nl nn pl pt_BR ru sv \
-		sr th tr uk vi zh_CN zh_TW
+		sk sr th tr uk vi zh_CN zh_TW
 .endif
 PLIST_FILES=	bin/aria2c \
 		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2.mo|}
