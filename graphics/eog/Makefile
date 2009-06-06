@@ -8,12 +8,15 @@
 
 PORTNAME=	eog
 PORTVERSION=	2.26.2
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The Eye Of Gnome image viewer
+
+LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
