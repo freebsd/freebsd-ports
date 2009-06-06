@@ -5,7 +5,7 @@ copy_file()
 {
 	srcfile="$1"
 	dstfile="$2"
-
+	
 	case $distfile in
 		*.zip)
 			#We may not want to push all files through sed			echo "zip file"
@@ -13,7 +13,7 @@ copy_file()
 			;;
 		*)
 			rm -f $dstfile
-			cat "$srcfile" | sed 's/linux/freebsd/g; s/Linux/FreeBSD/g; s/x86_64/amd64/g' > "$dstfile"
+			cat "$srcfile" | sed 's/linux/freebsd/g; s/Linux/FreeBSD/g' > "$dstfile"
 			;;
 		esac
 }
@@ -31,9 +31,10 @@ copy_dir()
 		find "$dstdir" -name \*.so -delete
 		find "$dstdir" -name \*.so.\* -delete
 		find "$dstdir" -type f -print0 | \
-		xargs -0 sed -i '.bak' 's/linux/freebsd/g; s/Linux/FreeBSD/g; s/x86_64/amd64/g'
-		find "$dstdir" -name \*.bak -delete
-	fi
+		xargs -0 sed -i '.bak' 's/linux/freebsd/g; s/Linux/FreeBSD/g'
+		find "$dstdir" -name \*.bak -delete 
+		find -d "$dstdir" -type d -name "linux" -exec rm -rf {} \;
+	fi 
 }
 
 prepare_files()
@@ -43,7 +44,7 @@ prepare_files()
 	# Copy the files and rename/change them appropriately
 	for src in $COPY_LIST
 	do
-		dst=`echo $src | sed 's/linux/freebsd/g; s/Linux/FreeBSD/g; s/x86_64/amd64/g'`
+		dst=`echo $src | sed 's/linux/freebsd/g; s/Linux/FreeBSD/g'`
 		echo Copying $src into $dst
 		if [ -d ${WRKSRC}/$src ]
 		then
@@ -55,14 +56,20 @@ prepare_files()
 
 	# Files with spaces in their path...
 	src="${SWTGTK}/make_linux.mak"
-	dst=`echo $src | sed 's/linux/freebsd/g; s/Linux/FreeBSD/g; s/x86_64/amd64/g'`
+	dst=`echo $src | sed 's/linux/freebsd/g; s/Linux/FreeBSD/g'`
 	echo Copying $src into $dst
 	copy_file "${WRKSRC}/$src" "${WRKSRC}/$dst"
+
+	# New x86_64 fragment
+	src="plugins/org.eclipse.core.net.freebsd.x86"
+	dst="plugins/org.eclipse.core.net.freebsd.x86_64"
+	echo Copying $src into $dst
+	copy_dir "${WRKSRC}/$src" "${WRKSRC}/$dst"
 
 	find ${WRKSRC} -name \*.so -delete
 	find ${WRKSRC} -name \*.so.\* -delete
 }
-#features/org.eclipse.platform.launchers/library/gtk/make_linux.mak
+
 COPY_LIST="
 assemble.org.eclipse.sdk.linux.gtk.x86.xml
 assemble.org.eclipse.sdk.linux.gtk.x86_64.xml
@@ -104,4 +111,6 @@ plugins/org.eclipse.update.core.linux.source
 SWTGTK="plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library"
 
 prepare_files
+
+
 exit 0

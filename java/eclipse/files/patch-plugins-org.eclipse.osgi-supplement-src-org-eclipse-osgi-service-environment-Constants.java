@@ -13,12 +13,3 @@
  	 * Constant string (value "aix") indicating the platform is running on an
  	 * AIX-based operating system.
  	 */
-@@ -115,7 +121,7 @@
- 	 * @deprecated use <code>ARCH_X86_64</code> instead. Note the values
- 	 * has been changed to be the value of the <code>ARCH_X86_64</code> constant.
- 	 */
--	public static final String ARCH_AMD64 = ARCH_X86_64;
-+	public static final String ARCH_AMD64 = "amd64";//$NON-NLS-1$
- 
- 	/**
- 	 * Constant string (value "ia64") indicating the platform is running on an

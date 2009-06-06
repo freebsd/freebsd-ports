@@ -1,10 +1,10 @@
---- features/org.eclipse.platform.source/feature.xml.orig	2008-09-25 19:28:09.000000000 -0400
-+++ features/org.eclipse.platform.source/feature.xml	2008-09-25 19:27:48.000000000 -0400
+--- features/org.eclipse.platform.source/feature.xml.orig	2009-02-27 22:37:06.124041343 -0500
++++ features/org.eclipse.platform.source/feature.xml	2009-02-27 22:40:47.584956627 -0500
 @@ -67,6 +67,7 @@
- 	<plugin id="org.eclipse.update.ui.source" version="3.2.100.v20080318"     unpack="false"/>
+ 	<plugin id="org.eclipse.update.ui.source" version="3.2.101.R34x_v20081128"     unpack="false"/>
  	<plugin id="org.eclipse.ui.workbench.compatibility.source" version="3.2.0.I20080509-2000"     unpack="false"/>
- 	<plugin id="org.eclipse.update.core.linux.source" version="3.2.0.v20080422" os="linux"    unpack="false"/>
-+	<plugin id="org.eclipse.update.core.freebsd.source" version="3.2.0.v20080422" os="freebsd"    unpack="false"/>
+ 	<plugin id="org.eclipse.update.core.linux.source" version="3.2.1.R34x_v20081024" os="linux"    unpack="false"/>
++	<plugin id="org.eclipse.update.core.freebsd.source" version="3.2.1.R34x_v20081024" os="freebsd"    unpack="false"/>
  	<plugin id="org.eclipse.update.core.win32.source" version="3.2.100.v20080107" os="win32"    unpack="false"/>
- 	<plugin id="org.eclipse.ui.views.properties.tabbed.source" version="3.4.1.M20080730-0800"     unpack="false"/>
+ 	<plugin id="org.eclipse.ui.views.properties.tabbed.source" version="3.4.2.M20090127-1700"     unpack="false"/>
  	<plugin id="org.eclipse.equinox.security.source" version="1.0.1.R34x_v20080721"     unpack="false"/>

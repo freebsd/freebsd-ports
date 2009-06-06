@@ -1,0 +1,14 @@
+--- plugins/org.eclipse.swt.tools/build.xml.orig	2009-02-28 07:40:51.918083398 -0500
++++ plugins/org.eclipse.swt.tools/build.xml	2009-02-28 07:44:55.059088190 -0500
+@@ -66,9 +66,11 @@
+ 			<pathelement path="../org.eclipse.swt/@dot"/>
+ 			<pathelement path="../org.eclipse.swt.motif.solaris.sparc/@dot"/>
+ 			<pathelement path="../org.eclipse.swt.gtk.linux.x86_64/@dot"/>
++			<pathelement path="../org.eclipse.swt.gtk.freebsd.x86_64/@dot"/>
+ 			<pathelement path="../org.eclipse.swt.win32.win32.x86/@dot"/>
+ 			<pathelement path="../org.eclipse.swt.gtk.linux.s390x/@dot"/>
+ 			<pathelement path="../org.eclipse.swt.gtk.linux.x86/@dot"/>
++			<pathelement path="../org.eclipse.swt.gtk.freebsd.x86/@dot"/>
+ 			<pathelement path="../org.eclipse.swt.gtk.solaris.sparc/@dot"/>
+ 			<pathelement path="../org.eclipse.swt.photon.qnx.x86/@dot"/>
+ 			<pathelement path="../org.eclipse.swt.gtk.linux.s390/@dot"/>

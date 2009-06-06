@@ -22,10 +22,10 @@
           unpack="false"/>
  
     <plugin
-+         id="org.eclipse.swt.gtk.freebsd.amd64"
++         id="org.eclipse.swt.gtk.freebsd.x86_64"
 +         os="freebsd"
 +         ws="gtk"
-+         arch="amd64"
++         arch="x86_64"
 +         download-size="0"
 +         install-size="0"
 +         version="0.0.0"
@@ -57,10 +57,10 @@
           fragment="true"/>
  
     <plugin
-+         id="org.eclipse.equinox.launcher.gtk.freebsd.amd64"
++         id="org.eclipse.equinox.launcher.gtk.freebsd.x86_64"
 +         os="freebsd"
 +         ws="gtk"
-+         arch="amd64"
++         arch="x86_64"
 +         download-size="0"
 +         install-size="0"
 +         version="0.0.0"

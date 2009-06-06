@@ -1,0 +1,23 @@
+--- plugins/org.eclipse.pde.build/build.xml.orig	2009-02-15 14:54:04.518255168 -0500
++++ plugins/org.eclipse.pde.build/build.xml	2009-02-15 14:53:17.438264370 -0500
+@@ -26,14 +26,14 @@
+ 		</fileset>
+ 	</path>
+ 	<property name="bootclasspath" refid="path_bootclasspath"/>
+-<condition property="bundleBootClasspath" value="${J2SE-1.4}"	>
+-		<isset property="J2SE-1.4"/>
++<condition property="bundleBootClasspath" value="${J2SE-1.5}"	>
++		<isset property="J2SE-1.5"/>
+ 	</condition>
+-<condition property="bundleJavacSource" value="1.3"	>
+-		<isset property="J2SE-1.4"/>
++<condition property="bundleJavacSource" value="1.5"	>
++		<isset property="J2SE-1.5"/>
+ 	</condition>
+-<condition property="bundleJavacTarget" value="1.2"	>
+-		<isset property="J2SE-1.4"/>
++<condition property="bundleJavacTarget" value="1.5"	>
++		<isset property="J2SE-1.5"/>
+ 	</condition>
+ 	<property name="bundleJavacSource" value="${javacSource}"/>
+ 	<property name="bundleJavacTarget" value="${javacTarget}"/>

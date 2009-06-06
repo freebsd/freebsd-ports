@@ -1,6 +1,6 @@
---- features/org.eclipse.platform/feature.xml.orig	2008-08-02 15:25:04.000000000 -0400
-+++ features/org.eclipse.platform/feature.xml	2008-08-02 15:25:49.000000000 -0400
-@@ -96,6 +96,16 @@
+--- features/org.eclipse.platform/feature.xml.orig	2009-02-15 19:26:44.531713361 -0500
++++ features/org.eclipse.platform/feature.xml	2009-02-15 20:22:35.033072891 -0500
+@@ -96,6 +96,26 @@
           unpack="false"/>
  
     <plugin
@@ -14,10 +14,20 @@
 +         unpack="false"/>
 +
 +   <plugin
++         id="org.eclipse.core.net.freebsd.x86_64"
++         os="freebsd"
++         arch="x86_64"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         fragment="true"
++         unpack="false"/>
++
++   <plugin
           id="org.eclipse.core.resources"
           download-size="0"
           install-size="0"
-@@ -406,6 +416,26 @@
+@@ -406,6 +426,26 @@
           unpack="false"/>
  
     <plugin
@@ -31,9 +41,9 @@
 +         unpack="false"/> 
 +
 +   <plugin
-+         id="org.eclipse.core.filesystem.freebsd.amd64"
++         id="org.eclipse.core.filesystem.freebsd.x86_64"
 +         os="freebsd"
-+         arch="amd64"
++         arch="x86_64"
 +         download-size="0"
 +         install-size="0"
 +         version="0.0.0"
@@ -44,7 +54,7 @@
           id="org.eclipse.core.filesystem.solaris.sparc"
           os="solaris"
           arch="sparc"
-@@ -494,6 +524,15 @@
+@@ -494,6 +534,15 @@
           unpack="false"/>
  
     <plugin

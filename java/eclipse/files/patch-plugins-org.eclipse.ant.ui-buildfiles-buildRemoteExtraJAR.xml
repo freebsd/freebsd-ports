@@ -7,14 +7,14 @@
 -		<property name="gtk.jar" value="${eclipse.home}/plugins/org.eclipse.swt.gtk.linux.x86${version.suffix}.jar"/>
 +		<property name="gtk.linux.jar" value="${eclipse.home}/plugins/org.eclipse.swt.gtk.linux.x86${version.suffix}.jar"/>
 +		<property name="gtk.freebsd.x86.jar" value="${eclipse.home}/plugins/org.eclipse.swt.gtk.freebsd.x86${version.suffix}.jar"/>
-+		<property name="gtk.freebsd.amd64.jar" value="${eclipse.home}/plugins/org.eclipse.swt.gtk.freebsd.amd64${version.suffix}.jar"/>
++		<property name="gtk.freebsd.x86_64.jar" value="${eclipse.home}/plugins/org.eclipse.swt.gtk.freebsd.x86_64${version.suffix}.jar"/>
  		<property name="motif.jar" value="${eclipse.home}/plugins/org.eclipse.swt.motif${version.suffix}.jar"/>
  		<property name="osx.jar" value="${eclipse.home}/plugins/org.eclipse.swt.carbon.macosx.ppc${version.suffix}.jar"/>
  		<available file="${win32.jar}" property="swt.jar" value="${win32.jar}"/>
 -		<available file="${gtk.jar}" property="swt.jar" value="${gtk.jar}"/>
 +		<available file="${gtk.linux.jar}" property="swt.jar" value="${gtk.linux.jar}"/>
 +		<available file="${gtk.freebsd.x86.jar}" property="swt.jar" value="${gtk.freebsd.x86.jar}"/>
-+		<available file="${gtk.freebsd.amd64.jar}" property="swt.jar" value="${gtk.freebsd.amd64.jar}"/>
++		<available file="${gtk.freebsd.x86_64.jar}" property="swt.jar" value="${gtk.freebsd.x86_64.jar}"/>
  		<available file="${motif.jar}" property="swt.jar" value="${motif.jar}"/>
  		<available file="${osx.jar}" property="swt.jar" value="${osx.jar}"/>
  	</target>
