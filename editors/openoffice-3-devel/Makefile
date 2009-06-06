@@ -48,6 +48,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -134,8 +135,10 @@ GNU_CONFIGURE=	yes
 WRKSRC?=		${WRKDIR}/${OOOTAG}
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
-MAXPROCESSES?=	1
-MAXMODULES?=	1
+
+.if defined(DISABLE_MAKE_JOBS)
+MAKE_JOBS_NUMBER=	1
+.endif
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
@@ -201,7 +204,7 @@ pre-configure:
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "TMP=${WRKSRC}" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAXMODULES} --all --html --dontgraboutput -- -P${MAXPROCESSES}"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "TMP=${WRKSRC}" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput -- -P${MAKE_JOBS_NUMBER}"
 
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
