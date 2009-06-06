@@ -1,5 +1,5 @@
---- extern/Makefile.orig	2008-10-22 18:38:21.000000000 +0200
-+++ extern/Makefile	2009-03-20 23:17:59.000000000 +0100
+--- extern/Makefile.orig   2009-06-01 12:22:33.000000000 +0200
++++ extern/Makefile        2009-06-01 12:39:12.000000000 +0200
 @@ -30,11 +30,7 @@
  
  SOURCEDIR = extern
@@ -13,3 +13,14 @@
  
  ifeq ($(WITH_FFMPEG), true)
  ifeq ($(NAN_FFMPEG), $(LCGDIR)/ffmpeg)
+@@ -58,10 +54,6 @@
+     DIRS += binreloc
+ endif
+ 
+-ifeq ($(WITH_OPENJPEG), true)
+-    DIRS += libopenjpeg
+-endif
+-
+ TARGET = solid
+ 
+ all::

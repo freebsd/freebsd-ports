@@ -46,7 +46,6 @@ bin/blender-bin
 %%DATADIR%%/scripts/bpymodules/BPyImage.py
 %%DATADIR%%/scripts/bpymodules/BPyMathutils.py
 %%DATADIR%%/scripts/bpymodules/BPyMesh.py
-%%DATADIR%%/scripts/bpymodules/BPyMesh_octree.py
 %%DATADIR%%/scripts/bpymodules/BPyMesh_redux.py
 %%DATADIR%%/scripts/bpymodules/BPyMessages.py
 %%DATADIR%%/scripts/bpymodules/BPyNMesh.py
@@ -78,6 +77,7 @@ bin/blender-bin
 %%DATADIR%%/scripts/add_mesh_empty.py
 %%DATADIR%%/scripts/add_mesh_torus.py
 %%DATADIR%%/scripts/animation_bake_constraints.py
+%%DATADIR%%/scripts/animation_clean.py
 %%DATADIR%%/scripts/animation_trajectory.py
 %%DATADIR%%/scripts/armature_symmetry.py
 %%DATADIR%%/scripts/bevel_center.py
@@ -122,6 +122,7 @@ bin/blender-bin
 %%DATADIR%%/scripts/help_web_eshop.py
 %%DATADIR%%/scripts/help_web_usercomm.py
 %%DATADIR%%/scripts/hotkeys.py
+%%DATADIR%%/scripts/image_2d_cutout.py
 %%DATADIR%%/scripts/image_auto_layout.py
 %%DATADIR%%/scripts/image_billboard.py
 %%DATADIR%%/scripts/image_edit.py
@@ -139,6 +140,7 @@ bin/blender-bin
 %%DATADIR%%/scripts/mesh_edges2curves.py
 %%DATADIR%%/scripts/mesh_mirror_tool.py
 %%DATADIR%%/scripts/mesh_poly_reduce.py
+%%DATADIR%%/scripts/mesh_poly_reduce_grid.py
 %%DATADIR%%/scripts/mesh_skin.py
 %%DATADIR%%/scripts/mesh_solidify.py
 %%DATADIR%%/scripts/mesh_unfolder.py
@@ -146,6 +148,7 @@ bin/blender-bin
 %%DATADIR%%/scripts/ms3d_import.py
 %%DATADIR%%/scripts/ms3d_import_ascii.py
 %%DATADIR%%/scripts/obdatacopier.py
+%%DATADIR%%/scripts/object_active_to_other.py
 %%DATADIR%%/scripts/object_apply_def.py
 %%DATADIR%%/scripts/object_batch_name_edit.py
 %%DATADIR%%/scripts/object_cookie_cutter.py
@@ -165,9 +168,11 @@ bin/blender-bin
 %%DATADIR%%/scripts/render_save_layers.py
 %%DATADIR%%/scripts/rvk1_torvk2.py
 %%DATADIR%%/scripts/save_theme.py
-%%DATADIR%%/scripts/scripttemplate_camer_object.py
+%%DATADIR%%/scripts/scripttemplate_background_job.py
+%%DATADIR%%/scripts/scripttemplate_camera_object.py
 %%DATADIR%%/scripts/scripttemplate_gamelogic.py
 %%DATADIR%%/scripts/scripttemplate_gamelogic_basic.py
+%%DATADIR%%/scripts/scripttemplate_gamelogic_module.py
 %%DATADIR%%/scripts/scripttemplate_ipo_gen.py
 %%DATADIR%%/scripts/scripttemplate_mesh_edit.py
 %%DATADIR%%/scripts/scripttemplate_metaball_create.py
@@ -176,6 +181,7 @@ bin/blender-bin
 %%DATADIR%%/scripts/scripttemplate_text_plugin.py
 %%DATADIR%%/scripts/slp_import.py
 %%DATADIR%%/scripts/sysinfo.py
+%%DATADIR%%/scripts/textplugin_convert_ge.py
 %%DATADIR%%/scripts/textplugin_functiondocs.py
 %%DATADIR%%/scripts/textplugin_imports.py
 %%DATADIR%%/scripts/textplugin_membersuggest.py
@@ -203,9 +209,10 @@ bin/blender-bin
 %%DATADIR%%/scripts/weightpaint_invert.py
 %%DATADIR%%/scripts/weightpaint_normalize.py
 %%DATADIR%%/scripts/widgetwizard.py
+%%DATADIR%%/scripts/wizard_bolt_factory.py
 %%DATADIR%%/scripts/wizard_curve2tree.py
+%%DATADIR%%/scripts/wizard_landscape_ant.py
 %%DATADIR%%/scripts/x3d_export.py
-%%DATADIR%%/scripts/xfig_export.py
 %%DATADIR%%/scripts/xsi_export.py
 @dirrm %%DATADIR%%/scripts/bpymodules/colladaImEx
 @dirrm %%DATADIR%%/scripts/bpymodules
