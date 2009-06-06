@@ -31,6 +31,7 @@ CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
 CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		XGETTEXT="${LOCALBASE}/bin/xgettext" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fPIC" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L../common -L${LOCALBASE}/lib" \
 		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 

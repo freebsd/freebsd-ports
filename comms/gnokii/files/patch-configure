@@ -1,5 +1,5 @@
 --- configure.orig	2008-10-06 08:57:27.000000000 +0200
-+++ configure	2009-02-26 17:21:58.000000000 +0100
++++ configure	2009-06-06 10:08:00.153654659 +0200
 @@ -1057,7 +1057,7 @@
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
@@ -9,6 +9,37 @@
  
  ac_prev=
  ac_dashdash=
+@@ -8050,18 +8050,18 @@
+   fi
+ 
+ 
+-{ echo "$as_me:$LINENO: checking if building on FreeBSD" >&5
+-echo $ECHO_N "checking if building on FreeBSD... $ECHO_C" >&6; }
+-
+-if test `uname -s` = "FreeBSD" ; then
+-	{ echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6; }
+-	CPPFLAGS="$CFLAGS -I/usr/local/include"
+-	LDFLAGS="$LDFLAGS -L/usr/local/lib"
+-else
+-	{ echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6; }
+-fi
++#{ echo "$as_me:$LINENO: checking if building on FreeBSD" >&5
++#echo $ECHO_N "checking if building on FreeBSD... $ECHO_C" >&6; }
++#
++#if test `uname -s` = "FreeBSD" ; then
++#	{ echo "$as_me:$LINENO: result: yes" >&5
++#echo "${ECHO_T}yes" >&6; }
++#	CPPFLAGS="$CFLAGS -I/usr/local/include"
++#	LDFLAGS="$LDFLAGS -L/usr/local/lib"
++#else
++#	{ echo "$as_me:$LINENO: result: no" >&5
++#echo "${ECHO_T}no" >&6; }
++#fi
+ 
+ 
+ 
 @@ -24163,13 +24163,15 @@
  # First of all, check if the user has set any of the PTHREAD_LIBS,
  # etcetera environment variables, and if threads linking works using
