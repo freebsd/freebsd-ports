@@ -8,7 +8,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	1.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	http://people.freedesktop.org/~alp/webkit/gtk/
 PKGNAMESUFFIX=	-gtk2
@@ -35,7 +35,8 @@ CONFIGURE_ARGS=	--with-webkit-target=x11 \
 		--enable-icon-database \
 		--enable-svg \
 		--enable-svg-fonts \
-		--enable-svg-experimental
+		--enable-svg-experimental \
+		--enable-static
 MAKEFILE=	GNUmakefile
 
 BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk2
