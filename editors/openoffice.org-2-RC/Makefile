@@ -52,6 +52,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -134,7 +135,6 @@ WRKSRC?=		${WRKDIR}/${OOOTAG}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
-NUMOFPROCESSES?=	1
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
@@ -194,8 +194,8 @@ post-extract:
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 # PR:84786 #i53289#
-.if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+.if !defined(DISABLE_MAKE_JOBS)
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl -P${MAKE_JOBS_NUMBER} --all"
 .else
 	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; dmake"
 .endif
