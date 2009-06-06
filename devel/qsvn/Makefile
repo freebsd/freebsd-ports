@@ -33,6 +33,8 @@ PLIST_SUB=	SVNQT_INCLUDE_DIR="${SVNQT_INCLUDE_DIR}"
 pre-configure:
 	${REINPLACE_CMD} -e 's,include/svnqt,${SVNQT_INCLUDE_DIR},g' \
 		${WRKSRC}/svnqt/CMakeLists.txt
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/svnqt/cmakemodules/FindSubversion.cmake
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/images/qsvn.png ${PREFIX}/share/pixmaps/
