@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.068
+PORTVERSION=	0.070
 CATEGORIES=	irc ipv6
 MASTER_SITES=	SF
 
@@ -15,6 +15,7 @@ COMMENT=	An advanced IRC bouncer
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack
 
 OPTIONS=	DEBUG		"Enable debugging" off \
 		IPV6		"Enable IPv6 support" off \
