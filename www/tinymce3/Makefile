@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinymce
-PORTVERSION=	3.2.1.1
+PORTVERSION=	3.2.3.1
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
@@ -15,8 +15,8 @@ MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	An open source Javascript HTML WYSIWYG editor for web sites
 
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL} -d -m 0755 ${WWWDIR}
