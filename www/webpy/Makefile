@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webpy
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	www python
 MASTER_SITES=	http://webpy.org/static/
 DISTNAME=	web.py-${PORTVERSION}
