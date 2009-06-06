@@ -23,6 +23,10 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/usb.so
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+
+post-patch:
+	${REINPLACE_CMD} 's,/usr/local,${PREFIX},' ${WRKSRC}/setup.py
+
 .endif
 
 .include <bsd.port.post.mk>
