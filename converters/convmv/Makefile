@@ -8,7 +8,8 @@
 PORTNAME=	convmv
 PORTVERSION=	1.14
 CATEGORIES=	converters perl5
-MASTER_SITES=	http://www.j3e.de/linux/convmv/
+MASTER_SITES=	http://www.j3e.de/linux/convmv/ \
+		http://www.sfr-fresh.com/unix/privat/
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Convert filenames from one encoding to another
