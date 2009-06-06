@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MouseX-Getopt
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MASAKI
@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for a Mouse role to process command line options
 
 RUN_DEPENDS=	\
-	p5-Mouse>=0.15:${PORTSDIR}/devel/p5-Mouse
+	p5-Mouse>=0.20:${PORTSDIR}/devel/p5-Mouse
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
