@@ -25,7 +25,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/usb.so
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 
 post-patch:
-	${REINPLACE_CMD} 's,/usr/local,${PREFIX},' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},' ${WRKSRC}/setup.py
 
 .endif
 
