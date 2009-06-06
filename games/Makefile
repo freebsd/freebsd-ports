@@ -156,6 +156,7 @@
     SUBDIR += cube
     SUBDIR += cultivation
     SUBDIR += cursive
+    SUBDIR += cuyo
     SUBDIR += d2x
     SUBDIR += d2x-xl
     SUBDIR += daimonin-client
