@@ -20,6 +20,7 @@
 %%WWWDIR%%/examples/skins.html
 %%WWWDIR%%/examples/templates/layout1.htm
 %%WWWDIR%%/examples/templates/snippet1.htm
+%%WWWDIR%%/examples/translate.html
 %%WWWDIR%%/examples/word.html
 %%WWWDIR%%/jscripts/tiny_mce/langs/en.js
 %%WWWDIR%%/jscripts/tiny_mce/license.txt
@@ -130,9 +131,6 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/img/pagebreak.gif
 %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/img/trans.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/blank.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/css/blank.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/css/pasteword.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/js/pastetext.js
@@ -168,6 +166,8 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/js/props.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/props.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/table/cell.htm
 %%WWWDIR%%/jscripts/tiny_mce/plugins/table/css/cell.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/table/css/row.css
@@ -316,7 +316,6 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste
@@ -336,6 +335,7 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/langs
