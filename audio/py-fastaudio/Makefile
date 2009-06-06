@@ -48,7 +48,7 @@ do-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/setup.py ${WRKSRC}/mysndfile.h
+		${WRKSRC}/setup.py ${WRKSRC}/mysndfile.h ${WRKSRC}/fastaudio.pyx
 # Borrowed from the portaudio port, fixes obsolete path
 	@${REINPLACE_CMD} -e 's|machine\/soundcard.h|sys\/soundcard.h|' \
 		${PORTASRC_DIR}/pa_unix_oss/pa_unix_oss.c

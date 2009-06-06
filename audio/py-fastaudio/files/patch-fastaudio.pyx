@@ -1,11 +1,11 @@
---- fastaudio.pyx.orig	Sat Mar  3 10:53:45 2007
-+++ fastaudio.pyx	Sat Mar  3 11:03:03 2007
+--- fastaudio.pyx.orig	2004-06-15 20:37:39.000000000 +0900
++++ fastaudio.pyx	2009-06-06 18:54:52.000000000 +0900
 @@ -92,7 +92,7 @@
  #@+node:portaudio.h
  # portaudio-specifics
  
 -cdef extern from "../pa_common/portaudio.h":
-+cdef extern from "/usr/local/include/portaudio.h":
++cdef extern from "%%LOCALBASE%%/include/portaudio.h":
      ctypedef int PaError
  
      cdef enum PA_ERRORS:
