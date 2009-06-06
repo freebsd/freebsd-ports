@@ -227,6 +227,7 @@
     SUBDIR += p5-Jcode
     SUBDIR += p5-Lingua-JA-Kana
     SUBDIR += p5-Lingua-JA-Numbers
+    SUBDIR += p5-Lingua-JA-Regular-Unicode
     SUBDIR += p5-Lingua-JA-Summarize-Extract
     SUBDIR += p5-Mail-SpamAssassin
     SUBDIR += p5-MeCab
