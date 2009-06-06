@@ -490,6 +490,15 @@ lib/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.so.5
 %%DATADIR%%/top/ffG53a6bon.itp
 %%DATADIR%%/top/ffG53a6nb.itp
 %%DATADIR%%/top/ff_dum.itp
+%%DATADIR%%/top/ffcharmm27.atp
+%%DATADIR%%/top/ffcharmm27bon.itp
+%%DATADIR%%/top/ffcharmm27-c.tdb
+%%DATADIR%%/top/ffcharmm27.ddb
+%%DATADIR%%/top/ffcharmm27.hdb
+%%DATADIR%%/top/ffcharmm27.itp
+%%DATADIR%%/top/ffcharmm27nb.itp
+%%DATADIR%%/top/ffcharmm27-n.tdb
+%%DATADIR%%/top/ffcharmm27.rtp
 %%DATADIR%%/top/ffencads-c.tdb
 %%DATADIR%%/top/ffencads-n.tdb
 %%DATADIR%%/top/ffencads.atp

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gromacs
-PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTVERSION=	4.0.5
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
