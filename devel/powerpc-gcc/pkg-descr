@@ -1,7 +1,0 @@
-FSF gcc-4.1 for PowerPC/RS6000 cross-development. This port brings C, C++ and
-ObjectiveC compilers without target libraries (i.e libstdc++ isn't included).
-
-It can be used to cross-compile operating system kernels (e.g. Linux, L4, etc)
-for this architecture.
-
-WWW: http://gcc.gnu.org/

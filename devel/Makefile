@@ -2238,8 +2238,6 @@
     SUBDIR += popt
     SUBDIR += portlet-api
     SUBDIR += poslib
-    SUBDIR += powerpc-binutils
-    SUBDIR += powerpc-gcc
     SUBDIR += powerpc-rtems-binutils
     SUBDIR += powerpc-rtems-gcc
     SUBDIR += powerpc-rtems-gdb
