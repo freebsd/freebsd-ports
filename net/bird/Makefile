@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bird
-PORTVERSION=	1.0.11
-PORTREVISION=	1
+PORTVERSION=	1.0.15
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
@@ -18,6 +17,8 @@ USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6
+
+MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/bird.conf ]; then \
