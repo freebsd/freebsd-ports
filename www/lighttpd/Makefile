@@ -7,7 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
