@@ -5,7 +5,7 @@
  <assemble  config="linux.gtk.s390x" element="org.eclipse.sdk" dot="." scriptPrefix="package"		/>
  <assemble  config="linux.motif.x86" element="org.eclipse.sdk" dot="." scriptPrefix="package"		/>
 +<assemble  config="freebsd.gtk.x86" element="org.eclipse.sdk" dot="." scriptPrefix="package"		/>
-+<assemble  config="freebsd.gtk.amd64" element="org.eclipse.sdk" dot="." scriptPrefix="package"		/>
++<assemble  config="freebsd.gtk.x86_64" element="org.eclipse.sdk" dot="." scriptPrefix="package"		/>
  <assemble  config="solaris.gtk.sparc" element="org.eclipse.sdk" dot="." scriptPrefix="package"		/>
  <assemble  config="solaris.gtk.x86" element="org.eclipse.sdk" dot="." scriptPrefix="package"		/>
  <assemble  config="solaris.motif.sparc" element="org.eclipse.sdk" dot="." scriptPrefix="package"		/>

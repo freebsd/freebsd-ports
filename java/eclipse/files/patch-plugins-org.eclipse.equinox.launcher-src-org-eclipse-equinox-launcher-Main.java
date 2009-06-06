@@ -18,13 +18,3 @@
  		if (osName.equalsIgnoreCase(Constants.INTERNAL_OS_QNX))
  			return Constants.OS_QNX;
  		if (osName.equalsIgnoreCase(Constants.INTERNAL_OS_AIX))
-@@ -334,9 +338,6 @@
- 		// Map i386 architecture to x86
- 		if (name.equalsIgnoreCase(Constants.INTERNAL_ARCH_I386))
- 			return Constants.ARCH_X86;
--		// Map amd64 architecture to x86_64
--		else if (name.equalsIgnoreCase(Constants.INTERNAL_AMD64))
--			return Constants.ARCH_X86_64;
- 
- 		return name;
- 	}

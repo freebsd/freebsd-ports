@@ -1,0 +1,153 @@
+--- plugins/org.eclipse.core.net.freebsd.x86_64/build.xml.orig	2009-02-28 07:33:49.376334935 -0500
++++ plugins/org.eclipse.core.net.freebsd.x86_64/build.xml	2009-02-28 07:39:12.017669239 -0500
+@@ -1,11 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<project name="org.eclipse.core.net.freebsd.x86" default="build.jars" basedir=".">
++<project name="org.eclipse.core.net.freebsd.x86_64" default="build.jars" basedir=".">
+ 
+ 	<property name="basews" value="${ws}"/>
+ 	<property name="baseos" value="${os}"/>
+ 	<property name="basearch" value="${arch}"/>
+ 	<property name="basenl" value="${nl}"/>
+-	<property name="bundleId" value="org.eclipse.core.net.freebsd.x86"/>
++	<property name="bundleId" value="org.eclipse.core.net.freebsd.x86_64"/>
+ 	<property name="bundleVersion" value="1.0.0.I20080521"/>
+ 
+ 	<!-- Compiler settings. -->
+@@ -44,7 +44,7 @@
+ 			<isset property="buildTempFolder"/>
+ 		</condition>
+ 		<property name="pluginTemp" value="${basedir}"/>
+-<condition property="build.result.folder" value="${pluginTemp}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521"		>
++<condition property="build.result.folder" value="${pluginTemp}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521"		>
+ 			<isset property="buildTempFolder"/>
+ 		</condition>
+ 		<property name="build.result.folder" value="${basedir}"/>
+@@ -57,18 +57,18 @@
+ 
+ 	</target>
+ 
+-	<target name="build.update.jar" depends="init" description="Build the plug-in: org.eclipse.core.net.freebsd.x86 for an update site.">
++	<target name="build.update.jar" depends="init" description="Build the plug-in: org.eclipse.core.net.freebsd.x86_64 for an update site.">
+ 		<delete dir="${temp.folder}"/>
+ 		<mkdir dir="${temp.folder}"/>
+ 		<antcall target="build.jars"/>
+ 		<antcall target="gather.bin.parts">
+ 			<param name="destination.temp.folder" value="${temp.folder}/"/>
+ 		</antcall>
+-		<jar destfile="${plugin.destination}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521.jar" basedir="${temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521" filesetmanifest="merge"/>
++		<jar destfile="${plugin.destination}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521.jar" basedir="${temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521" filesetmanifest="merge"/>
+ 		<delete dir="${temp.folder}"/>
+ 	</target>
+ 
+-	<target name="@dot" depends="init" unless="@dot" description="Create jar: org.eclipse.core.net.freebsd.x86 @dot.">
++	<target name="@dot" depends="init" unless="@dot" description="Create jar: org.eclipse.core.net.freebsd.x86_64 @dot.">
+ 		<delete dir="${temp.folder}/@dot.bin"/>
+ 		<mkdir dir="${temp.folder}/@dot.bin"/>
+ 		<path id="@dot.classpath">
+@@ -110,10 +110,8 @@
+ 			<pathelement path="${build.result.folder}/../org.eclipse.equinox.preferences_3.2.201.R34x_v20080709/@dot"/>
+ 			<pathelement path="../org.eclipse.swt/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.swt_3.4.2.v3452b/@dot"/>
+-			<pathelement path="../org.eclipse.swt.gtk.freebsd.x86/@dot"/>
+-			<pathelement path="${build.result.folder}/../org.eclipse.swt.gtk.freebsd.x86_3.4.1.v3452b/@dot"/>
+-			<pathelement path="../org.eclipse.swt.motif.freebsd.x86/@dot"/>
+-			<pathelement path="${build.result.folder}/../org.eclipse.swt.motif.freebsd.x86_3.4.1.v3452b/@dot"/>
++			<pathelement path="../org.eclipse.swt.gtk.freebsd.x86_64/@dot"/>
++			<pathelement path="${build.result.folder}/../org.eclipse.swt.gtk.freebsd.x86_64_3.4.2.v3452b/@dot"/>
+ 		</path>
+ 		<!-- compile the source code -->
+ 		<javac destdir="${temp.folder}/@dot.bin" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+@@ -157,7 +155,7 @@
+ 		</copy>
+ 	</target>
+ 
+-	<target name="build.jars" depends="init" description="Compile classes and build nested jars for the plug-in: org.eclipse.core.net.freebsd.x86.">
++	<target name="build.jars" depends="init" description="Compile classes and build nested jars for the plug-in: org.eclipse.core.net.freebsd.x86_64.">
+ 		<available property="@dot" file="${build.result.folder}/@dot"/>
+ 		<antcall target="@dot"/>
+ 	</target>
+@@ -168,13 +166,13 @@
+ 	</target>
+ 
+ 	<target name="gather.bin.parts" depends="init" if="destination.temp.folder">
+-		<mkdir dir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521"/>
+-		<copy todir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521" failonerror="true" overwrite="false">
++		<mkdir dir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521"/>
++		<copy todir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521" failonerror="true" overwrite="false">
+ 			<fileset dir="${build.result.folder}/@dot">
+ 				<include name="**"/>
+ 			</fileset>
+ 		</copy>
+-		<copy todir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521" failonerror="true" overwrite="false">
++		<copy todir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521" failonerror="true" overwrite="false">
+ 			<fileset dir="${basedir}">
+ 				<include name="fragment.properties"/>
+ 				<include name="META-INF/"/>
+@@ -183,17 +181,17 @@
+ 				<include name="libproxygnome.so"/>
+ 			</fileset>
+ 		</copy>
+-		<eclipse.versionReplacer path="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521" version="1.0.0.I20080521"/>
++		<eclipse.versionReplacer path="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521" version="1.0.0.I20080521"/>
+ 	</target>
+ 
+ 	<target name="build.zips" depends="init">
+ 	</target>
+ 
+ 	<target name="gather.sources" depends="init" if="destination.temp.folder">
+-		<mkdir dir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521"/>
+-		<copy file="${build.result.folder}/src.zip" todir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521" failonerror="false" overwrite="false"/>
++		<mkdir dir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521"/>
++		<copy file="${build.result.folder}/src.zip" todir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521" failonerror="false" overwrite="false"/>
+ 		<antcall target="copy.src.includes">
+-			<param name="source.destination.folder" value="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521"/>
++			<param name="source.destination.folder" value="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521"/>
+ 		</antcall>
+ 	</target>
+ 
+@@ -215,28 +213,28 @@
+ 	</target>
+ 
+ 	<target name="gather.logs" depends="init" if="destination.temp.folder">
+-		<mkdir dir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521"/>
+-		<copy todir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521" failonerror="false" overwrite="false">
++		<mkdir dir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521"/>
++		<copy todir="${destination.temp.folder}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521" failonerror="false" overwrite="false">
+ 			<fileset dir="${temp.folder}">
+ 				<include name="@dot.bin${logExtension}"/>
+ 			</fileset>
+ 		</copy>
+ 	</target>
+ 
+-	<target name="clean" depends="init" description="Clean the plug-in: org.eclipse.core.net.freebsd.x86 of all the zips, jars and logs created.">
++	<target name="clean" depends="init" description="Clean the plug-in: org.eclipse.core.net.freebsd.x86_64 of all the zips, jars and logs created.">
+ 		<delete dir="${build.result.folder}/@dot"/>
+ 		<delete file="${build.result.folder}/src.zip"/>
+-		<delete file="${plugin.destination}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521.jar"/>
+-		<delete file="${plugin.destination}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521.zip"/>
++		<delete file="${plugin.destination}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521.jar"/>
++		<delete file="${plugin.destination}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521.zip"/>
+ 		<delete dir="${temp.folder}"/>
+ 	</target>
+ 
+ 	<target name="refresh" depends="init" if="eclipse.running" description="Refresh this folder.">
+-		<eclipse.convertPath fileSystemPath="/builds/M/src/plugins/org.eclipse.core.net.freebsd.x86" property="resourcePath"/>
++		<eclipse.convertPath fileSystemPath="/builds/M/src/plugins/org.eclipse.core.net.freebsd.x86_64" property="resourcePath"/>
+ 		<eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
+ 	</target>
+ 
+-	<target name="zip.plugin" depends="init" description="Create a zip containing all the elements for the plug-in: org.eclipse.core.net.freebsd.x86.">
++	<target name="zip.plugin" depends="init" description="Create a zip containing all the elements for the plug-in: org.eclipse.core.net.freebsd.x86_64.">
+ 		<delete dir="${temp.folder}"/>
+ 		<mkdir dir="${temp.folder}"/>
+ 		<antcall target="build.jars"/>
+@@ -252,7 +250,7 @@
+ 				<include name="**/*.bin${logExtension}"/>
+ 			</fileset>
+ 		</delete>
+-		<zip destfile="${plugin.destination}/org.eclipse.core.net.freebsd.x86_1.0.0.I20080521.zip" basedir="${temp.folder}" filesonly="true" whenempty="skip" update="false"/>
++		<zip destfile="${plugin.destination}/org.eclipse.core.net.freebsd.x86_64_1.0.0.I20080521.zip" basedir="${temp.folder}" filesonly="true" whenempty="skip" update="false"/>
+ 		<delete dir="${temp.folder}"/>
+ 	</target>
+ 

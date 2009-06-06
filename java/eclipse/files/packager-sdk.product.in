@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.4"?>
+
+<product name="Eclipse SDK" id="org.eclipse.sdk.ide" application="org.eclipse.ui.ide.workbench" version="%%ECLIPSE_VERSION%%" useFeatures="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgsMac>-showsplash
+org.eclipse.platform</programArgsMac>
+      <vmArgsMac>-Xdock:icon=../Resources/Eclipse.icns
+-XstartOnFirstThread
+-Xms40m
+-Xmx256m
+-XX:MaxPermSize=256m
+-Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <launcher name="eclipse">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.sdk" version="0.0.0"/>
+      <feature id="org.eclipse.equinox.p2.user.ui" version="1.0.0.qualifier"/>
+   </features>
+
+</product>

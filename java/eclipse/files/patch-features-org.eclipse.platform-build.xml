@@ -1,18 +1,18 @@
---- features/org.eclipse.platform/build.xml.orig	2008-09-25 19:20:11.000000000 -0400
-+++ features/org.eclipse.platform/build.xml	2008-09-25 19:19:54.000000000 -0400
-@@ -27,6 +27,11 @@
- 			<property name="os" value="linux"/>
- 			<property name="ws" value="gtk"/>
+--- features/org.eclipse.platform/build.xml.orig	2009-02-27 22:28:15.809350510 -0500
++++ features/org.eclipse.platform/build.xml	2009-02-27 22:35:15.291081568 -0500
+@@ -32,6 +32,11 @@
+ 			<property name="os" value="hpux"/>
+ 			<property name="ws" value="motif"/>
  		</ant>
-+		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.freebsd.amd64" target="${target}">
-+			<property name="arch" value="amd64"/>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.freebsd.x86_64" target="${target}">
++			<property name="arch" value="x86_64"/>
 +			<property name="os" value="freebsd"/>
 +			<property name="ws" value="gtk"/>
 +		</ant>
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.qnx.x86" target="${target}">
  			<property name="arch" value="x86"/>
  			<property name="os" value="qnx"/>
-@@ -67,6 +72,11 @@
+@@ -42,6 +47,11 @@
  			<property name="os" value="linux"/>
  			<property name="ws" value="gtk"/>
  		</ant>
@@ -24,7 +24,7 @@
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.hpux.PA_RISC" target="${target}">
  			<property name="arch" value="PA_RISC"/>
  			<property name="os" value="hpux"/>
-@@ -147,6 +157,11 @@
+@@ -167,11 +177,26 @@
  			<property name="os" value="linux"/>
  			<property name="ws" value="gtk"/>
  		</ant>
@@ -36,28 +36,31 @@
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.net.win32.x86" target="${target}">
  			<property name="arch" value="x86"/>
  			<property name="os" value="win32"/>
-@@ -157,6 +172,11 @@
- 			<property name="os" value="linux"/>
- 			<property name="ws" value="gtk"/>
+ 			<property name="ws" value="win32"/>
  		</ant>
 +		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.net.freebsd.x86" target="${target}">
 +			<property name="arch" value="x86"/>
 +			<property name="os" value="freebsd"/>
 +			<property name="ws" value="gtk"/>
 +		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.net.freebsd.x86_64" target="${target}">
++			<property name="arch" value="x86_64"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="gtk"/>
++		</ant>
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.jsch.core" target="${target}">
  			<property name="arch" value="x86"/>
  			<property name="os" value="win32"/>
-@@ -390,7 +410,7 @@
+@@ -390,7 +415,7 @@
  				<include name="license.html"/>
  			</fileset>
  		</copy>
--		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.4.1.r341_v20080731-9I96EiDElYevwz-p1bP5z-NlAaP7vtX6Utotqsu/feature.xml"  selfVersion="3.4.1.r341_v20080731-9I96EiDElYevwz-p1bP5z-NlAaP7vtX6Utotqsu" featureIds="org.eclipse.help:0.0.0,1.0.1.R34x_v20080827-7r7xEIxEI6Zu5nEqN7M3UBpglaat,org.eclipse.equinox.p2.user.ui:0.0.0,1.0.1.r34x_v20080721-7d-7OEMsLAz-vTBJ-ZHQaF155CE," pluginIds="com.jcraft.jsch:0.0.0,0.1.37.v200803061811,org.eclipse.compare:0.0.0,3.4.0.I20080604,org.eclipse.core.boot:0.0.0,3.1.100.v20080218,org.eclipse.core.filebuffers:0.0.0,3.4.0.v20080603-2000,org.eclipse.core.filesystem:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.net:0.0.0,1.1.0.I20080604,org.eclipse.core.net.win32.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.net.linux.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.resources:0.0.0,3.4.1.R34x_v20080902,org.eclipse.core.resources.compatibility:0.0.0,3.4.0.v20080604-1400,org.eclipse.osgi.util:0.0.0,3.1.300.v20080303,org.eclipse.debug.core:0.0.0,3.4.0.v20080612,org.eclipse.debug.ui:0.0.0,3.4.1.v20080811_r341,org.eclipse.help.appserver:0.0.0,3.1.300.v20080507,org.eclipse.ltk.core.refactoring:0.0.0,3.4.1.r341_v20080716-0800,org.eclipse.ltk.ui.refactoring:0.0.0,3.4.1.r341_v20080716-0800,org.eclipse.platform:0.0.0,3.3.101.v200809111700,org.eclipse.platform.doc.user:0.0.0,3.4.1.r341_v20080808-0800,org.eclipse.search:0.0.0,3.4.1.r341_v20080813-0800,org.eclipse.team.core:0.0.0,3.4.1.r34x_20080827,org.eclipse.team.ui:0.0.0,3.4.1.r34x_20080827,org.eclipse.text:0.0.0,3.4.0.v20080605-1800,org.eclipse.jface.text:0.0.0,3.4.1.r341_v20080827-1100,org.eclipse.jsch.core:0.0.0,1.1.100.I20080604,org.eclipse.jsch.ui:0.0.0,1.1.100.I20080415,org.eclipse.ui.console:0.0.0,3.3.0.v20080529-1300,org.eclipse.ui.presentations.r21:0.0.0,3.2.100.I20080512-2000,org.eclipse.ui.intro:0.0.0,3.2.201.v20080702_34x,org.eclipse.ui.intro.universal:0.0.0,3.2.200.v20080508,org.eclipse.ui.cheatsheets:0.0.0,3.3.101.v20080702_34x,org.eclipse.ui.browser:0.0.0,3.2.201.v20080708_34x,org.eclipse.ui.navigator:0.0.0,3.3.101.M20080827-0800,org.eclipse.ui.navigator.resources:0.0.0,3.3.101.M20080910-0800,org.eclipse.ui.net:0.0.0,1.0.0.I20080605,org.eclipse.ui.workbench.texteditor:0.0.0,3.4.1.r341_v20080827-1100,org.eclipse.ui.views:0.0.0,3.3.0.I20080509-2000,org.eclipse.ui.editors:0.0.0,3.4.0.v20080603-2000,org.eclipse.ui.externaltools:0.0.0,3.2.0.v20080514-1542,org.eclipse.ui.ide:0.0.0,3.4.1.M20080903-2000,org.eclipse.ui.ide.application:0.0.0,1.0.0.I20080603-2000,org.eclipse.ui.win32:0.0.0,3.2.100.v20080408-0800,org.eclipse.update.core:0.0.0,3.2.201.R34x_v20080714,org.eclipse.update.scheduler:0.0.0,3.2.100.v20080404,org.eclipse.update.ui:0.0.0,3.2.100.v20080318,org.eclipse.ui.workbench.compatibility:0.0.0,3.2.0.I20080509-2000,org.eclipse.core.filesystem.hpux.ia64_32:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.hpux.PA_RISC:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.linux.ppc:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.linux.x86:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.filesystem.linux.x86_64:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.solaris.sparc:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.macosx:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.qnx.x86:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.win32.x86:0.0.0,1.1.0.v20080604-1400,org.eclipse.core.filesystem.win32.ia64:0.0.0,1.1.0.v20071121,org.eclipse.core.resources.win32.x86:0.0.0,3.4.0.v20071204,org.eclipse.core.resources.win32.ia64:0.0.0,3.4.0.v20071204,org.eclipse.update.core.linux:0.0.0,3.2.0.v20080422,org.eclipse.update.core.win32:0.0.0,3.2.100.v20080107,org.eclipse.ui.views.properties.tabbed:0.0.0,3.4.1.M20080730-0800,org.eclipse.equinox.security:0.0.0,1.0.1.R34x_v20080721,org.eclipse.equinox.security.ui:0.0.0,1.0.0.v20080603-1810,org.eclipse.equinox.security.win32.x86:0.0.0,1.0.0.v20080529-1600,org.eclipse.equinox.security.macosx:0.0.0,1.0.0.v20080602-2000,"/>
-+		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.4.1.r341_v20080731-9I96EiDElYevwz-p1bP5z-NlAaP7vtX6Utotqsu/feature.xml"  selfVersion="3.4.1.r341_v20080731-9I96EiDElYevwz-p1bP5z-NlAaP7vtX6Utotqsu" featureIds="org.eclipse.help:0.0.0,1.0.1.R34x_v20080827-7r7xEIxEI6Zu5nEqN7M3UBpglaat,org.eclipse.equinox.p2.user.ui:0.0.0,1.0.1.r34x_v20080721-7d-7OEMsLAz-vTBJ-ZHQaF155CE," pluginIds="com.jcraft.jsch:0.0.0,0.1.37.v200803061811,org.eclipse.compare:0.0.0,3.4.0.I20080604,org.eclipse.core.boot:0.0.0,3.1.100.v20080218,org.eclipse.core.filebuffers:0.0.0,3.4.0.v20080603-2000,org.eclipse.core.filesystem:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.net:0.0.0,1.1.0.I20080604,org.eclipse.core.net.win32.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.net.linux.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.net.freebsd.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.resources:0.0.0,3.4.1.R34x_v20080902,org.eclipse.core.resources.compatibility:0.0.0,3.4.0.v20080604-1400,org.eclipse.osgi.util:0.0.0,3.1.300.v20080303,org.eclipse.debug.core:0.0.0,3.4.0.v20080612,org.eclipse.debug.ui:0.0.0,3.4.1.v20080811_r341,org.eclipse.help.appserver:0.0.0,3.1.300.v20080507,org.eclipse.ltk.core.refactoring:0.0.0,3.4.1.r341_v20080716-0800,org.eclipse.ltk.ui.refactoring:0.0.0,3.4.1.r341_v20080716-0800,org.eclipse.platform:0.0.0,3.3.101.v200809111700,org.eclipse.platform.doc.user:0.0.0,3.4.1.r341_v20080808-0800,org.eclipse.search:0.0.0,3.4.1.r341_v20080813-0800,org.eclipse.team.core:0.0.0,3.4.1.r34x_20080827,org.eclipse.team.ui:0.0.0,3.4.1.r34x_20080827,org.eclipse.text:0.0.0,3.4.0.v20080605-1800,org.eclipse.jface.text:0.0.0,3.4.1.r341_v20080827-1100,org.eclipse.jsch.core:0.0.0,1.1.100.I20080604,org.eclipse.jsch.ui:0.0.0,1.1.100.I20080415,org.eclipse.ui.console:0.0.0,3.3.0.v20080529-1300,org.eclipse.ui.presentations.r21:0.0.0,3.2.100.I20080512-2000,org.eclipse.ui.intro:0.0.0,3.2.201.v20080702_34x,org.eclipse.ui.intro.universal:0.0.0,3.2.200.v20080508,org.eclipse.ui.cheatsheets:0.0.0,3.3.101.v20080702_34x,org.eclipse.ui.browser:0.0.0,3.2.201.v20080708_34x,org.eclipse.ui.navigator:0.0.0,3.3.101.M20080827-0800,org.eclipse.ui.navigator.resources:0.0.0,3.3.101.M20080910-0800,org.eclipse.ui.net:0.0.0,1.0.0.I20080605,org.eclipse.ui.workbench.texteditor:0.0.0,3.4.1.r341_v20080827-1100,org.eclipse.ui.views:0.0.0,3.3.0.I20080509-2000,org.eclipse.ui.editors:0.0.0,3.4.0.v20080603-2000,org.eclipse.ui.externaltools:0.0.0,3.2.0.v20080514-1542,org.eclipse.ui.ide:0.0.0,3.4.1.M20080903-2000,org.eclipse.ui.ide.application:0.0.0,1.0.0.I20080603-2000,org.eclipse.ui.win32:0.0.0,3.2.100.v20080408-0800,org.eclipse.update.core:0.0.0,3.2.201.R34x_v20080714,org.eclipse.update.scheduler:0.0.0,3.2.100.v20080404,org.eclipse.update.ui:0.0.0,3.2.100.v20080318,org.eclipse.ui.workbench.compatibility:0.0.0,3.2.0.I20080509-2000,org.eclipse.core.filesystem.hpux.ia64_32:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.hpux.PA_RISC:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.linux.ppc:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.linux.x86:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.filesystem.linux.x86_64:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.freebsd.x86:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.filesystem.freebsd.amd64:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.solaris.sparc:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.macosx:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.qnx.x86:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.win32.x86:0.0.0,1.1.0.v20080604-1400,org.eclipse.core.filesystem.win32.ia64:0.0.0,1.1.0.v20071121,org.eclipse.core.resources.win32.x86:0.0.0,3.4.0.v20071204,org.eclipse.core.resources.win32.ia64:0.0.0,3.4.0.v20071204,org.eclipse.update.core.linux:0.0.0,3.2.0.v20080422,org.eclipse.update.core.freebsd:0.0.0,3.2.0.v20080422,org.eclipse.update.core.win32:0.0.0,3.2.100.v20080107,org.eclipse.ui.views.properties.tabbed:0.0.0,3.4.1.M20080730-0800,org.eclipse.equinox.security:0.0.0,1.0.1.R34x_v20080721,org.eclipse.equinox.security.ui:0.0.0,1.0.0.v20080603-1810,org.eclipse.equinox.security.win32.x86:0.0.0,1.0.0.v20080529-1600,org.eclipse.equinox.security.macosx:0.0.0,1.0.0.v20080602-2000,"/>
+-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.4.2.R342_v20090122-9I96EiWElHi8lheoJKJIvhM3JfVsYbRrgVIWL/feature.xml"  selfVersion="3.4.2.R342_v20090122-9I96EiWElHi8lheoJKJIvhM3JfVsYbRrgVIWL" featureIds="org.eclipse.help:0.0.0,1.0.2.R342_v20090122-7r7xEKaEJBZu5oGhP3u6nOmbM9VK,org.eclipse.equinox.p2.user.ui:0.0.0,1.0.2.r34x_v20090120-7d-7tEQcCaaYSBeNOClOn02267," pluginIds="com.jcraft.jsch:0.0.0,0.1.37.v200803061811,org.eclipse.compare:0.0.0,3.4.1.r34x_20090121,org.eclipse.core.boot:0.0.0,3.1.100.v20080218,org.eclipse.core.filebuffers:0.0.0,3.4.0.v20080603-2000,org.eclipse.core.filesystem:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.net:0.0.0,1.1.0.I20080604,org.eclipse.core.net.win32.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.net.linux.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.resources:0.0.0,3.4.2.R34x_v20090126,org.eclipse.core.resources.compatibility:0.0.0,3.4.0.v20080604-1400,org.eclipse.osgi.util:0.0.0,3.1.300.v20080303,org.eclipse.debug.core:0.0.0,3.4.1.v20090106_r342,org.eclipse.debug.ui:0.0.0,3.4.2.v20090110_r342,org.eclipse.help.appserver:0.0.0,3.1.300.v20080507,org.eclipse.ltk.core.refactoring:0.0.0,3.4.2.r342_v20081028-0800,org.eclipse.ltk.ui.refactoring:0.0.0,3.4.1.r341_v20080716-0800,org.eclipse.platform:0.0.0,3.3.101.v200902111700,org.eclipse.platform.doc.user:0.0.0,3.4.2.r342_v20081031-0800,org.eclipse.search:0.0.0,3.4.1.r341_v20080813-0800,org.eclipse.team.core:0.0.0,3.4.2.r34x_20080115,org.eclipse.team.ui:0.0.0,3.4.1.r34x_20080827,org.eclipse.text:0.0.0,3.4.0.v20080605-1800,org.eclipse.jface.text:0.0.0,3.4.2.r342_v20081119-0800,org.eclipse.jsch.core:0.0.0,1.1.100.I20080604,org.eclipse.jsch.ui:0.0.0,1.1.100.I20080415,org.eclipse.ui.console:0.0.0,3.3.1.v20090128_r342,org.eclipse.ui.presentations.r21:0.0.0,3.2.100.I20080512-2000,org.eclipse.ui.intro:0.0.0,3.2.201.v20080702_34x,org.eclipse.ui.intro.universal:0.0.0,3.2.200.v20080508,org.eclipse.ui.cheatsheets:0.0.0,3.3.101.v20080702_34x,org.eclipse.ui.browser:0.0.0,3.2.201.v20080708_34x,org.eclipse.ui.navigator:0.0.0,3.3.102.M20090127-1700,org.eclipse.ui.navigator.resources:0.0.0,3.3.101.M20080910-0800,org.eclipse.ui.net:0.0.0,1.0.0.I20080605,org.eclipse.ui.workbench.texteditor:0.0.0,3.4.1.r341_v20080827-1100,org.eclipse.ui.views:0.0.0,3.3.1.M20081112-0800,org.eclipse.ui.editors:0.0.0,3.4.0.v20080603-2000,org.eclipse.ui.externaltools:0.0.0,3.2.0.v20080514-1542,org.eclipse.ui.ide:0.0.0,3.4.2.M20090127-1700,org.eclipse.ui.ide.application:0.0.0,1.0.1.M20090204-0800,org.eclipse.ui.win32:0.0.0,3.2.100.v20080408-0800,org.eclipse.update.core:0.0.0,3.2.202.R34x_v20081128,org.eclipse.update.scheduler:0.0.0,3.2.100.v20080404,org.eclipse.update.ui:0.0.0,3.2.101.R34x_v20081128,org.eclipse.ui.workbench.compatibility:0.0.0,3.2.0.I20080509-2000,org.eclipse.core.filesystem.hpux.ia64_32:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.hpux.PA_RISC:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.linux.ppc:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.linux.x86:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.filesystem.linux.x86_64:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.solaris.sparc:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.macosx:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.qnx.x86:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.win32.x86:0.0.0,1.1.0.v20080604-1400,org.eclipse.core.filesystem.win32.ia64:0.0.0,1.1.0.v20071121,org.eclipse.core.resources.win32.x86:0.0.0,3.4.0.v20071204,org.eclipse.core.resources.win32.ia64:0.0.0,3.4.0.v20071204,org.eclipse.update.core.linux:0.0.0,3.2.1.R34x_v20081024,org.eclipse.update.core.win32:0.0.0,3.2.100.v20080107,org.eclipse.ui.views.properties.tabbed:0.0.0,3.4.2.M20090127-1700,org.eclipse.equinox.security:0.0.0,1.0.1.R34x_v20080721,org.eclipse.equinox.security.ui:0.0.0,1.0.0.v20080603-1810,org.eclipse.equinox.security.win32.x86:0.0.0,1.0.0.v20080529-1600,org.eclipse.equinox.security.macosx:0.0.0,1.0.0.v20080602-2000,"/>
++		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.4.2.R342_v20090122-9I96EiWElHi8lheoJKJIvhM3JfVsYbRrgVIWL/feature.xml"  selfVersion="3.4.2.R342_v20090122-9I96EiWElHi8lheoJKJIvhM3JfVsYbRrgVIWL" featureIds="org.eclipse.help:0.0.0,1.0.2.R342_v20090122-7r7xEKaEJBZu5oGhP3u6nOmbM9VK,org.eclipse.equinox.p2.user.ui:0.0.0,1.0.2.r34x_v20090120-7d-7tEQcCaaYSBeNOClOn02267," pluginIds="com.jcraft.jsch:0.0.0,0.1.37.v200803061811,org.eclipse.compare:0.0.0,3.4.1.r34x_20090121,org.eclipse.core.boot:0.0.0,3.1.100.v20080218,org.eclipse.core.filebuffers:0.0.0,3.4.0.v20080603-2000,org.eclipse.core.filesystem:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.net:0.0.0,1.1.0.I20080604,org.eclipse.core.net.win32.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.net.linux.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.net.freebsd.x86:0.0.0,1.0.0.I20080521,org.eclipse.core.net.freebsd.x86_64:0.0.0,1.0.0.I20080521,org.eclipse.core.resources:0.0.0,3.4.2.R34x_v20090126,org.eclipse.core.resources.compatibility:0.0.0,3.4.0.v20080604-1400,org.eclipse.osgi.util:0.0.0,3.1.300.v20080303,org.eclipse.debug.core:0.0.0,3.4.1.v20090106_r342,org.eclipse.debug.ui:0.0.0,3.4.2.v20090110_r342,org.eclipse.help.appserver:0.0.0,3.1.300.v20080507,org.eclipse.ltk.core.refactoring:0.0.0,3.4.2.r342_v20081028-0800,org.eclipse.ltk.ui.refactoring:0.0.0,3.4.1.r341_v20080716-0800,org.eclipse.platform:0.0.0,3.3.101.v200902111700,org.eclipse.platform.doc.user:0.0.0,3.4.2.r342_v20081031-0800,org.eclipse.search:0.0.0,3.4.1.r341_v20080813-0800,org.eclipse.team.core:0.0.0,3.4.2.r34x_20080115,org.eclipse.team.ui:0.0.0,3.4.1.r34x_20080827,org.eclipse.text:0.0.0,3.4.0.v20080605-1800,org.eclipse.jface.text:0.0.0,3.4.2.r342_v20081119-0800,org.eclipse.jsch.core:0.0.0,1.1.100.I20080604,org.eclipse.jsch.ui:0.0.0,1.1.100.I20080415,org.eclipse.ui.console:0.0.0,3.3.1.v20090128_r342,org.eclipse.ui.presentations.r21:0.0.0,3.2.100.I20080512-2000,org.eclipse.ui.intro:0.0.0,3.2.201.v20080702_34x,org.eclipse.ui.intro.universal:0.0.0,3.2.200.v20080508,org.eclipse.ui.cheatsheets:0.0.0,3.3.101.v20080702_34x,org.eclipse.ui.browser:0.0.0,3.2.201.v20080708_34x,org.eclipse.ui.navigator:0.0.0,3.3.102.M20090127-1700,org.eclipse.ui.navigator.resources:0.0.0,3.3.101.M20080910-0800,org.eclipse.ui.net:0.0.0,1.0.0.I20080605,org.eclipse.ui.workbench.texteditor:0.0.0,3.4.1.r341_v20080827-1100,org.eclipse.ui.views:0.0.0,3.3.1.M20081112-0800,org.eclipse.ui.editors:0.0.0,3.4.0.v20080603-2000,org.eclipse.ui.externaltools:0.0.0,3.2.0.v20080514-1542,org.eclipse.ui.ide:0.0.0,3.4.2.M20090127-1700,org.eclipse.ui.ide.application:0.0.0,1.0.1.M20090204-0800,org.eclipse.ui.win32:0.0.0,3.2.100.v20080408-0800,org.eclipse.update.core:0.0.0,3.2.202.R34x_v20081128,org.eclipse.update.scheduler:0.0.0,3.2.100.v20080404,org.eclipse.update.ui:0.0.0,3.2.101.R34x_v20081128,org.eclipse.ui.workbench.compatibility:0.0.0,3.2.0.I20080509-2000,org.eclipse.core.filesystem.hpux.ia64_32:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.hpux.PA_RISC:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.linux.ppc:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.linux.x86:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.filesystem.linux.x86_64:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.freebsd.x86:0.0.0,1.2.0.v20080604-1400,org.eclipse.core.filesystem.freebsd.x86_64:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.solaris.sparc:0.0.0,1.0.100.v20080604-1400,org.eclipse.core.filesystem.macosx:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.qnx.x86:0.0.0,1.0.0.v20080604-1400,org.eclipse.core.filesystem.win32.x86:0.0.0,1.1.0.v20080604-1400,org.eclipse.core.filesystem.win32.ia64:0.0.0,1.1.0.v20071121,org.eclipse.core.resources.win32.x86:0.0.0,3.4.0.v20071204,org.eclipse.core.resources.win32.ia64:0.0.0,3.4.0.v20071204,org.eclipse.update.core.linux:0.0.0,3.2.1.R34x_v20081024,org.eclipse.update.core.freebsd:0.0.0,3.2.1.R34x_v20081024,org.eclipse.update.core.win32:0.0.0,3.2.100.v20080107,org.eclipse.ui.views.properties.tabbed:0.0.0,3.4.2.M20090127-1700,org.eclipse.equinox.security:0.0.0,1.0.1.R34x_v20080721,org.eclipse.equinox.security.ui:0.0.0,1.0.0.v20080603-1810,org.eclipse.equinox.security.win32.x86:0.0.0,1.0.0.v20080529-1600,org.eclipse.equinox.security.macosx:0.0.0,1.0.0.v20080602-2000,"/>
  		<antcall target="rootFiles">
  			<param name="rootTarget" value="rootFiles${os}_${ws}_${arch}"/>
  		</antcall>
-@@ -517,6 +537,28 @@
+@@ -517,6 +542,27 @@
  		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="eclipse" /> 
  		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="*.so*" /> 
  	</target>
@@ -81,22 +84,21 @@
 +			</fileset>
 +		</copy>
 +		<chmod perm="755" dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" includes="eclipse" />
-+		<chmod perm="755" dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" includes="*.so*" />
 +	</target>
  	<target name="rootFileslinux_gtk_ppc">
  		<mkdir dir="${feature.base}/linux.gtk.ppc/${collectingFolder}/"/>
  		<copy todir="${feature.base}/linux.gtk.ppc/${collectingFolder}/" failonerror="true" overwrite="true">
-@@ -558,6 +600,28 @@
+@@ -558,6 +604,27 @@
  		<chmod perm="755" dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}" includes="eclipse" /> 
  		<chmod perm="755" dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}" includes="*.so*" /> 
  	</target>
-+	<target name="rootFilesfreebsd_gtk_amd64">
-+		<mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/"/>
-+		<copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/" failonerror="true" overwrite="true">
-+			<fileset dir="${basedir}/about_files/freebsd.gtk.amd64">
++	<target name="rootFilesfreebsd_gtk_x86_64">
++		<mkdir dir="${feature.base}/freebsd.gtk.x86_64/${collectingFolder}/"/>
++		<copy todir="${feature.base}/freebsd.gtk.x86_64/${collectingFolder}/" failonerror="true" overwrite="true">
++			<fileset dir="${basedir}/about_files/freebsd.gtk.x86_64">
 +				<include name="**"/>
 +			</fileset>
-+			<fileset dir="${basedir}/../../features/org.eclipse.equinox.executable/bin/gtk/freebsd/amd64">
++			<fileset dir="${basedir}/../../features/org.eclipse.equinox.executable/bin/gtk/freebsd/x86_64">
 +				<include name="**"/>
 +			</fileset>
 +			<fileset dir="${basedir}/gtk">
@@ -109,18 +111,17 @@
 +				<include name="startup.jar"/>
 +			</fileset>
 +		</copy>
-+		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="eclipse" />
-+		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="*.so*" />
++		<chmod perm="755" dir="${feature.base}/freebsd.gtk.x86_64/${collectingFolder}" includes="eclipse" />
 +	</target>
  	<target name="rootFileslinux_gtk_ia64">
  		<mkdir dir="${feature.base}/linux.gtk.ia64/${collectingFolder}/"/>
  		<copy todir="${feature.base}/linux.gtk.ia64/${collectingFolder}/" failonerror="true" overwrite="true">
-@@ -769,6 +833,8 @@
+@@ -769,6 +836,8 @@
  		<antcall target="rootFileslinux_gtk_s390"/>
  		<antcall target="rootFileslinux_gtk_s390x"/>
  		<antcall target="rootFileslinux_motif_x86"/>
 +		<antcall target="rootFilesfreebsd_gtk_x86"/>
-+		<antcall target="rootFilesfreebsd_gtk_amd64"/>
++		<antcall target="rootFilesfreebsd_gtk_x86_64"/>
  		<antcall target="rootFilessolaris_gtk_sparc"/>
  		<antcall target="rootFilessolaris_gtk_x86"/>
  		<antcall target="rootFilessolaris_motif_sparc"/>

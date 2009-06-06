@@ -12,9 +12,9 @@
 +			</fileset>
 +		</copy>
 +	</target>
-+	<target name="rootFilesfreebsd_gtk_amd64">
-+		<mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/"/>
-+		<copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/" failonerror="true" overwrite="true">
++	<target name="rootFilesfreebsd_gtk_x86_64">
++		<mkdir dir="${feature.base}/freebsd.gtk.x86_64/${collectingFolder}/"/>
++		<copy todir="${feature.base}/freebsd.gtk.x86_64/${collectingFolder}/" failonerror="true" overwrite="true">
 +			<fileset dir="${basedir}/gtk">
 +				<include name="**"/>
 +			</fileset>
@@ -28,7 +28,7 @@
  		<antcall target="rootFileslinux_gtk_s390x"/>
  		<antcall target="rootFileslinux_motif_x86"/>
 +		<antcall target="rootFilesfreebsd_gtk_x86"/>
-+		<antcall target="rootFilesfreebsd_gtk_amd64"/>
++		<antcall target="rootFilesfreebsd_gtk_x86_64"/>
  		<antcall target="rootFilessolaris_gtk_sparc"/>
  		<antcall target="rootFilessolaris_gtk_x86"/>
  		<antcall target="rootFilessolaris_motif_sparc"/>

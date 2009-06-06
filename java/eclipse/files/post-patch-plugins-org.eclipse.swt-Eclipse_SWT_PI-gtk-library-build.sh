@@ -1,5 +1,5 @@
---- gtk/library/build.sh.orig	2008-09-11 21:18:02.725614374 -0400
-+++ gtk/library/build.sh	2008-09-11 21:18:07.455632295 -0400
+--- gtk/library/build.sh.orig	2009-02-15 12:44:50.966087957 -0500
++++ gtk/library/build.sh	2009-02-15 12:45:01.414490300 -0500
 @@ -50,6 +50,10 @@
  	fi
  fi
@@ -20,32 +20,28 @@
  	SWT_PTR_CFLAGS=-DSWT_PTR_SIZE_64
  	export SWT_PTR_CFLAGS
  	if [ -d /lib64 ]; then
-@@ -74,47 +78,44 @@
+@@ -74,45 +78,43 @@
  	fi
  fi
  
 -if [ x`pkg-config --exists gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0 && echo YES` = "xYES" ]; then
--	echo "libgnomeui-2.0 found, compiling SWT program support using GNOME"
++if [ x${MAKE_GNOME} = "xmake_gnome" -a x`pkg-config --exists gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0 && echo YES` = "xYES" ]; then
+ 	echo "libgnomeui-2.0 found, compiling SWT program support using GNOME"
 -	MAKE_GNOME=make_gnome
--else
--	echo "libgnome-2.0 and libgnomeui-2.0 not found:"
--	echo "    *** SWT Program support for GNOME will not be compiled."
--fi
--
++	INTERNAL_MAKE_GNOME=make_gnome
+ else
+ 	echo "libgnome-2.0 and libgnomeui-2.0 not found:"
+ 	echo "    *** SWT Program support for GNOME will not be compiled."
+ fi
+ 
 -if [ x`pkg-config --exists cairo && echo YES` = "xYES" ]; then
--	echo "Cairo found, compiling SWT support for the cairo graphics library."
++if [ x${MAKE_CAIRO} = "xmake_cairo" -a x`pkg-config --exists cairo && echo YES` = "xYES" ]; then
+ 	echo "Cairo found, compiling SWT support for the cairo graphics library."
 -	MAKE_CAIRO=make_cairo
--else
--	echo "Cairo not found:"
--	echo "    *** Advanced graphics support using cairo will not be compiled."
-+if [ x${MAKE_GNOME} = "xmake_gnome" ]; then
-+	if [ x`pkg-config --exists gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0 && echo YES` = "xYES" ]; then
-+		echo "libgnomeui-2.0 found, compiling SWT program support using GNOME"
-+		_MAKE_GNOME=make_gnome
-+	else
-+		echo "libgnome-2.0 and libgnomeui-2.0 not found:"
-+		echo "    *** SWT Program support for GNOME will not be compiled."
-+	fi
++	INTERNAL_MAKE_CAIRO=make_cairo
+ else
+ 	echo "Cairo not found:"
+ 	echo "    *** Advanced graphics support using cairo will not be compiled."
  fi
  
 -if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
@@ -67,43 +63,38 @@
 -		export MOZILLA_INCLUDES
 -		export MOZILLA_LIBS
 -		MAKE_MOZILLA=make_mozilla
-+if [ x${MAKE_CAIRO} = "xmake_cairo" ]; then
-+	if [ x`pkg-config --exists cairo && echo YES` = "xYES" ]; then
-+		echo "Cairo found, compiling SWT support for the cairo graphics library."
-+		_MAKE_CAIRO=make_cairo
- 	else
+-	else
 -		echo "None of the following libraries were found:  Mozilla/XPCOM, Firefox/XPCOM, or XULRunner/XPCOM"
 -		echo "    *** Mozilla embedding support will not be compiled."
-+		echo "Cairo not found:"
-+		echo "    *** Advanced graphics support using cairo will not be compiled."
- 	fi
- fi
- 
-+if [ x${MAKE_MOZILLA} = "xmake_mozilla" ]; then
-+    if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
+-	fi
++if [ x${MAKE_MOZILLA} = "xmake_mozilla" -a -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
 +	case ${BROWSER} in
 +		"firefox" | "mozilla" | "seamonkey" | "xulrunner")
 +			MOZILLA_INCLUDES=`pkg-config --cflags ${BROWSER}-xpcom`
 +			MOZILLA_LIBS=`pkg-config --libs ${BROWSER}-xpcom`
 +			export MOZILLA_INCLUDES
 +			export MOZILLA_LIBS
-+			_MAKE_MOZILLA=make_mozilla
++			INTERNAL_MAKE_MOZILLA=make_mozilla
++			;;
++		"libxul")
++			MOZILLA_INCLUDES=`pkg-config --cflags ${BROWSER}`
++			MOZILLA_LIBS=`pkg-config --libs ${BROWSER}`
++			export MOZILLA_INCLUDES
++			export MOZILLA_LIBS
++			INTERNAL_MAKE_MOZILLA=make_mozilla
 +			;;
 +		*)
 +			echo "None of the following libraries were found:  Mozilla/XPCOM, Firefox/XPCOM, or XULRunner/XPCOM"
 +			echo "    *** Mozilla embedding support will not be compiled."
-+			;;
++		;;
 +	esac
-+    fi
-+fi
-+
+ fi
+ 
  # Find AWT if available
- if [ -z "${AWT_LIB_PATH}" ]; then
- 	if [ -d ${JAVA_HOME}/jre/lib/${AWT_ARCH} ]; then
-@@ -142,5 +143,5 @@
+@@ -142,5 +144,5 @@
  if [ "x${1}" = "xclean" ]; then
  	make -f $MAKEFILE clean
  else
 -	make -f $MAKEFILE all $MAKE_GNOME $MAKE_CAIRO $MAKE_AWT $MAKE_MOZILLA ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
-+	make -f $MAKEFILE all $_MAKE_GNOME $_MAKE_CAIRO $MAKE_AWT $_MAKE_MOZILLA ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
++	make -f $MAKEFILE all $INTERNAL_MAKE_GNOME $INTERNAL_MAKE_CAIRO $MAKE_AWT $INTERNAL_MAKE_MOZILLA ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
  fi

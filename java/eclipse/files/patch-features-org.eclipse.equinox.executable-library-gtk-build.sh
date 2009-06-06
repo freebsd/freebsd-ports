@@ -1,5 +1,5 @@
---- features/org.eclipse.equinox.executable/library/gtk/build.sh.orig	2008-09-30 19:29:09.000000000 -0400
-+++ features/org.eclipse.equinox.executable/library/gtk/build.sh	2008-09-30 19:28:40.000000000 -0400
+--- features/org.eclipse.equinox.executable/library/gtk/build.sh.orig	2009-02-15 20:00:26.335076358 -0500
++++ features/org.eclipse.equinox.executable/library/gtk/build.sh	2009-02-15 19:58:28.194586994 -0500
 @@ -53,6 +53,7 @@
  	"Linux")
  		makefile="make_linux.mak"
@@ -8,7 +8,7 @@
  		case $MODEL in
  			"x86_64")
  				defaultOSArch="x86_64"
-@@ -94,9 +95,31 @@
+@@ -94,9 +95,28 @@
  				;;
  		esac
  		;;
@@ -17,16 +17,13 @@
 +		defaultOS="freebsd"
 +		MAKE=gmake
 +		javaHome="$JAVA_HOME"
++		defaultJava=DEFAULT_JAVA_EXEC
 +		case $MODEL in
 +			"amd64")
-+				defaultOSArch="amd64"
-+				defaultJava=DEFAULT_JAVA_EXEC
-+				OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
++				defaultOSArch="x86_64"
 +				;;
 +			i?86)
 +				defaultOSArch="x86"
-+				defaultJava=DEFAULT_JAVA_EXEC
-+				OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
 +				;;
 +			*)
 +				echo "*** Unknown MODEL <${MODEL}>"
@@ -40,7 +37,7 @@
  		javaHome="/usr/jdk/jdk1.5.0_01"
  		OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
  		#PATH=/usr/ccs/bin:/opt/SUNWspro/bin:$PATH
-@@ -154,7 +177,7 @@
+@@ -154,7 +174,7 @@
  JAVA_HOME=$javaHome
  DEFAULT_JAVA=$defaultJava
  
@@ -49,7 +46,7 @@
  OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
  
  export OUTPUT_DIR PROGRAM_OUTPUT DEFAULT_OS DEFAULT_OS_ARCH DEFAULT_WS JAVA_HOME DEFAULT_JAVA LIBRARY_DIR
-@@ -162,13 +185,13 @@
+@@ -162,13 +182,13 @@
  # If the OS is supported (a makefile exists)
  if [ "$makefile" != "" ]; then
  	if [ "$extraArgs" != "" ]; then

@@ -1,0 +1,16 @@
+--- plugins/org.eclipse.update.core.freebsd/src/build.xml.orig	2009-04-17 16:09:39.450704199 -0400
++++ plugins/org.eclipse.update.core.freebsd/src/build.xml	2009-04-17 16:10:00.209609388 -0400
+@@ -43,13 +43,9 @@
+   
+   <!-- This target build the library -->
+   <target name="build">
+-    <echo message="Building ${library-file}"/>
+-
+     <property name="header-path" value="${jdk-path}/../include"/>
+     <property name="header-freebsd-path" value="${header-path}/freebsd" />
+ 
+-	<echo message="gcc -o  ${library-file} -shared -I${src-path} -I${header-freebsd-path} -fPIC ${library-file}"/>
+-
+     <apply executable="gcc" dest="${eclipse-home}/" parallel="false">
+       <arg value="-o"/>
+       <arg value="${library-file}"/>

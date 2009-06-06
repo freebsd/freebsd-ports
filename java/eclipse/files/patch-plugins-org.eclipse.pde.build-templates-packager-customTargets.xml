@@ -18,9 +18,9 @@
  		</ant>
  	</target>
 +
-+	<target name="assemble.freebsd.gtk.amd64.xml">
++	<target name="assemble.freebsd.gtk.x86_64.xml">
 +		<ant antfile="${assembleScriptName}" >
-+			<property name="archiveName" value="${archiveNamePrefix}-freebsd.gtk.amd64.zip"/>
++			<property name="archiveName" value="${archiveNamePrefix}-freebsd.gtk.x86_64.zip"/>
 +		</ant>
 +	</target>
  		

@@ -6,7 +6,7 @@
  	</target>
 +	<target name="rootFilesfreebsd_gtk_x86">
 +	</target>
-+	<target name="rootFilesfreebsd_gtk_amd64">
++	<target name="rootFilesfreebsd_gtk_x86_64">
 +	</target>
  	<target name="rootFilessolaris_gtk_sparc">
  	</target>
@@ -16,7 +16,7 @@
  		<antcall target="rootFileslinux_gtk_s390x"/>
  		<antcall target="rootFileslinux_motif_x86"/>
 +		<antcall target="rootFilesfreebsd_gtk_x86"/>
-+		<antcall target="rootFilesfreebsd_gtk_amd64"/>
++		<antcall target="rootFilesfreebsd_gtk_x86_64"/>
  		<antcall target="rootFilessolaris_gtk_sparc"/>
  		<antcall target="rootFilessolaris_gtk_x86"/>
  		<antcall target="rootFilessolaris_motif_sparc"/>

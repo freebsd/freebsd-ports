@@ -1,0 +1,11 @@
+--- plugins/org.eclipse.core.net/natives/unix/GetProxyGnome/makefile.orig	2009-02-15 13:44:59.076375045 -0500
++++ plugins/org.eclipse.core.net/natives/unix/GetProxyGnome/makefile	2009-02-15 19:33:42.687935173 -0500
+@@ -28,7 +28,7 @@
+ libproxygnome.so: $(OBJS) $(USER_OBJS)
+ 	@echo 'Building target: $@'
+ 	@echo 'Invoking: GCC C Linker'
+-	gcc -m32 -shared -o"libproxygnome.so" $(OBJS) $(USER_OBJS) $(LIBS)
++	@gcc -shared -o"libproxygnome.so" $(OBJS) $(USER_OBJS) $(LIBS)
+ 	@echo 'Finished building target: $@'
+ 	@echo ' '
+ 

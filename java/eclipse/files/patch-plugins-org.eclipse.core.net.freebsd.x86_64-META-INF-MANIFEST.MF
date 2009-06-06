@@ -1,0 +1,14 @@
+--- plugins/org.eclipse.core.net.freebsd.x86_64/META-INF/MANIFEST.MF.orig	2009-02-16 20:06:52.424901811 -0500
++++ plugins/org.eclipse.core.net.freebsd.x86_64/META-INF/MANIFEST.MF	2009-02-16 20:07:30.240058207 -0500
+@@ -3,8 +3,9 @@
+ Bundle-Name: %fragmentName
+ Bundle-Vendor: %providerName
+ Bundle-Localization: fragment
+-Bundle-SymbolicName: org.eclipse.core.net.freebsd.x86;singleton:=true
++Bundle-SymbolicName: org.eclipse.core.net.freebsd.x86_64;singleton:=tr
++ ue
+ Bundle-Version: 1.0.0.qualifier
+ Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
+-Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=x86))
++Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=x86_64))
+ Bundle-RequiredExecutionEnvironment: J2SE-1.4

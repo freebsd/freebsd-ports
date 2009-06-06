@@ -9,8 +9,8 @@
 +			<property name="os" value="freebsd"/>
 +			<property name="ws" value="gtk"/>
 +		</ant>
-+		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk.freebsd.amd64.source" target="${target}">
-+			<property name="arch" value="amd64"/>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk.freebsd.x86_64.source" target="${target}">
++			<property name="arch" value="x86_64"/>
 +			<property name="os" value="freebsd"/>
 +			<property name="ws" value="gtk"/>
 +		</ant>
@@ -23,7 +23,7 @@
  	</target>
 +	<target name="rootFilesfreebsd_gtk_x86">
 +	</target>
-+	<target name="rootFilesfreebsd_gtk_amd64">
++	<target name="rootFilesfreebsd_gtk_x86_64">
 +	</target>
  	<target name="rootFilessolaris_gtk_sparc">
  	</target>
@@ -33,7 +33,7 @@
  		<antcall target="rootFileslinux_gtk_s390x"/>
  		<antcall target="rootFileslinux_motif_x86"/>
 +		<antcall target="rootFilesfreebsd_gtk_x86"/>
-+		<antcall target="rootFilesfreebsd_gtk_amd64"/>
++		<antcall target="rootFilesfreebsd_gtk_x86_64"/>
  		<antcall target="rootFilessolaris_gtk_sparc"/>
  		<antcall target="rootFilessolaris_gtk_x86"/>
  		<antcall target="rootFilessolaris_motif_sparc"/>
