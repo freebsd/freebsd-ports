@@ -70,6 +70,7 @@ CONFLICTS=	epiphany-webkit-[1-9]*
 PLIST_SUB+=	GECKO=""
 .if ${GECKO:Mlibxul}!=""
 PLUGIN_SYMLINK=	19
+CONFIGURE_ENV+=gecko_cv_xpcom_program_check="yes"
 .else
 PLUGIN_SYMLINK=	18
 .endif
