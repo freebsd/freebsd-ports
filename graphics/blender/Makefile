@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.48a
-PORTREVISION=	1
+PORTVERSION=	2.49
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -49,15 +48,22 @@ OPTIONS=	DDS		"DDS file format support" on \
 		OCFLAGS		"Optimized Cflags" off \
 		OPENAL		"3D sound support using OpenAL" off \
 		OPENEXR		"High dynamic-range (HDR) support using OpenEXR" on \
+		OPENJPEG	"Enhanced JPEG graphics support using OpenJPEG" on \
 		OPENMP		"Parallel processing support" off \
 		VERSE		"Shared networking support using Verse" on
 
 .include <bsd.port.pre.mk>
 
+BDSUFFIX=	${OSREL}-${ARCH}
+.if ${ARCH} == "amd64"
+BDSUFFIX=	${OSREL}-x86_64
+.endif
+
 MAKE_ENV+=	NAN_FMOD="${LOCALBASE}/"
 MAKE_ENV+=	NAN_PYTHON="${LOCALBASE}/"
 MAKE_ENV+=	NAN_PYTHON_VERSION=${PYTHON_VER}
 MAKE_ENV+=	NAN_JPEG="${LOCALBASE}/"
+MAKE_ENV+=	NAN_OPENJPEG="${LOCALBASE}/"
 MAKE_ENV+=	NAN_PNG="${LOCALBASE}/"
 MAKE_ENV+=	NAN_ZLIB="${LOCALBASE}/"
 MAKE_ENV+=	NAN_ODE="${LOCALBASE}/"
@@ -158,6 +164,14 @@ LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
 NANCPPFLAGS+=	"-I${LOCALBASE}/include/OpenEXR"
 .endif
 
+.if defined(WITHOUT_OPENJPEG)
+MAKE_ENV+=	WITH_OPENJPEG="false"
+.else
+MAKE_ENV+=	WITH_OPENJPEG="true"
+MAKE_ENV+=	NAN_OPENJPEG="${LOCALBASE}/"
+LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
+.endif
+
 .if defined(WITH_OPENMP)
 .if ${OSVERSION} < 700000
 BROKEN=		OpenMP support is not available for FreeBSD 6.x and below
@@ -192,8 +206,8 @@ pre-configure:
 		${WRKSRC}/user-def.mk
 .else
 	@${REINPLACE_CMD} -e \
-		's|%%FFMPEGCFLAGS%%|$$\(shell pkg-config --cflags libavcodec libavformat\)|; \
-		s|%%FFMPEGLIBS%%|$$\(shell pkg-config --libs libavcodec libavformat\)|;' \
+		's|%%FFMPEGCFLAGS%%|$$\(shell pkg-config --cflags libavcodec libavformat libavdevice\)|; \
+		s|%%FFMPEGLIBS%%|$$\(shell pkg-config --libs libavcodec libavformat libavdevice\)|;' \
 		${WRKSRC}/user-def.mk
 .endif
 
@@ -216,12 +230,12 @@ pre-configure:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/blender ${PREFIX}/bin/blender
-	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${OSREL}-${ARCH}/bin/blender ${PREFIX}/bin/blender-bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${BDSUFFIX}/bin/blender ${PREFIX}/bin/blender-bin
 .if defined(WITH_KETSJI)
-	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${OSREL}-${ARCH}/bin/blenderplayer ${PREFIX}/bin/blenderplayer
+	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${BDSUFFIX}/bin/blenderplayer ${PREFIX}/bin/blenderplayer
 .endif
 .if !defined(WITHOUT_VERSE)
-	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${OSREL}-${ARCH}/bin/verse ${PREFIX}/bin/verse
+	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${BDSUFFIX}/bin/verse ${PREFIX}/bin/verse
 .endif
 
 	@${MKDIR} ${DATADIR}
