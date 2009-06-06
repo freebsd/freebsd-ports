@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090606:
+  AFFECTS: users of java/eclipse
+  AUTHOR: glewis@FreeBSD.org
+
+  The update to 3.4.2 changes the location of the metadata for eclipse to
+  be more in line with what is used on other platforms.  This means that
+  after the update plugins that have been installed by a user with the
+  built in Update Manager will need to be reinstalled.
+
 20090605:
   AFFECTS: users of mail/postfix
   AUTHOR: itetcu@FreeBSD.org
