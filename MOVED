@@ -3974,3 +3974,5 @@ biology/p5-bioperl-devel||2009-06-05|Has expired: no longer under development
 biology/p5-bioperl-run-devel||2009-06-05|Has expired: no longer under development
 net-p2p/deluge05||2009-06-05|Has expired: use net-p2p/deluge instead
 textproc/gmat||2009-06-05|Has expired: failed to build for a long time, no maintainer and apparently no users either
+devel/powerpc-gcc||2009-06-06|Has expired: use cross-gcc instead
+devel/powerpc-binutils||2009-06-06|Has expired: use cross-binutils instead
