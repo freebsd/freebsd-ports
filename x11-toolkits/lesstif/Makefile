@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION=	0.95.0
-PORTREVISION=	5
+PORTVERSION=	0.95.2
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +20,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 CONFLICTS?=	open-motif-*
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:262 libtool:15
-USE_XORG=	sm ice xt xp xext x11 xextproto
+USE_XORG=	sm ice xt xp xext x11 xextproto xrender
 USE_FREETYPE=	yes
 USE_LDCONFIG=	yes
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
@@ -72,6 +71,12 @@ pre-extract:
 		;; \
 	esac)
 .endif
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|LT_HAVE_FREETYPE|FINDXFT_HAVE_FREETYPE|g' \
+		-e 's|LT_HAVE_XRENDER|FINDXFT_HAVE_XRENDER|g' \
+		${WRKSRC}/acinclude.m4
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/scripts/autoconf/ac_find_motif.m4 \
