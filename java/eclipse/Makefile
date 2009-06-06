@@ -20,6 +20,8 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 
+PATCH_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 USE_ZIP=	yes
