@@ -1,43 +1,47 @@
 bin/six
-bin/gsc-cc-o.bat
+bin/gsi-gambit
 bin/gsc-gambit
-bin/gsc-script
-bin/gsi
+bin/gsc-cc-o.bat
+bin/gambc-doc.bat
 bin/gsi-script
-bin/scheme-ieee-1178-1990
-bin/scheme-r4rs
-bin/scheme-r5rs
-bin/scheme-srfi-0
 bin/six-script
-share/doc/Gambit-C/gambit-c.html
-share/doc/Gambit-C/gambit-c.pdf
-share/doc/Gambit-C/gambit-c.txt
-include/Gambit-C/gambit.h
-include/Gambit-C/gambit-not402008.h
-lib/Gambit-C/_gambc.c
-lib/Gambit-C/_kernel#.scm
-lib/Gambit-C/_system#.scm
-lib/Gambit-C/_num#.scm
-lib/Gambit-C/_std#.scm
-lib/Gambit-C/_eval#.scm
-lib/Gambit-C/_io#.scm
-lib/Gambit-C/_nonstd#.scm
-lib/Gambit-C/_thread#.scm
-lib/Gambit-C/_repl#.scm
-lib/Gambit-C/_gambit#.scm
-lib/Gambit-C/digest#.scm
-lib/Gambit-C/digest.scm
-lib/Gambit-C/gambit#.scm
-lib/_gambcgsi.c
-lib/libgambcgsi.a
-lib/_gambcgsc.c
-lib/libgambcgsc.a
-lib/Gambit-C/libgambc.a
-lib/Gambit-C/r4rs#.scm
-lib/Gambit-C/r5rs#.scm
+bin/scheme-srfi-0
+bin/scheme-r5rs
+bin/scheme-r4rs
+bin/scheme-ieee-1178-1990
+bin/gsc-script
+include/gambit-c/gambit.h
+include/gambit-c/gambit-not404003.h
+info/gambit-c.info
+info/gambit-c.info-1
+info/gambit-c.info-2
+info/gambit-c.info-3
+lib/gambit-c/_gambc.c
+lib/gambit-c/_kernel#.scm
+lib/gambit-c/_system#.scm
+lib/gambit-c/_num#.scm
+lib/gambit-c/_std#.scm
+lib/gambit-c/_eval#.scm
+lib/gambit-c/_io#.scm
+lib/gambit-c/_nonstd#.scm
+lib/gambit-c/_thread#.scm
+lib/gambit-c/_repl#.scm
+lib/gambit-c/_gambit#.scm
+lib/gambit-c/gambit#.scm
+lib/gambit-c/r5rs#.scm
+lib/gambit-c/r4rs#.scm
+lib/gambit-c/digest#.scm
+lib/gambit-c/digest.scm
+lib/gambit-c/syntax-case.scm
+lib/gambit-c/libgambc.a
+lib/gambit-c/_gambcgsi.c
+lib/gambit-c/libgambcgsi.a
+lib/gambit-c/_gambcgsc.c
+lib/gambit-c/libgambcgsc.a
+share/doc/gambit-c/gambit-c.pdf
+share/doc/gambit-c/gambit-c.html
+share/doc/gambit-c/gambit-c.txt
 share/emacs/site-lisp/gambit.el
-share/Gambit-C/syntax-case.scm
-@dirrm include/Gambit-C
-@dirrm share/doc/Gambit-C
-@dirrm share/Gambit-C
-@dirrm lib/Gambit-C
+@dirrm include/gambit-c
+@dirrm lib/gambit-c
+@dirrm share/doc/gambit-c

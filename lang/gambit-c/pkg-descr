@@ -1,7 +1,8 @@
 The Gambit programming system is a full implementation of the Scheme 
 language which conforms to the R4RS and IEEE Scheme standards. It 
-consists of two main programs: gsi, the Gambit Scheme interpreter, and 
-gsc, the Gambit Scheme compiler.
+consists of two main programs: gsi-gambit, the Gambit Scheme interpreter,
+and gsc-gambit, the Gambit Scheme compiler. 
+
 
 Gambit-C is a version of the Gambit programming system in which the 
 compiler generates portable C code, making the whole Gambit-C system 
