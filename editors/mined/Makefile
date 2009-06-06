@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mined
-PORTVERSION=	2000.15.2
+PORTVERSION=	2000.15.3
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/
 
@@ -47,9 +47,6 @@ pre-build:
 	(if [ ! -f ${WRKSRC}/src/mkinclud.${CC:T} ] ; then	\
 	${LN} -sf ${WRKSRC}/src/mkinclud.cc ${WRKSRC}/src/mkinclud.${CC:T} ; \
 	fi)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Warning: conversion of all keyboard mapping tables may take a long time!"
-	@${ECHO_MSG}
 
 post-install:
 	${MKDIR} ${DESKTOPDIR}
