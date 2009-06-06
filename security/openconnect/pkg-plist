@@ -1,0 +1,2 @@
+bin/openconnect
+%%WITH_GUI%%libexec/nm-openconnect-auth-dialog

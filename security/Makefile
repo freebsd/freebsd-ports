@@ -315,6 +315,7 @@
     SUBDIR += op
     SUBDIR += openbsm
     SUBDIR += opencdk
+    SUBDIR += openconnect
     SUBDIR += openct
     SUBDIR += openfwtk
     SUBDIR += openpgpsdk
