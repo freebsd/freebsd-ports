@@ -2292,6 +2292,7 @@
     SUBDIR += py-ctypes
     SUBDIR += py-cxx
     SUBDIR += py-dal
+    SUBDIR += py-darcsver
     SUBDIR += py-dateutil
     SUBDIR += py-dbus
     SUBDIR += py-decorator
