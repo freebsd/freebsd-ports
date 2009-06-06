@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Regular/Unicode/.packlist
+%%SITE_PERL%%/Lingua/JA/Regular/Unicode.pm
+@dirrmtry %%SITE_PERL%%/Lingua/JA/Regular
+@dirrmtry %%SITE_PERL%%/Lingua/JA
+@dirrmtry %%SITE_PERL%%/Lingua
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Regular/Unicode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Regular
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/
