@@ -29,6 +29,7 @@
     SUBDIR += devede
     SUBDIR += dirac
     SUBDIR += dirac-reference
+    SUBDIR += dplay
     SUBDIR += dtv
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg

@@ -1,0 +1,8 @@
+playd is an easy to use command line wrapper for mplayer.
+
+With playd you don't need the mplayer gui to use it as a audio/video
+player because playd supports playlists. It is easy to integrate
+playd into a window manager menu (e.g. FVWM).
+
+-- Aldis Berjoza
+<killasmurf86@gmail.com>
