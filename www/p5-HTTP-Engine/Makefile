@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Engine
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for HTTP Server Engine Drivers
 
 RUN_DEPENDS=	\
-	p5-Any-Moose>=0.07:${PORTSDIR}/devel/p5-Any-Moose \
+	p5-Any-Moose>=0.08:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-Mouse>=0.21:${PORTSDIR}/devel/p5-Moose \
 	p5-MouseX-Types>=0.01:${PORTSDIR}/devel/p5-MouseX-Types \
 	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
