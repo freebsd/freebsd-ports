@@ -7,6 +7,7 @@
 
 PORTNAME=	dnsperf
 PORTVERSION=	1.0.1.0
+PORTREVISION=	1
 CATEGORIES=	dns benchmarks net
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1
@@ -17,6 +18,7 @@ COMMENT=	DNSPerf and ResPerf deliver accurate performance metrics of Domain Name
 BUILD_DEPENDS=	isc-config.sh:${PORTSDIR}/dns/bind9
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
