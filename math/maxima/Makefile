@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	math tk
 MASTER_SITES=	SF
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	Symbolic mathematics program
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/${LISPPORT}

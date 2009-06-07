@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bastard
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	The Bastard Disassembly Environment x86 disassembler library and CLI
 
 GNU_CONFIGURE=	yes

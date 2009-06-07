@@ -14,7 +14,7 @@ MASTER_SITES=	http://laurikari.net/tre/ \
 		LOCAL/jkoshy
 DISTNAME=	tre-${PORTVERSION}
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
 USE_BZIP2=	yes

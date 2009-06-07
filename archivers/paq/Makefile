@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	A family of archivers with extremely high compression ratios
 
 LPAQ=		lpaq8

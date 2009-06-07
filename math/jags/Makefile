@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} classic-bugs.tar.gz jags_user_manual.pdf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	Just Another Gibbs Sampler
 
 LIB_DEPENDS=	Rmath.0:${PORTSDIR}/math/libRmath

@@ -12,7 +12,7 @@ MASTER_SITES=	http://laurikari.net/tre/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	tre-${PORTVERSION}
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	Python interface for the tre regular expressions library
 
 LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre

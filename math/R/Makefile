@@ -29,7 +29,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://www.ibiblio.org/pub/languages/R/CRAN/src/base/R-2/ \
 		http://www.bioconductor.org/CRAN/src/base/R-2/
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	A language for statistical computing and graphics
 
 OPTIONS=	ATLAS        "Use ATLAS instead of BLAS/LAPACK"           off \

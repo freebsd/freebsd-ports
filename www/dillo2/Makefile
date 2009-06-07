@@ -9,7 +9,7 @@ PORTVERSION=	2.0
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	A fast, small graphical Web browser built upon fltk2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2

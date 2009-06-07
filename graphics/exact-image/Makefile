@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ CENKES
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	Fast image processing library
 
 BUILD_DEPENDS=	swig>=1.3.31:${PORTSDIR}/devel/swig13
