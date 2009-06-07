@@ -36,6 +36,10 @@ USE_SDL=	sdl image ttf
 MAKE_ARGS+=	INSTALL_DOC_DIR=${WRKSRC}/dummy
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^SYMLINK_FOR_BINARY/s/true/false/' \
+		${WRKSRC}/build/custom.mk
+
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64")
