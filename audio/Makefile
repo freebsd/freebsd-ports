@@ -399,6 +399,7 @@
     SUBDIR += linux-f10-libaudiofile
     SUBDIR += linux-f10-libogg
     SUBDIR += linux-f10-libvorbis
+    SUBDIR += linux-f10-mikmod
     SUBDIR += linux-f10-openal
     SUBDIR += linux-f10-sdl_mixer
     SUBDIR += linux-f8-alsa-lib
