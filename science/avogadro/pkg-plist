@@ -43,9 +43,9 @@ include/avogadro/tool.h
 include/avogadro/toolgroup.h
 include/avogadro/undosequence.h
 include/avogadro/zmatrix.h
+lib/avogadro/AvogadroConfigVersion.cmake
 lib/avogadro/AvogadroBuildSettings.cmake
 lib/avogadro/AvogadroConfig.cmake
-lib/avogadro/AvogadroConfigVersion.cmake
 lib/avogadro/AvogadroLibraryDeps.cmake
 lib/avogadro/AvogadroUse.cmake
 lib/avogadro/cmake/FindEigen2.cmake
@@ -102,50 +102,50 @@ lib/avogadro/tools/navigatetool.so
 lib/avogadro/tools/selectrotatetool.so
 lib/libavogadro.so
 lib/libavogadro.so.0
-lib/libavogadro.so.0.9.5
-%%PYTHON_SITELIBDIR%%/_Avogadro.so
+lib/libavogadro.so.0.9.6
 %%PYTHON_SITELIBDIR%%/Avogadro.py
-%%DATADIR%%/builder/amino/d-ala.zmat
-%%DATADIR%%/builder/amino/d-arg.zmat
-%%DATADIR%%/builder/amino/d-asn.zmat
-%%DATADIR%%/builder/amino/d-asp.zmat
-%%DATADIR%%/builder/amino/d-cys.zmat
-%%DATADIR%%/builder/amino/d-gln.zmat
-%%DATADIR%%/builder/amino/d-glu.zmat
-%%DATADIR%%/builder/amino/d-his.zmat
-%%DATADIR%%/builder/amino/d-ile.zmat
-%%DATADIR%%/builder/amino/d-leu.zmat
+%%PYTHON_SITELIBDIR%%/_Avogadro.so
 %%DATADIR%%/builder/amino/d-lys.zmat
-%%DATADIR%%/builder/amino/d-met.zmat
-%%DATADIR%%/builder/amino/d-phe.zmat
+%%DATADIR%%/builder/amino/l-his.zmat
+%%DATADIR%%/builder/amino/d-ala.zmat
+%%DATADIR%%/builder/amino/l-leu.zmat
+%%DATADIR%%/builder/amino/d-glu.zmat
+%%DATADIR%%/builder/amino/l-pyl.zmat
+%%DATADIR%%/builder/amino/d-cys.zmat
+%%DATADIR%%/builder/amino/l-sec.zmat
+%%DATADIR%%/builder/amino/l-val.zmat
+%%DATADIR%%/builder/amino/d-leu.zmat
+%%DATADIR%%/builder/amino/l-cys.zmat
 %%DATADIR%%/builder/amino/d-pro.zmat
-%%DATADIR%%/builder/amino/d-ser.zmat
-%%DATADIR%%/builder/amino/d-thr.zmat
-%%DATADIR%%/builder/amino/d-trp.zmat
+%%DATADIR%%/builder/amino/d-arg.zmat
+%%DATADIR%%/builder/amino/l-glu.zmat
+%%DATADIR%%/builder/amino/l-met.zmat
 %%DATADIR%%/builder/amino/d-tyr.zmat
 %%DATADIR%%/builder/amino/d-val.zmat
-%%DATADIR%%/builder/amino/gly.zmat
+%%DATADIR%%/builder/amino/l-ile.zmat
+%%DATADIR%%/builder/amino/l-thr.zmat
+%%DATADIR%%/builder/amino/d-asn.zmat
 %%DATADIR%%/builder/amino/l-ala.zmat
+%%DATADIR%%/builder/amino/d-ser.zmat
+%%DATADIR%%/builder/amino/l-phe.zmat
+%%DATADIR%%/builder/amino/d-gln.zmat
+%%DATADIR%%/builder/amino/d-thr.zmat
+%%DATADIR%%/builder/amino/d-asp.zmat
+%%DATADIR%%/builder/amino/d-trp.zmat
 %%DATADIR%%/builder/amino/l-arg.zmat
 %%DATADIR%%/builder/amino/l-asn.zmat
 %%DATADIR%%/builder/amino/l-asp.zmat
-%%DATADIR%%/builder/amino/l-cys.zmat
-%%DATADIR%%/builder/amino/l-gln.zmat
-%%DATADIR%%/builder/amino/l-glu.zmat
-%%DATADIR%%/builder/amino/l-his.zmat
-%%DATADIR%%/builder/amino/l-ile.zmat
-%%DATADIR%%/builder/amino/l-leu.zmat
-%%DATADIR%%/builder/amino/l-lys.zmat
-%%DATADIR%%/builder/amino/l-met.zmat
-%%DATADIR%%/builder/amino/l-phe.zmat
-%%DATADIR%%/builder/amino/l-pro.zmat
-%%DATADIR%%/builder/amino/l-pyl.zmat
-%%DATADIR%%/builder/amino/l-sec.zmat
-%%DATADIR%%/builder/amino/l-ser.zmat
-%%DATADIR%%/builder/amino/l-thr.zmat
 %%DATADIR%%/builder/amino/l-trp.zmat
+%%DATADIR%%/builder/amino/d-ile.zmat
+%%DATADIR%%/builder/amino/l-ser.zmat
+%%DATADIR%%/builder/amino/gly.zmat
+%%DATADIR%%/builder/amino/l-lys.zmat
+%%DATADIR%%/builder/amino/d-met.zmat
+%%DATADIR%%/builder/amino/d-phe.zmat
+%%DATADIR%%/builder/amino/l-gln.zmat
 %%DATADIR%%/builder/amino/l-tyr.zmat
-%%DATADIR%%/builder/amino/l-val.zmat
+%%DATADIR%%/builder/amino/l-pro.zmat
+%%DATADIR%%/builder/amino/d-his.zmat
 %%DATADIR%%/fragments/alcohols/ethanol.cml
 %%DATADIR%%/fragments/alcohols/methanol.cml
 %%DATADIR%%/fragments/alcohols/propan-1-ol.cml
@@ -281,6 +281,50 @@ lib/libavogadro.so.0.9.5
 %%DATADIR%%/fragments/cyclic alkanes/cyclopentane.cml
 %%DATADIR%%/fragments/cyclic alkanes/cyclopropane.cml
 %%DATADIR%%/fragments/cyclic alkanes/norbornane.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-allopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-arabinopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-fucopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-galactopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-galacturonopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-glucopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-glucuronopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-gulopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-idopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-lyxopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-mannopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-psicopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-rhamnopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-ribopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-tagatopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-talopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-D-xylopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-L-arabinopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-L-fucopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-L-galactopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-L-lyxopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-L-rhamnopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-L-ribopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-L-sorbopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/alpha-L-xylopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-allopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-arabinopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-fructopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-fucopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-galactopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-glucopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-gulopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-idopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-lyxopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-mannopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-rhamnopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-ribopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-tagatopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-talopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-D-xylopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-L-arabinopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-L-lyxopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-L-ribopyranose.cml
+%%DATADIR%%/fragments/cyclic sugars/beta-L-xylopyranose.cml
 %%DATADIR%%/fragments/ethers/di-tert-butylether.cml
 %%DATADIR%%/fragments/ethers/dibutylether.cml
 %%DATADIR%%/fragments/ethers/diethylether.cml
@@ -351,37 +395,40 @@ lib/libavogadro.so.0.9.5
 %%DATADIR%%/i18n/avogadro_uk.qm
 %%DATADIR%%/i18n/avogadro_zh_CN.qm
 %%DATADIR%%/i18n/avogadro_zh_TW.qm
-%%DATADIR%%/i18n/libavogadro_ar.qm
-%%DATADIR%%/i18n/libavogadro_bg.qm
-%%DATADIR%%/i18n/libavogadro_ca.qm
 %%DATADIR%%/i18n/libavogadro_cs.qm
-%%DATADIR%%/i18n/libavogadro_de.qm
-%%DATADIR%%/i18n/libavogadro_en_CA.qm
-%%DATADIR%%/i18n/libavogadro_en_GB.qm
 %%DATADIR%%/i18n/libavogadro_es.qm
-%%DATADIR%%/i18n/libavogadro_fi.qm
-%%DATADIR%%/i18n/libavogadro_fr.qm
-%%DATADIR%%/i18n/libavogadro_id.qm
-%%DATADIR%%/i18n/libavogadro_it.qm
-%%DATADIR%%/i18n/libavogadro_ja.qm
-%%DATADIR%%/i18n/libavogadro_ko.qm
-%%DATADIR%%/i18n/libavogadro_nb.qm
-%%DATADIR%%/i18n/libavogadro_nl.qm
-%%DATADIR%%/i18n/libavogadro_pl.qm
-%%DATADIR%%/i18n/libavogadro_pt.qm
-%%DATADIR%%/i18n/libavogadro_pt_BR.qm
-%%DATADIR%%/i18n/libavogadro_ru.qm
-%%DATADIR%%/i18n/libavogadro_sk.qm
-%%DATADIR%%/i18n/libavogadro_sv.qm
-%%DATADIR%%/i18n/libavogadro_tr.qm
-%%DATADIR%%/i18n/libavogadro_uk.qm
 %%DATADIR%%/i18n/libavogadro_zh_CN.qm
+%%DATADIR%%/i18n/libavogadro_tr.qm
+%%DATADIR%%/i18n/libavogadro_ko.qm
+%%DATADIR%%/i18n/libavogadro_ja.qm
+%%DATADIR%%/i18n/libavogadro_fr.qm
+%%DATADIR%%/i18n/libavogadro_ca.qm
+%%DATADIR%%/i18n/libavogadro_id.qm
+%%DATADIR%%/i18n/libavogadro_sk.qm
 %%DATADIR%%/i18n/libavogadro_zh_TW.qm
+%%DATADIR%%/i18n/libavogadro_de.qm
+%%DATADIR%%/i18n/libavogadro_it.qm
+%%DATADIR%%/i18n/libavogadro_ar.qm
+%%DATADIR%%/i18n/libavogadro_nb.qm
+%%DATADIR%%/i18n/libavogadro_uk.qm
+%%DATADIR%%/i18n/libavogadro_pl.qm
+%%DATADIR%%/i18n/libavogadro_bg.qm
+%%DATADIR%%/i18n/libavogadro_nl.qm
+%%DATADIR%%/i18n/libavogadro_en_GB.qm
+%%DATADIR%%/i18n/libavogadro_ru.qm
+%%DATADIR%%/i18n/libavogadro_pt.qm
+%%DATADIR%%/i18n/libavogadro_sv.qm
+%%DATADIR%%/i18n/libavogadro_fi.qm
+%%DATADIR%%/i18n/libavogadro_en_CA.qm
+%%DATADIR%%/i18n/libavogadro_pt_BR.qm
 share/libavogadro/engineScripts/wireframe.py
 share/libavogadro/extensionScripts/example.py
+@dirrm share/libavogadro/toolScripts
 @dirrm share/libavogadro/extensionScripts
 @dirrm share/libavogadro/engineScripts
 @dirrm share/libavogadro
+@dirrm %%DATADIR%%/builder/amino
+@dirrm %%DATADIR%%/builder
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/fragments/thiols
 @dirrm %%DATADIR%%/fragments/sulfoxides
@@ -392,6 +439,7 @@ share/libavogadro/extensionScripts/example.py
 @dirrm %%DATADIR%%/fragments/heteroaromatics
 @dirrm %%DATADIR%%/fragments/fatty acids
 @dirrm %%DATADIR%%/fragments/ethers
+@dirrm %%DATADIR%%/fragments/cyclic sugars
 @dirrm %%DATADIR%%/fragments/cyclic alkanes
 @dirrm %%DATADIR%%/fragments/coordination
 @dirrm %%DATADIR%%/fragments/carboxylic_acids
@@ -407,8 +455,6 @@ share/libavogadro/extensionScripts/example.py
 @dirrm %%DATADIR%%/fragments/aldehydes
 @dirrm %%DATADIR%%/fragments/alcohols
 @dirrm %%DATADIR%%/fragments
-@dirrm %%DATADIR%%/builder/amino
-@dirrm %%DATADIR%%/builder
 @dirrm %%DATADIR%%
 @dirrm lib/avogadro/tools
 @dirrm lib/avogadro/extensions

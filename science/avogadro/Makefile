@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avogadro
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -26,6 +26,7 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui opengl linguist qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
+CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" -DLIB_INSTALL_DIR="${LOCALBASE}/lib"
 USE_GCC=	4.3+
 USE_PYTHON=	2.5+
 MAKE_JOBS_SAFE=	yes
