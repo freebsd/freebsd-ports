@@ -20,7 +20,7 @@ USE_AUTOTOOLS=	libtool:15
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	GTK	"Build with Gtk+/GNOME stroke support"	off
+OPTIONS=	GTK	"Build with legacy Gtk+/GNOME stroke support"	off
 
 .include <bsd.port.pre.mk>
 
@@ -32,7 +32,8 @@ PLIST_SUB+=	GS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+			${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
