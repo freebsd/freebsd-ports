@@ -1,6 +1,5 @@
-A library for reading and writing gif images.  The save functionality
-uses an uncompressed gif algorithm to avoid the Unisys LZW patent.
-This library is based on Eric Raymond's giflib and implements a
-superset of that library's API.
+giflib is a library for reading and writing gif images.
+It is API and ABI compatible with libungif which was in wide use
+while the LZW compression algorithm was patented
 
-WWW: http://sourceforge.net/projects/libungif/
+WWW: http://sourceforge.net/projects/giflib/

@@ -29,12 +29,11 @@ bin/raw2gif
 bin/rgb2gif
 bin/text2gif
 include/gif_lib.h
-lib/libungif.a
-lib/libungif.la
-lib/libungif.so
-lib/libungif.so.5
+lib/libgif.a
+lib/libgif.la
+lib/libgif.so
+lib/libgif.so.5
 %%PORTDOCS%%%%DOCSDIR%%/GifFileType.png
-%%PORTDOCS%%%%DOCSDIR%%/UNCOMPRESSED_GIF
 %%PORTDOCS%%%%DOCSDIR%%/gif2bgi.html
 %%PORTDOCS%%%%DOCSDIR%%/gif2epsn.html
 %%PORTDOCS%%%%DOCSDIR%%/gif2herc.html

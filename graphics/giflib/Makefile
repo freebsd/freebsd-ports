@@ -1,13 +1,12 @@
-# New ports collection makefile for:	libungif
+# New ports collection makefile for:	giflib
 # Date created:		03 May 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	libungif
-PORTVERSION=	4.1.4
-PORTREVISION=	5
+PORTNAME=	giflib
+PORTVERSION=	4.1.6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	giflib
@@ -28,12 +27,13 @@ NOX11SUFFIX=	-nox11
 .else
 USE_XORG=	sm x11
 PLIST_SUB+=	X11=''
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/UNCOMPRESSED_GIF ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
