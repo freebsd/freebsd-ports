@@ -1,6 +1,6 @@
---- ./configure.in.orig	Sat Jun  9 17:30:00 2007
-+++ ./configure.in	Tue Jul 17 12:37:26 2007
-@@ -577,8 +577,8 @@
+--- configure.in.orig	2008-12-03 17:00:22.000000000 -0500
++++ configure.in	2009-06-02 13:28:01.067367126 -0400
+@@ -573,8 +573,8 @@
  dnl>
  if test ".${PCAP_ROOT}" != .; then
    if test -d $PCAP_ROOT &&
@@ -11,3 +11,45 @@
         PCAP_ROOT=`cd ${PCAP_ROOT} && pwd`
         CORELIBS="${CORELIBS} -L$PCAP_ROOT -lpcap"
         INCS="${INCS} -I$PCAP_ROOT"
+@@ -1886,40 +1886,7 @@
+     }'`
+ fi
+ 
+-dnl> GeoIP (http://www.maxmind.com/)
+-if test -f "GeoIP.tar.gz"; then
+-   echo "GeoIP already present on this machine"
+-else
+-   wget http://www.maxmind.com/download/geoip/api/c/GeoIP.tar.gz
+-   tar xvfz GeoIP.tar.gz
+-   GEO_DIR=`find $PWD -type d -name "GeoIP-*"`
+-   cd $GEO_DIR; ./configure; make; cd ..
+-   # OSX Fix
+-   GEO_DYLIB="$GEO_DIR/libGeoIP/.libs/libGeoIP.dylib"
+-   if test -f $GEO_DYLIB; then
+-      ln -s $GEO_DYLIB .
+-   fi
+-fi
+-
+-if test -f "GeoLiteCity.dat"; then
+-   echo "GeoLiteCity.dat already present"
+-else
+-   wget http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+-   gunzip GeoLiteCity.dat.gz
+-fi
+-
+-if test -f "GeoIPASNum.dat"; then
+-   echo "GeoIPASNum.dat already present"
+-else
+-   wget http://www.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz
+-   gunzip GeoIPASNum.dat.gz
+-fi
+-
+-
+-GEO_DIR=`find $PWD -type d -name "GeoIP-*"`
+-GEO_IP="$GEO_DIR/libGeoIP/"
+-CFLAGS="$CFLAGS -I$GEO_IP"
+-LDFLAGS="$LDFLAGS -L$GEO_IP.libs/ -lGeoIP"
++LDFLAGS="$LDFLAGS -lGeoIP"
+ 
+ dnl> NTOPCONFIGDEBUG_SETTINGS([precet])
+ 

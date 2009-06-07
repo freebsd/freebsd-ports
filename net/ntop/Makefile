@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntop
-PORTVERSION=	3.3.8
+PORTVERSION=	3.3.9
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
-BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
-		gdbm.3:${PORTSDIR}/databases/gdbm \
-		png.5:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
+		geoiplookup:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
 
@@ -35,8 +34,6 @@ PLIST_SUB=	DBDIR=${DBDIR} \
 CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-ossl-root=${OPENSSLBASE} \
 		--with-gdbm-root=${LOCALBASE} \
-		--with-gd-root=${LOCALBASE} \
-		--with-libpng-root=${LOCALBASE} \
 		--with-zlib-root=/usr \
 		--disable-snmp
 # we currently disable IPv6
