@@ -299,6 +299,7 @@ libxml2_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-libxml2
 
 mikmod_FILE=		${LINUXBASE}/usr/lib/libmikmod.so.2.0.4
 mikmod_f8_FILE=		${mikmod_FILE}
+mikmod_f10_FILE=	${LINUXBASE}/usr/lib/libmikmod.so.3.0.0
 mikmod_DETECT=		${mikmod${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 mikmod_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-mikmod
 
