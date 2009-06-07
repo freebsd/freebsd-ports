@@ -514,6 +514,7 @@
     SUBDIR += ruby-progressbar
     SUBDIR += ruby-vpim
     SUBDIR += rubygem-mime-types
+    SUBDIR += rubygem-ohcount
     SUBDIR += salias
     SUBDIR += seq2
     SUBDIR += shared-mime-info

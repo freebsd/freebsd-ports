@@ -1,0 +1,10 @@
+Ohcount is the source code line counter that powers Ohloh. Ohcount supports
+over 70 popular programming languages, and has been used to count over 3
+billion lines of code by 200,000 developers!
+
+Ohcount does more than just count lines of code. It can also detect popular
+open source licenses such as GPL within a large directory of source code.
+It can also detect code that targets a particular programming API, such as
+Win32 or KDE.
+
+WWW:	http://labs.ohloh.net/ohcount/
