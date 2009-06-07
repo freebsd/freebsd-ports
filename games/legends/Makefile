@@ -23,7 +23,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_MAKESELF=	yes
 USE_LINUX=	yes
-USE_GL=		linux
+USE_LINUX_APPS+=dri
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/lib/${PORTNAME}
