@@ -123,22 +123,23 @@
 +#define MCHelpSwLO           "\n  lo<option>    Encoding option {ignore,translit,<empty>}"
 +#define MIconvCannotOpen     "\nCannot open iconv to convert between '%s' and '%s' with option '%s'"
 +#endif
---- makefile.unix	2008-05-31 14:18:14.000000000 +0800
-+++ makefile.unix	2008-06-27 17:03:22.459952295 +0800
+--- makefile.unix.orig	2008-10-09 17:43:06.000000000 +0400
++++ makefile.unix	2009-06-07 17:27:00.000000000 +0400
 @@ -11,6 +11,13 @@
  DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
  STRIP=strip
  DESTDIR=/usr
 +# iconv stuff. Remove #ICONV# to enable
 +# where to get iconv.h
-+CXXFLAGS+= -I/usr/local/include
++CXXFLAGS+= -I$(LOCALBASE)/include
 +# where to get libiconv.so*
-+LIBS+= -L/usr/local/lib -liconv
++LIBS+= -L$(LOCALBASE)/lib -liconv
 +# enable iconv stuff
 +DEFINES+= -DWITH_ICONV
  
  # Linux using LCC
  #CXX=lcc
+
 --- os.hpp	Tue Oct  4 11:57:54 2005
 +++ os.hpp	Mon Jan 16 18:04:41 2006
 @@ -169,6 +169,10 @@
