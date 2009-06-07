@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	enlightenment
-DISTVERSION=	0.16.8.15.${E16_SNAPSHOT}
+PORTNAME=	e16
+DISTVERSION=	1.0.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF
-DISTNAME=	e16-${DISTVERSION}
+MASTER_SITES=	SF/enlightenment
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager

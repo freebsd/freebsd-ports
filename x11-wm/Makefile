@@ -32,12 +32,12 @@
     SUBDIR += ctwm
     SUBDIR += devilspie
     SUBDIR += dwm
+    SUBDIR += e16
     SUBDIR += e16utils
     SUBDIR += e17-utils
     SUBDIR += echinus
     SUBDIR += ede
     SUBDIR += emerald
-    SUBDIR += enlightenment
     SUBDIR += enlightenment-devel
     SUBDIR += enlightenment-docs
     SUBDIR += epiwm
