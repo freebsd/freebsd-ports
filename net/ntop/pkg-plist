@@ -1,12 +1,9 @@
-@exec mkdir -p %%DBDIR%%/ntop
 bin/ntop
 %%ASDATA%%etc/ntop/AS-list.txt.gz
 etc/ntop/etter.finger.os.gz
 etc/ntop/ntop-cert.pem
 etc/ntop/oui.txt.gz
-etc/ntop/p2c.opt.table.gz
 etc/ntop/specialMAC.txt.gz
-@dirrm etc/ntop
 lib/libcpacketPlugin-%%PORTVERSION%%.so
 lib/libcpacketPlugin.so
 lib/libcpacketPlugin.a
@@ -47,9 +44,8 @@ lib/ntop/plugins/pdaPlugin.so
 lib/ntop/plugins/remotePlugin.so
 lib/ntop/plugins/rrdPlugin.so
 lib/ntop/plugins/sflowPlugin.so
-@dirrm lib/ntop/plugins
-@dirrm lib/ntop
 %%DATADIR%%/perl/report/basic.xml
+%%DATADIR%%/html/multihomed.png
 %%DATADIR%%/perl/report.pl
 %%DATADIR%%/perl/test.pl
 %%DATADIR%%/html/ntop_logo.png
@@ -126,7 +122,6 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/major.gif
 %%DATADIR%%/html/marchio_unipi_pant541_144.gif
 %%DATADIR%%/html/minor.gif
-%%DATADIR%%/html/multihomed.gif
 %%DATADIR%%/html/multivlaned.gif
 %%DATADIR%%/html/nboxLogo.gif
 %%DATADIR%%/html/ntop.gif
@@ -425,7 +420,8 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/jscalendar/calendar-setup.js
 %%DATADIR%%/html/jscalendar/calendar.js
 %%DATADIR%%/html/jscalendar/lang/calendar-en.js
-@dirrm %%DATADIR%%/perl/report/
+@exec mkdir -p %%DBDIR%%/ntop
+@dirrm %%DATADIR%%/perl/report
 @dirrm %%DATADIR%%/perl
 @dirrm %%DATADIR%%/html/jscalendar/lang
 @dirrm %%DATADIR%%/html/jscalendar
@@ -437,3 +433,6 @@ lib/ntop/plugins/sflowPlugin.so
 @dirrm %%DATADIR%%/html/statsicons
 @dirrm %%DATADIR%%/html
 @dirrm %%DATADIR%%
+@dirrm etc/ntop
+@dirrm lib/ntop/plugins
+@dirrm lib/ntop

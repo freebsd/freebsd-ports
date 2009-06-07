@@ -1,7 +1,27 @@
---- ./Makefile.am.orig	Sat Jun  9 17:15:11 2007
-+++ ./Makefile.am	Tue Jul 17 12:37:26 2007
-@@ -360,7 +360,6 @@
-         done
+--- Makefile.am.orig	2008-12-03 17:00:22.000000000 -0500
++++ Makefile.am	2009-06-02 14:27:56.863148713 -0400
+@@ -76,9 +76,7 @@
+ NTOPDATA = ntop-cert.pem \
+            $(ETTER_PASSIVE) \
+            oui.txt.gz \
+-           specialMAC.txt.gz \
+-	   GeoIPASNum.dat \
+-	   GeoLiteCity.dat
++           specialMAC.txt.gz
+ 
+ NTOPHTML = html html/*.js html/*.html  html/*.gif html/*.jpg html/*.ico html/*.png \
+            html/*.css html/*.dtd \
+@@ -270,8 +268,6 @@
+ 
+ install: install-recursive
+ 
+-	cd @GEO_DIR@; make install
+-
+ 	@mkdir -p $(DESTDIR)/$(CFG_DBFILE_DIR)
+ 
+ 	@echo ""
+@@ -336,7 +332,6 @@
+ 
  
  install-data-local: ntop.txt ntop.html faq.html
 -	@$(top_srcdir)/mkinstalldirs $(DESTDIR)/$(libdir)/plugins;
