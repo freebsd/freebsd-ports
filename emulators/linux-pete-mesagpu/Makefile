@@ -19,7 +19,7 @@ COMMENT=	A PSEmu Pro GPU plugin using an OpenGL renderer (Linux version)
 .ifdef WITH_NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+USE_LINUX_APPS+=dri
 .endif
 
 NO_WRKSUBDIR=	yes

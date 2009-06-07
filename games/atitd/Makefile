@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/xhost:${PORTSDIR}/x11/xhost
 .ifdef(WITH_NVIDIA_GL)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+USE_LINUX_APPS+=dri
 .endif
 
 PLIST_FILES=	bin/atitd
