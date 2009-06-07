@@ -4116,6 +4116,7 @@ ghtool                          ports/dns/ghtool
 giblib                          ports/graphics/giblib
 gicq                            ports/net-im/gicq
 gif2png                         ports/graphics/gif2png
+giflib                          ports/graphics/giflib
 gifmerge                        ports/graphics/gifmerge
 gifsicle                        ports/graphics/gifsicle
 gift                            ports/net-p2p/gift
