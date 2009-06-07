@@ -1,4 +1,4 @@
-# New ports collection makefile for:	graphics/linux-f8-libGL
+# New ports collection makefile for:	graphics/linux-f8-dri
 # Date created:				2009-04-03
 # Whom:					bsam
 #
