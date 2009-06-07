@@ -1,4 +1,8 @@
 bin/flyhard
+%%DATADIR%%/images/ast_ufo.png
+%%DATADIR%%/images/asteroid1.png
+%%DATADIR%%/images/asteroid2.png
+%%DATADIR%%/images/asteroid3.png
 %%DATADIR%%/images/baby_graldor.png
 %%DATADIR%%/images/ball.png
 %%DATADIR%%/images/block.png
@@ -36,6 +40,7 @@ bin/flyhard
 %%DATADIR%%/images/graldor7.png
 %%DATADIR%%/images/graldor8.png
 %%DATADIR%%/images/graldor9.png
+%%DATADIR%%/images/heart.png
 %%DATADIR%%/images/hgate1.png
 %%DATADIR%%/images/hgate2.png
 %%DATADIR%%/images/hgate3.png
@@ -71,6 +76,7 @@ bin/flyhard
 %%DATADIR%%/images/s_rbg.png
 %%DATADIR%%/images/s_rocket.png
 %%DATADIR%%/images/s_scatter.png
+%%DATADIR%%/images/s_scoop.png
 %%DATADIR%%/images/s_shover.png
 %%DATADIR%%/images/s_sniper.png
 %%DATADIR%%/images/s_system_mount.png
@@ -83,6 +89,7 @@ bin/flyhard
 %%DATADIR%%/images/t_shot.png
 %%DATADIR%%/images/title.png
 %%DATADIR%%/images/tractor.png
+%%DATADIR%%/images/transpixel.png
 %%DATADIR%%/images/turret_down.png
 %%DATADIR%%/images/turret_left.png
 %%DATADIR%%/images/turret_right.png
@@ -100,7 +107,7 @@ bin/flyhard
 %%DATADIR%%/images/weapon_point.png
 %%DATADIR%%/images/wshot.png
 %%DATADIR%%/levels/levels.txt
-%%DATADIR%%/sounds/Makefile.am
+%%DATADIR%%/save/scores
 %%DATADIR%%/sounds/boom.wav
 %%DATADIR%%/sounds/bounce.wav
 %%DATADIR%%/sounds/cashregister.wav
@@ -108,9 +115,11 @@ bin/flyhard
 %%DATADIR%%/sounds/kaboom.wav
 %%DATADIR%%/sounds/pop.wav
 %%DATADIR%%/sounds/shatter.wav
+%%DATADIR%%/sounds/slurp.wav
 %%DATADIR%%/sounds/whitebass25.wav
 %%DATADIR%%/sounds/whiteout25.wav
 @dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/save
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
