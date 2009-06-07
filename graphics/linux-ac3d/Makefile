@@ -22,7 +22,7 @@ COMMENT=	Easy to use and powerful 3D graphics modeller (trial version)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
 		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux-libGLU
 .else
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri
+USE_LINUX_APPS+=dri
 .endif
 
 RESTRICTED=	no distribution permitted

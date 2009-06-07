@@ -44,9 +44,7 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
 		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux-libGLU
 .	endif
 .else
-.	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
-.	endif
+USE_LINUX_APPS+=dri
 .endif
 
 do-extract:
