@@ -14,6 +14,8 @@ PKGNAMEPREFIX=		zh-
 MAINTAINER=		yuanjue@yuanjue.net
 COMMENT=		TeX applet used to generate correct Chinese PDF bookmarks
 
+BROKEN=	does not fetch
+
 PLIST_FILES=		bin/gbk2uni
 
 .include <bsd.port.mk>
