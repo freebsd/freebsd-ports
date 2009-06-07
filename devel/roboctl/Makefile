@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roboctl
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	devel
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
@@ -15,6 +15,8 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	API and tools for communicating with Lego and Vex robots
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad
+
+MAKE_ENV=	EXTRALIBS=-lbluetooth
 
 OPTIONS=	CUTECOM "Install cutecom for Vex debugging" On
 
@@ -31,11 +33,8 @@ LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 RUN_DEPENDS+=	cutecom:${PORTSDIR}/comms/cutecom
 .endif
 
-post-patch:
-.if ${OSVERSION} >= 800069
-	@${REINPLACE_CMD} -E -e 's,/usr/local/include/usb.h,/usr/include/usb.h,g' \
-	    ${WRKSRC}/Libs/C/Makefile.depend
-.endif
+pre-build:
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} depend)
 
 post-install:
 	(cd ${WRKSRC}/Commands/NXTRemote; ${MAKE})
