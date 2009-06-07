@@ -16,10 +16,11 @@ COMMENT=	Yet Another HFS Utility
 
 CONFLICTS=	hfs-[0-9]*
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+USE_TCL=	84
+USE_TK=		84
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl --with-tk
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
 
 MAN1=		hattrib.1 \
 		hcd.1 \
