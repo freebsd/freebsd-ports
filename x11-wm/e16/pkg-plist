@@ -3,6 +3,8 @@ bin/edox
 bin/eesh
 bin/epp
 bin/starte16
+%%NLS%%share/locale/it/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/da/LC_MESSAGES/e16.mo
@@ -34,8 +36,8 @@ bin/starte16
 %%DATADIR%%/config/bindings.cfg
 %%DATADIR%%/config/definitions
 %%DATADIR%%/config/e16keyedit.db
-%%DATADIR%%/config/fonts.cfg.xft
-%%DATADIR%%/config/fonts.cfg.pango
+%%DATADIR%%/config/fonts.xft.cfg
+%%DATADIR%%/config/fonts.pango.cfg
 %%DATADIR%%/config/matches.cfg
 %%DATADIR%%/config/menus.cfg
 %%DATADIR%%/config/menus/desktop.menu
@@ -359,10 +361,7 @@ bin/starte16
 %%DATADIR%%/themes/winter/focuslist/focuslist.cfg
 %%DATADIR%%/themes/winter/focuslist/images/hbar.png
 %%DATADIR%%/themes/winter/focuslist/images/hbar2.png
-%%DATADIR%%/themes/winter/fonts.cfg
-%%DATADIR%%/themes/winter/fonts.cfg.ja
-%%DATADIR%%/themes/winter/fonts.cfg.ko
-%%DATADIR%%/themes/winter/fonts.cfg.pl
+%%DATADIR%%/themes/winter/fonts.theme.cfg
 %%DATADIR%%/themes/winter/iconbox/iconbox.cfg
 %%DATADIR%%/themes/winter/iconbox/images/base_.png
 %%DATADIR%%/themes/winter/iconbox/images/bg.png
@@ -407,18 +406,22 @@ share/applications/e16.desktop
 share/xsessions/e16.desktop
 share/xsessions/e16-gnome.desktop
 share/xsessions/e16-kde.desktop
-%%PORTDOCS%%%%DOCSDIR%%/README-0.16.8.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s11.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s10.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s09.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s08.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s07.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s06.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s05.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s04.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s03.html
+%%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/ar01s02.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s03.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s04.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s05.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s06.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s07.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s08.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s09.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s10.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s11.html
 %%PORTDOCS%%%%DOCSDIR%%/ar01s12.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s13.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s14.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s15.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s16.html
 @dirrm lib/e16
 @dirrm %%DATADIR%%/E-docs
 @dirrm %%DATADIR%%/config/menus
