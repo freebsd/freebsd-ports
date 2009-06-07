@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/software/RngStreams/
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	A C implementation of a high-quality uniform random number generator
 
 GNU_CONFIGURE=	yes

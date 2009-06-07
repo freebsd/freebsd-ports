@@ -17,7 +17,7 @@ DISTFILES+=	${GSLREF}:gslref
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	The GNU Scientific Library - mathematical libs
 
 USE_LDCONFIG=	yes

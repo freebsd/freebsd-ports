@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://x-word.org/
 DISTNAME=	xword-${PORTVERSION}
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	An application for solving crossword puzzles in the Across Lite format
 
 USE_GNOME=	pygtk2

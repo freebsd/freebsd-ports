@@ -10,7 +10,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	Universal Non-Uniform RANdom number generators
 
 LIB_DEPENDS=	rngstreams:${PORTSDIR}/math/rngstreams

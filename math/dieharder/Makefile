@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	A random number generator testsuite
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl

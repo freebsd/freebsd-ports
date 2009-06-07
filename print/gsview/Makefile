@@ -10,7 +10,7 @@ PORTVERSION=	4.9
 CATEGORIES=	print
 MASTER_SITES=	http://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 
-MAINTAINER=	bf2006a@yahoo.com
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	A GUI to view, search, print, and convert PostScript and PDF documents
 
 USE_GNOME=		gtk12
