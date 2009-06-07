@@ -24,12 +24,12 @@ PLIST_FILES=	bin/fuser
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800066
-BROKEN=		does not build
-.endif
 .if (${OSVERSION} > 800000)
 EXTRA_PATCHES+=	${FILESDIR}/extra::patch-fuser.c \
 		${FILESDIR}/extra::patch-fuser.h
+.endif
+.if ${OSVERSION} >= 800066
+EXTRA_PATCHES+=	${FILESDIR}/extra::patch-msdosfs.c
 .endif
 
 do-install:
