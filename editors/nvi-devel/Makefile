@@ -30,6 +30,7 @@ MAN1=			nex.1 nvi.1 nview.1
 
 # configure is 555, so you can't do a "make configure" as non-root.
 post-patch:
+	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/../dist/configure
 	@${CHMOD} 755 ${WRKSRC}/../dist/configure
 
 post-install:
