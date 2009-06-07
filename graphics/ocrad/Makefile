@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ocrad
-PORTVERSION=	0.17
-PORTREVISION=	3
+PORTVERSION=	0.18
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	OCR program implemented as filter
 
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}" CXX="${CXX}"
@@ -23,7 +21,7 @@ CXXFLAGS+=	-Wall -W
 MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu`
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO INSTALL
-EXAMPLES=	test.pbm test.txt
+EXAMPLES=	test.pbm test.txt check.sh
 MAN1=		ocrad.1
 
 do-install:
@@ -35,7 +33,7 @@ do-install:
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/examples/,} ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/testsuite/,} ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
