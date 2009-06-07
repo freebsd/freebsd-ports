@@ -15,7 +15,7 @@
 -env['LIBPATH'] =  ['#/lib'] + env['LIBPATH']
 +env['LIBPATH'] =  ['#/lib'] + env['LIBPATH'].split(" ")
 +
-+env['SHLINKFLAGS'] += ' -Wl,-soname='+env['SONAME']
++env.Append(SHLINKFLAGS=' -Wl,-soname='+env['SONAME'])
  
  if env['no_cygwin']:
  
