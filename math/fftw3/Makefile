@@ -6,7 +6,7 @@
 #    $MCom: ports-experimental/math/fftw3/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
 PORTNAME=	fftw3
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 PORTREVISION?=	0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \

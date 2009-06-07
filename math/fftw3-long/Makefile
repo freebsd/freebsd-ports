@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports-experimental/math/fftw3-long/Makefile,v 1.1 2006/03/28 00:08:58 ahze Exp $
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Fast C routines (Long Double Percision)
 
