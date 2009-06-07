@@ -6,9 +6,23 @@
 %%PYTHON_SITELIBDIR%%/aipy/_deconv.so
 %%PYTHON_SITELIBDIR%%/aipy/_healpix.so
 %%PYTHON_SITELIBDIR%%/aipy/_miriad.so
-%%PYTHON_SITELIBDIR%%/aipy/ant.py
-%%PYTHON_SITELIBDIR%%/aipy/ant.pyc
-%%PYTHON_SITELIBDIR%%/aipy/ant.pyo
+%%PYTHON_SITELIBDIR%%/aipy/_src/__init__.py
+%%PYTHON_SITELIBDIR%%/aipy/_src/__init__.pyc
+%%PYTHON_SITELIBDIR%%/aipy/_src/__init__.pyo
+%%PYTHON_SITELIBDIR%%/aipy/_src/helm.py
+%%PYTHON_SITELIBDIR%%/aipy/_src/helm.pyc
+%%PYTHON_SITELIBDIR%%/aipy/_src/helm.pyo
+%%PYTHON_SITELIBDIR%%/aipy/_src/helm_fit.txt
+%%PYTHON_SITELIBDIR%%/aipy/_src/helm_pos.txt
+%%PYTHON_SITELIBDIR%%/aipy/_src/misc.py
+%%PYTHON_SITELIBDIR%%/aipy/_src/misc.pyc
+%%PYTHON_SITELIBDIR%%/aipy/_src/misc.pyo
+%%PYTHON_SITELIBDIR%%/aipy/amp.py
+%%PYTHON_SITELIBDIR%%/aipy/amp.pyc
+%%PYTHON_SITELIBDIR%%/aipy/amp.pyo
+%%PYTHON_SITELIBDIR%%/aipy/cal.py
+%%PYTHON_SITELIBDIR%%/aipy/cal.pyc
+%%PYTHON_SITELIBDIR%%/aipy/cal.pyo
 %%PYTHON_SITELIBDIR%%/aipy/const.py
 %%PYTHON_SITELIBDIR%%/aipy/const.pyc
 %%PYTHON_SITELIBDIR%%/aipy/const.pyo
@@ -30,9 +44,6 @@
 %%PYTHON_SITELIBDIR%%/aipy/interp.py
 %%PYTHON_SITELIBDIR%%/aipy/interp.pyc
 %%PYTHON_SITELIBDIR%%/aipy/interp.pyo
-%%PYTHON_SITELIBDIR%%/aipy/loc.py
-%%PYTHON_SITELIBDIR%%/aipy/loc.pyc
-%%PYTHON_SITELIBDIR%%/aipy/loc.pyo
 %%PYTHON_SITELIBDIR%%/aipy/map.py
 %%PYTHON_SITELIBDIR%%/aipy/map.pyc
 %%PYTHON_SITELIBDIR%%/aipy/map.pyo
@@ -54,20 +65,21 @@
 %%PYTHON_SITELIBDIR%%/aipy/optimize/optimize.py
 %%PYTHON_SITELIBDIR%%/aipy/optimize/optimize.pyc
 %%PYTHON_SITELIBDIR%%/aipy/optimize/optimize.pyo
+%%PYTHON_SITELIBDIR%%/aipy/phs.py
+%%PYTHON_SITELIBDIR%%/aipy/phs.pyc
+%%PYTHON_SITELIBDIR%%/aipy/phs.pyo
 %%PYTHON_SITELIBDIR%%/aipy/rfi.py
 %%PYTHON_SITELIBDIR%%/aipy/rfi.pyc
 %%PYTHON_SITELIBDIR%%/aipy/rfi.pyo
 %%PYTHON_SITELIBDIR%%/aipy/scripting.py
 %%PYTHON_SITELIBDIR%%/aipy/scripting.pyc
 %%PYTHON_SITELIBDIR%%/aipy/scripting.pyo
-%%PYTHON_SITELIBDIR%%/aipy/sim.py
-%%PYTHON_SITELIBDIR%%/aipy/sim.pyc
-%%PYTHON_SITELIBDIR%%/aipy/sim.pyo
 %%PYTHON_SITELIBDIR%%/aipy/src.py
 %%PYTHON_SITELIBDIR%%/aipy/src.pyc
 %%PYTHON_SITELIBDIR%%/aipy/src.pyo
 %%PYTHON_SITELIBDIR%%/aipy/utils.so
 @dirrm %%PYTHON_SITELIBDIR%%/aipy/optimize
+@dirrm %%PYTHON_SITELIBDIR%%/aipy/_src
 @dirrm %%PYTHON_SITELIBDIR%%/aipy
 bin/apply_bp.py
 bin/cl_img.py
@@ -88,6 +100,5 @@ bin/plot_map.py
 bin/plot_uv.py
 bin/uvlist.py
 bin/xrfi.py
-bin/xtalk1.py
-bin/xtalk2.py
 bin/xtalk3.py
+bin/srclist.py
