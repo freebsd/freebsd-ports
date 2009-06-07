@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux
 .ifdef WITH_NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
-USE_GL=	linux
+USE_LINUX_APPS+=dri
 .endif
 
 USE_BZIP2=	yes
