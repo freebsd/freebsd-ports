@@ -17,7 +17,7 @@ COMMENT=	An open source Clipper-compatible compiler
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-MAKE_JOBS_SAFE=  yes
+#MAKE_JOBS_SAFE=  yes
 
 USE_BISON=	build
 USE_GMAKE=	yes
