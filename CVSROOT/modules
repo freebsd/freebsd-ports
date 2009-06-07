@@ -7255,6 +7255,7 @@ libdvdread                      ports/multimedia/libdvdread
 libdwarf                        ports/devel/libdwarf
 libdynamite                     ports/archivers/libdynamite
 libebml                         ports/textproc/libebml
+libecap                         ports/www/libecap
 libecc                          ports/security/libecc
 libelf                          ports/devel/libelf
 libemf                          ports/graphics/libemf
@@ -18536,8 +18537,6 @@ powerdns-devel                  ports/dns/powerdns-devel
 powerdns-recursor               ports/dns/powerdns-recursor
 powerman                        ports/sysutils/powerman
 powermanga                      ports/games/powermanga
-powerpc-binutils                ports/devel/powerpc-binutils
-powerpc-gcc                     ports/devel/powerpc-gcc
 powerpc-rtems-binutils          ports/devel/powerpc-rtems-binutils
 powerpc-rtems-gcc               ports/devel/powerpc-rtems-gcc
 powerpc-rtems-gdb               ports/devel/powerpc-rtems-gdb
@@ -19760,6 +19759,7 @@ qudos                           ports/games/qudos
 queequeg                        ports/textproc/queequeg
 quesa                           ports/graphics/quesa
 queso                           ports/net/queso
+quesoglc                        ports/graphics/quesoglc
 quetoo                          ports/games/quetoo
 queue-fix                       ports/mail/queue-fix
 queue-repair                    ports/mail/queue-repair
