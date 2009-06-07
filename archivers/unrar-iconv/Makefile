@@ -13,6 +13,9 @@ MASTERDIR=	${.CURDIR}/../unrar
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-iconv
 
+USE_ICONV=	yes
+MAKE_ENV=	LOCALBASE="${LOCALBASE}"
+
 CONFLICTS=	unrar-[0-9]* zh-unrar-[0-9]*
 
 post-install:
