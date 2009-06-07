@@ -13,6 +13,7 @@ share/applications/ganyremote.desktop
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/ganyremote.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ganyremote.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/ganyremote.mo
+%%NLS%%share/locale/sk_SK/LC_MESSAGES/ganyremote.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/ganyremote.mo
 share/pixmaps/ganyremote.png
 share/pixmaps/ganyremote_flash.png
@@ -34,6 +35,8 @@ share/pixmaps/ganyremote_off.png
 %%NLS%%@dirrmtry share/locale/pl_PL
 %%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru_RU
+%%NLS%%@dirrmtry share/locale/sk_SK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk_SK
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv_SE
 @dirrmtry share/applications
