@@ -223,6 +223,7 @@
     SUBDIR += gfont
     SUBDIR += giblib
     SUBDIR += gif2png
+    SUBDIR += giflib
     SUBDIR += gifmerge
     SUBDIR += gifsicle
     SUBDIR += giftool
