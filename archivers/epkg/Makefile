@@ -7,7 +7,7 @@
 
 PORTNAME=	epkg
 PORTVERSION=	2.3.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.feep.net/pub/encap/epkg/
 
@@ -20,7 +20,9 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 
 HAS_CONFIGURE=	YES
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${PREFIX}/lib
-CONFIGURE_ARGS=	--disable-encap --disable-epkg-install --with-libfget --without-libtar
+CONFIGURE_ARGS=	--disable-encap --disable-epkg-install --without-libtar \
+		--with-libfget \
+		--prefix=${PREFIX}
 
 MAN1=		epkg.1 \
 			mkencap.1
@@ -71,6 +73,6 @@ do-install:
 
 	-@${MKDIR} ${PREFIX}/etc
 	@${CP} ${WRKSRC}/mkencap/mkencap_environment ${PREFIX}/etc/mkencap_environment.sample
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
