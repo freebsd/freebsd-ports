@@ -643,6 +643,7 @@
     SUBDIR += polypuzzle
     SUBDIR += pongix
     SUBDIR += pouetchess
+    SUBDIR += powder
     SUBDIR += powermanga
     SUBDIR += powwow
     SUBDIR += ppracer
