@@ -6,29 +6,24 @@
 #
 
 PORTNAME=	CGI-Application-Plugin-Authentication
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	CGI
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Support for authenticating requests in CGI::Application
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/CGI/Application/Plugin/Session.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-Session \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
-		${SITE_PERL}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
+		p5-CGI-Application>=4:${PORTSDIR}/www/p5-CGI-Application \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
+		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=	CGI::Application::Plugin::Authentication::Driver.3 \
 	CGI::Application::Plugin::Authentication::Driver::Filter::strip.3 \
@@ -47,4 +42,13 @@ MAN3=	CGI::Application::Plugin::Authentication::Driver.3 \
 	CGI::Application::Plugin::Authentication::Driver::HTPasswd.3 \
 	CGI::Application::Plugin::Authentication::Driver::Dummy.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Attribute-Handlers>=0:${PORTSDIR}/devel/p5-Attribute-Handlers \
+		p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
+		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
+		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
