@@ -7,6 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.22
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -64,6 +65,7 @@ BROKEN=	choose only one SQLite backend version
 .if defined(WITH_PGSQL)
 USE_PGSQL?=		YES
 CONFIGURE_MODULES+=	"gpgsql"
+CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 PLIST_SUB+=		WITHPGSQL=""
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
@@ -124,7 +126,11 @@ post-patch:
 		-e 's;@modulelibs@;@modulelibs@ -llber;' \
 		${WRKSRC}/pdns/Makefile.in
 .endif
-
+.if defined(WITH_PGSQL)
+pre-configure:
+	@${REINPLACE_CMD} -E -e 's;(PGSQL_inc_check="\$$withval/include/pgsql)";\1 \$$withval/include";' \
+		${WRKSRC}/configure
+.endif
 post-install:
 .if !exists(${PREFIX}/etc/pdns/pdns.conf)
 	${INSTALL_DATA} ${PREFIX}/etc/pdns/pdns.conf-dist ${PREFIX}/etc/pdns/pdns.conf
