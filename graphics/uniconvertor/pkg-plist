@@ -228,6 +228,12 @@ bin/uniconv
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pdfgensaver.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pdfgensaver.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pdfgensaver.pyo
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltloader.py
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltloader.pyc
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltloader.pyo
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltsaver.py
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltsaver.pyc
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltsaver.pyo
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pssaver.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pssaver.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pssaver.pyo
