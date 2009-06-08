@@ -27,6 +27,8 @@ CONFLICTS=	teTeX*
 
 NO_WRKSUBDIR=	yes
 
+BROKEN=		does not build
+
 do-build:
 	@${RM} ${WRKSRC}/tfm/dummy.tfm  ${WRKSRC}/mf/cmex9.mf
 	@(cd ${WRKSRC}/base; TEXINPUTS=${WRKSRC}/base: export TEXINPUTS; tex --ini unpack.ins)
