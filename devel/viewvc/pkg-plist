@@ -187,59 +187,6 @@
 %%INSTDIR%%/templates-contrib/newvc/templates/revision.ezt
 %%INSTDIR%%/templates-contrib/newvc/templates/roots.ezt
 %%INSTDIR%%/templates-contrib/newvc/templates/rss.ezt
-%%INSTDIR%%/templates-contrib/tabbed/README
-%%INSTDIR%%/templates-contrib/tabbed/templates/annotate.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/diff.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/directory.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/help.css
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/help_dirview.html
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/help_log.html
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/help_query.html
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/help_rootview.html
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/annotate.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/back.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/back_small.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/broken.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/chalk.jpg
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/cvs-logo.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/cvsgraph_16x16.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/cvsgraph_32x32.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/diff.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/dir.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/down.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/download.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/feed-icon-16x16.jpg
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/forward.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/list.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/lock.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/log.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/svn-logo.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/text.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/up.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/view.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images/viewvc-logo.png
-%%INSTDIR%%/templates-contrib/tabbed/templates/docroot/styles.css
-%%INSTDIR%%/templates-contrib/tabbed/templates/error.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/graph.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/diff_form.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/dir_footer.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/dir_header.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/file_header.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/fileview.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/footer.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/header.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/log_footer.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/log_header.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/pathrev_form.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/include/props.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/log.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/markup.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/query.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/query_form.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/query_results.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/revision.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/roots.ezt
-%%INSTDIR%%/templates-contrib/tabbed/templates/rss.ezt
 %%INSTDIR%%/templates-contrib/viewsvn/INSTALL
 %%INSTDIR%%/templates-contrib/viewsvn/README
 %%INSTDIR%%/templates-contrib/viewsvn/extras/svnindex.css
@@ -307,11 +254,6 @@
 @dirrm %%INSTDIR%%/templates-contrib/viewsvn/screenshots
 @dirrm %%INSTDIR%%/templates-contrib/viewsvn/extras
 @dirrm %%INSTDIR%%/templates-contrib/viewsvn
-@dirrm %%INSTDIR%%/templates-contrib/tabbed/templates/include
-@dirrm %%INSTDIR%%/templates-contrib/tabbed/templates/docroot/images
-@dirrm %%INSTDIR%%/templates-contrib/tabbed/templates/docroot
-@dirrm %%INSTDIR%%/templates-contrib/tabbed/templates
-@dirrm %%INSTDIR%%/templates-contrib/tabbed
 @dirrm %%INSTDIR%%/templates-contrib/newvc/templates/include
 @dirrm %%INSTDIR%%/templates-contrib/newvc/templates/docroot/images
 @dirrm %%INSTDIR%%/templates-contrib/newvc/templates/docroot

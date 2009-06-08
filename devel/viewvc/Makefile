@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/45933/
+MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/46029/
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
@@ -29,7 +29,7 @@ SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}" \
 INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITH_APACHE) && !defined(WITH_LIGHTTPD)
 USE_RC_SUBR=	viewvc
@@ -82,4 +82,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
