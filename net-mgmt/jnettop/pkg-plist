@@ -1,0 +1,3 @@
+bin/jnettop
+%%DATADIR%%/jnettop-lookup-nmb
+@dirrmtry %%DATADIR%%
