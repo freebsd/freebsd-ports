@@ -16,6 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc${EXTRACT_SUFX}
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	The Z shell
 
+MAKE_JOBS_UNSAFE=	yes
+
 ZSH_VER=	${PORTVERSION}
 
 USE_BZIP2=	yes
@@ -91,7 +93,6 @@ CONFIGURE_ARGS+=	--enable-multibyte
 .else
 CONFIGURE_ARGS+=	--disable-multibyte
 .endif
-
 
 post-patch:
 	@${SED} -i "" -e "s,link=dynamic,link=either," \
