@@ -1,0 +1,21 @@
+Fix underflow in apr_strmatch_precompile,
+  http://svn.apache.org/viewvc/apr/apr/trunk/strmatch/apr_strmatch.c?r1=757729&r2=779878&view=patch
+
+--- srclib/apr-util/strmatch/apr_strmatch.c	2009/03/24 11:12:27	757729
++++ srclib/apr-util/strmatch/apr_strmatch.c	2009/05/29 07:47:52	779878
+@@ -103,13 +103,13 @@
+     if (case_sensitive) {
+         pattern->compare = match_boyer_moore_horspool;
+         for (i = 0; i < pattern->length - 1; i++) {
+-            shift[(int)s[i]] = pattern->length - i - 1;
++            shift[(unsigned char)s[i]] = pattern->length - i - 1;
+         }
+     }
+     else {
+         pattern->compare = match_boyer_moore_horspool_nocase;
+         for (i = 0; i < pattern->length - 1; i++) {
+-            shift[apr_tolower(s[i])] = pattern->length - i - 1;
++            shift[(unsigned char)apr_tolower(s[i])] = pattern->length - i - 1;
+         }
+     }
+     pattern->context = shift;
