@@ -3977,3 +3977,4 @@ textproc/gmat||2009-06-05|Has expired: failed to build for a long time, no maint
 devel/powerpc-gcc||2009-06-06|Has expired: use cross-gcc instead
 devel/powerpc-binutils||2009-06-06|Has expired: use cross-binutils instead
 X11-wm/enlightenment|x11-wm/e16|2009-06-07|Renamed
+www/apache-jserv|www/tomcat6|2009-06-08|Has expired: superceeded by tomcat

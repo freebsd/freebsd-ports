@@ -17,7 +17,6 @@
     SUBDIR += aolserver-xotcl
     SUBDIR += apache-contrib
     SUBDIR += apache-forrest
-    SUBDIR += apache-jserv
     SUBDIR += apache-mode.el
     SUBDIR += apache13
     SUBDIR += apache13+ipv6
