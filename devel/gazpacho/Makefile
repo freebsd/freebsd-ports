@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gazpacho
-PORTVERSION=	0.6.6
-PORTREVISION=	2
+PORTVERSION=	0.7.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://ftp.acc.umu.se/pub/GNOME/sources/gazpacho/0.6/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/gazpacho/0.7
 
 MAINTAINER=	gustavofukao@gmail.com
 COMMENT=	GUI builder for the GTK+ toolkit

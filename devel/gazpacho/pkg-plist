@@ -20,12 +20,21 @@ bin/gazpacho
 %%PYTHON_SITELIBDIR%%/gazpacho/app/bars.py
 %%PYTHON_SITELIBDIR%%/gazpacho/app/bars.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/app/bars.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/app/bugreportdialog.py
+%%PYTHON_SITELIBDIR%%/gazpacho/app/bugreportdialog.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/app/bugreportdialog.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/app/debugwindow.py
+%%PYTHON_SITELIBDIR%%/gazpacho/app/debugwindow.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/app/debugwindow.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/app/dialogs.py
 %%PYTHON_SITELIBDIR%%/gazpacho/app/dialogs.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/app/dialogs.pyo
-%%PYTHON_SITELIBDIR%%/gazpacho/bugreportdialog.py
-%%PYTHON_SITELIBDIR%%/gazpacho/bugreportdialog.pyc
-%%PYTHON_SITELIBDIR%%/gazpacho/bugreportdialog.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/app/preferences.py
+%%PYTHON_SITELIBDIR%%/gazpacho/app/preferences.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/app/preferences.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/app/uimstate.py
+%%PYTHON_SITELIBDIR%%/gazpacho/app/uimstate.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/app/uimstate.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/catalog.py
 %%PYTHON_SITELIBDIR%%/gazpacho/catalog.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/catalog.pyo
@@ -41,6 +50,9 @@ bin/gazpacho
 %%PYTHON_SITELIBDIR%%/gazpacho/commandmanager.py
 %%PYTHON_SITELIBDIR%%/gazpacho/commandmanager.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/commandmanager.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/commandview.py
+%%PYTHON_SITELIBDIR%%/gazpacho/commandview.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/commandview.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/config.py
 %%PYTHON_SITELIBDIR%%/gazpacho/config.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/config.pyo
@@ -53,21 +65,24 @@ bin/gazpacho
 %%PYTHON_SITELIBDIR%%/gazpacho/cursor.py
 %%PYTHON_SITELIBDIR%%/gazpacho/cursor.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/cursor.pyo
-%%PYTHON_SITELIBDIR%%/gazpacho/debugwindow.py
-%%PYTHON_SITELIBDIR%%/gazpacho/debugwindow.pyc
-%%PYTHON_SITELIBDIR%%/gazpacho/debugwindow.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/dndhandlers.py
 %%PYTHON_SITELIBDIR%%/gazpacho/dndhandlers.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/dndhandlers.pyo
-%%PYTHON_SITELIBDIR%%/gazpacho/editor.py
-%%PYTHON_SITELIBDIR%%/gazpacho/editor.pyc
-%%PYTHON_SITELIBDIR%%/gazpacho/editor.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/filewriter.py
 %%PYTHON_SITELIBDIR%%/gazpacho/filewriter.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/filewriter.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/gaction.py
 %%PYTHON_SITELIBDIR%%/gazpacho/gaction.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/gaction.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/gadget.py
+%%PYTHON_SITELIBDIR%%/gazpacho/gadget.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/gadget.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/gapi.py
+%%PYTHON_SITELIBDIR%%/gazpacho/gapi.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/gapi.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/i18n.py
+%%PYTHON_SITELIBDIR%%/gazpacho/i18n.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/i18n.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/interfaces.py
 %%PYTHON_SITELIBDIR%%/gazpacho/interfaces.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/interfaces.pyo
@@ -83,24 +98,30 @@ bin/gazpacho
 %%PYTHON_SITELIBDIR%%/gazpacho/loader/custom.py
 %%PYTHON_SITELIBDIR%%/gazpacho/loader/custom.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/loader/custom.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/loader/gazpacholoader.py
+%%PYTHON_SITELIBDIR%%/gazpacho/loader/gazpacholoader.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/loader/gazpacholoader.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/loader/loader.py
 %%PYTHON_SITELIBDIR%%/gazpacho/loader/loader.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/loader/loader.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/loader/proxy.py
 %%PYTHON_SITELIBDIR%%/gazpacho/loader/proxy.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/loader/proxy.pyo
-%%PYTHON_SITELIBDIR%%/gazpacho/loader/tags.py
-%%PYTHON_SITELIBDIR%%/gazpacho/loader/tags.pyc
-%%PYTHON_SITELIBDIR%%/gazpacho/loader/tags.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/main.py
 %%PYTHON_SITELIBDIR%%/gazpacho/main.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/main.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/model.py
+%%PYTHON_SITELIBDIR%%/gazpacho/model.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/model.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/palette.py
 %%PYTHON_SITELIBDIR%%/gazpacho/palette.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/palette.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/placeholder.py
 %%PYTHON_SITELIBDIR%%/gazpacho/placeholder.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/placeholder.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/plugins.py
+%%PYTHON_SITELIBDIR%%/gazpacho/plugins.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/plugins.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/popup.py
 %%PYTHON_SITELIBDIR%%/gazpacho/popup.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/popup.pyo
@@ -110,6 +131,12 @@ bin/gazpacho
 %%PYTHON_SITELIBDIR%%/gazpacho/properties.py
 %%PYTHON_SITELIBDIR%%/gazpacho/properties.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/properties.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/propertyeditor.py
+%%PYTHON_SITELIBDIR%%/gazpacho/propertyeditor.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/propertyeditor.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/referencecontainer.py
+%%PYTHON_SITELIBDIR%%/gazpacho/referencecontainer.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/referencecontainer.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/signaleditor.py
 %%PYTHON_SITELIBDIR%%/gazpacho/signaleditor.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/signaleditor.pyo
@@ -128,18 +155,12 @@ bin/gazpacho
 %%PYTHON_SITELIBDIR%%/gazpacho/uieditor.py
 %%PYTHON_SITELIBDIR%%/gazpacho/uieditor.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/uieditor.pyo
-%%PYTHON_SITELIBDIR%%/gazpacho/uim.py
-%%PYTHON_SITELIBDIR%%/gazpacho/uim.pyc
-%%PYTHON_SITELIBDIR%%/gazpacho/uim.pyo
-%%PYTHON_SITELIBDIR%%/gazpacho/uimstate.py
-%%PYTHON_SITELIBDIR%%/gazpacho/uimstate.pyc
-%%PYTHON_SITELIBDIR%%/gazpacho/uimstate.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/uimanager.py
+%%PYTHON_SITELIBDIR%%/gazpacho/uimanager.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/uimanager.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/util.py
 %%PYTHON_SITELIBDIR%%/gazpacho/util.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/util.pyo
-%%PYTHON_SITELIBDIR%%/gazpacho/widget.py
-%%PYTHON_SITELIBDIR%%/gazpacho/widget.pyc
-%%PYTHON_SITELIBDIR%%/gazpacho/widget.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/widgetadaptor.py
 %%PYTHON_SITELIBDIR%%/gazpacho/widgetadaptor.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/widgetadaptor.pyo
@@ -179,6 +200,18 @@ bin/gazpacho
 %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/image.py
 %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/image.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/image.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/__init__.py
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/contextmenu.py
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/contextmenu.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/contextmenu.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/gtkutils.py
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/gtkutils.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/gtkutils.pyo
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/widgets.py
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/widgets.pyc
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor/widgets.pyo
 %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/notebook.py
 %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/notebook.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/notebook.pyo
@@ -207,16 +240,19 @@ bin/gazpacho
 %%PYTHON_SITELIBDIR%%/gazpacho/workspace.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/workspace.pyo
 share/applications/gazpacho.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%EXAMPLESDIR%%/helloworld.glade
 %%EXAMPLESDIR%%/helloworld.py
 %%EXAMPLESDIR%%/uimanager.glade
 %%EXAMPLESDIR%%/uimanager.py
 %%DATADIR%%/catalogs/base.xml
 %%DATADIR%%/glade/dummy.glade
-%%DATADIR%%/glade/project-properties.glade
-%%DATADIR%%/glade/translatable-editor.glade
-%%DATADIR%%/pixmaps/application-large.png
-%%DATADIR%%/pixmaps/dialog-large.png
+%%DATADIR%%/glade/preferences.glade
 %%DATADIR%%/pixmaps/gazpacho-icon.png
 %%DATADIR%%/pixmaps/gazpacho.png
 %%DATADIR%%/pixmaps/plus.png
@@ -224,7 +260,9 @@ share/applications/gazpacho.desktop
 %%DATADIR%%/pixmaps/sizegroup-both.png
 %%DATADIR%%/pixmaps/sizegroup-horizontal.png
 %%DATADIR%%/pixmaps/sizegroup-vertical.png
-%%DATADIR%%/pixmaps/window-large.png
+%%DATADIR%%/plugins/hello/__init__.py
+%%DATADIR%%/plugins/hello/hello.plugin
+%%DATADIR%%/plugins/hello/hello.py
 %%DATADIR%%/resources/base/accellabel.png
 %%DATADIR%%/resources/base/alignment.png
 %%DATADIR%%/resources/base/arrow.png
@@ -278,6 +316,7 @@ share/applications/gazpacho.desktop
 %%DATADIR%%/resources/base/togglebutton.png
 %%DATADIR%%/resources/base/toolbar.png
 %%DATADIR%%/resources/base/treeview.png
+%%DATADIR%%/resources/base/treeviewcolumn.png
 %%DATADIR%%/resources/base/vbox.png
 %%DATADIR%%/resources/base/vbuttonbox.png
 %%DATADIR%%/resources/base/viewport.png
@@ -295,18 +334,23 @@ share/locale/gl/LC_MESSAGES/gazpacho.mo
 share/locale/it/LC_MESSAGES/gazpacho.mo
 share/locale/pt_BR/LC_MESSAGES/gazpacho.mo
 share/locale/ru/LC_MESSAGES/gazpacho.mo
+share/locale/sv/LC_MESSAGES/gazpacho.mo
 share/locale/zh_CN/LC_MESSAGES/gazpacho.mo
 @dirrm %%DATADIR%%/resources/base
 @dirrmtry %%DATADIR%%/resources
+@dirrm %%DATADIR%%/plugins/hello
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%/catalogs
 @dirrmtry %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrm share/applications
-@dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor
+@dirrm %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base
 @dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho/widgets
 @dirrm %%PYTHON_SITELIBDIR%%/gazpacho/loader
 @dirrm %%PYTHON_SITELIBDIR%%/gazpacho/app
 @dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho
 @dirrmtry %%PYTHON_SITELIBDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
