@@ -233,7 +233,6 @@
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += pecl-perl
-    SUBDIR += perl5.6
     SUBDIR += perl5.8
     SUBDIR += perl5.10
     SUBDIR += petite-chez
