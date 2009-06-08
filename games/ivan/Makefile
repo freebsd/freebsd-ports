@@ -22,6 +22,8 @@ CONFIGURE_ARGS=	--localstatedir=/var/games
 
 STATEDIR=	/var/games/ivan
 
+PORTSCOUT=	skipv:0.301,0.310,0.311,0.401,0.410,0.420,0.430
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|IvanSave|.IvanSave|g' ${WRKSRC}/Main/Source/game.cpp
 	@${REINPLACE_CMD} -Ee 's|(fearray<type>::~?fearray)<type>|\1|' \
