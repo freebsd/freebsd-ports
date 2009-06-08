@@ -23,4 +23,8 @@ USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	newt
 
+post-patch:
+	@${REINPLACE_CMD} -e '/SEARCH_PATH/ s,=",="${LOCALBASE} ${PREFIX} ,' \
+		${WRKSRC}/config.m4
+
 .include <bsd.port.mk>
