@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	tabthorpe@FreeBSD.org
-COMMENT=	An opensource Bible study application
+COMMENT=	An opensource Bible study tool
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword15
 BUILD_DEPENDS=	${RUN_DEPENDS}
