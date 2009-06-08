@@ -78,7 +78,7 @@ PKGNAMESUFFIX=	-ipv6
 .if defined(WITHOUT_GDBM)
 PLIST_SUB+=	GDBM="@comment "
 APU_CONF_ARGS+=	--without-gdbm
-.elif defined(WITH_GDBM) || exists(${LOCALBASE}/lib/libgdbm.so.3)
+.elif defined(WITH_GDBM)
 PLIST_SUB+=	GDBM=""
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
@@ -95,7 +95,7 @@ APR_UTIL_CONF_ARGS+=	--without-gdbm
 .if defined(WITHOUT_BDB)
 PLIST_SUB+=	BDB="@comment "
 APU_CONF_ARGS+=	--without-berkeley-db
-.elif defined(WITH_BDB) || exists(${LOCALBASE}/lib/libdb-4.2.so.2)
+.elif defined(WITH_BDB)
 APU_EXTRAS=	yes
 PLIST_SUB+=	BDB=""
 USE_BDB=	42+
