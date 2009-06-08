@@ -1,0 +1,23 @@
+--- base/ltvers.dtx.orig	2009-06-08 23:34:29.000000000 +0200
++++ base/ltvers.dtx	2009-06-08 23:34:44.000000000 +0200
+@@ -111,20 +111,6 @@
+ % |\count@| is now the age of this file in months. Take a generous
+ % definition of `year' so this message is not generated too often.
+ %    \begin{macrocode}
+-\ifnum\count@>65
+-  \typeout{^^J%
+-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!^^J%
+-!  You are attempting to make a LaTeX format from a source file^^J%
+-!  That is more than five years old.^^J%
+-!^^J%
+-!  If you enter <return> to scroll past this message then the format^^J%
+-!  will be built, but please consider obtaining newer source files^^J%
+-!  before continuing to build LaTeX.^^J%
+-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!^^J%
+-}
+-   \errhelp{To avoid this error message, obtain new LaTeX sources.}
+-   \errmessage{LaTeX source files more than 5 years old!}
+-\fi
+ \let\reserved@a\relax
+ \fi
+ %    \end{macrocode}
