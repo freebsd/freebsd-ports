@@ -19,6 +19,7 @@
     SUBDIR += clustalw
     SUBDIR += consed
     SUBDIR += crimap
+    SUBDIR += crux
     SUBDIR += distribfold
     SUBDIR += dna-qc
     SUBDIR += dotter

@@ -1,0 +1,18 @@
+Crux is a software toolkit for molecular phylogenetic inference.  It is
+structured as a set of Python modules, which makes it possible to quickly
+develop Python scripts that perform unique, non-canned analyses.  Features
+include:
+* Tree log-likelihoods can be computed under a variety of models, including all
+  specializations of GTR+I+G and mixture models.  Tree likelihoods can be
+  computed in parallel via pthreads.
+* Bayesian Markov chain Monte Carlo (MCMC) methods (with Metropolis coupling)
+  can sample among non-nested models using reversible model jumps.
+* Crux is capable of simulating character data under any model its likelihood
+  engine is capable of.
+* The neighbor joining (NJ) and relaxed neighbor joining (RNJ) implementations
+  are among the fastest in existence.
+* Pairwise distances between sequences can be computed based on percent
+  identity, or using methods that correct for multiple hits (Jukes-Cantor,
+  Kimura, and logDet).
+
+WWW: http://www.canonware.com/Crux/

@@ -1,0 +1,71 @@
+@comment $FreeBSD$
+bin/crux
+bin/redpoint
+bin/MrRogers
+%%PYTHON_SITELIBDIR%%/Crux/__init__.py
+%%PYTHON_SITELIBDIR%%/Crux/__init__.so
+%%PYTHON_SITELIBDIR%%/Crux/Character.so
+%%PYTHON_SITELIBDIR%%/Crux/Config.py
+%%PYTHON_SITELIBDIR%%/Crux/Config.pyo
+%%PYTHON_SITELIBDIR%%/Crux/Copying.py
+%%PYTHON_SITELIBDIR%%/Crux/Copying.pyo
+%%PYTHON_SITELIBDIR%%/Crux/CTMatrix.so
+%%PYTHON_SITELIBDIR%%/Crux/DistMatrix/__init__.py
+%%PYTHON_SITELIBDIR%%/Crux/DistMatrix/__init__.so
+%%PYTHON_SITELIBDIR%%/Crux/DistMatrix/Nj.so
+%%PYTHON_SITELIBDIR%%/Crux/Fasta.so
+%%PYTHON_SITELIBDIR%%/Crux/Mc3/__init__.py
+%%PYTHON_SITELIBDIR%%/Crux/Mc3/__init__.so
+%%PYTHON_SITELIBDIR%%/Crux/Mc3/Chain.so
+%%PYTHON_SITELIBDIR%%/Crux/Mc3/Post.so
+%%PYTHON_SITELIBDIR%%/Crux/Newick.so
+%%PYTHON_SITELIBDIR%%/Crux/Taxa.so
+%%PYTHON_SITELIBDIR%%/Crux/Tree/__init__.py
+%%PYTHON_SITELIBDIR%%/Crux/Tree/__init__.so
+%%PYTHON_SITELIBDIR%%/Crux/Tree/Bipart.so
+%%PYTHON_SITELIBDIR%%/Crux/Tree/Lik.so
+%%PYTHON_SITELIBDIR%%/Crux/Tree/Sumt.so
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/__init__.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Character.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/CTMatrix.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Cx.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/CxMath.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/CxMat.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/CxNewickLexer.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/CxRi.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/DistMatrix/__init__.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/DistMatrix/CxDistMatrixLexer.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/DistMatrix/Nj.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Fasta.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Mc3/__init__.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Mc3/Chain.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Mc3/Post.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Newick.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/SFMT/SFMT.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Taxa.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Tree/__init__.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Tree/Bipart.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Tree/CxLik.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Tree/Lik.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/Tree/Sumt.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/libm.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Crux/libc.pxd
+%%PYTHON_SITELIBDIR%%/Crux/include/Parsing.pxd
+share/Crux/lib/libCx.so
+share/Crux/parsers/Fasta.log
+share/Crux/parsers/Fasta.pickle
+share/Crux/parsers/Newick.log
+share/Crux/parsers/Newick.pickle
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/DistMatrix
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/DistMatrix
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Mc3
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/SFMT
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Tree
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/Mc3
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/Tree
+@dirrm %%PYTHON_SITELIBDIR%%/Crux
+@dirrm share/Crux/lib
+@dirrm share/Crux/parsers
+@dirrm share/Crux
