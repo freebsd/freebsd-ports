@@ -29,6 +29,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not build
+.endif
+
 .if defined(WITHOUT_EDS)
 CONFIGURE_ARGS+=	--disable-evolution-data-server
 .elif defined(WITH_EDS)
