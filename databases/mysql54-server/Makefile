@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.34
+PORTVERSION=	5.1.35
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -101,9 +101,18 @@ PLIST_SUB+=	NDB=""
 PLIST_SUB+=	NDB="@comment "
 .endif
 
-MAN1=		myisamchk.1 myisamlog.1 myisampack.1 \
-		my_print_defaults.1 mysql_tzinfo_to_sql.1 \
-		mysqld_safe.1 mysql.server.1 perror.1 replace.1
+MAN1=		innochecksum.1 myisamchk.1 myisamlog.1 myisampack.1 \
+		my_print_defaults.1 myisam_ftdump.1 mysql_client_test_embedded.1 \
+		mysql_install_db.1 mysql_tzinfo_to_sql.1 \
+		mysql_waitpid.1 mysqld_safe.1 mysqltest_embedded.1 mysql.server.1 \
+		perror.1 replace.1 resolve_stack_dump.1 resolveip.1
+.if defined(WITH_NDB)
+MAN1+=		ndb_config.1 ndb_delete_all.1 ndb_desc.1 ndb_drop_index.1 \
+		ndb_drop_table.1 ndb_error_reporter.1 ndb_mgm.1 \
+		ndb_print_backup_file.1 ndb_print_schema_file.1 \
+		ndb_print_sys_file.1 ndb_restore.1 ndb_select_all.1 \
+		ndb_select_count.1 ndb_show_tables.1 ndb_size.pl.1 ndb_waiter.1
+.endif
 
 INFO=		mysql
 
@@ -156,8 +165,9 @@ LATEST_LINK=	mysql51-client
 
 CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.0.* mysql-client-6.*
 
-MAN1=		mysql_config.1 mysql.1 mysqladmin.1 mysqlbinlog.1 \
-		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1
+MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
+		mysqlbinlog.1 mysqlbug.1 mysqlcheck.1 \
+		mysqldump.1 mysqlimport.1 mysqlshow.1 mysqlslap.1 mysqltest.1
 
 MAN8=		mysqlmanager.8
 
@@ -190,8 +200,10 @@ LATEST_LINK=	mysql51-scripts
 
 CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.0.* mysql-scripts-6.*
 
-MAN1=		msql2mysql.1 mysql_zap.1 mysqlaccess.1 mysqlhotcopy.1 \
-		mysqld_multi.1 mysql_fix_privilege_tables.1
+MAN1=		msql2mysql.1 mysql_convert_table_format.1 mysql_find_rows.1 \
+		mysql_fix_extensions.1 mysql_secure_installation.1 \
+		mysql_setpermission.1 mysql_zap.1 mysqlaccess.1 \
+		mysqldumpslow.1 mysqlhotcopy.1 mysqld_multi.1
 
 SCRIPTS=	msql2mysql mysql_fix_extensions mysql_setpermission \
 		mysql_secure_installation mysql_zap mysqlaccess \
