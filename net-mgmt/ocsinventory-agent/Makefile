@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Ocsinventory
-PORTVERSION=	0.0.9.2
-PORTREVISION=	1
+PORTVERSION=	1.02
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://nana.rulezlan.org/~goneri/ocsinventory-agent/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	ocsinventory
 PKGNAMESUFFIX=	-Agent
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+DISTNAME=	OCSNG_UNIX_AGENT-${PORTVERSION}
 
-MAINTAINER=	freebsd@rootxs.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Keep track of the computers configuration and software
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
@@ -26,6 +26,7 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-1.0.1
 
 MAN1=		ocsinventory-agent.1
 
