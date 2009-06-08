@@ -36,7 +36,7 @@ USE_GNOME=		#
 EXTRA_PATCHES+=		${FILESDIR}/sdl.mak.patch
 .endif
 
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .if ${ARCH} == "amd64"
 MAKE_ENV+=	PTR64=1
