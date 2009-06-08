@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-ng
-PORTVERSION=	1.02
+PORTVERSION=	1.02.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ocsinventory
