@@ -1,0 +1,18 @@
+Equal to the fix in the apr-util itself:
+  http://svn.apache.org/viewvc/apr/apr/trunk/buckets/apr_brigade.c?r1=768417&r2=768416&pathrev=768417&view=patch
+
+See discuission about original vulnerability at
+  http://www.mail-archive.com/dev@apr.apache.org/msg21592.html
+
+--- srclib/apr-util/buckets/apr_brigade.c.orig	2009-06-06 12:32:12.000000000 +0400
++++ srclib/apr-util/buckets/apr_brigade.c	2009-06-06 12:35:30.000000000 +0400
+@@ -689,9 +689,6 @@
+       return -1;
+     }
+ 
+-    /* tack on null terminator to remaining string */
+-    *(vd.vbuff.curpos) = '\0';
+-
+     /* write out what remains in the buffer */
+     return apr_brigade_write(b, flush, ctx, buf, vd.vbuff.curpos - buf);
+ }
