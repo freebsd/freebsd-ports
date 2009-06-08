@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftwin
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.meroware.org/ftwin/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	puzzle.1:${PORTSDIR}/graphics/libpuzzle \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262 aclocal:110 automake:110 autoheader:262
-CONFIGURE_ARGS+=	--with-check=${LOCALBASE} --with-puzzle=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-puzzle=${LOCALBASE}
 PLIST_FILES=	bin/ftwin
 
 MAKE_JOBS_SAFE=	yes

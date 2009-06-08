@@ -1,5 +1,5 @@
---- acinclude.m4.orig	2007-12-07 23:19:51.000000000 +0100
-+++ acinclude.m4	2007-12-18 14:29:44.000000000 +0100
+--- ./acinclude.m4.orig	2008-11-03 18:03:37.000000000 +0100
++++ ./acinclude.m4	2009-06-08 11:04:57.456599653 +0200
 @@ -141,8 +141,8 @@
      ])
  
@@ -23,7 +23,7 @@
  		AC_CHECK_LIB(puzzle, puzzle_init_context,
  		    [
  		     AC_DEFINE([HAVE_PUZZLE], 1, [for image comparison mode])
-@@ -216,9 +218,11 @@
+@@ -216,16 +218,18 @@
  	    # Make sure we have "archive.h".  If we don't, it means we probably
  	    # don't have libarchive, so don't use it.
  	    #
@@ -31,7 +31,15 @@
  	    AC_CHECK_HEADER(archive.h,
  		[
  		# Check if the lib is OK
-+		LDFLAGS="$LDFLAGS -L$archive/lib"
++		LDFLAGS="$LDFLAGS -L$archive/lib -lmd -lcrypto"
  		AC_CHECK_LIB(archive, archive_version,
  		    [
  		     AC_DEFINE([HAVE_ARCHIVE], 1, [for inside archive comparison mode])
+ 		     with_archive=yes
+ 		     ARCHIVE_CPPFLAGS="-I$archive/include"
+ 		     ARCHIVE_LDFLAGS="-L$archive/lib"
+-		     ARCHIVE_LDADD="-larchive"
++		     ARCHIVE_LDADD="-larchive -lmd -lcrypto"
+ 		    ],
+ 		    [
+ 		     with_archive=no
