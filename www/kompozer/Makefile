@@ -25,6 +25,8 @@ ALL_TARGET=	build_all
 MOZ_EXTENSIONS=	wallet,xml-rpc,xmlextras,pref,universalchardet,spellcheck
 PORT_MOZCONFIG=	${WRKSRC}/composer/config/mozconfig.linux
 
+BROKEN=	KompoZer 0.7.10 is not compatible with GTK 2.14 and higher, hence the crashes.
+
 DESKTOP_ENTRIES="Kompozer" "${COMMENT}" \
 		"${PREFIX}/lib/kompozer/icons/mozicon50.xpm" "${PORTNAME}" \
 		"Application;Network;" true
