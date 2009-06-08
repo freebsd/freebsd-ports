@@ -19,8 +19,8 @@
 # PERL_VERSION	- Full version of perl5 (see below for current value).
 # PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
 #				  M is major version, N is minor version, and P is
-#				  the patch level. E.g., PERL_VERSION=5.6.1 would give
-#				  a PERL_LEVEL of 500601. This can be used in comparisons
+#				  the patch level. E.g., PERL_VERSION=5.8.1 would give
+#				  a PERL_LEVEL of 500801. This can be used in comparisons
 #				  to determine if the version of perl is high enough,
 #				  whether a particular dependency is needed, etc.
 # PERL_ARCH		- Directory name of architecture dependent libraries
@@ -47,7 +47,7 @@
 #
 # Examples:
 # 	USE_PERL5=	yes	# port requires any version of Perl5 to build.
-# 	USE_PERL5=	5.6.0+	# port requires at least Perl 5.6.0 to build.
+# 	USE_PERL5=	5.8.0+	# port requires at least Perl 5.8.0 to build.
 #	USE_PERL5=	5.8.2	# port is only usable with Perl 5.8.2.
 #	USE_PERL5=	5.8.6-	# port is only usbale with Perl 5.8.6 or prior.
 #
@@ -101,10 +101,8 @@ PERL_ARCH?=		mach
 
 .if   ${PERL_LEVEL} >= 501000
 PERL_PORT?=	perl5.10
-.elif ${PERL_LEVEL} >= 500800
+.else # ${PERL_LEVEL} < 501000
 PERL_PORT?=	perl5.8
-.else # ${PERL_LEVEL} < 500800
-PERL_PORT?=	perl5.6
 .endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
