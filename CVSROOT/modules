@@ -1904,6 +1904,7 @@ cutecom                         ports/comms/cutecom
 cutils                          ports/devel/cutils
 cutmp3                          ports/audio/cutmp3
 cuttlefish                      ports/graphics/cuttlefish
+cuyo                            ports/games/cuyo
 cvc3                            ports/math/cvc3
 cvm                             ports/security/cvm
 cvs+ipv6                        ports/devel/cvs+ipv6
@@ -2419,6 +2420,7 @@ doxymacs                        ports/editors/doxymacs
 dparser                         ports/devel/dparser
 dphys-config                    ports/misc/dphys-config
 dpkg                            ports/archivers/dpkg
+dplay                           ports/multimedia/dplay
 dprog                           ports/devel/dprog
 dpsearch                        ports/www/dpsearch
 drac                            ports/mail/drac
@@ -4116,7 +4118,6 @@ ghtool                          ports/dns/ghtool
 giblib                          ports/graphics/giblib
 gicq                            ports/net-im/gicq
 gif2png                         ports/graphics/gif2png
-giflib                          ports/graphics/giflib
 gifmerge                        ports/graphics/gifmerge
 gifsicle                        ports/graphics/gifsicle
 gift                            ports/net-p2p/gift
@@ -5910,6 +5911,7 @@ ja-p5-HTML-MobileJp             ports/japanese/p5-HTML-MobileJp
 ja-p5-Jcode                     ports/japanese/p5-Jcode
 ja-p5-Lingua-JA-Kana            ports/japanese/p5-Lingua-JA-Kana
 ja-p5-Lingua-JA-Numbers         ports/japanese/p5-Lingua-JA-Numbers
+ja-p5-Lingua-JA-Regular-Unicode  ports/japanese/p5-Lingua-JA-Regular-Unicode
 ja-p5-Lingua-JA-Summarize-Extract  ports/japanese/p5-Lingua-JA-Summarize-Extract
 ja-p5-Mail-SpamAssassin         ports/japanese/p5-Mail-SpamAssassin
 ja-p5-MeCab                     ports/japanese/p5-MeCab
@@ -5934,6 +5936,7 @@ ja-p5-jcode                     ports/japanese/p5-Jcode
 ja-p5-jcode.pl                  ports/japanese/p5-jcode.pl
 ja-p5-lingua-ja-kana            ports/japanese/p5-Lingua-JA-Kana
 ja-p5-lingua-ja-numbers         ports/japanese/p5-Lingua-JA-Numbers
+ja-p5-lingua-ja-regular-unicode  ports/japanese/p5-Lingua-JA-Regular-Unicode
 ja-p5-lingua-ja-summarize-extract  ports/japanese/p5-Lingua-JA-Summarize-Extract
 ja-p5-mail-spamassassin         ports/japanese/p5-Mail-SpamAssassin
 ja-p5-manual                    ports/japanese/p5-manual
@@ -7905,6 +7908,7 @@ linux-f10-libtheora             ports/multimedia/linux-f10-libtheora
 linux-f10-libvorbis             ports/audio/linux-f10-libvorbis
 linux-f10-libxml                ports/textproc/linux-f10-libxml
 linux-f10-libxml2               ports/textproc/linux-f10-libxml2
+linux-f10-mikmod                ports/audio/linux-f10-mikmod
 linux-f10-nspr                  ports/devel/linux-f10-nspr
 linux-f10-nss                   ports/security/linux-f10-nss
 linux-f10-openal                ports/audio/linux-f10-openal
@@ -9845,6 +9849,7 @@ opencascade-tutorial            ports/cad/opencascade-tutorial
 opencdk                         ports/security/opencdk
 opencity                        ports/games/opencity
 openclipart                     ports/graphics/openclipart
+openconnect                     ports/security/openconnect
 openct                          ports/security/openct
 opencv                          ports/graphics/opencv
 opencvs                         ports/devel/opencvs
@@ -18853,6 +18858,7 @@ py-curl                         ports/ftp/py-curl
 py-cxx                          ports/devel/py-cxx
 py-cyruslib                     ports/mail/py-cyruslib
 py-dal                          ports/devel/py-dal
+py-darcsver                     ports/devel/py-darcsver
 py-dateutil                     ports/devel/py-dateutil
 py-dbus                         ports/devel/py-dbus
 py-dbutils                      ports/databases/py-dbutils
@@ -20532,6 +20538,7 @@ rubygem-nmap-parser             ports/security/rubygem-nmap-parser
 rubygem-nokogiri                ports/textproc/rubygem-nokogiri
 rubygem-oauth                   ports/net/rubygem-oauth
 rubygem-objectdetect            ports/graphics/rubygem-objectdetect
+rubygem-ohcount                 ports/misc/rubygem-ohcount
 rubygem-open4                   ports/devel/rubygem-open4
 rubygem-openid                  ports/net/rubygem-openid
 rubygem-parsetree               ports/devel/rubygem-parsetree
