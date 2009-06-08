@@ -259,14 +259,14 @@
 +      set OPT='-O2'
 +      if ($MODULE == zheev)  set OPT='-O0'  # defensive compiling
 +      if (($MODULE == qeigen) || ($MODULE == int2c)) then
-+         mv $MODULE.f $MODULE.junk
++         mv -f $MODULE.f $MODULE.junk
 +         sed -e "s/Q-/D-/g" \
 +             -e "s/Q+00/D+00/g" \
 +             -e "s/REAL\*16/DOUBLE PRECISION/" $MODULE.junk > $MODULE.f
 +         rm -f $MODULE.junk
 +      endif
 +      set echo
-+      %%FC%% -fdefault-integer-8 $OPT -std=legacy $MODULE.f
++      %%FC%% -c -fdefault-integer-8 $OPT -std=legacy $MODULE.f
 +      unset echo
 +      breaksw
 +
