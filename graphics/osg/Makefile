@@ -177,7 +177,7 @@ PLIST_SUB+=	SVG="@comment "
 
 .if defined(WITH_PDF)
 FORCE_PC_REQUIRE+=POPPLER
-LIB_DEPENDS+=	poppler-glib.3:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS+=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
 PLIST_SUB+=	PDF=""
 .else
 FORCE_PC_IGNORE+=POPPLER
@@ -200,6 +200,8 @@ USE_XORG+=	xrandr
 .endif
 
 post-patch:
+	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
 .for p in ${FORCE_REQUIRE}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/CMakeLists.txt
