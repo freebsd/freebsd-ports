@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	6.13
+PORTVERSION=	6.14.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/
 
