@@ -1,0 +1,38 @@
+# New ports collection makefile for:   crux
+# Date created:        8 June 2009
+# Whom:                jasone
+#
+# $FreeBSD$
+#
+
+PORTNAME=      crux
+PORTVERSION=   1.0.1
+CATEGORIES=    python biology
+MASTER_SITES=  http://www.canonware.com/download/Crux/
+
+MAINTAINER=    jasone@FreeBSD.org
+COMMENT=       Software toolkit for phylogenetic inference
+
+USE_BZIP2=     yes
+GNU_CONFIGURE= yes
+CONFIGURE_ARGS=--with-python=${PYTHON_CMD} --disable-mpi
+CONFIGURE_ENV+=EXTRA_CFLAGS="-std=gnu99"
+USE_GMAKE=     yes
+USE_PYTHON=    2.5+
+
+OPTIONS=       SYS_LINALG "Enable system ATLAS/LAPACK" Off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SYS_LINALG)
+CONFIGURE_ARGS+= --enable-sys-linalg
+RUN_DEPENDS+=  libatlas:${PORTSDIR}/math/atlas
+.else
+CONFIGURE_ARGS+= --disable-sys-linalg
+USE_FORTRAN=   yes
+.endif
+
+post-install:
+	@${PREFIX}/bin/crux -b -q /dev/null
+
+.include <bsd.port.post.mk>
