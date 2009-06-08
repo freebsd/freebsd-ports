@@ -1,6 +1,4 @@
 %%PYTHON_SITELIBDIR%%/pmock.py
-%%PYTHON_SITELIBDIR%%/pmock.pyc
-%%PYTHON_SITELIBDIR%%/pmock.pyo
 %%PORTDOCS%%%%EXAMPLESDIR%%/errors.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/greeting.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -532,11 +532,7 @@ bin/xmlproc_val
 %%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/NamespaceNode.pyc
 %%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/NamespaceNode.pyo
 %%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/ParsedAbbreviatedAbsoluteLocationPath.py
-%%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/ParsedAbbreviatedAbsoluteLocationPath.pyc
-%%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/ParsedAbbreviatedAbsoluteLocationPath.pyo
 %%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/ParsedAbbreviatedRelativeLocationPath.py
-%%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/ParsedAbbreviatedRelativeLocationPath.pyc
-%%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/ParsedAbbreviatedRelativeLocationPath.pyo
 %%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/ParsedAbsoluteLocationPath.py
 %%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/ParsedAbsoluteLocationPath.pyc
 %%XPATH%%%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/xpath/ParsedAbsoluteLocationPath.pyo

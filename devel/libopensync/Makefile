@@ -7,7 +7,7 @@
 
 PORTNAME=	libopensync
 PORTVERSION=	0.36
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
@@ -27,6 +27,7 @@ CMAKE_USE_PTHREAD=	yes
 USE_GNOME=	glib20 libxml2
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
+CMAKE_ARGS+=	-DPYTHON_INCLUDE_PATH:PATH=${PYTHON_INCLUDEDIR}
 
 .include <bsd.port.pre.mk>
 

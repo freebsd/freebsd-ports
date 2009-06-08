@@ -124,7 +124,6 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/completing.pyc
 %%PYTHON_SITELIBDIR%%/pymol/externing.pyc
 %%PYTHON_SITELIBDIR%%/pymol/preset.pyc
-%%PYTHON_SITELIBDIR%%/pymol/api.pyc
 %%PYTHON_SITELIBDIR%%/pymol/parsing.pyc
 %%PYTHON_SITELIBDIR%%/pymol/menu.pyc
 %%PYTHON_SITELIBDIR%%/pymol/fitting.pyc
@@ -571,7 +570,7 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/package/redhat/pymol-0.96-1.rh90.py22.spec
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/package/redhat/pymol-0.96-1.rh73.py22.spec
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/LICENSE
-%%PYTHON_SITELIBDIR%%/pymol-1.0.0-py2.5.egg-info
+%%PYTHON_SITELIBDIR%%/pymol-1.0.0-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/chempy/cpv.py
 %%PYTHON_SITELIBDIR%%/chempy/xyz.py
 %%PYTHON_SITELIBDIR%%/chempy/__init__.py
@@ -628,7 +627,6 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/chempy/champ/formal_charges.pyc
 %%PYTHON_SITELIBDIR%%/chempy/champ/assign.pyc
 %%PYTHON_SITELIBDIR%%/chempy/fast/__init__.py
-%%PYTHON_SITELIBDIR%%/chempy/fast/__init__.pyc
 %%PYTHON_SITELIBDIR%%/chempy/fragments/__init__.py
 %%PYTHON_SITELIBDIR%%/chempy/fragments/__init__.pyc
 %%PYTHON_SITELIBDIR%%/chempy/tinker/__init__.py

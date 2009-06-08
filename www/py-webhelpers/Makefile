@@ -18,7 +18,7 @@ COMMENT=	Python helper functions for writing templates in web applications
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}routes>=1.1:${PORTSDIR}/www/py-routes \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=1.4:${PORTSDIR}/devel/py-simplejson
 
-USE_PYTHON=		2.5
+USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	WebHelpers
 

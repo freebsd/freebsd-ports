@@ -245,8 +245,6 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/otTables.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/otTables.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/ttProgram.py
-%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/ttProgram.pyc
-%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/ttProgram.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/test/__init__.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/test/__init__.pyo

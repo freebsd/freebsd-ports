@@ -165,8 +165,6 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/expression.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/expression.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/flockofbirds.py
-%%PYTHON_SITELIBDIR%%/cgkit/flockofbirds.pyc
-%%PYTHON_SITELIBDIR%%/cgkit/flockofbirds.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/fob.py
 %%PYTHON_SITELIBDIR%%/cgkit/fob.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/fob.pyo

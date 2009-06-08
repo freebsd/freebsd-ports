@@ -53,9 +53,7 @@
 %%PYTHON_SITELIBDIR%%/simpleparse/stt/TextTools/mxTextTools/mxTextTools.so
 %%PYTHON_SITELIBDIR%%/simpleparse/stt/TextTools/mxTextTools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/simpleparse/stt/TextTools/mxTextTools/__init__.pyo
-%%PYTHON_SITELIBDIR%%/simpleparse/stt/TextTools/TextTools.pyc
 %%PYTHON_SITELIBDIR%%/simpleparse/stt/TextTools/__init__.pyc
-%%PYTHON_SITELIBDIR%%/simpleparse/stt/TextTools/TextTools.pyo
 %%PYTHON_SITELIBDIR%%/simpleparse/stt/TextTools/__init__.pyo
 %%PYTHON_SITELIBDIR%%/simpleparse/stt/TextTools/LICENSE
 %%PYTHON_SITELIBDIR%%/simpleparse/stt/TextTools/README

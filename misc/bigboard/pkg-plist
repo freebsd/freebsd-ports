@@ -256,8 +256,6 @@ libdata/bonobo/servers/GNOME_OnlineDesktop_BigBoardFactory.server
 %%PYTHON_SITELIBDIR%%/bigboard/themes/default.pyo
 %%PYTHON_SITELIBDIR%%/bigboard/themes/fedora.css
 %%PYTHON_SITELIBDIR%%/bigboard/themes/fedora.py
-%%PYTHON_SITELIBDIR%%/bigboard/themes/fedora.pyc
-%%PYTHON_SITELIBDIR%%/bigboard/themes/fedora.pyo
 %%PYTHON_SITELIBDIR%%/bigboard/workboard.py
 %%PYTHON_SITELIBDIR%%/bigboard/workboard.pyc
 %%PYTHON_SITELIBDIR%%/bigboard/workboard.pyo

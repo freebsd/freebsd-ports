@@ -25,8 +25,6 @@ include/pygtk/pygtk.h
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gdkpixbufmodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gdkpixbufmodule.so
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.pyo
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gtkgl.py
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gtkgl.pyc
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gtkgl.pyo

@@ -4,4 +4,4 @@ include/libimplantisomd5.h
 include/libcheckisomd5.h
 lib/libimplantisomd5.a
 lib/libcheckisomd5.a
-lib/python2.5/site-packages/pyisomd5sum.so
+%%PYTHON_SITELIBDIR%%/pyisomd5sum.so

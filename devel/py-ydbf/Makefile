@@ -15,12 +15,12 @@ DISTNAME=	YDbf-0.0.1dev-20080514
 MAINTAINER=	andrey.polyakov@unix.net
 COMMENT=	Yelded DBF reader/writer for Python
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-
-PLIST_FILES=	lib/${PYTHON_VERSION}/site-packages/YDbf-0.0.1dev_20080514-py2.5.egg
+PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/${PYEASYINSTALL_EGG}
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
+PYDISTUTILS_PKGNAME=	YDbf
+PYDISTUTILS_PKGVERSION=	0.0.1dev_20080514
 
 .include <bsd.port.mk>

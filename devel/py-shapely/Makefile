@@ -17,7 +17,7 @@ COMMENT=	Python Package for Manipulation 2D Geospatial Geometry
 
 LIB_DEPENDS=	geos_c.6:${PORTSDIR}/graphics/geos
 
-USE_PYTHON=	2.5
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>

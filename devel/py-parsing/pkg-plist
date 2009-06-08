@@ -2,6 +2,8 @@
 %%PYTHON_SITELIBDIR%%/pyparsing.pyc
 %%PYTHON_SITELIBDIR%%/pyparsing.pyo
 %%PYTHON_SITELIBDIR%%/pyparsing_py3.py
+%%PYTHON_SITELIBDIR%%/pyparsing_py3.pyc
+%%PYTHON_SITELIBDIR%%/pyparsing_py3.pyo
 %%PORTDOCS%%%%DOCSDIR%%/api-objects.txt
 %%PORTDOCS%%%%DOCSDIR%%/class-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/crarr.png

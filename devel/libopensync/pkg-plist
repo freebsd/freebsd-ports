@@ -85,8 +85,6 @@ share/opensync-1.0/cmake/modules/OpenSyncPackaging.cmake
 share/opensync-1.0/cmake/modules/OpenSyncTesting.cmake
 share/opensync-1.0/cmake/modules/OpenSyncPlugin.cmake
 share/opensync-1.0/cmake/modules/OpenSyncInternal.cmake
-%%PYTHON_SITELIBDIR%%/_opensync.so
-%%PYTHON_SITELIBDIR%%/opensync.py
 @dirrm share/opensync-1.0/schemas
 @dirrm share/opensync-1.0/descriptions
 @dirrm share/opensync-1.0/cmake/modules
