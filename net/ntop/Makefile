@@ -7,6 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.3.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,13 +52,11 @@ USE_RC_SUBR=	ntop.sh
 ##    WITH_LOCALE:        Enable locale (i18n) support.
 ##    WITH_PCAP_PORT:     Use libpcap from ports.
 ##    WITH_XMLDUMP:       Enable XML Dump support.
-##    WITH_ASDATA:        Install AS data.
 ##    WITHOUT_TCPWRAPPER: Disable TCP wrapper support.
 ##
 OPTIONS=	LOCALE "Enable locale (i18n) support." Off \
 		PCAP_PORT "Use libpcap from ports." Off \
 		XMLDUMP "Enable XML Dump support." Off \
-		ASDATA "Install AS data." Off \
 		TCPWRAPPER "Enable TCP wrapper support" On
 
 .include <bsd.port.pre.mk>
@@ -85,13 +84,6 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/libxml2/libxml \
 			-I${LOCALBASE}/include/libgdome \
 			-I${LOCALBASE}/include/glib-2.0"
-.endif
-
-.if defined(WITH_ASDATA)
-INSTALL_TARGET+=	install install-data-as
-PLIST_SUB+=		ASDATA=""
-.else
-PLIST_SUB+=		ASDATA="@comment "
 .endif
 
 post-extract:
