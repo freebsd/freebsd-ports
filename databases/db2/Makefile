@@ -17,6 +17,8 @@ DISTNAME=	db-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 2
 
+MAKE_JOBS_UNSAFE=	yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 USE_LDCONFIG=	yes
