@@ -35,10 +35,11 @@ INDDIR=		${PREFIX}/share/Ted/ind
 
 post-extract:
 	cd ${WRKSRC}/tedPackage && ${TAR} xf TedBindist.tar
-
-post-patch:
 	${CP} -p ${FILESDIR}/configure ${WRKSRC}/configure
 	${CHMOD} +x ${WRKSRC}/configure
+
+post-patch:
+	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/*/configure
 	${REINPLACE_CMD} \
 		's|DEF_PKGDIR|DEF_DOCUMENT_DIR|g' ${WRKSRC}/Ted/makefile.in
 
