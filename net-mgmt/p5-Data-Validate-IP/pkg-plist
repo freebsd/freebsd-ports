@@ -1,14 +1,4 @@
 %%SITE_PERL%%/Data/Validate/IP.pm
-%%SITE_PERL%%/auto/Data/Validate/IP/_mask.al
-%%SITE_PERL%%/auto/Data/Validate/IP/autosplit.ix
-%%SITE_PERL%%/auto/Data/Validate/IP/is_ipv4.al
-%%SITE_PERL%%/auto/Data/Validate/IP/is_linklocal_ipv4.al
-%%SITE_PERL%%/auto/Data/Validate/IP/is_loopback_ipv4.al
-%%SITE_PERL%%/auto/Data/Validate/IP/is_multicast_ipv4.al
-%%SITE_PERL%%/auto/Data/Validate/IP/is_private_ipv4.al
-%%SITE_PERL%%/auto/Data/Validate/IP/is_public_ipv4.al
-%%SITE_PERL%%/auto/Data/Validate/IP/is_testnet_ipv4.al
-%%SITE_PERL%%/auto/Data/Validate/IP/new.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/IP/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/IP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate
