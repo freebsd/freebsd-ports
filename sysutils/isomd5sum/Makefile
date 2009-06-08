@@ -7,6 +7,7 @@
 
 PORTNAME=	isomd5sum
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://fedorahosted.org/releases/i/s/isomd5sum/
 

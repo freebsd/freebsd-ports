@@ -7,6 +7,7 @@
 
 PORTNAME=	WebError
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.7:${PORTSDIR}/www/py-paste \
 		${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:${PORTSDIR}/www/py-webob \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.8:${PORTSDIR}/devel/py-simplejson
 
-USE_PYTHON=		2.5
+USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>

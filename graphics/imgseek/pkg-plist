@@ -64,8 +64,6 @@ bin/imgSeekCmd
 %%PYTHON_SITELIBDIR%%/imgSeekLib/MetaWnd.pyc
 %%PYTHON_SITELIBDIR%%/imgSeekLib/MetaWnd.pyo
 %%PYTHON_SITELIBDIR%%/imgSeekLib/RenameForm.py
-%%PYTHON_SITELIBDIR%%/imgSeekLib/RenameForm.pyc
-%%PYTHON_SITELIBDIR%%/imgSeekLib/RenameForm.pyo
 %%PYTHON_SITELIBDIR%%/imgSeekLib/RenameWiz.py
 %%PYTHON_SITELIBDIR%%/imgSeekLib/RenameWiz.pyc
 %%PYTHON_SITELIBDIR%%/imgSeekLib/RenameWiz.pyo

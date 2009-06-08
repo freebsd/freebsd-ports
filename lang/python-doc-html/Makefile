@@ -30,23 +30,23 @@ DOCFORMAT?=	html
 
 .if ${PYTHON_REL} < 260
 .if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf-a4" && ${DOCFORMAT} != "pdf-letter" && ${DOCFORMAT} != "postscript-a4" && ${DOCFORMAT} != "postscript-letter"
-.BEGIN:
-	@${ECHO} "ERROR: invalid value for DOCFORMAT: \"${DOCFORMAT}\""
-	@${ECHO} "Possible values are:  html, pdf-a4, pdf-letter,"
-	@${ECHO} "postscript-a4, postscript-letter."
-	@${FALSE}
+IGNORE=	invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: html, pdf-a4, pdf-letter, postscript-a4, postscript-letter
 .endif
 .else # ${PYTHON_REL} >= 260
-.if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf-a4" && ${DOCFORMAT} != "pdf-letter"
-.BEGIN:
-	@${ECHO} "ERROR: invalid value for DOCFORMAT: \"${DOCFORMAT}\""
-	@${ECHO} "Possible values are:  html, pdf-a4, pdf-letter."
-	@${FALSE}
+.if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf-a4" && ${DOCFORMAT} != "pdf-letter" && ${DOCFORMAT} != "text"
+IGNORE=	invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: text, html, pdf-a4, pdf-letter
 .endif
 
+.if ${PYTHON_REL} < 260
 DISTNAME=	python-docs-${DOCFORMAT}
+.else
+DISTNAME=	python-${PORTVERSION}-docs-${DOCFORMAT}
+.endif
 DIST_SUBDIR=	python${PYTHON_REL}
+
 .if ${DOCFORMAT} == "html"
+WRKSRC=		${WRKDIR}/${DISTNAME}
+.elif ${DOCFORMAT} == "text"
 WRKSRC=		${WRKDIR}/${DISTNAME}
 .else
 WRKSRC=		${WRKDIR}/docs-pdf
@@ -64,6 +64,6 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${DOCDIR}
-	@${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${DOCDIR} -xf - 
+	@${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${DOCDIR} -xf -
 
 .include <bsd.port.post.mk>

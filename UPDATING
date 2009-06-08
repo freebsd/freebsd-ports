@@ -6,6 +6,35 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090608:
+  AFFECTS: users of lang/python* and py-*
+  AUTHOR: miwi@FreeBSD.org
+
+  The default version of Python has been changed from 2.5.x to 2.6.x.
+  If you have 2.5.x installed, perform an upgrade of lang/python25 to
+  lang/python26 with one of the following commands like:
+
+  # portupgrade -o lang/python26 lang/python25
+  # portmaster -o  lang/python26 lang/python25
+
+  If you want to remain 2.5.x as default Python version, set the
+  PYTHON_DEFAULT_VERSION variable to 'python2.5' without quotes in
+  make.conf, then go to lang/python and perform one of the following
+  commands:
+
+  # portupgrade -R python
+  # portmaster -r python\*
+
+  Once the installed Python has been updated to 2.6, by using one of the
+  methods above, it is required to run the upgrade-site-packages target in
+  lang/python to assure that site-packages are made available to the new Python
+  version.
+
+  # cd /usr/ports/lang/python && make upgrade-site-packages
+
+  This Makefile target requires ports-mgmt/portupgrade to be installed.
+  For portmaster users, please setting PORTUPGRADE_CMD to portmaster.
+
 20090606:
   AFFECTS: users of java/eclipse
   AUTHOR: glewis@FreeBSD.org

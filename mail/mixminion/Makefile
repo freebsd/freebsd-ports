@@ -7,7 +7,7 @@
 
 PORTNAME=	Mixminion
 DISTVERSION=	0.0.8alpha2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mixminion.net/dist/${DISTVERSION}/
 

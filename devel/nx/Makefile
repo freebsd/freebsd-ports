@@ -8,6 +8,7 @@
 
 PORTNAME=	nx
 PORTVERSION=	0.37
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://networkx.lanl.gov/download/networkx/
 DISTNAME=	networkx-${PORTVERSION}
@@ -27,6 +28,7 @@ USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	networkx
 PORTDOCS=	*
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 
 post-install:
 .ifndef(NOPORTDOCS)

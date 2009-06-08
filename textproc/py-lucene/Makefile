@@ -42,7 +42,13 @@ MAKE_ARGS+=	PREFIX=${PREFIX} PREFIX_PYTHON=${LOCALBASE} PYTHON=${PYTHON_CMD} \
 pre-build:
 		${CP} -R ${WRKDIR}/../../lucene/work/lucene-${LUCENE_VER} ${WRKSRC}/lucene-java-${LUCENE_VER}
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} > 250
+BROKEN=		Doesn't build with ${PYTHON_VERSION}
+.endif
+
 #regression-test:
 #		cd ${WRKSRC}; env ${MAKE_ENV} ${GMAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

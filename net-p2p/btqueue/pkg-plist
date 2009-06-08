@@ -453,8 +453,6 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/khashmir/test_khashmir.pyc
 %%PYTHON_SITELIBDIR%%/khashmir/test_khashmir.pyo
 %%PYTHON_SITELIBDIR%%/khashmir/test_krpc.py
-%%PYTHON_SITELIBDIR%%/khashmir/test_krpc.pyc
-%%PYTHON_SITELIBDIR%%/khashmir/test_krpc.pyo
 %%PYTHON_SITELIBDIR%%/khashmir/test_kstore.py
 %%PYTHON_SITELIBDIR%%/khashmir/test_kstore.pyc
 %%PYTHON_SITELIBDIR%%/khashmir/test_kstore.pyo

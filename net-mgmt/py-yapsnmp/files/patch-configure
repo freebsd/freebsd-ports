@@ -5,7 +5,7 @@
  
  
 -for PYTHONINCPATH in python2.3 python2.2 python2.1 python2.0 python1.6 python1.5
-+for PYTHONINCPATH in python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 python1.6 python1.5
++for PYTHONINCPATH in python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 python1.6 python1.5
  do
   as_ac_Header=`echo "ac_cv_header_$PYTHONINCPATH/Python.h" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then

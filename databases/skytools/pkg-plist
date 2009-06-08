@@ -39,7 +39,6 @@ bin/walmgr.py
 %%PYTHON_SITELIBDIR%%/pgq/producer.py
 %%PYTHON_SITELIBDIR%%/pgq/producer.pyc
 %%PYTHON_SITELIBDIR%%/pgq/status.py
-%%PYTHON_SITELIBDIR%%/pgq/status.pyc
 %%PYTHON_SITELIBDIR%%/pgq/ticker.py
 %%PYTHON_SITELIBDIR%%/pgq/ticker.pyc
 %%PYTHON_SITELIBDIR%%/skytools/__init__.py

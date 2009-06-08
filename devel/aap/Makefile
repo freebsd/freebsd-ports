@@ -7,6 +7,7 @@
 
 PORTNAME=	aap
 PORTVERSION=	1.090
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
@@ -29,6 +30,12 @@ FULLDOCS=yes
 FULLDOCS=no
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} >= 2.5
+EXTRA_PATCHES=	${FILESDIR}/extra-Sign.py
+.endif
+
 do-install:
 	@cd ${WRKSRC} && \
 		${PYTHON_CMD} ./aap PREFIX="${PREFIX}" FULLDOCS=${FULLDOCS} \
@@ -41,4 +48,4 @@ test: install
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|${SED} -E 's,.*share/nls/.+$$,,g;s,${PORTVERSION},%%PORTVERSION%%,g;s,^(lib/aap/Exec-%%PORTVERSION%%/doc/),%%PORTDOCS%%\1,g;s,^share/doc/aap/.*,,g'|${TR} -s '\n') > temp-pkg-plist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

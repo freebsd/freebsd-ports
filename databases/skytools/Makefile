@@ -7,6 +7,7 @@
 
 PORTNAME=	skytools
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1813/
 

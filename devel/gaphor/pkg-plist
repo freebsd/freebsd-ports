@@ -442,8 +442,6 @@ bin/gaphorconvert
 %%PYTHON_SITELIBDIR%%/zope/component/bbb/tests/request.pyc
 %%PYTHON_SITELIBDIR%%/zope/component/bbb/tests/request.pyo
 %%PYTHON_SITELIBDIR%%/zope/component/bbb/tests/test_adapter.py
-%%PYTHON_SITELIBDIR%%/zope/component/bbb/tests/test_adapter.pyc
-%%PYTHON_SITELIBDIR%%/zope/component/bbb/tests/test_adapter.pyo
 %%PYTHON_SITELIBDIR%%/zope/component/bbb/tests/test_api.py
 %%PYTHON_SITELIBDIR%%/zope/component/bbb/tests/test_api.pyc
 %%PYTHON_SITELIBDIR%%/zope/component/bbb/tests/test_api.pyo
@@ -502,8 +500,6 @@ bin/gaphorconvert
 %%PYTHON_SITELIBDIR%%/zope/interface/_flatten.pyc
 %%PYTHON_SITELIBDIR%%/zope/interface/_flatten.pyo
 %%PYTHON_SITELIBDIR%%/zope/interface/adapter.py
-%%PYTHON_SITELIBDIR%%/zope/interface/adapter.pyc
-%%PYTHON_SITELIBDIR%%/zope/interface/adapter.pyo
 %%PYTHON_SITELIBDIR%%/zope/interface/advice.py
 %%PYTHON_SITELIBDIR%%/zope/interface/advice.pyc
 %%PYTHON_SITELIBDIR%%/zope/interface/advice.pyo

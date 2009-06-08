@@ -817,8 +817,6 @@ bin/zodbload.py
 %%PYTHON_SITELIBDIR%%/zope/interface/_flatten.pyo
 %%PYTHON_SITELIBDIR%%/zope/interface/_zope_interface_coptimizations.so
 %%PYTHON_SITELIBDIR%%/zope/interface/adapter.py
-%%PYTHON_SITELIBDIR%%/zope/interface/adapter.pyc
-%%PYTHON_SITELIBDIR%%/zope/interface/adapter.pyo
 %%PYTHON_SITELIBDIR%%/zope/interface/adapter.txt
 %%PYTHON_SITELIBDIR%%/zope/interface/advice.py
 %%PYTHON_SITELIBDIR%%/zope/interface/advice.pyc

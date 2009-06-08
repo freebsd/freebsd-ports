@@ -7,6 +7,7 @@
 
 PORTNAME=	pylons
 PORTVERSION=	0.9.6.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://pylonshq.com/download/0.9.6.2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.3:${PORTSDIR}/www/py-paste \
 		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.3.2:${PORTSDIR}/www/py-webhelpers \
 		myghty>=1.1:${PORTSDIR}/www/myghty
 
-USE_PYTHON=	2.5
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Pylons
 PYDISTUTILS_NOEGGINFO=	yes

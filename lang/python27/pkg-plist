@@ -342,12 +342,17 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/distutils/tests/test_build_ext.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_build_py.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_build_scripts.py
+%%PYTHON_LIBDIR%%/distutils/tests/test_bdist_wininst.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_config.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_core.py
+%%PYTHON_LIBDIR%%/distutils/tests/test_filelist.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_dist.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_install.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_install_scripts.py
+%%PYTHON_LIBDIR%%/distutils/tests/test_msvc9compiler.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_sysconfig.py
+%%PYTHON_LIBDIR%%/distutils/tests/test_sdist.py
+%%PYTHON_LIBDIR%%/distutils/tests/test_register.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_upload.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_versionpredicate.py
 %%PYTHON_LIBDIR%%/distutils/text_file.py
@@ -685,9 +690,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.1.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.2.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.1.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.2.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
@@ -701,16 +706,13 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_exec.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_getcwdu.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_set_literal.py
-%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_getcwdu.pyc
-%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_set_literal.pyc
-%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_getcwdu.pyo
-%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_set_literal.pyo
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_execfile.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_filter.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_funcattrs.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_future.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_has_key.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_idioms.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_isinstance.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_import.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_imports.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_imports2.py
@@ -732,6 +734,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_raw_input.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_renames.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_repr.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_reduce.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_standarderror.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_sys_exc.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_throw.py
@@ -758,7 +761,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/pytree.py
 %%PYTHON_LIBDIR%%/lib2to3/refactor.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/__init__.py
-%%PYTHON_LIBDIR%%/lib2to3/tests/benchmark.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/pytree_idempotency.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/support.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_all_fixers.py
@@ -1002,8 +1004,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/cmath_testcases.txt
 %%PYTHON_LIBDIR%%/test/curses_tests.py
 %%PYTHON_LIBDIR%%/test/test_future5.py
-%%PYTHON_LIBDIR%%/test/test_future5.pyc
-%%PYTHON_LIBDIR%%/test/test_future5.pyo
 %%PYTHON_LIBDIR%%/test/decimaltestdata/abs.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/add.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/and.decTest
@@ -1555,6 +1555,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_zipfile.py
 %%PYTHON_LIBDIR%%/test/test_zipfile64.py
 %%PYTHON_LIBDIR%%/test/test_zipimport.py
+%%PYTHON_LIBDIR%%/test/test_zipimport_support.py
+%%PYTHON_LIBDIR%%/test/zipdir.zip
 %%PYTHON_LIBDIR%%/test/test_zlib.py
 %%PYTHON_LIBDIR%%/test/testall.py
 %%PYTHON_LIBDIR%%/test/testcodec.py
@@ -1625,6 +1627,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/xmllib.py
 %%PYTHON_LIBDIR%%/xmlrpclib.py
 %%PYTHON_LIBDIR%%/zipfile.py
+lib/libpython2.6.a
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/README
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/cgi/README
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/cgi/cgi0.sh
@@ -2102,6 +2105,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/pysource.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/redemo.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/reindent.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/reindent-rst.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/rgrep.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/setup.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/smtpd.py
@@ -2162,7 +2166,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/bgen/bgen
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/bgen
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/audiopy
-%%PORTDOCS%%@unexec /bin/rm -fr %D/share/%%PYTHON_VERSION%%/Tools || true
+%%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/zlib
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/xml

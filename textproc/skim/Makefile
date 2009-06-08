@@ -34,6 +34,10 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
+.if ${PYTHON_REL} > 250
+BROKEN=		Doesn't build with ${PYTHON_VERSION}
+.endif
+
 post-patch:
 	${REINPLACE_CMD} s,bash,sh,g ${WRKSRC}/src/scim-panel-kde.in
 

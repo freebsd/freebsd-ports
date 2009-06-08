@@ -8,6 +8,7 @@
 
 PORTNAME=	system-config-printer
 PORTVERSION=	1.0.15
+PORTREVISION=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	http://cyberelk.net/tim/data/${PORTNAME}/${PORTVERSION:R}.x/
 
@@ -33,6 +34,7 @@ USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GNOME=	pygtk2
 MAN1=	system-config-printer-applet.1 system-config-printer.1
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \

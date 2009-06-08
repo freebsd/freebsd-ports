@@ -7,6 +7,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.5.20
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -31,6 +32,8 @@ USE_LDCONFIG=	yes
 USE_PGSQL=	yes
 USE_PYTHON=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include
+
 MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1 cyaddrules.1 \
 		cyconvertrules.1 cydumprules.1 cyloadrules.1 cypasswd.1
 
@@ -39,10 +42,12 @@ MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1 cyaddrules.1 \
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-dist_docDATA | |g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's| install-confbackupDATA | |g' ${WRKSRC}/data/Makefile.in
-	@${REINPLACE_CMD} -e 's|-lpython|${PTHREAD_LIBS} &|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+			  -e 's|-lpython|${PTHREAD_LIBS} &|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|$$(datadir)/cyphesis|${DATADIR}|g'
 	@${REINPLACE_CMD} -e 's|/bash|/sh|' ${WRKSRC}/scripts/extract_revision.sh
+	@${REINPLACE_CMD} -e '1s|python|${LOCALBASE}/bin/${PYTHON_VERSION}|' ${WRKSRC}/scripts/gen_buildid.py
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -32,6 +32,7 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/keywords.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/layer.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/leader.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/leader.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/linetype.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/logger.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/maptree.py
@@ -92,8 +93,6 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/imageio.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/intersections.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/keywords.pyc
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/layer.pyc
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/leader.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/linetype.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/logger.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/maptree.pyc
@@ -154,7 +153,6 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/imageio.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/intersections.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/keywords.pyo
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/layer.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/leader.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/linetype.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/logger.pyo

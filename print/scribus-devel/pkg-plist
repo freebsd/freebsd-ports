@@ -48,9 +48,9 @@ include/scribus/fontprefs.h
 include/scribus/fontreplacedialog.h
 include/scribus/fparser.h
 include/scribus/fpconfig.h
-include/scribus/fptypes.h
 include/scribus/fpoint.h
 include/scribus/fpointarray.h
+include/scribus/fptypes.h
 include/scribus/frameedit.h
 include/scribus/gradienteditor.h
 include/scribus/gtaction.h
@@ -83,10 +83,10 @@ include/scribus/linecombo.h
 include/scribus/lineformats.h
 include/scribus/linkbutton.h
 include/scribus/loremipsum.h
-include/scribus/md5.h
-include/scribus/mdup.h
 include/scribus/margindialog.h
 include/scribus/marginwidget.h
+include/scribus/md5.h
+include/scribus/mdup.h
 include/scribus/measurements.h
 include/scribus/menumanager.h
 include/scribus/mergedoc.h
@@ -124,30 +124,30 @@ include/scribus/prefstable.h
 include/scribus/preview.h
 include/scribus/query.h
 include/scribus/rc4.h
-include/scribus/rulermover.h
 include/scribus/reformdoc.h
+include/scribus/rulermover.h
 include/scribus/sampleitem.h
 include/scribus/sccolor.h
+include/scribus/scfontmetrics.h
 include/scribus/scfonts.h
 include/scribus/scfonts_ttf.h
-include/scribus/scfontmetrics.h
 include/scribus/scmenu.h
 include/scribus/scmessagebox.h
 include/scribus/scpainter.h
 include/scribus/scpaths.h
-include/scribus/scrap.h
+include/scribus/scpixmapcache.h
 include/scribus/scplugin.h
 include/scribus/scpreview.h
 include/scribus/scraction.h
+include/scribus/scrap.h
 include/scribus/scribus.h
+include/scribus/scribusXml.h
 include/scribus/scribusapp.h
 include/scribus/scribusdoc.h
 include/scribus/scribusstructs.h
 include/scribus/scribusview.h
 include/scribus/scribuswin.h
-include/scribus/scribusXml.h
 include/scribus/scrpalettebase.h
-include/scribus/scpixmapcache.h
 include/scribus/search.h
 include/scribus/seiten.h
 include/scribus/selection.h
@@ -178,6 +178,27 @@ include/scribus/unzip.h
 include/scribus/vgradient.h
 include/scribus/vruler.h
 include/scribus/werktoolb.h
+lib/scribus/dicts/README_ca_ES.txt
+lib/scribus/dicts/README_cs_CZ.txt
+lib/scribus/dicts/README_cy_GB.txt
+lib/scribus/dicts/README_de_DE.txt
+lib/scribus/dicts/README_en_EN.txt
+lib/scribus/dicts/README_en_GB.txt
+lib/scribus/dicts/README_es_ES.txt
+lib/scribus/dicts/README_fi_FI.txt
+lib/scribus/dicts/README_hu_HU.txt
+lib/scribus/dicts/README_hyph_da_DK.txt
+lib/scribus/dicts/README_hyph_is_IS.txt
+lib/scribus/dicts/README_hyph_pl_PL.txt
+lib/scribus/dicts/README_lt_LT.txt
+lib/scribus/dicts/README_no_NO.txt
+lib/scribus/dicts/README_pt_BR.txt
+lib/scribus/dicts/README_pt_PT.txt
+lib/scribus/dicts/README_ru_RU_0.txt
+lib/scribus/dicts/README_sk_SK.txt
+lib/scribus/dicts/README_sl_SI.txt
+lib/scribus/dicts/README_sv_SE.txt
+lib/scribus/dicts/README_uk_UA.txt
 lib/scribus/dicts/hyph_af.dic
 lib/scribus/dicts/hyph_ca.dic
 lib/scribus/dicts/hyph_cs.dic
@@ -205,102 +226,78 @@ lib/scribus/dicts/hyph_sk.dic
 lib/scribus/dicts/hyph_sl.dic
 lib/scribus/dicts/hyph_sv.dic
 lib/scribus/dicts/hyph_uk.dic
-lib/scribus/dicts/README_ca_ES.txt
-lib/scribus/dicts/README_en_EN.txt
-lib/scribus/dicts/README_cs_CZ.txt
-lib/scribus/dicts/README_cy_GB.txt
-lib/scribus/dicts/README_hyph_da_DK.txt
-lib/scribus/dicts/README_de_DE.txt
-lib/scribus/dicts/README_en_GB.txt
-lib/scribus/dicts/README_es_ES.txt
-lib/scribus/dicts/README_fi_FI.txt
-lib/scribus/dicts/README_hu_HU.txt
-lib/scribus/dicts/README_hyph_is_IS.txt
-lib/scribus/dicts/README_lt_LT.txt
-lib/scribus/dicts/README_no_NO.txt
-lib/scribus/dicts/README_hyph_pl_PL.txt
-lib/scribus/dicts/README_pt_BR.txt
-lib/scribus/dicts/README_pt_PT.txt
-lib/scribus/dicts/README_ru_RU_0.txt
-lib/scribus/dicts/README_sk_SK.txt
-lib/scribus/dicts/README_sl_SI.txt
-lib/scribus/dicts/README_sv_SE.txt
-lib/scribus/dicts/README_uk_UA.txt
+lib/scribus/import.prolog
 lib/scribus/keysets/scribus13.ksxml
-lib/scribus/profiles/ReadMe
-lib/scribus/profiles/srgb.license
-lib/scribus/profiles/sRGB.icm
-lib/scribus/profiles/GenericCMYK.icm
-lib/scribus/profiles/GenericCMYK.txt
-lib/scribus/swatches/Scribus_SVG.txt
-lib/scribus/swatches/Scribus_X11Grey.txt
-lib/scribus/swatches/Scribus_Gnome.txt
-lib/scribus/swatches/Scribus_X11.txt
-lib/scribus/swatches/Scribus_OpenOffice.txt
-lib/scribus/plugins/libscribusshortwords.so.0
-lib/scribus/plugins/libscribusshortwords.so
-lib/scribus/plugins/libscribusshortwords.la
-lib/scribus/plugins/libsvgexplugin.so.0
-lib/scribus/plugins/libsvgexplugin.so
-lib/scribus/plugins/libsvgexplugin.la
-lib/scribus/plugins/libsvgimplugin.so.0
-lib/scribus/plugins/libsvgimplugin.so
-lib/scribus/plugins/libsvgimplugin.la
-lib/scribus/plugins/libimportps.so.0
-lib/scribus/plugins/libimportps.so
-lib/scribus/plugins/libimportps.la
-lib/scribus/plugins/libfontpreview.so.0
-lib/scribus/plugins/libfontpreview.so
-lib/scribus/plugins/libfontpreview.la
-lib/scribus/plugins/libscribusexportpixmap.so.0
-lib/scribus/plugins/gettext/libhtmlim.so.0
-lib/scribus/plugins/gettext/libhtmlim.so
-lib/scribus/plugins/gettext/libhtmlim.la
-lib/scribus/plugins/gettext/libtxtim.so.0
-lib/scribus/plugins/gettext/libtxtim.so
-lib/scribus/plugins/gettext/libtxtim.la
-lib/scribus/plugins/gettext/libcsvim.so.0
-lib/scribus/plugins/gettext/libcsvim.so
 lib/scribus/plugins/gettext/libcsvim.la
-lib/scribus/plugins/gettext/libsxwimplugin.so.0
-lib/scribus/plugins/gettext/libsxwimplugin.so
-lib/scribus/plugins/gettext/libsxwimplugin.la
-lib/scribus/plugins/gettext/libtextfilterplugin.so.0
-lib/scribus/plugins/gettext/libtextfilterplugin.so
-lib/scribus/plugins/gettext/libtextfilterplugin.la
-lib/scribus/plugins/gettext/libodtimplugin.so.0
-lib/scribus/plugins/gettext/libodtimplugin.so
+lib/scribus/plugins/gettext/libcsvim.so
+lib/scribus/plugins/gettext/libcsvim.so.0
+lib/scribus/plugins/gettext/libdocim.la
+lib/scribus/plugins/gettext/libdocim.so
+lib/scribus/plugins/gettext/libdocim.so.0
+lib/scribus/plugins/gettext/libhtmlim.la
+lib/scribus/plugins/gettext/libhtmlim.so
+lib/scribus/plugins/gettext/libhtmlim.so.0
 lib/scribus/plugins/gettext/libodtimplugin.la
+lib/scribus/plugins/gettext/libodtimplugin.so
+lib/scribus/plugins/gettext/libodtimplugin.so.0
+lib/scribus/plugins/gettext/libpdbim.la
 lib/scribus/plugins/gettext/libpdbim.so
 lib/scribus/plugins/gettext/libpdbim.so.0
-lib/scribus/plugins/gettext/libpdbim.la
-lib/scribus/plugins/gettext/libdocim.so.0
-lib/scribus/plugins/gettext/libdocim.so
-lib/scribus/plugins/gettext/libdocim.la
-lib/scribus/plugins/libscribusexportpixmap.so
-lib/scribus/plugins/libscribusexportpixmap.la
-lib/scribus/plugins/libnewfromtemplateplugin.so.0
-lib/scribus/plugins/libnewfromtemplateplugin.so
-lib/scribus/plugins/libnewfromtemplateplugin.la
-lib/scribus/plugins/libsaveastemplateplugin.so.0
-lib/scribus/plugins/libsaveastemplateplugin.so
-lib/scribus/plugins/libsaveastemplateplugin.la
-lib/scribus/plugins/liboodrawimp.so.0
-lib/scribus/plugins/liboodrawimp.so
-lib/scribus/plugins/liboodrawimp.la
-lib/scribus/plugins/liboldscribusformat.so.0
-lib/scribus/plugins/liboldscribusformat.so
-lib/scribus/plugins/liboldscribusformat.la
-lib/scribus/plugins/libscriptplugin.so.0
-lib/scribus/plugins/libscriptplugin.so
-lib/scribus/plugins/libscriptplugin.la
-lib/scribus/plugins/libcolorwheel.so.0
-lib/scribus/plugins/libcolorwheel.so
-lib/scribus/plugins/libcolorwheel.la
-lib/scribus/plugins/libbarcodegenerator.so.0
-lib/scribus/plugins/libbarcodegenerator.so
+lib/scribus/plugins/gettext/libsxwimplugin.la
+lib/scribus/plugins/gettext/libsxwimplugin.so
+lib/scribus/plugins/gettext/libsxwimplugin.so.0
+lib/scribus/plugins/gettext/libtextfilterplugin.la
+lib/scribus/plugins/gettext/libtextfilterplugin.so
+lib/scribus/plugins/gettext/libtextfilterplugin.so.0
+lib/scribus/plugins/gettext/libtxtim.la
+lib/scribus/plugins/gettext/libtxtim.so
+lib/scribus/plugins/gettext/libtxtim.so.0
 lib/scribus/plugins/libbarcodegenerator.la
-lib/scribus/import.prolog
+lib/scribus/plugins/libbarcodegenerator.so
+lib/scribus/plugins/libbarcodegenerator.so.0
+lib/scribus/plugins/libcolorwheel.la
+lib/scribus/plugins/libcolorwheel.so
+lib/scribus/plugins/libcolorwheel.so.0
+lib/scribus/plugins/libfontpreview.la
+lib/scribus/plugins/libfontpreview.so
+lib/scribus/plugins/libfontpreview.so.0
+lib/scribus/plugins/libimportps.la
+lib/scribus/plugins/libimportps.so
+lib/scribus/plugins/libimportps.so.0
+lib/scribus/plugins/libnewfromtemplateplugin.la
+lib/scribus/plugins/libnewfromtemplateplugin.so
+lib/scribus/plugins/libnewfromtemplateplugin.so.0
+lib/scribus/plugins/liboldscribusformat.la
+lib/scribus/plugins/liboldscribusformat.so
+lib/scribus/plugins/liboldscribusformat.so.0
+lib/scribus/plugins/liboodrawimp.la
+lib/scribus/plugins/liboodrawimp.so
+lib/scribus/plugins/liboodrawimp.so.0
+lib/scribus/plugins/libsaveastemplateplugin.la
+lib/scribus/plugins/libsaveastemplateplugin.so
+lib/scribus/plugins/libsaveastemplateplugin.so.0
+lib/scribus/plugins/libscribusexportpixmap.la
+lib/scribus/plugins/libscribusexportpixmap.so
+lib/scribus/plugins/libscribusexportpixmap.so.0
+lib/scribus/plugins/libscribusshortwords.la
+lib/scribus/plugins/libscribusshortwords.so
+lib/scribus/plugins/libscribusshortwords.so.0
+lib/scribus/plugins/libsvgexplugin.la
+lib/scribus/plugins/libsvgexplugin.so
+lib/scribus/plugins/libsvgexplugin.so.0
+lib/scribus/plugins/libsvgimplugin.la
+lib/scribus/plugins/libsvgimplugin.so
+lib/scribus/plugins/libsvgimplugin.so.0
+lib/scribus/profiles/GenericCMYK.icm
+lib/scribus/profiles/GenericCMYK.txt
+lib/scribus/profiles/ReadMe
+lib/scribus/profiles/sRGB.icm
+lib/scribus/profiles/srgb.license
+lib/scribus/swatches/Scribus_Gnome.txt
+lib/scribus/swatches/Scribus_OpenOffice.txt
+lib/scribus/swatches/Scribus_SVG.txt
+lib/scribus/swatches/Scribus_X11.txt
+lib/scribus/swatches/Scribus_X11Grey.txt
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials/scribus-short-words/menu.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials/scribus-short-words/after_short_words.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials/scribus-short-words/before_short_words.png
@@ -1139,31 +1136,31 @@ lib/scribus/import.prolog
 %%DATADIR%%/loremipsum/slovenian.xml
 %%DATADIR%%/plugins/scribus-short-words.rc
 %%DATADIR%%/plugins/barcode.ps
-%%DATADIR%%/samples/boilerplate.py
-%%DATADIR%%/samples/golden-mean.py
-%%DATADIR%%/samples/quote.py
-%%DATADIR%%/samples/wordcount.py
-%%DATADIR%%/samples/Sample1.py
-%%DATADIR%%/samples/trait_de_coupe.py
-%%DATADIR%%/samples/Calendar.py
-%%DATADIR%%/samples/pochette_cd.py
-%%DATADIR%%/samples/3columnUSLTR.py
-%%DATADIR%%/samples/3columnA4.py
-%%DATADIR%%/samples/legende.py
-%%DATADIR%%/samples/moins_10_pourcent_group.py
-%%DATADIR%%/samples/plus_10_pourcent_group.py
-%%DATADIR%%/samples/ReadMe
-%%DATADIR%%/samples/sample_db_usage.py
-%%DATADIR%%/samples/extract_text.py
-%%DATADIR%%/scripts/ReadMe
-%%DATADIR%%/scripts/ChangeLog
-%%DATADIR%%/scripts/NEWS
-%%DATADIR%%/scripts/TODO
-%%DATADIR%%/scripts/FontSample.py
-%%DATADIR%%/scripts/CalendarWizard.py
+@comment %%DATADIR%%/samples/boilerplate.py
+@comment %%DATADIR%%/samples/golden-mean.py
+@comment %%DATADIR%%/samples/quote.py
+@comment %%DATADIR%%/samples/wordcount.py
+@comment %%DATADIR%%/samples/Sample1.py
+@comment %%DATADIR%%/samples/trait_de_coupe.py
+@comment %%DATADIR%%/samples/Calendar.py
+@comment %%DATADIR%%/samples/pochette_cd.py
+@comment %%DATADIR%%/samples/3columnUSLTR.py
+@comment %%DATADIR%%/samples/3columnA4.py
+@comment %%DATADIR%%/samples/legende.py
+@comment %%DATADIR%%/samples/moins_10_pourcent_group.py
+@comment %%DATADIR%%/samples/plus_10_pourcent_group.py
+@comment %%DATADIR%%/samples/ReadMe
+@comment %%DATADIR%%/samples/sample_db_usage.py
+@comment %%DATADIR%%/samples/extract_text.py
+@comment %%DATADIR%%/scripts/ReadMe
+@comment %%DATADIR%%/scripts/ChangeLog
+@comment %%DATADIR%%/scripts/NEWS
+@comment %%DATADIR%%/scripts/TODO
+@comment %%DATADIR%%/scripts/FontSample.py
+@comment %%DATADIR%%/scripts/CalendarWizard.py
 share/mime/packages/scribus.xml
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/samples
+@comment @dirrm %%DATADIR%%/scripts
+@comment @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/loremipsum
 @dirrm %%DATADIR%%/dtd

@@ -7,6 +7,7 @@
 
 PORTNAME=	RuleDispatch
 PORTVERSION=	0.5.a1.r2506
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
 		http://peak.telecommunity.com/snapshots/

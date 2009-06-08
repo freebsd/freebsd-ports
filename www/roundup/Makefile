@@ -7,6 +7,7 @@
 
 PORTNAME=	roundup
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 
@@ -49,7 +50,7 @@ SCRIPTS=	roundup-admin roundup-demo roundup-gettext roundup-mailgw \
 		roundup-server roundup-xmlrpc-server
 
 post-install:
-	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/build/scripts-2.5/,} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/build/scripts-${PYTHON_VER}/,} ${PREFIX}/bin
 .if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/share/man/man1/,} ${MAN1PREFIX}/man/man1
 .endif

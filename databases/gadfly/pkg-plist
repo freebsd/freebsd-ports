@@ -4,8 +4,6 @@ bin/gfserver
 %%PYTHON_SITELIBDIR%%/gadfly/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gadfly/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gadfly/bindings.py
-%%PYTHON_SITELIBDIR%%/gadfly/bindings.pyc
-%%PYTHON_SITELIBDIR%%/gadfly/bindings.pyo
 %%PYTHON_SITELIBDIR%%/gadfly/client.py
 %%PYTHON_SITELIBDIR%%/gadfly/client.pyc
 %%PYTHON_SITELIBDIR%%/gadfly/client.pyo
