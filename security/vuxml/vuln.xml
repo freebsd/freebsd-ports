@@ -74,6 +74,8 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>35221</bid>
+      <cvename>CVE-2009-1955</cvename>
+      <cvename>CVE-2009-1956</cvename>
       <cvename>CVE-2009-0023</cvename>
       <url>http://www.apache.org/dist/apr/CHANGES-APR-UTIL-1.3</url>
       <url>http://secunia.com/advisories/35284/</url>
