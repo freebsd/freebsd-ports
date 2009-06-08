@@ -6,7 +6,6 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -17,7 +16,7 @@ COMMENT=	Apache Portability Library
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	THREADS "Enable Threads in apr"						on  \
 			IPV6	"Enable IPV6 Support in apr"				off \
@@ -28,8 +27,8 @@ OPTIONS=	THREADS "Enable Threads in apr"						on  \
 			MYSQL	"Enable MySQL suport in apr-util"			off \
 			PGSQL	"Enable Postgresql suport in apr-util"		off
 
-APR_VERSION=	1.3.3
-APU_VERSION=	1.3.4
+APR_VERSION=	1.3.5
+APU_VERSION=	1.3.7
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:15:env
@@ -45,18 +44,12 @@ APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 SHLIB_MAJOR=	3
 
-APR_CONF_ARGS=	
+APR_CONF_ARGS=
 APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 			--with-expat=${LOCALBASE} \
 			--with-iconv=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_MYSQL) || defined(WITH_PGSQL) || defined (WITH_LDAP) 
-PLIST_SUB+=	APU_EXTRAS=""
-.else
-PLIST_SUB+=	APU_EXTRAS="@comment "
-.endif
 
 ########## APR Options
 .if defined(WITHOUT_THREADS)
@@ -83,8 +76,10 @@ PKGNAMESUFFIX=	-ipv6
 
 ######### APR-Util Options
 .if defined(WITHOUT_GDBM)
+PLIST_SUB+=	GDBM="@comment "
 APU_CONF_ARGS+=	--without-gdbm
 .elif defined(WITH_GDBM) || exists(${LOCALBASE}/lib/libgdbm.so.3)
+PLIST_SUB+=	GDBM=""
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
 .if defined(PKGNAMESUFFIX)
@@ -93,12 +88,16 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm
 PKGNAMESUFFIX=	-gdbm
 .endif
 .else
+PLIST_SUB+=	GDBM="@comment "
 APR_UTIL_CONF_ARGS+=	--without-gdbm
 .endif
 
 .if defined(WITHOUT_BDB)
+PLIST_SUB+=	BDB="@comment "
 APU_CONF_ARGS+=	--without-berkeley-db
 .elif defined(WITH_BDB) || exists(${LOCALBASE}/lib/libdb-4.2.so.2)
+APU_EXTRAS=	yes
+PLIST_SUB+=	BDB=""
 USE_BDB=	42+
 APU_CONF_ARGS+=	--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
 .if defined(PKGNAMESUFFIX)
@@ -109,8 +108,11 @@ PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 .endif
 
 .if defined(WITHOUT_NDBM)
+PLIST_SUB+=	NDBM="@comment "
 APU_CONF_ARGS+=	--without-ndbm
 .elif defined(WITH_NDBM)
+APU_EXTRAS=	yes
+PLIST_SUB+=	NDBM=""
 APU_CONF_ARGS+=	--with-ndbm=/usr
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ndbm
@@ -120,6 +122,7 @@ PKGNAMESUFFIX=	-ndbm
 .endif
 
 .if defined(WITH_LDAP)
+APU_EXTRAS=	yes
 PLIST_SUB+=	LDAP=""
 USE_OPENLDAP=	yes
 APU_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
@@ -134,6 +137,7 @@ PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if defined(WITH_MYSQL)
+APU_EXTRAS=	yes
 PLIST_SUB+=	MYSQL=""
 USE_MYSQL=	YES
 APU_CONF_ARGS+=	--with-mysql=${LOCALBASE}
@@ -150,6 +154,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL)
+APU_EXTRAS=	yes
 PLIST_SUB+=	PGSQL=""
 USE_PGSQL=	YES
 APU_CONF_ARGS+=	--with-pgsql=${LOCALBASE}
@@ -161,6 +166,12 @@ PKGNAMESUFFIX=	-pgsql
 .endif
 .else
 PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.if defined(APU_EXTRAS)
+PLIST_SUB+=	APU_EXTRAS=""
+.else
+PLIST_SUB+=	APU_EXTRAS="@comment "
 .endif
 
 post-patch:
