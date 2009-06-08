@@ -1,5 +1,4 @@
 bin/ntop
-%%ASDATA%%etc/ntop/AS-list.txt.gz
 etc/ntop/etter.finger.os.gz
 etc/ntop/ntop-cert.pem
 etc/ntop/oui.txt.gz
