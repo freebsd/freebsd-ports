@@ -1,34 +1,34 @@
 
 $FreeBSD$
 
---- etc/Makefile.in.orig	Fri Feb  6 16:56:50 2004
-+++ etc/Makefile.in	Wed May  5 16:40:00 2004
-@@ -347,26 +347,8 @@
+--- etc/Makefile.in.orig
++++ etc/Makefile.in
+@@ -375,26 +375,8 @@
  
  
  install-data-local: all
 -	@if test "$(DO_CONF_INSTALL)" = "yes"; then \
--	if test -f $(sysconfdir)/rancid.conf ; then \
+-	if test -f $(DESTDIR)$(sysconfdir)/rancid.conf ; then \
 -	    echo ""; \
--	    echo "WARNING: *** $(sysconfdir)/rancid.conf exists.  See "; \
+-	    echo "WARNING: *** $(DESTDIR)$(sysconfdir)/rancid.conf exists.  See "; \
 -	    echo "         *** $(pkgdatadir)/rancid.conf.sample for new"; \
 -	    echo "         *** examples."; \
 -	    echo ""; \
 -	else \
--	    $(INSTALL_DATA) rancid.conf.sample $(sysconfdir)/rancid.conf; \
+-	    $(INSTALL_DATA) rancid.conf.sample $(DESTDIR)$(sysconfdir)/rancid.conf; \
 -	fi; \
--	if test -f $(sysconfdir)/lg.conf ; then \
+-	if test -f $(DESTDIR)$(sysconfdir)/lg.conf ; then \
 -	    echo ""; \
--	    echo "WARNING: *** $(sysconfdir)/lg.conf exists.  See "; \
+-	    echo "WARNING: *** $(DESTDIR)$(sysconfdir)/lg.conf exists.  See "; \
 -	    echo "         *** $(pkgdatadir)/lg.conf.sample for new"; \
 -	    echo "         *** examples."; \
 -	    echo ""; \
 -	else \
--	    $(INSTALL_DATA) lg.conf.sample $(sysconfdir)/lg.conf; \
+-	    $(INSTALL_DATA) lg.conf.sample $(DESTDIR)$(sysconfdir)/lg.conf; \
 -	fi; \
 -	fi
-+	    $(INSTALL_DATA) rancid.conf.sample $(sysconfdir)/
-+	    $(INSTALL_DATA) lg.conf.sample $(sysconfdir)/
++	$(INSTALL_DATA) rancid.conf.sample $(DESTDIR)$(sysconfdir)
++	$(INSTALL_DATA) lg.conf.sample $(DESTDIR)$(sysconfdir)
  
  lg.conf.sample: Makefile $(srcdir)/lg.conf.sample.in
  	rm -f lg.conf.sample lg.conf.sample.tmp; \

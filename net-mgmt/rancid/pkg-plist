@@ -5,6 +5,9 @@ bin/rancid-cvs
 bin/rancid-run
 libexec/rancid/alogin
 libexec/rancid/arancid
+libexec/rancid/avologin
+libexec/rancid/avorancid
+libexec/rancid/agmrancid
 libexec/rancid/blogin
 libexec/rancid/brancid
 libexec/rancid/cat5rancid
@@ -14,6 +17,7 @@ libexec/rancid/cssrancid
 libexec/rancid/elogin
 libexec/rancid/erancid
 libexec/rancid/f10rancid
+libexec/rancid/f5rancid
 libexec/rancid/flogin
 libexec/rancid/fnrancid
 libexec/rancid/francid
@@ -28,8 +32,11 @@ libexec/rancid/jrancid
 libexec/rancid/lg.cgi
 libexec/rancid/lgform.cgi
 libexec/rancid/mrancid
+libexec/rancid/mrvlogin
+libexec/rancid/mrvrancid
 libexec/rancid/nlogin
 libexec/rancid/nrancid
+libexec/rancid/nxrancid
 libexec/rancid/nslogin
 libexec/rancid/nsrancid
 libexec/rancid/par
@@ -41,6 +48,9 @@ libexec/rancid/rancid-run
 libexec/rancid/rivlogin
 libexec/rancid/rivrancid
 libexec/rancid/rrancid
+libexec/rancid/srancid
+libexec/rancid/tlogin
+libexec/rancid/trancid
 libexec/rancid/tntlogin
 libexec/rancid/tntrancid
 libexec/rancid/xrancid
