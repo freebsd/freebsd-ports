@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -25,7 +25,7 @@ PATCHFILES=	defined-or-${PERL_VERSION}.bz2
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-CONFLICTS=	perl-5.6.* perl-5.10.*
+CONFLICTS=	perl-5.6.* perl-5.10.* perl-threaded-5.10.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		GDBM		"Build GDBM_File extension"		off \
@@ -65,6 +65,16 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
+
+.if defined(PERL_VENDOR_PREFIX)
+CONFIGURE_ARGS+=	\
+	-Dvendorprefix=${PERL_VENDOR_PREFIX} \
+	-Dvendorarch=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH} \
+	-Dvendorbin=${PERL_VENDOR_PREFIX}/bin \
+	-Dvendorlib=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VERSION} \
+	-Dvendorman3dir=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VERSION}/man/man3 \
+	-Dvendorman1dir=${PERL_VENDOR_PREFIX}/man/man1
+.endif
 
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VERSION} \
@@ -162,6 +172,8 @@ post-patch:
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
 	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|5.8|g;' \
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
 .if defined(WITH_THREADS)
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
 		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \

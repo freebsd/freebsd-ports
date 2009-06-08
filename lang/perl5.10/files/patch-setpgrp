@@ -1,0 +1,13 @@
+# http://perl5.git.perl.org/perl.git/commit/1f200948c4c45a9bc088451dd377e4ab8733c722
+diff --git a/pp_sys.c b/pp_sys.c
+index cfbf918..0d2c970 100644
+--- pp_sys.c
++++ pp_sys.c
+@@ -4318,6 +4318,7 @@ PP(pp_setpgrp)
+     if (MAXARG < 2) {
+ 	pgrp = 0;
+ 	pid = 0;
++	XPUSHi(-1);
+     }
+     else {
+ 	pgrp = POPi;
