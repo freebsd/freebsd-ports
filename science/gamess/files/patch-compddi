@@ -81,7 +81,7 @@
 +           exit 4
 +     endsw
 +
-+     set CLIBS  = "%%PTHREAD_LIB%%"
++     set CLIBS  = "%%PTHREAD_LIBS%%"
 +     set F77_OPTS = "-DINT_SIZE=int -D_UNDERSCORES=$NumUS"
 +     set AR_FLAGS     = 'cr'
 +     set RANLIB_FLAGS = ' '
