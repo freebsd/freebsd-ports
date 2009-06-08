@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	nokogiri
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF
 
@@ -20,5 +20,7 @@ USE_GNOME=	libxml2 libxslt
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+PLIST_FILES=	bin/nokogiri
 
 .include <bsd.port.mk>
