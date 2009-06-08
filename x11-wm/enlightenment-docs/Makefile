@@ -7,6 +7,7 @@
 
 PORTNAME=	enlightenment-docs
 PORTVERSION=	0.16.8.0.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment
 DISTNAME=	e16-docs-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	e16-docs-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Data files of enlightenment DOX
 
-RUN_DEPENDS=	${LOCALBASE}/bin/e16:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS=	${LOCALBASE}/bin/e16:${PORTSDIR}/x11-wm/e16
 
 USE_XORG=	x11
 USE_GMAKE=	yes

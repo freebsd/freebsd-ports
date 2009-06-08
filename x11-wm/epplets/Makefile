@@ -7,6 +7,7 @@
 
 PORTNAME=	epplets
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	enlightenment
@@ -14,9 +15,9 @@ MASTER_SITE_SUBDIR=	enlightenment
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A collection of Enlightenment dock applications
 
-BUILD_DEPENDS=	e16:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
-RUN_DEPENDS=	e16:${PORTSDIR}/x11-wm/enlightenment \
+RUN_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16 \
 		import:${PORTSDIR}/graphics/ImageMagick
 
 USE_XORG=	xext
