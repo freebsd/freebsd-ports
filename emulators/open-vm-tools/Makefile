@@ -7,7 +7,6 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		2
 CATEGORIES=		emulators kld
 MASTER_SITES=		SF
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
@@ -15,8 +14,8 @@ DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
-RELEASE_DATE=		2009.03.18
-BUILD_VER=		154848
+RELEASE_DATE=		2009.05.22
+BUILD_VER=		167859
 
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes

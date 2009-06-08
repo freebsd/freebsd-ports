@@ -7,7 +7,7 @@
 -	mkdir -p $(DESTDIR)/etc/vmware-tools
 -	ln -sf `dirname $(VMSVC_PLUGIN_INSTALLDIR)` $(DESTDIR)/etc/vmware-tools/plugins
 +	mkdir -p $(prefix)/etc/vmware-tools
-+	ln -sf `dirname $(VMSVC_PLUGIN_INSTALLDIR)` $(prefix)/etc/vmware-tools/plugins
++
  
 --- services/Makefile.in.orig	2009-02-28 20:48:52.000000000 +0100
 +++ services/Makefile.in	2009-02-28 20:49:46.000000000 +0100
@@ -18,7 +18,7 @@
 -	mkdir -p $(DESTDIR)/etc/vmware-tools
 -	ln -sf `dirname $(VMSVC_PLUGIN_INSTALLDIR)` $(DESTDIR)/etc/vmware-tools/plugins
 +	mkdir -p $(prefix)/etc/vmware-tools
-+	ln -sf `dirname $(VMSVC_PLUGIN_INSTALLDIR)` $(prefix)/etc/vmware-tools/plugins
++
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
