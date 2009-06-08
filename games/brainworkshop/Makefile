@@ -23,6 +23,8 @@ USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PORTSCOUT=	skipv:4.22
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^FOLDER_RES = / s|res|${DATADIR}|; \
 		/^FOLDER_DATA = / s|.data.|os.environ["HOME"]+"/.brainworkshop"|' \
