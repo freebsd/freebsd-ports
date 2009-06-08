@@ -248,6 +248,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/diff-options.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-send-pack.txt
 %%HTMLDOCS%%%%DOCSDIR%%/merge-options.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-difftool.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-tools.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-apply.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-fsck.txt
@@ -255,6 +256,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-cvsserver.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-checkout.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-mergetool.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-mergetool--lib.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-archive.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-verify-pack.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-ls-tree.txt
@@ -538,6 +540,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.2.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.3.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.3.2.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
