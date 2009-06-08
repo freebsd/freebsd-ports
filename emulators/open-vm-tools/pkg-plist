@@ -28,9 +28,10 @@ lib/vmware-tools/modules/drivers/vmblock.ko
 lib/vmware-tools/modules/drivers/vmhgfs.ko
 lib/vmware-tools/modules/drivers/vmmemctl.ko
 lib/vmware-tools/modules/drivers/vmxnet.ko
+share/open-vm-tools/tests/libtestDebug.so
+share/open-vm-tools/tests/libtestPlugin.so
 @exec mkdir -p %D/lib/vmware-tools/modules/input
 sbin/mount_vmhgfs
-sbin/vmware-guestd
 %%X11%%bin/vmware-toolbox
 %%X11%%bin/vmware-user
 %%X11%%bin/vmware-user-suid-wrapper
@@ -49,7 +50,8 @@ share/vmware-tools/vm-support
 @dirrmtry lib/vmware-tools/modules
 @dirrmtry lib/vmware-tools
 @dirrmtry etc/vmware-tools
-@dirrmtry share/vmware-tools
+@dirrmtry share/open-vm-tools/tests
+@dirrmtry share/open-vm-tools
 %%X11%%@dirrmtry share/applications
 @dirrm lib/open-vm-tools/plugins/vmsvc
 %%X11%%@dirrm lib/open-vm-tools/plugins/vmusr
