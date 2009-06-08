@@ -1,0 +1,10 @@
+--- src/support/apxs.pl
++++ src/support/apxs.pl
+@@ -47,6 +47,7 @@
+ $CFG_CFLAGS =~ s|^\s+||;
+ $CFG_CFLAGS =~ s|\s+$||;
+ $CFG_CFLAGS =~ s|\s+`.+apaci`||;
++$CFG_CFLAGS =~ s|\s+-std=[^\s]+||;
+ 
+ ##
+ ##  parse argument line
