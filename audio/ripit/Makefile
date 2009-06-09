@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ripit
-PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTVERSION=	3.7.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.suwald.com/ripit/
 
 MAINTAINER=	oyvind@moll.no
-COMMENT=	A perl-script frontend for encoding audio CDs to MP3 files
+COMMENT=	A command line audio CD ripper
 
 # See pkg-message about other dependencies.
 RUN_DEPENDS=	${SITE_PERL}/CDDB_get.pm:${PORTSDIR}/audio/p5-CDDB_get
@@ -28,7 +27,7 @@ USE_PERL5_RUN=	yes
 USE_BZIP2=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|" ${WRKSRC}/ripit.pl
+	@${REINPLACE_CMD} -e "s|#!/usr/bin/env perl|#!${PERL}|" ${WRKSRC}/ripit.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ripit.pl ${PREFIX}/bin/ripit

@@ -1,13 +1,21 @@
-ripit
------
+RipIT is used to create MPEG-1 Layer 3 (mp3) using Lame, or uses Flac (flac),
+Ogg Vorbis (ogg) or Faac (m4a) to convert audio files (wav) extracted from an
+audio CD. It is a console based front-end (no GUI here), written in Perl, for
+various programs.
 
-ripit is a small front-end program written in perl for ripping,
-encoding and tagging MP3s or Ogg/Vorbis files from audio CDs. It
-is a console program that needs no user intervention. It requires
-p5-CDDB for CDDB access. A track ripper program and an encoder are
-also needed.
+The program will do the following without user intervention:
+ * getting the audio CD Album/Artist/Tracks information from CDDB 
+ * ripping the audio CD Tracks 
+ * encoding to Flac, mp3 or Ogg 
+ * id3 tags encoded songs 
+ * creating an playlist (m3u) file 
+ * optionally generating a toc (cue) sheet for nice DAO burning 
+ * optionally preparing and send a CDDB submission and save it locally 
+ * optionally extracting hidden songs and split ghost songs 
+ * optionally creating md5sum files for all tracks 
+ * running several encoder processes at the same time and same run 
 
-WWW: http://www.suwald.com/ripit/ripit.html
+WWW: http://www.suwald.com/ripit/news.php
 
 --
-Port by Oyvind Moll <oyvindmo@initio.no>
+Port by Oyvind Moll <oyvind@moll.no>
