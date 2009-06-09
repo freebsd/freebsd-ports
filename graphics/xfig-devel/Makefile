@@ -7,7 +7,7 @@
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.5.a5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION:R}-alpha/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S,.a,-alpha,}.full
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:S,.a,-alpha,}
 
 LATEST_LINK=	xfig-devel
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
 MAN1=		xfig.1
 
 MAKE_ENV+=	DOCSDIR=${DOCSDIR}

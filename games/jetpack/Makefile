@@ -7,7 +7,7 @@
 
 PORTNAME=	jetpack
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
 DISTNAME=	${PORTNAME}
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arcade action game for X11
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAKE_FLAGS=	PREFIX=${PREFIX} -f
 MAN6=		jetpack.6
 

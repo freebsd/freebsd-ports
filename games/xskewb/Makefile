@@ -7,7 +7,7 @@
 
 PORTNAME=	xskewb
 PORTVERSION=	5.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
@@ -17,6 +17,7 @@ COMMENT=	Skewb puzzle (similar to Rubik's Cube) for X Window
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xt sm ice
 MAN1=		xskewb.1
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no

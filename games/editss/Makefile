@@ -7,7 +7,7 @@
 
 PORTNAME=	editss
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An editor for XPilot shipshapes
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xaw xmu xt
 ALL_TARGET=	editss
 MAN6=		editss.6
 NO_INSTALL_MANPAGES=	yes

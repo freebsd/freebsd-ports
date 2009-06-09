@@ -7,7 +7,7 @@
 
 PORTNAME=	trix
 PORTVERSION=	0.94
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ COMMENT=	TriX is a chat compatible with 2.0 protocol of the Vypress Chat
 USE_QT_VER=	3
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_XLIB=	yes
+USE_XORG=	xext
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 

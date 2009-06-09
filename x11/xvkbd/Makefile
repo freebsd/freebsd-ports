@@ -7,7 +7,7 @@
 
 PORTNAME=	xvkbd
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://homepage3.nifty.com/tsato/xvkbd/
 
@@ -21,6 +21,7 @@ OPTIONS=	XAW3D	"Xaw3d support" off \
 		I18N	"internationalization" on
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +34,7 @@ XK_DEFSUBST +=	-e 's/XCOMM define XAW3D/\#define XAW3D/;'
 .endif
 .if	defined(WITH_XTEST)
 XK_DEFSUBST +=	-e 's/XCOMM define XTEST/\#define XTEST/;'
+USE_XORG+=	xtst
 .endif
 .if	defined(WITH_I18N)
 XK_DEFSUBST +=	-e 's/XCOMM define I18N/\#define I18N/;'

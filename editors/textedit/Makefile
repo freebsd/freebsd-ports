@@ -7,7 +7,7 @@
 
 PORTNAME=	textedit
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
@@ -19,6 +19,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/textedit
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		textedit.1
 PLIST_FILES=	bin/textedit
 

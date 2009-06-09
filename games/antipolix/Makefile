@@ -7,7 +7,7 @@
 
 PORTNAME=	antipolix
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/multiplayer
@@ -18,6 +18,7 @@ COMMENT=	Simple multiplayer game for X Window System
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11
 NO_INSTALL_MANPAGES=	yes
 
 pre-build:

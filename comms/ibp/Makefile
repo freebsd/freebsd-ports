@@ -7,7 +7,7 @@
 
 PORTNAME=	ibp
 PORTVERSION=	0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/ \
 		${MASTER_SITE_LOCAL}
@@ -17,8 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	A little program for monitoring amateur radio beacons
 
-USE_XLIB=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11
 
 PLIST_FILES=	bin/ibp
 MAN1=		ibp.1

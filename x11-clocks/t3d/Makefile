@@ -7,7 +7,7 @@
 
 PORTNAME=	t3d
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwdt.com/~paysan/
 DISTNAME=	t3d
@@ -22,6 +22,7 @@ EXTRACT_AFTER_ARGS=	| ${SH}
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 
 MAN1=		t3d.1
 PLIST_FILES=	bin/t3d

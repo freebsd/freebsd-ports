@@ -8,7 +8,7 @@
 PORTNAME=	gxditview
 PORTVERSION=	1.18.1
 DISTVERSIONSUFFIX=	.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/groff
@@ -29,6 +29,7 @@ CONFLICTS=	gxditview-[1-9]*
 
 GNU_CONFIGURE=	yes
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xp xpm xt
 USE_ICONV=	yes
 
 CONFIGURE_ARGS=	--program-prefix=g --enable-multibyte

@@ -7,7 +7,7 @@
 
 PORTNAME=	lfview
 PORTVERSION=	1.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://hoshina.denpa.org/
 EXTRACT_SUFX=	.tgz
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic viewer for Leaf products
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 NO_INSTALL_MANPAGES=	yes
 

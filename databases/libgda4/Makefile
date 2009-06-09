@@ -8,7 +8,7 @@
 
 PORTNAME=	libgda4
 PORTVERSION?=	4.0.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/4$//}/${PORTVERSION:R}
@@ -29,7 +29,6 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes

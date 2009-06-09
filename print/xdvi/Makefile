@@ -7,7 +7,7 @@
 
 PORTNAME=	xdvi
 PORTVERSION=	pl20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -21,6 +21,7 @@ CONFLICTS=	teTeX-*
 
 DIST_SUBDIR=	xdvi
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 USE_GMAKE=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

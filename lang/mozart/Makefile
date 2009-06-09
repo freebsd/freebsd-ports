@@ -7,7 +7,7 @@
 
 PORTNAME=	mozart
 PORTVERSION=	1.3.1.20040616
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang tk parallel
 MASTER_SITES=	http://www.mozart-oz.org/download/mozart-ftp/store/1.3.1-2004-06-16/
 DISTFILES=	${DISTNAME}-src.tar.gz
@@ -31,7 +31,7 @@ MAKE_ARGS=	PREFIX=${PREFIX}/lib/oz
 USE_BISON=	build
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf:213
 # magic wand: set INSTALL to some absurd value, or else
 # mozart's configure will not find the right install

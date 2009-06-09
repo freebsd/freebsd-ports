@@ -7,7 +7,7 @@
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://files.xfig.org/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
@@ -25,7 +25,7 @@ CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
 MAN1=		xfig.1
 MANCOMPRESSED=	yes
 

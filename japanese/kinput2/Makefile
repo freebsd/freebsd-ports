@@ -7,7 +7,7 @@
 
 PORTNAME=	kinput2
 PORTVERSION=	3.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -16,6 +16,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Japanese text input server for X11 applications
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 SUB_FILES=	Kinput2.conf
 PLIST_FILES=	${PLIST_ALL}
 

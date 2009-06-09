@@ -7,7 +7,7 @@
 
 PORTNAME=	dclock
 PORTVERSION=	2.1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/d/dclock
@@ -21,6 +21,7 @@ MAINTAINER=	yasu@utahime.org
 COMMENT=	A 7-segment digital clock with some optional features
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xt
 
 WRKSRC=		${WRKDIR}/dclock
 MAN1=		dclock.1

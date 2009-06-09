@@ -7,7 +7,7 @@
 
 PORTNAME=	xview
 PORTVERSION=	3.2.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.efd.lth.se/pub/X11/ \
 		ftp://ftp.uni-heidelberg.de/pub/X11/contrib/libraries/ \
@@ -24,6 +24,7 @@ BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 ONLY_FOR_ARCHS=	i386
 REINPLACE_ARGS=	-i ""
 USE_IMAKE=	yes
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 IMAKEINCLUDE=	"-I${LOCALBASE}/lib/X11/config -I${WRKSRC}/config"
 MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}

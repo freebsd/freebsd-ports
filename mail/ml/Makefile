@@ -7,7 +7,7 @@
 
 PORTNAME=	ml
 PORTVERSION=	3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.uni-koeln.de/windows/xcontrib/
 
@@ -16,6 +16,7 @@ COMMENT=	An X11 IMAP client
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xmu xp xt
 USE_MOTIF=	yes
 
 pre-configure:

@@ -8,7 +8,7 @@
 
 PORTNAME=	cxterm
 PORTVERSION=	5.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/ \
 		http://www.525183.com/freebsd/cxterm/ \
@@ -30,6 +30,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xpm xmu xaw xt sm ice
 
 PORTDOCS=	CXTERM.FAQ input.doc
 

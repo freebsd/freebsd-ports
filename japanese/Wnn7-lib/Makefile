@@ -7,7 +7,7 @@
 
 PORTNAME=	Wnn7-lib
 PORTVERSION=	2001.10.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn7/sdk_source/
 DISTNAME=	Wnn7SDK

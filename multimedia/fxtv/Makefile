@@ -7,7 +7,7 @@
 
 PORTNAME=	fxtv
 PORTVERSION=	1.03
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	rhh
@@ -19,7 +19,7 @@ COMMENT=	X-based TV Display and Capture Application (for use with bt848 driver)
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
-USE_XORG=	xpm xf86vidmodeproto xxf86dga
+USE_XORG=	ice sm x11 xaw xext xmu xt xpm xxf86vm xxf86dga
 USE_GMAKE=	yes
 MAKE_FLAGS=	-e
 MAN1=		fxtv.1

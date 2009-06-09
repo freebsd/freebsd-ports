@@ -6,7 +6,7 @@
 
 PORTNAME=	xwatchwin
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
@@ -20,5 +20,6 @@ MAN1=		xwatchwin.1
 PLIST_FILES=	bin/xwatchwin
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 
 .include <bsd.port.mk>

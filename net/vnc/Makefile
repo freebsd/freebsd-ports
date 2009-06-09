@@ -7,7 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/:vnc
 DISTNAME=	vnc-4_1_3-unixsrc
@@ -23,8 +23,7 @@ RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
 GNU_CONFIGURE=	yes
 # The vnc supplied zlib seg. faults if compiled with -O
 CONFIGURE_ARGS=	--with-installed-zlib
-USE_XLIB=	yes
-USE_XORG=	xpm xext
+USE_XORG=	x11 xext xpm xext xtst sm ice inputproto
 WANT_PERL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

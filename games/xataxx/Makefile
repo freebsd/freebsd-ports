@@ -7,7 +7,7 @@
 
 PORTNAME=	xataxx
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Strategy game of position and movement for X Window System
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN6=		xataxx.6
 
 post-install:

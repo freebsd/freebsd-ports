@@ -7,7 +7,7 @@
 
 PORTNAME=	xmemory
 PORTVERSION=	3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/multiplayer
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player memory game
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		xmemory.1
 
 post-install:

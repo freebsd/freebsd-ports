@@ -7,7 +7,7 @@
 
 PORTNAME=	llnlxftp
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.llnl.gov/pub/ia/llnlxftp/
 DISTNAME=	latest_xftp
@@ -20,6 +20,7 @@ PLIST_FILES=	bin/xftp lib/X11/app-defaults/XFtp
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xp xt
 
 MAN1=		xftp.1
 

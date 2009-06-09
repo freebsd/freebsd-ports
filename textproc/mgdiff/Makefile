@@ -7,7 +7,7 @@
 
 PORTNAME=	mgdiff
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -18,6 +18,7 @@ COMMENT=	A graphical front end to the Unix diff command
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xmu xp xt
 MAN1=		mgdiff.1
 
 post-install:

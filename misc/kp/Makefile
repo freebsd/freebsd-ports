@@ -7,7 +7,7 @@
 
 PORTNAME=	kp
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -17,6 +17,7 @@ COMMENT=	The Keyboard Practicer, touch-type training program
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xp xpm xt
 MAN1=		kp.1
 
 post-install:

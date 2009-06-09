@@ -7,7 +7,7 @@
 
 PORTNAME=	xcheckers
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://arton.cunst.net/xcheckers/
 
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A checkers game for X11
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xpm
 
 MAN6=		xcheckers.6 simplech.6
 

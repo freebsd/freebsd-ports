@@ -7,7 +7,7 @@
 
 PORTNAME=	sgifonts
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://patches-europe.sgi.com/pub/linux/ProPack1.4/SRPMS/ \
 		ftp://ftp.rediris.es/sites/patches-europe.sgi.com/pub/linux/ProPack1.4/SRPMS/

@@ -7,7 +7,7 @@
 
 PORTNAME=	tridiavnc
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dwcjr
@@ -20,6 +20,7 @@ COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no

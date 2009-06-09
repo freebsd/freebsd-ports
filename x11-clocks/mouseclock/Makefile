@@ -7,7 +7,7 @@
 
 PORTNAME=	mouseclock
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-clocks
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
@@ -17,6 +17,7 @@ COMMENT=	Display the current time using the X root cursor
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 XMKMF=		xmkmf
 NO_INSTALL_MANPAGES=	yes
 

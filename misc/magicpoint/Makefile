@@ -7,7 +7,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -19,6 +19,7 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xmu xt sm ice xi xtst
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-vflib
 

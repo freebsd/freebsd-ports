@@ -8,7 +8,7 @@
 
 PORTNAME=	vnterm
 PORTVERSION=	3.4	#11.6.6[.0]
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	vietnamese x11
 MASTER_SITES=	ftp://ftp.x.org/pub/R6.6/tars/
 DISTNAME=	xorg-1
@@ -17,6 +17,7 @@ MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	An xterm that speaks Vietnamese
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 
 .include <bsd.port.pre.mk>
 

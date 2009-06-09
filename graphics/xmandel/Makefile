@@ -7,7 +7,7 @@
 
 PORTNAME=	xmandel
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cray.com/src/graphics/xmandel/
 # The README says the location is ftp.cray.com:/usr/ftp/src/graphics/xmandel,
@@ -22,6 +22,7 @@ EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt
 USE_PERL5_BUILD=yes
 NO_WRKSUBDIR=	yes
 MAN1=		xmandel.1

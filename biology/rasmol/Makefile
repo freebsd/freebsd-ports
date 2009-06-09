@@ -7,7 +7,7 @@
 
 PORTNAME=	rasmol
 PORTVERSION=	2.7.2.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.bernstein-plus-sons.com/software/
 DISTNAME=	RasMol_${PORTVERSION}
@@ -18,6 +18,7 @@ COMMENT=	Fast Molecular Visualization Program
 WRKSRC=		${WRKDIR}/RasMol_${PORTVERSION}/src
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xi
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmascot
 PORTVERSION=	2.6a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://cclub-flying.dsl.gr.jp/products/xmascot/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moving mascot on your X11 screen
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xmascot.1
 
 post-install:

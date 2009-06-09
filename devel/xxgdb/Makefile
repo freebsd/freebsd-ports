@@ -7,7 +7,7 @@
 
 PORTNAME=	xxgdb
 PORTVERSION=	1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X window interface for gdb
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt
 MAN1=		xxgdb.1
 
 .include <bsd.port.pre.mk>

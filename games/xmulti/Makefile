@@ -7,7 +7,7 @@
 
 PORTNAME=	xmulti
 PORTVERSION=	2.00b4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.denpa.org/~go/xmulti/
 DISTFILES=	xmul200b4.tgz
@@ -18,6 +18,7 @@ COMMENT=	A X11 mascot based on gal-game "To Heart"
 WRKSRC=		${WRKDIR}/xmulti200beta4
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xaw xmu xt xpm sm ice
 
 MAN1=		xmaid.1
 NOMANCOMPRESS=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmille
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -19,6 +19,7 @@ COMMENT=	X window mille bourne game
 WRKSRC=		${WRKDIR}/Mille
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		xmille.1
 PLIST_FILES=	bin/xmille
 

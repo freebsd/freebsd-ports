@@ -7,14 +7,15 @@
 
 PORTNAME=	xoris
 PORTVERSION=	0.1e
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	alexander.gromnitsky@gmail.com
 COMMENT=	An X11 pixel color grabber
 
-USE_XLIB=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11
 
 .if !defined(NOPORTDOCS)
 SUB_FILES=	pkg-message

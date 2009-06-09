@@ -7,7 +7,7 @@
 
 PORTNAME=	bugsx
 PORTVERSION=	1.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breed bugs using genetic algorithims
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/bugsx
 # isn't really gzipped
 EXTRACT_CMD=		${TAR}

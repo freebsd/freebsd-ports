@@ -7,7 +7,7 @@
 
 PORTNAME=	xlife
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	xlife
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	John Horton Conway's Game of Life
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 INSTALL_TARGET=	install install.patterns
 MAN1=		xlife.1
 

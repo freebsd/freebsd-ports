@@ -7,7 +7,7 @@
 
 PORTNAME=	gltk
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.sgi.com/opengl/contrib/ \
 		ftp://ftp.u-aizu.ac.jp/pub/os/sgi/misc/ftp.sgi.com/pub/opengl/contrib/
@@ -19,6 +19,7 @@ COMMENT=	An OpenGL/Tk interface
 
 USE_GL=		glut
 USE_IMAKE=	yes
+USE_XORG=	x11
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libtk.a ${PREFIX}/lib/libgltk.a

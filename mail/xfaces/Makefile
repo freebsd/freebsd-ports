@@ -6,7 +6,7 @@
 
 PORTNAME=	xfaces
 PORTVERSION=	3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
 		http://www.mavetju.org/download/adopted/xfaces/
@@ -23,12 +23,13 @@ PATCH_DIST_STRIP=
 MAINTAINER=	faber@isi.edu
 COMMENT=	Display shaped icons for mail spool contents
 
-LIB_DEPENDS=compface:${PORTSDIR}/mail/faces:install
+LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces:install
 
 # GNU make properly processes some overridden rules in the makefile that
 # imake generates.  Specifically, installing the html docs.
-USE_GMAKE=yes
-USE_IMAKE=yes
+USE_GMAKE=	yes
+USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 
 MAN1=		xfaces.1
 

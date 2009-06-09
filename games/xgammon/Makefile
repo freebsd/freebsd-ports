@@ -7,7 +7,7 @@
 
 PORTNAME=	xgammon
 PORTVERSION=	0.98a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://fawn.unibw-hamburg.de/steuer/xgammon/Downloads/
 
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A backgammon program for X11
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xaw xmu xt sm ice
 
 MAN6=		xgammon.6
 PLIST_FILES=	bin/xgammon lib/X11/app-defaults/XGammon \

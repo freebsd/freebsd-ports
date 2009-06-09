@@ -7,7 +7,7 @@
 
 PORTNAME=	larswm
 PORTVERSION=	7.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.safereconnect.com/fnurt/larswm/
 
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiling Window Manager for X
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xmu xt
 
 MAN1=		larsclock.1 larsmenu.1 larsremote.1 larswm.1
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	plotmtv
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 DISTNAME=	Plotmtv${PORTVERSION}
@@ -19,6 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multipurpose X11 plotting program
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xt
 ALL_TARGET=	World
 MAN1=		plotmtv.1
 

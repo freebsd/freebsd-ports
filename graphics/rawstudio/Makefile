@@ -7,6 +7,7 @@
 
 PORTNAME=	rawstudio
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
@@ -23,7 +24,6 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GNOME=	gtk20 libxml2 gconf2
 
 .include <bsd.port.mk>

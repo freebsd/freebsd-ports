@@ -7,7 +7,7 @@
 
 PORTNAME=	timidity++
 PORTVERSION=	2.13.2
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES+=	audio
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=timidity
@@ -56,7 +56,7 @@ MAN5=		timidity.cfg.5
 CONFIGURE_ARGS+=--without-x --disable-spectrogram --disable-wrd --disable-dynamic
 .else
 CONFIGURE_ARGS+=--with-x    --enable-spectrogram  --enable-wrd  --enable-dynamic
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
 .endif
 

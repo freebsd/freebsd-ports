@@ -7,7 +7,7 @@
 
 PORTNAME=	xvier
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
@@ -19,6 +19,7 @@ COMMENT=	Throw stones into free columns
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN6=		xvier.6
 
 post-install:

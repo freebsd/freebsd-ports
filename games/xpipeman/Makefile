@@ -7,7 +7,7 @@
 
 PORTNAME=	xpipeman
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
@@ -21,6 +21,7 @@ COMMENT=	Connect the pipes to stop the leaks
 ONLY_FOR_ARCHS=	i386
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xaw xext xmu xt sm ice
 MAN6=		xpipeman.6
 
 post-install:

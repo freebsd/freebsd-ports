@@ -7,7 +7,7 @@
 
 PORTNAME=	lwm
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jfc.org.uk/files/lwm/
 
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight window manager
 
 USE_IMAKE=	yes
+USE_XORG=	sm x11 xext
 
 MAN1=		lwm.1
 PORTDOCS=	AUTHORS BUGS ChangeLog README TODO

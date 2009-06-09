@@ -7,7 +7,7 @@
 
 PORTNAME=	xdigger
 PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Boulderdash-like KC85 Digger for X Window System
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN6=		xdigger.6
 
 post-patch:

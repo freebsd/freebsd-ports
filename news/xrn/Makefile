@@ -7,7 +7,7 @@
 
 PORTNAME=	xrn
 PORTVERSION=	9.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	ftp://sipb.mit.edu/pub/xrn/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Usenet News reader for the X Window System
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xrn.1
 MANCOMPRESSED=	no
 

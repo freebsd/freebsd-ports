@@ -7,7 +7,7 @@
 
 PORTNAME=	mmore
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://matt.sixxgate.com/files/
 
@@ -17,6 +17,7 @@ COMMENT=	An Motif/X file/stream viewer
 USE_MOTIF=	yes
 USE_BZIP2=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11 xmu xt
 MAN1=		mmore.1
 MANCOMPRESSED=	yes
 

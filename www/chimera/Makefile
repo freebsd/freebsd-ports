@@ -7,7 +7,7 @@
 
 PORTNAME=	chimera
 PORTVERSION=	1.70p0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.rocklinux.net/people/ripclaw/projects/software/chimera/devel/
 
@@ -18,6 +18,7 @@ RUN_DEPENDS= 	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 MAN1=		chimera.1
 

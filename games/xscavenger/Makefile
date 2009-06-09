@@ -7,7 +7,7 @@
 
 PORTNAME=	xscavenger
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.xdr.com/dash/
 EXTRACT_SUFX=	.tgz
@@ -18,6 +18,7 @@ COMMENT=	A Lode Runner clone for X11
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN6=		scavenger.6
 
 pre-configure:

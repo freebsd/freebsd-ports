@@ -7,7 +7,7 @@
 
 PORTNAME=	x3270
 PORTVERSION=	3.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-pr3287 --with-fontdir=local --disable-dbcs
 .if defined(WITHOUT_OPENSSL)

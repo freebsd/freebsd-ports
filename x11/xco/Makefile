@@ -7,7 +7,7 @@
 
 PORTNAME=	xco
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 DISTNAME=	${PORTNAME}
 
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X11 color names and colors
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		xco.1
 MANCOMPRESSED=	yes
 DOCDIR=		${PREFIX}/share/doc/xco

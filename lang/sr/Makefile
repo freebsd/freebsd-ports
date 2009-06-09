@@ -7,7 +7,7 @@
 
 PORTNAME=	sr
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang parallel
 MASTER_SITES=	ftp://ftp.uu.net/.vol/1/languages/sr/ \
 		http://www.it.uc3m.es/~ptb/clases/sr/inst/src/ \
@@ -31,7 +31,7 @@ MAN5 =		srmap.5 srtrace.5
 PLIST_SUB+=	X11="@comment "
 .else
 PLIST_SUB+=	X11=""
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 .include	<bsd.port.pre.mk>

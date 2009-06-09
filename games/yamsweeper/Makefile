@@ -7,7 +7,7 @@
 
 PORTNAME=	yamsweeper
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.hanzubon.org/mirrors/Vine/VinePlus/1.1/JG-0.9.1/sources/ \
 		http://ftp.jaist.ac.jp/pub/Linux/Vine/VinePlus/1.1/JG-0.9.1/sources/ \
@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Mine Sweeper
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 MAN1=		yamsweeper.1
 
 pre-configure:

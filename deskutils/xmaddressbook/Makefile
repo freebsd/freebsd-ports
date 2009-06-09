@@ -7,7 +7,7 @@
 
 PORTNAME=	xmaddressbook
 PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
@@ -18,6 +18,7 @@ COMMENT=	X11/Motif-based addressbook program
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xi xp xt oldx
 WRKSRC=		${WRKDIR}/xmaddressbook
 MAN1=		xmaddressbook.1
 

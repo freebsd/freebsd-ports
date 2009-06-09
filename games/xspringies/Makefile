@@ -7,7 +7,7 @@
 
 PORTNAME=	xspringies
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://aixpdslib.seas.ucla.edu/pub/xspringies/RISC/3.2/src/
 DISTFILES=	xspringies.1.1.tar.Z
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mass and spring simulation system
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		xspringies.1
 
 .include <bsd.port.mk>

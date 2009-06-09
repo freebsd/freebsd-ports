@@ -7,7 +7,7 @@
 
 PORTNAME=	ashe
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cs.rpi.edu/pub/puninj/ASHE/ASHE-1.3/%SUBDIR%/
 MASTER_SITE_SUBDIR=	src libcci libhtmlw-2.7
@@ -22,6 +22,7 @@ INSTALL_WRKSRC=		${WRKDIR}/src
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xp xpm xt
 MAN1=		xhtml.1
 
 post-patch:

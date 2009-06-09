@@ -7,7 +7,7 @@
 
 PORTNAME=	seyon
 PORTVERSION=	2.14b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 DISTNAME=	Seyon-${PORTVERSION}
@@ -18,6 +18,7 @@ COMMENT=	A communications package for the X Window system
 
 WRKSRC=		${WRKDIR}/seyon
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xpm xmu xaw xt sm ice
 
 MAN1=		seyon.1
 

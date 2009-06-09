@@ -6,7 +6,7 @@
 
 PORTNAME=	xgospel
 PORTVERSION=	1.12d
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.teaser.fr/~jlgailly/
 
@@ -15,12 +15,10 @@ COMMENT=	An X11 Go (weiqi, baduk) client for the Internet Go Server
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
-USE_XORG=	xpm x11 ice
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-x --with-xpm --with-xaw3d
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e "s,#ifndef _POSIX_SOURCE,#if 0," \
@@ -40,4 +38,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	xhexagons
 PORTVERSION=	5.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
@@ -17,6 +17,7 @@ COMMENT=	Hexagons puzzle (similar to Fifteen Puzzle) for X Window System
 
 WRKSRC=		${WRKDIR}/xhexagons
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xt sm ice
 MAN1=		xhexagons.1
 XFREE86_HTML_MAN=	no
 NO_INSTALL_MANPAGES=	yes

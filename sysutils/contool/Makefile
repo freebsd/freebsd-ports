@@ -7,7 +7,7 @@
 
 PORTNAME=	contool
 PORTVERSION=	3.3a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nsayer
@@ -20,6 +20,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 NO_CDROM=	"source code cannot be sold, nor can you incorporate the source code into a product which is subsequently sold"
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 
 MAN1=		contool.1
 

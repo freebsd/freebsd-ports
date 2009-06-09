@@ -7,7 +7,7 @@
 
 PORTNAME=	xmsgsaver
 PORTVERSION=	1.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	http://www19.xdsl.ne.jp/~cdr/soft/dl/
 
@@ -18,5 +18,6 @@ LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 MAN1=		xmsgsaver.1
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xscrnsaver xt
 
 .include <bsd.port.mk>

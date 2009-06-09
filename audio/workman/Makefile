@@ -7,7 +7,7 @@
 
 PORTNAME=	workman
 PORTVERSION=	1.3a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/WorkMan
@@ -20,6 +20,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		workman.1
 MAN5=		workmandb.5
 PLIST_FILES=	bin/workman lib/help/workman.info

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmagv
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/art/graphics/loader/mag/
 DISTFILES=	xmagv111.tgz
@@ -18,6 +18,7 @@ COMMENT=	Viewer for X Window System
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 XMKMF=		xmkmf
 MANLANG=	. ja
 MAN1=		xmagv.1

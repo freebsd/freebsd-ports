@@ -7,7 +7,7 @@
 
 PORTNAME=	hanterm
 PORTVERSION=	3.1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean x11
 MASTER_SITES=	http://hanterm.org/download/ \
 		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean
 
 CONFLICTS=	ko-hanterm-xf-2.*
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 NO_INSTALL_MANPAGES= yes
 ALL_TARGET=	hanterm
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmotd
 DISTVERSION=	1.17.3b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ee.ryerson.ca/~elf/pub/
 
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A message-of-the-day browser for X11 and dumb-terminals
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt
 NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
 
@@ -29,6 +30,7 @@ OPTIONS+=	XPM "Allows colour XPM pixmaps" off
 
 .if defined(WITH_HTML)
 MAKE_ARGS+=	-DHAVE_HTML
+BROKEN=		Does not compile when WITH_HTML is set
 .endif
 
 .if defined(WITH_MOTIF)
@@ -37,7 +39,7 @@ USE_MOTIF=	yes
 .endif
 
 .if defined(WITH_XPM)
-USE_XORG=	xpm
+USE_XORG+=	xpm
 .endif
 
 post-extract:

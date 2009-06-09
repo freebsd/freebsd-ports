@@ -7,7 +7,7 @@
 
 PORTNAME=	gru
 PORTVERSION=	8087
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.bsddiary.net/gru/
 
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gru makes your eyes happy
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xmu xpm xaw xt sm ice
 
 MAN1=		gru.1
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xbattle
 PORTVERSION=	5.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A concurrent multi-player battle strategy game
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		xbattle.1
 
 post-install:
