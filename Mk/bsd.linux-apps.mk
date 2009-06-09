@@ -139,7 +139,7 @@ dri_f10_FILE=		${LINUXBASE}/usr/lib/libGL.so.1.2
 dri_DETECT=		${dri${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 .  if ${LINUX_DIST_SUFFIX} == ""
 dri_PORT=		${PORTSDIR}/graphics/linux_dri
-.  elif ${LINUX_DIST_SUFFIX} == "f8"
+.  elif ${LINUX_DIST_SUFFIX} == "-f8"
 dri_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-dri
 .  else
 dri_PORT=		${PORTSDIR}/graphics/linux-dri74
