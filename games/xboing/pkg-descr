@@ -1,8 +1,6 @@
 XBoing is a blockout type game where you have a paddle which you use
-to bounce a ball around the game area blowing up blocks with the ball. 
+to bounce a ball around the game area blowing up blocks with the ball.
 You win by obtaining points for each block destroyed and each level
 completed. The person with the highest score wins.
-
-This is version 2.3.
 
 LICENSE: X11
