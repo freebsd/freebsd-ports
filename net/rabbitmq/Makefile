@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rabbitmq
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -29,8 +29,9 @@ SUB_FILES=	pkg-install
 RABBITMQ_USER=	rabbitmq
 RABBITMQ_GROUP=	${RABBITMQ_USER}
 
-MAN1=	rabbitmq-multi.1 rabbitmq-server.1 rabbitmqctl.1
-MAN5=	rabbitmq.5
+MAN1=		rabbitmq-multi.1 rabbitmq-server.1 rabbitmqctl.1
+MAN5=		rabbitmq.conf.5
+MANCOMPRESSED=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/default|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${PREFIX}/bin/erl|g' \
@@ -43,5 +44,5 @@ pre-install:
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	
+
 .include <bsd.port.mk>

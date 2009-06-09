@@ -20,6 +20,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_control.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_error_logger.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_error_logger_file_h.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_guid.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing_channel.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_heartbeat.beam
