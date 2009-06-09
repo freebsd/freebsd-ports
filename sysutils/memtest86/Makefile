@@ -12,19 +12,17 @@ MASTER_SITES=	http://www.memtest86.com/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.iso.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Stand alone memory test for x86 architecture computers
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-BROKEN=		checksum mismatch
 
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 
 PORTDOCS=	README
-PLIST_FILES=	%%DATADIR%%/floppy.bin %%DATADIR%%/Memtest86-3.5.iso
+PLIST_FILES=	%%DATADIR%%/floppy.bin %%DATADIR%%/Memtest86_3.5.iso
 PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	pkg-message
@@ -35,8 +33,8 @@ post-extract:
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/precomp.bin ${DATADIR}/floppy.bin
-	${INSTALL_DATA} ${WRKSRC}/Memtest86-${PORTVERSION}.iso \
-			${DATADIR}/Memtest86-${PORTVERSION}.iso
+	${INSTALL_DATA} ${WRKSRC}/Memtest86_${PORTVERSION}.iso \
+			${DATADIR}/Memtest86_${PORTVERSION}.iso
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
