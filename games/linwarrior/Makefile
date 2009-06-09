@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	linwarrior
-PORTVERSION=	20090208
-PORTREVISION=	1
+PORTVERSION=	20090529
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackcraft.de/games/linwarrior_3d/downloads/ \
 		http://mirror.amdmi3.ru/
@@ -22,8 +21,16 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 USE_GMAKE=	yes
 USE_GL=		gl glu
 USE_SDL=	sdl
+MAKE_JOBS_SAFE=	yes
+USE_GCC=	4.2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800007
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-source-cMech.cpp
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/source/cMech.cpp \
@@ -34,4 +41,4 @@ do-install:
 	${MKDIR} ${DATADIR}/sound
 	${INSTALL_DATA} ${WRKSRC}/data/sound/*.wav ${DATADIR}/sound
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
