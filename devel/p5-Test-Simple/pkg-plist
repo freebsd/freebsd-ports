@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Test/Builder.pm
+%%SITE_PERL%%/Test/Builder/IO/Scalar.pm
 %%SITE_PERL%%/Test/Builder/Module.pm
 %%SITE_PERL%%/Test/Builder/Tester.pm
 %%SITE_PERL%%/Test/Builder/Tester/Color.pm
@@ -9,5 +10,6 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test/Builder/Tester
+@dirrmtry %%SITE_PERL%%/Test/Builder/IO
 @dirrmtry %%SITE_PERL%%/Test/Builder
 @dirrmtry %%SITE_PERL%%/Test
