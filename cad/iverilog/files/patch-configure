@@ -1,0 +1,19 @@
+--- configure.orig	2009-03-21 02:18:34.000000000 +0300
++++ configure	2009-06-09 16:26:55.000000000 +0400
+@@ -6409,15 +6409,10 @@
+ 
+ # valgrind checks
+ 
+-# Check whether --with-valgrind was given.
+-if test "${with_valgrind+set}" = set; then
+-  withval=$with_valgrind;
+-else
+   check_valgrind=yes
+-fi
+ 
+ 
+-if test "x$check_valgrind" == xyes; then
++if test "x$check_valgrind" = "xyes"; then
+   { echo "$as_me:$LINENO: Not using valgrind hooks" >&5
+ echo "$as_me: Not using valgrind hooks" >&6;}
+ else

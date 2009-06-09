@@ -7,25 +7,30 @@ include/iverilog/ivl_target.h
 include/iverilog/veriuser.h
 include/iverilog/vpi_user.h
 lib/ivl/cadpli.vpl
-lib/ivl/edif-s.conf
-lib/ivl/edif.conf
-lib/ivl/edif.tgt
-lib/ivl/fpga-s.conf
-lib/ivl/fpga.conf
-lib/ivl/fpga.tgt
+lib/ivl/include/constants.vams
+lib/ivl/include/disciplines.vams
 lib/ivl/ivl
 lib/ivl/ivlpp
 lib/ivl/null-s.conf
 lib/ivl/null.conf
 lib/ivl/null.tgt
+lib/ivl/stub-s.conf
+lib/ivl/stub.conf
+lib/ivl/stub.tgt
 lib/ivl/system.sft
 lib/ivl/system.vpi
+lib/ivl/v2005_math.sft
+lib/ivl/v2005_math.vpi
+lib/ivl/va_math.sft
+lib/ivl/va_math.vpi
+lib/ivl/vhdl-s.conf
+lib/ivl/vhdl.conf
+lib/ivl/vhdl.tgt
 lib/ivl/vvp-s.conf
 lib/ivl/vvp.conf
 lib/ivl/vvp.tgt
-lib/ivl/xnf-s.conf
-lib/ivl/xnf.conf
 lib/libveriuser.a
 lib/libvpi.a
+@dirrm lib/ivl/include
 @dirrm lib/ivl
 @dirrm include/iverilog
