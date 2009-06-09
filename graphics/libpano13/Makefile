@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libpano13
-PORTVERSION=	2.9.12
-PORTREVISION=	1
+PORTVERSION=	2.9.14
 CATEGORIES=	graphics java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	panotools
@@ -30,6 +29,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gtk-2.0 \
 			-I${LOCALBASE}/include/atk-1.0"
 
 USE_LDCONFIG=	yes
+
+MAN1=		\
+		PTAInterpolate.1 \
+		PTblender.1 \
+		PTcrop.1 \
+		PTinfo.1 \
+		PTmasker.1 \
+		PTmender.1 \
+		PToptimizer.1 \
+		PTroller.1 \
+		PTtiff2psd.1 \
+		PTtiffdump.1 \
+		PTuncrop.1 \
+		panoinfo.1
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
