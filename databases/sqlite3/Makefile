@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.6.13
+PORTVERSION=	3.6.14.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
