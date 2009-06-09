@@ -13,6 +13,7 @@ MAINTAINER=	mail@andr.ru
 COMMENT=	C++ utility for simple IOStream-based IPC
 
 USE_GMAKE=	yes
+MAKE_ENV+=	INSTALL_PREFIX=${PREFIX}
 NO_BUILD=	yes
 
 PLIST_FILES=	include/pstreams/pstream.h
