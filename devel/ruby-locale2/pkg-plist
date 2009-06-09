@@ -13,7 +13,7 @@
 %%RUBY_SITELIBDIR%%/locale/tag.rb
 %%RUBY_SITELIBDIR%%/locale/tag/cldr.rb
 %%RUBY_SITELIBDIR%%/locale/tag/common.rb
-%%RUBY_SITELIBDIR%%/locale/tag/illegular.rb
+%%RUBY_SITELIBDIR%%/locale/tag/irregular.rb
 %%RUBY_SITELIBDIR%%/locale/tag/posix.rb
 %%RUBY_SITELIBDIR%%/locale/tag/rfc.rb
 %%RUBY_SITELIBDIR%%/locale/tag/simple.rb
@@ -26,9 +26,13 @@
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/http.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/index.cgi
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale.css
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/rack/README
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/rack/hello_rack.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/rack/hello_rack.ru
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample_1.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample_info.rb
 %%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi
+%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rack
 %%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTEXAMPLES%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
