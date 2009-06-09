@@ -13,7 +13,7 @@ MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine

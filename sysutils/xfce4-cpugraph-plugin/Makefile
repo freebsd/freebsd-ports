@@ -12,7 +12,7 @@ CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce4 systemload plugin with multiple CPU display modes
 
 GNU_CONFIGURE=	yes
