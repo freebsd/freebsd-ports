@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fasta3
-PORTVERSION=	35.4.4
+PORTVERSION=	35.4.7
 CATEGORIES=	biology
 MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta3/
 DISTNAME=	fasta-${PORTVERSION}
@@ -34,12 +34,11 @@ FASTA3_DOCS=	README.versions fasta3x.me fasta3x.doc \
 DATA=		data/*.mat
 EXAMPLES=	seq/*.aa seq/*.lc seq/*.seq seq/*.lib
 
-MAN1=		fasta35.1 fastf3.1 fasts3.1 map_db.1 prss3.1 ps_lav.1 \
-		pvcomp.1
+MAN1=		fasta35.1 map_db.1 ps_lav.1 pvcomp.1
 MLINKS=		fasta35.1 tfasta35.1 fasta35.1 fastx35.1 fasta35.1 tfastx35.1  \
 		fasta35.1 fasty35.1  fasta35.1 tfasty35.1 fasta35.1 ssearch35.1 \
 		fasta35.1 fastf35.1 fasta35.1 fasts35.1 fasta35.1 tfasts35.1 \
-		fasta35.1 fastm35.1 fasta35.1 fastf35.1 fasta35.1 ggsearch35.1 \
+		fasta35.1 fastm35.1 fasta35.1 tfastf35.1 fasta35.1 ggsearch35.1 \
 		fasta35.1 lalign35.1 fasta35.1 prss35.1 fasta35.1 prfx35.1
 PLIST_SUB=	VER=${PORTVERSION:R:R}
 
@@ -57,7 +56,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${ex} ${EXAMPLESDIR}
 .endfor
 .for manpage in ${MAN1}
-	@ ${INSTALL_MAN} ${WRKSRC}/doc/${manpage} ${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/${manpage} ${MAN1PREFIX}/man/man1/
 .endfor
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
