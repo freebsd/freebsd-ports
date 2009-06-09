@@ -36,11 +36,14 @@ MANCOMPRESSED=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/default|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${PREFIX}/bin/erl|g' \
 		${SCRIPTS_DIR}/rabbitmq-multi ${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl
-
 	@${FIND} ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${FIND} ${WRKSRC}/ebin ${WRKSRC}/include -type d | \
+		${XARGS} ${CHMOD} 0755
+	@${FIND} ${WRKSRC}/ebin ${WRKSRC}/include -type f | \
+		${XARGS} ${CHMOD} 0644
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
