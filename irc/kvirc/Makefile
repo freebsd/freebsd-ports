@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.2
 CATEGORIES=	irc kde
-MASTER_SITES=	ftp://ftp.kvirc.ru/pub/kvirc.net/3.4.0/source/ \
+MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/${PORTVERSION}/source/ \
 		ftp://ftp.kvirc.de/pub/%SUBDIR%/ \
 		http://kvirc.gmake.de/pub/%SUBDIR%/ \
 		LOCAL/beech
