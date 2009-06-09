@@ -21,6 +21,7 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 
 OPTIONS=	GNOME "GNOME support (needs gtk20)" on
 
