@@ -624,6 +624,7 @@
     SUBDIR += p5-Apache2-Scoreboard
     SUBDIR += p5-ApacheBench
     SUBDIR += p5-App-Nopaste
+    SUBDIR += p5-Ark
     SUBDIR += p5-AxKit
     SUBDIR += p5-AxKit-XSP-Cookie
     SUBDIR += p5-AxKit-XSP-ESQL

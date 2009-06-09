@@ -1,0 +1,69 @@
+bin/ark.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ark/.packlist
+%%SITE_PERL%%/Ark.pm
+%%SITE_PERL%%/Ark/Action.pm
+%%SITE_PERL%%/Ark/ActionChain.pm
+%%SITE_PERL%%/Ark/ActionContainer.pm
+%%SITE_PERL%%/Ark/Command.pm
+%%SITE_PERL%%/Ark/Command/Controller.pm
+%%SITE_PERL%%/Ark/Command/Flavor/Controller.pm
+%%SITE_PERL%%/Ark/Command/Flavor/Model.pm
+%%SITE_PERL%%/Ark/Command/Flavor/Newapp.pm
+%%SITE_PERL%%/Ark/Command/Flavor/View.pm
+%%SITE_PERL%%/Ark/Command/Interface.pm
+%%SITE_PERL%%/Ark/Command/Interface/ModuleSetup.pm
+%%SITE_PERL%%/Ark/Command/Model.pm
+%%SITE_PERL%%/Ark/Command/Newapp.pm
+%%SITE_PERL%%/Ark/Command/Plugin.pm
+%%SITE_PERL%%/Ark/Command/Server.pm
+%%SITE_PERL%%/Ark/Command/View.pm
+%%SITE_PERL%%/Ark/Component.pm
+%%SITE_PERL%%/Ark/Context.pm
+%%SITE_PERL%%/Ark/Context/Debug.pm
+%%SITE_PERL%%/Ark/Controller.pm
+%%SITE_PERL%%/Ark/Core.pm
+%%SITE_PERL%%/Ark/DispatchType/Chained.pm
+%%SITE_PERL%%/Ark/DispatchType/Path.pm
+%%SITE_PERL%%/Ark/DispatchType/Regex.pm
+%%SITE_PERL%%/Ark/Logger.pm
+%%SITE_PERL%%/Ark/Model.pm
+%%SITE_PERL%%/Ark/Model/Adaptor.pm
+%%SITE_PERL%%/Ark/Plugin.pm
+%%SITE_PERL%%/Ark/Plugin/Authentication.pm
+%%SITE_PERL%%/Ark/Plugin/Authentication/Backend.pm
+%%SITE_PERL%%/Ark/Plugin/Authentication/Credential/OpenID.pm
+%%SITE_PERL%%/Ark/Plugin/Authentication/Credential/Password.pm
+%%SITE_PERL%%/Ark/Plugin/Authentication/Store/DBIx/Class.pm
+%%SITE_PERL%%/Ark/Plugin/Authentication/Store/Minimal.pm
+%%SITE_PERL%%/Ark/Plugin/Authentication/Store/Model.pm
+%%SITE_PERL%%/Ark/Plugin/Authentication/Store/Null.pm
+%%SITE_PERL%%/Ark/Plugin/Authentication/User.pm
+%%SITE_PERL%%/Ark/Plugin/Encoding/Null.pm
+%%SITE_PERL%%/Ark/Plugin/Encoding/Unicode.pm
+%%SITE_PERL%%/Ark/Plugin/Session.pm
+%%SITE_PERL%%/Ark/Plugin/Session/Backend.pm
+%%SITE_PERL%%/Ark/Plugin/Session/State/Cookie.pm
+%%SITE_PERL%%/Ark/Plugin/Session/Store/Memory.pm
+%%SITE_PERL%%/Ark/Plugin/Session/Store/Model.pm
+%%SITE_PERL%%/Ark/Request.pm
+%%SITE_PERL%%/Ark/Test.pm
+%%SITE_PERL%%/Ark/View.pm
+%%SITE_PERL%%/Ark/View/MT.pm
+@dirrm %%SITE_PERL%%/Ark/View
+@dirrm %%SITE_PERL%%/Ark/Plugin/Session/Store
+@dirrm %%SITE_PERL%%/Ark/Plugin/Session/State
+@dirrm %%SITE_PERL%%/Ark/Plugin/Session
+@dirrm %%SITE_PERL%%/Ark/Plugin/Encoding
+@dirrm %%SITE_PERL%%/Ark/Plugin/Authentication/Store/DBIx
+@dirrm %%SITE_PERL%%/Ark/Plugin/Authentication/Store
+@dirrm %%SITE_PERL%%/Ark/Plugin/Authentication/Credential
+@dirrm %%SITE_PERL%%/Ark/Plugin/Authentication
+@dirrm %%SITE_PERL%%/Ark/Plugin
+@dirrm %%SITE_PERL%%/Ark/Model
+@dirrm %%SITE_PERL%%/Ark/DispatchType
+@dirrm %%SITE_PERL%%/Ark/Context
+@dirrm %%SITE_PERL%%/Ark/Command/Interface
+@dirrm %%SITE_PERL%%/Ark/Command/Flavor
+@dirrm %%SITE_PERL%%/Ark/Command
+@dirrm %%SITE_PERL%%/Ark
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ark

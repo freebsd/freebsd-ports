@@ -1,0 +1,8 @@
+Ark is a web application framework.  It's heavily inspired by Catalyst
+Framework.
+
+Most different point between Ark and Catalyst is that Ark has CGI
+specific mode which can run applications less latency under CGI
+environment.
+
+WWW: http://opensource.kayac.com/en/projects/ark/
