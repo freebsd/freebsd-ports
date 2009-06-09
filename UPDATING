@@ -33,7 +33,7 @@ upgrades.
   # cd /usr/ports/lang/python && make upgrade-site-packages
 
   This Makefile target requires ports-mgmt/portupgrade to be installed.
-  For portmaster users, please setting PORTUPGRADE_CMD to portmaster.
+  For portmaster users, please set PORTUPGRADE_CMD to portmaster.
 
 20090606:
   AFFECTS: users of java/eclipse
