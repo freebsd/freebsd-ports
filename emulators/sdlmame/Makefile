@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmame
-PORTVERSION=	0.131
+PORTVERSION=	0.132
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/FreeBSD/ports/distfiles/ \
 		http://rbelmont.mameworld.info/
