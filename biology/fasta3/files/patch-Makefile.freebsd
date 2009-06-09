@@ -1,0 +1,19 @@
+--- make/Makefile.freebsd.orig	2009-06-08 21:07:00.000000000 -0300
++++ make/Makefile.freebsd	2009-06-08 21:08:01.000000000 -0300
+@@ -8,6 +8,7 @@
+ # defined. In FreeBSD this happens when fasta3 is build from the port or
+ # when the user has set these variables -- most notably CC and/or CFLAGS
+ # -- in /etc/make.conf
++LOCALBASE?=	/usr/local
+ 
+ # Compiler executable, and optional flags
+ CC?=		gcc
+@@ -38,7 +39,7 @@
+ CFLAGS+=	${COMMON_CFLAGS} ${STANDARD_CFLAGS}
+ 
+ BIN = ../bin
+-XDIR =		/usr/local/bin
++XDIR =		${LOCALBASE}/bin
+ 
+ LIB_M+=		-lm
+ 

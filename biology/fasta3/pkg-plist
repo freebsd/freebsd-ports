@@ -17,6 +17,7 @@ bin/glsearch%%VER%%_t
 bin/lalign%%VER%%
 bin/lav2ps
 bin/lav2svg
+bin/list_db
 bin/map_db
 bin/ssearch%%VER%%
 bin/ssearch%%VER%%_t
