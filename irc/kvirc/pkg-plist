@@ -1504,6 +1504,7 @@ share/icons/hicolor/scalable/mimetypes/kvt.svgz
 %%DATADIR%%/3.4/help/en/fnc_window.hasinput.html
 %%DATADIR%%/3.4/help/en/fnc_window.hasoutput.html
 %%DATADIR%%/3.4/help/en/fnc_window.hasuserfocus.html
+%%DATADIR%%/3.4/help/en/fnc_window.highlightlevel.html
 %%DATADIR%%/3.4/help/en/fnc_window.ismaximized.html
 %%DATADIR%%/3.4/help/en/fnc_window.isminimized.html
 %%DATADIR%%/3.4/help/en/fnc_window.list.html
@@ -2328,11 +2329,10 @@ share/icons/hicolor/scalable/mimetypes/kvt.svgz
 %%DATADIR%%/3.4/pics/notifier_pix_wnd_sx_hl.png
 %%DATADIR%%/3.4/pics/notifier_right.png
 %%DATADIR%%/3.4/pics/notifier_up.png
-%%DATADIR%%/3.4/themes/silverirc/pixmapInputBackground.png
-%%DATADIR%%/3.4/themes/silverirc/pixmapIrcViewBackground.png
-%%DATADIR%%/3.4/themes/silverirc/pixmapUserListViewBackground.png
-%%DATADIR%%/3.4/themes/silverirc/themedata.kvc
-%%DATADIR%%/3.4/themes/silverirc/themeinfo.kvc
+%%DATADIR%%/3.4/themes/YellowIRC-1.0.0/themeinfo.kvc
+%%DATADIR%%/3.4/themes/YellowIRC-1.0.0/themedata.kvc
+%%DATADIR%%/3.4/themes/YellowIRC-1.0.0/pixmapGlobalTransparencyBackground.png
+%%DATADIR%%/3.4/themes/YellowIRC-1.0.0/pixmapInputBackground.png
 share/mimelnk/text/x-kva.desktop
 share/mimelnk/text/x-kvc.desktop
 share/mimelnk/text/x-kvs.desktop
@@ -2342,7 +2342,7 @@ share/services/kvirc6.protocol
 @dirrm share/services
 @dirrm share/mimelnk/text
 @dirrm share/mimelnk
-@dirrm %%DATADIR%%/3.4/themes/silverirc
+@dirrm %%DATADIR%%/3.4/themes/YellowIRC-1.0.0
 @dirrm %%DATADIR%%/3.4/themes
 @dirrm %%DATADIR%%/3.4/pics/coresmall
 @dirrm %%DATADIR%%/3.4/pics
