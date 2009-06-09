@@ -19,4 +19,9 @@ MAN1=		crw.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/crw
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local/lib,${LOCALBASE}/lib,' \
+			-e 's,/usr/local/include,${LOCALBASE}/include,' \
+		${WRKSRC}/Makefile
+
 .include <bsd.port.mk>
