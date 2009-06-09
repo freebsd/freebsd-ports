@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 
+BROKEN=		does not build
 DEPRECATED=	abandoned project, does not build
 EXPIRATION_DATE=	2009-07-07
 
