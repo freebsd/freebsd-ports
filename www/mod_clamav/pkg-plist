@@ -1,3 +1,3 @@
+@unexec /usr/bin/sed -i '' '/LoadModule %%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
 %%APACHEMODDIR%%/mod_clamav.so
-@exec %D/sbin/apxs -e -A -n clamav %D/%f
 @exec %D/sbin/apxs -e -A -n clamav %D/%f
