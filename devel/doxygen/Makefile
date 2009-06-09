@@ -28,6 +28,7 @@ QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--install "${INSTALL}"
 CONFIGURE_ENV=	CXX="${CXX}"
+MAKE_JOBS_UNSAFE=	yes
 
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - \
 		--exclude '*/libmd5'	\
