@@ -31,6 +31,7 @@ RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
 		zoo:${PORTSDIR}/archivers/zoo \
 		flac:${PORTSDIR}/audio/flac
 
+NO_LATEST_LINK=	yes
 CONFLICTS=	deco-[0-9]*
 
 do-build:
