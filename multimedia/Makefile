@@ -29,7 +29,6 @@
     SUBDIR += devede
     SUBDIR += dirac
     SUBDIR += dirac-reference
-    SUBDIR += dplay
     SUBDIR += dtv
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
@@ -214,6 +213,7 @@
     SUBDIR += phonon
     SUBDIR += phonon-gstreamer
     SUBDIR += phonon-xine
+    SUBDIR += playd
     SUBDIR += podcatcher
     SUBDIR += poe
     SUBDIR += ppm2fli
