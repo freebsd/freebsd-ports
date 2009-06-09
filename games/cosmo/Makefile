@@ -7,7 +7,7 @@
 
 PORTNAME=	cosmo
 PORTVERSION=	2.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://133.25.251.9/pub/linux/Vine/VinePlus/1.1/JG-0.9.1/other-sources/jp/ \
 		ftp://ftp.uni-erlangen.de/.mirrors/ftpbsd/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/cosmo/
@@ -22,6 +22,7 @@ NO_CDROM=	Possible copyright infringement
 WRKSRC=		${WRKDIR}/cosmo2
 DIST_SUBDIR=	cosmo
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 XMKMF=		xmkmf
 NO_INSTALL_MANPAGES=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmball
 PORTVERSION=	5.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
@@ -17,6 +17,7 @@ COMMENT=	Masterball puzzle for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xt sm ice
 MAN1=		xmball.1
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no

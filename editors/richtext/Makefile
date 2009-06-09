@@ -8,7 +8,7 @@
 
 PORTNAME=	richtext
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/editors/X
@@ -19,6 +19,7 @@ COMMENT=	A simple RTF editor
 BUILD_DEPENDS=	objc:${PORTSDIR}/lang/objc
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xt
 USE_MOTIF=	yes
 
 PLIST_FILES=	bin/rt

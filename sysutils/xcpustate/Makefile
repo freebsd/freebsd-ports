@@ -8,7 +8,7 @@
 
 PORTNAME=	xcpustate
 PORTVERSION=	2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/  \
 		${MASTER_SITE_XCONTRIB}
@@ -22,6 +22,7 @@ EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt
 NO_WRKSUBDIR=	yes
 
 MAN1=		xcpustate.1

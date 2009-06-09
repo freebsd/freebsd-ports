@@ -7,7 +7,7 @@
 
 PORTNAME=	chimera
 PORTVERSION=	1.70p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese www
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 DISTNAME=	${PORTNAME}-${PREV_VERSION}
@@ -24,6 +24,7 @@ COMMENT=	X/Athena World-Wide Web client + Japanese patch
 PREV_VERSION=	${PORTVERSION:S/p1/p0/}
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		chimera.1
 
 pre-configure:

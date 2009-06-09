@@ -7,7 +7,7 @@
 
 PORTNAME=	xwipower
 PORTVERSION=	20000623
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fumi.org/pub/xwipower/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +19,7 @@ ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/xwipower
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 
 .include <bsd.port.pre.mk>
 

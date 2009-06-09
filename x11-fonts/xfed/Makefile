@@ -7,7 +7,7 @@
 
 PORTNAME=	xfed
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
@@ -18,6 +18,7 @@ COMMENT=	A program that will let you edit X fonts (.bdf files)
 
 IGNOREFILES=	${DISTFILES}
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAKE_FLAGS=	MANDIR=${PREFIX}/man/man1 BINDIR=${PREFIX}/bin -f
 WRKSRC=		${WRKDIR}/xfed
 MAN1=		xfed.1

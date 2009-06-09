@@ -7,7 +7,7 @@
 
 PORTNAME=	acfax
 PORTVERSION=	0.981011
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	ftp://ftp.funet.fi/pub/ham/unix/Linux/misc/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
@@ -21,6 +21,7 @@ PLIST_FILES=	bin/acfax
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xmu xt sm ice
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/acfax.man

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmcd
 PORTVERSION=	3.3.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.2/src/
 
@@ -20,6 +20,7 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xaw xmu xp xpm xt sm ice
 MAN1=		cda.1 xmcd.1
 MANCOMPRESSED=	no
 PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}

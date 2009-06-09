@@ -7,7 +7,7 @@
 
 PORTNAME=	xrolo
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/open-look/ \
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
@@ -22,6 +22,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 WRKSRC=		${WRKDIR}/xrolo
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		xrolo.1
 PLIST_FILES=	bin/xrolo
 

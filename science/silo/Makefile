@@ -7,7 +7,7 @@
 
 PORTNAME=	silo
 PORTVERSION=	4.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
 
@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 
-USE_XLIB=	yes
 USE_QT_VER=	3
 QT_COMPONENTS=	moc uic
 

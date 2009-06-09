@@ -7,7 +7,7 @@
 
 PORTNAME=	dynamag
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	ftp://trace.wisc.edu/pub/access_utils/unix/
 DISTNAME=	unwindows
@@ -20,6 +20,7 @@ ALL_TARGET=	dynamag
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/dynamag
 USE_IMAKE=	yes
+USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:

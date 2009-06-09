@@ -7,7 +7,7 @@
 
 PORTNAME=	xmix
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/mixers
@@ -21,6 +21,7 @@ COMMENT=	Mixer for X Window System
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xmix
+USE_XORG=	x11 xext xmu xaw xt sm ice
 
 MAN1=		xmix.1
 PLIST_FILES=	bin/xmix lib/X11/app-defaults/XMix

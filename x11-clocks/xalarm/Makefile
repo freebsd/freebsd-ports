@@ -7,7 +7,7 @@
 
 PORTNAME=	xalarm
 PORTVERSION=	3.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X based alarm clock
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 IS_INTERACTIVE=	yes
 
 .include <bsd.port.pre.mk>

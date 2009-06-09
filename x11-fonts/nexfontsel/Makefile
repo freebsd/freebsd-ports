@@ -7,7 +7,7 @@
 
 PORTNAME=	nexfontsel
 PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/ \
 		${MASTER_SITE_LOCAL}
@@ -20,6 +20,7 @@ COMMENT=	A neXtaw based replacement for xfontsel
 LIB_DEPENDS=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
 
 USE_IMAKE=	yes
+USE_XORG=	xaw
 
 MAN1=		nexfontsel.1
 

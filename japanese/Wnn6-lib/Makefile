@@ -7,7 +7,7 @@
 
 PORTNAME=	Wnn6-lib
 PORTVERSION=	2000.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk_source/
 DISTNAME=	Wnn6-SDK

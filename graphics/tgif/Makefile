@@ -7,12 +7,11 @@
 
 PORTNAME=	tgif
 PORTVERSION=	4.1.45
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 		http://groups.yahoo.com/group/tgif4-announce/files/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=tgif
+		SF
 DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 
 MAINTAINER=	bmc@clapper.org
@@ -25,6 +24,7 @@ OPTIONS=	NLS "Enable native language support" on \
 
 USE_IMAKE=	yes
 PORTDOCS=	HISTORY README
+USE_XORG=	x11 xext xt sm ice
 
 MAN1=		tgif.1
 

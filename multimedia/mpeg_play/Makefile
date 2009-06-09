@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg_play
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/ \
 		ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
@@ -18,6 +18,7 @@ COMMENT=	A program to play mpeg movies on X displays
 
 WRKSRC=		${WRKDIR}/mpeg_play
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		mpeg_play.1
 PLIST_FILES=	bin/mpeg_play
 

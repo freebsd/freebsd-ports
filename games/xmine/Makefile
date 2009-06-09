@@ -7,7 +7,7 @@
 
 PORTNAME=	xmine
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sw.ru/pub/x11/ \
 		${MASTER_SITE_LOCAL}
@@ -20,6 +20,7 @@ COMMENT=	The `Athena' port of the xminesweeper game
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 MAN6=		xmine.6
 MANCOMPRESSED=	no
 

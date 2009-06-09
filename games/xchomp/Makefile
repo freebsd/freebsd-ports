@@ -7,7 +7,7 @@
 
 PORTNAME=	xchomp
 PORTVERSION=	pl1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 
@@ -17,5 +17,6 @@ COMMENT=	Pac-man-like game under X11
 PLIST_FILES=	bin/xchomp
 WRKSRC=		${WRKDIR}/xchomp
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 
 .include <bsd.port.mk>

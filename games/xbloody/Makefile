@@ -7,7 +7,7 @@
 
 PORTNAME=	xbloody
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.kazu.kz/freebsd/
 DISTNAME=	${PORTNAME}
@@ -17,6 +17,7 @@ COMMENT=	Knife on X
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xt sm ice
 
 .include <bsd.port.pre.mk>
 

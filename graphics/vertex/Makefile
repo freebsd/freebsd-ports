@@ -7,7 +7,7 @@
 
 PORTNAME=	vertex
 PORTVERSION=	0.1.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://wolfpack.twu.net/users/wolfpack/
 
@@ -17,7 +17,6 @@ COMMENT=	A 3D modeller for generating efficient game models
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GL=		yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes

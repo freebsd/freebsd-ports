@@ -7,7 +7,7 @@
 
 PORTNAME=	xkoules
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade/koules
@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast action arcade-style game for X Window
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN6=		xkoules.6
 
 post-extract:

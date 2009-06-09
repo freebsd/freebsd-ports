@@ -7,7 +7,7 @@
 
 PORTNAME=	xbelld
 PORTVERSION=	0.2b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.meowfishies.com/code/
 DISTNAME=	${PORTNAME}-0.2beta2
@@ -19,6 +19,7 @@ COMMENT=	XBellD is a small daemon for replacing the standard X terminal bell
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm xtrap xmu xt
 USE_GNOME=	esound
 
 PLIST_FILES=	bin/xbelld \

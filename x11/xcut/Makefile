@@ -7,9 +7,9 @@
 
 PORTNAME=	xcut
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://acsys.anu.edu.au/~tpot/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -17,6 +17,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Manipulate X cut buffers from the commandline
 
 USE_IMAKE=	YES
+USE_XORG=	x11
 MAN1=		xcut.1
 PLIST_FILES=	bin/xcut
 

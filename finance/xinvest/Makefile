@@ -7,7 +7,7 @@
 
 PORTNAME=	xinvest
 PORTVERSION=	2.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance deskutils
 MASTER_SITES=	http://xinvest.sunsite.dk/
 
@@ -16,6 +16,7 @@ COMMENT=	A personal finance tracking and performance tool
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xp xpm xt
 NO_INSTALL_MANPAGES=	yes
 
 post-install:

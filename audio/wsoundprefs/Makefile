@@ -7,7 +7,7 @@
 
 PORTNAME=	wsoundprefs
 PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	WSoundPrefs-${PORTVERSION}
@@ -21,6 +21,7 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 NO_INSTALL_MANPAGES=yes
 
 .include <bsd.port.mk>

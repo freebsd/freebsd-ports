@@ -5,22 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		3dc
-PORTVERSION=		0.8.1
-PORTREVISION=	2
-CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
+PORTNAME=	3dc
+PORTVERSION=	0.8.1
+PORTREVISION=	3
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
-DISTNAME=		3Dc-${PORTVERSION}
+DISTNAME=	3Dc-${PORTVERSION}
 
-MAINTAINER=		adam-ports@blacktabby.org
+MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	3-Dimensional Chess for X Window System
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_PERL5_BUILD=yes
-USE_XORG=		xpm
-WRKSRC=			${WRKDIR}/3Dc/src
+USE_XORG=	x11 xaw xext xmu xpm xt
+WRKSRC=		${WRKDIR}/3Dc/src
 
 post-patch:
 .for file in init.c main.c piece.c stack.c xif.c

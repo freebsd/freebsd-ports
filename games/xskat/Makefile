@@ -7,7 +7,7 @@
 
 PORTNAME=	xskat
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.xskat.de/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,6 +21,7 @@ RESTRICTED=	"The altenburger card file is NOT freely redistributable!"
 .endif
 
 USE_IMAKE=	yes
+USE_XORG=	x11
 MAN1=		xskat.1 xskat-de.1
 PLIST_FILES=	bin/xskat
 

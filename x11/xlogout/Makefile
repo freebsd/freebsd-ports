@@ -7,7 +7,7 @@
 
 PORTNAME=	xlogout
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tu-darmstadt.de/pub/X11/other/
 EXTRACT_SUFX=	.tar.Z
@@ -17,6 +17,7 @@ COMMENT=	Simple logout button
 
 WRKSRC=		${WRKDIR}/xlogout
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAKE_JOBS_SAFE=	yes
 MAN1=		xlogout.1
 

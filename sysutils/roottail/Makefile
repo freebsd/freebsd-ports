@@ -7,7 +7,7 @@
 
 PORTNAME=	roottail
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 DISTNAME=	root-tail-${PORTVERSION}
@@ -24,6 +24,7 @@ COMMENT=	Print text directly to X11 root window
 MAN1=		root-tail.1
 PLIST_FILES=	bin/root-tail
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAKE_ARGS=	CC="${CC}"
 
 pre-everything::

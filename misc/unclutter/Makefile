@@ -7,7 +7,7 @@
 
 PORTNAME=	unclutter
 PORTVERSION=	8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
@@ -18,6 +18,7 @@ COMMENT=	Remove idle cursor image from screen
 
 WRKSRC=		$(WRKDIR)/unclutter
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		unclutter.1
 PLIST_FILES=	bin/unclutter
 

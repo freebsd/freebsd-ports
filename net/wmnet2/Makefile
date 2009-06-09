@@ -7,7 +7,7 @@
 
 PORTNAME=	wmnet2
 PORTVERSION=	1.06
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice network monitor for WindowMaker
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 
 MAN1=		wmnet2.1
 PLIST_FILES=	bin/wmnet2

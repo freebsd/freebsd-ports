@@ -7,7 +7,7 @@
 
 PORTNAME=	xvmines
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
@@ -18,6 +18,7 @@ COMMENT=	Simple minesweeper game for X Window System
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_IMAKE=	yes
+USE_XORG=	x11
 MAN6=		xvmines.6
 MANCOMPRESSED=	no
 

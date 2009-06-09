@@ -7,7 +7,7 @@
 
 PORTNAME=	xrobots
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-10.20
@@ -16,6 +16,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Fight off villainous robots (X version)
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xaw xext xmu xt sm ice
 WRKSRC=		${WRKDIR}/xrobots-1.0
 MAN6=		xrobots.6
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	njplot
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/njplot/archive/
 
@@ -15,7 +16,7 @@ COMMENT=	Phylogenetic tree drawing program capable of interactive manipulation
 
 .ifndef (WITHOUT_X11)
 BUILD_DEPENDS=	${LOCALBASE}/lib/ncbi/libvibrant.a:${PORTSDIR}/biology/ncbi-toolkit
-USE_XLIB=	yes
+USE_XORG=	x11 xt xmu xp
 USE_MOTIF=	yes
 .endif
 

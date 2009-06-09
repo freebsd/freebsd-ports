@@ -7,7 +7,7 @@
 
 PORTNAME=	xpx
 PORTVERSION=	1.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/xpx/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -17,6 +17,7 @@ COMMENT=	A simple pixel editing tool to make datas for KISS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 XMKMF=		xmkmf
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}

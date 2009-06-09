@@ -7,7 +7,7 @@
 
 PORTNAME=	awele
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games tk
 MASTER_SITES=	http://www-air.inria.fr/ftp/Jean-Paul/ \
 		${MASTER_SITE_XCONTRIB}
@@ -21,6 +21,7 @@ USE_TCL_BUILD=	84
 USE_TK_BUILD=	${USE_TCL_BUILD}
 WRKSRC=		${WRKDIR}/awele
 USE_IMAKE=	yes
+USE_XORG=	x11
 MAN6=		xawele.6
 PLIST_FILES=	bin/awelewish bin/xawele
 

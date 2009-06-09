@@ -7,7 +7,7 @@
 
 PORTNAME=	xkobo
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://ftp.uoknor.edu/mirrors/X/contrib/games/
@@ -17,6 +17,7 @@ MAINTAINER=	will@FreeBSD.org
 COMMENT=	Multi-way scrolling shoot 'em up game for X.  Strangely addictive
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 ALL_TARGET=	xkobo
 MAN1=		xkobo.1
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xspacewarp
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time Trek - like game for X Window System
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 NO_INSTALL_MANPAGES=	yes
 
 post-extract:

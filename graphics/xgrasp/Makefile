@@ -7,7 +7,7 @@
 
 PORTNAME=	xgrasp
 PORTVERSION=	1.7d
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display GL animations on X screen
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		glib.1 xgrasp.1
 
 NO_WRKSUBDIR=	yes

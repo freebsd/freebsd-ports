@@ -9,7 +9,7 @@
 
 PORTNAME=	mxico
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://people.freebsd.org/~maho/mxico/
 
@@ -17,6 +17,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Rotating Object on the screen (Zalgaller polyhedra)
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN6=		mxico.6
 

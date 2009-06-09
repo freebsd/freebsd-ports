@@ -6,7 +6,7 @@
 
 PORTNAME=	xmris
 PORTVERSION=	4.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A version of the Mr Do video arcade game for X11
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xaw xmu xt sm ice
 MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
 ALL_TARGET=	xmris xmred
 MAN6=		xmred.6 xmris.6 xmsit.6

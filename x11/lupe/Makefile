@@ -7,7 +7,7 @@
 
 PORTNAME=	lupe
 PORTVERSION=	0.08
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/
 DISTNAME=	lupe008	
@@ -17,6 +17,7 @@ COMMENT=	Real-time magnifying glass for X11
 
 WRKSRC=		${WRKDIR}/lupe
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 XMKMF=		xmkmf
 MAN1=		lupe.1
 

@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	2d-rewriter
-DISTVERSION=	1.3
+PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.crowdeduniverse.org/distfiles/
 
@@ -16,9 +17,10 @@ COMMENT=	Cellular automata simulator
 MAN1=		2d-rewriter.1
 MANCOMPRESSED=	yes
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 
-post-install:
 .if !defined(NOPORTEXAMPLES)
+post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif

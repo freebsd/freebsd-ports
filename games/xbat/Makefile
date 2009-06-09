@@ -7,7 +7,7 @@
 
 PORTNAME=	xbat
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
 DISTNAME=	xev111
@@ -18,6 +18,7 @@ COMMENT=	XEVIOUS like shooting game
 NO_CDROM=	Possible copyright infringement
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/Xev111
 ALL_TARGET=	xbat
 

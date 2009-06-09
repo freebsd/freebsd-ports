@@ -7,7 +7,7 @@
 
 PORTNAME=	xasteroids
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.opengroup.org/pub/ftp.x.org/R5contrib/
 DISTFILES=	xasteroids.sh.Z
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 based asteroids style arcade game
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	( cd ${WRKDIR}; zcat | sh -s )
 EXTRACT_BEFORE_ARGS=	<

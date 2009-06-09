@@ -7,7 +7,7 @@
 
 PORTNAME=	xtacy
 PORTVERSION=	1.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ultranet.com/~jjohnson/ \
 		${MASTER_SITE_SUNSITE}
@@ -18,6 +18,7 @@ MAINTAINER=	matt@bdd.net
 COMMENT=	An X11 trippy color-cycling toy
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		xtacy.1
 PLIST_FILES=	bin/xtacy
 

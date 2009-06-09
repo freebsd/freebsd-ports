@@ -7,7 +7,7 @@
 
 PORTNAME=	skkinput
 PORTVERSION=	2.06.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	skkinput2/6273
@@ -16,6 +16,7 @@ MAINTAINER=	koma2@lovepeers.org
 COMMENT=	An SKK-like Japanese input method for X11
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xt xmu
 
 OPTIONS=	DBSKKD "Use ja-dbskkd-cdb as skkserver" off \
 		RSKKSERV "Use ja-rskkserv as skkserver" off

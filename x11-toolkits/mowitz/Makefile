@@ -6,7 +6,7 @@
 
 PORTNAME=	Mowitz
 PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://siag.nu/pub/mowitz/
 
@@ -16,7 +16,7 @@ COMMENT=	This is the Mowitz ("More widgets") library
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_AUTOTOOLS=	libtool:15
-USE_XORG=	xpm
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xawm=Xaw3d

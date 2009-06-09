@@ -7,7 +7,7 @@
 
 PORTNAME=	skkinput3
 PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://downloads.sourceforge.jp/skkinput3/2222/
 DISTNAME=	skkinput-${PORTVERSION}
@@ -15,7 +15,8 @@ DISTNAME=	skkinput-${PORTVERSION}
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	An SKK-like Japanese input method for X11
 
-USE_IMAKE=		yes
+USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xext xmu xt
 
 OPTIONS=	DBSKKD "Use ja-dbskkd-cdb as skkserver" off \
 		RSKKSERV "Use ja-rskkserv as skkserver" off \

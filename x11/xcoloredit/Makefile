@@ -7,7 +7,7 @@
 
 PORTNAME=	xcoloredit
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find colour values by graphical colour mixing
 
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xcoloredit.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/xcoloredit

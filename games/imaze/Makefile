@@ -7,7 +7,7 @@
 
 PORTNAME=	imaze
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://home.tu-clausthal.de/student/iMaze/files/
 PKGNAMESUFFIX=	-${TOOLKIT}
@@ -20,9 +20,11 @@ USE_MOTIF=	yes
 TOOLKIT=	motif
 .elif defined(WITH_ATHENA)
 TOOLKIT=	athena
+USE_XORG+=	xaw
 .else
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 TOOLKIT=	xview
+USE_XORG+=	xaw
 .endif
 
 HAS_CONFIGURE=	yes
@@ -32,6 +34,7 @@ BUILD_WRKSRC=	${WRKSRC}/source
 MAKE_ENV=	SOUNDDIR=${SOUNDDIR}
 MAN6=		genlab.6 imaze.6 imazesrv.6 imazestat.6 ninja.6 xlabed.6
 MANCOMPRESSED=	no
+USE_XORG+=	x11 xt
 
 .if defined(WITHOUT_AUDIO)
 CONFIGURE_ARGS+=noaudio

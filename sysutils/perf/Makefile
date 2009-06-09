@@ -7,7 +7,7 @@
 
 PORTNAME=	perf
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.spyz.org/perf/
 
@@ -17,6 +17,7 @@ COMMENT=	Xview-based system monitoring tool
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_IMAKE=		yes
+USE_XORG=		x11 xext
 MAN1=			perf.1
 PLIST_FILES=		bin/perf
 XFREE86_HTML_MAN=	no

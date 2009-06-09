@@ -7,7 +7,7 @@
 
 PORTNAME=	xmove
 PORTVERSION=	2.0b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/xmove/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/b/beta/}
@@ -18,6 +18,7 @@ COMMENT=	Pseudoserver to support mobile X11 clients
 WRKSRC=		${WRKDIR}/xmove
 
 USE_IMAKE=	yes
+USE_XORG=	x11
 
 MAN1=		xmove.1 xmovectrl.1
 

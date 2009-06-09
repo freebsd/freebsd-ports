@@ -7,7 +7,7 @@
 
 PORTNAME=	xloadface
 PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.kazu.kz/freebsd/
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 PATCH_STRIP=	-p1
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xt
 XLOADFACEDIR=	$(LOCALBASE)/lib/X11/xloadface
 
 MAN1=		xloadface.1

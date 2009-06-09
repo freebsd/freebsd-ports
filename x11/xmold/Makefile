@@ -7,7 +7,7 @@
 
 PORTNAME=	xmold
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://cclub.cc.tut.ac.jp/pub/xwin/
 DISTNAME=	${PORTNAME}
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mold spreading over your X11 screen
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/xmold
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	sliderule
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	joerg
@@ -17,6 +17,7 @@ MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	The part of X11R3's xcalc featuring a slide rule
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MAN1=		sliderule.1
 PLIST_FILES=	bin/sliderule
 

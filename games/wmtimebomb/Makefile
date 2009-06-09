@@ -6,7 +6,7 @@
 
 PORTNAME=	wmtimebomb
 PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games windowmaker
 MASTER_SITES=	ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
 DISTNAME=	wmtimebomb.20
@@ -18,6 +18,7 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 WRKSRC=		${WRKDIR}/wmtimebomb.app
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 NO_INSTALL_MANPAGES=	yes
 
 post-install:

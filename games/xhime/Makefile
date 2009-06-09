@@ -7,7 +7,7 @@
 
 PORTNAME=	xhime
 PORTVERSION=	1.51
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.tcp-ip.or.jp/~shochan/linux/
 DISTFILES=	xhime151.tgz
@@ -17,6 +17,7 @@ COMMENT=	Resident Himechan for X Window System
 
 WRKSRC=		${WRKDIR}/xhime1.51
 USE_IMAKE=	yes
+USE_XORG=	x11 xext
 MANCOMPRESSED=	yes
 MANLANG=	. ja
 MAN6=		xhime.6

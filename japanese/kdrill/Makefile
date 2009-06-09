@@ -7,7 +7,7 @@
 
 PORTNAME=	kdrill
 PORTVERSION=	6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.bolthole.com/kdrill/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -22,6 +22,7 @@ MAN1=		kdrill.1 makedic.1 makeedict.1
 
 MANCOMPRESSED=	yes
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 RUN_DEPENDS+=	xjdic:${PORTSDIR}/japanese/edict
 
