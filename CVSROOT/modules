@@ -508,7 +508,6 @@ ap-utils                        ports/net-mgmt/ap-utils
 apache-ant                      ports/devel/apache-ant
 apache-contrib                  ports/www/apache-contrib
 apache-forrest                  ports/www/apache-forrest
-apache-jserv                    ports/www/apache-jserv
 apache-mode.el                  ports/www/apache-mode.el
 apache-solr                     ports/textproc/apache-solr
 apache-xml-security-c           ports/security/apache-xml-security-c
@@ -2573,6 +2572,7 @@ e                               ports/math/e
 e-uae                           ports/emulators/e-uae
 e00compr                        ports/devel/e00compr
 e107                            ports/www/e107
+e16                             ports/x11-wm/e16
 e16-themes                      ports/x11-themes/e16-themes
 e169-stats                      ports/net/e169-stats
 e16utils                        ports/x11-wm/e16utils
@@ -2848,7 +2848,6 @@ enigmail-seamonkey              ports/mail/enigmail-seamonkey
 enigmail-thunderbird            ports/mail/enigmail-thunderbird
 enity                           ports/x11/enity
 enjoympeg                       ports/multimedia/enjoympeg
-enlightenment                   ports/x11-wm/enlightenment
 enlightenment-devel             ports/x11-wm/enlightenment-devel
 enlightenment-docs              ports/x11-wm/enlightenment-docs
 enma                            ports/mail/enma
@@ -4118,6 +4117,7 @@ ghtool                          ports/dns/ghtool
 giblib                          ports/graphics/giblib
 gicq                            ports/net-im/gicq
 gif2png                         ports/graphics/gif2png
+giflib                          ports/graphics/giflib
 gifmerge                        ports/graphics/gifmerge
 gifsicle                        ports/graphics/gifsicle
 gift                            ports/net-p2p/gift
@@ -6280,6 +6280,7 @@ jmk-x11-fonts                   ports/x11-fonts/jmk-x11-fonts
 jmol                            ports/science/jmol
 jmp                             ports/java/jmp
 jmusic                          ports/audio/jmusic
+jnettop                         ports/net-mgmt/jnettop
 jode                            ports/java/jode
 joe                             ports/editors/joe
 joe2                            ports/editors/joe2
@@ -17801,7 +17802,6 @@ perforce                        ports/devel/perforce
 performance                     ports/devel/performance
 perl2html                       ports/textproc/perl2html
 perl5.10                        ports/lang/perl5.10
-perl5.6                         ports/lang/perl5.6
 perl5.8                         ports/lang/perl5.8
 perlbal                         ports/www/perlbal
 perlconsole                     ports/devel/perlconsole
@@ -18536,6 +18536,7 @@ pound                           ports/www/pound
 povchem                         ports/biology/povchem
 povray                          ports/graphics/povray
 povray31                        ports/graphics/povray31
+powder                          ports/games/powder
 poweradmin                      ports/dns/poweradmin
 powerarchitect                  ports/databases/powerarchitect
 powerdns                        ports/dns/powerdns
