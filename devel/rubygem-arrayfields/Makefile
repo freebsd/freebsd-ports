@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arrayfields
-PORTVERSION=	4.7.3
+PORTVERSION=	4.7.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/codeforpeople
 
