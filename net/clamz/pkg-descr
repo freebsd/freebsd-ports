@@ -1,0 +1,15 @@
+Clamz is a little command-line program to
+download MP3 files from Amazon.com's music
+store. It is intended to serve as a
+substitute for Amazon's official MP3
+Downloader, which is not free software
+(and therefore is only available in binary
+form for a limited set of platforms.)
+
+Clamz can be used to download either individual
+songs or complete albums that you have purchased
+from Amazon.
+
+Text from http://code.google.com/p/clamz/.
+
+WWW:	http://code.google.com/p/clamz/
