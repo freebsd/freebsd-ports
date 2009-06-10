@@ -7,12 +7,16 @@
 
 PORTNAME=	sceptre
 PORTVERSION=	00.317
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SCEPTRE is a general purpose circuit analysis program
+
+.if !defined(NOPORTDOCS)
+SUB_FILES+=	pkg-message
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -24,11 +28,15 @@ BROKEN=		Internal compiler error
 
 NO_WRKSUBDIR=	YES
 
+post-extract:
+	@${REINPLACE_CMD} 's,INSTDIR = /usr/local,INSTDIR = ${PREFIX},' \
+		${WRKSRC}/Makefile
+
 post-install:
 .if !defined(NOPORTDOCS)
-	  ${MKDIR} ${PREFIX}/share/doc/sceptre
-	  ${INSTALL_DATA} ${WRKSRC}/doc/doc_en.pdf ${PREFIX}/share/doc/sceptre/doc_en.pdf
-	  ${INSTALL_DATA} ${WRKSRC}/doc/doc_ger.pdf ${PREFIX}/share/doc/sceptre/doc_ger.pdf
+	${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
