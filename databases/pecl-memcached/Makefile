@@ -25,6 +25,7 @@ USE_PHP=	session
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
+CONFIGURE_ARGS+=--with-libmemcached-dir=${LOCALBASE}
 
 post-install:
 	@${CAT} ${WRKSRC}/EXPERIMENTAL
