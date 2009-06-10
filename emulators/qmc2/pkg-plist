@@ -86,6 +86,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/arcadeforeground.png
 %%DATADIR%%/img/arcademode.png
 %%DATADIR%%/img/back.png
+%%DATADIR%%/img/broom.png
 %%DATADIR%%/img/calculator.png
 %%DATADIR%%/img/camera.png
 %%DATADIR%%/img/cd.png
@@ -96,6 +97,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/disk.png
 %%DATADIR%%/img/disk2.png
 %%DATADIR%%/img/down.png
+%%DATADIR%%/img/east.png
 %%DATADIR%%/img/edit.png
 %%DATADIR%%/img/editcopy.png
 %%DATADIR%%/img/editcut.png
@@ -131,7 +133,9 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/led_on.png
 %%DATADIR%%/img/locale.png
 %%DATADIR%%/img/lock.png
+%%DATADIR%%/img/mame.ico
 %%DATADIR%%/img/mame.png
+%%DATADIR%%/img/marquee.png
 %%DATADIR%%/img/media_back.png
 %%DATADIR%%/img/media_fastbackward.png
 %%DATADIR%%/img/media_fastforward.png
@@ -139,10 +143,12 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/media_pause.png
 %%DATADIR%%/img/media_play.png
 %%DATADIR%%/img/media_stop.png
+%%DATADIR%%/img/mess.ico
 %%DATADIR%%/img/mess.png
 %%DATADIR%%/img/next-sail.png
 %%DATADIR%%/img/next.png
 %%DATADIR%%/img/no.png
+%%DATADIR%%/img/north.png
 %%DATADIR%%/img/opengl.png
 %%DATADIR%%/img/pencils.png
 %%DATADIR%%/img/previous-sail.png
@@ -157,6 +163,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/rom.png
 %%DATADIR%%/img/search.png
 %%DATADIR%%/img/sound.png
+%%DATADIR%%/img/south.png
 %%DATADIR%%/img/sphere_blue.png
 %%DATADIR%%/img/sphere_blue_bios.png
 %%DATADIR%%/img/sphere_green.png
@@ -183,6 +190,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/viewmag-.png
 %%DATADIR%%/img/viewmagfit.png
 %%DATADIR%%/img/warning.png
+%%DATADIR%%/img/west.png
 %%DATADIR%%/img/work.png
 %%DATADIR%%/img/yes.png
 %%DATADIR%%/img/zip.png
@@ -191,6 +199,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/classic/arcadeforeground.png
 %%DATADIR%%/img/classic/arcademode.png
 %%DATADIR%%/img/classic/back.png
+%%DATADIR%%/img/classic/broom.png
 %%DATADIR%%/img/classic/calculator.png
 %%DATADIR%%/img/classic/camera.png
 %%DATADIR%%/img/classic/cd.png
@@ -201,6 +210,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/classic/disk.png
 %%DATADIR%%/img/classic/disk2.png
 %%DATADIR%%/img/classic/down.png
+%%DATADIR%%/img/classic/east.png
 %%DATADIR%%/img/classic/edit.png
 %%DATADIR%%/img/classic/editcopy.png
 %%DATADIR%%/img/classic/editcut.png
@@ -236,7 +246,9 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/classic/led_on.png
 %%DATADIR%%/img/classic/locale.png
 %%DATADIR%%/img/classic/lock.png
+%%DATADIR%%/img/classic/mame.ico
 %%DATADIR%%/img/classic/mame.png
+%%DATADIR%%/img/classic/marquee.png
 %%DATADIR%%/img/classic/media_back.png
 %%DATADIR%%/img/classic/media_fastbackward.png
 %%DATADIR%%/img/classic/media_fastforward.png
@@ -244,10 +256,12 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/classic/media_pause.png
 %%DATADIR%%/img/classic/media_play.png
 %%DATADIR%%/img/classic/media_stop.png
+%%DATADIR%%/img/classic/mess.ico
 %%DATADIR%%/img/classic/mess.png
 %%DATADIR%%/img/classic/next-sail.png
 %%DATADIR%%/img/classic/next.png
 %%DATADIR%%/img/classic/no.png
+%%DATADIR%%/img/classic/north.png
 %%DATADIR%%/img/classic/opengl.png
 %%DATADIR%%/img/classic/pencils.png
 %%DATADIR%%/img/classic/previous-sail.png
@@ -262,6 +276,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/classic/rom.png
 %%DATADIR%%/img/classic/search.png
 %%DATADIR%%/img/classic/sound.png
+%%DATADIR%%/img/classic/south.png
 %%DATADIR%%/img/classic/sphere_blue.png
 %%DATADIR%%/img/classic/sphere_blue_bios.png
 %%DATADIR%%/img/classic/sphere_green.png
@@ -288,6 +303,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/classic/viewmag-.png
 %%DATADIR%%/img/classic/viewmagfit.png
 %%DATADIR%%/img/classic/warning.png
+%%DATADIR%%/img/classic/west.png
 %%DATADIR%%/img/classic/work.png
 %%DATADIR%%/img/classic/yes.png
 %%DATADIR%%/img/classic/zip.png
@@ -296,6 +312,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy/arcadeforeground.png
 %%DATADIR%%/img/crazy/arcademode.png
 %%DATADIR%%/img/crazy/back.png
+%%DATADIR%%/img/crazy/broom.png
 %%DATADIR%%/img/crazy/calculator.png
 %%DATADIR%%/img/crazy/camera.png
 %%DATADIR%%/img/crazy/cd.png
@@ -306,6 +323,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy/disk.png
 %%DATADIR%%/img/crazy/disk2.png
 %%DATADIR%%/img/crazy/down.png
+%%DATADIR%%/img/crazy/east.png
 %%DATADIR%%/img/crazy/edit.png
 %%DATADIR%%/img/crazy/editcopy.png
 %%DATADIR%%/img/crazy/editcut.png
@@ -341,7 +359,9 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy/led_on.png
 %%DATADIR%%/img/crazy/locale.png
 %%DATADIR%%/img/crazy/lock.png
+%%DATADIR%%/img/crazy/mame.ico
 %%DATADIR%%/img/crazy/mame.png
+%%DATADIR%%/img/crazy/marquee.png
 %%DATADIR%%/img/crazy/media_back.png
 %%DATADIR%%/img/crazy/media_fastbackward.png
 %%DATADIR%%/img/crazy/media_fastforward.png
@@ -349,10 +369,12 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy/media_pause.png
 %%DATADIR%%/img/crazy/media_play.png
 %%DATADIR%%/img/crazy/media_stop.png
+%%DATADIR%%/img/crazy/mess.ico
 %%DATADIR%%/img/crazy/mess.png
 %%DATADIR%%/img/crazy/next-sail.png
 %%DATADIR%%/img/crazy/next.png
 %%DATADIR%%/img/crazy/no.png
+%%DATADIR%%/img/crazy/north.png
 %%DATADIR%%/img/crazy/opengl.png
 %%DATADIR%%/img/crazy/pencils.png
 %%DATADIR%%/img/crazy/previous-sail.png
@@ -367,6 +389,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy/rom.png
 %%DATADIR%%/img/crazy/search.png
 %%DATADIR%%/img/crazy/sound.png
+%%DATADIR%%/img/crazy/south.png
 %%DATADIR%%/img/crazy/sphere_blue.png
 %%DATADIR%%/img/crazy/sphere_blue_bios.png
 %%DATADIR%%/img/crazy/sphere_green.png
@@ -393,6 +416,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy/viewmag-.png
 %%DATADIR%%/img/crazy/viewmagfit.png
 %%DATADIR%%/img/crazy/warning.png
+%%DATADIR%%/img/crazy/west.png
 %%DATADIR%%/img/crazy/work.png
 %%DATADIR%%/img/crazy/yes.png
 %%DATADIR%%/img/crazy/zip.png
@@ -401,6 +425,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy-black/arcadeforeground.png
 %%DATADIR%%/img/crazy-black/arcademode.png
 %%DATADIR%%/img/crazy-black/back.png
+%%DATADIR%%/img/crazy-black/broom.png
 %%DATADIR%%/img/crazy-black/calculator.png
 %%DATADIR%%/img/crazy-black/camera.png
 %%DATADIR%%/img/crazy-black/cd.png
@@ -411,6 +436,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy-black/disk.png
 %%DATADIR%%/img/crazy-black/disk2.png
 %%DATADIR%%/img/crazy-black/down.png
+%%DATADIR%%/img/crazy-black/east.png
 %%DATADIR%%/img/crazy-black/edit.png
 %%DATADIR%%/img/crazy-black/editcopy.png
 %%DATADIR%%/img/crazy-black/editcut.png
@@ -446,7 +472,9 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy-black/led_on.png
 %%DATADIR%%/img/crazy-black/locale.png
 %%DATADIR%%/img/crazy-black/lock.png
+%%DATADIR%%/img/crazy-black/mame.ico
 %%DATADIR%%/img/crazy-black/mame.png
+%%DATADIR%%/img/crazy-black/marquee.png
 %%DATADIR%%/img/crazy-black/media_back.png
 %%DATADIR%%/img/crazy-black/media_fastbackward.png
 %%DATADIR%%/img/crazy-black/media_fastforward.png
@@ -454,10 +482,12 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy-black/media_pause.png
 %%DATADIR%%/img/crazy-black/media_play.png
 %%DATADIR%%/img/crazy-black/media_stop.png
+%%DATADIR%%/img/crazy-black/mess.ico
 %%DATADIR%%/img/crazy-black/mess.png
 %%DATADIR%%/img/crazy-black/next-sail.png
 %%DATADIR%%/img/crazy-black/next.png
 %%DATADIR%%/img/crazy-black/no.png
+%%DATADIR%%/img/crazy-black/north.png
 %%DATADIR%%/img/crazy-black/opengl.png
 %%DATADIR%%/img/crazy-black/pencils.png
 %%DATADIR%%/img/crazy-black/previous-sail.png
@@ -472,6 +502,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy-black/rom.png
 %%DATADIR%%/img/crazy-black/search.png
 %%DATADIR%%/img/crazy-black/sound.png
+%%DATADIR%%/img/crazy-black/south.png
 %%DATADIR%%/img/crazy-black/sphere_blue.png
 %%DATADIR%%/img/crazy-black/sphere_blue_bios.png
 %%DATADIR%%/img/crazy-black/sphere_green.png
@@ -498,6 +529,7 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/img/crazy-black/viewmag-.png
 %%DATADIR%%/img/crazy-black/viewmagfit.png
 %%DATADIR%%/img/crazy-black/warning.png
+%%DATADIR%%/img/crazy-black/west.png
 %%DATADIR%%/img/crazy-black/work.png
 %%DATADIR%%/img/crazy-black/yes.png
 %%DATADIR%%/img/crazy-black/zip.png
@@ -507,9 +539,15 @@ etc/qmc2/qmc2.ini
 %%DATADIR%%/lng/qmc2_us.qm
 %%DATADIR%%/opt/SDLMAME/template.xml
 %%DATADIR%%/opt/SDLMESS/template.xml
+%%DATADIR%%/opt/MAME/template.xml
+%%DATADIR%%/opt/MESS/template.xml
+%%DATADIR%%/opt/MAMEUIFX32/template.xml
 %%DATADIR%%/opt/template.xml
 @dirrm %%DATADIR%%/opt/SDLMAME
 @dirrm %%DATADIR%%/opt/SDLMESS
+@dirrm %%DATADIR%%/opt/MAME
+@dirrm %%DATADIR%%/opt/MESS
+@dirrm %%DATADIR%%/opt/MAMEUIFX32
 @dirrm %%DATADIR%%/opt
 @dirrm %%DATADIR%%/lng
 @dirrm %%DATADIR%%/img/crazy-black
