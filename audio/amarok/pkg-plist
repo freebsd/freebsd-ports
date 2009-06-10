@@ -1063,8 +1063,6 @@ share/servicetypes/amarok_plugin.desktop
 @dirrmtry share/locale/pt
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
 @dirrmtry share/locale/nn/LC_MESSAGES
 @dirrmtry share/locale/nn
 @dirrmtry share/locale/ne/LC_MESSAGES
