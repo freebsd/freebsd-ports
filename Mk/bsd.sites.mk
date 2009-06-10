@@ -1165,7 +1165,7 @@ MASTER_SITE_SAVANNAH+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-.for mirror in garr superb-east nchc kent easynews ufpr mesh heanet
+.for mirror in superb-east nchc kent easynews ufpr mesh heanet # garr
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
