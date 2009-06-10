@@ -24,6 +24,7 @@ LIB_DEPENDS=	exiv2.7:${PORTSDIR}/graphics/exiv2 \
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui imageformats \
 		linguist_build moc_build qmake_build rcc_build uic_build
+MAKE_ENV+=	LOCALSOFT=${LOCALBASE}
 MAKE_JOBS_SAFE=	yes
 INSTALL_TARGET=	install_target install_menu install_icon install_i18n
 INSTALLS_ICONS=	yes
