@@ -27,7 +27,7 @@ USE_EMACS=	yes
 BROKEN=		Configure fails without X support
 .endif
 
-CONFIGURE_ARGS+=	--x-includes=${PREFIX}/include --x-libraries=${PREFIX}/lib
+CONFIGURE_ARGS+=	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/lib
 
 # configure --program-suffix doesn't work somehow
 MAKE_ARGS=	binsuffix="${BINSUFFIX}"
