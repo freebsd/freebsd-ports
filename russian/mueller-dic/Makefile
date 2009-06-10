@@ -7,7 +7,7 @@
 
 PORTNAME=	mueller-dic
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	russian
 MASTER_SITES=	http://www.dindin.ru/download/ \
 		http://mueller-dic.chat.ru/
