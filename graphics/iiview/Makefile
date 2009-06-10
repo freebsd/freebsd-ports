@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iiview
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -23,7 +23,6 @@ PLIST_FILES=	bin/iiview
 
 MAN1=		iiview.1
 MANCOMPRESSED=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 
 .include <bsd.port.mk>
