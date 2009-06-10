@@ -6,7 +6,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -182,7 +182,7 @@ post-patch:
 		${APR_WRKDIR}/build/apr_hints.m4
 	${FIND} ${APR_WRKDIR} ${APU_WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-	${REINPLACE_CMD} -e 's,-lpthreads,${PTHREAD_LIBS},g' \
+	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' \
 		${APR_WRKDIR}/build/apr_threads.m4 ${APR_WRKDIR}/build/apr_hints.m4 \
 		${APU_WRKDIR}/build/apu-conf.m4 
 
