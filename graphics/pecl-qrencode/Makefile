@@ -22,7 +22,7 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_BZIP2=	yes
 
-CONFIGURE_ARGS=	--with-qrencode=${PREFIX}
+CONFIGURE_ARGS=	--with-qrencode=${LOCALBASE}
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${EXTRA_LIBS}"
 
