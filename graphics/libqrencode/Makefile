@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libqrencode
-PORTVERSION=	3.0.3
+PORTVERSION=	3.1.0
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://megaui.net/fukuchi/works/qrencode/
@@ -28,6 +28,7 @@ MAN1=		qrencode.1
 
 PLIST_FILES=	bin/qrencode \
 		include/qrencode.h \
+		lib/libqrencode.la \
 		lib/libqrencode.so \
 		lib/libqrencode.so.3 \
 		libdata/pkgconfig/libqrencode.pc
