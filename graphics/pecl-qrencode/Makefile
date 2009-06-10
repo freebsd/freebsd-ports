@@ -22,7 +22,8 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_BZIP2=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ARGS=	--with-qrencode=${PREFIX}
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${EXTRA_LIBS}"
 
 .include <bsd.port.mk>
