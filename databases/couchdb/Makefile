@@ -27,7 +27,9 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		--localstatedir=/var \
-		--disable-init
+		--disable-init \
+		--with-js-include=${LOCALBASE}/include \
+		--with-js-lib=${LOCALBASE}/lib
 
 MAN1=	couchdb.1 couchjs.1
 
