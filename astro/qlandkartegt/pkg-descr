@@ -1,0 +1,18 @@
+QLandkarte GT is the ultimate outdoor aficionado's tool. It supports GPS maps in
+GeoTiff format as well as Garmin's img vector map format. Additional it is the
+PC side front end to QLandkarte M, a moving map application for mobile devices.
+And it fills the gap Garmin leaves in refusing to support Linux. QLandkarte GT
+is the proof that writing portable applications for Unix, Windows and OSX is
+feasible with a minimum of overhead. No excuses!
+
+QLandkarte GT does replace the original QLandkarte with a much more flexible
+architecture. It's not limited to a map format or device. Thus if you think your
+Magellan GPS or other should be supported, join the team. 
+
+Additionally it is a front end to the GDAL tools, to make georeferencing scanned
+maps feasible for the normal user. Compared to similar tools like QGis, it's
+target users are more on the consumer side than on the scientific one.
+QLandkarte GT might not let you select every possible feature of the GDAL tools,
+but it will simplify their use to the demands of most users.
+
+WWW: http://www.qlandkarte.org/

@@ -1,0 +1,10 @@
+bin/qlandkartegt
+share/applications/qlandkartegt.desktop
+share/pixmaps/qlandkartegt.png
+%%DATADIR%%/translations/qlandkartegt_de_DE.qm
+%%DATADIR%%/translations/qlandkartegt_fr_FR.qm
+%%DATADIR%%/translations/qlandkartegt_it_IT.qm
+%%DATADIR%%/translations/qlandkartegt_ru_RU.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
+@dirrmtry share/applications

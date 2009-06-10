@@ -67,6 +67,7 @@
     SUBDIR += py-pyfits
     SUBDIR += pyephem
     SUBDIR += pyweather
+    SUBDIR += qlandkartegt
     SUBDIR += rmap
     SUBDIR += roadmap
     SUBDIR += roadnav
