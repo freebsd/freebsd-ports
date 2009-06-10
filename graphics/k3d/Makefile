@@ -57,4 +57,9 @@ CONFIGURE_ARGS+=--without-gnome
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/local/include,${LOCALBASE}/include,' \
+		-e 's,/usr/local/lib,${LOCALBASE}/lib,' \
+		${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
