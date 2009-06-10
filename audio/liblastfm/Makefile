@@ -1,5 +1,5 @@
 # New ports collection makefile for:	liblastfm
-# Date created:				Wed Jan 1 00:48:58 EST 2006
+# Date created:				Jun 7 2009
 # Whom:					Matt Tosto <datahead4@gmail.com>
 #
 # $FreeBSD$
