@@ -57,7 +57,6 @@ CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG}
 .endif
 .endif
 
-USE_GCC=	4.3
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	epmd.sh
@@ -106,6 +105,8 @@ MAN4PREFIX=	${PREFIX}/lib/erlang
 MAN6PREFIX=	${PREFIX}/lib/erlang
 
 pre-configure:
+	@${REINPLACE_CMD} -e 's#%%CFLAGS%%#${CFLAGS}#g' ${WRKSRC}/lib/wx/configure
+
 # Check if ${JAVAC} exists.
 .if !defined(WITHOUT_JAVA)
 	@if [ ! -x ${JAVAC} ]; then \

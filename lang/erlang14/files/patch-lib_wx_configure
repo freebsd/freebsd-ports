@@ -1,0 +1,11 @@
+--- lib/wx/configure.orig	2009-06-10 10:35:03.000000000 +0800
++++ lib/wx/configure	2009-06-10 10:35:23.000000000 +0800
+@@ -3210,7 +3210,7 @@
+ 	;;
+     *)
+ 	DEBUG_CFLAGS="-g -Wall -fPIC -DDEBUG $CFLAGS"
+-	CFLAGS="-g -Wall -O2 -fPIC -fomit-frame-pointer -fno-strict-aliasing $CFLAGS"
++	CFLAGS="-Wall -fPIC -fomit-frame-pointer -fno-strict-aliasing $CFLAGS %%CFLAGS%%"
+ 	;;
+ esac
+ 
