@@ -187,7 +187,6 @@
     SUBDIR += entrans
     SUBDIR += epiphany
     SUBDIR += epiphany-extensions
-    SUBDIR += epiphany-webkit
     SUBDIR += erwn
     SUBDIR += etoile-bookmarkkit
     SUBDIR += etoile-mollusk
