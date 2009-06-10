@@ -7,3 +7,6 @@ SIZE (file-1.470-2.wbm.gz) = 928846
 MD5 (smart-status-1.470-1.wbm.gz) = 6d0847088239cba2cde3932616987fa4
 SHA256 (smart-status-1.470-1.wbm.gz) = 264764db645807aaf9e21f746abfe31b107114ba0da44fd1816cc78e1912e9b5
 SIZE (smart-status-1.470-1.wbm.gz) = 15825
+MD5 (software-1.470-2.wbm.gz) = ee712b9d60e44409aa225d6326163e77
+SHA256 (software-1.470-2.wbm.gz) = 7b228ca30149c8c1579d050d1a0068ddf86c15fbdf437272ba2285989d5dc290
+SIZE (software-1.470-2.wbm.gz) = 160429
