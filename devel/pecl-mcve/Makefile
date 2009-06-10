@@ -21,8 +21,10 @@ LIB_DEPENDS=	monetra.7:${PORTSDIR}/devel/libmonetra
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-CONFIGURE_ARGS=	--enable-mcve
-LDFLAGS+=	"-L${LOCALBASE}/lib"
-CFLAGS+=	"-I${LOCALBASE}/include"
+CONFIGURE_ARGS+=--with-mcve="${LOCALBASE}"
+
+post-patch:
+	${REINPLACE_CMD} -e '/SEARCH_PATH/ s,=",="${LOCALBASE} ${PREFIX} ,' \
+		${WRKSRC}/config.m4
 
 .include <bsd.port.mk>
