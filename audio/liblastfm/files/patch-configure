@@ -1,0 +1,17 @@
+--- configure.orig	2009-04-20 20:20:03.000000000 -0500
++++ configure	2009-04-20 21:12:07.000000000 -0500
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ source admin/utils.bash
+ 
+@@ -97,7 +97,7 @@
+         case `uname` in
+             Darwin)
+                 [ $STATIC_LINK_3RDPARTIES_ON_MAC ] || other_args="CONFIG -= app_bundle";;
+-            Linux)
++            Linux | FreeBSD)
+                 other_args="CONFIG += warn_off";;
+             *) 
+                 #Windows, hopefullly

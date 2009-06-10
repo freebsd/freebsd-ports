@@ -1,0 +1,4 @@
+liblastfm is a collection of libraries to help you integrate Last.fm services
+into your rich desktop software. It depends on Qt 4.4.
+
+WWW: http://github.com/mxcl/liblastfm/tree/master
