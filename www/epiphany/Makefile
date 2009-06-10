@@ -52,15 +52,6 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(EPHY_SLAVE) && ${EPHY_SLAVE}=="webkit"
-LIB_DEPENDS+=	webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
-CONFIGURE_ARGS+=	--with-engine=webkit
-EXTRA_CFLAGS+=	`pkg-config --cflags WebKitGtk` -I${LOCALBASE}/include/WebKit/webkit
-EXTRA_LIBS+=	`pkg-config --libs WebKitGtk`
-CONFLICTS=	epiphany-[1-9]*
-PLIST_SUB+=	GECKO="@comment "
-PLUGIN_SYMLINK=	18
-.else
 USE_GECKO+=	firefox libxul
 CONFIGURE_ARGS+=	--with-gecko=${GECKO} \
 			--with-engine=mozilla \
@@ -73,7 +64,6 @@ PLUGIN_SYMLINK=	19
 CONFIGURE_ENV+=gecko_cv_xpcom_program_check="yes"
 .else
 PLUGIN_SYMLINK=	18
-.endif
 .endif
 
 NO_WERROR=	yes
@@ -99,7 +89,6 @@ CONFIGURE_ARGS+=--enable-spell-checker
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|WebKitGdk|WebKitGtk|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; \
