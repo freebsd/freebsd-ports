@@ -15,7 +15,7 @@ DISTFILES=		BaseVisualWorks.tar.gz \
 DIST_SUBDIR=		${SUBDIR}
 EXTRACT_ONLY=
 
-MAINTAINER=		chris@chrisburkert.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A high performance Smalltalk environment
 
 USE_LINUX=		yes
