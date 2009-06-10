@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.470
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
@@ -29,7 +29,8 @@ USE_RC_SUBR=	webmin.sh
 SUB_LIST=	PERL5=${PERL}
 
 WEBMIN_MODULES=	file-1.470-2.wbm.gz \
-		smart-status-1.470-1.wbm.gz
+		smart-status-1.470-1.wbm.gz \
+		software-1.470-2.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
