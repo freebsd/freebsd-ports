@@ -22,6 +22,8 @@ QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
 BROKEN=		Does not compile with KDE 4.2
+DEPRECATED=	Abandoned upstream, use Quicklaunch applet included with KDE 4.2
+EXPIRATION_DATE=	2009-07-10
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
