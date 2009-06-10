@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lcms
-PORTVERSION=	1.18
+PORTVERSION=	1.18a
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -23,6 +23,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/lcms-1.18
 
 OPTIONS=	TIFFICC "Build color profile applier for tiff" off \
 		JPEGICC "Build color profile applier for JPEG" off
