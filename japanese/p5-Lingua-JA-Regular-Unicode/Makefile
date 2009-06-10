@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-JA-Regular-Unicode
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
