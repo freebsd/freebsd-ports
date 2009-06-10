@@ -8,11 +8,13 @@
 PORTNAME=	dbow
 PORTVERSION=	0.7
 CATEGORIES=	databases devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	dbow
+MASTER_SITES=	SF
 
 MAINTAINER=	dtynan@kalopa.com
 COMMENT=	DBOW is a database object generator for C, Perl, PHP, etc
+
+MAKE_ENV+=	MYSQL_INC=${LOCALBASE}/include/mysql \
+		MYSQL_LIB=${LOCALBASE}/lib/mysql
 
 USE_MYSQL=	yes
 
@@ -20,6 +22,8 @@ MAN1=		dbow.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|CFLAGS=|CFLAGS+=|g" \
+			-e "s|^MYSQL_INC=|MYSQL_INC?=|" \
+			-e "s|^MYSQL_LIB=|MYSQL_LIB?=|" \
 		${WRKSRC}/example/Makefile ${WRKSRC}/lib/Makefile \
 		${WRKSRC}/src/Makefile
 

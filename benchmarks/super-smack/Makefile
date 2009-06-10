@@ -26,12 +26,16 @@ OPTIONS=	MYSQL "Enable MySQL support" on \
 
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql
+CONFIGURE_ARGS+=--with-mysql \
+		--with-mysql-include=${LOCALBASE}/include/mysql \
+		--with-mysql-lib=${LOCALBASE}/lib/mysql
 .endif
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-pgsql
+CONFIGURE_ARGS+=--with-pgsql \
+		--with-pgsql-include=${LOCALBASE}/include
+		--with-pgsql-lib=${LOCALBASE}/lib
 .endif
 
 .if !defined(NOPORTDOCS)
