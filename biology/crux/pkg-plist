@@ -51,6 +51,7 @@ bin/MrRogers
 %%PYTHON_SITELIBDIR%%/Crux/include/Crux/libm.pxd
 %%PYTHON_SITELIBDIR%%/Crux/include/Crux/libc.pxd
 %%PYTHON_SITELIBDIR%%/Crux/include/Parsing.pxd
+%%PYTHON_SITELIBDIR%%/Parsing.so
 share/Crux/lib/libCx.so
 share/Crux/parsers/Fasta.log
 share/Crux/parsers/Fasta.pickle
