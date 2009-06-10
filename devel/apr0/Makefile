@@ -6,6 +6,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -37,6 +38,8 @@ USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 
+CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
+
 NO_WRKSUBDIR=	yes
 APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
 APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
@@ -49,7 +52,7 @@ APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 			--with-expat=${LOCALBASE} \
 			--with-iconv=${LOCALBASE}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ########## APR Options
 .if defined(WITHOUT_THREADS)
@@ -177,8 +180,11 @@ PLIST_SUB+=	APU_EXTRAS="@comment "
 post-patch:
 	${REINPLACE_CMD} -e 's/OSVERSION/'${OSVERSION}'/g' \
 		${APR_WRKDIR}/build/apr_hints.m4
-	${FIND} ${WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
+	${FIND} ${APR_WRKDIR} ${APU_WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
+	${REINPLACE_CMD} -e 's,-lpthreads,${PTHREAD_LIBS},g' \
+		${APR_WRKDIR}/build/apr_threads.m4 ${APR_WRKDIR}/build/apr_hints.m4 \
+		${APU_WRKDIR}/build/apu-conf.m4 
 
 run-autotools::
 	cd ${APR_WRKDIR} ; \
@@ -220,4 +226,4 @@ debug_autoconf:
 	@${ECHO} "${SETENV} ${CONFIGURE_ENV} ${SH} ./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS}"
 	@${ECHO} "${SETENV} ${CONFIGURE_ENV} ${SH} ./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
