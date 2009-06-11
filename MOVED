@@ -3981,3 +3981,4 @@ www/apache-jserv|www/tomcat6|2009-06-08|Has expired: superceeded by tomcat
 lang/perl5.6||2009-06-08|Has expired: no longer under development, use lang/perl5.10 or lang/perl5.8
 multimedia/dplay|multimedia/playd|2009-06-10|Port renamed
 www/epiphany-webkit|www/epiphany|2009-06-10|Webkit backend isn't supported.
+devel/avr-gcc-devel|devel/avr-gcc|2009-06-11|AVR-GCC 4.3.x becomes the default version.
