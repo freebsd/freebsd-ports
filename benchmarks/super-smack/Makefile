@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--with-mysql \
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql \
-		--with-pgsql-include=${LOCALBASE}/include
+		--with-pgsql-include=${LOCALBASE}/include \
 		--with-pgsql-lib=${LOCALBASE}/lib
 .endif
 
