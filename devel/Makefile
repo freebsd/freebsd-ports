@@ -85,7 +85,6 @@
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc
     SUBDIR += avr-gcc-3
-    SUBDIR += avr-gcc-devel
     SUBDIR += avr-gdb
     SUBDIR += avr-libc
     SUBDIR += avra
