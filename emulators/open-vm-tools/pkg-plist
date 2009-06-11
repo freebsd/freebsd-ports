@@ -52,6 +52,7 @@ share/vmware-tools/vm-support
 @dirrmtry etc/vmware-tools
 @dirrmtry share/open-vm-tools/tests
 @dirrmtry share/open-vm-tools
+@dirrmtry share/vmware-tools
 %%X11%%@dirrmtry share/applications
 @dirrm lib/open-vm-tools/plugins/vmsvc
 %%X11%%@dirrm lib/open-vm-tools/plugins/vmusr
