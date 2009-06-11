@@ -63,6 +63,7 @@ USE_RC_SUBR=	epmd.sh
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 REINPLACE_ARGS=	-i
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
