@@ -1,0 +1,21 @@
+--- gas/config/tc-avr.c.orig	2009-01-07 17:46:28.000000000 +0100
++++ gas/config/tc-avr.c	2009-01-07 17:51:17.000000000 +0100
+@@ -189,6 +189,7 @@
+   {"atmega1280", AVR_ISA_AVR51,   bfd_mach_avr51},
+   {"atmega1281", AVR_ISA_AVR51,   bfd_mach_avr51},
+   {"atmega1284p",AVR_ISA_AVR51,   bfd_mach_avr51},
++  {"atmega128rfa1",AVR_ISA_AVR51, bfd_mach_avr51},
+   {"at90can128", AVR_ISA_AVR51,   bfd_mach_avr51},
+   {"at90usb1286",AVR_ISA_AVR51,   bfd_mach_avr51},
+   {"at90usb1287",AVR_ISA_AVR51,   bfd_mach_avr51},
+--- gas/doc/c-avr.texi.orig	2009-01-09 12:46:10.000000000 +0100
++++ gas/doc/c-avr.texi	2009-01-09 14:43:18.000000000 +0100
+@@ -71,7 +71,7 @@
+ 
+ Instruction set avr51 is for the enhanced AVR core with exactly 128K program
+ memory space (MCU types: atmega128, atmega1280, atmega1281, atmega1284p,
+-at90can128, at90usb1286, at90usb1287).
++atmega128rfa1, at90can128, at90usb1286, at90usb1287).
+ 
+ Instruction set avr6 is for the enhanced AVR core with a 3-byte PC (MCU types:
+ atmega2560, atmega2561).

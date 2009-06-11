@@ -1,13 +1,32 @@
-Not committed.
-Patch by Anatoly Sokolov
---------------------------------------------------------------------------------
-Index: ld/emulparams/avr1.sh
-===================================================================
-RCS file: /cvs/src/src/ld/emulparams/avr1.sh,v
-retrieving revision 1.2
-diff -u -r1.2 avr1.sh
---- ld/emulparams/avr1.sh	24 May 2006 07:36:11 -0000	1.2
-+++ ld/emulparams/avr1.sh	29 Feb 2008 23:39:37 -0000
+--- ./ld/emulparams/avr4.sh.orig	2006-05-24 09:36:11.000000000 +0200
++++ ./ld/emulparams/avr4.sh	2009-01-06 17:53:32.000000000 +0100
+@@ -7,5 +7,6 @@
+ TEMPLATE_NAME=elf32
+ 
+ TEXT_LENGTH=8K
++DATA_ORIGIN=0x800060
+ DATA_LENGTH=0xffa0
+ EXTRA_EM_FILE=avrelf
+--- ./ld/emulparams/avr5.sh.orig	2006-05-24 09:36:11.000000000 +0200
++++ ./ld/emulparams/avr5.sh	2009-01-06 17:53:32.000000000 +0100
+@@ -7,5 +7,6 @@
+ TEMPLATE_NAME=elf32
+ 
+ TEXT_LENGTH=128K
++DATA_ORIGIN=0x800060
+ DATA_LENGTH=0xffa0
+ EXTRA_EM_FILE=avrelf
+--- ./ld/emulparams/avr2.sh.orig	2006-05-24 09:36:11.000000000 +0200
++++ ./ld/emulparams/avr2.sh	2009-01-06 17:53:32.000000000 +0100
+@@ -7,5 +7,6 @@
+ TEMPLATE_NAME=elf32
+ 
+ TEXT_LENGTH=8K
++DATA_ORIGIN=0x800060
+ DATA_LENGTH=0xffa0
+ EXTRA_EM_FILE=avrelf
+--- ./ld/emulparams/avr1.sh.orig	2006-05-24 09:36:11.000000000 +0200
++++ ./ld/emulparams/avr1.sh	2009-01-06 17:53:32.000000000 +0100
 @@ -7,5 +7,6 @@
  TEMPLATE_NAME=elf32
  
@@ -15,69 +34,8 @@ diff -u -r1.2 avr1.sh
 +DATA_ORIGIN=0x800060
  DATA_LENGTH=0
  EXTRA_EM_FILE=avrelf
-Index: ld/emulparams/avr2.sh
-===================================================================
-RCS file: /cvs/src/src/ld/emulparams/avr2.sh,v
-retrieving revision 1.2
-diff -u -r1.2 avr2.sh
---- ld/emulparams/avr2.sh	24 May 2006 07:36:11 -0000	1.2
-+++ ld/emulparams/avr2.sh	29 Feb 2008 23:39:37 -0000
-@@ -7,5 +7,6 @@
- TEMPLATE_NAME=elf32
- 
- TEXT_LENGTH=8K
-+DATA_ORIGIN=0x800060
- DATA_LENGTH=0xffa0
- EXTRA_EM_FILE=avrelf
-Index: ld/emulparams/avr3.sh
-===================================================================
-RCS file: /cvs/src/src/ld/emulparams/avr3.sh,v
-retrieving revision 1.2
-diff -u -r1.2 avr3.sh
---- ld/emulparams/avr3.sh	24 May 2006 07:36:11 -0000	1.2
-+++ ld/emulparams/avr3.sh	29 Feb 2008 23:39:37 -0000
-@@ -7,5 +7,6 @@
- TEMPLATE_NAME=elf32
- 
- TEXT_LENGTH=128K
-+DATA_ORIGIN=0x800060
- DATA_LENGTH=0xffa0
- EXTRA_EM_FILE=avrelf
-Index: ld/emulparams/avr4.sh
-===================================================================
-RCS file: /cvs/src/src/ld/emulparams/avr4.sh,v
-retrieving revision 1.2
-diff -u -r1.2 avr4.sh
---- ld/emulparams/avr4.sh	24 May 2006 07:36:11 -0000	1.2
-+++ ld/emulparams/avr4.sh	29 Feb 2008 23:39:37 -0000
-@@ -7,5 +7,6 @@
- TEMPLATE_NAME=elf32
- 
- TEXT_LENGTH=8K
-+DATA_ORIGIN=0x800060
- DATA_LENGTH=0xffa0
- EXTRA_EM_FILE=avrelf
-Index: ld/emulparams/avr5.sh
-===================================================================
-RCS file: /cvs/src/src/ld/emulparams/avr5.sh,v
-retrieving revision 1.2
-diff -u -r1.2 avr5.sh
---- ld/emulparams/avr5.sh	24 May 2006 07:36:11 -0000	1.2
-+++ ld/emulparams/avr5.sh	29 Feb 2008 23:39:37 -0000
-@@ -7,5 +7,6 @@
- TEMPLATE_NAME=elf32
- 
- TEXT_LENGTH=128K
-+DATA_ORIGIN=0x800060
- DATA_LENGTH=0xffa0
- EXTRA_EM_FILE=avrelf
-Index: ld/emulparams/avr6.sh
-===================================================================
-RCS file: /cvs/src/src/ld/emulparams/avr6.sh,v
-retrieving revision 1.1
-diff -u -r1.1 avr6.sh
---- ld/emulparams/avr6.sh	24 May 2006 07:36:11 -0000	1.1
-+++ ld/emulparams/avr6.sh	29 Feb 2008 23:39:37 -0000
+--- ./ld/emulparams/avr6.sh.orig	2006-05-24 09:36:11.000000000 +0200
++++ ./ld/emulparams/avr6.sh	2009-01-06 17:53:32.000000000 +0100
 @@ -7,5 +7,6 @@
  TEMPLATE_NAME=elf32
  
@@ -86,12 +44,23 @@ diff -u -r1.1 avr6.sh
 +DATA_ORIGIN=0x800200
 +DATA_LENGTH=0xfe00
  EXTRA_EM_FILE=avrelf
---- ld/scripttempl/avr.sc.orig	2008-02-19 16:36:36.382765500 -0700
-+++ ld/scripttempl/avr.sc	2008-02-19 16:41:07.653804500 -0700
-@@ -5,5 +5,5 @@ OUTPUT_ARCH(${ARCH})
+--- ./ld/emulparams/avr3.sh.orig	2006-05-24 09:36:11.000000000 +0200
++++ ./ld/emulparams/avr3.sh	2009-01-06 17:53:32.000000000 +0100
+@@ -7,5 +7,6 @@
+ TEMPLATE_NAME=elf32
+ 
+ TEXT_LENGTH=128K
++DATA_ORIGIN=0x800060
+ DATA_LENGTH=0xffa0
+ EXTRA_EM_FILE=avrelf
+--- ./ld/scripttempl/avr.sc.orig	2008-10-09 14:18:31.000000000 +0200
++++ ./ld/scripttempl/avr.sc	2009-01-06 17:53:32.000000000 +0100
+@@ -5,7 +5,7 @@
  MEMORY
  {
    text   (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
 -  data   (rw!x) : ORIGIN = 0x800060, LENGTH = $DATA_LENGTH
 +  data   (rw!x) : ORIGIN = $DATA_ORIGIN, LENGTH = $DATA_LENGTH
    eeprom (rw!x) : ORIGIN = 0x810000, LENGTH = 64K
+ }
+ 
