@@ -14,7 +14,11 @@ upgrades.
   If you have 2.5.x installed, perform an upgrade of lang/python25 to
   lang/python26 with the following command:
 
+  If using portupgrade:
   # portupgrade -o lang/python26 lang/python25
+
+  If using portmaster:
+  # portmaster -o lang/python26 lang/python25
 
   If you want to remain 2.5.x as default Python version, set the
   PYTHON_DEFAULT_VERSION variable to 'python2.5' without quotes in
@@ -28,9 +32,15 @@ upgrades.
   lang/python to assure that site-packages are made available to the new Python
   version.
 
+  If using portupgrade:
   # cd /usr/ports/lang/python && make upgrade-site-packages
 
-  This Makefile target requires ports-mgmt/portupgrade to be installed.
+  If using portmaster:
+  # cd /usr/ports/lang/python && make upgrade-site-packages -DUSE_PORTMASTER
+
+  The portmaster case can take quite some time to complete due to the lack of
+  cached information that the portupgrade suite uses (specifically pkg_which).
+  This is not the fault of portmaster.
 
 20090606:
   AFFECTS: users of java/eclipse
