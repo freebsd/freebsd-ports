@@ -7,8 +7,7 @@
 PORTNAME=	cppunit
 PORTVERSION=	1.12.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	C++ port of the JUnit framework for unit testing
@@ -37,7 +36,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -Ee "s,^(pkgconfigdatadir).*,\1 = ${LOCALBASE}/libdata/pkgconfig," \
+	@${REINPLACE_CMD} -Ee "s,^(pkgconfigdatadir).*,\1 = $$\(prefix\)/libdata/pkgconfig," \
 		${WRKSRC}/Makefile.in
 
 post-install:
