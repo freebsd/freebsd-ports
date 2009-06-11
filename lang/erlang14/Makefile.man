@@ -181,6 +181,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	etop.3 \
 	ets.3 \
 	eunit.3 \
+	eunit_surefire.3 \
 	file.3 \
 	file_sorter.3 \
 	filelib.3 \
@@ -227,6 +228,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	inviso_rt_meta.3 \
 	io.3 \
 	io_lib.3 \
+	leex.3 \
 	lib.3 \
 	lists.3 \
 	lname.3 \
@@ -236,6 +238,8 @@ MAN3=	CosEventChannelAdmin.3 \
 	math.3 \
 	megaco.3 \
 	megaco_codec_meas.3 \
+	megaco_codec_mstone1.3 \
+	megaco_codec_mstone2.3 \
 	megaco_codec_transform.3 \
 	megaco_edist_compress.3 \
 	megaco_encoder.3 \
@@ -310,6 +314,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	snmp_view_based_acm_mib.3 \
 	snmpa.3 \
 	snmpa_conf.3 \
+	snmpa_discovery_handler.3 \
 	snmpa_error.3 \
 	snmpa_error_io.3 \
 	snmpa_error_logger.3 \
@@ -334,7 +339,6 @@ MAN3=	CosEventChannelAdmin.3 \
 	ssh_sftp.3 \
 	ssh_sftpd.3 \
 	ssl.3 \
-	ssl_pkix.3 \
 	string.3 \
 	supervisor.3 \
 	supervisor_bridge.3 \
@@ -379,6 +383,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxCheckListBox.3 \
 	wxChildFocusEvent.3 \
 	wxChoice.3 \
+	wxChoicebook.3 \
 	wxClientDC.3 \
 	wxClipboard.3 \
 	wxCloseEvent.3 \
@@ -452,6 +457,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxListEvent.3 \
 	wxListItem.3 \
 	wxListView.3 \
+	wxListbook.3 \
 	wxMDIChildFrame.3 \
 	wxMDIClientWindow.3 \
 	wxMDIParentFrame.3 \
@@ -538,9 +544,11 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxToggleButton.3 \
 	wxToolBar.3 \
 	wxToolTip.3 \
+	wxToolbook.3 \
 	wxTopLevelWindow.3 \
 	wxTreeCtrl.3 \
 	wxTreeEvent.3 \
+	wxTreebook.3 \
 	wxUpdateUIEvent.3 \
 	wxWindow.3 \
 	wxWindowCreateEvent.3 \
@@ -551,6 +559,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	wx_object.3 \
 	xmerl.3 \
 	xmerl_eventp.3 \
+	xmerl_sax_parser.3 \
 	xmerl_scan.3 \
 	xmerl_xpath.3 \
 	xmerl_xs.3 \
