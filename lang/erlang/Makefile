@@ -7,7 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r13b01
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/        \
@@ -160,18 +160,21 @@ post-install:
 # Stock OTP libraries.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type f -o -type l; \
+		cd ${PREFIX} ; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
+			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type f -o -type l; \
 	done | ${SORT} >> ${ERLANG_PLIST}
 
 # Stock OTP library directories.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d -empty \
+		cd ${PREFIX} ; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
+			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type d -empty \
 		    	| ${SED} -e 's#^#@exec ${MKDIR} %D/#g'; \
 	done | ${SORT} >> ${ERLANG_PLIST}
 
 	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
+		cd ${PREFIX} ; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
+			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
 		    	| ${SED} -e 's/^/@dirrm /g'; \
 	done | ${SORT} -r >> ${ERLANG_PLIST}
 
