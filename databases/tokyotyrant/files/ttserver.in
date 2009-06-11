@@ -12,6 +12,8 @@
 name="ttserver"
 rcvar=`set_rcvar`
 
+: ${ttserver_enable:="NO"}
+
 command="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/ttserver.pid"
 
