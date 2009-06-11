@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.0.r1
-PORTREVISION=	1
+DISTVERSION=	2.1-20090609
 CATEGORIES=	misc kde
-MASTER_SITES=	SF
+MASTER_SITES=	LOCAL
+MASTER_SITE_SUBDIR=	tabthorpe
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/.rc/}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
-COMMENT=	An opensource Bible study application
+COMMENT=	An opensource Bible study tool
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword15
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.0.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python \
 		clucene.0:${PORTSDIR}/textproc/clucene
@@ -28,7 +28,7 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
 
-CONFLICTS=	bibletime*-1.7*
+CONFLICTS=	bibletime-kde4-2*
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +37,6 @@ BROKEN=	does on build on 6.x, use misc/bibletime-kde3
 .endif
 
 post-extract:
-	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 	${MKDIR} ${WRKSRC}/build
 
 do-configure:
