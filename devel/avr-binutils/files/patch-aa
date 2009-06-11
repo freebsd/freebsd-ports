@@ -1,42 +1,6 @@
---- libiberty/Makefile.in.orig	Fri Apr  7 02:01:25 2006
-+++ libiberty/Makefile.in	Mon Sep 25 21:54:25 2006
-@@ -330,7 +330,8 @@
- @MAINT@	echo stamp > stamp-functions
- 
- INSTALL_DEST = @INSTALL_DEST@
--install: install_to_$(INSTALL_DEST) install-subdir
-+#install: install_to_$(INSTALL_DEST) install-subdir
-+install:
- 
- install_to_libdir: all
- 	${mkinstalldirs} $(DESTDIR)$(libdir)$(MULTISUBDIR)
---- bfd/Makefile.in.orig	Fri Jun 23 20:17:19 2006
-+++ bfd/Makefile.in	Mon Sep 25 21:54:49 2006
-@@ -1158,7 +1158,8 @@
- 	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
- 	done
--install: install-recursive
-+#install: install-recursive
-+install:
- install-exec: install-exec-recursive
- install-data: install-data-recursive
- uninstall: uninstall-recursive
---- opcodes/Makefile.in.orig	Thu Apr  6 23:49:35 2006
-+++ opcodes/Makefile.in	Mon Sep 25 21:55:23 2006
-@@ -837,7 +837,8 @@
- 	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
- 	done
--install: install-recursive
-+#install: install-recursive
-+install:
- install-exec: install-exec-recursive
- install-data: install-data-recursive
- uninstall: uninstall-recursive
---- etc/Makefile.in.orig	Thu Apr  6 23:49:30 2006
-+++ etc/Makefile.in	Mon Sep 25 21:55:51 2006
-@@ -59,7 +59,8 @@
+--- ./etc/Makefile.in.orig	2007-03-27 20:09:32.000000000 +0200
++++ ./etc/Makefile.in	2009-01-06 17:33:01.000000000 +0100
+@@ -64,7 +64,8 @@
  HTMLFILES = standards.html configure.html
  
  all: info
@@ -46,3 +10,39 @@
  
  uninstall:
  
+--- ./libiberty/Makefile.in.orig	2008-07-24 15:51:49.000000000 +0200
++++ ./libiberty/Makefile.in	2009-01-06 17:33:01.000000000 +0100
+@@ -346,7 +346,8 @@
+ @MAINT@	echo stamp > stamp-functions
+ 
+ INSTALL_DEST = @INSTALL_DEST@
+-install: install_to_$(INSTALL_DEST) install-subdir
++#install: install_to_$(INSTALL_DEST) install-subdir
++install:
+ 
+ # This is tricky.  Even though CC in the Makefile contains
+ # multilib-specific flags, it's overridden by FLAGS_TO_PASS from the
+--- ./bfd/Makefile.in.orig	2008-10-16 15:20:48.000000000 +0200
++++ ./bfd/Makefile.in	2009-01-06 17:33:01.000000000 +0100
+@@ -1222,7 +1222,8 @@
+ 	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+-install: install-recursive
++#install: install-recursive
++install:
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
+ uninstall: uninstall-recursive
+--- ./opcodes/Makefile.in.orig	2008-09-09 10:02:19.000000000 +0200
++++ ./opcodes/Makefile.in	2009-01-06 17:33:01.000000000 +0100
+@@ -879,7 +879,8 @@
+ 	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+-install: install-recursive
++#install: install-recursive
++install:
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
+ uninstall: uninstall-recursive
