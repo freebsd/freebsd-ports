@@ -1,5 +1,4 @@
 share/doc/avr-libc/avr-libc-user-manual.pdf
-share/doc/avr-libc/avr-libc-user-manual.ps
 share/doc/avr-libc/examples/asmdemo/Makefile
 share/doc/avr-libc/examples/asmdemo/asmdemo.c
 share/doc/avr-libc/examples/asmdemo/isrs.S

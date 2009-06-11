@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.6
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -72,11 +72,10 @@ do-install:
 		 ${SED} -e 's|^\.|share/doc/avr-libc/man/man3|' \
 		 >> ${TMPPLIST})
 		${CAT} ${PLIST_DOC} >> ${TMPPLIST}
-.else
-		-${MKDIR} ${DOCSDIR}
 .endif
 		${CAT} ${PLIST} >> ${TMPPLIST}
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+		-${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} \
 			${WRKDIR}/${DISTNAME}/LICENSE \
 			${WRKDIR}/${DISTNAME}/AUTHORS \
