@@ -35,4 +35,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800045
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
