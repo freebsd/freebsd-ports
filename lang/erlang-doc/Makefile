@@ -10,6 +10,7 @@ PORTVERSION=	r13b01
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.erlang.org/documentation/doc-5.7.2/pdf/:release \
+		http://www.colby.tv/mirror/erlang-doc/r13b01/:release \
 		http://erlang.org/download/:erlangorg \
 		http://www.erlang.se/doc/:erlangse \
 		http://www.erlang.se/publications/:publications \
