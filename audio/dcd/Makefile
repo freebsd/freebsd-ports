@@ -22,6 +22,8 @@ USE_GMAKE=	yes
 MAN1=	dcd.1
 PLIST_FILES=	bin/dcd
 
+LATEST_LINK=	audio_dcd
+
 post-patch:
 	# Handle namespace collision with libcdaudio
 	${REINPLACE_CMD} -e 's|cd_stop|dcd_stop|g; s|cd_eject|dcd_eject|g; \
