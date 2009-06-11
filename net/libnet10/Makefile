@@ -23,6 +23,13 @@ WRKSRC=		${WRKDIR}/Libnet-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAN3=		libnet${PKGNAMESUFFIX}.3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+post-patch:
+	find ${WRKDIR} -name '*.[hc]' | xargs ${REINPLACE_CMD} -e 's/long/int/g'
+.endif
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/libnet.3 \
 		${MANPREFIX}/man/man3/libnet${PKGNAMESUFFIX}.3
@@ -39,4 +46,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
