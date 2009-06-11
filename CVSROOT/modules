@@ -1541,6 +1541,7 @@ clamcour                        ports/security/clamcour
 clamfilter                      ports/mail/clamfilter
 clamsmtp                        ports/security/clamsmtp
 clamtk                          ports/security/clamtk
+clamz                           ports/net/clamz
 clanlib                         ports/devel/clanlib
 claraocr                        ports/graphics/claraocr
 clarence                        ports/math/clarence
@@ -2877,7 +2878,6 @@ epic4                           ports/irc/epic4
 epic5                           ports/irc/epic5
 epiphany                        ports/www/epiphany
 epiphany-extensions             ports/www/epiphany-extensions
-epiphany-webkit                 ports/www/epiphany-webkit
 epiwm                           ports/x11-wm/epiwm
 epix                            ports/graphics/epix
 epkg                            ports/archivers/epkg
@@ -7429,6 +7429,7 @@ libkipi                         ports/graphics/libkipi
 libkmfl                         ports/textproc/libkmfl
 libksba                         ports/security/libksba
 liblas                          ports/devel/liblas
+liblastfm                       ports/audio/liblastfm
 libleaftag                      ports/devel/libleaftag
 liblinear                       ports/science/liblinear
 liblinebreak                    ports/textproc/liblinebreak
@@ -19591,6 +19592,7 @@ qix                             ports/games/qix
 qjackctl                        ports/audio/qjackctl
 qkmj                            ports/games/qkmj
 qlabels                         ports/deskutils/qlabels
+qlandkartegt                    ports/astro/qlandkartegt
 qlas                            ports/misc/qlas
 qlogtools                       ports/sysutils/qlogtools
 qlwm                            ports/x11-wm/qlwm
