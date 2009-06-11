@@ -21,6 +21,8 @@ LIB_DEPENDS=	expect543:${PORTSDIR}/lang/expect
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
+CONFIGURE_ARGS+=--with-expect=${LOCALBASE}
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 	  's/\(LIBRARY_WITH_PATH(\)expect/\1expect543/' \
