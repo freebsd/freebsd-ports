@@ -23,6 +23,8 @@ COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS=	USB "USB support" on \
 		NLS "NLS support" on \
 		GPHOTO2 "gPhoto2 support" off \
