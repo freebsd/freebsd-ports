@@ -23,6 +23,6 @@ USE_PHP_BUILD=	yes
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
 RUN_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
 
-CONFIGURE_ARGS=	--enable-mdbtools
+CONFIGURE_ARGS=	--with-mdbtools=${LOCALBASE}
 
 .include <bsd.port.mk>
