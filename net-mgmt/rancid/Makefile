@@ -47,7 +47,7 @@ NEWERCONFIG_FILES2=	etc/lg.conf
 NEWCONFIG_FILES=	rancid.conf lg.conf
 
 pre-everything::
-	@ ${ECHO} "Make sure your rancid repository is quite before upgrading; disable rancid cron jobs"
+	@ ${ECHO} "Make sure your rancid repository is quiet before upgrading; disable rancid cron jobs"
 
 post-install:
 	${LN} -s ${PREFIX}/libexec/${PORTNAME}/rancid-cvs ${PREFIX}/bin
