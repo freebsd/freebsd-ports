@@ -21,4 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/sp.h:${PORTSDIR}/net/spread4
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
+CONFIGURE_ARGS+=--with-spread=${LOCALBASE}
+
 .include <bsd.port.mk>
