@@ -24,6 +24,8 @@ USE_LDCONFIG=	yes
 
 INFO=		mpc
 
+LATEST_LINK=	math_mpc
+
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
