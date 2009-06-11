@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$FreeBSD: /tmp/pcvs/ports/mail/postfix28/files/pkg-install.in,v 1.2 2009-06-04 07:45:27 mm Exp $
+#	$FreeBSD: /tmp/pcvs/ports/mail/postfix28/files/pkg-install.in,v 1.3 2009-06-11 01:42:24 wxs Exp $
 #
 
 # If the POSTFIX_DEFAULT_MTA environment variable is set to YES, it
@@ -9,7 +9,7 @@
 
 PREFIX=${PKG_PREFIX:=%%PREFIX%%}
 ETCDIR=${ETCDIR:=%%ETCDIR%%}
-DAEMONDIR=${DAEMONDIR:=${PREFIX}/libexec/postfix}
+DAEMONDIR=${DAEMONDIR:=%%DAEMONDIR%%}
 READMEDIR=${READMEDIR:=%%READMEDIR%%}
 BATCH=${BATCH:=no}
 POSTFIX_DEFAULT_MTA=${POSTFIX_DEFAULT_MTA:=no}
@@ -114,8 +114,18 @@ if [ "$2" = "PRE-INSTALL" ]; then
 fi
 
 if [ "$2" = "POST-INSTALL" ]; then
+	SAMPLES="main.cf master.cf" 
+	for file in $SAMPLES
+	do
+		if [ ! -f ${ETCDIR}/$file ]; then
+                	cp ${DAEMONDIR}/$file ${ETCDIR}/
+		fi
+	done
+
       /bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
 	daemon_directory=${DAEMONDIR} \
+	html_directory=${READMEDIR} \
+	readme_directory=${READMEDIR} \
 	upgrade-package
 fi
 

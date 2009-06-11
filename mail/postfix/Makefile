@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -77,6 +78,9 @@ MLINKS=	sendmail.1 mailq.1 \
 	bounce.8 trace.8 \
 	smtp.8 lmtp.8
 
+HTML1=	SOHO_README.html body_checks.5.html bounce.5.html postfix-power.png \
+	scache.8.html tlsmgr.8.html
+
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
 .endif
@@ -86,7 +90,7 @@ MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 .include <bsd.port.pre.mk>
 
 POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
-			-DDEF_DAEMON_DIR=\\\"${PREFIX}/libexec/postfix\\\" \
+			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
 			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
 			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
 			-DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" \
@@ -211,12 +215,14 @@ PLIST_SUB+=	TEST="@comment "
 .endif
 
 .if defined(NOPORTDOCS)
-READMEDIR=no
+READMEDIR=	no
 .else
-READMEDIR=${DOCSDIR}
+READMEDIR=	${DOCSDIR}
 .endif
 
-SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}"
+DAEMONDIR=	${PREFIX}/libexec/postfix
+
+SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" DAEMONDIR="${DAEMONDIR}"
 SUB_FILES+=	pkg-install pkg-message
 
 # sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man
@@ -274,6 +280,12 @@ pre-patch:
 		${REINPLACE_CMD} -E -e '${REINPLACE}'
 
 post-patch:
+	@${ECHO} '$$readme_directory/SOHO_README:f:root:-:644' \
+		>> ${WRKSRC}/conf/postfix-files
+.for f in ${HTML1}
+	@${ECHO} '$$html_directory/$f:f:root:-:644' \
+		>> ${WRKSRC}/conf/postfix-files
+.endfor
 .if defined(WITH_VDA)
 	@${ECHO} '$$readme_directory/VDA_README:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
@@ -290,7 +302,10 @@ pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp
+	@cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
+		daemon_directory=${DAEMONDIR} \
+		html_directory=${READMEDIR} \
+		readme_directory=${READMEDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/bin/qshape
 	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${MANPREFIX}/man/man1
@@ -300,16 +315,11 @@ do-install:
 .for f in ${MANTEST}
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MANPREFIX}/man/man1
 .endfor
-.if !defined(NOPORTDOCS)
-	${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
-	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
-		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
-.endif
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	# Fix compressed man pages
-	@${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${PREFIX}/libexec/postfix/postfix-files
+	@${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${DAEMONDIR}/postfix-files
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
