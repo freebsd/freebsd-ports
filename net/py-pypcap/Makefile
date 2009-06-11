@@ -26,4 +26,11 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcap.so
 
 post-patch:
 	${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pcap.c
-.include <bsd.port.mk>
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800074
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
