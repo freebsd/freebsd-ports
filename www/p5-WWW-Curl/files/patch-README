@@ -1,5 +1,7 @@
---- README.orig	2008-07-06 16:51:23.000000000 +0800
-+++ README	2008-07-06 16:54:11.000000000 +0800
+Fix a typo.
+
+--- README.orig
++++ README
 @@ -3,7 +3,7 @@
  The perl module WWW::Curl provides an interface to the cURL library "libcurl".
  See http://curl.haxx.se/ for more information on cURL and libcurl.
