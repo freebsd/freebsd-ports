@@ -1,19 +1,23 @@
---- gcc/config/avr/avr.md.orig	2007-09-01 19:28:30.000000000 +0400
-+++ gcc/config/avr/avr.md	2007-11-08 02:37:48.828125000 +0300
-@@ -39,21 +39,22 @@
- 
- (define_constants
-   [(REG_X	26)
-    (REG_Y	28)
-    (REG_Z	30)
-    (REG_W	24)
+Index: gcc/config/avr/avr.md
+===================================================================
+--- gcc/config/avr/avr.md	(revision 129892)
++++ gcc/config/avr/avr.md	(working copy)
+@@ -45,21 +45,22 @@
     (REG_SP	32)
     (TMP_REGNO	0)	; temporary register r0
     (ZERO_REGNO	1)	; zero register r1
+    
+    (SREG_ADDR   0x5F)
+    (RAMPZ_ADDR  0x5B)
+    
     (UNSPEC_STRLEN	0)
--   (UNSPEC_INDEX_JMP	1)])
-+   (UNSPEC_INDEX_JMP	1)
-+   (UNSPEC_SWAP		4)])
+    (UNSPEC_INDEX_JMP	1)
+    (UNSPEC_SEI		2)
+    (UNSPEC_CLI		3)
++   (UNSPEC_SWAP		4)
+ 
+    (UNSPECV_PROLOGUE_SAVES	0)
+    (UNSPECV_EPILOGUE_RESTORES	1)])
  
  (include "predicates.md")
  (include "constraints.md")
@@ -21,10 +25,7 @@
  ;; Condition code settings.
  (define_attr "cc" "none,set_czn,set_zn,set_n,compare,clobber"
    (const_string "none"))
- 
- (define_attr "type" "branch,branch1,arith,xcall"
-   (const_string "arith"))
-@@ -1044,20 +1045,33 @@
+@@ -1185,20 +1186,33 @@
        return (AS2 (andi, %A0,lo8(%2))  CR_TAB
                AS2 (andi, %B0,hi8(%2)) CR_TAB
  	      AS2 (andi, %C0,hlo8(%2)) CR_TAB
@@ -58,7 +59,7 @@
    ""
    "@
  	or %0,%2
-@@ -1172,24 +1186,71 @@
+@@ -1313,24 +1327,71 @@
          (xor:SI (match_operand:SI 1 "register_operand" "%0")
                  (match_operand:SI 2 "register_operand" "r")))]
    ""
@@ -131,7 +132,7 @@
  
  (define_insn "ashlhi3"
    [(set (match_operand:HI 0 "register_operand"           "=r,r,r,r,r,r,r")
-@@ -1205,20 +1266,61 @@
+@@ -1346,20 +1407,61 @@
  	(ashift:SI (match_operand:SI 1 "register_operand" "0,0,0,r,0,0,0")
  		   (match_operand:QI 2 "general_operand"  "r,L,P,O,K,n,Qm")))]
    ""
@@ -193,7 +194,7 @@
    "if (!avr_peep2_scratch_safe (operands[3]))
       FAIL;")
  
-@@ -1323,21 +1425,63 @@
+@@ -1464,21 +1566,63 @@
  		     (match_operand:QI 2 "const_int_operand" "L,P,O,n")))
     (clobber (match_scratch:QI 3 "=X,X,X,&d"))]
    "reload_completed"
@@ -258,7 +259,7 @@
  
  (define_insn "lshrhi3"
    [(set (match_operand:HI 0 "register_operand"             "=r,r,r,r,r,r,r")
-@@ -1353,20 +1497,61 @@
+@@ -1494,20 +1638,61 @@
  	(lshiftrt:SI (match_operand:SI 1 "register_operand" "0,0,0,r,0,0,0")
  		     (match_operand:QI 2 "general_operand"  "r,L,P,O,K,n,Qm")))]
    ""

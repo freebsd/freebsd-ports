@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.2.2
-PORTREVISION=	2
+PORTVERSION=	4.3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
@@ -23,6 +22,8 @@ COMMENT=	FSF GCC 4.x for Atmel AVR 8-bit RISC cross-development
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
+LIB_DEPENDS=	mpfr.3:${PORTSDIR}/math/mpfr \
+		gmp.8:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
 
@@ -46,9 +47,9 @@ GNU_CONFIGURE=	yes
 ARCH=		x86_64
 .endif
 
-CONFLICTS=	avr-gcc-3*
+CONFLICTS=	avr-gcc-[34]*
 
-CONFIGURE_ARGS=	--target=avr --disable-libssp
+CONFIGURE_ARGS=	--target=avr --disable-libssp --with-gmp=${LOCALBASE}
 
 MAKE_FLAGS=	LANGUAGES="c c++"
 # get rid of that silly -mcpu=pentiumpro FreeBSD 5+ is so fond of. :-(
