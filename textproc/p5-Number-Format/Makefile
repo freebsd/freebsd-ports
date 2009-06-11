@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Number-Format
-PORTVERSION=		1.60
+PORTVERSION=		1.72a
 CATEGORIES=		textproc perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
@@ -17,6 +17,7 @@ COMMENT=		Perl extension for formatting numbers
 PERL_CONFIGURE=		yes
 
 MAN3=			Number::Format.3
+WRKSRC=			${WRKDIR}/${PORTNAME}-1.72
 
 .include <bsd.port.pre.mk>
 
