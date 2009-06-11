@@ -23,6 +23,8 @@ USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	shp
 
+CONFIGURE_ARGS+=--with-shp=${LOCALBASE}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|include/libshp|include|g' ${WRKSRC}/config.m4
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/config.m4
