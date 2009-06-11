@@ -23,6 +23,10 @@ MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800071
+BROKEN=		does not build
+.endif
+
 post-build:
 	@${REINPLACE_CMD} -e 's/-lgnugetopt //' ${WRKSRC}/cappletConf.sh
 
