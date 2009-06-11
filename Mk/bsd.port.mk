@@ -1309,6 +1309,19 @@ WITHOUT_${W}:=	true
 
 DOS2UNIX_REGEX?=	.*
 
+# At least KDE needs TMPDIR for the package building,
+# so we're setting it to the known default value.
+.if defined(PACKAGE_BUILDING)
+TMPDIR?=	/tmp
+.endif # defined(PACKAGE_BUILDING)
+
+# Respect TMPDIR passed via make.conf or similar and pass it down
+# to configure and make.
+.if defined(TMPDIR)
+MAKE_ENV+=	TMPDIR="${TMPDIR}"
+CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
+.endif # defined(TMPDIR)
+
 
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK) && !defined(INOPTIONSMK)

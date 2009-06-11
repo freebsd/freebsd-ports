@@ -117,11 +117,6 @@ QTCPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include \
 				-I${QT_PREFIX}/include -D_GETOPT_H
 QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg \
 				-L${QT_PREFIX}/lib
-.if defined(PACKAGE_BUILDING)
-TMPDIR?=	/tmp
-MAKE_ENV+=	TMPDIR="${TMPDIR}"
-CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
-.endif
 
 .if !defined(QT_NONSTANDARD)
 CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
