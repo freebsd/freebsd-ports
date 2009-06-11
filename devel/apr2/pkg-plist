@@ -1,10 +1,10 @@
 bin/apr-1-config
 bin/apu-1-config
-build-1/apr_rules.mk
-build-1/libtool
-build-1/make_exports.awk
-build-1/make_var_export.awk
-build-1/mkdir.sh
+%%DATADIR%%/build-1/apr_rules.mk
+%%DATADIR%%/build-1/libtool
+%%DATADIR%%/build-1/make_exports.awk
+%%DATADIR%%/build-1/make_var_export.awk
+%%DATADIR%%/build-1/mkdir.sh
 include/apr-1/apr.h
 include/apr-1/apr_allocator.h
 include/apr-1/apr_anylock.h
@@ -109,5 +109,6 @@ lib/libaprutil-1.so.%%SHLIB_MAJOR%%
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.la
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.a
 %%APU_EXTRAS%%@dirrm lib/apr-util-1
-@dirrm build-1
+@dirrm %%DATADIR%%/build-1
+@dirrm %%DATADIR%%
 @dirrm include/apr-1
