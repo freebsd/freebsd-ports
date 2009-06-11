@@ -4,19 +4,20 @@ Included is the basic C++ compiler, although this is only of limited
 use without a libstdc++, and it is little tested.
 
 Supported debugging formats: -gdwarf-2 [default], -gstabs
-Local patch added: recognizes 0bXXX binary constants
-Local patch added: OS_main and OS_task attributes
+Local patch added: OS_main attribute
 
 Locally added support for the following AVR devices:
 
-  ATtiny43U
-  ATtiny48/88
-  AT90PWM2B/PWM3B
-  AT90PWM216/PWM316
-  ATmega48P/88P/168P/328P
-  ATmega32HVB
-  ATmega1284
-  ATmega2560/ATmega2561
+  ATmega32C1, ATmega64C1, ATmega32M1, ATmega64M1
+  ATmega16U4, ATmega32U4, ATmega32U6
+  ATmega128RFA1
+  M3000F, M3000S, M3001B
+  AT90SCR100
+  ATtiny13A
+  ATtiny87, ATtiny167, ATtiny327
+  AT90PWM81
+  ATxmega64A1, ATxmega128A1, ATxmega64A3, ATxmega128A3, ATxmega256A3,
+  ATxmega256A3B
 
 WWW: http://gcc.gnu.org/
 WWW: http://www.nongnu.org/avr-libc/
