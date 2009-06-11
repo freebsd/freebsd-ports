@@ -24,8 +24,18 @@ do-install:
 	@${DO_NADA}
 
 # Major upgrade support
-PORTUPGRADE_CMD?=	${LOCALBASE}/sbin/portupgrade
-PKG_WHICH_CMD?=	${LOCALBASE}/sbin/pkg_which
+PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portupgrade
+PKG_WHICH_CMD=	${LOCALBASE}/sbin/pkg_which
+XARGS_CMD=	${XARGS} -0
+
+.if defined(USE_PORTMASTER)
+PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portmaster
+PORTUPGRADE_ARGS?=	""
+PKG_WHICH_CMD=	/usr/sbin/pkg_info -qW
+JOBS=	sysctl -n kern.smp.cpus
+XARGS_CMD=	${XARGS} -L 1 -0 -P $$(${JOBS})
+.endif
+
 upgrade-site-packages:
 	@if [ ! -x ${PORTUPGRADE_CMD} ]; then \
 		${ECHO_MSG} "Please install ports-mgmt/portupgrade."; \
@@ -36,12 +46,16 @@ upgrade-site-packages:
 		if [ -d ${PREFIX}/lib/python$$ver ]; then \
 			UPD=`${FIND} ${PREFIX}/lib/python$$ver \
 					-type f -print0 | \
-				${XARGS} -0 ${PKG_WHICH_CMD} | \
+				${XARGS_CMD} ${PKG_WHICH_CMD} | \
 				${GREP} -Fv '?' | \
 				${EGREP} -v '^python2?[0-5]?-2' | \
 				${SORT} -u`; \
 			if [ "$$UPD" ]; then \
-				${PORTUPGRADE_CMD} -f $$UPD; \
+				if [ -n ${PORTUPGRADE_ARGS} ]; then \
+					${PORTUPGRADE_CMD} ${PORTUPGRADE_ARGS} -f $$UPD; \
+				else \
+					${PORTUPGRADE_CMD} -f $$UPD; \
+				fi; \
 			fi; \
 		fi; \
 	 done \
