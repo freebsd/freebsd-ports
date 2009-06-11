@@ -2,7 +2,22 @@
 %%SITE_PERL%%/Net/Identica.pm
 %%SITE_PERL%%/Net/Twitter.pm
 %%SITE_PERL%%/Net/Twitter/Search.pm
+%%SITE_PERL%%/Net/Twitter/OAuth/UserAgent.pm
+%%SITE_PERL%%/Net/Twitter/Role/API/TwitterVision.pm
+%%SITE_PERL%%/Net/Twitter/Role/API/REST.pm
+%%SITE_PERL%%/Net/Twitter/Role/API/Search.pm
+%%SITE_PERL%%/Net/Twitter/Role/OAuth.pm
+%%SITE_PERL%%/Net/Twitter/Role/WrapError.pm
+%%SITE_PERL%%/Net/Twitter/Role/Legacy.pm
+%%SITE_PERL%%/Net/Twitter/Error.pm
+%%SITE_PERL%%/Net/Twitter/API.pm
+%%SITE_PERL%%/Net/Twitter/Core.pm
+%%SITE_PERL%%/Net/Twitter/OAuth.pm
+%%SITE_PERL%%/Net/Twitter.pod
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Twitter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/Twitter
+@dirrm %%SITE_PERL%%/Net/Twitter/Role/API
+@dirrm %%SITE_PERL%%/Net/Twitter/Role
+@dirrm %%SITE_PERL%%/Net/Twitter/OAuth
+@dirrmtry %%SITE_PERL%%/Net/Twitter
 @dirrmtry %%SITE_PERL%%/Net
