@@ -374,7 +374,11 @@ sdlimage_f8_FILE=	${LINUXBASE}/usr/lib/libSDL_image-1.2.so.0.1.5
 sdlimage_f10_FILE=	${LINUXBASE}/usr/lib/libSDL_image-1.2.so.0.1.5
 sdlimage_DETECT=	${sdlimage${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 sdlimage_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-sdl_image
+.  if ${LINUX_DIST_SUFFIX} == ""
 sdlimage_DEPENDS=	sdl12
+.  else
+sdlimage_DEPENDS=	jpeg png sdl12 tiff
+.  endif
 
 sdlmixer_FILE=		${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0.2.4
 sdlmixer_f8_FILE=	${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0.2.6
