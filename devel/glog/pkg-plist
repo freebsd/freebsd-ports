@@ -7,7 +7,7 @@ lib/libglog.so.0
 lib/libglog.so
 lib/libglog.la
 lib/libglog.a
-lib/pkgconfig/libglog.pc
+libdata/pkgconfig/libglog.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -18,5 +18,4 @@ lib/pkgconfig/libglog.pc
 %%PORTDOCS%%%%DOCSDIR%%/designstyle.css
 %%PORTDOCS%%%%DOCSDIR%%/glog.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/pkgconfig
 @dirrmtry include/glog
