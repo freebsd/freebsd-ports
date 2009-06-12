@@ -1,7 +1,7 @@
 ****  To setup dhcpd, you may have to copy %%PREFIX%%/etc/dhcpd.conf.sample
       to %%PREFIX%%/etc/dhcpd.conf for editing.
 
-****  This port installs dhcp daemon, but don't invokes dhcpd by default. If
+****  This port installs dhcp daemon, but doesn't invoke dhcpd by default. If
       you want to invoke dhcpd at startup, put these lines into /etc/rc.conf.
 
 	    dhcpd_enable="YES"				# dhcpd enabled?

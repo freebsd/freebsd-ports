@@ -1,4 +1,4 @@
-****  This port installs dhcp relay daemon, but don't invokes dhcrelay by
+****  This port installs dhcp relay daemon, but doesn't invoke dhcrelay by
       default. If you want to invoke dhcrelay at startup, put these lines
       into /etc/rc.conf.
 
