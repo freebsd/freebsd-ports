@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nvidia-xconfig
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	185.19
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_NVIDIA:S,$,XFree86/${PORTNAME}/,} \
-		${MASTER_SITE_LOCAL:S,$,bland/,}
+MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-xconfig/ \
+		ftp://download1.nvidia.com/XFree86/nvidia-xconfig/
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Tool to manipulate X configuration files for the NVidia driver
@@ -18,6 +17,8 @@ COMMENT=	Tool to manipulate X configuration files for the NVidia driver
 USE_GMAKE=	yes
 
 MAKE_ENV=	ROOT=${PREFIX}
+
+WRKSRC=		${WRKDIR}/nvidia-xconfig-1.0
 
 MAN1=		nvidia-xconfig.1
 PLIST_FILES=	bin/nvidia-xconfig
