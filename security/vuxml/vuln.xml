@@ -34,6 +34,83 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="da185955-5738-11de-b857-000f20797ede">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.20_8,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<name>linux-firefox-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>firefox3</name>
+	<range><lt>3.0.0.11</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><lt>2.0.0.22</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Foundation  reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/firefox30.html">
+	  <p>MFSA 2009-32 JavaScript chrome privilege escalation</p>
+	  <p>MFSA 2009-31 XUL scripts bypass content-policy checks</p>
+	  <p>MFSA 2009-30 Incorrect principal set for file: resources
+	    loaded via location bar</p>
+	  <p>MFSA 2009-29 Arbitrary code execution using event listeners
+	    attached to an element whose owner document is null</p>
+	  <p>MFSA 2009-28 Race condition while accessing the private data
+	    of a NPObject JS wrapper class object</p>
+	  <p>MFSA 2009-27 SSL tampering via non-200 responses to proxy
+	    CONNECT requests</p>
+	  <p>MFSA 2009-26 Arbitrary domain cookie access by local file:
+	    resources</p>
+	  <p>MFSA 2009-25 URL spoofing with invalid unicode characters</p>
+	  <p>MFSA 2009-24 Crashes with evidence of memory corruption (rv:1.9.0.11)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-1392</cvename>
+      <cvename>CVE-2009-1832</cvename>
+      <cvename>CVE-2009-1833</cvename>
+      <cvename>CVE-2009-1834</cvename>
+      <cvename>CVE-2009-1835</cvename>
+      <cvename>CVE-2009-1836</cvename>
+      <cvename>CVE-2009-1837</cvename>
+      <cvename>CVE-2009-1838</cvename>
+      <cvename>CVE-2009-1839</cvename>
+      <cvename>CVE-2009-1840</cvename>
+      <cvename>CVE-2009-1841</cvename>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-24.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-25.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-26.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-27.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-28.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-29.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-30.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-31.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-32.html</url>
+      <url>http://secunia.com/advisories/35331/</url>
+    </references>
+    <dates>
+      <discovery>2009-06-11</discovery>
+      <entry>2009-06-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eb9212f7-526b-11de-bbf2-001b77d09812">
     <topic>apr -- multiple vulnerabilities</topic>
     <affects>
