@@ -1,11 +1,214 @@
+%%DATADIR%%/data/glade/about_dialog.glade
+%%DATADIR%%/data/glade/collection_manager.glade
+%%DATADIR%%/data/glade/collection_panel.glade
+%%DATADIR%%/data/glade/cover_prefs_pane.glade
+%%DATADIR%%/data/glade/coverchooser.glade
+%%DATADIR%%/data/glade/covermanager.glade
+%%DATADIR%%/data/glade/coverwindow.glade
+%%DATADIR%%/data/glade/device_manager.glade
+%%DATADIR%%/data/glade/files_panel.glade
+%%DATADIR%%/data/glade/general_prefs_pane.glade
+%%DATADIR%%/data/glade/main.glade
+%%DATADIR%%/data/glade/osd_prefs_pane.glade
+%%DATADIR%%/data/glade/osd_window.glade
+%%DATADIR%%/data/glade/playback_prefs_pane.glade
+%%DATADIR%%/data/glade/playlists_panel.glade
+%%DATADIR%%/data/glade/plugin_dialog.glade
+%%DATADIR%%/data/glade/preferences_dialog.glade
+%%DATADIR%%/data/glade/queue_dialog.glade
+%%DATADIR%%/data/glade/radio_panel.glade
+%%DATADIR%%/data/glade/splash.glade
+%%DATADIR%%/data/images/artist.png
+%%DATADIR%%/data/images/brightstar.png
+%%DATADIR%%/data/images/exailelogo.png
+%%DATADIR%%/data/images/genre.png
+%%DATADIR%%/data/images/icon.png
+%%DATADIR%%/data/images/largeicon.png
+%%DATADIR%%/data/images/nocover.png
+%%DATADIR%%/data/images/playlist.png
+%%DATADIR%%/data/images/splash.png
+%%DATADIR%%/data/images/star.png
+%%DATADIR%%/data/images/track.png
+%%DATADIR%%/data/images/trayicon.png
+%%DATADIR%%/data/images/year.png
+%%DATADIR%%/plugins/amazoncovers/PLUGININFO
+%%DATADIR%%/plugins/amazoncovers/__init__.py
+%%DATADIR%%/plugins/amazoncovers/__init__.pyc
+%%DATADIR%%/plugins/amazoncovers/__init__.pyo
+%%DATADIR%%/plugins/amazoncovers/_ecs.py
+%%DATADIR%%/plugins/amazoncovers/_ecs.pyc
+%%DATADIR%%/plugins/amazoncovers/_ecs.pyo
+%%DATADIR%%/plugins/amazoncovers/test.py
+%%DATADIR%%/plugins/amazoncovers/test.pyc
+%%DATADIR%%/plugins/amazoncovers/test.pyo
+%%DATADIR%%/plugins/audioscrobbler/PLUGININFO
+%%DATADIR%%/plugins/audioscrobbler/__init__.py
+%%DATADIR%%/plugins/audioscrobbler/__init__.pyc
+%%DATADIR%%/plugins/audioscrobbler/__init__.pyo
+%%DATADIR%%/plugins/audioscrobbler/_scrobbler.py
+%%DATADIR%%/plugins/audioscrobbler/_scrobbler.pyc
+%%DATADIR%%/plugins/audioscrobbler/_scrobbler.pyo
+%%DATADIR%%/plugins/audioscrobbler/asprefs.py
+%%DATADIR%%/plugins/audioscrobbler/asprefs.pyc
+%%DATADIR%%/plugins/audioscrobbler/asprefs.pyo
+%%DATADIR%%/plugins/audioscrobbler/asprefs_pane.glade
+%%DATADIR%%/plugins/cd/PLUGININFO
+%%DATADIR%%/plugins/cd/__init__.py
+%%DATADIR%%/plugins/cd/__init__.pyc
+%%DATADIR%%/plugins/cd/__init__.pyo
+%%DATADIR%%/plugins/gnomemmkeys/PLUGININFO
+%%DATADIR%%/plugins/gnomemmkeys/__init__.py
+%%DATADIR%%/plugins/gnomemmkeys/__init__.pyc
+%%DATADIR%%/plugins/gnomemmkeys/__init__.pyo
+%%DATADIR%%/plugins/ipod/PLUGININFO
+%%DATADIR%%/plugins/ipod/__init__.py
+%%DATADIR%%/plugins/ipod/__init__.pyc
+%%DATADIR%%/plugins/ipod/__init__.pyo
+%%DATADIR%%/plugins/lastfmdynamic/PLUGININFO
+%%DATADIR%%/plugins/lastfmdynamic/__init__.py
+%%DATADIR%%/plugins/lastfmdynamic/__init__.pyc
+%%DATADIR%%/plugins/lastfmdynamic/__init__.pyo
+%%DATADIR%%/plugins/lastfmdynamic/test.py
+%%DATADIR%%/plugins/lastfmdynamic/test.pyc
+%%DATADIR%%/plugins/lastfmdynamic/test.pyo
+%%DATADIR%%/plugins/lastfmradio/COPYING.txt
+%%DATADIR%%/plugins/lastfmradio/ChangeLog.txt
+%%DATADIR%%/plugins/lastfmradio/PLUGININFO
+%%DATADIR%%/plugins/lastfmradio/README.txt
+%%DATADIR%%/plugins/lastfmradio/__init__.py
+%%DATADIR%%/plugins/lastfmradio/__init__.pyc
+%%DATADIR%%/plugins/lastfmradio/__init__.pyo
+%%DATADIR%%/plugins/lastfmradio/_scrobbler.py
+%%DATADIR%%/plugins/lastfmradio/_scrobbler.pyc
+%%DATADIR%%/plugins/lastfmradio/_scrobbler.pyo
+%%DATADIR%%/plugins/lastfmradio/bookmarks.txt
+%%DATADIR%%/plugins/lastfmradio/config.py
+%%DATADIR%%/plugins/lastfmradio/config.pyc
+%%DATADIR%%/plugins/lastfmradio/config.pyo
+%%DATADIR%%/plugins/lastfmradio/data/album.png
+%%DATADIR%%/plugins/lastfmradio/data/artist.png
+%%DATADIR%%/plugins/lastfmradio/data/default.css
+%%DATADIR%%/plugins/lastfmradio/data/default.html
+%%DATADIR%%/plugins/lastfmradio/data/favicon.ico
+%%DATADIR%%/plugins/lastfmradio/data/main.js
+%%DATADIR%%/plugins/lastfmradio/data/nice_favicon.png
+%%DATADIR%%/plugins/lastfmradio/data/noalbum_medium.gif
+%%DATADIR%%/plugins/lastfmradio/data/sidebar.css
+%%DATADIR%%/plugins/lastfmradio/data/sidebar.html
+%%DATADIR%%/plugins/lastfmradio/data/song.png
+%%DATADIR%%/plugins/lastfmradio/httpclient.py
+%%DATADIR%%/plugins/lastfmradio/httpclient.pyc
+%%DATADIR%%/plugins/lastfmradio/httpclient.pyo
+%%DATADIR%%/plugins/lastfmradio/lastfm.py
+%%DATADIR%%/plugins/lastfmradio/lastfm.pyc
+%%DATADIR%%/plugins/lastfmradio/lastfm.pyo
+%%DATADIR%%/plugins/lastfmradio/lastfmchangestation.py
+%%DATADIR%%/plugins/lastfmradio/lastfmchangestation.pyc
+%%DATADIR%%/plugins/lastfmradio/lastfmchangestation.pyo
+%%DATADIR%%/plugins/lastfmradio/lastfmmain.py
+%%DATADIR%%/plugins/lastfmradio/lastfmmain.pyc
+%%DATADIR%%/plugins/lastfmradio/lastfmmain.pyo
+%%DATADIR%%/plugins/lastfmradio/playlist.py
+%%DATADIR%%/plugins/lastfmradio/playlist.pyc
+%%DATADIR%%/plugins/lastfmradio/playlist.pyo
+%%DATADIR%%/plugins/lastfmradio/xspf.py
+%%DATADIR%%/plugins/lastfmradio/xspf.pyc
+%%DATADIR%%/plugins/lastfmradio/xspf.pyo
+%%DATADIR%%/plugins/lyricwiki/PLUGININFO
+%%DATADIR%%/plugins/lyricwiki/__init__.py
+%%DATADIR%%/plugins/lyricwiki/__init__.pyc
+%%DATADIR%%/plugins/lyricwiki/__init__.pyo
+%%DATADIR%%/plugins/lyricwiki/test.py
+%%DATADIR%%/plugins/lyricwiki/test.pyc
+%%DATADIR%%/plugins/lyricwiki/test.pyo
+%%DATADIR%%/plugins/massstorage/PLUGININFO
+%%DATADIR%%/plugins/massstorage/__init__.py
+%%DATADIR%%/plugins/massstorage/__init__.pyc
+%%DATADIR%%/plugins/massstorage/__init__.pyo
+%%DATADIR%%/plugins/notify/PLUGININFO
+%%DATADIR%%/plugins/notify/__init__.py
+%%DATADIR%%/plugins/notify/__init__.pyc
+%%DATADIR%%/plugins/notify/__init__.pyo
+%%DATADIR%%/plugins/notify/notify_cover.py
+%%DATADIR%%/plugins/notify/notify_cover.pyc
+%%DATADIR%%/plugins/notify/notify_cover.pyo
+%%DATADIR%%/plugins/notify/notifyprefs.py
+%%DATADIR%%/plugins/notify/notifyprefs.pyc
+%%DATADIR%%/plugins/notify/notifyprefs.pyo
+%%DATADIR%%/plugins/notify/notifyprefs_pane.glade
+%%DATADIR%%/plugins/notify/test.py
+%%DATADIR%%/plugins/notify/test.pyc
+%%DATADIR%%/plugins/notify/test.pyo
+%%DATADIR%%/plugins/shoutcast/PLUGININFO
+%%DATADIR%%/plugins/shoutcast/__init__.py
+%%DATADIR%%/plugins/shoutcast/__init__.pyc
+%%DATADIR%%/plugins/shoutcast/__init__.pyo
+%%DATADIR%%/plugins/shoutcast/test.py
+%%DATADIR%%/plugins/shoutcast/test.pyc
+%%DATADIR%%/plugins/shoutcast/test.pyo
+%%NLS%%share/locale/an/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/br/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/da/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/de/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/el/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/es/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/et/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/frp/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/he/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/id/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/it/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ps/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/sw/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/te/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/tl/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/exaile.mo
 bin/exaile
 lib/exaile/exaile.py
-lib/exaile/lib/__init__.py
-lib/exaile/lib/__init__.pyc
-lib/exaile/lib/__init__.pyo
-lib/exaile/lib/feedparser.py
-lib/exaile/lib/feedparser.pyc
-lib/exaile/lib/feedparser.pyo
 lib/exaile/xl/__init__.py
 lib/exaile/xl/__init__.pyc
 lib/exaile/xl/__init__.pyo
@@ -132,6 +335,9 @@ lib/exaile/xlgui/commondialogs.pyo
 lib/exaile/xlgui/cover.py
 lib/exaile/xlgui/cover.pyc
 lib/exaile/xlgui/cover.pyo
+lib/exaile/xlgui/devices.py
+lib/exaile/xlgui/devices.pyc
+lib/exaile/xlgui/devices.pyo
 lib/exaile/xlgui/filtergui.py
 lib/exaile/xlgui/filtergui.pyc
 lib/exaile/xlgui/filtergui.pyo
@@ -183,219 +389,39 @@ lib/exaile/xlgui/prefs/general_prefs.pyo
 lib/exaile/xlgui/prefs/osd_prefs.py
 lib/exaile/xlgui/prefs/osd_prefs.pyc
 lib/exaile/xlgui/prefs/osd_prefs.pyo
+lib/exaile/xlgui/prefs/playback_prefs.py
+lib/exaile/xlgui/prefs/playback_prefs.pyc
+lib/exaile/xlgui/prefs/playback_prefs.pyo
 lib/exaile/xlgui/prefs/widgets.py
 lib/exaile/xlgui/prefs/widgets.pyc
 lib/exaile/xlgui/prefs/widgets.pyo
 lib/exaile/xlgui/progress.py
 lib/exaile/xlgui/progress.pyc
 lib/exaile/xlgui/progress.pyo
+lib/exaile/xlgui/queue.py
+lib/exaile/xlgui/queue.pyc
+lib/exaile/xlgui/queue.pyo
 lib/exaile/xlgui/tray.py
 lib/exaile/xlgui/tray.pyc
 lib/exaile/xlgui/tray.pyo
 share/applications/exaile.desktop
-%%DATADIR%%/data/glade/about_dialog.glade
-%%DATADIR%%/data/glade/collection_manager.glade
-%%DATADIR%%/data/glade/collection_panel.glade
-%%DATADIR%%/data/glade/cover_prefs_pane.glade
-%%DATADIR%%/data/glade/coverchooser.glade
-%%DATADIR%%/data/glade/covermanager.glade
-%%DATADIR%%/data/glade/coverwindow.glade
-%%DATADIR%%/data/glade/device_manager.glade
-%%DATADIR%%/data/glade/files_panel.glade
-%%DATADIR%%/data/glade/general_prefs_pane.glade
-%%DATADIR%%/data/glade/main.glade
-%%DATADIR%%/data/glade/osd_prefs_pane.glade
-%%DATADIR%%/data/glade/osd_window.glade
-%%DATADIR%%/data/glade/playlists_panel.glade
-%%DATADIR%%/data/glade/plugin_dialog.glade
-%%DATADIR%%/data/glade/preferences_dialog.glade
-%%DATADIR%%/data/glade/radio_panel.glade
-%%DATADIR%%/data/glade/splash.glade
-%%DATADIR%%/data/images/artist.png
-%%DATADIR%%/data/images/exailelogo.png
-%%DATADIR%%/data/images/genre.png
-%%DATADIR%%/data/images/icon.png
-%%DATADIR%%/data/images/largeicon.png
-%%DATADIR%%/data/images/nocover.png
-%%DATADIR%%/data/images/playlist.png
-%%DATADIR%%/data/images/splash.png
-%%DATADIR%%/data/images/star.png
-%%DATADIR%%/data/images/track.png
-%%DATADIR%%/data/images/trayicon.png
-%%DATADIR%%/data/images/year.png
-%%DATADIR%%/plugins/amazoncovers/PLUGININFO
-%%DATADIR%%/plugins/amazoncovers/__init__.py
-%%DATADIR%%/plugins/amazoncovers/__init__.pyc
-%%DATADIR%%/plugins/amazoncovers/__init__.pyo
-%%DATADIR%%/plugins/amazoncovers/_ecs.py
-%%DATADIR%%/plugins/amazoncovers/_ecs.pyc
-%%DATADIR%%/plugins/amazoncovers/_ecs.pyo
-%%DATADIR%%/plugins/amazoncovers/test.py
-%%DATADIR%%/plugins/amazoncovers/test.pyc
-%%DATADIR%%/plugins/amazoncovers/test.pyo
-%%DATADIR%%/plugins/audioscrobbler/PLUGININFO
-%%DATADIR%%/plugins/audioscrobbler/__init__.py
-%%DATADIR%%/plugins/audioscrobbler/__init__.pyc
-%%DATADIR%%/plugins/audioscrobbler/__init__.pyo
-%%DATADIR%%/plugins/audioscrobbler/_scrobbler.py
-%%DATADIR%%/plugins/audioscrobbler/_scrobbler.pyc
-%%DATADIR%%/plugins/audioscrobbler/_scrobbler.pyo
-%%DATADIR%%/plugins/audioscrobbler/asprefs.py
-%%DATADIR%%/plugins/audioscrobbler/asprefs.pyc
-%%DATADIR%%/plugins/audioscrobbler/asprefs.pyo
-%%DATADIR%%/plugins/audioscrobbler/asprefs_pane.glade
-%%DATADIR%%/plugins/cd/PLUGININFO
-%%DATADIR%%/plugins/cd/__init__.py
-%%DATADIR%%/plugins/cd/__init__.pyc
-%%DATADIR%%/plugins/cd/__init__.pyo
-%%DATADIR%%/plugins/gnomemmkeys/PLUGININFO
-%%DATADIR%%/plugins/gnomemmkeys/__init__.py
-%%DATADIR%%/plugins/gnomemmkeys/__init__.pyc
-%%DATADIR%%/plugins/gnomemmkeys/__init__.pyo
-%%DATADIR%%/plugins/lastfmdynamic/PLUGININFO
-%%DATADIR%%/plugins/lastfmdynamic/__init__.py
-%%DATADIR%%/plugins/lastfmdynamic/__init__.pyc
-%%DATADIR%%/plugins/lastfmdynamic/__init__.pyo
-%%DATADIR%%/plugins/lastfmdynamic/test.py
-%%DATADIR%%/plugins/lastfmdynamic/test.pyc
-%%DATADIR%%/plugins/lastfmdynamic/test.pyo
-%%DATADIR%%/plugins/lastfmradio/COPYING.txt
-%%DATADIR%%/plugins/lastfmradio/ChangeLog.txt
-%%DATADIR%%/plugins/lastfmradio/PLUGININFO
-%%DATADIR%%/plugins/lastfmradio/README.txt
-%%DATADIR%%/plugins/lastfmradio/__init__.py
-%%DATADIR%%/plugins/lastfmradio/__init__.pyc
-%%DATADIR%%/plugins/lastfmradio/__init__.pyo
-%%DATADIR%%/plugins/lastfmradio/_scrobbler.py
-%%DATADIR%%/plugins/lastfmradio/_scrobbler.pyc
-%%DATADIR%%/plugins/lastfmradio/_scrobbler.pyo
-%%DATADIR%%/plugins/lastfmradio/bookmarks.txt
-%%DATADIR%%/plugins/lastfmradio/config.py
-%%DATADIR%%/plugins/lastfmradio/config.pyc
-%%DATADIR%%/plugins/lastfmradio/config.pyo
-%%DATADIR%%/plugins/lastfmradio/data/album.png
-%%DATADIR%%/plugins/lastfmradio/data/artist.png
-%%DATADIR%%/plugins/lastfmradio/data/default.css
-%%DATADIR%%/plugins/lastfmradio/data/default.html
-%%DATADIR%%/plugins/lastfmradio/data/favicon.ico
-%%DATADIR%%/plugins/lastfmradio/data/main.js
-%%DATADIR%%/plugins/lastfmradio/data/nice_favicon.png
-%%DATADIR%%/plugins/lastfmradio/data/noalbum_medium.gif
-%%DATADIR%%/plugins/lastfmradio/data/sidebar.css
-%%DATADIR%%/plugins/lastfmradio/data/sidebar.html
-%%DATADIR%%/plugins/lastfmradio/data/song.png
-%%DATADIR%%/plugins/lastfmradio/httpclient.py
-%%DATADIR%%/plugins/lastfmradio/httpclient.pyc
-%%DATADIR%%/plugins/lastfmradio/httpclient.pyo
-%%DATADIR%%/plugins/lastfmradio/lastfm.py
-%%DATADIR%%/plugins/lastfmradio/lastfm.pyc
-%%DATADIR%%/plugins/lastfmradio/lastfm.pyo
-%%DATADIR%%/plugins/lastfmradio/lastfmchangestation.py
-%%DATADIR%%/plugins/lastfmradio/lastfmchangestation.pyc
-%%DATADIR%%/plugins/lastfmradio/lastfmchangestation.pyo
-%%DATADIR%%/plugins/lastfmradio/lastfmmain.py
-%%DATADIR%%/plugins/lastfmradio/lastfmmain.pyc
-%%DATADIR%%/plugins/lastfmradio/lastfmmain.pyo
-%%DATADIR%%/plugins/lastfmradio/playlist.py
-%%DATADIR%%/plugins/lastfmradio/playlist.pyc
-%%DATADIR%%/plugins/lastfmradio/playlist.pyo
-%%DATADIR%%/plugins/lastfmradio/xspf.py
-%%DATADIR%%/plugins/lastfmradio/xspf.pyc
-%%DATADIR%%/plugins/lastfmradio/xspf.pyo
-%%DATADIR%%/plugins/lyricwiki/PLUGININFO
-%%DATADIR%%/plugins/lyricwiki/__init__.py
-%%DATADIR%%/plugins/lyricwiki/__init__.pyc
-%%DATADIR%%/plugins/lyricwiki/__init__.pyo
-%%DATADIR%%/plugins/lyricwiki/test.py
-%%DATADIR%%/plugins/lyricwiki/test.pyc
-%%DATADIR%%/plugins/lyricwiki/test.pyo
-%%DATADIR%%/plugins/notify/PLUGININFO
-%%DATADIR%%/plugins/notify/__init__.py
-%%DATADIR%%/plugins/notify/__init__.pyc
-%%DATADIR%%/plugins/notify/__init__.pyo
-%%DATADIR%%/plugins/notify/test.py
-%%DATADIR%%/plugins/notify/test.pyc
-%%DATADIR%%/plugins/notify/test.pyo
-%%DATADIR%%/plugins/shoutcast/PLUGININFO
-%%DATADIR%%/plugins/shoutcast/__init__.py
-%%DATADIR%%/plugins/shoutcast/__init__.pyc
-%%DATADIR%%/plugins/shoutcast/__init__.pyo
-%%DATADIR%%/plugins/shoutcast/test.py
-%%DATADIR%%/plugins/shoutcast/test.pyc
-%%DATADIR%%/plugins/shoutcast/test.pyo
-%%NLS%%share/locale/an/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ar/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ast/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/da/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/de/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/el/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/en_CA/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/es/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/et/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/fa/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/frp/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/he/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/hi/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/id/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/it/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ka/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/mk/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/mr/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/oc/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/sq/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/sr/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ta/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/te/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/tl/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/exaile.mo
 share/pixmaps/exaile.png
-%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tl
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/frp
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/an/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/an
+@dirrmtry share/applications
+@dirrm lib/exaile/xlgui/prefs
+@dirrm lib/exaile/xlgui/panel
+@dirrm lib/exaile/xlgui
+@dirrm lib/exaile/xl/metadata
+@dirrm lib/exaile/xl
+@dirrm lib/exaile/lib
+@dirrm lib/exaile
 @dirrm %%DATADIR%%/plugins/shoutcast
 @dirrm %%DATADIR%%/plugins/notify
+@dirrm %%DATADIR%%/plugins/massstorage
 @dirrm %%DATADIR%%/plugins/lyricwiki
 @dirrm %%DATADIR%%/plugins/lastfmradio/data
 @dirrm %%DATADIR%%/plugins/lastfmradio
 @dirrm %%DATADIR%%/plugins/lastfmdynamic
+@dirrm %%DATADIR%%/plugins/ipod
 @dirrm %%DATADIR%%/plugins/gnomemmkeys
 @dirrm %%DATADIR%%/plugins/cd
 @dirrm %%DATADIR%%/plugins/audioscrobbler
@@ -405,11 +431,17 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/data/glade
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrm lib/exaile/xlgui/prefs
-@dirrm lib/exaile/xlgui/panel
-@dirrm lib/exaile/xlgui
-@dirrm lib/exaile/xl/metadata
-@dirrm lib/exaile/xl
-@dirrm lib/exaile/lib
-@dirrm lib/exaile
-@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/an/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/an
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/frp
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tl

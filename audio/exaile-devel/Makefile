@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	exaile
-DISTVERSION=	0.2.99.1
-PORTREVISION=	1
+DISTVERSION=	0.2.99.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}_0.3.0a1
+DISTNAME=	${PORTNAME}_0.3.0a2
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	AmaroK replacement for GTK+ (developmental series)
 
 RUN_DEPENDS=	py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_GNOME=	pygtk2
 USE_GSTREAMER=	python good
