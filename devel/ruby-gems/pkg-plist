@@ -6,6 +6,7 @@ lib/ruby/gems/%%RUBY_VER%%/cache/sources-0.0.2.gem
 lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2/lib/sources.rb
 lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rbconfig/datadir.rb
+%%RUBY_SITELIBDIR%%/gauntlet_rubygems.rb
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/rubygems/builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/command.rb
@@ -29,6 +30,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/commands/query_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/rdoc_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/search_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/setup_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/server_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/sources_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/specification_command.rb
@@ -64,6 +66,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/local_remote_options.rb
 %%RUBY_SITELIBDIR%%/rubygems/old_format.rb
 %%RUBY_SITELIBDIR%%/rubygems/package.rb
+%%RUBY_SITELIBDIR%%/rubygems/package_task.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/f_sync_dir.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_header.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_input.rb
@@ -84,6 +87,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/test_utilities.rb
+%%RUBY_SITELIBDIR%%/rubygems/text.rb
 %%RUBY_SITELIBDIR%%/rubygems/timer.rb
 %%RUBY_SITELIBDIR%%/rubygems/uninstaller.rb
 %%RUBY_SITELIBDIR%%/rubygems/user_interaction.rb
