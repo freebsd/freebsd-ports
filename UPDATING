@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090611:
+  AFFECTS: users of www/apache22
+  AUTHOR: pgollucci@FreeBSD.org
+
+  The 2 rc.d scripts have been renamed
+    apache22.sh -> apache22
+    htcacheclean.sh -> htcacheclean
+
+  You'll need to update any crons wrappers, etc for the new paths.
+
 20090608:
   AFFECTS: users of lang/python* and py-*
   AUTHOR: miwi@FreeBSD.org

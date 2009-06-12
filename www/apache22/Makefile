@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.11
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -44,8 +44,7 @@ USE_BZIP2=		yes
 USE_ICONV=		yes
 USE_AUTOTOOLS=		autoconf:262 libtool:15
 USE_PERL5=		yes
-USE_RC_SUBR=		apache22.sh htcacheclean.sh
-SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+USE_RC_SUBR=		apache22 htcacheclean
 LIBTOOLFILES=		configure
 
 MPM_ITK_VERSION?=	20080727-00
@@ -189,6 +188,11 @@ pre-everything::
 
 show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
+
+#optionally enable mod_proxy_connect patch
+.if defined(PATCH_PROXY_CONNECT)
+EXTRA_PATCHES+= ${FILESDIR}/opt-patch-modules:proxy:mod_proxy_connect.c
+.endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
