@@ -829,6 +829,7 @@
     SUBDIR += xmms-sndstretch
     SUBDIR += xmms-speex
     SUBDIR += xmms-tfmx
+    SUBDIR += xmms-timidity
     SUBDIR += xmms-uade
     SUBDIR += xmms-volnorm
     SUBDIR += xmms-wavpack
