@@ -22,8 +22,8 @@ USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-SLANG_INCDIR?=	${PREFIX}/include
-SLANG_LIBDIR?=	${PREFIX}/lib
+SLANG_INCDIR?=	${LOCALBASE}/include
+SLANG_LIBDIR?=	${LOCALBASE}/lib
 LIB_DEPENDS_LIBSLANG?=	slang.2:${PORTSDIR}/devel/libslang2
 
 MAKE_ARGS=	SLANG_INCDIR="${SLANG_INCDIR}" \
@@ -46,6 +46,9 @@ DOCS+=		BUGS \
 		sldocs/VFile.txt \
 		sldocs/utilsfun.txt
 
+post-patch:
+	${REINPLACE_CMD} -e "s,/usr/local,${LOCALBASE}," ${WRKSRC}/Makefile ${WRKSRC}/scripts/init.sl
+	  
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/slirc
