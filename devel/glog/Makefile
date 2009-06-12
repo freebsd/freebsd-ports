@@ -7,6 +7,7 @@
 
 PORTNAME=	glog
 DISTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://google-glog.googlecode.com/files/
 
@@ -16,6 +17,7 @@ COMMENT=	A library of C++ classes for flexible logging
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_GCC=	4.2+
 
