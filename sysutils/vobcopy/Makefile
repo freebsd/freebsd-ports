@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vobcopy.org/download/ \
 		CRITICAL
@@ -17,17 +16,16 @@ COMMENT=	Decrypts and copies DVD .vob files
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
-CONFIGURE_ARGS=	--with-lfs
+CONFIGURE_ARGS=	--with-lfs --with-dvdread-libs=${LOCALBASE}
 
 ALL_TARGET=	${PORTNAME}
 
 MAN1=	vobcopy.1
 
 PLIST_FILES=	bin/vobcopy
-PORTDOCS=	Changelog FAQ README THANKS TODO \
+PORTDOCS=	COPYING Changelog README TODO \
 		alternative_programs.txt
 
 .include <bsd.port.pre.mk>
