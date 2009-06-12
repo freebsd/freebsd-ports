@@ -7,6 +7,7 @@ bin/www-mobilecarrierjp-dump_all.pl
 %%SITE_PERL%%/WWW/MobileCarrierJP/DoCoMo/PictogramInfo.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/DoCoMo/CIDR.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/DoCoMo/HTMLVersion.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/DoCoMo/UserAgent.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/EZWeb/PictogramInfo.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/EZWeb/DeviceID.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/EZWeb/CIDR.pm
