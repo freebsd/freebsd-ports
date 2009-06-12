@@ -16,7 +16,8 @@ COMMENT=	An IRC proxy/bouncer daemon
 LIB_DEPENDS=	cares.1:${PORTSDIR}/dns/c-ares
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${LOCALBASE}
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	SSL "Enable SSL support" on \
 		IPV6 "Enable IPv6 support" on \
