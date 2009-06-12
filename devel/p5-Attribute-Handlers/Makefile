@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Attribute-Handlers
-PORTVERSION=	0.83
+PORTVERSION=	0.85
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Attribute::Handlers - Simpler definition of attribute handlers
+COMMENT=	Simpler definition of attribute handlers
 
 PERL_CONFIGURE=	yes
 
