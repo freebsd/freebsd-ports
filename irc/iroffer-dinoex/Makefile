@@ -48,6 +48,7 @@ CONFIGURE_ARGS+=	-ruby
 
 do-patch:
 	${REINPLACE_CMD} -e 's|int a;|int a=1;|' \
+		-e 's|/usr/local/|${LOCLABASE}/|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
