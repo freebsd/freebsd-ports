@@ -48,7 +48,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>firefox3</name>
-	<range><lt>3.0.0.11</lt></range>
+	<range><lt>3.0.11</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
