@@ -34,7 +34,10 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 
 OPTIONS=	LDAP	"With LDAP support" off \
 		INSULTS "With all insults" off \
-		SHELL_SETS_HOME "Set HOME env to target user in shell mode" off
+		SHELL_SETS_HOME "Set HOME env to target user in shell mode" off \
+		DISABLE_ROOT_SUDO	"Disable root sudo" off \
+		DISABLE_AUTH "Disable authentication" off \
+		NOARGS_SHELL "Enable no arguments shell" off
 
 .include <bsd.port.pre.mk>
 
@@ -60,6 +63,18 @@ PLIST_SUB=	LDAP="@comment "
 
 .if defined(WITH_SHELL_SETS_HOME)
 CONFIGURE_ARGS+=--enable-shell-sets-home
+.endif
+
+.if defined(WITH_DISABLE_ROOT_SUDO)
+CONFIGURE_ARGS+=--disable-root-sudo
+.endif
+
+.if defined(WITH_DISABLE_AUTH)
+CONFIGURE_ARGS+=--disable-authentication
+.endif
+
+.if defined(WITH_NOARGS_SHELL)
+CONFIGURE_ARGS+=--enable-noargs-shell
 .endif
 
 MAN5=		sudoers.5
