@@ -104,7 +104,7 @@ CONFIGURE_ARGS+=	--with-dbm=db185 \
 .	else
 USE_BDB=		yes
 CONFIGURE_ARGS+=	--with-dbm=db${BDB_VER:S/40/4/} \
-			--with-berkeley-db=${LOCALBASE}
+			--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
 .       endif
 .   else
 IGNORE=		"Unknown DBM"
