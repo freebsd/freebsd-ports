@@ -18,6 +18,9 @@ bin/getmail_mbox
 %%PYTHON_SITELIBDIR%%/getmailcore/constants.py
 %%PYTHON_SITELIBDIR%%/getmailcore/constants.pyc
 %%PYTHON_SITELIBDIR%%/getmailcore/constants.pyo
+%%PYTHON_SITELIBDIR%%/getmailcore/compatibility.py
+%%PYTHON_SITELIBDIR%%/getmailcore/compatibility.pyc
+%%PYTHON_SITELIBDIR%%/getmailcore/compatibility.pyo
 %%PYTHON_SITELIBDIR%%/getmailcore/destinations.py
 %%PYTHON_SITELIBDIR%%/getmailcore/destinations.pyc
 %%PYTHON_SITELIBDIR%%/getmailcore/destinations.pyo
