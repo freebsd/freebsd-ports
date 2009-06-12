@@ -77,6 +77,7 @@
     SUBDIR += cap
     SUBDIR += ccxstream
     SUBDIR += citrix_ica
+    SUBDIR += citrix_xenapp
     SUBDIR += clamz
     SUBDIR += click
     SUBDIR += clusterit
