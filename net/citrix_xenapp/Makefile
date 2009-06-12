@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	citrix_ica
-PORTVERSION=	10.6
-PORTREVISION=	1
+PORTNAME=	citrix_xenapp
+PORTVERSION=	11.0.140395
 CATEGORIES=	net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
@@ -16,8 +15,8 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	openmotif
+USE_LINUX=	f8
+USE_LINUX_APPS=	openmotif jpeg png
 RESTRICTED=	License prohibits redistribution
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
@@ -46,7 +45,7 @@ do-fetch:
 	@${ECHO} ""
 	@${ECHO} "You have to fetch the file manually from"
 	@${ECHO} ""
-	@${ECHO} "http://www.citrix.com/English/SS/downloads/details.asp?dID=2755&downloadID=3323&pID=186"
+	@${ECHO} "http://www.citrix.com/English/SS/downloads/details.asp?downloadID=3323"
 	@${ECHO} ""
 	@${ECHO} "Once en.linuxx86.tar.gz has been downloaded move it to"
 	@${ECHO} "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} and restart the build."
@@ -64,6 +63,9 @@ pre-fetch:
 .endif
 .endfor
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|DefaultInstallDir=/usr/lib/ICAClient|DefaultInstallDir=${PREFIX}/ICAClient|' ${WRKSRC}/linuxx86/hinst
 
 do-install:
 	@if (test -d "${CDIR}") ; \
@@ -83,6 +85,7 @@ do-install:
 	cd ${WRKSRC} && ${SH} -c './setupwfc'
 	${INSTALL_SCRIPT} ${WRKSRC}/wfcmgr.x ${PREFIX}/bin/wfcmgr
 	${INSTALL_SCRIPT} ${WRKSRC}/wfica.x ${PREFIX}/bin/wfica
+	${MKDIR} ${LINUXBASE}/dev
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 .if defined(ICA_CERTS)

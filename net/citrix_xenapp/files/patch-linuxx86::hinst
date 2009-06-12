@@ -1,6 +1,6 @@
---- linuxx86/hinst.orig	Tue Oct 31 07:07:08 2006
-+++ linuxx86/hinst	Mon Mar  5 12:26:02 2007
-@@ -86,7 +86,7 @@
+--- linuxx86/hinst.orig	2009-02-26 04:22:26.000000000 -0500
++++ linuxx86/hinst	2009-06-10 18:45:08.000000000 -0400
+@@ -105,7 +105,7 @@
  fi
  
  #  Install in here by default.
@@ -9,32 +9,25 @@
  
  #  Default CDROM mount point
  DefaultCDSourceDir=/cdrom
-@@ -2217,7 +2217,7 @@
+@@ -1965,7 +1965,7 @@
  	then
  		:
  	else
 -		/bin/false
-+		/usr/bin/false
++		false
  		return 
  	fi
  
-@@ -2263,7 +2263,7 @@
+@@ -2090,7 +2090,7 @@
  		fi
  	fi
  
 -	/bin/true
-+	/usr/bin/true
++	true
  }
  
- ###############################################################################
-@@ -2387,26 +2387,19 @@
- 
- netscape_integrate()
- {
--  user_echo $integrate_netscape1
-   if test -z "$SU_INSTALL"
-   then
-     set_npui_variables
+ #!/bin/sh 
+@@ -2191,19 +2191,12 @@
      found_netscape 
    else
      search_ok=0
@@ -48,26 +41,24 @@
 -	|| test "$MOZILLA_HOME" != "" -a -d "$MOZILLA_HOME"\
 -	|| test "$EXTRA_BROWSERS" != ""
 -    then
-+
 +    case ${FOUND_NS} in
 +    TRUE)
    	user_echo $integrate_netscape3
    	found_netscape 
 -    else
-+	;;
++        ;;
 +    *)
- 	user_prompt $integrate_netscape2
+ 	user_prompt "$integrate_netscape2"
   	getyesno $INSTALLER_NO
  	if [ "$ANSWER" = "$INSTALLER_YES" ]
-@@ -2415,9 +2408,9 @@
+@@ -2212,8 +2205,9 @@
  	else
    		user_echo $integrate_netscape6
  	fi
-+	;;
-+    esac
++        ;;
++     esac
      fi
 -  fi
--
-     # Create utility script files in install root.
-     create_wfica_script
-     create_wfica_assoc_script
+ 
+   # Create utility script files in install root.
+   create_wfica_script
