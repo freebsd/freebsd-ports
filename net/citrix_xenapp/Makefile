@@ -12,7 +12,7 @@ MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
-COMMENT=	Citrix(R) Presentation Server(TM) client
+COMMENT=	Access virtual applications and desktops
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	f8
