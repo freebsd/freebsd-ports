@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 
 USE_JAVA=	yes
 USE_GL=		gl
+USE_XORG=	xt
 JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
