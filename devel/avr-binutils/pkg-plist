@@ -125,12 +125,15 @@ share/locale/ga/LC_MESSAGES/ld.mo
 share/locale/id/LC_MESSAGES/gprof.mo
 share/locale/ja/LC_MESSAGES/binutils.mo
 share/locale/ms/LC_MESSAGES/gprof.mo
+share/locale/nl/LC_MESSAGES/gprof.mo
 share/locale/pt_BR/LC_MESSAGES/gprof.mo
 share/locale/ro/LC_MESSAGES/binutils.mo
+share/locale/ro/LC_MESSAGES/gprof.mo
 share/locale/ru/LC_MESSAGES/binutils.mo
 share/locale/rw/LC_MESSAGES/binutils.mo
 share/locale/rw/LC_MESSAGES/gas.mo
 share/locale/rw/LC_MESSAGES/gprof.mo
+share/locale/sk/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/gprof.mo
 share/locale/sv/LC_MESSAGES/ld.mo
