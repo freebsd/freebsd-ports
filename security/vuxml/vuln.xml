@@ -43,7 +43,6 @@ Note:  Please add new entries to the beginning of this file.
 	<name>ruby+pthreads+oniguruma</name>
 	<name>ruby+oniguruma</name>
 	<range><ge>1.8.*,1</ge><lt>1.8.7.160_1,1</lt></range>
-	<range><ge>1.9.*,1</ge><lt>1.9.1.129_1,1</lt></range>
       </package>
     </affects>
     <description>
@@ -67,6 +66,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-06-09</discovery>
       <entry>2009-06-13</entry>
+      <modified>2009-06-13</modified>
     </dates>
   </vuln>
 
