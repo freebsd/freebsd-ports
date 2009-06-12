@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="62e0fbe5-5798-11de-bb78-001cc0377035">
+    <topic>ruby -- BigDecimal denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<name>ruby+pthreads</name>
+	<name>ruby+pthreads+oniguruma</name>
+	<name>ruby+oniguruma</name>
+	<range><ge>1.8.*,1</ge><lt>1.8.7.160_1,1</lt></range>
+	<range><ge>1.9.*,1</ge><lt>1.9.1.129_1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The official ruby site reports:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2009/06/09/dos-vulnerability-in-bigdecimal/">
+	  <p>A denial of service (DoS) vulnerability was found on the
+	    BigDecimal standard library of Ruby. Conversion from BigDecimal
+	    objects into Float numbers had a problem which enables attackers
+	    to effectively cause segmentation faults.</p>
+	  <p>An attacker can cause a denial of service by causing BigDecimal
+	    to parse an insanely large number, such as:</p>
+	  <p><code>BigDecimal("9E69999999").to_s("F")</code></p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>35278</bid>
+      <url>http://www.ruby-lang.org/en/news/2009/06/09/dos-vulnerability-in-bigdecimal/</url>
+    </references>
+    <dates>
+      <discovery>2009-06-09</discovery>
+      <entry>2009-06-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="da185955-5738-11de-b857-000f20797ede">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
