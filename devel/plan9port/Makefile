@@ -93,6 +93,10 @@ EMPTY_DIRS=	plan9/log \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not build
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
 		| ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PLAN9}|'
