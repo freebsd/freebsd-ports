@@ -28,6 +28,8 @@ LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+BROKEN=		does not build
+
 OPTIONS=	SMLNJ	"Bootstrap with SML/NJ (can take >15 hours)"	off \
 		MINGW32	"Add the mingw32 target (requires wine)"	off
 
