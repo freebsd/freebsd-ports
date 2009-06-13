@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 DISTFILES=
 
-MAINTAINER=	scrappy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monthly script for reporting anonymous statistics about your machine
 
 NO_BUILD=	yes
