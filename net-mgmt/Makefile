@@ -108,6 +108,7 @@
     SUBDIR += nagios2
     SUBDIR += nagios-certexp-plugin
     SUBDIR += nagios-check_bacula
+    SUBDIR += nagios-check_clamav
     SUBDIR += nagios-check_ports
     SUBDIR += nagios-check_puppet
     SUBDIR += nagios-devel
