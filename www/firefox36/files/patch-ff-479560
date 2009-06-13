@@ -1,0 +1,69 @@
+diff -up mozilla/js/src/xpconnect/src/xpcprivate.h.479560 mozilla/js/src/xpconnect/src/xpcprivate.h
+--- js/src/xpconnect/src/xpcprivate.h.479560	2008-03-22 09:04:17.000000000 +0100
++++ js/src/xpconnect/src/xpcprivate.h	2009-05-13 14:56:10.000000000 +0200
+@@ -2167,7 +2167,7 @@ private:
+     nsXPCWrappedJSClass(XPCCallContext& ccx, REFNSIID aIID,
+                         nsIInterfaceInfo* aInfo);
+ 
+-    JSObject*  NewOutObject(JSContext* cx);
++    JSObject*  NewOutObject(JSContext* cx, JSObject* scope);
+ 
+     JSBool IsReflectable(uint16 i) const
+         {return (JSBool)(mDescriptors[i/32] & (1 << (i%32)));}
+diff -up mozilla/js/src/xpconnect/src/xpcwrappedjsclass.cpp.479560 mozilla/js/src/xpconnect/src/xpcwrappedjsclass.cpp
+--- js/src/xpconnect/src/xpcwrappedjsclass.cpp.479560	2007-06-30 01:21:28.000000000 +0200
++++ js/src/xpconnect/src/xpcwrappedjsclass.cpp	2009-05-13 14:51:35.000000000 +0200
+@@ -1338,7 +1338,7 @@ nsXPCWrappedJSClass::CallMethod(nsXPCWra
+         if(param.IsOut())
+         {
+             // create an 'out' object
+-            JSObject* out_obj = NewOutObject(cx);
++            JSObject* out_obj = NewOutObject(cx, obj);
+             if(!out_obj)
+             {
+                 retval = NS_ERROR_OUT_OF_MEMORY;
+@@ -1706,9 +1706,9 @@ nsXPCWrappedJSClass::GetInterfaceName()
+ }
+ 
+ JSObject*
+-nsXPCWrappedJSClass::NewOutObject(JSContext* cx)
++nsXPCWrappedJSClass::NewOutObject(JSContext* cx, JSObject* scope)
+ {
+-    return JS_NewObject(cx, nsnull, nsnull, nsnull);
++    return JS_NewObject(cx, nsnull, nsnull, JS_GetGlobalForObject(cx, scope));
+ }
+ 
+ 
+diff -up mozilla/js/src/jsapi.c.old mozilla/js/src/jsapi.c
+--- js/src/jsapi.c.old	2009-05-13 15:13:20.000000000 +0200
++++ js/src/jsapi.c	2009-05-13 15:13:32.000000000 +0200
+@@ -122,6 +122,16 @@ JS_GetPositiveInfinityValue(JSContext *c
+     return DOUBLE_TO_JSVAL(cx->runtime->jsPositiveInfinity);
+ }
+ 
++JS_PUBLIC_API(JSObject *)
++JS_GetGlobalForObject(JSContext *cx, JSObject *obj)
++{
++    JSObject *parent;
++
++    while ((parent = OBJ_GET_PARENT(cx, obj)) != NULL)
++        obj = parent;
++    return obj;
++}
++
+ JS_PUBLIC_API(jsval)
+ JS_GetEmptyStringValue(JSContext *cx)
+ {
+diff -up mozilla/js/src/jsapi.h.old mozilla/js/src/jsapi.h
+--- js/src/jsapi.h.old	2009-05-13 15:13:20.000000000 +0200
++++ js/src/jsapi.h	2009-05-13 15:13:32.000000000 +0200
+@@ -668,6 +668,9 @@ JS_DumpNamedRoots(JSRuntime *rt,
+                   void *data);
+ #endif
+ 
++extern JS_PUBLIC_API(JSObject *)
++JS_GetGlobalForObject(JSContext *cx, JSObject *obj);
++
+ /*
+  * Call JS_MapGCRoots to map the GC's roots table using map(rp, name, data).
+  * The root is pointed at by rp; if the root is unnamed, name is null; data is
