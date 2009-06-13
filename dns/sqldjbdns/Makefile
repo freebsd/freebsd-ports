@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sqldjbdns
-PORTVERSION=	0.73
-PORTREVISION=	1
+PORTVERSION=	0.74
 CATEGORIES=	dns
-MASTER_SITES=	http://home.tiscali.cz:8080/~cz210552/distfiles/
+MASTER_SITES=	http://home.tiscali.cz:8080/~cz210552/distfiles/ \
+		http://home.tiscali.cz/~cz210552/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJB dns server with PostgreSQL backend
