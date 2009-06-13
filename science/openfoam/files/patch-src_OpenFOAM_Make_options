@@ -1,9 +1,0 @@
---- src/OpenFOAM/Make/options.orig	Tue Jan 25 16:51:06 2005
-+++ src/OpenFOAM/Make/options	Fri Dec 30 21:24:48 2005
-@@ -1,5 +1,4 @@
- EXE_INC = \
--    -DWM_PROJECT_VERSION='"'$(WM_PROJECT_VERSION)'"' \
--    -I$(LIB_SRC)/zlib-1.2.1
-+    -DWM_PROJECT_VERSION='"'$(WM_PROJECT_VERSION)'"'
- 
- LIB_LIBS = -L$(FOAM_LIBBIN)/dummy -lPstream -lfoamUser -lz

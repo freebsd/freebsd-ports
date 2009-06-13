@@ -1,9 +1,0 @@
---- ./applications/utilities/mesh/manipulation/patchTool/Java/Allwmake.orig	Tue Dec 30 10:12:44 2003
-+++ ./applications/utilities/mesh/manipulation/patchTool/Java/Allwmake	Sat Oct 21 14:25:49 2006
-@@ -1,5 +1,5 @@
- #!/bin/sh
- set -x
- rmclassall
--javac -classpath ".:../lib/j3d-org.jar" -d Make/classes/ PatchTool/PatchTool.java
-+javac -source 1.4 -classpath ".:../lib/j3d-org.jar" -d Make/classes/ PatchTool/PatchTool.java
- jar cf ../lib/PatchTool.jar -C Make/classes .

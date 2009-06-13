@@ -1,9 +1,0 @@
---- applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libadf/Make/options.orig	Thu Aug 10 20:13:45 2006
-+++ applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libadf/Make/options	Mon Jul 30 19:42:36 2007
-@@ -1,5 +1,5 @@
- EXE_INC = \
--    -I..
-+    -I.. -I../libcgns
- 
- EXE_LIBS = \
-     -ladf

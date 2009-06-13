@@ -1,6 +1,0 @@
---- wmake/rules/FreeBSD/cOpt.orig	Mon Nov 22 18:30:37 2004
-+++ wmake/rules/FreeBSD/cOpt	Sun Dec 18 10:17:09 2005
-@@ -1,2 +1,2 @@
- cDBUG       = 
--cOPT        = -O3
-+cOPT        = $(CFLAGS)

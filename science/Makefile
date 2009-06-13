@@ -93,7 +93,6 @@
     SUBDIR += oases
     SUBDIR += omnetpp
     SUBDIR += openbabel
-    SUBDIR += openfoam
     SUBDIR += ovt
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-Elements
