@@ -1445,7 +1445,6 @@
     SUBDIR += tclhttpd
     SUBDIR += tclwebtest
     SUBDIR += tdiary
-    SUBDIR += tdiary-devel
     SUBDIR += tdom
     SUBDIR += template_
     SUBDIR += templatelite
