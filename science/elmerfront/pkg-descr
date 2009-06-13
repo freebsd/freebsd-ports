@@ -1,9 +1,0 @@
-ElmerFront - the Graphical User Interface.
-
-ElmerFront is a tool for initializing the computational process in Elmer.
-It communicates with external software producing geometrical data, i.e.,
-CAD files and computational meshes. ElmerFront generates its own finite
-element meshes, allows the user to build mathematical models graphically,
-and finally produces input data for ElmerSolver.
-
-WWW:	http://www.csc.fi/elmer/elmerfront/
