@@ -1,7 +1,7 @@
 rsvndump is a command line tool that is able to dump a Subversion
 repository that resides on a remote server. All data is dumped in
 the format that can be read an written by svnadmin dump, so the
-data which is produced can easily be importerd into a new Subversion
+data which is produced can easily be imported into a new Subversion
 repository.
 
 WWW:    http://saubue.boolsoft.org/projects/rsvndump/
