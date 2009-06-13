@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2009.05.13
+PORTVERSION=	2009.05.30
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://bitbucket.org/rg3/youtube-dl/raw/${PORTVERSION}/
-DISTNAME=	youtube-dl
+MASTER_SITES=	http://bitbucket.org/rg3/youtube-dl/raw/
+DISTNAME=	${PORTVERSION}/youtube-dl
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
@@ -25,7 +25,7 @@ USE_PYTHON=	2.5+
 PLIST_FILES=	bin/youtube-dl
 
 post-extract:
-	@${CP} ${DISTDIR}/youtube-dl ${WRKSRC}/youtube-dl
+	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/youtube-dl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-dl ${PREFIX}/bin/youtube-dl
