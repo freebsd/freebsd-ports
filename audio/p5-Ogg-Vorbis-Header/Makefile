@@ -20,6 +20,8 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg \
 BUILD_DEPENDS=	${SITE_PERL}/Inline/MakeMaker.pm:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Ogg::Vorbis::Header.3
