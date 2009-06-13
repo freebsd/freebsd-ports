@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsvndump
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://saubue.boolsoft.org/projects/rsvndump/ \
 		LOCAL/glarkin
@@ -23,15 +22,19 @@ PLIST_FILES+=		share/locale/de/LC_MESSAGES/rsvndump.mo
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif
+CONFIGURE_ARGS+=	--enable-man
 
 MAN1=		rsvndump.1
 PLIST_FILES+=	bin/rsvndump
 
 .include <bsd.port.pre.mk>
 
+BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+		xmlto:${PORTSDIR}/textproc/xmlto
+
 .if !exists(${APR_APU_DIR}/${APR_CONFIG})
 BUILD_DEPENDS+=	apr-1-config:${PORTSDIR}/devel/apr
 .endif
 
-LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
+BUILD_DEPENDS+=	subversion>=0:${PORTSDIR}/devel/subversion
 .include <bsd.port.post.mk>
