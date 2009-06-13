@@ -45,7 +45,6 @@
     SUBDIR += ickle
     SUBDIR += icmpchat
     SUBDIR += icqlib
-    SUBDIR += icqnd
     SUBDIR += imcom
     SUBDIR += imspector
     SUBDIR += iserverd

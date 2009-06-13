@@ -1,8 +1,0 @@
-To enable icqnd plugin, start your licq
-and go Options/Plugins and  enable/load
-the icqnd plugin.
-You can also edit ~/.licq/licq.conf and
-edit for your needs, ex. :
-[plugins]
-NumPlugins = 1
-Plugin1 = icqnd
