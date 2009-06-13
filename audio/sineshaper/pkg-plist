@@ -1,8 +1,0 @@
-lib/dssi/sineshaper.so
-lib/dssi/sineshaper/sineshaper.glade
-lib/dssi/sineshaper/dial.png
-lib/dssi/sineshaper/dummydial.png
-lib/dssi/sineshaper/sineshaper.png
-lib/dssi/sineshaper/presets
-lib/dssi/sineshaper/sineshaper_gtk
-@dirrm lib/dssi/sineshaper
