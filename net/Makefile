@@ -443,7 +443,6 @@
     SUBDIR += openmpi
     SUBDIR += openntpd
     SUBDIR += openospfd
-    SUBDIR += openpbx.org
     SUBDIR += openradius
     SUBDIR += openser
     SUBDIR += openslp
