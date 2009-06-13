@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_rc17
+DISTVERSION=	2.1_rc18
 CATEGORIES=	security net
 MASTER_SITES=	http://openvpn.net/release/
 PKGNAMESUFFIX=	-devel
