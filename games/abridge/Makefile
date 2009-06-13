@@ -26,6 +26,8 @@ PLIST_FILES=	bin/abridge
 
 .if ${ARCH} != "i386"
 BROKEN=		Does not compile on !i386
+.elif ${OSVERSION} >= 800074
+BROKEN=		does not build
 .endif
 
 .include <bsd.port.post.mk>
