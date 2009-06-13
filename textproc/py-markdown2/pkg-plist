@@ -1,9 +1,4 @@
-%%PYTHON_SITELIBDIR%%/markdown.py
-%%PYTHON_SITELIBDIR%%/markdown.pyc
-%%PYTHON_SITELIBDIR%%/markdown.pyo
-%%PYTHON_SITELIBDIR%%/mdx_footnotes.py
-%%PYTHON_SITELIBDIR%%/mdx_footnotes.pyc
-%%PYTHON_SITELIBDIR%%/mdx_footnotes.pyo
-%%PYTHON_SITELIBDIR%%/mdx_rss.py
-%%PYTHON_SITELIBDIR%%/mdx_rss.pyc
-%%PYTHON_SITELIBDIR%%/mdx_rss.pyo
+bin/markdown2
+%%PYTHON_SITELIBDIR%%/markdown2.py
+%%PYTHON_SITELIBDIR%%/markdown2.pyc
+%%PYTHON_SITELIBDIR%%/markdown2.pyo

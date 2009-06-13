@@ -1,7 +1,9 @@
-Markdown is two things: (1) a plain text formatting syntax; and (2) a
-software tool that converts the plain text formatting to (X)HTML. The
-formatting syntax is designed to be easy and intuitive for web authors
-and resembles typical email formatting conventions. The resultant
-(X)HTML is structurally valid.
+py-markdown2  provides a converter written in Python that closely
+matches the behaviour of the original Perl-implemented Markdown.pl.
+There is another Python markdown.py , but markdown2.py is faster
+and, to my knowledge, more correct.
 
-WWW: http://www.freewisdom.org/projects/python-markdown
+Markdown is a light text markup format and a processor to convert
+that to HTML.
+
+WWW: http://code.google.com/p/python-markdown2/
