@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.7.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,15 +23,26 @@ USE_XORG?=	x11 xext xdamage
 USE_GNOME?=	pkgconfig
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
-			--disable-config-output  \
 			--disable-hddtemp
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 MAN1=		conky.1
-
+PLIST_FILES=	bin/conky
+PORTEXAMPLES=	conkyrc.sample
 PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 		docs.html variables.html config_settings.html
+
+OPTIONS+=	AUDACIOUS "Enable Audacious support" Off \
+		BMPX "Enable BMPX support" Off \
+		DOUBLE_BUFFER "Enable double buffering" On \
+		IMLIB2 "Enable Imlib2 support" Off \
+		LUA "Enable Lua support" Off \
+		MPD "Enable MPD support" Off \
+		XFT "Enable Xft support" Off \
+		XMMS2 "Enable XMMS2 support" Off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_AUDACIOUS)
 LIB_DEPENDS+=		audclient.2:${PORTSDIR}/multimedia/audacious
@@ -50,6 +60,20 @@ CONFIGURE_ARGS+=	--enable-bmpx
 CONFIGURE_ARGS+=	--disable-bmpx
 .endif
 
+.if defined(WITH_LUA)
+USE_LUA=		5.1+
+CONFIGURE_ARGS+=	--enable-lua
+.else
+CONFIGURE_ARGS+=	--disable-lua
+.endif
+
+.if defined(WITH_IMLIB2)
+LIB_DEPENDS+=		Imlib2.5:${PORTSDIR}/graphics/imlib2
+CONFIGURE_ARGS+=	--enable-imlib2
+.else
+CONFIGURE_ARGS+=	--disable-imlib2
+.endif
+
 .if defined(WITH_XFT)
 LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft
@@ -57,15 +81,7 @@ CONFIGURE_ARGS+=	--enable-xft
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
-#.if !defined(WITHOUT_OWN_WINDOW)
-#CONFIGURE_ARGS+=	--enable-own-window
-#.else
-#CONFIGURE_ARGS+=	--disable-own-window
-#.endif
-
-.if defined(WITH_MPD)
-CONFIGURE_ARGS+=	--enable-mpd
-.else
+.if defined(WITHOUT_MPD)
 CONFIGURE_ARGS+=	--disable-mpd
 .endif
 
@@ -80,29 +96,19 @@ CONFIGURE_ARGS+=	--disable-xmms2
 CONFIGURE_ARGS+=	--disable-double-buffer
 .endif
 
-.if defined(WITHOUT_SETI)
-CONFIGURE_ARGS+=	--disable-seti
-.endif
-
-pre-everything::
-	@${ECHO_MSG} "You may specify the following on the command line:"
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} "WITH_AUDACIOUS=yes to enable Audacious support"
-	@${ECHO_MSG} "WITH_BMPX=yes to enable BMPx support"
-	@${ECHO_MSG} "WITH_XFT=yes to enable XFT support"
-	@${ECHO_MSG} "WITHOUT_OWN_WINDOW=yes to disable own window support"
-	@${ECHO_MSG} "WITH_MPD=yes to enable MPD support"
-	@${ECHO_MSG} "WITH_XMMS2=yes to enable XMMS2 support"
-	@${ECHO_MSG} "WITHOUT_DOUBLE_BUFFER=yes to disable double buffer support"
-	@${ECHO_MSG} " "
+post-patch:
+	@${REINPLACE_CMD} -e 's,lua5\.1,lua-5.1,g' \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/conky.1 ${PREFIX}/man/man1
 
 post-install:
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/data/conky.conf ${EXAMPLESDIR}/conkyrc.sample
+.endif
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -114,4 +120,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
