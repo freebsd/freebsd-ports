@@ -18,6 +18,7 @@ EXTRACT_ONLY=	${ISPELL_FILES}
 MAINTAINER?=	gabor@FreeBSD.org
 COMMENT=	An interactive spelling checker for multiple languages
 
+MAKE_JOBS_UNSAFE=	yes
 MAN1=		ispell.1 sq.1 unsq.1
 MAN5=		ispell.5 english.5
 MLINKS=		ispell.1 buildhash.1 \
