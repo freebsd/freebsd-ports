@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-nan
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
