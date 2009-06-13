@@ -33,7 +33,6 @@
     SUBDIR += gammu
     SUBDIR += garmin-utils
     SUBDIR += geoid
-    SUBDIR += gfax
     SUBDIR += ghfaxviewer
     SUBDIR += gkermit
     SUBDIR += gmfsk
