@@ -4004,3 +4004,4 @@ graphics/libimg-tk83||2009-06-13|Has expired: tcl8.3 support is going to be drop
 multimedia/manencode||2009-06-13|Has expired
 www/mnogosearch31||2009-06-13|Has expired: Use www/mnogosearch instead, this version is ancient
 www/php4-mnogosearch||2009-06-13|Removed
+www/winhelpcgi||2009-06-13|Has expired
