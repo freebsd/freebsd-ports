@@ -38,4 +38,10 @@ post-install:
 	${UPDMAP_SYS} --quiet --nomkmap --enable Map=pscyr.map
 	${UPDMAP_SYS} --quiet --enable Map=pscyr2.map
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>

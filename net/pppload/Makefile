@@ -26,4 +26,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pppload ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pppload.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>

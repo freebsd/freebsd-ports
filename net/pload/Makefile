@@ -24,4 +24,10 @@ MAN1=		pload.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/pload
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
