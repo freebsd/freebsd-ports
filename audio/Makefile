@@ -511,7 +511,6 @@
     SUBDIR += p5-Audio-Mixer
     SUBDIR += p5-Audio-Musepack
     SUBDIR += p5-Audio-Scrobbler
-    SUBDIR += p5-Audio-TagLib
     SUBDIR += p5-Audio-WMA
     SUBDIR += p5-Audio-Wav
     SUBDIR += p5-CDDB
