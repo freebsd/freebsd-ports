@@ -138,7 +138,6 @@
     SUBDIR += etherboot
     SUBDIR += etrace
     SUBDIR += etunnel
-    SUBDIR += evolution-rss
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += forg
