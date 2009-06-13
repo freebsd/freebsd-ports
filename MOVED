@@ -4000,3 +4000,4 @@ audio/festvox-ogirab||2009-06-13|Has expired: unfulfilled dependencies for 8+ mo
 audio/festvox-pc||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no active maintainer, no user interest
 audio/festvox-tll||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
 audio/py-sdl_mixer||2009-06-13|Has expired: has been broken for more than 6 months
+graphics/libimg-tk83||2009-06-13|Has expired: tcl8.3 support is going to be dropped
