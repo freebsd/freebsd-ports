@@ -25,10 +25,6 @@ BUILD_DEPENDS=\
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/Lingua/Ispell.pm:${PORTSDIR}/textproc/p5-Lingua-Ispell
 
-.if defined(WITH_HTML)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk/XmHTML.pm:${PORTSDIR}/x11-toolkits/p5-GtkXmHTML
-.endif
-
 .if defined(WITH_MYSQL)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
 .endif
