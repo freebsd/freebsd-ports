@@ -20,4 +20,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		MusicBrainz::Queries.3
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
