@@ -37,4 +37,10 @@ pre-install:
 	@if test ! -d ${PIXMAPSDIR}; then \
 		${MKDIR} ${PIXMAPSDIR}; ${CHMOD} 0755 ${PIXMAPSDIR}; fi
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
