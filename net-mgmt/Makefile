@@ -123,7 +123,6 @@
     SUBDIR += nagiostat
     SUBDIR += nagircbot
     SUBDIR += nat
-    SUBDIR += nav
     SUBDIR += nbtscan
     SUBDIR += ndoutils
     SUBDIR += ndpmon
