@@ -426,7 +426,6 @@
     SUBDIR += libgnomecanvasmm26
     SUBDIR += libgphoto2
     SUBDIR += libimg
-    SUBDIR += libimg-tk83
     SUBDIR += libiptcdata
     SUBDIR += libkdcraw
     SUBDIR += libkexif
