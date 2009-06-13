@@ -584,7 +584,6 @@
     SUBDIR += sid-milter
     SUBDIR += sigit
     SUBDIR += sigrot
-    SUBDIR += silkymail
     SUBDIR += simscan
     SUBDIR += sma
     SUBDIR += smail
