@@ -18,6 +18,9 @@ COMMENT=	Mail client for X which supports POP and PGP
 
 LIB_DEPENDS=	Xclasses.1:${PORTSDIR}/x11-toolkits/xclasses
 
+DEPRECATED=	depends on a port that expired in 2007
+EXPIRATION_DATE=	2009-06-27
+
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	arm i386
 USE_GMAKE=	yes
