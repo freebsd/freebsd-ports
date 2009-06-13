@@ -1,5 +1,0 @@
-lib/xorg/modules/drivers/vga_drv.la
-lib/xorg/modules/drivers/vga_drv.so
-@dirrmtry lib/xorg/modules/drivers
-@dirrmtry lib/xorg/modules
-@dirrmtry lib/xorg
