@@ -225,7 +225,6 @@
     SUBDIR += fargoal
     SUBDIR += fgkicker
     SUBDIR += fgrun
-    SUBDIR += fgsd
     SUBDIR += fillets-ng
     SUBDIR += filters
     SUBDIR += fishsupper
