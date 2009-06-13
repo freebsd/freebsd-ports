@@ -1,0 +1,6 @@
+This check plugin is a Perl script which compares your local signature database
+(daily.cvd) version to the version advertised from the ClamAV site. It verifies
+the latest ClamAV revision using a DNS TXT query against
+current.cvd.clamav.net.
+
+WWW: http://bsd.phoenix.az.us/projects/check_clamav
