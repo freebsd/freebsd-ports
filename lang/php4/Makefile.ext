@@ -199,12 +199,6 @@ LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
 CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
 .endif
 
-.if ${PHP_MODNAME} == "mnogosearch"
-LIB_DEPENDS+=	udmsearch.1:${PORTSDIR}/www/mnogosearch31
-
-CONFIGURE_ARGS+=--with-mnogosearch=${LOCALBASE}
-.endif
-
 .if ${PHP_MODNAME} == "mssql"
 LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 
