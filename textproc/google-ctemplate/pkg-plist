@@ -1,18 +1,17 @@
 bin/diff_tpl_auto_escape
 bin/make_tpl_varnames_h
 bin/template-converter
-include/google/per_expand_data.h
-include/google/template.h
-include/google/template_annotator.h
-include/google/template_dictionary.h
-include/google/template_dictionary_interface.h
-include/google/template_enums.h
-include/google/template_emitter.h
-include/google/template_from_string.h
-include/google/template_modifiers.h
-include/google/template_namelist.h
-include/google/template_pathops.h
-include/google/template_string.h
+include/ctemplate/per_expand_data.h
+include/ctemplate/template.h
+include/ctemplate/template_annotator.h
+include/ctemplate/template_dictionary.h
+include/ctemplate/template_dictionary_interface.h
+include/ctemplate/template_enums.h
+include/ctemplate/template_emitter.h
+include/ctemplate/template_modifiers.h
+include/ctemplate/template_namelist.h
+include/ctemplate/template_pathops.h
+include/ctemplate/template_string.h
 lib/libctemplate.a
 lib/libctemplate.la
 lib/libctemplate.so
@@ -21,4 +20,4 @@ lib/libctemplate_nothreads.a
 lib/libctemplate_nothreads.la
 lib/libctemplate_nothreads.so
 lib/libctemplate_nothreads.so.0
-@dirrmtry include/google
+@dirrmtry include/ctemplate
