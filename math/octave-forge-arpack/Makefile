@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-arpack
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
