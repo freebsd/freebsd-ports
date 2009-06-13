@@ -147,7 +147,6 @@
     SUBDIR += wwl
     SUBDIR += wy60
     SUBDIR += xastir
-    SUBDIR += xcept
     SUBDIR += xdx
     SUBDIR += xlog
     SUBDIR += xmorse
