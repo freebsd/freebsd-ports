@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
-MAINTAINER=	scrappy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to encode and decode objects using Basic Encoding Rules (BER)
 
 PERL_CONFIGURE=	YES

@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	scrappy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validate an email address in a CGI form
 
 RUN_DEPENDS=	${SITE_PERL}/CGI/Untaint.pm:${PORTSDIR}/www/p5-CGI-Untaint \

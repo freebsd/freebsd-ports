@@ -11,7 +11,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SI/SIMON/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	scrappy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run Maypole sub-requests as components
 
 PERL_CONFIGURE=	yes

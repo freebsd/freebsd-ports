@@ -11,7 +11,7 @@ CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	-dtc
 
-MAINTAINER=	scrappy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
 MAKE_JOBS_SAFE=  yes

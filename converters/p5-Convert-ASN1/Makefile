@@ -11,7 +11,7 @@ CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	scrappy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to encode and decode ASN.1 data structures
 
 PERL_CONFIGURE=	yes
