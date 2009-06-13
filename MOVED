@@ -3982,3 +3982,4 @@ lang/perl5.6||2009-06-08|Has expired: no longer under development, use lang/perl
 multimedia/dplay|multimedia/playd|2009-06-10|Port renamed
 www/epiphany-webkit|www/epiphany|2009-06-10|Webkit backend isn't supported.
 devel/avr-gcc-devel|devel/avr-gcc|2009-06-11|AVR-GCC 4.3.x becomes the default version.
+japanese/slirc||2009-06-13|Removed
