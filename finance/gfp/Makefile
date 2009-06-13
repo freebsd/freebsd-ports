@@ -31,6 +31,12 @@ JAR_FILE=	gfd.jar
 PLIST_FILES+=	\
 		bin/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		fails during build
+.endif
+
 post-extract:
 # backup launcher
 	@${CP} -f ${WRKSRC}/${JAR_FILE} ${WRKDIR}
@@ -70,4 +76,4 @@ do-install:
 	@${ECHO_CMD} '@dirrm ${DATADIR_REL}' >> ${TMPPLIST}
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
