@@ -1756,6 +1756,7 @@
     SUBDIR += p5-SOAP-WSDL
     SUBDIR += p5-SPOPS
     SUBDIR += p5-SSN-Validate
+    SUBDIR += p5-SUPER
     SUBDIR += p5-SVN-ACL
     SUBDIR += p5-SVN-Access
     SUBDIR += p5-SVN-Agent

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/SUPER.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SUPER/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SUPER
