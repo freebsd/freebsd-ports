@@ -35,7 +35,6 @@
 #				  wx			- The wxWidgets library.
 #				  contrib		- The wxWidgets contributed libraries.
 #				  python		- The wxWidgets API for Python.
-#				  mozilla		- WxMozilla (only for 2.4).
 #				  svg			- WxSVG (only for 2.6).
 #				  The available dependency types are:
 #				  build			- Requires component for building.
@@ -130,7 +129,7 @@ _WX_Definitions_Done=	yes
 # _WX_VERS_LISTS		- Reverse lists preference order.
 #
 
-_WX_COMPS_ALL=			wx contrib python mozilla svg
+_WX_COMPS_ALL=			wx contrib python svg
 _WX_DEP_TYPES_ALL=		build lib run
 _WX_VERS_ALL=			2.4 2.6 2.8
 _WX_VERS_UC_ALL=		2.6 2.8
@@ -154,9 +153,6 @@ _WX_LIB_contrib_2.4=	wx_gtk2_canvas-2.4
 
 _WX_PORT_python_2.4=	x11-toolkits/py-wxPython24
 _WX_FILE_python_2.4=	${PYTHON_SITELIBDIR}/wx/__init__.py
-
-_WX_PORT_mozilla_2.4=	x11-toolkits/wxmozilla
-_WX_LIB_mozilla_2.4=	wxmozilla_gtk2-2.4
 
 # wxgtk 2.6
 _WX_PORT_wx_2.6=		x11-toolkits/wxgtk26${_WX_UCL}
