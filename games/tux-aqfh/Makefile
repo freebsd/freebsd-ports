@@ -25,6 +25,12 @@ CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -lusbhid ${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile: error: plib/js.h: No such file or directory
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lplibsl -lplibssg|-lplibsl -lplibjs -lplibssg|g ; \
@@ -35,4 +41,4 @@ post-patch:
 		's|$$(prefix)/games|@bindir@|g ; \
 		 s|$$(datadir)/games|$$(datadir)|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
