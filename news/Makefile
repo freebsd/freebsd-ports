@@ -42,7 +42,6 @@
     SUBDIR += ifmail
     SUBDIR += ija
     SUBDIR += inn
-    SUBDIR += inn-current
     SUBDIR += klibido
     SUBDIR += knews
     SUBDIR += leafnode
