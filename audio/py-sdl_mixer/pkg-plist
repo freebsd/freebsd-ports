@@ -1,8 +1,0 @@
-lib/%%PYTHON_VERSION%%/site-packages/pysdl_mixer/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/pysdl_mixer/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pysdl_mixer/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pysdl_mixer/sdl_mixer.so
-%%PORTDOCS%%%%EXAMPLESDIR%%/sdl_mixer-1.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/test.wav
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pysdl_mixer
