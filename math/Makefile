@@ -211,6 +211,7 @@
     SUBDIR += octave-forge-ftp
     SUBDIR += octave-forge-ga
     SUBDIR += octave-forge-general
+    SUBDIR += octave-forge-generate_html
     SUBDIR += octave-forge-graceplot
     SUBDIR += octave-forge-gsl
     SUBDIR += octave-forge-ident
