@@ -1,6 +1,0 @@
---- ./wmake/rules/FreeBSD/c++Opt.orig	Mon Apr 30 12:27:24 2007
-+++ ./wmake/rules/FreeBSD/c++Opt	Sun Aug  5 11:21:13 2007
-@@ -1,2 +1,2 @@
- c++DBUG     = 
--c++OPT      = -O3
-+c++OPT      = $(CXXFLAGS)

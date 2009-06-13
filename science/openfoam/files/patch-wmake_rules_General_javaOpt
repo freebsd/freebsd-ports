@@ -1,6 +1,0 @@
---- ./wmake/rules/General/javaOpt.orig	Mon Nov 22 18:30:37 2004
-+++ ./wmake/rules/General/javaOpt	Sat Oct 21 14:23:16 2006
-@@ -1,2 +1,2 @@
- javaDBUG     = 
--javaOPT      = -O
-+javaOPT      = -O -source 1.4
