@@ -1,7 +1,0 @@
-In order to save configuration and builds, Hudson needs HUDSON_HOME to be
-defined.
-
-For example, to use /home/hudson/ and provided this directory already exists,
-you may add the following to /etc/rc.conf:
-
-tomcat60_java_opts="-DHUDSON_HOME=/home/hudson"

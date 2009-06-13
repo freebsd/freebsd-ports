@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: hudson
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Configuration settings for hudson in /etc/rc.conf:
+#
+# hudson_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable hudson
+#
+# hudson_args (str):
+#   Extra arguments passed to start command
+#
+# hudson_home (str)
+#   Set to "%%HUDSON_HOME%%" by default.
+#   Set the HUDSON_HOME variable for hudson process
+#
+# hudson_java_home (str):
+#   Set to "%%JAVA_HOME%%" by default.
+#   Set the Java virtual machine to run hudson
+#
+# hudson_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#
+# hudson_user (str):
+#   Set to "%%HUDSON_USER%%" by default.
+#   User to run hudson as.
+#
+# hudson_group (str):
+#   Set to "%%HUDSON_GROUP%%" by default.
+#   Group for data file ownership.
+#
+
+hudson_log_file=/var/log/hudson.log
+
+. %%RC_SUBR%%
+
+name="hudson"
+rcvar=`set_rcvar`
+
+load_rc_config "${name}"
+
+: ${hudson_enable="NO"}
+: ${hudson_home="%%HUDSON_HOME%%"}
+: ${hudson_args="--webroot=${hudson_home}/war --httpListenAddress=127.0.0.1 --httpPort=8180 --ajp13ListenAddress=127.0.0.1 --ajp13Port=8009 --prefix=/hudson"}
+: ${hudson_java_home="%%JAVA_HOME%%"}
+: ${hudson_java_opts=""}
+: ${hudson_user="%%HUDSON_USER%%"}
+: ${hudson_group="%%HUDSON_GROUP%%"}
+
+pidfile="/var/run/hudson.pid"
+command="/usr/sbin/daemon"
+java_cmd="${hudson_java_home}/bin/java"
+procname="${java_cmd}"
+command_args="-p ${pidfile} ${java_cmd} -DHUDSON_HOME=${hudson_home} ${hudson_java_opts} -jar %%DATADIR%%/hudson.war --logfile=${hudson_log_file} ${hudson_args}"
+required_dirs="${hudson_home}"
+required_files="${hudson_log_file} ${java_cmd}"
+
+start_precmd="setup_files"
+
+setup_files() {
+	touch "${hudson_log_file}" "${pidfile}"
+	chown "${hudson_user}:${hudson_group}" "${hudson_log_file}" "${pidfile}"
+	chmod 640 "${hudson_log_file}"
+	install -d -o "${hudson_user}" -g "${hudson_group}" -m 750 "${hudson_home}"
+}
+
+run_rc_command "$1"
