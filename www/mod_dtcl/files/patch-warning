@@ -31,6 +31,14 @@
 +            print_error(r, 0, Tcl_GetVar(interp, "errorInfo", 0));
              print_error(r, 1, "<p><b>OUTPUT BUFFER:</b></p>");
              print_error(r, 0, Tcl_GetStringFromObj(outbuf, (int *)NULL));
+@@ -382,5 +381,6 @@
+     {
+ 	hashKey = ap_psprintf(r->pool, "%s%lx%lx%d", filename,
+-			      mtime, ctime, toplevel);
++			      (unsigned long)mtime, (unsigned long)ctime,
++			      toplevel);
+ 	entry = Tcl_CreateHashEntry(dsc->objCache, hashKey, &isNew);
+     }
 --- channel.c	2001-09-05 08:01:22.000000000 -0400
 +++ channel.c	2009-04-11 23:03:43.000000000 -0400
 @@ -19,5 +19,6 @@
