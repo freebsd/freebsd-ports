@@ -307,7 +307,6 @@
     SUBDIR += wxgtk28-contrib-common
     SUBDIR += wxgtk28-unicode
     SUBDIR += wxgtk28-unicode-contrib
-    SUBDIR += wxmozilla
     SUBDIR += xbae
     SUBDIR += xclasses
     SUBDIR += xforms
