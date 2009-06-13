@@ -1,9 +1,0 @@
-tDiary is a Web-based interface system that works as a personal diary. 
-It is possible for diary readers to add comments to your diary.
-
-     -  require Ruby 1.8.2 or later
-     -  currently supported: Japanese, English, Traditional-Chinese
-    tDiary is developed on http://sourceforge.net/projects/tdiary/ .
-    See URL for more information.
-
-WWW: http://www.tdiary.org/
