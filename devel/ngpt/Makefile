@@ -24,7 +24,13 @@ USE_GMAKE=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
