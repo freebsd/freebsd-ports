@@ -560,7 +560,6 @@
     SUBDIR += nil
     SUBDIR += nimuh
     SUBDIR += ninix-aya
-    SUBDIR += njam
     SUBDIR += noegnud-addons
     SUBDIR += noegnud-data
     SUBDIR += noegnud-littlehack
