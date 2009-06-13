@@ -56,10 +56,6 @@ include/hk_classes/hk_subform.h
 include/hk_classes/hk_tabvisible.h
 include/hk_classes/hk_url.h
 include/hk_classes/hk_visible.h
-%%FIREBIRD%%lib/hk_classes/drivers/libhk_firebirddriver.a
-%%FIREBIRD%%lib/hk_classes/drivers/libhk_firebirddriver.la
-%%FIREBIRD%%lib/hk_classes/drivers/libhk_firebirddriver.so
-%%FIREBIRD%%lib/hk_classes/drivers/libhk_firebirddriver.so.0
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.a
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.la
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so

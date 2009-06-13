@@ -29,7 +29,8 @@ CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S/python//} LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-python-libdir=${PYTHON_LIBDIR} \
 		--with-python-incdir=${PYTHON_INCLUDEDIR} \
 		--with-fontconfig-incdir=${LOCALBASE}/include/fontconfig \
-		--with-fontconfig-libdir=${LOCALBASE}/lib
+		--with-fontconfig-libdir=${LOCALBASE}/lib \
+		--without-firebird
 USE_LDCONFIG=	${PREFIX}/lib/hk_classes/
 
 INSTALLS_EGGINFO=	yes
@@ -41,7 +42,6 @@ NOT_FOR_ARCHS_REASON_ia64=	Does not build
 OPTIONS=	MYSQL		"Build MySQL driver"		on  \
 		POSTGRESQL	"Build PostrgreSQL driver"	off \
 		ODBC		"Build unixODBC driver"		off \
-		FIREBIRD	"Build Firebird driver"		off \
 		PARADOX		"Build Paradox driver"		off \
 		SQLITE2		"Build with sqlite2 driver"	off \
 		SQLITE3		"Build with sqlite3 driver"	off
@@ -84,16 +84,6 @@ PLIST_SUB+=	ODBC=""
 .else
 CONFIGURE_ARGS+=	--without-odbc
 PLIST_SUB+=	ODBC="@comment "
-.endif
-
-.if defined(WITH_FIREBIRD)
-LIB_DEPENDS+=		gds:${PORTSDIR}/databases/firebird-client
-CONFIGURE_ARGS+=	--with-firebird-incdir=${LOCALBASE}/include/\
-			--with-firebird-libdir=${LOCALBASE}/lib
-PLIST_SUB+=	FIREBIRD=""
-.else
-CONFIGURE_ARGS+=	--without-firebird
-PLIST_SUB+=	FIREBIRD="@comment "
 .endif
 
 .if defined(WITH_PARADOX)
