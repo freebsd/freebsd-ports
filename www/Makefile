@@ -63,7 +63,6 @@
     SUBDIR += bugmenot
     SUBDIR += bugmenot-firefox
     SUBDIR += c-icap
-    SUBDIR += cacheboy
     SUBDIR += cacheboy15-devel
     SUBDIR += cacheboy16
     SUBDIR += cadaver
