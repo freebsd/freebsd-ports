@@ -214,7 +214,6 @@
     SUBDIR += py-kde
     SUBDIR += py-kiwi
     SUBDIR += py-pyqwt
-    SUBDIR += py-pyxfce
     SUBDIR += py-qt
     SUBDIR += py-qt4-gui
     SUBDIR += py-sexy
