@@ -378,7 +378,6 @@
     SUBDIR += mknmz-wwwoffle
     SUBDIR += mmosaic
     SUBDIR += mnogosearch
-    SUBDIR += mnogosearch31
     SUBDIR += mod_access_identd
     SUBDIR += mod_access_referer
     SUBDIR += mod_accesscookie
@@ -1203,7 +1202,6 @@
     SUBDIR += php-dyn
     SUBDIR += php-screw
     SUBDIR += php-templates
-    SUBDIR += php4-mnogosearch
     SUBDIR += php4-session
     SUBDIR += php5-session
     SUBDIR += php5-tidy
