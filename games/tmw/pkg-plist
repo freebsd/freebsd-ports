@@ -3,7 +3,6 @@ share/applications/tmw.desktop
 share/pixmaps/tmw.png
 %%DATADIR%%/data/fonts/dejavusans.ttf
 %%DATADIR%%/data/fonts/dejavusans-bold.ttf
-%%DATADIR%%/data/graphics/gui/bg_quad_dis.png
 %%DATADIR%%/data/graphics/gui/bubble.png
 %%DATADIR%%/data/graphics/gui/button.png
 %%DATADIR%%/data/graphics/gui/button_disabled.png
@@ -14,7 +13,6 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/circle-green.png
 %%DATADIR%%/data/graphics/gui/close_button.png
 %%DATADIR%%/data/graphics/gui/deepbox.png
-%%DATADIR%%/data/graphics/gui/default.png
 %%DATADIR%%/data/graphics/gui/gui.xml
 %%DATADIR%%/data/graphics/gui/hscroll_left_default.png
 %%DATADIR%%/data/graphics/gui/hscroll_left_highlight.png
@@ -47,8 +45,10 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/vscroll_up_default.png
 %%DATADIR%%/data/graphics/gui/vscroll_up_highlight.png
 %%DATADIR%%/data/graphics/gui/vscroll_up_pressed.png
+%%DATADIR%%/data/graphics/gui/window.png
 %%DATADIR%%/data/graphics/images/error.png
 %%DATADIR%%/data/graphics/images/login_wallpaper.png
+%%DATADIR%%/data/icons/tmw.xpm
 %%DATADIR%%/data/help/about.txt
 %%DATADIR%%/data/help/changes.txt
 %%DATADIR%%/data/help/commands.txt
@@ -68,7 +68,6 @@ share/pixmaps/tmw.png
 %%NLS%%share/locale/es/LC_MESSAGES/tmw.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/tmw.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/he/LC_MESSAGES/tmw.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/tmw.mo
 %%NLS%%share/locale/id/LC_MESSAGES/tmw.mo
 %%NLS%%share/locale/it/LC_MESSAGES/tmw.mo
