@@ -9,7 +9,6 @@
     SUBDIR += adblock
     SUBDIR += admuser
     SUBDIR += adzap
-    SUBDIR += amaya
     SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += anyremote2html
