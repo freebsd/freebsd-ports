@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20090331
+PORTVERSION=	20090608
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2009-03-31
+DISTNAME=	${PORTNAME}-2009-06-08
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -24,8 +24,8 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	2.4+
 USE_XORG=	x11 xext xscrnsaver
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${LOCALBASE}/include" \
-		LDFLAGS="-L ${LOCALBASE}/lib" PYTHON=${PYTHON_CMD}
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" PYTHON=${PYTHON_CMD}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.12.1.2-svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.12.1.5-svn
 
 MAN1=		gajim.1
 
@@ -44,23 +44,6 @@ EMOTICONS=	animated static static-big
 ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
 		simplebulb stellar sun transports
 MOODS=		default
-
-.if !defined(WITHOUT_DBUS)
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
-CONFIGURE_ARGS+=	--enable-remote
-MAN1+=		gajim-remote.1
-PLIST_SUB+=	DBUS=""
-.else
-CONFIGURE_ARGS+=	--disable-remote
-PLIST_SUB+=	DBUS="@comment "
-.endif
-
-post-patch:
-.for i in gajim-remote.py gajim.py history_manager.py
-		${REINPLACE_CMD} -e '1,1s/python/${PYTHON_VERSION}/' \
-			${WRKSRC}/src/$i
-.endfor
 
 pre-build:
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
