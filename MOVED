@@ -4002,3 +4002,5 @@ audio/festvox-tll||2009-06-13|Has expired: unfulfilled dependencies for 8+ month
 audio/py-sdl_mixer||2009-06-13|Has expired: has been broken for more than 6 months
 graphics/libimg-tk83||2009-06-13|Has expired: tcl8.3 support is going to be dropped
 multimedia/manencode||2009-06-13|Has expired
+www/mnogosearch31||2009-06-13|Has expired: Use www/mnogosearch instead, this version is ancient
+www/php4-mnogosearch||2009-06-13|Removed
