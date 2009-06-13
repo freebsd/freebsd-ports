@@ -1,9 +1,0 @@
-FreeCAD is an OpenSource CAD/CAE, based on OpenCasCade, QT and Python.
-
-It features some key concepts like macro recording, workbenches, ability to run
-as a server and dynamically loadable application extensions and it is designed
-to be platform independent.
-
-Warning: FreeCAD is still in ALPHA state and not in shape for end user usage!
-
-WWW: http://juergen-riegel.net/FreeCAD/Docu/
