@@ -708,6 +708,7 @@ atlast                          ports/lang/atlast
 atlc                            ports/cad/atlc
 atmail                          ports/mail/atmail
 atmsupport                      ports/net/atmsupport
+atom                            ports/textproc/atom
 atomicparsley                   ports/multimedia/atomicparsley
 atomix                          ports/games/atomix
 atp                             ports/news/atp
@@ -23787,6 +23788,7 @@ xmms-sndstretch                 ports/audio/xmms-sndstretch
 xmms-speex                      ports/audio/xmms-speex
 xmms-status-plugin              ports/multimedia/xmms-status-plugin
 xmms-tfmx                       ports/audio/xmms-tfmx
+xmms-timidity                   ports/audio/xmms-timidity
 xmms-uade                       ports/audio/xmms-uade
 xmms-volnorm                    ports/audio/xmms-volnorm
 xmms-vumeter                    ports/graphics/xmms-vumeter
