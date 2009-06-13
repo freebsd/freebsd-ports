@@ -103,6 +103,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/COMKit/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.1.html
+%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/DocSupport/.checksrc.config
 %%WEBWARE_MASTER_DIR%%/DocSupport/ClassList.py
 %%WEBWARE_MASTER_DIR%%/DocSupport/ClassList.pyc
@@ -155,6 +156,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/Docs/favicon.ico
 %%WEBWARE_MASTER_DIR%%/Docs/index.html
 %%WEBWARE_MASTER_DIR%%/KidKit/.checksrc.config
+%%WEBWARE_MASTER_DIR%%/KidKit/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/KidKit/Docs/RelNotes-0.9.1.html
 %%WEBWARE_MASTER_DIR%%/KidKit/Docs/RelNotes-0.9.3.html
 %%WEBWARE_MASTER_DIR%%/KidKit/Docs/RelNotes-0.9.html
@@ -615,6 +617,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.9.2.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.9.html
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/ClassList.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.BasicDateTime.html
@@ -752,6 +755,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.9.3.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.9.html
+%%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/ClassList.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/Docs/PSP.BraceConverter.html
@@ -1150,6 +1154,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.9.4.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.9.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.1.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/SampleAdmin.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/SampleError.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/ClassHierarchy.html
