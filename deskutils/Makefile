@@ -166,7 +166,6 @@
     SUBDIR += menumaker
     SUBDIR += metabar
     SUBDIR += mhc
-    SUBDIR += mical
     SUBDIR += moregroupware
     SUBDIR += mrundlg
     SUBDIR += msynctool

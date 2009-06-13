@@ -1,7 +1,0 @@
-bin/micreply
-bin/micsave
-bin/micsetup
-bin/micshow
-%%PYTHON_SITELIBDIR%%/mical.py
-%%PYTHON_SITELIBDIR%%/mical.pyc
-%%PYTHON_SITELIBDIR%%/mical.pyo
