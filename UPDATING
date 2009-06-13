@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090613:
+  AFFECTS: users of www/hudson
+  AUTHOR: hq@FreeBSD.org
+
+  Hudson is now running as a standalone process and no longer relies on Apache
+  Tomcat. As such, it should now be configured by defining hudson_* variables
+  in rc.conf. See comments from rc.d script for further details.
+
+  The default setup is using the same port numbers and HTTP URL prefix as
+  before in order to reduce the effort of upgrading the port. Hence, it may
+  conflict with some running Apache Tomcat instance. To fix this problem, you
+  may either de-install www/tomcat6 or use the following settings in hudson_args
+  from /etc/rc.conf:
+
+    --httpPort=??? --ajp13Port=???
+
 20090611:
   AFFECTS: users of www/apache22
   AUTHOR: pgollucci@FreeBSD.org
