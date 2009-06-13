@@ -1,6 +1,5 @@
 bin/gajim
 bin/gajim-history-manager
-%%DBUS%%bin/gajim-remote
 lib/gajim/trayicon.la
 lib/gajim/trayicon.so
 %%NLS%%share/locale/be/LC_MESSAGES/gajim.mo
