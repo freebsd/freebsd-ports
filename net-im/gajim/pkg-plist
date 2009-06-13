@@ -1,4 +1,5 @@
 bin/gajim
+bin/gajim-history-manager
 %%DBUS%%bin/gajim-remote
 lib/gajim/gtkspell.la
 lib/gajim/gtkspell.so
@@ -307,7 +308,6 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/zeroconf_contact_context_menu.glade
 %%DATADIR%%/data/glade/zeroconf_context_menu.glade
 %%DATADIR%%/data/glade/zeroconf_information_window.glade
-%%DATADIR%%/data/glade/zeroconf_properties_window.glade
 %%DATADIR%%/data/iconsets/crystal/16x16/away.png
 %%DATADIR%%/data/iconsets/crystal/16x16/chat.png
 %%DATADIR%%/data/iconsets/crystal/16x16/closed.png
@@ -868,6 +868,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/events/new_email_recv.png
 %%DATADIR%%/data/pixmaps/events/priv_msg_recv.png
 %%DATADIR%%/data/pixmaps/events/single_msg_recv.png
+%%DATADIR%%/data/pixmaps/events/subscription_request.png
+%%DATADIR%%/data/pixmaps/events/unsubscribed.png
 %%DATADIR%%/data/pixmaps/gajim.ico
 %%DATADIR%%/data/pixmaps/gajim.png
 %%DATADIR%%/data/pixmaps/gajim_about.png
@@ -972,6 +974,9 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/src/common/i18n.py
 %%DATADIR%%/src/common/i18n.pyc
 %%DATADIR%%/src/common/i18n.pyo
+%%DATADIR%%/src/common/latex.py
+%%DATADIR%%/src/common/latex.pyc
+%%DATADIR%%/src/common/latex.pyo
 %%DATADIR%%/src/common/logger.py
 %%DATADIR%%/src/common/logger.pyc
 %%DATADIR%%/src/common/logger.pyo
