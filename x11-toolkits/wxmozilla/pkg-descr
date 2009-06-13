@@ -1,7 +1,0 @@
-wxMozilla is a project underway to develop a wxWidgets component for embedding
-the Mozilla browser into any wxWidgets application. The wxMozilla classes will
-utilize minimal, if any, platform dependent code and utilize directly the
-XPCOM (Cross Platform COM) interface to instantiate a html browser or editor
-within the application.
-
-WWW: http://wxmozilla.sourceforge.net/
