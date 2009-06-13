@@ -1604,7 +1604,6 @@
     SUBDIR += wikicalc
     SUBDIR += wikindx
     SUBDIR += wiliki
-    SUBDIR += winhelpcgi
     SUBDIR += wml
     SUBDIR += wnews
     SUBDIR += woadaptor
