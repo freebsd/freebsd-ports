@@ -18,6 +18,12 @@ COMMENT=	\
 NO_MAN=		defined
 PIMDD_DOCS=	pimd-dense.html README CHANGES RELEASE.NOTES
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800070
+BROKEN=		does not compile: error: IGMP_HOST_MEMBERSHIP_REPORT undeclared
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/pimd.conf|${PREFIX}/etc/pimd.conf|g' ${WRKSRC}/pathnames.h
 
@@ -31,4 +37,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

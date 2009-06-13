@@ -56,6 +56,10 @@ CONFIGURE_ARGS+=--with-dummy-values
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile
+.endif
+
 .if defined(WITHOUT_PERL)
 PLIST_SUB+=	WITH_PERL="@comment "
 CONFIGURE_ARGS+=--disable-embedded-perl --without-perl-modules
