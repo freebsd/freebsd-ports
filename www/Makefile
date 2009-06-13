@@ -1443,7 +1443,6 @@
     SUBDIR += templatelite
     SUBDIR += textpattern
     SUBDIR += thttpd
-    SUBDIR += thttpd-st
     SUBDIR += thumbnail_index
     SUBDIR += tidy
     SUBDIR += tidy-devel
