@@ -7,17 +7,14 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8
 CATEGORIES=	german www
-MASTER_SITES=	http://static.wordpress-deutschland.org/de-edition/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	de-
-DISTNAME=	wordpress_271-de
+DISTNAME=	wordpress_28-de
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
-
-BROKEN=		distfile mismatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
