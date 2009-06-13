@@ -235,7 +235,6 @@
     SUBDIR += geolizer
     SUBDIR += geronimo
     SUBDIR += getleft
-    SUBDIR += gforge
     SUBDIR += glibwww
     SUBDIR += glpi
     SUBDIR += gnome-user-share
