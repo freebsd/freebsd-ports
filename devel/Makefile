@@ -1935,6 +1935,7 @@
     SUBDIR += p5-Test-WWW-Mechanize-CGI
     SUBDIR += p5-Test-WWW-Mechanize-CGIApp
     SUBDIR += p5-Test-WWW-Mechanize-Catalyst
+    SUBDIR += p5-Test-WWW-Selenium
     SUBDIR += p5-Test-Warn
     SUBDIR += p5-Test-XML
     SUBDIR += p5-Test-XML-Valid
