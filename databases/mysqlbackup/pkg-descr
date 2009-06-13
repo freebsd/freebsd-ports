@@ -1,0 +1,18 @@
+mysqlbackup: create MySQL-database servers backup easy
+
+Why mysqlbackup?
+
+1. Required minimum coding to create everyday MySQL-backups with some
+additional functions.
+
+2. Backups can be compressed on-the-fly and automatically rotated after
+specified number of a days past.
+
+3. It is includes basic database maintenance: check, optimize tables before
+backup creation.
+
+4. It can be safely used on a large MySQL installations (1000+ databases).
+
+5. It is written in sh - code interpreter available in a base system.
+
+WWW: http://renatasystems.org/freebsd/mysqlbackup.html
