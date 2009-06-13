@@ -18,8 +18,6 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 USE_TCL=	yes
 USE_TCL_BUILD=	yes
 
-BROKEN=		does not build
-
 WRKSRC=		${WRKDIR}/mod_dtcl
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 USE_APACHE=	1.3
