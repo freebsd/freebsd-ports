@@ -27,6 +27,12 @@ MAKE_ENV=	COPTS="${COPTS} -I${OPENSSLINC}" LDADD="${LDADD} -L${OPENSSLLIB}"
 
 USE_RC_SUBR=	mpd
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800097
+BROKEN=		does not compile
+.endif
+
 pre-build:
 	@${ECHO}
 	@${ECHO} "Use WITH_OPENSSL_PORT=yes if you use OPENSSL from ports"
@@ -38,4 +44,4 @@ pre-install:
 	@${MKDIR} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
