@@ -1455,7 +1455,6 @@
     SUBDIR += tomcat41
     SUBDIR += tomcat55
     SUBDIR += tomcat6
-    SUBDIR += toofpy
     SUBDIR += trac
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
