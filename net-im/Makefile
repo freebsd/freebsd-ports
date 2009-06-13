@@ -87,7 +87,6 @@
     SUBDIR += mu-conference
     SUBDIR += naim
     SUBDIR += newsbot
-    SUBDIR += ocaml-jabbr
     SUBDIR += openfire
     SUBDIR += p5-DJabberd
     SUBDIR += p5-Jabber-Connection
