@@ -1,8 +1,0 @@
-share/festival/lib/voices/italian/lp_ogi_diphone/festvox/lp_ogi_diphone.scm
-share/festival/lib/voices/italian/lp_ogi_diphone/group/lp_ogi_diphone.group
-share/festival/lib/voices/italian/lp_ogi_diphone/group/lp_ogi_diphone.group-README
-@dirrm share/festival/lib/voices/italian/lp_ogi_diphone/festvox
-@dirrm share/festival/lib/voices/italian/lp_ogi_diphone/group
-@dirrm share/festival/lib/voices/italian/lp_ogi_diphone
-@dirrmtry share/festival/lib/voices/italian
-@dirrmtry share/festival/lib/voices

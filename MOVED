@@ -3987,3 +3987,16 @@ www/tdiary-devel||2009-06-13|Has expired: has been forbidden for more than 6 mon
 chinese/wordpress||2009-06-13|Removed due to security vulnerabilities
 www/amaya||2009-06-13|Removed due to security vulnerabilities
 www/awstats-devel||2009-06-13|Removed due to security vulnerabilities
+audio/festival+OGI||2009-06-13|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+audio/festlex-ifd||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no active maintainer, no user interest
+audio/festogi-italian||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no active maintainer, no user interest
+audio/festogi-spanish||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
+audio/festvox-abc||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no user interest.
+audio/festvox-hvs||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no user interest.
+audio/festvox-jph||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
+audio/festvox-lp||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no active maintainer, no user interest
+audio/festvox-mwm||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
+audio/festvox-ogirab||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
+audio/festvox-pc||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no active maintainer, no user interest
+audio/festvox-tll||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
+audio/py-sdl_mixer||2009-06-13|Has expired: has been broken for more than 6 months

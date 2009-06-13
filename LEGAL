@@ -203,19 +203,9 @@ fasta2*			biology/fasta		May not be sold or incorporated
 						into a commercial product
 fasta3*			biology/fasta3		May not be sold or incorporated
 						into a commercial product
-festival/festival-*	audio/festival+OGI	No commercial use
 festival/festlex_OALD*	audio/festlex-oald	No commercial use
 festival/OGIlexicon-*	audio/festlex-ogi	No commercial use
-festival/OGIresLPC*	audio/festival+OGI	No commercial use
-festival/OGIspanish-*	audio/festogi-spanish	No commercial use
-festival/speech_tools-*	audio/festival+OGI	No commercial use
-festival/voice_abc_di-*	audio/festvox-abc	No commercial use
 festival/voice_aec_di-*	audio/festvox-aec	No commercial use
-festival/voice_hvs_di-*	audio/festvox-hvs	No commercial use
-festival/voice_jph_di-*	audio/festvox-jph	No commercial use
-festival/voice_mwm_di-*	audio/festvox-mwm	No commercial use
-festival/voice_ogirab_di-* audio/festvox-ogirab No commercial use
-festival/voice_tll_di-*	audio/festvox-tll	No commercial use
 fmsx*/*			emulators/fmsx		Unclear legal status of
 						distributed ROMs
 foiltex*		textproc/foiltex	Redistribution on a
@@ -750,7 +740,5 @@ nttcp-*			benchmark/nttcp		No commercial use
 TW-*.ttf		chinese/CNS11643-font	No redistribution or
 						commercial use is allowed
 festlex-ogi		audio/festlex-ogi	No commercial use
-festvox-abc		audio/festvox-abc	No commercial use
-festvox-hvs		audio/festvox-hvs	No commercial use
 apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
 pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license

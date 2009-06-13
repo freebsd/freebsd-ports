@@ -1,9 +1,0 @@
-share/festival/lib/voices/english/jph_diphone/festvox/jph_diphone.scm
-share/festival/lib/voices/english/jph_diphone/festvox/jphdiph.msec
-share/festival/lib/voices/english/jph_diphone/festvox/jphgain.dat
-share/festival/lib/voices/english/jph_diphone/group/jph_di_resLPC.group
-@dirrm share/festival/lib/voices/english/jph_diphone/group
-@dirrm share/festival/lib/voices/english/jph_diphone/festvox
-@dirrm share/festival/lib/voices/english/jph_diphone
-@dirrm share/festival/lib/voices/english
-@dirrm share/festival/lib/voices
