@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20090504
+PORTVERSION=	20090607
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -77,6 +77,7 @@ OPTIONS=	\
 	CIVIL_ENGINEERING "Install package: civil-engineering" On \
 	ENGINE "Install package: engine" On \
 	FPL "Install package: fpl" On \
+	GENERATE_HTML "Install package: generate_html" On \
 	GRACEPLOT "Install package: graceplot" On \
 	INTEGRATION "Install package: integration" On \
 	JAVA "Install package: java (do not select)" Off \
@@ -269,6 +270,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/engine.tar.gz:${PORTSDIR}/math/octave-forge-engine
 .endif
 .if defined(WITH_FPL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/fpl.tar.gz:${PORTSDIR}/math/octave-forge-fpl
+.endif
+.if defined(WITH_GENERATE_HTML)
+RUN_DEPENDS+=	${TARBALLS_DIR}/generate_html.tar.gz:${PORTSDIR}/math/octave-forge-generate_html
 .endif
 .if defined(WITH_GRACEPLOT)
 RUN_DEPENDS+=	${TARBALLS_DIR}/graceplot.tar.gz:${PORTSDIR}/math/octave-forge-graceplot
