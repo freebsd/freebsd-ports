@@ -316,7 +316,6 @@
     SUBDIR += skkinput3
     SUBDIR += skkserv
     SUBDIR += slimeforest
-    SUBDIR += slirc
     SUBDIR += slrn
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
