@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-oct2mat
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
