@@ -2005,7 +2005,6 @@
     SUBDIR += p5-Unix-Statgrab
     SUBDIR += p5-Unix-Uptime
     SUBDIR += p5-User-Identity
-    SUBDIR += p5-VCP
     SUBDIR += p5-VCP-Dest-svk
     SUBDIR += p5-VCP-Source-cvsbk
     SUBDIR += p5-VCP-autrijus
