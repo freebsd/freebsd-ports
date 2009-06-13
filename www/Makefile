@@ -46,7 +46,6 @@
     SUBDIR += autoindex2
     SUBDIR += awffull
     SUBDIR += awstats
-    SUBDIR += awstats-devel
     SUBDIR += axis
     SUBDIR += b2evolution
     SUBDIR += bacula-web
