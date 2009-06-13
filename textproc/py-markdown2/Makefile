@@ -1,24 +1,21 @@
-# New ports collection makefile for:    py-markdown
-# Date created:         28 November 2006
-# Whom:                 Graham Todd <gtodd@bellanet.org>
+# New ports collection makefile for:    py-markdown2
+# Date created:         4th June, 2009
+# Whom:                 Wen Heping <wenheping@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=		markdown
-PORTVERSION=		1.7
-CATEGORIES=		textproc python
-MASTER_SITES=		CHEESESHOP
-MASTER_SITE_SUBDIR=	source/M/Markdown
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+PORTNAME=	markdown2
+PORTVERSION=	1.0.1.12
+CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		alexbl@FreeBSD.org
-COMMENT=		Text markup to HTML conversion engine for Python
+MAINTAINER=	wenheping@gmail.com
+COMMENT=	A fast and complete Python implementaion of Markdown
 
-USE_ZIP=		yes
-USE_PYTHON=		2.4+
+USE_ZIP=	yes
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
