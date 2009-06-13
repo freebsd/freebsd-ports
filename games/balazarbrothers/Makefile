@@ -35,17 +35,12 @@ PYDISTUTILS_PKGNAME=	BalazarBrothers
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
 DATADIR=	share/balazar_brothers
 
-OPTIONS=	OPENAL	"Use openal sound system" on \
-		SDL	"Use sdl sound system" off
+OPTIONS=	OPENAL	"Use openal sound system" on
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OPENAL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal
-.endif
-
-.if defined(WITH_SDL)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysdl_mixer/sdl_mixer.so:${PORTSDIR}/audio/py-sdl_mixer
 .endif
 
 post-patch:
