@@ -39,6 +39,12 @@ ALL_FONTS=		${ARPHIC_FONTS_BIG5} ${ARPHIC_FONTS_GB2312}
 FONT_SIZES=		16 24
 WEBFONTS_WRKSRC=	`cd ${PORTSDIR}/x11-fonts/webfonts/; make -V WRKSRC`
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 800000
+BROKEN=		segfaults during build
+.endif
+
 post-extract:
 .for fn in ${ALL_FONTS}
 	@${LN} -sf ${ARPHIC_FONTDIR}/${fn}.ttf ${WRKSRC}/
@@ -77,4 +83,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
