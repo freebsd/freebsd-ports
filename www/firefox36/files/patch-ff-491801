@@ -1,0 +1,91 @@
+Index: netwerk/base/src/nsURLParsers.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/netwerk/base/src/nsURLParsers.cpp,v
+retrieving revision 1.32
+diff -p -u -6 -r1.32 nsURLParsers.cpp
+--- netwerk/base/src/nsURLParsers.cpp	24 Nov 2008 22:46:16 -0000	1.32
++++ netwerk/base/src/nsURLParsers.cpp	8 May 2009 01:31:15 -0000
+@@ -385,12 +385,23 @@ nsBaseURLParser::ParseFileName(const cha
+ }
+ 
+ //----------------------------------------------------------------------------
+ // nsNoAuthURLParser implementation
+ //----------------------------------------------------------------------------
+ 
++NS_IMETHODIMP
++nsNoAuthURLParser::ParseAuthority(const char *auth, PRInt32 authLen,
++                                 PRUint32 *usernamePos, PRInt32 *usernameLen,
++                                 PRUint32 *passwordPos, PRInt32 *passwordLen,
++                                 PRUint32 *hostnamePos, PRInt32 *hostnameLen,
++                                 PRInt32 *port)
++{
++    NS_NOTREACHED("Shouldn't parse auth in a NoAuthURL!");
++    return NS_ERROR_UNEXPECTED;
++}
++
+ void
+ nsNoAuthURLParser::ParseAfterScheme(const char *spec, PRInt32 specLen,
+                                     PRUint32 *authPos, PRInt32 *authLen,
+                                     PRUint32 *pathPos, PRInt32 *pathLen)
+ {
+     NS_PRECONDITION(specLen >= 0, "unexpected");
+@@ -416,17 +427,17 @@ nsNoAuthURLParser::ParseAfterScheme(cons
+                     break;  
+                 } 
+ #endif
+                 p = (const char *) memchr(spec + 2, '/', specLen - 2);
+             }
+             if (p) {
+-                SET_RESULT(auth, 2, p - (spec + 2));
++                SET_RESULT(auth, 0, -1);
+                 SET_RESULT(path, p - spec, specLen - (p - spec));
+             }
+             else {
+-                SET_RESULT(auth, 2, specLen - 2);
++                SET_RESULT(auth, 0, -1);
+                 SET_RESULT(path, 0, -1);
+             }
+             return;
+         }
+     default:
+         pos = 2;
+Index: netwerk/base/src/nsURLParsers.h
+===================================================================
+RCS file: /cvsroot/mozilla/netwerk/base/src/nsURLParsers.h,v
+retrieving revision 1.4
+diff -p -u -6 -r1.4 nsURLParsers.h
+--- netwerk/base/src/nsURLParsers.h	18 Apr 2004 21:59:09 -0000	1.4
++++ netwerk/base/src/nsURLParsers.h	8 May 2009 01:31:15 -0000
+@@ -67,25 +67,31 @@ protected:
+ //     file:/foo/bar.txt      (treated equivalently)
+ //     file:///foo/bar.txt
+ //
+ // eg. file:////foo/bar.txt   (UNC-filepath = \\foo\bar.txt)
+ //
+ // XXX except in this case:
+-//     file://foo/bar.txt     (foo is authority)
++//     file://foo/bar.txt     (the authority "foo"  is ignored)
+ //----------------------------------------------------------------------------
+ 
+ class nsNoAuthURLParser : public nsBaseURLParser
+ {
+ public: 
+ #if defined(XP_WIN) || defined(XP_OS2)
+     NS_IMETHOD ParseFilePath(const char *, PRInt32,
+                              PRUint32 *, PRInt32 *,
+                              PRUint32 *, PRInt32 *,
+                              PRUint32 *, PRInt32 *);
+ #endif
+ 
++    NS_IMETHOD ParseAuthority(const char *auth, PRInt32 authLen,
++                              PRUint32 *usernamePos, PRInt32 *usernameLen,
++                              PRUint32 *passwordPos, PRInt32 *passwordLen,
++                              PRUint32 *hostnamePos, PRInt32 *hostnameLen,
++                              PRInt32 *port);
++
+     void ParseAfterScheme(const char *spec, PRInt32 specLen,
+                           PRUint32 *authPos, PRInt32 *authLen,
+                           PRUint32 *pathPos, PRInt32 *pathLen);
+ };
+ 
+ //----------------------------------------------------------------------------

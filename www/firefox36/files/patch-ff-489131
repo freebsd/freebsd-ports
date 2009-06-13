@@ -1,0 +1,29 @@
+diff -U12 -up mozilla/content/base/src/nsContentUtils.cpp.489131 mozilla/content/base/src/nsContentUtils.cpp
+--- content/base/src/nsContentUtils.cpp.489131	2009-05-14 13:30:53.000000000 +0200
++++ content/base/src/nsContentUtils.cpp	2009-05-14 13:30:53.000000000 +0200
+@@ -2310,24 +2310,25 @@ nsCxPusher::Push(nsISupports *aCurrentTa
+   if (mScx) {
+     NS_ERROR("Whaaa! No double pushing with nsCxPusher::Push()!");
+ 
+     return PR_FALSE;
+   }
+ 
+   nsCOMPtr<nsIScriptGlobalObject> sgo;
+   nsCOMPtr<nsIContent> content(do_QueryInterface(aCurrentTarget));
+   nsCOMPtr<nsIDocument> document;
+ 
+   if (content) {
+     document = content->GetOwnerDoc();
++    NS_ENSURE_TRUE(document, PR_FALSE);
+   }
+ 
+   if (!document) {
+     document = do_QueryInterface(aCurrentTarget);
+   }
+ 
+   if (document) {
+     nsCOMPtr<nsIDocument_MOZILLA_1_8_BRANCH3> branch3doc =
+       do_QueryInterface(document);
+     NS_ASSERTION(branch3doc,
+                  "Document must implement nsIDocument_MOZILLA_1_8_BRANCH3!!!");
+     PRBool hasHadScriptObject = PR_TRUE;
