@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-bim
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
