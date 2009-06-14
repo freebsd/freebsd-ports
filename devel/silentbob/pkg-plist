@@ -13,5 +13,6 @@ lib/silent_bob/libplugin_perl.so
 lib/silent_bob/libplugin_perlpackages.so
 lib/silent_bob/libplugin_python.so
 lib/silent_bob/libplugin_ruby.so
+lib/silent_bob/libplugin_ruby_kinds.so
 lib/silent_bob/libplugin_ruby_newclass.so
 @dirrm lib/silent_bob
