@@ -442,7 +442,6 @@ amaterus                        ports/x11-wm/amaterus
 amavis-stats                    ports/security/amavis-stats
 amavisd-milter                  ports/security/amavisd-milter
 amavisd-new                     ports/security/amavisd-new
-amaya                           ports/www/amaya
 amb-plugins                     ports/audio/amb-plugins
 amberfish                       ports/textproc/amberfish
 amiwm                           ports/x11-wm/amiwm
@@ -818,7 +817,6 @@ awesome2                        ports/x11-wm/awesome2
 awffull                         ports/www/awffull
 awka                            ports/lang/awka
 awstats                         ports/www/awstats
-awstats-devel                   ports/www/awstats-devel
 axe                             ports/editors/axe
 axel                            ports/ftp/axel
 axis                            ports/www/axis
@@ -1508,6 +1506,7 @@ cisco_conf                      ports/net-mgmt/cisco_conf
 ciscoconf                       ports/net-mgmt/ciscoconf
 ciso                            ports/sysutils/ciso
 citrix_ica                      ports/net/citrix_ica
+citrix_xenapp                   ports/net/citrix_xenapp
 cjc                             ports/net-im/cjc
 cjk-lyx                         ports/print/cjk-lyx
 ck4up                           ports/sysutils/ck4up
@@ -3198,34 +3197,21 @@ ferite                          ports/lang/ferite
 festalon                        ports/audio/festalon
 festdoc                         ports/audio/festdoc
 festival                        ports/audio/festival
-festival+OGI                    ports/audio/festival+OGI
-festival+ogi                    ports/audio/festival+OGI
 festlex-cmu                     ports/audio/festlex-cmu
 festlex-czech                   ports/audio/festlex-czech
-festlex-ifd                     ports/audio/festlex-ifd
 festlex-oald                    ports/audio/festlex-oald
 festlex-ogi                     ports/audio/festlex-ogi
 festlex-poslex                  ports/audio/festlex-poslex
-festogi-italian                 ports/audio/festogi-italian
-festogi-spanish                 ports/audio/festogi-spanish
-festvox-abc                     ports/audio/festvox-abc
 festvox-aec                     ports/audio/festvox-aec
 festvox-czech                   ports/audio/festvox-czech
 festvox-don                     ports/audio/festvox-don
 festvox-el11                    ports/audio/festvox-el11
-festvox-hvs                     ports/audio/festvox-hvs
-festvox-jph                     ports/audio/festvox-jph
 festvox-kal16                   ports/audio/festvox-kal16
 festvox-kal8                    ports/audio/festvox-kal8
 festvox-ked16                   ports/audio/festvox-ked16
 festvox-ked8                    ports/audio/festvox-ked8
-festvox-lp                      ports/audio/festvox-lp
-festvox-mwm                     ports/audio/festvox-mwm
-festvox-ogirab                  ports/audio/festvox-ogirab
-festvox-pc                      ports/audio/festvox-pc
 festvox-rab16                   ports/audio/festvox-rab16
 festvox-rab8                    ports/audio/festvox-rab8
-festvox-tll                     ports/audio/festvox-tll
 festvox-us1-mbrola              ports/audio/festvox-us1-mbrola
 festvox-us2-mbrola              ports/audio/festvox-us2-mbrola
 festvox-us3-mbrola              ports/audio/festvox-us3-mbrola
@@ -6024,7 +6010,6 @@ ja-skkinput                     ports/japanese/skkinput
 ja-skkinput3                    ports/japanese/skkinput3
 ja-skkserv                      ports/japanese/skkserv
 ja-slimeforest                  ports/japanese/slimeforest
-ja-slirc                        ports/japanese/slirc
 ja-slrn                         ports/japanese/slrn
 ja-srd-fpw                      ports/japanese/srd-fpw
 ja-srd-fpw-package              ports/japanese/srd-fpw-package
@@ -7408,7 +7393,6 @@ libidn                          ports/dns/libidn
 libieee1284                     ports/sysutils/libieee1284
 libijs                          ports/print/libijs
 libimg                          ports/graphics/libimg
-libimg-tk83                     ports/graphics/libimg-tk83
 libint                          ports/science/libint
 libiodbc                        ports/databases/libiodbc
 libiptcdata                     ports/graphics/libiptcdata
@@ -8401,7 +8385,6 @@ managepkg                       ports/ports-mgmt/managepkg
 manck                           ports/sysutils/manck
 mandvd                          ports/multimedia/mandvd
 manedit                         ports/editors/manedit
-manencode                       ports/multimedia/manencode
 mangband                        ports/games/mangband
 mangos                          ports/games/mangos
 manipulate_data                 ports/security/manipulate_data
@@ -8731,7 +8714,6 @@ mmucl                           ports/net/mmucl
 mmv                             ports/misc/mmv
 mn-aspell                       ports/textproc/mn-aspell
 mnogosearch                     ports/www/mnogosearch
-mnogosearch31                   ports/www/mnogosearch31
 mob                             ports/devel/mob
 moc                             ports/audio/moc
 mod_access_identd               ports/www/mod_access_identd
@@ -11434,7 +11416,6 @@ p5-Gtk2-ImageView               ports/x11-toolkits/p5-Gtk2-ImageView
 p5-Gtk2-Spell                   ports/devel/p5-Gtk2-Spell
 p5-Gtk2-TrayIcon                ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-Gtk2-WebKit                  ports/www/p5-Gtk2-WebKit
-p5-GtkXmHTML                    ports/x11-toolkits/p5-GtkXmHTML
 p5-Guard                        ports/devel/p5-Guard
 p5-Gungho                       ports/www/p5-Gungho
 p5-HTML-Adsense                 ports/www/p5-HTML-Adsense
@@ -14895,7 +14876,6 @@ p5-gtk2-imageview               ports/x11-toolkits/p5-Gtk2-ImageView
 p5-gtk2-spell                   ports/devel/p5-Gtk2-Spell
 p5-gtk2-trayicon                ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-gtk2-webkit                  ports/www/p5-Gtk2-WebKit
-p5-gtkxmhtml                    ports/x11-toolkits/p5-GtkXmHTML
 p5-guard                        ports/devel/p5-Guard
 p5-gungho                       ports/www/p5-Gungho
 p5-handel                       ports/www/p5-Handel
@@ -17935,7 +17915,6 @@ php4-mcal                       ports/misc/php4-mcal
 php4-mcrypt                     ports/security/php4-mcrypt
 php4-mcve                       ports/devel/php4-mcve
 php4-mhash                      ports/security/php4-mhash
-php4-mnogosearch                ports/www/php4-mnogosearch
 php4-mssql                      ports/databases/php4-mssql
 php4-mysql                      ports/databases/php4-mysql
 php4-ncurses                    ports/devel/php4-ncurses
@@ -19269,7 +19248,6 @@ py-scientific                   ports/math/py-scientific
 py-sciparam                     ports/x11-toolkits/py-SciParam
 py-scipy                        ports/science/py-scipy
 py-scriptaculous                ports/www/py-scriptaculous
-py-sdl_mixer                    ports/audio/py-sdl_mixer
 py-sendfile                     ports/devel/py-sendfile
 py-serial                       ports/comms/py-serial
 py-setuptools                   ports/devel/py-setuptools
@@ -21826,7 +21804,6 @@ tdb                             ports/databases/tdb
 tdetect                         ports/net/tdetect
 tdfsb                           ports/x11-fm/tdfsb
 tdiary                          ports/www/tdiary
-tdiary-devel                    ports/www/tdiary-devel
 tdir                            ports/sysutils/tdir
 tdl                             ports/devel/tdl
 tdom                            ports/www/tdom
@@ -22982,7 +22959,6 @@ winefish                        ports/editors/winefish
 wings                           ports/graphics/wings
 wingz                           ports/math/wingz
 wingz3                          ports/math/wingz3
-winhelpcgi                      ports/www/winhelpcgi
 wininfo                         ports/devel/wininfo
 winpdb                          ports/devel/winpdb
 wipe                            ports/security/wipe
@@ -23198,7 +23174,6 @@ wxgtk28-contrib-common          ports/x11-toolkits/wxgtk28-contrib-common
 wxgtk28-unicode                 ports/x11-toolkits/wxgtk28-unicode
 wxgtk28-unicode-contrib         ports/x11-toolkits/wxgtk28-unicode-contrib
 wxmaxima                        ports/math/wxMaxima
-wxmozilla                       ports/x11-toolkits/wxmozilla
 wxsvg                           ports/graphics/wxsvg
 wy60                            ports/comms/wy60
 wyrd                            ports/deskutils/wyrd
@@ -24447,7 +24422,6 @@ zh-ve                           ports/chinese/ve
 zh-vflib                        ports/chinese/vflib
 zh-wangttf                      ports/chinese/wangttf
 zh-wenju                        ports/chinese/wenju
-zh-wordpress                    ports/chinese/wordpress
 zh-xemacs21                     ports/chinese/xemacs21
 zh-xmms                         ports/chinese/xmms
 zh-xpdf                         ports/chinese/xpdf
