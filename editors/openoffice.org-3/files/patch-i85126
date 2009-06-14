@@ -1,13 +1,20 @@
-Update to newest cpp-uno bridge from Linux x86-64.
+catch up to recent bridge also fixes following issues
+for amd64
+http://www.openoffice.org/issues/show_bug.cgi?id=98781
+http://www.openoffice.org/issues/show_bug.cgi?id=82690
+http://www.freebsd.org/cgi/query-pr.cgi?pr=127946
 
-Index: bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx
-===================================================================
-RCS file: /cvs/udk/bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx,v
-retrieving revision 1.3
-diff -u -r1.3 abi.cxx
---- bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	16 Sep 2006 15:46:23 -0000	1.3
-+++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	12 Apr 2008 00:10:44 -0000
-@@ -358,6 +358,8 @@
+We also need #define USE_DOUBLE_MMAP for FreeBSD as well.
+It's very hard to maintain without it, and performance loss is
+negligible. See also
+http://www.openoffice.org/issues/show_bug.cgi?id=97320
+. Note that i386 also requires the patch for
+"bridges/inc/bridges/cpp_uno/shared/vtablefactory.hxx"
+.
+
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	2009-06-13 15:39:58.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	2009-06-13 15:41:26.000000000 +0900
+@@ -353,6 +353,8 @@
              case X86_64_SSEDF_CLASS:
                  *pStructAlign++ = *reinterpret_cast<sal_uInt64 *>( *pSSE++ );
                  break;
@@ -16,14 +23,9 @@ diff -u -r1.3 abi.cxx
          }
  }
  
-Index: bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx
-===================================================================
-RCS file: /cvs/udk/bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx,v
-retrieving revision 1.4
-diff -u -r1.4 cpp2uno.cxx
---- bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx	27 Feb 2008 09:49:58 -0000	1.4
-+++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx	12 Apr 2008 00:10:44 -0000
-@@ -82,8 +82,8 @@
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx	2009-06-13 15:39:58.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx	2009-06-13 15:41:26.000000000 +0900
+@@ -77,8 +77,8 @@
  	void ** gpreg, void ** fpreg, void ** ovrflw,
  	sal_uInt64 * pRegisterReturn /* space for register return */ )
  {
@@ -34,7 +36,14 @@ diff -u -r1.4 cpp2uno.cxx
         
  	// return
  	typelib_TypeDescription * pReturnTypeDescr = 0;
-@@ -500,7 +500,6 @@
+@@ -489,13 +489,12 @@
+ //==================================================================================================
+ 
+ unsigned char * bridges::cpp_uno::shared::VtableFactory::addLocalFunctions(
+-	Slot ** slots, unsigned char * code,
++	Slot ** slots, unsigned char * code, sal_PtrDiff writetoexecdiff,
+ 	typelib_InterfaceTypeDescription const * type, sal_Int32 nFunctionOffset,
+ 	sal_Int32 functionCount, sal_Int32 nVtableOffset )
  {
  	(*slots) -= functionCount;
  	Slot * s = *slots;
@@ -42,41 +51,36 @@ diff -u -r1.4 cpp2uno.cxx
  	for ( sal_Int32 nPos = 0; nPos < type->nMembers; ++nPos )
  	{
  		typelib_TypeDescription * pTD = 0;
-Index: bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx
-===================================================================
-RCS file: /cvs/udk/bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx,v
-retrieving revision 1.4
-diff -u -r1.4 except.cxx
---- bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	5 Jul 2007 09:01:44 -0000	1.4
-+++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	12 Apr 2008 00:10:44 -0000
-@@ -180,8 +180,8 @@
-         else
-         {
-             // try to lookup the symbol in the generated rtti map
--            t_rtti_map::const_iterator iFind( m_generatedRttis.find( unoName ) );
--            if (iFind == m_generatedRttis.end())
-+            t_rtti_map::const_iterator iFind2( m_generatedRttis.find( unoName ) );
-+            if (iFind2 == m_generatedRttis.end())
-             {
-                 // we must generate it !
-                 // symbol and rtti-name is nearly identical,
-@@ -210,7 +210,7 @@
-             }
-             else // taking already generated rtti
-             {
--                rtti = iFind->second;
-+                rtti = iFind2->second;
-             }
-         }
-     }
-Index: bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx
-===================================================================
-RCS file: /cvs/udk/bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx,v
-retrieving revision 1.4
-diff -u -r1.4 uno2cpp.cxx
---- bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	5 Jul 2007 09:02:53 -0000	1.4
-+++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	12 Apr 2008 00:10:44 -0000
-@@ -73,13 +73,13 @@
+@@ -509,14 +508,14 @@
+ 				reinterpret_cast<typelib_InterfaceAttributeTypeDescription *>( pTD );
+ 
+ 			// get method
+-			(s++)->fn = code;
++			(s++)->fn = code + writetoexecdiff;
+ 			code = codeSnippet( code, nFunctionOffset++, nVtableOffset,
+ 								x86_64::return_in_hidden_param( pAttrTD->pAttributeTypeRef ) );
+ 
+ 			if ( ! pAttrTD->bReadOnly )
+ 			{
+ 				// set method
+-				(s++)->fn = code;
++				(s++)->fn = code + writetoexecdiff;
+ 				code = codeSnippet( code, nFunctionOffset++, nVtableOffset, false );
+ 			}
+ 		}
+@@ -525,7 +524,7 @@
+ 			typelib_InterfaceMethodTypeDescription *pMethodTD =
+ 				reinterpret_cast<typelib_InterfaceMethodTypeDescription *>( pTD );
+ 			
+-			(s++)->fn = code;
++			(s++)->fn = code + writetoexecdiff;
+ 			code = codeSnippet( code, nFunctionOffset++, nVtableOffset,
+ 								x86_64::return_in_hidden_param( pMethodTD->pReturnTypeRef ) );
+ 		}
+
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	2009-06-13 15:39:58.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	2009-06-13 15:41:27.000000000 +0900
+@@ -68,13 +68,13 @@
      // Let's figure out what is really going on here
      {
          fprintf( stderr, "= callVirtualMethod() =\nGPR's (%d): ", nGPR );
@@ -93,7 +97,7 @@ diff -u -r1.4 uno2cpp.cxx
              fprintf( stderr, "0x%lx, ", pStack[i] );
          fprintf( stderr, "\n" );
      }
-@@ -328,6 +328,8 @@
+@@ -323,6 +323,8 @@
  			case typelib_TypeClass_DOUBLE:
  				INSERT_FLOAT_DOUBLE( pCppArgs[nPos], nFPR, pFPR, pStack );
  				break;
@@ -102,7 +106,7 @@ diff -u -r1.4 uno2cpp.cxx
  			}
  
  			// no longer needed
-@@ -440,16 +442,19 @@
+@@ -435,16 +437,19 @@
  	// is my surrogate
  	bridges::cpp_uno::shared::UnoInterfaceProxy * pThis
  		= static_cast< bridges::cpp_uno::shared::UnoInterfaceProxy * >(pUnoI);
@@ -123,7 +127,7 @@ diff -u -r1.4 uno2cpp.cxx
  		VtableSlot aVtableSlot(
  				getVtableSlot(
  					reinterpret_cast<
-@@ -494,10 +499,11 @@
+@@ -489,10 +494,11 @@
  	}
  	case typelib_TypeClass_INTERFACE_METHOD:
  	{
@@ -136,3 +140,67 @@ diff -u -r1.4 uno2cpp.cxx
  		VtableSlot aVtableSlot(
  				getVtableSlot(
  					reinterpret_cast<
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2009-06-13 15:39:58.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2009-06-13 15:42:43.000000000 +0900
+@@ -32,10 +32,10 @@
+ #include "precompiled_bridges.hxx"
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include <dlfcn.h>
+ #include <cxxabi.h>
+ #include <hash_map>
+-#include <sys/param.h>
+ 
+ #include <rtl/strbuf.hxx>
+ #include <rtl/ustrbuf.hxx>
+@@ -121,7 +121,7 @@
+ };
+ //__________________________________________________________________________________________________
+ RTTI::RTTI() SAL_THROW( () )
+-#if __FreeBSD_version < 602103
++#ifdef FREEBSD /* #i22253# */
+     : m_hApp( dlopen( 0, RTLD_NOW | RTLD_GLOBAL ) )
+ #else
+     : m_hApp( dlopen( 0, RTLD_LAZY ) )
+@@ -160,7 +160,7 @@
+         buf.append( 'E' );
+         
+         OString symName( buf.makeStringAndClear() );
+-#if __FreeBSD_version < 602103  /* #i22253# */
++#ifdef FREEBSD /* #i22253# */
+         rtti = (type_info *)dlsym( RTLD_DEFAULT, symName.getStr() );
+ #else
+         rtti = (type_info *)dlsym( m_hApp, symName.getStr() );
+@@ -175,8 +175,8 @@
+         else
+         {
+             // try to lookup the symbol in the generated rtti map
+-            t_rtti_map::const_iterator iFind( m_generatedRttis.find( unoName ) );
+-            if (iFind == m_generatedRttis.end())
++            t_rtti_map::const_iterator iFind2( m_generatedRttis.find( unoName ) );
++            if (iFind2 == m_generatedRttis.end())
+             {
+                 // we must generate it !
+                 // symbol and rtti-name is nearly identical,
+@@ -205,7 +205,7 @@
+             }
+             else // taking already generated rtti
+             {
+-                rtti = iFind->second;
++                rtti = iFind2->second;
+             }
+         }
+     }
+
+--- bridges/inc/bridges/cpp_uno/shared/vtablefactory.hxx~	2009-06-13 16:41:45.000000000 +0900
++++ bridges/inc/bridges/cpp_uno/shared/vtablefactory.hxx	2009-06-13 16:42:24.000000000 +0900
+@@ -40,7 +40,7 @@
+ #include <hash_map>
+ 
+ /*See: http://people.redhat.com/drepper/selinux-mem.html*/
+-#ifdef LINUX
++#if defined (LINUX) || defined (FREEBSD)
+ #define USE_DOUBLE_MMAP
+ #endif
+ 
