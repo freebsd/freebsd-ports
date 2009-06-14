@@ -1,4 +1,8 @@
 Merge from Linux CWS pj87 (#i83022#: Make bridges warning free)
+also fixes
+http://www.openoffice.org/issues/show_bug.cgi?id=98781
+http://www.openoffice.org/issues/show_bug.cgi?id=82690
+http://www.freebsd.org/cgi/query-pr.cgi?pr=127946
 
 --- bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	16 Sep 2006 15:46:23 -0000	1.3
 +++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	8 Jan 2008 16:57:00 -0000
@@ -117,3 +121,25 @@ Merge from Linux CWS pj87 (#i83022#: Make bridges warning free)
  		VtableSlot aVtableSlot(
  				getVtableSlot(
  					reinterpret_cast<
+
+
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2008-02-04 22:43:50.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2009-06-13 21:41:29.000000000 +0900
+@@ -126,7 +126,7 @@
+ };
+ //__________________________________________________________________________________________________
+ RTTI::RTTI() SAL_THROW( () )
+-#if __FreeBSD_version < 602103
++#ifdef FREEBSD /* #i22253# */
+     : m_hApp( dlopen( 0, RTLD_NOW | RTLD_GLOBAL ) )
+ #else
+     : m_hApp( dlopen( 0, RTLD_LAZY ) )
+@@ -165,7 +165,7 @@
+         buf.append( 'E' );
+         
+         OString symName( buf.makeStringAndClear() );
+-#if __FreeBSD_version < 602103  /* #i22253# */
++#ifdef FREEBSD /* #i22253# */
+         rtti = (type_info *)dlsym( RTLD_DEFAULT, symName.getStr() );
+ #else
+         rtti = (type_info *)dlsym( m_hApp, symName.getStr() );
