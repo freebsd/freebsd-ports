@@ -44,7 +44,7 @@ lib/libxcb-glx.so.0
 lib/libxcb-randr.a
 lib/libxcb-randr.la
 lib/libxcb-randr.so
-lib/libxcb-randr.so.0
+lib/libxcb-randr.so.1
 lib/libxcb-record.a
 lib/libxcb-record.la
 lib/libxcb-record.so

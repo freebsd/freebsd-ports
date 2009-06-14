@@ -8,4 +8,3 @@ on locking assertion failures.  As a temporary workaround, set
 LIBXCB_ALLOW_SLOPPY_LOCK in your environment to skip the abort().
 This may result in noisy stacktrace printing.
 *****************************************************************
-
