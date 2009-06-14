@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://liflg.0wnitsch.de/files/final/:p436 \
