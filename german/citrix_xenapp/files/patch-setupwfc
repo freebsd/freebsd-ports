@@ -1,6 +1,6 @@
---- setupwfc.orig	Tue Oct 31 08:31:35 2006
-+++ setupwfc	Wed Apr 25 09:02:13 2007
-@@ -441,7 +441,7 @@
+--- setupwfc.orig	Fri Apr  8 13:52:46 2005
++++ setupwfc	Mon Jan 22 10:10:48 2007
+@@ -396,7 +396,7 @@
  	*BSD)
                 # Assume Free/Net/Open BSD on an X86 with Linux emulation.
  

@@ -12,6 +12,7 @@
     SUBDIR += bsdgroup-firefox-searchplugin
     SUBDIR += bsdpaste
     SUBDIR += citrix_ica
+    SUBDIR += citrix_xenapp
     SUBDIR += dict
     SUBDIR += digibux
     SUBDIR += ding

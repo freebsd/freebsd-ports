@@ -1,13 +1,16 @@
-Citrix(R) Presentation Server(TM) runs on Microsoft(R) Windows
-Server(TM) and UNIX(R) operating systems, and extends the base
-Windows Terminal Services platform by enhancing the end-user
-experience as well as increasing manageability, compatibility,
-security and scalability to address business-critical environments.
-Presentation Server expands the range of supported applications to
-include legacy software and Web-based, UNIX and Java solutions. It
-also enables any device or operating system including Macintosh and
-Linux to access virtualized applications. Other important capabilities
-are powerful management and configuration tools and faster, more
-flexible printing.
+Citrix XenApp (TM) is a Windows (R) application delivery system that manages
+applications in the datacenter and delivers them as an on-demand
+service to users anywhere using any device. XenApp reduces the cost
+of application management by up to 50 percent, delivers any application
+instantly to users anywhere and improves application and data
+security.
+
+you can copy the certificate to /usr/ports/distfiles and add the
+following line to your /etc/make.conf:
+
+	ICA_CERTS=mycert.crt
+
+It will then automatically be installed and removed with the normal
+FreeBSD package tools.
 
 WWW: http://www.citrix.com/English/ps2/products/product.asp?contentID=186
