@@ -7,6 +7,7 @@
 
 PORTNAME=	rsvndump
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://saubue.boolsoft.org/projects/rsvndump/ \
 		LOCAL/glarkin
@@ -22,7 +23,8 @@ PLIST_FILES+=		share/locale/de/LC_MESSAGES/rsvndump.mo
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif
-CONFIGURE_ARGS+=	--enable-man
+CONFIGURE_ARGS+=	--enable-man \
+			--with-svn=${LOCALBASE}
 
 MAN1=		rsvndump.1
 PLIST_FILES+=	bin/rsvndump
