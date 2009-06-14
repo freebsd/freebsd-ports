@@ -1,59 +1,44 @@
---- linuxx86/hinst.orig	Tue Oct 31 08:31:50 2006
-+++ linuxx86/hinst	Wed Apr 25 08:50:20 2007
-@@ -24,7 +24,6 @@
- #	Copyright 1996-2000, 2006 Citrix Systems, Inc. All rights reserved.
- #
- ###############################################################################
--
- # note: the INSTALLER_... strings should be in lowercase. The installer will then
- # accept lowercase or uppercase versions of them as input.
- INSTALLER_YES=ja
-@@ -86,7 +85,13 @@
- fi
- 
- #  Install in here by default.
--DefaultInstallDir=/usr/lib/ICAClient
+--- linuxx86/hinst.orig	2009-02-26 04:22:26.000000000 -0500
++++ linuxx86/hinst	2009-06-14 00:56:20.000000000 -0400
+@@ -256,11 +256,9 @@
+     then
+         echo LANG=$LANG
+     fi
+-    if [ -z "$LANG" ]
+-    then
+-        LANG="en"
+-        # echo LANG missing, using en
+-    fi
 +
-+DefaultInstallDir=$PREFIX/ICAClient
++    LANG="de"
 +
-+if [ "$PREFIX/ICAClient" = "/ICAClient" ]
-+then
-+	DefaultInstallDir=/usr/local/ICAClient
-+fi
- 
- #  Default CDROM mount point
- DefaultCDSourceDir=/cdrom
-@@ -2226,7 +2231,7 @@
+     Lang=`echo $LANG | sed -n -e 's/[_\.].*//' -e 'p'`
+     Territory=`echo $LANG | sed -n -e 's/\(.*\)\..*/\1/' -e 's/.*_\(.*\)/\1/p'`
+     CodeSet=`echo $LANG | sed -n -e 's/.*\.\(.*\)/\1/p'`
+@@ -1965,7 +1963,7 @@
  	then
  		:
  	else
 -		/bin/false
-+		/usr/bin/false
++		false
  		return 
  	fi
  
-@@ -2272,7 +2277,7 @@
+@@ -2090,7 +2088,7 @@
  		fi
  	fi
  
 -	/bin/true
-+	/usr/bin/true
++	true
  }
  
- ###############################################################################
-@@ -2397,26 +2402,19 @@
- 
- netscape_integrate()
- {
--  user_echo $integrate_netscape1
-   if test -z "$SU_INSTALL"
-   then
-     set_npui_variables
+ #!/bin/sh 
+@@ -2191,19 +2189,12 @@
      found_netscape 
    else
      search_ok=0
 -    EXTRA_BROWSERS=`find_browsers`
-   
+-  
 -    if  test -d "/usr/lib/netscape"\
 -	|| test -d "/usr/local/netscape"\
 -	|| test -d "/opt/netscape"\
@@ -67,100 +52,19 @@
    	user_echo $integrate_netscape3
    	found_netscape 
 -    else
-+	;;
++        ;;
 +    *)
- 	user_prompt $integrate_netscape2
+ 	user_prompt "$integrate_netscape2"
   	getyesno $INSTALLER_NO
  	if [ "$ANSWER" = "$INSTALLER_YES" ]
-@@ -2425,9 +2423,9 @@
+@@ -2212,8 +2203,9 @@
  	else
    		user_echo $integrate_netscape6
  	fi
-+	;;
-+    esac
++        ;;
++     esac
      fi
 -  fi
--
-     # Create utility script files in install root.
-     create_wfica_script
-     create_wfica_assoc_script
-@@ -3063,55 +3061,6 @@
-     echo "$BINDIR"
- }
  
--################################################################################
--#
--# find_browsers
--#
--# Returns a list of directories containing new-style mozilla-based browsers 
--# that may be launched by files on the $PATH.
--#
--################################################################################
--find_browsers()
--{
--    PROGS="netscape mozilla firefox"
--    DIST_BIN_DIR=""
--    STANDARD_DIRS="/usr/local/netscape /usr/local/mozilla /usr/local/firefox /usr/lib/mozilla"
--
--    case $op_system in
--       SunOS) if
--                 /usr/bin/pkginfo -q $SOLARIS_PACKAGE_NAME
--              then
--                 relocation_base=`/usr/bin/pkginfo -r $SOLARIS_PACKAGE_NAME`
--                 STANDARD_DIRS="$STANDARD_DIRS $relocation_base/$SOLARIS_PACKAGE_DIRECTORY"
--
--                 # N.B. the Netscape 7 packages for SOLARIS 9 have an extended installation path built-in!
--                 case `uname -r` in
--                    5.9) STANDARD_DIRS="$STANDARD_DIRS $relocation_base/dt/appconfig/$SOLARIS_PACKAGE_DIRECTORY"
--                         ;;
--                    *)   ;;
--                 esac
--              fi;;
--       *) ;;
--    esac
--
--    for d in `echo $PATH | sed "s/:/ /g"` $STANDARD_DIRS
--    do
--	echo $d
--    done | sort -u | while read d
--    do 
--	for p in $PROGS
--	do    
--	    # Find the each instance of each named browser
--	    PROG=$d/$p
--	    if test -f $PROG
--	    then
--		# Where is the installation and what version is it?
--		find_extra_bin_dirs $PROG
--	    fi
--	done
--    done | sort -u
--}
--
- BROWSER_LIST_KEY="BROWSER_DIR"
- ################################################################################
- #
-@@ -3337,13 +3286,16 @@
- XDG_TARGET_DIR="/usr/share/applications"
- TL_MENU_DIR="Vendor_menus/Applications"                    # TurboLinux
- TL_TOP_DIR="/usr/share/applnk/"$TL_MENU_DIR
--DEFAULT_GNOME_TARGET_DIRS="/etc/opt/gnome/SuSE/Internet"
--DEFAULT_KDE_TARGET_DIRS="/usr/share/applnk-redhat/Internet \
--                         /usr/share/applnk-mdk/Networking \
--                         $TL_TOP_DIR/Internet \
--			 /etc/opt/kde3/share/applnk/SuSE/Internet \
--                         /usr/share/applnk/Applications"
--
-+DEFAULT_GNOME_TARGET_DIRS="/usr/share/applications \
-+                           /usr/local/share/applnk/Internet \
-+                           /usr/local/share/applnk/Networking \
-+                           /etc/opt/gnome/SuSE/Internet"
-+DEFAULT_KDE_TARGET_DIRS="/usr/share/applnk/Applications \
-+			/usr/local/share/applnk/Applications \
-+			/usr/local/share/applnk/Internet \
-+                        /usr/share/applnk-redhat/Internet \
-+                        /usr/share/applnk-mdk/Networking \
-+                        /etc/opt/kde3/share/applnk/SuSE/Internet"
- DEFAULT_DT_TARGET_DIRS="$XDG_TARGET_DIR $DEFAULT_GNOME_TARGET_DIRS $DEFAULT_KDE_TARGET_DIRS"
- DEFAULT_DT_FOLDER="Applications"
- 
+   # Create utility script files in install root.
+   create_wfica_script
