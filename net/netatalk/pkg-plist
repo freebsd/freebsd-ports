@@ -39,7 +39,6 @@ bin/pap
 bin/papstatus
 bin/psorder
 bin/showppd
-bin/timeout
 bin/uniconv
 @unexec if cmp -s %D/etc/AppleVolumes.default %D/etc/AppleVolumes.default.dist; then rm -f %D/etc/AppleVolumes.default; fi
 etc/AppleVolumes.default.dist
@@ -61,6 +60,13 @@ etc/papd.conf.dist
 @exec [ ! -f %B/papd.conf ] && cp %B/%f %B/papd.conf
 etc/uams/uams_clrtxt.so
 etc/uams/uams_dhx.so
+etc/uams/uams_dhx2.so
+%%NETATALKPAM%%etc/uams/uams_dhx2_pam.a
+%%NETATALKPAM%%etc/uams/uams_dhx2_pam.la
+%%NETATALKPAM%%etc/uams/uams_dhx2_pam.so
+etc/uams/uams_dhx2_passwd.a
+etc/uams/uams_dhx2_passwd.la
+etc/uams/uams_dhx2_passwd.so
 %%NETATALKPAM%%etc/uams/uams_dhx_pam.a
 %%NETATALKPAM%%etc/uams/uams_dhx_pam.la
 %%NETATALKPAM%%etc/uams/uams_dhx_pam.so
@@ -100,10 +106,12 @@ include/atalk/pap.h
 include/atalk/paths.h
 include/atalk/rtmp.h
 include/atalk/server_child.h
+include/atalk/server_ipc.h
 include/atalk/tdb.h
 include/atalk/uam.h
 include/atalk/unicode.h
 include/atalk/util.h
+include/atalk/volinfo.h
 include/atalk/zip.h
 include/netatalk/aarp.h
 include/netatalk/at.h
