@@ -21,24 +21,25 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate
 
+USE_PERL5=	yes
+HAS_CONFIGURE=	yes
+NO_BUILD=	yes
+PLIST_SUB+=	VERSION=${PORTVERSION}
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST=	USER="${CRICKET_USER}" GROUP="${CRICKET_GROUP}" UID="${CRICKET_UID}" GID="${CRICKET_GID}"
+
+# UID and username comes from ports/UIDs.
+CRICKET_USER=	cricket
+CRICKET_UID=	141
+CRICKET_GROUP=	www
+CRICKET_GID=	80
+
 .include <bsd.port.pre.mk>
 
 # A reliable version of Time::HiRes is included with perl 5.8.7 and later.
 .if ${PERL_LEVEL} < 500807
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
-
-HAS_CONFIGURE=	yes
-USE_PERL5=	yes
-NO_BUILD=	yes
-PLIST_SUB+=	VERSION=${PORTVERSION}
-SUB_FILES=	pkg-message pkg-install
-SUB_LIST=	USER="${CRICKET_USER}" GROUP="${CRICKET_GROUP}" UID="${CRICKET_UID}" GID="${CRICKET_GID}"
-# UID and username comes from ports/UIDs.
-CRICKET_USER=	cricket
-CRICKET_UID=	141
-CRICKET_GROUP=	www
-CRICKET_GID=	80
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/home/cricket,${PREFIX},g' \
