@@ -9,9 +9,10 @@ PORTNAME=	youtube_dl
 PORTVERSION=	2009.05.30
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://bitbucket.org/rg3/youtube-dl/raw/
-DISTNAME=	${PORTVERSION}/youtube-dl
+MASTER_SITES=	http://bitbucket.org/rg3/youtube-dl/raw/${PORTVERSION}/
+DISTNAME=	youtube-dl
 EXTRACT_SUFX=
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	araujo@FreeBSD.org
