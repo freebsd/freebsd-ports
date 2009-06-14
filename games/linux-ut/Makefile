@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://liflg.0wnitsch.de/files/final/:p436 \
@@ -21,7 +21,7 @@ COMMENT=	Unreal Tournament for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX_APPS=	xorglibs sdl12
 NO_BUILD=	yes
 NO_PACKAGE=	Distribution is 340MB; set FORCE_PACKAGE if you really want\
 		to build this package
@@ -169,6 +169,7 @@ do-install:
 		${TAR} x -C ${DATADIR} -f -
 .endfor
 	@${RM} ${DATADIR}/Logs/delete_me.txt
+	@${RMDIR} ${DATADIR}/Logs
 .endif
 ####################################
 # End of CD release-specific install
@@ -227,6 +228,11 @@ do-install:
 		${MV} -f editor.int Editor.int &&\
 		${MV} -f windrv.int WinDrv.int
 .endif
+
+# Replace older libSDL included with UT; it has issues with the Nvidia driver
+# when using Fedora 8 at the base.
+	@${LN} -sf ${LINUXBASE}/usr/lib/libSDL-1.2.so.0\
+		${DATADIR}/System/libSDL-1.1.so.0
 
 # Remove /usr/local from ut-bin lib search path
 	@${ECHO_CMD} "Removing /usr/local from ut-bin's library search path"
