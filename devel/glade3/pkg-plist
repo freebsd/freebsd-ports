@@ -91,6 +91,16 @@ share/doc/gladeui/GladeWidgetAction.html
 %%DOCSDIR%%/gladeui-glade-signal-editor.html
 %%DOCSDIR%%/gladeui-glade-utils.html
 share/doc/gladeui/gladeui-glade-xml-utils.html
+share/doc/gladeui/gladeui.devhelp
+share/doc/gladeui/gladeui.devhelp2
+share/doc/gladeui/home.png
+share/doc/gladeui/index.html
+share/doc/gladeui/index.sgml
+share/doc/gladeui/ix01.html
+share/doc/gladeui/left.png
+share/doc/gladeui/right.png
+share/doc/gladeui/style.css
+share/doc/gladeui/up.png
 %%DOCSDIR%%/misc.html
 %%DOCSDIR%%/properties.html
 %%DOCSDIR%%/pythonsupport.html
