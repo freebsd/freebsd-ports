@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	A ham radio logging application for KDE
 
 LIB_DEPENDS=	hamlib.2:${PORTSDIR}/comms/hamlib
