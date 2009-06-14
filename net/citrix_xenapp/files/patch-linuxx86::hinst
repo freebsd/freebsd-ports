@@ -1,15 +1,21 @@
 --- linuxx86/hinst.orig	2009-02-26 04:22:26.000000000 -0500
-+++ linuxx86/hinst	2009-06-10 18:45:08.000000000 -0400
-@@ -105,7 +105,7 @@
- fi
- 
- #  Install in here by default.
--DefaultInstallDir=/usr/lib/ICAClient
-+DefaultInstallDir=/usr/local/ICAClient
- 
- #  Default CDROM mount point
- DefaultCDSourceDir=/cdrom
-@@ -1965,7 +1965,7 @@
++++ linuxx86/hinst	2009-06-14 00:56:20.000000000 -0400
+@@ -256,11 +256,9 @@
+     then
+         echo LANG=$LANG
+     fi
+-    if [ -z "$LANG" ]
+-    then
+-        LANG="en"
+-        # echo LANG missing, using en
+-    fi
++
++    LANG="en"
++
+     Lang=`echo $LANG | sed -n -e 's/[_\.].*//' -e 'p'`
+     Territory=`echo $LANG | sed -n -e 's/\(.*\)\..*/\1/' -e 's/.*_\(.*\)/\1/p'`
+     CodeSet=`echo $LANG | sed -n -e 's/.*\.\(.*\)/\1/p'`
+@@ -1965,7 +1963,7 @@
  	then
  		:
  	else
@@ -18,7 +24,7 @@
  		return 
  	fi
  
-@@ -2090,7 +2090,7 @@
+@@ -2090,7 +2088,7 @@
  		fi
  	fi
  
@@ -27,7 +33,7 @@
  }
  
  #!/bin/sh 
-@@ -2191,19 +2191,12 @@
+@@ -2191,19 +2189,12 @@
      found_netscape 
    else
      search_ok=0
@@ -51,7 +57,7 @@
  	user_prompt "$integrate_netscape2"
   	getyesno $INSTALLER_NO
  	if [ "$ANSWER" = "$INSTALLER_YES" ]
-@@ -2212,8 +2205,9 @@
+@@ -2212,8 +2203,9 @@
  	else
    		user_echo $integrate_netscape6
  	fi
