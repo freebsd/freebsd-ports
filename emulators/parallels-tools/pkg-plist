@@ -1,0 +1,4 @@
+@cwd %%KMODDIR%%
+if_pvmnet.ko
+@exec kldxref %D
+@unexec kldxref %D
