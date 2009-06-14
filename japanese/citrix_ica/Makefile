@@ -36,6 +36,9 @@ NSCP=	${LOCALBASE}/libexec/netscape \
 
 PLIST_SUB=	MOZILLA_HOME=${MOZILLA_HOME}
 
+DEPRECATED=		Use net/citrix_ica
+EXPIRATION_DATE=	2007-08-22
+
 .include <bsd.port.pre.mk>
 
 .if exists(${PREFIX}/bin/kde-config)
