@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	${SETI_PORTVERSION_FULL}.${AP_PORTVERSION_FULL}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTFILES=	astropulse-${AP_PORTVERSION_FULL}.tar.bz2 setiathome-${SETI_PORTVERSION_FULL}.tar.bz2
