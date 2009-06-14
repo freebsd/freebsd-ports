@@ -5,42 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=	citrix_ica
-PORTVERSION=	10.6
+PORTNAME=	citrix_xenapp
+PORTVERSION=	11.0.140395
 CATEGORIES=	japanese net comms linux
 MASTER_SITES=
-DISTNAME=	${PORTNAME}-linuxx86-ja-${PORTVERSION}
+DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
-COMMENT=	Citrix(R) Presentation Server(TM) client
+COMMENT=	Access virtual applications and desktops
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
-USE_LINUX_APPS=	openmotif
+USE_LINUX=	f8
+USE_LINUX_APPS=	openmotif jpeg png
 RESTRICTED=	License prohibits redistribution
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
-NO_WRKSUBDIR=	Yes
-NO_BUILD=	Yes
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
 CDIR=		${PREFIX}/ICAClient
 BINDIR=		${PREFIX}/bin
-
-NSCP=	${LOCALBASE}/libexec/netscape \
-	${LOCALBASE}/libexec/netscape-linux \
-	${LOCALBASE}/netscape \
-	${LOCALBASE}/netscape-linux \
-	${LOCALBASE}/lib/netscape \
-	${LOCALBASE}/lib/netscape-linux \
-	${MOZILLA_HOME}
+CERTDIR=	${CDIR}/keystore/cacerts
 
 PLIST_SUB=	MOZILLA_HOME=${MOZILLA_HOME}
+.if defined(ICA_CERTS)
+PLIST_SUB+=	HAVE_ICA_CERTS="" ICA_CERTS="${ICA_CERTS}" CERTDIR="${CERTDIR}"
+.else
+PLIST_SUB+=	HAVE_ICA_CERTS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
-
-.if exists(${PREFIX}/bin/kde-config)
-HAVE_KDE=	"\\ny"
-.endif
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 IGNORE='The distribution file for this port may not be automatically fetched due to licensing restrictions.'
@@ -51,13 +45,27 @@ do-fetch:
 	@${ECHO} ""
 	@${ECHO} "You have to fetch the file manually from"
 	@${ECHO} ""
-	@${ECHO} "http://www.citrix.com/site/SS/downloads/details.asp?dID=2755&downloadID=3323"
+	@${ECHO} "http://www.citrix.com/English/SS/downloads/details.asp?downloadID=3323"
 	@${ECHO} ""
-	@${ECHO} "Once ja.linuxx86.tar.gz has been downloaded move it to"
+	@${ECHO} "Once en.linuxx86.tar.gz has been downloaded move it to"
 	@${ECHO} "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} and restart the build."
 	@${ECHO} ""
 	@${FALSE}
 .endif
+
+.if defined(ICA_CERTS)
+pre-fetch:
+.for f in ${ICA_CERTS}
+	@echo "Checking ${f}"
+.if !exists(${DISTDIR}/${f})
+	@echo "Cert ${f} not found."
+	@exit 1
+.endif
+.endfor
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|DefaultInstallDir=/usr/lib/ICAClient|DefaultInstallDir=${PREFIX}/ICAClient|' ${WRKSRC}/linuxx86/hinst
 
 do-install:
 	@if (test -d "${CDIR}") ; \
@@ -77,6 +85,13 @@ do-install:
 	cd ${WRKSRC} && ${SH} -c './setupwfc'
 	${INSTALL_SCRIPT} ${WRKSRC}/wfcmgr.x ${PREFIX}/bin/wfcmgr
 	${INSTALL_SCRIPT} ${WRKSRC}/wfica.x ${PREFIX}/bin/wfica
+	${MKDIR} ${LINUXBASE}/dev
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
+
+.if defined(ICA_CERTS)
+.for f in ${ICA_CERTS}
+	${INSTALL_DATA} ${DISTDIR}/${f} ${CERTDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
