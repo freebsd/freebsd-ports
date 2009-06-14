@@ -29,16 +29,16 @@ case "$policyd_weight_enable" in
     *) echo "To make use of $name set $rcvar=\"YES\" in /etc/rc.conf" ;;
 esac
 
-command="/usr/local/bin/policyd-weight"
+command="%%PREFIX%%/bin/policyd-weight"
 pidfile=/var/run/policyd-weight.pid
 
 policyd_weight_start() {
-    /usr/local/bin/policyd-weight start
+    %%PREFIX%%/bin/policyd-weight start
 }
 
 policyd_weight_stop() {
     echo "Stopping $name"
-    /usr/local/bin/policyd-weight -k stop
+    %%PREFIX%%/bin/policyd-weight -k stop
 }
 
 run_rc_command "$1"
