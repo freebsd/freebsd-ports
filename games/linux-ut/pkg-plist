@@ -458,7 +458,6 @@ bin/ut
 %%DATADIR%%/Web/plaintext/root.uhtm
 %%DATADIR%%/Web/root.uhtm
 @dirrm %%DATADIR%%/Help
-@dirrm %%DATADIR%%/Logs
 %%ANTHOLOGY%%@dirrm %%DATADIR%%/Manual
 @dirrm %%DATADIR%%/Maps
 @dirrm %%DATADIR%%/Music
