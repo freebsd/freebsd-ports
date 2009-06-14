@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	2.0.3
-PORTREVISION=	5
+PORTVERSION=	2.0.4
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,6 +14,8 @@ MASTER_SITE_SUBDIR=	netatalk
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File and print server for AppleTalk networks
+
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
 .if defined(WITH_SRVLOC)
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
@@ -27,7 +28,8 @@ USE_BDB=	41+
 USE_RC_SUBR=	netatalk
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
-			--with-libiconv=${LOCALBASE}
+			--with-libiconv=${LOCALBASE} \
+			--with-libgcrypt-prefix=${LOCALBASE}
 
 .if defined(WITH_KRB5)
 CONFIGURE_ARGS+=	--enable-krbV-uam
@@ -66,7 +68,7 @@ MAN1=		achfile.1 aecho.1 afile.1 afppasswd.1 getzones.1 \
 		megatron.1 nbp.1 pap.1 psorder.1 hqx2bin.1 macbinary.1 \
 		nbplkup.1 nbprgstr.1 nbpunrgstr.1 papstatus.1 \
 		single2bin.1 unbin.1 unhex.1 unsingle.1 acleandir.1 \
-		netatalk-config.1 timeout.1 apple_cp.1 apple_mv.1 \
+		netatalk-config.1 apple_cp.1 apple_mv.1 \
 		apple_rm.1 uniconv.1 asip-status.pl.1 cnid_index.1
 MAN3=		atalk_aton.3 nbp_name.3
 MAN4=		atalk.4
