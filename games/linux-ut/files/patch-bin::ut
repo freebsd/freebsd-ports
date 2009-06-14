@@ -1,6 +1,6 @@
 --- bin/ut.orig	2005-03-01 03:04:02.000000000 -0600
-+++ bin/ut	2009-06-13 10:03:01.000000000 -0500
-@@ -68,6 +66,21 @@
++++ bin/ut	2009-06-14 17:05:12.000000000 -0500
+@@ -68,6 +68,18 @@
  cd $GAME_DIR
  cd $SUBDIR
  
@@ -12,9 +12,6 @@
 +	export __GL_SYNC_TO_VBLANK=${__GL_SYNC_TO_VBLANK:-"1"}
 +fi
 +
-+# The mouse will not work using a newer libSDL without this.
-+export SDL_VIDEO_X11_DGAMOUSE=${SDL_VIDEO_X11_DGAMOUSE:-"0"}
-+
 +# This is needed to prevent the following error:
 +#     XDM authorization key matches an existing client
 +export LD_PRELOAD=/usr/lib/libX11.so.6
@@ -22,7 +19,7 @@
  LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$PWD
  export LD_LIBRARY_PATH
  
-@@ -75,6 +88,9 @@
+@@ -75,6 +87,9 @@
  ./$GAME_BINARY "$CMD_ARGS" "$@"
  EXITCODE="$?"
  
