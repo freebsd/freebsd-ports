@@ -11,7 +11,7 @@ CATEGORIES=	comms kde hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kpsk
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	A PSK31 digital radio communications application for the KDE
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
