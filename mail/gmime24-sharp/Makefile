@@ -9,7 +9,7 @@
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-24-sharp
 
-MAINTAINER=	bsd-sharp@googlegroups.com
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for gmime
 
 LIB_DEPENDS=	gmime-2.4:${PORTSDIR}/mail/gmime24
