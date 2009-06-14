@@ -131,6 +131,7 @@
     SUBDIR += open-vm-tools-nox11
     SUBDIR += osmose
     SUBDIR += p-interp
+    SUBDIR += parallels-tools
     SUBDIR += pcemu
     SUBDIR += pearpc
     SUBDIR += prodosemu
