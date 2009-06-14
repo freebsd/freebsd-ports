@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ja2
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	games
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 		http://tron.homeunix.org/ja2/
@@ -17,11 +17,12 @@ COMMENT=	A port of "Jagged Alliance 2" using SDL
 DISTVERSIONSUFFIX=	-source
 
 # Ignore this if you feel adventurous
-ONLY_FOR_ARCHS=	arm i386 pc98
-ONLY_FOR_ARCHS_REASON=	Needs a 32bit little endian environment
+ONLY_FOR_ARCHS=	amd64 arm i386 pc98
+ONLY_FOR_ARCHS_REASON=	Needs a little endian environment
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
+MAKE_JOBS_SAFE=	yes
 NO_CDROM=	License only permits non-commerical use
 NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary
 
