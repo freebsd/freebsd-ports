@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libxcb
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	x11 python
 #MASTER_SITES=	XORG/current/src/extras
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
@@ -32,7 +31,6 @@ USE_XORG=	xau xdmcp
 USE_PYTHON=	2.5+
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-check=${LOCALBASE}
 .for f in XPROTO_CFLAGS XPROTO_LIBS XDMCP_CFLAGS XDMCP_LIBS NEEDED_CFLAGS NEEDED_LIBS
 CONFIGURE_ARGS+=${f}="${${f}}"
 .endfor
