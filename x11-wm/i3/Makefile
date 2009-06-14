@@ -7,6 +7,7 @@
 
 PORTNAME=	i3
 DISTVERSION=	3.a-bf2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3.zekjur.net/downloads/ \
 		${MASTER_SITE_LOCAL}
