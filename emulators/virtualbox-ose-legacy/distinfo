@@ -1,3 +1,6 @@
 MD5 (virtualbox-2.2.51.r20457.tar.bz2) = e95b5130a0276224961c792047975531
 SHA256 (virtualbox-2.2.51.r20457.tar.bz2) = f321c04e20c47d7054b885bd70ea5abcab11bc047f2645dec0ca297dbdb3945b
 SIZE (virtualbox-2.2.51.r20457.tar.bz2) = 50707220
+MD5 (VBoxGuestAdditions_2.2.4.iso) = 00e64c25f87155540a3d106c5257530f
+SHA256 (VBoxGuestAdditions_2.2.4.iso) = 98c4323b87461a02ec5efc6803ec05a101dbea301784a9561cbade7b63a62861
+SIZE (VBoxGuestAdditions_2.2.4.iso) = 28747776
