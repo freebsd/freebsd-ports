@@ -15,8 +15,6 @@ COMMENT=	WWW interface for console wget
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-BROKEN=		fails to install
-
 USE_APACHE=	1.3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -38,7 +36,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${WWWDIR}/
 	@cd ${WRKSRC}; ${FIND} . -name "*.cgi" -o -name "*.lib" \
-		| ${CPIO} -pdm -R ${WEBOWN}:${WEBGRP} ${WWWDIR}/
+		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
 	${MKDIR} ${LOGSDIR}/ ${TASKDIR}/ ${FILESDIR}/
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${LOGSDIR}/ ${TASKDIR}/ ${FILESDIR}/
 
