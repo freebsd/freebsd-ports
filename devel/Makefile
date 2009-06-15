@@ -2596,6 +2596,7 @@
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-ditz
+    SUBDIR += rubygem-echoe
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
