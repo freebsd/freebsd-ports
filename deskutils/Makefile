@@ -240,6 +240,7 @@
     SUBDIR += tagutils
     SUBDIR += taskjuggler
     SUBDIR += taskstep
+    SUBDIR += taskwarrior
     SUBDIR += teapot
     SUBDIR += tel
     SUBDIR += thinkingrock
