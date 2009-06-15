@@ -1,0 +1,11 @@
+--- scripts/Makefile.in.orig	Tue Sep 12 12:03:08 2006
++++ scripts/Makefile.in	Tue Sep 12 12:03:08 2006
+@@ -33,8 +33,6 @@
+ 	$(MKDIR) $(DESTDIR)$(mandir)
+
+ install: installdirs
+-	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(scriptdir)/startmysql
+-	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
+ 	$(INSTALL_SCRIPT) bconsole $(DESTDIR)$(scriptdir)/bconsole
+ 	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(scriptdir)/gconsole
+ 	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(scriptdir)/bacula

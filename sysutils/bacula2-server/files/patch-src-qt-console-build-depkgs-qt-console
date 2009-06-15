@@ -1,0 +1,11 @@
+--- src/qt-console/build-depkgs-qt-console.orig	Sat Sep 15 12:11:32 2007
++++ src/qt-console/build-depkgs-qt-console	Sat Sep 15 12:11:32 2007
+@@ -147,7 +147,7 @@
+    echo " INSTALLBASE = ${TOP_DIR}/qwt" >>${TOP_DIR}/depkgs/qwt-5.0.2/qwtconfig.pri
+    echo "}" >>${TOP_DIR}/depkgs/qwt-5.0.2/qwtconfig.pri
+    cat ${TOP_DIR}/qwtconfig.pri >>${TOP_DIR}/depkgs/qwt-5.0.2/qwtconfig.pri
+-   qmake >make.log
++   ${QMAKE} >make.log
+    do_make Makefile >>make.log
+    do_make Makefile install >>make.log
+    echo "In case of problems see: `pwd`/make.log"

@@ -1,0 +1,200 @@
+#!/bin/sh
+#
+# Bacula interface to FreeBSD chio autoloader command with
+# multiple drive support
+# (By Lars Köller, lars+bacula@koellers.net, 2004)
+#
+#  If you set in your Device resource
+#
+#  Changer Command = "path-to-this-script/chio-bacula" %c %o %S %a
+#    you will have the following input to this script:
+#
+#  chio-bacula "changer-device" "command" "slot" "archive-device" "drive-index"
+#                  $1              $2       $3        $4               $5
+#  for example:
+#
+#  chio-bacula /dev/sg0 load 1 /dev/nst0 0     (on a FreeBSD system)
+#
+#  If you need to to an offline, refer to the drive as $4
+#    e.g.   mt -f $f offline
+#
+#  Many changers need an offline after the unload. Also many
+#   changers need a sleep 60 after the mtx load.
+#
+#  N.B. If you change the script, take care to return either
+#   the mtx exit code or a 0. If the script exits with a non-zero
+#   exit code, Bacula will assume the request failed.
+#
+me=$(basename $0)
+
+# Debug output, take care this file is writeable for user bacula!
+#LOG=/var/db/bacula/chio-bacula.log
+#exec 2>>$LOG
+#echo "------------------------- $(date) Start $(basename $0) -------------------------" >> $LOG
+#set -x
+
+# Debug
+logger -p user.err "$me $@"
+
+# This simulates a barcode reader in the changer.
+# The labes of the virtual barcode reader are located in the BARCODE_FILE
+SIMULATE_BARCODE=true
+BARCODE_FILE=/usr/local/etc/bacula-barcodes
+MTX=/bin/chio
+# Set default values (see case statement below for
+# free mapping of drive index and tape device
+# We have a double drive Qualstar where drive 1 is the default bacula drive
+#TAPE=/dev/bacula-tape
+TAPE=/dev/nrsa0
+DRIVE=0
+# Time to wait for (un)loading
+SLEEP=20
+
+usage()
+{
+  echo ""
+  echo "The $me script for bacula"
+  echo "--------------------------------------"
+  echo ""
+  echo "usage: $me <changer-device> <command> [slot] [devicename of tapedrive] [drive index]"
+  echo ""
+  echo "Valid commands:"
+  echo ""
+  echo "unload          Unloads a tape into the slot"
+  echo "                from where it was loaded."
+  echo "load <slot>     Loads a tape from the slot <slot>"
+  echo "                (slot-base is calculated to 1 as first slot)"
+  echo "list            Lists full storage slots"
+  echo "loaded          Gives slot from where the tape was loaded."
+  echo "                0 means the tape drive is empty."
+  echo "slots           Gives Number of aviable slots."
+  echo ""
+  echo "Example:"
+  echo "  $me /dev/changer load 1   loads a tape from slot 1"
+  echo ""
+  exit 2
+}
+
+# The changer device
+if [ -z "$1" ] ; then
+    usage;
+else
+    CHANGER=$1
+fi
+# The command
+if [ -z "$2" ] ; then
+    usage;
+else
+    COMMAND=$2
+fi
+# The slot number
+if [ ! -z "$3" ]; then
+    SLOT=$3
+    # btape fill says "... slot 1 drive 0" :-(
+    if [ "$SLOT" = "slot" ]; then
+	shift
+	SLOT=$3
+    fi
+fi
+# Set tape device
+if [ ! -z "$4" ]; then
+    TAPE=$4
+fi
+
+# Here you can map bacula drive number to any tape device
+# DRIVE is the chio drive number used below by chio!
+case $5 in
+    0)
+	# First Drive in Changer is Bacula drive
+	DRIVE=0
+	#TAPE=/dev/bacula-tape
+	TAPE=/dev/nrsa0
+	;;
+    1)
+	DRIVE=1
+	#TAPE=/dev/bacula-tape2
+	TAPE=/dev/nrsa1
+	;;
+esac
+
+#
+# Main
+#
+case ${COMMAND} in
+    unload)
+	# enable the following line if you need to eject the cartridge
+	mt -f ${TAPE} off
+	sleep 2
+	# if we have a slot, try it
+	if [ ! -z "$SLOT" ]; then
+	    ${MTX} -f ${CHANGER} move drive ${DRIVE} slot $((${SLOT}-1))
+	    exit $?
+	fi
+	# Try other way (works if source element information is valid for drive)
+	${MTX} -f ${CHANGER} return drive ${DRIVE}
+	# If the changer is power cycled with a tape loaded in a drive
+	# we can compute the slot in case of a complete filled magazine, with
+	# one slot free.
+	if [ "$?" != "0" ]; then
+	    free_slot=`${MTX} -f ${CHANGER} stat | grep "^slot " | grep -v "FULL" | awk '{print $2}'`
+	    free_slot=${free_slot%:}
+	    ${MTX} -f ${CHANGER} move drive ${DRIVE} slot $free_slot
+	fi
+	;;
+
+    load)
+	${MTX} -f ${CHANGER} move slot $((${SLOT}-1)) drive ${DRIVE}
+	rtn=$?
+	# Increase the sleep time if you have a slow device
+	sleep $SLEEP
+	exit $rtn
+	;;
+
+    list)
+	if [ "${SIMULATE_BARCODE}" = "true" ]; then
+	    if [ -f "$BARCODE_FILE" ]; then
+		cat $BARCODE_FILE | grep -v -e "^#" -e "^$"
+		exit 0
+	    else
+		echo "Barcode file $BARCODE_FILE missing ... exiting!"
+		exit 1
+	    fi
+	else
+	    ${MTX} -f ${CHANGER} status | grep "^slot .*: .*FULL>" | awk '{print $2}' | awk -F: '{print $1+1" "}' | tr -d "[\r\n]"
+	fi
+      ;;
+
+    loaded)
+	# echo "Request loaded"
+	${MTX} -f ${CHANGER} status -S > /tmp/mtx.$$
+	rtn=$?
+	# Try to get chio slot source from drive entry
+	SLOT=$(cat /tmp/mtx.$$ | grep "^drive ${DRIVE}: <FULL> .*slot" | awk '{print $6+1}' | tr -d ">")
+	if [ -z "$SLOT" ]; then
+	    # This handles the case a source slot is not available (power on
+	    # of the changer with a drive loaded) and all other slots are
+	    # occupied with a tape!
+	    SLOT=$(cat /tmp/mtx.$$ | grep "^slot .*: <ACCESS>" | awk '{print $2+1}')
+	    if [ -z "$SLOT" ]; then
+		echo 0
+	    else
+		echo $SLOT
+	    fi
+	else
+	    echo $SLOT
+	fi
+	# All tapes are in the slots
+	#cat /tmp/mtx.$$ | grep "^drive ${DRIVE}: .* source: <>" | awk "{print 0}"
+	rm -f /tmp/mtx.$$
+	exit $rtn
+	;;
+
+    slots)
+	# echo "Request slots"
+	${MTX} -f ${CHANGER} status | grep "^slot " | tail -1 | awk '{print $2+1}' | tr -d ":"
+	;;
+
+    *)
+	usage
+      ;;
+esac

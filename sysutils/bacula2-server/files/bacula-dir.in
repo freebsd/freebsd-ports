@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: bacula_dir
+# REQUIRE: DAEMON %%REQ_MYSQL%% %%REQ_PGSQL%%
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bacula_dir_enable  (bool):   Set to NO by default.
+#                Set it to YES to enable bacula_dir.
+# bacula_dir_flags (params):   Set params used to start bacula_dir.
+#
+
+. %%RC_SUBR%%
+
+name="bacula_dir"
+rcvar=${name}_enable
+command=%%PREFIX%%/sbin/bacula-dir
+
+load_rc_config $name
+
+: ${bacula_dir_enable="NO"}
+: ${bacula_dir_flags=" -u bacula -g bacula -v -c %%PREFIX%%/etc/bacula-dir.conf"}
+: ${bacula_dir_pidfile="/var/run/bacula-dir.9101.pid"}
+
+pidfile="${bacula_dir_pidfile}"
+
+run_rc_command "$1"

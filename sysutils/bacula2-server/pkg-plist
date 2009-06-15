@@ -1,0 +1,45 @@
+sbin/bacula-dir
+sbin/bacula-sd
+sbin/bcopy
+sbin/bextract
+sbin/bls
+sbin/bregex
+sbin/bscan
+sbin/bsmtp
+sbin/btape
+sbin/btraceback
+sbin/bwild
+sbin/chio-bacula
+sbin/dbcheck
+%%DATADIR%%/bacula
+%%DATADIR%%/bacula-ctl-dir
+%%DATADIR%%/bacula-ctl-fd
+%%DATADIR%%/bacula-ctl-sd
+%%DATADIR%%/bconsole
+%%DATADIR%%/btraceback.gdb
+%%DATADIR%%/btraceback.dbx
+%%DATADIR%%/create_bacula_database
+%%DATADIR%%/create_%%DBTYPE%%_database
+%%DATADIR%%/delete_catalog_backup
+%%DATADIR%%/disk-changer
+%%DATADIR%%/drop_bacula_database
+%%DATADIR%%/drop_bacula_tables
+%%DATADIR%%/drop_%%DBTYPE%%_database
+%%DATADIR%%/drop_%%DBTYPE%%_tables
+%%DATADIR%%/dvd-handler
+%%DATADIR%%/gconsole
+%%DATADIR%%/grant_bacula_privileges
+%%DATADIR%%/grant_%%DBTYPE%%_privileges
+%%DATADIR%%/make_bacula_tables
+%%DATADIR%%/make_catalog_backup
+%%DATADIR%%/make_%%DBTYPE%%_tables
+%%DATADIR%%/mtx-changer
+%%DATADIR%%/query.sql
+%%DATADIR%%/update_bacula_tables
+%%DATADIR%%/update_%%DBTYPE%%_tables
+
+@dirrm %%DATADIR%%
+@unexec /usr/bin/killall bacula-sd  > /dev/null 2>&1 || true
+@unexec /usr/bin/killall bacula-dir > /dev/null 2>&1 || true
+@exec mkdir -p %%BACULA_DIR%%
+@dirrmtry %%BACULA_DIR%%
