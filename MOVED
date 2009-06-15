@@ -4050,3 +4050,5 @@ lang/pm3-m3tk||2009-06-15|Has expired: depends on broken, expired port
 lang/pm3-net||2009-06-15|Has expired: depends on broken, expired port
 lang/pm3-netobj||2009-06-15|Has expired: depends on broken, expired port
 graphics/juno-2||2009-06-15|Removed
+net/p5-ZConf-Mail|2009-06-15|Moved to mail/p5-ZConf-Mail
+
