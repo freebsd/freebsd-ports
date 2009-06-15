@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	hlstatsx
-PORTVERSION=	1.01
-PORTREVISION=	2
+DISTVERSION=	1.20RC2
 CATEGORIES=	games www
-MASTER_SITES=	http://www.hlstatsx.com/downloads/
-DISTNAME=	HLstatsX_V${PORTVERSION}
+MASTER_SITES=	http://www.users.on.net/~tarek_abouzeid/cstrike/HLstats/
+DISTNAME=	HLstatsX_V${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
-
-BROKEN=	Does not fetch
 
 NO_BUILD=	yes
 USE_APACHE=	1.3
