@@ -24,7 +24,7 @@ MAN5=	taskrc.5
 
 .if defined(NOPORTDOCS)
 post-patch:
-	${REINPLACE_CMD} -e '/^other_DATA/d' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e '326,333d' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
