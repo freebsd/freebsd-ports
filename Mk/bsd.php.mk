@@ -244,7 +244,7 @@ _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dbase \
 		tokenizer wddx xml xmlrpc yaz zip zlib
 # version specific components
 _USE_PHP_VER4=	${_USE_PHP_ALL} crack dbx dio domxml filepro mcal mcve \
-		mnogosearch oracle overload pfpro xslt yp
+		oracle overload pfpro xslt yp
 _USE_PHP_VER5=	${_USE_PHP_ALL} dom filter ming mysqli oci8 pdo \
 		pdo_mysql pdo_sqlite \
 		simplexml soap spl sqlite tidy xmlreader xmlwriter xsl
@@ -283,7 +283,6 @@ mcve_DEPENDS=	devel/php${PHP_VER}-mcve
 memcache_DEPENDS=	databases/pecl-memcache
 mhash_DEPENDS=	security/php${PHP_VER}-mhash
 ming_DEPENDS=	graphics/php${PHP_VER}-ming
-mnogosearch_DEPENDS=	www/php${PHP_VER}-mnogosearch
 mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysql_DEPENDS=	databases/php${PHP_VER}-mysql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli

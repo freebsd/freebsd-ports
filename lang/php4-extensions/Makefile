@@ -60,7 +60,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		MCRYPT          "Encryption support" off \
 		MCVE            "MCVE support" off \
 		MHASH           "Crypto-hashing support" off \
-		MNOGOSEARCH     "mnoGoSearch support" off \
 		MSSQL           "MS-SQL database support" off \
 		MYSQL           "MySQL database support" on \
 		NCURSES         "ncurses support (CLI only)" off \
@@ -106,7 +105,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 ALL_OPTIONS=	BCMATH BZ2 CALENDAR CRACK CTYPE CURL DBA DBASE DBX DIO \
 		DOMXML EXIF FILEINFO FILEPRO FRIBIDI FTP GD GETTEXT \
 		GMP ICONV IMAP INTERBASE LDAP MBSTRING MCAL MCRYPT \
-		MCVE MHASH MIME_MAGIC MNOGOSEARCH MSSQL MYSQL NCURSES \
+		MCVE MHASH MIME_MAGIC MSSQL MYSQL NCURSES \
 		ODBC OPENSSL ORACLE OVERLOAD PCNTL PCRE PDF PFPRO \
 		PGSQL POSIX PSPELL READLINE RECODE SESSION SHMOP SNMP SOCKETS \
 		SYBASE_CT SYSVMSG SYSVSEM SYSVSHM TOKENIZER \
