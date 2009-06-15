@@ -7,13 +7,14 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.19.4
+PORTREVISION=	1
 CATEGORIES=	ftp linux
 PKGNAMEPREFIX=	linux-f10-
-DISTFILES=	curl-7.19.4-4.fc10.i386.rpm \
-		libcurl-7.19.4-4.fc10.i386.rpm
+DISTFILES=	curl-${PORTVERSION}-${RPMVERSION}.i386.rpm \
+		libcurl-${PORTVERSION}-${RPMVERSION}.i386.rpm
 
 .if defined(PACKAGE_BUILDING)
-SRC_DISTFILES=	curl-7.19.4-4.fc10.src.rpm
+SRC_DISTFILES=	curl-${PORTVERSION}-${RPMVERSION}.src.rpm
 ALWAYS_KEEP_DISTFILES=	YES
 .endif
 
@@ -24,6 +25,7 @@ CONFLICTS=	linux-curl-[0-9]* linux-f8-curl-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10
+RPMVERSION=	5.fc10
 USE_LDCONFIG=	yes
 BRANDELF_FILES=	usr/bin/curl
 DESCR=	${.CURDIR}/../${PORTNAME}/pkg-descr
