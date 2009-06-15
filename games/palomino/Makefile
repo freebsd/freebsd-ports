@@ -55,6 +55,8 @@ LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 .endif
 
 post-patch:
+	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
 	@${REINPLACE_CMD} -e '/COMMAND/ s|lua|${LUA_CMD}|' \
 		${WRKSRC}/build/lua_bind/CMakeLists.txt
 .if defined(WITHOUT_JOYSTICK)
