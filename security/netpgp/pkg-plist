@@ -1,0 +1,7 @@
+bin/netpgp
+include/netpgp.h
+lib/libnetpgp.a
+lib/libnetpgp.la
+lib/libnetpgp.so
+lib/libnetpgp.so.1
+lib/libnetpgp.so.1.0.0
