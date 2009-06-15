@@ -1,0 +1,4 @@
+A Rubygems packaging tool that provides Rake tasks for documentation, extension
+compiling, testing, and deployment.
+
+WWW:	http://blog.evanweaver.com/files/doc/fauna/echoe/
