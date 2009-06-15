@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9b01c08-59b3-11de-828e-00e0815b8da8">
+    <topic>git -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>1.6.3.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/35338/discuss">
+	  <p>Git is prone to a denial-of-service vulnerability because it
+	    fails to properly handle some client requests.</p>
+	  <p>Attackers can exploit this issue to cause a daemon process to
+	    enter an infinite loop. Repeated exploits may consume excessive
+	    system resources, resulting in a denial of service condition.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>35338</bid>
+      <url>https://www.redhat.com/archives/fedora-security-list/2009-June/msg00000.html</url>
+      <url>http://article.gmane.org/gmane.comp.version-control.git/120724</url>
+    </references>
+    <dates>
+      <discovery>2009-06-04</discovery>
+      <entry>2009-06-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="62e0fbe5-5798-11de-bb78-001cc0377035">
     <topic>ruby -- BigDecimal denial of service vulnerability</topic>
     <affects>
