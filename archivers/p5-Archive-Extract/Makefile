@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Archive-Extract
-PORTVERSION=	0.30
+PORTVERSION=	0.32
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A generic archive extracting mechanism
 
-RUN_DEPENDS=	p5-IPC-Cmd>=0.42:${PORTSDIR}/devel/p5-IPC-Cmd
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-IPC-Cmd>=0.42:${PORTSDIR}/devel/p5-IPC-Cmd
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=  yes
 
