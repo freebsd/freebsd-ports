@@ -5,4 +5,4 @@ sbin/bconsole
 @unexec /usr/bin/killall badula-fd > /dev/null 2>&1 || true
 @exec mkdir -p %%BACULA_DIR%%
 @dirrmtry %%BACULA_DIR%%
-@dirrm share/bacula2
+@dirrm share/bacula

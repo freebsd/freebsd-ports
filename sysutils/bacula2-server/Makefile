@@ -49,7 +49,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
-		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
+		--with-scriptdir=${PREFIX}/share/bacula \
 		--with-readline=yes \
 		--disable-conio \
 		--enable-batch-insert
