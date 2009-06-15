@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-Store-FastMmap
-PORTVERSION=	0.07
+PORTVERSION=	0.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
