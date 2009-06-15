@@ -16,6 +16,7 @@ COMMENT=	Collection of libraries to help integrate Last.fm services
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		fftw3f.5:${PORTSDIR}/math/fftw3-float \
 		mad.2:${PORTSDIR}/audio/libmad
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
@@ -29,7 +30,8 @@ MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 post-extract:
+	${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' ${WRKSRC}/configure
 	${FIND} ${WRKSRC}/admin -type f | ${XARGS} \
-		 ${REINPLACE_CMD} -e 's|\#\!\/usr\/bin\/ruby|\#\!\/usr\/local\/bin\/ruby|'
+		 ${REINPLACE_CMD} -e 's|#!/usr/bin/ruby|#!${LOCALBASE}/bin/ruby|'
 
 .include <bsd.port.mk>
