@@ -6,6 +6,7 @@
 
 PORTNAME=	mongrel_cluster
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	mongrel
@@ -24,7 +25,6 @@ REINPLACE_ARGS=	-i ""
 PLIST_FILES=	bin/mongrel_cluster_ctl
 
 post-install:
-	${RMDIR} ${PREFIX}/${GEM_DOC_DIR}
 	@${REINPLACE_CMD} -e 's|/usr/bin/env ruby|${RUBY}|' ${PREFIX}/bin/mongrel_cluster_ctl
 	@${REINPLACE_CMD} -e 's|mongrel_rails|${PREFIX}/bin/mongrel_rails|g' \
 		${PREFIX}/${GEM_LIB_DIR}/bin/mongrel_cluster_ctl
