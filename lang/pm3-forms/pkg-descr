@@ -1,8 +1,0 @@
-These are the high-level GUI libraries and tools for the Polytechnique
-Montreal Modula-3 (PM3) distribution.  Here are the packages included:
-
-formsedit	formsvbt	formsvbtpixmaps	jvideo	videovbt	web
-
-WWW: http://m3.polymtl.ca/m3/
-
-John Polstra <jdp@FreeBSD.ORG>
