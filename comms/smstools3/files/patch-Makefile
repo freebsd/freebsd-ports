@@ -1,6 +1,11 @@
 --- Makefile.orig	2007-04-22 13:42:22.000000000 +0200
-+++ Makefile	2008-05-17 14:45:59.000000000 +0200
-@@ -6,17 +6,17 @@
++++ Makefile	2009-06-15 09:28:29.000000000 +0200
+@@ -2,21 +2,21 @@
+ 
+ # If you change destination of executables, remember to change
+ # startup script (init.d/sms3) too.
+-BINDIR=/usr/local/bin
++BINDIR=%%PREFIX%%/bin
  
  VERSION=$(shell grep package_version src/version.h | cut -f2)
  

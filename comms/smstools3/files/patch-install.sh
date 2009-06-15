@@ -5,7 +5,7 @@
  BINDIR=$1
  if [ -z "$BINDIR" ]; then
 -  BINDIR=/usr/local/bin
-+  BINDIR=/usr/local
++  BINDIR=%%PREFIX%%/bin
  fi
  
  makepath()
@@ -21,7 +21,7 @@
 -
  echo "Installing config file"
 -copy examples/smsd.conf.easy /etc/smsd.conf
-+copy examples/smsd.conf.easy /usr/local/etc/smsd.conf
++copy examples/smsd.conf.easy %%PREFIX%%/etc/smsd.conf
  
  echo "Creating minimum spool directories"
  makedir /var/spool
@@ -48,4 +48,4 @@
 -  echo "You have installed executables to $BINDIR,"
 -  echo "you should manually edit $SMS3SCRIPT script."
 -fi
-+echo 'Please dont forget to edit /usr/local/etc/smsd.conf.'
++echo 'Please dont forget to edit %%PREFIX%%/etc/smsd.conf.'

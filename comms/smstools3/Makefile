@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smstools
-PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTVERSION=	3.1.5
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -32,19 +31,17 @@ SUB_LIST+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
 
-DOCS=		alarmhandler.html blacklist.html book.html compiling.html \
-		configure.html configure2.html costs.html eventhandler.html \
-		faq.html fileformat.html gpl.html gpl_de.html \
-		hardwarecomp.html history3.html index.html license.html \
-		links.html localizing.html references.html run.html \
-		softwarecomp.html statformat.html statusmonitor.html \
-		support.gif support.html udh.html windows.html
+DOCS=		blacklist.html book.html compiling.html \
+		configure.html configure2.html eventhandler.html \
+		faq.html fileformat.html gpl.html hardwarecomp.html \
+		history3.html index.html license.html localizing.html \
+		run.html statusmonitor.html udh.html windows.html
 
 SLIDESHOW=	blacklist.gif eventhandler.gif logfile.gif modem.gif \
 		move_l.gif move_r.gif page1.html page2.html page2.jpg \
 		page2b.html page3.html page4.html page5.html page6.html \
 		page7.html page8.html queue.gif sms.gif smstools3-small.jpg \
-		statistic.gif status.gif support.gif
+		statistic.gif status.gif
 
 EXAMPLES=	.procmailrc .qmailrc language-ISO-8859-15.fi \
 		language-UTF-8.fi operator_logo1.sms operator_logo2.sms \
@@ -63,12 +60,12 @@ SCRIPTS=	checkhandler-utf-8 email2sms eventhandler-utf-8 forwardsms \
 LIB_DEPENDS+=	mm.14:${PORTSDIR}/devel/mm
 CFLAGS+=	-I${LOCALBASE}/include
 .else
-CFLAGS+=	-D NOSTATS
+CFLAGS+=	-DNOSTATS
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/install.sh \
-		${WRKSRC}/src/smsd_cfg.c
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile \
+		${WRKSRC}/install.sh ${WRKSRC}/src/smsd_cfg.c
 	@${REINPLACE_CMD} 's|/dev/ttyS0|/dev/cuad0|g' \
 		${WRKSRC}/examples/smsd.conf.easy \
 		${WRKSRC}/examples/smsd.conf.full \

@@ -25,25 +25,20 @@ bin/unicode2sms
 @unexec if [ -f %D/etc/smsd.conf ] && cmp -s %D/etc/smsd.conf %D/etc/smsd.conf.sample; then rm -f %D/etc/smsd.conf; fi
 etc/smsd.conf.sample
 @exec if [ ! -f %D/etc/smsd.conf ] ; then cp -p %D/%F %B/smsd.conf; fi
-%%PORTDOCS%%%%DOCSDIR%%/alarmhandler.html
 %%PORTDOCS%%%%DOCSDIR%%/blacklist.html
 %%PORTDOCS%%%%DOCSDIR%%/book.html
 %%PORTDOCS%%%%DOCSDIR%%/compiling.html
 %%PORTDOCS%%%%DOCSDIR%%/configure.html
 %%PORTDOCS%%%%DOCSDIR%%/configure2.html
-%%PORTDOCS%%%%DOCSDIR%%/costs.html
 %%PORTDOCS%%%%DOCSDIR%%/eventhandler.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/fileformat.html
 %%PORTDOCS%%%%DOCSDIR%%/gpl.html
-%%PORTDOCS%%%%DOCSDIR%%/gpl_de.html
 %%PORTDOCS%%%%DOCSDIR%%/hardwarecomp.html
 %%PORTDOCS%%%%DOCSDIR%%/history3.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/links.html
 %%PORTDOCS%%%%DOCSDIR%%/localizing.html
-%%PORTDOCS%%%%DOCSDIR%%/references.html
 %%PORTDOCS%%%%DOCSDIR%%/run.html
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/blacklist.gif
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/eventhandler.gif
@@ -66,12 +61,7 @@ etc/smsd.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/smstools3-small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/statistic.gif
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/status.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/support.gif
-%%PORTDOCS%%%%DOCSDIR%%/softwarecomp.html
-%%PORTDOCS%%%%DOCSDIR%%/statformat.html
 %%PORTDOCS%%%%DOCSDIR%%/statusmonitor.html
-%%PORTDOCS%%%%DOCSDIR%%/support.gif
-%%PORTDOCS%%%%DOCSDIR%%/support.html
 %%PORTDOCS%%%%DOCSDIR%%/udh.html
 %%PORTDOCS%%%%DOCSDIR%%/windows.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.procmailrc
