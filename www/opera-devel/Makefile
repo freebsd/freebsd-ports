@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	${OPERA_VER}
-#PORTREVISION=	1
+PORTVERSION=	${OPERA_VER}.${OPERA_MINVER}.${OPERA_REL}
+PORTEPOCH=	1
 CATEGORIES=	www ipv6
 #MASTER_SITES=	http://snapshot.opera.com/${MASTER_SITES_VER_PATH}/ \
 #		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/
