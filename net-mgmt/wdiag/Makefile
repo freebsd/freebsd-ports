@@ -16,4 +16,10 @@ COMMENT=	Utility to collect DSL line stats from Westell DSL modems
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 800000)
+IGNORE=	broken on -CURRENT
+.endif
+
+.include <bsd.port.post.mk>
