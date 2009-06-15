@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${PORTVERSION:C/\.[0-9]$//}/source/ \
+MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${PORTVERSION}/source/ \
 		http://mirror.amdmi3.ru/
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
