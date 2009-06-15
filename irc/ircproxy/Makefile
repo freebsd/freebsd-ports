@@ -7,13 +7,14 @@
 
 PORTNAME=	ircproxy
 PORTVERSION=	1.3.3c
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
 MAINTAINER=	jonas@night-light.net
 COMMENT=	An IRC proxy/bouncer daemon
 
-LIB_DEPENDS=	cares.1:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS=	cares.2:${PORTSDIR}/dns/c-ares
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

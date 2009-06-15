@@ -7,6 +7,7 @@
 
 PORTNAME=	greylite
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://mij.oltrelinux.com/net/greylite/releases/
 
@@ -37,7 +38,7 @@ MAKE_ARGS+=	WITH_GEOIP=yep
 
 .if !defined(WITHOUT_DNSBLENV)
 LIB_DEPENDS+=	cares:${PORTSDIR}/dns/c-ares
-MAKE_ARGS+=	WITH_DNSBLENV=yep WITH_CARES14=yep
+MAKE_ARGS+=	WITH_DNSBLENV=yep
 PLIST_SUB+=	DNSBLENV=""
 .else
 PLIST_SUB+=	DNSBLENV="@comment "
