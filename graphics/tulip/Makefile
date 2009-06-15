@@ -13,6 +13,7 @@ MASTER_SITES=	SF/auber:src \
     		http://tulip.labri.fr/userHandbook/:doc
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
     		userManual.pdf:doc
+DIST_SUBDIR=	tulip/${PDFUPDATE}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -32,6 +33,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
 PORTDOCS=	userManual.pdf
+PDFUPDATE=	1
 
 PLIST_SUB+=	TULIP_VERSION=${PORTVERSION}
 
