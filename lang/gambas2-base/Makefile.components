@@ -24,37 +24,61 @@ USE_SDL=	sdl mixer
 
 .if ${PKGNAMESUFFIX} == "-gb-db-firebird"
 USE_FIREBIRD=	yes
+
+CONFIGURE_ARGS+=	--with-firebird-includes=${LOCALBASE}/include \
+			--with-firebird-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-mysql"
 USE_MYSQL=	yes
+
+CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include \
+			--with-mysql-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-postgresql"
 USE_PGSQL=	yes
+
+CONFIGURE_ARGS+=	--with-postgresql-includes=${LOCALBASE}/include \
+			--with-postgresql-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-odbc"
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+
+CONFIGURE_ARGS+=	--with-odbc-includes=${LOCALBASE}/include \
+			--with-odbc-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-sqlite2"
 USE_SQLITE=	2
+
+CONFIGURE_ARGS+=	--with-sqlite2-includes=${LOCALBASE}/include \
+			--with-sqlite2-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-sqlite3"
 USE_SQLITE=	yes
+
+CONFIGURE_ARGS+=	--with-sqlite3-includes=${LOCALBASE}/include \
+			--with-sqlite3-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-pcre"
 BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+
+CONFIGURE_ARGS+=	--with-pcre-includes=${LOCALBASE}/include \
+			--with-pcre-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-corba"
 BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
 LIB_DEPENDS+=	ACE.5:${PORTSDIR}/devel/ace \
 		omniORB4.1:${PORTSDIR}/devel/omniORB
+
+CONFIGURE_ARGS+=	--with-corba-includes=${LOCALBASE}/include \
+			--with-corba-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-sdl"
@@ -159,6 +183,9 @@ BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
 
 USE_QT_VER=	3
 .include <${PORTSDIR}/Mk/bsd.kde.mk>
+
+CONFIGURE_ARGS+=	--with-qtopengl-includes=${LOCALBASE}/include \
+			--with-qtopengl-libraries=${LOCALBASE}/lib
 .endif
 
 post-patch:
