@@ -19,7 +19,8 @@ setenv XMODIFIERS @im=ibus
 setenv XIM_PROGRAM ibus-daemon
 setenv XIM_ARGS "--daemonize --xim"
 
-If you are using KDE4, you may create a shell script in $HOME/.kde4/env, and add following lines:
+If you are using KDE4, you may create a shell script in $HOME/.kde4/env, 
+and add following lines:
 
 #!/bin/sh
 export XIM=ibus
@@ -32,4 +33,9 @@ export XIM_ARGS="--daemonize --xim"
 Following input methods are available in ports:
 
 chinese/ibus-pinyin		The PinYin input method
+japanese/ibus-anthy		Anthy engine for IBus
+
+If ibus cannot start or the panel does not appear, please ensure
+that you are using up-to-date python.
+There's a bug in python 2.5, which may prevent the panel from appearing.
 -------------------------------------------------------------------

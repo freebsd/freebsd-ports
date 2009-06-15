@@ -18,6 +18,7 @@ include/ibus-1.0/ibushotkey.h
 include/ibus-1.0/ibusinputcontext.h
 include/ibus-1.0/ibuskeysyms.h
 include/ibus-1.0/ibuslookuptable.h
+include/ibus-1.0/ibusmainloop.h
 include/ibus-1.0/ibusmarshalers.h
 include/ibus-1.0/ibusmessage.h
 include/ibus-1.0/ibusobject.h
@@ -148,26 +149,31 @@ libexec/ibus-ui-gtk
 libexec/ibus-x11
 share/applications/ibus-setup.desktop
 share/applications/ibus.desktop
-share/gtk-doc/html/ibus/IBusAttrList.html
+share/gtk-doc/html/ibus/IBusAttribute.html
 share/gtk-doc/html/ibus/IBusBus.html
 share/gtk-doc/html/ibus/IBusComponent.html
 share/gtk-doc/html/ibus/IBusConfig.html
+share/gtk-doc/html/ibus/IBusConfigService.html
 share/gtk-doc/html/ibus/IBusConnection.html
 share/gtk-doc/html/ibus/IBusEngine.html
 share/gtk-doc/html/ibus/IBusEngineDesc.html
-share/gtk-doc/html/ibus/IBusFactoryInfo.html
+share/gtk-doc/html/ibus/IBusFactory.html
 share/gtk-doc/html/ibus/IBusHotkeyProfile.html
 share/gtk-doc/html/ibus/IBusInputContext.html
 share/gtk-doc/html/ibus/IBusLookupTable.html
 share/gtk-doc/html/ibus/IBusObject.html
 share/gtk-doc/html/ibus/IBusObservedPath.html
-share/gtk-doc/html/ibus/IBusPropList.html
+share/gtk-doc/html/ibus/IBusProperty.html
 share/gtk-doc/html/ibus/IBusProxy.html
 share/gtk-doc/html/ibus/IBusSerializable.html
 share/gtk-doc/html/ibus/IBusServer.html
 share/gtk-doc/html/ibus/IBusService.html
 share/gtk-doc/html/ibus/IBusText.html
 share/gtk-doc/html/ibus/ch01.html
+share/gtk-doc/html/ibus/ch02.html
+share/gtk-doc/html/ibus/ch03.html
+share/gtk-doc/html/ibus/ch04.html
+share/gtk-doc/html/ibus/ch05.html
 share/gtk-doc/html/ibus/home.png
 share/gtk-doc/html/ibus/ibus-ibusdebug.html
 share/gtk-doc/html/ibus/ibus-ibusenumtypes.html
@@ -197,6 +203,9 @@ share/gtk-doc/html/ibus/up.png
 %%DATADIR%%/icons/ibus-locale.svg
 %%DATADIR%%/icons/ibus-zh.svg
 %%DATADIR%%/icons/ibus.svg
+%%DATADIR%%/setup/engineabout.py
+%%DATADIR%%/setup/engineabout.pyc
+%%DATADIR%%/setup/engineabout.pyo
 %%DATADIR%%/setup/enginecombobox.py
 %%DATADIR%%/setup/enginecombobox.pyc
 %%DATADIR%%/setup/enginecombobox.pyo
@@ -216,6 +225,9 @@ share/gtk-doc/html/ibus/up.png
 %%DATADIR%%/ui/gtk/candidatepanel.py
 %%DATADIR%%/ui/gtk/candidatepanel.pyc
 %%DATADIR%%/ui/gtk/candidatepanel.pyo
+%%DATADIR%%/ui/gtk/engineabout.py
+%%DATADIR%%/ui/gtk/engineabout.pyc
+%%DATADIR%%/ui/gtk/engineabout.pyo
 %%DATADIR%%/ui/gtk/handle.py
 %%DATADIR%%/ui/gtk/handle.pyc
 %%DATADIR%%/ui/gtk/handle.pyo
@@ -243,19 +255,40 @@ share/gtk-doc/html/ibus/up.png
 %%DATADIR%%/ui/gtk/toolitem.py
 %%DATADIR%%/ui/gtk/toolitem.pyc
 %%DATADIR%%/ui/gtk/toolitem.pyo
+%%NLS%%share/locale/ar/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/as/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/da/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/de/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/es/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/kn/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/or/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/te/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus.mo
 share/pixmaps/ibus-setup.svg
 share/pixmaps/ibus.svg
 @dirrm %%DATADIR%%/ui/gtk
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/engine
-@dirrm %%DATADIR%%/component
+@dirrmtry %%DATADIR%%/engine
+@dirrmtry %%DATADIR%%/component
 @dirrm %%DATADIR%%/setup
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @dirrm share/gtk-doc/html/ibus
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
