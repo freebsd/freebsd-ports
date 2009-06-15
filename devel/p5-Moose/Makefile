@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.77
+PORTVERSION=	0.79
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -32,19 +32,20 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Basics::Recipe1.3 \
 	Moose::Cookbook::Basics::Recipe10.3 \
 	Moose::Cookbook::Basics::Recipe11.3 \
-	Moose::Cookbook::Basics::Recipe12.3 \
 	Moose::Cookbook::Basics::Recipe2.3 \
 	Moose::Cookbook::Basics::Recipe3.3 \
 	Moose::Cookbook::Basics::Recipe4.3 \
 	Moose::Cookbook::Basics::Recipe5.3 \
 	Moose::Cookbook::Basics::Recipe6.3 \
 	Moose::Cookbook::Basics::Recipe7.3 \
+	Moose::Cookbook::Basics::Recipe8.3 \
 	Moose::Cookbook::Basics::Recipe9.3 \
 	Moose::Cookbook::Extending::Recipe1.3 \
 	Moose::Cookbook::Extending::Recipe2.3 \
 	Moose::Cookbook::Extending::Recipe3.3 \
 	Moose::Cookbook::Extending::Recipe4.3 \
-	Moose::Cookbook::FAQ.3 \
+	Moose::Manual::FAQ.3 \
+	Moose::Manual::Unsweetened.3 \
 	Moose::Cookbook::Meta::Recipe1.3 \
 	Moose::Cookbook::Meta::Recipe2.3 \
 	Moose::Cookbook::Meta::Recipe3.3 \
@@ -58,7 +59,6 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Snack::Keywords.3 \
 	Moose::Cookbook::Snack::Types.3 \
 	Moose::Cookbook::Style.3 \
-	Moose::Cookbook::WTF.3 \
 	Moose::Error::Confess.3 \
 	Moose::Error::Croak.3 \
 	Moose::Error::Default.3 \
