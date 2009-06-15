@@ -1,0 +1,57 @@
+diff --git connect.c.orig connect.c
+index f6b8ba6..958c831 100644
+--- connect.c.orig
++++ connect.c
+@@ -579,7 +579,10 @@ struct child_process *git_connect(int fd[2], const char *url_orig,
+ 			git_tcp_connect(fd, host, flags);
+ 		/*
+ 		 * Separate original protocol components prog and path
+-		 * from extended components with a NUL byte.
++		 * from extended host header with a NUL byte.
++		 *
++		 * Note: Do not add any other headers here!  Doing so
++		 * will cause older git-daemon servers to crash.
+ 		 */
+ 		packet_write(fd[1],
+ 			     "%s %s%chost=%s%c",
+diff --git daemon.c.orig daemon.c
+index daa4c8e..b2babcc 100644
+--- daemon.c.orig
++++ daemon.c
+@@ -406,15 +406,15 @@ static char *xstrdup_tolower(const char *str)
+ }
+ 
+ /*
+- * Separate the "extra args" information as supplied by the client connection.
++ * Read the host as supplied by the client connection.
+  */
+-static void parse_extra_args(char *extra_args, int buflen)
++static void parse_host_arg(char *extra_args, int buflen)
+ {
+ 	char *val;
+ 	int vallen;
+ 	char *end = extra_args + buflen;
+ 
+-	while (extra_args < end && *extra_args) {
++	if (extra_args < end && *extra_args) {
+ 		saw_extended_args = 1;
+ 		if (strncasecmp("host=", extra_args, 5) == 0) {
+ 			val = extra_args + 5;
+@@ -436,6 +436,8 @@ static void parse_extra_args(char *extra_args, int buflen)
+ 			/* On to the next one */
+ 			extra_args = val + vallen;
+ 		}
++		if (extra_args < end && *extra_args)
++			die("Invalid request");
+ 	}
+ 
+ 	/*
+@@ -545,7 +547,7 @@ static int execute(struct sockaddr *addr)
+ 	hostname = canon_hostname = ip_address = tcp_port = NULL;
+ 
+ 	if (len != pktlen)
+-		parse_extra_args(line + len + 1, pktlen - len - 1);
++		parse_host_arg(line + len + 1, pktlen - len - 1);
+ 
+ 	for (i = 0; i < ARRAY_SIZE(daemon_service); i++) {
+ 		struct daemon_service *s = &(daemon_service[i]);
