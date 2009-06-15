@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.103
+PORTVERSION=	1.3.108
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		http://www.rhyolite.com/anti-spam/dcc/source/old/ \
@@ -49,9 +49,9 @@ USE_RC_SUBR=
 #		to find dccifd's socket.
 #
 OPTIONS=	DCCIFD	"DCC interface daemon (for SpamAssassin etc)"	on \
-		DCCM	"DCC milter (for Sendmail only)"	off \
-		DCCD	"DCC server"	off \
-		DCCGREY	"DCC greylisting server"	off \
+		DCCM	"DCC milter (for Sendmail only)"	on \
+		DCCD	"DCC server"	on \
+		DCCGREY	"DCC greylisting server"	on \
 		IPV6	"IPv6 support"	on  \
 		ALT_HOME	"DCC home in /var/dcc"	off \
 		PORTS_SENDMAIL	"Use base Sendmail if off, ports if on"	off
@@ -62,6 +62,8 @@ DCCUSER?=	dcc
 DCCUID?=	112
 DCCGROUP?=	dcc
 DCCGID?=	112
+
+PLIST_SUB+=	DCCUSER="${DCCUSER}"
 
 ## Use the configure script to explicitly set the locations of all files,
 ## in case the standard locations have been locally overridden
@@ -76,14 +78,16 @@ SUB_LIST+=		WRKSRC=${WRKSRC}
 ## /var/dcc home support
 #
 .if defined(WITH_ALT_HOME)
-CONFIGURE_ARGS+=	--homedir=/var/dcc --libexecdir=${PREFIX}/dcc/libexec --with-cgibin=${PREFIX}/dcc/cgi-bin
-SUB_LIST+=		DCCHOME=/var/dcc
+CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/dcc/libexec --with-cgibin=${PREFIX}/dcc/cgi-bin
+DCCHOME=		/var/dcc
 PLIST_SUB+=		WITH_ALT_HOME=""
 .else
-CONFIGURE_ARGS+=	--homedir=${PREFIX}/dcc
-SUB_LIST+=		DCCHOME=${PREFIX}/dcc
+DCCHOME=		${PREFIX}/dcc
 PLIST_SUB+=		WITH_ALT_HOME="@comment "
 .endif
+
+SUB_LIST+=		DCCHOME=${DCCHOME}
+CONFIGURE_ARGS+=	--homedir=${DCCHOME}
 
 ## dccm milter support
 #
@@ -192,11 +196,7 @@ post-install:
 
 ## Make certain DCC's config files are owned by DCC's user
 #
-.if defined(WITH_ALT_HOME)
-	@${CHOWN} ${DCCUSER} /var/dcc/*
-.else
-	@${CHOWN} ${DCCUSER} ${PREFIX}/dcc/*
-.endif
+	@${CHOWN} ${DCCUSER} ${DCCHOME}/*
 
 ## Print DCC installation notes and RESTRICTIONS file info
 #
