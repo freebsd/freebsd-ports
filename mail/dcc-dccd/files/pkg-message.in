@@ -11,8 +11,14 @@ lines to /etc/rc.conf or /etc/rc.conf.local.
 Daemon startup flags are also specified in %%DCCHOME%%/dcc_conf.
 
 
-If you run the DCC server, /usr/local/dcc/libexec/cron-dccd should be
+If you run the DCC server, %%LOCALBASE%%/dcc/libexec/cron-dccd should be
 run at least daily from the crontab to clean old checksums from the DB.
+
+
+If you just run the client, you may still wish to add
+%%LOCALBASE%%/dcc/libexec/cron-dccd to your crontab to clean up the
+client's log files on a regular basis. dcc_conf's DBCLEAN_LOGDAYS
+variable controls the number of days to keep logs.
 
 
 If your site handles more than 100,000 messages per day, to decrease the

@@ -7,6 +7,7 @@ DCCUSER=%%DCCUSER%%
 DCCUID=%%DCCUID%%
 DCCGROUP=%%DCCGROUP%%
 DCCGID=%%DCCGID%%
+DCCHOME=%%DCCHOME%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
 
@@ -21,7 +22,7 @@ if [ "$2" = "PRE-INSTALL" ]; then
 
 	if ! pw usershow "$DCCUSER" 2>/dev/null 1>&2; then
 		if pw useradd $DCCUSER -u $DCCUID -g $DCCGROUP -h - \
-			-s "/sbin/nologin" -d "/nonexistent" \
+			-s "/sbin/nologin" -d "$DCCHOME" \
 			-c "Distributed Checksum Clearinghouse"; \
 		then
 			echo "=> Added user \"$DCCUSER\"."
@@ -30,7 +31,22 @@ if [ "$2" = "PRE-INSTALL" ]; then
 			exit 1
 		fi
 	fi
+elif [ "$2" = "POST-INSTALL" ]; then
 
+	echo "=> Generating unique passwords for your DCC install..."
+	echo "=>"
+	echo "=> Note this will make map.sample, map.txt.sample and"
+	echo "=> ids.sample fail their MD5 checks on package removal."
+
+	/bin/sh $PREFIX/dcc/libexec/fix-map \
+	-n .sample \
+	-I $DCCHOME/ids.sample -i $DCCHOME/ids \
+	-T $DCCHOME/map.txt.sample -t $DCCHOME/map.txt \
+	-m $DCCHOME/map
+
+        for file in ids map map.txt ; do
+                /bin/cp -p $DCCHOME/$file $DCCHOME/${file}.sample
+        done
 fi
 
 exit 0
