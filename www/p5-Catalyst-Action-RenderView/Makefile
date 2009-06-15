@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Action-RenderView
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,16 +14,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Sensible default end action for Catalyst
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Data-Visitor>=0.08:${PORTSDIR}/devel/p5-Data-Visitor \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Catalyst::Action::RenderView.3
 
 post-extract:
-	@${PERL} -ne 'print unless /^test_requires/' ${WRKSRC}/Makefile.PL
+	@${PERL} -i.bak -ne 'print unless /^(test_requires|auto_install|recommends|configure_requires)/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
