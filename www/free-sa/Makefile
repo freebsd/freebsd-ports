@@ -15,6 +15,7 @@ COMMENT=	Statistic analyzer for daemons log files similar to SARG
 
 PORTDOCS=	COPYING INSTALL README README.DEV ChangeLog FAQ THANKS
 DOCSDIR=	share/doc/free-sa-${DISTVERSION}
+MAKE_JOBS_SAFE=	yes
 
 MAN1=	free-sa.1
 MAN5=	free-sa.conf.5
@@ -37,5 +38,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-i386.mk
 BROKEN=		build fails with error: CPU you selected does not support x86-64 instruction set
 .endif
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,^CFLAGS =.*,CFLAGS = -I. -I.. ${CFLAGS},' ${WRKSRC}/global.mk
 
 .include <bsd.port.post.mk>
