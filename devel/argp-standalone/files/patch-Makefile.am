@@ -1,0 +1,28 @@
+--- Makefile.am.orig	2009-05-28 15:19:50.000000000 +0200
++++ Makefile.am	2009-05-28 15:30:57.000000000 +0200
+@@ -21,20 +21,20 @@
+ AUTOMAKE_OPTIONS = foreign
+ SUBDIRS = . testsuite
+ 
+-LIBOBJS = @LIBOBJS@
++LTLIBOBJS = @LTLIBOBJS@
+ 
+-noinst_LIBRARIES = libargp.a
++lib_LTLIBRARIES = libargp.la
+ noinst_PROGRAMS = argp-test
+ noinst_HEADERS = argp.h argp-fmtstream.h argp-namefrob.h # argp-comp.h
+ 
+ EXTRA_DIST = mempcpy.c strchrnul.c strndup.c Versions
+ 
+ # Leaves out argp-fs-xinl.c and argp-xinl.c 
+-libargp_a_SOURCES = argp-ba.c argp-eexst.c argp-fmtstream.c \
++libargp_la_SOURCES = argp-ba.c argp-eexst.c argp-fmtstream.c \
+ 		    argp-help.c argp-parse.c argp-pv.c \
+ 		    argp-pvh.c
+ 
+-libargp_a_LIBADD = $(LIBOBJS)
++libargp_la_LIBADD = $(LTLIBOBJS)
+ 
+-argp_test_LDADD = libargp.a
++argp_test_LDADD = libargp.la
+ 

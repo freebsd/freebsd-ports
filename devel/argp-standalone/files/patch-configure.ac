@@ -1,0 +1,10 @@
+--- configure.ac.orig	2009-05-28 15:20:01.000000000 +0200
++++ configure.ac	2009-05-28 15:21:06.000000000 +0200
+@@ -17,6 +17,7 @@
+ AC_PROG_MAKE_SET
+ AC_PROG_RANLIB
+ AM_PROG_CC_STDC
++AC_PROG_LIBTOOL
+ 
+ if test "x$am_cv_prog_cc_stdc" = xno ; then
+   AC_ERROR([the C compiler doesn't handle ANSI-C])
