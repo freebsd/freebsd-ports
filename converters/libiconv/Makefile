@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libiconv
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.13
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,11 +23,13 @@ CONFIGURE_ARGS=	--enable-static \
 		--without-libintl-prefix \
 		--docdir=${DOCSDIR}
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	gl_cv_cc_visibility="no"
+CONFIGURE_ENV=	gl_cv_cc_visibility="no" \
+		am_cv_func_iconv="yes" \
+		am_cv_proto_iconv_arg1="const"
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		iconv.1
-MAN3=		iconv.3 iconv_open.3 iconv_close.3 iconvctl.3
+MAN3=		iconv.3 iconv_open.3 iconv_open_into.3 iconv_close.3 iconvctl.3
 
 OPTIONS=	EXTRA_ENCODINGS	"Include extra character sets" on \
 		EXTRA_PATCHES	"Apply patches to fix CP932 add EUCJP-MS" off
@@ -48,7 +49,7 @@ CONFIGURE_ARGS+=	--enable-extra-encodings
 PATCH_SITES+=	http://www2d.biglobe.ne.jp/~msyk/software/libiconv/
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	nork
-PATCHFILES+=	${DISTNAME}-cp932.patch.gz
+PATCHFILES+=	${DISTNAME}-ja-4.patch.gz
 PATCH_DIST_STRIP+=	-p1
 .endif
 
