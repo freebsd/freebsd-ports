@@ -1,3 +1,12 @@
 A configuration system allowing for either file or LDAP backed storage.
 
+zccreate	Creates a new ZConf config or set.
+zcget	Reads a value from a ZConf config.
+zcls	Lists configured ZConf congigs and sets.
+zcrm	Remove a ZConf config or set.
+zcset	Sets a value in a ZConf config.
+zcvdel	Remove a variable from a ZConf config.
+zcvls	Lists the keys of a ZConf config.
+
+
 WWW: http://search.cpan.org/dist/ZConf/
