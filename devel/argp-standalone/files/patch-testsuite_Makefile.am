@@ -1,0 +1,11 @@
+--- testsuite/Makefile.am.orig	2009-05-28 15:21:33.000000000 +0200
++++ testsuite/Makefile.am	2009-05-28 15:21:41.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ noinst_PROGRAMS = $(TS_PROGS) ex1 ex3 ex4
+ 
+-LDADD = ../libargp.a
++LDADD = ../.libs/libargp.a
+ 
+ EXTRA_DIST = $(TS_SH) run-tests
+ CLEANFILES = test.out
