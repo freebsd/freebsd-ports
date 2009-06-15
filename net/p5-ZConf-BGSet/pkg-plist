@@ -1,8 +1,0 @@
-bin/zbgset
-bin/zbgset-admin
-%%SITE_PERL%%/ZConf/BGSet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/BGSet/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/BGSet
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrm %%SITE_PERL%%/ZConf
