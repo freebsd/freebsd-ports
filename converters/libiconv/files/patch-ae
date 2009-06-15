@@ -1,6 +1,6 @@
---- libcharset/lib/Makefile.in.orig	Mon Apr 14 22:51:06 2003
-+++ libcharset/lib/Makefile.in	Sat Jul 10 02:37:15 2004
-@@ -10,6 +10,7 @@
+--- libcharset/lib/Makefile.in.orig	2009-03-26 08:01:00.000000000 -0400
++++ libcharset/lib/Makefile.in	2009-06-06 15:28:00.000000000 -0400
+@@ -10,6 +10,7 @@ prefix = @prefix@
  local_prefix = /usr/local
  exec_prefix = @exec_prefix@
  libdir = @libdir@
@@ -8,7 +8,7 @@
  
  # Programs used by "make":
  CC = @CC@
-@@ -42,7 +43,7 @@
+@@ -44,7 +45,7 @@ SHELL = /bin/sh
  
  # Before making a release, change this according to the libtool documentation,
  # section "Library interface versions".
@@ -17,8 +17,8 @@
  
  # Needed by $(LIBTOOL).
  top_builddir = ..
-@@ -57,7 +58,7 @@
- 	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) -o libcharset.la -rpath $(libdir) -version-info $(LIBCHARSET_VERSION_INFO) -no-undefined $(OBJECTS)
+@@ -59,7 +60,7 @@ libcharset.la : $(OBJECTS)
+ 	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(CFLAGS) -o libcharset.la -rpath $(libdir) -version-info $(LIBCHARSET_VERSION_INFO) -no-undefined $(OBJECTS)
  
  localcharset.lo : $(srcdir)/localcharset.c
 -	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(DEFS) -c $(srcdir)/localcharset.c
@@ -26,7 +26,7 @@
  
  relocatable.lo : $(srcdir)/relocatable.c $(srcdir)/relocatable.h
  	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(DEFS) -c $(srcdir)/relocatable.c
-@@ -78,7 +79,7 @@
+@@ -80,7 +81,7 @@ ref-del.sed : $(srcdir)/ref-del.sin
  # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
  install-lib : all force
  	$(mkinstalldirs) $(libdir)
@@ -35,21 +35,23 @@
  	test -f $(libdir)/charset.alias && orig=$(libdir)/charset.alias \
  	                                || orig=charset.alias; \
  	sed -f ref-add.sed $$orig > $(libdir)/t-charset.alias; \
-@@ -95,15 +96,16 @@
- install : all force
- 	$(mkinstalldirs) $(DESTDIR)$(libdir)
- 	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libcharset.la $(DESTDIR)$(libdir)/libcharset.la
+@@ -108,16 +109,17 @@ install : all force
+ 	  need_charset_alias=false ; \
+ 	fi ; \
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir) ; \
+-	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libcharset.la $(DESTDIR)$(libdir)/libcharset.la
 -	if test -f $(DESTDIR)$(libdir)/charset.alias; then \
 -	  sed -f ref-add.sed $(DESTDIR)$(libdir)/charset.alias > $(DESTDIR)$(libdir)/t-charset.alias; \
 -	  $(INSTALL_DATA) $(DESTDIR)$(libdir)/t-charset.alias $(DESTDIR)$(libdir)/charset.alias; \
 -	  rm -f $(DESTDIR)$(libdir)/t-charset.alias; \
-+	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs) $(DESTDIR)$(sysconfdir) ; \
++	$(LIBTOOL_INSTALL) cp libcharset.la $(DESTDIR)$(libdir)/libcharset.la
 +	if test -f $(DESTDIR)$(sysconfdir)/charset.alias; then \
 +	  sed -f ref-add.sed $(DESTDIR)$(sysconfdir)/charset.alias > $(DESTDIR)$(sysconfdir)/t-charset.alias; \
 +	  $(INSTALL_DATA) $(DESTDIR)$(sysconfdir)/t-charset.alias $(DESTDIR)$(sysconfdir)/charset.alias; \
 +	  rm -f $(DESTDIR)$(sysconfdir)/t-charset.alias; \
  	else \
- 	  if test @GLIBC21@ = no; then \
+ 	  if $$need_charset_alias; then \
 -	    sed -f ref-add.sed charset.alias > $(DESTDIR)$(libdir)/t-charset.alias; \
 -	    $(INSTALL_DATA) $(DESTDIR)$(libdir)/t-charset.alias $(DESTDIR)$(libdir)/charset.alias; \
 -	    rm -f $(DESTDIR)$(libdir)/t-charset.alias; \
