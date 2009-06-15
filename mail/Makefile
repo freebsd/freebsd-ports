@@ -25,6 +25,7 @@
     SUBDIR += autosig
     SUBDIR += avenger
     SUBDIR += balsa
+    SUBDIR += batv-milter
     SUBDIR += bayespam
     SUBDIR += bbmail
     SUBDIR += biabam
