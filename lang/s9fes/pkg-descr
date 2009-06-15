@@ -1,7 +1,7 @@
 S9fES is an interpreter for a broad subset of (R4RS) Scheme. It is
 written in ANSI C (C89) and Scheme and it runs in many popular
-environments, including Linux, *BSD, the unmentionable horror, and
-Plan 9.
+environments, including *BSD, Linux, Plan 9, and the unmentionable
+horror.
 
 The S9fES code strives to be simple and comprehensible. It is
 particularly interesting to people who want to try Scheme without
