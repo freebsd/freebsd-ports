@@ -1,109 +1,122 @@
 bin/opera-devel
-%%DATADIR%%/svg-mo.dat
-%%DATADIR%%/skin/windows_skin.zip
-%%DATADIR%%/skin/standard_skin.zip
-%%DATADIR%%/opera6.adr
-%%DATADIR%%/svg-se.dat
-%%DATADIR%%/html40_entities.dtd
-%%DATADIR%%/svg-sebd.dat
-%%DATADIR%%/java/opera.policy
-%%DATADIR%%/java/opera.jar
-%%DATADIR%%/bin/works
+%%DATADIR%%/bin/missingsyms.so
+%%DATADIR%%/bin/opera
+%%DATADIR%%/bin/operaplugincleaner
 %%DATADIR%%/bin/operapluginwrapper
 %%DATADIR%%/bin/operapluginwrapper.freebsd
-%%DATADIR%%/bin/missingsyms.so
 %%DATADIR%%/bin/spellcheck.so
-%%DATADIR%%/bin/operaplugincleaner
-%%DATADIR%%/bin/opera
-%%DATADIR%%/styles/im.css
-%%DATADIR%%/styles/mime.css
-%%DATADIR%%/styles/warning.css
-%%DATADIR%%/styles/certinfo.css
-%%DATADIR%%/styles/error.css
+%%DATADIR%%/bin/works
+%%DATADIR%%/defaults/bookmarks.adr
+%%DATADIR%%/defaults/feedreaders.ini
+%%DATADIR%%/defaults/filehandler.ini
+%%DATADIR%%/defaults/font.ini
+%%DATADIR%%/defaults/license.txt
+%%DATADIR%%/defaults/mailproviders.xml
+%%DATADIR%%/defaults/pluginpath.ini
+%%DATADIR%%/defaults/search.ini
+%%DATADIR%%/defaults/standard_speeddial.ini
+%%DATADIR%%/defaults/standard_trusted_repositories.ini
+%%DATADIR%%/defaults/webmailproviders.ini
+%%DATADIR%%/defaults/xmlentities.ini
+%%DATADIR%%/encoding.bin
+%%DATADIR%%/extra/missingplugin.svg
+%%DATADIR%%/extra/svg-mo.dat
+%%DATADIR%%/extra/svg-mobd.dat
+%%DATADIR%%/extra/svg-sa.dat
+%%DATADIR%%/extra/svg-sabd.dat
+%%DATADIR%%/extra/svg-se.dat
+%%DATADIR%%/extra/svg-sebd.dat
+%%DATADIR%%/html40_entities.dtd
+%%DATADIR%%/java/opera.jar
+%%DATADIR%%/java/opera.policy
+%%DATADIR%%/lngcode.txt
+%%DATADIR%%/locale/en-GB
+%%DATADIR%%/locale/en-GB/en-GB.lng
+%%DATADIR%%/locale/en/bookmarks.adr
+%%DATADIR%%/locale/en/en.lng
+%%DATADIR%%/locale/en/en.zip
+%%DATADIR%%/locale/en/license.txt
+%%DATADIR%%/locale/en/search.ini
+%%DATADIR%%/locale/en/standard_speeddial.ini
+%%DATADIR%%/scripts/common.js
+%%DATADIR%%/scripts/substance.js
+%%DATADIR%%/skin/standard_skin.zip
+%%DATADIR%%/styles/about.css
 %%DATADIR%%/styles/cache.css
-%%DATADIR%%/styles/plugins.css
-%%DATADIR%%/styles/unstyledxml.css
-%%DATADIR%%/styles/webfeeds.html
-%%DATADIR%%/styles/user/toc.css
-%%DATADIR%%/styles/user/disableforms.css
-%%DATADIR%%/styles/user/disablebreaks.css
-%%DATADIR%%/styles/user/disablepositioning.css
-%%DATADIR%%/styles/user/disablefloats.css
-%%DATADIR%%/styles/user/altdebugger.css
-%%DATADIR%%/styles/user/structuretables.css
-%%DATADIR%%/styles/user/classid.css
-%%DATADIR%%/styles/user/structureblock.css
-%%DATADIR%%/styles/user/outline.css
-%%DATADIR%%/styles/user/disabletables.css
-%%DATADIR%%/styles/user/contrastwb.css
-%%DATADIR%%/styles/user/tablelayout.css
-%%DATADIR%%/styles/user/structureinline.css
-%%DATADIR%%/styles/user/contrastbw.css
-%%DATADIR%%/styles/user/accessibility.css
-%%DATADIR%%/styles/wml.css
+%%DATADIR%%/styles/certinfo.css
+%%DATADIR%%/styles/config.css
+%%DATADIR%%/styles/contentblock.css
+%%DATADIR%%/styles/debug.css
+%%DATADIR%%/styles/dir.css
+%%DATADIR%%/styles/error.css
 %%DATADIR%%/styles/history.css
-%%DATADIR%%/styles/images/red_right.png
-%%DATADIR%%/styles/images/flag.png
-%%DATADIR%%/styles/images/defaultFavicon.png
-%%DATADIR%%/styles/images/root.png
-%%DATADIR%%/styles/images/folder.png
-%%DATADIR%%/styles/images/red_left.png
-%%DATADIR%%/styles/images/darkBox.png
+%%DATADIR%%/styles/im.css
+%%DATADIR%%/styles/image.css
 %%DATADIR%%/styles/images/bar.png
-%%DATADIR%%/styles/images/smartGroup.png
 %%DATADIR%%/styles/images/center.png
-%%DATADIR%%/styles/images/top.png
-%%DATADIR%%/styles/images/section.png
 %%DATADIR%%/styles/images/customize.gif
+%%DATADIR%%/styles/images/darkBox.png
+%%DATADIR%%/styles/images/defaultFavicon.png
+%%DATADIR%%/styles/images/flag.png
+%%DATADIR%%/styles/images/folder.png
 %%DATADIR%%/styles/images/opera.png
 %%DATADIR%%/styles/images/red_center.png
-%%DATADIR%%/styles/config.css
-%%DATADIR%%/styles/search.css
-%%DATADIR%%/styles/message.css
-%%DATADIR%%/styles/dir.css
+%%DATADIR%%/styles/images/red_left.png
+%%DATADIR%%/styles/images/red_right.png
+%%DATADIR%%/styles/images/root.png
+%%DATADIR%%/styles/images/section.png
+%%DATADIR%%/styles/images/smartGroup.png
+%%DATADIR%%/styles/images/top.png
 %%DATADIR%%/styles/info.css
 %%DATADIR%%/styles/mathml.css
-%%DATADIR%%/styles/contentblock.css
-%%DATADIR%%/styles/about.css
-%%DATADIR%%/styles/image.css
-%%DATADIR%%/encoding.bin
-%%DATADIR%%/lngcode.txt
-%%DATADIR%%/ini/xmlentities.ini
-%%DATADIR%%/ini/unix_keyboard.ini
-%%DATADIR%%/ini/font.ini
-%%DATADIR%%/ini/filehandler.ini
-%%DATADIR%%/ini/standard_keyboard_compat.ini
-%%DATADIR%%/ini/mailproviders.xml
-%%DATADIR%%/ini/pluginpath.ini
-%%DATADIR%%/ini/dialog.ini
-%%DATADIR%%/ini/standard_mouse.ini
-%%DATADIR%%/ini/fastforward.ini
-%%DATADIR%%/ini/speeddial_default.ini
-%%DATADIR%%/ini/standard_menu.ini
-%%DATADIR%%/ini/standard_toolbar.ini
-%%DATADIR%%/ini/standard_keyboard.ini
-%%DATADIR%%/svg-sa.dat
-%%DATADIR%%/search.ini
-%%DATADIR%%/locale/en/en_US.dic
-%%DATADIR%%/locale/en/en_US.aff
-%%DATADIR%%/locale/en/license.txt
-%%DATADIR%%/locale/en/opera6.adr
-%%DATADIR%%/locale/en/search.ini
-%%DATADIR%%/locale/english.lng
-%%DATADIR%%/svg-mobd.dat
-%%DATADIR%%/svg-sabd.dat
+%%DATADIR%%/styles/message.css
+%%DATADIR%%/styles/mime.css
+%%DATADIR%%/styles/plugins.css
+%%DATADIR%%/styles/search.css
+%%DATADIR%%/styles/unstyledxml.css
+%%DATADIR%%/styles/user/accessibility.css
+%%DATADIR%%/styles/user/altdebugger.css
+%%DATADIR%%/styles/user/classid.css
+%%DATADIR%%/styles/user/contrastbw.css
+%%DATADIR%%/styles/user/contrastwb.css
+%%DATADIR%%/styles/user/disablebreaks.css
+%%DATADIR%%/styles/user/disablefloats.css
+%%DATADIR%%/styles/user/disableforms.css
+%%DATADIR%%/styles/user/disablepositioning.css
+%%DATADIR%%/styles/user/disabletables.css
+%%DATADIR%%/styles/user/outline.css
+%%DATADIR%%/styles/user/structureblock.css
+%%DATADIR%%/styles/user/structureinline.css
+%%DATADIR%%/styles/user/structuretables.css
+%%DATADIR%%/styles/user/tablelayout.css
+%%DATADIR%%/styles/user/toc.css
+%%DATADIR%%/styles/warning.css
+%%DATADIR%%/styles/webfeeds.html
+%%DATADIR%%/styles/wml.css
+%%DATADIR%%/ui/dialog.ini
+%%DATADIR%%/ui/fastforward.ini
+%%DATADIR%%/ui/standard_keyboard.ini
+%%DATADIR%%/ui/standard_keyboard_compat.ini
+%%DATADIR%%/ui/standard_menu.ini
+%%DATADIR%%/ui/standard_mouse.ini
+%%DATADIR%%/ui/standard_toolbar.ini
+%%DATADIR%%/ui/standard_trusted_repositories.ini
+%%DATADIR%%/ui/unix_keyboard.ini
 %%DOCSDIR%%/LGPL
 %%DOCSDIR%%/LICENSE
-
-@dirrm %%DATADIR%%/styles/user
-@dirrm %%DATADIR%%/styles/images
-@dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%/skin
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/locale/en
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/java
-@dirrm %%DATADIR%%/ini
 @dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%/defaults
+@dirrm %%DATADIR%%/extra
+@dirrm %%DATADIR%%/java
+@dirrm %%DATADIR%%/locale/en
+@dirrm %%DATADIR%%/locale/en-GB
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/styles/images
+@dirrm %%DATADIR%%/styles/user
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
