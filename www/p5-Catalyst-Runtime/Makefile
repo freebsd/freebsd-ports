@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.71001
+PORTVERSION=	5.80004
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -43,10 +43,12 @@ MAN3=	Catalyst.3 \
 	Catalyst::Action.3 \
 	Catalyst::ActionChain.3 \
 	Catalyst::ActionContainer.3 \
-	Catalyst::AttrContainer.3 \
 	Catalyst::Base.3 \
+	Catalyst::ClassData.3 \
 	Catalyst::Component.3 \
+	Catalyst::Component::ApplicationAttribute.3 \
 	Catalyst::Controller.3 \
+	Catalyst::Delta.3 \
 	Catalyst::DispatchType.3 \
 	Catalyst::DispatchType::Chained.3 \
 	Catalyst::DispatchType::Default.3 \
@@ -62,9 +64,6 @@ MAN3=	Catalyst.3 \
 	Catalyst::Engine::HTTP::Restarter::Watcher.3 \
 	Catalyst::Exception.3 \
 	Catalyst::Log.3 \
-	Catalyst::Manual.3 \
-	Catalyst::Manual::Installation.3 \
-	Catalyst::Manual::Installation::CentOS4.3 \
 	Catalyst::Model.3 \
 	Catalyst::Request.3 \
 	Catalyst::Request::Upload.3 \
@@ -72,6 +71,7 @@ MAN3=	Catalyst.3 \
 	Catalyst::Runtime.3 \
 	Catalyst::Stats.3 \
 	Catalyst::Test.3 \
+	Catalyst::Upgrading.3 \
 	Catalyst::Utils.3 \
 	Catalyst::View.3
 
