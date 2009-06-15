@@ -1,0 +1,169 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: milter-batv
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Define these milterbatv_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/milterbatv
+#
+# milterbatv_enable (bool):   Set to "NO" by default.
+#                             Set it to "YES" to enable batv-milter
+# milterbatv_uid (str):       Set username to run milter.
+# milterbatv_profiles (list): Set to "" by default.
+#                             Define your profiles here.
+# milterbatv_cfgfile (str):   Configuration file.
+#
+# milterbatv_${profile}_* :   Variables per profile.
+#                             Sockets must be different from each other.
+#
+#  all parameters below can be set in batv-filter.conf(5).
+# milterbatv_socket (str):    Path to the milter socket.
+# milterbatv_domain (str):    Domainpart of From: in mails to sign.
+# milterbatv_allowlist (str):       Path to the allow list file.
+# milterbatv_key (str):       Path to the private key file to sign with.
+# milterbatv_flags (str):     Flags passed to start command.
+
+. %%RC_SUBR%%
+
+name="milterbatv"
+rcvar=`set_rcvar`
+
+start_precmd="batv_prepcmd"
+stop_postcmd="batv_postcmd"
+command="%%PREFIX%%/bin/batv-filter"
+_piddir="/var/run/milterbatv"
+pidfile="${_piddir}/pid"
+
+load_rc_config $name
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${milterbatv_enable="NO"}
+: ${milterbatv_uid="mailnull"}
+: ${milterbatv_profiles=""}
+: ${milterbatv_cfgfile="%%PREFIX%%/etc/mail/batv-filter.conf"}
+
+: ${milterbatv_socket=""}
+: ${milterbatv_domain=""}
+: ${milterbatv_allowlist=""}
+: ${milterbatv_key=""}
+# Options other than above can be set with $milterbatv_flags.
+# see batv-milter documentation for detail.
+: ${milterbatv_flags=""}
+
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${milterbatv_profiles}" != "x" ]; then
+	pidfile="${_piddir}/${profile}.pid"
+	eval milterbatv_enable="\${milterbatv_${profile}_enable:-${milterbatv_enable}}"
+	eval milterbatv_socket="\${milterbatv_${profile}_socket:-}"
+	if [ "x${milterbatv_socket}" = "x" ];then
+	    echo "You must define a socket (milterbatv_${profile}_socket)"
+	    exit 1
+	fi
+	eval milterbatv_cfgfile="\${milterbatv_${profile}_cfgfile:-${milterbatv_cfgfile}}"
+	eval milterbatv_domain="\${milterbatv_${profile}_domain:-${milterbatv_domain}}"
+	eval milterbatv_allowlist="\${milterbatv_${profile}_allowlist:-${milterbatv_allowlist}}"
+	eval milterbatv_key="\${milterbatv_${profile}_key:-${milterbatv_key}}"
+	eval milterbatv_flags="\${milterbatv_${profile}_flags:-${milterbatv_flags}}"
+	if [ -f "${milterbatv_cfgfile}" ];then
+	    milterbatv_cfgfile="-x ${milterbatv_cfgfile}"
+	else
+	    milterbatv_cfgfile=""
+	fi
+	if [ "x${milterbatv_socket}" != "x" ];then
+	    _socket_prefix="-p"
+	fi
+	if [ "x${milterbatv_uid}" != "x" ];then
+	    _uid_prefix="-u"
+	fi
+	if [ "x${milterbatv_domain}" != "x" ];then
+	    milterbatv_domain="-d ${milterbatv_domain}"
+	fi
+	if [ "x${milterbatv_allowlist}" != "x" ];then
+	    milterbatv_allowlist="-a ${milterbatv_allowlist}"
+	fi
+	if [ "x${milterbatv_key}" != "x" ];then
+	    milterbatv_key="-k ${milterbatv_key}"
+	fi
+	command_args="-l ${_socket_prefix} ${milterbatv_socket} ${_uid_prefix} ${milterbatv_uid} -P ${pidfile} ${milterbatv_cfgfile} ${milterbatv_domain} ${milterbatv_allowlist} ${milterbatv_key}"
+    else
+	echo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${milterbatv_profiles}" != "x" -a "x$1" != "x" ]; then
+	if [ "x$1" != "xrestart" ]; then
+	    for profile in ${milterbatv_profiles}; do
+		echo "===> milterbatv profile: ${profile}"
+		%%RC_SCRIPT%% $1 ${profile}
+		retcode="$?"
+		if [ "0${retcode}" -ne 0 ]; then
+		    failed="${profile} (${retcode}) ${failed:-}"
+		else
+		    success="${profile} ${success:-}"
+		fi
+	    done
+	    exit 0
+	else
+	    restart_precmd=""
+	fi
+    else
+	if [ -f "${milterbatv_cfgfile}" ];then
+	    milterbatv_cfgfile="-x ${milterbatv_cfgfile}"
+	else
+	    milterbatv_cfgfile=""
+	fi
+	if [ "x${milterbatv_socket}" != "x" ];then
+	    _socket_prefix="-p"
+	fi
+	if [ "x${milterbatv_uid}" != "x" ];then
+	    _uid_prefix="-u"
+	fi
+	if [ "x${milterbatv_domain}" != "x" ];then
+	    milterbatv_domain="-d ${milterbatv_domain}"
+	fi
+	if [ "x${milterbatv_allowlist}" != "x" ];then
+	    milterbatv_allowlist="-a ${milterbatv_allowlist}"
+	fi
+	if [ "x${milterbatv_key}" != "x" ];then
+	    milterbatv_key="-k ${milterbatv_key}"
+	fi
+	command_args="-l ${_socket_prefix} ${milterbatv_socket} ${_uid_prefix} ${milterbatv_uid} -P ${pidfile} ${milterbatv_cfgfile} ${milterbatv_domain} ${milterbatv_allowlist} ${milterbatv_key}"
+    fi
+fi
+
+batv_prepcmd ()
+{
+    if [ -S ${milterbatv_socket##local:} ] ; then
+        rm -f ${milterbatv_socket##local:}
+    elif [ -S ${milterbatv_socket##unix:} ] ; then
+        rm -f ${milterbatv_socket##unix:}
+    fi
+    if [ ! -d ${_piddir} ] ; then
+	mkdir -p ${_piddir}
+    fi
+    if [ -n "${milterbatv_uid}" ] ; then
+	chown ${milterbatv_uid} ${_piddir}
+    fi
+}
+
+batv_postcmd()
+{
+    if [ -S ${milterbatv_socket##local:} ] ; then
+        rm -f ${milterbatv_socket##local:}
+    elif [ -S ${milterbatv_socket##unix:} ] ; then
+        rm -f ${milterbatv_socket##unix:}
+    fi
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
+}
+
+run_rc_command "$1"
