@@ -50,7 +50,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g ; \
+	    	s|" == "|" = "|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
