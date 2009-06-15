@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2009-01-21 12:32:12.000000000 -0600
-+++ CMakeLists.txt	2009-01-27 21:31:03.000000000 -0600
-@@ -45,39 +45,126 @@
+--- ./CMakeLists.txt.orig	2009-03-16 11:39:44.000000000 -0400
++++ ./CMakeLists.txt	2009-06-04 16:40:10.000000000 -0400
+@@ -45,39 +45,55 @@
  MACRO_OPTIONAL_FIND_PACKAGE(PNG)
  MACRO_OPTIONAL_FIND_PACKAGE(TIFF)
  MACRO_OPTIONAL_FIND_PACKAGE(Jasper)
@@ -24,7 +24,14 @@
 -ELSE(NOT WIN32)
 -    SET(KDCRAW_FOR_DIGIKAM TRUE)
 -ENDIF(NOT WIN32)
--
++INCLUDE(FindPkgConfig)
++# Check for KExiv2
++PKG_CHECK_MODULES(LIBKEXIV2 libkexiv2-kde4>=0.5.0)
++FIND_PATH(KEXIV2_INCLUDE_DIR NAMES libkexiv2/version.h
++  PATHS ${LIBKEXIV2_INCLUDE_DIRS} ${KDE4_INCLUDE_DIR} NO_DEFAULT_PATH)
++FIND_LIBRARY(KEXIV2_LIBRARY NAMES kexiv2
++  PATHS ${LIBKEXIV2_LIBRARY_DIRS} ${KDE4_LIB_DIR} NO_DEFAULT_PATH)
+ 
 -# Check KExiv2 version installed to compile fine.
 -IF(NOT WIN32)
 -    FIND_PACKAGE(PkgConfig)
@@ -37,121 +44,42 @@
 -ELSE(NOT WIN32)
 -    SET(KEXIV2_FOR_DIGIKAM TRUE)
 -ENDIF(NOT WIN32)
-+# use pkg-config to get the directories and then use these values
-+# in the FIND_PATH() and FIND_LIBRARY() calls
-+INCLUDE(UsePkgConfig)
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(KEXIV2 DEFAULT_MSG KEXIV2_LIBRARY KEXIV2_INCLUDE_DIR)
 +
-+message(STATUS "Check Kexiv2 library using pkg-config...")
-+PKGCONFIG(libkexiv2-kde4 _KEXIV2IncDir _KEXIV2LinkDir _KEXIV2LinkFlags _KEXIV2Cflags) 
-+if(_KEXIV2LinkFlags)
-+  # query pkg-config asking for a libkexiv2 >= 0.2.0
-+  EXEC_PROGRAM(${PKGCONFIG_EXECUTABLE} ARGS --atleast-version=0.2.0 libkexiv2-kde4 RETURN_VALUE _return_VALUE OUTPUT_VARIABLE _pkgconfigDevNull)
-+  if(_return_VALUE STREQUAL "0")
-+    message(STATUS "Found libkexiv2 release >= 0.2.0")
-+    set(KEXIV2_FOR_DIGIKAM TRUE)
-+  else(_return_VALUE STREQUAL "0")
-+    message(STATUS "Found libkexiv2 release < 0.2.0, too old")
-+    set(KEXIV2_FOR_DIGIKAM FALSE)
-+    set(KEXIV2_FOUND FALSE)
-+  endif(_return_VALUE STREQUAL "0")
-+else(_KEXIV2LinkFlags)
-+  set(KEXIV2_FOR_DIGIKAM FALSE)
-+  set(KEXIV2_FOUND FALSE)
-+endif(_KEXIV2LinkFlags)
-+if(KEXIV2_FOR_DIGIKAM)
-+  set(KEXIV2_DEFINITIONS "${_KEXIV2Cflags}")
-+  FIND_PATH(KEXIV2_INCLUDE_DIR libkexiv2/version.h ${_KEXIV2IncDir})
-+  FIND_LIBRARY(KEXIV2_LIBRARIES NAMES kexiv2 PATHS ${_KEXIV2LinkDir})
-+  if(KEXIV2_INCLUDE_DIR AND KEXIV2_LIBRARIES)
-+    set(KEXIV2_FOUND TRUE)
-+  endif(KEXIV2_INCLUDE_DIR AND KEXIV2_LIBRARIES)
-+endif(KEXIV2_FOR_DIGIKAM)
-+if(KEXIV2_FOUND)
-+  message(STATUS "Found libkexiv2: ${KEXIV2_LIBRARIES}")
-+else(KEXIV2_FOUND)
-+  if (NOT KEXIV2_INCLUDE_DIR)
-+    message(FATAL_ERROR "Could NOT find libkexiv2 header files")
-+  endif (NOT KEXIV2_INCLUDE_DIR)
-+  if (NOT KEXIV2_LIBRARIES)
-+    message(FATAL_ERROR "Could NOT find libkexiv2 library")
-+  endif (NOT KEXIV2_LIBRARIES)
-+endif(KEXIV2_FOUND)
-+MARK_AS_ADVANCED(KEXIV2_INCLUDE_DIR KEXIV2_LIBRARIES)
++IF(KEXIV2_FOUND)
++  SET(KEXIV2_LIBRARIES ${KEXIV2_LIBRARY})
++  SET(KEXIV2_FOR_DIGIKAM TRUE)
++ENDIF(KEXIV2_FOUND)
 +
-+message(STATUS "Check Kdcraw library using pkg-config...")
-+PKGCONFIG(libkdcraw-kde4 _KDCRAWIncDir _KDCRAWLinkDir _KDCRAWLinkFlags _KDCRAWCflags) 
-+if(_KDCRAWLinkFlags)
-+  # query pkg-config asking for a libkdcraw >= 0.4.0
-+  EXEC_PROGRAM(${PKGCONFIG_EXECUTABLE} ARGS --atleast-version=0.4.0 libkdcraw-kde4 RETURN_VALUE _return_VALUE OUTPUT_VARIABLE _pkgconfigDevNull)
-+  if(_return_VALUE STREQUAL "0")
-+    message(STATUS "Found libkdcraw release >= 0.4.0")
-+    set(KDCRAW_FOR_DIGIKAM TRUE)
-+  else(_return_VALUE STREQUAL "0")
-+    message(STATUS "Found libkdcraw release < 0.4.0, too old")
-+    set(KDCRAW_FOR_DIGIKAM FALSE)
-+    set(KDCRAW_FOUND FALSE)
-+  endif(_return_VALUE STREQUAL "0")
-+else(_KDCRAWLinkFlags)
-+  set(KDCRAW_FOR_DIGIKAM FALSE)
-+  set(KDCRAW_FOUND FALSE)
-+endif(_KDCRAWLinkFlags)
-+if(KDCRAW_FOR_DIGIKAM)
-+  set(KDCRAW_DEFINITIONS "${_KDCRAWCflags}")
-+  FIND_PATH(KDCRAW_INCLUDE_DIR libkdcraw/version.h ${_KDCRAWIncDir})
-+  FIND_LIBRARY(KDCRAW_LIBRARIES NAMES kdcraw PATHS ${_KDCRAWLinkDir})
-+  if(KDCRAW_INCLUDE_DIR AND KDCRAW_LIBRARIES)
-+    set(KDCRAW_FOUND TRUE)
-+  endif(KDCRAW_INCLUDE_DIR AND KDCRAW_LIBRARIES)
-+endif(KDCRAW_FOR_DIGIKAM)
-+if(KDCRAW_FOUND)
-+  message(STATUS "Found libkdcraw: ${KDCRAW_LIBRARIES}")
-+else(KDCRAW_FOUND)
-+  if (NOT KDCRAW_INCLUDE_DIR)
-+    message(FATAL_ERROR "Could NOT find libkdcraw header files")
-+  endif (NOT KDCRAW_INCLUDE_DIR)
-+  if (NOT KDCRAW_LIBRARIES)
-+    message(FATAL_ERROR "Could NOT find libkdcraw library")
-+  endif (NOT KDCRAW_LIBRARIES)
-+endif(KDCRAW_FOUND)
-+MARK_AS_ADVANCED(KDCRAW_INCLUDE_DIR KDCRAW_LIBRARIES)
++# Check for Kdcraw
++PKG_CHECK_MODULES(LIBKDCRAW libkdcraw-kde4>=0.4.0)
++FIND_PATH(KDCRAW_INCLUDE_DIR NAMES libkdcraw/version.h
++  PATHS ${LIBKDCRAW_INCLUDE_DIRS} ${KDE4_INCLUDE_DIR} NO_DEFAULT_PATH)
++FIND_LIBRARY(KDCRAW_LIBRARY NAMES kdcraw
++  PATHS ${LIBKDCRAW_LIBRARY_DIRS} ${KDE4_LIB_DIR} NO_DEFAULT_PATH)
 +
-+# Check Kipi version installed to compile fine.
-+message(STATUS "Check Kipi library using pkg-config...")
-+PKGCONFIG(libkipi-kde4 _KIPIIncDir _KIPILinkDir _KIPILinkFlags _KIPICflags) 
-+if(_KIPILinkFlags)
-+  # query pkg-config asking for a libkipi >= 0.2.0
-+  EXEC_PROGRAM(${PKGCONFIG_EXECUTABLE} ARGS --atleast-version=0.2.0 libkipi-kde4 RETURN_VALUE _return_VALUE OUTPUT_VARIABLE _pkgconfigDevNull)
-+  if(_return_VALUE STREQUAL "0")
-+    message(STATUS "Found libkipi release >= 0.2.0")
-+    set(KIPI_FOR_DIGIKAM TRUE)
-+  else(_return_VALUE STREQUAL "0")
-+    message(STATUS "Found libkipi release < 0.2.0, too old")
-+    set(KIPI_FOR_DIGIKAM FALSE)
-+    set(KIPI_FOUND FALSE)
-+  endif(_return_VALUE STREQUAL "0")
-+else(_KIPILinkFlags)
-+  set(KIPI_FOR_DIGIKAM FALSE)
-+  set(KIPI_FOUND FALSE)
-+endif(_KIPILinkFlags)
-+if(KIPI_FOR_DIGIKAM)
-+  set(KIPI_DEFINITIONS "${_KIPICflags}")
-+  FIND_PATH(KIPI_INCLUDE_DIR libkipi/version.h ${_KIPIIncDir})
-+  FIND_LIBRARY(KIPI_LIBRARIES NAMES kipi PATHS ${_KIPILinkDir})
-+  if(KIPI_INCLUDE_DIR AND KIPI_LIBRARIES)
-+    set(KIPI_FOUND TRUE)
-+  endif(KIPI_INCLUDE_DIR AND KIPI_LIBRARIES)
-+endif(KIPI_FOR_DIGIKAM)
-+if(KIPI_FOUND)
-+  message(STATUS "Found libkipi: ${KIPI_LIBRARIES}")
-+else(KIPI_FOUND)
-+  if (NOT KIPI_INCLUDE_DIR)
-+    message(FATAL_ERROR "Could NOT find libkipi header files")
-+  endif (NOT KIPI_INCLUDE_DIR)
-+  if (NOT KIPI_LIBRARIES)
-+    message(FATAL_ERROR "Could NOT find libkipi library")
-+  endif (NOT KIPI_LIBRARIES)
-+endif(KIPI_FOUND)
-+MARK_AS_ADVANCED(KIPI_INCLUDE_DIR KIPI_LIBRARIES)
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(KDCRAW DEFAULT_MSG KDCRAW_LIBRARY KDCRAW_INCLUDE_DIR)
++
++IF(KDCRAW_FOUND)
++  SET(KDCRAW_LIBRARIES ${KDCRAW_LIBRARY})
++  SET(KDCRAW_FOR_DIGIKAM TRUE)
++ENDIF(KDCRAW_FOUND)
++
++# Check for Kipi
++PKG_CHECK_MODULES(LIBKIPI libkipi-kde4>=0.2.0)
++FIND_PATH(KIPI_INCLUDE_DIR NAMES libkipi/version.h
++  PATHS ${LIBKIPI_INCLUDE_DIRS} ${KDE4_INCLUDE_DIR} NO_DEFAULT_PATH)
++FIND_LIBRARY(KIPI_LIBRARY NAMES kipi
++  PATHS ${LIBKIPI_LIBRARY_DIRS} ${KDE4_LIB_DIR} NO_DEFAULT_PATH)
++
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(KIPI DEFAULT_MSG KIPI_LIBRARY KIPI_INCLUDE_DIR)
++
++IF(KIPI_FOUND)
++  SET(KIPI_LIBRARIES ${KIPI_LIBRARY})
++ENDIF(KIPI_FOUND)
  
  # ==================================================================================================
  # Optional depencies

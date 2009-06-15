@@ -624,8 +624,6 @@ share/locale/zh_CN/LC_MESSAGES/digikam.mo
 share/locale/zh_TW/LC_MESSAGES/digikam.mo
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
-@dirrmtry share/apps/solid/actions
-@dirrmtry share/apps/solid
 @dirrm share/apps/showfoto/data
 @dirrm share/apps/showfoto
 @dirrm share/apps/digikam/utils
