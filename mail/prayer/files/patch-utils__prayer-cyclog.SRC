@@ -1,0 +1,20 @@
+--- utils/prayer-cyclog.SRC	2003/04/15 13:00:03 1.1
++++ utils/prayer-cyclog.SRC	2003/07/30 18:43:46
+@@ -4,9 +4,16 @@
+ suffix=gz
+ # Following is correct for Linux.
+-compress="/bin/gzip"
+-chown="/bin/chown"
+-chgrp="/bin/chgrp"
++#compress="/bin/gzip"
++#chown="/bin/chown"
++#chgrp="/bin/chgrp"
++#mv="/bin/mv"
++#rm="/bin/rm"
++
++# Following is correct for FreeBSD
++compress="/usr/bin/gzip"
++chown="/usr/sbin/chown"
++chgrp="/usr/bin/chgrp"
+ mv="/bin/mv"
+ rm="/bin/rm"
