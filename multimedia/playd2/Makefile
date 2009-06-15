@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	playd
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.logvinov.ru/files/dist/playd/
 
