@@ -7,6 +7,7 @@
 
 PORTNAME=	xdelta
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -14,7 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A diff/patch utility for binary files
 
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	glib12
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

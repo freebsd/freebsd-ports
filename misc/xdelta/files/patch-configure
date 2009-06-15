@@ -1,0 +1,383 @@
+--- configure.orig	2007-01-29 08:11:35.000000000 +0900
++++ configure	2008-08-08 11:39:43.000000000 +1000
+@@ -464,7 +464,7 @@
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO SET_MAKE MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT CPP build build_cpu build_vendor build_os host host_cpu host_vendor host_os EGREP LN_S ECHO AR ac_ct_AR RANLIB ac_ct_RANLIB STRIP ac_ct_STRIP CXX CXXFLAGS ac_ct_CXX CXXCPP F77 FFLAGS ac_ct_F77 LIBTOOL EMACS top_srcdir_absolute GLIB_CONFIG GLIB_CFLAGS GLIB_LIBS LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP build build_cpu build_vendor build_os host host_cpu host_vendor host_os SED EGREP LN_S ECHO AR ac_ct_AR RANLIB ac_ct_RANLIB DSYMUTIL ac_ct_DSYMUTIL NMEDIT ac_ct_NMEDIT CXX CXXFLAGS ac_ct_CXX CXXDE! PMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE CXXCPP F77 FFLAGS ac_ct_F77 LIBTOOL EMACS top_srcdir_absolute PKG_CONFIG ac_pt_PKG_CONFIG GLIB_CFLAGS GLIB_LIBS GLIB_GENMARSHAL GOBJECT_QUERY GLIB_MKENUMS LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -945,6 +945,10 @@
+ ac_env_FFLAGS_value=$FFLAGS
+ ac_cv_env_FFLAGS_set=${FFLAGS+set}
+ ac_cv_env_FFLAGS_value=$FFLAGS
++ac_env_PKG_CONFIG_set=${PKG_CONFIG+set}
++ac_env_PKG_CONFIG_value=$PKG_CONFIG
++ac_cv_env_PKG_CONFIG_set=${PKG_CONFIG+set}
++ac_cv_env_PKG_CONFIG_value=$PKG_CONFIG
+ 
+ #
+ # Report the --help message.
+@@ -1061,6 +1065,7 @@
+   CXXCPP      C++ preprocessor
+   F77         Fortran 77 compiler command
+   FFLAGS      Fortran 77 compiler flags
++  PKG_CONFIG  path to pkg-config utility
+ 
+ Use these variables to override the choices made by `configure' or to help
+ it to find libraries and programs with nonstandard names/locations.
+@@ -18769,22 +19503,6 @@
+ top_srcdir_absolute=`cd $srcdir; pwd`
+ 
+ 
+-
+-# Check whether --with-glib-prefix or --without-glib-prefix was given.
+-if test "${with_glib_prefix+set}" = set; then
+-  withval="$with_glib_prefix"
+-  glib_config_prefix="$withval"
+-else
+-  glib_config_prefix=""
+-fi;
+-
+-# Check whether --with-glib-exec-prefix or --without-glib-exec-prefix was given.
+-if test "${with_glib_exec_prefix+set}" = set; then
+-  withval="$with_glib_exec_prefix"
+-  glib_config_exec_prefix="$withval"
+-else
+-  glib_config_exec_prefix=""
+-fi;
+ # Check whether --enable-glibtest or --disable-glibtest was given.
+ if test "${enable_glibtest+set}" = set; then
+   enableval="$enable_glibtest"
+@@ -18793,41 +19511,42 @@
+   enable_glibtest=yes
+ fi;
+ 
+-  if test x$glib_config_exec_prefix != x ; then
+-     glib_config_args="$glib_config_args --exec-prefix=$glib_config_exec_prefix"
+-     if test x${GLIB_CONFIG+set} != xset ; then
+-        GLIB_CONFIG=$glib_config_exec_prefix/bin/glib-config
+-     fi
+-  fi
+-  if test x$glib_config_prefix != x ; then
+-     glib_config_args="$glib_config_args --prefix=$glib_config_prefix"
+-     if test x${GLIB_CONFIG+set} != xset ; then
+-        GLIB_CONFIG=$glib_config_prefix/bin/glib-config
+-     fi
+-  fi
+-
++  pkg_config_args=glib-2.0
+   for module in .
+   do
+       case "$module" in
+          gmodule)
+-             glib_config_args="$glib_config_args gmodule"
++             pkg_config_args="$pkg_config_args gmodule-2.0"
++         ;;
++         gmodule-no-export)
++             pkg_config_args="$pkg_config_args gmodule-no-export-2.0"
++         ;;
++         gobject)
++             pkg_config_args="$pkg_config_args gobject-2.0"
+          ;;
+          gthread)
+-             glib_config_args="$glib_config_args gthread"
++             pkg_config_args="$pkg_config_args gthread-2.0"
++         ;;
++         gio*)
++             pkg_config_args="$pkg_config_args $module-2.0"
+          ;;
+       esac
+   done
+ 
+-  # Extract the first word of "glib-config", so it can be a program name with args.
+-set dummy glib-config; ac_word=$2
++
++
++if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
++	if test -n "$ac_tool_prefix"; then
++  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
++set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+-if test "${ac_cv_path_GLIB_CONFIG+set}" = set; then
++if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-  case $GLIB_CONFIG in
++  case $PKG_CONFIG in
+   [\\/]* | ?:[\\/]*)
+-  ac_cv_path_GLIB_CONFIG="$GLIB_CONFIG" # Let the user override the test with a path.
++  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
+   ;;
+   *)
+   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+@@ -18837,41 +19556,126 @@
+   test -z "$as_dir" && as_dir=.
+   for ac_exec_ext in '' $ac_executable_extensions; do
+   if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_GLIB_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
+     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
+ done
+ done
+ 
+-  test -z "$ac_cv_path_GLIB_CONFIG" && ac_cv_path_GLIB_CONFIG="no"
+   ;;
+ esac
+ fi
+-GLIB_CONFIG=$ac_cv_path_GLIB_CONFIG
++PKG_CONFIG=$ac_cv_path_PKG_CONFIG
+ 
+-if test -n "$GLIB_CONFIG"; then
+-  echo "$as_me:$LINENO: result: $GLIB_CONFIG" >&5
+-echo "${ECHO_T}$GLIB_CONFIG" >&6
++if test -n "$PKG_CONFIG"; then
++  echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
++echo "${ECHO_T}$PKG_CONFIG" >&6
+ else
+   echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-  min_glib_version=1.2.8
+-  echo "$as_me:$LINENO: checking for GLIB - version >= $min_glib_version" >&5
+-echo $ECHO_N "checking for GLIB - version >= $min_glib_version... $ECHO_C" >&6
++fi
++if test -z "$ac_cv_path_PKG_CONFIG"; then
++  ac_pt_PKG_CONFIG=$PKG_CONFIG
++  # Extract the first word of "pkg-config", so it can be a program name with args.
++set dummy pkg-config; ac_word=$2
++echo "$as_me:$LINENO: checking for $ac_word" >&5
++echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
++if test "${ac_cv_path_ac_pt_PKG_CONFIG+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  case $ac_pt_PKG_CONFIG in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_ac_pt_PKG_CONFIG="$ac_pt_PKG_CONFIG" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++  for ac_exec_ext in '' $ac_executable_extensions; do
++  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++    ac_cv_path_ac_pt_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++done
++
++  ;;
++esac
++fi
++ac_pt_PKG_CONFIG=$ac_cv_path_ac_pt_PKG_CONFIG
++
++if test -n "$ac_pt_PKG_CONFIG"; then
++  echo "$as_me:$LINENO: result: $ac_pt_PKG_CONFIG" >&5
++echo "${ECHO_T}$ac_pt_PKG_CONFIG" >&6
++else
++  echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
++fi
++
++  PKG_CONFIG=$ac_pt_PKG_CONFIG
++else
++  PKG_CONFIG="$ac_cv_path_PKG_CONFIG"
++fi
++
++fi
++if test -n "$PKG_CONFIG"; then
++	_pkg_min_version=0.16
++	echo "$as_me:$LINENO: checking pkg-config is at least version $_pkg_min_version" >&5
++echo $ECHO_N "checking pkg-config is at least version $_pkg_min_version... $ECHO_C" >&6
++	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
++		echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++	else
++		echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
++		PKG_CONFIG=""
++	fi
++
++fi
++
+   no_glib=""
+-  if test "$GLIB_CONFIG" = "no" ; then
++
++  if test "x$PKG_CONFIG" = x ; then
+     no_glib=yes
+-  else
+-    GLIB_CFLAGS=`$GLIB_CONFIG $glib_config_args --cflags`
+-    GLIB_LIBS=`$GLIB_CONFIG $glib_config_args --libs`
+-    glib_config_major_version=`$GLIB_CONFIG $glib_config_args --version | \
++    PKG_CONFIG=no
++  fi
++
++  min_glib_version=2.10.0
++  echo "$as_me:$LINENO: checking for GLIB - version >= $min_glib_version" >&5
++echo $ECHO_N "checking for GLIB - version >= $min_glib_version... $ECHO_C" >&6
++
++  if test x$PKG_CONFIG != xno ; then
++    ## don't try to run the test against uninstalled libtool libs
++    if $PKG_CONFIG --uninstalled $pkg_config_args; then
++	  echo "Will use uninstalled version of GLib found in PKG_CONFIG_PATH"
++	  enable_glibtest=no
++    fi
++
++    if $PKG_CONFIG --atleast-version $min_glib_version $pkg_config_args; then
++	  :
++    else
++	  no_glib=yes
++    fi
++  fi
++
++  if test x"$no_glib" = x ; then
++    GLIB_GENMARSHAL=`$PKG_CONFIG --variable=glib_genmarshal glib-2.0`
++    GOBJECT_QUERY=`$PKG_CONFIG --variable=gobject_query glib-2.0`
++    GLIB_MKENUMS=`$PKG_CONFIG --variable=glib_mkenums glib-2.0`
++
++    GLIB_CFLAGS=`$PKG_CONFIG --cflags $pkg_config_args`
++    GLIB_LIBS=`$PKG_CONFIG --libs $pkg_config_args`
++    glib_config_major_version=`$PKG_CONFIG --modversion glib-2.0 | \
+            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
+-    glib_config_minor_version=`$GLIB_CONFIG $glib_config_args --version | \
++    glib_config_minor_version=`$PKG_CONFIG --modversion glib-2.0 | \
+            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\2/'`
+-    glib_config_micro_version=`$GLIB_CONFIG $glib_config_args --version | \
++    glib_config_micro_version=`$PKG_CONFIG --modversion glib-2.0 | \
+            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\3/'`
+     if test "x$enable_glibtest" = "xyes" ; then
+       ac_save_CFLAGS="$CFLAGS"
+@@ -18912,17 +19716,16 @@
+       (glib_minor_version != $glib_config_minor_version) ||
+       (glib_micro_version != $glib_config_micro_version))
+     {
+-      printf("\n*** 'glib-config --version' returned %d.%d.%d, but GLIB (%d.%d.%d)\n",
++      printf("\n*** 'pkg-config --modversion glib-2.0' returned %d.%d.%d, but GLIB (%d.%d.%d)\n",
+              $glib_config_major_version, $glib_config_minor_version, $glib_config_micro_version,
+              glib_major_version, glib_minor_version, glib_micro_version);
+-      printf ("*** was found! If glib-config was correct, then it is best\n");
+-      printf ("*** to remove the old version of GLIB. You may also be able to fix the error\n");
++      printf ("*** was found! If pkg-config was correct, then it is best\n");
++      printf ("*** to remove the old version of GLib. You may also be able to fix the error\n");
+       printf("*** by modifying your LD_LIBRARY_PATH enviroment variable, or by editing\n");
+       printf("*** /etc/ld.so.conf. Make sure you have run ldconfig if that is\n");
+       printf("*** required on your system.\n");
+-      printf("*** If glib-config was wrong, set the environment variable GLIB_CONFIG\n");
+-      printf("*** to point to the correct copy of glib-config, and remove the file config.cache\n");
+-      printf("*** before re-running configure\n");
++      printf("*** If pkg-config was wrong, set the environment variable PKG_CONFIG_PATH\n");
++      printf("*** to point to the correct configuration files\n");
+     }
+   else if ((glib_major_version != GLIB_MAJOR_VERSION) ||
+ 	   (glib_minor_version != GLIB_MINOR_VERSION) ||
+@@ -18950,10 +19753,10 @@
+         printf("*** GLIB is always available from ftp://ftp.gtk.org.\n");
+         printf("***\n");
+         printf("*** If you have already installed a sufficiently new version, this error\n");
+-        printf("*** probably means that the wrong copy of the glib-config shell script is\n");
++        printf("*** probably means that the wrong copy of the pkg-config shell script is\n");
+         printf("*** being found. The easiest way to fix this is to remove the old version\n");
+-        printf("*** of GLIB, but you can also set the GLIB_CONFIG environment to point to the\n");
+-        printf("*** correct copy of glib-config. (In this case, you will have to\n");
++        printf("*** of GLIB, but you can also set the PKG_CONFIG environment to point to the\n");
++        printf("*** correct copy of pkg-config. (In this case, you will have to\n");
+         printf("*** modify your LD_LIBRARY_PATH enviroment variable, or edit /etc/ld.so.conf\n");
+         printf("*** so that the correct libraries are found at run-time))\n");
+       }
+@@ -18989,22 +19792,22 @@
+      fi
+   fi
+   if test "x$no_glib" = x ; then
+-     echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
++     echo "$as_me:$LINENO: result: yes (version $glib_config_major_version.$glib_config_minor_version.$glib_config_micro_version)" >&5
++echo "${ECHO_T}yes (version $glib_config_major_version.$glib_config_minor_version.$glib_config_micro_version)" >&6
+      :
+   else
+      echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+-     if test "$GLIB_CONFIG" = "no" ; then
+-       echo "*** The glib-config script installed by GLIB could not be found"
+-       echo "*** If GLIB was installed in PREFIX, make sure PREFIX/bin is in"
+-       echo "*** your path, or set the GLIB_CONFIG environment variable to the"
+-       echo "*** full path to glib-config."
++     if test "$PKG_CONFIG" = "no" ; then
++       echo "*** A new enough version of pkg-config was not found."
++       echo "*** See http://www.freedesktop.org/software/pkgconfig/"
+      else
+        if test -f conf.glibtest ; then
+         :
+        else
+           echo "*** Could not run GLIB test program, checking why..."
++          ac_save_CFLAGS="$CFLAGS"
++          ac_save_LIBS="$LIBS"
+           CFLAGS="$CFLAGS $GLIB_CFLAGS"
+           LIBS="$LIBS $GLIB_LIBS"
+           cat >conftest.$ac_ext <<_ACEOF
+@@ -19056,19 +19859,12 @@
+ 	  echo "***"
+           echo "*** If you have an old version installed, it is best to remove it, although"
+           echo "*** you may also be able to get things to work by modifying LD_LIBRARY_PATH"
+-          echo "***"
+-          echo "*** If you have a RedHat 5.0 system, you should remove the GTK package that"
+-          echo "*** came with the system with the command"
+-          echo "***"
+-          echo "***    rpm --erase --nodeps gtk gtk-devel"
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+  echo "*** The test program failed to compile or link. See the file config.log for the"
+-          echo "*** exact error that occured. This usually means GLIB was incorrectly installed"
+-          echo "*** or that you have moved GLIB since it was installed. In the latter case, you"
+-          echo "*** may want to edit the glib-config script: $GLIB_CONFIG"
++          echo "*** exact error that occured. This usually means GLIB is incorrectly installed."
+ fi
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
+@@ -19078,12 +19874,18 @@
+      fi
+      GLIB_CFLAGS=""
+      GLIB_LIBS=""
+-     { { echo "$as_me:$LINENO: error: Test for GLIB failed. Download it from ftp://ftp.gtk.org/pub/gtk/v1.2/" >&5
+-echo "$as_me: error: Test for GLIB failed. Download it from ftp://ftp.gtk.org/pub/gtk/v1.2/" >&2;}
++     GLIB_GENMARSHAL=""
++     GOBJECT_QUERY=""
++     GLIB_MKENUMS=""
++     { { echo "$as_me:$LINENO: error: Test for GLIB failed. Download it from ftp://ftp.gtk.org/pub/glib/" >&5
++echo "$as_me: error: Test for GLIB failed. Download it from ftp://ftp.gtk.org/pub/glib/" >&2;}
+    { (exit 1); exit 1; }; }
+   fi
+ 
+ 
++
++
++
+   rm -f conf.glibtest
+ 
+ 
+@@ -19769,9 +20625,13 @@
+ s,@LIBTOOL@,$LIBTOOL,;t t
+ s,@EMACS@,$EMACS,;t t
+ s,@top_srcdir_absolute@,$top_srcdir_absolute,;t t
+-s,@GLIB_CONFIG@,$GLIB_CONFIG,;t t
++s,@PKG_CONFIG@,$PKG_CONFIG,;t t
++s,@ac_pt_PKG_CONFIG@,$ac_pt_PKG_CONFIG,;t t
+ s,@GLIB_CFLAGS@,$GLIB_CFLAGS,;t t
+ s,@GLIB_LIBS@,$GLIB_LIBS,;t t
++s,@GLIB_GENMARSHAL@,$GLIB_GENMARSHAL,;t t
++s,@GOBJECT_QUERY@,$GOBJECT_QUERY,;t t
++s,@GLIB_MKENUMS@,$GLIB_MKENUMS,;t t
+ s,@LIBOBJS@,$LIBOBJS,;t t
+ s,@LTLIBOBJS@,$LTLIBOBJS,;t t
+ CEOF
