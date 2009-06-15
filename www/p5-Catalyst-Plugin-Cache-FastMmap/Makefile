@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Cache-FastMmap
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.1+
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Plugin::Cache::FastMmap.3
 
