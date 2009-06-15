@@ -115,6 +115,9 @@ bin/zconfig
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZConfig/tests/test_schema.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZConfig/tests/test_schemaless.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZConfig/tests/test_subst.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZConfig/tests/test_readme.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZConfig/tests/test_readme.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZConfig/tests/test_readme.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZConfig/tests/library/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZConfig/tests/library/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZConfig/tests/library/__init__.pyc
