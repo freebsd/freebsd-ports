@@ -1,4 +1,0 @@
-The MLT++ wrapper is a C++ wrapper for the MLT C library. As such, it
-provides clean C++ access to the underlying library.
-
-WWW: http://www.mltframework.org

@@ -162,7 +162,6 @@
     SUBDIR += mkvtoolnix
     SUBDIR += mkxvcd
     SUBDIR += mlt
-    SUBDIR += mlt++
     SUBDIR += mmpython
     SUBDIR += mmsclient
     SUBDIR += mmsrip
