@@ -9,8 +9,7 @@ PORTNAME=	bricolage
 PORTVERSION=	1.10.4
 PORTREVISION=	1
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bricolage
+MASTER_SITE_SUBDIR=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-featured, open-source content-management and publishing system
@@ -55,8 +54,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${BUILD_DEPENDS}
 
-APXS?=		${LOCALBASE}/sbin/apxs
+MAKE_JOBS_UNSAFE=	yes
 
+USE_APACHE=	13
 MAKE_ENV+=	INSTALL_VERBOSITY="QUIET"
 MAKE_ENV+=	USE_DEFAULTS=freebsd
 
