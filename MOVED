@@ -4041,3 +4041,4 @@ www/toofpy||2009-06-13|Removed
 x11-drivers/xf86-video-vga||2009-06-13|Removed
 x11-themes/nimbus||2009-06-13|Removed
 x11-toolkits/py-pyxfce||2009-06-13|Removed
+multimedia/mlt++|multimedia/mlt|2009-06-15|Project reorganization
