@@ -119,6 +119,7 @@
     SUBDIR += nagios-radauth-plugin
     SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
+    SUBDIR += nagios-snmp-plugins-extras
     SUBDIR += nagios-spamd-plugin
     SUBDIR += nagiosgraph
     SUBDIR += nagiostat

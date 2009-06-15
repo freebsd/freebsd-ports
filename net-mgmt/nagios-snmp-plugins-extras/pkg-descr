@@ -1,0 +1,16 @@
+The general idea of these scripts is to check as many things as possible with
+SNMP: disks, memory, load, network interfaces, running processes, etc...
+
+The other idea is to select disks, interfaces, process using regular
+expressions:
+
+- it is possible to test more than one disk/int/process in one Nagios check
+  (ex.: eth* instead of eth0,eth1,eth2,...)
+
+- you only have to provide a unique part of the name to select a
+  disk/int/process (ex. : "C:" instead of "C:\ Label: Serial Number xxxxxxx"
+  makes it easy to use on multiple Windows hosts). 
+
+Most of these scripts can make performance outputs.
+
+WWW: http://nagios.manubulon.com/
