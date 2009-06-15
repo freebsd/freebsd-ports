@@ -1,0 +1,27 @@
+--- ./Completion/Unix/Type/_zfs_dataset.orig	2009-06-09 10:49:20.305960368 +0000
++++ ./Completion/Unix/Type/_zfs_dataset	2009-06-09 10:50:24.299466247 +0000
+@@ -9,7 +9,23 @@
+ [[ -n $type[(r)snap] ]] && typearg=( $typearg snapshot )
+ [[ -n $typearg ]] && typearg=( -t ${(j:,:)typearg} )
+ 
+-datasetlist=( ${="$(zfs list -H -o name $typearg)":#no datasets available} )
++case "$OSTYPE" in
++	freebsd*)
++	local -i osreldate
++	osreldate=${${(f)"$(/sbin/sysctl kern.osreldate)"}[(w)2]}
++	if (( $osreldate >= 702102 ));then
++		datasetlist=( ${="$(zfs list -H -o name ${typearg:--t all})":#no datasets available} )
++	else
++		datasetlist=( ${="$(zfs list -H -o name $typearg)":#no datasets available} )
++	fi
++	;;
++	netbsd*)
++		datasetlist=( ${="$(zfs list -H -o name ${typearg:--t all})":#no datasets available} )
++	;;
++	*)
++	datasetlist=( ${="$(zfs list -H -o name $typearg)":#no datasets available} )
++	;;
++esac
+ 
+ expl_type=${typearg[2,-1]//,/\/}
+ if [[ -n $type[(r)mtpt] ]]; then

@@ -1,6 +1,6 @@
---- Completion/Unix/Command/_mount.orig	2008-01-22 04:13:35.000000000 -0600
-+++ Completion/Unix/Command/_mount	2008-10-28 18:23:46.000000000 -0500
-@@ -41,10 +41,10 @@
+--- Completion/Unix/Command/_mount
++++ Completion/Unix/Command/_mount
+@@ -41,10 +41,10 @@ fi
  
  local curcontext="$curcontext" state line expl suf ret=1
  local args deffs=iso9660 tmp typeops=-t _nfs_access _fs_nfs _nfs_ufs \
@@ -15,7 +15,7 @@
  
  typeset -A opt_args
  
-@@ -527,7 +527,7 @@
+@@ -527,7 +527,7 @@ if (( ! $+_fs_any )); then
        'swidth[specify stripe width]:size'
      )
      ;;
@@ -24,7 +24,7 @@
      _fs_any=(
        '(sync)async[do all I/O asynchronously]'
        'current[use current options on already mounted file system]'
-@@ -548,12 +548,12 @@
+@@ -548,12 +548,12 @@ if (( ! $+_fs_any )); then
        'update[change status of already mounted filesystem]'
        'union[cause the namespace at the mount point to appear as the union of the mounted filesystem and the existing directory]'
      )
@@ -43,24 +43,21 @@
      )
      _fs_std=(
        "nodev[don't interpret devices]"
-@@ -568,10 +568,13 @@
-     _fs_linprocfs=( "$_fs_std[@]" )
-     _fs_procfs=( "$_fs_std[@]" )
-     _fs_msdos=(
--      'shortnames[]'
--      'longnames[]'
--      'nowin95[]'
+@@ -571,7 +571,13 @@ if (( ! $+_fs_any )); then
+       'shortnames[]'
+       'longnames[]'
+       'nowin95[]'
 +      'shortnames[force only the old MS-DOS 8.3 style filenames to be visible]'
 +      'longnames[force Windows 95 long filenames to be visible]'
 +      'nowin95[completely ignore Windows 95 extended file information]'
      )
 +    if [[ "${OSTYPE}" =~ freebsd.* ]]; then
-+      _fs_msdosfs=( "$_fs_msdos[@]" )
++	    _fs_msdosfs=( "$_fs_msdos[@]" )
 +    fi
      ;;
    esac
  fi
-@@ -682,7 +685,7 @@
+@@ -682,7 +688,7 @@ if [[ "$service" = mount ]]; then
      deffs=hsfs
      typeops=-F
      ;;
@@ -69,7 +66,7 @@
      args=( -s
        '(:)-a[mount all filesystems in fstab]'
        '-d[cause everything to be done except for the actual system call]'      
-@@ -757,7 +760,7 @@
+@@ -757,7 +763,7 @@ else
  	'*:dev or dir:->udevordir'
        )
      ;;
@@ -78,28 +75,63 @@
        args=(
  	'(*)-a[unmount all mounted file systems]'
  	'-A[unmount all mounted file systems except the root]'
-@@ -819,7 +822,7 @@
+@@ -819,7 +825,28 @@ devordir)
    fi
  
    case "$OSTYPE" in
 -  *freebsd*|dragonfly*)
-+  freebsd*|dragonfly*)
++  dragonfly*)
++    while read mline; do 
++      case $mline[(w)1] in
++	\#* )
++	  ;;
++	proc)
++	  ;;
++	*)
++	  [[ $mline[(w)3] == swap ]] || \
++	    dev_tmp+=( $mline[(w)1] ) \
++	    mp_tmp+=( $mline[(w)2] )
++	  ;;
++      esac
++    done < /etc/fstab
++
++    _alternative \
++      'hosts:host:_hosts -S :' \
++      'devices:device:compadd -a dev_tmp' \
++      'directories:mount point:compadd -a mp_tmp' && ret=0
++      ;;
++  freebsd*)
++    local _glabel
      while read mline; do 
        case $mline[(w)1] in
  	\#* )
-@@ -861,8 +864,13 @@
+@@ -833,6 +860,16 @@ devordir)
+ 	  ;;
+       esac
+     done < /etc/fstab
++    # 
++    /sbin/ggatel list | while read mline; do
++      dev_tmp+=(/dev/$mline)
++    done
++
++    # add glabel devices
++    _glabel=(${(M)${(f)"$(/sbin/glabel list)"}:#*Name:[[:space:]]*/*})
++    for mline ($_glabel);do
++	    dev_tmp+=( mline[(w)3] )
++    done
+ 
+     _alternative \
+       'hosts:host:_hosts -S :' \
+@@ -859,6 +896,12 @@ udevordir)
+     dev_tmp=( "${(@)${(@)tmp%% *}:#none}" )
+     mp_tmp=( "${(@)${(@)tmp#* }%% *}" )
      ;;
++  freebsd*|dragonfly*)
++    /sbin/mount | while read mline; do
++      dev_tmp+=( $mline[(w)1] )
++      mp_tmp+=( $mline[(w)3] )
++    done
++  ;;
    *)
      /sbin/mount | while read mline; do
--      mp_tmp+=( $mline[(w)1] )
--      dev_tmp+=( $mline[(w)3] )
-+      if [[ "$OSTYPE" =~ .*freebsd.* ]]; then
-+        dev_tmp+=( $mline[(w)1] )
-+        mp_tmp+=( $mline[(w)3] )
-+      else
-+        mp_tmp+=( $mline[(w)1] )
-+        dev_tmp+=( $mline[(w)3] )
-+      fi
-     done
-     ;;
-   esac
+       mp_tmp+=( $mline[(w)1] )
