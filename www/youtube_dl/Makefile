@@ -26,7 +26,7 @@ USE_PYTHON=	2.5+
 PLIST_FILES=	bin/youtube-dl
 
 post-extract:
-	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/youtube-dl
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/youtube-dl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-dl ${PREFIX}/bin/youtube-dl
