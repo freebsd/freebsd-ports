@@ -297,6 +297,7 @@
     SUBDIR += nessus-libnasl
     SUBDIR += nessus-libraries
     SUBDIR += nessus-plugins
+    SUBDIR += netpgp
     SUBDIR += nettle
     SUBDIR += newpki-client
     SUBDIR += newpki-lib
