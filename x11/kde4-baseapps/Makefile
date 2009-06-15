@@ -41,7 +41,14 @@ MAN1=		kappfinder.1 \
 		kbookmarkmerger.1 \
 		kfind.1
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	${MKDIR} ${WRKSRC}
 
-.include <bsd.port.mk>
+post-patch:
+.if ${OSVERSION} > 800090
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-libusb20
+.endif
+
+.include <bsd.port.post.mk>
