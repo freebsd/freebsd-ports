@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	zconfig
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://www.zope.org/Members/fdrake/zconfig/
