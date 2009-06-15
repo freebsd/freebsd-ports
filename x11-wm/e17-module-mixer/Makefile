@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An e17 module to adjust audio mixer settings
 
-BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
-RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
+BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

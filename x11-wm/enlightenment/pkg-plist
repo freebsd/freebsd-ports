@@ -1,493 +1,605 @@
-bin/e16
-bin/edox
-bin/eesh
-bin/epp
-bin/starte16
-%%NLS%%share/locale/bg/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/bs/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/da/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/de/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/es/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/e16.mo
-%%DATADIR%%/E-docs/bg.png
-%%DATADIR%%/E-docs/exit1.png
-%%DATADIR%%/E-docs/exit2.png
-%%DATADIR%%/E-docs/next1.png
-%%DATADIR%%/E-docs/next2.png
-%%DATADIR%%/E-docs/prev1.png
-%%DATADIR%%/E-docs/prev2.png
-%%DATADIR%%/E-docs/title.png
-%%DATADIR%%/config/actionclasses.cfg
-%%DATADIR%%/config/bindings.cfg
-%%DATADIR%%/config/definitions
-%%DATADIR%%/config/e16keyedit.db
-%%DATADIR%%/config/fonts.cfg.xft
-%%DATADIR%%/config/fonts.cfg.pango
-%%DATADIR%%/config/matches.cfg
-%%DATADIR%%/config/menus.cfg
-%%DATADIR%%/config/menus/desktop.menu
-%%DATADIR%%/config/menus/enlightenment.menu
-%%DATADIR%%/config/menus/maintenance.menu
-%%DATADIR%%/config/menus/settings.menu
-%%DATADIR%%/config/menus/winops.menu
-%%DATADIR%%/config/menus/winops_groups.menu
-%%DATADIR%%/config/menus/winops_layer.menu
-%%DATADIR%%/config/menus/winops_misc.menu
-%%DATADIR%%/config/menus/winops_opacity.menu
-%%DATADIR%%/config/menus/winops_size.menu
-%%DATADIR%%/config/pix/about.png
-%%DATADIR%%/config/pix/apple.png
-%%DATADIR%%/config/pix/areas.png
-%%DATADIR%%/config/pix/bg.png
-%%DATADIR%%/config/pix/calc.png
-%%DATADIR%%/config/pix/clock.png
-%%DATADIR%%/config/pix/desktops.png
-%%DATADIR%%/config/pix/easter.png
-%%DATADIR%%/config/pix/elogo48.png
-%%DATADIR%%/config/pix/focus.png
-%%DATADIR%%/config/pix/fx.png
-%%DATADIR%%/config/pix/key_blank.png
-%%DATADIR%%/config/pix/key_ctrl.png
-%%DATADIR%%/config/pix/key_lock.png
-%%DATADIR%%/config/pix/key_mod1.png
-%%DATADIR%%/config/pix/key_mod2.png
-%%DATADIR%%/config/pix/key_mod3.png
-%%DATADIR%%/config/pix/key_mod4.png
-%%DATADIR%%/config/pix/key_mod5.png
-%%DATADIR%%/config/pix/key_shift.png
-%%DATADIR%%/config/pix/mon.png
-%%DATADIR%%/config/pix/mouse_0.png
-%%DATADIR%%/config/pix/mouse_1.png
-%%DATADIR%%/config/pix/mouse_2.png
-%%DATADIR%%/config/pix/mouse_3.png
-%%DATADIR%%/config/pix/mouse_4.png
-%%DATADIR%%/config/pix/mouse_5.png
-%%DATADIR%%/config/pix/mouse_any.png
-%%DATADIR%%/config/pix/moveres.png
-%%DATADIR%%/config/pix/note.png
-%%DATADIR%%/config/pix/pager.png
-%%DATADIR%%/config/pix/place.png
-%%DATADIR%%/config/pix/pumpkin.png
-%%DATADIR%%/config/pix/raise.png
-%%DATADIR%%/config/pix/snapshots.png
-%%DATADIR%%/config/pix/sound.png
-%%DATADIR%%/config/pix/spider.png
-%%DATADIR%%/config/pix/tips.png
-%%DATADIR%%/config/pix/tv2.png
-%%DATADIR%%/config/pix/wait1.png
-%%DATADIR%%/config/pix/wait10.png
-%%DATADIR%%/config/pix/wait11.png
-%%DATADIR%%/config/pix/wait12.png
-%%DATADIR%%/config/pix/wait2.png
-%%DATADIR%%/config/pix/wait3.png
-%%DATADIR%%/config/pix/wait4.png
-%%DATADIR%%/config/pix/wait5.png
-%%DATADIR%%/config/pix/wait6.png
-%%DATADIR%%/config/pix/wait7.png
-%%DATADIR%%/config/pix/wait8.png
-%%DATADIR%%/config/pix/wait9.png
-%%DATADIR%%/config/pix/world.png
-%%DATADIR%%/misc/e16.desktop-app
-%%DATADIR%%/misc/e16.desktop
-%%DATADIR%%/misc/e16.png
-%%DATADIR%%/misc/e16-gnome.desktop
-%%DATADIR%%/misc/e16-kde.desktop
-%%DATADIR%%/misc/e16-dbus-cmd
-%%DATADIR%%/misc/starte16
-%%DATADIR%%/misc/starte16-gnome
-%%DATADIR%%/misc/starte16-kde
-%%DATADIR%%/misc/Xclients.e16.sh
-%%DATADIR%%/misc/Xclients.e16-gnome.sh
-%%DATADIR%%/misc/Xclients.e16-kde.sh
-%%DATADIR%%/scripts/e_cache_clean
-%%DATADIR%%/scripts/e_cache_query
-%%DATADIR%%/scripts/e_gen_menu
-%%DATADIR%%/scripts/session.sh
-%%DATADIR%%/themes/winter/ABOUT/MAIN
-%%DATADIR%%/themes/winter/ABOUT/bg.png
-%%DATADIR%%/themes/winter/README
-%%DATADIR%%/themes/winter/backgrounds/backgrounds.cfg
-%%DATADIR%%/themes/winter/backgrounds/images/startup-bg.png
-%%DATADIR%%/themes/winter/backgrounds/images/winter_logo.png
-%%DATADIR%%/themes/winter/backgrounds/images/winter_ui.png
-%%DATADIR%%/themes/winter/backgrounds/images/winter_ui_blue.png
-%%DATADIR%%/themes/winter/backgrounds/images/winter_ui_green.png
-%%DATADIR%%/themes/winter/borders.cfg
-%%DATADIR%%/themes/winter/borders/AUTOSHADE/border.cfg
-%%DATADIR%%/themes/winter/borders/BORDERLESS/border.cfg
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/border.cfg
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/bl.png
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/br.png
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/horiz.png
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/tl.png
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/tr.png
-%%DATADIR%%/themes/winter/borders/DEFAULT/border.cfg
-%%DATADIR%%/themes/winter/borders/DIALOG/border.cfg
-%%DATADIR%%/themes/winter/borders/FIXED_SIZE/border.cfg
-%%DATADIR%%/themes/winter/borders/ICONBOX/border.cfg
-%%DATADIR%%/themes/winter/borders/MENU/border.cfg
-%%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY/border.cfg
-%%DATADIR%%/themes/winter/borders/PAGER/border.cfg
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb1.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb2.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb3.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb4.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb5.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb6.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb8.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb9l.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb9r.png
-%%DATADIR%%/themes/winter/borders/PAGER_AUTOSHADE/border.cfg
-%%DATADIR%%/themes/winter/borders/PAGER_SHADE_RIGHT/border.cfg
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/border.cfg
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb1.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb2.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb3.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb4.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb5.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb6.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb8.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb9l.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb9r.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER_SHADE_LEFT/border.cfg
-%%DATADIR%%/themes/winter/borders/SHAPED/border.cfg
-%%DATADIR%%/themes/winter/borders/TRANSIENT/border.cfg
-%%DATADIR%%/themes/winter/borders/borders.cfg
-%%DATADIR%%/themes/winter/borders/common/Winter.Changelog
-%%DATADIR%%/themes/winter/borders/common/border.cfg
-%%DATADIR%%/themes/winter/borders/common/images/border-bl-blue.png
-%%DATADIR%%/themes/winter/borders/common/images/border-bl.png
-%%DATADIR%%/themes/winter/borders/common/images/border-bottom-blue_alternative.png
-%%DATADIR%%/themes/winter/borders/common/images/border-bottom.png
-%%DATADIR%%/themes/winter/borders/common/images/border-bottom_alternative.png
-%%DATADIR%%/themes/winter/borders/common/images/border-br-blue.png
-%%DATADIR%%/themes/winter/borders/common/images/border-br.png
-%%DATADIR%%/themes/winter/borders/common/images/border-button.png
-%%DATADIR%%/themes/winter/borders/common/images/border-close1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-close1_hilited.png
-%%DATADIR%%/themes/winter/borders/common/images/border-close2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-dot1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-dot2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-iconify1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-iconify1_hilited.png
-%%DATADIR%%/themes/winter/borders/common/images/border-iconify2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-lr.png
-%%DATADIR%%/themes/winter/borders/common/images/border-max1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-max1_hilited.png
-%%DATADIR%%/themes/winter/borders/common/images/border-max2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-minus.png
-%%DATADIR%%/themes/winter/borders/common/images/border-minus2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-plus1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-plus2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top-blue.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top-blue_alternative.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top-blue_text.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top_alternative.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top_iconbox.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top_iconbox_blue.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top_text.png
-%%DATADIR%%/themes/winter/borders/common/images/border-topmiddle.png
-%%DATADIR%%/themes/winter/borders/common/images/ic_border-l.png
-%%DATADIR%%/themes/winter/borders/common/images/ic_border-r.png
-%%DATADIR%%/themes/winter/borders/common/images/menu-border-bottom.png
-%%DATADIR%%/themes/winter/borders/common/images/menu-border-top.png
-%%DATADIR%%/themes/winter/buttons.cfg
-%%DATADIR%%/themes/winter/buttons/buttons.cfg
-%%DATADIR%%/themes/winter/colormodifiers.cfg
-%%DATADIR%%/themes/winter/common/images/blank.png
-%%DATADIR%%/themes/winter/common/images/blue_bar.png
-%%DATADIR%%/themes/winter/common/images/light_brushed.png
-%%DATADIR%%/themes/winter/coords/coords.cfg
-%%DATADIR%%/themes/winter/cursors.cfg
-%%DATADIR%%/themes/winter/cursors/cursors.cfg
-%%DATADIR%%/themes/winter/desktops.cfg
-%%DATADIR%%/themes/winter/dialogs/dialogs.cfg
-%%DATADIR%%/themes/winter/dialogs/images/arrow-down.png
-%%DATADIR%%/themes/winter/dialogs/images/arrow-left.png
-%%DATADIR%%/themes/winter/dialogs/images/arrow-right.png
-%%DATADIR%%/themes/winter/dialogs/images/arrow-up.png
-%%DATADIR%%/themes/winter/dialogs/images/bg.png
-%%DATADIR%%/themes/winter/dialogs/images/button-clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/button-over.png
-%%DATADIR%%/themes/winter/dialogs/images/button-up.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox-checked.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox-checked_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox-checked_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/indent.png
-%%DATADIR%%/themes/winter/dialogs/images/ondent.png
-%%DATADIR%%/themes/winter/dialogs/images/radio-on.png
-%%DATADIR%%/themes/winter/dialogs/images/radio-on_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/radio-on_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/radio.png
-%%DATADIR%%/themes/winter/dialogs/images/radio_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/radio_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-bar-vert.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-down.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-left.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-right.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-trough-horiz.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-trough-vert.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-up.png
-%%DATADIR%%/themes/winter/dialogs/images/scrollbar-horiz-deco.png
-%%DATADIR%%/themes/winter/dialogs/images/scrollbar-horiz.png
-%%DATADIR%%/themes/winter/dialogs/images/scrollbar-vert-deco.png
-%%DATADIR%%/themes/winter/dialogs/images/separator.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-h.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-h_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-h_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-h_on.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-v.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-v_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-v_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-v_on.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-trough-h.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-trough-v.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-trough.png
-%%DATADIR%%/themes/winter/dialogs/images/trough.png
-%%DATADIR%%/themes/winter/dialogs/images/window-base.png
-%%DATADIR%%/themes/winter/dock/dock.cfg
-%%DATADIR%%/themes/winter/dragbar/dragbar.cfg
-%%DATADIR%%/themes/winter/dragbar/images/a1.png
-%%DATADIR%%/themes/winter/dragbar/images/a1b.png
-%%DATADIR%%/themes/winter/dragbar/images/a2.png
-%%DATADIR%%/themes/winter/dragbar/images/a2b.png
-%%DATADIR%%/themes/winter/dragbar/images/dragbar_horiz.png
-%%DATADIR%%/themes/winter/dragbar/images/dragbar_vert.png
-%%DATADIR%%/themes/winter/epplets/epplets.cfg
-%%DATADIR%%/themes/winter/epplets/images/ar_d1.png
-%%DATADIR%%/themes/winter/epplets/images/ar_d2.png
-%%DATADIR%%/themes/winter/epplets/images/ar_d3.png
-%%DATADIR%%/themes/winter/epplets/images/ar_l1.png
-%%DATADIR%%/themes/winter/epplets/images/ar_l2.png
-%%DATADIR%%/themes/winter/epplets/images/ar_l3.png
-%%DATADIR%%/themes/winter/epplets/images/ar_r1.png
-%%DATADIR%%/themes/winter/epplets/images/ar_r2.png
-%%DATADIR%%/themes/winter/epplets/images/ar_r3.png
-%%DATADIR%%/themes/winter/epplets/images/ar_u1.png
-%%DATADIR%%/themes/winter/epplets/images/ar_u2.png
-%%DATADIR%%/themes/winter/epplets/images/ar_u3.png
-%%DATADIR%%/themes/winter/epplets/images/b1.png
-%%DATADIR%%/themes/winter/epplets/images/b2.png
-%%DATADIR%%/themes/winter/epplets/images/b3.png
-%%DATADIR%%/themes/winter/epplets/images/bb1.png
-%%DATADIR%%/themes/winter/epplets/images/bb2.png
-%%DATADIR%%/themes/winter/epplets/images/bg.png
-%%DATADIR%%/themes/winter/epplets/images/bg_v.png
-%%DATADIR%%/themes/winter/epplets/images/blank1.png
-%%DATADIR%%/themes/winter/epplets/images/blank2.png
-%%DATADIR%%/themes/winter/epplets/images/blank3.png
-%%DATADIR%%/themes/winter/epplets/images/close1.png
-%%DATADIR%%/themes/winter/epplets/images/close2.png
-%%DATADIR%%/themes/winter/epplets/images/close3.png
-%%DATADIR%%/themes/winter/epplets/images/config1.png
-%%DATADIR%%/themes/winter/epplets/images/config2.png
-%%DATADIR%%/themes/winter/epplets/images/config3.png
-%%DATADIR%%/themes/winter/epplets/images/da.png
-%%DATADIR%%/themes/winter/epplets/images/eject1.png
-%%DATADIR%%/themes/winter/epplets/images/eject2.png
-%%DATADIR%%/themes/winter/epplets/images/eject3.png
-%%DATADIR%%/themes/winter/epplets/images/ff1.png
-%%DATADIR%%/themes/winter/epplets/images/ff2.png
-%%DATADIR%%/themes/winter/epplets/images/ff3.png
-%%DATADIR%%/themes/winter/epplets/images/help1.png
-%%DATADIR%%/themes/winter/epplets/images/help2.png
-%%DATADIR%%/themes/winter/epplets/images/help3.png
-%%DATADIR%%/themes/winter/epplets/images/next1.png
-%%DATADIR%%/themes/winter/epplets/images/next2.png
-%%DATADIR%%/themes/winter/epplets/images/next3.png
-%%DATADIR%%/themes/winter/epplets/images/pause1.png
-%%DATADIR%%/themes/winter/epplets/images/pause2.png
-%%DATADIR%%/themes/winter/epplets/images/pause3.png
-%%DATADIR%%/themes/winter/epplets/images/pb_h.png
-%%DATADIR%%/themes/winter/epplets/images/pb_v.png
-%%DATADIR%%/themes/winter/epplets/images/play1.png
-%%DATADIR%%/themes/winter/epplets/images/play2.png
-%%DATADIR%%/themes/winter/epplets/images/play3.png
-%%DATADIR%%/themes/winter/epplets/images/prev1.png
-%%DATADIR%%/themes/winter/epplets/images/prev2.png
-%%DATADIR%%/themes/winter/epplets/images/prev3.png
-%%DATADIR%%/themes/winter/epplets/images/repeat1.png
-%%DATADIR%%/themes/winter/epplets/images/repeat2.png
-%%DATADIR%%/themes/winter/epplets/images/repeat3.png
-%%DATADIR%%/themes/winter/epplets/images/rw1.png
-%%DATADIR%%/themes/winter/epplets/images/rw2.png
-%%DATADIR%%/themes/winter/epplets/images/rw3.png
-%%DATADIR%%/themes/winter/epplets/images/s_h.png
-%%DATADIR%%/themes/winter/epplets/images/s_k1.png
-%%DATADIR%%/themes/winter/epplets/images/s_k2.png
-%%DATADIR%%/themes/winter/epplets/images/s_k3.png
-%%DATADIR%%/themes/winter/epplets/images/s_v.png
-%%DATADIR%%/themes/winter/epplets/images/skip1.png
-%%DATADIR%%/themes/winter/epplets/images/skip2.png
-%%DATADIR%%/themes/winter/epplets/images/skip3.png
-%%DATADIR%%/themes/winter/epplets/images/stop1.png
-%%DATADIR%%/themes/winter/epplets/images/stop2.png
-%%DATADIR%%/themes/winter/epplets/images/stop3.png
-%%DATADIR%%/themes/winter/eterm/eterm.cfg
-%%DATADIR%%/themes/winter/eterm/images/a_d_1.png
-%%DATADIR%%/themes/winter/eterm/images/a_d_2.png
-%%DATADIR%%/themes/winter/eterm/images/a_l_1.png
-%%DATADIR%%/themes/winter/eterm/images/a_l_2.png
-%%DATADIR%%/themes/winter/eterm/images/a_r_1.png
-%%DATADIR%%/themes/winter/eterm/images/a_r_2.png
-%%DATADIR%%/themes/winter/eterm/images/a_u_1.png
-%%DATADIR%%/themes/winter/eterm/images/a_u_2.png
-%%DATADIR%%/themes/winter/eterm/images/bg.jpg
-%%DATADIR%%/themes/winter/eterm/images/bt.png
-%%DATADIR%%/themes/winter/eterm/images/mb2.png
-%%DATADIR%%/themes/winter/eterm/images/mb3.png
-%%DATADIR%%/themes/winter/eterm/images/sb1.png
-%%DATADIR%%/themes/winter/eterm/images/sb2.png
-%%DATADIR%%/themes/winter/eterm/images/t.png
-%%DATADIR%%/themes/winter/focuslist/focuslist.cfg
-%%DATADIR%%/themes/winter/focuslist/images/hbar.png
-%%DATADIR%%/themes/winter/focuslist/images/hbar2.png
-%%DATADIR%%/themes/winter/fonts.cfg
-%%DATADIR%%/themes/winter/fonts.cfg.ja
-%%DATADIR%%/themes/winter/fonts.cfg.ko
-%%DATADIR%%/themes/winter/fonts.cfg.pl
-%%DATADIR%%/themes/winter/iconbox/iconbox.cfg
-%%DATADIR%%/themes/winter/iconbox/images/base_.png
-%%DATADIR%%/themes/winter/iconbox/images/bg.png
-%%DATADIR%%/themes/winter/iconbox/images/blank.png
-%%DATADIR%%/themes/winter/iconbox/images/button-h.png
-%%DATADIR%%/themes/winter/iconbox/images/cover.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-base_h.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-base_v.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-knob.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-knob_active.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-knob_clicked.png
-%%DATADIR%%/themes/winter/iconbox/images/unused.png
-%%DATADIR%%/themes/winter/imageclasses.cfg
-%%DATADIR%%/themes/winter/init.cfg
-%%DATADIR%%/themes/winter/init/images/btn3.png
-%%DATADIR%%/themes/winter/init/images/progress.png
-%%DATADIR%%/themes/winter/init/images/progress_bar.png
-%%DATADIR%%/themes/winter/init/init.cfg
-%%DATADIR%%/themes/winter/menustyles.cfg
-%%DATADIR%%/themes/winter/menustyles/images/menu-arrow-sel.png
-%%DATADIR%%/themes/winter/menustyles/images/menu-arrow.png
-%%DATADIR%%/themes/winter/menustyles/images/menu-sel.png
-%%DATADIR%%/themes/winter/menustyles/menustyles.cfg
-%%DATADIR%%/themes/winter/pager/images/p_bg.png
-%%DATADIR%%/themes/winter/pager/images/p_sel.png
-%%DATADIR%%/themes/winter/pager/images/p_win.png
-%%DATADIR%%/themes/winter/pager/pager.cfg
-%%DATADIR%%/themes/winter/slideouts.cfg
-%%DATADIR%%/themes/winter/slideouts/slideouts.cfg
-%%DATADIR%%/themes/winter/sound.cfg
-%%DATADIR%%/themes/winter/sound/sound.cfg
-%%DATADIR%%/themes/winter/tooltips.cfg
-%%DATADIR%%/themes/winter/tooltips/images/clear.png
-%%DATADIR%%/themes/winter/tooltips/images/tooltipbg.png
-%%DATADIR%%/themes/winter/tooltips/tooltips.cfg
-%%DATADIR%%/fonts/Vera.ttf
-%%DATADIR%%/fonts/VeraBd.ttf
-%%DATADIR%%/fonts/COPYRIGHT.Vera
-%%DATADIR%%/fonts/normal.ttf
-%%DATADIR%%/fonts/bold.ttf
-share/applications/e16.desktop
-share/xsessions/e16.desktop
-share/xsessions/e16-gnome.desktop
-share/xsessions/e16-kde.desktop
-%%PORTDOCS%%%%DOCSDIR%%/README-0.16.8.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s11.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s10.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s09.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s08.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s07.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s06.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s05.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s04.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s03.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s02.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s12.html
-@dirrm lib/e16
-@dirrm %%DATADIR%%/E-docs
-@dirrm %%DATADIR%%/config/menus
-@dirrm %%DATADIR%%/config/pix
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/themes/winter/ABOUT
-@dirrm %%DATADIR%%/themes/winter/backgrounds/images
-@dirrm %%DATADIR%%/themes/winter/backgrounds
-@dirrm %%DATADIR%%/themes/winter/borders/AUTOSHADE
-@dirrm %%DATADIR%%/themes/winter/borders/BORDERLESS
-@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY/images
-@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY
-@dirrm %%DATADIR%%/themes/winter/borders/DEFAULT
-@dirrm %%DATADIR%%/themes/winter/borders/DIALOG
-@dirrm %%DATADIR%%/themes/winter/borders/FIXED_SIZE
-@dirrm %%DATADIR%%/themes/winter/borders/ICONBOX
-@dirrm %%DATADIR%%/themes/winter/borders/MENU
-@dirrm %%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER/images
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER_AUTOSHADE
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER_SHADE_RIGHT
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER_SHADE_LEFT
-@dirrm %%DATADIR%%/themes/winter/borders/SHAPED
-@dirrm %%DATADIR%%/themes/winter/borders/TRANSIENT
-@dirrm %%DATADIR%%/themes/winter/borders/common/images
-@dirrm %%DATADIR%%/themes/winter/borders/common
-@dirrm %%DATADIR%%/themes/winter/borders
-@dirrm %%DATADIR%%/themes/winter/buttons
-@dirrm %%DATADIR%%/themes/winter/common/images
-@dirrm %%DATADIR%%/themes/winter/common
-@dirrm %%DATADIR%%/themes/winter/coords
-@dirrm %%DATADIR%%/themes/winter/cursors
-@dirrm %%DATADIR%%/themes/winter/dialogs/images
-@dirrm %%DATADIR%%/themes/winter/dialogs
-@dirrm %%DATADIR%%/themes/winter/dock
-@dirrm %%DATADIR%%/themes/winter/dragbar/images
-@dirrm %%DATADIR%%/themes/winter/dragbar
-@dirrm %%DATADIR%%/themes/winter/epplets/images
-@dirrm %%DATADIR%%/themes/winter/epplets
-@dirrm %%DATADIR%%/themes/winter/eterm/images
-@dirrm %%DATADIR%%/themes/winter/eterm
-@dirrm %%DATADIR%%/themes/winter/focuslist/images
-@dirrm %%DATADIR%%/themes/winter/focuslist
-@dirrm %%DATADIR%%/themes/winter/iconbox/images
-@dirrm %%DATADIR%%/themes/winter/iconbox
-@dirrm %%DATADIR%%/themes/winter/init/images
-@dirrm %%DATADIR%%/themes/winter/init
-@dirrm %%DATADIR%%/themes/winter/menustyles/images
-@dirrm %%DATADIR%%/themes/winter/menustyles
-@dirrm %%DATADIR%%/themes/winter/pager/images
-@dirrm %%DATADIR%%/themes/winter/pager
-@dirrm %%DATADIR%%/themes/winter/slideouts
-@dirrm %%DATADIR%%/themes/winter/sound
-@dirrm %%DATADIR%%/themes/winter/tooltips/images
-@dirrm %%DATADIR%%/themes/winter/tooltips
-@dirrm %%DATADIR%%/themes/winter
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
-@dirrmtry etc/X11/dm/Sessions
-@dirrmtry etc/X11/dm
-@dirrmtry etc/X11
+bin/enlightenment
+bin/enlightenment-config
+bin/enlightenment_fm
+bin/enlightenment_imc
+bin/enlightenment_init
+bin/enlightenment_remote
+bin/enlightenment_start
+bin/enlightenment_sys
+bin/enlightenment_thumb
+%%ETCDIR%%/sysactions.conf
+include/enlightenment/e.h
+include/enlightenment/e_about.h
+include/enlightenment/e_actions.h
+include/enlightenment/e_alert.h
+include/enlightenment/e_atoms.h
+include/enlightenment/e_bg.h
+include/enlightenment/e_bindings.h
+include/enlightenment/e_border.h
+include/enlightenment/e_box.h
+include/enlightenment/e_canvas.h
+include/enlightenment/e_color.h
+include/enlightenment/e_color_class.h
+include/enlightenment/e_color_dialog.h
+include/enlightenment/e_config.h
+include/enlightenment/e_config_data.h
+include/enlightenment/e_config_dialog.h
+include/enlightenment/e_configure.h
+include/enlightenment/e_confirm_dialog.h
+include/enlightenment/e_container.h
+include/enlightenment/e_datastore.h
+include/enlightenment/e_desk.h
+include/enlightenment/e_desklock.h
+include/enlightenment/e_dialog.h
+include/enlightenment/e_dnd.h
+include/enlightenment/e_dpms.h
+include/enlightenment/e_eap_editor.h
+include/enlightenment/e_editable.h
+include/enlightenment/e_entry.h
+include/enlightenment/e_entry_dialog.h
+include/enlightenment/e_error.h
+include/enlightenment/e_exec.h
+include/enlightenment/e_exehist.h
+include/enlightenment/e_filereg.h
+include/enlightenment/e_flowlayout.h
+include/enlightenment/e_fm.h
+include/enlightenment/e_fm_custom.h
+include/enlightenment/e_fm_hal.h
+include/enlightenment/e_fm_mime.h
+include/enlightenment/e_fm_prop.h
+include/enlightenment/e_fm_shared.h
+include/enlightenment/e_focus.h
+include/enlightenment/e_font.h
+include/enlightenment/e_gadcon.h
+include/enlightenment/e_gadcon_popup.h
+include/enlightenment/e_grabinput.h
+include/enlightenment/e_hints.h
+include/enlightenment/e_icon.h
+include/enlightenment/e_ilist.h
+include/enlightenment/e_includes.h
+include/enlightenment/e_init.h
+include/enlightenment/e_int_border_locks.h
+include/enlightenment/e_int_border_menu.h
+include/enlightenment/e_int_border_prop.h
+include/enlightenment/e_int_border_remember.h
+include/enlightenment/e_int_config_modules.h
+include/enlightenment/e_int_gadcon_config.h
+include/enlightenment/e_int_menus.h
+include/enlightenment/e_int_shelf_config.h
+include/enlightenment/e_int_toolbar_config.h
+include/enlightenment/e_intl.h
+include/enlightenment/e_intl_data.h
+include/enlightenment/e_ipc.h
+include/enlightenment/e_ipc_codec.h
+include/enlightenment/e_ipc_handlers.h
+include/enlightenment/e_ipc_handlers_list.h
+include/enlightenment/e_layout.h
+include/enlightenment/e_livethumb.h
+include/enlightenment/e_manager.h
+include/enlightenment/e_maximize.h
+include/enlightenment/e_menu.h
+include/enlightenment/e_mmx.h
+include/enlightenment/e_module.h
+include/enlightenment/e_mouse.h
+include/enlightenment/e_moveresize.h
+include/enlightenment/e_msg.h
+include/enlightenment/e_msgbus.h
+include/enlightenment/e_obj_dialog.h
+include/enlightenment/e_object.h
+include/enlightenment/e_order.h
+include/enlightenment/e_pan.h
+include/enlightenment/e_path.h
+include/enlightenment/e_place.h
+include/enlightenment/e_pointer.h
+include/enlightenment/e_popup.h
+include/enlightenment/e_powersave.h
+include/enlightenment/e_prefix.h
+include/enlightenment/e_remember.h
+include/enlightenment/e_resist.h
+include/enlightenment/e_screensaver.h
+include/enlightenment/e_scrollframe.h
+include/enlightenment/e_sha1.h
+include/enlightenment/e_shelf.h
+include/enlightenment/e_signals.h
+include/enlightenment/e_slider.h
+include/enlightenment/e_spectrum.h
+include/enlightenment/e_startup.h
+include/enlightenment/e_stolen.h
+include/enlightenment/e_sys.h
+include/enlightenment/e_table.h
+include/enlightenment/e_test.h
+include/enlightenment/e_theme.h
+include/enlightenment/e_theme_about.h
+include/enlightenment/e_thumb.h
+include/enlightenment/e_tlist.h
+include/enlightenment/e_toolbar.h
+include/enlightenment/e_user.h
+include/enlightenment/e_utils.h
+include/enlightenment/e_widget.h
+include/enlightenment/e_widget_aspect.h
+include/enlightenment/e_widget_button.h
+include/enlightenment/e_widget_check.h
+include/enlightenment/e_widget_color_well.h
+include/enlightenment/e_widget_config_list.h
+include/enlightenment/e_widget_csel.h
+include/enlightenment/e_widget_cslider.h
+include/enlightenment/e_widget_desk_preview.h
+include/enlightenment/e_widget_entry.h
+include/enlightenment/e_widget_font_preview.h
+include/enlightenment/e_widget_framelist.h
+include/enlightenment/e_widget_frametable.h
+include/enlightenment/e_widget_fsel.h
+include/enlightenment/e_widget_ilist.h
+include/enlightenment/e_widget_image.h
+include/enlightenment/e_widget_label.h
+include/enlightenment/e_widget_list.h
+include/enlightenment/e_widget_preview.h
+include/enlightenment/e_widget_radio.h
+include/enlightenment/e_widget_scrollframe.h
+include/enlightenment/e_widget_slider.h
+include/enlightenment/e_widget_spectrum.h
+include/enlightenment/e_widget_table.h
+include/enlightenment/e_widget_textblock.h
+include/enlightenment/e_widget_tlist.h
+include/enlightenment/e_win.h
+include/enlightenment/e_xinerama.h
+include/enlightenment/e_zone.h
+lib/enlightenment/modules/battery/e-module-battery.edj
+lib/enlightenment/modules/battery/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/battery/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/battery/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/battery/module.desktop
+lib/enlightenment/modules/clock/e-module-clock.edj
+lib/enlightenment/modules/clock/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/clock/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/clock/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/clock/module.desktop
+lib/enlightenment/modules/conf/e-module-conf.edj
+lib/enlightenment/modules/conf/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf/module.desktop
+lib/enlightenment/modules/conf_applications/e-module-conf_applications.edj
+lib/enlightenment/modules/conf_applications/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_applications/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_applications/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_applications/module.desktop
+lib/enlightenment/modules/conf_borders/e-module-conf_borders.edj
+lib/enlightenment/modules/conf_borders/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_borders/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_borders/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_borders/module.desktop
+lib/enlightenment/modules/conf_clientlist/e-module-conf_clientlist.edj
+lib/enlightenment/modules/conf_clientlist/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_clientlist/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_clientlist/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_clientlist/module.desktop
+lib/enlightenment/modules/conf_colors/e-module-conf_colors.edj
+lib/enlightenment/modules/conf_colors/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_colors/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_colors/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_colors/module.desktop
+lib/enlightenment/modules/conf_desk/e-module-conf_desk.edj
+lib/enlightenment/modules/conf_desk/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_desk/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_desk/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_desk/module.desktop
+lib/enlightenment/modules/conf_desklock/e-module-conf_desklock.edj
+lib/enlightenment/modules/conf_desklock/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_desklock/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_desklock/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_desklock/module.desktop
+lib/enlightenment/modules/conf_desks/e-module-conf_desks.edj
+lib/enlightenment/modules/conf_desks/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_desks/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_desks/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_desks/module.desktop
+lib/enlightenment/modules/conf_dialogs/e-module-conf_dialogs.edj
+lib/enlightenment/modules/conf_dialogs/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_dialogs/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_dialogs/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_dialogs/module.desktop
+lib/enlightenment/modules/conf_display/e-module-conf_display.edj
+lib/enlightenment/modules/conf_display/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_display/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_display/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_display/module.desktop
+lib/enlightenment/modules/conf_dpms/e-module-conf_dpms.edj
+lib/enlightenment/modules/conf_dpms/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_dpms/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_dpms/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_dpms/module.desktop
+lib/enlightenment/modules/conf_engine/e-module-conf_engine.edj
+lib/enlightenment/modules/conf_engine/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_engine/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_engine/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_engine/module.desktop
+lib/enlightenment/modules/conf_exebuf/e-module-conf_exebuf.edj
+lib/enlightenment/modules/conf_exebuf/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_exebuf/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_exebuf/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_exebuf/module.desktop
+lib/enlightenment/modules/conf_fonts/e-module-conf_fonts.edj
+lib/enlightenment/modules/conf_fonts/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_fonts/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_fonts/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_fonts/module.desktop
+lib/enlightenment/modules/conf_icon_theme/e-module-conf_icon_theme.edj
+lib/enlightenment/modules/conf_icon_theme/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_icon_theme/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_icon_theme/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_icon_theme/module.desktop
+lib/enlightenment/modules/conf_imc/e-module-conf_imc.edj
+lib/enlightenment/modules/conf_imc/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_imc/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_imc/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_imc/module.desktop
+lib/enlightenment/modules/conf_interaction/e-module-conf_interaction.edj
+lib/enlightenment/modules/conf_interaction/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_interaction/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_interaction/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_interaction/module.desktop
+lib/enlightenment/modules/conf_intl/e-module-conf_intl.edj
+lib/enlightenment/modules/conf_intl/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_intl/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_intl/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_intl/module.desktop
+lib/enlightenment/modules/conf_keybindings/e-module-conf_keybindings.edj
+lib/enlightenment/modules/conf_keybindings/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_keybindings/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_keybindings/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_keybindings/module.desktop
+lib/enlightenment/modules/conf_menus/e-module-conf_menus.edj
+lib/enlightenment/modules/conf_menus/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_menus/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_menus/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_menus/module.desktop
+lib/enlightenment/modules/conf_mime/e-module-conf_mime.edj
+lib/enlightenment/modules/conf_mime/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_mime/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_mime/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_mime/module.desktop
+lib/enlightenment/modules/conf_mouse/e-module-conf_mouse.edj
+lib/enlightenment/modules/conf_mouse/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_mouse/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_mouse/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_mouse/module.desktop
+lib/enlightenment/modules/conf_mouse_cursor/e-module-conf_mouse_cursor.edj
+lib/enlightenment/modules/conf_mouse_cursor/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_mouse_cursor/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_mouse_cursor/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_mouse_cursor/module.desktop
+lib/enlightenment/modules/conf_mousebindings/e-module-conf_mousebindings.edj
+lib/enlightenment/modules/conf_mousebindings/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_mousebindings/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_mousebindings/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_mousebindings/module.desktop
+lib/enlightenment/modules/conf_paths/e-module-conf_paths.edj
+lib/enlightenment/modules/conf_paths/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_paths/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_paths/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_paths/module.desktop
+lib/enlightenment/modules/conf_performance/e-module-conf_performance.edj
+lib/enlightenment/modules/conf_performance/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_performance/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_performance/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_performance/module.desktop
+lib/enlightenment/modules/conf_profiles/e-module-conf_profiles.edj
+lib/enlightenment/modules/conf_profiles/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_profiles/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_profiles/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_profiles/module.desktop
+lib/enlightenment/modules/conf_screensaver/e-module-conf_screensaver.edj
+lib/enlightenment/modules/conf_screensaver/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_screensaver/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_screensaver/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_screensaver/module.desktop
+lib/enlightenment/modules/conf_shelves/e-module-conf_shelves.edj
+lib/enlightenment/modules/conf_shelves/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_shelves/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_shelves/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_shelves/module.desktop
+lib/enlightenment/modules/conf_startup/e-module-conf_startup.edj
+lib/enlightenment/modules/conf_startup/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_startup/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_startup/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_startup/module.desktop
+lib/enlightenment/modules/conf_theme/e-module-conf_theme.edj
+lib/enlightenment/modules/conf_theme/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_theme/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_theme/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_theme/module.desktop
+lib/enlightenment/modules/conf_transitions/e-module-conf_transitions.edj
+lib/enlightenment/modules/conf_transitions/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_transitions/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_transitions/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_transitions/module.desktop
+lib/enlightenment/modules/conf_wallpaper/e-module-conf_wallpaper.edj
+lib/enlightenment/modules/conf_wallpaper/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_wallpaper/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_wallpaper/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_wallpaper/module.desktop
+lib/enlightenment/modules/conf_window_display/e-module-conf_window_display.edj
+lib/enlightenment/modules/conf_window_display/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_window_display/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_window_display/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_window_display/module.desktop
+lib/enlightenment/modules/conf_window_focus/e-module-conf_window_focus.edj
+lib/enlightenment/modules/conf_window_focus/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_window_focus/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_window_focus/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_window_focus/module.desktop
+lib/enlightenment/modules/conf_window_manipulation/e-module-conf_winmanip.edj
+lib/enlightenment/modules/conf_window_manipulation/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_window_manipulation/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_window_manipulation/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_window_manipulation/module.desktop
+lib/enlightenment/modules/conf_winlist/e-module-conf_winlist.edj
+lib/enlightenment/modules/conf_winlist/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/conf_winlist/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/conf_winlist/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_winlist/module.desktop
+lib/enlightenment/modules/cpufreq/e-module-cpufreq.edj
+lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/freqset
+lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/cpufreq/module.desktop
+lib/enlightenment/modules/dropshadow/e-module-dropshadow.edj
+lib/enlightenment/modules/dropshadow/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/dropshadow/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/dropshadow/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/dropshadow/module.desktop
+lib/enlightenment/modules/exebuf/e-module-exebuf.edj
+lib/enlightenment/modules/exebuf/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/exebuf/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/exebuf/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/exebuf/module.desktop
+lib/enlightenment/modules/fileman/e-module-fileman.edj
+lib/enlightenment/modules/fileman/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/fileman/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/fileman/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/fileman/module.desktop
+lib/enlightenment/modules/ibar/e-module-ibar.edj
+lib/enlightenment/modules/ibar/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/ibar/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/ibar/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/ibar/module.desktop
+lib/enlightenment/modules/ibox/e-module-ibox.edj
+lib/enlightenment/modules/ibox/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/ibox/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/ibox/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/ibox/module.desktop
+lib/enlightenment/modules/layout/e-module-layout.edj
+lib/enlightenment/modules/layout/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/layout/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/layout/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/layout/module.desktop
+lib/enlightenment/modules/msgbus_lang/e-module-msgbus_lang.edj
+lib/enlightenment/modules/msgbus_lang/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/msgbus_lang/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/msgbus_lang/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/msgbus_lang/module.desktop
+lib/enlightenment/modules/pager/e-module-pager.edj
+lib/enlightenment/modules/pager/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/pager/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/pager/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/pager/module.desktop
+lib/enlightenment/modules/start/e-module-start.edj
+lib/enlightenment/modules/start/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/start/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/start/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/start/module.desktop
+lib/enlightenment/modules/temperature/e-module-temperature.edj
+lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/temperature/%%E17_ARCH%%/tempget
+lib/enlightenment/modules/temperature/module.desktop
+lib/enlightenment/modules/winlist/e-module-winlist.edj
+lib/enlightenment/modules/winlist/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/winlist/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/winlist/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/winlist/module.desktop
+lib/enlightenment/modules/wizard/e-module-wizard.edj
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_000.a
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_000.la
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_000.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_010.a
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_010.la
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_010.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_020.a
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_020.la
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_020.so
+lib/enlightenment/modules/wizard/module.desktop
+lib/enlightenment/preload/e_precache.a
+lib/enlightenment/preload/e_precache.la
+lib/enlightenment/preload/e_precache.so
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/COPYING
+%%DATADIR%%/data/backgrounds/Blue_Sky_Tree.edj
+%%DATADIR%%/data/backgrounds/Cracked_Earth.edj
+%%DATADIR%%/data/backgrounds/Ivy_Wall.edj
+%%DATADIR%%/data/backgrounds/Ladybug.edj
+%%DATADIR%%/data/fonts/Vera.COPYING
+%%DATADIR%%/data/fonts/Vera.ttf
+%%DATADIR%%/data/fonts/VeraBI.ttf
+%%DATADIR%%/data/fonts/VeraBd.ttf
+%%DATADIR%%/data/fonts/VeraIt.ttf
+%%DATADIR%%/data/fonts/VeraMoBI.ttf
+%%DATADIR%%/data/fonts/VeraMoBd.ttf
+%%DATADIR%%/data/fonts/VeraMoIt.ttf
+%%DATADIR%%/data/fonts/VeraMono.ttf
+%%DATADIR%%/data/fonts/VeraSe.ttf
+%%DATADIR%%/data/fonts/VeraSeBd.ttf
+%%DATADIR%%/data/fonts/fonts.alias
+%%DATADIR%%/data/fonts/fonts.dir
+%%DATADIR%%/data/icons/audio_player.png
+%%DATADIR%%/data/icons/audio_player2.png
+%%DATADIR%%/data/icons/image_viewer.png
+%%DATADIR%%/data/icons/mail_client.png
+%%DATADIR%%/data/icons/text_editor.png
+%%DATADIR%%/data/icons/video_player.png
+%%DATADIR%%/data/icons/web_browser.png
+%%DATADIR%%/data/icons/xterm.png
+%%DATADIR%%/data/images/enlightenment.png
+%%DATADIR%%/data/images/test.edj
+%%DATADIR%%/data/images/test.jpg
+%%DATADIR%%/data/images/test.png
+%%DATADIR%%/data/init/default.edj
+%%DATADIR%%/data/input_methods/iiimf.imc
+%%DATADIR%%/data/input_methods/scim.imc
+%%DATADIR%%/data/input_methods/uim.imc
+%%DATADIR%%/data/other/desktop_files.tar.gz
+%%DATADIR%%/data/other/desktop_order.tar.gz
+%%DATADIR%%/data/other/efm_favorites.tar.gz
+%%DATADIR%%/data/other/icon_example.tar.gz
+%%DATADIR%%/data/themes/default.edj
+%%DATADIR%%/doc/FDO.txt
+%%DATADIR%%/doc/cache.txt
+%%DATADIR%%/doc/documentation.html
+%%DATADIR%%/doc/enlightenment.png
+share/locale/bg/LC_MESSAGES/enlightenment.mo
+share/locale/ca/LC_MESSAGES/enlightenment.mo
+share/locale/de/LC_MESSAGES/enlightenment.mo
+share/locale/eo/LC_MESSAGES/enlightenment.mo
+share/locale/es/LC_MESSAGES/enlightenment.mo
+share/locale/fi/LC_MESSAGES/enlightenment.mo
+share/locale/fr/LC_MESSAGES/enlightenment.mo
+share/locale/fr_CH/LC_MESSAGES/enlightenment.mo
+share/locale/hu/LC_MESSAGES/enlightenment.mo
+share/locale/it/LC_MESSAGES/enlightenment.mo
+share/locale/ja/LC_MESSAGES/enlightenment.mo
+share/locale/ko/LC_MESSAGES/enlightenment.mo
+share/locale/pt_BR/LC_MESSAGES/enlightenment.mo
+share/locale/ru/LC_MESSAGES/enlightenment.mo
+share/locale/sl/LC_MESSAGES/enlightenment.mo
+share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
+share/locale/zh_TW/LC_MESSAGES/enlightenment.mo
+share/xsessions/enlightenment.desktop
 @dirrmtry share/xsessions
-@dirrmtry share/applications
+@dirrmtry share/locale/fr_CH/LC_MESSAGES
+@dirrmtry share/locale/fr_CH
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/data/themes
+@dirrm %%DATADIR%%/data/other
+@dirrm %%DATADIR%%/data/input_methods
+@dirrm %%DATADIR%%/data/init
+@dirrm %%DATADIR%%/data/images
+@dirrm %%DATADIR%%/data/icons
+@dirrm %%DATADIR%%/data/fonts
+@dirrm %%DATADIR%%/data/backgrounds
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+@dirrm lib/enlightenment/preload
+@dirrm lib/enlightenment/modules/wizard/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/wizard
+@dirrm lib/enlightenment/modules/winlist/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/winlist
+@dirrm lib/enlightenment/modules/temperature/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/temperature
+@dirrm lib/enlightenment/modules/start/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/start
+@dirrm lib/enlightenment/modules/pager/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/pager
+@dirrm lib/enlightenment/modules/msgbus_lang/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/msgbus_lang
+@dirrm lib/enlightenment/modules/layout/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/layout
+@dirrm lib/enlightenment/modules/ibox/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/ibox
+@dirrm lib/enlightenment/modules/ibar/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/ibar
+@dirrm lib/enlightenment/modules/fileman/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/fileman
+@dirrm lib/enlightenment/modules/exebuf/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/exebuf
+@dirrm lib/enlightenment/modules/dropshadow/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/dropshadow
+@dirrm lib/enlightenment/modules/cpufreq/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/cpufreq
+@dirrm lib/enlightenment/modules/conf_winlist/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_winlist
+@dirrm lib/enlightenment/modules/conf_window_manipulation/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_window_manipulation
+@dirrm lib/enlightenment/modules/conf_window_focus/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_window_focus
+@dirrm lib/enlightenment/modules/conf_window_display/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_window_display
+@dirrm lib/enlightenment/modules/conf_wallpaper/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_wallpaper
+@dirrm lib/enlightenment/modules/conf_transitions/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_transitions
+@dirrm lib/enlightenment/modules/conf_theme/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_theme
+@dirrm lib/enlightenment/modules/conf_startup/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_startup
+@dirrm lib/enlightenment/modules/conf_shelves/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_shelves
+@dirrm lib/enlightenment/modules/conf_screensaver/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_screensaver
+@dirrm lib/enlightenment/modules/conf_profiles/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_profiles
+@dirrm lib/enlightenment/modules/conf_performance/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_performance
+@dirrm lib/enlightenment/modules/conf_paths/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_paths
+@dirrm lib/enlightenment/modules/conf_mousebindings/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_mousebindings
+@dirrm lib/enlightenment/modules/conf_mouse_cursor/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_mouse_cursor
+@dirrm lib/enlightenment/modules/conf_mouse/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_mouse
+@dirrm lib/enlightenment/modules/conf_mime/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_mime
+@dirrm lib/enlightenment/modules/conf_menus/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_menus
+@dirrm lib/enlightenment/modules/conf_keybindings/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_keybindings
+@dirrm lib/enlightenment/modules/conf_intl/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_intl
+@dirrm lib/enlightenment/modules/conf_interaction/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_interaction
+@dirrm lib/enlightenment/modules/conf_imc/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_imc
+@dirrm lib/enlightenment/modules/conf_icon_theme/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_icon_theme
+@dirrm lib/enlightenment/modules/conf_fonts/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_fonts
+@dirrm lib/enlightenment/modules/conf_exebuf/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_exebuf
+@dirrm lib/enlightenment/modules/conf_engine/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_engine
+@dirrm lib/enlightenment/modules/conf_dpms/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_dpms
+@dirrm lib/enlightenment/modules/conf_display/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_display
+@dirrm lib/enlightenment/modules/conf_dialogs/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_dialogs
+@dirrm lib/enlightenment/modules/conf_desks/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_desks
+@dirrm lib/enlightenment/modules/conf_desklock/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_desklock
+@dirrm lib/enlightenment/modules/conf_desk/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_desk
+@dirrm lib/enlightenment/modules/conf_colors/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_colors
+@dirrm lib/enlightenment/modules/conf_clientlist/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_clientlist
+@dirrm lib/enlightenment/modules/conf_borders/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_borders
+@dirrm lib/enlightenment/modules/conf_applications/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_applications
+@dirrm lib/enlightenment/modules/conf/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf
+@dirrm lib/enlightenment/modules/clock/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/clock
+@dirrm lib/enlightenment/modules/battery/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/battery
+@dirrm lib/enlightenment/modules
+@dirrm lib/enlightenment
+@dirrm include/enlightenment
+@dirrmtry %%ETCDIR%%

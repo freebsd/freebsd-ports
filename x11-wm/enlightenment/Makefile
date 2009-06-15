@@ -6,50 +6,36 @@
 #
 
 PORTNAME=	enlightenment
-DISTVERSION=	0.16.8.15.${E16_SNAPSHOT}
+PORTVERSION=	0.16.999.042
+PORTREVISION=	2
+PORTEPOCH=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF
-DISTNAME=	e16-${DISTVERSION}
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		http://download.enlightenment.org/snapshots/2008-01-25/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
-DATADIR=	${PREFIX}/share/e16
-DOCSDIR=	${PREFIX}/share/doc/e16
-E16_SNAPSHOT=	002
-
-USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
-		xext xfixes xft xinerama xrandr xrender xxf86vm
-USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_EFL=	imlib2
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-esdtest --disable-dependency-tracking \
-		--disable-rpath
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-PORTSCOUT=	limit:0.16.8.14-*
-
-.if !defined(WITHOUT_ESOUND)
-USE_GNOME=	esound
-.else
-CONFIGURE_ARGS+=--disable-sound
-.endif
-
-.if !defined(WITHOUT_NLS)
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_EFL=	imlib2 evas edje ecore embryo eet efreet edbus
+USE_EFL_ECORE=	evas config file ipc con job txt imf imf_evas
+USE_EFL_EVAS_LOADERS=	edb eet jpeg png
+USE_ICONV=	yes
 USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+USE_LDCONFIG=	yes
+NO_LATEST_LINK=	yes
+GNU_CONFIGURE=	yes
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto
-CONFIGURE_ARGS+=--enable-docs=yes
-.else
-CONFIGURE_ARGS+=--enable-docs=no
-.endif
+post-install:
+	@${ECHO_MSG} '********************************************************'
+	@${ECHO_MSG} 'NOTE: If you want "Shutdown" and "Restart"'
+	@${ECHO_MSG} 'menu actions to work properly, manually set SUID bit'
+	@${ECHO_MSG} 'on "${PREFIX}/bin/enlightenment_sys" executable.'
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'WARNING: this program might be vulnerable so do not'
+	@${ECHO_MSG} 'set suid bit if do not trust all users of this machine.'
+	@${ECHO_MSG} '********************************************************'
 
 .include <bsd.port.mk>

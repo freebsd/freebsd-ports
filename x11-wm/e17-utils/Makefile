@@ -38,16 +38,16 @@ IGNORE=		select at least one utility to install
 .endif
 
 .if !defined(WITHOUT_SETROOT)
-BUILD_DEPENDS+=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
-RUN_DEPENDS+=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
+BUILD_DEPENDS+=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS+=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 PLIST_SUB+=	SETROOT=""
 .else
 PLIST_SUB+=	SETROOT="@comment "
 .endif
 
 .if !defined(WITHOUT_ENTANGLE)
-BUILD_DEPENDS+=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
-RUN_DEPENDS+=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
+BUILD_DEPENDS+=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS+=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 USE_EFL+=	edje eet
 USE_EFL_ESMART+=	container text_entry
 PLIST_SUB+=	ENTANGLE=""
