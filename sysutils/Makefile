@@ -45,6 +45,8 @@
     SUBDIR += autopsy
     SUBDIR += avfs
     SUBDIR += b43-fwcutter
+    SUBDIR += bacula2-client
+    SUBDIR += bacula2-server
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-devel
