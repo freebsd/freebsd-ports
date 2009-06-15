@@ -1,6 +1,12 @@
 %%SITE_PERL%%/Imager/Graph.pm
+%%SITE_PERL%%/Imager/Graph/Bar.pm
+%%SITE_PERL%%/Imager/Graph/Column.pm
+%%SITE_PERL%%/Imager/Graph/Horizontal.pm
+%%SITE_PERL%%/Imager/Graph/Line.pm
 %%SITE_PERL%%/Imager/Graph/Pie.pm
+%%SITE_PERL%%/Imager/Graph/StackedColumn.pm
 %%SITE_PERL%%/Imager/Graph/Util.pm
+%%SITE_PERL%%/Imager/Graph/Vertical.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Graph/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Graph
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
