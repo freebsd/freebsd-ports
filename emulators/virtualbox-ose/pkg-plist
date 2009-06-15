@@ -23,6 +23,7 @@ lib/virtualbox/VBoxOGLhosterrorspu.so
 lib/virtualbox/VBoxOGLrenderspu.so
 lib/virtualbox/VBoxPython.so
 lib/virtualbox/VBoxREM.so
+lib/virtualbox/VBoxTestOGL
 %%I386%%lib/virtualbox/VBoxREM32.so
 %%I386%%lib/virtualbox/VBoxREM64.so
 lib/virtualbox/VBoxRT.so

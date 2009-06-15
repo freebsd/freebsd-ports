@@ -7,6 +7,7 @@
 
 PORTNAME=	virtualbox
 DISTVERSION=	2.2.51.r20457
+PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -61,7 +62,7 @@ OPTIONS=	QT4 "Build with QT4 Frontend" on \
 .include <bsd.port.options.mk>
 
 KMODDIR=	/boot/modules
-PLIST_SUB+=	KMODDIR=${KMODDIR}
+PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS=
@@ -157,7 +158,7 @@ do-install:
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 components" ${PREFIX}/lib/virtualbox)
 
 	${MKDIR} ${PREFIX}/bin
-.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS}
+.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS} VBoxTestOGL
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/$f ${PREFIX}/lib/virtualbox/
 	${LN} -sf ${PREFIX}/lib/virtualbox/${f} ${PREFIX}/bin/
 .endfor
