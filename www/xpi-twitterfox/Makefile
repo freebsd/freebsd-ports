@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twitterfox
-PORTVERSION=	1.7.7.1
+PORTVERSION=	1.8.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -15,9 +15,13 @@ COMMENT=	twitterFox firefox plugin.
 
 XPI_NUM=	5081
 XPI_ID=		twitternotifier@naan.net
-XPI_FILES=	chrome/TwitterFox.jar chrome.manifest components/nsITwitterNotifier.xpt \
-		components/nsTwitterNotifier.js defaults/preferences/twitternotifier.js \
-		install.rdf
+XPI_FILES=	LICENSE.rtf chrome/TwitterFox.jar chrome.manifest \
+		components/nsITwitterFox.xpt components/nsITwitterFoxDatabase.xpt \
+		components/nsITwitterFoxHttpRequest.xpt components/nsTwitterFox.js \
+		components/nsTwitterFoxDatabase.js \
+		components/nsTwitterFoxHttpRequest.js \
+		defaults/preferences/twitternotifier.js \
+		defaults/twitterfox_1.8.sqlite install.rdf 
 XPI_DIRS=	chrome components defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
