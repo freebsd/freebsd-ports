@@ -6,4 +6,4 @@
 %%SIP%%share/py-sip/QtSvg/qsvgwidget.sip
 %%API%%share/qt4/qsci/api/python/QtSvg.api
 %%SIP%%@dirrm share/py-sip/QtSvg
-@dirrm %%PYTHON_SITELIBDIR%%/PyQt4
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

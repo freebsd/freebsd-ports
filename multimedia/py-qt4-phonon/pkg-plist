@@ -20,4 +20,4 @@
 %%SIP%%share/py-sip/phonon/volumeslider.sip
 %%API%%share/qt4/qsci/api/python/phonon.api
 %%SIP%%@dirrm share/py-sip/phonon
-@dirrm %%PYTHON_SITELIBDIR%%/PyQt4
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4
