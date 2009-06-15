@@ -10,7 +10,7 @@ PORTNAME=	webglimpse
 PORTVERSION=	1.6
 CATEGORIES=	www textproc
 MASTER_SITES=	ftp://ftp.deva.net/pub/sources/ir/glimpse/
-DISTNAME=	${PKGNAME}.src
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	WWW interface to Glimpse search engine
