@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biblio-py
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP \
 		http://cabcat2.cnea.gov.ar/staff/fiol/
