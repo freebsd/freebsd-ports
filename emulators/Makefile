@@ -173,6 +173,7 @@
     SUBDIR += vgb-bin
     SUBDIR += vgba-bin
     SUBDIR += vice
+    SUBDIR += virtualbox
     SUBDIR += visualos
     SUBDIR += vmips
     SUBDIR += vmsbackup

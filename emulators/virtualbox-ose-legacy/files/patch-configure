@@ -1,0 +1,11 @@
+--- configure.orgi	2009-05-31 13:43:50.000000000 +0200
++++ configure	2009-05-31 13:45:47.000000000 +0200
+@@ -1698,7 +1698,7 @@
+         cat $ODIR.tmp_src.cc >> $LOG
+         echo "using the following command line:" >> $LOG
+         echo "$CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so" >> $LOG
+-        $CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so >> $LOG 2>&1
++        $CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so -pthread >> $LOG 2>&1
+         if [ $? -eq 0 ]; then
+           found=1
+           break
