@@ -5,3 +5,4 @@ lib/libcares.a
 lib/libcares.la
 lib/libcares.so
 lib/libcares.so.%%SHLIB_VER%%
+libdata/pkgconfig/libcares.pc

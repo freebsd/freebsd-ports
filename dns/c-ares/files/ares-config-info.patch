@@ -1,8 +1,9 @@
-diff -urN -x .svn ../c-ares-stock-1.3.2/ares.h ./ares.h
---- ../c-ares-stock-1.3.2/ares.h	Wed Dec  6 11:28:12 2006
-+++ ./ares.h	Wed Dec  6 11:49:07 2006
-@@ -164,6 +164,14 @@
-   void *sock_state_cb_data;
+Add the ares_get_config() routine used by Unreal IRCd.
+
+--- ares.h.orig
++++ ares.h
+@@ -218,6 +218,14 @@
+   int nsort;
  };
  
 +/** Public available config (readonly) interface for ares_get_config(). */
@@ -16,7 +17,7 @@ diff -urN -x .svn ../c-ares-stock-1.3.2/ares.h ./ares.h
  struct hostent;
  struct timeval;
  struct sockaddr;
-@@ -216,7 +224,7 @@
+@@ -313,7 +321,7 @@
  void ares_free_string(void *str);
  void ares_free_hostent(struct hostent *host);
  const char *ares_strerror(int code);
@@ -25,11 +26,10 @@ diff -urN -x .svn ../c-ares-stock-1.3.2/ares.h ./ares.h
  #ifdef  __cplusplus
  }
  #endif
-diff -urN -x .svn ../c-ares-stock-1.3.2/ares_init.c ./ares_init.c
---- ../c-ares-stock-1.3.2/ares_init.c	Wed Dec  6 11:28:12 2006
-+++ ./ares_init.c	Wed Dec  6 11:49:07 2006
-@@ -1079,3 +1079,23 @@
-     pat->mask.addr.addr4.s_addr = htonl(IN_CLASSC_NET);
+--- ares_init.c.orig
++++ ares_init.c
+@@ -1478,6 +1478,26 @@
+     pat->mask.addr4.s_addr = htonl(IN_CLASSC_NET);
  }
  #endif
 +
@@ -39,7 +39,7 @@ diff -urN -x .svn ../c-ares-stock-1.3.2/ares_init.c ./ares_init.c
 +char *p;
 +
 +	memset(d, 0, sizeof(struct ares_config_info));
-+	
++
 +	d->timeout = c->timeout;
 +	d->tries = c->tries;
 +	d->numservers = c->nservers;
@@ -52,3 +52,6 @@ diff -urN -x .svn ../c-ares-stock-1.3.2/ares_init.c ./ares_init.c
 +
 +	return ARES_SUCCESS;
 +}
+ /* initialize an rc4 key. If possible a cryptographically secure random key
+    is generated using a suitable function (for example win32's RtlGenRandom as
+    described in

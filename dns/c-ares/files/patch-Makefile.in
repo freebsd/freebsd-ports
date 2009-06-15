@@ -1,0 +1,13 @@
+Place the pkgconfig file in the correct directory on FreeBSD.
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -283,7 +283,7 @@
+  config-win32.h RELEASE-NOTES libcares.pc.in buildconf get_ver.awk maketgz \
+  TODO
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libcares.pc
+ VER = -version-info 2:0:0
+ # This flag accepts an argument of the form current[:revision[:age]]. So,
