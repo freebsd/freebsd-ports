@@ -9,8 +9,9 @@ PORTNAME=	pciutils
 PORTVERSION=	3.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
-		ftp://ftp.kernel.org/pub/software/utils/pciutils/ \
+		${MASTER_SITE_KERNEL_ORG} \
 		ftp://metalab.unc.edu/pub/Linux/hardware/
+MASTER_SITE_SUBDIR=	software/utils/pciutils
 
 MAINTAINER=	sbahra@gwu.edu
 COMMENT=	PCI configuration utilities
