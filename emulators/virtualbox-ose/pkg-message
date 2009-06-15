@@ -1,0 +1,19 @@
+=============================================================================
+
+VirtualBox was installed.
+
+You need to load the vboxdrv kernel module and a mounted /proc filesystem.
+
+% mount -t procfs proc /proc
+% kldload vboxdrv
+
+You also have to add all users to your vboxusers group in order to use vbox.
+
+% pw groupmod vboxusers -m jerry
+
+Running VirtualBox as non-root user may fail with a fatal error 
+NS_ERROR_FACTORY_NOT_REGISTERED. In this case delete /tmp/.vbox-*-ipc file.
+
+Please report any problems to emulation@. Thanks!
+
+=============================================================================

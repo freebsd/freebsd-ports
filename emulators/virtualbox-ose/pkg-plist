@@ -1,0 +1,66 @@
+bin/VBoxBFE
+bin/VBoxHeadless
+bin/VBoxManage
+bin/VBoxNetDHCP
+bin/VBoxSDL
+bin/VBoxSVC
+bin/VBoxXPCOMIPCD
+%%QT4%%bin/VirtualBox
+lib/virtualbox/VBoxBFE
+lib/virtualbox/VBoxBFE.so
+lib/virtualbox/VBoxDD.so
+lib/virtualbox/VBoxDD2.so
+lib/virtualbox/VBoxDDU.so
+lib/virtualbox/VBoxGuestPropSvc.so
+lib/virtualbox/VBoxHeadless
+lib/virtualbox/VBoxHeadless.so
+%%QT4%%lib/virtualbox/VBoxKeyboard.so
+lib/virtualbox/VBoxManage
+lib/virtualbox/VBoxNetDHCP
+lib/virtualbox/VBoxNetDHCP.so
+lib/virtualbox/VBoxOGLhostcrutil.so
+lib/virtualbox/VBoxOGLhosterrorspu.so
+lib/virtualbox/VBoxOGLrenderspu.so
+lib/virtualbox/VBoxPython.so
+lib/virtualbox/VBoxREM.so
+%%I386%%lib/virtualbox/VBoxREM32.so
+%%I386%%lib/virtualbox/VBoxREM64.so
+lib/virtualbox/VBoxRT.so
+lib/virtualbox/VBoxSDL
+lib/virtualbox/VBoxSDL.so
+lib/virtualbox/VBoxSVC
+lib/virtualbox/VBoxSettings.so
+lib/virtualbox/VBoxSharedClipboard.so
+lib/virtualbox/VBoxSharedCrOpenGL.so
+lib/virtualbox/VBoxSharedFolders.so
+lib/virtualbox/VBoxVMM.so
+lib/virtualbox/VBoxXPCOM.so
+lib/virtualbox/VBoxXPCOMC.so
+lib/virtualbox/VBoxXPCOMIPCD
+%%QT4%%lib/virtualbox/VirtualBox
+%%QT4%%lib/virtualbox/VirtualBox.so
+lib/virtualbox/VBoxDD2GC.gc
+lib/virtualbox/VBoxDDGC.gc
+lib/virtualbox/VMMGC.gc
+lib/virtualbox/tstMicroGC.gc
+lib/virtualbox/VBoxDD2R0.r0
+lib/virtualbox/VBoxDDR0.r0
+%%GUESTADDITIONS%%lib/virtualbox/VBoxGuestAdditions.iso
+%%GUESTADDITIONS%%lib/virtualbox/VBoxGuestAdditions_2.2.4.iso
+lib/virtualbox/VMMR0.r0
+lib/virtualbox/components/VirtualBox_XPCOM.xpt
+lib/virtualbox/components/VBoxXPCOMIPCC.so
+lib/virtualbox/components/VBoxSVCM.so
+lib/virtualbox/components/VBoxC.so
+lib/virtualbox/components/VBoxXPCOMBase.xpt
+%%QT4%%share/applications/virtualbox.desktop
+%%QT4%%share/icons/hicolor/48x48/apps/VBox.png
+%%QT4%%@dirrmtry share/icons/hicolor/48x48/apps
+%%QT4%%@dirrmtry share/icons/hicolor/48x48
+%%QT4%%@dirrmtry share/icons/hicolor
+%%QT4%%@dirrmtry share/icons
+%%QT4%%@dirrmtry share/applications
+@dirrm lib/virtualbox/components
+@dirrm lib/virtualbox
+@cwd /
+%%KMODDIR%%/vboxdrv.ko
