@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_UML
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	devel
 
 MAINTAINER=	wenheping@gmail.com
@@ -40,7 +40,8 @@ FILES=		UML.php \
 		UML/Output/html/package-summary.xsl UML/Output/html/resources/inherit.gif \
 		UML/Output/html/resources/style.css UML/Output/php/classifier.xsl \
 		UML/Output/php/code-common.xsl UML/Output/php/code-generator.xsl \
-		UML/Output/php/main.xsl UML/PHP/Parser.php \
+		UML/Output/php/main.xsl UML/Output/xmi1to2.xsl\
+		UML/PHP/Parser.php \
 		UML/XMI/AbstractBuilder.php UML/XMI/Builder.php \
 		UML/XMI/BuilderImpl1.php UML/XMI/BuilderImpl2.php
 DOCS=		LOGICIELS_A_UTILISER_AVEC_PHP_UML \
