@@ -31,8 +31,8 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		iconv.1
 MAN3=		iconv.3 iconv_open.3 iconv_open_into.3 iconv_close.3 iconvctl.3
 
-OPTIONS=	EXTRA_ENCODINGS	"Include extra character sets" on
-#		EXTRA_PATCHES	"Apply patches to fix CP932 add EUCJP-MS" off
+OPTIONS=	EXTRA_ENCODINGS	"Include extra character sets" on \
+		EXTRA_PATCHES	"Apply patches to fix CP932 add EUCJP-MS" off
 
 .ifdef USE_ICONV
 .error USE_ICONV is defined as an environment variable, or in the arguments \
