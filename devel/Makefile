@@ -2021,6 +2021,7 @@
     SUBDIR += p5-XML-Compile-Tester
     SUBDIR += p5-XSLoader
     SUBDIR += p5-Yada-Yada-Yada
+    SUBDIR += p5-ZConf-GUI
     SUBDIR += p5-ZML
     SUBDIR += p5-accessors
     SUBDIR += p5-aliased

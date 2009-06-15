@@ -1,0 +1,12 @@
+A ZConf backed method of choosing a backend for a Perl module that
+has multiple backends.
+
+zcgui-get  	Gets the current preferred backends for a module.
+zcgui-gux 	Gets the value for useX.
+zcgui-la 	Lists available GUI backends for a ZConf::GUI compliant module.
+zcgui-lm 	Lists the modules that currently have preferences set.
+zcgui-set 	Set the preferred backends for a module.
+zcgui-sux 	Set the useX value for a module.
+zcgui-which 	Prints a list of the available preferred modules for a module.
+
+WWW: http://search.cpan.org/dist/ZConf-GUI/

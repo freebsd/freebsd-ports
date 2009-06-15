@@ -1,0 +1,12 @@
+bin/zcgui-set
+bin/zcgui-lm
+bin/zcgui-la
+bin/zcgui-which
+bin/zcgui-get
+bin/zcgui-sux
+bin/zcgui-gux
+%%SITE_PERL%%/ZConf/GUI.pm
+%%SITE_PERL%%/mach/auto/ZConf/GUI/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/ZConf/GUI
+@dirrmtry %%SITE_PERL%%/mach/auto/ZConf
+@dirrmtry %%SITE_PERL%%/ZConf/
