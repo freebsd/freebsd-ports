@@ -38,7 +38,7 @@
     SUBDIR += echinus
     SUBDIR += ede
     SUBDIR += emerald
-    SUBDIR += enlightenment-devel
+    SUBDIR += enlightenment
     SUBDIR += enlightenment-docs
     SUBDIR += epiwm
     SUBDIR += epplets

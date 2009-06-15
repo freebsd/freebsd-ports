@@ -36,8 +36,8 @@ USE_EFL+=	engrave
 .endif
 
 .if defined(WITH_ENLIGHTENMENT) || exists(${LOCALBASE}/bin/enlightenment_remote)
-BUILD_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment-devel
-RUN_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment-devel
+BUILD_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment
 .endif
 
 .include <bsd.port.post.mk>

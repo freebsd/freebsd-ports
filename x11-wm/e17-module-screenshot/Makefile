@@ -16,9 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An e17 module which allows users to take screenshots
 
-BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel \
+BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment \
 		emprint:${PORTSDIR}/x11/emprint
-RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel \
+RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment \
 		emprint:${PORTSDIR}/x11/emprint
 
 GNU_CONFIGURE=	yes

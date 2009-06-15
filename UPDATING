@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090615:
+  AFFECTS: users of x11-wm/enlightenment and x11-wm/enlightenment-devel
+  AUTHOR: gahr@FreeBSD.org
+
+  The development version of the Enlightenment window manager, a.k.a. E17, has
+  moved from x11-wm/enlightenment-devel to x11-wm/enlightenment. The DR16 branch
+  now resides in x11-wm/e16.
+
+20090615:
   AFFECTS: users of multimedia/mlt++
   AUTHOR: beat@FreeBSD.org
 

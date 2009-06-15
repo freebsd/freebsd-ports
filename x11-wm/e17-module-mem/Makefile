@@ -17,8 +17,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An e17 memory monitoring module
 
-BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
-RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
+BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

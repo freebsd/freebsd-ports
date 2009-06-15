@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.edj
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Fortune splash screen for e17 window manager
 
-RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
+RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
