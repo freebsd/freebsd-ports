@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.19.2
+PORTVERSION=	0.20.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -18,20 +18,54 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	XML
 FILES=		Serializer.php Unserializer.php
-EXAMPLES=	Serializer_Bug7112.php serializeWithDtd.php \
-		example.xml serializeWithIndentedAttributes.php \
-		serializeAndEncode.php serializeWithNamespace.php \
-		serializeAndReturn.php serializeWithTagMap.php \
-		serializeCData.php unserializeAnyXML.php \
-		serializeIndexedArray.php unserializeClassNames.php \
-		serializeIndexedArrayWithContext.php unserializeEncoded.php \
-		serializeNullProperties.php unserializeEnum.php \
-		serializeObject.php unserializeObject.php \
-		serializeRDF.php unserializeRDF.php \
-		serializeSelectiveAttributes.php unserializeWhitespace.php \
-		serializeWithAttributes.php unserializeWithAttributes.php \
-		serializeWithAttributes2.php unserializeWithTagMap.php \
-		serializeWithComment.php unserializeWithTypeGuessing.php
+EXAMPLES=	example.xml serializeAndEncode.php \
+		serializeAndReturn.php serializeCData.php \
+		serializeIndexedArray.php \
+		serializeIndexedArrayWithContext.php \
+		serializeNullProperties.php serializeObject.php \
+		serializeRDF.php Serializer_Bug7112.php \
+		serializeSelectiveAttributes.php \
+		serializeWithAttributes.php \
+		serializeWithAttributes2.php \
+		serializeWithComment.php serializeWithDtd.php \
+		serializeWithIndentedAttributes.php \
+		serializeWithNamespace.php serializeWithTagMap.php \
+		unserializeAnyXML.php unserializeClassNames.php \
+		unserializeEncoded.php unserializeEnum.php \
+		unserializeObject.php unserializeRDF.php \
+		unserializeWhitespace.php \
+		unserializeWithAttributes.php \
+		unserializeWithTagMap.php \
+		unserializeWithTypeGuessing.php
+TESTS=		req-13564.phpt bug-13896.phpt bug-15602.phpt \
+		Serializer_Arrays_TestCase.php \
+		Serializer_Objects_TestCase.php \
+		Serializer_Option_AttributesContent_TestCase.php \
+		Serializer_Option_CDataSections_TestCase.php \
+		Serializer_Option_ClassName_TestCase.php \
+		Serializer_Option_Comment_TestCase.php \
+		Serializer_Option_DocType_TestCase.php \
+		Serializer_Option_DefaultTag_TestCase.php \
+		Serializer_Option_EncodeFunc_TestCase.php \
+		Serializer_Option_IgnoreNull_TestCase.php \
+		Serializer_Option_Indent_TestCase.php \
+		Serializer_Option_Linebreaks_TestCase.php \
+		Serializer_Option_Mode_TestCase.php \
+		Serializer_Option_Namespace_TestCase.php \
+		Serializer_Option_ReturnResult_TestCase.php \
+		Serializer_Option_RootAttributes_TestCase.php \
+		Serializer_Option_RootName_TestCase.php \
+		Serializer_Option_TagMap_TestCase.php \
+		Serializer_Option_TypeHints_TestCase.php \
+		Serializer_Option_XmlDeclaration_TestCase.php \
+		Serializer_Scalars_TestCase.php \
+		show_ScalarAsAttributes_usage.phpt \
+		Unserializer_Arrays_TestCase.php \
+		Unserializer_Objects_TestCase.php \
+		Unserializer_Option_Encodings_TestCase.php \
+		Unserializer_Option_GuessTypes_TestCase.php \
+		Unserializer_Option_Whitespace_TestCase.php \
+		Unserializer_Scalars_TestCase.php
 DOCS=		todo.txt
 _DOCSDIR=	doc
 
