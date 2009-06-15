@@ -1,0 +1,6 @@
+Rubygem-geokit is a Ruby gem for maps-based apps. Provides geocoding
+through multiple providers with failover and geo distance calculations.
+Combine with the Rails plugin for IP-based location lookup and
+ActiveRecord extensions for geo-based finders.
+
+WWW: http://geokit.rubyforge.org/
