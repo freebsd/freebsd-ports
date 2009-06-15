@@ -7,7 +7,7 @@
 
 PORTNAME=	Unreal
 PORTVERSION=	3.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://unrealircd.pimpmylinux.org/ \
 		http://unrealircd.icedslash.com/
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Unreal - the next generation ircd
 
-LIB_DEPENDS=	cares.1:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS=	cares.2:${PORTSDIR}/dns/c-ares
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

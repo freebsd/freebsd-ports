@@ -8,7 +8,7 @@
 
 PORTNAME=	libevnet
 PORTVERSION=	0.3.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,7 @@ COMMENT=	Network Daemon Services for libevent
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libarena.a:${PORTSDIR}/devel/libarena
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
-		cares.1:${PORTSDIR}/dns/c-ares
+		cares.2:${PORTSDIR}/dns/c-ares
 RUN_DEPENDS=	${LOCALBASE}/lib/libarena.a:${PORTSDIR}/devel/libarena
 
 USE_OPENSSL=	yes
