@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Imager-Graph
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Imager::Graph.3 Imager::Graph::Util.3 Imager::Graph::Pie.3
+MAN3=	Imager::Graph.3 Imager::Graph::Bar.3 Imager::Graph::Column.3 \
+	Imager::Graph::Horizontal.3 Imager::Graph::Line.3 \
+	Imager::Graph::Pie.3 Imager::Graph::StackedColumn.3 \
+	Imager::Graph::Util.3 Imager::Graph::Vertical.3
 
 .include <bsd.port.mk>
