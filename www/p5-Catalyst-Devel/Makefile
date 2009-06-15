@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Devel
-PORTVERSION=	1.10
+PORTVERSION=	1.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,6 +31,7 @@ PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Helper.3 \
 	Module::Install::Catalyst.3 \
-	Catalyst::Devel.3
+	Catalyst::Devel.3 \
+	Catalyst::Restarter.3
 
 .include <bsd.port.mk>
