@@ -1,8 +1,27 @@
-bin/albino
-bin/humperdink
-bin/inigo
-bin/miracle
-bin/mlt-config
+bin/melt
+include/mlt++/Mlt.h
+include/mlt++/MltConsumer.h
+include/mlt++/MltDeque.h
+include/mlt++/MltEvent.h
+include/mlt++/MltFactory.h
+include/mlt++/MltField.h
+include/mlt++/MltFilter.h
+include/mlt++/MltFilteredConsumer.h
+include/mlt++/MltFrame.h
+include/mlt++/MltGeometry.h
+include/mlt++/MltMultitrack.h
+include/mlt++/MltParser.h
+include/mlt++/MltPlaylist.h
+include/mlt++/MltProducer.h
+include/mlt++/MltProfile.h
+include/mlt++/MltProperties.h
+include/mlt++/MltPushConsumer.h
+include/mlt++/MltRepository.h
+include/mlt++/MltService.h
+include/mlt++/MltTokeniser.h
+include/mlt++/MltTractor.h
+include/mlt++/MltTransition.h
+include/mlt++/config.h
 include/mlt/framework/mlt.h
 include/mlt/framework/mlt_cache.h
 include/mlt/framework/mlt_consumer.h
@@ -28,39 +47,23 @@ include/mlt/framework/mlt_tokeniser.h
 include/mlt/framework/mlt_tractor.h
 include/mlt/framework/mlt_transition.h
 include/mlt/framework/mlt_types.h
-include/mlt/miracle/miracle_local.h
-include/mlt/miracle/miracle_log.h
-include/mlt/miracle/miracle_server.h
-include/mlt/valerie/valerie.h
-include/mlt/valerie/valerie_notifier.h
-include/mlt/valerie/valerie_parser.h
-include/mlt/valerie/valerie_remote.h
-include/mlt/valerie/valerie_response.h
-include/mlt/valerie/valerie_socket.h
-include/mlt/valerie/valerie_status.h
-include/mlt/valerie/valerie_tokeniser.h
-include/mlt/valerie/valerie_util.h
-lib/libmiracle.so
-lib/libmiracle.so.0.3.8
-lib/libmiracle.so.1
+lib/libmlt++.so
+lib/libmlt++.so.0.4.2
+lib/libmlt++.so.2
 lib/libmlt.so
-lib/libmlt.so.0.3.8
+lib/libmlt.so.0.4.2
 lib/libmlt.so.1
-lib/libvalerie.so
-lib/libvalerie.so.0.3.8
-lib/libvalerie.so.1
 %%AVFORMAT%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
 lib/mlt/libmltdgraft.so
 %%DV%%lib/mlt/libmltdv.so
 lib/mlt/libmlteffectv.so
-lib/mlt/libmltfezzik.so
 %%FREI0R%%lib/mlt/libmltfrei0r.so
 %%GTK2%%lib/mlt/libmltgtk2.so
-lib/mlt/libmltinigo.so
 %%JACKRACK%%lib/mlt/libmltjackrack.so
 lib/mlt/libmltkdenlive.so
 %%KINO%%lib/mlt/libmltkino.so
+lib/mlt/libmltmelt.so
 lib/mlt/libmltmotion_est.so
 lib/mlt/libmltnormalize.so
 lib/mlt/libmltoldfilm.so
@@ -69,16 +72,16 @@ lib/mlt/libmltplus.so
 %%RESAMPLE%%lib/mlt/libmltresample.so
 lib/mlt/libmltsdl.so
 %%SOX%%lib/mlt/libmltsox.so
-lib/mlt/libmltvalerie.so
 lib/mlt/libmltvmfx.so
 %%VORBIS%%lib/mlt/libmltvorbis.so
-lib/mlt/libmltwestley.so
 lib/mlt/libmltxine.so
+lib/mlt/libmltxml.so
+libdata/pkgconfig/mlt++.pc
 libdata/pkgconfig/mlt-framework.pc
-libdata/pkgconfig/mlt-miracle.pc
-libdata/pkgconfig/mlt-valerie.pc
 %%AVFORMAT%%%%DATADIR%%/avformat/producer_avformat.yml
-%%DATADIR%%/data_fx.properties
+%%DATADIR%%/core/data_fx.properties
+%%DATADIR%%/core/loader.dict
+%%DATADIR%%/core/loader.ini
 %%DATADIR%%/feeds/NTSC/data_fx.properties
 %%DATADIR%%/feeds/NTSC/obscure.properties
 %%DATADIR%%/feeds/PAL/border.properties
@@ -86,8 +89,6 @@ libdata/pkgconfig/mlt-valerie.pc
 %%DATADIR%%/feeds/PAL/etv.properties
 %%DATADIR%%/feeds/PAL/example.properties
 %%DATADIR%%/feeds/PAL/obscure.properties
-%%DATADIR%%/fezzik.dict
-%%DATADIR%%/fezzik.ini
 %%DATADIR%%/lumas/NTSC/luma01.pgm
 %%DATADIR%%/lumas/NTSC/luma02.pgm
 %%DATADIR%%/lumas/NTSC/luma03.pgm
@@ -150,7 +151,6 @@ libdata/pkgconfig/mlt-valerie.pc
 %%DATADIR%%/oldfilm/oldfilm.svg
 %%DATADIR%%/oldfilm/tcolor.svg
 %%DATADIR%%/oldfilm/vignette.svg
-%%DATADIR%%/packages.dat
 %%DATADIR%%/profiles/atsc_1080i_50
 %%DATADIR%%/profiles/atsc_1080i_60
 %%DATADIR%%/profiles/atsc_1080p_2398
@@ -194,7 +194,8 @@ libdata/pkgconfig/mlt-valerie.pc
 %%DATADIR%%/profiles/svcd_pal_wide
 %%DATADIR%%/profiles/vcd_ntsc
 %%DATADIR%%/profiles/vcd_pal
-%%DATADIR%%/westley.dtd
+%%DATADIR%%/xml/mlt-xml.dtd
+@dirrm %%DATADIR%%/xml
 @dirrm %%DATADIR%%/profiles
 @dirrm %%DATADIR%%/oldfilm
 @dirrm %%DATADIR%%/lumas/PAL
@@ -203,10 +204,10 @@ libdata/pkgconfig/mlt-valerie.pc
 @dirrm %%DATADIR%%/feeds/PAL
 @dirrm %%DATADIR%%/feeds/NTSC
 @dirrm %%DATADIR%%/feeds
+@dirrm %%DATADIR%%/core
 %%AVFORMAT%%@dirrm %%DATADIR%%/avformat
 @dirrm %%DATADIR%%
 @dirrm lib/mlt
-@dirrm include/mlt/valerie
-@dirrm include/mlt/miracle
 @dirrm include/mlt/framework
+@dirrm include/mlt++
 @dirrm include/mlt
