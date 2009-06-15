@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Example-InstantCRUD
-PORTVERSION=	0.0.20
+PORTVERSION=	0.0.30
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Create a working CRUD Catalyst example with the least of effort
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	\
+BUILD_DEPENDS=	\
 	p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 	p5-Catalyst-Model-DBIC-Schema>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
-p5-Catalyst-Plugin-Authentication>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
+	p5-Catalyst-Plugin-Authentication>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
 	p5-Catalyst-Plugin-Authentication-Store-DBIC>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication-Store-DBIC \
 	p5-Catalyst-Plugin-ConfigLoader>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
 	p5-Catalyst-Plugin-HTML-Widget>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-HTML-Widget \
@@ -41,18 +40,17 @@ p5-Catalyst-Plugin-Authentication>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authe
 	p5-Template-Plugin-Class>=0:${PORTSDIR}/www/p5-Template-Plugin-Class \
 	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 	p5-version>=0:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
 MAN1=	instantcrud.pl.1
 MAN3=	Catalyst::Example::Controller::InstantCRUD.3 \
 	Catalyst::Example::InstantCRUD.3 \
-	Catalyst::Example::InstantCRUD::Utils.3 \
 	Catalyst::Helper::Controller::InstantCRUD.3 \
 	Catalyst::Helper::InstantCRUD.3 \
 	Catalyst::Helper::Model::InstantCRUD.3 \
 	Catalyst::Helper::View::InstantCRUD.3 \
-	Catalyst::Plugin::Auth::Utils.3 \
-	HTML::Widget::Element::DoubleSelect.3
+	Catalyst::Plugin::Auth::Utils.3
 
 .include <bsd.port.mk>

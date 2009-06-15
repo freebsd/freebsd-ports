@@ -1,12 +1,10 @@
 %%SITE_PERL%%/Catalyst/Example/Controller/InstantCRUD.pm
 %%SITE_PERL%%/Catalyst/Example/InstantCRUD.pm
-%%SITE_PERL%%/Catalyst/Example/InstantCRUD/Utils.pm
 %%SITE_PERL%%/Catalyst/Helper/Controller/InstantCRUD.pm
 %%SITE_PERL%%/Catalyst/Helper/InstantCRUD.pm
 %%SITE_PERL%%/Catalyst/Helper/Model/InstantCRUD.pm
 %%SITE_PERL%%/Catalyst/Helper/View/InstantCRUD.pm
 %%SITE_PERL%%/Catalyst/Plugin/Auth/Utils.pm
-%%SITE_PERL%%/HTML/Widget/Element/DoubleSelect.pm
 bin/instantcrud.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Example/InstantCRUD/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Example/InstantCRUD
