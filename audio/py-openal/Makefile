@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/PyOpenAL-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-openal
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/setup.py
 
 post-install:

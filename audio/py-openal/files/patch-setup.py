@@ -5,7 +5,7 @@
  from distutils.core import setup, Extension
  
 -LIBDIRS = ["/usr/lib", "/usr/local/lib"]
-+LIBDIRS = ["/usr/lib", "/usr/local/lib", "/usr/local/lib"]
++LIBDIRS = ["/usr/lib", "/usr/local/lib", "%%LOCALBASE%%/lib"]
  LIBS    = ["openal", "alut"]
  
  try:
@@ -13,7 +13,7 @@
    if openal_version[0] == "0":
 -    LIBDIRS = ["/usr/lib", "/usr/local/lib"]
 -    LIBS    = ["openal"]
-+    LIBDIRS = ["/usr/lib", "/usr/local/lib", "/usr/local/lib"]
++    LIBDIRS = ["/usr/lib", "/usr/local/lib", "%%LOCALBASE%%/lib"]
 +    LIBS    = ["openal","alut"]
      
  except:
@@ -23,7 +23,7 @@
    ext_modules  = [Extension("_openal",
                              ["py_openal.c"],
 -                            ["/usr/include", "/usr/local/include"],
-+                            ["/usr/include", "/usr/local/include", "/usr/local/include"],
++                            ["/usr/include", "/usr/local/include", "%%LOCALBASE%%/include"],
                              [("HAVE_CONFIG_H", None)],
                              None,
                              LIBDIRS,
