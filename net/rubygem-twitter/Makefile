@@ -23,4 +23,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+BROKEN=		does not install, requires exact version of oauth
+
 .include <bsd.port.mk>
