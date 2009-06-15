@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -16,8 +15,8 @@ COMMENT=	Lightweight command line video extraction utility
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
-OPTIONS=	PERL "Embed Perl interpreter" off \
-		SIGWINCH "Handle SIGWINCH" on
+OPTIONS=	PERL "With Perl interpreter" off \
+		SIGWINCH "With resizable progressbar" on
 
 MAN1=		cclive.1
 
