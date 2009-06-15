@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090615:
+  AFFECTS: users of multimedia/mlt++
+  AUTHOR: beat@FreeBSD.org
+
+  The port multimedia/mlt++ was incorporated into multimedia/mlt since
+  0.4.2. Delete multimedia/mlt++ first and then install/update
+  multimedia/mlt.
+
 20090613:
   AFFECTS: users of www/hudson
   AUTHOR: hq@FreeBSD.org
