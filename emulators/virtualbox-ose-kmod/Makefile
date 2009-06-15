@@ -7,7 +7,7 @@
 
 PORTNAME=	virtualbox
 DISTVERSION=	2.2.51.r20457
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \

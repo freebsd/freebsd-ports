@@ -4,6 +4,7 @@ bin/VBoxManage
 bin/VBoxNetDHCP
 bin/VBoxSDL
 bin/VBoxSVC
+bin/VBoxTestOGL
 bin/VBoxXPCOMIPCD
 %%QT4%%bin/VirtualBox
 lib/virtualbox/VBoxBFE
