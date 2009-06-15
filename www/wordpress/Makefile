@@ -7,6 +7,7 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	2.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/ \
@@ -20,7 +21,7 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PHP=	mysql pcre xml gd
+USE_PHP=	mysql pcre xml gd tokenizer
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 WORDPRESS?=	www/data/wordpress
