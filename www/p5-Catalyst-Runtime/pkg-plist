@@ -3,10 +3,12 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Action.pm
 %%SITE_PERL%%/Catalyst/ActionChain.pm
 %%SITE_PERL%%/Catalyst/ActionContainer.pm
-%%SITE_PERL%%/Catalyst/AttrContainer.pm
 %%SITE_PERL%%/Catalyst/Base.pm
+%%SITE_PERL%%/Catalyst/ClassData.pm
 %%SITE_PERL%%/Catalyst/Component.pm
+%%SITE_PERL%%/Catalyst/Component/ApplicationAttribute.pm
 %%SITE_PERL%%/Catalyst/Controller.pm
+%%SITE_PERL%%/Catalyst/Delta.pod
 %%SITE_PERL%%/Catalyst/DispatchType.pm
 %%SITE_PERL%%/Catalyst/DispatchType/Chained.pm
 %%SITE_PERL%%/Catalyst/DispatchType/Default.pm
@@ -22,9 +24,6 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter/Watcher.pm
 %%SITE_PERL%%/Catalyst/Exception.pm
 %%SITE_PERL%%/Catalyst/Log.pm
-%%SITE_PERL%%/Catalyst/Manual.pm
-%%SITE_PERL%%/Catalyst/Manual/Installation.pod
-%%SITE_PERL%%/Catalyst/Manual/Installation/CentOS4.pod
 %%SITE_PERL%%/Catalyst/Model.pm
 %%SITE_PERL%%/Catalyst/Request.pm
 %%SITE_PERL%%/Catalyst/Request/Upload.pm
@@ -32,6 +31,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Runtime.pm
 %%SITE_PERL%%/Catalyst/Stats.pm
 %%SITE_PERL%%/Catalyst/Test.pm
+%%SITE_PERL%%/Catalyst/Upgrading.pod
 %%SITE_PERL%%/Catalyst/Utils.pm
 %%SITE_PERL%%/Catalyst/View.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Runtime/.packlist
@@ -44,4 +44,5 @@ bin/catalyst.pl
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine
 @dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
+@dirrmtry %%SITE_PERL%%/Catalyst/Component
 @dirrmtry %%SITE_PERL%%/Catalyst
