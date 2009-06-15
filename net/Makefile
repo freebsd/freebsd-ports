@@ -839,6 +839,7 @@
     SUBDIR += ruby-spread
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
+    SUBDIR += rubygem-geoip
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-oauth
