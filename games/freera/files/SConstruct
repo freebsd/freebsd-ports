@@ -13,7 +13,7 @@ exclude = ["src/misc/fibheap.cpp"]
 source = filter(lambda x: x not in exclude, source)
 
 env = Environment( CPPPATH = ["#/src/include", "#/src/include/lua"],
-		   LIBS = [ "SDL_mixer"] )
+		   LIBS = [ "SDL_mixer"], ENV = environ )
 
 for key in [ 'CC', 'CCFLAGS', 'CXX', 'CXXFLAGS' ]:
 	if environ.has_key(key):
@@ -22,6 +22,6 @@ for key in [ 'CC', 'CCFLAGS', 'CXX', 'CXXFLAGS' ]:
 env.Append( CCFLAGS = [ "-Wall", "-Wconversion", "-Wno-unused-parameter" ],
 	    CXXFLAGS = [ "-Wall", "-Wconversion", "-Wno-unused-parameter" ] )
 
-env.ParseConfig("sdl-config --cflags --libs")
+env.ParseConfig(environ["SDL_CONFIG"] + " --cflags --libs")
 
 env.Program(target = "freera", source = source)
