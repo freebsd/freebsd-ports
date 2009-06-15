@@ -2,7 +2,7 @@ bin/kdenlive
 bin/kdenlive_render
 lib/kde4/libkdenlive_sampleplugin.so
 lib/kde4/westleypreview.so
-share/applications/kde/kdenlive.desktop
+share/applications/kde4/kdenlive.desktop
 share/apps/kdenlive/banner.png
 share/apps/kdenlive/blacklisted_effects.txt
 share/apps/kdenlive/blacklisted_transitions.txt
@@ -22,6 +22,7 @@ share/apps/kdenlive/effects/freeze.xml
 share/apps/kdenlive/effects/frei0r_balanc0r.xml
 share/apps/kdenlive/effects/frei0r_colordistance.xml
 share/apps/kdenlive/effects/frei0r_distort0r.xml
+share/apps/kdenlive/effects/frei0r_scale0tilt.xml
 share/apps/kdenlive/effects/frei0r_squareblur.xml
 share/apps/kdenlive/effects/gain.xml
 share/apps/kdenlive/effects/gamma.xml
@@ -138,6 +139,7 @@ share/config.kcfg/kdenlivesettings.kcfg
 share/config/kdenlive.knsrc
 share/config/kdenlive_mltprofiles.knsrc
 share/config/kdenlive_render.knsrc
+share/config/kdenlivetranscodingrc
 share/icons/hicolor/32x32/apps/kdenlive.png
 share/icons/hicolor/48x48/apps/kdenlive.png
 share/icons/hicolor/64x64/apps/kdenlive.png
@@ -204,7 +206,7 @@ share/mime/packages/westley.xml
 @dirrm share/apps/kdenlive/effects
 @dirrm share/apps/kdenlive
 @dirrmtry share/apps
-@dirrmtry share/applications/kde
+@dirrmtry share/applications/kde4
 @dirrmtry share/applications
 @dirrmtry lib/kde4
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

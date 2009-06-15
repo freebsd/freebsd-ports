@@ -5,16 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	kdenlive
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.7.4
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SFE
 
 MAINTAINER=	villa.alberto@gmail.com
 COMMENT=	A professional quality non-linear video editing suite for KDE
 
-LIB_DEPENDS=	mlt.1:${PORTSDIR}/multimedia/mlt \
-		mlt++.1:${PORTSDIR}/multimedia/mlt++
+LIB_DEPENDS=	mlt.1:${PORTSDIR}/multimedia/mlt
 
 USE_GETTEXT=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix sharedmime
@@ -26,15 +24,19 @@ USE_CMAKE=	yes
 CMAKE_ARGS=	-DNO_JOGSHUTTLE:BOOL=On
 USE_LDCONFIG=	${PREFIX}/lib/kde4
 
-PORTDOCS=	AUTHORS COPYING INSTALL README
-
 MAN1=		kdenlive.1 kdenlive_render.1
 
-OPTIONS=	FREI0R	"Install Frei0r plugins" on \
-		LADSPA	"Install LADSPA plugins" on \
+OPTIONS=	DVD	"DVD creation with dvdauthor and cdrtools" on \
+		FREI0R	"Frei0r plugins" on \
+		LADSPA	"LADSPA plugins" on \
 		SCREENGRAB	"Screen capture with recordMyDesktop" on
 
 .include <bsd.port.pre.mk>
+
+.ifdef(WITH_DVD)
+USE_CDRTOOLS=	yes
+RUN_DEPENDS+=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor
+.endif
 
 .ifdef(WITH_FREI0R)
 RUN_DEPENDS+=	frei0r>=1.1.22:${PORTSDIR}/graphics/frei0r
@@ -55,11 +57,5 @@ post-patch:
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
 
 .include <bsd.port.post.mk>
