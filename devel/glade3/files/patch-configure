@@ -1,0 +1,15 @@
+--- configure.orig	2009-06-13 12:44:55.000000000 +0200
++++ configure	2009-06-13 12:45:11.000000000 +0200
+@@ -24755,10 +24755,10 @@
+ { echo "$as_me:$LINENO: checking for libraries required to embed python" >&5
+ echo $ECHO_N "checking for libraries required to embed python... $ECHO_C" >&6; }
+ py_exec_prefix=`$PYTHON -c "import sys; print sys.exec_prefix"`
+-if test "x$PYTHON_LIBS" == x; then
++if test "x$PYTHON_LIBS" = x; then
+ 	PYTHON_LIBS="-L${py_prefix}/lib -lpython${PYTHON_VERSION}"
+ fi
+-if test "x$PYTHON_LIB_LOC" == x; then
++if test "x$PYTHON_LIB_LOC" = x; then
+ 	PYTHON_LIB_LOC="${py_prefix}/lib"
+ fi
+ 

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	glade3
-PORTVERSION=	3.6.4
+PORTVERSION=	3.6.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -40,16 +40,16 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gnome
 CONFIGURE_ARGS+=--disable-gnome
 .endif
 
-#.if ${HAVE_GNOME:Mpygtk2}!=""
-#USE_PYTHON=	yes
-#.include "${PORTSDIR}/Mk/bsd.python.mk"
-#USE_GNOME+=	pygtk2
-#PLIST_SUB+=	PYTHON:=""
-#CONFIGURE_ARGS+=--enable-python
-#.else
+.if ${HAVE_GNOME:Mpygtk2}!=""
+USE_PYTHON=	yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+USE_GNOME+=	pygtk2
+PLIST_SUB+=	PYTHON:=""
+CONFIGURE_ARGS+=--enable-python
+.else
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON:="@comment "
-#.endif
+.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/glade3/bindings
