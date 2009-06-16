@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Layout-Manager
-PORTVERSION=	0.20
+PORTVERSION=	0.25
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -29,6 +29,7 @@ MAN3=		Layout::Manager.3 \
 		Layout::Manager::Axis.3 \
 		Layout::Manager::Compass.3 \
 		Layout::Manager::Flow.3 \
+		Layout::Manager::Grid.3 \
 		Layout::Manager::Single.3
 
 .include <bsd.port.mk>
