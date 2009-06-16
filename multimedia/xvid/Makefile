@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	xvid
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
 DISTNAME=	${PORTNAME}core-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@Fluffy.Khv.RU
 COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 
 GNU_CONFIGURE=	yes
