@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Syntax-Highlight-Engine-Kate
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A port of the syntax highlight engine of the Kate texteditor
 
 MAN3=	Syntax::Highlight::Engine::Kate.3 \
