@@ -8,8 +8,7 @@
 PORTNAME=	sqlcached
 PORTVERSION=	r4
 CATEGORIES=	databases net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ivoras@FreeBSD.org
@@ -17,22 +16,32 @@ COMMENT=	A cache daemon using SQL for data manipulation
 
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 
-WRKSRC=		${WRKDIR}/sqlcached
-MAN1=			sqlcached.1
+MAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+CFLAGS=		-O2 -Wall -I${LOCALBASE}/include
 
-PORTDOCS=	sqlcached.html sqlcached.txt
+WRKSRC=	${WRKDIR}/${PORTNAME}
+MAN1=		${PORTNAME}.1
 
-PLIST_FILES=	bin/sqlcached etc/rc.d/${PORTNAME}
+PORTDOCS=	${PORTNAME}.html ${PORTNAME}.txt
+
+PLIST_FILES=	bin/${PORTNAME} etc/rc.d/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -E -e 's|^(.*FLAGS)=|\1?=|' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' \
+		${WRKSRC}/FreeBSD/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sqlcached ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/sqlcached.1 ${PREFIX}/man/man1/
-	${CP}	${WRKSRC}/FreeBSD/${PORTNAME}	${LOCALBASE}/etc/rc.d/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME} ${PREFIX}/etc/rc.d
 
 .if !defined(NOPORTDOCS)
-	    ${MKDIR} ${DOCSDIR}
-	    ${INSTALL_MAN} ${WRKSRC}/doc/sqlcached.html ${DOCSDIR}/
-	    ${INSTALL_MAN} ${WRKSRC}/doc/sqlcached.txt ${DOCSDIR}/
+	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
+	for doc in ${PORTDOCS}; do \
+		${INSTALL_DATA} ${WRKSRC}/doc/$${doc} ${DOCSDIR}; \
+	done
 .endif
 
 .include <bsd.port.mk>
