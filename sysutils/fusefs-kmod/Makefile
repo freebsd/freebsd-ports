@@ -58,6 +58,10 @@ OPTIONS=	AUTOSETUP "Automatic global config file setup" off
 
 .include <bsd.port.pre.mk>
 
+.if (${OSVERSION} >= 800000)
+BROKEN=	does not build on 8.x
+.endif
+
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not in /usr/src
 .endif
