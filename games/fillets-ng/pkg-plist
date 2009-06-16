@@ -975,7 +975,7 @@ bin/fillets
 %%DATADIR%%/images/demo_briefcase/demo_060.png
 %%DATADIR%%/images/demo_briefcase/demo_061.png
 %%DATADIR%%/images/demo_briefcase/demo_062.png
-%%DATADIR%%/images/demo_briefcase/demo_062_ru.png
+%%DATADIR%%/images/demo_briefcase/demo_062__ru.png
 %%DATADIR%%/images/demo_briefcase/demo_063.png
 %%DATADIR%%/images/demo_briefcase/demo_064.png
 %%DATADIR%%/images/demo_briefcase/demo_065.png
@@ -1039,7 +1039,7 @@ bin/fillets
 %%DATADIR%%/images/demo_briefcase/demo_123.png
 %%DATADIR%%/images/demo_briefcase/demo_124.png
 %%DATADIR%%/images/demo_briefcase/demo_125.png
-%%DATADIR%%/images/demo_briefcase/demo_125_ru.png
+%%DATADIR%%/images/demo_briefcase/demo_125__ru.png
 %%DATADIR%%/images/demo_briefcase/demo_126.png
 %%DATADIR%%/images/demo_briefcase/demo_127.png
 %%DATADIR%%/images/demo_briefcase/demo_128.png
@@ -1265,6 +1265,62 @@ bin/fillets
 %%DATADIR%%/images/dump/zavora.png
 %%DATADIR%%/images/dump/zebrik.png
 %%DATADIR%%/images/dump/zralok.png
+%%DATADIR%%/images/electromagnet/alienmagnet_00.png
+%%DATADIR%%/images/electromagnet/alienmagnet_01.png
+%%DATADIR%%/images/electromagnet/alienmagnet_02.png
+%%DATADIR%%/images/electromagnet/alienmagnet_03.png
+%%DATADIR%%/images/electromagnet/alienmagnet_04.png
+%%DATADIR%%/images/electromagnet/alienmagnet_05.png
+%%DATADIR%%/images/electromagnet/alienmagnet_06.png
+%%DATADIR%%/images/electromagnet/alienmagnet_07.png
+%%DATADIR%%/images/electromagnet/alienmagnet_08.png
+%%DATADIR%%/images/electromagnet/alienmagnet_09.png
+%%DATADIR%%/images/electromagnet/alienmagnet_10.png
+%%DATADIR%%/images/electromagnet/alienmagnet_11.png
+%%DATADIR%%/images/electromagnet/alienmagnet_12.png
+%%DATADIR%%/images/electromagnet/alienmagnet_13.png
+%%DATADIR%%/images/electromagnet/alienmagnet_14.png
+%%DATADIR%%/images/electromagnet/background.png
+%%DATADIR%%/images/electromagnet/can.png
+%%DATADIR%%/images/electromagnet/cristall.png
+%%DATADIR%%/images/electromagnet/damage-wall_00.png
+%%DATADIR%%/images/electromagnet/damage-wall_01.png
+%%DATADIR%%/images/electromagnet/damage-wall_02.png
+%%DATADIR%%/images/electromagnet/damage-wall_03.png
+%%DATADIR%%/images/electromagnet/damage-wall_04.png
+%%DATADIR%%/images/electromagnet/damage-wall_05.png
+%%DATADIR%%/images/electromagnet/damage-wall_06.png
+%%DATADIR%%/images/electromagnet/damage-wall_07.png
+%%DATADIR%%/images/electromagnet/damage-wall_08.png
+%%DATADIR%%/images/electromagnet/foreground.png
+%%DATADIR%%/images/electromagnet/item_named_a.png
+%%DATADIR%%/images/electromagnet/item_named_b.png
+%%DATADIR%%/images/electromagnet/item_named_c.png
+%%DATADIR%%/images/electromagnet/item_named_d.png
+%%DATADIR%%/images/electromagnet/item_named_e.png
+%%DATADIR%%/images/electromagnet/kill-o-zap.png
+%%DATADIR%%/images/electromagnet/lever_00.png
+%%DATADIR%%/images/electromagnet/lever_01.png
+%%DATADIR%%/images/electromagnet/lever_02.png
+%%DATADIR%%/images/electromagnet/lever_03.png
+%%DATADIR%%/images/electromagnet/lever_04.png
+%%DATADIR%%/images/electromagnet/lever_05.png
+%%DATADIR%%/images/electromagnet/lever_06.png
+%%DATADIR%%/images/electromagnet/lever_07.png
+%%DATADIR%%/images/electromagnet/lever_08.png
+%%DATADIR%%/images/electromagnet/lever_09.png
+%%DATADIR%%/images/electromagnet/lever_10.png
+%%DATADIR%%/images/electromagnet/lever_11.png
+%%DATADIR%%/images/electromagnet/magnet-small.png
+%%DATADIR%%/images/electromagnet/plutonium-5-_00.png
+%%DATADIR%%/images/electromagnet/plutonium-5-_01.png
+%%DATADIR%%/images/electromagnet/plutonium-5-_02.png
+%%DATADIR%%/images/electromagnet/plutonium-5-_03.png
+%%DATADIR%%/images/electromagnet/powerline.png
+%%DATADIR%%/images/electromagnet/screw-nut.png
+%%DATADIR%%/images/electromagnet/steel-1.png
+%%DATADIR%%/images/electromagnet/steelbig.png
+%%DATADIR%%/images/electromagnet/thingy.png
 %%DATADIR%%/images/elevator1/amfora_zelena.png
 %%DATADIR%%/images/elevator1/hlava_m-_00.png
 %%DATADIR%%/images/elevator1/hlava_m-_01.png
@@ -1323,10 +1379,10 @@ bin/fillets
 %%DATADIR%%/images/emulator/hwhero.png
 %%DATADIR%%/images/emulator/hwlife.png
 %%DATADIR%%/images/emulator/hwscore.png
-%%DATADIR%%/images/emulator/hwscore_ru.png
+%%DATADIR%%/images/emulator/hwscore__ru.png
 %%DATADIR%%/images/emulator/hwtron.png
 %%DATADIR%%/images/emulator/hwzone.png
-%%DATADIR%%/images/emulator/hwzone_ru.png
+%%DATADIR%%/images/emulator/hwzone__ru.png
 %%DATADIR%%/images/emulator/jed.png
 %%DATADIR%%/images/emulator/jpazur.png
 %%DATADIR%%/images/emulator/jpfial.png
@@ -2341,6 +2397,97 @@ bin/fillets
 %%DATADIR%%/images/library/ostnatec_02.png
 %%DATADIR%%/images/library/vrak-okoli.png
 %%DATADIR%%/images/library/vrak-pozadi.png
+%%DATADIR%%/images/linux/bubble1_00.png
+%%DATADIR%%/images/linux/bubble1_01.png
+%%DATADIR%%/images/linux/bubble2_00.png
+%%DATADIR%%/images/linux/bubble2_01.png
+%%DATADIR%%/images/linux/bubble3.png
+%%DATADIR%%/images/linux/cursor_00.png
+%%DATADIR%%/images/linux/cursor_01.png
+%%DATADIR%%/images/linux/cursor_02.png
+%%DATADIR%%/images/linux/cursor_03.png
+%%DATADIR%%/images/linux/cursor_04.png
+%%DATADIR%%/images/linux/cursor_05.png
+%%DATADIR%%/images/linux/cursor_06.png
+%%DATADIR%%/images/linux/cursor_07.png
+%%DATADIR%%/images/linux/cursor_08.png
+%%DATADIR%%/images/linux/cursor_09.png
+%%DATADIR%%/images/linux/cursor_10.png
+%%DATADIR%%/images/linux/cursor_11.png
+%%DATADIR%%/images/linux/cursor_12.png
+%%DATADIR%%/images/linux/cursor_13.png
+%%DATADIR%%/images/linux/cursor_14.png
+%%DATADIR%%/images/linux/cursor_15.png
+%%DATADIR%%/images/linux/cursor_16.png
+%%DATADIR%%/images/linux/cursor_17.png
+%%DATADIR%%/images/linux/cursor_18.png
+%%DATADIR%%/images/linux/cursor_19.png
+%%DATADIR%%/images/linux/cursor_20.png
+%%DATADIR%%/images/linux/cursor_21.png
+%%DATADIR%%/images/linux/cursor_22.png
+%%DATADIR%%/images/linux/cursor_23.png
+%%DATADIR%%/images/linux/cursor_24.png
+%%DATADIR%%/images/linux/cursor_25.png
+%%DATADIR%%/images/linux/cursor_26.png
+%%DATADIR%%/images/linux/cursor_27.png
+%%DATADIR%%/images/linux/cursor_28.png
+%%DATADIR%%/images/linux/cursor_29.png
+%%DATADIR%%/images/linux/cursor_30.png
+%%DATADIR%%/images/linux/cursor_31.png
+%%DATADIR%%/images/linux/cursor_32.png
+%%DATADIR%%/images/linux/cursor_33.png
+%%DATADIR%%/images/linux/cursor_34.png
+%%DATADIR%%/images/linux/cursor_35.png
+%%DATADIR%%/images/linux/cursor_36.png
+%%DATADIR%%/images/linux/cursor_37.png
+%%DATADIR%%/images/linux/cursor_38.png
+%%DATADIR%%/images/linux/cursor_39.png
+%%DATADIR%%/images/linux/cursor_40.png
+%%DATADIR%%/images/linux/cursor_41.png
+%%DATADIR%%/images/linux/cursor_42.png
+%%DATADIR%%/images/linux/cursor_43.png
+%%DATADIR%%/images/linux/cursor_44.png
+%%DATADIR%%/images/linux/cursor_45.png
+%%DATADIR%%/images/linux/cursor_46.png
+%%DATADIR%%/images/linux/cursor_47.png
+%%DATADIR%%/images/linux/cursor_48.png
+%%DATADIR%%/images/linux/linuxak1_00.png
+%%DATADIR%%/images/linux/linuxak1_01.png
+%%DATADIR%%/images/linux/linuxak1_02.png
+%%DATADIR%%/images/linux/linuxak1_03.png
+%%DATADIR%%/images/linux/linuxak1_04.png
+%%DATADIR%%/images/linux/linuxak1_05.png
+%%DATADIR%%/images/linux/linuxak2_00.png
+%%DATADIR%%/images/linux/linuxak2_01.png
+%%DATADIR%%/images/linux/linuxak2_02.png
+%%DATADIR%%/images/linux/linuxak2_03.png
+%%DATADIR%%/images/linux/linuxak2_04.png
+%%DATADIR%%/images/linux/linuxak2_05.png
+%%DATADIR%%/images/linux/ocel1.png
+%%DATADIR%%/images/linux/ocel2.png
+%%DATADIR%%/images/linux/ocel3.png
+%%DATADIR%%/images/linux/ocel4.png
+%%DATADIR%%/images/linux/popredi.png
+%%DATADIR%%/images/linux/poster.png
+%%DATADIR%%/images/linux/pozadi.png
+%%DATADIR%%/images/linux/python.png
+%%DATADIR%%/images/linux/text_00.png
+%%DATADIR%%/images/linux/text_01.png
+%%DATADIR%%/images/linux/text_02.png
+%%DATADIR%%/images/linux/text_03.png
+%%DATADIR%%/images/linux/text_04.png
+%%DATADIR%%/images/linux/text_05.png
+%%DATADIR%%/images/linux/text_06.png
+%%DATADIR%%/images/linux/text_07.png
+%%DATADIR%%/images/linux/text_08.png
+%%DATADIR%%/images/linux/text_09.png
+%%DATADIR%%/images/linux/text_10.png
+%%DATADIR%%/images/linux/text_11.png
+%%DATADIR%%/images/linux/text_12.png
+%%DATADIR%%/images/linux/text_13.png
+%%DATADIR%%/images/linux/text_14.png
+%%DATADIR%%/images/linux/text_15.png
+%%DATADIR%%/images/linux/wilber.png
 %%DATADIR%%/images/magnet/6-ocel.png
 %%DATADIR%%/images/magnet/7-ocel.png
 %%DATADIR%%/images/magnet/8-ocel.png
@@ -2413,13 +2560,16 @@ bin/fillets
 %%DATADIR%%/images/menu/flags/ru.png
 %%DATADIR%%/images/menu/flags/sl.png
 %%DATADIR%%/images/menu/flags/sv.png
+%%DATADIR%%/images/menu/intro.mpg
 %%DATADIR%%/images/menu/intro.png
 %%DATADIR%%/images/menu/lang.png
 %%DATADIR%%/images/menu/map.png
+%%DATADIR%%/images/menu/map__de.png
+%%DATADIR%%/images/menu/map__ru.png
 %%DATADIR%%/images/menu/map_lower.png
-%%DATADIR%%/images/menu/map_lower_ru.png
+%%DATADIR%%/images/menu/map_lower__de.png
+%%DATADIR%%/images/menu/map_lower__ru.png
 %%DATADIR%%/images/menu/map_mask.png
-%%DATADIR%%/images/menu/map_ru.png
 %%DATADIR%%/images/menu/n0.png
 %%DATADIR%%/images/menu/n1.png
 %%DATADIR%%/images/menu/n2.png
@@ -3081,9 +3231,9 @@ bin/fillets
 %%DATADIR%%/images/rush/ceauto_01.png
 %%DATADIR%%/images/rush/ceauto_02.png
 %%DATADIR%%/images/rush/ceauto_03.png
-%%DATADIR%%/images/rush/ceauto_03_ru.png
+%%DATADIR%%/images/rush/ceauto_03__ru.png
 %%DATADIR%%/images/rush/ceauto_04.png
-%%DATADIR%%/images/rush/ceauto_04_ru.png
+%%DATADIR%%/images/rush/ceauto_04__ru.png
 %%DATADIR%%/images/rush/cyauto_00.png
 %%DATADIR%%/images/rush/cyauto_01.png
 %%DATADIR%%/images/rush/cyauto_02.png
@@ -3515,12 +3665,12 @@ bin/fillets
 %%DATADIR%%/images/wc/wc-p.png
 %%DATADIR%%/images/wc/wc-w.png
 %%DATADIR%%/images/windoze/altar.png
-%%DATADIR%%/images/windoze/altar_ru.png
+%%DATADIR%%/images/windoze/altar__ru.png
 %%DATADIR%%/images/windoze/bonus_00.png
 %%DATADIR%%/images/windoze/bonus_01.png
 %%DATADIR%%/images/windoze/color.png
 %%DATADIR%%/images/windoze/disketa.png
-%%DATADIR%%/images/windoze/disketa_ru.png
+%%DATADIR%%/images/windoze/disketa__ru.png
 %%DATADIR%%/images/windoze/dotaz.png
 %%DATADIR%%/images/windoze/icon1.png
 %%DATADIR%%/images/windoze/icon11.png
@@ -3542,37 +3692,37 @@ bin/fillets
 %%DATADIR%%/images/windoze/icon5.png
 %%DATADIR%%/images/windoze/icon7.png
 %%DATADIR%%/images/windoze/kos.png
-%%DATADIR%%/images/windoze/kos_ru.png
+%%DATADIR%%/images/windoze/kos__ru.png
 %%DATADIR%%/images/windoze/notepad_00.png
-%%DATADIR%%/images/windoze/notepad_00_ru.png
+%%DATADIR%%/images/windoze/notepad_00__ru.png
 %%DATADIR%%/images/windoze/notepad_01.png
-%%DATADIR%%/images/windoze/notepad_01_ru.png
+%%DATADIR%%/images/windoze/notepad_01__ru.png
 %%DATADIR%%/images/windoze/notepad_02.png
-%%DATADIR%%/images/windoze/notepad_02_ru.png
+%%DATADIR%%/images/windoze/notepad_02__ru.png
 %%DATADIR%%/images/windoze/notepad_03.png
-%%DATADIR%%/images/windoze/notepad_03_ru.png
+%%DATADIR%%/images/windoze/notepad_03__ru.png
 %%DATADIR%%/images/windoze/notepad_04.png
-%%DATADIR%%/images/windoze/notepad_04_ru.png
+%%DATADIR%%/images/windoze/notepad_04__ru.png
 %%DATADIR%%/images/windoze/notepad_05.png
-%%DATADIR%%/images/windoze/notepad_05_ru.png
+%%DATADIR%%/images/windoze/notepad_05__ru.png
 %%DATADIR%%/images/windoze/notepad_06.png
-%%DATADIR%%/images/windoze/notepad_06_ru.png
+%%DATADIR%%/images/windoze/notepad_06__ru.png
 %%DATADIR%%/images/windoze/notepad_07.png
-%%DATADIR%%/images/windoze/notepad_07_ru.png
+%%DATADIR%%/images/windoze/notepad_07__ru.png
 %%DATADIR%%/images/windoze/notepad_08.png
-%%DATADIR%%/images/windoze/notepad_08_ru.png
+%%DATADIR%%/images/windoze/notepad_08__ru.png
 %%DATADIR%%/images/windoze/notepad_09.png
-%%DATADIR%%/images/windoze/notepad_09_ru.png
+%%DATADIR%%/images/windoze/notepad_09__ru.png
 %%DATADIR%%/images/windoze/old-budik.png
 %%DATADIR%%/images/windoze/old-kniha.png
 %%DATADIR%%/images/windoze/old-prkna.png
 %%DATADIR%%/images/windoze/old-svicka.png
 %%DATADIR%%/images/windoze/old-valec.png
 %%DATADIR%%/images/windoze/tento.png
-%%DATADIR%%/images/windoze/tento_ru.png
+%%DATADIR%%/images/windoze/tento__ru.png
 %%DATADIR%%/images/windoze/win-p.png
 %%DATADIR%%/images/windoze/win-w.png
-%%DATADIR%%/images/windoze/win-w_ru.png
+%%DATADIR%%/images/windoze/win-w__ru.png
 %%DATADIR%%/images/wreck/cepicka.png
 %%DATADIR%%/images/wreck/klobrc.png
 %%DATADIR%%/images/wreck/medusa_00.png
@@ -4061,6 +4211,16 @@ bin/fillets
 %%DATADIR%%/script/dump/dialogs_sv.lua
 %%DATADIR%%/script/dump/init.lua
 %%DATADIR%%/script/dump/models.lua
+%%DATADIR%%/script/electromagnet/code.lua
+%%DATADIR%%/script/electromagnet/dialogs.lua
+%%DATADIR%%/script/electromagnet/dialogs_bg.lua
+%%DATADIR%%/script/electromagnet/dialogs_cs.lua
+%%DATADIR%%/script/electromagnet/dialogs_de.lua
+%%DATADIR%%/script/electromagnet/dialogs_en.lua
+%%DATADIR%%/script/electromagnet/dialogs_ru.lua
+%%DATADIR%%/script/electromagnet/dialogs_sv.lua
+%%DATADIR%%/script/electromagnet/init.lua
+%%DATADIR%%/script/electromagnet/models.lua
 %%DATADIR%%/script/elevator1/code.lua
 %%DATADIR%%/script/elevator1/dialogs.lua
 %%DATADIR%%/script/elevator1/dialogs_bg.lua
@@ -4363,6 +4523,7 @@ bin/fillets
 %%DATADIR%%/script/key/dialogs_de.lua
 %%DATADIR%%/script/key/dialogs_en.lua
 %%DATADIR%%/script/key/dialogs_nl.lua
+%%DATADIR%%/script/key/dialogs_sv.lua
 %%DATADIR%%/script/key/init.lua
 %%DATADIR%%/script/key/models.lua
 %%DATADIR%%/script/keys/code.lua
@@ -4371,6 +4532,7 @@ bin/fillets
 %%DATADIR%%/script/keys/dialogs_cs.lua
 %%DATADIR%%/script/keys/dialogs_de.lua
 %%DATADIR%%/script/keys/dialogs_en.lua
+%%DATADIR%%/script/keys/dialogs_sv.lua
 %%DATADIR%%/script/keys/init.lua
 %%DATADIR%%/script/keys/models.lua
 %%DATADIR%%/script/kitchen/code.lua
@@ -4422,6 +4584,22 @@ bin/fillets
 %%DATADIR%%/script/library/dialogs_sv.lua
 %%DATADIR%%/script/library/init.lua
 %%DATADIR%%/script/library/models.lua
+%%DATADIR%%/script/linux/code.lua
+%%DATADIR%%/script/linux/demo_dialogs_bg.lua
+%%DATADIR%%/script/linux/demo_dialogs_cs.lua
+%%DATADIR%%/script/linux/demo_dialogs_de.lua
+%%DATADIR%%/script/linux/demo_dialogs_en.lua
+%%DATADIR%%/script/linux/demo_dialogs_sv.lua
+%%DATADIR%%/script/linux/demo_poster.lua
+%%DATADIR%%/script/linux/dialogs.lua
+%%DATADIR%%/script/linux/dialogs_bg.lua
+%%DATADIR%%/script/linux/dialogs_cs.lua
+%%DATADIR%%/script/linux/dialogs_de.lua
+%%DATADIR%%/script/linux/dialogs_en.lua
+%%DATADIR%%/script/linux/dialogs_ru.lua
+%%DATADIR%%/script/linux/dialogs_sv.lua
+%%DATADIR%%/script/linux/init.lua
+%%DATADIR%%/script/linux/models.lua
 %%DATADIR%%/script/magnet/code.lua
 %%DATADIR%%/script/magnet/dialogs.lua
 %%DATADIR%%/script/magnet/dialogs_bg.lua
@@ -5667,6 +5845,7 @@ bin/fillets
 %%DATADIR%%/sound/dump/cs/sm-v-sbirka.ogg
 %%DATADIR%%/sound/dump/cs/sm-x-meduza.ogg
 %%DATADIR%%/sound/dump/en/sm-x-tiktak.ogg
+%%DATADIR%%/sound/electromagnet/en/laser.ogg
 %%DATADIR%%/sound/elevator1/cs/zd1-m-cesta.ogg
 %%DATADIR%%/sound/elevator1/cs/zd1-m-dolu.ogg
 %%DATADIR%%/sound/elevator1/cs/zd1-m-last.ogg
@@ -6142,6 +6321,56 @@ bin/fillets
 %%DATADIR%%/sound/imprisoned/en/ncp-x-ihaha.ogg
 %%DATADIR%%/sound/imprisoned/en/ncp-x-tik.ogg
 %%DATADIR%%/sound/imprisoned/en/ncp-x-tup.ogg
+%%DATADIR%%/sound/keys/cs/init-0-0.ogg
+%%DATADIR%%/sound/keys/cs/init-0-1.ogg
+%%DATADIR%%/sound/keys/cs/init-0-2.ogg
+%%DATADIR%%/sound/keys/cs/init-0-3.ogg
+%%DATADIR%%/sound/keys/cs/init-0-4.ogg
+%%DATADIR%%/sound/keys/cs/init-0-5.ogg
+%%DATADIR%%/sound/keys/cs/init-0-6.ogg
+%%DATADIR%%/sound/keys/cs/init-0-7.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-2.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-3.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-4.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-5-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-5-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-5-2.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-5-3.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-5-4.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-5-5.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-6.ogg
+%%DATADIR%%/sound/keys/cs/rand-0-7.ogg
+%%DATADIR%%/sound/keys/cs/rand-1-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-1-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-2-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-3-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-3-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-3-2.ogg
+%%DATADIR%%/sound/keys/cs/rand-3-3-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-3-3-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-3-4-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-3-4-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-4-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-4-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-4-2.ogg
+%%DATADIR%%/sound/keys/cs/rand-4-3.ogg
+%%DATADIR%%/sound/keys/cs/rand-4-4-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-4-4-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-4-4-2.ogg
+%%DATADIR%%/sound/keys/cs/rand-4-5.ogg
+%%DATADIR%%/sound/keys/cs/rand-4-6.ogg
+%%DATADIR%%/sound/keys/cs/rand-5-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-5-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-6-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-6-1.ogg
+%%DATADIR%%/sound/keys/cs/rand-7-0.ogg
+%%DATADIR%%/sound/keys/cs/rand-7-1.ogg
+%%DATADIR%%/sound/keys/en/unlocking-0.ogg
+%%DATADIR%%/sound/keys/en/unlocking-1.ogg
+%%DATADIR%%/sound/keys/en/unlocking-2.ogg
+%%DATADIR%%/sound/keys/en/unlocking-3.ogg
 %%DATADIR%%/sound/kitchen/cs/kuch-m-hrnec0.ogg
 %%DATADIR%%/sound/kitchen/cs/kuch-m-hrnec1.ogg
 %%DATADIR%%/sound/kitchen/cs/kuch-m-hrnec2.ogg
@@ -6233,6 +6462,131 @@ bin/fillets
 %%DATADIR%%/sound/library/cs/vrak-v-vraky1.ogg
 %%DATADIR%%/sound/library/cs/vrak-v-vraky2.ogg
 %%DATADIR%%/sound/library/cs/vrak-v-vyhodit.ogg
+%%DATADIR%%/sound/linux/cs/1-archlinux.ogg
+%%DATADIR%%/sound/linux/cs/1-balickovaci.ogg
+%%DATADIR%%/sound/linux/cs/1-dohnat.ogg
+%%DATADIR%%/sound/linux/cs/1-jazyka.ogg
+%%DATADIR%%/sound/linux/cs/1-nebavi.ogg
+%%DATADIR%%/sound/linux/cs/1-nepotrebuje.ogg
+%%DATADIR%%/sound/linux/cs/1-odpadnou.ogg
+%%DATADIR%%/sound/linux/cs/1-podruhe.ogg
+%%DATADIR%%/sound/linux/cs/1-pohodli.ogg
+%%DATADIR%%/sound/linux/cs/1-prekonane.ogg
+%%DATADIR%%/sound/linux/cs/1-prvni.ogg
+%%DATADIR%%/sound/linux/cs/1-rozdil.ogg
+%%DATADIR%%/sound/linux/cs/1-rozhrani.ogg
+%%DATADIR%%/sound/linux/cs/1-trilobyte.ogg
+%%DATADIR%%/sound/linux/cs/1-ubuntu.ogg
+%%DATADIR%%/sound/linux/cs/1-wilber.ogg
+%%DATADIR%%/sound/linux/cs/1-zamaskovali.ogg
+%%DATADIR%%/sound/linux/cs/1-zkousel.ogg
+%%DATADIR%%/sound/linux/cs/2-C.ogg
+%%DATADIR%%/sound/linux/cs/2-abecedy.ogg
+%%DATADIR%%/sound/linux/cs/2-bubliny.ogg
+%%DATADIR%%/sound/linux/cs/2-hadi.ogg
+%%DATADIR%%/sound/linux/cs/2-maskot.ogg
+%%DATADIR%%/sound/linux/cs/2-naprogramovana.ogg
+%%DATADIR%%/sound/linux/cs/2-neni.ogg
+%%DATADIR%%/sound/linux/cs/2-nezaujata.ogg
+%%DATADIR%%/sound/linux/cs/2-pomala.ogg
+%%DATADIR%%/sound/linux/cs/2-postavene.ogg
+%%DATADIR%%/sound/linux/cs/2-prave.ogg
+%%DATADIR%%/sound/linux/cs/2-root.ogg
+%%DATADIR%%/sound/linux/cs/2-skriptik.ogg
+%%DATADIR%%/sound/linux/cs/2-slackware.ogg
+%%DATADIR%%/sound/linux/cs/2-svuj.ogg
+%%DATADIR%%/sound/linux/cs/2-trapnejsi.ogg
+%%DATADIR%%/sound/linux/cs/2-vykradacka.ogg
+%%DATADIR%%/sound/linux/cs/2-zapomel.ogg
+%%DATADIR%%/sound/linux/cs/m-linuxaci.ogg
+%%DATADIR%%/sound/linux/cs/m-nemyslis.ogg
+%%DATADIR%%/sound/linux/cs/m-nestaci.ogg
+%%DATADIR%%/sound/linux/cs/m-ostatni.ogg
+%%DATADIR%%/sound/linux/cs/m-radi.ogg
+%%DATADIR%%/sound/linux/cs/m-samem.ogg
+%%DATADIR%%/sound/linux/cs/m-sileny.ogg
+%%DATADIR%%/sound/linux/cs/m-tatinek.ogg
+%%DATADIR%%/sound/linux/cs/m-ukolem.ogg
+%%DATADIR%%/sound/linux/cs/m-vtipni.ogg
+%%DATADIR%%/sound/linux/cs/m-vykaslat.ogg
+%%DATADIR%%/sound/linux/cs/m-zadarmo.ogg
+%%DATADIR%%/sound/linux/cs/m-zamykali.ogg
+%%DATADIR%%/sound/linux/cs/v-alespon.ogg
+%%DATADIR%%/sound/linux/cs/v-argumenty.ogg
+%%DATADIR%%/sound/linux/cs/v-dole.ogg
+%%DATADIR%%/sound/linux/cs/v-forkovat.ogg
+%%DATADIR%%/sound/linux/cs/v-horydoly.ogg
+%%DATADIR%%/sound/linux/cs/v-kdojiny.ogg
+%%DATADIR%%/sound/linux/cs/v-musime.ogg
+%%DATADIR%%/sound/linux/cs/v-nabourali.ogg
+%%DATADIR%%/sound/linux/cs/v-osobne.ogg
+%%DATADIR%%/sound/linux/cs/v-prepinani.ogg
+%%DATADIR%%/sound/linux/cs/v-radeji.ogg
+%%DATADIR%%/sound/linux/cs/v-snazit.ogg
+%%DATADIR%%/sound/linux/cs/v-ven.ogg
+%%DATADIR%%/sound/linux/cs/v-vyrobil.ogg
+%%DATADIR%%/sound/linux/en/enter0.ogg
+%%DATADIR%%/sound/linux/en/enter1.ogg
+%%DATADIR%%/sound/linux/en/enter10.ogg
+%%DATADIR%%/sound/linux/en/enter11.ogg
+%%DATADIR%%/sound/linux/en/enter12.ogg
+%%DATADIR%%/sound/linux/en/enter13.ogg
+%%DATADIR%%/sound/linux/en/enter2.ogg
+%%DATADIR%%/sound/linux/en/enter3.ogg
+%%DATADIR%%/sound/linux/en/enter4.ogg
+%%DATADIR%%/sound/linux/en/enter5.ogg
+%%DATADIR%%/sound/linux/en/enter6.ogg
+%%DATADIR%%/sound/linux/en/enter7.ogg
+%%DATADIR%%/sound/linux/en/enter8.ogg
+%%DATADIR%%/sound/linux/en/enter9.ogg
+%%DATADIR%%/sound/linux/en/key0.ogg
+%%DATADIR%%/sound/linux/en/key1.ogg
+%%DATADIR%%/sound/linux/en/key10.ogg
+%%DATADIR%%/sound/linux/en/key11.ogg
+%%DATADIR%%/sound/linux/en/key12.ogg
+%%DATADIR%%/sound/linux/en/key13.ogg
+%%DATADIR%%/sound/linux/en/key14.ogg
+%%DATADIR%%/sound/linux/en/key15.ogg
+%%DATADIR%%/sound/linux/en/key16.ogg
+%%DATADIR%%/sound/linux/en/key17.ogg
+%%DATADIR%%/sound/linux/en/key18.ogg
+%%DATADIR%%/sound/linux/en/key19.ogg
+%%DATADIR%%/sound/linux/en/key2.ogg
+%%DATADIR%%/sound/linux/en/key20.ogg
+%%DATADIR%%/sound/linux/en/key21.ogg
+%%DATADIR%%/sound/linux/en/key22.ogg
+%%DATADIR%%/sound/linux/en/key23.ogg
+%%DATADIR%%/sound/linux/en/key24.ogg
+%%DATADIR%%/sound/linux/en/key25.ogg
+%%DATADIR%%/sound/linux/en/key26.ogg
+%%DATADIR%%/sound/linux/en/key27.ogg
+%%DATADIR%%/sound/linux/en/key28.ogg
+%%DATADIR%%/sound/linux/en/key29.ogg
+%%DATADIR%%/sound/linux/en/key3.ogg
+%%DATADIR%%/sound/linux/en/key4.ogg
+%%DATADIR%%/sound/linux/en/key5.ogg
+%%DATADIR%%/sound/linux/en/key6.ogg
+%%DATADIR%%/sound/linux/en/key7.ogg
+%%DATADIR%%/sound/linux/en/key8.ogg
+%%DATADIR%%/sound/linux/en/key9.ogg
+%%DATADIR%%/sound/linux/en/space0.ogg
+%%DATADIR%%/sound/linux/en/space1.ogg
+%%DATADIR%%/sound/linux/en/space10.ogg
+%%DATADIR%%/sound/linux/en/space11.ogg
+%%DATADIR%%/sound/linux/en/space12.ogg
+%%DATADIR%%/sound/linux/en/space13.ogg
+%%DATADIR%%/sound/linux/en/space14.ogg
+%%DATADIR%%/sound/linux/en/space15.ogg
+%%DATADIR%%/sound/linux/en/space16.ogg
+%%DATADIR%%/sound/linux/en/space17.ogg
+%%DATADIR%%/sound/linux/en/space2.ogg
+%%DATADIR%%/sound/linux/en/space3.ogg
+%%DATADIR%%/sound/linux/en/space4.ogg
+%%DATADIR%%/sound/linux/en/space5.ogg
+%%DATADIR%%/sound/linux/en/space6.ogg
+%%DATADIR%%/sound/linux/en/space7.ogg
+%%DATADIR%%/sound/linux/en/space8.ogg
+%%DATADIR%%/sound/linux/en/space9.ogg
 %%DATADIR%%/sound/magnet/cs/pap-m-coje.ogg
 %%DATADIR%%/sound/magnet/cs/pap-m-jejedno.ogg
 %%DATADIR%%/sound/magnet/cs/pap-m-magnet.ogg
@@ -7030,12 +7384,18 @@ bin/fillets
 @dirrm %%DATADIR%%/sound/map
 @dirrm %%DATADIR%%/sound/magnet/cs
 @dirrm %%DATADIR%%/sound/magnet
+@dirrm %%DATADIR%%/sound/linux/en
+@dirrm %%DATADIR%%/sound/linux/cs
+@dirrm %%DATADIR%%/sound/linux
 @dirrm %%DATADIR%%/sound/library/cs
 @dirrm %%DATADIR%%/sound/library
 @dirrm %%DATADIR%%/sound/labyrinth/cs
 @dirrm %%DATADIR%%/sound/labyrinth
 @dirrm %%DATADIR%%/sound/kitchen/cs
 @dirrm %%DATADIR%%/sound/kitchen
+@dirrm %%DATADIR%%/sound/keys/en
+@dirrm %%DATADIR%%/sound/keys/cs
+@dirrm %%DATADIR%%/sound/keys
 @dirrm %%DATADIR%%/sound/imprisoned/en
 @dirrm %%DATADIR%%/sound/imprisoned/cs
 @dirrm %%DATADIR%%/sound/imprisoned
@@ -7073,6 +7433,8 @@ bin/fillets
 @dirrm %%DATADIR%%/sound/elevator2
 @dirrm %%DATADIR%%/sound/elevator1/cs
 @dirrm %%DATADIR%%/sound/elevator1
+@dirrm %%DATADIR%%/sound/electromagnet/en
+@dirrm %%DATADIR%%/sound/electromagnet
 @dirrm %%DATADIR%%/sound/dump/en
 @dirrm %%DATADIR%%/sound/dump/cs
 @dirrm %%DATADIR%%/sound/dump
@@ -7171,6 +7533,7 @@ bin/fillets
 @dirrm %%DATADIR%%/script/music
 @dirrm %%DATADIR%%/script/map
 @dirrm %%DATADIR%%/script/magnet
+@dirrm %%DATADIR%%/script/linux
 @dirrm %%DATADIR%%/script/library
 @dirrm %%DATADIR%%/script/labyrinth
 @dirrm %%DATADIR%%/script/kitchen
@@ -7192,6 +7555,7 @@ bin/fillets
 @dirrm %%DATADIR%%/script/elk
 @dirrm %%DATADIR%%/script/elevator2
 @dirrm %%DATADIR%%/script/elevator1
+@dirrm %%DATADIR%%/script/electromagnet
 @dirrm %%DATADIR%%/script/dump
 @dirrm %%DATADIR%%/script/duckie
 @dirrm %%DATADIR%%/script/creatures
@@ -7256,6 +7620,7 @@ bin/fillets
 @dirrm %%DATADIR%%/images/menu
 @dirrm %%DATADIR%%/images/map
 @dirrm %%DATADIR%%/images/magnet
+@dirrm %%DATADIR%%/images/linux
 @dirrm %%DATADIR%%/images/library
 @dirrm %%DATADIR%%/images/labyrinth
 @dirrm %%DATADIR%%/images/kitchen
@@ -7302,6 +7667,7 @@ bin/fillets
 @dirrm %%DATADIR%%/images/elk
 @dirrm %%DATADIR%%/images/elevator2
 @dirrm %%DATADIR%%/images/elevator1
+@dirrm %%DATADIR%%/images/electromagnet
 @dirrm %%DATADIR%%/images/dump
 @dirrm %%DATADIR%%/images/duckie
 @dirrm %%DATADIR%%/images/demo_briefcase
