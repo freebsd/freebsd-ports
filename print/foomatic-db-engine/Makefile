@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	engine
-PORTVERSION=	20070124
-PORTEPOCH=	1
+PORTVERSION=	4.0.1
+PORTEPOCH=	2
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_LOCAL:S,$,acm/foomatic/,} \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://www.openprinting.org/download/foomatic/ \
+		${MASTER_SITE_GOOGLE_CODE} \
+		${MASTER_SITE_LOCAL:S,$,acm/foomatic/,}
 PKGNAMEPREFIX=	foomatic-db-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${FOOMATICVER}-${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	foomatic
 
 MAINTAINER=	acm@FreeBSD.org
@@ -21,13 +22,12 @@ COMMENT=	Foomatic database engine
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
+PROJECTHOST=	bsdistfiles
 USE_GNOME=	libxml2
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/
-
-FOOMATICVER=	3.0
 
 MAN1=		foomatic-printjob.1 foomatic-ppdfile.1 foomatic-perl-data.1 \
 		foomatic-configure.1 foomatic-compiledb.1 foomatic-combo-xml.1 \
