@@ -13,7 +13,7 @@ MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	r${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for Cairo
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo

@@ -13,7 +13,7 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module for handling ICMP packets
 
 USE_RUBY=	yes

@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby module for scripting an XML stream using an ASP-like notation
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/js.so:${PORTSDIR}/lang/ruby-js

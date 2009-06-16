@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tmtm.org/ruby/tserver/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library for writing a preforking server like Apache
 
 USE_RUBY=	yes

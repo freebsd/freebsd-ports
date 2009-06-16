@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library to measure the size of a given image file
 
 USE_RUBY=	yes

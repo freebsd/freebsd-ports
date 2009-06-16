@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME:R}.txt
 EXTRACT_SUFX=	# none
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A binary data dumper module for Ruby
 
 USE_RUBY=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.itlb.te.noda.tus.ac.jp/~ikarashi/ruby/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	ChaSen module for Ruby
 
 LIB_DEPENDS=	chasen.2:${PORTSDIR}/japanese/chasen-base

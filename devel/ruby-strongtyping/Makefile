@@ -12,7 +12,7 @@ MASTER_SITES=	http://mephle.org/StrongTyping/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A little Ruby module that adds strong typing facilities
 
 USE_RUBY=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://0xcc.net/ruby-romkan/
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Romaji <-> Kana conversion library for Ruby
 
 USE_RUBY=	yes
