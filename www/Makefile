@@ -176,6 +176,7 @@
     SUBDIR += drupal6-tagadelic
     SUBDIR += drupal6-token
     SUBDIR += drupal6-views
+    SUBDIR += drupal6-webform
     SUBDIR += drupal6-wysiwyg
     SUBDIR += dtse
     SUBDIR += dummyflash
