@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	unbound
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -33,9 +32,22 @@ PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
+PLIST_SUB+=	PYTHON=${PYTHON}
 
 OPTIONS=	LIBEVENT "is useful when using many (10000) outgoing ports" off \
-		THREADS "build with threads support" on
+		THREADS "build with threads support" on \
+		PYTHON "build python bindings" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=	--with-pyunbound=yes --with-pythonmodule=yes
+BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
+PYTHON=
+.else
+PYTHON=		"@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
