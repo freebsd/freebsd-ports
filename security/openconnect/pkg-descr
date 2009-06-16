@@ -1,9 +1,13 @@
-OpenConnect is a client for Cisco's AnyConnect SSL VPN, which is
-supported by IOS 12.4(9)T or later on Cisco SR500, 870, 880,
-1800, 2800, 3800, 7200 Series and Cisco 7301 Routers.
+Cisco's implementation of the DTLS protocol unfortunately does not
+comply with the relevant standards, and the OpenSSL in FreeBSD's
+base requires a patch to provide full interoperability.  You will
+still be able to establish a tunnel, but all traffic will be
+transmitted via an HTTPS connection.  This means that any packet
+loss on your link will result in a significant detriment to the
+speed of your VPN connection.
 
-Like vpnc, OpenConnect is not officially supported by, or
-associated in any way with, Cisco Systems. It just happens to
-interoperate with their equipment.
+Note that versions of FreeBSD older than 8.0 will require a small
+number of additional patches, due to the older version of OpenSSL
+included in their base.
 
-WWW: http://www.infradead.org/openconnect.html
+More information is included in README.DTLS.

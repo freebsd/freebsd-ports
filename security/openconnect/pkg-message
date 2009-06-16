@@ -1,10 +1,9 @@
 Cisco's implementation of the DTLS protocol unfortunately does not
-comply with the relevant standards.  OpenSSL must be patched to
-provide full compliance with their implementation, and due to the
-older release of OpenSSL in the FreeBSD base, there are additional
-patches that must be applied to achieve the same goal.  Though
-OpenConnect will still function, all traffic will be passed over
-an HTTPS connection.  Should there be any packet loss on your
-link, your VPN connection will suffer greatly.
+comply with the relevant standards, and the OpenSSL in FreeBSD's
+base requires a patch to provide full interoperability.  You will
+still be able to establish a tunnel, but all traffic will be
+transmitted via an HTTPS connection.  This means that any packet
+loss on your link will result in a significant detriment to the
+speed of your VPN connection.
 
 More information is included in README.DTLS.
