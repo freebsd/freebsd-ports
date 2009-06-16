@@ -171,6 +171,7 @@
     SUBDIR += drupal6-nodewords
     SUBDIR += drupal6-page_title
     SUBDIR += drupal6-print
+    SUBDIR += drupal6-seo_checklist
     SUBDIR += drupal6-tagadelic
     SUBDIR += drupal6-token
     SUBDIR += drupal6-views
