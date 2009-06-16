@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Locale-libintl
-PORTVERSION=	1.16
-PORTREVISION=	1
+PORTVERSION=	1.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -168,5 +167,7 @@ MAN3=	Locale::RecodeData::IBM862.3 \
 	Locale::RecodeData::ATARI_ST_EURO.3 \
 	Locale::RecodeData::IBM290.3 \
 	Locale::RecodeData::IBM903.3 \
+	Locale::Util.3 \
+	Locale::libintlFAQ.3
 
 .include <bsd.port.mk>
