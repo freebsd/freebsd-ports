@@ -28,12 +28,12 @@ share/gnome/help/gtk-doc-manual/C/gtk-doc-manual.xml
 %%DATADIR%%/data/style.css
 %%DATADIR%%/data/up.png
 %%DATADIR%%/data/version-greater-or-equal.xsl
-share/omf/gtk-doc/gtk-doc-manual-C.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-C.omf
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 share/sgml/gtk-doc/gtk-doc.cat
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 @dirrm share/sgml/gtk-doc
-@dirrm share/omf/gtk-doc
+@dirrm share/omf/gtk-doc-manual
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrm share/gnome/help/gtk-doc-manual/C

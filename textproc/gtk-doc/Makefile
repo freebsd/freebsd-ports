@@ -6,8 +6,7 @@
 #    $MCom: ports/textproc/gtk-doc/Makefile,v 1.6 2008/03/19 21:35:45 ahze Exp $
 
 PORTNAME=	gtk-doc
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
@@ -31,6 +30,7 @@ CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget gnomeprefix libxslt
 INSTALLS_OMF=	yes
