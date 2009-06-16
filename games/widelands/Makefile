@@ -29,7 +29,8 @@ WRKSRC=		${WRKDIR}/widelands-${DISTVERSION:C/build/b/}
 
 USE_SCONS=	yes
 SCONS_ARGS=	install_prefix=${PREFIX} bindir=bin datadir=share/widelands \
-		localedir=share/widelands/locale build=release
+		localedir=share/widelands/locale build=release \
+		sdlconfig=${SDL_CONFIG}
 MAKE_JOBS_SAFE=	yes
 
 post-patch:
