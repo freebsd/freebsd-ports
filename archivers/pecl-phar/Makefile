@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phar
-DISTVERSION=	2.0.0RC1
+DISTVERSION=	2.0.0RC2
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
