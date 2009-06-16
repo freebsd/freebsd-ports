@@ -1,0 +1,13 @@
+--- utility.c.orig      Fri Jul  2 18:26:30 2004
++++ utility.c   Mon Oct 10 01:19:02 2005
+@@ -33,6 +33,10 @@
+ void
+ bug(const char* p_text)
+ {
++  static int inside_bug = 0;
++  if (inside_bug)
++    vsf_sysutil_exit(1);
++  inside_bug++;
+   /* Rats. Try and write the reason to the network for diagnostics */
+   vsf_sysutil_activate_noblock(VSFTP_COMMAND_FD);
+   (void) vsf_sysutil_write_loop(VSFTP_COMMAND_FD, "500 OOPS: ", 10);

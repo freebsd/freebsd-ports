@@ -107,6 +107,7 @@
     SUBDIR += uftp
     SUBDIR += urlgfe
     SUBDIR += vsftpd
+    SUBDIR += vsftpd-ext
     SUBDIR += waiho
     SUBDIR += weex
     SUBDIR += wget
