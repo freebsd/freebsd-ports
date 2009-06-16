@@ -79,12 +79,15 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_cvsup
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_fetch
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_freebsd-update
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_fstat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_kld
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_pfctl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_portaudit
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_portlint
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_portsnap
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_powerd
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_procstat
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_sockstat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base.zwc
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_all_labels
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_all_matches
