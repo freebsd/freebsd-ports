@@ -6,32 +6,32 @@
 #
 
 PORTNAME=	xrn
-PORTVERSION=	9.02
-PORTREVISION=	2
+DISTVERSION=	10.00-beta-1
 CATEGORIES=	news
 MASTER_SITES=	ftp://sipb.mit.edu/pub/xrn/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Usenet News reader for the X Window System
 
-USE_IMAKE=	yes
-USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xrn.1
 MANCOMPRESSED=	no
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_BISON=	build
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 DOCS=		COMMON-PROBLMS COPYRIGHT CREDITS ChangeLog
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/share
 
 post-patch:
-	@${REINPLACE_CMD} -E -e "s|^#error.+||g; \
-		s|/usr/lib/sendmail|/usr/sbin/sendmail|g;" ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -E -e "s|^#error.+||g" \
+		-e "s|/usr/lib/sendmail|/usr/sbin/sendmail|g" \
+		-e "s|^$$|#define POSIX_REGEX|" \
+		${WRKSRC}/config.h
 
-do-install:
-	${INSTALL_MAN} ${WRKSRC}/xrn.man ${PREFIX}/man/man1/xrn.1
-	${INSTALL_PROGRAM} ${WRKSRC}/xrn ${PREFIX}/bin/
-	${INSTALL_DATA}	${WRKSRC}/XRn.ad ${PREFIX}/lib/X11/app-defaults/XRn
-.if !defined(NOPORTDOCS)
+post-install:
+.ifndef		NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

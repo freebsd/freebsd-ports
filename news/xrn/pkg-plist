@@ -1,7 +1,9 @@
 bin/xrn
-lib/X11/app-defaults/XRn
-%%PORTDOCS%%share/doc/xrn/COMMON-PROBLMS
-%%PORTDOCS%%share/doc/xrn/COPYRIGHT
-%%PORTDOCS%%share/doc/xrn/CREDITS
-%%PORTDOCS%%share/doc/xrn/ChangeLog
-%%PORTDOCS%%@dirrm share/doc/xrn
+share/X11/app-defaults/XRn
+%%PORTDOCS%%%%DOCSDIR%%/COMMON-PROBLMS
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/X11/app-defaults
+@dirrmtry share/X11
