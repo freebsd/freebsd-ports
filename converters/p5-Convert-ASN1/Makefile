@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Convert-ASN1
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to encode and decode ASN.1 data structures
 
 PERL_CONFIGURE=	yes
