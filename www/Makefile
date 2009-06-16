@@ -169,6 +169,7 @@
     SUBDIR += drupal6-mimedetect
     SUBDIR += drupal6-nice_menus
     SUBDIR += drupal6-nodewords
+    SUBDIR += drupal6-page_title
     SUBDIR += drupal6-print
     SUBDIR += drupal6-tagadelic
     SUBDIR += drupal6-token

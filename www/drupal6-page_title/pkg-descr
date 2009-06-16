@@ -1,0 +1,7 @@
+A Drupal module which gives editors control over the page title.
+
+It allows editors specify patterns for how the title should be structured,
+and on content creation pages, gives you the chance to specify the page
+title rather than defaulting to the content's title.
+
+WWW: http://drupal.org/project/page_title
