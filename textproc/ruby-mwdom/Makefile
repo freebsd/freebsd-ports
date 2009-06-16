@@ -12,7 +12,7 @@ MASTER_SITES=	http://raa.ruby-lang.org/cache/mwdom/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DOM level2 module, XMLWriter and XHTMLWriter for Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/xpathtree.rb:${PORTSDIR}/textproc/ruby-xmlscan-old

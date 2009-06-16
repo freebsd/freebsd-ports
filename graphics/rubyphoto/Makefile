@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics ruby www
 MASTER_SITES=	http://www.markhj.com/rubyphoto/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A program for creating web image galleries
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

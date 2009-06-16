@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.tietew.jp/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library which wraps libnmz of Namazu
 
 LIB_DEPENDS=	nmz.8:${PORTSDIR}/japanese/namazu2

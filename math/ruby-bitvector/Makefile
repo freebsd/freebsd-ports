@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	fenner/ruby-contrib
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Efficient Ruby bit vector extension
 
 USE_RUBY=	yes

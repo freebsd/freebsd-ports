@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	lib${PORTNAME}-ruby_${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings to GNU Multiprecision Library
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4

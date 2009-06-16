@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An Active Server Pages port to Apache with Ruby scripting
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xslt_lib.so:${PORTSDIR}/textproc/ruby-xslt \

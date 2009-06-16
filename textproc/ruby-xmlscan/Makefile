@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.blue.sky.or.jp/atelier/ruby/xmlscan/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	High-performance non-validating XML parser written in 100% pure Ruby
 
 NO_LATEST_LINK=	yes

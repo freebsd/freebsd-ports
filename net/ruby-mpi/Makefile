@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}_ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding of MPI (Message Passing Interface)
 
 BUILD_DEPENDS=	${LOCALBASE}/mpich${MPICH_VER}/lib/libmpich.a:${PORTSDIR}/net/mpich${MPICH_VER}

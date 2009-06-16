@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	ruby-svg/2288
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library for generating SVG files
 
 USE_RUBY=	yes

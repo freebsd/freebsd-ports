@@ -16,7 +16,7 @@ MASTER_SITES=	http://klokan.sh.cvut.cz/~jtra/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	jttui.${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Textmode User Interface by Jakub Travnik
 
 USE_RUBY=		yes

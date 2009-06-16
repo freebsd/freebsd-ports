@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}.rb
 DIST_SUBDIR=	ruby/ogginfo-0.1
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library to access to information on ogg files
 
 USE_RUBY=	yes

@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	rubyfilter-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library for filtering and delivering email to mailboxes
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/rmail/parser.rb:${PORTSDIR}/mail/ruby-rmail
