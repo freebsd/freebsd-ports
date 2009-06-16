@@ -10,7 +10,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.ee.ethz.ch/~mrenold/mypaint/ CENKES
 
-MAINTAINER=	chess@chessgriffin.com
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast painting/scribbling program
 
 USE_BZIP2=	yes
