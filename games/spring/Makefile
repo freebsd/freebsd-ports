@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	spring
-PORTVERSION=	0.79.1
+PORTVERSION=	0.79.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://springrts.com/dl/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
