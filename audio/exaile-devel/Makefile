@@ -7,6 +7,7 @@
 
 PORTNAME=	exaile
 DISTVERSION=	0.2.99.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
