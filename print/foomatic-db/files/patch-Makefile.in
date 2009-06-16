@@ -1,8 +1,10 @@
---- Makefile.in.orig	Wed Mar 28 14:47:22 2007
-+++ Makefile.in	Wed Mar 28 14:48:40 2007
-@@ -66,7 +66,9 @@
+--- Makefile.in	2009-05-29 02:21:24.000000000 -0500
++++ Makefile.in	2009-05-30 11:38:15.000000000 -0500
+@@ -65,8 +65,11 @@
+ 	install -d $(DESTDIR)$(LIBDIR)/db/source/driver
  	install -d $(DESTDIR)$(LIBDIR)/db/source/opt
  	install -d $(DESTDIR)$(LIBDIR)/db/source/PPD
++	install -d $(DESTDIR)$(datadir)/cups/model
  	cp db/oldprinterids $(DESTDIR)$(LIBDIR)/db
 -	cp db/source/printer/*.xml $(DESTDIR)$(LIBDIR)/db/source/printer
 +	( for file in `find db/source/printer/ -name \*.xml`; do \
@@ -11,3 +13,16 @@
  	( cd db/source/driver/; \
  	  for d in $(DRIVERXMLS); do \
  	    cp $$d $(DESTDIR)$(LIBDIR)/db/source/driver; \
+@@ -77,10 +80,8 @@
+ 	if test $(GZIP) != GZIP_NOT_FOUND -a $(GZIP_PPDS) != no ; then \
+ 	  GZIP='' find $(DESTDIR)$(LIBDIR)/db/source/PPD -name "*.ppd" -exec $(GZIP) "{}" \; ; \
+ 	fi
+-	if test $(CUPS_PPDS) != CUPS_PPDS_NOT_FOUND -a $(PPDS_TO_CUPS) != no ; then \
+-	  install -d $(DESTDIR)$(CUPS_PPDS); \
+-	  ln -sf $(LIBDIR)/db/source/PPD $(DESTDIR)$(CUPS_PPDS)/foomatic-db-ppds; \
+-	fi
++	ln -sf $(LIBDIR)/db/source/PPD $(DESTDIR)$(datadir)/cups/model/foomatic-db-ppds
++	
+ 
+ build:
+ 	@echo "Nothing to compile/build, use \"make install\" to install the database."

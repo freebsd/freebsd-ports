@@ -1,66 +1,201 @@
---- Makefile	Fri Sep 29 23:28:51 2006
-+++ Makefile	Sun Oct  8 17:29:53 2006
-@@ -6,8 +6,7 @@
+--- Makefile	2009-04-21 19:53:37.000000000 -0500
++++ Makefile	2009-05-30 04:31:51.000000000 -0500
+@@ -16,9 +16,7 @@
  VERSION=0.0
  
  # Installation prefix...
 -PREFIX=/usr/local
 -PREFIX=/usr
-+PREFIX?=
+-PREFIX=$(DESTDIR)/usr
++PREFIX?=/usr/local
  
  # Pathnames for this package...
  BIN=$(PREFIX)/bin
-@@ -18,7 +17,7 @@
+@@ -30,12 +28,13 @@
+ SHAREQPDL=$(PREFIX)/share/foo2qpdl
+ SHARESLX=$(PREFIX)/share/foo2slx
+ SHAREHC=$(PREFIX)/share/foo2hiperc
+-MANDIR=$(PREFIX)/share/man
++MANDIR=$(PREFIX)/man
  DOCDIR=$(PREFIX)/share/doc/foo2zjs/
+-INSTALL=install
++INSTALL?=install
++INSTALL_MAN?=install
  
  # Pathnames for referenced packages...
--FOODB=/usr/share/foomatic/db/source
-+FOODB=$(PREFIX)/share/foomatic/db/source
+-FOODB=$(DESTDIR)/usr/share/foomatic/db/source
++FOODB=$(DESTDIR)$(PREFIX)/foomatic/db/source
  
  # User ID's
- LPuid=-olp
-@@ -154,7 +153,7 @@
+ LPuid=-oroot
+@@ -255,7 +254,7 @@
  endif
  
  # Compiler flags
 -CFLAGS +=	-O2 -Wall
-+CFLAGS?=
++CFLAGS ?=	-O2 -Wall
+ #CFLAGS +=	-g
  
  #
- # Rules to create test documents
-@@ -291,7 +290,7 @@
+@@ -505,10 +504,8 @@
+ #
  # Installation rules
  #
- install: all install-test install-prog install-icc2ps install-extra \
--	    install-crd install-foo install-ppd install-man install-doc
-+	    install-crd install-ppd
+-install: all install-test install-prog install-icc2ps install-extra \
+-	    install-crd install-foo install-ppd \
+-	    install-gui install-desktop \
+-	    install-man install-doc
++install: all install-prog install-icc2ps \
++	    install-crd install-foo install-ppd
  	#
  	# If you use CUPS, then restart the spooler:
  	#	make cups
-@@ -349,8 +348,10 @@
+@@ -544,7 +541,7 @@
  	#
+     
+ 
+-UDEVBIN=$(DESTDIR)/bin/
++UDEVBIN=$(DESTDIR)$(PREFIX)/bin/
+ 
+ install-prog:
+ 	#
+@@ -574,21 +571,13 @@
+ 	#
+ 	# Remove obsolete foomatic database files from previous versions
+ 	#
+-	rm -f $(FOODB)/opt/foo2zjs-Media.xml
+-	rm -f $(FOODB)/opt/foo2zjs-PaperSize.xml
+-	rm -f $(FOODB)/opt/foo2zjs-Source.xml
+-	rm -f $(FOODB)/opt/foo2zjs-DitherPPI.xml
+-	rm -f $(FOODB)/opt/foo2zjs-Copies.xml
+-	rm -f $(FOODB)/opt/foo2zjs-Nup.xml
+-	rm -f $(FOODB)/opt/foo2zjs-NupOrient.xml
+-	rm -f $(FOODB)/opt/foo2*-Quality.xml
+-	rm -f $(FOODB)/printer/KonicaMinolta*.xml
+-	#
  	# Install current database files
  	#
 +	mkdir -p $(FOODB)
  	@if [ -d $(FOODB) ]; then \
- 	    for dir in driver printer opt; do \
-+		install -d $(FOODB)/$$dir/; \
+-	    for dir in driver printer opt; do \
++	    for dir in printer opt; do \
  		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
- 		install -c -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
++		mkdir -p $(FOODB)/$$dir/; \
+ 		$(INSTALL) -c -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
  	    done \
-@@ -435,12 +436,13 @@
+ 	else \
+@@ -602,15 +591,6 @@
+ 	    echo "*** ... wherever foomatic is stashed on your machine."; \
+ 	    echo "***"; \
+ 	fi
+-	#
+-	# Clear foomatic cache and rebuild database if needed
+-	#
+-	rm -rf /var/cache/foomatic/*/*
+-	rm -f /var/cache/foomatic/printconf.pickle
+-	if [ -d /var/cache/foomatic/compiled ]; then \
+-	    cd /var/cache/foomatic/compiled; \
+-	    foomatic-combo-xml -O >overview.xml; \
+-	fi
+ 
+ install-icc2ps:
+ 	#
+@@ -722,9 +702,9 @@
  	    fi; \
  	done
  
--MODEL=/usr/share/cups/model
--LOCALMODEL=/usr/local/share/cups/model
-+MODEL=$(PREFIX)/share/cups/model
-+LOCALMODEL=$(PREFIX)/share/cups/model
+-MODEL=$(DESTDIR)/usr/share/cups/model
+-LOCALMODEL=$(DESTDIR)/usr/local/share/cups/model
+-PPD=$(DESTDIR)/usr/share/ppd
++MODEL=$(DESTDIR)$(PREFIX)/share/cups/model
++LOCALMODEL=$(DESTDIR)$(PREFIX)/share/cups/model
++PPD=$(DESTDIR)$(PREFIX)/ppd
+ VARPPD=/var/lp/ppd
  install-ppd:
  	#
- 	# Install PPD files for CUPS
- 	#
+@@ -753,6 +733,7 @@
+ 		gzip < $$ppd > $(PPD)/foo2zjs/$$ppd.gz; \
+ 	    done; \
+ 	fi
 +	mkdir -p $(MODEL)
- 	if [ -d /usr/share/ppd/ ]; then \
- 	    find /usr/share/ppd/ -name '*foo2zjs*' | xargs rm -f; \
- 	    find /usr/share/ppd/ -name '*foo2hp*' | xargs rm -f; \
+ 	if [ -d $(MODEL) ]; then \
+ 	    rm -f $(MODEL)/KonicaMinolta*; \
+ 	    cd PPD; \
+@@ -767,9 +748,9 @@
+ 	    done; \
+ 	fi
+ 
+-APPL=$(DESTDIR)/usr/share/applications
+-OLDAPPL=$(DESTDIR)/usr/share/gnome/apps/System
+-PIXMAPS=$(DESTDIR)/usr/share/pixmaps
++APPL=$(DESTDIR)$(PREFIX)/share/applications
++OLDAPPL=$(DESTDIR)$(PREFIX)/share/gnome/apps/System
++PIXMAPS=$(DESTDIR)$(PREFIX)/share/pixmaps
+ 
+ install-desktop:
+ 	#
+@@ -1185,36 +1166,34 @@
+ 	#
+ 	# Install manual pages
+ 	#
+-	$(INSTALL) -d -m 755 $(MANDIR)
+-	$(INSTALL) -d -m 755 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2zjs.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2zjs-wrapper.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 zjsdecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2oak.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2oak-wrapper.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 oakdecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2hp.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2hp2600-wrapper.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 xqxdecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2xqx.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2xqx-wrapper.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 lavadecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2lava.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2lava-wrapper.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 qpdldecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2qpdl.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2qpdl-wrapper.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 opldecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 slxdecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2slx.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2slx-wrapper.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2hiperc.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2hiperc-wrapper.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 hipercdecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 foo2zjs-pstops.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 arm2hpdl.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 usb_printerid.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 printer-profile.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2zjs.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2zjs-wrapper.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 zjsdecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2oak.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2oak-wrapper.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 oakdecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2hp.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2hp2600-wrapper.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 xqxdecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2xqx.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2xqx-wrapper.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 lavadecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2lava.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2lava-wrapper.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 qpdldecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2qpdl.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2qpdl-wrapper.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 opldecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 slxdecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2slx.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2slx-wrapper.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2hiperc.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2hiperc-wrapper.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 hipercdecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 foo2zjs-pstops.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 arm2hpdl.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 usb_printerid.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 printer-profile.1 $(MANDIR)/man1/
+ 
+ doc: README INSTALL manual.pdf
+ 

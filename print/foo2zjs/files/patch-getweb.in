@@ -1,29 +1,65 @@
---- getweb.in	Thu May 11 17:02:59 2006
-+++ getweb.in	Sun Jun  4 15:41:29 2006
-@@ -48,7 +48,7 @@
+--- getweb.in	2009-05-29 22:17:38.000000000 -0500
++++ getweb.in	2009-05-29 22:21:18.000000000 -0500
+@@ -11,7 +11,7 @@
+ 
+ VERSION='$Id: getweb.in,v 1.85 2009/05/04 14:10:55 rick Exp $'
+ 
+-WGETOPTS="--passive-ftp -q"
++FETCHOPTS="-m -o"
+ 
+ usage() {
+ cat <<EOF
+@@ -111,7 +111,7 @@
      exefile="$2"
-     what="$3"
+     shift; shift
      
 -    wget $WGETOPTS -O $exefile "$url/$exefile" ||
-+    fetch -m -o $exefile "$url/$exefile" ||
++    fetch $FETCHOPTS $exefile "$url/$exefile" ||
  	error "Couldn't download $url/$exefile"
-     unzip -o $exefile "$what"
+     unzip -oj $exefile "$@"
      rm $exefile
-@@ -62,7 +62,7 @@
+@@ -125,7 +125,7 @@
      file="$2"
      what="$3"
      
 -    wget $WGETOPTS -O $file "$url/$file" ||
-+    fetch -m -o $file "$url/$file" ||
++    fetch $FETCHOPTS $file "$url/$file" ||
  	error "Couldn't download $url/$file"
      gunzip <$file | tar xvf - $what
      rm $file
-@@ -130,7 +130,7 @@
- 	do
- 	    base=`basename $i .IC_`
- 	    mv $base.IC_ $base.ic_
--	    ./msexpand $base.ic_
-+	    msexpand $base.ic_
- 	    rm -f $base.ic_
+@@ -212,7 +212,7 @@
+ 	BASE="$BASE/openmind/technic/swfw/mswprtdl.nsf/logdwl"
+ 	FILE="MC2300DL_v255.zip"
+ 	URL="$BASE?openagent&4CE486C20839C75AC1256D9E001EBD1F/\$File/$FILE"
+-	wget $WGETOPTS "$URL" || error "Couldn't download $URL"
++	fetch $FETCHOPTS "$URL" || error "Couldn't download $URL"
+ 	echo "*** Now use a windows box to unzip and install $FILE ***"
+ 	;;
+     cpwl|pageworks)
+@@ -224,7 +224,7 @@
+ 	    do
+ 		base=`basename $i .IC_`
+ 		mv $base.IC_ $base.ic_
+-		./msexpand $base.ic_
++		msexpand $base.ic_
+ 		rm -f $base.ic_
+ 	    done
+ 	    copyright "(c) Copyright Minolta-QMS 1998"
+@@ -332,7 +332,7 @@
+ 	    URL="$URL?driver=$driver&printer=$printer"
+ 	    URL="$URL&.submit=Generate+PPD+file"
+ 	    URL="$URL&show=1&.cgifields=shortgui&.cgifields=show"
+-	    wget $WGETOPTS -O PPD/$printer.ppd "$URL" ||
++	    fetch $FETCHOPTS PPD/$printer.ppd "$URL" ||
+ 		error "Couldn't dowload $URL"
  	done
  	;;
+@@ -368,7 +368,7 @@
+     update)
+ 	url=${URLZJS}
+ 	file=foo2zjs.tar.gz
+-	wget $WGETOPTS -O $file $url/$file ||
++	fetch $FETCHOPTS $file $url/$file ||
+ 		error "Couldn't download $url/$exefile"
+ 	mv getweb getweb.old
+ 	HERE=`pwd`
