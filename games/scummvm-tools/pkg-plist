@@ -8,18 +8,25 @@ bin/compress_scumm_sou
 bin/compress_sword1
 bin/compress_sword2
 bin/compress_touche
+bin/compress_tucker
+bin/decine
+bin/degob
 bin/dekyra
 bin/descumm
 bin/desword2
 bin/encode_dxa
 bin/extract_agos
+bin/extract_cine
+bin/extract_gob_stk
 bin/extract_kyra
 bin/extract_loom_tg16
 bin/extract_mm_apple
 bin/extract_mm_c64
 bin/extract_mm_nes
-bin/extract_scumm_mac
 bin/extract_parallaction
+bin/extract_scumm_mac
+bin/extract_t7g_mac
 bin/extract_zak_c64
+%%WX%%bin/tools_gui
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
