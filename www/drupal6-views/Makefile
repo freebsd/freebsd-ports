@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	views
-DISTVERSION=	6.x-2.4
+DISTVERSION=	6.x-2.5
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Controls how content lists are generated
@@ -197,6 +196,7 @@ MODULE_FILES=	css/views-admin.css \
 		modules/comment/views_handler_field_comment_link_delete.inc \
 		modules/comment/views_handler_field_comment_link_edit.inc \
 		modules/comment/views_handler_field_comment_link_reply.inc \
+		modules/comment/views_handler_field_comment_node_link.inc \
 		modules/comment/views_handler_field_comment_username.inc \
 		modules/comment/views_handler_field_ncs_last_comment_name.inc \
 		modules/comment/views_handler_field_ncs_last_updated.inc \
