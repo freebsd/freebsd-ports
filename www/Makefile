@@ -1228,7 +1228,6 @@
     SUBDIR += pnews
     SUBDIR += podcastamatic
     SUBDIR += polipo
-    SUBDIR += postnuke
     SUBDIR += pound
     SUBDIR += prado
     SUBDIR += preferential
