@@ -6,24 +6,16 @@
 #
 
 PORTNAME=	metasploit
-DISTVERSION=	3.0
-PORTREVISION=	2
+DISTVERSION=	3.2
 CATEGORIES=	security
-MASTER_SITES=	#
+MASTER_SITES=	http://spool.metasploit.com/releases/
 DISTNAME=	framework-${DISTVERSION}
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
 
-RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
-		${LOCALBASE}/lib/ruby/gems/1.8/specifications/activerecord-1.15.6.gemspec:${PORTSDIR}/databases/rubygem-activerecord
-
-SCRIPTS=	msfcli msfconsole msfd msfencode msflicense msfopcode \
-		msfpayload msfpescan msfweb
-
-RESTRICTED=	May not be re-sold for more than the cost of duplication, nor redistributed after patching
-
-BROKEN=		unsatisfiable dependency
+SCRIPTS=	msfcli msfconsole msfd msfselfscan msfencode msfmachscan \
+		msfopcode msfpayload msfpescan msfweb
 
 NO_BUILD=	yes
 USE_RUBY=	yes
@@ -35,18 +27,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems
 .endif
 
 .if defined(WITH_MSFGUI)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/wxruby.so:${PORTSDIR}/x11-toolkits/ruby-wx
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/libglade2.so:${PORTSDIR}/devel/ruby-libglade2
 SCRIPTS+=	msfgui
-.endif
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE=\n \
-Due to licensing restrictions you have to accept the Metasploit Framework\n \
-License before downloading ${DISTNAME}${EXTRACT_SUFX}. Please direct your\n \
-web browser to http://metasploit.com/projects/Framework/msf3/ to read and\n \
-accept the license. Once downloaded, save ${DISTNAME}${EXTRACT_SUFX} \n \
-in ${DISTDIR} and try again.\n
 .endif
 
 do-install:
