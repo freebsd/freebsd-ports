@@ -27,8 +27,6 @@
 %%SITE_PERL%%/ExtUtils/MakeMaker/Config.pm
 %%SITE_PERL%%/ExtUtils/MakeMaker/FAQ.pod
 %%SITE_PERL%%/ExtUtils/MakeMaker/Tutorial.pod
-%%SITE_PERL%%/ExtUtils/MakeMaker/bytes.pm
-%%SITE_PERL%%/ExtUtils/MakeMaker/vmsish.pm
 %%SITE_PERL%%/ExtUtils/Manifest.pm
 %%SITE_PERL%%/ExtUtils/Mkbootstrap.pm
 %%SITE_PERL%%/ExtUtils/Mksymlists.pm
