@@ -164,6 +164,7 @@
     SUBDIR += drupal6-advanced_help
     SUBDIR += drupal6-cck
     SUBDIR += drupal6-geshifilter
+    SUBDIR += drupal6-google_analytics
     SUBDIR += drupal6-mimedetect
     SUBDIR += drupal6-nice_menus
     SUBDIR += drupal6-nodewords
