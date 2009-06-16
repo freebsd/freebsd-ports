@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	embassy
-PORTVERSION=	5.0.0
+PORTVERSION=	6.0.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/ \
 		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
@@ -16,9 +16,7 @@ DIST_SUBDIR=	emboss
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A collection of contributed EMBOSS applications
 
-LIB_DEPENDS=	nucleus.5:${PORTSDIR}/biology/emboss
-
-BROKEN=		does not compile
+LIB_DEPENDS=	nucleus.6:${PORTSDIR}/biology/emboss
 
 PREFIX?=	${LOCALBASE}/emboss
 NO_MTREE=	yes
@@ -38,34 +36,40 @@ OPTIONS=	DOMAINATRIX	"Protein domain apps" on \
 		EMNU		"EMBOSS simple menu" on \
 		ESIM4		"Align cDNA/EST to genome" on \
 		HMMER		"HMM alignment and searches" on \
-		MEME		"Motif detection" on \
+		MEMENEW		"Motif detection" on \
 		MSE		"A multiple sequence screen editor" on \
 		MYEMBOSS	"Examples for developers of EMBOSS apps" on \
-		PHYLIP		"Phylogeny inference" on \
+		PHYLIPNEW	"Phylogeny inference" on \
 		TOPO		"Transmembrane display" on \
-		VIENNA		"RNA folding" on
+		VIENNA		"RNA folding" on \
+		MIRA		"Whole Genome shotgun and EST assembler" on \
+		IPRSCAN		"InterPro scan" on \
+		CBSTOOLS	"CBS Tools" on
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${LOCALBASE}/emboss/include" \
+		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib -L${LOCALBASE}/emboss/lib"
 
 EMBASSY_WRKDIR=		${WRKSRC}/EMBASSY
 DOMAINATRIX_VERSION=	0.1.0
 EMNU_VERSION=		1.05
 ESIM4_VERSION=		1.0.0
 HMMER_VERSION=		2.3.2
-MEME_VERSION=		0.1.0
+MEMENEW_VERSION=	0.1.0
 MSE_VERSION=		1.0.0
 TOPO_VERSION=		1.0.0
-PHYLIP_VERSION=		3.6b
+PHYLIPNEW_VERSION=	3.67
 DOMALIGN_VERSION=	0.1.0
 DOMSEARCH_VERSION=	0.1.0
 SIGNATURE_VERSION=	0.1.0
 STRUCTURE_VERSION=	0.1.0
-MYEMBOSS_VERSION=	3.0.0
-VIENNA_VERSION=		1.6
-EMBASSY_APPS=		DOMAINATRIX EMNU ESIM4 HMMER MEME MSE PHYLIP \
+MYEMBOSS_VERSION=	6.0.0
+VIENNA_VERSION=		1.7.2
+MIRA_VERSION=		2.8.2
+IPRSCAN_VERSION=	4.3.1
+CBSTOOLS_VERSION=	1.0.0
+EMBASSY_APPS=		DOMAINATRIX EMNU ESIM4 HMMER MEMENEW MSE PHYLIPNEW \
 			TOPO DOMALIGN DOMSEARCH SIGNATURE STRUCTURE MYEMBOSS \
-			VIENNA
+			VIENNA MIRA IPRSCAN CBSTOOLS
 
 .include <bsd.port.pre.mk>
 
