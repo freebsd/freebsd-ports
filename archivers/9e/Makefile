@@ -8,10 +8,10 @@
 PORTNAME=	9e
 PORTVERSION=	1.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.eecs.harvard.edu/~wkj/Software/9e/
+MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	9e
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Explode Plan9 archives
 
 PLIST_FILES=	bin/9e
