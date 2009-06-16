@@ -58,7 +58,7 @@ APACHEDIR=	${MASTERDIR}
 
 .if !defined(WITHOUT_APACHE_OPTIONS)
 OPTIONS= \
-	APR_FROM_PORTS "Use devel/apr as APR (beware!)" Off \
+	APR_FROM_PORTS "Use devel/apr as APR (preferred)" Off \
 	THREADS "Enable threads support in APR" Off \
 	MYSQL "Enable MySQL support for apr-dbd" Off \
 	PGSQL "Enable PostgreSQL support for apr-dbd" Off \
