@@ -20,4 +20,7 @@ MAN3=	XML::WBXML.3
 
 PERL_CONFIGURE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,-I.,-I. -I${LOCALBASE}/include,' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
