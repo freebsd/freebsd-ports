@@ -35,25 +35,30 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="91a2066b-5ab6-11de-bc9b-0030843d3802">
-    <topic> -- </topic>
+    <topic>cscope -- buffer overflow</topic>
     <affects>
       <package>
-	<name></name>
-	<range><lt></lt></range>
+	<name>cscope</name>
+	<range><lt>15.6</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
-	<blockquote cite="INSERT URL HERE">
-	  <p>.</p>
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/34832">
+	  <p>Attackers may leverage this issue to execute arbitrary code
+	    in the context of the application. Failed attacks will cause
+	    denial-of-service conditions.</p>
 	</blockquote>
       </body>
     </description>
     <references>
+      <bid>34832</bid>
+      <cvename>CVE-2009-1577</cvename>
+      <url>http://cscope.cvs.sourceforge.net/viewvc/cscope/cscope/src/find.c?view=log#rev1.19</url>
     </references>
     <dates>
-      <discovery>2009-06-FIXME</discovery>
+      <discovery>2009-05-31</discovery>
       <entry>2009-06-16</entry>
     </dates>
   </vuln>
