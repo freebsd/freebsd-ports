@@ -198,7 +198,6 @@
     SUBDIR += plib
     SUBDIR += py-Pmw
     SUBDIR += py-SciParam
-    SUBDIR += py-anygui
     SUBDIR += py-fltk
     SUBDIR += py-gnome
     SUBDIR += py-gnome-desktop
