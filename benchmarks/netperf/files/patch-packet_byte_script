@@ -1,11 +1,11 @@
---- doc/examples/packet_byte_script.bak	Fri Oct 21 07:58:11 2005
-+++ doc/examples/packet_byte_script	Thu Nov  9 13:20:06 2006
-@@ -22,7 +22,7 @@
+--- doc/examples/packet_byte_script.orig	2007-11-09 08:29:45.000000000 +0900
++++ doc/examples/packet_byte_script	2009-06-16 15:35:37.000000000 +0900
+@@ -25,7 +25,7 @@
  fi
  
  # where is netperf
--NETPERF_CMD=${NETPERF_CMD:=/opt/netperf/netperf}
-+NETPERF_CMD=${NETPERF_CMD:=%%PREFIX%%/bin/netperf}
+-NETPERF_DIR=${NETPERF_DIR:=/opt/netperf2/bin}
++NETPERF_DIR=${NETPERF_DIR:=%%PREFIX%%/bin}
+ 
  
  # at what port will netserver be waiting? If you decide to run
- # netserver at a differnet port than the default of 12865, then set
