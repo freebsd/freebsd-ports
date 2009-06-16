@@ -1,4 +1,4 @@
-# New ports collection makefile for:	drupal5-google_analytics
+# New ports collection makefile for:	drupal6-google_analytics
 # Date created:				31 Mar 2007
 # Whom:					Nick Hilliard <nick@foobar.org>
 #
@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	google_analytics
-DISTVERSION=	5.x-1.7
+DISTVERSION=	6.x-2.2
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org
-COMMENT=	Adds the Google Analytics web statistics tracking system to your website.
+COMMENT=	Adds the Google Analytics web stats tracking system to your website
 
-DRUPAL5_MODULE=	yes
-MODULE_FILES=	googleanalytics.info googleanalytics.install googleanalytics.js \
-		googleanalytics.module po/ca.po po/de.po po/es.po po/fr.po \
-		po/it.po po/googleanalytics.pot po/ja.po po/pl.po po/pt.po \
-		po/ru.po po/sk.po
-MODULE_DIRS=	po
+DRUPAL6_MODULE=	yes
 
-DOC_FILES=	LICENSE.txt README.txt UPGRADE.txt
+MODULE_FILES=	tests/googleanalytics_basic.test googleanalytics.admin.inc \
+		googleanalytics.info googleanalytics.install \
+		googleanalytics.js googleanalytics.module translations/de.po \
+		translations/el.po translations/fr.po translations/ja.po \
+		translations/googleanalytics.pot translations/pl.po \
+		translations/sk.po
+
+MODULE_DIRS=	tests translations
+
+DOC_FILES=	LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
