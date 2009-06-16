@@ -166,6 +166,7 @@
     SUBDIR += drupal6-geshifilter
     SUBDIR += drupal6-mimedetect
     SUBDIR += drupal6-nice_menus
+    SUBDIR += drupal6-nodewords
     SUBDIR += drupal6-print
     SUBDIR += drupal6-tagadelic
     SUBDIR += drupal6-token
