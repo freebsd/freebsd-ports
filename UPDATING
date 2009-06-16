@@ -249,7 +249,10 @@ upgrades.
 
   Portmaster users:
         portmaster -o lang/perl5.10 lang/perl5.8
-        portmaster -r perl\*
+        portmaster -r perl-
+
+  Note: If the "perl-" glob matches  more than one port you will need to
+	specify the name of the perl directory in /var/db/pkg explicitly.
 
 20090327:
   AFFECTS: users of security/clamav
@@ -784,12 +787,12 @@ upgrades.
 
   Portmaster users:
    pkg_delete -f php5-pcre\*
-   portmaster php5\*
+   portmaster php5
 
   If you are using pecl ports you might need to force an update on them, ie.:
    portupgrade -f pecl\*
   or
-   portmaster pecl\*
+   portmaster pecl
 
   If you have the pecl hash, json and/or zip extensions you need to replace
   them with the php5 bundled ones, ie.:
@@ -1463,9 +1466,9 @@ upgrades.
   These changes require that all dependent ports be updated.  You can do
   this in one of two ways:
 
-	# portmaster pixman\*
+	# portmaster pixman
 	# portmaster \*cairo\*
-	# portmaster -r poppler-0.\*
+	# portmaster -r poppler-0
 
   or:
 
@@ -1621,7 +1624,7 @@ upgrades.
   depend on gettext:
 
 	# portupgrade -rf gettext
-	# portmaster -r gettext\*
+	# portmaster -r gettext
 
   Given the scope and sheer number of dependent ports, it may be more
   advisable to simply blow away all existing install ports (after
@@ -1813,7 +1816,7 @@ upgrades.
 
   Portmaster users:
 	portmaster -o sysutils/tracker-client tracker
-	portmaster -u sysutils/tracker
+	portmaster sysutils/tracker
 
   Portupgrade users:
 	portupgrade -o sysutils/tracker-client tracker
@@ -1916,7 +1919,7 @@ upgrades.
   devel/gio-fam-backend saying it cannot find -lgio-2.0. Portmaster users
   can do:
 
-	portmaster glib-2\*
+	portmaster glib-2
 
   or, if you're using portupgrade:
 
@@ -2328,8 +2331,8 @@ upgrades.
   This puts the FreeBSD GNOME ports more in line with the default GNOME
   installation hierarchy. To find the specific directories that have
   changed, see misc/gnomehier/files/dirlist. To upgrade your installed
-  ports, you will need to use either sysutils/portupgrade or
-  sysutils/portmaster.
+  ports, you will need to use either ports-mgmt/portupgrade or
+  ports-mgmt/portmaster.
 
     Portupgrade users:
 	# pkgdb -Ff
@@ -2684,12 +2687,17 @@ upgrades.
   developing autotools-using code (as opposed to just building ports)
   considerably easier.
 
-  Upgrade path is as follows for portupgrade, substitute the appropriate
-  commands if you are using portmaster:
+  Upgrade path is as follows for portupgrade:
 
     1. portupgrade -f 'autoconf*' 'automake*'
     2. cd /usr/ports/devel/autotools; make install
     3. portupgrade -a
+
+  For portmaster:
+
+    1. portmaster autoconf automake
+    2. portmaster devel/autotools
+    3. portmaster -a
 
   The second step is optional, but is recommended to bring in all versions
   of autoconf and automake.
@@ -3103,10 +3111,10 @@ upgrades.
   Portmaster users:
     (gimp)
 	portmaster -o graphics/gimp-app gimp
-	portmaster -u graphics/gimp
+	portmaster graphics/gimp
     (gimp-devel)
 	portmaster -o graphics/gimp-app-devel gimp-devel
-	portmaster -u graphics/gimp-devel
+	portmaster graphics/gimp-devel
 
   Portupgrade users:
     (gimp)
@@ -3123,7 +3131,7 @@ upgrades.
 
   Portmaster users:
 	portmaster -o print/gutenprint-base gutenprint
-	portmaster -u print/gutenprint
+	portmaster print/gutenprint
 
   Portupgrade users:
 	portupgrade -o print/gutenprint-base gutenprint
@@ -3328,8 +3336,8 @@ upgrades.
   Portmaster users, skip a first step if you don't have audio/speex-devel
   installed:
 
-  	portmaster -o audio/speex speex-devel\*
-  	portmaster -r speex\*
+  	portmaster -o audio/speex speex-devel
+  	portmaster -r speex
 
 20070218:
   AFFECTS: users of sysutils/symon
@@ -3869,7 +3877,7 @@ upgrades.
 	portupgrade -rf pkg-config\*
 
   Portmaster users:
-	portmaster -r pkg-config\*
+	portmaster -r pkg-config
 
 20061010:
   AFFECTS: users of devel/avr-gcc*
