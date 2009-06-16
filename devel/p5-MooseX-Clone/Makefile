@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Clone
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,7 @@ PERL_CONFIGURE=	5.8.0+
 MAN3=		MooseX::Clone.3 \
 		MooseX::Clone::Meta::Attribute::Trait::NoClone.3 \
 		MooseX::Clone::Meta::Attribute::Trait::Copy.3 \
-		MooseX::Clone::Meta::Attribute::Trait::Clone.3
+		MooseX::Clone::Meta::Attribute::Trait::Clone.3 \
+		MooseX::Clone::Meta::Attribute::Trait::StorableClone.3
 
 .include <bsd.port.mk>
