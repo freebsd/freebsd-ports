@@ -168,6 +168,7 @@
     SUBDIR += drupal6-nice_menus
     SUBDIR += drupal6-print
     SUBDIR += drupal6-tagadelic
+    SUBDIR += drupal6-token
     SUBDIR += drupal6-views
     SUBDIR += dtse
     SUBDIR += dummyflash
