@@ -33,8 +33,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Note:  Please add new entries to the beginning of this file.
 
 -->
-
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="91a2066b-5ab6-11de-bc9b-0030843d3802">
+    <topic> -- </topic>
+    <affects>
+      <package>
+	<name></name>
+	<range><lt></lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    </references>
+    <dates>
+      <discovery>2009-06-FIXME</discovery>
+      <entry>2009-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bdccd14b-5aac-11de-a438-003048590f9e">
     <topic>joomla -- multiple vulnerabilities</topic>
     <affects>
