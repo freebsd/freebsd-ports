@@ -4,6 +4,8 @@
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Copy.pm
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone.pm
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone/Base.pm
+%%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone/Std.pm
+%%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/StorableClone.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Clone
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrmtry %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone
