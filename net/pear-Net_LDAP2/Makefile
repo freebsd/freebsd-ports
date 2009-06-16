@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_LDAP2
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 PORTEPOCH=	1
 CATEGORIES=	net pear
 
@@ -33,7 +33,8 @@ TESTS=		AllTests.php Net_LDAP2Test.php \
 		ldif_data/changes.ldif ldif_data/malformed_encoding.ldif \
 		ldif_data/malformed_syntax.ldif ldif_data/malformed_wrapping.ldif \
 		ldif_data/sorted_w40.ldif ldif_data/sorted_w50.ldif \
-		ldif_data/unsorted_w30.ldif ldif_data/unsorted_w50.ldif
+		ldif_data/unsorted_w30.ldif ldif_data/unsorted_w50.ldif \
+		ldif_data/unsorted_w50_WIN.ldif
 EXAMPLES=	add_entry.php connecting.php fetch_entry.php \
 		modify_entry.php modify_entry2.php search_entries.php \
 		schema_cache.php
