@@ -1,14 +1,14 @@
 --- ltmain.sh.orig	Mon Jun 19 09:26:24 2006
 +++ ltmain.sh	Mon Jun 19 09:26:40 2006
-@@ -6003,10 +6003,12 @@
+@@ -2077,10 +2077,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
 +	if /usr/bin/false ; then
- 	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
+ 	func_basename "$file"
+ 	name="$func_basename_result"
  	instname="$dir/$name"i
- 	$show "$install_prog $instname $destdir/$name"
- 	$run eval "$install_prog $instname $destdir/$name" || exit $?
+ 	func_show_eval "$install_prog $instname $destdir/$name" 'exit $?'
 +	fi
  
  	# Maybe install the static library, too.
