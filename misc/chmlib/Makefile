@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	chmlib
-PORTVERSION=	0.39
-PORTREVISION=	2
+PORTVERSION=	0.40
 CATEGORIES=	misc
 MASTER_SITES=	http://www.jedrea.com/chmlib/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@Fluffy.Khv.RU
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
 USE_BZIP2=	yes
