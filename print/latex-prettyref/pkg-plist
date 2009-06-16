@@ -2,3 +2,4 @@
 share/texmf/tex/latex/prettyref/prettyref.sty
 %%PORTDOCS%%@dirrm share/texmf/doc/latex/prettyref
 @dirrm share/texmf/tex/latex/prettyref
+@unexec %%MKTEXLSR%%
