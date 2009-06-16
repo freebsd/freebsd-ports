@@ -17,10 +17,11 @@
 %%SITE_PERL%%/Chart/Clicker/Renderer/Area.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Bar.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Bubble.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/CandleStick.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Line.pm
-%%SITE_PERL%%/Chart/Clicker/Renderer/Measurement.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Pie.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Point.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/StackedArea.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedBar.pm
 %%SITE_PERL%%/Chart/Clicker/Drawing/ColorAllocator.pm
 %%SITE_PERL%%/Chart/Clicker/Axis/DateTime.pm
@@ -28,6 +29,7 @@
 %%SITE_PERL%%/Chart/Clicker/Data/Range.pm
 %%SITE_PERL%%/Chart/Clicker/Data/Marker.pm
 %%SITE_PERL%%/Chart/Clicker/Data/Series.pm
+%%SITE_PERL%%/Chart/Clicker/Data/Series/HighLow.pm
 %%SITE_PERL%%/Chart/Clicker/Data/Series/Size.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Clicker
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart
