@@ -23,38 +23,72 @@ share/locale/id/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/it/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/ja/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/lv/LC_MESSAGES/xfce4-screenshooter.mo
-share/locale/nb_NO/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/nb/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/nl/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/pl/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/pt/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-screenshooter.mo
-share/locale/pt_PT/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ro/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ru/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/sq/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/sv/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/tr/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/uk/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/ur/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/vi/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-screenshooter.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-screenshooter.mo
 share/xfce4/doc/C/images/xfce4-screenshooter-dialog.png
+share/xfce4/doc/C/images/xfce4-screenshooter-zimagez-login-dialog.png
+share/xfce4/doc/C/images/xfce4-screenshooter-zimagez-result-dialog.png
 share/xfce4/doc/C/xfce4-screenshooter.html
+share/xfce4/doc/da/images/xfce4-screenshooter-dialog.png
+share/xfce4/doc/da/images/xfce4-screenshooter-zimagez-login-dialog.png
+share/xfce4/doc/da/images/xfce4-screenshooter-zimagez-result-dialog.png
+share/xfce4/doc/da/xfce4-screenshooter.html
 share/xfce4/doc/fr/images/xfce4-screenshooter-dialog.png
+share/xfce4/doc/fr/images/xfce4-screenshooter-zimagez-login-dialog.png
+share/xfce4/doc/fr/images/xfce4-screenshooter-zimagez-result-dialog.png
 share/xfce4/doc/fr/xfce4-screenshooter.html
+share/xfce4/doc/gl/images/xfce4-screenshooter-dialog.png
+share/xfce4/doc/gl/images/xfce4-screenshooter-zimagez-login-dialog.png
+share/xfce4/doc/gl/images/xfce4-screenshooter-zimagez-result-dialog.png
+share/xfce4/doc/gl/xfce4-screenshooter.html
+share/xfce4/doc/it/images/xfce4-screenshooter-dialog.png
+share/xfce4/doc/it/images/xfce4-screenshooter-zimagez-login-dialog.png
+share/xfce4/doc/it/images/xfce4-screenshooter-zimagez-result-dialog.png
+share/xfce4/doc/it/xfce4-screenshooter.html
 share/xfce4/doc/ja/images/xfce4-screenshooter-dialog.png
+share/xfce4/doc/ja/images/xfce4-screenshooter-zimagez-login-dialog.png
+share/xfce4/doc/ja/images/xfce4-screenshooter-zimagez-result-dialog.png
 share/xfce4/doc/ja/xfce4-screenshooter.html
+share/xfce4/doc/tr/images/xfce4-screenshooter-dialog.png
+share/xfce4/doc/tr/images/xfce4-screenshooter-zimagez-login-dialog.png
+share/xfce4/doc/tr/images/xfce4-screenshooter-zimagez-result-dialog.png
+share/xfce4/doc/tr/xfce4-screenshooter.html
 share/xfce4/panel-plugins/screenshooter.desktop
 @dirrm share/xfce4/panel-plugins
+@dirrm share/xfce4/doc/tr/images
+@dirrm share/xfce4/doc/tr
 @dirrm share/xfce4/doc/ja/images
 @dirrm share/xfce4/doc/ja
+@dirrm share/xfce4/doc/it/images
+@dirrm share/xfce4/doc/it
+@dirrm share/xfce4/doc/gl/images
+@dirrm share/xfce4/doc/gl
 @dirrm share/xfce4/doc/fr/images
 @dirrm share/xfce4/doc/fr
+@dirrm share/xfce4/doc/da/images
+@dirrm share/xfce4/doc/da
 @dirrm share/xfce4/doc/C/images
 @dirrm share/xfce4/doc/C
 @dirrm share/xfce4/doc
 @dirrm share/xfce4
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
 @dirrmtry share/applications
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
