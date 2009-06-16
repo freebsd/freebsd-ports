@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c14aa48c-5ab7-11de-bc9b-0030843d3802">
+    <topic>cscope -- multiple buffer overflows</topic>
+    <affects>
+      <package>
+	<name>cscope</name>
+	<range><lt>15.7a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/34978">
+	  <p>Some vulnerabilities have been reported in Cscope, which
+	    potentially can be exploited by malicious people to compromise a
+	    user's system.</p>
+	  <p>The vulnerabilities are caused due to various boundary errors,
+	    which can be exploited to cause buffer overflows when parsing
+	    specially crafted files or directories.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>34805</bid>
+      <cvename>CVE-2009-0148</cvename>
+      <url>http://secunia.com/advisories/34978</url>
+    </references>
+    <dates>
+      <discovery>2009-05-31</discovery>
+      <entry>2009-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="91a2066b-5ab6-11de-bc9b-0030843d3802">
     <topic>cscope -- buffer overflow</topic>
     <affects>
