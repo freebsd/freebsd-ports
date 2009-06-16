@@ -1,6 +1,0 @@
---- pytone.orig	2007-12-14 10:42:55.000000000 -0800
-+++ pytone	2007-12-14 10:44:18.000000000 -0800
-@@ -1,2 +1,2 @@
- #!/bin/sh
--python2.4 src/pytone.py "$@"
-+python src/pytone.py "$@"
