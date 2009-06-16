@@ -882,6 +882,7 @@ battfink                        ports/sysutils/battfink
 battleball                      ports/games/battleball
 battletanks                     ports/games/battletanks
 battmond                        ports/sysutils/battmond
+batv-milter                     ports/mail/batv-milter
 baudline                        ports/audio/baudline
 bayespam                        ports/mail/bayespam
 bazaar                          ports/devel/bazaar
@@ -2845,7 +2846,7 @@ enigmail-seamonkey              ports/mail/enigmail-seamonkey
 enigmail-thunderbird            ports/mail/enigmail-thunderbird
 enity                           ports/x11/enity
 enjoympeg                       ports/multimedia/enjoympeg
-enlightenment-devel             ports/x11-wm/enlightenment-devel
+enlightenment                   ports/x11-wm/enlightenment
 enlightenment-docs              ports/x11-wm/enlightenment-docs
 enma                            ports/mail/enma
 enscribe                        ports/audio/enscribe
@@ -6324,7 +6325,6 @@ junipoll                        ports/net-mgmt/junipoll
 junit                           ports/java/junit
 junkbuster                      ports/www/junkbuster
 junkfilter                      ports/mail/junkfilter
-juno-2                          ports/graphics/juno-2
 jwchat                          ports/net-im/jwchat
 jwhois                          ports/net/jwhois
 jwm                             ports/x11-wm/jwm
@@ -8680,7 +8680,6 @@ mldonkey-urlslave               ports/net-p2p/mldonkey-urlslave
 mlmmj                           ports/mail/mlmmj
 mls                             ports/mail/mls
 mlt                             ports/multimedia/mlt
-mlt++                           ports/multimedia/mlt++
 mlterm                          ports/x11/mlterm
 mlton                           ports/lang/mlton
 mlview                          ports/editors/mlview
@@ -18270,12 +18269,6 @@ plugger-plugins-hubbe           ports/www/plugger-plugins-hubbe
 plutocracy                      ports/games/plutocracy
 plwm                            ports/x11-wm/plwm
 pm-lib                          ports/mail/pm-lib
-pm3-base                        ports/lang/pm3-base
-pm3-forms                       ports/lang/pm3-forms
-pm3-gui                         ports/lang/pm3-gui
-pm3-m3tk                        ports/lang/pm3-m3tk
-pm3-net                         ports/lang/pm3-net
-pm3-netobj                      ports/lang/pm3-netobj
 pm3umpdl                        ports/audio/pm3umpdl
 pmacct                          ports/net-mgmt/pmacct
 pmail                           ports/mail/pmail
@@ -22700,6 +22693,7 @@ vinetto                         ports/security/vinetto
 vino                            ports/net/vino
 vipec                           ports/cad/vipec
 vips                            ports/graphics/vips
+virtualbox                      ports/emulators/virtualbox
 virtualmin                      ports/sysutils/virtualmin
 virtuoso                        ports/databases/virtuoso
 vis5d+                          ports/science/vis5d+
