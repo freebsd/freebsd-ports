@@ -7,6 +7,7 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	devel linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
@@ -23,7 +24,8 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/lib/libglade-2.0.so.0 usr/lib/libglade-2.0.so.0.0.7 \
 		usr/share/xml/libglade/glade-2.0.dtd
-PLIST_DIRS=	usr/share/xml/libglade usr/share/xml
+PLIST_DIRS=	usr/share/xml/libglade usr/share/xml \
+		usr/lib/libglade/2.0 usr/lib/libglade
 DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING NEWS README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
