@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_DNS
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	dns net pear
 
 MAINTAINER=	miwi@FreeBSD.org
