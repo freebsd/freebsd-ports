@@ -1,5 +1,14 @@
---- Makefile.fc9.orig	2008-08-31 18:53:10.000000000 +0200
-+++ Makefile.fc9	2008-11-26 17:42:43.000000000 +0100
+--- Makefile.fc9.orig	2008-08-31 17:53:10.000000000 +0200
++++ Makefile.fc9	2009-06-16 10:10:25.855027068 +0200
+@@ -7,7 +7,7 @@
+ 
+ 
+ 
+-prefix = /usr/local
++prefix = ${PREFIX}
+ exec_prefix = ${prefix}
+ INSTALL = /usr/bin/install -c
+ EXEEXT = 
 @@ -20,16 +20,16 @@
  LDFLAGS_GUI = 
  CXX = g++
@@ -9,15 +18,15 @@
  #CPPFLAGS = -D__WXDEBUG__  -DGTK_NO_CHECK_CASTS -pthread -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D_LARGEFILE_SOURCE=1 -DwxUSE_UNICODE=1 -I.
 -CPPFLAGS = -DGTK_NO_CHECK_CASTS -pthread -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D_LARGEFILE_SOURCE=1 -DwxUSE_UNICODE=1 -I.  -I/usr/include/wx-2.8 -I/usr/lib/wx/include/gtk2-unicode-release-2.8
 -LDFLAGS = -pthread   -L/usr/X11R6/lib 
-+CPPFLAGS += -DGTK_NO_CHECK_CASTS -pthread -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D_LARGEFILE_SOURCE=1 -DwxUSE_UNICODE=1 -I.  -I/usr/local/include/wx-2.8 -I/usr/local/lib/wx/include/gtk2-unicode-release-2.8
-+LDFLAGS = -pthread   -L/usr/local/lib 
++CPPFLAGS += -DGTK_NO_CHECK_CASTS -pthread -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D_LARGEFILE_SOURCE=1 -DwxUSE_UNICODE=1 -I.  -I${LOCALBASE}/include/wx-2.8 -I${LOCALBASE}/lib/wx/include/gtk2-unicode-release-2.8
++LDFLAGS = -pthread   -L${LOCALBASE}/lib 
  WX_LIB_FLAVOUR = 
  TOOLKIT = GTK
  TOOLKIT_LOWERCASE = gtk
  TOOLKIT_VERSION = 2
 -EXTRALIBS = -pthread   -L/usr/X11R6/lib -lz -ldl -lm 
 -EXTRALIBS_GUI = -Wl,--export-dynamic -pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangoxft-1.0 -lpangox-1.0 -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -ldl -lgthread-2.0 -lglib-2.0 -lXinerama -lXxf86vm -lpng -lz -ljpeg -ltiff
-+EXTRALIBS = -pthread   -L/usr/local/lib -lz -lm 
++EXTRALIBS = -pthread   -L${LOCALBASE}/lib -lz -lm 
 +EXTRALIBS_GUI = -Wl,--export-dynamic -pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangoxft-1.0 -lpangox-1.0 -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lglib-2.0 -lXinerama -lXxf86vm -lpng -lz -ljpeg -ltiff
  EXTRALIBS_SDL = 
  HOST_SUFFIX = 
