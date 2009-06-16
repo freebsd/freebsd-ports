@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Layout/Manager/Axis.pm
 %%SITE_PERL%%/Layout/Manager/Compass.pm
 %%SITE_PERL%%/Layout/Manager/Flow.pm
+%%SITE_PERL%%/Layout/Manager/Grid.pm
 %%SITE_PERL%%/Layout/Manager/Single.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Layout/Manager
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Layout
