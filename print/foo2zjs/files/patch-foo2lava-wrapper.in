@@ -1,20 +1,20 @@
---- foo2hp2600-wrapper.in	2009-05-30 04:57:56.000000000 -0500
-+++ foo2hp2600-wrapper.in	2009-05-30 04:59:38.000000000 -0500
-@@ -34,13 +34,6 @@
- SHARE=$PREFIX/share/foo2hp
+--- foo2lava-wrapper.in	2009-05-30 05:00:03.000000000 -0500
++++ foo2lava-wrapper.in	2009-05-30 05:00:53.000000000 -0500
+@@ -41,13 +41,6 @@
+ SHARE=$PREFIX/share/foo2lava
  PATH=$PATH:/sw/bin:/opt/local/bin
  
 -#
 -#	Log the command line, for debugging and problem reports
 -#
 -if [ -x /usr/bin/logger -o -x /bin/logger ]; then
--    logger -t "$BASENAME" -p lpr.info -- "$BASENAME $@" </dev/null
+-    logger -t "$BASENAME" -p lpr.info -- "foo2lava-wrapper $@" </dev/null
 -fi
 -
  usage() {
  	cat <<EOF
  Usage:
-@@ -185,8 +178,8 @@
+@@ -154,8 +147,8 @@
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
@@ -25,16 +25,7 @@
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -343,7 +336,7 @@
- 	    GSDEV="-sDEVICE=cups -dcupsColorSpace=6 -dcupsBitsPerColor=2"
- 	    GSDEV="$GSDEV -dcupsColorOrder=2"
- 	fi
--	if [ $GSBIN = "gs.foo" ]; then
-+	if [ $GSBIN = "gs" ]; then
- 	    GSBIN=gs
- 	fi
- 
-@@ -749,18 +742,6 @@
+@@ -700,18 +693,6 @@
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
  
  #
@@ -44,8 +35,8 @@
 -    logger -t "$BASENAME" -p lpr.info -- \
 -	"$GSBIN $PAPERSIZE -g$DIM -r$RES $GSDEV $GSOPTS $GAMMAFILE"
 -    logger -t "$BASENAME" -p lpr.info -- \
--	"foo2hp -r$RES -g$DIM -p$PAPER -m$MEDIA \
---n$COPIES -d$DUPLEX -s$SOURCE $COLOR -b$BPP $CLIP_UL $CLIP_LR $CLIP_LOG \
+-	"foo2lava -r$RES -g$DIM -p$PAPER -m$MEDIA \
+--n$COPIES -d$DUPLEX -s$SOURCE -z$MODEL $COLOR $CLIP_UL $CLIP_LR $CLIP_LOG \
 -$SAVETONER $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
 -fi
 -

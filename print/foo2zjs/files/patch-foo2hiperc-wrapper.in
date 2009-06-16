@@ -1,12 +1,9 @@
---- foo2zjs-wrapper.in	2009-05-30 05:05:50.000000000 -0500
-+++ foo2zjs-wrapper.in	2009-05-30 05:06:36.000000000 -0500
-@@ -42,13 +42,6 @@
- SHARE=$PREFIX/share/foo2zjs
- PATH=$PATH:/sw/bin:/opt/local/bin
- 
--#
--#	Log the command line, for debugging and problem reports
--#
+--- foo2hiperc-wrapper.in	2009-05-30 04:40:00.000000000 -0500
++++ foo2hiperc-wrapper.in	2009-05-30 04:57:27.000000000 -0500
+@@ -44,10 +44,6 @@
+ #
+ #	Log the command line, for debugging and problem reports
+ #
 -if [ -x /usr/bin/logger -o -x /bin/logger ]; then
 -    logger -t "$BASENAME" -p lpr.info -- "$BASENAME $@" </dev/null
 -fi
@@ -14,7 +11,7 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -153,8 +146,8 @@
+@@ -151,8 +147,8 @@
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
@@ -25,8 +22,8 @@
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -707,18 +700,6 @@
- 	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
+@@ -645,18 +641,6 @@
+ 	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD $COMPRESSED -D$DEBUG
  
  #
 -#	Log the command line, for debugging and problem reports
@@ -35,9 +32,9 @@
 -    logger -t "$BASENAME" -p lpr.info -- \
 -	"$GSBIN $PAPERSIZE -g$DIM -r$RES $GSDEV $GSOPTS $GAMMAFILE"
 -    logger -t "$BASENAME" -p lpr.info -- \
--	"foo2zjs -r$RES -g$DIM -p$PAPER -m$MEDIA \
---n$COPIES -d$DUPLEX -s$SOURCE -z$MODEL $COLOR $CLIP_UL $CLIP_LR $CLIP_LOG \
--$SAVETONER $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
+-	"foo2hiperc -r$RES -g$DIM -p$PAPER -m$MEDIA \
+--n$COPIES -d$DUPLEX -s$SOURCE $COLOR $CLIP_UL $CLIP_LR $CLIP_LOG \
+-$SAVETONER $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD $COMPRESSED"
 -fi
 -
 -#

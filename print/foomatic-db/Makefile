@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	db
-PORTVERSION=	20070124
-PORTREVISION=	2
+PORTVERSION=	20090530
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,$,acm/foomatic/,} \
-		http://freebsd.unixfreunde.de/sources/
+		${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	foomatic-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${FOOMATICVER}-${PORTVERSION}
 DIST_SUBDIR=	foomatic
@@ -21,13 +20,14 @@ COMMENT=	Foomatic database
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		curl.5:${PORTSDIR}/ftp/curl
 
+PROJECTHOST=	bsdistfiles
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_AUTOTOOLS=	automake:15:env autoconf:262
 
 GNU_CONFIGURE=	yes
 
-FOOMATICVER=	3.0
+FOOMATICVER=	4.0
 WRKSRC=	${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 pre-configure:
