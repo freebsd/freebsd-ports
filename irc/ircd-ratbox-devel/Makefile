@@ -8,6 +8,7 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
@@ -42,6 +43,7 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/${PORTNAME}		\
 		--libexecdir=${PREFIX}/libexec				\
 		--with-helpdir=${DATADIR}/help				\
 		--libdir=${PREFIX}/lib/${PORTNAME}			\
+		--with-sqlite3=${LOCALBASE}				\
 		--disable-backups
 
 PORTDOCS=	[^i]*.txt README.* technical/[^i]*.txt Tao-of-IRC.*

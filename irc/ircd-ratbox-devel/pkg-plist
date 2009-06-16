@@ -239,12 +239,12 @@ lib/ircd-ratbox/modules/m_squit.so
 @dirrm %%DATADIR%%
 etc/ircd-ratbox/genssl.sh
 etc/ircd-ratbox/ircd-efnet.conf.sample
-@unexec if cmp -s %D/etc/ircd-ratbox/ircd.conf.sample %D/etc/ircd-ratbox/ircd.conf; then rm -f %D/etc/ircd-ratbox/ircd.conf; fi
+@unexec if cmp -s "%D/etc/ircd-ratbox/ircd.conf.sample" "%D/etc/ircd-ratbox/ircd.conf"; then rm -f "%D/etc/ircd-ratbox/ircd.conf"; fi
 etc/ircd-ratbox/ircd.conf.sample
-@exec if [ ! -f %D/etc/ircd-ratbox/ircd.conf ] ; then cp -p %D/%F %B/ircd.conf; fi
-@unexec if cmp -s %D/etc/ircd-ratbox/ircd.motd.sample %D/etc/ircd-ratbox/ircd.motd; then rm -f %D/etc/ircd-ratbox/ircd.motd; fi
+@exec if [ ! -f "%D/etc/ircd-ratbox/ircd.conf" ] ; then cp -p "%D/%F" "%B/ircd.conf"; fi
+@unexec if cmp -s "%D/etc/ircd-ratbox/ircd.motd.sample" "%D/etc/ircd-ratbox/ircd.motd"; then rm -f "%D/etc/ircd-ratbox/ircd.motd"; fi
 etc/ircd-ratbox/ircd.motd.sample
-@exec if [ ! -f %D/etc/ircd-ratbox/ircd.motd ] ; then cp -p %D/%F %B/ircd.motd; fi
+@exec if [ ! -f "%D/etc/ircd-ratbox/ircd.motd" ] ; then cp -p "%D/%F %B/ircd.motd"; fi
 @dirrmtry etc/ircd-ratbox
 @cwd /
 @dirrmtry %%LOGDIR%%

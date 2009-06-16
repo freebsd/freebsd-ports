@@ -607,14 +607,14 @@ include/client.h
 %%DATADIR%%/langs/ru.lang
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/langs
-@unexec f="/usr/local/share/ratbox-services/schema-mysql.txt"; if [ -f "$f" ]; then rm -f "$f"; fi
-@unexec f="/usr/local/share/ratbox-services/schema-pgsql.txt"; if [ -f "$f" ]; then rm -f "$f"; fi
-@unexec f="/usr/local/share/ratbox-services/schema-sqlite.txt"; if [ -f "$f" ]; then rm -f "$f"; fi
+@unexec if [ -f "%D/%%DATADIR%%/schema-mysql.txt" ]; then rm -f "%D/%%DATADIR%%/schema-mysql.txt"; fi
+@unexec if [ -f "%D/%%DATADIR%%/schema-pgsql.txt" ]; then rm -f "%D/%%DATADIR%%/schema-pgsql.txt"; fi
+@unexec if [ -f "%D/%%DATADIR%%/schema-sqlite.txt" ]; then rm -f "%D/%%DATADIR%%/schema-sqlite.txt"; fi
 @dirrm %%DATADIR%%
 @dirrmtry %%DBDIR%%
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@unexec if cmp -s %D/etc/ratbox-services.conf.sample %D/etc/ratbox-services.conf; then rm -f %D/etc/ratbox-services.conf; fi
+@unexec if cmp -s "%D/etc/ratbox-services.conf.sample" "%D/etc/ratbox-services.conf"; then rm -f %D/etc/ratbox-services.conf; fi
 etc/ratbox-services.conf.sample
-@exec if [ ! -f %D/etc/ratbox-services.conf ] ; then cp -p %D/%F %B/ratbox-services.conf; fi
+@exec if [ ! -f "%D/etc/ratbox-services.conf" ] ; then cp -p "%D/%F" "%B/ratbox-services.conf"; fi
 @unexec f="/var/log/ratbox-services.log"; if [ ! -s "$f" ]; then rm -f "$f"; fi
 @unexec f="/var/run/ratbox-services.pid"; if [ ! -s "$f" ]; then rm -f "$f"; fi
