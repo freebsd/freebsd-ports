@@ -31,6 +31,7 @@ MAN1=	ftpcount.1 ftpwho.1 ftptop.1
 MAN5=	xferlog.5
 MAN8=	proftpd.8 ftpshut.8 ftpdctl.8
 
+MAKE_JOBS_UNSAFE=	yes
 PORTDOCSdoc=	Configuration.html faq.html
 PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
 		mod_tls.html mod_wrap2.html mod_wrap2_file.html mod_wrap2_sql.html \
