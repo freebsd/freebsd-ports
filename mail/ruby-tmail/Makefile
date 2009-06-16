@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A RFC2822/MIME compliant mail manipulating library for Ruby
 
 USE_RUBY=	yes
