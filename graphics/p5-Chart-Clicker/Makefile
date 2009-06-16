@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.19
+PORTVERSION=	2.33
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,6 +36,7 @@ MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Data::Marker.3 \
 		Chart::Clicker::Data::Range.3 \
 		Chart::Clicker::Data::Series.3 \
+		Chart::Clicker::Data::Series::HighLow.3 \
 		Chart::Clicker::Data::Series::Size.3 \
 		Chart::Clicker::Decoration.3 \
 		Chart::Clicker::Decoration::Glass.3 \
@@ -51,10 +52,11 @@ MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Renderer::Area.3 \
 		Chart::Clicker::Renderer::Bar.3 \
 		Chart::Clicker::Renderer::Bubble.3 \
+		Chart::Clicker::Renderer::CandleStick.3 \
 		Chart::Clicker::Renderer::Line.3 \
-		Chart::Clicker::Renderer::Measurement.3 \
 		Chart::Clicker::Renderer::Pie.3 \
 		Chart::Clicker::Renderer::Point.3 \
+		Chart::Clicker::Renderer::StackedArea.3 \
 		Chart::Clicker::Renderer::StackedBar.3
 
 .include <bsd.port.mk>
