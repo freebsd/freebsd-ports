@@ -5,7 +5,9 @@ bin/foomatic-datafile
 bin/foomatic-perl-data
 bin/foomatic-ppd-options
 bin/foomatic-ppdfile
+bin/foomatic-ppd-to-xml
 bin/foomatic-printjob
+bin/foomatic-searchprinter
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Foomatic/.packlist
 %%SITE_PERL%%/Foomatic/DB.pm
 %%SITE_PERL%%/Foomatic/Defaults.pm
@@ -18,7 +20,7 @@ sbin/foomatic-getpjloptions
 sbin/foomatic-kitload
 sbin/foomatic-nonumericalids
 sbin/foomatic-preferred-driver
-sbin/foomatic-printermap-to-gimp-print-xml
+sbin/foomatic-printermap-to-gutenprint-xml
 sbin/foomatic-replaceoldprinterids
 sbin/foomatic-extract-text
 share/foomatic/templates/pjl_enum_choice.xml
