@@ -34,6 +34,55 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b1ca65e6-5aaf-11de-bc9b-0030843d3802">
+    <topic>pidgin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pidgin</name>
+	<name>libpurple</name>
+	<name>finch</name>
+	<range><lt>2.5.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/35194/">
+	  <p>Some vulnerabilities and weaknesses have been reported in Pidgin,
+	    which can be exploited by malicious people to cause a DoS or to
+	    potentially compromise a user's system.</p>
+	  <p>A truncation error in the processing of MSN SLP messages can be
+	    exploited to cause a buffer overflow.</p>
+	  <p>A boundary error in the XMPP SOCKS5 "bytestream" server when
+	    initiating an outgoing file transfer can be exploited to cause a
+	    buffer overflow.</p>
+	  <p>A boundary error exists in the implementation of the
+	    "PurpleCircBuffer" structure. This can be exploited to corrupt memory
+	    and cause a crash via specially crafted XMPP or Sametime
+	    packets.</p>
+	  <p>A boundary error in the "decrypt_out()" function can be exploited
+	    to cause a stack-based buffer overflow with 8 bytes and crash the
+	    application via a specially crafted QQ packet.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>35067</bid>
+      <cvename>CVE-2009-1373</cvename>
+      <cvename>CVE-2009-1374</cvename>
+      <cvename>CVE-2009-1375</cvename>
+      <cvename>CVE-2009-1376</cvename>
+      <url>http://secunia.com/advisories/35194/</url>
+      <url>http://www.pidgin.im/news/security/?id=29</url>
+      <url>http://www.pidgin.im/news/security/?id=30</url>
+      <url>http://www.pidgin.im/news/security/?id=32</url>
+    </references>
+    <dates>
+      <discovery>2009-06-03</discovery>
+      <entry>2009-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d9b01c08-59b3-11de-828e-00e0815b8da8">
     <topic>git -- denial of service vulnerability</topic>
     <affects>
