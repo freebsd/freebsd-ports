@@ -33,7 +33,48 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Note:  Please add new entries to the beginning of this file.
 
 -->
+
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bdccd14b-5aac-11de-a438-003048590f9e">
+    <topic>joomla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla15</name>
+	<range><lt>1.5.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/35278/">
+	  <p>Some vulnerabilities have been reported in Joomla!, which can be
+	    exploited by malicious users to conduct script insertion attacks and
+	    by malicious people to conduct cross-site scripting attacks.</p>
+	  <p>Certain unspecified input is not properly sanitised before being
+	    used. This can be exploited to insert arbitrary HTML and script code,
+	    which will be executed in a user's browser session in the context of
+	    an affected site when the malicious data is displayed.</p>
+	  <p>Certain unspecified input passed to the user view of the com_users
+	    core component is not properly sanitised before being returned to the
+	    user. This can be exploited to execute arbitrary HTML and script code
+	    in a user's browser session in context of an affected site.</p>
+	  <p>Input passed via certain parameters to the "JA_Purity" template is
+	    not properly sanitised before being returned to the user. This can be
+	    exploited to execute arbitrary HTML and script code in a user's
+	    browser session in context of an affected site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/35278/</url>
+      <url>http://www.joomla.org/announcements/release-news/5235-joomla-1511-security-release-now-available.html</url>
+    </references>
+    <dates>
+      <discovery>2009-06-03</discovery>
+      <entry>2009-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b1ca65e6-5aaf-11de-bc9b-0030843d3802">
     <topic>pidgin -- multiple vulnerabilities</topic>
     <affects>
