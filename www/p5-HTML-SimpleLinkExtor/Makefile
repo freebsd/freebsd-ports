@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-SimpleLinkExtor
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,6 @@ RUN_DEPENDS=	p5-HTML-Parser>=1.28:${PORTSDIR}/www/p5-HTML-Parser \
 PERL_CONFIGURE=	yes
 
 MAN1=		linktractor.1
-MAN3=		HTML::SimpleLinkExtor.3
+MAN3=		SimpleLinkExtor.3
 
 .include <bsd.port.mk>
