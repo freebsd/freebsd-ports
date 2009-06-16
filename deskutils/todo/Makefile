@@ -7,28 +7,25 @@
 #
 
 PORTNAME=	todo
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://todotxt.com/library/todo.sh/
-DISTNAME=	todo.sh
+MASTER_SITES=	http://cloud.github.com/downloads/ginatrapani/todo.txt-cli/
+DISTNAME=	todo.txt_cli-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	Todo.txt Managers
+COMMENT=	Todo.txt Manager
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_ZIP=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	bin/todo etc/dot.todo
+PLIST_FILES=	bin/todo etc/todo.cfg
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,/bin/sh,${LOCALBASE}/bin/bash," ${WRKSRC}/todo.sh
+	@${REINPLACE_CMD} -e "s,/bin/bash,${LOCALBASE}/bin/bash," ${WRKSRC}/todo.sh
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/todo.sh ${PREFIX}/bin/todo
-	@${INSTALL_DATA} ${WRKSRC}/.todo ${PREFIX}/etc/dot.todo
+	@${INSTALL_DATA} ${WRKSRC}/todo.cfg ${PREFIX}/etc/todo.cfg
 
 .include <bsd.port.mk>
