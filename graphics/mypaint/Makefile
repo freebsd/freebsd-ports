@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	mypaint
-PORTVERSION=	0.5.1
+PORTVERSION=	0.7.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://people.ee.ethz.ch/~mrenold/mypaint/ CENKES
+MASTER_SITES=	http://download.gna.org/mypaint/ \
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast painting/scribbling program
 
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
+		swig:${PORTSDIR}/devel/swig13
+
 USE_BZIP2=	yes
-USE_GNOME=	pygtk2
-USE_GMAKE=	yes
+USE_GNOME=	glib20 pygtk2
 USE_PYTHON=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
+USE_SCONS=	yes
+SCONS_ARGS=	prefix="${PREFIX}"
 
 .include <bsd.port.mk>

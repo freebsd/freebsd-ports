@@ -1,0 +1,18 @@
+--- SConstruct.orig	2009-06-04 14:34:58.000000000 +0400
++++ SConstruct	2009-06-16 20:30:45.000000000 +0400
+@@ -31,13 +31,13 @@
+     optfile.close()
+ opts = Options('options.cache', ARGUMENTS)
+ opts.Add(PathOption('prefix', 'autotools-style installation prefix', '/usr/local', PathOption.PathAccept))
+-env = Environment(ENV=os.environ, options=opts)
++env = Environment(ENV=os.environ, options=opts, **dict((k, v.split()) for k, v in ARGUMENTS.iteritems()))
+ opts.Update(env)
+ opts.Save('options.cache', env)
+ 
+ env.ParseConfig('pkg-config --cflags --libs glib-2.0')
+ 
+-env.Append(CXXFLAGS=' -Wall -Wno-sign-compare -Wno-write-strings')
++env.Append(CXXFLAGS=['-Wall', '-Wno-sign-compare', '-Wno-write-strings'])
+ #env.Append(CXXFLAGS=' -O0', LINKFLAGS=' -O0')
+ #env.Append(CXXFLAGS=' -O3', LINKFLAGS=' -O3')
+ 
