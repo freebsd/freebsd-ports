@@ -1,0 +1,9 @@
+SEO_checklist is a Drupal module which provides a checklist of good "SEO"
+(Search Engine Optimization) actions that you should take to maximize the
+presence of your Drupal website in the major search engines like Google,
+Yahoo, Live, etc.  It provides a checklist that helps you keep track of what
+needs to be done.  First, it will look to see what modules you already have
+installed.  Then, all you have to do is go down the list of unchecked items
+and do them.
+
+WWW: http://drupal.org/project/seo_checklist
