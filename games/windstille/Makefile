@@ -29,6 +29,7 @@ USE_SCONS=	yes
 USE_GL=		gl
 USE_SDL=	sdl image
 USE_BISON=	build
+MAKE_JOBS_SAFE=	yes
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/lib ${WRKSRC}/data/music/*
@@ -40,6 +41,8 @@ post-patch:
 		${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -e 's|PHYSFS_getBaseDir()|""|' ${WRKSRC}/src/windstille_main.cpp
 	@${REINPLACE_CMD} -e 's|bison|${LOCALBASE}/bin/&|' ${WRKSRC}/tools/SConscript
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|; s|freetype-config|${LOCALBASE}/bin/&|' \
+		${WRKSRC}/SConstruct ${WRKSRC}/src/SConscript
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/windstille ${PREFIX}/bin/
