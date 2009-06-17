@@ -1,0 +1,9 @@
+%%RUBY_ELISPDIR%%/ri-ruby.el
+lib/xemacs/site-lisp/ri-ruby.el
+share/emacs/site-lisp/ri-ruby.el
+%%DATADIR%%/ri-emacs.rb
+@dirrm %%DATADIR%%
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs
+@dirrmtry %%RUBY_ELISPDIR%%
+@dirrmtry lib/ruby

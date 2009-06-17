@@ -1,0 +1,16 @@
+====
+
+To use ri-emacs add the following lines to your emacs
+startup script:
+
+ (setq ri-ruby-script "%%DATADIR%%/ri-emacs.rb")
+ (autoload 'ri "ri-ruby" nil t)
+
+You may want to bind the ri command to a key.  For example to bind it
+to F1 in ruby-mode and enable autocomplition:
+ (add-hook 'ruby-mode-hook (lambda ()
+  (local-set-key 'f1 'ri)
+  (local-set-key "\M-\C-i" 'ri-ruby-complete-symbol)
+  (local-set-key 'f4 'ri-ruby-show-args)))
+
+====

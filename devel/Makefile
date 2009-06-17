@@ -2513,6 +2513,7 @@
     SUBDIR += regexxer
     SUBDIR += replay
     SUBDIR += rhtvision
+    SUBDIR += ri-emacs
     SUBDIR += rinfo
     SUBDIR += rlog
     SUBDIR += rlwrap

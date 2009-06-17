@@ -1,0 +1,6 @@
+Ri for (X)Emacs is a (X)Emacs extension that acts as a convenient wrapper
+around ri.  It has autocompletion, nice colored output, it will ask for a
+class name if needed.  It is indispensible when coding Ruby with Emacs!
+
+Author:	Kristof Bastiaensen <kristof@vleeuwen.org>
+WWW:	http://rubyforge.org/projects/ri-emacs/
