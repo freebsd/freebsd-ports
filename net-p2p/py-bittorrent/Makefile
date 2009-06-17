@@ -13,7 +13,7 @@ CATEGORIES?=	net-p2p python
 MASTER_SITES=	http://download.bittorrent.com/dl/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bhaga@absoludicrous.com
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython \
