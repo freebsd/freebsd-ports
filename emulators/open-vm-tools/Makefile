@@ -36,7 +36,8 @@ LIB_DEPENDS+=		uriparser.1:${PORTSDIR}/net/uriparser
 .else
 CONFIGURE_ARGS+=	--disable-unity
 .endif
-CONFIGURE_ARGS+=	--with-x --without-gtkmm
+LIB_DEPENDS+=		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
+CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 USE_XORG=		x11 ice sm xext xineramaproto xinerama xrandr xrender \
