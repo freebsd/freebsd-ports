@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	171
+PATCHLEVEL=	209
 PORTVERSION=	7.2.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 PORTREVISION?=	0
@@ -15,17 +15,19 @@ CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
 
-PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}
+PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}\
+		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/obrien/
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	007 027 030 036 041 049 071 072 074 088 089 093 101 138 150 172 173
+BADPATCHES=	007 036 049 071 072 074 088 089 093 101 138 150 172 191 194 204 205
 #.if !defined(WITH_LANG)
 #BADPATCHES+=
 #.endif
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N7.2.${p}}
 .endfor
+PATCHFILES:=	${PATCHFILES:S/041/041%/}
 
 MAINTAINER?=	obrien@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
@@ -60,12 +62,13 @@ MANLANG=	"" ru.KOI8-R ru.UTF-8 pl.ISO8859-2 pl.UTF-8 pl fr.ISO8859-1 \
 		fr.UTF-8 fr it.ISO8859-1 it.UTF-8 it
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
-WITH_TCL=	yes
-WITH_PERL=	yes
-WITH_PYTHON=	yes
 WITH_CSCOPE=	yes
 WITH_EXUBERANT_CTAGS=yes
 WITH_LANG=	yes
+WITH_PERL=	yes
+WITH_PYTHON=	yes
+WITH_RUBY=	yes
+WITH_TCL=	yes
 .endif
 
 .if defined(WITH_PYTHON)
@@ -256,6 +259,12 @@ vim-makesum:
 	${MAKE} WITH_LANG=yes makesum
 
 ckp:
+	${MAKE} -DPATCH_DEBUG clean patch
+
+ckpl:
 	${MAKE} -DPATCH_DEBUG WITH_LANG=yes clean patch
+
+lang:
+	${MAKE} WITH_LANG=yes
 
 .include <bsd.port.post.mk>
