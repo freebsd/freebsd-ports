@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	utf8proc
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.flexiguided.de/pub/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
