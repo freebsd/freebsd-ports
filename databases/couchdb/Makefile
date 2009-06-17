@@ -7,6 +7,7 @@
 
 PORTNAME=	couchdb
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -22,6 +23,12 @@ LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+COUCH_VARDIR?=	/var
+COUCH_DBDIR?=	${COUCH_VARDIR}/db/couchdb
+COUCH_LOGDIR?=	${COUCH_VARDIR}/log/couchdb
+COUCH_USER?=	couchdb
+
+USE_RC_SUBR=	couchdb
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -33,9 +40,23 @@ CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 
 MAN1=	couchdb.1 couchjs.1
 
+pre-fetch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you are upgrading CouchDB, please double-check that the datafile is compatible."
+	@${ECHO_MSG} ""
+
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
+
+pre-install:
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${COUCH_DBDIR}
+	${CHOWN} ${COUCH_USER} ${COUCH_DBDIR}
+	${CHOWN} ${COUCH_USER} ${COUCH_LOGDIR}
 
 .include <bsd.port.mk>

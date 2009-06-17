@@ -1,0 +1,8 @@
+===>  COMPATIBILITY NOTE:
+      CouchDB is still pre-stable; between 0.8 and 0.9 the database format
+      changed which breaks BC. In current trunk, the format changed again, so
+      please double-check in case you are updating an existing installation.
+
+      More info:
+        * http://wiki.apache.org/couchdb/Breaking_changes?action=show&redirect=BreakingChanges
+        * http://wiki.apache.org/couchdb/BreakingChangesUpdateTrunkTo0Dot9
