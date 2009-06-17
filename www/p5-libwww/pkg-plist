@@ -2,6 +2,7 @@ bin/GET
 bin/HEAD
 bin/POST
 bin/lwp-download
+bin/lwp-dump
 bin/lwp-mirror
 bin/lwp-request
 bin/lwp-rget
