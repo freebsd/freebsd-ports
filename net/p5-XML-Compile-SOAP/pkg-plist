@@ -8,8 +8,6 @@
 %%SITE_PERL%%/XML/Compile/SOAP/Client.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Server.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Server.pod
-%%SITE_PERL%%/XML/Compile/SOAP/Tester.pm
-%%SITE_PERL%%/XML/Compile/SOAP/Tester.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Trace.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Trace.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Util.pm
@@ -37,9 +35,17 @@
 %%SITE_PERL%%/XML/Compile/WSDL11/xsd/wsdl-mime.xsd
 %%SITE_PERL%%/XML/Compile/WSDL11/xsd/wsdl-soap.xsd
 %%SITE_PERL%%/XML/Compile/WSDL11/xsd/wsdl.xsd
+%%SITE_PERL%%/XML/Compile/XOP.pm
+%%SITE_PERL%%/XML/Compile/XOP.pod
+%%SITE_PERL%%/XML/Compile/XOP/Include.pm
+%%SITE_PERL%%/XML/Compile/XOP/Include.pod
+%%SITE_PERL%%/XML/Compile/XOP/xsd/200411-xmlmime.xsd
+%%SITE_PERL%%/XML/Compile/XOP/xsd/200505-xmlmime.xsd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Compile/XOP/xsd
+@dirrmtry %%SITE_PERL%%/XML/Compile/XOP
 @dirrmtry %%SITE_PERL%%/XML/Compile/WSDL11/xsd
 @dirrmtry %%SITE_PERL%%/XML/Compile/WSDL11
 @dirrmtry %%SITE_PERL%%/XML/Compile/Transport
