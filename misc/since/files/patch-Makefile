@@ -1,24 +1,29 @@
---- Makefile.orig	Sun Oct  6 15:02:43 2002
-+++ Makefile	Sat Sep 17 00:46:29 2005
-@@ -7,8 +7,8 @@
- MANDIR    = /usr/local/man/man1
+--- ./Makefile.orig	2009-01-05 15:52:55.000000000 -0500
++++ ./Makefile	2009-06-17 14:05:36.000000000 -0400
+@@ -1,4 +1,4 @@
+-prefix=/usr/local
++#prefix=/usr/local
  
- # Compiler and Flags
--CC        = gcc
--CFLAGS    = -Wall -O2 
-+#CC        = gcc
-+#CFLAGS    = -Wall -O2 
- RM        = rm -f
- INSTALL   = install -c
- LINK      = ln -s
-@@ -20,8 +20,8 @@
+ NAME = since
+ VERSION = 0.9
+@@ -9,16 +9,16 @@
+ CFLAGS += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+ #CFLAGS += -DDEBUG
  
- # Install
- install : $(TARGET)
--	$(INSTALL) -m 0755 $(TARGET) $(BINDIR)
--	$(INSTALL) -m 0644 $(MAN) $(MANDIR)
-+	$(BSD_INSTALL_PROGRAM) $(TARGET) $(PREFIX)/bin/$(TARGET)
-+	$(BSD_INSTALL_MAN) $(MAN) $(PREFIX)/man/man1/$(MAN)
+-CC = gcc
++#CC = gcc
+ RM = rm -f
+-INSTALL = install -D
++#INSTALL = install -D
  
- # Build since executable 
- $(TARGET) : $(OBJ)
+ $(NAME): $(NAME).c
+ 	$(CC) $(CFLAGS) -o $@ $^
+ 
+ install: $(NAME)
+-	$(INSTALL) $(NAME) $(prefix)/bin/$(NAME)
+-	$(INSTALL) $(NAME).1 $(prefix)/share/man1/$(NAME).1
++	$(BSD_INSTALL_PROGRAM) $(NAME) $(PREFIX)/bin/$(NAME)
++	$(BSD_INSTALL_MAN) $(NAME).1 $(PREFIX)/man/man1/$(NAME).1
+ 
+ clean: 
+ 	$(RM) $(NAME) core *.o

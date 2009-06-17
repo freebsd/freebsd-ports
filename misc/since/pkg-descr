@@ -1,9 +1,5 @@
-Paraphrasing since(1):
-
-  since is similar to tail(1) since it also displays the tail of a
-  file.  However, since displays only the data which has been added
-  since the last time since was run.  If since has not been run
-  before, the entire file is displayed.  since is useful for watching
-  over log files.
+since is a unix utility similar to tail. Unlike tail, since only
+shows the lines appended since the last time. It is useful to monitor
+growing log files.
 
 WWW:  http://welz.org.za/projects/since
