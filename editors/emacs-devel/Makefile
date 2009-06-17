@@ -79,7 +79,15 @@ INFO=		ada-mode auth autotype calc ccmode cl dbus dired-x \
 
 LATEST_LINK=	emacs23
 
+OPTIONS=	SOURCES	"Install source code"	ON
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SOURCES)
+PLIST_SUB+=	SOURCES=""
+.else
+PLIST_SUB+=	SOURCES="@comment "
+.endif
 
 .if ${ARCH} == "ia64"
 BROKEN=	Emacs 22.X and later does not currently build on ia64
@@ -99,5 +107,13 @@ pre-everything::
 
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
+	@${REINPLACE_CMD} -e "s/%%EMACS_VER%%/${EMACS_VER}/g" -e "s/%%DATADIR%%/${DATADIR:C/\//\\\//g}/g" ${WRKSRC}/sources.el
+
+.if defined(WITH_SOURCES)
+post-install:
+	@${MKDIR} ${DATADIR}/${EMACS_VER}/src
+	@${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${DATADIR}/${EMACS_VER}/src
+	@${INSTALL_DATA} ${WRKSRC}/sources.el ${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
+.endif
 
 .include <bsd.port.post.mk>
