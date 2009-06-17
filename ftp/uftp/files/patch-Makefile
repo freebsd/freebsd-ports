@@ -1,15 +1,17 @@
-*** /dev/null	Wed Jun  4 14:07:15 2008
---- Makefile	Wed Jun  4 14:07:49 2008
-***************
-*** 0 ****
---- 1,10 ----
-+ #
-+ # Makefile for uftp client and server
-+ #
-+ all: uftp uftpd
-+ 
-+ uftp: uftp.c
-+ 	${CC} ${CFLAGS} -o $@ $< -lm
-+ 
-+ uftpd: uftpd.c
-+ 	${CC} ${CFLAGS} -o $@ $< -lm
+--- makefile.orig	2009-06-14 04:29:21.000000000 +0400
++++ makefile	2009-06-17 13:58:51.000000000 +0400
+@@ -1,10 +1,10 @@
+ UNAME_S:=$(shell uname -s)
+ 
+ # defaults
+-CC = gcc
+-OPTIONS=-g -Wall
+-LDLIBS=-lc -lm
+-CFLAGS=
++CC ?= gcc
++OPTIONS=
++LDLIBS=-lm
++CFLAGS?=
+ 
+ # Sun
+ ifeq ("SunOS", "$(UNAME_S)")
