@@ -1,0 +1,19 @@
+bin/fastri-server
+bin/fri
+bin/qri
+bin/ri-emacs
+%%RUBY_SITELIBDIR%%/fastri/full_text_index.rb
+%%RUBY_SITELIBDIR%%/fastri/full_text_indexer.rb
+%%RUBY_SITELIBDIR%%/fastri/name_descriptor.rb
+%%RUBY_SITELIBDIR%%/fastri/ri_index.rb
+%%RUBY_SITELIBDIR%%/fastri/ri_service.rb
+%%RUBY_SITELIBDIR%%/fastri/util.rb
+%%RUBY_SITELIBDIR%%/fastri/version.rb
+%%RUBY_MODDOCDIR%%/CHANGES
+%%RUBY_MODDOCDIR%%/README.en
+@dirrm %%RUBY_MODDOCDIR%%
+@dirrm %%RUBY_DOCDIR%%
+@dirrm %%RUBY_SITELIBDIR%%/fastri
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby

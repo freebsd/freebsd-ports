@@ -2539,6 +2539,7 @@
     SUBDIR += ruby-eet
     SUBDIR += ruby-event-loop
     SUBDIR += ruby-fam
+    SUBDIR += ruby-fastri
     SUBDIR += ruby-filelock
     SUBDIR += ruby-filemagic
     SUBDIR += ruby-flexmock
