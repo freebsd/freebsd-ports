@@ -7,6 +7,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.7.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_XORG?=	x11 xext xdamage
 USE_GNOME?=	pkgconfig
 USE_ICONV=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
@@ -35,14 +37,23 @@ PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 
 OPTIONS+=	AUDACIOUS "Enable Audacious support" Off \
 		BMPX "Enable BMPX support" Off \
-		DOUBLE_BUFFER "Enable double buffering" On \
-		IMLIB2 "Enable Imlib2 support" Off \
 		LUA "Enable Lua support" Off \
 		MPD "Enable MPD support" Off \
-		XFT "Enable Xft support" Off \
 		XMMS2 "Enable XMMS2 support" Off
 
+.if !empty(USE_XORG)
+OPTIONS+=	DOUBLE_BUFFER "Enable double buffering" On \
+		IMLIB2 "Enable Imlib2 support" Off \
+		XFT "Enable Xft support" Off
+.endif
+
 .include <bsd.port.pre.mk>
+
+.if empty(USE_XORG)
+WITHOUT_DOUBLE_BUFFER=	On
+.undef WITH_IMLIB2
+.undef WITH_XFT
+.endif
 
 .if defined(WITH_AUDACIOUS)
 LIB_DEPENDS+=		audclient.2:${PORTSDIR}/multimedia/audacious
@@ -107,7 +118,11 @@ do-install:
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
+.	if !empty(USE_XORG)
 	@${INSTALL_DATA} ${WRKSRC}/data/conky.conf ${EXAMPLESDIR}/conkyrc.sample
+.	else
+	@${INSTALL_DATA} ${WRKSRC}/data/conky_no_x11.conf ${EXAMPLESDIR}/conkyrc.sample
+.	endif
 .endif
 
 .if !defined(NOPORTDOCS)
