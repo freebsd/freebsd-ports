@@ -7,6 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.19
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -89,6 +90,7 @@ do-build:
 	@${CP} -r ${WRKSRC}/../locale ${WRKSRC}
 	@${CP} -r ${WRKSRC}/../images ${WRKSRC}
 	@${CP} -r ${WRKSRC}/../help ${WRKSRC}
+	@${MV} ${WRKSRC}/config/config_local.php ${WRKSRC}/config/config_local.php.sample
 
 pre-install:
 	@${ECHO} "Your umask should be lax while installing this. Like, 022 or something."
