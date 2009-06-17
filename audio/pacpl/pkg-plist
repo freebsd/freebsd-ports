@@ -5,25 +5,16 @@ bin/pacpl
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/es.po
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/et.po
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/fr_FR.po
+%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/it_IT.po
+%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/nl_NL.po
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/pl.po
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/pt.po
+%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/ro.po
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/ru_RU.po
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/tr.po
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/zh_CN.po
 %%AMAROK%%share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.pl
 %%AMAROK%%share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.spec
-%%DOLPHIN%%share/apps/dolphin/servicemenus/pacpl.desktop
-%%KONQUEROR%%%%MONKEY%%share/mimelnk/audio/x-ape.desktop
-%%KONQUEROR%%%%BONK%%share/mimelnk/audio/x-bonk.desktop
-%%KONQUEROR%%%%LAUDIO%%share/mimelnk/audio/x-la.desktop
-%%KONQUEROR%%%%LPAC%%share/mimelnk/audio/x-lpac.desktop
-%%KONQUEROR%%%%OPTIMFROG%%share/mimelnk/audio/x-ofr.desktop
-%%KONQUEROR%%%%OPTIMFROG%%share/mimelnk/audio/x-ofs.desktop
-%%KONQUEROR%%%%RM%%share/mimelnk/audio/x-rm.desktop
-%%KONQUEROR%%%%SHORTEN%%share/mimelnk/audio/x-shn.desktop
-%%KONQUEROR%%%%TTA%%share/mimelnk/audio/x-tta.desktop
-%%KONQUEROR%%%%WAVPACK%%share/mimelnk/audio/x-wavpack.desktop
-%%KONQUEROR%%share/apps/konqueror/servicemenus/pacpl.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.module
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -36,3 +27,5 @@ etc/pacpl/codecs.conf.sample
 @dirrm %%DATADIR%%
 @dirrmtry etc/pacpl/modules
 @dirrmtry etc/pacpl
+%%KDE4SERVICEMENU%%@cwd %%KDE4_PREFIX%%
+%%KDE4SERVICEMENU%%share/kde4/services/ServiceMenus/pacpl.desktop
