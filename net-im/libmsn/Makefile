@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libmsn
-DISTVERSION=	4.0-beta5
+DISTVERSION=	4.0-beta6
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
