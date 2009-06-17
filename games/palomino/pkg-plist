@@ -260,6 +260,13 @@ bin/palomino
 %%DATADIR%%/data/models/sikorsky76/chrome1.png
 %%DATADIR%%/data/models/sikorsky76/panel.png
 %%DATADIR%%/data/models/sikorsky76/s76c.ac.gz
+%%DATADIR%%/data/models/spaceShuttle/NASA_images_permission.txt
+%%DATADIR%%/data/models/spaceShuttle/SpaceShuttle.osg.gz
+%%DATADIR%%/data/models/spaceShuttle/spstob_1.png
+%%DATADIR%%/data/models/spaceShuttle/spstob_2.png
+%%DATADIR%%/data/models/spaceShuttle/spstob_3.png
+%%DATADIR%%/data/models/spaceShuttle/spstob_4.png
+%%DATADIR%%/data/models/spaceShuttle/spstob_e.png
 %%DATADIR%%/data/models/spitfire/Pilot_1.png
 %%DATADIR%%/data/models/spitfire/Pilot_2.png
 %%DATADIR%%/data/models/spitfire/Pilot_2n.png
@@ -374,6 +381,7 @@ bin/palomino
 %%DATADIR%%/data/models/su37/SU-37-top.png
 %%DATADIR%%/data/models/su37/Trajectory-Marker.ac
 %%DATADIR%%/data/models/su37/su37.osg.gz
+%%DATADIR%%/data/ossim.kwl
 %%DATADIR%%/data/palomino.conf
 %%DATADIR%%/data/physics_a4.conf
 %%DATADIR%%/data/physics_corsair.conf
@@ -386,6 +394,7 @@ bin/palomino
 %%DATADIR%%/data/physics_mirage2000.conf
 %%DATADIR%%/data/physics_p51.conf
 %%DATADIR%%/data/physics_sikorsky.conf
+%%DATADIR%%/data/physics_spaceShuttle.conf
 %%DATADIR%%/data/physics_spitfire.conf
 %%DATADIR%%/data/physics_sr71.conf
 %%DATADIR%%/data/physics_su37.conf
@@ -443,7 +452,6 @@ bin/palomino
 %%DATADIR%%/data/textures/cloudRain0.png
 %%DATADIR%%/data/textures/moon.png
 %%DATADIR%%/data/textures/smoke.png
-%%DATADIR%%/data/world.kwl
 %%DATADIR%%/scripts/actors.lua
 %%DATADIR%%/scripts/cmd.lua
 %%DATADIR%%/scripts/defs.lua
@@ -489,6 +497,7 @@ bin/palomino
 @dirrm %%DATADIR%%/data/models/su37
 @dirrm %%DATADIR%%/data/models/sr71
 @dirrm %%DATADIR%%/data/models/spitfire
+@dirrm %%DATADIR%%/data/models/spaceShuttle
 @dirrm %%DATADIR%%/data/models/sikorsky76
 @dirrm %%DATADIR%%/data/models/scenery
 @dirrm %%DATADIR%%/data/models/p51
