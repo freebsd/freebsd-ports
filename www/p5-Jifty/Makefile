@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Jifty
-PORTVERSION=	0.80408
-PORTREVISION=	1
+PORTVERSION=	0.90519
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -60,7 +59,7 @@ BUILD_DEPENDS=	\
 		p5-Hook-LexWrap>0:${PORTSDIR}/devel/p5-Hook-LexWrap \
 		p5-IPC-PubSub>=0.23:${PORTSDIR}/devel/p5-IPC-PubSub \
 		p5-IPC-Run3>0:${PORTSDIR}/devel/p5-IPC-Run3 \
-		p5-Jifty-DBI>=0.42:${PORTSDIR}/databases/p5-Jifty-DBI \
+		p5-Jifty-DBI>=0.57:${PORTSDIR}/databases/p5-Jifty-DBI \
 		p5-Locale-Maketext-Lexicon>=0.60:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		p5-Log-Log4perl>=1.04:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
@@ -78,6 +77,7 @@ BUILD_DEPENDS=	\
 		p5-Scalar-Defer>=0.10:${PORTSDIR}/devel/p5-Scalar-Defer \
 		p5-SQL-ReservedWords>0:${PORTSDIR}/databases/p5-SQL-ReservedWords \
 		p5-String-Koremutake>0:${PORTSDIR}/textproc/p5-String-Koremutake \
+		p5-SUPER>=0:${PORTSDIR}/devel/p5-SUPER \
 		p5-Template-Declare>=0.26:${PORTSDIR}/textproc/p5-Template-Declare \
 		p5-Test-Base>=0.44:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-HTTP-Server-Simple>=0.02:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
@@ -86,7 +86,9 @@ BUILD_DEPENDS=	\
 		p5-Test-MockObject>=1.07:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Test-Pod-Coverage>0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-WWW-Declare>=0:${PORTSDIR}/devel/p5-Test-WWW-Declare \
 		p5-Test-WWW-Mechanize>=1.04:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
+		p5-Test-WWW-Selenium>=0:${PORTSDIR}/devel/p5-Test-WWW-Selenium \
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-WWW-Mechanize>=1.30:${PORTSDIR}/www/p5-WWW-Mechanize \
@@ -99,7 +101,10 @@ BUILD_DEPENDS=	\
 		p5-version>0:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.3+
+PERL_CONFIGURE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL
 
 .include "Makefile.man"
 .include <bsd.port.mk>
