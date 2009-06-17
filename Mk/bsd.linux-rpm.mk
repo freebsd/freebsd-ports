@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.19 2009-06-01 17:26:07 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.20 2009-06-17 18:53:57 bsam Exp $
 #
 
 # Variables:
@@ -63,7 +63,7 @@ LINUX_RPM_ARCH?=	${ARCH}
 Linux_RPM_Post_Include=	bsd.linux-rpm.mk
 
 LINUX_DIST?=		fedora
-LINUX_DIST_VER?=	3
+LINUX_DIST_VER?=	4
 
 # linux Fedora 8 infrastructure ports should be used with compat.linux.osrelease=2.6.16,
 # linux_base-f8 (or greater) port
