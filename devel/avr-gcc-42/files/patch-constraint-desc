@@ -1,0 +1,33 @@
+
+2007-07-03 Eric Weddington  <eweddington@cso.atmel.com>
+
+	* config/avr/constraints.md (define_memory_constraint "Q"): Fix
+	the constraint description.
+	* doc/md.texi: Update documentation of AVR constraints.
+
+=======================================
+--- gcc/config/avr/constraints.md.old	2007-05-19 04:59:17.000000000 -0600
++++ gcc/config/avr/constraints.md	2007-07-03 14:47:28.007933000 -0600
+@@ -105,6 +105,6 @@
+        (match_test "ival >= -6 && ival <= 5")))
+        
+ (define_memory_constraint "Q"
+-  "A memory address based on X or Y pointer with displacement."
++  "A memory address based on Y or Z pointer with displacement."
+   (and (match_code "mem")
+        (match_test "extra_constraint_Q (op)")))
+--- gcc/doc/md.texi.old	2007-05-28 19:12:58.000000000 -0600
++++ gcc/doc/md.texi	2007-07-03 16:56:26.157051800 -0600
+@@ -1742,6 +1742,12 @@ Constant integer 1
+ 
+ @item G
+ A floating point constant 0.0
++
++@item R
++Integer constant in the range -6 @dots{} 5.
++
++@item Q
++A memory address based on Y or Z pointer with displacement.
+ @end table
+ 
+ @item CRX Architecture---@file{config/crx/crx.h}
