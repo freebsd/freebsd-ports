@@ -1,0 +1,12 @@
+bin/sq
+include/sqstdaux.h
+include/sqstdblob.h
+include/sqstdio.h
+include/sqstdmath.h
+include/sqstdstring.h
+include/sqstdsystem.h
+include/squirrel.h
+lib/libsqstdlib.so
+lib/libsqstdlib.so.0
+lib/libsquirrel.so
+lib/libsquirrel.so.0
