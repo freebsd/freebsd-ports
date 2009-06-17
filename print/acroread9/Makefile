@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acroread9
-PORTVERSION=	9.1.1
+PORTVERSION=	9.1.2
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/
