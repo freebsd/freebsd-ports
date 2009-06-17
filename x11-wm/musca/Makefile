@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musca
-PORTVERSION=	0.9.22
+PORTVERSION=	0.9.23
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://aerosuidae.net/ \
 		http://mirror.mcx2.org/
@@ -19,7 +19,7 @@ RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
 USE_XORG=	x11
 MAKE_ARGS=	CFLAGS="-I${LOCALBASE}/include \
-	-L${LOCALBASE}/lib"
+		-L${LOCALBASE}/lib"
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/musca
