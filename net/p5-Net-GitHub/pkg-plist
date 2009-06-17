@@ -12,11 +12,12 @@
 %%SITE_PERL%%/Net/GitHub/V1/User.pm
 %%SITE_PERL%%/Net/GitHub/V2.pm
 %%SITE_PERL%%/Net/GitHub/V2/Commits.pm
+%%SITE_PERL%%/Net/GitHub/V2/HasRepo.pm
 %%SITE_PERL%%/Net/GitHub/V2/Issues.pm
 %%SITE_PERL%%/Net/GitHub/V2/Network.pm
+%%SITE_PERL%%/Net/GitHub/V2/NoRepo.pm
 %%SITE_PERL%%/Net/GitHub/V2/Object.pm
 %%SITE_PERL%%/Net/GitHub/V2/Repositories.pm
-%%SITE_PERL%%/Net/GitHub/V2/Role.pm
 %%SITE_PERL%%/Net/GitHub/V2/Users.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GitHub
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
