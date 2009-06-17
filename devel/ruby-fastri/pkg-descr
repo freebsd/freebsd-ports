@@ -1,0 +1,6 @@
+FastRI improves on the aging RI documentation tool: much faster, needs less
+RAM, "scoped" searches, e.g. get String extensions defined in a given RubyGems
+package, fast full-text search, remote access via DRb (auto-discovered).
+
+Author:	Mauricio Julio Fernandez Pradier <mfp@acm.org>
+WWW:	http://eigenclass.org/hiki/fastri
