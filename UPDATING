@@ -7,6 +7,15 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090617:
+  AFFECTS: users of emulators/virtualbox
+  AUTHOR: beat@FreeBSD.org
+
+  The GID of virtualbox has changed due to a conflict with databases/couchdb.
+  Update GID of vboxusers after updating the port:
+
+  # pw groupmod vboxusers -g 920
+
+20090617:
   AFFECTS: users of math/fftw3 math/fftw3-long math/fftw3-float
   AUTHOR:  db@FreeBSD.org
 

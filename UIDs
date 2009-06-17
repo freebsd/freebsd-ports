@@ -151,3 +151,4 @@ logcheck:*:915:915::0:0:Logcheck system account:/var/lib/logcheck:/usr/local/bin
 _prayer:*:917:917:daemon:0:0:Prayer Account:/nonexistent:/sbin/nologin
 nefu:*:918:918::0:0:Nefu daemon:/var/db/nefu:/sbin/nologin
 couchdb:*:919:919:daemon:0:0:CouchDB Account:/var/empty:/usr/sbin/nologin
+vboxusers:*:920:920::0:0:Virtualbox user:/nonexistent:/sbin/nologin
