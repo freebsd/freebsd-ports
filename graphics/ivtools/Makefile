@@ -31,8 +31,4 @@ MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-BROKEN=		Incomplete pkg-plist
-.endif
-
 .include <bsd.port.post.mk>
