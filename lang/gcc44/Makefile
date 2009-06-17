@@ -59,6 +59,7 @@ WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
