@@ -70,6 +70,7 @@ BROKEN=	choose only one SQLite backend version
 
 .if defined(WITH_PGSQL)
 USE_PGSQL?=		YES
+CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 CONFIGURE_MODULES+=	"gpgsql"
 PLIST_SUB+=		WITHPGSQL=""
 .else
@@ -148,14 +149,18 @@ CXXFLAGS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=		WITHOPENDBX="@comment "
 .endif
 
-.if defined(WITH_OPENLDAP)
 post-patch:
+.if defined(WITH_OPENLDAP)
 	${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
 		-e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib;' \
 		${WRKSRC}/modules/ldapbackend/Makefile.in
 	${REINPLACE_CMD} -e 's;@LIBDL@;@LIBDL@ -L${LOCALBASE}/lib;' \
 		-e 's;@modulelibs@;@modulelibs@ -llber;' \
 		${WRKSRC}/pdns/Makefile.in
+.endif
+.if defined(WITH_PGSQL)
+	@${REINPLACE_CMD} -E -e 's;(PGSQL_inc_check="\$$withval/include/pgsql)";\1 \$$withval/include";' \
+		${WRKSRC}/configure
 .endif
 
 post-install:
