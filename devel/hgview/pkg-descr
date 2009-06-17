@@ -1,4 +1,4 @@
-A faster implementation of hgk using pygtk/pyqt4. Its primary purpose
+A faster implementation of hgk using pyqt4. Its primary purpose
 was to be able to browse the linux kernel mercurial repository.
 
 WWW: http://www.logilab.org/project/name/hgview/
