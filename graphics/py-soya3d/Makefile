@@ -54,7 +54,9 @@ CFLAGS	+=	-fPIC
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|g' -e \
+			's|/usr/include|${LOCALBASE}/include' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
