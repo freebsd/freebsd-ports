@@ -1,0 +1,361 @@
+--- gcc/config/avr/avr.c.orig	Wed Dec 19 14:18:09 2007
++++ gcc/config/avr/avr.c	Wed Dec 19 14:34:15 2007
+@@ -131,23 +131,28 @@
+ /* Core have 'MOVW' and 'LPM Rx,Z' instructions.  */
+ int avr_have_movw_lpmx_p = 0;
+ 
++/* Core have 'EIJMP' and 'EICALL' instructions.  */
++int avr_have_eijmp_eicall_p = 0;
++
+ struct base_arch_s {
+   int asm_only;
+   int enhanced;
+   int mega;
+   int have_movw_lpmx;
++  int have_eijmp_eicall;
+   const char *const macro;
+ };
+ 
+ static const struct base_arch_s avr_arch_types[] = {
+-  { 1, 0, 0, 0,  NULL },  /* unknown device specified */
+-  { 1, 0, 0, 0, "__AVR_ARCH__=1" },
+-  { 0, 0, 0, 0, "__AVR_ARCH__=2" },
+-  { 0, 0, 0, 1, "__AVR_ARCH__=25"},
+-  { 0, 0, 1, 0, "__AVR_ARCH__=3" },
+-  { 0, 0, 1, 1, "__AVR_ARCH__=35"},
+-  { 0, 1, 0, 1, "__AVR_ARCH__=4" },
+-  { 0, 1, 1, 1, "__AVR_ARCH__=5" }
++  { 1, 0, 0, 0, 0,  NULL },  /* unknown device specified */
++  { 1, 0, 0, 0, 0, "__AVR_ARCH__=1" },
++  { 0, 0, 0, 0, 0, "__AVR_ARCH__=2" },
++  { 0, 0, 0, 1, 0, "__AVR_ARCH__=25"},
++  { 0, 0, 1, 0, 0, "__AVR_ARCH__=3" },
++  { 0, 0, 1, 1, 0, "__AVR_ARCH__=35" },
++  { 0, 1, 0, 1, 0, "__AVR_ARCH__=4" },
++  { 0, 1, 1, 1, 0, "__AVR_ARCH__=5" },
++  { 0, 1, 1, 1, 1, "__AVR_ARCH__=6" }
+ };
+ 
+ /* These names are used as the index into the avr_arch_types[] table 
+@@ -162,7 +167,8 @@
+   ARCH_AVR3,
+   ARCH_AVR35,
+   ARCH_AVR4,
+-  ARCH_AVR5
++  ARCH_AVR5,
++  ARCH_AVR6
+ };
+ 
+ struct mcu_type_s {
+@@ -288,6 +294,10 @@
+   { "at90usb1286",  ARCH_AVR5, "__AVR_AT90USB1286__" },
+   { "at90usb1287",  ARCH_AVR5, "__AVR_AT90USB1287__" },
+   { "at94k",        ARCH_AVR5, "__AVR_AT94K__" },
++    /* 3-Byte PC */
++  { "avr6",         ARCH_AVR6, NULL },
++  { "atmega2560",   ARCH_AVR6, "__AVR_ATmega2560__" },
++  { "atmega2561",   ARCH_AVR6, "__AVR_ATmega2561__" },
+     /* Assembler only.  */
+   { "avr1",         ARCH_AVR1, NULL },
+   { "at90s1200",    ARCH_AVR1, "__AVR_AT90S1200__" },
+@@ -370,6 +380,7 @@
+   avr_enhanced_p = base->enhanced;
+   avr_mega_p = base->mega;
+   avr_have_movw_lpmx_p = base->have_movw_lpmx;
++  avr_have_eijmp_eicall_p = base->have_eijmp_eicall;
+   avr_base_arch_macro = base->macro;
+   avr_extra_arch_macro = t->macro;
+ 
+@@ -529,9 +540,10 @@
+   else
+     {
+       int offset = frame_pointer_needed ? 2 : 0;
++      int avr_pc_size = avr_have_eijmp_eicall_p ? 3 : 2;
+ 
+       offset += avr_regs_to_save (NULL);
+-      return get_frame_size () + 2 + 1 + offset;
++      return get_frame_size () + (avr_pc_size) + 1 + offset;
+     }
+ }
+ 
+@@ -1139,7 +1151,7 @@
+ 	  && ((GET_CODE (addr) == SYMBOL_REF && SYMBOL_REF_FUNCTION_P (addr))
+ 	      || GET_CODE (addr) == LABEL_REF))
+ 	{
+-	  fprintf (file, "pm(");
++	  fprintf (file, "gs(");
+ 	  output_addr_const (file,addr);
+ 	  fprintf (file ,")");
+ 	}
+@@ -1164,6 +1176,11 @@
+       if (!AVR_MEGA)
+ 	fputc ('r', file);
+     }
++  else if (code == '!')
++    {
++      if (AVR_HAVE_EIJMP_EICALL)
++	fputc ('e', file);
++    }
+   else if (REG_P (x))
+     {
+       if (x == zero_reg_rtx)
+@@ -4560,7 +4577,7 @@
+       && ((GET_CODE (x) == SYMBOL_REF && SYMBOL_REF_FUNCTION_P (x))
+ 	  || GET_CODE (x) == LABEL_REF))
+     {
+-      fputs ("\t.word\tpm(", asm_out_file);
++      fputs ("\t.word\tgs(", asm_out_file);
+       output_addr_const (asm_out_file, x);
+       fputs (")\n", asm_out_file);
+       return true;
+@@ -5954,7 +5971,7 @@
+ {
+   switch_to_section (progmem_section);
+   if (AVR_MEGA)
+-    fprintf (stream, "\t.word pm(.L%d)\n", value);
++    fprintf (stream, "\t.word gs(.L%d)\n", value);
+   else
+     fprintf (stream, "\trjmp .L%d\n", value);
+ 
+--- gcc/config/avr/avr.h.orig	Wed Dec 19 14:18:09 2007
++++ gcc/config/avr/avr.h	Wed Dec 19 14:44:32 2007
+@@ -36,6 +36,12 @@
+ 	builtin_define ("__AVR_HAVE_LPMX__");	\
+       if (avr_asm_only_p)			\
+ 	builtin_define ("__AVR_ASM_ONLY__");	\
++      if (!avr_have_eijmp_eicall_p)		\
++	builtin_define ("__AVR_2_BYTE_PC__");	\
++      if (avr_have_eijmp_eicall_p)		\
++	builtin_define ("__AVR_3_BYTE_PC__");	\
++      if (avr_have_eijmp_eicall_p)		\
++	builtin_define ("__AVR_HAVE_EIJMP_EICALL__");	\
+       if (avr_enhanced_p)			\
+ 	builtin_define ("__AVR_ENHANCED__");	\
+       if (avr_enhanced_p)			\
+@@ -53,6 +59,8 @@
+ extern int avr_enhanced_p;
+ extern int avr_asm_only_p;
+ extern int avr_have_movw_lpmx_p;
++extern int avr_have_eijmp_eicall_p;
++
+ #ifndef IN_LIBGCC2
+ extern GTY(()) section *progmem_section;
+ #endif
+@@ -60,6 +68,7 @@
+ #define AVR_MEGA (avr_mega_p && !TARGET_SHORT_CALLS)
+ #define AVR_ENHANCED (avr_enhanced_p)
+ #define AVR_HAVE_MOVW (avr_have_movw_lpmx_p)
++#define AVR_HAVE_EIJMP_EICALL (avr_have_eijmp_eicall_p)
+ 
+ #define TARGET_VERSION fprintf (stderr, " (GNU assembler syntax)");
+ 
+@@ -631,7 +640,7 @@
+ 
+ #define PRINT_OPERAND(STREAM, X, CODE) print_operand (STREAM, X, CODE)
+ 
+-#define PRINT_OPERAND_PUNCT_VALID_P(CODE) ((CODE) == '~')
++#define PRINT_OPERAND_PUNCT_VALID_P(CODE) ((CODE) == '~' || (CODE) == '!')
+ 
+ #define PRINT_OPERAND_ADDRESS(STREAM, X) print_operand_address(STREAM, X)
+ 
+@@ -780,6 +789,7 @@
+   mmcu=at90usb6*|\
+   mmcu=at90usb12*|\
+   mmcu=at94k:-m avr5}\
++%{mmcu=atmega256*:-m avr6}\
+ %{mmcu=atmega324*|\
+   mmcu=atmega325*|\
+   mmcu=atmega328p|\
+@@ -808,7 +818,8 @@
+   mmcu=at90usb*: -Tdata 0x800100}\
+ %{mmcu=atmega640|\
+   mmcu=atmega1280|\
+-  mmcu=atmega1281: -Tdata 0x800200} "
++  mmcu=atmega1281|\
++  mmcu=atmega256*: -Tdata 0x800200} "
+ 
+ #define LIB_SPEC \
+   "%{!mmcu=at90s1*:%{!mmcu=attiny11:%{!mmcu=attiny12:%{!mmcu=attiny15:%{!mmcu=attiny28: -lc }}}}}"
+@@ -910,6 +921,8 @@
+ %{mmcu=atmega1280:crtm1280.o%s} \
+ %{mmcu=atmega1281:crtm1281.o%s} \
+ %{mmcu=atmega1284p:crtm1284p.o%s} \
++%{mmcu=atmega2560:crtm2560.o%s} \
++%{mmcu=atmega2561:crtm2561.o%s} \
+ %{mmcu=atmega8hva:crtm8hva.o%s} \
+ %{mmcu=atmega16hva:crtm16hva.o%s} \
+ %{mmcu=at90can32:crtcan32.o%s} \
+--- gcc/config/avr/avr.md.orig	Wed Dec 19 14:18:10 2007
++++ gcc/config/avr/avr.md	Wed Dec 19 14:18:10 2007
+@@ -32,6 +32,7 @@
+ ;;  p  POST_INC or PRE_DEC address as a pointer (X, Y, Z)
+ ;;  r  POST_INC or PRE_DEC address as a register (r26, r28, r30)
+ ;;  ~  Output 'r' if not AVR_MEGA.
++;;  !  Output 'e' if AVR_HAVE_EIJMP_EICALL.
+ 
+ ;; UNSPEC usage:
+ ;;  0  Length of a string, see "strlenhi".
+@@ -2340,22 +2341,22 @@
+   "(register_operand (operands[0], HImode) || CONSTANT_P (operands[0]))"
+   "*{
+   if (which_alternative==0)
+-     return \"icall\";
++     return \"%!icall\";
+   else if (which_alternative==1)
+     {
+       if (AVR_HAVE_MOVW)
+ 	return (AS2 (movw, r30, %0) CR_TAB
+-		\"icall\");
++               \"%!icall\");
+       else
+ 	return (AS2 (mov, r30, %A0) CR_TAB
+ 		AS2 (mov, r31, %B0) CR_TAB
+-		\"icall\");
++		\"%!icall\");
+     }
+   else if (which_alternative==2)
+     return AS1(%~call,%c0);
+   return (AS2 (ldi,r30,lo8(%0)) CR_TAB
+           AS2 (ldi,r31,hi8(%0)) CR_TAB
+-          \"icall\");
++          \"%!icall\");
+ }"
+   [(set_attr "cc" "clobber,clobber,clobber,clobber")
+    (set_attr_alternative "length"
+@@ -2377,22 +2378,22 @@
+   "(register_operand (operands[0], VOIDmode) || CONSTANT_P (operands[0]))"
+   "*{
+   if (which_alternative==0)
+-     return \"icall\";
++     return \"%!icall\";
+   else if (which_alternative==1)
+     {
+       if (AVR_HAVE_MOVW)
+ 	return (AS2 (movw, r30, %1) CR_TAB
+-		\"icall\");
++		\"%!icall\");
+       else
+ 	return (AS2 (mov, r30, %A1) CR_TAB
+ 		AS2 (mov, r31, %B1) CR_TAB
+-		\"icall\");
++		\"%!icall\");
+     }
+   else if (which_alternative==2)
+     return AS1(%~call,%c1);
+   return (AS2 (ldi, r30, lo8(%1)) CR_TAB
+           AS2 (ldi, r31, hi8(%1)) CR_TAB
+-          \"icall\");
++          \"%!icall\");
+ }"
+   [(set_attr "cc" "clobber,clobber,clobber,clobber")
+    (set_attr_alternative "length"
+@@ -2422,13 +2423,20 @@
+ ; indirect jump
+ (define_insn "indirect_jump"
+   [(set (pc) (match_operand:HI 0 "register_operand" "!z,*r"))]
+-  ""
++  "!AVR_HAVE_EIJMP_EICALL"
+   "@
+ 	ijmp
+ 	push %A0\;push %B0\;ret"
+   [(set_attr "length" "1,3")
+    (set_attr "cc" "none,none")])
+ 
++(define_insn "*indirect_jump_avr6"
++  [(set (pc) (match_operand:HI 0 "register_operand" "z"))]
++  "AVR_HAVE_EIJMP_EICALL"
++  "eijmp"
++  [(set_attr "length" "1")
++   (set_attr "cc" "none")])
++
+ ;; table jump
+ 
+ ;; Table made from "rjmp" instructions for <=8K devices.
+@@ -2437,7 +2445,7 @@
+ 			UNSPEC_INDEX_JMP))
+    (use (label_ref (match_operand 1 "" "")))
+    (clobber (match_dup 0))]
+-  "!AVR_MEGA"
++  "(!AVR_MEGA) && (!AVR_HAVE_EIJMP_EICALL)"
+   "@
+ 	ijmp
+ 	push %A0\;push %B0\;ret"
+@@ -2466,7 +2474,7 @@
+ 	lpm __tmp_reg__,Z+
+ 	lpm r31,Z
+ 	mov r30,__tmp_reg__
+-	ijmp"
++	%!ijmp"
+   [(set_attr "length" "6")
+    (set_attr "cc" "clobber")])
+ 
+@@ -2475,7 +2483,7 @@
+ 			UNSPEC_INDEX_JMP))
+    (use (label_ref (match_operand 1 "" "")))
+    (clobber (match_dup 0))]
+-  "AVR_MEGA"
++  "AVR_MEGA && !AVR_HAVE_EIJMP_EICALL"
+   "lsl r30
+ 	rol r31
+ 	lpm
+--- gcc/config/avr/libgcc.S.orig	Mon Jun 19 17:04:27 2006
++++ gcc/config/avr/libgcc.S	Wed Dec 19 14:18:10 2007
+@@ -593,7 +593,12 @@
+ 	out	__SP_H__,r29
+ 	out	__SREG__,__tmp_reg__
+ 	out	__SP_L__,r28
++#if defined (__AVR_HAVE_EIJMP_EICALL__)
++	eijmp
++#else
+ 	ijmp
++#endif
++
+ .endfunc
+ #endif /* defined (L_prologue) */
+ 
+@@ -672,13 +677,22 @@
+ 	lpm	__tmp_reg__, Z+
+ 	lpm	r31, Z
+ 	mov	r30, __tmp_reg__
++
++#if defined (__AVR_HAVE_EIJMP_EICALL__)
++	eijmp
++#else
+ 	ijmp
++#endif
++
+ #else
+ 	lpm
+ 	adiw	r30, 1
+ 	push	r0
+ 	lpm
+ 	push	r0
++#if defined (__AVR_HAVE_EIJMP_EICALL__)
++        push    __zero_reg__
++#endif
+ 	ret
+ #endif
+ 	.endfunc
+--- gcc/config/avr/t-avr.orig	Wed Dec 19 14:18:09 2007
++++ gcc/config/avr/t-avr	Wed Dec 19 14:30:07 2007
+@@ -37,8 +37,8 @@
+ 
+ FPBIT = fp-bit.c
+ 
+-MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr35/mmcu=avr4/mmcu=avr5
+-MULTILIB_DIRNAMES = avr2 avr25 avr3 avr35 avr4 avr5
++MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr35/mmcu=avr4/mmcu=avr5/mmcu=avr6
++MULTILIB_DIRNAMES = avr2 avr25 avr3 avr35 avr4 avr5 avr6
+ 
+ # The many avr2 matches are not listed here - this is the default.
+ MULTILIB_MATCHES = \
+@@ -124,7 +124,9 @@
+ 	mmcu?avr5=mmcu?at90usb647 \
+ 	mmcu?avr5=mmcu?at90usb1286 \
+ 	mmcu?avr5=mmcu?at90usb1287 \
+-	mmcu?avr5=mmcu?at94k
++	mmcu?avr5=mmcu?at94k \
++	mmcu?avr6=mmcu?atmega2560 \
++	mmcu?avr6=mmcu?atmega2561
+ 
+ MULTILIB_EXCEPTIONS =

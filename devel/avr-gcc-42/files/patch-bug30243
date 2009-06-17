@@ -1,0 +1,14 @@
+Fix for GCC bug #30243.
+Index: gcc/builtins.c
+===================================================================
+--- gcc/builtins.c	(revision 126457)
++++ gcc/builtins.c	(working copy)
+@@ -5664,7 +5664,7 @@
+ 	  lo = 0;
+ 	}
+ 
+-      if (imode != rmode)
++      if (imode > rmode)
+ 	temp = gen_lowpart (rmode, temp);
+       temp = expand_binop (rmode, and_optab, temp,
+ 			   immed_double_const (lo, hi, rmode),

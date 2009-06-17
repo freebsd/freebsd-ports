@@ -1,0 +1,10 @@
+--- gcc/config/avr/avr.h.orig	2006-04-13 15:31:19.000000000 +0200
++++ gcc/config/avr/avr.h	2006-04-13 16:23:16.000000000 +0200
+@@ -892,3 +892,7 @@
+ #define ZERO_REGNO 1
+ 
++#define DWARF2_DEBUGGING_INFO 1
+ #define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
++
++/* Offset from the frame pointer register value to the top of the stack.  */
++#define FRAME_POINTER_CFA_OFFSET(FNDECL) 0
