@@ -7,7 +7,7 @@
 
 PORTNAME=	virtualbox
 DISTVERSION=	2.2.51.r20457
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -43,7 +43,7 @@ USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 CONFLICTS=	bcc-[0-9]*
 
 VBOXGROUP?=	vboxusers
-VBOXGID?=	919
+VBOXGID?=	920
 VBOX_FRONTENDS=	VBoxBFE VBoxHeadless VBoxSDL
 VBOX_GUEST_VER=	2.2.4
 
