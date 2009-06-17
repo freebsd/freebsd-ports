@@ -871,7 +871,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/greek.elc
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hangul.el.gz
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hangul.elc
-%%DATADIR%%/%%EMACS_VER%%/leim/quail/hangul3.elc
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hanja-jis.el.gz
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hanja-jis.elc
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hanja.el.gz
