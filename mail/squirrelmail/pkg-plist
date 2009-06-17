@@ -22,7 +22,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/config/.htaccess
 %%SQUIRRELDIR%%/config/conf.pl
 %%SQUIRRELDIR%%/config/config_default.php
-%%SQUIRRELDIR%%/config/config_local.php
+@unexec if cmp -s %D%/www/squirrelmail/config/config_local.php %D%/www/squirrelmail/config/config_local.php.sample; then rm -f %D%/www/squirrelmail/config/config_local.php; fi
+%%SQUIRRELDIR%%/config/config_local.php.sample
 %%SQUIRRELDIR%%/config/index.php
 %%SQUIRRELDIR%%/configure
 %%SQUIRRELDIR%%/data/.htaccess
