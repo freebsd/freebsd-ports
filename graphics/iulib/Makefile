@@ -7,6 +7,7 @@
 
 PORTNAME=	iulib
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -32,8 +33,10 @@ CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 .if !defined(WITH_SDL)
 CONFIGURE_ARGS+=--without-SDL
+PLIST_SUB+=	SDL="@comment "
 .else
-USE_SDL=	sdl
+USE_SDL=	sdl gfx
+PLIST_SUB+=	SDL=""
 .endif
 
 .if defined(WITH_VIDIO)
