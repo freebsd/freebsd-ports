@@ -1,0 +1,10 @@
+The Stomp project is the Streaming Text Orientated Messaging Protocol site (or
+the Protocol Briefly Known as TTMP and Represented by the symbol :ttmp).
+
+Stomp provides an interoperable wire format so that any of the available Stomp
+Clients can communicate with any Stomp Message Broker to provide easy and
+widespread messaging interop among languages, platforms and brokers.
+
+This is a rubygem binding for stomp.
+
+WWW:	http://stomp.codehaus.org/Ruby
