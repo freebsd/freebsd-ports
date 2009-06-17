@@ -800,6 +800,7 @@
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-objectdetect
     SUBDIR += rubygem-railroad
+    SUBDIR += rubygem-rmagick
     SUBDIR += rubygem-scruffy
     SUBDIR += rubygem-turing
     SUBDIR += rubyphoto
