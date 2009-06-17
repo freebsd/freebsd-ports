@@ -7,7 +7,7 @@
 
 PKGNAMESUFFIX=	-awesome
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	An advanced, highly configurable system monitor (configured for x11-wm/awesome)
 
 MASTERDIR=	${.CURDIR}/../../sysutils/conky
