@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.79 2009-06-17 03:25:23 pgollucci Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.80 2009-06-17 22:29:44 pgollucci Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -100,7 +100,7 @@ PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 # Emacs-23.x (development version)
 .elif (${EMACS_PORT_NAME} == "emacs-devel")
 EMACS_NAME=		emacs
-EMACS_VER=		23.0.93
+EMACS_VER=		23.0.94
 EMACS_MAJOR_VER=	23
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
