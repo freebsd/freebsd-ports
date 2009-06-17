@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uftp
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9.1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.tcnj.edu/~bush/
 DISTNAME=	uftp
@@ -16,6 +16,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A multicast capable FTP client and server
 
+USE_GMAKE=	yes
+MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/uftp bin/uftpd
