@@ -28,4 +28,6 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 
+CONFIGURE_ARGS+=	--with-ffmpeg=${LOCALBASE}/include
+
 .include <bsd.port.mk>
