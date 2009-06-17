@@ -842,6 +842,8 @@ bacula-docs                     ports/sysutils/bacula-docs
 bacula-server                   ports/sysutils/bacula-server
 bacula-server-devel             ports/sysutils/bacula-server-devel
 bacula-web                      ports/www/bacula-web
+bacula2-client                  ports/sysutils/bacula2-client
+bacula2-server                  ports/sysutils/bacula2-server
 badwm                           ports/x11-wm/badwm
 baghira                         ports/x11-themes/baghira
 bakery                          ports/x11-toolkits/bakery
@@ -9187,6 +9189,7 @@ nagios-portaudit                ports/net-mgmt/nagios-portaudit
 nagios-radauth-plugin           ports/net-mgmt/nagios-radauth-plugin
 nagios-silfreed-plugins         ports/net-mgmt/nagios-silfreed-plugins
 nagios-snmp-plugins             ports/net-mgmt/nagios-snmp-plugins
+nagios-snmp-plugins-extras      ports/net-mgmt/nagios-snmp-plugins-extras
 nagios-spamd-plugin             ports/net-mgmt/nagios-spamd-plugin
 nagios-statd                    ports/sysutils/nagios-statd
 nagios2                         ports/net-mgmt/nagios2
@@ -9341,6 +9344,7 @@ netpanzer-data                  ports/games/netpanzer-data
 netpbm                          ports/graphics/netpbm
 netpbm-devel                    ports/graphics/netpbm-devel
 netperf                         ports/benchmarks/netperf
+netpgp                          ports/security/netpgp
 netpipe                         ports/benchmarks/netpipe
 netpipes                        ports/net/netpipes
 netrek-BRMH-bin                 ports/games/netrek-BRMH-bin
@@ -13429,8 +13433,9 @@ p5-Yahoo-BBAuth                 ports/security/p5-Yahoo-BBAuth
 p5-Yahoo-Lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-Yahoo-Search                 ports/www/p5-Yahoo-Search
 p5-ZConf                        ports/net/p5-ZConf
-p5-ZConf-BGSet                  ports/net/p5-ZConf-BGSet
-p5-ZConf-Mail                   ports/net/p5-ZConf-Mail
+p5-ZConf-BGSet                  ports/deskutils/p5-ZConf-BGSet
+p5-ZConf-GUI                    ports/devel/p5-ZConf-GUI
+p5-ZConf-Mail                   ports/mail/p5-ZConf-Mail
 p5-ZConf-Runner                 ports/deskutils/p5-ZConf-Runner
 p5-ZML                          ports/devel/p5-ZML
 p5-Zen-Koans                    ports/misc/p5-Zen-Koans
@@ -16945,8 +16950,9 @@ p5-yape-html                    ports/textproc/p5-YAPE-HTML
 p5-yape-regex                   ports/textproc/p5-YAPE-Regex
 p5-yape-regex-explain           ports/textproc/p5-YAPE-Regex-Explain
 p5-zconf                        ports/net/p5-ZConf
-p5-zconf-bgset                  ports/net/p5-ZConf-BGSet
-p5-zconf-mail                   ports/net/p5-ZConf-Mail
+p5-zconf-bgset                  ports/deskutils/p5-ZConf-BGSet
+p5-zconf-gui                    ports/devel/p5-ZConf-GUI
+p5-zconf-mail                   ports/mail/p5-ZConf-Mail
 p5-zconf-runner                 ports/deskutils/p5-ZConf-Runner
 p5-zen-koans                    ports/misc/p5-Zen-Koans
 p5-zml                          ports/devel/p5-ZML
@@ -18489,7 +18495,6 @@ postgresql83-server             ports/databases/postgresql83-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
 postmark                        ports/benchmarks/postmark
-postnuke                        ports/www/postnuke
 potrace                         ports/graphics/potrace
 potracegui                      ports/graphics/potracegui
 pouetchess                      ports/games/pouetchess
@@ -18753,7 +18758,6 @@ py-amanith                      ports/graphics/py-amanith
 py-amf                          ports/www/py-amf
 py-anki                         ports/games/py-anki
 py-anonfunc                     ports/devel/py-anonfunc
-py-anygui                       ports/x11-toolkits/py-anygui
 py-ao                           ports/audio/py-ao
 py-apachelog                    ports/www/py-apachelog
 py-apetag                       ports/audio/py-apetag
@@ -20435,6 +20439,7 @@ rubygem-ditz                    ports/devel/rubygem-ditz
 rubygem-do_mysql                ports/databases/rubygem-do_mysql
 rubygem-do_postgres             ports/databases/rubygem-do_postgres
 rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
+rubygem-echoe                   ports/devel/rubygem-echoe
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
 rubygem-exifr                   ports/graphics/rubygem-exifr
@@ -20449,6 +20454,8 @@ rubygem-formosa                 ports/textproc/rubygem-formosa
 rubygem-gd2                     ports/graphics/rubygem-gd2
 rubygem-gdata                   ports/devel/rubygem-gdata
 rubygem-gem_plugin              ports/devel/rubygem-gem_plugin
+rubygem-geoip                   ports/net/rubygem-geoip
+rubygem-geokit                  ports/graphics/rubygem-geokit
 rubygem-georuby                 ports/devel/rubygem-georuby
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
@@ -21691,6 +21698,7 @@ tapioca-qt                      ports/net-im/tapioca-qt
 tardy                           ports/archivers/tardy
 taskjuggler                     ports/deskutils/taskjuggler
 taskstep                        ports/deskutils/taskstep
+taskwarrior                     ports/deskutils/taskwarrior
 taucs                           ports/math/taucs
 tavrasm                         ports/devel/tavrasm
 taxipilot                       ports/games/taxipilot
@@ -22758,6 +22766,7 @@ vrml2pov                        ports/graphics/vrml2pov
 vscan                           ports/security/vscan
 vserver                         ports/net/vserver
 vsftpd                          ports/ftp/vsftpd
+vsftpd-ext                      ports/ftp/vsftpd-ext
 vshnu                           ports/shells/vshnu
 vsound                          ports/audio/vsound
 vstr                            ports/devel/vstr
