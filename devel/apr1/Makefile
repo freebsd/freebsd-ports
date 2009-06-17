@@ -83,6 +83,7 @@ PLIST_SUB+=	GDBM="@comment "
 APU_CONF_ARGS+=	--without-gdbm
 .elif defined(WITH_GDBM)
 PLIST_SUB+=	GDBM=""
+APU_EXTRAS=	yes
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
 .if defined(PKGNAMESUFFIX)
