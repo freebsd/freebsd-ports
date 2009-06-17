@@ -15,8 +15,6 @@ COMMENT=	Geoip implementation for rubygems
 
 RUN_DEPENDS=	geoiplookup:${PORTSDIR}/net/GeoIP
 
-CONFLICTS=	ruby-net-geoip-[0-9]*
-
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes

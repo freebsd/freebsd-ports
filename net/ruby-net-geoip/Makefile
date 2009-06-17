@@ -23,8 +23,6 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 INSTALL_TARGET=	site-install
 
-CONFLICTS=	rubygem-geoip-[0-9]*
-
 DOCS=	README
 
 post-install:
