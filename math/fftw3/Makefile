@@ -7,7 +7,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	3.2.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
@@ -38,13 +38,14 @@ MAN1=	fftw${FFTW3_SUFX}-wisdom.1
 INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off \
-		FORTRAN "Build Fortran shims (needs gcc from port)" on
+OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off
 
-.include <bsd.port.options.mk>
-
-.if defined(WITH_FORTRAN)
+.if defined(FORTRAN_SHIM)
 USE_FORTRAN=	yes
+CONFLICTS=	fftw3-3*
+.else
+CONFIGURE_ARGS+=	--disable-fortran
+CONFLICTS=	fftw3-*fortran-3*
 .endif
 
 .include <bsd.port.pre.mk>
@@ -75,19 +76,30 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS_3DNOW}"
 .if defined(FFTW3_FLAVOR)
 .if ${FFTW3_FLAVOR}=="float"
 FFTW3_SUFX=	f
+.if defined(FORTRAN_SHIM)
+FFTW3_PKGNAMESUFFIX=	-float-fortran
+.else
 FFTW3_PKGNAMESUFFIX=	-float
+.endif
 CONFIGURE_ARGS+=--enable-float
 .else
 .if ${FFTW3_FLAVOR}=="long"
 LIB_DEPENDS+=	ml.0:${PORTSDIR}/math/ldouble
 FFTW3_SUFX=	l
+.if defined(FORTRAN_SHIM)
+FFTW3_PKGNAMESUFFIX=	-long-fortran
+.else
 FFTW3_PKGNAMESUFFIX=	-long
+.endif
 CONFIGURE_ARGS+=--enable-long-double
 .endif
 .endif
 .endif
 
 .if ${FFTW3_FLAVOR}=="default"
+.if defined(FORTRAN_SHIM)
+FFTW3_PKGNAMESUFFIX=	-fortran
+.endif
 PLIST_SUB+=	DEF=""
 .else
 PLIST_SUB+=	DEF="@comment "
