@@ -58,6 +58,7 @@
    SUBDIR += portupgrade
    SUBDIR += portupgrade-devel
    SUBDIR += psearch
+   SUBDIR += pver
    SUBDIR += qtpkg
    SUBDIR += tinderbox
    SUBDIR += tinderbox-devel
