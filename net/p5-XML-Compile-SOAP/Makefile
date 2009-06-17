@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile-SOAP
-PORTVERSION=	2.04
+PORTVERSION=	2.07
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,11 +27,12 @@ MAN3=		XML::Compile::SOAP.3 \
 		XML::Compile::SOAP11::Operation.3 \
 		XML::Compile::SOAP11::Server.3 \
 		XML::Compile::SOAP::Client.3 \
-		XML::Compile::SOAP::Server.3 XML::Compile::SOAP::Tester.3 \
+		XML::Compile::SOAP::Server.3 \
 		XML::Compile::SOAP::Trace.3 \
 		XML::Compile::SOAP::Util.3 XML::Compile::Transport.3 \
 		XML::Compile::Operation.3 \
-		XML::Compile::Transport::SOAPHTTP.3 XML::Compile::WSDL11.3
+		XML::Compile::Transport::SOAPHTTP.3 XML::Compile::WSDL11.3 \
+		XML::Compile::XOP.3 XML::Compile::XOP::Include.3
 
 .include <bsd.port.pre.mk>
 
