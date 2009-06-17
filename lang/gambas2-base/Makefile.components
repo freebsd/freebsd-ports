@@ -32,15 +32,19 @@ CONFIGURE_ARGS+=	--with-firebird-includes=${LOCALBASE}/include \
 .if ${PKGNAMESUFFIX} == "-gb-db-mysql"
 USE_MYSQL=	yes
 
-CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include \
-			--with-mysql-libraries=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
+			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-postgresql"
 USE_PGSQL=	yes
 
-CONFIGURE_ARGS+=	--with-postgresql-includes=${LOCALBASE}/include \
+CONFIGURE_ARGS+=	--with-postgresql-includes="${PGSQL_INCLUDES}" \
 			--with-postgresql-libraries=${LOCALBASE}/lib
+
+PGSQL_INCLUDES=		${LOCALBASE}/include/postgresql \
+			${LOCALBASE}/include/postgresql/server/catalog \
+			${LOCALBASE}/include/postgresql/server
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-odbc"
@@ -104,6 +108,9 @@ LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
 
 USE_GL=		gl glu
+
+CONFIGURE_ARGS+=	--with-qtopengl-includes=${LOCALBASE}/include \
+			--with-qtopengl-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-image"
@@ -184,7 +191,7 @@ BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
 USE_QT_VER=	3
 .include <${PORTSDIR}/Mk/bsd.kde.mk>
 
-CONFIGURE_ARGS+=	--with-qtopengl-includes=${LOCALBASE}/include \
+CONFIGURE_ARGS+=	--with-qtopengl-includes=${LOCALBASE}/include/GL \
 			--with-qtopengl-libraries=${LOCALBASE}/lib
 .endif
 
