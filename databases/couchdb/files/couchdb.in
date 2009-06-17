@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# PROVIDE: couchdb
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# couchdb_enable (bool):	Set to NO by default.
+# 				Set it to YES to enable couchdb.
+#
+# couchdb_enablelogs (bool):	Set to YES by default.
+#
+# couchdb_etcdir (string):	In case you want another dir
+# 				for default.ini/local.ini.
+#
+# couchdb_respawn (int):	Set to none by default. If CouchDB crashes,
+# 				respawn after this many seconds.
+#
+
+couchdb_user="${couchdb_user:-"couchdb"}"
+couchdb_enablelogs="${couchdb_enablelogs:-"YES"}"
+couchdb_etcdir="${couchdb_etcdir:-"%%PREFIX%%/etc/couchdb"}"
+couchdb_respawn="${couchdb_respawn:-"0"}"
+
+. %%RC_SUBR%%
+
+name="couchdb"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+command="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/${name}.pid"
+etcdir="%%PREFIX%%/etc/${name}"
+respawn=""
+
+if [ "$couchdb_respawn" gt 0 ]
+    then
+        respawn="-r ${couchdb_respawn} "
+fi
+
+if [ "$couchdb_enablelogs" = "YES" ]
+    then
+        logfile=/var/log/${name}/couch.log
+        errfile=/var/log/${name}/err.log
+    else
+        logfile=/dev/null
+        errfile=/dev/null
+fi
+
+: ${couchdb_enable="NO"}
+: ${couchdb_flags="-b -c ${etcdir}/default.ini -c ${etcdir}/local.ini ${respawn}-o ${logfile} -e ${errfile} -p ${pidfile}"}
+
+start_precmd=pid_touch
+stop_cmd="${command} -d && rm -f ${pidfile}"
+
+pid_touch ()
+{
+    touch $pidfile
+    chown $couchdb_user $pidfile
+}
+
+run_rc_command "$1"
