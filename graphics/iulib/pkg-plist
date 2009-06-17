@@ -51,6 +51,7 @@ include/iulib/io_png.h
 include/iulib/io_tiff.h
 include/iulib/iulib.h
 include/iulib/vidio.h
+%%SDL%%include/iulib/SDL_lines.h
 lib/libiulib.a
 lib/libiulib.la
 lib/libiulib.so
