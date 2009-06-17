@@ -18,11 +18,6 @@ CONFLICTS=	squsq-[0-9]*
 USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/SQUIRREL2
-SHORTINCS=	stdaux stdblob stdio stdmath stdstring stdsystem uirrel
-FULLINCS=	${SHORTINCS:S|^|sq|:S|$|.h|}
-PLIST_FILES=	bin/sq lib/libsqstdlib.so lib/libsqstdlib.so.0\
-		lib/libsquirrel.so lib/libsquirrel.so.0\
-		${FULLINCS:S|^|include/|}
 
 .include <bsd.port.pre.mk>
 
@@ -33,18 +28,22 @@ CFLAGS+=	-fPIC
 ALL_TARGET=	sq32
 .endif
 
+post-extract:
+	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
+	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} 644 {} \;
+
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile|${XARGS} ${REINPLACE_CMD}\
-		-e '/^MAKE/d;s|gcc|$${CC}|;s|-O2|$${CFLAGS}|;s|g++|$${CXX}|'\
-		-e 's|\.a|.so|g;s|ar rc|$${CC} ${CFLAGS} -shared -o|'
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
+		-e '/^MAKE/d; s|gcc|$${CC}|; s|-O2|$${CFLAGS}|; s|g++|$${CXX}|' \
+		-e 's|\.a|.so|g; s|ar rc|$${CC} ${CFLAGS} -shared -o|'
+	@${REINPLACE_CMD} -e '/cd / s|$$|\&\& cd ..|' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/sq ${PREFIX}/bin/
-	@cd ${WRKSRC}/lib&&${INSTALL_PROGRAM} libsqstdlib.so libsquirrel.so\
+	@cd ${WRKSRC}/lib && ${INSTALL_PROGRAM} libsqstdlib.so libsquirrel.so \
 		${PREFIX}/lib/
 	@${LN} -sf libsqstdlib.so ${PREFIX}/lib/libsqstdlib.so.0
 	@${LN} -sf libsquirrel.so ${PREFIX}/lib/libsquirrel.so.0
-	@cd ${WRKSRC}/include&&${INSTALL_DATA} ${FULLINCS}\
-		${PREFIX}/include/
+	@cd ${WRKSRC}/include && ${INSTALL_DATA} *.h ${PREFIX}/include/
 
 .include <bsd.port.post.mk>
