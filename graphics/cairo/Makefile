@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.8.6
-PORTREVISION?=	1
+PORTVERSION=	1.8.8
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
