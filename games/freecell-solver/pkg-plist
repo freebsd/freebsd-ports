@@ -27,9 +27,11 @@ lib/libfreecell-solver.so.0.5.0
 %%DATADIR%%/presets/cool-jives.sh
 %%DATADIR%%/presets/crooked-nose.sh
 %%DATADIR%%/presets/fools-gold.sh
+%%DATADIR%%/presets/gooey-unknown-thing.sh
 %%DATADIR%%/presets/hello-world.sh
 %%DATADIR%%/presets/john_galt_line-500.sh
 %%DATADIR%%/presets/rin-tin-tin.sh
+%%DATADIR%%/presets/sand-stone.sh
 %%DATADIR%%/presets/yellow-brick-road.sh
 @dirrm %%DATADIR%%/presets
 @dirrm %%DATADIR%%
