@@ -1,125 +1,182 @@
 bin/zim
-%%SITE_PERL%%/Gtk2/Ex/DesktopEntryMenu.pm
 %%SITE_PERL%%/Gtk2/Ex/HyperTextBuffer.pm
 %%SITE_PERL%%/Gtk2/Ex/HyperTextView.pm
+%%SITE_PERL%%/Gtk2/Ex/DesktopEntryMenu.pm
 %%SITE_PERL%%/Gtk2/Ex/PathBar.pm
-%%SITE_PERL%%/Zim.pm
-%%SITE_PERL%%/Zim/Events.pm
-%%SITE_PERL%%/Zim/File.pm
-%%SITE_PERL%%/Zim/Formats.pm
-%%SITE_PERL%%/Zim/Formats/Html.pm
-%%SITE_PERL%%/Zim/Formats/Txt2tags.pm
+%%SITE_PERL%%/Zim/FS/Bazaar.pm
+%%SITE_PERL%%/Zim/FS/Subversion.pm
+%%SITE_PERL%%/Zim/Formats/Pod.pm
 %%SITE_PERL%%/Zim/Formats/Wiki.pm
-%%SITE_PERL%%/Zim/GUI.pm
-%%SITE_PERL%%/Zim/GUI/Calendar.pm
-%%SITE_PERL%%/Zim/GUI/Component.pm
-%%SITE_PERL%%/Zim/GUI/EquationEditor.pm
-%%SITE_PERL%%/Zim/GUI/ExportDialog.pm
-%%SITE_PERL%%/Zim/GUI/FindReplaceDialog.pm
-%%SITE_PERL%%/Zim/GUI/NotebookDialog.pm
-%%SITE_PERL%%/Zim/GUI/PageView.pm
-%%SITE_PERL%%/Zim/GUI/PathBar.pm
-%%SITE_PERL%%/Zim/GUI/PreferencesDialog.pm
-%%SITE_PERL%%/Zim/GUI/PropertiesDialog.pm
-%%SITE_PERL%%/Zim/GUI/SearchDialog.pm
+%%SITE_PERL%%/Zim/Formats/Txt2tags.pm
+%%SITE_PERL%%/Zim/Formats/Html.pm
 %%SITE_PERL%%/Zim/GUI/Spell.pm
-%%SITE_PERL%%/Zim/GUI/TrayIcon.pm
+%%SITE_PERL%%/Zim/GUI/PathBar.pm
+%%SITE_PERL%%/Zim/GUI/TODOListDialog.pm
+%%SITE_PERL%%/Zim/GUI/Automount.pm
+%%SITE_PERL%%/Zim/GUI/PageView.pm
 %%SITE_PERL%%/Zim/GUI/TreeView.pm
-%%SITE_PERL%%/Zim/History.pm
+%%SITE_PERL%%/Zim/GUI/NotebookDialog.pm
+%%SITE_PERL%%/Zim/GUI/ExportDialog.pm
+%%SITE_PERL%%/Zim/GUI/DiagramEditor.pm
+%%SITE_PERL%%/Zim/GUI/Component.pm
+%%SITE_PERL%%/Zim/GUI/Daemon.pm
+%%SITE_PERL%%/Zim/GUI/SearchDialog.pm
+%%SITE_PERL%%/Zim/GUI/TrayIcon.pm
+%%SITE_PERL%%/Zim/GUI/PropertiesDialog.pm
+%%SITE_PERL%%/Zim/GUI/FindReplaceDialog.pm
+%%SITE_PERL%%/Zim/GUI/PreferencesDialog.pm
+%%SITE_PERL%%/Zim/GUI/VersionsDialog.pm
+%%SITE_PERL%%/Zim/GUI/EquationEditor.pm
+%%SITE_PERL%%/Zim/GUI/Calendar.pm
 %%SITE_PERL%%/Zim/OS/Win32.pm
+%%SITE_PERL%%/Zim/Store/Gjots.pm
+%%SITE_PERL%%/Zim/Store/Cached.pm
+%%SITE_PERL%%/Zim/Store/Man.pm
+%%SITE_PERL%%/Zim/Store/Files.pm
+%%SITE_PERL%%/Zim/Events.pm
+%%SITE_PERL%%/Zim/Formats.pm
+%%SITE_PERL%%/Zim/GUI.pm
+%%SITE_PERL%%/Zim/FS.pm
+%%SITE_PERL%%/Zim/Utils.pm
 %%SITE_PERL%%/Zim/Page.pm
 %%SITE_PERL%%/Zim/Store.pm
-%%SITE_PERL%%/Zim/Store/Cached.pm
-%%SITE_PERL%%/Zim/Store/Files.pm
-%%SITE_PERL%%/Zim/Store/Man.pm
-%%SITE_PERL%%/Zim/Selection.pm
 %%SITE_PERL%%/Zim/Template.pm
-%%SITE_PERL%%/Zim/TextBuffer.pm
-%%SITE_PERL%%/Zim/Utils.pm
-%%DATADIR%%/doc/globe_banner.png
-%%DATADIR%%/doc/Zim/About.txt
-%%DATADIR%%/doc/Zim/Install.txt
-%%DATADIR%%/doc/Zim/Translations.txt
-%%DATADIR%%/doc/Zim/Usage.txt
-%%DATADIR%%/doc/Zim/Bugs.txt
-%%DATADIR%%/doc/Zim/Features.txt
-%%DATADIR%%/doc/Zim/FAQ.txt
-%%DATADIR%%/doc/Zim/Contributing.txt
-%%DATADIR%%/doc/Zim/changelog.txt
-%%DATADIR%%/doc/Zim/Usage/strategies.txt
-%%DATADIR%%/doc/Zim/Usage/config.txt
-%%DATADIR%%/doc/Zim/Usage/preferences.txt
-%%DATADIR%%/doc/Zim/Usage/exporting.txt
-%%DATADIR%%/doc/Zim/Usage/styles.txt
-%%DATADIR%%/doc/Zim/Usage/commandline.txt
-%%DATADIR%%/doc/Zim/Usage/plugins.txt
-%%DATADIR%%/doc/Zim/Usage/searching.txt
-%%DATADIR%%/doc/Zim/Usage/notebooks.txt
-%%DATADIR%%/doc/Zim/Usage/autoformat.txt
-%%DATADIR%%/doc/Zim/Usage/properties.txt
-%%DATADIR%%/doc/Zim/Usage/syntax.txt
-%%DATADIR%%/doc/Zim/Usage/html_entities.txt
-%%DATADIR%%/doc/Zim/Usage/templates.txt
-%%DATADIR%%/doc/Zim/Usage/keybindings.txt
-%%DATADIR%%/doc/Zim/Usage/getting_started.txt
-%%DATADIR%%/doc/Zim/Usage/linking.txt
-%%DATADIR%%/doc/Zim/Usage/plugins/EquationEditor.txt
-%%DATADIR%%/doc/Zim/Usage/plugins/equation_01.png
-%%DATADIR%%/doc/Zim/Install/Windows.txt
-%%DATADIR%%/doc/Zim/Install/Unix.txt
-share/applications/zim.desktop
-share/pixmaps/zim.png
-share/pixmaps/zim/gtk-connect.png
+%%SITE_PERL%%/Zim/History.pm
+%%SITE_PERL%%/Zim/Selection.pm
+%%SITE_PERL%%/Zim.pm
 share/pixmaps/zim/stock_calendar-view-month.png
-%%DATADIR%%/dates.list
-%%DATADIR%%/default.conf
-%%DATADIR%%/entities.list
-%%DATADIR%%/doc/.zim.config
+share/pixmaps/zim/mail-attachment.png
+share/pixmaps/zim/gtk-connect.png
+share/pixmaps/zim/stock_todo.png
+share/pixmaps/zim/xchecked-box.png
+share/pixmaps/zim/unchecked-box.png
+share/pixmaps/zim/checked-box.png
+share/pixmaps/zim.png
+share/applications/zim.desktop
+share/icons/hicolor/64x64/mimetypes/application-x-zim-notebook.png
+share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-zim-notebook.png
+share/mime/packages/zim.xml
+share/mime/text/x-zim-wiki.xml
+share/mime/application/x-zim-notebook.xml
+share/mime/application/x-gjots.xml
+%%DATADIR%%/doc/Install/OS_X.txt
+%%DATADIR%%/doc/Install/Unix.txt
+%%DATADIR%%/doc/Install/Windows.txt
+%%DATADIR%%/doc/Usage/plugins/DiagramEditor/diagram_01.dot
+%%DATADIR%%/doc/Usage/plugins/DiagramEditor/diagram_01.png
+%%DATADIR%%/doc/Usage/plugins/equation_01.png
+%%DATADIR%%/doc/Usage/plugins/TODOList.txt
+%%DATADIR%%/doc/Usage/plugins/EquationEditor.txt
+%%DATADIR%%/doc/Usage/plugins/DiagramEditor.txt
+%%DATADIR%%/doc/Usage/Encryption.txt
+%%DATADIR%%/doc/Usage/VersionControl.txt
+%%DATADIR%%/doc/Usage/searching.txt
+%%DATADIR%%/doc/Usage/getting_started.txt
+%%DATADIR%%/doc/Usage/syntax.txt
+%%DATADIR%%/doc/Usage/strategies.txt
+%%DATADIR%%/doc/Usage/checkboxes.txt
+%%DATADIR%%/doc/Usage/notebooks.txt
+%%DATADIR%%/doc/Usage/plugins.txt
+%%DATADIR%%/doc/Usage/linking.txt
+%%DATADIR%%/doc/Usage/preferences.txt
+%%DATADIR%%/doc/Usage/styles.txt
+%%DATADIR%%/doc/Usage/templates.txt
+%%DATADIR%%/doc/Usage/profiles.txt
+%%DATADIR%%/doc/Usage/Attaching_Files.txt
+%%DATADIR%%/doc/Usage/autoformat.txt
+%%DATADIR%%/doc/Usage/commandline.txt
+%%DATADIR%%/doc/Usage/exporting.txt
+%%DATADIR%%/doc/Usage/html_entities.txt
+%%DATADIR%%/doc/Usage/keybindings.txt
+%%DATADIR%%/doc/Usage/config.txt
+%%DATADIR%%/doc/Usage/properties.txt
+%%DATADIR%%/doc/About.txt
+%%DATADIR%%/doc/Usage.txt
+%%DATADIR%%/doc/globe_banner.png
+%%DATADIR%%/doc/FAQ.txt
 %%DATADIR%%/doc/Help.txt
-%%DATADIR%%/lingua/cs.pl
+%%DATADIR%%/doc/Translations.txt
+%%DATADIR%%/doc/Contributing.txt
+%%DATADIR%%/doc/notebook.zim
+%%DATADIR%%/doc/Install.txt
+%%DATADIR%%/doc/start-zim.sh
+%%DATADIR%%/doc/Bugs.txt
+%%DATADIR%%/doc/changelog.txt
+%%DATADIR%%/lingua/de.pl
+%%DATADIR%%/lingua/he.pl
+%%DATADIR%%/lingua/tr.pl
+%%DATADIR%%/lingua/gl.pl
+%%DATADIR%%/lingua/ru.pl
 %%DATADIR%%/lingua/es.pl
-%%DATADIR%%/lingua/fr.pl
 %%DATADIR%%/lingua/it.pl
 %%DATADIR%%/lingua/nl.pl
-%%DATADIR%%/lingua/pt.pl
 %%DATADIR%%/lingua/sv.pl
-%%DATADIR%%/plugins/EquationEditor.pl
+%%DATADIR%%/lingua/pl.pl
+%%DATADIR%%/lingua/cs.pl
+%%DATADIR%%/lingua/fr.pl
+%%DATADIR%%/lingua/zh_CN.pl
+%%DATADIR%%/lingua/pt.pl
+%%DATADIR%%/lingua/da.pl
+%%DATADIR%%/lingua/zh_TW.pl
+%%DATADIR%%/lingua/nb.pl
+%%DATADIR%%/lingua/en_GB.pl
+%%DATADIR%%/lingua/fi.pl
+%%DATADIR%%/lingua/el.pl
+%%DATADIR%%/plugins/VersionControl/Subversion.pl
+%%DATADIR%%/plugins/VersionControl/Bazaar.pl
 %%DATADIR%%/plugins/InsertScreenshot.pl
-%%DATADIR%%/plugins/PrintToBrowser.pl
+%%DATADIR%%/plugins/DiagramEditor.pl
 %%DATADIR%%/plugins/Spell.pl
-%%DATADIR%%/plugins/Subversion.pl
+%%DATADIR%%/plugins/SortSelection.pl
+%%DATADIR%%/plugins/EquationEditor.pl
+%%DATADIR%%/plugins/TODOList.pl
+%%DATADIR%%/plugins/Calendar.pl
+%%DATADIR%%/plugins/VersionControl.pl
+%%DATADIR%%/plugins/PrintToBrowser.pl
+%%DATADIR%%/plugins/ToggleReadOnly.pl
 %%DATADIR%%/plugins/TrayIcon.pl
-%%DATADIR%%/reader.conf
-%%DATADIR%%/style.conf
+%%DATADIR%%/templates/html/Print.html
 %%DATADIR%%/templates/html/Default.html
 %%DATADIR%%/templates/html/Presentation.html
-%%DATADIR%%/templates/html/Print.html
 %%DATADIR%%/templates/html/SlideShow_(S5).html
-%%DATADIR%%/templates/latex/_Equation.tex
 %%DATADIR%%/templates/latex/Default.tex
+%%DATADIR%%/templates/latex/_Equation.tex
 %%DATADIR%%/templates/txt2tags/Default.t2t
 %%DATADIR%%/templates/wiki/_New.txt
+%%DATADIR%%/templates/wiki/_Date.txt
+%%DATADIR%%/default.conf
+%%DATADIR%%/dates.list
+%%DATADIR%%/default.style
+%%DATADIR%%/reader.conf
 %%DATADIR%%/urls.list
+%%DATADIR%%/entities.list
 %%DATADIR%%/zim.svg
-@dirrmtry %%SITE_PERL%%/Gtk2/Ex
-@dirrmtry %%SITE_PERL%%/Gtk2
+%%DATADIR%%/globe_banner_small.png
+@dirrm %%DATADIR%%/templates/wiki
+@dirrm %%DATADIR%%/templates/txt2tags
+@dirrm %%DATADIR%%/templates/latex
+@dirrm %%DATADIR%%/templates/html
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/plugins/VersionControl
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/lingua
+@dirrm %%DATADIR%%/doc/Usage/plugins/DiagramEditor
+@dirrm %%DATADIR%%/doc/Usage/plugins
+@dirrm %%DATADIR%%/doc/Usage
+@dirrm %%DATADIR%%/doc/Install
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm share/pixmaps/zim
 @dirrm %%SITE_PERL%%/Zim/Store
 @dirrm %%SITE_PERL%%/Zim/OS
 @dirrm %%SITE_PERL%%/Zim/GUI
 @dirrm %%SITE_PERL%%/Zim/Formats
+@dirrm %%SITE_PERL%%/Zim/FS
 @dirrm %%SITE_PERL%%/Zim
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/lingua
-@dirrm %%DATADIR%%/doc/Zim/Usage/plugins
-@dirrm %%DATADIR%%/doc/Zim/Usage
-@dirrm %%DATADIR%%/doc/Zim/Install
-@dirrm %%DATADIR%%/doc/Zim
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/templates/wiki
-@dirrm %%DATADIR%%/templates/txt2tags
-@dirrm %%DATADIR%%/templates/html
-@dirrm %%DATADIR%%/templates/latex
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%
-@dirrmtry share/applications
-@dirrmtry share/pixmaps/zim
+@dirrmtry %%SITE_PERL%%/Gtk2/Ex
+@dirrmtry %%SITE_PERL%%/Gtk2
