@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	nightfall
-PORTVERSION=	1.64
-PORTREVISION=	1
+PORTVERSION=	1.70
 CATEGORIES=	astro
-MASTER_SITES=	http://www.la-samhna.de/nightfall/ CENKES
+MASTER_SITES=	http://www.la-samhna.de/nightfall/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive binary star application
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+OPTIONS=	GNOMEUI "Enable LibGnomeUI support" off \
+		PGPLOT "Enable PGPLOT support" on \
+		OPENGL "Enable OpenGL support" on
 
-USE_XORG=	x11 xext xrender xinerama xi xrandr xcursor \
-		xcomposite xdamage xfixes
-WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget gtk20
 USE_PERL5=	yes
 USE_GETTEXT=	yes
@@ -32,13 +30,14 @@ MAN1=		nightfall.1
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-PKGNAMESUFFIX=	-gnome
+.if defined(WITH_GNOMEUI)
 USE_GNOME+=	gnomeprefix libgnomeui
 CONFIGURE_ARGS+=	--with-gnomedoc-prefix=${PREFIX}/share
 INSTALLS_OMF=	yes
+PLIST_SUB+=	GNOMEUI=""
 .else
 CONFIGURE_ARGS+=	--disable-gnome
+PLIST_SUB+=	GNOMEUI="@comment "
 .endif
 
 .if defined(WITHOUT_PGPLOT)
@@ -58,14 +57,6 @@ LIB_DEPENDS+=	gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
 USE_GL=		glut
 CONFIGURE_ARGS+=	--with-lib-GL
 .endif
-
-pre-everything::
-	@${ECHO_MSG} "Nightfall has the following tunable option(s):"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITHOUT_GNOME=libgnomeui	Turns off Gnome support"
-	@${ECHO_MSG} "	WITHOUT_PGPLOT=yes		Turns off PGPLOT support"
-	@${ECHO_MSG} "	WITHOUT_OPENGL=yes		Turns off OpenGL support"
-	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS -O3|CFLAGS|g' ${WRKSRC}/configure
