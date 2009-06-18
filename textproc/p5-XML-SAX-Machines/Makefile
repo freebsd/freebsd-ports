@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	XML-SAX-Machines
-PORTVERSION=	0.41
-PORTREVISION=	2
+PORTVERSION=	0.42
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,9 +28,6 @@ MAN3=		XML::Filter::Distributor.3 XML::Filter::DocSplitter.3 \
 
 regression-test: build
 	${MAKE} -C ${WRKSRC} test
-
-post-patch:
-	${RM} -f ${WRKSRC}/lib/XML/SAX/Machine.pm.orig
 
 post-install:
 .ifndef(NOPORTEXAMPLES)
