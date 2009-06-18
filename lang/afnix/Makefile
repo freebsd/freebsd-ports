@@ -22,7 +22,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	cnf/bin/afnix-setup
-CONFIGURE_ARGS=		-o --prefix "${PREFIX}" --compiler freebsd
+CONFIGURE_ARGS=		-o --prefix "${PREFIX}" --altdir "${PREFIX}" \
+			--shrdir "${PREFIX}/share" --compiler freebsd
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
