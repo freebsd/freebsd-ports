@@ -201,6 +201,7 @@ include/fxt/comb/mixedradix-modular-gray.h
 include/fxt/comb/mixedradix-modular-gray2.h
 include/fxt/comb/mixedradix.h
 include/fxt/comb/mpartition.h
+include/fxt/comb/mset-perm-2invtab.h
 include/fxt/comb/mset-perm-gray.h
 include/fxt/comb/mset-perm-lex-rec.h
 include/fxt/comb/mset-perm-lex.h
@@ -361,6 +362,9 @@ include/fxt/perm/permcompose.h
 include/fxt/perm/perminvert.h
 include/fxt/perm/permq.h
 include/fxt/perm/permrand.h
+include/fxt/perm/permrand-connected.h
+include/fxt/perm/permrand-ord.h
+include/fxt/perm/permrand-pref.h
 include/fxt/perm/permrand-cyclic.h
 include/fxt/perm/permrand-parity.h
 include/fxt/perm/permrand-cycle-type.h
