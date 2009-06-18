@@ -17,6 +17,8 @@ COMMENT=	Mathematics library and advanced calculator package
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
