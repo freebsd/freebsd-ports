@@ -119,6 +119,11 @@ post-patch:
 		-e '/^RUBY_VENDOR_LIB_PATH2/s,\.\$$\{TEENY\},,' \
 		${WRKSRC}/configure
 
+	#
+	# Eliminate all leftovers
+	#
+	@${FIND} ${WRKSRC}/ -name "*.orig" -delete
+
 #
 # Remove modules we don't want
 #
