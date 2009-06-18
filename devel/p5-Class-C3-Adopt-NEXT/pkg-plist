@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Class/C3/Adopt/NEXT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/Adopt/NEXT/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/Adopt/NEXT
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/Adopt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/C3/Adopt
+@dirrmtry %%SITE_PERL%%/Class/C3
+@dirrmtry %%SITE_PERL%%/Class
