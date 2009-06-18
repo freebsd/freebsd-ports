@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zetaback
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://labs.omniti.com/zetaback/tags/1.0/
 
