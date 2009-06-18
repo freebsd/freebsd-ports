@@ -1,6 +1,7 @@
 include/guiloader/guiloader.h
 lib/libguiloader.la
 lib/libguiloader.so
+lib/libguiloader.so.1
 libdata/pkgconfig/guiloader.pc
 share/locale/ru/LC_MESSAGES/guiloader.mo
 @dirrm include/guiloader

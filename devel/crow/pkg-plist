@@ -1,5 +1,6 @@
 bin/crow
 bin/crow-service
+lib/libcrow-%%VERSION%%.so
 lib/libcrow.la
 lib/libcrow.so
 share/applications/crow.desktop

@@ -1,6 +1,7 @@
 include/guiloader-c++/guiloader-c++.h
 lib/libguiloader-c++.la
 lib/libguiloader-c++.so
+lib/libguiloader-c++.so.1
 libdata/pkgconfig/guiloader-c++.pc
 share/locale/ru/LC_MESSAGES/guiloader-c++.mo
 @dirrm include/guiloader-c++
