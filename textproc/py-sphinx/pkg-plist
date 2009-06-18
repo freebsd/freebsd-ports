@@ -266,6 +266,9 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/png.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/png.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/png.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/pycompat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/pycompat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/pycompat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/smartypants.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/smartypants.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/smartypants.pyo
