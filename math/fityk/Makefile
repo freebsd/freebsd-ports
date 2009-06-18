@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	fityk
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -19,8 +18,8 @@ BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget gtk20
-USE_WX=		2.6+
+USE_GNOME=	gtk20
+USE_WX=		2.8+
 WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

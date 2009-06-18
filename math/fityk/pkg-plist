@@ -1,6 +1,7 @@
 bin/cfityk
 bin/fityk
 include/fityk/brucker_raw.h
+include/fityk/cache.h
 include/fityk/canberra_mca.h
 include/fityk/cpi.h
 include/fityk/dbws.h
@@ -20,11 +21,11 @@ include/fityk.h
 lib/libfityk.a
 lib/libfityk.la
 lib/libfityk.so
-lib/libfityk.so.0
+lib/libfityk.so.1
 lib/libxy.a
 lib/libxy.la
 lib/libxy.so
-lib/libxy.so.0
+lib/libxy.so.1
 share/applications/fityk.desktop
 %%DATADIR%%/fitykhelp.html
 %%DATADIR%%/fitykhelp_img/2theta.png
