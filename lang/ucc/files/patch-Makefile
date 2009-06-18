@@ -3,7 +3,7 @@
 @@ -1,21 +1,21 @@
 -UCCDIR = /usr/local/lib/ucc
 -export UCCDIR
-+UCCDIR = /usr/local
++UCCDIR = ${PREFIX}
 +#export UCCDIR
  
  all:
