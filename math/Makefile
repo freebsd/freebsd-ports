@@ -74,7 +74,10 @@
     SUBDIR += fftw-float
     SUBDIR += fftw3
     SUBDIR += fftw3-float
+    SUBDIR += fftw3-float-fortran
+    SUBDIR += fftw3-fortran
     SUBDIR += fftw3-long
+    SUBDIR += fftw3-long-fortran
     SUBDIR += fityk
     SUBDIR += fpc-fftw
     SUBDIR += fpc-numlib
