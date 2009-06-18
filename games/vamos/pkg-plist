@@ -17,6 +17,7 @@ include/vamos/body/Suspension.h
 include/vamos/body/Tire.h
 include/vamos/body/Transmission.h
 include/vamos/body/Wheel.h
+include/vamos/geometry/Circular_Buffer.h
 include/vamos/geometry/Constants.h
 include/vamos/geometry/Contact_Info.h
 include/vamos/geometry/Conversions.h
@@ -25,8 +26,8 @@ include/vamos/geometry/Interpolator.h
 include/vamos/geometry/Linear_Interpolator.h
 include/vamos/geometry/Material.h
 include/vamos/geometry/Numeric.h
-include/vamos/geometry/Rectangle.h
 include/vamos/geometry/PID.h
+include/vamos/geometry/Rectangle.h
 include/vamos/geometry/Spline.h
 include/vamos/geometry/Three_Matrix.h
 include/vamos/geometry/Three_Vector.h
@@ -41,12 +42,12 @@ include/vamos/track/Strip_Track.h
 include/vamos/track/Track.h
 include/vamos/world/Atmosphere.h
 include/vamos/world/Controls.h
-include/vamos/world/Gl_World.h
-include/vamos/world/Sounds.h
-include/vamos/world/World.h
 include/vamos/world/Driver.h
+include/vamos/world/Gl_World.h
 include/vamos/world/Interactive_Driver.h
 include/vamos/world/Robot_Driver.h
+include/vamos/world/Sounds.h
+include/vamos/world/World.h
 lib/libvamos-body.a
 lib/libvamos-body.la
 lib/libvamos-body.so
