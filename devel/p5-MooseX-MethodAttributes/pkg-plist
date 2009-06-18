@@ -4,9 +4,11 @@
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer/Inheritable.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Class.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Map.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method/MaybeWrapped.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method/Wrapped.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role.pm
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer
