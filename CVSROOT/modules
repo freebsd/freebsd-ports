@@ -1061,6 +1061,7 @@ blockade                        ports/games/blockade
 blocksolve95                    ports/math/blocksolve95
 blocksshd                       ports/security/blocksshd
 blogbench                       ports/benchmarks/blogbench
+blogd                           ports/www/blogd
 blogtk                          ports/deskutils/blogtk
 blokish                         ports/games/blokish
 blop                            ports/audio/blop
@@ -2474,11 +2475,20 @@ drupal6                         ports/www/drupal6
 drupal6-advanced_help           ports/www/drupal6-advanced_help
 drupal6-cck                     ports/www/drupal6-cck
 drupal6-geshifilter             ports/www/drupal6-geshifilter
+drupal6-google_analytics        ports/www/drupal6-google_analytics
+drupal6-menu_block              ports/www/drupal6-menu_block
 drupal6-mimedetect              ports/www/drupal6-mimedetect
 drupal6-nice_menus              ports/www/drupal6-nice_menus
+drupal6-nodewords               ports/www/drupal6-nodewords
+drupal6-page_title              ports/www/drupal6-page_title
+drupal6-pathauto                ports/www/drupal6-pathauto
 drupal6-print                   ports/www/drupal6-print
+drupal6-seo_checklist           ports/www/drupal6-seo_checklist
 drupal6-tagadelic               ports/www/drupal6-tagadelic
+drupal6-token                   ports/www/drupal6-token
 drupal6-views                   ports/www/drupal6-views
+drupal6-webform                 ports/www/drupal6-webform
+drupal6-wysiwyg                 ports/www/drupal6-wysiwyg
 drweb                           ports/security/drweb
 drweb-postfix                   ports/security/drweb-postfix
 drweb-qmail                     ports/security/drweb-qmail
@@ -19939,6 +19949,7 @@ rgbpaint                        ports/graphics/rgbpaint
 rhino                           ports/lang/rhino
 rhtvision                       ports/devel/rhtvision
 rhythmbox                       ports/audio/rhythmbox
+ri-emacs                        ports/devel/ri-emacs
 ri-li                           ports/games/ri-li
 richtext                        ports/editors/richtext
 ricochet                        ports/mail/ricochet
@@ -20209,6 +20220,7 @@ ruby-event-loop                 ports/devel/ruby-event-loop
 ruby-exmars                     ports/games/ruby-exmars
 ruby-extensions                 ports/lang/ruby-extensions
 ruby-fam                        ports/devel/ruby-fam
+ruby-fastri                     ports/devel/ruby-fastri
 ruby-fcgi                       ports/www/ruby-fcgi
 ruby-fcgiwrap                   ports/www/ruby-fcgiwrap
 ruby-fftw3                      ports/math/ruby-fftw3
@@ -20539,6 +20551,7 @@ rubygem-rightflexiscale         ports/net/rubygem-rightflexiscale
 rubygem-rightgogrid             ports/net/rubygem-rightgogrid
 rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
 rubygem-rightslicehost          ports/net/rubygem-rightslicehost
+rubygem-rmagick                 ports/graphics/rubygem-rmagick
 rubygem-rparsec                 ports/devel/rubygem-rparsec
 rubygem-rscm                    ports/devel/rubygem-rscm
 rubygem-rspec                   ports/devel/rubygem-rspec
@@ -20566,6 +20579,7 @@ rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
 rubygem-sqlite3                 ports/databases/rubygem-sqlite3
 rubygem-staticmatic             ports/www/rubygem-staticmatic
+rubygem-stomp                   ports/devel/rubygem-stomp
 rubygem-stream                  ports/devel/rubygem-stream
 rubygem-streetaddress           ports/devel/rubygem-streetaddress
 rubygem-syntax                  ports/textproc/rubygem-syntax
