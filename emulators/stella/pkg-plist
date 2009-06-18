@@ -29,6 +29,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_1x_large.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_input.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_audio.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_tv.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/debugger_ramsearch.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/debugger_tiazoomcmenu.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/debugger_tiainfo.png
