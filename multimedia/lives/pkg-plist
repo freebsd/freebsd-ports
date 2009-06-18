@@ -15,22 +15,189 @@ bin/ogm_encoder.py
 bin/sendOSC
 bin/smogrify
 bin/theora_encoder.py
+include/weed/weed-effects.h
+include/weed/weed-events.h
+include/weed/weed-host.h
+include/weed/weed-plugin-utils.h
+include/weed/weed-plugin.h
+include/weed/weed-utils.h
+include/weed/weed.h
+lib/libweed-plugin-utils.a
+lib/libweed-plugin-utils.la
+lib/libweed-utils.a
+lib/libweed-utils.la
+lib/libweed.a
+lib/libweed.la
+lib/libweed.so
+lib/libweed.so.0
+lib/libweed_slice.a
+lib/libweed_slice.la
+lib/libweed_slice.so
+lib/libweed_slice.so.0
+lib/lives/plugins/decoders/dv_decoder.la
+lib/lives/plugins/decoders/dv_decoder.so
+lib/lives/plugins/decoders/ogg_theora_decoder.la
+lib/lives/plugins/decoders/ogg_theora_decoder.so
+lib/lives/plugins/effects/realtime/weed/alien_overlay.la
+lib/lives/plugins/effects/realtime/weed/alien_overlay.so
+lib/lives/plugins/effects/realtime/weed/audio_transition.la
+lib/lives/plugins/effects/realtime/weed/audio_transition.so
+lib/lives/plugins/effects/realtime/weed/audio_volume.la
+lib/lives/plugins/effects/realtime/weed/audio_volume.so
+lib/lives/plugins/effects/realtime/weed/blurzoom.la
+lib/lives/plugins/effects/realtime/weed/blurzoom.so
+lib/lives/plugins/effects/realtime/weed/bump2d.la
+lib/lives/plugins/effects/realtime/weed/bump2d.so
+lib/lives/plugins/effects/realtime/weed/ccorrect.la
+lib/lives/plugins/effects/realtime/weed/ccorrect.so
+lib/lives/plugins/effects/realtime/weed/colorkey.la
+lib/lives/plugins/effects/realtime/weed/colorkey.so
+lib/lives/plugins/effects/realtime/weed/compositor.la
+lib/lives/plugins/effects/realtime/weed/compositor.so
+lib/lives/plugins/effects/realtime/weed/deinterlace.la
+lib/lives/plugins/effects/realtime/weed/deinterlace.so
+lib/lives/plugins/effects/realtime/weed/edge.la
+lib/lives/plugins/effects/realtime/weed/edge.so
+lib/lives/plugins/effects/realtime/weed/fg_bg_removal.la
+lib/lives/plugins/effects/realtime/weed/fg_bg_removal.so
+lib/lives/plugins/effects/realtime/weed/fireTV.la
+lib/lives/plugins/effects/realtime/weed/fireTV.so
+lib/lives/plugins/effects/realtime/weed/frei0r.la
+lib/lives/plugins/effects/realtime/weed/frei0r.so
+lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.la
+lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.so
+lib/lives/plugins/effects/realtime/weed/haip.la
+lib/lives/plugins/effects/realtime/weed/haip.so
+lib/lives/plugins/effects/realtime/weed/layout_blends.la
+lib/lives/plugins/effects/realtime/weed/layout_blends.so
+lib/lives/plugins/effects/realtime/weed/libvis.la
+lib/lives/plugins/effects/realtime/weed/libvis.so
+lib/lives/plugins/effects/realtime/weed/lifeTV.la
+lib/lives/plugins/effects/realtime/weed/lifeTV.so
+lib/lives/plugins/effects/realtime/weed/livetext.la
+lib/lives/plugins/effects/realtime/weed/livetext.so
+lib/lives/plugins/effects/realtime/weed/mirrors.la
+lib/lives/plugins/effects/realtime/weed/mirrors.so
+lib/lives/plugins/effects/realtime/weed/multi_blends.la
+lib/lives/plugins/effects/realtime/weed/multi_blends.so
+lib/lives/plugins/effects/realtime/weed/negate.la
+lib/lives/plugins/effects/realtime/weed/negate.so
+lib/lives/plugins/effects/realtime/weed/noise.la
+lib/lives/plugins/effects/realtime/weed/noise.so
+lib/lives/plugins/effects/realtime/weed/onedTV.la
+lib/lives/plugins/effects/realtime/weed/onedTV.so
+lib/lives/plugins/effects/realtime/weed/palette_test.la
+lib/lives/plugins/effects/realtime/weed/palette_test.so
+lib/lives/plugins/effects/realtime/weed/plasma.la
+lib/lives/plugins/effects/realtime/weed/plasma.so
+lib/lives/plugins/effects/realtime/weed/posterise.la
+lib/lives/plugins/effects/realtime/weed/posterise.so
+lib/lives/plugins/effects/realtime/weed/rippleTV.la
+lib/lives/plugins/effects/realtime/weed/rippleTV.so
+lib/lives/plugins/effects/realtime/weed/rotozoom.la
+lib/lives/plugins/effects/realtime/weed/rotozoom.so
+lib/lives/plugins/effects/realtime/weed/simple_blend.la
+lib/lives/plugins/effects/realtime/weed/simple_blend.so
+lib/lives/plugins/effects/realtime/weed/slide_over.la
+lib/lives/plugins/effects/realtime/weed/slide_over.so
+lib/lives/plugins/effects/realtime/weed/targeted_zoom.la
+lib/lives/plugins/effects/realtime/weed/targeted_zoom.so
+lib/lives/plugins/effects/realtime/weed/textfun.la
+lib/lives/plugins/effects/realtime/weed/textfun.so
+lib/lives/plugins/effects/realtime/weed/tvpic.la
+lib/lives/plugins/effects/realtime/weed/tvpic.so
+lib/lives/plugins/effects/realtime/weed/vertigo.la
+lib/lives/plugins/effects/realtime/weed/vertigo.so
+lib/lives/plugins/effects/realtime/weed/videowall.la
+lib/lives/plugins/effects/realtime/weed/videowall.so
+lib/lives/plugins/effects/realtime/weed/warpTV.la
+lib/lives/plugins/effects/realtime/weed/warpTV.so
+lib/lives/plugins/effects/realtime/weed/xeffect.la
+lib/lives/plugins/effects/realtime/weed/xeffect.so
+lib/lives/plugins/effects/rendered/blank_frames
+lib/lives/plugins/effects/rendered/blur
+lib/lives/plugins/effects/rendered/brightness_change
+lib/lives/plugins/effects/rendered/charcoal
+lib/lives/plugins/effects/rendered/colorize
+lib/lives/plugins/effects/rendered/colour_filter
+lib/lives/plugins/effects/rendered/colour_replace
+lib/lives/plugins/effects/rendered/contrast
+lib/lives/plugins/effects/rendered/cycle
+lib/lives/plugins/effects/rendered/deinterlace
+lib/lives/plugins/effects/rendered/despeckle
+lib/lives/plugins/effects/rendered/dream
+lib/lives/plugins/effects/rendered/edge_detect
+lib/lives/plugins/effects/rendered/emboss
+lib/lives/plugins/effects/rendered/enhance
+lib/lives/plugins/effects/rendered/flip
+lib/lives/plugins/effects/rendered/flop
+lib/lives/plugins/effects/rendered/frame_calculator
+lib/lives/plugins/effects/rendered/gamma_change
+lib/lives/plugins/effects/rendered/gen_blank_frames
+lib/lives/plugins/effects/rendered/gen_clip_from_image
+lib/lives/plugins/effects/rendered/gen_coloured_frames
+lib/lives/plugins/effects/rendered/gen_text
+lib/lives/plugins/effects/rendered/hue_change
+lib/lives/plugins/effects/rendered/jumble
+lib/lives/plugins/effects/rendered/modulate
+lib/lives/plugins/effects/rendered/monochrome
+lib/lives/plugins/effects/rendered/negate
+lib/lives/plugins/effects/rendered/noisify
+lib/lives/plugins/effects/rendered/normalize
+lib/lives/plugins/effects/rendered/photo_still
+lib/lives/plugins/effects/rendered/pixilate
+lib/lives/plugins/effects/rendered/posterize
+lib/lives/plugins/effects/rendered/randomzoom
+lib/lives/plugins/effects/rendered/resize
+lib/lives/plugins/effects/rendered/rotate
+lib/lives/plugins/effects/rendered/saturation_change
+lib/lives/plugins/effects/rendered/sepia
+lib/lives/plugins/effects/rendered/shift_horizontal
+lib/lives/plugins/effects/rendered/shift_vertical
+lib/lives/plugins/effects/rendered/shrink_expand
+lib/lives/plugins/effects/rendered/skip_forwards
+lib/lives/plugins/effects/rendered/solarize
+lib/lives/plugins/effects/rendered/spin
+lib/lives/plugins/effects/rendered/spread
+lib/lives/plugins/effects/rendered/swirl
+lib/lives/plugins/effects/rendered/textover
+lib/lives/plugins/effects/rendered/transition_bwthresh
+lib/lives/plugins/effects/rendered/transition_checkerboard
+lib/lives/plugins/effects/rendered/transition_fade2
+lib/lives/plugins/effects/rendered/transition_splice
+lib/lives/plugins/effects/rendered/trim_frames
+lib/lives/plugins/effects/rendered/tunnel
+lib/lives/plugins/effects/rendered/wave
+lib/lives/plugins/encoders/encodedv_encoder
+lib/lives/plugins/encoders/ffmpeg_encoder
+lib/lives/plugins/encoders/mencoder_encoder
+lib/lives/plugins/encoders/mjpegtools_encoder
+lib/lives/plugins/encoders/multi_encoder
+lib/lives/plugins/encoders/pdf_encoder
+lib/lives/plugins/encoders/qtutils_encoder
+lib/lives/plugins/encoders/sswf_encoder
+lib/lives/plugins/encoders/transcode_encoder
+lib/lives/plugins/playback/video/SDL.la
+lib/lives/plugins/playback/video/SDL.so
+lib/lives/plugins/playback/video/lives2lives_stream.la
+lib/lives/plugins/playback/video/lives2lives_stream.so
+lib/lives/plugins/playback/video/yuv4mpeg_stream.la
+lib/lives/plugins/playback/video/yuv4mpeg_stream.so
 share/applications/LiVES.desktop
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/BUGS
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/FEATURES
-%%DOCSDIR%%/GETTING.STARTED
-%%DOCSDIR%%/LiVES-Perl.sxw
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.RFX
-%%DOCSDIR%%/README.multi_encoder
-%%DOCSDIR%%/RFX.spec
-%%DOCSDIR%%/clip_format.txt
-%%DOCSDIR%%/lives-OMC.txt
-%%DOCSDIR%%/rfxbuilder.sxw
-%%DOCSDIR%%/weedevents.txt
-%%DOCSDIR%%/weedspec.txt
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/GETTING.STARTED
+%%PORTDOCS%%%%DOCSDIR%%/LiVES-Perl.odt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.multi_encoder
+%%PORTDOCS%%%%DOCSDIR%%/RFX.spec
+%%PORTDOCS%%%%DOCSDIR%%/clip_format.txt
+%%PORTDOCS%%%%DOCSDIR%%/lives-OMC.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfxbuilder.odt
+%%PORTDOCS%%%%DOCSDIR%%/weedevents.txt
+%%PORTDOCS%%%%DOCSDIR%%/weedspec.txt
 %%DATADIR%%/default.keymap
 %%DATADIR%%/icons/audio.png
 %%DATADIR%%/icons/fullscreen.png
@@ -46,6 +213,7 @@ share/applications/LiVES.desktop
 %%DATADIR%%/plugins/effects/RFXscripts/charcoal.script
 %%DATADIR%%/plugins/effects/RFXscripts/colorize.script
 %%DATADIR%%/plugins/effects/RFXscripts/colour_filter.script
+%%DATADIR%%/plugins/effects/RFXscripts/colour_replace.script
 %%DATADIR%%/plugins/effects/RFXscripts/contrast.script
 %%DATADIR%%/plugins/effects/RFXscripts/cycle.script
 %%DATADIR%%/plugins/effects/RFXscripts/deinterlace.script
@@ -76,9 +244,11 @@ share/applications/LiVES.desktop
 %%DATADIR%%/plugins/effects/RFXscripts/resize.script
 %%DATADIR%%/plugins/effects/RFXscripts/rotate.script
 %%DATADIR%%/plugins/effects/RFXscripts/saturation_change.script
+%%DATADIR%%/plugins/effects/RFXscripts/sepia.script
 %%DATADIR%%/plugins/effects/RFXscripts/shift_horizontal.script
 %%DATADIR%%/plugins/effects/RFXscripts/shift_vertical.script
 %%DATADIR%%/plugins/effects/RFXscripts/shrink_expand.script
+%%DATADIR%%/plugins/effects/RFXscripts/skip_forwards.script
 %%DATADIR%%/plugins/effects/RFXscripts/solarize.script
 %%DATADIR%%/plugins/effects/RFXscripts/spin.script
 %%DATADIR%%/plugins/effects/RFXscripts/spread.script
@@ -91,68 +261,6 @@ share/applications/LiVES.desktop
 %%DATADIR%%/plugins/effects/RFXscripts/trim_frames.script
 %%DATADIR%%/plugins/effects/RFXscripts/tunnel.script
 %%DATADIR%%/plugins/effects/RFXscripts/wave.script
-%%DATADIR%%/plugins/effects/rendered/blank_frames
-%%DATADIR%%/plugins/effects/rendered/blur
-%%DATADIR%%/plugins/effects/rendered/brightness_change
-%%DATADIR%%/plugins/effects/rendered/charcoal
-%%DATADIR%%/plugins/effects/rendered/colorize
-%%DATADIR%%/plugins/effects/rendered/colour_filter
-%%DATADIR%%/plugins/effects/rendered/contrast
-%%DATADIR%%/plugins/effects/rendered/cycle
-%%DATADIR%%/plugins/effects/rendered/deinterlace
-%%DATADIR%%/plugins/effects/rendered/despeckle
-%%DATADIR%%/plugins/effects/rendered/dream
-%%DATADIR%%/plugins/effects/rendered/edge_detect
-%%DATADIR%%/plugins/effects/rendered/emboss
-%%DATADIR%%/plugins/effects/rendered/enhance
-%%DATADIR%%/plugins/effects/rendered/flip
-%%DATADIR%%/plugins/effects/rendered/flop
-%%DATADIR%%/plugins/effects/rendered/frame_calculator
-%%DATADIR%%/plugins/effects/rendered/gamma_change
-%%DATADIR%%/plugins/effects/rendered/gen_blank_frames
-%%DATADIR%%/plugins/effects/rendered/gen_clip_from_image
-%%DATADIR%%/plugins/effects/rendered/gen_coloured_frames
-%%DATADIR%%/plugins/effects/rendered/gen_text
-%%DATADIR%%/plugins/effects/rendered/hue_change
-%%DATADIR%%/plugins/effects/rendered/jumble
-%%DATADIR%%/plugins/effects/rendered/modulate
-%%DATADIR%%/plugins/effects/rendered/monochrome
-%%DATADIR%%/plugins/effects/rendered/negate
-%%DATADIR%%/plugins/effects/rendered/noisify
-%%DATADIR%%/plugins/effects/rendered/normalize
-%%DATADIR%%/plugins/effects/rendered/photo_still
-%%DATADIR%%/plugins/effects/rendered/pixilate
-%%DATADIR%%/plugins/effects/rendered/posterize
-%%DATADIR%%/plugins/effects/rendered/randomzoom
-%%DATADIR%%/plugins/effects/rendered/resize
-%%DATADIR%%/plugins/effects/rendered/rotate
-%%DATADIR%%/plugins/effects/rendered/saturation_change
-%%DATADIR%%/plugins/effects/rendered/shift_horizontal
-%%DATADIR%%/plugins/effects/rendered/shift_vertical
-%%DATADIR%%/plugins/effects/rendered/shrink_expand
-%%DATADIR%%/plugins/effects/rendered/solarize
-%%DATADIR%%/plugins/effects/rendered/spin
-%%DATADIR%%/plugins/effects/rendered/spread
-%%DATADIR%%/plugins/effects/rendered/swirl
-%%DATADIR%%/plugins/effects/rendered/textover
-%%DATADIR%%/plugins/effects/rendered/transition_bwthresh
-%%DATADIR%%/plugins/effects/rendered/transition_checkerboard
-%%DATADIR%%/plugins/effects/rendered/transition_fade2
-%%DATADIR%%/plugins/effects/rendered/transition_splice
-%%DATADIR%%/plugins/effects/rendered/trim_frames
-%%DATADIR%%/plugins/effects/rendered/tunnel
-%%DATADIR%%/plugins/effects/rendered/wave
-%%DATADIR%%/plugins/encoders/encodedv_encoder
-%%DATADIR%%/plugins/encoders/ffmpeg_encoder
-%%DATADIR%%/plugins/encoders/mencoder_encoder
-%%DATADIR%%/plugins/encoders/mjpegtools_encoder
-%%DATADIR%%/plugins/encoders/multi_encoder
-%%DATADIR%%/plugins/encoders/pdf_encoder
-%%DATADIR%%/plugins/encoders/qtutils_encoder
-%%DATADIR%%/plugins/encoders/sswf_encoder
-%%DATADIR%%/plugins/encoders/transcode_encoder
-%%DATADIR%%/plugins/playback/video/SDL
-%%DATADIR%%/plugins/playback/video/yuv4mpeg_stream
 %%DATADIR%%/themes/camera/frame.jpg
 %%DATADIR%%/themes/camera/main.jpg
 %%DATADIR%%/themes/cutting_room/frame.jpg
@@ -163,38 +271,53 @@ share/applications/LiVES.desktop
 %%DATADIR%%/themes/editor/main.jpg
 %%DATADIR%%/themes/greenish/frame.jpg
 %%DATADIR%%/themes/greenish/main.jpg
+%%DATADIR%%/themes/lives-splash.png
 %%DATADIR%%/themes/pinks/frame.jpg
 %%DATADIR%%/themes/pinks/main.jpg
 %%DATADIR%%/themes/sunburst/frame.jpg
 %%DATADIR%%/themes/sunburst/main.jpg
 share/locale/cs/LC_MESSAGES/lives.mo
 share/locale/de_DE/LC_MESSAGES/lives.mo
+share/locale/es/LC_MESSAGES/lives.mo
 share/locale/fr/LC_MESSAGES/lives.mo
 share/locale/hu/LC_MESSAGES/lives.mo
+share/locale/it/LC_MESSAGES/lives.mo
 share/locale/ja/LC_MESSAGES/lives.mo
 share/locale/nl_NL/LC_MESSAGES/lives.mo
+share/locale/pl/LC_MESSAGES/lives.mo
+share/locale/pt/LC_MESSAGES/lives.mo
 share/locale/pt_BR/LC_MESSAGES/lives.mo
+share/locale/ru/LC_MESSAGES/lives.mo
+share/locale/tr/LC_MESSAGES/lives.mo
+share/locale/zh_CN/LC_MESSAGES/lives.mo
 share/pixmaps/lives.xpm
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/plugins/effects/RFXscripts
-@dirrm %%DATADIR%%/plugins/effects/rendered
-@dirrm %%DATADIR%%/plugins/effects
-@dirrm %%DATADIR%%/plugins/encoders
-@dirrm %%DATADIR%%/plugins/playback/video
-@dirrm %%DATADIR%%/plugins/playback
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/themes/camera
-@dirrm %%DATADIR%%/themes/cutting_room
-@dirrm %%DATADIR%%/themes/default
-@dirrm %%DATADIR%%/themes/editor
-@dirrm %%DATADIR%%/themes/greenish
-@dirrm %%DATADIR%%/themes/pinks
 @dirrm %%DATADIR%%/themes/sunburst
+@dirrm %%DATADIR%%/themes/pinks
+@dirrm %%DATADIR%%/themes/greenish
+@dirrm %%DATADIR%%/themes/editor
+@dirrm %%DATADIR%%/themes/default
+@dirrm %%DATADIR%%/themes/cutting_room
+@dirrm %%DATADIR%%/themes/camera
 @dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/plugins/effects/RFXscripts
+@dirrm %%DATADIR%%/plugins/effects
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/weed
+@dirrm lib/lives/plugins/playback/video
+@dirrm lib/lives/plugins/playback
+@dirrm lib/lives/plugins/encoders
+@dirrm lib/lives/plugins/effects/rendered
+@dirrm lib/lives/plugins/effects/realtime/weed
+@dirrm lib/lives/plugins/effects/realtime
+@dirrm lib/lives/plugins/effects
+@dirrm lib/lives/plugins/decoders
+@dirrm lib/lives/plugins
+@dirrm lib/lives
 @dirrmtry share/locale/nl_NL/LC_MESSAGES
 @dirrmtry share/locale/nl_NL
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/applications
