@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	perl
-PORTVERSION=	0.2.7
-PORTREVISION=	1
+PORTVERSION=	0.2.9
 CATEGORIES=	lang ruby perl5
 MASTER_SITES=	http://www.yoshidam.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -38,12 +37,14 @@ post-build:
 post-install:
 	@cd ${WRKSRC}/Ruby; \
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} pure_install
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_MODDOCDIR}/ja/
 	${INSTALL_DATA} ${WRKSRC}/README.ja ${RUBY_MODDOCDIR}/ja/
 .endif
 
