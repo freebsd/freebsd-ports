@@ -22,10 +22,9 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 NO_BUILD=	yes
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	atk gtk2 pango xorglibs
-LINUX_DIST=	fedora
-LINUX_DIST_VER=	4
 PREFIX?=	${LOCALBASE}
 SRC_DISTFILES=
+DIST_SUBDIR=   rpm
 
 USE_NPAPI=	linux
 NPAPI_WRKSRC=	${WRKDIR}/usr/lib/mozilla/plugins
