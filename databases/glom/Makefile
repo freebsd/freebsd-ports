@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	glom
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,11 +16,11 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME database designer and user interface
 
 LIB_DEPENDS=	bakery-2.6:${PORTSDIR}/x11-toolkits/bakery \
-		gdamm-4.0.10:${PORTSDIR}/databases/libgdamm \
+		gdamm-4.0.11:${PORTSDIR}/databases/libgdamm \
 		gtksourceviewmm-2.0.2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
 		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
 		epc-1.0.2:${PORTSDIR}/www/libepc \
-		goocanvasmm-0.1.4:${PORTSDIR}/graphics/goocanvasmm
+		goocanvasmm-0.1.5:${PORTSDIR}/graphics/goocanvasmm
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-4.0.pc:${PORTSDIR}/databases/libgda4-postgresql
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
