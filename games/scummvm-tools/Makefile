@@ -7,6 +7,7 @@
 
 PORTNAME=	scummvm-tools
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scummvm
@@ -34,6 +35,8 @@ MAKE_ENV=	"LDFLAGS= -L${LOCALBASE}/lib"
 CXXFLAGS=	-I${LOCALBASE}/include
 
 OPTIONS=	WX "Build wxWidgets GUI" On
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_WX)
 USE_WX=		2.4+
@@ -69,4 +72,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
