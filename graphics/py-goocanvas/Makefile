@@ -6,7 +6,7 @@
 #    $MCom: ports/graphics/py-goocanvas/Makefile,v 1.6 2008/09/22 09:14:41 kwm Exp $
 
 PORTNAME=	goocanvas
-PORTVERSION=	0.12.0
+PORTVERSION=	0.14.1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/py${PORTNAME}/${PORTVERSION:C/..$//}
