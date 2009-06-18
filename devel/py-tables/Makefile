@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tables
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.pytables.org/download/stable/ \
 		http://www.pytables.org/download/py${PORTNAME}-${PORTVERSION}/
