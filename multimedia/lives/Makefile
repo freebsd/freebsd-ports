@@ -6,66 +6,85 @@
 #
 
 PORTNAME=	lives
-DISTVERSION=	0.9.8.10
-PORTREVISION=	5
+PORTVERSION=	1.0.0.p1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.xs4all.nl/%7Esalsaman/lives/current/ CENKES
-DISTNAME=	LiVES-${DISTVERSION}
+MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
+DISTNAME=	LiVES-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video editing system
 
-LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		jack.0:${PORTSDIR}/audio/jack \
-		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		dv.4:${PORTSDIR}/multimedia/libdv \
-		matroska.0:${PORTSDIR}/multimedia/libmatroska \
-		oil-0.3.0:${PORTSDIR}/devel/liboil \
-		mjpegutils-1.9.1:${PORTSDIR}/multimedia/mjpegtools \
-		x264.65:${PORTSDIR}/multimedia/x264
 BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
-		mencoder:${PORTSDIR}/multimedia/mencoder \
+LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
+		oil-0.3.0:${PORTSDIR}/devel/liboil \
+		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
+		dv.4:${PORTSDIR}/multimedia/libdv \
+		theora.0:${PORTSDIR}/multimedia/libtheora \
+		mjpegutils-1.9.1:${PORTSDIR}/multimedia/mjpegtools
+RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		sox:${PORTSDIR}/audio/sox \
-		transcode:${PORTSDIR}/multimedia/transcode \
-		xmms:${PORTSDIR}/multimedia/xmms \
-		mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r \
 		sswf:${PORTSDIR}/graphics/sswf \
-		${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
+		mencoder:${PORTSDIR}/multimedia/mencoder \
+		mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix \
+		mplayer:${PORTSDIR}/multimedia/mplayer \
+		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
+		transcode:${PORTSDIR}/multimedia/transcode \
+		x264:${PORTSDIR}/multimedia/x264 \
+		xmms:${PORTSDIR}/multimedia/xmms
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
+
 USE_BZIP2=	yes
+USE_GNOME=	gtk20
+USE_SDL=	sdl
 USE_PYTHON=	yes
 USE_PERL5=	yes
 USE_CDRTOOLS=	yes
-USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 USE_GHOSTSCRIPT_RUN=	yes
-USE_SDL=	yes
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-LC_MESSAGES_NAMES=	lives
+CONFIGURE_ARGS=	--disable-ldvgrab
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
+		OMC/lives-OMC.txt \
+		RFX/LiVES-Perl.odt RFX/rfxbuilder.odt RFX/RFX.spec \
+		docs/clip_format.txt \
+		lives-plugins/marcos-encoders/README.multi_encoder \
+		weed-docs/weedspec.txt weed-docs/weedevents.txt
+
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|i<FX_KEYS_MAX_VIRTUAL|i<prefs->rte_keys_virtual|' ${WRKSRC}/src/rte_window.c
 	@${REINPLACE_CMD} -e '/LIBS/s|-ldl ||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/LDFLAGS/s|-ldl||'\
-		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
+	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; \
+		 /update_with_plugins.*install/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-d alsa|-d oss|' ${WRKSRC}/src/main.c
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|weed-plugins||' ${WRKSRC}/lives-plugins/Makefile.in
-	@${REINPLACE_CMD} -e '/^docdir/s|=.*|=${DOCSDIR}|;\
-		/update_with_plugins.*install/d' ${WRKSRC}/Makefile.in
-	@${FIND} ${WRKSRC}/ -name Makefile.in |\
-		${XARGS} ${EGREP} -lm1 '(-O3|-fexpensive-optimizations)' |\
-		${XARGS} ${REINPLACE_CMD} -e 's|-O3||;s|-fexpensive-optimizations||'
-	@${REINPLACE_CMD} -e 's|\*\.py|*_encoder.py|' ${WRKSRC}/lives-plugins/marcos-encoders/Makefile.in
+.for file in src/audio.c lives-plugins/plugins/decoders/dv_decoder.c
+	@${REINPLACE_CMD} -e 's|off64_t|off_t|g ; \
+		 s|lseek64|lseek|g' ${WRKSRC}/${file}
+.endfor
+	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		'/FLAGS/s|-O3||g ; \
+		 /FLAGS/s|-ldl||g ; \
+		 /flags/s|-L/usr/lib64||g ; \
+		 /flags/s|-W,-Bsymbolic||g ; \
+		 /flags/s|--tag=disable-static||g'
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor 
+.endif
 
 .include <bsd.port.mk>
