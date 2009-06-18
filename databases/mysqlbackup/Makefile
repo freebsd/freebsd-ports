@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysqlbackup
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
