@@ -9,7 +9,6 @@
 %%SITE_PERL%%/XML/SAX/Machines.pm
 %%SITE_PERL%%/XML/SAX/Machines/ConfigDefaults.pm
 %%SITE_PERL%%/XML/SAX/Machines/ConfigHelper.pm
-%%SITE_PERL%%/XML/SAX/Machines/SiteConfig.pm
 %%SITE_PERL%%/XML/SAX/Manifold.pm
 %%SITE_PERL%%/XML/SAX/Pipeline.pm
 %%SITE_PERL%%/XML/SAX/Tap.pm
