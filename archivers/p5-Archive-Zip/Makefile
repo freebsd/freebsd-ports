@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Archive-Zip
-PORTVERSION=	1.26
-PORTREVISION=	1
+PORTVERSION=	1.28
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to create, manipulate, read, and write Zip archive files
 
-RUN_DEPENDS=	p5-Compress-Zlib>=1.14:${PORTSDIR}/archivers/p5-Compress-Zlib
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Compress-Zlib>=1.14:${PORTSDIR}/archivers/p5-Compress-Zlib
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
