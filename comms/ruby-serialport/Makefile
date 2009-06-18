@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	serialport
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	comms ruby
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -20,23 +19,21 @@ COMMENT=	A Ruby library to communicate via the RS232 port
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+RUBY_EXTCONF=	ext/extconf.rb
 
 INSTALL_TARGET=	site-install
 
-DOCS=		CHANGELOG	README
-EXAMPLES=	test/*.rb
-
-post-patch:
-.for f in ${EXAMPLES}
-	${RUBY} -i -pe 'sub!(%r"\.\./serialport", "serialport")' ${WRKSRC}/${f}
-.endfor
+DOCS=		ChangeLog	README
+EXAMPLES=	examples/*.rb
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
+.endif
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
