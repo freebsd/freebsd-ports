@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gss
-PORTVERSION=	0.0.25
+PORTVERSION=	0.1.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	GNU Generic Security Service Library
 
 LIB_DEPENDS=	shishi.0:${PORTSDIR}/security/shishi
 
-CONFLICTS=	heimdal-*
+CONFLICTS=	heimdal-[0-9]*
 
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
