@@ -19,6 +19,8 @@ COMMENT=	A Compiler for the functional language Haskell
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+BROKEN=		does not configure
+
 GHC_VERSION=	${PORTVERSION}
 
 USE_AUTOTOOLS=	autoconf:262:env
