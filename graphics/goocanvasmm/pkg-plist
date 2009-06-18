@@ -66,7 +66,7 @@ lib/goocanvasmm-0.1/proc/m4/convert_libgoocanvasmm.m4
 lib/libgoocanvasmm-0.1.a
 lib/libgoocanvasmm-0.1.la
 lib/libgoocanvasmm-0.1.so
-lib/libgoocanvasmm-0.1.so.4
+lib/libgoocanvasmm-0.1.so.5
 libdata/pkgconfig/goocanvasmm-1.0.pc
 @dirrm lib/goocanvasmm-0.1/proc/m4
 @dirrm lib/goocanvasmm-0.1/proc
