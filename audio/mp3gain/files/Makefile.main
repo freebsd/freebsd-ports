@@ -1,4 +1,4 @@
-SRCS=	gain_analysis.c mp3gain.c rg_error.c apetag.c
+SRCS=	gain_analysis.c mp3gain.c rg_error.c apetag.c id3tag.c
 PROG=	mp3gain
 
 LDFLAGS+=	-LmpglibDBL
@@ -7,7 +7,7 @@ DPADD=	mpglibDBL/libmpglibDBL.a
 
 BINDIR=	${PREFIX}/bin
 
-NOMAN=	yes
+NO_MAN=	yes
 
 mpglibDBL/libmpglibDBL.a:
 	cd mpglibDBL && ${MAKE}
