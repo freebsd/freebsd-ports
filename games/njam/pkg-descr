@@ -1,0 +1,15 @@
+Njam is fast-paced cross-platform pac-man-like game. In this arcade you 
+move through the maze eating cookies and collecting powerups while trying 
+to avoid ghosts who chase you. 
+Features:
+
+    * Single and multiplayer mode (local or network)
+    * Duel mode (players compete each other to get more points)
+    * Non-duel mode (players cooperate to finish as many levels as they can)
+    * Great music and sound effects
+    * Customizable level skins
+    * Many different levels
+    * Integrated level editor
+    * Open Source (GPL Licence) 
+
+WWW:	http://njam.sourceforge.net/
