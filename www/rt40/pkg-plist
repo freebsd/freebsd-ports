@@ -458,6 +458,7 @@ share/rt38/html/Elements/MyRequests
 share/rt38/html/Elements/MySupportQueues
 share/rt38/html/Elements/MyTickets
 share/rt38/html/Elements/PageLayout
+share/rt38/html/Elements/PersonalQuickbar
 share/rt38/html/Elements/QueryString
 share/rt38/html/Elements/QueueSummary
 share/rt38/html/Elements/QuickCreate
