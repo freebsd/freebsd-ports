@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	EitanAdlerList@gmail.com
 COMMENT=	A cross-platform library for games and multimedia programming
 
 USE_AUTOTOOLS=	autoconf:262
