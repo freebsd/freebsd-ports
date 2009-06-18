@@ -1,8 +1,12 @@
 bin/shisa
 bin/shishi
+bin/ccache2shishi
+sbin/keytab2shishi
+sbin/shishid
 etc/shishi/shisa.conf
 etc/shishi/shishi.conf
 etc/shishi/shishi.skel
+etc/shishi/shishi.keys
 include/shisa.h
 include/shishi-int.h
 include/shishi.h
@@ -14,14 +18,18 @@ lib/libshishi.a
 lib/libshishi.la
 lib/libshishi.so
 lib/libshishi.so.0
+lib/security/pam_shishi.so
+lib/security/pam_shishi.la
+lib/security/pam_shishi.a
 libdata/pkgconfig/shishi.pc
-sbin/shishid
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/shishi.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/shishi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/shishi.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/shishi.mo
-@dirrmtry etc/shishi
+%%NLS%%share/locale/fr/LC_MESSAGES/shishi.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/shishi.mo
 %%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@boldquot
 %%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@quot
+@dirrmtry etc/shishi
+@dirrmtry lib/security
