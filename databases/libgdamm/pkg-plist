@@ -73,7 +73,7 @@ include/libgdamm-4.0/libgdamm/xatransaction.h
 lib/libgdamm-4.0.a
 lib/libgdamm-4.0.la
 lib/libgdamm-4.0.so
-lib/libgdamm-4.0.so.10
+lib/libgdamm-4.0.so.11
 lib/libgdamm-4.0/include/libgdammconfig.h
 lib/libgdamm-4.0/proc/m4/convert.m4
 lib/libgdamm-4.0/proc/m4/convert_libgdamm.m4

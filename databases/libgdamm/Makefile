@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	libgdamm
-PORTVERSION=	3.99.14
-PORTREVISION=	1
+PORTVERSION=	3.99.15
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org
-COMMENT=	C++ wrapper for libgda3 library
+COMMENT=	C++ wrapper for libgda4 library
 
 LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
