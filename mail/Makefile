@@ -241,7 +241,6 @@
     SUBDIR += mailgraph
     SUBDIR += mailman
     SUBDIR += mailmgr
-    SUBDIR += mailrep
     SUBDIR += mailscanner
     SUBDIR += mailscanner-devel
     SUBDIR += mailscanner-mrtg

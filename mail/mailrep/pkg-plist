@@ -1,4 +1,0 @@
-@unexec if cmp -s %D/etc/mailrep/mailrep.conf %D/etc/mailrep/mailrep.conf.sample; then rm -f %D/etc/mailrep/mailrep.conf; fi
-etc/mailrep/mailrep.conf.sample
-sbin/mailrep.pl
-@dirrmtry etc/mailrep

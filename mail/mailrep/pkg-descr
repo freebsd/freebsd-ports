@@ -1,8 +1,0 @@
-Mailrep - A program for reporting mail log information in sendmail and postfix.
-
-A program for reporting mail log information. You can configure it to respond 
-to errors in various ways and you can specify RBLs that can be used for 
-blocking spam. The program can measure the number of messages sent for a 
-particular account and the number of messages that the server processes daily.
-
-WWW: http://experience.bsdnetwork.org/
