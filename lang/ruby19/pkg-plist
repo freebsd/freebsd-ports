@@ -440,7 +440,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/minitest/spec.rb
 %%RUBY_LIBDIR%%/minitest/unit.rb
 %%RUBY_LIBDIR%%/mkmf.rb
-%%RUBY_LIBDIR%%/mkmf.rb.orig
 %%RUBY_LIBDIR%%/monitor.rb
 %%RUBY_LIBDIR%%/mutex_m.rb
 %%RUBY_LIBDIR%%/net/ftp.rb
