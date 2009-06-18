@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	guiloader
-PORTVERSION=	2.13.1
+PORTVERSION=	2.15.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	SF/crow-designer
 
@@ -18,6 +18,7 @@ USE_GNOME=	gnomehack gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-hidden-visibility
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -6,25 +6,34 @@
 #
 
 PORTNAME=	crow
-PORTVERSION=	2.13.0
+PORTVERSION=	2.15.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	SF/crow-designer
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern GUI builder for the GTK+ toolkit
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost \
-		guiloader-c++>=2.13.0:${PORTSDIR}/devel/guiloader-c++
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		guiloader-c++.1:${PORTSDIR}/devel/guiloader-c++ \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
-RUN_DEPENDS=	guiloader-c++>=2.13.0:${PORTSDIR}/devel/guiloader-c++ \
-		xdg-desktop-menu:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	xdg-desktop-menu:${PORTSDIR}/devel/xdg-utils
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --disable-hidden-visibility
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|hiddenvisibility|hidden_visibility|' ${WRKSRC}/configure
+
+post-install:
+	-@${LOCALBASE}/bin/update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
