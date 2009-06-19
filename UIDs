@@ -33,7 +33,7 @@ mysql:*:88:88::0:0:MySQL Daemon:/var/db/mysql:/usr/sbin/nologin
 vpopmail:*:89:89::0:0:VPop Mail User:/usr/local/vpopmail:/nonexistent
 firebird:*:90:90::0:0:Firebird Database Administrator:/var/db/firebird:/bin/sh
 mailman:*:91:91::0:0:Mailman User:/usr/local/mailman:/usr/sbin/nologin
-gdm:*:92:92::0:0:GDM Sandbox:/:/usr/sbin/nologin
+gdm:*:92:92::0:0:GNOME Display Manager:/usr/local/etc/gdm/home:/sbin/nologin
 jabber:*:93:93::0:0:Jabber Daemon:/nonexistent:/nonexistent
 p4admin:*:94:94::0:0:Perforce admin:/usr/local/perforce:/usr/sbin/nologin
 interch:*:95:95::0:0:Interchange user:/usr/local/interchange:/usr/sbin/nologin
@@ -152,3 +152,4 @@ _prayer:*:917:917:daemon:0:0:Prayer Account:/nonexistent:/sbin/nologin
 nefu:*:918:918::0:0:Nefu daemon:/var/db/nefu:/sbin/nologin
 couchdb:*:919:919:daemon:0:0:CouchDB Account:/var/empty:/usr/sbin/nologin
 vboxusers:*:920:920::0:0:Virtualbox user:/nonexistent:/sbin/nologin
+transmission:*:921:921::0:0:Transmission Daemon User:/usr/local/etc/transmission/home:/usr/sbin/nologin
