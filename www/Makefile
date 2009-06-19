@@ -1425,11 +1425,9 @@
     SUBDIR += squid
     SUBDIR += squid30
     SUBDIR += squid_radius_auth
-    SUBDIR += squidclients
     SUBDIR += squidguard
     SUBDIR += squidpurge
     SUBDIR += squidstats
-    SUBDIR += squidtimes
     SUBDIR += squidview
     SUBDIR += squirm
     SUBDIR += squishdot
