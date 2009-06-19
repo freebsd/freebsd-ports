@@ -1,15 +1,18 @@
 IMPORTANT - READ CAREFULLY: Please read the COPYRIGHT included with these fonts
 before using.  The copyright can be found at
 
-	%%LOCALBASE%%/%%FONTSDIR%%/OFL
+	%%PREFIX%%/%%FONTSDIR%%/OFL
 
-To use these fonts, follow the instructions below.
+To use these fonts, add the following line to the "Files" section of
+xorg.conf:
 
-Make sure that the freetype module is loaded.  If it is not, add the following
-line to the "Modules" section of xorg.conf:
+	FontPath "%%PREFIX%%/%%FONTSDIR%%/"
+
+Users of older versions of X may additionally have to make sure that
+the freetype module is loaded.  Check /var/log/Xorg.0.log for error
+messages.  If freetype is required, add the following line to the
+"Modules" section of xorg.conf:
 
 	Load "freetype"
 
-Add the following line to the "Files" section of xorg.conf:
 
-	FontPath "%%LOCALBASE%%/%%FONTSDIR%%/"
