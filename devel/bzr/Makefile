@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/27074733/
+MASTER_SITES=	https://launchpadlibrarian.net/28062196/
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Distributed version control system by Canonical
 
-# Needed for 1.15 for files normally pre-built
+# Often not needed, but it's cheap insurance
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
 OPTIONS=	SFTP "Enable Paramiko for SFTP support" on
