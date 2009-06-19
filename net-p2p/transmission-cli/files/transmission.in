@@ -13,7 +13,7 @@
 #			     a path.
 # transmission_conf_dir:     Directory where transmission configuration
 #			     data is stored.
-#			     Default: %%PREFIX%%/etc/transmission/home/.config
+#			     Default: %%PREFIX%%/etc/transmission/home
 # transmission_download_dir: Directory to store downloaded data.
 #			     Default: %%PREFIX%%/etc/transmission/home/Downloads
 # transmission_user:	     The user account transmission daemon runs as what
@@ -33,6 +33,8 @@ load_rc_config ${name}
 
 : ${transmission_enable:="NO"}
 : ${transmission_user:="transmission"}
+: ${transmission_conf_dir:="%%PREFIX%%/etc/transmission/home"}
+: ${transmission_download_dir:="%%PREFIX%%/etc/transmission/home/Downloads"}
 
 transmission_flags=" \
 	${transmission_watch_dir:+-c ${transmission_watch_dir}} \
