@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Drawing editors derived from idraw
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
@@ -31,4 +31,7 @@ MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		incomplete pkg-plist
+.endif
 .include <bsd.port.post.mk>
