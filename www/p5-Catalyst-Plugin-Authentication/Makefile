@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Plugin-Authentication
 PORTVERSION=	0.10012
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -34,6 +35,7 @@ MAN3=	Catalyst::Authentication::Credential::Password.3 \
 	Catalyst::Authentication::User::Hash.3 \
 	Catalyst::Plugin::Authentication.3 \
 	Catalyst::Plugin::Authentication::Credential::Password.3 \
+	Catalyst::Authentication::Credential::Remote.3 \
 	Catalyst::Plugin::Authentication::Internals.3 \
 	Catalyst::Plugin::Authentication::Store::Minimal.3 \
 	Catalyst::Plugin::Authentication::User.3 \
