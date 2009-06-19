@@ -68,6 +68,7 @@
 %%SITE_PERL%%/Moose/Meta/Role/Application/ToRole.pm
 %%SITE_PERL%%/Moose/Meta/Role/Composite.pm
 %%SITE_PERL%%/Moose/Meta/Role/Method.pm
+%%SITE_PERL%%/Moose/Meta/Role/Method/Conflicting.pm
 %%SITE_PERL%%/Moose/Meta/Role/Method/Required.pm
 %%SITE_PERL%%/Moose/Meta/TypeCoercion.pm
 %%SITE_PERL%%/Moose/Meta/TypeCoercion/Union.pm
