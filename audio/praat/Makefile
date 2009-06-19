@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/Praat/4639/ \
 		http://www.fon.hum.uva.nl/praat/
 DISTNAME=	praat4639_sources
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Phonetics by Computer
 
 USE_DOS2UNIX=	yes

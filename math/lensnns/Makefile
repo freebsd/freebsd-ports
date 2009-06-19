@@ -13,7 +13,7 @@ MASTER_SITES=	http://tedlab.mit.edu/~dr/Lens/Dist/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/
 DISTNAME=	lens
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Light Efficient Neural Network Simulator
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \

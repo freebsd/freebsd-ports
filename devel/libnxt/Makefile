@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Lego NXT library
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \

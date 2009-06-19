@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.cs.sunysb.edu/~algorith/implement/RAPID/distrib/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/
 DISTNAME=	RAPID_v2_01
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Robust and Accurate Polygon Interference Detection
 
 RESTRICTED=	For any commercial purpose, you must request a license from http://www.cs.unc.edu/~geom/OBB/OBBT.html

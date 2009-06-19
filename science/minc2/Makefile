@@ -22,7 +22,7 @@ CATEGORIES=	science biology
 MASTER_SITES=	http://www.bic.mni.mcgill.ca/users/bert/ \
 		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Medical Imaging NetCDF
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \

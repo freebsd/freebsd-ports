@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Removable media eject
 
 MAN1=		eject.1

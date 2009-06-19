@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.win4bsd.com/pub/releases/${PORTVERSION}/
 DISTNAME=	Win4BSD-1.1_63918_i386-freebsd
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Win4BSD Virtual Machine for Windows under BSD
 
 LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
