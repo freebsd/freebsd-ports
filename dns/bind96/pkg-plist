@@ -102,6 +102,7 @@ include/isc/hmacmd5.h
 include/isc/httpd.h
 include/isc/int.h
 include/isc/interfaceiter.h
+include/isc/iterated_hash.h
 include/isc/lang.h
 include/isc/lex.h
 include/isc/lfsr.h
