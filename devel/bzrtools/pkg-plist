@@ -46,6 +46,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/link_tree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/link_tree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/link_tree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/mirror.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/mirror.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/mirror.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/patch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/patch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/patch.pyo
@@ -94,9 +97,15 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_dotgraph.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_dotgraph.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_dotgraph.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_fetch_ghosts.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_fetch_ghosts.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_fetch_ghosts.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_link_tree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_link_tree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_link_tree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_mirror.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_mirror.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_mirror.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_patch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_patch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_patch.pyo
