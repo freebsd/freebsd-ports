@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08102
+PORTVERSION=	0.08103
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
-RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
+BUILD_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-SQL-Abstract>=1.51:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.141:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
@@ -28,10 +28,10 @@ RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-OPTIONS=        SQLT "SQL::Translator (generate DDL from schema)" Off
+OPTIONS=	SQLT "SQL::Translator (generate DDL from schema)" Off
 
 PERL_CONFIGURE=	5.8.1+
 CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
@@ -87,6 +87,8 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::ResultSourceHandle.3 \
 	DBIx::Class::ResultSourceProxy::Table.3 \
 	DBIx::Class::Row.3 \
+	DBIx::Class::SQLAHacks.3 \
+	DBIx::Class::SQLAHacks::OracleJoins.3 \
 	DBIx::Class::Schema.3 \
 	DBIx::Class::Schema::Versioned.3 \
 	DBIx::Class::Serialize::Storable.3 \
@@ -96,7 +98,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Cursor.3 \
 	DBIx::Class::Storage::DBI::DB2.3 \
 	DBIx::Class::Storage::DBI::MSSQL.3 \
-	DBIx::Class::Storage::DBI::MultiDistinctEmulation.3 \
+	DBIx::Class::Storage::DBI::MultiColumnIn.3 \
 	DBIx::Class::Storage::DBI::NoBindVars.3 \
 	DBIx::Class::Storage::DBI::ODBC.3 \
 	DBIx::Class::Storage::DBI::ODBC::ACCESS.3 \
@@ -112,10 +114,13 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Replicated::Balancer::Random.3 \
 	DBIx::Class::Storage::DBI::Replicated::Pool.3 \
 	DBIx::Class::Storage::DBI::Replicated::Replicant.3 \
+	DBIx::Class::Storage::DBI::Replicated::Types.3 \
+	DBIx::Class::Storage::DBI::Replicated::WithDSN.3 \
 	DBIx::Class::Storage::DBI::Role::QueryCounter.3 \
 	DBIx::Class::Storage::DBI::SQLite.3 \
 	DBIx::Class::Storage::DBI::Sybase.3 \
 	DBIx::Class::Storage::DBI::Sybase::MSSQL.3 \
+	DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server.3 \
 	DBIx::Class::Storage::DBI::mysql.3 \
 	DBIx::Class::Storage::Statistics.3 \
 	DBIx::Class::Storage::TxnScopeGuard.3 \
