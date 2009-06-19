@@ -46,7 +46,7 @@ MAN4=		exa.4 \
 		fbdevhw.4
 MAN5=		xorg.conf.5
 
-NOT_FOR_ARCHS=	ia64 alpha
+NOT_FOR_ARCHS=	alpha
 
 OPTIONS=	HAL	"Compile with HAL config support" on \
 		AIGLX	"Compile with Accelerated Indirect GLX support" on \
@@ -85,6 +85,13 @@ PLIST_SUB+=	ALPHA_NA="@comment "
 EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-alpha
 .else
 PLIST_SUB+=	ALPHA_NA=""
+.endif
+
+.if ${ARCH} == ia64
+PLIST_SUB+=     IA64_NA="@comment "
+EXTRA_PATCHES=  ${.CURDIR}/files/extra-arch-ia64
+.else
+PLIST_SUB+=     IA64_NA=""
 .endif
 
 .if ${ARCH} == powerpc
