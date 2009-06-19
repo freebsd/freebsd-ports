@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090618:
+  AFFECTS: users of www/p5-Catalyst
+  AUTHOR: pgollucci@FreeBSD..org
+
+    Most applications and plugins should run unaltered on Catalyst 5.80.
+
+    However, a lot of refactoring work has taken place, and several changes 
+    have been made which could cause incompatibilities. If your application 
+    or plugin is using deprecated code, or relying on side effects, then you 
+    could have issues upgrading to this release.
+
+    http://search.cpan.org/~mramberg/Catalyst-Runtime-5.80005/lib/Catalyst/Upgrading.pod
+
 20090617:
   AFFECTS: users of emulators/virtualbox
   AUTHOR: beat@FreeBSD.org
