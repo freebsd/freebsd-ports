@@ -33,7 +33,8 @@ CONFIGURE_ARGS+=	--disable-xslt
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' ${WRKSRC}/configure.pl
+	${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/configure.pl
+	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/tools/mkmf
 # Fix for GCC 4.2
 	@${REINPLACE_CMD} -e 's,^std::ostream,namespace xml { &,' \
 		-e '/^namespace/s,xml::,,g' -e '$$s,^,} ,' \
