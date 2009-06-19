@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.79
+PORTVERSION=	0.81
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
-RUN_DEPENDS=	\
+BUILD_DEPENDS=	\
 	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 	p5-Class-MOP>=0.83:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
@@ -23,7 +23,7 @@ RUN_DEPENDS=	\
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 	p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
 	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
@@ -97,6 +97,7 @@ MAN3=	Moose.3 \
 	Moose::Meta::Role::Application::ToRole.3 \
 	Moose::Meta::Role::Composite.3 \
 	Moose::Meta::Role::Method.3 \
+	Moose::Meta::Role::Method::Conflicting.3 \
 	Moose::Meta::Role::Method::Required.3 \
 	Moose::Meta::TypeCoercion.3 \
 	Moose::Meta::TypeCoercion::Union.3 \
