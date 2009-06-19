@@ -690,6 +690,7 @@
     SUBDIR += radiusniff
     SUBDIR += rain
     SUBDIR += rainbowcrack
+    SUBDIR += ranpwd
     SUBDIR += rarcrack
     SUBDIR += ratproxy
     SUBDIR += rats
