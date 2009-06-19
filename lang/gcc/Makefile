@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.5.0.20090604
+PORTVERSION=	4.5.0.20090618
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -59,6 +59,7 @@ WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
@@ -78,6 +79,9 @@ MAN1=		cpp${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
 		gcov${SUFFIX}.1 \
 		gfortran${SUFFIX}.1
+MAN3=		ffi${SUFFIX}.3 \
+		ffi_call${SUFFIX}.3 \
+		ffi_prep_cif${SUFFIX}.3
 INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/cppinternals \
 		gcc${SUFFIX}/gcc \
