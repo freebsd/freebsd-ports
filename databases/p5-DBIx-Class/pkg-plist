@@ -79,6 +79,8 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/ResultSourceProxy.pm
 %%SITE_PERL%%/DBIx/Class/ResultSourceProxy/Table.pm
 %%SITE_PERL%%/DBIx/Class/Row.pm
+%%SITE_PERL%%/DBIx/Class/SQLAHacks.pm
+%%SITE_PERL%%/DBIx/Class/SQLAHacks/OracleJoins.pm
 %%SITE_PERL%%/DBIx/Class/Schema.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Versioned.pm
 %%SITE_PERL%%/DBIx/Class/Serialize/Storable.pm
@@ -88,7 +90,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/MSSQL.pm
-%%SITE_PERL%%/DBIx/Class/Storage/DBI/MultiDistinctEmulation.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/MultiColumnIn.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/NoBindVars.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC/ACCESS.pm
@@ -104,10 +106,13 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Replicated/Balancer/Random.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Replicated/Pool.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Replicated/Replicant.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Replicated/Types.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Replicated/WithDSN.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Role/QueryCounter.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/MSSQL.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/Microsoft_SQL_Server.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/mysql.pm
 %%SITE_PERL%%/DBIx/Class/Storage/Statistics.pm
 %%SITE_PERL%%/DBIx/Class/Storage/TxnScopeGuard.pm
@@ -124,6 +129,7 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Parser
 @dirrmtry %%SITE_PERL%%/SQL/Translator
 @dirrmtry %%SITE_PERL%%/SQL
+@dirrmtry %%SITE_PERL%%/DBIx/Class/SQLAHacks
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Role
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Replicated/Balancer
