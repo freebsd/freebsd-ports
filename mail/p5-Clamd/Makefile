@@ -30,4 +30,7 @@ PLIST_FILES=	%%SITE_PERL%%/Clamd.pm \
 
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Clamd
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
