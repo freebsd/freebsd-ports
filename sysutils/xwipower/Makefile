@@ -23,8 +23,8 @@ USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+.if ${OSVERSION} >= 700053
+BROKEN=		Use obsoleted wireless lan API
 .endif
 
 .include <bsd.port.post.mk>
