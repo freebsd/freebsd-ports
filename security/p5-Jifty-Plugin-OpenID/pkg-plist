@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Jifty/Plugin/OpenID.pm
+%%SITE_PERL%%/Jifty/Plugin/OpenID/View.pm
+%%SITE_PERL%%/Jifty/Plugin/OpenID/Dispatcher.pm
+%%SITE_PERL%%/Jifty/Plugin/OpenID/Action/AuthenticateOpenID.pm
+%%SITE_PERL%%/Jifty/Plugin/OpenID/Action/CreateOpenIDUser.pm
+%%SITE_PERL%%/Jifty/Plugin/OpenID/Action/VerifyOpenID.pm
+%%SITE_PERL%%/Jifty/Plugin/OpenID/Mixin/Model/User.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin/OpenID/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin/OpenID
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty
+@dirrm %%SITE_PERL%%/Jifty/Plugin/OpenID/Mixin/Model
+@dirrm %%SITE_PERL%%/Jifty/Plugin/OpenID/Mixin
+@dirrm %%SITE_PERL%%/Jifty/Plugin/OpenID/Action
+@dirrm %%SITE_PERL%%/Jifty/Plugin/OpenID
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin
+@dirrmtry %%SITE_PERL%%/Jifty
