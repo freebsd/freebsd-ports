@@ -7,6 +7,7 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/ \
 		http://www.openprinting.org/download/foomatic/
@@ -99,5 +100,8 @@ RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letterdj
 .if defined(WITH_MPAGE)
 RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|g' ${WRKSRC}/foomaticrip.c
 
 .include <bsd.port.post.mk>
