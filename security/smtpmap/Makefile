@@ -14,10 +14,12 @@ MASTER_SITES=	http://www.frbsd.org/dist/
 MAINTAINER=	hubert@frbsd.org
 COMMENT=	An SMTP software identifier
 
+DEPRECATED=	depends on GCC 2.95 which has not been available for 9+ months
+EXPIRATION_DATE=2009-07-19
+
 MAKE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	2.95
 MAKEFILE=	makefile
 
 post-patch:
