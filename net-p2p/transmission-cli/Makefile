@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	1.61
+PORTVERSION=	1.72
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -23,23 +23,28 @@ LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 GEN_LIB_DEPENDS=curl.5:${PORTSDIR}/ftp/curl
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
+USE_GMAKE=	yes
 USE_GNOME?=	pkgconfig
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE} \
-		--with-zlib=/usr
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=--with-ssl=${OPENSSLBASE} \
+		--with-zlib=/usr \
+		${EXTRA_CONF_ARGS}
+EXTRA_CONF_ARGS?=--enable-cli \
+		 --disable-daemon \
+		 --disable-gtk \
+		 --disable-libnotify \
+		 --disable-mac \
+		 --disable-nls
 
 MAN1?=		transmissioncli.1
+EXTRA_PATCHES=	${PATCHDIR}/disable-web
 .endif
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262:env aclocal:19:env automake:19:env libtool:15:env
-GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING NEWS README
-
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-EXTRA_PATCHES=	${PATCHDIR}/${PORTNAME}${PKGNAMESUFFIX}-configure.ac
 
 general-patch:
 	@${REINPLACE_CMD} -e 's|SUBDIRS = . sample.*|SUBDIRS = .|g' \
@@ -50,19 +55,16 @@ general-patch:
 	@${REINPLACE_CMD} -e '/#define DISABLE_GETTEXT/s,/\* \(.*\) \*/,\1,' \
 		${WRKSRC}/libtransmission/utils.h
 .endif
-
-post-patch: general-patch
-
-pre-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -W none)
-.if ${SLAVEPORT}=="gtk2"
-	@(cd ${WRKSRC} && intltoolize --copy --force --automake)
-.endif
 	@${REINPLACE_CMD} -e \
-		's|_pthread_flags=".*"|_pthread_flags="${PTHREAD_LIBS}"|g' \
+		's|_pthread_flags=".*"|_pthread_flags="${PTHREAD_LIBS}"|g ; \
+		s|libevent_source=system|libevent_source=bundled|g' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lrt||g' \
 		${WRKSRC}/third-party/libevent/configure
+	@${REINPLACE_CMD} -e 's|doc \\| \\|g' \
+		${WRKSRC}/Makefile.in
+
+post-patch: general-patch
 
 general-install:
 .ifndef (NOPORTDOCS)

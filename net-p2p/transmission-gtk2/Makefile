@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	mezz@FreeBSD.org
@@ -28,6 +28,13 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+EXTRA_CONF_ARGS=--disable-cli \
+		--disable-daemon \
+		--enable-gtk \
+		--enable-libnotify \
+		--disable-mac \
+		--enable-nls
 
 MAN1=		transmission.1
 

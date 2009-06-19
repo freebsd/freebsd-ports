@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2009-06-17 00:54:15.000000000 -0500
++++ Makefile.in	2009-06-17 00:54:42.000000000 -0500
+@@ -878,10 +878,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-clutchDATA install-clutch_buttonsDATA \
+-	install-clutch_cssDATA install-clutch_graphicsDATA \
+-	install-clutch_imagesDATA install-clutch_jqueryDATA \
+-	install-clutch_jsDATA install-clutch_progressDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-recursive
+ 
