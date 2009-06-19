@@ -56,7 +56,7 @@ post-patch:
 .if !defined(NOPORTDOCS)
 post-install:
 	${INSTALL} -d ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/userManual.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/userManual.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
