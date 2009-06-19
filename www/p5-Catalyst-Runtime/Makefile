@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.80004
+PORTVERSION=	5.80005
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,27 +14,34 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	The Elegant MVC Web Application Framework (Runtime)
 
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-Class-Inspector>=1.06:${PORTSDIR}/devel/p5-Class-Inspector \
+BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-CGI-Simple>=0:${PORTSDIR}/www/p5-CGI-Simple \
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Class-MOP>=0.83:${PORTSDIR}/devel/p5-Class-MOP \
+		p5-Class-C3-Adopt-NEXT>=0.07:${PORTSDIR}/devel/p5-Class-C3-Adopt-NEXT \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-File-Modified>=0:${PORTSDIR}/devel/p5-File-Modified \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTTP-Body>=1.04:${PORTSDIR}/www/p5-HTTP-Body \
-		p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
-		p5-HTTP-Request-AsCGI>=0.5:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
+		p5-HTTP-Request-AsCGI>=0.8:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Module-Pluggable>=3.01:${PORTSDIR}/devel/p5-Module-Pluggable \
-		p5-NEXT>=0:${PORTSDIR}/devel/p5-NEXT \
+		p5-Moose>=0.78:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00801:${PORTSDIR}/devel/p5-MooseX-Emulate-Class-Accessor-Fast \
+		p5-MooseX-MethodAttributes>=0.12:${PORTSDIR}/devel/p5-MooseX-MethodAttributes \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-Path-Class>=0.09:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Text-SimpleTable>=0.03:${PORTSDIR}/textproc/p5-Text-SimpleTable \
+		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced \
+		p5-Test-MockObject>=1.07:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
 		p5-Tree-Simple>=1.15:${PORTSDIR}/devel/p5-Tree-Simple \
+		p5-Text-SimpleTable>=0.03:${PORTSDIR}/textproc/p5-Text-SimpleTable \
 		p5-Tree-Simple-VisitorFactory>=0:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
-		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
-		p5-Module-Install>=0.63:${PORTSDIR}/devel/p5-Module-Install
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
