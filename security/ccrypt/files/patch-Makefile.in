@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Mar 29 06:58:19 2004
-+++ Makefile.in	Sun Jan 23 09:55:14 2005
-@@ -150,7 +150,7 @@
+--- Makefile.in.orig	2009-06-05 07:59:43.000000000 -0700
++++ Makefile.in	2009-06-10 18:06:23.000000000 -0700
+@@ -251,7 +251,7 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
--SUBDIRS = src emacs doc check
-+SUBDIRS = src doc check
- EXTRA_DIST = README.win
- all: config.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+-SUBDIRS = m4 po intl src emacs doc check
++SUBDIRS = m4 po intl src doc check
+ EXTRA_DIST = m4/ChangeLog  config.rpath README-WIN intltool-extract.in	\
+  intltool-merge.in intltool-update.in
+ 
