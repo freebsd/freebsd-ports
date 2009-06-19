@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	openid
-PORTVERSION=	1.1.4
+PORTVERSION=	2.1.6
 CATEGORIES=	net rubygems
-MASTER_SITES=	http://www.openidenabled.com/resources/downloads/ruby-openid/
+MASTER_SITES=	http://www.openidenabled.com/files/ruby-openid/packages/ \
+		RF
+MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
