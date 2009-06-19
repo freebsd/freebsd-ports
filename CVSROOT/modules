@@ -806,6 +806,7 @@ avogadro                        ports/science/avogadro
 avr-binutils                    ports/devel/avr-binutils
 avr-gcc                         ports/devel/avr-gcc
 avr-gcc-3                       ports/devel/avr-gcc-3
+avr-gcc-42                      ports/devel/avr-gcc-42
 avr-gdb                         ports/devel/avr-gdb
 avr-libc                        ports/devel/avr-libc
 avra                            ports/devel/avra
@@ -3240,7 +3241,10 @@ fftw                            ports/math/fftw
 fftw-float                      ports/math/fftw-float
 fftw3                           ports/math/fftw3
 fftw3-float                     ports/math/fftw3-float
+fftw3-float-fortran             ports/math/fftw3-float-fortran
+fftw3-fortran                   ports/math/fftw3-fortran
 fftw3-long                      ports/math/fftw3-long
+fftw3-long-fortran              ports/math/fftw3-long-fortran
 fga                             ports/devel/fga
 fget                            ports/ftp/fget
 fgkicker                        ports/games/fgkicker
@@ -8351,7 +8355,6 @@ mailfront                       ports/mail/mailfront
 mailgraph                       ports/mail/mailgraph
 mailman                         ports/mail/mailman
 mailmgr                         ports/mail/mailmgr
-mailrep                         ports/mail/mailrep
 mailscanner                     ports/mail/mailscanner
 mailscanner-devel               ports/mail/mailscanner-devel
 mailscanner-mrtg                ports/mail/mailscanner-mrtg
@@ -10544,6 +10547,7 @@ p5-Class-Autouse                ports/devel/p5-Class-Autouse
 p5-Class-Base                   ports/devel/p5-Class-Base
 p5-Class-BlackHole              ports/devel/p5-Class-BlackHole
 p5-Class-C3                     ports/devel/p5-Class-C3
+p5-Class-C3-Adopt-NEXT          ports/devel/p5-Class-C3-Adopt-NEXT
 p5-Class-C3-Componentised       ports/devel/p5-Class-C3-Componentised
 p5-Class-C3-XS                  ports/devel/p5-Class-C3-XS
 p5-Class-CSV                    ports/textproc/p5-Class-CSV
@@ -13980,6 +13984,7 @@ p5-class-autouse                ports/devel/p5-Class-Autouse
 p5-class-base                   ports/devel/p5-Class-Base
 p5-class-blackhole              ports/devel/p5-Class-BlackHole
 p5-class-c3                     ports/devel/p5-Class-C3
+p5-class-c3-adopt-next          ports/devel/p5-Class-C3-Adopt-NEXT
 p5-class-c3-componentised       ports/devel/p5-Class-C3-Componentised
 p5-class-c3-xs                  ports/devel/p5-Class-C3-XS
 p5-class-closure                ports/devel/p5-Class-Closure
@@ -18709,6 +18714,7 @@ pushmi                          ports/devel/pushmi
 pushover                        ports/games/pushover
 putty                           ports/security/putty
 pv                              ports/sysutils/pv
+pver                            ports/ports-mgmt/pver
 pvk                             ports/security/pvk
 pvm                             ports/net/pvm
 pvm++                           ports/net/pvm++
