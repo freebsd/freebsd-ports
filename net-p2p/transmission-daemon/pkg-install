@@ -4,7 +4,7 @@ case $2 in
 POST-INSTALL)
 	USER=transmission
 	GROUP=${USER}
-	UID=919
+	UID=921
 	GID=${UID}
 	PW=/usr/sbin/pw
 	CHMOD=/bin/chmod
