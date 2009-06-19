@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Speed up perl CGI scripts by running them persistently
 
+MAKE_JOBS_UNSAFE=	yes
 PERL_CONFIGURE=	yes
 
 OPTIONS=	APACHE "Enable mod_speedycgi" On
