@@ -16,8 +16,13 @@ COMMENT=	A better mail notification server
 
 RUN_DEPENDS=	xmsg:${PORTSDIR}/x11/xmsg
 
+MAKE_JOBS_UNSAFE=	yes
+
 MAN1=		biffopt.1
 MAN8=		biffer.8 biffer_comsat.8
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/biffer_comsat/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/biffer/biffer ${PREFIX}/libexec
