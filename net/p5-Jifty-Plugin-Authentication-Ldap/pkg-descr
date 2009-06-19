@@ -1,0 +1,4 @@
+p5::Jifty::Plugin::Authentication::Ldap is a LDAP Authentication Plugin
+for p5-Jifty.
+
+WWW:	http://search.cpan.org/dist/Jifty-Plugin-Authentication-Ldap/
