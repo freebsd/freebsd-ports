@@ -314,6 +314,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/interrupting.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/management.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/monitoring.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/new-node.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/release.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/setup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/starting.html
@@ -819,7 +820,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-striping.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/getting-started.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/handbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/history.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/index.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-advanced.html
