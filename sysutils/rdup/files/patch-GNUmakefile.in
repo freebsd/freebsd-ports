@@ -1,0 +1,37 @@
+--- GNUmakefile.in.orig	2009-05-28 10:39:19.000000000 -0700
++++ GNUmakefile.in	2009-06-12 19:53:20.000000000 -0700
+@@ -4,7 +4,6 @@
+ HDR=rdup.h rdup-tr.h rdup-up.h io.h common.h entry.h
+ CMD=rdup rdup-tr rdup-up
+ # installs to /usr/lib/rdup XXX TODO
+-SH=rdup-ln.sh rdup-simple.sh 
+ MAN1_IN=rdup.1 rdup-tr.1 rdup-up.1
+ MAN7_IN=rdup-backups.7
+ 
+@@ -20,7 +19,7 @@
+ sbindir=@sbindir@
+ mandir=@mandir@
+ sysconfdir=@sysconfdir@
+-datadir=@datadir@/rdup
++datadir=@datadir@
+ 
+ ARCHIVE_L=@ARCHIVE_L@
+ NETTLE_L=@NETTLE_L@
+@@ -86,17 +85,13 @@
+ 
+ install: all
+ 	mkdir -p ${DESTDIR}${mandir}/man1
+-	mkdir -p ${DESTDIR}${datadir}
+-	mkdir -p ${DESTDIR}${libdir}/rdup
+ 	for i in ${CMD}; do ${INSTALL} $$i ${DESTDIR}${bindir}/$$i ; done
+-	for i in ${SH}; do ${INSTALL} sh/$$i ${DESTDIR}${libdir}/rdup/$$i ; done
+ 	for i in ${MAN1}; do [ -f $$i ] &&  ${INSTALL_DATA} $$i ${DESTDIR}${mandir}/man1/`basename $$i` ; done; exit 0
+ 	for i in ${MAN7}; do [ -f $$i ] &&  ${INSTALL_DATA} $$i ${DESTDIR}${mandir}/man7/`basename $$i` ; done; exit 0
+ 	$(MAKE) -C po install
+ 
+ uninstall:
+ 	for i in ${CMD}; do rm -f ${DESTDIR}${bindir}/$$i ; done
+-	for i in ${SH}; do rm -f ${DESTDIR}${libdir}/rdup/$$i ; done
+ 	for i in ${MAN1}; do rm -f  ${DESTDIR}${mandir}/man1/`basename $$i` ; done
+ 	for i in ${MAN7}; do rm -f  ${DESTDIR}${mandir}/man7/`basename $$i` ; done
+ 	$(MAKE) -C po uninstall
