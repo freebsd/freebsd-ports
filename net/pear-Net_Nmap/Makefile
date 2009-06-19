@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Nmap
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net pear
 
 MAINTAINER=	wenheping@gmail.com
@@ -25,7 +25,11 @@ EXAMPLES=	example1.php example2.php example2.xml
 TESTS=		NetNmapParseTest.php \
 		NetNmapParseTest.xml \
 		NetNmapScanTest.php \
-		test_config.php
+		test_config.php \
+		Bug16268Test.php \
+		Bug16336Test.php \
+		bug16268.xml \
+		bug16336.xml
 
 DOCS=		LICENSE README
 
