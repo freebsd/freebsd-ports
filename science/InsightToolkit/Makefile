@@ -12,7 +12,7 @@ CATEGORIES=	science biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	itk
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Insight Toolkit
 
 OPTIONS=	EXAMPLES "Build examples (very time consuming)" off \

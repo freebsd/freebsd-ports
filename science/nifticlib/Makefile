@@ -11,7 +11,7 @@ CATEGORIES=	science graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	niftilib
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Neuroimaging Infoirmatics Technology Initiative data format
 
 USE_GMAKE=	yes

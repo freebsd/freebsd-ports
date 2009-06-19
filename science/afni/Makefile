@@ -25,7 +25,7 @@ DISTFILES=	afni_src.tgz afni.1 3dClustBust.c \
 DIST_SUBDIR=	AFNI-${PORTVERSION}
 EXTRACT_ONLY=	afni_src.tgz CA_EZ_v1.5-July3107.tgz
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Advanced Functional Neuro Imaging
 
 RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
