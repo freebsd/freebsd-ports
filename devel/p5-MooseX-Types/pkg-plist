@@ -1,5 +1,7 @@
 %%SITE_PERL%%/MooseX/Types.pm
 %%SITE_PERL%%/MooseX/Types/Base.pm
+%%SITE_PERL%%/MooseX/Types/CheckedUtilExports.pm
+%%SITE_PERL%%/MooseX/Types/Combine.pm
 %%SITE_PERL%%/MooseX/Types/Moose.pm
 %%SITE_PERL%%/MooseX/Types/TypeDecorator.pm
 %%SITE_PERL%%/MooseX/Types/UndefinedType.pm
