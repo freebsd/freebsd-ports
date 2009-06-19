@@ -4,9 +4,8 @@
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst                                                      
+@dirrmtry %%SITE_PERL%%/Catalyst
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-
