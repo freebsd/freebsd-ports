@@ -18,7 +18,7 @@ COMMENT=	Python bindings for Cairo
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.6+
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack
 GNU_CONFIGURE=	yes
