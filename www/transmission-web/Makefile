@@ -19,4 +19,11 @@ SLAVEPORT=	web
 
 NO_BUILD=	yes
 
+post-extract:
+	@${FIND} ${WRKSRC}/web -name .svn | ${XARGS} ${RM} -rf
+
+do-install:
+	@${MKDIR} ${DATADIR}/web
+	@(cd ${WRKSRC}/web && ${COPYTREE_SHARE} \* ${DATADIR}/web)
+
 .include "${MASTERDIR}/Makefile"

@@ -24,10 +24,15 @@
 %%DATADIR%%/web/index.html
 %%DATADIR%%/web/javascript/common.js
 %%DATADIR%%/web/javascript/dialog.js
+%%DATADIR%%/web/javascript/jquery/jquery-1.3.2.js
 %%DATADIR%%/web/javascript/jquery/jquery.contextmenu.min.js
+%%DATADIR%%/web/javascript/jquery/jquery.contextmenu.r2.js
+%%DATADIR%%/web/javascript/jquery/jquery.form-2.21.js
 %%DATADIR%%/web/javascript/jquery/jquery.form.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.min.js
+%%DATADIR%%/web/javascript/jquery/jquery.transmenu.js
 %%DATADIR%%/web/javascript/jquery/jquery.transmenu.min.js
+%%DATADIR%%/web/javascript/jquery/json.js
 %%DATADIR%%/web/javascript/jquery/json.min.js
 %%DATADIR%%/web/javascript/menu.js
 %%DATADIR%%/web/javascript/torrent.js
@@ -36,6 +41,7 @@
 %%DATADIR%%/web/stylesheets/common.css
 %%DATADIR%%/web/stylesheets/ie6.css
 %%DATADIR%%/web/stylesheets/ie7.css
+%%DATADIR%%/web/stylesheets/ieAll.css
 %%DATADIR%%/web/stylesheets/iphone.css
 @dirrm %%DATADIR%%/web/stylesheets
 @dirrm %%DATADIR%%/web/javascript/jquery
