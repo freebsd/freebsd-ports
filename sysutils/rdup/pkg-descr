@@ -1,0 +1,11 @@
+rdup is a utility inspired by rsync and the Plan9 way of doing backups.
+
+rdup itself does not backup anything; it only prints a list of the names of
+files that have changed since the last backup. It also handles files that are
+removed, allowing for correct incremental backups.
+
+Example scripts that implement a backup strategy are included.
+(These scripts require GNU date and cp, which are not installed by
+this FreeBSD port.)
+
+WWW: http://miek.nl/projects/rdup
