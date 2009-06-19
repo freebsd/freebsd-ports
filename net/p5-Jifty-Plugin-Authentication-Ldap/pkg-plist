@@ -1,0 +1,22 @@
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap/View.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap/Dispatcher.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap/Action/LDAPLogin.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap/Action/LDAPLogout.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap/Mixin/Model/User.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin/Authentication/Ldap/.packlist
+%%SITE_PERL%%/auto/share/dist/Jifty-Plugin-Authentication-Ldap/po/jifty_plugin_authentication_ldap.pot
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin/Authentication/Ldap
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin/Authentication
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty
+@dirrm %%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap/Mixin/Model
+@dirrm %%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap/Mixin
+@dirrm %%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap/Action
+@dirrm %%SITE_PERL%%/Jifty/Plugin/Authentication/Ldap
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/Authentication
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin
+@dirrmtry %%SITE_PERL%%/Jifty
+@dirrm %%SITE_PERL%%/auto/share/dist/Jifty-Plugin-Authentication-Ldap/po
+@dirrm %%SITE_PERL%%/auto/share/dist/Jifty-Plugin-Authentication-Ldap
+@dirrmtry %%SITE_PERL%%/auto/share/dist
