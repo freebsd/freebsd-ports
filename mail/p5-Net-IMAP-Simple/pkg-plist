@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Net/IMAP/Simple.pm
-%%SITE_PERL%%/Net/IMAP/imap.pl
+%%SITE_PERL%%/Net/IMAP/Simple.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IMAP/Simple/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IMAP/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IMAP
