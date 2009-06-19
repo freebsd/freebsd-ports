@@ -21355,11 +21355,9 @@ squid                           ports/www/squid
 squid30                         ports/www/squid30
 squid_radius_auth               ports/www/squid_radius_auth
 squidclamav                     ports/security/squidclamav
-squidclients                    ports/www/squidclients
 squidguard                      ports/www/squidguard
 squidpurge                      ports/www/squidpurge
 squidstats                      ports/www/squidstats
-squidtimes                      ports/www/squidtimes
 squidview                       ports/www/squidview
 squirm                          ports/www/squirm
 squirrel                        ports/lang/squirrel

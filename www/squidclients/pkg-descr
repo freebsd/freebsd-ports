@@ -1,8 +1,0 @@
-Generate a summary of client usage (grouped by domain) from a Squid native
-log. SquidClients used in conjunction with Calamaris gives a complete
-information about usage of Squid.
-
-WWW: http://www.cineca.it/~nico/squidclients.html
-
---Dima
-dima@Chg.RU
