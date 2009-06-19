@@ -2642,6 +2642,7 @@
     SUBDIR += rubygem-rspec
     SUBDIR += rubygem-rtags
     SUBDIR += rubygem-rubigen
+    SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-ruby-debug
     SUBDIR += rubygem-ruby-debug-base
     SUBDIR += rubygem-ruby-ole
