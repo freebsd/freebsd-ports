@@ -10,6 +10,7 @@
 %%SITE_PERL%%/Catalyst/Authentication/User/Hash.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Credential/Password.pm
+%%SITE_PERL%%/Catalyst/Plugin/Authentication/Credential/Remote.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Internals.pod
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Minimal.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/User.pm
