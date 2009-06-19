@@ -1,0 +1,35 @@
+--- configure.in.orig	2009-01-19 12:25:38.000000000 +0300
++++ configure.in	2009-06-19 15:35:22.000000000 +0400
+@@ -1020,7 +1020,7 @@
+ 	case $pthread_lib in
+ 	c)
+ 	    ;;
+-	c_r)
++	c_r | pthread)
+ 	    MAINLIBS="-pthread $MAINLIBS"
+ 	    ;;
+ 	*)
+@@ -1037,6 +1037,14 @@
+            AC_DEFINE(HAVE_NANOSLEEP)
+        fi
+     fi
++    AC_MSG_CHECKING([for pthread_np.h])
++    AC_TRY_COMPILE([
++      #include <pthread.h>
++      #include <pthread_np.h>],
++      [(void)0;],
++      AC_MSG_RESULT(yes)
++      AC_DEFINE(HAVE_PTHREAD_NP_H),
++      AC_MSG_RESULT(no))
+ fi
+ if test x"$ac_cv_header_ucontext_h" = xyes; then
+     if test x"$rb_with_pthread" = xyes; then
+@@ -1441,7 +1449,7 @@
+ SOLIBS=
+ 
+ case "$target_os" in
+-  cygwin*|mingw*|beos*|openstep*|nextstep*|rhapsody*|darwin*|os2-emx*)
++  cygwin*|mingw*|beos*|openstep*|nextstep*|rhapsody*|darwin*|os2-emx*|freebsd*)
+     : ${DLDLIBS=""}
+     ;;
+   *)

@@ -24,6 +24,9 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared --with-openssl-include=${OPENSSLINC}
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	aclocal:110 autoconf:262
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${RUBY_DISTVERSION}
 
@@ -34,10 +37,9 @@ RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 _RUBY_SYSLIBDIR=	${PREFIX}/lib
 
-OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
-		ONIGURUMA "Build with oniguruma regular expressions lib" off \
+OPTIONS=	ONIGURUMA "Build with oniguruma regular expressions lib" off \
 		IPV6 "Enable IPv6 support" on \
-		RDOC "Build and install Rdoc indexes" off \
+		RDOC "Build and install Rdoc indexes" on \
 		DEBUG "Compile-in debug info" off
 
 .include <bsd.port.pre.mk>
@@ -53,14 +55,12 @@ _SUF1=	_${PORTREVISION}
 .endif
 
 PKGNAMESUFFIX=	#empty
-CFLAGS+=	${PTHREAD_CFLAGS}	# Keep this, else ruby will fail to load
-LDFLAGS+=	${PTHREAD_LIBS}		# libraries dependent op libpthread.
 
-.if defined(WITH_PTHREADS)
-CONFIGURE_ARGS+=--enable-pthread
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+pthreads
-.else
+.if defined(WITHOUT_PTHREADS)
 CONFIGURE_ARGS+=--disable-pthread
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+nopthreads
+.else
+CONFIGURE_ARGS+=--enable-pthread
 .endif
 
 .if defined(WITH_ONIGURUMA)
@@ -81,7 +81,7 @@ STRIP=		# none
 #
 # Disable doc generation if requested or docs disabled at all
 #
-.if defined(WITH_RDOC) && !defined(NOPORTDOCS)
+.if !defined(WITHOUT_RDOC) && !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--enable-install-doc
 .else
 CONFIGURE_ARGS+=	--disable-install-doc
@@ -130,12 +130,6 @@ post-extract:
 	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
 
 post-patch:
-.if ${ARCH} == "sparc64" || ${ARCH} == "alpha"
-	${REINPLACE_CMD} -e 's|-lc"|"|g' ${WRKSRC}/configure
-.endif
-	${REINPLACE_CMD} -e 's|-l$$pthread_lib|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
-
 #
 # Remove modules we don't want
 #
