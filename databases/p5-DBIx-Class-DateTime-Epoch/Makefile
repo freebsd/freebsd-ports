@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-DateTime-Epoch
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Automatic inflation/deflation of epoch-based DateTime objects
 
-RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
