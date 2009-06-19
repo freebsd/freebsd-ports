@@ -43,6 +43,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/euro/x209.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/euro/x82.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/euro/x92.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/comparing-bsd-and-linux.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/what-a-real-unix.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/why-is-bsd-not-better-known.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-contributors.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-enabling.html
@@ -583,7 +588,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-striping.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/getting-started.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/handbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/history.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/index.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-advanced.html

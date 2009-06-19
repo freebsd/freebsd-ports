@@ -6,6 +6,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/euro/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/docbook.css

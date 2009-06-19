@@ -36,6 +36,7 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/fonts
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/euro
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
