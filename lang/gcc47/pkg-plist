@@ -12,13 +12,13 @@ bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
 bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
-share/libstdc++/python/libstdcxx/__init__.py
-share/libstdc++/python/libstdcxx/v6/__init__.py
-share/libstdc++/python/libstdcxx/v6/printers.py
-@dirrm share/libstdc++/python/libstdcxx/v6
-@dirrm share/libstdc++/python/libstdcxx
-@dirrm share/libstdc++/python
-@dirrm share/libstdc++
+share/gcc-%%GCC_VER%%/python/libstdcxx/__init__.py
+share/gcc-%%GCC_VER%%/python/libstdcxx/v6/__init__.py
+share/gcc-%%GCC_VER%%/python/libstdcxx/v6/printers.py
+@dirrm share/gcc-%%GCC_VER%%/python/libstdcxx/v6
+@dirrm share/gcc-%%GCC_VER%%/python/libstdcxx
+@dirrm share/gcc-%%GCC_VER%%/python
+@dirrm share/gcc-%%GCC_VER%%
 %%JAVA%%bin/aot-compile%%SUFFIX%%
 %%JAVA%%bin/gappletviewer%%SUFFIX%%
 %%JAVA%%bin/gc-analyze%%SUFFIX%%
