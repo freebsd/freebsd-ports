@@ -1,20 +1,20 @@
---- epan/Makefile.in.orig	2008-03-29 13:27:14.000000000 -0400
-+++ epan/Makefile.in	2008-04-01 01:50:07.000000000 -0400
-@@ -792,7 +792,7 @@ MAINTAINERCLEANFILES = \
+--- epan/Makefile.in.orig	2009-06-16 00:04:18.000000000 -0400
++++ epan/Makefile.in	2009-06-20 18:40:38.000000000 -0400
+@@ -770,7 +770,7 @@ MAINTAINERCLEANFILES = \
  # Add the object files for missing routines, if any.
  #
- libwireshark_la_LIBADD = @G_ASCII_STRCASECMP_LO@ @G_ASCII_STRTOULL_LO@ \
+ libwireshark_la_LIBADD = \
 -	@INET_ATON_LO@ @INET_PTON_LO@ @INET_NTOP_LO@ libwireshark_generated.la \
-+	@INET_ATON_LO@ @INET_NTOP_LO@ libwireshark_generated.la \
- 	libwireshark_asmopt.la crypt/libairpdcap.la ftypes/libftypes.la \
- 	dfilter/libdfilter.la dissectors/libcleandissectors.la \
- 	dissectors/libdissectors.la dissectors/libasndissectors.la \
-@@ -801,7 +801,7 @@ libwireshark_la_LIBADD = @G_ASCII_STRCAS
- 	@SSL_LIBS@ @LIBSMI_LDFLAGS@ -lm
++	@INET_ATON_LO@ @INET_PTON_LO@ libwireshark_generated.la \
+ 	libwireshark_asmopt.la crc/libcrc.la crypt/libairpdcap.la \
+ 	ftypes/libftypes.la dfilter/libdfilter.la dissectors/libdissectors.la \
+ 	dissectors/libdirtydissectors.la $(wslua_lib) @SOCKET_LIBS@ @NSL_LIBS@ \
+@@ -779,7 +779,7 @@ libwireshark_la_LIBADD = \
+ 	${top_builddir}/wsutil/libwsutil.la -lm
  
- libwireshark_la_DEPENDENCIES = @G_ASCII_STRCASECMP_LO@ @G_ASCII_STRTOULL_LO@ \
+ libwireshark_la_DEPENDENCIES = \
 -	@INET_ATON_LO@ @INET_PTON_LO@ @INET_NTOP_LO@ libwireshark_generated.la \
-+	@INET_ATON_LO@ @INET_NTOP_LO@ libwireshark_generated.la \
- 	libwireshark_asmopt.la crypt/libairpdcap.la ftypes/libftypes.la \
- 	dfilter/libdfilter.la dissectors/libcleandissectors.la \
- 	dissectors/libdissectors.la dissectors/libasndissectors.la \
++	@INET_ATON_LO@ @INET_PTON_LO@ libwireshark_generated.la \
+ 	libwireshark_asmopt.la crc/libcrc.la crypt/libairpdcap.la \
+ 	ftypes/libftypes.la dfilter/libdfilter.la dissectors/libdissectors.la \
+ 	dissectors/libdirtydissectors.la $(wslua_lib) \

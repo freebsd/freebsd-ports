@@ -1,6 +1,6 @@
---- configure.orig	2007-12-20 02:18:48.000000000 -0500
-+++ configure	2007-12-20 02:23:34.000000000 -0500
-@@ -22284,7 +22284,7 @@ echo $ECHO_N "checking whether we should
+--- configure.orig	2009-06-20 18:39:36.000000000 -0400
++++ configure	2009-06-20 18:39:40.000000000 -0400
+@@ -23392,7 +23392,7 @@ echo $ECHO_N "checking whether we should
  # Check whether --enable-warnings-as-errors was given.
  if test "${enable_warnings_as_errors+set}" = set; then
    enableval=$enable_warnings_as_errors;
@@ -9,66 +9,16 @@
      with_warnings_as_errors="yes"
      { echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6; }
-@@ -23494,6 +23494,7 @@ echo $ECHO_N "checking for GLIB - versio
+@@ -25128,7 +25128,7 @@ _ACEOF
+ fi
  
-     GLIB_CFLAGS=`$PKG_CONFIG --cflags $pkg_config_args`
-     GLIB_LIBS=`$PKG_CONFIG --libs $pkg_config_args`
-+    GLIB_LIBS="-liconv $GLIB_LIBS"
-     glib_config_major_version=`$PKG_CONFIG --modversion glib-2.0 | \
-            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
-     glib_config_minor_version=`$PKG_CONFIG --modversion glib-2.0 | \
-@@ -23504,7 +23505,7 @@ echo $ECHO_N "checking for GLIB - versio
-       ac_save_CFLAGS="$CFLAGS"
-       ac_save_LIBS="$LIBS"
-       CFLAGS="$CFLAGS $GLIB_CFLAGS"
--      LIBS="$GLIB_LIBS $LIBS"
-+      LIBS="$GLIB_LIBS -liconv $LIBS"
-       rm -f conf.glibtest
-       if test "$cross_compiling" = yes; then
-   echo $ac_n "cross compiling; assumed OK... $ac_c"
-@@ -23819,6 +23820,7 @@ echo $ECHO_N "checking for GLIB - versio
-   else
-     GLIB_CFLAGS=`$GLIB_CONFIG $glib_config_args --cflags`
-     GLIB_LIBS=`$GLIB_CONFIG $glib_config_args --libs`
-+    GLIB_LIBS="-liconv $GLIB_LIBS"
-     glib_config_major_version=`$GLIB_CONFIG $glib_config_args --version | \
-            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
-     glib_config_minor_version=`$GLIB_CONFIG $glib_config_args --version | \
-@@ -24158,6 +24160,7 @@ echo $ECHO_N "checking for GLIB - versio
  
-     GLIB_CFLAGS=`$PKG_CONFIG --cflags $pkg_config_args`
-     GLIB_LIBS=`$PKG_CONFIG --libs $pkg_config_args`
-+    GLIB_LIBS="-liconv $GLIB_LIBS"
-     glib_config_major_version=`$PKG_CONFIG --modversion glib-2.0 | \
-            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
-     glib_config_minor_version=`$PKG_CONFIG --modversion glib-2.0 | \
-@@ -24483,6 +24486,7 @@ echo $ECHO_N "checking for GLIB - versio
-   else
-     GLIB_CFLAGS=`$GLIB_CONFIG $glib_config_args --cflags`
-     GLIB_LIBS=`$GLIB_CONFIG $glib_config_args --libs`
-+    GLIB_LIBS="-liconv $GLIB_LIBS"
-     glib_config_major_version=`$GLIB_CONFIG $glib_config_args --version | \
-            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
-     glib_config_minor_version=`$GLIB_CONFIG $glib_config_args --version | \
-@@ -24493,7 +24497,7 @@ echo $ECHO_N "checking for GLIB - versio
-       ac_save_CFLAGS="$CFLAGS"
-       ac_save_LIBS="$LIBS"
-       CFLAGS="$CFLAGS $GLIB_CFLAGS"
--      LIBS="$GLIB_LIBS $LIBS"
-+      LIBS="$GLIB_LIBS -liconv $LIBS"
-       rm -f conf.glibtest
-       if test "$cross_compiling" = yes; then
-   echo $ac_n "cross compiling; assumed OK... $ac_c"
-@@ -24722,7 +24726,7 @@ echo $ECHO_N "checking whether GLib supp
- ac_save_CFLAGS="$CFLAGS"
- ac_save_LIBS="$LIBS"
- CFLAGS="$CFLAGS $GLIB_CFLAGS"
--LIBS="$GLIB_LIBS $LIBS"
-+LIBS="$GLIB_LIBS -liconv $LIBS"
- if test "$cross_compiling" = yes; then
-   echo $ac_n "cross compiling; assumed OK... $ac_c"
-     ac_cv_glib_supports_modules=yes
-@@ -30482,7 +30486,7 @@ echo "${ECHO_T}yes" >&6; }
+-	if test x$have_ige_mac == x
++	if test x$have_ige_mac = x
+ 	then
+ 		{ echo "$as_me:$LINENO: checking for ige_mac_menu_set_menu_bar in -ligemacintegration" >&5
+ echo $ECHO_N "checking for ige_mac_menu_set_menu_bar in -ligemacintegration... $ECHO_C" >&6; }
+@@ -30490,7 +30490,7 @@ echo "${ECHO_T}yes" >&6; }
  	  #
  	  CFLAGS="$CFLAGS -I$krb5_dir/include"
  	  CPPFLAGS="$CPPFLAGS -I$krb5_dir/include"
@@ -77,7 +27,7 @@
  	  ac_mit_version=`grep 'Massachusetts Institute of Technology' $krb5_dir/include/krb5.h | head -n 1 | sed 's/^.*Massachusetts Institute of Technology.*$/MIT/'`
  	  ac_krb5_version="$ac_heimdal_version$ac_mit_version"
  	  if test "x$ac_krb5_version" = "xHEIMDAL"
-@@ -30541,7 +30545,7 @@ fi
+@@ -30549,7 +30549,7 @@ fi
  
  	  if test -x "$KRB5_CONFIG"
  	  then
