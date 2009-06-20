@@ -7,7 +7,6 @@
 
 PORTNAME=	libGLw
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL widgets library
