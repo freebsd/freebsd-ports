@@ -1,5 +1,5 @@
---- util/sqlite/Makefile.orig	2008-07-14 04:17:51.000000000 +0200
-+++ util/sqlite/Makefile	2008-07-18 08:50:23.000000000 +0200
+--- ./util/sqlite/Makefile.orig	2009-06-12 12:27:11.000000000 +0200
++++ ./util/sqlite/Makefile	2009-06-19 13:54:52.000000000 +0200
 @@ -4,12 +4,11 @@
  
  LIBSQL = libsqlite3.a

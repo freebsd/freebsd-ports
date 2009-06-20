@@ -1,9 +1,9 @@
---- initfile.cc.orig	2009-01-19 20:08:34.000000000 +0000
-+++ initfile.cc	2009-01-19 20:09:20.000000000 +0000
-@@ -2196,12 +2196,12 @@
- #endif
-     else BOOL_OPTION(show_gold_turns);
+--- ./initfile.cc.orig	2009-06-12 12:32:16.000000000 +0200
++++ ./initfile.cc	2009-06-19 13:54:51.000000000 +0200
+@@ -2333,12 +2333,12 @@
+ #ifndef USE_TILE
      else BOOL_OPTION(show_beam);
+ #endif
 -#ifndef SAVE_DIR_PATH
 +// #ifndef SAVE_DIR_PATH
      else if (key == "morgue_dir")

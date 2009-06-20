@@ -1,6 +1,6 @@
---- AppHdr.h.orig	2008-07-14 04:17:51.000000000 +0200
-+++ AppHdr.h	2008-07-17 10:34:43.000000000 +0200
-@@ -146,7 +146,7 @@
+--- ./AppHdr.h.orig	2009-06-12 12:32:16.000000000 +0200
++++ ./AppHdr.h	2009-06-19 13:54:51.000000000 +0200
+@@ -124,7 +124,7 @@
      //          setuid or setgid. Filenames passed to this command *are not
      //          validated in any way*.
      //
@@ -9,7 +9,7 @@
  
      // For cases when the game will be played on terms that don't support the
      // curses "bold == lighter" 16 colour mode. -- bwr
-@@ -408,8 +408,8 @@
+@@ -401,8 +401,8 @@
      // PACKAGE_SUFFIX is used when the package file name is needed
      //
      // Comment these lines out if you want to leave the save files uncompressed.
