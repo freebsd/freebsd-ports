@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-notes-plugin
-PORTVERSION=	1.6.4
-PORTREVISION=	2
+PORTVERSION=	1.7.0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -23,10 +22,4 @@ USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui libutil panel
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
