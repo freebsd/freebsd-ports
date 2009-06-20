@@ -19,16 +19,14 @@ EXTRACT_ONLY=
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
-
 CONFLICTS=	linux-f8-openmotif-[0-9]* linux-f10-openmotif-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
-USE_LINUX_PREFIX=	yes
+LINUX_DIST_VER=	4
 NO_BUILD=	yes
-MD5_FILE=	${MASTERDIR}/distinfo.i386
+SRC_DISTFILES=
 
 EXTRACT_FILES=	./usr/X11R6/lib/libMrm.so.3.0.3 \
 		./usr/X11R6/lib/libUil.so.3.0.3 \
