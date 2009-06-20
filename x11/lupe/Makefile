@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lupe
-PORTVERSION=	0.08
-PORTREVISION=	3
+PORTVERSION=	0.08c
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/
-DISTNAME=	lupe008	
+DISTNAME=	lupe008c
 
 MAINTAINER=	kazu@jp.freebsd.org
 COMMENT=	Real-time magnifying glass for X11
