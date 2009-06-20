@@ -9450,6 +9450,7 @@ nip2                            ports/graphics/nip2
 nipper                          ports/net-mgmt/nipper
 nitpicker                       ports/net-mgmt/nitpicker
 nitrogen                        ports/sysutils/nitrogen
+njam                            ports/games/njam
 njplot                          ports/biology/njplot
 njs                             ports/lang/njs
 nl-acroread8                    ports/print/nl-acroread8
@@ -11704,6 +11705,8 @@ p5-JavaScript-Squish            ports/lang/p5-JavaScript-Squish
 p5-Jemplate                     ports/www/p5-Jemplate
 p5-Jifty                        ports/www/p5-Jifty
 p5-Jifty-DBI                    ports/databases/p5-Jifty-DBI
+p5-Jifty-Plugin-Authentication-Ldap  ports/net/p5-Jifty-Plugin-Authentication-Ldap
+p5-Jifty-Plugin-OpenID          ports/security/p5-Jifty-Plugin-OpenID
 p5-KinoSearch                   ports/textproc/p5-KinoSearch
 p5-Kwalify                      ports/textproc/p5-Kwalify
 p5-Kwiki                        ports/www/p5-Kwiki
@@ -15159,6 +15162,8 @@ p5-javascript-squish            ports/lang/p5-JavaScript-Squish
 p5-jemplate                     ports/www/p5-Jemplate
 p5-jifty                        ports/www/p5-Jifty
 p5-jifty-dbi                    ports/databases/p5-Jifty-DBI
+p5-jifty-plugin-authentication-ldap  ports/net/p5-Jifty-Plugin-Authentication-Ldap
+p5-jifty-plugin-openid          ports/security/p5-Jifty-Plugin-OpenID
 p5-jira-client                  ports/devel/p5-JIRA-Client
 p5-jquery                       ports/devel/p5-JQuery
 p5-jsan                         ports/lang/p5-JSAN
@@ -19811,6 +19816,7 @@ rancid                          ports/net-mgmt/rancid
 rancid-devel                    ports/net-mgmt/rancid-devel
 rand                            ports/textproc/rand
 randrproto                      ports/x11/randrproto
+ranpwd                          ports/security/ranpwd
 raop_play                       ports/audio/raop_play
 rapid                           ports/math/rapid
 rapidsvn                        ports/devel/rapidsvn
@@ -19868,6 +19874,7 @@ rdiff-backup-devel              ports/sysutils/rdiff-backup-devel
 rdiff-backup10                  ports/sysutils/rdiff-backup10
 rdigest                         ports/security/rdigest
 rdist6                          ports/net/rdist6
+rdup                            ports/sysutils/rdup
 re2c                            ports/devel/re2c
 re_graph                        ports/textproc/re_graph
 readline                        ports/devel/readline
@@ -20569,6 +20576,7 @@ rubygem-ruby-mp3info            ports/audio/rubygem-ruby-mp3info
 rubygem-ruby-ole                ports/devel/rubygem-ruby-ole
 rubygem-ruby-prof               ports/devel/rubygem-ruby-prof
 rubygem-ruby2ruby               ports/devel/rubygem-ruby2ruby
+rubygem-ruby_parser             ports/devel/rubygem-ruby_parser
 rubygem-rubyforge               ports/devel/rubygem-rubyforge
 rubygem-rubyfulsoup             ports/www/rubygem-rubyfulsoup
 rubygem-rubyinlineaccel         ports/devel/rubygem-rubyinlineaccel
