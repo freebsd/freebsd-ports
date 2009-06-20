@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stfl
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clifford.at/stfl/
 
