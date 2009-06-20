@@ -7,10 +7,10 @@
 
 PORTNAME=	pload
 PORTVERSION=	0.9.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://opal.com/freebsd/ports/net/pload/
+		http://opal.com/jr/freebsd/ports/net/pload/
 MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	fbsd@opal.com
@@ -24,10 +24,4 @@ MAN1=		pload.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/pload
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800064
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
