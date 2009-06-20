@@ -2,7 +2,7 @@ This is an additional plugin package for Nagios, for SNMP support.
 It utilizes the UCD-SNMP-MIB dskTable and prTable support to monitor
 CPU and disk usage according to local snmpd configuration.
 
-WWW: ftp://ftp.hometree.net/pub/nagios-snmp-plugins/index.html
+WWW: http://henning.schmiedehausen.org/eyewiki/Wiki.jsp?page=NagiosSnmpPlugins
 
 Bruce
 bms@FreeBSD.org
