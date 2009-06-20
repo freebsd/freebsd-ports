@@ -19,8 +19,6 @@ COMMENT=	A Compiler for the functional language Haskell
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-BROKEN=		does not configure
-
 GHC_VERSION=	${PORTVERSION}
 
 USE_AUTOTOOLS=	autoconf:262:env
@@ -152,6 +150,7 @@ post-patch:
 		${WRKSRC}/rts/package.conf.in
 
 pre-configure:
+	@${MKDIR} ${TMPDIR}
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} --prefix=${BOOT_DIR})
 	@(cd ${BOOT_DIR} && ${GMAKE} install)
 
@@ -178,9 +177,6 @@ pre-configure:
 	@(cd ${PORTSDIR}/print/hs-hscolour && \
 		${SETENV} PATH=${BOOT_DIR}/bin:${PATH} ${MAKE} ${SLAVES_MAKE_ARGS} install)
 .endif
-
-pre-build:
-	@${MKDIR} ${TMPDIR}
 
 post-install:
 	# cabalised hs-foo-ghc ports
