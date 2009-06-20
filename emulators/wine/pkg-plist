@@ -162,6 +162,7 @@ include/wine/windows/dciman.h
 include/wine/windows/dde.h
 include/wine/windows/ddeml.h
 include/wine/windows/ddraw.h
+include/wine/windows/ddrawgdi.h
 include/wine/windows/ddrawi.h
 include/wine/windows/ddstream.h
 include/wine/windows/ddstream.idl
@@ -496,6 +497,8 @@ include/wine/windows/vmr9.idl
 include/wine/windows/vmrender.idl
 include/wine/windows/wfext.h
 include/wine/windows/winbase.h
+include/wine/windows/wincodec.h
+include/wine/windows/wincodec.idl
 include/wine/windows/wincon.h
 include/wine/windows/wincred.h
 include/wine/windows/wincrypt.h
@@ -1046,6 +1049,7 @@ lib/wine/win32s16.dll16.so
 lib/wine/win87em.dll16.so
 lib/wine/winaspi.dll16.so
 lib/wine/windebug.dll16.so
+lib/wine/windowscodecs.dll.so
 lib/wine/winealsa.drv.so
 lib/wine/wineaudioio.drv.so
 lib/wine/wineboot.exe.so
