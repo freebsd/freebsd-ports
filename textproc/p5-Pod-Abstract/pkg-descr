@@ -1,0 +1,20 @@
+POD::Abstract provides a means to load a POD (or POD compatible)
+document without direct reference to it's syntax, and perform
+manipulations on the abstract syntax tree.
+
+This can be used to support additional features for POD, to format
+output, to compile into alternative formats, etc.
+
+While Pod looks like a simple format, the specification calls for
+a number of special cases to be handled, and that makes any software
+that works on Pod as text more complex than it needs to be.  In
+addition to this, Pod does not lend itself to a natural structured
+model. This makes it difficult to manipulate without damaging the
+validity of the document.
+
+Pod::Abstract solves these problems by loading the document into a
+structured tree, and providing consistent traversal, searching,
+manpulation and re-serialisation. Pod related utilities are easy
+to write using Pod::Abstract.
+
+WWW: http://search.cpan.org/dist/Pod-Abstract/
