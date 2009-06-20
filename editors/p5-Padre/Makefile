@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,18 +16,19 @@ COMMENT=	Perl Application Development and Refactoring Environment
 
 BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/Class/Adapter.pm:${PORTSDIR}/devel/p5-Class-Adapter \
-		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
 		${SITE_PERL}/Class/Unload.pm:${PORTSDIR}/devel/p5-Class-Unload \
 		${SITE_PERL}/Devel/Dumpvar.pm:${PORTSDIR}/devel/p5-Devel-Dumpvar \
 		${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
 		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path \
 		${SITE_PERL}/File/ShareDir.pm:${PORTSDIR}/devel/p5-File-ShareDir \
 		${SITE_PERL}/File/ShareDir/PAR.pm:${PORTSDIR}/devel/p5-File-ShareDir-PAR \
 		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
 		${SITE_PERL}/IPC/Cmd.pm:${PORTSDIR}/devel/p5-IPC-Cmd \
+		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
 		${SITE_PERL}/Module/Inspector.pm:${PORTSDIR}/devel/p5-Module-Inspector \
 		${SITE_PERL}/Module/Refresh.pm:${PORTSDIR}/devel/p5-Module-Refresh \
 		${SITE_PERL}/Module/Starter.pm:${PORTSDIR}/devel/p5-Module-Starter \
@@ -36,6 +37,7 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/PAR.pm:${PORTSDIR}/devel/p5-PAR \
 		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
 		${SITE_PERL}/Parse/ErrorString/Perl.pm:${PORTSDIR}/devel/p5-Parse-ErrorString-Perl \
+		p5-Pod-Abstract>=0.16:${PORTSDIR}/textproc/p5-Pod-Abstract \
 		${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM \
 		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
 		${SITE_PERL}/Pod/Simple/XHTML.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
@@ -49,14 +51,14 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Wx/Perl/ProcessStream.pm:${PORTSDIR}/x11-toolkits/p5-Wx-Perl-ProcessStream \
 		${SITE_PERL}/YAML/Tiny.pm:${PORTSDIR}/textproc/p5-YAML-Tiny \
-		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor.pm:${PORTSDIR}/devel/p5-Class-XSAccessor \
-		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor/Array.pm:${PORTSDIR}/devel/p5-Class-XSAccessor-Array \
+		p5-Class-XSAccessor>=1.02:${PORTSDIR}/devel/p5-Class-XSAccessor \
+		p5-Class-XSAccessor-Array>=1.02:${PORTSDIR}/devel/p5-Class-XSAccessor-Array \
 		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
-		${SITE_PERL}/${PERL_ARCH}/Wx.pm:${PORTSDIR}/x11-toolkits/p5-Wx
+		p5-Wx>=0.91:${PORTSDIR}/x11-toolkits/p5-Wx
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_WX=		2.8+
@@ -78,12 +80,19 @@ IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
 IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
 .endif
 
+.if ${PERL_LEVEL} >= 501000
+BUILD_DEPENDS+=	p5-Encode>=2.26:${PORTSDIR}/converters/p5-Encode \
+		p5-Thread-Queue>=2.11:${PORTSDIR}/devel/p5-Thread-Queue \
+		p5-threads>=1.71:${PORTSDIR}/devel/p5-threads \
+		p5-threads-shared>=1.26:${PORTSDIR}/devel/p5-threads-shared
+.endif
+
 MAN3=		Padre.3 \
 		Padre::Autosave.3 \
 		Padre::Config.3 \
-		Padre::Config::Constants.3 \
 		Padre::Config::Host.3 \
 		Padre::Config::Human.3 \
+		Padre::Constant.3 \
 		Padre::Current.3 \
 		Padre::DB.3 \
 		Padre::DB::Bookmark.3 \
@@ -95,6 +104,7 @@ MAN3=		Padre.3 \
 		Padre::DB::SessionFile.3 \
 		Padre::DB::Snippets.3 \
 		Padre::DocBrowser.3 \
+		Padre::DocBrowser::document.3 \
 		Padre::Document.3 \
 		Padre::Document::Perl::Beginner.3 \
 		Padre::Locale.3 \
@@ -111,6 +121,7 @@ MAN3=		Padre.3 \
 		Padre::Pod2HTML.3 \
 		Padre::Task.3 \
 		Padre::Task::HTTPClient.3 \
+		Padre::Task::LWP.3 \
 		Padre::Task::Outline.3 \
 		Padre::Task::Outline::Perl.3 \
 		Padre::Task::PPI.3 \
@@ -120,17 +131,23 @@ MAN3=		Padre.3 \
 		Padre::Task::SyntaxChecker.3 \
 		Padre::Task::SyntaxChecker::Perl.3 \
 		Padre::TaskManager.3 \
+		Padre::Transform.3 \
+		Padre::Transform::Perl::UpdateCopyright.3 \
 		Padre::Util.3 \
+		Padre::Wx::Ack.3 \
 		Padre::Wx::App.3 \
 		Padre::Wx::CPAN.3 \
 		Padre::Wx::Dialog.3 \
+		Padre::Wx::Dialog::Find.3 \
 		Padre::Wx::Dialog::PluginManager.3 \
+		Padre::Wx::Dialog::Preferences.3 \
 		Padre::Wx::Dialog::SessionManager.3 \
 		Padre::Wx::Dialog::SessionSave.3 \
 		Padre::Wx::DocBrowser.3 \
 		Padre::Wx::HtmlWindow.3 \
 		Padre::Wx::Main.3 \
 		Padre::Wx::PodFrame.3 \
+		Padre::Wx::StatusBar.3 \
 		Wx::Perl::Dialog.3 \
 		Wx::Perl::Dialog::Simple.3 \
 		Wx::Perl::Dialog::SingleChoice.3
