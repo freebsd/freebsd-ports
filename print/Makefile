@@ -308,6 +308,7 @@
     SUBDIR += rubygem-colortools
     SUBDIR += rubygem-pdfwriter
     SUBDIR += rubygem-prawn
+    SUBDIR += rubygem-prawn-core
     SUBDIR += rubygem-prawn-format
     SUBDIR += rubygem-prawn-layout
     SUBDIR += scribus
