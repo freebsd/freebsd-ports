@@ -21,7 +21,7 @@ DISTFILES+=	check_max_clients_route-0.1.6.tar.gz \
 .endif
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Additional SNMP plugins for Nagios from silfreed.net
 
 # Also uses traceroute, dig at runtime (in base system with hardcoded paths).
