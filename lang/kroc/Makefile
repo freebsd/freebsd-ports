@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kroc
-PORTVERSION=	1.5.r5789
+PORTVERSION=	1.5.r5858
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.i-scream.org/pub/kroc/ \
 		ftp://ftp.i-scream.org/pub/kroc/

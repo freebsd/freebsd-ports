@@ -150,6 +150,10 @@ lib/kroc/examples/course/sort_inside
 lib/kroc/examples/course/sort_pump
 lib/kroc/examples/course/test_utils
 lib/kroc/examples/game/game
+lib/kroc/examples/graphics3d/butterflies
+lib/kroc/examples/graphics3d/g3dchess
+lib/kroc/examples/graphics3d/g3dcog2
+lib/kroc/examples/graphics3d/g3dcogs
 lib/kroc/examples/graphics3d/g3dcube
 lib/kroc/examples/graphics3d/g3dcubes
 lib/kroc/examples/graphics3d/g3dtest
@@ -202,6 +206,9 @@ lib/kroc/examples/shootout/reverse-complement
 lib/kroc/examples/shootout/spectralnorm
 lib/kroc/examples/shootout/startup
 lib/kroc/examples/shootout/thread-ring
+lib/kroc/examples/shootout/threads
+lib/kroc/examples/shootout/threads-flow
+lib/kroc/examples/trap/groupops
 lib/kroc/examples/trap/traplatency
 lib/kroc/examples/trap/traptest
 lib/kroc/examples/ttygames/bomberman
@@ -291,6 +298,7 @@ libdata/pkgconfig/ccsp-1.6.pc
 share/aclocal/kroc.m4
 share/aclocal/occam-mysql.m4
 share/aclocal/occam-opengl.m4
+share/aclocal/occam-pkg.m4
 share/aclocal/occam-sdl.m4
 share/aclocal/occbuild.m4
 share/aclocal/tvm.m4
@@ -306,6 +314,7 @@ share/kroc/doc/api/fmtout.html
 share/kroc/doc/api/forall.html
 share/kroc/doc/api/frames-index.html
 share/kroc/doc/api/frames.html
+share/kroc/doc/api/g3dchess-inc.html
 share/kroc/doc/api/graphics3d.html
 share/kroc/doc/api/hostio.html
 share/kroc/doc/api/hostsp.html
@@ -316,7 +325,9 @@ share/kroc/doc/api/occSDL.html
 share/kroc/doc/api/occSDLsound.html
 share/kroc/doc/api/occade.html
 share/kroc/doc/api/occamdoc.css
+share/kroc/doc/api/occplayer.html
 share/kroc/doc/api/overwriting-buffer.html
+share/kroc/doc/api/player.html
 share/kroc/doc/api/pony.html
 share/kroc/doc/api/proc.html
 share/kroc/doc/api/raster.html
@@ -614,6 +625,38 @@ share/kroc/occade/images/stars.png
 share/kroc/occamdoc/frames.html
 share/kroc/occamdoc/occamdoc.css
 share/kroc/occamdoc/to-html.xsl
+share/kroc/player/worlds/angles.cfg
+share/kroc/player/worlds/angles.graffle
+share/kroc/player/worlds/angles.png
+share/kroc/player/worlds/angles.world
+share/kroc/player/worlds/bc2.cfg
+share/kroc/player/worlds/bc2.world
+share/kroc/player/worlds/bc6.cfg
+share/kroc/player/worlds/bc6.world
+share/kroc/player/worlds/beacons.inc
+share/kroc/player/worlds/big-circle.cfg
+share/kroc/player/worlds/big-circle.png
+share/kroc/player/worlds/big-circle.world
+share/kroc/player/worlds/default.cfg
+share/kroc/player/worlds/default.png
+share/kroc/player/worlds/default.world
+share/kroc/player/worlds/devious.cfg
+share/kroc/player/worlds/devious.graffle
+share/kroc/player/worlds/devious.png
+share/kroc/player/worlds/devious.world
+share/kroc/player/worlds/kikiki.cfg
+share/kroc/player/worlds/kikiki.graffle
+share/kroc/player/worlds/kikiki.png
+share/kroc/player/worlds/kikiki.world
+share/kroc/player/worlds/kikiki2.cfg
+share/kroc/player/worlds/kikiki2.world
+share/kroc/player/worlds/map.inc
+share/kroc/player/worlds/one-pillar.cfg
+share/kroc/player/worlds/one-pillar.graffle
+share/kroc/player/worlds/one-pillar.png
+share/kroc/player/worlds/one-pillar.world
+share/kroc/player/worlds/pioneer.inc
+share/kroc/player/worlds/sick.inc
 share/kroc/robots/robot-track-1.png
 share/kroc/robots/robot-track-2.png
 share/kroc/shootout/revcomp-input.txt
@@ -730,12 +773,14 @@ share/kroc/vtlib/string.lib
 share/kroc/vtlib/trap.lib
 share/kroc/vtlib/ttyutil.lib
 share/kroc/vtlib/useful.lib
-share/xslt/cspx2cspm.xsl
-@dirrm share/xslt
+share/kroc/xslt/cspx2cspm.xsl
+@dirrm share/kroc/xslt
 @dirrm share/kroc/vtlib
 @dirrm share/kroc/vtinclude
 @dirrm share/kroc/shootout
 @dirrm share/kroc/robots
+@dirrm share/kroc/player/worlds
+@dirrm share/kroc/player
 @dirrm share/kroc/occamdoc
 @dirrm share/kroc/occade/images
 @dirrm share/kroc/occade
