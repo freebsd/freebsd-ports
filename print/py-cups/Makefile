@@ -28,4 +28,8 @@ MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 PYDISTUTILS_EGGINFO=${PORTNAME}-1.0-py${PYTHON_VER}.egg-info
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cups.so
 
+pre-configure:
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/cupsconnection.c
+
 .include <bsd.port.mk>
