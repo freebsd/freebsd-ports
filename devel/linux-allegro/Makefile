@@ -19,6 +19,7 @@ CONFLICTS=	linux-f8-allegro-[0-9]* linux-f10-allegro-[0-9]*
 
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		xorglibs
+LINUX_DIST_VER=		4
 ONLY_FOR_ARCHS=		i386 amd64
 DIST_SUBDIR=		rpm
 USE_LDCONFIG=		yes

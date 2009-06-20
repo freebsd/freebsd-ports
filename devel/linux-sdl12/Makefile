@@ -22,6 +22,7 @@ CONFLICTS=	linux-f8-sdl12-[0-9]* linux-f10-sdl12-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
+LINUX_DIST_VER=	4
 INSTALL_SHLIB=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64

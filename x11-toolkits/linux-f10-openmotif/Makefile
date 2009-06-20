@@ -22,6 +22,7 @@ CONFLICTS=	linux-openmotif-[0-9]* linux-f8-openmotif-[0-9]*
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
+LINUX_DIST_VER=	10
 USE_LDCONFIG=	yes
 SRC_DISTFILES=
 MD5_FILE=	${MASTERDIR}/distinfo.i386
