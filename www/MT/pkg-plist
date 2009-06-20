@@ -1004,9 +1004,12 @@
 %%CGIDIR%%/extlib/LWP/Protocol.pm
 %%CGIDIR%%/extlib/LWP/Debug.pm
 %%CGIDIR%%/extlib/LWP/Simple.pm
+%%CGIDIR%%/extlib/Data/ObjectDriver/SQL/Oracle.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/Driver/DBD/Pg.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/Driver/DBD/SQLite.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/Driver/DBD/mysql.pm
+%%CGIDIR%%/extlib/Data/ObjectDriver/Driver/DBD/Oracle.pm
+%%CGIDIR%%/extlib/Data/ObjectDriver/Driver/GearmanDBI.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/Driver/Cache/RAM.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/Driver/Cache/Cache.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/Driver/Cache/Apache.pm
@@ -1458,6 +1461,7 @@
 %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBD/SQLite.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBD/mysql.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBD/Legacy.pm
+%%CGIDIR%%/lib/MT/ObjectDriver/Driver/CacheWrapper.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBI.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/DDL.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/SQL.pm
@@ -2479,6 +2483,7 @@
 @dirrm %%CGIDIR%%/extlib/HTML
 @dirrm %%CGIDIR%%/extlib/File/Copy
 @dirrm %%CGIDIR%%/extlib/File
+@dirrm %%CGIDIR%%/extlib/Data/ObjectDriver/SQL
 @dirrm %%CGIDIR%%/extlib/Data/ObjectDriver/Driver/DBD
 @dirrm %%CGIDIR%%/extlib/Data/ObjectDriver/Driver/Cache
 @dirrm %%CGIDIR%%/extlib/Data/ObjectDriver/Driver
