@@ -1,18 +1,19 @@
 bin/stonesoup
-%%DATADIR%%/dat/lua/chnkdata.lua
+%%DATADIR%%/dat/lua/runrest.lua
 %%DATADIR%%/dat/lua/trapwalk.lua
 %%DATADIR%%/dat/lua/stash.lua
-%%DATADIR%%/dat/lua/safechnk.lua
-%%DATADIR%%/dat/lua/runrest.lua
+%%DATADIR%%/dat/lua/wield.lua
 %%DATADIR%%/dat/lua/pickup.lua
 %%DATADIR%%/dat/lua/kills.lua
 %%DATADIR%%/dat/lua/gearset.lua
-%%DATADIR%%/dat/lua/eat.lua
-%%DATADIR%%/dat/lua/wield.lua
 %%DATADIR%%/dat/clua/dungeon.lua
+%%DATADIR%%/dat/clua/util.lua
+%%DATADIR%%/dat/clua/userbase.lua
+%%DATADIR%%/dat/clua/point.lua
 %%DATADIR%%/dat/clua/macro.lua
 %%DATADIR%%/dat/clua/luamark.lua
 %%DATADIR%%/dat/clua/loadmaps.lua
+%%DATADIR%%/dat/clua/lm_toll.lua
 %%DATADIR%%/dat/clua/lm_tmsg.lua
 %%DATADIR%%/dat/clua/lm_timed.lua
 %%DATADIR%%/dat/clua/lm_props.lua
@@ -20,7 +21,7 @@ bin/stonesoup
 %%DATADIR%%/dat/clua/lm_fog.lua
 %%DATADIR%%/dat/clua/lm_flags.lua
 %%DATADIR%%/dat/clua/lm_1way.lua
-%%DATADIR%%/dat/clua/userbase.lua
+%%DATADIR%%/dat/clua/ziggurat.lua
 %%DATADIR%%/dat/descript/ability.txt
 %%DATADIR%%/dat/descript/spells.txt
 %%DATADIR%%/dat/descript/skills.txt
@@ -28,43 +29,59 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/items.txt
 %%DATADIR%%/dat/descript/gods.txt
 %%DATADIR%%/dat/descript/features.txt
+%%DATADIR%%/dat/descript/cards.txt
 %%DATADIR%%/dat/descript/branches.txt
 %%DATADIR%%/dat/descript/unident.txt
-%%DATADIR%%/dat/database/godspeak.txt
+%%DATADIR%%/dat/database/FAQ.txt
 %%DATADIR%%/dat/database/shout.txt
 %%DATADIR%%/dat/database/randname.txt
+%%DATADIR%%/dat/database/randbook.txt
 %%DATADIR%%/dat/database/rand_wpn.txt
 %%DATADIR%%/dat/database/rand_arm.txt
 %%DATADIR%%/dat/database/rand_all.txt
+%%DATADIR%%/dat/database/quotes.txt
+%%DATADIR%%/dat/database/monspell.txt
 %%DATADIR%%/dat/database/monspeak.txt
 %%DATADIR%%/dat/database/monname.txt
 %%DATADIR%%/dat/database/miscname.txt
 %%DATADIR%%/dat/database/insult.txt
 %%DATADIR%%/dat/database/help.txt
+%%DATADIR%%/dat/database/godspeak.txt
 %%DATADIR%%/dat/database/wpnnoise.txt
 %%DATADIR%%/dat/altar.des
+%%DATADIR%%/dat/ziggurat.des
 %%DATADIR%%/dat/vaults.des
 %%DATADIR%%/dat/temple.des
-%%DATADIR%%/dat/portal.des
+%%DATADIR%%/dat/sewer.des
+%%DATADIR%%/dat/rooms.des
 %%DATADIR%%/dat/pan.des
 %%DATADIR%%/dat/orc.des
+%%DATADIR%%/dat/minitomb.des
 %%DATADIR%%/dat/mini.des
 %%DATADIR%%/dat/layout.des
 %%DATADIR%%/dat/large.des
 %%DATADIR%%/dat/lair.des
 %%DATADIR%%/dat/lab.des
+%%DATADIR%%/dat/icecave.des
 %%DATADIR%%/dat/hive.des
 %%DATADIR%%/dat/hells.des
 %%DATADIR%%/dat/float.des
 %%DATADIR%%/dat/entry.des
 %%DATADIR%%/dat/elf.des
+%%DATADIR%%/dat/dummy.des
+%%DATADIR%%/dat/didact.des
 %%DATADIR%%/dat/crypt.des
 %%DATADIR%%/dat/bazaar.des
+%%DATADIR%%/dat/arena.des
 %%DATADIR%%/dat/zot.des
-%%X11%%%%DATADIR%%/dat/tiles/wall2d.png
-%%X11%%%%DATADIR%%/dat/tiles/title.png
-%%X11%%%%DATADIR%%/dat/tiles/tile.png
-%%X11%%%%DATADIR%%/dat/tiles/player.png
+%%SDL%%%%DATADIR%%/dat/tiles/Vera.ttf
+%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-win32.png
+%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-32x32.png
+%%SDL%%%%DATADIR%%/dat/tiles/player.png
+%%SDL%%%%DATADIR%%/dat/tiles/main.png
+%%SDL%%%%DATADIR%%/dat/tiles/dngn.png
+%%SDL%%%%DATADIR%%/dat/tiles/VeraMono.ttf
+%%SDL%%%%DATADIR%%/dat/tiles/title.png
 %%DATADIR%%/settings/034_command_keys.txt
 %%DATADIR%%/settings/tiles_options.txt
 %%DATADIR%%/settings/standard_colours.txt
@@ -84,15 +101,18 @@ bin/stonesoup
 %%DATADIR%%/docs/monster_speech.txt
 %%DATADIR%%/docs/macros_guide.txt
 %%DATADIR%%/docs/lualicense.txt
+%%DATADIR%%/docs/lgpl.txt
 %%DATADIR%%/docs/level_design.txt
 %%DATADIR%%/docs/keybind.txt
+%%DATADIR%%/docs/key_changes.txt
 %%DATADIR%%/docs/crawl_manual.txt
 %%DATADIR%%/docs/coding_conventions.txt
+%%DATADIR%%/docs/arena.txt
 %%DATADIR%%/docs/aptitudes.txt
 %%DATADIR%%/docs/tiles_help.txt
 @exec chown -R root:games %D/%%DATADIR%%
 @exec install -d -o root -g games -m 775 %%SAVEDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/licence.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
@@ -101,11 +121,11 @@ bin/stonesoup
 @dirrm %%DATADIR%%/dat/clua
 @dirrm %%DATADIR%%/dat/descript
 @dirrm %%DATADIR%%/dat/database
-%%X11%%@dirrm %%DATADIR%%/dat/tiles/
+%%SDL%%@dirrm %%DATADIR%%/dat/tiles
 @dirrm %%DATADIR%%/dat
 @dirrm %%DATADIR%%/settings
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/
 @unexec rmdir %%SAVEDIR%% >/dev/null 2>&1 || echo 'stonesoup save-game directory (%%SAVEDIR%%) not removed due to existing save games. If you are permanently removing this port, you should do a ``rm -rf %%SAVEDIR%%``.' | fmt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -1,7 +1,7 @@
---- ./makefile.unix.orig	2009-06-12 12:39:29.000000000 +0200
-+++ ./makefile.unix	2009-06-19 13:54:52.000000000 +0200
+--- ./makefile_tiles.unix.orig	2009-06-12 12:32:15.000000000 +0200
++++ ./makefile_tiles.unix	2009-06-19 13:54:52.000000000 +0200
 @@ -4,7 +4,7 @@
- # Modified for Crawl Reference by $Author: ennewalker $ on $Date: 2009-02-14 17:59:13 +0100 (Sa, 14 Feb 2009) $
+ # Modified for Crawl Reference by $Author: dshaligram $ on $Date: 2007-06-24T16:27:58.475101Z $
  #
  
 -GAME = crawl
@@ -9,31 +9,40 @@
  
  # this file contains a list of the libraries.
  # it will make a variable called OBJECTS that contains all the libraries
-@@ -12,7 +12,6 @@
- 
- OBJECTS += libunix.o crash-u.o
+@@ -15,7 +15,6 @@
+ SDL_CFLAGS := $(shell sdl-config --cflags)
+ SDL_LDFLAGS := $(shell sdl-config --libs) -lSDLmain
  
 -CXX = g++
  DELETE = rm -f
  COPY = cp
  OS_TYPE = UNIX
-@@ -21,7 +20,7 @@
+@@ -25,7 +24,7 @@
  
- # Change this to y (case-sensitive!) if you want to use Unicode glyphs
- # in the map, and you have libncursesw available.
+ # Change this to y if you want to use Unicode glyphs in the map, and you have
+ # libncursesw available.
 -UNICODE_GLYPHS = n
 +UNICODE_GLYPHS = %%UNICODE%%
  
- # If you're using UNICODE_GLYPHS=y, and have a preferred Unicode
- # (UTF-8) locale you want Crawl to use, you can set it here. The
-@@ -39,16 +38,15 @@
+ ifeq ($(strip $(OSX)),y)
+ PNG_INCLUDE := -I/sw/include
+@@ -41,7 +40,7 @@
+ else
+ PNG_INCLUDE :=
+ PNG_LIB :=
+-FREETYPE_INCLUDE := -I/usr/include/freetype2
++FREETYPE_INCLUDE := -I/usr/local/include/freetype2
+ endif
+ 
+ # If you have lex and yacc, set DOYACC to y (lowercase y).
+@@ -54,16 +53,16 @@
  MCHMOD_SAVEDIR := 775
  
  # The user:group to install the game as.
 -INSTALL_UGRP := games:games
--
--INSTALLDIR   := /usr/games/crawl
 +INSTALL_UGRP := root:games
+ 
+-INSTALLDIR   := /usr/games/crawl
 +INSTALLDIR   := %%PREFIX%%/bin
  
  # If you're installing Crawl for multiple users, you *must* set this to a
@@ -47,11 +56,11 @@
  
  LEX  := flex
  YACC := bison -y
-@@ -70,17 +68,8 @@
+@@ -105,17 +104,8 @@
  
- INCLUDES := $(INCLUDES) -Iutil -I. -I$(LUASRC) $(EXTRA_INCLUDES)
+ INCLUDES := $(INCLUDES) -Iutil -I. -I$(LUASRC) $(EXTRA_INCLUDES) $(PNG_INCLUDE) $(FREETYPE_INCLUDE)
  
--CFWARN := -Wall -Wno-parentheses -Wwrite-strings -Wshadow -pedantic
+-CFWARN := -Wall -Wwrite-strings -Wshadow -pedantic -Wno-parentheses
 -
  CFOTHERS := -fsigned-char -D$(OS_TYPE) $(EXTRA_FLAGS) -DCLUA_BINDINGS
  
@@ -65,18 +74,18 @@
  ifneq ($(strip $(SAVEDIR)),)
  CFOTHERS += '-DSAVE_DIR_PATH="$(strip $(SAVEDIR))"'
  endif
-@@ -117,8 +106,8 @@
- LIBCURS  = ncurses
+@@ -124,8 +114,8 @@
+ CFOTHERS += '-DDATA_DIR_PATH="$(strip $(DATADIR))"'
  endif
  
--CFLAGS  := $(INCLUDES) $(CFWARN) $(CFOTHERS)
+-CFLAGS  := $(INCLUDES) $(CFWARN) $(CFOTHERS) $(SDL_CFLAGS)
 -YCFLAGS := $(INCLUDES) $(CFOTHERS)
-+LOCAL_CFLAGS  := $(INCLUDES) $(CXXFLAGS) $(CFOTHERS)
++LOCAL_CFLAGS  := $(INCLUDES) $(CXXFLAGS) $(CFWARN) $(CFOTHERS) $(SDL_CFLAGS)
 +YCFLAGS := $(INCLUDES) $(CXXFLAGS) $(CFOTHERS)
  
  UTIL = util/
  
-@@ -160,7 +149,7 @@
+@@ -167,7 +157,7 @@
  	rm -f $(DEPENDENCY_MKF).tmp
  	@for i in $^; do \
  	    echo "Updating dependencies for $$i"; \
@@ -85,7 +94,25 @@
  	done
  	mv -f $(DEPENDENCY_MKF).tmp $(DEPENDENCY_MKF)
  
-@@ -257,17 +246,17 @@
+@@ -210,7 +200,7 @@
+ ORIGTILEFILES = $(TILEFILES:%=$(RLTILES)/%)
+ 
+ makerltiles:
+-	cd $(RLTILES) && make -f makefile.unix all
++	cd $(RLTILES) && gmake -f makefile.unix all
+ 
+ $(TILEDEFSRCS): makerltiles
+ 
+@@ -222,7 +212,7 @@
+ 	$(COPY) $< $@
+ 
+ clean-rltiles:
+-	cd $(RLTILES) && make -f makefile.unix distclean && cd ..
++	cd $(RLTILES) && gmake -f makefile.unix distclean && cd ..
+ 
+ ##########################################################################
+ 
+@@ -287,21 +277,21 @@
  	$(DELETE) $(DEPENDENCY_MKF)
  
  $(GAME): $(GAME_DEPENDS)
@@ -100,9 +127,14 @@
 -	${CXX} -g -p ${LDFLAGS} $(CFLAGS) $(OBJECTS) -o $(GAME) $(LIB)
 +	${CXX} -g -p ${LDFLAGS} $(LOCAL_CFLAGS) $(OBJECTS) -o $(GAME) $(LIB)
  
- .cc.o:
--	${CXX} ${CFLAGS} -c $<
-+	${CXX} ${LOCAL_CFLAGS} -c $<
+ %.o: %.cc $(TILEDEFHDRS)
+-	${CXX} ${CFLAGS} -c $< -o $@
++	${CXX} ${LOCAL_CFLAGS} -c $< -o $@
+ 
+ # STL is bad in debug.  Always compile this file with optimizations.
+ tilebuf.o: tilebuf.cc $(TILEDEFHDRS)
+-	${CXX} ${CFLAGS} -O2 -c $< -o $@
++	${CXX} ${LOCAL_CFLAGS} -O2 -c $< -o $@
  
  # [ds] Note we don't use the standard CFLAGS here; that's intentional, most
  # flex/bison combos I've tried don't produce code that passes the warnings

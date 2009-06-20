@@ -1,5 +1,5 @@
---- util/lua/src/Makefile.orig	2008-07-14 04:17:51.000000000 +0200
-+++ util/lua/src/Makefile	2008-07-18 08:49:37.000000000 +0200
+--- ./util/lua/src/Makefile.orig	2009-06-12 12:24:43.000000000 +0200
++++ ./util/lua/src/Makefile	2009-06-19 13:54:52.000000000 +0200
 @@ -9,8 +9,6 @@
  # Your platform. See PLATS for possible values.
  PLAT= none
