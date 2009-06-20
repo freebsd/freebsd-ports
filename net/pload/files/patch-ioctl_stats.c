@@ -1,5 +1,5 @@
---- ioctl_stat.c.orig	Tue Feb  1 08:11:24 2000
-+++ ioctl_stat.c	Mon Oct 18 22:32:49 2004
+--- ioctl_stat.c.orig	2000-02-01 02:11:24.000000000 -0500
++++ ioctl_stat.c	2009-06-15 15:30:03.000000000 -0400
 @@ -30,6 +30,12 @@
  #include <fcntl.h>		/* open */
  #include <sys/ioctl.h>		/* ioctl */
@@ -13,10 +13,23 @@
  
  #ifndef STREAMS				/* Linux, FreeBSD, NetBSD, Ultrix */
  #	include <sys/socket.h>		/* socket */
-@@ -63,6 +69,16 @@
+@@ -39,8 +45,10 @@
+ #		include <linux/if_ppp.h>
+ #	else				/* most everything else */
+ #		include <net/if.h>
+-#		include <net/ppp_defs.h>
+-#		include <net/if_ppp.h>
++#		if !defined(__FreeBSD__)
++#			include <net/ppp_defs.h>
++#			include <net/if_ppp.h>
++#		endif /* ! __FreeBSD__ */
+ #	endif	/* linux && __GLIBC__ < 2 */
+ #else	/* STREAMS */			/* Solaris, SunOS, OSF/1, SVR4 */
+ #	include <net/ppp_defs.h>
+@@ -61,8 +69,18 @@
+ void ioctl_stat(if_data *ifd)
+ {
  	struct ifreq ifr;
- 	struct ifpppstatsreq req;
- 	
 +#ifdef __FreeBSD__
 +	static int		if_ix = -1;
 +	struct ifmibdata	ifmd;
@@ -25,12 +38,25 @@
 +	size_t			nr_ifs_sz = sizeof(nr_ifs);
 +	int			name[6];
 +	int			i;
++#else
+ 	struct ifpppstatsreq req;
+-	
 +#endif
 +
  	if (!ifd->s) getsocket(ifd);
  	
  	memset(&ifr, 0, sizeof(ifr));
-@@ -84,18 +100,36 @@
+@@ -76,7 +94,9 @@
+ 		return;
+ 	}
+ 	
++#ifndef __FreeBSD__
+ 	memset(&req, 0, sizeof(req));
++#endif
+ 
+ #ifdef linux
+ 	req.stats_ptr = (caddr_t) &req.stats;
+@@ -84,18 +104,36 @@
  #define ifr_name ifr__name
  #endif	
  
