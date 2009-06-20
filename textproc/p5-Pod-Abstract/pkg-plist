@@ -1,0 +1,25 @@
+bin/paf
+%%SITE_PERL%%/Pod/Abstract.pm
+%%SITE_PERL%%/Pod/Abstract/BuildNode.pm
+%%SITE_PERL%%/Pod/Abstract/Filter.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/add_podcmds.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/clear_podcmds.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/cut.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/find.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/number_sections.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/overlay.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/sort.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/summary.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/uncut.pm
+%%SITE_PERL%%/Pod/Abstract/Filter/unoverlay.pm
+%%SITE_PERL%%/Pod/Abstract/Node.pm
+%%SITE_PERL%%/Pod/Abstract/Parser.pm
+%%SITE_PERL%%/Pod/Abstract/Path.pm
+%%SITE_PERL%%/Pod/Abstract/Serial.pm
+%%SITE_PERL%%/Pod/Abstract/Tree.pm
+%%SITE_PERL%%/mach/auto/Pod/Abstract/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/Pod/Abstract
+@dirrmtry %%SITE_PERL%%/mach/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod/Abstract/Filter
+@dirrmtry %%SITE_PERL%%/Pod/Abstract
+@dirrmtry %%SITE_PERL%%/Pod

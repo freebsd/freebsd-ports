@@ -526,6 +526,7 @@
     SUBDIR += p5-Plucene-Analysis-CJKAnalyzer
     SUBDIR += p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
     SUBDIR += p5-Plucene-Simple
+    SUBDIR += p5-Pod-Abstract
     SUBDIR += p5-Pod-Constants
     SUBDIR += p5-Pod-DocBook
     SUBDIR += p5-Pod-Escapes
