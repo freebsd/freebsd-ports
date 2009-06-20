@@ -48,7 +48,7 @@
  #ifdef i386Architecture
  #define ServerExtraDefines GccGasOption XFree86ServerDefines
  #endif
-+#ifdef x86_64Architecture
++#if defined(x86_64Architecture) || defined(ia64Architecture)
 +# define ServerOSDefines         XFree86ServerOSDefines -DDDXTIME
 +# define ServerExtraDefines      GccGasOption XFree86ServerDefines -D_XSERVER64
 +#endif /* x86_64Architecture */
