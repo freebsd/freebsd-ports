@@ -35,6 +35,17 @@
  # ifdef __alpha__
  #  define AlphaBsdArchitecture
  #  define AlphaArchitecture
+@@ -232,6 +245,10 @@
+ #  define Sparc64Architecture
+ #  undef __sparc64__
+ # endif
++# ifdef __ia64__
++#  define ia64Architecture
++#  undef __ia64__
++# endif
+ #endif /* __FreeBSD__ */
+  
+ #ifdef AMOEBA
 --- xc/config/cf/xfree86.cf.orig	2003-02-27 05:07:59.000000000 +0900
 +++ xc/config/cf/xfree86.cf	2007-09-09 20:40:56.000000000 +0900
 @@ -1167,7 +1167,7 @@
@@ -85,13 +96,14 @@
  # endif
 --- xc/programs/Xserver/hw/xfree86/os-support/bsd/Imakefile.orig	2003-02-18 01:37:19.000000000 +0900
 +++ xc/programs/Xserver/hw/xfree86/os-support/bsd/Imakefile	2007-09-07 06:38:14.000000000 +0900
-@@ -150,6 +150,9 @@
+@@ -150,6 +150,10 @@
  #elif defined(Sparc64Architecture)
  VIDEO_SRC = sparc64_video.c
  VIDEO_OBJ = sparc64_video.o
 +#elif defined(x86_64Architecture)
 +VIDEO_SRC = i386_video.c
 +VIDEO_OBJ = i386_video.o
++#elif defined(ia64Architecture)
  #else
  #error Unknown architecture !
  #endif
