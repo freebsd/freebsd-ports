@@ -10,7 +10,7 @@ PORTVERSION=	0.3.10
 CATEGORIES=	lang
 MASTER_SITES=	SAVANNAH/dotgnu-pnet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Treecc is designed to assist in the development of compilers
 
 GNU_CONFIGURE=	yes
