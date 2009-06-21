@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	3.3
-PORTREVISION=	1
+PORTVERSION=	3.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
