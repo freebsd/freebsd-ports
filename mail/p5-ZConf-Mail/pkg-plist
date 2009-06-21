@@ -1,8 +1,15 @@
 bin/zcmailcompose
 bin/zcgetmail
 bin/zcmailacountmanage
+bin/zcmailuri
+bin/curses-zcmailacountmanage
+bin/curses-zcmailcompose
 %%SITE_PERL%%/ZConf/Mail.pm
+%%SITE_PERL%%/ZConf/Mail/GUI.pm
+%%SITE_PERL%%/ZConf/Mail/GUI/Curses.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Mail/.packlist
+@dirrmtry %%SITE_PERL%%/ZConf/Mail/GUI
+@dirrmtry %%SITE_PERL%%/ZConf/Mail/
 @dirrmtry %%SITE_PERL%%/ZConf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Mail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf

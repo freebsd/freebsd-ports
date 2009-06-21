@@ -4,7 +4,7 @@ cleint. It also currently includes two small utilities, listed below.
 zcmailcompose - Composes a mail message and sends it using the specified
  account.
 zcgetmail - A getmail replacement using ZConf::Mail.
-zcmailaccountmanage - A Curses::UI interface to ZConf::Mail accounts.
-
+zcmailaccountmanage - A GUI interface to ZConf::Mail accounts.
+zcmailuri - Invokes ZConf::Mail::GUI->compose via a mailto URI.
 
 WWW: http://search.cpan.org/dist/ZConf-Mail/
