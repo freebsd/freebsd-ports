@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.13
 CATEGORIES=	ports-mgmt security
 DISTFILES=
 

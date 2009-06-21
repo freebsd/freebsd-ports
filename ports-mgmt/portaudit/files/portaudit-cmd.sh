@@ -39,7 +39,7 @@ portaudit_confs()
 	: ${portaudit_fetch_env=""}
 	: ${portaudit_fetch_cmd="fetch -1mp"}
 
-	: ${portaudit_sites="http://www.FreeBSD.org/ports/"}
+	: ${portaudit_sites="http://portaudit.FreeBSD.org/"}
 
 	: ${portaudit_fixed=""}
 
