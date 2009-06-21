@@ -107,6 +107,7 @@ include/gwenhywfar3/gwenhywfar/system.h
 include/gwenhywfar3/gwenhywfar/tag16.h
 include/gwenhywfar3/gwenhywfar/text.h
 include/gwenhywfar3/gwenhywfar/tlv.h
+include/gwenhywfar3/gwenhywfar/tree.h
 include/gwenhywfar3/gwenhywfar/types.h
 include/gwenhywfar3/gwenhywfar/url.h
 include/gwenhywfar3/gwenhywfar/urlfns.h
@@ -140,7 +141,7 @@ lib/gwenhywfar/plugins/47/dbio/xmldb.xml
 lib/libgwenhywfar.a
 lib/libgwenhywfar.la
 lib/libgwenhywfar.so
-lib/libgwenhywfar.so.53
+lib/libgwenhywfar.so.55
 libdata/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
 share/gwenhywfar/ca-bundle.crt
