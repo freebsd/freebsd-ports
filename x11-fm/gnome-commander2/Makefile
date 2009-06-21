@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-commander/1.2
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	File manager for Gnome2
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \

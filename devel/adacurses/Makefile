@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	ncurses
 DISTNAME=		ncurses-${PORTVERSION}
 
-MAINTAINER=		araujo@FreeBSD.org
+MAINTAINER=		scjamorim@bsd.com.br
 COMMENT=		Curses library for Ada
 
 BUILD_DEPENDS=		gnat:${PORTSDIR}/lang/gnat

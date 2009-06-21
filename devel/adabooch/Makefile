@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.adapower.net/booch/download/
 DISTNAME=	bc-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Library which provide container classes as well as powertools for Ada
 
 NO_BUILD=	yes
