@@ -13,7 +13,7 @@ MASTER_SITES=	http://members.optushome.com.au/martingleeson/%SUBDIR%/ \
 		http://martin.gleeson.com/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/dist
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	Simple drawing language to generate GIFs on the fly
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
