@@ -1,5 +1,5 @@
---- servconf.c.orig	2009-05-02 19:35:42.000000000 +0400
-+++ servconf.c	2009-05-02 19:37:13.000000000 +0400
+--- servconf.c.orig	2009-05-26 15:13:32.000000000 +0400
++++ servconf.c	2009-05-26 18:09:30.000000000 +0400
 @@ -42,6 +42,10 @@
  #include "channels.h"
  #include "groupaccess.h"
@@ -11,59 +11,85 @@
  static void add_listen_addr(ServerOptions *, char *, int);
  static void add_one_listen_addr(ServerOptions *, char *, int);
  
-@@ -74,7 +78,7 @@
- 	options->ignore_user_known_hosts = -1;
- 	options->print_motd = -1;
- 	options->print_lastlog = -1;
--	options->x11_forwarding = -1;
-+	options->x11_forwarding = 1;
- 	options->x11_display_offset = -1;
- 	options->x11_use_localhost = -1;
- 	options->xauth_location = NULL;
-@@ -127,12 +131,39 @@
- 	options->num_permitted_opens = -1;
+@@ -128,11 +132,38 @@
  	options->adm_forced_command = NULL;
  	options->chroot_directory = NULL;
-+ 	options->none_enabled = -1;
-+ 	options->tcp_rcv_buf_poll = -1;
-+ 	options->hpn_disabled = -1;
-+ 	options->hpn_buffer_size = -1;
  	options->zero_knowledge_password_authentication = -1;
++	options->none_enabled = -1;
++	options->tcp_rcv_buf_poll = -1;
++	options->hpn_disabled = -1;
++	options->hpn_buffer_size = -1;
 +#ifdef WITH_LDAP_PUBKEY
-+	/* XXX dirty */
-+	options->lpk.ld = NULL;
-+	options->lpk.on = -1;
-+	options->lpk.servers = NULL;
-+	options->lpk.u_basedn = NULL;
-+	options->lpk.g_basedn = NULL;
-+	options->lpk.binddn = NULL;
-+	options->lpk.bindpw = NULL;
-+	options->lpk.sgroup = NULL;
-+	options->lpk.filter = NULL;
-+	options->lpk.fgroup = NULL;
-+	options->lpk.l_conf = NULL;
-+	options->lpk.tls = -1;
-+	options->lpk.b_timeout.tv_sec = -1;
-+	options->lpk.s_timeout.tv_sec = -1;
-+	options->lpk.flags = FLAG_EMPTY;
++ 	/* XXX dirty */
++ 	options->lpk.ld = NULL;
++ 	options->lpk.on = -1;
++ 	options->lpk.servers = NULL;
++ 	options->lpk.u_basedn = NULL;
++ 	options->lpk.g_basedn = NULL;
++ 	options->lpk.binddn = NULL;
++ 	options->lpk.bindpw = NULL;
++ 	options->lpk.sgroup = NULL;
++ 	options->lpk.filter = NULL;
++ 	options->lpk.fgroup = NULL;
++ 	options->lpk.l_conf = NULL;
++ 	options->lpk.tls = -1;
++ 	options->lpk.b_timeout.tv_sec = -1;
++ 	options->lpk.s_timeout.tv_sec = -1;
++ 	options->lpk.flags = FLAG_EMPTY;
 +#endif
  }
  
  void
  fill_default_server_options(ServerOptions *options)
  {
-+ 	/* needed for hpn socket tests */
-+ 	int sock;
-+ 	int socksize;
-+ 	int socksizelen = sizeof(int);
-+ 
++	/* needed for hpn socket tests */
++	int sock;
++	int socksize;
++	int socksizelen = sizeof(int);
++
  	/* Portable-specific options */
  	if (options->use_pam == -1)
  		options->use_pam = 1;
-@@ -265,6 +296,32 @@
+@@ -265,6 +296,68 @@
  		options->permit_tun = SSH_TUNMODE_NO;
  	if (options->zero_knowledge_password_authentication == -1)
  		options->zero_knowledge_password_authentication = 0;
++	if (options->hpn_disabled == -1) 
++		options->hpn_disabled = 0;
++
++	if (options->hpn_buffer_size == -1) {
++		/* option not explicitly set. Now we have to figure out */
++		/* what value to use */
++		if (options->hpn_disabled == 1) {
++			options->hpn_buffer_size = CHAN_SES_WINDOW_DEFAULT;
++		} else {
++			/* get the current RCV size and set it to that */
++			/*create a socket but don't connect it */
++			/* we use that the get the rcv socket size */
++			sock = socket(AF_INET, SOCK_STREAM, 0);
++			getsockopt(sock, SOL_SOCKET, SO_RCVBUF, 
++				   &socksize, &socksizelen);
++			close(sock);
++			options->hpn_buffer_size = socksize;
++			debug ("HPN Buffer Size: %d", options->hpn_buffer_size);
++			
++		} 
++	} else {
++		/* we have to do this incase the user sets both values in a contradictory */
++		/* manner. hpn_disabled overrrides hpn_buffer_size*/
++		if (options->hpn_disabled <= 0) {
++			if (options->hpn_buffer_size == 0)
++				options->hpn_buffer_size = 1;
++			/* limit the maximum buffer to 64MB */
++			if (options->hpn_buffer_size > 64*1024) {
++				options->hpn_buffer_size = 64*1024*1024;
++			} else {
++				options->hpn_buffer_size *= 1024;
++			}
++		} else
++			options->hpn_buffer_size = CHAN_TCP_WINDOW_DEFAULT;
++	}
++
 +#ifdef WITH_LDAP_PUBKEY
 +	if (options->lpk.on == -1)
 +	    options->lpk.on = _DEFAULT_LPK_ON;
@@ -91,14 +117,13 @@
 +	    options->lpk.l_conf = _DEFAULT_LPK_LDP;
 +#endif
  
- 	if (options->hpn_disabled == -1) 
- 		options->hpn_disabled = 0;
-@@ -345,8 +402,15 @@
- 	sGssAuthentication, sGssCleanupCreds, sAcceptEnv, sPermitTunnel,
+ 	/* Turn privilege separation on by default */
+ 	if (use_privsep == -1)
+@@ -310,7 +403,14 @@
  	sMatch, sPermitOpen, sForceCommand, sChrootDirectory,
  	sUsePrivilegeSeparation, sAllowAgentForwarding,
-+ 	sNoneEnabled, sTcpRcvBufPoll, sHPNDisabled, sHPNBufferSize,
  	sZeroKnowledgePasswordAuthentication,
++	sNoneEnabled, sTcpRcvBufPoll, sHPNDisabled, sHPNBufferSize,
  	sDeprecated, sUnsupported
 +#ifdef WITH_LDAP_PUBKEY
 +	,sLdapPublickey, sLdapServers, sLdapUserDN
@@ -109,7 +134,7 @@
  } ServerOpCodes;
  
  #define SSHCFG_GLOBAL	0x01	/* allowed in main section of sshd_config */
-@@ -457,6 +521,20 @@
+@@ -421,6 +521,20 @@
  	{ "clientalivecountmax", sClientAliveCountMax, SSHCFG_GLOBAL },
  	{ "authorizedkeysfile", sAuthorizedKeysFile, SSHCFG_GLOBAL },
  	{ "authorizedkeysfile2", sAuthorizedKeysFile2, SSHCFG_GLOBAL },
@@ -130,7 +155,49 @@
  	{ "useprivilegeseparation", sUsePrivilegeSeparation, SSHCFG_GLOBAL },
  	{ "acceptenv", sAcceptEnv, SSHCFG_GLOBAL },
  	{ "permittunnel", sPermitTunnel, SSHCFG_GLOBAL },
-@@ -1368,6 +1446,107 @@
+@@ -428,6 +542,10 @@
+ 	{ "permitopen", sPermitOpen, SSHCFG_ALL },
+ 	{ "forcecommand", sForceCommand, SSHCFG_ALL },
+ 	{ "chrootdirectory", sChrootDirectory, SSHCFG_ALL },
++	{ "noneenabled", sNoneEnabled },
++	{ "hpndisabled", sHPNDisabled },
++	{ "hpnbuffersize", sHPNBufferSize },
++	{ "tcprcvbufpoll", sTcpRcvBufPoll },
+ 	{ NULL, sBadOption, 0 }
+ };
+ 
+@@ -454,6 +572,7 @@
+ 
+ 	for (i = 0; keywords[i].name; i++)
+ 		if (strcasecmp(cp, keywords[i].name) == 0) {
++		        debug ("Config token is %s", keywords[i].name);
+ 			*flags = keywords[i].flags;
+ 			return keywords[i].opcode;
+ 		}
+@@ -851,6 +970,22 @@
+ 			*intptr = value;
+ 		break;
+ 
++	case sNoneEnabled:
++		intptr = &options->none_enabled;
++		goto parse_flag;
++
++	case sTcpRcvBufPoll:
++		intptr = &options->tcp_rcv_buf_poll;
++		goto parse_flag;
++
++	case sHPNDisabled:
++		intptr = &options->hpn_disabled;
++		goto parse_flag;
++
++	case sHPNBufferSize:
++		intptr = &options->hpn_buffer_size;
++		goto parse_int;
++
+ 	case sIgnoreUserKnownHosts:
+ 		intptr = &options->ignore_user_known_hosts;
+ 		goto parse_flag;
+@@ -1311,6 +1446,107 @@
  		while (arg)
  		    arg = strdelim(&cp);
  		break;
