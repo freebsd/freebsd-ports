@@ -69,6 +69,9 @@ pre-configure:
 		-e "s=/etc/spamilter.rc=${PREFIX}/etc/spamilter.rc=" \
 		${WRKSRC}/spamilter.c \
 		${WRKSRC}/docs/docs.html ${WRKSRC}/docs/docs.txt
+	${REINPLACE_CMD} \
+		-e "s=/usr/local/=${PREFIX}/=" \
+		${WRKSRC}/Makefile.tmpl
 
 xpost-configure:
 	${REINPLACE_CMD} \
