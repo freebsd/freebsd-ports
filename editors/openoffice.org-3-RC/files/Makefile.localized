@@ -162,7 +162,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .if ${LOCALIZED_LANG} == "ja"
 CATEGORIES+=	japanese
 LANG_PKGNAME=	${LOCALIZED_LANG}
-RUN_DEPENDS+=   ${LOCALBASE}/lib/X11/fonts/TrueType/ipam.ttf:${PORTSDIR}/japanese/ipa-ttfonts
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/japanese/font-std
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ka"
