@@ -9,15 +9,15 @@ PORTNAME=	rpm
 PORTVERSION=	3.0.6
 PORTREVISION=	14
 CATEGORIES=	archivers
-MASTER_SITES=	http://ftp.tpnet.pl/vol/d4/ftp.rpm.org/rpm/dist/rpm-3.0.x/ \
-		http://www.stttelkom.ac.id/staf/TBH/distfiles/
+MASTER_SITES=	http://rpm5.org/files/rpm/rpm-3.0/ \
+		http://ftp.tpnet.pl/vol/d4/ftp.rpm.org/rpm/dist/rpm-3.0.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	The Red Hat Package Manager
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-CONFLICTS=	rpm-4.*
+CONFLICTS=	rpm-4.* rpm-5.*
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
