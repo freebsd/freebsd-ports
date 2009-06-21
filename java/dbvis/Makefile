@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	dbvis
-PORTVERSION=	6.5.1
-PORTREVISION=	1
+PORTVERSION=	6.5.6
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.dbvis.com/product_download/dbvis/media/
+MASTER_SITES=	http://www.minq.se/product_download/dbvis-6.5.6/media/
 DISTNAME=	dbvis_unix_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	contact@toha.org.ua
 COMMENT=	DbVisualizer database tool
-
-BROKEN=		unfetchable
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
