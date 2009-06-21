@@ -1,0 +1,18 @@
+moreutils is a growing collection of the unix tools that nobody thought to
+write thirty years ago.
+
+So far, it includes the following utilities:
+
+ - sponge: soak up standard input and write to a file
+ - ifne: run a program if the standard input is not empty
+ - vidir: edit a directory in your text editor
+ - vipe: insert a text editor into a pipe
+ - ts: timestamp standard input
+ - combine: combine the lines in two files using boolean operations
+ - pee: tee standard input to pipes
+ - zrun: automatically uncompress arguments to command
+ - mispipe: pipe two commands, returning the exit status of the first
+ - isutf8: check if a file or standard input is utf-8
+ - lckdo: execute a program with a lock held
+
+WWW: http://kitenet.net/~joey/code/moreutils/

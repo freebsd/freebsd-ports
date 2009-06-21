@@ -477,6 +477,7 @@
     SUBDIR += monitord
     SUBDIR += monkeytail
     SUBDIR += mono-kmod
+    SUBDIR += moreutils
     SUBDIR += most
     SUBDIR += mount.app
     SUBDIR += mountsmb2
