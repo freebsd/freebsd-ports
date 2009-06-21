@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	aqbanking
-PORTVERSION=	3.8.1
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	finance
-MASTER_SITES=	${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
+DISTFILES=	download.php\?package=03\&release=36\&file=01\&dummy=aqbanking-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
 
-LIB_DEPENDS=	gwenhywfar.53:${PORTSDIR}/devel/gwenhywfar \
+LIB_DEPENDS=	gwenhywfar.55:${PORTSDIR}/devel/gwenhywfar \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
 OPTIONS=	KTOBLZCHECK	"KtoBlzCheck support"	off
@@ -25,6 +24,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	special flags for threading
+MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -32,10 +32,10 @@ CONFIGURE_ENV+=	LIBS="${QTCFGLIBS} ${PTHREAD_LIBS}"
 CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}"
 CONFIGURE_ARGS+=	--with-frontends="cbanking qbanking"
 
-USE_LDCONFIG=	${PREFIX}/lib/aqbanking/plugins/20/bankinfo \
-		${PREFIX}/lib/aqbanking/plugins/20/frontends/qbanking/cfgmodules\
-		${PREFIX}/lib/aqbanking/plugins/20/imexporters \
-		${PREFIX}/lib/aqbanking/plugins/20/providers \
+USE_LDCONFIG=	${PREFIX}/lib/aqbanking/plugins/29/bankinfo \
+		${PREFIX}/lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules\
+		${PREFIX}/lib/aqbanking/plugins/29/imexporters \
+		${PREFIX}/lib/aqbanking/plugins/29/providers \
 		${PREFIX}/lib
 
 .include <bsd.port.pre.mk>

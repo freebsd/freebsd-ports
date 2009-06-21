@@ -1,7 +1,8 @@
+bin/aqbanking-cli
 bin/aqbanking-config
-bin/aqhbci-tool3
+bin/aqhbci-tool4
 bin/hbcixml3
-bin/qb-help6
+bin/qb-help8
 include/aqbanking/account.h
 include/aqbanking/account_be.h
 include/aqbanking/accstatus.h
@@ -13,6 +14,7 @@ include/aqbanking/bankinfoplugin_be.h
 include/aqbanking/bankinfoservice.h
 include/aqbanking/banking.h
 include/aqbanking/banking_be.h
+include/aqbanking/banking_cfg.h
 include/aqbanking/banking_imex.h
 include/aqbanking/banking_info.h
 include/aqbanking/banking_ob.h
@@ -140,67 +142,70 @@ include/qbanking/qguiprogresswidget.h
 include/qbanking/qguiprogresswidget.ui.h
 include/qbanking/qguisimplebox.h
 include/qbanking/qguisimplebox.ui.h
-lib/aqbanking/plugins/20/bankinfo/at.la
-lib/aqbanking/plugins/20/bankinfo/at.so
-lib/aqbanking/plugins/20/bankinfo/at.xml
-lib/aqbanking/plugins/20/bankinfo/ca.la
-lib/aqbanking/plugins/20/bankinfo/ca.so
-lib/aqbanking/plugins/20/bankinfo/ca.xml
-lib/aqbanking/plugins/20/bankinfo/ch.la
-lib/aqbanking/plugins/20/bankinfo/ch.so
-lib/aqbanking/plugins/20/bankinfo/ch.xml
-lib/aqbanking/plugins/20/bankinfo/de.la
-lib/aqbanking/plugins/20/bankinfo/de.so
-lib/aqbanking/plugins/20/bankinfo/de.xml
-lib/aqbanking/plugins/20/bankinfo/us.la
-lib/aqbanking/plugins/20/bankinfo/us.so
-lib/aqbanking/plugins/20/bankinfo/us.xml
-lib/aqbanking/plugins/20/debugger/aqhbci/aqhbci-qt3-debug
-lib/aqbanking/plugins/20/debugger/aqhbci/qt_debug.xml
-lib/aqbanking/plugins/20/frontends/qbanking/cfgmodules/aqhbci.la
-lib/aqbanking/plugins/20/frontends/qbanking/cfgmodules/aqhbci.so
-lib/aqbanking/plugins/20/frontends/qbanking/cfgmodules/aqhbci.so.0
-lib/aqbanking/plugins/20/frontends/qbanking/cfgmodules/aqofxconnect.la
-lib/aqbanking/plugins/20/frontends/qbanking/cfgmodules/aqofxconnect.so
-lib/aqbanking/plugins/20/frontends/qbanking/cfgmodules/aqofxconnect.so.0
-lib/aqbanking/plugins/20/imexporters/csv.la
-lib/aqbanking/plugins/20/imexporters/csv.so
-lib/aqbanking/plugins/20/imexporters/csv.xml
-lib/aqbanking/plugins/20/imexporters/dtaus.la
-lib/aqbanking/plugins/20/imexporters/dtaus.so
-lib/aqbanking/plugins/20/imexporters/dtaus.xml
-lib/aqbanking/plugins/20/imexporters/eri2.la
-lib/aqbanking/plugins/20/imexporters/eri2.so
-lib/aqbanking/plugins/20/imexporters/eri2.xml
-lib/aqbanking/plugins/20/imexporters/ofx.la
-lib/aqbanking/plugins/20/imexporters/ofx.so
-lib/aqbanking/plugins/20/imexporters/ofx.xml
-lib/aqbanking/plugins/20/imexporters/openhbci1.la
-lib/aqbanking/plugins/20/imexporters/openhbci1.so
-lib/aqbanking/plugins/20/imexporters/openhbci1.xml
-lib/aqbanking/plugins/20/imexporters/sepa.la
-lib/aqbanking/plugins/20/imexporters/sepa.so
-lib/aqbanking/plugins/20/imexporters/sepa.xml
-lib/aqbanking/plugins/20/imexporters/swift.la
-lib/aqbanking/plugins/20/imexporters/swift.so
-lib/aqbanking/plugins/20/imexporters/swift.xml
-lib/aqbanking/plugins/20/imexporters/xmldb.la
-lib/aqbanking/plugins/20/imexporters/xmldb.so
-lib/aqbanking/plugins/20/imexporters/xmldb.xml
-lib/aqbanking/plugins/20/imexporters/yellownet.la
-lib/aqbanking/plugins/20/imexporters/yellownet.so
-lib/aqbanking/plugins/20/imexporters/yellownet.xml
-lib/aqbanking/plugins/20/providers/aqhbci.la
-lib/aqbanking/plugins/20/providers/aqhbci.so
-lib/aqbanking/plugins/20/providers/aqhbci.xml
-lib/aqbanking/plugins/20/providers/aqnone.la
-lib/aqbanking/plugins/20/providers/aqnone.so
-lib/aqbanking/plugins/20/providers/aqnone.xml
-lib/aqbanking/plugins/20/providers/aqofxconnect.la
-lib/aqbanking/plugins/20/providers/aqofxconnect.so
-lib/aqbanking/plugins/20/providers/aqofxconnect.xml
-lib/aqbanking/plugins/20/wizards/qt3-wizard
-lib/aqbanking/plugins/20/wizards/qt3_wizard.xml
+lib/aqbanking/plugins/29/bankinfo/at.la
+lib/aqbanking/plugins/29/bankinfo/at.so
+lib/aqbanking/plugins/29/bankinfo/at.xml
+lib/aqbanking/plugins/29/bankinfo/ca.la
+lib/aqbanking/plugins/29/bankinfo/ca.so
+lib/aqbanking/plugins/29/bankinfo/ca.xml
+lib/aqbanking/plugins/29/bankinfo/ch.la
+lib/aqbanking/plugins/29/bankinfo/ch.so
+lib/aqbanking/plugins/29/bankinfo/ch.xml
+lib/aqbanking/plugins/29/bankinfo/de.la
+lib/aqbanking/plugins/29/bankinfo/de.so
+lib/aqbanking/plugins/29/bankinfo/de.xml
+lib/aqbanking/plugins/29/bankinfo/us.la
+lib/aqbanking/plugins/29/bankinfo/us.so
+lib/aqbanking/plugins/29/bankinfo/us.xml
+lib/aqbanking/plugins/29/debugger/aqhbci/aqhbci-qt3-debug
+lib/aqbanking/plugins/29/debugger/aqhbci/qt_debug.xml
+lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.la
+lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.so
+lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.so.0
+lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.la
+lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.so
+lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.so.0
+lib/aqbanking/plugins/29/imexporters/csv.la
+lib/aqbanking/plugins/29/imexporters/csv.so
+lib/aqbanking/plugins/29/imexporters/csv.xml
+lib/aqbanking/plugins/29/imexporters/ctxfile.la
+lib/aqbanking/plugins/29/imexporters/ctxfile.so
+lib/aqbanking/plugins/29/imexporters/ctxfile.xml
+lib/aqbanking/plugins/29/imexporters/dtaus.la
+lib/aqbanking/plugins/29/imexporters/dtaus.so
+lib/aqbanking/plugins/29/imexporters/dtaus.xml
+lib/aqbanking/plugins/29/imexporters/eri2.la
+lib/aqbanking/plugins/29/imexporters/eri2.so
+lib/aqbanking/plugins/29/imexporters/eri2.xml
+lib/aqbanking/plugins/29/imexporters/ofx.la
+lib/aqbanking/plugins/29/imexporters/ofx.so
+lib/aqbanking/plugins/29/imexporters/ofx.xml
+lib/aqbanking/plugins/29/imexporters/openhbci1.la
+lib/aqbanking/plugins/29/imexporters/openhbci1.so
+lib/aqbanking/plugins/29/imexporters/openhbci1.xml
+lib/aqbanking/plugins/29/imexporters/sepa.la
+lib/aqbanking/plugins/29/imexporters/sepa.so
+lib/aqbanking/plugins/29/imexporters/sepa.xml
+lib/aqbanking/plugins/29/imexporters/swift.la
+lib/aqbanking/plugins/29/imexporters/swift.so
+lib/aqbanking/plugins/29/imexporters/swift.xml
+lib/aqbanking/plugins/29/imexporters/xmldb.la
+lib/aqbanking/plugins/29/imexporters/xmldb.so
+lib/aqbanking/plugins/29/imexporters/xmldb.xml
+lib/aqbanking/plugins/29/imexporters/yellownet.la
+lib/aqbanking/plugins/29/imexporters/yellownet.so
+lib/aqbanking/plugins/29/imexporters/yellownet.xml
+lib/aqbanking/plugins/29/providers/aqhbci.la
+lib/aqbanking/plugins/29/providers/aqhbci.so
+lib/aqbanking/plugins/29/providers/aqhbci.xml
+lib/aqbanking/plugins/29/providers/aqnone.la
+lib/aqbanking/plugins/29/providers/aqnone.so
+lib/aqbanking/plugins/29/providers/aqnone.xml
+lib/aqbanking/plugins/29/providers/aqofxconnect.la
+lib/aqbanking/plugins/29/providers/aqofxconnect.so
+lib/aqbanking/plugins/29/providers/aqofxconnect.xml
+lib/aqbanking/plugins/29/wizards/qt3-wizard
+lib/aqbanking/plugins/29/wizards/qt3_wizard.xml
 lib/gwenhywfar/plugins/47/dbio/dtaus.la
 lib/gwenhywfar/plugins/47/dbio/dtaus.so
 lib/gwenhywfar/plugins/47/dbio/dtaus.xml
@@ -209,19 +214,19 @@ lib/gwenhywfar/plugins/47/dbio/swift.so
 lib/gwenhywfar/plugins/47/dbio/swift.xml
 lib/libaqbanking.la
 lib/libaqbanking.so
-lib/libaqbanking.so.28
+lib/libaqbanking.so.29
 lib/libaqhbci.la
 lib/libaqhbci.so
-lib/libaqhbci.so.14
+lib/libaqhbci.so.16
 lib/libaqnone.la
 lib/libaqnone.so
-lib/libaqnone.so.28
+lib/libaqnone.so.29
 lib/libaqofxconnect.la
 lib/libaqofxconnect.so
-lib/libaqofxconnect.so.4
+lib/libaqofxconnect.so.5
 lib/libqbanking.la
 lib/libqbanking.so
-lib/libqbanking.so.6
+lib/libqbanking.so.8
 libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
 share/aqbanking/backends/aqhbci/hbci.xml
@@ -262,14 +267,20 @@ share/aqbanking/imexporters/csv/profiles/aqmoney2.conf
 share/aqbanking/imexporters/csv/profiles/bankaustria.conf
 share/aqbanking/imexporters/csv/profiles/comdirect.conf
 share/aqbanking/imexporters/csv/profiles/default.conf
+share/aqbanking/imexporters/csv/profiles/diba.conf
+share/aqbanking/imexporters/csv/profiles/dkb.conf
+share/aqbanking/imexporters/csv/profiles/full.conf
+share/aqbanking/imexporters/csv/profiles/hypovereinsbank.conf
 share/aqbanking/imexporters/csv/profiles/lbbberlin.conf
 share/aqbanking/imexporters/csv/profiles/mijnpostbank.conf
 share/aqbanking/imexporters/csv/profiles/oko.conf
 share/aqbanking/imexporters/csv/profiles/psk.conf
+share/aqbanking/imexporters/csv/profiles/sparda.conf
 share/aqbanking/imexporters/csv/profiles/spk-aachen.conf
 share/aqbanking/imexporters/csv/profiles/spk-steiermark.conf
 share/aqbanking/imexporters/csv/profiles/tonline-banking.conf
 share/aqbanking/imexporters/csv/profiles/vrnetworld.conf
+share/aqbanking/imexporters/ctxfile/profiles/default.conf
 share/aqbanking/imexporters/dtaus/profiles/debitnote.conf
 share/aqbanking/imexporters/dtaus/profiles/default.conf
 share/aqbanking/imexporters/dtaus/profiles/transfer.conf
@@ -311,6 +322,8 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm share/aqbanking/imexporters/eri
 @dirrm share/aqbanking/imexporters/dtaus/profiles
 @dirrm share/aqbanking/imexporters/dtaus
+@dirrm share/aqbanking/imexporters/ctxfile/profiles
+@dirrm share/aqbanking/imexporters/ctxfile
 @dirrm share/aqbanking/imexporters/csv/profiles
 @dirrm share/aqbanking/imexporters/csv
 @dirrm share/aqbanking/imexporters
@@ -329,16 +342,16 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm share/aqbanking/backends/aqhbci
 @dirrm share/aqbanking/backends
 @dirrm share/aqbanking
-@dirrm lib/aqbanking/plugins/20/wizards
-@dirrm lib/aqbanking/plugins/20/providers
-@dirrm lib/aqbanking/plugins/20/imexporters
-@dirrm lib/aqbanking/plugins/20/frontends/qbanking/cfgmodules
-@dirrm lib/aqbanking/plugins/20/frontends/qbanking
-@dirrm lib/aqbanking/plugins/20/frontends
-@dirrm lib/aqbanking/plugins/20/debugger/aqhbci
-@dirrm lib/aqbanking/plugins/20/debugger
-@dirrm lib/aqbanking/plugins/20/bankinfo
-@dirrm lib/aqbanking/plugins/20
+@dirrm lib/aqbanking/plugins/29/wizards
+@dirrm lib/aqbanking/plugins/29/providers
+@dirrm lib/aqbanking/plugins/29/imexporters
+@dirrm lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules
+@dirrm lib/aqbanking/plugins/29/frontends/qbanking
+@dirrm lib/aqbanking/plugins/29/frontends
+@dirrm lib/aqbanking/plugins/29/debugger/aqhbci
+@dirrm lib/aqbanking/plugins/29/debugger
+@dirrm lib/aqbanking/plugins/29/bankinfo
+@dirrm lib/aqbanking/plugins/29
 @dirrm lib/aqbanking/plugins
 @dirrm lib/aqbanking
 @dirrm include/qbanking
