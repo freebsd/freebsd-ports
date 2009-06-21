@@ -6,7 +6,7 @@
 #
 
 PORTNAME=      crux
-PORTVERSION=   1.0.1
+PORTVERSION=   1.1.0
 CATEGORIES=    python biology
 MASTER_SITES=  http://www.canonware.com/download/Crux/
 
@@ -24,15 +24,15 @@ OPTIONS=       SYS_LINALG "Enable system ATLAS/LAPACK" Off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SYS_LINALG)
 CPPFLAGS+=      -I${LOCALBASE}/include
 LDFLAGS+=       -L${LOCALBASE}/lib
-CONFIGURE_ARGS+= --enable-sys-linalg
 CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_FORTRAN=   yes
+.if defined(WITH_SYS_LINALG)
+CONFIGURE_ARGS+= --enable-sys-linalg
 LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
 .else
 CONFIGURE_ARGS+= --disable-sys-linalg
-USE_FORTRAN=   yes
 .endif
 
 post-install:

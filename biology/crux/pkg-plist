@@ -55,8 +55,6 @@ bin/MrRogers
 share/Crux/lib/libCx.so
 share/Crux/parsers/Fasta.log
 share/Crux/parsers/Fasta.pickle
-share/Crux/parsers/Newick.log
-share/Crux/parsers/Newick.pickle
 @dirrm %%PYTHON_SITELIBDIR%%/Crux/DistMatrix
 @dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/DistMatrix
 @dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Mc3
