@@ -7,7 +7,7 @@
 
 PORTNAME=	xfburn
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://goodies.xfce.org/releases/xfburn/
 
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--disable-hal
 
 .if defined(WITH_GSTREAMER)
 USE_GSTREAMER=	core
-.warning	"GSTREAMER support not complete yet"
+CONFIGURE_ARGS+=	"LDFLAGS=-lgstpbutils-0.10"
 .else
 CONFIGURE_ARGS+=	--disable-gstreamer
 .endif
