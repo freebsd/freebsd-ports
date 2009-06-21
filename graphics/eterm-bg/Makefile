@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-bg-${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Image files for background of Eterm
 
 NO_WRKSUBDIR=	yes

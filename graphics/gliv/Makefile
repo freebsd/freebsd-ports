@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://guichaz.free.fr/gliv/files/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	An image viewer that uses Gdk-Pixbuf and OpenGL
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
