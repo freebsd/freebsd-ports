@@ -7,7 +7,7 @@
 
 PORTNAME=	astk
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=	1.7.1-1
+DISTVERSION=	1.7.4-1
 DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
@@ -48,7 +48,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 LINSTDIR=	aster/ASTK
 inst_dir=	${PREFIX}/${LINSTDIR}
 aster_dir=	${LOCALBASE}/aster/${vaster}
-S_SCRIPTS=	bin/as_run bin/as_serv bin/mpirun_template bin/sub_script
+S_SCRIPTS=	bin/as_run bin/as_serv bin/mpirun_template bin/sub_script		\
+		bin/tools/get_infos
 S_PYLIBS=	lib/alamain.py lib/as_config.py lib/as_timer.py lib/as_devtools.py	\
 		lib/as_repart.py lib/user_filter.py bin/main.py bin/parallel_cp
 C_SCRIPTS=	bin/astk bin/bsf
@@ -97,7 +98,7 @@ TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	9.4.0
+ASTER_VER=	10.0.3
 vaster=		STA${ASTER_VER:R}
 
 GIBI=		gibi2003
@@ -226,12 +227,12 @@ do-configure:
 		-e "s#?vaster?#${vaster}#"					\
 		-e "s#?TOOLS_DIR?#${tools_dir}#" ${conf_dir}/outils
 	${REINPLACE_CMD} -e "s#?HOME_ASTK?#${inst_dir}#"			\
-		-e "s#?XTERM?#${LOCALBASE}/bin/xterm#"				\
+		-e "s#?TERMINAL?#${LOCALBASE}/bin/xterm#"				\
 		-e "s#?FULL_SERVER_NAME?#${SERVER_NAME}#"			\
 		-e "s#?SERVER_NAME?#${HOST_NAME}#"				\
 		-e "s#?ASTER_ROOT?#${PREFIX}/aster#"				\
 		-e "s#?EDITOR?#${WITH_ED}#" ${conf_dir}/config_serveurs
-	${REINPLACE_CMD} -e "s#?XTERM?#${LOCALBASE}/bin/xterm#"			\
+	${REINPLACE_CMD} -e "s#?TERMINAL?#${LOCALBASE}/bin/xterm#"			\
 		-e "s#?ASTER_VERSION?#${ASTER_VER}#"				\
 		-e "s#langue : ENG#langue : ${ASTK_LANG}#"			\
 		-e "s#?DOMAIN_NAME?#${DOMAIN_NAME}#"				\
