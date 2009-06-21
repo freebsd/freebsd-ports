@@ -11,6 +11,7 @@
     SUBDIR += belote
     SUBDIR += dico
     SUBDIR += eficas
+    SUBDIR += eficas_doc
     SUBDIR += eric4
     SUBDIR += facturier
     SUBDIR += geonext

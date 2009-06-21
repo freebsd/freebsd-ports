@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CATADIR=${PREFIX}/apps/eficas/Aster/Cata
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { POST-INSTALL | PRE-DEINSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+    PRE-INSTALL)
+	if [ -f ${CATADIR}/cataSTA8c_clefs_docu ]; then
+	    mv ${CATADIR}/cataSTA8c_clefs_docu ${CATADIR}/cataSTA8c_clefs_docu.orig
+	fi
+	if [ -f ${CATADIR}/cataSTA9c_clefs_docu ]; then
+	    mv ${CATADIR}/cataSTA9c_clefs_docu ${CATADIR}/cataSTA9c_clefs_docu.orig
+	fi
+	;;
+    POST-INSTALL)
+        ;;
+    *)
+	echo "usage: $0 distname { POST-INSTALL | PRE-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
