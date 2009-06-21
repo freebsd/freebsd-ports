@@ -1,5 +1,5 @@
 bin/abakus
-share/applnk/Utilities/abakus.desktop
+share/applications/kde/abakus.desktop
 share/apps/abakus/abakusui.rc
 share/doc/HTML/en/abakus/abakus-degrees-mode.png
 share/doc/HTML/en/abakus/abakus-dnd.png
@@ -14,3 +14,4 @@ share/doc/HTML/en/abakus/kcalc-three.png
 share/icons/hicolor/64x64/apps/abakus.png
 @dirrm share/doc/HTML/en/abakus
 @dirrm share/apps/abakus
+@dirrmtry share/applications/kde
