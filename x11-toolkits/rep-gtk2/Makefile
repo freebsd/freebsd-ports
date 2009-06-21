@@ -6,7 +6,7 @@
 #    $MCom: ports/x11-toolkits/rep-gtk2/Makefile,v 1.8 2006/07/18 16:50:28 ahze Exp $
 
 PORTNAME=	rep-gtk2
-PORTVERSION=	0.18.5
+PORTVERSION=	0.18.6
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,9 +24,14 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:262:env automake:110:env libtool:15:env
+CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
+
+pre-configure:
+	@${MKDIR} ${WRKSRC}/m4
 
 .include <bsd.port.mk>
