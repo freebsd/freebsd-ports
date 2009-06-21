@@ -69,6 +69,7 @@
     SUBDIR += linux-par2cmdline
     SUBDIR += linux-ucl
     SUBDIR += linux-upx
+    SUBDIR += lzip
     SUBDIR += lzma
     SUBDIR += lzmalib
     SUBDIR += lzmautils
