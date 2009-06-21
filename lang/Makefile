@@ -145,6 +145,7 @@
     SUBDIR += klone
     SUBDIR += kroc
     SUBDIR += lafontaine
+    SUBDIR += libhx
     SUBDIR += libjit
     SUBDIR += librep
     SUBDIR += libstdc++_stldoc_3.4.0
