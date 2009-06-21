@@ -1,0 +1,9 @@
+bin/dvda-author
+share/applications/dvda-author.conf
+share/applications/dvda-author.desktop
+share/pixmaps/dvda-author.png
+@dirrmtry share/applications
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/dvda-author-09.05.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

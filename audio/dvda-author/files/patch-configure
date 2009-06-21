@@ -1,0 +1,11 @@
+--- configure.orig      2009-06-16 03:22:04.000000000 +0200
++++ configure   2009-06-16 03:22:17.000000000 +0200
+@@ -13402,7 +13402,7 @@
+      SOX_LIB="/usr/lib/libsox.a `echo /usr/lib/sox/libsox_*.a`"
+      { $as_echo "$as_me:$LINENO: SOX_LIB= $SOX_LIB" >&5
+ $as_echo "$as_me: SOX_LIB= $SOX_LIB" >&6;}
+-     SOX_LINK="$SOX_LINK -lasound -lpng -lz -lltdl -lmagic -lsamplerate"
++     SOX_LINK="$SOX_LINK -lpng -lz -lltdl -lmagic -lsamplerate"
+ 
+ fi
+ 
