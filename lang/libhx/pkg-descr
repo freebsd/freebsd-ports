@@ -1,3 +1,14 @@
 libHX is a C library (with some additional C++ bindings available)
+that provides data structures and functions for tasks common in scripting
+languages; autoresizing string manipulation, maps, deques, option parsing,
+type-checking casts and more.
+
+libHX aids in quickly writing up C/C++ data processing programs,
+by consolidating tasks that often happen to be open-coded, such as
+config file reading, option parsing, directory traversal, and others,
+into a library. The focus is on reducing the amount of time (and
+secondarily, the amount of code) a developer has to spend for otherwise
+implementing such. Subsequently, proficient coders can use this to
+code as fast as for a scripting language.
 
 WWW:	http://libhx.sourceforge.net/
