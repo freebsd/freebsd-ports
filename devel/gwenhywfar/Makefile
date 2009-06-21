@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	3.6.0
+PORTVERSION=	3.8.3
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
-DISTFILES=	download.php\?package=01\&release=17\&file=01\&dummy=gwenhywfar-3.6.0.tar.gz
+DISTFILES=	download.php\?package=01\&release=24\&file=01\&dummy=gwenhywfar-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform helper library for networking and security applications
