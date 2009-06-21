@@ -21,6 +21,8 @@ LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi \
 		otf.0:${PORTSDIR}/print/libotf
 RUN_DEPENDS=	m17n-db>=1.5.1:${PORTSDIR}/devel/m17n-db
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_XORG=	xaw xft xt
 USE_GNOME=	gnometarget libxml2 pkgconfig
 USE_AUTOTOOLS=	libtool:15
