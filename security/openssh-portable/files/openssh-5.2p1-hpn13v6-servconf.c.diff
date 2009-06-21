@@ -1,0 +1,117 @@
+diff -NupwB servconf.c servconf.c
+--- servconf.c	2009-01-28 00:31:23.000000000 -0500
++++ servconf.c	2009-05-14 12:36:10.000000000 -0400
+@@ -128,11 +128,20 @@ initialize_server_options(ServerOptions 
+ 	options->adm_forced_command = NULL;
+ 	options->chroot_directory = NULL;
+ 	options->zero_knowledge_password_authentication = -1;
++	options->none_enabled = -1;
++	options->tcp_rcv_buf_poll = -1;
++	options->hpn_disabled = -1;
++	options->hpn_buffer_size = -1;
+ }
+ 
+ void
+ fill_default_server_options(ServerOptions *options)
+ {
++	/* needed for hpn socket tests */
++	int sock;
++	int socksize;
++	int socksizelen = sizeof(int);
++
+ 	/* Portable-specific options */
+ 	if (options->use_pam == -1)
+ 		options->use_pam = 0;
+@@ -262,6 +271,42 @@ fill_default_server_options(ServerOption
+ 	if (options->zero_knowledge_password_authentication == -1)
+ 		options->zero_knowledge_password_authentication = 0;
+ 
++	if (options->hpn_disabled == -1) 
++		options->hpn_disabled = 0;
++
++	if (options->hpn_buffer_size == -1) {
++		/* option not explicitly set. Now we have to figure out */
++		/* what value to use */
++		if (options->hpn_disabled == 1) {
++			options->hpn_buffer_size = CHAN_SES_WINDOW_DEFAULT;
++		} else {
++			/* get the current RCV size and set it to that */
++			/*create a socket but don't connect it */
++			/* we use that the get the rcv socket size */
++			sock = socket(AF_INET, SOCK_STREAM, 0);
++			getsockopt(sock, SOL_SOCKET, SO_RCVBUF, 
++				   &socksize, &socksizelen);
++			close(sock);
++			options->hpn_buffer_size = socksize;
++			debug ("HPN Buffer Size: %d", options->hpn_buffer_size);
++			
++		} 
++	} else {
++		/* we have to do this incase the user sets both values in a contradictory */
++		/* manner. hpn_disabled overrrides hpn_buffer_size*/
++		if (options->hpn_disabled <= 0) {
++			if (options->hpn_buffer_size == 0)
++				options->hpn_buffer_size = 1;
++			/* limit the maximum buffer to 64MB */
++			if (options->hpn_buffer_size > 64*1024) {
++				options->hpn_buffer_size = 64*1024*1024;
++			} else {
++				options->hpn_buffer_size *= 1024;
++			}
++		} else
++			options->hpn_buffer_size = CHAN_TCP_WINDOW_DEFAULT;
++	}
++
+ 	/* Turn privilege separation on by default */
+ 	if (use_privsep == -1)
+ 		use_privsep = 1;
+@@ -306,6 +351,7 @@ typedef enum {
+ 	sMatch, sPermitOpen, sForceCommand, sChrootDirectory,
+ 	sUsePrivilegeSeparation, sAllowAgentForwarding,
+ 	sZeroKnowledgePasswordAuthentication,
++	sNoneEnabled, sTcpRcvBufPoll, sHPNDisabled, sHPNBufferSize,
+ 	sDeprecated, sUnsupported
+ } ServerOpCodes;
+ 
+@@ -424,6 +470,10 @@ static struct {
+ 	{ "permitopen", sPermitOpen, SSHCFG_ALL },
+ 	{ "forcecommand", sForceCommand, SSHCFG_ALL },
+ 	{ "chrootdirectory", sChrootDirectory, SSHCFG_ALL },
++	{ "noneenabled", sNoneEnabled },
++	{ "hpndisabled", sHPNDisabled },
++	{ "hpnbuffersize", sHPNBufferSize },
++	{ "tcprcvbufpoll", sTcpRcvBufPoll },
+ 	{ NULL, sBadOption, 0 }
+ };
+ 
+@@ -450,6 +500,7 @@ parse_token(const char *cp, const char *
+ 
+ 	for (i = 0; keywords[i].name; i++)
+ 		if (strcasecmp(cp, keywords[i].name) == 0) {
++		        debug ("Config token is %s", keywords[i].name);
+ 			*flags = keywords[i].flags;
+ 			return keywords[i].opcode;
+ 		}
+@@ -847,6 +898,22 @@ process_server_config_line(ServerOptions
+ 			*intptr = value;
+ 		break;
+ 
++	case sNoneEnabled:
++		intptr = &options->none_enabled;
++		goto parse_flag;
++
++	case sTcpRcvBufPoll:
++		intptr = &options->tcp_rcv_buf_poll;
++		goto parse_flag;
++
++	case sHPNDisabled:
++		intptr = &options->hpn_disabled;
++		goto parse_flag;
++
++	case sHPNBufferSize:
++		intptr = &options->hpn_buffer_size;
++		goto parse_int;
++
+ 	case sIgnoreUserKnownHosts:
+ 		intptr = &options->ignore_user_known_hosts;
+ 		goto parse_flag;

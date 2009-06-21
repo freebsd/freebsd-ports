@@ -1,5 +1,5 @@
---- servconf.c.orig	2009-05-02 19:24:09.000000000 +0400
-+++ servconf.c	2009-05-02 19:29:37.000000000 +0400
+--- servconf.c.orig	2009-05-26 15:13:32.000000000 +0400
++++ servconf.c	2009-05-26 15:24:39.000000000 +0400
 @@ -42,6 +42,10 @@
  #include "channels.h"
  #include "groupaccess.h"
@@ -11,36 +11,27 @@
  static void add_listen_addr(ServerOptions *, char *, int);
  static void add_one_listen_addr(ServerOptions *, char *, int);
  
-@@ -74,7 +78,7 @@
- 	options->ignore_user_known_hosts = -1;
- 	options->print_motd = -1;
- 	options->print_lastlog = -1;
--	options->x11_forwarding = -1;
-+	options->x11_forwarding = 1;
- 	options->x11_display_offset = -1;
- 	options->x11_use_localhost = -1;
- 	options->xauth_location = NULL;
 @@ -128,6 +132,24 @@
  	options->adm_forced_command = NULL;
  	options->chroot_directory = NULL;
  	options->zero_knowledge_password_authentication = -1;
 +#ifdef WITH_LDAP_PUBKEY
-+	/* XXX dirty */
-+	options->lpk.ld = NULL;
-+	options->lpk.on = -1;
-+	options->lpk.servers = NULL;
-+	options->lpk.u_basedn = NULL;
-+	options->lpk.g_basedn = NULL;
-+	options->lpk.binddn = NULL;
-+	options->lpk.bindpw = NULL;
-+	options->lpk.sgroup = NULL;
-+	options->lpk.filter = NULL;
-+	options->lpk.fgroup = NULL;
-+	options->lpk.l_conf = NULL;
-+	options->lpk.tls = -1;
-+	options->lpk.b_timeout.tv_sec = -1;
-+	options->lpk.s_timeout.tv_sec = -1;
-+	options->lpk.flags = FLAG_EMPTY;
++ 	/* XXX dirty */
++ 	options->lpk.ld = NULL;
++ 	options->lpk.on = -1;
++ 	options->lpk.servers = NULL;
++ 	options->lpk.u_basedn = NULL;
++ 	options->lpk.g_basedn = NULL;
++ 	options->lpk.binddn = NULL;
++ 	options->lpk.bindpw = NULL;
++ 	options->lpk.sgroup = NULL;
++ 	options->lpk.filter = NULL;
++ 	options->lpk.fgroup = NULL;
++ 	options->lpk.l_conf = NULL;
++ 	options->lpk.tls = -1;
++ 	options->lpk.b_timeout.tv_sec = -1;
++ 	options->lpk.s_timeout.tv_sec = -1;
++ 	options->lpk.flags = FLAG_EMPTY;
 +#endif
  }
  
