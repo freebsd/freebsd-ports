@@ -13,6 +13,8 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org nsc display driver
 
+BROKEN=		does not build
+
 XORG_CAT=	driver
 USE_XORG=	videoproto xextproto xf86dgaproto
 MAN4=		nsc.4x
