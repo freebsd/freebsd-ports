@@ -16,12 +16,15 @@ COMMENT=	An implementation of dialog(1) under a BSD-friendly license
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.so:${PORTSDIR}/devel/freelibiberty
 
-CFLAGS:=	-I${LOCALBASE}/include/freelibiberty ${CFLAGS}
+CFLAGS+=	-I${LOCALBASE}/include/freelibiberty
 
 MAN1=		dialog.1
 PLIST_FILES=	bin/dialog
 
 post-extract:
 	@(cd ${WRKSRC}; ${RM} -f .depend)
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
