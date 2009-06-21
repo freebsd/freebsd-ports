@@ -188,6 +188,7 @@
 %%SERV%%%%ASTKDIR%%/bin/mpirun_template
 %%SERV%%%%ASTKDIR%%/bin/parallel_cp
 %%SERV%%%%ASTKDIR%%/bin/sub_script
+%%SERV%%%%ASTKDIR%%/bin/tools/get_infos
 %%SERV%%%%ASTKDIR%%/conf/.mysql_connect_REX
 %%SERV%%%%ASTKDIR%%/conf/aster_profile.sh
 %%SERV%%%%ASTKDIR%%/conf/config
@@ -337,9 +338,18 @@
 %%SERV%%%%ASTKDIR%%/unittest/jobs/jobs.export.in
 %%SERV%%%%ASTKDIR%%/unittest/meshtool/Makefile
 %%SERV%%%%ASTKDIR%%/unittest/meshtool/meshtool.export.in
+%%SERV%%%%ASTKDIR%%/unittest/others/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/others/agla.py
+%%SERV%%%%ASTKDIR%%/unittest/others/agla.pyc
+%%SERV%%%%ASTKDIR%%/unittest/others/agla.pyo
+%%SERV%%%%ASTKDIR%%/unittest/others/scroll.py
+%%SERV%%%%ASTKDIR%%/unittest/others/scroll.pyc
+%%SERV%%%%ASTKDIR%%/unittest/others/scroll.pyo
 %%SERV%%%%ASTKDIR%%/unittest/param/Makefile
-%%SERV%%%%ASTKDIR%%/unittest/param/param.distr
 %%SERV%%%%ASTKDIR%%/unittest/param/param.export.in
+%%SERV%%%%ASTKDIR%%/unittest/param/test_param.py
+%%SERV%%%%ASTKDIR%%/unittest/param/test_param.pyc
+%%SERV%%%%ASTKDIR%%/unittest/param/test_param.pyo
 %%SERV%%%%ASTKDIR%%/unittest/surcharge/Makefile
 %%SERV%%%%ASTKDIR%%/unittest/surcharge/surcharge.export.in
 %%SERV%%%%ASTKDIR%%/unittest/surcharge/surcharge_astout.export.in
@@ -360,6 +370,7 @@
 %%CLIENT%%@dirrm %%ASTKDIR%%/share
 %%SERV%%@dirrm %%ASTKDIR%%/unittest/surcharge
 %%SERV%%@dirrm %%ASTKDIR%%/unittest/param
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/others
 %%SERV%%@dirrm %%ASTKDIR%%/unittest/meshtool
 %%SERV%%@dirrm %%ASTKDIR%%/unittest/jobs
 %%SERV%%@dirrm %%ASTKDIR%%/unittest/etude
@@ -370,6 +381,7 @@
 %%SERV%%@dirrm %%ASTKDIR%%/unittest
 %%SERV%%@dirrm %%ASTKDIR%%/lib
 %%SERV%%@dirrm %%ASTKDIR%%/conf
+%%SERV%%@dirrm %%ASTKDIR%%/bin/tools
 %%SERV%%@dirrm %%ASTKDIR%%/bin
 @dirrm %%ASTKDIR%%
 @dirrmtry aster/ASTK
