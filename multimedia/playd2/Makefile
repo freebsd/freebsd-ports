@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	playd
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.logvinov.ru/files/dist/playd/
 
@@ -16,10 +16,12 @@ COMMENT=	Very easy to use mplayer sh wrapper script, with usefull features
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 PLIST_FILES=	bin/playd
+MAN1=		playd.1
 
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/playd ${PREFIX}/bin/playd
+	${INSTALL_SCRIPT} ${WRKSRC}/playd ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/playd.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
