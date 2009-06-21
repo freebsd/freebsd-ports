@@ -33,4 +33,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
+	@${FIND} ${WRKSRC} -name "*".bak | ${XARGS} ${RM} -f
+
 .include <bsd.port.mk>
