@@ -7,9 +7,8 @@
 
 PORTNAME=	eficas
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=	1.15.0-1
+DISTVERSION=	1.16.0-1
 DISTVERSIONSUFFIX=	.noarch
-PORTREVISION=	1
 CATEGORIES=	french cad
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw		\
 		${PYNUMERIC}							\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-ASTER_VER=	9.4.0
+ASTER_VER=	10.0.3
 ASTER_DISTVERSION=	${ASTER_VER}-2
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
@@ -51,14 +50,14 @@ SUB_FILES+=	qtEficas
 
 ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py	\
 		Traducteur/traduitV8V9.py Traducteur/traduitV7V8.py Aster/test_eficas.py\
-		Aster/qtEficas_aster.py
+		Aster/qtEficas_aster.py generator/OpenturnsSTD.py	\
+		generator/generator_openturns_study.py generator/generator_openturns_wrapper.py
 FIXSHTK=	bureau.py cataediteur.py panels.py
 FIXSHQT=	qtCommun.py
 
 post-extract:
 	(cd ${WRKDIR} &&	\
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
-	${MV} ${WRKSRC}/Aster/Doc ${WRKDIR}
 
 pre-configure:
 	${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig
@@ -79,18 +78,19 @@ pre-configure:
 		${WRKSRC}/Aster/editeur.ini
 
 do-install:
-	@${MKDIR} ${EFICASDIR}
-	@${CP} -R ${WRKSRC}/* ${EFICASDIR}
+	${MKDIR} ${EFICASDIR}
+	${CP} -R ${WRKSRC}/* ${EFICASDIR}
+	${RMDIR} ${EFICASDIR}/Aster/Doc
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
 .if !defined(WITHOUT_QT)
-	@${INSTALL_SCRIPT} ${WRKDIR}/qtEficas ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/qtEficas ${PREFIX}/bin
 .endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CP} ${WRKDIR}/Doc/* ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
+
+post-install:
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
