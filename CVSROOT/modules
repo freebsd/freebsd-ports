@@ -3575,6 +3575,7 @@ fr-aster                        ports/french/aster
 fr-belote                       ports/french/belote
 fr-dico                         ports/french/dico
 fr-eficas                       ports/french/eficas
+fr-eficas_doc                   ports/french/eficas_doc
 fr-eric4                        ports/french/eric4
 fr-facturier                    ports/french/facturier
 fr-geonext                      ports/french/geonext
@@ -7384,6 +7385,7 @@ libhash                         ports/devel/libhash
 libhid                          ports/devel/libhid
 libhoard                        ports/devel/libhoard
 libhome                         ports/misc/libhome
+libhx                           ports/lang/libhx
 libical                         ports/devel/libical
 libice                          ports/x11/libICE
 libiconv                        ports/converters/libiconv
@@ -8890,6 +8892,7 @@ mopac                           ports/biology/mopac
 mopd                            ports/net/mopd
 morebalance                     ports/net/morebalance
 moregroupware                   ports/deskutils/moregroupware
+moreutils                       ports/sysutils/moreutils
 moria                           ports/games/moria
 morla                           ports/editors/morla
 morpheus                        ports/graphics/morpheus
