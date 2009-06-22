@@ -1,0 +1,95 @@
+bin/xfce4-power-manager
+bin/xfce4-power-manager-settings
+etc/xdg/autostart/xfce4-power-manager.desktop
+libexec/xfce4/panel-plugins/xfce4-brightness-plugin
+share/applications/xfce4-power-manager-settings.desktop
+share/icons/hicolor/scalable/actions/xfpm-hibernate.svg
+share/icons/hicolor/scalable/actions/xfpm-suspend.svg
+share/icons/hicolor/scalable/status/xfpm-ac-adapter.svg
+share/icons/hicolor/scalable/status/xfpm-brightness-lcd-invalid.svg
+share/icons/hicolor/scalable/status/xfpm-brightness-lcd.svg
+share/icons/hicolor/scalable/status/xfpm-keyboard-000.svg
+share/icons/hicolor/scalable/status/xfpm-keyboard-030.svg
+share/icons/hicolor/scalable/status/xfpm-keyboard-060.svg
+share/icons/hicolor/scalable/status/xfpm-keyboard-100.svg
+share/icons/hicolor/scalable/status/xfpm-mouse-000.svg
+share/icons/hicolor/scalable/status/xfpm-mouse-030.svg
+share/icons/hicolor/scalable/status/xfpm-mouse-060.svg
+share/icons/hicolor/scalable/status/xfpm-mouse-100.svg
+share/icons/hicolor/scalable/status/xfpm-phone-000.svg
+share/icons/hicolor/scalable/status/xfpm-phone-030.svg
+share/icons/hicolor/scalable/status/xfpm-phone-060.svg
+share/icons/hicolor/scalable/status/xfpm-phone-100.svg
+share/icons/hicolor/scalable/status/xfpm-primary-000-charging.svg
+share/icons/hicolor/scalable/status/xfpm-primary-000.svg
+share/icons/hicolor/scalable/status/xfpm-primary-020-charging.svg
+share/icons/hicolor/scalable/status/xfpm-primary-020.svg
+share/icons/hicolor/scalable/status/xfpm-primary-040-charging.svg
+share/icons/hicolor/scalable/status/xfpm-primary-040.svg
+share/icons/hicolor/scalable/status/xfpm-primary-060-charging.svg
+share/icons/hicolor/scalable/status/xfpm-primary-060.svg
+share/icons/hicolor/scalable/status/xfpm-primary-080-charging.svg
+share/icons/hicolor/scalable/status/xfpm-primary-080.svg
+share/icons/hicolor/scalable/status/xfpm-primary-100-charging.svg
+share/icons/hicolor/scalable/status/xfpm-primary-100.svg
+share/icons/hicolor/scalable/status/xfpm-primary-charged.svg
+share/icons/hicolor/scalable/status/xfpm-primary-missing.svg
+share/icons/hicolor/scalable/status/xfpm-ups-000-charging.svg
+share/icons/hicolor/scalable/status/xfpm-ups-000.svg
+share/icons/hicolor/scalable/status/xfpm-ups-020-charging.svg
+share/icons/hicolor/scalable/status/xfpm-ups-020.svg
+share/icons/hicolor/scalable/status/xfpm-ups-040-charging.svg
+share/icons/hicolor/scalable/status/xfpm-ups-040.svg
+share/icons/hicolor/scalable/status/xfpm-ups-060-charging.svg
+share/icons/hicolor/scalable/status/xfpm-ups-060.svg
+share/icons/hicolor/scalable/status/xfpm-ups-080-charging.svg
+share/icons/hicolor/scalable/status/xfpm-ups-080.svg
+share/icons/hicolor/scalable/status/xfpm-ups-100-charging.svg
+share/icons/hicolor/scalable/status/xfpm-ups-100.svg
+share/icons/hicolor/scalable/status/xfpm-ups-charged.svg
+share/icons/hicolor/scalable/status/xfpm-ups-missing.svg
+share/locale/ca/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/cs/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/da/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/de/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/el/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/es/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/et/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/eu/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/fi/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/fr/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/gl/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/id/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/it/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/ja/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/nb/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/nl/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/pt/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/pt_BR/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/ru/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/sv/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/tr/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/uk/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/ur/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-power-manager.mo
+share/xfce4/doc/C/images/xfpm-brightness-plugin.png
+share/xfce4/doc/C/images/xfpm-context-menu.png
+share/xfce4/doc/C/images/xfpm-extended-settings.png
+share/xfce4/doc/C/images/xfpm-general-settings.png
+share/xfce4/doc/C/xfce4-power-manager.html
+share/xfce4/panel-plugins/xfce4-brightness-plugin.desktop
+@dirrm share/xfce4/panel-plugins
+@dirrm share/xfce4/doc/C/images
+@dirrm share/xfce4/doc/C
+@dirrm share/xfce4/doc
+@dirrm share/xfce4
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/applications
+@dirrm libexec/xfce4/panel-plugins
+@dirrm libexec/xfce4
+@dirrm etc/xdg/autostart
+@dirrm etc/xdg
