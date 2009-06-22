@@ -1,18 +1,21 @@
---- libgc/configure.orig	2008-10-22 14:20:06.000000000 -0300
-+++ libgc/configure	2008-12-10 10:40:48.000000000 -0300
-@@ -4669,7 +4669,14 @@
- 	 cat >>confdefs.h <<\_ACEOF
+
+$FreeBSD$
+
+--- libgc/configure.orig
++++ libgc/configure
+@@ -4641,7 +4641,14 @@
+ 	cat >>confdefs.h <<\_ACEOF
  #define GC_FREEBSD_THREADS 1
  _ACEOF
 -
-+        if test "${enable_parallel_mark}" = yes; then
-+          cat >>confdefs.h <<\_ACEOF
++	if test "${enable_parallel_mark}" = yes; then
++		cat >>confdefs.h <<\_ACEOF
 +#define PARALLEL_MARK 1
 +_ACEOF
-+        fi
-+        cat >>confdefs.h <<\_ACEOF
++	fi
++	cat >>confdefs.h <<\_ACEOF
 +#define THREAD_LOCAL_ALLOC 1 //only for tls=__thread. delete for pthread.
 +_ACEOF
- 	 if test "x$PTHREAD_CFLAGS" != "x"; then
+ 	if test "x$PTHREAD_CFLAGS" != "x"; then
  		INCLUDES="$INCLUDES $PTHREAD_CFLAGS"
  	fi

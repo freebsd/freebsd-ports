@@ -7,17 +7,15 @@
 #
 
 PORTNAME=	gtk-sharp
-PORTVERSION=	2.12.8
+PORTVERSION=	2.12.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
-		monodocer:${PORTSDIR}/devel/monodoc
+BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
-		monodocer:${PORTSDIR}/devel/monodoc \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 
 LATEST_LINK=	gtk-sharp20

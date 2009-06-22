@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/al
 bin/al1
 bin/al2
@@ -6,14 +7,15 @@ bin/cert2spc
 bin/certmgr
 bin/chktrust
 bin/cilc
+bin/csharp
 bin/disco
 bin/dtd2rng
 bin/dtd2xsd
 bin/gacutil
+bin/gacutil1
 bin/gacutil2
 bin/genxs
 bin/genxs1
-bin/genxs2
 bin/gmcs
 bin/httpcfg
 bin/ilasm
@@ -26,15 +28,22 @@ bin/makecert
 bin/mconfig
 bin/mcs
 bin/mcs1
+bin/mdassembler
+bin/mdoc
+bin/mdoc-assemble
+bin/mdoc-export-html
+bin/mdoc-export-msxdoc
+bin/mdoc-update
+bin/mdoc-validate
+bin/mdvalidater
 bin/mjs
 bin/mkbundle
 bin/mkbundle1
 bin/mkbundle2
+bin/mod
 bin/mono
-bin/mono-api-diff
 bin/mono-api-info
-bin/mono-api-info1
-bin/mono-api-info2
+bin/mono-cil-strip
 bin/mono-find-provides
 bin/mono-find-requires
 bin/mono-service
@@ -43,6 +52,9 @@ bin/mono-shlib-cop
 bin/mono-test-install
 bin/mono-xmltool
 bin/monodis
+bin/monodocer
+bin/monodocs2html
+bin/monodocs2slashdoc
 bin/monograph
 bin/monolinker
 bin/monop
@@ -169,10 +181,11 @@ lib/libmono.a
 lib/libmono.la
 lib/libmono.so
 lib/libmono.so.0
+lib/mono-source-libs/Options.cs
+lib/mono-source-libs/getline.cs
 lib/mono/1.0/Accessibility.dll
 lib/mono/1.0/ByteFX.Data.dll
 lib/mono/1.0/Commons.Xml.Relaxng.dll
-lib/mono/1.0/CorCompare.exe
 lib/mono/1.0/CustomMarshalers.dll
 lib/mono/1.0/FirebirdSql.Data.Firebird.dll
 lib/mono/1.0/I18N.CJK.dll
@@ -196,6 +209,8 @@ lib/mono/1.0/Mono.Data.TdsClient.dll
 lib/mono/1.0/Mono.Data.dll
 lib/mono/1.0/Mono.GetOptions.dll
 lib/mono/1.0/Mono.Http.dll
+lib/mono/1.0/Mono.Messaging.RabbitMQ.dll
+lib/mono/1.0/Mono.Messaging.dll
 lib/mono/1.0/Mono.Posix.dll
 lib/mono/1.0/Mono.Security.Win32.dll
 lib/mono/1.0/Mono.Security.dll
@@ -204,6 +219,7 @@ lib/mono/1.0/Novell.Directory.Ldap.dll
 lib/mono/1.0/Npgsql.dll
 lib/mono/1.0/OpenSystem.C.dll
 lib/mono/1.0/PEAPI.dll
+lib/mono/1.0/RabbitMQ.Client.dll
 lib/mono/1.0/System.Configuration.Install.dll
 lib/mono/1.0/System.Data.OracleClient.dll
 lib/mono/1.0/System.Data.dll
@@ -269,13 +285,12 @@ lib/mono/1.0/mjs.exe
 lib/mono/1.0/mjs.exe.mdb
 lib/mono/1.0/mkbundle.exe
 lib/mono/1.0/mkbundle.exe.mdb
-lib/mono/1.0/mono-api-diff.exe
-lib/mono/1.0/mono-api-info.exe
+lib/mono/1.0/mod.exe
+lib/mono/1.0/mod.exe.mdb
+lib/mono/1.0/mono-cil-strip.exe
+lib/mono/1.0/mono-cil-strip.exe.mdb
 lib/mono/1.0/mono-service.exe
 lib/mono/1.0/mono-service.exe.mdb
-lib/mono/1.0/mono-shlib-cop.exe
-lib/mono/1.0/mono-shlib-cop.exe.config
-lib/mono/1.0/mono-shlib-cop.exe.mdb
 lib/mono/1.0/mono-xmltool.exe
 lib/mono/1.0/mono-xmltool.exe.mdb
 lib/mono/1.0/monolinker.exe
@@ -286,11 +301,15 @@ lib/mono/1.0/mozroots.exe
 lib/mono/1.0/mozroots.exe.mdb
 lib/mono/1.0/mscorlib.dll
 lib/mono/1.0/mscorlib.dll.mdb
+lib/mono/1.0/nunit-console-runner.dll
 lib/mono/1.0/nunit-console.exe
 lib/mono/1.0/nunit-console.exe.config
 lib/mono/1.0/nunit-console.exe.mdb
 lib/mono/1.0/nunit.core.dll
+lib/mono/1.0/nunit.core.extensions.dll
+lib/mono/1.0/nunit.core.interfaces.dll
 lib/mono/1.0/nunit.framework.dll
+lib/mono/1.0/nunit.framework.extensions.dll
 lib/mono/1.0/nunit.mocks.dll
 lib/mono/1.0/nunit.util.dll
 lib/mono/1.0/permview.exe
@@ -309,9 +328,6 @@ lib/mono/1.0/sn.exe
 lib/mono/1.0/sn.exe.mdb
 lib/mono/1.0/soapsuds.exe
 lib/mono/1.0/soapsuds.exe.mdb
-lib/mono/1.0/sqlsharp.exe
-lib/mono/1.0/sqlsharp.exe.mdb
-lib/mono/1.0/transform.exe
 lib/mono/1.0/wsdl.exe
 lib/mono/1.0/wsdl.exe.mdb
 lib/mono/1.0/xsd.exe
@@ -343,6 +359,7 @@ lib/mono/2.0/Microsoft.VisualBasic.targets
 lib/mono/2.0/Microsoft.VisualC.dll
 lib/mono/2.0/Microsoft.Vsa.dll
 lib/mono/2.0/Mono.C5.dll
+lib/mono/2.0/Mono.CSharp.dll
 lib/mono/2.0/Mono.Cairo.dll
 lib/mono/2.0/Mono.CompilerServices.SymbolWriter.dll
 lib/mono/2.0/Mono.Data.Sqlite.dll
@@ -353,15 +370,21 @@ lib/mono/2.0/Mono.Data.TdsClient.dll
 lib/mono/2.0/Mono.Data.dll
 lib/mono/2.0/Mono.GetOptions.dll
 lib/mono/2.0/Mono.Http.dll
+lib/mono/2.0/Mono.Management.dll
+lib/mono/2.0/Mono.Messaging.RabbitMQ.dll
+lib/mono/2.0/Mono.Messaging.dll
 lib/mono/2.0/Mono.Posix.dll
 lib/mono/2.0/Mono.Security.Win32.dll
 lib/mono/2.0/Mono.Security.dll
+lib/mono/2.0/Mono.Simd.dll
 lib/mono/2.0/Mono.Web.dll
 lib/mono/2.0/Mono.WebBrowser.dll
 lib/mono/2.0/Novell.Directory.Ldap.dll
 lib/mono/2.0/Npgsql.dll
 lib/mono/2.0/OpenSystem.C.dll
 lib/mono/2.0/PEAPI.dll
+lib/mono/2.0/RabbitMQ.Client.dll
+lib/mono/2.0/System.ComponentModel.DataAnnotations.dll
 lib/mono/2.0/System.Configuration.Install.dll
 lib/mono/2.0/System.Configuration.dll
 lib/mono/2.0/System.Core.dll
@@ -374,15 +397,23 @@ lib/mono/2.0/System.DirectoryServices.dll
 lib/mono/2.0/System.Drawing.Design.dll
 lib/mono/2.0/System.Drawing.dll
 lib/mono/2.0/System.EnterpriseServices.dll
+lib/mono/2.0/System.IdentityModel.Selectors.dll
+lib/mono/2.0/System.IdentityModel.dll
 lib/mono/2.0/System.Management.dll
 lib/mono/2.0/System.Messaging.dll
 lib/mono/2.0/System.Runtime.Remoting.dll
 lib/mono/2.0/System.Runtime.Serialization.Formatters.Soap.dll
+lib/mono/2.0/System.Runtime.Serialization.dll
 lib/mono/2.0/System.Security.dll
+lib/mono/2.0/System.ServiceModel.Web.dll
+lib/mono/2.0/System.ServiceModel.dll
 lib/mono/2.0/System.ServiceProcess.dll
 lib/mono/2.0/System.Transactions.dll
+lib/mono/2.0/System.Web.Abstractions.dll
+lib/mono/2.0/System.Web.DynamicData.dll
 lib/mono/2.0/System.Web.Extensions.Design.dll
 lib/mono/2.0/System.Web.Extensions.dll
+lib/mono/2.0/System.Web.Routing.dll
 lib/mono/2.0/System.Web.Services.dll
 lib/mono/2.0/System.Web.dll
 lib/mono/2.0/System.Windows.Forms.dll
@@ -392,6 +423,8 @@ lib/mono/2.0/System.dll
 lib/mono/2.0/al.exe
 lib/mono/2.0/al.exe.mdb
 lib/mono/2.0/cscompmgd.dll
+lib/mono/2.0/csharp.exe
+lib/mono/2.0/csharp.exe.mdb
 lib/mono/2.0/gacutil.exe
 lib/mono/2.0/gacutil.exe.mdb
 lib/mono/2.0/gmcs.exe
@@ -405,26 +438,37 @@ lib/mono/2.0/installutil.exe
 lib/mono/2.0/installutil.exe.mdb
 lib/mono/2.0/mconfig.exe
 lib/mono/2.0/mconfig.exe.mdb
+lib/mono/2.0/mdoc.exe
+lib/mono/2.0/mdoc.exe.mdb
 lib/mono/2.0/mkbundle.exe
 lib/mono/2.0/mkbundle.exe.mdb
 lib/mono/2.0/mono-api-info.exe
 lib/mono/2.0/mono-service.exe
 lib/mono/2.0/mono-service.exe.mdb
+lib/mono/2.0/mono-shlib-cop.exe
+lib/mono/2.0/mono-shlib-cop.exe.config
+lib/mono/2.0/mono-shlib-cop.exe.mdb
 lib/mono/2.0/monop.exe
 lib/mono/2.0/monop.exe.mdb
 lib/mono/2.0/mscorlib.dll
 lib/mono/2.0/mscorlib.dll.mdb
+lib/mono/2.0/nunit-console-runner.dll
 lib/mono/2.0/nunit-console.exe
 lib/mono/2.0/nunit-console.exe.config
 lib/mono/2.0/nunit-console.exe.mdb
 lib/mono/2.0/nunit.core.dll
+lib/mono/2.0/nunit.core.extensions.dll
+lib/mono/2.0/nunit.core.interfaces.dll
 lib/mono/2.0/nunit.framework.dll
+lib/mono/2.0/nunit.framework.extensions.dll
 lib/mono/2.0/nunit.mocks.dll
 lib/mono/2.0/nunit.util.dll
 lib/mono/2.0/resgen.exe
 lib/mono/2.0/resgen.exe.mdb
 lib/mono/2.0/sgen.exe
 lib/mono/2.0/sgen.exe.mdb
+lib/mono/2.0/sqlsharp.exe
+lib/mono/2.0/sqlsharp.exe.mdb
 lib/mono/2.0/wsdl.exe
 lib/mono/2.0/wsdl.exe.mdb
 lib/mono/2.0/xbuild.exe
@@ -432,8 +476,13 @@ lib/mono/2.0/xbuild.exe.mdb
 lib/mono/2.0/xbuild.rsp
 lib/mono/2.0/xsd.exe
 lib/mono/2.0/xsd.exe.mdb
+lib/mono/2.1/Mono.CompilerServices.SymbolWriter.dll
 lib/mono/2.1/System.Core.dll
 lib/mono/2.1/System.Net.dll
+lib/mono/2.1/System.Runtime.Serialization.dll
+lib/mono/2.1/System.ServiceModel.Web.dll
+lib/mono/2.1/System.ServiceModel.dll
+lib/mono/2.1/System.Xml.Linq.dll
 lib/mono/2.1/System.Xml.dll
 lib/mono/2.1/System.dll
 lib/mono/2.1/mscorlib.dll
@@ -441,9 +490,10 @@ lib/mono/2.1/mscorlib.dll.mdb
 lib/mono/2.1/smcs.exe
 lib/mono/2.1/smcs.exe.mdb
 lib/mono/3.5/System.Web.Extensions.Design.dll
-lib/mono/3.5/System.Web.Extensions.dll
 lib/mono/compat-1.0/ICSharpCode.SharpZipLib.dll
 lib/mono/compat-2.0/ICSharpCode.SharpZipLib.dll
+lib/mono/compat-2.0/System.Web.Extensions.Design.dll
+lib/mono/compat-2.0/System.Web.Extensions.dll
 lib/mono/gac/Accessibility/1.0.5000.0__b03f5f7f11d50a3a/Accessibility.dll
 lib/mono/gac/Accessibility/1.0.5000.0__b03f5f7f11d50a3a/Accessibility.dll.mdb
 lib/mono/gac/Accessibility/2.0.0.0__b03f5f7f11d50a3a/Accessibility.dll
@@ -518,18 +568,21 @@ lib/mono/gac/Microsoft.Vsa/8.0.0.0__b03f5f7f11d50a3a/Microsoft.Vsa.dll
 lib/mono/gac/Microsoft.Vsa/8.0.0.0__b03f5f7f11d50a3a/Microsoft.Vsa.dll.mdb
 lib/mono/gac/Mono.C5/1.0.0.0__ba07f434b1c35cbd/Mono.C5.dll
 lib/mono/gac/Mono.C5/1.0.0.0__ba07f434b1c35cbd/Mono.C5.dll.mdb
+lib/mono/gac/Mono.CSharp/2.1.0.0__0738eb9f132ed756/Mono.CSharp.dll
 lib/mono/gac/Mono.Cairo/1.0.5000.0__0738eb9f132ed756/Mono.Cairo.dll
 lib/mono/gac/Mono.Cairo/1.0.5000.0__0738eb9f132ed756/Mono.Cairo.dll.mdb
 lib/mono/gac/Mono.Cairo/2.0.0.0__0738eb9f132ed756/Mono.Cairo.dll
 lib/mono/gac/Mono.Cairo/2.0.0.0__0738eb9f132ed756/Mono.Cairo.dll.mdb
 lib/mono/gac/Mono.Cecil.Mdb/0.2.0.0__0738eb9f132ed756/Mono.Cecil.Mdb.dll
 lib/mono/gac/Mono.Cecil.Mdb/0.2.0.0__0738eb9f132ed756/Mono.Cecil.Mdb.dll.mdb
-lib/mono/gac/Mono.Cecil/0.6.8.8607__0738eb9f132ed756/Mono.Cecil.dll
-lib/mono/gac/Mono.Cecil/0.6.8.8607__0738eb9f132ed756/Mono.Cecil.dll.mdb
+lib/mono/gac/Mono.Cecil/0.6.9.0__0738eb9f132ed756/Mono.Cecil.dll
+lib/mono/gac/Mono.Cecil/0.6.9.0__0738eb9f132ed756/Mono.Cecil.dll.mdb
 lib/mono/gac/Mono.CompilerServices.SymbolWriter/1.0.5000.0__0738eb9f132ed756/Mono.CompilerServices.SymbolWriter.dll
 lib/mono/gac/Mono.CompilerServices.SymbolWriter/1.0.5000.0__0738eb9f132ed756/Mono.CompilerServices.SymbolWriter.dll.mdb
 lib/mono/gac/Mono.CompilerServices.SymbolWriter/2.0.0.0__0738eb9f132ed756/Mono.CompilerServices.SymbolWriter.dll
 lib/mono/gac/Mono.CompilerServices.SymbolWriter/2.0.0.0__0738eb9f132ed756/Mono.CompilerServices.SymbolWriter.dll.mdb
+lib/mono/gac/Mono.CompilerServices.SymbolWriter/2.0.5.0__0738eb9f132ed756/Mono.CompilerServices.SymbolWriter.dll
+lib/mono/gac/Mono.CompilerServices.SymbolWriter/2.0.5.0__0738eb9f132ed756/Mono.CompilerServices.SymbolWriter.dll.mdb
 lib/mono/gac/Mono.Data.Sqlite/1.0.5000.0__0738eb9f132ed756/Mono.Data.Sqlite.dll
 lib/mono/gac/Mono.Data.Sqlite/1.0.5000.0__0738eb9f132ed756/Mono.Data.Sqlite.dll.mdb
 lib/mono/gac/Mono.Data.Sqlite/2.0.0.0__0738eb9f132ed756/Mono.Data.Sqlite.dll
@@ -562,6 +615,16 @@ lib/mono/gac/Mono.Http/1.0.5000.0__0738eb9f132ed756/Mono.Http.dll
 lib/mono/gac/Mono.Http/1.0.5000.0__0738eb9f132ed756/Mono.Http.dll.mdb
 lib/mono/gac/Mono.Http/2.0.0.0__0738eb9f132ed756/Mono.Http.dll
 lib/mono/gac/Mono.Http/2.0.0.0__0738eb9f132ed756/Mono.Http.dll.mdb
+lib/mono/gac/Mono.Management/2.0.0.0__0738eb9f132ed756/Mono.Management.dll
+lib/mono/gac/Mono.Management/2.0.0.0__0738eb9f132ed756/Mono.Management.dll.mdb
+lib/mono/gac/Mono.Messaging.RabbitMQ/1.0.5000.0__b03f5f7f11d50a3a/Mono.Messaging.RabbitMQ.dll
+lib/mono/gac/Mono.Messaging.RabbitMQ/1.0.5000.0__b03f5f7f11d50a3a/Mono.Messaging.RabbitMQ.dll.mdb
+lib/mono/gac/Mono.Messaging.RabbitMQ/2.0.0.0__b03f5f7f11d50a3a/Mono.Messaging.RabbitMQ.dll
+lib/mono/gac/Mono.Messaging.RabbitMQ/2.0.0.0__b03f5f7f11d50a3a/Mono.Messaging.RabbitMQ.dll.mdb
+lib/mono/gac/Mono.Messaging/1.0.5000.0__b03f5f7f11d50a3a/Mono.Messaging.dll
+lib/mono/gac/Mono.Messaging/1.0.5000.0__b03f5f7f11d50a3a/Mono.Messaging.dll.mdb
+lib/mono/gac/Mono.Messaging/2.0.0.0__b03f5f7f11d50a3a/Mono.Messaging.dll
+lib/mono/gac/Mono.Messaging/2.0.0.0__b03f5f7f11d50a3a/Mono.Messaging.dll.mdb
 lib/mono/gac/Mono.Posix/1.0.5000.0__0738eb9f132ed756/Mono.Posix.dll
 lib/mono/gac/Mono.Posix/1.0.5000.0__0738eb9f132ed756/Mono.Posix.dll.mdb
 lib/mono/gac/Mono.Posix/2.0.0.0__0738eb9f132ed756/Mono.Posix.dll
@@ -574,6 +637,8 @@ lib/mono/gac/Mono.Security/1.0.5000.0__0738eb9f132ed756/Mono.Security.dll
 lib/mono/gac/Mono.Security/1.0.5000.0__0738eb9f132ed756/Mono.Security.dll.mdb
 lib/mono/gac/Mono.Security/2.0.0.0__0738eb9f132ed756/Mono.Security.dll
 lib/mono/gac/Mono.Security/2.0.0.0__0738eb9f132ed756/Mono.Security.dll.mdb
+lib/mono/gac/Mono.Simd/2.0.0.0__0738eb9f132ed756/Mono.Simd.dll
+lib/mono/gac/Mono.Simd/2.0.0.0__0738eb9f132ed756/Mono.Simd.dll.mdb
 lib/mono/gac/Mono.Web/2.0.0.0__0738eb9f132ed756/Mono.Web.dll
 lib/mono/gac/Mono.Web/2.0.0.0__0738eb9f132ed756/Mono.Web.dll.mdb
 lib/mono/gac/Mono.WebBrowser/0.5.0.0__0738eb9f132ed756/Mono.WebBrowser.dll
@@ -594,6 +659,12 @@ lib/mono/gac/PEAPI/1.0.5000.0__0738eb9f132ed756/PEAPI.dll
 lib/mono/gac/PEAPI/1.0.5000.0__0738eb9f132ed756/PEAPI.dll.mdb
 lib/mono/gac/PEAPI/2.0.0.0__0738eb9f132ed756/PEAPI.dll
 lib/mono/gac/PEAPI/2.0.0.0__0738eb9f132ed756/PEAPI.dll.mdb
+lib/mono/gac/RabbitMQ.Client/1.0.5000.0__b03f5f7f11d50a3a/RabbitMQ.Client.dll
+lib/mono/gac/RabbitMQ.Client/1.0.5000.0__b03f5f7f11d50a3a/RabbitMQ.Client.dll.mdb
+lib/mono/gac/RabbitMQ.Client/2.0.0.0__b03f5f7f11d50a3a/RabbitMQ.Client.dll
+lib/mono/gac/RabbitMQ.Client/2.0.0.0__b03f5f7f11d50a3a/RabbitMQ.Client.dll.mdb
+lib/mono/gac/System.ComponentModel.DataAnnotations/3.5.0.0__31bf3856ad364e35/System.ComponentModel.DataAnnotations.dll
+lib/mono/gac/System.ComponentModel.DataAnnotations/3.5.0.0__31bf3856ad364e35/System.ComponentModel.DataAnnotations.dll.mdb
 lib/mono/gac/System.Configuration.Install/1.0.5000.0__b03f5f7f11d50a3a/System.Configuration.Install.dll
 lib/mono/gac/System.Configuration.Install/1.0.5000.0__b03f5f7f11d50a3a/System.Configuration.Install.dll.mdb
 lib/mono/gac/System.Configuration.Install/2.0.0.0__b03f5f7f11d50a3a/System.Configuration.Install.dll
@@ -636,6 +707,10 @@ lib/mono/gac/System.EnterpriseServices/1.0.5000.0__b03f5f7f11d50a3a/System.Enter
 lib/mono/gac/System.EnterpriseServices/1.0.5000.0__b03f5f7f11d50a3a/System.EnterpriseServices.dll.mdb
 lib/mono/gac/System.EnterpriseServices/2.0.0.0__b03f5f7f11d50a3a/System.EnterpriseServices.dll
 lib/mono/gac/System.EnterpriseServices/2.0.0.0__b03f5f7f11d50a3a/System.EnterpriseServices.dll.mdb
+lib/mono/gac/System.IdentityModel.Selectors/3.0.0.0__b77a5c561934e089/System.IdentityModel.Selectors.dll
+lib/mono/gac/System.IdentityModel.Selectors/3.0.0.0__b77a5c561934e089/System.IdentityModel.Selectors.dll.mdb
+lib/mono/gac/System.IdentityModel/3.0.0.0__b77a5c561934e089/System.IdentityModel.dll
+lib/mono/gac/System.IdentityModel/3.0.0.0__b77a5c561934e089/System.IdentityModel.dll.mdb
 lib/mono/gac/System.Management/1.0.5000.0__b03f5f7f11d50a3a/System.Management.dll
 lib/mono/gac/System.Management/1.0.5000.0__b03f5f7f11d50a3a/System.Management.dll.mdb
 lib/mono/gac/System.Management/2.0.0.0__b03f5f7f11d50a3a/System.Management.dll
@@ -654,16 +729,32 @@ lib/mono/gac/System.Runtime.Serialization.Formatters.Soap/1.0.5000.0__b03f5f7f11
 lib/mono/gac/System.Runtime.Serialization.Formatters.Soap/1.0.5000.0__b03f5f7f11d50a3a/System.Runtime.Serialization.Formatters.Soap.dll.mdb
 lib/mono/gac/System.Runtime.Serialization.Formatters.Soap/2.0.0.0__b03f5f7f11d50a3a/System.Runtime.Serialization.Formatters.Soap.dll
 lib/mono/gac/System.Runtime.Serialization.Formatters.Soap/2.0.0.0__b03f5f7f11d50a3a/System.Runtime.Serialization.Formatters.Soap.dll.mdb
+lib/mono/gac/System.Runtime.Serialization/2.0.5.0__7cec85d7bea7798e/System.Runtime.Serialization.dll
+lib/mono/gac/System.Runtime.Serialization/2.0.5.0__7cec85d7bea7798e/System.Runtime.Serialization.dll.mdb
+lib/mono/gac/System.Runtime.Serialization/3.0.0.0__b77a5c561934e089/System.Runtime.Serialization.dll
+lib/mono/gac/System.Runtime.Serialization/3.0.0.0__b77a5c561934e089/System.Runtime.Serialization.dll.mdb
 lib/mono/gac/System.Security/1.0.5000.0__b03f5f7f11d50a3a/System.Security.dll
 lib/mono/gac/System.Security/1.0.5000.0__b03f5f7f11d50a3a/System.Security.dll.mdb
 lib/mono/gac/System.Security/2.0.0.0__b03f5f7f11d50a3a/System.Security.dll
 lib/mono/gac/System.Security/2.0.0.0__b03f5f7f11d50a3a/System.Security.dll.mdb
+lib/mono/gac/System.ServiceModel.Web/2.0.5.0__7cec85d7bea7798e/System.ServiceModel.Web.dll
+lib/mono/gac/System.ServiceModel.Web/2.0.5.0__7cec85d7bea7798e/System.ServiceModel.Web.dll.mdb
+lib/mono/gac/System.ServiceModel.Web/3.0.0.0__31bf3856ad364e35/System.ServiceModel.Web.dll
+lib/mono/gac/System.ServiceModel.Web/3.0.0.0__31bf3856ad364e35/System.ServiceModel.Web.dll.mdb
+lib/mono/gac/System.ServiceModel/2.0.5.0__31bf3856ad364e35/System.ServiceModel.dll
+lib/mono/gac/System.ServiceModel/2.0.5.0__31bf3856ad364e35/System.ServiceModel.dll.mdb
+lib/mono/gac/System.ServiceModel/3.0.0.0__b77a5c561934e089/System.ServiceModel.dll
+lib/mono/gac/System.ServiceModel/3.0.0.0__b77a5c561934e089/System.ServiceModel.dll.mdb
 lib/mono/gac/System.ServiceProcess/1.0.5000.0__b03f5f7f11d50a3a/System.ServiceProcess.dll
 lib/mono/gac/System.ServiceProcess/1.0.5000.0__b03f5f7f11d50a3a/System.ServiceProcess.dll.mdb
 lib/mono/gac/System.ServiceProcess/2.0.0.0__b03f5f7f11d50a3a/System.ServiceProcess.dll
 lib/mono/gac/System.ServiceProcess/2.0.0.0__b03f5f7f11d50a3a/System.ServiceProcess.dll.mdb
 lib/mono/gac/System.Transactions/2.0.0.0__b77a5c561934e089/System.Transactions.dll
 lib/mono/gac/System.Transactions/2.0.0.0__b77a5c561934e089/System.Transactions.dll.mdb
+lib/mono/gac/System.Web.Abstractions/3.5.0.0__31bf3856ad364e35/System.Web.Abstractions.dll
+lib/mono/gac/System.Web.Abstractions/3.5.0.0__31bf3856ad364e35/System.Web.Abstractions.dll.mdb
+lib/mono/gac/System.Web.DynamicData/3.5.0.0__31bf3856ad364e35/System.Web.DynamicData.dll
+lib/mono/gac/System.Web.DynamicData/3.5.0.0__31bf3856ad364e35/System.Web.DynamicData.dll.mdb
 lib/mono/gac/System.Web.Extensions.Design/1.0.61025.0__31bf3856ad364e35/System.Web.Extensions.Design.dll
 lib/mono/gac/System.Web.Extensions.Design/1.0.61025.0__31bf3856ad364e35/System.Web.Extensions.Design.dll.mdb
 lib/mono/gac/System.Web.Extensions.Design/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.Design.dll
@@ -672,6 +763,8 @@ lib/mono/gac/System.Web.Extensions/1.0.61025.0__31bf3856ad364e35/System.Web.Exte
 lib/mono/gac/System.Web.Extensions/1.0.61025.0__31bf3856ad364e35/System.Web.Extensions.dll.mdb
 lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.dll
 lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.dll.mdb
+lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35/System.Web.Routing.dll
+lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35/System.Web.Routing.dll.mdb
 lib/mono/gac/System.Web.Services/1.0.5000.0__b03f5f7f11d50a3a/System.Web.Services.dll
 lib/mono/gac/System.Web.Services/1.0.5000.0__b03f5f7f11d50a3a/System.Web.Services.dll.mdb
 lib/mono/gac/System.Web.Services/2.0.0.0__b03f5f7f11d50a3a/System.Web.Services.dll
@@ -684,6 +777,8 @@ lib/mono/gac/System.Windows.Forms/1.0.5000.0__b77a5c561934e089/System.Windows.Fo
 lib/mono/gac/System.Windows.Forms/1.0.5000.0__b77a5c561934e089/System.Windows.Forms.dll.mdb
 lib/mono/gac/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
 lib/mono/gac/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll.mdb
+lib/mono/gac/System.Xml.Linq/2.0.5.0__31bf3856ad364e35/System.Xml.Linq.dll
+lib/mono/gac/System.Xml.Linq/2.0.5.0__31bf3856ad364e35/System.Xml.Linq.dll.mdb
 lib/mono/gac/System.Xml.Linq/3.5.0.0__b77a5c561934e089/System.Xml.Linq.dll
 lib/mono/gac/System.Xml.Linq/3.5.0.0__b77a5c561934e089/System.Xml.Linq.dll.mdb
 lib/mono/gac/System.Xml/1.0.5000.0__b77a5c561934e089/System.Xml.dll
@@ -706,21 +801,77 @@ lib/mono/gac/mono-service/1.0.5000.0__0738eb9f132ed756/mono-service.exe
 lib/mono/gac/mono-service/1.0.5000.0__0738eb9f132ed756/mono-service.exe.mdb
 lib/mono/gac/mono-service/2.0.0.0__0738eb9f132ed756/mono-service.exe
 lib/mono/gac/mono-service/2.0.0.0__0738eb9f132ed756/mono-service.exe.mdb
-lib/mono/gac/nunit.core/2.2.0.0__96d09a1eb7f44a77/nunit.core.dll
-lib/mono/gac/nunit.core/2.2.0.0__96d09a1eb7f44a77/nunit.core.dll.mdb
-lib/mono/gac/nunit.framework/2.2.0.0__96d09a1eb7f44a77/nunit.framework.dll
-lib/mono/gac/nunit.framework/2.2.0.0__96d09a1eb7f44a77/nunit.framework.dll.mdb
-lib/mono/gac/nunit.mocks/2.2.8.0__96d09a1eb7f44a77/nunit.mocks.dll
-lib/mono/gac/nunit.mocks/2.2.8.0__96d09a1eb7f44a77/nunit.mocks.dll.mdb
-lib/mono/gac/nunit.util/2.2.0.0__96d09a1eb7f44a77/nunit.util.dll
-lib/mono/gac/nunit.util/2.2.0.0__96d09a1eb7f44a77/nunit.util.dll.mdb
+lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll
+lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.config
+lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.mdb
+lib/mono/gac/nunit-console-runner/2.4.8.0__96d09a1eb7f44a77/nunit-console-runner.dll
+lib/mono/gac/nunit-console-runner/2.4.8.0__96d09a1eb7f44a77/nunit-console-runner.dll.mdb
+lib/mono/gac/nunit.core.extensions/2.4.8.0__96d09a1eb7f44a77/nunit.core.extensions.dll
+lib/mono/gac/nunit.core.extensions/2.4.8.0__96d09a1eb7f44a77/nunit.core.extensions.dll.mdb
+lib/mono/gac/nunit.core.interfaces/2.4.8.0__96d09a1eb7f44a77/nunit.core.interfaces.dll
+lib/mono/gac/nunit.core.interfaces/2.4.8.0__96d09a1eb7f44a77/nunit.core.interfaces.dll.mdb
+lib/mono/gac/nunit.core/2.4.8.0__96d09a1eb7f44a77/nunit.core.dll
+lib/mono/gac/nunit.core/2.4.8.0__96d09a1eb7f44a77/nunit.core.dll.mdb
+lib/mono/gac/nunit.framework.extensions/2.4.8.0__96d09a1eb7f44a77/nunit.framework.extensions.dll
+lib/mono/gac/nunit.framework.extensions/2.4.8.0__96d09a1eb7f44a77/nunit.framework.extensions.dll.mdb
+lib/mono/gac/nunit.framework/2.4.8.0__96d09a1eb7f44a77/nunit.framework.dll
+lib/mono/gac/nunit.framework/2.4.8.0__96d09a1eb7f44a77/nunit.framework.dll.mdb
+lib/mono/gac/nunit.mocks/2.4.8.0__96d09a1eb7f44a77/nunit.mocks.dll
+lib/mono/gac/nunit.mocks/2.4.8.0__96d09a1eb7f44a77/nunit.mocks.dll.mdb
+lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77/nunit.util.dll
+lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77/nunit.util.dll.mdb
+lib/mono/monodoc/monodoc.dll
+lib/monodoc/monodoc.xml
+lib/monodoc/sources/Mono.source
+lib/monodoc/sources/Mono.tree
+lib/monodoc/sources/Mono.zip
+lib/monodoc/sources/Novell.source
+lib/monodoc/sources/Novell.tree
+lib/monodoc/sources/Novell.zip
+lib/monodoc/sources/cs-errors.tree
+lib/monodoc/sources/cs-errors.zip
+lib/monodoc/sources/ecma334.tree
+lib/monodoc/sources/ecma334.zip
+lib/monodoc/sources/lang-csharp.source
+lib/monodoc/sources/mono-file-formats.source
+lib/monodoc/sources/mono-file-formats.tree
+lib/monodoc/sources/mono-file-formats.zip
+lib/monodoc/sources/mono-tools.source
+lib/monodoc/sources/mono-tools.tree
+lib/monodoc/sources/mono-tools.zip
+lib/monodoc/sources/monoapi.source
+lib/monodoc/sources/monoapi.tree
+lib/monodoc/sources/monoapi.zip
+lib/monodoc/sources/netdocs.source
+lib/monodoc/sources/netdocs.tree
+lib/monodoc/sources/netdocs.zip
 libdata/pkgconfig/cecil.pc
 libdata/pkgconfig/dotnet.pc
 libdata/pkgconfig/dotnet35.pc
 libdata/pkgconfig/mono-cairo.pc
+libdata/pkgconfig/mono-lineeditor.pc
 libdata/pkgconfig/mono-nunit.pc
+libdata/pkgconfig/mono-options.pc
 libdata/pkgconfig/mono.pc
+libdata/pkgconfig/mono.web.pc
+libdata/pkgconfig/monodoc.pc
 libdata/pkgconfig/smcs.pc
+libdata/pkgconfig/system.web.extensions.design_1.0.pc
+libdata/pkgconfig/system.web.extensions_1.0.pc
+libdata/pkgconfig/wcf.pc
+man/man1/csharp.1
+man/man1/mdassembler.1
+man/man1/mdoc-assemble.1
+man/man1/mdoc-export-html.1
+man/man1/mdoc-export-msxdoc.1
+man/man1/mdoc-update.1
+man/man1/mdoc-validate.1
+man/man1/mdoc.1
+man/man1/mdvalidater.1
+man/man1/mono-cil-strip.1
+man/man1/monodocer.1
+man/man1/monodocs2html.1
+man/man5/mdoc.5
 share/jay/ACKNOWLEDGEMENTS
 share/jay/NEW_FEATURES
 share/jay/NOTES
@@ -760,20 +911,38 @@ share/libgc-mono/leak.html
 share/libgc-mono/scale.html
 share/libgc-mono/simple_example.html
 share/libgc-mono/tree.html
+share/locale/de/LC_MESSAGES/mcs.mo
+share/locale/es/LC_MESSAGES/mcs.mo
+share/locale/ja/LC_MESSAGES/mcs.mo
 %%DATADIR%%-1.0/mono/cil/cil-opcodes.xml
 @dirrm %%DATADIR%%-1.0/mono/cil
 @dirrm %%DATADIR%%-1.0/mono
 @dirrm %%DATADIR%%-1.0
 @dirrm share/libgc-mono
 @dirrm share/jay
-@dirrm lib/mono/gac/nunit.util/2.2.0.0__96d09a1eb7f44a77
+@dirrm lib/monodoc/sources
+@dirrm lib/monodoc/sources
+@dirrm lib/monodoc
+@dirrm lib/monodoc
+@dirrm lib/mono/monodoc
+@dirrm lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77
 @dirrm lib/mono/gac/nunit.util
-@dirrm lib/mono/gac/nunit.mocks/2.2.8.0__96d09a1eb7f44a77
+@dirrm lib/mono/gac/nunit.mocks/2.4.8.0__96d09a1eb7f44a77
 @dirrm lib/mono/gac/nunit.mocks
-@dirrm lib/mono/gac/nunit.framework/2.2.0.0__96d09a1eb7f44a77
+@dirrm lib/mono/gac/nunit.framework/2.4.8.0__96d09a1eb7f44a77
+@dirrm lib/mono/gac/nunit.framework.extensions/2.4.8.0__96d09a1eb7f44a77
+@dirrm lib/mono/gac/nunit.framework.extensions
 @dirrm lib/mono/gac/nunit.framework
-@dirrm lib/mono/gac/nunit.core/2.2.0.0__96d09a1eb7f44a77
+@dirrm lib/mono/gac/nunit.core/2.4.8.0__96d09a1eb7f44a77
+@dirrm lib/mono/gac/nunit.core.interfaces/2.4.8.0__96d09a1eb7f44a77
+@dirrm lib/mono/gac/nunit.core.interfaces
+@dirrm lib/mono/gac/nunit.core.extensions/2.4.8.0__96d09a1eb7f44a77
+@dirrm lib/mono/gac/nunit.core.extensions
 @dirrm lib/mono/gac/nunit.core
+@dirrm lib/mono/gac/nunit-console-runner/2.4.8.0__96d09a1eb7f44a77
+@dirrm lib/mono/gac/nunit-console-runner
+@dirrm lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/monodoc
 @dirrm lib/mono/gac/mono-service/2.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/mono-service/1.0.5000.0__0738eb9f132ed756
 @dirrm lib/mono/gac/mono-service
@@ -787,6 +956,7 @@ share/libgc-mono/tree.html
 @dirrm lib/mono/gac/System.Xml/2.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml/1.0.5000.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml.Linq/3.5.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.Xml.Linq/2.0.5.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Xml.Linq
 @dirrm lib/mono/gac/System.Xml
 @dirrm lib/mono/gac/System.Windows.Forms/2.0.0.0__b77a5c561934e089
@@ -797,24 +967,39 @@ share/libgc-mono/tree.html
 @dirrm lib/mono/gac/System.Web.Services/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Web.Services/1.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Web.Services
+@dirrm lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Web.Routing
 @dirrm lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Extensions/1.0.61025.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Extensions.Design/3.5.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Extensions.Design/1.0.61025.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Extensions.Design
 @dirrm lib/mono/gac/System.Web.Extensions
+@dirrm lib/mono/gac/System.Web.DynamicData/3.5.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Web.DynamicData
+@dirrm lib/mono/gac/System.Web.Abstractions/3.5.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Web.Abstractions
 @dirrm lib/mono/gac/System.Web
 @dirrm lib/mono/gac/System.Transactions/2.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Transactions
 @dirrm lib/mono/gac/System.ServiceProcess/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.ServiceProcess/1.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.ServiceProcess
+@dirrm lib/mono/gac/System.ServiceModel/3.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.ServiceModel/2.0.5.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.ServiceModel.Web/3.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.ServiceModel.Web/2.0.5.0__7cec85d7bea7798e
+@dirrm lib/mono/gac/System.ServiceModel.Web
+@dirrm lib/mono/gac/System.ServiceModel
 @dirrm lib/mono/gac/System.Security/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Security/1.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Security
+@dirrm lib/mono/gac/System.Runtime.Serialization/3.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.Runtime.Serialization/2.0.5.0__7cec85d7bea7798e
 @dirrm lib/mono/gac/System.Runtime.Serialization.Formatters.Soap/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Runtime.Serialization.Formatters.Soap/1.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Runtime.Serialization.Formatters.Soap
+@dirrm lib/mono/gac/System.Runtime.Serialization
 @dirrm lib/mono/gac/System.Runtime.Remoting/2.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Runtime.Remoting/1.0.5000.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Runtime.Remoting
@@ -826,6 +1011,10 @@ share/libgc-mono/tree.html
 @dirrm lib/mono/gac/System.Management/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Management/1.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Management
+@dirrm lib/mono/gac/System.IdentityModel/3.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.IdentityModel.Selectors/3.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.IdentityModel.Selectors
+@dirrm lib/mono/gac/System.IdentityModel
 @dirrm lib/mono/gac/System.EnterpriseServices/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.EnterpriseServices/1.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.EnterpriseServices
@@ -859,7 +1048,12 @@ share/libgc-mono/tree.html
 @dirrm lib/mono/gac/System.Configuration.Install/1.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Configuration.Install
 @dirrm lib/mono/gac/System.Configuration
+@dirrm lib/mono/gac/System.ComponentModel.DataAnnotations/3.5.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.ComponentModel.DataAnnotations
 @dirrm lib/mono/gac/System
+@dirrm lib/mono/gac/RabbitMQ.Client/2.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/RabbitMQ.Client/1.0.5000.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/RabbitMQ.Client
 @dirrm lib/mono/gac/PEAPI/2.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/PEAPI/1.0.5000.0__0738eb9f132ed756
 @dirrm lib/mono/gac/PEAPI
@@ -876,6 +1070,8 @@ share/libgc-mono/tree.html
 @dirrm lib/mono/gac/Mono.WebBrowser
 @dirrm lib/mono/gac/Mono.Web/2.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Web
+@dirrm lib/mono/gac/Mono.Simd/2.0.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/Mono.Simd
 @dirrm lib/mono/gac/Mono.Security/2.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Security/1.0.5000.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Security.Win32/2.0.0.0__0738eb9f132ed756
@@ -885,6 +1081,14 @@ share/libgc-mono/tree.html
 @dirrm lib/mono/gac/Mono.Posix/2.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Posix/1.0.5000.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Posix
+@dirrm lib/mono/gac/Mono.Messaging/2.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/Mono.Messaging/1.0.5000.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/Mono.Messaging.RabbitMQ/2.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/Mono.Messaging.RabbitMQ/1.0.5000.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/Mono.Messaging.RabbitMQ
+@dirrm lib/mono/gac/Mono.Messaging
+@dirrm lib/mono/gac/Mono.Management/2.0.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/Mono.Management
 @dirrm lib/mono/gac/Mono.Http/2.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Http/1.0.5000.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Http
@@ -909,16 +1113,19 @@ share/libgc-mono/tree.html
 @dirrm lib/mono/gac/Mono.Data.Sqlite/1.0.5000.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Data.Sqlite
 @dirrm lib/mono/gac/Mono.Data
+@dirrm lib/mono/gac/Mono.CompilerServices.SymbolWriter/2.0.5.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.CompilerServices.SymbolWriter/2.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.CompilerServices.SymbolWriter/1.0.5000.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.CompilerServices.SymbolWriter
-@dirrm lib/mono/gac/Mono.Cecil/0.6.8.8607__0738eb9f132ed756
+@dirrm lib/mono/gac/Mono.Cecil/0.6.9.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Cecil.Mdb/0.2.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Cecil.Mdb
 @dirrm lib/mono/gac/Mono.Cecil
 @dirrm lib/mono/gac/Mono.Cairo/2.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Cairo/1.0.5000.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.Cairo
+@dirrm lib/mono/gac/Mono.CSharp/2.1.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/Mono.CSharp
 @dirrm lib/mono/gac/Mono.C5/1.0.0.0__ba07f434b1c35cbd
 @dirrm lib/mono/gac/Mono.C5
 @dirrm lib/mono/gac/Microsoft.Vsa/8.0.0.0__b03f5f7f11d50a3a
@@ -985,6 +1192,7 @@ share/libgc-mono/tree.html
 @dirrm lib/mono/2.0/MSBuild
 @dirrm lib/mono/2.0
 @dirrm lib/mono/1.0
+@dirrm lib/mono-source-libs
 @dirrm lib/mono
 @dirrm include/mono-1.0/mono/utils
 @dirrm include/mono-1.0/mono/metadata

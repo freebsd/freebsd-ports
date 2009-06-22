@@ -1,0 +1,257 @@
+@comment $FreeBSD$
+bin/asp-state
+bin/asp-state1
+bin/asp-state2
+bin/dbsessmgr
+bin/dbsessmgr1
+bin/dbsessmgr2
+bin/fastcgi-mono-server
+bin/fastcgi-mono-server1
+bin/fastcgi-mono-server2
+bin/mod-mono-server
+bin/mod-mono-server1
+bin/mod-mono-server2
+bin/xsp
+bin/xsp1
+bin/xsp2
+lib/mono/1.0/Mono.WebServer.dll
+lib/mono/1.0/fastcgi-mono-server.exe
+lib/mono/1.0/mod-mono-server.exe
+lib/mono/1.0/xsp.exe
+lib/mono/2.0/Mono.WebServer2.dll
+lib/mono/2.0/fastcgi-mono-server2.exe
+lib/mono/2.0/mod-mono-server2.exe
+lib/mono/2.0/xsp2.exe
+lib/mono/gac/Mono.WebServer/0.1.0.0__0738eb9f132ed756/Mono.WebServer.dll
+lib/mono/gac/Mono.WebServer/0.1.0.0__0738eb9f132ed756/Mono.WebServer.dll.mdb
+lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756/Mono.WebServer2.dll
+lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756/Mono.WebServer2.dll.mdb
+lib/mono/gac/fastcgi-mono-server/2.4.0.0__0738eb9f132ed756/fastcgi-mono-server.exe
+lib/mono/gac/fastcgi-mono-server/2.4.0.0__0738eb9f132ed756/fastcgi-mono-server.exe.mdb
+lib/mono/gac/fastcgi-mono-server2/2.4.0.0__0738eb9f132ed756/fastcgi-mono-server2.exe
+lib/mono/gac/fastcgi-mono-server2/2.4.0.0__0738eb9f132ed756/fastcgi-mono-server2.exe.mdb
+lib/mono/gac/mod-mono-server/2.4.0.0__0738eb9f132ed756/mod-mono-server.exe
+lib/mono/gac/mod-mono-server/2.4.0.0__0738eb9f132ed756/mod-mono-server.exe.mdb
+lib/mono/gac/mod-mono-server2/2.4.0.0__0738eb9f132ed756/mod-mono-server2.exe
+lib/mono/gac/mod-mono-server2/2.4.0.0__0738eb9f132ed756/mod-mono-server2.exe.mdb
+lib/mono/gac/xsp/2.4.0.0__0738eb9f132ed756/xsp.exe
+lib/mono/gac/xsp/2.4.0.0__0738eb9f132ed756/xsp.exe.mdb
+lib/mono/gac/xsp2/2.4.0.0__0738eb9f132ed756/xsp2.exe
+lib/mono/gac/xsp2/2.4.0.0__0738eb9f132ed756/xsp2.exe.mdb
+lib/xsp/1.0/asp-state.exe
+lib/xsp/1.0/asp-state.exe.config
+lib/xsp/1.0/dbsessmgr.exe
+lib/xsp/1.0/dbsessmgr.exe.config
+lib/xsp/2.0/asp-state2.exe
+lib/xsp/2.0/asp-state2.exe.config
+lib/xsp/2.0/dbsessmgr2.exe
+lib/xsp/2.0/dbsessmgr2.exe.config
+lib/xsp/test/1.1/asp.net/body.inc
+lib/xsp/test/1.1/asp.net/browsercaps.aspx
+lib/xsp/test/1.1/asp.net/code-render.aspx
+lib/xsp/test/1.1/asp.net/codebehind1.aspx
+lib/xsp/test/1.1/asp.net/header.inc
+lib/xsp/test/1.1/asp.net/includetest.aspx
+lib/xsp/test/1.1/asp.net/index.aspx
+lib/xsp/test/1.1/asp.net/registertest.aspx
+lib/xsp/test/1.1/asp.net/registertest1.ascx
+lib/xsp/test/1.1/asp.net/registertest2.ascx
+lib/xsp/test/1.1/asp.net/serial.aspx
+lib/xsp/test/1.1/asp.net/server-side-object.aspx
+lib/xsp/test/1.1/asp.net/session1.aspx
+lib/xsp/test/1.1/asp.net/transfer1.aspx
+lib/xsp/test/1.1/asp.net/transfer2.aspx
+lib/xsp/test/1.1/asp.net/typedesc.aspx
+lib/xsp/test/1.1/authtest/index.aspx
+lib/xsp/test/1.1/authtest/login.aspx
+lib/xsp/test/1.1/authtest/web.config
+lib/xsp/test/1.1/customcontrol/index.aspx
+lib/xsp/test/1.1/customcontrol/tabcontrol.aspx
+lib/xsp/test/1.1/customcontrol/tabcontrol2.aspx
+lib/xsp/test/1.1/databind/databind-arraylist.aspx
+lib/xsp/test/1.1/databind/databind-attribute.aspx
+lib/xsp/test/1.1/databind/databind-class.aspx
+lib/xsp/test/1.1/databind/databind-template.aspx
+lib/xsp/test/1.1/databind/index.aspx
+lib/xsp/test/1.1/handlers/async.ashx
+lib/xsp/test/1.1/handlers/chunked.ashx
+lib/xsp/test/1.1/handlers/empty.ashx
+lib/xsp/test/1.1/handlers/index.aspx
+lib/xsp/test/1.1/handlers/monodoc.ashx
+lib/xsp/test/1.1/handlers/webhandler.ashx
+lib/xsp/test/1.1/html/button.aspx
+lib/xsp/test/1.1/html/htmlanchor.aspx
+lib/xsp/test/1.1/html/htmlbutton.aspx
+lib/xsp/test/1.1/html/htmlgeneric.aspx
+lib/xsp/test/1.1/html/htmlimage.aspx
+lib/xsp/test/1.1/html/htmlinputbutton.aspx
+lib/xsp/test/1.1/html/htmlinputcheckbox.aspx
+lib/xsp/test/1.1/html/htmlinputfile.aspx
+lib/xsp/test/1.1/html/htmlinputhidden.aspx
+lib/xsp/test/1.1/html/htmlinputimage.aspx
+lib/xsp/test/1.1/html/htmlinputradiobutton.aspx
+lib/xsp/test/1.1/html/htmlinputtext.aspx
+lib/xsp/test/1.1/html/htmlselect.aspx
+lib/xsp/test/1.1/html/htmltable.aspx
+lib/xsp/test/1.1/html/htmltextarea.aspx
+lib/xsp/test/1.1/html/index.aspx
+lib/xsp/test/1.1/index.aspx
+lib/xsp/test/1.1/webcontrols/calendar.aspx
+lib/xsp/test/1.1/webcontrols/datalist.aspx
+lib/xsp/test/1.1/webcontrols/dbpage1.aspx
+lib/xsp/test/1.1/webcontrols/dbpage1.sqlite
+lib/xsp/test/1.1/webcontrols/dbpage2.aspx
+lib/xsp/test/1.1/webcontrols/dbpage2.sqlite
+lib/xsp/test/1.1/webcontrols/dbpage_test_setup.exe
+lib/xsp/test/1.1/webcontrols/index.aspx
+lib/xsp/test/1.1/webcontrols/listitem.aspx
+lib/xsp/test/1.1/webcontrols/people.xml
+lib/xsp/test/1.1/webcontrols/peopletable.xsl
+lib/xsp/test/1.1/webcontrols/temperature.aspx
+lib/xsp/test/1.1/webcontrols/validator1.aspx
+lib/xsp/test/1.1/webcontrols/web_adrotator.aspx
+lib/xsp/test/1.1/webcontrols/web_adrotator.xml
+lib/xsp/test/1.1/webcontrols/web_button.aspx
+lib/xsp/test/1.1/webcontrols/web_checkbox.aspx
+lib/xsp/test/1.1/webcontrols/web_checkboxlist.aspx
+lib/xsp/test/1.1/webcontrols/web_comparevalidator.aspx
+lib/xsp/test/1.1/webcontrols/web_datagrid.aspx
+lib/xsp/test/1.1/webcontrols/web_datagrid_command.aspx
+lib/xsp/test/1.1/webcontrols/web_dropdownlist.aspx
+lib/xsp/test/1.1/webcontrols/web_hyperlink.aspx
+lib/xsp/test/1.1/webcontrols/web_image.aspx
+lib/xsp/test/1.1/webcontrols/web_imagebutton.aspx
+lib/xsp/test/1.1/webcontrols/web_label.aspx
+lib/xsp/test/1.1/webcontrols/web_linkbutton.aspx
+lib/xsp/test/1.1/webcontrols/web_listbox.aspx
+lib/xsp/test/1.1/webcontrols/web_literal.aspx
+lib/xsp/test/1.1/webcontrols/web_panel.aspx
+lib/xsp/test/1.1/webcontrols/web_placeholder.aspx
+lib/xsp/test/1.1/webcontrols/web_radiobutton.aspx
+lib/xsp/test/1.1/webcontrols/web_radiobuttonlist.aspx
+lib/xsp/test/1.1/webcontrols/web_regularexpressionvalidator.aspx
+lib/xsp/test/1.1/webcontrols/web_repeater.aspx
+lib/xsp/test/1.1/webcontrols/web_table.aspx
+lib/xsp/test/1.1/webcontrols/web_table2.aspx
+lib/xsp/test/1.1/webcontrols/web_textbox.aspx
+lib/xsp/test/1.1/webcontrols/web_xml.aspx
+lib/xsp/test/1.1/webservice/CompressExtension.cs
+lib/xsp/test/1.1/webservice/ConverterService.asmx
+lib/xsp/test/1.1/webservice/ServiceClient.exe.config
+lib/xsp/test/1.1/webservice/TestService.asmx
+lib/xsp/test/1.1/webservice/index.aspx
+lib/xsp/test/2.0/index.aspx
+lib/xsp/test/2.0/masterpages/content1.aspx
+lib/xsp/test/2.0/masterpages/content2.aspx
+lib/xsp/test/2.0/masterpages/frame.master
+lib/xsp/test/2.0/masterpages/index.aspx
+lib/xsp/test/2.0/masterpages/simple.aspx
+lib/xsp/test/2.0/masterpages/simple.master
+lib/xsp/test/2.0/menu/index.aspx
+lib/xsp/test/2.0/menu/menu1.aspx
+lib/xsp/test/2.0/menu/menu2.aspx
+lib/xsp/test/2.0/menu/stock_copy_24.png
+lib/xsp/test/2.0/menu/stock_cut_24.png
+lib/xsp/test/2.0/menu/stock_paste_24.png
+lib/xsp/test/2.0/treeview/TreeLineImages/dash.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/dashminus.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/dashplus.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/i.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/l.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/lminus.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/lplus.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/minus.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/noexpand.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/plus.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/r.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/rminus.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/rplus.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/t.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/tminus.gif
+lib/xsp/test/2.0/treeview/TreeLineImages/tplus.gif
+lib/xsp/test/2.0/treeview/index.aspx
+lib/xsp/test/2.0/treeview/populate-on-demand.aspx
+lib/xsp/test/2.0/treeview/populate.cs
+lib/xsp/test/2.0/treeview/treeview-databound.aspx
+lib/xsp/test/2.0/treeview/treeview.aspx
+lib/xsp/test/App_Code/Application.cs
+lib/xsp/test/ServiceClient.exe
+lib/xsp/test/Web.sitemap
+lib/xsp/test/bin/SiteMapReader_1.1.dll
+lib/xsp/test/bin/codebehind1.dll
+lib/xsp/test/bin/extensions.dll
+lib/xsp/test/bin/tabcontrol.dll
+lib/xsp/test/bin/tabcontrol2.dll
+lib/xsp/test/bin/treeview.dll
+lib/xsp/test/bin/typedesc.dll
+lib/xsp/test/controls/BreadCrumbs_1.1.ascx
+lib/xsp/test/controls/BreadCrumbs_2.0.ascx
+lib/xsp/test/controls/FileList.ascx
+lib/xsp/test/controls/MonoSamplesHeader.ascx
+lib/xsp/test/extensions.dll
+lib/xsp/test/favicon.ico
+lib/xsp/test/global.asax
+lib/xsp/test/index.aspx
+lib/xsp/test/index2.aspx
+lib/xsp/test/missing_components.aspx
+lib/xsp/test/mod-mono-server.exe.config
+lib/xsp/test/mono-powered-big.png
+lib/xsp/test/mono-xsp.css
+lib/xsp/test/mono.png
+lib/xsp/test/monobutton.png
+lib/xsp/test/sample.webapp
+lib/xsp/test/small-icon.png
+lib/xsp/test/web.config
+lib/xsp/test/xsp.exe.config
+lib/xsp/unittests/ChangeLog
+lib/xsp/unittests/NOACCESS
+lib/xsp/unittests/README
+lib/xsp/unittests/Tests.XSP.Security/DirectoryTraversalTest.cs
+lib/xsp/unittests/Tests.XSP.Security/FileExtensionsTest.cs
+lib/xsp/unittests/Tests.XSP.Security/Makefile
+lib/xsp/unittests/Tests.XSP.Security/Tests.XSP.Security.dll
+lib/xsp/unittests/Tests.XSP.Security/WebTestHelper.cs
+lib/xsp/unittests/webroot/index.aspx
+libdata/pkgconfig/xsp-2.pc
+libdata/pkgconfig/xsp.pc
+@dirrm www/xsp
+@dirrm lib/xsp/unittests/webroot
+@dirrm lib/xsp/unittests/Tests.XSP.Security
+@dirrm lib/xsp/unittests
+@dirrm lib/xsp/test/controls
+@dirrm lib/xsp/test/bin
+@dirrm lib/xsp/test/App_Code
+@dirrm lib/xsp/test/2.0/treeview/TreeLineImages
+@dirrm lib/xsp/test/2.0/treeview
+@dirrm lib/xsp/test/2.0/menu
+@dirrm lib/xsp/test/2.0/masterpages
+@dirrm lib/xsp/test/2.0
+@dirrm lib/xsp/test/1.1/webservice
+@dirrm lib/xsp/test/1.1/webcontrols
+@dirrm lib/xsp/test/1.1/html
+@dirrm lib/xsp/test/1.1/handlers
+@dirrm lib/xsp/test/1.1/databind
+@dirrm lib/xsp/test/1.1/customcontrol
+@dirrm lib/xsp/test/1.1/authtest
+@dirrm lib/xsp/test/1.1/asp.net
+@dirrm lib/xsp/test/1.1
+@dirrm lib/xsp/test
+@dirrm lib/xsp/2.0
+@dirrm lib/xsp/1.0
+@dirrm lib/xsp
+@dirrm lib/mono/gac/xsp2/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/xsp2
+@dirrm lib/mono/gac/xsp/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/xsp
+@dirrm lib/mono/gac/mod-mono-server2/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/mod-mono-server2
+@dirrm lib/mono/gac/mod-mono-server/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/mod-mono-server
+@dirrm lib/mono/gac/fastcgi-mono-server2/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/fastcgi-mono-server2
+@dirrm lib/mono/gac/fastcgi-mono-server/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/fastcgi-mono-server
+@dirrm lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/Mono.WebServer2
+@dirrm lib/mono/gac/Mono.WebServer/0.1.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/Mono.WebServer

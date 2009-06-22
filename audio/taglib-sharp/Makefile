@@ -7,6 +7,7 @@
 
 PORTNAME=	taglib-sharp
 PORTVERSION=	2.0.3.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.taglib-sharp.com/Download/ \
 		http://download.banshee-project.org/${PORTNAME}/${PORTVERSION}/
@@ -32,7 +33,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
 .if !defined(WITHOUT_DOCS) && !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/monodocer:${PORTSDIR}/devel/monodoc
+#CONFIGURE_ARGS+=	--enable-docs
 .else
 CONFIGURE_ARGS+=	--disable-docs
 .endif

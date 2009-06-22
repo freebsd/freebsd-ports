@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Thu Sep 22 14:04:38 2005
++++ src/Makefile.in	Sat Oct 22 18:28:32 2005
+@@ -468,8 +468,8 @@
+ 
+ install: $(lib_LTLIBRARIES)
+ 	$(mkinstalldirs) "$(DESTDIR)$(APXS_LIBEXECDIR)"
+-@APACHE2_TRUE@	$(APXS) -S LIBEXECDIR="$(DESTDIR)$(APXS_LIBEXECDIR)" -i -n mono mod_mono.la
+-@APACHE2_FALSE@	$(APXS) -S LIBEXECDIR="$(DESTDIR)$(APXS_LIBEXECDIR)" -i -n mono .libs/mod_mono.so
++#@APACHE2_TRUE@	$(APXS) -S LIBEXECDIR="$(DESTDIR)$(APXS_LIBEXECDIR)" -i -n mono mod_mono.la
++	$(APXS) -S LIBEXECDIR="$(DESTDIR)$(APXS_LIBEXECDIR)" -i -n mono .libs/mod_mono.so
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

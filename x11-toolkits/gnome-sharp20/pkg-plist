@@ -13,11 +13,71 @@ lib/mono/gac/gnome-sharp/2.24.0.0__35e10195dab3c99f/gnome-sharp.dll
 lib/mono/gac/gnome-sharp/2.24.0.0__35e10195dab3c99f/gnome-sharp.dll.config
 lib/mono/gac/gnome-vfs-sharp/2.24.0.0__35e10195dab3c99f/gnome-vfs-sharp.dll
 lib/mono/gac/gnome-vfs-sharp/2.24.0.0__35e10195dab3c99f/gnome-vfs-sharp.dll.config
+lib/mono/gac/policy.2.16.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.16.art-sharp.dll
+lib/mono/gac/policy.2.16.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.16.config
+lib/mono/gac/policy.2.16.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.16.config
+lib/mono/gac/policy.2.16.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.16.gconf-sharp-peditors.dll
+lib/mono/gac/policy.2.16.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.16.config
+lib/mono/gac/policy.2.16.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.16.gconf-sharp.dll
+lib/mono/gac/policy.2.16.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.16.config
+lib/mono/gac/policy.2.16.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.16.gnome-vfs-sharp.dll
+lib/mono/gac/policy.2.20.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.20.art-sharp.dll
+lib/mono/gac/policy.2.20.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.20.config
+lib/mono/gac/policy.2.20.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.20.config
+lib/mono/gac/policy.2.20.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.20.gconf-sharp-peditors.dll
+lib/mono/gac/policy.2.20.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.20.config
+lib/mono/gac/policy.2.20.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.20.gconf-sharp.dll
+lib/mono/gac/policy.2.20.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.20.config
+lib/mono/gac/policy.2.20.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.20.gnome-vfs-sharp.dll
+lib/mono/gac/policy.2.4.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.4.art-sharp.dll
+lib/mono/gac/policy.2.4.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.4.config
+lib/mono/gac/policy.2.4.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.4.config
+lib/mono/gac/policy.2.4.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.4.gconf-sharp-peditors.dll
+lib/mono/gac/policy.2.4.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.4.config
+lib/mono/gac/policy.2.4.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.4.gconf-sharp.dll
+lib/mono/gac/policy.2.4.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.4.config
+lib/mono/gac/policy.2.4.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.4.gnome-vfs-sharp.dll
+lib/mono/gac/policy.2.6.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.6.art-sharp.dll
+lib/mono/gac/policy.2.6.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.6.config
+lib/mono/gac/policy.2.6.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.6.config
+lib/mono/gac/policy.2.6.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.6.gconf-sharp-peditors.dll
+lib/mono/gac/policy.2.6.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.6.config
+lib/mono/gac/policy.2.6.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.6.gconf-sharp.dll
+lib/mono/gac/policy.2.6.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.6.config
+lib/mono/gac/policy.2.6.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.6.gnome-vfs-sharp.dll
+lib/mono/gac/policy.2.8.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.8.art-sharp.dll
+lib/mono/gac/policy.2.8.art-sharp/0.0.0.0__35e10195dab3c99f/policy.2.8.config
+lib/mono/gac/policy.2.8.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.8.config
+lib/mono/gac/policy.2.8.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f/policy.2.8.gconf-sharp-peditors.dll
+lib/mono/gac/policy.2.8.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.8.config
+lib/mono/gac/policy.2.8.gconf-sharp/0.0.0.0__35e10195dab3c99f/policy.2.8.gconf-sharp.dll
+lib/mono/gac/policy.2.8.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.8.config
+lib/mono/gac/policy.2.8.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f/policy.2.8.gnome-vfs-sharp.dll
 lib/mono/gtk-sharp-2.0/art-sharp.dll
 lib/mono/gtk-sharp-2.0/gconf-sharp-peditors.dll
 lib/mono/gtk-sharp-2.0/gconf-sharp.dll
 lib/mono/gtk-sharp-2.0/gnome-sharp.dll
 lib/mono/gtk-sharp-2.0/gnome-vfs-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.16.art-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.16.gconf-sharp-peditors.dll
+lib/mono/gtk-sharp-2.0/policy.2.16.gconf-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.16.gnome-vfs-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.20.art-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.20.gconf-sharp-peditors.dll
+lib/mono/gtk-sharp-2.0/policy.2.20.gconf-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.20.gnome-vfs-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.4.art-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.4.gconf-sharp-peditors.dll
+lib/mono/gtk-sharp-2.0/policy.2.4.gconf-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.4.gnome-vfs-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.6.art-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.6.gconf-sharp-peditors.dll
+lib/mono/gtk-sharp-2.0/policy.2.6.gconf-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.6.gnome-vfs-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.8.art-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.8.gconf-sharp-peditors.dll
+lib/mono/gtk-sharp-2.0/policy.2.8.gconf-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.8.gnome-vfs-sharp.dll
 libdata/pkgconfig/art-sharp-2.0.pc
 libdata/pkgconfig/gconf-sharp-2.0.pc
 libdata/pkgconfig/gconf-sharp-peditors-2.0.pc
@@ -26,13 +86,53 @@ libdata/pkgconfig/gnome-vfs-sharp-2.0.pc
 share/gapi-2.0/art-api.xml
 share/gapi-2.0/gnome-api.xml
 share/gapi-2.0/gnome-vfs-api.xml
+@dirrm lib/mono/gac/policy.2.8.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.8.gnome-vfs-sharp
+@dirrm lib/mono/gac/policy.2.8.gconf-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.8.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.8.gconf-sharp-peditors
+@dirrm lib/mono/gac/policy.2.8.gconf-sharp
+@dirrm lib/mono/gac/policy.2.8.art-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.8.art-sharp
+@dirrm lib/mono/gac/policy.2.6.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.6.gnome-vfs-sharp
+@dirrm lib/mono/gac/policy.2.6.gconf-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.6.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.6.gconf-sharp-peditors
+@dirrm lib/mono/gac/policy.2.6.gconf-sharp
+@dirrm lib/mono/gac/policy.2.6.art-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.6.art-sharp
+@dirrm lib/mono/gac/policy.2.4.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.4.gnome-vfs-sharp
+@dirrm lib/mono/gac/policy.2.4.gconf-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.4.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.4.gconf-sharp-peditors
+@dirrm lib/mono/gac/policy.2.4.gconf-sharp
+@dirrm lib/mono/gac/policy.2.4.art-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.4.art-sharp
+@dirrm lib/mono/gac/policy.2.20.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.20.gnome-vfs-sharp
+@dirrm lib/mono/gac/policy.2.20.gconf-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.20.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.20.gconf-sharp-peditors
+@dirrm lib/mono/gac/policy.2.20.gconf-sharp
+@dirrm lib/mono/gac/policy.2.20.art-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.20.art-sharp
+@dirrm lib/mono/gac/policy.2.16.gnome-vfs-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.16.gnome-vfs-sharp
+@dirrm lib/mono/gac/policy.2.16.gconf-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.16.gconf-sharp-peditors/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.16.gconf-sharp-peditors
+@dirrm lib/mono/gac/policy.2.16.gconf-sharp
+@dirrm lib/mono/gac/policy.2.16.art-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.16.art-sharp
 @dirrm lib/mono/gac/gnome-vfs-sharp/2.24.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/gnome-vfs-sharp
 @dirrm lib/mono/gac/gnome-sharp/2.24.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/gnome-sharp
 @dirrm lib/mono/gac/gconf-sharp/2.24.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gconf-sharp
 @dirrm lib/mono/gac/gconf-sharp-peditors/2.24.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/gconf-sharp-peditors
+@dirrm lib/mono/gac/gconf-sharp
 @dirrm lib/mono/gac/art-sharp/2.24.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/art-sharp
