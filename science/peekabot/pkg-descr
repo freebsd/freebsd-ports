@@ -1,0 +1,9 @@
+peekabot is a distributed real-time 3D visualization tool for robotics 
+researchers and developers, written in C++. 
+
+Its purpose is to simplify the visualization needs faced by a roboticist 
+daily - using visualization as a debugging aid or making fancy slides for 
+a presentation, for example.
+
+Chris Petrik (chris@officialunix.com)
+WWW: http://www.peekabot.org
