@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	HTML-MobileJp
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	CPAN
-PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Generate mobile-jp html tags
@@ -25,4 +24,8 @@ MAN3=		HTML::MobileJp.3 \
 		HTML::MobileJp::Plugin::GPS.3 \
 		HTML::MobileJp::Plugin::EZweb::Object.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
+
+.include <bsd.port.post.mk>
