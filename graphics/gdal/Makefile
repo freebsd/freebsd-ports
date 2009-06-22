@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --with-libz=/usr
 MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install install-man
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		gdal-config.1 gdal2tiles.1 gdal_contour.1 gdal_grid.1 \
 		gdal_merge.1 gdal_rasterize.1 gdal_retile.1 gdal_translate.1 \
