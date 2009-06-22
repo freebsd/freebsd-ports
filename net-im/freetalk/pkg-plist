@@ -1,0 +1,36 @@
+bin/freetalk
+%%DOCSDIR%%/examples/daemon.ft
+%%DOCSDIR%%/examples/freetalk.scm
+%%DOCSDIR%%/examples/hello-world.ft
+%%DOCSDIR%%/examples/mimic.ft
+%%DATADIR%%/extensions/beep.scm
+%%DATADIR%%/extensions/broadcast.scm
+%%DATADIR%%/extensions/color.scm
+%%DATADIR%%/extensions/connection.scm
+%%DATADIR%%/extensions/dict-buddy.scm
+%%DATADIR%%/extensions/dyn-commands.scm
+%%DATADIR%%/extensions/file-transfer.scm
+%%DATADIR%%/extensions/first-time-run.sh
+%%DATADIR%%/extensions/hacker-romance.scm
+%%DATADIR%%/extensions/history.scm
+%%DATADIR%%/extensions/init.scm
+%%DATADIR%%/extensions/login.scm
+%%DATADIR%%/extensions/loudscream.scm
+%%DATADIR%%/extensions/mr-oxford.scm
+%%DATADIR%%/extensions/pipe.scm
+%%DATADIR%%/extensions/proud-of-freetalk.scm
+%%DATADIR%%/extensions/roster.scm
+%%DATADIR%%/extensions/shell.scm
+%%DATADIR%%/extensions/state.scm
+%%DATADIR%%/extensions/url.scm
+%%DATADIR%%/extensions/utils.scm
+share/locale/en@boldquot/LC_MESSAGES/freetalk.mo
+share/locale/en@quot/LC_MESSAGES/freetalk.mo
+@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+@dirrmtry share/locale/en@boldquot
+@dirrmtry share/locale/en@quot/LC_MESSAGES
+@dirrmtry share/locale/en@quot
+@dirrm %%DATADIR%%/extensions
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
