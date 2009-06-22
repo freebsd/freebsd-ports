@@ -1,9 +1,9 @@
-Samesame is a collection of tools that fall in to the categorie of file
+Samesame is a collection of tools that fall in to the category of file
 management software. These tools will prevent that you need to delete
 files or buy more disk space. Instead they solve low disk space problems
 by linking identical files together and thus free up waisted disk space.
 
-This collaction was inspired by the application samefile written by Jens
+This collection was inspired by the application samefile written by Jens
 Schweikhardt. The collection comes with its own version of samefile that
 is noticeable faster and is able to process a much larger file list.
 
@@ -17,6 +17,7 @@ Typical usage would be:
    find / | samefile -i | samelink
 
 This would search for identical files and clean up wasted disk space by
-linking them together. Add the option -n after samelink for a dry-run.
+linking them together. Add the option -vn after samelink for a verbose
+dry-run.
 
-WWW:	http://www.akruijff.dds.nl/samesame/
+WWW:	http://samesame.kruijff.org/
