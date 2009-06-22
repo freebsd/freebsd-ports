@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	aqbanking
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	finance
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
-DISTFILES=	download.php\?package=03\&release=36\&file=01\&dummy=aqbanking-${PORTVERSION}.tar.gz
+DISTFILES=	download.php\?package=03\&release=37\&file=01\&dummy=aqbanking-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
 
-LIB_DEPENDS=	gwenhywfar.55:${PORTSDIR}/devel/gwenhywfar \
+LIB_DEPENDS=	gwenhywfar.56:${PORTSDIR}/devel/gwenhywfar \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
 OPTIONS=	KTOBLZCHECK	"KtoBlzCheck support"	off
