@@ -3,6 +3,7 @@ bin/aqbanking-config
 bin/aqhbci-tool4
 bin/hbcixml3
 bin/qb-help8
+include/aqbanking/abgui.h
 include/aqbanking/account.h
 include/aqbanking/account_be.h
 include/aqbanking/accstatus.h
@@ -214,13 +215,13 @@ lib/gwenhywfar/plugins/47/dbio/swift.so
 lib/gwenhywfar/plugins/47/dbio/swift.xml
 lib/libaqbanking.la
 lib/libaqbanking.so
-lib/libaqbanking.so.29
+lib/libaqbanking.so.30
 lib/libaqhbci.la
 lib/libaqhbci.so
 lib/libaqhbci.so.16
 lib/libaqnone.la
 lib/libaqnone.so
-lib/libaqnone.so.29
+lib/libaqnone.so.30
 lib/libaqofxconnect.la
 lib/libaqofxconnect.so
 lib/libaqofxconnect.so.5
