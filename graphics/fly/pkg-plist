@@ -21,32 +21,33 @@ bin/fly
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/using.html
 %%PORTDOCS%%%%DOCSDIR%%/valid_html.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.csh
-%%PORTDOCS%%%%EXAMPLESDIR%%/gif/small-end.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/gif/small.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/jpeg/small-end.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/jpeg/small.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/jpeg/test.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/perl/cgi-perl-example.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/perl/fly-tester.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/perl/perl.example
-%%PORTDOCS%%%%EXAMPLESDIR%%/perl/size.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/1.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/2.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/3.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/4.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/5.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/6.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/7.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/8.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/9.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/small-end.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/small.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/small2.fly
-%%PORTDOCS%%%%EXAMPLESDIR%%/png/test.fly
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/png
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/perl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/jpeg
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gif
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Y2K.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.csh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gif/small-end.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gif/small.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jpeg/small-end.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jpeg/small.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jpeg/test.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/cgi-perl-example.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/fly-tester.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/perl.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/size.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/1.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/2.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/3.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/4.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/5.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/6.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/7.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/8.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/9.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/small-end.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/small.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/small2.fly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/png/test.fly
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/png
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jpeg
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gif
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
