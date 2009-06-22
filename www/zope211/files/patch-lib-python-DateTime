@@ -1,0 +1,83 @@
+--- lib/python/Zope2/Startup/zopeschema.xml.orig	2009-05-20 10:09:56.000000000 +0200
++++ lib/python/Zope2/Startup/zopeschema.xml	2009-05-20 09:02:27.000000000 +0200
+@@ -444,6 +444,14 @@
+     <metadefault>us</metadefault>
+   </key>
+ 
++  <key name="datetime-default-localtimezone" datatype="boolean" default="off">
++    <description>
++     By default datetime uses the UTC timezone if no timezone is given. 
++     Set this option to on to use system local time zone as default time zone. 
++    </description>
++    <metadefault>off</metadefault>
++  </key>
++
+   <key name="zserver-threads" datatype="integer" default="4">
+      <description>
+      Specify the number of threads that Zope's ZServer web server will use
+--- lib/python/DateTime/DateTime.py.orig	2009-05-20 09:09:32.000000000 +0200
++++ lib/python/DateTime/DateTime.py	2009-05-20 10:12:07.000000000 +0200
+@@ -16,13 +16,14 @@
+ 
+ 
+ import re, math,  DateTimeZone
+-from time import time, gmtime, localtime
++from time import time, gmtime, localtime, strptime, mktime
+ from time import daylight, timezone, altzone, strftime
+ from datetime import datetime
+ from interfaces import IDateTime
+ from interfaces import DateTimeError, SyntaxError, DateError, TimeError
+ from zope.interface import implements
+ from pytz_support import PytzCache
++from App.config import getConfiguration
+ _cache = PytzCache
+ 
+ default_datefmt = None
+@@ -31,7 +32,6 @@
+     global default_datefmt
+     if default_datefmt is None:
+         try:
+-            from App.config import getConfiguration
+             default_datefmt = getConfiguration().datetime_format
+             return default_datefmt
+         except:
+@@ -1805,10 +1805,14 @@
+         if fields['signal'] or fields['Z']:
+             tznaive = False
+         else:
+-            tznaive = True
++            if getConfiguration().datetime_default_localtimezone :
++                dtstr = "%04.4d-%02.2d-%02.2d %02.2d:%02.2d:%02.2d" % (year, month, day, hour, minute, seconds)
++                dsttime = strptime(dtstr, "%Y-%m-%d %H:%M:%S")
++                dsdtime = localtime(mktime(dsttime))
++                ltzoff =  _tzoffset(self.localZone(dsdtime), None)
++                hour_off = ltzoff / 3600
++                min_off = (ltzoff % 3600) / 60
+         
+-        # Differ from the specification here. To preserve backwards
+-        # compatibility assume a default timezone == UTC.
+         tz = 'GMT%+03d%02d' % (hour_off, min_off)
+ 
+         return year, month, day, hour, minute, seconds, tz, tznaive
+--- skel/etc/zope.conf.in.orig	2009-06-22 08:30:40.000000000 +0200
++++ skel/etc/zope.conf.in	2009-06-22 08:31:15.000000000 +0200
+@@ -204,6 +204,19 @@
+ #    datetime-format international
+ 
+ 
++# Directive: datetime-default-localtimezone
++#
++# Description:
++#     By default datetime uses the UTC timezone if no timezone is given.
++#     Set this option to on to use system local time zone as default time zone.
++#     
++# Default: off
++#     
++# Example:
++#     
++#    datetime-default-localtimezone on
++
++
+ # Directive: zserver-threads
+ #
+ # Description:
