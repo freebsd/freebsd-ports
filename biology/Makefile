@@ -75,6 +75,7 @@
     SUBDIR += protomol
     SUBDIR += psi88
     SUBDIR += py-biopython
+    SUBDIR += pycogent
     SUBDIR += pymol
     SUBDIR += rasmol
     SUBDIR += recombine
