@@ -8,3 +8,5 @@ consume more than 512MB of main memory.  Set WITHOUT_JAVA=yes in
 the environment when building this port to avoid that.)
 
 WWW: http://gcc.gnu.org/
+
+Gerald Pfeifer <gerald@FreeBSD.org>
