@@ -1,5 +1,5 @@
---- doc/manual.xml.head.orig	Sun Nov  4 13:58:04 2007
-+++ doc/manual.xml.head	Sun Nov  4 14:08:23 2007
+--- doc/manual.xml.head.orig	2009-06-22 08:35:06.000000000 +0200
++++ doc/manual.xml.head	2009-06-22 08:37:31.000000000 +0200
 @@ -1,6 +1,6 @@
  <?xml version="1.0" standalone="no"?>
  <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
@@ -8,12 +8,12 @@
  <book>
  
  <bookinfo>
-@@ -6160,7 +6160,7 @@
+@@ -7271,7 +7271,7 @@
  <para>
  The built-in SMTP support supports encryption (the <literal>smtps</literal> protocol
  using SSL or TLS) as well as SMTP authentication using SASL. The authentication mechanisms
 -for SASL are specified in <link linkend="smtp-authenticators">&dollar;smtp&lowbar;authenticators</link>
 +for SASL are specified in <literal>&dollar;smtp&lowbar;authenticators</literal>
- defaulting to an empty list which makes mutt try all available methods
+ defaulting to an empty list which makes Mutt try all available methods
  from most-secure to least-secure.
  </para>

@@ -134,6 +134,7 @@ EOF
     echo "%%DOCSDIR%%/html/miscellany.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/optionalfeatures.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/reference.html" >> $tmp_first
+    echo "%%DOCSDIR%%/html/security.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/tuning.html" >> $tmp_first
     if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
       echo "%%DOCSDIR%%/html/compressed-folders.html" >> $tmp_first
