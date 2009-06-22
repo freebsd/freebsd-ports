@@ -141,7 +141,7 @@ lib/gwenhywfar/plugins/47/dbio/xmldb.xml
 lib/libgwenhywfar.a
 lib/libgwenhywfar.la
 lib/libgwenhywfar.so
-lib/libgwenhywfar.so.55
+lib/libgwenhywfar.so.56
 libdata/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
 share/gwenhywfar/ca-bundle.crt
