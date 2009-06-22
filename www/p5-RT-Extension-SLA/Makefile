@@ -35,11 +35,15 @@ MAN3=		RT::Action::SLA.3                     \
 
 PLIST_SUB+=	RTHOME=${RTHOME}
 
+SUB_LIST+=	RTHOME=${RTHOME}
+SUB_FILES+=	pkg-message
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_RT36)
 
 RTHOME?=	rt3
+SUB_LIST+=	INITIALDATA=local/etc/Extension-SLA/initialdata
 RT_PM_DIR=	${LOCALBASE}/${RTHOME}/lib
 BUILD_DEPENDS+=	${RT_PM_DIR}/RT.pm:${PORTSDIR}/www/rt36
 PLIST=		${PKGDIR}/pkg-plist.rt36
@@ -48,6 +52,7 @@ MAN3PREFIX=	${PREFIX}/${RTHOME}/local
 .else
 
 RTHOME?=	share/rt38
+SUB_LIST+=	INITIALDATA=plugins/RT-Extension-SLA/etc/initialdata
 RT_PM_DIR=	${SITE_PERL}
 BUILD_DEPENDS+=	${RT_PM_DIR}/RT.pm:${PORTSDIR}/www/rt38
 PLIST=		${PKGDIR}/pkg-plist.rt38
@@ -62,5 +67,8 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${RT_PM_DIR} ./${CONFIGURE_SCRIPT} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
