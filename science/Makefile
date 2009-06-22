@@ -103,6 +103,7 @@
     SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += pcp
+    SUBDIR += peekabot
     SUBDIR += pnetcdf
     SUBDIR += psi3
     SUBDIR += psychopy
