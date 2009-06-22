@@ -1,9 +1,10 @@
 lib/libtuner/libtuner.so
 lib/libtuner/libtuner.so.1
 lib/libtuner/libtuner.so.1.0
-lib/libtuner/libtuner.so.1.0.2
+lib/libtuner/libtuner.so.1.0.3
 include/libtuner/avb_driver.h
 include/libtuner/cx22702.h
+include/libtuner/cx24227.h
 include/libtuner/dtt75105.h
 include/libtuner/dtt7579.h
 include/libtuner/dtt7612.h
@@ -11,6 +12,7 @@ include/libtuner/dvb_driver.h
 include/libtuner/fmd1216me.h
 include/libtuner/lg3303.h
 include/libtuner/lgh064f.h
+include/libtuner/mt2131.h
 include/libtuner/or51132.h
 include/libtuner/pll_driver.h
 include/libtuner/tda9887.h

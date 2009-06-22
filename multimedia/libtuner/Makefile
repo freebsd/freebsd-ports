@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtuner
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://corona.homeunix.net/ports/libtuner/
 EXTRACT_ONLY=	libtuner-${PORTVERSION}.tar.gz
@@ -14,7 +14,7 @@ EXTRACT_ONLY=	libtuner-${PORTVERSION}.tar.gz
 MAINTAINER=	jason.harmening@gmail.com
 COMMENT=	Userspace drivers for various TV/radio tuner ICs
 
-MAKE_ARGS+=	LIBTUNER_MAJOR=1 LIBTUNER_MINOR=0 LIBTUNER_REV=2 INSTALLDIR=${PREFIX}
+MAKE_ARGS+=	LIBTUNER_MAJOR=1 LIBTUNER_MINOR=0 LIBTUNER_REV=3 INSTALLDIR=${PREFIX}
 USE_LDCONFIG=	${PREFIX}/lib/libtuner
 
 .include <bsd.port.mk>
