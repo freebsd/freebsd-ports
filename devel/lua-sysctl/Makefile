@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lua-sysctl
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://files.kaworu.ch/
 
@@ -18,10 +17,6 @@ USE_LUA=	yes
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/sysctl.lua \
 		%%LUA_MODLIBDIR%%/sysctl/core.so
 PLIST_DIRS=	%%LUA_MODLIBDIR%%/sysctl
-
-post-patch:
-	@${REINPLACE_CMD} -E '/^(C|LD)FLAGS/ s/=/+=/g' \
-		${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${LUA_MODLIBDIR}/sysctl
