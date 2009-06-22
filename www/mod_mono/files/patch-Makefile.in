@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Sep 22 14:04:39 2005
++++ Makefile.in	Sun Oct  2 20:24:15 2005
+@@ -192,7 +192,7 @@
+ # Current spec file is obsolete
+ #	     packaging/redhat/mod_mono.spec \
+ #	     packaging/redhat/mono.conf
+-modmonoconfdir = $(APXS_SYSCONFDIR)
++modmonoconfdir = %%MOD_MONOCONFDIR%%
+ modmonoconf_DATA = mod_mono.conf
+ all: all-recursive
+ 

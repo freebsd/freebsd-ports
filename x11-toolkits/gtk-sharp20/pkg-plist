@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/gapi2-codegen
 bin/gapi2-fixup
 bin/gapi2-parser
@@ -143,6 +144,7 @@ share/gapi-2.0/glade-api.xml
 share/gapi-2.0/glib-api.xml
 share/gapi-2.0/gtk-api.xml
 share/gapi-2.0/pango-api.xml
+@dirrmtry share/gapi-2.0
 @dirrmtry lib/mono/gtk-sharp-2.0
 @dirrm lib/mono/gac/policy.2.8.pango-sharp/0.0.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/policy.2.8.pango-sharp
@@ -201,18 +203,17 @@ share/gapi-2.0/pango-api.xml
 @dirrm lib/mono/gac/policy.2.10.atk-sharp/0.0.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/policy.2.10.atk-sharp
 @dirrm lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/pango-sharp
+@dirrm lib/mono/gac/pango-sharp
 @dirrm lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/gtk-sharp
+@dirrm lib/mono/gac/gtk-sharp
 @dirrm lib/mono/gac/gtk-dotnet/2.12.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/gtk-dotnet
+@dirrm lib/mono/gac/gtk-dotnet
 @dirrm lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/glib-sharp
+@dirrm lib/mono/gac/glib-sharp
 @dirrm lib/mono/gac/glade-sharp/2.12.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/glade-sharp
+@dirrm lib/mono/gac/glade-sharp
 @dirrm lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/gdk-sharp
+@dirrm lib/mono/gac/gdk-sharp
 @dirrm lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/atk-sharp
+@dirrm lib/mono/gac/atk-sharp
 @dirrmtry lib/gtk-sharp-2.0
-@dirrmtry share/gapi-2.0

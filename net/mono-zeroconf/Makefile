@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mono-zeroconf
-PORTVERSION=	0.7.6
+PORTVERSION=	0.9.0
 CATEGORIES=	net
 MASTER_SITES=	http://download.banshee-project.org/${PORTNAME}/
 
@@ -17,8 +17,6 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/libdata/pkgconfig/avahi-sharp.pc:${PORTSDIR}/net/avahi-sharp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-OPTIONS=	DOCS "Install documentation" on
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
@@ -28,11 +26,11 @@ CONFIGURE_ARGS+=	--program-transform-name="" \
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
-.if !defined(WITHOUT_DOCS) && !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/monodocer:${PORTSDIR}/devel/monodoc
-CONFIGURE_ARGS+=	--enable-docs
-.else
+.if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
+.else
+CONFIGURE_ARGS+=	--enable-docs
+#BUILD_DEPENDS+=	${LOCALBASE}/bin/monodocer:${PORTSDIR}/devel/monodoc
 .endif
 
 .include <bsd.port.post.mk>

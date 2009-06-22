@@ -1,0 +1,31 @@
+--- configure.orig	Wed Feb  2 19:30:26 2005
++++ configure	Wed Feb 23 22:03:36 2005
+@@ -1974,6 +1974,28 @@
+ 	MCS=$CSC
+ fi
+ 
++if test "x$GMCS" != "xno" ; then
++	echo "$as_me:$LINENO: checking whether gmcs is actually able to compile..." >&5
++echo $ECHO_N "checking whether gmcs is actually able to compile...... $ECHO_C" >&6
++
++	tmpin=fixme.exe
++	tmpout=fixme.exe
++
++	echo "class Foo { public static void Main() {} }" > $tmpin
++
++	if  gmcs -r:System.Web.dll -out:$tmpout $tmpin > /dev/null 2>&1
++	then
++		echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++	else
++		GMCS=no
++		echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
++	fi
++
++	rm -f $tmpin $tmpout
++fi
++
+ case "$host" in
+ 	*-*-mingw*|*-*-cygwin*)
+ 	platform_win32=yes

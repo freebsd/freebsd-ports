@@ -8,6 +8,7 @@
 PORTNAME=	banshee
 PORTVERSION=	1.4.3
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/banshee/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
@@ -52,9 +53,7 @@ INSTALL=	/usr/bin/install
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
-.if !defined(WITHOUT_DOCS) && !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/monodocer:${PORTSDIR}/devel/monodoc
-.else
+.if defined(WITHOUT_DOCS) || defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 

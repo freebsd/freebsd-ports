@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tomboy
-PORTVERSION=	0.12.2
+PORTVERSION=	0.14.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,6 +30,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=--enable-evolution=yes \
 		--enable-dbus=yes \

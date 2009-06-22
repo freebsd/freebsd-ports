@@ -476,6 +476,7 @@
     SUBDIR += mod_macro2
     SUBDIR += mod_macro22
     SUBDIR += mod_memcache
+    SUBDIR += mod_mono
     SUBDIR += mod_mp3
     SUBDIR += mod_musicindex
     SUBDIR += mod_mylo
@@ -1737,6 +1738,7 @@
     SUBDIR += xpi-yslow
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
+    SUBDIR += xsp
     SUBDIR += xulrunner
     SUBDIR += yabb
     SUBDIR += yahoo-ui
