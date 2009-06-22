@@ -1,18 +1,18 @@
 # New ports collection makefile for: qmailadmin
-# Date created:		31 May 2009
-# Whom:			Ismail YENIGUL
+# Date created:		23 Sep 2000
+# Whom:			Neil Blakey-Milner
 #
 # $FreeBSD$
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.2.13
-PORTEPOCH=	1
+PORTVERSION=	1.2.12
+PORTEPOCH=	2
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ismail.yenigul@endersys.com.tr
+MAINTAINER=	roam@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
 # vpopmail installation directory
@@ -38,7 +38,7 @@ BUILD_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 RUN_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 .endif
 
-CONFLICTS=	qmailadmin-1.*
+CONFLICTS=	qmailadmin-devel-1.*
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
