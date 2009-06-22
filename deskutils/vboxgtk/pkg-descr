@@ -1,0 +1,5 @@
+VBoxGtk is a simple GTK frontend for VirtualBox. Its objective is to
+support only the basic features of VirtualBox and keep the interface
+simple and clean.
+
+WWW: http://vboxgtk.sourceforge.net/
