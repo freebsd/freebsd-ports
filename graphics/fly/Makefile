@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fly
-PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://members.optushome.com.au/martingleeson/%SUBDIR%/ \
-		http://martin.gleeson.com/%SUBDIR%/
+MASTER_SITES=	http://martin.gleeson.com/%SUBDIR%/ \
+		http://members.optushome.com.au/martingleeson/%SUBDIR%/ \
+		http://www.w3perl.com/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/dist
 
 MAINTAINER=	corky1951@comcast.net
@@ -28,6 +28,8 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
