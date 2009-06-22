@@ -1,0 +1,3 @@
+An interface which glues ruby-debug to IDEs like Eclipse (RDT) and NetBeans.
+
+WWW: http://rubyforge.org/projects/debug-commons/
