@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -23,6 +23,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_MODULE "Enable HTTP module" on \
 		HTTP_ACCESSKEY_MODULE "Enable http_accesskey module" off \
 		HTTP_ADDITION_MODULE "Enable http_addition module" off \
+		HTTP_CACHE_MODULE "Enable http_cache module" on \
 		HTTP_DAV_MODULE "Enable http_webdav module" off \
 		HTTP_FANCYINDEX_MODULE "Enable http_fancyindex module" off \
 		HTTP_FLV_MODULE "Enable http_flv module" off \
@@ -120,6 +121,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_
 
 .if defined(WITH_HTTP_ADDITION_MODULE)
 CONFIGURE_ARGS+=--with-http_addition_module
+.endif
+
+.if defined(WITHOUT_HTTP_CACHE_MODULE)
+CONFIGURE_ARGS+=--without-http-cache
 .endif
 
 .if defined(WITH_HTTP_DAV_MODULE)
