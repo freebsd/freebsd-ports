@@ -68,23 +68,22 @@
  
  into your system's global Muttrc, which normally resides in /etc or
  /usr/local/etc.
---- doc/manual.txt.orig	2009-01-06 01:37:18.000000000 +0100
-+++ doc/manual.txt	2009-02-06 13:32:18.000000000 +0100
-@@ -2982,9 +2982,10 @@
+--- doc/manual.txt.orig	2009-06-14 20:54:56.000000000 +0200
++++ doc/manual.txt	2009-06-22 15:11:26.000000000 +0200
+@@ -3225,9 +3225,9 @@
  shows that arguments can be quoted: the script will receive the expanded string
  between the single quotes as the only argument.
  
 -A practical example is the mutt_xtitle script installed in the samples
--subdirectory of the mutt documentation: it can be used as filter for
+-subdirectory of the Mutt documentation: it can be used as filter for
 -$status_format to set the current terminal's title, if supported.
 +A practical example is the mutt_xtitle script installed in the
-+share/examples/mutt/ subdirectory of the mutt documentation: it can be used as
++share/examples/mutt/ subdirectory of the Mutt documentation: it can be used as
 +filter for $status_format to set the current terminal's title, if supported.
-+
  
- Chapter 4. Advanced Usage
+ 29.4. Padding
  
-@@ -7576,8 +7577,8 @@
+@@ -7740,8 +7740,8 @@
  
  For examples on how to configure these formats for the various versions of PGP
  which are floating around, see the pgp and gpg sample configuration files in
@@ -93,11 +92,11 @@
 +the share/examples/mutt/ subdirectory which has been installed on your system.
 +(PGP only)
  
- 3.170. pgp_getkeys_command
+ 3.158. pgp_decrypt_command
  
-@@ -7809,9 +7810,9 @@
-     or file, this expands to ?-CApath $smime_ca_location? or ?-CAfile
-     $smime_ca_location?.
+@@ -8751,9 +8751,9 @@
+ |  |$smime_ca_location?.                                                      |
+ +-----------------------------------------------------------------------------+
  
 -For examples on how to configure these formats, see the smime.rc in the samples
 -/ subdirectory which has been installed on your system alongside the
@@ -106,5 +105,5 @@
 +share/examples/mutt/ subdirectory which has been installed on your system.
 +(S/MIME only)
  
- 3.189. smime_verify_command
+ 3.244. smime_decrypt_use_default_key
  

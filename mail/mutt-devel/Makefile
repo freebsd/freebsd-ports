@@ -114,8 +114,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.19
-PORTREVISION?=	2
+PORTVERSION=	1.5.20
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -130,7 +130,6 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www.spinnaker.de/mutt/compressed/:rr \
-		http://cedricduval.free.fr/mutt/patches/download/:cd \
 		http://lunar-linux.org/~tchan/mutt/:tchan
 DISTNAME=	mutt-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -141,7 +140,6 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www3.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://cedricduval.free.fr/mutt/patches/download/:cd \
 		http://home.woolridge.ca/mutt/patches/:dw \
 		http://www.spinnaker.de/mutt/compressed/:rr \
 		http://www.emaillab.org/mutt/${AC_PATCH_VERSION}/:jp \
@@ -175,8 +173,6 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
-CD_PATCH_VERSION=	1.5.5.1
-CD_IFDEF_PATCH_VERSION=	1.5.4
 DW_PATCH_VERSION=	1.5.6
 AC_PATCH_VERSION=	1.5.9
 VC_PATCH_VERSION=	1.5.16
@@ -184,14 +180,8 @@ DW_MBOX_PATCH_VERSION=	1.5.18
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
-.if !defined(CD_PATCH_VERSION)
-CD_PATCH_VERSION=	${PORTVERSION}
-.endif
 .if !defined(RR_PATCH_VERSION)
 RR_PATCH_VERSION=	${PORTVERSION}
-.endif
-.if !defined(CD_IFDEF_PATCH_VERSION)
-CD_IFDEF_PATCH_VERSION=	${CD_PATCH_VERSION}
 .endif
 .if !defined(DW_PATCH_VERSION)
 DW_PATCH_VERSION=	${PORTVERSION}
@@ -321,7 +311,7 @@ post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
-IGNORE=	The WITH_MUTT_SIGNATURE_MENU does not work at the moment.
+IGNORE=	The WITH_MUTT_SIGNATURE_MENU does not work at the moment
 XML_NEEDED=	yes
 post-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-signature-menu
@@ -425,25 +415,21 @@ PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 XML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
-DISTFILES+=	patch-${CD_IFDEF_PATCH_VERSION}.cd.ifdef.1:cd
-#XML_NEEDED=	yes
-pre-patch::
-	@${CAT} ${DISTDIR}/${DIST_SUBDIR}/patch-${CD_IFDEF_PATCH_VERSION}.cd.ifdef.1 > ${WRKDIR}/patch-ifdef
-	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.sgml.head$$/,/^diff/d' \
-		 ${WRKDIR}/patch-ifdef
-	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-ifdef
+post-patch::
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-ifdef
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
-PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
+IGNORE=	The WITH_MUTT_MBOX_HOOK_PATCH does not work at the moment
+#PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 XML_NEEDED=	yes
 .if defined(WITH_MUTT_NNTP)
 post-patch::
-	@${PATCH} ${PATCH_ARGS} -p0 < ${PATCHDIR}/extra-patch-sidebar-nntp
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-sidebar-nntp
 .else
 post-patch::
-	@${PATCH} ${PATCH_ARGS} -p0 < ${PATCHDIR}/extra-patch-sidebar
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-sidebar
 .endif
 .endif
 .if defined(WITH_MUTT_GREETING_PATCH)
