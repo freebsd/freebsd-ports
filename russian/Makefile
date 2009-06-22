@@ -33,6 +33,7 @@
     SUBDIR += php_doc
     SUBDIR += prawda
     SUBDIR += pscyr
+    SUBDIR += rubygem-russian
     SUBDIR += rubygem-rutils
     SUBDIR += rus-ispell
     SUBDIR += rux
