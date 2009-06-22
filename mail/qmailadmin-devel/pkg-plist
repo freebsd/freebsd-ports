@@ -1,0 +1,85 @@
+%%DATADIR%%/html/add_autorespond.html
+%%DATADIR%%/html/add_forward.html
+%%DATADIR%%/html/add_listmod.html
+%%DATADIR%%/html/add_listdig.html
+%%DATADIR%%/html/add_listuser.html
+%%DATADIR%%/html/add_mailinglist-idx.html
+%%DATADIR%%/html/add_mailinglist-no-idx.html
+%%DATADIR%%/html/add_user.html
+%%DATADIR%%/html/change_password.html
+%%DATADIR%%/html/change_password_success.html
+%%DATADIR%%/html/colortable
+%%DATADIR%%/html/del_autorespond_confirm.html
+%%DATADIR%%/html/del_forward_confirm.html
+%%DATADIR%%/html/del_listdig.html
+%%DATADIR%%/html/del_listmod.html
+%%DATADIR%%/html/del_listuser.html
+%%DATADIR%%/html/del_mailinglist_confirm.html
+%%DATADIR%%/html/del_user_confirm.html
+%%DATADIR%%/html/footer.html
+%%DATADIR%%/html/header.html
+%%DATADIR%%/html/main_menu.html
+%%DATADIR%%/html/mod_autorespond.html
+%%DATADIR%%/html/mod_dotqmail.html
+%%DATADIR%%/html/mod_mailinglist-idx.html
+%%DATADIR%%/html/mod_user.html
+%%DATADIR%%/html/setremotecatchall.html
+%%DATADIR%%/html/show_autorespond.html
+%%DATADIR%%/html/show_digest_subscribers.html
+%%DATADIR%%/html/show_forwards.html
+%%DATADIR%%/html/show_login.html
+%%DATADIR%%/html/show_mailinglist.html
+%%DATADIR%%/html/show_moderators.html
+%%DATADIR%%/html/show_subscribers.html
+%%DATADIR%%/html/show_users.html
+%%DATADIR%%/lang/bg
+%%DATADIR%%/lang/cs
+%%DATADIR%%/lang/da
+%%DATADIR%%/lang/de
+%%DATADIR%%/lang/en
+%%DATADIR%%/lang/es
+%%DATADIR%%/lang/fi
+%%DATADIR%%/lang/fr
+%%DATADIR%%/lang/hu
+%%DATADIR%%/lang/it
+%%DATADIR%%/lang/ja
+%%DATADIR%%/lang/lt
+%%DATADIR%%/lang/nl
+%%DATADIR%%/lang/no
+%%DATADIR%%/lang/pl
+%%DATADIR%%/lang/pt-br
+%%DATADIR%%/lang/ru
+%%DATADIR%%/lang/sk
+%%DATADIR%%/lang/sv
+%%DATADIR%%/lang/tr
+%%DATADIR%%/lang/zh-cn
+%%CGIBINDIR%%/%%CGIBINSUBDIR%%/qmailadmin
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/delete.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/disabled.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/lowerleft.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/lowermiddle.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/lowerright.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/main.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/main1.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/main2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/middleleft1.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/middleleft2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/middlelogin.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/middleright1.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/modify.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/pixel.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/radio-on.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/radio-off.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/trash.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/upperleft.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/uppermiddle1.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/uppermiddle2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/upperright.png
+@dirrm %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images
+@unexec /bin/rmdir %D/%%WEBDATADIR%%/%%WEBDATASUBDIR%% 2> /dev/null || true
+@unexec /bin/rmdir %D/%%WEBDATADIR%% 2> /dev/null || true
+@unexec /bin/rmdir %D/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
+@unexec /bin/rmdir %D/%%CGIBINDIR%% 2> /dev/null || true
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%
