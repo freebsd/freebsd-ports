@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	netrik
-PORTVERSION=	1.16
+PORTVERSION=	1.16.1
 CATEGORIES=	www
 MASTER_SITES=	SFE
 
@@ -27,8 +27,10 @@ MAN5=		netrikrc.5
 
 PORTDOCS=	*
 
-.if defined(NOPORTDOCS)
 post-patch:
+	@${REINPLACE_CMD} "s/#include <ncursesw\//#include </" \
+		${WRKSRC}/*.c
+.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} "s/install-data-am: install-docDATA/install-data-am:/" \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s/install-docDATA install-man/install-man/" \
