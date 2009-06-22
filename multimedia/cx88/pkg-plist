@@ -4,13 +4,10 @@ bin/cx88
 %%DATADIR%%/or51132_qam.fw
 %%EXAMPLESDIR%%/cx88_audio_enable.cpp
 %%EXAMPLESDIR%%/remote.cpp
+%%EXAMPLESDIR%%/cx88_mpeg_client.cpp
 %%EXAMPLESDIR%%/hd3k_analog_kbuf.cpp
 %%EXAMPLESDIR%%/tuner_config
-%%EXAMPLESDIR%%/hd3k_mpeg_ubuf.cpp
-%%EXAMPLESDIR%%/hd5k_mpeg_ubuf.cpp
-%%EXAMPLESDIR%%/hd3k_mpeg_kbuf.cpp
 %%EXAMPLESDIR%%/cx88_audio_client.cpp
-%%EXAMPLESDIR%%/hd5k_mpeg_kbuf.cpp
 %%EXAMPLESDIR%%/hd3k_analog_ubuf.cpp
 %%EXAMPLESDIR%%/hd5k_analog_ubuf.cpp
 include/iicdev/iicdev_ioctl.h
@@ -27,8 +24,10 @@ cx88.ko
 cx88i2c.ko
 iicdev.ko
 cx88ir.ko
+cx88mpegcore.ko
 cx88mpeg.ko
 cx88video.ko
 cx88audio.ko
+cx23885.ko
 @exec kldxref %D
 @unexec kldxref %D

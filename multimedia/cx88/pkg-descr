@@ -1,7 +1,8 @@
-cx88 provides drivers for TV/radio capture cards based on
-the Conexant CX23880/1/2/3 series of chips.  This port
-includes the cx88 kernel drivers as well as a simple app
-for HDTV capture.  It requires multimedia/libtuner for 
-channel selection and peripheral configuration.
+cx88 provides drivers for PCI and PCI-e TV/radio capture
+cards based on the Conexant CX23880/1/2/3 and CX23885/7/8 
+chip families.  This port includes the cx88 kernel drivers
+as well as a simple app for TV capture. It requires 
+multimedia/libtuner for channel selection and peripheral
+configuration.
 
 WWW: http://corona.homeunix.net/cx88wiki
