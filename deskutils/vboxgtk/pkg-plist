@@ -1,0 +1,17 @@
+bin/vboxgtk
+%%VBOXGTKDIR%%/pixmaps/16x16.png
+%%VBOXGTKDIR%%/pixmaps/32x32.png
+%%VBOXGTKDIR%%/pixmaps/48x48.png
+%%VBOXGTKDIR%%/util.py
+%%VBOXGTKDIR%%/vboxdao_vboxmanage.py
+%%VBOXGTKDIR%%/vboxdao_xml.py
+%%VBOXGTKDIR%%/vboxgtk
+%%VBOXGTKDIR%%/vboxgtk.glade
+%%VBOXGTKDIR%%/vboxiface.py
+%%VBOXGTKDIR%%/vboxmgr.py
+%%VBOXGTKDIR%%/vboxrunner_sdl_cs.py
+%%VBOXGTKDIR%%/vboxrunner_sdl_thr.py
+%%VBOXGTKDIR%%/vmvdi.py
+share/pixmaps/vboxgtk.png
+@dirrm %%VBOXGTKDIR%%/pixmaps
+@dirrm %%VBOXGTKDIR%%

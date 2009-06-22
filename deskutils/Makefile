@@ -253,6 +253,7 @@
     SUBDIR += tpb
     SUBDIR += treeline
     SUBDIR += tuxcards
+    SUBDIR += vboxgtk
     SUBDIR += vym
     SUBDIR += when
     SUBDIR += wmpinboard
