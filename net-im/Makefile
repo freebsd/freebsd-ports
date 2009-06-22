@@ -29,6 +29,7 @@
     SUBDIR += farsight2
     SUBDIR += finch
     SUBDIR += firetalk
+    SUBDIR += freetalk
     SUBDIR += fugu
     SUBDIR += gajim
     SUBDIR += gajim-devel
