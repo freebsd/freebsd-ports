@@ -8,7 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -73,7 +73,7 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 
 # WITH_OPENHBCI is old synonym for aqbanking option
 .if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
-LIB_DEPENDS+=	aqbanking.29:${PORTSDIR}/finance/aqbanking \
+LIB_DEPENDS+=	aqbanking.30:${PORTSDIR}/finance/aqbanking \
 		ktoblzcheck.6:${PORTSDIR}/finance/ktoblzcheck
 GCONF_SCHEMAS+=	apps_gnucash_dialog_hbci.schemas
 CONFIGURE_ARGS+=--enable-hbci
