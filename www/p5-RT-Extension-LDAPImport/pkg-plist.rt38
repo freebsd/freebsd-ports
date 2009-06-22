@@ -1,0 +1,12 @@
+%%RTHOME%%/plugins/RT-Extension-LDAPImport/lib/RT/Extension/LDAPImport.pm
+%%RTHOME%%/plugins/RT-Extension-LDAPImport/bin/rtldapimport
+man/auto/RT/Extension/LDAPImport/.packlist
+@dirrm %%RTHOME%%/plugins/RT-Extension-LDAPImport/lib/RT/Extension
+@dirrm %%RTHOME%%/plugins/RT-Extension-LDAPImport/lib/RT
+@dirrm %%RTHOME%%/plugins/RT-Extension-LDAPImport/lib
+@dirrm %%RTHOME%%/plugins/RT-Extension-LDAPImport/bin
+@dirrm %%RTHOME%%/plugins/RT-Extension-LDAPImport
+@dirrm man/auto/RT/Extension/LDAPImport
+@dirrmtry man/auto/RT/Extension
+@dirrmtry man/auto/RT
+@dirrmtry man/auto
