@@ -1,15 +1,15 @@
---- qmake.inc.in.linux	2006-06-22 08:34:48.000000000 -0700
-+++ qmake.inc.in	2006-06-22 08:35:03.000000000 -0700
-@@ -28,10 +28,8 @@
- 	doc.path                =$(DDIR)@DOCDIR@
+--- qmake.inc.in.orig	2009-06-15 15:06:56.000000000 -0700
++++ qmake.inc.in	2009-06-22 13:34:03.000000000 -0700
+@@ -30,10 +30,8 @@
+          doc.path = @DOCDIR@
  
- 	CONFIG                 += warn_on debug
--	QMAKE_CFLAGS_DEBUG     += -Wno-unused-parameter
--	QMAKE_CFLAGS_RELEASE   += -Wno-unused-parameter
--	QMAKE_CXXFLAGS_DEBUG   += -Wno-unused-parameter @CXXFLAGS@
--	QMAKE_CXXFLAGS_RELEASE += -Wno-unused-parameter @CXXFLAGS@
-+	QMAKE_CXXFLAGS_DEBUG   += @CXXFLAGS@
-+	QMAKE_CXXFLAGS_RELEASE += @CXXFLAGS@
- }
+          CONFIG += warn_on debug
+-         QMAKE_CFLAGS_DEBUG += -Wno-unused-parameter
+-         QMAKE_CFLAGS_RELEASE += -Wno-unused-parameter
+-         QMAKE_CXXFLAGS_DEBUG += -Wno-unused-parameter @CXXFLAGS@
+-         QMAKE_CXXFLAGS_RELEASE += -Wno-unused-parameter @CXXFLAGS@
++         QMAKE_CXXFLAGS_DEBUG += @CXXFLAGS@
++         QMAKE_CXXFLAGS_RELEASE += @CXXFLAGS@
+     }
  }
  
