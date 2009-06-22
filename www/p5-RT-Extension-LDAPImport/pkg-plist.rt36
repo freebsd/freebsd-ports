@@ -1,0 +1,12 @@
+%%RTHOME%%/local/lib/RT/Extension/LDAPImport.pm
+%%RTHOME%%/local/bin/rtldapimport
+%%RTHOME%%/local/man/auto/RT/Extension/LDAPImport/.packlist
+@dirrmtry %%RTHOME%%/local/lib/RT/Extension
+@dirrmtry %%RTHOME%%/local/lib/RT
+@dirrmtry %%RTHOME%%/local/bin
+@dirrm %%RTHOME%%/local/man/auto/RT/Extension/LDAPImport
+@dirrmtry %%RTHOME%%/local/man/auto/RT/Extension
+@dirrmtry %%RTHOME%%/local/man/auto/RT
+@dirrmtry %%RTHOME%%/local/man/auto
+@dirrmtry %%RTHOME%%/local/man/man3
+@dirrmtry %%RTHOME%%/local/man
