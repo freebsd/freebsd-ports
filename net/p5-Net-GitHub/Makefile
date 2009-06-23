@@ -23,6 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+BROKEN=		does not patch
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::GitHub.3 Net::GitHub::V1.3 \
