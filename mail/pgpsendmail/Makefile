@@ -21,4 +21,6 @@ INSTALL_TARGET=	all_install
 MAN1=		pgppipe.1 sendpgppass.1
 MAN8=		pgpsendmail.8 pgpdaemon.8
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,PREFIX = /usr/local,PREFIX=${PREFIX},g' ${WRKSRC}/Makefile
 .include <bsd.port.mk>
