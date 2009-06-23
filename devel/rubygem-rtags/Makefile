@@ -18,4 +18,6 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rtags
 
+BROKEN=		does not install
+
 .include <bsd.port.mk>
