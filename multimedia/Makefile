@@ -57,6 +57,7 @@
     SUBDIR += gaupol
     SUBDIR += gavl
     SUBDIR += gcfilms
+    SUBDIR += gdialog
     SUBDIR += gdvrecv
     SUBDIR += ggrab
     SUBDIR += gmencoder
