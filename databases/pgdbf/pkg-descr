@@ -1,0 +1,9 @@
+PgDBF is a program for converting XBase databases - particularly FoxPro
+tables with memo files - into a format that PostgreSQL can directly
+import. It's a compact C project with no dependencies other than standard
+Unix libraries. While the project is relatively tiny and simple, it's also
+heavily optimized via profiling - routine benchmark were many times faster
+than with other Open Source programs. In fact, even on slower systems,
+conversions are typically limited by hard drive speed.
+
+WWW: http://pgdbf.sourceforge.net/
