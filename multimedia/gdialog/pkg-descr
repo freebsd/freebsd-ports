@@ -1,0 +1,8 @@
+"GDialog" is an add-on for "Project X - DVB demux Tool".
+It adds a dialog to it's GUI to retrieve and select the video recordings 
+of the Siemens Gigaset M740AV settop box. 
+For details refer to the wiki (german only):
+http://www.m740.de/wiki/ProjectX_mit_Gigaset-Erweiterung
+
+WWW: http://sourceforge.net/projects/gdialog-x
+Heiner (h.eichmann@gmx.de)
