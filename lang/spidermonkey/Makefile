@@ -7,11 +7,8 @@
 PORTNAME=	spidermonkey
 DISTVERSION=	1.7.0
 CATEGORIES=	lang
-MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla.org/js/ \
-		http://ftp.belnet.be/mirrors/ftp.mozilla.org/js/ \
-		http://gentoo.netnitco.net/distfiles/ \
-		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/ \
-		ftp://ftp.mozilla.org/pub/mozilla.org/js/
+MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
+MASTER_SITE_SUBDIR=	js
 DISTNAME=	js-${DISTVERSION}
 
 MAINTAINER=	citric@cubicone.tmetic.com
@@ -32,9 +29,16 @@ ALL_TARGET=	${OPSYS}`${UNAME} -r`_DBG.OBJ/js
 MAKE_ENV+=	CCC="${CXX}"
 USE_LDCONFIG=	yes
 SRC_DIR=	js/src
-JSH=		jsapi.h jsautocfg.h jsconfig.h jscompat.h jslong.h jsosdep.h \
-		jsotypes.h jspubtd.h jstypes.h jsstr.h jshash.h jsprvtd.h \
+
+JSH=		jsapi.h jsarena.h jsarray.h jsatom.h jsautocfg.h jsbool.h \
+		jsclist.h jscntxt.h jscompat.h jsconfig.h jsdate.h jsdhash.h \
+		jsdtoa.h jsemit.h jsexn.h jsfun.h jsgc.h jshash.h jsinterp.h \
+		jsiter.h jslibmath.h jslock.h jslong.h jsmath.h jsnum.h jsobj.h \
+		jsopcode.h jsosdep.h jsotypes.h jsparse.h jsprvtd.h jspubtd.h \
+		jsregexp.h jsscan.h jsscope.h jsscript.h jsstr.h jstypes.h \
+		jsxdrapi.h jsxml.h \
 		jsproto.tbl
+
 PLIST_FILES=	bin/js lib/libjs.so lib/libjs.so.1 ${JSH:S,^,include/,}
 WRKSRC=		${WRKDIR}/${SRC_DIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
