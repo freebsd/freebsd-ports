@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e169-stats
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
