@@ -7,6 +7,7 @@
 
 PORTNAME=	skk-jisyo
 PORTVERSION=	200906
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= matusita/${PORTNAME}
@@ -53,7 +54,7 @@ post-extract:
 # the candidate, leading a marker character ';' (e.g. /c3;comment/).
 do-patch:
 .for type in ${SKK_JISYO_TYPE}
-	${REINPLACE_CMD} -e '/^[^;]/s,;[^/]*/,/,g' \
+	${REINPLACE_CMD} -e '/^[^;]/s,;[^/]*/,/,g' -e '/^>/d' \
 		${WRKDIR}/SKK-JISYO.${type}.${PORTVERSION}
 .endfor
 .endif
