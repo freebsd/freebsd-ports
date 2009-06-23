@@ -7,7 +7,7 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090620:
-  AFFECTS: gstreamer-plugins-bad gstreamer-plugins-good gstreamer-plugins-bad
+  AFFECTS: gstreamer-plugins-bad gstreamer-plugins-good gstreamer-plugins-ugly
   AUTHOR: kwm@FreeBSD.org
 
   Due to the move of several plugins from gstreamer-plugins-bad to 
