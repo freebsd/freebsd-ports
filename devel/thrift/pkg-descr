@@ -9,4 +9,4 @@ servers.
 Thrift is specifically designed to support non-atomic version changes
 across client and server code.
 
-WWW: http://developers.facebook.com/thrift/
+WWW: http://incubator.apache.org/thrift/
