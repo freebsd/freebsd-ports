@@ -1,0 +1,2 @@
+symports reads through your ports tree and generates a tree using
+symlinks for all categories - not just the "real" ones.

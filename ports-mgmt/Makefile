@@ -60,6 +60,7 @@
    SUBDIR += psearch
    SUBDIR += pver
    SUBDIR += qtpkg
+   SUBDIR += symports
    SUBDIR += tinderbox
    SUBDIR += tinderbox-devel
    SUBDIR += vulnerability-test-port
