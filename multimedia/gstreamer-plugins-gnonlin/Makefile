@@ -8,6 +8,7 @@
 
 PORTNAME=	gstreamer-plugins-gnonlin
 PORTVERSION=	0.10.11
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
 DISTNAME=	gnonlin-${PORTVERSION}
@@ -21,7 +22,7 @@ USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
 
-PLIST_FILES=	lib/gstreamer-0.10/libgnl.a lib/gstreamer-0.10/libgnl.la \
+PLIST_FILES=	lib/gstreamer-0.10/libgnl.la \
 		lib/gstreamer-0.10/libgnl.so
 
 .include <bsd.port.mk>
