@@ -19,6 +19,8 @@ OPTIONS=	CONFIG_INFO	"Add the ares_config_info patch" ON \
 
 CONFLICTS=	ares-1.*
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CONFIG_INFO)
