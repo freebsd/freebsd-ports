@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -19,7 +19,7 @@
+ echo "prefix=$prefix" > build/config.make
+ echo "exec_prefix=\${prefix}" >> build/config.make
+ echo "mono_libdir=\${exec_prefix}/lib" >> build/config.make
+-echo "man_dir=\${exec_prefix}/share/man" >> build/config.make
++echo "man_dir=\${exec_prefix}/man" >> build/config.make
+ echo "man1_dir=\${man_dir}/man1" >> build/config.make
+ echo "MCS_FLAGS=-debug+" >> build/config.make
+ echo "RUNTIME=mono" >> build/config.make
