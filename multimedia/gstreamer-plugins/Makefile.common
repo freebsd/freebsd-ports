@@ -121,6 +121,7 @@ CONFIGURE_ARGS+=--disable-tests \
 		--disable-gconftool \
 		--disable-schemas-install \
 		--enable-oss \
+		--enable-oss4 \
 		--disable-osx_audio \
 		--disable-osx_video \
 		--disable-directdrawsink \
@@ -470,8 +471,11 @@ gst_vorbis_DIST=	base
 # x264
 gst_x264_LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
 gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.la \
-		${GST_LIB_DIR}/libgstx264.so
-gst_x264_DIST=	bad
+		${GST_LIB_DIR}/libgstx264.so \
+		share/gstreamer-${VERSION}/presets/GstX264Enc.prs
+gst_x264_PLIST_DIRS=	share/gstreamer-${VERSION}/presets \
+			share/gstreamer-${VERSION}
+gst_x264_DIST=	ugly
 
 # xvid
 gst_xvid_LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
@@ -511,6 +515,7 @@ BUILD_DEPENDS+=	${gst_${GST_PLUGIN}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${gst_${GST_PLUGIN}_LIB_DEPENDS}
 RUN_DEPENDS+=	${gst_${GST_PLUGIN}_RUN_DEPENDS}
 PLIST_FILES=	${gst_${GST_PLUGIN}_PLIST_FILES}
+PLIST_DIRS=	${gst_${GST_PLUGIN}_PLIST_DIRS}
 EXTRA_LIBS+=	${gst_${GST_PLUGIN}_EXTRA_LIBS}
 USE_GNOME+=	${gst_${GST_PLUGIN}_USE_GNOME}
 CONFIGURE_ENV+=	${gst_${GST_PLUGIN}_CONFIGURE_ENV}
