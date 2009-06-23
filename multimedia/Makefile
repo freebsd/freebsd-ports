@@ -167,6 +167,7 @@
     SUBDIR += mmsrip
     SUBDIR += moonlight
     SUBDIR += motion
+    SUBDIR += mp3cd
     SUBDIR += mpeg
     SUBDIR += mpeg2codec
     SUBDIR += mpeg2play
