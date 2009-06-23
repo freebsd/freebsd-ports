@@ -70,7 +70,7 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800037
-BROKEN=		does not compile
+#BROKEN=		does not compile
 .endif
 
 .if defined(WITH_X509) && ( defined(WITH_HPN) || defined(WITH_LPK))
@@ -147,7 +147,7 @@ EXTRA_PATCHES+=	${FILESDIR}/openssh-5.2p1-hpn.patch
 
 # See http://dev.inversepath.com/trac/openssh-lpk
 .if defined(WITH_LPK)
-EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-0.3.9.patch
+EXTRA_PATCHES+=		${FILESDIR}/contrib-openssh-lpk-5.1p1-0.3.10.patch
 USE_OPENLDAP=		yes
 CPPFLAGS+=		"-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY"
 CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L${LOCALBASE}/lib' \
@@ -161,11 +161,11 @@ EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk+hpn-servconf.patch
 .elif defined(WITH_HPN) && !defined(WITH_LPK)
 EXTRA_PATCHES+=		${FILESDIR}/openssh-5.2p1-hpn-servconf.patch
 .elif defined(WITH_LPK) && !defined(WITH_HPN)
-EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-0.3.9-servconv.patch
+EXTRA_PATCHES+=		${FILESDIR}/contrib-openssh-lpk-5.1p1-0.3.10-servconf.c.patch
 .endif
 
 .if defined(WITH_LPK) && ${ARCH} == "amd64"
-EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-64bit.patch
+EXTRA_PATCHES+=		${FILESDIR}/contrib-openssh-5.1_p1-lpk-64bit.patch
 .endif
 
 # See http://www.roumenpetrov.info/openssh/
