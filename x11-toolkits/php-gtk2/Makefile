@@ -26,6 +26,7 @@ USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 WRKSRC=${WRKDIR}/php_gtk-${PORTVERSION}
+PORTSCOUT=	limit:^1\.
 
 OPTIONS=	LIBGLADE	"GladeXML support in php-gtk" on \
 		SCINTILLA	"Scintilla support" on \
