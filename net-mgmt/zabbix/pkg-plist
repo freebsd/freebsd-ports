@@ -54,8 +54,6 @@ bin/zabbix_server
 %%DATADIR%%/php/conf/COPYING
 %%DATADIR%%/php/conf/maintenance.inc.php
 %%DATADIR%%/php/config.php
-%%DATADIR%%/php/create/data.sql
-%%DATADIR%%/php/create/mysql.sql
 %%DATADIR%%/php/css.css
 %%DATADIR%%/php/dashboard.php
 %%DATADIR%%/php/discovery.php
@@ -350,7 +348,6 @@ bin/zabbix_server
 @dirrm %%DATADIR%%/php/images/general
 @dirrm %%DATADIR%%/php/images/flash
 @dirrm %%DATADIR%%/php/images
-@dirrm %%DATADIR%%/php/create
 @dirrm %%DATADIR%%/php/conf
 @dirrm %%DATADIR%%/php/audio
 @dirrm %%DATADIR%%/php
