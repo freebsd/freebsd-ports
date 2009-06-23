@@ -7,7 +7,7 @@
 
 PORTNAME=	Unreal
 PORTVERSION=	3.2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://unrealircd.pimpmylinux.org/ \
 		http://unrealircd.icedslash.com/
