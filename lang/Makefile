@@ -175,6 +175,7 @@
     SUBDIR += mlton
     SUBDIR += mmix
     SUBDIR += mono
+    SUBDIR += mono-basic
     SUBDIR += moscow_ml
     SUBDIR += mosh
     SUBDIR += mozart

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- vbruntime/Test/Makefile.orig
++++ vbruntime/Test/Makefile
+@@ -62,7 +62,7 @@
+ 	MONO_PATH=$(MONO_VB_PATH) mono ../../tools/extract-source/extract-source.exe -s:2005VB_test_CS.csproj -d:2005VB_test_CS.dll.sources.win -m:w
+ 
+ test-first:
+-	cd ../Microsoft.VisualBasic && make && cp ../../class/lib/vbnc/Microsoft.VisualBasic.dll* ../Test/bin
++	cd ../Microsoft.VisualBasic && ${MAKE} && cp ../../class/lib/vbnc/Microsoft.VisualBasic.dll* ../Test/bin
+ 
+ test-cs: test-first 2005VB_test_CS.dll.sources
+ 	$(CSCOMPILER) "-out:bin/2005VB_test_CS.dll" @2005VB_test_CS.dll.rsp @2005VB_test_CS.dll.sources -lib:bin $(CSDEFINES)
