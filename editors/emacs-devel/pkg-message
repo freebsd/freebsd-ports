@@ -1,4 +1,4 @@
-This is the first pretest for what will be the Emacs 23.1
+This is a pretest snapshot of what will be the Emacs 23.1
 release.  As a result, there may be packaging errors in the
 tarball, so please be on the lookout for problems with
 installation.
@@ -18,3 +18,5 @@ those who have not been following Emacs CVS development:
    Emacs may be less stable than others; for safety, please
    back up your mail files before trying the new Rmail.
 
+ - The default toolkit is now GTK+.  You can use WITHOUT_GTK
+   to build GNU Emacs with the Lucid toolkit.

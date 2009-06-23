@@ -35,7 +35,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 
 INSTALLS_ICONS=	yes
 
-EMACS_VER=	23.0.94
+EMACS_VER=	23.0.95
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
