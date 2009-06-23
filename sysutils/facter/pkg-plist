@@ -3,6 +3,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/Cfkey.rb
 %%RUBY_SITELIBDIR%%/facter/architecture.rb
 %%RUBY_SITELIBDIR%%/facter/domain.rb
+%%RUBY_SITELIBDIR%%/facter/ec2.rb
 %%RUBY_SITELIBDIR%%/facter/facterversion.rb
 %%RUBY_SITELIBDIR%%/facter/fqdn.rb
 %%RUBY_SITELIBDIR%%/facter/hardwareisa.rb
@@ -13,6 +14,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/ipaddress.rb
 %%RUBY_SITELIBDIR%%/facter/iphostnumber.rb
 %%RUBY_SITELIBDIR%%/facter/kernel.rb
+%%RUBY_SITELIBDIR%%/facter/kernelmajversion.rb
 %%RUBY_SITELIBDIR%%/facter/kernelrelease.rb
 %%RUBY_SITELIBDIR%%/facter/kernelversion.rb
 %%RUBY_SITELIBDIR%%/facter/lsb.rb
@@ -31,6 +33,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/puppetversion.rb
 %%RUBY_SITELIBDIR%%/facter/rubysitedir.rb
 %%RUBY_SITELIBDIR%%/facter/rubyversion.rb
+%%RUBY_SITELIBDIR%%/facter/selinux.rb
 %%RUBY_SITELIBDIR%%/facter/ssh.rb
 %%RUBY_SITELIBDIR%%/facter/timezone.rb
 %%RUBY_SITELIBDIR%%/facter/uniqueid.rb
@@ -49,6 +52,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/util/plist/parser.rb
 %%RUBY_SITELIBDIR%%/facter/util/resolution.rb
 %%RUBY_SITELIBDIR%%/facter/util/uptime.rb
+%%RUBY_SITELIBDIR%%/facter/util/values.rb
 %%RUBY_SITELIBDIR%%/facter/virtual.rb
 @dirrm %%RUBY_SITELIBDIR%%/facter/util/plist
 @dirrm %%RUBY_SITELIBDIR%%/facter/util
