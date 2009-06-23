@@ -21,7 +21,7 @@ load_rc_config ${name}
 
 # set defaults
 ladvd_enable=${ladvd_enable:-"NO"}
-ladvd_flags=${ladvd_flags:-"-cl"}
+ladvd_flags=${ladvd_flags:-"-a"}
 
 start_precmd="ladvd_check"
 

@@ -1,8 +1,4 @@
 sbin/ladvd
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec echo ""
 @unexec echo "If you are permanently removing ladvd, you should also:" | /usr/bin/fmt
 @unexec echo "'remove user/group 'ladvd'." | /usr/bin/fmt
