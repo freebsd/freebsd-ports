@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	A flexible port-knocking server and client
 
 GNU_CONFIGURE=	yes
