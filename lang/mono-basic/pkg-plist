@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/vbnc
+lib/mono/2.0/Microsoft.VisualBasic.dll
+lib/mono/2.0/vbnc.exe
+lib/mono/2.0/vbnc.exe.mdb
+lib/mono/2.0/vbnc.rsp
+lib/mono/gac/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll
+lib/mono/gac/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll.mdb
+@dirrm lib/mono/gac/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/Microsoft.VisualBasic
