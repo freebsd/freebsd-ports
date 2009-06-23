@@ -15,6 +15,7 @@ MAINTAINER=	hubert@frbsd.org
 COMMENT=	An SMTP software identifier
 
 DEPRECATED=	depends on GCC 2.95 which has not been available for 9+ months
+IGNORE=		${DEPRECATED}
 EXPIRATION_DATE=2009-07-19
 
 MAKE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
