@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	facter
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.6
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://www.reductivelabs.com/downloads/facter/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cherry@trombik.org
 COMMENT=	A cross-platform Ruby library for retrieving facts from OS
