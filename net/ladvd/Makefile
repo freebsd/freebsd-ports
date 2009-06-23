@@ -6,21 +6,28 @@
 #
 
 PORTNAME=	ladvd
-PORTVERSION=	0.6.1
+PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	http://blinkenlights.nl/software/ladvd/
 
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	A minimal CDP/LLDP sender
 
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+
+ONLY_FOR_ARCHS=	i386
+
 GNU_CONFIGURE=	yes
 
+PORTDOCS=	*
 MAN8=		ladvd.8
 USE_RC_SUBR+=	ladvd
 SUB_FILES=	pkg-message pkg-install
 
+post-patch:
 .if defined(NOPORTDOCS)
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
+	@@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
+		${WRKSRC}/doc/Makefile.in
 .endif
 
 post-install:

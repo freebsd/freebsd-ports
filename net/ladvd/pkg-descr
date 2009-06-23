@@ -1,4 +1,4 @@
-ladvd is a minimal link layer advertisement sender which supports the
-CDP and LLDP packet formats.
+ladvd is a minimal link layer advertisement daemon which supports
+LLDP, CDP, EDP, FDP and NDP advertisements.
 
 WWW: http://www.blinkenlights.nl/software/ladvd/
