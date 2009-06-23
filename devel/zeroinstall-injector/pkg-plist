@@ -182,12 +182,12 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/unpack.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/unpack.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/unpack.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall_injector-0.39-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/zeroinstall_injector-0.40-py%%PYTHON_VER%%.egg-info
 share/applications/zeroinstall-add.desktop
 share/applications/zeroinstall-manage.desktop
 share/desktop-directories/zeroinstall.directory
-share/locale/sv/LC_MESSAGES/zero-install.mo
 share/pixmaps/zeroinstall-zero2desktop.png
+share/locale/sv/LC_MESSAGES/zero-install.mo
 @dirrm share/desktop-directories
 @dirrm share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore
