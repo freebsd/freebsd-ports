@@ -2366,7 +2366,10 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Acl/Role/Interface.php
 %%DATADIR%%/library/Zend/Acl/Role/Registry.php
 %%DATADIR%%/library/Zend/Acl/Role/Registry/Exception.php
+%%DATADIR%%/library/Zend/Amf/Adobe/Auth.php
+%%DATADIR%%/library/Zend/Amf/Adobe/DbInspector.php
 %%DATADIR%%/library/Zend/Amf/Adobe/Introspector.php
+%%DATADIR%%/library/Zend/Amf/Auth/Abstract.php
 %%DATADIR%%/library/Zend/Amf/Constants.php
 %%DATADIR%%/library/Zend/Amf/Exception.php
 %%DATADIR%%/library/Zend/Amf/Parse/Amf0/Deserializer.php
@@ -2376,6 +2379,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Amf/Parse/Deserializer.php
 %%DATADIR%%/library/Zend/Amf/Parse/InputStream.php
 %%DATADIR%%/library/Zend/Amf/Parse/OutputStream.php
+%%DATADIR%%/library/Zend/Amf/Parse/Resource/MysqlResult.php
+%%DATADIR%%/library/Zend/Amf/Parse/Resource/Stream.php
 %%DATADIR%%/library/Zend/Amf/Parse/Serializer.php
 %%DATADIR%%/library/Zend/Amf/Parse/TypeLoader.php
 %%DATADIR%%/library/Zend/Amf/Request.php
@@ -4778,6 +4783,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files/ZendAmfAdobeIntrospectorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files/ZendAmfAdobeIntrospectorTestType.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/AuthTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Contact.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Request/bytearray.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Request/longstring.bin
@@ -4808,6 +4814,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Request/mock/xmlAmf0Request.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Request/mock/xmlAmf3Request.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/RequestTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ResourceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Resources/StreamContext.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/arrayAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/arrayAmf3Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/boolFalseAmf0Response.bin
@@ -4838,6 +4846,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Util/BinaryStreamTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/MessageBodyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/MessageHeaderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/_files/testdata
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/ApplicationTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Bootstrap/BootstrapAbstractTest.php
@@ -6159,7 +6168,44 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ReCaptcha/MailHideTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ReCaptcha/ReCaptchaTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ReCaptcha/ResponseTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/SimpyTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/BaseProxy.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/BaseTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/OfflineProxy.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/OfflineTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/OnlineProxy.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/OnlineTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testDeleteLink_deleteLink_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testDeleteLink_getLinks_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testDeleteNote_deleteNote_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testDeleteNote_getNotes_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testDeleteNote_getNotes_2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testException_deleteNote_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testGetLinks_getLinks_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testGetNotes_getNotes_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testGetTags_getTags_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testGetWatchlist_getWatchlist_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testGetWatchlist_getWatchlists_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testGetWatchlists_getWatchlists_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testLinkQuery_getLinks_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testMergeTags_getTags_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testMergeTags_getTags_2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testMergeTags_mergeTags_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testRemoveTag_getTags_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testRemoveTag_getTags_2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testRemoveTag_removeTag_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testRenameTag_getHttpClient_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testRenameTag_getTags_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testRenameTag_getTags_2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testRenameTag_renameTag_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testSaveLink_deleteLink_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testSaveLink_saveLink_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testSaveNote_saveNote_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testSplitTag_getTags_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testSplitTag_getTags_2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testSplitTag_splitTag_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testWatchlistFilters_getWatchlist_1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files/testWatchlistFilters_getWatchlists_1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/SlideShare/_files/demo.ppt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/SlideShareTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/StrikeIron/AllTests.php
@@ -6800,6 +6846,8 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/StrikeIron
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/SlideShare/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/SlideShare
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Simpy
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/ReCaptcha
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Nirvanix/Namespace
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Nirvanix
@@ -7102,10 +7150,12 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Module
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Bootstrap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Value
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Util
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Response
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Resources
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Request/mock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Request
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files
@@ -7530,9 +7580,11 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Amf/Server
 @dirrm %%DATADIR%%/library/Zend/Amf/Response
 @dirrm %%DATADIR%%/library/Zend/Amf/Request
+@dirrm %%DATADIR%%/library/Zend/Amf/Parse/Resource
 @dirrm %%DATADIR%%/library/Zend/Amf/Parse/Amf3
 @dirrm %%DATADIR%%/library/Zend/Amf/Parse/Amf0
 @dirrm %%DATADIR%%/library/Zend/Amf/Parse
+@dirrm %%DATADIR%%/library/Zend/Amf/Auth
 @dirrm %%DATADIR%%/library/Zend/Amf/Adobe
 @dirrm %%DATADIR%%/library/Zend/Amf
 @dirrm %%DATADIR%%/library/Zend/Acl/Role/Registry
