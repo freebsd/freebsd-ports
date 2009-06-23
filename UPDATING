@@ -11,7 +11,7 @@ upgrades.
   AUTHOR: kwm@FreeBSD.org
 
   Due to the move of several plugins from gstreamer-plugins-bad to 
-  gstreamer-plugins-good and gstreamer-plugins-bad.
+  gstreamer-plugins-good and gstreamer-plugins-ugly.
   Its nessesary to update gstreamer-plugins-bad first.
   
   portupgrade -R gstreamer-plugins-bad
