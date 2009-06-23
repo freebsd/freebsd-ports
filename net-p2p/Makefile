@@ -138,6 +138,7 @@
     SUBDIR += verlihub-plugins-luascript
     SUBDIR += verlihub-plugins-messanger
     SUBDIR += verlihub-plugins-stats
+    SUBDIR += vhcp
     SUBDIR += vuze
     SUBDIR += xnap
 

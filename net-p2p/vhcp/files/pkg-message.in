@@ -1,0 +1,4 @@
+
+Don't forget to edit %%PREFIX%%/%%VHCPDIR%%/config.php to point to your
+existing verlihub config database
+
