@@ -18,10 +18,14 @@ lib/gstreamer-%%VERSION%%/libgstcutter.la
 lib/gstreamer-%%VERSION%%/libgstcutter.so
 lib/gstreamer-%%VERSION%%/libgstdebug.la
 lib/gstreamer-%%VERSION%%/libgstdebug.so
+lib/gstreamer-%%VERSION%%/libgstdeinterlace.la
+lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
 lib/gstreamer-%%VERSION%%/libgsteffectv.la
 lib/gstreamer-%%VERSION%%/libgsteffectv.so
 lib/gstreamer-%%VERSION%%/libgstequalizer.la
 lib/gstreamer-%%VERSION%%/libgstequalizer.so
+lib/gstreamer-%%VERSION%%/libgstflv.la
+lib/gstreamer-%%VERSION%%/libgstflv.so
 lib/gstreamer-%%VERSION%%/libgstflxdec.la
 lib/gstreamer-%%VERSION%%/libgstflxdec.so
 lib/gstreamer-%%VERSION%%/libgstgamma.la
@@ -44,7 +48,6 @@ lib/gstreamer-%%VERSION%%/libgstmulaw.la
 lib/gstreamer-%%VERSION%%/libgstmulaw.so
 lib/gstreamer-%%VERSION%%/libgstmultifile.la
 lib/gstreamer-%%VERSION%%/libgstmultifile.so
-lib/gstreamer-%%VERSION%%/libgstmultipart.a
 lib/gstreamer-%%VERSION%%/libgstmultipart.la
 lib/gstreamer-%%VERSION%%/libgstmultipart.so
 lib/gstreamer-%%VERSION%%/libgstnavigationtest.la
@@ -81,6 +84,8 @@ lib/gstreamer-%%VERSION%%/libgstwavparse.la
 lib/gstreamer-%%VERSION%%/libgstwavparse.so
 lib/gstreamer-%%VERSION%%/libgstximagesrc.la
 lib/gstreamer-%%VERSION%%/libgstximagesrc.so
+lib/gstreamer-%%VERSION%%/libgsty4menc.la
+lib/gstreamer-%%VERSION%%/libgsty4menc.so
 share/gstreamer-%%VERSION%%/presets/GstIirEqualizer10Bands.prs
 share/gstreamer-%%VERSION%%/presets/GstIirEqualizer3Bands.prs
 share/locale/af/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
@@ -117,5 +122,5 @@ share/locale/zh_HK/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrm share/gstreamer-%%VERSION%%/presets
-@dirrm share/gstreamer-%%VERSION%%
+@dirrmtry share/gstreamer-%%VERSION%%/presets
+@dirrmtry share/gstreamer-%%VERSION%%
