@@ -1926,6 +1926,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/info.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/informat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/informat.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/README
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/ccl.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/ccl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/characters.el.gz
