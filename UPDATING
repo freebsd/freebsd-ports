@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090620:
+  AFFECTS: gstreamer-plugins-bad gstreamer-plugins-good gstreamer-plugins-bad
+  AUTHOR: kwm@FreeBSD.org
+
+  Due to the move of several plugins from gstreamer-plugins-bad to 
+  gstreamer-plugins-good and gstreamer-plugins-bad.
+  Its nessesary to update gstreamer-plugins-bad first.
+  
+  portupgrade -R gstreamer-plugins-bad
+  or 
+  portmaster gstreamer-plugins-bad
+
 20090619:
   AFFECTS: users of net-p2p/transmission-daemon
   AUTHOR: mezz@FreeBSD..org
