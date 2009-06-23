@@ -15,6 +15,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono based Gnome audio player
 
+BROKEN=		doesn't build and is apparently unmaintained
+
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		gdbm:${PORTSDIR}/databases/gdbm \
