@@ -2,7 +2,7 @@ The program m17n-im-config provides a GUI for per-user configuration of
 input methods of the m17n library (devel/m17n-lib and textproc/m17n-contrib).
 
 The following methods are customisable at the moment: Unicode, Vietnamese,
-Malayalam, Tibetan, Thai, Japanese and Chinese.
+Malayalam, Tibetan, Thai, Tamil, Japanese and Chinese.
 
 WWW: http://www.m17n.org
      http://www.m17n.org/common/im-config/index.html

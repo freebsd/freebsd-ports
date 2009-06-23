@@ -186,6 +186,7 @@ share/m17n/bn-itrans.mim
 share/m17n/bn-unijoy.mim
 share/m17n/bn.lnm
 share/m17n/bo-ewts.mim
+share/m17n/bo-tcrc.mim
 share/m17n/bo-wylie.mim
 share/m17n/bs.lnm
 share/m17n/byn.lnm
@@ -228,6 +229,7 @@ share/m17n/haw.lnm
 share/m17n/he-kbd.mim
 share/m17n/he.lnm
 share/m17n/hi-itrans.mim
+share/m17n/hi-typewriter.mim
 share/m17n/hi.lnm
 share/m17n/hr-kbd.mim
 share/m17n/hr.lnm
@@ -360,9 +362,11 @@ share/m17n/ru-kbd.mim
 share/m17n/ru-phonetic.mim
 share/m17n/ru-yawerty.mim
 share/m17n/ru.lnm
+share/m17n/sa-harvard-kyoto.mim
 share/m17n/sa.lnm
 share/m17n/se.lnm
 share/m17n/si-samanala.mim
+share/m17n/si-wijesekera-preedit-alt.mim
 share/m17n/si-wijesekera-preedit.mim
 share/m17n/si-wijesekera.mim
 share/m17n/sid.lnm
@@ -380,6 +384,7 @@ share/m17n/sw.lnm
 share/m17n/syr.lnm
 share/m17n/syrc-phonetic.mim
 share/m17n/ta-itrans.mim
+share/m17n/ta-lk-renganathan.mim
 share/m17n/ta.lnm
 share/m17n/te-itrans.mim
 share/m17n/te.lnm

@@ -16,6 +16,8 @@ COMMENT=	A GUI for per-user configuration of m17n-lib input methods
 
 LIB_DEPENDS=	m17n.3:${PORTSDIR}/devel/m17n-lib
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20 intltool intlhack pkgconfig glib20
 USE_GETTEXT=	yes
