@@ -1,11 +1,11 @@
---- getweb.in	2009-05-29 22:17:38.000000000 -0500
-+++ getweb.in	2009-05-29 22:21:18.000000000 -0500
+--- getweb.in	2009-05-04 09:10:55.000000000 -0500
++++ getweb.in	2009-06-23 12:24:38.000000000 -0500
 @@ -11,7 +11,7 @@
  
  VERSION='$Id: getweb.in,v 1.85 2009/05/04 14:10:55 rick Exp $'
  
 -WGETOPTS="--passive-ftp -q"
-+FETCHOPTS="-m -o"
++FETCHOPTS="-p -m -o"
  
  usage() {
  cat <<EOF
@@ -27,6 +27,22 @@
  	error "Couldn't download $url/$file"
      gunzip <$file | tar xvf - $what
      rm $file
+@@ -193,13 +193,13 @@
+ 	;;
+     2200dl|2200)
+ 	getexe \
+-	    ftp://ftp.minolta-qms.com/pub/crc/out_going/win2000 m22dlicc.exe \
++	    http://printer.konicaminolta.net/drivers/win2000 m22dlicc.exe \
+ 	    "*.icm"
+ 	copyright "(c) Copyright Minolta-QMS 1999"
+ 	;;
+     2300dl|2300)
+ 	getexe \
+-	    ftp://ftp.minolta-qms.com/pub/crc/out_going/other m23dlicc.exe \
++	    http://printer.konicaminolta.net/drivers/other m23dlicc.exe \
+ 	    "*.icm"
+ 	gettgz \
+ 	    http://foo2zjs.rkkda.com/icm km2430.tar.gz \
 @@ -212,7 +212,7 @@
  	BASE="$BASE/openmind/technic/swfw/mswprtdl.nsf/logdwl"
  	FILE="MC2300DL_v255.zip"
