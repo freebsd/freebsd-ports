@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f59dda75-5ff4-11de-a13e-00e0815b8da8">
+    <topic>tor-devel -- DNS resolution vulnerabiliity</topic>
+    <affects>
+      <package>
+	<name>tor-devel</name>
+	<range><lt>0.2.1.15-rc</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Tor Project reports:</p>
+	<blockquote cite="https://git.torproject.org/checkout/tor/master/ChangeLog">
+	  <p>A malicious exit relay could convince a controller that the
+	    client's DNS question resolves to an internal IP address.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://git.torproject.org/checkout/tor/master/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2009-06-20</discovery>
+      <entry>2009-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c14aa48c-5ab7-11de-bc9b-0030843d3802">
     <topic>cscope -- multiple buffer overflows</topic>
     <affects>
@@ -3042,7 +3068,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="100a9ed2-ee56-11dd-ab4f-0030843d3802">
-    <topic>tor -- unspecified memory vorruption vulnerability</topic>
+    <topic>tor -- unspecified memory corruption vulnerability</topic>
     <affects>
       <package>
 	<name>tor</name>
@@ -3071,6 +3097,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-01-22</discovery>
       <entry>2009-01-29</entry>
+      <modified>2009-06-23</modified>
     </dates>
   </vuln>
 
