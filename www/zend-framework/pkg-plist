@@ -2380,6 +2380,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Amf/Parse/InputStream.php
 %%DATADIR%%/library/Zend/Amf/Parse/OutputStream.php
 %%DATADIR%%/library/Zend/Amf/Parse/Resource/MysqlResult.php
+%%DATADIR%%/library/Zend/Amf/Parse/Resource/MysqliResult.php
 %%DATADIR%%/library/Zend/Amf/Parse/Resource/Stream.php
 %%DATADIR%%/library/Zend/Amf/Parse/Serializer.php
 %%DATADIR%%/library/Zend/Amf/Parse/TypeLoader.php
@@ -3006,6 +3007,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaTitle.php
 %%DATADIR%%/library/Zend/Gdata/Media/Feed.php
 %%DATADIR%%/library/Zend/Gdata/MediaMimeStream.php
+%%DATADIR%%/library/Zend/Gdata/MimeBodyString.php
+%%DATADIR%%/library/Zend/Gdata/MimeFile.php
 %%DATADIR%%/library/Zend/Gdata/Photos.php
 %%DATADIR%%/library/Zend/Gdata/Photos/AlbumEntry.php
 %%DATADIR%%/library/Zend/Gdata/Photos/AlbumFeed.php
@@ -4785,6 +4788,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/AuthTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Contact.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ContactVO.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Request/bytearray.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Request/longstring.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Request/mock/arrayAmf3Request.bin
@@ -4833,6 +4837,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/numberAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/numberAmf3Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/objectAmf0Response.bin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/referenceObjectAmf3Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/sparseArrayAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringAmf3Response.bin
@@ -4842,10 +4847,14 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ServerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ServiceA.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ServiceB.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ServiceC.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/TypeLoaderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Util/BinaryStreamTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/ArrayCollectionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/MessageBodyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/MessageHeaderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/_files/services/My/ServiceA.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/_files/services/ServiceC.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/_files/testdata
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/ApplicationTest.php
@@ -7150,6 +7159,8 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Module
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Bootstrap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/_files/services/My
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/_files/services
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Value
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Util
