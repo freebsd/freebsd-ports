@@ -3677,6 +3677,7 @@ freesbie                        ports/sysutils/freesbie
 freesci                         ports/games/freesci
 freesweep                       ports/games/freesweep
 freesynd                        ports/games/freesynd
+freetalk                        ports/net-im/freetalk
 freetar                         ports/archivers/freetar
 freetds                         ports/databases/freetds
 freetds-devel                   ports/databases/freetds-devel
@@ -8871,6 +8872,7 @@ monkeysphere                    ports/security/monkeysphere
 monkeytail                      ports/sysutils/monkeytail
 mono                            ports/lang/mono
 mono-addins                     ports/devel/mono-addins
+mono-basic                      ports/lang/mono-basic
 mono-kmod                       ports/sysutils/mono-kmod
 mono-tools                      ports/devel/mono-tools
 mono-zeroconf                   ports/net/mono-zeroconf
@@ -8929,6 +8931,7 @@ mp3blaster                      ports/audio/mp3blaster
 mp3burn                         ports/audio/mp3burn
 mp3butler                       ports/audio/mp3butler
 mp3c                            ports/audio/mp3c
+mp3cd                           ports/multimedia/mp3cd
 mp3check                        ports/audio/mp3check
 mp3ck                           ports/audio/mp3ck
 mp3gain                         ports/audio/mp3gain
@@ -17843,6 +17846,7 @@ pgadmin3-12                     ports/databases/pgadmin3-12
 pgbouncer                       ports/databases/pgbouncer
 pgcalc                          ports/math/pgcalc
 pgcluster                       ports/databases/pgcluster
+pgdbf                           ports/databases/pgdbf
 pgen                            ports/mail/pgen
 pgfouine                        ports/databases/pgfouine
 pgloader                        ports/databases/pgloader
@@ -19607,6 +19611,7 @@ qmail-spamcontrol               ports/mail/qmail-spamcontrol
 qmail-tls                       ports/mail/qmail-tls
 qmail-vida                      ports/mail/qmail-vida
 qmailadmin                      ports/mail/qmailadmin
+qmailadmin-devel                ports/mail/qmailadmin-devel
 qmailanalog                     ports/mail/qmailanalog
 qmailmrtg7                      ports/mail/qmailmrtg7
 qmake                           ports/devel/qmake
@@ -20164,6 +20169,7 @@ ru-pgp.language                 ports/russian/pgp.language
 ru-php_doc                      ports/russian/php_doc
 ru-prawda                       ports/russian/prawda
 ru-pscyr                        ports/russian/pscyr
+ru-rubygem-russian              ports/russian/rubygem-russian
 ru-rubygem-rutils               ports/russian/rubygem-rutils
 ru-rus-ispell                   ports/russian/rus-ispell
 ru-rux                          ports/russian/rux
@@ -20586,6 +20592,7 @@ rubygem-rtags                   ports/devel/rubygem-rtags
 rubygem-rubigen                 ports/devel/rubygem-rubigen
 rubygem-ruby-debug              ports/devel/rubygem-ruby-debug
 rubygem-ruby-debug-base         ports/devel/rubygem-ruby-debug-base
+rubygem-ruby-debug-ide          ports/devel/rubygem-ruby-debug-ide
 rubygem-ruby-mp3info            ports/audio/rubygem-ruby-mp3info
 rubygem-ruby-ole                ports/devel/rubygem-ruby-ole
 rubygem-ruby-prof               ports/devel/rubygem-ruby-prof
@@ -21659,6 +21666,7 @@ symon                           ports/sysutils/symon
 sympa                           ports/mail/sympa
 sympa-elixus                    ports/mail/sympa-elixus
 sympa5                          ports/mail/sympa5
+symports                        ports/ports-mgmt/symports
 synaesthesia                    ports/graphics/synaesthesia
 synce-gvfs                      ports/palm/synce-gvfs
 synce-hal                       ports/palm/synce-hal
@@ -22641,6 +22649,7 @@ vb2c                            ports/devel/vb2c
 vba                             ports/emulators/vba
 vbetool                         ports/sysutils/vbetool
 vbindiff                        ports/textproc/vbindiff
+vboxgtk                         ports/deskutils/vboxgtk
 vbsfilter                       ports/mail/vbsfilter
 vcdgear                         ports/multimedia/vcdgear
 vcdimager                       ports/multimedia/vcdimager
