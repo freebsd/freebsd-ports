@@ -9,11 +9,10 @@ PORTNAME=	acidrip
 PORTVERSION=	0.14
 PORTREVISION=	5
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SFE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK2::Perl wrapper for MPlayer and MEncoder for ripping DVD's
+COMMENT=	GTK2::Perl wrapper for MPlayer and MEncoder for ripping DVDs
 
 BUILD_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
@@ -37,8 +36,8 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
-		${WRKSRC}/AcidRip/acidrip.pm
+	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' ${WRKSRC}/AcidRip/acidrip.pm
 	@${RM} ${WRKSRC}/AcidRip/*.bak
+	@${RM} ${WRKSRC}/AcidRip/*.orig
 
 .include <bsd.port.mk>
