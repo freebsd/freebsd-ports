@@ -1,0 +1,1348 @@
+etc/gforge/gforge-httpd.conf.example
+etc/gforge/gforge-multi-host-httpd.conf.example
+etc/gforge/local.inc-dist
+etc/gforge/local.inc.example
+etc/gforge/sample-apache.vhost-dist
+share/doc/gforge/README.ConvertToUTF8
+share/doc/gforge/README.Custom
+share/doc/gforge/README.KnownBugs
+share/doc/gforge/README.Plugins
+share/doc/gforge/README.Soap
+share/doc/gforge/README.Themes
+share/doc/gforge/README.TuningLDAP
+share/doc/gforge/architecture/stats/stats-process.sda
+share/doc/gforge/debian-guide.html
+share/doc/gforge/debian-installguidefornewbies.html
+share/doc/gforge/doc_utils.php
+share/doc/gforge/docbook/INSTALL
+share/doc/gforge/docbook/Makefile
+share/doc/gforge/docbook/README
+share/doc/gforge/docbook/build/.keepme
+share/doc/gforge/docbook/docbook/administration_guide/administration_guide.xml
+share/doc/gforge/docbook/docbook/contribution_guide/contribution_guide.xml
+share/doc/gforge/docbook/docbook/contribution_guide/include/coding_standards.xml
+share/doc/gforge/docbook/docbook/contribution_guide/include/cvs_repository.xml
+share/doc/gforge/docbook/docbook/contribution_guide/include/howto_contribute.xml
+share/doc/gforge/docbook/docbook/contribution_guide/include/howto_documentation.xml
+share/doc/gforge/docbook/docbook/contribution_guide/include/howto_localization.xml
+share/doc/gforge/docbook/docbook/contribution_guide/include/howto_xhtml.xml
+share/doc/gforge/docbook/docbook/contribution_guide/include/templating.xml
+share/doc/gforge/docbook/docbook/entities/authors.ent
+share/doc/gforge/docbook/docbook/entities/authors/guillaume_smet.xml
+share/doc/gforge/docbook/docbook/entities/authors/ken_mccullagh.xml
+share/doc/gforge/docbook/docbook/entities/authors/ognyan_kulev.xml
+share/doc/gforge/docbook/docbook/entities/authors/reinhard_spisser.xml
+share/doc/gforge/docbook/docbook/entities/authors/roland_mas.xml
+share/doc/gforge/docbook/docbook/entities/authors/tim_perdue.xml
+share/doc/gforge/docbook/docbook/entities/authors/tom_copeland.xml
+share/doc/gforge/docbook/docbook/entities/xinclude.ent
+share/doc/gforge/docbook/docbook/gforge_manual.xml
+share/doc/gforge/docbook/docbook/installation_guide/installation_guide.xml
+share/doc/gforge/docbook/docbook/introduction/introduction.xml
+share/doc/gforge/docbook/docbook/user_guide/getting_started/getting_started.xml
+share/doc/gforge/docbook/docbook/user_guide/introduction/introduction.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/cvs.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/docman.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/file_releases.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/forums.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/index.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/mailing_lists.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/news.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/project_admin.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/project_summary.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/surveys.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/task_manager.xml
+share/doc/gforge/docbook/docbook/user_guide/project_functions/tracker.xml
+share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/index.xml
+share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/project_help.xml
+share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/search.xml
+share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/snippet.xml
+share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/trove.xml
+share/doc/gforge/docbook/docbook/user_guide/user_functions/index.xml
+share/doc/gforge/docbook/docbook/user_guide/user_guide.xml
+share/doc/gforge/docbook/xsl/article_html.xsl
+share/doc/gforge/docbook/xsl/article_html_chunk.xsl
+share/doc/gforge/docbook/xsl/article_pdf.xsl
+share/doc/gforge/docbook/xsl/book_html.xsl
+share/doc/gforge/docbook/xsl/book_html_chunk.xsl
+share/doc/gforge/docbook/xsl/book_pdf.xsl
+share/doc/gforge/docbook/xsl/include/common_html.xsl
+share/doc/gforge/docbook/xsl/include/common_html_chunk.xsl
+share/doc/gforge/docbook/xsl/include/common_pdf.xsl
+share/doc/gforge/gforge-themes-HOWTO.html
+share/doc/gforge/images/sflogo2-105a.png
+share/doc/gforge/index.php
+share/doc/gforge/log_formats.txt
+share/doc/gforge/migrating-to-gforge-HOWTO.html
+share/doc/gforge/migrating-to-gforge-REPORT.txt
+share/doc/gforge/phpdoc/makedoc.sh
+share/doc/gforge/phpdoc/manageclass.patch
+share/doc/gforge/webalizer-HOWTO.html
+share/gforge/backends/backend/DatabaseDump.pl
+share/gforge/backends/backend/include.pl
+share/gforge/backends/backend/shell/apache.sh
+share/gforge/backends/backend/zones/aliases.zone
+share/gforge/backends/backend/zones/dns.zone
+share/gforge/backends/backend/zones/sendmail.cw.zone
+share/gforge/backends/cronjobs/README.root
+share/gforge/backends/cronjobs/calculate_user_metric.php
+share/gforge/backends/cronjobs/check_stale_tracker_items.php
+share/gforge/backends/cronjobs/crontab.in
+share/gforge/backends/cronjobs/cvs-cron/cvs.php
+share/gforge/backends/cronjobs/cvs-cron/cvscreate.sh
+share/gforge/backends/cronjobs/cvs-cron/cvssh.pl
+share/gforge/backends/cronjobs/cvs-cron/default_page.php
+share/gforge/backends/cronjobs/cvs-cron/ftp_create.php
+share/gforge/backends/cronjobs/cvs-cron/grap.c
+share/gforge/backends/cronjobs/cvs-cron/history_parse.php
+share/gforge/backends/cronjobs/cvs-cron/ssh_create.php
+share/gforge/backends/cronjobs/cvs-cron/syncmail
+share/gforge/backends/cronjobs/cvs-cron/usergroup.php
+share/gforge/backends/cronjobs/cvs-cron/www/index.php
+share/gforge/backends/cronjobs/daily_task_email.php
+share/gforge/backends/cronjobs/dav-svn/README
+share/gforge/backends/cronjobs/dav-svn/commit-email_pl
+share/gforge/backends/cronjobs/dav-svn/create_docman.php
+share/gforge/backends/cronjobs/dav-svn/create_group_home.php
+share/gforge/backends/cronjobs/dav-svn/create_groups.php
+share/gforge/backends/cronjobs/dav-svn/create_svn.php
+share/gforge/backends/cronjobs/dav-svn/create_users.php
+share/gforge/backends/cronjobs/dav-svn/crontab.in
+share/gforge/backends/cronjobs/dav-svn/default_page.php
+share/gforge/backends/cronjobs/dav-svn/svn-index.php
+share/gforge/backends/cronjobs/dav-svn/www/index.php
+share/gforge/backends/cronjobs/dav-svn/www/svnindex.css
+share/gforge/backends/cronjobs/dav-svn/www/svnindex.xsl
+share/gforge/backends/cronjobs/db_project_sums.php
+share/gforge/backends/cronjobs/db_stats_agg.php
+share/gforge/backends/cronjobs/db_trove_maint.php
+share/gforge/backends/cronjobs/forum_gateway.php
+share/gforge/backends/cronjobs/mail/mailaliases.php
+share/gforge/backends/cronjobs/mail/mailing_lists_create.php
+share/gforge/backends/cronjobs/mail/privatize_list.py
+share/gforge/backends/cronjobs/massmail.php
+share/gforge/backends/cronjobs/project_cleanup.php
+share/gforge/backends/cronjobs/project_weekly_metric-backfill.php
+share/gforge/backends/cronjobs/project_weekly_metric.php
+share/gforge/backends/cronjobs/rating_stats.php
+share/gforge/backends/cronjobs/reporting_cron.php
+share/gforge/backends/cronjobs/rotate_activity.php
+share/gforge/backends/cronjobs/send_pending_items_mail.php
+share/gforge/backends/cronjobs/site_stats.php
+share/gforge/backends/cronjobs/stats_projects-backfill.php
+share/gforge/backends/cronjobs/stats_projects.inc
+share/gforge/backends/cronjobs/stats_site.inc
+share/gforge/backends/cronjobs/tracker_gateway.php
+share/gforge/backends/cronjobs/update_filesize.php
+share/gforge/backends/cronjobs/vacuum.php
+share/gforge/backends/monitor/check-system.pl
+share/gforge/backends/monitor/systemdaemon
+share/gforge/backends/plugins/cvssyncmail/INSTALL
+share/gforge/backends/plugins/cvssyncmail/common/CVSSyncMailPlugin.class
+share/gforge/backends/plugins/cvssyncmail/common/cvssyncmail-init.php
+share/gforge/backends/plugins/cvssyncmail/common/languages/Base.tab
+share/gforge/backends/plugins/cvssyncmail/db/cvssyncmail-init.sql
+share/gforge/backends/plugins/cvssyncmail/include/cvssyncmail-init.php
+share/gforge/backends/plugins/cvstracker/AUTHORS
+share/gforge/backends/plugins/cvstracker/COPYING
+share/gforge/backends/plugins/cvstracker/Makefile
+share/gforge/backends/plugins/cvstracker/README
+share/gforge/backends/plugins/cvstracker/bin/db-delete.pl
+share/gforge/backends/plugins/cvstracker/bin/db-upgrade.pl
+share/gforge/backends/plugins/cvstracker/bin/post.php
+share/gforge/backends/plugins/cvstracker/bin/update_loginfo.php
+share/gforge/backends/plugins/cvstracker/etc/plugins/cvstracker/config.php
+share/gforge/backends/plugins/cvstracker/httpd.conf
+share/gforge/backends/plugins/cvstracker/include/Snoopy.class
+share/gforge/backends/plugins/cvstracker/include/cvstracker-init.php
+share/gforge/backends/plugins/cvstracker/include/cvstrackerPlugin.class
+share/gforge/backends/plugins/cvstracker/include/languages/Base.tab
+share/gforge/backends/plugins/cvstracker/include/languages/French.tab
+share/gforge/backends/plugins/cvstracker/include/languages/Spanish.tab
+share/gforge/backends/plugins/cvstracker/lib/20050305.sql
+share/gforge/backends/plugins/cvstracker/lib/20051003.sql
+share/gforge/backends/plugins/cvstracker/lib/cvstracker-init.sql
+share/gforge/backends/plugins/cvstracker/www/newcommit.php
+share/gforge/backends/plugins/scmcvs/AUTHORS
+share/gforge/backends/plugins/scmcvs/COPYING
+share/gforge/backends/plugins/scmcvs/README
+share/gforge/backends/plugins/scmcvs/TODO
+share/gforge/backends/plugins/scmcvs/bin/README
+share/gforge/backends/plugins/scmcvs/bin/aclcheck.php
+share/gforge/backends/plugins/scmcvs/bin/cvs-pserver
+share/gforge/backends/plugins/scmcvs/bin/cvs_dump.pl
+share/gforge/backends/plugins/scmcvs/bin/cvs_update.pl
+share/gforge/backends/plugins/scmcvs/bin/db-delete.pl
+share/gforge/backends/plugins/scmcvs/bin/db-upgrade.pl
+share/gforge/backends/plugins/scmcvs/bin/install-cvs.sh
+share/gforge/backends/plugins/scmcvs/bin/snapshots.sh
+share/gforge/backends/plugins/scmcvs/bin/stats_cvs.pl
+share/gforge/backends/plugins/scmcvs/bin/syncmail
+share/gforge/backends/plugins/scmcvs/bin/syncmail-cvs-1.11
+share/gforge/backends/plugins/scmcvs/bin/syncmail-cvs-1.12
+share/gforge/backends/plugins/scmcvs/cgi-bin/cvsweb
+share/gforge/backends/plugins/scmcvs/cgi-bin/cvsweb.ori
+share/gforge/backends/plugins/scmcvs/cronjobs/syncmail
+share/gforge/backends/plugins/scmcvs/cronjobs/tarballs.php
+share/gforge/backends/plugins/scmcvs/etc/httpd.d/11scm50cvs
+share/gforge/backends/plugins/scmcvs/etc/httpd.d/12scm50cvs.ssl
+share/gforge/backends/plugins/scmcvs/etc/httpd.d/30virtualcvs
+share/gforge/backends/plugins/scmcvs/etc/httpd.d/31virtualcvs.ssl
+share/gforge/backends/plugins/scmcvs/etc/plugins/scmcvs/config.php
+share/gforge/backends/plugins/scmcvs/etc/plugins/scmcvs/cvsweb.conf
+share/gforge/backends/plugins/scmcvs/include/CVSPlugin.class
+share/gforge/backends/plugins/scmcvs/include/Snoopy.class
+share/gforge/backends/plugins/scmcvs/include/languages/Base.tab
+share/gforge/backends/plugins/scmcvs/include/languages/Basque.tab
+share/gforge/backends/plugins/scmcvs/include/languages/Chinese.tab
+share/gforge/backends/plugins/scmcvs/include/languages/Dutch.tab
+share/gforge/backends/plugins/scmcvs/include/languages/French.tab
+share/gforge/backends/plugins/scmcvs/include/languages/German.tab
+share/gforge/backends/plugins/scmcvs/include/languages/Italian.tab
+share/gforge/backends/plugins/scmcvs/include/languages/Korean.tab
+share/gforge/backends/plugins/scmcvs/include/languages/PortugueseBrazilian.tab
+share/gforge/backends/plugins/scmcvs/include/languages/Spanish.tab
+share/gforge/backends/plugins/scmcvs/include/languages/Swedish.tab
+share/gforge/backends/plugins/scmcvs/include/scmcvs-init.php
+share/gforge/backends/plugins/scmcvs/lib/scmcvs-init.sql
+share/gforge/backends/plugins/scmcvs/www/acl.php
+share/gforge/backends/plugins/scmcvs/www/cvsweb.php
+share/gforge/backends/plugins/scmcvs/www/cvsweb/css/cvsweb.css
+share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/back.gif
+share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/binary.gif
+share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/dir.gif
+share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/miniback.gif
+share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/minidir.gif
+share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/minigraph.png
+share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/minitext.gif
+share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/text.gif
+share/gforge/backends/plugins/scmsvn/README
+share/gforge/backends/plugins/scmsvn/bin/db-delete.pl
+share/gforge/backends/plugins/scmsvn/bin/db-upgrade.pl
+share/gforge/backends/plugins/scmsvn/bin/install-svn.sh
+share/gforge/backends/plugins/scmsvn/bin/install-viewcvs.sh
+share/gforge/backends/plugins/scmsvn/bin/snapshots.sh
+share/gforge/backends/plugins/scmsvn/bin/svn-create.php
+share/gforge/backends/plugins/scmsvn/bin/svn_dump.pl
+share/gforge/backends/plugins/scmsvn/bin/svn_update.pl
+share/gforge/backends/plugins/scmsvn/cgi-bin/viewcvs.cgi
+share/gforge/backends/plugins/scmsvn/cronjobs/svn-stats.php
+share/gforge/backends/plugins/scmsvn/cronjobs/tarballs.php
+share/gforge/backends/plugins/scmsvn/etc/plugins/scmsvn/config.php
+share/gforge/backends/plugins/scmsvn/gforge-plugin-scmsvn.spec
+share/gforge/backends/plugins/scmsvn/include/SVNPlugin.class
+share/gforge/backends/plugins/scmsvn/include/languages/Base.tab
+share/gforge/backends/plugins/scmsvn/include/languages/French.tab
+share/gforge/backends/plugins/scmsvn/include/languages/Korean.tab
+share/gforge/backends/plugins/scmsvn/include/scmsvn-init.php
+share/gforge/backends/plugins/scmsvn/lib/scmsvn-init.sql
+share/gforge/backends/plugins/scmsvn/rpm-specific/cron.d/gforge-plugin-scmsvn
+share/gforge/backends/plugins/scmsvn/rpm-specific/languages/.keepme
+share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-hotbackup.py-path.patch
+share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-nogroupdircheck.patch
+share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-styles.css.patch
+share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-svn-host.patch
+share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-svn_dav_authz.patch
+share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-templates.patch
+share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-viewcvs.cgi.patch
+share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-viewcvs.php.patch
+share/gforge/backends/plugins/scmsvn/rpm-specific/scripts/create_authz_svn.php
+share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs/icons/small/dir.gif
+share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs/icons/small/text.gif
+share/gforge/backends/plugins/scmsvn/www/styles.css
+share/gforge/backends/plugins/scmsvn/www/viewcvs.php
+share/gforge/backends/plugins/scmsvn/www/viewcvs_utils.php
+share/gforge/backends/plugins/svncommitemail/bin/commit-email.pl
+share/gforge/backends/plugins/svncommitemail/include/SVNCommitEmailPlugin.class
+share/gforge/backends/plugins/svncommitemail/include/svncommitemail-init.php
+share/gforge/backends/plugins/svntracker/AUTHORS
+share/gforge/backends/plugins/svntracker/COPYING
+share/gforge/backends/plugins/svntracker/README
+share/gforge/backends/plugins/svntracker/bin/db-delete.pl
+share/gforge/backends/plugins/svntracker/bin/db-upgrade.pl
+share/gforge/backends/plugins/svntracker/bin/post.php
+share/gforge/backends/plugins/svntracker/bin/update_postcommit.php
+share/gforge/backends/plugins/svntracker/etc/plugins/svntracker/config.php
+share/gforge/backends/plugins/svntracker/etc/plugins/svntracker/svntracker.conf
+share/gforge/backends/plugins/svntracker/httpd.conf
+share/gforge/backends/plugins/svntracker/include/Snoopy.class
+share/gforge/backends/plugins/svntracker/include/languages/Base.tab
+share/gforge/backends/plugins/svntracker/include/languages/French.tab
+share/gforge/backends/plugins/svntracker/include/languages/Spanish.tab
+share/gforge/backends/plugins/svntracker/include/svntracker-init.php
+share/gforge/backends/plugins/svntracker/include/svntrackerPlugin.class
+share/gforge/backends/plugins/svntracker/lib/20051011.sql
+share/gforge/backends/plugins/svntracker/lib/svntracker-init.sql
+share/gforge/backends/plugins/svntracker/postcommit.example
+share/gforge/backends/plugins/svntracker/rpm-specific/cron.d/gforge-plugin-svntracker
+share/gforge/backends/plugins/svntracker/www/newcommit.php
+share/gforge/backends/utils/change_default_shell
+share/gforge/backends/utils/cvs1/cvscreate.sh
+share/gforge/backends/utils/cvs1/cvstar_genlist.pl
+share/gforge/backends/utils/cvs1/cvstar_superscript.pl
+share/gforge/backends/utils/decode_images.sh
+share/gforge/backends/utils/default_page.php
+share/gforge/backends/utils/fill-in-the-blanks.pl
+share/gforge/backends/utils/fixscripts/fix_broken_uids.php
+share/gforge/backends/utils/fixscripts/fix_image_data.php
+share/gforge/backends/utils/fixscripts/tools_data_cleanup.php
+share/gforge/backends/utils/fixscripts/upgrade_bug_data.php
+share/gforge/backends/utils/fixscripts/upgrade_filerelease_data.php
+share/gforge/backends/utils/fixscripts/upgrade_forum_data.php
+share/gforge/backends/utils/fixscripts/upgrade_task_data.php
+share/gforge/backends/utils/grap.c
+share/gforge/backends/utils/include.pl
+share/gforge/backends/utils/install-apache.sh
+share/gforge/backends/utils/ldap/ldap-check-replica
+share/gforge/backends/utils/ldap/ldap-clean
+share/gforge/backends/utils/ldap/ldap-del-user
+share/gforge/backends/utils/ldap/ldap-dump
+share/gforge/backends/utils/ldap/ldap-import
+share/gforge/backends/utils/ldap/sql2ldif.pl
+share/gforge/backends/utils/sffingerd.c
+share/gforge/backends/utils/underworld-dummy/aliases.zone
+share/gforge/backends/utils/underworld-dummy/dns_conf.pl
+share/gforge/backends/utils/underworld-dummy/dump_database.pl
+share/gforge/backends/utils/underworld-dummy/ia64_dump.pl
+share/gforge/backends/utils/underworld-dummy/mail_aliases.pl
+share/gforge/backends/utils/underworld-dummy/mailing_lists_dump.pl
+share/gforge/backends/utils/underworld-dummy/new_aliases.pl
+share/gforge/backends/utils/underworld-dummy/ssh_dump.pl
+share/gforge/contrib/autoconf/README.configure
+share/gforge/contrib/autoconf/config.status
+share/gforge/contrib/autoconf/configure
+share/gforge/contrib/autoconf/configure.ac
+share/gforge/contrib/autoconf/local.inc
+share/gforge/contrib/autoconf/local.inc.in
+share/gforge/contrib/autoconf/sample-apache.vhost
+share/gforge/contrib/autoconf/sample-apache.vhost.in
+share/gforge/contrib/beta1_install_from_scratch.txt
+share/gforge/contrib/beta1_install_from_scratch_install.php
+share/gforge/contrib/cmd-line-prototype.tar.gz
+share/gforge/contrib/gforge-3.0-cronjobs.patch
+share/gforge/contrib/gforge-3.0-init_sql.patch
+share/gforge/contrib/gforge-3.0-local_config.patch
+share/gforge/contrib/gforge.conf
+share/gforge/contrib/rh8_apache20_config/httpd.conf
+share/gforge/contrib/rh8_apache20_config/local.inc
+share/gforge/contrib/rh8_apache20_config/php.conf
+share/gforge/contrib/rh8_apache20_config/php.ini
+share/gforge/contrib/rh8_apache20_config/readme.txt
+share/gforge/contrib/tracker-cc.README
+share/gforge/contrib/tracker-cc.patch
+share/gforge/contrib/userlist.README
+share/gforge/contrib/userlist.patch
+share/gforge/db/20001209.sql
+share/gforge/db/20001214.sql
+share/gforge/db/20001219-sourceforge-2.5
+share/gforge/db/20001220.sql
+share/gforge/db/20010109.sql
+share/gforge/db/20010112.sql
+share/gforge/db/20010126.sql
+share/gforge/db/20010206.sql
+share/gforge/db/20010301.sql
+share/gforge/db/20010304-1.sql
+share/gforge/db/20010304-2.sql
+share/gforge/db/20010304-3.sql
+share/gforge/db/20010304-4-artifact-convert-files.php
+share/gforge/db/20010305.sql
+share/gforge/db/20010313.sql
+share/gforge/db/20010317.sql
+share/gforge/db/20010409.sql
+share/gforge/db/20010412.sql
+share/gforge/db/20010507.sql
+share/gforge/db/20010509.sql
+share/gforge/db/20010511.sql
+share/gforge/db/20010601-sourceforge-2.6
+share/gforge/db/20021124-1_drop_foundry.sql
+share/gforge/db/20021124-2_theming.sql
+share/gforge/db/20021124-3_gforge-debian-sf-sync.sql
+share/gforge/db/20021125.sql
+share/gforge/db/20021212.sql
+share/gforge/db/20021213.sql
+share/gforge/db/20021213_doc_data-migrate.php
+share/gforge/db/20021214.sql
+share/gforge/db/20021215.sql
+share/gforge/db/20021216.sql
+share/gforge/db/20021223-drops.sql
+share/gforge/db/20021223.sql
+share/gforge/db/20021230.sql
+share/gforge/db/20030102-drops.sql
+share/gforge/db/20030102.sql
+share/gforge/db/20030105.sql
+share/gforge/db/20030107.sql
+share/gforge/db/20030109.sql
+share/gforge/db/20030112.sql
+share/gforge/db/20030113-drops.sql
+share/gforge/db/20030113.sql
+share/gforge/db/20030115.sql
+share/gforge/db/20030131.sql
+share/gforge/db/20030209.sql
+share/gforge/db/20030312.sql
+share/gforge/db/20030513.sql
+share/gforge/db/20030701-gforge-3.0
+share/gforge/db/20030822.sql
+share/gforge/db/20031026-gforge-3.1
+share/gforge/db/20031105.sql
+share/gforge/db/20031124.sql
+share/gforge/db/20031126.sql
+share/gforge/db/20031129.sql
+share/gforge/db/20031205.sql
+share/gforge/db/20040108-gforge-3.21
+share/gforge/db/20040130.sql
+share/gforge/db/20040204.sql
+share/gforge/db/20040315.sql
+share/gforge/db/200403251.sql
+share/gforge/db/200403252.sql
+share/gforge/db/20040326-gforge-3.3
+share/gforge/db/20040329.sql
+share/gforge/db/20040507.sql
+share/gforge/db/20040722.sql
+share/gforge/db/20040729.sql
+share/gforge/db/20040804.sql
+share/gforge/db/20040826.sql
+share/gforge/db/20040826_migrateforum.php
+share/gforge/db/20040826_migraterbac.php
+share/gforge/db/20040914.sql
+share/gforge/db/20041001.sql
+share/gforge/db/20041005.sql
+share/gforge/db/20041006.sql
+share/gforge/db/20041014.sql
+share/gforge/db/20041020.sql
+share/gforge/db/20041025-gforge-4.0
+share/gforge/db/20041031.sql
+share/gforge/db/20041104.sql
+share/gforge/db/20041107-gforge-4.0.1
+share/gforge/db/20041108.sql
+share/gforge/db/20041124.sql
+share/gforge/db/20041211-syncmail.php
+share/gforge/db/20041215-gforge-4.0.2
+share/gforge/db/20041222-1-delete-task-artifact.php
+share/gforge/db/20041222-2.sql
+share/gforge/db/20041222-debian.sql
+share/gforge/db/20050115.sql
+share/gforge/db/20050127-frs-reorg.php
+share/gforge/db/20050130.sql
+share/gforge/db/20050212.sql
+share/gforge/db/20050214-nss.sql
+share/gforge/db/20050224-drop.sql
+share/gforge/db/20050224.sql
+share/gforge/db/20050225-nsssetup.sql
+share/gforge/db/20050227.sql
+share/gforge/db/20050311.sql
+share/gforge/db/20050315-drop.sql
+share/gforge/db/20050315.sql
+share/gforge/db/20050325-1-drop.sql
+share/gforge/db/20050325-1.sql
+share/gforge/db/20050325-2.php
+share/gforge/db/20050325-3-drop.sql
+share/gforge/db/20050325-3.sql
+share/gforge/db/20050605.sql
+share/gforge/db/20050617.php
+share/gforge/db/20050628.sql
+share/gforge/db/20050711.sql
+share/gforge/db/20050906.sql
+share/gforge/db/20051003.sql
+share/gforge/db/20051027-1.sql
+share/gforge/db/20051027-2.php
+share/gforge/db/FTI-20050315.sql
+share/gforge/db/FTI-20050401.sql
+share/gforge/db/FTI-20050530.sql
+share/gforge/db/FTI-20060130.sql
+share/gforge/db/FTI.sql
+share/gforge/db/README
+share/gforge/db/SQL_2.5/DefaultValues_2_5.sql
+share/gforge/db/SQL_2.5/SourceForge_2_5.sql
+share/gforge/db/SQL_2.6/DefaultValues.sql
+share/gforge/db/SQL_2.6/SourceForge.sql
+share/gforge/db/SQL_2.6/dbusers.sql
+share/gforge/db/SQL_2.6/languages.tab
+share/gforge/db/SQL_2.6/replicate.sh
+share/gforge/db/SQL_2.6/replication-master.sql
+share/gforge/db/SQL_2.6/replication-reset-master.sql
+share/gforge/db/SQL_2.6/replication-reset-slave.sql
+share/gforge/db/SQL_2.6/replication-slave.sql
+share/gforge/db/SQL_2.6/replication.plan
+share/gforge/db/SQL_2.6/trove_cat.tab
+share/gforge/db/SQL_2.6/user_rating.sql
+share/gforge/db/gforge-pgsql7.3.sql
+share/gforge/db/gforge.sql
+share/gforge/db/gforge2.6.sql
+share/gforge/db/nss-pgsql.sql
+share/gforge/db/timetracking-init.sql
+www/gforge/common/docman/Document.class
+www/gforge/common/docman/DocumentFactory.class
+www/gforge/common/docman/DocumentGroup.class
+www/gforge/common/docman/DocumentGroupFactory.class
+www/gforge/common/forum/Forum.class
+www/gforge/common/forum/ForumFactory.class
+www/gforge/common/forum/ForumMessage.class
+www/gforge/common/forum/ForumMessageFactory.class
+www/gforge/common/forum/ForumsForUser.class
+www/gforge/common/frs/FRSFile.class
+www/gforge/common/frs/FRSPackage.class
+www/gforge/common/frs/FRSRelease.class
+www/gforge/common/include/Error.class
+www/gforge/common/include/GForge.class
+www/gforge/common/include/Group.class
+www/gforge/common/include/GroupJoinRequest.class
+www/gforge/common/include/Jabber.class
+www/gforge/common/include/MailParser.class
+www/gforge/common/include/Permission.class
+www/gforge/common/include/Plugin.class
+www/gforge/common/include/PluginManager.class
+www/gforge/common/include/Role.class
+www/gforge/common/include/RoleObserver.class
+www/gforge/common/include/SCM.class
+www/gforge/common/include/Stats.class
+www/gforge/common/include/System.class
+www/gforge/common/include/User.class
+www/gforge/common/include/Validator.class
+www/gforge/common/include/account.php
+www/gforge/common/include/constants.php
+www/gforge/common/include/cron_utils.php
+www/gforge/common/include/database.php
+www/gforge/common/include/escapingUtils.php
+www/gforge/common/include/license.php
+www/gforge/common/include/scm.php
+www/gforge/common/include/session.php
+www/gforge/common/include/system/LDAP.class
+www/gforge/common/include/system/NSSPGSQL.class
+www/gforge/common/include/system/UNIX.class
+www/gforge/common/include/system/pgsql.class
+www/gforge/common/include/timezones.php
+www/gforge/common/include/utils.php
+www/gforge/common/mail/MailingList.class
+www/gforge/common/mail/MailingListFactory.class
+www/gforge/common/pm/ProjectCategory.class
+www/gforge/common/pm/ProjectGroup.class
+www/gforge/common/pm/ProjectGroupFactory.class
+www/gforge/common/pm/ProjectTask.class
+www/gforge/common/pm/ProjectTaskFactory.class
+www/gforge/common/pm/ProjectTasksForUser.class
+www/gforge/common/pm/Validator.class
+www/gforge/common/pm/import_utils.php
+www/gforge/common/reporting/Report.class
+www/gforge/common/reporting/ReportGroupAdded.class
+www/gforge/common/reporting/ReportGroupCum.class
+www/gforge/common/reporting/ReportProjectAct.class
+www/gforge/common/reporting/ReportProjectTime.class
+www/gforge/common/reporting/ReportSetup.class
+www/gforge/common/reporting/ReportSiteAct.class
+www/gforge/common/reporting/ReportSiteTime.class
+www/gforge/common/reporting/ReportTrackerAct.class
+www/gforge/common/reporting/ReportUserAct.class
+www/gforge/common/reporting/ReportUserAdded.class
+www/gforge/common/reporting/ReportUserCum.class
+www/gforge/common/reporting/ReportUserTime.class
+www/gforge/common/reporting/TimeEntry.class
+www/gforge/common/reporting/report_utils.php
+www/gforge/common/scm/SCMFactory.class
+www/gforge/common/search/ArtifactSearchQuery.class
+www/gforge/common/search/DocsSearchQuery.class
+www/gforge/common/search/ExportProjectSearchQuery.class
+www/gforge/common/search/ForumSearchQuery.class
+www/gforge/common/search/ForumsSearchQuery.class
+www/gforge/common/search/FrsSearchQuery.class
+www/gforge/common/search/NewsSearchQuery.class
+www/gforge/common/search/PeopleSearchQuery.class
+www/gforge/common/search/ProjectSearchQuery.class
+www/gforge/common/search/SearchQuery.class
+www/gforge/common/search/SkillSearchQuery.class
+www/gforge/common/search/TasksSearchQuery.class
+www/gforge/common/search/TrackersSearchQuery.class
+www/gforge/common/survey/Survey.class
+www/gforge/common/survey/SurveyFactory.class
+www/gforge/common/survey/SurveyQuestion.class
+www/gforge/common/survey/SurveyQuestionFactory.class
+www/gforge/common/survey/SurveyResponse.class
+www/gforge/common/survey/SurveyResponseFactory.class
+www/gforge/common/tracker/Artifact.class
+www/gforge/common/tracker/ArtifactBoxOptions.class
+www/gforge/common/tracker/ArtifactCanned.class
+www/gforge/common/tracker/ArtifactExtraField.class
+www/gforge/common/tracker/ArtifactExtraFieldElement.class
+www/gforge/common/tracker/ArtifactFactory.class
+www/gforge/common/tracker/ArtifactFile.class
+www/gforge/common/tracker/ArtifactFromID.class
+www/gforge/common/tracker/ArtifactHistory.class
+www/gforge/common/tracker/ArtifactMessage.class
+www/gforge/common/tracker/ArtifactQuery.class
+www/gforge/common/tracker/ArtifactQueryFactory.class
+www/gforge/common/tracker/ArtifactType.class
+www/gforge/common/tracker/ArtifactTypeFactory.class
+www/gforge/common/tracker/ArtifactTypes.class
+www/gforge/common/tracker/Artifacts.class
+www/gforge/common/tracker/ArtifactsForUser.class
+www/gforge/common/tracker/artifact_type_definitions.php
+www/gforge/www/404.php
+www/gforge/www/account/change_email-complete.php
+www/gforge/www/account/change_email.php
+www/gforge/www/account/change_pw.php
+www/gforge/www/account/editsshkeys.php
+www/gforge/www/account/first.php
+www/gforge/www/account/index.php
+www/gforge/www/account/login.php
+www/gforge/www/account/logout.php
+www/gforge/www/account/lostlogin.php
+www/gforge/www/account/lostpw.php
+www/gforge/www/account/pending-resend.php
+www/gforge/www/account/register.php
+www/gforge/www/account/setlang.php
+www/gforge/www/account/unsubscribe.php
+www/gforge/www/account/verify.php
+www/gforge/www/admin/admin_table.php
+www/gforge/www/admin/admin_utils.php
+www/gforge/www/admin/approve-pending.php
+www/gforge/www/admin/configman.php
+www/gforge/www/admin/cronman.php
+www/gforge/www/admin/database.php
+www/gforge/www/admin/edit_frs_filetype.php
+www/gforge/www/admin/edit_frs_processor.php
+www/gforge/www/admin/edit_licenses.php
+www/gforge/www/admin/edit_supported_languages.php
+www/gforge/www/admin/edit_theme.php
+www/gforge/www/admin/groupdelete.php
+www/gforge/www/admin/groupedit.php
+www/gforge/www/admin/grouplist.php
+www/gforge/www/admin/index.php
+www/gforge/www/admin/languages/admintabfiles.php
+www/gforge/www/admin/languages/editdouble.php
+www/gforge/www/admin/languages/editnotinbasetabfiles.php
+www/gforge/www/admin/languages/editnotranstabfiles.php
+www/gforge/www/admin/languages/edittabfiles.php
+www/gforge/www/admin/languages/edittranstabfiles.php
+www/gforge/www/admin/languages/gettabfiles.php
+www/gforge/www/admin/languages/loadtabfiles.php
+www/gforge/www/admin/languages/seenotinbasetabfiles.php
+www/gforge/www/admin/languages/seenotranstabfiles.php
+www/gforge/www/admin/languages/seetabfiles.php
+www/gforge/www/admin/languages/seetranstabfiles.php
+www/gforge/www/admin/massmail.php
+www/gforge/www/admin/pluginman.php
+www/gforge/www/admin/responses_admin.php
+www/gforge/www/admin/search.php
+www/gforge/www/admin/trove/trove_cat_add.php
+www/gforge/www/admin/trove/trove_cat_edit.php
+www/gforge/www/admin/trove/trove_cat_list.php
+www/gforge/www/admin/unsubscribe.php
+www/gforge/www/admin/useredit.php
+www/gforge/www/admin/userlist.php
+www/gforge/www/admin/vhost.php
+www/gforge/www/dbimage.php
+www/gforge/www/developer/diary.php
+www/gforge/www/developer/index.php
+www/gforge/www/developer/monitor.php
+www/gforge/www/developer/rate.php
+www/gforge/www/docman/admin/index.php
+www/gforge/www/docman/display_doc.php
+www/gforge/www/docman/include/DocumentGroupHTML.class
+www/gforge/www/docman/include/doc_utils.php
+www/gforge/www/docman/index.php
+www/gforge/www/docman/new.php
+www/gforge/www/docman/view.php
+www/gforge/www/download.php
+www/gforge/www/export/forum.php
+www/gforge/www/export/forum_0.1.dtd
+www/gforge/www/export/index.php
+www/gforge/www/export/projhtml.php
+www/gforge/www/export/projnews.php
+www/gforge/www/export/projtitl.php
+www/gforge/www/export/rss20_newreleases.php
+www/gforge/www/export/rss20_news.php
+www/gforge/www/export/rss20_projects.php
+www/gforge/www/export/rss_project.php
+www/gforge/www/export/rss_sfnewreleases.php
+www/gforge/www/export/rss_sfnews.php
+www/gforge/www/export/rss_sfprojects.php
+www/gforge/www/export/rss_utils.inc
+www/gforge/www/export/tracker.php
+www/gforge/www/export/tracker.xsd
+www/gforge/www/export/trove_tree.php
+www/gforge/www/export/trove_tree_0.1.dtd
+www/gforge/www/favicon.ico
+www/gforge/www/forum/admin/index.php
+www/gforge/www/forum/forum.php
+www/gforge/www/forum/include/ForumHTML.class
+www/gforge/www/forum/index.php
+www/gforge/www/forum/message.php
+www/gforge/www/forum/monitor.php
+www/gforge/www/forum/new.php
+www/gforge/www/forum/save.php
+www/gforge/www/frs/admin/deletepackage.php
+www/gforge/www/frs/admin/deleterelease.php
+www/gforge/www/frs/admin/editrelease.php
+www/gforge/www/frs/admin/index.php
+www/gforge/www/frs/admin/qrs.php
+www/gforge/www/frs/admin/showreleases.php
+www/gforge/www/frs/download.php
+www/gforge/www/frs/include/frs_utils.php
+www/gforge/www/frs/index.php
+www/gforge/www/frs/monitor.php
+www/gforge/www/frs/shownotes.php
+www/gforge/www/gfginstaller.png
+www/gforge/www/help/index.php
+www/gforge/www/help/tracker.php
+www/gforge/www/help/trove_cat.php
+www/gforge/www/images/blank.png
+www/gforge/www/images/clear.png
+www/gforge/www/images/debian-sf-icon.png
+www/gforge/www/images/favicon.ico
+www/gforge/www/images/gantt.png
+www/gforge/www/images/gforge.jpg
+www/gforge/www/images/ic/caret.png
+www/gforge/www/images/ic/cfolder15.png
+www/gforge/www/images/ic/check.png
+www/gforge/www/images/ic/cvs16b.png
+www/gforge/www/images/ic/docman16b.png
+www/gforge/www/images/ic/forum20g.png
+www/gforge/www/images/ic/forum20w.png
+www/gforge/www/images/ic/ftp16b.png
+www/gforge/www/images/ic/halfcheck.png
+www/gforge/www/images/ic/home16b.png
+www/gforge/www/images/ic/index.png
+www/gforge/www/images/ic/mail16b.png
+www/gforge/www/images/ic/mail16d.png
+www/gforge/www/images/ic/mail16w.png
+www/gforge/www/images/ic/manual16c.png
+www/gforge/www/images/ic/msg.png
+www/gforge/www/images/ic/notes16.png
+www/gforge/www/images/ic/ofolder15.png
+www/gforge/www/images/ic/pencil.png
+www/gforge/www/images/ic/save.png
+www/gforge/www/images/ic/support16b.jpg
+www/gforge/www/images/ic/survey16b.png
+www/gforge/www/images/ic/taskman16b.png
+www/gforge/www/images/ic/taskman20g.png
+www/gforge/www/images/ic/taskman20w.png
+www/gforge/www/images/ic/tracker20g.png
+www/gforge/www/images/ic/tracker20w.png
+www/gforge/www/images/ic/trash-x.png
+www/gforge/www/images/ic/trash.png
+www/gforge/www/images/ic/write16w.png
+www/gforge/www/images/ic/xmail16w.png
+www/gforge/www/images/icon.png
+www/gforge/www/images/msg.png
+www/gforge/www/images/pow-gforge.png
+www/gforge/www/images/sf-for-debian.png
+www/gforge/www/images/t.png
+www/gforge/www/images/t2.png
+www/gforge/www/include/BaseLanguage.class
+www/gforge/www/include/HTML_Graphs.php
+www/gforge/www/include/Layout.class
+www/gforge/www/include/LayoutSF.class
+www/gforge/www/include/bookmarks.php
+www/gforge/www/include/browser.php
+www/gforge/www/include/canned_responses.php
+www/gforge/www/include/database-mysql.php
+www/gforge/www/include/database-oci8.php
+www/gforge/www/include/database-pgsql.php
+www/gforge/www/include/exit.php
+www/gforge/www/include/features_boxes.php
+www/gforge/www/include/filechecks.php
+www/gforge/www/include/graph_lib.php
+www/gforge/www/include/help.php
+www/gforge/www/include/html.php
+www/gforge/www/include/languages/Base.tab
+www/gforge/www/include/languages/Basque.tab
+www/gforge/www/include/languages/Bulgarian.tab
+www/gforge/www/include/languages/Catalan.tab
+www/gforge/www/include/languages/Chinese.tab
+www/gforge/www/include/languages/Dutch.tab
+www/gforge/www/include/languages/English.tab
+www/gforge/www/include/languages/Esperanto.tab
+www/gforge/www/include/languages/French.tab
+www/gforge/www/include/languages/German.tab
+www/gforge/www/include/languages/Greek.tab
+www/gforge/www/include/languages/Hebrew.tab
+www/gforge/www/include/languages/Indonesian.tab
+www/gforge/www/include/languages/Italian.tab
+www/gforge/www/include/languages/Japanese.tab
+www/gforge/www/include/languages/Korean.tab
+www/gforge/www/include/languages/Latin.tab
+www/gforge/www/include/languages/Norwegian.tab
+www/gforge/www/include/languages/Polish.tab
+www/gforge/www/include/languages/Portuguese.tab
+www/gforge/www/include/languages/PortugueseBrazilian.tab
+www/gforge/www/include/languages/Russian.tab
+www/gforge/www/include/languages/SimplifiedChinese.tab
+www/gforge/www/include/languages/Spanish.tab
+www/gforge/www/include/languages/Swedish.tab
+www/gforge/www/include/languages/Thai.tab
+www/gforge/www/include/logger.php
+www/gforge/www/include/menuSF.php
+www/gforge/www/include/note.php
+www/gforge/www/include/pre.php
+www/gforge/www/include/project_home.php
+www/gforge/www/include/project_summary.php
+www/gforge/www/include/role_utils.php
+www/gforge/www/include/squal_exit.php
+www/gforge/www/include/squal_pre.php
+www/gforge/www/include/stats_function.php
+www/gforge/www/include/tool_reports.php
+www/gforge/www/include/trove.php
+www/gforge/www/include/user_home.php
+www/gforge/www/include/vote_function.php
+www/gforge/www/index.php
+www/gforge/www/index_std.php
+www/gforge/www/mail/admin/deletelist.php
+www/gforge/www/mail/admin/index.php
+www/gforge/www/mail/index.php
+www/gforge/www/mail/mail_utils.php
+www/gforge/www/my/bookmark_add.php
+www/gforge/www/my/bookmark_delete.php
+www/gforge/www/my/bookmark_edit.php
+www/gforge/www/my/diary.php
+www/gforge/www/my/index.php
+www/gforge/www/my/rmproject.php
+www/gforge/www/new/index.php
+www/gforge/www/news/admin/index.php
+www/gforge/www/news/admin/news_admin_utils.php
+www/gforge/www/news/index.php
+www/gforge/www/news/news_utils.php
+www/gforge/www/news/submit.php
+www/gforge/www/notepad.php
+www/gforge/www/people/admin/index.php
+www/gforge/www/people/createjob.php
+www/gforge/www/people/editjob.php
+www/gforge/www/people/editprofile.php
+www/gforge/www/people/helpwanted-latest.php
+www/gforge/www/people/index.php
+www/gforge/www/people/people_utils.php
+www/gforge/www/people/skills_utils.php
+www/gforge/www/people/viewjob.php
+www/gforge/www/people/viewprofile.php
+www/gforge/www/pm/add_task.php
+www/gforge/www/pm/admin/index.php
+www/gforge/www/pm/browse_task.php
+www/gforge/www/pm/calendar.php
+www/gforge/www/pm/deletetask.php
+www/gforge/www/pm/detail_task.php
+www/gforge/www/pm/downloadcsv.php
+www/gforge/www/pm/gantt.php
+www/gforge/www/pm/ganttofuser.php
+www/gforge/www/pm/ganttpage.php
+www/gforge/www/pm/include/ProjectGroupHTML.class
+www/gforge/www/pm/include/ProjectTaskHTML.class
+www/gforge/www/pm/index.php
+www/gforge/www/pm/mod_task.php
+www/gforge/www/pm/msproject/msp.php
+www/gforge/www/pm/msproject/xmlparser.php
+www/gforge/www/pm/postuploadcsv.php
+www/gforge/www/pm/reporting/index.php
+www/gforge/www/pm/task.php
+www/gforge/www/pm/uploadcsv.php
+www/gforge/www/project/admin/database.php
+www/gforge/www/project/admin/editgroupinfo.php
+www/gforge/www/project/admin/editimages.php
+www/gforge/www/project/admin/group_trove.php
+www/gforge/www/project/admin/history.php
+www/gforge/www/project/admin/index.php
+www/gforge/www/project/admin/massadd.php
+www/gforge/www/project/admin/massfinish.php
+www/gforge/www/project/admin/project_admin_utils.php
+www/gforge/www/project/admin/roleedit.php
+www/gforge/www/project/admin/vhost.php
+www/gforge/www/project/index.php
+www/gforge/www/project/memberlist.php
+www/gforge/www/project/request.php
+www/gforge/www/project/showfiles.php
+www/gforge/www/project/stats/index.php
+www/gforge/www/project/stats/project_stats_utils.php
+www/gforge/www/projects
+www/gforge/www/register/index.php
+www/gforge/www/register/projectinfo.php
+www/gforge/www/reporting/groupadded.php
+www/gforge/www/reporting/groupadded_graph.php
+www/gforge/www/reporting/groupcum.php
+www/gforge/www/reporting/groupcum_graph.php
+www/gforge/www/reporting/index.php
+www/gforge/www/reporting/projectact.php
+www/gforge/www/reporting/projectact_graph.php
+www/gforge/www/reporting/projecttime.php
+www/gforge/www/reporting/projecttime_graph.php
+www/gforge/www/reporting/rebuild.php
+www/gforge/www/reporting/siteact.php
+www/gforge/www/reporting/siteact_graph.php
+www/gforge/www/reporting/sitetime.php
+www/gforge/www/reporting/sitetime_graph.php
+www/gforge/www/reporting/sitetimebar.php
+www/gforge/www/reporting/sitetimebar_graph.php
+www/gforge/www/reporting/timeadd.php
+www/gforge/www/reporting/timecategory.php
+www/gforge/www/reporting/toolspie.php
+www/gforge/www/reporting/toolspie_graph.php
+www/gforge/www/reporting/trackerpie_graph.php
+www/gforge/www/reporting/useract.php
+www/gforge/www/reporting/useract_graph.php
+www/gforge/www/reporting/useradded.php
+www/gforge/www/reporting/useradded_graph.php
+www/gforge/www/reporting/usercum.php
+www/gforge/www/reporting/usercum_graph.php
+www/gforge/www/reporting/usersummary.php
+www/gforge/www/reporting/usertime.php
+www/gforge/www/reporting/usertime_graph.php
+www/gforge/www/scm/admin/index.php
+www/gforge/www/scm/include/scm_utils.php
+www/gforge/www/scm/index.php
+www/gforge/www/search/advanced_search.php
+www/gforge/www/search/include/SearchManager.class
+www/gforge/www/search/include/engines/ArtifactSearchEngine.class
+www/gforge/www/search/include/engines/DocsGroupSearchEngine.class
+www/gforge/www/search/include/engines/ForumSearchEngine.class
+www/gforge/www/search/include/engines/ForumsGroupSearchEngine.class
+www/gforge/www/search/include/engines/FrsGroupSearchEngine.class
+www/gforge/www/search/include/engines/GroupSearchEngine.class
+www/gforge/www/search/include/engines/NewsGroupSearchEngine.class
+www/gforge/www/search/include/engines/SearchEngine.class
+www/gforge/www/search/include/engines/TasksGroupSearchEngine.class
+www/gforge/www/search/include/engines/TrackersGroupSearchEngine.class
+www/gforge/www/search/include/renderers/AdvancedSearchHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/ArtifactHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/DocsHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/ForumHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/ForumsHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/FrsHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/FullProjectHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/HtmlGroupSearchRenderer.class
+www/gforge/www/search/include/renderers/HtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/NewsHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/PeopleHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/ProjectHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/ProjectRssSearchRenderer.class
+www/gforge/www/search/include/renderers/RssSearchRenderer.class
+www/gforge/www/search/include/renderers/SearchRenderer.class
+www/gforge/www/search/include/renderers/SkillHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/TasksHtmlSearchRenderer.class
+www/gforge/www/search/include/renderers/TrackersHtmlSearchRenderer.class
+www/gforge/www/search/index.php
+www/gforge/www/sendmessage.php
+www/gforge/www/snapshots.php
+www/gforge/www/snippet/add_snippet_to_package.php
+www/gforge/www/snippet/addversion.php
+www/gforge/www/snippet/browse.php
+www/gforge/www/snippet/delete.php
+www/gforge/www/snippet/detail.php
+www/gforge/www/snippet/download.php
+www/gforge/www/snippet/index.php
+www/gforge/www/snippet/package.php
+www/gforge/www/snippet/snippet_utils.php
+www/gforge/www/snippet/submit.php
+www/gforge/www/soap/common/group.php
+www/gforge/www/soap/common/user.php
+www/gforge/www/soap/docman/docman.php
+www/gforge/www/soap/frs/frs.php
+www/gforge/www/soap/index.php
+www/gforge/www/soap/nusoap.php
+www/gforge/www/soap/pm/pm.php
+www/gforge/www/soap/reporting/timeentry.php
+www/gforge/www/soap/scm/scm.php
+www/gforge/www/soap/tracker/query.php
+www/gforge/www/soap/tracker/tracker.php
+www/gforge/www/softwaremap/index.php
+www/gforge/www/softwaremap/trove_list.php
+www/gforge/www/source.php
+www/gforge/www/squal/get_session_hash.php
+www/gforge/www/stats/graphs.php
+www/gforge/www/stats/i18n.php
+www/gforge/www/stats/index.php
+www/gforge/www/stats/lastlogins.php
+www/gforge/www/stats/projects.php
+www/gforge/www/stats/site_stats_utils.php
+www/gforge/www/stats/users_graph.php
+www/gforge/www/stats/views_graph.php
+www/gforge/www/survey/admin/add_question.php
+www/gforge/www/survey/admin/add_survey.php
+www/gforge/www/survey/admin/edit_question.php
+www/gforge/www/survey/admin/edit_survey.php
+www/gforge/www/survey/admin/graphs.php
+www/gforge/www/survey/admin/index.php
+www/gforge/www/survey/admin/question.php
+www/gforge/www/survey/admin/show_questions.php
+www/gforge/www/survey/admin/show_results.php
+www/gforge/www/survey/admin/show_results_aggregate.php
+www/gforge/www/survey/admin/show_results_comments.php
+www/gforge/www/survey/admin/show_results_csv.php
+www/gforge/www/survey/admin/show_results_individual.php
+www/gforge/www/survey/admin/survey.php
+www/gforge/www/survey/admin/survey_utils.php
+www/gforge/www/survey/include/SurveyHTML.class
+www/gforge/www/survey/index.php
+www/gforge/www/survey/privacy.php
+www/gforge/www/survey/rating_resp.php
+www/gforge/www/survey/survey.php
+www/gforge/www/survey/survey_resp.php
+www/gforge/www/survey/survey_utils.php
+www/gforge/www/tarballs.php
+www/gforge/www/themes/gforge/Theme.class
+www/gforge/www/themes/gforge/images/box-grad.png
+www/gforge/www/themes/gforge/images/box-topleft.png
+www/gforge/www/themes/gforge/images/box-topright.png
+www/gforge/www/themes/gforge/images/clear.png
+www/gforge/www/themes/gforge/images/ic/adddoc12.png
+www/gforge/www/themes/gforge/images/ic/caret.png
+www/gforge/www/themes/gforge/images/ic/cfolder15.png
+www/gforge/www/themes/gforge/images/ic/check.png
+www/gforge/www/themes/gforge/images/ic/cvs16b.png
+www/gforge/www/themes/gforge/images/ic/docman16b.png
+www/gforge/www/themes/gforge/images/ic/forum20g.png
+www/gforge/www/themes/gforge/images/ic/forum20w.png
+www/gforge/www/themes/gforge/images/ic/ftp16b.png
+www/gforge/www/themes/gforge/images/ic/halfcheck.png
+www/gforge/www/themes/gforge/images/ic/home16b.png
+www/gforge/www/themes/gforge/images/ic/index.png
+www/gforge/www/themes/gforge/images/ic/mail16b.png
+www/gforge/www/themes/gforge/images/ic/mail16d.png
+www/gforge/www/themes/gforge/images/ic/mail16w.png
+www/gforge/www/themes/gforge/images/ic/manual16c.png
+www/gforge/www/themes/gforge/images/ic/msg.png
+www/gforge/www/themes/gforge/images/ic/ofolder15.png
+www/gforge/www/themes/gforge/images/ic/pencil.png
+www/gforge/www/themes/gforge/images/ic/save.png
+www/gforge/www/themes/gforge/images/ic/survey16b.png
+www/gforge/www/themes/gforge/images/ic/taskman20g.png
+www/gforge/www/themes/gforge/images/ic/taskman20w.png
+www/gforge/www/themes/gforge/images/ic/tracker20g.png
+www/gforge/www/themes/gforge/images/ic/tracker20w.png
+www/gforge/www/themes/gforge/images/ic/trash-x.png
+www/gforge/www/themes/gforge/images/ic/trash.png
+www/gforge/www/themes/gforge/images/ic/write16w.png
+www/gforge/www/themes/gforge/images/ic/xmail16w.png
+www/gforge/www/themes/gforge/images/logo.png
+www/gforge/www/themes/gforge/images/t.png
+www/gforge/www/themes/gforge/images/t2.png
+www/gforge/www/themes/gforge/images/tabs/bottomleft-inner.png
+www/gforge/www/themes/gforge/images/tabs/bottomleft.png
+www/gforge/www/themes/gforge/images/tabs/bottomright-inner.png
+www/gforge/www/themes/gforge/images/tabs/bottomright.png
+www/gforge/www/themes/gforge/images/tabs/topleft-dark.png
+www/gforge/www/themes/gforge/images/tabs/topleft-inner-dark.png
+www/gforge/www/themes/gforge/images/tabs/topleft-inner.png
+www/gforge/www/themes/gforge/images/tabs/topleft.png
+www/gforge/www/themes/gforge/images/tabs/topright-dark.png
+www/gforge/www/themes/gforge/images/tabs/topright-inner-dark.png
+www/gforge/www/themes/gforge/images/tabs/topright-inner.png
+www/gforge/www/themes/gforge/images/tabs/topright.png
+www/gforge/www/themes/gforge/images/theme-bottomtab-end-notselected.png
+www/gforge/www/themes/gforge/images/theme-bottomtab-end-selected.png
+www/gforge/www/themes/gforge/images/theme-bottomtab-notselected-bg.png
+www/gforge/www/themes/gforge/images/theme-bottomtab-notselected-end.png
+www/gforge/www/themes/gforge/images/theme-bottomtab-notselected-notselected.png
+www/gforge/www/themes/gforge/images/theme-bottomtab-notselected-selected.png
+www/gforge/www/themes/gforge/images/theme-bottomtab-selected-bg.png
+www/gforge/www/themes/gforge/images/theme-bottomtab-selected-end.png
+www/gforge/www/themes/gforge/images/theme-bottomtab-selected-notselected.png
+www/gforge/www/themes/gforge/images/theme-top-blue.png
+www/gforge/www/themes/gforge/images/theme-toptab-end-notselected.png
+www/gforge/www/themes/gforge/images/theme-toptab-end-selected.png
+www/gforge/www/themes/gforge/images/theme-toptab-notselected-bg.png
+www/gforge/www/themes/gforge/images/theme-toptab-notselected-end.png
+www/gforge/www/themes/gforge/images/theme-toptab-notselected-notselected.png
+www/gforge/www/themes/gforge/images/theme-toptab-notselected-selected.png
+www/gforge/www/themes/gforge/images/theme-toptab-selected-bg.png
+www/gforge/www/themes/gforge/images/theme-toptab-selected-end.png
+www/gforge/www/themes/gforge/images/theme-toptab-selected-notselected.png
+www/gforge/www/themes/gforge/images/vert-grad.png
+www/gforge/www/themes/index.php
+www/gforge/www/themes/osx/README
+www/gforge/www/themes/osx/Theme.class
+www/gforge/www/themes/osx/images/background.png
+www/gforge/www/themes/osx/images/clear.png
+www/gforge/www/themes/osx/images/ic/adddoc12.png
+www/gforge/www/themes/osx/images/ic/caret.png
+www/gforge/www/themes/osx/images/ic/cfolder15.png
+www/gforge/www/themes/osx/images/ic/check.png
+www/gforge/www/themes/osx/images/ic/cvs16b.png
+www/gforge/www/themes/osx/images/ic/docman16b.png
+www/gforge/www/themes/osx/images/ic/forum20g.png
+www/gforge/www/themes/osx/images/ic/forum20w.png
+www/gforge/www/themes/osx/images/ic/ftp16b.png
+www/gforge/www/themes/osx/images/ic/halfcheck.png
+www/gforge/www/themes/osx/images/ic/home16b.png
+www/gforge/www/themes/osx/images/ic/index.png
+www/gforge/www/themes/osx/images/ic/mail16b.png
+www/gforge/www/themes/osx/images/ic/mail16d.png
+www/gforge/www/themes/osx/images/ic/mail16w.png
+www/gforge/www/themes/osx/images/ic/manual16c.png
+www/gforge/www/themes/osx/images/ic/msg.png
+www/gforge/www/themes/osx/images/ic/ofolder15.png
+www/gforge/www/themes/osx/images/ic/pencil.png
+www/gforge/www/themes/osx/images/ic/save.png
+www/gforge/www/themes/osx/images/ic/survey16b.png
+www/gforge/www/themes/osx/images/ic/taskman20g.png
+www/gforge/www/themes/osx/images/ic/taskman20w.png
+www/gforge/www/themes/osx/images/ic/tracker20g.png
+www/gforge/www/themes/osx/images/ic/tracker20w.png
+www/gforge/www/themes/osx/images/ic/trash-x.png
+www/gforge/www/themes/osx/images/ic/trash.png
+www/gforge/www/themes/osx/images/ic/write16w.png
+www/gforge/www/themes/osx/images/ic/xmail16w.png
+www/gforge/www/themes/osx/images/logo.png
+www/gforge/www/themes/osx/images/logohover.png
+www/gforge/www/themes/osx/images/point1.png
+www/gforge/www/themes/osx/images/proj/cvs16b.png
+www/gforge/www/themes/osx/images/proj/docman16b.png
+www/gforge/www/themes/osx/images/proj/ftp16b.png
+www/gforge/www/themes/osx/images/proj/home16b.png
+www/gforge/www/themes/osx/images/proj/mail16b.png
+www/gforge/www/themes/osx/images/proj/mail16d.png
+www/gforge/www/themes/osx/images/proj/manual16c.png
+www/gforge/www/themes/osx/images/proj/notes16.png
+www/gforge/www/themes/osx/images/proj/survey16b.png
+www/gforge/www/themes/osx/images/proj/taskman16b.png
+www/gforge/www/themes/osx/images/rateit.png
+www/gforge/www/themes/osx/images/tabs/deselect.png
+www/gforge/www/themes/osx/images/tabs/leftblenddeselect.png
+www/gforge/www/themes/osx/images/tabs/leftblendselect.png
+www/gforge/www/themes/osx/images/tabs/leftdeselect.png
+www/gforge/www/themes/osx/images/tabs/leftselect.png
+www/gforge/www/themes/osx/images/tabs/rightblenddeselect.png
+www/gforge/www/themes/osx/images/tabs/rightblendselect.png
+www/gforge/www/themes/osx/images/tabs/rightdeselect.png
+www/gforge/www/themes/osx/images/tabs/rightselect.png
+www/gforge/www/themes/osx/images/tabs/ruledeselect.png
+www/gforge/www/themes/osx/images/tabs/ruleselect.png
+www/gforge/www/themes/osx/images/tabs/select.png
+www/gforge/www/themes/ultralite/Theme.class
+www/gforge/www/top/index.php
+www/gforge/www/top/mostactive.php
+www/gforge/www/top/toplist.php
+www/gforge/www/top/topusers.php
+www/gforge/www/tracker/add.php
+www/gforge/www/tracker/admin/form-addcanned.php
+www/gforge/www/tracker/admin/form-addextrafield.php
+www/gforge/www/tracker/admin/form-addextrafieldoption.php
+www/gforge/www/tracker/admin/form-clonetracker.php
+www/gforge/www/tracker/admin/form-deleteextrafield.php
+www/gforge/www/tracker/admin/form-deletetracker.php
+www/gforge/www/tracker/admin/form-extrafieldcopy.php
+www/gforge/www/tracker/admin/form-updatecanned.php
+www/gforge/www/tracker/admin/form-updateextrafield.php
+www/gforge/www/tracker/admin/form-updateextrafieldelement.php
+www/gforge/www/tracker/admin/form-updatetracker.php
+www/gforge/www/tracker/admin/form-uploadtemplate.php
+www/gforge/www/tracker/admin/ind.php
+www/gforge/www/tracker/admin/index.php
+www/gforge/www/tracker/admin/tracker.php
+www/gforge/www/tracker/admin/updates.php
+www/gforge/www/tracker/browse.php
+www/gforge/www/tracker/deleteartifact.php
+www/gforge/www/tracker/detail.php
+www/gforge/www/tracker/download.php
+www/gforge/www/tracker/downloadcsv.php
+www/gforge/www/tracker/include/ArtifactFileHtml.class
+www/gforge/www/tracker/include/ArtifactHtml.class
+www/gforge/www/tracker/include/ArtifactTypeHtml.class
+www/gforge/www/tracker/ind.php
+www/gforge/www/tracker/index.php
+www/gforge/www/tracker/mod-limited.php
+www/gforge/www/tracker/mod.php
+www/gforge/www/tracker/opener_tasks.js
+www/gforge/www/tracker/query.php
+www/gforge/www/tracker/reporting/index.php
+www/gforge/www/tracker/reporting/trackeract_graph.php
+www/gforge/www/tracker/reporting/trackerpie_graph.php
+www/gforge/www/tracker/taskmgr.php
+www/gforge/www/tracker/tracker.php
+www/gforge/www/users
+@dirrm www/gforge/www/tracker/reporting
+@dirrm www/gforge/www/tracker/include
+@dirrm www/gforge/www/tracker/admin
+@dirrm www/gforge/www/tracker
+@dirrm www/gforge/www/top
+@dirrm www/gforge/www/themes/ultralite
+@dirrm www/gforge/www/themes/osx/images/tabs
+@dirrm www/gforge/www/themes/osx/images/proj
+@dirrm www/gforge/www/themes/osx/images/ic
+@dirrm www/gforge/www/themes/osx/images
+@dirrm www/gforge/www/themes/osx
+@dirrm www/gforge/www/themes/gforge/images/tabs
+@dirrm www/gforge/www/themes/gforge/images/ic
+@dirrm www/gforge/www/themes/gforge/images
+@dirrm www/gforge/www/themes/gforge
+@dirrm www/gforge/www/themes
+@dirrm www/gforge/www/survey/include
+@dirrm www/gforge/www/survey/admin
+@dirrm www/gforge/www/survey
+@dirrm www/gforge/www/stats
+@dirrm www/gforge/www/squal
+@dirrm www/gforge/www/softwaremap
+@dirrm www/gforge/www/soap/tracker
+@dirrm www/gforge/www/soap/scm
+@dirrm www/gforge/www/soap/reporting
+@dirrm www/gforge/www/soap/pm
+@dirrm www/gforge/www/soap/frs
+@dirrm www/gforge/www/soap/docman
+@dirrm www/gforge/www/soap/common
+@dirrm www/gforge/www/soap
+@dirrm www/gforge/www/snippet
+@dirrm www/gforge/www/search/include/renderers
+@dirrm www/gforge/www/search/include/engines
+@dirrm www/gforge/www/search/include
+@dirrm www/gforge/www/search
+@dirrm www/gforge/www/scm/include
+@dirrm www/gforge/www/scm/admin
+@dirrm www/gforge/www/scm
+@dirrm www/gforge/www/reporting
+@dirrm www/gforge/www/register
+@dirrm www/gforge/www/project/stats
+@dirrm www/gforge/www/project/admin
+@dirrm www/gforge/www/project
+@dirrm www/gforge/www/pm/reporting
+@dirrm www/gforge/www/pm/msproject
+@dirrm www/gforge/www/pm/include
+@dirrm www/gforge/www/pm/admin
+@dirrm www/gforge/www/pm
+@dirrm www/gforge/www/people/admin
+@dirrm www/gforge/www/people
+@dirrm www/gforge/www/news/admin
+@dirrm www/gforge/www/news
+@dirrm www/gforge/www/new
+@dirrm www/gforge/www/my
+@dirrm www/gforge/www/mail/admin
+@dirrm www/gforge/www/mail
+@dirrm www/gforge/www/include/languages
+@dirrm www/gforge/www/include
+@dirrm www/gforge/www/images/ic
+@dirrm www/gforge/www/images
+@dirrm www/gforge/www/help
+@dirrm www/gforge/www/frs/include
+@dirrm www/gforge/www/frs/admin
+@dirrm www/gforge/www/frs
+@dirrm www/gforge/www/forum/include
+@dirrm www/gforge/www/forum/admin
+@dirrm www/gforge/www/forum
+@dirrm www/gforge/www/export
+@dirrm www/gforge/www/docman/include
+@dirrm www/gforge/www/docman/admin
+@dirrm www/gforge/www/docman
+@dirrm www/gforge/www/developer
+@dirrm www/gforge/www/admin/trove
+@dirrm www/gforge/www/admin/languages
+@dirrm www/gforge/www/admin
+@dirrm www/gforge/www/account
+@dirrm www/gforge/www
+@dirrm www/gforge/common/tracker
+@dirrm www/gforge/common/survey
+@dirrm www/gforge/common/search
+@dirrm www/gforge/common/scm
+@dirrm www/gforge/common/reporting
+@dirrm www/gforge/common/pm
+@dirrm www/gforge/common/mail
+@dirrm www/gforge/common/include/system
+@dirrm www/gforge/common/include
+@dirrm www/gforge/common/frs
+@dirrm www/gforge/common/forum
+@dirrm www/gforge/common/docman
+@dirrm www/gforge/common
+@dirrm www/gforge
+@dirrm share/gforge/db/SQL_2.6
+@dirrm share/gforge/db/SQL_2.5
+@dirrm share/gforge/db
+@dirrm share/gforge/contrib/rh8_apache20_config
+@dirrm share/gforge/contrib/autoconf
+@dirrm share/gforge/contrib
+@dirrm share/gforge/backends/utils/underworld-dummy
+@dirrm share/gforge/backends/utils/ldap
+@dirrm share/gforge/backends/utils/fixscripts
+@dirrm share/gforge/backends/utils/cvs1
+@dirrm share/gforge/backends/utils
+@dirrm share/gforge/backends/plugins/svntracker/www
+@dirrm share/gforge/backends/plugins/svntracker/rpm-specific/cron.d
+@dirrm share/gforge/backends/plugins/svntracker/rpm-specific
+@dirrm share/gforge/backends/plugins/svntracker/lib
+@dirrm share/gforge/backends/plugins/svntracker/include/languages
+@dirrm share/gforge/backends/plugins/svntracker/include
+@dirrm share/gforge/backends/plugins/svntracker/etc/plugins/svntracker
+@dirrm share/gforge/backends/plugins/svntracker/etc/plugins
+@dirrm share/gforge/backends/plugins/svntracker/etc
+@dirrm share/gforge/backends/plugins/svntracker/bin
+@dirrm share/gforge/backends/plugins/svntracker
+@dirrm share/gforge/backends/plugins/svncommitemail/include
+@dirrm share/gforge/backends/plugins/svncommitemail/bin
+@dirrm share/gforge/backends/plugins/svncommitemail
+@dirrm share/gforge/backends/plugins/scmsvn/www
+@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs/icons/small
+@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs/icons
+@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs
+@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/scripts
+@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/patches
+@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/languages
+@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/cron.d
+@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific
+@dirrm share/gforge/backends/plugins/scmsvn/lib
+@dirrm share/gforge/backends/plugins/scmsvn/include/languages
+@dirrm share/gforge/backends/plugins/scmsvn/include
+@dirrm share/gforge/backends/plugins/scmsvn/etc/plugins/scmsvn
+@dirrm share/gforge/backends/plugins/scmsvn/etc/plugins
+@dirrm share/gforge/backends/plugins/scmsvn/etc
+@dirrm share/gforge/backends/plugins/scmsvn/cronjobs
+@dirrm share/gforge/backends/plugins/scmsvn/cgi-bin
+@dirrm share/gforge/backends/plugins/scmsvn/bin
+@dirrm share/gforge/backends/plugins/scmsvn
+@dirrm share/gforge/backends/plugins/scmcvs/www/cvsweb/icons
+@dirrm share/gforge/backends/plugins/scmcvs/www/cvsweb/css
+@dirrm share/gforge/backends/plugins/scmcvs/www/cvsweb
+@dirrm share/gforge/backends/plugins/scmcvs/www
+@dirrm share/gforge/backends/plugins/scmcvs/lib
+@dirrm share/gforge/backends/plugins/scmcvs/include/languages
+@dirrm share/gforge/backends/plugins/scmcvs/include
+@dirrm share/gforge/backends/plugins/scmcvs/etc/plugins/scmcvs
+@dirrm share/gforge/backends/plugins/scmcvs/etc/plugins
+@dirrm share/gforge/backends/plugins/scmcvs/etc/httpd.d
+@dirrm share/gforge/backends/plugins/scmcvs/etc
+@dirrm share/gforge/backends/plugins/scmcvs/cronjobs
+@dirrm share/gforge/backends/plugins/scmcvs/cgi-bin
+@dirrm share/gforge/backends/plugins/scmcvs/bin
+@dirrm share/gforge/backends/plugins/scmcvs
+@dirrm share/gforge/backends/plugins/cvstracker/www
+@dirrm share/gforge/backends/plugins/cvstracker/lib
+@dirrm share/gforge/backends/plugins/cvstracker/include/languages
+@dirrm share/gforge/backends/plugins/cvstracker/include
+@dirrm share/gforge/backends/plugins/cvstracker/etc/plugins/cvstracker
+@dirrm share/gforge/backends/plugins/cvstracker/etc/plugins
+@dirrm share/gforge/backends/plugins/cvstracker/etc
+@dirrm share/gforge/backends/plugins/cvstracker/bin
+@dirrm share/gforge/backends/plugins/cvstracker
+@dirrm share/gforge/backends/plugins/cvssyncmail/include
+@dirrm share/gforge/backends/plugins/cvssyncmail/db
+@dirrm share/gforge/backends/plugins/cvssyncmail/common/languages
+@dirrm share/gforge/backends/plugins/cvssyncmail/common
+@dirrm share/gforge/backends/plugins/cvssyncmail
+@dirrm share/gforge/backends/plugins
+@dirrm share/gforge/backends/monitor
+@dirrm share/gforge/backends/cronjobs/mail
+@dirrm share/gforge/backends/cronjobs/dav-svn/www
+@dirrm share/gforge/backends/cronjobs/dav-svn
+@dirrm share/gforge/backends/cronjobs/cvs-cron/www
+@dirrm share/gforge/backends/cronjobs/cvs-cron
+@dirrm share/gforge/backends/cronjobs
+@dirrm share/gforge/backends/backend/zones
+@dirrm share/gforge/backends/backend/shell
+@dirrm share/gforge/backends/backend
+@dirrm share/gforge/backends
+@dirrm share/gforge
+@dirrm share/doc/gforge/phpdoc
+@dirrm share/doc/gforge/images
+@dirrm share/doc/gforge/docbook/xsl/include
+@dirrm share/doc/gforge/docbook/xsl
+@dirrm share/doc/gforge/docbook/docbook/user_guide/user_functions
+@dirrm share/doc/gforge/docbook/docbook/user_guide/sitewide_functions
+@dirrm share/doc/gforge/docbook/docbook/user_guide/project_functions
+@dirrm share/doc/gforge/docbook/docbook/user_guide/introduction
+@dirrm share/doc/gforge/docbook/docbook/user_guide/getting_started
+@dirrm share/doc/gforge/docbook/docbook/user_guide
+@dirrm share/doc/gforge/docbook/docbook/introduction
+@dirrm share/doc/gforge/docbook/docbook/installation_guide
+@dirrm share/doc/gforge/docbook/docbook/entities/authors
+@dirrm share/doc/gforge/docbook/docbook/entities
+@dirrm share/doc/gforge/docbook/docbook/contribution_guide/include
+@dirrm share/doc/gforge/docbook/docbook/contribution_guide
+@dirrm share/doc/gforge/docbook/docbook/administration_guide
+@dirrm share/doc/gforge/docbook/docbook
+@dirrm share/doc/gforge/docbook/build
+@dirrm share/doc/gforge/docbook
+@dirrm share/doc/gforge/architecture/stats
+@dirrm share/doc/gforge/architecture
+@dirrm share/doc/gforge
+@dirrm etc/gforge
