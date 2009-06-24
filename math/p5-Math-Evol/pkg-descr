@@ -1,0 +1,6 @@
+p5-Math-Evol implements the evolution search strategy. Derivatives of the
+objective function are not required. Constraints can be incorporated. The
+caller must supply initial values for the variables and for the initial
+step sizes.
+
+WWW:	http://search.cpan.org/dist/Math-Evol/
