@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/fsck-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
+%%PORTDOCS%%%%DOCSDIR%%/pluggable-replication-policies.txt
 %%PORTDOCS%%%%DOCSDIR%%/testing.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mogilefs-server/.packlist
 %%SITE_PERL%%/MogileFS/Class.pm
@@ -25,17 +26,20 @@
 %%SITE_PERL%%/MogileFS/RebalancePolicy/Random.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy/MultipleHosts.pm
+%%SITE_PERL%%/MogileFS/ReplicationPolicy/Union.pm
 %%SITE_PERL%%/MogileFS/ReplicationRequest.pm
 %%SITE_PERL%%/MogileFS/Server.pm
 %%SITE_PERL%%/MogileFS/Store.pm
 %%SITE_PERL%%/MogileFS/Store/MySQL.pm
-%%SITE_PERL%%/MogileFS/Store/SQLite.pm
 %%SITE_PERL%%/MogileFS/Store/Postgres.pm
+%%SITE_PERL%%/MogileFS/Store/SQLite.pm
 %%SITE_PERL%%/MogileFS/Sys.pm
+%%SITE_PERL%%/MogileFS/Test.pm
 %%SITE_PERL%%/MogileFS/Util.pm
 %%SITE_PERL%%/MogileFS/Worker.pm
 %%SITE_PERL%%/MogileFS/Worker/Delete.pm
 %%SITE_PERL%%/MogileFS/Worker/Fsck.pm
+%%SITE_PERL%%/MogileFS/Worker/JobMaster.pm
 %%SITE_PERL%%/MogileFS/Worker/Monitor.pm
 %%SITE_PERL%%/MogileFS/Worker/Query.pm
 %%SITE_PERL%%/MogileFS/Worker/Reaper.pm
@@ -48,13 +52,72 @@
 %%SITE_PERL%%/Mogstored/HTTPServer.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Apache.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Lighttpd.pm
+%%SITE_PERL%%/Mogstored/HTTPServer/None.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Perlbal.pm
 %%SITE_PERL%%/Mogstored/SideChannelClient.pm
 %%SITE_PERL%%/Mogstored/SideChannelListener.pm
+%%SITE_PERL%%/mogdeps/Danga/Socket.pm
+%%SITE_PERL%%/mogdeps/Gearman/Client.pm
+%%SITE_PERL%%/mogdeps/Gearman/Client/Async.pm
+%%SITE_PERL%%/mogdeps/Gearman/Client/Async/Connection.pm
+%%SITE_PERL%%/mogdeps/Gearman/JobStatus.pm
+%%SITE_PERL%%/mogdeps/Gearman/Objects.pm
+%%SITE_PERL%%/mogdeps/Gearman/ResponseParser.pm
+%%SITE_PERL%%/mogdeps/Gearman/ResponseParser/Taskset.pm
+%%SITE_PERL%%/mogdeps/Gearman/Server.pm
+%%SITE_PERL%%/mogdeps/Gearman/Server/Client.pm
+%%SITE_PERL%%/mogdeps/Gearman/Server/Job.pm
+%%SITE_PERL%%/mogdeps/Gearman/Task.pm
+%%SITE_PERL%%/mogdeps/Gearman/Taskset.pm
+%%SITE_PERL%%/mogdeps/Gearman/Util.pm
+%%SITE_PERL%%/mogdeps/Gearman/Worker.pm
+%%SITE_PERL%%/mogdeps/Net/Netmask.pm
+%%SITE_PERL%%/mogdeps/Perlbal.pm
+%%SITE_PERL%%/mogdeps/Perlbal/AIO.pm
+%%SITE_PERL%%/mogdeps/Perlbal/BackendHTTP.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Cache.pm
+%%SITE_PERL%%/mogdeps/Perlbal/ChunkedUploadState.pm
+%%SITE_PERL%%/mogdeps/Perlbal/ClientHTTP.pm
+%%SITE_PERL%%/mogdeps/Perlbal/ClientHTTPBase.pm
+%%SITE_PERL%%/mogdeps/Perlbal/ClientManage.pm
+%%SITE_PERL%%/mogdeps/Perlbal/ClientProxy.pm
+%%SITE_PERL%%/mogdeps/Perlbal/CommandContext.pm
+%%SITE_PERL%%/mogdeps/Perlbal/HTTPHeaders.pm
+%%SITE_PERL%%/mogdeps/Perlbal/ManageCommand.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Plugin/AccessControl.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Plugin/AutoRemoveLeadingDir.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Highpri.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Plugin/NotModified.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Queues.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Stats.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Vhosts.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Pool.pm
+%%SITE_PERL%%/mogdeps/Perlbal/ReproxyManager.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Service.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Socket.pm
+%%SITE_PERL%%/mogdeps/Perlbal/TCPListener.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Test.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Test/WebClient.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Test/WebServer.pm
+%%SITE_PERL%%/mogdeps/Perlbal/UploadListener.pm
+%%SITE_PERL%%/mogdeps/Perlbal/Util.pm
+%%SITE_PERL%%/mogdeps/Sys/Syscall.pm
 bin/mogautomount
 bin/mogdbsetup
 bin/mogilefsd
 bin/mogstored
+@dirrmtry %%SITE_PERL%%/mogdeps/Sys
+@dirrmtry %%SITE_PERL%%/mogdeps/Perlbal/Test
+@dirrmtry %%SITE_PERL%%/mogdeps/Perlbal/Plugin
+@dirrmtry %%SITE_PERL%%/mogdeps/Perlbal
+@dirrmtry %%SITE_PERL%%/mogdeps/Net
+@dirrmtry %%SITE_PERL%%/mogdeps/Gearman/Server
+@dirrmtry %%SITE_PERL%%/mogdeps/Gearman/ResponseParser
+@dirrmtry %%SITE_PERL%%/mogdeps/Gearman/Client/Async
+@dirrmtry %%SITE_PERL%%/mogdeps/Gearman/Client
+@dirrmtry %%SITE_PERL%%/mogdeps/Gearman
+@dirrmtry %%SITE_PERL%%/mogdeps/Danga
+@dirrmtry %%SITE_PERL%%/mogdeps
 @dirrmtry %%SITE_PERL%%/Mogstored/HTTPServer
 @dirrmtry %%SITE_PERL%%/Mogstored/ChildProcess
 @dirrmtry %%SITE_PERL%%/Mogstored
