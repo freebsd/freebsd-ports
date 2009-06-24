@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dillo
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAN1=		dillo.1
 PORTDOCS=	*
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
 CONFLICTS=	dillo-i18n-[0-9]* \
@@ -68,20 +69,20 @@ CONFIGURE_ARGS+= --disable-threaded-dns
 .endif
 
 post-patch:
-.ifdef(WITH_SSL)
-	${REINPLACE_CMD} -e '/^#undef ENABLE_SSL/d' ${WRKSRC}/dpi/https.c
-.endif
 	@${MV} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.dist
+	@${MV} ${WRKSRC}/dpid/dpidrc.in ${WRKSRC}/dpid/dpidrc.dist.in
+	@${MV} ${WRKSRC}/src/keysrc ${WRKSRC}/src/keysrc.dist
+	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|dillorc|dillorc.dist|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|dpidrc|dpidrc.dist|g" ${WRKSRC}/dpid/Makefile.in
+	@${REINPLACE_CMD} -e "s|keysrc|keysrc.dist|g" ${WRKSRC}/src/Makefile.in
 
 post-install:
-.if !exists(${PREFIX}/etc/dillorc)
-	${INSTALL_DATA} ${PREFIX}/etc/dillorc.dist ${PREFIX}/etc/dillorc
-.endif
-.if !exists(${PREFIX}/etc/dpidrc)
-	${INSTALL_DATA} ${PREFIX}/etc/dpidrc.dist ${PREFIX}/etc/dpidrc
-.endif
+.for _F in dillorc dpidrc keysrc
+. if !exists(${PREFIX}/etc/dillo/${_F})
+	${INSTALL_DATA} ${PREFIX}/etc/dillo/${_F}.dist ${PREFIX}/etc/dillo/${_F}
+. endif
+.endfor
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/* ${DOCSDIR}
