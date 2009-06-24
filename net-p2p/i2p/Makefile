@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	http://mirror.i2p2.de/:i2p \
 		${MASTER_SITE_GOOGLE_CODE}:i2p \
