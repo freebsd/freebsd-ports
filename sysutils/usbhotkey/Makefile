@@ -7,7 +7,7 @@
 
 PORTNAME=		usbhotkey
 PORTVERSION=		0.3.1
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		sysutils
 MASTER_SITES=		SF/usbhotkey
 
@@ -22,10 +22,16 @@ OPTIONS=		GUI "Enable GUI bits (Imlib dependency)" on
 USE_RUBY=		yes
 USE_GMAKE=		yes
 HAS_CONFIGURE=		yes
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_PTHREADS)
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+.else
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+.endif
 
 .if !defined(WITHOUT_GUI)
 LIB_DEPENDS+=		Imlib.5:${PORTSDIR}/graphics/imlib
