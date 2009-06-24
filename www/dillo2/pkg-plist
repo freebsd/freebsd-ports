@@ -1,12 +1,15 @@
 bin/dillo
 bin/dpid
 bin/dpidc
-@unexec if cmp -s %D/etc/dillorc.dist %D/etc/dillorc; then rm -f %D/etc/dillorc; fi
-etc/dillorc.dist
+@unexec if cmp -s %D/etc/dillo/dillorc.dist %D/etc/dillo/dillorc; then rm -f %D/etc/dillo/dillorc; fi
+etc/dillo/dillorc.dist
 @exec if [ ! -f %B/dillorc ]; then cp -p %D/%F %B/dillorc; fi
-@unexec if cmp -s %D/etc/dpidrc.dist %D/etc/dpidrc; then rm -f %D/etc/dpidrc; fi
-etc/dpidrc.dist
+@unexec if cmp -s %D/etc/dillo/dpidrc.dist %D/etc/dillo/dpidrc; then rm -f %D/etc/dillo/dpidrc; fi
+etc/dillo/dpidrc.dist
 @exec if [ ! -f %B/dpidrc ]; then cp -p %D/%F %B/dpidrc; fi
+@unexec if cmp -s %D/etc/dillo/keysrc.dist %D/etc/dillo/keysrc; then rm -f %D/etc/dillo/keysrc; fi
+etc/dillo/keysrc.dist
+@exec if [ ! -f %B/keysrc ]; then cp -p %D/%F %B/keysrc; fi
 libexec/dillo/dpi/bookmarks/bookmarks.dpi
 libexec/dillo/dpi/cookies/cookies.dpi
 libexec/dillo/dpi/datauri/datauri.filter.dpi
@@ -25,3 +28,4 @@ libexec/dillo/dpi/https/https.filter.dpi
 @dirrm libexec/dillo/dpi/bookmarks
 @dirrm libexec/dillo/dpi
 @dirrm libexec/dillo
+@dirrmtry etc/dillo
