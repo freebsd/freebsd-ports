@@ -15,6 +15,8 @@ DISTNAME=	xerces-c-src_${PORTVERSION:S/./_/g}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Validating XML parser from the Apache XML Project
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS=	THREADS "Build a thread enabled shared library." on \
 		DEBUG "Include debugging information, do not strip." off \
 		ICONVFBSD "Use IconvFBSD transcoder." on \
