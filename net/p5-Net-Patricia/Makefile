@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Net-Patricia
-PORTVERSION=	1.014
+PORTVERSION=	1.15
 CATEGORIES=	net perl5
-MASTER_SITES=	CPAN \
-		http://net.doit.wisc.edu/~plonka/Net-Patricia/
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
