@@ -70,7 +70,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/34978">
 	  <p>Some vulnerabilities have been reported in Cscope, which
 	    potentially can be exploited by malicious people to compromise a
@@ -173,7 +173,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/35194/">
 	  <p>Some vulnerabilities and weaknesses have been reported in Pidgin,
 	    which can be exploited by malicious people to cause a DoS or to
@@ -450,7 +450,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/35128/">
 	  <p>Some vulnerabilities have been reported in OpenSSL, which can be
 	    exploited by malicious people to cause a DoS.</p>
@@ -484,7 +484,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/35104/">
 	  <p>The vulnerability is caused due to an error in the processing of
 	    private messages within the server module
@@ -520,7 +520,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/35201/">
 	  <p>A vulnerability has been reported in Wireshark, which can be
 	    exploited by malicious people to cause a DoS.</p>
@@ -550,7 +550,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/35076/">
 	  <p>Two vulnerabilities have been reported in libsndfile, which can be
 	    exploited by malicious people to compromise an application using the
@@ -586,7 +586,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/35132/">
 	  <p>A security issue has been reported in SLiM, which can be
 	    exploited by malicious, local users to disclose sensitive
@@ -825,7 +825,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/34901">
 	  <p>A vulnerability has been reported in libwmf, which can be exploited
 	    by malicious people to cause a DoS (Denial of Service) or compromise
@@ -860,7 +860,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/20921">
 	  <p>infamous41md has reported a vulnerability in libwmf, which
 	    potentially can be exploited by malicious people to compromise an
@@ -894,7 +894,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/34821/">
 	  <p>Input passed via multiple parameters to action/AttachFile.py is not
 	    properly sanitised before being returned to the user. This can be
@@ -928,7 +928,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
         <blockquote
           cite="http://secunia.com/advisories/3459796">
 	  <p>Certain input passed to the "Apache::Status" and "Apache2::Status"
@@ -1037,7 +1037,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/33593/">
 	  <p>Some vulnerabilities have been reported in MoinMoin, which can be
 	    exploited by malicious people to conduct cross-site scripting attacks.</p>
@@ -1505,7 +1505,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://www.vupen.com/english/advisories/2009/1065">
 	  <p>Some vulnerabilities have been reported in Xpdf, which can be
 	    exploited by malicious people to potentially compromise a user's
@@ -1557,7 +1557,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/34723/">
 	  <p>Some vulnerabilities have been reported in FreeType, which can be
 	    exploited by malicious people to potentially compromise an application
@@ -1722,7 +1722,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/34302">
 	  <p>A vulnerability has been discovered in Pivot, which can be
 	    exploited by malicious people to delete certain files.</p>
@@ -1789,7 +1789,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/33505">
 	  <p>Tobias Klein has reported some vulnerabilities in Amarok, which
 	    potentially can be exploited by malicious people to compromise a
@@ -1900,7 +1900,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/33650/">
 	  <p>Tobias Klein has reported some vulnerabilities in GStreamer Good
 	    Plug-ins, which can potentially be exploited by malicious people to
@@ -1944,7 +1944,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/33980/">
 	  <p>The vulnerability is caused due to an integer overflow error in the
 	    processing of CAF description chunks. This can be exploited to cause a
@@ -1973,7 +1973,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/33711/">
 	  <p>Tobias Klein has reported a vulnerability in FFmpeg, which
 	    potentially can be exploited by malicious people to compromise an
@@ -2007,7 +2007,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/33622/">
 	  <p>Some vulnerabilities have been reported in RoundCube Webmail, which
 	    can be exploited by malicious users to compromise a vulnerable system
@@ -2054,7 +2054,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/33842/">
 	  <p>Some vulnerabilities have been reported in ProFTPD, which can be
 	    exploited by malicious people to conduct SQL injection attacks.</p>
@@ -2097,7 +2097,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/34091/">
 	  <p>Some vulnerabilities have been reported in the ZABBIX PHP frontend,
 	    which can be exploited by malicious people to conduct cross-site
@@ -3081,7 +3081,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/33635/">
 	  <p>A vulnerability with an unknown impact has been reported in Tor.</p>
 	  <p>The vulnerability is caused due to an unspecified error and can be
@@ -3343,7 +3343,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/30994">
 	  <p>The vulnerability is caused due to a boundary error within the
 	    "str_read_packet()" function in libavformat/psxstr.c. This can be
@@ -3445,7 +3445,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/33278">
 	  <p>Some security issues have been reported in PDFjam, which can be
 	    exploited by malicious, local users to perform certain actions with
@@ -5940,7 +5940,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/32114/">
 	  <p>OpenX can be exploited by malicious people to conduct SQL injection
 	    attacks.</p>
@@ -16525,8 +16525,8 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-       <p>Secunia reports:</p>
-       <blockquote cite="http://secunia.com/advisories/8153/">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/8153/">
 	 <p>A vulnerability in sircd can be exploited by a malicious person
 	   to compromise a vulnerable system.  The vulnerability is caused
 	   by a boundary error in the code handling reverse DNS lookups,
@@ -16557,8 +16557,8 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-       <p>Secunia reports:</p>
-       <blockquote cite="http://secunia.com/advisories/10274/">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/10274/">
 	 <p>A vulnerability has been reported in sircd, which can be
 	   exploited by malicious users to gain operator privileges.
 	   The problem is that any user reportedly can set their usermode
