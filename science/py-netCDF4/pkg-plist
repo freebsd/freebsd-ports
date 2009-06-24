@@ -1,3 +1,4 @@
+bin/nc4tonc3
 bin/grib2nc4
 bin/nc3tonc4
 %%PYTHON_SITELIBDIR%%/netCDF4_utils.py
