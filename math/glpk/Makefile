@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.37
-PORTREVISION=	1
+PORTVERSION=	4.38
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -51,28 +50,25 @@ USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	bench.txt bench1.txt bench2.txt glpk.pdf glpk_faq.txt gmpl.pdf \
-		opb.txt tables.pdf dfeas.djvu gomory.djvu scaling.djvu \
-		subset.djvu updating.djvu
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s;\/usr\/include\/mysql;${LOCALBASE}\/include\/mysql;g" \
 	${WRKSRC}/configure
 
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/
-
 .if !defined(NOPORTDOCS)
+PORTDOCS=	bench.txt bench1.txt bench2.txt glpk.pdf glpk_faq.txt gmpl.pdf \
+		opb.txt tables.pdf dfeas.djvu gomory.djvu scaling.djvu \
+		subset.djvu updating.djvu
+
+post-install:
 	@${CP} ${WRKSRC}/doc/notes/*.djvu ${WRKSRC}/doc/
 	@${MKDIR} ${DOCSDIR}
 	for docfile in ${PORTDOCS} ; do \
 		${INSTALL_MAN} ${WRKSRC}/doc/$${docfile} ${DOCSDIR} ; \
 	done
+
 .endif
 
 regression-test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>
