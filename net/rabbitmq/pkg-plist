@@ -4,7 +4,8 @@ sbin/rabbitmqctl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/INSTALL
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-MPL-RabbitMQ
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/buffering_proxy.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/gen_server2.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/priority_queue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.app
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.rel
@@ -13,6 +14,8 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_alarm.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_amqqueue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_amqqueue_process.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_amqqueue_sup.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_app.in
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_basic.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_generator.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_parser.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel.beam
@@ -24,6 +27,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_guid.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing_channel.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_heartbeat.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_limiter.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_load.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_log.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_memsup_linux.beam

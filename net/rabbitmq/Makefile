@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rabbitmq
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
