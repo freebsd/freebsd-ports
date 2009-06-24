@@ -548,6 +548,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Kamchatka
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Karachi
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Kashgar
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Kathmandu
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Katmandu
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Kolkata
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Krasnoyarsk
