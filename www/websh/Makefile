@@ -16,6 +16,8 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS=	WSMDEBUG "memory(n) and checkmem(n) commands in web-scripts" on
 OPTIONS+=	WSSTATIC "Link the objects into the module statically" off
 

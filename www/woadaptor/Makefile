@@ -14,6 +14,7 @@ DISTNAME=	woadaptor-${PORTVERSION}
 MAINTAINER?=	q@onthenet.com.au
 COMMENT?=	WebObjects WebServer Adaptor (Apache Module and CGI)
 
+MAKE_JOBS_UNSAFE=	yes
 IGNOREFILES=	${DISTFILES}
 
 USE_BZIP2=	yes
