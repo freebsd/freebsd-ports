@@ -1,14 +1,9 @@
-ScrollZ is an IRC client based on ircII with many enhancements
-(colors, userlists, enhanced scripting, and more).  Its main
-difference from other clients is that it implements many useful
-features that you would normally find in a script, thus making it
-faster than such scripts paired up with ircII.
+ScrollZ is an IRC client based on ircII with many enhancements (colors,
+userlists, enhanced scripting, and more). The main difference from other
+clients is that it implements many useful features that you would normally find
+in a script, thus making it faster than such scripts paired up with ircII.
 
-It also has many unique features, such as three-line status bars,
-CDCC (which has reget/resend ability), and its environment is highly
-customizable.
+It also has many unique features, such as three-line status bars, CDCC (which
+has reget/resend ability), and its environment is highly customizable.
 
 WWW: http://www.scrollz.com/
-
-- Pete
-petef@databits.net
