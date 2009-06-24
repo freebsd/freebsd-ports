@@ -19,7 +19,8 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 MAN1=		vbnc.1
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 
 tests: build
