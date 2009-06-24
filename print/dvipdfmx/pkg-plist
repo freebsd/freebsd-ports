@@ -10,5 +10,7 @@ bin/extractbb
 %%GLYPHMAPDIR%%/pdfglyphlist.txt
 @dirrmtry %%GLYPHMAPDIR%%
 %%FONTCMAPDIR%%/adobe-cmaps
+%%FONTCMAPDIR%%/dvipdfmx/EUC-UCS2
+@dirrm %%FONTCMAPDIR%%/dvipdfmx
 @exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
 @unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
