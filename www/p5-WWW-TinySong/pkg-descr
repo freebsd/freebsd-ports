@@ -4,4 +4,4 @@ to the song for free online and share it with friends.
 TinySong is a Perl interface to this service, allowing
 you to programmatically search its underlying database.
 
-WWW:	http://search.cpan.org/~miorel/WWW-TinySong-0.05/
+WWW:	http://search.cpan.org/~miorel/WWW-TinySong/
