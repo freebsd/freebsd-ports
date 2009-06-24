@@ -11,9 +11,8 @@ COMMENT=	GTK+ 2.0 version of the GnuPG password dialog
 
 CONFLICTS=	pinentry-[0-9]*
 
-PINENTRY_GTK2=	yes
-
-PKGNAMESUFFIX=	-gtk2
+PINENTRY_SLAVE=	-gtk2
+WITH_GTK2=	yes
 
 MASTERDIR=	${.CURDIR}/../pinentry
 
