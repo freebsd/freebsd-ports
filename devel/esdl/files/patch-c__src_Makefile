@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- c_src/Makefile.orig
-+++ c_src/Makefile
+--- c_src/Makefile.orig	2009-05-20 22:34:48.000000000 +0400
++++ c_src/Makefile	2009-06-02 06:19:34.000000000 +0400
 @@ -11,7 +11,7 @@
  include ../win32_conf/mingw_vars.mk
  else
@@ -12,7 +9,7 @@ $FreeBSD$
  
  # Uncomment these if your opengl header is located in another directory than
  # the usual $(OGLDIR)/include/GL/gl.h
-@@ -21,14 +21,13 @@
+@@ -21,8 +21,8 @@
    GL_LIBS		= -L$(OGLDIR)/lib -lGL -lGLU 
    GL_INCS		= -I$(OGLDIR)/include/$(GL_INCLUDE_DIR)
  
@@ -21,18 +18,23 @@ $FreeBSD$
 +  SDL_LIBS		= $(shell $(SDL_CONFIG) --libs)
 +  SDL_INCS		= $(shell $(SDL_CONFIG) --cflags)
  
-   LIBS			= $(GL_LIBS) $(SDL_LIBS) -lm 
+ ifeq ($(ENABLE_SDL_TTF), yes)
+   SDL_TTF_LIBS          = -lSDL_ttf
+@@ -43,10 +43,8 @@
+   INCS                  = $(GL_INCS) $(SDL_INCS)  $(SDL_TTF_INCS) \
+                           $(SDL_IMAGE_INCS) $(ERL_INCS)
  
 -  CFLAGS		= -g -O2 -funroll-loops -Wall -ffast-math -fpic \
 -			-fomit-frame-pointer $(USE_GL_INCLUDE_DIR) -DSHM \
--			-DPTHREADS $(GL_INCS) $(SDL_INCS) $(ERL_INCS)
+-                        $(USE_SDL_TTF) $(USE_SDL_IMAGE) \
+-			-DPTHREADS $(INCS)
 +  CFLAGS		+= -O2 -funroll-loops -Wall -ffast-math -fpic -fomit-frame-pointer \
-+			$(USE_GL_INCLUDE_DIR) -DSHM -DPTHREADS $(GL_INCS) $(SDL_INCS) $(ERL_INCS)
++			$(USE_GL_INCLUDE_DIR) -DSHM $(USE_SDL_TTF) $(USE_SDL_IMAGE) -DPTHREADS $(INCS)
  
    CLINKFLAGS 		=  -fpic -shared  
  
-@@ -38,13 +37,13 @@
-   ERL_DIR := $(shell echo 'io:format("~s~n",[code:root_dir()]),halt().' | erl | grep '1>' | sed 's,^[0-9]*> *,,g')
+@@ -56,13 +54,13 @@
+   ERL_DIR := $(shell erl -noshell -eval "io:format([126,115,126,110],[code:root_dir()])" -s erlang halt)
    ERL_INCS = -I$(ERL_DIR)/usr/include
  
 -  CC = gcc

@@ -23,6 +23,10 @@ lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_glu_fp.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_sdl_fp.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_spec.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_util.c
+lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_ttf.h
+lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_ttf.c
+lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_img.h
+lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_img.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_util.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_video.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_video.h
@@ -34,9 +38,11 @@ lib/erlang/lib/esdl-%%VERSION%%/doc/sdl.html
 lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_active.html
 lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_audio.html
 lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_events.html
+lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_img.html
 lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_joystick.html
 lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_keyboard.html
 lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_mouse.html
+lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_ttf.html
 lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_util.html
 lib/erlang/lib/esdl-%%VERSION%%/doc/sdl_video.html
 lib/erlang/lib/esdl-%%VERSION%%/ebin/gl.beam
@@ -45,9 +51,11 @@ lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl.beam
 lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_active.beam
 lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_audio.beam
 lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_events.beam
+%%SDL_IMAGE%%lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_img.beam
 lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_joystick.beam
 lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_keyboard.beam
 lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_mouse.beam
+%%SDL_TTF%%lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_ttf.beam
 lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_util.beam
 lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_video.beam
 lib/erlang/lib/esdl-%%VERSION%%/include/gl.hrl
@@ -59,6 +67,7 @@ lib/erlang/lib/esdl-%%VERSION%%/include/sdl_events.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/sdl_joystick.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/sdl_keyboard.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/sdl_mouse.hrl
+lib/erlang/lib/esdl-%%VERSION%%/include/sdl_ttf.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/sdl_video.hrl
 lib/erlang/lib/esdl-%%VERSION%%/license.terms
 lib/erlang/lib/esdl-%%VERSION%%/priv/sdl_driver.so
@@ -72,14 +81,18 @@ lib/erlang/lib/esdl-%%VERSION%%/src/sdl.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_active.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_audio.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_events.erl
+lib/erlang/lib/esdl-%%VERSION%%/src/sdl_img.erl
+lib/erlang/lib/esdl-%%VERSION%%/src/sdl_img_funcs.hrl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_joystick.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_keyboard.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_mouse.erl
+lib/erlang/lib/esdl-%%VERSION%%/src/sdl_ttf.erl
+lib/erlang/lib/esdl-%%VERSION%%/src/sdl_ttf_funcs.hrl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_util.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_util.hrl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_video.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_video_funcs.hrl
-lib/erlang/lib/esdl-%%VERSION%%/vsn
+lib/erlang/lib/esdl-%%VERSION%%/vsn.mk
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/src
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/priv
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/include
