@@ -7,13 +7,12 @@
 
 PORTNAME=	pinentry
 
-COMMENT=	QT version of the gnupg password dialog
+COMMENT=	QT3 version of the gnupg password dialog
 
 CONFLICTS=	pinentry-[0-9]*
 
-PINENTRY_QT=	yes
-
-PKGNAMESUFFIX=	-qt
+PINENTRY_SLAVE=	-qt3
+WITH_QT3=	yes
 
 MASTERDIR=	${.CURDIR}/../pinentry
 

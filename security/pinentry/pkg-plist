@@ -1,5 +1,6 @@
-%%WITH_CURSES%%bin/pinentry-curses
+bin/pinentry
+%%WITH_NCURSES%%bin/pinentry-curses
 %%WITH_GTK%%bin/pinentry-gtk
 %%WITH_GTK2%%bin/pinentry-gtk-2
-%%WITH_QT%%bin/pinentry-qt
-bin/pinentry
+%%WITH_QT3%%bin/pinentry-qt
+%%WITH_QT4%%bin/pinentry-qt4

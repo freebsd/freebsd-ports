@@ -11,9 +11,8 @@ COMMENT=	GTK version of the gnupg password dialog
 
 CONFLICTS=	pinentry-[0-9]*
 
-PINENTRY_GTK=	yes
-
-PKGNAMESUFFIX=	-gtk
+PINENTRY_SLAVE=	-gtk
+WITH_GTK=	yes
 
 MASTERDIR=	${.CURDIR}/../pinentry
 

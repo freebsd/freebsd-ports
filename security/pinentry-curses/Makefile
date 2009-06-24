@@ -11,9 +11,8 @@ COMMENT=	Curses version of the gnupg password dialog
 
 CONFLICTS=	pinentry-[0-9]*
 
-PINENTRY_CURSES=yes
-
-PKGNAMESUFFIX=	-curses
+PINENTRY_SLAVE=	-curses
+WITH_NCURSES=	yes
 
 MASTERDIR=	${.CURDIR}/../pinentry
 
