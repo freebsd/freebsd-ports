@@ -310,6 +310,7 @@
     SUBDIR += p5-Math-ConvexHull
     SUBDIR += p5-Math-Currency
     SUBDIR += p5-Math-Derivative
+    SUBDIR += p5-Math-Evol
     SUBDIR += p5-Math-Expr
     SUBDIR += p5-Math-FFT
     SUBDIR += p5-Math-FixedPrecision
