@@ -1,26 +1,12 @@
---- src/dvipdfmx.c.orig	2008-05-29 19:40:29.000000000 +0900
-+++ src/dvipdfmx.c	2008-06-11 00:50:55.000000000 +0900
-@@ -30,6 +30,7 @@
- #include <string.h>
- #include <limits.h>
- #include <ctype.h>
-+#include <libgen.h>
-
- #include "system.h"
- #include "mem.h"
-@@ -773,10 +774,13 @@
- main (int argc, char *argv[])
- {
-   double dvi2pts;
-+  char *bn = basename(argv[0]);
-
--  if (strcmp(argv[0], "ebb") == 0)
-+  if (strcmp(bn, "ebb") == 0)
-     return extractbb(argc, argv, EBB_OUTPUT);
--  else if (strcmp(argv[0], "xbb") == 0 || strcmp(argv[0], "extractbb") == 0)
-+  else if (strcmp(bn, "ebb-dvipdfmx") == 0)
-+    return extractbb(argc, argv, EBB_OUTPUT);
-+  else if (strcmp(bn, "xbb") == 0 || strcmp(bn, "extractbb") == 0)
-     return extractbb(argc, argv, XBB_OUTPUT);
-
-   mem_debug_init();
+--- src/dvipdfmx.c.orig	2009-05-11 11:15:25.000000000 +0900
++++ src/dvipdfmx.c	2009-06-12 10:26:27.000000000 +0900
+@@ -806,6 +806,9 @@
+     if (!(strcmp(base, "dvipdfm") && strcmp(base, "ebb")))
+       compat_mode = 1;
+ 
++    if (strcmp(base, "ebb-dvipdfmx") == 0)
++      return extractbb(argc, argv);
++
+     if (!(strcmp(base, "extractbb") && strcmp(base, "xbb") &&
+ 	  strcmp(base, "ebb")))
+       return extractbb(argc, argv);
