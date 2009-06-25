@@ -7,6 +7,7 @@
 
 PORTNAME=	terminus-font
 PORTVERSION=	4.28
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.is-vn.bg/hamster/
 PATCH_SITES=	${MASTER_SITES}
@@ -29,7 +30,7 @@ OPTIONS=	AO2 "Variant of letter 'a'" off \
 
 .include <bsd.port.pre.mk>
 
-USE_PERL5=	yes
+USE_PERL5_BUILD=yes
 ALL_TARGET=	pcf
 FONTDIR=	lib/X11/fonts/${PORTNAME}
 PLIST_SUB+=	FONTDIR=${FONTDIR}
