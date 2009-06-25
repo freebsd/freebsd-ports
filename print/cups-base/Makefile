@@ -227,7 +227,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|htmlview|xdg-open|' ${WRKSRC}/desktop/cups.desktop
 .endif
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
-	@${REINPLACE_CMD} -e 's|/etc/cups|/usr/local/etc/cups|g' ${WRKSRC}/man/*.man*
+	@${REINPLACE_CMD} -e 's|/etc/cups|${LOCALBASE}/etc/cups|g' ${WRKSRC}/man/*.man*
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/scheduler/cups-driverd.c
 	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g ; s|-lpthreads.*;|${PTHREAD_LIBS};|g' \
 		-e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
