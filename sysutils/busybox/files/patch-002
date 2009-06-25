@@ -1,7 +1,7 @@
-diff -ubwr ../../work.base/busybox-1.8.2/include/libbb.h ./include/libbb.h
---- ../../work.base/busybox-1.8.2/include/libbb.h	2007-11-10 02:40:53.000000000 +0100
-+++ ./include/libbb.h	2008-08-18 22:30:39.000000000 +0200
-@@ -31,7 +33,11 @@
+diff -ubwr ./include/libbb.h ../../work.patched/busybox-1.13.4/include/libbb.h
+--- ./include/libbb.h	2009-04-15 02:09:42.000000000 +0200
++++ ../../work.patched/busybox-1.13.4/include/libbb.h	2009-06-25 23:05:54.000000000 +0200
+@@ -29,6 +29,10 @@
  #include <sys/ioctl.h>
  #include <sys/mman.h>
  #include <sys/socket.h>
@@ -12,19 +12,22 @@ diff -ubwr ../../work.base/busybox-1.8.2/include/libbb.h ./include/libbb.h
  #include <sys/stat.h>
  #include <sys/time.h>
  #include <sys/types.h>
- #include <sys/wait.h>
-@@ -90,1 +90,3 @@
+@@ -86,7 +90,11 @@
+ /* This is declared here rather than #including <libgen.h> in order to avoid
+  * confusing the two versions of basename.  See the dirname/basename man page
+  * for details. */
 +#if !defined __FreeBSD__
- int setgroups(size_t n, const gid_t *groups);
 +#endif
-@@ -182,1 +182,3 @@
 +#if !defined __FreeBSD__
  char *dirname(char *path);
 +#endif
-diff -ubwr ../../work.base/busybox-1.8.2/include/platform.h ./include/platform.h
---- ../../work.base/busybox-1.8.2/include/platform.h	2007-11-10 02:40:53.000000000 +0100
-+++ ./include/platform.h	2008-08-18 22:30:39.000000000 +0200
-@@ -102,6 +102,14 @@
+ /* Include our own copy of struct sysinfo to avoid binary compatibility
+  * problems with Linux 2.4, which changed things.  Grumble, grumble. */
+ struct sysinfo {
+diff -ubwr ./include/platform.h ../../work.patched/busybox-1.13.4/include/platform.h
+--- ./include/platform.h	2008-11-09 18:28:17.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/include/platform.h	2009-06-25 23:05:54.000000000 +0200
+@@ -116,6 +116,14 @@
  # include <sex.h>
  # define __BIG_ENDIAN__ (BYTE_ORDER == BIG_ENDIAN)
  # define __BYTE_ORDER BYTE_ORDER
@@ -39,16 +42,27 @@ diff -ubwr ../../work.base/busybox-1.8.2/include/platform.h ./include/platform.h
  #elif !defined __APPLE__
  # include <byteswap.h>
  # include <endian.h>
-@@ -142,1 +145,1 @@
+@@ -164,7 +172,7 @@
+ 
+ #ifndef __APPLE__
+ # include <arpa/inet.h>
 -# ifndef __socklen_t_defined
 +# if !defined(__socklen_t_defined) && !defined(_SOCKLEN_T_DECLARED)
-@@ -168,2 +168,2 @@
+ typedef int socklen_t;
+ # endif
+ #else
+@@ -173,7 +181,7 @@
+ 
+ /* ---- Compiler dependent settings ------------------------- */
+ 
 -#if (defined __digital__ && defined __unix__) || defined __APPLE__
 +#if (defined __digital__ && defined __unix__) || defined __APPLE__ || defined __FreeBSD__
  # undef HAVE_MNTENT_H
-diff -ubwr ../../work.base/busybox-1.8.2/libbb/bb_askpass.c ./libbb/bb_askpass.c
---- ../../work.base/busybox-1.8.2/libbb/bb_askpass.c	2007-11-10 02:40:52.000000000 +0100
-+++ ./libbb/bb_askpass.c	2008-08-18 22:30:39.000000000 +0200
+ # undef HAVE_SYS_STATFS_H
+ #else
+diff -ubwr ./libbb/bb_askpass.c ../../work.patched/busybox-1.13.4/libbb/bb_askpass.c
+--- ./libbb/bb_askpass.c	2008-11-09 18:28:09.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/bb_askpass.c	2009-06-25 23:05:54.000000000 +0200
 @@ -35,6 +35,9 @@
  	tcgetattr(STDIN_FILENO, &oldtio);
  	tcflush(STDIN_FILENO, TCIFLUSH);
@@ -58,18 +72,49 @@ diff -ubwr ../../work.base/busybox-1.8.2/libbb/bb_askpass.c ./libbb/bb_askpass.c
 +#endif
  	tio.c_iflag &= ~(IUCLC|IXON|IXOFF|IXANY);
  	tio.c_lflag &= ~(ECHO|ECHOE|ECHOK|ECHONL|TOSTOP);
- 	tcsetattr(STDIN_FILENO, TCSANOW, &tio);
-diff -ubwr ../../work.base/busybox-1.8.2/libbb/lineedit.c ./libbb/lineedit.c
---- ../../work.base/busybox-1.8.2/libbb/lineedit.c	2007-11-10 02:40:52.000000000 +0100
-+++ ./libbb/lineedit.c	2008-08-18 22:30:39.000000000 +0200
-@@ -1213,3 +1213,4 @@
+ 	tcsetattr_stdin_TCSANOW(&tio);
+diff -ubwr ./libbb/getpty.c ../../work.patched/busybox-1.13.4/libbb/getpty.c
+--- ./libbb/getpty.c	2008-11-09 18:28:09.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/getpty.c	2009-06-25 23:09:02.000000000 +0200
+@@ -19,7 +19,7 @@
+ 	if (p > 0) {
+ 		grantpt(p); /* chmod+chown corresponding slave pty */
+ 		unlockpt(p); /* (what does this do?) */
+-#if 0 /* if ptsname_r is not available... */
++#if 1 /* if ptsname_r is not available... */
+ 		const char *name;
+ 		name = ptsname(p); /* find out the name of slave pty */
+ 		if (!name) {
+diff -ubwr ./libbb/lineedit.c ../../work.patched/busybox-1.13.4/libbb/lineedit.c
+--- ./libbb/lineedit.c	2008-11-29 07:48:56.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/lineedit.c	2009-06-25 23:05:54.000000000 +0200
+@@ -78,6 +78,7 @@
  #if ENABLE_FEATURE_GETUSERNAME_AND_HOMEDIR
  static const char null_str[] ALIGN1 = "";
  #endif
 +typedef void (*sighandler_t)(int signum);
-diff -ubwr ../../work.base/busybox-1.8.2/libbb/makedev.c ./libbb/makedev.c
---- ../../work.base/busybox-1.8.2/libbb/makedev.c	2007-11-10 02:40:52.000000000 +0100
-+++ ./libbb/makedev.c	2008-08-18 22:30:39.000000000 +0200
+ 
+ /* We try to minimize both static and stack usage. */
+ struct lineedit_statics {
+diff -ubwr ./libbb/login.c ../../work.patched/busybox-1.13.4/libbb/login.c
+--- ./libbb/login.c	2008-11-09 18:28:09.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/login.c	2009-06-25 23:05:54.000000000 +0200
+@@ -62,10 +62,12 @@
+ 			case 'm':
+ 				outbuf = uts.machine;
+ 				break;
++#if 0
+ 			case 'D':
+ 			case 'o':
+ 				outbuf = uts.domainname;
+ 				break;
++#endif
+ 			case 'd':
+ 				strftime(buf, sizeof(buf), fmtstr_d, localtime(&t));
+ 				break;
+diff -ubwr ./libbb/makedev.c ../../work.patched/busybox-1.13.4/libbb/makedev.c
+--- ./libbb/makedev.c	2008-11-09 18:28:09.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/makedev.c	2009-06-25 23:05:54.000000000 +0200
 @@ -5,7 +5,7 @@
   *
   * Licensed under GPL version 2, see file LICENSE in this tarball for details.
@@ -77,16 +122,16 @@ diff -ubwr ../../work.base/busybox-1.8.2/libbb/makedev.c ./libbb/makedev.c
 -
 +#if !defined __FreeBSD__
  /* We do not include libbb.h - #define makedev() is there! */
+ #include "platform.h"
  #include <features.h>
- #include <sys/sysmacros.h>
-@@ -21,3 +21,4 @@
+@@ -22,3 +22,4 @@
  	return makedev(major, minor);
  }
  #endif
 +#endif /* !__FreeBSD__ */
-diff -ubwr ../../work.base/busybox-1.8.2/libbb/match_fstype.c ./libbb/match_fstype.c
---- ../../work.base/busybox-1.8.2/libbb/match_fstype.c	2007-11-10 02:40:52.000000000 +0100
-+++ ./libbb/match_fstype.c	2008-08-18 22:30:39.000000000 +0200
+diff -ubwr ./libbb/match_fstype.c ../../work.patched/busybox-1.13.4/libbb/match_fstype.c
+--- ./libbb/match_fstype.c	2008-11-09 18:28:09.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/match_fstype.c	2009-06-25 23:05:54.000000000 +0200
 @@ -10,6 +10,7 @@
   * Licensed under GPLv2 or later, see file LICENSE in this tarball for details.
   */
@@ -94,16 +139,46 @@ diff -ubwr ../../work.base/busybox-1.8.2/libbb/match_fstype.c ./libbb/match_fsty
 +#if !defined __FreeBSD__
  #include "libbb.h"
  
- int match_fstype(const struct mntent *mt, const char *fstype)
+ int FAST_FUNC match_fstype(const struct mntent *mt, const char *fstype)
 @@ -42,3 +43,4 @@
  
  	return -(no + 1);
  }
 +#endif /* !__FreeBSD__ */
-diff -ubwr ../../work.base/busybox-1.8.2/libbb/xfuncs.c ./libbb/xfuncs.c
---- libbb/xfuncs.c.orig	2007-11-10 02:40:52.000000000 +0100
-+++ libbb/xfuncs.c	2008-08-19 14:08:54.000000000 +0200
-@@ -428,8 +428,9 @@
+diff -ubwr ./libbb/safe_gethostname.c ../../work.patched/busybox-1.13.4/libbb/safe_gethostname.c
+--- ./libbb/safe_gethostname.c	2008-11-09 18:28:09.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/safe_gethostname.c	2009-06-25 23:05:54.000000000 +0200
+@@ -62,5 +62,5 @@
+ 	struct utsname uts;
+ 
+ 	uname(&uts);
+-	return xstrndup(!uts.domainname[0] ? "?" : uts.domainname, sizeof(uts.domainname));
++	return xstrndup("?", 2); // !uts.domainname[0] ? "?" : uts.domainname, sizeof(uts.domainname));
+ }
+diff -ubwr ./libbb/xconnect.c ../../work.patched/busybox-1.13.4/libbb/xconnect.c
+--- ./libbb/xconnect.c	2008-12-31 04:06:45.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/xconnect.c	2009-06-25 23:05:54.000000000 +0200
+@@ -7,6 +7,7 @@
+  */
+ 
+ #include <netinet/in.h>
++#include <sys/socket.h>	// struct sockaddr
+ #include <net/if.h>
+ #include "libbb.h"
+ 
+@@ -26,7 +27,7 @@
+ 	/* Actually, ifr_name is at offset 0, and in practice
+ 	 * just giving char[IFNAMSIZ] instead of struct ifreq works too.
+ 	 * But just in case it's not true on some obscure arch... */
+-	r = setsockopt(fd, SOL_SOCKET, SO_BINDTODEVICE, &ifr, sizeof(ifr));
++	r = -1; //setsockopt(fd, SOL_SOCKET, SO_BINDTODEVICE, &ifr, sizeof(ifr));
+ 	if (r)
+ 		bb_perror_msg("can't bind to interface %s", iface);
+ 	return r;
+diff -ubwr ./libbb/xfuncs.c ../../work.patched/busybox-1.13.4/libbb/xfuncs.c
+--- ./libbb/xfuncs.c	2008-11-09 18:28:09.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/xfuncs.c	2009-06-25 23:05:54.000000000 +0200
+@@ -226,8 +226,9 @@
  	long size;
  
  	// If the ioctl works for this, return it.
@@ -114,23 +189,24 @@ diff -ubwr ../../work.base/busybox-1.8.2/libbb/xfuncs.c ./libbb/xfuncs.c
  
  	// FIXME: explain why lseek(SEEK_END) is not used here!
  
-diff -ubwr ../../work.base/busybox-1.8.2/libbb/xfuncs_printf.c ./libbb/xfuncs_printf.c
---- libbb/xfuncs_printf.c	2007-11-10 02:40:52.000000000 +0100
-+++ libbb/xfuncs_printf.c	2008-08-19 14:08:54.000000000 +0200
-@@ -498,7 +499,7 @@
+diff -ubwr ./libbb/xfuncs_printf.c ../../work.patched/busybox-1.13.4/libbb/xfuncs_printf.c
+--- ./libbb/xfuncs_printf.c	2008-11-09 18:28:09.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libbb/xfuncs_printf.c	2009-06-25 23:05:54.000000000 +0200
+@@ -294,8 +294,8 @@
  	return string_ptr;
  }
  
 -#if 0 /* If we will ever meet a libc which hasn't [f]dprintf... */
-+#if defined(__FreeBSD__) /* If we will ever meet a libc which hasn't [f]dprintf... */
- int fdprintf(int fd, const char *format, ...)
+-int FAST_FUNC fdprintf(int fd, const char *format, ...)
++#if 1 /* If we will ever meet a libc which hasn't [f]dprintf... */
++int FAST_FUNC dprintf(int fd, const char *format, ...)
  {
  	va_list p;
-@@ -529,6 +530,32 @@
- 	}
+ 	int r;
+@@ -326,6 +326,32 @@
  	return r;
  }
-+
+ #endif
 +char *strchrnul(const char *s, int c)
 +{
 +	char *r = strchr(s, c);
@@ -138,7 +214,7 @@ diff -ubwr ../../work.base/busybox-1.8.2/libbb/xfuncs_printf.c ./libbb/xfuncs_pr
 +		r = (char *)s + strlen(s);
 +	return r;
 +}
-+
++#if 0
 +void *memrchr(const void *s, int c, size_t n)
 +{
 +	const char *p = s;
@@ -146,6 +222,7 @@ diff -ubwr ../../work.base/busybox-1.8.2/libbb/xfuncs_printf.c ./libbb/xfuncs_pr
 +		if (*p == c) break;
 +	return (*p == c ? p : NULL);
 +}
++#endif
 +
 +size_t strnlen(const char *s, size_t maxlen)
 +{
@@ -156,12 +233,12 @@ diff -ubwr ../../work.base/busybox-1.8.2/libbb/xfuncs_printf.c ./libbb/xfuncs_pr
 +	}
 +	return i;
 +}
- #endif
  
- // Die with an error message if we can't copy an entire FILE * to stdout, then
-diff -ubwr ../../work.base/busybox-1.8.2/libpwdgrp/pwd_grp.c ./libpwdgrp/pwd_grp.c
---- ../../work.base/busybox-1.8.2/libpwdgrp/pwd_grp.c	2007-11-10 02:40:53.000000000 +0100
-+++ ./libpwdgrp/pwd_grp.c	2008-08-18 22:30:39.000000000 +0200
+ void FAST_FUNC xsetenv(const char *key, const char *value)
+ {
+diff -ubwr ./libpwdgrp/pwd_grp.c ../../work.patched/busybox-1.13.4/libpwdgrp/pwd_grp.c
+--- ./libpwdgrp/pwd_grp.c	2008-11-09 18:28:19.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/libpwdgrp/pwd_grp.c	2009-06-25 23:05:54.000000000 +0200
 @@ -19,7 +19,9 @@
   */
  
@@ -172,3 +249,90 @@ diff -ubwr ../../work.base/busybox-1.8.2/libpwdgrp/pwd_grp.c ./libpwdgrp/pwd_grp
  #include <assert.h>
  
  #ifndef _PATH_SHADOW
+diff -ubwr ./networking/nslookup.c ../../work.patched/busybox-1.13.4/networking/nslookup.c
+--- ./networking/nslookup.c	2008-11-09 18:27:59.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/networking/nslookup.c	2009-06-25 23:05:54.000000000 +0200
+@@ -11,6 +11,8 @@
+  * Licensed under GPLv2 or later, see file LICENSE in this tarball for details.
+  */
+ 
++#include <netinet/in.h>
++#include <sys/socket.h>
+ #include <resolv.h>
+ #include "libbb.h"
+ 
+diff -ubwr ./networking/telnetd.c ../../work.patched/busybox-1.13.4/networking/telnetd.c
+--- ./networking/telnetd.c	2008-11-09 18:27:59.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/networking/telnetd.c	2009-06-25 23:05:54.000000000 +0200
+@@ -254,7 +254,7 @@
+ 	 * cooked mode, and with XTABS CRMOD enabled (see tty(4)). */
+ 	tcgetattr(0, &termbuf);
+ 	termbuf.c_lflag |= ECHO; /* if we use readline we dont want this */
+-	termbuf.c_oflag |= ONLCR | XTABS;
++	termbuf.c_oflag |= ONLCR | OXTABS;
+ 	termbuf.c_iflag |= ICRNL;
+ 	termbuf.c_iflag &= ~IXOFF;
+ 	/*termbuf.c_lflag &= ~ICANON;*/
+diff -ubwr ./networking/traceroute.c ../../work.patched/busybox-1.13.4/networking/traceroute.c
+--- ./networking/traceroute.c	2008-11-09 18:27:59.000000000 +0100
++++ ../../work.patched/busybox-1.13.4/networking/traceroute.c	2009-06-25 23:05:54.000000000 +0200
+@@ -205,9 +205,10 @@
+ //#define CONFIG_FEATURE_TRACEROUTE_USE_ICMP
+ 
+ 
+-#include <net/if.h>
+ #include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <sys/socket.h>
++#include <net/if.h>
+ #include <netinet/udp.h>
+ #include <netinet/ip.h>
+ #include <netinet/ip_icmp.h>
+@@ -638,7 +639,7 @@
+ 		outicmp->icmp_seq = htons(seq);
+ 	else
+ #endif
+-		outudp->dest = htons(port + seq);
++		outudp->uh_dport = htons(port + seq);
+ 
+ #if ENABLE_FEATURE_TRACEROUTE_USE_ICMP
+ 	if (useicmp) {
+@@ -660,11 +661,11 @@
+ 		ui->ui_src = oui->ui_src;
+ 		ui->ui_dst = oui->ui_dst;
+ 		ui->ui_pr = oui->ui_pr;
+-		ui->ui_len = outudp->len;
+-		outudp->check = 0;
+-		outudp->check = in_cksum((uint16_t *)ui, packlen);
+-		if (outudp->check == 0)
+-			outudp->check = 0xffff;
++		ui->ui_len = outudp->uh_ulen;
++		outudp->uh_sum = 0;
++		outudp->uh_sum = in_cksum((uint16_t *)ui, packlen);
++		if (outudp->uh_sum == 0)
++			outudp->uh_sum = 0xffff;
+ 		*outip = tip;
+ 	}
+ 
+@@ -792,8 +793,8 @@
+ 			/* XXX 8 is a magic number */
+ 			if (hlen + 12 <= cc &&
+ 			    hip->ip_p == IPPROTO_UDP &&
+-			    up->source == htons(ident) &&
+-			    up->dest == htons(port + seq))
++			    up->uh_sport == htons(ident) &&
++			    up->uh_dport == htons(port + seq))
+ 				return (type == ICMP_TIMXCEED ? -1 : code + 1);
+ 		}
+ 	}
+@@ -1148,8 +1149,8 @@
+ 	{
+ 		outip->ip_p = IPPROTO_UDP;
+ 		outudp = (struct udphdr *)outp;
+-		outudp->source = htons(ident);
+-		outudp->len = htons((uint16_t)(packlen - (sizeof(*outip) + optlen)));
++		outudp->uh_sport = htons(ident);
++		outudp->uh_ulen = htons((uint16_t)(packlen - (sizeof(*outip) + optlen)));
+ 		outdata = (outdata_t *)(outudp + 1);
+ 	}
+ 
