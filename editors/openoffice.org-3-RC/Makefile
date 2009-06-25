@@ -250,7 +250,7 @@ do-install:
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .endif
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/310/unxfbsdi.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/310/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
