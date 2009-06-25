@@ -7,9 +7,10 @@
 
 PORTNAME=		samba4wins
 PORTVERSION=		1.0.7
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		http://ftp.sernet.de/pub/samba4WINS/debian/pool/
-DISTNAME=		${PORTNAME}_${PORTVERSION}-1
+DISTNAME=		${PORTNAME}_${PORTVERSION}-2
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		A full featured replicating WINS server for UNIX
