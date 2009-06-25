@@ -1748,7 +1748,7 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrm libexec/cups/monitor
 @dirrmtry libexec/cups/filter
 @exec mkdir -p %D/libexec/cups/driver
-@dirrm libexec/cups/driver
+@dirrmtry libexec/cups/driver
 @dirrm libexec/cups/daemon
 @dirrm libexec/cups/cgi-bin
 @dirrmtry libexec/cups/backend
