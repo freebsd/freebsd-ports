@@ -7,6 +7,7 @@
 
 PORTNAME=	climm
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/
@@ -16,7 +17,6 @@ MAINTAINER=	johans@stack.nl
 COMMENT=	CLI-based Multi-Messenger
 
 USE_GMAKE=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -28,26 +28,18 @@ MAN7=		climmcmds.7
 OPTIONS=	LIBICONV "Iconv character set conversion" on \
 		P2P "Peer2peer connection support" on \
 		TCL "TCL scripting support" on \
-		SSL "SSL/OTR encryption support" on \
+		OTR "OTR encryption support" on \
 		REMOTE "Remote control fifo support" on \
 		XMPP "XMPP Jabber support" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=	--disable-ssl --disable-otr
+.if defined(WITHOUT_OTR)
+CONFIGURE_ARGS+=	--disable-otr
 .else
-. if defined(WITHOUT_XMPP)
-CONFIGURE_ARGS+=	--enable-ssl=openssl
-. else
-CONFIGURE_ARGS+=	--enable-ssl=gnutls --with-libgnutls-prefix=${LOCALBASE}
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
-. endif
 CPPFLAGS+=		-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-libgcrypt-prefix=${LOCALBASE}
-LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt \
-			otr:${PORTSDIR}/security/libotr \
-			gpg-error:${PORTSDIR}/security/libgpg-error
+CONFIGURE_ARGS+=	--enable-otr
+LIB_DEPENDS+=		otr:${PORTSDIR}/security/libotr
 .endif
 
 .if defined(WITHOUT_LIBICONV)
@@ -56,8 +48,8 @@ CONFIGURE_ARGS+=	--disable-iconv
 USE_ICONV=		yes
 .endif
 
-.if defined(WITHOUT_P2P) || defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=	--disable-peer2peer --disable-ssl
+.if defined(WITHOUT_P2P)
+CONFIGURE_ARGS+=	--disable-peer2peer
 .endif
 
 .if defined(WITHOUT_TCL)
@@ -72,15 +64,22 @@ CONFIGURE_ARGS+=	--disable-remote
 .endif
 
 .if defined(WITHOUT_XMPP)
-CONFIGURE_ARGS+=	--disable-xmpp
+USE_OPENSSL=		yes
+CONFIGURE_ARGS+=	--disable-xmpp --enable-ssl=openssl
 .else
-LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel
-CONFIGURE_ARGS+=	--enable-xmpp
+CFLAGS+=		-I${LOCALBASE}/include
+CONFIGURE_ARGS+=	--enable-xmpp --enable-ssl=gnutls \
+			--with-libgnutls-prefix=${LOCALBASE} \
+			--with-libgcrypt-prefix=${LOCALBASE}
+LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel \
+			gnutls:${PORTSDIR}/security/gnutls \
+			gcrypt:${PORTSDIR}/security/libgcrypt \
+			gpg-error:${PORTSDIR}/security/libgpg-error
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc//' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/ac_lib/s/tcl8\.4/tcl84/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/ac_lib/s/tcl8\./tcl8/g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/climm.1 ${MANPREFIX}/man/man1
