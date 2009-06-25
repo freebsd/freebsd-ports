@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	busybox
-PORTVERSION=	1.11.1
+PORTVERSION=	1.13.4
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/ \
 		http://distfiles.gentoo.org/distfiles/
@@ -20,8 +20,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/busybox
-
-BROKEN=		does not configure
 
 do-configure:
 	${CP} ${FILESDIR}/data-.config ${WRKSRC}/.config
