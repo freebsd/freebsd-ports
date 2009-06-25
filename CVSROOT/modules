@@ -3984,6 +3984,7 @@ gdesklets-irc                   ports/irc/gdesklets-irc
 gdesklets-recentlyused          ports/deskutils/gdesklets-recentlyused
 gdesklets-starterbar            ports/deskutils/gdesklets-starterbar
 gdesklets-tasklist              ports/x11/gdesklets-tasklist
+gdialog                         ports/multimedia/gdialog
 gdict                           ports/textproc/gdict
 gdis                            ports/science/gdis
 gdk-pixbuf                      ports/graphics/gdk-pixbuf
@@ -4080,6 +4081,7 @@ gff2ps                          ports/biology/gff2ps
 gflags                          ports/devel/gflags
 gfont                           ports/graphics/gfont
 gfontview                       ports/print/gfontview
+gforge                          ports/www/gforge
 gforth                          ports/lang/gforth
 gfp                             ports/finance/gfp
 gfslicer                        ports/sysutils/gfslicer
@@ -18152,6 +18154,7 @@ pinentry-curses                 ports/security/pinentry-curses
 pinentry-gtk                    ports/security/pinentry-gtk
 pinentry-gtk2                   ports/security/pinentry-gtk2
 pinentry-qt                     ports/security/pinentry-qt
+pinentry-qt4                    ports/security/pinentry-qt4
 pinfo                           ports/misc/pinfo
 pingus                          ports/games/pingus
 pinot                           ports/deskutils/pinot
@@ -22693,6 +22696,7 @@ vexim                           ports/mail/vexim
 vgb                             ports/emulators/vgb
 vgb-bin                         ports/emulators/vgb-bin
 vgba-bin                        ports/emulators/vgba-bin
+vhcp                            ports/net-p2p/vhcp
 vi-aspell                       ports/vietnamese/aspell
 vi-gtk-im-vi                    ports/vietnamese/gtk-im-vi
 vi-kde3-i18n                    ports/vietnamese/kde3-i18n
