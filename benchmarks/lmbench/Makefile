@@ -7,6 +7,7 @@
 
 PORTNAME=	lmbench
 PORTVERSION=	3.0.a9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF http://thegaul.org/src/
@@ -28,6 +29,8 @@ MAN8=		bw_file_rd.8 bw_mem.8 bw_mem_rd.8 bw_mmap_rd.8 \
 		lat_syscall.8 lat_tcp.8 lat_udp.8 lat_unix.8 \
 		lat_unix_connect.8 line.8 lmbench.8 lmdd.8 mhz.8 \
 		par_mem.8 par_ops.8 stream.8 tlb.8
+
+USE_GMAKE=	yes
 
 # the bindir for the PLIST is:
 # (note that ./os needs to be run inside the work dir, running it
