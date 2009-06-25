@@ -145,7 +145,12 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-crashdump=yes				\
 			--with-system-zlib				\
 			--with-system-stdlibs				\
-			--with-epm=internal
+			--with-epm=internal				\
+			--enable-minimizer 				\
+			--enable-presenter-console			\
+			--enable-pdfimport				\
+			--enable-wiki-publisher				\
+			--enable-report-builder
 
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
@@ -179,7 +184,7 @@ pre-everything::
 .endif
 
 #issue XXXXXX not raised yet...
-CRLFFILES=curl/curl*patch neon/neon*patch
+CRLFFILES=curl/curl*patch neon/neon*patch jfreereport/patches/*.patch
 
 post-extract:
 	for i in ${CRLFFILES};  do \
