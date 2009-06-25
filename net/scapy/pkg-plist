@@ -135,6 +135,9 @@ bin/scapy
 %%PYTHON_SITELIBDIR%%/scapy/layers/ntp.py
 %%PYTHON_SITELIBDIR%%/scapy/layers/ntp.pyc
 %%PYTHON_SITELIBDIR%%/scapy/layers/ntp.pyo
+%%PYTHON_SITELIBDIR%%/scapy/layers/pflog.py
+%%PYTHON_SITELIBDIR%%/scapy/layers/pflog.pyc
+%%PYTHON_SITELIBDIR%%/scapy/layers/pflog.pyo
 %%PYTHON_SITELIBDIR%%/scapy/layers/ppp.py
 %%PYTHON_SITELIBDIR%%/scapy/layers/ppp.pyc
 %%PYTHON_SITELIBDIR%%/scapy/layers/ppp.pyo
