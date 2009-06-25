@@ -1,0 +1,20 @@
+--- ./src/Makefile.orig	2009-06-25 14:38:24.000000000 -0400
++++ ./src/Makefile	2009-06-25 14:38:41.000000000 -0400
+@@ -146,7 +146,7 @@
+ 	cp $(EXES) $(BASE)/bin
+ 	cp $(INCS) $(BASE)/include
+ 	cp $O/lmbench.a $(BASE)/lib/libmbench.a
+-	cd ../doc; env MAKEFLAGS="$(MAKEFLAGS)" make CC="${CC}" OS="${OS}" BASE="$(BASE)" install
++	cd ../doc; env MAKEFLAGS="$(MAKEFLAGS)" ${MAKE} CC="${CC}" OS="${OS}" BASE="$(BASE)" install
+ 
+ 
+ # No special handling for all these
+@@ -239,7 +239,7 @@
+ 	$(COMPILE) -c getopt.c -o $O/getopt.o
+ 
+ $(UTILS) :
+-	-cd ../scripts; make get
++	-cd ../scripts; ${MAKE} get
+ 
+ # Do not remove the next line, $(MAKE) depend needs it
+ # MAKEDEPEND follows

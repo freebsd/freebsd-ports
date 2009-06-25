@@ -1,0 +1,43 @@
+--- ./results/Makefile.orig	2009-06-25 14:38:27.000000000 -0400
++++ ./results/Makefile	2009-06-25 14:38:52.000000000 -0400
+@@ -121,10 +121,10 @@
+ 	echo .ps 12	>> summary.roff
+ 	echo .po .35i	>> summary.roff
+ 	echo .sp .5i	>> summary.roff
+-	make LIST="$(LIST)" summary	>> summary.roff
++	${MAKE} LIST="$(LIST)" summary	>> summary.roff
+ 	echo .bp	>> summary.roff
+ 	echo .sp .5i	>> summary.roff
+-	make LIST="$(LIST)" percent	>> summary.roff
++	${MAKE} LIST="$(LIST)" percent	>> summary.roff
+ 
+ list:
+ 	@echo $(LIST)
+@@ -185,11 +185,11 @@
+ # XXX - this has to be made incremental, doing everything over from
+ # scratch makes you want a Ghz machine.
+ html: dirs
+-	-make clean
++	-${MAKE} clean
+ 	#$(SCRIPTS)bghtml $(BG)
+ 	$(SCRIPTS)html-list $(LIST)
+ 	$(MK) LIST="$(LIST)" summary > HTML/summary.out 2> HTML/summary.errs
+-	#make LIST="$(LIST)" percent > HTML/percent.out 2> HTML/percent.errs
++	#${MAKE} LIST="$(LIST)" percent > HTML/percent.out 2> HTML/percent.errs
+ 	$(MK) LIST="$(LIST)" SIZE=  PRINT="$(PS)" \
+ 	    GMEM="$(GMEM) -cut -gthk1" GCTX="$(GCTX) -cut -gthk1" print
+ 	$(MK) LIST="$(LIST)" SIZE= NOOP=-noop PRINT="$(PS)" \
+@@ -207,11 +207,11 @@
+ 	rm HTML/*.pbm HTML/___tmp*
+ 
+ htmltest: dirs
+-	-make clean
++	-${MAKE} clean
+ 	#$(SCRIPTS)bghtml $(BG)
+ 	$(SCRIPTS)html-list $(LIST)
+ 	$(MK) LIST="$(LIST)" summary > HTML/summary.out 2> HTML/summary.errs
+-	#make LIST="$(LIST)" percent > HTML/percent.out 2> HTML/percent.errs
++	#${MAKE} LIST="$(LIST)" percent > HTML/percent.out 2> HTML/percent.errs
+ 	$(MK) LIST="$(LIST)" SIZE=  PRINT="$(PS)" \
+ 	    GMEM="$(GMEM) -cut -gthk1" GCTX="$(GCTX) -cut -gthk1" print
+ 
