@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	s9fes
-PORTVERSION=	20090615
+PORTVERSION=	20090625
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.t3x.org/s9fes/
 
