@@ -1,5 +1,5 @@
---- acinclude.m4.orig	Mon Apr 10 14:17:36 2006
-+++ acinclude.m4	Thu May  4 08:10:56 2006
+--- acinclude.m4.orig	2009-05-09 22:28:02.000000000 +0200
++++ acinclude.m4	2009-06-25 08:08:05.000000000 +0200
 @@ -194,7 +194,7 @@
  dnl
  dnl which array to append to?
@@ -9,21 +9,24 @@
  ])
  
  dnl
-@@ -966,12 +966,8 @@
+@@ -968,15 +968,8 @@
    if test "$3" != "shared" && test "$3" != "yes" && test "$4" = "cli"; then
  dnl ---------------------------------------------- CLI static module
      [PHP_]translit($1,a-z_-,A-Z__)[_SHARED]=no
--    if test "$PHP_SAPI" = "cgi"; then
--      PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,)
--      EXT_STATIC="$EXT_STATIC $1"
--    else
-       PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cli)
--    fi
-+      PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cgi)
+-    case "$PHP_SAPI" in
+-      cgi|embed[)]
+-        PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,)
+-        EXT_STATIC="$EXT_STATIC $1"
+-        ;;
+-      *[)]
+         PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cli)
+-        ;;
+-    esac
++        PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cgi)
      EXT_CLI_STATIC="$EXT_CLI_STATIC $1"
    fi
    PHP_ADD_BUILD_DIR($ext_builddir)
-@@ -1021,12 +1017,6 @@
+@@ -1026,12 +1019,6 @@
  build to be successful.
  ])
    fi
@@ -36,7 +39,7 @@
    dnl Some systems require that we link $2 to $1 when building
  ])
  
-@@ -2158,9 +2148,9 @@
+@@ -2303,9 +2290,9 @@
    test -z "$PHP_IMAP_SSL" && PHP_IMAP_SSL=no
  
    dnl Fallbacks for different configure options
