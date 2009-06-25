@@ -60,6 +60,7 @@
     SUBDIR += planets
     SUBDIR += position
     SUBDIR += pp3
+    SUBDIR += prune
     SUBDIR += ptiger
     SUBDIR += py-aipy
     SUBDIR += py-astLib
