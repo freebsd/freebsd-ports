@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.34
+PORTVERSION?=		3.0.35
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -16,7 +16,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.* tdb-1.*
+CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* samba-3.[2-9]* sharity-light-1.* tdb-1.*
 
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
@@ -103,11 +103,6 @@ CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
 			--without-libaddns --with-included-iniparser \
 			--enable-largefile
 
-# Sanity checks
-.if exists(${LOCALBASE}/include/tdb.h)
-IGNORE=			doesn't compile when tdb is installed. Uninstall databases/tdb port
-.endif
-
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -120,7 +115,7 @@ SAMBA_WANT_LDAP=	yes
 .endif
 
 .if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups
 SUB_LIST+=		CUPSD=""
 .else
@@ -132,7 +127,6 @@ SUB_LIST+=		CUPSD="@comment "
 LIB_DEPENDS+=		dmalloc.1:${PORTSDIR}/devel/dmalloc
 CPPFLAGS+=		-g
 LDFLAGS+=		-g
-#CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-debug --enable-socket-wrapper \
 			--enable-developer --enable-krb5developer \
 			--enable-dmalloc --with-profiling-data
