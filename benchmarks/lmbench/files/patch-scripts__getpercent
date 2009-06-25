@@ -1,0 +1,11 @@
+--- ./scripts/getpercent.orig	2009-06-25 13:59:43.000000000 -0400
++++ ./scripts/getpercent	2009-06-25 14:04:59.000000000 -0400
+@@ -5,7 +5,7 @@
+ # Hacked into existence by Larry McVoy (lm@sun.com now lm@sgi.com).
+ # Copyright (c) 1994 Larry McVoy.  GPLed software.
+ # $Id$
+-eval 'exec perl -Ssw $0 "$@"'
++eval 'exec perl -Ss $0 "$@"'
+ 	if 0;
+ 
+ $n = 0;	# apparently, hpux doesn't init to 0????

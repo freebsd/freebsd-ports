@@ -1,12 +1,15 @@
-This is lmbench-1.0, a (sometimes controversial) system performance
-measurement tool.  You can go to /usr/local/lib/lmbench and do one
-of the followings:
+This is lmbench-3.0-a9, a (sometimes controversial) system performance
+measurement tool.  lmbench is a suite of simple, portable, ANSI/C
+microbenchmarks for UNIX/POSIX. In general, it measures two key features:
+latency and bandwidth. lmbench is intended to give system developers insight
+into basic costs of key operations. You can go to /usr/local/lib/lmbench and
+do one of the following:
 
 make results (to run the benchmarks)
 make rerun   (to rerun the benchmarks)
 make see     (to see how you did)
 
-WWW: http://www.bitmover.com/lmbench/lmbench.html
+WWW: http://sourceforge.net/projects/lmbench/
 
 - Satoshi
 asami@cs.berkeley.edu
