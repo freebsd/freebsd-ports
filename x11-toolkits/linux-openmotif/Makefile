@@ -19,6 +19,8 @@ EXTRACT_ONLY=
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries
 
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
+
 CONFLICTS=	linux-f8-openmotif-[0-9]* linux-f10-openmotif-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
