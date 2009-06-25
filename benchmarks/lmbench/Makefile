@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	lmbench
-PORTVERSION=	3a4
+PORTVERSION=	3.0.a9
+PORTEPOCH=	1
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.bitmover.com/lmbench/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/a4//}
+MASTER_SITES=	SF http://thegaul.org/src/
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.a9/-a9/}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sacchi@gmail.com
 COMMENT=	A system performance measurement tool
 
 ALL_TARGET=	build

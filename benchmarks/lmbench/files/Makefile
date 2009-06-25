@@ -4,6 +4,8 @@
 OS != scripts/os
 BINDIR = bin/${OS}
 
+.PHONY:	results rerun see
+
 results:
 	@(cd scripts; ./config-run ../${BINDIR}/CONFIG)
 	@(cd scripts; ./results)
@@ -15,4 +17,4 @@ rerun:
 	@(cd scripts; ./results)
 
 see:
-	cd Results && make summary percent | more
+	cd results && make summary percent | more
