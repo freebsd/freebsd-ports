@@ -146,7 +146,19 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-crashdump=yes				\
 			--with-system-zlib				\
 			--with-system-stdlibs				\
-			--with-epm=internal
+			--with-epm=internal				\
+			--enable-minimizer 				\
+			--enable-presenter-console			\
+			--enable-pdfimport				\
+			--enable-wiki-publisher				\
+			--enable-report-builder
+
+OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
+OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
+OOOEXTENSIONS+=		presenter/presenter-screen.oxt
+OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
+OOOEXTENSIONS+=		swext/wiki-publisher.oxt
+OOOEXTENSIONS+=		sun-report-builder.oxt
 
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
@@ -180,7 +192,7 @@ pre-everything::
 .endif
 
 #issue XXXXXX not raised yet...
-CRLFFILES=curl/curl*patch neon/neon*patch
+CRLFFILES=curl/curl*patch neon/neon*patch jfreereport/patches/*.patch
 
 post-extract:
 	for i in ${CRLFFILES};  do \
@@ -238,6 +250,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .endif
+	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/310/unxfbsdi.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
