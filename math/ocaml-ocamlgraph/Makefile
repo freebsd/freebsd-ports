@@ -25,9 +25,6 @@ GNU_CONFIGURE=	yes
 PLIST_SUB+=	OCAML_LIBDIR="${OCAML_LIBDIR}"
 
 ALL_TARGET=	all
-.ifndef NOPORTDOCS
-ALL_TARGET+=	doc
-PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -39,6 +36,10 @@ PLIST_SUB+=	GUI=""
 CONFIGURE_ARGS+=	LABLGTK2=no
 PLIST_SUB+=		GUI="@comment "
 .endif
+
+.ifndef NOPORTDOCS
+ALL_TARGET+=	doc
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/VIEWER_DIR. doc/d' ${WRKSRC}/Makefile.in
