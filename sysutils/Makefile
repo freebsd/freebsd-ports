@@ -255,6 +255,7 @@
     SUBDIR += fusefs-httpfs
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
+    SUBDIR += fusefs-mhddfs
     SUBDIR += fusefs-ntfs
     SUBDIR += fusefs-pod
     SUBDIR += fusefs-s3fs
