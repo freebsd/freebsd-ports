@@ -1,6 +1,30 @@
---- Makefile.in.orig	2008-12-15 08:11:28.000000000 +0000
-+++ Makefile.in	2009-01-26 01:58:03.000000000 +0000
-@@ -124,9 +124,8 @@
+--- ./Makefile.in.orig	2009-06-22 21:05:38.000000000 +0000
++++ ./Makefile.in	2009-06-26 00:08:10.000000000 +0000
+@@ -45,7 +45,6 @@
+ LDSHFLAGS=@LDSHFLAGS@ @RELRO_LDFLAGS@ @LDFLAGS@
+ LDFLAGS=@PIE_LDFLAGS@ @RELRO_LDFLAGS@ @LDFLAGS@
+ 
+-WINBIND_NSS_LDSHFLAGS=@WINBIND_NSS_LDSHFLAGS@ @LDFLAGS@
+ AWK=@AWK@
+ PICFLAG=@PICFLAG@
+ DYNEXP=@DYNEXP@
+@@ -64,10 +63,14 @@
+ LDAP_LIBS=@LDAP_LIBS@
+ NSCD_LIBS=@NSCD_LIBS@
+ UUID_LIBS=@UUID_LIBS@
++
+ WINBIND_LIBS=@WINBIND_LIBS@
++WINBIND_NSS_LDSHFLAGS=@WINBIND_NSS_LDSHFLAGS@ @LDFLAGS@
+ WINBIND_NSS_EXTRA_LIBS=@WINBIND_NSS_EXTRA_LIBS@
+-WINBIND_NSS_PTHREAD=@WINBIND_NSS_PTHREAD@
+ PAM_WINBIND_EXTRA_LIBS=@PAM_WINBIND_EXTRA_LIBS@
++WINBIND_WINS_NSS_EXTRA_LIBS=@WINBIND_WINS_NSS_EXTRA_LIBS@
++WINBIND_NSS_PTHREAD=@WINBIND_NSS_PTHREAD@
++
+ DNSSD_LIBS=@DNSSD_LIBS@
+ POPT_LIBS=@POPTLIBS@
+ LIBTALLOC_LIBS=@LIBTALLOC_LIBS@
+@@ -122,9 +125,8 @@
  # These can be overridden by command line switches (see smbd(8))
  # or in smb.conf (see smb.conf(5))
  LOGFILEBASE = @logfilebase@
@@ -11,7 +35,7 @@
  
  # This is where smbpasswd et al go
  PRIVATEDIR = @privatedir@
-@@ -153,10 +152,10 @@
+@@ -148,10 +150,10 @@
  # the directory where pid files go
  PIDDIR = @piddir@
  
@@ -24,3 +48,17 @@
  FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4)
  FLAGS  = $(ISA) $(FLAGS5) -I$(srcdir)/lib -D_SAMBA_BUILD_=3
  
+@@ -962,9 +964,10 @@
+ 	    $(RPCCLIENT_NDR_OBJ) \
+ 	    $(PRIVILEGES_BASIC_OBJ)
+ 
+-WINBIND_WINS_NSS_OBJ = nsswitch/wins.o $(PARAM_OBJ) \
+-	$(LIBSMB_OBJ) $(LIB_NONSMBD_OBJ) $(NSSWINS_OBJ) $(KRBCLIENT_OBJ) \
+-	$(LIBNDR_GEN_OBJ0)
++WINBIND_WINS_NSS_OBJ = nsswitch/wins.o @WINBIND_WINS_NSS_EXTRA_OBJS@ \
++		$(PARAM_OBJ) $(LIBSMB_OBJ) $(LDB_OBJ) $(KRBCLIENT_OBJ) \
++		$(LIB_NONSMBD_OBJ) \
++		$(LIBNDR_GEN_OBJ0)
+ 
+ PAM_SMBPASS_OBJ_0 = pam_smbpass/pam_smb_auth.o pam_smbpass/pam_smb_passwd.o \
+ 		pam_smbpass/pam_smb_acct.o pam_smbpass/support.o

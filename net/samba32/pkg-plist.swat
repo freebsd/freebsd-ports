@@ -226,7 +226,7 @@ share/swat/help/manpages/net.8.html
 share/swat/help/manpages/nmbd.8.html
 share/swat/help/manpages/nmblookup.1.html
 share/swat/help/manpages/ntlm_auth.1.html
-share/swat/help/manpages/pam_winbind.7.html
+share/swat/help/manpages/pam_winbind.8.html
 share/swat/help/manpages/pdbedit.8.html
 share/swat/help/manpages/profiles.1.html
 share/swat/help/manpages/rpcclient.1.html

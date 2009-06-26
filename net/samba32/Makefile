@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.2.11
+PORTVERSION?=		3.2.13
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -303,8 +303,7 @@ MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
 
 .if !defined(WITHOUT_WINBIND)
 MAN1+=		wbinfo.1
-MAN7+=		pam_winbind.7
-MAN8+=		winbindd.8
+MAN8+=		pam_winbind.8 winbindd.8
 .endif
 
 .if !defined(WITHOUT_SWAT)
