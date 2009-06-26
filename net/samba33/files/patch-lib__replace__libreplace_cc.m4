@@ -1,5 +1,5 @@
---- ./lib/replace/libreplace_cc.m4.orig	2009-04-01 11:48:54.000000000 +0000
-+++ ./lib/replace/libreplace_cc.m4	2009-04-07 01:39:14.000000000 +0000
+--- ./lib/replace/libreplace_cc.m4.orig	2009-06-23 09:35:13.000000000 +0000
++++ ./lib/replace/libreplace_cc.m4	2009-06-26 00:41:37.000000000 +0000
 @@ -145,6 +145,10 @@
  AC_CHECK_TYPE(uintptr_t, unsigned long long)
  AC_CHECK_TYPE(ptrdiff_t, unsigned long long)
