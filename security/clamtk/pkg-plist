@@ -9,6 +9,7 @@ share/applications/clamtk.desktop
 %%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/ar/LC_MESSAGES/clamtk.mo
 share/locale/cs_CZ/LC_MESSAGES/clamtk.mo
 share/locale/da/LC_MESSAGES/clamtk.mo
 share/locale/de/LC_MESSAGES/clamtk.mo
