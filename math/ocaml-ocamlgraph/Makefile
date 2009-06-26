@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocamlgraph
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/
 PKGNAMEPREFIX=	ocaml-
@@ -14,10 +14,13 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	johans@stack.nl
 COMMENT=	Graph manipulation library for OCaml
 
+OPTIONS=	GUI "Include user programs: viewer and editor" off
+
 USE_OCAML=	yes
+USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 PLIST_SUB+=	OCAML_LIBDIR="${OCAML_LIBDIR}"
 
@@ -25,6 +28,17 @@ ALL_TARGET=	all
 .ifndef NOPORTDOCS
 ALL_TARGET+=	doc
 PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.ifdef WITH_GUI
+BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+PLIST_SUB+=	GUI=""
+.else
+CONFIGURE_ARGS+=	LABLGTK2=no
+PLIST_SUB+=		GUI="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/VIEWER_DIR. doc/d' ${WRKSRC}/Makefile.in
@@ -34,4 +48,4 @@ post-install:
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} * ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
