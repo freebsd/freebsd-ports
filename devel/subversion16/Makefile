@@ -62,7 +62,7 @@ PLIST_SUB+=	BOOK="@comment "
 .endif
 
 .if defined(WITH_ASVN)
-RUN_DEPENDS=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils:install
+RUN_DEPENDS+=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils:install
 PLIST_SUB+=	ASVN=""
 .else
 PLIST_SUB+=	ASVN="@comment "
