@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.30.0
+PORTVERSION=	2.32.0
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		BERLIOS/fc-solve
@@ -16,7 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that automatically solves games of Freecell
 
 OPTIONS=	JUDY "Use libJudy for states and stacks storage" off \
-		REDBLACK "Use libredblack for states and stacks storage" off
+		REDBLACK "Use libredblack for states and stacks storage" off \
+		TCMALLOC "Use Google's TCMalloc" off
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=	yes
@@ -34,20 +35,27 @@ MAN6=	fc-solve-board_gen.6 \
 
 CFLAGS+=	-I${LOCALBASE}/include
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_JUDY) && defined(WITH_REDBLACK)
 IGNORE=		you cannot enable both JUDY and REDBLACK
 .endif
 
 .if defined(WITH_JUDY)
 LIB_DEPENDS+=	Judy.1:${PORTSDIR}/devel/judy
-CMAKE_ARGS+=	-DFCS_STACK_STORAGE="FCS_STACK_STORAGE_JUDY" \
-		-DFCS_STATE_STORAGE="FCS_STATE_STORAGE_JUDY"
+CMAKE_ARGS+=	-DFCS_STACK_STORAGE:STRING="FCS_STACK_STORAGE_JUDY" \
+		-DFCS_STATE_STORAGE:STRING="FCS_STATE_STORAGE_JUDY"
 .endif
 
 .if defined(WITH_REDBLACK)
 LIB_DEPENDS+=	redblack.2:${PORTSDIR}/devel/libredblack
-CMAKE_ARGS+=	-DFCS_STACK_STORAGE="FCS_STACK_STORAGE_LIBREDBLACK_TREE" \
-		-DFCS_STATE_STORAGE="FCS_STATE_STORAGE_LIBREDBLACK_TREE"
+CMAKE_ARGS+=	-DFCS_STACK_STORAGE:STRING="FCS_STACK_STORAGE_LIBREDBLACK_TREE" \
+		-DFCS_STATE_STORAGE:STRING="FCS_STATE_STORAGE_LIBREDBLACK_TREE"
+.endif
+
+.if defined(WITH_TCMALLOC)
+LIB_DEPENDS+=	tcmalloc.0:${PORTSDIR}/devel/google-perftools
+CMAKE_ARGS+=	-DFCS_USE_TCMALLOC:BOOL=ON
 .endif
 
 post-install:
@@ -62,4 +70,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

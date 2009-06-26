@@ -1,15 +1,37 @@
---- CMakeLists.txt.orig	2009-05-18 18:49:56.000000000 +0900
-+++ CMakeLists.txt	2009-05-29 06:35:00.000000000 +0900
-@@ -191,7 +191,7 @@
+--- CMakeLists.txt.orig	2009-06-24 22:03:08.000000000 +0900
++++ CMakeLists.txt	2009-06-26 00:20:23.000000000 +0900
+@@ -136,6 +136,8 @@
+ SET (FCS_STACK_STORAGE_LIBAVL2_TREE_TYPE "avl" CACHE STRING "The libavl2 tree type used for the stack storage. Ignored if not set to libavl2")
+ SET (LIBAVL2_SOURCE_DIR "/usr/src/avl-2.0.3" CACHE STRING "The location of the libavl2 source tree (from which files are copied)")
  
++SET (FCS_USE_TCMALLOC "" CACHE BOOL "Use tcmalloc")
++
+ IF (NOT (STATES_TYPE MATCHES "^(INDIRECT_STACK_STATES|COMPACT_STATES|DEBUG_STATES)$"))
+     MESSAGE(FATAL_ERROR "STATES_TYPE should be ('INDIRECT_STACK_STATES', 'COMPACT_STATES' or 'DEBUG_STATES')")
+ ENDIF(NOT (STATES_TYPE MATCHES "^(INDIRECT_STACK_STATES|COMPACT_STATES|DEBUG_STATES)$"))
+@@ -289,7 +291,7 @@
  CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
  
--SET(COMPILER_FLAGS_TO_CHECK "-Wall" "-Werror=implicit-function-declaration")
-+SET(COMPILER_FLAGS_TO_CHECK "-Wall")
+ SET(COMPILER_FLAGS_TO_CHECK 
+-    "-Wall" "-Werror=implicit-function-declaration" "-fvisibility=hidden"
++    "-Wall"
+ )
  
  IF (CPU_ARCH)
-     LIST(APPEND COMPILER_FLAGS_TO_CHECK "-march=${CPU_ARCH}")
-@@ -257,7 +257,6 @@
+@@ -348,7 +350,11 @@
+ # Optionally link against Google's TCMalloc if it's available:
+ # http://goog-perftools.sourceforge.net/
+ # This gives better performance for the threaded programs.
+-FIND_LIBRARY(LIBTCMALLOC_LIB tcmalloc)
++IF (FCS_USE_TCMALLOC)
++
++    FIND_LIBRARY(LIBTCMALLOC_LIB tcmalloc)
++
++ENDIF (FCS_USE_TCMALLOC)
+ 
+ TARGET_LINK_LIBRARIES (freecell-solver 
+     ${MATH_LIB} ${LIBTCMALLOC_LIB} ${LIBREDBLACK_LIB} ${LIBJUDY_LIB}
+@@ -369,7 +375,6 @@
  
  IF (CMAKE_USE_PTHREADS_INIT)
      FCS_ADD_EXEC(freecell-solver-multi-thread-solve threaded_range_solver.c)
@@ -17,7 +39,7 @@
  ENDIF (CMAKE_USE_PTHREADS_INIT)
  
  IF (MY_LINK_FLAGS)
-@@ -329,18 +328,6 @@
+@@ -473,18 +478,6 @@
  
  INSTALL(
      FILES
