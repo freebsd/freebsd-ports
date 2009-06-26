@@ -1,3 +1,9 @@
+%%GUI%%bin/graph-viewer.byte
+%%GUI%%bin/graph-viewer.opt
+%%GUI%%bin/graph-viewer
+%%GUI%%bin/graph-editor.byte
+%%GUI%%bin/graph-editor.opt
+%%GUI%%bin/graph-editor
 %%OCAML_LIBDIR%%/graph.a
 %%OCAML_LIBDIR%%/graph.cma
 %%OCAML_LIBDIR%%/graph.cmi
