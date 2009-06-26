@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lcdproc
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,18 +18,22 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_AUTOTOOLS=	autoconf:262 automake:19 aclocal:19
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	LCDd lcdproc
+USE_GNOME=	pkgconfig
+USE_RC_SUBR=	LCDd lcdproc lcdexec
 
 CONFIGURE_ARGS=	--enable-drivers="${LCDPROC_DRIVERS}" \
-		--disable-ldap \
+		--disable-dependency-tracking \
 		--disable-doxygen
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+
+SUB_FILES=	pkg-message
 
 MAN1=		lcdexec.1 lcdproc.1
 MAN5=		lcdproc-config.5
 MAN8=		LCDd.8
 
 OPTIONS=	USB "Enable USB support" off
+
+ACLOCAL_ARGS=
 
 LCDPROC_DRIVERS=bayrad \
 		CFontz \
@@ -72,7 +75,9 @@ CONFIGURE_ARGS+=	--with-libusb-libraries=/usr
 . endif
 CONFIGURE_ARGS+=	--enable-libusb
 PLIST_SUB+=		USB=""
-LCDPROC_DRIVERS+=	IOWarrior
+LCDPROC_DRIVERS+=IOWarrior \
+		picolcd \
+		shuttleVFD
 .else
 CONFIGURE_ARGS+=	--disable-libusb
 PLIST_SUB+=		USB="@comment "
@@ -85,6 +90,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/LCDd.conf ${PREFIX}/etc/LCDd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/clients/lcdproc/lcdproc.conf ${PREFIX}/etc/lcdproc.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/clients/lcdexec/lcdexec.conf ${PREFIX}/etc/lcdexec.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/clients/lcdvc/lcdvc.conf ${PREFIX}/etc/lcdvc.conf.sample
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

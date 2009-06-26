@@ -1,0 +1,10 @@
+--- ./docs/Makefile.am.orig	2009-06-22 00:40:02.000000000 +0200
++++ ./docs/Makefile.am	2009-06-22 00:40:39.000000000 +0200
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-man_MANS = lcdproc.1 lcdexec.1 lcdvc.1 LCDd.8 lcdproc-config.5
++man_MANS = lcdproc.1 lcdexec.1 LCDd.8 lcdproc-config.5
+ SUBDIRS = lcdproc-user lcdproc-dev
+ doxygen_input = header.html footer.html
+ 
