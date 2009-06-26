@@ -1,5 +1,5 @@
---- ./Makefile.am.orig	Fri Oct  6 09:02:45 2006
-+++ ./Makefile.am	Mon Oct 16 22:26:06 2006
+--- ./Makefile.am.orig	2009-05-19 08:44:46.000000000 +0200
++++ ./Makefile.am	2009-06-22 00:36:35.000000000 +0200
 @@ -5,7 +5,7 @@
  
  SUBDIRS = shared clients server docs scripts
@@ -7,5 +7,5 @@
 -sysconf_DATA = LCDd.conf
 +sysconf_DATA =
  
- EXTRA_DIST = $(sysconf_DATA) CREDITS README.IRman contrib
+ EXTRA_DIST = $(sysconf_DATA) CREDITS contrib
  

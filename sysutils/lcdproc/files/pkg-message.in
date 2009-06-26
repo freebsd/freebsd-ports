@@ -1,0 +1,14 @@
+==============================================================
+The default configuration files have been installed as
+%%PREFIX%%/etc/LCDd.conf.sample
+%%PREFIX%%/etc/lcdproc.conf.sample
+%%PREFIX%%/etc/lcdexec.conf.sample
+Copy and edit them as needed.
+
+Some lcdproc drivers are not built by default anymore:
+
+g15, glcdlib, imon, irman, lirc, svga, xosd, ula200
+
+If you are currently using one of them, please contact the
+port's maintainer.
+==============================================================

@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: lcdexec
+# REQUIRE: LCDd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+
+. %%RC_SUBR%%
+
+name="lcdexec"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${lcdexec_enable="NO"}
+: ${lcdexec_conf="%%PREFIX%%/etc/lcdexec.conf"}
+: ${lcdexec_flags="-c ${lcdexec_conf}"}
+
+required_files=${lcdexec_conf}
+command="%%PREFIX%%/bin/lcdexec"
+
+run_rc_command "$1"
