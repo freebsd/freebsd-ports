@@ -10,8 +10,8 @@ PORTVERSION=	7
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/prune/ \
 		http://mirror.amdmi3.ru/distfiles/
-DISTNAME=	${PORTNAME}_0${PORTVERSION}
-EXTRACT_SUFX=	.jar
+DISTNAME=	${PORTNAME}_0${PORTVERSION}.jar
+EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	amdmi3@FreeBSD.org
