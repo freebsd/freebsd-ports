@@ -1,5 +1,5 @@
---- config.m4.orig	Tue Jan 17 15:32:03 2006
-+++ config.m4	Tue Jan 17 15:33:12 2006
+--- config.m4.orig	2009-05-14 15:43:52.000000000 +0200
++++ config.m4	2009-06-26 08:10:39.000000000 +0200
 @@ -5,10 +5,8 @@
  PHP_ARG_WITH(libedit,for libedit readline replacement, 
  [  --with-libedit[=DIR]    Include libedit readline replacement (CLI/CGI only)])
@@ -22,10 +22,10 @@
 +    -L$READLINE_DIR/$PHP_LIBDIR $PHP_READLINE_LIBS
 +  ])
 +
-   PHP_CHECK_LIBRARY(history, add_history,
-   [
-     PHP_ADD_LIBRARY_WITH_PATH(history, $READLINE_DIR/$PHP_LIBDIR, READLINE_SHARED_LIBADD)
-@@ -96,7 +101,6 @@
+   AC_DEFINE(HAVE_LIBREADLINE, 1, [ ])
+ 
+ elif test "$PHP_LIBEDIT" != "no"; then
+@@ -87,7 +92,6 @@
  fi
  
  if test "$PHP_READLINE" != "no" || test "$PHP_LIBEDIT" != "no"; then
