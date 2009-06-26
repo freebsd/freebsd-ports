@@ -4,6 +4,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/hacking/hooks.txt
 %%PORTDOCS%%%%DOCSDIR%%/hacking/todo.txt
 %%PORTDOCS%%%%DOCSDIR%%/http-versions.txt
+%%PORTDOCS%%%%DOCSDIR%%/pool-parameters.txt
 %%PORTDOCS%%%%DOCSDIR%%/reproxying.txt
 %%PORTDOCS%%%%DOCSDIR%%/service-parameters.txt
 %%SITE_PERL%%/Perlbal.pm
