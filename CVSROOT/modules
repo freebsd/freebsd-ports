@@ -11925,6 +11925,7 @@ p5-Math-Complex                 ports/math/p5-Math-Complex
 p5-Math-ConvexHull              ports/math/p5-Math-ConvexHull
 p5-Math-Currency                ports/math/p5-Math-Currency
 p5-Math-Derivative              ports/math/p5-Math-Derivative
+p5-Math-Evol                    ports/math/p5-Math-Evol
 p5-Math-Expr                    ports/math/p5-Math-Expr
 p5-Math-FFT                     ports/math/p5-Math-FFT
 p5-Math-Financial               ports/finance/p5-Math-Financial
@@ -15378,6 +15379,7 @@ p5-math-complex                 ports/math/p5-Math-Complex
 p5-math-convexhull              ports/math/p5-Math-ConvexHull
 p5-math-currency                ports/math/p5-Math-Currency
 p5-math-derivative              ports/math/p5-Math-Derivative
+p5-math-evol                    ports/math/p5-Math-Evol
 p5-math-expr                    ports/math/p5-Math-Expr
 p5-math-fft                     ports/math/p5-Math-FFT
 p5-math-financial               ports/finance/p5-Math-Financial
@@ -18640,6 +18642,7 @@ proxyper                        ports/misc/proxyper
 proxytunnel                     ports/security/proxytunnel
 prozilla                        ports/ftp/prozilla
 prtunnel                        ports/net/prtunnel
+prune                           ports/astro/prune
 ps2eps                          ports/print/ps2eps
 pscal                           ports/print/pscal
 pscan                           ports/security/pscan
