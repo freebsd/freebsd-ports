@@ -176,6 +176,8 @@
 %%WWWDIR%%/locale/nb_NO/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pl_PL/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pl_PL/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/messages.mo
@@ -191,6 +193,7 @@
 %%WWWDIR%%/modules/flash/Original/skin.xml
 %%WWWDIR%%/modules/flash/crossdomain.xml
 %%WWWDIR%%/modules/flash/xspf_jukebox.swf
+%%WWWDIR%%/modules/flash/xspf_jukebox.fla
 %%WWWDIR%%/modules/flash/xspf_player.php
 %%WWWDIR%%/modules/getid3/docs/changelog.txt
 %%WWWDIR%%/modules/getid3/docs/dependencies.txt
@@ -290,7 +293,6 @@
 %%WWWDIR%%/modules/pearxmlrpc/rpc.php
 %%WWWDIR%%/modules/pearxmlrpc/server.php
 %%WWWDIR%%/modules/plugins/Lastfm.plugin.php
-%%WWWDIR%%/modules/plugins/RioPlayer.plugin.php
 %%WWWDIR%%/modules/prototype/prototype.js
 %%WWWDIR%%/modules/validatemail/validateEmail.php
 %%WWWDIR%%/modules/validatemail/validateEmailFormat.php
@@ -579,6 +581,8 @@
 @dirrm %%WWWDIR%%/locale/nl_NL
 @dirrm %%WWWDIR%%/locale/nb_NO/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/nb_NO
+@dirrm %%WWWDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pl_PL
 @dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ja_JP
 @dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES
