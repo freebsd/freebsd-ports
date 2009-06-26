@@ -6,52 +6,64 @@
 #
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts between many translation formats
 
-BUILD_DEPENDS=	py*-levenshtein>=0:${PORTSDIR}/devel/py-levenshtein \
+BUILD_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
+		py*-vobject>=0:${PORTSDIR}/deskutils/py-vobject \
+		msghack:${PORTSDIR}/devel/gettext-msghack \
+		py*-elementtree>=0:${PORTSDIR}/devel/py-elementtree \
+		py*-iniparse>=0:${PORTSDIR}/devel/py-iniparse \
+		py*-levenshtein>=0:${PORTSDIR}/devel/py-levenshtein \
+		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
 		iso-codes>=1.3:${PORTSDIR}/misc/iso-codes \
 		bash:${PORTSDIR}/shells/bash \
-		py*-elementtree>=0:${PORTSDIR}/devel/py-elementtree \
-		msghack:${PORTSDIR}/devel/gettext-msghack
+		py*-utidy>=0:${PORTSDIR}/www/py-utidy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
-# po2html may require utidylib
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-MAN1_=	csv2po csv2tbx html2po lookupservice moz2po oo2po po2csv\
-	po2html po2moz po2oo po2prop po2tmx po2ts po2txt po2xliff poclean pocompile\
-	poconflicts podebug pofilter pogrep pomerge porestructure poswap pot2po prop2po\
-	sxw2po ts2po txt2po xliff2po
-MAN1=	${MAN1_:S|$|.1|}
 
-#PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} --record=${WRKSRC}/install.log
-#PORT_VERBS!=	ls ./*/*/build/scripts*/
-PORT_VERBS+=	translate
+MAN1=		csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \
+		lookupservice.1 moz2po.1 odf2xliff.1 oo2po.1 oo2xliff.1 \
+		php2po.1 po2csv.1 po2html.1 po2ical.1 po2ini.1 \
+		po2moz.1 po2oo.1 po2php.1 po2prop.1 po2rc.1 \
+		po2symb.1 po2tiki.1 po2tmx.1 po2ts.1 po2txt.1 \
+		po2wordfast.1 po2xliff.1 poclean.1 pocompile.1 poconflicts.1 \
+		podebug.1 pofilter.1 pogrep.1 pomerge.1 porestructure.1 \
+		posegment.1 poswap.1 pot2po.1 pretranslate.1 prop2po.1 \
+		rc2po.1 symb2po.1 tiki2po.1 ts2po.1 txt2po.1 \
+		xliff2odf.1 xliff2oo.1 xliff2po.1
 
 post-patch:
-	@${REINPLACE_CMD} -e '1s|/bin/bash|${LOCALBASE}&|;s|mktemp|mktemp -t /tmp|'\
-		${WRKSRC}/tools/*
+	@${FIND} ${WRKSRC}/tools -type f -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		's|^#!/bin/bash|#!${LOCALBASE}/bin/bash| ; \
+		 s|mktemp|mktemp -t /tmp|'
 
 post-build:
-	@${MKDIR} ${WRKDIR}/manpages/
-	@cd ${WRKSRC}/build/scripts*/&&for i in ${MAN1_};do\
-		${SETENV} PYTHONPATH=${WRKSRC}/build/lib \
-			${PYTHON_CMD} $$i --man>${WRKDIR}/manpages/$$i.1;done
+	@${MKDIR} ${WRKDIR}/manpages
+.for i in ${MAN1:S|.1||}
+	cd ${WRKSRC}/build/scripts-* && \
+		${SETENV} PYTHONPATH=${WRKSRC}/build/lib ${PYTHON_CMD} \
+			${i} --man > ${WRKDIR}/manpages/${i}.1
+.endfor
 
 post-install:
-	@cd ${WRKDIR}/manpages/&&${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1/
+.for i in ${MAN1}
+	cd ${WRKDIR}/manpages && ${INSTALL_MAN} ${i} ${MANPREFIX}/man/man1
+.endfor
 
 list-man1:	build
-	@cd ${WRKSRC}/build/scripts*/&&${GREP} -l "${PYTHON_CMD}" *|\
-		${EGREP} -v '(lookupclient|pocount)'|${TR} "\n" " "
+	@cd ${WRKSRC}/build/scripts-* && ${GREP} -l "${PYTHON_CMD}" * | \
+		${EGREP} -v '(build_tmdb|pocount|poterminology|tmserver)' | \
+		${TR} "\n" " "
 
 .include <bsd.port.mk>
