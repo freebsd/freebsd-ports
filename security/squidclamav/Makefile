@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	squidclamav
-PORTVERSION=	3.5
-PORTREVISION=	2
+PORTVERSION=	4.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.samse.fr/GPL/squidclamav/
+MASTER_SITES=	http://www.samse.fr/GPL/squidclamav/ \
+		http://www.darold.net/projects/squidclamav/
 
 MAINTAINER=	llevier@argosnet.com
 COMMENT=	Squid interface to ClamAV
