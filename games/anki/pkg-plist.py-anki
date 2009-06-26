@@ -24,19 +24,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/facts.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/facts.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/facts.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/chinese/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/chinese/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/chinese/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/chinese/save_unihan.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/chinese/save_unihan.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/chinese/save_unihan.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/chinese/unihan.db
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/japanese.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/japanese.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/japanese.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/fonts.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/fonts.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/fonts.pyo
@@ -55,9 +42,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/anki10.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/anki10.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/anki10.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/csv.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/csv.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/csv.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/csvfile.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/csvfile.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/csvfile.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/mnemosyne10.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/mnemosyne10.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/mnemosyne10.pyo
@@ -144,8 +131,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/cs_CZ
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/chinese
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
