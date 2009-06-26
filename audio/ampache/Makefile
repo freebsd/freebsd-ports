@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	ampache
-PORTVERSION=	3.5
+PORTVERSION=	3.5.1
 CATEGORIES=	audio www
 MASTER_SITES=	http://ampache.org/downloads/
 
