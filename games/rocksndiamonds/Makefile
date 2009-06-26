@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rocksndiamonds
-PORTVERSION=	3.2.6.0
+PORTVERSION=	3.2.6.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://homepages.compuserve.de/rocksndiamonds/
@@ -32,15 +32,15 @@ ALL_TARGET=	x11
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's:sdl-config:$${SDL_CONFIG}:g' ${WRKSRC}/src/Makefile
+		's|sdl-config|$${SDL_CONFIG}|g' ${WRKSRC}/src/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/rocksndiamonds.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
-	${TAR} -C ${WRKSRC} -cf - graphics levels music scores sounds | \
-		${TAR} -C ${DATADIR} -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+.for dir in graphics levels music scores sounds
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR})
+.endfor
 	@${CHMOD} 777 ${DATADIR}/scores
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
