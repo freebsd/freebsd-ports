@@ -42,6 +42,7 @@ bin/blender-bin
 %%DATADIR%%/scripts/bpymodules/BPyAddMesh.py
 %%DATADIR%%/scripts/bpymodules/BPyArmature.py
 %%DATADIR%%/scripts/bpymodules/BPyBlender.py
+%%DATADIR%%/scripts/bpymodules/BPyBlender.pyc
 %%DATADIR%%/scripts/bpymodules/BPyCurve.py
 %%DATADIR%%/scripts/bpymodules/BPyImage.py
 %%DATADIR%%/scripts/bpymodules/BPyMathutils.py
@@ -51,6 +52,7 @@ bin/blender-bin
 %%DATADIR%%/scripts/bpymodules/BPyNMesh.py
 %%DATADIR%%/scripts/bpymodules/BPyObject.py
 %%DATADIR%%/scripts/bpymodules/BPyRegistry.py
+%%DATADIR%%/scripts/bpymodules/BPyRegistry.pyc
 %%DATADIR%%/scripts/bpymodules/BPyRender.py
 %%DATADIR%%/scripts/bpymodules/BPySys.py
 %%DATADIR%%/scripts/bpymodules/BPyTextPlugin.py
