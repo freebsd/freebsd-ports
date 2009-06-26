@@ -1,5 +1,5 @@
---- ./nsswitch/pam_winbind.c.orig	2009-04-01 11:48:54.000000000 +0000
-+++ ./nsswitch/pam_winbind.c	2009-04-07 01:39:14.000000000 +0000
+--- ./nsswitch/pam_winbind.c.orig	2009-06-23 09:35:13.000000000 +0000
++++ ./nsswitch/pam_winbind.c	2009-06-26 00:41:37.000000000 +0000
 @@ -161,7 +161,6 @@
  }
  #endif
@@ -77,7 +77,7 @@
  
  		return true;
  	}
-@@ -2694,8 +2699,7 @@
+@@ -2695,8 +2700,7 @@
  		ret = PAM_USER_UNKNOWN;
  		goto out;
  	case 0:

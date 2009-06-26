@@ -1,6 +1,29 @@
---- Makefile.in.orig	2009-04-01 11:48:54.000000000 +0000
-+++ Makefile.in	2009-04-07 01:38:20.000000000 +0000
-@@ -125,7 +125,7 @@
+--- ./Makefile.in.orig	2009-06-23 09:35:13.000000000 +0000
++++ ./Makefile.in	2009-06-26 00:45:24.000000000 +0000
+@@ -45,7 +45,6 @@
+ LDSHFLAGS=@LDSHFLAGS@ @RELRO_LDFLAGS@ @LDFLAGS@
+ LDFLAGS=@PIE_LDFLAGS@ @RELRO_LDFLAGS@ @LDFLAGS@
+ 
+-WINBIND_NSS_LDSHFLAGS=@WINBIND_NSS_LDSHFLAGS@ @LDFLAGS@
+ AWK=@AWK@
+ PICFLAG=@PICFLAG@
+ DYNEXP=@DYNEXP@
+@@ -64,10 +63,14 @@
+ LDAP_LIBS=@LDAP_LIBS@
+ NSCD_LIBS=@NSCD_LIBS@
+ UUID_LIBS=@UUID_LIBS@
++
+ WINBIND_LIBS=@WINBIND_LIBS@
++WINBIND_NSS_LDSHFLAGS=@WINBIND_NSS_LDSHFLAGS@ @LDFLAGS@
+ WINBIND_NSS_EXTRA_LIBS=@WINBIND_NSS_EXTRA_LIBS@
+ WINBIND_NSS_PTHREAD=@WINBIND_NSS_PTHREAD@
++WINBIND_WINS_NSS_EXTRA_LIBS=@WINBIND_WINS_NSS_EXTRA_LIBS@
+ PAM_WINBIND_EXTRA_LIBS=@PAM_WINBIND_EXTRA_LIBS@
++
+ DNSSD_LIBS=@DNSSD_LIBS@
+ AVAHI_LIBS=@AVAHI_LIBS@
+ POPT_LIBS=@POPTLIBS@
+@@ -125,7 +128,7 @@
  # These can be overridden by command line switches (see smbd(8))
  # or in smb.conf (see smb.conf(5))
  LOGFILEBASE = @logfilebase@
@@ -9,7 +32,7 @@
  LMHOSTSFILE = $(CONFIGDIR)/lmhosts
  
  # This is where smbpasswd et al go
-@@ -153,10 +153,10 @@
+@@ -153,10 +156,10 @@
  # the directory where pid files go
  PIDDIR = @piddir@
  
@@ -22,7 +45,7 @@
  FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4)
  FLAGS  = $(ISA) $(FLAGS5) -I$(srcdir)/lib -D_SAMBA_BUILD_=3
  
-@@ -791,8 +791,9 @@
+@@ -791,8 +794,9 @@
  	     $(LIBADS_OBJ) $(POPT_LIB_OBJ) \
  	     $(SMBLDAP_OBJ) $(DCUTIL_OBJ) $(LDB_OBJ) 
  
@@ -34,7 +57,21 @@
  
  LIBSMBCLIENT_OBJ0 = \
  		    libsmb/libsmb_cache.o \
-@@ -1222,6 +1223,7 @@
+@@ -986,9 +990,10 @@
+                  $(LIB_NONSMBD_OBJ) $(KRBCLIENT_OBJ) \
+ 		 $(LIBNDR_GEN_OBJ0)
+ 
+-WINBIND_WINS_NSS_OBJ = nsswitch/wins.o $(PARAM_OBJ) \
+-	$(LIBSMB_OBJ) $(LIB_NONSMBD_OBJ) $(NSSWINS_OBJ) $(KRBCLIENT_OBJ) \
+-	$(LIBNDR_GEN_OBJ0)
++WINBIND_WINS_NSS_OBJ = nsswitch/wins.o @WINBIND_WINS_NSS_EXTRA_OBJS@ \
++		$(PARAM_OBJ) $(LIBSMB_OBJ) $(LDB_OBJ) $(KRBCLIENT_OBJ) \
++		$(LIB_NONSMBD_OBJ) \
++		$(LIBNDR_GEN_OBJ0)
+ 
+ PAM_SMBPASS_OBJ_0 = pam_smbpass/pam_smb_auth.o pam_smbpass/pam_smb_passwd.o \
+ 		pam_smbpass/pam_smb_acct.o pam_smbpass/support.o
+@@ -1222,6 +1227,7 @@
  
  .SUFFIXES:
  .SUFFIXES: .c .o .lo
@@ -42,7 +79,7 @@
  
  SHOWFLAGS::
  	@echo "Using FLAGS      = $(FLAGS)"
-@@ -1264,6 +1266,9 @@
+@@ -1264,6 +1270,9 @@
  		$(COMPILE_CC) >/dev/null 2>&1
  @BROKEN_CC@	-mv `echo $@ | sed 's%^.*/%%g'` $@
  
@@ -52,7 +89,7 @@
  PRECOMPILED_HEADER = $(builddir)/include/includes.h.gch
  
  # this adds support for precompiled headers. To use it, install a snapshot
-@@ -2212,8 +2217,11 @@
+@@ -2212,8 +2221,11 @@
  
  bin/pam_winbind.@SHLIBEXT@: $(BINARY_PREREQS) $(PAM_WINBIND_OBJ) @LIBTALLOC_SHARED@ @LIBWBCLIENT_SHARED@
  	@echo "Linking shared library $@"
@@ -66,7 +103,7 @@
  
  bin/builtin.@SHLIBEXT@: $(BINARY_PREREQS) $(AUTH_BUILTIN_OBJ)
  	@echo "Building plugin $@"
-@@ -2494,7 +2502,8 @@
+@@ -2494,7 +2506,8 @@
  	@echo "Linking shared library $@"
  	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_SMBPASS_OBJ) -lpam $(DYNEXP) \
  		$(LIBS) $(LDAP_LIBS) $(KRB5LIBS) $(NSCD_LIBS) \
@@ -76,7 +113,7 @@
  
  bin/tdbbackup@EXEEXT@: $(BINARY_PREREQS) $(TDBBACKUP_OBJ) @LIBTALLOC_SHARED@ @LIBTDB_SHARED@
  	@echo Linking $@
-@@ -2793,7 +2802,7 @@
+@@ -2793,7 +2806,7 @@
  	@$(LIB_PATH_VAR)=./bin && \
  	export $(LIB_PATH_VAR) && \
  	for module in $(PAM_MODULES); do \

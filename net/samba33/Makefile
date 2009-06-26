@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.3.4
+PORTVERSION?=		3.3.6
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -76,10 +76,10 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		MAX_DEBUG	"With maximum debugging" off \
 		SMBTORTURE	"With smbtorture" off
 
+.include <bsd.port.pre.mk>
+
 # Disable for now on
 .undef WITH_SHARED_LIBS
-
-.include <bsd.port.pre.mk>
 
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -328,8 +328,8 @@ MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
 
 .if !defined(WITHOUT_WINBIND)
 MAN1+=		wbinfo.1
-MAN7+=		pam_winbind.7 winbind_krb5_locator.7
-MAN8+=		winbindd.8
+MAN7+=		winbind_krb5_locator.7
+MAN8+=		pam_winbind.8 winbindd.8
 .endif
 
 .if !defined(WITHOUT_SWAT)

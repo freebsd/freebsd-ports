@@ -1,5 +1,5 @@
---- ./configure.in.orig	2009-04-01 11:48:54.000000000 +0000
-+++ ./configure.in	2009-04-07 01:39:14.000000000 +0000
+--- ./configure.in.orig	2009-06-23 09:35:13.000000000 +0000
++++ ./configure.in	2009-06-26 00:41:37.000000000 +0000
 @@ -189,16 +189,6 @@
         fi
  fi
@@ -107,7 +107,7 @@
  		fi
  	fi
  	AC_MSG_CHECKING(whether to use PAM support)
-@@ -5958,6 +5981,7 @@
+@@ -5968,6 +5991,7 @@
  		NSSSONAMEVERSIONSUFFIX=".1"
  		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \
  		    nsswitch/winbind_nss_linux.o"
@@ -115,7 +115,7 @@
  		WINBIND_NSS="nsswitch/nss_winbind.$SHLIBEXT"
  		WINBIND_WINS_NSS="nsswitch/nss_wins.$SHLIBEXT"
  		;;
-@@ -6036,23 +6060,15 @@
+@@ -6046,23 +6070,15 @@
  fi
  
  # Display test results
@@ -139,7 +139,7 @@
  	## Only worry about libwbclient if we have shared library support
  	## and winbindd
          LIBWBCLIENT_SHARED=$LIBWBCLIENT_SHARED_TARGET
-@@ -6070,26 +6086,34 @@
+@@ -6080,26 +6096,34 @@
  
  	EXTRA_BIN_PROGS="$EXTRA_BIN_PROGS bin/wbinfo\$(EXEEXT)"
  	EXTRA_SBIN_PROGS="$EXTRA_SBIN_PROGS bin/winbindd\$(EXEEXT)"
@@ -178,7 +178,7 @@
  
  AC_SUBST(WINBIND_KRB5_LOCATOR)
  
-@@ -6276,13 +6300,21 @@
+@@ -6286,13 +6310,21 @@
  # Start
  AC_CHECK_FUNC(getmntent)
  
@@ -201,7 +201,7 @@
  		int main(void)
  		{
  			struct statfs fsd;
-@@ -6539,6 +6571,16 @@
+@@ -6549,6 +6581,16 @@
  
  fi
  
@@ -218,7 +218,7 @@
  dnl Remove -L/usr/lib/? from LDFLAGS and LIBS
  LIB_REMOVE_USR_LIB(LDFLAGS)
  LIB_REMOVE_USR_LIB(LIBS)
-@@ -6595,6 +6637,8 @@
+@@ -6605,6 +6647,8 @@
  	  pkgconfig/wbclient.pc
  	  pkgconfig/netapi.pc
  	  pkgconfig/smbsharemodes.pc
