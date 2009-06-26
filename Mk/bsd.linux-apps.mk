@@ -48,8 +48,12 @@ LINUX_DIST_SUFFIX=	-f10
 .    else
 IGNORE=		valid values for OVERRIDE_LINUX_NONBASE_PORTS are \"f8\", \"f10\"
 .    endif
-.  else
+.  elif ${OSVERSION} < 800076
+# default for OSVERSION < 800076
 LINUX_DIST_SUFFIX=
+.  else
+# default for OSVERSION >= 800076
+LINUX_DIST_SUFFIX=	-f10
 .  endif
 
 # I'm not sure if kompozer is better for linux-f8 ports, so use nvu
