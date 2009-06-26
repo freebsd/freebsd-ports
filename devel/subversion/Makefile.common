@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
@@ -13,12 +13,11 @@ MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 DIST_SUBDIR=	subversion
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-
+MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
+
 CONFIGURE_ARGS=	--with-ssl
-MAKE_JOBS_SAFE=	yes
-WANT_PERL=	yes
 
 .if defined(SVN_BUILD_BINDINGS)
 # Bindings ports should use the same, as main port
@@ -54,6 +53,7 @@ PLIST_SUB+=		SASL="@comment "
 
 # Default us "on"
 .if !defined(WITHOUT_BDB)
+USE_BDB=		42+
 PLIST_SUB+=		BDB=""
 .else
 CONFIGURE_ARGS+=	--without-berkeley-db
@@ -92,21 +92,14 @@ APR_CONFIG=	apr-config
 APU_CONFIG=	apu-config
 .endif
 APR_PORT=	${APACHE_PORT}
-.if !defined(WITHOUT_BDB)
-DEPENDS_ARGS+=	WITH_BERKELEYDB=db4
-OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
-.endif
 .else
-LIB_DEPENDS+=	apr-1.3:${PORTSDIR}/devel/apr
+APR_PORT=	devel/apr
+LIB_DEPENDS+=	apr-1.3:${PORTSDIR}/${APR_PORT}
 APR_APU_DIR=	${LOCALBASE}/bin
 APR_CONFIG=	apr-1-config
 APU_CONFIG=	apu-1-config
-APR_PORT=	devel/apr
-.if !defined(WITHOUT_BDB)
-OPT_NAME=	APR_UTIL_WITH_BERKELEY_DB=yes
-DEPENDS_ARGS+=	WITH_BDB=yes
 .endif
-.endif
+
 CONFIGURE_ARGS+=--with-apr=${APR_APU_DIR}/${APR_CONFIG} \
 		--with-apr-util=${APR_APU_DIR}/${APU_CONFIG}
 
