@@ -1836,7 +1836,11 @@ USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
 .	else
 .		if ${USE_LINUX:L} == "yes"
+.			if ${OSVERSION} < 800076
 LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-fc4
+.			else
+LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-f10
+.			endif
 .		else
 IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT
 .		endif
