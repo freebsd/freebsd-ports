@@ -153,7 +153,6 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-report-builder
 
 OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
-OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
 OOOEXTENSIONS+=		swext/wiki-publisher.oxt
