@@ -31,7 +31,7 @@ PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 .if defined(WITH_LINUXBASE)
 PKGNAMEPREFIX=	linux_base-
 CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
-		linux_base-rh* linux_base-suse* linux_base-fc* \
+		linux_base-rh* linux_base-suse* linux_base-f* \
 		linux_base-gentoo-stage[12]-*
 USE_LINUX_PREFIX=	YES
 PREFIX_SUBDIR=
