@@ -3781,6 +3781,7 @@ fusefs-gunzip                   ports/sysutils/fusefs-gunzip
 fusefs-httpfs                   ports/sysutils/fusefs-httpfs
 fusefs-kmod                     ports/sysutils/fusefs-kmod
 fusefs-libs                     ports/sysutils/fusefs-libs
+fusefs-mhddfs                   ports/sysutils/fusefs-mhddfs
 fusefs-ntfs                     ports/sysutils/fusefs-ntfs
 fusefs-pod                      ports/sysutils/fusefs-pod
 fusefs-s3fs                     ports/sysutils/fusefs-s3fs
