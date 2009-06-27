@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/${PORTVERSION}/source/ \
 		LOCAL/beech
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/source
 
-MAINTAINER=	michael@ranner.eu
+MAINTAINER=	chris@officialunix.com
 COMMENT=	IRC client for QT and KDE
 
 USE_AUTOTOOLS=	libtool:15
