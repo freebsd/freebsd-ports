@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	chrootsafe
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to chroot softwares easily
 
 GNU_CONFIGURE=	YES

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-unix-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard netcat enhanced with twofish encryption
 
 WRKSRC=		${WRKDIR}/unix
