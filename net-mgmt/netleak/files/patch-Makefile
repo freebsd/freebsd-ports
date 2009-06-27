@@ -1,5 +1,12 @@
---- Makefile.old	Thu Nov  3 03:24:56 2005
-+++ Makefile	Thu Nov  3 03:25:22 2005
+--- Makefile.orig	2005-01-16 16:42:22.000000000 -0500
++++ Makefile	2009-06-26 14:57:03.000000000 -0400
+@@ -1,5 +1,5 @@
+ # change this to use another location	
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ 
+ BINFILES = netleak netleakd
+ CFILES=	netleak.conf netleakd.conf
 @@ -10,15 +10,15 @@
  	@echo "type 'make uninstall' to uninstall"
  
