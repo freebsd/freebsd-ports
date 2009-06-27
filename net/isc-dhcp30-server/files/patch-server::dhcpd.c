@@ -1,5 +1,5 @@
---- server/dhcpd.c.orig	2008-05-14 22:54:24.000000000 +0200
-+++ server/dhcpd.c	2009-03-21 18:59:04.000000000 +0100
+--- server/dhcpd.c.orig	2008-05-14 16:54:24.000000000 -0400
++++ server/dhcpd.c	2009-05-06 15:31:04.296733090 -0400
 @@ -47,6 +47,22 @@
  #include "version.h"
  #include <omapip/omapip_p.h>
@@ -23,7 +23,7 @@
  static void usage PROTO ((void));
  
  struct iaddr server_identifier;
-@@ -193,6 +209,51 @@
+@@ -193,6 +209,46 @@
  	omapi_object_dereference (&listener, MDL);
  }
  
@@ -42,40 +42,35 @@
 +#endif /* PARANOIA */
 +
 +#if defined (JAIL)
-+static void setup_jail (char *chroot_dir, char *hostname, u_int32_t ip_number)
++#if !defined(JAIL_API_VERSION)
++#define	JAIL_API_VERSION	0
++#endif
++static void setup_jail (char *chroot_dir, char *hostname, struct in_addr ip_addr)
 +{
-+	struct jail j;
++      struct jail j;
 +
-+/* The jail struct was updated, and the JAIL_API_VERSION macro introduced, in
-+ * r185435 for 8-CURRENT (OS version 800056), and in r188281 for 7-STABLE (OS
-+ * version 701103). */
-+#if __FreeBSD_version < 701103 || (__FreeBSD_version >= 800000 && __FreeBSD_version < 800056)
-+
-+	j.version = 0;
-+	j.path = chroot_dir;
-+	j.hostname = hostname;
-+	j.ip_number = ip_number;
++      memset(&j, 0, sizeof(j));
++      j.version = JAIL_API_VERSION;
++      j.path = chroot_dir;
++      j.hostname = hostname;
++#if JAIL_API_VERSION == 0
++      j.ip_number = ntohl(ip_addr.s_addr);
++#elif JAIL_API_VERSION == 2
++      j.ip4s = 1;
++      j.ip4 = &ip_addr;
 +#else
-+	struct in_addr ip4[1];
-+
-+	memset (&j, 0, sizeof j);
-+	j.version = JAIL_API_VERSION;
-+	j.path = chroot_dir;
-+	j.hostname = hostname;
-+	j.ip4s = 1;
-+	ip4[0].s_addr = ip_number;
-+	j.ip4 = ip4;
++#error Unsupported jail API
 +#endif
 +
-+	if (jail (&j) < 0)
-+		log_fatal ("jail(%s, %s): %m", chroot_dir, hostname);
++      if (jail (&j) < 0)
++              log_fatal ("jail(%s, %s): %m", chroot_dir, hostname);
 +}
 +#endif /* JAIL */
 +
  int main (argc, argv, envp)
  	int argc;
  	char **argv, **envp;
-@@ -224,6 +285,25 @@
+@@ -224,6 +280,25 @@
  	char *traceinfile = (char *)0;
  	char *traceoutfile = (char *)0;
  #endif
@@ -94,14 +89,14 @@
 +#endif /* PARANOIA || JAIL */
 +#if defined (JAIL)
 +	char *set_jail = 0;
-+	u_int32_t jail_ip_address = 0; /* Good as long as it's IPv4 ... */
++	struct in_addr jail_ip_address;
 +	int no_dhcpd_jail = 0;
 +	char *s2;
 +#endif /* JAIL */
  
  	/* Make sure we have stdin, stdout and stderr. */
  	status = open ("/dev/null", O_RDWR);
-@@ -286,6 +366,39 @@
+@@ -286,6 +361,38 @@
  			if (++i == argc)
  				usage ();
  			server = argv [i];
@@ -135,13 +130,12 @@
 +				usage ();
 +			if (inet_pton (AF_INET, argv[i], &jail_ip_address) < 0)
 +				log_fatal ("invalid ip address: %s", argv[i]);
-+			jail_ip_address = ntohl (jail_ip_address);
 +			no_dhcpd_jail = 1;
 +#endif /* JAIL */
  		} else if (!strcmp (argv [i], "-cf")) {
  			if (++i == argc)
  				usage ();
-@@ -363,6 +476,28 @@
+@@ -363,6 +470,27 @@
  	if (!no_dhcpd_pid && (s = getenv ("PATH_DHCPD_PID"))) {
  		path_dhcpd_pid = s;
  	}
@@ -164,13 +158,12 @@
 +		set_jail = s;
 +		if (inet_pton (AF_INET, s2, &jail_ip_address) < 0)
 +			log_fatal ("invalid ip address: %s", s2);
-+		jail_ip_address = ntohl (jail_ip_address);
 +	}
 +#endif /* JAIL */
  
  	if (!quiet) {
  		log_info ("%s %s", message, DHCP_VERSION);
-@@ -389,6 +524,57 @@
+@@ -389,6 +517,57 @@
  					     trace_seed_stop, MDL);
  #endif
  
@@ -228,7 +221,7 @@
  	/* Default to the DHCP/BOOTP port. */
  	if (!local_port)
  	{
-@@ -463,6 +649,9 @@
+@@ -463,6 +642,9 @@
  #endif
  
  	/* Initialize icmp support... */
@@ -238,7 +231,7 @@
  	if (!cftest && !lftest)
  		icmp_startup (1, lease_pinged);
  
-@@ -492,6 +681,14 @@
+@@ -492,6 +674,14 @@
  
  	postconf_initialization (quiet);
  
@@ -253,7 +246,7 @@
          /* test option should cause an early exit */
   	if (cftest && !lftest) 
   		exit(0);
-@@ -534,7 +731,22 @@
+@@ -534,7 +724,22 @@
  		else if (pid)
  			exit (0);
  	}
@@ -276,7 +269,7 @@
  	/* Read previous pid file. */
  	if ((i = open (path_dhcpd_pid, O_RDONLY)) >= 0) {
  		status = read(i, pbuf, (sizeof pbuf) - 1);
-@@ -865,8 +1077,24 @@
+@@ -865,8 +1070,24 @@
  	log_info (copyright);
  	log_info (arr);
  
