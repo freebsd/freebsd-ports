@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://freebsd.t-hosting.hu/cvsadmin/
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple program to administrate users of a CVS repository
 
 GNU_CONFIGURE=	yes

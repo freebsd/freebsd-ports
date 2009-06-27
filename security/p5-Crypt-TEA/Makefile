@@ -9,7 +9,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension to Tiny Encryption Algorithm
 
 PERL_CONFIGURE=	yes

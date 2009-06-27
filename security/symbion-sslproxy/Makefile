@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	sslproxy
 DISTNAME=	sslproxy-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SSL proxy for securing unsecure connections
 
 USE_OPENSSL=	YES
