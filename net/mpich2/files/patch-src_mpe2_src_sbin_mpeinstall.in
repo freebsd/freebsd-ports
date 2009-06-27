@@ -1,6 +1,15 @@
---- ./src/mpe2/sbin/mpeinstall.in.orig	2007-11-28 22:51:40.000000000 +0100
-+++ ./src/mpe2/sbin/mpeinstall.in	2008-05-25 16:45:21.000000000 +0200
-@@ -529,17 +529,17 @@
+--- src/mpe2/sbin/mpeinstall.in.orig	2009-01-31 00:56:35.000000000 +0100
++++ src/mpe2/sbin/mpeinstall.in	2009-06-24 18:32:04.000000000 +0200
+@@ -522,7 +522,7 @@
+     # so $docdir (with NULL PACKAGE) is appended to dirlist for removal.
+     savedPACKAGE=$PACKAGE
+     PACKAGE=""
+-    MkDir @docdir@
++%%PORTDOCS%%    MkDir @docdir@
+     PACKAGE=$savedPACKAGE
+ fi
+ 
+@@ -570,15 +570,15 @@
  # ie INSTALL $top_srcdir/doc  $docdir
  #    INSTALL $top_srcdir/man  $mandir
  #    INSTALL $top_srcdir/html $htmldir
@@ -8,9 +17,7 @@
 -    typename=${type}dir
 -    eval typevalue=\$"$typename"
 -    if [ -d $top_srcdir/$type ] ; then
--        if [ ! -d $DESTDIR$typevalue ] ; then
--            MkDir $typevalue
--        fi
+-        MkDir $typevalue
 -        echo "Installing $pkgname $type to $DESTDIR$typevalue"
 -        InstallDirRecur $top_srcdir/$type $typevalue $MODE
 -    fi
@@ -19,9 +26,7 @@
 +%%PORTDOCS%%    typename=${type}dir
 +%%PORTDOCS%%    eval typevalue=\$"$typename"
 +%%PORTDOCS%%    if [ -d $top_srcdir/$type ] ; then
-+%%PORTDOCS%%        if [ ! -d $DESTDIR$typevalue ] ; then
-+%%PORTDOCS%%            MkDir $typevalue
-+%%PORTDOCS%%        fi
++%%PORTDOCS%%        MkDir $typevalue
 +%%PORTDOCS%%        echo "Installing $pkgname $type to $DESTDIR$typevalue"
 +%%PORTDOCS%%        InstallDirRecur $top_srcdir/$type $typevalue $MODE
 +%%PORTDOCS%%    fi

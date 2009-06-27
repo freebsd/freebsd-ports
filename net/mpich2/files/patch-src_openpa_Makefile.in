@@ -1,0 +1,23 @@
+--- ./src/openpa/Makefile.in.orig	2009-06-03 03:50:27.000000000 +0200
++++ ./src/openpa/Makefile.in	2009-06-26 20:57:38.000000000 +0200
+@@ -214,13 +214,13 @@
+ 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+ install-dist_docDATA: $(dist_doc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
+-	@list='$(dist_doc_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+-	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+-	done
++%%PORTDOCS%%	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
++%%PORTDOCS%%	@list='$(dist_doc_DATA)'; for p in $$list; do \
++%%PORTDOCS%%	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
++%%PORTDOCS%%	  f=$(am__strip_dir) \
++%%PORTDOCS%%	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
++%%PORTDOCS%%	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
++%%PORTDOCS%%	done
+ 
+ uninstall-dist_docDATA:
+ 	@$(NORMAL_UNINSTALL)

@@ -1,0 +1,11 @@
+--- ./src/packaging/pkgconfig/Makefile.in.orig	2009-06-03 03:49:04.000000000 +0200
++++ ./src/packaging/pkgconfig/Makefile.in	2009-06-22 19:19:08.000000000 +0200
+@@ -18,7 +18,7 @@
+ prefix          = @prefix@
+ libdir          = @libdir@
+ exec_prefix     = @exec_prefix@
+-pkgconfigdir    = @libdir@/pkgconfig
++pkgconfigdir    = $(LOCALBASE)/libdata/pkgconfig
+ MAKE            = @MAKE@
+ MPILIBNAME      = @MPILIBNAME@
+ PMPILIBNAME     = @PMPILIBNAME@
