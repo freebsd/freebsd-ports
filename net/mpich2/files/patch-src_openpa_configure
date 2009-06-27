@@ -1,0 +1,11 @@
+--- ./src/openpa/configure.orig	2009-06-03 03:50:24.000000000 +0200
++++ ./src/openpa/configure	2009-06-23 20:51:27.000000000 +0200
+@@ -774,7 +774,7 @@
+ localstatedir='${prefix}/var'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+-docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
++docdir='${datarootdir}/doc/${PACKAGE}'
+ infodir='${datarootdir}/info'
+ htmldir='${docdir}'
+ dvidir='${docdir}'

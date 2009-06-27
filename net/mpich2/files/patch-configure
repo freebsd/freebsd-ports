@@ -1,22 +1,42 @@
---- configure.orig	2008-04-05 00:04:44.000000000 +0200
-+++ configure	2008-04-07 19:06:49.000000000 +0200
-@@ -31340,8 +31340,8 @@
- rm -f conftest.err conftest.$ac_objext \
-       conftest$ac_exeext conftest.$ac_ext
- if test "$ac_cv_search_pthread_key_create" = no; then
--  for ac_lib in pthread; do
--    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
-+  for ac_lib in $PTHREAD_LIBS; do
-+    LIBS="$ac_lib  $ac_func_search_save_LIBS"
-     cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
+--- ./configure.orig	2009-06-03 03:49:17.000000000 +0200
++++ ./configure	2009-06-23 19:16:46.000000000 +0200
+@@ -36119,12 +36119,12 @@
+   return 0;
+ }
  _ACEOF
-@@ -31385,7 +31385,7 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--  ac_cv_search_pthread_key_create="-l$ac_lib"
-+  ac_cv_search_pthread_key_create="$ac_lib"
- break
+-for ac_lib in '' pthread; do
++for ac_lib in '' $PTHREAD_LIBS; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
+-    ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++    ac_res=$ac_lib
++    LIBS="$ac_lib  $ac_func_search_save_LIBS"
+   fi
+   rm -f conftest.$ac_objext conftest$ac_exeext
+ if { (ac_try="$ac_link"
+@@ -36248,11 +36248,11 @@
+   	    { $as_echo "$as_me:$LINENO: result: $pac_cv_lib_pthread_broken" >&5
+ $as_echo "$pac_cv_lib_pthread_broken" >&6; }
+ 	    if test "$pac_cv_lib_pthread_broken" = yes ; then
+-                # Try again with -lpthread
++                # Try again with pthread
+ 	        { $as_echo "$as_me:$LINENO: checking whether pthread routines with explicit lib are broken" >&5
+-$as_echo_n "checking whether pthread routines with explicit lib are broken... " >&6; }
++$as_echo_n "checking whether $PTHREAD_LIBS routines with explicit lib are broken... " >&6; }
+ 		saveLIBS=$LIBS
+-		LIBS="$LIBS -lpthread"
++		LIBS="$LIBS $PTHREAD_LIBS"
+ 	        if test "$cross_compiling" = yes; then
+   pac_cv_lib_pthread_broken_explicit=unknown
  else
-   echo "$as_me: failed program was:" >&5
+@@ -36608,7 +36608,7 @@
+ _ACEOF
+ 
+ 	fi
+-	THR_LIBS="$THR_LIBS -lpthread"
++	THR_LIBS="$THR_LIBS $PTHREAD_LIBS"
+ 	MPICH2_THREAD_PACKAGE=pthreads
+ 	;;
+     solaris)

@@ -1,15 +1,15 @@
 @comment "PREFIX set to %D/mpich2."
 bin/check_callstack
 @comment SLOG-2 tools are not installed if NOPORTDOCS is set
-%%PORTDOCS%%%%JAVA%%bin/clog2TOslog2
+%%JAVA%%bin/clog2TOslog2
 bin/clog2_join
 bin/clog2_print
-%%PORTDOCS%%%%JAVA%%bin/clog2print
 bin/clog2_repair
-%%PORTDOCS%%%%JAVA%%bin/clogTOslog2
-%%PORTDOCS%%%%JAVA%%bin/clogprint
-%%PORTDOCS%%%%JAVA%%bin/jumpshot
-%%PORTDOCS%%%%JAVA%%bin/logconvertor
+%%JAVA%%bin/clog2print
+%%JAVA%%bin/clogTOslog2
+%%JAVA%%bin/clogprint
+%%JAVA%%bin/jumpshot
+%%JAVA%%bin/logconvertor
 %%PM_MPD%%bin/mpd
 %%PM_MPD%%bin/mpd.py
 %%PM_MPD%%bin/mpd.pyc
@@ -91,26 +91,23 @@ bin/mpif90
 %%PM_MPD%%bin/mpirun.pyc
 %%PM_MPD%%bin/mpirun.pyo
 bin/parkill
-%%PM_SMPD%%bin/smpd
-%%PORTDOCS%%%%JAVA%%bin/rlogTOslog2
-%%PORTDOCS%%%%JAVA%%bin/rlog_check_timeorder
-%%PORTDOCS%%%%JAVA%%bin/rlog_print
-%%PORTDOCS%%%%JAVA%%bin/rlogprint
-%%PORTDOCS%%%%JAVA%%bin/slog2filter
-%%PORTDOCS%%%%JAVA%%bin/slog2navigator
-%%PORTDOCS%%%%JAVA%%bin/slog2print
-%%PORTDOCS%%%%JAVA%%bin/slog2updater
-%%PORTDOCS%%%%JAVA%%bin/traceTOslog2.in
-%%PORTDOCS%%%%JAVA%%bin/traceprint.in
+%%JAVA%%bin/rlogTOslog2
+%%JAVA%%bin/rlog_check_timeorder
+%%JAVA%%bin/rlog_print
+%%JAVA%%bin/rlogprint
+%%JAVA%%bin/slog2filter
+%%JAVA%%bin/slog2navigator
+%%JAVA%%bin/slog2print
+%%JAVA%%bin/slog2updater
+%%JAVA%%bin/traceTOslog2.in
+%%JAVA%%bin/traceprint.in
 etc/mpe_callstack_ldflags.conf
 etc/mpe_f77env.conf
-etc/mpe_f77env.conf.in
-%%X11%%etc/mpe_graphics.conf
+etc/mpe_graphics.conf
 etc/mpe_help.conf
-etc/mpe_help.conf.in
 etc/mpe_log.conf
-%%X11%%etc/mpe_mpianim.conf
 etc/mpe_log_postlib.conf
+etc/mpe_mpianim.conf
 etc/mpe_mpicheck.conf
 etc/mpe_mpilog.conf
 etc/mpe_mpitrace.conf
@@ -119,6 +116,7 @@ etc/mpicc.conf
 etc/mpicxx.conf
 etc/mpif77.conf
 etc/mpif90.conf
+etc/mpixxx_opts.conf
 include/clog_commset.h
 include/clog_const.h
 include/clog_inttypes.h
@@ -141,6 +139,19 @@ include/mpicxx.h
 include/mpif.h
 include/mpio.h
 include/mpiof.h
+include/opa_config.h
+include/opa_primitives.h
+include/opa_queue.h
+include/opa_util.h
+include/primitives/opa_by_lock.h
+include/primitives/opa_emulated.h
+include/primitives/opa_gcc_ia64.h
+include/primitives/opa_gcc_intel_32_64.h
+include/primitives/opa_gcc_intrinsics.h
+include/primitives/opa_gcc_ppc.h
+include/primitives/opa_gcc_sicortex.h
+include/primitives/opa_nt_intrinsics.h
+include/primitives/opa_sun_atomic_ops.h
 %%JAVA%%lib/clog2TOdrawable.jar
 %%JAVA%%lib/clog2TOslog2.jar
 %%JAVA%%lib/clog2print.jar
@@ -170,6 +181,10 @@ lib/libmpichcxx.so
 lib/libmpichcxx.so.1
 lib/libmpichcxx.so.1.1
 lib/libmpichf90.a
+lib/libmpichf90.so
+lib/libmpichf90.so.1
+lib/libmpichf90.so.1.1
+lib/libopa.a
 lib/libtmpe.a
 %%JAVA%%lib/logconvertor.jar
 lib/mpe_prof.o
@@ -179,15 +194,14 @@ lib/mpe_prof.o
 %%JAVA%%lib/slog2printserial.jar
 %%JAVA%%lib/slog2update205to206.jar
 %%JAVA%%lib/traceTOslog2.jar
+%%JAVA%%lib/trace_rlog/libTraceInput.la
+%%JAVA%%lib/trace_rlog/libTraceInput.so
 %%JAVA%%lib/traceprint.jar
-%%PORTDOCS%%%%JAVA%%lib/trace_rlog/libTraceInput.la
-%%PORTDOCS%%%%JAVA%%lib/trace_rlog/libTraceInput.so
 sbin/mpecheckinstall
 sbin/mpetestexec
 sbin/mpetestexeclog
 sbin/mpetestlink
 sbin/mpeuninstall
-%%PORTDOCS%%%%JAVA%%share/barrier.rlog
 %%PORTDOCS%%%%DOCSDIR%%/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/install.pdf
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/About24.png
@@ -334,10 +348,11 @@ sbin/mpeuninstall
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/up_g.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/usersguide.css
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/usersguide.html
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/usersguide.pdf
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/yaxis_label_panel_expanded.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/yaxis_label_panel_simple.png
-%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/usersguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/logging.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/smpd_pmi.pdf
 %%PORTDOCS%%%%DOCSDIR%%/user.pdf
 %%PORTDOCS%%%%DOCSDIR%%/www1/MPI.html
@@ -726,8 +741,11 @@ share/examples_logging/pthread_allreduce.c
 share/examples_logging/pthread_sendrecv.c
 share/examples_logging/pthread_sendrecv_user.c
 share/examples_logging/srtest.c
-%%PORTDOCS%%%%JAVA%%share/fpilog.clog
-%%PORTDOCS%%%%JAVA%%share/fpilog.slog2
+%%JAVA%%share/logfiles/barrier.rlog
+%%JAVA%%share/logfiles/fpilog.clog
+%%JAVA%%share/logfiles/fpilog.slog2
+share/mpich2.module
+%%JAVA%%@dirrm share/logfiles
 @dirrm share/examples_logging
 %%X11%%@dirrm share/examples_graphics
 @dirrm share/examples_collchk
@@ -743,9 +761,10 @@ share/examples_logging/srtest.c
 %%PORTDOCS%%@dirrm man/man4
 %%PORTDOCS%%@dirrm man/man3
 %%PORTDOCS%%@dirrm man/man1
-@dirrm man
-%%PORTDOCS%%%%JAVA%%@dirrm lib/trace_rlog
+%%PORTDOCS%%@dirrm man
+%%JAVA%%@dirrm lib/trace_rlog
 @dirrm lib
+@dirrm include/primitives
 @dirrm include
 @dirrm etc
 @dirrm bin

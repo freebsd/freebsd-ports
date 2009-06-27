@@ -1,0 +1,19 @@
+--- ./src/mpi/romio/util/romioinstall.in.orig	2008-08-01 19:31:50.000000000 +0200
++++ ./src/mpi/romio/util/romioinstall.in	2009-06-26 23:36:59.000000000 +0200
+@@ -145,11 +145,11 @@
+ # Files
+     MkDir $prefix
+ 
+-    echo "copying directory $ROMIO_HOME/doc to $docdir"
+-    MkDir $docdir
+-    for file in COPYRIGHT README users-guide.ps.gz ; do
+-	CopyFile $ROMIO_HOME/$file $docdir
+-    done
++%%PORTDOCS%%    echo "copying directory $ROMIO_HOME/doc to $docdir"
++%%PORTDOCS%%    MkDir $docdir
++%%PORTDOCS%%    for file in COPYRIGHT README users-guide.ps.gz ; do
++%%PORTDOCS%%	CopyFile $ROMIO_HOME/$file $docdir
++%%PORTDOCS%%    done
+ 
+     echo "copying directory include to $includedir"
+     MkDir $includedir

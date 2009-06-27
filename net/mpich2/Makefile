@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpich2
-PORTVERSION=	1.0.7
-PORTREVISION=	3
+PORTVERSION=	1.1
 PORTEPOCH=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${PORTVERSION}/
@@ -80,19 +79,16 @@ CONFIGURE_ARGS+=	--with-pmi=simple --with-pm=mpd
 PLIST_SUB+=	PM_MPD="" PM_SMPD="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--without-docdir --without-htmldir
-.else
-CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-htmldir=${DOCSDIR}
-.endif
-
 LIBSSO=		fmpich mpich mpichcxx
 
 THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
-		test/mpi/threads/pt2pt/Makefile.in
+		test/mpi/threads/pt2pt/Makefile.in		\
+		src/mpe2/src/logging/configure
 LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
 		src/mpe2/src/slog2sdk/trace_sample/configure	\
 		src/mpe2/src/graphics/configure
+DOC2PATCH=	Makefile.in src/mpe2/sbin/mpeinstall.in		\
+		src/openpa/Makefile.in src/mpi/romio/util/romioinstall.in
 
 .include <bsd.port.pre.mk>
 
@@ -132,24 +128,24 @@ pre-everything::
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${LOCALBASE2FIX:S|^|${WRKSRC}/|}
-
-	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/confdb/libtool-2.13.m4
-	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/confdb/libtool.m4
-	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/src/mpe2/src/slog2sdk/trace_rlog/libtool.m4
-	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/src/mpe2/src/slog2sdk/trace_sample/libtool.m4
-	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${LOCALBASE2FIX:S|^|${WRKSRC}/|}
-.for fin in Makefile.in src/mpe2/sbin/mpeinstall.in
+	${FIND} ${WRKSRC} -name configure | ${XARGS}	\
+		${REINPLACE_CMD} -e 's|doc/$${PACKAGE}|doc/${PORTNAME}|'
+.for fin in ${DOC2PATCH}
 . if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|%%PORTDOCS%%|#|' ${WRKSRC}/${fin}
 . else
 	${REINPLACE_CMD} -e 's|%%PORTDOCS%%||' ${WRKSRC}/${fin}
 . endif
 .endfor
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's|lib doc share|lib share|'	\
+		${WRKSRC}/src/mpe2/src/slog2sdk/sbin/install-package.in
+.endif
 
 post-configure:
 	${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g;	\
-		s|$${prefix}|${PREFIX}|g' ${WRKSRC}/src/pkgconfig/mpich2-ch3.pc
+		s|$${prefix}|${PREFIX}|g'			\
+		${WRKSRC}/src/packaging/pkgconfig/mpich2-ch3.pc
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
@@ -170,6 +166,7 @@ regression-test:	install
 	${CHMOD} go-r ${HOME}/.mpd.conf
 	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
 .endif
+	@${ECHO_MSG} "Don't hesitate to increase MPIEXEC_RECV_TIMEOUT if needed!"
 	${PREFIX}/bin/mpd &
 	(cd ${WRKSRC} && \
 	PATH=${PATH}:${PREFIX}/bin VERBOSE=1 ${MAKE} testing)
