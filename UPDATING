@@ -18,34 +18,36 @@ upgrades.
   AFFECTS: gstreamer-plugins-bad gstreamer-plugins-good gstreamer-plugins-ugly
   AUTHOR: kwm@FreeBSD.org
 
-  Due to the move of several plugins from gstreamer-plugins-bad to 
-  gstreamer-plugins-good and gstreamer-plugins-ugly.
-  Its nessesary to update gstreamer-plugins-bad first.
-  
-  portupgrade -R gstreamer-plugins-bad
-  or 
-  portmaster gstreamer-plugins-bad
+  Due to the move of several plugins from gstreamer-plugins-bad to
+  gstreamer-plugins-good and gstreamer-plugins-ugly, it is necessary to
+  update update gstreamer-plugins-bad first:
+
+	portupgrade -R gstreamer-plugins-bad
+
+  or, using portmaster:
+
+	portmaster gstreamer-plugins-bad
 
 20090619:
   AFFECTS: users of net-p2p/transmission-daemon
-  AUTHOR: mezz@FreeBSD..org
+  AUTHOR: mezz@FreeBSD.org
 
   The UID/GID of transmission has been changed from 919 to 921. The data
   configure has been changed from ${PREFIX}/etc/transmission/home/.config
   to ${PREFIX}/etc/transmission/home. To update the UID/GID:
 
-  # pw groupmod transmission -g 921
-  # pw usermod transmission -u 921 -g 921
+	# pw groupmod transmission -g 921
+	# pw usermod transmission -u 921 -g 921
 
 20090618:
   AFFECTS: users of www/p5-Catalyst
-  AUTHOR: pgollucci@FreeBSD..org
+  AUTHOR: pgollucci@FreeBSD.org
 
   Most applications and plugins should run unaltered on Catalyst 5.80.
 
-  However, a lot of refactoring work has taken place, and several changes 
-  have been made which could cause incompatibilities. If your application 
-  or plugin is using deprecated code, or relying on side effects, then you 
+  However, a lot of refactoring work has taken place, and several changes
+  have been made which could cause incompatibilities. If your application
+  or plugin is using deprecated code, or relying on side effects, then you
   could have issues upgrading to this release.
 
   http://search.cpan.org/~mramberg/Catalyst-Runtime-5.80005/lib/Catalyst/Upgrading.pod
@@ -57,44 +59,45 @@ upgrades.
   The GID of virtualbox has changed due to a conflict with databases/couchdb.
   Update GID of vboxusers after updating the port:
 
-  # pw groupmod vboxusers -g 920
+	# pw groupmod vboxusers -g 920
 
 20090617:
   AFFECTS: users of math/fftw3 math/fftw3-long math/fftw3-float
-  AUTHOR:  db@FreeBSD.org
+  AUTHOR: db@FreeBSD.org
 
-  The Fortran option has removed from fftw3 and moved into slave ports, 
+  The Fortran option has removed from fftw3 and moved into slave ports,
   math/fftw3-fortran math/fftw3-long-fortran and math/fftw3-float-fortran.
 
 20090615:
   AFFECTS: users of x11-wm/enlightenment and x11-wm/enlightenment-devel
   AUTHOR: gahr@FreeBSD.org
 
-  The development version of the Enlightenment window manager, a.k.a. E17, has
-  moved from x11-wm/enlightenment-devel to x11-wm/enlightenment. The DR16 branch
-  now resides in x11-wm/e16.
+  The development version of the Enlightenment window manager, a.k.a. E17,
+  was moved from x11-wm/enlightenment-devel to x11-wm/enlightenment.  The
+  DR16 branch now resides in x11-wm/e16.
 
 20090615:
   AFFECTS: users of multimedia/mlt++
   AUTHOR: beat@FreeBSD.org
 
-  The port multimedia/mlt++ was incorporated into multimedia/mlt since
-  0.4.2. Delete multimedia/mlt++ first and then install/update
+  The multimedia/mlt++ port was incorporated into multimedia/mlt since
+  version 0.4.2.  Delete multimedia/mlt++ first and then install/update
   multimedia/mlt.
 
 20090613:
   AFFECTS: users of www/hudson
   AUTHOR: hq@FreeBSD.org
 
-  Hudson is now running as a standalone process and no longer relies on Apache
-  Tomcat. As such, it should now be configured by defining hudson_* variables
-  in rc.conf. See comments from rc.d script for further details.
+  Hudson is now running as a standalone process and no longer relies on
+  Apache Tomcat.  As such, it should now be configured by defining
+  hudson_* variables in rc.conf.  See comments from rc.d script for further
+  details.
 
   The default setup is using the same port numbers and HTTP URL prefix as
-  before in order to reduce the effort of upgrading the port. Hence, it may
-  conflict with some running Apache Tomcat instance. To fix this problem, you
-  may either de-install www/tomcat6 or use the following settings in hudson_args
-  from /etc/rc.conf:
+  before in order to reduce the effort of upgrading the port.  Hence, it
+  may conflict with some running Apache Tomcat instance.  To fix this
+  problem, you may either deinstall www/tomcat6, or use the following
+  settings in hudson_args from /etc/rc.conf:
 
     --httpPort=??? --ajp13Port=???
 
@@ -102,11 +105,12 @@ upgrades.
   AFFECTS: users of www/apache22
   AUTHOR: pgollucci@FreeBSD.org
 
-  The 2 rc.d scripts have been renamed
-    apache22.sh -> apache22
-    htcacheclean.sh -> htcacheclean
+  Two rc.d scripts have been renamed:
 
-  You'll need to update any crons wrappers, etc for the new paths.
+	apache22.sh -> apache22
+	htcacheclean.sh -> htcacheclean
+
+  You'll need to update any crons wrappers, etc. for the new paths.
 
 20090608:
   AFFECTS: users of lang/python* and py-*
@@ -114,7 +118,7 @@ upgrades.
 
   The default version of Python has been changed from 2.5.x to 2.6.x.
   If you have 2.5.x installed, perform an upgrade of lang/python25 to
-  lang/python26 with the following command:
+  lang/python26 with one of the following commands:
 
   If using portupgrade:
   # portupgrade -o lang/python26 lang/python25
@@ -122,17 +126,17 @@ upgrades.
   If using portmaster:
   # portmaster -o lang/python26 lang/python25
 
-  If you want to remain 2.5.x as default Python version, set the
-  PYTHON_DEFAULT_VERSION variable to 'python2.5' without quotes in
-  make.conf, then go to lang/python and perform the following
+  If you want to retain 2.5.x as default Python version, set the
+  PYTHON_DEFAULT_VERSION variable to 'python2.5' (without quotes) in
+  /etc/make.conf, then go to lang/python and perform the following
   command:
 
   # portupgrade -R python
 
   Once the installed Python has been updated to 2.6, by using the
   method above, it is required to run the upgrade-site-packages target in
-  lang/python to assure that site-packages are made available to the new Python
-  version.
+  lang/python to assure that site-packages are made available to the new
+  Python version.
 
   If using portupgrade:
   # cd /usr/ports/lang/python && make upgrade-site-packages
@@ -158,8 +162,9 @@ upgrades.
   AUTHOR: itetcu@FreeBSD.org
 
   Version 2.6.1 introduced a POLA violation by expecting aliases.db to be
-  in /etc/mail/aliases.db (not /etc/aliases.db). With this version the
+  in /etc/mail/aliases.db (not /etc/aliases.db).  With this version the
   location is reverted to the right place.
+
   If you updated your installation to 2.6.1 you need to run newaliases(1)
   again after you installed 2.6.2.
 
@@ -190,6 +195,7 @@ upgrades.
 
   viewvc.conf and templates are not compatible to 1.0.x version, even the
   database scripts have changed.  For details see:
+
   http://viewvc.tigris.org/source/browse/*checkout*/viewvc/trunk/docs/upgrading-howto.html
 
 20090530:
@@ -198,21 +204,21 @@ upgrades.
 
   Ports for Japanese fonts have been reorganized in the following way:
 
-  japanese/ipa-ttfonts -> japanese/font-mplus-ipa
-  japanese/ipa-ttfonts -> japanese/font-ipa
-  japanese/kochi-ttfonts -> japanese/font-kochi
-  japanese/mplusfonts -> japanese/font-mplus
-  japanese/sazanami-ttf -> japanese/font-sazanami
-  japanese/shinonome -> japanese/font-shinonome
-  japanese/umefont -> japanese/font-ume
-  japanese/vlgothic -> japanese/font-vlgothic
+	japanese/ipa-ttfonts -> japanese/font-mplus-ipa
+	japanese/ipa-ttfonts -> japanese/font-ipa
+	japanese/kochi-ttfonts -> japanese/font-kochi
+	japanese/mplusfonts -> japanese/font-mplus
+	japanese/sazanami-ttf -> japanese/font-sazanami
+	japanese/shinonome -> japanese/font-shinonome
+	japanese/umefont -> japanese/font-ume
+	japanese/vlgothic -> japanese/font-vlgothic
 
   While basically these are port name changes for consistency,
   installation directories are also changed:
 
-  font files -> ${PREFIX}/share/${PORTNAME}/*
-  symlinks -> ${PREFIX}/share/fonts/{TTF,OTF,fontname,...}/*
-  symlinks -> ${PREFIX}/lib/X11/fonts/{TTF,OTF,misc,fontname,...}/*
+	font files -> ${PREFIX}/share/${PORTNAME}/*
+	symlinks -> ${PREFIX}/share/fonts/{TTF,OTF,fontname,...}/*
+	symlinks -> ${PREFIX}/lib/X11/fonts/{TTF,OTF,misc,fontname,...}/*
 
   A user-visible one is that the directory name "TrueType" is replaced
   with "TTF".
@@ -221,14 +227,14 @@ upgrades.
   standard fonts used in the Ports Collection.  Currently they
   contain:
 
-  std.ja_JP/Mincho
-  std.ja_JP/Gothic
-  std.ja_JP/Ryumin-Light
-  std.ja_JP/GothicBBB-Medium
-  std.zh_CN/STHeiti-Regular
-  std.zh_CN/STSong-Light
-  std.zh_CN/MSung-Light
-  std.zh_CN/MHei-Medium
+	std.ja_JP/Mincho
+	std.ja_JP/Gothic
+	std.ja_JP/Ryumin-Light
+	std.ja_JP/GothicBBB-Medium
+	std.zh_CN/STHeiti-Regular
+	std.zh_CN/STSong-Light
+	std.zh_CN/MSung-Light
+	std.zh_CN/MHei-Medium
 
   under ${PREFIX}/share/fonts/.  They are just symlinks to
   corresponding font files.  The symlink names are based on popular
@@ -241,7 +247,7 @@ upgrades.
   difficult when the font file name is changed, for example.
 
 20090516:
-  AFFECTS: users of devel/viewvc 
+  AFFECTS: users of devel/viewvc
   AUTHOR: pgollucci@FreeBSD.org
 
   OPTION APACHE2 has been changed to APACHE (WITH_APACHE)
@@ -252,8 +258,8 @@ upgrades.
   AFFECTS: users of print/cups-base and portupgrade
   AUTHOR: dinoex@FreeBSD.org
 
-  print/cups has been split in multiple ports. If upgrading
-  from 1.3.10_1 and below you must remove the installed version first.
+  The print/cups port has been split into multiple ports.  If upgrading
+  from 1.3.10_1 and below, you must remove the installed version first.
 
 20090412:
   AFFECTS: users of sysutils/bacula-server
@@ -287,8 +293,9 @@ upgrades.
   to linux_base-f8 and linux Fedora 8 infrastructure ports as well.
 
   If you want to switch to linux-f8 ports, please define at /etc/make.conf:
-  OVERRIDE_LINUX_BASE_PORT=f8
-  OVERRIDE_LINUX_NONBASE_PORTS=f8
+
+	OVERRIDE_LINUX_BASE_PORT=f8
+	OVERRIDE_LINUX_NONBASE_PORTS=f8
 
 20090328:
   AFFECTS: users of lang/perl*
@@ -302,14 +309,14 @@ upgrades.
 	pkgdb -Ff
 
     1) Reinstall perl with new 5.10:
-        portupgrade -o lang/perl5.10 -f perl-5.8.\*
+	portupgrade -o lang/perl5.10 -f perl-5.8.\*
 
     2) Reinstall everything that depends on Perl:
-        portupgrade -fr perl
+	portupgrade -fr perl
 
   Portmaster users:
-        portmaster -o lang/perl5.10 lang/perl5.8
-        portmaster -r perl-
+	portmaster -o lang/perl5.10 lang/perl5.8
+	portmaster -r perl-
 
   Note: If the "perl-" glob matches  more than one port you will need to
 	specify the name of the perl directory in /var/db/pkg explicitly.
@@ -318,8 +325,8 @@ upgrades.
   AFFECTS: users of security/clamav
   AUTHOR: garga@FreeBSD.org
 
-  After version 0.95 clamav-milter doesn't accept parameters by command
-  line. If you are using $clamav_milter_flags on rc.conf to set its
+  After version 0.95 clamav-milter does not accept parameters by command
+  line.  If you are using $clamav_milter_flags on rc.conf to set its
   parameters you will need to move to new ${PREFIX}/etc/clamav-milter.conf.
 
 20090319:
@@ -329,7 +336,7 @@ upgrades.
   With the addition of shells/bash version 4.x, people wanting to stick
   with bash 3.x should perform the following update:
 
-  $ portupgrade -f -o shells/bash3 bash
+	$ portupgrade -f -o shells/bash3 bash
 
 20090318:
   AFFECTS: users of www/suphp
@@ -371,7 +378,9 @@ upgrades.
   This means that the Lire database format has changed. If you have
   one or more old lire stores, you will need to convert each of
   them from SQLite2 format to SQLite3 format, like this:
+
 	$ sqlite oldstore.db .dump | sqlite3 newstore.db
+
   This assumes that you have both sqlite2 and sqlite3 installed on
   your system, and that the names of the command line interface for
   the old and new version are sqlite and sqlite3 respectively (this
@@ -387,10 +396,12 @@ upgrades.
   However, it is strongly recommended that you back up your database before
   installing a new version of MythTV.
 
-  Example:
+  For example:
+
 	$ mysqldump -u mythtv -pmythtv mythconverg -c > mythtv_backup.sql
 
-  To restore: (assuming that you've dropped the database)
+  To restore (assuming that you've dropped the database):
+
 	$ mysql -u root
 	mysql>create database mythconverg;
 	mysql>exit
@@ -400,25 +411,26 @@ upgrades.
   AFFECTS: users of devel/libusb on CURRENT
   AUTHOR: stas@FreeBSD.org
 
-  FreeBSD libusb20 was renamed to libusb in r189585 and thus,
-  being fully compatible with libusb20, replaces devel/libusb
-  on HEAD. devel/libusb should not be used on these systems. Users
-  of libusb-dependent ports are advised to remove libusb package
-  from their systems, and rebuild all libusb dependencies. One
-  of possible ways to achive this is listed below:
+  FreeBSD libusb20 was renamed to libusb in r189585 and thus, being fully
+  compatible with libusb20, replaces devel/libusb on HEAD.  devel/libusb
+  should not be used on these systems.  Users of libusb-dependent ports
+  are advised to remove libusb package from their systems, and rebuild all
+  libusb dependencies.  One of the possible ways to achieve this is
+  listed below:
+
 	# set tempfile=`mktemp /tmp/usbports.XX`
 	# pkg_info -qR /var/db/pkg/libusb-* > ${tempfile}
-  	# pkg_delete -f /var/db/pkg/libusb-*
-	# cat ${tempfile} | xargs portupgrade -f 
+	# pkg_delete -f /var/db/pkg/libusb-*
+	# cat ${tempfile} | xargs portupgrade -f
 	# rm -f ${tempfile}
 
 20090309:
   AFFECTS: users of multimedia/phonon
   AUTHOR: kde@FreeBSD.org
 
-  multimedia/phonon port has been split into phonon itself, phonon-xine
-  and phono-gstreamer backends. After updating phonon port you have
-  to install at least one backend. phonon-xine backend is recommended
+  multimedia/phonon port has been split into phonon itself, phonon-xine,
+  and phonon-gstreamer backends.  After updating phonon port you have
+  to install at least one backend; phonon-xine backend is recommended
   for KDE.
 
 20090308:
@@ -446,27 +458,30 @@ upgrades.
   AFFECTS: users of x11-wm/xfce4
   AUTHOR: oliver@FreeBSD.org
 
-  When upgrading from xfce 4.4 to 4.6 make sure you uninstall the following
+  When upgrading from Xfce 4.4 to 4.6 make sure you uninstall the following
   ports:
-        x11/libxfce4mcs
-        sysutils/xfce4-mcs-manager
-        sysutils/xfce4-mcs-plugins
-        x11-themes/xfce4-icon-theme
+
+	x11/libxfce4mcs
+	sysutils/xfce4-mcs-manager
+	sysutils/xfce4-mcs-plugins
+	x11-themes/xfce4-icon-theme
+
   You may uninstall them before you start the upgrade procedure (preferred)
   or even afterwards when the upgrade went fine.
 
-  Please also note, that xfce 4.6 does not come with an icon theme any more.
+  Please also note that Xfce 4.6 does not come with an icon theme any more.
   Xfce 4.6 now depends on the Tango theme which is now installed by default.
-  The default installation of xfce is also adjusted to use this icon theme
-  instead of the xfce 4.4 standard Rodent theme. If you are upgrading from
-  xfce 4.4 to 4.6 you probably still have the Rodent theme selected. This
-  will lead to several "missing" icons when starting up xfce.
-  Make sure to switch as well to the Tango theme. To do this just open the
-  Settings Manager and select Appearance. Inside the Appearance dialog
+  The default installation of Xfce is also adjusted to use this icon theme
+  instead of the Xfce 4.4 standard Rodent theme.  If you are upgrading from
+  Xfce 4.4 to 4.6 you probably still have the Rodent theme selected.  This
+  will lead to several "missing" icons when starting up Xfce.
+
+  Make sure to switch as well to the Tango theme.  To do this just open the
+  Settings Manager and select Appearance.  Inside the Appearance dialog
   switch to the Icons tab and select the "Tango" entry in the list on the
   left side of the Icons tab.
 
-  For enabling the Reboot/Shutdown functionality of xfce's logout dialog
+  For enabling the Reboot/Shutdown functionality of Xfce's logout dialog
   please read the note which gets printed out after the installation of
   x11-wm/xfce4 about how to configure PolicyKit.
 
@@ -485,15 +500,15 @@ upgrades.
   AFFECTS: users of www/zend-framework
   AUTHOR: glarkin@FreeBSD.org
 
-  A local file inclusion (LFI) vulnerability was fixed in Zend
-  Framework 1.7.5. The LFI was present in the Zend_View::render()
-  method, and allowed inclusion of scripts with relative path
-  names, e.g. "../../../my/script/dir/myscript.php".
+  A local file inclusion (LFI) vulnerability was fixed in Zend Framework
+  1.7.5. The LFI was present in the Zend_View::render() method, and
+  allowed inclusion of scripts with relative path names, e.g.
+  "../../../my/script/dir/myscript.php".
 
   If the script path name is hard-coded into the application and is not
-  generated by user input, the vulnerability does not apply. Because
-  of this exception, the Zend Framework team has added a flag to
-  disable the LFI protection in the render() method.
+  generated by user input, the vulnerability does not apply.  Because of
+  this exception, the Zend Framework team has added a flag to disable
+  the LFI protection in the render() method.
 
   Full details of the vulnerability, whether it applies to your
   application and how to disable the LFI protection in the render()
@@ -516,25 +531,25 @@ upgrades.
   deskutils/kdepimlib4, deskutils/kdepim4, devel/automoc4
   AUTHOR: kde@FreeBSD.org
 
-  KDE4 has been updated from 4.1.4 to 4.2.0. A number of applications
-  have been moved between packages. The easiest way to avoid various
+  KDE4 has been updated from 4.1.4 to 4.2.0.  A number of applications
+  have been moved between packages.  The easiest way to avoid various
   problems during update is to delete all KDE-4.1.4 ports and install
-  KDE-4.2.0.
+  KDE-4.2.0:
 
-     # pkg_delete -f kde\*4.1.4\* automoc4-\*
-     # portmaster -a (or portupgrade -a)
-     # cd ${PORTSDIR}/x11/kde4 && make config && make install clean
+	# pkg_delete -f kde\*4.1.4\* automoc4-\*
+	# portmaster -a (or portupgrade -a)
+	# cd ${PORTSDIR}/x11/kde4 && make config && make install clean
 
 20090207:
   AFFECTS: users of devel/libslang and devel/libslang2
-  AUTHOR:  pgollucci@FreeBSD.org
+  AUTHOR: pgollucci@FreeBSD.org
 
-  devel/libslang has been removed in favor of devel/libslang2
-  after not being released in the last 5yrs.  WITH_SLANG2 is
-  no longer a valid ports KNOB.  All ports depending on devel/libslang
-  should be recompiled.
+  devel/libslang has been removed in favor of devel/libslang2 after not
+  being released during last five years.  WITH_SLANG2 is no longer a
+  valid ports KNOB.  All ports depending on devel/libslang should be
+  recompiled, e.g.:
 
-   # portupgrade -o devel/libslang2 devel/libslang
+	# portupgrade -o devel/libslang2 devel/libslang
 
 20090130:
   AFFECTS: users of www/httptunnel
@@ -548,50 +563,49 @@ upgrades.
   AFFECTS: gstreamer-plugins
   AUTHOR: kwm@FreeBSD.org
 
-  The gstapp library moved from the gstreamer-plugins-bad package
-  to gstreamer-plugins. It will be necessary to rebuild the
-  gstreamer-plugins port. After updating your installed ports do:
+  The gstapp library moved from the gstreamer-plugins-bad package to
+  gstreamer-plugins.  It will be necessary to rebuild the gstreamer-plugins
+  port.  After updating your installed ports please do (if you are using
+  portupgrade):
 
-  portupgrade users:
-  # portupgrade -f gstreamer-plugins
+	# portupgrade -f gstreamer-plugins
 
 20090127:
   AFFECTS: users of www/xpi-deepestsender
   AUTHOR: pgollucci@FreeBSD.org
 
-  www/xpi-deepestsender has been updated to v0.9.0.  This
-  version is _only_ for Firefox v3.x
+  www/xpi-deepestsender has been updated to version 0.9.0.  This version
+  is *only* for Firefox version 3.x.
 
 20090124:
   AFFECTS: users of x11-servers/xorg-server, sysutils/hal
   AUTHOR: rnoland@FreeBSD.org
 
-  sysutils/hal has been updated and should now properly detect
-  mice for use in Xorg.  Use of AllowEmptyInput should no longer
-  be needed for most users and moused should now work fine.
+  sysutils/hal has been updated and should now properly detect mice for
+  in X.org.  Use of AllowEmptyInput should no longer be needed for most
+  users and moused should now work fine.
 
 20090123:
   AFFECTS: users of x11-servers/xorg-server
   AUTHOR: rnoland@FreeBSD.org
 
-  If you are using an older xorg.conf several config lines are
-  no longer needed and will generate warnings when X is started.
-  RgbPath will cause X to fail to start, remove it from your config.
+  If you are using an older xorg.conf several config lines are no longer
+  needed and will generate warnings when X is started.  RgbPath will cause
+  X to fail to start, remove it from your config.
 
-  Server 1.5.3 also really wants to configure its input devices
-  via hald.  This is causing some issues with moused and
-  /dev/sysmouse.  There are a couple of options for how to deal
-  with it.
+  Server 1.5.3 also really wants to configure its input devices via hald.
+  This is causing some issues with moused and /dev/sysmouse.  There are
+  couple of options for how to deal with it:
 
   1. Add Option "AllowEmptyInput" "off" to your ServerLayout section.
      This will cause X to use the configured kbd, mouse, and vmmouse
      sections from your xorg.conf
 
-  2. Don't use moused.  If you want it to work with addon usb mice
+  2. Don't use moused.  If you want it to work with addon USB mice
      set this in rc.conf:
 
-     moused_enable="NO"
-     moused_nondefault_enable="NO"
+	moused_enable="NO"
+	moused_nondefault_enable="NO"
 
   I'm working on fixing hald or the mouse driver or both.
 
@@ -605,7 +619,7 @@ upgrades.
 
   For portupgrade users:
 
-    # portupgrade -rf libxcb
+	# portupgrade -rf libxcb
 
 20090121:
   AFFECTS: users of devel/linux-glib2, emulation/linux_base-f4
@@ -655,23 +669,23 @@ upgrades.
   at: http://ikiwiki.info/tips/upgrade_to_3.0/
 
 20090118:
-  AFFECTS:  users of devel/apr-svn devel/apr
-  AUTHOR:   pgollucci@FreeBSD.org
+  AFFECTS: users of devel/apr-svn devel/apr
+  AUTHOR: pgollucci@FreeBSD.org
 
   devel/apr-svn has been removed and devel/apr now handles its role.
-  devel/apr now defaults to building with berkeley database support (bdb)
+  devel/apr now defaults to building with Berkeley database support (bdb)
   APR_UTIL_* tunables have been renamed to comply with ports/KNOBS names.
 
 20090114:
   AFFECTS: users of x11/kdebase4-workspace, x11/kdebase4-runtime
   AUTHOR: kde@FreeBSD.org
 
-  KDE4 has been updated from 4.1.1 to 4.1.4. A number of files
-  have been moved between packages. You should deinstall kdebase4-runtime
-  package before updating:
+  KDE4 has been updated from 4.1.1 to 4.1.4.  A number of files have been
+  moved between packages.  You should deinstall kdebase4-runtime package
+  before updating:
 
-  pkg_delete -f kdebase-runtime-4.1\*
-  portmaster -a
+	pkg_delete -f kdebase-runtime-4.1\*
+	portmaster -a
 
   After successful update you could install kdebase4-runtime if it has not
   been installed during update process.
@@ -680,67 +694,70 @@ upgrades.
   AFFECTS: users of GNOME and GTK+
   AUTHOR: gnome@FreeBSD.org
 
-  GNOME has been updated to 2.24.x.  You have to deinstall a few ports first
-  before using portupgrade or portmaster in order to successfully upgrade
-  your GNOME installation.  After successfully upgrade, you have to reinstall
-  gnome-session so the gnome.desktop session file is properly installed.
+  GNOME has been updated to 2.24.x.  You have to deinstall a few ports
+  first before using portupgrade or portmaster in order to successfully
+  upgrade your GNOME installation.  After successful upgrade, you have
+  to reinstall gnome-session so the gnome.desktop session file is properly
+  installed.
 
   Portupgrade users:
-    # pkgdb -Ff
-    (Answer "yes" to unregister gail while keeping gtk20.)
-    (Answer "yes" to unregister fast-user-switch-applet while keeping gdm.)
 
-    # pkg_deinstall -fO gtkmm-2.12\*
-    # portupgrade -aOW
-    # portupgrade -f gnome-session
+	# pkgdb -Ff
+	(Answer "yes" to unregister gail while keeping gtk20.)
+	(Answer "yes" to unregister fast-user-switch-applet while
+	 keeping gdm.)
+
+	# pkg_deinstall -fO gtkmm-2.12\*
+	# portupgrade -aOW
+	# portupgrade -f gnome-session
 
   Portmaster users:
-    # pkg_delete -f gtkmm-2.12\*
-    # portmaster -a
-    # portmaster gnome-session
+
+	# pkg_delete -f gtkmm-2.12\*
+	# portmaster -a
+	# portmaster gnome-session
 
 20090113:
   AFFECTS: users of lang/perl5.8
   AUTHOR: skv@FreeBSD.org
 
-  lang/perl5.8 has been updated to 5.8.9. You should update everything
-  depending on perl. The easiest way to do that is to use
-  perl-after-upgrade script supplied with lang/perl5.8. Please see
-  its manual page for details.
+  lang/perl5.8 has been updated to 5.8.9.  You should update everything
+  that depends on perl.  The easiest way to do that is to use
+  perl-after-upgrade script supplied with lang/perl5.8.  Please see its
+  manual page for details.
 
 20090112:
   AFFECTS: users of mail/claws-mail*
   AUTHOR: miwi@FreeBSD.org
 
-  claws-mail has been updated to 3.7.0, with this update openSSL
-  support has been removed by upstream in favour of gnuTLS. gnuTLS
-  is now enabled by default. Themes were have also been split to an
-  extra port which your can find under  x11-themes/claws-mail-themes.
-  Entirely menu was rewritten in 3.6.0 version using modern GTK
-  interface, as a consequence, all custom shortcuts will be lost
-  after upgrade.
+  claws-mail has been updated to 3.7.0, with this update OpenSSL support
+  has been removed by upstream in favour of GnuTLS.  GnuTLS is now enabled
+  by default.  Themes were have also been split to an extra port which
+  your can find under x11-themes/claws-mail-themes.  Menu was rewritten
+  entirely in version 3.6.0 using modern GTK interface; as a consequence,
+  all your custom shortcuts will be lost after upgrade.
 
 20090109:
   AFFECTS: users of any Mozilla and Opera products
-  AUTHOR: mezz@freebsd.org
+  AUTHOR: mezz@FreeBSD.org
 
-  The Java plugins now no longer will be pick up by automatically from these
-  browsers. Because all Java ports have same name of plugins file. I am
-  thinking about someone or maybe me will need to write something similar
-  function of nspluginwrapper (but in shell script) that can add Java plugin
-  in ~/.*/plugins/ when user request to select one version of Java plugin if
-  this user has more than one version of Java installed. However, for now,
-  you will have to add Java plugin in ~/.*/plugins/ by manually.
+  The Java plugins now will no longer be picked up by automatically from
+  these browsers.  Because all Java ports share the name of plugins file,
+  I am thinking about someone or maybe me will need to write something
+  similar to nspluginwrapper (but in shell script) that can add Java plugin
+  in ~/.*/plugins/ when user requests one specific version of Java plugin
+  if this user has more than one version of Java installed.  However, for
+  now, you will have to add Java plugin in ~/.*/plugins/ manually.
 
 20090107:
   AFFECTS: users of databases/unixODBC
-  AUTHOR: beech@freebsd.org
+  AUTHOR: beech@FreeBSD.org
 
-  The databases/unixODBC port has been updated to 2.2.14. While
+  The databases/unixODBC port has been updated to 2.2.14.  While
   containing many bug fixes and minor feature adjustments, this version
-  no longer ships with the (obsolete) MySQL ODBC driver. MySQL ODBC
+  no longer ships with the (obsolete) MySQL ODBC driver.  MySQL ODBC
   driver users will probably want to use databases/mysql-connector-odbc
-  instead. The text-backed/flatfile driver (libtxtodbc) has also been
+  instead.  The text-backed/flatfile driver (libtxtodbc) has also been
   removed by the developers but due to some demand may make a return in
   a future version or as a separate port.
 
@@ -748,12 +765,12 @@ upgrades.
   AFFECTS: users of security/libgcrypt
   AUTHOR: rafan@FreeBSD.org
 
-  libgcrypt has been upgraded to 1.4.3 which has a shared library
-  version bump. You need to reinstall all ports depending on it.
-  Use something like this:
+  libgcrypt has been upgraded to 1.4.3 which has a shared library version
+  bump. You need to reinstall all ports depending on it.  Use something
+  like this:
 
-  portupgrade -rf libgcrypt
-  portmaster -r libgcrypt
+	portupgrade -rf libgcrypt
+	portmaster -r libgcrypt
 
 20090104:
   AFFECTS: users of net/openldap24-{client,server}
@@ -769,21 +786,21 @@ upgrades.
   AFFECTS: users of net/rabbitmq
   AUTHOR: pneumann@gmail.com
 
-  The database schema has changed between RabbitMQ-1.4.0 and this
-  release. When the RabbitMQ server detects the presence of an old
-  database, it moves it to a backup location, creates a fresh, empty
-  database, and logs a warning.
+  The database schema has changed between RabbitMQ-1.4.0 and this release.
+  When the RabbitMQ server detects the presence of an old database, it
+  moves it to a backup location, creates a fresh, empty database, and
+  logs a warning.
 
 20081226:
   AFFECTS: users of www/rt38
   AUTHOR: pgollucci@FreeBSD.org
 
   www/rt38 now respects the FreeBSD directory layout, see hier(7).
-  With this change, p5-RT-* and p5-RTx-* should be much simpler
-  to use in the ports collection.
+  With this change, p5-RT-* and p5-RTx-* should be much simpler to use
+  in the ports collection.
 
-  Please note that www/p5-RTx-Shredder is included in www/rt38
-  This port will be deprecated and removed.
+  Please note that www/p5-RTx-Shredder is included in www/rt38.  This
+  port will be deprecated and removed.
 
 20081228:
   AFFECTS: users of astro/boinc-setiathome-enhanced
@@ -828,8 +845,8 @@ upgrades.
   AFFECTS: users of mail/policyd2
   AUTHOR: wxs@FreeBSD.org
 
-  The RC script for mail/policyd2 has been renamed to avoid a conflict.  If
-  you use this port please change the setting in rc.conf to be
+  The RC script for mail/policyd2 has been renamed to avoid a conflict.
+  If you use this port please change the setting in rc.conf to be
   policyd2_enable.
 
 20081211:
@@ -837,34 +854,41 @@ upgrades.
   AUTHOR: pav@FreeBSD.org, itetcu@FreeBSD.org, ale@FreeBSD.org
 
   As of php 5.2.7, pcre extension is distributed with the core php5 package,
-  and not as a standalone module anymore.  Follow these steps to update your
-  installation:
+  and not as a standalone module anymore.  Follow the steps below to update
+  your installation.
 
   Portupgrade users:
-   pkg_delete -f php5-pcre-5.2.6
-   pkgdb -F
-   portupgrade as usual
+
+	pkg_delete -f php5-pcre-5.2.6
+	pkgdb -F
+	portupgrade as usual
 
   Portmaster users:
-   pkg_delete -f php5-pcre\*
-   portmaster php5
 
-  If you are using pecl ports you might need to force an update on them, ie.:
-   portupgrade -f pecl\*
+	pkg_delete -f php5-pcre\*
+	portmaster php5
+
+  If you are using pecl ports you might need to force an update on them:
+
+	portupgrade -f pecl\*
   or
-   portmaster pecl
+	portmaster pecl
 
   If you have the pecl hash, json and/or zip extensions you need to replace
   them with the php5 bundled ones, ie.:
-   portmaster/portupgrade -o archivers/php5-zip archivers/pecl-zip
-   portmaster/portupgrade -o devel/php5-json devel/pecl-json
-   portmaster/portupgrade -o security/php5-hash security/pecl-hash
+
+	portmaster/portupgrade -o archivers/php5-zip archivers/pecl-zip
+	portmaster/portupgrade -o devel/php5-json devel/pecl-json
+	portmaster/portupgrade -o security/php5-hash security/pecl-hash
 
   If you build your INDEX locally and you tried to build it after the php
   update commit, you need to rebuild it _after_ you updated lang/php5:
-   cd /usr/ports && make index
+
+	cd /usr/ports && make index
+
   or (if you use ports-mgmt/p5-FreeBSD-Portindex):
-   cd /usr/ports && cache-init && portindex -o `make -V INDEXFILE`
+
+	cd /usr/ports && cache-init && portindex -o `make -V INDEXFILE`
 
 20081207:
   AFFECTS: users of games/mkgichessclub
@@ -873,7 +897,7 @@ upgrades.
   After the update to the version 2.2.0, please, alter the SQL tables
   with the command:
 
-    mysql _mkgichessclub_ < /usr/local/share/mkgichessclub/db_migrate_2.1_to_2.2.sql
+	mysql _mkgichessclub_ < /usr/local/share/mkgichessclub/db_migrate_2.1_to_2.2.sql
 
   where _mkgichessclub_ is the database name chosen during the installation
   of the port.
@@ -894,7 +918,8 @@ upgrades.
   commands like sendsms etc. should be executed as user uucp.
   To restore the old behaviour, set smsd_user="root" and smsd_group="wheel"
   in your /etc/rc.conf.
-  Hint: use security/sudo for running smsd scripts as user uucp
+
+  Hint: use security/sudo for running smsd scripts as user uucp.
 
 20081108:
   AFFECTS: users of editors/tamago
@@ -906,7 +931,7 @@ upgrades.
   JSERVER case, for example, the server name is determined in the
   following way:
 
- $JSERVER --(if null)--> wnn-jserver --(if null)--> "unix"
+	$JSERVER --(if null)--> wnn-jserver --(if null)--> "unix"
 
   If the server host name is null or matches "^unix$", unix domain
   socket is used.  The path name of the socket can be specified in
@@ -961,16 +986,16 @@ upgrades.
   named user_data to your session table. Here is an example of what
   this column might look like for MySQL:
 
-    user_data text NOT NULL
+	user_data text NOT NULL
 
   To add this column you will run a query similar to this:
 
-    ALTER TABLE `ci_sessions` ADD `user_data` text NOT NULL
+	ALTER TABLE `ci_sessions` ADD `user_data` text NOT NULL
 
   You'll find more information regarding the new Session functionality
   in the Session class page:
 
-    http://codeigniter.com/user_guide/libraries/sessions.html
+	http://codeigniter.com/user_guide/libraries/sessions.html
 
   >>> Update your Validation Syntax
 
@@ -1260,11 +1285,11 @@ upgrades.
   cli, daemon, and gtk2. If you don't want that, uninstall transmission and
   install net-p2p/transmission-cli by doing:
 
-  	portmaster -o net-p2p/transmission-cli net-p2p/transmission
+	portmaster -o net-p2p/transmission-cli net-p2p/transmission
 
   or, if you're using portupgrade:
 
-  	portupgrade -o net-p2p/transmission-cli net-p2p/transmission
+	portupgrade -o net-p2p/transmission-cli net-p2p/transmission
 
 20080805:
   AFFECTS: users of devel/qt4
@@ -5899,11 +5924,11 @@ upgrades.
   sudo).
 
   1.) Delete installed packages which conflict with the updated KDE
-      ports.
+      ports:
 
 	pkg_deinstall -f kdeadmin-\[0-9\]\*
 
-  2.) Now update the remaining KDE ports.
+  2.) Now update the remaining KDE ports:
 
 	portupgrade -O arts\* kde\* \*kde-i18n\*
 
@@ -5911,7 +5936,7 @@ upgrades.
 
 	portupgrade -a
 
-  3.) Reinstall the KDE ports you deleted in step 1.
+  3.) Reinstall the KDE ports you deleted in step 1:
 
 	portinstall -O kdeadmin
 
@@ -6101,9 +6126,10 @@ upgrades.
 
   The following has been changed in the bnetd.conf file (starting with
   version 1.7.7):
-    - The old config variable `servername' has been renamed to `hostname'.
+
+    - The old config variable `servername' has been renamed to `hostname'
     - A new `servername' config variable has been introduced for server
-      identification.
+      identification
 
 20050519:
   AFFECTS: users of www/squid
@@ -6357,13 +6383,13 @@ upgrades.
   in.
 
   1.) Delete installed packages which conflict with the updated KDE
-      ports.
+      ports:
 
       	pkg_deinstall -f kdeartwork-\[0-9\]\* kdebase-\[0-9\]\* \
 	kdebase-konqueror-nsplugins-\[0-9\]\* kdewebdev-\[0-9\]\* \
 	kde-\[0-9\]\* akregator\* phase\*
 
-  2.) Now update the remaining KDE ports.
+  2.) Now update the remaining KDE ports:
 
       	portupgrade -O arts\* kde\* \*kde-i18n\*
 
@@ -6371,7 +6397,7 @@ upgrades.
 
       	portupgrade -a
 
-  3.) Reinstall the KDE ports you deleted in step 1.
+  3.) Reinstall the KDE ports you deleted in step 1:
 
       	portinstall -O kdebase kdeartwork kdewebdev
 
@@ -7457,36 +7483,36 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   choose to perform the update while being logged in to KDE, expect erratic
   behavior and crashes from applications launched during the update.
 
-  1.) First, make sure your ports index is up to date.
+  1.) First, make sure your ports index is up to date:
 
-      	cd /usr/ports && make index
+	cd /usr/ports && make index
 
-      or, if you're using the sysutils/portindex port
+      or, if you're using the sysutils/portindex port:
 
-      	portindex
+	portindex
 
   2.) Delete installed packages which conflict with the updated KDE
-      ports.
+      ports:
 
-      	pkg_deinstall -f kdeaddons-kontact-plugins-\* \
-      	kdeaddons-kaddressbook-plugins-\* kdepim-\* kdeutils-\* \
-      	kdeaddons-\[0-9\]\* kde-\[0-9\]\*
+	pkg_deinstall -f kdeaddons-kontact-plugins-\* \
+	kdeaddons-kaddressbook-plugins-\* kdepim-\* kdeutils-\* \
+	kdeaddons-\[0-9\]\* kde-\[0-9\]\*
 
       kdegraphics now conflicts with the kolourpaint package and kdeedu now
-      conflicts with the kwordquiz package. If you have kwordquiz and/or
-      kolourpaint installed on your system and you want to use the kdegraphics/
-      kdeedu ports, you should first deinstall the conflicting packages:
+      conflicts with the kwordquiz package.  If you have kwordquiz and/or
+      kolourpaint installed on your system and you want to use the
+      kdegraphics/kdeedu ports, you should first deinstall the conflicting
+      packages:
 
-      	pkg_deinstall -f kolourpaint\* kwordquiz\*
+	pkg_deinstall -f kolourpaint\* kwordquiz\*
 
+  3.) Now update the remaining KDE ports:
 
-  3.) Now update the remaining KDE ports.
-
-      	portupgrade arts\* kde\* quanta\*
+	portupgrade arts\* kde\* quanta\*
 
       or, if you want to update KDE along with other updated ports:
 
-      	portupgrade -a
+	portupgrade -a
 
       Note that the quanta port has been renamed to kdewebdev. The commands
       above will automatically replace quanta with kdewebdev, if you have
@@ -7518,7 +7544,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
     You can migrate your configuration while preserving your customizations
     by running
 
-    	genkdmconf
+	genkdmconf
 
     Make sure to backup your old kdmrc (usually found in
     /usr/local/share/config/kdm) beforehand in case the merge produces an
@@ -8156,26 +8182,30 @@ Option "XkbRules" "xfree86"
 
   When updating from a previous version of security/antivir-milter you
   have to do the following after deinstalling the old port:
-      rm <PREFIX>/AntiVir/antivir
-      rm <PREFIX>/AntiVir/antivir.vdf
-      chown root:wheel <PREFIX>/AntiVir
-      chown root:smmsp <PREFIX>/AntiVir/hbedv.key
 
-    In your SENDMAIL_MC change
-      `S=unix:<PREFIX>/AntiVir/avmilter.sock, F=T, T=S:10m;R:10m;E:5m'
-    to:
-      `S=unix:/var/spool/avmilter/avmilter.sock, F=T, T=S:10m;R:10m;E:10m'
-    and rebuild sendmail.cf.
+	rm <PREFIX>/AntiVir/antivir
+	rm <PREFIX>/AntiVir/antivir.vdf
+	chown root:wheel <PREFIX>/AntiVir
+	chown root:smmsp <PREFIX>/AntiVir/hbedv.key
 
-    If /var/spool/avmilter exist you have to:
-      chown -R smmsp:smmsp /var/spool/avmilter
+  In your SENDMAIL_MC, please change
 
-    If you are using a customized <PREFIX>/etc/avmilter.conf the port
-    won't remove it on deinstall and you have to manually change User
-    and Group to smmsp there.
+	`S=unix:<PREFIX>/AntiVir/avmilter.sock, F=T, T=S:10m;R:10m;E:5m'
+  to
+	`S=unix:/var/spool/avmilter/avmilter.sock, F=T, T=S:10m;R:10m;E:10m'
 
-    Afterwards you can install the new version of this port. You then
-    should run antivirupdater to get a current VDF.
+  and rebuild sendmail.cf.
+
+  If /var/spool/avmilter exists, you have to:
+
+	chown -R smmsp:smmsp /var/spool/avmilter
+
+  If you are using a customized <PREFIX>/etc/avmilter.conf, the port won't
+  remove it on deinstall and you have to manually change User and Group to
+  smmsp there.
+
+  Afterwards you can install the new version of this port.  You then should
+  run antivirupdater to get a current VDF.
 
 20040226:
   AFFECTS: i386 users of lang/ruby* and sysutils/portupgrade
