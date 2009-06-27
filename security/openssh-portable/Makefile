@@ -142,7 +142,7 @@ EXTRA_PATCHES+=		${FILESDIR}/scardpin.patch
 .endif
 
 .if defined(WITH_HPN)
-EXTRA_PATCHES+=	${FILESDIR}/openssh-5.2p1-hpn.patch
+EXTRA_PATCHES+=	${FILESDIR}/openssh-5.2p1-hpn13v6.diff
 .endif
 
 # See http://dev.inversepath.com/trac/openssh-lpk
@@ -159,7 +159,7 @@ CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L${LOCALBASE}/lib' \
 .if defined(WITH_HPN) && defined(WITH_LPK)
 EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk+hpn-servconf.patch
 .elif defined(WITH_HPN) && !defined(WITH_LPK)
-EXTRA_PATCHES+=		${FILESDIR}/openssh-5.2p1-hpn-servconf.patch
+EXTRA_PATCHES+=		${FILESDIR}/openssh-5.2p1-hpn13v6-servconf.c.diff
 .elif defined(WITH_LPK) && !defined(WITH_HPN)
 EXTRA_PATCHES+=		${FILESDIR}/contrib-openssh-lpk-5.1p1-0.3.10-servconf.c.patch
 .endif
