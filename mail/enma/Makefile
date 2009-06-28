@@ -41,8 +41,6 @@ SUB_FILES=	milter-enma
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
-CONFIGURE_ARGS+=	--with-libmilter=${MILTERBASE} \
-			--with-ssl=${OPENSSLBASE}
 
 USE_OPENSSL=	yes
 .if ${OSVERSION} < 700000
