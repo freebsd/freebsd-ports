@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.22
-PORTREVISION=	2
+PORTVERSION=	1.4.23
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
@@ -27,7 +26,7 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		lighttpd.1
+MAN8=		lighttpd.8
 
 OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		CML		"Enable Cache Meta Language support" off \
@@ -123,7 +122,7 @@ CONFIGURE_ARGS+=	--with-webdav-props --with-webdav-locks
 SUB_LIST+=		REQUIRE="${_REQUIRE}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-std=gnu99||' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|-std=gnu99||' ${WRKSRC}/configure ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -E -e 's|(server.document-root.*=).*|\1 "${PREFIX}/www/data/"|' \
 		-e 's|(server.errorlog.*=).*|\1 "/var/log/lighttpd.error.log"|' \
 		-e 's|# server.event-handler|server.event-handler|' \
