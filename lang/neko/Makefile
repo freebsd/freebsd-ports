@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	neko
-PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTVERSION=	1.8.0
 CATEGORIES=	lang
 MASTER_SITES=	http://nekovm.org/_media/
 
@@ -32,9 +31,9 @@ OPTIONS=	APACHE13 "Build with mod_neko for Apache 1.3.x" off \
 BC_DIR!=	cd ${PORTSDIR}/devel/boehm-gc && ${MAKE} -V WRKSRC
 BC_MAKEARGS=	BATCH=yes WITH_THREADING=true
 
-BC_CFLAGS:= ${CFLAGS}
-CFLAGS=	-I${WRKSRC} -I${PREFIX}/include
-LDFLAGS= -L${BC_DIR}/.libs -L${PREFIX}/lib
+BC_CFLAGS:=	${CFLAGS}
+CFLAGS+=	-I${WRKSRC} -I${LOCALBASE}/include
+LDFLAGS+=	-L${BC_DIR}/.libs -L${LOCALBASE}/lib
 LIBKEYNAME=
 
 .if defined(WITH_APACHE13)
@@ -43,7 +42,7 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 CFLAGS+=	-I${LOCALBASE}/include/apache
 PLIST_SUB+=	APACHE13=
 .else
-LIBKEYNAME+=	mod_neko
+LIBKEYNAME+=	mod_neko mod_tora
 PLIST_SUB+=	APACHE13="@comment "
 .endif
 
@@ -53,14 +52,14 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache22
 CFLAGS+=	-I${LOCALBASE}/include/apache22
 PLIST_SUB+=	APACHE22=
 .else
-LIBKEYNAME+=	mod_neko2
+LIBKEYNAME+=	mod_neko2 mod_tora2
 PLIST_SUB+=	APACHE22="@comment "
 .endif
 
 .if defined(WITH_MYSQL4)
 BUILD_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql41-client
 RUN_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql41-client
-CFLAGS+=	-I${PREFIX}/include/mysql
+CFLAGS+=	-I${LOCALBASE}/include/mysql
 PLIST_SUB+=	MYSQL4=
 .else
 LIBKEYNAME+=	mysql
@@ -77,8 +76,8 @@ PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if defined(WITH_PCRE)
-BUILD_DEPENDS+=	${PREFIX}/include/pcre.h:${PORTSDIR}/devel/pcre
-RUN_DEPENDS+=	${PREFIX}/include/pcre.h:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS+=	${LOCALBASE}/include/pcre.h:${PORTSDIR}/devel/pcre
+RUN_DEPENDS+=	${LOCALBASE}/include/pcre.h:${PORTSDIR}/devel/pcre
 PLIST_SUB+=	PCRE=
 .else
 LIBKEYNAME+=	regexp
@@ -86,8 +85,8 @@ PLIST_SUB+=	PCRE="@comment "
 .endif
 
 .if defined(WITH_GTK2)
-BUILD_DEPENDS+=	${PREFIX}/include/gtk-2.0:${PORTSDIR}/x11-toolkits/gtk20
-RUN_DEPENDS+=	${PREFIX}/include/gtk-2.0:${PORTSDIR}/x11-toolkits/gtk20
+BUILD_DEPENDS+=	${LOCALBASE}/include/gtk-2.0:${PORTSDIR}/x11-toolkits/gtk20
+RUN_DEPENDS+=	${LOCALBASE}/include/gtk-2.0:${PORTSDIR}/x11-toolkits/gtk20
 PLIST_SUB+=	GTK2=
 .else
 LIBKEYNAME+=	ui
@@ -114,6 +113,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e '/^linkcmd =/s,"ld",cc,' \
 	    -e 's/= readline[(][)];/= "s";/' \
+	    -e 's,/usr/local/lib,${PREFIX}/lib,' \
 	    ${WRKSRC}/src/tools/install.neko
 .if !empty(LIBKEYNAME)
 .for LKN in ${LIBKEYNAME}
@@ -138,6 +138,16 @@ post-patch:
 	    ${WRKSRC}/src/tools/install.neko
 	@${REINPLACE_CMD} \
 	    -e 's,NEKO_LINUX,NEKO_BSD,' ${WRKSRC}/libs/ui/ui.c
+.endif
+.if ${ARCH} == "amd64" && defined(WITH_MYSQL4)
+	@${ECHO_CMD}
+	@${ECHO_CMD} "======================================================="
+	@${ECHO_CMD}
+	@${ECHO_CMD} " Notice: When not building MYSQL with 'CFLAGS+=-fPIC'"
+	@${ECHO_CMD} " first, It fails in building of a MYSQL module."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "======================================================="
+	@${ECHO_CMD}
 .endif
 
 pre-build:
