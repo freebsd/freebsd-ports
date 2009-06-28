@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -39,8 +39,7 @@ BUILD_WRKSRC=	${WRKSRC}/helper-progs
 
 DOCS=	AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES \
 		README_FILES/README.* README_FILES/screen.css \
-		README_FILES/amavisd-new-docs.html \
-		README_FILES/TODO-SNMP-AGENT		
+		README_FILES/amavisd-new-docs.html
 
 AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
