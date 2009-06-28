@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://freebsd.t-hosting.hu/${PORTNAME}/
 DISTNAME=	tn-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sahil@tandon.net
 COMMENT=	A cross-platform terminal manipulation library
 
 do-install:
