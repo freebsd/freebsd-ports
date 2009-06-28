@@ -69,6 +69,7 @@ bin/xspasswd
 %%WWWDIR%%/module/mod_compress.so
 %%WWWDIR%%/module/mod_gzip.so
 %%WWWDIR%%/module/mod_bzip2.so
+%%WWWDIR%%/module/mod_magic.so
 @exec mkdir -p %%WWWDIR%%/htdocs
 @dirrm %%WWWDIR%%/contrib
 @dirrm %%WWWDIR%%/gfxcount
