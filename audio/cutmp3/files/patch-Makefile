@@ -1,10 +1,10 @@
---- Makefile.orig	2007-04-06 10:19:50.000000000 +0200
-+++ Makefile	2008-10-06 15:32:42.000000000 +0200
+--- Makefile.orig	2009-06-28 10:06:33.000000000 -0300
++++ Makefile	2009-06-28 16:01:33.000000000 -0300
 @@ -1,13 +1,11 @@
  NAME=cutmp3
--VERSION=1.9.2
+-VERSION=2.0
 -PREFIX=/usr
-+PREFIX?= /usr/local
++PREFIX?=/usr/local
  BINDIR=${PREFIX}/bin
  DATADIR=${PREFIX}/share
 -MANDIR=${PREFIX}/share/man/man1
@@ -17,13 +17,16 @@
  	gcc -O ${CFLAGS} -c mpglib.c
  	gcc -O ${CFLAGS} -c main.c
  	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
-@@ -28,9 +26,6 @@
+@@ -28,12 +26,8 @@
  	if [ -d /usr/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /usr/share/apps/konqueror/servicemenus; fi
  	if [ -d /opt/kde/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde/share/apps/konqueror/servicemenus; fi
  	if [ -d /opt/kde3/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde3/share/apps/konqueror/servicemenus; fi
 -	install -d ${DOCDIR}/${NAME}
 -	install -m 644 README* USAGE ${DOCDIR}/${NAME}
 -	install -d ${MANDIR}
+ 	gzip ${NAME}.1
  	install -m 644 ${NAME}.1.gz ${MANDIR}
+-	gunzip ${NAME}.1.gz
  
  uninstall:
+ 	rm -f ${BINDIR}/${NAME}

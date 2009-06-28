@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cutmp3
-PORTVERSION=	1.9.2
+PORTVERSION=	2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.puchalla-online.de/ \
 		http://mirror.mcx2.org/
