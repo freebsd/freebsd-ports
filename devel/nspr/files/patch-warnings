@@ -1,13 +1,3 @@
---- ../pr/src/misc/prdtoa.c	Sun Apr 25 11:01:01 2004
-+++ ../pr/src/misc/prdtoa.c	Sun Jul 24 23:55:19 2005
-@@ -3355,5 +3355,7 @@
- 		}
- 	else {
-+#ifdef Honor_FLT_ROUNDS
-  trimzeros:
-+#endif
- 		while(*--s == '0');
- 		s++;
 --- ../pr/src/pthreads/ptsynch.c	Mon Nov 22 16:24:53 2004
 +++ ../pr/src/pthreads/ptsynch.c	Mon Jul 25 00:03:49 2005
 @@ -63,5 +63,5 @@

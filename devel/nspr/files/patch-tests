@@ -680,14 +680,6 @@
 +			exitcode = 1;
  			break;
  		default:
-@@ -305,5 +309,6 @@
- }
- 
--void main(int argc, char **argv)
-+int
-+main(int argc, char **argv)
- {
- 	
 @@ -352,3 +357,4 @@
  
  
@@ -727,33 +719,6 @@
 +            ClientThread, (void *)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
              PR_PRIORITY_NORMAL, scope, PR_JOINABLE_THREAD, 0);
      if (NULL == clientThread) {
---- ../pr/tests/server_test.c	Sun Apr 25 11:01:02 2004
-+++ ../pr/tests/server_test.c	Mon Jul 25 21:35:37 2005
-@@ -93,5 +93,5 @@
- #define DPRINTF printf
- #else
--#define DPRINTF
-+#define DPRINTF(...)
- #endif
- 
-@@ -531,4 +531,5 @@
- }
- 
-+#if 0
- static void do_workUK(void)
- {
-@@ -551,4 +552,5 @@
-     do_work();
- }
-+#endif
- 
- 
-@@ -568,4 +570,5 @@
- 
- 
-+int
- main(int argc, char **argv)
- {
 --- ../pr/tests/servr_kk.c	Sun Apr 25 11:01:02 2004
 +++ ../pr/tests/servr_kk.c	Mon Jul 25 21:38:28 2005
 @@ -90,5 +90,5 @@
@@ -775,51 +740,6 @@
 +#endif
  
  static void do_workKK(void)
---- ../pr/tests/servr_ku.c	Sun Apr 25 11:01:02 2004
-+++ ../pr/tests/servr_ku.c	Mon Jul 25 21:40:29 2005
-@@ -90,5 +90,5 @@
- #define DPRINTF printf
- #else
--#define DPRINTF
-+#define DPRINTF(...)
- #endif
- 
-@@ -527,4 +527,5 @@
- 
- 
-+int
- main(int argc, char **argv)
- {
---- ../pr/tests/servr_uk.c	Sun Apr 25 11:01:02 2004
-+++ ../pr/tests/servr_uk.c	Mon Jul 25 21:41:31 2005
-@@ -90,5 +90,5 @@
- #define DPRINTF printf
- #else
--#define DPRINTF
-+#define DPRINTF(...)
- #endif
- 
-@@ -529,4 +529,5 @@
- 
- 
-+int
- main(int argc, char **argv)
- {
---- ../pr/tests/servr_uu.c	Sun Apr 25 11:01:02 2004
-+++ ../pr/tests/servr_uu.c	Mon Jul 25 21:42:27 2005
-@@ -90,5 +90,5 @@
- #define DPRINTF printf
- #else
--#define DPRINTF
-+#define DPRINTF(...)
- #endif
- 
-@@ -526,4 +526,5 @@
- 
- 
-+int
- main(int argc, char **argv)
- {
 --- ../pr/tests/short_thread.c	Sun Apr 25 11:01:02 2004
 +++ ../pr/tests/short_thread.c	Mon Jul 25 21:44:20 2005
 @@ -76,6 +76,6 @@
@@ -1232,13 +1152,6 @@
 +            "prsocet_test: PR_TransmitFile failed: (%d, %d)\n",
              PR_GetError(), PR_GetOSError());
          failed_already=1;
-@@ -1527,5 +1531,5 @@
-     if (bytes != LARGE_FILE_SIZE) {
-         fprintf(stderr,
--            "prsocket_test: PR_TransmitFile failed: (%ld, %ld)\n",
-+            "prsocket_test: PR_TransmitFile failed: (%d, %d)\n",
-             PR_GetError(), PR_GetOSError());
-         failed_already=1;
 @@ -1555,5 +1559,5 @@
  									slen, bytes);
          fprintf(stderr,
@@ -1282,13 +1195,6 @@
              PR_GetError(), PR_GetOSError());
          failed_already=1;
 @@ -1689,5 +1693,5 @@
- 									slen, bytes);
-         fprintf(stderr,
--            "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
-+            "prsocket_test: PR_SendFile failed: (%d, %d)\n",
-             PR_GetError(), PR_GetOSError());
-         failed_already=1;
-@@ -1713,5 +1717,5 @@
  									slen, bytes);
          fprintf(stderr,
 -            "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
@@ -1365,15 +1271,6 @@
 +        fprintf(stderr,"prsocket_test failed to rmdir %s: (%d, %d)\n",
              TEST_DIR, PR_GetError(), PR_GetOSError());
          failed_already=1;
---- ../pr/tests/sockopt.c	Sun Apr 25 11:01:02 2004
-+++ ../pr/tests/sockopt.c	Mon Jul 25 22:16:20 2005
-@@ -79,5 +79,5 @@
- }  /* Incr */
- 
--PRIntn main(PRIntn argc, char *argv)
-+PRIntn main(PRIntn argc, char *argv[])
- {
-     PRStatus rv;
 --- ../pr/tests/sprintf.c	Sun Apr 25 11:01:02 2004
 +++ ../pr/tests/sprintf.c	Mon Jul 25 22:21:32 2005
 @@ -162,5 +162,5 @@
@@ -1465,13 +1362,6 @@
 +    printf("My Stack Pointer = %p\n", PR_GetSP(me));
      PR_ResumeAll();
  
-@@ -197,5 +199,5 @@
- 
- 
--void
-+int
- main(int argc, char **argv)
- {
 @@ -227,4 +229,6 @@
      CreateThreadsKU();
      PR_Cleanup();
@@ -1893,3 +1783,63 @@
 -
 -
 -
+--- ../pr/tests/server_test.c.orig	2009-03-18 10:49:45.000000000 +0100
++++ ../pr/tests/server_test.c	2009-06-17 09:30:18.000000000 +0200
+@@ -92,7 +92,7 @@
+ #ifdef DEBUGPRINTS
+ #define DPRINTF printf
+ #else
+-#define DPRINTF
++#define DPRINTF(...)
+ #endif
+ 
+ 
+@@ -534,6 +534,7 @@
+     do_work();
+ }
+ 
++#if 0
+ static void do_workUK(void)
+ {
+     ServerScope = PR_LOCAL_THREAD;
+@@ -554,6 +555,7 @@
+     ClientScope = PR_GLOBAL_THREAD;
+     do_work();
+ }
++#endif
+ 
+ 
+ static void Measure(void (*func)(void), const char *msg)
+--- ../pr/tests/servr_ku.c.orig	2009-03-18 10:49:46.000000000 +0100
++++ ../pr/tests/servr_ku.c	2009-06-17 09:51:45.000000000 +0200
+@@ -89,7 +89,7 @@
+ #ifdef DEBUGPRINTS
+ #define DPRINTF printf
+ #else
+-#define DPRINTF
++#define DPRINTF(...)
+ #endif
+ 
+ PRIntn failed_already=0;
+--- ../pr/tests/servr_uk.c.orig	2009-03-18 10:49:46.000000000 +0100
++++ ../pr/tests/servr_uk.c	2009-06-17 09:53:37.000000000 +0200
+@@ -89,7 +89,7 @@
+ #ifdef DEBUGPRINTS
+ #define DPRINTF printf
+ #else
+-#define DPRINTF
++#define DPRINTF(...)
+ #endif
+ 
+ PRIntn failed_already=0;
+--- ../pr/tests/servr_uu.c.orig	2009-03-18 10:49:46.000000000 +0100
++++ ../pr/tests/servr_uu.c	2009-06-17 09:55:30.000000000 +0200
+@@ -89,7 +89,7 @@
+ #ifdef DEBUGPRINTS
+ #define DPRINTF printf
+ #else
+-#define DPRINTF
++#define DPRINTF(...)
+ #endif
+ 
+ PRIntn failed_already=0;
