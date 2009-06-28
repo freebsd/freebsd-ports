@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090628:
+  AFFECTS: users of www/firefox3-devel
+  AUTHOR: gecko@FreeBSD.org
+
+  If your Firefox crashes with the following message while viewing a
+  HTML5 page: "Bad system call (core dumped)" you need to load the sem
+  module (kldload sem).
+
+  To load sem on every boot put the following into your
+  /boot/loader.conf: sem_load="YES"
+
 20090624:
   AFFECTS: users of mail/crm114
   AUTHOR: glebius@cell.glebius.int.ru
