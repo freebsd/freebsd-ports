@@ -42,7 +42,7 @@ DISTURL=	# No subdir
 FICHIERS+=	defaults/isp/FR/gmail.rdf
 PLIST_SUB+=	MOZ=""
 .else
-MOZVERSION=	1.1.15
+MOZVERSION=	1.1.17
 DISTURL=	/SeaMonkey
 MD5_FILE=	${MASTERDIR}/distinfo.seamonkey
 PLIST_SUB+=	MOZ="@comment "
