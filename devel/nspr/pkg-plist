@@ -17,7 +17,6 @@ include/nspr/md/_netbsd.cfg
 include/nspr/md/_nextstep.cfg
 include/nspr/md/_nto.cfg
 include/nspr/md/_openbsd.cfg
-include/nspr/md/_openvms.cfg
 include/nspr/md/_os2.cfg
 include/nspr/md/_osf1.cfg
 include/nspr/md/_qnx.cfg
@@ -27,9 +26,9 @@ include/nspr/md/_scoos.cfg
 include/nspr/md/_solaris.cfg
 include/nspr/md/_sony.cfg
 include/nspr/md/_sunos4.cfg
+include/nspr/md/_symbian.cfg
 include/nspr/md/_unixware.cfg
 include/nspr/md/_unixware7.cfg
-include/nspr/md/_win16.cfg
 include/nspr/md/_win95.cfg
 include/nspr/md/_winnt.cfg
 include/nspr/nspr.h

@@ -1,30 +1,15 @@
---- ../configure.orig	Tue Nov 14 10:37:41 2006
-+++ ../configure	Mon Nov 27 22:52:52 2006
-@@ -3466,16 +3466,21 @@
- #define HAVE_SOCKLEN_T 1
- EOF
- 
--    CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
-+    cat >> confdefs.h <<\EOF
-+#define HAVE_SOCKLEN_T 1
-+EOF
-+
-+    CFLAFS="$CFLAGS $DSO_CFLAGS -ansi -Wall -pipe -DXP_UNIX"
-     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+--- ../configure.orig	2009-05-08 15:12:31.000000000 +0200
++++ ../configure	2009-06-17 09:18:56.000000000 +0200
+@@ -3508,7 +3508,7 @@
+     CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
+     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
      if test "$MOZ_OBJFORMAT" = "elf"; then
 -        DLL_SUFFIX=so
 +        DLL_SUFFIX=so.1
      else
          DLL_SUFFIX=so.1.0
      fi
-     MKSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
-     DSO_CFLAGS=-fPIC
-     DSO_LDOPTS='-shared -Wl,-soname -Wl,$(notdir $@)'
-+    DSO_LDOPTS="$DSO_LDOPTS $BSD_PTHREAD_LIBS"
-     MDCPUCFG_H=_freebsd.cfg
-     PR_MD_CSRCS=freebsd.c
-     ;;
-@@ -5467,11 +5472,6 @@
+@@ -5649,11 +5649,6 @@
  #define _THREAD_SAFE 1
  EOF
  
@@ -36,7 +21,7 @@
  	    ;;
      *-netbsd*)
  	    if test "$ac_cv_have_dash_pthread" = "yes"; then
-@@ -5864,6 +5864,7 @@
+@@ -6037,6 +6032,7 @@
  config/nsprincl.mk
  config/nsprincl.sh
  config/nspr-config
