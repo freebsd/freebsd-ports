@@ -46,6 +46,9 @@ XPROTO_CFLAGS=	-I${LOCALBASE}/include
 XPROTO_LIBS=	-L${LOCALBASE}/lib
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MAKE} -C ${WRKSRC}/doc ${INSTALL_TARGET}
+.endif
 	@${ECHO_MSG} ''
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ''

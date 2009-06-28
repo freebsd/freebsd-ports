@@ -130,4 +130,8 @@ libdata/pkgconfig/xcb-xtest.pc
 libdata/pkgconfig/xcb-xv.pc
 libdata/pkgconfig/xcb-xvmc.pc
 libdata/pkgconfig/xcb.pc
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/xcb.css
 @dirrmtry include/xcb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
