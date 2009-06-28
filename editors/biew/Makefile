@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=	5.6.4
+PORTVERSION=	5.7.3.1
 CATEGORIES=	editors
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -15,9 +15,12 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Binary file viewer and editor
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--cc="${CC}" --ld="${CC}" --prefix="${PREFIX}"
+CONFIGURE_ARGS=	--cc="${CC}" --with-extraincdir="${LOCALBASE}/include" \
+		--ld="${CC}" --with-extralibdir="${LOCALBASE}/lib" \
+		--prefix="${PREFIX}" --datadir="${DATADIR}"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 MAKEFILE=	makefile
 
 PLIST_FILES=	bin/biew \

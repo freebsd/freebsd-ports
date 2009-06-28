@@ -1,141 +1,28 @@
---- configure.orig	2007-04-11 13:26:12.000000000 +0700
-+++ configure	2008-06-14 23:02:43.000000000 +0700
-@@ -199,7 +199,7 @@
- 	    if test $? -eq 0
- 	    then
- 	        _target_system=qnx
--	        host_arch=ia32
-+	        _target_arch=ia32
- 	        _install=cp
- 	    else
- 	        _target_system=qnxnto
-@@ -217,45 +217,16 @@
- 	    ;;
- 	*msdosdjgpp*)
- 	    _target_system=dos
--	    host_arch=ia32
-+	    _target_arch=ia32
- 	    _tee=
- 	    ;;
- #	|FreeBSD|NetBSD|BSD/OS|OpenBSD|SunOS|BeOS)
--#	*)
--#	    _target_system=unix
--#	    ;;
--    esac
--  else
--    _target_system=auto
--  fi
--fi
--
--if test "$_target_system" = auto ; then
--  if test -z "$system_name" ; then
--    # OS name
--    system_name=`/bin/sh --version 2>&1 | sed -n 's/^.*\([(]\)./\1/p'`
--    case "$system_name" in
--	*linux*)
--            _target_system=linux
--            ;;
--	*[cC][yY][gG][wW][iI][nN]*)
--	    _target_system=win32
--	    ;;
--	*[eE][mM][xX]*)
--	    _target_system=os2
--	    ;;
--	*msdosdjgpp*)
--	    _target_system=dos
--            host_arch=ia32
--	    _tee=
--            ;;
--#	|FreeBSD|NetBSD|BSD/OS|OpenBSD|SunOS|BeOS)
- 	*)
- 	    _target_system=unix
- 	    ;;
-     esac
-   else
--    _target_system=unix
-+    _target_system=$system_name
-   fi
- fi
- echores "$_target_system"
-@@ -263,33 +234,21 @@
- echocheck "architecture"
- if test "$_target_arch" = auto ; then
-   if test -z "$host_arch" ; then
--  host_arch=`( uname -p ) 2>&1`
--  case "$host_arch" in
--   i*86|sparc|ppc|alpha|arm|mips)
--     ;;
--
--   *) # uname -p on Linux returns 'unknown' for the processor type,
--      # OpenBSD returns 'Intel Pentium/MMX ("Genuine Intel" 586-class)'
--
--      # Maybe uname -m (machine hardware name) returns something we
--      # recognize.
--
--      case "`( uname -m ) 2>&1`" in
--      i*86|x86*|amd64*) host_arch=ia32 ;;
--      ppc) host_arch=ppc ;;
--      alpha) host_arch=alpha ;;
--      sparc*) host_arch=sparc ;;
--      arm*) host_arch=arm ;;
--      *) host_arch=generic ;;
-+    # Host architecture
-+    host_arch=`uname -m`
-+    case "$host_arch" in
-+      i*86|x86*|amd64*) _target_arch=ia32 ;;
-+      ppc) _target_arch=ppc ;;
-+      alpha) _target_arch=alpha ;;
-+      sparc*) _target_arch=sparc ;;
-+      arm*) _target_arch=arm ;;
-+      *) _target_arch=generic ;;
-     esac
--    ;;
--  esac
-+  else
-+    _target_arch=$host_arch
-   fi
--else
--  host_arch=$_target_arch
- fi
--echores "$host_arch"
--echo "Detected host..."$system_name
-+echores "$_target_arch"
- 
- if test -z "$_x11incdir" ; then
- echocheck "X11 headers"
-@@ -474,7 +433,7 @@
- 
- # Printout architecture
- _cdefsys=
--case "$host_arch" in
-+case "$_target_arch" in
-   ia32)
- # TODO: enable >386 optimizations here
-   _cdefsys="-D__MACHINE__=ia32 -D__CPU_NAME__='\"ia32\"' -D__CPU__=386 -D__DEFAULT_DISASM=0 -DCAN_COMPILE_X86_GAS=1"
-@@ -487,7 +446,7 @@
- 
-   *)
-     echo "It seems noone has ported biew to your OS or CPU type yet."
--    echo "using $host_arch architecture"
-+    echo "using $_target_arch architecture"
-     ;;
- esac
- 
-@@ -517,7 +476,7 @@
- DATADIR=$_datadir
- LIBDIR=$_libdir
- HOST=$_target_system
--MACHINE=$host_arch
-+MACHINE=$_target_arch
- CDEFOS=$_cdefos $_extraincdir $_x11incdir
- OSLDEF=$_osldef
- OS_LIBS=$_extralibdir $_x11libdir $_oslibs
-@@ -539,7 +498,7 @@
-   Remover: $_rm
-   TARGETS
-     system: $_target_system
--    arch: $host_arch
-+    arch: $_target_arch
-  
- EOF
- 
+--- configure.orig
++++ configure
+@@ -544,10 +544,10 @@
+ echocheck "slang.h"
+ 	check_header slang.h
+ 	enabled slang_h && _cdefos="-D_SLANG_ -D__OS_NAME__='\"Unix/Slang\"' $_cdefos"
+-	enabled slang_h && _oslibs="-lslang $_oslibs" || disable _slang
++	enabled slang_h && _oslibs="-lslang -ltermcap $_oslibs" || disable _slang
+ echores "$slang_h"
+ 	fi
+-	if enabled _curses -a disabled _slang; then
++	if enabled _curses && disabled _slang; then
+ echocheck "curses.h"
+ 	cat > $TMPC << EOF
+ 	#include <curses.h>
+@@ -566,8 +566,10 @@
+ 	fi
+ echores "$_curses"
+ 	fi
+-	disabled _curses -a disabled _slang && _cdefos="-D_VT100_ -D__OS_NAME__='\"Unix/VT100\"' $_cdefos"
+-	disabled _curses -a disabled _slang && echo "Defaulting to VT100"
++	if disabled _curses && disabled _slang ; then
++		_cdefos="-D_VT100_ -D__OS_NAME__='\"Unix/VT100\"' $_cdefos"
++		echo "Defaulting to VT100"
++	fi
+ 	;;
+     *)
+ 	;;
