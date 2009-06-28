@@ -14,6 +14,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Wired server
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" --includedir="${LOCALBASE}/include"
 USE_GMAKE=	yes
 USE_RC_SUBR=	wired.sh
 

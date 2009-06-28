@@ -17,6 +17,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Wire is a screen-oriented command line Wired client
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" --includedir="${LOCALBASE}/include"
 USE_GMAKE=	yes
 USE_ICONV=	yes
 
