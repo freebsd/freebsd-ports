@@ -1,11 +1,15 @@
 bin/neko
 bin/nekoc
+bin/nekoml.std
+bin/nekoml
 bin/nekotools
 lib/libneko.so
 lib/neko/std.ndll
 lib/neko/zlib.ndll
 %%APACHE13%%lib/neko/mod_neko.ndll
+%%APACHE13%%lib/neko/mod_tora.ndll
 %%APACHE22%%lib/neko/mod_neko2.ndll
+%%APACHE22%%lib/neko/mod_tora2.ndll
 %%MYSQL4%%lib/neko/mysql.ndll
 %%SQLITE3%%lib/neko/sqlite.ndll
 %%PCRE%%lib/neko/regexp.ndll
