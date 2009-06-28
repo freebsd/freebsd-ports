@@ -20,6 +20,7 @@ COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+USE_AUTOTOOLS=	libtool:15 aclocal:110 autoconf:262
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
