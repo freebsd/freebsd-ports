@@ -784,8 +784,8 @@ certificate:
 			-out ${WRKDIR}/servercert.pem -days 366 \
 			-keyout ${WRKDIR}/servercert.pem ; \
 		${INSTALL} -o qmaild -g qmail -m 0640 ${WRKDIR}/servercert.pem ${PREFIX}/control/servercert.pem ; \
-		${OPENSSLBASE}/bin/openssl ciphers > ${QMAIL_PREFIX}/control/tlsclientciphers
-		${OPENSSLBASE}/bin/openssl ciphers > ${QMAIL_PREFIX}/control/tlsserverciphers
+		${OPENSSLBASE}/bin/openssl ciphers > ${QMAIL_PREFIX}/control/tlsclientciphers ; \
+		${OPENSSLBASE}/bin/openssl ciphers > ${QMAIL_PREFIX}/control/tlsserverciphers ; \
 		${ECHO_MSG} "===> Do not forget to do 'make clean' to clean up temporary files" ; \
 	else \
 		${ECHO_MSG} "===> You must create the file ${OPENSSLDIR}/openssl.cnf first." ; \
