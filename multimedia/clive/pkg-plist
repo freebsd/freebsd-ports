@@ -1,0 +1,27 @@
+bin/clive
+%%SITE_PERL%%/clive/Host/Vimeo.pm
+%%SITE_PERL%%/clive/Host/Redtube.pm
+%%SITE_PERL%%/clive/Host/Evisor.pm
+%%SITE_PERL%%/clive/Host/Liveleak.pm
+%%SITE_PERL%%/clive/Host/Dailymotion.pm
+%%SITE_PERL%%/clive/Host/Sevenload.pm
+%%SITE_PERL%%/clive/Host/Cctv.pm
+%%SITE_PERL%%/clive/Host/Youtube.pm
+%%SITE_PERL%%/clive/Host/Break.pm
+%%SITE_PERL%%/clive/Host/Google.pm
+%%SITE_PERL%%/clive/Progress/Bar.pm
+%%SITE_PERL%%/clive/Exec.pm
+%%SITE_PERL%%/clive/Util.pm
+%%SITE_PERL%%/clive/App.pm
+%%SITE_PERL%%/clive/Cache.pm
+%%SITE_PERL%%/clive/HostFactory.pm
+%%SITE_PERL%%/clive/Video.pm
+%%SITE_PERL%%/clive/Config.pm
+%%SITE_PERL%%/clive/Curl.pm
+%%SITE_PERL%%/clive/Log.pm
+%%SITE_PERL%%/clive/Error.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/clive/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/clive
+@dirrmtry %%SITE_PERL%%/clive/Host
+@dirrmtry %%SITE_PERL%%/clive/Progress
+@dirrmtry %%SITE_PERL%%/clive
