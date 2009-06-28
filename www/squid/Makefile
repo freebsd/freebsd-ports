@@ -94,7 +94,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.uk.squid-cache.org/Versions/v2/2.7/ \
 		http://www1.jp.squid-cache.org/Versions/v2/2.7/ \
 		http://www2.tw.squid-cache.org/Versions/v2/2.7/
-MASTER_SITE_SUBDIR=	squid-2/STABLE
+MASTER_SITE_SUBDIR=	squid
 DISTNAME=	squid-2.7.STABLE${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid2.7
 
