@@ -78,7 +78,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.uk.squid-cache.org/Versions/v3/3.0/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
 		http://www2.tw.squid-cache.org/Versions/v3/3.0/
-MASTER_SITE_SUBDIR=	squid-3/STABLE
+MASTER_SITE_SUBDIR=	squid
 DISTNAME=	squid-3.0.STABLE${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid3.0
 
@@ -101,7 +101,7 @@ LATEST_LINK=	squid30
 
 SQUID_STABLE_VER=	16
 
-CONFLICTS=	squid-2.[0-9].* cacheboy-[0-9]*
+CONFLICTS=	squid-2.[0-9].* squid-3.[^0].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
