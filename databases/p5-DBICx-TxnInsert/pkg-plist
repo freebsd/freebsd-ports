@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+lib/perl5/site_perl/5.8.9/DBICx/TxnInsert.pm
+lib/perl5/site_perl/5.8.9/mach/auto/DBICx/TxnInsert/.packlist
+@dirrmtry lib/perl5/site_perl/5.8.9/mach/auto/DBICx/TxnInsert
+@dirrmtry lib/perl5/site_perl/5.8.9/mach/auto/DBICx
+@dirrmtry lib/perl5/site_perl/5.8.9/DBICx

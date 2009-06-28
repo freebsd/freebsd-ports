@@ -298,6 +298,7 @@
     SUBDIR += p5-DBICx-Deploy
     SUBDIR += p5-DBICx-MapMaker
     SUBDIR += p5-DBICx-TestDatabase
+    SUBDIR += p5-DBICx-TxnInsert
     SUBDIR += p5-DBIWrapper
     SUBDIR += p5-DBIx-Abstract
     SUBDIR += p5-DBIx-AnyDBD
