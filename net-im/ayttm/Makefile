@@ -12,7 +12,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	unixmania@gmail.com
 COMMENT=	A "chat" program that combines AIM, ICQ, and Yahoo! Chat into one
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
