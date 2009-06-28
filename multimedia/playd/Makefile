@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	playd
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.logvinov.ru/files/dist/playd/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		http://www.logvinov.ru/files/dist/playd/
 
 MAINTAINER=	killasmurf86@gmail.com
-COMMENT=	Very easy to use mplayer sh wrapper script, with usefull features
+COMMENT=	Very easy to use mplayer sh wrapper script, with useful features
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
+PROJECTHOST=	playd-sh
 PLIST_FILES=	bin/playd
 MAN1=		playd.1
 
