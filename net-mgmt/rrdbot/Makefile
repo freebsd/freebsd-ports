@@ -16,7 +16,8 @@ COMMENT=	Threaded SNMP polling daemon which stores data in RRDs
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datarootdir=${PREFIX}/share/rrdbot
+CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include \
+			--datarootdir=${PREFIX}/share/rrdbot
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	rrdbot
