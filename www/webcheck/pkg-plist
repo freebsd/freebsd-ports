@@ -1,33 +1,47 @@
 share/webcheck/config.py
+share/webcheck/crawler.py
 share/webcheck/debugio.py
-share/webcheck/htmlparse.py
-share/webcheck/httpcodes.py
-share/webcheck/webcheck.css
+share/webcheck/myurllib.py
+share/webcheck/serialize.py
 share/webcheck/webcheck.py
-share/webcheck/myUrlLib.py
+share/webcheck/webcheck.css
+share/webcheck/favicon.ico
+share/webcheck/fancytooltips/fancytooltips.js
+share/webcheck/fancytooltips/readme.txt
+share/webcheck/fancytooltips/fancytooltips.css
+share/webcheck/parsers/__init__.py
+share/webcheck/parsers/css.py
+share/webcheck/parsers/html/__init__.py
+share/webcheck/parsers/html/beautifulsoup.py
+share/webcheck/parsers/html/calltidy.py
+share/webcheck/parsers/html/htmlparser.py
 share/webcheck/plugins/__init__.py
+share/webcheck/plugins/about.py
+share/webcheck/plugins/anchors.py
 share/webcheck/plugins/badlinks.py
 share/webcheck/plugins/external.py
 share/webcheck/plugins/images.py
+share/webcheck/plugins/new.py
 share/webcheck/plugins/notchkd.py
 share/webcheck/plugins/notitles.py
+share/webcheck/plugins/old.py
 share/webcheck/plugins/problems.py
-share/webcheck/plugins/rptlib.py
 share/webcheck/plugins/sitemap.py
-share/webcheck/plugins/slow.py
-share/webcheck/plugins/whatsnew.py
-share/webcheck/plugins/whatsold.py
-share/webcheck/robotparser.py
+share/webcheck/plugins/size.py
+share/webcheck/plugins/urllist.py
 share/webcheck/schemes/__init__.py
-share/webcheck/schemes/filelink.py
-share/webcheck/schemes/ftplink.py
-share/webcheck/schemes/httplink.py
-share/webcheck/version.py
-%%PORTDOCS%%share/doc/webcheck/USAGE
+share/webcheck/schemes/file.py
+share/webcheck/schemes/ftp.py
+share/webcheck/schemes/http.py
+share/webcheck/schemes/https.py
+%%PORTDOCS%%share/doc/webcheck/README
 %%PORTDOCS%%@dirrm share/doc/webcheck
 @unexec rm -f %D/share/webcheck/*.py[co] %D/share/webcheck/*/*.py[co]
 @dirrm share/webcheck/plugins
 @dirrm share/webcheck/schemes
+@dirrm share/webcheck/parsers/html
+@dirrm share/webcheck/parsers
+@dirrm share/webcheck/fancytooltips/
 @dirrm share/webcheck
 @exec ln -fs %D/share/webcheck/webcheck.py %D/bin/webcheck
 @unexec rm %D/bin/webcheck
