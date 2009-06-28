@@ -32,7 +32,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.sql-pg
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/amavisd-new-docs.html
-%%PORTDOCS%%%%DOCSDIR%%/TODO-SNMP-AGENT
 %%PORTDOCS%%%%DOCSDIR%%/screen.css
 %%PORTDOCS%%%%DOCSDIR%%/images/blank.png
 %%PORTDOCS%%%%DOCSDIR%%/images/callouts/1.png
