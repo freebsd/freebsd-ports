@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
@@ -47,13 +48,13 @@ GNU_CONFIGURE=	yes
 ARCH=		x86_64
 .endif
 
-CONFLICTS=	avr-gcc-[34]*
+CONFLICTS=	avr-gcc-3* avr-gcc-42*
 
 CONFIGURE_ARGS=	--target=avr --disable-libssp --with-gmp=${LOCALBASE}
 
 MAKE_FLAGS=	LANGUAGES="c c++"
-# get rid of that silly -mcpu=pentiumpro FreeBSD 5+ is so fond of. :-(
-MAKE_ENV=	MACHINE_ARCH=avr
+
+WITHOUT_CPU_CFLAGS=This is a cross-compiler.
 
 MAN1=		avr-cpp.1 avr-gcc.1 avr-g++.1 avr-gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
