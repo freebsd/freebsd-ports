@@ -1,8 +1,8 @@
 BIEW is multiplatform portable viewer of binary files with built-in editor
-in binary, hexadecimal and disassembler modes.  It uses native Intel syntax
-for disassemble.  Highlight AVR/Java/Athlon64/Pentium 4/K7-Athlon
-disassembler, Russian codepages converter, full preview of formats -- MZ, NE,
-PE, NLM, COFF32, ELF partial -- a.out, LE, LX, PharLap; code navigator and
-more over.
+with binary, hexadecimal, and disassembler modes.  It uses native Intel
+syntax for disassembly and offers many useful features such as highlighting
+for AVR/Java/x86-AMD64/ARM-XScale/PPC-64 code, Russian codepage converter,
+full preview of formats MZ, NE, PE, NLM, COFF32, ELF (and partially a.out,
+LE, LX, PharLap), code navigator, and much more.
 
 WWW: http://biew.sourceforge.net/
