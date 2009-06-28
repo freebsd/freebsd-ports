@@ -23,7 +23,7 @@ load_rc_config $name
 
 : ${xshttpd_enable="NO"}
 
-pidfile="/var/run/httpd.pid"
+pidfile="/var/run/xshttpd.pid"
 command="%%PREFIX%%/bin/httpd"
 stop_cmd="%%PREFIX%%/bin/httpdc kill"
 restart_cmd="%%PREFIX%%/bin/httpdc restart"

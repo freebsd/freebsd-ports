@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.7b09
+DISTVERSION=	3.7b11
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -42,6 +42,7 @@ PORTDOCS=	README COPYING ChangeLog
 .include <bsd.port.pre.mk>
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
+CONFIGURE_ARGS+=--with-rootdir=${WWWDIR}
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
@@ -75,18 +76,11 @@ CONFIGURE_ARGS+=--without-curl
 .endif
 
 post-patch:
-.for i in man/httpd.1.in man/httpd.conf.5 config/httpd.conf.sample dirs.conf\
-	contrib/SSL-Makefile contrib/logrotate.sh
-	@${REINPLACE_CMD} \
-		-e 's|/wwwsys|${WWWDIR}|g' \
-		-e 's|/usr/local/lib/httpd|${WWWDIR}|g' \
-		-e 's|.(prefix)/lib/httpd|${WWWDIR}|g' \
-		-e 's|nobody|${WWWOWN}|g' \
-		-e 's|nogroup|${WWWGRP}|g' \
-		${WRKSRC}/$i
-.endfor
 	@${REINPLACE_CMD} \
 		-e 's|\(MIME_TYPES\).*|\1 "${LOCALBASE}/etc/mime.types"|' \
+		-e 's|nobody|${WWWOWN}|' \
+		-e 's|nogroup|${WWWGRP}|' \
+		-e 's|httpd\.pid|xs&|' \
 		${WRKSRC}/src/constants.h
 	@${REINPLACE_CMD} -e 's|mime.types ||g' \
 		${WRKSRC}/config/Makefile.in
