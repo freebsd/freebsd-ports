@@ -1,0 +1,44 @@
+bin/bareftp
+lib/bareftp/bareFTP.Common.Utils.dll
+lib/bareftp/bareFTP.Connection.dll
+lib/bareftp/bareFTP.Gui.Dialog.dll
+lib/bareftp/bareFTP.Gui.FileManager.dll
+lib/bareftp/bareFTP.Gui.Preferences.dll
+lib/bareftp/bareFTP.Gui.ProgressMonitor.dll
+lib/bareftp/bareFTP.Gui.dll
+lib/bareftp/bareFTP.Preferences.dll
+lib/bareftp/bareFTP.Protocol.Ftp.dll
+lib/bareftp/bareFTP.Protocol.Sftp.dll
+lib/bareftp/bareFTP.Protocol.dll
+lib/bareftp/bareftp.exe
+share/locale/ca/LC_MESSAGES/bareftp.mo
+share/locale/de/LC_MESSAGES/bareftp.mo
+share/locale/es/LC_MESSAGES/bareftp.mo
+share/locale/fr/LC_MESSAGES/bareftp.mo
+share/locale/it/LC_MESSAGES/bareftp.mo
+share/locale/nb/LC_MESSAGES/bareftp.mo
+share/locale/pt_BR/LC_MESSAGES/bareftp.mo
+share/applications/bareftp.desktop
+share/icons/hicolor/16x16/apps/bareftp.png
+share/icons/hicolor/22x22/apps/bareftp.png
+share/icons/hicolor/24x24/apps/bareftp.png
+share/icons/hicolor/32x32/apps/bareftp.png
+share/icons/hicolor/36x36/apps/bareftp.png
+share/icons/hicolor/48x48/apps/bareftp.png
+share/icons/hicolor/scalable/apps/bareftp.svg
+@dirrmtry lib/bareftp
+@dirrmtry lib
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/nb/LC_MESSAGES
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/de
+@dirrmtry share/locale/es
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/it
+@dirrmtry share/locale/nb
+@dirrmtry share/locale/pt_BR

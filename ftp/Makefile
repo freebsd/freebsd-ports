@@ -6,6 +6,7 @@
     SUBDIR += IglooFTP
     SUBDIR += axel
     SUBDIR += axyftp
+    SUBDIR += bareftp
     SUBDIR += bbftp
     SUBDIR += bftpd
     SUBDIR += bsdftpd-ssl
