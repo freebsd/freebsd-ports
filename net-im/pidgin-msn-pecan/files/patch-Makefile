@@ -1,16 +1,25 @@
-diff -Naur ./Makefile ../msn-pecan-0.0.18/Makefile
---- ./Makefile	2009-02-22 14:45:40.000000000 +0100
-+++ ../msn-pecan-0.0.18/Makefile	2009-02-22 14:46:03.000000000 +0100
-@@ -33,7 +33,7 @@
+--- Makefile.orig	2009-06-16 08:23:23.000000000 +0900
++++ Makefile	2009-06-28 01:25:58.549210758 +0900
+@@ -17,8 +17,8 @@
+ LIBSIREN := y
+ PLUS_SOUNDS := y
+ DEBUG := y
+ 
+-CFLAGS := -O2
++#CFLAGS := -O2
+ 
+ ifdef DEBUG
+   CFLAGS += -ggdb
+@@ -34,7 +34,7 @@
  OTHER_WARNINGS := -D_FORTIFY_SOURCE=2 -fstack-protector -g3 -Wdisabled-optimization \
  	-Wendif-labels -Wformat=2 -Wstack-protector -Wswitch
  
 -CFLAGS += -Wall # $(EXTRA_WARNINGS)
-+CFLAGS += -Wall -I/usr/local/include # $(EXTRA_WARNINGS)
++CFLAGS += -Wall -I$(LOCALBASE)/include # $(EXTRA_WARNINGS)
  
- override CFLAGS += -I. -D PACKAGE='"libmsn-pecan"' -DENABLE_NLS -DHAVE_LIBPURPLE -DPURPLE_DEBUG -D PLUGIN_NAME='msn-pecan'
+ override CFLAGS += -I. -D GETTEXT_PACKAGE='"libmsn-pecan"' -DENABLE_NLS -DHAVE_LIBPURPLE -DPURPLE_DEBUG -D PLUGIN_NAME='msn-pecan'
  
-@@ -60,7 +60,7 @@
+@@ -61,7 +61,7 @@
  # For glib < 2.6 support (libpurple maniacs)
  FALLBACK_CFLAGS := -I./fix_purple
  
@@ -19,21 +28,12 @@ diff -Naur ./Makefile ../msn-pecan-0.0.18/Makefile
  
  plugin_dir := $(DESTDIR)/$(PURPLE_LIBDIR)/purple-2
  data_dir := $(DESTDIR)/$(PURPLE_DATADIR)
-@@ -131,7 +131,7 @@
- deps := $(objects:.o=.d)
- 
- PO_TEMPLATE := po/messages.pot
--CATALOGS := ar da de es fi tr hu it nb nl pt_BR pt ru sr sv tr zh_CN zh_TW
-+CATALOGS := ar da de es fi tr hu it nb nl pt_BR pt sr sv tr zh_CN zh_TW
- 
- ifeq ($(PLATFORM),Darwin)
-   SHLIBEXT := dylib
 @@ -235,7 +235,7 @@
  
  install_locales: $(foreach e,$(CATALOGS),po/libmsn-pecan-$(e).mo)
  	for x in $(CATALOGS); do \
 -	install -D po/libmsn-pecan-$$x.mo $(data_dir)/locale/$$x/LC_MESSAGES/libmsn-pecan.mo; \
-+	install -m 444 po/libmsn-pecan-$$x.mo $(data_dir)/locale/$$x/LC_MESSAGES/libmsn-pecan.mo; \
++	install -m 0444 po/libmsn-pecan-$$x.mo $(data_dir)/locale/$$x/LC_MESSAGES/libmsn-pecan.mo; \
  	done
  
  -include $(deps)
