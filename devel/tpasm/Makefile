@@ -22,8 +22,7 @@ PORTEXAMPLES=	*
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/libdata/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/include/*.inc \
-		${PREFIX}/libdata/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/libdata/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MANUAL.TXT ${WRKSRC}/README*.TXT ${DOCSDIR}
