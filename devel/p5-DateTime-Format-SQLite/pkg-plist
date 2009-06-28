@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/SQLite/.packlist
+%%SITE_PERL%%/DateTime/Format/SQLite.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/SQLite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
+@dirrmtry %%SITE_PERL%%/DateTime/Format
+@dirrmtry %%SITE_PERL%%/DateTime
