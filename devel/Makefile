@@ -2596,6 +2596,7 @@
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-analogger
     SUBDIR += rubygem-arrayfields
+    SUBDIR += rubygem-authlogic
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-chronic
