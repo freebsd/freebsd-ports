@@ -30,6 +30,9 @@ LIB_DEPENDS=	freeradius-client.2:${PORTSDIR}/net/freeradius-client
 MAKE_ARGS=	-DWITH_RADIUS_PLUGIN
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's#/usr/local#${PREFIX}#' ${WRKSRC}/Makefile
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
