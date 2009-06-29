@@ -1,0 +1,80 @@
+--- ppp/ppp_l2tp_ctrl.c	2005-01-21 23:02:07.000000000 +0200
++++ ppp/ppp_l2tp_ctrl.c	2009-06-23 15:45:43.000000000 +0300
+@@ -200,7 +200,7 @@ struct ppp_l2tp_sess {
+ 	u_int16_t		peer_id;		/* peer session id */
+ 	struct ppp_log		*log;			/* log */
+ 	ng_ID_t			node_id;		/* tee node id */
+-	char			hook[NG_HOOKLEN + 1];	/* session hook name */
++	char			hook[NG_HOOKSIZ];	/* session hook name */
+ 	void			*link_cookie;		/* opaque link cookie */
+ 	u_int16_t		result;			/* close result code */
+ 	u_int16_t		error;			/* close error code */
+@@ -608,7 +608,7 @@ ppp_l2tp_ctrl_create(struct pevent_ctx *
+ 
+ 	/* Done */
+ 	*nodep = ctrl->node_id;
+-	strlcpy(hook, NG_L2TP_HOOK_LOWER, NG_HOOKLEN + 1);
++	strlcpy(hook, NG_L2TP_HOOK_LOWER, NG_HOOKSIZ);
+ 	return (ctrl);
+ 
+ fail:
+@@ -1860,7 +1860,7 @@ ppp_l2tp_ctrl_event(void *arg)
+ 	    struct ng_mesg msg;
+ 	} buf;
+ 	struct ng_mesg *const msg = &buf.msg;
+-	char raddr[NG_PATHLEN + 1];
++	char raddr[NG_PATHSIZ];
+ 	int len;
+ 
+ 	/* Read netgraph control message */
+--- ppp/ppp_l2tp_ctrl.h	2005-01-21 23:02:07.000000000 +0200
++++ ppp/ppp_l2tp_ctrl.h	2009-06-23 15:45:22.000000000 +0300
+@@ -201,7 +201,7 @@ __BEGIN_DECLS
+  *	peer_id	Unique identifier for peer (used for tie-breakers)
+  *	initiate Whether to send a SCCRQ or just wait for one
+  *	nodep	Pointer to netgraph node ID variable
+- *	hook	Buffer for hook on L2TP netgraph node (size >= NG_HOOKLEN + 1)
++ *	hook	Buffer for hook on L2TP netgraph node (size >= NG_HOOKSIZ)
+  *	avps	List of AVP's to include in the associated
+  *		Start-Control-Connection-Request or
+  *		Start-Control-Connection-Reply control message.
+--- ppp/ppp_l2tp_server.c	2005-01-21 23:02:07.000000000 +0200
++++ ppp/ppp_l2tp_server.c	2009-06-23 15:45:33.000000000 +0300
+@@ -103,7 +103,7 @@ struct ppp_l2tp_peer {
+ 	struct ppp_channel		*chan;		/* pointer to channel */
+ 	struct ppp_auth_config		auth;		/* auth config */
+ 	char				node[32];		/* node path */
+-	char				hook[NG_HOOKLEN + 1];	/* node hook */
++	char				hook[NG_HOOKSIZ];	/* node hook */
+ 	char				logname[32];	/* peer logname */
+ 	struct in_addr			ip;		/* peer ip address */
+ 	u_int16_t			port;		/* peer port */
+@@ -536,7 +536,7 @@ ppp_l2tp_server_sock_event(void *arg)
+ 	struct sockaddr_in sin;
+ 	const size_t bufsize = 8192;
+ 	u_int16_t *buf = NULL;
+-	char hook[NG_HOOKLEN + 1];
++	char hook[NG_HOOKSIZ];
+ 	socklen_t sin_len;
+ 	char namebuf[64];
+ 	ng_ID_t node_id;
+--- ppp/ppp_node.c	2005-01-21 23:02:08.000000000 +0200
++++ ppp/ppp_node.c	2009-06-23 15:45:52.000000000 +0300
+@@ -431,7 +431,7 @@ int
+ ppp_node_send_msg(struct ppp_node *node, const char *relpath,
+ 	u_int32_t cookie, u_int32_t cmd, const void *payload, size_t plen)
+ {
+-	char path[NG_PATHLEN + 1];
++	char path[NG_PATHSIZ];
+ 
+ 	if (relpath == NULL)
+ 		strlcpy(path, NODE_HOOK, sizeof(path));
+@@ -494,7 +494,7 @@ ppp_node_read_message(void *arg)
+ {
+ 	struct ppp_node *const node = arg;
+ 	const size_t max_msglen = 4096;
+-	char raddr[NG_PATHLEN + 1];
++	char raddr[NG_PATHSIZ];
+ 	struct ppp_node_recvmsg *rm;
+ 	struct ng_mesg *msg;
+ 	int found = 0;
