@@ -8,7 +8,7 @@
 PORTNAME=	koffice-i18n
 PORTVERSION=	1.6.3
 PORTREVISION=	1
-CATEGORIES=	misc kde
+CATEGORIES=	editors kde
 MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
@@ -17,7 +17,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE
 
 RUN_DEPENDS+=\
-	${LOCALBASE}/share/locale/km/LC_MESSAGES/example.mo:${PORTSDIR}/misc/koffice-i18n-km\
+	${LOCALBASE}/share/locale/km/LC_MESSAGES/example.mo:${PORTSDIR}/editors/koffice-i18n-km\
 	${LOCALBASE}/share/locale/ar/LC_MESSAGES/kword.mo:${PORTSDIR}/arabic/koffice-i18n\
 	${LOCALBASE}/share/locale/de/LC_MESSAGES/kword.mo:${PORTSDIR}/german/koffice-i18n\
 	${LOCALBASE}/share/locale/fr/LC_MESSAGES/kword.mo:${PORTSDIR}/french/koffice-i18n\
@@ -35,7 +35,7 @@ RUN_DEPENDS+=\
 .for LANG in af bg br bs ca cs cy da el en_GB eo es et eu fa fi ga gl hi hsb is it \
 	lo lt lv mk ms mt nb nl nn ro se sk sl sr sr@Latn sv ta tg th tr uz ven xh zu
 RUN_DEPENDS+=\
-${LOCALBASE}/share/locale/${LANG}/LC_MESSAGES/kword.mo:${PORTSDIR}/misc/koffice-i18n-${LANG}
+${LOCALBASE}/share/locale/${LANG}/LC_MESSAGES/kword.mo:${PORTSDIR}/editors/koffice-i18n-${LANG}
 .endfor
 
 USE_KDELIBS_VER=3
