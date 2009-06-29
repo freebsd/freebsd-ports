@@ -4,4 +4,4 @@ QuakeWorld demo files (in QWD format) to new-era multi-view format.
 No QWZ format support yet, but one can always convert them to QWD
 manually with Qizmo and run them through QWDtools after that.
 
-WWW: http://mvdsv.sourceforge.net/
+WWW: http://mvdsv.qw-dev.net/

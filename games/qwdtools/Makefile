@@ -9,6 +9,7 @@ PORTNAME=	qwdtools
 CATEGORIES=	games converters
 COMMENT=	Converts QuakeWorld demos from QWD format to MVD format
 DESCR=		${.CURDIR}/pkg-descr
+PKGMESSAGE=	/nonexistent
 
 MASTERDIR=	${.CURDIR}/../mvdsv
 
