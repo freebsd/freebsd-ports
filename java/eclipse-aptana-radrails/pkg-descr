@@ -1,0 +1,14 @@
+Aptana RadRails is an open source IDE for Ruby and the Ruby on Rails framework
+featuring everything you need to get started fast and get even faster with
+developing, testing, tuning, and deploying your Ruby and Rails apps.
+
+Highlights include the following features:
+
+ * Code Assist on Ruby and RHTML files
+ * Outliner for code structure
+ * Debugging support
+ * Integrated server views
+ * Dynamic testing
+ * Integrated RoR deployment options
+
+WWW: http://www.aptana.com/rails
