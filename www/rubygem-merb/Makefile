@@ -38,6 +38,8 @@ BUILD_DEPENDS=	rubygem-builder>=2.0.0:${PORTSDIR}/devel/rubygem-builder \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	rubygem-rubigen>0:${PORTSDIR}/devel/rubygem-rubigen
 
+BROKEN=		fails to install
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 PLIST_FILES=	bin/merb \
