@@ -70,6 +70,7 @@ CONFIGURE_ARGS+=	--without-perl
 USE_RUBY=	yes
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 CONFIGURE_ARGS+=	--with-ruby
+BROKEN=		does not compile
 .else
 CONFIGURE_ARGS+=	--without-ruby
 .endif
