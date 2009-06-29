@@ -7,20 +7,21 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.3.3.11
-PORTREVISION=	2
+PORTVERSION=	1.3.3.13
 CATEGORIES=	print editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A comprehensive desktop publishing program
 
-LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		lcms.1:${PORTSDIR}/graphics/lcms \
+		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		cups.2:${PORTSDIR}/print/cups-base \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
@@ -29,30 +30,15 @@ USE_QT_VER=	3
 USE_GNOME=	gnometarget libartlgpl2 libxml2
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-CONFIGURE_ARGS=	--enable-scripter2
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_MOTIF=      yes
+USE_CMAKE=      yes
+CMAKE_USE_PTHREAD=      yes
 
-PLIST_SUB+=	SCRIBUS_VERSION=${PORTVERSION}
-MAN1=		scribus.1
+PLIST_SUB+=     SCRIBUS_VERSION=${PORTVERSION}
+MAN1=           scribus.1
+MANLANG=	"" pl de
 MANCOMPRESSED=	no
-MANLANG=	"" pl pl_PL.UTF-8 pl_PL.ISO8859-2 de de_DE.UTF-8 \
-		de_DE.ISO8859-1 de_DE.ISO8859-15
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g; \
-		s|-O2 ||g ; \
-		s|="-lc"|=""|g ; \
-		s|python2\.3|python${PYTHON_VERSION:S/^python//}|g ; \
-		s|Python 2\.3|Python ${PYTHON_VERSION:S/^python//}|g ; \
-		s|python2_3|${PYTHON_VERSION:S/./_/}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/\/share\/pixmaps\//s|^|#|g' \
-		${WRKSRC}/scribus/icons/Makefile.in
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	    ${WRKSRC}/configure
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

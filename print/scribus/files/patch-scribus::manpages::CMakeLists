@@ -1,0 +1,23 @@
+--- scribus/manpages/CMakeLists.txt.orig	2009-06-25 16:46:04.000000000 -0300
++++ scribus/manpages/CMakeLists.txt	2009-06-25 16:51:42.000000000 -0300
+@@ -4,12 +4,17 @@
+ 
+ INSTALL(FILES
+ scribus.1
++  DESTINATION ${MANDIR}/man1
++)
++
++INSTALL(FILES
+ scribus.1.de
+-  DESTINATION ${MANDIR}man1
++  DESTINATION ${MANDIR}de/man1
++  RENAME scribus.1
+ )
+ 
+ INSTALL(FILES
+ scribus.1.pl
+   DESTINATION ${MANDIR}pl/man1
+   RENAME scribus.1
+-)
+\ No newline at end of file
++)
