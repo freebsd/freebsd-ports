@@ -50,6 +50,7 @@ share/locale/zh_CN/LC_MESSAGES/pinot.mo
 share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/YahooBOSS.src
 %%DATADIR%%/engines/AmazonAPI.src
+%%DATADIR%%/engines/Bing.src
 %%DATADIR%%/engines/Clusty.src
 %%DATADIR%%/engines/Exalead.src
 %%DATADIR%%/engines/Freshmeat.src
@@ -57,7 +58,6 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/GoogleCodeSearch.src
 %%DATADIR%%/engines/IOIDescription.xml
 %%DATADIR%%/engines/KodersDescription.xml
-%%DATADIR%%/engines/MSN.src
 %%DATADIR%%/engines/OmegaDescription.xml
 %%DATADIR%%/engines/RollYOTopNews.src
 %%DATADIR%%/engines/Topix.src
