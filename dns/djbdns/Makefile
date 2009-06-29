@@ -35,7 +35,8 @@ OPTIONS=	DUMPCACHE	"persistent cache for dnscache" off \
 BROKEN=		The jumbo patch currently conflicts with the IPv6 and ignoreip2 patches
 .endif
 
-PATCH_SITES+=	http://www.ro.kde.org/djbdns/mywork/jumbo/:jumbo
+PATCH_SITES+=	http://people.FreeBSD.org/~roam/ports/dns/djbdns/:jumbo \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%\//roam\/dns\/djbdns\/:jumbo/}
 PATCHFILES+=	jumbo-p13.patch.gz:jumbo
 PATCH_DIST_STRIP=	-p1
 .if defined(WITH_DUMPCACHE)
