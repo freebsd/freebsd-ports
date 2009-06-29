@@ -1,9 +1,9 @@
-diff -ruN mutt-1.5.19.orig/init.h init.h
---- mutt-1.5.19.orig/init.h	2009-02-11 11:57:36.000000000 +0800
-+++ init.h	2009-02-11 11:57:40.000000000 +0800
-@@ -279,6 +279,11 @@
-   ** unset, you must first use the \fC<tag-prefix>\fP function (bound to ``;''
-   ** by default) to make the next function apply to all tagged messages.
+diff -ruN ../mutt-1.5.20.orig/init.h ./init.h
+--- mutt-1.5.20.orig/init.h	2009-06-14 05:35:21.000000000 +0800
++++ init.h	2009-06-29 09:52:08.000000000 +0800
+@@ -287,6 +287,11 @@
+   ** .pp
+   ** Also see $$fast_reply.
    */
 +  { "bbsislame",	DT_BOOL, R_NONE, OPTBBSISLAME, 0 },
 +  /*
@@ -13,27 +13,27 @@ diff -ruN mutt-1.5.19.orig/init.h init.h
    { "beep",		DT_BOOL, R_NONE, OPTBEEP, 1 },
    /*
    ** .pp
-@@ -2681,7 +2686,7 @@
-   ** mutt scores are always greater than or equal to zero, the default setting
-   ** of this variable will never mark a message read.
+@@ -2435,7 +2440,7 @@
+   ** For the pager, this variable specifies the number of lines shown
+   ** before search results. By default, search results will be top-aligned.
    */
 -  { "send_charset",	DT_STR,  R_NONE, UL &SendCharset, UL "us-ascii:iso-8859-1:utf-8" },
 +  { "send_charset",	DT_STR,  R_NONE, UL &SendCharset, UL "big5:gb2312:us-ascii:iso-8859-1:utf-8" },
    /*
    ** .pp
    ** A colon-delimited list of character sets for outgoing messages. Mutt will use the
-@@ -3143,7 +3148,7 @@
-   ** machine without having to enter a password.
+@@ -3205,7 +3210,7 @@
+   ** When \fIset\fP, Mutt will jump to the next unread message, if any,
+   ** when the current thread is \fIun\fPcollapsed.
    */
- #endif
 -  { "use_8bitmime",	DT_BOOL, R_NONE, OPTUSE8BITMIME, 0 },
 +  { "use_8bitmime",	DT_BOOL, R_NONE, OPTUSE8BITMIME, 1 },
    /*
    ** .pp
    ** \fBWarning:\fP do not set this variable unless you are using a version
-diff -ruN mutt-1.5.19.orig/mbyte.c mbyte.c
---- mutt-1.5.19.orig/mbyte.c	2009-02-11 11:57:36.000000000 +0800
-+++ mbyte.c	2009-02-11 11:57:40.000000000 +0800
+diff -ruN ../mutt-1.5.20.orig/mbyte.c ./mbyte.c
+--- mutt-1.5.20.orig/mbyte.c	2009-01-05 06:53:54.000000000 +0800
++++ mbyte.c	2009-06-29 09:51:38.000000000 +0800
 @@ -24,6 +24,9 @@
  # include "config.h"
  #endif
@@ -167,10 +167,10 @@ diff -ruN mutt-1.5.19.orig/mbyte.c mbyte.c
    }
    return wcwidth_ucs (wc);
  }
-diff -ruN mutt-1.5.19.orig/mutt.h mutt.h
---- mutt-1.5.19.orig/mutt.h	2009-02-11 11:57:36.000000000 +0800
-+++ mutt.h	2009-02-11 11:57:40.000000000 +0800
-@@ -315,6 +315,7 @@
+diff -ruN ../mutt-1.5.20.orig/mutt.h ./mutt.h
+--- mutt-1.5.20.orig/mutt.h	2009-06-13 06:15:42.000000000 +0800
++++ mutt.h	2009-06-29 09:51:38.000000000 +0800
+@@ -322,6 +322,7 @@
    OPTATTACHSPLIT,
    OPTAUTOEDIT,
    OPTAUTOTAG,
@@ -178,9 +178,9 @@ diff -ruN mutt-1.5.19.orig/mutt.h mutt.h
    OPTBEEP,
    OPTBEEPNEW,
    OPTBOUNCEDELIVERED,
-diff -ruN mutt-1.5.19.orig/myiconv.c myiconv.c
---- mutt-1.5.19.orig/myiconv.c	1970-01-01 08:00:00.000000000 +0800
-+++ myiconv.c	2009-02-11 11:57:40.000000000 +0800
+diff -ruN ../mutt-1.5.20.orig/myiconv.c ./myiconv.c
+--- mutt-1.5.20.orig/myiconv.c	1970-01-01 08:00:00.000000000 +0800
++++ myiconv.c	2009-06-29 09:51:38.000000000 +0800
 @@ -0,0 +1,167 @@
 +/*
 + * Contributed by Kuang-che Wu <kcwu@kcwu.dyndns.org>
@@ -349,9 +349,9 @@ diff -ruN mutt-1.5.19.orig/myiconv.c myiconv.c
 +}
 +
 +#endif
-diff -ruN mutt-1.5.19.orig/pager.c pager.c
---- mutt-1.5.19.orig/pager.c	2009-02-11 11:57:36.000000000 +0800
-+++ pager.c	2009-02-11 11:57:40.000000000 +0800
+diff -ruN ../mutt-1.5.20.orig/pager.c ./pager.c
+--- mutt-1.5.20.orig/pager.c	2009-06-04 04:48:31.000000000 +0800
++++ pager.c	2009-06-29 09:51:38.000000000 +0800
 @@ -20,6 +20,10 @@
  # include "config.h"
  #endif
@@ -363,7 +363,7 @@ diff -ruN mutt-1.5.19.orig/pager.c pager.c
  #include "mutt.h"
  #include "mutt_curses.h"
  #include "mutt_regex.h"
-@@ -1055,7 +1059,7 @@
+@@ -1066,7 +1070,7 @@
  {
    int space = -1; /* index of the last space or TAB */
    int col = option (OPTMARKERS) ? (*lineInfo)[n].continuation : 0;
@@ -372,7 +372,7 @@ diff -ruN mutt-1.5.19.orig/pager.c pager.c
    wchar_t wc;
    mbstate_t mbstate;
  
-@@ -1153,7 +1157,10 @@
+@@ -1164,7 +1168,10 @@
      {
        if (wc == ' ')
  	space = ch;
@@ -383,7 +383,7 @@ diff -ruN mutt-1.5.19.orig/pager.c pager.c
        if (col + t > wrap_cols)
  	break;
        col += t;
-@@ -1370,6 +1377,7 @@
+@@ -1385,6 +1392,7 @@
        {
  	buf_ptr = buf + ch;
  	/* skip trailing blanks */
@@ -391,9 +391,9 @@ diff -ruN mutt-1.5.19.orig/pager.c pager.c
  	while (ch && (buf[ch] == ' ' || buf[ch] == '\t' || buf[ch] == '\r'))
  	  ch--;
          /* a very long word with leading spaces causes infinite wrapping */
-diff -ruN mutt-1.5.19.orig/parse.c parse.c
---- mutt-1.5.19.orig/parse.c	2009-02-11 11:57:36.000000000 +0800
-+++ parse.c	2009-02-11 11:57:54.000000000 +0800
+diff -ruN ../mutt-1.5.20.orig/parse.c ./parse.c
+--- mutt-1.5.20.orig/parse.c	2009-06-02 00:29:32.000000000 +0800
++++ parse.c	2009-06-29 09:51:38.000000000 +0800
 @@ -381,7 +381,10 @@
      s++;
      SKIPWS (s);
@@ -406,10 +406,10 @@ diff -ruN mutt-1.5.19.orig/parse.c parse.c
      if ((s = mutt_get_parameter ("name", parms)))
        ct->form_name = safe_strdup (s);
      mutt_free_parameter (&parms);
-diff -ruN mutt-1.5.19.orig/pgp.c pgp.c
---- mutt-1.5.19.orig/pgp.c	2009-02-11 11:57:36.000000000 +0800
-+++ pgp.c	2009-02-11 11:57:40.000000000 +0800
-@@ -1006,7 +1006,7 @@
+diff -ruN ../mutt-1.5.20.orig/pgp.c ./pgp.c
+--- mutt-1.5.20.orig/pgp.c	2009-05-31 01:20:08.000000000 +0800
++++ pgp.c	2009-06-29 09:51:38.000000000 +0800
+@@ -1024,7 +1024,7 @@
    int empty = 1;
    pid_t thepid;
    
@@ -418,10 +418,10 @@ diff -ruN mutt-1.5.19.orig/pgp.c pgp.c
  
    mutt_mktemp (sigfile);
    if ((fp = safe_fopen (sigfile, "w")) == NULL)
-diff -ruN mutt-1.5.19.orig/po/zh_TW.po po/zh_TW.po
---- mutt-1.5.19.orig/po/zh_TW.po	2009-02-11 11:57:36.000000000 +0800
-+++ po/zh_TW.po	2009-02-11 11:57:40.000000000 +0800
-@@ -1777,7 +1777,7 @@
+diff -ruN ../mutt-1.5.20.orig/po/zh_TW.po ./po/zh_TW.po
+--- mutt-1.5.20.orig/po/zh_TW.po	2009-06-15 02:54:11.000000000 +0800
++++ po/zh_TW.po	2009-06-29 09:51:38.000000000 +0800
+@@ -1802,7 +1802,7 @@
  "~w 檔案\t\t將訊息寫入檔案\n"
  "~x\t\t停止修改並離開編輯器\n"
  "~?\t\t這訊息\n"
@@ -430,25 +430,25 @@ diff -ruN mutt-1.5.19.orig/po/zh_TW.po po/zh_TW.po
  
  #: edit.c:52
  #, fuzzy
-@@ -1809,7 +1809,7 @@
+@@ -1834,7 +1834,7 @@
  "~w 檔案\t\t將訊息寫入檔案\n"
  "~x\t\t停止修改並離開編輯器\n"
  "~?\t\t這訊息\n"
 -".\t\t如果是一行裏的唯一字符，則代表結束輸入\n"
 +".\t\t如果是一行裡的唯一字符，則代表結束輸入\n"
  
- #: edit.c:188
+ #: edit.c:187
  #, c-format
-@@ -1818,7 +1818,7 @@
+@@ -1843,7 +1843,7 @@
  
- #: edit.c:330
+ #: edit.c:329
  msgid "(End message with a . on a line by itself)\n"
 -msgstr "（在一行裏輸入一個 . 符號來結束信件）\n"
 +msgstr "（在一行裡輸入一個 . 符號來結束信件）\n"
  
- #: edit.c:389
+ #: edit.c:388
  msgid "No mailbox.\n"
-@@ -4565,7 +4565,7 @@
+@@ -4634,7 +4634,7 @@
  
  #: ../keymap_alldefs.h:43
  msgid "rename/move an attached file"
@@ -457,7 +457,7 @@ diff -ruN mutt-1.5.19.orig/po/zh_TW.po po/zh_TW.po
  
  #: ../keymap_alldefs.h:44
  msgid "send the message"
-@@ -4573,7 +4573,7 @@
+@@ -4642,7 +4642,7 @@
  
  #: ../keymap_alldefs.h:45
  msgid "toggle disposition between inline/attachment"
@@ -466,7 +466,7 @@ diff -ruN mutt-1.5.19.orig/po/zh_TW.po po/zh_TW.po
  
  #: ../keymap_alldefs.h:46
  msgid "toggle whether to delete file after sending it"
-@@ -5183,11 +5183,11 @@
+@@ -5253,11 +5253,11 @@
  
  #: ../keymap_alldefs.h:195
  msgid "Select the previous element of the chain"
@@ -480,10 +480,10 @@ diff -ruN mutt-1.5.19.orig/po/zh_TW.po po/zh_TW.po
  
  #: ../keymap_alldefs.h:197
  msgid "send the message through a mixmaster remailer chain"
-diff -ruN mutt-1.5.19.orig/sendlib.c sendlib.c
---- mutt-1.5.19.orig/sendlib.c	2009-02-11 11:57:36.000000000 +0800
-+++ sendlib.c	2009-02-11 11:57:40.000000000 +0800
-@@ -2289,7 +2289,7 @@
+diff -ruN ../mutt-1.5.20.orig/sendlib.c ./sendlib.c
+--- mutt-1.5.20.orig/sendlib.c	2009-06-14 23:46:11.000000000 +0800
++++ sendlib.c	2009-06-29 09:51:38.000000000 +0800
+@@ -2383,7 +2383,7 @@
    rfc2047_encode_adrlist (env->reply_to, "Reply-To");
    rfc2047_encode_string (&env->x_label);
  
