@@ -9,7 +9,8 @@
 PORTNAME=	sted
 PORTVERSION=	0.2.2
 CATEGORIES=	editors
-MASTER_SITES=	http://freebsd.t-hosting.hu/sted/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	gabor
 
 MAINTAINER=	sahil@tandon.net
 COMMENT=	Simple/Small/Stupid Text Editor

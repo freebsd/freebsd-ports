@@ -9,7 +9,8 @@
 PORTNAME=	terminality
 PORTVERSION=	2.1
 CATEGORIES=	devel
-MASTER_SITES=	http://freebsd.t-hosting.hu/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	gabor
 DISTNAME=	tn-${PORTVERSION}
 
 MAINTAINER=	sahil@tandon.net
