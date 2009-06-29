@@ -1,0 +1,904 @@
+--- src/bund.c	2008-04-07 17:22:24.000000000 +0400
++++ src/bund.c	2009-06-24 22:20:20.000000000 +0400
+@@ -1546,7 +1546,7 @@
+ void
+ BundNgShutdown(Bund b, int iface, int ppp)
+ {
+-  char	path[NG_PATHLEN + 1];
++  char	path[NG_PATHSIZ];
+ 
+   if (iface) {
+     snprintf(path, sizeof(path), "%s:", b->iface.ifname);
+@@ -1717,7 +1717,7 @@
+       u_char		buf[8192];
+       struct ng_mesg	msg;
+   }			u;
+-  char			raddr[NG_PATHLEN + 1];
++  char			raddr[NG_PATHSIZ];
+   int			len;
+ 
+   /* Read message */
+--- src/ccp_deflate.c	2008-04-07 17:22:24.000000000 +0400
++++ src/ccp_deflate.c	2009-06-24 22:20:20.000000000 +0400
+@@ -71,7 +71,7 @@
+   DeflateInfo		const deflate = &b->ccp.deflate;
+   struct ng_deflate_config	conf;
+   struct ngm_mkpeer	mp;
+-  char			path[NG_PATHLEN + 1];
++  char			path[NG_PATHSIZ];
+   const char		*deflatehook, *ppphook;
+   int			cmd;
+ 
+@@ -165,7 +165,7 @@
+ DeflateCleanup(Bund b, int dir)
+ {
+   const char	*ppphook;
+-  char		path[NG_PATHLEN + 1];
++  char		path[NG_PATHSIZ];
+ 
+   /* Remove node */
+   switch (dir) {
+@@ -190,7 +190,7 @@
+ static Mbuf
+ DeflateRecvResetReq(Bund b, int id, Mbuf bp, int *noAck)
+ {
+-  char	path[NG_PATHLEN + 1];
++  char	path[NG_PATHSIZ];
+ 
+   /* Forward ResetReq to the DEFLATE compression node */
+   snprintf(path, sizeof(path), "%s.%s", MPD_HOOK_PPP, NG_PPP_HOOK_COMPRESS);
+@@ -219,7 +219,7 @@
+ static void
+ DeflateRecvResetAck(Bund b, int id, Mbuf bp)
+ {
+-  char	path[NG_PATHLEN + 1];
++  char	path[NG_PATHSIZ];
+ 
+   /* Forward ResetReq to the DEFLATE compression node */
+   snprintf(path, sizeof(path), "%s.%s", MPD_HOOK_PPP, NG_PPP_HOOK_DECOMPRESS);
+@@ -328,7 +328,7 @@
+ DeflateStat(Context ctx, int dir) 
+ {
+     Bund			b = ctx->bund;
+-    char			path[NG_PATHLEN + 1];
++    char			path[NG_PATHSIZ];
+     struct ng_deflate_stats	stats;
+     union {
+ 	u_char			buf[sizeof(struct ng_mesg) + sizeof(stats)];
+--- src/ccp_mppc.c	2008-04-07 17:22:24.000000000 +0400
++++ src/ccp_mppc.c	2009-06-24 22:20:20.000000000 +0400
+@@ -91,7 +91,7 @@
+   MppcInfo		const mppc = &b->ccp.mppc;
+   struct ng_mppc_config	conf;
+   struct ngm_mkpeer	mp;
+-  char			path[NG_PATHLEN + 1];
++  char			path[NG_PATHSIZ];
+   const char		*mppchook, *ppphook;
+   int			mschap;
+   int			cmd;
+@@ -240,7 +240,7 @@
+ MppcCleanup(Bund b, int dir)
+ {
+   const char	*ppphook;
+-  char		path[NG_PATHLEN + 1];
++  char		path[NG_PATHSIZ];
+ 
+   /* Remove node */
+   switch (dir) {
+@@ -421,7 +421,7 @@
+ static Mbuf
+ MppcRecvResetReq(Bund b, int id, Mbuf bp, int *noAck)
+ {
+-  char	path[NG_PATHLEN + 1];
++  char	path[NG_PATHSIZ];
+ 
+   /* Forward ResetReq to the MPPC compression node */
+   snprintf(path, sizeof(path), "%s.%s", MPD_HOOK_PPP, NG_PPP_HOOK_COMPRESS);
+--- src/ccp_pred1.c	2008-04-07 17:22:24.000000000 +0400
++++ src/ccp_pred1.c	2009-06-24 22:20:20.000000000 +0400
+@@ -134,7 +134,7 @@
+   struct ngm_mkpeer	mp;
+   struct ng_pred1_config conf;
+   const char		*pred1hook, *ppphook;
+-  char                  path[NG_PATHLEN + 1];
++  char                  path[NG_PATHSIZ];
+ 
+   memset(&conf, 0, sizeof(conf));
+   conf.enable = 1;
+@@ -202,7 +202,7 @@
+   }
+ #else
+   const char	*ppphook;
+-  char		path[NG_PATHLEN + 1];
++  char		path[NG_PATHSIZ];
+ 
+   /* Remove node */
+   switch (dir) {
+@@ -398,7 +398,7 @@
+   Pred1Init(b, COMP_DIR_XMIT);
+   p->xmit_stats.Errors++;
+ #else
+-  char	path[NG_PATHLEN + 1];
++  char	path[NG_PATHSIZ];
+   /* Forward ResetReq to the DEFLATE compression node */
+   snprintf(path, sizeof(path), "%s.%s", MPD_HOOK_PPP, NG_PPP_HOOK_COMPRESS);
+   if (NgSendMsg(b->csock, path,
+@@ -433,7 +433,7 @@
+ #ifndef USE_NG_PRED1
+   Pred1Init(b, COMP_DIR_RECV);
+ #else
+-  char	path[NG_PATHLEN + 1];
++  char	path[NG_PATHSIZ];
+   /* Forward ResetReq to the DEFLATE compression node */
+   snprintf(path, sizeof(path), "%s.%s", MPD_HOOK_PPP, NG_PPP_HOOK_DECOMPRESS);
+   if (NgSendMsg(b->csock, path,
+@@ -537,7 +537,7 @@
+     return (0);
+ #else
+     Bund			b = ctx->bund;
+-    char			path[NG_PATHLEN + 1];
++    char			path[NG_PATHSIZ];
+     struct ng_pred1_stats	stats;
+     union {
+ 	u_char			buf[sizeof(struct ng_mesg) + sizeof(stats)];
+Only in src: config.h
+--- src/iface.c	2008-04-07 17:22:24.000000000 +0400
++++ src/iface.c	2009-06-24 22:20:20.000000000 +0400
+@@ -1697,8 +1697,8 @@
+ IfaceNgIpInit(Bund b, int ready)
+ {
+     struct ngm_connect	cn;
+-    char		path[NG_PATHLEN + 1];
+-    char		hook[NG_HOOKLEN + 1];
++    char		path[NG_PATHSIZ];
++    char		hook[NG_HOOKSIZ];
+ 
+     if (!ready) {
+ 	/* Dial-on-Demand mode */
+@@ -1802,7 +1802,7 @@
+ static void
+ IfaceNgIpShutdown(Bund b)
+ {
+-    char		path[NG_PATHLEN + 1];
++    char		path[NG_PATHSIZ];
+ 
+ #ifdef USE_NG_NAT
+     if (b->iface.nat_up)
+@@ -1840,7 +1840,7 @@
+ IfaceNgIpv6Init(Bund b, int ready)
+ {
+     struct ngm_connect	cn;
+-    char		path[NG_PATHLEN + 1];
++    char		path[NG_PATHSIZ];
+ 
+     if (!ready) {
+     } else {
+@@ -1871,7 +1871,7 @@
+ static void
+ IfaceNgIpv6Shutdown(Bund b)
+ {
+-    char		path[NG_PATHLEN + 1];
++    char		path[NG_PATHSIZ];
+ 
+     NgFuncDisconnect(b->csock, b->name, MPD_HOOK_PPP, NG_PPP_HOOK_IPV6);
+ 
+@@ -1901,8 +1901,8 @@
+ 	b->name, NG_NAT_NODE_TYPE, path, mp.ourhook, strerror(errno)));
+       return(-1);
+     }
+-    strlcat(path, ".", NG_PATHLEN);
+-    strlcat(path, hook, NG_PATHLEN);
++    strlcat(path, ".", NG_PATHSIZ - 1);
++    strlcat(path, hook, NG_PATHSIZ - 1);
+     snprintf(nm.name, sizeof(nm.name), "mpd%d-%s-nat", gPid, b->name);
+     if (NgSendMsg(b->csock, path,
+ 	NGM_GENERIC_COOKIE, NGM_NAME, &nm, sizeof(nm)) < 0) {
+@@ -1962,7 +1962,7 @@
+ IfaceSetupNAT(Bund b)
+ {
+     NatState	const nat = &b->iface.nat;
+-    char	path[NG_PATHLEN+1];
++    char	path[NG_PATHSIZ];
+ 
+     if (u_addrempty(&nat->alias_addr)) {
+ 	snprintf(path, sizeof(path), "mpd%d-%s-nat:", gPid, b->name);
+@@ -1981,7 +1981,7 @@
+ static void
+ IfaceShutdownNAT(Bund b)
+ {
+-    char	path[NG_PATHLEN+1];
++    char	path[NG_PATHSIZ];
+ 
+     snprintf(path, sizeof(path), "mpd%d-%s-nat:", gPid, b->name);
+     NgFuncShutdownNode(b->csock, b->name, path);
+@@ -2005,8 +2005,8 @@
+ 	b->name, NG_TEE_NODE_TYPE, path, mp.ourhook, strerror(errno)));
+       return(-1);
+     }
+-    strlcat(path, ".", NG_PATHLEN);
+-    strlcat(path, hook, NG_PATHLEN);
++    strlcat(path, ".", NG_PATHSIZ - 1);
++    strlcat(path, hook, NG_PATHSIZ - 1);
+     snprintf(nm.name, sizeof(nm.name), "%s-tee", b->iface.ifname);
+     if (NgSendMsg(b->csock, path,
+ 	NGM_GENERIC_COOKIE, NGM_NAME, &nm, sizeof(nm)) < 0) {
+@@ -2022,7 +2022,7 @@
+ static void
+ IfaceShutdownTee(Bund b)
+ {
+-    char	path[NG_PATHLEN+1];
++    char	path[NG_PATHSIZ];
+ 
+     snprintf(path, sizeof(path), "%s-tee:", b->iface.ifname);
+     NgFuncShutdownNode(b->csock, b->name, path);
+@@ -2035,7 +2035,7 @@
+     struct ngm_mkpeer	mp;
+     struct ngm_name	nm;
+     struct ngm_connect  cn;
+-    char		path1[NG_PATHLEN+1];
++    char		path1[NG_PATHSIZ];
+     struct {
+ 	struct ng_ipacct_mesg m;
+ 	int		data;
+@@ -2052,8 +2052,8 @@
+ 	b->name, NG_TEE_NODE_TYPE, path, mp.ourhook, strerror(errno)));
+       return(-1);
+     }
+-    strlcat(path, ".", NG_PATHLEN);
+-    strlcat(path, hook, NG_PATHLEN);
++    strlcat(path, ".", NG_PATHSIZ - 1);
++    strlcat(path, hook, NG_PATHSIZ - 1);
+     snprintf(nm.name, sizeof(nm.name), "%s_acct_tee", b->iface.ifname);
+     if (NgSendMsg(b->csock, path,
+ 	NGM_GENERIC_COOKIE, NGM_NAME, &nm, sizeof(nm)) < 0) {
+@@ -2128,7 +2128,7 @@
+ static void
+ IfaceShutdownIpacct(Bund b)
+ {
+-    char	path[NG_PATHLEN+1];
++    char	path[NG_PATHSIZ];
+ 
+     snprintf(path, sizeof(path), "%s_acct_tee:", b->iface.ifname);
+     NgFuncShutdownNode(b->csock, b->name, path);
+@@ -2165,13 +2165,13 @@
+         b->name, path, cn.ourhook, cn.path, cn.peerhook, strerror(errno)));
+       return (-1);
+     }
+-    strlcat(path, ".", NG_PATHLEN);
+-    strlcat(path, hook, NG_PATHLEN);
++    strlcat(path, ".", NG_PATHSIZ - 1);
++    strlcat(path, hook, NG_PATHSIZ - 1);
+     if (out) {
+-	snprintf(hook, NG_HOOKLEN, "%s%d", NG_NETFLOW_HOOK_DATA,
++	snprintf(hook, NG_HOOKSIZ - 1, "%s%d", NG_NETFLOW_HOOK_DATA,
+ 	    gNetflowIface + b->id*2 + out);
+     } else {
+-	snprintf(hook, NG_HOOKLEN, "%s%d", NG_NETFLOW_HOOK_OUT,
++	snprintf(hook, NG_HOOKSIZ - 1, "%s%d", NG_NETFLOW_HOOK_OUT,
+ 	    gNetflowIface + b->id*2 + out);
+     }
+     return (0);
+@@ -2180,7 +2180,7 @@
+ static int
+ IfaceSetupNetflow(Bund b, char out)
+ {
+-    char path[NG_PATHLEN + 1];
++    char path[NG_PATHSIZ];
+     struct ng_netflow_setdlt	 nf_setdlt;
+     struct ng_netflow_setifindex nf_setidx;
+     
+@@ -2213,14 +2213,14 @@
+ static void
+ IfaceShutdownNetflow(Bund b, char out)
+ {
+-    char	path[NG_PATHLEN+1];
+-    char	hook[NG_HOOKLEN+1];
++    char	path[NG_PATHSIZ];
++    char	hook[NG_HOOKSIZ];
+ 
+-    snprintf(path, NG_PATHLEN, "%s:", gNetflowNodeName);
+-    snprintf(hook, NG_HOOKLEN, "%s%d", NG_NETFLOW_HOOK_DATA,
++    snprintf(path, NG_PATHSIZ - 1, "%s:", gNetflowNodeName);
++    snprintf(hook, NG_HOOKSIZ - 1, "%s%d", NG_NETFLOW_HOOK_DATA,
+ 	    gNetflowIface + b->id*2 + out);
+     NgFuncDisconnect(b->csock, b->name, path, hook);
+-    snprintf(hook, NG_HOOKLEN, "%s%d", NG_NETFLOW_HOOK_OUT,
++    snprintf(hook, NG_HOOKSIZ - 1, "%s%d", NG_NETFLOW_HOOK_OUT,
+ 	    gNetflowIface + b->id*2 + out);
+     NgFuncDisconnect(b->csock, b->name, path, hook);
+ }
+@@ -2251,9 +2251,9 @@
+ 	    goto fail;
+ 	}
+ 
+-	strlcat(path, ".", NG_PATHLEN);
+-	strlcat(path, hook, NG_PATHLEN);
+-	snprintf(hook, NG_HOOKLEN, "out");
++	strlcat(path, ".", NG_PATHSIZ - 1);
++	strlcat(path, hook, NG_PATHSIZ - 1);
++	snprintf(hook, NG_HOOKSIZ - 1, "out");
+ 
+ 	/* Set the new node's name. */
+ 	snprintf(nm.name, sizeof(nm.name), "mpd%d-%s-mss", gPid, b->name);
+@@ -2276,8 +2276,8 @@
+ 	goto fail;
+     }
+ 
+-    strlcat(path, ".", NG_PATHLEN);
+-    strlcat(path, hook, NG_PATHLEN);
++    strlcat(path, ".", NG_PATHSIZ - 1);
++    strlcat(path, hook, NG_PATHSIZ - 1);
+     strcpy(hook, "iface");
+ 
+ #if NG_NODESIZ>=32
+@@ -2329,7 +2329,7 @@
+ {
+ #ifdef USE_NG_TCPMSS
+   struct	ng_tcpmss_config tcpmsscfg;
+-  char		path[NG_PATHLEN];
++  char		path[NG_PATHSIZ - 1];
+ 
+   snprintf(path, sizeof(path), "mpd%d-%s-mss:", gPid, b->name);
+ 
+@@ -2422,7 +2422,7 @@
+ IfaceShutdownMSS(Bund b)
+ {
+ #ifdef USE_NG_TCPMSS
+-	char	path[NG_PATHLEN+1];
++	char	path[NG_PATHSIZ];
+ 
+ 	snprintf(path, sizeof(path), "mpd%d-%s-mss:", gPid, b->name);
+ 	NgFuncShutdownNode(b->csock, b->name, path);
+@@ -2454,8 +2454,8 @@
+ 	    goto fail;
+ 	}
+ 
+-	strlcat(path, ".", NG_PATHLEN);
+-	strlcat(path, hook, NG_PATHLEN);
++	strlcat(path, ".", NG_PATHSIZ - 1);
++	strlcat(path, hook, NG_PATHSIZ - 1);
+ 	strcpy(hook, "iface");
+ 
+ #if NG_NODESIZ>=32
+@@ -2494,10 +2494,10 @@
+     
+     struct ngm_connect  cn;
+     
+-    char		path[NG_PATHLEN + 1];
+-    char		inhook[2][NG_HOOKLEN+1];
+-    char		inhookn[2][NG_HOOKLEN+1];
+-    char		outhook[NG_HOOKLEN+1];
++    char		path[NG_PATHSIZ];
++    char		inhook[2][NG_HOOKSIZ];
++    char		inhookn[2][NG_HOOKSIZ];
++    char		outhook[NG_HOOKSIZ];
+     struct acl		*l;
+     char		str[ACL_LEN];
+ #define	ACL_MAX_PARAMS	5
+@@ -2636,7 +2636,7 @@
+ 			       (strcasecmp(av[p], "rate-limit") == 0)) {
+ 			struct ngm_mkpeer mp;
+ 			struct ng_car_bulkconf car;
+-			char		tmppath[NG_PATHLEN + 1];
++			char		tmppath[NG_PATHSIZ];
+ 
+ 			union {
+ 			    u_char	buf[NG_BPF_HOOKPROG_SIZE(ACL_MAX_PROGLEN)];
+@@ -2784,7 +2784,7 @@
+ static void
+ IfaceShutdownLimits(Bund b)
+ {
+-    char path[NG_PATHLEN + 1];
++    char path[NG_PATHSIZ];
+ 
+     if (b->params.acl_limits[0] || b->params.acl_limits[1]) {
+ 	snprintf(path, sizeof(path), "mpd%d-%s-lim:", gPid, b->name);
+--- src/ipcp.c	2008-04-07 17:22:24.000000000 +0400
++++ src/ipcp.c	2009-06-24 22:20:20.000000000 +0400
+@@ -176,7 +176,7 @@
+ int
+ IpcpStat(Context ctx, int ac, char *av[], void *arg)
+ {
+-  char			path[NG_PATHLEN + 1];
++  char			path[NG_PATHSIZ];
+   IpcpState		const ipcp = &ctx->bund->ipcp;
+   Fsm			fp = &ipcp->fsm;
+   union {
+@@ -396,7 +396,7 @@
+     Bund 	b = (Bund)fp->arg;
+   IpcpState		const ipcp = &b->ipcp;
+   char			ipbuf[20];
+-  char			path[NG_PATHLEN + 1];
++  char			path[NG_PATHSIZ];
+   struct ngm_vjc_config	vjc;
+   struct u_addr		tmp;
+ 
+@@ -765,7 +765,7 @@
+   struct ngm_mkpeer	mp;
+   struct ngm_connect	cn;
+ #if NG_NODESIZ>=32
+-  char path[NG_PATHLEN + 1];
++  char path[NG_PATHSIZ];
+   struct ngm_name	nm;
+ #endif
+ 
+@@ -827,7 +827,7 @@
+ static void
+ IpcpNgShutdownVJ(Bund b)
+ {
+-    char	path[NG_PATHLEN+1];
++    char	path[NG_PATHSIZ];
+ 
+     snprintf(path, sizeof(path), ".:%s.%s", MPD_HOOK_PPP, NG_PPP_HOOK_VJC_IP);
+     NgFuncShutdownNode(b->csock, b->name, path);
+--- src/l2tp.c	2008-04-07 17:22:24.000000000 +0400
++++ src/l2tp.c	2009-06-24 22:20:20.000000000 +0400
+@@ -282,7 +282,7 @@
+ 	struct ngm_mkpeer mkpeer;
+ 	struct sockaddr_storage peer_sas;
+ 	struct sockaddr_storage sas;
+-	char hook[NG_HOOKLEN + 1];
++	char hook[NG_HOOKSIZ];
+ 	char namebuf[64];
+ 	char hostname[MAXHOSTNAMELEN];
+ 	ng_ID_t node_id;
+@@ -646,7 +646,7 @@
+     L2tpInfo	const pi = (L2tpInfo) p->info;
+     const char	*hook;
+     ng_ID_t	node_id;
+-    char	path[NG_PATHLEN + 1];
++    char	path[NG_PATHSIZ];
+ 	
+     if (pi->sess) {		/* avoid double close */
+ 
+@@ -1167,7 +1167,7 @@
+ 	L2tpInfo	pi = (L2tpInfo)p->info;
+         const char 	*hook;
+         ng_ID_t		node_id;
+-	char		path[NG_PATHLEN + 1];
++	char		path[NG_PATHSIZ];
+ 	struct ngm_connect      cn;
+ 
+ 	/* Get a temporary netgraph socket node */
+@@ -1227,7 +1227,7 @@
+ 	struct sockaddr_storage sas;
+ 	const size_t bufsize = 8192;
+ 	u_int16_t *buf = NULL;
+-	char hook[NG_HOOKLEN + 1];
++	char hook[NG_HOOKSIZ];
+ 	char hostname[MAXHOSTNAMELEN];
+ 	socklen_t sas_len;
+ 	char namebuf[64];
+--- src/l2tp_ctrl.c	2008-04-07 17:22:24.000000000 +0400
++++ src/l2tp_ctrl.c	2009-06-24 22:20:20.000000000 +0400
+@@ -206,7 +206,7 @@
+ 	u_int16_t		session_id;		/* session id */
+ 	u_int16_t		peer_id;		/* peer session id */
+ 	ng_ID_t			node_id;		/* tee node id */
+-	char			hook[NG_HOOKLEN + 1];	/* session hook name */
++	char			hook[NG_HOOKSIZ];	/* session hook name */
+ 	void			*link_cookie;		/* opaque link cookie */
+ 	u_int16_t		result;			/* close result code */
+ 	u_int16_t		error;			/* close error code */
+@@ -612,7 +612,7 @@
+ 
+ 	/* Done */
+ 	*nodep = ctrl->node_id;
+-	strlcpy(hook, NG_L2TP_HOOK_LOWER, NG_HOOKLEN + 1);
++	strlcpy(hook, NG_L2TP_HOOK_LOWER, NG_HOOKSIZ);
+ 	return (ctrl);
+ 
+ fail:
+@@ -1966,7 +1966,7 @@
+ 	    struct ng_mesg msg;
+ 	} buf;
+ 	struct ng_mesg *const msg = &buf.msg;
+-	char raddr[NG_PATHLEN + 1];
++	char raddr[NG_PATHSIZ];
+ 	int len;
+ 
+ 	/* Read netgraph control message */
+--- src/l2tp_ctrl.h	2008-04-07 17:22:24.000000000 +0400
++++ src/l2tp_ctrl.h	2009-06-24 22:20:20.000000000 +0400
+@@ -221,7 +221,7 @@
+  *	peer_id	Unique identifier for peer (used for tie-breakers)
+  *	initiate Whether to send a SCCRQ or just wait for one
+  *	nodep	Pointer to netgraph node ID variable
+- *	hook	Buffer for hook on L2TP netgraph node (size >= NG_HOOKLEN + 1)
++ *	hook	Buffer for hook on L2TP netgraph node (size >= NG_HOOKSIZ)
+  *	avps	List of AVP's to include in the associated
+  *		Start-Control-Connection-Request or
+  *		Start-Control-Connection-Reply control message.
+--- src/modem.c	2008-04-07 17:22:24.000000000 +0400
++++ src/modem.c	2009-06-24 22:20:20.000000000 +0400
+@@ -71,7 +71,7 @@
+     int			speed;			/* Port speed */
+     u_int		watch;			/* Signals to watch */
+     char		device[20];		/* Serial device name */
+-    char		ttynode[NG_NODELEN + 1];	/* TTY node name */
++    char		ttynode[NG_NODESIZ];	/* TTY node name */
+     char		connScript[CHAT_MAX_LABEL];	/* Connect script */
+     char		idleScript[CHAT_MAX_LABEL];	/* Idle script */
+     struct pppTimer	checkTimer;		/* Timer to check pins */
+@@ -329,7 +329,7 @@
+ ModemDoClose(PhysInfo p, int opened)
+ {
+   ModemInfo     const m = (ModemInfo) p->info;
+-  char		path[NG_PATHLEN + 1];
++  char		path[NG_PATHSIZ];
+   const char	ch = ' ';
+ 
+   /* Shutdown everything */
+@@ -365,7 +365,7 @@
+ ModemSetAccm(PhysInfo p, u_int32_t xmit, u_int32_t recv)
+ {
+   ModemInfo		const m = (ModemInfo) p->info;
+-  char        		path[NG_PATHLEN+1];
++  char        		path[NG_PATHSIZ];
+ 
+   /* Update async config */
+   m->acfg.accm = xmit|recv;
+@@ -506,7 +506,7 @@
+   struct nodeinfo	ngtty;
+   struct ngm_mkpeer	ngm;
+   struct ngm_connect	cn;
+-  char        		path[NG_PATHLEN+1];
++  char        		path[NG_PATHSIZ];
+   int			hotchar = PPP_FLAG;
+   int			ldisc = NETGRAPHDISC;
+ 
+@@ -752,7 +752,7 @@
+ {
+   PhysInfo		const p = (PhysInfo) arg;
+   ModemInfo		const m = (ModemInfo) p->info;
+-  char			path[NG_PATHLEN + 1];
++  char			path[NG_PATHSIZ];
+   struct ng_async_stat	stats;
+ 
+   /* Check for errors */
+@@ -780,7 +780,7 @@
+ ModemGetNgStats(PhysInfo p, struct ng_async_stat *sp)
+ {
+   ModemInfo             const m = (ModemInfo) p->info;
+-  char			path[NG_PATHLEN + 1];
++  char			path[NG_PATHSIZ];
+   union {
+     u_char		buf[sizeof(struct ng_mesg) + sizeof(*sp)];
+     struct ng_mesg	resp;
+--- src/ng.c	2008-04-07 17:22:24.000000000 +0400
++++ src/ng.c	2009-06-24 22:20:20.000000000 +0400
+@@ -31,8 +31,8 @@
+   #define NG_REOPEN_PAUSE	5
+ 
+   struct nginfo {
+-    char	path[NG_PATHLEN + 1];	/* Node that takes PPP frames */
+-    char	hook[NG_HOOKLEN + 1];	/* Hook on that node */
++    char	path[NG_PATHSIZ];	/* Node that takes PPP frames */
++    char	hook[NG_HOOKSIZ];	/* Hook on that node */
+   };
+   typedef struct nginfo	*NgInfo;
+ 
+@@ -109,7 +109,7 @@
+ NgOpen(PhysInfo p)
+ {
+     NgInfo	const ng = (NgInfo) p->info;
+-    char	path[NG_PATHLEN + 1];
++    char	path[NG_PATHSIZ];
+     int		csock = -1;
+     struct ngm_connect	cn;
+ 
+--- src/ngfunc.c	2008-04-07 17:22:24.000000000 +0400
++++ src/ngfunc.c	2009-06-24 22:20:20.000000000 +0400
+@@ -127,7 +127,7 @@
+ int
+ NgFuncInitGlobalNetflow(Bund b)
+ {
+-    char path[NG_PATHLEN + 1];
++    char path[NG_PATHSIZ];
+ 
+       snprintf(gNetflowNodeName, sizeof(gNetflowNodeName), "mpd%d-nf", gPid);
+ 
+@@ -251,7 +251,7 @@
+       u_char		buf[sizeof(struct ng_mesg) + sizeof(struct nodeinfo)];
+       struct ng_mesg	reply;
+   }			u;
+-  char		path[NG_PATHLEN + 1];
++  char		path[NG_PATHSIZ];
+   char		*eptr;
+   int		ifnum;
+ 
+@@ -372,7 +372,7 @@
+ NgFuncShutdownGlobal(Bund b)
+ {
+ #ifdef USE_NG_NETFLOW
+-  char	path[NG_PATHLEN + 1];
++  char	path[NG_PATHSIZ];
+ 
+   if (gNetflowNode == FALSE || gNetflowNodeShutdown==FALSE)
+     return;
+@@ -573,13 +573,13 @@
+ int
+ NgFuncWriteFrame(Bund b, const char *hookname, Mbuf bp)
+ {
+-  u_char		buf[sizeof(struct sockaddr_ng) + NG_HOOKLEN];
++  u_char		buf[sizeof(struct sockaddr_ng) + NG_HOOKSIZ - 1];
+   struct sockaddr_ng	*ng = (struct sockaddr_ng *)buf;
+   int			rtn;
+ 
+   /* Set dest address */
+   memset(&buf, 0, sizeof(buf));
+-  snprintf(ng->sg_data, NG_HOOKLEN + 1, "%s", hookname);
++  snprintf(ng->sg_data, NG_HOOKSIZ, "%s", hookname);
+   ng->sg_family = AF_NETGRAPH;
+   ng->sg_len = 3 + strlen(ng->sg_data);
+ 
+@@ -609,7 +609,7 @@
+ int
+ NgFuncClrStats(Bund b, u_int16_t linkNum)
+ {
+-    char	path[NG_PATHLEN + 1];
++    char	path[NG_PATHSIZ];
+ 
+     /* Get stats */
+     snprintf(path, sizeof(path), "mpd%d-%s:", gPid, b->name);
+@@ -636,7 +636,7 @@
+ 				  + sizeof(struct ng_ppp_link_stat)];
+       struct ng_mesg		reply;
+   }				u;
+-  char                          path[NG_PATHLEN + 1];
++  char                          path[NG_PATHSIZ];
+ 
+   /* Get stats */
+   snprintf(path, sizeof(path), "mpd%d-%s:", gPid, b->name);
+@@ -666,7 +666,7 @@
+ 				  + sizeof(struct ng_ppp_link_stat64)];
+       struct ng_mesg		reply;
+   }				u;
+-  char                          path[NG_PATHLEN + 1];
++  char                          path[NG_PATHSIZ];
+ 
+   /* Get stats */
+   snprintf(path, sizeof(path), "mpd%d-%s:", gPid, b->name);
+--- src/phys.c	2008-04-07 17:22:24.000000000 +0400
++++ src/phys.c	2009-06-24 22:20:20.000000000 +0400
+@@ -254,8 +254,8 @@
+ PhysGetUpperHook(PhysInfo p, char *path, char *hook)
+ {
+     if (p->link && p->link->bund) {
+-	snprintf(path, NG_PATHLEN, "[%lx]:", (u_long)p->link->bund->nodeID);
+-	snprintf(hook, NG_HOOKLEN, "%s%d",
++	snprintf(path, NG_PATHSIZ - 1, "[%lx]:", (u_long)p->link->bund->nodeID);
++	snprintf(hook, NG_HOOKSIZ - 1, "%s%d",
+ 	    NG_PPP_HOOK_LINK_PREFIX, p->link->bundleIndex);
+ 	return 1;
+     } else if (p->rep) {
+--- src/pppoe.c	2008-04-07 17:22:24.000000000 +0400
++++ src/pppoe.c	2009-06-24 22:20:20.000000000 +0400
+@@ -43,13 +43,13 @@
+ 
+ #define PPPOE_MAXPARENTIFS	1024
+ 
+-#define MAX_PATH		64	/* XXX should be NG_PATHLEN */
++#define MAX_PATH		64	/* XXX should be NG_PATHSIZ - 1 */
+ #define MAX_SESSION		64	/* max length of PPPoE session name */
+ 
+ /* Per link private info */
+ struct pppoeinfo {
+ 	char		path[MAX_PATH];		/* PPPoE node path */
+-	char		hook[NG_HOOKLEN + 1];	/* hook on that node */
++	char		hook[NG_HOOKSIZ];	/* hook on that node */
+ 	char		session[MAX_SESSION];	/* session name */
+ 	char		acname[PPPOE_SERVICE_NAME_SIZE];	/* AC name */
+ 	u_char		peeraddr[6];		/* Peer MAC address */
+@@ -220,8 +220,8 @@
+ 	    struct ngpppoe_init_data	poeid;
+ 	} u;
+ 	struct ngpppoe_init_data *const idata = &u.poeid;
+-	char path[NG_PATHLEN + 1];
+-	char session_hook[NG_HOOKLEN + 1];
++	char path[NG_PATHSIZ];
++	char session_hook[NG_HOOKSIZ];
+ 
+ 	pe->opened=1;
+ 
+@@ -374,8 +374,8 @@
+ PppoeShutdown(PhysInfo p)
+ {
+ 	const PppoeInfo pi = (PppoeInfo)p->info;
+-	char path[NG_PATHLEN + 1];
+-	char session_hook[NG_HOOKLEN + 1];
++	char path[NG_PATHSIZ];
++	char session_hook[NG_HOOKSIZ];
+ 
+ 	if (p->state == PHYS_STATE_DOWN)
+ 		return;
+@@ -403,11 +403,11 @@
+ 	    u_char buf[sizeof(struct ng_mesg) + sizeof(struct ngpppoe_sts)];
+ 	    struct ng_mesg resp;
+ 	} u;
+-	char path[NG_PATHLEN + 1];
++	char path[NG_PATHSIZ];
+ 	PhysInfo p = NULL;
+ 	PppoeInfo pi = NULL;
+ 	int k;
+-	char ppphook[NG_HOOKLEN + 1];
++	char ppphook[NG_HOOKSIZ];
+ 	
+ 	struct PppoeIf  *PIf=(struct PppoeIf*)arg;
+ 	
+@@ -436,7 +436,7 @@
+ 		    p = gPhyses[k];
+ 		    pi = (PppoeInfo)p->info;
+ 		    
+-		    snprintf(ppphook, NG_HOOKLEN, "mpd%d-%s", gPid, p->name);
++		    snprintf(ppphook, NG_HOOKSIZ - 1, "mpd%d-%s", gPid, p->name);
+ 		
+ 		    if ((PIf==pi->PIf) &&
+ 			(strcmp(ppphook, ((struct ngpppoe_sts *)u.resp.data)->hook) == 0))
+@@ -747,12 +747,12 @@
+ {
+ 	int i,k,sz;
+ 	struct PppoeIf *PIf=(struct PppoeIf *)(arg);
+-	char rhook[NG_HOOKLEN + 1];
++	char rhook[NG_HOOKSIZ];
+ 	unsigned char response[1024];
+ 
+-	char path[NG_PATHLEN + 1];
+-	char path1[NG_PATHLEN + 1];
+-	char session_hook[NG_HOOKLEN + 1];
++	char path[NG_PATHSIZ];
++	char path1[NG_PATHSIZ];
++	char session_hook[NG_HOOKSIZ];
+ 	struct ngm_connect      cn;
+ 	struct ngm_mkpeer 	mp;
+ 	u_char *macaddr;
+@@ -949,7 +949,7 @@
+ 	    struct ngpppoe_init_data	poeid;
+ 	} u;
+ 	struct ngpppoe_init_data *const idata = &u.poeid;
+-	char pat[NG_PATHLEN + 1];
++	char pat[NG_PATHSIZ];
+ 	struct ngm_connect	cn;
+ 	
+ 	if (n) {
+--- src/pptp.c	2008-04-07 17:22:24.000000000 +0400
++++ src/pptp.c	2009-06-24 22:20:20.000000000 +0400
+@@ -371,7 +371,7 @@
+ PptpKillNode(PhysInfo p)
+ {
+ 	PptpInfo const	pptp = (PptpInfo) p->info;
+-	char		path[NG_PATHLEN + 1];
++	char		path[NG_PATHSIZ];
+ 	int		csock = -1;
+ 
+ 	if (pptp->node_id == 0)
+@@ -642,8 +642,8 @@
+ PptpHookUp(PhysInfo p)
+ {
+   const PptpInfo		pi = (PptpInfo)p->info;
+-  char	        		ksockpath[NG_PATHLEN+1];
+-  char	        		pptppath[NG_PATHLEN+1];
++  char	        		ksockpath[NG_PATHSIZ];
++  char	        		pptppath[NG_PATHSIZ];
+   struct ngm_mkpeer		mkp;
+   struct ng_pptpgre_conf	gc;
+   struct sockaddr_storage	self_addr, peer_addr;
+@@ -654,8 +654,8 @@
+   } u;
+   struct ng_ksocket_sockopt *const ksso = &u.ksso;
+   int		csock = -1;
+-  char        	path[NG_PATHLEN + 1];
+-  char		hook[NG_HOOKLEN + 1];
++  char        	path[NG_PATHSIZ];
++  char		hook[NG_HOOKSIZ];
+ 
+   /* Get session info */
+   memset(&gc, 0, sizeof(gc));
+--- src/rep.c	2008-04-07 17:22:24.000000000 +0400
++++ src/rep.c	2009-06-24 22:20:20.000000000 +0400
+@@ -172,7 +172,7 @@
+     }
+ 
+     if (r->p_up == 3 && r->csock > 0 && r->node_id) {
+-	char path[NG_PATHLEN + 1];
++	char path[NG_PATHSIZ];
+ 	
+ 	snprintf(path, sizeof(path), "[%x]:", r->node_id);
+ 	NgFuncShutdownNode(r->csock, r->name, path);
+@@ -201,7 +201,7 @@
+     PhysClose(r->physes[1]);
+ 
+     if (r->csock > 0 && r->node_id) {
+-	char path[NG_PATHLEN + 1];
++	char path[NG_PATHSIZ];
+ 	
+ 	snprintf(path, sizeof(path), "[%x]:", r->node_id);
+ 	NgFuncShutdownNode(r->csock, r->name, path);
+@@ -251,11 +251,11 @@
+     if (r->node_id == 0)
+ 	return (0);
+ 
+-    snprintf(path, NG_PATHLEN, "[%lx]:", (u_long)r->node_id);
++    snprintf(path, NG_PATHSIZ - 1, "[%lx]:", (u_long)r->node_id);
+     if (n == 0)
+-	snprintf(hook, NG_HOOKLEN, NG_TEE_HOOK_LEFT);
++	snprintf(hook, NG_HOOKSIZ - 1, NG_TEE_HOOK_LEFT);
+     else
+-	snprintf(hook, NG_HOOKLEN, NG_TEE_HOOK_RIGHT);
++	snprintf(hook, NG_HOOKSIZ - 1, NG_TEE_HOOK_RIGHT);
+     return (1);
+ }
+ 
+@@ -395,7 +395,7 @@
+ 	gReps[k] = NULL;
+ 
+     if (r->csock > 0 && r->node_id) {
+-	char path[NG_PATHLEN + 1];
++	char path[NG_PATHSIZ];
+ 	
+ 	snprintf(path, sizeof(path), "[%x]:", r->node_id);
+ 	NgFuncShutdownNode(r->csock, r->name, path);
+--- src/tcp.c	2008-04-07 17:22:24.000000000 +0400
++++ src/tcp.c	2009-06-24 22:20:20.000000000 +0400
+@@ -182,8 +182,8 @@
+ 	struct ngm_mkpeer	mkp;
+ 	struct ngm_connect	cn;
+ 	struct ngm_name		nm;
+-	char 			path[NG_PATHLEN + 1];
+-	char 			hook[NG_HOOKLEN + 1];
++	char 			path[NG_PATHSIZ];
++	char 			hook[NG_HOOKSIZ];
+ 	struct sockaddr_storage addr;
+ 	struct ng_async_cfg	acfg;
+ 	int 			rval;
+@@ -349,7 +349,7 @@
+ 	} cn;
+ 	PhysInfo	p;
+ 	TcpInfo		pi;
+-	char path[NG_PATHLEN + 1];
++	char path[NG_PATHSIZ];
+ 
+ 	/* Restore context. */
+ 	p = (PhysInfo)cookie;
+@@ -399,7 +399,7 @@
+ 		struct sockaddr_storage sin;
+ 	} ac;
+ 	struct ngm_name         nm;
+-	char path[NG_PATHLEN + 1];
++	char path[NG_PATHSIZ];
+ 	struct u_addr	addr;
+ 	in_port_t	port;
+ 	char		buf[64];
+@@ -537,7 +537,7 @@
+ static void
+ TcpDoClose(PhysInfo p)
+ {
+-	char path[NG_PATHLEN + 1];
++	char path[NG_PATHSIZ];
+ 	TcpInfo const pi = (TcpInfo) p->info;
+ 
+ 	EventUnRegister(&pi->ev_connect);
+--- src/udp.c	2008-04-07 17:22:24.000000000 +0400
++++ src/udp.c	2009-06-24 22:20:20.000000000 +0400
+@@ -174,8 +174,8 @@
+ UdpOpen(PhysInfo p)
+ {
+ 	UdpInfo			const pi = (UdpInfo) p->info;
+-	char        		path[NG_PATHLEN+1];
+-	char        		hook[NG_HOOKLEN+1];
++	char        		path[NG_PATHSIZ];
++	char        		hook[NG_HOOKSIZ];
+ 	struct ngm_mkpeer	mkp;
+ 	struct ngm_name         nm;
+ 	struct sockaddr_storage	addr;
+@@ -321,7 +321,7 @@
+ UdpDoClose(PhysInfo p)
+ {
+ 	UdpInfo	const pi = (UdpInfo) p->info;
+-	char	path[NG_PATHLEN + 1];
++	char	path[NG_PATHSIZ];
+ 	int	csock;
+ 
+ 	if (pi->node_id == 0)
+
+
