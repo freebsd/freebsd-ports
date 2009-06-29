@@ -10,8 +10,8 @@ PORTNAME=	cvsadmin
 PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://freebsd.t-hosting.hu/cvsadmin/ \
-		http://www.linta.de/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	gabor
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	A simple program to administrate users of a CVS repository
