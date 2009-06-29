@@ -10835,6 +10835,7 @@ p5-DBI-Shell                    ports/databases/p5-DBI-Shell
 p5-DBICx-Deploy                 ports/databases/p5-DBICx-Deploy
 p5-DBICx-MapMaker               ports/databases/p5-DBICx-MapMaker
 p5-DBICx-TestDatabase           ports/databases/p5-DBICx-TestDatabase
+p5-DBICx-TxnInsert              ports/databases/p5-DBICx-TxnInsert
 p5-DBIWrapper                   ports/databases/p5-DBIWrapper
 p5-DBIx-Abstract                ports/databases/p5-DBIx-Abstract
 p5-DBIx-AnyDBD                  ports/databases/p5-DBIx-AnyDBD
@@ -11015,6 +11016,7 @@ p5-DateTime-Format-MySQL        ports/devel/p5-DateTime-Format-MySQL
 p5-DateTime-Format-Natural      ports/devel/p5-DateTime-Format-Natural
 p5-DateTime-Format-Pg           ports/devel/p5-DateTime-Format-Pg
 p5-DateTime-Format-Roman        ports/devel/p5-DateTime-Format-Roman
+p5-DateTime-Format-SQLite       ports/devel/p5-DateTime-Format-SQLite
 p5-DateTime-Format-Strptime     ports/devel/p5-DateTime-Format-Strptime
 p5-DateTime-Format-W3CDTF       ports/devel/p5-DateTime-Format-W3CDTF
 p5-DateTime-Functions           ports/devel/p5-DateTime-Functions
@@ -14389,6 +14391,7 @@ p5-datetime-format-mysql        ports/devel/p5-DateTime-Format-MySQL
 p5-datetime-format-natural      ports/devel/p5-DateTime-Format-Natural
 p5-datetime-format-pg           ports/devel/p5-DateTime-Format-Pg
 p5-datetime-format-roman        ports/devel/p5-DateTime-Format-Roman
+p5-datetime-format-sqlite       ports/devel/p5-DateTime-Format-SQLite
 p5-datetime-format-strptime     ports/devel/p5-DateTime-Format-Strptime
 p5-datetime-format-w3cdtf       ports/devel/p5-DateTime-Format-W3CDTF
 p5-datetime-functions           ports/devel/p5-DateTime-Functions
@@ -14432,6 +14435,7 @@ p5-dbi-shell                    ports/databases/p5-DBI-Shell
 p5-dbicx-deploy                 ports/databases/p5-DBICx-Deploy
 p5-dbicx-mapmaker               ports/databases/p5-DBICx-MapMaker
 p5-dbicx-testdatabase           ports/databases/p5-DBICx-TestDatabase
+p5-dbicx-txninsert              ports/databases/p5-DBICx-TxnInsert
 p5-dbiwrapper                   ports/databases/p5-DBIWrapper
 p5-dbix-abstract                ports/databases/p5-DBIx-Abstract
 p5-dbix-anydbd                  ports/databases/p5-DBIx-AnyDBD
