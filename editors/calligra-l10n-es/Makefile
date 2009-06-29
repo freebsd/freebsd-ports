@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice-i18n
 PORTVERSION=	1.6.3
-CATEGORIES?=	misc kde spanish
+CATEGORIES?=	editors kde spanish
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n
 PKGNAMEPREFIX=	es-
