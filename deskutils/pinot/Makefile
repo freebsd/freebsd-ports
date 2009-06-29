@@ -8,9 +8,8 @@
 PORTNAME=	pinot
 PORTVERSION=	0.94
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
-		http://prdownload.berlios.de/pinot/	\
-		${MASTER_SITE_BERLIOS}
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+#MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
 #		http://amra.dyndns.org/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
