@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-#MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
+MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
+		http://prdownload.berlios.de/pinot/	\
+		${MASTER_SITE_BERLIOS}
 #		http://amra.dyndns.org/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -24,7 +25,7 @@ LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core	\
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26	\
 		boost_thread.4:${PORTSDIR}/devel/boost		\
 		exif.12:${PORTSDIR}/graphics/libexif		\
-		gmime-2.0:${PORTSDIR}/mail/gmime2		\
+		gmime-2.4:${PORTSDIR}/mail/gmime24		\
 		tag.6:${PORTSDIR}/audio/taglib			\
 		curl.5:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
