@@ -1,0 +1,4 @@
+Framework agnostic object based authentication solution that handles all of the
+non sense for you. It's as easy as ActiveRecord is with a database.
+
+WWW: http://rubyforge.org/projects/authlogic/
