@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.6.25
+PORTVERSION=	2.6.26
 CATEGORIES=	www
 MASTER_SITES=	http://www.smarty.net/distributions/ \
 		http://www.smarty.net/distributions/manual/en/:manual
