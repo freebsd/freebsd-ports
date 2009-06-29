@@ -36,7 +36,6 @@
 %%ADODB_DIR%%/datadict/datadict-mysql.inc.php
 %%ADODB_DIR%%/datadict/datadict-oci8.inc.php
 %%ADODB_DIR%%/datadict/datadict-postgres.inc.php
-%%ADODB_DIR%%/datadict/datadict-postgres.inc.php.bak
 %%ADODB_DIR%%/datadict/datadict-sapdb.inc.php
 %%ADODB_DIR%%/datadict/datadict-sybase.inc.php
 %%ADODB_DIR%%/drivers/adodb-access.inc.php
@@ -44,6 +43,7 @@
 %%ADODB_DIR%%/drivers/adodb-ado5.inc.php
 %%ADODB_DIR%%/drivers/adodb-ado_access.inc.php
 %%ADODB_DIR%%/drivers/adodb-ado_mssql.inc.php
+%%ADODB_DIR%%/drivers/adodb-ads.inc.php
 %%ADODB_DIR%%/drivers/adodb-borland_ibase.inc.php
 %%ADODB_DIR%%/drivers/adodb-csv.inc.php
 %%ADODB_DIR%%/drivers/adodb-db2.inc.php
@@ -63,7 +63,6 @@
 %%ADODB_DIR%%/drivers/adodb-mysqlt.inc.php
 %%ADODB_DIR%%/drivers/adodb-netezza.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci8.inc.php
-%%ADODB_DIR%%/drivers/adodb-oci8.old.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci805.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci8po.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbc.inc.php
@@ -136,7 +135,6 @@
 %%ADODB_DIR%%/session/adodb-session-clob2.php
 %%ADODB_DIR%%/session/adodb-session.php
 %%ADODB_DIR%%/session/adodb-session2.php
-%%ADODB_DIR%%/session/adodb-session2.php.bak
 %%ADODB_DIR%%/session/adodb-sessions.mysql.sql
 %%ADODB_DIR%%/session/adodb-sessions.oracle.clob.sql
 %%ADODB_DIR%%/session/adodb-sessions.oracle.sql
