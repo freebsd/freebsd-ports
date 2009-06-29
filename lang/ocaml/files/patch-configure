@@ -1,5 +1,5 @@
---- ./configure.orig	2008-11-07 19:34:16.000000000 +0900
-+++ ./configure	2009-01-21 01:41:11.000000000 +0900
+--- configure.orig	2009-05-20 19:33:09.000000000 +0400
++++ configure	2009-06-29 14:12:59.000000000 +0400
 @@ -85,6 +85,8 @@
          withcurses=no;;
      -no-shared-libs)
@@ -9,7 +9,7 @@
      -x11include*|--x11include*)
          x11_include_dir=$2; shift;;
      -x11lib*|--x11lib*)
-@@ -739,6 +741,7 @@
+@@ -751,6 +753,7 @@
    i386,*,bsd_elf) profiling='prof';;
    amd64,*,macosx) profiling='prof';;
    i386,*,macosx) profiling='prof';;
@@ -17,12 +17,18 @@
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -1183,127 +1186,24 @@
+@@ -1195,133 +1198,24 @@
  x11_include="not found"
  x11_link="not found"
  
 -for dir in \
 -    $x11_include_dir          \
+-                              \
+-    /usr/X11R7/include        \
+-    /usr/include/X11R7        \
+-    /usr/local/X11R7/include  \
+-    /usr/local/include/X11R7  \
+-    /opt/X11R7/include        \
 -                              \
 -    /usr/X11R6/include        \
 -    /usr/include/X11R6        \
@@ -156,7 +162,7 @@
  else
    echo "Location of X11 include files: $x11_include/X11"
    echo "Options for linking with X11: $x11_link"
-@@ -1372,7 +1275,7 @@
+@@ -1448,7 +1342,7 @@
    then tk_libs="$tk_libs $dllib"
    elif sh ./hasgot $tk_libs -ltcl$tclmaj.$tclmin $tkauxlibs Tcl_DoOneEvent
    then

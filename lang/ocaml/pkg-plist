@@ -777,7 +777,6 @@ lib/ocaml/ocamldoc/odoc_misc.cmi
 lib/ocaml/ocamldoc/odoc_module.cmi
 lib/ocaml/ocamldoc/odoc_name.cmi
 lib/ocaml/ocamldoc/odoc_ocamlhtml.cmi
-lib/ocaml/ocamldoc/odoc_opt.cmi
 lib/ocaml/ocamldoc/odoc_parameter.cmi
 lib/ocaml/ocamldoc/odoc_parser.cmi
 lib/ocaml/ocamldoc/odoc_print.cmi
