@@ -1,0 +1,7 @@
+QTV is a QuakeWorld streaming proxy over TCP/IP.  Its main purpose is to
+stream MVD data from the QuakeWorld servers using low bandwidth and keeping
+playback smooth.  Pros also include low resource utilization regarding
+memory and CPU time and the ability to support lots of observers without
+stressing the QuakeWorld server(s) too much.
+
+WWW: http://qtv.qw-dev.net/
