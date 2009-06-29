@@ -24,6 +24,7 @@
     SUBDIR += eclipse-EPIC
     SUBDIR += eclipse-RDT
     SUBDIR += eclipse-aptana
+    SUBDIR += eclipse-aptana-radrails
     SUBDIR += eclipse-cdt
     SUBDIR += eclipse-checkstyle
     SUBDIR += eclipse-clay-core
