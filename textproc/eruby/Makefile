@@ -16,6 +16,8 @@ COMMENT=	Interprets Ruby code embedded in a text file like PHP/ePerl/ASP/JSP
 
 USE_RUBY=	yes
 
+BROKEN=		does not compile
+
 CONFIGURE_ARGS=	--enable-shared --with-charset="${DEFAULT_CHARSET}"
 INSTALL_TARGET=	site-install
 USE_LDCONFIG=	yes
