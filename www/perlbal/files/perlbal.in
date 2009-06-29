@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: perlbal
+# REQUIRE: DAEMON
+
+. "%%RC_SUBR%%"
+
+name="perlbal"
+command="%%PREFIX%%/bin/perlbal"
+
+load_rc_config "$name"
+: ${perlbal_enable="NO"}
+: ${perlbal_flags="-f /usr/local/etc/perlbal.conf &"}
+
+run_rc_command "$1"
+
