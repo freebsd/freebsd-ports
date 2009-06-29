@@ -6,49 +6,52 @@
 #
 
 PORTNAME?=	mvdsv
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 PORTEPOCH=	2
 CATEGORIES?=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://quakeworld.ru/files/vvd/mvdsv/
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	mvdsv_${PORTVERSION}_sources
+MASTER_SITES=	http://qw-dev.net/attachments/download/130/
+DISTNAME=	mvdsv_${PORTVERSION}-sources
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT?=	Enhanced QuakeWorld server with multi-view demos capability
 
-USE_BZIP2=	yes
+USE_ZIP=	yes
 
-MAKEFILE=	${FILESDIR}/Makefile
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	${OPSYS}
 ALL_TARGET=	${PORTNAME}
+WRKSRC=		${WRKDIR}/mvdsv-${PORTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
-WRKSRC=		${WRKDIR}/mvdsv_${PORTVERSION}/source
+
+OPTIONS=	X86_ASM	"Compile with x86 assembly code" on
+.if ${PORTNAME} == "mvdsv"
+OPTIONS+=	KQUEUE	"Enable Kqueue support"		 on
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64"
-MAKE_ARGS+=	BYTE_ORDER=__LITTLE_ENDIAN__
-.else
-MAKE_ARGS+=	BYTE_ORDER=__BIG_ENDIAN__
+.if defined(WITHOUT_KQUEUE)
+MAKE_ARGS+=	-DNOKQUEUE
 .endif
 
-pre-everything::
-.if !defined(WITHOUT_KQUEUE)
-	@${ECHO_MSG} "Define WITHOUT_KQUEUE to disable Kqueue support"
-.endif
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to enable extra optimization options"
-.endif
-.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
-	@${ECHO_MSG} "Define WITHOUT_X86_ASM to disable x86 assembly code"
+.if defined(WITHOUT_X86_ASM)
+MAKE_ARGS+=	-DWITHOUT_X86_ASM
 .endif
 
 post-extract:
-# Fix bogus directories permissions
-	@${FIND} ${WRKDIR} -type d -exec ${CHMOD} +X '{}' \;
+# Allow execution of configure script (fix permissions)
+	@${CHMOD} +x ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+post-install:
+# Checking for presence of ${PKGMESSAGE} explicitly does not work here
+.if exists(${.CURDIR}/pkg-message)
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+.endif
 
 .include <bsd.port.post.mk>
