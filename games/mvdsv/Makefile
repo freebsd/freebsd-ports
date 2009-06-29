@@ -1,4 +1,4 @@
-# New ports collection makefile for:	MVDSV
+# New ports collection makefile for:	MVDSV (+ master port for qwdtools)
 # Date created:				03 Jun 2003
 # Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
 #
