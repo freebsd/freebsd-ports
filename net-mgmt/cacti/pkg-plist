@@ -14,6 +14,7 @@
 %%CACTIDIR%%/cli/add_tree.php
 %%CACTIDIR%%/cli/copy_user.php
 %%CACTIDIR%%/cli/host_update_template.php
+%%CACTIDIR%%/cli/import_template.php
 %%CACTIDIR%%/cli/poller_data_sources_reapply_names.php
 %%CACTIDIR%%/cli/poller_graphs_reapply_names.php
 %%CACTIDIR%%/cli/poller_output_empty.php
@@ -30,10 +31,7 @@
 %%CACTIDIR%%/data_templates.php
 %%CACTIDIR%%/docs/CHANGELOG
 %%CACTIDIR%%/docs/CONTRIB
-%%CACTIDIR%%/docs/INSTALL
 %%CACTIDIR%%/docs/README
-%%CACTIDIR%%/docs/REQUIREMENTS
-%%CACTIDIR%%/docs/UPGRADE
 %%CACTIDIR%%/docs/html/LICENSE.html
 %%CACTIDIR%%/docs/html/advanced_topics.html
 %%CACTIDIR%%/docs/html/basics.html
@@ -108,7 +106,6 @@
 %%CACTIDIR%%/docs/html/install_windows.html
 %%CACTIDIR%%/docs/html/installation.html
 %%CACTIDIR%%/docs/html/making_scripts_work_with_cacti.html
-%%CACTIDIR%%/docs/html/manual.css
 %%CACTIDIR%%/docs/html/migration_php_scripts_to_script_server.html
 %%CACTIDIR%%/docs/html/new_graphs.html
 %%CACTIDIR%%/docs/html/operating_principles.html
@@ -135,7 +132,7 @@
 %%CACTIDIR%%/docs/html/using_spine.html
 %%CACTIDIR%%/docs/html/variables.html
 %%CACTIDIR%%/docs/pdf/README
-%%CACTIDIR%%/docs/text/manual.txt
+%%CACTIDIR%%/docs/txt/manual.txt
 %%CACTIDIR%%/gprint_presets.php
 %%CACTIDIR%%/graph.php
 %%CACTIDIR%%/graph_image.php
@@ -300,6 +297,7 @@
 %%CACTIDIR%%/install/0_8_7a_to_0_8_7b.php
 %%CACTIDIR%%/install/0_8_7b_to_0_8_7c.php
 %%CACTIDIR%%/install/0_8_7c_to_0_8_7d.php
+%%CACTIDIR%%/install/0_8_7d_to_0_8_7e.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
@@ -426,6 +424,7 @@
 %%CACTIDIR%%/lib/variables.php
 %%CACTIDIR%%/lib/xml.php
 %%CACTIDIR%%/log/.htaccess
+%%CACTIDIR%%/log/.placeholder
 @unexec [ ! -s %%PREFIX%%/%%CACTIDIR%%/log/cacti.log ] && rm -f %%PREFIX%%/%%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
 %%CACTIDIR%%/poller.php
@@ -490,7 +489,7 @@
 @dirrm %%CACTIDIR%%/include/jscalendar
 @dirrmtry %%CACTIDIR%%/include
 @dirrm %%CACTIDIR%%/images
-@dirrm %%CACTIDIR%%/docs/text
+@dirrm %%CACTIDIR%%/docs/txt
 @dirrm %%CACTIDIR%%/docs/pdf
 @dirrm %%CACTIDIR%%/docs/html/images
 @dirrm %%CACTIDIR%%/docs/html
