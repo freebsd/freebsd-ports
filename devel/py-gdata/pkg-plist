@@ -10,6 +10,9 @@
 %%PYTHON_SITELIBDIR%%/atom/core.py
 %%PYTHON_SITELIBDIR%%/atom/core.pyc
 %%PYTHON_SITELIBDIR%%/atom/core.pyo
+%%PYTHON_SITELIBDIR%%/atom/data.py
+%%PYTHON_SITELIBDIR%%/atom/data.pyc
+%%PYTHON_SITELIBDIR%%/atom/data.pyo
 %%PYTHON_SITELIBDIR%%/atom/http.py
 %%PYTHON_SITELIBDIR%%/atom/http.pyc
 %%PYTHON_SITELIBDIR%%/atom/http.pyo
@@ -148,6 +151,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/blogger/service.py
 %%PYTHON_SITELIBDIR%%/gdata/blogger/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/blogger/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/books/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/books/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/books/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/books/service.py
+%%PYTHON_SITELIBDIR%%/gdata/books/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/books/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.pyo
@@ -440,6 +449,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/contacts
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/codesearch
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/books
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/blogger
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/base
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/migration
@@ -462,6 +472,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/calendarExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contacts/contacts_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/docs_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/finance/test_finance.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mashups/birthdaySample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spreadsheets/spreadsheetExample.py
@@ -472,6 +483,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spreadsheets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mashups
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/finance
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/docs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contacts
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar
