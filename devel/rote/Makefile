@@ -8,18 +8,17 @@
 PORTNAME=	rote
 PORTVERSION=	0.2.8
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple library for VT102 terminal emulation
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	bin/rote-config include/rote/rote.h lib/librote.so.${PORTVERSION} \
-		lib/librote.so.0 lib/librote.so
+PLIST_FILES=	bin/rote-config include/rote/rote.h \
+		lib/librote.so.${PORTVERSION} lib/librote.so.0 lib/librote.so
 PLIST_DIRS=	include/rote
 
 .include <bsd.port.mk>
