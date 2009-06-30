@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tktreectrl
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.8
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Multi-column hierarchical listbox widget
 
 USE_TK=		yes
