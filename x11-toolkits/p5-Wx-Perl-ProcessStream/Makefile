@@ -25,10 +25,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Wx::Perl::ProcessStream.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 800000
-BROKEN=	Dumps core during build on 8.0-CURRENT
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
