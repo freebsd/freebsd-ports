@@ -206,6 +206,12 @@ bin/padre
 %%SITE_PERL%%/auto/share/dist/Padre/timeline/migrate-6.pl
 %%SITE_PERL%%/auto/share/dist/Padre/timeline/migrate-7.pl
 %%SITE_PERL%%/auto/share/dist/Padre/timeline/migrate-8.pl
+%%SITE_PERL%%/Padre/Task/PPI/IntroduceTemporaryVariable.pm
+%%SITE_PERL%%/Padre/Wx/Dialog/Preferences/Editor.pm
+%%SITE_PERL%%/Padre/Wx/Dialog/Replace.pm
+%%SITE_PERL%%/Padre/Wx/Role/MainChild.pm
+%%SITE_PERL%%/Padre/Search.pm
+%%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/actions/toggle-comments.png
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Padre
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Padre/timeline
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Padre/templates
@@ -227,8 +233,10 @@ bin/padre
 @dirrmtry %%SITE_PERL%%/Wx/Perl
 @dirrmtry %%SITE_PERL%%/Padre/Wx/Menu
 @dirrmtry %%SITE_PERL%%/Padre/Wx/History
+@dirrmtry %%SITE_PERL%%/Padre/Wx/Dialog/Preferences
 @dirrmtry %%SITE_PERL%%/Padre/Wx/Dialog
 @dirrmtry %%SITE_PERL%%/Padre/Wx/CPAN
+@dirrmtry %%SITE_PERL%%/Padre/Wx/Role
 @dirrmtry %%SITE_PERL%%/Padre/Wx
 @dirrmtry %%SITE_PERL%%/Padre/Transform/Perl
 @dirrmtry %%SITE_PERL%%/Padre/Transform
