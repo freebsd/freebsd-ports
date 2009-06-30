@@ -211,6 +211,7 @@
     SUBDIR += firefox
     SUBDIR += firefox-devel
     SUBDIR += firefox3-devel
+    SUBDIR += firefox35
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
     SUBDIR += firefox3
