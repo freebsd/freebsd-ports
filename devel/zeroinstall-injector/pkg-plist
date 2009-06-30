@@ -46,9 +46,6 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/properties.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/properties.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/properties.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/trust_box.py
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/trust_box.pyc
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/trust_box.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/utils.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/utils.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/utils.pyo
@@ -88,6 +85,9 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/treetips.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/treetips.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/treetips.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/trust_box.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/trust_box.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/trust_box.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/xdgutils.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/xdgutils.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/xdgutils.pyo
@@ -182,14 +182,13 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/unpack.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/unpack.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/unpack.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall_injector-0.40-py%%PYTHON_VER%%.egg-info
 share/applications/zeroinstall-add.desktop
 share/applications/zeroinstall-manage.desktop
 share/desktop-directories/zeroinstall.directory
 share/pixmaps/zeroinstall-zero2desktop.png
 share/locale/sv/LC_MESSAGES/zero-install.mo
 @dirrm share/desktop-directories
-@dirrm share/applications
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/support
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/injector
@@ -198,6 +197,6 @@ share/locale/sv/LC_MESSAGES/zero-install.mo
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry lib/python2.5
-@dirrm etc/xdg/menus/applications-merged
-@dirrm etc/xdg/menus
-@dirrm etc/xdg
+@dirrmtry etc/xdg/menus/applications-merged
+@dirrmtry etc/xdg/menus
+@dirrmtry etc/xdg
