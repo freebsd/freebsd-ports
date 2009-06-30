@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	dbtool
-PORTVERSION=	1.6
-PORTREVISION=	3
+PORTVERSION=	1.7
 CATEGORIES=	databases
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Store and retrieve data in a key/value format in a hash database
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
@@ -60,6 +59,7 @@ post-patch:
 .for file in ${UB2PFX}
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/${file}
 	@${RM} ${WRKSRC}/${file}.orig
+	@${RM} ${WRKSRC}/${file}~
 .endfor
 .endif
 
