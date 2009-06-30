@@ -11,14 +11,11 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 DISTFILES=	${PORTNAME}.c ${PORTNAME}.doc
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Floating point benchmark to give your MFLOPS rating
 
 PLIST_FILES=	bin/flops
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	flops.doc
-.endif
 
 do-extract: .SILENT
 	${MKDIR} ${WRKSRC}
