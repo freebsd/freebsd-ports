@@ -1,18 +1,12 @@
 bin/ayttm
 bin/ayttm_streamer_wrapper.sh
 etc/ayttmrc
-include/ayttm/yahoo2.h
-include/ayttm/yahoo2_callbacks.h
-include/ayttm/yahoo2_types.h
-include/ayttm/yahoo_fn.h
-include/ayttm/yahoo_httplib.h
-include/ayttm/yahoo_list.h
 lib/ayttm/aim-oscar.a
 lib/ayttm/aim-oscar.la
 lib/ayttm/aim-oscar.so
-lib/ayttm/aim-toc.a
-lib/ayttm/aim-toc.la
-lib/ayttm/aim-toc.so
+%%AIM_TOC%%lib/ayttm/aim-toc.a
+%%AIM_TOC%%lib/ayttm/aim-toc.la
+%%AIM_TOC%%lib/ayttm/aim-toc.so
 lib/ayttm/autotrans.a
 lib/ayttm/autotrans.la
 lib/ayttm/autotrans.so
@@ -22,9 +16,9 @@ lib/ayttm/aycryption.so
 lib/ayttm/custmsg.a
 lib/ayttm/custmsg.la
 lib/ayttm/custmsg.so
-lib/ayttm/icq-toc.a
-lib/ayttm/icq-toc.la
-lib/ayttm/icq-toc.so
+%%ICQ_TOC%%lib/ayttm/icq-toc.a
+%%ICQ_TOC%%lib/ayttm/icq-toc.la
+%%ICQ_TOC%%lib/ayttm/icq-toc.so
 lib/ayttm/img2jpc.a
 lib/ayttm/img2jpc.la
 lib/ayttm/img2jpc.so
@@ -112,7 +106,12 @@ share/applnk/Internet/ayttm.desktop
 %%DATADIR%%/sounds/BuddyLeave.au
 %%DATADIR%%/sounds/Receive.au
 %%DATADIR%%/sounds/Send.au
+share/pixmaps/away.png
 share/pixmaps/ayttm.png
+share/pixmaps/buddy.png
+share/pixmaps/group-chat.png
+share/pixmaps/group.png
+share/pixmaps/smileys.png
 @dirrmtry share/applnk/Internet
 @dirrmtry share/applnk
 @dirrmtry share/applications
@@ -122,4 +121,3 @@ share/pixmaps/ayttm.png
 @dirrm %%DATADIR%%/smileys
 @dirrm %%DATADIR%%
 @dirrm lib/ayttm
-@dirrm include/ayttm
