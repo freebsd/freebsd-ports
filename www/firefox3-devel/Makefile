@@ -42,6 +42,8 @@ USE_GMAKE=	yes
 NO_MOZPKGINSTALL=yes
 CONFLICTS=      firefox-3.0.*
 
+IGNORE=	please use www/firefox35
+
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
