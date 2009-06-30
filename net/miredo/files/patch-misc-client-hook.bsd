@@ -1,0 +1,28 @@
+--- misc/client-hook.bsd.orig	2009-04-10 01:34:15.000000000 +0900
++++ misc/client-hook.bsd	2009-06-23 17:15:54.000000000 +0900
+@@ -18,21 +18,13 @@
+ 
+ "$IFCONFIG" "$IFACE" "$STATE"
+ 
+-# FIXME: untested, certainly syntaxically incorrect
+-"$ROUTE" flush dev "$IFACE" 2>/dev/null
+-"$IFCONFIG" "$IFACE" flush 2>/dev/null
+-
+ case "$STATE" in
+ 	up)
+-		# FIXME: untested, most likely syntaxically incorrect
+-		"$IFCONFIG" "$IFACE" inet6 add "${LLADDRESS}/64"
+-		"$IFCONFIG" "$IFACE" inet6 add "${ADDRESS}/32"
+-		"$ROUTE" add -inet6 default "${LLADDRESS}%${IFACE}"
++		"$IFCONFIG" "$IFACE" inet6 "${LLADDRESS}/64"
++		"$IFCONFIG" "$IFACE" inet6 "${ADDRESS}/128"
++		"$ROUTE" delete -inet6 default
++		"$ROUTE" add -inet6 default -iface "$IFACE"
+ 		;;
+ esac
+ 
+-# TODO: MacOS X should probably gets its fork of the script
+-# MacOS X DNS resolver must be reloaded when IPv6 availability changes
+-#/sbin/killall -HUP something
+-
+ exit 0
