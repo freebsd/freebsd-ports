@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ayttm
-PORTVERSION=	0.5.0.45
-PORTREVISION=	1
+PORTVERSION=	0.5.0.82
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
@@ -20,8 +19,10 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		gpgme.17:${PORTSDIR}/security/gpgme \
 		pspell.16:${PORTSDIR}/textproc/aspell
 
-OPTIONS=	ARTS   "Enable aRts support"   off \
-		ESOUND "Enable EsounD support" off
+OPTIONS=	ARTS	"Enable aRts support"		off \
+		ESOUND	"Enable EsounD support"		off \
+		AIM_TOC	"Include aim-toc service"	off \
+		ICQ_TOC "Include icq-toc service"	off
 
 USE_BZIP2=	yes
 USE_XORG=	xpm xscrnsaver
@@ -51,6 +52,20 @@ USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--disable-esd
 .endif
 
+.if defined(WITH_AIM_TOC)
+CONFIGURE_ARGS+=	--enable-aim-toc
+PLIST_SUB+=		AIM_TOC=""
+.else
+PLIST_SUB+=		AIM_TOC="@comment "
+.endif
+
+.if defined(WITH_ICQ_TOC)
+CONFIGURE_ARGS+=	--enable-icq-toc
+PLIST_SUB+=		ICQ_TOC=""
+.else
+PLIST_SUB+=		ICQ_TOC="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-L/usr/local/lib||g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g ; \
@@ -62,5 +77,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-L/usr/local/lib/pth/||g ; \
 		 s|-lproxy|../libproxy/libproxy.a|g' ${WRKSRC}/src/Makefile.in
+
+post-build:
+	@${ECHO} 'Categories=Application;Network;' >> ${WRKSRC}/ayttm.desktop
 
 .include <bsd.port.post.mk>
