@@ -9,7 +9,7 @@ PORTNAME=	rocksndiamonds
 PORTVERSION=	3.2.6.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
-		http://homepages.compuserve.de/rocksndiamonds/
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
