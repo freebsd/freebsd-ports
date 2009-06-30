@@ -10,9 +10,9 @@
 # The hugin port is a gui interface to interact with panorama tools.
 
 PORTNAME=	vigra
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://kogs-www.informatik.uni-hamburg.de/~koethe/vigra/
+MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	vd@FreeBSD.org
