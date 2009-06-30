@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zeroinstall-injector
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=zero-install
@@ -23,6 +23,11 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 MAN1=		0launch.1 0alias.1 0store.1 0store-secure-add.1 0desktop.1
 
