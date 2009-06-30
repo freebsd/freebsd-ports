@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3ebd4cb5-657f-11de-883a-00e0815b8da8">
+    <topic>nagios -- Command Injection Vulnerability</topic>
+    <affects>
+      <package>
+	<name>nagios</name>
+	<range><lt>3.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/35543?">
+	  <p>A vulnerability has been reported in Nagios, which can be
+	    exploited by malicious users to potentially compromise a
+	    vulnerable system.</p>
+	  <p>Input passed to the "ping" parameter in statuswml.cgi is not
+	    properly sanitised before being used to invoke the ping command.
+	    This can be exploited to inject and execute arbitrary shell
+	    commands.</p>
+	  <p>Successful exploitation requires access to the ping feature
+	    of the WAP interface.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/35543</url>
+      <url>http://tracker.nagios.org/view.php?id=15</url>
+    </references>
+    <dates>
+      <discovery>2009-05-29</discovery>
+      <entry>2009-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f59dda75-5ff4-11de-a13e-00e0815b8da8">
     <topic>tor-devel -- DNS resolution vulnerabiliity</topic>
     <affects>
