@@ -1,3 +1,4 @@
+%%PYTHON_INCLUDEDIR%%/bsddb3/bsddb.h
 %%PYTHON_SITELIBDIR%%/bsddb3/__init__.py
 %%PYTHON_SITELIBDIR%%/bsddb3/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/__init__.pyo
@@ -20,12 +21,12 @@
 %%PYTHON_SITELIBDIR%%/bsddb3/dbutils.py
 %%PYTHON_SITELIBDIR%%/bsddb3/dbutils.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/dbutils.pyo
+%%PYTHON_SITELIBDIR%%/bsddb3/test_support.py
+%%PYTHON_SITELIBDIR%%/bsddb3/test_support.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/test_support.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_1413192.py
-%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_1413192.pyc
-%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_1413192.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_all.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_all.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_all.pyo
@@ -53,9 +54,15 @@
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_dbtables.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_dbtables.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_dbtables.pyo
-%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_env_close.py
-%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_env_close.pyc
-%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_env_close.pyo
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_distributed_transactions.py
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_distributed_transactions.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_distributed_transactions.pyo
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_early_close.py
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_early_close.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_early_close.pyo
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_fileid.py
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_fileid.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_fileid.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_get_none.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_get_none.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_get_none.pyo
@@ -77,11 +84,15 @@
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_recno.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_recno.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_recno.pyo
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_replication.py
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_replication.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_replication.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_sequence.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_sequence.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_sequence.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_thread.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_thread.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_thread.pyo
+@dirrm %%PYTHON_INCLUDEDIR%%/bsddb3
 @dirrm %%PYTHON_SITELIBDIR%%/bsddb3/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bsddb3
