@@ -1,5 +1,11 @@
---- bgpd/session.c	2008-03-18 15:24:06.000000000 +0100
-+++ bgpd/session.c	2008-03-18 13:27:29.000000000 +0100
+Index: bgpd/session.c
+===================================================================
+RCS file: /home/cvs/private/hrs/openbgpd/bgpd/session.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- bgpd/session.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
++++ bgpd/session.c	30 Jun 2009 06:40:07 -0000	1.2
 @@ -52,6 +52,10 @@
  #define PFD_SOCK_RCTL		4
  #define PFD_LISTENERS_START	5

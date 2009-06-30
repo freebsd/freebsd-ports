@@ -1,6 +1,12 @@
---- bgpd/bgpd.conf.5	2007-05-31 21:20:22.000000000 +0200
-+++ bgpd/bgpd.conf.5	2008-03-18 14:55:31.000000000 +0100
-@@ -611,11 +611,11 @@
+Index: bgpd/bgpd.conf.5
+===================================================================
+RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.conf.5,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- bgpd/bgpd.conf.5	30 Jun 2009 05:46:15 -0000	1.1.1.1
++++ bgpd/bgpd.conf.5	30 Jun 2009 06:40:07 -0000	1.2
+@@ -611,11 +611,11 @@ is responsible for managing the session 
  With
  .Xr isakmpd 8 ,
  it is sufficient to copy the peer's public key, found in
@@ -14,8 +20,8 @@
  The local public key must be copied to the peer in the same way.
  As
  .Xr bgpd 8
-@@ -1133,8 +1133,8 @@
- is a local non-transitive attribute and a bgpd-specific extension.
+@@ -1137,8 +1137,8 @@ For prefixes with equally long paths, th
+ is selected.
  .El
  .Sh FILES
 -.Bl -tag -width "/etc/bgpd.conf" -compact

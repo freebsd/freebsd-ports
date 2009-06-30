@@ -1,11 +1,18 @@
---- bgpd/printconf.c	2008-03-18 15:24:06.000000000 +0100
-+++ bgpd/printconf.c	2008-03-18 13:27:29.000000000 +0100
-@@ -24,6 +24,8 @@
- #include "mrt.h"
- #include "session.h"
- 
+Index: bgpd/printconf.c
+===================================================================
+RCS file: /home/cvs/private/hrs/openbgpd/bgpd/printconf.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- bgpd/printconf.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
++++ bgpd/printconf.c	30 Jun 2009 06:40:07 -0000	1.2
+@@ -19,6 +19,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#if defined(__FreeBSD__)	/* limits.h */
 +#include <limits.h>
-+
- void		 print_op(enum comp_ops);
- void		 print_community(int, int);
- void		 print_set(struct filter_set_head *);
++#endif
+ 
+ #include "bgpd.h"
+ #include "mrt.h"

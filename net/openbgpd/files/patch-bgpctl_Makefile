@@ -1,10 +1,29 @@
---- bgpctl/Makefile	2007-03-03 12:45:30.000000000 +0100
-+++ bgpctl/Makefile	2008-03-18 13:27:29.000000000 +0100
-@@ -6,6 +6,7 @@
- SRCS=	bgpctl.c parser.c buffer.c imsg.c util.c
+Index: bgpctl/Makefile
+===================================================================
+RCS file: /home/cvs/private/hrs/openbgpd/bgpctl/Makefile,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- bgpctl/Makefile	30 Jun 2009 05:46:15 -0000	1.1.1.1
++++ bgpctl/Makefile	30 Jun 2009 06:40:05 -0000	1.2
+@@ -1,17 +1,18 @@
+ #	$OpenBSD: Makefile,v 1.10 2007/12/20 17:08:48 henning Exp $
+ 
+-.PATH:		${.CURDIR}/../bgpd
++.PATH:		${.CURDIR}/../bgpd ${.CURDIR}/../openbsd-compat
+ 
+ PROG=	bgpctl
+ SRCS=	bgpctl.c parser.c buffer.c imsg.c util.c timer.c
  SRCS+=	irrfilter.c whois.c irr_asset.c irr_prefix.c irr_output.c
  SRCS+=	irr_parser.c
 +SRCS+=	fmt_scaled.c
  CFLAGS+= -Wall
  CFLAGS+= -Wstrict-prototypes -Wmissing-prototypes
  CFLAGS+= -Wmissing-declarations
+ CFLAGS+= -Wshadow -Wpointer-arith -Wcast-qual
+ CFLAGS+= -Wsign-compare
+-CFLAGS+= -I${.CURDIR} -I${.CURDIR}/../bgpd
++CFLAGS+= -I${.CURDIR} -I${.CURDIR}/../bgpd -I${.CURDIR}/../openbsd-compat
+ MAN=	bgpctl.8
+ LDADD= -lutil
+ DPADD+= ${LIBUTIL}

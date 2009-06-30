@@ -1,20 +1,30 @@
---- bgpd/rde_attr.c	2007-05-22 16:03:31.000000000 +0200
-+++ bgpd/rde_attr.c	2008-03-18 15:30:31.000000000 +0100
-@@ -17,7 +17,6 @@
+Index: bgpd/rde_attr.c
+===================================================================
+RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_attr.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- bgpd/rde_attr.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
++++ bgpd/rde_attr.c	30 Jun 2009 06:40:07 -0000	1.2
+@@ -17,7 +17,11 @@
   */
  
  #include <sys/types.h>
--#include <sys/hash.h>
++#if defined(__FreeBSD__)	/* sys/hash.h */
++#include "hash.h"
++#else
+ #include <sys/hash.h>
++#endif /* defined(__FreeBSD__) */
  #include <sys/queue.h>
  
  #include <netinet/in.h>
-@@ -28,6 +27,9 @@
+@@ -25,6 +29,9 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#if defined(__FreeBSD__)	/* limits.h */
++#include <limits.h>
++#endif /* defined(__FreeBSD__) */
  
  #include "bgpd.h"
  #include "rde.h"
-+#include "hash.h"
-+
-+#include <limits.h>
- 
- int
- attr_write(void *p, u_int16_t p_len, u_int8_t flags, u_int8_t type,
