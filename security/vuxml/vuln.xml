@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ba73f494-65a8-11de-aef5-001c2514716c">
+    <topic>phpmyadmin -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>3.2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin project reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2009-5.php">
+	  <p>It was possible to conduct an XSS attack via a crafted
+	    SQL bookmark.</p>
+	  <p>All 3.x releases on which the "bookmarks" feature is
+	    active are affected, previous versions are not.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2009-5.php</url>
+    </references>
+    <dates>
+      <discovery>2009-06-30</discovery>
+      <entry>2009-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3ebd4cb5-657f-11de-883a-00e0815b8da8">
     <topic>nagios -- Command Injection Vulnerability</topic>
     <affects>
