@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.36
+PORTVERSION=	0.38
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,6 +37,7 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/PAR.pm:${PORTSDIR}/devel/p5-PAR \
 		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
 		${SITE_PERL}/Parse/ErrorString/Perl.pm:${PORTSDIR}/devel/p5-Parse-ErrorString-Perl \
+		p5-Parse-ExuberantCTags>=1.00:${PORTSDIR}/devel/p5-Parse-ExuberantCTags \
 		p5-Pod-Abstract>=0.16:${PORTSDIR}/textproc/p5-Pod-Abstract \
 		${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM \
 		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
@@ -119,6 +120,7 @@ MAN3=		Padre.3 \
 		Padre::PluginBuilder.3 \
 		Padre::PluginManager.3 \
 		Padre::Pod2HTML.3 \
+		Padre::Search.3 \
 		Padre::Task.3 \
 		Padre::Task::HTTPClient.3 \
 		Padre::Task::LWP.3 \
@@ -127,6 +129,7 @@ MAN3=		Padre.3 \
 		Padre::Task::PPI.3 \
 		Padre::Task::PPI::FindUnmatchedBrace.3 \
 		Padre::Task::PPI::FindVariableDeclaration.3 \
+		Padre::Task::PPI::IntroduceTemporaryVariable.3 \
 		Padre::Task::PPI::LexicalReplaceVariable.3 \
 		Padre::Task::SyntaxChecker.3 \
 		Padre::Task::SyntaxChecker::Perl.3 \
@@ -141,12 +144,14 @@ MAN3=		Padre.3 \
 		Padre::Wx::Dialog::Find.3 \
 		Padre::Wx::Dialog::PluginManager.3 \
 		Padre::Wx::Dialog::Preferences.3 \
+		Padre::Wx::Dialog::Replace.3 \
 		Padre::Wx::Dialog::SessionManager.3 \
 		Padre::Wx::Dialog::SessionSave.3 \
 		Padre::Wx::DocBrowser.3 \
 		Padre::Wx::HtmlWindow.3 \
 		Padre::Wx::Main.3 \
 		Padre::Wx::PodFrame.3 \
+		Padre::Wx::Role::MainChild.3 \
 		Padre::Wx::StatusBar.3 \
 		Wx::Perl::Dialog.3 \
 		Wx::Perl::Dialog::Simple.3 \
