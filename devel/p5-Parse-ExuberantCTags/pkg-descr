@@ -1,0 +1,8 @@
+This Perl module parses ctags files and handles both traditional
+ctags as well as extended ctags files such as produced with Exuberant
+ctags.
+
+The module is implemented as a wrapper around the readtags library
+that normally ships with Exuberant ctags.
+
+WWW: http://search.cpan.org/dist/Parse-ExuberantCTags/
