@@ -18,7 +18,7 @@ bin/rwgeoip2ccmap
 bin/rwgroup
 bin/rwidsquery
 bin/rwip2cc
-bin/rwipfix2silk
+%%IPFIX%%/bin/rwipfix2silk
 bin/rwmatch
 bin/rwnetmask
 bin/rwp2yaf2silk
@@ -40,7 +40,7 @@ bin/rwsetintersect
 bin/rwsetmember
 bin/rwsettool
 bin/rwsetunion
-bin/rwsilk2ipfix
+%%IPFIX%%/bin/rwsilk2ipfix
 bin/rwsort
 bin/rwsplit
 bin/rwstats
@@ -111,10 +111,10 @@ lib/libsilk.a
 lib/libsilk.la
 lib/libsilk.so
 lib/libsilk.so.1
-lib/libskipfix.a
-lib/libskipfix.la
-lib/libskipfix.so
-lib/libskipfix.so.1
+%%IPFIX%%/lib/libskipfix.a
+%%IPFIX%%/lib/libskipfix.la
+%%IPFIX%%/lib/libskipfix.so
+%%IPFIX%%/lib/libskipfix.so.1
 lib/libskmsg.a
 lib/libskmsg.la
 lib/libskmsg.so
