@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gtklp
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A gtk interface to cups
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
@@ -20,7 +19,6 @@ LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gnometarget gtk20
-USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	automake:19:env
 GNU_CONFIGURE=	yes
@@ -30,6 +28,9 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 
 MAN1=		gtklp.1 gtklpq.1
 
-BROKEN=		does not build
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .include <bsd.port.mk>
