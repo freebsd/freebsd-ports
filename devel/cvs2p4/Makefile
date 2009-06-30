@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	cvs2p4
-PORTVERSION=	2.5.5
+PORTVERSION=	3.1
 CATEGORIES+=	devel
-MASTER_SITES=	ftp://public.perforce.com/public/perforce/utils/cvs2p4/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	erwin
+MASTER_SITES=	ftp://public.perforce.com/public/perforce/utils/cvs2p4/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	CVS to Perforce Converter
 
 REINPLACE_ARGS=	-i ""
@@ -27,7 +25,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,!!PREFIX!!,${PREFIX},g;' \
 		-e 's,!!PERFORCE_PORT!!,${PERFORCE_PORT},g;' \
-		${WRKSRC}/test/config
+		${WRKSRC}/test/config.test
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
