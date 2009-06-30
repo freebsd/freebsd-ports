@@ -1,12 +1,8 @@
 bin/udcli
 lib/libudis86.a
+lib/libudis86.la
 include/udis86.h
-include/libudis86/types.h
 include/libudis86/extern.h
-include/libudis86/mnemonics.h
-%%PORTDOCS%%%%DOCSDIR%%/doc.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/ss.jpg
-%%PORTDOCS%%%%DOCSDIR%%/style.css
+include/libudis86/itab.h
+include/libudis86/types.h
 @dirrm include/libudis86
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
