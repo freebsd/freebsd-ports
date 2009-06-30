@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.5rc3
+DISTVERSION=	3.5
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.7:${PORTSDIR}/devel/nspr
+BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
 USE_AUTOTOOLS=	autoconf:213:run
 LATEST_LINK=	firefox3-devel
