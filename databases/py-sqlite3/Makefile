@@ -24,14 +24,20 @@ DIST_SUBDIR=	python
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 WRKSRC=		${PYTHON_WRKSRC}/Modules
-MD5_FILE=	${PORTSDIR}/lang/python/distinfo
+MD5_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 
 PYDISTUTILS_NOEGGINFO=	yes
+
+.include <bsd.port.pre.mk>
 
 pre-extract:
 	@${CAT} ${PKGMESSAGE}
 
 post-extract:
+.if ${PYTHON_REL} < 300
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
+.else
+	@${CP} ${FILESDIR}/setup3.py ${WRKSRC}/setup.py
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
