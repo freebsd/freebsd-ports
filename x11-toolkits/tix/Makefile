@@ -7,7 +7,7 @@
 
 PORTNAME=	tix
 PORTVERSION=	8.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= tix
@@ -15,18 +15,15 @@ MASTER_SITE_SUBDIR= tix
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extension to the Tk toolkit
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TCL84_PORT}:build \
-		${NONEXISTENT}:${PORTSDIR}/${TK84_PORT}:build
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix/tk8.4
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USE_TK=		84
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
-		--with-tclconfig="${PREFIX}/lib/tcl8.4" \
-		--with-tkconfig="${PREFIX}/lib/tk8.4" \
-		--with-tclinclude="${PREFIX}/include/tcl8.4" \
-		--with-tkinclude="${PREFIX}/include/tk8.4"
+		--with-tclconfig="${TCL_LIBDIR}" \
+		--with-tkconfig="${TK_LIBDIR}" \
+		--with-tclinclude="${TCL_INCLUDEDIR}" \
+		--with-tkinclude="${TK_INCLUDEDIR}"
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN1=		tixwish.1
@@ -48,15 +45,8 @@ TIXSAM_LIB=	libtixsam8184.so
 TIX_LIB_FILE=	${TIX_LIB}.1
 TIXSAM_LIB_FILE=${TIXSAM_LIB}.1
 TIXWISH=	tixwish8.1.8.4
-TCL84_PORT?=	lang/tcl84
-TK84_PORT?=	x11-toolkits/tk84
 
 .include <bsd.port.pre.mk>
-
-TCLBASE!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V TCLBASE )
-TCLWRK!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V WRKDIR )
-TKBASE!=	( cd ${PORTSDIR}/${TK84_PORT} && make -V TKBASE )
-TKWRK!=		( cd ${PORTSDIR}/${TK84_PORT} && make -V WRKDIR )
 
 pre-extract:
 	@${MAKE} clean
@@ -68,16 +58,12 @@ pre-configure:
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
-	${REINPLACE_CMD} \
-		-e 's|$${WRKDIRPREFIX}${TCLBASE}/work|${TCLWRK}|g' \
-		-e 's|$${WRKDIRPREFIX}${TKBASE}/work|${TKWRK}|g' \
-		${WRKSRC}/../Makefile
 
 post-configure:
-	${REINPLACE_CMD} \
-		-e 's|$${WRKDIRPREFIX}${TCLBASE}/work|${TCLWRK}|g' \
-		-e 's|$${WRKDIRPREFIX}${TKBASE}/work|${TKWRK}|g' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,TCL_SRC_DIR .*,TCL_SRC_DIR=${TCL_INCLUDEDIR},g" \
+	-e "s,TK_SRC_DIR .*,TK_SRC_DIR=${TK_INCLUDEDIR},g" \
+	-e "s,\$$(TCL_BIN_DIR)/tclsh,${TCLSH},g" \
+	${WRKSRC}/Makefile
 
 post-install:
 	@(cd ${WRKSRC}/.. && \
