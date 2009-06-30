@@ -28,30 +28,32 @@ bin/ilsize
 bin/ilstrip
 bin/ilverify
 bin/resgen
-%%I386%%include/pnet/ffi.h
-%%I386%%include/pnet/ffitarget.h
-%%I386%%include/pnet/gc.h
-%%I386%%include/pnet/gc/gc.h
-%%I386%%%%I386%%include/pnet/gc/gc_alloc.h
-%%I386%%include/pnet/gc/gc_allocator.h
-%%I386%%include/pnet/gc/gc_amiga_redirects.h
-%%I386%%include/pnet/gc/gc_backptr.h
-%%I386%%include/pnet/gc/gc_config_macros.h
-%%I386%%include/pnet/gc/gc_cpp.h
-%%I386%%include/pnet/gc/gc_gcj.h
-%%I386%%include/pnet/gc/gc_inl.h
-%%I386%%include/pnet/gc/gc_inline.h
-%%I386%%include/pnet/gc/gc_local_alloc.h
-%%I386%%include/pnet/gc/gc_mark.h
-%%I386%%include/pnet/gc/gc_pthread_redirects.h
-%%I386%%include/pnet/gc/gc_typed.h
-%%I386%%include/pnet/gc/leak_detector.h
-%%I386%%include/pnet/gc/new_gc_alloc.h
-%%I386%%include/pnet/gc/weakpointer.h
-%%I386%%include/pnet/gc_config_macros.h
-%%I386%%include/pnet/gc_local_alloc.h
-%%I386%%include/pnet/gc_pthread_redirects.h
-%%I386%%include/pnet/gc_typed.h
+include/ffi.h
+include/ffitarget.h
+include/gc
+include/gc/gc.h
+include/gc/gc_typed.h
+include/gc/gc_inl.h
+include/gc/gc_inline.h
+include/gc/gc_mark.h
+include/gc/gc_cpp.h
+include/gc/weakpointer.h
+include/gc/gc_alloc.h
+include/gc/new_gc_alloc.h
+include/gc/gc_allocator.h
+include/gc/gc_backptr.h
+include/gc/gc_gcj.h
+include/gc/gc_local_alloc.h
+include/gc/leak_detector.h
+include/gc/gc_amiga_redirects.h
+include/gc/gc_pthread_redirects.h
+include/gc/gc_config_macros.h
+include/gc.h
+include/gc_local_alloc.h
+include/gc_pthread_redirects.h
+include/gc_config_macros.h
+include/gc_typed.h
+include/leak_detector.h
 include/pnet/il_align.h
 include/pnet/il_bignum.h
 include/pnet/il_coder.h
@@ -59,6 +61,7 @@ include/pnet/il_config.h
 include/pnet/il_console.h
 include/pnet/il_crypt.h
 include/pnet/il_debug.h
+include/pnet/il_debugger.h
 include/pnet/il_decimal.h
 include/pnet/il_dumpasm.h
 include/pnet/il_engine.h
@@ -82,7 +85,6 @@ include/pnet/il_utils.h
 include/pnet/il_values.h
 include/pnet/il_writer.h
 include/pnet/il_xml.h
-%%I386%%include/pnet/leak_detector.h
 lib/cscc/plugins/cscc-b
 lib/cscc/plugins/cscc-bf
 lib/cscc/plugins/cscc-c-s
@@ -90,6 +92,10 @@ lib/cscc/plugins/cscc-cs
 lib/cscc/plugins/cscc-csharp
 lib/cscc/plugins/cscc-java
 lib/cscc/plugins/cscc-vb
+lib/libgc.a
+lib/libgc.so
+lib/libgc.so.1
+lib/libgc.la
 lib/libILAsm.a
 lib/libILCodeGen.a
 lib/libILDumpAsm.a
@@ -97,12 +103,10 @@ lib/libILEngine.a
 lib/libILImage.a
 lib/libILLink.a
 lib/libILSupport.a
-%%I386%%lib/pnet/elf/libffi.a
-%%I386%%lib/pnet/elf/libffi.la
-%%I386%%lib/pnet/libgc.a
-%%I386%%lib/pnet/libgc.la
-%%I386%%lib/pnet/libgc.so
-%%I386%%lib/pnet/libgc.so.1
+lib/libffi.so.4
+lib/libffi.so
+lib/libffi.la
+lib/libffi.a
 %%I386%%share/gc/README
 %%I386%%share/gc/README.DGUX386
 %%I386%%share/gc/README.Mac
@@ -135,10 +139,12 @@ lib/libILSupport.a
 %%I386%%share/gc/scale.html
 %%I386%%share/gc/simple_example.html
 %%I386%%share/gc/tree.html
-%%I386%%@dirrm include/pnet/gc
-@dirrm include/pnet
-%%I386%%@dirrm lib/pnet/elf
-%%I386%%@dirrm lib/pnet
-@dirrm lib/cscc/plugins
+@dirrmtry include/gc
+@dirrmtry include/pnet/gc
+@dirrmtry include/pnet
+@dirrmtry lib/cscc/plugins
 @dirrmtry lib/cscc
-%%I386%%@dirrm share/gc
+@dirrmtry lib/elf
+@dirrmtry lib/pnet/elf
+@dirrmtry lib/pnet
+@dirrmtry share/gc

@@ -7,14 +7,13 @@
 
 PORTNAME=	pnet
 PORTVERSION=	${PNET_VERSION}
-PORTREVISION=	1
 PORTREVISION=	${PNET_REVISION}
 CATEGORIES=	lang
 MASTER_SITES=	${PNET_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 PKGNAMESUFFIX=	base
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	C\# compiler and runtime engine
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
@@ -27,6 +26,7 @@ USE_XLIB=	yes
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--enable-threads=posix
 
@@ -34,10 +34,7 @@ CONFIGURE_ARGS+=	--enable-threads=posix
 CONFIGURE_ARGS+=	--disable-optimizations
 .endif
 
-PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 Doxyfile \
-	c_language_abi.html embedded.html gtk-sharp.HOWTO \
-	l10n.html libgc_changes.txt pinvoke.html pnet_faq.html pnetasm.texi \
-	unrolling.txt
+PORTDOCS=	pnetasm.texi pnettools.info pnettools.texi texinfo.tex
 INFO=	pnettools
 MAN1=	clrwrap.1 csant.1 cscc.1 csdoc.1 csdoc2hier.1 csdoc2html.1 \
 	cscc-cpp.1 csdoc2texi.1 cssrc2html.1 ilalink.1 ilasm.1 ildasm.1 \
@@ -61,9 +58,6 @@ PLIST_SUB=	I386="@comment "
 .else
 PLIST_SUB=	I386=""
 
-.if ${OSVERSION} >= 700000
-BROKEN=		Bad plist
-.endif
 .endif
 
 post-everything::
@@ -74,7 +68,7 @@ post-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|`$$CC -print-multi-os-directory 2>/dev/null`|elf|' \
-		${WRKSRC}/libffi/configure ${WRKSRC}/libffi/configure.in
+		${WRKSRC}/libffi/configure
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig \
 		${WRKSRC}/libgc/configure
 

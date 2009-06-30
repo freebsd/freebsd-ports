@@ -7,13 +7,12 @@
 
 PORTNAME=	pnetlib
 PORTVERSION=	${PNET_VERSION}
-PORTREVISION=	1
 PORTREVISION=	${PNET_REVISION}
 CATEGORIES=	lang
 MASTER_SITES=	${PNET_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	C\# system library for pnet
 
 BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
@@ -26,6 +25,7 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \
 	JScript-embed.txt JScript-internals.txt csunit_howto.html \

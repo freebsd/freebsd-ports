@@ -7,21 +7,19 @@
 
 PORTNAME=	pnet
 PORTVERSION=	${PNET_VERSION}
-PORTREVISION=	1
 PORTREVISION=	${PNET_REVISION}
 CATEGORIES=	lang
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	The "meta-port" for DotGNU Portable.NET
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
 RUN_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		csunit:${PORTSDIR}/lang/pnetlib \
-		sqlsharp-pnet:${PORTSDIR}/lang/ml-pnet \
-		${LOCALBASE}/lib/cscc/lib/libc.dll:${PORTSDIR}/lang/pnetc
+		sqlsharp-pnet:${PORTSDIR}/lang/ml-pnet
 
 NO_BUILD=	yes
 
