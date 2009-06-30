@@ -1,6 +1,12 @@
---- bgpd/bgpd.8	2007-05-31 21:20:22.000000000 +0200
-+++ bgpd/bgpd.8	2008-03-18 14:54:19.000000000 +0100
-@@ -48,9 +48,9 @@
+Index: bgpd/bgpd.8
+===================================================================
+RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.8,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- bgpd/bgpd.8	30 Jun 2009 05:46:15 -0000	1.1.1.1
++++ bgpd/bgpd.8	30 Jun 2009 06:40:07 -0000	1.2
+@@ -48,9 +48,9 @@ Please refer to that document for more i
  .Nm
  is usually started at boot time, and can be enabled by
  setting the following in
@@ -12,7 +18,7 @@
  .Pp
  See
  .Xr rc 8
-@@ -117,7 +117,7 @@
+@@ -117,7 +117,7 @@ Use
  .Ar file
  as the configuration file,
  instead of the default
@@ -21,7 +27,7 @@
  .It Fl n
  Configtest mode.
  Only check the configuration file for validity.
-@@ -135,7 +135,7 @@
+@@ -135,7 +135,7 @@ Produce more verbose output.
  .El
  .Sh FILES
  .Bl -tag -width "/var/run/bgpd.sockXXX" -compact
