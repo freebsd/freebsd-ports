@@ -1,7 +1,8 @@
-cvs2p4/Artistic
 cvs2p4/MANIFEST
 cvs2p4/NEWS
 cvs2p4/README
+cvs2p4/config.tmpl
+cvs2p4/bin/cvs2p4
 cvs2p4/bin/dochanges
 cvs2p4/bin/dolabels
 cvs2p4/bin/genchanges
@@ -11,10 +12,13 @@ cvs2p4/bin/srcdiff
 cvs2p4/lib/util.pl
 cvs2p4/test/Attic/datefile,v
 cvs2p4/test/at@file,v
+cvs2p4/test/brmap.pl
 cvs2p4/test/changes.good
-cvs2p4/test/config
+cvs2p4/test/config.test
 cvs2p4/test/datefile_readd,v
 cvs2p4/test/dollar$file,v
+cvs2p4/test/exclude_branches
+cvs2p4/test/exclude_tags
 cvs2p4/test/file,v
 cvs2p4/test/lines.good
 cvs2p4/test/metadata.good
@@ -30,8 +34,12 @@ cvs2p4/test/pound#file,v
 cvs2p4/test/runtest
 cvs2p4/test/space file,v
 cvs2p4/test/star*file,v
+cvs2p4/src/rcs-5.7/src/rlog.c.patch
+@dirrm cvs2p4/bin
+@dirrm cvs2p4/lib
+@dirrm cvs2p4/src/rcs-5.7/src
+@dirrm cvs2p4/src/rcs-5.7
+@dirrm cvs2p4/src
 @dirrm cvs2p4/test/Attic
 @dirrm cvs2p4/test
-@dirrm cvs2p4/lib
-@dirrm cvs2p4/bin
 @dirrm cvs2p4
