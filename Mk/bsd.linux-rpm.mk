@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.21 2009-06-26 17:03:48 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.22 2009-07-01 20:35:34 bsam Exp $
 #
 
 # Variables:
@@ -67,7 +67,7 @@ LINUX_DIST?=		fedora
 LINUX_DIST_VER?=	4
 . else
 LINUX_DIST_VER?=	10
-.   if  !defined(${OVERRIDE_LINUX_NONBASE_PORTS}) && \
+.   if  !defined(OVERRIDE_LINUX_NONBASE_PORTS) && \
         ${LINUX_DIST_VER} != 10
 IGNORE=		bsd.linux-rpm.mk test failed: default package building at OSVERSION>=800076 was changed to linux-f10 ports, please define OVERRIDE_LINUX_NONBASE_PORTS to build other linux infrastructure ports
 .   endif
