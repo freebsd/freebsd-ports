@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	ruby2ruby
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	seattlerb
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A pure ruby code generator easily from ParseTree's Sexps # '
 
-BUILD_DEPENDS=	rubygem-parsetree>=3.0:${PORTSDIR}/devel/rubygem-parsetree \
-		rubygem-hoe>=1.8.2:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-sexp_processor>=3.0:${PORTSDIR}/devel/rubygem-sexp_processor \
+		rubygem-ruby_parser>=2.0:${PORTSDIR}/devel/rubygem-ruby_parser \
+		rubygem-parsetree>=3.0:${PORTSDIR}/devel/rubygem-parsetree
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
