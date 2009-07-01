@@ -2722,9 +2722,9 @@ share/themes/Mist/index.theme
 share/themes/Mist/metacity-1/metacity-theme-1.xml
 share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/themes/Simple/gtk-2.0
-@dirrm share/themes/Simple
+@dirrmtry share/themes/Simple
 @dirrm share/themes/Mist/metacity-1
-@dirrm share/themes/Mist
+@dirrmtry share/themes/Mist
 @dirrm share/themes/LowContrastLargePrint/pixmaps
 @dirrm share/themes/LowContrastLargePrint/gtk-2.0
 @dirrm share/themes/LowContrastLargePrint
@@ -2751,12 +2751,12 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/themes/Glider/metacity-1
 @dirrm share/themes/Glider/gtk-2.0
 @dirrm share/themes/Glider
-@dirrm share/themes/Crux
+@dirrmtry share/themes/Crux
 @dirrm share/themes/ClearlooksClassic/metacity-1
 @dirrm share/themes/ClearlooksClassic/gtk-2.0
 @dirrm share/themes/ClearlooksClassic
 @dirrm share/themes/Clearlooks/metacity-1
-@dirrm share/themes/Clearlooks
+@dirrmtry share/themes/Clearlooks
 @dirrmtry share/themes
 @dirrm share/icons/Mist/scalable/status
 @dirrm share/icons/Mist/scalable/places

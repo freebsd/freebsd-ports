@@ -1,12 +1,8 @@
 bin/file-roller
-lib/nautilus/extensions-2.0/libnautilus-fileroller.la
-lib/nautilus/extensions-2.0/libnautilus-fileroller.so
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-fileroller.la
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-fileroller.so
 libexec/file-roller/isoinfo.sh
 share/applications/file-roller.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/icons/hicolor/16x16/actions/add-files-to-archive.png
 %%DATADIR%%/icons/hicolor/16x16/actions/add-folder-to-archive.png
 %%DATADIR%%/icons/hicolor/16x16/actions/extract-archive.png
@@ -271,7 +267,6 @@ share/omf/file-roller/file-roller-vi.omf
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrm libexec/file-roller
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
