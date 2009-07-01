@@ -8,6 +8,10 @@ include/libgearman/gearmand.h
 include/libgearman/gearmand_con.h
 include/libgearman/gearmand_thread.h
 include/libgearman/job.h
+include/libgearman/modconf.h
+include/libgearman/modconf_module.h
+include/libgearman/modconf_constants.h
+include/libgearman/modconf_structs.h
 include/libgearman/packet.h
 include/libgearman/server.h
 include/libgearman/server_client.h
