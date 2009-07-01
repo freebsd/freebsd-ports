@@ -2276,6 +2276,7 @@
     SUBDIR += py-Jinja
     SUBDIR += py-Jinja2
     SUBDIR += py-RPyC
+    SUBDIR += py-SymbolType
     SUBDIR += py-TurboJinja
     SUBDIR += py-anonfunc
     SUBDIR += py-argparse
