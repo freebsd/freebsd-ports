@@ -42,11 +42,13 @@ share/locale/bn/LC_MESSAGES/gnome-menus.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-menus.mo
 share/locale/br/LC_MESSAGES/gnome-menus.mo
 share/locale/ca/LC_MESSAGES/gnome-menus.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-menus.mo
 share/locale/crh/LC_MESSAGES/gnome-menus.mo
 share/locale/cs/LC_MESSAGES/gnome-menus.mo
 share/locale/cy/LC_MESSAGES/gnome-menus.mo
 share/locale/da/LC_MESSAGES/gnome-menus.mo
 share/locale/de/LC_MESSAGES/gnome-menus.mo
+share/locale/dv/LC_MESSAGES/gnome-menus.mo
 share/locale/dz/LC_MESSAGES/gnome-menus.mo
 share/locale/el/LC_MESSAGES/gnome-menus.mo
 share/locale/en_CA/LC_MESSAGES/gnome-menus.mo
@@ -176,8 +178,12 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/dv/LC_MESSAGES
+@dirrmtry share/locale/dv
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
