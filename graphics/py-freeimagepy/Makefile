@@ -7,6 +7,7 @@
 
 PORTNAME=	freeimagepy
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ DISTNAME=	FreeImagePy_w_dll
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A FreeImage library python wrapper
 
-LIB_DEPENDS=	freeimage:${PORTSDIR}/graphics/freeimage
+LIB_DEPENDS=	freeimage.3:${PORTSDIR}/graphics/freeimage
 
 WRKSRC=		${WRKDIR}/FreeImagePy
 USE_BZIP2=	yes
