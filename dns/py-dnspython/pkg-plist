@@ -7,6 +7,12 @@
 %%PYTHON_SITELIBDIR%%/dns/e164.py
 %%PYTHON_SITELIBDIR%%/dns/e164.pyc
 %%PYTHON_SITELIBDIR%%/dns/e164.pyo
+%%PYTHON_SITELIBDIR%%/dns/edns.py
+%%PYTHON_SITELIBDIR%%/dns/edns.pyc
+%%PYTHON_SITELIBDIR%%/dns/edns.pyo
+%%PYTHON_SITELIBDIR%%/dns/entropy.py
+%%PYTHON_SITELIBDIR%%/dns/entropy.pyc
+%%PYTHON_SITELIBDIR%%/dns/entropy.pyo
 %%PYTHON_SITELIBDIR%%/dns/exception.py
 %%PYTHON_SITELIBDIR%%/dns/exception.pyc
 %%PYTHON_SITELIBDIR%%/dns/exception.pyo
@@ -64,6 +70,9 @@
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/CNAME.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/CNAME.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/CNAME.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/DLV.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/DLV.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/DLV.pyo
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/DNAME.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/DNAME.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/DNAME.pyo
@@ -79,6 +88,9 @@
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/HINFO.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/HINFO.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/HINFO.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/HIP.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/HIP.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/HIP.pyo
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/ISDN.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/ISDN.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/ISDN.pyo
@@ -97,6 +109,12 @@
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NSEC.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NSEC.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NSEC.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NSEC3.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NSEC3.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NSEC3.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NSEC3PARAM.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NSEC3PARAM.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NSEC3PARAM.pyo
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NXT.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NXT.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/NXT.pyo
@@ -175,6 +193,9 @@
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/__init__.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/dsbase.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/dsbase.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/dsbase.pyo
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/keybase.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/keybase.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/keybase.pyo
