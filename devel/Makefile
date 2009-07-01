@@ -2272,6 +2272,7 @@
     SUBDIR += pushmi
     SUBDIR += pwlib
     SUBDIR += py-Breve
+    SUBDIR += py-BytecodeAssembler
     SUBDIR += py-EnthoughtBase
     SUBDIR += py-Jinja
     SUBDIR += py-Jinja2
