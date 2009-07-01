@@ -61,6 +61,7 @@
     SUBDIR += p5-Bio-Das
     SUBDIR += p5-Bio-Glite
     SUBDIR += p5-Bio-Graphics
+    SUBDIR += p5-Bio-MAGETAB
     SUBDIR += p5-Bio-Phylo
     SUBDIR += p5-bioperl
     SUBDIR += p5-bioperl-run

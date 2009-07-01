@@ -1,0 +1,8 @@
+p5-Bio-MAGETAB contains the core MAGE-TAB Utilities Perl modules. This
+is a beta release. All functions have now been implemented and most
+have test suites; the exceptions include the modules involved in
+export of MAGE-TAB documents, which are still a little experimental in
+nature. The API is mostly finalised (and fully documented), but some
+details may yet change where necessary to improve usability.
+
+WWW: http://search.cpan.org/dist/Bio-MAGETAB/
