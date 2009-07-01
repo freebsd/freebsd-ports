@@ -2276,6 +2276,7 @@
     SUBDIR += py-EnthoughtBase
     SUBDIR += py-Jinja
     SUBDIR += py-Jinja2
+    SUBDIR += py-PEAK-Rules
     SUBDIR += py-RPyC
     SUBDIR += py-SymbolType
     SUBDIR += py-TurboJinja

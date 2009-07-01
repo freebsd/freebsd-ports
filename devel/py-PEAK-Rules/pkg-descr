@@ -1,0 +1,9 @@
+PEAK-Rules is a highly-extensible framework for creating and using
+generic functions, from the very simple to the very complex. Out of
+the box, it supports multiple-dispatch on positional arguments using
+tuples of types, full predicate dispatch using strings containing
+Python expressions, and CLOS-like method combining. (But the framework
+allows you to mix and match dispatch engines and custom method
+combinations, if you need or want to.)
+
+WWW:	http://pypi.python.org/pypi/PEAK-Rules
