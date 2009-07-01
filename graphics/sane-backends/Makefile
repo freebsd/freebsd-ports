@@ -45,13 +45,11 @@ USE_LDCONFIG=	yes
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_USB)
+.if (defined(WITHOUT_USB) || ${OSVERSION} > 800000)
 CONFIGURE_ARGS+=	--disable-libusb
 .else
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
-.else
-BROKEN=		does not compile
 .endif
 .endif
 
