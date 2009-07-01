@@ -103,6 +103,7 @@
     SUBDIR += ratpoison
     SUBDIR += sapphire
     SUBDIR += sawfish
+    SUBDIR += scrotwm
     SUBDIR += selectwm
     SUBDIR += simple-ccsm
     SUBDIR += skippy

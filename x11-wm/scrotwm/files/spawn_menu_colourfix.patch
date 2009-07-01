@@ -1,0 +1,11 @@
+--- scrotwm.c.orig	2009-06-29 03:46:08.000000000 +0200
++++ scrotwm.c	2009-06-28 10:07:24.000000000 +0200
+@@ -1139,7 +1143,7 @@
+ 	spawn_menu[SWM_MENU_FN] = bar_fonts[bar_fidx];
+ 	spawn_menu[SWM_MENU_NB] = r->s->c[SWM_S_COLOR_BAR].name;
+ 	spawn_menu[SWM_MENU_NF] = r->s->c[SWM_S_COLOR_BAR_FONT].name;
+-	spawn_menu[SWM_MENU_SB] = r->s->c[SWM_S_COLOR_BAR_BORDER].name;
++	spawn_menu[SWM_MENU_SB] = r->s->c[SWM_S_COLOR_BAR_FONT].name;
+ 	spawn_menu[SWM_MENU_SF] = r->s->c[SWM_S_COLOR_BAR].name;
+ 
+ 	spawn(r, args);
