@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	komodo-edit
-PORTVERSION=	4.4.1
+PORTVERSION=	5.1.4
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/
-DISTNAME=	Komodo-Edit-${PORTVERSION}-1774-linux-libcpp6-x86
+DISTNAME=	Komodo-Edit-${PORTVERSION}-3797-linux-libcpp6-x86
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
@@ -16,8 +16,9 @@ COMMENT=	Multi-language editor from ActiveState
 ONLY_FOR_ARCH=	i386 amd64
 RESTRICTED=	Distribution not permitted
 NO_BUILD=	yes
-USE_LINUX=	yes
+USE_LINUX=	f10
 USE_LINUX_APPS=	gtk2 jpeg
+USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 
 post-patch:
