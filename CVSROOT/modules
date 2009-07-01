@@ -12456,6 +12456,7 @@ p5-Parse-CPAN-Meta              ports/devel/p5-Parse-CPAN-Meta
 p5-Parse-CPAN-Packages          ports/devel/p5-Parse-CPAN-Packages
 p5-Parse-CSV                    ports/textproc/p5-Parse-CSV
 p5-Parse-ErrorString-Perl       ports/devel/p5-Parse-ErrorString-Perl
+p5-Parse-ExuberantCTags         ports/devel/p5-Parse-ExuberantCTags
 p5-Parse-FixedLength            ports/textproc/p5-Parse-FixedLength
 p5-Parse-Flex                   ports/textproc/p5-Parse-Flex
 p5-Parse-IRC                    ports/irc/p5-Parse-IRC
@@ -15856,6 +15857,7 @@ p5-parse-cpan-meta              ports/devel/p5-Parse-CPAN-Meta
 p5-parse-cpan-packages          ports/devel/p5-Parse-CPAN-Packages
 p5-parse-csv                    ports/textproc/p5-Parse-CSV
 p5-parse-errorstring-perl       ports/devel/p5-Parse-ErrorString-Perl
+p5-parse-exuberantctags         ports/devel/p5-Parse-ExuberantCTags
 p5-parse-fixedlength            ports/textproc/p5-Parse-FixedLength
 p5-parse-flex                   ports/textproc/p5-Parse-Flex
 p5-parse-irc                    ports/irc/p5-Parse-IRC
