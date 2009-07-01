@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20090408
+PORTVERSION=	20090622
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -55,9 +55,7 @@ WITH_FREETYPE_SRC=	--without-freetype-bytecode --without-freetype-src
 
 CONFIGURE_ARGS=	${WITH_MULTILAYER} --enable-devicetables ${WITH_FREETYPE_SRC} \
 		--enable-pasteafter --enable-tilepath
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lutil -lpthread" CFLAGS="${CFLAGS} \
-		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -76,6 +74,7 @@ USE_PYTHON=	yes
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Python on non-i386 systems doesn't link with Fontforge (issues with use of Python's .a file)
 CONFIGURE_ARGS+=	--with-python
+LDFLAGS+=	-lutil
 .else
 CONFIGURE_ARGS+=	--without-python
 .endif
