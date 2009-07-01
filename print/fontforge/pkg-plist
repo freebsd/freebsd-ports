@@ -276,6 +276,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/TextUnbound.png
 %%PORTDOCS%%%%DOCSDIR%%/Tile.png
 %%PORTDOCS%%%%DOCSDIR%%/TilePath.png
+%%PORTDOCS%%%%DOCSDIR%%/TilePath2.png
 %%PORTDOCS%%%%DOCSDIR%%/TilePattern.png
 %%PORTDOCS%%%%DOCSDIR%%/TilePatternDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/TiledPattern.png
@@ -485,10 +486,12 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-macfeat.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-macstyle.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-markclasses.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-marksets.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-panose.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-private.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-psuid.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-size.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-ssnames.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-subsup.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-tex.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfmetrics.png
@@ -972,6 +975,7 @@ share/locale/ja/LC_MESSAGES/FontForge.mo
 share/locale/mal/LC_MESSAGES/FontForge.mo
 share/locale/pl/LC_MESSAGES/FontForge.mo
 share/locale/ru/LC_MESSAGES/FontForge.mo
+share/locale/uk/LC_MESSAGES/FontForge.mo
 share/locale/vi/LC_MESSAGES/FontForge.mo
 share/locale/zh_CN/LC_MESSAGES/FontForge.mo
 share/locale/zh_TW/LC_MESSAGES/FontForge.mo
