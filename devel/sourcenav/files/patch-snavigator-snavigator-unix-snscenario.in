@@ -1,0 +1,23 @@
+--- snavigator/snavigator/unix/snscenario.in.orig	2009-07-01 22:09:02.000000000 +0200
++++ snavigator/snavigator/unix/snscenario.in	2009-07-01 22:10:27.000000000 +0200
+@@ -2,17 +2,17 @@
+ 
+ prefix="@prefix@"
+ exec_prefix="@exec_prefix@"
+-bindir="@bindir@"
++bindir="@exec_prefix@/libexec/snavigator"
+ datarootdir="@datarootdir@"
+ datadir="@datadir@"
+-etcdir="$datadir/etc"
++etcdir="$datadir/snavigator/etc"
+ 
+ if test "$SN_HOME" = ""; then
+    SN_HOME="$prefix"
+    export SN_HOME
+ fi
+ 
+-TCL_LIBRARY=$SN_HOME/share/tcl8.1
++TCL_LIBRARY=$SN_HOME/share/tcl8.3
+ export TCL_LIBRARY
+ 
+ exec "$bindir/hyper" -file "$etcdir/snscenario" "--" -home "$prefix" ${1+"$@"}

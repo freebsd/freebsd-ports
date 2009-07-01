@@ -7,41 +7,23 @@
 #
 
 PORTNAME=	sourcenav
-DISTVERSION=	6.0
+PORTVERSION=	4
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	sourcenavigator-NG${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Source code analysis tool
 
-.if defined(PREFIX)
-PREFIX:=	${PREFIX}/${PORTNAME}
-.else
-PREFIX?=	${LOCALBASE}/${PORTNAME}
-.endif
-USE_BISON=	build
-USE_GMAKE=	yes
-USE_XORG=	x11 xext xpm
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-NO_MTREE=	yes
+USE_BZIP2=	yes
+USE_XORG=	x11
 
-.include "Makefile.man"
-
-SUB_FILES=	pkg-message
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e 's|-fwritable-strings||g' \
-	    ${WRKSRC}/snavigator/configure \
-	    ${WRKSRC}/tix/unix/tk8.3/Makefile.in
-	${REINPLACE_CMD} -e 's|/bin/sed|/usr/bin/sed|g' \
-	    ${WRKSRC}/db4/PORT/libtool
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--prefix=${PREFIX}/${PORTNAME}
 
 post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	${LN} -s ${PREFIX}/${PORTNAME}/bin/snavigator ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
