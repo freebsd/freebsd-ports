@@ -265,6 +265,7 @@
     SUBDIR += xymon-client
     SUBDIR += xymon-server
     SUBDIR += yabm
+    SUBDIR += yaf
     SUBDIR += zabbix
     SUBDIR += zabbix-agent
 
