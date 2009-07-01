@@ -1,0 +1,21 @@
+py-rioritized_methods is an extension to PEAK-Rules to prioritize
+methods in order to to avoid AmbiguousMethods situations.This module
+provides four decorators:
+    prioritized_when
+    prioritized_around
+    prioritized_before
+    prioritized_after
+
+These behave like their peak.rules counterparts except that they accept
+an optional prio argument which can be used to provide a comparable
+object (usually an integer) that will be used to disambiguate situations
+in which more than rule applies to the given arguments and no rule is
+more specific than another. That is, situations in which an
+peak.rules.AmbiguousMethods would have been raised.
+
+This is useful for libraries which want to be extensible via generic
+functions but want their users to easily override a method without
+figuring out how to write a more specific rule or when it is not
+feasible.
+
+WWW:	http://pypi.python.org/pypi/prioritized_methods/
