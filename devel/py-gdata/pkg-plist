@@ -109,9 +109,18 @@
 %%PYTHON_SITELIBDIR%%/gdata/alt/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/alt/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/alt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/alt/app_engine.py
+%%PYTHON_SITELIBDIR%%/gdata/alt/app_engine.pyc
+%%PYTHON_SITELIBDIR%%/gdata/alt/app_engine.pyo
 %%PYTHON_SITELIBDIR%%/gdata/alt/appengine.py
 %%PYTHON_SITELIBDIR%%/gdata/alt/appengine.pyc
 %%PYTHON_SITELIBDIR%%/gdata/alt/appengine.pyo
+%%PYTHON_SITELIBDIR%%/gdata/analytics/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/analytics/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/analytics/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/analytics/service.py
+%%PYTHON_SITELIBDIR%%/gdata/analytics/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/analytics/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyo
@@ -148,6 +157,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/blogger/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/blogger/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/blogger/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/blogger/client.py
+%%PYTHON_SITELIBDIR%%/gdata/blogger/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/blogger/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/blogger/data.py
+%%PYTHON_SITELIBDIR%%/gdata/blogger/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/blogger/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/blogger/service.py
 %%PYTHON_SITELIBDIR%%/gdata/blogger/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/blogger/service.pyo
@@ -190,6 +205,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/exif/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/exif/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/exif/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/finance/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/finance/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/finance/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/finance/service.py
+%%PYTHON_SITELIBDIR%%/gdata/finance/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/finance/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/gauth.py
 %%PYTHON_SITELIBDIR%%/gdata/gauth.pyc
 %%PYTHON_SITELIBDIR%%/gdata/gauth.pyo
@@ -217,6 +238,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/photos/service.py
 %%PYTHON_SITELIBDIR%%/gdata/photos/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/photos/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/sample_util.py
+%%PYTHON_SITELIBDIR%%/gdata/sample_util.pyc
+%%PYTHON_SITELIBDIR%%/gdata/sample_util.pyo
 %%PYTHON_SITELIBDIR%%/gdata/service.py
 %%PYTHON_SITELIBDIR%%/gdata/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/service.pyo
@@ -444,6 +468,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/media
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/health
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/geo
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/finance
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/exif
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/docs
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/contacts
@@ -456,6 +481,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/groups
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/analytics
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/alt
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Util
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey
@@ -466,27 +492,68 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata
 @dirrm %%PYTHON_SITELIBDIR%%/atom
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/authsub/secure_authsub.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseAttributesQueryExample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseItemTypesQueryExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseQueryExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/dryRunInsert.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/BloggerExample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/BloggerExampleV1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/app/app.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/app/auth_required.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/app/blogapp.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/app/list_blogs.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/app/post_editor.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/app/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/calendarExample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codesearch/CodesearchExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contacts/contacts_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/docs_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/finance/test_finance.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mashups/birthdaySample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/2_legged_oauth.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/app.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/appengine_utilities/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/appengine_utilities/cache.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/appengine_utilities/cron.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/appengine_utilities/event.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/appengine_utilities/flash.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/appengine_utilities/paginator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/appengine_utilities/rotmodel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/appengine_utilities/sessions.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/css/index.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/images/icon_document.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/images/icon_folder.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/images/icon_pdf.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/images/icon_presentation.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/images/icon_spreadsheet.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/images/icon_starred.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/images/icon_trashed.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/index.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/js/jquery.corners.min.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/main_hmac.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/main_rsa.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spreadsheets/spreadsheetExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webmastertools/AddDeleteExampleDotCom.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webmastertools/SitemapsFeedSummary.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webmastertools/SitesFeedSummary.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webmastertools
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spreadsheets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth/oauth_on_appengine/js
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth/oauth_on_appengine/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth/oauth_on_appengine/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth/oauth_on_appengine/appengine_utilities
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth/oauth_on_appengine
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mashups
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/finance
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/docs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contacts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/codesearch
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger/app
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/base
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/authsub

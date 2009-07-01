@@ -6,6 +6,7 @@ Each of the following Google services provides a Google data API:
 	* Base
 	* Blogger
 	* Calendar
+	* Health
 	* Picasa Web Albums
 	* Spreadsheets
 	* Documents List
@@ -13,7 +14,12 @@ Each of the following Google services provides a Google data API:
 	* YouTube
 	* Google Apps Provisioning
 	* Code Search
-	* Notebook 
+	* Notebook
+	* Webmaster Tools API
+	* Google Analytics Data Export API
+	* Google Book Search Data API
+	* Google Finance Portfolio Data API
+	* Google Maps Data API 
 
 The GData Python Client Library provides a library and source code that
 make it easy to access data through Google Data APIs.
