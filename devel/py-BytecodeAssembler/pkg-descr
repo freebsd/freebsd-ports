@@ -1,0 +1,7 @@
+py-BytecodeAssembler is a simple bytecode assembler module that handles
+most low-level bytecode generation details like jump offsets, stack size
+tracking, line number table generation, constant and variable name index
+tracking, etc. That way, you can focus your attention on the desired
+semantics of your bytecode instead of on these mechanical issues.
+
+WWW:	http://pypi.python.org/pypi/BytecodeAssembler
