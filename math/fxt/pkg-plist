@@ -1050,6 +1050,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permgray-leaders-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrandcyclic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrandcyclic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-connected-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-connected-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-self-inverse-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-self-inverse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-derange-demo.cc
