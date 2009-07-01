@@ -7,6 +7,7 @@
 
 PORTNAME=	vnstat
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
 		http://mirror.mcx2.org/
@@ -40,6 +41,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(DESTDIR)|${PREFIX}|g' \
 		-e 's|cfg/vnstat.conf|cfg/vnstat.conf.sample|g' \
 		-e '134,135d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
+		${WRKSRC}/src/cfg.c
 
 post-install:
 .if !defined(NOPORTDOCS)
