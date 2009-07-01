@@ -160,6 +160,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/acroread.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/acroread.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/acroread.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/ekiga.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/ekiga.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/ekiga.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/__init__.pyo
