@@ -1,12 +1,22 @@
---- setup.py.orig	2008-12-06 10:34:24.000000000 -0600
-+++ setup.py	2009-01-15 14:56:00.648997526 -0600
-@@ -40,7 +40,8 @@
+--- setup.py.orig	2009-04-15 14:10:36.000000000 -0600
++++ setup.py	2009-06-24 09:15:04.203757061 -0600
+@@ -54,8 +54,16 @@
+     else:
          # Other posix-like: Linux, Solaris, etc.
  
++        try:
++            include = '-I'+os.environ['PREFIX']+'/include'
++            lib = '-L'+os.environ['PREFIX']+'/lib'
++        except:
++            include = '-I/usr/local/include'
++            lib = '-L/usr/local/lib'
++
          # Python functions take a lot of 'char *' that really should be const.  gcc complains about this *a lot*
 -        extra_compile_args = ['-Wno-write-strings']
-+        extra_compile_args = ['-Wno-write-strings', '-I/usr/local/include', '-L/usr/local/lib']
-+        extra_link_args = ['-L/usr/local/lib']
++        extra_compile_args = ['-Wno-write-strings', include, lib]
++        extra_link_args = [ lib ]
  
          # What is the proper way to detect iODBC, MyODBC, unixODBC, etc.?
          libraries.append('odbc')
+
+
