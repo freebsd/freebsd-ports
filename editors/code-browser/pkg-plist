@@ -1,0 +1,23 @@
+bin/code-browser
+%%DATADIR%%/config/preferences.cbc
+%%DATADIR%%/config-default/preferences.cbc
+%%DATADIR%%/config-optional/AVR-asm.cbc
+%%DATADIR%%/config-optional/perforce.cbc
+%%DATADIR%%/config-optional/torque.cbc
+%%PORTDOCS%%%%DOCSDIR%%/code-browser.chm
+%%PORTDOCS%%%%DOCSDIR%%/doc.css
+%%PORTDOCS%%%%DOCSDIR%%/doc.html
+%%PORTDOCS%%%%DOCSDIR%%/samples/files/code-browser.xml
+%%PORTDOCS%%%%DOCSDIR%%/samples/files/dictionary.cpp
+%%PORTDOCS%%%%DOCSDIR%%/samples/files/dictionary.h
+%%PORTDOCS%%%%DOCSDIR%%/samples/files/string.cpp
+%%PORTDOCS%%%%DOCSDIR%%/samples/files/string.h
+%%PORTDOCS%%%%DOCSDIR%%/samples/files/string2.cpp
+%%PORTDOCS%%%%DOCSDIR%%/samples/tutorial.txt
+@dirrm %%DATADIR%%/config-optional
+@dirrm %%DATADIR%%/config-default
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples/files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
