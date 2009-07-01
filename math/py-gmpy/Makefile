@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmpy
-PORTVERSION=	1.03
-PORTREVISION=	1
+PORTVERSION=	1.04
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +21,9 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/gmpy.so
+
+post-extract:
+	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
