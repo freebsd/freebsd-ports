@@ -69,6 +69,14 @@ Note:  Please add new entries to the beginning of this file.
 	<name>nagios</name>
 	<range><lt>3.1.1</lt></range>
       </package>
+      <package>
+	<name>nagios2</name>
+	<range><le>2.12_3</le></range>
+      </package>
+      <package>
+	<name>nagios-devel</name>
+	<range><le>3.1.0_1</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -87,12 +95,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-2288</cvename>
       <url>http://secunia.com/advisories/35543</url>
       <url>http://tracker.nagios.org/view.php?id=15</url>
     </references>
     <dates>
       <discovery>2009-05-29</discovery>
       <entry>2009-06-30</entry>
+      <modified>2009-07-01</modified>
     </dates>
   </vuln>
 
