@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gearmand
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/
 
@@ -27,6 +27,7 @@ USE_RC_SUBR=	gearmand.sh
 MAN1=		gearman.1
 MAN3=		gearman_bugreport.3 \
 		gearman_client_add_server.3 \
+		gearman_client_add_servers.3 \
 		gearman_client_add_task.3 \
 		gearman_client_add_task_background.3 \
 		gearman_client_add_task_high.3 \
@@ -113,10 +114,16 @@ MAN3=		gearman_bugreport.3 \
 		gearman_packet_set_options.3 \
 		gearman_packet_take_data.3 \
 		gearman_packet_unpack_header.3 \
+		gearman_parse_servers.3 \
 		gearman_queue_fn_arg.3 \
 		gearman_queue_libdrizzle_deinit.3 \
 		gearman_queue_libdrizzle_init.3 \
-		gearman_queue_libdrizzle_usage.3 \
+		gearman_queue_libdrizzle_modconf.3 \
+		gearman_queue_libmemcached_deinit.3 \
+		gearman_queue_libmemcached_init.3 \
+		gearman_queue_libmemcached_modconf.3 \
+		gearmand_queue_libmemcached_deinit.3 \
+		gearmand_queue_libmemcached_init.3 \
 		gearman_server_client_add.3 \
 		gearman_server_client_create.3 \
 		gearman_server_client_free.3 \
@@ -202,6 +209,7 @@ MAN3=		gearman_bugreport.3 \
 		gearman_version.3 \
 		gearman_worker_add_function.3 \
 		gearman_worker_add_server.3 \
+		gearman_worker_add_servers.3 \
 		gearman_worker_clone.3 \
 		gearman_worker_create.3 \
 		gearman_worker_echo.3 \
@@ -232,5 +240,6 @@ MAN3=		gearman_bugreport.3 \
 		gearmand_thread_run.3 \
 		gearmand_thread_wakeup.3 \
 		gearmand_wakeup.3
+MAN8=		gearmand.8
 
 .include <bsd.port.mk>

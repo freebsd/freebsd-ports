@@ -9,7 +9,7 @@
 . "%%RC_SUBR%%"
 
 name="gearmand"
-command="%%PREFIX%%/bin/gearmand"
+command="%%PREFIX%%/sbin/gearmand"
 
 load_rc_config "$name"
 : ${gearmand_enable="NO"}
