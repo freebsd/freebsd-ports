@@ -7,7 +7,7 @@
 
 PORTNAME=	rigsofrods
 PORTVERSION=	0.36.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 # I've trimmed source tarball by around 10x and bundled rorserver
 MASTER_SITES=	SF:contents \
@@ -23,7 +23,7 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		zzip.13:${PORTSDIR}/devel/zziplib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		CEGUIBase.3:${PORTSDIR}/graphics/cegui \
-		freeimage:${PORTSDIR}/graphics/freeimage
+		freeimage.3:${PORTSDIR}/graphics/freeimage
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois \
 		unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois \
