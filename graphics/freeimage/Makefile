@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeimage
-PORTVERSION=	3.11.0
-PORTREVISION=	1
+PORTVERSION=	3.12.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	FreeImage${PORTVERSION:S/.//g}
@@ -30,11 +29,13 @@ CFLAGS+=	-fPIC
 
 PLIST_FILES=	include/FreeImage.h \
 		lib/libfreeimage.a \
-		lib/libfreeimage.so \
-		lib/libfreeimage.so.3
+		lib/libfreeimage-3.12.0.so
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g'
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile.gnu
+	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g; s|-g root|-g wheel|g' ${WRKSRC}/Makefile.gnu
+
+post-install:
+	${LN} -f ${PREFIX}/lib/libfreeimage-3.12.0.so ${PREFIX}/lib/libfreeimage.so.3
 
 .include <bsd.port.post.mk>
