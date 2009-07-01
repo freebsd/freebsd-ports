@@ -1,0 +1,69 @@
+bin/deploy_magetab_db.pl
+bin/fix_ae_magetab.pl
+bin/read_magetab.pl
+bin/unload_magetab_namespace.pl
+%%SITE_PERL%%/mach/auto/Bio/MAGETAB/.packlist
+%%SITE_PERL%%/Bio/MAGETAB/Util/Reader/DataMatrix.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Reader/TagValueFile.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Reader/Tabfile.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Reader/SDRF.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Reader/IDF.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Reader/ADF.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Writer/ADF.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Writer/Tabfile.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Writer/IDF.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Writer/SDRF.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Writer/GraphViz.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Writer.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Reader.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Builder.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/DBLoader.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/RewriteAE.pm
+%%SITE_PERL%%/Bio/MAGETAB/Util/Persistence.pm
+%%SITE_PERL%%/Bio/MAGETAB/Material.pm
+%%SITE_PERL%%/Bio/MAGETAB/Types.pm
+%%SITE_PERL%%/Bio/MAGETAB/ControlledTerm.pm
+%%SITE_PERL%%/Bio/MAGETAB/Contact.pm
+%%SITE_PERL%%/Bio/MAGETAB/DesignElement.pm
+%%SITE_PERL%%/Bio/MAGETAB/Investigation.pm
+%%SITE_PERL%%/Bio/MAGETAB/Comment.pm
+%%SITE_PERL%%/Bio/MAGETAB/Publication.pm
+%%SITE_PERL%%/Bio/MAGETAB/Sample.pm
+%%SITE_PERL%%/Bio/MAGETAB/DataFile.pm
+%%SITE_PERL%%/Bio/MAGETAB/ArrayDesign.pm
+%%SITE_PERL%%/Bio/MAGETAB/Event.pm
+%%SITE_PERL%%/Bio/MAGETAB/Edge.pm
+%%SITE_PERL%%/Bio/MAGETAB/MatrixColumn.pm
+%%SITE_PERL%%/Bio/MAGETAB/Normalization.pm
+%%SITE_PERL%%/Bio/MAGETAB/ParameterValue.pm
+%%SITE_PERL%%/Bio/MAGETAB/DataAcquisition.pm
+%%SITE_PERL%%/Bio/MAGETAB/Assay.pm
+%%SITE_PERL%%/Bio/MAGETAB/SDRFRow.pm
+%%SITE_PERL%%/Bio/MAGETAB/SDRF.pm
+%%SITE_PERL%%/Bio/MAGETAB/Data.pm
+%%SITE_PERL%%/Bio/MAGETAB/MatrixRow.pm
+%%SITE_PERL%%/Bio/MAGETAB/Extract.pm
+%%SITE_PERL%%/Bio/MAGETAB/Measurement.pm
+%%SITE_PERL%%/Bio/MAGETAB/TermSource.pm
+%%SITE_PERL%%/Bio/MAGETAB/CompositeElement.pm
+%%SITE_PERL%%/Bio/MAGETAB/BaseClass.pm
+%%SITE_PERL%%/Bio/MAGETAB/Node.pm
+%%SITE_PERL%%/Bio/MAGETAB/Protocol.pm
+%%SITE_PERL%%/Bio/MAGETAB/Reporter.pm
+%%SITE_PERL%%/Bio/MAGETAB/Factor.pm
+%%SITE_PERL%%/Bio/MAGETAB/ProtocolApplication.pm
+%%SITE_PERL%%/Bio/MAGETAB/LabeledExtract.pm
+%%SITE_PERL%%/Bio/MAGETAB/Feature.pm
+%%SITE_PERL%%/Bio/MAGETAB/DatabaseEntry.pm
+%%SITE_PERL%%/Bio/MAGETAB/Source.pm
+%%SITE_PERL%%/Bio/MAGETAB/ProtocolParameter.pm
+%%SITE_PERL%%/Bio/MAGETAB/FactorValue.pm
+%%SITE_PERL%%/Bio/MAGETAB/DataMatrix.pm
+%%SITE_PERL%%/Bio/MAGETAB.pm
+@dirrm %%SITE_PERL%%/mach/auto/Bio/MAGETAB
+@dirrmtry %%SITE_PERL%%/mach/auto/Bio
+@dirrm %%SITE_PERL%%/Bio/MAGETAB/Util/Reader
+@dirrm %%SITE_PERL%%/Bio/MAGETAB/Util/Writer
+@dirrm %%SITE_PERL%%/Bio/MAGETAB/Util
+@dirrm %%SITE_PERL%%/Bio/MAGETAB
+@dirrmtry %%SITE_PERL%%/Bio
