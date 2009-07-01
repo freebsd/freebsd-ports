@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twitterfox
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -21,7 +21,7 @@ XPI_FILES=	LICENSE.rtf chrome/TwitterFox.jar chrome.manifest \
 		components/nsTwitterFoxDatabase.js \
 		components/nsTwitterFoxHttpRequest.js \
 		defaults/preferences/twitternotifier.js \
-		defaults/twitterfox_1.8.sqlite install.rdf 
+		defaults/twitterfox_1.8.sqlite install.rdf
 XPI_DIRS=	chrome components defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
