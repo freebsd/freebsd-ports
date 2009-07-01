@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openerp-server
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	finance python
 MASTER_SITES=	http://openerp.com/download/stable/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-0
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Open source application ERP & CRM in Python using Postgresql
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=			2.4+
 USE_PYDISTUTILS=		yes
-PYDISTUTILS_EGGINFO=		openerp_server-5.0.0_1-${PYTHON_VERSION:S/thon//}.egg-info
+PYDISTUTILS_EGGINFO=		openerp_server-5.0.1_0-${PYTHON_VERSION:S/thon//}.egg-info
 
 MAN1=		openerp-server.1
 MAN5=		openerp_serverrc.5
@@ -39,8 +39,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
-	@${FIND} -s -d ${DOCSDIR} -type f | ${SED} 's#/usr/local/##g' >> ${TMPPLIST}
-	@${FIND} -s -d ${DOCSDIR} -type d | ${SED} 's#/usr/local/#@dirrm #g' >> ${TMPPLIST}
+	@${FIND} -s -d ${DOCSDIR} -type f | ${SED} 's#${PREFIX}/##g' >> ${TMPPLIST}
+	@${FIND} -s -d ${DOCSDIR} -type d | ${SED} 's#${PREFIX}/#@dirrm #g' >> ${TMPPLIST}
 .endif
 
 	${INSTALL_MAN} ${WRKSRC}/man/openerp-server.1 ${PREFIX}/man/man1
@@ -48,8 +48,8 @@ post-install:
 
 	@${ECHO} bin/openerp-server >> ${TMPPLIST}
 	@${FIND} -s -d ${PYTHON_SITELIBDIR}/${PORTNAME} \
-		-type f | ${SED} 's#/usr/local/##g' >> ${TMPPLIST}
+		-type f | ${SED} 's#${PREFIX}/##g' >> ${TMPPLIST}
 	@${FIND} -s -d ${PYTHON_SITELIBDIR}/${PORTNAME} \
-		-type d | ${SED} 's#/usr/local/#@dirrm #g' >> ${TMPPLIST}
+		-type d | ${SED} 's#${PREFIX}/#@dirrm #g' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
