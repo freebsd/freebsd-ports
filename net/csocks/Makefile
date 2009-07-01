@@ -1,7 +1,9 @@
 # New ports collection makefile for:	csocks
 # Date created:				06 August 2007
 # Whom:					Raffaele De Lorenzo - raffaele.delorenzo@libero.it
+#
 # $FreeBSD$
+#
 
 PORTNAME=	csocks
 PORTVERSION=	1.5
@@ -12,8 +14,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	raffaele.delorenzo@libero.it
 COMMENT=	SOCKS Client v4/v5 RFC Compliant with many features
-
-ONLY_FOR_ARCHS=	i386
 
 PLIST_FILES=	etc/csocks.conf.sample lib/libcsocks.so lib/libcsocks.so.1 bin/csocks
 
@@ -33,4 +33,5 @@ do-install:
 	${CP} -p ${WRKDIR}/csocks.conf ${PREFIX}/etc/csocks.conf.sample
 	${CP} -p ${WRKDIR}/man/csocks.1.gz ${MANPREFIX}/man/man1
 	${CP} -p ${WRKDIR}/man/csocks.conf.5.gz ${MANPREFIX}/man/man5
+
 .include <bsd.port.mk>
