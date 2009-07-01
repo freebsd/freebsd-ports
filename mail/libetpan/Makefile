@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libetpan
-PORTVERSION=	0.57
-PORTREVISION=	1
+PORTVERSION=	0.58
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -32,8 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 OPTIONS=	GNUTLS	"Enable gnuTLS support" off \
 		IPV6	"Enable ipv6 support." on
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--without-openssl --with-gnutls
@@ -51,4 +48,4 @@ CONFIGURE_ARGS+=	--enable-ipv6
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
