@@ -445,7 +445,7 @@ PATCHFILES+=	big-concurrency.patch
 .endif
 .if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH) && \
     defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
-PATCHFILES+=	qmail-1.03-qmtpc_outgoingip.patch:qmtpc_outgoingip
+PATCHFILES+=	qmail-1.03-qmtpc_outgoingip_20090630.patch:qmtpc_outgoingip
 .elif defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH) && defined(SLAVE_SPAMCONTROL)
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:outgoingip_spamcontrol/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:outgoingip_spamcontrol
