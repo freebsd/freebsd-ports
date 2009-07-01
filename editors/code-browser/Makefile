@@ -22,18 +22,6 @@ USE_GMAKE=	yes
 
 DATADIR=	${PREFIX}/share/${PORTNAME}-3
 
-PORTDOCS=	code-browser.chm doc.css doc.html
-PLIST_FILES=	bin/code-browser \
-		%%DATADIR%%/config/preferences.cbc \
-		%%DATADIR%%/config-default/preferences.cbc \
-		%%DATADIR%%/config-optional/AVR-asm.cbc \
-		%%DATADIR%%/config-optional/perforce.cbc \
-		%%DATADIR%%/config-optional/torque.cbc
-PLIST_DIRS=	%%DATADIR%%/config-optional \
-		%%DATADIR%%/config-default \
-		%%DATADIR%%/config \
-		%%DATADIR%%
-
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=		i386 amd64 sparc64
@@ -52,15 +40,10 @@ post-patch:
 		 s|@$$(|$$(|g' ${WRKSRC}/${file}
 .endfor
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/code-browser ${PREFIX}/bin
-.for dir in config config-default config-optional
-	${MKDIR} ${DATADIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/*.* ${DATADIR}/${dir}
-.endfor
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} \* ${DOCSDIR}/samples)
 .endif
 
 .include <bsd.port.post.mk>
