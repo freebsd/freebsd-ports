@@ -1,0 +1,72 @@
+# New ports collection makefile for:   scrotwm
+# Date created:                June 29, 2009
+# Whom:                        Aragon Gouveia <aragon@phat.za.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	scrotwm
+PORTVERSION=	0.9.5
+CATEGORIES=	x11-wm
+MASTER_SITES=	http://www.peereboom.us/scrotwm/snapshot/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dhn
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	aragon@phat.za.net
+COMMENT=	A small, dynamic tiling window manager for X11
+
+OPTIONS=	DMENU "Depend on x11/dmenu" On \
+		DMENU_COLFIX "Fix inverted/select colour on dmenu" On \
+		DMENU_BOTTOM "dmenu at screen bottom (instead of top)" Off \
+		CLOCKFORMAT "Configurable strftime(3) clock format" Off
+
+.include <bsd.port.pre.mk>
+
+USE_XORG=	x11 xproto xrandr
+USE_XLIB=	yes
+
+MAN1=		scrotwm.1
+PLIST_FILES=	bin/scrotwm lib/swmhack.so etc/scrotwm.conf
+
+.if defined(WITH_DMENU)
+RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
+.endif
+.if defined(WITH_DMENU_COLFIX)
+EXTRA_PATCHES+=	${FILESDIR}/spawn_menu_colourfix.patch
+.endif
+.if defined(WITH_DMENU_BOTTOM)
+EXTRA_PATCHES+=	${FILESDIR}/spawn_menu_atbottom.patch
+.endif
+.if defined(WITH_CLOCKFORMAT)
+EXTRA_PATCHES+=	${FILESDIR}/clock_format.patch
+.endif
+
+do-build:
+	${CC} ${CFLAGS} -I${X11BASE}/include -DSWM_DEBUG \
+		-I${WRKSRC}/linux -lutil -L${X11BASE}/lib -lX11 -lXrandr \
+		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
+	${CC} ${CFLAGS} -I${X11BASE}/include -shared -fPIC \
+		-o ${WRKSRC}/swmhack.so ${WRKSRC}/lib/swm_hack.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/swmhack.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/scrotwm.conf ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/scrotwm.1 ${PREFIX}/man/man1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/scrotwm.*
+
+post-install:
+.if defined(WITH_CLOCKFORMAT)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "CLOCK FORMAT"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To set the clock's format, add a clock_format directive"
+	@${ECHO_MSG} "to your configuration file and set it to a format string"
+	@${ECHO_MSG} "following strftime(3) convention."
+	@${ECHO_MSG}
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,51 @@
+--- scrotwm.c.orig	2009-06-29 03:46:08.000000000 +0200
++++ scrotwm.c	2009-06-28 10:07:24.000000000 +0200
+@@ -182,6 +182,7 @@
+ int			bar_verbose = 1;
+ int			bar_height = 0;
+ int			clock_enabled = 1;
++char			clock_format[31] = "%a %b %d %R %Z %Y";
+ pid_t			bar_pid;
+ GC			bar_gc;
+ XGCValues		bar_gcv;
+@@ -557,6 +558,7 @@
+ 
+ /* conf file stuff */
+ #define	SWM_CONF_WS	"\n= \t"
++#define	SWM_CONF_VAL_WS	"\n\t"
+ #define SWM_CONF_FILE	"scrotwm.conf"
+ int
+ conf_load(char *filename)
+@@ -594,7 +596,7 @@
+ 		if ((var = strsep(&cp, SWM_CONF_WS)) == NULL || cp == NULL)
+ 			break;
+ 		cp += (long)strspn(cp, SWM_CONF_WS);
+-		if ((val = strsep(&cp, SWM_CONF_WS)) == NULL)
++		if ((val = strsep(&cp, SWM_CONF_VAL_WS)) == NULL)
+ 			break;
+ 
+ 		DNPRINTF(SWM_D_MISC, "conf_load: %s=%s\n",var ,val);
+@@ -624,6 +626,8 @@
+ 		case 'c':
+ 			if (!strncmp(var, "clock_enabled", strlen("clock_enabled")))
+ 				clock_enabled = atoi(val);
++			else if (!strncmp(var, "clock_format", strlen("clock_format")))
++				strlcpy(clock_format, val, 31);
+ 			else if (!varmatch(var, "color_focus", &i))
+ 				setscreencolor(val, i, SWM_S_COLOR_FOCUS);
+ 			else if (!varmatch(var, "color_unfocus", &i))
+@@ -779,12 +783,12 @@
+ 	else {
+ 		time(&tmt);
+ 		localtime_r(&tmt, &tm);
+-		strftime(s, sizeof s, "%a %b %d %R %Z %Y    ", &tm);
++		strftime(s, sizeof s, clock_format, &tm);
+ 	}
+ 	for (i = 0; i < ScreenCount(display); i++) {
+ 		x = 1;
+ 		TAILQ_FOREACH(r, &screens[i].rl, entry) {
+-			snprintf(loc, sizeof loc, "%d:%d    %s%s    %s",
++			snprintf(loc, sizeof loc, "%d:%d    %s    %s    %s",
+ 			    x++, r->ws->idx + 1, s, bar_ext, bar_vertext);
+ 			bar_print(r, loc);
+ 		}
