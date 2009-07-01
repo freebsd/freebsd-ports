@@ -7,12 +7,12 @@
 
 PORTNAME=	xfce4-cpugraph-plugin
 PORTVERSION=	0.3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fbsd@opal.com
 COMMENT=	XFce4 systemload plugin with multiple CPU display modes
 
 GNU_CONFIGURE=	yes
