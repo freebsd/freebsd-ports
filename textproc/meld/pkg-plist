@@ -8,9 +8,15 @@ lib/meld/dirdiff.pyo
 lib/meld/filediff.py
 lib/meld/filediff.pyc
 lib/meld/filediff.pyo
+lib/meld/findbar.py
+lib/meld/findbar.pyc
+lib/meld/findbar.pyo
 lib/meld/gnomeglade.py
 lib/meld/gnomeglade.pyc
 lib/meld/gnomeglade.pyo
+lib/meld/historyentry.py
+lib/meld/historyentry.pyc
+lib/meld/historyentry.pyo
 lib/meld/meldapp.py
 lib/meld/meldapp.pyc
 lib/meld/meldapp.pyo
@@ -26,6 +32,9 @@ lib/meld/paths.pyo
 lib/meld/prefs.py
 lib/meld/prefs.pyc
 lib/meld/prefs.pyo
+lib/meld/sourceviewer.py
+lib/meld/sourceviewer.pyc
+lib/meld/sourceviewer.pyo
 lib/meld/task.py
 lib/meld/task.pyc
 lib/meld/task.pyo
@@ -47,6 +56,9 @@ lib/meld/vc/_vc.pyo
 lib/meld/vc/bzr.py
 lib/meld/vc/bzr.pyc
 lib/meld/vc/bzr.pyo
+lib/meld/vc/cdv.py
+lib/meld/vc/cdv.pyc
+lib/meld/vc/cdv.pyo
 lib/meld/vc/cvs.py
 lib/meld/vc/cvs.pyc
 lib/meld/vc/cvs.pyo
@@ -62,6 +74,9 @@ lib/meld/vc/mercurial.pyo
 lib/meld/vc/monotone.py
 lib/meld/vc/monotone.pyc
 lib/meld/vc/monotone.pyo
+lib/meld/vc/rcs.py
+lib/meld/vc/rcs.pyc
+lib/meld/vc/rcs.pyo
 lib/meld/vc/svn.py
 lib/meld/vc/svn.pyc
 lib/meld/vc/svn.pyo
@@ -122,6 +137,7 @@ share/locale/zh_TW/LC_MESSAGES/meld.mo
 %%DATADIR%%/glade2/dirdiff-ui.xml
 %%DATADIR%%/glade2/filediff-ui.xml
 %%DATADIR%%/glade2/filediff.glade
+%%DATADIR%%/glade2/findbar.glade
 %%DATADIR%%/glade2/meldapp.glade
 %%DATADIR%%/glade2/meldapp-ui.xml
 %%DATADIR%%/glade2/pixmaps/button_apply0.xpm
