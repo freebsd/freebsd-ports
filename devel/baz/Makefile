@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/obsolete/
 DISTNAME=	bazaar_${PORTVERSION}
 
-MAINTAINER=	lulf@kerneled.org
+MAINTAINER=	ulf.lilleengen@gmail.com
 COMMENT=	An implementation of the GNU Arch RCS protocol in C by Canonical
 
 BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
