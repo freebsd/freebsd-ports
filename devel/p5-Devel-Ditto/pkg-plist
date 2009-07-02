@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Devel/Ditto.pm
+%%SITE_PERL%%/Devel/Ditto/Color.pm
+%%SITE_PERL%%/Devel/Ditto/Colour.pm
+@dirrmtry %%SITE_PERL%%/Devel/Ditto
+@dirrmtry %%SITE_PERL%%/Devel
