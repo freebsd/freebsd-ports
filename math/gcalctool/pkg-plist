@@ -25,6 +25,13 @@ share/gnome/help/gcalctool/ca/figures/gcalctool_menu_symbol.png
 share/gnome/help/gcalctool/ca/figures/gcalctool_programming_window.png
 share/gnome/help/gcalctool/ca/figures/gcalctool_scientific_window.png
 share/gnome/help/gcalctool/ca/gcalctool.xml
+share/gnome/help/gcalctool/cs/figures/gcalctool_advanced_window.png
+share/gnome/help/gcalctool/cs/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/cs/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/cs/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/cs/figures/gcalctool_programming_window.png
+share/gnome/help/gcalctool/cs/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/cs/gcalctool.xml
 share/gnome/help/gcalctool/de/figures/gcalctool_advanced_window.png
 share/gnome/help/gcalctool/de/figures/gcalctool_basic_window.png
 share/gnome/help/gcalctool/de/figures/gcalctool_financial_window.png
@@ -143,6 +150,7 @@ share/locale/bn/LC_MESSAGES/gcalctool.mo
 share/locale/bn_IN/LC_MESSAGES/gcalctool.mo
 share/locale/bs/LC_MESSAGES/gcalctool.mo
 share/locale/ca/LC_MESSAGES/gcalctool.mo
+share/locale/ca@valencia/LC_MESSAGES/gcalctool.mo
 share/locale/cs/LC_MESSAGES/gcalctool.mo
 share/locale/cy/LC_MESSAGES/gcalctool.mo
 share/locale/da/LC_MESSAGES/gcalctool.mo
@@ -215,6 +223,7 @@ share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
 share/omf/gcalctool/gcalctool-C.omf
 share/omf/gcalctool/gcalctool-bg.omf
 share/omf/gcalctool/gcalctool-ca.omf
+share/omf/gcalctool/gcalctool-cs.omf
 share/omf/gcalctool/gcalctool-de.omf
 share/omf/gcalctool/gcalctool-el.omf
 share/omf/gcalctool/gcalctool-es.omf
@@ -261,6 +270,8 @@ share/omf/gcalctool/gcalctool-zh_TW.omf
 @dirrm share/gnome/help/gcalctool/el
 @dirrm share/gnome/help/gcalctool/de/figures
 @dirrm share/gnome/help/gcalctool/de
+@dirrm share/gnome/help/gcalctool/cs/figures
+@dirrm share/gnome/help/gcalctool/cs
 @dirrm share/gnome/help/gcalctool/ca/figures
 @dirrm share/gnome/help/gcalctool/ca
 @dirrm share/gnome/help/gcalctool/bg/figures
@@ -296,6 +307,8 @@ share/omf/gcalctool/gcalctool-zh_TW.omf
 @dirrmtry share/locale/en_US
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
