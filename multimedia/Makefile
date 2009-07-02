@@ -5,6 +5,7 @@
 
     SUBDIR += abby
     SUBDIR += acidrip
+    SUBDIR += arista
     SUBDIR += atomicparsley
     SUBDIR += audacious
     SUBDIR += audacious-plugins
