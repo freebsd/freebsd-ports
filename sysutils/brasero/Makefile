@@ -6,7 +6,7 @@
 #    $MCom: ports-stable/sysutils/brasero/Makefile,v 1.1 2009/04/16 02:11:50 kwm Exp $
 
 PORTNAME=	brasero
-PORTVERSION=	2.26.2
+PORTVERSION=	2.26.3
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	sm
-USE_GNOME=	intlhack gnomeprefix gnomehack nautilus2
+USE_GNOME=	intlhack gnomeprefix gnomehack
 USE_GSTREAMER=	gconf core
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -35,9 +35,19 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_CAM_LIB_H=1" \
 MAN1=		brasero.1
 GCONF_SCHEMAS=	brasero.schemas
 
-OPTIONS=	LIBBURNIA "Enable libburnia plug-ins" off
+OPTIONS=	NAUTILUS "Enable Nautilus extension" on \
+		LIBBURNIA "Enable libburnia plug-ins" off
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NAUTILUS)
+USE_GNOME+=	nautilus2
+CONFIGURE_ARGS+=--enable-nautilus
+PLIST_SUB+=	NAUTILUS=""
+.else
+PLIST_SUB+=	NAUTILUS="@comment "
+CONFIGURE_ARGS+=--enable-nautilus=no
+.endif
 
 .if defined(WITH_LIBBURNIA)
 LIB_DEPENDS+=	burn.4:${PORTSDIR}/devel/libburn \
