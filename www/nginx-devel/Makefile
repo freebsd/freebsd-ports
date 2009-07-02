@@ -313,7 +313,7 @@ post-patch:
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
 .endif
-.if defiend(WITH_HTTP_UPLOAD_PROGRESS)
+.if defined(WITH_HTTP_UPLOAD_PROGRESS)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
 .endif
