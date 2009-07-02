@@ -41,7 +41,8 @@ USE_LDCONFIG=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|>tar<|>gtar<|g' ${WRKSRC}/ark/ark.kcfg
 	${REINPLACE_CMD} -e 's|%%PYTHON_VER%%|${PYTHON_VER}|g' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|%%LTMAIN%%|${LTMAIN}|g' \
+		-e 's|%%LIBTOOL%%|${LIBTOOL}|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
