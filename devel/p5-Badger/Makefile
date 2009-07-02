@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Badger
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Badger
@@ -43,17 +43,22 @@ MAN3=	Badger.3 \
 	Badger::Factory.3 \
 	Badger::Factory::Class.3 \
 	Badger::Filesystem.3 \
+	Badger::Filesystem::Base.3 \
 	Badger::Filesystem::Directory.3 \
 	Badger::Filesystem::File.3 \
 	Badger::Filesystem::Path.3 \
 	Badger::Filesystem::Virtual.3 \
 	Badger::Filesystem::Visitor.3 \
 	Badger::Hub.3 \
+	Badger::Log.3 \
+	Badger::Log::File.3 \
+	Badger::Logic.3 \
 	Badger::Mixin.3 \
 	Badger::Prototype.3 \
 	Badger::Rainbow.3 \
 	Badger::Test.3 \
 	Badger::Test::Manager.3 \
+	Badger::Timestamp.3 \
 	Badger::Utils.3
 
 .include <bsd.port.mk>
