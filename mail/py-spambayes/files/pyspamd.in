@@ -7,7 +7,6 @@
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
-prefix=/usr/local
 
 # Define these pyspamd_* variables in one of these files:
 #       /etc/rc.conf
@@ -16,7 +15,7 @@ prefix=/usr/local
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="pyspamd"
 rcvar=`set_rcvar`
@@ -24,12 +23,12 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${pyspamd_enable="NO"}
-: ${pyspamd_config="/usr/local/etc/bayescustomize.ini"}
+: ${pyspamd_config="%%PREFIX%%/etc/bayescustomize.ini"}
 
 command="/usr/sbin/daemon"
-command_args=" -p /var/run/pyspamd.pid /usr/local/bin/python -OO /usr/local/bin/sb_server.py 2>&1 >/dev/null"
 pidfile="/var/run/pyspamd.pid"
-procname="/usr/local/bin/python"
+command_args="-p ${pidfile} %%PYTHON_CMD%% -OO %%PREFIX%%/bin/sb_server.py 2>&1 >/dev/null"
+procname="%%PYTHON_CMD%%"
 export BAYESCUSTOMIZE=${pyspamd_config}
 
 run_rc_command "$1"
