@@ -224,7 +224,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-regression-test:
-	cd ${WRKSRC} && make test
-
 .include <bsd.port.post.mk>
