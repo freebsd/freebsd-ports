@@ -28,6 +28,7 @@ start_precmd="nginx_precmd"
 restart_precmd="nginx_checkconfig"
 reload_precmd="nginx_checkconfig"
 configtest_cmd="nginx_checkconfig"
+gracefulstop_cmd="nginx_gracefulstop"
 upgrade_precmd="nginx_checkconfig"
 upgrade_cmd="nginx_upgrade"
 command="%%PREFIX%%/sbin/nginx"
@@ -83,6 +84,13 @@ nginx_checkconfig()
 	eval ${command} ${nginx_flags} -t
 }
 
+nginx_gracefulstop()
+{
+	echo "Performing a graceful stop:"
+	sig_stop="QUIT"
+	run_rc_command ${rc_prefix}stop $rc_extra_args || return 1
+}
+
 nginx_upgrade()
 {
 	echo "Upgrading nginx binary:"
@@ -112,5 +120,5 @@ nginx_precmd()
 	fi
 }
 
-extra_commands="reload configtest upgrade"
+extra_commands="reload configtest upgrade gracefulstop"
 run_rc_command "$1"
