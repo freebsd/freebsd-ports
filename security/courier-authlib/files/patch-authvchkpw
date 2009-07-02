@@ -1,6 +1,5 @@
-diff -ruN authvchkpw.c authvchkpw.c
---- authvchkpw.c	1970-01-01 01:00:00.000000000 +0100
-+++ authvchkpw.c	2008-06-12 19:15:23.000000000 +0200
+--- authvchkpw.c.orig	2009-07-02 09:56:41.000000000 +0200
++++ authvchkpw.c	2009-07-02 09:56:41.000000000 +0200
 @@ -0,0 +1,242 @@
 +/*
 +** Copyright 1998 - 2007 Double Precision, Inc.  See COPYING for
@@ -244,9 +243,8 @@ diff -ruN authvchkpw.c authvchkpw.c
 +{
 +	return &authvchkpw_info;
 +}
-diff -ruN authvchkpwlib.c authvchkpwlib.c
---- authvchkpwlib.c	1970-01-01 01:00:00.000000000 +0100
-+++ authvchkpwlib.c	2008-06-12 19:15:33.000000000 +0200
+--- authvchkpwlib.c.orig	2009-07-02 09:56:41.000000000 +0200
++++ authvchkpwlib.c	2009-07-02 09:56:41.000000000 +0200
 @@ -0,0 +1,33 @@
 +/*
 +** Copyright 1998 - 2000 Double Precision, Inc.  See COPYING for
@@ -281,12 +279,11 @@ diff -ruN authvchkpwlib.c authvchkpwlib.c
 +	if ((p=strchr(c, ':')) != 0)    return (p);
 +	return (0);
 +}
-diff -ruN courier_auth_config.h courier_auth_config.h
---- courier_auth_config.h	2008-05-08 19:11:34.000000000 +0200
-+++ courier_auth_config.h	2008-06-12 19:26:44.000000000 +0200
-@@ -61,6 +61,9 @@
- /* Whether header installation directory is nontstandard */
- /* #undef HAVE_NOSTDHEADERDIR */
+--- courier_auth_config.h.orig	2009-06-27 17:59:04.000000000 +0200
++++ courier_auth_config.h	2009-07-02 09:56:41.000000000 +0200
+@@ -122,6 +122,9 @@
+ /* Define to 1 if you have the `opendir' function. */
+ #define HAVE_OPENDIR 1
  
 +/* Whether -lvpopmail has the open_smtp_relay() function */
 +/* #undef HAVE_OPEN_SMTP_RELAY */
@@ -294,9 +291,9 @@ diff -ruN courier_auth_config.h courier_auth_config.h
  /* Define to 1 if you have the <Pam/pam_appl.h> header file. */
  /* #undef HAVE_PAM_PAM_APPL_H */
  
-@@ -118,6 +121,9 @@
- /* Define to 1 if you have the <unistd.h> header file. */
- #define HAVE_UNISTD_H 1
+@@ -217,6 +220,9 @@
+    */
+ #define LT_OBJDIR ".libs/"
  
 +/* Whether -lvpopmail has the vset_lastauth() function */
 +/* #undef HAVE_VSET_LASTAUTH */
@@ -304,12 +301,11 @@ diff -ruN courier_auth_config.h courier_auth_config.h
  /* Whether we must a prototype for crypt() */
  #define NEED_CRYPT_PROTOTYPE 0
  
-diff -ruN courier_auth_config.h.in courier_auth_config.h.in
---- courier_auth_config.h.in	2008-05-10 05:13:31.000000000 +0200
-+++ courier_auth_config.h.in	2008-06-12 19:26:46.000000000 +0200
-@@ -60,6 +60,9 @@
- /* Whether header installation directory is nontstandard */
- #undef HAVE_NOSTDHEADERDIR
+--- courier_auth_config.h.in.orig	2009-06-27 18:09:18.000000000 +0200
++++ courier_auth_config.h.in	2009-07-02 09:56:41.000000000 +0200
+@@ -121,6 +121,9 @@
+ /* Define to 1 if you have the `opendir' function. */
+ #undef HAVE_OPENDIR
  
 +/* Whether -lvpopmail has the open_smtp_relay() function */
 +#undef HAVE_OPEN_SMTP_RELAY
@@ -317,9 +313,9 @@ diff -ruN courier_auth_config.h.in courier_auth_config.h.in
  /* Define to 1 if you have the <Pam/pam_appl.h> header file. */
  #undef HAVE_PAM_PAM_APPL_H
  
-@@ -117,6 +120,9 @@
- /* Define to 1 if you have the <unistd.h> header file. */
- #undef HAVE_UNISTD_H
+@@ -216,6 +219,9 @@
+    */
+ #undef LT_OBJDIR
  
 +/* Whether -lvpopmail has the vset_lastauth() function */
 +#undef HAVE_VSET_LASTAUTH
@@ -327,9 +323,8 @@ diff -ruN courier_auth_config.h.in courier_auth_config.h.in
  /* Whether we must a prototype for crypt() */
  #undef NEED_CRYPT_PROTOTYPE
  
-diff -ruN preauthvchkpw.c preauthvchkpw.c
---- preauthvchkpw.c	1970-01-01 01:00:00.000000000 +0100
-+++ preauthvchkpw.c	2008-06-12 19:22:22.000000000 +0200
+--- preauthvchkpw.c.orig	2009-07-02 09:56:41.000000000 +0200
++++ preauthvchkpw.c	2009-07-02 09:56:41.000000000 +0200
 @@ -0,0 +1,159 @@
 +/*
 +** Copyright 1998 - 2001 Double Precision, Inc.  See COPYING for
@@ -490,10 +485,9 @@ diff -ruN preauthvchkpw.c preauthvchkpw.c
 +
 +	return ((*callback)(&auth, arg));
 +}
-diff -ruN userdb/Makefile.in userdb/Makefile.in
---- userdb/Makefile.in	2008-05-08 19:21:19.000000000 +0200
-+++ userdb/Makefile.in	2008-06-12 19:26:47.000000000 +0200
-@@ -48,7 +48,7 @@
+--- userdb/Makefile.in.orig	2009-06-27 17:55:52.000000000 +0200
++++ userdb/Makefile.in	2009-07-02 09:57:06.000000000 +0200
+@@ -50,7 +50,7 @@
  	$(srcdir)/../missing $(srcdir)/Makefile.am \
  	$(srcdir)/Makefile.in $(srcdir)/makeuserdb.in \
  	$(srcdir)/pw2userdb.in $(srcdir)/userdb.pl.in \
@@ -502,16 +496,16 @@ diff -ruN userdb/Makefile.in userdb/Makefile.in
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  am__aclocal_m4_deps = $(top_srcdir)/configure.in
  am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
-@@ -56,7 +56,7 @@
+@@ -58,7 +58,7 @@
  am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
   configure.lineno config.status.lineno
  mkinstalldirs = $(install_sh) -d
 -CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb
 +CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb vchkpw2userdb
+ CONFIG_CLEAN_VPATH_FILES =
  LTLIBRARIES = $(noinst_LTLIBRARIES)
  libuserdb_la_LIBADD =
- am_libuserdb_la_OBJECTS = userdb.lo userdb2.lo userdbmkpw.lo
-@@ -223,7 +223,7 @@
+@@ -252,7 +252,7 @@
  		userdb.html.in userdb.8.in \
  		userdbpw.html.in userdbpw.8.in
  
@@ -520,7 +514,7 @@ diff -ruN userdb/Makefile.in userdb/Makefile.in
  noinst_DATA = makeuserdb.html userdb.html userdbpw.html
  userdbpw_SOURCES = userdbpw.c
  userdbpw_LDADD = libuserdb.la @HMACLIB@ @MD5LIB@ @SHA1LIB@ @CRYPTLIBS@
-@@ -276,6 +276,8 @@
+@@ -306,6 +306,8 @@
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2userdb.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
@@ -529,10 +523,9 @@ diff -ruN userdb/Makefile.in userdb/Makefile.in
  
  clean-noinstLTLIBRARIES:
  	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
-diff -ruN userdb/configure userdb/configure
---- userdb/configure	2008-05-08 19:21:18.000000000 +0200
-+++ userdb/configure	2008-06-12 19:26:49.000000000 +0200
-@@ -20639,7 +20639,7 @@
+--- userdb/configure.orig	2009-06-27 17:55:53.000000000 +0200
++++ userdb/configure	2009-07-02 09:56:41.000000000 +0200
+@@ -12452,7 +12452,7 @@
  fi
  
  
@@ -541,17 +534,16 @@ diff -ruN userdb/configure userdb/configure
  
  cat >confcache <<\_ACEOF
  # This file is a shell script that caches the results of configure
-@@ -21252,6 +21252,7 @@
+@@ -13364,6 +13364,7 @@
      "userdb.pl") CONFIG_FILES="$CONFIG_FILES userdb.pl" ;;
      "makeuserdb") CONFIG_FILES="$CONFIG_FILES makeuserdb" ;;
      "pw2userdb") CONFIG_FILES="$CONFIG_FILES pw2userdb" ;;
 +    "vchkpw2userdb") CONFIG_FILES="$CONFIG_FILES vchkpw2userdb" ;;
  
-   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
- echo "$as_me: error: invalid argument: $ac_config_target" >&2;}
-diff -ruN userdb/vchkpw2userdb.in userdb/vchkpw2userdb.in
---- userdb/vchkpw2userdb.in	1970-01-01 01:00:00.000000000 +0100
-+++ userdb/vchkpw2userdb.in	2008-06-12 19:26:29.000000000 +0200
+   *) { { $as_echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
+ $as_echo "$as_me: error: invalid argument: $ac_config_target" >&2;}
+--- userdb/vchkpw2userdb.in.orig	2009-07-02 09:56:41.000000000 +0200
++++ userdb/vchkpw2userdb.in	2009-07-02 09:56:41.000000000 +0200
 @@ -0,0 +1,80 @@
 +#! @PERL@
 +#

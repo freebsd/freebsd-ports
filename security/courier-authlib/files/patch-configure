@@ -1,29 +1,27 @@
---- configure.orig	2008-07-12 21:41:09.000000000 +0200
-+++ configure	2008-07-16 08:38:29.000000000 +0200
-@@ -898,6 +898,9 @@
- SHADOWLIBS
- LIBAUTHSHADOW
- LIBAUTHPWD
-+vpopmail_home
-+VPOPMAILLIBS
-+LIBAUTHVCHKPW
- authpgsqlrc
- PG_CONFIG
- PGSQL_LIBS
-@@ -928,7 +931,11 @@
- HAVE_SGML_FALSE
- subdirs
- LIBOBJS
--LTLIBOBJS'
-+LTLIBOBJS
+--- configure.orig	2009-06-27 18:09:14.000000000 +0200
++++ configure	2009-07-02 11:24:49.000000000 +0200
+@@ -796,6 +796,10 @@
+ am__EXEEXT_FALSE
+ am__EXEEXT_TRUE
+ LTLIBOBJS
 +HAVE_BASE_TRUE
 +HAVE_BASE_FALSE
 +HAVE_USERDB_TRUE
-+HAVE_USERDB_FALSE'
- ac_subst_files=''
-       ac_precious_vars='build_alias
- host_alias
-@@ -1552,6 +1559,7 @@
++HAVE_USERDB_FALSE
+ LIBOBJS
+ HAVE_SGML_FALSE
+ HAVE_SGML_TRUE
+@@ -825,6 +829,9 @@
+ PGSQL_LIBS
+ PG_CONFIG
+ authpgsqlrc
++vpopmail_home
++VPOPMAILLIBS
++LIBAUTHVCHKPW
+ LIBAUTHPWD
+ LIBAUTHSHADOW
+ SHADOWLIBS
+@@ -1688,6 +1695,7 @@
   --with-authldaprc=filename         Expect to find authldaprc here
   --without-authpwd                  Do not include the authpwd module
   --without-authshadow               Do not include the authshadow module
@@ -31,16 +29,16 @@
   --with-authpgsqlrc=filename        Expect to find authpgsql here
   --without-authpgsql               Do not include the authpgsql module
   --with-pgsql-libs=DIR		Look for pgsql libs in this dir
-@@ -2493,7 +2501,7 @@
+@@ -2498,7 +2506,7 @@
  fi
  
  fi
 -INSTALL_STRIP_PROGRAM="\$(install_sh) -c -s"
 +INSTALL_STRIP_PROGRAM="${INSTALL_PROGRAM} -s"
  
- # We need awk for the "check" target.  The system "awk" is bad on
- # some platforms.
-@@ -21188,8 +21196,12 @@
+ { $as_echo "$as_me:$LINENO: checking for a thread-safe mkdir -p" >&5
+ $as_echo_n "checking for a thread-safe mkdir -p... " >&6; }
+@@ -15118,8 +15126,12 @@
  
  if test "$doauthuserdb" = "no"
  then
@@ -53,7 +51,7 @@
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -22867,6 +22879,20 @@
+@@ -16874,6 +16886,20 @@
  fi
  
  
@@ -74,7 +72,7 @@
  
   if test "$HAVE_LDAP" = 1; then
    HAVE_LDAP_TRUE=
-@@ -23515,6 +23541,256 @@
+@@ -17554,6 +17580,256 @@
  
  
  
@@ -331,37 +329,3 @@
  # Check whether --with-authpgsqlrc was given.
  if test "${with_authpgsqlrc+set}" = set; then
    withval=$with_authpgsqlrc; authpgsqlrc="$withval"
-@@ -26486,9 +26762,13 @@
- CXXFLAGS!$CXXFLAGS$ac_delim
- ac_ct_CXX!$ac_ct_CXX$ac_delim
- CXXDEPMODE!$CXXDEPMODE$ac_delim
-+HAVE_BASE_TRUE!$HAVE_BASE_TRUE$ac_delim
-+HAVE_BASE_FALSE!$HAVE_BASE_FALSE$ac_delim
-+HAVE_USERDB_TRUE!$HAVE_USERDB_TRUE$ac_delim
-+HAVE_USERDB_FALSE!$HAVE_USERDB_FALSE$ac_delim
- _ACEOF
- 
--  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 97; then
-+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 101; then
-     break
-   elif $ac_last_try; then
-     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
-@@ -26559,6 +26839,9 @@
- SHADOWLIBS!$SHADOWLIBS$ac_delim
- LIBAUTHSHADOW!$LIBAUTHSHADOW$ac_delim
- LIBAUTHPWD!$LIBAUTHPWD$ac_delim
-+vpopmail_home!$vpopmail_home$ac_delim
-+VPOPMAILLIBS!$VPOPMAILLIBS$ac_delim
-+LIBAUTHVCHKPW!$LIBAUTHVCHKPW$ac_delim
- authpgsqlrc!$authpgsqlrc$ac_delim
- PG_CONFIG!$PG_CONFIG$ac_delim
- PGSQL_LIBS!$PGSQL_LIBS$ac_delim
-@@ -26592,7 +26875,7 @@
- LTLIBOBJS!$LTLIBOBJS$ac_delim
- _ACEOF
- 
--  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 63; then
-+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 66; then
-     break
-   elif $ac_last_try; then
-     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5

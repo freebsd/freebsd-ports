@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-07-12 21:41:08.000000000 +0200
-+++ Makefile.in	2008-07-16 08:36:48.000000000 +0200
-@@ -41,11 +41,10 @@
+--- Makefile.in.orig	2009-06-27 18:09:13.000000000 +0200
++++ Makefile.in	2009-07-02 14:33:19.000000000 +0200
+@@ -42,11 +42,10 @@
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -16,16 +16,7 @@
  subdir = .
  DIST_COMMON = README $(am__configure_deps) $(include_HEADERS) \
  	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
-@@ -81,7 +80,7 @@
- 	"$(DESTDIR)$(sbindir)" "$(DESTDIR)$(pkglibexecdir)" \
- 	"$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" \
- 	"$(DESTDIR)$(man3dir)" "$(DESTDIR)$(includedir)"
--pkglibLTLIBRARIES_INSTALL = $(INSTALL)
-+pkglibLTLIBRARIES_INSTALL = $(INSTALL) -m 0444
- LTLIBRARIES = $(pkglib_LTLIBRARIES)
- am_libauthcustom_la_OBJECTS = authcustom.lo preauthcustom.lo
- libauthcustom_la_OBJECTS = $(am_libauthcustom_la_OBJECTS)
-@@ -133,6 +132,12 @@
+@@ -149,6 +148,12 @@
  libauthuserdb_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libauthuserdb_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -38,7 +29,7 @@
  libcourierauth_la_DEPENDENCIES = libhmac/libhmac.la md5/libmd5.la \
  	sha1/libsha1.la numlib/libnumlib.la random128/librandom128.la \
  	rfc822/libencode.la
-@@ -221,7 +226,8 @@
+@@ -234,7 +239,8 @@
  	$(libauthmysql_la_SOURCES) $(libauthpam_la_SOURCES) \
  	$(libauthpgsql_la_SOURCES) $(libauthpipe_la_SOURCES) \
  	$(libauthpwd_la_SOURCES) $(libauthshadow_la_SOURCES) \
@@ -48,7 +39,7 @@
  	$(libcourierauthcommon_la_SOURCES) \
  	$(libcourierauthsasl_la_SOURCES) \
  	$(libcourierauthsaslclient_la_SOURCES) \
-@@ -233,7 +239,8 @@
+@@ -246,7 +252,8 @@
  	$(libauthmysql_la_SOURCES) $(libauthpam_la_SOURCES) \
  	$(libauthpgsql_la_SOURCES) $(libauthpipe_la_SOURCES) \
  	$(libauthpwd_la_SOURCES) $(libauthshadow_la_SOURCES) \
@@ -58,7 +49,7 @@
  	$(libcourierauthcommon_la_SOURCES) \
  	$(libcourierauthsasl_la_SOURCES) \
  	$(libcourierauthsaslclient_la_SOURCES) \
-@@ -319,6 +326,7 @@
+@@ -363,6 +370,7 @@
  LIBAUTHPWD = @LIBAUTHPWD@
  LIBAUTHSHADOW = @LIBAUTHSHADOW@
  LIBAUTHUSERDB = @LIBAUTHUSERDB@
@@ -66,7 +57,7 @@
  LIBDB = @LIBDB@
  LIBDL = @LIBDL@
  LIBGDBM = @LIBGDBM@
-@@ -422,22 +430,28 @@
+@@ -481,21 +489,27 @@
  top_srcdir = @top_srcdir@
  userdb = @userdb@
  AUTOMAKE_OPTIONS = dist-bzip2
@@ -82,7 +73,6 @@
 -	@LIBAUTHCUSTOM@ @LIBAUTHPIPE@
 +	@LIBAUTHCUSTOM@ @LIBAUTHVCHKPW@ @LIBAUTHPIPE@
  
- pkglibexecdir = $(libexecdir)/courier-authlib
  pkglibexec_SCRIPTS = authsystem.passwd
 -pkglib_LTLIBRARIES = libcourierauth.la \
 -	libcourierauthsasl.la libcourierauthsaslclient.la \
@@ -100,7 +90,7 @@
  	libauthpgsql.la \
  	libauthldap.la \
  	libauthmysql.la \
-@@ -508,6 +522,13 @@
+@@ -566,6 +580,13 @@
  libauthshadow_la_LIBADD = $(commonlibadd) $(libauthshadow_t)
  libauthshadow_la_LDFLAGS = $(commonldflags)
  
@@ -114,7 +104,7 @@
  # The authpgsql module
  libauthpgsql_t = @PGSQL_LIBS@ @LIBM@ @NETLIBS@
  libauthpgsql_la_SOURCES = authpgsql.c preauthpgsql.c authpgsqllib.c authpgsql.h
-@@ -579,8 +600,8 @@
+@@ -637,8 +658,8 @@
  
  libcourierauthsaslclient_la_LIBADD = libcourierauth.la
  libcourierauthsaslclient_la_LDFLAGS = -export-symbols-regex '^auth_sasl_client$$' -avoid-version
@@ -125,7 +115,7 @@
  
  courierauthconfig_SOURCES = authinfo.c
  authpasswd_SOURCES = authpasswd.c
-@@ -621,7 +642,7 @@
+@@ -679,7 +700,7 @@
  man3 = authlib.3 auth_generic.3 auth_login.3 auth_getuserinfo.3 \
  	auth_enumerate.3 auth_passwd.3 auth_getoption.3 auth_sasl.3
  
@@ -134,16 +124,27 @@
  man_MANS = $(man1) $(man3) auth_sasl_ex.3
  BUILT1 = authlib.html authldaprc.h authmysqlrc.h authpgsqlrc.h authpiperc.h \
  	authdaemonrc.h packageversion.h \
-@@ -756,6 +777,8 @@
+@@ -780,8 +801,8 @@
+ 	  else :; fi; \
+ 	done; \
+ 	test -z "$$list2" || { \
+-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(pkglibdir)'"; \
+-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(pkglibdir)"; \
++	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) -m 0444 $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(pkglibdir)'"; \
++	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) -m 0444 $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(pkglibdir)"; \
+ 	}
+ 
+ uninstall-pkglibLTLIBRARIES:
+@@ -819,6 +840,8 @@
  	$(libauthshadow_la_LINK)  $(libauthshadow_la_OBJECTS) $(libauthshadow_la_LIBADD) $(LIBS)
  libauthuserdb.la: $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_DEPENDENCIES) 
  	$(libauthuserdb_la_LINK)  $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_LIBADD) $(LIBS)
-+libauthvchkpw.la: $(libauthvchkpw_la_OBJECTS) $(libauthvchkpw_la_DEPENDENCIES) 
++libauthvchkpw.la: $(libauthvchkpw_la_OBJECTS) $(libauthvchkpw_la_DEPENDENCIES)
 +	$(libauthvchkpw_la_LINK)  $(libauthvchkpw_la_OBJECTS) $(libauthvchkpw_la_LIBADD) $(LIBS)
  libcourierauth.la: $(libcourierauth_la_OBJECTS) $(libcourierauth_la_DEPENDENCIES) 
  	$(libcourierauth_la_LINK) -rpath $(pkglibdir) $(libcourierauth_la_OBJECTS) $(libcourierauth_la_LIBADD) $(LIBS)
  libcourierauthcommon.la: $(libcourierauthcommon_la_OBJECTS) $(libcourierauthcommon_la_DEPENDENCIES) 
-@@ -935,6 +958,8 @@
+@@ -1060,6 +1083,8 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authtest.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authuserdb.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authuserdbpwd.Plo@am__quote@
@@ -152,7 +153,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpassword.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpasswordmd5.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpasswordsha1.Plo@am__quote@
-@@ -951,6 +976,7 @@
+@@ -1076,6 +1101,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preauthshadow.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preauthuserdb.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preauthuserdbcommon.Plo@am__quote@
@@ -160,29 +161,29 @@
  
  .c.o:
  @am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@@ -1002,8 +1028,8 @@
- 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
- 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
- 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
--	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
--	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
-+	  echo " install  -o root -g wheel -m 444 '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
-+	  install  -o root -g wheel -m 444 "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
- 	done
- uninstall-man1:
- 	@$(NORMAL_UNINSTALL)
-@@ -1047,8 +1073,8 @@
- 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
- 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
- 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
--	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
--	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man3dir)/$$inst"; \
-+	  echo " install  -o root -g wheel -m 444 '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
-+	  install  -o root -g wheel -m 444 "$$file" "$(DESTDIR)$(man3dir)/$$inst"; \
- 	done
- uninstall-man3:
- 	@$(NORMAL_UNINSTALL)
-@@ -1431,17 +1457,23 @@
+@@ -1122,8 +1148,8 @@
+ 	sed 'N;N;s,\n, ,g' | { \
+ 	list=; while read file base inst; do \
+ 	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
+-	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
+-	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst" || exit $$?; \
++	    echo " install  -o root -g wheel -m 444 '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
++	    install  -o root -g wheel -m 444 "$$file" "$(DESTDIR)$(man1dir)/$$inst" || exit $$?; \
+ 	  fi; \
+ 	done; \
+ 	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
+@@ -1160,8 +1186,8 @@
+ 	sed 'N;N;s,\n, ,g' | { \
+ 	list=; while read file base inst; do \
+ 	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
+-	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
+-	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man3dir)/$$inst" || exit $$?; \
++	    echo " install  -o root -g wheel -m 444 '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
++	    install  -o root -g wheel -m 444 "$$file" "$(DESTDIR)$(man3dir)/$$inst" || exit $$?; \
+ 	  fi; \
+ 	done; \
+ 	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
+@@ -1592,18 +1618,26 @@
  
  info-am:
  
@@ -201,21 +202,23 @@
 +@HAVE_BASE_TRUE@	install-sbinSCRIPTS
 +@HAVE_BASE_TRUE@	@$(NORMAL_INSTALL)
 +@HAVE_BASE_TRUE@	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
- 
--install-dvi: install-dvi-recursive
++
 +@HAVE_BASE_FALSE@install-exec-am: install-pkglibLTLIBRARIES
 +@HAVE_BASE_FALSE@	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
++
+ install-dvi: install-dvi-recursive
+ 
+ install-dvi-am:
  
 -install-exec-am: install-binPROGRAMS install-pkglibLTLIBRARIES \
 -	install-pkglibexecSCRIPTS install-sbinPROGRAMS \
 -	install-sbinSCRIPTS
 -	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
-+install-dvi: install-dvi-recursive
- 
  install-html: install-html-recursive
  
-@@ -1514,6 +1546,12 @@
+ install-html-am:
+@@ -1683,6 +1717,12 @@
  	uninstall-sbinPROGRAMS uninstall-sbinSCRIPTS
  
  
@@ -228,7 +231,7 @@
  authpgsqllib.lo: authpgsqllib.c authpgsqlrc.h
  
  @HAVE_AUTHPGSQL_TRUE@install-authpgsqlrc:
-@@ -1553,6 +1591,19 @@
+@@ -1722,6 +1762,19 @@
  @HAVE_LDAP_FALSE@uninstall-authldaprc:
  @HAVE_LDAP_FALSE@	@:
  
@@ -248,7 +251,7 @@
  authldaprc.h:
  	echo "#define AUTHLDAPRC \"@authldaprc@\"" >authldaprc.h
  
-@@ -1582,16 +1633,22 @@
+@@ -1751,16 +1804,22 @@
  authpiperc.h:
  	echo "#define PIPE_PROGRAM \"@authProg@\"" >authpiperc.h
  
@@ -280,7 +283,7 @@
  
  authdaemonrc.h:
  	echo "#define AUTHDAEMONRC \"@authdaemonrc@\"" >authdaemonrc.h
-@@ -1634,21 +1691,23 @@
+@@ -1803,21 +1862,23 @@
  # automake still a bit stupid...
  
  install-data-hook: install-authdaemonrc install-authpgsqlrc \
@@ -313,8 +316,8 @@
  		$(INSTALL_SCRIPT) userdb/pw2userdb \
  				$(DESTDIR)$(sbindir)/pw2userdb ; \
  		$(INSTALL_SCRIPT) userdb/makeuserdb \
-@@ -1662,9 +1721,10 @@
- 	for f in $(pkglib_LTLIBRARIES); do . $$f; rm -f $(DESTDIR)$(pkglibdir)/$$dlname.0 $(DESTDIR)$(pkglibdir)/$$dlname.0.0; ln -s $$dlname $(DESTDIR)$(pkglibdir)/$$dlname.0; done
+@@ -1831,9 +1892,10 @@
+ 	for f in $(pkglib_LTLIBRARIES); do . ./$$f; rm -f $(DESTDIR)$(pkglibdir)/$$dlname.0 $(DESTDIR)$(pkglibdir)/$$dlname.0.0; ln -s $$dlname $(DESTDIR)$(pkglibdir)/$$dlname.0; done
  
  uninstall-hook: uninstall-authldaprc uninstall-authdaemonrc uninstall-authmysqlrc uninstall-authpgsqlrc
 -	rm -f $(DESTDIR)$(pkglibexecdir)/authdaemond
@@ -325,16 +328,16 @@
  				$(DESTDIR)$(sbindir)/pw2userdb \
  				$(DESTDIR)$(sbindir)/makeuserdb \
  				$(DESTDIR)$(sbindir)/userdb \
-@@ -1676,7 +1736,7 @@
- 	CONFIG_FILES=authlib.html CONFIG_HEADERS= $(SHELL) ./config.status
+@@ -1845,7 +1907,7 @@
+ 	$(SHELL) ./config.status --file=authlib.html
  
  authlib.3: authlib.3.in
--	CONFIG_FILES=authlib.3 CONFIG_HEADERS= $(SHELL) ./config.status
-+@HAVE_BASE_TRUE@	CONFIG_FILES=authlib.3 CONFIG_HEADERS= $(SHELL) ./config.status
+-	$(SHELL) ./config.status --file=authlib.3
++@HAVE_BASE_TRUE@	$(SHELL) ./config.status --file=authlib.3
  
  @HAVE_SGML_TRUE@authpasswd.html: authpasswd.sgml docbook/sgml2html
  @HAVE_SGML_TRUE@	docbook/sgml2html authpasswd.sgml authpasswd.html
-@@ -1750,10 +1810,10 @@
+@@ -1923,10 +1985,10 @@
  	@SHELL@ authmigrate
  
  install-configure:
