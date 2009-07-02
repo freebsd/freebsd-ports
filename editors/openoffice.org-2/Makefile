@@ -11,7 +11,6 @@ PORTREVISION?=	2
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
@@ -25,12 +24,6 @@ EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
-
-.if defined(WITH_CWS)
-PORTNAME:=	openoffice.org-${OOOVERSION}-${WITH_CWS}
-DISTFILES+=	${CWSARCHIVE}:cws
-.endif
-CWSARCHIVE=	${WITH_CWS}.tar.gz
 
 OOOVERSION=	2.4.2
 NO_LATEST_LINK=	yes
@@ -79,10 +72,6 @@ OOOTAG?=		OOH680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
-.if defined(WITH_CWS)
-INSTALLATION_BASEDIR=	openoffice.org-${OOOVERSION}-${WITH_CWS}
-EXECBASE=		openoffice.org-${OOOVERSION}-${WITH_CWS}
-.endif
 DIST_SUBDIR=		openoffice.org2
 SIMPLEOSVER=		${OSREL:C/\.//g}
 .if ${ARCH} == amd64
@@ -177,9 +166,6 @@ pre-everything::
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
-.if defined(WITH_CWS)
-	cd ${WRKSRC} ; ${TAR} xvfz ${DISTDIR}/${DIST_SUBDIR}/${CWSARCHIVE}
-.endif
 .if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
