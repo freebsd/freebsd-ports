@@ -5,11 +5,11 @@
  
  # This can be used to rebuild libtool when needed
 -LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS=" %%LOCALBASE%%share/libtool/ltmain.sh"
++LIBTOOL_DEPS=" %%LTMAIN%%"
  
  # Always use our own libtool.
 -LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='$(SHELL) %%LOCALBASE%%/bin/libtool'
++LIBTOOL='$(SHELL) %%LIBTOOL%%'
  
  # Prevent multiple expansion
  
