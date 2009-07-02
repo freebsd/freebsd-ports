@@ -5,7 +5,7 @@
  
  # This can be used to rebuild libtool when needed
 -LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool15/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs %%LTMAIN%%"
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
