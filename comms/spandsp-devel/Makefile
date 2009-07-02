@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spandsp
-DISTVERSION=	0.0.6pre7
+DISTVERSION=	0.0.6pre12
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
 		ftp://ftp.rewt.org.uk/pub/distfiles/

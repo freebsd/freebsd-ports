@@ -65,6 +65,7 @@ include/spandsp/private/oki_adpcm.h
 include/spandsp/private/queue.h
 include/spandsp/private/schedule.h
 include/spandsp/private/sig_tone.h
+include/spandsp/private/silence_gen.h
 include/spandsp/private/super_tone_rx.h
 include/spandsp/private/super_tone_tx.h
 include/spandsp/private/t30.h
@@ -79,6 +80,7 @@ include/spandsp/private/tone_detect.h
 include/spandsp/private/tone_generate.h
 include/spandsp/private/v17rx.h
 include/spandsp/private/v17tx.h
+include/spandsp/private/v18.h
 include/spandsp/private/v22bis.h
 include/spandsp/private/v27ter_rx.h
 include/spandsp/private/v27ter_tx.h
@@ -112,6 +114,7 @@ include/spandsp/tone_detect.h
 include/spandsp/tone_generate.h
 include/spandsp/v17rx.h
 include/spandsp/v17tx.h
+include/spandsp/v18.h
 include/spandsp/v22bis.h
 include/spandsp/v27ter_rx.h
 include/spandsp/v27ter_tx.h
