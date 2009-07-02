@@ -29,7 +29,8 @@ CFLAGS+=	-fPIC
 
 PLIST_FILES=	include/FreeImage.h \
 		lib/libfreeimage.a \
-		lib/libfreeimage-3.12.0.so
+		lib/libfreeimage-3.12.0.so \
+		lib/libfreeimage.so.3
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g'
