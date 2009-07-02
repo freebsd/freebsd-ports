@@ -24,19 +24,27 @@
 %%SITE_PERL%%/Badger/Factory.pm
 %%SITE_PERL%%/Badger/Factory/Class.pm
 %%SITE_PERL%%/Badger/Filesystem.pm
+%%SITE_PERL%%/Badger/Filesystem/Base.pm
 %%SITE_PERL%%/Badger/Filesystem/Directory.pm
 %%SITE_PERL%%/Badger/Filesystem/File.pm
 %%SITE_PERL%%/Badger/Filesystem/Path.pm
 %%SITE_PERL%%/Badger/Filesystem/Virtual.pm
 %%SITE_PERL%%/Badger/Filesystem/Visitor.pm
 %%SITE_PERL%%/Badger/Hub.pm
+%%SITE_PERL%%/Badger/Log.pm
+%%SITE_PERL%%/Badger/Log/File.pm
+%%SITE_PERL%%/Badger/Logic.pm
 %%SITE_PERL%%/Badger/Mixin.pm
 %%SITE_PERL%%/Badger/Prototype.pm
 %%SITE_PERL%%/Badger/Rainbow.pm
 %%SITE_PERL%%/Badger/Test.pm
 %%SITE_PERL%%/Badger/Test/Manager.pm
+%%SITE_PERL%%/Badger/Timestamp.pm
 %%SITE_PERL%%/Badger/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Badger/.packlist
+@dirrmtry %%SITE_PERL%%/Badger/Log
+@dirrmtry %%SITE_PERL%%/Badger/Filesystem/Log
+@dirrmtry %%SITE_PERL%%/Badger/Filesystem/Base
 @dirrmtry %%SITE_PERL%%/Badger/Filesystem
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Badger
 @dirrmtry %%SITE_PERL%%/Badger/Factory
