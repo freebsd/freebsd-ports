@@ -5404,6 +5404,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>syslog-ng2</name>
 	<range><lt>2.0.9_2</lt></range>
       </package>
+      <package>
+	<name>syslog-ng</name>
+	<range><le>1.6.12_1</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -5425,6 +5429,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-11-15</discovery>
       <entry>2008-11-18</entry>
+      <modified>2009-07-01</modified>
     </dates>
   </vuln>
 
