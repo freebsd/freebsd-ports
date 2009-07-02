@@ -54,12 +54,12 @@ lib/brasero/plugins/libbrasero-wodim.so
 lib/libbrasero-media.la
 lib/libbrasero-media.so
 lib/libbrasero-media.so.1
-lib/nautilus/extensions-2.0/libnautilus-brasero-extension.la
-lib/nautilus/extensions-2.0/libnautilus-brasero-extension.so
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-brasero-extension.la
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-brasero-extension.so
 libdata/pkgconfig/libbrasero-media.pc
 share/applications/brasero.desktop
 share/applications/brasero-copy-medium.desktop
-share/applications/brasero-nautilus.desktop
+%%NAUTILUS%%share/applications/brasero-nautilus.desktop
 share/applications/brasero-open-image.desktop
 share/applications/brasero-open-playlist.desktop
 share/applications/brasero-open-project.desktop
