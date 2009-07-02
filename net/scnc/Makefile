@@ -5,26 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=		scnc
-PORTVERSION=		1.00
-CATEGORIES=		net security
-MASTER_SITES=		http://gomor.org/files/ \
-					http://knkorp.info/patches/freebsd/
-#DISTFILES=		${PORTNAME}
-DISTNAME=		${PORTNAME}
-EXTRACT_SUFX=		# none
-DIST_SUBDIR=		${PORTNAME}-${PORTVERSION}
+PORTNAME=	scnc
+PORTVERSION=	1.03
+CATEGORIES=	net security
+MASTER_SITES=	http://gomor.org/files/
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	# none
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		sbrabez@gmail.com
-COMMENT=		SSL Capable Netcat
+MAINTAINER=	sbrabez@gmail.com
+COMMENT=	SSL Capable Netcat
 
-RUN_DEPENDS=		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-			${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
-			${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
-BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
+		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PLIST_FILES=		bin/${PORTNAME}
-NO_BUILD=			yes
+PLIST_FILES=	bin/${PORTNAME}
+NO_BUILD=	yes
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
