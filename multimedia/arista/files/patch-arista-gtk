@@ -1,0 +1,15 @@
+--- arista-gtk.orig	2009-05-30 10:13:21.000000000 -0400
++++ arista-gtk	2009-05-30 10:13:35.000000000 -0400
+@@ -1244,9 +1244,9 @@
+                            arista.utils.get_path("locale"))
+     gettext.textdomain("arista")
+     
+-    locale.bindtextdomain("arista",
+-                          arista.utils.get_path("locale"))
+-    locale.textdomain("arista")
++#    locale.bindtextdomain("arista",
++#                          arista.utils.get_path("locale"))
++#    locale.textdomain("arista")
+     
+     gtk.gdk.threads_init()
+     

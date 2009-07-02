@@ -1,0 +1,65 @@
+bin/arista-gtk
+bin/arista-transcode
+%%PYTHON_SITELIBDIR%%/arista/__init__.py
+%%PYTHON_SITELIBDIR%%/arista/__init__.pyc
+%%PYTHON_SITELIBDIR%%/arista/__init__.pyo
+%%PYTHON_SITELIBDIR%%/arista/discoverer.py
+%%PYTHON_SITELIBDIR%%/arista/discoverer.pyc
+%%PYTHON_SITELIBDIR%%/arista/discoverer.pyo
+%%PYTHON_SITELIBDIR%%/arista/inputs.py
+%%PYTHON_SITELIBDIR%%/arista/inputs.pyc
+%%PYTHON_SITELIBDIR%%/arista/inputs.pyo
+%%PYTHON_SITELIBDIR%%/arista/presets.py
+%%PYTHON_SITELIBDIR%%/arista/presets.pyc
+%%PYTHON_SITELIBDIR%%/arista/presets.pyo
+%%PYTHON_SITELIBDIR%%/arista/queue.py
+%%PYTHON_SITELIBDIR%%/arista/queue.pyc
+%%PYTHON_SITELIBDIR%%/arista/queue.pyo
+%%PYTHON_SITELIBDIR%%/arista/transcoder.py
+%%PYTHON_SITELIBDIR%%/arista/transcoder.pyc
+%%PYTHON_SITELIBDIR%%/arista/transcoder.pyo
+%%PYTHON_SITELIBDIR%%/arista/utils.py
+%%PYTHON_SITELIBDIR%%/arista/utils.pyc
+%%PYTHON_SITELIBDIR%%/arista/utils.pyo
+share/applications/arista.desktop
+share/pixmaps/arista.svg
+%%DATADIR%%/locale/de/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/es/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/fr/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/it/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/templates/arista.pot
+%%DATADIR%%/presets/computer.svg
+%%DATADIR%%/presets/computer.xml
+%%DATADIR%%/presets/d2.svg
+%%DATADIR%%/presets/d2.xml
+%%DATADIR%%/presets/dvd.svg
+%%DATADIR%%/presets/dvd.xml
+%%DATADIR%%/presets/ipod.svg
+%%DATADIR%%/presets/ipod.xml
+%%DATADIR%%/presets/ps3.svg
+%%DATADIR%%/presets/ps3.xml
+%%DATADIR%%/presets/psp.svg
+%%DATADIR%%/presets/psp.xml
+%%DATADIR%%/ui/about.ui
+%%DATADIR%%/ui/icon-small.svg
+%%DATADIR%%/ui/icon.svg
+%%DATADIR%%/ui/logo.svg
+%%DATADIR%%/ui/main.ui
+%%DATADIR%%/ui/prefs.ui
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry %%PYTHON_SITELIBDIR%%/arista
+@dirrmtry share/applications
+@dirrmtry %%DATADIR%%/locale/fr/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/it/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/de/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/es/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/fr
+@dirrmtry %%DATADIR%%/locale/it
+@dirrmtry %%DATADIR%%/locale/de
+@dirrmtry %%DATADIR%%/locale/es
+@dirrmtry %%DATADIR%%/locale/templates
+@dirrmtry %%DATADIR%%/locale
+@dirrmtry %%DATADIR%%/presets
+@dirrmtry %%DATADIR%%/ui
+@dirrmtry %%DATADIR%%
