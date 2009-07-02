@@ -3303,6 +3303,7 @@ firefox-remote                  ports/www/firefox-remote
 firefox3                        ports/www/firefox3
 firefox3-devel                  ports/www/firefox3-devel
 firefox3-i18n                   ports/www/firefox3-i18n
+firefox35                       ports/www/firefox35
 firemime                        ports/mail/firemime
 firepay                         ports/mail/firepay
 fireprofile                     ports/databases/fireprofile
@@ -10270,6 +10271,7 @@ p5-Bio-ASN1-EntrezGene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-Bio-Das                      ports/biology/p5-Bio-Das
 p5-Bio-Glite                    ports/biology/p5-Bio-Glite
 p5-Bio-Graphics                 ports/biology/p5-Bio-Graphics
+p5-Bio-MAGETAB                  ports/biology/p5-Bio-MAGETAB
 p5-Bio-Phylo                    ports/biology/p5-Bio-Phylo
 p5-Bit-ShiftReg                 ports/math/p5-Bit-ShiftReg
 p5-Bit-Vector                   ports/math/p5-Bit-Vector
@@ -13717,6 +13719,7 @@ p5-bio-asn1-entrezgene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-bio-das                      ports/biology/p5-Bio-Das
 p5-bio-glite                    ports/biology/p5-Bio-Glite
 p5-bio-graphics                 ports/biology/p5-Bio-Graphics
+p5-bio-magetab                  ports/biology/p5-Bio-MAGETAB
 p5-bio-phylo                    ports/biology/p5-Bio-Phylo
 p5-bioperl                      ports/biology/p5-bioperl
 p5-bioperl-run                  ports/biology/p5-bioperl-run
@@ -18772,7 +18775,9 @@ pxtools                         ports/databases/pxtools
 pxytest                         ports/security/pxytest
 py-4suite                       ports/textproc/py-4suite
 py-4suite-xml                   ports/textproc/py-4suite-xml
+py-AddOns                       ports/devel/py-AddOns
 py-Breve                        ports/devel/py-Breve
+py-BytecodeAssembler            ports/devel/py-BytecodeAssembler
 py-Elixir                       ports/databases/py-Elixir
 py-EnthoughtBase                ports/devel/py-EnthoughtBase
 py-GeoIP                        ports/net/py-GeoIP
@@ -18785,6 +18790,7 @@ py-Lightbox                     ports/www/py-Lightbox
 py-MySQL                        ports/databases/py-MySQL
 py-MySQLdb                      ports/databases/py-MySQLdb
 py-MySQLdb-devel                ports/databases/py-MySQLdb-devel
+py-PEAK-Rules                   ports/devel/py-PEAK-Rules
 py-PF                           ports/security/py-PF
 py-Pmw                          ports/x11-toolkits/py-Pmw
 py-PyGreSQL                     ports/databases/py-PyGreSQL
@@ -18794,11 +18800,13 @@ py-PyX                          ports/graphics/py-PyX
 py-RPyC                         ports/devel/py-RPyC
 py-SQLDict                      ports/databases/py-SQLDict
 py-SciParam                     ports/x11-toolkits/py-SciParam
+py-SymbolType                   ports/devel/py-SymbolType
 py-Tempita                      ports/textproc/py-Tempita
 py-TurboJinja                   ports/devel/py-TurboJinja
 py-WebError                     ports/www/py-WebError
 py-WebTest                      ports/www/py-WebTest
 py-YABT                         ports/misc/py-YABT
+py-addons                       ports/devel/py-AddOns
 py-adns                         ports/dns/py-adns
 py-aipy                         ports/astro/py-aipy
 py-albatross                    ports/www/py-albatross
@@ -18838,6 +18846,7 @@ py-breve                        ports/devel/py-Breve
 py-bsddb                        ports/databases/py-bsddb
 py-bsddb3                       ports/databases/py-bsddb3
 py-bulksms                      ports/comms/py-bulksms
+py-bytecodeassembler            ports/devel/py-BytecodeAssembler
 py-cairo                        ports/graphics/py-cairo
 py-cclib                        ports/devel/py-cclib
 py-cdb                          ports/databases/py-cdb
@@ -19137,6 +19146,7 @@ py-pcap                         ports/net/py-pcap
 py-pcapy                        ports/net/py-pcapy
 py-pcs                          ports/net/py-pcs
 py-pdf                          ports/print/py-pdf
+py-peak-rules                   ports/devel/py-PEAK-Rules
 py-pefile                       ports/devel/py-pefile
 py-period                       ports/devel/py-period
 py-pexpect                      ports/misc/py-pexpect
@@ -19160,6 +19170,7 @@ py-pp                           ports/devel/py-pp
 py-ppolicy                      ports/mail/py-ppolicy
 py-pqueue                       ports/devel/py-pqueue
 py-prewikka                     ports/www/py-prewikka
+py-prioritized_methods          ports/devel/py-prioritized_methods
 py-probstat                     ports/math/py-probstat
 py-prolog                       ports/lang/py-prolog
 py-protobuf                     ports/devel/py-protobuf
@@ -19328,6 +19339,7 @@ py-svglib                       ports/converters/py-svglib
 py-svgmath                      ports/math/py-svgmath
 py-sybase                       ports/databases/py-sybase
 py-syck                         ports/textproc/py-syck
+py-symboltype                   ports/devel/py-SymbolType
 py-symeig                       ports/math/py-symeig
 py-sympy                        ports/math/py-sympy
 py-synce-librapi2               ports/palm/py-synce-librapi2
@@ -24220,6 +24232,7 @@ yabm                            ports/net-mgmt/yabm
 yacas                           ports/math/yacas
 yace                            ports/games/yace
 yadex                           ports/games/yadex
+yaf                             ports/net-mgmt/yaf
 yafc                            ports/ftp/yafc
 yafic                           ports/security/yafic
 yafray                          ports/graphics/yafray
