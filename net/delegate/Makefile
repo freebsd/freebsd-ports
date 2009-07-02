@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	9.9.1
-PORTREVISION=	1
+PORTVERSION=	9.9.3
+#PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://www.chifeng.name/dist/delegate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -19,7 +19,7 @@ IS_INTERACTIVE=	YES
 PORTDOCS=	HowToDG.html Manual.htm tutor-jp.htm tutor-en.htm COPYRIGHT
 PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
 SUB_FILES=	pkg-message
-SUB_LIST=       DOCSDIR=${DOCSDIR}
+SUB_LIST=	DOCSDIR=${DOCSDIR}
 
 # Strip breaks binary checksumming
 STRIP=
