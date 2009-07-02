@@ -2,7 +2,6 @@
 Note that some of the standard modules are provided as separate
 ports since they require extra dependencies:
 
-bsddb           databases/py-bsddb
 gdbm            databases/py-gdbm
 sqlite3		databases/py-sqlite3
 tkinter         x11-toolkits/py-tkinter

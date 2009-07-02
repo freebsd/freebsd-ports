@@ -5,7 +5,7 @@
  
  # This global variable is used to hold the list of modules to be disabled.
 -disabled_module_list = []
-+disabled_module_list = ["_bsddb", "_sqlite3", "_tkinter", "_gdbm", "mpz"]
++disabled_module_list = ["_sqlite3", "_tkinter", "_gdbm"]
  
  def add_dir_to_list(dirlist, dir):
      """Add the directory 'dir' to the list 'dirlist' (at the front) if

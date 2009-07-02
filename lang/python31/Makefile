@@ -6,6 +6,7 @@
 
 PORTNAME=	python30
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -21,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure # must be relative
 CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
@@ -34,8 +36,8 @@ PLIST=		${WRKDIR}/PLIST
 PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PYVER_WITHPAT=${PORTVERSION:S/.rc/rc/}
-DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
-TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
+DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
 		plat-freebsd7 plat-freebsd8
@@ -83,23 +85,13 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .endif # !defined(WITHOUT_THREADS)
 
 .if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)
-CONFIGURE_ARGS+=	--enable-unicode=ucs4
+CONFIGURE_ARGS+=	--with-wide-unicode
 .endif
 
 .if defined(WITHOUT_PYMALLOC)
 CONFIGURE_ARGS+=	--without-pymalloc
 .endif
 
-.if ${ARCH} == i386
-PLIST_SUB+=	X86_ONLY=""
-.else
-PLIST_SUB+=	X86_ONLY="@comment "
-.endif
-.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64 || ${ARCH} == alpha
-PLIST_SUB+=	32BIT_ONLY="@comment "
-.else
-PLIST_SUB+=	32BIT_ONLY=""
-.endif
 .if ${ARCH} == sparc64
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
@@ -219,15 +211,20 @@ post-install:
 	done
 .endif
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${TOOLSDIR}
+.if !defined(NOPORTDATA)
+	@${MKDIR} ${DATADIR}
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
-		(cd ${TOOLSDIR}; ${TAR} -xf -)
-	@${MKDIR} ${DEMODIR}
+		(cd ${DATADIR}; ${TAR} -xf -)
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
-		(cd ${DEMODIR}; ${TAR} -xf -)
+		(cd ${EXAMPLESDIR}; ${TAR} -xf -)
 .endif
 
 	@${CAT} ${PKGMESSAGE}
+
+regression-test:
+	cd ${WRKSRC} && make test
 
 .include <bsd.port.post.mk>
