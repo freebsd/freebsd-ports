@@ -71,9 +71,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/package-use.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/ChoraIntegration.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/ChurnPageMaker.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/LOCChurnChartMaker.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/RepoMapPageMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/SvnCommandLineParser.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/SvnConfigurationOptions.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/ChoraIntegration.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/ChurnPageMaker.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/LOCChurnChartMaker.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/RepoMapPageMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/SvnCommandLineParser.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/SvnConfigurationOptions.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/package-frame.html
