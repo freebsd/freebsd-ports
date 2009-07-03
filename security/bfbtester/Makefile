@@ -9,13 +9,12 @@ PORTNAME=	bfbtester
 PORTVERSION=	2.0.1
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bfbtester
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A security tool for testing binaries for overflows
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/bfbtester
 USE_GMAKE=	yes
 
