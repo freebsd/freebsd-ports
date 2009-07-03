@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtrace
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.6
 CATEGORIES=	net
 MASTER_SITES=	http://research.wand.net.nz/software/libtrace/ \
 		http://matt.peterson.org/FreeBSD/ports/
@@ -21,9 +21,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
-MAN1=		traceanon.1 tracemerge.1 tracesplit.1 tracefilter.1 traceconvert.1 \
-		tracesplit_dir.1 tracepktdump.1 tracertstats.1 tracestats.1 \
-		tracesummary.1 tracereport.1 traceflow.1
+MAN1=		traceanon.1 traceconvert.1 tracefilter.1 tracemerge.1  tracepktdump.1 \
+		tracereport.1 tracertstats.1 tracesplit.1 tracesplit_dir.1 tracestats.1 \
+		tracesummary.1
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
