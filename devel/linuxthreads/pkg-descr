@@ -1,11 +1,12 @@
 LinuxThreads is an POSIX pthreads implementation using "kernel threads".  In
 this FreeBSD port, a kernel thread is started using rfork (whereas in the
 original Linux implementation a kernel thread is started using the Linux clone
-call).  This implementation provides a so-called one-to-one mapping of threads to
+call).
+This implementation provides a so-called one-to-one mapping of threads to
 kernel schedulable entities. For more information see about the original
 LinuxThreads implementation see:
 
-	http://pauillac.inria.fr/~xleroy/linuxthreads/
+WWW:	http://pauillac.inria.fr/~xleroy/linuxthreads/
 
 Note that LinuxThreads has been integrated with the GNU C library (glibc) since
 version 2.0, so the above URL points to dated information.

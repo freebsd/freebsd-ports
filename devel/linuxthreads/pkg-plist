@@ -4,6 +4,7 @@ lib/liblthread.a
 %%PIC:%%lib/liblthread.so
 %%PIC:%%lib/liblthread.so.%%LTHREADSHMAJOR:%%
 lib/liblgcc_r.a
+lib/liblgcc_r_pic.a
 %%GCC4ONLY:%%lib/liblgcc_r_eh.a
 %%GCC4ONLY:%%lib/liblgcc_r_eh_p.a
 %%PROFILE:%%lib/liblgcc_r_p.a
@@ -31,9 +32,7 @@ include/pthread/linuxthreads/bits/local_lim.h
 include/pthread/linuxthreads/bits/posix_opt.h
 include/pthread/linuxthreads/bits/sigthread.h
 include/pthread/linuxthreads/sys/_pthreadtypes.h
-@exec /sbin/ldconfig -m %D/lib
 @dirrm include/pthread/linuxthreads/sys
 @dirrm include/pthread/linuxthreads/bits
 @dirrm include/pthread/linuxthreads
 @dirrm include/pthread
-@unexec /sbin/ldconfig -R
