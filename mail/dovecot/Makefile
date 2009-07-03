@@ -13,6 +13,10 @@ MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	Secure and compact IMAP and POP3 servers
 
+######################################################################
+# Anytime PORTVERSION changes please bump PORTREVISION of            #
+# mail/dovecot-antispam. Please see ports/135311 for an explanation. #
+######################################################################
 USE_ICONV=	yes
 USE_RC_SUBR=	dovecot.sh
 
