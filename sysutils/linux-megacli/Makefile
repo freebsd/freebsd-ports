@@ -7,6 +7,7 @@
 
 PORTNAME=	megacli
 PORTVERSION=	2.00.15
+PORTREVISION=	1
 CATEGORIES=	sysutils linux
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
@@ -70,7 +71,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTVERSION}_Linux_Cli.txt ${DOCSDIR}/readme.txt
+	${INSTALL_MAN} ${WRKSRC}/${PORTVERSION}_Linux_MegaCLI.txt ${DOCSDIR}/readme.txt
 	${INSTALL_MAN} ${FILESDIR}/README-status-mfi-raid.txt ${DOCSDIR}/README-status-mfi-raid.txt
 .endif
 	@${CAT} ${PKGMESSAGE}
