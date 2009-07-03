@@ -10,7 +10,6 @@ PORTNAME?=	openoffice.org
 PORTVERSION?=	3.1.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
@@ -24,12 +23,6 @@ EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
-
-.if defined(WITH_CWS)
-PORTNAME:=	openoffice.org-${WITH_CWS}
-DISTFILES+=	${CWSARCHIVE}:cws
-.endif
-CWSARCHIVE=	${WITH_CWS}.tar.gz
 
 NO_LATEST_LINK=	yes
 USE_GNOME=	desktopfileutils gtk20
@@ -79,10 +72,6 @@ OOODIR=			openoffice.org3
 SNAPDATE=		20090630
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
-.if defined(WITH_CWS)
-INSTALLATION_BASEDIR=	openoffice.org-${OOOTAG}-${WITH_CWS}
-EXECBASE=		openoffice.org-${OOOTAG}-${WITH_CWS}
-.endif
 DIST_SUBDIR=		openoffice.org3
 SIMPLEOSVER=		${OSREL:C/\.//g}
 .if ${ARCH} == amd64
@@ -197,9 +186,6 @@ post-extract:
 		cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's###g' $$i ; \
 	done
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
-.if defined(WITH_CWS)
-	cd ${WRKSRC} ; ${TAR} xvfz ${DISTDIR}/${DIST_SUBDIR}/${CWSARCHIVE}
-.endif
 .if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
