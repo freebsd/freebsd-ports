@@ -70,7 +70,8 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl dri esound expat fon
 _LINUX_APPS_ALL+=
 
 # 2.6.16 components
-_LINUX_26_APPS=		libidn libssh2 nspr nss sqlite3 tcl84 tk84
+_LINUX_26_APPS=		cyrus-sasl2 libidn libssh2 nspr nss openldap \
+			sqlite3 tcl84 tk84
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
 
@@ -136,6 +137,14 @@ curl_f8_FILE=		${LINUXBASE}/usr/lib/libcurl.so.4.1.0
 curl_f10_FILE=		${LINUXBASE}/usr/lib/libcurl.so.4.1.1
 curl_DETECT=		${curl${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 curl_PORT=		${PORTSDIR}/ftp/linux${LINUX_DIST_SUFFIX}-curl
+.  if ${LINUX_DIST_SUFFIX} == "-f10"
+curl_DEPENDS=		cyrus-sasl2 openldap
+.  endif
+
+# no cyrus-sasl2_FILE, cyrus-sasl2_f8_FILE
+cyrus-sasl2_f10_FILE=	${LINUXBASE}/usr/lib/libsasl2.so.2.0.22
+cyrus-sasl2_DETECT=	${cyrus-sasl2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+cyrus-sasl2_PORT=	${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-cyrus-sasl2
 
 dri_FILE=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1
 dri_f8_FILE=		${LINUXBASE}/usr/lib/libGL.so.1
@@ -306,6 +315,11 @@ mikmod_f8_FILE=		${mikmod_FILE}
 mikmod_f10_FILE=	${LINUXBASE}/usr/lib/libmikmod.so.3.0.0
 mikmod_DETECT=		${mikmod${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 mikmod_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-mikmod
+
+# no openldap_FILE, openldap_f8_FILE
+openldap_f10_FILE=	${LINUXBASE}/usr/lib/libldap-2.4.so.2.2.0
+openldap_DETECT=	${openldap${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+openldap_PORT=		${PORTSDIR}/net/linux${LINUX_DIST_SUFFIX}-openldap
 
 openmotif_FILE=		${LINUXBASE}/usr/X11R6/lib/libXm.so.3.0.3
 openmotif_f8_FILE=	${LINUXBASE}/usr/lib/libXm.so.4.0.2
