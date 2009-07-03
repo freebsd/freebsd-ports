@@ -14,6 +14,8 @@ DISTFILES=
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Ruby interface to thrift
 
+BROKEN=		needs updating for Apache Incubator version
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
 USE_RUBY=	yes
