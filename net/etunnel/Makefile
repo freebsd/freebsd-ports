@@ -19,8 +19,8 @@ MAN1=	etunnel.1
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-	's|%%PREFIX%%|${PREFIX}|g ; \
-	s|CC=gcc|CC?=gcc|g ; \
+	's|CC=gcc|CC?=gcc|g ; \
+	s|PREFIX=|PREFIX?=|g ; \
 	s|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile
 
 post-install:

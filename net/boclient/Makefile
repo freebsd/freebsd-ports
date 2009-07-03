@@ -18,6 +18,9 @@ PLIST_FILES=	bin/bounix
 WRKSRC=		${WRKDIR}/bo
 GNU_CONFIGURE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile.in
+
 post-install:
 		${STRIP_CMD} ${PREFIX}/bin/bounix
 
