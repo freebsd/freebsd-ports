@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	B-Hooks-OP-Check
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Wrap OP check callbacks
 
-RUN_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		${RUN_DEPENDS}
+				${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
 
 PERL_CONFIGURE=	5.8.1+
 
