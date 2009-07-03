@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvclock
-DISTVERSION=	0.8b3a
+DISTVERSION=	0.8b4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nvclock
@@ -20,7 +20,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	aclocal:19 autoheader:262 autoconf:262
 
-PLIST_FILES=	bin/nvclock
+PLIST_FILES=	bin/nvclock \
+		bin/smartdimmer
 
 .if defined(WITHOUT_GUI)
 CONFIGURE_ARGS+=--enable-gtk=no --enable-qt=no --enable-nvcontrol=no
