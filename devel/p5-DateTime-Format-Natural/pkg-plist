@@ -1,5 +1,7 @@
 bin/dateparse
 %%SITE_PERL%%/DateTime/Format/Natural.pm
+%%SITE_PERL%%/DateTime/Format/Natural/Compat.pm
+%%SITE_PERL%%/DateTime/Format/Natural/Helpers.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Base.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Lang/Base.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Lang/EN.pm
