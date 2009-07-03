@@ -68,7 +68,7 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 			E=-1; S=-1; D=-1; s=-1; mec=-1; oec=-1; pfc=-1; lpfeqn=-1;
 			state="";
 		}
-		/^Enclosure (Number:/ { E=$3; }
+		/^Enclosure Number:/ { E=$3; }
 		/^Enclosure Device ID:/ { E=$4; }
 		/^Slot Number:/ { S=$3; }
 		/^Device Id:/ { D=$3; }
