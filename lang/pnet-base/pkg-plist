@@ -28,32 +28,32 @@ bin/ilsize
 bin/ilstrip
 bin/ilverify
 bin/resgen
-include/ffi.h
-include/ffitarget.h
-include/gc
-include/gc/gc.h
-include/gc/gc_typed.h
-include/gc/gc_inl.h
-include/gc/gc_inline.h
-include/gc/gc_mark.h
-include/gc/gc_cpp.h
-include/gc/weakpointer.h
-include/gc/gc_alloc.h
-include/gc/new_gc_alloc.h
-include/gc/gc_allocator.h
-include/gc/gc_backptr.h
-include/gc/gc_gcj.h
-include/gc/gc_local_alloc.h
-include/gc/leak_detector.h
-include/gc/gc_amiga_redirects.h
-include/gc/gc_pthread_redirects.h
-include/gc/gc_config_macros.h
-include/gc.h
-include/gc_local_alloc.h
-include/gc_pthread_redirects.h
-include/gc_config_macros.h
-include/gc_typed.h
-include/leak_detector.h
+%%I386%%include/ffi.h
+%%I386%%include/ffitarget.h
+%%I386%%include/gc
+%%I386%%include/gc/gc.h
+%%I386%%include/gc/gc_typed.h
+%%I386%%include/gc/gc_inl.h
+%%I386%%include/gc/gc_inline.h
+%%I386%%include/gc/gc_mark.h
+%%I386%%include/gc/gc_cpp.h
+%%I386%%include/gc/weakpointer.h
+%%I386%%include/gc/gc_alloc.h
+%%I386%%include/gc/new_gc_alloc.h
+%%I386%%include/gc/gc_allocator.h
+%%I386%%include/gc/gc_backptr.h
+%%I386%%include/gc/gc_gcj.h
+%%I386%%include/gc/gc_local_alloc.h
+%%I386%%include/gc/leak_detector.h
+%%I386%%include/gc/gc_amiga_redirects.h
+%%I386%%include/gc/gc_pthread_redirects.h
+%%I386%%include/gc/gc_config_macros.h
+%%I386%%include/gc.h
+%%I386%%include/gc_local_alloc.h
+%%I386%%include/gc_pthread_redirects.h
+%%I386%%include/gc_config_macros.h
+%%I386%%include/gc_typed.h
+%%I386%%include/leak_detector.h
 include/pnet/il_align.h
 include/pnet/il_bignum.h
 include/pnet/il_coder.h
@@ -92,10 +92,10 @@ lib/cscc/plugins/cscc-cs
 lib/cscc/plugins/cscc-csharp
 lib/cscc/plugins/cscc-java
 lib/cscc/plugins/cscc-vb
-lib/libgc.a
-lib/libgc.so
-lib/libgc.so.1
-lib/libgc.la
+%%I386%%lib/libgc.a
+%%I386%%lib/libgc.so
+%%I386%%lib/libgc.so.1
+%%I386%%lib/libgc.la
 lib/libILAsm.a
 lib/libILCodeGen.a
 lib/libILDumpAsm.a
@@ -103,10 +103,10 @@ lib/libILEngine.a
 lib/libILImage.a
 lib/libILLink.a
 lib/libILSupport.a
-lib/libffi.so.4
-lib/libffi.so
-lib/libffi.la
-lib/libffi.a
+%%I386%%lib/libffi.so.4
+%%I386%%lib/libffi.so
+%%I386%%lib/libffi.la
+%%I386%%lib/libffi.a
 %%I386%%share/gc/README
 %%I386%%share/gc/README.DGUX386
 %%I386%%share/gc/README.Mac
@@ -139,7 +139,7 @@ lib/libffi.a
 %%I386%%share/gc/scale.html
 %%I386%%share/gc/simple_example.html
 %%I386%%share/gc/tree.html
-@dirrmtry include/gc
+%%I386%%@dirrmtry include/gc
 @dirrmtry include/pnet/gc
 @dirrmtry include/pnet
 @dirrmtry lib/cscc/plugins
