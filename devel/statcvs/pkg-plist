@@ -18,6 +18,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/index-files/index-20.html
 %%PORTDOCS%%%%DOCSDIR%%/index-files/index-21.html
 %%PORTDOCS%%%%DOCSDIR%%/index-files/index-22.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-23.html
 %%PORTDOCS%%%%DOCSDIR%%/index-files/index-3.html
 %%PORTDOCS%%%%DOCSDIR%%/index-files/index-4.html
 %%PORTDOCS%%%%DOCSDIR%%/index-files/index-5.html
@@ -34,6 +35,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/ant/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/ant/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/ant/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/ChartConfigUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/ChartImage.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/ChartUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/CommitScatterChartMaker.html
@@ -51,6 +53,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/TimeBarChartMaker.WeekdayBarChartMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/TimeBarChartMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/TimeLineChartMaker.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/class-use/ChartConfigUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/class-use/ChartImage.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/class-use/ChartUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/charts/class-use/CommitScatterChartMaker.html
@@ -163,6 +166,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/package-use.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/AllDevelopersPageMaker.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/CloudCommitPageMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/CommitListFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/DeveloperPageMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/DirectoryPageMaker.html
@@ -181,7 +185,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/Page.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/PageGroup.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/ReportSuiteMaker.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/TwitterHelp.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/class-use/AllDevelopersPageMaker.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/class-use/CloudCommitPageMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/class-use/CommitListFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/class-use/DeveloperPageMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/class-use/DirectoryPageMaker.html
@@ -200,6 +206,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/class-use/Page.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/class-use/PageGroup.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/class-use/ReportSuiteMaker.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/class-use/TwitterHelp.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/pages/package-tree.html
@@ -275,9 +282,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reportmodel/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reportmodel/package-use.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/AbstractLocTableReport.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/AbstractRollingLocTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/AuthorsForDirectoryTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/AvgFileSizeTimeLineReport.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/CloudCommitTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/DevelopersOfTheMonthTable.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/DevelopersRollingTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/DevelopersTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/DirectoriesForAuthorTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/DirectoriesTableReport.html
@@ -292,9 +302,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/TagReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/TopDevelopersTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/AbstractLocTableReport.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/AbstractRollingLocTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/AuthorsForDirectoryTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/AvgFileSizeTimeLineReport.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/CloudCommitTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/DevelopersOfTheMonthTable.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/DevelopersRollingTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/DevelopersTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/DirectoriesForAuthorTableReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/reports/class-use/DirectoriesTableReport.html
@@ -320,6 +333,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/IntegerMap.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/LogFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/LookaheadReader.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/StringUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/class-use/ConsoleOutErrHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/class-use/ConsoleOutHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/class-use/CvsLogUtils.html
@@ -328,6 +342,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/class-use/IntegerMap.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/class-use/LogFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/class-use/LookaheadReader.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/class-use/StringUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statcvs/util/package-tree.html
