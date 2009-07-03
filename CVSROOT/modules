@@ -11046,6 +11046,7 @@ p5-Devel-Cycle                  ports/devel/p5-Devel-Cycle
 p5-Devel-DProfPP                ports/devel/p5-Devel-DProfPP
 p5-Devel-Declare                ports/devel/p5-Devel-Declare
 p5-Devel-Diagram                ports/devel/p5-Devel-Diagram
+p5-Devel-Ditto                  ports/devel/p5-Devel-Ditto
 p5-Devel-Dumpvar                ports/devel/p5-Devel-Dumpvar
 p5-Devel-EvalContext            ports/devel/p5-Devel-EvalContext
 p5-Devel-Events                 ports/devel/p5-Devel-Events
@@ -14501,6 +14502,7 @@ p5-devel-cover                  ports/devel/p5-Devel-Cover
 p5-devel-cycle                  ports/devel/p5-Devel-Cycle
 p5-devel-declare                ports/devel/p5-Devel-Declare
 p5-devel-diagram                ports/devel/p5-Devel-Diagram
+p5-devel-ditto                  ports/devel/p5-Devel-Ditto
 p5-devel-dprofpp                ports/devel/p5-Devel-DProfPP
 p5-devel-dumpvar                ports/devel/p5-Devel-Dumpvar
 p5-devel-ebug                   ports/devel/p5-Devel-ebug
@@ -20837,6 +20839,7 @@ scrobbler                       ports/audio/scrobbler
 scrollkeeper                    ports/textproc/scrollkeeper
 scrollz                         ports/irc/scrollz
 scrot                           ports/graphics/scrot
+scrotwm                         ports/x11-wm/scrotwm
 scrypt                          ports/security/scrypt
 scsh                            ports/lang/scsh
 scsh-install-lib                ports/devel/scsh-install-lib
