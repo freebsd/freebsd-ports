@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-DirWatch
-PORTVERSION=	0.02
+PORTVERSION=	0.200000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,13 +19,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		POE::Component::DirWatch.3
-
-post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/eg/* ${EXAMPLESDIR}
-.endif
+MAN3=		POE::Component::DirWatch.3 \
+	POE::Component::DirWatch::Modified.3 \
+	POE::Component::DirWatch::New.3 \
+	POE::Component::DirWatch::Role::AIO.3 \
+	POE::Component::DirWatch::Role::Signatures.3 \
+	POE::Component::DirWatch::Unmodified.3
 
 .include <bsd.port.mk>
