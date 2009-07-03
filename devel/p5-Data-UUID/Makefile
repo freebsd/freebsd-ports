@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Data-UUID
-PORTVERSION=	1.201
+PORTVERSION=	1.202
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
-COMMENT=	Module for generating Globally/Universally Unique Identifiers (GUIDs/UUIDs)
+COMMENT=	Generate Globally/Universally Unique Identifiers (GUIDs/UUIDs)
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	</dev/null
