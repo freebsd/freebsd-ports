@@ -3730,4 +3730,5 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/mozilla
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
