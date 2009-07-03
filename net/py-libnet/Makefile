@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	libnet
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.1
 CATEGORIES=	net python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pylibnet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pylibnet-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Python module for the libnet packet construction library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig1.3:${PORTSDIR}/devel/swig13 \
@@ -23,6 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/swig1.3:${PORTSDIR}/devel/swig13 \
 
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKEXAMPLE=	${WRKDIR}/${DISTNAME}/samples
 
 MAKE_ARGS=	SWIG=${LOCALBASE}/bin/swig1.3 \
 		LIBNET_INCLUDES=-I${LOCALBASE}/include \
@@ -31,10 +31,10 @@ MAKE_ARGS=	SWIG=${LOCALBASE}/bin/swig1.3 \
 		LIBNET_LIB="`${LIBNET_CONFIG} --libs`" \
 		CC=${CC}
 
-PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/libnet.py \
-		lib/%%PYTHON_VERSION%%/site-packages/_libnetc.so
-
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+
+EXAMPLESFILES=	test-libnet-icmp-echo-req.py test-libnet-tcp-syn.py test-libnet-arp-req.py
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -43,13 +43,17 @@ BROKEN=		Does not compile on amd64 (tries to link non-PIC libnet.a into PIC shar
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,libnetcmodule.so,_libnetc.so,g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,^const ,%constant ,' ${WRKSRC}/constants.i
-	${REINPLACE_CMD} -e '/^[^#]/s,libnet,_libnet,' ${WRKSRC}/libnet.py
 
 do-install:
-.for file in libnet.py _libnetc.so
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PYTHON_SITELIBDIR}
+.for f in libnet.py _libnet.so
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PYTHON_SITELIBDIR}
 .endfor
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+.for f in ${EXAMPLESFILES}
+	${INSTALL_DATA} ${WRKEXAMPLE}/${f} ${EXAMPLESDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
