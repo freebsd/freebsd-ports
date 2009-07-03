@@ -17,6 +17,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS=	DEBUG "Compile with debugging information" off \
 		CURL "Compile with curl support" on \
 		LIBWWW "Compile with libwww support" off
