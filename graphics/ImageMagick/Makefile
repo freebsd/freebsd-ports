@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.5.3-10
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -143,11 +144,7 @@ PLIST_SUB+=		OPENEXR="@comment "
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK_DJVU)
-.	if defined(WITHOUT_X11)
 LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre-nox11
-.	else
-LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre
-.	endif
 PLIST_SUB+=		DJVU=""
 .else
 CONFIGURE_ARGS+=	--without-djvu
