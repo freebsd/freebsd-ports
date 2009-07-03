@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	newlisp
-PORTVERSION=	10.0.2
+PORTVERSION=	10.1.0
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -40,8 +40,8 @@ OPTIONS=	GMP	"Enable GMP math library support" off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL4) && defined(WITH_MYSQL5)
-IGNORE=	you should select only one MySQL version
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+CFLAGS+=	-DNEWLISP64
 .endif
 
 .if defined(WITH_GMP)
@@ -55,7 +55,7 @@ PLIST_SUB+=	GMP="@comment "
 .if defined(WITH_MYSQL5)
 USE_MYSQL=yes
 WITH_MYSQL_VER=	50
-MODULES+=	mysql5
+MODULES+=	mysql
 PLIST_SUB+=	MYSQL5=""
 .else
 PLIST_SUB+=	MYSQL5="@comment "
@@ -64,7 +64,7 @@ PLIST_SUB+=	MYSQL5="@comment "
 .if defined(WITH_MYSQL51)
 USE_MYSQL=yes
 WITH_MYSQL_VER=	51
-MODULES+=	mysql51
+MODULES+=	mysql
 PLIST_SUB+=	MYSQL51=""
 .else
 PLIST_SUB+=	MYSQL51="@comment "
@@ -105,10 +105,7 @@ post-patch:
 
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/mysql/lib/(libmysqlclient.)dylib,${LOCALBASE}/lib/mysql/\1so.${MYSQL${MYSQL_VER}_LIBVER}," \
-		${WRKSRC}/modules/mysql5.lsp
-	@${REINPLACE_CMD} -E -e \
-		"s,/usr/local/mysql/lib/(libmysqlclient.)dylib,${LOCALBASE}/lib/mysql/\1so.${MYSQL${MYSQL_VER}_LIBVER}," \
-		${WRKSRC}/modules/mysql51.lsp
+		${WRKSRC}/modules/mysql.lsp
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/lib/(libsqlite)3.so,${LOCALBASE}/lib/\1${_SQLITE_VER}.so," \
 		${WRKSRC}/modules/sqlite3.lsp
