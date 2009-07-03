@@ -19,7 +19,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
 USE_AUTOTOOLS=	autoconf:213:run
-LATEST_LINK=	firefox3-devel
+LATEST_LINK=	firefox35
 USE_GECKO=	gecko
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
