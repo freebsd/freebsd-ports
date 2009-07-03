@@ -8,7 +8,7 @@ bin/newlispdoc
 %%PORTDOCS%%%%DOCSDIR%%/ExpressionEvaluation.html
 %%PORTDOCS%%%%DOCSDIR%%/MemoryManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual_frame.html
-%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.0-Release.html
+%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.1-Release.html
 %%PORTDOCS%%%%DOCSDIR%%/newLISPdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_manual.html
@@ -60,8 +60,8 @@ bin/newlispdoc
 %%DATADIR%%/modules/ftp.lsp
 %%GMP%%%%DATADIR%%/modules/gmp.lsp
 %%DATADIR%%/modules/infix.lsp
-%%MYSQL51%%%%DATADIR%%/modules/mysql51.lsp
-%%MYSQL5%%%%DATADIR%%/modules/mysql5.lsp
+%%MYSQL51%%%%DATADIR%%/modules/mysql.lsp
+%%MYSQL5%%%%DATADIR%%/modules/mysql.lsp
 %%DATADIR%%/modules/odbc.lsp
 %%DATADIR%%/modules/pop3.lsp
 %%DATADIR%%/modules/postscript.lsp
