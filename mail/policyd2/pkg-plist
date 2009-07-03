@@ -98,10 +98,8 @@ www/policyd/tooltips/bt.css
 www/policyd/tooltips/bt.gif
 %%SITE_PERL%%/cbp/cache.pm
 %%SITE_PERL%%/cbp/config.pm
-%%SITE_PERL%%/cbp/database/dbi.pm
 %%SITE_PERL%%/cbp/dbilayer.pm
 %%SITE_PERL%%/cbp/dblayer.pm
-%%SITE_PERL%%/cbp/dummy.pm
 %%SITE_PERL%%/cbp/logging.pm
 %%SITE_PERL%%/cbp/modules/AccessControl.pm
 %%SITE_PERL%%/cbp/modules/CheckHelo.pm
@@ -126,5 +124,4 @@ etc/cluebringer.conf.sample
 @dirrmtry www/policyd
 @dirrm %%SITE_PERL%%/cbp/protocols
 @dirrm %%SITE_PERL%%/cbp/modules
-@dirrm %%SITE_PERL%%/cbp/database
 @dirrm %%SITE_PERL%%/cbp
