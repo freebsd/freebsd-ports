@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GIS-Distance
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 PORTEPOCH=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
@@ -16,9 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculate geographic distances
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Data/Accessor.pm:${PORTSDIR}/devel/p5-Class-Data-Accessor \
-		${SITE_PERL}/Class/Measure.pm:${PORTSDIR}/devel/p5-Class-Measure \
-		${SITE_PERL}/Moose.pm:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS=	p5-Class-Data-Accessor>0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
+		p5-Class-Measure>0:${PORTSDIR}/devel/p5-Class-Measure \
+		p5-Moose>0:${PORTSDIR}/devel/p5-Moose
 
 PERL_CONFIGURE=	yes
 
