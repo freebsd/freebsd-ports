@@ -107,7 +107,7 @@ CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .endif
 
 .if defined(WITH_MAPSERV)
-USE_APACHE=		YES
+USE_APACHE=		13
 PLIST_SUB+=		WITH_MAPSERV=""
 .else
 PLIST_SUB+=		WITH_MAPSERV="@comment "
