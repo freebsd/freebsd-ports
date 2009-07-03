@@ -18,6 +18,7 @@ include/libsoup-%%VERSION%%/libsoup/soup-method.h
 include/libsoup-%%VERSION%%/libsoup/soup-misc.h
 include/libsoup-%%VERSION%%/libsoup/soup-multipart.h
 include/libsoup-%%VERSION%%/libsoup/soup-portability.h
+include/libsoup-%%VERSION%%/libsoup/soup-proxy-uri-resolver.h
 include/libsoup-%%VERSION%%/libsoup/soup-proxy-resolver.h
 include/libsoup-%%VERSION%%/libsoup/soup-server.h
 include/libsoup-%%VERSION%%/libsoup/soup-session-async.h
