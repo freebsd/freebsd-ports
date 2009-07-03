@@ -1,9 +1,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/DirWatch/.packlist
 %%SITE_PERL%%/POE/Component/DirWatch.pm
+%%SITE_PERL%%/POE/Component/DirWatch/Role/AIO.pm
+%%SITE_PERL%%/POE/Component/DirWatch/Role/Signatures.pm
+%%SITE_PERL%%/POE/Component/DirWatch/Unmodified.pm
+%%SITE_PERL%%/POE/Component/DirWatch/New.pm
+%%SITE_PERL%%/POE/Component/DirWatch/Modified.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/DirWatch
+@dirrm %%SITE_PERL%%/POE/Component/DirWatch/Role
+@dirrm %%SITE_PERL%%/POE/Component/DirWatch
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-%%PORTDOCS%%%%EXAMPLESDIR%%/dirwatch
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
