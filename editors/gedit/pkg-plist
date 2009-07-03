@@ -270,6 +270,14 @@ share/gnome/help/gedit/ca/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/ca/figures/gedit_window.png
 share/gnome/help/gedit/ca/gedit.xml
 share/gnome/help/gedit/ca/legal.xml
+share/gnome/help/gedit/cs/figures/gedit_format_bold.png
+share/gnome/help/gedit/cs/figures/gedit_format_italic.png
+share/gnome/help/gedit/cs/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/cs/figures/gedit_format_underline.png
+share/gnome/help/gedit/cs/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/cs/figures/gedit_window.png
+share/gnome/help/gedit/cs/gedit.xml
+share/gnome/help/gedit/cs/legal.xml
 share/gnome/help/gedit/da/figures/gedit_format_bold.png
 share/gnome/help/gedit/da/figures/gedit_format_italic.png
 share/gnome/help/gedit/da/figures/gedit_format_strikethrough.png
@@ -515,6 +523,7 @@ share/omf/gedit/gedit-C.omf
 share/omf/gedit/gedit-ar.omf
 share/omf/gedit/gedit-bg.omf
 share/omf/gedit/gedit-ca.omf
+share/omf/gedit/gedit-cs.omf
 share/omf/gedit/gedit-da.omf
 share/omf/gedit/gedit-de.omf
 share/omf/gedit/gedit-el.omf
@@ -573,6 +582,8 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrm share/gnome/help/gedit/de
 @dirrm share/gnome/help/gedit/da/figures
 @dirrm share/gnome/help/gedit/da
+@dirrm share/gnome/help/gedit/cs/figures
+@dirrm share/gnome/help/gedit/cs
 @dirrm share/gnome/help/gedit/ca/figures
 @dirrm share/gnome/help/gedit/ca
 @dirrm share/gnome/help/gedit/bg/figures
