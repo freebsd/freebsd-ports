@@ -20,6 +20,8 @@ RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		nfdump:${PORTSDIR}/net-mgmt/nfdump
 
+FORBIDDEN=	remote command execution vulnerability
+
 USE_ICONV=	yes
 USE_PERL5=	yes
 USE_PHP=	session pcre sockets
