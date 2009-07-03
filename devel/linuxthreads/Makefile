@@ -7,16 +7,16 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
 DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	POSIX pthreads implementation using rfork to generate kernel threads
 
-BROKEN=		leaves file on deinstall
+USE_LDCONFIG=	yes
 
 .if defined(LINUXTHREADS_WRAP_API)
 USE_PERL5_BUILD=true
@@ -226,11 +226,7 @@ pre-su-install:
 .endif
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
-	${LDCONFIG} -m /usr/lib
 	${CAT} ${PKGMESSAGE}
-
-#	@sh ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .if defined(NO_PROFILE)
 PLIST_SUB=	PROFILE:="@comment "
