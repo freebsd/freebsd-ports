@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Feb  9 07:18:28 2000
-+++ Makefile	Thu Mar  2 00:35:42 2000
+--- Makefile.orig	2000-02-09 10:18:28.000000000 -0500
++++ Makefile	2009-06-30 11:47:12.000000000 -0400
 @@ -2,11 +2,12 @@
  ## Customizable Shit #######################################
  ############################################################
@@ -24,3 +24,14 @@
  LIBS = -pthread -lncurses
  
  # Solaris
+@@ -55,8 +56,8 @@
+ 	rm -rf $(OUTNAME)
+ 
+ install:
+-	install -c -s $(OUTNAME) /usr/local/sbin
+-	install -c ppptraf.conf.sample /usr/local/etc
++	install -c -s $(OUTNAME) $(PREFIX)/sbin
++	install -c ppptraf.conf.sample $(PREFIX)/etc
+ 
+ 
+ depend:
