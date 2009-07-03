@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/libnet.py
+%%PYTHON_SITELIBDIR%%/_libnet.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-libnet-arp-req.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-libnet-icmp-echo-req.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-libnet-tcp-syn.py
+@dirrm %%EXAMPLESDIR%%
