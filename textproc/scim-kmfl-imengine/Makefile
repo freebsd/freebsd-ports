@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	scim-kmfl-imengine
-PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTVERSION=	0.9.8
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://anthesphoria.net/files/distribution/
+		http://anthesphoria.net/FreeBSD/ports/distfiles/
 MASTER_SITE_SUBDIR=	kmfl
 DIST_SUBDIR=	kmfl
 
@@ -46,9 +45,6 @@ pre-patch:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		's|^install-data-am: install-libkmfldocDATA|install-data-am:|' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} \
 		's|/usr/X11R6/lib|${LOCALBASE}/lib|' \
 	   	${WRKSRC}/src/Makefile.in ${WRKSRC}/src/xkbmap.cpp

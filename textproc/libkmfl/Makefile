@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libkmfl
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://anthesphoria.net/files/distribution/
+		http://anthesphoria.net/FreeBSD/ports/distfiles/
 MASTER_SITE_SUBDIR=	kmfl
 DIST_SUBDIR=	kmfl
 
