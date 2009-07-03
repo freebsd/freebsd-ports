@@ -76,7 +76,8 @@ BROKEN=		Does not compile on alpha
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g ; \
+		s/-lpthread/${PTHREAD_LIBS}/g ; s|%%LTMAIN%%|${LTMAIN}|g' \
+			${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
