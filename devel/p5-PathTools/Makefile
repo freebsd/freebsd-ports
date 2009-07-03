@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	PathTools
-PORTVERSION=	3.2900
+PORTVERSION=	3.3000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl module for portably manipulating file specifications
@@ -22,10 +22,4 @@ MAN3=		Cwd.3 File::Spec.3 File::Spec::Cygwin.3 File::Spec::Epoc.3 \
 		File::Spec::Functions.3 File::Spec::Mac.3 File::Spec::OS2.3 \
 		File::Spec::Unix.3 File::Spec::VMS.3 File::Spec::Win32.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
