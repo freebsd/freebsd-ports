@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Engine-HTTP-Prefork
-PORTVERSION=	0.50
-PORTREVISION=	1
+PORTVERSION=	0.51
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	High-performance pre-forking Catalyst engine
 
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7012:${PORTSDIR}/www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7012:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Net-Server>=0.97:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/${PERL_ARCH}/HTTP/HeaderParser/XS.pm:${PORTSDIR}/www/p5-HTTP-HeaderParser-XS \
 		${SITE_PERL}/${PERL_ARCH}/CGI/Cookie/XS.pm:${PORTSDIR}/www/p5-CGI-Cookie-XS \
 		${SITE_PERL}/HTTP/Body.pm:${PORTSDIR}/www/p5-HTTP-Body
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
