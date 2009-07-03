@@ -144,6 +144,9 @@ share/gnome/help/fish/C/legal.xml
 share/gnome/help/fish/ca/figures/fish_applet.png
 share/gnome/help/fish/ca/fish.xml
 share/gnome/help/fish/ca/legal.xml
+share/gnome/help/fish/cs/figures/fish_applet.png
+share/gnome/help/fish/cs/fish.xml
+share/gnome/help/fish/cs/legal.xml
 share/gnome/help/fish/de/figures/fish_applet.png
 share/gnome/help/fish/de/fish.xml
 share/gnome/help/fish/de/legal.xml
@@ -419,6 +422,7 @@ share/omf/clock/clock-zh_CN.omf
 share/omf/clock/clock-zh_TW.omf
 share/omf/fish/fish-C.omf
 share/omf/fish/fish-ca.omf
+share/omf/fish/fish-cs.omf
 share/omf/fish/fish-de.omf
 share/omf/fish/fish-el.omf
 share/omf/fish/fish-en_GB.omf
@@ -559,6 +563,8 @@ share/omf/workspace-switcher/workspace-switcher-zh_CN.omf
 @dirrm share/gnome/help/fish/el
 @dirrm share/gnome/help/fish/de/figures
 @dirrm share/gnome/help/fish/de
+@dirrm share/gnome/help/fish/cs/figures
+@dirrm share/gnome/help/fish/cs
 @dirrm share/gnome/help/fish/ca/figures
 @dirrm share/gnome/help/fish/ca
 @dirrm share/gnome/help/fish/C/figures
