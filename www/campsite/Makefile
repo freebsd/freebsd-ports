@@ -9,9 +9,7 @@ PORTNAME=	campsite
 PORTVERSION=	2.6.7
 PORTREVISION=	5
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	koutek@o-k.cz
 COMMENT=	The free and open multilingual web publishing tool for news sites
@@ -28,20 +26,22 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/share/pear/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util \
 		${LOCALBASE}/share/pear/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
 
+MAKE_JOBS_UNSAFE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_APACHE=	YES
+USE_APACHE=	13
 
 USE_PHP=	mysql curl pcre xml xmlrpc gd session
 WANT_PHP_CLI=	YES
 USE_PHP_BUILD=	YES
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--apache_user www --apache_group www --prefix ${PREFIX}
+CONFIGURE_ARGS=	--apache_user ${WWWOWN} --apache_group ${WWWGRP} --prefix ${PREFIX}
 
 USE_GMAKE=	yes
 
-SUB_FILES=	pkg-message pkg-install pkg-deinstall crontab.in
+SUB_FILES+=	pkg-message pkg-install pkg-deinstall crontab.in
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -perm 755 \
