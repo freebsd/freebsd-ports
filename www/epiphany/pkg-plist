@@ -75,6 +75,8 @@ share/dbus-1/services/org.gnome.Epiphany.service
 %%DATADIR%%/chrome/branding/brand.dtd
 %%DATADIR%%/chrome/branding/brand.properties
 %%DATADIR%%/chrome/global/about.xhtml
+%%DATADIR%%/chrome/global/netError.dtd
+%%DATADIR%%/components/epiphany.xpt
 %%DATADIR%%/default-prefs.js
 %%DATADIR%%/ephy-xml2ini.xsl
 %%DATADIR%%/epiphany-bookmark-editor-ui.xml
@@ -393,6 +395,7 @@ share/pygtk/2.0/defs/epiphany.defs
 @dirrmtry %%DATADIR%%/icons/hicolor
 @dirrmtry %%DATADIR%%/icons
 @dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/components
 @dirrm %%DATADIR%%/chrome/global
 @dirrm %%DATADIR%%/chrome/branding
 @dirrm %%DATADIR%%/chrome
