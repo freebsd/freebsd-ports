@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mp3plot
-DISTVERSION=	0.5.1
+DISTVERSION=	0.6.0
 CATEGORIES=	audio
 MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Mp3 bitrate plot tool
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
