@@ -80,6 +80,7 @@ share/locale/as/LC_MESSAGES/hamster-applet.mo
 share/locale/bg/LC_MESSAGES/hamster-applet.mo
 share/locale/bn_IN/LC_MESSAGES/hamster-applet.mo
 share/locale/ca/LC_MESSAGES/hamster-applet.mo
+share/locale/ca@valencia/LC_MESSAGES/hamster-applet.mo
 share/locale/cs/LC_MESSAGES/hamster-applet.mo
 share/locale/da/LC_MESSAGES/hamster-applet.mo
 share/locale/de/LC_MESSAGES/hamster-applet.mo
@@ -122,6 +123,7 @@ share/locale/sv/LC_MESSAGES/hamster-applet.mo
 share/locale/ta/LC_MESSAGES/hamster-applet.mo
 share/locale/te/LC_MESSAGES/hamster-applet.mo
 share/locale/th/LC_MESSAGES/hamster-applet.mo
+share/locale/uk/LC_MESSAGES/hamster-applet.mo
 share/locale/tr/LC_MESSAGES/hamster-applet.mo
 share/locale/vi/LC_MESSAGES/hamster-applet.mo
 share/locale/zh_CN/LC_MESSAGES/hamster-applet.mo
@@ -144,6 +146,8 @@ share/locale/zh_TW/LC_MESSAGES/hamster-applet.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES

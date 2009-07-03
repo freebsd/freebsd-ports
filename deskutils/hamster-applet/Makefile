@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hamster-applet
-PORTVERSION=	2.26.2
+PORTVERSION=	2.26.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
