@@ -1,7 +1,6 @@
 bin/traceanon
 bin/traceconvert
 bin/tracefilter
-bin/traceflow
 bin/tracemerge
 bin/tracepktdump
 bin/tracereport
@@ -12,6 +11,7 @@ bin/tracestats
 bin/tracesummary
 include/dagformat.h
 include/daglegacy.h
+include/erftypes.h
 include/libpacketdump.h
 include/libtrace.h
 include/libtraceio.h
@@ -29,7 +29,11 @@ lib/libpacketdump/eth_2054.a
 lib/libpacketdump/eth_2054.la
 lib/libpacketdump/eth_2054.so
 lib/libpacketdump/eth_2054.so.0
-lib/libpacketdump/eth_33024.protocol
+lib/libpacketdump/eth_33024.a
+lib/libpacketdump/eth_33024.la
+lib/libpacketdump/eth_33024.so
+lib/libpacketdump/eth_33024.so.0
+lib/libpacketdump/eth_34525.protocol
 lib/libpacketdump/eth_34887.a
 lib/libpacketdump/eth_34887.la
 lib/libpacketdump/eth_34887.so
