@@ -1,16 +1,16 @@
 # New ports collection makefile for:	bsdhwmon
 # Date created:				5 October 2008
-# Whom:					Jeremy Chadwick <koitsu@FreeBSD.org>
+# Whom:					Jeremy Chadwick <jdc@parodius.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	bsdhwmon
-PORTVERSION=	20081107
+PORTVERSION=	20090703
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsdhwmon.parodius.com/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jdc@parodius.com
 COMMENT=	Hardware sensor monitoring utility for FreeBSD
 
 PLIST_FILES=	sbin/bsdhwmon
