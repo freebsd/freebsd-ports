@@ -7,7 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.19.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp linux
 PKGNAMEPREFIX=	linux-f10-
 DISTFILES=	curl-${PORTVERSION}-${RPMVERSION}.i386.rpm \
@@ -24,6 +24,7 @@ COMMENT=	The command line tool for transferring files with URL syntax (Linux Fed
 CONFLICTS=	linux-curl-[0-9]* linux-f8-curl-[0-9]*
 
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	cyrus-sasl2 openldap
 LINUX_DIST_VER=	10
 RPMVERSION=	5.fc10
 USE_LDCONFIG=	yes
