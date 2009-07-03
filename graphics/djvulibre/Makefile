@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.21
-PORTREVISION=	1
+PORTVERSION=	3.5.22
+PORTREVISION=	0
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu
 
@@ -16,7 +16,7 @@ COMMENT=	DjVu viewers and browser plugin
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		djvulibre.21:${PORTSDIR}/graphics/djvulibre-nox11
+		djvulibre.22:${PORTSDIR}/graphics/djvulibre-nox11
 
 USE_ICONV=	yes
 USE_GNOME=	gnomehack gnometarget

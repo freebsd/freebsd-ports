@@ -1,6 +1,6 @@
---- configure.orig	Mon Oct 31 19:34:47 2005
-+++ configure	Tue Apr 18 13:55:47 2006
-@@ -486,7 +486,7 @@
+--- configure.orig	2009-07-03 15:21:12.000000000 +0400
++++ configure	2009-07-03 15:22:16.000000000 +0400
+@@ -945,7 +945,7 @@
  srcdir=
  verbose=
  x_includes=NONE
@@ -9,12 +9,12 @@
  
  # Installation directory options.
  # These are left unexpanded so users can "make install exec_prefix=/foo"
-@@ -26327,7 +26327,7 @@
- then
-  NSDEJAVU_CFLAGS=${X_CFLAGS}
-  case "$host" in
-- *-cygwin* | *-mingw*)
-+ *-cygwin* | *-mingw* | *-freebsd*)
-    NSDEJAVU_LIBS="`echo ${X_LIBS} | sed -e 's/-lXext/-lXt -lXext/'`"
-    NSDEJAVU_LIBS="-no-undefined $NSDEJAVU_LIBS"
-    ;;
+@@ -28076,7 +28076,7 @@
+ 
+     NSDEJAVU_CFLAGS=${X_CFLAGS}
+     case "$host" in
+-        *-cygwin* | *-mingw*)
++        *-cygwin* | *-mingw* | *-freebsd*)
+             NSDEJAVU_LIBS="`echo ${X_LIBS} | sed -e 's/-lXext/-lXt -lXext/'`"
+             NSDEJAVU_LIBS="-no-undefined $NSDEJAVU_LIBS"
+             ;;
