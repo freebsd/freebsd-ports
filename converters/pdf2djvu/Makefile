@@ -23,6 +23,7 @@ PLIST_FILES=	bin/pdf2djvu
 
 LIB_DEPENDS+=	djvulibre.22:${PORTSDIR}/graphics/djvulibre-nox11
 
+MAKE_ENV=	LDLIBS="${LDFLAGS} ${PTHREAD_LIBS}"
 MAN1=	pdf2djvu.1
 MANCOMPRESSED=	no
 
