@@ -81,6 +81,7 @@ lib/totem/plugins/youtube/youtube.ui
 %%BROWSER_PLUGINS%%libexec/totem-plugin-viewer
 libexec/totem/totem-bugreport.py
 share/applications/totem.desktop
+%%DOCSDIR%%/BaconVideoWidget.html
 %%DOCSDIR%%/TotemCellRendererVideo.html
 %%DOCSDIR%%/TotemObject.html
 %%DOCSDIR%%/TotemPlugin.html
@@ -130,6 +131,15 @@ share/gnome/help/totem/cs/figures/totem_start_window.png
 share/gnome/help/totem/cs/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/cs/figures/totem_volume_mute_button.png
 share/gnome/help/totem/cs/totem.xml
+share/gnome/help/totem/da/figures/totem_next_button.png
+share/gnome/help/totem/da/figures/totem_pause_button.png
+share/gnome/help/totem/da/figures/totem_play_button.png
+share/gnome/help/totem/da/figures/totem_previous_button.png
+share/gnome/help/totem/da/figures/totem_show_playlist_button.png
+share/gnome/help/totem/da/figures/totem_start_window.png
+share/gnome/help/totem/da/figures/totem_volume_maximum_button.png
+share/gnome/help/totem/da/figures/totem_volume_mute_button.png
+share/gnome/help/totem/da/totem.xml
 share/gnome/help/totem/de/figures/totem_next_button.png
 share/gnome/help/totem/de/figures/totem_pause_button.png
 share/gnome/help/totem/de/figures/totem_play_button.png
@@ -382,6 +392,7 @@ share/omf/totem/totem-C.omf
 share/omf/totem/totem-bg.omf
 share/omf/totem/totem-ca.omf
 share/omf/totem/totem-cs.omf
+share/omf/totem/totem-da.omf
 share/omf/totem/totem-de.omf
 share/omf/totem/totem-el.omf
 share/omf/totem/totem-en_GB.omf
@@ -449,6 +460,8 @@ share/vala/vapi/totem.vapi
 @dirrm share/gnome/help/totem/el
 @dirrm share/gnome/help/totem/de/figures
 @dirrm share/gnome/help/totem/de
+@dirrm share/gnome/help/totem/da/figures
+@dirrm share/gnome/help/totem/da
 @dirrm share/gnome/help/totem/cs/figures
 @dirrm share/gnome/help/totem/cs
 @dirrm share/gnome/help/totem/ca/figures
