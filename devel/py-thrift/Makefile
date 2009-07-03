@@ -14,6 +14,8 @@ DISTFILES=
 MAINTAINER=	jdugan@x1024.net
 COMMENT=	Python interface to Thrift
 
+BROKEN=		needs updating for Apache Incubator version
+
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
 USE_PYTHON=	yes
