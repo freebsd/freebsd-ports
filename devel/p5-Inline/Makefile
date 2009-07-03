@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Inline
-PORTVERSION=	0.44
-PORTREVISION=	1
+PORTVERSION=	0.45
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Write Perl subroutines in other programming languages
 
-RUN_DEPENDS=	p5-Parse-RecDescent>=1.8:${PORTSDIR}/devel/p5-Parse-RecDescent
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Parse-RecDescent>=1.8:${PORTSDIR}/devel/p5-Parse-RecDescent
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
