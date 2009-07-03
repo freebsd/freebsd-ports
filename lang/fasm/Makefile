@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fasm
-PORTVERSION=	1.67.34
+PORTVERSION=	1.69.00
 CATEGORIES=	lang devel
 MASTER_SITES=	http://flatassembler.net/
 
