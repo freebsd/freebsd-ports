@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Parse-Method-Signatures
-PORTVERSION=	1.003006
+PORTVERSION=	1.003007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Parse::Method::Signatures.3 \
 		Parse::Method::Signatures::Param.3 \
-		Parse::Method::Signatures::TypeConstraint.3
+		Parse::Method::Signatures::TypeConstraint.3 \
+		Parse::Method::Signatures::Sig.3
 
 .include <bsd.port.mk>
