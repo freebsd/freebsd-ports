@@ -45,7 +45,22 @@ pre-install:
 	@${FIND} ${WRKSRC}/ebin ${WRKSRC}/include -type f | \
 		${XARGS} ${CHMOD} 0644
 
+# TODO: Wrap control scripts to use ${RABBITMQ_USER} via su, much like
+# the installed rc.d script, for user convenience.
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ECHO_MSG}
+	@${ECHO_MSG} "###############################################################################"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Please note:"
+	@${ECHO_MSG} "The \"rabbitmqctl\" command must be run as the \"${RABBITMQ_USER}\" user,"
+	@${ECHO_MSG} "with a real shell, and with the HOME environment variable set to that"
+	@${ECHO_MSG} "user's real home directory."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "sudo users can do something like this:"
+	@${ECHO_MSG} " # sudo -H -u rabbitmq rabbitmqctl ..."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "###############################################################################"
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
