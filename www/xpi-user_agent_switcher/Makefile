@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	user_agent_switcher
-PORTVERSION=	0.6.11
+PORTVERSION=	0.7.2
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 
@@ -20,11 +20,6 @@ XPI_FILES=	chrome.manifest \
 		install.js install.rdf \
 		license.txt
 XPI_DIRS=	chrome
-
-post-patch:
-	@${REINPLACE_CMD} -e '/em:maxVersion/s/3\.0b4/3.*/' \
-		${WRKSRC}/install.rdf
-	@${RM}	${WRKSRC}/install.rdf.*
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
