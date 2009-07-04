@@ -255,175 +255,175 @@ share/claws-mail/themes/Blaue_Klaue/unread.png
 share/claws-mail/themes/Blaue_Klaue/up_arrow.png
 share/claws-mail/themes/Blaue_Klaue/watchthread.png
 share/claws-mail/themes/Blaue_Klaue/watchthread_2.png
-share/claws-mail/themes/Coons_Blue-0.2/.claws_themeinfo
-share/claws-mail/themes/Coons_Blue-0.2/COPYING
-share/claws-mail/themes/Coons_Blue-0.2/README
-share/claws-mail/themes/Coons_Blue-0.2/addr_one.xpm
-share/claws-mail/themes/Coons_Blue-0.2/addr_two.xpm
-share/claws-mail/themes/Coons_Blue-0.2/address.xpm
-share/claws-mail/themes/Coons_Blue-0.2/address_book.xpm
-share/claws-mail/themes/Coons_Blue-0.2/address_search.xpm
-share/claws-mail/themes/Coons_Blue-0.2/anonymous.xpm
-share/claws-mail/themes/Coons_Blue-0.2/book.xpm
-share/claws-mail/themes/Coons_Blue-0.2/category.xpm
-share/claws-mail/themes/Coons_Blue-0.2/check_spelling.xpm
-share/claws-mail/themes/Coons_Blue-0.2/checkbox_off.xpm
-share/claws-mail/themes/Coons_Blue-0.2/checkbox_on.xpm
-share/claws-mail/themes/Coons_Blue-0.2/clip.xpm
-share/claws-mail/themes/Coons_Blue-0.2/clip_gpg_signed.xpm
-share/claws-mail/themes/Coons_Blue-0.2/clipkey.xpm
-share/claws-mail/themes/Coons_Blue-0.2/close.xpm
-share/claws-mail/themes/Coons_Blue-0.2/complete.xpm
-share/claws-mail/themes/Coons_Blue-0.2/continue.xpm
-share/claws-mail/themes/Coons_Blue-0.2/copied.xpm
-share/claws-mail/themes/Coons_Blue-0.2/deleted.xpm
-share/claws-mail/themes/Coons_Blue-0.2/dir_close.xpm
-share/claws-mail/themes/Coons_Blue-0.2/dir_close_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/dir_close_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/dir_close_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/dir_noselect.xpm
-share/claws-mail/themes/Coons_Blue-0.2/dir_open.xpm
-share/claws-mail/themes/Coons_Blue-0.2/dir_open_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/dir_open_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/dir_open_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/down_arrow.xpm
-share/claws-mail/themes/Coons_Blue-0.2/drafts_close.xpm
-share/claws-mail/themes/Coons_Blue-0.2/drafts_close_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/drafts_close_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/drafts_close_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/drafts_open.xpm
-share/claws-mail/themes/Coons_Blue-0.2/drafts_open_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/drafts_open_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/drafts_open_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/edit_extern.xpm
-share/claws-mail/themes/Coons_Blue-0.2/empty.xpm
-share/claws-mail/themes/Coons_Blue-0.2/error.xpm
-share/claws-mail/themes/Coons_Blue-0.2/exec.xpm
-share/claws-mail/themes/Coons_Blue-0.2/forwarded.xpm
-share/claws-mail/themes/Coons_Blue-0.2/go_folders.xpm
-share/claws-mail/themes/Coons_Blue-0.2/gpg_signed.xpm
-share/claws-mail/themes/Coons_Blue-0.2/group.xpm
-share/claws-mail/themes/Coons_Blue-0.2/ham_btn.xpm
-share/claws-mail/themes/Coons_Blue-0.2/ignorethread.xpm
-share/claws-mail/themes/Coons_Blue-0.2/inbox_close.xpm
-share/claws-mail/themes/Coons_Blue-0.2/inbox_close_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/inbox_close_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/inbox_close_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/inbox_open.xpm
-share/claws-mail/themes/Coons_Blue-0.2/inbox_open_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/inbox_open_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/inbox_open_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/insert_file.xpm
-share/claws-mail/themes/Coons_Blue-0.2/interface.xpm
-share/claws-mail/themes/Coons_Blue-0.2/jpilot.xpm
-share/claws-mail/themes/Coons_Blue-0.2/key.xpm
-share/claws-mail/themes/Coons_Blue-0.2/ldap.xpm
-share/claws-mail/themes/Coons_Blue-0.2/linewrap.xpm
-share/claws-mail/themes/Coons_Blue-0.2/linewrapcurrent.xpm
-share/claws-mail/themes/Coons_Blue-0.2/locked.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_attach.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_compose.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_forward.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_receive.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_receive_all.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_reply.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_reply_to_all.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_reply_to_author.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_reply_to_list.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_send.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_send_queue.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mail_sign.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_application.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_audio.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_calendar.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_image.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_message.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_pdf.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_pgpsig.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_ps.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_text_enriched.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_text_html.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_text_plain.xpm
-share/claws-mail/themes/Coons_Blue-0.2/mime_unknown.xpm
-share/claws-mail/themes/Coons_Blue-0.2/moved.xpm
-share/claws-mail/themes/Coons_Blue-0.2/new.xpm
-share/claws-mail/themes/Coons_Blue-0.2/news_compose.xpm
-share/claws-mail/themes/Coons_Blue-0.2/notice_error.xpm
-share/claws-mail/themes/Coons_Blue-0.2/notice_note.xpm
-share/claws-mail/themes/Coons_Blue-0.2/notice_warn.xpm
-share/claws-mail/themes/Coons_Blue-0.2/notice_warning.xpm
-share/claws-mail/themes/Coons_Blue-0.2/offline.xpm
-share/claws-mail/themes/Coons_Blue-0.2/online.xpm
-share/claws-mail/themes/Coons_Blue-0.2/open_mail.xpm
-share/claws-mail/themes/Coons_Blue-0.2/outbox_close.xpm
-share/claws-mail/themes/Coons_Blue-0.2/outbox_close_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/outbox_close_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/outbox_close_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/outbox_open.xpm
-share/claws-mail/themes/Coons_Blue-0.2/outbox_open_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/outbox_open_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/outbox_open_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/paste.xpm
-share/claws-mail/themes/Coons_Blue-0.2/preferences.xpm
-share/claws-mail/themes/Coons_Blue-0.2/print.xpm
-share/claws-mail/themes/Coons_Blue-0.2/printer.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_emblem_encrypted.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_emblem_failed.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_emblem_passed.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_emblem_signed.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_emblem_warn.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_expired.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_failed.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_passed.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_signed.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_unknown.xpm
-share/claws-mail/themes/Coons_Blue-0.2/privacy_warn.xpm
-share/claws-mail/themes/Coons_Blue-0.2/properties.xpm
-share/claws-mail/themes/Coons_Blue-0.2/queue_close.xpm
-share/claws-mail/themes/Coons_Blue-0.2/queue_close_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/queue_close_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/queue_close_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/queue_open.xpm
-share/claws-mail/themes/Coons_Blue-0.2/queue_open_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/queue_open_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/queue_open_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/quicksearch.xpm
-share/claws-mail/themes/Coons_Blue-0.2/read.xpm
-share/claws-mail/themes/Coons_Blue-0.2/replied.xpm
-share/claws-mail/themes/Coons_Blue-0.2/search.xpm
-share/claws-mail/themes/Coons_Blue-0.2/selection.xpm
-share/claws-mail/themes/Coons_Blue-0.2/spam.xpm
-share/claws-mail/themes/Coons_Blue-0.2/spam_btn.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_btn.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_close.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_close_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_close_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_close_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_open.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_open_hrm.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_open_hrm_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/trash_open_mark.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_newmail.offline.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_newmail.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_newmarkedmail.offline.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_newmarkedmail.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_nomail.offline.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_nomail.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_unread.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_unreadmail.offline.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_unreadmail.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_unreadmarkedmail.offline.xpm
-share/claws-mail/themes/Coons_Blue-0.2/tray_unreadmarkedmail.xpm
-share/claws-mail/themes/Coons_Blue-0.2/unread.xpm
-share/claws-mail/themes/Coons_Blue-0.2/up_arrow.xpm
-share/claws-mail/themes/Coons_Blue-0.2/vcard.xpm
-share/claws-mail/themes/Coons_Blue-0.2/watchthread.xpm
+share/claws-mail/themes/Coons-Blue-0.3/.claws_themeinfo
+share/claws-mail/themes/Coons-Blue-0.3/COPYING
+share/claws-mail/themes/Coons-Blue-0.3/README
+share/claws-mail/themes/Coons-Blue-0.3/addr_one.png
+share/claws-mail/themes/Coons-Blue-0.3/addr_two.png
+share/claws-mail/themes/Coons-Blue-0.3/address.png
+share/claws-mail/themes/Coons-Blue-0.3/address_book.png
+share/claws-mail/themes/Coons-Blue-0.3/address_search.png
+share/claws-mail/themes/Coons-Blue-0.3/anonymous.png
+share/claws-mail/themes/Coons-Blue-0.3/book.png
+share/claws-mail/themes/Coons-Blue-0.3/category.png
+share/claws-mail/themes/Coons-Blue-0.3/check_spelling.png
+share/claws-mail/themes/Coons-Blue-0.3/checkbox_off.png
+share/claws-mail/themes/Coons-Blue-0.3/checkbox_on.png
+share/claws-mail/themes/Coons-Blue-0.3/clip.png
+share/claws-mail/themes/Coons-Blue-0.3/clip_gpg_signed.png
+share/claws-mail/themes/Coons-Blue-0.3/clipkey.png
+share/claws-mail/themes/Coons-Blue-0.3/close.png
+share/claws-mail/themes/Coons-Blue-0.3/complete.png
+share/claws-mail/themes/Coons-Blue-0.3/continue.png
+share/claws-mail/themes/Coons-Blue-0.3/copied.png
+share/claws-mail/themes/Coons-Blue-0.3/deleted.png
+share/claws-mail/themes/Coons-Blue-0.3/dir_close.png
+share/claws-mail/themes/Coons-Blue-0.3/dir_close_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/dir_close_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/dir_close_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/dir_noselect.png
+share/claws-mail/themes/Coons-Blue-0.3/dir_open.png
+share/claws-mail/themes/Coons-Blue-0.3/dir_open_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/dir_open_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/dir_open_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/down_arrow.png
+share/claws-mail/themes/Coons-Blue-0.3/drafts_close.png
+share/claws-mail/themes/Coons-Blue-0.3/drafts_close_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/drafts_close_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/drafts_close_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/drafts_open.png
+share/claws-mail/themes/Coons-Blue-0.3/drafts_open_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/drafts_open_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/drafts_open_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/edit_extern.png
+share/claws-mail/themes/Coons-Blue-0.3/empty.png
+share/claws-mail/themes/Coons-Blue-0.3/error.png
+share/claws-mail/themes/Coons-Blue-0.3/exec.png
+share/claws-mail/themes/Coons-Blue-0.3/forwarded.png
+share/claws-mail/themes/Coons-Blue-0.3/go_folders.png
+share/claws-mail/themes/Coons-Blue-0.3/gpg_signed.png
+share/claws-mail/themes/Coons-Blue-0.3/group.png
+share/claws-mail/themes/Coons-Blue-0.3/ham_btn.png
+share/claws-mail/themes/Coons-Blue-0.3/ignorethread.png
+share/claws-mail/themes/Coons-Blue-0.3/inbox_close.png
+share/claws-mail/themes/Coons-Blue-0.3/inbox_close_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/inbox_close_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/inbox_close_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/inbox_open.png
+share/claws-mail/themes/Coons-Blue-0.3/inbox_open_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/inbox_open_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/inbox_open_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/insert_file.png
+share/claws-mail/themes/Coons-Blue-0.3/interface.png
+share/claws-mail/themes/Coons-Blue-0.3/jpilot.png
+share/claws-mail/themes/Coons-Blue-0.3/key.png
+share/claws-mail/themes/Coons-Blue-0.3/ldap.png
+share/claws-mail/themes/Coons-Blue-0.3/linewrap.png
+share/claws-mail/themes/Coons-Blue-0.3/linewrapcurrent.png
+share/claws-mail/themes/Coons-Blue-0.3/locked.png
+share/claws-mail/themes/Coons-Blue-0.3/mail.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_attach.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_compose.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_forward.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_receive.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_receive_all.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_reply.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_reply_to_all.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_reply_to_author.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_reply_to_list.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_send.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_send_queue.png
+share/claws-mail/themes/Coons-Blue-0.3/mail_sign.png
+share/claws-mail/themes/Coons-Blue-0.3/mark.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_application.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_audio.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_calendar.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_image.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_message.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_pdf.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_pgpsig.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_ps.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_text_enriched.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_text_html.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_text_plain.png
+share/claws-mail/themes/Coons-Blue-0.3/mime_unknown.png
+share/claws-mail/themes/Coons-Blue-0.3/moved.png
+share/claws-mail/themes/Coons-Blue-0.3/new.png
+share/claws-mail/themes/Coons-Blue-0.3/news_compose.png
+share/claws-mail/themes/Coons-Blue-0.3/notice_error.png
+share/claws-mail/themes/Coons-Blue-0.3/notice_note.png
+share/claws-mail/themes/Coons-Blue-0.3/notice_warn.png
+share/claws-mail/themes/Coons-Blue-0.3/notice_warning.png
+share/claws-mail/themes/Coons-Blue-0.3/offline.png
+share/claws-mail/themes/Coons-Blue-0.3/online.png
+share/claws-mail/themes/Coons-Blue-0.3/open_mail.png
+share/claws-mail/themes/Coons-Blue-0.3/outbox_close.png
+share/claws-mail/themes/Coons-Blue-0.3/outbox_close_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/outbox_close_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/outbox_close_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/outbox_open.png
+share/claws-mail/themes/Coons-Blue-0.3/outbox_open_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/outbox_open_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/outbox_open_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/paste.png
+share/claws-mail/themes/Coons-Blue-0.3/preferences.png
+share/claws-mail/themes/Coons-Blue-0.3/print.png
+share/claws-mail/themes/Coons-Blue-0.3/printer.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_emblem_encrypted.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_emblem_failed.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_emblem_passed.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_emblem_signed.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_emblem_warn.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_expired.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_failed.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_passed.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_signed.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_unknown.png
+share/claws-mail/themes/Coons-Blue-0.3/privacy_warn.png
+share/claws-mail/themes/Coons-Blue-0.3/properties.png
+share/claws-mail/themes/Coons-Blue-0.3/queue_close.png
+share/claws-mail/themes/Coons-Blue-0.3/queue_close_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/queue_close_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/queue_close_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/queue_open.png
+share/claws-mail/themes/Coons-Blue-0.3/queue_open_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/queue_open_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/queue_open_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/quicksearch.png
+share/claws-mail/themes/Coons-Blue-0.3/read.png
+share/claws-mail/themes/Coons-Blue-0.3/replied.png
+share/claws-mail/themes/Coons-Blue-0.3/search.png
+share/claws-mail/themes/Coons-Blue-0.3/selection.png
+share/claws-mail/themes/Coons-Blue-0.3/spam.png
+share/claws-mail/themes/Coons-Blue-0.3/spam_btn.png
+share/claws-mail/themes/Coons-Blue-0.3/trash.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_btn.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_close.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_close_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_close_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_close_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_open.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_open_hrm.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_open_hrm_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/trash_open_mark.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_newmail.offline.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_newmail.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_newmarkedmail.offline.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_newmarkedmail.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_nomail.offline.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_nomail.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_unread.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_unreadmail.offline.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_unreadmail.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_unreadmarkedmail.offline.png
+share/claws-mail/themes/Coons-Blue-0.3/tray_unreadmarkedmail.png
+share/claws-mail/themes/Coons-Blue-0.3/unread.png
+share/claws-mail/themes/Coons-Blue-0.3/up_arrow.png
+share/claws-mail/themes/Coons-Blue-0.3/vcard.png
+share/claws-mail/themes/Coons-Blue-0.3/watchthread.png
 share/claws-mail/themes/Crystal/.claws_themeinfo
 share/claws-mail/themes/Crystal/.sylpheed_themeinfo
 share/claws-mail/themes/Crystal/close.xpm
@@ -1460,112 +1460,112 @@ share/claws-mail/themes/New_Session/trash_open_hrm.xpm
 share/claws-mail/themes/New_Session/unread.xpm
 share/claws-mail/themes/New_Session/up_arrow.xpm
 share/claws-mail/themes/New_Session/vcard.xpm
-share/claws-mail/themes/Old Dark Theme/.claws_themeinfo
-share/claws-mail/themes/Old Dark Theme/address_book.xpm
-share/claws-mail/themes/Old Dark Theme/address_search.xpm
-share/claws-mail/themes/Old Dark Theme/category.xpm
-share/claws-mail/themes/Old Dark Theme/check_spelling.xpm
-share/claws-mail/themes/Old Dark Theme/checkbox_off.xpm
-share/claws-mail/themes/Old Dark Theme/checkbox_on.xpm
-share/claws-mail/themes/Old Dark Theme/claws-mail.xpm
-share/claws-mail/themes/Old Dark Theme/clip.xpm
-share/claws-mail/themes/Old Dark Theme/clipkey.xpm
-share/claws-mail/themes/Old Dark Theme/close.xpm
-share/claws-mail/themes/Old Dark Theme/complete.xpm
-share/claws-mail/themes/Old Dark Theme/continue.xpm
-share/claws-mail/themes/Old Dark Theme/deleted.xpm
-share/claws-mail/themes/Old Dark Theme/dir_close.xpm
-share/claws-mail/themes/Old Dark Theme/dir_close_hrm.xpm
-share/claws-mail/themes/Old Dark Theme/dir_close_hrm_mark.xpm
-share/claws-mail/themes/Old Dark Theme/dir_close_mark.xpm
-share/claws-mail/themes/Old Dark Theme/dir_noselect.xpm
-share/claws-mail/themes/Old Dark Theme/dir_open.xpm
-share/claws-mail/themes/Old Dark Theme/dir_open_hrm.xpm
-share/claws-mail/themes/Old Dark Theme/dir_open_hrm_mark.xpm
-share/claws-mail/themes/Old Dark Theme/dir_open_mark.xpm
-share/claws-mail/themes/Old Dark Theme/down_arrow.xpm
-share/claws-mail/themes/Old Dark Theme/drafts_close.xpm
-share/claws-mail/themes/Old Dark Theme/drafts_close_mark.xpm
-share/claws-mail/themes/Old Dark Theme/drafts_open.xpm
-share/claws-mail/themes/Old Dark Theme/drafts_open_mark.xpm
-share/claws-mail/themes/Old Dark Theme/error.xpm
-share/claws-mail/themes/Old Dark Theme/exec.xpm
-share/claws-mail/themes/Old Dark Theme/forwarded.xpm
-share/claws-mail/themes/Old Dark Theme/gpg_signed.xpm
-share/claws-mail/themes/Old Dark Theme/ham_btn.xpm
-share/claws-mail/themes/Old Dark Theme/ignorethread.xpm
-share/claws-mail/themes/Old Dark Theme/inbox.xpm
-share/claws-mail/themes/Old Dark Theme/inbox_hrm.xpm
-share/claws-mail/themes/Old Dark Theme/inbox_hrm_mark.xpm
-share/claws-mail/themes/Old Dark Theme/inbox_mark.xpm
-share/claws-mail/themes/Old Dark Theme/key.xpm
-share/claws-mail/themes/Old Dark Theme/linewrap.xpm
-share/claws-mail/themes/Old Dark Theme/linewrapcurrent.xpm
-share/claws-mail/themes/Old Dark Theme/locked.xpm
-share/claws-mail/themes/Old Dark Theme/mail.xpm
-share/claws-mail/themes/Old Dark Theme/mail_attach.xpm
-share/claws-mail/themes/Old Dark Theme/mail_compose.xpm
-share/claws-mail/themes/Old Dark Theme/mail_forward.xpm
-share/claws-mail/themes/Old Dark Theme/mail_receive.xpm
-share/claws-mail/themes/Old Dark Theme/mail_receive_all.xpm
-share/claws-mail/themes/Old Dark Theme/mail_reply.xpm
-share/claws-mail/themes/Old Dark Theme/mail_reply_to_all.xpm
-share/claws-mail/themes/Old Dark Theme/mail_reply_to_author.xpm
-share/claws-mail/themes/Old Dark Theme/mail_send.xpm
-share/claws-mail/themes/Old Dark Theme/mail_send_queue.xpm
-share/claws-mail/themes/Old Dark Theme/mark.xpm
-share/claws-mail/themes/Old Dark Theme/mime_application.xpm
-share/claws-mail/themes/Old Dark Theme/mime_audio.xpm
-share/claws-mail/themes/Old Dark Theme/mime_image.xpm
-share/claws-mail/themes/Old Dark Theme/mime_message.xpm
-share/claws-mail/themes/Old Dark Theme/mime_text_enriched.xpm
-share/claws-mail/themes/Old Dark Theme/mime_text_html.xpm
-share/claws-mail/themes/Old Dark Theme/mime_text_plain.xpm
-share/claws-mail/themes/Old Dark Theme/mime_unknown.xpm
-share/claws-mail/themes/Old Dark Theme/new.xpm
-share/claws-mail/themes/Old Dark Theme/news_compose.xpm
-share/claws-mail/themes/Old Dark Theme/notice_error.xpm
-share/claws-mail/themes/Old Dark Theme/notice_note.xpm
-share/claws-mail/themes/Old Dark Theme/notice_warn.xpm
-share/claws-mail/themes/Old Dark Theme/offline.xpm
-share/claws-mail/themes/Old Dark Theme/online.xpm
-share/claws-mail/themes/Old Dark Theme/outbox.xpm
-share/claws-mail/themes/Old Dark Theme/outbox_hrm.xpm
-share/claws-mail/themes/Old Dark Theme/outbox_hrm_mark.xpm
-share/claws-mail/themes/Old Dark Theme/outbox_mark.xpm
-share/claws-mail/themes/Old Dark Theme/paste.xpm
-share/claws-mail/themes/Old Dark Theme/preferences.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_emblem_encrypted.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_emblem_failed.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_emblem_passed.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_emblem_signed.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_emblem_warn.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_expired.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_failed.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_passed.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_signed.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_unknown.xpm
-share/claws-mail/themes/Old Dark Theme/privacy_warn.xpm
-share/claws-mail/themes/Old Dark Theme/properties.xpm
-share/claws-mail/themes/Old Dark Theme/queue_close.xpm
-share/claws-mail/themes/Old Dark Theme/queue_close_hrm.xpm
-share/claws-mail/themes/Old Dark Theme/queue_close_hrm_mark.xpm
-share/claws-mail/themes/Old Dark Theme/queue_close_mark.xpm
-share/claws-mail/themes/Old Dark Theme/queue_open.xpm
-share/claws-mail/themes/Old Dark Theme/queue_open_hrm.xpm
-share/claws-mail/themes/Old Dark Theme/queue_open_hrm_mark.xpm
-share/claws-mail/themes/Old Dark Theme/queue_open_mark.xpm
-share/claws-mail/themes/Old Dark Theme/quicksearch.xpm
-share/claws-mail/themes/Old Dark Theme/read.xpm
-share/claws-mail/themes/Old Dark Theme/replied.xpm
-share/claws-mail/themes/Old Dark Theme/search.xpm
-share/claws-mail/themes/Old Dark Theme/spam_btn.xpm
-share/claws-mail/themes/Old Dark Theme/trash.xpm
-share/claws-mail/themes/Old Dark Theme/trash_hrm.xpm
-share/claws-mail/themes/Old Dark Theme/trash_hrm_mark.xpm
-share/claws-mail/themes/Old Dark Theme/trash_mark.xpm
-share/claws-mail/themes/Old Dark Theme/unread.xpm
-share/claws-mail/themes/Old Dark Theme/up_arrow.xpm
+share/claws-mail/themes/Old_Dark_Theme/.claws_themeinfo
+share/claws-mail/themes/Old_Dark_Theme/address_book.xpm
+share/claws-mail/themes/Old_Dark_Theme/address_search.xpm
+share/claws-mail/themes/Old_Dark_Theme/category.xpm
+share/claws-mail/themes/Old_Dark_Theme/check_spelling.xpm
+share/claws-mail/themes/Old_Dark_Theme/checkbox_off.xpm
+share/claws-mail/themes/Old_Dark_Theme/checkbox_on.xpm
+share/claws-mail/themes/Old_Dark_Theme/claws-mail.xpm
+share/claws-mail/themes/Old_Dark_Theme/clip.xpm
+share/claws-mail/themes/Old_Dark_Theme/clipkey.xpm
+share/claws-mail/themes/Old_Dark_Theme/close.xpm
+share/claws-mail/themes/Old_Dark_Theme/complete.xpm
+share/claws-mail/themes/Old_Dark_Theme/continue.xpm
+share/claws-mail/themes/Old_Dark_Theme/deleted.xpm
+share/claws-mail/themes/Old_Dark_Theme/dir_close.xpm
+share/claws-mail/themes/Old_Dark_Theme/dir_close_hrm.xpm
+share/claws-mail/themes/Old_Dark_Theme/dir_close_hrm_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/dir_close_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/dir_noselect.xpm
+share/claws-mail/themes/Old_Dark_Theme/dir_open.xpm
+share/claws-mail/themes/Old_Dark_Theme/dir_open_hrm.xpm
+share/claws-mail/themes/Old_Dark_Theme/dir_open_hrm_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/dir_open_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/down_arrow.xpm
+share/claws-mail/themes/Old_Dark_Theme/drafts_close.xpm
+share/claws-mail/themes/Old_Dark_Theme/drafts_close_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/drafts_open.xpm
+share/claws-mail/themes/Old_Dark_Theme/drafts_open_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/error.xpm
+share/claws-mail/themes/Old_Dark_Theme/exec.xpm
+share/claws-mail/themes/Old_Dark_Theme/forwarded.xpm
+share/claws-mail/themes/Old_Dark_Theme/gpg_signed.xpm
+share/claws-mail/themes/Old_Dark_Theme/ham_btn.xpm
+share/claws-mail/themes/Old_Dark_Theme/ignorethread.xpm
+share/claws-mail/themes/Old_Dark_Theme/inbox.xpm
+share/claws-mail/themes/Old_Dark_Theme/inbox_hrm.xpm
+share/claws-mail/themes/Old_Dark_Theme/inbox_hrm_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/inbox_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/key.xpm
+share/claws-mail/themes/Old_Dark_Theme/linewrap.xpm
+share/claws-mail/themes/Old_Dark_Theme/linewrapcurrent.xpm
+share/claws-mail/themes/Old_Dark_Theme/locked.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_attach.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_compose.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_forward.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_receive.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_receive_all.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_reply.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_reply_to_all.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_reply_to_author.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_send.xpm
+share/claws-mail/themes/Old_Dark_Theme/mail_send_queue.xpm
+share/claws-mail/themes/Old_Dark_Theme/mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/mime_application.xpm
+share/claws-mail/themes/Old_Dark_Theme/mime_audio.xpm
+share/claws-mail/themes/Old_Dark_Theme/mime_image.xpm
+share/claws-mail/themes/Old_Dark_Theme/mime_message.xpm
+share/claws-mail/themes/Old_Dark_Theme/mime_text_enriched.xpm
+share/claws-mail/themes/Old_Dark_Theme/mime_text_html.xpm
+share/claws-mail/themes/Old_Dark_Theme/mime_text_plain.xpm
+share/claws-mail/themes/Old_Dark_Theme/mime_unknown.xpm
+share/claws-mail/themes/Old_Dark_Theme/new.xpm
+share/claws-mail/themes/Old_Dark_Theme/news_compose.xpm
+share/claws-mail/themes/Old_Dark_Theme/notice_error.xpm
+share/claws-mail/themes/Old_Dark_Theme/notice_note.xpm
+share/claws-mail/themes/Old_Dark_Theme/notice_warn.xpm
+share/claws-mail/themes/Old_Dark_Theme/offline.xpm
+share/claws-mail/themes/Old_Dark_Theme/online.xpm
+share/claws-mail/themes/Old_Dark_Theme/outbox.xpm
+share/claws-mail/themes/Old_Dark_Theme/outbox_hrm.xpm
+share/claws-mail/themes/Old_Dark_Theme/outbox_hrm_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/outbox_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/paste.xpm
+share/claws-mail/themes/Old_Dark_Theme/preferences.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_emblem_encrypted.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_emblem_failed.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_emblem_passed.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_emblem_signed.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_emblem_warn.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_expired.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_failed.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_passed.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_signed.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_unknown.xpm
+share/claws-mail/themes/Old_Dark_Theme/privacy_warn.xpm
+share/claws-mail/themes/Old_Dark_Theme/properties.xpm
+share/claws-mail/themes/Old_Dark_Theme/queue_close.xpm
+share/claws-mail/themes/Old_Dark_Theme/queue_close_hrm.xpm
+share/claws-mail/themes/Old_Dark_Theme/queue_close_hrm_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/queue_close_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/queue_open.xpm
+share/claws-mail/themes/Old_Dark_Theme/queue_open_hrm.xpm
+share/claws-mail/themes/Old_Dark_Theme/queue_open_hrm_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/queue_open_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/quicksearch.xpm
+share/claws-mail/themes/Old_Dark_Theme/read.xpm
+share/claws-mail/themes/Old_Dark_Theme/replied.xpm
+share/claws-mail/themes/Old_Dark_Theme/search.xpm
+share/claws-mail/themes/Old_Dark_Theme/spam_btn.xpm
+share/claws-mail/themes/Old_Dark_Theme/trash.xpm
+share/claws-mail/themes/Old_Dark_Theme/trash_hrm.xpm
+share/claws-mail/themes/Old_Dark_Theme/trash_hrm_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/trash_mark.xpm
+share/claws-mail/themes/Old_Dark_Theme/unread.xpm
+share/claws-mail/themes/Old_Dark_Theme/up_arrow.xpm
 share/claws-mail/themes/Phoenity/.claws_themeinfo
 share/claws-mail/themes/Phoenity/.sylpheed_themeinfo
 share/claws-mail/themes/Phoenity/address.xpm
@@ -1698,90 +1698,90 @@ share/claws-mail/themes/Plain_and_Bluish/trash_open_hrm.xpm
 share/claws-mail/themes/Plain_and_Bluish/unread.xpm
 share/claws-mail/themes/Plain_and_Bluish/up_arrow.xpm
 share/claws-mail/themes/Plain_and_Bluish/vcard.xpm
-share/claws-mail/themes/Skypilot Clawssic/.claws_themeinfo
-share/claws-mail/themes/Skypilot Clawssic/.sylpheed_themeinfo
-share/claws-mail/themes/Skypilot Clawssic/README
-share/claws-mail/themes/Skypilot Clawssic/address.xpm
-share/claws-mail/themes/Skypilot Clawssic/address_book.xpm
-share/claws-mail/themes/Skypilot Clawssic/book.xpm
-share/claws-mail/themes/Skypilot Clawssic/checkbox_off.xpm
-share/claws-mail/themes/Skypilot Clawssic/checkbox_on.xpm
-share/claws-mail/themes/Skypilot Clawssic/clip.xpm
-share/claws-mail/themes/Skypilot Clawssic/clipkey.xpm
-share/claws-mail/themes/Skypilot Clawssic/close.xpm
-share/claws-mail/themes/Skypilot Clawssic/complete.xpm
-share/claws-mail/themes/Skypilot Clawssic/continue.xpm
-share/claws-mail/themes/Skypilot Clawssic/deleted.xpm
-share/claws-mail/themes/Skypilot Clawssic/dir_close.xpm
-share/claws-mail/themes/Skypilot Clawssic/dir_close_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/dir_open.xpm
-share/claws-mail/themes/Skypilot Clawssic/dir_open_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/down_arrow.xpm
-share/claws-mail/themes/Skypilot Clawssic/drafts_close.xpm
-share/claws-mail/themes/Skypilot Clawssic/drafts_close_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/drafts_open.xpm
-share/claws-mail/themes/Skypilot Clawssic/drafts_open_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/edit_extern.xpm
-share/claws-mail/themes/Skypilot Clawssic/error.xpm
-share/claws-mail/themes/Skypilot Clawssic/exec.xpm
-share/claws-mail/themes/Skypilot Clawssic/forwarded.xpm
-share/claws-mail/themes/Skypilot Clawssic/gpg_signed.xpm
-share/claws-mail/themes/Skypilot Clawssic/inbox_close.xpm
-share/claws-mail/themes/Skypilot Clawssic/inbox_close_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/inbox_open.xpm
-share/claws-mail/themes/Skypilot Clawssic/inbox_open_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/insert_file.xpm
-share/claws-mail/themes/Skypilot Clawssic/interface.xpm
-share/claws-mail/themes/Skypilot Clawssic/jpilot.xpm
-share/claws-mail/themes/Skypilot Clawssic/key.xpm
-share/claws-mail/themes/Skypilot Clawssic/ldap.xpm
-share/claws-mail/themes/Skypilot Clawssic/linewrap.xpm
-share/claws-mail/themes/Skypilot Clawssic/locked.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_attach.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_compose.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_forward.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_receive.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_receive_all.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_reply.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_reply_to_all.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_reply_to_author.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_send.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_send_queue.xpm
-share/claws-mail/themes/Skypilot Clawssic/mail_sign.xpm
-share/claws-mail/themes/Skypilot Clawssic/mark.xpm
-share/claws-mail/themes/Skypilot Clawssic/messageview_text.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_application.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_audio.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_gpg_expired.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_gpg_failed.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_gpg_passed.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_gpg_signed.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_gpg_unknown.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_image.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_text_enriched.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_text_html.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_text_plain.xpm
-share/claws-mail/themes/Skypilot Clawssic/mime_unknown.xpm
-share/claws-mail/themes/Skypilot Clawssic/new.xpm
-share/claws-mail/themes/Skypilot Clawssic/notice_warn.xpm
-share/claws-mail/themes/Skypilot Clawssic/outbox_close.xpm
-share/claws-mail/themes/Skypilot Clawssic/outbox_close_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/outbox_open.xpm
-share/claws-mail/themes/Skypilot Clawssic/outbox_open_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/queue_close.xpm
-share/claws-mail/themes/Skypilot Clawssic/queue_close_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/queue_open.xpm
-share/claws-mail/themes/Skypilot Clawssic/queue_open_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/quicksearch.xpm
-share/claws-mail/themes/Skypilot Clawssic/replied.xpm
-share/claws-mail/themes/Skypilot Clawssic/trash_close.xpm
-share/claws-mail/themes/Skypilot Clawssic/trash_close_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/trash_open.xpm
-share/claws-mail/themes/Skypilot Clawssic/trash_open_hrm.xpm
-share/claws-mail/themes/Skypilot Clawssic/unread.xpm
-share/claws-mail/themes/Skypilot Clawssic/work_offline.xpm
-share/claws-mail/themes/Skypilot Clawssic/work_online.xpm
+share/claws-mail/themes/Skypilot_Clawssic/.claws_themeinfo
+share/claws-mail/themes/Skypilot_Clawssic/.sylpheed_themeinfo
+share/claws-mail/themes/Skypilot_Clawssic/README
+share/claws-mail/themes/Skypilot_Clawssic/address.xpm
+share/claws-mail/themes/Skypilot_Clawssic/address_book.xpm
+share/claws-mail/themes/Skypilot_Clawssic/book.xpm
+share/claws-mail/themes/Skypilot_Clawssic/checkbox_off.xpm
+share/claws-mail/themes/Skypilot_Clawssic/checkbox_on.xpm
+share/claws-mail/themes/Skypilot_Clawssic/clip.xpm
+share/claws-mail/themes/Skypilot_Clawssic/clipkey.xpm
+share/claws-mail/themes/Skypilot_Clawssic/close.xpm
+share/claws-mail/themes/Skypilot_Clawssic/complete.xpm
+share/claws-mail/themes/Skypilot_Clawssic/continue.xpm
+share/claws-mail/themes/Skypilot_Clawssic/deleted.xpm
+share/claws-mail/themes/Skypilot_Clawssic/dir_close.xpm
+share/claws-mail/themes/Skypilot_Clawssic/dir_close_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/dir_open.xpm
+share/claws-mail/themes/Skypilot_Clawssic/dir_open_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/down_arrow.xpm
+share/claws-mail/themes/Skypilot_Clawssic/drafts_close.xpm
+share/claws-mail/themes/Skypilot_Clawssic/drafts_close_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/drafts_open.xpm
+share/claws-mail/themes/Skypilot_Clawssic/drafts_open_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/edit_extern.xpm
+share/claws-mail/themes/Skypilot_Clawssic/error.xpm
+share/claws-mail/themes/Skypilot_Clawssic/exec.xpm
+share/claws-mail/themes/Skypilot_Clawssic/forwarded.xpm
+share/claws-mail/themes/Skypilot_Clawssic/gpg_signed.xpm
+share/claws-mail/themes/Skypilot_Clawssic/inbox_close.xpm
+share/claws-mail/themes/Skypilot_Clawssic/inbox_close_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/inbox_open.xpm
+share/claws-mail/themes/Skypilot_Clawssic/inbox_open_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/insert_file.xpm
+share/claws-mail/themes/Skypilot_Clawssic/interface.xpm
+share/claws-mail/themes/Skypilot_Clawssic/jpilot.xpm
+share/claws-mail/themes/Skypilot_Clawssic/key.xpm
+share/claws-mail/themes/Skypilot_Clawssic/ldap.xpm
+share/claws-mail/themes/Skypilot_Clawssic/linewrap.xpm
+share/claws-mail/themes/Skypilot_Clawssic/locked.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_attach.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_compose.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_forward.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_receive.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_receive_all.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_reply.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_reply_to_all.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_reply_to_author.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_send.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_send_queue.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mail_sign.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mark.xpm
+share/claws-mail/themes/Skypilot_Clawssic/messageview_text.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_application.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_audio.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_gpg_expired.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_gpg_failed.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_gpg_passed.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_gpg_signed.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_gpg_unknown.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_image.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_text_enriched.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_text_html.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_text_plain.xpm
+share/claws-mail/themes/Skypilot_Clawssic/mime_unknown.xpm
+share/claws-mail/themes/Skypilot_Clawssic/new.xpm
+share/claws-mail/themes/Skypilot_Clawssic/notice_warn.xpm
+share/claws-mail/themes/Skypilot_Clawssic/outbox_close.xpm
+share/claws-mail/themes/Skypilot_Clawssic/outbox_close_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/outbox_open.xpm
+share/claws-mail/themes/Skypilot_Clawssic/outbox_open_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/queue_close.xpm
+share/claws-mail/themes/Skypilot_Clawssic/queue_close_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/queue_open.xpm
+share/claws-mail/themes/Skypilot_Clawssic/queue_open_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/quicksearch.xpm
+share/claws-mail/themes/Skypilot_Clawssic/replied.xpm
+share/claws-mail/themes/Skypilot_Clawssic/trash_close.xpm
+share/claws-mail/themes/Skypilot_Clawssic/trash_close_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/trash_open.xpm
+share/claws-mail/themes/Skypilot_Clawssic/trash_open_hrm.xpm
+share/claws-mail/themes/Skypilot_Clawssic/unread.xpm
+share/claws-mail/themes/Skypilot_Clawssic/work_offline.xpm
+share/claws-mail/themes/Skypilot_Clawssic/work_online.xpm
 share/claws-mail/themes/SylZilla/.claws_themeinfo
 share/claws-mail/themes/SylZilla/.sylpheed_themeinfo
 share/claws-mail/themes/SylZilla/ChangeLog
@@ -3505,10 +3505,10 @@ share/claws-mail/themes/tom_2.1.1/work_online.xpm
 @dirrm share/claws-mail/themes/TangoClaws-0.3
 @dirrm share/claws-mail/themes/Sylpholution
 @dirrm share/claws-mail/themes/SylZilla
-@dirrm share/claws-mail/themes/Skypilot Clawssic
+@dirrm share/claws-mail/themes/Skypilot_Clawssic
 @dirrm share/claws-mail/themes/Plain_and_Bluish
 @dirrm share/claws-mail/themes/Phoenity
-@dirrm share/claws-mail/themes/Old Dark Theme
+@dirrm share/claws-mail/themes/Old_Dark_Theme
 @dirrm share/claws-mail/themes/New_Session
 @dirrm share/claws-mail/themes/Navigator
 @dirrm share/claws-mail/themes/Logos-1.0.1
@@ -3521,7 +3521,7 @@ share/claws-mail/themes/tom_2.1.1/work_online.xpm
 @dirrm share/claws-mail/themes/Gnomaws-0.6a
 @dirrm share/claws-mail/themes/Everaldo_Kids
 @dirrm share/claws-mail/themes/Crystal
-@dirrm share/claws-mail/themes/Coons_Blue-0.2
+@dirrm share/claws-mail/themes/Coons-Blue-0.3
 @dirrm share/claws-mail/themes/Blaue_Klaue
 @dirrm share/claws-mail/themes/A_Ducks_Claw
 @dirrmtry share/claws-mail/themes
