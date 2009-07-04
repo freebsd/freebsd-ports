@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Thrift
-PORTVERSION=	0.1
+PORTVERSION=	20090622
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 DISTFILES=
@@ -14,11 +14,9 @@ DISTFILES=
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perl interface to Thrift
 
-BROKEN=		needs updating for Apache Incubator version
-
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Bit/Vector.pm:${PORTSDIR}/math/p5-Bit-Vector
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract \
-		${RUN_DEPENDS}
+		${SITE_PERL}/${PERL_ARCH}/Bit/Vector.pm:${PORTSDIR}/math/p5-Bit-Vector
 
 PERL_CONFIGURE=	5.6.0+
 
