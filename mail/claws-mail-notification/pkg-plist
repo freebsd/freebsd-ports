@@ -6,7 +6,9 @@ lib/claws-mail/plugins/notification_plugin.so
 %%NLS%%share/locale/fi/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/notification_plugin.mo
+%%NLS%%share/locale/id/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/it/LC_MESSAGES/notification_plugin.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/notification_plugin.mo
