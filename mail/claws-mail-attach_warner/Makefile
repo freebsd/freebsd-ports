@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	attach_warner
-PORTVERSION=	0.2.16
+PORTVERSION=	0.2.17
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -15,8 +15,8 @@ DISTNAME=	attachwarner-${PORTVERSION}
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Not attached file warning plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.7.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
