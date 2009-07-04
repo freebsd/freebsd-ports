@@ -2281,6 +2281,7 @@
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-RPyC
     SUBDIR += py-SymbolType
+    SUBDIR += py-ToscaWidgets
     SUBDIR += py-TurboJinja
     SUBDIR += py-anonfunc
     SUBDIR += py-argparse
