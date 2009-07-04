@@ -6,23 +6,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=		rdup
+PORTNAME=	rdup
 PORTVERSION=	1.0.0
-CATEGORIES=		sysutils
+CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-				http://miek.nl/projects/rdup/
+		http://miek.nl/projects/rdup/
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	A tool to generate an (incremental) backup file list
 
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
-				pcre:${PORTSDIR}/devel/pcre \
-				archive:${PORTSDIR}/archivers/libarchive \
-				nettle:${PORTSDIR}/security/nettle
+		pcre:${PORTSDIR}/devel/pcre \
+		archive:${PORTSDIR}/archivers/libarchive \
+		nettle:${PORTSDIR}/security/nettle
 
-USE_BZIP2=		yes
+USE_BZIP2=	yes
 
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
