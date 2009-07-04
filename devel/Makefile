@@ -2427,6 +2427,7 @@
     SUBDIR += py-ruledispatch
     SUBDIR += py-sendfile
     SUBDIR += py-setuptools
+    SUBDIR += py-setuptools_darcs
     SUBDIR += py-shapely
     SUBDIR += py-simplejson
     SUBDIR += py-simpleparse
