@@ -1,0 +1,45 @@
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/test_handler.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/test_service.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift.app
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_base64_transport.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_binary_protocol.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_buffered_transport.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_client.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_disk_log_transport.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_file_transport.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_framed_transport.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_http_transport.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_memory_buffer.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_processor.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_protocol.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_server.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_service.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_socket_server.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_socket_transport.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/thrift_transport.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/thrift_constants.hrl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/thrift_protocol.hrl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/test_handler.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/test_service.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift.app.src
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift.appup.src
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_base64_transport.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_binary_protocol.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_buffered_transport.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_client.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_disk_log_transport.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_file_transport.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_framed_transport.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_http_transport.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_memory_buffer.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_processor.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_protocol.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_server.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_service.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_socket_server.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_socket_transport.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/thrift_transport.erl
+@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%

@@ -313,6 +313,7 @@
     SUBDIR += eric
     SUBDIR += eric4
     SUBDIR += eris
+    SUBDIR += erlang-thrift
     SUBDIR += error
     SUBDIR += esdl
     SUBDIR += esvn
