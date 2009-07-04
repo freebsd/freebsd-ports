@@ -23,4 +23,8 @@ LIB_DEPENDS=	hdf5.6:${PORTSDIR}/science/hdf5-18 \
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
+		${WRKSRC}/setup.py
+
 .include <bsd.port.mk>
