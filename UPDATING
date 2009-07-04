@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090704:
+  AFFECTS: users of www/yaws
+  AUTHOR: olgeni@FreeBSD.org
+
+  The default configuration file path was changed to ${LOCALBASE}/etc/yaws in version 1.83.
+
+  Please remember to update your configuration before upgrading.
+
 20090628:
   AFFECTS: users of www/firefox3-devel
   AUTHOR: gecko@FreeBSD.org
