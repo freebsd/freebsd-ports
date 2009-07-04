@@ -6,7 +6,9 @@ lib/claws-mail/plugins/spamreport.so
 %%NLS%%share/locale/fi/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/spam_report.mo
+%%NLS%%share/locale/id/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/it/LC_MESSAGES/spam_report.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/spam_report.mo
