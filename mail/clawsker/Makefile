@@ -7,13 +7,14 @@
 
 PORTNAME=	clawsker
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Applet to edit Claws Mail's hidden preferences
 
-RUN_DEPENDS=	claws-mail>=3.5.0:${PORTSDIR}/mail/claws-mail \
+RUN_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 

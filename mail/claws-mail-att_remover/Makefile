@@ -7,7 +7,7 @@
 
 PORTNAME=	att_remover
 PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	claws-mail-
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Attachments removing plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.7.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262
