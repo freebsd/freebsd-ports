@@ -23,6 +23,10 @@ PLIST_FILES=	bin/unworkable
 
 MAN1=	unworkable.1
 
+post-extract:
+	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
+		${WRKSRC}/SConstruct
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unworkable ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/unworkable.1 ${MANPREFIX}/man/man1/
