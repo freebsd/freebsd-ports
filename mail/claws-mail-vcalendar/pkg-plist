@@ -1,5 +1,5 @@
+include/claws-mail/plugins/vcalendar/ical.h
 include/claws-mail/plugins/vcalendar/vcal_interface.h
-include/ical.h
 lib/claws-mail/plugins/vcalendar.a
 lib/claws-mail/plugins/vcalendar.la
 lib/claws-mail/plugins/vcalendar.so
@@ -10,9 +10,12 @@ lib/claws-mail/plugins/vcalendar.so
 %%NLS%%share/locale/fi/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/id/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/it/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/vcalendar.mo
