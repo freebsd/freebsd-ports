@@ -34,7 +34,7 @@ MAN5=		rabbitmq.conf.5
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/default|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${PREFIX}/bin/erl|g' \
+	@${REINPLACE_CMD} -e 's|/etc/rabbitmq|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${LOCALBASE}/bin/erl|g' \
 		${SCRIPTS_DIR}/rabbitmq-multi ${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl
 	@${FIND} ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
 
