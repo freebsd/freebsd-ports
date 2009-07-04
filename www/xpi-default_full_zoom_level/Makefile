@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	default_full_zoom_level
-PORTVERSION=	3.9
+PORTVERSION=	4.2
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
