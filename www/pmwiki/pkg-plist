@@ -140,7 +140,6 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageDirectives
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageFileFormat
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageHistory
-%%PMWIKIDIR%%/wikilib.d/PmWiki.PageListDefaultTemplates
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageListTemplates
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageLists
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageTextVariables
