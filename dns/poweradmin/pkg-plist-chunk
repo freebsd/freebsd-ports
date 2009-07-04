@@ -1,0 +1,5 @@
+@mode 640
+@unexec if cmp -s %D/%%WWWDIR%%/inc/config-me.inc.php %D/%%WWWDIR%%/inc/config.inc.php; then rm -f %D/%%WWWDIR%%/inc/config.inc.php; fi
+%%WWWDIR%%/inc/config-me.inc.php
+@exec if [ ! -f %B/inc/config.inc.php ] ; then cp -p %B/%f %B/inc/config.inc.php; fi
+@mode
