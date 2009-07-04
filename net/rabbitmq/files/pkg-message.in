@@ -1,0 +1,16 @@
+
+##############################################################################
+
+Please note:
+The "rabbitmqctl" command must be run as the %%RABBITMQ_USER%% user,
+with a real shell, and with the ${HOME} environment variable set to that
+user's real home directory.
+
+su users can do something like this:
+ # env HOME=/home/%%RABBITMQ_USER%% su -m %%RABBITMQ_USER%% -c 'rabbitmqctl ...'
+
+sudo users can do something like this:
+ # sudo -H -u %%RABBITMQ_USER%% rabbitmqctl ...
+
+##############################################################################
+

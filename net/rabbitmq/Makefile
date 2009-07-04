@@ -20,18 +20,28 @@ RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-MAKE_ENV+=	TARGET_DIR="${PREFIX}/lib/erlang/lib/rabbitmq_server-${PORTVERSION}" SBIN_DIR="${PREFIX}/sbin/" \
-		MAN_DIR="${PREFIX}/man"
-SCRIPTS_DIR=	${WRKSRC}/scripts/
 USE_RC_SUBR=	rabbitmq
-PLIST_SUB=	"VERSION=${PORTVERSION}"
-SUB_FILES=	pkg-install
+
+RABBITMQ_GID=	135
+RABBITMQ_GROUP=	rabbitmq
+RABBITMQ_UID=	135
 RABBITMQ_USER=	rabbitmq
-RABBITMQ_GROUP=	${RABBITMQ_USER}
+
+PLIST_SUB=	"VERSION=${PORTVERSION}"
+
+SUB_FILES=	pkg-install pkg-message
+SUB_LIST=	RABBITMQ_GID=${RABBITMQ_GID} \
+		RABBITMQ_GROUP=${RABBITMQ_GROUP} \
+		RABBITMQ_UID=${RABBITMQ_UID} \
+		RABBITMQ_USER=${RABBITMQ_USER}
 
 MAN1=		rabbitmq-multi.1 rabbitmq-server.1 rabbitmqctl.1
 MAN5=		rabbitmq.conf.5
 MANCOMPRESSED=	yes
+
+SCRIPTS_DIR=	${WRKSRC}/scripts/
+MAKE_ENV+=	TARGET_DIR="${PREFIX}/lib/erlang/lib/rabbitmq_server-${PORTVERSION}" SBIN_DIR="${PREFIX}/sbin/" \
+		MAN_DIR="${PREFIX}/man"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/rabbitmq|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${LOCALBASE}/bin/erl|g' \
@@ -49,18 +59,6 @@ pre-install:
 # the installed rc.d script, for user convenience.
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO_MSG}
-	@${ECHO_MSG} "###############################################################################"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Please note:"
-	@${ECHO_MSG} "The \"rabbitmqctl\" command must be run as the \"${RABBITMQ_USER}\" user,"
-	@${ECHO_MSG} "with a real shell, and with the HOME environment variable set to that"
-	@${ECHO_MSG} "user's real home directory."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "sudo users can do something like this:"
-	@${ECHO_MSG} " # sudo -H -u rabbitmq rabbitmqctl ..."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "###############################################################################"
-	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
