@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrypt
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.tarsnap.com/scrypt/
 EXTRACT_SUFX=	.tgz
