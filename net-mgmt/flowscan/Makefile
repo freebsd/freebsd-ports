@@ -25,6 +25,8 @@ BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
 		${SITE_PERL}/${PERL_ARCH}/Net/Patricia.pm:${PORTSDIR}/net/p5-Net-Patricia
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
+BROKEN=		does not build
+
 CFLOWD_FLOWSCAN_PATCH=	yes
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/var/db/flows
