@@ -7,7 +7,7 @@
 
 PORTNAME=	fetchinfo
 PORTVERSION=	0.4.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Header insertation plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.7.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262
