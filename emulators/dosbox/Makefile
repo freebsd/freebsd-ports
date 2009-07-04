@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dosbox
-PORTVERSION=	0.72
-PORTREVISION=	1
+PORTVERSION=	0.73
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +17,7 @@ COMMENT=	An emulator of a PC with DOS
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USE_SDL=	sdl net
+USE_SDL=	sdl net sound
 
 MAN1=		dosbox.1
 PKGMESSAGE=	${WRKDIR}/pkg-message
