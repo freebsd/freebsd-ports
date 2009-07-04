@@ -10,9 +10,7 @@ PORTVERSION?=	2.4.${SNAPDATE}
 PORTREVISION?=	2
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
-		http://openoffice.lunarshells.com/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
@@ -112,8 +110,9 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
-		imake:${PORTSDIR}/devel/imake
-BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
+		imake:${PORTSDIR}/devel/imake \
+		ant:${PORTSDIR}/devel/apache-ant
+
 .if !defined(WITH_GPC)
 LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
