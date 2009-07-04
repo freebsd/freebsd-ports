@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gearmand
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/
 
@@ -16,7 +16,6 @@ COMMENT=	Gearman C Server and Library
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-CFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 FETCH_ARGS=	-pRr
 GNU_CONFIGURE=	yes
@@ -64,6 +63,8 @@ MAN3=		gearman_bugreport.3 \
 		gearman_client_set_task_fn_arg_free.3 \
 		gearman_client_set_warning_fn.3 \
 		gearman_client_set_workload_fn.3 \
+		gearman_client_set_workload_free.3 \
+		gearman_client_set_workload_malloc.3 \
 		gearman_clone.3 \
 		gearman_con_add.3 \
 		gearman_con_clone.3 \
@@ -75,6 +76,8 @@ MAN3=		gearman_bugreport.3 \
 		gearman_con_flush.3 \
 		gearman_con_flush_all.3 \
 		gearman_con_free.3 \
+		gearman_con_protocol_data.3 \
+		gearman_con_read.3 \
 		gearman_con_ready.3 \
 		gearman_con_recv.3 \
 		gearman_con_recv_data.3 \
@@ -86,8 +89,29 @@ MAN3=		gearman_bugreport.3 \
 		gearman_con_set_events.3 \
 		gearman_con_set_fd.3 \
 		gearman_con_set_options.3 \
+		gearman_con_set_packet_pack_fn.3 \
+		gearman_con_set_packet_unpack_fn.3 \
+		gearman_con_set_protocol_data.3 \
+		gearman_con_set_protocol_data_free_fn.3 \
+		gearman_con_set_recv_data_fn.3 \
+		gearman_con_set_recv_fn.3 \
 		gearman_con_set_revents.3 \
+		gearman_con_set_send_data_fn.3 \
+		gearman_con_set_send_fn.3 \
 		gearman_con_wait.3 \
+		gearman_conf_create.3 \
+		gearman_conf_errno.3 \
+		gearman_conf_error.3 \
+		gearman_conf_free.3 \
+		gearman_conf_module_add_option.3 \
+		gearman_conf_module_create.3 \
+		gearman_conf_module_find.3 \
+		gearman_conf_module_free.3 \
+		gearman_conf_module_value.3 \
+		gearman_conf_parse_args.3 \
+		gearman_conf_return.3 \
+		gearman_conf_set_options.3 \
+		gearman_conf_usage.3 \
 		gearman_create.3 \
 		gearman_errno.3 \
 		gearman_error.3 \
@@ -109,25 +133,26 @@ MAN3=		gearman_bugreport.3 \
 		gearman_packet_add_arg.3 \
 		gearman_packet_create.3 \
 		gearman_packet_free.3 \
+		gearman_packet_pack.3 \
 		gearman_packet_pack_header.3 \
-		gearman_packet_parse.3 \
 		gearman_packet_set_options.3 \
 		gearman_packet_take_data.3 \
+		gearman_packet_unpack.3 \
 		gearman_packet_unpack_header.3 \
 		gearman_parse_servers.3 \
+		gearman_protocol_http_conf.3 \
 		gearman_queue_fn_arg.3 \
+		gearman_queue_libdrizzle_conf.3 \
 		gearman_queue_libdrizzle_deinit.3 \
 		gearman_queue_libdrizzle_init.3 \
-		gearman_queue_libdrizzle_modconf.3 \
+		gearman_queue_libmemcached_conf.3 \
 		gearman_queue_libmemcached_deinit.3 \
 		gearman_queue_libmemcached_init.3 \
-		gearman_queue_libmemcached_modconf.3 \
-		gearmand_queue_libmemcached_deinit.3 \
-		gearmand_queue_libmemcached_init.3 \
 		gearman_server_client_add.3 \
 		gearman_server_client_create.3 \
 		gearman_server_client_free.3 \
 		gearman_server_con_add.3 \
+		gearman_server_con_con.3 \
 		gearman_server_con_create.3 \
 		gearman_server_con_data.3 \
 		gearman_server_con_free.3 \
@@ -206,6 +231,7 @@ MAN3=		gearman_bugreport.3 \
 		gearman_task_set_fn_arg.3 \
 		gearman_task_take_data.3 \
 		gearman_task_uuid.3 \
+		gearman_verbose_name.3 \
 		gearman_version.3 \
 		gearman_worker_add_function.3 \
 		gearman_worker_add_server.3 \
@@ -229,8 +255,13 @@ MAN3=		gearman_bugreport.3 \
 		gearmand_con_watch.3 \
 		gearmand_create.3 \
 		gearmand_free.3 \
+		gearmand_port_add.3 \
+		gearmand_protocol_http_deinit.3 \
+		gearmand_protocol_http_init.3 \
 		gearmand_queue_libdrizzle_deinit.3 \
 		gearmand_queue_libdrizzle_init.3 \
+		gearmand_queue_libmemcached_deinit.3 \
+		gearmand_queue_libmemcached_init.3 \
 		gearmand_run.3 \
 		gearmand_set_backlog.3 \
 		gearmand_set_log.3 \
