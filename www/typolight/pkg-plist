@@ -1161,6 +1161,7 @@
 %%WWWDIR%%/system/modules/frontend/templates/mod_login_2cl.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_logout_1cl.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_logout_2cl.tpl
+%%WWWDIR%%/system/modules/frontend/templates/mod_message.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_navigation.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_quicklink.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_quicknav.tpl
@@ -1206,11 +1207,9 @@
 %%WWWDIR%%/system/modules/listing/dca/tl_module.php
 %%WWWDIR%%/system/modules/listing/html/details.gif
 %%WWWDIR%%/system/modules/listing/languages/de/.htaccess
-%%WWWDIR%%/system/modules/listing/languages/de/default.php
 %%WWWDIR%%/system/modules/listing/languages/de/modules.php
 %%WWWDIR%%/system/modules/listing/languages/de/tl_module.php
 %%WWWDIR%%/system/modules/listing/languages/en/.htaccess
-%%WWWDIR%%/system/modules/listing/languages/en/default.php
 %%WWWDIR%%/system/modules/listing/languages/en/modules.php
 %%WWWDIR%%/system/modules/listing/languages/en/tl_module.php
 %%WWWDIR%%/system/modules/listing/templates/.htaccess
@@ -1347,7 +1346,6 @@
 %%WWWDIR%%/system/modules/registration/languages/en/modules.php
 %%WWWDIR%%/system/modules/registration/languages/en/tl_module.php
 %%WWWDIR%%/system/modules/registration/templates/.htaccess
-%%WWWDIR%%/system/modules/registration/templates/mod_message.tpl
 %%WWWDIR%%/system/modules/registration/templates/mod_password.tpl
 %%WWWDIR%%/system/modules/rep_base/GPL3.txt
 %%WWWDIR%%/system/modules/rep_base/LGPL3.txt
@@ -1578,6 +1576,9 @@
 %%WWWDIR%%/system/themes/default/images/regular_5.gif
 %%WWWDIR%%/system/themes/default/images/regular_6.gif
 %%WWWDIR%%/system/themes/default/images/regular_7.gif
+%%WWWDIR%%/system/themes/default/images/reload.gif
+%%WWWDIR%%/system/themes/default/images/resize.gif
+%%WWWDIR%%/system/themes/default/images/resize_.gif
 %%WWWDIR%%/system/themes/default/images/right.gif
 %%WWWDIR%%/system/themes/default/images/root.gif
 %%WWWDIR%%/system/themes/default/images/root_1.gif
