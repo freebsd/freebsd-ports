@@ -1,10 +1,38 @@
-%%RUBY_SITELIBDIR%%/thrift/thrift.rb
-%%RUBY_SITELIBDIR%%/thrift/protocol/tbinaryprotocol.rb
-%%RUBY_SITELIBDIR%%/thrift/protocol/tprotocol.rb
-%%RUBY_SITELIBDIR%%/thrift/server/tserver.rb
-%%RUBY_SITELIBDIR%%/thrift/transport/tsocket.rb
-%%RUBY_SITELIBDIR%%/thrift/transport/ttransport.rb
+%%RUBY_SITEARCHLIBDIR%%/thrift_native.so
+%%RUBY_SITELIBDIR%%/thrift/client.rb
+%%RUBY_SITELIBDIR%%/thrift/exceptions.rb
+%%RUBY_SITELIBDIR%%/thrift/processor.rb
+%%RUBY_SITELIBDIR%%/thrift/struct.rb
+%%RUBY_SITELIBDIR%%/thrift/thrift_native.rb
+%%RUBY_SITELIBDIR%%/thrift/types.rb
+%%RUBY_SITELIBDIR%%/thrift/core_ext.rb
+%%RUBY_SITELIBDIR%%/thrift/core_ext/fixnum.rb
+%%RUBY_SITELIBDIR%%/thrift/protocol/base_protocol.rb
+%%RUBY_SITELIBDIR%%/thrift/protocol/binary_protocol.rb
+%%RUBY_SITELIBDIR%%/thrift/protocol/binary_protocol_accelerated.rb
+%%RUBY_SITELIBDIR%%/thrift/protocol/compact_protocol.rb
+%%RUBY_SITELIBDIR%%/thrift/serializer/deserializer.rb
+%%RUBY_SITELIBDIR%%/thrift/serializer/serializer.rb
+%%RUBY_SITELIBDIR%%/thrift/server/base_server.rb
+%%RUBY_SITELIBDIR%%/thrift/server/mongrel_http_server.rb
+%%RUBY_SITELIBDIR%%/thrift/server/nonblocking_server.rb
+%%RUBY_SITELIBDIR%%/thrift/server/simple_server.rb
+%%RUBY_SITELIBDIR%%/thrift/server/thread_pool_server.rb
+%%RUBY_SITELIBDIR%%/thrift/server/threaded_server.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/base_server_transport.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/base_transport.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/buffered_transport.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/framed_transport.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/http_client_transport.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/io_stream_transport.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/memory_buffer_transport.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/server_socket.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/socket.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/unix_server_socket.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/unix_socket.rb
 @dirrm %%RUBY_SITELIBDIR%%/thrift/transport
 @dirrm %%RUBY_SITELIBDIR%%/thrift/server
+@dirrm %%RUBY_SITELIBDIR%%/thrift/serializer
 @dirrm %%RUBY_SITELIBDIR%%/thrift/protocol
+@dirrm %%RUBY_SITELIBDIR%%/thrift/core_ext
 @dirrm %%RUBY_SITELIBDIR%%/thrift
