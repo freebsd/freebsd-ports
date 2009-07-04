@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	archiver
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -15,8 +15,8 @@ DISTNAME=	archive-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	mail archiver plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.7.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262
