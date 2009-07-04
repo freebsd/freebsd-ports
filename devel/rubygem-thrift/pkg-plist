@@ -1,4 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/thrift_native.so
+%%RUBY_SITELIBDIR%%/thrift.rb
 %%RUBY_SITELIBDIR%%/thrift/client.rb
 %%RUBY_SITELIBDIR%%/thrift/exceptions.rb
 %%RUBY_SITELIBDIR%%/thrift/processor.rb
