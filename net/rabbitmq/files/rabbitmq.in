@@ -21,25 +21,13 @@ rcvar=`set_rcvar`
 rabbitmq_enable=${rabbitmq_enable:-"NO"}
 rabbitmq_user=${rabbitmq_user:-"rabbitmq"}
 rabbitmq_nodes=${rabbitmq_nodes:-"1"}
-
 rabbitmq_multi="%%PREFIX%%/sbin/rabbitmq-multi"
+
 start_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} start_all ${rabbitmq_nodes}\"'"
 stop_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} stop_all\"'"
-
+rotate_logs_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} rotate_logs\"'"
+status_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} status\"'"
 extra_commands="rotate_logs status"
-
-rotate_logs_cmd="${name}_rotate_logs"
-status_cmd="${name}_status"
-
-rabbitmq_rotate_logs()
-{
-	env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} rotate_logs\"'"
-}
-
-rabbitmq_status()
-{
-	env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} status\"'"
-}
 
 load_rc_config $name
 run_rc_command "$1"
