@@ -1,22 +1,48 @@
 bin/Ted
 bin/rtf2pdf.sh
 bin/rtf2ps.sh
-share/Ted/afm/Courier-Bold.afm
-share/Ted/afm/Courier-BoldOblique.afm
-share/Ted/afm/Courier-Oblique.afm
-share/Ted/afm/Courier.afm
-share/Ted/afm/Helvetica-Bold.afm
-share/Ted/afm/Helvetica-BoldOblique.afm
-share/Ted/afm/Helvetica-Oblique.afm
-share/Ted/afm/Helvetica.afm
-share/Ted/afm/Symbol.afm
-share/Ted/afm/Times-Bold.afm
-share/Ted/afm/Times-BoldItalic.afm
-share/Ted/afm/Times-Italic.afm
-share/Ted/afm/Times-Roman.afm
-share/Ted/ind/US_English.ind
+bin/rtf2txt.sh
+%%DATADIR%%/afm/AvantGarde-Book.afm
+%%DATADIR%%/afm/AvantGarde-BookOblique.afm
+%%DATADIR%%/afm/AvantGarde-Demi.afm
+%%DATADIR%%/afm/AvantGarde-DemiOblique.afm
+%%DATADIR%%/afm/Bookman-Demi.afm
+%%DATADIR%%/afm/Bookman-DemiItalic.afm
+%%DATADIR%%/afm/Bookman-Light.afm
+%%DATADIR%%/afm/Bookman-LightItalic.afm
+%%DATADIR%%/afm/Courier-Bold.afm
+%%DATADIR%%/afm/Courier-BoldOblique.afm
+%%DATADIR%%/afm/Courier-Oblique.afm
+%%DATADIR%%/afm/Courier.afm
+%%DATADIR%%/afm/Helvetica-Bold.afm
+%%DATADIR%%/afm/Helvetica-BoldOblique.afm
+%%DATADIR%%/afm/Helvetica-Narrow-Bold.afm
+%%DATADIR%%/afm/Helvetica-Narrow-BoldOblique.afm
+%%DATADIR%%/afm/Helvetica-Narrow-Oblique.afm
+%%DATADIR%%/afm/Helvetica-Narrow.afm
+%%DATADIR%%/afm/Helvetica-Oblique.afm
+%%DATADIR%%/afm/Helvetica.afm
+%%DATADIR%%/afm/NewCenturySchlbk-Bold.afm
+%%DATADIR%%/afm/NewCenturySchlbk-BoldItalic.afm
+%%DATADIR%%/afm/NewCenturySchlbk-Italic.afm
+%%DATADIR%%/afm/NewCenturySchlbk-Roman.afm
+%%DATADIR%%/afm/Palatino-Bold.afm
+%%DATADIR%%/afm/Palatino-BoldItalic.afm
+%%DATADIR%%/afm/Palatino-Italic.afm
+%%DATADIR%%/afm/Palatino-Roman.afm
+%%DATADIR%%/afm/Symbol.afm
+%%DATADIR%%/afm/Times-Bold.afm
+%%DATADIR%%/afm/Times-BoldItalic.afm
+%%DATADIR%%/afm/Times-Italic.afm
+%%DATADIR%%/afm/Times-Roman.afm
+%%DATADIR%%/afm/ZapfChancery-MediumItalic.afm
+%%DATADIR%%/afm/ZapfDingbats.afm
+%%DATADIR%%/dfa/en_US.dfa
+%%DATADIR%%/gsfontmetrics.ps
+%%DATADIR%%/gslibpath.ps
+%%DATADIR%%/gslsfonts.ps
 %%PORTDOCS%%%%DOCSDIR%%/TedDocument-en_US.rtf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/Ted/ind
-@dirrm share/Ted/afm
-@dirrm share/Ted
+@dirrm %%DATADIR%%/dfa
+@dirrm %%DATADIR%%/afm
+@dirrm %%DATADIR%%

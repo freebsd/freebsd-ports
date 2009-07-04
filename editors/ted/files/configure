@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dirs="Ted appFrame appUtil bitmap ind libreg tedPackage"
+dirs="Ted appFrame appUtil bitmap ind docBuf tedPackage"
 
 for d in $dirs; do
   (cd $d && echo -n "./configure $* in:" && pwd && ./configure $*)
