@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pycryptopp
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.14
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Python Wrappers for the Crypto++ Library
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}darcsver>0:${PORTSDIR}/devel/py-darcsver \
+		${PYTHON_PKGNAMEPREFIX}setuptools_darcs>0:${PORTSDIR}/devel/py-setuptools_darcs
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYEASYINSTALL_ARCHDEP=	yes
+
+post-extract:
+	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#g' ${WRKSRC}/cryptopp/rijndael.cpp
 
 .include <bsd.port.mk>
