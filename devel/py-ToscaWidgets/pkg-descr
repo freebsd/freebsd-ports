@@ -1,0 +1,6 @@
+ToscaWidgets is a framework for building reusable web components.
+The system allows a web developer to use a complex widget in their
+application with ease - the internal complexity of the widget is
+hidden. This helps rapidly develop compelling web applications.
+
+WWW: http://toscawidgets.org/
