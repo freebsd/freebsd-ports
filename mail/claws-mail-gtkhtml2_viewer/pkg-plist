@@ -7,7 +7,9 @@ lib/claws-mail/plugins/gtkhtml2_viewer.so
 %%NLS%%share/locale/fi/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gtkhtml2_viewer.mo
+%%NLS%%share/locale/id/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gtkhtml2_viewer.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gtkhtml2_viewer.mo
