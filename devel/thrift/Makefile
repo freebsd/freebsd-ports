@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	bms
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Framework for scalable cross-language services development
 
+# NOTYET: boost-libs
 LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost \
 		event-1.4:${PORTSDIR}/devel/libevent
 
@@ -30,8 +31,10 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE} --with-libevent=${LOCALBASE} \
 		--enable-shared --enable-static --with-zlib
 CONFIGURE_ENV+=	${MAKE_ENV}
 
-# TODO: Add runtime auto-dependencies on erlang, perl, python, ruby, java.
-# Not familiar with csharp, probably needs Mono.
+# For Python support, use devel/py-thrift.
+# For Ruby support, use devel/ruby-thrift.
+# Other languages are not yet supported, please feel free to contribute
+# using one of the leaf ports as an example.
 CONFIGURE_ARGS+= \
 		--without-csharp \
 		--without-erlang \
@@ -41,6 +44,7 @@ CONFIGURE_ARGS+= \
 		--without-ruby
 
 .include <bsd.port.pre.mk>
+
 #
 # To roll snapshot: as bms: env BOOTSTRAP=defined make fetch
 #
@@ -70,7 +74,12 @@ post-install:
 	@${LN} -sf ${PREFIX}/lib/libthrift.so.0 ${PREFIX}/lib/libthrift.so
 	@${LN} -sf ${PREFIX}/lib/libthriftnb.so.0 ${PREFIX}/lib/libthriftnb.so
 	@${LN} -sf ${PREFIX}/lib/libthriftz.so.0 ${PREFIX}/lib/libthriftz.so
-
-# TODO: Documentation is not currently installed; requires TeX.
+	@${ECHO_MSG}
+	@${ECHO_MSG} "For use with C++, the same compiler as used to build this port must be used"
+	@${ECHO_MSG} "to compile and link your generated IDL bindings."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Note: The Thrift white paper may be downloaded from:"
+	@${ECHO_MSG} "http://incubator.apache.org/thrift/static/thrift-20070401.pdf"
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
