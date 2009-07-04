@@ -10,47 +10,54 @@ lib/conduit/modules/BackpackModule/BackpackModule.pyo
 lib/conduit/modules/BackpackModule/backpack/backpack.py
 lib/conduit/modules/BackpackModule/backpack/backpack.pyc
 lib/conduit/modules/BackpackModule/backpack/backpack.pyo
-lib/conduit/modules/BackpackModule/config.glade
 lib/conduit/modules/BansheeModule/BansheeModule.py
 lib/conduit/modules/BansheeModule/BansheeModule.pyc
 lib/conduit/modules/BansheeModule/BansheeModule.pyo
-lib/conduit/modules/BansheeModule/config.glade
 lib/conduit/modules/BoxDotNetModule/BoxDotNetAPI/boxdotnet.py
 lib/conduit/modules/BoxDotNetModule/BoxDotNetAPI/boxdotnet.pyc
 lib/conduit/modules/BoxDotNetModule/BoxDotNetAPI/boxdotnet.pyo
 lib/conduit/modules/BoxDotNetModule/BoxDotNetModule.py
 lib/conduit/modules/BoxDotNetModule/BoxDotNetModule.pyc
 lib/conduit/modules/BoxDotNetModule/BoxDotNetModule.pyo
-lib/conduit/modules/BoxDotNetModule/config.glade
 lib/conduit/modules/ConverterModule.py
 lib/conduit/modules/ConverterModule.pyc
 lib/conduit/modules/ConverterModule.pyo
+lib/conduit/modules/DesktopWallpaperModule.py
+lib/conduit/modules/DesktopWallpaperModule.pyc
+lib/conduit/modules/DesktopWallpaperModule.pyo
 lib/conduit/modules/EvolutionModule/EvolutionModule.py
 lib/conduit/modules/EvolutionModule/EvolutionModule.pyc
 lib/conduit/modules/EvolutionModule/EvolutionModule.pyo
-lib/conduit/modules/EvolutionModule/config.glade
+lib/conduit/modules/EvolutionModule/__init__.py
+lib/conduit/modules/EvolutionModule/__init__.pyc
+lib/conduit/modules/EvolutionModule/__init__.pyo
 lib/conduit/modules/FacebookModule/FacebookModule.py
 lib/conduit/modules/FacebookModule/FacebookModule.pyc
 lib/conduit/modules/FacebookModule/FacebookModule.pyo
-lib/conduit/modules/FacebookModule/config.glade
 lib/conduit/modules/FacebookModule/pyfacebook/__init__.py
 lib/conduit/modules/FacebookModule/pyfacebook/__init__.pyc
 lib/conduit/modules/FacebookModule/pyfacebook/__init__.pyo
 lib/conduit/modules/FeedModule/FeedModule.py
 lib/conduit/modules/FeedModule/FeedModule.pyc
 lib/conduit/modules/FeedModule/FeedModule.pyo
-lib/conduit/modules/FeedModule/config.glade
+lib/conduit/modules/FeedModule/__init__.py
+lib/conduit/modules/FeedModule/__init__.pyc
+lib/conduit/modules/FeedModule/__init__.pyo
 lib/conduit/modules/FileModule/FileConfiguration.py
 lib/conduit/modules/FileModule/FileConfiguration.pyc
 lib/conduit/modules/FileModule/FileConfiguration.pyo
 lib/conduit/modules/FileModule/FileModule.py
 lib/conduit/modules/FileModule/FileModule.pyc
 lib/conduit/modules/FileModule/FileModule.pyo
-lib/conduit/modules/FileModule/config.glade
+lib/conduit/modules/FileModule/__init__.py
+lib/conduit/modules/FileModule/__init__.pyc
+lib/conduit/modules/FileModule/__init__.pyo
+lib/conduit/modules/Firefox3Module/Firefox3Module.py
+lib/conduit/modules/Firefox3Module/Firefox3Module.pyc
+lib/conduit/modules/Firefox3Module/Firefox3Module.pyo
 lib/conduit/modules/FlickrModule/FlickrModule.py
 lib/conduit/modules/FlickrModule/FlickrModule.pyc
 lib/conduit/modules/FlickrModule/FlickrModule.pyo
-lib/conduit/modules/FlickrModule/config.glade
 lib/conduit/modules/FlickrModule/flickrapi/__init__.py
 lib/conduit/modules/FlickrModule/flickrapi/__init__.pyc
 lib/conduit/modules/FlickrModule/flickrapi/__init__.pyo
@@ -75,13 +82,18 @@ lib/conduit/modules/FlickrModule/flickrapi/xmlnode.pyo
 lib/conduit/modules/FspotModule/FspotModule.py
 lib/conduit/modules/FspotModule/FspotModule.pyc
 lib/conduit/modules/FspotModule/FspotModule.pyo
-lib/conduit/modules/FspotModule/config.glade
 lib/conduit/modules/GConfModule/GConfModule.py
 lib/conduit/modules/GConfModule/GConfModule.pyc
 lib/conduit/modules/GConfModule/GConfModule.pyo
+lib/conduit/modules/GoogleBookmarksModule.py
+lib/conduit/modules/GoogleBookmarksModule.pyc
+lib/conduit/modules/GoogleBookmarksModule.pyo
 lib/conduit/modules/GoogleModule/GoogleModule.py
 lib/conduit/modules/GoogleModule/GoogleModule.pyc
 lib/conduit/modules/GoogleModule/GoogleModule.pyo
+lib/conduit/modules/GoogleModule/__init__.py
+lib/conduit/modules/GoogleModule/__init__.pyc
+lib/conduit/modules/GoogleModule/__init__.pyo
 lib/conduit/modules/GoogleModule/atom/__init__.py
 lib/conduit/modules/GoogleModule/atom/__init__.pyc
 lib/conduit/modules/GoogleModule/atom/__init__.pyo
@@ -92,8 +104,6 @@ lib/conduit/modules/GoogleModule/atom/service.py
 lib/conduit/modules/GoogleModule/atom/service.pyc
 lib/conduit/modules/GoogleModule/atom/service.pyo
 lib/conduit/modules/GoogleModule/calendar-config.glade
-lib/conduit/modules/GoogleModule/contacts-config.glade
-lib/conduit/modules/GoogleModule/documents-config.glade
 lib/conduit/modules/GoogleModule/gdata/__init__.py
 lib/conduit/modules/GoogleModule/gdata/__init__.pyc
 lib/conduit/modules/GoogleModule/gdata/__init__.pyo
@@ -175,11 +185,12 @@ lib/conduit/modules/GoogleModule/gdata/youtube/__init__.pyo
 lib/conduit/modules/GoogleModule/gdata/youtube/service.py
 lib/conduit/modules/GoogleModule/gdata/youtube/service.pyc
 lib/conduit/modules/GoogleModule/gdata/youtube/service.pyo
-lib/conduit/modules/GoogleModule/picasa-config.glade
-lib/conduit/modules/GoogleModule/youtube-config.glade
 lib/conduit/modules/N800Module/N800Module.py
 lib/conduit/modules/N800Module/N800Module.pyc
 lib/conduit/modules/N800Module/N800Module.pyo
+lib/conduit/modules/NautilusBookmarksModule.py
+lib/conduit/modules/NautilusBookmarksModule.pyc
+lib/conduit/modules/NautilusBookmarksModule.pyo
 lib/conduit/modules/NetworkModule/Client.py
 lib/conduit/modules/NetworkModule/Client.pyc
 lib/conduit/modules/NetworkModule/Client.pyo
@@ -204,11 +215,9 @@ lib/conduit/modules/PhotoConverterModule.pyo
 lib/conduit/modules/RhythmboxModule/RhythmboxModule.py
 lib/conduit/modules/RhythmboxModule/RhythmboxModule.pyc
 lib/conduit/modules/RhythmboxModule/RhythmboxModule.pyo
-lib/conduit/modules/RhythmboxModule/config.glade
 lib/conduit/modules/ShutterflyModule/ShutterflyModule.py
 lib/conduit/modules/ShutterflyModule/ShutterflyModule.pyc
 lib/conduit/modules/ShutterflyModule/ShutterflyModule.pyo
-lib/conduit/modules/ShutterflyModule/shutterfly.glade
 lib/conduit/modules/ShutterflyModule/shutterfly/shutterfly.py
 lib/conduit/modules/ShutterflyModule/shutterfly/shutterfly.pyc
 lib/conduit/modules/ShutterflyModule/shutterfly/shutterfly.pyo
@@ -218,24 +227,27 @@ lib/conduit/modules/SmugMugModule/SmugMugAPI/smugmug.pyo
 lib/conduit/modules/SmugMugModule/SmugMugModule.py
 lib/conduit/modules/SmugMugModule/SmugMugModule.pyc
 lib/conduit/modules/SmugMugModule/SmugMugModule.pyo
-lib/conduit/modules/SmugMugModule/config.glade
 lib/conduit/modules/TomboyModule.py
 lib/conduit/modules/TomboyModule.pyc
 lib/conduit/modules/TomboyModule.pyo
 lib/conduit/modules/ZotoModule.py/ZotoModule.py
 lib/conduit/modules/ZotoModule.py/ZotoModule.pyc
 lib/conduit/modules/ZotoModule.py/ZotoModule.pyo
-lib/conduit/modules/ZotoModule.py/zoto.glade
 lib/conduit/modules/__init__.py
 lib/conduit/modules/__init__.pyc
 lib/conduit/modules/__init__.pyo
-lib/conduit/modules/iPodModule/config.glade
 lib/conduit/modules/iPodModule/iPodModule.py
 lib/conduit/modules/iPodModule/iPodModule.pyc
 lib/conduit/modules/iPodModule/iPodModule.pyo
+lib/conduit/modules/iPodModule/__init__.py
+lib/conduit/modules/iPodModule/__init__.pyc
+lib/conduit/modules/iPodModule/__init__.pyo
 %%PYTHON_SITELIBDIR%%/conduit/Conduit.py
 %%PYTHON_SITELIBDIR%%/conduit/Conduit.pyc
 %%PYTHON_SITELIBDIR%%/conduit/Conduit.pyo
+%%PYTHON_SITELIBDIR%%/conduit/Configurator.py
+%%PYTHON_SITELIBDIR%%/conduit/Configurator.pyc
+%%PYTHON_SITELIBDIR%%/conduit/Configurator.pyo
 %%PYTHON_SITELIBDIR%%/conduit/Conflict.py
 %%PYTHON_SITELIBDIR%%/conduit/Conflict.pyc
 %%PYTHON_SITELIBDIR%%/conduit/Conflict.pyo
@@ -290,6 +302,9 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/Web.py
 %%PYTHON_SITELIBDIR%%/conduit/Web.pyc
 %%PYTHON_SITELIBDIR%%/conduit/Web.pyo
+%%PYTHON_SITELIBDIR%%/conduit/XMLSerialization.py
+%%PYTHON_SITELIBDIR%%/conduit/XMLSerialization.pyc
+%%PYTHON_SITELIBDIR%%/conduit/XMLSerialization.pyo
 %%PYTHON_SITELIBDIR%%/conduit/__init__.py
 %%PYTHON_SITELIBDIR%%/conduit/__init__.pyc
 %%PYTHON_SITELIBDIR%%/conduit/__init__.pyo
@@ -365,6 +380,12 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Canvas.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Canvas.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Canvas.pyo
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/ConfigContainer.py
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/ConfigContainer.pyc
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/ConfigContainer.pyo
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/ConfigItems.py
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/ConfigItems.pyc
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/ConfigItems.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/ConflictResolver.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/ConflictResolver.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/ConflictResolver.pyo
@@ -374,9 +395,6 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/MsgArea.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/MsgArea.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/MsgArea.pyo
-%%PYTHON_SITELIBDIR%%/conduit/gtkui/SimpleConfigurator.py
-%%PYTHON_SITELIBDIR%%/conduit/gtkui/SimpleConfigurator.pyc
-%%PYTHON_SITELIBDIR%%/conduit/gtkui/SimpleConfigurator.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Tree.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Tree.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Tree.pyo
@@ -386,6 +404,9 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Util.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Util.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Util.pyo
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/WindowConfigurator.py
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/WindowConfigurator.pyc
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/WindowConfigurator.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/__init__.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/__init__.pyo
@@ -401,6 +422,9 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/hildonui/__init__.py
 %%PYTHON_SITELIBDIR%%/conduit/hildonui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/conduit/hildonui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/conduit/libconduit.py
+%%PYTHON_SITELIBDIR%%/conduit/libconduit.pyc
+%%PYTHON_SITELIBDIR%%/conduit/libconduit.pyo
 %%PYTHON_SITELIBDIR%%/conduit/platform/FileGio.py
 %%PYTHON_SITELIBDIR%%/conduit/platform/FileGio.pyc
 %%PYTHON_SITELIBDIR%%/conduit/platform/FileGio.pyo
@@ -443,6 +467,9 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/utils/Singleton.py
 %%PYTHON_SITELIBDIR%%/conduit/utils/Singleton.pyc
 %%PYTHON_SITELIBDIR%%/conduit/utils/Singleton.pyo
+%%PYTHON_SITELIBDIR%%/conduit/utils/Wait.py
+%%PYTHON_SITELIBDIR%%/conduit/utils/Wait.pyc
+%%PYTHON_SITELIBDIR%%/conduit/utils/Wait.pyo
 %%PYTHON_SITELIBDIR%%/conduit/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/conduit/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/conduit/utils/__init__.pyo
@@ -455,19 +482,15 @@ share/applications/conduit.desktop
 %%DATADIR%%/evolution-memos.png
 %%DATADIR%%/evolution-tasks.png
 %%DATADIR%%/windows.png
-%%DATADIR%%/f-spot.png
 %%DATADIR%%/facebook.png
 %%DATADIR%%/feed.png
 %%DATADIR%%/flickr.png
-%%DATADIR%%/liferea.png
 %%DATADIR%%/picasa.png
 %%DATADIR%%/shutterfly.png
 %%DATADIR%%/smugmug.png
-%%DATADIR%%/tomboy.png
 %%DATADIR%%/youtube.png
 %%DATADIR%%/zoto.png
 share/dbus-1/services/org.conduit.service
-share/gnome/autostart/conduit-autostart.desktop
 share/gnome/help/conduit/C/conduit.xml
 share/gnome/help/conduit/C/figures/conduit-dp.png
 share/gnome/help/conduit/C/figures/conduit-folder-configuration.png
@@ -486,6 +509,15 @@ share/gnome/help/conduit/de/figures/network-pc1.png
 share/gnome/help/conduit/de/figures/network-pc2.png
 share/gnome/help/conduit/de/figures/network-sync-pc1.png
 share/gnome/help/conduit/de/figures/network-sync-pc2.png
+share/gnome/help/conduit/el/conduit.xml
+share/gnome/help/conduit/el/figures/conduit-dp.png
+share/gnome/help/conduit/el/figures/conduit-folder-configuration.png
+share/gnome/help/conduit/el/figures/conduit-gui-parts.png
+share/gnome/help/conduit/el/figures/conduit-login.png
+share/gnome/help/conduit/el/figures/network-pc1.png
+share/gnome/help/conduit/el/figures/network-pc2.png
+share/gnome/help/conduit/el/figures/network-sync-pc1.png
+share/gnome/help/conduit/el/figures/network-sync-pc2.png
 share/gnome/help/conduit/es/conduit.xml
 share/gnome/help/conduit/es/figures/conduit-dp.png
 share/gnome/help/conduit/es/figures/conduit-folder-configuration.png
@@ -532,7 +564,9 @@ share/icons/hicolor/48x48/apps/conduit.png
 share/icons/hicolor/scalable/apps/conduit.svg
 share/locale/ar/LC_MESSAGES/conduit.mo
 share/locale/ca/LC_MESSAGES/conduit.mo
+share/locale/cs/LC_MESSAGES/conduit.mo
 share/locale/de/LC_MESSAGES/conduit.mo
+share/locale/el/LC_MESSAGES/conduit.mo
 share/locale/en_GB/LC_MESSAGES/conduit.mo
 share/locale/es/LC_MESSAGES/conduit.mo
 share/locale/fi/LC_MESSAGES/conduit.mo
@@ -551,8 +585,11 @@ share/locale/ru/LC_MESSAGES/conduit.mo
 share/locale/sl/LC_MESSAGES/conduit.mo
 share/locale/sv/LC_MESSAGES/conduit.mo
 share/locale/vi/LC_MESSAGES/conduit.mo
+share/locale/zh_HK/LC_MESSAGES/conduit.mo
+share/locale/zh_TW/LC_MESSAGES/conduit.mo
 share/omf/conduit/conduit-C.omf
 share/omf/conduit/conduit-de.omf
+share/omf/conduit/conduit-el.omf
 share/omf/conduit/conduit-es.omf
 share/omf/conduit/conduit-fr.omf
 @dirrm share/omf/conduit
@@ -564,6 +601,8 @@ share/omf/conduit/conduit-fr.omf
 @dirrm share/gnome/help/conduit/fr
 @dirrm share/gnome/help/conduit/es/figures
 @dirrm share/gnome/help/conduit/es
+@dirrm share/gnome/help/conduit/el/figures
+@dirrm share/gnome/help/conduit/el
 @dirrm share/gnome/help/conduit/de/figures
 @dirrm share/gnome/help/conduit/de
 @dirrm share/gnome/help/conduit/C/figures
@@ -607,6 +646,7 @@ share/omf/conduit/conduit-fr.omf
 @dirrm lib/conduit/modules/FspotModule
 @dirrm lib/conduit/modules/FlickrModule/flickrapi
 @dirrm lib/conduit/modules/FlickrModule
+@dirrm lib/conduit/modules/Firefox3Module
 @dirrm lib/conduit/modules/FileModule
 @dirrm lib/conduit/modules/FeedModule
 @dirrm lib/conduit/modules/FacebookModule/pyfacebook
