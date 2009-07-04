@@ -102,6 +102,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/proc.py
 %%PYTHON_SITELIBDIR%%/logilab/common/proc.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/proc.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/pyro_ext.py
+%%PYTHON_SITELIBDIR%%/logilab/common/pyro_ext.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/pyro_ext.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/pytest.py
 %%PYTHON_SITELIBDIR%%/logilab/common/pytest.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/pytest.pyo

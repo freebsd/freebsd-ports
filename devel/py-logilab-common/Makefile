@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logilab-common
-PORTVERSION=	0.40.0
+PORTVERSION=	0.42.0
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/ \
 		${MASTER_SITE_LOCAL}
