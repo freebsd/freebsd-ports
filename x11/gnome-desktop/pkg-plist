@@ -28,6 +28,7 @@ share/gnome-about/headers/header-bg-snow01.png
 share/gnome-about/headers/header-bg-sunset01.png
 share/gnome/help/fdl/C/fdl.xml
 share/gnome/help/fdl/ar/fdl.xml
+share/gnome/help/fdl/ca/fdl.xml
 share/gnome/help/fdl/de/fdl.xml
 share/gnome/help/fdl/el/fdl.xml
 share/gnome/help/fdl/es/fdl.xml
@@ -126,6 +127,7 @@ share/locale/ku/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ky/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/li/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/lo/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mai/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mg/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -178,6 +180,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 share/omf/fdl/fdl-C.omf
 share/omf/fdl/fdl-ar.omf
+share/omf/fdl/fdl-ca.omf
 share/omf/fdl/fdl-de.omf
 share/omf/fdl/fdl-el.omf
 share/omf/fdl/fdl-es.omf
@@ -341,6 +344,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/fdl/es
 @dirrm share/gnome/help/fdl/el
 @dirrm share/gnome/help/fdl/de
+@dirrm share/gnome/help/fdl/ca
 @dirrm share/gnome/help/fdl/ar
 @dirrm share/gnome-about/headers
 @dirrmtry share/applications
@@ -385,6 +389,8 @@ share/pixmaps/vnterm.xpm
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/lo/LC_MESSAGES
+@dirrmtry share/locale/lo
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
