@@ -503,6 +503,7 @@
 %%PHPBBDIR%%/report.php
 %%PHPBBDIR%%/search.php
 %%PHPBBDIR%%/store/.htaccess
+%%PHPBBDIR%%/store/index.htm
 %%PHPBBDIR%%/style.php
 %%PHPBBDIR%%/styles/prosilver/imageset/announce_read.gif
 %%PHPBBDIR%%/styles/prosilver/imageset/announce_read_locked.gif
