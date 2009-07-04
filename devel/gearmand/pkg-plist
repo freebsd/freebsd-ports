@@ -1,18 +1,17 @@
 @comment $FreeBSD$
 bin/gearman
 include/libgearman/client.h
-include/libgearman/con.h
+include/libgearman/conf.h
+include/libgearman/conf_module.h
+include/libgearman/conn.h
 include/libgearman/constants.h
 include/libgearman/gearman.h
 include/libgearman/gearmand.h
 include/libgearman/gearmand_con.h
 include/libgearman/gearmand_thread.h
 include/libgearman/job.h
-include/libgearman/modconf.h
-include/libgearman/modconf_module.h
-include/libgearman/modconf_constants.h
-include/libgearman/modconf_structs.h
 include/libgearman/packet.h
+include/libgearman/protocol_http.h
 include/libgearman/server.h
 include/libgearman/server_client.h
 include/libgearman/server_con.h
@@ -23,6 +22,7 @@ include/libgearman/server_thread.h
 include/libgearman/server_worker.h
 include/libgearman/structs.h
 include/libgearman/task.h
+include/libgearman/visibility.h
 include/libgearman/worker.h
 lib/libgearman.a
 lib/libgearman.la
