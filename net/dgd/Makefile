@@ -6,50 +6,46 @@
 #
 
 PORTNAME=	dgd
-PORTVERSION=	1.2p4
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	net lang games
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
-		ftp://ftp.dworkin.nl/pub/dgd/ \
-		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/
+		http://ftp.dworkin.nl/dgd/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dworkin's Generic Driver (network server)
 
-NO_CDROM=	"no distribution to corporate environment"
-RESTRICTED=	"license required for commercial use"
+NO_CDROM=	no distribution to corporate environment
+RESTRICTED=	license required for commercial use
 
-OPTIONS=	NETWORKING	"With networking kfuns"		off \
-		ANSI		"Allow ANSI escape codes"	off
+OPTIONS=	NETWORKING	"With networking kfuns"		off
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
 PATCH_WRKSRC=	${WRKDIR}/dgd
 ALL_TARGET=	install
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NETWORKING)
-PATCH_SITES+=	ftp://noname.franken.de/pub/dgd/
-PATCHFILES+=	Network-1-DGD-1.2p3-patch.gz
+PATCH_SITES+=	http://ftp.dworkin.nl/dgd/pkg/
+PATCHFILES+=	Network-6-DGD-1.3.patch.gz
 PLIST_SUB+=	NETWORKING=""
+PATCH_DIST_STRIP=	-p1
+PATCH_STRIP=		-p0 -F 3
 .else
 PLIST_SUB+=	NETWORKING="@comment "
 .endif
 
-.ifdef (WITH_ANSI)
-PATCH_SITES+=	http://www.eyesbeyond.com/dgd/
-PATCHFILES+=	ansi.diff
-.endif
-
-.if defined(WITH_NETWORKING) || defined(WITH_ANSI)
-PATCH_SITES+=		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|}
-PATCH_DIST_STRIP=	-p1
-PATCH_STRIP=		-p0 -F 3
-.endif
-
-do-configure:
-	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:" ${WRKDIR}/dgd/mud.dgd
+post-patch:
+	@${MV} ${WRKSRC}/host/Makefile.bsd ${WRKSRC}/host/Makefile
+	@# There are here since the networking package modifies either these
+	@# lines or lines near them so they cannot be applied as patches.
+	@${REINPLACE_CMD} -e "s:^directory\([[:space:]]\)=\([[:space:]]\)\"[^\"]*\":directory\1=\2\"${DATADIR}/kernel\":" ${WRKDIR}/dgd/mud.dgd
+	@${REINPLACE_CMD} -e "/^DEBUG/d" ${WRKSRC}/Makefile
 
 .ifdef (WITH_NETWORKING)
 post-configure:
@@ -72,12 +68,18 @@ do-install:
 	${CHMOD} a+x ${PREFIX}/etc/rc.d/dgd.sh.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
+.ifdef (WITH_NETWORKING)
+	${INSTALL_DATA} ${WRKDIR}/dgd/Changelog.NET ${DOCSDIR}
+.endif
 	${INSTALL_DATA} ${WRKDIR}/dgd/Copyright ${DOCSDIR}
 .ifdef (WITH_NETWORKING)
-	${INSTALL_DATA} ${WRKDIR}/dgd/Copyright.NETWORK-PACKAGE ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/dgd/Copyright.NET ${DOCSDIR}
 .endif
 	${INSTALL_DATA} ${WRKDIR}/dgd/Credits ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/dgd/README ${DOCSDIR}
+.ifdef (WITH_NETWORKING)
+	${INSTALL_DATA} ${WRKDIR}/dgd/README.NET ${DOCSDIR}
+.endif
 	cd ${WRKDIR}/dgd/doc && ${FIND} . \
 		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif

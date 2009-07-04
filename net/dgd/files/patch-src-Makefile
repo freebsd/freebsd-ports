@@ -1,25 +1,21 @@
 $FreeBSD$
 
---- src/Makefile.orig	Mon Aug 26 07:21:20 2002
-+++ src/Makefile	Mon Aug 26 09:24:19 2002
-@@ -3,13 +3,12 @@
- #
- HOST=	NETBSD
- DEFINES=-D$(HOST) #-DDUMP_FUNCS
--DEBUG=	-O2
- CCFLAGS=$(DEFINES) $(DEBUG)
--CFLAGS=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
-+CFLAGS+=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
+--- src/Makefile.orig	2009-07-03 17:24:28.000000000 -0700
++++ src/Makefile	2009-07-03 17:26:10.000000000 -0700
+@@ -8,9 +8,9 @@
  LDFLAGS=
  LIBS=
  LINTFLAGS=-abcehpruz
 -CC=	gcc
 +CC?=	gcc
  LD=	$(CC)
- DMAKE=	make
+-DMAKE=	make
++DMAKE=	$(MAKE)
  YACC=	yacc
+ BIN=	../bin
+ 
 @@ -22,6 +21,8 @@
- COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
+ COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o sdata.o data.o \
  	interpret.o config.o
  
 +all: a.out comp/a.out

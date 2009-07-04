@@ -14,6 +14,7 @@ sbin/dgd
 %%DATADIR%%/kernel/doc/kernel/efun/file_info
 %%DATADIR%%/kernel/doc/kernel/efun/find_object
 %%DATADIR%%/kernel/doc/kernel/efun/get_dir
+%%DATADIR%%/kernel/doc/kernel/efun/new_object
 %%DATADIR%%/kernel/doc/kernel/efun/query_events
 %%DATADIR%%/kernel/doc/kernel/efun/query_subscribed_event
 %%DATADIR%%/kernel/doc/kernel/efun/remove_event
@@ -30,7 +31,7 @@ sbin/dgd
 %%DATADIR%%/kernel/include/config.h
 %%DATADIR%%/kernel/include/kernel/access.h
 %%DATADIR%%/kernel/include/kernel/kernel.h
-%%DATADIR%%/kernel/include/kernel/net.h
+%%NETWORKING%%%%DATADIR%%/kernel/include/kernel/net.h
 %%DATADIR%%/kernel/include/kernel/objreg.h
 %%DATADIR%%/kernel/include/kernel/rsrc.h
 %%DATADIR%%/kernel/include/kernel/tls.h
@@ -45,127 +46,32 @@ sbin/dgd
 %%DATADIR%%/kernel/kernel/lib/auto.c
 %%DATADIR%%/kernel/kernel/lib/connection.c
 %%NETWORKING%%%%DATADIR%%/kernel/kernel/lib/network/port.c
-%%DATADIR%%/kernel/kernel/lib/port.c
 %%DATADIR%%/kernel/kernel/lib/user.c
 %%DATADIR%%/kernel/kernel/lib/wiztool.c
 %%DATADIR%%/kernel/kernel/obj/binary.c
-%%DATADIR%%/kernel/kernel/obj/port.c
+%%NETWORKING%%%%DATADIR%%/kernel/kernel/obj/port.c
 %%DATADIR%%/kernel/kernel/obj/rsrc.c
 %%DATADIR%%/kernel/kernel/obj/telnet.c
-%%DATADIR%%/kernel/kernel/obj/udp.c
 %%DATADIR%%/kernel/kernel/obj/user.c
 %%DATADIR%%/kernel/kernel/obj/wiztool.c
 %%DATADIR%%/kernel/kernel/sys/accessd.c
+%%NETWORKING%%%%DATADIR%%/kernel/kernel/sys/binary_port.c
 %%DATADIR%%/kernel/kernel/sys/driver.c
+%%NETWORKING%%%%DATADIR%%/kernel/kernel/sys/emergency_port.c
 %%DATADIR%%/kernel/kernel/sys/objregd.c
 %%DATADIR%%/kernel/kernel/sys/rsrcd.c
 %%NETWORKING%%%%DATADIR%%/kernel/kernel/sys/telnet_port.c
 %%DATADIR%%/kernel/kernel/sys/userd.c
 %%NETWORKING%%%%DATADIR%%/kernel/usr/System/initd.c
-%%PORTDOCS%%%%DOCSDIR%%/Commercial
-%%PORTDOCS%%%%DOCSDIR%%/Copyright
-%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/Copyright.NETWORK-PACKAGE
-%%PORTDOCS%%%%DOCSDIR%%/Credits
-%%PORTDOCS%%%%DOCSDIR%%/Extensions
-%%PORTDOCS%%%%DOCSDIR%%/Introduction
-%%PORTDOCS%%%%DOCSDIR%%/LPC.html
-%%PORTDOCS%%%%DOCSDIR%%/Platforms
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/editor
-%%PORTDOCS%%%%DOCSDIR%%/kfun/acos
-%%PORTDOCS%%%%DOCSDIR%%/kfun/allocate
-%%PORTDOCS%%%%DOCSDIR%%/kfun/allocate_float
-%%PORTDOCS%%%%DOCSDIR%%/kfun/allocate_int
-%%PORTDOCS%%%%DOCSDIR%%/kfun/asin
-%%PORTDOCS%%%%DOCSDIR%%/kfun/atan
-%%PORTDOCS%%%%DOCSDIR%%/kfun/atan2
-%%PORTDOCS%%%%DOCSDIR%%/kfun/block_input
-%%PORTDOCS%%%%DOCSDIR%%/kfun/call_other
-%%PORTDOCS%%%%DOCSDIR%%/kfun/call_out
-%%PORTDOCS%%%%DOCSDIR%%/kfun/call_trace
-%%PORTDOCS%%%%DOCSDIR%%/kfun/ceil
-%%PORTDOCS%%%%DOCSDIR%%/kfun/clone_object
-%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/kfun/close_user
-%%PORTDOCS%%%%DOCSDIR%%/kfun/compile_object
-%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/kfun/connect
-%%PORTDOCS%%%%DOCSDIR%%/kfun/cos
-%%PORTDOCS%%%%DOCSDIR%%/kfun/cosh
-%%PORTDOCS%%%%DOCSDIR%%/kfun/crypt
-%%PORTDOCS%%%%DOCSDIR%%/kfun/ctime
-%%PORTDOCS%%%%DOCSDIR%%/kfun/destruct_object
-%%PORTDOCS%%%%DOCSDIR%%/kfun/dump_state
-%%PORTDOCS%%%%DOCSDIR%%/kfun/editor
-%%PORTDOCS%%%%DOCSDIR%%/kfun/error
-%%PORTDOCS%%%%DOCSDIR%%/kfun/exp
-%%PORTDOCS%%%%DOCSDIR%%/kfun/explode
-%%PORTDOCS%%%%DOCSDIR%%/kfun/fabs
-%%PORTDOCS%%%%DOCSDIR%%/kfun/find_object
-%%PORTDOCS%%%%DOCSDIR%%/kfun/floor
-%%PORTDOCS%%%%DOCSDIR%%/kfun/fmod
-%%PORTDOCS%%%%DOCSDIR%%/kfun/frexp
-%%PORTDOCS%%%%DOCSDIR%%/kfun/function_object
-%%PORTDOCS%%%%DOCSDIR%%/kfun/get_dir
-%%PORTDOCS%%%%DOCSDIR%%/kfun/hash_crc16
-%%PORTDOCS%%%%DOCSDIR%%/kfun/hash_md5
-%%PORTDOCS%%%%DOCSDIR%%/kfun/implode
-%%PORTDOCS%%%%DOCSDIR%%/kfun/ldexp
-%%PORTDOCS%%%%DOCSDIR%%/kfun/log
-%%PORTDOCS%%%%DOCSDIR%%/kfun/log10
-%%PORTDOCS%%%%DOCSDIR%%/kfun/make_dir
-%%PORTDOCS%%%%DOCSDIR%%/kfun/map_indices
-%%PORTDOCS%%%%DOCSDIR%%/kfun/map_sizeof
-%%PORTDOCS%%%%DOCSDIR%%/kfun/map_values
-%%PORTDOCS%%%%DOCSDIR%%/kfun/millitime
-%%PORTDOCS%%%%DOCSDIR%%/kfun/modf
-%%PORTDOCS%%%%DOCSDIR%%/kfun/object_name
-%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/kfun/open_port
-%%PORTDOCS%%%%DOCSDIR%%/kfun/parse_string
-%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/kfun/ports
-%%PORTDOCS%%%%DOCSDIR%%/kfun/pow
-%%PORTDOCS%%%%DOCSDIR%%/kfun/previous_object
-%%PORTDOCS%%%%DOCSDIR%%/kfun/previous_program
-%%PORTDOCS%%%%DOCSDIR%%/kfun/query_editor
-%%PORTDOCS%%%%DOCSDIR%%/kfun/query_ip_name
-%%PORTDOCS%%%%DOCSDIR%%/kfun/query_ip_number
-%%PORTDOCS%%%%DOCSDIR%%/kfun/random
-%%PORTDOCS%%%%DOCSDIR%%/kfun/read_file
-%%PORTDOCS%%%%DOCSDIR%%/kfun/remove_call_out
-%%PORTDOCS%%%%DOCSDIR%%/kfun/remove_dir
-%%PORTDOCS%%%%DOCSDIR%%/kfun/remove_file
-%%PORTDOCS%%%%DOCSDIR%%/kfun/rename_file
-%%PORTDOCS%%%%DOCSDIR%%/kfun/restore_object
-%%PORTDOCS%%%%DOCSDIR%%/kfun/save_object
-%%PORTDOCS%%%%DOCSDIR%%/kfun/send_datagram
-%%PORTDOCS%%%%DOCSDIR%%/kfun/send_message
-%%PORTDOCS%%%%DOCSDIR%%/kfun/shutdown
-%%PORTDOCS%%%%DOCSDIR%%/kfun/sin
-%%PORTDOCS%%%%DOCSDIR%%/kfun/sinh
-%%PORTDOCS%%%%DOCSDIR%%/kfun/sizeof
-%%PORTDOCS%%%%DOCSDIR%%/kfun/sqrt
-%%PORTDOCS%%%%DOCSDIR%%/kfun/sscanf
-%%PORTDOCS%%%%DOCSDIR%%/kfun/status
-%%PORTDOCS%%%%DOCSDIR%%/kfun/strlen
-%%PORTDOCS%%%%DOCSDIR%%/kfun/swapout
-%%PORTDOCS%%%%DOCSDIR%%/kfun/tan
-%%PORTDOCS%%%%DOCSDIR%%/kfun/tanh
-%%PORTDOCS%%%%DOCSDIR%%/kfun/this_object
-%%PORTDOCS%%%%DOCSDIR%%/kfun/this_user
-%%PORTDOCS%%%%DOCSDIR%%/kfun/time
-%%PORTDOCS%%%%DOCSDIR%%/kfun/typeof
-%%PORTDOCS%%%%DOCSDIR%%/kfun/users
-%%PORTDOCS%%%%DOCSDIR%%/kfun/write_file
-%%PORTDOCS%%%%DOCSDIR%%/parser
-@exec mkdir -p %D/%%DATADIR%%/tmp
-@comment Remove files generated by DGD
+@unexec rm -f %D/%%DATADIR%%/kernel/kernel/data/*
 @unexec rm -f %D/%%DATADIR%%/kernel/include/float.h
 @unexec rm -f %D/%%DATADIR%%/kernel/include/limits.h
 @unexec rm -f %D/%%DATADIR%%/kernel/include/status.h
 @unexec rm -f %D/%%DATADIR%%/kernel/include/trace.h
 @unexec rm -f %D/%%DATADIR%%/kernel/include/type.h
 @unexec rm -f %D/%%DATADIR%%/kernel.log
-@unexec rm -f %D/%%DATADIR%%/tmp/kernel.swap
-@unexec rmdir %D/%%DATADIR%%/tmp
-@dirrm etc/dgd
+@unexec rm -f %D/%%DATADIR%%/tmp/dgd.swap
+@dirrm %%DATADIR%%/tmp
 @dirrm %%DATADIR%%/kernel/usr/admin
 @dirrm %%DATADIR%%/kernel/usr/System
 @dirrm %%DATADIR%%/kernel/usr
@@ -185,5 +91,4 @@ sbin/dgd
 @dirrm %%DATADIR%%/kernel/doc
 @dirrm %%DATADIR%%/kernel
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/kfun
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/dgd
