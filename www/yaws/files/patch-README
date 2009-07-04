@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- README.orig
++++ README
+@@ -70,7 +70,7 @@
+ 
+ 7. This will create a webserver at http://${host} and one at https://${host}
+ 
+-8. as root Edit /etc/yaws.conf 
++8. as root Edit !!PREFIX!!/etc/yaws/yaws.conf
+ 
+ 9. Create content in /var/yaws
+ 

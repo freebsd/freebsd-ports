@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yaws
-PORTVERSION=	1.82
-PORTREVISION=	1
+PORTVERSION=	1.83
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -31,6 +30,8 @@ OPTIONS=	SENDFILE "Use native sendfile(2) interface" on
 
 APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
+SUB_FILES=      pkg-message
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SENDFILE)
@@ -46,12 +47,13 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|!!PREFIX!!|${PREFIX}|g' \
 		${WRKSRC}/man/yaws_api.5 ${WRKSRC}/man/yaws.conf.5 \
-		${WRKSRC}/src/yaws_config.erl ${WRKSRC}/scripts/yaws.template
+		${WRKSRC}/README
 	@${FIND} ${WRKSRC} -name \*.orig -or -name \*.bak | ${XARGS} ${RM}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/yaws ${PREFIX}/bin
-	@${INSTALL_DATA} ${FILESDIR}/yaws.conf.sample ${PREFIX}/etc/
+	@${MKDIR} ${ETCDIR}
+	@${INSTALL_DATA} ${FILESDIR}/yaws.conf.sample ${ETCDIR}
 	@${MKDIR} ${APPDIR}/ebin
 	@${MKDIR} ${APPDIR}/include
 	@${MKDIR} ${APPDIR}/priv
@@ -65,12 +67,13 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/priv/lib/* ${APPDIR}/priv/lib
 	@${INSTALL_DATA} ${WRKSRC}/include/* ${APPDIR}/include
 	@${INSTALL_DATA} ${WRKSRC}/src/*.?rl ${APPDIR}/src
-	@cd ${WRKSRC}/www && (${FIND} * | ${CPIO} -pu ${PREFIX}/www/yaws)
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/www/yaws
+	@cd ${WRKSRC}/www && (${FIND} * | ${CPIO} -pu ${WWWDIR})
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WWWDIR}
 	@${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/man/*.5 ${MANPREFIX}/man/man5
 
 post-install:
 	@${LN} -sf ${PORTNAME}-${PORTVERSION} ${PREFIX}/lib/erlang/lib/${PORTNAME}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

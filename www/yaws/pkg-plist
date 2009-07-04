@@ -1,5 +1,5 @@
 bin/yaws
-etc/yaws.conf.sample
+%%ETCDIR%%/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/authmod_gssapi.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/haxe.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/json.beam
@@ -34,6 +34,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_session_server.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_soap_lib.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_soap_srv.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_stats.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup_restarts.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ticker.beam
@@ -89,6 +90,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_showarg.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_soap_lib.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_soap_srv.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_stats.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup_restarts.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_ticker.erl
@@ -327,5 +329,6 @@ etc/yaws.conf.sample
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%
+@dirrmtry %%ETCDIR%%
 @exec ln -sf yaws-%%VERSION%% %D/lib/erlang/lib/yaws
 @unexec rm -f %D/lib/erlang/lib/yaws

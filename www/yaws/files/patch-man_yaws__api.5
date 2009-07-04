@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- man/yaws_api.5.orig	Fri May 30 12:21:20 2003
-+++ man/yaws_api.5	Fri May 30 12:20:34 2003
-@@ -277,7 +277,7 @@
+--- man/yaws_api.5.orig
++++ man/yaws_api.5
+@@ -343,7 +343,7 @@
  .TP
  \fBsetconf(Gconf, Groups)\fR
  This function is intended for embedded mode in yaws. It makes it possible
 -to load a yaws configuration from another data source than /etc/yaws.conf, such
-+to load a yaws configuration from another data source than !!PREFIX!!/etc/yaws.conf, such
++to load a yaws configuration from another data source than !!PREFIX!!/etc/yaws/yaws.conf, such
  as a database. 
  If yaws is started with the environment \fI{embedded, true}\fR, yaws will
  start with an empty default configuration, and wait for some other
