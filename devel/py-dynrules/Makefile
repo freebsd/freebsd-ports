@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dynrules
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.8
 CATEGORIES=	devel python
 MASTER_SITES=	http://sysfault.org/projects/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
