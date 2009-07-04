@@ -1,6 +1,6 @@
---- docs/reference/camel/Makefile.in.orig	2009-04-17 01:03:20.000000000 +0200
-+++ docs/reference/camel/Makefile.in	2009-04-17 01:04:39.000000000 +0200
-@@ -132,7 +132,7 @@ GNOME_PLATFORM_LIBS = @GNOME_PLATFORM_LI
+--- docs/reference/camel/Makefile.in.orig	2009-07-04 12:06:59.000000000 +0200
++++ docs/reference/camel/Makefile.in	2009-07-04 12:23:53.000000000 +0200
+@@ -127,7 +127,7 @@
  GOBJECT_QUERY = @GOBJECT_QUERY@
  GREP = @GREP@
  HAVE_JW = @HAVE_JW@
@@ -9,3 +9,14 @@
  ICONV_CFLAGS = @ICONV_CFLAGS@
  ICONV_LIBS = @ICONV_LIBS@
  IDL_INCLUDES = @IDL_INCLUDES@
+@@ -731,8 +731,9 @@
+ 	    mv -f $${installdir}/$(DOC_MODULE).devhelp \
+ 	      $${installdir}/$(DOC_MODULE)-$(DOC_MODULE_VERSION).devhelp; \
+ 	  fi; \
+-	  $(GTKDOC_REBASE) --relative --dest-dir=$(DESTDIR) --html-dir=$${installdir}; \
++	  cp -R html/* $(HTML_DIR)/camel; \
+ 	fi
++#	  $(GTKDOC_REBASE) --relative --dest-dir=$(DESTDIR) --html-dir=$${installdir}; \
+ 
+ uninstall-local:
+ 	@if test -n "$(DOC_MODULE_VERSION)"; then \
