@@ -1,4 +1,4 @@
-Ted 2.17 is a text editor running under X Windows on Unix/Linux systems.
+Ted is a text editor running under X11 on Unix/Linux systems.
 
 Features 
 --------   
@@ -15,7 +15,7 @@ Features
   * Symbols and accented characters are fully supported.
   * Hyperlinks. 
   * Saving a document in HTML format.
-  * Save to *.pdf using /usr/X11R6/bin/rtf2pdf.sh
+  * Save to *.pdf using /usr/local/bin/rtf2pdf.sh
   * Numbered or bulleted lists 
 
 WWW: http://www.nllgg.nl/Ted/
