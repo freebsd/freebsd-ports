@@ -207,7 +207,6 @@
 %%WWWDIR_REL%%/core/adodb/drivers/adodb-sapdb.inc.php
 %%WWWDIR_REL%%/core/adodb/drivers/adodb-sqlanywhere.inc.php
 %%WWWDIR_REL%%/core/adodb/drivers/adodb-sqlite.inc.php
-%%WWWDIR_REL%%/core/adodb/drivers/adodb-sqlite.inc.php.bak
 %%WWWDIR_REL%%/core/adodb/drivers/adodb-sqlitepo.inc.php
 %%WWWDIR_REL%%/core/adodb/drivers/adodb-sybase.inc.php
 %%WWWDIR_REL%%/core/adodb/drivers/adodb-sybase_ase.inc.php
@@ -493,6 +492,7 @@
 %%WWWDIR_REL%%/jump_to_bug.php
 %%WWWDIR_REL%%/lang/.htaccess
 %%WWWDIR_REL%%/lang/langreadme.txt
+%%WWWDIR_REL%%/lang/strings_arabic.txt
 %%WWWDIR_REL%%/lang/strings_bulgarian.txt
 %%WWWDIR_REL%%/lang/strings_bulgarian_1251.txt
 %%WWWDIR_REL%%/lang/strings_catalan.txt
