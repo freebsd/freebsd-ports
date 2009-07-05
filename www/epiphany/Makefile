@@ -65,7 +65,7 @@ CONFIGURE_ENV+=gecko_cv_xpcom_program_check="yes"
 PLIST_SUB+=	GECKO19=""
 .else
 PLUGIN_SYMLINK=	18
-PLIST_SUB+=	GECKO10="@comment "
+PLIST_SUB+=	GECKO19="@comment "
 .endif
 
 NO_WERROR=	yes
