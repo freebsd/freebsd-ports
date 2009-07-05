@@ -1,0 +1,61 @@
+--- configure.in	2009-07-01 17:32:17.000000000 +0100
++++ configure.in	2009-07-01 17:45:44.000000000 +0100
+@@ -409,6 +409,21 @@
+ 	AC_DEFINE(WITH_UDPFROMTO, [], [define if you want udpfromto])
+ fi
+ 
++dnl extra argument: --with-perl
++WITH_PERL=yes
++AC_ARG_WITH(perl,
++[  --with-perl             Enable Perl support. (default=yes)],
++[ case "$withval" in
++    yes)
++	;;
++    *)
++	WITH_PERL=no
++  esac ]
++)
++if test "x$WITH_PERL" = "xno"; then
++	with_rlm_perl=no
++fi
++
+ dnl #############################################################
+ dnl #
+ dnl #  1. Checks for programs
+@@ -416,10 +431,14 @@
+ dnl #############################################################
+ 
+ CHECKRAD=checkrad.pl
++if test "x$WITH_PERL" = "xyes"; then
+ AC_PATH_PROG(PERL, perl, /usr/local/bin/perl)
+ if test "x$ac_cv_path_PERL" = "x"; then
+   AC_MSG_WARN(perl not found - Simultaneous-Use and checkrad.pl may not work)
+ fi
++else
++  AC_MSG_WARN(perl disabled - Simultaneous-Use and checkrad.pl may not work)
++fi
+ AC_PATH_PROG(SNMPGET, snmpget)
+ if test "x$ac_cv_path_SNMPGET" = "x"; then
+   AC_MSG_WARN(snmpget not found - Simultaneous-Use and checkrad.pl may not work)
+--- src/modules/rlm_perl/configure.in	2009-07-01 17:58:23.000000000 +0100
++++ src/modules/rlm_perl/configure.in	2009-07-01 20:09:39.000000000 +0100
+@@ -3,7 +3,18 @@
+ AC_REVISION($Revision$)
+ AC_DEFUN(modname,[rlm_perl])
+ 
+-if test x$with_[]modname != xno; then
++dnl extra argument: --with-perl
++WITH_PERL=yes
++AC_ARG_WITH(perl,
++[  --with-perl             Enable Perl support. (default=yes)],
++[ case "$withval" in
++    yes)
++        ;;
++    *)
++        WITH_PERL=no
++  esac ]
++)
++if test x$with_[]modname != xno && test x$WITH_PERL != xno; then
+ 
+ 	AC_PROG_CC
+ 	AC_PROG_CPP
