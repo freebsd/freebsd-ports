@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	1d
+PORTVERSION=	1g
 CATEGORIES=	textproc net kde
 MASTER_SITES=	http://diktv1.googlepages.com/	\
 		LOCAL/beech
@@ -22,7 +22,8 @@ USE_CMAKE=	yes
 
 PLIST_FILES=	bin/dikt \
 		share/applications/kde4/dikt.desktop \
-		share/apps/dikt/diktui.rc
+		share/apps/dikt/diktui.rc \
+		share/kde4/services/dict.protocol
 PLIST_DIRS=	share/apps/dikt
 
 .include <bsd.port.mk>
