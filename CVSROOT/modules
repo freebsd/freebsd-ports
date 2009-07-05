@@ -7884,6 +7884,7 @@ linux-f10-aspell                ports/textproc/linux-f10-aspell
 linux-f10-atk                   ports/accessibility/linux-f10-atk
 linux-f10-cairo                 ports/graphics/linux-f10-cairo
 linux-f10-curl                  ports/ftp/linux-f10-curl
+linux-f10-cyrus-sasl2           ports/security/linux-f10-cyrus-sasl2
 linux-f10-dri                   ports/graphics/linux-f10-dri
 linux-f10-esound                ports/audio/linux-f10-esound
 linux-f10-expat                 ports/textproc/linux-f10-expat
@@ -7911,6 +7912,7 @@ linux-f10-mikmod                ports/audio/linux-f10-mikmod
 linux-f10-nspr                  ports/devel/linux-f10-nspr
 linux-f10-nss                   ports/security/linux-f10-nss
 linux-f10-openal                ports/audio/linux-f10-openal
+linux-f10-openldap              ports/net/linux-f10-openldap
 linux-f10-openmotif             ports/x11-toolkits/linux-f10-openmotif
 linux-f10-openssl               ports/security/linux-f10-openssl
 linux-f10-pango                 ports/x11-toolkits/linux-f10-pango
