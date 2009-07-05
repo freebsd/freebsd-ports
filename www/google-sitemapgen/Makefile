@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	google-sitemapgen
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	www devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	goog-sitemapgen
-DISTNAME=	sitemap_gen-${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	sitemap_gen_${PORTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Script to analyze web server and generate Google Sitemap files
+
+PROJECTHOST=	sitemap-generators
+
+NO_WRKSUBDIR=
 
 USE_PYTHON=	YES
 USE_PYDISTUTILS=YES
