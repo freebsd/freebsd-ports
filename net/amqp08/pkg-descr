@@ -1,0 +1,9 @@
+This is a simple stub port which provides the AMQP 0.8 XML schema.
+
+It is required by many AMQP applications, and installs it in a fairly
+well defined central location on a FreeBSD host, that is,
+${PREFIX}/share/amqp/amqp0-8.xml.
+
+Note that AMQP specifications are hard versioned.
+
+WWW: http://www.amqp.org/

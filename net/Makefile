@@ -16,6 +16,7 @@
     SUBDIR += acx100
     SUBDIR += adasockets
     SUBDIR += aget
+    SUBDIR += amqp08
     SUBDIR += apinger
     SUBDIR += arp-scan
     SUBDIR += arp-sk
