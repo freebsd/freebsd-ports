@@ -339,6 +339,7 @@
     SUBDIR += p5-Email-MessageID
     SUBDIR += p5-Email-Reply
     SUBDIR += p5-Email-Send
+    SUBDIR += p5-Email-Sender
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Simple-Creator
     SUBDIR += p5-Email-Valid

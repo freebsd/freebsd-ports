@@ -1,0 +1,34 @@
+%%SITE_PERL%%/Email/Sender.pm
+%%SITE_PERL%%/Email/Sender/Failure.pm
+%%SITE_PERL%%/Email/Sender/Failure/Multi.pm
+%%SITE_PERL%%/Email/Sender/Failure/Permanent.pm
+%%SITE_PERL%%/Email/Sender/Failure/Temporary.pm
+%%SITE_PERL%%/Email/Sender/Manual.pm
+%%SITE_PERL%%/Email/Sender/Manual/QuickStart.pm
+%%SITE_PERL%%/Email/Sender/Role/CommonSending.pm
+%%SITE_PERL%%/Email/Sender/Simple.pm
+%%SITE_PERL%%/Email/Sender/Success.pm
+%%SITE_PERL%%/Email/Sender/Success/Partial.pm
+%%SITE_PERL%%/Email/Sender/Transport.pm
+%%SITE_PERL%%/Email/Sender/Transport/DevNull.pm
+%%SITE_PERL%%/Email/Sender/Transport/Failable.pm
+%%SITE_PERL%%/Email/Sender/Transport/Maildir.pm
+%%SITE_PERL%%/Email/Sender/Transport/Mbox.pm
+%%SITE_PERL%%/Email/Sender/Transport/Print.pm
+%%SITE_PERL%%/Email/Sender/Transport/SMTP.pm
+%%SITE_PERL%%/Email/Sender/Transport/SMTP/Persistent.pm
+%%SITE_PERL%%/Email/Sender/Transport/Sendmail.pm
+%%SITE_PERL%%/Email/Sender/Transport/Test.pm
+%%SITE_PERL%%/Email/Sender/Transport/Wrapper.pm
+%%SITE_PERL%%/Email/Sender/Util.pm
+%%SITE_PERL%%/mach/auto/Email/Sender/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/Email/Sender
+@dirrmtry %%SITE_PERL%%/mach/auto/Email
+@dirrmtry %%SITE_PERL%%/Email/Sender/Transport/SMTP
+@dirrmtry %%SITE_PERL%%/Email/Sender/Transport
+@dirrmtry %%SITE_PERL%%/Email/Sender/Success
+@dirrmtry %%SITE_PERL%%/Email/Sender/Role
+@dirrmtry %%SITE_PERL%%/Email/Sender/Manual
+@dirrmtry %%SITE_PERL%%/Email/Sender/Failure
+@dirrmtry %%SITE_PERL%%/Email/Sender
+@dirrmtry %%SITE_PERL%%/Email
