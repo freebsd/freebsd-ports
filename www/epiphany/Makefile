@@ -8,7 +8,7 @@
 
 PORTNAME=	epiphany
 PORTVERSION=	2.26.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -62,8 +62,10 @@ PLIST_SUB+=	GECKO=""
 .if ${GECKO:Mlibxul}!=""
 PLUGIN_SYMLINK=	19
 CONFIGURE_ENV+=gecko_cv_xpcom_program_check="yes"
+PLIST_SUB+=	GECKO19=""
 .else
 PLUGIN_SYMLINK=	18
+PLIST_SUB+=	GECKO10="@comment "
 .endif
 
 NO_WERROR=	yes
