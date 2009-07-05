@@ -39,6 +39,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-ctlseq.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-debug.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-debug.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-desktop-notify.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-desktop-notify.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-display.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-display.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-doctor.el
