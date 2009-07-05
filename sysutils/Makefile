@@ -742,6 +742,7 @@
     SUBDIR += syslogger
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
+    SUBDIR += tarsnap
     SUBDIR += tbku
     SUBDIR += tclsyslog
     SUBDIR += tcplist

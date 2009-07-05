@@ -741,3 +741,4 @@ TW-*.ttf		chinese/CNS11643-font	No redistribution or
 festlex-ogi		audio/festlex-ogi	No commercial use
 apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
 pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
+tarsnap-*		sysutils/tarsnap	Redistribution restricted

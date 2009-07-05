@@ -1,0 +1,6 @@
+bin/tarsnap
+bin/tarsnap-keygen
+bin/tarsnap-keymgmt
+@unexec if cmp -s %D/etc/tarsnap.conf.sample %D/etc/tarsnap.conf; then rm -f %D/etc/tarsnap.conf; fi
+etc/tarsnap.conf.sample
+@exec if [ ! -f %D/etc/tarsnap.conf ] ; then cp -p %D/%F %B/tarsnap.conf; fi
