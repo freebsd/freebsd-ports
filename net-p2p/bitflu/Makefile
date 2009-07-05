@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitflu
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CENKES
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,8 @@ COMMENT=	BitTorrent client written in Perl
 
 RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Danga-Socket>=0:${PORTSDIR}/devel/p5-Danga-Socket
+		p5-Danga-Socket>=0:${PORTSDIR}/devel/p5-Danga-Socket \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 PLUGINSDIR_BASE=lib/perl5
 PLUGINSDIR=	${PLUGINSDIR_BASE}/Bitflu
