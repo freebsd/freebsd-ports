@@ -121,6 +121,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/math/go-math.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-matrix3x3.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-rangefunc.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-regression.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/goffice-math.h
 include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/go-ms-parser.h
 include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/god-drawing-ms-client-handler.h
 include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/god-drawing-ms.h
@@ -145,6 +146,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pango-extras.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-path.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pattern.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-persist.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-string.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-style.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-styled-object.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-undo.h
