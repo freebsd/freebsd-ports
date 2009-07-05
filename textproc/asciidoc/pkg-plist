@@ -50,7 +50,12 @@ etc/asciidoc/images/icons/warning.png
 etc/asciidoc/javascripts/ASCIIMathML.js
 etc/asciidoc/javascripts/LaTeXMathML.js
 etc/asciidoc/javascripts/toc.js
+etc/asciidoc/lang-de.conf
+etc/asciidoc/lang-en.conf
 etc/asciidoc/lang-es.conf
+etc/asciidoc/lang-fr.conf
+etc/asciidoc/lang-hu.conf
+etc/asciidoc/lang-ru.conf
 etc/asciidoc/latex.conf
 etc/asciidoc/stylesheets/docbook-xsl.css
 etc/asciidoc/stylesheets/xhtml11-manpage.css
