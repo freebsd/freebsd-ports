@@ -6,5 +6,4 @@ what happened before and offers a simple yes/no interface to an application,
 which can then focus on performing the actual task (like sending email)
 or suppressing/postponing it.
 
-Author:	Michael Schilli <m@perlmeister.com>
 WWW:	http://search.cpan.org/dist/Data-Throttler/
