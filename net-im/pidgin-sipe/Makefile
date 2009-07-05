@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidgin-sipe
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	net-im
 MASTER_SITES=	SF/sipe
 
@@ -26,8 +26,7 @@ USE_GETTEXT=	yes
 CFLAGS+=	"-I/${LOCALBASE}/include"
 LIBS+=		"-L/${LOCALBASE}/lib"
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
-		LIBS="${LIBS}" \
+CONFIGURE_ENV+=	LIBS="${LIBS}" \
 		COM_ERR_CFLAGS="-I/usr/include" \
 		COM_ERR_LIBS="-L/usr/lib -lcom_err"
 
