@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_PERL=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack intltool
 
 CONFIGURE_ARGS=	--disable-tcl
 
