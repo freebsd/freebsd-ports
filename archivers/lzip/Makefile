@@ -7,6 +7,7 @@
 
 PORTNAME=	lzip
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
@@ -16,6 +17,9 @@ COMMENT=	Is a lossless data compressor based on the LZMA algorithm
 PLIST_FILES=	bin/lzip bin/lzdiff bin/lzgrep bin/lziprecover
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 MAN1=		lzip.1 lzdiff.1 lzgrep.1 lziprecover.1
 INFO=		lzip
 
