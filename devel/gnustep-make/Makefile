@@ -7,6 +7,7 @@
 
 PORTNAME=	gnustep-make
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -29,6 +30,10 @@ CONFIGURE_ARGS+=	--with-config-file=${GNUSTEP_PREFIX}/GNUstep.conf
 .if defined(GNUSTEP_WITH_BASE_GCC)
 GNUSTEP_WITHOUT_LIBOBJC=	yes
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|' \
+		${WRKSRC}/configure
 
 post-install:
 	${LN} -s Library/Makefiles ${GNUSTEP_PREFIX}/System/
