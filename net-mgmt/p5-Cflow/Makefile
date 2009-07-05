@@ -7,6 +7,7 @@
 
 PORTNAME=	Cflow
 PORTVERSION=	1.053
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/Cflow/ \
 		http://net.doit.wisc.edu/~plonka/Cflow/old/
@@ -16,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyze raw flow files written by cflowd (Cisco NetFlow data)
 
 .if defined(WITH_FLOW_TOOLS)
+BUILD_DEPENDS+= ${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
 RUN_DEPENDS+=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
 
 CFLAGS+=	-I${LOCALBASE}/include -DOSU
