@@ -1,0 +1,31 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC/Common/.packlist
+%%SITE_PERL%%/JSON/RPC/Common.pm
+%%SITE_PERL%%/JSON/RPC/Common/Message.pm
+%%SITE_PERL%%/JSON/RPC/Common/TypeConstraints.pm
+%%SITE_PERL%%/JSON/RPC/Common/Marshal/Text.pm
+%%SITE_PERL%%/JSON/RPC/Common/Marshal/HTTP.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Call.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Return.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Version_1_1.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Error.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Version_2_0.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Version_1_0.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Version_2_0/Error.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Version_1_1/Error.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Version_1_0/Error.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Call/Version_1_0.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Call/Version_1_1.pm
+%%SITE_PERL%%/JSON/RPC/Common/Procedure/Call/Version_2_0.pm
+@dirrm %%SITE_PERL%%/JSON/RPC/Common/Procedure/Call
+@dirrm %%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Version_2_0
+@dirrm %%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Version_1_1
+@dirrm %%SITE_PERL%%/JSON/RPC/Common/Procedure/Return/Version_1_0
+@dirrm %%SITE_PERL%%/JSON/RPC/Common/Procedure/Return
+@dirrm %%SITE_PERL%%/JSON/RPC/Common/Procedure
+@dirrm %%SITE_PERL%%/JSON/RPC/Common/Marshal
+@dirrm %%SITE_PERL%%/JSON/RPC/Common
+@dirrmtry %%SITE_PERL%%/JSON/RPC
+@dirrmtry %%SITE_PERL%%/JSON
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC/Common
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON

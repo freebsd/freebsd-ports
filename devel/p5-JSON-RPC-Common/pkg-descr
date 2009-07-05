@@ -1,0 +1,8 @@
+p5::JSON::RPC-Common is a perl module provides abstractions for
+JSON-RPC 1.0, 1.1 (both variations) and 2.0 (formerly 1.2)
+Procedure Call and Procedure Return objects (formerly known as
+request and result), along with error objects. It also provides
+marshalling objects to convert the model objects into JSON text
+and HTTP requests/responses.
+
+WWW: http://search.cpan.org/dist/JSON-RPC-Common/
