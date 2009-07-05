@@ -2,4 +2,6 @@ JasPer is a software-based implementation of the codec specified in the
 emerging JPEG-2000 Part-1 standard (i.e., ISO/IEC 15444-1). The JasPer software
 is written in the C programming language.
 
+LICENSE: MIT
+
 WWW: http://www.ece.uvic.ca/~mdadams/jasper/
