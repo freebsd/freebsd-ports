@@ -25,8 +25,6 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
-
 DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		msgid.doc qmail.txt texinfo.tex dirs.html index.html \
 		template.html fido howto misc rfc gatebau/msgid.sgml \
@@ -38,16 +36,17 @@ pre-configure:
 	${TOUCH} ${WRKSRC}/doc/fidogate.info
 	${RM} -f ${WRKSRC}/doc/fidogate.info-?
 	${RM} -f ${WRKSRC}/doc/fidogate.txt
-	@${PERL5} -pi -e "s=.{PREFIX}=${PREFIX}=g" ${WRKSRC}/config.make
-	@${PERL5} -pi -e "s=^CC=#CC=" ${WRKSRC}/config.make
+	@${REINPLACE_CMD} -e "s=.{PREFIX}=${PREFIX}=g" \
+		 -e "s=.{LOCALBASE}=${LOCALBASE}=g" \
+		 -e "s=^CC=#CC=" ${WRKSRC}/config.make
 .if defined(FIDOGATE_RUNAS)
-	@${PERL5} -pi -e "s/OWNER.*= news/OWNER		= ${FIDOGATE_RUNAS}/" \
+	@${REINPLACE_CMD} -e "s/OWNER.*= news/OWNER		= ${FIDOGATE_RUNAS}/" \
 		${WRKSRC}/config.make
 .endif
 .if defined(NOPORTDOCS)
-	@${PERL5} -pi -e "s/test doc/test/" ${WRKSRC}/Makefile
-	@${PERL5} -pi -e "s/run www/run/" ${WRKSRC}/scripts/Makefile
-	@${PERL5} -pi -e "s/cp ANNOUNCE/#cp ANNOUNCE/" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s/test doc/test/" \
+		-e "s/cp ANNOUNCE/#cp ANNOUNCE/" \
+		-e "s/run www/run/" ${WRKSRC}/Makefile
 .endif
 
 pre-install:
