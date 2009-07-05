@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zenmap
-DISTVERSION=	4.85BETA7
+DISTVERSION=	4.90RC1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
