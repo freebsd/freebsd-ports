@@ -26,8 +26,6 @@ USE_GNUSTEP_LOCAL_LIBS+=	SystemConfig:${SYSTEMCONFIG_PORT}
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/MenuServer
-ADDITIONAL_OBJCFLAGS+=	-I${LOCALBASE}/include
-ADDITIONAL_LDFLAGS+=	-L${LOCALBASE}/lib
 
 XWINDOWSERVERKIT_PORT?=		x11/etoile-xwindowserverkit
 SYSTEMCONFIG_PORT?=		deskutils/etoile-systemconfig

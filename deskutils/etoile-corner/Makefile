@@ -28,7 +28,6 @@ USE_XORG=	x11
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/Corner
-ADDITIONAL_LIB_DIRS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	System/Tools/Corner
 
 SMALLTALKKIT_PORT?=	lang/etoile-smalltalkkit

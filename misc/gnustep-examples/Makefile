@@ -25,6 +25,5 @@ USE_GL=		yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GNUSTEP_MAKE_DIRS+=	. gui/Finger gui/GFractal gui/HostAddress
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
-ADDITIONAL_LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

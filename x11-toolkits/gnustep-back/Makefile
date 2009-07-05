@@ -51,8 +51,6 @@ PLIST_SUB+=		BACK=xdps-${BACKVERSION}
 PLIST_SUB+=		WITH_XLIB="@comment "
 BACK_SUFFIX?=		-xdps
 CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
-ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include
-ADDITIONAL_LDFLAGS+=	-L${LOCALBASE}/lib
 .elif defined(WITH_GNUSTEP_LIBART)
 LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art

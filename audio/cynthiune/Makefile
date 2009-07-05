@@ -35,7 +35,6 @@ USE_GNOME+=	esound
 WRKSRC=		${WRKDIR}/cynthiune.app-${PORTVERSION}
 ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include/libmodplug
 ADDITIONAL_LIB_DIRS+=	-L${WRKSRC}/Frameworks/Cynthiune/Cynthiune.framework/Versions/Current
-ADDITIONAL_LIB_DIRS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 MAKE_FLAGS=	disable-windowsmedia=yes debug=no
 
