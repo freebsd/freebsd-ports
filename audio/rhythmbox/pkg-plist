@@ -29,6 +29,7 @@ lib/librhythmbox-core.so.0
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/__init__.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/artdisplay.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/rhythmbox-missing-artwork.svg
+lib/rhythmbox/plugins/audiocd/album-info.ui
 lib/rhythmbox/plugins/audiocd/audiocd-ui.xml
 lib/rhythmbox/plugins/audiocd/audiocd.rb-plugin
 lib/rhythmbox/plugins/audiocd/libaudiocd.la
@@ -157,6 +158,9 @@ lib/rhythmbox/plugins/power-manager/power-manager.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/rb/__init__.py
 %%PYTHON%%lib/rhythmbox/plugins/rb/__init__.pyc
 %%PYTHON%%lib/rhythmbox/plugins/rb/__init__.pyo
+%%PYTHON%%lib/rhythmbox/plugins/rb/stringmatch.py
+%%PYTHON%%lib/rhythmbox/plugins/rb/stringmatch.pyc
+%%PYTHON%%lib/rhythmbox/plugins/rb/stringmatch.pyo
 lib/rhythmbox/plugins/status-icon/libstatus-icon.la
 lib/rhythmbox/plugins/status-icon/libstatus-icon.so
 lib/rhythmbox/plugins/status-icon/status-icon-preferences.ui
@@ -205,7 +209,6 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/RBPlaylistManager.html
 %%DOCSDIR%%/RBPlaylistSource.html
 %%DOCSDIR%%/RBPropertyView.html
-%%DOCSDIR%%/RBProxyConfig.html
 %%DOCSDIR%%/RBQueryCreator.html
 %%DOCSDIR%%/RBRandomPlayOrder.html
 %%DOCSDIR%%/RBRating.html
@@ -439,6 +442,7 @@ share/icons/hicolor/scalable/apps/rhythmbox.svg
 share/locale/af/LC_MESSAGES/rhythmbox.mo
 share/locale/am/LC_MESSAGES/rhythmbox.mo
 share/locale/ar/LC_MESSAGES/rhythmbox.mo
+share/locale/as/LC_MESSAGES/rhythmbox.mo
 share/locale/az/LC_MESSAGES/rhythmbox.mo
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/be@latin/LC_MESSAGES/rhythmbox.mo
@@ -481,6 +485,7 @@ share/locale/nb/LC_MESSAGES/rhythmbox.mo
 share/locale/ne/LC_MESSAGES/rhythmbox.mo
 share/locale/nl/LC_MESSAGES/rhythmbox.mo
 share/locale/oc/LC_MESSAGES/rhythmbox.mo
+share/locale/or/LC_MESSAGES/rhythmbox.mo
 share/locale/pa/LC_MESSAGES/rhythmbox.mo
 share/locale/pl/LC_MESSAGES/rhythmbox.mo
 share/locale/ps/LC_MESSAGES/rhythmbox.mo
@@ -493,6 +498,7 @@ share/locale/sk/LC_MESSAGES/rhythmbox.mo
 share/locale/sr/LC_MESSAGES/rhythmbox.mo
 share/locale/sr@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/sv/LC_MESSAGES/rhythmbox.mo
+share/locale/ta/LC_MESSAGES/rhythmbox.mo
 share/locale/th/LC_MESSAGES/rhythmbox.mo
 share/locale/tr/LC_MESSAGES/rhythmbox.mo
 share/locale/uk/LC_MESSAGES/rhythmbox.mo
@@ -667,3 +673,5 @@ share/rhythmbox/uri-new.ui
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
