@@ -12,5 +12,6 @@ bin/dumptorrent.pl
 %%PLUGINSDIR%%/30_SourcesBitTorrent.pm
 %%PLUGINSDIR%%/30_SourcesBitTorrentKademlia.pm
 %%PLUGINSDIR%%/99_Cron.pm
+%%PLUGINSDIR%%/99_Rss.pm
 @dirrm %%PLUGINSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
