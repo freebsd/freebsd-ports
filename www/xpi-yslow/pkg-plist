@@ -1,25 +1,72 @@
 %%XPI_XPIDIR%%/chrome/content/yslow/component.js
-%%XPI_XPIDIR%%/chrome/content/yslow/env.js
-%%XPI_XPIDIR%%/chrome/content/yslow/fulljslint.js
+%%XPI_XPIDIR%%/chrome/content/yslow/lib/beautify.js
+%%XPI_XPIDIR%%/chrome/content/yslow/lib/fulljslint.js
+%%XPI_XPIDIR%%/chrome/content/yslow/lib/fulljsmin.js
+%%XPI_XPIDIR%%/chrome/content/yslow/lib/json2.js
+%%XPI_XPIDIR%%/chrome/content/yslow/img/speedometer.png
+%%XPI_XPIDIR%%/chrome/content/yslow/img/arrowUp.png
+%%XPI_XPIDIR%%/chrome/content/yslow/img/bn_edit.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/bn_yel_left.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/bn_yel_mid.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/bn_yel_right.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/grade_mask.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/gradient_bg.jpg
+%%XPI_XPIDIR%%/chrome/content/yslow/img/header_bg.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/ico_collapse.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/ico_expand.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/ico_help.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/ico_print.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/icon.png
+%%XPI_XPIDIR%%/chrome/content/yslow/img/land_bg_left.jpg
+%%XPI_XPIDIR%%/chrome/content/yslow/img/land_bg_mid.jpg
+%%XPI_XPIDIR%%/chrome/content/yslow/img/land_bg_right.jpg
+%%XPI_XPIDIR%%/chrome/content/yslow/img/land_logo.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/logo_16x16.png
+%%XPI_XPIDIR%%/chrome/content/yslow/img/logo_32x32.png
+%%XPI_XPIDIR%%/chrome/content/yslow/img/magnify.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/img/modal_bot_24.png
+%%XPI_XPIDIR%%/chrome/content/yslow/img/modal_mid_24.png
+%%XPI_XPIDIR%%/chrome/content/yslow/img/modal_top_24.png
+%%XPI_XPIDIR%%/chrome/content/yslow/img/overlay.png
+%%XPI_XPIDIR%%/chrome/content/yslow/img/arrowDown.png
+%%XPI_XPIDIR%%/chrome/content/yslow/yui/tabview.css
+%%XPI_XPIDIR%%/chrome/content/yslow/controller.js
+%%XPI_XPIDIR%%/chrome/content/yslow/doc.js
+%%XPI_XPIDIR%%/chrome/content/yslow/net.js
+%%XPI_XPIDIR%%/chrome/content/yslow/printable.css
+%%XPI_XPIDIR%%/chrome/content/yslow/renderers.js
+%%XPI_XPIDIR%%/chrome/content/yslow/resultset.js
+%%XPI_XPIDIR%%/chrome/content/yslow/rules.js
+%%XPI_XPIDIR%%/chrome/content/yslow/tool.css
+%%XPI_XPIDIR%%/chrome/content/yslow/util.js
+%%XPI_XPIDIR%%/chrome/content/yslow/componentSet.js
+%%XPI_XPIDIR%%/chrome/content/yslow/context.js
+%%XPI_XPIDIR%%/chrome/content/bindings.xml
+%%XPI_XPIDIR%%/chrome/content/browser.xul
+%%XPI_XPIDIR%%/chrome/content/exporter.js
+%%XPI_XPIDIR%%/chrome/content/view.js
+%%XPI_XPIDIR%%/chrome/content/yslow-ff-pref.js
+%%XPI_XPIDIR%%/chrome/content/yslow-firebug-net.js
+%%XPI_XPIDIR%%/chrome/content/yslow-firebug.js
+%%XPI_XPIDIR%%/chrome/content/yslow-firefox.js
+%%XPI_XPIDIR%%/chrome/content/yslowOptions.xul
+%%XPI_XPIDIR%%/chrome/content/yslowOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/yslow/jslintwrapper.js
-%%XPI_XPIDIR%%/chrome/content/yslow/lint.js
-%%XPI_XPIDIR%%/chrome/content/yslow/logo_16x16.png
-%%XPI_XPIDIR%%/chrome/content/yslow/logo_32x32.png
 %%XPI_XPIDIR%%/chrome/content/yslow/peeler.js
 %%XPI_XPIDIR%%/chrome/content/yslow/tools.js
-%%XPI_XPIDIR%%/chrome/content/yslow/utils.js
-%%XPI_XPIDIR%%/chrome/content/yslow/yahooLogo.gif
 %%XPI_XPIDIR%%/chrome/content/yslow/yslow.css
 %%XPI_XPIDIR%%/chrome/content/yslow/yslow.js
-%%XPI_XPIDIR%%/chrome/content/yslow/yslowFirebug.js
-%%XPI_XPIDIR%%/chrome/content/yslow/yslowOverlay.xul
-%%XPI_XPIDIR%%/chrome/content/yslow/yslowPanel.js
-%%XPI_XPIDIR%%/chrome/content/yslow/yslowcontext.js
+%%XPI_XPIDIR%%/chrome/skin/yslow.css
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/defaults/preferences/yslow.js
+%%XPI_XPIDIR%%/license.txt
 %%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/content/yslow/img
+@dirrm %%XPI_XPIDIR%%/chrome/content/yslow/lib
+@dirrm %%XPI_XPIDIR%%/chrome/content/yslow/yui
 @dirrm %%XPI_XPIDIR%%/chrome/content/yslow
 @dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/skin
 @dirrm %%XPI_XPIDIR%%/chrome
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
