@@ -18,6 +18,8 @@ COMMENT=	A PECL extension that provides WBXML conversion capabilities
 
 LIB_DEPENDS=	wbxml2.0:${PORTSDIR}/textproc/wbxml2
 
+CONFIGURE_ARGS=	--with-wbxml=${LOCALBASE} \
+		--with-libexpat-dir=${LOCALBASE}
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
