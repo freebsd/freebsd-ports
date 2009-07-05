@@ -2,7 +2,7 @@ bin/openal-info
 include/AL/al.h
 include/AL/alc.h
 include/AL/alext.h
-lib/libopenal.so.1.7.411
+lib/libopenal.so.1.8.466
 lib/libopenal.so.1
 lib/libopenal.so
 libdata/pkgconfig/openal.pc

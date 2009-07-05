@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openal-soft
-PORTVERSION=	1.7.411
-PORTREVISION=	1
+PORTVERSION=	1.8.466
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
@@ -23,4 +22,17 @@ CMAKE_USE_PTHREAD=	yes
 CMAKE_ARGS+=	-DALSA:BOOL=OFF -DPORTAUDIO:BOOL=OFF -DSOLARIS:BOOL=OFF \
 		-DDSOUND:BOOL=OFF
 
-.include <bsd.port.mk>
+OPTIONS=	PULSEAUDIO	"Enable sound streaming using PulseAudio" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PULSEAUDIO)
+LIB_DEPENDS+=	pulse-simple.0:${PORTSDIR}/audio/pulseaudio
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=ON
+.else
+CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=OFF
+.endif
+
+.include <bsd.port.post.mk>
