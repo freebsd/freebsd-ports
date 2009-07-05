@@ -5,9 +5,13 @@ bin/render_msa.pl
 bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/FeatureFile/Iterator.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/phylo_align.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/pairplot.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/rainbow_gene.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/spectrogram.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/ideogram.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/hat.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/heat_map.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/hidden.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/hybrid_plot.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/smoothing.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/stackedplot.pm
@@ -22,6 +26,7 @@ bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/Wiggle/Loader.pm
 %%SITE_PERL%%/Bio/Graphics/DrawTransmembrane.pm
 %%SITE_PERL%%/Bio/Graphics/FeatureBase.pm
+%%SITE_PERL%%/Bio/Graphics/FeatureDir.pm
 %%SITE_PERL%%/Bio/Graphics/RendererI.pm
 %%SITE_PERL%%/Bio/Graphics/Util.pm
 %%SITE_PERL%%/Bio/Graphics/Pictogram.pm

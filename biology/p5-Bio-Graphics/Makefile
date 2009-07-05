@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Graphics
-PORTVERSION=	1.95
+PORTVERSION=	1.97
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,6 +35,7 @@ MAN3=	Bio::Graphics.3 \
 	Bio::Graphics::DrawTransmembrane.3 \
 	Bio::Graphics::Feature.3 \
 	Bio::Graphics::FeatureBase.3 \
+	Bio::Graphics::FeatureDir.3 \
 	Bio::Graphics::FeatureFile.3 \
 	Bio::Graphics::FeatureFile::Iterator.3 \
 	Bio::Graphics::Glyph.3 \
@@ -60,9 +61,11 @@ MAN3=	Bio::Graphics.3 \
 	Bio::Graphics::Glyph::generic.3 \
 	Bio::Graphics::Glyph::graded_segments.3 \
 	Bio::Graphics::Glyph::group.3 \
+	Bio::Graphics::Glyph::hat.3 \
 	Bio::Graphics::Glyph::heat_map.3 \
 	Bio::Graphics::Glyph::heat_map_ideogram.3 \
 	Bio::Graphics::Glyph::heterogeneous_segments.3 \
+	Bio::Graphics::Glyph::hidden.3 \
 	Bio::Graphics::Glyph::hybrid_plot.3 \
 	Bio::Graphics::Glyph::ideogram.3 \
 	Bio::Graphics::Glyph::image.3 \
@@ -73,12 +76,14 @@ MAN3=	Bio::Graphics.3 \
 	Bio::Graphics::Glyph::minmax.3 \
 	Bio::Graphics::Glyph::oval.3 \
 	Bio::Graphics::Glyph::pentagram.3 \
+	Bio::Graphics::Glyph::pairplot.3 \
 	Bio::Graphics::Glyph::phylo_align.3 \
 	Bio::Graphics::Glyph::pinsertion.3 \
 	Bio::Graphics::Glyph::primers.3 \
 	Bio::Graphics::Glyph::processed_transcript.3 \
 	Bio::Graphics::Glyph::protein.3 \
 	Bio::Graphics::Glyph::ragged_ends.3 \
+	Bio::Graphics::Glyph::rainbow_gene.3 \
 	Bio::Graphics::Glyph::redgreen_box.3 \
 	Bio::Graphics::Glyph::redgreen_segment.3 \
 	Bio::Graphics::Glyph::repeating_shape.3 \
