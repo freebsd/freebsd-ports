@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mahara
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.5
 CATEGORIES=	www
-MASTER_SITES=	http://eduforge.org/frs/download.php/912/
+MASTER_SITES=	http://eduforge.org/frs/download.php/994/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An open source ePortfolio system
@@ -33,7 +33,7 @@ PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
 SUB_LIST=	MAHARADIR=${MAHARADIR} \
 		MAHARADATADIR=${MAHARADATADIR}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/htdocs
+WRKSRC=		${WRKDIR}/htdocs
 
 MAHARADIR?=	www/mahara
 MAHARADATADIR?=	www/maharadata
