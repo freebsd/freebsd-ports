@@ -21,9 +21,15 @@ USE_BZIP2=	yes
 USE_XORG=	x11
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX}/${PORTNAME}
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=--prefix=${PREFIX}/sourcenav
+
+post-patch:
+	${REINPLACE_CMD} -e 's|@XINCLUDES@|-I${LOCALBASE}/include|' \
+	    ${WRKSRC}/tk/unix/Makefile.in
 
 post-install:
-	${LN} -s ${PREFIX}/${PORTNAME}/bin/snavigator ${PREFIX}/bin
+	${LN} -s ${PREFIX}/sourcenav/bin/snavigator ${PREFIX}/bin/snavigator
 
 .include <bsd.port.mk>
