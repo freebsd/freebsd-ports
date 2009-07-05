@@ -159,6 +159,7 @@ share/smi/mibs/ietf/LANGTAG-TC-MIB
 share/smi/mibs/ietf/LMP-MIB
 share/smi/mibs/ietf/MALLOC-MIB
 share/smi/mibs/ietf/MAU-MIB
+share/smi/mibs/ietf/MIDCOM-MIB
 share/smi/mibs/ietf/MIOX25-MIB
 share/smi/mibs/ietf/MIP-MIB
 share/smi/mibs/ietf/MOBILEIPV6-MIB
@@ -189,6 +190,7 @@ share/smi/mibs/ietf/PIM-MIB
 share/smi/mibs/ietf/PIM-STD-MIB
 share/smi/mibs/ietf/PINT-MIB
 share/smi/mibs/ietf/PKTC-IETF-MTA-MIB
+share/smi/mibs/ietf/PKTC-IETF-SIG-MIB
 share/smi/mibs/ietf/POLICY-BASED-MANAGEMENT-MIB
 share/smi/mibs/ietf/POWER-ETHERNET-MIB
 share/smi/mibs/ietf/PPP-BRIDGE-NCP-MIB
