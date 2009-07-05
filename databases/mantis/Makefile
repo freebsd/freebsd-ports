@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.8
 CATEGORIES=	databases www
 MASTER_SITES=	SF/mantisbt
 DISTNAME=	mantisbt-${PORTVERSION}
