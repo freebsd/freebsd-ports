@@ -1,0 +1,2 @@
+share/amqp/amqp0-8.xml
+@unexec rmdir %D/share/amqp 2>/dev/null || true
