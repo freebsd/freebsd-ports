@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Capture/Tiny.pm
+%%SITE_PERL%%/Capture/Tiny.pod
+%%SITE_PERL%%/mach/auto/Capture/Tiny/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/Capture/Tiny
+@dirrmtry %%SITE_PERL%%/mach/auto/Capture
+@dirrmtry %%SITE_PERL%%/Capture

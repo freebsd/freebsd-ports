@@ -1,0 +1,6 @@
+Capture::Tiny provides a simple, portable way to capture anything sent to
+STDOUT or STDERR, regardless of whether it comes from Perl, from XS code or
+from an external program. Optionally, output can be teed so that it is captured
+while being passed through to the original handles.
+
+WWW: http://search.cpan.org/dist/Capture-Tiny/
