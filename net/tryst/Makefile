@@ -27,7 +27,6 @@ USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 WRKSRC=		${WRKDIR}/Tryst-108.pl6
-ADDITIONAL_LIB_DIRS+=	-L${LOCALBASE}/lib
 
 .if defined(FETCH_MAKESUM)
 MASTER_SITES=	http://gnustep.dyndns.org/Downloads/Frameworks/

@@ -28,8 +28,6 @@ USE_XORG=	xscrnsaver
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/Idle
-ADDITIONAL_OBJCFLAGS+=	-I${LOCALBASE}/include
-ADDITIONAL_LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	System/Tools/Idle
 
 XWINDOWSERVERKIT_PORT?=		x11/etoile-xwindowserverkit

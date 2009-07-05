@@ -22,6 +22,4 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
-ADDITIONAL_LIB_DIRS+=	-L${LOCALBASE}/lib
-
 .include <bsd.port.mk>
