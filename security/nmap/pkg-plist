@@ -1,9 +1,6 @@
 bin/nmap
 bin/ncat
 %%DATADIR%%/scripts/script.db
-%%DATADIR%%/scripts/rpcinfo.nse
-%%DATADIR%%/scripts/nbstat.nse
-%%DATADIR%%/scripts/finger.nse
 %%DATADIR%%/scripts/whois.nse
 %%DATADIR%%/scripts/upnp-info.nse
 %%DATADIR%%/scripts/telnet-brute.nse
@@ -11,6 +8,7 @@ bin/ncat
 %%DATADIR%%/scripts/sshv1.nse
 %%DATADIR%%/scripts/ssh-hostkey.nse
 %%DATADIR%%/scripts/sql-injection.nse
+%%DATADIR%%/scripts/socks-open-proxy.nse
 %%DATADIR%%/scripts/snmp-sysdescr.nse
 %%DATADIR%%/scripts/snmp-brute.nse
 %%DATADIR%%/scripts/sniffer-detect.nse
@@ -31,22 +29,28 @@ bin/ncat
 %%DATADIR%%/scripts/smb-brute.nse
 %%DATADIR%%/scripts/skypev2-version.nse
 %%DATADIR%%/scripts/robots.txt.nse
+%%DATADIR%%/scripts/rpcinfo.nse
 %%DATADIR%%/scripts/realvnc-auth-bypass.nse
 %%DATADIR%%/scripts/pptp-version.nse
 %%DATADIR%%/scripts/pop3-capabilities.nse
 %%DATADIR%%/scripts/pop3-brute.nse
+%%DATADIR%%/scripts/p2p-conficker.nse
+%%DATADIR%%/scripts/nbstat.nse
 %%DATADIR%%/scripts/mysql-info.nse
 %%DATADIR%%/scripts/ms-sql-info.nse
 %%DATADIR%%/scripts/irc-info.nse
+%%DATADIR%%/scripts/imap-capabilities.nse
 %%DATADIR%%/scripts/iax2-version.nse
 %%DATADIR%%/scripts/http-trace.nse
 %%DATADIR%%/scripts/http-passwd.nse
 %%DATADIR%%/scripts/http-open-proxy.nse
 %%DATADIR%%/scripts/http-auth.nse
+%%DATADIR%%/scripts/http-iis-webdav-vuln.nse
 %%DATADIR%%/scripts/html-title.nse
 %%DATADIR%%/scripts/ftp-brute.nse
 %%DATADIR%%/scripts/ftp-bounce.nse
 %%DATADIR%%/scripts/ftp-anon.nse
+%%DATADIR%%/scripts/finger.nse
 %%DATADIR%%/scripts/dns-zone-transfer.nse
 %%DATADIR%%/scripts/dns-recursion.nse
 %%DATADIR%%/scripts/dns-random-txid.nse
@@ -83,7 +87,9 @@ bin/ncat
 %%DATADIR%%/nselib/msrpctypes.lua
 %%DATADIR%%/nselib/msrpcperformance.lua
 %%DATADIR%%/nselib/msrpc.lua
+%%DATADIR%%/nselib/imap.lua
 @dirrm %%DATADIR%%/nselib
+%%DATADIR%%/nse_main.lua
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
 %%DATADIR%%/nmap-protocols
@@ -93,6 +99,8 @@ bin/ncat
 %%DATADIR%%/nmap.dtd
 %%DATADIR%%/nmap.xsl
 @dirrm %%DATADIR%%
+%%NCATDATADIR%%/ca-bundle.crt
+@dirrm %%NCATDATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/nmap.dtd
