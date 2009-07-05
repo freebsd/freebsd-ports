@@ -1,0 +1,12 @@
+Tarsnap is an online encrypted backup service.  It presents a tar-like
+command-line interface, but stores data online rather than locally;
+using ideas taken from the author's FreeBSD Update and Portsnap
+utilities, it maximizes performance by recognizing duplicate data and
+only storing it once, and cryptographically encrypts and signs archives
+using locally-held keys in order to guarantee that nobody without access
+to the key file (including the author) can read or modify archives.
+
+WWW: http://www.tarsnap.com/
+
+- Colin Percival
+cperciva@tarsnap.com
