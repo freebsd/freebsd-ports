@@ -75,8 +75,8 @@ share/dbus-1/services/org.gnome.Epiphany.service
 %%DATADIR%%/chrome/branding/brand.dtd
 %%DATADIR%%/chrome/branding/brand.properties
 %%DATADIR%%/chrome/global/about.xhtml
-%%DATADIR%%/chrome/global/netError.dtd
-%%DATADIR%%/components/epiphany.xpt
+%%GECKO19%%%%DATADIR%%/chrome/global/netError.dtd
+%%GECKO19%%%%DATADIR%%/components/epiphany.xpt
 %%DATADIR%%/default-prefs.js
 %%DATADIR%%/ephy-xml2ini.xsl
 %%DATADIR%%/epiphany-bookmark-editor-ui.xml
