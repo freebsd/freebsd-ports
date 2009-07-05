@@ -27,6 +27,8 @@ include/libspreadsheet-1.10/spreadsheet/file-autoft.h
 include/libspreadsheet-1.10/spreadsheet/format-template.h
 include/libspreadsheet-1.10/spreadsheet/func-builtin.h
 include/libspreadsheet-1.10/spreadsheet/func.h
+include/libspreadsheet-1.10/spreadsheet/gnm-command-impl.h
+include/libspreadsheet-1.10/spreadsheet/gnm-commands-slicer.h
 include/libspreadsheet-1.10/spreadsheet/gnm-datetime.h
 include/libspreadsheet-1.10/spreadsheet/gnm-format.h
 include/libspreadsheet-1.10/spreadsheet/gnm-graph-window.h
@@ -91,6 +93,7 @@ include/libspreadsheet-1.10/spreadsheet/sheet-object-widget.h
 include/libspreadsheet-1.10/spreadsheet/sheet-object.h
 include/libspreadsheet-1.10/spreadsheet/sheet-private.h
 include/libspreadsheet-1.10/spreadsheet/sheet-style.h
+include/libspreadsheet-1.10/spreadsheet/sheet-utils.h
 include/libspreadsheet-1.10/spreadsheet/sheet-view.h
 include/libspreadsheet-1.10/spreadsheet/sheet.h
 include/libspreadsheet-1.10/spreadsheet/solver.h
@@ -98,7 +101,6 @@ include/libspreadsheet-1.10/spreadsheet/sort.h
 include/libspreadsheet-1.10/spreadsheet/stf-export.h
 include/libspreadsheet-1.10/spreadsheet/stf-parse.h
 include/libspreadsheet-1.10/spreadsheet/stf.h
-include/libspreadsheet-1.10/spreadsheet/str.h
 include/libspreadsheet-1.10/spreadsheet/style-border.h
 include/libspreadsheet-1.10/spreadsheet/style-color.h
 include/libspreadsheet-1.10/spreadsheet/style-conditions.h
@@ -243,9 +245,9 @@ lib/gnumeric/%%VERSION%%/plugins/uihello/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.la
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
-lib/goffice/0.7.7/plugins/gnumeric/gnumeric.la
-lib/goffice/0.7.7/plugins/gnumeric/gnumeric.so
-lib/goffice/0.7.7/plugins/gnumeric/plugin.xml
+lib/goffice/0.7.8/plugins/gnumeric/gnumeric.la
+lib/goffice/0.7.8/plugins/gnumeric/gnumeric.so
+lib/goffice/0.7.8/plugins/gnumeric/plugin.xml
 lib/libspreadsheet-%%VERSION%%.so
 lib/libspreadsheet.la
 lib/libspreadsheet.so
@@ -294,12 +296,14 @@ share/gnumeric/%%VERSION%%/glade/autosave.glade
 share/gnumeric/%%VERSION%%/glade/cell-comment.glade
 share/gnumeric/%%VERSION%%/glade/cell-format.glade
 share/gnumeric/%%VERSION%%/glade/cell-sort.glade
+share/gnumeric/%%VERSION%%/glade/chi-squared.glade
 share/gnumeric/%%VERSION%%/glade/col-width.glade
 share/gnumeric/%%VERSION%%/glade/colrow.glade
 share/gnumeric/%%VERSION%%/glade/consolidate.glade
 share/gnumeric/%%VERSION%%/glade/correlation.glade
 share/gnumeric/%%VERSION%%/glade/covariance.glade
 share/gnumeric/%%VERSION%%/glade/dao.glade
+share/gnumeric/%%VERSION%%/glade/data-slicer.glade
 share/gnumeric/%%VERSION%%/glade/data-table.glade
 share/gnumeric/%%VERSION%%/glade/define-name.glade
 share/gnumeric/%%VERSION%%/glade/delete-cells.glade
@@ -935,7 +939,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnumeric/%%VERSION%%/autoformat-templates
 @dirrm share/gnumeric/%%VERSION%%
 @dirrm share/gnumeric
-@dirrm lib/goffice/0.7.7/plugins/gnumeric
+@dirrm lib/goffice/0.7.8/plugins/gnumeric
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xbase
 @dirrm lib/gnumeric/%%VERSION%%/plugins/uihello
 @dirrm lib/gnumeric/%%VERSION%%/plugins/sylk
