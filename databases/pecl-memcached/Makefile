@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.0
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -21,7 +21,7 @@ LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
 RUN_DEPENDS=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 
 PHP_MODNAME=	memcached
-USE_PHP=	session
+USE_PHP=	json session
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
