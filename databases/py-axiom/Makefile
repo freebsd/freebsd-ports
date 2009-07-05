@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	axiom
-PORTVERSION=	0.5.30
+PORTVERSION=	0.5.31
 CATEGORIES=	databases python
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,5 +25,6 @@ USE_PYDISTUTILS=	yes
 USE_TWISTED=	conch
 NO_BUILD=	yes
 PYDISTUTILS_PKGNAME=	Axiom
+PYDISTUTILS_PKGVERSION=	${PORTVERSION}_r17222
 
 .include <bsd.port.mk>
