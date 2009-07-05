@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.1.4
+DISTVERSION=	2.1.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -25,7 +25,6 @@ RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
-WANT_PERL=	yes
 
 LOGDIR?=	/var/log
 
@@ -36,7 +35,6 @@ USE_RC_SUBR=	radiusd.sh
 USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:262
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_PYTHON=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
@@ -49,96 +47,19 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 		LDAP		"With LDAP database support" off \
 		MYSQL		"With MySQL database support" off \
 		PGSQL		"With PostgreSQL database support" off \
+		UNIXODBC	"With unixODBC database support" off \
 		FIREBIRD	"With Firebird database support (EXPERIMENTAL)" off \
-		EXPERIMENTAL	"Build experimental modules (including DHCP)" off
+		PERL		"With Perl support" on \
+		PYTHON		"With Python support" on \
+		RUBY		"With Ruby support (EXPERIMENTAL)" off \
+		DHCP		"With DHCP support (EXPERIMENTAL)" off \
+		EXPERIMENTAL	"Build experimental modules" off
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
-BROKEN=		Does not build on sparc64-6
-.endif
+.include <bsd.port.options.mk>
 
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
 
-# User and group to use if USER is set
-USER=	freeradius
-GROUP=	freeradius
-
-FREERADIUS_LIBDIR=	lib/freeradius-${PORTVERSION}
-PLIST_SUB+=	LIBDIR="${FREERADIUS_LIBDIR}"
-USE_LDCONFIG=	${PREFIX}/${FREERADIUS_LIBDIR}
-
-CONFIGURE_ARGS=	--quiet \
-		--prefix=${PREFIX} \
-		--libdir=${PREFIX}/${FREERADIUS_LIBDIR} \
-		--localstatedir=/var \
-		--with-system-libtool
-.ifdef(NOPORTDOCS)
-CONFIGURE_ARGS+=--without-docdir
-PLIST_SUB+=	PORTDOCS="@comment "
-SUB_LIST+=	PORTDOCS="@comment "
-.else
-CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
-PLIST_SUB+=	PORTDOCS=""
-SUB_LIST+=	PORTDOCS=""
-.endif
-CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
-		--with-openssl-includes=${OPENSSLINC}
-# This conditionality avoids -L/usr/lib in the radiusd build step when
-# building with base system OpenSSL
-.if ${OPENSSLLIB} != "/usr/lib"
-CONFIGURE_ARGS+=--with-openssl-libraries=${OPENSSLLIB}
-.endif
-CONFIGURE_ARGS+=--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
-		--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR} \
-		--without-rlm_eap_ikev2 \
-		--without-rlm_eap_tnc \
-		--without-rlm_eap2 \
-		--without-rlm_opendirectory \
-		--without-rlm_sql_db2 \
-		--without-rlm_sql_iodbc \
-		--without-rlm_sql_oracle \
-		--without-rlm_sql_sqlite \
-		--without-rlm_sql_sybase \
-		--without-rlm_sql_unixodbc \
-		--with-vmps
-
-.if ${ARCH} == amd64
-CONFIGURE_ARGS+=	--with-pic
-.endif
-
-# Credentials for WITH_USER are RADIUS_USER, RADIUS_UID, RADIUS_GECOS,
-# RADIUS_HOME, RADIUS_SHELL, RADIUS_GROUP and RADIUS_GID.
-
-# Parse ${PORTSDIR}/UIDs and GIDs for the defaults
-USER!=	${GREP} -E '^${USER}:' ${PORTSDIR}/UIDs | \
-		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*)::0:0:([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
-GROUP!=	${GREP} -E '^${GROUP}:' ${PORTSDIR}/GIDs | \
-		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):$$/GROUP="\1" GID="\3"/'
-
-# Apply the defaults where necessary
-RADIUS_USER?=	${USER:MUSER*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_UID?=	${USER:MUID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_GECOS?=	${USER:MGECOS*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_HOME?=	${USER:MHOME*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_SHELL?=	${USER:MSHELL*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_GROUP?=	${GROUP:MGROUP*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_GID?=	${GROUP:MGID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-
-SUB_LIST+=	USER="${RADIUS_USER}" \
-		UID="${RADIUS_UID}" \
-		GECOS="${RADIUS_GECOS}" \
-		HOME="${RADIUS_HOME}" \
-		SHELL="${RADIUS_SHELL}" \
-		GROUP="${RADIUS_GROUP}" \
-		GID="${RADIUS_GID}" \
-		RADDB_WORK="${WRKSRC}/raddb" \
-		RADDB="${PREFIX}/etc/raddb" \
-		LOGDIR="${LOGDIR}" \
-		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}" \
-		RC_SUBR_SUFFIX="${RC_SUBR_SUFFIX}"
-SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 .ifdef(WITH_USER)
 SUB_LIST+=	RUN_AS_USER="yes"
 .else
@@ -195,6 +116,15 @@ CONFIGURE_ARGS+=--without-rlm_sql_postgresql
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
+.ifdef(WITH_UNIXODBC)
+CONFIGURE_ARGS+=--with-rlm_sql_unixodbc
+PLIST_SUB+=	UNIXODBC=""
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+.else
+CONFIGURE_ARGS+=--without-rlm_sql_unixodbc
+PLIST_SUB+=	UNIXODBC="@comment "
+.endif
+
 .ifdef(WITH_FIREBIRD)
 USE_FIREBIRD=	YES
 CONFIGURE_ARGS+=--with-rlm_sql_firebird
@@ -206,6 +136,51 @@ PLIST_SUB+=	FIREBIRD="@comment "
 
 # Firebird module is still experimental
 .if defined(WITH_FIREBIRD) && !defined(WITH_EXPERIMENTAL)
+WITH_EXPERIMENTAL=	yes
+.endif
+
+.ifdef(WITH_PERL)
+USE_PERL5=	yes
+CONFIGURE_ARGS+=--with-rlm_perl
+PLIST_SUB+=	RLMPERL=""
+.else
+CONFIGURE_ARGS+=--without-perl --without-rlm_perl
+PLIST_SUB+=	RLMPERL="@comment "
+.endif
+
+.ifdef(WITH_PYTHON)
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=--with-rlm_python \
+		--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
+		--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR}
+PLIST_SUB+=	RLMPYTHON=""
+.else
+CONFIGURE_ARGS+=--without-rlm_python
+PLIST_SUB+=	RLMPYTHON="@comment "
+.endif
+
+.ifdef(WITH_RUBY)
+USE_RUBY=	yes
+CONFIGURE_ARGS+=--with-rlm_ruby
+PLIST_SUB+=	RLMRUBY=""
+.else
+CONFIGURE_ARGS+=--without-rlm_ruby
+PLIST_SUB+=	RLMRUBY="@comment "
+.endif
+
+# rlm_ruby module is still experimental
+.if defined(WITH_RUBY) && !defined(WITH_EXPERIMENTAL)
+WITH_EXPERIMENTAL=	yes
+.endif
+
+.ifdef(WITH_DHCP)
+CONFIGURE_ARGS+=--with-dhcp
+.else
+CONFIGURE_ARGS+=--without-dhcp
+.endif
+
+# DHCP is still experimental
+.if defined(WITH_DHCP) && !defined(WITH_EXPERIMENTAL)
 WITH_EXPERIMENTAL=	yes
 .endif
 
@@ -227,7 +202,7 @@ WITH_EXPERIMENTAL=	yes
 .endif
 
 .ifdef(WITH_EXPERIMENTAL)
-CONFIGURE_ARGS+=--with-experimental-modules --with-dhcp
+CONFIGURE_ARGS+=--with-experimental-modules
 PLIST_SUB+=	EXPM=""
 .else
 PLIST_SUB+=	EXPM="@comment "
@@ -239,22 +214,87 @@ CONFIGURE_ARGS+=--enable-developer
 CFLAGS!=	${ECHO} ${CFLAGS} | ${SED} -Ee 's:-O[0-9]?[[:space:]]*::g'
 .endif
 
-# NOPERL has been removed from OPTIONS. It is a nasty hack as it doesn't
-# properly remove the dependency on perl. The main configure.in should be
-# patched so that the perl detection test fails to make this work properly,
-# though that configure run (at least in 2.0.0) only looks for perl to issue
-# a warning about Simultaneous-Use and checkrad.pl maybe not working without
-# perl.
-# Leave WITH_NOPERL as a knob for anyone that really wants it - or for
-# a proper fix in the future.
-.ifdef(WITH_NOPERL)
-CONFIGURE_ARGS+=--without-rlm_perl
-PLIST_SUB+=	RLMPERL="@comment "
-.else
-USE_PERL5=	yes
-CONFIGURE_ARGS+=--with-rlm_perl
-PLIST_SUB+=	RLMPERL=""
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
+BROKEN=		Does not build on sparc64-6
 .endif
+
+# User and group to use if USER option is chosen
+USER=	freeradius
+GROUP=	freeradius
+
+FREERADIUS_LIBDIR=	lib/freeradius-${PORTVERSION}
+PLIST_SUB+=	LIBDIR="${FREERADIUS_LIBDIR}"
+USE_LDCONFIG=	${PREFIX}/${FREERADIUS_LIBDIR}
+
+CONFIGURE_ARGS+=--quiet \
+		--prefix=${PREFIX} \
+		--libdir=${PREFIX}/${FREERADIUS_LIBDIR} \
+		--localstatedir=/var \
+		--with-system-libtool
+.ifdef(NOPORTDOCS)
+CONFIGURE_ARGS+=--without-docdir
+PLIST_SUB+=	PORTDOCS="@comment "
+SUB_LIST+=	PORTDOCS="@comment "
+.else
+CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
+PLIST_SUB+=	PORTDOCS=""
+SUB_LIST+=	PORTDOCS=""
+.endif
+CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
+		--with-openssl-includes=${OPENSSLINC}
+# This conditionality avoids -L/usr/lib in the radiusd build step when
+# building with base system OpenSSL
+.if ${OPENSSLLIB} != "/usr/lib"
+CONFIGURE_ARGS+=--with-openssl-libraries=${OPENSSLLIB}
+.endif
+CONFIGURE_ARGS+=--without-rlm_eap_ikev2 \
+		--without-rlm_eap_tnc \
+		--without-rlm_eap2 \
+		--without-rlm_opendirectory \
+		--without-rlm_sql_db2 \
+		--without-rlm_sql_iodbc \
+		--without-rlm_sql_oracle \
+		--without-rlm_sql_sqlite \
+		--without-rlm_sql_sybase \
+		--with-vmps
+
+.if ${ARCH} == amd64
+CONFIGURE_ARGS+=	--with-pic
+.endif
+
+# Credentials for WITH_USER are RADIUS_USER, RADIUS_UID, RADIUS_GECOS,
+# RADIUS_HOME, RADIUS_SHELL, RADIUS_GROUP and RADIUS_GID.
+
+# Parse ${PORTSDIR}/UIDs and GIDs for the defaults
+USERCREDS!=	${GREP} -E '^${USER}:' ${PORTSDIR}/UIDs | \
+		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*)::0:0:([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
+GROUPCREDS!=	${GREP} -E '^${GROUP}:' ${PORTSDIR}/GIDs | \
+		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):$$/GROUP="\1" GID="\3"/'
+
+# Apply the defaults where necessary
+RADIUS_USER?=	${USERCREDS:MUSER*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_UID?=	${USERCREDS:MUID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_GECOS?=	${USERCREDS:MGECOS*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_HOME?=	${USERCREDS:MHOME*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_SHELL?=	${USERCREDS:MSHELL*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_GROUP?=	${GROUPCREDS:MGROUP*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_GID?=	${GROUPCREDS:MGID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+
+SUB_LIST+=	USER="${RADIUS_USER}" \
+		UID="${RADIUS_UID}" \
+		GECOS="${RADIUS_GECOS}" \
+		HOME="${RADIUS_HOME}" \
+		SHELL="${RADIUS_SHELL}" \
+		GROUP="${RADIUS_GROUP}" \
+		GID="${RADIUS_GID}" \
+		RADDB_WORK="${WRKSRC}/raddb" \
+		RADDB="${PREFIX}/etc/raddb" \
+		LOGDIR="${LOGDIR}" \
+		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}" \
+		RC_SUBR_SUFFIX="${RC_SUBR_SUFFIX}"
+SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
 		radzap.1
@@ -289,8 +329,8 @@ post-patch:
 	@${FIND} -E ${WRKSRC}/raddb/certs \
 		-regex '.*/(bootstrap|Makefile)\.(orig|bak)$$' \
 		-delete
-# If EXPERIMENTAL (and therefore DHCP) is enabled, enable the DHCP dictionary
-.ifdef(WITH_EXPERIMENTAL)
+# If DHCPis enabled, enable the DHCP dictionary
+.ifdef(WITH_DHCP)
 	@${REINPLACE_CMD} -Ee 's:^#(.+ dictionary\.dhcp)$$:\1:g' \
 		${WRKSRC}/share/dictionary
 # Clean up (so as not to get an unwanted file in share)
@@ -313,6 +353,7 @@ pre-configure:
 	@cd ${WRKSRC}/src/modules/rlm_ldap && ${AUTOCONF} -I ${WRKSRC}
 	@cd ${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_mysql \
 		&& ${AUTOCONF} -I ${WRKSRC}
+	@cd ${WRKSRC}/src/modules/rlm_perl && ${AUTOCONF} -I ${WRKSRC}
 	@cd ${WRKSRC}/src/modules/rlm_python && ${AUTOCONF} -I ${WRKSRC}
 
 pre-install:
