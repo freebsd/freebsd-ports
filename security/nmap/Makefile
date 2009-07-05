@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nmap
-DISTVERSION=	4.85BETA7
-PORTREVISION=	1
+DISTVERSION=	4.90RC1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
@@ -17,8 +16,7 @@ MASTER_SITES=	http://nmap.org/dist/ \
 MAINTAINER=	daniel@roe.ch
 COMMENT=	Port scanning utility for large networks
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		dnet.1:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_LUA=	5.1
 LUA_COMPS=	lua
@@ -29,11 +27,11 @@ CONFIGURE_ARGS=	--without-localdirs \
 		--without-zenmap \
 		--without-ndiff \
 		--with-libpcre=${LOCALBASE} \
-		--with-libdnet=${LOCALBASE} \
 		--with-liblua=${LOCALBASE}
 CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
 
 MAN1=		nmap.1 ncat.1
+PLIST_SUB=	NCATDATADIR=share/ncat
 
 .ifndef WITHOUT_SSL
 USE_OPENSSL=	yes
