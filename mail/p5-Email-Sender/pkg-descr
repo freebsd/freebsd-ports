@@ -1,0 +1,16 @@
+Email::Sender replaces the old and sometimes problematic Email::Send library,
+which did a decent job at handling very simple email sending tasks, but was not
+suitable for serious use, for a variety of reasons.
+
+Most users will be able to use Email::Sender::Simple to send mail. Users with
+more specific needs should look at the available Email::Sender::Transport
+classes.
+
+Documentation may be found in Email::Sender::Manual, and new users should start
+with Email::Sender::Manual::QuickStart.
+
+This module provides a very simple, very clean, very specific interface
+to multiple Email mailers.  The goal of this software is to be small
+and simple, easy to use, and easy to extend.
+
+WWW: http://search.cpan.org/dist/Email-Sender/
