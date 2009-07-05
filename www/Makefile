@@ -1282,6 +1282,7 @@
     SUBDIR += py-jonpy
     SUBDIR += py-mechanize
     SUBDIR += py-meld
+    SUBDIR += py-meld3
     SUBDIR += py-mt
     SUBDIR += py-nevow
     SUBDIR += py-openssl-proxy
