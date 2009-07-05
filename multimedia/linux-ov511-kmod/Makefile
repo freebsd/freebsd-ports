@@ -9,6 +9,7 @@
 
 PORTNAME=	linux-ov511-kmod
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://info.iet.unipi.it/~luigi/FreeBSD/linux/drivers/media/video/
 DISTFILES=	ov511.c ov511.h
