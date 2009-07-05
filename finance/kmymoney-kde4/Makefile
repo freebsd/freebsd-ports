@@ -53,4 +53,8 @@ BUILD_DEPENDS+=	jade:${PORTSDIR}/textproc/jade \
 		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LIBTOOL%%|${LIBTOOL}|g ; \
+		s|%%LTMAIN%%|${LTMAIN}|g' ${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
