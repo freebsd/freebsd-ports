@@ -34,4 +34,9 @@ BROKEN=		gp-relative relocation against dynamic symbol
 .endif
 
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
+
+post-patch:
+	${REINPLACE_CMD} -e "s|/usr/local/|${LOCALBASE}/|g" \
+		${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
