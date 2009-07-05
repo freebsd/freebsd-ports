@@ -1,3 +1,5 @@
 @comment The module is installed in /boot/modules
+@comment on removal, re-run kldxref to restore or delete linker.hints
 @cwd /boot/modules
 gspca.ko
+@unexec kldxref %D

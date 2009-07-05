@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-gspca-kmod
 PORTVERSION=	1.0.20
+PORTREVISION=	1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://mxhaard.free.fr/spca50x/Download/oldrelease/
 DISTNAME=	gspcav1-20071220
