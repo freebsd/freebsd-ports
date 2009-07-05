@@ -28,7 +28,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui \
 		librsvg2 desktopfileutils pygnomedesktop gnomedocutils
 USE_GSTREAMER=	vorbis ogg
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-sound=gstreamer
+CONFIGURE_ARGS=	--with-sound=gstreamer \
+		--disable-tests
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
