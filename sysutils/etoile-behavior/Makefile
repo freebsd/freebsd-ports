@@ -13,6 +13,8 @@ MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile-${PORTVERSION}
 
+PORTSCOUT=	limit:^0\.2
+
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project AppKit bundle for session
 
