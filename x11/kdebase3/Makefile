@@ -60,6 +60,8 @@ OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+.else
+EXTRA_PATCHES+= ${FILESDIR}/extrapatch-libusb20
 .endif
 
 .if !defined(WITHOUT_ARTSWRAPPER)
@@ -71,7 +73,7 @@ RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 .endif
 
 .if !defined(WITHOUT_HAL)
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
 		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h
 LIB_DEPENDS+=	dbus-qt-1.1:${PORTSDIR}/devel/dbus-qt3 \
 		hal.1:${PORTSDIR}/sysutils/hal
