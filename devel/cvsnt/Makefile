@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--enable-fork --enable-rcs \
 		--disable-mysql --disable-sqlite\
 		--without-howl
 USE_ICONV=	yes
+USE_GNOME=	libxml2
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"\
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2\
