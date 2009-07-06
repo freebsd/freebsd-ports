@@ -22,8 +22,10 @@ USE_MYSQL=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${PERL} -pi -e "s|/usr/local/bin|${PREFIX}/bin|" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s|gtk-config|${GTK_CONFIG}|" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s|-ggdb|${CFLAGS}|" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E -e "s|^(LDFLAGS.*)/usr/local|\1${LOCALBASE}|" \
+		-e "s|/usr/local/bin|${PREFIX}/bin|" \
+		-e "s|gtk-config|${GTK_CONFIG}|g" \
+		-e "s|-ggdb|${CFLAGS}|" \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
