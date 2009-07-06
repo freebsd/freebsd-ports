@@ -5,7 +5,7 @@ include/ogg/os_types.h
 lib/libogg.a
 lib/libogg.la
 lib/libogg.so
-lib/libogg.so.5
+lib/libogg.so.6
 libdata/pkgconfig/ogg.pc
 share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/framing.html
@@ -72,11 +72,10 @@ share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/ogg/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/style.css
-%%PORTDOCS%%%%DOCSDIR%%/ogg/vorbis_comment.html
-%%PORTDOCS%%%%DOCSDIR%%/ogg/vorbis_info.html
 %%PORTDOCS%%%%DOCSDIR%%/oggstream.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc3533.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc3534.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc5334.txt
+%%PORTDOCS%%%%DOCSDIR%%/skeleton.html
 %%PORTDOCS%%%%DOCSDIR%%/stream.png
 %%PORTDOCS%%%%DOCSDIR%%/vorbisword2.png
 %%PORTDOCS%%%%DOCSDIR%%/white-ogg.png
