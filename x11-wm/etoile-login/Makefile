@@ -16,6 +16,8 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project GDM Greeter plugin
 
+PORTSCOUT=	limit:^0\.2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes

@@ -16,6 +16,8 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Azalea is a GNUstep window mamager
 
+PORTSCOUT=	limit:^0\.2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
@@ -25,7 +27,6 @@ USE_GNUSTEP_SYSTEM_LIBS+=	XWindowServerKit:${XWINDOWSERVERKIT_PORT}
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/Azalea
-PORTSCOUT=	limit:^0\.2$$
 
 XWINDOWSERVERKIT_PORT?=		x11/etoile-xwindowserverkit
 

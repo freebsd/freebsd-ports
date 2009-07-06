@@ -16,6 +16,8 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Provides a common storage facility for records with properties
 
+PORTSCOUT=	limit:^0\.2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
