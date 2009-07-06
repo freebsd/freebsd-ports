@@ -7,7 +7,7 @@
 
 PORTNAME=	warzone2100
 PORTVERSION=	2.0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mad.2:${PORTSDIR}/audio/libmad \
-		ogg.5:${PORTSDIR}/audio/libogg \
+		ogg.6:${PORTSDIR}/audio/libogg \
 		openal.0:${PORTSDIR}/audio/openal \
 		physfs.1:${PORTSDIR}/devel/physfs \
 		png.5:${PORTSDIR}/graphics/png \

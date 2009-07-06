@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	0.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin
 

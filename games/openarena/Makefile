@@ -7,7 +7,7 @@
 
 PORTNAME=	openarena
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://openarena.ws/rel/070/:src \
 		http://download.tuxfamily.net/cooker/openarena/rel070/:data \

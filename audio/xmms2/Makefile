@@ -11,7 +11,7 @@ DISTVERSION=	0.5DrLecter
 CATEGORIES?=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)

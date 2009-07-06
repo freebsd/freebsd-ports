@@ -7,7 +7,7 @@
 
 PORTNAME=	kmquake2
 PORTVERSION=	0.19
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/KMQuake2/:src \
 		http://qexpo2005.quakedev.com/uploaded/54/:data \

@@ -7,6 +7,7 @@
 
 PORTNAME=	stratagus
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tar.gz
@@ -68,7 +69,7 @@ CONFIGURE_ARGS+=--without-theora
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbisfile.5:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-vorbis
 .else
 CONFIGURE_ARGS+=--without-vorbis

@@ -7,6 +7,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	0.79.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://springrts.com/dl/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -20,7 +21,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		boost_thread.4:${PORTSDIR}/devel/boost \
 		IL.2:${PORTSDIR}/graphics/devil \
-		ogg.5:${PORTSDIR}/audio/libogg \
+		ogg.6:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 

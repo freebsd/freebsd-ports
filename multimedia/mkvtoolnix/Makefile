@@ -7,6 +7,7 @@
 
 PORTNAME=	mkvtoolnix
 PORTVERSION=	2.9.5
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		lzo2.2:${PORTSDIR}/archivers/lzo2 \
 		matroska.0:${PORTSDIR}/multimedia/libmatroska \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.5:${PORTSDIR}/audio/libogg \
+		ogg.6:${PORTSDIR}/audio/libogg \
 		pcrecpp.0:${PORTSDIR}/devel/pcre \
 		boost_regex:${PORTSDIR}/devel/boost
 

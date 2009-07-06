@@ -7,7 +7,7 @@
 
 PORTNAME=	stepmania
 PORTVERSION=	20071121
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
@@ -43,7 +43,7 @@ OPTIONS=	VORBIS		"Enable Ogg Vorbis support"		on  \
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.5:${PORTSDIR}/audio/libogg
+		ogg.6:${PORTSDIR}/audio/libogg
 .else
 CONFIGURE_ARGS+=--without-vorbis
 .endif

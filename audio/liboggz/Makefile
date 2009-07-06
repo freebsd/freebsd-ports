@@ -7,13 +7,14 @@
 
 PORTNAME=	liboggz
 DISTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.annodex.net/software/liboggz/download/ CENKES
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Simple Ogg API
 
-LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg.6:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig

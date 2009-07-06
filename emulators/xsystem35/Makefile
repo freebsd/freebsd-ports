@@ -7,7 +7,7 @@
 
 PORTNAME=	xsystem35
 PORTVERSION=	1.7.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 

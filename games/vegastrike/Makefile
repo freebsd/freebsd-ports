@@ -7,7 +7,7 @@
 
 PORTNAME=	vegastrike
 PORTVERSION=	0.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	vegastrike-source-${PORTVERSION}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${DATADIR}/vegastrike.ico:${PORTSDIR}/games/vegastrike-data
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		openal.0:${PORTSDIR}/audio/openal \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.5:${PORTSDIR}/audio/libogg
+		ogg.6:${PORTSDIR}/audio/libogg
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

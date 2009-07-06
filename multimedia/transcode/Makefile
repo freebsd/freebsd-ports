@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://transcode.kabewm.com/ \
 		http://fromani.exit1.org/
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--disable-fttest --enable-freetype=no
 .endif
 
 .if (defined(WITH_OGG) || exists(${LOCALBASE}/lib/libogg.so)) && !defined(WITHOUT_OGG)
-LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.6:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE} --enable-ogg
 .else
 CONFIGURE_ARGS+=	--enable-ogg=no

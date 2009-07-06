@@ -7,7 +7,7 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://downloads.xiph.org/releases/icecast/ \

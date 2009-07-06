@@ -7,6 +7,7 @@
 
 PORTNAME=	neverball
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/neverball/ \
 		http://offload2.icculus.org:9090/neverball/ \

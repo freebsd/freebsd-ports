@@ -7,7 +7,7 @@
 
 PORTNAME=	qudos
 PORTVERSION=	0.40.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
 DISTNAME=	QuDos-${PORTVERSION}-src

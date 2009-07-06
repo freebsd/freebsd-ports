@@ -7,6 +7,7 @@
 
 PORTNAME=	allacrost
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	allacrost_demo_source_${PORTVERSION}
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libluabind.a:${PORTSDIR}/devel/luabind
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		openal.0:${PORTSDIR}/audio/openal \
-		ogg.5:${PORTSDIR}/audio/libogg \
+		ogg.6:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes

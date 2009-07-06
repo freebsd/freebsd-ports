@@ -7,7 +7,7 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://lopster.sourceforge.net/download/
@@ -29,7 +29,7 @@ WITH_OGG=	yes
 .endif
 
 .if defined(WITH_OGG)
-LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.6:${PORTSDIR}/audio/libogg
 .endif
 
 .if !defined(WITHOUT_ZLIB)

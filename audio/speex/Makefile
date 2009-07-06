@@ -7,7 +7,7 @@
 
 PORTNAME=	speex
 DISTVERSION=	1.2rc1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An open-source patent-free voice codec
 
-LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg.6:${PORTSDIR}/audio/libogg
 
 CONFLICTS=	speex-devel-[0-9]*
 

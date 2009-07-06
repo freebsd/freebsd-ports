@@ -7,6 +7,7 @@
 
 PORTNAME=	btanks
 PORTVERSION=	0.7.5800
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -16,7 +17,7 @@ COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		openal.0:${PORTSDIR}/audio/openal \
 		expat.6:${PORTSDIR}/textproc/expat2 \
-		vorbisfile.5:${PORTSDIR}/audio/libvorbis
+		vorbisfile.6:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

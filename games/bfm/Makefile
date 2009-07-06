@@ -7,7 +7,7 @@
 
 PORTNAME=	bfm
 PORTVERSION=	0.0.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/battle4mandicor
 EXTRACT_SUFX=	-src.tar.gz
@@ -16,7 +16,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Battle for Mandicor is free RTS fantasy game using Stratagus
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		vorbisfile.5:${PORTSDIR}/audio/libvorbis
+		vorbisfile.6:${PORTSDIR}/audio/libvorbis
 
 USE_GMAKE=	yes
 USE_LUA=	5.0

@@ -7,7 +7,7 @@
 
 PORTNAME=	rezound
 DISTVERSION=	0.12.3beta
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -64,7 +64,7 @@ LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
 .endif
 
 .if defined(WITH_OGG)
-LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.6:${PORTSDIR}/audio/libogg
 .endif
 
 .if defined(WITH_VORBIS)
