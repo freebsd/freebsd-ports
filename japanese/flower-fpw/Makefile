@@ -7,7 +7,7 @@
 
 PORTNAME=	flower-fpw
 PORTVERSION=	1.0
-PORTREVISON=	1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/Flower/
 DISTNAME=	Flower-${PORTVERSION}
