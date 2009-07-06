@@ -16,6 +16,8 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project AZDock is a wm-dock
 
+PORTSCOUT=	limit:^0\.2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
@@ -27,8 +29,6 @@ USE_GNUSTEP_LOCAL_LIBS+=	IconKit:${ICONKIT_PORT}
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/AZDock
-ADDITIONAL_OBJCFLAGS+=	-I${LOCALBASE}/include
-ADDITIONAL_LDFLAGS+=	-L${LOCALBASE}/lib
 
 XWINDOWSERVERKIT_PORT?=		x11/etoile-xwindowserverkit
 BOOKMARKKIT_PORT?=	www/etoile-bookmarkkit
