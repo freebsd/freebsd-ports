@@ -21,6 +21,12 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/busybox
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 do-configure:
 	${CP} ${FILESDIR}/data-.config ${WRKSRC}/.config
 	cd ${WRKSRC} && ${GMAKE} oldconfig
@@ -28,4 +34,4 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
