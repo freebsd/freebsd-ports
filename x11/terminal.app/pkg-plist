@@ -10,6 +10,7 @@ System/Applications/Terminal.app/Resources/Spanish.lproj/Localizable.strings
 System/Applications/Terminal.app/Resources/Swedish.lproj/Localizable.strings
 System/Applications/Terminal.app/Resources/Terminal.desktop
 System/Applications/Terminal.app/Resources/Terminal.tiff
+System/Applications/Terminal.app/Resources/TerminalInfo.plist
 System/Applications/Terminal.app/Resources/Turkish.lproj/Localizable.strings
 System/Applications/Terminal.app/Resources/cursor_filled.tiff
 System/Applications/Terminal.app/Resources/cursor_inverted.tiff
