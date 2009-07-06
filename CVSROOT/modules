@@ -453,6 +453,7 @@ ampasctl                        ports/graphics/ampasCTL
 amphetadesk                     ports/www/amphetadesk
 amphetamine                     ports/games/amphetamine
 ample                           ports/audio/ample
+amqp08                          ports/net/amqp08
 amrcoder                        ports/audio/amrcoder
 amrstat                         ports/sysutils/amrstat
 amsn                            ports/net-im/amsn
@@ -2916,6 +2917,7 @@ erlang                          ports/lang/erlang
 erlang-doc                      ports/lang/erlang-doc
 erlang-lite                     ports/lang/erlang-lite
 erlang-mysql                    ports/databases/erlang-mysql
+erlang-thrift                   ports/devel/erlang-thrift
 erlang_xmlrpc                   ports/net/erlang_xmlrpc
 ermixer                         ports/audio/ermixer
 eroaster                        ports/sysutils/eroaster
@@ -18807,6 +18809,7 @@ py-SQLDict                      ports/databases/py-SQLDict
 py-SciParam                     ports/x11-toolkits/py-SciParam
 py-SymbolType                   ports/devel/py-SymbolType
 py-Tempita                      ports/textproc/py-Tempita
+py-ToscaWidgets                 ports/devel/py-ToscaWidgets
 py-TurboJinja                   ports/devel/py-TurboJinja
 py-WebError                     ports/www/py-WebError
 py-WebTest                      ports/www/py-WebTest
@@ -19298,6 +19301,7 @@ py-scriptaculous                ports/www/py-scriptaculous
 py-sendfile                     ports/devel/py-sendfile
 py-serial                       ports/comms/py-serial
 py-setuptools                   ports/devel/py-setuptools
+py-setuptools_darcs             ports/devel/py-setuptools_darcs
 py-sexy                         ports/x11-toolkits/py-sexy
 py-sgflib                       ports/games/py-sgflib
 py-sgfsummary                   ports/games/py-sgfsummary
@@ -19367,6 +19371,7 @@ py-tkinter                      ports/x11-toolkits/py-tkinter
 py-tktreectrl                   ports/x11-toolkits/py-tktreectrl
 py-tlslite                      ports/security/py-tlslite
 py-tofu                         ports/net/py-tofu
+py-toscawidgets                 ports/devel/py-ToscaWidgets
 py-trace2html                   ports/devel/py-trace2html
 py-traits                       ports/devel/py-traits
 py-trustedpickle                ports/security/py-trustedpickle
@@ -19408,6 +19413,7 @@ py-twistedweb2                  ports/www/py-twistedWeb2
 py-twistedwords                 ports/net-im/py-twistedWords
 py-twitter                      ports/net/py-twitter
 py-twofish                      ports/security/py-twofish
+py-txamqp                       ports/net/py-txamqp
 py-unit                         ports/devel/py-unit
 py-urlgrabber                   ports/www/py-urlgrabber
 py-urlimport                    ports/devel/py-urlimport
@@ -21778,6 +21784,7 @@ tap-plugins                     ports/audio/tap-plugins
 tapidbus                        ports/net/tapidbus
 tapioca-qt                      ports/net-im/tapioca-qt
 tardy                           ports/archivers/tardy
+tarsnap                         ports/sysutils/tarsnap
 taskjuggler                     ports/deskutils/taskjuggler
 taskstep                        ports/deskutils/taskstep
 taskwarrior                     ports/deskutils/taskwarrior
