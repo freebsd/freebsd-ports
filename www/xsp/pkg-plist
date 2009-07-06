@@ -26,18 +26,18 @@ lib/mono/gac/Mono.WebServer/0.1.0.0__0738eb9f132ed756/Mono.WebServer.dll
 lib/mono/gac/Mono.WebServer/0.1.0.0__0738eb9f132ed756/Mono.WebServer.dll.mdb
 lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756/Mono.WebServer2.dll
 lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756/Mono.WebServer2.dll.mdb
-lib/mono/gac/fastcgi-mono-server/2.4.0.0__0738eb9f132ed756/fastcgi-mono-server.exe
-lib/mono/gac/fastcgi-mono-server/2.4.0.0__0738eb9f132ed756/fastcgi-mono-server.exe.mdb
-lib/mono/gac/fastcgi-mono-server2/2.4.0.0__0738eb9f132ed756/fastcgi-mono-server2.exe
-lib/mono/gac/fastcgi-mono-server2/2.4.0.0__0738eb9f132ed756/fastcgi-mono-server2.exe.mdb
-lib/mono/gac/mod-mono-server/2.4.0.0__0738eb9f132ed756/mod-mono-server.exe
-lib/mono/gac/mod-mono-server/2.4.0.0__0738eb9f132ed756/mod-mono-server.exe.mdb
-lib/mono/gac/mod-mono-server2/2.4.0.0__0738eb9f132ed756/mod-mono-server2.exe
-lib/mono/gac/mod-mono-server2/2.4.0.0__0738eb9f132ed756/mod-mono-server2.exe.mdb
-lib/mono/gac/xsp/2.4.0.0__0738eb9f132ed756/xsp.exe
-lib/mono/gac/xsp/2.4.0.0__0738eb9f132ed756/xsp.exe.mdb
-lib/mono/gac/xsp2/2.4.0.0__0738eb9f132ed756/xsp2.exe
-lib/mono/gac/xsp2/2.4.0.0__0738eb9f132ed756/xsp2.exe.mdb
+lib/mono/gac/fastcgi-mono-server/2.4.2.0__0738eb9f132ed756/fastcgi-mono-server.exe
+lib/mono/gac/fastcgi-mono-server/2.4.2.0__0738eb9f132ed756/fastcgi-mono-server.exe.mdb
+lib/mono/gac/fastcgi-mono-server2/2.4.2.0__0738eb9f132ed756/fastcgi-mono-server2.exe
+lib/mono/gac/fastcgi-mono-server2/2.4.2.0__0738eb9f132ed756/fastcgi-mono-server2.exe.mdb
+lib/mono/gac/mod-mono-server/2.4.2.0__0738eb9f132ed756/mod-mono-server.exe
+lib/mono/gac/mod-mono-server/2.4.2.0__0738eb9f132ed756/mod-mono-server.exe.mdb
+lib/mono/gac/mod-mono-server2/2.4.2.0__0738eb9f132ed756/mod-mono-server2.exe
+lib/mono/gac/mod-mono-server2/2.4.2.0__0738eb9f132ed756/mod-mono-server2.exe.mdb
+lib/mono/gac/xsp/2.4.2.0__0738eb9f132ed756/xsp.exe
+lib/mono/gac/xsp/2.4.2.0__0738eb9f132ed756/xsp.exe.mdb
+lib/mono/gac/xsp2/2.4.2.0__0738eb9f132ed756/xsp2.exe
+lib/mono/gac/xsp2/2.4.2.0__0738eb9f132ed756/xsp2.exe.mdb
 lib/xsp/1.0/asp-state.exe
 lib/xsp/1.0/asp-state.exe.config
 lib/xsp/1.0/dbsessmgr.exe
@@ -140,6 +140,10 @@ lib/xsp/test/1.1/webservice/ConverterService.asmx
 lib/xsp/test/1.1/webservice/ServiceClient.exe.config
 lib/xsp/test/1.1/webservice/TestService.asmx
 lib/xsp/test/1.1/webservice/index.aspx
+lib/xsp/test/2.0/gridview/BasicGrid.aspx
+lib/xsp/test/2.0/gridview/ObjectBoundGrid.aspx
+lib/xsp/test/2.0/gridview/data.xml
+lib/xsp/test/2.0/gridview/index.aspx
 lib/xsp/test/2.0/index.aspx
 lib/xsp/test/2.0/masterpages/content1.aspx
 lib/xsp/test/2.0/masterpages/content2.aspx
@@ -225,6 +229,7 @@ libdata/pkgconfig/xsp.pc
 @dirrm lib/xsp/test/2.0/treeview
 @dirrm lib/xsp/test/2.0/menu
 @dirrm lib/xsp/test/2.0/masterpages
+@dirrm lib/xsp/test/2.0/gridview
 @dirrm lib/xsp/test/2.0
 @dirrm lib/xsp/test/1.1/webservice
 @dirrm lib/xsp/test/1.1/webcontrols
@@ -239,17 +244,17 @@ libdata/pkgconfig/xsp.pc
 @dirrm lib/xsp/2.0
 @dirrm lib/xsp/1.0
 @dirrm lib/xsp
-@dirrm lib/mono/gac/xsp2/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/xsp2/2.4.2.0__0738eb9f132ed756
 @dirrm lib/mono/gac/xsp2
-@dirrm lib/mono/gac/xsp/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/xsp/2.4.2.0__0738eb9f132ed756
 @dirrm lib/mono/gac/xsp
-@dirrm lib/mono/gac/mod-mono-server2/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/mod-mono-server2/2.4.2.0__0738eb9f132ed756
 @dirrm lib/mono/gac/mod-mono-server2
-@dirrm lib/mono/gac/mod-mono-server/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/mod-mono-server/2.4.2.0__0738eb9f132ed756
 @dirrm lib/mono/gac/mod-mono-server
-@dirrm lib/mono/gac/fastcgi-mono-server2/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/fastcgi-mono-server2/2.4.2.0__0738eb9f132ed756
 @dirrm lib/mono/gac/fastcgi-mono-server2
-@dirrm lib/mono/gac/fastcgi-mono-server/2.4.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/fastcgi-mono-server/2.4.2.0__0738eb9f132ed756
 @dirrm lib/mono/gac/fastcgi-mono-server
 @dirrm lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/Mono.WebServer2
