@@ -3,7 +3,7 @@
 #       python setup.py install
 #
 
-__version__ = "$FreeBSD: /tmp/pcvs/ports/databases/py25-bsddb/files/Attic/setup.py,v 1.1 2003-07-31 20:03:51 perky Exp $"
+__version__ = "$FreeBSD: /tmp/pcvs/ports/databases/py25-bsddb/files/Attic/setup.py,v 1.2 2009-07-06 21:41:38 lwhsu Exp $"
 
 import os
 try:
