@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	simlib
-PORTVERSION=	3.0.20071212
+PORTVERSION=	3.0.20081216
 CATEGORIES=	science
 MASTER_SITES=	http://www.fit.vutbr.cz/~peringer/SIMLIB/source/
-DISTNAME=	${PORTNAME}3-${PORTVERSION:E}
+DISTNAME=	${PORTNAME}-3-${PORTVERSION:E}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	SIMulation LIBrary for C++ programming language
@@ -25,6 +25,8 @@ NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|gmake|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
+		${WRKSRC}/src/Makefile.generic
 	@${MV} ${WRKSRC}/src/Makefile.FreeBSD-i386 ${WRKSRC}/src/Makefile
 	@${MV} ${WRKSRC}/examples/Makefile.FreeBSD-i386 ${WRKSRC}/examples/Makefile
 	@${MV} ${WRKSRC}/tests/Makefile.FreeBSD-i386 ${WRKSRC}/tests/Makefile

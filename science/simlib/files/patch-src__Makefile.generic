@@ -7,9 +7,9 @@
 -	install -m0644 $(SIMLIB_HEADERS) $(PREFIX)/include
 -	install -m0644 $(LIBNAME).a      $(PREFIX)/lib/lib$(LIBNAME).a
 -	install -m0644 $(LIBNAME).so     $(PREFIX)/lib/lib$(LIBNAME).so
-+	$(BSD_INSTALL_DATA) $(SIMLIB_HEADERS) $(PREFIX)/include
-+	$(BSD_INSTALL_PROGRAM) $(LIBNAME).a      $(PREFIX)/lib/lib$(LIBNAME).a
-+	$(BSD_INSTALL_PROGRAM) $(LIBNAME).so     $(PREFIX)/lib/lib$(LIBNAME).so
++	$(BSD_INSTALL_DATA) $(SIMLIB_HEADERS) %%PREFIX%%/include
++	$(BSD_INSTALL_PROGRAM) $(LIBNAME).a      %%PREFIX%%/lib/lib$(LIBNAME).a
++	$(BSD_INSTALL_PROGRAM) $(LIBNAME).so     %%PREFIX%%/lib/lib$(LIBNAME).so
  	@if ! grep '^'$(PREFIX)/lib'$$' /etc/ld.so.conf >/dev/null; then \
  	  echo "Add $(PREFIX)/lib to /etc/ld.so.conf ";  \
  	fi
