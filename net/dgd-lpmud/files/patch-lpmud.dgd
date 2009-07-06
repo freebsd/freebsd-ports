@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- lpmud.dgd.orig	Thu Dec 12 17:57:25 1996
-+++ lpmud.dgd	Thu Aug 28 14:52:40 2003
+--- lpmud.dgd.orig	2009-07-03 22:33:04.000000000 -0700
++++ lpmud.dgd	2009-07-03 22:34:31.000000000 -0700
 @@ -1,10 +1,10 @@
  telnet_port	= 2000;			/* telnet port number */
  binary_port	= 1999;			/* binary port number */
@@ -15,3 +13,11 @@ $FreeBSD$
  swap_size	= 20960;		/* # sectors in swap file */
  cache_size	= 100;			/* # sectors in swap cache */
  sector_size	= 1024;			/* swap sector size */
+@@ -12,6 +12,7 @@
+ static_chunk	= 64512;		/* static memory chunk */
+ dynamic_chunk	= 261120;		/* dynamic memory chunk */
+ dump_file	= "../dump";		/* state dump file */
++dump_interval	= 3600;			/* dump interval in seconds */
+ 
+ typechecking	= 0;			/* global typechecking */
+ include_file	= "/dgd/include/auto.h"; /* standard include file */

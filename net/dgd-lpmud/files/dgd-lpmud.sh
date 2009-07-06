@@ -16,7 +16,7 @@ case "$1" in
 			su ${DGD_USER} -c "${DGD_HNAME} ${DGD_HNAME_PORT} ${DGD_HNAME_PASSWD}" > /dev/null 2>&1 &
 			sleep 1
 			su ${DGD_USER} -c "${DGD} ${DGD_CONF}" >> "${DGD_LOG}" 2>&1 &
-			echo $(($!+1)) > "${DGD_PID}"
+			echo $(($!+2)) > "${DGD_PID}"
 			echo -n ' dgd-lpmud'
 		fi
 		;;
