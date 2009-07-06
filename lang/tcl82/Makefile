@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tool Command Language
 
-PORTSCOUT=	skipv:8.2b1,8.2b2,8.2b3
+PORTSCOUT=	limit:^8\.2\.
 
 LATEST_LINK=	tcl82
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
