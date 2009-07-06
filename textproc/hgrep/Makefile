@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.acme.com/software/hgrep/
 DISTNAME=	${PORTNAME}_04oct1999
 
-MAINTAINER=	az_mail@gmx.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice Highlighting Hack for grep
 
 WRKSRC=		${WRKDIR}/hgrep

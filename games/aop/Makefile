@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 CATEGORIES=	games
 MASTER_SITES=	http://raffi.at/code/aop/
 
-MAINTAINER=	az_mail@gmx.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based arcade game with only 64 lines of code
 
 DOCS=		COPYING README

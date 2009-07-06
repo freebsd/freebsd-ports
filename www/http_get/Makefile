@@ -12,7 +12,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/http_get/
 DISTNAME=	${PORTNAME}_18mar2002
 
-MAINTAINER=	az_mail@gmx.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dump http-contents to stdout
 
 WRKSRC=		${WRKDIR}/http_get

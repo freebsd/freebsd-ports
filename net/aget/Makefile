@@ -10,7 +10,7 @@ PORTVERSION=	0.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.enderunix.org/aget/
 
-MAINTAINER=	az_mail@gmx.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multithreaded HTTP download accelerator
 
 PLIST_FILES=	bin/aget
