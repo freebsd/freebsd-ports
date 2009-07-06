@@ -34,6 +34,7 @@ lib/gendarme/gendarme-wizard.exe
 lib/gendarme/gendarme.exe
 lib/gendarme/rules.xml
 lib/gsharp/gsharp.exe
+lib/gsharp/gsharp.exe.config
 lib/gui-compare/gui-compare.exe
 lib/ilcontrast/ilcontrast.exe
 lib/mono-tools/mprof-decoder-library.dll
@@ -106,6 +107,72 @@ lib/monodoc/sources/Gendarme.Rules.Ui.zip
 lib/monodoc/sources/gendarme.source
 lib/monodoc/sources/gendarme.tree
 lib/monodoc/sources/gendarme.zip
+lib/monodoc/web/common.css
+lib/monodoc/web/edit.aspx
+lib/monodoc/web/header.aspx
+lib/monodoc/web/header.html
+lib/monodoc/web/images/link.png
+lib/monodoc/web/images/mono-logo.png
+lib/monodoc/web/images/mono_logo_g.gif
+lib/monodoc/web/images/print.png
+lib/monodoc/web/images/searching.gif
+lib/monodoc/web/index.aspx
+lib/monodoc/web/index.html
+lib/monodoc/web/login.aspx
+lib/monodoc/web/logout.aspx
+lib/monodoc/web/mono_logo_g.gif
+lib/monodoc/web/monodoc.ashx
+lib/monodoc/web/monodoc.asmx
+lib/monodoc/web/oldposts.xml
+lib/monodoc/web/ptree/tree.css
+lib/monodoc/web/ptree/tree.js
+lib/monodoc/web/server.asmx
+lib/monodoc/web/server.cs
+lib/monodoc/web/sidebar.css
+lib/monodoc/web/sidebar.js
+lib/monodoc/web/tables.sql
+lib/monodoc/web/web.config
+lib/monodoc/web/wiki2ecmahelper.xsl
+lib/monodoc/web/xtree/images/msdn/I.gif
+lib/monodoc/web/xtree/images/msdn/L.gif
+lib/monodoc/web/xtree/images/msdn/Lminus.gif
+lib/monodoc/web/xtree/images/msdn/Lplus.gif
+lib/monodoc/web/xtree/images/msdn/T.gif
+lib/monodoc/web/xtree/images/msdn/Tminus.gif
+lib/monodoc/web/xtree/images/msdn/Tplus.gif
+lib/monodoc/web/xtree/images/msdn/blank.gif
+lib/monodoc/web/xtree/images/msdn/menu_bar.gif
+lib/monodoc/web/xtree/images/msdn/menu_corner.gif
+lib/monodoc/web/xtree/images/msdn/menu_corner_minus.gif
+lib/monodoc/web/xtree/images/msdn/menu_corner_plus.gif
+lib/monodoc/web/xtree/images/msdn/menu_tee.gif
+lib/monodoc/web/xtree/images/msdn/menu_tee_minus.gif
+lib/monodoc/web/xtree/images/msdn/menu_tee_plus.gif
+lib/monodoc/web/xtree/images/msdn2/I.gif
+lib/monodoc/web/xtree/images/msdn2/L.gif
+lib/monodoc/web/xtree/images/msdn2/Lminus.gif
+lib/monodoc/web/xtree/images/msdn2/Lplus.gif
+lib/monodoc/web/xtree/images/msdn2/T.gif
+lib/monodoc/web/xtree/images/msdn2/Tminus.gif
+lib/monodoc/web/xtree/images/msdn2/Tplus.gif
+lib/monodoc/web/xtree/images/msdn2/blank.gif
+lib/monodoc/web/xtree/images/xp/I.png
+lib/monodoc/web/xtree/images/xp/L.png
+lib/monodoc/web/xtree/images/xp/Lminus.png
+lib/monodoc/web/xtree/images/xp/Lplus.png
+lib/monodoc/web/xtree/images/xp/T.png
+lib/monodoc/web/xtree/images/xp/Tminus.png
+lib/monodoc/web/xtree/images/xp/Tplus.png
+lib/monodoc/web/xtree/images/xp/blank.png
+lib/monodoc/web/xtree/images/xp/file.png
+lib/monodoc/web/xtree/images/xp/folder.png
+lib/monodoc/web/xtree/images/xp/foldericon.png
+lib/monodoc/web/xtree/images/xp/openfolder.png
+lib/monodoc/web/xtree/images/xp/openfoldericon.png
+lib/monodoc/web/xtree/xloadtree.js
+lib/monodoc/web/xtree/xmlextras.js
+lib/monodoc/web/xtree/xtree.css
+lib/monodoc/web/xtree/xtree.js
 lib/mperfmon/config
 lib/mperfmon/mperfmon.exe
 libdata/pkgconfig/create-native-map.pc
@@ -120,6 +187,14 @@ share/pixmaps/gendarme.svg
 share/pixmaps/ilcontrast.png
 share/pixmaps/monodoc.png
 @dirrm lib/mperfmon
+@dirrm lib/monodoc/web/xtree/images/xp
+@dirrm lib/monodoc/web/xtree/images/msdn2
+@dirrm lib/monodoc/web/xtree/images/msdn
+@dirrm lib/monodoc/web/xtree/images
+@dirrm lib/monodoc/web/xtree
+@dirrm lib/monodoc/web/ptree
+@dirrm lib/monodoc/web/images
+@dirrm lib/monodoc/web
 @dirrm lib/mono-tools
 @dirrm lib/ilcontrast
 @dirrm lib/gui-compare
