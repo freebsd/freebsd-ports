@@ -7,6 +7,3 @@ task-based parallelism that abstracts platform details and threading
 mechanism for performance and scalability.
 
 WWW: http://tbb.sourceforge.net/
-
-- Arun Sharma
-arun@FreeBSD.org
