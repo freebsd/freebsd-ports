@@ -273,6 +273,7 @@
     SUBDIR += python25
     SUBDIR += python26
     SUBDIR += python30
+    SUBDIR += python31
     SUBDIR += q
     SUBDIR += qscheme
     SUBDIR += ratfor
