@@ -1,0 +1,95 @@
+# http://rt.perl.org/rt3/Public/Bug/Display.html?id=53038
+# http://perl5.git.perl.org/perl.git/commitdiff/414bf5ae0886eb91e2f6dbb35893ddb012852bef?hp=2556f95e0f4f5e8e95c9766374614ab52edefe3d
+diff --git a/XSUB.h b/XSUB.h
+index 46e9c29..2d95b1e 100644
+--- XSUB.h
++++ XSUB.h
+@@ -364,10 +364,10 @@ Rethrows a previously caught exception.  See L<perlguts/"Exception Handling">.
+ 	    SAVETMPS ;						\
+ 	    SAVEINT(db->filtering) ;				\
+ 	    db->filtering = TRUE ;				\
+-	    SAVESPTR(DEFSV) ;					\
++	    SAVE_DEFSV ;					\
+             if (name[7] == 's')                                 \
+                 arg = newSVsv(arg);                             \
+-	    DEFSV = arg ;					\
++	    DEFSV_set(arg) ;					\
+ 	    SvTEMP_off(arg) ;					\
+ 	    PUSHMARK(SP) ;					\
+ 	    PUTBACK ;						\
+diff --git a/perl.h b/perl.h
+index e07416e..526155b 100644
+--- perl.h
++++ perl.h
+@@ -1306,8 +1306,12 @@ EXTERN_C char *crypt(const char *, const char *);
+ #endif
+ 
+ #define ERRSV GvSV(PL_errgv)
+-/* FIXME? Change the assignments to PL_defgv to instantiate GvSV?  */
+-#define DEFSV GvSVn(PL_defgv)
++#ifdef PERL_CORE
++# define DEFSV (0 + GvSVn(PL_defgv))
++#else
++# define DEFSV GvSVn(PL_defgv)
++#endif
++#define DEFSV_set(sv) (GvSV(PL_defgv) = (sv))
+ #define SAVE_DEFSV SAVESPTR(GvSV(PL_defgv))
+ 
+ #define ERRHV GvHV(PL_errgv)	/* XXX unused, here for compatibility */
+diff --git a/pp_ctl.c b/pp_ctl.c
+index 08b14c6..3ef7e32 100644
+--- pp_ctl.c
++++ pp_ctl.c
+@@ -988,7 +988,7 @@ PP(pp_grepstart)
+     if (PL_op->op_private & OPpGREP_LEX)
+ 	PAD_SVl(PL_op->op_targ) = src;
+     else
+-	DEFSV = src;
++	DEFSV_set(src);
+ 
+     PUTBACK;
+     if (PL_op->op_type == OP_MAPSTART)
+@@ -1099,7 +1099,7 @@ PP(pp_mapwhile)
+ 	if (PL_op->op_private & OPpGREP_LEX)
+ 	    PAD_SVl(PL_op->op_targ) = src;
+ 	else
+-	    DEFSV = src;
++	    DEFSV_set(src);
+ 
+ 	RETURNOP(cLOGOP->op_other);
+     }
+@@ -4822,7 +4822,7 @@ S_run_user_filter(pTHX_ int idx, SV *buf_sv, int maxlen)
+ 	SAVETMPS;
+ 	EXTEND(SP, 2);
+ 
+-	DEFSV = upstream;
++	DEFSV_set(upstream);
+ 	PUSHMARK(SP);
+ 	mPUSHi(0);
+ 	if (filter_state) {
+diff --git a/pp_hot.c b/pp_hot.c
+index eeedc5b..6450e25 100644
+--- pp_hot.c
++++ pp_hot.c
+@@ -2424,7 +2424,7 @@ PP(pp_grepwhile)
+ 	if (PL_op->op_private & OPpGREP_LEX)
+ 	    PAD_SVl(PL_op->op_targ) = src;
+ 	else
+-	    DEFSV = src;
++	    DEFSV_set(src);
+ 
+ 	RETURNOP(cLOGOP->op_other);
+     }
+diff --git a/regexec.c b/regexec.c
+index 025d159..6c0923f 100644
+--- regexec.c
++++ regexec.c
+@@ -2250,7 +2250,7 @@ S_regtry(pTHX_ regmatch_info *reginfo, char **startpos)
+ 	    /* Make $_ available to executed code. */
+ 	    if (reginfo->sv != DEFSV) {
+ 		SAVE_DEFSV;
+-		DEFSV = reginfo->sv;
++		DEFSV_set(reginfo->sv);
+ 	    }
+ 	
+ 	    if (!(SvTYPE(reginfo->sv) >= SVt_PVMG && SvMAGIC(reginfo->sv)
