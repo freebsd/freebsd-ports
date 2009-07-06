@@ -1,0 +1,67 @@
+bin/jag
+%%DATADIR%%/data/bonus/clock.png
+%%DATADIR%%/data/bonus/power2.png
+%%DATADIR%%/data/bonus/power3.png
+%%DATADIR%%/data/bonus/power4.png
+%%DATADIR%%/data/bonus/power5.png
+%%DATADIR%%/data/bonus/score.png
+%%DATADIR%%/data/bonus/timer.png
+%%DATADIR%%/data/bonus/x.png
+%%DATADIR%%/data/levels/default.lpk
+%%DATADIR%%/data/schemes/default/bg1.jpg
+%%DATADIR%%/data/schemes/default/bg2.jpg
+%%DATADIR%%/data/schemes/default/bg3.jpg
+%%DATADIR%%/data/schemes/default/bg4.jpg
+%%DATADIR%%/data/schemes/default/bg5.jpg
+%%DATADIR%%/data/schemes/default/bg6.jpg
+%%DATADIR%%/data/schemes/default/bg7.jpg
+%%DATADIR%%/data/schemes/default/block1.png
+%%DATADIR%%/data/schemes/default/block2.png
+%%DATADIR%%/data/schemes/default/con1.png
+%%DATADIR%%/data/schemes/default/item1.png
+%%DATADIR%%/data/schemes/default/item2.png
+%%DATADIR%%/data/schemes/default/item3.png
+%%DATADIR%%/data/schemes/default/item4.png
+%%DATADIR%%/data/schemes/default/item5.png
+%%DATADIR%%/data/schemes/default/item6.png
+%%DATADIR%%/data/schemes/default/target1.png
+%%DATADIR%%/data/schemes/default/target2.png
+%%DATADIR%%/data/sounds/beep.wav
+%%DATADIR%%/data/sounds/bighammer.wav
+%%DATADIR%%/data/sounds/bomb.wav
+%%DATADIR%%/data/sounds/bonus.wav
+%%DATADIR%%/data/sounds/bonusend.wav
+%%DATADIR%%/data/sounds/clock.wav
+%%DATADIR%%/data/sounds/disappear.wav
+%%DATADIR%%/data/sounds/hammer.wav
+%%DATADIR%%/data/sounds/levelfail.wav
+%%DATADIR%%/data/sounds/levelstart.wav
+%%DATADIR%%/data/sounds/levelwon.wav
+%%DATADIR%%/data/sounds/mixer.wav
+%%DATADIR%%/data/sounds/newitem.wav
+%%DATADIR%%/data/sounds/newtool.wav
+%%DATADIR%%/data/sounds/randomkill.wav
+%%DATADIR%%/data/sounds/row.wav
+%%DATADIR%%/data/sounds/smallhammer.wav
+%%DATADIR%%/data/sounds/target.wav
+%%DATADIR%%/data/sounds/twin.wav
+%%DATADIR%%/data/sounds/unblock.wav
+%%DATADIR%%/data/tools/big_star.png
+%%DATADIR%%/data/tools/bolt.png
+%%DATADIR%%/data/tools/bomb.png
+%%DATADIR%%/data/tools/clock.png
+%%DATADIR%%/data/tools/cross.png
+%%DATADIR%%/data/tools/hammer.png
+%%DATADIR%%/data/tools/random.png
+%%DATADIR%%/data/tools/star.png
+%%DATADIR%%/data/tools/twins.png
+%%DATADIR%%/data/tools/unblock.png
+@dirrm %%DATADIR%%/data/tools
+@dirrm %%DATADIR%%/data/sounds
+@dirrm %%DATADIR%%/data/schemes/default
+@dirrm %%DATADIR%%/data/schemes
+@dirrm %%DATADIR%%/data/music
+@dirrm %%DATADIR%%/data/levels
+@dirrm %%DATADIR%%/data/bonus
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
