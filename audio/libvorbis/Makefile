@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libvorbis
-PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTVERSION=	1.2.2
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/ \
@@ -16,7 +15,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/ \
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Audio compression codec library
 
-LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg.6:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
@@ -30,5 +29,8 @@ MAKE_ENV=	DOC=""
 .else
 MAKE_ENV=	DOC=doc
 .endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>

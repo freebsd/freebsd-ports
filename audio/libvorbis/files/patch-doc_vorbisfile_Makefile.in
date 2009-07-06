@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- doc/vorbisfile/Makefile.in.orig
-+++ doc/vorbisfile/Makefile.in
-@@ -150,7 +150,7 @@
+--- doc/vorbisfile/Makefile.in.orig	2009-07-06 20:05:09.000000000 +0200
++++ doc/vorbisfile/Makefile.in	2009-07-06 20:05:20.000000000 +0200
+@@ -156,7 +156,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -12,12 +12,3 @@ $FreeBSD$
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -201,7 +201,7 @@
- 	overview.html reference.html return.html seekexample.html seeking.html\
- 	seeking_example_c.html seeking_test_c.html seekingexample.html\
- 	style.css threads.html vorbis_comment.html vorbis_info.html\
--	vorbisfile_example_c.html
-+	vorbisfile_example_c.html ov_fopen.html
- 
- EXTRA_DIST = $(doc_DATA)
- all: all-am
