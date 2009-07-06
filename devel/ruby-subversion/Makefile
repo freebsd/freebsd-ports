@@ -13,6 +13,8 @@ COMMENT=	Ruby bindings for version control system
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 
+BROKEN=		does not compile
+
 USE_RUBY=		yes
 
 SVN_BUILD_BINDINGS=yes
