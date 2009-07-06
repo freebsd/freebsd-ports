@@ -7,9 +7,9 @@
 
 PORTNAME=	PEAK-Rules
 PORTVERSION=	0.5a1
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://peak.telecommunity.com/snapshots/ \
-		http://www.turbogears.org/2.0/downloads/2.0.1/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.dev-r2582
 
