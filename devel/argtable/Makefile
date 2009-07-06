@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	argtable
-PORTVERSION=	2.9
+PORTVERSION=	2.11
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	An ANSI C library for parsing GNU style command line arguments
 
 USE_GNOME=	gnometarget
