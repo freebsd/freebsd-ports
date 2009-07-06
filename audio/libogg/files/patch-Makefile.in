@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Sun Apr 29 22:40:09 2007
-+++ Makefile.in	Sun Apr 29 22:40:33 2007
-@@ -196,7 +196,7 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- Makefile.in.orig	2009-07-06 19:32:50.000000000 +0200
++++ Makefile.in	2009-07-06 19:33:07.000000000 +0200
+@@ -205,7 +205,7 @@ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign 1.6 dist-zip
--SUBDIRS = src include doc win32
-+SUBDIRS = src include $(DOC) win32
+-SUBDIRS = src include doc
++SUBDIRS = src include $(DOC)
  m4datadir = $(datadir)/aclocal
  m4data_DATA = ogg.m4
- pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfigdir = $(libdir)/pkgconfig

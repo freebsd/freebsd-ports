@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libogg
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 PORTEPOCH=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
@@ -25,5 +25,8 @@ MAKE_ENV=	DOC=""
 .else
 MAKE_ENV=	DOC=doc
 .endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
