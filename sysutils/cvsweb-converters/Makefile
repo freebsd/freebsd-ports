@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsweb-converters
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.sbox.TUGraz.at/home/d/dada/distfiles/ \
 		http://mitglied.lycos.de/mkamm/distfiles/
