@@ -1,7 +1,7 @@
 --- /dev/null	2009-02-26 16:27:00.000000000 +0200
 +++ Makefile	2009-02-26 16:26:45.000000000 +0200
 @@ -0,0 +1,19 @@
-+DESTDIR		:= /usr/local
++DESTDIR		:= ${PREFIX}
 +MANDIR		:= ${DESTDIR}/man
 +INSTALL_PROGRAM	:= /usr/bin/install -s -m 0700
 +INSTALL_MAN	:= /usr/bin/install -m 0444

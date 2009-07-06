@@ -7,6 +7,7 @@
 
 PORTNAME=	unhide
 PORTVERSION=	20080519
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.security-projects.com/
 DISTNAME=	${PORTNAME}${DISTVERSION}
