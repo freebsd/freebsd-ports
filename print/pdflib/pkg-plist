@@ -1,5 +1,6 @@
 bin/pdfimage
 bin/pdflib-config
+bin/text2pdf
 include/pdflib.h
 lib/libpdf.a
 lib/libpdf.la
