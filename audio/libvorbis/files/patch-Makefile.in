@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	2007-07-26 21:46:30.000000000 +0000
-+++ Makefile.in	2007-07-26 21:49:02.000000000 +0000
-@@ -221,7 +221,7 @@
+--- Makefile.in.orig	2009-07-06 20:01:16.000000000 +0200
++++ Makefile.in	2009-07-06 20:01:35.000000000 +0200
+@@ -227,7 +227,7 @@ target_vendor = @target_vendor@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = 1.6 foreign dist-zip dist-bzip2
--SUBDIRS = lib include doc examples vq
-+SUBDIRS = lib include $(DOC) examples vq
+-SUBDIRS = m4 include vq lib examples test doc
++SUBDIRS = m4 include vq lib examples test $(DOC)
  m4datadir = $(datadir)/aclocal
  m4data_DATA = vorbis.m4
- pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfigdir = $(libdir)/pkgconfig

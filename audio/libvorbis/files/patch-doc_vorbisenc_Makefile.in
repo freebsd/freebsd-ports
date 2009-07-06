@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- doc/vorbisenc/Makefile.in.orig
-+++ doc/vorbisenc/Makefile.in
-@@ -150,7 +150,7 @@
+--- doc/vorbisenc/Makefile.in.orig	2009-07-06 20:04:38.000000000 +0200
++++ doc/vorbisenc/Makefile.in	2009-07-06 20:04:49.000000000 +0200
+@@ -156,7 +156,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -12,15 +12,3 @@ $FreeBSD$
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -187,7 +187,10 @@
- top_srcdir = @top_srcdir@
- doc_DATA = index.html overview.html reference.html style.css\
- 	 vorbis_encode_ctl.html vorbis_encode_init.html vorbis_info.html\
--	vorbis_encode_init_vbr.html
-+	vorbis_encode_init_vbr.html changes.html examples.html\
-+	ov_ectl_ratemanage2_arg.html ov_ectl_ratemanage_arg.html\
-+	vorbis_encode_setup_init.html vorbis_encode_setup_managed.html\
-+	vorbis_encode_setup_vbr.html
- 
- EXTRA_DIST = $(doc_DATA)
- all: all-am

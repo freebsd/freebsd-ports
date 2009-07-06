@@ -13,36 +13,26 @@ lib/libvorbisenc.so.2
 lib/libvorbisfile.a
 lib/libvorbisfile.la
 lib/libvorbisfile.so
-lib/libvorbisfile.so.5
+lib/libvorbisfile.so.6
 libdata/pkgconfig/vorbis.pc
 libdata/pkgconfig/vorbisenc.pc
 libdata/pkgconfig/vorbisfile.pc
 share/aclocal/vorbis.m4
-%%PORTDOCS%%%%DOCSDIR%%/Vorbis_I_spec.html
-%%PORTDOCS%%%%DOCSDIR%%/Vorbis_I_spec.pdf
-%%PORTDOCS%%%%DOCSDIR%%/components.png
-%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-avt-rtp-vorbis-06.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-avt-rtp-vorbis-06.xml
 %%PORTDOCS%%%%DOCSDIR%%/eightphase.png
 %%PORTDOCS%%%%DOCSDIR%%/evenlsp.png
-%%PORTDOCS%%%%DOCSDIR%%/floor1-1.png
-%%PORTDOCS%%%%DOCSDIR%%/floor1-2.png
-%%PORTDOCS%%%%DOCSDIR%%/floor1-3.png
-%%PORTDOCS%%%%DOCSDIR%%/floor1-4.png
+%%PORTDOCS%%%%DOCSDIR%%/fish_xiph_org.png
 %%PORTDOCS%%%%DOCSDIR%%/floor1_inverse_dB_table.html
 %%PORTDOCS%%%%DOCSDIR%%/floorval.png
 %%PORTDOCS%%%%DOCSDIR%%/fourphase.png
 %%PORTDOCS%%%%DOCSDIR%%/framing.html
 %%PORTDOCS%%%%DOCSDIR%%/helper.html
-%%PORTDOCS%%%%DOCSDIR%%/hufftree-under.png
-%%PORTDOCS%%%%DOCSDIR%%/hufftree.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/lspmap.png
 %%PORTDOCS%%%%DOCSDIR%%/oddlsp.png
 %%PORTDOCS%%%%DOCSDIR%%/oggstream.html
 %%PORTDOCS%%%%DOCSDIR%%/programming.html
-%%PORTDOCS%%%%DOCSDIR%%/residue-pack.png
-%%PORTDOCS%%%%DOCSDIR%%/residue2.png
+%%PORTDOCS%%%%DOCSDIR%%/rfc5215.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc5215.xml
 %%PORTDOCS%%%%DOCSDIR%%/squarepolar.png
 %%PORTDOCS%%%%DOCSDIR%%/stereo.html
 %%PORTDOCS%%%%DOCSDIR%%/stream.png
@@ -127,10 +117,7 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/vorbisfile_example_c.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisword2.png
 %%PORTDOCS%%%%DOCSDIR%%/wait.png
-%%PORTDOCS%%%%DOCSDIR%%/white-ogg.png
 %%PORTDOCS%%%%DOCSDIR%%/white-xifish.png
-%%PORTDOCS%%%%DOCSDIR%%/window1.png
-%%PORTDOCS%%%%DOCSDIR%%/window2.png
 @dirrm include/vorbis
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/vorbisfile
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/vorbisenc
