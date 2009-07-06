@@ -33,7 +33,9 @@ PORTDOCS=	BUGS ChangeLog FAQ INSTALL NEWS USAGE
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--enable-mysql
+CONFIGURE_ARGS+=	--enable-mysql \
+			--with-mysql-includes=${LOCALBASE}/include/mysql \
+			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 .endif
 
 .if defined(WITH_POSTGRESQL)
