@@ -10,7 +10,7 @@ PORTVERSION=	0.9.10
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
-MAINTAINER=	az_mail@gmx.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPgrab is a verbose packet sniffer for UNIX hosts
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pcap.h:${PORTSDIR}/net/libpcap
