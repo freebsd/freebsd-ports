@@ -2,18 +2,29 @@ System/Applications/GSPdf.app/GSPdf
 System/Applications/GSPdf.app/Resources/FileEPS.tiff
 System/Applications/GSPdf.app/Resources/FilePDF.tiff
 System/Applications/GSPdf.app/Resources/FilePS.tiff
-System/Applications/GSPdf.app/Resources/GSConsole.gorm
 System/Applications/GSPdf.app/Resources/GSPdf.desktop
+System/Applications/GSPdf.app/Resources/GSPdf.gorm/data.classes
+System/Applications/GSPdf.app/Resources/GSPdf.gorm/data.info
+System/Applications/GSPdf.app/Resources/GSPdf.gorm/objects.gorm
+System/Applications/GSPdf.app/Resources/GSPdfConsole.gorm/data.classes
 System/Applications/GSPdf.app/Resources/GSPdf.tiff
-System/Applications/GSPdf.app/Resources/GSPdfDocWin.gorm
+System/Applications/GSPdf.app/Resources/GSPdfConsole.gorm/data.info
+System/Applications/GSPdf.app/Resources/GSPdfConsole.gorm/objects.gorm
+System/Applications/GSPdf.app/Resources/GSPdfDocument.gorm/data.classes
+System/Applications/GSPdf.app/Resources/GSPdfDocument.gorm/data.info
+System/Applications/GSPdf.app/Resources/GSPdfDocument.gorm/objects.gorm
 System/Applications/GSPdf.app/Resources/Info-gnustep.plist
 System/Applications/GSPdf.app/Resources/hand.tiff
 System/Applications/GSPdf.app/Resources/left.tiff
 System/Applications/GSPdf.app/Resources/page.tiff
+System/Applications/GSPdf.app/Resources/papersizes.plist
 System/Applications/GSPdf.app/Resources/right.tiff
 System/Applications/GSPdf.app/Resources/zoomin.tiff
 System/Applications/GSPdf.app/Resources/zoomout.tiff
 System/Applications/GSPdf.app/stamp.make
 System/Tools/GSPdf
+@dirrm System/Applications/GSPdf.app/Resources/GSPdfDocument.gorm
+@dirrm System/Applications/GSPdf.app/Resources/GSPdfConsole.gorm
+@dirrm System/Applications/GSPdf.app/Resources/GSPdf.gorm
 @dirrm System/Applications/GSPdf.app/Resources
 @dirrm System/Applications/GSPdf.app
