@@ -1,8 +1,9 @@
 /* convert old LPmud .o files to new DGD .o format */
 /* $FreeBSD$ */
 # include <ctype.h>
-# include <string.h>
 # include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
 
 int array, arrbuf[1000];
 char buffer[60000];	/* large enough? */

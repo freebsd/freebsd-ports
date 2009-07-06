@@ -19,7 +19,7 @@ COMMENT=	LPmud mudlib, for use with DGD
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:${PORTSDIR}/net/dgd
 
-RESTRICTED=	"no monetary gain, tarball OK for CDROM"
+RESTRICTED=	no monetary gain, tarball OK for CDROM
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
@@ -27,6 +27,9 @@ WRKSRC=		${WRKDIR}/mud
 post-extract:
 	@${CP} ${FILESDIR}/oconv.c ${WRKSRC}/
 	@${CP} ${FILESDIR}/Makefile.bin ${WRKSRC}/Makefile
+
+post-patch:
+	cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
 
 do-configure:
 	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:" ${WRKSRC}/lpmud.dgd
