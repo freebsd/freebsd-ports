@@ -426,6 +426,7 @@ include/wine/windows/rpcdcep.h
 include/wine/windows/rpcndr.h
 include/wine/windows/rpcnterr.h
 include/wine/windows/rpcproxy.h
+include/wine/windows/rtutils.h
 include/wine/windows/scarderr.h
 include/wine/windows/schannel.h
 include/wine/windows/schemadef.h
@@ -670,6 +671,7 @@ lib/wine/dpnet.dll.so
 lib/wine/dpnhpast.dll.so
 lib/wine/dpnlobby.dll.so
 lib/wine/dpwsockx.dll.so
+lib/wine/drmclien.dll.so
 lib/wine/dsound.dll.so
 lib/wine/dssenh.dll.so
 lib/wine/dswave.dll.so
@@ -820,6 +822,7 @@ lib/wine/libresutils.def
 lib/wine/libriched20.def
 lib/wine/librpcrt4.def
 lib/wine/librsaenh.def
+lib/wine/librtutils.def
 lib/wine/libsecur32.def
 lib/wine/libsensapi.def
 lib/wine/libserialui.def
@@ -846,6 +849,7 @@ lib/wine/libuuid.a
 lib/wine/libuxtheme.def
 lib/wine/libvdmdbg.def
 lib/wine/libversion.def
+lib/wine/libwindowscodecs.def
 lib/wine/libwinecrt0.a
 lib/wine/libwined3d.def
 lib/wine/libwinhttp.def
@@ -976,6 +980,7 @@ lib/wine/rpcrt4.dll.so
 lib/wine/rpcss.exe.so
 lib/wine/rsabase.dll.so
 lib/wine/rsaenh.dll.so
+lib/wine/rtutils.dll.so
 lib/wine/rundll32.exe.so
 lib/wine/sane.ds.so
 lib/wine/sccbase.dll.so
