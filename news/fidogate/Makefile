@@ -36,17 +36,18 @@ pre-configure:
 	${TOUCH} ${WRKSRC}/doc/fidogate.info
 	${RM} -f ${WRKSRC}/doc/fidogate.info-?
 	${RM} -f ${WRKSRC}/doc/fidogate.txt
-	@${REINPLACE_CMD} -e "s=.{PREFIX}=${PREFIX}=g" \
-		 -e "s=.{LOCALBASE}=${LOCALBASE}=g" \
-		 -e "s=^CC=#CC=" ${WRKSRC}/config.make
+	@${REINPLACE_CMD} -e "s|.{PREFIX}|${PREFIX}|g" \
+		 -e "s|.{LOCALBASE}|${LOCALBASE}|g" \
+		 -e "s|^CC|#CC|" ${WRKSRC}/config.make
 .if defined(FIDOGATE_RUNAS)
-	@${REINPLACE_CMD} -e "s/OWNER.*= news/OWNER		= ${FIDOGATE_RUNAS}/" \
+	@${REINPLACE_CMD} -e "s|OWNER.*= news|OWNER		= ${FIDOGATE_RUNAS}|" \
 		${WRKSRC}/config.make
 .endif
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s/test doc/test/" \
-		-e "s/cp ANNOUNCE/#cp ANNOUNCE/" \
-		-e "s/run www/run/" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|test doc|test|" \
+		-e "s|cp ANNOUNCE|#cp ANNOUNCE|" \
+		 ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|run www|run|" ${WRKSRC}/scripts/Makefile
 .endif
 
 pre-install:
