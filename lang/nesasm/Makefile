@@ -7,7 +7,7 @@
 
 PORTNAME=	nesasm
 PORTVERSION=	20040314
-PORTREVISON=	1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://bobrost.com/nes/files/
 DISTNAME=	nbasic_2004_03_14
