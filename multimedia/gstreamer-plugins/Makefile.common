@@ -381,7 +381,7 @@ gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.la \
 gst_neon_DIST=		bad
 
 # ogg
-gst_ogg_LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
+gst_ogg_LIB_DEPENDS+=	ogg.6:${PORTSDIR}/audio/libogg
 gst_ogg_EXTRA_LIBS+=	-lgstriff-${VERSION}
 gst_ogg_PLIST_FILES=	${GST_LIB_DIR}/libgstogg.la \
 		${GST_LIB_DIR}/libgstogg.so

@@ -7,7 +7,7 @@
 
 PORTNAME=	orpheus
 PORTVERSION=	1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://thekonst.net/download/
 

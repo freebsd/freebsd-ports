@@ -7,6 +7,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 

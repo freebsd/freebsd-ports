@@ -6,6 +6,7 @@
 
 PORTNAME=	ffmpeg2theora
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/
 
@@ -19,8 +20,8 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 USE_BZIP2=	yes
 USE_SCONS=	yes
 
-SCONS_ENV+=		APPEND_LINKFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
-			APPEND_CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include"
+SCONS_ENV+=	APPEND_LINKFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
+		APPEND_CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include"
 
 MAN1=		ffmpeg2theora.1
 PLIST_FILES=	bin/ffmpeg2theora

@@ -7,7 +7,7 @@
 
 PORTNAME=	nmm
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.motama.com/download/
 

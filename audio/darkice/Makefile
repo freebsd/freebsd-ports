@@ -8,6 +8,7 @@
 
 PORTNAME=	darkice
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://darkice.tyrell.hu/dist/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}

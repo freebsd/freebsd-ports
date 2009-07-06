@@ -6,14 +6,14 @@
 
 PORTNAME=	oggsplit
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://homepage.ntlworld.com/jfe1205/OggVorbis/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Split multiplexed (grouped or chained) Ogg files into separate streams
 
-LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg.6:${PORTSDIR}/audio/libogg
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -8,7 +8,7 @@
 
 PORTNAME=	mp3stat
 PORTVERSION=	2.6.01
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	https://signal-lost.homeip.net/files/ \
 			http://www.alaskaparadise.com/freebsd/

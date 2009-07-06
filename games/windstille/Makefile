@@ -7,7 +7,7 @@
 
 PORTNAME=	windstille
 PORTVERSION=	0.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS CENKES
 
@@ -16,7 +16,7 @@ COMMENT=	Classic 2D jump-n-shoot game
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		physfs.1:${PORTSDIR}/devel/physfs \
-		ogg.5:${PORTSDIR}/audio/libogg \
+		ogg.6:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
 		GLEW.1:${PORTSDIR}/graphics/glew \

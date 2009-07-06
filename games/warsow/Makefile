@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.42
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://data.rodix.free.fr/warsow/files/ \
 		http://88.191.19.21/wsw/
@@ -65,7 +65,7 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 .if !(defined(WITHOUT_QF) && defined(WITHOUT_OPENAL))
-LIB_DEPENDS+=	vorbisfile.5:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if !(defined(WITHOUT_QF) && defined(WITHOUT_OPENAL) && defined(WITHOUT_IRC))

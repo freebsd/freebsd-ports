@@ -7,6 +7,7 @@
 
 PORTNAME=	recordmydesktop
 DISTVERSION=	0.3.8.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 

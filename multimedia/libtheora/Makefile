@@ -7,6 +7,7 @@
 
 PORTNAME=	libtheora
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 		http://distfiles.master.finkmirrors.net/

@@ -7,7 +7,7 @@
 
 PORTNAME=	cantus
 PORTVERSION=	3.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-testing.src
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -17,7 +17,7 @@ COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
-		ogg.5:${PORTSDIR}/audio/libogg \
+		ogg.6:${PORTSDIR}/audio/libogg \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 

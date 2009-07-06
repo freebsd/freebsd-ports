@@ -8,7 +8,7 @@
 
 PORTNAME=	vorbisgain
 PORTVERSION=	0.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://sjeng.org/ftp/vorbis/
 
