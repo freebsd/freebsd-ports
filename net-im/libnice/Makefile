@@ -26,5 +26,7 @@ post-patch:
 	    	s|__BIG_ENDIAN|_BIG_ENDIAN|g' \
 		${WRKSRC}/stun/md5.c \
 		${WRKSRC}/stun/sha1.c
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+	    	's|-Wno-missing-field-initializers|#|g'
 
 .include <bsd.port.mk>
