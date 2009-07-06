@@ -19,7 +19,7 @@ COMMENT=	Graphical toolkit for TCL
 USE_TCL=	82
 USE_TCL_BUILD=	82
 
-PORTSCOUT=	skipv:8.2b1,8.2b2,8.2b3
+PORTSCOUT=	limit:^8\.2\.
 
 LATEST_LINK=	tk82
 USE_XORG=	x11
