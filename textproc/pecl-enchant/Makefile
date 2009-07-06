@@ -19,6 +19,8 @@ COMMENT=	Libenchant Binder that Support Near All Spelling Tools
 
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
 
+CONFIGURE_ARGS+=--with-enchant=${LOCALBASE}
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	${PORTNAME}
