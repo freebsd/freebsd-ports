@@ -1,12 +1,11 @@
-# New ports collection makefile for:    python30
-# Date created:         3 July 2003
-# Whom:                 Hye-Shik Chang <perky@FreeBSD.org>
+# New ports collection makefile for:    python31
+# Date created:         2009-06-28
+# Whom:                 Li-Wen Hsu <lwhsu@FreeBSD.org>
 #
 # $FreeBSD$
 
-PORTNAME=	python30
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTNAME=	python31
+PORTVERSION=	3.1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -28,7 +27,7 @@ INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python3.0
+PYTHON_VERSION=	python3.1
 PYTHON_NO_DEPENDS=	yes
 
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
@@ -42,12 +41,11 @@ DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
 		plat-freebsd7 plat-freebsd8
 
-BIN_SCRIPTS=	2to3 idle pydoc smtpd.py
+BIN_SCRIPTS=	2to3 idle3 pydoc3
 BIN_FILES=	python python-shared python-config python-shared-config \
 		${BIN_SCRIPTS}
-BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
-		-e 's,2to3,2to3-${PYTHON_VER},' \
-		-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
+BINLINKS_SUB=	-e 's,(2to3|idle3|pydoc3),\1-${PYTHON_VER},' \
+		-e 's,(python-shared|python),\1${PYTHON_VER},'
 
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
@@ -114,7 +112,6 @@ CONFIGURE_ARGS+=	--with-fpectl
 
 pre-patch:
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
-	${LN} ${PATCH_WRKSRC}/Lib/smtpd.py ${PATCH_WRKSRC}/Tools/scripts/
 .for script in ${BIN_SCRIPTS}
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${PATCH_WRKSRC}/Tools/scripts/${script} \
@@ -172,7 +169,9 @@ pre-su-install:
 
 pre-install:
 	${CAT} ${PLIST_TEMPLATE} | ${AWK} '{ print $$0; } \
-	/LIBDIR.*\.py$$/ && !/\/bad/ { print $$0 "o"; print $$0 "c"; }'	> ${PLIST}
+	/LIBDIR.*\.py$$/ && \
+	!/bad_coding|badsyntax|site-packages|py2_test_grammar|crlf|different_encoding/ \
+	{ print $$0 "o"; print $$0 "c"; }' > ${PLIST}
 
 	@# if openssl 0.9.8 is detected, _sha{256,512} module won't be installed
 	([ -f ${WRKSRC}/.without_own_sha ] && \
@@ -223,5 +222,8 @@ post-install:
 .endif
 
 	@${CAT} ${PKGMESSAGE}
+
+regression-test:
+	cd ${WRKSRC} && make test
 
 .include <bsd.port.post.mk>
