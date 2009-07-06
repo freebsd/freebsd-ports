@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libRmath
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9.1
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -32,22 +32,34 @@ DISTNAME=	R-${PORTVERSION}
 MAINTAINER=	bf1783@gmail.com
 COMMENT=	The standalone math library from R
 
-USE_PERL5=	yes
-USE_FORTRAN=	yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=--with-readline=no --with-x=no
+USE_PERL5_BUILD=	yes
+USE_FORTRAN=		yes
+GNU_CONFIGURE=		yes
+USE_LDCONFIG=		yes
+CONFIGURE_ARGS+=--with-readline=no --with-x=no --disable-mbcs --disable-nls --with-tcltk=no --with-cairo=no \
+		--with-libpng=no --with-jpeglib=no --with-iconv=no --with-ICU=no --without-libintl-prefix
+BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
 
 PLIST_FILES=	include/Rmath.h lib/libRmath.a lib/libRmath.so lib/libRmath.so.0
 
-do-build:
-	(cd ${WRKSRC}/src/nmath/standalone; ${MAKE})
+post-patch:
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/src/nmath/standalone/Makefile.in
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" \
+		${WRKSRC}/configure \
+		${WRKSRC}/config.site
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/src/nmath/standalone/libRmath.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/src/nmath/standalone/libRmath.so \
+	${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.a ${PREFIX}/lib
+	${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.so \
 		${PREFIX}/lib/libRmath.so.0
 	(cd ${PREFIX}/lib; ${LN} -sf libRmath.so.0 libRmath.so)
+
+test: install
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	${MAKE_ARGS} test && ${BUILD_WRKSRC}/test)
 
 .include <bsd.port.mk>
