@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/deprecated/
 PKGNAMESUFFIX=	10
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A C library for creating IP packets
 
 CFLAGS+=	-fPIC
@@ -25,8 +25,9 @@ MAN3=		libnet${PKGNAMESUFFIX}.3
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
 post-patch:
+	${REINPLACE_CMD} -e 's|bpf0|null|' ${WRKSRC}/configure
+.if ${ARCH} == "amd64"
 	find ${WRKDIR} -name '*.[hc]' | xargs ${REINPLACE_CMD} -e 's/long/int/g'
 .endif
 
