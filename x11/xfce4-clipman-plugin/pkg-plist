@@ -1,18 +1,8 @@
 bin/xfce4-clipman-plugin
 bin/xfce4-popup-clipman
-etc/xdg/xfce4/panel/xfce4-clipman-actions.xml
 etc/xdg/autostart/xfce4-clipman-plugin-autostart.desktop
+etc/xdg/xfce4/panel/xfce4-clipman-actions.xml
 share/applications/xfce4-clipman-plugin.desktop
-share/xfce4/doc/C/images/clipman-action-dialog.png
-share/xfce4/doc/C/images/clipman-menu.png
-share/xfce4/doc/C/images/clipman-settings-actions.png
-share/xfce4/doc/C/images/clipman-settings-general.png
-share/xfce4/doc/C/xfce4-clipman-plugin.html
-share/xfce4/doc/gl/images/clipman-action-dialog.png
-share/xfce4/doc/gl/images/clipman-menu.png
-share/xfce4/doc/gl/images/clipman-settings-actions.png
-share/xfce4/doc/gl/images/clipman-settings-general.png
-share/xfce4/doc/gl/xfce4-clipman-plugin.html
 share/icons/hicolor/16x16/apps/xfce4-clipman-plugin.png
 share/icons/hicolor/22x22/apps/xfce4-clipman-plugin.png
 share/icons/hicolor/24x24/apps/xfce4-clipman-plugin.png
@@ -37,7 +27,6 @@ share/locale/ja/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/nb/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-clipman-plugin.mo
-share/locale/ur/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-clipman-plugin.mo
@@ -45,10 +34,29 @@ share/locale/ru/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/ur/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/xfce4/doc/C/images/clipman-action-dialog.png
+share/xfce4/doc/C/images/clipman-menu.png
+share/xfce4/doc/C/images/clipman-settings-actions.png
+share/xfce4/doc/C/images/clipman-settings-general.png
+share/xfce4/doc/C/xfce4-clipman-plugin.html
+share/xfce4/doc/gl/images/clipman-action-dialog.png
+share/xfce4/doc/gl/images/clipman-menu.png
+share/xfce4/doc/gl/images/clipman-settings-actions.png
+share/xfce4/doc/gl/images/clipman-settings-general.png
+share/xfce4/doc/gl/xfce4-clipman-plugin.html
+share/xfce4/doc/ja/images/clipman-action-dialog.png
+share/xfce4/doc/ja/images/clipman-menu.png
+share/xfce4/doc/ja/images/clipman-settings-actions.png
+share/xfce4/doc/ja/images/clipman-settings-general.png
+share/xfce4/doc/ja/xfce4-clipman-plugin.html
 share/xfce4/panel-plugins/xfce4-clipman-plugin.desktop
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
 @dirrmtry share/xfce4/doc/gl/images
 @dirrmtry share/xfce4/doc/gl
 @dirrmtry share/xfce4/panel-plugins
