@@ -379,6 +379,7 @@
     SUBDIR += iourbanterror
     SUBDIR += ishido
     SUBDIR += ivan
+    SUBDIR += jag
     SUBDIR += jaggedalliance2
     SUBDIR += jchessboard
     SUBDIR += jetpack
