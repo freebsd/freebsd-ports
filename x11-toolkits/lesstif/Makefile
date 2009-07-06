@@ -7,6 +7,7 @@
 
 PORTNAME=	lesstif
 PORTVERSION=	0.95.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,13 +16,13 @@ MASTER_SITE_SUBDIR=	lesstif
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	API compatible clone of the Motif toolkit
 
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 CONFLICTS?=	open-motif-*
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:262 libtool:15
-USE_XORG=	sm ice xt xp xext x11 xextproto xrender
-USE_FREETYPE=	yes
+USE_XORG=	sm ice xt xp xext x11 xextproto xrender xft
 USE_LDCONFIG=	yes
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
 CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
