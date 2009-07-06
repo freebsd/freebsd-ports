@@ -3509,7 +3509,6 @@ archivers/orange|archivers/liborange|2008-06-22|Moved to archivers/liborange.
 security/barnyard-sguil6|security/barnyard-sguil|2008-06-22|Moved to security/barnyard-sguil
 java/bsh|lang/bsh|2008-06-22|Moved to lang/bsh
 www/mod_security2|www/mod_security21|2008-06-22|Moved to www/mod_security2.
-security/gnutls-devel||2008-06-23|Removed
 security/ca-roots||2008-06-29|No longer supported by FreeBSD Security Officer
 devel/subversion-perl|devel/p5-subversion|2008-06-30|Rename to reflect official perl5 modules naming scheme.
 devel/subversion-python|devel/py-subversion|2008-06-30|Rename to reflect official python modules naming scheme.
