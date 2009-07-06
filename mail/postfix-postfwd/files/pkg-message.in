@@ -1,7 +1,7 @@
 *************
 * Start postfwd with:
 
-# %%PREFIX%%/bin/postfwd start
+# %%PREFIX%%/etc/rc.d/postfwd start
 
 * Integrate thusly in: %%PREFIX%%/etc/postfix/main.cf
 
