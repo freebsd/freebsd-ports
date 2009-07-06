@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -28,6 +28,7 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		PERL_MALLOC	"Use Perl malloc"			off \
 		PERL_64BITINT	"Use 64 bit integers (on i386)"		on  \
 		THREADS		"Build threaded perl"			off \
+		MULTIPLICITY	"Use multiplicity"			off \
 		SUIDPERL	"Build set-user-id suidperl binary"	off \
 		SITECUSTOMIZE	"Run-time customization of @INC"	off \
 		USE_PERL	"Rewrite links in /usr/bin"		on
@@ -128,6 +129,10 @@ CONFIGURE_ARGS+=	-Dusemymalloc=n
 
 .if defined(WITH_PERL_64BITINT)
 CONFIGURE_ARGS+=	-Duse64bitint
+.endif
+
+.if defined(WITH_MULTIPLICITY)
+CONFIGURE_ARGS+=	-Dusemultiplicity=y
 .endif
 
 .if defined(WITH_SITECUSTOMIZE)
