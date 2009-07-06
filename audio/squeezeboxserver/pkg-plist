@@ -17,7 +17,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Archive/Zip/StringMember.pm
 %%SLIMDIR%%/CPAN/Archive/Zip/Tree.pm
 %%SLIMDIR%%/CPAN/Archive/Zip/ZipFileMember.pm
-%%SLIMDIR%%/CPAN/CGI/Cookie.pm
 %%SLIMDIR%%/CPAN/Cache/BaseCache.pm
 %%SLIMDIR%%/CPAN/Cache/Cache.pm
 %%SLIMDIR%%/CPAN/Cache/CacheUtils.pm
@@ -528,7 +527,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Tie/LLHash.pm
 %%SLIMDIR%%/CPAN/Tie/RegexpHash.pm
 %%SLIMDIR%%/CPAN/Tie/Watch.pm
-%%SLIMDIR%%/CPAN/Time/HiRes.pm
 %%SLIMDIR%%/CPAN/Time/Zone.pm
 %%SLIMDIR%%/CPAN/Time/localtime.pm
 %%SLIMDIR%%/CPAN/Time/tm.pm
@@ -625,16 +623,16 @@ bin/softsqueeze
 %%SLIMDIR%%/Changelog7.html
 %%SLIMDIR%%/Firmware/boom.version
 %%SLIMDIR%%/Firmware/boom_30.bin
-%%SLIMDIR%%/Firmware/boom_43.bin
+%%SLIMDIR%%/Firmware/boom_47.bin
 %%SLIMDIR%%/Firmware/receiver.version
-%%SLIMDIR%%/Firmware/receiver_58.bin
+%%SLIMDIR%%/Firmware/receiver_62.bin
 %%SLIMDIR%%/Firmware/squeezebox.version
 %%SLIMDIR%%/Firmware/squeezebox2.version
-%%SLIMDIR%%/Firmware/squeezebox2_123.bin
+%%SLIMDIR%%/Firmware/squeezebox2_127.bin
 %%SLIMDIR%%/Firmware/squeezebox_10.bin
 %%SLIMDIR%%/Firmware/squeezebox_40.bin
 %%SLIMDIR%%/Firmware/transporter.version
-%%SLIMDIR%%/Firmware/transporter_73.bin
+%%SLIMDIR%%/Firmware/transporter_77.bin
 %%SLIMDIR%%/Graphics/CODE2000.HTM
 %%SLIMDIR%%/Graphics/CODE2000.TTF
 %%SLIMDIR%%/Graphics/FreeSans.ttf
@@ -896,7 +894,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/errors/404.html
 %%SLIMDIR%%/HTML/EN/html/errors/405.html
 %%SLIMDIR%%/HTML/EN/html/ext/adapter/ext/ext-base.js
-%%SLIMDIR%%/HTML/EN/html/ext/ext-all-debug.js
 %%SLIMDIR%%/HTML/EN/html/ext/ext-all.js
 %%SLIMDIR%%/HTML/EN/html/ext/license.txt
 %%SLIMDIR%%/HTML/EN/html/ext/resources/css/ext-all.css
@@ -1714,6 +1711,7 @@ bin/softsqueeze
 %%SLIMDIR%%/SQL/mysql/schema_8_up.sql
 %%SLIMDIR%%/SQL/mysql/schema_clear.sql
 %%SLIMDIR%%/SQL/mysql/schema_optimize.sql
+%%SLIMDIR%%/SQL/slimservice/slimservice-sqlite.sql
 %%SLIMDIR%%/Slim/Buttons/Alarm.pm
 %%SLIMDIR%%/Slim/Buttons/Block.pm
 %%SLIMDIR%%/Slim/Buttons/BrowseDB.pm
@@ -1863,6 +1861,11 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/CLI/Settings.pm
 %%SLIMDIR%%/Slim/Plugin/CLI/install.xml
 %%SLIMDIR%%/Slim/Plugin/CLI/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Classical/HTML/EN/plugins/Classical/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Classical/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Classical/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/Classical/install.xml
+%%SLIMDIR%%/Slim/Plugin/Classical/strings.txt
 %%SLIMDIR%%/Slim/Plugin/DateTime/HTML/EN/plugins/DateTime/settings/basic.html
 %%SLIMDIR%%/Slim/Plugin/DateTime/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/DateTime/Settings.pm
@@ -1952,6 +1955,11 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/MP3tunes/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/MP3tunes/install.xml
 %%SLIMDIR%%/Slim/Plugin/MP3tunes/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Mediafly/HTML/EN/plugins/Mediafly/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Mediafly/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Mediafly/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/Mediafly/install.xml
+%%SLIMDIR%%/Slim/Plugin/Mediafly/strings.txt
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/ClientSettings.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/Common.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html/images/icon.png
@@ -1968,6 +1976,11 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/Settings.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/install.xml
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Napster/HTML/EN/plugins/Napster/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Napster/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Napster/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/Napster/install.xml
+%%SLIMDIR%%/Slim/Plugin/Napster/strings.txt
 %%SLIMDIR%%/Slim/Plugin/OPMLBased.pm
 %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_down.gif
 %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_up.gif
@@ -2200,6 +2213,7 @@ bin/softsqueeze
 %%SLIMDIR%%/lib/Audio/Wav/Tools.pm
 %%SLIMDIR%%/lib/Audio/Wav/Write.pm
 %%SLIMDIR%%/lib/Audio/Wav/Write/Header.pm
+%%SLIMDIR%%/lib/CGI/Cookie.pm
 %%SLIMDIR%%/lib/Cache/FileBackend.pm
 %%SLIMDIR%%/lib/Log/Log4perl/Logger.pm
 %%SLIMDIR%%/lib/MP3/Info.pm
@@ -2235,6 +2249,7 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/lib/Log/Log4perl
 @dirrm %%SLIMDIR%%/lib/Log
 @dirrm %%SLIMDIR%%/lib/Cache
+@dirrm %%SLIMDIR%%/lib/CGI
 @dirrm %%SLIMDIR%%/lib/Audio/Wav/Write
 @dirrm %%SLIMDIR%%/lib/Audio/Wav
 @dirrm %%SLIMDIR%%/lib/Audio/FLAC
@@ -2350,6 +2365,13 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default
 @dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/Pandora
+@dirrm %%SLIMDIR%%/Slim/Plugin/Napster/HTML/EN/plugins/Napster/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Napster/HTML/EN/plugins/Napster/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Napster/HTML/EN/plugins/Napster
+@dirrm %%SLIMDIR%%/Slim/Plugin/Napster/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Napster/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Napster/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Napster
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/settings
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html
@@ -2358,6 +2380,13 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic
+@dirrm %%SLIMDIR%%/Slim/Plugin/Mediafly/HTML/EN/plugins/Mediafly/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Mediafly/HTML/EN/plugins/Mediafly/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Mediafly/HTML/EN/plugins/Mediafly
+@dirrm %%SLIMDIR%%/Slim/Plugin/Mediafly/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Mediafly/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Mediafly/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Mediafly
 @dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes/html
 @dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes
@@ -2463,6 +2492,13 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/Slim/Plugin/DateTime/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/DateTime/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/DateTime
+@dirrm %%SLIMDIR%%/Slim/Plugin/Classical/HTML/EN/plugins/Classical/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Classical/HTML/EN/plugins/Classical/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Classical/HTML/EN/plugins/Classical
+@dirrm %%SLIMDIR%%/Slim/Plugin/Classical/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Classical/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Classical/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Classical
 @dirrm %%SLIMDIR%%/Slim/Plugin/CLI/HTML/EN/plugins/CLI/settings
 @dirrm %%SLIMDIR%%/Slim/Plugin/CLI/HTML/EN/plugins/CLI
 @dirrm %%SLIMDIR%%/Slim/Plugin/CLI/HTML/EN/plugins
@@ -2499,6 +2535,7 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/Slim/Buttons/Input
 @dirrm %%SLIMDIR%%/Slim/Buttons
 @dirrm %%SLIMDIR%%/Slim
+@dirrm %%SLIMDIR%%/SQL/slimservice
 @dirrm %%SLIMDIR%%/SQL/mysql
 @dirrm %%SLIMDIR%%/SQL
 @dirrm %%SLIMDIR%%/MySQL
