@@ -6,6 +6,7 @@
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/locale/en-US/inlinedefinitions.dtd
 %%XPI_XPIDIR%%/locale/en-US/inlinedefinitions.properties
+%%XPI_XPIDIR%%/skin/classic/Thumbs.db
 %%XPI_XPIDIR%%/skin/classic/inlinedefinitions.png
 @dirrm %%XPI_XPIDIR%%/content
 @dirrm %%XPI_XPIDIR%%/locale/en-US
