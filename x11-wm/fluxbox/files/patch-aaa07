@@ -6,6 +6,14 @@ X-Git-Url: http://git.fluxbox.org/?p=fluxbox.git;a=commitdiff_plain;h=6642792f68
 additional fix for the resize bug
 ---
 
+From: Peter Hercek <hercek at sf dot net>
+Date: Sun, 11 Jan 2009 13:23:08 +0000 (+0100)
+Subject: fixed resize bug (caused by typo, see #2498507)
+X-Git-Url: http://git.fluxbox.org/?p=fluxbox.git;a=commitdiff_plain;h=4e831484d55398e5c328aeb531060ffaf997f300
+
+fixed resize bug (caused by typo, see #2498507)
+---
+
 diff --git a/src/FbWinFrame.cc b/src/FbWinFrame.cc
 index ce25004..711e993 100644
 --- a/src/FbWinFrame.cc
@@ -23,7 +31,7 @@ index ce25004..711e993 100644
  void FbWinFrame::applySizeHints(unsigned int &width, unsigned int &height,
                                  bool maximizing) const {
 -    height -= titlebarHeight() + handleHeight();
-+    const int h = height - titlebarHeight() + handleHeight();
++    const int h = height - titlebarHeight() - handleHeight();
 +    height = max(h, static_cast<int>(titlebarHeight() + handleHeight()));
      sizeHints().apply(width, height, maximizing);
      height += titlebarHeight() + handleHeight();

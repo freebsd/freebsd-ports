@@ -1,0 +1,122 @@
+--- src/Makefile.in.orig	2009-03-23 20:37:16.000000000 +0100
++++ src/Makefile.in	2009-03-23 20:37:26.000000000 +0100
+@@ -86,31 +86,30 @@
+ 	FbMenuParser.hh FbMenuParser.cc StyleMenuItem.hh \
+ 	StyleMenuItem.cc RootCmdMenuItem.hh RootCmdMenuItem.cc \
+ 	MenuCreator.hh MenuCreator.cc ClientMenu.hh ClientMenu.cc \
+-	WorkspaceMenu.hh WorkspaceMenu.cc FocusModelMenuItem.hh \
+-	ToggleMenu.hh HeadArea.hh HeadArea.cc Resources.cc \
+-	WindowCmd.hh WindowCmd.cc FocusControl.hh FocusControl.cc \
+-	PlacementStrategy.hh CascadePlacement.hh CascadePlacement.cc \
+-	ColSmartPlacement.hh ColSmartPlacement.cc \
+-	MinOverlapPlacement.hh MinOverlapPlacement.cc \
+-	RowSmartPlacement.hh RowSmartPlacement.cc ScreenPlacement.hh \
+-	ScreenPlacement.cc UnderMousePlacement.hh \
+-	UnderMousePlacement.cc AttentionNoticeHandler.hh \
+-	AttentionNoticeHandler.cc IconButton.hh IconButton.cc \
+-	IconbarTheme.hh IconbarTheme.cc Focusable.hh FocusableList.hh \
+-	FocusableList.cc FocusableTheme.hh WindowMenuAccessor.hh \
+-	RectangleUtil.hh Ewmh.hh Ewmh.cc Gnome.hh Gnome.cc Remember.hh \
+-	Remember.cc ClientPattern.hh ClientPattern.cc Toolbar.hh \
+-	Toolbar.cc ToolbarTheme.hh ToolbarTheme.cc ToolbarItem.hh \
+-	ToolbarItem.cc ClockTool.hh ClockTool.cc WorkspaceNameTool.hh \
+-	WorkspaceNameTool.cc WorkspaceNameTheme.hh IconbarTool.hh \
+-	IconbarTool.cc ToolTheme.hh ToolTheme.cc SystemTray.hh \
+-	SystemTray.cc GenericTool.hh GenericTool.cc ButtonTool.hh \
+-	ButtonTool.cc ButtonTheme.hh ButtonTheme.cc ToolFactory.hh \
+-	ToolFactory.cc
++	ClientPattern.hh ClientPattern.cc WorkspaceMenu.hh \
++	WorkspaceMenu.cc FocusModelMenuItem.hh ToggleMenu.hh \
++	HeadArea.hh HeadArea.cc Resources.cc WindowCmd.hh WindowCmd.cc \
++	FocusControl.hh FocusControl.cc PlacementStrategy.hh \
++	CascadePlacement.hh CascadePlacement.cc ColSmartPlacement.hh \
++	ColSmartPlacement.cc MinOverlapPlacement.hh \
++	MinOverlapPlacement.cc RowSmartPlacement.hh \
++	RowSmartPlacement.cc ScreenPlacement.hh ScreenPlacement.cc \
++	UnderMousePlacement.hh UnderMousePlacement.cc \
++	AttentionNoticeHandler.hh AttentionNoticeHandler.cc \
++	IconButton.hh IconButton.cc IconbarTheme.hh IconbarTheme.cc \
++	Focusable.hh FocusableList.hh FocusableList.cc \
++	FocusableTheme.hh WindowMenuAccessor.hh RectangleUtil.hh \
++	Ewmh.hh Ewmh.cc Gnome.hh Gnome.cc Remember.hh Remember.cc \
++	Toolbar.hh Toolbar.cc ToolbarTheme.hh ToolbarTheme.cc \
++	ToolbarItem.hh ToolbarItem.cc ClockTool.hh ClockTool.cc \
++	WorkspaceNameTool.hh WorkspaceNameTool.cc \
++	WorkspaceNameTheme.hh IconbarTool.hh IconbarTool.cc \
++	ToolTheme.hh ToolTheme.cc SystemTray.hh SystemTray.cc \
++	GenericTool.hh GenericTool.cc ButtonTool.hh ButtonTool.cc \
++	ButtonTheme.hh ButtonTheme.cc ToolFactory.hh ToolFactory.cc
+ @NEWWMSPEC_TRUE@am__objects_1 = Ewmh.$(OBJEXT)
+ @GNOME_TRUE@am__objects_2 = Gnome.$(OBJEXT)
+-@REMEMBER_SRC_TRUE@am__objects_3 = Remember.$(OBJEXT) \
+-@REMEMBER_SRC_TRUE@	ClientPattern.$(OBJEXT)
++@REMEMBER_SRC_TRUE@am__objects_3 = Remember.$(OBJEXT)
+ @TOOLBAR_SRC_TRUE@am__objects_4 = Toolbar.$(OBJEXT) \
+ @TOOLBAR_SRC_TRUE@	ToolbarTheme.$(OBJEXT) ToolbarItem.$(OBJEXT) \
+ @TOOLBAR_SRC_TRUE@	ClockTool.$(OBJEXT) \
+@@ -135,15 +134,15 @@
+ 	AlphaMenu.$(OBJEXT) FbMenuParser.$(OBJEXT) \
+ 	StyleMenuItem.$(OBJEXT) RootCmdMenuItem.$(OBJEXT) \
+ 	MenuCreator.$(OBJEXT) ClientMenu.$(OBJEXT) \
+-	WorkspaceMenu.$(OBJEXT) HeadArea.$(OBJEXT) Resources.$(OBJEXT) \
+-	WindowCmd.$(OBJEXT) FocusControl.$(OBJEXT) \
+-	CascadePlacement.$(OBJEXT) ColSmartPlacement.$(OBJEXT) \
+-	MinOverlapPlacement.$(OBJEXT) RowSmartPlacement.$(OBJEXT) \
+-	ScreenPlacement.$(OBJEXT) UnderMousePlacement.$(OBJEXT) \
+-	AttentionNoticeHandler.$(OBJEXT) IconButton.$(OBJEXT) \
+-	IconbarTheme.$(OBJEXT) FocusableList.$(OBJEXT) \
+-	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
+-	$(am__objects_4)
++	ClientPattern.$(OBJEXT) WorkspaceMenu.$(OBJEXT) \
++	HeadArea.$(OBJEXT) Resources.$(OBJEXT) WindowCmd.$(OBJEXT) \
++	FocusControl.$(OBJEXT) CascadePlacement.$(OBJEXT) \
++	ColSmartPlacement.$(OBJEXT) MinOverlapPlacement.$(OBJEXT) \
++	RowSmartPlacement.$(OBJEXT) ScreenPlacement.$(OBJEXT) \
++	UnderMousePlacement.$(OBJEXT) AttentionNoticeHandler.$(OBJEXT) \
++	IconButton.$(OBJEXT) IconbarTheme.$(OBJEXT) \
++	FocusableList.$(OBJEXT) $(am__objects_1) $(am__objects_2) \
++	$(am__objects_3) $(am__objects_4)
+ fluxbox_OBJECTS = $(am_fluxbox_OBJECTS)
+ fluxbox_LDADD = $(LDADD)
+ fluxbox_DEPENDENCIES = FbTk/libFbTk.a FbTk/LogicCommands.o \
+@@ -285,6 +284,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = FbTk
+@@ -298,9 +298,7 @@
+ CONFIG_CLEAN_FILES = defaults.hh
+ @NEWWMSPEC_TRUE@newwmspec_SOURCE = Ewmh.hh Ewmh.cc
+ @GNOME_TRUE@gnome_SOURCE = Gnome.hh Gnome.cc
+-@REMEMBER_SRC_TRUE@REMEMBER_SOURCE = Remember.hh Remember.cc \
+-@REMEMBER_SRC_TRUE@	ClientPattern.hh ClientPattern.cc
+-
++@REMEMBER_SRC_TRUE@REMEMBER_SOURCE = Remember.hh Remember.cc
+ @TOOLBAR_SRC_TRUE@TOOLBAR_SOURCE = Toolbar.hh Toolbar.cc \
+ @TOOLBAR_SRC_TRUE@	ToolbarTheme.hh ToolbarTheme.cc ToolbarItem.hh ToolbarItem.cc \
+ @TOOLBAR_SRC_TRUE@	ClockTool.hh ClockTool.cc \
+@@ -344,6 +342,7 @@
+ 	RootCmdMenuItem.hh RootCmdMenuItem.cc\
+ 	MenuCreator.hh MenuCreator.cc \
+ 	ClientMenu.hh ClientMenu.cc \
++	ClientPattern.hh ClientPattern.cc \
+ 	WorkspaceMenu.hh WorkspaceMenu.cc \
+ 	FocusModelMenuItem.hh \
+ 	ToggleMenu.hh \
+--- src/Window.cc.orig	2009-03-25 00:05:17.000000000 +0100
++++ src/Window.cc	2009-03-25 00:05:42.000000000 +0100
+@@ -2189,9 +2189,11 @@
+         } else if (atom == fbatoms->getMWMHintsAtom()) {
+             client.updateMWMHints();
+             updateMWMHintsFromClient(client);
++#ifdef REMEMBER
+             if (!m_toggled_decos) {
+                 Remember::instance().updateDecoStateFromClient(client);
+             }
++#endif
+             applyDecorations(); // update decorations (if they changed)
+         }
+         break;
