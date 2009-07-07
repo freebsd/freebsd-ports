@@ -1,5 +1,4 @@
 bin/initdb
-bin/ipcclean
 bin/pg_controldata
 bin/pg_ctl
 bin/pg_resetxlog

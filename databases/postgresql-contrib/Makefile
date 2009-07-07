@@ -38,6 +38,12 @@ INSTALL_DIRS=	contrib
 SLAVE_ONLY=	yes
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
+.if ${PGSQL_VER} > 83
+CONFIGURE_ARGS+=	--with-libxslt --with-libxml --with-ossp-uuid
+LIB_DEPENDS=		xslt.2:${PORTSDIR}/textproc/libxslt xml2.5:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=		${LOCALBASE}/bin/uuid-config:${PORTSDIR}/misc/ossp-uuid
+.endif
+
 post-install:
 .if ${PGSQL_VER} < 81
 	@- ${INSTALL_SCRIPT} ${WRKSRC}/contrib/ipc_check/ipc_check.pl ${PREFIX}/bin/ipc_check ;\
