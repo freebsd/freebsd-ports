@@ -48,10 +48,10 @@ include/mlt/framework/mlt_tractor.h
 include/mlt/framework/mlt_transition.h
 include/mlt/framework/mlt_types.h
 lib/libmlt++.so
-lib/libmlt++.so.0.4.2
+lib/libmlt++.so.0.4.4
 lib/libmlt++.so.2
 lib/libmlt.so
-lib/libmlt.so.0.4.2
+lib/libmlt.so.0.4.4
 lib/libmlt.so.1
 %%AVFORMAT%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
@@ -89,6 +89,7 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/feeds/PAL/etv.properties
 %%DATADIR%%/feeds/PAL/example.properties
 %%DATADIR%%/feeds/PAL/obscure.properties
+%%FREI0R%%%%DATADIR%%/frei0r/blacklist.txt
 %%DATADIR%%/lumas/NTSC/luma01.pgm
 %%DATADIR%%/lumas/NTSC/luma02.pgm
 %%DATADIR%%/lumas/NTSC/luma03.pgm
@@ -201,6 +202,7 @@ libdata/pkgconfig/mlt-framework.pc
 @dirrm %%DATADIR%%/lumas/PAL
 @dirrm %%DATADIR%%/lumas/NTSC
 @dirrm %%DATADIR%%/lumas
+%%FREI0R%%@dirrm %%DATADIR%%/frei0r
 @dirrm %%DATADIR%%/feeds/PAL
 @dirrm %%DATADIR%%/feeds/NTSC
 @dirrm %%DATADIR%%/feeds

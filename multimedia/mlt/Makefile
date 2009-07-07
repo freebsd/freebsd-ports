@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
@@ -21,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-gpl
 USE_GMAKE=	yes
+# required by FreeBSD 6
+MAKE_ENV=	LDFLAGS="-lc"
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mlt
 
@@ -146,6 +147,13 @@ pre-configure:
 		${WRKSRC}/src/framework/Makefile \
 		${WRKSRC}/src/melt/Makefile \
 		${WRKSRC}/src/modules/*/Makefile
+	# required by FreeBSD 6
+	@${REINPLACE_CMD} -E -e 's|^(LDFLAGS.*)|\1 -lthr|' \
+	    ${WRKSRC}/src/framework/Makefile \
+	    ${WRKSRC}/src/modules/avformat/Makefile \
+	    ${WRKSRC}/src/modules/core/Makefile \
+	    ${WRKSRC}/src/modules/dv/Makefile \
+	    ${WRKSRC}/src/modules/sdl/Makefile
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
 
