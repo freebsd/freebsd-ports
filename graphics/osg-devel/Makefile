@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
@@ -31,7 +31,7 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=59 \
+		OSG_SHLIBVER=60 \
 		OPENTHREADS_VERSION=2.4.0 \
 		OPENTHREADS_SHLIBVER=11
 
@@ -50,15 +50,16 @@ OPTIONS=	CURL     "Support for cURL"                 off \
 		FFMPEG   "Support for FFmpeg"               off \
 		SVG      "Support for SVG through librsvg2" off \
 		PDF      "Support for PDF through poppler"  off \
-		XRANDR   "Use Xrandr"                       on
+		XRANDR   "Use Xrandr"                       on \
+		SDL      "Use SDL (joystick support in present3d)" off
 
 # broken (openvrml from ports is too old)
 #		OPENVRML "Support for OpenVRML"             off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT SDL FOX Qt3 Qt4 wxWidgets OpenAL # only for examples
+FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt4 wxWidgets OpenAL # only for examples
 FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL        # not in ports
 FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB # common & lightweight
 FORCE_PC_IGNORE=	GTK GTKGL                     # only for examples
@@ -176,6 +177,13 @@ FORCE_IGNORE+=	FFmpeg
 PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
+.if defined(WITH_SDL)
+FORCE_REQUIRE+=	SDL
+USE_SDL=	sdl
+.else
+FORCE_IGNORE+=	SDL
+.endif
+
 # options that affect PKG_CHECK_MODULES
 .if defined(WITH_SVG)
 FORCE_PC_REQUIRE+=RSVG
@@ -210,6 +218,13 @@ CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
 USE_XORG+=	xrandr
 .endif
 
+.if defined(WITHOUT_XRANDR)
+CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
+.else
+CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
+USE_XORG+=	xrandr
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
@@ -230,4 +245,4 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
