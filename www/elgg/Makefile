@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elgg
-PORTVERSION=	1.2
+PORTVERSION=	1.5
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-ELGGDATADIR=	www/elggdata
+ELGGDATADIR=	${WWWDIR}data
 
 .include <bsd.port.pre.mk>
 do-install:
@@ -31,12 +31,12 @@ do-install:
 post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
 		>> ${TMPPLIST}
 
-	@${INSTALL} -d ${PREFIX}/${ELGGDATADIR}
-	@${CHMOD} 777 ${PREFIX}/${ELGGDATADIR}
-	@${ECHO_CMD} '@exec ${CHMOD} 777 ${PREFIX}/${ELGGDATADIR}' \
+	@${INSTALL} -d ${ELGGDATADIR}
+	@${CHMOD} 777 ${ELGGDATADIR}
+	@${ECHO_CMD} '@exec ${CHMOD} 777 ${ELGGDATADIR}' \
 		>> ${TMPPLIST}
 
 	@${CAT} ${PKGMESSAGE}
