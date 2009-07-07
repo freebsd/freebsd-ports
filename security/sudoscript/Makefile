@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|PREFIX=|PREFIX?=|g' \
+	@${REINPLACE_CMD} -e 's|^PREFIX=|^PREFIX?=|g' \
 	${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
