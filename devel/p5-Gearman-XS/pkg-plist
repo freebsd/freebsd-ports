@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS/Client.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS/Job.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS/Task.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS/Worker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/XS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/XS/XS.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gearman

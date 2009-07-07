@@ -1,0 +1,4 @@
+This is a Perl front end for the Gearman C library. It aims to provide
+a simple interface closely tied to the C library.
+
+WWW: http://www.gearmand.org
