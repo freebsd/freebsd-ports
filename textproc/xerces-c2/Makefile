@@ -75,6 +75,7 @@ INSTALL_WRKSRC=		${XERCESWRKSRC}
 
 USE_GMAKE=		yes
 MAKE_ENV+=		XERCESCROOT=${WRKSRC}
+MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ENV+=		XERCESCROOT=${WRKSRC} TRANSCODER=${TRANSCODER}
@@ -138,6 +139,9 @@ pre-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's#CP = -cp -p#CP = -cp#'	\
 		${WRKSRC}/src/xercesc/Makefile.incl
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/src/xercesc/Makefile.incl \
+		${WRKSRC}/src/xercesc/runConfigure
 
 pre-configure:
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/runConfigure
