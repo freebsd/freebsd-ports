@@ -19,4 +19,8 @@ PLIST_FILES=		sbin/sniff
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|PREFIX=|PREFIX?=|g' \
+	${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
