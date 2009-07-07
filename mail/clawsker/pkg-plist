@@ -3,6 +3,7 @@ bin/clawsker
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%share/locale/fr/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/es/LC_MESSAGES/clawsker.mo
+%%NLS%%share/locale/id/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/it/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/clawsker.mo
