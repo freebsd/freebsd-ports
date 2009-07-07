@@ -33,7 +33,6 @@
     SUBDIR += bincimap
     SUBDIR += bmf
     SUBDIR += bogofilter
-    SUBDIR += bogofilter-qdbm
     SUBDIR += bogofilter-sqlite
     SUBDIR += bogofilter-tc
     SUBDIR += bsfilter
@@ -707,7 +706,6 @@
     SUBDIR += wmpop3lb
     SUBDIR += wmymail
     SUBDIR += xbuffy
-    SUBDIR += xc-mail
     SUBDIR += xcite
     SUBDIR += xf-spf
     SUBDIR += xfaces

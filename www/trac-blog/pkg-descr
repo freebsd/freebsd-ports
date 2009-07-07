@@ -1,7 +1,0 @@
-A blogging system for Trac.
-
-TracBlogPlugin allows one to harness the power of TagsPlugin to generate blogs.
-It provides a wiki macro so that blogs can be inserted in any wiki page.
-It also provides a navigation component.
-
-WWW: http://trac-hacks.org/wiki/TracBlogPlugin

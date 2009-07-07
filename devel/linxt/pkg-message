@@ -1,5 +1,0 @@
-Users of linxt must have write permissions on the USB devices associated
-with the NXT brick (e.g. dev/usb0* and dev/ugen0*).  Using chmod will
-only affect these devices until they are detached.  See etc/devfs.rules
-and etc/usbd.conf (also "man devfs.rules" and "man usbd.conf") for
-controlling USB device permissions when they are attached.

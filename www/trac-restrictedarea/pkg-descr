@@ -1,6 +1,0 @@
-The RestrictedAreaPlugin is a pretty simple Trac plugin that allows the Trac
-administrator to set up restricted areas which are accessible only for
-privileged users. The access is controlled via the new Trac action
-RESTRICTED_AREA_ACCESS and a list of paths configured in the Trac INI-file.
-
-WWW: http://trac-hacks.org/wiki/RestrictedAreaPlugin

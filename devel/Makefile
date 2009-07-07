@@ -778,7 +778,6 @@
     SUBDIR += linux-sdl12
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
-    SUBDIR += linxt
     SUBDIR += lion
     SUBDIR += llvm
     SUBDIR += llvm-devel
