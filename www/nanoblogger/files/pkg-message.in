@@ -17,16 +17,8 @@ The provided documentation and the preferred upgrade path (in the README
 file) can be found in the additional documentation directory:
   %%DOCSDIR%%/*
 
-
 SIDE NOTES FOR OLD USERS:
 
 As always with new release, don't forget to read the documentation and to
-update your weblog configuration file, e.g. ${blog_dir}/blog.conf.  In the
-same time, pay attention to these particular points:
- - The way articles are build has changed: nb {-E|--draft} must be use now.
- - The base skeleton has been modified too, you _may_ want to update your
-   old entries, but that seems not mandatory though.
- - Be careful if you have customized your CSS style file: there is a lot of
-   changes in this area, so layout may be very different with this version
-   than you may expected.
+update your weblog configuration file, e.g. ${blog_dir}/blog.conf.
 
