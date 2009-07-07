@@ -8,7 +8,8 @@
 PORTNAME=	md4coll
 DISTVERSION=	0.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.stachliu.com/
+MASTER_SITES=	http://www.stachliu.com/ \
+		http://mirror.roe.ch/dist/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}.c
 EXTRACT_SUFX=
 EXTRACT_ONLY=
