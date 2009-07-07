@@ -76,6 +76,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Element/Text.pm
 %%SITE_PERL%%/HTML/FormFu/Element/File.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Hr.pm
+%%SITE_PERL%%/HTML/FormFu/Element/Label.pm
 %%SITE_PERL%%/HTML/FormFu/Element/ContentButton.pm
 %%SITE_PERL%%/HTML/FormFu/Exception/Inflator.pm
 %%SITE_PERL%%/HTML/FormFu/Exception/Transformer.pm

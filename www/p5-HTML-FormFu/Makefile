@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.04001
+PORTVERSION=	0.05001
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -166,6 +166,7 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Deflator::FormatNumber.3 \
 	HTML::FormFu::Inflator::Callback.3 \
 	HTML::FormFu::Deflator::PathClassFile.3 \
-	HTML::FormFu::Filter::FormatNumber.3
+	HTML::FormFu::Filter::FormatNumber.3 \
+	HTML::FormFu::Element::Label.3
 
 .include <bsd.port.mk>
