@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/Node.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TinyXML/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TinyXML/TinyXML.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TinyXML/TinyXML.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TinyXML/autosplit.ix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TinyXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML
