@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	pligg
-PORTVERSION=	9.9.5
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://forums.pligg.com/attachments/current-version/
-DISTNAME=	1509d1217929605-pligg-beta-9-9-5-pligg-beta-9.9.5
+DISTNAME=	2032d1245171709-pligg-content-management-system-1-0-0-pligg-cms-1.0.0
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An Open Source Web2.0 CMS
 
 USE_ZIP=	yes
 USE_PHP=	mysql
-WRKSRC=		${WRKDIR}/Pligg\ Beta\ 9.9.5
+WRKSRC=		${WRKDIR}/Pligg\ ${PORTVERSION}
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
@@ -29,7 +30,7 @@ do-install:
 
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
 		>> ${TMPPLIST}
 
 	@if [ ! -f ${WWWDIR}/settings.php ]; then \
@@ -51,8 +52,8 @@ do-install:
 	@${ECHO_CMD} '@exec ${CHMOD} 655 ${WWWDIR}/config.php' \
 		>> ${TMPPLIST}
 
-.for d in backup cache templates templates_c avatars/user_uploaded
-	@${CHMOD} 777 ${WWWDIR}/${d}
+.for d in admin/backup cache avatars/groups_uploaded avatars/user_uploaded languages
+	@${CHMOD} -R 777 ${WWWDIR}/${d}
 	@${ECHO_CMD} '@exec ${CHMOD} 777 ${WWWDIR}/${d}' >> ${TMPPLIST}
 .endfor
 
