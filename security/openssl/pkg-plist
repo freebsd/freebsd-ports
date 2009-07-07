@@ -99,8 +99,8 @@ openssl/misc/c_name
 openssl/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
 @dirrm include/openssl
-@dirrm openssl/certs
+@dirrmtry openssl/certs
 @dirrm openssl/misc
-@dirrm openssl/private
+@dirrmtry openssl/private
 @dirrm openssl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
