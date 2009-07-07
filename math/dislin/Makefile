@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	dislin
-PORTVERSION=	9.3
-PORTREVISION=	3
+PORTVERSION=	9.5
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_${PORTREVISION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A scientific data plotting package
 
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
@@ -46,9 +45,6 @@ BINDIR=		60
 BINVER=		-7.0
 BINDIR=		70
 .endif
-#.if ${OSVERSION} >= 800000
-#LIB_DEPENDS+=	z.3:${PORTSDIR}/misc/compat7x
-#.endif
 
 SCRIPTS2FIX=	clink dlink f2clink
 
