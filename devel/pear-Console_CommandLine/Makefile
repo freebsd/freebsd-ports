@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Console_CommandLine
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,19 +15,18 @@ COMMENT=	A full featured command line options and arguments parser
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-CATEGORY=	Console
-FILES=		CommandLine.php CommandLine/Action.php CommandLine/Command.php\
-		CommandLine/Renderer.php CommandLine/Element.php CommandLine/MessageProvider.php \
-		CommandLine/Outputter.php CommandLine/Result.php CommandLine/Argument.php \
-		CommandLine/Exception.php CommandLine/Option.php CommandLine/XmlParser.php \
-		CommandLine/Action/Callback.php CommandLine/Action/Counter.php \
-		CommandLine/Action/Help.php CommandLine/Action/Password.php \
-		CommandLine/Action/StoreArray.php \
-		CommandLine/Action/StoreFalse.php CommandLine/Action/StoreFloat.php \
-		CommandLine/Action/StoreInt.php CommandLine/Action/StoreString.php \
-		CommandLine/Action/StoreTrue.php CommandLine/Action/Version.php \
-		CommandLine/MessageProvider/Default.php CommandLine/Outputter/Default.php \
-		CommandLine/Renderer/Default.php
+FILES=		Console/CommandLine.php Console/CommandLine/Action.php Console/CommandLine/Command.php\
+		Console/CommandLine/Renderer.php Console/CommandLine/Element.php Console/CommandLine/MessageProvider.php \
+		Console/CommandLine/Outputter.php Console/CommandLine/Result.php Console/CommandLine/Argument.php \
+		Console/CommandLine/Exception.php Console/CommandLine/Option.php Console/CommandLine/XmlParser.php \
+		Console/CommandLine/Action/Callback.php Console/CommandLine/Action/Counter.php \
+		Console/CommandLine/Action/Help.php Console/CommandLine/Action/Password.php \
+		Console/CommandLine/Action/StoreArray.php \
+		Console/CommandLine/Action/StoreFalse.php Console/CommandLine/Action/StoreFloat.php \
+		Console/CommandLine/Action/StoreInt.php Console/CommandLine/Action/StoreString.php \
+		Console/CommandLine/Action/StoreTrue.php Console/CommandLine/Action/Version.php \
+		Console/CommandLine/MessageProvider/Default.php Console/CommandLine/Outputter/Default.php \
+		Console/CommandLine/Renderer/Default.php
 DATA=		xmlschema.rng
 EXAMPLES=	ex1.php ex2.php ex2.xml
 _EXAMPLESDIR=	docs/examples
