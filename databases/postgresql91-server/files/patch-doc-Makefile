@@ -1,19 +1,15 @@
---- doc/Makefile.orig	2007-02-09 16:55:57.000000000 +0100
-+++ doc/Makefile	2008-01-02 11:38:43.000000000 +0100
-@@ -25,11 +25,12 @@
+--- doc/Makefile.orig	2009-05-15 15:58:05.000000000 +0200
++++ doc/Makefile	2009-05-15 15:58:18.000000000 +0200
+@@ -25,9 +25,10 @@
  
  .NOTPARALLEL:
  
 -ifneq ($(wildcard $(srcdir)/postgres.tar.gz),)
--ifneq (,$(docdir))
 -found_html = yes
--endif
 -endif
 +# FreeBSD has a separate port for installing the documentation
 +#ifneq ($(wildcard $(srcdir)/postgres.tar.gz),)
-+#ifneq (,$(docdir))
 +#found_html = yes
-+#endif
 +#endif
  
  ifneq ($(wildcard $(srcdir)/man.tar.gz),)

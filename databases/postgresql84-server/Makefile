@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.3.7
+DISTVERSION?=	8.4.0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -17,13 +17,13 @@ COMMENT?=	The most advanced open-source database available anywhere
 
 CONFLICTS?=	${PORTNAME}-client-7.* \
 		${PORTNAME}${PKGNAMESUFFIX}-7.* \
-		${PORTNAME}-client-8.[0-24-9]* \
-		${PORTNAME}${PKGNAMESUFFIX}-8.[0-24-9]*
+		${PORTNAME}-client-8.[0-35-9]* \
+		${PORTNAME}${PKGNAMESUFFIX}-8.[0-35-9]*
 
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
-UNIQUENAME?=	${PORTNAME}83
+UNIQUENAME?=	${PORTNAME}84
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
@@ -40,8 +40,7 @@ PGGROUP=	pgsql
 
 CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
-		--enable-thread-safety \
-		--with-docdir=${DOCSDIR}
+		--enable-thread-safety
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -52,7 +51,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
 BUILD_DIRS?=	src/port src/timezone src/backend src/backend/utils/mb/conversion_procs \
-		src/backend/snowball src/bin/initdb src/bin/ipcclean src/bin/pg_ctl \
+		src/backend/snowball src/bin/initdb src/bin/pg_ctl \
 		src/bin/pg_controldata src/bin/pg_resetxlog src/pl
 
 INSTALL_DIRS?=	${BUILD_DIRS}
@@ -96,19 +95,19 @@ OPTIONS+=	TZDATA "Use internal timezone database (server)" on
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
+#OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
-.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
-USE_AUTOTOOLS=	autoconf:262
-CONFIGURE_ARGS+=--with-icu
-LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
-PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-833-icu-xx-2008-08-28.diff.gz:icu
-.  endif
+#.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
+#USE_AUTOTOOLS=	autoconf:262
+#CONFIGURE_ARGS+=--with-icu
+#LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
+#PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
+#PATCHFILES+=	pg-833-icu-xx-2008-08-28.diff.gz:icu
+#.  endif
 
 PATCH_DIST_STRIP=-p1
 
@@ -188,13 +187,13 @@ CONFIGURE_ARGS+=--with-krb5
 .if defined(CLIENT_ONLY)
 MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
 		dropdb.1 droplang.1 dropuser.1 ecpg.1 initdb.1	   \
-		ipcclean.1 pg_config.1 pg_controldata.1 pg_ctl.1   \
+		pg_config.1 pg_controldata.1 pg_ctl.1   \
 		pg_dump.1 pg_dumpall.1 pg_resetxlog.1 pg_restore.1 \
 		postgres.1 postmaster.1 psql.1 reindexdb.1 vacuumdb.1
 
 MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
-		alter_domain.7 alter_function.7 alter_group.7		      \
-		alter_index.7 alter_language.7 alter_operator_class.7	      \
+		alter_domain.7 alter_foreign_data_wrapper.7 alter_function.7 alter_group.7 alter_server.7 \
+		alter_user_mapping.7		alter_index.7 alter_language.7 alter_operator_class.7	      \
 		alter_operator_family.7 				      \
 		alter_role.7						      \
 		alter_schema.7 alter_sequence.7 alter_table.7		      \
@@ -207,29 +206,30 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		commit_prepared.7					      \
 		copy.7 create_aggregate.7 create_cast.7			      \
 		create_constraint_trigger.7 create_conversion.7		      \
-		create_database.7 create_domain.7 create_function.7	      \
+		create_database.7 create_domain.7 create_foreign_data_wrapper.7 \
+		create_function.7	      \
 		create_group.7 create_index.7 create_language.7		      \
 		create_operator.7 create_operator_class.7		      \
 		create_operator_family.7 create_role.7			      \
 		create_rule.7 create_schema.7 create_sequence.7		      \
-		create_table.7 create_table_as.7			      \
+		create_server.7 create_table.7 create_table_as.7			      \
 		create_text_search_configuration.7			      \
 		create_text_search_dictionary.7				      \
 		create_text_search_parser.7				      \
 		create_text_search_template.7 create_trigger.7		      \
-		create_type.7 create_user.7 create_view.7 deallocate.7	      \
+		create_type.7 create_user.7 create_user_mapping.7 create_view.7 deallocate.7	      \
 		declare.7 delete.7 discard.7				      \
 		drop_aggregate.7 drop_cast.7 drop_conversion.7		      \
-		drop_database.7 drop_domain.7 drop_function.7		      \
+		drop_database.7 drop_domain.7 drop_foreign_data_wrapper.7 drop_function.7		      \
 		drop_group.7 drop_index.7 drop_language.7		      \
 		drop_operator.7 drop_operator_class.7 drop_operator_family.7  \
 		drop_owned.7 drop_role.7 drop_rule.7			      \
-		drop_schema.7 drop_sequence.7 drop_table.7		      \
+		drop_schema.7 drop_sequence.7 drop_server.7 drop_table.7		      \
 		drop_text_search_configuration.7			      \
 		drop_text_search_dictionary.7				      \
 		drop_text_search_parser.7				      \
 		drop_text_search_template.7 drop_trigger.7		      \
-		drop_type.7 drop_user.7 drop_view.7 end.7 execute.7	      \
+		drop_type.7 drop_user.7 drop_user_mapping.7 drop_view.7 end.7 execute.7	      \
 		explain.7 fetch.7 grant.7 insert.7 listen.7 load.7	      \
 		lock.7 move.7 notify.7 prepare.7 prepare_transaction.7	      \
 		reassign_owned.7 reindex.7 reset.7			      \
@@ -237,11 +237,11 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		select_into.7 set.7					      \
 		set_constraints.7 set_role.7 set_transaction.7 show.7	      \
 		set_session_authorization.7 start_transaction.7		      \
-		truncate.7 unlisten.7 update.7 vacuum.7			      \
+		table.7 truncate.7 unlisten.7 update.7 vacuum.7			      \
 		alter_operator.7 alter_tablespace.7 alter_type.7	      \
 		create_tablespace.7 drop_tablespace.7			      \
 		release_savepoint.7 rollback_to_savepoint.7		      \
-		savepoint.7 values.7
+		savepoint.7 values.7 with.7
 .endif
 
 .if defined(SERVER_ONLY)
@@ -259,8 +259,7 @@ pre-configure:
 .  endif
 
 do-build:
-	@ cd ${WRKSRC}/src/backend ;\
-	${GMAKE} ../../src/include/parser/parse.h ../../src/include/utils/fmgroids.h
+	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks
 	@ for dir in ${BUILD_DIRS}; do \
 		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE}; \
 	done
