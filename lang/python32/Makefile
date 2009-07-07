@@ -6,6 +6,7 @@
 
 PORTNAME=	python31
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -124,11 +125,9 @@ pre-patch:
 		's|^\( *prefixes = .*\)\]$$|\1, "${LOCALBASE}"]|g' \
 		${PATCH_WRKSRC}/Lib/site.py
 	${REINPLACE_CMD} -e \
-		's|^	\(..ASDLGEN.*\)$$|	${TRUE}|g' \
-		${PATCH_WRKSRC}/Makefile.pre.in
-
-	${REINPLACE_CMD} -e \
-		's|*\(..INSTALL_SCRIPT.*\)python-config$$|#port \1|' \
+		's|^	\(..ASDLGEN.*\)$$|	${TRUE}|g; \
+		s|[(]LIBDIR[)]/pkgconfig|(prefix)/libdata/pkgconfig|g; \
+		s|*\(..INSTALL_SCRIPT.*\)python-config$$|#port \1|' \
 		${PATCH_WRKSRC}/Makefile.pre.in
 
 	${SED} -e 's|^#!.*|#!${PREFIX}/bin/${PYTHON_VERSION}|' \
