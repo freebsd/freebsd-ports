@@ -24,8 +24,11 @@
 
      Note:
      If you just updated your Squid installation from an earlier version,
-     make sure to check your Squid configuration against the 3.0 default
+     make sure to check your Squid configuration against the 3.1 default
      configuration file %%PREFIX%%/etc/squid/squid.conf.default.
+     
+     %%PREFIX%%/etc/squid/squid.conf.documented is a fully annotated
+     configuration file you can consult for further reference.
 
      Additionally, you should check your configuration by calling
      'squid -f /path/to/squid.conf -k parse' before starting Squid.

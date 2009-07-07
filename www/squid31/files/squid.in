@@ -37,10 +37,9 @@ stop_cmd="squid_stop"
 
 load_rc_config ${name}
 
-squid_chdir=${squid_chdir:-"%%PREFIX%%/squid/logs"}
+squid_chdir=${squid_chdir:-"%%PREFIX%%/squid"}
 squid_enable=${squid_enable:-"NO"}
-squid_flags=${squid_flags-"-D"}
-squid_pidfile=${squid_pidfile:-"%%PREFIX%%/squid/logs/squid.pid"}
+squid_pidfile=${squid_pidfile:-"%%PREFIX%%/squid/squid.pid"}
 squid_user=${squid_user:-%%SQUID_UID%%}
 default_config=%%PREFIX%%/etc/squid/squid.conf
 

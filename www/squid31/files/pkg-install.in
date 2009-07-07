@@ -50,6 +50,18 @@ PRE-INSTALL)
 		echo "I will use the existing user '${squid_user}':"
 	fi
 	pw usershow ${squid_user}
+	# Starting with 3.1, Squid's PID file moved from
+	# ${squid_base}/logs/squid.pid to ${squid_base}/squid.pid.
+	# Since we usually start the Squid master process as ${squid_user},
+	# make sure that ${squid_base} is writable for it.
+	if [ ! -d ${squid_base} ]; then
+		echo "Creating ${squid_base}..."
+		install -d -o root -g ${squid_group} \
+		    -m 0775 ${squid_base}
+	else
+		chgrp ${squid_group} ${squid_base}
+		chmod g+w ${squid_base}
+	fi
 	for dir in cache logs; do
 	if [ ! -d ${squid_base}/${dir} ]; then
 		echo "Creating ${squid_base}/${dir}..."
@@ -64,7 +76,7 @@ PRE-INSTALL)
 	fi
 	;;
 POST-INSTALL)
-	for file in cachemgr.conf mime.conf squid.conf; do
+	for file in cachemgr.conf errorpage.css mime.conf msntauth.conf squid.conf; do
 		if [ ! -f ${squid_confdir}/${file} \
 		    -a -f ${squid_confdir}/${file}.default ]; then
 			echo "Creating ${file} from default..."
