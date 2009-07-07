@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jag
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	games
 MASTER_SITES=	http://jag.xlabsoft.com/files/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -29,6 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/games/jag|${DATADIR}|' \
 		${WRKSRC}/gamewidget.cpp ${WRKSRC}/Game.pro
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/Game.pro
+	@${REINPLACE_CMD} -e 's|Q_OS_X11|__FreeBSD__|' ${WRKSRC}/gamewidget.cpp
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
