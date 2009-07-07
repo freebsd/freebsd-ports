@@ -49,6 +49,7 @@
     SUBDIR += claws-mail-att_remover
     SUBDIR += claws-mail-attach_warner
     SUBDIR += claws-mail-cachesaver
+    SUBDIR += claws-mail-fancy
     SUBDIR += claws-mail-fetchinfo
     SUBDIR += claws-mail-gtkhtml2_viewer
     SUBDIR += claws-mail-mailmbox
