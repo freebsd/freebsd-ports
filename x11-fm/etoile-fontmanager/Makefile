@@ -7,7 +7,7 @@
 
 PORTNAME=	fontmanager
 PORTVERSION=	0.4.1
-CATEGORIES=	x11-fm gnustep
+CATEGORIES=	x11-fm x11-fonts gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile-${PORTVERSION}
