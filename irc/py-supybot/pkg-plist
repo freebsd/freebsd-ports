@@ -105,6 +105,18 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/plugins/AutoMode/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/AutoMode/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/AutoMode/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/config.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/config.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/config.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/plugin.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/plugin.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/plugin.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/test.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/test.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords/test.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Channel/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Channel/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Channel/__init__.pyo
@@ -171,15 +183,30 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/config.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/config.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/config.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/dictclient.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/dictclient.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/dictclient.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/plugin.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/plugin.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/plugin.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/local/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/local/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/local/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/local/dictclient.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/local/dictclient.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/local/dictclient.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/config.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/config.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/config.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/plugin.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/plugin.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/plugin.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/test.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/test.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno/test.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Factoids/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Factoids/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Factoids/__init__.pyo
@@ -228,27 +255,36 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Games/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Games/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Games/test.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/GoogleSOAPFacade.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/GoogleSOAPFacade.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/GoogleSOAPFacade.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/SOAP.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/SOAP.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/SOAP.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/__init__.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/config.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/config.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/config.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/google.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/google.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/google.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/plugin.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/plugin.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/plugin.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/decoder.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/decoder.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/decoder.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/encoder.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/encoder.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/encoder.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/scanner.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/scanner.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/scanner.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/tool.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/tool.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson/tool.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Herald/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Herald/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Herald/__init__.pyo
@@ -261,18 +297,6 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Herald/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Herald/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Herald/test.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/__init__.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/__init__.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/__init__.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/config.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/config.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/config.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/plugin.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/plugin.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/plugin.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/test.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/test.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Insult/test.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Internet/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Internet/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Internet/__init__.pyo
@@ -339,15 +363,18 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/config.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/config.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/config.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Math/convertcore.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Math/convertcore.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Math/convertcore.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/plugin.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/plugin.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/plugin.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Math/local/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Math/local/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Math/local/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Math/local/convertcore.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Math/local/convertcore.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Math/local/convertcore.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Misc/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Misc/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Misc/__init__.pyo
@@ -510,15 +537,18 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/config.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/config.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/config.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/feedparser.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/feedparser.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/feedparser.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/plugin.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/plugin.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/plugin.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/local/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/local/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/local/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/local/feedparser.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/local/feedparser.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/local/feedparser.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Relay/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Relay/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Relay/__init__.pyo
@@ -615,30 +645,54 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/plugins/String/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/String/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/String/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/config.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/config.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/config.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/plugin.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/plugin.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/plugin.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/test.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/test.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Success/test.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/__init__.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/config.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/config.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/config.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/__init__.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/__init__.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/__init__.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/parser.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/parser.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/parser.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/relativedelta.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/relativedelta.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/relativedelta.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/tz.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/tz.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil/tz.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/plugin.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/plugin.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/plugin.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/easter.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/easter.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/easter.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/parser.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/parser.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/parser.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/relativedelta.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/relativedelta.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/relativedelta.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/rrule.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/rrule.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/rrule.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/tz.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/tz.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/tz.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/tzwin.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/tzwin.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil/tzwin.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Todo/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Todo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Todo/__init__.pyo
@@ -747,6 +801,9 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/utils/crypt.py
+%%PYTHON_SITELIBDIR%%/supybot/utils/crypt.pyc
+%%PYTHON_SITELIBDIR%%/supybot/utils/crypt.pyo
 %%PYTHON_SITELIBDIR%%/supybot/utils/error.py
 %%PYTHON_SITELIBDIR%%/supybot/utils/error.pyc
 %%PYTHON_SITELIBDIR%%/supybot/utils/error.pyo
@@ -799,8 +856,10 @@ bin/supybot-wizard
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/URL
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Topic
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Todo
-@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/dateutil
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local/dateutil
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Time/local
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Time
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Success
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/String
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Status
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/ShrinkUrl
@@ -809,6 +868,7 @@ bin/supybot-wizard
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Scheduler
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Reply
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Relay
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/local
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/QuoteGrabs
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Quote
@@ -823,6 +883,7 @@ bin/supybot-wizard
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Network
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/MoobotFactoids
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Misc
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Math/local
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Math
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Limiter
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Later
@@ -831,17 +892,22 @@ bin/supybot-wizard
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Internet
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Insult
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Herald
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Google
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Games
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Format
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Filter
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Factoids
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict/local
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Dict
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Ctcp
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Config
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/ChannelStats
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/ChannelLogger
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Channel
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/BadWords
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/AutoMode
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Anonymous
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Alias
