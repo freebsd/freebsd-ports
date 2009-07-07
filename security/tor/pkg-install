@@ -29,7 +29,7 @@ PRE-INSTALL)
 		echo "You already have a user \"${USER}\", so I will use it."
 	else
 		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-			-d /var/db/tor -c "Tor Daemon" -s /bin/sh
+			-d /var/db/tor -c "Tor Daemon" -s /sbin/nologin
 		then
 			echo "Added user \"${USER}\"."
 		else
