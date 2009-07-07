@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fillets-ng
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	games
 MASTER_SITES=	SF/fillets
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -19,20 +19,18 @@ USE_SDL=	sdl mixer image ttf
 USE_LUA=	5.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LUA_INCDIR}" LDFLAGS="-L${LUA_LIBDIR}"
+CONFIGURE_ARGS=	--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
 MAKE_JOBS_SAFE=	yes
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LUA_INCDIR}" LDFLAGS="-L${LUA_LIBDIR}"
-CONFIGURE_ARGS=		--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
-
-OPTIONS=	FRIBIDI	"Enable fribidi support" on
-
-DATAVERSION=	${PORTVERSION}
-
 PORTDOCS=	*
+
+DATAVERSION=	0.9.0
+
+ONLY_FOR_ARCHS=	i386 amd64
 
 MAN6=		fillets.6
 
-ONLY_FOR_ARCHS=	i386 amd64
+OPTIONS=	FRIBIDI	"Enable fribidi support" on
 
 .include <bsd.port.pre.mk>
 
