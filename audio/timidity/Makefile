@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI to WAV renderer and player
 
-CONFLICTS=	timidity++-2.11.*
+CONFLICTS=	timidity++-2.13.*
 
 NO_CDROM=	"Uses copyrighted patches"
 
