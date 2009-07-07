@@ -340,6 +340,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/midl.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/mingw.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/mingw.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/mingw.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/mssdk.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/mssdk.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/mssdk.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/mslib.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/mslib.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/mslib.pyo
@@ -361,6 +364,21 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/mwld.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/nasm.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/nasm.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/nasm.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/__init__.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/__init__.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/__init__.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/common.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/common.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/common.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/netframework.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/netframework.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/netframework.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/sdk.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/sdk.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/sdk.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/vs.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/vs.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon/vs.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/__init__.pyo
@@ -537,6 +555,7 @@ lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyc
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyo
 @dirrm lib/scons-%%SCONS_VER%%/SCons/compat
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Variables
+@dirrm lib/scons-%%SCONS_VER%%/SCons/Tool/MSCommon
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Tool/packaging
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Tool
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Script
