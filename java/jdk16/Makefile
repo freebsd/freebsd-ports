@@ -21,7 +21,7 @@ COMMENT=	Java Development Kit 1.6.0
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
-		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-base
+		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 OPTIONS=	DEBUG	"Enable debugging support"	off \
