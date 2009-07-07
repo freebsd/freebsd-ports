@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mocha
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
