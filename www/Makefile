@@ -1613,6 +1613,7 @@
     SUBDIR += wnews
     SUBDIR += woadaptor
     SUBDIR += woadaptor-cgi
+    SUBDIR += woof
     SUBDIR += wordpress
     SUBDIR += wordpress-mu
     SUBDIR += wsdlpull
