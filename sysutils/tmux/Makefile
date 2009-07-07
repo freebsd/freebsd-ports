@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	tmux
-DISTVERSION=	0.8
+DISTVERSION=	0.9
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Terminal Multiplexer
+
+HAS_CONFIGURE=	yes
 
 MAN1=		tmux.1
 
