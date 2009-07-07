@@ -539,6 +539,7 @@
     SUBDIR += mysar
     SUBDIR += mysqlphp2postgres
     SUBDIR += nanoblogger
+    SUBDIR += nanoblogger-extra
     SUBDIR += nd
     SUBDIR += neon26
     SUBDIR += neon28
