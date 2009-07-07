@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	gengetopt
-PORTVERSION=	2.22.1
+PORTVERSION=	2.22.2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	A tool for generating a C function which parses command line arguments
 
 INSTALL_WRKSRC=	${WRKSRC}/src
