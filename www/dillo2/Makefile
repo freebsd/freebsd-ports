@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dillo
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/
 
@@ -37,9 +37,9 @@ OPTIONS=	COOKIES 	"Enable cookies" On \
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_COOKIES)
-CONFIGURE_ARGS+= --enable-cookies
+CONFIGURE_ARGS+=	--enable-cookies
 .else
-CONFIGURE_ARGS+= --disable-cookies
+CONFIGURE_ARGS+=	--disable-cookies
 .endif
 
 .ifdef(WITH_DEBUG)
@@ -49,23 +49,23 @@ CONFIGURE_ARGS+=	--disable-gprof --disable-rtfl
 .endif
 
 .ifdef(WITH_IPV6)
-CONFIGURE_ARGS+= --enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
 .else
-CONFIGURE_ARGS+= --disable-ipv6
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .ifdef(WITH_SSL)
-CONFIGURE_ARGS+= --enable-ssl
+CONFIGURE_ARGS+=	--enable-ssl
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .else
-CONFIGURE_ARGS+= --disable-ssl
+CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
 .ifdef(WITH_THREADED_DNS)
-CONFIGURE_ARGS+= --enable-threaded-dns
+CONFIGURE_ARGS+=	--enable-threaded-dns
 CFLAGS+=	${PTHREAD_CFLAGS}
 .else
-CONFIGURE_ARGS+= --disable-threaded-dns
+CONFIGURE_ARGS+=	--disable-threaded-dns
 .endif
 
 post-patch:
