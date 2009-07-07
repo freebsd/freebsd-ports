@@ -1256,6 +1256,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
     SUBDIR += py-WebError
+    SUBDIR += py-WebFlash
     SUBDIR += py-WebTest
     SUBDIR += py-albatross
     SUBDIR += py-amf
