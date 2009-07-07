@@ -1,0 +1,63 @@
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/html/nanoblogger_de.html
+%%PORTDOCS%%%%DOCSDIR%%/html/nanoblogger_fr.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nanoblogger.bash_completion
+%%DATADIR%%/default/styles/nb_rusted.css
+%%DATADIR%%/default/styles/nb_spring.css
+%%DATADIR%%/default/styles/nb_steelblue.css
+%%DATADIR%%/default/templates/category_inc_archive.htm
+%%DATADIR%%/default/templates/category_inc_entry.htm
+%%DATADIR%%/lang/de/help.txt
+%%DATADIR%%/lang/de/messages.lang
+%%DATADIR%%/lang/de/plugins.lang
+%%DATADIR%%/lang/de/templates.lang
+%%DATADIR%%/lang/es/help.txt
+%%DATADIR%%/lang/es/messages.lang
+%%DATADIR%%/lang/es/plugins.lang
+%%DATADIR%%/lang/es/templates.lang
+%%DATADIR%%/lang/fr/help.txt
+%%DATADIR%%/lang/fr/messages.lang
+%%DATADIR%%/lang/fr/plugins.lang
+%%DATADIR%%/lang/fr/templates.lang
+%%DATADIR%%/lang/tr/help.txt
+%%DATADIR%%/lang/tr/messages.lang
+%%DATADIR%%/lang/tr/plugins.lang
+%%DATADIR%%/lang/tr/templates.lang
+%%DATADIR%%/lang/zh_TW/help.txt 
+%%DATADIR%%/lang/zh_TW/messages.lang
+%%DATADIR%%/lang/zh_TW/plugins.lang
+%%DATADIR%%/lang/zh_TW/templates.lang
+%%DATADIR%%/plugins/archive/category/include_listings.sh
+%%DATADIR%%/plugins/archive/master_fullindex.off
+%%DATADIR%%/plugins/entry/format/autopbr.sh
+%%DATADIR%%/plugins/entry/z0_excerpt.off
+%%DATADIR%%/plugins/page/format/autopbr.sh
+%%DATADIR%%/plugins/page/page_links.off
+%%DATADIR%%/plugins/shortcode/yahoobuzz.sh
+%%DATADIR%%/plugins/shortcode/youtube.sh
+%%DATADIR%%/plugins/001_mymood.off
+%%DATADIR%%/plugins/file_links.sh
+%%DATADIR%%/plugins/fortune.sh
+%%DATADIR%%/plugins/rss.sh
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/
+@dirrm %%DATADIR%%/default/styles
+@dirrm %%DATADIR%%/default/templates
+@dirrm %%DATADIR%%/default
+@dirrm %%DATADIR%%/lang/de
+@dirrm %%DATADIR%%/lang/es
+@dirrm %%DATADIR%%/lang/fr
+@dirrm %%DATADIR%%/lang/tr
+@dirrm %%DATADIR%%/lang/zh_TW
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/plugins/archive/category
+@dirrm %%DATADIR%%/plugins/archive
+@dirrm %%DATADIR%%/plugins/entry/format
+@dirrm %%DATADIR%%/plugins/entry
+@dirrm %%DATADIR%%/plugins/page/format
+@dirrm %%DATADIR%%/plugins/shortcode
+@dirrm %%DATADIR%%/plugins/page
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%

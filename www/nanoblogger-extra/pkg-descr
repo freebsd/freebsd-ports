@@ -1,0 +1,8 @@
+NanoBlogger is a small weblog engine written in Bash for the command
+line.  It uses common UNIX tools such as cat, grep, and sed to create
+static HTML content.
+
+This port (www/nanoblogger-extra) contains additional language 
+definitions, plugins, and various other add-ons for www/nanoblogger.
+
+WWW: http://nanoblogger.sourceforge.net/
