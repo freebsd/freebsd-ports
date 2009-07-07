@@ -34,7 +34,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_WORDVIEW)
-USE_TK=			80+
+USE_TK=			82+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-wish=${WISH}
 PLIST_SUB+=		WORDVIEW=""

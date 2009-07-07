@@ -14,7 +14,7 @@ MASTER_SITES=	SF/tclreadline
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU readline for TCL
 
-USE_TCL=	80+
+USE_TCL=	82+
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
