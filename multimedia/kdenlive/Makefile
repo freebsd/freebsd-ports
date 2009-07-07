@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdenlive
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SFE
 
@@ -26,7 +26,7 @@ USE_LDCONFIG=	${PREFIX}/lib/kde4
 
 MAN1=		kdenlive.1 kdenlive_render.1
 
-OPTIONS=	DVD	"DVD creation with dvdauthor and cdrtools" on \
+OPTIONS=	DVD	"DVD creation with cdrtools and dvdauthor" on \
 		FREI0R	"Frei0r plugins" on \
 		LADSPA	"LADSPA plugins" on \
 		SCREENGRAB	"Screen capture with recordMyDesktop" on
@@ -51,6 +51,8 @@ RUN_DEPENDS+=	recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -E -e '/${PORTNAME}.(menu|xpm)/d' \
+		${PATCH_WRKSRC}/data/CMakeLists.txt
 	# prevent updating mime during build
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
 		${PATCH_WRKSRC}/src/mimetypes/CMakeLists.txt
