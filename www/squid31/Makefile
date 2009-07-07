@@ -14,25 +14,15 @@
 #   define SQUID_UID=nobody and SQUID_GID=nogroup in your make environment
 #   before you start the update or installation of this port.
 #
-# SQUID_LANGUAGES
-#   A list of languages for which error page files should be installed
-#   (default: all available)
-#
-#   E.g. use `make SQUID_LANGUAGES="English French"' if you want to
-#   install the files for these languages only.
-#   Use `make -VSQUID_LANGUAGES' or scroll down to this variable's
-#   definition to see which values are valid.
-#
-# SQUID_DEFAULT_LANG
-#   If you define SQUID_LANGUAGES, select which language should be the default
-#   one (this variable defaults to "templates"). This setting can be overwritten
-#   with squid.conf's error_directory directive.
+# Note:
+# Starting with Squid 3.1 SQUID_LANGUAGES and SQUID_DEFAULT_LANG are no longer
+# available and will be ignored.
 #
 # SQUID_CONFIGURE_ARGS
 #   Additional configuration options.
 #
 #   To enable them, use e.g
-#   `make SQUID_CONFIGURE_ARGS="--enable-dlmalloc --enable-truncate" install'
+#   `make SQUID_CONFIGURE_ARGS="--enable-ntml-fail-open" install'
 #
 #   The list below may be incomplete, please see the configure script
 #   in the Squid source distribution for the complete list of additional
@@ -58,10 +48,12 @@
 #     to indicate variance within an accelerator setup. Typically used
 #     together with other code that adds custom HTTP headers to the
 #     requests.
+#    --disable-loadable-modules
+#     Do not support loadable modules.
 
 PORTNAME=	squid
-PORTVERSION=	3.0.${SQUID_STABLE_VER}
-CATEGORIES=	www
+PORTVERSION=	3.1.0.${SQUID_BETA_VER}
+CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
 		ftp://ftp.belnet.be/packages/squid/pub/%SUBDIR%/ \
@@ -70,17 +62,17 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,} \
-		http://www.squid-cache.org/Versions/v3/3.0/ \
-		http://www3.us.squid-cache.org/Versions/v3/3.0/ \
-		http://www1.at.squid-cache.org/Versions/v3/3.0/ \
-		http://www2.nl.squid-cache.org/Versions/v3/3.0/ \
-		http://www1.ru.squid-cache.org/Versions/v3/3.0/ \
-		http://www1.uk.squid-cache.org/Versions/v3/3.0/ \
-		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
-		http://www2.tw.squid-cache.org/Versions/v3/3.0/
+		http://www.squid-cache.org/Versions/v3/3.1/ \
+		http://www3.us.squid-cache.org/Versions/v3/3.1/ \
+		http://www1.at.squid-cache.org/Versions/v3/3.1/ \
+		http://www2.nl.squid-cache.org/Versions/v3/3.1/ \
+		http://www1.ru.squid-cache.org/Versions/v3/3.1/ \
+		http://www1.uk.squid-cache.org/Versions/v3/3.1/ \
+		http://www1.jp.squid-cache.org/Versions/v3/3.1/ \
+		http://www2.tw.squid-cache.org/Versions/v3/3.1/
 MASTER_SITE_SUBDIR=	squid
-DISTNAME=	squid-3.0.STABLE${SQUID_STABLE_VER}
-DIST_SUBDIR=	squid3.0
+DISTNAME=	squid-3.1.0.${SQUID_BETA_VER}
+DIST_SUBDIR=	squid3.1
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
@@ -91,17 +83,17 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.uk.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
-PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
-PATCHFILES=	b9052.patch
+PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
+PATCHFILES=
 
 MAINTAINER=	tmseck@web.de
-COMMENT=	HTTP Caching Proxy
+COMMENT=	HTTP Caching Proxy (BETA Version)
 
-LATEST_LINK=	squid30
+LATEST_LINK=	squid31
 
-SQUID_STABLE_VER=	16
+SQUID_BETA_VER=	8
 
-CONFLICTS=	squid-2.[0-9].* squid-3.[^0].* cacheboy-[0-9]*
+CONFLICTS=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -119,13 +111,13 @@ SUB_LIST+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
 OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_SASL_AUTH "Install SASL authentication helpers" off \
+		SQUID_IPV6 "Enable IPv6 support" on \
 		SQUID_DELAY_POOLS "Enable delay pools" off \
 		SQUID_SNMP "Enable SNMP support" on \
-		SQUID_CARP "Enable CARP support" on \
 		SQUID_SSL "Enable SSL support for reverse proxies" off \
 		SQUID_PINGER "Install the icmp helper" off \
 		SQUID_DNS_HELPER "Use the old 'dnsserver' helper" off \
-		SQUID_HTCP "Enable HTCP support" off \
+		SQUID_HTCP "Enable HTCP support" on \
 		SQUID_VIA_DB "Enable forward/via database" off \
 		SQUID_CACHE_DIGESTS "Enable cache digests" off \
 		SQUID_WCCP "Enable Web Cache Coordination Prot. v1" on \
@@ -138,6 +130,8 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_IPFW "Enable transparent proxying with IPFW" off \
 		SQUID_PF "Enable transparent proxying with PF" off \
 		SQUID_IPFILTER "Enable transp. proxying with IPFilter" off \
+		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
+		SQUID_ECAP "En. loadable content adaptation modules" off \
 		SQUID_ICAP "Enable ICAP client functionality" off \
 		SQUID_ESI "Enable ESI support (experimental)" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
@@ -148,8 +142,12 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_DEBUG "Enable debugging options" off
 
 etc_files=	squid/cachemgr.conf.default \
-		squid/mib.txt squid/mime.conf.default \
-		squid/msntauth.conf.default squid/squid.conf.default
+		squid/errorpage.css.default \
+		squid/mib.txt \
+		squid/mime.conf.default \
+		squid/msntauth.conf.default \
+		squid/squid.conf.default \
+		squid/squid.conf.documented
 
 icon_files=	anthony-binhex.gif anthony-bomb.gif anthony-box.gif \
 		anthony-box2.gif anthony-c.gif anthony-compressed.gif \
@@ -170,11 +168,23 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_ICAP_FAILURE ERR_INVALID_REQ ERR_INVALID_RESP \
 		ERR_INVALID_URL ERR_LIFETIME_EXP ERR_NO_RELAY \
 		ERR_ONLY_IF_CACHED_MISS ERR_READ_ERROR ERR_READ_TIMEOUT \
-		ERR_SHUTTING_DOWN ERR_SOCKET_FAILURE ERR_TOO_BIG ERR_UNSUP_REQ \
+		ERR_SECURE_CONNECT_FAIL ERR_SHUTTING_DOWN ERR_SOCKET_FAILURE \
+		ERR_TOO_BIG ERR_UNSUP_REQ ERR_UNSUP_HTTPVERSION \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
+# XXX:
+# This is a workaround for the problem that this file does not exist
+# in the "old-style" error directories (errors/<Language>).
+error_files_new_only=	ERR_FTP_LISTING
+
+error_dirs_old=	Hebrew Hungarian Korean Lithuanian Polish Portuguese  \
+		Slovak Traditional_Chinese
+
+error_dirs_new=	ar az bg ca cs da de el en en-au en-gb en-nz en-us es et \
+		fa fi fr hy id it ja lv nl pt-br ro ru sr sv tr uk uz zh-cn \
+		templates
 
 libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
-		msnt_auth ncsa_auth ntlm_auth pam_auth smb_auth \
+		msnt_auth ncsa_auth ntlm_smb_lm_auth pam_auth smb_auth \
 		smb_auth.sh squid_db_auth squid_radius_auth squid_session \
 		squid_unix_group wbinfo_group.pl
 .if !defined(SQUID_CONFIGURE_ARGS) || ${SQUID_CONFIGURE_ARGS:M*--disable-unlinkd*} == ""
@@ -183,6 +193,18 @@ libexec+=	unlinkd
 
 sbin=		RunAccel RunCache squidclient squid
 
+# XXX:
+# Squid 3.1 changed the default for the pid file location from
+# ${localstatedir}/logs/squid.pid to ${localstatedir}/squid.pid.
+#
+# There are two ways to tackle this:
+# 1) enforce the old default using --with-pidfile=${PREFIX}/squid/logs/squid.pid
+# 2) accept the new default (and hardwire it here as well) and make sure
+#    that ${localstatedir} is writable by the Squid master process. (It
+#    used not to be, unless the Squid master process had root privileges
+#    or ${localstatedir}'s ACL is modified (chgrp squid; chmod g+w).)
+#    This is what we do now, see also files/pkg-install.in.
+
 CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
 		--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
@@ -190,6 +212,8 @@ CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
 		--libexecdir=${PREFIX}/libexec/squid \
 		--localstatedir=${PREFIX}/squid \
 		--sysconfdir=${PREFIX}/etc/squid \
+		--with-logdir=${PREFIX}/squid/logs \
+		--with-pidfile=${PREFIX}/squid/squid.pid \
 		--enable-removal-policies="lru heap" \
 		--disable-linux-netfilter \
 		--disable-linux-tproxy \
@@ -230,17 +254,18 @@ CONFIGURE_ARGS+=	--enable-auth="basic digest negotiate ntlm" \
 			--enable-basic-auth-helpers="${basic_auth}" \
 			--enable-digest-auth-helpers="${digest_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
-			--enable-ntlm-auth-helpers="SMB"
+			--enable-ntlm-auth-helpers="smb_lm"
 .if !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
-# XXX This currently only works with heimdal from the base system,
-#     see files/patch-squid_kerb_auth:
 CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
-libexec+=	squid_kerb_auth
+# XXX:
+# these files moved from libexec to sbin : Bug or Feature?
+sbin+=	negotiate_kerb_auth negotiate_kerb_auth_test \
+	squid_kerb_auth squid_kerb_auth_test
 .endif
 
 # Storage schemes:
 
-storage_schemes=	ufs diskd null
+storage_schemes=	ufs diskd
 .if defined(WITH_SQUID_AUFS)
 storage_schemes+=	aufs
 # Only document switching from libpthread to libthr using libmap.conf
@@ -253,22 +278,22 @@ CONFIGURE_ARGS+=	--with-pthreads
 CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 .if defined(WITH_SQUID_COSS)
-# Starting with 3.0.STABLE9, COSS is disabled in Squid-3 until fixes
-# from the 2.x series are backported to 3.x.
-# storage_schemes+=	coss
+# COSS is currently disabled in Squid-3 until fixes from the 2.x series are
+# backported to 3.x.
+#storage_schemes+=	coss
 .endif
 CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
 
 # Other options set via 'make config':
 
+.if defined(WITHOUT_SQUID_IPV6) || defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
 .if defined(WITH_SQUID_DELAY_POOLS)
 CONFIGURE_ARGS+=	--enable-delay-pools
 .endif
 .if defined(WITHOUT_SQUID_SNMP)
 CONFIGURE_ARGS+=	--disable-snmp
-.endif
-.if defined(WITHOUT_SQUID_CARP)
-CONFIGURE_ARGS+=	--disable-carp
 .endif
 .if defined(WITH_SQUID_SSL)
 # we need to .include bsd.openssl.mk manually here.because USE_OPENSSL only
@@ -289,8 +314,8 @@ libexec+=	pinger
 CONFIGURE_ARGS+=	--disable-internal-dns
 libexec+=	dnsserver
 .endif
-.if defined(WITH_SQUID_HTCP)
-CONFIGURE_ARGS+=	--enable-htcp
+.if defined(WITHOUT_SQUID_HTCP)
+CONFIGURE_ARGS+=	--disable-htcp
 .endif
 .if defined(WITH_SQUID_VIA_DB)
 CONFIGURE_ARGS+=	--enable-forw-via-db
@@ -328,6 +353,15 @@ CONFIGURE_ARGS+=	--enable-pf-transparent
 .if defined(WITH_SQUID_IPFILTER)
 CONFIGURE_ARGS+=	--enable-ipf-transparent
 .endif
+.if defined(WITH_SQUID_FOLLOW_XFF)
+CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
+.endif
+.if defined(WITH_SQUID_ECAP)
+CONFIGURE_ARGS+=	--enable-ecap
+LIB_DEPENDS+=	ecap:${PORTSDIR}/www/libecap
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
 .if defined(WITH_SQUID_ICAP)
 CONFIGURE_ARGS+=	--enable-icap-client
 .endif
@@ -360,20 +394,6 @@ STRIP=
 CONFIGURE_ARGS+=	--disable-optimizations
 WITH_DEBUG?=		yes
 .endif
-# Languages:
-#
-# If you do not define SQUID_LANGUAGES yourself, all available language files
-# will be installed; the default language will be English.
-SQUID_LANGUAGES?=	Armenian Azerbaijani Bulgarian Catalan Czech Danish \
-			Dutch English Estonian Finnish French German Greek \
-			Hebrew Hungarian Italian Japanese Korean Lithuanian \
-			Polish Portuguese Romanian Russian-1251 Russian-koi8-r \
-			Serbian Simplify_Chinese Slovak Spanish Swedish \
-			Traditional_Chinese Turkish Ukrainian-1251 \
-			Ukrainian-koi8-u Ukrainian-utf8
-SQUID_DEFAULT_LANG?=	templates
-CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
-			--enable-default-err-language=${SQUID_DEFAULT_LANG}
 
 # Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
@@ -386,9 +406,14 @@ PLIST_DIRS=	etc/squid/icons libexec/squid
 PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
 		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,}
 
-.for d in ${SQUID_LANGUAGES} templates
+.for d in ${error_dirs_old}
 PLIST_DIRS+=	etc/squid/errors/${d}
 PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
+.endfor
+.for d in ${error_dirs_new}
+PLIST_DIRS+=	etc/squid/errors/${d}
+PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
+PLIST_FILES+=	${error_files_new_only:S,^,etc/squid/errors/${d}/,}
 .endfor
 PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
@@ -403,13 +428,6 @@ pre-install:
 # Prevent installation of .orig files by deleting them.
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
-# XXX:
-# Remove error pages that were prematurely integrated into 3.0.STABLE.
-# This is done to keep the package list manageable by installing the same
-# set of error files for every language:
-	@for d in Ukrainian-1251 Ukrainian-koi8-u Ukrainian-utf8 templates; \
-		do ${RM} -f ${WRKSRC}/errors/$${d}/ERR_SECURE_CONNECT_FAIL; \
-	 done
 
 pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
