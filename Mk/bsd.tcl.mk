@@ -12,7 +12,7 @@ Tcl_Include_MAINTAINER=		mm@FreeBSD.org
 # USE_TCL		- Add library dependency on Tcl. If no version is given by the maintainer
 #			  via the port or by the user via defined variable try to find the highest
 #			  stable installed version.
-#			  Available values: yes 86+ 85+ 84+ 83+ 82+ 80+ 85 84 83 82 80
+#			  Available values: yes 86+ 85+ 84+ 83+ 82+ 85 84 83 82
 #			  NOTE: - default value 85 is used in case of USE_TCL=yes
 #
 # USE_TCL_BUILD		- Add buildtime dependency on Tcl (tclsh).
@@ -51,7 +51,7 @@ Tcl_Include_MAINTAINER=		mm@FreeBSD.org
 # USE_TK		- Add library dependency on Tk. If no version is given by the maintainer
 #			  via the port or by the user via defined variable try to find the highest
 #			  stable installed version.
-#			  Avaliable values: yes 86+ 85+ 84+ 83+ 82+ 80+ 85 84 83 82 80
+#			  Avaliable values: yes 86+ 85+ 84+ 83+ 82+ 85 84 83 82
 #			  NOTE: - overrides USE_TCL
 #			        - default value 85 is used in case of USE_TK=yes
 #
@@ -191,13 +191,12 @@ INVALID_TCL_VER:=	${INVALID_TK_VER}
 . if defined(USE_TCL)
 
 _TCL_DEFAULT_VERSION=		85
-_TCL_VERSIONS=			86 85 84 83 82 80
+_TCL_VERSIONS=			86 85 84 83 82
 _TCL_THREADS_VERSIONS=		86 85 84
-_TCL_RANGE_VERSIONS= 		86+ 85+ 84+ 83+ 82+ 80+
+_TCL_RANGE_VERSIONS= 		86+ 85+ 84+ 83+ 82+
 _TCL_THREADS_RANGE_VERSIONS=	86+ 85+ 84+
 
 # For specifying [85, 84, ..]+
-_TCL_80P=	80 82 83 84 85 86
 _TCL_82P=	82 83 84 85 86
 _TCL_83P=	83 84 85 86
 _TCL_84P=	84 85 86
