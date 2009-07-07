@@ -1,4 +1,5 @@
 bin/npcd
+bin/npcdmod.o
 etc/pnp/pnp4nagios_release
 etc/pnp/config.php-sample
 etc/pnp/background.pdf-sample
@@ -10,9 +11,11 @@ etc/pnp/npcd.cfg-sample
 libexec/process_perfdata.pl
 libexec/check_pnp_rrds.pl
 %%WWWDIR%%/images/ack.png
+%%WWWDIR%%/images/action.gif
 %%WWWDIR%%/images/calendar.png
 %%WWWDIR%%/images/critical.png
 %%WWWDIR%%/images/eps.png
+%%WWWDIR%%/images/graph.gif
 %%WWWDIR%%/images/int.gif
 %%WWWDIR%%/images/int2.gif
 %%WWWDIR%%/images/link.png
@@ -72,11 +75,11 @@ libexec/check_pnp_rrds.pl
 %%WWWDIR%%/include/js/dragdrop.js
 %%WWWDIR%%/include/js/effects.js
 %%WWWDIR%%/include/js/menuarrow.gif
-%%WWWDIR%%/include/js/overlib.js
-%%WWWDIR%%/include/js/overlib_shadow.js
+%%WWWDIR%%/include/js/overlib_mini.js
 %%WWWDIR%%/include/js/prototype.js
 %%WWWDIR%%/include/js/scriptaculous.js
 %%WWWDIR%%/include/js/slider.js
+%%WWWDIR%%/include/js/sound.js
 %%WWWDIR%%/include/js/unittest.js
 %%WWWDIR%%/include/js/zoom.js
 %%WWWDIR%%/include/debug.php
@@ -98,6 +101,7 @@ libexec/check_pnp_rrds.pl
 %%WWWDIR%%/templates.dist/check-host-alive.php
 %%WWWDIR%%/templates.dist/check_disk.php
 %%WWWDIR%%/templates.dist/check_dns.php
+%%WWWDIR%%/templates.dist/check_fping.php
 %%WWWDIR%%/templates.dist/check_http.php
 %%WWWDIR%%/templates.dist/check_http_url.php
 %%WWWDIR%%/templates.dist/check_iftraffic_counter.php
@@ -105,6 +109,7 @@ libexec/check_pnp_rrds.pl
 %%WWWDIR%%/templates.dist/check_load.php
 %%WWWDIR%%/templates.dist/check_messpc_temp.php
 %%WWWDIR%%/templates.dist/check_multi.php
+%%WWWDIR%%/templates.dist/check_mysql_health.php
 %%WWWDIR%%/templates.dist/check_nt_cpu.php
 %%WWWDIR%%/templates.dist/check_nt_disk.php
 %%WWWDIR%%/templates.dist/check_nt_mem.php
@@ -130,10 +135,12 @@ libexec/check_pnp_rrds.pl
 %%WWWDIR%%/templates.dist/check_users.php
 %%WWWDIR%%/templates.dist/default.php
 %%WWWDIR%%/templates.dist/response.php
+%%WWWDIR%%/templates.special/loop.php
 %%WWWDIR%%/ajax.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/zoom.php
 @dirrmtry %%WWWDIR%%/templates.dist
+@dirrmtry %%WWWDIR%%/templates.special
 @dirrmtry %%WWWDIR%%/templates
 @dirrmtry %%WWWDIR%%/lang
 @dirrmtry %%WWWDIR%%/include/js

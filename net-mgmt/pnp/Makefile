@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pnp
-PORTVERSION=	0.4.12
+PORTVERSION=	0.4.14
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/pnp4nagios
 
@@ -40,7 +40,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-share::pnp::include::function.inc.php
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
-	--prefix=${LOCALBASE} \
 	--sysconfdir=${PREFIX}/etc/pnp \
 	--datarootdir=${WWWDIR} \
 	--datadir=${WWWDIR} \
