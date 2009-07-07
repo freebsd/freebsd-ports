@@ -2,27 +2,16 @@ bin/nb
 @unexec if cmp -s %D/etc/nb.conf.sample %D/etc/nb.conf; then rm -f %D/etc/nb.conf; fi
 etc/nb.conf.sample
 @exec if [ ! -f %D/etc/nb.conf ] ; then cp -p %D/%F %B/nb.conf; fi
-@exec mkdir -p %D/share/nanoblogger/default/parts
 @exec mkdir -p %D/share/nanoblogger/default/cache
 @exec mkdir -p %D/share/nanoblogger/default/plugins
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/nanoblogger.html
 %%DATADIR%%/default/articles/example.txt
-%%DATADIR%%/default/atom.xml
 %%DATADIR%%/default/blog.conf
 %%DATADIR%%/default/data/cat_1.db
 %%DATADIR%%/default/images/favicon.ico
 %%DATADIR%%/default/images/feed-icon-14x14.png
-%%DATADIR%%/default/index.html
-%%DATADIR%%/default/index.xml
+%%DATADIR%%/default/styles/feed.css
 %%DATADIR%%/default/styles/nb_clean.css
 %%DATADIR%%/default/styles/nb_default.css
-%%DATADIR%%/default/styles/nb_rusted.css
-%%DATADIR%%/default/styles/nb_spring.css
-%%DATADIR%%/default/styles/nb_steelblue.css
 %%DATADIR%%/default/styles/print.css
 %%DATADIR%%/default/templates/category_archive.htm
 %%DATADIR%%/default/templates/category_entry.htm
@@ -34,6 +23,7 @@ etc/nb.conf.sample
 %%DATADIR%%/default/templates/main_links.htm
 %%DATADIR%%/default/templates/makepage.htm
 %%DATADIR%%/default/templates/month_archive.htm
+%%DATADIR%%/default/templates/month_entry.htm
 %%DATADIR%%/default/templates/permalink.htm
 %%DATADIR%%/default/templates/permalink_entry.htm
 %%DATADIR%%/default/templates/weblog_status.htm
@@ -42,9 +32,10 @@ etc/nb.conf.sample
 %%DATADIR%%/lang/en/messages.lang
 %%DATADIR%%/lang/en/plugins.lang
 %%DATADIR%%/lang/en/templates.lang
+%%DATADIR%%/lib/archive.sh
 %%DATADIR%%/lib/config.sh
+%%DATADIR%%/lib/database.sh
 %%DATADIR%%/lib/error.sh
-%%DATADIR%%/lib/query.sh
 %%DATADIR%%/lib/tools.sh
 %%DATADIR%%/moods/moods.conf
 %%DATADIR%%/moods/mymood.txt
@@ -64,18 +55,16 @@ etc/nb.conf.sample
 %%DATADIR%%/moods/smilies/smiley.gif
 %%DATADIR%%/moods/smilies/tongue.gif
 %%DATADIR%%/moods/smilies/wink.gif
-%%DATADIR%%/plugins/archive/day/cal2daytitle.sh
+%%DATADIR%%/plugins/archive/day/day_archive.sh
 %%DATADIR%%/plugins/archive/master_index.sh
-%%DATADIR%%/plugins/archive/month/month_calendar.sh
-%%DATADIR%%/plugins/archive/year/year_index.sh
+%%DATADIR%%/plugins/archive/month/month_archive.sh
+%%DATADIR%%/plugins/archive/year/year_archive.sh
 %%DATADIR%%/plugins/atom.sh
 %%DATADIR%%/plugins/calendar.sh
 %%DATADIR%%/plugins/entry/category_links.sh
 %%DATADIR%%/plugins/entry/format/autobr.sh
 %%DATADIR%%/plugins/entry/format/markdown.sh
 %%DATADIR%%/plugins/entry/format/raw.sh
-%%DATADIR%%/plugins/entry/mod/base_url.sh
-%%DATADIR%%/plugins/entry/mod/moods.sh
 %%DATADIR%%/plugins/makepage/tidy.sh
 %%DATADIR%%/plugins/page/feed_links.sh
 %%DATADIR%%/plugins/page/format/autobr.sh
@@ -85,35 +74,46 @@ etc/nb.conf.sample
 %%DATADIR%%/plugins/post/clean_parts.off
 %%DATADIR%%/plugins/recent_entries.sh
 %%DATADIR%%/plugins/rss2.sh
+%%DATADIR%%/plugins/shortcode/baseurl.sh
+%%DATADIR%%/plugins/shortcode/moods.sh
 %%DATADIR%%/plugins/weblog_links.sh
 %%DATADIR%%/plugins/weblog_status.sh
 %%DATADIR%%/plugins/z001_articles_meta.sh
 %%DATADIR%%/welcome-to-nb.txt
-@dirrm %%DATADIR%%/plugins/post
-@dirrm %%DATADIR%%/plugins/page/format
-@dirrm %%DATADIR%%/plugins/page
-@dirrm %%DATADIR%%/plugins/makepage
-@dirrm %%DATADIR%%/plugins/entry/mod
-@dirrm %%DATADIR%%/plugins/entry/format
-@dirrm %%DATADIR%%/plugins/entry
-@dirrm %%DATADIR%%/plugins/archive/year
-@dirrm %%DATADIR%%/plugins/archive/month
-@dirrm %%DATADIR%%/plugins/archive/day
-@dirrm %%DATADIR%%/plugins/archive
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/moods/smilies
-@dirrm %%DATADIR%%/moods
-@dirrm %%DATADIR%%/lib
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/copyright
+%%PORTDOCS%%%%DOCSDIR%%/html/nanoblogger.html
+@dirrm %%DATADIR%%/default/articles
+@dirrm %%DATADIR%%/default/cache
+@dirrm %%DATADIR%%/default/data
+@dirrm %%DATADIR%%/default/images
+@dirrmtry %%DATADIR%%/default/plugins
+@dirrm %%DATADIR%%/default/styles
+@dirrm %%DATADIR%%/default/templates
+@dirrm %%DATADIR%%/default
 @dirrm %%DATADIR%%/lang/en
 @dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/default/templates
-@dirrm %%DATADIR%%/default/styles
-@dirrm %%DATADIR%%/default/plugins
-@dirrm %%DATADIR%%/default/parts
-@dirrm %%DATADIR%%/default/images
-@dirrm %%DATADIR%%/default/data
-@dirrm %%DATADIR%%/default/cache
-@dirrm %%DATADIR%%/default/articles
-@dirrm %%DATADIR%%/default
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/moods/smilies
+@dirrm %%DATADIR%%/moods
+@dirrmtry %%DATADIR%%/plugins/archive/category
+@dirrmtry %%DATADIR%%/plugins/archive/day
+@dirrmtry %%DATADIR%%/plugins/archive/month
+@dirrmtry %%DATADIR%%/plugins/archive/year
+@dirrmtry %%DATADIR%%/plugins/archive
+@dirrmtry %%DATADIR%%/plugins/entry/format
+@dirrmtry %%DATADIR%%/plugins/entry/mod
+@dirrmtry %%DATADIR%%/plugins/entry
+@dirrm %%DATADIR%%/plugins/makepage
+@dirrm %%DATADIR%%/plugins/page/format
+@dirrmtry %%DATADIR%%/plugins/page/mod
+@dirrmtry %%DATADIR%%/plugins/page
+@dirrm %%DATADIR%%/plugins/post
+@dirrm %%DATADIR%%/plugins/shortcode
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/

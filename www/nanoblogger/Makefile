@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	nanoblogger
-PORTVERSION=	3.3
-PORTREVISION=	2
+PORTVERSION=	3.4
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Small weblog engine written in Bash for the command line
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -23,20 +22,19 @@ SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/nb
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/plugins/entry/format/markdown.sh
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/plugins/page/format/markdown.sh
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/nb
+	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/nb
+	@${REINPLACE_CMD} -e "s,%%DOCSDIR%%,${DOCSDIR},g" ${WRKSRC}/nb
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/nb.conf ${PREFIX}/etc/nb.conf.sample
 	${MKDIR} ${DATADIR}
-.for data in lang lib moods plugins
+.for data in default lang lib moods plugins
 	${MKDIR} ${DATADIR}/${data} && \
 		( cd ${WRKSRC}/${data} && \
-			${COPYTREE_SHARE} \* ${DATADIR}/${data} "! -name *.orig ! -name *.bak" )
+			${COPYTREE_SHARE} \* ${DATADIR}/${data} "! -name *.orig" )
 .endfor
-	${MKDIR} ${DATADIR}/default && \
-		${CP} -R ${WRKSRC}/default ${DATADIR}/
 	${CP} ${WRKSRC}/welcome-to-nb.txt ${DATADIR}
 
 post-install:
@@ -45,9 +43,11 @@ post-install:
 	fi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for doc in COPYING ChangeLog README TODO docs/nanoblogger.html
-	${INSTALL_MAN} ${WRKSRC}/${doc} ${DOCSDIR}
+.for doc in COPYING ChangeLog README TODO copyright
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
+	${MKDIR} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/docs/nanoblogger.html ${DOCSDIR}/html
 .endif
 	@${CAT} ${PKGMESSAGE}
 

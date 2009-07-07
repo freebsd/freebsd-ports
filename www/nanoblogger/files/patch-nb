@@ -1,23 +1,33 @@
---- nb.orig	Sun Jan 14 17:38:03 2007
-+++ nb	Sun Jan 14 17:41:26 2007
+--- ./nb.orig	2009-04-26 03:55:07.000000000 +0200
++++ ./nb	2009-06-22 09:31:59.000000000 +0200
 @@ -1,4 +1,4 @@
 -#! /bin/bash
-+#!/usr/bin/env bash
++#! %%LOCALBASE%%/bin/bash
  ############################################################
- #  NanoBlogger 3.3 Copyright 2006 n1xt3r (Kevin R. Wood)   #
+ #  NanoBlogger 3.4 Copyright 2009 n1xt3r (Kevin R. Wood)   #
  ############################################################
-@@ -8,11 +8,11 @@
- VERSION="3.3"
+@@ -9,11 +9,11 @@
  
- # nanoblogger's base install directory.
+ # -- hardcoded paths --
+ # where to expect nanoblogger's base
 -NB_BASE_DIR=`dirname $0`
-+NB_BASE_DIR="%%PREFIX%%/share/nanoblogger"
- # documentation
++NB_BASE_DIR=%%DATADIR%%
+ # where to expect nanoblogger's documentation
 -NB_DOC_DIR="$NB_BASE_DIR/docs"
-+NB_DOC_DIR="%%PREFIX%%/share/doc/nanoblogger"
- # nanoblogger's conf file
++NB_DOC_DIR="%%DOCSDIR%%"
+ # where to expect nanoblogger's conf file
 -NB_CFG_DIR="$NB_BASE_DIR"
 +NB_CFG_DIR="%%PREFIX%%/etc"
- 
- ### hardcoded paths ###
- 
+ # nanoblogger's language definitions directory.
+ NB_LANG_DIR="${NB_BASE_DIR}/lang"
+ # nanoblogger's module directory.
+@@ -863,6 +863,9 @@
+ 			for weblog_dir in "$NB_BASE_DIR"/default/*; do
+ 				cp -R "$weblog_dir" "$BLOG_DIR"
+ 			done
++			# set writable mode for default files
++			find "$BLOG_DIR" -type d -print0 | xargs -0 chmod 755
++			find "$BLOG_DIR" -type f -print0 | xargs -0 chmod 644
+ 			# create some critical empty directories
+ 			for weblog_emptydir in "$ARCHIVES_DIR" "$CACHE_DIR" "$PARTS_DIR"; do
+ 				[ ! -d "$BLOG_DIR/$weblog_emptydir" ] && mkdir "$BLOG_DIR/$weblog_emptydir"
