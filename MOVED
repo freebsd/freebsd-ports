@@ -4104,3 +4104,12 @@ misc/koffice-i18n-xh|editors/koffice-i18n-xh|2009-06-29|moved to editors categor
 misc/koffice-i18n-zu|editors/koffice-i18n-zu|2009-06-29|moved to editors category
 x11-toolkits/tk80||2009-07-07|Has expired: tcl8.0 support dropped
 lang/tcl80||2009-07-07|Has expired: tcl8.0 support dropped
+audio/gai-album||2009-07-07|Has expired: abandoned project, does not build
+audio/gai-visual-audio||2009-07-07|Has expired: abandoned project, does not build
+devel/linxt||2009-07-07|Has expired: Use devel/roboctl instead.
+german/citrix_ica||2009-07-07|Has expired: Use net/citrix_ica
+japanese/citrix_ica||2009-07-07|Has expired: Use net/citrix_ica
+mail/bogofilter-qdbm||2009-07-07|Has expired: Migrate to bogofilter-tc instead
+mail/xc-mail||2009-07-07|Has expired: depends on a port that expired in 2007
+www/trac-blog||2009-07-07|Has expired: Not supported anymore for trac > 0.10; use FullBlogPlugin instead
+www/trac-restrictedarea||2009-07-07|Has expired: Not supported anymore; functionality included in trac since 0.11

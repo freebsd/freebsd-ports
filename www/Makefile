@@ -1471,7 +1471,6 @@
     SUBDIR += trac-addcomment
     SUBDIR += trac-advancedticketworkflow
     SUBDIR += trac-batchmodify
-    SUBDIR += trac-blog
     SUBDIR += trac-bzr
     SUBDIR += trac-calendar
     SUBDIR += trac-ccselector
@@ -1499,7 +1498,6 @@
     SUBDIR += trac-privatetickets
     SUBDIR += trac-pydotorgtheme
     SUBDIR += trac-remind
-    SUBDIR += trac-restrictedarea
     SUBDIR += trac-revtree
     SUBDIR += trac-robotstxt
     SUBDIR += trac-simpleticket

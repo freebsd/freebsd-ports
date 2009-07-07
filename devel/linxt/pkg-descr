@@ -1,5 +1,0 @@
-The linxt Perl script is a Unix command line tool for communicating
-with the Lego Mindstorms Robotics NXT brick. It can be used to
-query the brick for information like firmware version, battery
-level, etc. and also to upload robotics programs compiled with
-NBC/NXC.

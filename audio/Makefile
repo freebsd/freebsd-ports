@@ -187,8 +187,6 @@
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
     SUBDIR += funktrackergold
-    SUBDIR += gai-album
-    SUBDIR += gai-visual-audio
     SUBDIR += gambas2-gb-sdl-sound
     SUBDIR += gbemol
     SUBDIR += gbsplay

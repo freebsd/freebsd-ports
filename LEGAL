@@ -98,8 +98,6 @@ bzip-*			archivers/bzip		Some algorithms used may
 						to unfriendly legal action
 cap60/*			net/cap			Do not sell for profit
 ccc-*.alpha.rpm		lang/compaq-cc		Distribution not allowed
-citrix_ica-*		german/citrix_ica	License prohibits redistribution
-citrix_ica-*		japanese/citrix_ica	License prohibits redistribution
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 cli_freebsd*		sysutils/arcconf	May not be redistributed
 cfs-*			security/cfs		Crypto; export-controlled
