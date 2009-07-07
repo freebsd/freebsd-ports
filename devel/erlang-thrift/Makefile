@@ -14,9 +14,10 @@ DISTFILES=
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Erlang interface to Thrift
 
-RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract \
 		erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 
 USE_GMAKE=	yes
 
