@@ -64,10 +64,12 @@ share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-add-color-clip.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-add-slide-clip.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-add-text-clip.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-align-hor.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-align-none.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-align-vert.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-hide-audio.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-hide-video.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-insert-rect.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-insert-unicode.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-lock.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-select-tool.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-show-audio.png
@@ -80,6 +82,10 @@ share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-spacer-tool.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-unlock.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-zone-end.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-zone-start.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-zoom-large.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-zoom-small.png
+share/apps/kdenlive/icons/hicolor/scalable/actions/kdenlive-align-none.svgz
+share/apps/kdenlive/icons/hicolor/scalable/actions/kdenlive-insert-unicode.svgz
 share/apps/kdenlive/icons/hicolor/scalable/actions/kdenlive-select-tool.svgz
 share/apps/kdenlive/icons/hicolor/scalable/actions/kdenlive-spacer-tool.svgz
 share/apps/kdenlive/icons/hicolor/scalable/actions/kdenlive-zone-end.svgz
@@ -89,10 +95,12 @@ share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-add-color-clip.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-add-slide-clip.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-add-text-clip.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-align-hor.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-align-none.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-align-vert.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-hide-audio.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-hide-video.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-insert-rect.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-insert-unicode.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-lock.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-select-tool.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-show-audio.png
@@ -105,6 +113,10 @@ share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-spacer-tool.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-unlock.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-zone-end.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-zone-start.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-zoom-large.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-zoom-small.png
+share/apps/kdenlive/icons/oxygen/scalable/actions/kdenlive-align-none.svgz
+share/apps/kdenlive/icons/oxygen/scalable/actions/kdenlive-insert-unicode.svgz
 share/apps/kdenlive/icons/oxygen/scalable/actions/kdenlive-select-tool.svgz
 share/apps/kdenlive/icons/oxygen/scalable/actions/kdenlive-spacer-tool.svgz
 share/apps/kdenlive/icons/oxygen/scalable/actions/kdenlive-zone-end.svgz
@@ -153,6 +165,7 @@ share/locale/ca/LC_MESSAGES/kdenlive.mo
 share/locale/cs/LC_MESSAGES/kdenlive.mo
 share/locale/da/LC_MESSAGES/kdenlive.mo
 share/locale/de/LC_MESSAGES/kdenlive.mo
+share/locale/el/LC_MESSAGES/kdenlive.mo
 share/locale/es/LC_MESSAGES/kdenlive.mo
 share/locale/fi/LC_MESSAGES/kdenlive.mo
 share/locale/fr/LC_MESSAGES/kdenlive.mo
