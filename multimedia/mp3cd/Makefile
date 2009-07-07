@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3cd
-PORTVERSION=	1.026
+PORTVERSION=	1.026001
 CATEGORIES=	multimedia
 MASTER_SITES=	http://outflux.net/software/pkgs/mp3cd/download/
 
