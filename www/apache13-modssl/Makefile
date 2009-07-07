@@ -57,9 +57,7 @@ MODSSL_FILE=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 MODSNMP_FILE=	mod_snmp_${VERSION_MODSNMP}${EXTRACT_SUFX}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-.if !defined(WITHOUT_RC_SUBR)
 USE_RC_SUBR=	yes
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -91,11 +89,7 @@ check-depends::
 	@${FALSE}
 .endif
 
-.if exists(${PREFIX}/etc/rc.d/apache.sh) || !defined(USE_RC_SUBR)
-APACHE_SH?=	etc/rc.d/apache.sh.sample
-.else
-APACHE_SH?=	etc/rc.d/apache.sh
-.endif
+APACHE_SH?=	etc/rc.d/apache
 
 PLIST_FILES+=	${APACHE_SH}
 
@@ -388,8 +382,6 @@ pre-fetch:
 post-extract:
 	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/rcng.sh > ${WRKSRC}/rcng.sh
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
-		> ${WRKSRC}/apache.sh
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 		${WRKSRC}/src/Configure
 .if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
@@ -436,11 +428,7 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-.if defined(USE_RC_SUBR)
 	${INSTALL_SCRIPT} ${WRKSRC}/rcng.sh ${PREFIX}/${APACHE_SH}
-.else
-	${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/${APACHE_SH}
-.endif
 .if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
 	@${MKDIR} ${DATADIR}/buckets
 	@${CHOWN} www:www ${DATADIR}/buckets
