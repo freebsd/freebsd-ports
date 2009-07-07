@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	tcpillust
-PORTVERSION=	2.01a
-PORTREVISION=	1
+PORTVERSION=	2.01
+PORTEPOCH=	1
 CATEGORIES=	net tcl tk
 MASTER_SITES=	http://www.jp.nishida.org/tcpillust/
 
@@ -50,10 +50,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800064
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
