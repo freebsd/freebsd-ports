@@ -15,7 +15,7 @@ bin/python-shared%%PYVER%%-config
 lib/lib%%PYTHON_VERSION%%.a
 lib/lib%%PYTHON_VERSION%%.so
 lib/lib%%PYTHON_VERSION%%.so.1
-lib/pkgconfig/python-3.1.pc
+libdata/pkgconfig/python-3.1.pc
 %%PYTHON_INCLUDEDIR%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%/Python.h
 %%PYTHON_INCLUDEDIR%%/abstract.h
@@ -2141,7 +2141,6 @@ lib/pkgconfig/python-3.1.pc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/classes
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cgi
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/pkgconfig
 @dirrm %%PYTHON_LIBDIR%%/xmlrpc
 @dirrm %%PYTHON_LIBDIR%%/xml/sax
 @dirrm %%PYTHON_LIBDIR%%/xml/parsers
