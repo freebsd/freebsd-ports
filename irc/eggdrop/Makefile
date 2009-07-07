@@ -21,7 +21,7 @@ PATCH_SITES=	http://www.egghelp.org/files/patches/:ssl \
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
-USE_TCL=	80+
+USE_TCL=	82+
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
