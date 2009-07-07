@@ -3,6 +3,7 @@ bin/osgconv
 bin/osgfilecache
 bin/osgversion
 bin/osgviewer
+bin/present3D-osg
 include/OpenThreads/Atomic
 include/OpenThreads/Barrier
 include/OpenThreads/Block
@@ -179,6 +180,9 @@ include/osg/fast_back_stack
 include/osg/io_utils
 include/osg/observer_ptr
 include/osg/ref_ptr
+include/osgAnimation/Action
+include/osgAnimation/ActionCallback
+include/osgAnimation/ActionVisitor
 include/osgAnimation/Animation
 include/osgAnimation/AnimationManagerBase
 include/osgAnimation/Assert
@@ -188,6 +192,7 @@ include/osgAnimation/Channel
 include/osgAnimation/CubicBezier
 include/osgAnimation/EaseMotion
 include/osgAnimation/Export
+include/osgAnimation/FrameAction
 include/osgAnimation/Interpolator
 include/osgAnimation/Keyframe
 include/osgAnimation/LinkVisitor
@@ -196,6 +201,8 @@ include/osgAnimation/RigGeometry
 include/osgAnimation/Sampler
 include/osgAnimation/Skeleton
 include/osgAnimation/Skinning
+include/osgAnimation/StatsHandler
+include/osgAnimation/StatsVisitor
 include/osgAnimation/Target
 include/osgAnimation/Timeline
 include/osgAnimation/TimelineAnimationManager
@@ -204,8 +211,10 @@ include/osgAnimation/Vec3Packed
 include/osgAnimation/VertexInfluence
 include/osgDB/Archive
 include/osgDB/AuthenticationMap
+include/osgDB/Callbacks
 include/osgDB/ConvertUTF
 include/osgDB/DatabasePager
+include/osgDB/DatabaseRevisions
 include/osgDB/DotOsgWrapper
 include/osgDB/DynamicLibrary
 include/osgDB/Export
@@ -218,6 +227,7 @@ include/osgDB/FileUtils
 include/osgDB/ImageOptions
 include/osgDB/ImagePager
 include/osgDB/Input
+include/osgDB/Options
 include/osgDB/Output
 include/osgDB/ParameterOutput
 include/osgDB/PluginQuery
@@ -228,6 +238,7 @@ include/osgDB/Serializer
 include/osgDB/SharedStateManager
 include/osgDB/Version
 include/osgDB/WriteFile
+include/osgDB/XmlParser
 include/osgDB/fstream
 include/osgFX/AnisotropicLighting
 include/osgFX/BumpMapping
@@ -254,6 +265,7 @@ include/osgGA/GUIEventHandler
 include/osgGA/KeySwitchMatrixManipulator
 include/osgGA/MatrixManipulator
 include/osgGA/NodeTrackerManipulator
+include/osgGA/SphericalManipulator
 include/osgGA/StateSetManipulator
 include/osgGA/TerrainManipulator
 include/osgGA/TrackballManipulator
@@ -567,11 +579,13 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgtgz.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgviewer.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgvolume.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgwidget.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_p3d.so
 %%PDF%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_pdf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pic.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_ply.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_png.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pnm.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_revisions.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_rgb.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_rot.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_scale.so
@@ -590,6 +604,22 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_vtf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_x.so
 %%XINE%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_xine.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_zip.so
+libdata/pkgconfig/openscenegraph-osg.pc
+libdata/pkgconfig/openscenegraph-osgAnimation.pc
+libdata/pkgconfig/openscenegraph-osgDB.pc
+libdata/pkgconfig/openscenegraph-osgFX.pc
+libdata/pkgconfig/openscenegraph-osgGA.pc
+libdata/pkgconfig/openscenegraph-osgIntrospection.pc
+libdata/pkgconfig/openscenegraph-osgManipulator.pc
+libdata/pkgconfig/openscenegraph-osgParticle.pc
+libdata/pkgconfig/openscenegraph-osgShadow.pc
+libdata/pkgconfig/openscenegraph-osgSim.pc
+libdata/pkgconfig/openscenegraph-osgTerrain.pc
+libdata/pkgconfig/openscenegraph-osgText.pc
+libdata/pkgconfig/openscenegraph-osgUtil.pc
+libdata/pkgconfig/openscenegraph-osgViewer.pc
+libdata/pkgconfig/openscenegraph-osgVolume.pc
+libdata/pkgconfig/openscenegraph-osgWidget.pc
 libdata/pkgconfig/openscenegraph.pc
 libdata/pkgconfig/openthreads.pc
 @dirrm lib/osgPlugins-%%OSG_VERSION%%
