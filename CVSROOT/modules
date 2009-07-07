@@ -6116,6 +6116,7 @@ jade                            ports/textproc/jade
 jadetex                         ports/print/jadetex
 jaf                             ports/java/jaf
 jaffm                           ports/x11-fm/jaffm
+jag                             ports/games/jag
 jaggedalliance2                 ports/games/jaggedalliance2
 jahshaka                        ports/multimedia/jahshaka
 jai                             ports/java/jai
@@ -10423,6 +10424,7 @@ p5-Cairo                        ports/graphics/p5-Cairo
 p5-Calendar-Simple              ports/devel/p5-Calendar-Simple
 p5-Captcha-reCAPTCHA            ports/graphics/p5-Captcha-reCAPTCHA
 p5-Captcha-reCAPTCHA-Mailhide   ports/graphics/p5-Captcha-reCAPTCHA-Mailhide
+p5-Capture-Tiny                 ports/devel/p5-Capture-Tiny
 p5-Carp-Always                  ports/devel/p5-Carp-Always
 p5-Carp-Assert                  ports/devel/p5-Carp-Assert
 p5-Carp-Assert-More             ports/devel/p5-Carp-Assert-More
@@ -11160,6 +11162,7 @@ p5-Email-MessageID              ports/mail/p5-Email-MessageID
 p5-Email-Obfuscate              ports/security/p5-Email-Obfuscate
 p5-Email-Reply                  ports/mail/p5-Email-Reply
 p5-Email-Send                   ports/mail/p5-Email-Send
+p5-Email-Sender                 ports/mail/p5-Email-Sender
 p5-Email-Simple                 ports/mail/p5-Email-Simple
 p5-Email-Simple-Creator         ports/mail/p5-Email-Simple-Creator
 p5-Email-Valid                  ports/mail/p5-Email-Valid
@@ -11711,6 +11714,7 @@ p5-JSON                         ports/converters/p5-JSON
 p5-JSON-Any                     ports/converters/p5-JSON-Any
 p5-JSON-DWIW                    ports/converters/p5-JSON-DWIW
 p5-JSON-RPC                     ports/devel/p5-JSON-RPC
+p5-JSON-RPC-Common              ports/devel/p5-JSON-RPC-Common
 p5-JSON-XS                      ports/converters/p5-JSON-XS
 p5-JSON-XS-VersionOneAndTwo     ports/converters/p5-JSON-XS-VersionOneAndTwo
 p5-JSON1                        ports/converters/p5-JSON1
@@ -13802,6 +13806,7 @@ p5-cam-pdf                      ports/textproc/p5-CAM-PDF
 p5-capitalization               ports/devel/p5-capitalization
 p5-captcha-recaptcha            ports/graphics/p5-Captcha-reCAPTCHA
 p5-captcha-recaptcha-mailhide   ports/graphics/p5-Captcha-reCAPTCHA-Mailhide
+p5-capture-tiny                 ports/devel/p5-Capture-Tiny
 p5-carp-always                  ports/devel/p5-Carp-Always
 p5-carp-assert                  ports/devel/p5-Carp-Assert
 p5-carp-assert-more             ports/devel/p5-Carp-Assert-More
@@ -14626,6 +14631,7 @@ p5-email-mime-modifier          ports/mail/p5-Email-MIME-Modifier
 p5-email-obfuscate              ports/security/p5-Email-Obfuscate
 p5-email-reply                  ports/mail/p5-Email-Reply
 p5-email-send                   ports/mail/p5-Email-Send
+p5-email-sender                 ports/mail/p5-Email-Sender
 p5-email-simple                 ports/mail/p5-Email-Simple
 p5-email-simple-creator         ports/mail/p5-Email-Simple-Creator
 p5-email-valid                  ports/mail/p5-Email-Valid
@@ -15200,6 +15206,7 @@ p5-json                         ports/converters/p5-JSON
 p5-json-any                     ports/converters/p5-JSON-Any
 p5-json-dwiw                    ports/converters/p5-JSON-DWIW
 p5-json-rpc                     ports/devel/p5-JSON-RPC
+p5-json-rpc-common              ports/devel/p5-JSON-RPC-Common
 p5-json-xs                      ports/converters/p5-JSON-XS
 p5-json-xs-versiononeandtwo     ports/converters/p5-JSON-XS-VersionOneAndTwo
 p5-json1                        ports/converters/p5-JSON1
@@ -19035,6 +19042,7 @@ py-jinja2                       ports/devel/py-Jinja2
 py-jonpy                        ports/www/py-jonpy
 py-json-py                      ports/devel/py-json-py
 py-jsonlib                      ports/devel/py-jsonlib
+py-jsonlib2                     ports/devel/py-jsonlib2
 py-kaa-base                     ports/multimedia/py-kaa-base
 py-kaa-imlib2                   ports/multimedia/py-kaa-imlib2
 py-kaa-metadata                 ports/multimedia/py-kaa-metadata
@@ -19081,6 +19089,7 @@ py-mdp                          ports/science/py-mdp
 py-mechanize                    ports/www/py-mechanize
 py-medusa                       ports/net/py-medusa
 py-meld                         ports/www/py-meld
+py-meld3                        ports/www/py-meld3
 py-memcached                    ports/databases/py-memcached
 py-metar                        ports/astro/py-metar
 py-mez_xml                      ports/devel/py-mez_xml
@@ -19194,6 +19203,7 @@ py-px                           ports/devel/py-px
 py-py-restclient                ports/www/py-py-restclient
 py-py2play                      ports/net-p2p/py-py2play
 py-pyPgSQL                      ports/databases/py-pyPgSQL
+py-pyang                        ports/net-mgmt/py-pyang
 py-pybmp                        ports/multimedia/py-pybmp
 py-pycallgraph                  ports/devel/py-pycallgraph
 py-pychess                      ports/games/py-pychess
