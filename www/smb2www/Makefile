@@ -26,6 +26,9 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local/www/smb2www,${WWWDIR},g' -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Install.pl
+
 do-install:
 	@cd ${WRKSRC}; ${PERL} ${WRKSRC}/Install.pl
 
