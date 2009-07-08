@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
@@ -52,7 +52,6 @@ pre-everything::
 	@${ECHO} "To get correct permissions, please set CGIUSER, CGIGROUP"
 	@${ECHO} "per default it is set to www:www."
 	@${ECHO}
-	@${MKDIR} ${WRKDIR}
 
 post-install:
 #	@${FIND} ${PREFIX}/share/moin/underlay \! -type d | ${SED} -e 's,${PREFIX}/,,' >> ${TMPPLIST}
