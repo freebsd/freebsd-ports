@@ -567,6 +567,7 @@
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlrelay
     SUBDIR += py-sybase
+    SUBDIR += py25-bsddb
     SUBDIR += pydbdesigner
     SUBDIR += pydbx
     SUBDIR += qdbm
