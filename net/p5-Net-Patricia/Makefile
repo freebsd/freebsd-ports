@@ -7,12 +7,15 @@
 
 PORTNAME=	Net-Patricia
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module for fast IP address lookups
+
+RUN_DEPENDS=    ${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
 
 PERL_CONFIGURE=	YES
 
