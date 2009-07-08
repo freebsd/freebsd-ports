@@ -19,6 +19,8 @@ BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 RUN_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
