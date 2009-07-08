@@ -1,5 +1,5 @@
---- apr-1.3.5/build/apr_hints.m4.orig	Wed Oct 27 11:12:28 2004
-+++ apr-1.3.5/build/apr_hints.m4	Wed Oct 27 11:25:32 2004
+--- apr-1.3.6/build/apr_hints.m4.orig	Wed Oct 27 11:12:28 2004
++++ apr-1.3.6/build/apr_hints.m4	Wed Oct 27 11:25:32 2004
 @@ -137,11 +137,7 @@
  	;;
      *-freebsd*)
