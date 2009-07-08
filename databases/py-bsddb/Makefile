@@ -14,21 +14,25 @@ MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER?=	perky@FreeBSD.org
 COMMENT=	Python bindings to the Berkeley DB library
 
 USE_BDB=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON?=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	_bsddb
 PYDISTUTILS_PKGVERSION=	0.0.0
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}/Modules
-MD5_FILE=	${PORTSDIR}/lang/python/distinfo
+MD5_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 MAKE_ENV=	BSDDB_VERSION=${BDB_LIB_NAME}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_bsddb.so
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 300
+IGNORE=	bsddb package was removed from core standard library since 3.0, use databases/py-bsddb3 instead
+.endif
 
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
