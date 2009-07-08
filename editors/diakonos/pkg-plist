@@ -1,0 +1,110 @@
+bin/diakonos
+@unexec if cmp -s %D/etc/diakonos.conf.dist %D/etc/diakonos.conf; then rm -f %D/etc/diakonos.conf; fi
+etc/diakonos.conf.dist
+@exec if [ ! -f %B/diakonos.conf ]; then cp -p %D/%F %B/diakonos.conf; fi
+@unexec if cmp -s %D/etc/diakonos-256-colour.conf.dist %D/etc/diakonos-256-colour.conf; then rm -f %D/etc/diakonos-256-colour.conf; fi
+etc/diakonos-256-colour.conf.dist
+@exec if [ ! -f %B/diakonos-256-colour.conf ]; then cp -p %D/%F %B/diakonos-256-colour.conf; fi
+%%RUBY_SITELIBDIR%%/diakonos.rb
+%%RUBY_SITELIBDIR%%/diakonos/about.rb
+%%RUBY_SITELIBDIR%%/diakonos/bookmark.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer-hash.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer-management.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer/bookmarking.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer/cursor.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer/delete.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer/display.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer/file.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer/indentation.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer/searching.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer/selection.rb
+%%RUBY_SITELIBDIR%%/diakonos/buffer/undo.rb
+%%RUBY_SITELIBDIR%%/diakonos/clipboard-klipper.rb
+%%RUBY_SITELIBDIR%%/diakonos/clipboard-xclip.rb
+%%RUBY_SITELIBDIR%%/diakonos/clipboard.rb
+%%RUBY_SITELIBDIR%%/diakonos/config.rb
+%%RUBY_SITELIBDIR%%/diakonos/extension.rb
+%%RUBY_SITELIBDIR%%/diakonos/extension-set.rb
+%%RUBY_SITELIBDIR%%/diakonos/core-ext/bignum.rb
+%%RUBY_SITELIBDIR%%/diakonos/core-ext/enumerable.rb
+%%RUBY_SITELIBDIR%%/diakonos/core-ext/fixnum.rb
+%%RUBY_SITELIBDIR%%/diakonos/core-ext/hash.rb
+%%RUBY_SITELIBDIR%%/diakonos/core-ext/object.rb
+%%RUBY_SITELIBDIR%%/diakonos/core-ext/regexp.rb
+%%RUBY_SITELIBDIR%%/diakonos/core-ext/string.rb
+%%RUBY_SITELIBDIR%%/diakonos/ctag.rb
+%%RUBY_SITELIBDIR%%/diakonos/display.rb
+%%RUBY_SITELIBDIR%%/diakonos/display/format.rb
+%%RUBY_SITELIBDIR%%/diakonos/finding.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions-deprecated.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/basics.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/bookmarking.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/buffers.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/clipboard.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/cursor.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/grepping.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/indentation.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/search.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/selection.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/sessions.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/shell.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/tags.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/text-manipulation.rb
+%%RUBY_SITELIBDIR%%/diakonos/grep.rb
+%%RUBY_SITELIBDIR%%/diakonos/help.rb
+%%RUBY_SITELIBDIR%%/diakonos/hooks.rb
+%%RUBY_SITELIBDIR%%/diakonos/installation.rb
+%%RUBY_SITELIBDIR%%/diakonos/interaction.rb
+%%RUBY_SITELIBDIR%%/diakonos/keying.rb
+%%RUBY_SITELIBDIR%%/diakonos/list.rb
+%%RUBY_SITELIBDIR%%/diakonos/logging.rb
+%%RUBY_SITELIBDIR%%/diakonos/readline.rb
+%%RUBY_SITELIBDIR%%/diakonos/sessions.rb
+%%RUBY_SITELIBDIR%%/diakonos/sized-array.rb
+%%RUBY_SITELIBDIR%%/diakonos/text-mark.rb
+%%RUBY_SITELIBDIR%%/diakonos/vendor/fuzzy_file_finder.rb
+%%RUBY_SITELIBDIR%%/diakonos/version.rb
+%%RUBY_SITELIBDIR%%/diakonos/window.rb
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/help/about-help.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/clipboard.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/close-file.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/code-block-navigation.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/column-markers.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/config.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/cursor-stack.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/delete.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/extensions.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/file-type.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/key-mapping.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/line-numbers.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/macros.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/new-file.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/open-file.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/quit.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/resizing.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/ruby.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/save-file.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/scripting.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/search.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/shell.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/speed.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/support.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/switch-buffers.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/tabs.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/undo.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/uninstall.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/welcome.dhf
+%%PORTDOCS%%%%DOCSDIR%%/help/word-wrap.dhf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%RUBY_SITELIBDIR%%/diakonos/buffer
+@dirrm %%RUBY_SITELIBDIR%%/diakonos/core-ext
+@dirrm %%RUBY_SITELIBDIR%%/diakonos/display
+@dirrm %%RUBY_SITELIBDIR%%/diakonos/functions
+@dirrm %%RUBY_SITELIBDIR%%/diakonos/vendor
+@dirrm %%RUBY_SITELIBDIR%%/diakonos
