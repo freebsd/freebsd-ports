@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	lang python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	saper@SYSTEM.PL
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A minimalist implementation of python in 64k of code
 
 USE_PYTHON_BUILD=	yes
