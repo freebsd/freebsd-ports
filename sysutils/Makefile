@@ -147,6 +147,7 @@
     SUBDIR += detox
     SUBDIR += devcpu
     SUBDIR += devcpu-data
+    SUBDIR += devstat
     SUBDIR += di
     SUBDIR += dim
     SUBDIR += dircomp
