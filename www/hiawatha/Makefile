@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	6.14.1
+PORTVERSION=	6.15
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/
 
@@ -16,7 +16,7 @@ COMMENT=	An advanced and secure webserver for Unix
 DOCS=		AUTHORS COPYING ChangeLog INSTALL
 EXAMPLES=	hiawatha mkcert newroot php-fcgi
 CONFIG_FILES=	httpd.conf mimetype.conf cgi-wrapper.conf php-fcgi.conf
-MAN1=		cgi-wrapper.1 hiawatha.1 newroot.1 php-fcgi.1 wigwam.1
+MAN1=		cgi-wrapper.1 hiawatha.1 newroot.1 php-fcgi.1 ssi-cgi.1 wigwam.1
 MANCOMPRESSED=	no
 
 USE_RC_SUBR=	hiawatha

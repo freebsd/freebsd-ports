@@ -1,3 +1,4 @@
+bin/ssi-cgi
 sbin/cgi-wrapper
 sbin/hiawatha
 sbin/newroot
