@@ -57,6 +57,7 @@ BUILD_DIRS?=	src/port src/timezone src/backend src/backend/utils/mb/conversion_p
 INSTALL_DIRS?=	${BUILD_DIRS}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
+PORTREVISION=	1
 SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
