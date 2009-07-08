@@ -7,7 +7,7 @@
 
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-contrib
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -39,9 +39,8 @@ SLAVE_ONLY=	yes
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
 .if ${PGSQL_VER} > 83
-CONFIGURE_ARGS+=	--with-libxslt --with-libxml --with-ossp-uuid
+CONFIGURE_ARGS+=	--with-libxslt --with-libxml
 LIB_DEPENDS=		xslt.2:${PORTSDIR}/textproc/libxslt xml2.5:${PORTSDIR}/textproc/libxml2
-BUILD_DEPENDS=		${LOCALBASE}/bin/uuid-config:${PORTSDIR}/misc/ossp-uuid
 .endif
 
 post-install:
