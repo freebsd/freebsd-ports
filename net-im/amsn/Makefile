@@ -7,7 +7,7 @@
 
 PORTNAME=	amsn
 PORTVERSION=	0.97.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -18,7 +18,9 @@ LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/lib/tls/tls.tcl:${PORTSDIR}/devel/tcltls \
 		dtplite:${PORTSDIR}/devel/tcllib
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+		${LOCALBASE}/lib/tls/tls.tcl:${PORTSDIR}/devel/tcltls \
+		dtplite:${PORTSDIR}/devel/tcllib
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
