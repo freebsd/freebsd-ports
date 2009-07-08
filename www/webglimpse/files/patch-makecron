@@ -1,5 +1,5 @@
---- makecron.orig	Mon Jan 26 00:27:25 1998
-+++ makecron	Tue Nov  3 11:43:57 1998
+--- ./makecron.orig	1998-01-25 16:27:25.000000000 -0500
++++ ./makecron	2009-07-07 22:30:26.581087218 -0400
 @@ -37,6 +37,7 @@
  # Get command-line options
  $indexdir = $ARGV[0];

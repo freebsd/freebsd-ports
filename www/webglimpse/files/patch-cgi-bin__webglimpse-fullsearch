@@ -1,5 +1,5 @@
---- cgi-bin/webglimpse-fullsearch.orig	Mon Jan 26 00:22:51 1998
-+++ cgi-bin/webglimpse-fullsearch	Mon Nov  2 15:17:02 1998
+--- ./cgi-bin/webglimpse-fullsearch.orig	1998-01-25 16:22:51.000000000 -0500
++++ ./cgi-bin/webglimpse-fullsearch	2009-07-07 22:30:26.511066587 -0400
 @@ -7,6 +7,9 @@
  # returns full search box (with preference to the referring page)
  #########################################################################

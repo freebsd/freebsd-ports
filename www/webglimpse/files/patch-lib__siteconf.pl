@@ -1,5 +1,5 @@
---- lib/siteconf.pl.orig	Thu Jul 23 01:44:21 1998
-+++ lib/siteconf.pl	Wed Nov  4 07:06:48 1998
+--- ./lib/siteconf.pl.orig	1998-07-22 17:44:21.000000000 -0400
++++ ./lib/siteconf.pl	2009-07-07 22:30:26.537073803 -0400
 @@ -9,6 +9,7 @@
  
  local($DirectoryIndex, $UserDir, $DocumentRoot, $Port, $Server, $ServerAddress);

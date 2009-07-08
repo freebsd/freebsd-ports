@@ -1,5 +1,5 @@
---- cgi-bin/webglimpse.orig	Mon Jul 27 22:59:49 1998
-+++ cgi-bin/webglimpse	Sat May  6 02:24:03 2000
+--- ./cgi-bin/webglimpse.orig	1998-07-27 14:59:49.000000000 -0400
++++ ./cgi-bin/webglimpse	2009-07-07 22:30:26.566085591 -0400
 @@ -39,6 +39,9 @@
  # **** **** **** ****    CONFIGURABLE VARIABLES     **** **** **** ****
  # We need some of these to find our libraries, so wrap them in a BEGIN block
