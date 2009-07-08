@@ -6,7 +6,7 @@
 
 PORTNAME=	qca-ossl
 DISTVERSION=	2.0.0-beta3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/plugins/
 
@@ -35,6 +35,6 @@ PLIST_SUB+=	DEBUG=""
 .endif
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/${QT_PLUGINDIR_REL}/libqca-ossl.so
+	${STRIP_CMD} ${PREFIX}/${QT_PLUGINDIR_REL}/crypto/libqca-ossl.so
 
 .include <bsd.port.mk>
