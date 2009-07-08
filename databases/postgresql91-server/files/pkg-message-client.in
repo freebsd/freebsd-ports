@@ -26,7 +26,7 @@ p5-postgresql-plperl, postgresql-pltcl & postgresql-plruby
 
 postgresql-contrib
   Lots of contributed utilities, postgresql functions and
-  datatypes. There you find autovacuum, pgcrypto and many other cool
+  datatypes. There you find pg_standby, pgcrypto and many other cool
   things.
 
 etc...
