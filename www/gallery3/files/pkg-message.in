@@ -1,22 +1,22 @@
 *****************************************************************
-Before using Gallery 2, you will need to configure your database.
+Before using Gallery 3, you will need to configure your database.
 Full instructions are available here:
 
-  http://codex.gallery2.org/Category:Gallery_2:Installation
+  http://codex.gallery2.org/Gallery3:Tutorials:Installation
 
 If you are using MySQL, here's the short version of the instructions:
 
   1. Create a new database:
-  $ mysqladmin -uroot create gallery2 
+  $ mysqladmin -uroot create gallery3 
 
   2. Grant access to the database:
-  $ mysql -uroot -e"GRANT ALL ON gallery2.* TO USERNAME@localhost IDENTIFIED BY 'PASSWORD'" gallery2
+  $ mysql -uroot -e"GRANT ALL ON gallery3.* TO USERNAME@localhost IDENTIFIED BY 'PASSWORD'" gallery3
   (choose your own values for USERNAME and PASSWORD)
 
 You will also need to configure Apache.  Consider adding the following
 to your httpd.conf:
 
-     Alias /gallery2 "%%WWWDIR%%"
+     Alias /gallery3 "%%WWWDIR%%"
 
     <Directory "%%WWWDIR%%">
         AllowOverride Options FileInfo
@@ -25,6 +25,6 @@ to your httpd.conf:
 
 Then restart Apache: 'apachectl graceful'
 
-Please visit 'http://{host.domain}/gallery2/' in a
+Please visit 'http://localhost/gallery3/' in a
 web-browser and follow the configuration instructions.
 *****************************************************************
