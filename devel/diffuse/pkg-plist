@@ -6,6 +6,7 @@ etc/diffuserc
 %%DATADIR%%/syntax/csharp.syntax
 %%DATADIR%%/syntax/css.syntax
 %%DATADIR%%/syntax/gettext.syntax
+%%DATADIR%%/syntax/glsl.syntax
 %%DATADIR%%/syntax/html.syntax
 %%DATADIR%%/syntax/ini.syntax
 %%DATADIR%%/syntax/java.syntax
@@ -45,3 +46,4 @@ etc/diffuserc
 %%MENU%%@dirrmtry share/applications
 %%MENU%%share/pixmaps/diffuse.png
 %%MENU%%@dirrmtry share/pixmaps
+%%NLS%%share/locale/de/LC_MESSAGES/diffuse.mo

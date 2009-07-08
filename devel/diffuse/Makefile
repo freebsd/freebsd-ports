@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diffuse
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
@@ -15,16 +15,17 @@ COMMENT=	A graphical N-way diff and merge tool written in python
 
 NO_BUILD=	yes
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USE_BZIP2=	yes
 
 MAN1=		diffuse.1
 
 OPTIONS=	MENU	"Add desktop menu (needs desktop-file-utils)"	on \
-		OMF	"Install OMF manual (needs scrollkeeper)"	on
+		OMF	"Install OMF manual (needs scrollkeeper)"	on \
+		NLS	"Install some translations (work in progress)"	on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifndef (NOPORTDOCS)
 DOCS=		AUTHORS COPYING ChangeLog README
@@ -46,21 +47,29 @@ INSTALLS_OMF=	yes
 PLIST_SUB+=	OMF="@comment "
 .endif
 
+.ifndef (WITHOUT_NLS)
+PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
+TRANSLATIONS=	de
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|../usr|${PREFIX}|g' \
+		${WRKSRC}/src/etc/${PORTNAME}rc
+	${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
 		${WRKSRC}/src/etc/${PORTNAME}rc
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/usr/bin/${PORTNAME} \
 		${PREFIX}/bin/${PORTNAME}
-
 	${INSTALL_DATA} ${WRKSRC}/src/etc/${PORTNAME}rc ${PREFIX}/etc/
 
 post-install:
 	${MKDIR} ${DATADIR}/syntax
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/${PORTNAME}/syntax/*.syntax \
 		${DATADIR}/syntax/
-
 	${INSTALL_MAN} ${WRKSRC}/src/usr/share/man/man1/*.1 \
 		${MANPREFIX}/man/man1/
 
@@ -69,35 +78,37 @@ post-install:
 	for n in ${DOCS}; do \
 		${INSTALL_MAN} ${WRKSRC}/$${n} ${DOCSDIR}; \
 	done
+.endif
 
+.ifndef (WITHOUT_NLS)
+	for x in ${TRANSLATIONS}; do \
+		${MKDIR} ${PREFIX}/share/locale/$${x}/LC_MESSAGES; \
+		${MKDIR} ${WRKSRC}/translations/$${x}; \
+		${PREFIX}/bin/msgfmt -c -v ${WRKSRC}/translations/$${x}.po \
+			-o ${WRKSRC}/translations/$${x}/${PORTNAME}.mo; \
+		${INSTALL_DATA} ${WRKSRC}/translations/$${x}/*.mo \
+			${PREFIX}/share/locale/$${x}/LC_MESSAGES/; \
+	done
 .endif
 
 .ifdef (WITH_OMF)
-
 	${MKDIR} ${PREFIX}/share/gnome/help/${PORTNAME}/C
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/gnome/help/${PORTNAME}/C/*.xml \
 		${PREFIX}/share/gnome/help/${PORTNAME}/C/
-
 	${MKDIR} ${PREFIX}/share/omf/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/omf/${PORTNAME}/*.omf \
 		${PREFIX}/share/omf/${PORTNAME}/
-
 	${PREFIX}/bin/scrollkeeper-update -q
-
 .endif
 
 .ifdef (WITH_MENU)
-
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/pixmaps/${PORTNAME}.png \
 		${PREFIX}/share/pixmaps/
-
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/applications/*.desktop \
 		${DESKTOPDIR}
-
 	${PREFIX}/bin/update-desktop-database
-
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
