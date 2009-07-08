@@ -519,6 +519,8 @@
     SUBDIR += postgresql82-server
     SUBDIR += postgresql83-client
     SUBDIR += postgresql83-server
+    SUBDIR += postgresql84-client
+    SUBDIR += postgresql84-server
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
     SUBDIR += ptop
