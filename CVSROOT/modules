@@ -1112,7 +1112,6 @@ bodr                            ports/science/bodr
 boehm-gc                        ports/devel/boehm-gc
 bogged                          ports/games/bogged
 bogofilter                      ports/mail/bogofilter
-bogofilter-qdbm                 ports/mail/bogofilter-qdbm
 bogofilter-sqlite               ports/mail/bogofilter-sqlite
 bogofilter-tc                   ports/mail/bogofilter-tc
 bogosort                        ports/misc/bogosort
@@ -1558,12 +1557,12 @@ claws-mail-archiver             ports/mail/claws-mail-archiver
 claws-mail-att_remover          ports/mail/claws-mail-att_remover
 claws-mail-attach_warner        ports/mail/claws-mail-attach_warner
 claws-mail-cachesaver           ports/mail/claws-mail-cachesaver
+claws-mail-fancy                ports/mail/claws-mail-fancy
 claws-mail-fetchinfo            ports/mail/claws-mail-fetchinfo
 claws-mail-gtkhtml2_viewer      ports/mail/claws-mail-gtkhtml2_viewer
 claws-mail-mailmbox             ports/mail/claws-mail-mailmbox
 claws-mail-newmail              ports/mail/claws-mail-newmail
 claws-mail-notification         ports/mail/claws-mail-notification
-claws-mail-pdf_viewer           ports/mail/claws-mail-pdf_viewer
 claws-mail-perl                 ports/mail/claws-mail-perl
 claws-mail-rssyl                ports/mail/claws-mail-rssyl
 claws-mail-spamreport           ports/mail/claws-mail-spamreport
@@ -1865,6 +1864,7 @@ csv2xml                         ports/textproc/csv2xml
 csvdiff                         ports/textproc/csvdiff
 csync2                          ports/net/csync2
 ct                              ports/net/ct
+ctcs                            ports/net-p2p/ctcs
 ctemplate                       ports/www/ctemplate
 cthumb                          ports/graphics/cthumb
 ctorrent                        ports/net-p2p/ctorrent
@@ -2098,7 +2098,6 @@ de-bbbike                       ports/german/BBBike
 de-bsdforen-firefox-searchplugin  ports/german/bsdforen-firefox-searchplugin
 de-bsdgroup-firefox-searchplugin  ports/german/bsdgroup-firefox-searchplugin
 de-bsdpaste                     ports/german/bsdpaste
-de-citrix_ica                   ports/german/citrix_ica
 de-citrix_xenapp                ports/german/citrix_xenapp
 de-dict                         ports/german/dict
 de-digibux                      ports/german/digibux
@@ -3840,9 +3839,7 @@ gaddr                           ports/deskutils/gaddr
 gadfly                          ports/databases/gadfly
 gaeo                            ports/www/gaeo
 gai                             ports/x11-toolkits/gai
-gai-album                       ports/audio/gai-album
 gai-leds                        ports/sysutils/gai-leds
-gai-visual-audio                ports/audio/gai-visual-audio
 gaia                            ports/astro/gaia
 gajim                           ports/net-im/gajim
 gajim-devel                     ports/net-im/gajim-devel
@@ -5714,7 +5711,6 @@ ja-cgdic-fpw                    ports/japanese/CGdic-fpw
 ja-chasen                       ports/japanese/chasen
 ja-chasen-base                  ports/japanese/chasen-base
 ja-chimera                      ports/japanese/chimera
-ja-citrix_ica                   ports/japanese/citrix_ica
 ja-citrix_xenapp                ports/japanese/citrix_xenapp
 ja-csrd                         ports/japanese/csrd
 ja-ctags                        ports/japanese/ctags
@@ -8144,7 +8140,6 @@ linuxlibertine                  ports/x11-fonts/linuxlibertine
 linuxpluginwrapper              ports/www/linuxpluginwrapper
 linuxthreads                    ports/devel/linuxthreads
 linwarrior                      ports/games/linwarrior
-linxt                           ports/devel/linxt
 lion                            ports/devel/lion
 liquidwar                       ports/games/liquidwar
 lirc                            ports/comms/lirc
@@ -13449,6 +13444,7 @@ p5-XML-SimpleObject-LibXML      ports/textproc/p5-XML-SimpleObject-LibXML
 p5-XML-Smart                    ports/textproc/p5-XML-Smart
 p5-XML-Stream                   ports/textproc/p5-XML-Stream
 p5-XML-Tiny                     ports/textproc/p5-XML-Tiny
+p5-XML-TinyXML                  ports/textproc/p5-XML-TinyXML
 p5-XML-TreeBuilder              ports/textproc/p5-XML-TreeBuilder
 p5-XML-TreePP                   ports/textproc/p5-XML-TreePP
 p5-XML-Twig                     ports/textproc/p5-XML-Twig
@@ -16979,6 +16975,7 @@ p5-xml-smart                    ports/textproc/p5-XML-Smart
 p5-xml-stream                   ports/textproc/p5-XML-Stream
 p5-xml-stx                      ports/textproc/p5-XML-STX
 p5-xml-tiny                     ports/textproc/p5-XML-Tiny
+p5-xml-tinyxml                  ports/textproc/p5-XML-TinyXML
 p5-xml-treebuilder              ports/textproc/p5-XML-TreeBuilder
 p5-xml-treepp                   ports/textproc/p5-XML-TreePP
 p5-xml-twig                     ports/textproc/p5-XML-Twig
@@ -19568,6 +19565,7 @@ python24                        ports/lang/python24
 python25                        ports/lang/python25
 python26                        ports/lang/python26
 python30                        ports/lang/python30
+python31                        ports/lang/python31
 pythoncad                       ports/cad/pythoncad
 pythonchess                     ports/games/pythonchess
 pythondirector                  ports/net/pythondirector
@@ -21432,6 +21430,7 @@ squeezecenter-superdatetime     ports/audio/squeezecenter-superdatetime
 squeezecenter-trackstat         ports/audio/squeezecenter-trackstat
 squid                           ports/www/squid
 squid30                         ports/www/squid30
+squid31                         ports/www/squid31
 squid_radius_auth               ports/www/squid_radius_auth
 squidclamav                     ports/security/squidclamav
 squidguard                      ports/www/squidguard
@@ -21814,7 +21813,6 @@ tcl-modules                     ports/lang/tcl-modules
 tcl-mysql                       ports/databases/tcl-Mysql
 tcl-neo                         ports/devel/tcl-neo
 tcl-wrapper                     ports/lang/tcl-wrapper
-tcl80                           ports/lang/tcl80
 tcl82                           ports/lang/tcl82
 tcl83                           ports/lang/tcl83
 tcl84                           ports/lang/tcl84
@@ -22086,7 +22084,6 @@ tivodecode                      ports/multimedia/tivodecode
 tix                             ports/x11-toolkits/tix
 tk-aspell                       ports/textproc/tk-aspell
 tk-wrapper                      ports/x11-toolkits/tk-wrapper
-tk80                            ports/x11-toolkits/tk80
 tk82                            ports/x11-toolkits/tk82
 tk83                            ports/x11-toolkits/tk83
 tk84                            ports/x11-toolkits/tk84
@@ -22230,7 +22227,6 @@ trac-accountmanager             ports/www/trac-accountmanager
 trac-addcomment                 ports/www/trac-addcomment
 trac-advancedticketworkflow     ports/www/trac-advancedticketworkflow
 trac-batchmodify                ports/www/trac-batchmodify
-trac-blog                       ports/www/trac-blog
 trac-bzr                        ports/www/trac-bzr
 trac-calendar                   ports/www/trac-calendar
 trac-ccselector                 ports/www/trac-ccselector
@@ -22258,7 +22254,6 @@ trac-pendingticket              ports/www/trac-pendingticket
 trac-privatetickets             ports/www/trac-privatetickets
 trac-pydotorgtheme              ports/www/trac-pydotorgtheme
 trac-remind                     ports/www/trac-remind
-trac-restrictedarea             ports/www/trac-restrictedarea
 trac-revtree                    ports/www/trac-revtree
 trac-robotstxt                  ports/www/trac-robotstxt
 trac-simpleticket               ports/www/trac-simpleticket
@@ -23343,7 +23338,6 @@ xbraitenberg                    ports/emulators/xbraitenberg
 xbsql                           ports/databases/xbsql
 xbubble                         ports/games/xbubble
 xbuffy                          ports/mail/xbuffy
-xc-mail                         ports/mail/xc-mail
 xca                             ports/security/xca
 xcache                          ports/www/xcache
 xcalc                           ports/x11/xcalc
