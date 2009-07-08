@@ -213,12 +213,8 @@ share/rep/%%VERSION%%/lisp/rep/vm/compiler/no-lang.jl
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/no-lang.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/rep.jl
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/rep.jlc
-share/rep/%%VERSION%%/lisp/rep/vm/compiler/scheme.jl
-share/rep/%%VERSION%%/lisp/rep/vm/compiler/scheme.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/src.jl
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/src.jlc
-share/rep/%%VERSION%%/lisp/rep/vm/compiler/unscheme.jl
-share/rep/%%VERSION%%/lisp/rep/vm/compiler/unscheme.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/utils.jl
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/utils.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/disassembler.jl
@@ -237,32 +233,8 @@ share/rep/%%VERSION%%/lisp/rep/xml/reader.jl
 share/rep/%%VERSION%%/lisp/rep/xml/reader.jlc
 share/rep/%%VERSION%%/lisp/ring.jl
 share/rep/%%VERSION%%/lisp/ring.jlc
-share/rep/%%VERSION%%/lisp/scheme.jl
-share/rep/%%VERSION%%/lisp/scheme.jlc
-share/rep/%%VERSION%%/lisp/scheme/data.jl
-share/rep/%%VERSION%%/lisp/scheme/data.jlc
-share/rep/%%VERSION%%/lisp/scheme/misc.jl
-share/rep/%%VERSION%%/lisp/scheme/misc.jlc
-share/rep/%%VERSION%%/lisp/scheme/syntax-funs.jl
-share/rep/%%VERSION%%/lisp/scheme/syntax-funs.jlc
-share/rep/%%VERSION%%/lisp/scheme/syntax.jl
-share/rep/%%VERSION%%/lisp/scheme/syntax.jlc
-share/rep/%%VERSION%%/lisp/scheme/utils.jl
-share/rep/%%VERSION%%/lisp/scheme/utils.jlc
 share/rep/%%VERSION%%/lisp/symbol-table.jl
 share/rep/%%VERSION%%/lisp/symbol-table.jlc
-share/rep/%%VERSION%%/lisp/unscheme.jl
-share/rep/%%VERSION%%/lisp/unscheme.jlc
-share/rep/%%VERSION%%/lisp/unscheme/data.jl
-share/rep/%%VERSION%%/lisp/unscheme/data.jlc
-share/rep/%%VERSION%%/lisp/unscheme/misc.jl
-share/rep/%%VERSION%%/lisp/unscheme/misc.jlc
-share/rep/%%VERSION%%/lisp/unscheme/syntax-funs.jl
-share/rep/%%VERSION%%/lisp/unscheme/syntax-funs.jlc
-share/rep/%%VERSION%%/lisp/unscheme/syntax.jl
-share/rep/%%VERSION%%/lisp/unscheme/syntax.jlc
-@dirrm share/rep/%%VERSION%%/lisp/unscheme
-@dirrm share/rep/%%VERSION%%/lisp/scheme
 @dirrm share/rep/%%VERSION%%/lisp/rep/xml
 @dirrm share/rep/%%VERSION%%/lisp/rep/www
 @dirrm share/rep/%%VERSION%%/lisp/rep/vm/compiler
