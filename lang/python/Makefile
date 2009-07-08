@@ -32,7 +32,7 @@ XARGS_CMD=	${XARGS} -0
 PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portmaster
 PORTUPGRADE_ARGS?=	""
 PKG_WHICH_CMD=	/usr/sbin/pkg_info -qW
-JOBS=	sysctl -n kern.smp.cpus
+JOBS=	${SYSCTL} -n kern.smp.cpus
 XARGS_CMD=	${XARGS} -L 1 -0 -P $$(${JOBS})
 .endif
 
