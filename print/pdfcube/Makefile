@@ -19,6 +19,7 @@ LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
 
 USE_GL=		glut
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include
 
 PLIST_FILES=	bin/pdfcube
 
