@@ -13,7 +13,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	A low-level cryptographic library
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
