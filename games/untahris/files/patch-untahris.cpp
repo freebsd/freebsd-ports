@@ -1,5 +1,5 @@
---- untahris.cpp.orig	Tue Sep  5 16:50:04 2006
-+++ untahris.cpp	Fri Sep  8 06:54:50 2006
+--- untahris.cpp.orig	2009-05-20 01:54:16.000000000 +0400
++++ untahris.cpp	2009-07-07 17:39:06.000000000 +0400
 @@ -6,7 +6,7 @@
  
  #include "untahris.h"
@@ -9,11 +9,12 @@
  
  #include "tools.cpp"
  #include "intface.cpp"
-@@ -117,6 +117,7 @@
+@@ -291,6 +291,8 @@
    }
  
  int main(int argc, char **argv) {
-+	chdir(getenv("HOME"));
++  chdir(getenv("HOME"));
++
    g.sizeX = 0;
    g.sizeY = 0;
    d.ofsX = 0;
