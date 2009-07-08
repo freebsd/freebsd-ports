@@ -24,6 +24,7 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehier gnomehack libxslt intlhack
 USE_PYTHON=	yes
