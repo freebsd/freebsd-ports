@@ -7,6 +7,7 @@
 
 PORTNAME=	qca-cyrus-sasl
 DISTVERSION=	2.0.0-beta3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/plugins/
 
@@ -21,7 +22,9 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes
-CONFIGURE_ARGS+=--plugins-path=${PREFIX}/${QT_PLUGINDIR_REL}
+CONFIGURE_ARGS+=--plugins-path=${PREFIX}/${QT_PLUGINDIR_REL} \
+		--with-sasl-inc=${LOCALBASE}/include \
+		--with-sasl-lib=${LOCALBASE}/lib
 
 .if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--release --no-separate-debug-info
@@ -32,6 +35,6 @@ PLIST_SUB+=	DEBUG=""
 .endif
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/${QT_PLUGINDIR_REL}/libqca-cyrus-sasl.so
+	${STRIP_CMD} ${PREFIX}/${QT_PLUGINDIR_REL}/crypto/libqca-cyrus-sasl.so
 
 .include <bsd.port.mk>
