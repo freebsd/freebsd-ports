@@ -40,6 +40,8 @@ libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang/record-profile.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang/record-profile.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/md5.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/md5.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/utf8.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/utf8.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm/safe-interpreter.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm/safe-interpreter.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.la
