@@ -1,1 +1,39 @@
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/jsonify.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/jsonify.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/jsonify.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/jsonsupport.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/jsonsupport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/jsonsupport.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/prioritized_methods.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/prioritized_methods.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/prioritized_methods.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_jsonify.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_jsonify.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_jsonify.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_prioritized_methods.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_prioritized_methods.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_prioritized_methods.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_sqlalchemy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_sqlalchemy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_sqlalchemy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_sqlobject.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_sqlobject.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests/test_sqlobject.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbojson
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
