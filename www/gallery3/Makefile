@@ -1,20 +1,21 @@
-# New ports collection makefile for:	gallery2
-# Date created:		29 Aug 2005
-# Whom:			Alex Varju <freebsd-ports@varju.ca>
+# New ports collection makefile for:	gallery3
+# Date created:		16 June 2009
+# Whom:			Bo-Yi Wu <appleboy.tw@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gallery2
-PORTVERSION=	2.3
+PORTNAME=	gallery3
+PORTVERSION=	3.0
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gallery
-DISTNAME=	gallery-${PORTVERSION}-full
-DIST_SUBDIR=	gallery2
+DISTNAME=	gallery-${PORTVERSION}-beta-1
 
-MAINTAINER=	freebsd-ports@varju.ca
+MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	Web based photo album organizer written in PHP
+
+USE_ZIP=	yes
 
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
@@ -29,7 +30,6 @@ OPTIONS=	NETPBM "Enable netpbm support" off \
 		GRAPHMAGICK "Enable graphicsmagick support" off \
 		PGSQL "Use PostgreSQL instead of MySQL" off \
 		JHEAD "Enable jhead support" on \
-		UNZIP "Enable unzip support" on \
 		GD "Enable gd support" off \
 		DCRAW "Enable dcraw support" off \
 		FFMPEG "Enable ffmpeg support" off \
@@ -79,9 +79,9 @@ LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 .endif
 
-.if defined(GALLERY2DIR)
-# Continue to support legacy GALLERY2DIR variable
-WWWDIR=	${GALLERY2DIR}
+.if defined(GALLERY3DIR)
+# Continue to support legacy GALLERY3DIR variable
+WWWDIR=	${GALLERY3DIR}
 .endif
 
 do-install:

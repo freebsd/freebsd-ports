@@ -237,6 +237,7 @@
     SUBDIR += galeon
     SUBDIR += gallery
     SUBDIR += gallery2
+    SUBDIR += gallery3
     SUBDIR += gatling
     SUBDIR += gecko-mediaplayer
     SUBDIR += gecko-sharp10
