@@ -1,12 +1,10 @@
 bin/hi
-lib/seed7/s7_comp.a
-lib/seed7/s7_data.a
-lib/seed7/seed7_05.a
 lib/seed7/COPYING
 lib/seed7/LGPL
 lib/seed7/bigfile.s7i
 lib/seed7/bigint.s7i
 lib/seed7/bigrat.s7i
+lib/seed7/binary.s7i
 lib/seed7/cards.s7i
 lib/seed7/cgi.s7i
 lib/seed7/charsets.s7i
@@ -26,6 +24,7 @@ lib/seed7/gtkserver.s7i
 lib/seed7/gzip.s7i
 lib/seed7/html.s7i
 lib/seed7/html_ent.s7i
+lib/seed7/inifile.s7i
 lib/seed7/keybd.s7i
 lib/seed7/line.s7i
 lib/seed7/lower.s7i
@@ -38,9 +37,12 @@ lib/seed7/pic32.s7i
 lib/seed7/progs.s7i
 lib/seed7/rational.s7i
 lib/seed7/reverse.s7i
+lib/seed7/s7_comp.a
+lib/seed7/s7_data.a
 lib/seed7/scanfile.s7i
 lib/seed7/scanstri.s7i
 lib/seed7/screen.s7i
+lib/seed7/seed7_05.a
 lib/seed7/seed7_05.s7i
 lib/seed7/shell.s7i
 lib/seed7/socket.s7i
@@ -52,10 +54,13 @@ lib/seed7/syntax.s7i
 lib/seed7/tee.s7i
 lib/seed7/time.s7i
 lib/seed7/upper.s7i
-lib/seed7/utf8.s7i
 lib/seed7/utf16.s7i
+lib/seed7/utf8.s7i
 lib/seed7/window.s7i
 lib/seed7/wrinum.s7i
+lib/seed7/xml_ent.s7i
+lib/seed7/xmldom.s7i
+lib/seed7/zip.s7i
 %%PORTDOCS%%%%DOCSDIR%%/chlog.txt
 %%PORTDOCS%%%%DOCSDIR%%/contact.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.htm
@@ -71,8 +76,6 @@ lib/seed7/wrinum.s7i
 %%PORTDOCS%%%%DOCSDIR%%/robodoc.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/COPYING
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/LGPL
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/files.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/addup.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bas7.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bifurk.sd7
@@ -99,6 +102,7 @@ lib/seed7/wrinum.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clock2.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clock3.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cmpfil.sd7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comanche.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comp.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirtst.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirx.sd7
@@ -108,6 +112,7 @@ lib/seed7/wrinum.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eliza.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/err.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fib.sd7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/files.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gcd.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gkbd.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/green.dna
@@ -116,6 +121,7 @@ lib/seed7/wrinum.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hamu.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hanoi.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello.sd7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/indigo.dna
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kbd.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lander.sd7
