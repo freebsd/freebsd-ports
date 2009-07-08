@@ -19,8 +19,4 @@ NO_BUILD=	yes
 PLIST_FILES=	include/pstreams/pstream.h
 PLIST_DIRS=	include/pstreams
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|INSTALL_PREFIX|PREFIX|' \
-		${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
