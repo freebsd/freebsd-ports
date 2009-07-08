@@ -89,8 +89,8 @@ share/applications/mined.desktop
 %%DATADIR%%/uprint
 %%DATADIR%%/uterm
 %%DATADIR%%/uterm.html
-%%DATADIR%%/wmined
-%%DATADIR%%/wmined.bat
+%%DATADIR%%/wined
+%%DATADIR%%/wined.bat
 %%DATADIR%%/xinitrc.mined
 %%DATADIR%%/xmined
 @dirrm %%DATADIR%%/terminator
