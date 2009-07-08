@@ -10,7 +10,7 @@ PORTVERSION=	0.4.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
 
-MAINTAINER=	saper@system.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to access SMI MIB information
 
 USE_AUTOTOOLS=	libtool:15

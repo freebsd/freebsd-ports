@@ -10,7 +10,7 @@ PORTVERSION=	0.3.32
 CATEGORIES=	www java
 MASTER_SITES=	http://djini.de/software/commonist/
 
-MAINTAINER=	saper@SYSTEM.PL
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy upload of images to Wikimedia Commons and Mediawiki
 
 TARGET_JAR=	${JAVAJARDIR}/${PORTNAME}.jar

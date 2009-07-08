@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	xsidebar/mods
 DISTNAME=	${PORTNAME}-${PORTVERSION}-mod
 
-MAINTAINER=	saper@SYSTEM.PL
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	${GECKO} extension to bypass compulsory web registration
 
 PLIST_FILES=	%%MOZDIR%%/chrome/bugmenot.jar

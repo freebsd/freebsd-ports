@@ -12,7 +12,7 @@ CATEGORIES=	net java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	saper@SYSTEM.PL
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 5250 terminal emulator for the AS/400 written in Java
 
 BUILD_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \

@@ -11,7 +11,7 @@ CATEGORIES=	www java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:S,-,,}
 
-MAINTAINER=	saper@SYSTEM.PL
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A java library to analyse and manipulate HTML
 
 USE_ZIP=	yes
