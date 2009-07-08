@@ -3,7 +3,9 @@ bin/untahris
 %%DATADIR%%/birth.wav
 %%DATADIR%%/blue.wav
 %%DATADIR%%/death.wav
-%%DATADIR%%/graph16.unt
+%%DATADIR%%/graph16gradient.unt
+%%DATADIR%%/graph16lines.unt
+%%DATADIR%%/graph16retro.unt
 %%DATADIR%%/green.wav
 %%DATADIR%%/hit.wav
 %%DATADIR%%/place.wav

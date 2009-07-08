@@ -1,5 +1,0 @@
-ATTENTION!
-
-If, after being updated to version > 1.0, the game hangs after
-pressing <ENTER> in the main menu, please delete ~/.untahris.config
-file and restart the game.
