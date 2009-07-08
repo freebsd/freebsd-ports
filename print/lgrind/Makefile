@@ -9,9 +9,8 @@ PORTNAME=	lgrind
 PORTVERSION=	3.67
 PORTREVISION=	2
 CATEGORIES=	print
-#MASTER_SITES=	ftp://ftp.dante.de/tex-archive/support/ \
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=support
+MASTER_SITES=	LOCAL/pav
+
 DISTNAME=	${PORTNAME}
 DISTFILES=	${PORTNAME}/source/Makefile \
 		${PORTNAME}/source/README \
@@ -36,13 +35,11 @@ DISTFILES=	${PORTNAME}/source/Makefile \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dereckson@gmail.com
 COMMENT=	Produce beautiful listings of source code with LaTeX
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-
-BROKEN=		does not fetch
 
 MAN1=		lgrind.1
 MAN5=		lgrindef.5
