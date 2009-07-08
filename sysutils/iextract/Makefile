@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	IExtract
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.20
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	Extract meta-information from files
 
 LIB_DEPENDS=	YGP.0:${PORTSDIR}/devel/libYGP
