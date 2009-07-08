@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Mon Apr 22 01:53:25 2002
-+++ doc/Makefile.in	Mon Apr 22 20:54:11 2002
+--- doc/Makefile.in.orig	2006-02-07 04:06:14.000000000 +0900
++++ doc/Makefile.in	2009-07-08 16:30:38.000000000 +0900
 @@ -22,7 +22,7 @@
  
  prefix=@prefix@
  mandir=$(DESTDIR)@mandir@
 -docdir=$(DESTDIR)${prefix}/doc/wwwoffle
-+docdir=$(DESTDIR)${prefix}/share/doc/wwwoffle
++docdir=$(DESTDIR)@docdir@
  
  SPOOLDIR=@SPOOLDIR@
  CONFDIR=@CONFDIR@
