@@ -28,6 +28,12 @@ MAN1=		vmpsd.1
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+IGNORE=		does not run correctly on amd64 architecture, see ports/136376
+.endif
+
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/vmpsd.sh > ${PREFIX}/etc/rc.d/vmpsd.sh
@@ -38,4 +44,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/vmps.db.sample ${PREFIX}/etc/vmps.db ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
