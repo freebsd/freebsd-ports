@@ -173,6 +173,7 @@ PGSQL80_LIBVER=		4
 PGSQL81_LIBVER=		4
 PGSQL82_LIBVER=		5
 PGSQL83_LIBVER=		5
+PGSQL84_LIBVER=		5
 
 # Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/pg_config)
