@@ -32,6 +32,7 @@ CONFIGURE_ENV=	LIBS=-lmd
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
 		--with-gnutls=${PREFIX} \
 		--with-spooldir=${WWWOFFLE_SPOOL} \
+		--docdir=${DOCSDIR} \
 		--mandir=${MANPREFIX}/man
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
