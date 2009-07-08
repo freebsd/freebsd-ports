@@ -1,14 +1,14 @@
-@unexec if cmp -s %D/etc/lightsquid/group.cfg %D/etc/lightsquid/group.cfg.dist; then rm -f %D/etc/lightsquid/group.cfg; fi
-@unexec if cmp -s %D/etc/lightsquid/realname.cfg %D/etc/lightsquid/realname.cfg.dist; then rm -f %D/etc/lightsquid/realname.cfg; fi
-@unexec if cmp -s %D/etc/lightsquid/skipuser.cfg %D/etc/lightsquid/skipuser.cfg.dist; then rm -f %D/etc/lightsquid/skipuser.cfg; fi
-@unexec if cmp -s %D/etc/lightsquid/lightsquid.cfg %D/etc/lightsquid/lightsquid.cfg.dist; then rm -f %D/etc/lightsquid/lightsquid.cfg; fi
-etc/lightsquid/group.cfg.dist
+@unexec if cmp -s %D/%%ETCDIR%%/group.cfg %D/%%ETCDIR%%/group.cfg.dist; then rm -f %D/%%ETCDIR%%/group.cfg; fi
+@unexec if cmp -s %D/%%ETCDIR%%/realname.cfg %D/%%ETCDIR%%/realname.cfg.dist; then rm -f %D/%%ETCDIR%%/realname.cfg; fi
+@unexec if cmp -s %D/%%ETCDIR%%/skipuser.cfg %D/%%ETCDIR%%/skipuser.cfg.dist; then rm -f %D/%%ETCDIR%%/skipuser.cfg; fi
+@unexec if cmp -s %D/%%ETCDIR%%/lightsquid.cfg %D/%%ETCDIR%%/lightsquid.cfg.dist; then rm -f %D/%%ETCDIR%%/lightsquid.cfg; fi
+%%ETCDIR%%/group.cfg.dist
 @exec [ -f %B/group.cfg ] || cp %B/%f %B/group.cfg
-etc/lightsquid/lightsquid.cfg.dist
+%%ETCDIR%%/lightsquid.cfg.dist
 @exec [ -f %B/lightsquid.cfg ] || cp %B/%f %B/lightsquid.cfg
-etc/lightsquid/realname.cfg.dist
+%%ETCDIR%%/realname.cfg.dist
 @exec [ -f %B/realname.cfg ] || cp %B/%f %B/realname.cfg
-etc/lightsquid/skipuser.cfg.dist
+%%ETCDIR%%/skipuser.cfg.dist
 @exec [ -f %B/skipuser.cfg ] || cp %B/%f %B/skipuser.cfg
 libexec/lightsquid/ip2name.abils
 libexec/lightsquid/ip2name.demo
@@ -58,7 +58,6 @@ libexec/lightsquid/ip2name.squidlist2
 %%WWWDIR%%/tpl/text/day_detail.html
 %%WWWDIR%%/bigfiles.cgi
 %%WWWDIR%%/day_detail.cgi
-%%WWWDIR%%/fixreport.pl
 %%WWWDIR%%/get.cgi
 %%WWWDIR%%/graph.cgi
 %%WWWDIR%%/group_detail.cgi
@@ -73,7 +72,7 @@ libexec/lightsquid/ip2name.squidlist2
 %%WWWDIR%%/check-setup.pl
 %%WWWDIR%%/common.pl
 %%WWWDIR%%/lightparser.pl
-@dirrmtry etc/lightsquid
+@dirrmtry %%ETCDIR%%
 @dirrmtry libexec/lightsquid
 @dirrmtry %%DATADIR%%/lang
 @dirrmtry %%DATADIR%%
