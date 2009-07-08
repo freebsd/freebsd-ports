@@ -795,6 +795,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080300.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080300.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080300.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080400.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080400.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080400.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
@@ -2197,6 +2200,8 @@ bin/moin
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withDomainAuthentication/revisions/00000001
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi/current
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/revisions/00000001
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/current
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/revisions/00000001
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModWSGI/current
@@ -2215,6 +2220,7 @@ bin/moin
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting/attachments/is_python_here.sh
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting/current
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/attachments/servicerunner.py
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/current
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/revisions/00000001
 %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WebLogic/current
@@ -2397,7 +2403,7 @@ bin/moin
 %%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Czech.zip
 %%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Danish.zip
 %%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Dutch.zip
-%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/EuropeanPortuguese.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/BrazilianPortuguese.zip
 %%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Finnish.zip
 %%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/French.zip
 %%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/German.zip
@@ -2765,6 +2771,7 @@ bin/moin
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WebLogic/revisions
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WebLogic
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/attachments
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/revisions
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting/revisions
@@ -2781,6 +2788,8 @@ bin/moin
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)BasicInstallation/revisions
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)BasicInstallation/attachments
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)BasicInstallation
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModWSGI/revisions
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModWSGI
 @dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/revisions
