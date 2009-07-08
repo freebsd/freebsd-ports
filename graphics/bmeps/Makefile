@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	Convert bitmap images (PNG/JPEG/NetPBM) to EPS
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
