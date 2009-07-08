@@ -30,6 +30,9 @@ USE_GETTEXT=	yes
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX," ${WRKSRC}/Makefile
+
 post-configure:
 	${SED} -e "s,@VERSION@,${PORTVERSION}," < ${WRKSRC}/lib/Makefile.PL.in > ${WRKSRC}/lib/Makefile.PL
 	cd ${WRKSRC}/lib; ${PERL} Makefile.PL
