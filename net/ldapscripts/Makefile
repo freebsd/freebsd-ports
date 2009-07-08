@@ -50,6 +50,7 @@ PORTDOCS=	README CHANGELOG COPYING VERSION TODO
 # and set paths to OpenLDAP binaries
 post-patch:
 	${REINPLACE_CMD} "s|^all:.*|all:|g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} "s|^PREFIX = .*|PREFIX = ${PREFIX}|g" ${WRKSRC}/Makefile
 	${REINPLACE_CMD} \
 	-e "s|^LDAPSEARCHBIN=.*|LDAPSEARCHBIN=\"${LOCALBASE}/bin/ldapsearch\"|g" \
 	-e "s|^LDAPADDBIN=.*|LDAPADDBIN=\"${LOCALBASE}/bin/ldapadd\"|g" \
