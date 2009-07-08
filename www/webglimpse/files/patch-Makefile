@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Oct 22 09:49:26 1997
-+++ Makefile	Mon Nov  2 09:21:49 1998
-@@ -19,9 +19,13 @@
+--- ./Makefile.orig	1997-10-22 01:49:26.000000000 -0400
++++ ./Makefile	2009-07-07 22:30:26.506065951 -0400
+@@ -19,10 +19,14 @@
  
  
  
@@ -8,10 +8,11 @@
 +#CC = gcc
  
  OSFCC = cc
-+
+ 
 +freebsd:
 +	$(CC) ${CFLAGS} -s -o lib/httpget lib/httpget.c
 +	$(CC) ${CFLAGS} -s -o lib/html2txt lib/html2txt.c
- 
++
  linux:
  	$(CC) -O -o lib/httpget lib/httpget.c
+ 	$(CC) -O -o lib/html2txt lib/html2txt.c

@@ -1,5 +1,5 @@
---- wginstall.pl.orig	Fri Sep 25 19:34:42 1998
-+++ wginstall.pl	Mon Nov  2 10:49:39 1998
+--- ./wginstall.pl.orig	1998-09-25 11:34:42.000000000 -0400
++++ ./wginstall.pl	2009-07-07 22:30:26.504066256 -0400
 @@ -31,7 +31,7 @@
  
  
@@ -164,14 +164,13 @@
 -$CGIBIN_PWD = 
 -	&prompt("Which directory should I copy the WebGlimpse cgi-bin scripts to?\nIf you choose a different\ndirectory than the default, make sure it exists.\n",
 -	"$CGIBIN_PWD");
--
--$CGIBIN = 
--	&prompt("What is the script alias for $CGIBIN_PWD?",
--		$CGIBIN);
 +#$CGIBIN_PWD =
 +#        &prompt("Which directory should I copy the WebGlimpse cgi-bin scripts to?\nIf you choose a different\ndirectory than the default, make sure it exists.\n",
 +#        "$CGIBIN_PWD");
-+
+ 
+-$CGIBIN = 
+-	&prompt("What is the script alias for $CGIBIN_PWD?",
+-		$CGIBIN);
 +#$CGIBIN =
 +#        &prompt("What is the script alias for $CGIBIN_PWD?",
 +#                $CGIBIN);

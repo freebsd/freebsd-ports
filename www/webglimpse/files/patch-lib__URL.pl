@@ -1,5 +1,5 @@
---- lib/URL.pl.orig	Fri Jan  9 08:58:41 1998
-+++ lib/URL.pl	Sun Jul  2 07:39:30 2000
+--- ./lib/URL.pl.orig	1998-01-09 00:58:41.000000000 -0500
++++ ./lib/URL.pl	2009-07-07 22:30:26.519067045 -0400
 @@ -49,7 +49,10 @@
  	    $host =~ tr/A-Z/a-z/;
  	    $port = ($3 ne "" ? $3 : $ftp_port);

@@ -1,5 +1,5 @@
---- lib/config.pl.orig	Tue Jul 28 03:19:55 1998
-+++ lib/config.pl	Mon Nov  2 18:00:02 1998
+--- ./lib/config.pl.orig	1998-07-27 19:19:55.000000000 -0400
++++ ./lib/config.pl	2009-07-07 22:30:26.560085387 -0400
 @@ -36,6 +36,8 @@
  		 addboxes
  		 vhost

@@ -1,5 +1,5 @@
---- lib/wgserver.pl.orig	Mon Jun 29 20:45:06 1998
-+++ lib/wgserver.pl	Mon Nov  2 08:26:21 1998
+--- ./lib/wgserver.pl.orig	1998-06-29 12:45:06.000000000 -0400
++++ ./lib/wgserver.pl	2009-07-07 22:30:26.508066485 -0400
 @@ -114,6 +114,7 @@
  
  	$override = 0;
