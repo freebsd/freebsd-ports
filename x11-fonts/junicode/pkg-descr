@@ -1,6 +1,22 @@
-Junicode is a TrueType Unicode font targetted at medievalists, but including the
-full range of characters for languages written in the Latin script,
-International Phonetic Alphabet, Uralic Phonetic Alphabet and Runic. It has
-regular, italic, bold and bold-italic fonts.
+Junicode is an advanced Unicode font for medieval scholars, including the
+full range of characters for languages written in the Latin script. It
+also partially implements the recommendation of the Medieval Unicode Font
+Initiative (MUFI).
+
+The following languages are fully supported: Old and Middle English, Old
+Icelandic, Runic, Latin, Gothic and Sanskrit transliterations, IPA
+(International Phonetic Alphabet) and Greek (based on the Greek Double
+Pica cut by Alexander Wilson of Glasgow in the eighteenth century).
+
+Junicode supports the following OpenType features: f and long-s ligatures,
+contextual alternates (calt), horizontal kerning (kern), discretionary
+ligatures (circled numbers and letters via dlig), glyph (de)composition
+(ccmp), correct positioning of combining marks -- mark-to-base (mark) and
+mark-to-mark (mkmk), small caps (smcp and c2sc), old-style figures (onum),
+super- and subscript numbers (sups and subs) and Unicode fractions (frac).
+
+Junicode's OpenType style sets provide support for Nordic and Insular
+letter-forms, Old English typography, enlarged minuscules, swash letters
+and MUFI's overlined characters and historic ligatures.
 
 WWW: http://junicode.sourceforge.net/
