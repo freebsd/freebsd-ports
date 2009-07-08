@@ -9,10 +9,11 @@
 
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-client
+PORTEPOCH=	 1	
 
 COMMENT=	PostgreSQL database (client)
 
-MASTERDIR=	${.CURDIR}/../postgresql84-server
+MASTERDIR=	${.CURDIR}/../postgresql83-server
 
 BUILD_DIRS=	config src/include src/interfaces \
 		src/bin/pg_dump src/bin/psql src/bin/scripts src/bin/pg_config \
