@@ -1,4 +1,4 @@
 ****************************************************************************
 %%NOTEWORK%%
-Edit %%PREFIX%%/etc/lightsquid/lightsquid.cfg to suit your needs.
+Edit %%ETCDIR%%/lightsquid.cfg to suit your needs.
 ****************************************************************************

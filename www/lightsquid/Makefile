@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lightsquid
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	www
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -38,14 +37,15 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/var/www/html/${PORTNAME}/lang|${DATADIR}/lang|' \
-		-e 's|/var/www/html/${PORTNAME}\"|${PREFIX}/etc/${PORTNAME}\"|' \
-		-e 's|/var/www/html/${PORTNAME}/ip2name|${PREFIX}/libexec/${PORTNAME}|' \
-		-e 's|/var/www/html/${PORTNAME}|${WWWDIR}|' \
+	@${REINPLACE_CMD} -e 's|/var/www/html/${PORTNAME}/lang|${DATADIR}/lang| ; \
+		s|/var/www/html/${PORTNAME}\"|${ETCDIR}\"| ; \
+		s|/var/www/html/${PORTNAME}/ip2name|${PREFIX}/libexec/${PORTNAME}| ; \
+		s|/var/log/squid|${LOCALBASE}/squid/logs| ; \
+		s|/var/www/html/${PORTNAME}|${WWWDIR}|' \
 		${WRKSRC}/lightsquid.cfg
 	@${FIND} -E ${WRKSRC} -maxdepth 1 -regex '.*\.(cgi|pl)' | \
 		${XARGS} ${REINPLACE_CMD} \
-		 -e 's|${PORTNAME}.cfg|${PREFIX}/etc/${PORTNAME}/${PORTNAME}.cfg|g'
+		 -e 's|${PORTNAME}.cfg|${ETCDIR}/${PORTNAME}.cfg|g'
 	@${MV} ${WRKSRC}/group.cfg.src ${WRKSRC}/group.cfg
 
 do-install:
@@ -57,11 +57,11 @@ do-install:
 	cd ${WRKSRC}/ip2name && \
 	${FIND} . -type f -exec \
 		${INSTALL_DATA} "{}" "${PREFIX}/libexec/${PORTNAME}/{}" \;
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${MKDIR} ${ETCDIR}
 .for i in ${CONFIGS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/etc/${PORTNAME}/${i}.dist
-.if !exists(${PREFIX}/etc/${PORTNAME}/${i})
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/etc/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${ETCDIR}/${i}.dist
+.if !exists(${ETCDIR}/${i})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${ETCDIR}
 .endif
 .endfor
 	${MKDIR} ${WWWDIR}/report
