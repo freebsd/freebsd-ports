@@ -20,6 +20,7 @@ LIB_DEPENDS=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include
 
 MAN1=	dystmgr.1 \
 	dysttest.1 \
