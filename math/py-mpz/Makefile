@@ -26,7 +26,7 @@ USE_PYTHON=	-2.3
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGVERSION=	0.0.0
 WRKSRC=		${PYTHON_WRKSRC}/Modules
-MD5_FILE=	${PORTSDIR}/lang/python/distinfo
+MD5_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
