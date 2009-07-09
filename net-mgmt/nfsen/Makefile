@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nfsen
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://nfsen.sourceforge.net/
@@ -20,8 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		nfdump:${PORTSDIR}/net-mgmt/nfdump
 
-FORBIDDEN=	remote command execution vulnerability
-
 USE_ICONV=	yes
 USE_PERL5=	yes
 USE_PHP=	session pcre sockets
@@ -32,16 +29,6 @@ USE_RC_SUBR=	nfsen.sh
 .if defined(PACKAGE_BUILDING)
 IGNORE=		needs running syslogd
 .endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "*****************************************************"
-	@${ECHO_MSG} "Before upgrading you may backup the original profile "
-	@${ECHO_MSG} "stat data:"
-	@${ECHO_MSG} "cd ${WRKSRC}/helpers"
-	@${ECHO_MSG} "./mk_backup.sh /path/to/your/profilestatdir /path/to/backupdir"
-	@${ECHO_MSG} "*****************************************************"
-	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' -e 's,%%PORTNAME%%,${PORTNAME},' \
