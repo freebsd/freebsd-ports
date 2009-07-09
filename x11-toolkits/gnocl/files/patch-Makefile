@@ -1,22 +1,41 @@
---- src/Makefile.orig	2006-02-27 21:27:55.000000000 +0100
-+++ src/Makefile	2008-05-30 16:17:43.000000000 +0200
-@@ -19,16 +19,16 @@
+--- src/Makefile.orig	2009-07-06 09:07:59.000000000 +0200
++++ src/Makefile	2009-07-06 09:10:12.000000000 +0200
+@@ -45,7 +45,7 @@
  
- # for releases use -Os, this makes the lib 15% smaller 
+ # for releases use -Os, this makes the lib 15% smaller
  # amd64 need -fPIC, x86 works with and without
 -CFLAGS += -Wall -pedantic -fPIC
 +CFLAGS += -Wall -fPIC
  GTK_24 := $(shell pkg-config --atleast-version=2.4 'gtk+-2.0' && echo yes)
  GTK_26 := $(shell pkg-config --atleast-version=2.6 'gtk+-2.0' && echo yes)
  
+@@ -55,22 +55,23 @@
+ GTK_212 := $(shell pkg-config --atleast-version=2.12 'gtk+-2.0' && echo yes)
+ 
+ # get tclsh to tell us which version of Tcl is installed on the system
 -TCL_VERSION := $(shell echo 'puts $$tcl_version' | tclsh)
 +TCL_VERSION := 84
  
- # this breaks build on GTK 2.4 
- # -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED 
- export ADDCFLAGS := -DVERSION=\"$(VERSION)\" -DUSE_TCL_STUBS $(shell pkg-config --cflags gtk+-2.0) -I/usr/include/tcl$(TCL_VERSION)/
--export LIBS := $(shell pkg-config --libs gtk+-2.0) -ltclstub$(TCL_VERSION)
-+export LIBS := $(shell pkg-config --libs gtk+-2.0) -ltclstub$(TCL_VERSION) -L$(LOCALBASE)/lib
+ # this breaks build on GTK 2.4
+ # -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED
+ export ADDCFLAGS := -DVERSION=\"$(VERSION)\" \
+ 	-DUSE_TCL_STUBS $(shell pkg-config \
+ 	--cflags gtk+-2.0) \
+-	-I/usr/include/tcl$(TCL_VERSION) \
+-	-I/usr/local/include/gtksourceview-2.0 \
+-	-I/usr/include/libglade-2.0/  \
+-	-I/usr/local/include/gtkhtml /
++	-I${LOCALBASE}/tcl$(TCL_VERSION) \
++	-I${LOCALBASE}/include/gtksourceview-2.0 \
++	-I${LOCALBASE}/include/libglade-2.0/  \
++	-I${LOCALBASE}/include/gtkhtml /
+ 
+ # don't forget to add libs for new widgets!!
+ export LIBS := $(shell pkg-config \
+ 	--libs gtk+-2.0 libglade-2.0 vte) \
+-	-ltclstub$(TCL_VERSION)
++	-ltclstub$(TCL_VERSION) \
++	-L${LOCALBASE}/lib
  
  ############################################################
- # There should be no need to edit something below this line 
+ # There should be no need to edit something below this line
