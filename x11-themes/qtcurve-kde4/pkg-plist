@@ -2,6 +2,7 @@ lib/kde4/kstyle_qtcurve_config.so
 lib/kde4/kwin3_qtcurve.so
 lib/kde4/kwin_qtcurve_config.so
 lib/kde4/plugins/styles/qtcurve.so
+share/apps/QtCurve/Agua.qtcurve
 share/apps/QtCurve/Clean.qtcurve
 share/apps/QtCurve/Clear.qtcurve
 share/apps/QtCurve/Curve.qtcurve
@@ -19,4 +20,5 @@ share/apps/color-schemes/QtCurve.colors
 share/apps/kstyle/themes/qtc_klearlooks.themerc
 share/apps/kstyle/themes/qtcurve.themerc
 share/apps/kwin/qtcurve.desktop
+share/locale/tr/LC_MESSAGES/qtcurve.mo
 @dirrm share/apps/QtCurve
