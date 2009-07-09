@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtcurve
-PORTVERSION=	0.59.5
-PORTREVISION=	2
+PORTVERSION=	0.65.4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://home.freeuk.com/cpdrummond/
 PKGNAMEPREFIX=	kde-style-
