@@ -148,7 +148,7 @@ avahi-post-install:
 .for f in ${AVAHI_PKGCONFIG}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/libdata/pkgconfig
 .endfor
-	${MKDIR} ${PREFIX}/avahi
+	${MKDIR} ${PREFIX}/etc/avahi
 .for f in ${DAEMON_CONFIG_FILES}
 	${INSTALL_DATA} ${WRKSRC}/avahi-daemon/${f} \
 	    	${PREFIX}/etc/avahi/${f}.dist
