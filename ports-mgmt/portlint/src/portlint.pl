@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.178 2009/05/23 19:05:39 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.184 2009/07/09 00:59:29 marcus Exp $
 #
 
 use strict;
@@ -49,8 +49,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 11;
-my $micro = 2;
+my $minor = 12;
+my $micro = 0;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -680,6 +680,14 @@ sub checkplist {
 	my $seen_special = 0;
 	my $item_count = 0;
 
+	# Variables that are allowed to be out-of-sync in the XXXDIR check.
+	# E.g., %%PORTDOCS%%%%RUBY_MODDOCDIR%% will be OK because there is
+	# no %%PORTRUBY_MODDOC%% substitution.
+	my %check_xxxdir_ok = (
+		"RUBY_MODDOC" 		=> "DOCS",
+		"RUBY_MODEXAMPLES"	=> "DOCS",
+	);
+
 	open(IN, "< $file") || return 0;
 	while (<IN>) {
 		$item_count++;
@@ -831,6 +839,13 @@ sub checkplist {
 				"If possible, install this file with a different name.");
 		}
 
+		if ($_ =~ m|/a.out$| && $_ !~ /^\@/) {
+			&perror("WARN", $file, $., "this port installs a file named ".
+				"\"a.out\".  This file may be deleted if ".
+				"daily_clean_disks_enable=\"YES\" in /etc/periodic.conf.  ".
+				"If possible, install this file with a different name.");
+		}
+
 		if ($autoinfo && $_ =~ /\.info$/) {
 			&perror("WARN", $file, $., "enumerating info files in the plist is deprecated in favor of adding info files into the Makefile using the INFO macro.");
 		}
@@ -891,7 +906,8 @@ sub checkplist {
 		if ($_ =~ m{^%%PORT(\w+)%%(.*?)%%(\w+)DIR%%(.*)$} and $1 ne $3) {
 			&perror("WARN", $file, $., "Do not mix %%PORT$1%% with %%$3DIR%%. ".
 				"Use '%%PORT$3%%$2%%$3DIR%%$4' instead and update Makefile ".
-				"accordingly.");
+				"accordingly.") unless (defined($check_xxxdir_ok{$3}) and
+					$check_xxxdir_ok{$3} eq $1);
 		}
 
 		if ($_ =~ m#man/([^/]+/)?man([$manchapters])/([^\.]+\.[$manchapters])(\.gz)?$#) {
@@ -1243,6 +1259,7 @@ sub checkmakefile {
 	my @deplist = ();
 	my %autocmdnames = ();
 	my $pre_mk_line = 0;
+	my $options_mk_line = 0;
 
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
@@ -1419,6 +1436,12 @@ sub checkmakefile {
 		}
 	}
 
+	pos($whole) = 0;
+	if ($whole =~ /^\.include\s+<bsd\.port\.options\.mk>$/gm) {
+		# Remember position
+		$options_mk_line = &linenumber($`) + 1;
+	}
+
 	#
 	# whole file: check OPTIONS
 	#
@@ -1429,8 +1452,9 @@ sub checkmakefile {
 		push @mopt, $1;
 		my $lineno = &linenumber($`) + 1;
 		&perror("FATAL", $file, $lineno, "option WITH(OUT)_$1 is used before ".
-			"including bsd.port.pre.mk.")
-		if (scalar(@oopt) && $lineno < $pre_mk_line);
+			"including bsd.port.pre.mk or bsd.port.options.mk.")
+		if (scalar(@oopt) && $lineno < $pre_mk_line &&
+			$lineno < $options_mk_line);
 	}
 	foreach my $i (@oopt) {
 		if (!grep(/^$i$/, @mopt)) {
@@ -1936,13 +1960,15 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	}
 
 	#
-	# whole file: check for --mandir and --infodir when GNU_CONFIGURE
+	# whole file: check for --build, --mandir, --infodir, and --prefix
+	# when GNU_CONFIGURE
 	#
 	if (exists $makevar{GNU_CONFIGURE} &&
 		$makevar{GNU_CONFIGURE} ne '' &&
-		$makevar{CONFIGURE_ARGS} =~ /--(man|info)dir/) {
-		&perror("WARN", $file, -1, "--mandir and --infodir are not needed ".
-			"in CONFIGURE_ARGS as they are already set in bsd.port.mk");
+		$makevar{CONFIGURE_ARGS} =~ /--(prefix|build|(man|info)dir)/) {
+		&perror("WARN", $file, -1, "--build, --mandir, --infodir and --prefix ".
+			"are not needed in CONFIGURE_ARGS as they are already set in ".
+			"bsd.port.mk.");
 	}
 
 	#
@@ -2823,12 +2849,20 @@ FETCH_DEPENDS DEPENDS_TARGET
 			"INFO macro instead.");
 	}
 
+	# check for HAS_CONFIGURE or GNU_CONFIGURE
+	if ($tmp =~ /\nGNU_CONFIGURE[?+]?=/
+		&& $tmp =~ /\n(HAS_CONFIGURE)[?+]?=/) {
+		&perror("WARN", $file, -1, "since you already have GNU_CONFIGURE, ".
+			"you do not need $1.");
+	}
+
 	# check USE_X11 and USE_IMAKE
 	if ($tmp =~ /\nUSE_IMAKE[?+]?=/
 	 && $tmp =~ /\n(USE_X11)[?+]?=/) {
 		&perror("WARN", $file, -1, "since you already have USE_IMAKE, ".
 			"you don't need $1.");
 	}
+
 	# check USE_X11 and USE_IMAKE
 	if ($newxdef && $tmp =~ /\nUSE_IMAKE[?+]?=/
 	 && $tmp =~ /\n(USE_X_PREFIX)[?+]?=/) {
