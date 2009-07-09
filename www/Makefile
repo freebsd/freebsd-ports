@@ -347,6 +347,7 @@
     SUBDIR += linklint
     SUBDIR += links
     SUBDIR += links1
+    SUBDIR += linux-f10-flashplugin10
     SUBDIR += linux-f8-flashplugin10
     SUBDIR += linux-firefox
     SUBDIR += linux-firefox-devel
