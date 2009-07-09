@@ -1,4 +1,5 @@
-bin/packages.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Structure/Util/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Structure/Util/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Structure/Util/Util.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Structure/Util/Util.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Structure/Util.pm
