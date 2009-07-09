@@ -12,7 +12,7 @@ etc/avahi/avahi-daemon.conf.dist
 @exec [ -f %B/avahi-daemon.conf ] || cp %B/%f %B/avahi-daemon.conf
 etc/avahi/avahi-dnsconfd.action
 @unexec if cmp -s %D/etc/avahi/hosts %D/etc/avahi/hosts.dist; then rm -f %D/etc/avahi/hosts; fi
-etc/avahi/hosts
+etc/avahi/hosts.dist
 @exec [ -f %B/hosts ] || cp %B/%f %B/hosts
 etc/avahi/services/sftp-ssh.service
 etc/avahi/services/ssh.service
