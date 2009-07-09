@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CHI/.packlist
 %%SITE_PERL%%/CHI.pm
 %%SITE_PERL%%/CHI/CacheObject.pm
+%%SITE_PERL%%/CHI/Constants.pm
 %%SITE_PERL%%/CHI/Driver.pm
 %%SITE_PERL%%/CHI/Driver/Base/CacheContainer.pm
 %%SITE_PERL%%/CHI/Driver/CacheCache.pm
@@ -8,42 +9,52 @@
 %%SITE_PERL%%/CHI/Driver/FastMmap.pm
 %%SITE_PERL%%/CHI/Driver/File.pm
 %%SITE_PERL%%/CHI/Driver/Memory.pm
-%%SITE_PERL%%/CHI/Driver/Multilevel.pm
+%%SITE_PERL%%/CHI/Driver/Metacache.pm
 %%SITE_PERL%%/CHI/Driver/Null.pm
+%%SITE_PERL%%/CHI/Driver/Role/HasSubcaches.pm
+%%SITE_PERL%%/CHI/Driver/Role/IsSizeAware.pm
+%%SITE_PERL%%/CHI/Driver/Role/IsSubcache.pm
+%%SITE_PERL%%/CHI/Driver/Role/Universal.pm
 %%SITE_PERL%%/CHI/NullLogger.pm
 %%SITE_PERL%%/CHI/Serializer/Storable.pm
 %%SITE_PERL%%/CHI/Test.pm
 %%SITE_PERL%%/CHI/Test/Class.pm
+%%SITE_PERL%%/CHI/Test/Driver/NonMoose.pm
 %%SITE_PERL%%/CHI/Test/Driver/Readonly.pm
 %%SITE_PERL%%/CHI/Test/Driver/Writeonly.pm
 %%SITE_PERL%%/CHI/Test/InternalOnly.pm
 %%SITE_PERL%%/CHI/Test/Logger.pm
 %%SITE_PERL%%/CHI/Test/Util.pm
+%%SITE_PERL%%/CHI/Types.pm
 %%SITE_PERL%%/CHI/Util.pm
+%%SITE_PERL%%/CHI/t/Constants.pm
 %%SITE_PERL%%/CHI/t/Driver.pm
 %%SITE_PERL%%/CHI/t/Driver/CacheCache.pm
 %%SITE_PERL%%/CHI/t/Driver/FastMmap.pm
 %%SITE_PERL%%/CHI/t/Driver/File.pm
 %%SITE_PERL%%/CHI/t/Driver/File/DepthZero.pm
 %%SITE_PERL%%/CHI/t/Driver/Memory.pm
-%%SITE_PERL%%/CHI/t/Driver/Multilevel.pm
-%%SITE_PERL%%/CHI/t/Driver/Multilevel/Single.pm
+%%SITE_PERL%%/CHI/t/Driver/NonMoose.pm
 %%SITE_PERL%%/CHI/t/Driver/Null.pm
+%%SITE_PERL%%/CHI/t/Driver/Subcache.pm
+%%SITE_PERL%%/CHI/t/Driver/Subcache/l1_cache.pm
+%%SITE_PERL%%/CHI/t/Driver/Subcache/mirror_cache.pm
 %%SITE_PERL%%/CHI/t/GetError.pm
 %%SITE_PERL%%/CHI/t/Initialize.pm
-%%SITE_PERL%%/CHI/t/Multilevel.pm
 %%SITE_PERL%%/CHI/t/RequiredModules.pm
 %%SITE_PERL%%/CHI/t/Sanity.pm
 %%SITE_PERL%%/CHI/t/SetError.pm
+%%SITE_PERL%%/CHI/t/Subcache.pm
 %%SITE_PERL%%/CHI/t/Subclass.pm
 %%SITE_PERL%%/CHI/t/Util.pm
-@dirrmtry %%SITE_PERL%%/CHI/t/Driver/Multilevel
+@dirrmtry %%SITE_PERL%%/CHI/t/Driver/Subcache
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver/File
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver
 @dirrmtry %%SITE_PERL%%/CHI/t
 @dirrmtry %%SITE_PERL%%/CHI/Test/Driver
 @dirrmtry %%SITE_PERL%%/CHI/Test
 @dirrmtry %%SITE_PERL%%/CHI/Serializer
+@dirrmtry %%SITE_PERL%%/CHI/Driver/Role
 @dirrmtry %%SITE_PERL%%/CHI/Driver/Base
 @dirrmtry %%SITE_PERL%%/CHI/Driver
 @dirrmtry %%SITE_PERL%%/CHI
