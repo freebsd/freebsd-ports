@@ -86,7 +86,7 @@ bin/handel.pl
 @dirrm %%SITE_PERL%%/Handel/L10N
 @dirrm %%SITE_PERL%%/Handel/Order
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Handel
-@dirrm %%SITE_PERL%%/Module/Starter
+@dirrmtry %%SITE_PERL%%/Module/Starter
 @dirrm %%SITE_PERL%%/Handel/Storage/DBIC/Order
 @dirrm %%SITE_PERL%%/Handel/Storage/DBIC/Cart
 @dirrm %%SITE_PERL%%/Handel/Storage/DBIC
