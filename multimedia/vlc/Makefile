@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.9a
-PORTREVISION=	2
+DISTVERSION=	1.0.0
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -54,11 +53,11 @@ OPTIONS=	A52 "a52 audio support, many DVDs use this" On \
 		SVG "SVG graphics support" Off \
 		SVGALIB "SVGALIB video output" Off \
 		SHOUT "Shout2 support" Off \
-		SKINS "Enable winamp skins interface (requires QT4)" Off \
+		SKINS "Enable winamp skins interface (requires QT4)" On \
 		SPEEX "Speex voice codec support" On \
 		THEORA "OGG/Vorbis video codec support" On \
 		TWOLAME "Twolame mpeg2 audio encoder support" On \
-		V4L "Enable Video for Linux" On\
+		V4L "Enable Video for Linux" On \
 		VORBIS "Vorbis support" On \
 		WIN32_CODECS "win32 multimedia DLL's" Off \
 		X264 "Enable H.264/AVC codec support" On \
@@ -82,14 +81,17 @@ CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I
 		LIBS="-lc"
 
 CONFIGURE_ARGS+=	--enable-vlc \
+			--enable-release \
 			--enable-avcodec \
 			--enable-avformat \
 			--enable-postproc \
 			--without-dv-raw1394 \
-			--disable-dv
+			--disable-dv \
+			--disable-galaktos
 
 MAN1=		vlc.1 \
-		vlc-config.1
+		vlc-config.1 \
+		vlc-wrapper.1
 
 .include <bsd.port.pre.mk>
 
@@ -488,13 +490,6 @@ WITHOUT_VORBIS=	yes
 CONFIGURE_ARGS+=--enable-ncurses
 .endif
 
-.if defined(WITH_OPENGL) && !defined(WITHOUT_OPENGL)
-USE_GL=	yes
-CONFIGURE_ARGS+=--enable-galaktos
-.else
-CONFIGURE_ARGS+=--disable-galaktos
-.endif
-
 .if !defined(WITHOUT_SAMBA)
 LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=--enable-smb
@@ -579,12 +574,9 @@ CONFIGURE_ARGS+=--enable-debug
 CONFIGURE_ARGS+=--enable-release
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O2 -ffast-math -fomit-frame-pointer
-CONFIGURE_ARGS+=--enable-release \
-		--enable-optimizations
-.else
-CONFIGURE_ARGS+=--enable-release
+.if defined(WITH_OCFLAGS)
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
+CONFIGURE_ARGS+=--enable-optimizations
 .endif
 
 .if defined(WITHOUT_V4L)
