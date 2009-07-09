@@ -6,28 +6,25 @@
 #
 
 PORTNAME=	gnocl
-PORTVERSION=	0.9.91
-PORTREVISION=	4
+PORTVERSION=	0.9.94
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF/gnocl
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
 
 USE_GMAKE=	yes
-USE_BZIP2=	yes
-USE_GNOME=	gtk20
+USE_ZIP=	yes
+USE_GNOME=	gtk20 libglade2 gtksourceview2 gtkhtml3
 USE_TCL=	84
 USE_LDCONFIG=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		Does not compile on sparc64 or ia64
-.endif
 
 .if ${ARCH} == amd64
 CFLAGS+=	-fPIC
@@ -42,12 +39,6 @@ GNOCL_VFS_FILE="lib/libgnoclVFS.so.1"
 GNOCL_CANVAS_FILE=	"@comment "
 .else
 USE_GNOME+=	libgnomecanvas
-.endif
-
-.if defined(WITHOUT_GCONF)
-GNOCL_GCONF_FILE=	"@comment "
-.else
-USE_GNOME+=	gconf2
 .endif
 
 .if defined(WITHOUT_GNOME)
@@ -67,18 +58,22 @@ PLIST_SUB+=	GNOCL_GCONF_FILE=${GNOCL_GCONF_FILE}
 PLIST_SUB+=	GNOCL_GNOME_FILE=${GNOCL_GNOME_FILE}
 PLIST_SUB+=	GNOCL_VFS_FILE=${GNOCL_VFS_FILE}
 
+post-extract:
+	${FIND} ${WRKSRC} -name "*.o" -delete
+	${RMDIR} ${WRKSRC}/doc/html		# Remove empty/stale directory
+
 post-patch:
-.if defined(WITHOUT_CANVAS)
-	${REINPLACE_CMD} -e 's=^USE_CANVAS=#USE_CANVAS=' ${BUILD_WRKSRC}/Makefile
+.if !defined(WITHOUT_CANVAS)
+	${REINPLACE_CMD} -e 's=^#USE_CANVAS=USE_CANVAS=' ${BUILD_WRKSRC}/Makefile
 .endif
-.if defined(WITHOUT_GCONF)
-	${REINPLACE_CMD} -e 's=^USE_GCONF=#USE_GCONF=' ${BUILD_WRKSRC}/Makefile
+.if !defined(WITHOUT_GCONF)
+	${REINPLACE_CMD} -e 's=^#USE_GCONF=USE_GCONF=' ${BUILD_WRKSRC}/Makefile
 .endif
-.if defined(WITHOUT_GNOME)
-	${REINPLACE_CMD} -e 's=^USE_GNOME=#USE_GNOME=' ${BUILD_WRKSRC}/Makefile
+.if !defined(WITHOUT_GNOME)
+	${REINPLACE_CMD} -e 's=^#USE_GNOME=USE_GNOME=' ${BUILD_WRKSRC}/Makefile
 .endif
-.if defined(WITHOUT_GNOMEVFS2)
-	${REINPLACE_CMD} -e 's=^USE_VFS=#USE_VFS=' ${BUILD_WRKSRC}/Makefile
+.if !defined(WITHOUT_GNOMEVFS2)
+	${REINPLACE_CMD} -e 's=^#USE_VFS=USE_VFS=' ${BUILD_WRKSRC}/Makefile
 .endif
 	${FIND} ${WRKSRC}/demos -name "*.tcl" | ${XARGS} \
 		${REINPLACE_CMD} -i "" -e 's|tclsh|${TCLSH}|g; \
