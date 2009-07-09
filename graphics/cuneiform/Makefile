@@ -6,25 +6,21 @@
 #
 
 PORTNAME=	cuneiform
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/cuneiform-linux/${PORTVERSION:R}/${PORTVERSION:R}/+download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+DISTNAME=	${PORTNAME}-linux-${PORTVERSION:R}
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	OCR system developed and open sourced by Cognitive technologies
-
-LIB_DEPENDS=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -ldlmalloc"
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
+WRKSRC=		${WRKDIR}/${PORTNAME}-linux-${PORTVERSION:R}/build
 CMAKE_SOURCE_PATH=..
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -33,6 +29,11 @@ CFLAGS+=	-I${LOCALBASE}/include
 OPTIONS=	IMAGEMAGICK "Enable support of different graphic formats" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+LIB_DEPENDS=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
+CMAKE_ARGS=	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -ldlmalloc"
+.endif
 
 .if defined(WITH_IMAGEMAGICK)
 LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
@@ -45,6 +46,11 @@ post-patch:
 .if !defined(WITH_IMAGEMAGICK)
 	@${REINPLACE_CMD} -e '/pkg_check_modules.*ImageMagick/ d' \
 		${WRKSRC}/../cuneiform_src/Kern/CMakeLists.txt
+.endif
+.if ${OSVERSION} < 700000
+	@${REINPLACE_CMD} -e 's|malloc_np.h|dlmalloc/malloc.h|' \
+		${WRKSRC}/../cuneiform_src/Kern/windummy.c \
+		${WRKSRC}/../cuneiform_src/Kern/rbal/src/statsearchbl.cpp
 .endif
 
 .include <bsd.port.post.mk>
