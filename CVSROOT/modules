@@ -2188,6 +2188,7 @@ devhelp                         ports/devel/devhelp
 devil                           ports/graphics/devil
 devilspie                       ports/x11-wm/devilspie
 devisor                         ports/science/devisor
+devstat                         ports/sysutils/devstat
 devtodo                         ports/devel/devtodo
 dfileserver                     ports/www/dfileserver
 dfm                             ports/x11-fm/dfm
@@ -2219,6 +2220,7 @@ diablo-jdk16                    ports/java/diablo-jdk16
 diablo-jre15                    ports/java/diablo-jre15
 diablo-jre16                    ports/java/diablo-jre16
 diacanvas2                      ports/graphics/diacanvas2
+diakonos                        ports/editors/diakonos
 diamanda                        ports/www/diamanda
 diameter                        ports/games/diameter
 diary-hercules                  ports/misc/diary-hercules
@@ -3855,6 +3857,7 @@ gale                            ports/net-im/gale
 galeon                          ports/www/galeon
 gallery                         ports/www/gallery
 gallery2                        ports/www/gallery2
+gallery3                        ports/www/gallery3
 gambas                          ports/lang/gambas
 gambas2                         ports/lang/gambas2
 gambas2-base                    ports/lang/gambas2-base
@@ -9232,6 +9235,7 @@ nana                            ports/devel/nana
 nano                            ports/editors/nano
 nano-devel                      ports/editors/nano-devel
 nanoblogger                     ports/www/nanoblogger
+nanoblogger-extra               ports/www/nanoblogger-extra
 nant                            ports/devel/nant
 napshare                        ports/net-p2p/napshare
 napster                         ports/audio/napster
@@ -11360,6 +11364,7 @@ p5-GdkPixbuf                    ports/x11-toolkits/p5-GdkPixbuf
 p5-Gearman                      ports/devel/p5-Gearman
 p5-Gearman-Client-Async         ports/devel/p5-Gearman-Client-Async
 p5-Gearman-Server               ports/devel/p5-Gearman-Server
+p5-Gearman-XS                   ports/devel/p5-Gearman-XS
 p5-Genezzo                      ports/databases/p5-Genezzo
 p5-Geo-Cache                    ports/misc/p5-Geo-Cache
 p5-Geo-Caching                  ports/www/p5-Geo-Caching
@@ -14829,6 +14834,7 @@ p5-gds2                         ports/cad/p5-GDS2
 p5-gearman                      ports/devel/p5-Gearman
 p5-gearman-client-async         ports/devel/p5-Gearman-Client-Async
 p5-gearman-server               ports/devel/p5-Gearman-Server
+p5-gearman-xs                   ports/devel/p5-Gearman-XS
 p5-genezzo                      ports/databases/p5-Genezzo
 p5-geo-cache                    ports/misc/p5-Geo-Cache
 p5-geo-caching                  ports/www/p5-Geo-Caching
@@ -18445,6 +18451,7 @@ portmon                         ports/net-mgmt/portmon
 portoseguro                     ports/x11/portoseguro
 ports-mgmt_barry                ports/ports-mgmt/barry
 ports_at                        ports/science/at
+ports_binutils                  ports/devel/binutils
 ports_bs                        ports/games/bs
 ports_bzip2                     ports/archivers/bzip2
 ports_csup                      ports/net/csup
@@ -18552,6 +18559,8 @@ postgresql82-client             ports/databases/postgresql82-client
 postgresql82-server             ports/databases/postgresql82-server
 postgresql83-client             ports/databases/postgresql83-client
 postgresql83-server             ports/databases/postgresql83-server
+postgresql84-client             ports/databases/postgresql84-client
+postgresql84-server             ports/databases/postgresql84-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
 postmark                        ports/benchmarks/postmark
@@ -18816,6 +18825,7 @@ py-Tempita                      ports/textproc/py-Tempita
 py-ToscaWidgets                 ports/devel/py-ToscaWidgets
 py-TurboJinja                   ports/devel/py-TurboJinja
 py-WebError                     ports/www/py-WebError
+py-WebFlash                     ports/www/py-WebFlash
 py-WebTest                      ports/www/py-WebTest
 py-YABT                         ports/misc/py-YABT
 py-addons                       ports/devel/py-AddOns
@@ -19440,6 +19450,7 @@ py-vte                          ports/x11-toolkits/py-vte
 py-waf                          ports/devel/py-waf
 py-wax                          ports/x11-toolkits/py-wax
 py-weberror                     ports/www/py-WebError
+py-webflash                     ports/www/py-WebFlash
 py-webhelpers                   ports/www/py-webhelpers
 py-webob                        ports/www/py-webob
 py-webtest                      ports/www/py-WebTest
@@ -19497,6 +19508,7 @@ py-zopeproxy                    ports/net/py-zopeproxy
 py-zopetesting                  ports/devel/py-zopetesting
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
+py25-bsddb                      ports/databases/py25-bsddb
 py2html                         ports/textproc/py2html
 py_otp_interface                ports/devel/py_otp_interface
 pyawale                         ports/games/pyawale
@@ -23181,6 +23193,7 @@ woadaptor-cgi                   ports/www/woadaptor-cgi
 wol                             ports/net/wol
 wolf3d                          ports/games/wolf3d
 wolfpack                        ports/games/wolfpack
+woof                            ports/www/woof
 wooztalk                        ports/net-im/wooztalk
 wop                             ports/games/wop
 word2x                          ports/textproc/word2x
