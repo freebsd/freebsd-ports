@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xabacus
-PORTVERSION=	7.4.1
+PORTVERSION=	7.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
 		http://ftp.tux.org/pub/tux/bagleyd/xabacus/ \
@@ -18,7 +18,6 @@ COMMENT=	Abacus for X Window System
 USE_BZIP2=	yes
 USE_XORG=	xpm
 WANT_GNOME=	yes
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-nas
 
