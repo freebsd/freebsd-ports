@@ -15,9 +15,9 @@ PORTNAME=	clamfilter
 PORTVERSION=	0.5
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.wyae.de/software/ensita-clamfilter/
+MASTER_SITES=	http://www.wyae.de/software/Retired/ensita-clamfilter/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sahil@tandon.net
 COMMENT=	A small, efficient clamav content filter for Postfix
 
 .if defined(WITH_CLAMAV_DEVEL)
