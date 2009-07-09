@@ -24,6 +24,9 @@ USE_PERL5_BUILD=yes
 MAN1=	files.1
 MAN3=	regexp.3
 
+CONFIGURE_ARGS+=--with-dnd-inc=${LOCALBASE}/include \
+		--with-dnd-lib=${LOCALBASE}/lib
+
 post-install:
 	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/last-patch-aa
 	${INSTALL_DATA} ${WRKSRC}/src/Files.ad ${PREFIX}/lib/X11/app-defaults/
