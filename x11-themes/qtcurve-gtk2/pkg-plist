@@ -4,9 +4,8 @@ share/themes/QtCurve/gtk-2.0/icons3
 share/themes/QtCurve/gtk-2.0/icons4
 share/themes/QtCurve/gtk-2.0/map_kde_icons.pl
 share/themes/QtCurve/mozilla/QtCurve.css
+share/themes/QtCurve/mozilla/QtCurve-KDEButtonOrder.css
 share/themes/QtCurve/mozilla/preferences-rev.xml
-share/themes/QtCurve/mozilla/firefox-user.js
-share/themes/QtCurve/mozilla/mailto.sh
 @dirrm share/themes/QtCurve/gtk-2.0
 @dirrm share/themes/QtCurve/mozilla
 @dirrm share/themes/QtCurve
