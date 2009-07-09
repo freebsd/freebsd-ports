@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PayflowPro
-PORTVERSION=	1482
+PORTVERSION=	2111
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/V/VK/VKHERA
@@ -19,7 +19,6 @@ RUN_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
-USE_BZIP2=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ca-bundle.crt ${LOCALBASE}/etc
