@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	app.lua?rev=${PORTVERSION}
 EXTRACT_ONLY=	#
 
-MAINTAINER=	pgollucci.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	App framework for Lua 5.0.x
 
 USE_LUA=	5.0

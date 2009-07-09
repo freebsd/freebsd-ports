@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	lposix.tar.gz
 
-MAINTAINER=	pgollucci.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A POSIX layer for Lua
 
 USE_LUA?=	5.1

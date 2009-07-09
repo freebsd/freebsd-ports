@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	philip
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTNAME=	lua-dfui-0.1.20050901
 
-MAINTAINER=	pgollucci.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	DFUI binding for Lua 5.0.x
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
