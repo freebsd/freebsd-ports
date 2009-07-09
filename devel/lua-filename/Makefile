@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	filename.lua?rev=${PORTVERSION}
 EXTRACT_ONLY=	#
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci.org
 COMMENT=	Filename-manipulating functions for Lua 5
 
 USE_LUA?=	5.1
