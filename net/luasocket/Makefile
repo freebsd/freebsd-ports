@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://luaforge.net/frs/download.php/2664/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	pgollucci.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	IPv4 Sockets support for the Lua language
 
 USE_GMAKE=	yes
