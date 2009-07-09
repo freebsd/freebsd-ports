@@ -8,5 +8,5 @@ include/zdb/URL.h
 lib/libzdb.a
 lib/libzdb.la
 lib/libzdb.so
-lib/libzdb.so.6
+lib/libzdb.so.7
 @dirrm include/zdb
