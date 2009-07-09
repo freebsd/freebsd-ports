@@ -7,11 +7,11 @@ bin/pylot
 %%DATADIR%%/core/corestats.py
 %%DATADIR%%/core/engine.py
 %%DATADIR%%/core/graph.py
+%%DATADIR%%/core/optionparse.py
 %%DATADIR%%/core/reportwriter.py
 %%DATADIR%%/core/results.py
 %%DATADIR%%/core/xmlparse.py
 %%DATADIR%%/run.py
-%%DATADIR%%/scripts/pylot_win_recorder.py
 %%DATADIR%%/testcases.xml
 %%DATADIR%%/ui/__init__.py
 %%DATADIR%%/ui/blocking/__init__.py
@@ -28,14 +28,12 @@ bin/pylot
 %%DATADIR%%/ui/gui/__init__.py
 %%DATADIR%%/ui/gui/icon.ico
 %%DATADIR%%/ui/gui/wx_gui.py
-%%DATADIR%%/util/__init__.py
-%%DATADIR%%/util/optionparse.py
+%%DATADIR%%/util/pylot_win_recorder.py
 @dirrm %%DATADIR%%/util
 @dirrm %%DATADIR%%/ui/gui
 @dirrm %%DATADIR%%/ui/console/win
 @dirrm %%DATADIR%%/ui/console
 @dirrm %%DATADIR%%/ui/blocking
 @dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/core
 @dirrm %%DATADIR%%
