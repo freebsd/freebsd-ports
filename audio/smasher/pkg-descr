@@ -1,0 +1,7 @@
+Cross-platform audio loop slicer designed to create sliced loops from WAV, MP3, 
+FLAC or AIFF files in seconds without a sequencer. 
+
+Effects include filter sweeps, phasing, flanging, delay, and distortion.
+
+Chris Petrik (chris@officialunix.com)
+WWW: http://smasher.sourceforge.net/

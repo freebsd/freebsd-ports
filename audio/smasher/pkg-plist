@@ -1,0 +1,51 @@
+bin/smasher
+%%DATADIR%%/png/applications-system.png
+%%DATADIR%%/png/dialog-information.png
+%%DATADIR%%/png/edit-clear-gs.png
+%%DATADIR%%/png/edit-redo_gs.png
+%%DATADIR%%/png/edit-undo_gs.png
+%%DATADIR%%/png/fileopen.png
+%%DATADIR%%/png/filesave.png
+%%DATADIR%%/png/filesave_gs.png
+%%DATADIR%%/png/gtk-media-play-inv.png
+%%DATADIR%%/png/logviewer_gs.png
+%%DATADIR%%/png/media-playback-pause.png
+%%DATADIR%%/png/player_play.png
+%%DATADIR%%/png/player_play_inv.png
+%%DATADIR%%/png/player_stop.png
+%%DATADIR%%/png/player_stop_inv.png
+%%DATADIR%%/png/preferences-desktop.png
+%%DATADIR%%/png/reload.png
+%%DATADIR%%/png/smasher.png
+%%DATADIR%%/png/stock_data-next.png
+%%DATADIR%%/png/stock_data-previous.png
+%%DATADIR%%/png/stock_draw-line.png
+%%DATADIR%%/png/stock_draw-line_r.png
+%%DATADIR%%/png/stock_filters-invert.png
+%%DATADIR%%/png/stock_filters.png
+%%DATADIR%%/png/stock_function-autopilot.png
+%%DATADIR%%/png/stock_gamma.png
+%%DATADIR%%/png/stock_headphones.png
+%%DATADIR%%/png/stock_hyperlink.png
+%%DATADIR%%/png/stock_id.png
+%%DATADIR%%/png/stock_keyring.png
+%%DATADIR%%/png/stock_next.png
+%%DATADIR%%/png/stock_open.png
+%%DATADIR%%/png/stock_pin_gs_min.png
+%%DATADIR%%/png/stock_previous.png
+%%DATADIR%%/png/stock_repeat.png
+%%DATADIR%%/png/stock_repeat_inv.png
+%%DATADIR%%/png/stock_shuffle.png
+%%DATADIR%%/png/stock_standard-filter.png
+%%DATADIR%%/png/system-run.png
+%%DATADIR%%/png/window_nofullscreen_gs.png
+%%DATADIR%%/samples/Amen_Break.wav
+%%DATADIR%%/xpm/smashericon.xpm
+share/applications/smasher.desktop
+share/pixmaps/smasher.png
+@dirrmtry share/applications
+@dirrmtry share/pixmaps
+@dirrm %%DATADIR%%/xpm
+@dirrm %%DATADIR%%/samples
+@dirrm %%DATADIR%%/png
+@dirrm %%DATADIR%%
