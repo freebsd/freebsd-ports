@@ -174,17 +174,14 @@
 # WITHOUT_HAL=yes
 #  Disable HAL support
 #
-# WITH_OPENGL=yes
-#  Enable OpenGL visual plugin (not playback, play back is default with X11)
-#
 # WITHOUT_SAMBA=yes
 #  Enable SAMBA Access module
 #
 # WITH_SSL=yes
 #  Enable TLS/SSL Support for web (httpd) interface
 #
-# WITH_OPTIMIZED_CFLAGS=yes
-#  Compile with -O2 -ffast-math -fomit-frame-pointer
+# WITH_OCFLAGS=yes
+#  Compile with -O3 -ffast-math -fomit-frame-pointer
 #
 # WITH_DVD_DEVICE=/dev/somedevice
 #  default 5.x and above: /dev/acd0
@@ -263,7 +260,7 @@ pre-install: build
 	cd ${FAKEDIR}/libdata && ${FIND} -s * -type f -o -type l| \
 		${SED} -e 's|^|libdata/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm libdata/|' >> ${PLIST}
+		${SED} -e 's|^|@dirrmtry libdata/|' >> ${PLIST}
 .for dir in vlc
 	cd ${FAKEDIR}/share/${dir} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/${dir}/|' >> ${PLIST} \
@@ -288,7 +285,7 @@ pre-install: build
 		${SED} -e 's|^|%%WEBPLUGINS_DIR%%/|' >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry %%WEBPLUGINS_DIR%%" >> ${PLIST}
 .endif
-.for locale in co fur my oc ps tet tl
+.for locale in ckb co fur km my oc ps tet tl
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale}/LC_MESSAGES 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale} 2>/dev/null || ${TRUE}" >> ${PLIST}
 .endfor

@@ -67,7 +67,7 @@
      }
  
 -    memcpy( p_block->p_buffer, p_frame, p_sys->i_video_frame_size );
-+    if(read(p_sys->fd_video, p_block->p_buffer, p_sys->i_video_frame_size) <= 0)
++    if(read(p_sys->i_fd, p_block->p_buffer, p_sys->i_video_frame_size) <= 0)
 +	    return 0;
 +    
      p_sys->i_video_pts = p_block->i_pts = p_block->i_dts = mdate();
