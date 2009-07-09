@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		Asterisk
-PORTVERSION=		0.10
+PORTVERSION=	1.01
 CATEGORIES=		misc perl5
-MASTER_SITES=		http://asterisk.gnuinter.net/files/
+MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 DISTNAME=		asterisk-perl-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Asterisk perl library
 
 PERL_CONFIGURE=		yes
