@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.32.0
+PORTVERSION=	2.32.1
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		BERLIOS/fc-solve
