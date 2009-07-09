@@ -8,10 +8,9 @@
 
 PORTNAME=	cvsadmin
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	gabor
+MASTER_SITES=	LOCAL/gabor
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	A simple program to administrate users of a CVS repository
@@ -20,6 +19,9 @@ GNU_CONFIGURE=	yes
 
 MAN1=		cvsadmin.1
 PLIST_FILES=	bin/cvsadmin
+
+post-configure:
+	${ECHO_CMD} "#define HAVE_MKDTEMP 1" >> ${WRKSRC}/config.h
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/cvsadmin.1 ${MANPREFIX}/man/man1
