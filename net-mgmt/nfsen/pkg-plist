@@ -1,5 +1,4 @@
 bin/nfsen
-bin/nfsen.rc
 bin/nfsend
 bin/RebuildHierarchy.pl
 bin/testPlugin
@@ -7,90 +6,154 @@ bin/testPlugin
 @exec [ -f %D/etc/nfsen.conf ] || cp %D/etc/nfsen-dist.conf %D/etc/nfsen.conf
 etc/nfsen-dist.conf
 libexec/%%PORTNAME%%/CopyRecursive.pm
-libexec/%%PORTNAME%%/GenGraph.pl
 libexec/%%PORTNAME%%/Log.pm
+libexec/%%PORTNAME%%/Lookup.pm
+libexec/%%PORTNAME%%/NfAlert.pm
 libexec/%%PORTNAME%%/NfConf.pm
 libexec/%%PORTNAME%%/NfProfile.pm
 libexec/%%PORTNAME%%/NfSen.pm
 libexec/%%PORTNAME%%/NfSenRC.pm
 libexec/%%PORTNAME%%/NfSenRRD.pm
+libexec/%%PORTNAME%%/NfSenSim.pm
 libexec/%%PORTNAME%%/Nfcomm.pm
 libexec/%%PORTNAME%%/Nfsources.pm
 libexec/%%PORTNAME%%/Notification.pm
 libexec/%%PORTNAME%%/RRDconvertv1.pm
 libexec/%%PORTNAME%%/plugins/demoplugin.pm
-www/%%PORTNAME%%/conf.php
-www/%%PORTNAME%%/EmptyGraph.gif
-www/%%PORTNAME%%/ErrorGraph.gif
-www/%%PORTNAME%%/css-admin.html
-www/%%PORTNAME%%/css.html
+libexec/%%PORTNAME%%/plugins/smily.jpg
+www/%%PORTNAME%%/alerting.php
+www/%%PORTNAME%%/colour_palette.html
+www/%%PORTNAME%%/colour_picker.html
+www/%%PORTNAME%%/css/alerting.css
+www/%%PORTNAME%%/css/detail.css
+www/%%PORTNAME%%/css/lookup.css
+www/%%PORTNAME%%/css/nfsen.css
+www/%%PORTNAME%%/css/profileadmin.css
 www/%%PORTNAME%%/details.php
-www/%%PORTNAME%%/edit.png
-www/%%PORTNAME%%/info.php
-www/%%PORTNAME%%/invisible.gif
+www/%%PORTNAME%%/icons/arrow.blue.down.png
+www/%%PORTNAME%%/icons/arrow.blue.right.png
+www/%%PORTNAME%%/icons/arrow.yellow.down.png
+www/%%PORTNAME%%/icons/arrow.yellow.right.png
+www/%%PORTNAME%%/icons/close.png
+www/%%PORTNAME%%/icons/cursor-line.png
+www/%%PORTNAME%%/icons/cursor-start.png
+www/%%PORTNAME%%/icons/cursor-stop.png
+www/%%PORTNAME%%/icons/edit.png
+www/%%PORTNAME%%/icons/EmptyGraph.png
+www/%%PORTNAME%%/icons/Error.png
+www/%%PORTNAME%%/icons/ErrorGraph.png
+www/%%PORTNAME%%/icons/help.png
+www/%%PORTNAME%%/icons/invisible.png
+www/%%PORTNAME%%/icons/minus.png
+www/%%PORTNAME%%/icons/ok.png
+www/%%PORTNAME%%/icons/plus.png
+www/%%PORTNAME%%/icons/progress.png
+www/%%PORTNAME%%/icons/save.png
+www/%%PORTNAME%%/icons/shade.gif
+www/%%PORTNAME%%/icons/shade.png
+www/%%PORTNAME%%/icons/shadeactive.png
+www/%%PORTNAME%%/icons/space.png
+www/%%PORTNAME%%/icons/spyglas.png
+www/%%PORTNAME%%/icons/trash.png
+www/%%PORTNAME%%/icons/trigger.png
+www/%%PORTNAME%%/js/alerting.js
+www/%%PORTNAME%%/js/ColorPicker2.js
+www/%%PORTNAME%%/js/detail.js
+www/%%PORTNAME%%/js/global.js
+www/%%PORTNAME%%/js/menu.js
+www/%%PORTNAME%%/js/profileadmin.js
+www/%%PORTNAME%%/lookup.php
 www/%%PORTNAME%%/navigator.php
-www/%%PORTNAME%%/navigator.php.orig
 www/%%PORTNAME%%/nfsen.php
+www/%%PORTNAME%%/nfsen.php.orig
 www/%%PORTNAME%%/nfsenutil.php
 www/%%PORTNAME%%/overview.php
 www/%%PORTNAME%%/pic.php
 www/%%PORTNAME%%/process.php
 www/%%PORTNAME%%/profileadmin.php
 www/%%PORTNAME%%/rrdgraph.php
-www/%%PORTNAME%%/trash.png
-www/%%PORTNAME%%/plugins/demoplugin.php
-www/%%PORTNAME%%/doc/BSD-license.html
+www/%%PORTNAME%%/doc/AlertArmed.png
+www/%%PORTNAME%%/doc/AlertArmedMultiple.png
+www/%%PORTNAME%%/doc/AlertArmTrigger.png
+www/%%PORTNAME%%/doc/AlertBlocked.png
+www/%%PORTNAME%%/doc/AlertConditions1.png
+www/%%PORTNAME%%/doc/AlertConditions2.png
+www/%%PORTNAME%%/doc/AlertCreateDialoge.png
+www/%%PORTNAME%%/doc/AlertDefinition.png
+www/%%PORTNAME%%/doc/AlertFired.png
+www/%%PORTNAME%%/doc/AlertFiredOnce.png
+www/%%PORTNAME%%/doc/AlertFlow.png
+www/%%PORTNAME%%/doc/AlertInactive.png
+www/%%PORTNAME%%/doc/AlertInfo.png
+www/%%PORTNAME%%/doc/alerting.png
+www/%%PORTNAME%%/doc/AlertList.png
+www/%%PORTNAME%%/doc/AlertTrigger.png
 www/%%PORTNAME%%/doc/Bookmark.png
-www/%%PORTNAME%%/doc/BuildingProfile.png
-www/%%PORTNAME%%/doc/ConfirmDelete.png
-www/%%PORTNAME%%/doc/DefaultFilter.png
-www/%%PORTNAME%%/doc/DeleteProfile.png
-www/%%PORTNAME%%/doc/DisabledSources.png
-www/%%PORTNAME%%/doc/InputEnd.png
-www/%%PORTNAME%%/doc/Navigating.png
-www/%%PORTNAME%%/doc/NewProfile.png
-www/%%PORTNAME%%/doc/OutOfData.png
-www/%%PORTNAME%%/doc/ProcessingControls.png
-www/%%PORTNAME%%/doc/ProcessingOutput.png
-www/%%PORTNAME%%/doc/ProfileCreated.png
-www/%%PORTNAME%%/doc/ResetWindow.png
-www/%%PORTNAME%%/doc/SelectLeft.png
-www/%%PORTNAME%%/doc/SelectRight.png
-www/%%PORTNAME%%/doc/StatSummary.png
-www/%%PORTNAME%%/doc/TimeWindow.png
-www/%%PORTNAME%%/doc/WinScale.png
-www/%%PORTNAME%%/doc/bytes.png
-www/%%PORTNAME%%/doc/cursor_control.png
-www/%%PORTNAME%%/doc/details-graphs.png
-www/%%PORTNAME%%/doc/details-processing.png
 www/%%PORTNAME%%/doc/dirstruct.png
+www/%%PORTNAME%%/doc/BSD-license.html
+www/%%PORTNAME%%/doc/BuildingProfile.png
+www/%%PORTNAME%%/doc/ChannelDialog.png
+www/%%PORTNAME%%/doc/cursor_control.png
+www/%%PORTNAME%%/doc/custom-format.png
+www/%%PORTNAME%%/doc/DefaultFilter.png
+www/%%PORTNAME%%/doc/details-graphs.png
+www/%%PORTNAME%%/doc/DisabledSources.png
+www/%%PORTNAME%%/doc/DragHandle.png
 www/%%PORTNAME%%/doc/edit.png
-www/%%PORTNAME%%/doc/exiisting.png
+www/%%PORTNAME%%/doc/ExpandStat.png
 www/%%PORTNAME%%/doc/flows.png
 www/%%PORTNAME%%/doc/index.html
 www/%%PORTNAME%%/doc/linegraph.png
-www/%%PORTNAME%%/doc/nfsen-options.png
+www/%%PORTNAME%%/doc/Lookup.png
+www/%%PORTNAME%%/doc/Navigating.png
+www/%%PORTNAME%%/doc/Navigating.psd
+www/%%PORTNAME%%/doc/navigation.png
+www/%%PORTNAME%%/doc/NewProfile.png
+www/%%PORTNAME%%/doc/nfsen-dist.conf
+www/%%PORTNAME%%/doc/OutOfData.png
 www/%%PORTNAME%%/doc/overview.png
-www/%%PORTNAME%%/doc/packets.png
-www/%%PORTNAME%%/doc/plugins.png
+www/%%PORTNAME%%/doc/PluginGuide/plugin-alertaction.png
+www/%%PORTNAME%%/doc/PluginGuide/plugin-alertcondition.png
+www/%%PORTNAME%%/doc/PluginGuide/plugin-guide.html
+www/%%PORTNAME%%/doc/PluginGuide/plugins-comm.png
+www/%%PORTNAME%%/doc/PluginGuide/plugins-concept.png
+www/%%PORTNAME%%/doc/PluginGuide/plugins-frontend-flow.png
+www/%%PORTNAME%%/doc/PortTracker.png
 www/%%PORTNAME%%/doc/processing-1.png
+www/%%PORTNAME%%/doc/ProcessingControls.png
+www/%%PORTNAME%%/doc/ProcessingOutput.png
+www/%%PORTNAME%%/doc/ProfileChannels.png
+www/%%PORTNAME%%/doc/ProfileCommit.png
+www/%%PORTNAME%%/doc/ProfileConversion.png
+www/%%PORTNAME%%/doc/ProfileCreated.png
+www/%%PORTNAME%%/doc/ProfileExamples.png
 www/%%PORTNAME%%/doc/selectprofile.png
+www/%%PORTNAME%%/doc/SelectWindow.png
 www/%%PORTNAME%%/doc/stat.png
-www/%%PORTNAME%%/doc/views-2.png
-www/%%PORTNAME%%/doc/views.png
-@dirrm www/%%PORTNAME%%/plugins
+www/%%PORTNAME%%/doc/StatSummary.png
+www/%%PORTNAME%%/doc/TimeWindow.png
+www/%%PORTNAME%%/doc/trigger.png
+www/%%PORTNAME%%/doc/WinScale.png
+www/%%PORTNAME%%/conf.php
+www/%%PORTNAME%%/plugins/demoplugin.php
+@dirrm www/%%PORTNAME%%/css
+@dirrm www/%%PORTNAME%%/icons
+@dirrm www/%%PORTNAME%%/js
+@dirrm www/%%PORTNAME%%/doc/PluginGuide
 @dirrm www/%%PORTNAME%%/doc
+@dirrm www/%%PORTNAME%%/plugins
 @dirrm www/%%PORTNAME%%
-@exec mkdir -p %D/var/%%PORTNAME%%/profiles/live/upstream1
-var/%%PORTNAME%%/profiles/live/upstream1.rrd
-var/%%PORTNAME%%/profiles/live/profile.dat
+@exec mkdir -p %D/var/%%PORTNAME%%/profiles-stat/live/
+var/%%PORTNAME%%/profiles-stat/hints
+var/%%PORTNAME%%/profiles-stat/live/upstream1.rrd
+var/%%PORTNAME%%/profiles-stat/live/profile.dat
 @exec mkdir -p %D/var/%%PORTNAME%%/run
 @exec mkdir -p %D/var/%%PORTNAME%%/filters
 @dirrm var/%%PORTNAME%%/run
 @dirrm var/%%PORTNAME%%/filters
-@dirrmtry var/%%PORTNAME%%/profiles/live/upstream1
-@dirrmtry var/%%PORTNAME%%/profiles/live
-@dirrmtry var/%%PORTNAME%%/profiles
+@dirrmtry var/%%PORTNAME%%/profiles-stat/live
+@dirrmtry var/%%PORTNAME%%/profiles-stat
+@dirrmtry var/%%PORTNAME%%/profiles-data
 @dirrmtry var/%%PORTNAME%%
 @dirrm libexec/%%PORTNAME%%/plugins
 @dirrm libexec/%%PORTNAME%%
