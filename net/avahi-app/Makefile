@@ -8,7 +8,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.25
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -52,6 +52,8 @@ MLINKS=	avahi-browse.1 avahi-browse-domains.1 \
 	avahi-publish.1 avahi-publish-service.1 \
 	avahi-resolve.1 avahi-resolve-address.1 \
 	avahi-resolve.1 avahi-resolve-host-name.1
+
+DAEMON_CONFIG_FILES=	hosts avahi-daemon.conf
 .endif
 
 USE_RC_SUBR=yes
@@ -145,6 +147,15 @@ avahi-post-install:
 .endif
 .for f in ${AVAHI_PKGCONFIG}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/libdata/pkgconfig
+.endfor
+	${MKDIR} ${PREFIX}/avahi
+.for f in ${DAEMON_CONFIG_FILES}
+	${INSTALL_DATA} ${WKRSRC}/avahi-daemon/${f} \
+	    	${PREFIX}/etc/avahi/${f}.dist
+	if [ ! -f ${PREFIX}/etc/avahi/${f} ]; then \
+	    	${INSTALL_DATA} ${WKRSRC}/avahi-daemon/${f} \
+			${PREFIX}/etc/avahi; \
+	fi
 .endfor
 .if !defined(PACKAGE_BUILDING) && (${AVAHI_SLAVE}=="no" || ${AVAHI_SLAVE}=="autoipd")
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
