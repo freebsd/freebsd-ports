@@ -10,7 +10,8 @@ PORTVERSION=	5.0
 PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.go6.net/4105/file.asp?file_id=142&foo=/
-MASTER_SITES+=	ftp://ftp.fth-devel.net/pub/freenet6/
+MASTER_SITES+=	http://fth.sourceforge.net/freenet6/
+MASTER_SITES+=	http://fth.host56.com/freenet6/
 DISTNAME=	gw6c-5_0-RELEASE-src
 
 MAINTAINER=	mike@fth-devel.net
