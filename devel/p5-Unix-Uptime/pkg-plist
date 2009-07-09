@@ -2,5 +2,7 @@
 %%SITE_PERL%%/Unix/Uptime/BSD.pm
 %%SITE_PERL%%/Unix/Uptime/FreeBSD.pm
 %%SITE_PERL%%/Unix/Uptime/Linux.pm
+%%SITE_PERL%%/Unix/Uptime/BSD/Load.pm
+@dirrm %%SITE_PERL%%/Unix/Uptime/BSD
 @dirrm %%SITE_PERL%%/Unix/Uptime
 @dirrmtry %%SITE_PERL%%/Unix
