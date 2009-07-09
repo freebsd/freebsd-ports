@@ -9,7 +9,6 @@
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/A1277.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/setAUTH.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/setRA.al
-%%SITE_PERL%%/auto/Net/DNSBL/Utilities/DO.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/_loadSocket.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/autosplit.ix
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/bystat.al
