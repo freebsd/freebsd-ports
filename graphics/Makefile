@@ -734,6 +734,7 @@
     SUBDIR += py-opengl
     SUBDIR += py-paint
     SUBDIR += py-poppler
+    SUBDIR += py-pycha
     SUBDIR += py-pydot
     SUBDIR += py-pyglet
     SUBDIR += py-pygooglechart
