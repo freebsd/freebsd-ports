@@ -651,6 +651,7 @@
     SUBDIR += slimserver-superdatetime
     SUBDIR += slimserver-trackstat
     SUBDIR += slv2
+    SUBDIR += smasher
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += solfege
