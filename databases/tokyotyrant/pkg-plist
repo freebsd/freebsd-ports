@@ -18,7 +18,7 @@ include/ttutil.h
 lib/libtokyotyrant.a
 lib/libtokyotyrant.so
 lib/libtokyotyrant.so.3
-lib/libtokyotyrant.so.3.10.0
+lib/libtokyotyrant.so.3.11.0
 lib/ttskeldir.so
 lib/ttskelmock.so
 lib/ttskelnull.so
