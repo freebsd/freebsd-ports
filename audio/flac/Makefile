@@ -34,7 +34,6 @@ CONFIGURE_ARGS+=--without-libiconv-prefix
 .endif
 
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
-MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	DOC=""
 .else
@@ -53,6 +52,10 @@ BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 pre-patch:
 	@${REINPLACE_CMD} 's:^docdir = $$(datadir)/doc/$$(PACKAGE)-$$(VERSION):docdir = $$(datadir)/doc/$$(PACKAGE):' \
 		`find ${WRKSRC}/doc -name Makefile.in`
+
+# "obj" is magic to our make(1)
+post-configure:
+	@${RM} -rf ${WRKSRC}/obj
 
 post-build:
 	${REINPLACE_CMD} 's:%%PREFIX%%:${PREFIX}:' ${WRKSRC}/man/flac.1
