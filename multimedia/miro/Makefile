@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Miro
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -21,6 +21,7 @@ LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python		\
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb	\
 		${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23	\
 		${PYTHON_SITELIBDIR}/dbus/glib.py:${PORTSDIR}/devel/py-dbus	\
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify	\
 		convert:${PORTSDIR}/graphics/ImageMagick
 
 BUILD_WRKSRC=	${WRKSRC}/platform/gtk-x11
@@ -35,13 +36,15 @@ WANT_GSTREAMER=	yes
 USE_GETTEXT=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:L}
-MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}"
 INSTALLS_EGGINFO=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		miro.1 miro.real.1
 
 DATADIR=	${PREFIX}/share/${PORTNAME:L}
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
@@ -51,6 +54,7 @@ USE_GSTREAMER+=	python
 .endif
 
 .if defined(GECKO) && ${GECKO:Mlibxul}!=""
+CPPFLAGS+=	-D_WCHAR_T_DECLARED
 XPCOM_LIB=	${GECKO}
 GTKMOZEMBED_LIB=${GECKO}
 XULRUNNER_19=	True
