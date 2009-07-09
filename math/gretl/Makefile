@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Gnu Regression, Econometrics and Time-series Library
+COMMENT=	GNU Regression, Econometrics and Time-series Library
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \
@@ -22,13 +21,13 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	gnomehier gtk20 gtksourceview2 libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex ${GCCLIBDIR}"
-CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
+		LDFLAGS="-L${LOCALBASE}/lib ${GCCLIBDIR}"
+CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake --without-gnome
 ALL_TARGET=	# empty
 USE_LDCONFIG=	yes
 
@@ -43,13 +42,6 @@ GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 .if ${ARCH} == "alpha"
 BROKEN=		math/lapack appears to be broken on alpha
-.endif
-
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-PKGNAMESUFFIX=	-gnome
-USE_GNOME+=	gnomehier gtksourceview2 libgnomeui
-.else
-CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
 .endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
@@ -70,10 +62,27 @@ LAPACK=		-llapack
 post-patch:
 	@${REINPLACE_CMD} -e 's|set term png|set term dumb|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|<regex.h>|<gnu/regex.h>|g' \
-		${WRKSRC}/gui2/gtksourceview/gtksourceregex.c
+	@${REINPLACE_CMD} -e 's|@gnome_prefix@|@prefix@|g' \
+		${WRKSRC}/gnome/gretl.keys.in
 
 pre-configure:
 	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/applications
+.for file in gretl.desktop
+	${INSTALL_DATA} ${WRKSRC}/gnome/${file} ${PREFIX}/share/applications
+.endfor
+	@${MKDIR} ${PREFIX}/share/mime-info
+.for file in gretl.keys gretl.mime
+	${INSTALL_DATA} ${WRKSRC}/gnome/${file} ${PREFIX}/share/mime-info
+.endfor
+	@${MKDIR} ${PREFIX}/share/pixmaps
+.for file in gnome-application-x-gretldata.png gnome-application-x-gretlsession.png
+	${INSTALL_DATA} ${WRKSRC}/gnome/${file} ${PREFIX}/share/pixmaps
+.endfor
+.for file in gretl-logo.xpm gretl.xpm
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/${file} ${PREFIX}/share/pixmaps
+.endfor
 
 .include <bsd.port.post.mk>

@@ -36,6 +36,7 @@ include/gretl/gretl_prn.h
 include/gretl/gretl_restrict.h
 include/gretl/gretl_scalar.h
 include/gretl/gretl_string_table.h
+include/gretl/gretl_untar.h
 include/gretl/gretl_utils.h
 include/gretl/gretl_win32.h
 include/gretl/gretl_www.h
@@ -179,7 +180,7 @@ lib/libgretl-1.0.la
 lib/libgretl-1.0.so
 lib/libgretl-1.0.so.0
 libdata/pkgconfig/gretl.pc
-%%GNOME:%%share/applications/gretl.desktop
+share/applications/gretl.desktop
 %%DATADIR%%/COPYING
 %%DATADIR%%/data/data10-1.gdt
 %%DATADIR%%/data/data10-2.gdt
@@ -297,6 +298,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/arma.gdt
 %%DATADIR%%/data/misc/australia.gdt
 %%DATADIR%%/data/misc/b-g.gdt
+%%DATADIR%%/data/misc/banks91.gdt
 %%DATADIR%%/data/misc/bjg.gdt
 %%DATADIR%%/data/misc/broiler.gdt
 %%DATADIR%%/data/misc/credscore.gdt
@@ -319,6 +321,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/mccullagh.gdt
 %%DATADIR%%/data/misc/mroz87.gdt
 %%DATADIR%%/data/misc/mrw.gdt
+%%DATADIR%%/data/misc/murder_rates.gdt
 %%DATADIR%%/data/misc/np.gdt
 %%DATADIR%%/data/misc/nysewk.gdt
 %%DATADIR%%/data/misc/ooballot.gdt
@@ -346,7 +349,6 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/fonts/FreeSans.ttf
 %%DATADIR%%/fonts/Vera.ttf
 %%DATADIR%%/fonts/VeraMono.ttf
-%%DATADIR%%/fonts/luxisr.ttf
 %%DATADIR%%/functions/gretlfunc.dtd
 %%DATADIR%%/genrcli.hlp
 %%DATADIR%%/genrcli.hlp.it
@@ -368,9 +370,6 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/gretlgui.hlp.es
 %%DATADIR%%/gretlgui.hlp.it
 %%DATADIR%%/gretlgui.hlp.pt
-%%NOGNOME:%%%%DATADIR%%/gtksourceview/R.lang
-%%NOGNOME:%%%%DATADIR%%/gtksourceview/gnuplot.lang
-%%NOGNOME:%%%%DATADIR%%/gtksourceview/gretl.lang
 %%DATADIR%%/helpfigs/Gamma.png
 %%DATADIR%%/helpfigs/adf1.png
 %%DATADIR%%/helpfigs/aic.png
@@ -424,6 +423,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/credscore.inp
 %%DATADIR%%/scripts/misc/denmark.inp
 %%DATADIR%%/scripts/misc/ects_nls.inp
+%%DATADIR%%/scripts/misc/frontier.inp
 %%DATADIR%%/scripts/misc/garch.inp
 %%DATADIR%%/scripts/misc/hall_cbapm.inp
 %%DATADIR%%/scripts/misc/hamilton.inp
@@ -436,6 +436,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/longley.inp
 %%DATADIR%%/scripts/misc/mrw.inp
 %%DATADIR%%/scripts/misc/mrw_qr.inp
+%%DATADIR%%/scripts/misc/murder_rates.inp
 %%DATADIR%%/scripts/misc/ooballot.inp
 %%DATADIR%%/scripts/misc/oprobit.inp
 %%DATADIR%%/scripts/misc/penngrow.inp
@@ -525,8 +526,9 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/testinp
 %%DATADIR%%/scripts/wg_ps_descriptions
 %%DATADIR%%/ui/gretlmain.xml
-%%GNOME:%%share/gtksourceview-2.0/language-specs/gnuplot.lang
-%%GNOME:%%share/gtksourceview-2.0/language-specs/gretl.lang
+share/gtksourceview-2.0/language-specs/gnuplot.lang
+share/gtksourceview-2.0/language-specs/gretl.lang
+share/locale/cs/LC_MESSAGES/gretl.mo
 share/locale/de/LC_MESSAGES/gretl.mo
 share/locale/es/LC_MESSAGES/gretl.mo
 share/locale/eu/LC_MESSAGES/gretl.mo
@@ -538,17 +540,16 @@ share/locale/pt_BR/LC_MESSAGES/gretl.mo
 share/locale/ru/LC_MESSAGES/gretl.mo
 share/locale/tr/LC_MESSAGES/gretl.mo
 share/locale/zh_TW/LC_MESSAGES/gretl.mo
-%%GNOME:%%share/mime-info/gretl.keys
-%%GNOME:%%share/mime-info/gretl.mime
-%%GNOME:%%share/pixmaps/gnome-application-x-gretldata.png
-%%GNOME:%%share/pixmaps/gnome-application-x-gretlsession.png
-%%GNOME:%%share/pixmaps/gretl-logo.xpm
-%%GNOME:%%share/pixmaps/gretl.xpm
+share/mime-info/gretl.keys
+share/mime-info/gretl.mime
+share/pixmaps/gnome-application-x-gretldata.png
+share/pixmaps/gnome-application-x-gretlsession.png
+share/pixmaps/gretl-logo.xpm
+share/pixmaps/gretl.xpm
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/scripts/misc
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/helpfigs
-%%NOGNOME:%%@dirrm %%DATADIR%%/gtksourceview
 @dirrm %%DATADIR%%/functions
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/db
@@ -557,7 +558,6 @@ share/locale/zh_TW/LC_MESSAGES/gretl.mo
 @dirrm %%DATADIR%%/data/greene
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-%%GNOME:%%@dirrmtry share/gnome
 @dirrm lib/gretl-gtk2/data
 @dirrm lib/gretl-gtk2
 @dirrm include/gretl
