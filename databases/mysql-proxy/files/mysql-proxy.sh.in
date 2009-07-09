@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/mysql-proxy/files/Attic/mysql-proxy.sh.in,v 1.1 2008-03-27 02:05:18 clsung Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/mysql-proxy/files/Attic/mysql-proxy.sh.in,v 1.2 2009-07-09 02:49:52 clsung Exp $
 #
 
 # PROVIDE: mysql-proxy
@@ -41,9 +41,9 @@ load_rc_config $name
 : ${mysql_proxy_pid_file="/var/run/mysql-proxy.pid"}
 
 pidfile="${mysql_proxy_pid_file}"
-command=%%PREFIX%%/sbin/mysql-proxy
+command=%%PREFIX%%/libexec/mysql-proxy
 command_args="--admin-address=${mysql_proxy_admin_address} --proxy-address=${mysql_proxy_address} --proxy-backend-addresses=${mysql_proxy_backend_addresses} ${mysql_proxy_args} --daemon --pid-file=${mysql_proxy_pid_file}"
-procname=%%PREFIX%%/sbin/mysql-proxy
+procname=%%PREFIX%%/libexec/mysql-proxy
 
 run_rc_command "$1"
 

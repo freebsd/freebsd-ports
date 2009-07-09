@@ -1,28 +1,76 @@
 @comment $FreeBSD$
+sbin/mysql-proxy
+bin/mysql-binlog-dump
+bin/mysql-myisam-dump
+libexec/mysql-proxy
+libexec/mysql-binlog-dump
+libexec/mysql-myisam-dump
+lib/libmysql-chassis.so.0
+lib/libmysql-chassis.so
+lib/libmysql-chassis.la
+lib/libmysql-proxy.so.0
+lib/libmysql-proxy.so
+lib/libmysql-proxy.la
+lib/mysql-proxy/lua/lfs.so
+lib/mysql-proxy/lua/lfs.la
+lib/mysql-proxy/lua/glib2.so
+lib/mysql-proxy/lua/glib2.la
+lib/mysql-proxy/lua/chassis.so
+lib/mysql-proxy/lua/chassis.la
+lib/mysql-proxy/lua/mysql.so
+lib/mysql-proxy/lua/mysql.la
+lib/mysql-proxy/lua/lpeg.so
+lib/mysql-proxy/lua/lpeg.la
+lib/mysql-proxy/lua/posix.so
+lib/mysql-proxy/lua/posix.la
+lib/mysql-proxy/plugins/libadmin.so
+lib/mysql-proxy/plugins/libadmin.la
+lib/mysql-proxy/plugins/libproxy.so
+lib/mysql-proxy/plugins/libproxy.la
+lib/mysql-proxy/plugins/libreplicant.so
+lib/mysql-proxy/plugins/libreplicant.la
+lib/mysql-proxy/plugins/libdebug.so
+lib/mysql-proxy/plugins/libdebug.la
 %%DATADIR%%/active-queries.lua
+%%DATADIR%%/active-transactions.lua
+%%DATADIR%%/admin-sql.lua
+%%DATADIR%%/admin.lua
 %%DATADIR%%/analyze-query.lua
 %%DATADIR%%/auditing.lua
+%%DATADIR%%/commit-obfuscator.lua
+%%DATADIR%%/commit-obfuscator.msc
 %%DATADIR%%/histogram.lua
-%%DATADIR%%/proxy/auto-config.lua
-%%DATADIR%%/proxy/balance.lua
-%%DATADIR%%/proxy/commands.lua
-%%DATADIR%%/proxy/parser.lua
-%%DATADIR%%/proxy/tokenizer.lua
+%%DATADIR%%/load-multi.lua
+%%DATADIR%%/reporter.lua
+%%DATADIR%%/ro-balance.lua
+%%DATADIR%%/ro-pooling.lua
 %%DATADIR%%/rw-splitting.lua
 %%DATADIR%%/xtab.lua
+%%DATADIR%%/lua/proxy/auto-config.lua
+%%DATADIR%%/lua/proxy/balance.lua
+%%DATADIR%%/lua/proxy/commands.lua
+%%DATADIR%%/lua/proxy/parser.lua
+%%DATADIR%%/lua/proxy/tokenizer.lua
+%%DATADIR%%/lua/proxy/test.lua
 %%EXAMPLESDIR%%/tutorial-basic.lua
 %%EXAMPLESDIR%%/tutorial-constants.lua
 %%EXAMPLESDIR%%/tutorial-inject.lua
 %%EXAMPLESDIR%%/tutorial-keepalive.lua
-%%EXAMPLESDIR%%/tutorial-load-multi.lua
+%%EXAMPLESDIR%%/tutorial-monitor.lua
 %%EXAMPLESDIR%%/tutorial-packets.lua
 %%EXAMPLESDIR%%/tutorial-query-time.lua
 %%EXAMPLESDIR%%/tutorial-resultset.lua
 %%EXAMPLESDIR%%/tutorial-rewrite.lua
+%%EXAMPLESDIR%%/tutorial-routing.lua
 %%EXAMPLESDIR%%/tutorial-states.lua
 %%EXAMPLESDIR%%/tutorial-tokenize.lua
+%%EXAMPLESDIR%%/tutorial-union.lua
 %%EXAMPLESDIR%%/tutorial-warnings.lua
-sbin/mysql-proxy
+@dirrmtry lib/mysql-proxy/plugins
+@dirrmtry lib/mysql-proxy/lua
+@dirrmtry lib/mysql-proxy
 @dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DATADIR%%/proxy
+@dirrmtry %%DATADIR%%/lua/proxy
+@dirrmtry %%DATADIR%%/lua
 @dirrmtry %%DATADIR%%
+@dirrmtry %%DOCSDIR%%
