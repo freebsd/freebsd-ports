@@ -1,0 +1,12 @@
+--- wrestool/Makefile.in.orig	2009-06-30 03:14:01.000000000 +0900
++++ wrestool/Makefile.in	2009-07-07 01:33:24.000000000 +0900
+@@ -558,7 +558,8 @@
+ 
+ wrestool_LDADD = \
+   ../common/libcommon.a \
+-  ../lib/libgnu.a
++  ../lib/libgnu.a \
++  @LIBINTL@
+ 
+ man_MANS = \
+   wrestool.1
