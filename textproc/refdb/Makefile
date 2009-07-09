@@ -7,6 +7,7 @@
 
 PORTNAME=	refdb
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SFE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -15,6 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Bibliographic reference database
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		btparse.0:${PORTSDIR}/textproc/btparse \
 		dbi.0:${PORTSDIR}/databases/libdbi
 
 USE_GMAKE=	yes
