@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JO/JOESUF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tiger@whitetigersd.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast (XS) implementation of the Longest Common Subsequence Algorithm
 
 PERL_CONFIGURE=	5.8.0+

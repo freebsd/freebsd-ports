@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.hick.org/code/skape/radauth/
 DISTNAME=	radauth-${PORTVERSION}
 
-MAINTAINER=	tiger@whitetigersd.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin for checking radius server
 
 NAGIOS_PLUGIN_DIR?=	libexec/nagios
