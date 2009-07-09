@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tac_plus
-PORTVERSION=	F4.0.4.15
+PORTVERSION=	F4.0.4.18
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/tac_plus/
-DISTNAME=	tacacs+-F4.0.4.15
+DISTNAME=	tacacs+-F4.0.4.18
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	The Cisco remote authentication/authorization/accounting server
@@ -28,16 +28,6 @@ CONFLICTS=	ru-tac+ia-[0-9]* tac_plus-libradius-[0-9]*
 # check expiration dates against 'expire' field of master.passwd file
 .if defined(TAC_EXPIRE_MASTER_PASSWD)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bb
-.endif
-
-# finger output differs for CISCO IOS versions 11 and 12.
-# Define version of your IOS (default is 12):
-# Example: make TAC_IOS_VERSION=11
-#
-.if defined(TAC_IOS_VERSION)
-CFLAGS+=	-DTAC_IOS_VERSION=${TAC_IOS_VERSION}
-.else
-CFLAGS+=	-DTAC_IOS_VERSION=12
 .endif
 
 .if exists(/usr/include/skey.h) && !defined(WITHOUT_SKEY)

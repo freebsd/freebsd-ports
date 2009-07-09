@@ -1,25 +1,26 @@
---- Makefile.in.orig	Thu Sep 14 21:41:02 2006
-+++ Makefile.in	Sun Oct 29 03:04:34 2006
-@@ -71,7 +71,8 @@ am_tac_plus_OBJECTS = tac_plus.$(OBJEXT)
- 	config.$(OBJEXT) expire.$(OBJEXT) programs.$(OBJEXT) \
- 	default_fn.$(OBJEXT) pw.$(OBJEXT) utils.$(OBJEXT) \
- 	default_v0_fn.$(OBJEXT) hash.$(OBJEXT) pwlib.$(OBJEXT) \
--	do_acct.$(OBJEXT) maxsess.$(OBJEXT) regexp.$(OBJEXT)
-+	do_acct.$(OBJEXT) maxsess.$(OBJEXT) regexp.$(OBJEXT) \
-+	opie_fn.$(OBJEXT)
+--- Makefile.in.orig	2009-03-02 12:18:21.000000000 -0500
++++ Makefile.in	2009-07-08 22:29:00.000000000 -0400
+@@ -63,7 +63,8 @@ am__tac_plus_SOURCES_DIST = tac_plus.c a
+ 	report.c authen.c dump.c md5.c sendauth.c author.c enable.c \
+ 	packet.c sendpass.c choose_authen.c encrypt.c parse.c config.c \
+ 	expire.c programs.c default_fn.c pw.c utils.c default_v0_fn.c \
+-	hash.c pwlib.c do_acct.c maxsess.c regexp.c skey_fn.c
++	hash.c pwlib.c do_acct.c maxsess.c regexp.c skey_fn.c \
++	opie_fn.c
+ @TACSKEY_TRUE@am__objects_1 = skey_fn.$(OBJEXT)
+ am_tac_plus_OBJECTS = tac_plus.$(OBJEXT) acct.$(OBJEXT) \
+ 	do_author.$(OBJEXT) md4.$(OBJEXT) report.$(OBJEXT) \
+@@ -74,7 +75,8 @@ am_tac_plus_OBJECTS = tac_plus.$(OBJEXT)
+ 	expire.$(OBJEXT) programs.$(OBJEXT) default_fn.$(OBJEXT) \
+ 	pw.$(OBJEXT) utils.$(OBJEXT) default_v0_fn.$(OBJEXT) \
+ 	hash.$(OBJEXT) pwlib.$(OBJEXT) do_acct.$(OBJEXT) \
+-	maxsess.$(OBJEXT) regexp.$(OBJEXT) $(am__objects_1)
++	maxsess.$(OBJEXT) regexp.$(OBJEXT) \
++	opie_fn.$(OBJEXT) $(am__objects_1)
  tac_plus_OBJECTS = $(am_tac_plus_OBJECTS)
  am__DEPENDENCIES_1 =
  tac_plus_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@@ -237,7 +238,7 @@ tac_plus_SOURCES = tac_plus.c \
- 	config.c        expire.c     programs.c \
- 	default_fn.c    pw.c         utils.c \
- 	default_v0_fn.c hash.c       pwlib.c \
--	do_acct.c       maxsess.c    regexp.c
-+	do_acct.c       maxsess.c    regexp.c opie_fn.c
- 
- tac_plus_LDADD = $(WRAPLIBS)
- LDADD = @PROFLIBS@
-@@ -248,7 +249,7 @@ noinst_HEADERS = md4.h mschap.h regexp.h
+@@ -257,7 +259,7 @@ noinst_HEADERS = md4.h mschap.h regexp.h
  		expire.h md5.h parse.h pathsl.h regmagic.h
  
  man_gen_MANS = tac_plus.8 tac_plus.conf.5
@@ -28,7 +29,7 @@
  man_MANS = $(man_gen_MANS) $(man_nogen_MANS)
  
  # scripts that are built
-@@ -432,6 +433,7 @@ distclean-compile:
+@@ -443,6 +445,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendauth.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendpass.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/skey_fn.Po@am__quote@
@@ -36,7 +37,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_plus.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_pwd.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Po@am__quote@
-@@ -832,8 +834,7 @@ info: info-am
+@@ -845,8 +848,7 @@ info: info-am
  
  info-am:
  
@@ -44,5 +45,5 @@
 -	install-pkgdataSCRIPTS
 +install-data-am: install-man
  
- install-exec-am: install-binPROGRAMS
+ install-dvi: install-dvi-am
  

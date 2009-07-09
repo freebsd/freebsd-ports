@@ -7,11 +7,16 @@
 #
 # Add the following line to /etc/rc.conf to enable the TACACS+ daemon:
 #
-# tac_plus_enable="YES"
-#
-
-tac_plus_enable=${tac_plus_enable-"NO"}
-tac_plus_flags=${tac_plus_flags-"-C %%PREFIX%%/etc/tac_plus.conf"}
+# tac_plus_enable (bool):    Set to "NO" by default
+#    Set it to "YES" to enable tac_plus
+# tac_plus_flags (str):      Set to "" by default
+#    Extra flags to be passed to start command
+# tac_plus_profiles (str):   Set to "" by default
+#    Allows you to run multiple tac_plus daemons with
+#    different settings
+# tac_plus_configfile (str): Set to "%%PREFIX%%/etc/tac_plus.conf" by default
+#    Allows you to specify a different config file for
+#    the tac_plus daemon
 
 . %%RC_SUBR%%
 
@@ -20,6 +25,73 @@ rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/tac_plus"
 pidfile="/var/run/${name}.pid"
+tac_plus_enable=${tac_plus_enable:-"NO"}
+tac_plus_flags=${tac_plus_flags:-}
+tac_plus_profiles=${tac_plus_profiles:-}
+tac_plus_configfile=${tac_plus_configfile:-"%%PREFIX%%/etc/tac_plus.conf"}
 
 load_rc_config ${name}
+
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${tac_plus_profiles}" != "x" ]; then
+	eval tac_plus_configfile="\${tac_plus_${profile}_configfile:-}"
+	if [ "x${tac_plus_configfile}" = "x" ]; then
+	    echo "You must define a configuration file (tac_plus_${profile}_configfile)"
+	    exit 1
+	fi
+	required_files="${tac_plus_configfile}"
+	eval tac_plus_enable="\${tac_plus_${profile}_enable:-${tac_plus_enable}}"
+	eval tac_plus_flags="\${tac_plus_${profile}_flags:-${tac_plus_flags}}"
+	eval tac_plus_port="\${tac_plus_${profile}_port:-}"
+	eval tac_plus_ip="\${tac_plus_${profile}_ip:-}"
+    else
+	echo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${tac_plus_profiles}" != "x" -a "x$1" != "x" ]; then
+	for profile in ${tac_plus_profiles}; do
+	    eval _enable="\${tac_plus_${profile}_enable}"
+	    case "x${_enable:-${tac_plus_enable}}" in
+		x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+			continue
+			;;
+		x[Yy][Ee][Ss])
+
+			;;
+		*)
+			if test -z "$_enable"; then
+			    _var=tac_plus_enable
+			else
+			    _var=tac_plus_"${profile}"_enable
+			fi
+			echo "Bad value "\
+				"'${_enable:-${tac_plus_enable}}' "\
+				"for ${_var}.  "\
+				"Profile ${profile} skipped."
+			continue
+	    esac
+	    echo "====> tac_plus profile: ${profile}"
+	    %%PREFIX%%/etc/rc.d/tac_plus $1 ${profile}
+	    retcode="$?"
+	    if [ "0${retcode}" -ne 0 ]; then
+	        failed="${profile} (${retcode}) ${failed:-}"
+	    else
+	        success="${profile} ${success:-}"
+	    fi
+	done
+	exit 0
+    fi
+fi
+
+tac_plus_flags="-C ${tac_plus_configfile} ${tac_plus_flags}"
+if [ "x${tac_plus_ip}" != "x" ]; then
+    pidfile="${pidfile}.${tac_plus_ip}"
+    tac_plus_flags="${tac_plus_flags} -B ${tac_plus_ip}"
+fi
+if [ "x${tac_plus_port}" != "x" ]; then
+    pidfile="${pidfile}.${tac_plus_port}"
+    tac_plus_flags="${tac_plus_flags} -p ${tac_plus_port}"
+fi
+
 run_rc_command "$1"
