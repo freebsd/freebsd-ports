@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	MasonX-Request-WithApacheSession
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	An interface to Apache::Session for HTML::Mason
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
