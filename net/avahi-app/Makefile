@@ -150,10 +150,10 @@ avahi-post-install:
 .endfor
 	${MKDIR} ${PREFIX}/avahi
 .for f in ${DAEMON_CONFIG_FILES}
-	${INSTALL_DATA} ${WKRSRC}/avahi-daemon/${f} \
+	${INSTALL_DATA} ${WRKSRC}/avahi-daemon/${f} \
 	    	${PREFIX}/etc/avahi/${f}.dist
 	if [ ! -f ${PREFIX}/etc/avahi/${f} ]; then \
-	    	${INSTALL_DATA} ${WKRSRC}/avahi-daemon/${f} \
+	    	${INSTALL_DATA} ${WRKSRC}/avahi-daemon/${f} \
 			${PREFIX}/etc/avahi; \
 	fi
 .endfor
