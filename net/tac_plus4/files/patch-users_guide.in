@@ -1,0 +1,30 @@
+--- users_guide.in.orig	2008-08-20 00:34:57.000000000 -0400
++++ users_guide.in	2009-07-08 22:32:17.000000000 -0400
+@@ -164,7 +164,10 @@ for S/KEY in the Makefile.  I got my S/K
+ crimelab.com but now it appears the only source is ftp.bellcore.com. I
+ suggest you try a web search for s/key source code.
+ 
+-Note: S/KEY is a trademark of Bell Communications Research (Bellcore).
++To use OPIE, you must have built tac_plus with the -DWITH_OPIE flag.
++
++Note: S/KEY and OPIE are a trademark of Bell Communications Research 
++(Bellcore).
+ 
+ Should you need them, there are routines for accessing password files
+ (getpwnam,setpwent,endpwent,setpwfile) in pw.c.
+@@ -454,6 +457,15 @@ be that for each authentiction that is a
+ to be wrong whether it was typed correctly or not.
+ 
+ 
++4. Authentication using opie.
++
++If you have successfully built tac_plus with opie support, you can specify
++a user be authenticated via opie, as follows:
++
++    user = marcus {
++      login = opie
++    }
++
+ RECURSIVE PASSWORD LOOKUPS
+ ---------------------------
+ 
