@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://luaforge.net/frs/download.php/1410/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	pgollucci@@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Lua 5.1 package compatibility layer for Lua 5.0.x
 
 USE_LUA=	5.0
