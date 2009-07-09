@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	MIME-Charset
-PORTVERSION=	1.006.2
+PORTVERSION=	1.007.1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
+# blanket update approval granted, see pr136540
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Charset Informations for MIME
 
