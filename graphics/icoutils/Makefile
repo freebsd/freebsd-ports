@@ -6,37 +6,27 @@
 #
 
 PORTNAME=	icoutils
-PORTVERSION=	0.26.0
-PORTREVISION=	3
+PORTVERSION=	0.27.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_GETTEXT=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lintl"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		extresso.1 genresscript.1 icotool.1 wrestool.1
-
 PLIST_FILES=	\
 		bin/extresso \
 		bin/genresscript \
 		bin/icotool \
 		bin/wrestool
-
-post-patch:
-	@${FIND} ${WRKSRC} -type f -print0 | \
-		${XARGS} -0 -x -n 10 \
-		${REINPLACE_CMD} -E \
-		-e 's|stdint\.h|inttypes\.h|g' \
-		-e 's|/usr/bin/perl|${PERL5}|'
 
 .include <bsd.port.mk>
