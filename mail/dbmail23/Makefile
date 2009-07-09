@@ -7,7 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.3/
 
@@ -17,7 +17,7 @@ COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
 LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
-LIB_DEPENDS+=	zdb.6:${PORTSDIR}/databases/libzdb
+LIB_DEPENDS+=	zdb.7:${PORTSDIR}/databases/libzdb
 
 CONFLICTS=	dbmail-*-2.0.* dbmail-2.1.* dbmail-2.2.*
 NO_LATEST_LINK=	yes
