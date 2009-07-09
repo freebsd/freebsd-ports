@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to calculate m-difference between two objects
 
+DEPRECATED=	the module was removed from CPAN
+EXPIRATION_DATE=	2009-09-09
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Algorithm::MDiff.3

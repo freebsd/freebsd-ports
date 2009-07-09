@@ -17,6 +17,9 @@ COMMENT=	Delay the evaluation of expressions to allow changes to variables
 BUILD_DEPENDS=	p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	the module was removed from CPAN
+EXPIRATION_DATE=	2009-09-09
+
 MAN3=	Data::Postponed.3 \
 	Data::Postponed::Forever.3 \
 	Data::Postponed::Once.3 \
