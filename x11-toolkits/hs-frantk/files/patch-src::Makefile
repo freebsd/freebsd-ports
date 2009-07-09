@@ -26,7 +26,7 @@
 -CC_INC =  -I/usr/X11/include -I/usr/local/include
 +#CC = gcc
 +CC_OPTS = ${CFLAGS}
-+CC_INC =  -I${LOCALBASE}/include -I/usr/local/include/tk8.4 -I/usr/local/include/tcl8.4
++CC_INC =  -I${LOCALBASE}/include -I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include/tcl8.4
  
 -GHC = ghc-5.00.2
 -GHC-PKG=ghc-pkg-5.00.2
@@ -51,7 +51,7 @@
  # The directories containing the X11, Tcl and Tk (binary) libraries:
  
 -CCLIB = -L /usr/lib/X11 -L /usr/local/lib
-+CCLIB = -L ${LOCALBASE}/lib/X11 -L /usr/local/lib
++CCLIB = -L ${LOCALBASE}/lib/X11 -L ${LOCALBASE}/lib
  
  
  # the libraries required by Tcl/Tk:
