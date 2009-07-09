@@ -1,45 +1,45 @@
---- examples/Makefile.in.orig	2007-09-12 00:55:20.000000000 +0800
-+++ examples/Makefile.in	2007-09-22 07:50:30.000000000 +0800
-@@ -157,6 +157,7 @@
- build_os = @build_os@
+--- examples/Makefile.in.orig	2009-05-18 22:15:02.000000000 +0800
++++ examples/Makefile.in	2009-07-09 08:39:44.000000000 +0800
+@@ -162,6 +162,7 @@
  build_vendor = @build_vendor@
+ builddir = @builddir@
  datadir = @datadir@
-+examplesdir = @datadir@/examples/mysql-proxy
- exec_prefix = @exec_prefix@
- host = @host@
- host_alias = @host_alias@
-@@ -236,20 +237,20 @@
- uninstall-info-am:
- install-dist_dataDATA: $(dist_data_DATA)
++exampledir = @datadir@/examples/mysql-proxy
+ datarootdir = @datarootdir@
+ docdir = @docdir@
+ dvidir = @dvidir@
+@@ -257,20 +258,20 @@
+ 	-rm -rf .libs _libs
+ install-dist_docDATA: $(dist_doc_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
-+	test -z "$(examplesdir)" || $(mkdir_p) "$(DESTDIR)$(examplesdir)"
- 	@list='$(dist_data_DATA)'; for p in $$list; do \
+-	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
++	test -z "$(exampledir)" || $(MKDIR_P) "$(DESTDIR)$(exampledir)"
+ 	@list='$(dist_doc_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f=$(am__strip_dir) \
--	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
--	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
-+	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(examplesdir)/$$f'"; \
-+	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(examplesdir)/$$f"; \
+-	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+-	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
++	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(exampledir)/$$f'"; \
++	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(exampledir)/$$f"; \
  	done
  
- uninstall-dist_dataDATA:
+ uninstall-dist_docDATA:
  	@$(NORMAL_UNINSTALL)
- 	@list='$(dist_data_DATA)'; for p in $$list; do \
+ 	@list='$(dist_doc_DATA)'; for p in $$list; do \
  	  f=$(am__strip_dir) \
--	  echo " rm -f '$(DESTDIR)$(datadir)/$$f'"; \
--	  rm -f "$(DESTDIR)$(datadir)/$$f"; \
-+	  echo " rm -f '$(DESTDIR)$(examplesdir)/$$f'"; \
-+	  rm -f "$(DESTDIR)$(examplesdir)/$$f"; \
+-	  echo " rm -f '$(DESTDIR)$(docdir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(exampledir)/$$f'"; \
++	  rm -f "$(DESTDIR)$(exampledir)/$$f"; \
  	done
  tags: TAGS
  TAGS:
-@@ -289,7 +290,7 @@
+@@ -309,7 +310,7 @@
  check: check-am
  all-am: Makefile $(DATA)
  installdirs:
--	for dir in "$(DESTDIR)$(datadir)"; do \
-+	for dir in "$(DESTDIR)$(examplesdir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+-	for dir in "$(DESTDIR)$(docdir)"; do \
++	for dir in "$(DESTDIR)$(exampledir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am

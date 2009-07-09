@@ -1,0 +1,22 @@
+--- lib/proxy/Makefile.in.orig	2009-04-04 20:13:04.000000000 +0600
++++ lib/proxy/Makefile.in	2009-05-05 12:48:40.000000000 +0600
+@@ -16,7 +16,7 @@
+ 
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = $(datadir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+ install_sh_DATA = $(install_sh) -c -m 644
+--- lib/proxy/Makefile.in.orig	2009-05-18 22:15:03.000000000 +0800
++++ lib/proxy/Makefile.in	2009-07-08 17:41:43.000000000 +0800
+@@ -192,7 +192,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-luaextdir = ${pkglibdir}/lua/
++luaextdir = ${pkgdatadir}/lua/
+ pkglib_proxydir = $(luaextdir)/proxy
+ dist_pkglib_proxy_DATA = \
+ 		 auto-config.lua \

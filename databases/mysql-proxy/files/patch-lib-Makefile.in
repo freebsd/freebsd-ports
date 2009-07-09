@@ -1,0 +1,29 @@
+--- lib/Makefile.in.orig	2009-04-04 20:32:01.000000000 +0600
++++ lib/Makefile.in	2009-05-05 17:02:50.000000000 +0600
+@@ -126,9 +126,9 @@
+ 	installcheck-recursive installdirs-recursive pdf-recursive \
+ 	ps-recursive uninstall-recursive
+ am__dist_doc_DATA_DIST = active-queries.lua active-transactions.lua \
+-	admin-sql.lua analyze-query.lua auditing.lua \
++	admin-sql.lua admin.lua analyze-query.lua auditing.lua \
+ 	commit-obfuscator.lua commit-obfuscator.msc histogram.lua \
+-	load-multi.lua ro-balance.lua ro-pooling.lua rw-splitting.lua \
++	load-multi.lua reporter.lua ro-balance.lua ro-pooling.lua rw-splitting.lua \
+ 	xtab.lua
+ dist_docDATA_INSTALL = $(INSTALL_DATA)
+ DATA = $(dist_doc_DATA)
+@@ -278,12 +278,14 @@
+ 		active-queries.lua \
+ 		active-transactions.lua \
+ 		admin-sql.lua \
++		admin.lua \
+ 		analyze-query.lua \
+ 		auditing.lua \
+ 		commit-obfuscator.lua \
+ 		commit-obfuscator.msc \
+ 		histogram.lua \
+ 		load-multi.lua \
++		reporter.lua \
+ 		ro-balance.lua \
+ 		ro-pooling.lua \
+ 		rw-splitting.lua \
