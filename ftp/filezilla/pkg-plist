@@ -11,6 +11,7 @@ bin/fzputtygen
 %%NLS%%share/locale/ka/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ne/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/filezilla.mo
@@ -60,6 +61,7 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/16x16/file.png
 %%DATADIR%%/resources/16x16/filezilla.png
 %%DATADIR%%/resources/16x16/filter.png
+%%DATADIR%%/resources/16x16/find.png
 %%DATADIR%%/resources/16x16/folder.png
 %%DATADIR%%/resources/16x16/folderclosed.png
 %%DATADIR%%/resources/16x16/localtreeview.png
@@ -303,6 +305,7 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/minimal/16x16/downloadadd.png
 %%DATADIR%%/resources/minimal/16x16/file.png
 %%DATADIR%%/resources/minimal/16x16/filter.png
+%%DATADIR%%/resources/minimal/16x16/find.png
 %%DATADIR%%/resources/minimal/16x16/folder.png
 %%DATADIR%%/resources/minimal/16x16/folderback.png
 %%DATADIR%%/resources/minimal/16x16/folderclosed.png
@@ -336,6 +339,7 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/opencrystal/16x16/downloadadd.png
 %%DATADIR%%/resources/opencrystal/16x16/file.png
 %%DATADIR%%/resources/opencrystal/16x16/filter.png
+%%DATADIR%%/resources/opencrystal/16x16/find.png
 %%DATADIR%%/resources/opencrystal/16x16/folder.png
 %%DATADIR%%/resources/opencrystal/16x16/folderback.png
 %%DATADIR%%/resources/opencrystal/16x16/folderclosed.png
@@ -367,6 +371,7 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/opencrystal/32x32/downloadadd.png
 %%DATADIR%%/resources/opencrystal/32x32/file.png
 %%DATADIR%%/resources/opencrystal/32x32/filter.png
+%%DATADIR%%/resources/opencrystal/32x32/find.png
 %%DATADIR%%/resources/opencrystal/32x32/folder.png
 %%DATADIR%%/resources/opencrystal/32x32/folderback.png
 %%DATADIR%%/resources/opencrystal/32x32/folderclosed.png
@@ -397,6 +402,7 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/opencrystal/48x48/downloadadd.png
 %%DATADIR%%/resources/opencrystal/48x48/file.png
 %%DATADIR%%/resources/opencrystal/48x48/filter.png
+%%DATADIR%%/resources/opencrystal/48x48/find.png
 %%DATADIR%%/resources/opencrystal/48x48/folder.png
 %%DATADIR%%/resources/opencrystal/48x48/folderback.png
 %%DATADIR%%/resources/opencrystal/48x48/folderclosed.png
@@ -427,6 +433,7 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/menus.xrc
 %%DATADIR%%/resources/netconfwizard.xrc
 %%DATADIR%%/resources/quickconnectbar.xrc
+%%DATADIR%%/resources/settings.xrc
 %%DATADIR%%/resources/theme.xml
 %%DATADIR%%/resources/toolbar.xrc
 %%DATADIR%%/resources/up.png
@@ -479,6 +486,8 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/ro_RO
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/nn_NO/LC_MESSAGES
 @dirrmtry share/locale/nn_NO
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
