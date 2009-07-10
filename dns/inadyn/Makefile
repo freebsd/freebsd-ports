@@ -9,8 +9,9 @@ PORTNAME=	inadyn
 PORTVERSION=	1.96.2
 PORTREVISION=	2
 CATEGORIES=	dns
-MASTER_SITES=	http://inadyn.ina-tech.net/ \
-		http://www.mirrorservice.org/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://www.inatech.eu/inadyn/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dhn
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
