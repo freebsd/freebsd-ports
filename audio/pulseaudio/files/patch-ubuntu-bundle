@@ -559,7 +559,7 @@ Index: pulseaudio-0.9.14/src/modules/module-oss.c
      int mode, caps;
      pa_bool_t record = TRUE, playback = TRUE, use_mmap = TRUE;
      pa_sample_spec ss;
-@@ -1201,12 +1201,12 @@
+@@ -1201,14 +1201,14 @@
  
      if (use_mmap && (!(caps & DSP_CAP_MMAP) || !(caps & DSP_CAP_TRIGGER))) {
          pa_log_info("OSS device not mmap capable, falling back to UNIX read/write mode.");
@@ -567,11 +567,13 @@ Index: pulseaudio-0.9.14/src/modules/module-oss.c
 +        use_mmap = FALSE;
      }
  
+ #ifndef __FreeBSD__
      if (use_mmap && mode == O_WRONLY) {
          pa_log_info("Device opened for playback only, cannot do memory mapping, falling back to UNIX write() mode.");
 -        use_mmap = 0;
 +        use_mmap = FALSE;
      }
+ #endif
  
      if (pa_oss_get_hw_description(dev, hwdesc, sizeof(hwdesc)) >= 0)
 @@ -1216,6 +1216,7 @@
