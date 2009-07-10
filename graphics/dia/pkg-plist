@@ -1,16 +1,20 @@
 bin/dia
 lib/dia/libaadl_objects.la
 lib/dia/libaadl_objects.so
-lib/dia/libbondgraph_objects.la
-lib/dia/libbondgraph_objects.so
+lib/dia/libart_filter.so
+lib/dia/libart_filter.la
 lib/dia/libcairo_filter.la
 lib/dia/libcairo_filter.so
 lib/dia/libcgm_filter.la
 lib/dia/libcgm_filter.so
 lib/dia/libchronogram_objects.la
 lib/dia/libchronogram_objects.so
+lib/dia/libcustom_lines_objects.so
+lib/dia/libcustom_lines_objects.la
 lib/dia/libcustom_objects.la
 lib/dia/libcustom_objects.so
+lib/dia/libdb_objects.so
+lib/dia/libdb_objects.la
 lib/dia/libdia.la
 lib/dia/libdia.so
 lib/dia/libdxf_filter.la
@@ -41,10 +45,12 @@ lib/dia/libpgf_filter.la
 lib/dia/libpgf_filter.so
 lib/dia/libpixbuf_filter.la
 lib/dia/libpixbuf_filter.so
+lib/dia/libpostscript_filter.so
+lib/dia/libpostscript_filter.la
 lib/dia/libpstricks_filter.la
 lib/dia/libpstricks_filter.so
-%%PYTHON:%%lib/dia/libpython_plugin.la
-%%PYTHON:%%lib/dia/libpython_plugin.so
+%%PYTHON%%lib/dia/libpython_plugin.la
+%%PYTHON%%lib/dia/libpython_plugin.so
 lib/dia/libsadt_objects.la
 lib/dia/libsadt_objects.so
 lib/dia/libshape_filter.la
@@ -64,21 +70,21 @@ lib/dia/libxfig_filter.so
 lib/dia/libxslt_filter.la
 lib/dia/libxslt_filter.so
 share/applications/dia.desktop
-share/dia/dia.xpm
-share/dia/dia_logo.png
-%%PYTHON:%%share/dia/python-startup.py
-%%PYTHON:%%share/dia/python/aobjects.py
-%%PYTHON:%%share/dia/python/codegen.py
-%%PYTHON:%%share/dia/python/diasvg.py
-%%PYTHON:%%share/dia/python/diasvg_import.py
-%%PYTHON:%%share/dia/python/dot.py
-%%PYTHON:%%share/dia/python/doxrev.py
-%%PYTHON:%%share/dia/python/group_props.py
-%%PYTHON:%%share/dia/python/gtkcons.py
-%%PYTHON:%%share/dia/python/otypes.py
-%%PYTHON:%%share/dia/python/pydiadoc.py
-%%PYTHON:%%share/dia/python/scascale.py
-%%PYTHON:%%share/dia/python/select_by.py
+%%PYTHON%%share/dia/python-startup.py
+%%PYTHON%%share/dia/python/allprops.py
+%%PYTHON%%share/dia/python/aobjects.py
+%%PYTHON%%share/dia/python/codegen.py
+%%PYTHON%%share/dia/python/diasvg.py
+%%PYTHON%%share/dia/python/diasvg_import.py
+%%PYTHON%%share/dia/python/dot.py
+%%PYTHON%%share/dia/python/doxrev.py
+%%PYTHON%%share/dia/python/gtkcons.py
+%%PYTHON%%share/dia/python/imgmap.py
+%%PYTHON%%share/dia/python/otypes.py
+%%PYTHON%%share/dia/python/pydiadoc.py
+%%PYTHON%%share/dia/python/scascale.py
+%%PYTHON%%share/dia/python/select_by.py
+%%PYTHON%%share/dia/python/select_empty.py
 share/dia/shapes/Assorted/arrow-chevron.png
 share/dia/shapes/Assorted/arrow-chevron.shape
 share/dia/shapes/Assorted/arrow-down.png
@@ -1313,6 +1319,32 @@ share/dia/shapes/Gane_and_Sarson/entity.png
 share/dia/shapes/Gane_and_Sarson/entity.shape
 share/dia/shapes/Gane_and_Sarson/process.png
 share/dia/shapes/Gane_and_Sarson/process.shape
+share/dia/shapes/Lights/ACL.shape
+share/dia/shapes/Lights/ACL.png
+share/dia/shapes/Lights/Blacklight.shape
+share/dia/shapes/Lights/Blacklight.png
+share/dia/shapes/Lights/Blinders.shape
+share/dia/shapes/Lights/Blinders.png
+share/dia/shapes/Lights/ERS.shape
+share/dia/shapes/Lights/ERS.png
+share/dia/shapes/Lights/Fresnel.shape
+share/dia/shapes/Lights/Fresnel.png
+share/dia/shapes/Lights/Moving_head.shape
+share/dia/shapes/Lights/Moving_head.png
+share/dia/shapes/Lights/PAR_floor.shape
+share/dia/shapes/Lights/PAR_floor.png
+share/dia/shapes/Lights/PAR.shape
+share/dia/shapes/Lights/PAR.png
+share/dia/shapes/Lights/PC.shape
+share/dia/shapes/Lights/PC.png
+share/dia/shapes/Lights/Scanner.shape
+share/dia/shapes/Lights/Scanner.png
+share/dia/shapes/Lights/Striplight.shape
+share/dia/shapes/Lights/Striplight.png
+share/dia/shapes/Lights/Stroboscope.shape
+share/dia/shapes/Lights/Stroboscope.png
+share/dia/shapes/Lights/Structure.shape
+share/dia/shapes/Lights/Structure.png
 share/dia/shapes/Logic/and.png
 share/dia/shapes/Logic/and.shape
 share/dia/shapes/Logic/buffer.png
@@ -1393,6 +1425,10 @@ share/dia/shapes/Map/Isometric/Train2.png
 share/dia/shapes/Map/Isometric/Train2.shape
 share/dia/shapes/Map/Isometric/Tree1.png
 share/dia/shapes/Map/Isometric/Tree1.shape
+share/dia/shapes/Misc/expended-node.shape
+share/dia/shapes/Misc/expended-node.png
+share/dia/shapes/Misc/expensible-node.shape
+share/dia/shapes/Misc/expensible-node.png
 share/dia/shapes/Misc/file.png
 share/dia/shapes/Misc/file.shape
 share/dia/shapes/Misc/folder.png
@@ -1501,8 +1537,6 @@ share/dia/shapes/Pneumatic/seijack.png
 share/dia/shapes/Pneumatic/seijack.shape
 share/dia/shapes/Pneumatic/seojack.png
 share/dia/shapes/Pneumatic/seojack.shape
-share/dia/shapes/RDP/arc.png
-share/dia/shapes/RDP/arc_inhibiteur.png
 share/dia/shapes/RDP/place.png
 share/dia/shapes/RDP/place.shape
 share/dia/shapes/RDP/place_marquee.png
@@ -1596,6 +1630,7 @@ share/dia/sheets/ChemEng.sheet
 share/dia/sheets/Circuit.sheet
 share/dia/sheets/Contact.sheet
 share/dia/sheets/Cybernetics.sheet
+share/dia/sheets/Database.sheet
 share/dia/sheets/ER.sheet
 share/dia/sheets/ER/weakentity.png
 share/dia/sheets/Electric.sheet
@@ -1644,6 +1679,7 @@ share/dia/sheets/KAOS/performs.png
 share/dia/sheets/KAOS/requirement.png
 share/dia/sheets/KAOS/responsibility.png
 share/dia/sheets/KAOS/softgoal.png
+share/dia/sheets/Lights.sheet
 share/dia/sheets/Logic.sheet
 share/dia/sheets/MSE.sheet
 share/dia/sheets/Misc.sheet
@@ -1667,7 +1703,9 @@ share/dia/sheets/jigsaw.sheet
 share/dia/sheets/network.sheet
 share/dia/sheets/sybase.sheet
 share/dia/ui/display-ui.xml
+share/dia/ui/integrated-ui.xml
 share/dia/ui/popup-ui.xml
+share/dia/ui/toolbar-ui.xml
 share/dia/ui/toolbox-ui.xml
 share/dia/xslt/dia-uml.xsl
 share/dia/xslt/dia-uml2c++.xsl
@@ -1677,38 +1715,9 @@ share/dia/xslt/dia-uml2java.xsl
 share/dia/xslt/dia-uml2owl.xsl
 share/dia/xslt/dia-uml2python.xsl
 share/dia/xslt/stylesheets.xml
-share/gnome/help/dia/C
-share/gnome/help/dia/en/authors.xml
-share/gnome/help/dia/en/dia.xml
-share/gnome/help/dia/en/entities.xml
-share/gnome/help/dia/en/graphics/greendots.png
-share/gnome/help/dia/en/graphics/home_network.png
-share/gnome/help/dia/en/graphics/line_icon.png
-share/gnome/help/dia/en/graphics/line_props.png
-share/gnome/help/dia/en/intro.xml
-share/gnome/help/dia/en/license.xml
-share/gnome/help/dia/en/usage-canvas.xml
-share/gnome/help/dia/en/usage-customization.xml
-share/gnome/help/dia/en/usage-layers.xml
-share/gnome/help/dia/en/usage-loadsave.xml
-share/gnome/help/dia/en/usage-objects-basic.xml
-share/gnome/help/dia/en/usage-objects-selecting.xml
-share/gnome/help/dia/en/usage-objects-special.xml
-share/gnome/help/dia/en/usage-objects.xml
-share/gnome/help/dia/en/usage-quickstart.xml
-share/gnome/help/dia/eu/dia.xml
-share/gnome/help/dia/eu/graphics/greendots.png
-share/gnome/help/dia/eu/graphics/home_network.png
-share/gnome/help/dia/eu/graphics/line_icon.png
-share/gnome/help/dia/eu/graphics/line_props.png
-share/gnome/help/dia/pl/dia.xml
-share/gnome/help/dia/pl/graphics/greendots.png
-share/gnome/help/dia/pl/graphics/home_network.png
-share/gnome/help/dia/pl/graphics/line_props.png
+share/dia/dia-splash.png
 share/mime-info/dia.keys
 share/mime-info/dia.mime
-share/pixmaps/dia-diagram.png
-share/pixmaps/dia_gnome_icon.png
 share/locale/am/LC_MESSAGES/dia.mo
 share/locale/ar/LC_MESSAGES/dia.mo
 share/locale/az/LC_MESSAGES/dia.mo
@@ -1719,6 +1728,7 @@ share/locale/ca/LC_MESSAGES/dia.mo
 share/locale/cs/LC_MESSAGES/dia.mo
 share/locale/da/LC_MESSAGES/dia.mo
 share/locale/de/LC_MESSAGES/dia.mo
+share/locale/dz/LC_MESSAGES/dia.mo
 share/locale/el/LC_MESSAGES/dia.mo
 share/locale/en_CA/LC_MESSAGES/dia.mo
 share/locale/en_GB/LC_MESSAGES/dia.mo
@@ -1736,16 +1746,20 @@ share/locale/is/LC_MESSAGES/dia.mo
 share/locale/it/LC_MESSAGES/dia.mo
 share/locale/ja/LC_MESSAGES/dia.mo
 share/locale/ko/LC_MESSAGES/dia.mo
+share/locale/kn/LC_MESSAGES/dia.mo
 share/locale/lt/LC_MESSAGES/dia.mo
 share/locale/lv/LC_MESSAGES/dia.mo
 share/locale/mk/LC_MESSAGES/dia.mo
 share/locale/ml/LC_MESSAGES/dia.mo
 share/locale/mn/LC_MESSAGES/dia.mo
+share/locale/mr/LC_MESSAGES/dia.mo
 share/locale/ms/LC_MESSAGES/dia.mo
+share/locale/oc/LC_MESSAGES/dia.mo
 share/locale/nb/LC_MESSAGES/dia.mo
 share/locale/ne/LC_MESSAGES/dia.mo
 share/locale/nl/LC_MESSAGES/dia.mo
 share/locale/nn/LC_MESSAGES/dia.mo
+share/locale/pa/LC_MESSAGES/dia.mo
 share/locale/pl/LC_MESSAGES/dia.mo
 share/locale/pt/LC_MESSAGES/dia.mo
 share/locale/pt_BR/LC_MESSAGES/dia.mo
@@ -1763,18 +1777,211 @@ share/locale/tr/LC_MESSAGES/dia.mo
 share/locale/uk/LC_MESSAGES/dia.mo
 share/locale/vi/LC_MESSAGES/dia.mo
 share/locale/zh_CN/LC_MESSAGES/dia.mo
+share/locale/zh_HK/LC_MESSAGES/dia.mo
 share/locale/zh_TW/LC_MESSAGES/dia.mo
-@dirrm share/omf/dia
-@dirrm share/gnome/help/dia/pl/graphics
-@dirrm share/gnome/help/dia/pl
-@dirrm share/gnome/help/dia/eu/graphics
-@dirrm share/gnome/help/dia/eu
-@dirrm share/gnome/help/dia/en/graphics
-@dirrm share/gnome/help/dia/en
-@dirrm share/gnome/help/dia
+%%GNOME%%share/gnome/help/dia/en/dia.xml
+%%GNOME%%share/gnome/help/dia/en/authors.xml
+%%GNOME%%share/gnome/help/dia/en/dia-cmdline.xml
+%%GNOME%%share/gnome/help/dia/en/entities.xml
+%%GNOME%%share/gnome/help/dia/en/intro.xml
+%%GNOME%%share/gnome/help/dia/en/license.xml
+%%GNOME%%share/gnome/help/dia/en/usage-canvas.xml
+%%GNOME%%share/gnome/help/dia/en/usage-customization.xml
+%%GNOME%%share/gnome/help/dia/en/usage-layers.xml
+%%GNOME%%share/gnome/help/dia/en/usage-loadsave.xml
+%%GNOME%%share/gnome/help/dia/en/usage-objects-basic.xml
+%%GNOME%%share/gnome/help/dia/en/usage-objects-selecting.xml
+%%GNOME%%share/gnome/help/dia/en/usage-objects-special.xml
+%%GNOME%%share/gnome/help/dia/en/usage-objects.xml
+%%GNOME%%share/gnome/help/dia/en/usage-quickstart.xml
+%%GNOME%%share/gnome/help/dia/en/custom-shapes.xml
+%%GNOME%%share/gnome/help/dia/en/dia-1.xml
+%%GNOME%%share/gnome/help/dia/en/graphics/adjacent.png
+%%GNOME%%share/gnome/help/dia/en/graphics/after-hor-spread.png
+%%GNOME%%share/gnome/help/dia/en/graphics/after-vert-spread.png
+%%GNOME%%share/gnome/help/dia/en/graphics/align-bottom.png
+%%GNOME%%share/gnome/help/dia/en/graphics/align-center.png
+%%GNOME%%share/gnome/help/dia/en/graphics/align-left.png
+%%GNOME%%share/gnome/help/dia/en/graphics/align-menu.png
+%%GNOME%%share/gnome/help/dia/en/graphics/align-middle.png
+%%GNOME%%share/gnome/help/dia/en/graphics/align-right.png
+%%GNOME%%share/gnome/help/dia/en/graphics/align-top.png
+%%GNOME%%share/gnome/help/dia/en/graphics/arrow-style.png
+%%GNOME%%share/gnome/help/dia/en/graphics/assorted-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/before-hor-spread.png
+%%GNOME%%share/gnome/help/dia/en/graphics/before-left.png
+%%GNOME%%share/gnome/help/dia/en/graphics/before-top.png
+%%GNOME%%share/gnome/help/dia/en/graphics/before-vert-spread.png
+%%GNOME%%share/gnome/help/dia/en/graphics/bezierline-rightclick.png
+%%GNOME%%share/gnome/help/dia/en/graphics/stacked.png
+%%GNOME%%share/gnome/help/dia/en/graphics/canvas-zoom.png
+%%GNOME%%share/gnome/help/dia/en/graphics/cisco-computer-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/cisco-misc-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/cisco-network-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/cisco-switch-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/cisco-telephony-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/color-dropdown.png
+%%GNOME%%share/gnome/help/dia/en/graphics/color-selector1.png
+%%GNOME%%share/gnome/help/dia/en/graphics/color_selector.png
+%%GNOME%%share/gnome/help/dia/en/graphics/connect-fixed.png
+%%GNOME%%share/gnome/help/dia/en/graphics/connect-middle.png
+%%GNOME%%share/gnome/help/dia/en/graphics/default-colors.png
+%%GNOME%%share/gnome/help/dia/en/graphics/defaults-box.png
+%%GNOME%%share/gnome/help/dia/en/graphics/defaults-text.png
+%%GNOME%%share/gnome/help/dia/en/graphics/delete-text.png
+%%GNOME%%share/gnome/help/dia/en/graphics/dia-startup.png
+%%GNOME%%share/gnome/help/dia/en/graphics/diagram-properties-grid.png
+%%GNOME%%share/gnome/help/dia/en/graphics/diagram-properties.png
+%%GNOME%%share/gnome/help/dia/en/graphics/diagram-tree-sort.png
+%%GNOME%%share/gnome/help/dia/en/graphics/diagram-tree.png
+%%GNOME%%share/gnome/help/dia/en/graphics/edit-text.png
+%%GNOME%%share/gnome/help/dia/en/graphics/file-preferences-diagram.png
+%%GNOME%%share/gnome/help/dia/en/graphics/file-preferences-favorites.png
+%%GNOME%%share/gnome/help/dia/en/graphics/file-preferences-tree.png
+%%GNOME%%share/gnome/help/dia/en/graphics/file-preferences-ui.png
+%%GNOME%%share/gnome/help/dia/en/graphics/file-preferences-view.png
+%%GNOME%%share/gnome/help/dia/en/graphics/flowchart-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/greendots.png
+%%GNOME%%share/gnome/help/dia/en/graphics/home_network.png
+%%GNOME%%share/gnome/help/dia/en/graphics/line-arrows.png
+%%GNOME%%share/gnome/help/dia/en/graphics/line-buttons.png
+%%GNOME%%share/gnome/help/dia/en/graphics/line-colors.png
+%%GNOME%%share/gnome/help/dia/en/graphics/line-connect.png
+%%GNOME%%share/gnome/help/dia/en/graphics/line-styles.png
+%%GNOME%%share/gnome/help/dia/en/graphics/line-handles.png
+%%GNOME%%share/gnome/help/dia/en/graphics/line-width.png
+%%GNOME%%share/gnome/help/dia/en/graphics/line_icon.png
+%%GNOME%%share/gnome/help/dia/en/graphics/line_props.png
+%%GNOME%%share/gnome/help/dia/en/graphics/misc-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/network-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/object-group.png
+%%GNOME%%share/gnome/help/dia/en/graphics/polyline-rightclick.png
+%%GNOME%%share/gnome/help/dia/en/graphics/preferences-gridlines.png
+%%GNOME%%share/gnome/help/dia/en/graphics/preferences_fig.png
+%%GNOME%%share/gnome/help/dia/en/graphics/properties-uml-class1.png
+%%GNOME%%share/gnome/help/dia/en/graphics/reverse-colors.png
+%%GNOME%%share/gnome/help/dia/en/graphics/ruler-arrows.png
+%%GNOME%%share/gnome/help/dia/en/graphics/sample-flowchart.png
+%%GNOME%%share/gnome/help/dia/en/graphics/select-area.png
+%%GNOME%%share/gnome/help/dia/en/graphics/select-menu.png
+%%GNOME%%share/gnome/help/dia/en/graphics/selected-object.png
+%%GNOME%%share/gnome/help/dia/en/graphics/sheets-objects.png
+%%GNOME%%share/gnome/help/dia/en/graphics/snaptogrid-button.png
+%%GNOME%%share/gnome/help/dia/en/graphics/standard-line-properties.png
+%%GNOME%%share/gnome/help/dia/en/graphics/toolbox-basic.png
+%%GNOME%%share/gnome/help/dia/en/graphics/toolbox-image.png
+%%GNOME%%share/gnome/help/dia/en/graphics/toolbox-lower.png
+%%GNOME%%share/gnome/help/dia/en/graphics/toolbox-magnify.png
+%%GNOME%%share/gnome/help/dia/en/graphics/toolbox-modify.png
+%%GNOME%%share/gnome/help/dia/en/graphics/toolbox-scroll.png
+%%GNOME%%share/gnome/help/dia/en/graphics/toolbox-special.png
+%%GNOME%%share/gnome/help/dia/en/graphics/toolbox.png
+%%GNOME%%share/gnome/help/dia/en/graphics/uml-shapes.png
+%%GNOME%%share/gnome/help/dia/en/graphics/view-menu.png
+%%GNOME%%share/gnome/help/dia/en/graphics/view-zoom.png
+%%GNOME%%share/gnome/help/dia/en/graphics/zigzagline-rightclick.png
+%%GNOME%%share/gnome/help/dia/fr/dia.xml
+%%GNOME%%share/gnome/help/dia/fr/authors.xml
+%%GNOME%%share/gnome/help/dia/fr/entities.xml
+%%GNOME%%share/gnome/help/dia/fr/intro.xml
+%%GNOME%%share/gnome/help/dia/fr/license.xml
+%%GNOME%%share/gnome/help/dia/fr/usage-canvas.xml
+%%GNOME%%share/gnome/help/dia/fr/usage-customization.xml
+%%GNOME%%share/gnome/help/dia/fr/usage-layers.xml
+%%GNOME%%share/gnome/help/dia/fr/usage-loadsave.xml
+%%GNOME%%share/gnome/help/dia/fr/usage-objects-basic.xml
+%%GNOME%%share/gnome/help/dia/fr/usage-objects-selecting.xml
+%%GNOME%%share/gnome/help/dia/fr/usage-objects-special.xml
+%%GNOME%%share/gnome/help/dia/fr/usage-objects.xml
+%%GNOME%%share/gnome/help/dia/fr/usage-quickstart.xml
+%%GNOME%%share/gnome/help/dia/fr/custom-shapes.xml
+%%GNOME%%share/gnome/help/dia/fr/dia-cmdline.xml
+%%GNOME%%share/gnome/help/dia/fr/dia-1.xml
+%%GNOME%%share/gnome/help/dia/fr/graphics/color_selector.png
+%%GNOME%%share/gnome/help/dia/fr/graphics/greendots.png
+%%GNOME%%share/gnome/help/dia/fr/graphics/home_network.png
+%%GNOME%%share/gnome/help/dia/fr/graphics/line_icon.png
+%%GNOME%%share/gnome/help/dia/fr/graphics/line_props.png
+%%GNOME%%share/gnome/help/dia/fr/graphics/preferences_fig.png
+%%GNOME%%share/gnome/help/dia/eu/dia.xml
+%%GNOME%%share/gnome/help/dia/eu/authors.xml
+%%GNOME%%share/gnome/help/dia/eu/entities.xml
+%%GNOME%%share/gnome/help/dia/eu/intro.xml
+%%GNOME%%share/gnome/help/dia/eu/license.xml
+%%GNOME%%share/gnome/help/dia/eu/usage-canvas.xml
+%%GNOME%%share/gnome/help/dia/eu/usage-customization.xml
+%%GNOME%%share/gnome/help/dia/eu/usage-layers.xml
+%%GNOME%%share/gnome/help/dia/eu/usage-loadsave.xml
+%%GNOME%%share/gnome/help/dia/eu/usage-objects-basic.xml
+%%GNOME%%share/gnome/help/dia/eu/usage-objects-selecting.xml
+%%GNOME%%share/gnome/help/dia/eu/usage-objects-special.xml
+%%GNOME%%share/gnome/help/dia/eu/usage-objects.xml
+%%GNOME%%share/gnome/help/dia/eu/usage-quickstart.xml
+%%GNOME%%share/gnome/help/dia/eu/graphics/greendots.png
+%%GNOME%%share/gnome/help/dia/eu/graphics/home_network.png
+%%GNOME%%share/gnome/help/dia/eu/graphics/line_icon.png
+%%GNOME%%share/gnome/help/dia/eu/graphics/line_props.png
+%%GNOME%%share/gnome/help/dia/pl/dia.xml
+%%GNOME%%share/gnome/help/dia/pl/authors.xml
+%%GNOME%%share/gnome/help/dia/pl/intro.xml
+%%GNOME%%share/gnome/help/dia/pl/license.xml
+%%GNOME%%share/gnome/help/dia/pl/usage-canvas.xml
+%%GNOME%%share/gnome/help/dia/pl/usage-customization.xml
+%%GNOME%%share/gnome/help/dia/pl/usage-layers.xml
+%%GNOME%%share/gnome/help/dia/pl/usage-loadsave.xml
+%%GNOME%%share/gnome/help/dia/pl/usage-objects-selecting.xml
+%%GNOME%%share/gnome/help/dia/pl/usage-objects-special.xml
+%%GNOME%%share/gnome/help/dia/pl/usage-objects.xml
+%%GNOME%%share/gnome/help/dia/pl/usage-quickstart.xml
+%%GNOME%%share/gnome/help/dia/pl/graphics/greendots.png
+%%GNOME%%share/gnome/help/dia/pl/graphics/home_network.png
+%%GNOME%%share/gnome/help/dia/pl/graphics/line_props.png
+%%GNOME%%share/gnome/help/dia/C
+%%GNOME%%share/omf/dia/dia-C.omf
+%%GNOME%%share/omf/dia/dia-fr.omf
+%%GNOME%%share/omf/dia/dia-eu.omf
+%%GNOME%%share/omf/dia/dia-pl.omf
+%%PORTDOCS%%%%DOCSDIR%%/en/examples/shape.dtd
+%%PORTDOCS%%%%DOCSDIR%%/en/examples/diagram.dtd
+%%PORTDOCS%%%%DOCSDIR%%/en/examples/sheet.dtd
+%%PORTDOCS%%%%DOCSDIR%%/fr/examples/shape.dtd
+%%PORTDOCS%%%%DOCSDIR%%/fr/examples/diagram.dtd
+%%PORTDOCS%%%%DOCSDIR%%/fr/examples/sheet.dtd
+%%PORTDOCS%%%%DOCSDIR%%/eu/examples/shape.dtd
+%%PORTDOCS%%%%DOCSDIR%%/eu/examples/diagram.dtd
+%%PORTDOCS%%%%DOCSDIR%%/eu/examples/sheet.dtd
+%%PORTDOCS%%%%DOCSDIR%%/pl/examples/shape.dtd
+%%PORTDOCS%%%%DOCSDIR%%/pl/examples/diagram.dtd
+%%PORTDOCS%%%%DOCSDIR%%/pl/examples/sheet.dtd
+share/icons/hicolor/16x16/apps/dia.png
+share/icons/hicolor/22x22/apps/dia.png
+share/icons/hicolor/24x24/apps/dia.png
+share/icons/hicolor/32x32/apps/dia.png
+share/icons/hicolor/48x48/apps/dia.png
+share/icons/hicolor/scalable/apps/dia.svg
+%%GNOME%%@dirrm share/gnome/help/dia/en/graphics
+%%GNOME%%@dirrm share/gnome/help/dia/en
+%%GNOME%%@dirrm share/gnome/help/dia/fr/graphics
+%%GNOME%%@dirrm share/gnome/help/dia/fr
+%%GNOME%%@dirrm share/gnome/help/dia/eu/graphics
+%%GNOME%%@dirrm share/gnome/help/dia/eu
+%%GNOME%%@dirrm share/gnome/help/dia/pl/graphics
+%%GNOME%%@dirrm share/gnome/help/dia/pl
+%%GNOME%%@dirrm share/gnome/help/dia
+%%GNOME%%@dirrm share/omf/dia
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/eu/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/eu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pl/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/dia/xslt
 @dirrm share/dia/ui
 @dirrm share/dia/sheets/UML
+@dirrm share/dia/sheets/SISSI
 @dirrm share/dia/sheets/KAOS
 @dirrm share/dia/sheets/Jackson
 @dirrm share/dia/sheets/Istar
@@ -1792,6 +1999,7 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 @dirrm share/dia/shapes/Map
 @dirrm share/dia/shapes/MSE
 @dirrm share/dia/shapes/Logic
+@dirrm share/dia/shapes/Lights
 @dirrm share/dia/shapes/Gane_and_Sarson
 @dirrm share/dia/shapes/Flowchart
 @dirrm share/dia/shapes/Electric
@@ -1804,11 +2012,19 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 @dirrm share/dia/shapes/BPMN
 @dirrm share/dia/shapes/Assorted
 @dirrm share/dia/shapes
-%%PYTHON:%%@dirrm share/dia/python
+%%PYTHON%%@dirrm share/dia/python
 @dirrm share/dia
 @dirrm lib/dia
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/applications
