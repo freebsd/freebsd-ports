@@ -19,7 +19,8 @@ include/dis-asm.h
 include/symcat.h
 lib/libbfd.a
 lib/libbfd.la
-lib/libiberty.a
+%%PRE7%%lib/elf/libiberty.a
+%%POST7%%lib/libiberty.a
 lib/libopcodes.a
 lib/libopcodes.la
 %%NLS%%share/locale/da/LC_MESSAGES/bfd.mo
@@ -91,3 +92,4 @@ lib/libopcodes.la
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ld.mo
+%%PRE7%%@dirrmtry elf

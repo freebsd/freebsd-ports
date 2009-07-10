@@ -7,6 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.19.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -63,6 +64,12 @@ PLIST_SUB+=	NLS="@comment"
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+PLIST_SUB+=	POST7="@comment " PRE7=""
+.else
+PLIST_SUB+=	POST7="" PRE7="@comment "
+.endif
 
 .if ${ARCH} == "amd64"
 ARCH=		x86_64
