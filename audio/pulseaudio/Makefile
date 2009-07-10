@@ -8,7 +8,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.14
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
