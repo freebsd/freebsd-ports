@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.selenic.com/mercurial/release/
+MASTER_SITES=	http://mercurial.selenic.com/release/
 
 MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	A fast, lightweight source control management system
 
 USE_GETTEXT=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=    ${PORTNAME}
 PYDISTUTILS_PKGVERSION= ${PORTVERSION}
@@ -79,6 +79,7 @@ post-install:
 	${MKDIR} ${DATADIR}/www
 	${INSTALL_MAN} ${WRKSRC}/*.cgi ${DATADIR}/www
 	${INSTALL_MAN} ${WRKSRC}/contrib/hgwebdir.fcgi ${DATADIR}/www
+	${INSTALL_MAN} ${WRKSRC}/contrib/hgwebdir.wsgi ${DATADIR}/www
 .endif
 	@${CAT} ${PKGMESSAGE}
 
