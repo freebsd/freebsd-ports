@@ -1,3 +1,6 @@
 MD5 (postfix/postfix-2.6.2.tar.gz) = 1f0edbd521d2b0473626f4d61e8bb4eb
 SHA256 (postfix/postfix-2.6.2.tar.gz) = 025acf080bbe279cbc6e8e6806ecd0f99af41c8ca384fcb2f7631988f73d5f7c
 SIZE (postfix/postfix-2.6.2.tar.gz) = 3323255
+MD5 (postfix/postfix-2.6.2-vda-ng.patch.gz) = 648f09acd31125c99d1bc36860e21910
+SHA256 (postfix/postfix-2.6.2-vda-ng.patch.gz) = 2e49d9320a38d5d7ca246320127186cfacc3aced9a47aeced61151ee6eb620a4
+SIZE (postfix/postfix-2.6.2-vda-ng.patch.gz) = 12661

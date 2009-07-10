@@ -196,7 +196,6 @@ _REQUIRE+=		ypserv
 .endif
 
 .if defined(WITH_VDA)
-IGNORE=			wait for a new VDA patch that works with ${PORTVERSION}
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
 PATCHFILES+=		postfix-${PORTVERSION}-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
