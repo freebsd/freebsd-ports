@@ -8,7 +8,8 @@
 PORTNAME=	libsmi
 PORTVERSION=	0.4.8
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
+MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/ \
+		LOCAL/bms
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to access SMI MIB information
