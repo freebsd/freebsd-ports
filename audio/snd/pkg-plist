@@ -171,15 +171,9 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/multifm.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/n3a1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/n3a2.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/n51a.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/n52a.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/n53a.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/n54a.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/n55a.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/n56a.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/n57a.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/n58a.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/n.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/n6.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/n5-all.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ncosfm.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ncossweep.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/newbuttons.png
@@ -195,7 +189,6 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/open-dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/orig-oboe.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/pad1.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/pluck.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/polyfm.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/polyshape.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/poussin.png
@@ -370,7 +363,6 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/clean.scm
 %%SCHEME%%%%DATADIR%%/clm-ins.scm
 %%SCHEME%%%%DATADIR%%/clm23.scm
-%%SCHEME%%%%DATADIR%%/debug.scm
 %%SCHEME%%%%DATADIR%%/dlocsig.scm
 %%SCHEME%%%%DATADIR%%/draw.scm
 %%SCHEME%%%%DATADIR%%/dsp.scm
