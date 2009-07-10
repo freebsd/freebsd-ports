@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/elmerfem
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	UMFPACK library used by ELMER FEM package
 
 USE_FORTRAN=	yes
