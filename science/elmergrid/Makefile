@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	SF/elmerfem
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A Mesh Manipulation Utility for use with the ELMER FEM package
 
 ALL_TARGET=

@@ -12,7 +12,7 @@ CATEGORIES=	science
 MASTER_SITES=	SF/elmerfem
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A Mesh Generation Utility for use with the ELMER FEM package
 
 GNU_CONFIGURE=	yes
