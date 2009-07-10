@@ -1,3 +1,4 @@
+include/xmltooling/char_traits.h
 include/xmltooling/encryption/Decrypter.h
 include/xmltooling/encryption/EncryptedKeyResolver.h
 include/xmltooling/encryption/Encrypter.h
@@ -42,6 +43,7 @@ include/xmltooling/security/CredentialResolver.h
 include/xmltooling/security/KeyInfoCredentialContext.h
 include/xmltooling/security/KeyInfoResolver.h
 include/xmltooling/security/OpenSSLCredential.h
+include/xmltooling/security/SecurityHelper.h
 include/xmltooling/security/SignatureTrustEngine.h
 include/xmltooling/security/TrustEngine.h
 include/xmltooling/security/X509Credential.h
@@ -58,8 +60,7 @@ include/xmltooling/soap/SOAPClient.h
 include/xmltooling/soap/SOAPTransport.h
 include/xmltooling/soap/HTTPSOAPTransport.h
 include/xmltooling/soap/OpenSSLSOAPTransport.h
-include/xmltooling/util/CurlNetAccessor.hpp
-include/xmltooling/util/CurlURLInputStream.hpp
+include/xmltooling/util/CurlURLInputStream.h
 include/xmltooling/util/DateTime.h
 include/xmltooling/util/NDC.h
 include/xmltooling/util/ParserPool.h
@@ -77,12 +78,8 @@ include/xmltooling/util/XMLObjectChildrenList.h
 include/xmltooling/validation/Validator.h
 include/xmltooling/validation/ValidatorSuite.h
 lib/libxmltooling-lite.so
-lib/libxmltooling.so
-lib/libxmltooling-lite.so.2
-lib/libxmltooling-lite.so
-lib/libxmltooling.so
-lib/libxmltooling-lite.so
-lib/libxmltooling.so.2
+lib/libxmltooling-lite.so.3
+lib/libxmltooling.so.3
 lib/libxmltooling.so
 %%DOCSDIR%%/README.txt
 %%DOCSDIR%%/LICENSE.txt
@@ -96,7 +93,6 @@ share/xml/xmltooling/xenc-schema.xsd
 share/xml/xmltooling/xmldsig-core-schema.xsd
 share/xml/xmltooling/xml.xsd
 share/xml/xmltooling/xmltooling.xsd
-@dirrmtry share/xml/xmltooling
 @dirrm %%DOCSDIR%%/api
 @dirrm %%DOCSDIR%%
 @dirrmtry include/xmltooling/validation
@@ -108,3 +104,4 @@ share/xml/xmltooling/xmltooling.xsd
 @dirrmtry include/xmltooling/impl
 @dirrmtry include/xmltooling/encryption
 @dirrmtry include/xmltooling
+@dirrmtry share/xml/xmltooling

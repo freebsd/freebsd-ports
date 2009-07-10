@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xmltooling
-DISTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	1.2
 CATEGORIES=	devel security
-MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/2.1/
+MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/2.2/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Low level XML support for SAML
@@ -20,7 +19,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		xml-security-c.14:${PORTSDIR}/security/apache-xml-security-c
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} --with-curl=${LOCALBASE} --disable-doxygen-doc
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
