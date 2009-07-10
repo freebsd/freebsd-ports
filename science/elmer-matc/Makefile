@@ -7,18 +7,18 @@
 
 PORTNAME=	matc
 PORTVERSION=	5.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	SF/elmerfem
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	MatC language library used by ELMER FEM package
 
-GNU_CONFIGURE=	yes
-ALL_TARGET=
+CXXFLAGS+=	-Wno-deprecated
 
-USE_FORTRAN=	yes
+GNU_CONFIGURE=	yes
+USE_FORTRAN=	g77
 
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
