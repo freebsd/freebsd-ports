@@ -7890,6 +7890,7 @@ linux-f10-cyrus-sasl2           ports/security/linux-f10-cyrus-sasl2
 linux-f10-dri                   ports/graphics/linux-f10-dri
 linux-f10-esound                ports/audio/linux-f10-esound
 linux-f10-expat                 ports/textproc/linux-f10-expat
+linux-f10-flashplugin10         ports/www/linux-f10-flashplugin10
 linux-f10-fontconfig            ports/x11-fonts/linux-f10-fontconfig
 linux-f10-freealut              ports/audio/linux-f10-freealut
 linux-f10-gdk-pixbuf            ports/graphics/linux-f10-gdk-pixbuf
@@ -19213,6 +19214,7 @@ py-pyPgSQL                      ports/databases/py-pyPgSQL
 py-pyang                        ports/net-mgmt/py-pyang
 py-pybmp                        ports/multimedia/py-pybmp
 py-pycallgraph                  ports/devel/py-pycallgraph
+py-pycha                        ports/graphics/py-pycha
 py-pychess                      ports/games/py-pychess
 py-pyclamd                      ports/security/py-pyclamd
 py-pycrypto                     ports/security/py-pycrypto
@@ -21213,6 +21215,7 @@ smartdoc-devel                  ports/textproc/smartdoc-devel
 smarteiffel                     ports/lang/smarteiffel
 smartmontools                   ports/sysutils/smartmontools
 smarty                          ports/www/smarty
+smasher                         ports/audio/smasher
 smb2www                         ports/www/smb2www
 smb4k                           ports/net/smb4k
 smb_auth                        ports/www/smb_auth
