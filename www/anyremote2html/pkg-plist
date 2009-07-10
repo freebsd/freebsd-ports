@@ -35,6 +35,42 @@ share/pixmaps/anyremote2html/64/exit.png
 share/pixmaps/anyremote2html/64/next.png
 share/pixmaps/anyremote2html/64/plus.png
 share/pixmaps/anyremote2html/64/info.png
+share/pixmaps/anyremote2html/48/bottom.png
+share/pixmaps/anyremote2html/48/top.png
+share/pixmaps/anyremote2html/48/last.png
+share/pixmaps/anyremote2html/48/ok.png
+share/pixmaps/anyremote2html/48/first.png
+share/pixmaps/anyremote2html/48/record.png
+share/pixmaps/anyremote2html/48/favorites.png
+share/pixmaps/anyremote2html/48/prev.png
+share/pixmaps/anyremote2html/48/question.png
+share/pixmaps/anyremote2html/48/play.png
+share/pixmaps/anyremote2html/48/mute.png
+share/pixmaps/anyremote2html/48/vol_down.png
+share/pixmaps/anyremote2html/48/folder.png
+share/pixmaps/anyremote2html/48/default.png
+share/pixmaps/anyremote2html/48/no.png
+share/pixmaps/anyremote2html/48/stop.png
+share/pixmaps/anyremote2html/48/eject.png
+share/pixmaps/anyremote2html/48/vol_up.png
+share/pixmaps/anyremote2html/48/up.png
+share/pixmaps/anyremote2html/48/rewind.png
+share/pixmaps/anyremote2html/48/down.png
+share/pixmaps/anyremote2html/48/launch.png
+share/pixmaps/anyremote2html/48/forward.png
+share/pixmaps/anyremote2html/48/left.png
+share/pixmaps/anyremote2html/48/minus.png
+share/pixmaps/anyremote2html/48/right.png
+share/pixmaps/anyremote2html/48/fullscreen.png
+share/pixmaps/anyremote2html/48/pause.png
+share/pixmaps/anyremote2html/48/file.png
+share/pixmaps/anyremote2html/48/fit.png
+share/pixmaps/anyremote2html/48/click_icon.png
+share/pixmaps/anyremote2html/48/refresh.png
+share/pixmaps/anyremote2html/48/exit.png
+share/pixmaps/anyremote2html/48/next.png
+share/pixmaps/anyremote2html/48/plus.png
+share/pixmaps/anyremote2html/48/info.png
 share/pixmaps/anyremote2html/32/bottom.png
 share/pixmaps/anyremote2html/32/top.png
 share/pixmaps/anyremote2html/32/last.png
@@ -109,6 +145,7 @@ share/pixmaps/anyremote2html/16/plus.png
 share/pixmaps/anyremote2html/16/info.png
 share/pixmaps/anyremote2html/anyRemote.png
 @dirrmtry share/pixmaps/anyremote2html/64
+@dirrmtry share/pixmaps/anyremote2html/48
 @dirrmtry share/pixmaps/anyremote2html/32
 @dirrmtry share/pixmaps/anyremote2html/16
 @dirrmtry share/pixmaps/anyremote2html

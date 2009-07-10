@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anyremote2html
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	www deskutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	anyremote
@@ -26,10 +26,5 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/doc\/${PORTNAME}/d' ${WRKSRC}/Makefile.in
 .endif
-
-post-install:
-.for dir in 16 32 64
-	@${CHMOD} 644 ${PREFIX}/share/pixmaps/${PORTNAME}/${dir}/*
-.endfor
 
 .include <bsd.port.mk>
