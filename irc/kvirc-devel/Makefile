@@ -12,7 +12,7 @@ CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.ru/pub/source/dev/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	a.pirko@inode.at
+MAINTAINER=	chris@officialunix.com
 COMMENT=	IRC client for QT and KDE
 
 USE_AUTOTOOLS=	libtool:15
