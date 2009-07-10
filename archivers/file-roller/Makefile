@@ -26,7 +26,9 @@ USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils gnomedocutils
+USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils gnomedocutils \
+		gtk20 gconf2
+USE_XORG=	sm
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
