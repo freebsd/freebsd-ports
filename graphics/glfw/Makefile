@@ -19,6 +19,7 @@ USE_GL=		yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	x11
 INSTALL_TARGET=	x11-install
+MAKE_JOBS_UNSAFE=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-configure:
