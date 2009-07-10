@@ -1,21 +1,29 @@
---- FlowViewer_Configuration.pm.dist.new	Wed Mar 21 09:30:44 2007
-+++ FlowViewer_Configuration.pm	Wed Mar 21 11:45:46 2007
-@@ -45,22 +45,22 @@
+--- FlowViewer_Configuration.pm	2008-06-10 22:10:37.000000000 +0300
++++ FlowViewer_Configuration.pm	2009-07-10 15:22:25.000000000 +0300
+@@ -48,26 +48,26 @@
  
  # Directories and Files:
  
--$reports_directory       = "/htp/htdocs/FlowViewer_3.2";
--$reports_short           = "/FlowViewer_3.2";
--$graphs_directory        = "/htp/htdocs/FlowGrapher_3.2/";
--$graphs_short            = "/FlowGrapher_3.2/";
--$tracker_directory       = "/htp/htdocs/FlowTracker_3.2";
--$tracker_short           = "/FlowTracker_3.2";
--$cgi_bin_directory       = "/htp/cgi-bin/FlowViewer_3.2";
--$cgi_bin_short           = "/cgi-bin/FlowViewer_3.2";
--$work_directory          = "/htp/cgi-bin/FlowViewer_3.2/Flow_Working";
--$names_directory         = "/htp/cgi-bin/FlowViewer_3.2/";
--$filter_directory        = "/htp/cgi-bin/Flow_State/FlowTracker_Filters";
--$rrdtool_directory       = "/htp/cgi-bin/Flow_State/FlowTracker_RRDtool";
+-$reports_directory       = "/htp/htdocs/FlowViewer_3.3.1";
+-$reports_short           = "/FlowViewer_3.3.1";
+-$graphs_directory        = "/htp/htdocs/FlowGrapher_3.3.1";
+-$graphs_short            = "/FlowGrapher_3.3.1";
+-$tracker_directory       = "/htp/htdocs/FlowTracker_3.3.1";
+-$tracker_short           = "/FlowTracker_3.3.1";
+-$cgi_bin_directory       = "/htp/cgi-bin/FlowViewer_3.3.1";
+-$cgi_bin_short           = "/cgi-bin/FlowViewer_3.3.1";
+-$work_directory          = "/htp/cgi-bin/FlowViewer_3.3.1/Flow_Working";
+-$work_short              = "/cgi-bin/FlowViewer_3.3.1/Flow_Working";
+-$save_directory          = "/htp/htdocs/FlowViewer_Saves";
+-$save_short              = "/FlowViewer_Saves";
+-$names_directory         = "/htp/cgi-bin/FlowViewer_3.3.1";
+-$filter_directory        = "/htp/cgi-bin/FlowTracker_Files/FlowTracker_Filters";  
+-$rrdtool_directory       = "/htp/cgi-bin/FlowTracker_Files/FlowTracker_RRDtool";
+-
+-$flow_data_directory     = "/htp/flows";
+-$exporter_directory      = "/htp/flows/all_routers";
+-$flow_bin_directory      = "/usr/bin";
+-$rrdtool_bin_directory   = "/usr/local/rrdtool-1.2.12/bin";
 +$reports_directory       = "%%FLOWVIEWERDIR%%/reports";
 +$reports_short           = "/FlowViewer/reports";
 +$graphs_directory        = "%%FLOWVIEWERDIR%%/graphs";
@@ -24,17 +32,18 @@
 +$tracker_short           = "/FlowViewe/tracker";
 +$cgi_bin_directory       = "%%FLOWVIEWERDIR%%";
 +$cgi_bin_short           = "/FlowViewer";
-+$work_directory          = "/tmp";
-+$names_directory         = "/tmp";
-+$filter_directory        = "%%FLOWVIEWERDIR%%/tmp/filters";
-+$rrdtool_directory       = "%%FLOWVIEWERDIR%%/tmp/rrdtools";
- 
--$flow_data_directory     = "/htp/flows";
--$flow_bin_directory      = "/usr/bin";
--$rrdtool_bin_directory   = "/usr/local/rrdtool-1.2.12/bin";
++$work_directory          = "%%FLOWVIEWERDIR%%/working";
++$work_short              = "/FlowViewer/working";
++$save_directory          = "%%FLOWVIEWERDIR%%/saves";
++$save_short              = "/FlowViewer/Saves";
++$names_directory         = "%%FLOWVIEWERDIR%%/names";
++$filter_directory        = "%%FLOWVIEWERDIR%%/filters";  
++$rrdtool_directory       = "%%FLOWVIEWERDIR%%/rrdtools";
++
 +$flow_data_directory     = "%%PREFIX%%/var/netflow/";
++$exporter_directory      = "%%PREFIX%%/var/netflow/all_routers";
 +$flow_bin_directory      = "%%PREFIX%%/bin";
 +$rrdtool_bin_directory   = "%%PREFIX%%/bin";
  
  $actives_webpage         = "index.html";
- $trackings_title         = "Your System Here";
+ $trackings_title         = "Your Company Name";

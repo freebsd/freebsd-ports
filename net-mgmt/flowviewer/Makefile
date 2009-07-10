@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	flowviewer
-PORTVERSION=	3.2
-PORTREVISION=	3
+PORTVERSION=	3.3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ensight.eos.nasa.gov/FlowViewer/
 DISTNAME=	FlowViewer_${DISTVERSION}
