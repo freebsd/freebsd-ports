@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2009-07-05 17:46:35.000000000 -0300
++++ src/Makefile.in	2009-07-05 17:47:03.000000000 -0300
+@@ -235,7 +235,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-SUBDIRS = tk glaux camera graphics modules sico2elmer objects visuals tcl elements 
++SUBDIRS = tk glaux camera graphics modules objects visuals tcl elements 
+ @NOTWINDOWS_FALSE@ElmerPost_SOURCES = \
+ @NOTWINDOWS_FALSE@	ElmerPost.c \
+ @NOTWINDOWS_FALSE@	elmerpost.h \
