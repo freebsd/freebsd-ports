@@ -22,7 +22,6 @@ include/saml/saml2/binding/SAML2SOAPClient.h
 include/saml/saml2/core/Assertions.h
 include/saml/saml2/core/Protocols.h
 include/saml/saml2/metadata/AbstractMetadataProvider.h
-include/saml/saml2/metadata/ChainingMetadataProvider.h
 include/saml/saml2/metadata/DynamicMetadataProvider.h
 include/saml/saml2/metadata/EndpointManager.h
 include/saml/saml2/metadata/Metadata.h
@@ -33,6 +32,7 @@ include/saml/saml2/metadata/MetadataProvider.h
 include/saml/saml2/metadata/ObservableMetadataProvider.h
 include/saml/saml2/profile/AssertionValidator.h
 include/saml/saml2/profile/BrowserSSOProfileValidator.h
+include/saml/saml2/profile/SAML2AssertionPolicy.h
 include/saml/binding/ArtifactMap.h
 include/saml/binding/MessageDecoder.h
 include/saml/binding/MessageEncoder.h
@@ -45,7 +45,7 @@ include/saml/signature/SignableObject.h
 include/saml/signature/SignatureProfileValidator.h
 include/saml/util/CommonDomainCookie.h
 include/saml/util/SAMLConstants.h
-lib/libsaml.so.3
+lib/libsaml.so.4
 lib/libsaml.so
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
@@ -54,6 +54,9 @@ lib/libsaml.so
 share/xml/opensaml/saml20-catalog.xml
 share/xml/opensaml/saml10-catalog.xml
 share/xml/opensaml/saml11-catalog.xml
+share/xml/opensaml/sstc-metadata-attr.xsd
+share/xml/opensaml/sstc-saml-attribute-ext.xsd
+share/xml/opensaml/sstc-saml-delegation.xsd
 share/xml/opensaml/cs-sstc-schema-assertion-01.xsd
 share/xml/opensaml/cs-sstc-schema-protocol-01.xsd
 share/xml/opensaml/cs-sstc-schema-assertion-1.1.xsd
