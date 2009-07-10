@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	doc
 DISTNAME=	${PORTNAME}-${PORTVERSION}${LANGSUFFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	ruby@FreeBSD.org
 COMMENT?=	Ruby reference manual, in HTML format
 
 USE_RUBY=	yes
