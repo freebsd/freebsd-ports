@@ -7,11 +7,11 @@
 
 PORTNAME=	elmerpost
 PORTVERSION=	5.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	SF/elmerfem
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Visualization of Numerical Results in the ELMER FEM package
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\
@@ -26,11 +26,7 @@ USE_GL=		yes
 USE_XORG=	x11 xt xi
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=
-
-USE_FORTRAN=	yes
-
-BROKEN=		Latest version fails to compile
+USE_FORTRAN=	g77
 
 .include <bsd.port.pre.mk>
 

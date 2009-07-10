@@ -1,0 +1,8 @@
+--- src/Makefile.am.orig	2009-07-05 17:46:44.000000000 -0300
++++ src/Makefile.am	2009-07-05 17:47:17.000000000 -0300
+@@ -1,4 +1,4 @@
+-SUBDIRS=tk glaux camera graphics modules sico2elmer objects visuals tcl elements 
++SUBDIRS=tk glaux camera graphics modules objects visuals tcl elements 
+ 
+ if NOTWINDOWS
+ 
