@@ -1,33 +1,24 @@
---- configure.orig	Sun Mar 25 15:18:59 2007
-+++ configure	Sun Mar 25 15:20:01 2007
-@@ -20515,7 +20515,7 @@ if test "${with_freetype+set}" = set; th
- else
+--- configure.orig	2009-07-11 00:18:11.000000000 +1000
++++ configure	2009-07-11 00:18:11.000000000 +1000
+@@ -22005,7 +22005,7 @@ else
    with_freetype=yes
- fi;
+ fi
+ 
 -if test "x$with_freetype" == "xyes"; then
 +if test "x$with_freetype" = "xyes"; then
  
  pkg_failed=no
- echo "$as_me:$LINENO: checking for PANGOFT2" >&5
-@@ -20989,7 +20989,7 @@ if test "${with_gnomeprint+set}" = set; 
- else
-   with_gnomeprint=no
- fi;
--if test "x$with_gnomeprint" == "xyes"; then
-+if test "x$with_gnomeprint" = "xyes"; then
- 
- pkg_failed=no
- echo "$as_me:$LINENO: checking for GNOMEPRINT" >&5
-@@ -21927,7 +21927,7 @@ else
- echo "${ECHO_T}no" >&6
+ { $as_echo "$as_me:$LINENO: checking for PANGOFT2" >&5
+@@ -23393,7 +23393,7 @@ $as_echo "no" >&6; }
  fi
+ 
  
 -if test "$XGETTEXT" == none ; then
 +if test "$XGETTEXT" = none ; then
-    { { echo "$as_me:$LINENO: error: xgettext program not found: $XGETTEXT." >&5
- echo "$as_me: error: xgettext program not found: $XGETTEXT." >&2;}
+    { { $as_echo "$as_me:$LINENO: error: xgettext program not found: $XGETTEXT." >&5
+ $as_echo "$as_me: error: xgettext program not found: $XGETTEXT." >&2;}
     { (exit 1); exit 1; }; }
-@@ -25011,7 +25011,7 @@ echo $ECHO_N "checking local Python conf
+@@ -26619,7 +26619,7 @@ $as_echo_n "checking local Python config
  
    fi
  
@@ -36,7 +27,7 @@
  
    PYTHON_PLATFORM=`$PYTHON -c "import sys; print sys.platform"`
  
-@@ -25073,12 +25073,12 @@ except ImportError:
+@@ -26681,12 +26681,12 @@ except ImportError:
  except:
          sys.exit(0)
  sys.exit(0)"
@@ -54,3 +45,21 @@
  
  fi
  
+@@ -27022,7 +27022,7 @@ $as_echo "no" >&6; }
+ fi
+ 
+ 
+-if  test "x$dblatex" == "xno"; then
++if  test "x$dblatex" = "xno"; then
+   if test "x$jw" != "xno"; then
+   WITH_JW_TRUE=
+   WITH_JW_FALSE='#'
+@@ -27043,7 +27043,7 @@ fi
+ fi
+ hardbook_ok=no
+ xsltproc_ok=no
+-if test "x$with_hardbooks" == "xno"; then
++if test "x$with_hardbooks" = "xno"; then
+    if test "xno" != "xno"; then
+   WITH_JW_TRUE=
+   WITH_JW_FALSE='#'
