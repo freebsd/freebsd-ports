@@ -42,6 +42,10 @@ SUBDIR=		${PORTNAME}${PKGNAMESUFFIX}
 
 WRKSRC=${WRKDIR}/ghc-${GHC_VERSION}/libraries/OpenGL
 
+post-patch:
+	@${REINPLACE_CMD} 's|/usr/local/include|${LOCALBASE}/include|g' \
+		${WRKSRC}/configure
+
 do-configure:
 	cd ${WRKSRC} && ${CABALCMD} configure --ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
 	 --libsubdir='' --datasubdir=''

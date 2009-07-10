@@ -53,6 +53,10 @@ PLIST_SUB+=	RMLIC="@comment "
 PLIST_SUB+=	RMLIC=""
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's|/usr/local/include|${LOCALBASE}/include|g' \
+		${WRKSRC}/configure
+
 do-configure:
 	cd ${WRKSRC} && ${CABALCMD} configure --ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
 	 --libsubdir='' --datasubdir=''
