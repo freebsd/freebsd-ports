@@ -532,10 +532,6 @@ gecko-post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g ; \
 		s|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
 		${WRKSRC}/xpcom/*/SpecialSystemDirectory.cpp
-	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
-		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
-		${FALSE}; \
-	fi
 
 # handles mozilla pis scripts.
 gecko-moz-pis-patch:
