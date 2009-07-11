@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cegui
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.2b
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=crayzedsgui
@@ -20,7 +19,7 @@ LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/0b/0/}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/2b/2/}
 CONFIGURE_ARGS=	--enable-toluacegui --disable-irrlicht-renderer \
 		--disable-corona --enable-devil --disable-freeimage --disable-silly \
 		--disable-libxml --disable-xerces-c --disable-expat
