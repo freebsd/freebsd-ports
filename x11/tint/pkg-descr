@@ -1,5 +1,5 @@
-Tint is a simple panel/taskbar intentionally made for openbox3, but should
-also work with other window managers.
+Tint is a simple panel/taskbar/systray intentionally made for openbox3, but
+should also work with other window managers.
 
 The goal is to keep a clean and unintrusive look with lightweight code and
 compliance with freedesktop specifications.
