@@ -69,8 +69,8 @@ RUN_DEPENDS+=	py*-sexy>=0.1.9:${PORTSDIR}/x11-toolkits/py-sexy
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LIBDIR|LIBINSTALLDIR|g' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|PREFIX =|PREFIX \?=|;s|LIBDIR =|LIBDIR \?=|' \
+		-e 's|LIBDIR|LIBINSTALLDIR|g' ${WRKSRC}/Makefile
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e 's|exaile\.mo|SKIP_NLS_HACK|' ${WRKSRC}/Makefile
 .endif
