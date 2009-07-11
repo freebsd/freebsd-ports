@@ -7,7 +7,7 @@
 
 PORTNAME=	rigsofrods
 PORTVERSION=	0.36.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 # I've trimmed source tarball by around 10x and bundled rorserver
 MASTER_SITES=	SF:contents \
