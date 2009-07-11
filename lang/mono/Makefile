@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.2.1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -43,16 +43,19 @@ MONO_SHARED_DIR=${WRKDIR}
 MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 		LC_ALL=C
 
-ONLY_FOR_ARCHS= i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 
-MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
-		gacutil.1 genxs.1 httpcfg.1 ilasm.1 jay.1 macpack.1 makecert.1 \
-		mconfig.1 mcs.1 mint.1 mkbundle.1 mono-service.1 mono-shlib-cop.1 \
-		mono-xmltool.1 mono.1 monodis.1 monolinker.1 monop.1 \
-		monostyle.1 mozroots.1 oldmono.1 permview.1 prj2make.1 secutil.1 \
-		setreg.1 sgen.1 signcode.1 sn.1 soapsuds.1 sqlsharp.1 wsdl.1 \
-		xsd.1 resgen.1
-MAN5=		mono-config.5
+MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 csharp.1 disco.1 \
+		dtd2xsd.1 gacutil.1 genxs.1 httpcfg.1 ilasm.1 jay.1 macpack.1 \
+		makecert.1 mconfig.1 mcs.1 mdassembler.1 mdoc-assemble.1 \
+		mdoc-export-html.1 mdoc-export-msxdoc.1 mdoc-update.1 \
+		mdoc-validate.1 mdoc.1 mdvalidater.1 mint.1 mkbundle.1 \
+		mono-cil-strip.1 mono-service.1 mono-shlib-cop.1 \
+		mono-xmltool.1 mono.1 monodis.1 monodocer.1 monodocs2html.1 \
+		monolinker.1 monop.1 monostyle.1 mozroots.1 oldmono.1 \
+		permview.1 prj2make.1 resgen.1 secutil.1 setreg.1 sgen.1 \
+		signcode.1 sn.1 soapsuds.1 sqlsharp.1 wsdl.1 xsd.1
+MAN5=		mdoc.5 mono-config.5
 
 .include <bsd.port.pre.mk>
 
