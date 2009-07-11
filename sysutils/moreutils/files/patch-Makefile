@@ -1,10 +1,10 @@
 --- Makefile.orig	2009-05-05 12:09:22.000000000 -0700
 +++ Makefile	2009-06-20 07:59:27.000000000 -0700
-@@ -1,24 +1,24 @@
--BINS=isutf8 ifdata ifne pee sponge mispipe lckdo
+@@ -1,25 +1,25 @@
+-BINS=isutf8 ifdata ifne pee sponge mispipe lckdo parallel
 +BINS=isutf8 ifne pee sponge mispipe lckdo
  PERLSCRIPTS=vidir vipe ts combine zrun
--MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifdata.1 ifne.1 pee.1 zrun.1 mispipe.1 lckdo.1
+-MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifdata.1 ifne.1 pee.1 zrun.1 mispipe.1 lckdo.1 parallel.1
 +MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifne.1 pee.1 zrun.1 mispipe.1 lckdo.1
  CFLAGS=-O2 -g -Wall
  INSTALL_BIN?=install -s
@@ -26,12 +26,12 @@
 -	mkdir -p $(DESTDIR)$(PREFIX)/bin
 -	$(INSTALL_BIN) $(BINS) $(DESTDIR)$(PREFIX)/bin
 -	install $(PERLSCRIPTS) $(DESTDIR)$(PREFIX)/bin
--	
--	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
--	install $(MANS) $(DESTDIR)$(PREFIX)/share/man/man1
 +	mkdir -p $(PREFIX)/bin
 +	$(INSTALL_BIN) $(BINS) $(PREFIX)/bin
 +	install $(PERLSCRIPTS) $(PREFIX)/bin
- 
+ 	
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
+-	install $(MANS) $(DESTDIR)$(PREFIX)/share/man/man1
+-
  check: isutf8
  	./check-isutf8
