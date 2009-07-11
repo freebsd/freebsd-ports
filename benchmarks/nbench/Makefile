@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.tux.org/~mayer/linux/
 DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steinex@nognu.de
 COMMENT=	BYTE Magazine's native benchmarks
 
 ALL_TARGET=	# empty
