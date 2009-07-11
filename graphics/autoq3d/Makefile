@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	AutoQ3DGPL${PORTVERSION:C/\./-/}qt4source
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete QT quick 3d model editor program
 
 USE_ZIP=	yes

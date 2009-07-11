@@ -10,7 +10,7 @@ PORTVERSION=	0.9
 CATEGORIES=	x11
 MASTER_SITES=	http://code.suckless.org/dl/tools/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X screen locker
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \

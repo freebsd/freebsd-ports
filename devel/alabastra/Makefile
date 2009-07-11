@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 DISTNAME=	Alabastra-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Editor writen with QT4
 
 USE_QT_VER=	4

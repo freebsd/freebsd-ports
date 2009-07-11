@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal control sequence analyzer
 
 GNU_CONFIGURE=	yes

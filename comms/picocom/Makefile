@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	comms
 MASTER_SITES=	http://efault.net/npat/hacks/picocom/dist/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dumb Terminal Emulator
 
 ALL_TARGET=	picocom

@@ -10,7 +10,7 @@ PORTVERSION=	0.32
 CATEGORIES=	devel
 MASTER_SITES=	http://www.chasen.org/~taku/software/darts/src/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ template library that implements Double-Array
 
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 DISTNAME=	DVDAuthorWizard-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The tool for creating a DVD with fully animated menu from MPEG-2 files
 
 NO_BUILD=	yes
