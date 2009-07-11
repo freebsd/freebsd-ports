@@ -11,7 +11,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logging for C Library
 
 USE_AUTOTOOLS=	libtool:15

@@ -10,7 +10,7 @@ PORTVERSION=	0.4.3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/${PORTNAME}/download/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dns2tcp is a tool for relaying TCP connections over DNS
 
 GNU_CONFIGURE=	yes

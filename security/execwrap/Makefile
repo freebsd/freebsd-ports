@@ -12,7 +12,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	ExecWrap-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super-user exec wrapper
 
 NO_WRKSUBDIR=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	security net
 MASTER_SITES=	http://srp.stanford.edu/source/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure Remote Password protocol library, TELNET, and FTP
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]*

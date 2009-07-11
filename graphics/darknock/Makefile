@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that can detect edges in images
 
 USE_QT_VER=	4

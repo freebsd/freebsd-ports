@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 PKGNAMESUFFIX=	-sql
 DISTNAME=	squirrel-sql-2.6-standard
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A universal SQL Client
 
 NO_BUILD=	yes
