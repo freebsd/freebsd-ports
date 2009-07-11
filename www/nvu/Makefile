@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
 
 DEPRECATED=	NVU 1.0, released June 2005, is the last official release of NVU. \
