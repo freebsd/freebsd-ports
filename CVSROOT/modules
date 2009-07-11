@@ -18306,7 +18306,6 @@ planner.el                      ports/deskutils/planner.el
 plans                           ports/deskutils/plans
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
 plasma-applet-playwolf          ports/deskutils/plasma-applet-playwolf
-plasma-applet-quicklauncher     ports/deskutils/plasma-applet-quicklauncher
 plasma-applet-simpleweatherforecast  ports/deskutils/plasma-applet-simpleweatherforecast
 plasma-applet-teacooker         ports/deskutils/plasma-applet-teacooker
 plasma-applet-yawp              ports/deskutils/plasma-applet-yawp
