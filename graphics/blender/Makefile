@@ -26,6 +26,7 @@ USE_PYTHON=	2.5+
 USE_SDL=	sdl
 USE_GL=		gl glu
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	blender
 
