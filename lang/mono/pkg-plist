@@ -416,6 +416,7 @@ lib/mono/2.0/System.Web.Extensions.dll
 lib/mono/2.0/System.Web.Routing.dll
 lib/mono/2.0/System.Web.Services.dll
 lib/mono/2.0/System.Web.dll
+lib/mono/2.0/System.Web.Mvc.dll
 lib/mono/2.0/System.Windows.Forms.dll
 lib/mono/2.0/System.Xml.Linq.dll
 lib/mono/2.0/System.Xml.dll
@@ -763,6 +764,8 @@ lib/mono/gac/System.Web.Extensions/1.0.61025.0__31bf3856ad364e35/System.Web.Exte
 lib/mono/gac/System.Web.Extensions/1.0.61025.0__31bf3856ad364e35/System.Web.Extensions.dll.mdb
 lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.dll
 lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.dll.mdb
+lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35/System.Web.Mvc.dll
+lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35/System.Web.Mvc.dll.mdb
 lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35/System.Web.Routing.dll
 lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35/System.Web.Routing.dll.mdb
 lib/mono/gac/System.Web.Services/1.0.5000.0__b03f5f7f11d50a3a/System.Web.Services.dll
@@ -859,19 +862,6 @@ libdata/pkgconfig/smcs.pc
 libdata/pkgconfig/system.web.extensions.design_1.0.pc
 libdata/pkgconfig/system.web.extensions_1.0.pc
 libdata/pkgconfig/wcf.pc
-man/man1/csharp.1
-man/man1/mdassembler.1
-man/man1/mdoc-assemble.1
-man/man1/mdoc-export-html.1
-man/man1/mdoc-export-msxdoc.1
-man/man1/mdoc-update.1
-man/man1/mdoc-validate.1
-man/man1/mdoc.1
-man/man1/mdvalidater.1
-man/man1/mono-cil-strip.1
-man/man1/monodocer.1
-man/man1/monodocs2html.1
-man/man5/mdoc.5
 share/jay/ACKNOWLEDGEMENTS
 share/jay/NEW_FEATURES
 share/jay/NOTES
@@ -921,8 +911,6 @@ share/locale/ja/LC_MESSAGES/mcs.mo
 @dirrm share/libgc-mono
 @dirrm share/jay
 @dirrm lib/monodoc/sources
-@dirrm lib/monodoc/sources
-@dirrm lib/monodoc
 @dirrm lib/monodoc
 @dirrm lib/mono/monodoc
 @dirrm lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77
@@ -969,6 +957,8 @@ share/locale/ja/LC_MESSAGES/mcs.mo
 @dirrm lib/mono/gac/System.Web.Services
 @dirrm lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Routing
+@dirrm lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Web.Mvc
 @dirrm lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Extensions/1.0.61025.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Extensions.Design/3.5.0.0__31bf3856ad364e35
