@@ -5,37 +5,38 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tint
-PORTVERSION=	0.6.0
+PORTNAME=	tint2
+PORTVERSION=	0.7
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	Lightweight freedesktop-compliant panel/taskbar/clock
+COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 PROJECTHOST=	tint2
-USE_GNOME=	pango
+USE_GNOME=	pango glib20
 USE_XORG=	xinerama xrandr
 USE_EFL=	imlib2
 USE_GMAKE=	yes
 
-MAKE_ENV+=	DESTDIR=${PREFIX}
+GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/tint \
-		etc/xdg/tint/tintrc
-PLIST_DIRS=	etc/xdg/tint
+CONFIGURE_ARGS=	--disable-battery
 
-PORTDOCS=	ChangeLog README tint-0.6.pdf
+PLIST_FILES=	bin/tint2 \
+		etc/xdg/tint2/tint2rc
+PLIST_DIRS=	etc/xdg/tint2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-ALL_TARGET=	${PORTNAME}
+MAN1=		tint2.1
+
+PORTDOCS=	AUTHORS ChangeLog README NEWS
 
 post-patch:
-	@${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
-	@${SED} -e 's#/usr/bin#/bin#g' \
-		${WRKSRC}/Makefile.dist > ${WRKSRC}/Makefile
+	@${CP} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.presed
+	@${SED} -e "s# install-dist_docDATA##" \
+	    ${WRKSRC}/Makefile.in.presed > ${WRKSRC}/Makefile.in
 
 pre-install:
 	${ECHO} "rmdir ${X11BASE}/etc/xdg 2>/dev/null || true" > \
@@ -45,16 +46,16 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/tint-0.6.pdf ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/../tintrc* ${EXAMPLESDIR}
-.for N in 1 2 3 4
-PLIST_FILES+=	${EXAMPLESDIR_REL}/tintrc${N}
+	${INSTALL_DATA} ${WRKSRC}/tintrc* ${EXAMPLESDIR}
+.for N in 1 2 3 4 5 6
+PLIST_FILES+=	${EXAMPLESDIR_REL}/tintrc0${N}
 .endfor
 PLIST_DIRS+=	${EXAMPLESDIR_REL}
 .endif
