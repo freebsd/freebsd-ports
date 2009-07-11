@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Util
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,6 @@ COMMENT=	Perl extension for utilities for data and data types
 
 RUN_DEPENDS=	\
 	p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
