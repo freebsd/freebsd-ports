@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ipa-system.sourceforge.net/ \
-		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
-		ftp://ftp.mirrors.wiretapped.net/pub/security/network-monitoring/ipa/ \
-		http://ipa.it-ss.be/
+MASTER_SITES=	http://ipa-system.sourceforge.net/
 
 MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
 COMMENT=	Pluggable accounting system
