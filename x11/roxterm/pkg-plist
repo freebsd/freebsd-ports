@@ -15,6 +15,7 @@ share/locale/en/LC_MESSAGES/roxterm.mo
 share/locale/en_GB/LC_MESSAGES/roxterm.mo
 share/icons/hicolor/scalable/apps/roxterm.svg
 %%DATADIR%%/Config/Colours/GTK
+%%DATADIR%%/Config/Colours/Tango
 %%DATADIR%%/Config/Shortcuts/Default
 %%DATADIR%%/roxterm-config.glade
 @dirrmtry share/applications
