@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT?=	An interpreted object-oriented programming language
+COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
@@ -35,12 +35,12 @@ PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 plat-freebsd7 \
 SHARED_WRKSRC=	${WRKSRC}/build.shared
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
-DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
-TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
+DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
-BIN_SCRIPTS=    idle pydoc python python-shared smtpd.py
-BINLINKS_SUB=   -e 's,smtpd,smtpd${PYTHON_VER},' \
-                -e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
+BIN_SCRIPTS=	idle pydoc python python-shared smtpd.py
+BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
+		-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
 
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
@@ -199,13 +199,15 @@ post-install:
 	done
 .endif
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${TOOLSDIR}
-	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
-		(cd ${TOOLSDIR}; tar xf -)
-	@${MKDIR} ${DEMODIR}
-	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - * | \
-		(cd ${DEMODIR}; tar xf -)
+.if !defined(NOPORTDATA)
+	@${MKDIR} ${DATADIR}
+	@cd ${WRKSRC}; ${TAR} -c --exclude='*CVS*' -f - Tools | \
+		(cd ${DATADIR}; ${TAR} xf -)
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/Demo; ${TAR} -c --exclude='*CVS*' -f - * | \
+		(cd ${EXAMPLESDIR}; ${TAR} xf -)
 .endif
 
 	@${CAT} ${PKGMESSAGE}
