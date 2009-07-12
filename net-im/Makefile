@@ -133,6 +133,7 @@
     SUBDIR += qq
     SUBDIR += qutim
     SUBDIR += qwit
+    SUBDIR += rubygem-termtter
     SUBDIR += rubygem-xmpp4r
     SUBDIR += sendxmpp
     SUBDIR += sim-im
