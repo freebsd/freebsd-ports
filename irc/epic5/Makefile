@@ -52,11 +52,6 @@ CONFIGURE_ARGS+=	--without-tcl
 
 ##  WITH_PERL:      enable perl5 support (requires perl 5.6.1 or newer)
 #
-# The path provided to --with-perl is needed, since the configure script
-# looks for libperl.so in places very specific to Linux.  Possibly a
-# patch to configure would be a better idea, but we need to rely on
-# SITE_PERL and PERL_VER to create the path.
-#
 .if defined(WITH_PERL)
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl
@@ -70,7 +65,7 @@ CONFIGURE_ARGS+=	--without-perl
 USE_RUBY=	yes
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 CONFIGURE_ARGS+=	--with-ruby
-BROKEN=		does not compile
+LDFLAGS+=	${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--without-ruby
 .endif
