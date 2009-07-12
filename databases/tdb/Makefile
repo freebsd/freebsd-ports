@@ -1,26 +1,47 @@
-# ex:ts=8
-# Ports collection makefile for:	tdb
-# Date created:			Oct 12, 2002
-# Whom:				ijliao
+# New ports collection makefile for:	tdb
+# Date created:				1 May 2009
+# Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	tdb
-PORTVERSION=	1.0.6
-PORTREVISION=	2
-CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+PORTNAME=		tdb
+PORTVERSION=		1.1.5
+PORTREVISION=		0
+PORTEPOCH=		0
+CATEGORIES=		databases
+PKGNAMESUFFIX=
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Trivial Database
+COMMENT=		Trivial Database
 
-USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
-USE_LDCONFIG=	yes
+CONFLICTS=
 
-MAN3=	tdb.3 tdb_chainlock.3 tdb_close.3 tdb_delete.3 tdb_error.3 \
-	tdb_exists.3 tdb_fetch.3 tdb_firstkey.3 tdb_open.3 tdb_store.3 \
-	tdb_traverse.3
+SAMBA_PORT?=		samba4-devel
+SAMBA_SUBPORT=		yes
 
-.include <bsd.port.mk>
+MASTERDIR=		${.CURDIR}/../../net/${SAMBA_PORT}
+PKGDIR=			${.CURDIR}
+
+WRKSRC=			${WRKDIR}/${DISTNAME}/lib/tdb
+
+USE_PYTHON=		yes
+USE_GMAKE=		yes
+USE_LDCONFIG=		yes
+GNU_CONFIGURE=		yes
+USE_GNOME=		pkgconfig
+USE_AUTOTOOLS=		autoconf:262 autoheader:262
+
+PLIST_FILES=		bin/tdbbackup \
+			bin/tdbdump \
+			bin/tdbtool \
+			include/tdb.h \
+			lib/libtdb.a \
+			lib/libtdb.so \
+			lib/libtdb.so.1 \
+			libdata/pkgconfig/tdb.pc \
+			${PYTHONPREFIX_SITELIBDIR:S|${PREFIX}/||}/tdb.so
+
+post-install:
+		@${LN} -sf libtdb.so.1 ${PREFIX}/lib/libtdb.so
+
+.include "${MASTERDIR}/Makefile"
