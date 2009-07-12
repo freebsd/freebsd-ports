@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_UserAgent_Detect
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	bg1tpt@gmail.com
