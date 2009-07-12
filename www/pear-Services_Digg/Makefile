@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Digg
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.7
 CATEGORIES=	www pear
 
 MAINTAINER=	bg1tpt@gmail.com
