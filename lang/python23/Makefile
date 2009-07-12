@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT?=	An interpreted object-oriented programming language
+COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
@@ -35,8 +35,8 @@ PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
 		plat-freebsd7 plat-freebsd8
 SHARED_WRKSRC=	${WRKSRC}/build.shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
-DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
-TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
+DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 BIN_SCRIPTS=	idle pydoc python python-shared
 BINLINKS_SUB=	-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
@@ -50,10 +50,10 @@ OPTIONS=	THREADS "Enable thread support" on \
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-MLINKS=         ${PYTHON_VERSION}.1 python.1
-PLIST_SUB+=     IF_DEFAULT=""
+MLINKS=		${PYTHON_VERSION}.1 python.1
+PLIST_SUB+=	IF_DEFAULT=""
 .else
-PLIST_SUB+=     IF_DEFAULT="@comment "
+PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
 .if !defined(WITHOUT_THREADS)
@@ -95,9 +95,9 @@ CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
 .if !defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+= --enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
 .else
-CONFIGURE_ARGS+= --disable-ipv6
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-extract:
@@ -178,13 +178,15 @@ post-install:
 	done
 .endif
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${TOOLSDIR}
-	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
-		(cd ${TOOLSDIR}; tar xf -)
-	@${MKDIR} ${DEMODIR}
-	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - * | \
-		(cd ${DEMODIR}; tar xf -)
+.if !defined(NOPORTDATA)
+	@${MKDIR} ${DATADIR}
+	@cd ${WRKSRC}; ${TAR} -c --exclude='*CVS*' -f - Tools | \
+		(cd ${DATADIR}; ${TAR} xf -)
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/Demo; ${TAR} -c --exclude='*CVS*' -f - * | \
+		(cd ${EXAMPLESDIR}; ${TAR} xf -)
 .endif
 
 	@${CAT} ${PKGMESSAGE}
