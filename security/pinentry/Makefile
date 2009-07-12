@@ -54,6 +54,7 @@ PLIST_SUB+=	WITH_QT3="@comment "
 BUILD_DEPENDS+=	moc-qt4:${PORTSDIR}/devel/qt4-moc
 LIB_DEPENDS+=	QtGui.4:${PORTSDIR}/x11-toolkits/qt4-gui
 PLIST_SUB+=	WITH_QT4=""
+MOC4=		${LOCALBASE}/bin/moc-qt4
 .else
 CONFIGURE_ARGS+=--disable-pinentry-qt4
 PLIST_SUB+=	WITH_QT4="@comment "
@@ -88,6 +89,11 @@ pre-configure:
 .if defined(WITH_QT3)
 	${REINPLACE_CMD} -e "/^MOC/s,@MOC@,${MOC3}," \
 		${WRKSRC}/qt/Makefile.in
+.endif
+.if defined(WITH_QT4)
+	cd ${WRKSRC}/qt4 && \
+		${MOC4} pinentrydialog.h > pinentrydialog.moc && \
+		${MOC4} qsecurelineedit.h > qsecurelineedit.moc
 .endif
 
 .include <bsd.port.mk>
