@@ -82,6 +82,7 @@
     SUBDIR += sabernetdcs-client
     SUBDIR += sql-ledger
     SUBDIR += tinyerp-server
+    SUBDIR += trytond
     SUBDIR += venice
     SUBDIR += weberp
     SUBDIR += wmstock

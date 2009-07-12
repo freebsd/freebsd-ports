@@ -1,0 +1,16 @@
+POST-INSTALL CONFIGURATION FOR TRYTOND
+==================================================
+
+Before you start the trytond server, you should:
+
+1) Install a PostgreSQL server.
+
+2) Edit the file :
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/config.py
+based on the configuration of your PostgreSQL server.
+
+For more information, see the DOCUMENTATION:
+
+   http://www.tryton.org/documentation.html
+
+====================================================

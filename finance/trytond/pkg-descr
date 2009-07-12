@@ -1,0 +1,6 @@
+Tryton is a three-tiers high-level general purpose application platform
+under the license GPL-3 written in Python and using PostgreSQL as
+database engine. It is the core base of a complete business solution
+providing modularity, scalability and security.
+
+WWW:	http://www.tryton.org/
