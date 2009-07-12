@@ -7,16 +7,16 @@
 
 PORTNAME=	eruby
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Interprets Ruby code embedded in a text file like PHP/ePerl/ASP/JSP
 
 USE_RUBY=	yes
-
-BROKEN=		does not compile
 
 CONFIGURE_ARGS=	--enable-shared --with-charset="${DEFAULT_CHARSET}"
 INSTALL_TARGET=	site-install
@@ -51,4 +51,15 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_PTHREADS)
+.if ${RUBY_VERSION} == 1.8.7.160
+# ruby18 -r rbconfig -e "p Config::CONFIG['LIBS']"  should output:
+# "-lcrypt -lm  -rpath=/usr/lib:/usr/local/lib -pthread"
+# but 1.8.7.160 missing pthread
+CONFIGURE_ENV+=	EXTRA_LDFLAGS="${EXTRA_LDFLAGS} -pthread"
+.endif
+.endif
+
+.include <bsd.port.post.mk>

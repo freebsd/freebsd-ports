@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2003-07-26 12:21:33.000000000 +0200
++++ Makefile.in	2009-06-21 17:14:51.000000000 +0200
+@@ -37,10 +37,10 @@
+ DLDFLAGS = @DLDFLAGS@
+ LDSHARED = @LDSHARED@
+ EXT_DLDFLAGS = @EXT_DLDFLAGS@
+-INSTALL_PROGRAM = $(RUBY) -r ftools -e 'File.install ARGV[0], ARGV[1], 0755, true'
+-INSTALL_DLLIB = $(RUBY) -r ftools -e 'File.install ARGV[0], ARGV[1], 0555, true'
+-INSTALL_DATA = $(RUBY) -r ftools -e 'File.install ARGV[0], ARGV[1], 0644, true'
+-INSTALL_DIR = $(RUBY) -r ftools -e 'File.makedirs(*ARGV)'
++INSTALL_PROGRAM = $(RUBY) -r fileutils -e 'FileUtils.install ARGV[0], ARGV[1], :mode => 0755, :verbose => true'
++INSTALL_DLLIB = $(RUBY) -r fileutils -e 'FileUtils.install ARGV[0], ARGV[1], :mode => 0555, :verbose => true'
++INSTALL_DATA = $(RUBY) -r fileutils -e 'FileUtils.install ARGV[0], ARGV[1], :mode => 0644, :verbose => true'
++INSTALL_DIR = $(RUBY) -r fileutils -e 'FileUtils.mkdir_p(*ARGV)'
+ 
+ RUBY_INSTALL_NAME = @RUBY_INSTALL_NAME@
+ LIBRUBYARG = @LIBRUBYARG@
