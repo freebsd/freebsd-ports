@@ -75,9 +75,6 @@ bin/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/scripts/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/scripts/db2ul4.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/scripts/ucp.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/scripts/uls.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/scripts/uls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/scripts/uls.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/converters.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/css.py
