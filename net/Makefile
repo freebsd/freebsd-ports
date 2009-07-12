@@ -866,6 +866,7 @@
     SUBDIR += samba3
     SUBDIR += samba32
     SUBDIR += samba33
+    SUBDIR += samba4-devel
     SUBDIR += samba4wins
     SUBDIR += sambasentinel
     SUBDIR += sbd
