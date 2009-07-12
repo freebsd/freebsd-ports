@@ -1,19 +1,11 @@
-*** XmHTML.cf~	Thu Oct  8 23:50:32 1998
---- XmHTML.cf	Sat Aug  5 14:32:52 2000
-***************
-*** 61,67 ****
-  
-  #define IHaveJPEG YES
-  JPEGINC =
-! JPEGLIB = -ljpeg
-  
-  XCOMM PNG Support. Enabled by default.
-  XCOMM You require libpng, version 0.96 or above. If you don't have this lib
---- 61,67 ----
-  
-  #define IHaveJPEG YES
-  JPEGINC =
-! JPEGLIB = -L${LOCALBASE}/lib -ljpeg
-  
-  XCOMM PNG Support. Enabled by default.
-  XCOMM You require libpng, version 0.96 or above. If you don't have this lib
+--- XmHTML.cf.orig	1998-10-08 16:50:32.000000000 -0500
++++ XmHTML.cf	2009-07-12 10:57:05.000000000 -0500
+@@ -61,7 +61,7 @@
+ 
+ #define IHaveJPEG YES
+ JPEGINC =
+-JPEGLIB = -ljpeg
++JPEGLIB = -L${LOCALBASE}/lib -ljpeg
+ 
+ XCOMM PNG Support. Enabled by default.
+ XCOMM You require libpng, version 0.96 or above. If you don't have this lib

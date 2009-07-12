@@ -1,150 +1,85 @@
-*** Makefile.org	Sat Jan  6 19:35:41 2001
---- Makefile	Sat Jan  6 19:46:00 2001
-***************
-*** 40,46 ****
-  # remove the examples directory from this line.
-  # If you want to build the XmHTML tutorial examples, add the book directory.
-  
-! SUBDIRS= lib http examples tools
-  
-  # some common definitions
-  #
---- 40,46 ----
-  # remove the examples directory from this line.
-  # If you want to build the XmHTML tutorial examples, add the book directory.
-  
-! SUBDIRS= lib http
-  
-  # some common definitions
-  #
-***************
-*** 55,61 ****
-  RANLIB= ranlib
-  
-  SHELL     = /bin/sh
-! MAKE      = make 
-  # change this to makedepend if your system doesn't have gcc
-  MAKEDEPEND= gccmakedep
-  
---- 55,61 ----
-  RANLIB= ranlib
-  
-  SHELL     = /bin/sh
-! #MAKE      = make
-  # change this to makedepend if your system doesn't have gcc
-  MAKEDEPEND= gccmakedep
-  
-***************
-*** 64,72 ****
-  # Compiler Settings #
-  #                   #
-  #####################
-! CC       = gcc
-! CFLAGS   = -g -funroll-loops -Wall -pipe -ansi 
-! LDFLAGS  = 
-  
-  # The following flags are *very* usefull if you are getting unresolved
-  # references to functions in libraries that you *know* to exist.
---- 64,72 ----
-  # Compiler Settings #
-  #                   #
-  #####################
-! #CC       = gcc
-! #CFLAGS   = -g -funroll-loops -Wall -pipe -ansi
-! #LDFLAGS  =
-  
-  # The following flags are *very* usefull if you are getting unresolved
-  # references to functions in libraries that you *know* to exist.
-***************
-*** 115,121 ****
-  # HAVE_LIBZ => zlib.h
-  
-  ZLIBINC       =
-! IMAGEINCLUDES = $(ZLIBINC)
-  
-  # Image libraries
-  # No need to add -lXpm if you need to include it with LIBS below
---- 115,121 ----
-  # HAVE_LIBZ => zlib.h
-  
-  ZLIBINC       =
-! IMAGEINCLUDES = -I${LOCALBASE}/include $(ZLIBINC)
-  
-  # Image libraries
-  # No need to add -lXpm if you need to include it with LIBS below
-***************
-*** 126,132 ****
-  # HAVE_LIBZ => libz (and possibly libm)
-  
-  ZLIBLIB   = -lz -lm
-! IMAGELIBS = -ljpeg -lpng $(ZLIBLIB)
-  
-  # It might be troublesome to know what the correct defines are for your
-  # system. A possible set of defines for some OS's is given below. Pick
---- 126,132 ----
-  # HAVE_LIBZ => libz (and possibly libm)
-  
-  ZLIBLIB   = -lz -lm
-! IMAGELIBS = -L${LOCALBASE}/lib -ljpeg -lpng $(ZLIBLIB)
-  
-  # It might be troublesome to know what the correct defines are for your
-  # system. A possible set of defines for some OS's is given below. Pick
-***************
-*** 166,182 ****
-  # Add -DDEBUG to enable selective debug output (see the file DEBUGGING for more
-  # info).
-  #
-! CPPFLAGS = -DDEBUG -D_GNU_SOURCE -D_BSD_SOURCE -D_POSIX_SOURCE -DHAVE_REGEX_H $(IMAGEDEFINES) 
-  
-  # Various include directories
-  LIBINC=-I. -I../include -I../include/common -I../../include -I../../include/common
-  
-  # Platform specific includes
-  ifeq ($(PLATFORM),Motif)
-! PLATFORMINC=-I../../include/XmHTML -I/usr/X11R6/include
-  else
-  ifeq ($(PLATFORM),gtk)
-! PLATFORMINC=-I../../include/gtk-xmhtml -I/usr/local/include
-  endif
-  endif
-  
---- 166,182 ----
-  # Add -DDEBUG to enable selective debug output (see the file DEBUGGING for more
-  # info).
-  #
-! CPPFLAGS = -DHAVE_REGEX_H $(IMAGEDEFINES)
-  
-  # Various include directories
-  LIBINC=-I. -I../include -I../include/common -I../../include -I../../include/common
-  
-  # Platform specific includes
-  ifeq ($(PLATFORM),Motif)
-! PLATFORMINC=-I../../include/XmHTML -I${LOCALBASE}/include
-  else
-  ifeq ($(PLATFORM),gtk)
-! PLATFORMINC=-I../../include/gtk-xmhtml -I${LOCALBASE}/include
-  endif
-  endif
-  
-***************
-*** 192,201 ****
-  # Motif version (default)
-  ifeq ($(PLATFORM),Motif)
-  
-! LIBDIR = -L/usr/X11R6/lib
-  # This is what is required under Linux (Motif 2.0.1).
-  # Your mileage may vary.
-! LIBS   = -lXm -lXpm -lXmu -lXt -lXext -lX11 -lSM -lICE
-  
-  else
-  
---- 192,201 ----
-  # Motif version (default)
-  ifeq ($(PLATFORM),Motif)
-  
-! LIBDIR = -L${LOCALBASE}/lib
-  # This is what is required under Linux (Motif 2.0.1).
-  # Your mileage may vary.
-! LIBS   = ${MOTIFLIB} -lXpm -lXmu -lXt -lXext -lX11 -lSM -lICE
-  
-  else
+--- Makefile.orig	1999-02-03 18:43:27.000000000 -0600
++++ Makefile	2009-07-12 10:57:05.000000000 -0500
+@@ -40,7 +40,7 @@
+ # remove the examples directory from this line.
+ # If you want to build the XmHTML tutorial examples, add the book directory.
+ 
+-SUBDIRS= lib http examples tools
++SUBDIRS= lib http
+ 
+ # some common definitions
+ #
+@@ -55,7 +55,7 @@
+ RANLIB= ranlib
+ 
+ SHELL     = /bin/sh
+-MAKE      = make 
++#MAKE      = make
+ # change this to makedepend if your system doesn't have gcc
+ MAKEDEPEND= gccmakedep
+ 
+@@ -64,9 +64,9 @@
+ # Compiler Settings #
+ #                   #
+ #####################
+-CC       = gcc
+-CFLAGS   = -g -funroll-loops -Wall -pipe -ansi 
+-LDFLAGS  = 
++#CC       = gcc
++#CFLAGS   = -g -funroll-loops -Wall -pipe -ansi
++#LDFLAGS  =
+ 
+ # The following flags are *very* usefull if you are getting unresolved
+ # references to functions in libraries that you *know* to exist.
+@@ -115,7 +115,7 @@
+ # HAVE_LIBZ => zlib.h
+ 
+ ZLIBINC       =
+-IMAGEINCLUDES = $(ZLIBINC)
++IMAGEINCLUDES = -I${LOCALBASE}/include $(ZLIBINC)
+ 
+ # Image libraries
+ # No need to add -lXpm if you need to include it with LIBS below
+@@ -126,7 +126,7 @@
+ # HAVE_LIBZ => libz (and possibly libm)
+ 
+ ZLIBLIB   = -lz -lm
+-IMAGELIBS = -ljpeg -lpng $(ZLIBLIB)
++IMAGELIBS = -L${LOCALBASE}/lib -ljpeg -lpng $(ZLIBLIB)
+ 
+ # It might be troublesome to know what the correct defines are for your
+ # system. A possible set of defines for some OS's is given below. Pick
+@@ -166,17 +166,17 @@
+ # Add -DDEBUG to enable selective debug output (see the file DEBUGGING for more
+ # info).
+ #
+-CPPFLAGS = -DDEBUG -D_GNU_SOURCE -D_BSD_SOURCE -D_POSIX_SOURCE -DHAVE_REGEX_H $(IMAGEDEFINES) 
++CPPFLAGS = -DHAVE_REGEX_H $(IMAGEDEFINES)
+ 
+ # Various include directories
+ LIBINC=-I. -I../include -I../include/common -I../../include -I../../include/common
+ 
+ # Platform specific includes
+ ifeq ($(PLATFORM),Motif)
+-PLATFORMINC=-I../../include/XmHTML -I/usr/X11R6/include
++PLATFORMINC=-I../../include/XmHTML -I${LOCALBASE}/include
+ else
+ ifeq ($(PLATFORM),gtk)
+-PLATFORMINC=-I../../include/gtk-xmhtml -I/usr/local/include
++PLATFORMINC=-I../../include/gtk-xmhtml -I${LOCALBASE}/include
+ endif
+ endif
+ 
+@@ -192,10 +192,10 @@
+ # Motif version (default)
+ ifeq ($(PLATFORM),Motif)
+ 
+-LIBDIR = -L/usr/X11R6/lib
++LIBDIR = -L${LOCALBASE}/lib
+ # This is what is required under Linux (Motif 2.0.1).
+ # Your mileage may vary.
+-LIBS   = -lXm -lXpm -lXmu -lXt -lXext -lX11 -lSM -lICE
++LIBS   = ${MOTIFLIB} -lXpm -lXmu -lXt -lXext -lX11 -lSM -lICE
+ 
+ else
+ 

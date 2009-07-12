@@ -1,11 +1,72 @@
---- tools/Makefile.orig	Wed Feb  3 19:43:27 1999
-+++ tools/Makefile	Tue Nov  2 01:38:36 1999
-@@ -88,7 +88,7 @@
+--- tools/Makefile.orig	1999-02-03 18:43:27.000000000 -0600
++++ tools/Makefile	2009-07-12 11:08:00.000000000 -0500
+@@ -39,7 +39,7 @@
+ # rule to create .o files from .c files 
+ .c.o:
+ 	$(RM) $@
+-	$(CC) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) -c $<
++	$(LIBTOOL) --mode=compile $(CC) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) -c $<
+ 
+ #
+ # Special object rules
+@@ -50,21 +50,21 @@
+ #
+ gif2gzf.o: gif2gzf.c
+ 	$(RM) $@
+-	$(CC) -c $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(ZLIBINC) $*.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(ZLIBINC) $*.c
+ 
+ #
+ # LZWStream compiled for standalone usage
+ #
+ LZWStream.o: ../lib/common/LZWStream.c
+ 	$(RM) $@
+-	$(CC) -c $(INCLUDES) $(CFLAGS) $(CPPFLAGS) -DNO_XmHTML ../lib/common/LZWStream.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(INCLUDES) $(CFLAGS) $(CPPFLAGS) -DNO_XmHTML ../lib/common/LZWStream.c
+ 
+ #
+ # XmHTML HTML Parser compiled for standalone usage
+ #
+ parse.o: ../lib/common/parse.c
+ 	$(RM) $@
+-	$(CC) -c $(INCLUDES) $(CFLAGS) $(CPPFLAGS) -DMINIPARSE ../lib/common/parse.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(INCLUDES) $(CFLAGS) $(CPPFLAGS) -DMINIPARSE ../lib/common/parse.c
+ 
+ #
+ # All Targets
+@@ -76,29 +76,29 @@
+ 
+ reptype::  GetRepTypes.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) GetRepTypes.o $(LOADLIBES)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) GetRepTypes.o $(LOADLIBES)
+ 
+ wsize::  WidgetSize.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) WidgetSize.o
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) WidgetSize.o
+ 
+ gifinfo::  gifinfo.o ImBuffer.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) gifinfo.o ImBuffer.o
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) gifinfo.o ImBuffer.o
  
  httpget::  httpget.o
  	$(RM) $@ \ 
 -	$(CC) -o $@ $(LDFLAGS) httpget.o -L../http -lhttp $(DMALLOCLIB)
-+	$(CC) -o $@ $(LDFLAGS) httpget.o ../http/libhttp.la $(DMALLOCLIB)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) httpget.o ../http/libhttp.la $(DMALLOCLIB)
  
  # gif to gzf converter
  gif2gzf:: gif2gzf.o LZWStream.o ImBuffer.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) gif2gzf.o LZWStream.o ImBuffer.o $(ZLIBLIB)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) gif2gzf.o LZWStream.o ImBuffer.o $(ZLIBLIB)
+ 
+ # stand alone parser
+ HTMLparse:: parse.o miniparse.o
+ 	$(RM) $@
+-	$(CC) -o $@ $(LDFLAGS) parse.o miniparse.o
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) parse.o miniparse.o
+ 
+ depend:: $(SRCS) 
+ 	$(MAKEDEPEND) $(INCLUDES) $(CPPFLAGS) -DMINIPARSE -DNO_XmHTML $(SRCS)
