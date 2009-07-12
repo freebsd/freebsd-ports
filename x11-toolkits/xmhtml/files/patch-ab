@@ -1,5 +1,5 @@
---- examples/Makefile.orig	Wed Feb  3 19:43:27 1999
-+++ examples/Makefile	Tue Nov  2 01:39:14 1999
+--- examples/Makefile.orig	1999-02-03 18:43:27.000000000 -0600
++++ examples/Makefile	2009-07-12 11:02:35.000000000 -0500
 @@ -11,10 +11,10 @@
  EXAMPLES=example_1 example_2 example_4
  
@@ -13,3 +13,31 @@
  
  # Libraries against which all examples are linked 
  LINKLIBS = $(XMHTMLLIB) $(LOADLIBES) $(DMALLOCLIB)
+@@ -22,7 +22,7 @@
+ # rule to create .o files from .c files 
+ .c.o:
+ 	$(RM) $@
+-	$(CC) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) -c $<
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) -c $<
+ 
+ all: $(EXAMPLES)
+ 
+@@ -30,15 +30,15 @@
+ 
+ example_1::  ../src/libXmHTML.a example_1.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) example_1.o $(LINKLIBS)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) example_1.o $(LINKLIBS)
+ 
+ example_2::  ../src/libXmHTML.a example_2.o $(MOBJS)
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) example_2.o $(MOBJS) $(LINKLIBS)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) example_2.o $(MOBJS) $(LINKLIBS)
+ 
+ example_4::  ../src/libXmHTML.a example_4.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) example_4.o $(LINKLIBS) $(HTTPLIB)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) example_4.o $(LINKLIBS) $(HTTPLIB)
+ 
+ .PHONY: ../src/libXmHTML.a 
+ .PHONY: stamp-includes
