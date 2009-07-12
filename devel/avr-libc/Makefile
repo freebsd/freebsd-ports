@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -38,10 +38,10 @@ CONFLICTS=	avr-libc-devel*
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--build=`./config.guess` --host=avr \
-	--enable-doc --disable-versioned-doc
+	--enable-doc --disable-versioned-doc --prefix=${PREFIX}
 PLIST_DOC=	${PKGDIR}/pkg-plist.doc
 .else
-CONFIGURE_ARGS=	--build=`./config.guess` --host=avr
+CONFIGURE_ARGS=	--build=`./config.guess` --host=avr --prefix=${PREFIX}
 PLIST_DOC=
 .endif
 # Work around the braind***ness introduced by <bsd.cpu.mk> in freebsd-5.

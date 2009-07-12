@@ -78,6 +78,7 @@ avr/include/avr/iom48p.h
 avr/include/avr/iom64.h
 avr/include/avr/iom640.h
 avr/include/avr/iom644.h
+avr/include/avr/iom644p.h
 avr/include/avr/iom645.h
 avr/include/avr/iom6450.h
 avr/include/avr/iom649.h
@@ -130,14 +131,18 @@ avr/include/avr/iousbxx2.h
 avr/include/avr/iousbxx6_7.h
 avr/include/avr/iox128a1.h
 avr/include/avr/iox128a3.h
+avr/include/avr/iox128d3.h
 avr/include/avr/iox16a4.h
 avr/include/avr/iox16d4.h
+avr/include/avr/iox192a3.h
 avr/include/avr/iox256a3.h
 avr/include/avr/iox256a3b.h
+avr/include/avr/iox256d3.h
 avr/include/avr/iox32a4.h
 avr/include/avr/iox32d4.h
 avr/include/avr/iox64a1.h
 avr/include/avr/iox64a3.h
+avr/include/avr/iox64d3.h
 avr/include/avr/lock.h
 avr/include/avr/parity.h
 avr/include/avr/pgmspace.h
@@ -145,6 +150,7 @@ avr/include/avr/portpins.h
 avr/include/avr/power.h
 avr/include/avr/sfr_defs.h
 avr/include/avr/signal.h
+avr/include/avr/signature.h
 avr/include/avr/sleep.h
 avr/include/avr/version.h
 avr/include/avr/wdt.h
@@ -259,8 +265,8 @@ avr/lib/avr5/crtm168.o
 avr/lib/avr5/crtm168p.o
 avr/lib/avr5/crtm169.o
 avr/lib/avr5/crtm169p.o
-avr/lib/avr5/crtm16u4.o
 avr/lib/avr5/crtm16hva.o
+avr/lib/avr5/crtm16u4.o
 avr/lib/avr5/crtm32.o
 avr/lib/avr5/crtm323.o
 avr/lib/avr5/crtm324p.o
