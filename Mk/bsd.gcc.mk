@@ -13,15 +13,15 @@
 # USE_FORTRAN knob.
 #
 # For example:
-#   USE_GCC=	4.2+	# port requires GCC 4.2 or later to build with.
-#   USE_GCC=	4.3		# port requires GCC 4.3 to build with.
+#   USE_GCC=	4.2+		# port requires GCC 4.2 or later.
+#   USE_GCC=	4.3			# port requires GCC 4.3.
 #
 # If your port needs a Fortran compiler, please specify that with the
 # USE_FORTRAN= knob.  Here is the list of options for that knob:
 #
-#   USE_FORTRAN=	yes	# use gfortran43 (/lang/gcc43)
-#   USE_FORTRAN=	g77	# use g77-34 (lang/gcc34; FreeBSD>=7)
-#						# or system f77 (/usr/bin/f77; FreeBSD<=6)
+#   USE_FORTRAN=	yes		# use gfortran43 (lang/gcc43)
+#   USE_FORTRAN=	g77		# use g77-34 (lang/gcc34; FreeBSD>=7)
+#							# or system f77 (/usr/bin/f77; FreeBSD<=6)
 #   USE_FORTRAN=	ifort	# use the Intel compiler (lang/ifc)
 #
 # Due to object file incompatiblity between Fortran compilers, we strongly
