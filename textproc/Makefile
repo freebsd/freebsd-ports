@@ -447,6 +447,7 @@
     SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-LaTeX-Driver
     SUBDIR += p5-LaTeX-Encode
+    SUBDIR += p5-LaTeX-Pod
     SUBDIR += p5-LaTeX-TOM
     SUBDIR += p5-LaTeX-Table
     SUBDIR += p5-Lingua-Conjunction
