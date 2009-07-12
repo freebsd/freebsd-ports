@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Jul  8 02:28:59 2004
-+++ Makefile.in	Sat Jul  7 13:46:20 2007
+--- Makefile.in.orig	2004-07-07 12:28:59.000000000 -0500
++++ Makefile.in	2009-07-11 23:21:23.000000000 -0500
 @@ -23,23 +23,23 @@
  both: libuninameslist.la libuninameslist-fr.la
  
@@ -22,9 +22,10 @@
  # You may need to be root to do the install
  	mkdir -p $(libdir)
 -	$(LIBTOOL) $(INSTALL) -c libuninameslist.la $(libdir)/libuninameslist.la
-+	$(LIBTOOL) --mode=install $(INSTALL) -c libuninameslist.la $(libdir)/libuninameslist.la
- 	$(LIBTOOL) $(INSTALL) -c libuninameslist-fr.la $(libdir)/libuninameslist-fr.la
+-	$(LIBTOOL) $(INSTALL) -c libuninameslist-fr.la $(libdir)/libuninameslist-fr.la
 -	$(LIBTOOL) --finish $(libdir)
++	$(LIBTOOL) --mode=install $(INSTALL) -c libuninameslist.la $(libdir)/libuninameslist.la
++	$(LIBTOOL) --mode=install $(INSTALL) -c libuninameslist-fr.la $(libdir)/libuninameslist-fr.la
 +	$(LIBTOOL) --mode=finish $(libdir)
  	mkdir -p $(incdir)
  	$(INSTALL_DATA) nameslist.h $(incdir)/uninameslist.h
