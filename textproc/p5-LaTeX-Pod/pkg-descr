@@ -1,0 +1,5 @@
+LaTeX::Pod converts LaTeX sources to Perl's POD (Plain old
+documentation) format. Currently only a subset of the available
+LaTeX language is supported.
+
+WWW:	http://search.cpan.org/dist/LaTeX-Pod/
