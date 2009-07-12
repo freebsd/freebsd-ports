@@ -1025,6 +1025,7 @@
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-syntax
+    SUBDIR += rubygem-termcolor
     SUBDIR += rubygem-tidy
     SUBDIR += rubygem-xml-simple
     SUBDIR += rw-aspell
