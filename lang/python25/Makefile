@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT?=	An interpreted object-oriented programming language
+COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}/portbld.static
@@ -36,8 +36,8 @@ PLIST=		${WRKDIR}/PLIST
 PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PYVER_WITHPAT=${PORTVERSION:S/.c/c/}
-DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
-TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
+DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
 		plat-freebsd7 plat-freebsd8
@@ -216,13 +216,15 @@ post-install:
 	done
 .endif
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${TOOLSDIR}
+.if !defined(NOPORTDATA)
+	@${MKDIR} ${DATADIR}
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
-		(cd ${TOOLSDIR}; ${TAR} -xf -)
-	@${MKDIR} ${DEMODIR}
+		(cd ${DATADIR}; ${TAR} -xf -)
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
-		(cd ${DEMODIR}; ${TAR} -xf -)
+		(cd ${EXAMPLESDIR}; ${TAR} -xf -)
 .endif
 
 	@${CAT} ${PKGMESSAGE}
