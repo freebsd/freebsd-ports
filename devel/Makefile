@@ -1708,6 +1708,7 @@
     SUBDIR += p5-Parse-ExuberantCTags
     SUBDIR += p5-Parse-Method-Signatures
     SUBDIR += p5-Parse-PerlConfig
+    SUBDIR += p5-Parse-Pidl
     SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Parse-Yapp
     SUBDIR += p5-ParseLex
@@ -2768,6 +2769,7 @@
     SUBDIR += t1lib
     SUBDIR += ta-lib
     SUBDIR += tailor
+    SUBDIR += talloc
     SUBDIR += tavrasm
     SUBDIR += tbb
     SUBDIR += tcl-memchan
@@ -2786,6 +2788,7 @@
     SUBDIR += tdl
     SUBDIR += templ
     SUBDIR += terminality
+    SUBDIR += tevent
     SUBDIR += thistest
     SUBDIR += thrift
     SUBDIR += thunar-svn-plugin
