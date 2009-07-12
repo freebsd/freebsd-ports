@@ -1,0 +1,17 @@
+===============================================================================
+
+This port is *HIGHLY* experimental, lacks documentation and, in general,
+unsupported. It solely purpose is to give you a grasp of upcoming Samba4
+and try it.
+
+This *IS NOT* production ready code. Use at your own risk.
+
+How to start: http://wiki.samba.org/index.php/Samba4/HOWTO
+
+Provisioning script: %%DATADIR%%/setup/provision
+
+For additional documentation check: http://wiki.samba.org/index.php/Samba4
+
+Bug reports should go to: https://bugzilla.samba.org/
+
+===============================================================================

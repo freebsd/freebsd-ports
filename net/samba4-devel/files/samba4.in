@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: samba4
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+#samba4_enable="YES"
+#
+# Configuration file can be set with:
+#samba4_config="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
+#
+
+. %%RC_SUBR%%
+
+name="samba4"
+rcvar=$(set_rcvar)
+
+load_rc_config "${name}"
+
+# Defaults
+samba4_enable=${samba4_enable:=NO}
+samba4_flags=${samba4_flags=--daemon}
+samba4_config_default="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
+samba4_config=${samba4_config=${samba4_config_default}}
+samba4_configfile_arg=${samba4_config:+--configfile="${samba4_config}"}			#"
+testparm_command="%%PREFIX%%/bin/testparm --suppress-prompt --verbose ${samba4_configfile_arg}"
+# Fetch parameters from configuration file
+samba4_lockdir=$(${testparm_command} --parameter-name='lock directory' 2>/dev/null)
+# Runtime options
+restart_precmd="samba4_checkconfig"
+command="%%PREFIX%%/sbin/${name}"
+command_args=${samba4_configfile_arg}
+# Requirements
+required_files="${samba4_config}"
+required_dirs="${samba4_lockdir}"
+
+samba4_checkconfig() {
+    echo -n "Performing sanity check on Samba configuration: "
+    if ${testparm_command} >/dev/null 2>&1; then
+	echo "OK"
+    else
+	echo "FAILED"
+	return 1
+    fi
+}
+
+run_rc_command "$1"
