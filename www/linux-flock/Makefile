@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	flock
-PORTVERSION=	1.1.2
+PORTVERSION=	2.5
 DISTVERSIONSUFFIX=	.en-US.linux-i686
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
 		http://ftp.osuosl.org/pub/%SUBDIR%/ \
@@ -16,8 +15,14 @@ MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
 		http://www.gtlib.gatech.edu/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The social web browser
+
+BIN_NAME=	flock-browser
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_LDCONFIG=	yes
+USE_BZIP2=	yes
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>

@@ -1,7 +1,11 @@
 bin/%%APP_NAME%%
-share/applications/%%APP_NAME%%.desktop
 lib/%%APP_NAME%%/.autoreg
+lib/%%APP_NAME%%/README.txt
+lib/%%APP_NAME%%/Throbber-small.gif
+lib/%%APP_NAME%%/application.ini
+lib/%%APP_NAME%%/blocklist.xml
 lib/%%APP_NAME%%/browserconfig.properties
+lib/%%APP_NAME%%/builddetails.ini
 lib/%%APP_NAME%%/chrome/browser.jar
 lib/%%APP_NAME%%/chrome/browser.manifest
 lib/%%APP_NAME%%/chrome/classic.jar
@@ -16,7 +20,9 @@ lib/%%APP_NAME%%/chrome/flock-skin.jar
 lib/%%APP_NAME%%/chrome/flock-skin.manifest
 lib/%%APP_NAME%%/chrome/flock.jar
 lib/%%APP_NAME%%/chrome/flock.manifest
-lib/%%APP_NAME%%/chrome/icons/default/default.xpm
+lib/%%APP_NAME%%/chrome/icons/default/default16.png
+lib/%%APP_NAME%%/chrome/icons/default/default32.png
+lib/%%APP_NAME%%/chrome/icons/default/default48.png
 lib/%%APP_NAME%%/chrome/pippki.jar
 lib/%%APP_NAME%%/chrome/pippki.manifest
 lib/%%APP_NAME%%/chrome/toolkit.jar
@@ -25,22 +31,27 @@ lib/%%APP_NAME%%/components/FeedConverter.js
 lib/%%APP_NAME%%/components/FeedProcessor.js
 lib/%%APP_NAME%%/components/FeedWriter.js
 lib/%%APP_NAME%%/components/WebContentConverter.js
+lib/%%APP_NAME%%/components/aboutRobots.js
 lib/%%APP_NAME%%/components/browser.xpt
+lib/%%APP_NAME%%/components/flockAOLMailService.js
 lib/%%APP_NAME%%/components/flockAccountService.js
 lib/%%APP_NAME%%/components/flockAccountUtils.js
 lib/%%APP_NAME%%/components/flockAuthManager.js
+lib/%%APP_NAME%%/components/flockBeboService.js
 lib/%%APP_NAME%%/components/flockBlogService.js
 lib/%%APP_NAME%%/components/flockBlogWebServiceAtom.js
 lib/%%APP_NAME%%/components/flockBlogWebServiceMetaweblog.js
 lib/%%APP_NAME%%/components/flockBlogWebServiceMovabletype.js
 lib/%%APP_NAME%%/components/flockBloggerService.js
 lib/%%APP_NAME%%/components/flockBlogsomeService.js
-lib/%%APP_NAME%%/components/flockDateFormatter.js
+lib/%%APP_NAME%%/components/flockBuildDetails.js
 lib/%%APP_NAME%%/components/flockDeliciousService.js
+lib/%%APP_NAME%%/components/flockDiggService.js
+lib/%%APP_NAME%%/components/flockDocShellBridge.js
 lib/%%APP_NAME%%/components/flockError.js
 lib/%%APP_NAME%%/components/flockFacebookAPI.js
 lib/%%APP_NAME%%/components/flockFacebookService.js
-lib/%%APP_NAME%%/components/flockFavoritesService.js
+lib/%%APP_NAME%%/components/flockFavoritesMigrationService.js
 lib/%%APP_NAME%%/components/flockFeedManager.js
 lib/%%APP_NAME%%/components/flockFlickrService.js
 lib/%%APP_NAME%%/components/flockFlockChannel.js
@@ -49,19 +60,18 @@ lib/%%APP_NAME%%/components/flockGmailService.js
 lib/%%APP_NAME%%/components/flockHousekeeper.js
 lib/%%APP_NAME%%/components/flockIndexer.js
 lib/%%APP_NAME%%/components/flockLivejournalService.js
-lib/%%APP_NAME%%/components/flockLogger.js
-lib/%%APP_NAME%%/components/flockLoggingConsoleWriter.js
-lib/%%APP_NAME%%/components/flockLoggingFileWriter.js
-lib/%%APP_NAME%%/components/flockMagnoliaService.js
 lib/%%APP_NAME%%/components/flockMediaChannel.js
 lib/%%APP_NAME%%/components/flockMetricsService.js
+lib/%%APP_NAME%%/components/flockMigrateMisc.js
+lib/%%APP_NAME%%/components/flockMigrateMyWorld.js
 lib/%%APP_NAME%%/components/flockMigrateRDF.js
+lib/%%APP_NAME%%/components/flockMigrateToolbars.js
 lib/%%APP_NAME%%/components/flockMigrationManager.js
-lib/%%APP_NAME%%/components/flockMyworldService.js
+lib/%%APP_NAME%%/components/flockMyspaceService.js
+lib/%%APP_NAME%%/components/flockOOBECookieScan.js
 lib/%%APP_NAME%%/components/flockOpmlService.js
 lib/%%APP_NAME%%/components/flockPeopleRefreshListener.js
 lib/%%APP_NAME%%/components/flockPeopleService.js
-lib/%%APP_NAME%%/components/flockPeopleUtils.js
 lib/%%APP_NAME%%/components/flockPhoto.js
 lib/%%APP_NAME%%/components/flockPhotoAPIManager.js
 lib/%%APP_NAME%%/components/flockPhotoAlbum.js
@@ -69,16 +79,19 @@ lib/%%APP_NAME%%/components/flockPhotoUpload.js
 lib/%%APP_NAME%%/components/flockPhotoUploadService.js
 lib/%%APP_NAME%%/components/flockPhotobucketService.js
 lib/%%APP_NAME%%/components/flockPicasaService.js
-lib/%%APP_NAME%%/components/flockPiczoService.js
 lib/%%APP_NAME%%/components/flockPollerService.js
 lib/%%APP_NAME%%/components/flockProfiler.js
-lib/%%APP_NAME%%/components/flockRemoteConsoleLogger.js
+lib/%%APP_NAME%%/components/flockRSSMediaService.js
+lib/%%APP_NAME%%/components/flockRevverService.js
 lib/%%APP_NAME%%/components/flockRichDNDService.js
 lib/%%APP_NAME%%/components/flockSearchAPIAmazon.js
 lib/%%APP_NAME%%/components/flockSearchAPICraigslist.js
 lib/%%APP_NAME%%/components/flockSearchAPIEbay.js
 lib/%%APP_NAME%%/components/flockSearchAPIFlock.js
+lib/%%APP_NAME%%/components/flockSearchAPIGoogle.js
+lib/%%APP_NAME%%/components/flockSearchAPITVRss.js
 lib/%%APP_NAME%%/components/flockSearchAPITechnorati.js
+lib/%%APP_NAME%%/components/flockSearchAPITwitter.js
 lib/%%APP_NAME%%/components/flockSearchAPIYahoo.js
 lib/%%APP_NAME%%/components/flockSearchManager.js
 lib/%%APP_NAME%%/components/flockSearchMigratable.js
@@ -87,40 +100,48 @@ lib/%%APP_NAME%%/components/flockShelfService.js
 lib/%%APP_NAME%%/components/flockSingleton.js
 lib/%%APP_NAME%%/components/flockStopWatch.js
 lib/%%APP_NAME%%/components/flockStreamHousekeeping.js
+lib/%%APP_NAME%%/components/flockTinyPicService.js
 lib/%%APP_NAME%%/components/flockTwitterService.js
 lib/%%APP_NAME%%/components/flockTypepadService.js
 lib/%%APP_NAME%%/components/flockWebDetective.js
 lib/%%APP_NAME%%/components/flockWebServiceManager.js
+lib/%%APP_NAME%%/components/flockWordpressBlogAPI.js
 lib/%%APP_NAME%%/components/flockWordpressService.js
 lib/%%APP_NAME%%/components/flockXangaService.js
 lib/%%APP_NAME%%/components/flockXmlRpc.js
 lib/%%APP_NAME%%/components/flockYahooMailService.js
 lib/%%APP_NAME%%/components/flockYoutubeService.js
+lib/%%APP_NAME%%/components/fuelApplication.js
 lib/%%APP_NAME%%/components/jsconsole-clhandler.js
+lib/%%APP_NAME%%/components/libbrowsercomps.so
+lib/%%APP_NAME%%/components/libbrowserdirprovider.so
+lib/%%APP_NAME%%/components/libdbusservice.so
 lib/%%APP_NAME%%/components/libflockcommon.so
+lib/%%APP_NAME%%/components/libimgicon.so
 lib/%%APP_NAME%%/components/libimgscaler.so
-lib/%%APP_NAME%%/components/libjsd.so
 lib/%%APP_NAME%%/components/libmozgnome.so
-lib/%%APP_NAME%%/components/libmyspell.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
-lib/%%APP_NAME%%/components/libspellchecker.so
 lib/%%APP_NAME%%/components/libxpcomclucene.so
-lib/%%APP_NAME%%/components/libxpinstall.so
-lib/%%APP_NAME%%/components/nsBookmarkTransactionManager.js
+lib/%%APP_NAME%%/components/nsAddonRepository.js
+lib/%%APP_NAME%%/components/nsBadCertHandler.js
+lib/%%APP_NAME%%/components/nsBlocklistService.js
 lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
 lib/%%APP_NAME%%/components/nsBrowserGlue.js
-lib/%%APP_NAME%%/components/nsCloseAllWindows.js
+lib/%%APP_NAME%%/components/nsContentDispatchChooser.js
+lib/%%APP_NAME%%/components/nsContentPrefService.js
 lib/%%APP_NAME%%/components/nsDefaultCLH.js
-lib/%%APP_NAME%%/components/nsDictionary.js
+lib/%%APP_NAME%%/components/nsDownloadManagerUI.js
 lib/%%APP_NAME%%/components/nsExtensionManager.js
 lib/%%APP_NAME%%/components/nsFilePicker.js
+lib/%%APP_NAME%%/components/nsHandlerService.js
 lib/%%APP_NAME%%/components/nsHelperAppDlg.js
-lib/%%APP_NAME%%/components/nsInterfaceInfoToIDL.js
-lib/%%APP_NAME%%/components/nsKillAll.js
+lib/%%APP_NAME%%/components/nsLivemarkService.js
+lib/%%APP_NAME%%/components/nsLoginInfo.js
+lib/%%APP_NAME%%/components/nsLoginManager.js
+lib/%%APP_NAME%%/components/nsLoginManagerPrompter.js
 lib/%%APP_NAME%%/components/nsMicrosummaryService.js
-lib/%%APP_NAME%%/components/nsProgressDialog.js
+lib/%%APP_NAME%%/components/nsPlacesTransactionsService.js
 lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
-lib/%%APP_NAME%%/components/nsResetPref.js
 lib/%%APP_NAME%%/components/nsSafebrowsingApplication.js
 lib/%%APP_NAME%%/components/nsSearchService.js
 lib/%%APP_NAME%%/components/nsSearchSuggestions.js
@@ -128,12 +149,19 @@ lib/%%APP_NAME%%/components/nsSessionStartup.js
 lib/%%APP_NAME%%/components/nsSessionStore.js
 lib/%%APP_NAME%%/components/nsSetDefaultBrowser.js
 lib/%%APP_NAME%%/components/nsSidebar.js
+lib/%%APP_NAME%%/components/nsTaggingService.js
+lib/%%APP_NAME%%/components/nsTryToClose.js
 lib/%%APP_NAME%%/components/nsURLFormatter.js
 lib/%%APP_NAME%%/components/nsUpdateService.js
 lib/%%APP_NAME%%/components/nsUrlClassifierLib.js
 lib/%%APP_NAME%%/components/nsUrlClassifierListManager.js
-lib/%%APP_NAME%%/components/nsUrlClassifierTable.js
-lib/%%APP_NAME%%/components/nsXmlRpcClient.js
+lib/%%APP_NAME%%/components/nsWebHandlerApp.js
+lib/%%APP_NAME%%/components/pluginGlue.js
+lib/%%APP_NAME%%/components/storage-Legacy.js
+lib/%%APP_NAME%%/components/txEXSLTRegExFunctions.js
+lib/%%APP_NAME%%/crashreporter
+lib/%%APP_NAME%%/crashreporter-override.ini
+lib/%%APP_NAME%%/crashreporter.ini
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
@@ -146,12 +174,11 @@ lib/%%APP_NAME%%/defaults/profile/chrome/userContent-example.css
 lib/%%APP_NAME%%/defaults/profile/localstore.rdf
 lib/%%APP_NAME%%/defaults/profile/mimeTypes.rdf
 lib/%%APP_NAME%%/defaults/profile/prefs.js
-lib/%%APP_NAME%%/defaults/profile/search.rdf
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
 lib/%%APP_NAME%%/extensions/{b01bf10c-302a-11da-b67b-000d60ca027b}/install.rdf
-lib/%%APP_NAME%%/flock
 lib/%%APP_NAME%%/flock-bin
+lib/%%APP_NAME%%/flock-browser
 lib/%%APP_NAME%%/gm
 lib/%%APP_NAME%%/greprefs/all.js
 lib/%%APP_NAME%%/greprefs/security-prefs.js
@@ -162,53 +189,84 @@ lib/%%APP_NAME%%/icons/mozicon16.xpm
 lib/%%APP_NAME%%/icons/mozicon50.xpm
 lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
+lib/%%APP_NAME%%/libjemalloc.so
 lib/%%APP_NAME%%/libmozjs.so
 lib/%%APP_NAME%%/libnspr4.so
 lib/%%APP_NAME%%/libnss3.so
 lib/%%APP_NAME%%/libnssckbi.so
+lib/%%APP_NAME%%/libnssdbm3.so
+lib/%%APP_NAME%%/libnssutil3.so
 lib/%%APP_NAME%%/libplc4.so
 lib/%%APP_NAME%%/libplds4.so
 lib/%%APP_NAME%%/libsmime3.so
 lib/%%APP_NAME%%/libsoftokn3.chk
 lib/%%APP_NAME%%/libsoftokn3.so
+lib/%%APP_NAME%%/libsqlite3.so
 lib/%%APP_NAME%%/libssl3.so
 lib/%%APP_NAME%%/libxpcom.so
-lib/%%APP_NAME%%/libxpcom_compat.so
-lib/%%APP_NAME%%/libxpcom_core.so
-lib/%%APP_NAME%%/libxpistub.so
+lib/%%APP_NAME%%/libxul.so
+lib/%%APP_NAME%%/modules/DownloadUtils.jsm
+lib/%%APP_NAME%%/modules/FlockCastUtils.jsm
 lib/%%APP_NAME%%/modules/FlockCryptoHash.jsm
+lib/%%APP_NAME%%/modules/FlockDateFormatter.jsm
+lib/%%APP_NAME%%/modules/FlockDeliciousApi.jsm
+lib/%%APP_NAME%%/modules/FlockFlickrAPI.jsm
+lib/%%APP_NAME%%/modules/FlockPhotoUploader.jsm
+lib/%%APP_NAME%%/modules/FlockFlickrStrings.jsm
+lib/%%APP_NAME%%/modules/FlockGoogleAuth.jsm
+lib/%%APP_NAME%%/modules/FlockLiveSearchProvider.jsm
+lib/%%APP_NAME%%/modules/FlockMediaUtils.jsm
+lib/%%APP_NAME%%/modules/FlockOAuthLib.jsm
+lib/%%APP_NAME%%/modules/FlockOnlineFavsUtils.jsm
+lib/%%APP_NAME%%/modules/FlockPrefsUtils.jsm
 lib/%%APP_NAME%%/modules/FlockScheduler.jsm
 lib/%%APP_NAME%%/modules/FlockStringBundleHelpers.jsm
 lib/%%APP_NAME%%/modules/FlockSvcUtils.jsm
+lib/%%APP_NAME%%/modules/FlockTemplates.jsm
+lib/%%APP_NAME%%/modules/FlockURLUtils.jsm
+lib/%%APP_NAME%%/modules/FlockUploadUtils.jsm
+lib/%%APP_NAME%%/modules/FlockWebmailUtils.jsm
 lib/%%APP_NAME%%/modules/FlockXMLUtils.jsm
 lib/%%APP_NAME%%/modules/FlockXPCOMUtils.jsm
 lib/%%APP_NAME%%/modules/ISO8601DateUtils.jsm
 lib/%%APP_NAME%%/modules/JSON.jsm
+lib/%%APP_NAME%%/modules/Microformats.js
+lib/%%APP_NAME%%/modules/PluralForm.jsm
 lib/%%APP_NAME%%/modules/XPCOMUtils.jsm
-lib/%%APP_NAME%%/modules/deliciousApi.jsm
-lib/%%APP_NAME%%/modules/onlineFavoritesBackend.jsm
-lib/%%APP_NAME%%/modules/webmailBackend.jsm
+lib/%%APP_NAME%%/modules/debug.js
+lib/%%APP_NAME%%/modules/distribution.js
+lib/%%APP_NAME%%/modules/json_parse.jsm
+lib/%%APP_NAME%%/modules/utils.js
 lib/%%APP_NAME%%/mozilla-xremote-client
+lib/%%APP_NAME%%/platform.ini
 lib/%%APP_NAME%%/plugins/libnullplugin.so
+lib/%%APP_NAME%%/removed-files
 lib/%%APP_NAME%%/res/EditorOverride.css
 lib/%%APP_NAME%%/res/arrow.gif
 lib/%%APP_NAME%%/res/arrowd.gif
 lib/%%APP_NAME%%/res/broken-image.gif
 lib/%%APP_NAME%%/res/charsetData.properties
 lib/%%APP_NAME%%/res/charsetalias.properties
-lib/%%APP_NAME%%/res/cmessage.txt
+lib/%%APP_NAME%%/res/contenteditable.css
+lib/%%APP_NAME%%/res/designmode.css
+lib/%%APP_NAME%%/res/detect/aolmail.xml
+lib/%%APP_NAME%%/res/detect/bebo.xml
 lib/%%APP_NAME%%/res/detect/blogger.xml
 lib/%%APP_NAME%%/res/detect/blogsome.xml
 lib/%%APP_NAME%%/res/detect/delicious.xml
+lib/%%APP_NAME%%/res/detect/digg.xml
 lib/%%APP_NAME%%/res/detect/facebook.xml
+lib/%%APP_NAME%%/res/detect/facebookchat.xml
 lib/%%APP_NAME%%/res/detect/flickr.xml
+lib/%%APP_NAME%%/res/detect/flockoobe.xml
 lib/%%APP_NAME%%/res/detect/gmail.xml
 lib/%%APP_NAME%%/res/detect/livejournal.xml
-lib/%%APP_NAME%%/res/detect/magnolia.xml
+lib/%%APP_NAME%%/res/detect/myspace.xml
 lib/%%APP_NAME%%/res/detect/photobucket.xml
 lib/%%APP_NAME%%/res/detect/picasa.xml
-lib/%%APP_NAME%%/res/detect/piczo.xml
+lib/%%APP_NAME%%/res/detect/revver.xml
 lib/%%APP_NAME%%/res/detect/searchvideo.xml
+lib/%%APP_NAME%%/res/detect/tinypic.xml
 lib/%%APP_NAME%%/res/detect/twitter.xml
 lib/%%APP_NAME%%/res/detect/typepad.xml
 lib/%%APP_NAME%%/res/detect/wordpress.xml
@@ -223,31 +281,16 @@ lib/%%APP_NAME%%/res/entityTables/html40Symbols.properties
 lib/%%APP_NAME%%/res/entityTables/htmlEntityVersions.properties
 lib/%%APP_NAME%%/res/entityTables/mathml20.properties
 lib/%%APP_NAME%%/res/entityTables/transliterate.properties
-lib/%%APP_NAME%%/res/fonts/fontEncoding.properties
 lib/%%APP_NAME%%/res/fonts/mathfont.properties
-lib/%%APP_NAME%%/res/fonts/mathfontCMEX10.properties
-lib/%%APP_NAME%%/res/fonts/mathfontCMSY10.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMTExtra.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMath1.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMath2.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMath4.properties
-lib/%%APP_NAME%%/res/fonts/mathfontPUA.properties
-lib/%%APP_NAME%%/res/fonts/mathfontSymbol.properties
-lib/%%APP_NAME%%/res/fonts/pangoFontEncoding.properties
+lib/%%APP_NAME%%/res/fonts/mathfontSTIXNonUnicode.properties
+lib/%%APP_NAME%%/res/fonts/mathfontSTIXSize1.properties
+lib/%%APP_NAME%%/res/fonts/mathfontStandardSymbolsL.properties
+lib/%%APP_NAME%%/res/fonts/mathfontUnicode.properties
 lib/%%APP_NAME%%/res/forms.css
 lib/%%APP_NAME%%/res/grabber.gif
 lib/%%APP_NAME%%/res/hiddenWindow.html
 lib/%%APP_NAME%%/res/html.css
-lib/%%APP_NAME%%/res/html/gopher-audio.gif
-lib/%%APP_NAME%%/res/html/gopher-binary.gif
-lib/%%APP_NAME%%/res/html/gopher-find.gif
-lib/%%APP_NAME%%/res/html/gopher-image.gif
-lib/%%APP_NAME%%/res/html/gopher-menu.gif
-lib/%%APP_NAME%%/res/html/gopher-movie.gif
-lib/%%APP_NAME%%/res/html/gopher-sound.gif
-lib/%%APP_NAME%%/res/html/gopher-telnet.gif
-lib/%%APP_NAME%%/res/html/gopher-text.gif
-lib/%%APP_NAME%%/res/html/gopher-unknown.gif
+lib/%%APP_NAME%%/res/html/folder.png
 lib/%%APP_NAME%%/res/langGroups.properties
 lib/%%APP_NAME%%/res/language.properties
 lib/%%APP_NAME%%/res/loading-image.gif
@@ -278,41 +321,43 @@ lib/%%APP_NAME%%/res/viewsource.css
 lib/%%APP_NAME%%/run-mozilla.sh
 lib/%%APP_NAME%%/searchplugins/amazondotcom.xml
 lib/%%APP_NAME%%/searchplugins/askcom.xml
+lib/%%APP_NAME%%/searchplugins/digg.xml
 lib/%%APP_NAME%%/searchplugins/eBay.xml
 lib/%%APP_NAME%%/searchplugins/google.xml
 lib/%%APP_NAME%%/searchplugins/technorati.xml
-lib/%%APP_NAME%%/searchplugins/wikipedia-en.xml
+lib/%%APP_NAME%%/searchplugins/twitter.xml
+lib/%%APP_NAME%%/searchplugins/wikipedia.xml
 lib/%%APP_NAME%%/searchplugins/wink-people.xml
 lib/%%APP_NAME%%/searchplugins/yahoo.xml
 lib/%%APP_NAME%%/updater
 lib/%%APP_NAME%%/updater.ini
-lib/%%APP_NAME%%/xpicleanup
+share/applications/%%APP_NAME%%.desktop
 @exec /bin/cp -R %%LOCALBASE%%/lib/npapi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/plugins/ 2>/dev/null || true
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
+@dirrmtry share/applications
+@dirrm lib/%%APP_NAME%%/searchplugins
+@dirrm lib/%%APP_NAME%%/res/html
+@dirrm lib/%%APP_NAME%%/res/fonts
+@dirrm lib/%%APP_NAME%%/res/entityTables
+@dirrm lib/%%APP_NAME%%/res/dtd
+@dirrm lib/%%APP_NAME%%/res/detect
+@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/modules
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/greprefs
+@dirrm lib/%%APP_NAME%%/extensions/{b01bf10c-302a-11da-b67b-000d60ca027b}
+@dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/dictionaries
+@dirrm lib/%%APP_NAME%%/defaults/profile/chrome
+@dirrm lib/%%APP_NAME%%/defaults/profile
+@dirrm lib/%%APP_NAME%%/defaults/pref
+@dirrm lib/%%APP_NAME%%/defaults/autoconfig
+@dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
-@dirrm lib/%%APP_NAME%%/components
-@dirrm lib/%%APP_NAME%%/defaults/autoconfig
-@dirrm lib/%%APP_NAME%%/defaults/pref
-@dirrm lib/%%APP_NAME%%/defaults/profile/chrome
-@dirrm lib/%%APP_NAME%%/defaults/profile
-@dirrm lib/%%APP_NAME%%/defaults
-@dirrm lib/%%APP_NAME%%/dictionaries
-@dirrm lib/%%APP_NAME%%/extensions/{b01bf10c-302a-11da-b67b-000d60ca027b}
-@dirrm lib/%%APP_NAME%%/extensions
-@dirrm lib/%%APP_NAME%%/greprefs
-@dirrm lib/%%APP_NAME%%/icons
-@dirrm lib/%%APP_NAME%%/modules
-@dirrm lib/%%APP_NAME%%/plugins
-@dirrm lib/%%APP_NAME%%/res/detect
-@dirrm lib/%%APP_NAME%%/res/dtd
-@dirrm lib/%%APP_NAME%%/res/entityTables
-@dirrm lib/%%APP_NAME%%/res/fonts
-@dirrm lib/%%APP_NAME%%/res/html
-@dirrm lib/%%APP_NAME%%/res
-@dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%
-@dirrmtry share/applications
