@@ -20661,6 +20661,7 @@ rubygem-ruby_parser             ports/devel/rubygem-ruby_parser
 rubygem-rubyforge               ports/devel/rubygem-rubyforge
 rubygem-rubyfulsoup             ports/www/rubygem-rubyfulsoup
 rubygem-rubyinlineaccel         ports/devel/rubygem-rubyinlineaccel
+rubygem-rubytter                ports/net/rubygem-rubytter
 rubygem-runt                    ports/devel/rubygem-runt
 rubygem-ruport                  ports/devel/rubygem-ruport
 rubygem-scrapi                  ports/www/rubygem-scrapi
@@ -20680,6 +20681,8 @@ rubygem-streetaddress           ports/devel/rubygem-streetaddress
 rubygem-syntax                  ports/textproc/rubygem-syntax
 rubygem-taggable                ports/www/rubygem-taggable
 rubygem-templater               ports/devel/rubygem-templater
+rubygem-termcolor               ports/textproc/rubygem-termcolor
+rubygem-termtter                ports/net-im/rubygem-termtter
 rubygem-thin                    ports/www/rubygem-thin
 rubygem-tidy                    ports/textproc/rubygem-tidy
 rubygem-tmail                   ports/mail/rubygem-tmail
