@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gato
-PORTVERSION=	0.99
-PORTREVISION=	1
+PORTVERSION=	0.99D
 CATEGORIES=	math python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://gato.sourceforge.net/Download/
 MASTER_SITE_SUBDIR=	gato
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Gato-${PORTVERSION}
@@ -44,7 +43,7 @@ do-install:
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@ ${MKDIR} ${EXAMPLESDIR}
 .for egfile in *.alg *.pro *.cat
 	@ ${INSTALL_DATA} ${WRKSRC}/${egfile} ${EXAMPLESDIR}
