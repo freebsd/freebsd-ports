@@ -1,0 +1,24 @@
+--- ext/yassl/configure.in.orig	2009-06-23 01:08:02.000000000 +0300
++++ ext/yassl/configure.in	2009-06-23 01:09:17.000000000 +0300
+@@ -117,17 +117,9 @@
+ AC_SUBST(LIBS)
+ 
+ 
+-AC_CONFIG_FILES(Makefile dnl
+-        taocrypt/Makefile dnl
+-        taocrypt/src/Makefile dnl
+-        src/Makefile dnl
+-        taocrypt/test/Makefile dnl
+-        taocrypt/benchmark/Makefile dnl
+-        examples/Makefile dnl
+-        examples/client/Makefile dnl
+-        examples/server/Makefile dnl
+-        examples/echoclient/Makefile dnl
+-        examples/echoserver/Makefile dnl
+-        testsuite/Makefile)
++AC_CONFIG_FILES(Makefile
++        taocrypt/Makefile
++        taocrypt/src/Makefile
++        src/Makefile)
+ 
+ AC_OUTPUT

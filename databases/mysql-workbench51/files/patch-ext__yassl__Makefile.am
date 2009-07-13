@@ -1,0 +1,8 @@
+--- ext/yassl/Makefile.am.orig	2009-06-23 01:07:53.000000000 +0300
++++ ext/yassl/Makefile.am	2009-06-23 01:08:41.000000000 +0300
+@@ -1,4 +1,4 @@
+-SUBDIRS = taocrypt src examples testsuite
++SUBDIRS = taocrypt src
+ EXTRA_DIST = yassl.dsp yassl.dsw certs/*.pem certs/*.d* certs/*.txt doc/*.html \
+ 	doc/*.png doc/*.gif doc/*.css stunnel/stunnel.* stunnel/*.txt \
+     stunnel/src/*.c lib/dummy FLOSS-EXCEPTIONS yassl.vcproj yassl.sln

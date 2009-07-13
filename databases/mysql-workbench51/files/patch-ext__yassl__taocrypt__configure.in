@@ -1,0 +1,14 @@
+--- ext/yassl/taocrypt/configure.in.orig	2009-06-23 00:59:48.000000000 +0300
++++ ext/yassl/taocrypt/configure.in	2009-06-23 01:00:21.000000000 +0300
+@@ -89,9 +89,7 @@
+ 
+ 
+ 
+-AC_CONFIG_FILES(Makefile dnl
+-        src/Makefile dnl
+-        test/Makefile dnl
+-        benchmark/Makefile) 
++AC_CONFIG_FILES(Makefile
++        src/Makefile)
+ 
+ AC_OUTPUT

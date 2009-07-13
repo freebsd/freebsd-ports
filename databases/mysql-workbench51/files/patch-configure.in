@@ -1,0 +1,11 @@
+--- configure.in.orig	2009-06-26 03:33:18.000000000 +0300
++++ configure.in	2009-06-26 20:42:05.000000000 +0300
+@@ -422,7 +422,7 @@
+ 
+ (
+   cd ./ext/ctemplate/ctemplate-src &&
+-  autoreconf -i -s; 
++  autoreconf-2.62 -i; 
+   ./configure --prefix=$prefix --libdir=$libdir/mysql-workbench --disable-dependency-tracking
+ )    
+ 
