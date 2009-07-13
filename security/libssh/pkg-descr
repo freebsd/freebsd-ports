@@ -20,4 +20,4 @@ libssh features:
  * Compression support (with zlib)
  * Public key (RSA and DSS), password and keyboard-interactive authentication
 
-WWW: http://0xbadc0de.be/wiki/libssh:libssh
+WWW: http://www.libssh.org/
