@@ -107,6 +107,7 @@
     SUBDIR += pnetcdf
     SUBDIR += psi3
     SUBDIR += psychopy
+    SUBDIR += py-h5py
     SUBDIR += py-hcluster
     SUBDIR += py-mdp
     SUBDIR += py-mlpy
