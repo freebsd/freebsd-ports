@@ -169,6 +169,7 @@
     SUBDIR += dump9660
     SUBDIR += dupfind
     SUBDIR += duplicity
+    SUBDIR += duplicity-devel
     SUBDIR += dupmerge
     SUBDIR += durep
     SUBDIR += dvd+rw-tools

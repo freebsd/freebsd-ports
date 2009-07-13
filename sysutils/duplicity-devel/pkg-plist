@@ -25,6 +25,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/giobackend.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/giobackend.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/giobackend.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/hsibackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/hsibackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/hsibackend.pyo
