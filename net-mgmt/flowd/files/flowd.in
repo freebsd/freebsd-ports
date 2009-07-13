@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: flowd
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run ipcad:
+#
+# flowd_enable (bool):           Set it to "YES" to enable flowd.
+#                                Default is "NO".
+# flowd_conf (file):             Local config file.
+#                                Default is "%%PREFIX%%/etc/flowd.conf".
+#
+
+. %%RC_SUBR%%
+
+name="flowd"
+rcvar=${name}_enable
+load_rc_config ${name}
+
+: ${flowd_enable="NO"}
+: ${flowd_conf="%%PREFIX%%/etc/flowd.conf"}
+: ${flowd_flags=""}
+
+required_files="${flowd_conf}"
+command="%%PREFIX%%/sbin/flowd"
+command_args="-f ${flowd_conf}"
+
+run_rc_command "$1"
