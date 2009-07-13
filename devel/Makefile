@@ -2459,6 +2459,7 @@
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
     SUBDIR += py-unit
+    SUBDIR += py-unittestplus
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
     SUBDIR += py-usb

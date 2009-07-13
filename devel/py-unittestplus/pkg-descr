@@ -1,0 +1,8 @@
+unittestplus is test utilities built on unittest.
+
+It includes an augmented TestCase class with improved (stricter and more
+informative) assert methods; test auto discovery; utility functions
+for running test and combining TestCase classes into suites and prettier
+verbose test output. 
+
+WWW: http://code.google.com/p/unittestplus/
