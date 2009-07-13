@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2009-06-25 09:37:05.000000000 -0700
++++ Makefile.in	2009-07-07 14:52:22.000000000 -0700
+@@ -178,7 +178,7 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = @docdir@
++
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -751,8 +751,6 @@
+ install-data-hook:
+ 	rm -f $(DESTDIR)$(bindir)/plugins/libgemrb_core.so
+ 
+-docs:
+-	doxygen
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

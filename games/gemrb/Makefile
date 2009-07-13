@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gemrb
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +33,7 @@ MAN6=	gemrb.6
 post-patch:
 .if defined(NOPORTDOCS)
 # TODO: Yep I know this is a ugly way ;/
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-noportdocs
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-*
 .endif
 
 post-install:

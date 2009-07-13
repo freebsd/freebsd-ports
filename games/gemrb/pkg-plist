@@ -115,14 +115,8 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/GUIScripts/GUIDefines.py
 %%DATADIR%%/GUIScripts/MetaClasses.py
 %%DATADIR%%/GUIScripts/bg1/CharGen.py
-%%DATADIR%%/GUIScripts/bg1/CharGen2.py
-%%DATADIR%%/GUIScripts/bg1/CharGen3.py
-%%DATADIR%%/GUIScripts/bg1/CharGen4.py
-%%DATADIR%%/GUIScripts/bg1/CharGen5.py
-%%DATADIR%%/GUIScripts/bg1/CharGen6.py
-%%DATADIR%%/GUIScripts/bg1/CharGen7.py
-%%DATADIR%%/GUIScripts/bg1/CharGen8.py
-%%DATADIR%%/GUIScripts/bg1/CharGen9.py
+%%DATADIR%%/GUIScripts/bg1/CharGenCommon.py
+%%DATADIR%%/GUIScripts/bg1/CharGenGui.py
 %%DATADIR%%/GUIScripts/bg1/GUICG1.py
 %%DATADIR%%/GUIScripts/bg1/GUICG10.py
 %%DATADIR%%/GUIScripts/bg1/GUICG12.py
@@ -158,6 +152,7 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/GUIScripts/bg1/QuitGame.py
 %%DATADIR%%/GUIScripts/bg1/Start.py
 %%DATADIR%%/GUIScripts/bg1/TextScreen.py
+%%DATADIR%%/GUIScripts/bg2/Actor.py
 %%DATADIR%%/GUIScripts/bg2/CharGen.py
 %%DATADIR%%/GUIScripts/bg2/CharGenCommon.py
 %%DATADIR%%/GUIScripts/bg2/CharGen2.py
@@ -212,13 +207,16 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/GUIScripts/bg2/LevelUp.py
 %%DATADIR%%/GUIScripts/bg2/LoadScreen.py
 %%DATADIR%%/GUIScripts/bg2/LUHLASelection.py
-%%DATADIR%%/GUIScripts/bg2/LUSpellSelection.py
 %%DATADIR%%/GUIScripts/bg2/MessageWindow.py
 %%DATADIR%%/GUIScripts/bg2/QuitGame.py
 %%DATADIR%%/GUIScripts/bg2/Start.py
 %%DATADIR%%/GUIScripts/bg2/Start2.py
 %%DATADIR%%/GUIScripts/bg2/StartOpt.py
 %%DATADIR%%/GUIScripts/bg2/TextScreen.py
+%%DATADIR%%/GUIScripts/BGCommon.py
+%%DATADIR%%/GUIScripts/LUProfsSelection.py
+%%DATADIR%%/GUIScripts/LUSkillsSelection.py
+%%DATADIR%%/GUIScripts/LUSpellSelection.py
 %%DATADIR%%/GUIScripts/ie_action.py
 %%DATADIR%%/GUIScripts/ie_modal.py
 %%DATADIR%%/GUIScripts/ie_restype.py
@@ -321,6 +319,7 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/GUIScripts/test1/Start.py
 %%DATADIR%%/override/bg1/ability.2da
 %%DATADIR%%/override/bg1/aligns.2da
+%%DATADIR%%/override/bg1/areapro.2da
 %%DATADIR%%/override/bg1/avatars.2da
 %%DATADIR%%/override/bg1/avprefc.2da
 %%DATADIR%%/override/bg1/avprefg.2da
@@ -338,6 +337,7 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/override/bg1/fistweap.2da
 %%DATADIR%%/override/bg1/fonts.2da
 %%DATADIR%%/override/bg1/formatio.2da
+%%DATADIR%%/override/bg1/gemprjtl.ids
 %%DATADIR%%/override/bg1/gemrb.ini
 %%DATADIR%%/override/bg1/guibtact.2da
 %%DATADIR%%/override/bg1/guils.chu
@@ -393,10 +393,12 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/override/bg2/fistweap.2da
 %%DATADIR%%/override/bg2/fonts.2da
 %%DATADIR%%/override/bg2/formatio.2da
+%%DATADIR%%/override/bg2/gemprjtl.ids
 %%DATADIR%%/override/bg2/gemrb.ini
 %%DATADIR%%/override/bg2/guibtact.2da
 %%DATADIR%%/override/bg2/guiid.chu
 %%DATADIR%%/override/bg2/guils.chu
+%%DATADIR%%/override/bg2/HPBARB.2da
 %%DATADIR%%/override/bg2/item_use.2da
 %%DATADIR%%/override/bg2/itemsnd.2da
 %%DATADIR%%/override/bg2/itemspec.2da
@@ -404,7 +406,11 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/override/bg2/itemuse.2da
 %%DATADIR%%/override/bg2/k_bn_d.2da
 %%DATADIR%%/override/bg2/k_bn_e.2da
+%%DATADIR%%/override/bg2/k_bn_g.2da
 %%DATADIR%%/override/bg2/k_bn_h.2da
+%%DATADIR%%/override/bg2/k_bn_he.2da
+%%DATADIR%%/override/bg2/k_bn_hl.2da
+%%DATADIR%%/override/bg2/k_bn_ho.2da
 %%DATADIR%%/override/bg2/k_m_e.2da
 %%DATADIR%%/override/bg2/k_m_g.2da
 %%DATADIR%%/override/bg2/k_m_h.2da
@@ -412,6 +418,7 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/override/bg2/magesch.2da
 %%DATADIR%%/override/bg2/minorglb.vvc
 %%DATADIR%%/override/bg2/modal.2da
+%%DATADIR%%/override/bg2/monkbon.2da
 %%DATADIR%%/override/bg2/overlay.2da
 %%DATADIR%%/override/bg2/pathfind.2da
 %%DATADIR%%/override/bg2/pdolls.2da
@@ -427,11 +434,16 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/override/bg2/shtable.2da
 %%DATADIR%%/override/bg2/skills.2da
 %%DATADIR%%/override/bg2/slottype.2da
+%%DATADIR%%/override/bg2/spells.2da
 %%DATADIR%%/override/bg2/spentaci.vvc
 %%DATADIR%%/override/bg2/splspec.2da
 %%DATADIR%%/override/bg2/spshield.vvc
 %%DATADIR%%/override/bg2/stats.ids
 %%DATADIR%%/override/bg2/strings.2da
+%%DATADIR%%/override/bg2/wsshield.2da
+%%DATADIR%%/override/bg2/wssingle.2da
+%%DATADIR%%/override/bg2/wstwohnd.2da
+%%DATADIR%%/override/bg2/wstwowpn.2da
 %%DATADIR%%/override/how/ability.2da
 %%DATADIR%%/override/how/aligns.2da
 %%DATADIR%%/override/how/avatars.2da
@@ -650,6 +662,7 @@ lib/libgemrb_core.so.0
 %%PORTDOCS%%%%DOCSDIR%%/Engine/Containers.txt
 %%PORTDOCS%%%%DOCSDIR%%/Engine/Doors.txt
 %%PORTDOCS%%%%DOCSDIR%%/Engine/Effects.txt
+%%PORTDOCS%%%%DOCSDIR%%/Engine/Projectile.txt
 %%PORTDOCS%%%%DOCSDIR%%/Engine/Triggers.txt
 %%PORTDOCS%%%%DOCSDIR%%/Engine/Usability.txt
 %%PORTDOCS%%%%DOCSDIR%%/EngineChanges.txt
@@ -822,7 +835,7 @@ lib/libgemrb_core.so.0
 %%PORTDOCS%%%%DOCSDIR%%/GUIScript/SetControlSize.txt
 %%PORTDOCS%%%%DOCSDIR%%/GUIScript/SetControlStatus.txt
 %%PORTDOCS%%%%DOCSDIR%%/GUIScript/SetDefaultActions.txt
-%%PORTDOCS%%%%DOCSDIR%%/GUIScript/SetDefaultScrollbar.txt
+%%PORTDOCS%%%%DOCSDIR%%/GUIScript/SetDefaultScrollBar.txt
 %%PORTDOCS%%%%DOCSDIR%%/GUIScript/SetEquippedQuickSlot.txt
 %%PORTDOCS%%%%DOCSDIR%%/GUIScript/SetEvent.txt
 %%PORTDOCS%%%%DOCSDIR%%/GUIScript/SetFullScreen.txt
@@ -903,6 +916,7 @@ lib/libgemrb_core.so.0
 %%PORTDOCS%%%%DOCSDIR%%/Tables/fonts.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/formatio.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/guibtact.txt
+%%PORTDOCS%%%%DOCSDIR%%/Tables/HPBARB.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/item_use.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/itemuse.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/itemsnd.txt
@@ -925,10 +939,15 @@ lib/libgemrb_core.so.0
 %%PORTDOCS%%%%DOCSDIR%%/Tables/skills.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/skillsta.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/slottype.txt
+%%PORTDOCS%%%%DOCSDIR%%/Tables/spells.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/splprot.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/states.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/strings.txt
 %%PORTDOCS%%%%DOCSDIR%%/Tables/table_template.txt
+%%PORTDOCS%%%%DOCSDIR%%/Tables/wsshield.txt
+%%PORTDOCS%%%%DOCSDIR%%/Tables/wssingle.txt
+%%PORTDOCS%%%%DOCSDIR%%/Tables/wstwohnd.txt
+%%PORTDOCS%%%%DOCSDIR%%/Tables/wstwowpn.txt
 @dirrm lib/gemrb/plugins
 @dirrm lib/gemrb
 @dirrm %%DATADIR%%/GUIScripts/bg1
