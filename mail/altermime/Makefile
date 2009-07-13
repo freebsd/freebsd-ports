@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	altermime
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.11.a1
 CATEGORIES=	mail textproc
-MASTER_SITES=	http://www.pldaniels.com/altermime/ \
-	http://sce-tindy.tecnik93.com/FreeBSD/ports/altermime/sources/
+#MASTER_SITES=	http://www.pldaniels.com/altermime/ \
+MASTER_SITES=	http://T32.tecnik93.com/FreeBSD/ports/altermime/sources/
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Small C program which is used to alter your mime-encoded mailpacks
