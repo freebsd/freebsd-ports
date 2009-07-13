@@ -1,0 +1,19 @@
+--- gemrb/Makefile.in.orig	2009-06-25 09:36:56.000000000 -0700
++++ gemrb/Makefile.in	2009-07-07 15:12:35.000000000 -0700
+@@ -189,7 +189,6 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = @docdir@
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -230,7 +229,7 @@
+ sysconf_DATA = GemRB.cfg.sample GemRB.cfg.subdir.sample
+ gemrb_SOURCES = GemRB.cpp 
+ gemrb_LDADD = ./plugins/Core/libgemrb_core.la
+-SUBDIRS = plugins includes GUIScripts override docs
++SUBDIRS = plugins includes GUIScripts override
+ EXTRA_DIST = GemRB.cfg* plugins-prepare.sh
+ INCLUDES = \
+ 	$(all_includes) \

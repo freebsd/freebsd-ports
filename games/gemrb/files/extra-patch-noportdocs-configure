@@ -1,53 +1,5 @@
---- Makefile.am.orig	2009-06-11 13:59:05.000000000 +0200
-+++ Makefile.am	2009-06-11 13:59:16.000000000 +0200
-@@ -22,6 +22,3 @@
- 
- install-data-hook:
- 	rm -f $(DESTDIR)$(bindir)/plugins/libgemrb_core.so
--
--docs:
--	doxygen
---- Makefile.in.bak	2009-05-25 20:25:44.000000000 +0200
-+++ Makefile.in	2009-06-11 13:55:59.000000000 +0200
-@@ -178,7 +178,7 @@
- builddir = @builddir@
- datadir = @datadir@
- datarootdir = @datarootdir@
--docdir = @docdir@
-+
- dvidir = @dvidir@
- exec_prefix = @exec_prefix@
- host = @host@
-@@ -743,8 +743,6 @@
- install-data-hook:
- 	rm -f $(DESTDIR)$(bindir)/plugins/libgemrb_core.so
- 
--docs:
--	doxygen
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
---- gemrb/Makefile.in.orig	2009-06-17 18:43:55.000000000 +0200
-+++ gemrb/Makefile.in	2009-06-17 18:44:11.000000000 +0200
-@@ -189,7 +189,6 @@
- builddir = @builddir@
- datadir = @datadir@
- datarootdir = @datarootdir@
--docdir = @docdir@
- dvidir = @dvidir@
- exec_prefix = @exec_prefix@
- host = @host@
-@@ -230,7 +229,7 @@
- sysconf_DATA = GemRB.cfg.sample GemRB.cfg.subdir.sample
- gemrb_SOURCES = GemRB.cpp 
- gemrb_LDADD = ./plugins/Core/libgemrb_core.la
--SUBDIRS = plugins includes GUIScripts override docs
-+SUBDIRS = plugins includes GUIScripts override
- EXTRA_DIST = GemRB.cfg* plugins-prepare.sh
- INCLUDES = \
- 	$(all_includes) \
---- configure.orig	2009-05-25 20:25:33.000000000 +0200
-+++ configure	2009-06-17 20:00:39.000000000 +0200
+--- configure.orig	2009-06-25 09:36:53.000000000 -0700
++++ configure	2009-07-07 14:58:31.000000000 -0700
 @@ -896,10 +896,7 @@
  libdir
  psdir
@@ -59,7 +11,7 @@
  oldincludedir
  includedir
  localstatedir
-@@ -992,12 +989,7 @@
+@@ -993,12 +990,7 @@
  localstatedir='${prefix}/var'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
@@ -72,7 +24,7 @@
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
  mandir='${datarootdir}/man'
-@@ -1073,11 +1065,6 @@
+@@ -1074,11 +1066,6 @@
      esac
      eval enable_$ac_useropt=no ;;
  
@@ -84,7 +36,7 @@
    -dvidir | --dvidir | --dvidi | --dvid | --dvi | --dv)
      ac_prev=dvidir ;;
    -dvidir=* | --dvidir=* | --dvidi=* | --dvid=* | --dvi=* | --dv=*)
-@@ -1383,7 +1370,7 @@
+@@ -1384,7 +1371,7 @@
  # Check all directory arguments for consistency.
  for ac_var in	exec_prefix prefix bindir sbindir libexecdir datarootdir \
  		datadir sysconfdir sharedstatedir localstatedir includedir \
@@ -93,7 +45,7 @@
  		libdir localedir mandir
  do
    eval ac_val=\$$ac_var
-@@ -15364,10 +15351,6 @@
+@@ -16386,10 +16373,6 @@
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
  
@@ -104,16 +56,16 @@
  # Check whether --enable-subdirs was given.
  if test "${enable_subdirs+set}" = set; then
    enableval=$enable_subdirs; gemrb_use_subdirs=$enableval
-@@ -25114,7 +25097,7 @@
+@@ -25919,7 +25902,7 @@
  
  
  
 -ac_config_files="$ac_config_files Makefile gemrb/Makefile gemrb/includes/Makefile gemrb/override/Makefile gemrb/override/bg1/Makefile gemrb/override/bg2/Makefile gemrb/override/how/Makefile gemrb/override/iwd/Makefile gemrb/override/iwd2/Makefile gemrb/override/pst/Makefile gemrb/override/test1/Makefile gemrb/GUIScripts/Makefile gemrb/GUIScripts/bg1/Makefile gemrb/GUIScripts/bg2/Makefile gemrb/GUIScripts/iwd/Makefile gemrb/GUIScripts/iwd2/Makefile gemrb/GUIScripts/pst/Makefile gemrb/GUIScripts/test1/Makefile gemrb/plugins/Makefile gemrb/plugins/Core/Makefile gemrb/plugins/2DAImporter/Makefile gemrb/plugins/ACMImporter/Makefile gemrb/plugins/AREImporter/Makefile gemrb/plugins/BAMImporter/Makefile gemrb/plugins/BIFImporter/Makefile gemrb/plugins/BMPImporter/Makefile gemrb/plugins/PNGImporter/Makefile gemrb/plugins/CHUImporter/Makefile gemrb/plugins/CREImporter/Makefile gemrb/plugins/DLGImporter/Makefile gemrb/plugins/EFFImporter/Makefile gemrb/plugins/FXOpcodes/Makefile gemrb/plugins/IWDOpcodes/Makefile gemrb/plugins/PSTOpcodes/Makefile gemrb/plugins/GAMImporter/Makefile gemrb/plugins/GUIScript/Makefile gemrb/plugins/IDSImporter/Makefile gemrb/plugins/INIImporter/Makefile gemrb/plugins/ITMImporter/Makefile gemrb/plugins/KEYImporter/Makefile gemrb/plugins/MOSImporter/Makefile gemrb/plugins/MUSImporter/Makefile gemrb/plugins/MVEPlayer/Makefile gemrb/plugins/NullSound/Makefile gemrb/plugins/OpenALAudio/Makefile gemrb/plugins/PLTImporter/Makefile gemrb/plugins/PROImporter/Makefile gemrb/plugins/SDLVideo/Makefile gemrb/plugins/SPLImporter/Makefile gemrb/plugins/STOImporter/Makefile gemrb/plugins/TISImporter/Makefile gemrb/plugins/TLKImporter/Makefile gemrb/plugins/WEDImporter/Makefile gemrb/plugins/WMPImporter/Makefile gemrb/plugins/ZLibMgr/Makefile gemrb/docs/Makefile gemrb/docs/en/Makefile gemrb/docs/en/GUIScript/Makefile gemrb/docs/en/Tables/Makefile gemrb/docs/en/Engine/Makefile"
 +ac_config_files="$ac_config_files Makefile gemrb/Makefile gemrb/includes/Makefile gemrb/override/Makefile gemrb/override/bg1/Makefile gemrb/override/bg2/Makefile gemrb/override/how/Makefile gemrb/override/iwd/Makefile gemrb/override/iwd2/Makefile gemrb/override/pst/Makefile gemrb/override/test1/Makefile gemrb/GUIScripts/Makefile gemrb/GUIScripts/bg1/Makefile gemrb/GUIScripts/bg2/Makefile gemrb/GUIScripts/iwd/Makefile gemrb/GUIScripts/iwd2/Makefile gemrb/GUIScripts/pst/Makefile gemrb/GUIScripts/test1/Makefile gemrb/plugins/Makefile gemrb/plugins/Core/Makefile gemrb/plugins/2DAImporter/Makefile gemrb/plugins/ACMImporter/Makefile gemrb/plugins/AREImporter/Makefile gemrb/plugins/BAMImporter/Makefile gemrb/plugins/BIFImporter/Makefile gemrb/plugins/BMPImporter/Makefile gemrb/plugins/PNGImporter/Makefile gemrb/plugins/CHUImporter/Makefile gemrb/plugins/CREImporter/Makefile gemrb/plugins/DLGImporter/Makefile gemrb/plugins/EFFImporter/Makefile gemrb/plugins/FXOpcodes/Makefile gemrb/plugins/IWDOpcodes/Makefile gemrb/plugins/PSTOpcodes/Makefile gemrb/plugins/GAMImporter/Makefile gemrb/plugins/GUIScript/Makefile gemrb/plugins/IDSImporter/Makefile gemrb/plugins/INIImporter/Makefile gemrb/plugins/ITMImporter/Makefile gemrb/plugins/KEYImporter/Makefile gemrb/plugins/MOSImporter/Makefile gemrb/plugins/MUSImporter/Makefile gemrb/plugins/MVEPlayer/Makefile gemrb/plugins/NullSound/Makefile gemrb/plugins/OpenALAudio/Makefile gemrb/plugins/PLTImporter/Makefile gemrb/plugins/PROImporter/Makefile gemrb/plugins/SDLVideo/Makefile gemrb/plugins/SPLImporter/Makefile gemrb/plugins/STOImporter/Makefile gemrb/plugins/TISImporter/Makefile gemrb/plugins/TLKImporter/Makefile gemrb/plugins/WEDImporter/Makefile gemrb/plugins/WMPImporter/Makefile gemrb/plugins/ZLibMgr/Makefile"
  
- cat >confcache <<\_ACEOF
- # This file is a shell script that caches the results of configure
-@@ -26163,11 +26146,6 @@
+ ac_config_files="$ac_config_files gemrb.spec"
+ 
+@@ -26977,11 +26960,6 @@
      "gemrb/plugins/WEDImporter/Makefile") CONFIG_FILES="$CONFIG_FILES gemrb/plugins/WEDImporter/Makefile" ;;
      "gemrb/plugins/WMPImporter/Makefile") CONFIG_FILES="$CONFIG_FILES gemrb/plugins/WMPImporter/Makefile" ;;
      "gemrb/plugins/ZLibMgr/Makefile") CONFIG_FILES="$CONFIG_FILES gemrb/plugins/ZLibMgr/Makefile" ;;
@@ -122,6 +74,6 @@
 -    "gemrb/docs/en/GUIScript/Makefile") CONFIG_FILES="$CONFIG_FILES gemrb/docs/en/GUIScript/Makefile" ;;
 -    "gemrb/docs/en/Tables/Makefile") CONFIG_FILES="$CONFIG_FILES gemrb/docs/en/Tables/Makefile" ;;
 -    "gemrb/docs/en/Engine/Makefile") CONFIG_FILES="$CONFIG_FILES gemrb/docs/en/Engine/Makefile" ;;
+     "gemrb.spec") CONFIG_FILES="$CONFIG_FILES gemrb.spec" ;;
  
    *) { { $as_echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
- $as_echo "$as_me: error: invalid argument: $ac_config_target" >&2;}

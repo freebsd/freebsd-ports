@@ -1,0 +1,9 @@
+--- Makefile.am.orig	2009-06-07 06:07:25.000000000 -0700
++++ Makefile.am	2009-07-07 14:50:13.000000000 -0700
+@@ -29,6 +29,3 @@
+ 
+ install-data-hook:
+ 	rm -f $(DESTDIR)$(bindir)/plugins/libgemrb_core.so
+-
+-docs:
+-	doxygen
