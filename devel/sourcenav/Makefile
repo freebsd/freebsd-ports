@@ -26,8 +26,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--prefix=${PREFIX}/sourcenav
 
 post-patch:
-	${REINPLACE_CMD} -e 's|@XINCLUDES@|-I${LOCALBASE}/include|' \
-	    ${WRKSRC}/tk/unix/Makefile.in
+	${REINPLACE_CMD} -e 's|@XINCLUDES@|-I${LOCALBASE}/include|; \
+	    s|@XLIBSW@|-L${LOCALBASE}/lib -lX11|' ${WRKSRC}/tk/unix/Makefile.in
 
 post-install:
 	${LN} -s ${PREFIX}/sourcenav/bin/snavigator ${PREFIX}/bin/snavigator
