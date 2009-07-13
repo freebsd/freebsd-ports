@@ -7,6 +7,7 @@
 
 PORTNAME=	scipy
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -48,10 +49,18 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
 		blas.2:${PORTSDIR}/math/blas
 .endif
 
+.if exists(${LOCALBASE}/lib/libumfpack.so.1)
+BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
+LIB_DEPENDS+=	umfpack.1:${PORTSDIR}/math/suitesparse
+.endif
+
+PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
+PYDISTUTILS_BUILDARGS+=	--fcompiler=gnu95
+
 post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/scipy ! -type d | \
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/scipy ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHON_SITELIBDIR}/scipy -type d | ${SORT} -r | \
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/scipy -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
