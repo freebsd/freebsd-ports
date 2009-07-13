@@ -43,19 +43,6 @@
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/test.py
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/test.pyc
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/test.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/README.txt
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/__init__.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/__init__.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/__init__.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/config.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/config.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/config.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/plugin.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/plugin.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/plugin.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/test.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/test.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/test.pyo
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bnc/README.txt
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bnc/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bnc/__init__.pyc
@@ -163,19 +150,6 @@
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Debian/test.py
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Debian/test.pyc
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Debian/test.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/README.txt
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/__init__.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/__init__.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/__init__.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/config.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/config.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/config.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/plugin.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/plugin.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/plugin.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/test.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/test.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno/test.pyo
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Ebay/README.txt
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Ebay/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Ebay/__init__.pyc
@@ -563,19 +537,6 @@
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Stock/test.py
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Stock/test.pyc
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Stock/test.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/README.txt
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/__init__.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/__init__.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/__init__.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/config.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/config.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/config.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/plugin.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/plugin.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/plugin.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/test.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/test.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success/test.pyo
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Supybot/README.txt
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Supybot/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Supybot/__init__.pyc
@@ -725,7 +686,6 @@
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/TracBot
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Tail
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Supybot
-@dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Success
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Stock
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Sshd
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Sourceforge
@@ -753,7 +713,6 @@
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Freenode
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/ExternalNotice
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Ebay
-@dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dunno
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Debian
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Dcc
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Darcs
@@ -762,7 +721,6 @@
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/ChannelRelay
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/CafeBrioso
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bnc
-@dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Amazon
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/AcronymFinder

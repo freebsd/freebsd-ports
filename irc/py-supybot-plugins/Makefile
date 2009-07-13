@@ -7,6 +7,7 @@
 
 PORTNAME=	supybot-plugins
 PORTVERSION=	20060723
+PORTREVISION=	1
 CATEGORIES=	irc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	supybot
@@ -22,7 +23,10 @@ USE_PYTHON=	2.3+
 USE_BZIP2=	yes
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/_darcs
+# Delete, because it now included in irc/py-supybot
+.for data in BadWords Dunno Success _darcs
+	@${RM} -rf ${WRKSRC}/${data}
+.endfor
 
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} -c 'import compileall;compileall.compile_dir(".");' && ${PYTHON_CMD} -O -c 'import compileall;compileall.compile_dir(".");'
