@@ -190,8 +190,8 @@ bin/bttrack.py
 %%PORTDOCS%%%%DOCSDIR%%/multitracker-spec.txt
 %%PORTDOCS%%%%DOCSDIR%%/test_multitracker_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/webseed-spec.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/bittornado.sh.sample
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bittornado.sh.sample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado/BT1
