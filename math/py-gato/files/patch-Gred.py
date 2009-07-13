@@ -1,5 +1,5 @@
---- Gred.py	Fri Jan 20 15:15:55 2006
-+++ Gred.py	Wed Mar  8 12:28:28 2006
+--- Gred.py	Wed Jul 08 22:14:29 2009 +0900
++++ Gred.py	Wed Jul 08 22:16:07 2009 +0900
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python2.3
 +#!/usr/bin/env python
@@ -33,16 +33,16 @@
  from ScrolledText import *
  
  from tkFileDialog import askopenfilename, asksaveasfilename
-@@ -55,7 +55,7 @@
- import sys
+@@ -56,7 +56,7 @@
  import os
+ import webbrowser
  
 -import GraphCreator, Embedder
 +from Gato import GraphCreator, Embedder
  
  class GredSplashScreen(GatoDialogs.SplashScreen):
  
-@@ -843,7 +843,7 @@
+@@ -926,7 +926,7 @@
  ##    globals()['gVertexRadius'] = 12
  ##    globals()['gVertexFrameWidth'] = 0
  ##    globals()['gEdgeWidth'] = 2
