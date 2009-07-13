@@ -133,6 +133,9 @@ CONFIGURE_ENV+=		LIBS="-lutil"
 post-patch:
 	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \
 		${WRKSRC}/src/ptytty.c
+	@${REINPLACE_CMD} -e 's|--mode=compile|& --tag=CC|' \
+		-e 's|--mode=link|& --tag=CC|' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
