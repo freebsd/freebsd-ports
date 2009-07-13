@@ -10,7 +10,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Fast, thread-safe, object-relational mapper
 
 BUILD_DEPENDS=	rubygem-rspec>0:${PORTSDIR}/devel/rubygem-rspec \
