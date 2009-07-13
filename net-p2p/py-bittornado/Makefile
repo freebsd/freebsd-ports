@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTornado
 PORTVERSION=	0.3.18
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python ipv6
 MASTER_SITES=	http://download.bittornado.com/download/ \
@@ -27,6 +27,8 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGVERSION=	T-0.3.18._BitTornado_
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-CVS
+
+USE_RC_SUBR=	bttrack
 
 DOC_FILES1=	BUILD.windows.txt FAQ.txt IMPORTANT-multitracker-readme.txt \
 		INSTALL.unix.txt credits.txt multitracker-spec.txt \
@@ -95,6 +97,8 @@ post-install:
 .for f in ${EXTRA_DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/`${ECHO} ${f} | ${SED} -e 's|/|_|g'`
 .endfor
+.endif
+.ifndef(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/bittornado.sh.sample ${EXAMPLESDIR}
 .endif

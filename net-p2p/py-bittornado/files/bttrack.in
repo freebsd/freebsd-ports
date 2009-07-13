@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: bttrack
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# bttrack_enable:       Set to NO by default. 
+#                       Set it to YES to enable the tracker.
+# bttrack_dfile:        Defaults to /var/run/${name}.dfile.
+#                       Stores state for tracker.
+# bttrack_port:         Set to listen on an alternative port (default is 80).
+# 
+#
+
+. %%RC_SUBR%%
+
+name=bttrack
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/${name}.py
+command_args="&"
+command_interpreter=`head -n 1 $command | awk -F! '{print $2}'`
+
+load_rc_config ${name}
+
+: ${bttrack_enable:="NO"}
+: ${bttrack_pidfile:=/var/run/${name}.pid}
+: ${bttrack_dfile:=/var/run/${name}.dfile}
+bttrack_flags="--dfile ${bttrack_dfile} \
+    ${bttrack_port:+--port ${bttrack_port}} \
+    ${bttrack_flags}"
+
+run_rc_command "$1"
