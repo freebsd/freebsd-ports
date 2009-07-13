@@ -18,8 +18,12 @@ LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		ncftp>=3.2.2:${PORTSDIR}/ftp/ncftp3
 
+CONFLICTS=	duplicity-devel-[0-9]*
+
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
+USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
 
 MAN1=		duplicity.1 rdiffdir.1
 
