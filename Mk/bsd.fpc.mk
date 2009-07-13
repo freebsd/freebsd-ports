@@ -47,6 +47,7 @@ UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
 
 fpc-check-install:
 check-makevars::
+.if defined(UNITPREFIX) && defined(PKGNAMESUFFIX)
 	@${ECHO_CMD} "#################################################################"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} " The following freepascal unit will be installed in your system: "
@@ -54,6 +55,7 @@ check-makevars::
 	@${ECHO_CMD} " * ${UNITPREFIX}${PKGNAMESUFFIX:S/-//}			       "
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "#################################################################"
+.endif
 
 _FPC_ALL_UNITS=	aspell bfd cairo chm fcl-async fcl-base fcl-db fcl-fpcunit fcl-image \
 		fcl-json fcl-net fcl-passrc fcl-process fcl-registry fcl-web fcl-xml fftw \
