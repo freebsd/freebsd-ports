@@ -51,7 +51,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libcupsimage.so:${PORTSDIR}/print/cups-image
 
 .if defined(WITH_A2PS_A4)
 .	if defined(WITH_A2PS_LETTER) || defined(WITH_A2PS_LETTERDJ)
-IGNORE=		Please select only one option of a2ps-[a4|letter|letterdj] convertor
+IGNORE=		Please select only one a2ps convertor
 .	else
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 .	endif
@@ -59,7 +59,7 @@ RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 
 .if defined(WITH_A2PS_LETTER) 
 .	if defined(WITH_A2PS_A4) || defined(WITH_A2PS_LETTERDJ)
-IGNORE=		Please select only one option of a2ps-[a4|letter|letterdj] convertor
+IGNORE=		Please select only one a2ps convertor
 .	else
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 .	endif
@@ -67,7 +67,7 @@ RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 
 .if defined(WITH_A2PS-LETTERDJ)
 .	if defined(WITH_A2PS-A4) || defined(WITH_A2PS_LETTER)
-IGNORE=		Please select only one option of a2ps-[a4|letter|letterdj] convertor
+IGNORE=		Please select only one a2ps convertor
 .	else
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letterdj
 .	endif
@@ -75,7 +75,7 @@ RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letterdj
 
 .if defined(WITH_ENSCRIPT_A4)
 .	if defined(WITH_ENSCRIPT_LETTER) || defined(WITH_ENSCRIPT_LETTERDJ)
-IGNORE=		Please just select one option of enscript-[a4|letter|letterdj] convertor
+IGNORE=		Please select only one enscript convertor
 .	else
 RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
 .	endif
@@ -83,7 +83,7 @@ RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
 
 .if defined(WITH_ENSCRIPT_LETTER)
 .	if defined(WITH_ENSCRIPT_A4) || defined(WITH_ENSCRIPT_LETTERDJ)
-IGNORE=		Please just select one option of enscript-[a4|letter|letterdj] convertor
+IGNORE=		Please select only one enscript convertor
 .	else
 RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letter
 .	endif
@@ -91,7 +91,7 @@ RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letter
 
 .if defined(WITH_ENSCRIPT_LETTERDJ)
 .	if defined(WITH_ENSCRIPT_A4) || defined(WITH_ENSCRIPT_LETTER)
-IGNORE=		Please just select one option of enscript-[a4|letter|letterdj] convertor
+IGNORE=		Please just select only one enscript convertor
 .	else
 RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letterdj
 .	endif
