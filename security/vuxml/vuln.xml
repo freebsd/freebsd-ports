@@ -34,6 +34,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="be927298-6f97-11de-b444-001372fd0af2">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.19</lt></range>
+      </package>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Security Team reports:</p>
+	<blockquote cite="http://drupal.org/node/507572">
+          <p>Cross-site scripting</p>
+          <p>The Forum module does not correctly handle certain arguments
+            obtained from the URL.  By enticing a suitably privileged user
+            to visit a specially crafted URL, a malicious user is able to
+            insert arbitrary HTML and script code into forum pages.  Such a
+            cross-site scripting attack may lead to the malicious user
+            gaining administrative access.  Wikipedia has more information
+            about cross-site scripting (XSS).</p>
+          <p>User signatures have no separate input format, they use the
+            format of the comment with which they are displayed.  A user
+            will no longer be able to edit a comment when an administrator
+            changes the comment's input format to a format that is not
+            accessible to the user.  However they will still be able to
+            modify their signature, which will then be processed by the new
+            input format.</p>
+          <p>If the new format is very permissive, via their signature, the
+            user may be able to insert arbitrary HTML and script code into
+            pages or, when the PHP filter is enabled for the new format,
+            execute PHP code.  This issue affects Drupal 6.x only.</p>
+          <p>When an anonymous user fails to login due to mistyping his
+            username or password, and the page he is on contains a sortable
+            table, the (incorrect) username and password are included in
+            links on the table.  If the user visits these links the password
+            may then be leaked to external sites via the HTTP referer.</p>
+          <p>In addition, if the anonymous user is enticed to visit the site
+            via a specially crafted URL while the Drupal page cache is
+            enabled, a malicious user might be able to retrieve the
+            (incorrect) username and password from the page cache.</p>
+	</blockquote>
+     </body>
+   </description>
+   <references>
+      <url>http://drupal.org/node/507572</url>
+      <url>http://secunia.com/advisories/35681</url>
+    </references>
+    <dates>
+      <discovery>2009-07-01</discovery>
+      <entry>2009-07-13</entry>
+      <modified>2009-07-13</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="70372cda-6771-11de-883a-00e0815b8da8">
     <topic>nfsen -- remote command execution</topic>
     <affects>
