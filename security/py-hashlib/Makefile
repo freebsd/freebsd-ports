@@ -11,7 +11,7 @@ MASTER_SITES=	http://code.krypto.org/python/hashlib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Backport of Python 2,5's haslib module
+COMMENT=	Backport of Python 2.5's haslib module
 
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
