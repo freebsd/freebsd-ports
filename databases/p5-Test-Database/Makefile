@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Database
-PORTVERSION=	0.99
+PORTVERSION=	1.00
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,12 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Test::Database.3 Test::Database::Driver.3 \
-		Test::Database::Driver::CSV.3 \
-		Test::Database::Driver::DBM.3 \
-		Test::Database::Driver::SQLite2.3 \
-		Test::Database::Driver::mysql.3 \
-		Test::Database::Handle.3 \
-		Test::Database::Driver::SQLite.3
+MAN3=		Test::Database.3 Test::Database::Handle.3
 
 .include <bsd.port.mk>
