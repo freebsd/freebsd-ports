@@ -1,0 +1,5 @@
+Simple RSS is a simple, flexible, extensible, and liberal RSS and Atom reader
+for Ruby. It is designed to be backwards compatible with the standard RSS
+parser, but will never do RSS generation.
+
+WWW:	http://rubyforge.org/projects/simple-rss/
