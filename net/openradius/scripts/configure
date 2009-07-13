@@ -36,7 +36,7 @@ END
 if [ x$USE_LDAP != x ]; then
 cat >> Makefile << END
 TGT_LIB		+= modules/radldap/radldap
-CF_RADLDAP	= -I$LDAPINCLUDE/usr/local/include
+CF_RADLDAP	= -I$LDAPINCLUDE${LOCALBASE}/include
 END
 fi
 
@@ -58,7 +58,7 @@ LL_ALL		=
 
 ### Module-specific build flags
 #
-LF_RADLDAP	= -L$LDAPLIB/usr/local/lib
+LF_RADLDAP	= -L$LDAPLIB${LOCALBASE}/lib
 LL_RADLDAP	= -lldap -llber
 
 ### Build tools
