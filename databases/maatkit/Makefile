@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maatkit
-PORTVERSION=	3119
+PORTVERSION=	4047
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -20,27 +20,28 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term
 
 PERL_CONFIGURE=	yes
 
-MAN1=	mk-archiver.1 \
-		mk-audit.1 \
-		mk-checksum-filter.1 \
-		mk-deadlock-logger.1 \
-		mk-duplicate-key-checker.1 \
-		mk-find.1 \
-		mk-heartbeat.1 \
-		mk-parallel-dump.1 \
-		mk-parallel-restore.1 \
-		mk-profile-compact.1 \
-		mk-query-digest.1 \
-		mk-query-profiler.1 \
-		mk-show-grants.1 \
-		mk-slave-delay.1 \
-		mk-slave-find.1 \
-		mk-slave-move.1 \
-		mk-slave-prefetch.1 \
-		mk-slave-restart.1 \
-		mk-table-checksum.1 \
-		mk-table-sync.1 \
-		mk-visual-explain.1
-MAN3=	maatkit.3 maatkitdsn.3
+MAN1=	maatkit.1p \
+		mk-archiver.1p \
+		mk-audit.1p \
+		mk-checksum-filter.1p \
+		mk-deadlock-logger.1p \
+		mk-duplicate-key-checker.1p \
+		mk-find.1p \
+		mk-heartbeat.1p \
+		mk-parallel-dump.1p \
+		mk-parallel-restore.1p \
+		mk-profile-compact.1p \
+		mk-query-digest.1p \
+		mk-query-profiler.1p \
+		mk-show-grants.1p \
+		mk-slave-delay.1p \
+		mk-fifo-split.1p \
+		mk-slave-find.1p \
+		mk-slave-move.1p \
+		mk-slave-prefetch.1p \
+		mk-slave-restart.1p \
+		mk-table-checksum.1p \
+		mk-table-sync.1p \
+		mk-visual-explain.1p
 
 .include <bsd.port.mk>
