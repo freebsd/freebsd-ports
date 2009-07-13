@@ -1,0 +1,24 @@
+bin/run_all_tests.py
+%%PYTHON_SITELIBDIR%%/unittestplus/__init__.py
+%%PYTHON_SITELIBDIR%%/unittestplus/__init__.pyc
+%%PYTHON_SITELIBDIR%%/unittestplus/__init__.pyo
+%%PYTHON_SITELIBDIR%%/unittestplus/mock.py
+%%PYTHON_SITELIBDIR%%/unittestplus/mock.pyc
+%%PYTHON_SITELIBDIR%%/unittestplus/mock.pyo
+%%PYTHON_SITELIBDIR%%/unittestplus/run.py
+%%PYTHON_SITELIBDIR%%/unittestplus/run.pyc
+%%PYTHON_SITELIBDIR%%/unittestplus/run.pyo
+%%PYTHON_SITELIBDIR%%/unittestplus/testcaseplus.py
+%%PYTHON_SITELIBDIR%%/unittestplus/testcaseplus.pyc
+%%PYTHON_SITELIBDIR%%/unittestplus/testcaseplus.pyo
+%%PYTHON_SITELIBDIR%%/unittestplus/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/unittestplus/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/unittestplus/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/unittestplus/tests/run_test.py
+%%PYTHON_SITELIBDIR%%/unittestplus/tests/run_test.pyc
+%%PYTHON_SITELIBDIR%%/unittestplus/tests/run_test.pyo
+%%PYTHON_SITELIBDIR%%/unittestplus/tests/testcaseplus_test.py
+%%PYTHON_SITELIBDIR%%/unittestplus/tests/testcaseplus_test.pyc
+%%PYTHON_SITELIBDIR%%/unittestplus/tests/testcaseplus_test.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/unittestplus/tests
+@dirrm %%PYTHON_SITELIBDIR%%/unittestplus
