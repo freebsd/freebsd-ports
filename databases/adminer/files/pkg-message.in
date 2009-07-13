@@ -1,12 +1,12 @@
 
-POST-INSTALL CONFIGURATION FOR phpminadmin
+POST-INSTALL CONFIGURATION FOR Adminer
 =====================================
 
 Please add the following to your Apache configuration,
 and restart the server:
 
 ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
-   Alias /phpminadmin %%WWWDIR%%
+   Alias /adminer %%WWWDIR%%
    AcceptPathInfo On
    <Directory %%WWWDIR%%>
       AllowOverride None
@@ -14,7 +14,7 @@ and restart the server:
       Allow from all
    </Directory>
 
-Then you can visit your phpminadmin site with a browser
-(i.e. http://your.server.com/phpminadmin/)
+Then you can visit your Adminer site with a browser
+(i.e. http://your.server.com/adminer/)
 
 =====================================
