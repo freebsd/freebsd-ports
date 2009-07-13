@@ -7,7 +7,7 @@
 
 PORTNAME=	fusefs
 DISTVERSION=	0.3.9-pre1.20080208
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://mercurial.creo.hu/repos/fuse4bsd-hg/index.cgi/archive/
 PKGNAMESUFFIX=	-kmod
@@ -57,10 +57,6 @@ HTML_DOCS=	Faq.html \
 OPTIONS=	AUTOSETUP "Automatic global config file setup" off
 
 .include <bsd.port.pre.mk>
-
-.if (${OSVERSION} >= 800000)
-BROKEN=	does not build on 8.x
-.endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not in /usr/src
