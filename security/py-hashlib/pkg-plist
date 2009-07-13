@@ -1,9 +1,6 @@
 %%PYTHON_SITELIBDIR%%/hashlib.py
 %%PYTHON_SITELIBDIR%%/hashlib.pyc
 %%PYTHON_SITELIBDIR%%/hashlib.pyo
-%%PYTHON_SITELIBDIR%%/test_hashlib.py
-%%PYTHON_SITELIBDIR%%/test_hashlib.pyc
-%%PYTHON_SITELIBDIR%%/test_hashlib.pyo
 %%PYTHON_SITELIBDIR%%/_hashlib.so
 %%OSSL%%%%PYTHON_SITELIBDIR%%/_sha256.so
 %%OSSL%%%%PYTHON_SITELIBDIR%%/_sha512.so
