@@ -13,7 +13,7 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/2717/ \
 		http://mirror.mcx2.org/
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	prudhvikrishna@gmail.com
+MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	A download accelerator
 
 USE_GMAKE=	yes

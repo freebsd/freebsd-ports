@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://xenion.reactive-search.com/rtpbreak/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	prudhvikrishna@gmail.com
+MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Detects, reconstructs and analyzes any RTP session
 
 BUILD_DEPENDS=	libnet11-config:${PORTSDIR}/net/libnet
