@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
@@ -59,6 +58,7 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
+		--datarootdir=${PREFIX}/${NAGIOSWWWDIR} \
 		--datadir=${PREFIX}/${NAGIOSWWWDIR} \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \

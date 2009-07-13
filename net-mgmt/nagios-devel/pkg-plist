@@ -192,6 +192,8 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/docs/images/multiple-templates1.png
 %%NAGIOSWWWDIR%%/docs/images/multiple-templates2.png
 %%NAGIOSWWWDIR%%/docs/images/nagios.jpg
+%%NAGIOSWWWDIR%%/docs/images/nagiosexchange.png
+%%NAGIOSWWWDIR%%/docs/images/nagiossupport.png
 %%NAGIOSWWWDIR%%/docs/images/ndoutils.png
 %%NAGIOSWWWDIR%%/docs/images/network-outage1.png
 %%NAGIOSWWWDIR%%/docs/images/network-outage2.png
