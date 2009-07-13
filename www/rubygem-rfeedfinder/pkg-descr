@@ -1,0 +1,5 @@
+rFeedFinder uses RSS autodiscovery, Atom autodiscovery, spidering,
+URL correction, and Web service queries -- whatever it takes --
+to find the feed.
+
+WWW:	http://rubyforge.org/projects/rfeedfinder/
