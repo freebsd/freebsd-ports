@@ -53,6 +53,7 @@
     SUBDIR += scimark2c
     SUBDIR += siege
     SUBDIR += sipp
+    SUBDIR += slowloris
     SUBDIR += stream
     SUBDIR += super-smack
     SUBDIR += sysbench
