@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yapet
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.guengel.ch/myapps/yapet/downloads/ http://homepage.hispeed.ch/rostertag/yapet/
 
@@ -19,12 +19,24 @@ MANCOMPRESSED=	no
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=		TTITLE "Enable Terminal Title" ON
+OPTIONS=	TTITLE "Enable Terminal Title" ON \
+		CSV2YAPET "Build csv2yapet" ON
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TTITLE)
 CONFIGURE_ARGS+=	--enable-terminal-title
+.else
+CONFIGURE_ARGS+=	--disable-terminal-title
+.endif
+
+.if defined(WITH_CSV2YAPET)
+CONFIGURE_ARGS+=	--enable-csv2yapet
+MAN1+=			csv2yapet.1
+PLIST_SUB+=		CSV2YAPET=""
+.else
+CONFIGURE_ARGS+=	--disable-csv2yapet
+PLIST_SUB+=		CSV2YAPET="@comment "
 .endif
 
 .if !defined(WITHOUT_NLS)
