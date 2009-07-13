@@ -70,6 +70,12 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${WRKSRC}/query-browser/source/linux/Makefile.am
 
+# Run-time paths
+	${REINPLACE_CMD} -e 's|MQB_DIR="$$DIRNAME"|MQB_DIR=""|' \
+	    ${WRKSRC}/query-browser/source/linux/mysql-query-browser
+	${REINPLACE_CMD} -e 's|MA_DIR="$$DIRNAME"|MA_DIR=""|' \
+	    ${WRKSRC}/administrator/source/linux/mysql-administrator
+
 run-autotools:
 do-configure:
 .for dir in ${SUBDIRS}
