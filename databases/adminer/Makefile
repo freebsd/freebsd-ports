@@ -1,18 +1,17 @@
-# New ports collection makefile for:   phpMinAdmin
-# Date created:			28 August 2008
+# New ports collection makefile for:   adminer
+# Date created:			11 July, 2009
 # Whom:				Wen Heping <wenheping@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	phpminadmin
-PORTVERSION=	1.10.0
+PORTNAME=	adminer
+PORTVERSION=	1.11.1
 CATEGORIES=	databases www
 MASTER_SITES=	SF
-DISTNAME=	phpMinAdmin-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	A MySQL Management Tool Written in PHP
+COMMENT=	A full-featured MySQL management tool written in PHP
 
 USE_ZIP=	yes
 NO_BUILD=	yes
@@ -25,7 +24,7 @@ do-install:
 	@${CHMOD} -R 755 ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
 		>> ${TMPPLIST}
 
 post-install:

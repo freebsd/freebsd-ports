@@ -4,6 +4,7 @@
     COMMENT = Databases
 
     SUBDIR += WWWdb
+    SUBDIR += adminer
     SUBDIR += adodb
     SUBDIR += adodb5
     SUBDIR += adstudio
@@ -486,7 +487,6 @@
     SUBDIR += php5-rrdtool
     SUBDIR += php5-sqlite
     SUBDIR += php5-sybase_ct
-    SUBDIR += phpminadmin
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phpmyadmin211
