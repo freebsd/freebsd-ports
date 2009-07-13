@@ -846,10 +846,10 @@ libexec/processing/reference/libraries/video/Movie_speed_.html
 libexec/processing/reference/libraries/video/Capture_noCrop_.html
 libexec/processing/reference/libraries/video/Movie_jump_.html
 libexec/processing/reference/libraries/video/Movie_time_.html
-libexec/processing/reference/libraries/video/Movie_framerate_.html
+libexec/processing/reference/libraries/video/Movie_frameRate_.html
 libexec/processing/reference/libraries/video/Capture_crop_.html
 libexec/processing/reference/libraries/video/Movie_noLoop_.html
-libexec/processing/reference/libraries/video/Capture_framerate_.html
+libexec/processing/reference/libraries/video/Capture_frameRate_.html
 libexec/processing/reference/libraries/video/captureEvent_.html
 libexec/processing/reference/libraries/video/Movie_play_.html
 libexec/processing/reference/libraries/video/MovieMaker_finish_.html
@@ -1324,11 +1324,15 @@ libexec/processing/reference/logicalNOT.html
 libexec/processing/reference/applyMatrix_.html
 libexec/processing/reference/curveVertex_.html
 libexec/processing/reference/class.html
+libexec/processing/reference/QUARTER_PI.html
+libexec/processing/reference/alpha.html
 libexec/processing/libraries/pdf/src/processing/pdf/PGraphicsPDF.java
 libexec/processing/libraries/pdf/.settings/org.eclipse.jdt.core.prefs
+libexec/processing/libraries/pdf/.settings/org.eclipse.jdt.ui.prefs
 libexec/processing/libraries/pdf/bin/processing/pdf/PGraphicsPDF.class
 libexec/processing/libraries/pdf/library/pdf.jar
 libexec/processing/libraries/pdf/library/itext.jar
+libexec/processing/libraries/pdf/library/export.txt
 libexec/processing/libraries/pdf/.project
 libexec/processing/libraries/pdf/.classpath
 libexec/processing/libraries/pdf/notes.txt
@@ -1336,6 +1340,7 @@ libexec/processing/libraries/pdf/itext-src.zip
 libexec/processing/libraries/net/src/processing/net/Client.java
 libexec/processing/libraries/net/src/processing/net/Server.java
 libexec/processing/libraries/net/library/net.jar
+libexec/processing/libraries/net/library/export.txt
 libexec/processing/libraries/net/bin/processing/net/Server.class
 libexec/processing/libraries/net/bin/processing/net/Client.class
 libexec/processing/libraries/net/.settings/org.eclipse.jdt.ui.prefs
@@ -1385,6 +1390,7 @@ libexec/processing/libraries/dxf/src/processing/dxf/RawDXF.java
 libexec/processing/libraries/dxf/.settings/org.eclipse.jdt.core.prefs
 libexec/processing/libraries/dxf/bin/processing/dxf/RawDXF.class
 libexec/processing/libraries/dxf/library/dxf.jar
+libexec/processing/libraries/dxf/library/export.txt
 libexec/processing/libraries/dxf/.classpath
 libexec/processing/libraries/dxf/dxfviewer.jar
 libexec/processing/libraries/dxf/.project
@@ -1408,6 +1414,7 @@ libexec/processing/libraries/minim/library/jsminim.jar
 libexec/processing/libraries/minim/library/minim-spi.jar
 libexec/processing/libraries/minim/library/mp3spi1.9.4.jar
 libexec/processing/libraries/minim/library/minim.jar
+libexec/processing/libraries/minim/library/export.txt
 libexec/processing/libraries/minim/version.txt
 libexec/processing/libraries/minim/license.txt
 libexec/processing/libraries/howto.txt
