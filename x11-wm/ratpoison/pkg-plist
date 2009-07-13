@@ -1,15 +1,15 @@
 @comment $FreeBSD$
 bin/ratpoison
-%%PORTDOCS%%bin/rpws
-%%PORTDOCS%%%%DATADIR%%/allwindows.sh
-%%PORTDOCS%%%%DATADIR%%/clickframe.pl
-%%PORTDOCS%%%%DATADIR%%/genrpbindings
-%%PORTDOCS%%%%DATADIR%%/ratpoison.el
-%%PORTDOCS%%%%DATADIR%%/rpshowall.sh
-%%PORTDOCS%%%%DATADIR%%/rpws
-%%PORTDOCS%%%%DATADIR%%/split.sh
-%%PORTDOCS%%%%DATADIR%%/sloppy.c
-%%PORTDOCS%%%%DATADIR%%/unrat.c
+%%PORTDATA%%bin/rpws
+%%PORTDATA%%%%DATADIR%%/allwindows.sh
+%%PORTDATA%%%%DATADIR%%/clickframe.pl
+%%PORTDATA%%%%DATADIR%%/genrpbindings
+%%PORTDATA%%%%DATADIR%%/ratpoison.el
+%%PORTDATA%%%%DATADIR%%/rpshowall.sh
+%%PORTDATA%%%%DATADIR%%/rpws
+%%PORTDATA%%%%DATADIR%%/split.sh
+%%PORTDATA%%%%DATADIR%%/sloppy.c
+%%PORTDATA%%%%DATADIR%%/unrat.c
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -17,4 +17,4 @@ bin/ratpoison
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%WITH_GDM%%etc/dm/Sessions/ratpoison.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%DATADIR%%
+%%PORTDATA%%@dirrm %%DATADIR%%
