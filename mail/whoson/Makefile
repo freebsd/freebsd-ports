@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	whoson
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	`WHO iS ONline' protocol implementation
+COMMENT=	Implementation of `WHO iS ONline' protocol
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
