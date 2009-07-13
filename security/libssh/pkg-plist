@@ -1,12 +1,9 @@
-lib/libssh.a
-lib/libssh.la
 lib/libssh.so
-lib/libssh.so.2
+lib/libssh.so.3
+lib/libssh.so.3.0.0
 include/libssh/libssh.h
-include/libssh/config.h
 include/libssh/sftp.h
 include/libssh/crypto.h
 include/libssh/server.h
 include/libssh/ssh2.h
-include/libssh/ssh1.h
 @dirrm include/libssh
