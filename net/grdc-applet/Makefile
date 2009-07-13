@@ -3,9 +3,10 @@
 # Whom:					Alexander Logvinov <ports@logvinov.com>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	grdc
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/grdc
 PKGNAMESUFFIX=	-applet
@@ -27,7 +28,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"grdc"|"${PREFIX}/bin/grdc"|' \
+	@${REINPLACE_CMD} -e 's|"grdc"|"${LOCALBASE}/bin/grdc"|' \
 		${WRKSRC}/src/grdcapplet.c
 
 .include <bsd.port.mk>
