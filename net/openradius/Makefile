@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~evbergen/openradius/download/ \
 		http://www.mirrors.wiretapped.net/security/authentication/radius/openradius/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	A RADIUS server with some actual documentation
 
 LOGFILE?=	/var/log/openradius.log
@@ -36,10 +36,6 @@ PLIST_SUB+=	LDAP=""
 SCRIPTS_ENV+=	USE_LDAP=yes
 .else
 PLIST_SUB+=	LDAP="@comment "
-.endif
-
-.if ${OSVERSION} >= 800034 || (${OSVERSION} >= 700109 && ${OSVERSION} < 800000) || (${OSVERSION} >= 603103 && ${OSVERSION} < 700000)
-BROKEN=		does not compile
 .endif
 
 post-install:
