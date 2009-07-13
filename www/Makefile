@@ -1612,6 +1612,7 @@
     SUBDIR += webstone
     SUBDIR += webstone-ssl
     SUBDIR += wget4web
+    SUBDIR += wgetpaste
     SUBDIR += wikicalc
     SUBDIR += wikindx
     SUBDIR += wiliki

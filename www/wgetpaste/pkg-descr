@@ -1,0 +1,5 @@
+A Script that automates pasting to a number of pastebin services
+relying only on bash, sed, coreutils (mktemp/sort/tr/wc/whoami/tee)
+and wget
+
+WWW: http://wgetpaste.zlin.dk/
