@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ratpoison
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://mirror.4bit.ws/ratpoison/
