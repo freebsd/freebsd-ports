@@ -1,12 +1,15 @@
 bin/yapet
+%%CSV2YAPET%%bin/csv2yapet
 share/applications/yapet.desktop
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/DESIGN
 %%DOCSDIR%%/README
+%%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/html/DESIGN.html
 %%DOCSDIR%%/html/README.html
 %%DOCSDIR%%/html/yapet.html
+%%CSV2YAPET%%%%DOCSDIR%%/html/csv2yapet.html
 %%NLS%%share/locale/de_AT/LC_MESSAGES/yapet.mo
 %%NLS%%share/locale/de_CH/LC_MESSAGES/yapet.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/yapet.mo
