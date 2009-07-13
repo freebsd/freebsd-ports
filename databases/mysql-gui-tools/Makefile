@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mysql-gui-tools
-PORTVERSION=	5.0r12
-PORTREVISION=	1
+PORTVERSION=	5.0r14
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLGUITools
@@ -24,76 +23,57 @@ LIB_DEPENDS=	mysqlclient.15:${PORTSDIR}/databases/mysql50-client \
 OPTIONS=	QUERY_BROWSER	"Build the MySQL Query Browser"	on \
 		ADMINISTRATOR	"Build the MySQL Administrator"	on
 
+USE_AUTOTOOLS=	autoconf:262 libtool:15 automake:110
+USE_GNOME=	gnomelibs libglade2 gtkhtml3 libgnomeprint intlhack gtksourceview
 USE_GL=		gl glut
 USE_GMAKE=	yes
-USE_GNOME=	libglade2 gtkhtml3 libgnomeprint intlhack
 
 DATADIR=	${PREFIX}/share/mysql-gui
 
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CXXFLAGS="${CFLAGS}" CPPFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" ACLOCAL="${TRUE}" \
-		AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}"
-CONFIGURE_ARGS=	--with-gtkhtml=libgtkhtml-3.14 --prefix=${PREFIX}
-
-SUBDIRS=	mysql-gui-common
+CONFIGURE_ARGS+=	--with-gtkhtml=libgtkhtml-3.14
 
 .include <bsd.port.pre.mk>
 
+SUBDIRS=	common
+
 .if !defined(WITHOUT_QUERY_BROWSER)
-SUBDIRS+=	mysql-query-browser
+SUBDIRS+=	query-browser
 PLIST_SUB+=	QUERY_BROWSER=""
 .else
 PLIST_SUB+=	QUERY_BROWSER="@comment "
 .endif
 
 .if !defined(WITHOUT_ADMINISTRATOR)
-SUBDIRS+=	mysql-administrator
+SUBDIRS+=	administrator
 PLIST_SUB+=	ADMINISTRATOR=""
 .else
 PLIST_SUB+=	ADMINISTRATOR="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-i18n
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if defined(WITHOUT_ADMINISTRATOR) && defined(WITHOUT_QUERY_BROWSER)
+.if defined(WITHOUT_ADMINISTRATOR) && defined(WITHOUT_QUERY_BROWSER) && defined(WITHOUT_MIGRATION_TOOL)
 IGNORE=	please run 'make config' again and select at least one component
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|lseek64|lseek|g' \
-	    ${WRKSRC}/mysql-administrator/source/linux/MInstanceInfo.cc
-	${REINPLACE_CMD} -e '578s|make|${GMAKE}|g' \
-	    ${WRKSRC}/mysql-query-browser/source/linux/Makefile.in
-	${REINPLACE_CMD} -e 's|-ldl|-luuid|g' \
-	    ${WRKSRC}/mysql-gui-common/tools/grtsh/Makefile.in \
-	    ${WRKSRC}/mysql-gui-common/tools/grtsh/Makefile.am
-	${REINPLACE_CMD} -e 's|-llualib||g' ${WRKSRC}/mysql-gui-common/configure \
-	    ${WRKSRC}/mysql-gui-common/source/php/Makefile \
-	    ${WRKSRC}/mysql-gui-common/source/php/modules/Makefile
-	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
-	    	's|-DG.*_DISABLE_DEPRECATED||g'
-.if defined(WITHOUT_NLS)
-	${REINPLACE_CMD} -e '/^SUBDIRS/s|po||' \
-	    ${WRKSRC}/mysql-gui-common/Makefile.am \
-	    ${WRKSRC}/mysql-gui-common/Makefile.in \
-	    ${WRKSRC}/mysql-administrator/Makefile.am \
-	    ${WRKSRC}/mysql-administrator/Makefile.in \
-	    ${WRKSRC}/mysql-query-browser/Makefile.am \
-	    ${WRKSRC}/mysql-query-browser/Makefile.in
-.endif
+# switch to new directory name not complete
+	(cd ${WRKSRC} && ${LN} -sf common mysql-gui-common)
+# UTF-8 input file
+	(${TR} -d "\357\273\277" < \
+	    ${WRKSRC}/common/library/base-library/source/myx_database_model.c > \
+	    ${WRKSRC}/common/library/base-library/source/myx_database_model.c.new && \
+	    ${MV} ${WRKSRC}/common/library/base-library/source/myx_database_model.c.new \
+	    	${WRKSRC}/common/library/base-library/source/myx_database_model.c)
 
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	    ${WRKSRC}/query-browser/source/linux/Makefile.am
+
+run-autotools:
 do-configure:
 .for dir in ${SUBDIRS}
-	(cd ${WRKSRC}/${dir} && \
+	(cd ${WRKSRC}/${dir} && ${SH} autogen.sh ${CONFIGURE_ARGS} && \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} \
 	)
 .endfor

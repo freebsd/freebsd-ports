@@ -1,5 +1,5 @@
---- mysql-gui-common/source/linux/MDispatcher.cc.orig	2008-09-25 08:24:31.000000000 +0000
-+++ mysql-gui-common/source/linux/MDispatcher.cc	2008-09-25 08:25:09.000000000 +0000
+--- common/source/linux/MDispatcher.cc.orig	2008-09-25 08:24:31.000000000 +0000
++++ common/source/linux/MDispatcher.cc	2008-09-25 08:25:09.000000000 +0000
 @@ -21,8 +21,8 @@
  #include <unistd.h>
  #include <mysql.h>
