@@ -1,11 +1,10 @@
 bin/smasher
-%%DATADIR%%/png/applications-system.png
-%%DATADIR%%/png/dialog-information.png
+%%DATADIR%%/png/media-playlist-shuffle-inv.png
+%%DATADIR%%/png/stock_help-agent.png
 %%DATADIR%%/png/edit-clear-gs.png
 %%DATADIR%%/png/edit-redo_gs.png
 %%DATADIR%%/png/edit-undo_gs.png
 %%DATADIR%%/png/fileopen.png
-%%DATADIR%%/png/filesave.png
 %%DATADIR%%/png/filesave_gs.png
 %%DATADIR%%/png/gtk-media-play-inv.png
 %%DATADIR%%/png/logviewer_gs.png
@@ -15,32 +14,35 @@ bin/smasher
 %%DATADIR%%/png/player_stop.png
 %%DATADIR%%/png/player_stop_inv.png
 %%DATADIR%%/png/preferences-desktop.png
-%%DATADIR%%/png/reload.png
 %%DATADIR%%/png/smasher.png
 %%DATADIR%%/png/stock_data-next.png
 %%DATADIR%%/png/stock_data-previous.png
 %%DATADIR%%/png/stock_draw-line.png
 %%DATADIR%%/png/stock_draw-line_r.png
-%%DATADIR%%/png/stock_filters-invert.png
-%%DATADIR%%/png/stock_filters.png
-%%DATADIR%%/png/stock_function-autopilot.png
-%%DATADIR%%/png/stock_gamma.png
-%%DATADIR%%/png/stock_headphones.png
 %%DATADIR%%/png/stock_hyperlink.png
 %%DATADIR%%/png/stock_id.png
-%%DATADIR%%/png/stock_keyring.png
-%%DATADIR%%/png/stock_next.png
 %%DATADIR%%/png/stock_open.png
-%%DATADIR%%/png/stock_pin_gs_min.png
-%%DATADIR%%/png/stock_previous.png
 %%DATADIR%%/png/stock_repeat.png
 %%DATADIR%%/png/stock_repeat_inv.png
 %%DATADIR%%/png/stock_shuffle.png
-%%DATADIR%%/png/stock_standard-filter.png
-%%DATADIR%%/png/system-run.png
 %%DATADIR%%/png/window_nofullscreen_gs.png
+%%DATADIR%%/png/gradient-anticlock-spiral_24x24_gauss_gs.png
+%%DATADIR%%/png/warp.png
+%%DATADIR%%/png/warp4.png
 %%DATADIR%%/samples/Amen_Break.wav
+%%DATADIR%%/samples/Piano.wav
+%%DATADIR%%/samples/TR-808.wav
+%%DATADIR%%/samples/Synth.wav
+%%DATADIR%%/samples/Guitar.wav
+%%DATADIR%%/samples/Electric_Guitar.wav
+%%DATADIR%%/samples/Sine_Wave.wav
 %%DATADIR%%/xpm/smashericon.xpm
+%%DATADIR%%/help/ar01s02.html
+%%DATADIR%%/help/ar01s03.html
+%%DATADIR%%/help/ar01s04.html
+%%DATADIR%%/help/ar01s05.html
+%%DATADIR%%/help/elements.html
+%%DATADIR%%/help/index.html
 share/applications/smasher.desktop
 share/pixmaps/smasher.png
 @dirrmtry share/applications
@@ -48,4 +50,5 @@ share/pixmaps/smasher.png
 @dirrm %%DATADIR%%/xpm
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/png
+@dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%

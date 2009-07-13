@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smasher
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.8
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -17,14 +17,12 @@ COMMENT=	Cross platform audio loop slicer
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		mad.2:${PORTSDIR}/audio/libmad
 
-ONLY_FOR_ARCHS=		i386
-ONLY_FOR_ARCHS_REASON=		At the momment does not build on AMD64 ia64
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	At the momment does not build on AMD64 ia64
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-wx-config=${LOCALBASE}/bin/wxgtk2-2.8-config \
-		--datarootdir="${PREFIX}/share" --libdir="${LOCALBASE}/lib" \
-		--localedir="${PREFIX}/share/locale" --includedir="${LOCALBASE}/include"
-
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+CONFIGURE_ARGS=	--with-wx-config=${LOCALBASE}/bin/wxgtk2-2.8-config
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
@@ -42,8 +40,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 604000
-USE_GCC=	4.2+
+.if ${OSVERSION} <= 700000
+BROKEN=		does not compile
 .endif
 
 .include <bsd.port.post.mk>
