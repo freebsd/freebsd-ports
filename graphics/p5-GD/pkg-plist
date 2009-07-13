@@ -1,5 +1,6 @@
 bin/bdf2gdfont.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/GD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/GD/Group.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GD/Image.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GD/Polygon.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GD/Polyline.pm
