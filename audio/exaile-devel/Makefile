@@ -7,7 +7,7 @@
 
 PORTNAME=	exaile
 DISTVERSION=	0.2.99.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
@@ -29,7 +29,8 @@ CONFLICTS=	exaile-0.2.[0-9][0-8]* exaile-0.3.*
 
 # The reality with these options is that they all will be autodetected and used
 # if already installed. These just force Exaile to bring them in as well.
-OPTIONS=	BAD "Install bad gstreamer plugins" On\
+OPTIONS=	BAD "Install bad GStreamer plugins" On \
+		BDB "Install Python Berkley DB module" On \
 		CDDB "Lookup CD information within Exaile" On \
 		DBUS "Rely on Python D-Bus bindings" On \
 		HAL "Force depend on HAL" On \
@@ -39,6 +40,10 @@ OPTIONS=	BAD "Install bad gstreamer plugins" On\
 
 .if !defined(WITHOUT_BAD)
 USE_GSTREAMER+=	bad
+.endif
+
+.if !defined(WITHOUT_BDB)
+RUN_DEPENDS+=	py*-bsddb>=2.5:${PORTSDIR}/databases/py-bsddb
 .endif
 
 .if !defined(WITHOUT_CDDB)
