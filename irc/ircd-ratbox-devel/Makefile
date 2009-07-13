@@ -8,7 +8,7 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
