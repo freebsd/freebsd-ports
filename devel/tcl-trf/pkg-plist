@@ -1,0 +1,3 @@
+lib/Trf/pkgIndex.tcl
+lib/Trf/libTrf%%VER%%.so
+@dirrm lib/Trf
