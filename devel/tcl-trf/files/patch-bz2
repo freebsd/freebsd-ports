@@ -1,0 +1,166 @@
+--- generic/bz2.c	2008-12-05 16:00:23.000000000 -0500
++++ generic/bz2.c	2008-12-23 15:31:04.000000000 -0500
+@@ -28,4 +28,5 @@
+  */
+ 
++#include <bzlib.h>
+ #include "transformInt.h"
+ 
+@@ -223,5 +224,5 @@
+   }
+ 
+-  res = bz.bcompressInit (&c->state, o->level, 0, 0);
++  res = BZ2_bzCompressInit (&c->state, o->level, 0, 0);
+ 
+   if (res != BZ_OK) {
+@@ -265,5 +266,5 @@
+   /* release conversion specific items here (BZ2) */
+ 
+-  bz.bcompressEnd (&c->state);
++  BZ2_bzCompressEnd (&c->state);
+   Tcl_Free ((char*) c->output_buffer);
+   Tcl_Free ((char*) c);
+@@ -305,12 +306,12 @@
+   in = character;
+ 
+-  c->state.next_in   = (unsigned char*) (Bytef*) &in;
++  c->state.next_in   = &in;
+   c->state.avail_in  = 1;
+ 
+   for (;;) {
+-    c->state.next_out  = (unsigned char*) (Bytef*) c->output_buffer;
++    c->state.next_out  = c->output_buffer;
+     c->state.avail_out = OUT_SIZE;
+ 
+-    res = bz.bcompress (&c->state, BZ_RUN);
++    res = BZ2_bzCompress (&c->state, BZ_RUN);
+ 
+     if (res < BZ_OK) {
+@@ -373,12 +374,12 @@
+   int res;
+ 
+-  c->state.next_in   = (unsigned char*) (Bytef*) buffer;
++  c->state.next_in   = (char *)buffer;
+   c->state.avail_in  = bufLen;
+ 
+   for (;;) {
+-    c->state.next_out  = (unsigned char*) (Bytef*) c->output_buffer;
++    c->state.next_out  = c->output_buffer;
+     c->state.avail_out = OUT_SIZE;
+ 
+-    res = bz.bcompress (&c->state, BZ_RUN);
++    res = BZ2_bzCompress (&c->state, BZ_RUN);
+ 
+     if (res < BZ_OK) {
+@@ -439,12 +440,12 @@
+   int res;
+ 
+-  c->state.next_in   = (unsigned char*) (Bytef*) NULL;
++  c->state.next_in   = NULL;
+   c->state.avail_in  = 0;
+ 
+   for (;;) {
+-    c->state.next_out  = (unsigned char*) (Bytef*) c->output_buffer;
++    c->state.next_out  = c->output_buffer;
+     c->state.avail_out = OUT_SIZE;
+ 
+-    res = bz.bcompress (&c->state, BZ_FINISH);
++    res = BZ2_bzCompress (&c->state, BZ_FINISH);
+ 
+     if (res < BZ_OK) {
+@@ -499,5 +500,5 @@
+   /* execute conversion specific code here (BZ2) */
+ 
+-  /* bz.bcompressReset (&c->state); */
++  /* BZ2_bzCompressReset (&c->state); */
+ }
+ 
+@@ -549,5 +550,5 @@
+   }
+ 
+-  res = bz.bdecompressInit (&c->state, 0, 0);
++  res = BZ2_bzDecompressInit (&c->state, 0, 0);
+ 
+   if (res != BZ_OK) {
+@@ -593,5 +594,5 @@
+   /* release conversion specific items here (BZ2) */
+ 
+-  bz.bdecompressEnd (&c->state);
++  BZ2_bzDecompressEnd (&c->state);
+ 
+   Tcl_Free ((char*) c->output_buffer);
+@@ -633,12 +634,12 @@
+   in = character;
+ 
+-  c->state.next_in   = (unsigned char*) (Bytef*) &in;
++  c->state.next_in   = &in;
+   c->state.avail_in  = 1;
+ 
+   for (;;) {
+-    c->state.next_out  = (unsigned char*) (Bytef*) c->output_buffer;
++    c->state.next_out  = c->output_buffer;
+     c->state.avail_out = OUT_SIZE;
+ 
+-    res = bz.bdecompress (&c->state);
++    res = BZ2_bzDecompress (&c->state);
+     c->lastRes = res;
+ 
+@@ -702,12 +703,12 @@
+   int res;
+ 
+-  c->state.next_in   = (unsigned char*) (Bytef*) buffer;
++  c->state.next_in   = (char *)buffer;
+   c->state.avail_in  = bufLen;
+ 
+   for (;;) {
+-    c->state.next_out  = (unsigned char*) (Bytef*) c->output_buffer;
++    c->state.next_out  = c->output_buffer;
+     c->state.avail_out = OUT_SIZE;
+ 
+-    res = bz.bdecompress (&c->state);
++    res = BZ2_bzDecompress (&c->state);
+     c->lastRes = res;
+ 
+@@ -774,14 +775,14 @@
+   }
+ 
+-  c->state.next_in  = (unsigned char*) (Bytef*) c->output_buffer; /* fake out
+-								   * 'inflate'
+-								   */
++  c->state.next_in  = c->output_buffer;  /* fake out
++						   * 'inflate'
++						   */
+   c->state.avail_in = 0;
+ 
+   for (;;) {
+-    c->state.next_out  = (unsigned char*) (Bytef*) c->output_buffer;
++    c->state.next_out  = c->output_buffer;
+     c->state.avail_out = OUT_SIZE;
+ 
+-    res = bz.bdecompress (&c->state);
++    res = BZ2_bzDecompress (&c->state);
+ 
+     if ((res < BZ_OK) && (res != BZ_STREAM_END)) {
+@@ -836,5 +837,5 @@
+   /* execute conversion specific code here (BZ2) */
+ 
+-  /* bz.bdecompressReset (&c->state); */
++  /* BZ2_bzDecompressReset (&c->state); */
+ }
+ 
+--- generic/bz2_opt.c	2008-12-05 16:00:23.000000000 -0500
++++ generic/bz2_opt.c	2008-12-23 15:45:52.000000000 -0500
+@@ -182,13 +182,4 @@
+ 
+   /*
+-   * 'bz2' is used, therefore load the required library.
+-   * And bail out if it is not available.
+-   */
+-
+-  if (TCL_OK != TrfLoadBZ2lib (interp)) {
+-    return TCL_ERROR;
+-  }
+-
+-  /*
+    * Now perform the real option check.
+    */

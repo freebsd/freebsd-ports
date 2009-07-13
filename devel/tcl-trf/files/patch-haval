@@ -1,0 +1,25 @@
+--- generic/haval.c	2009-06-18 00:54:43.000000000 -0400
++++ generic/haval.c	2009-07-13 00:03:06.000000000 -0400
+@@ -48,6 +48,6 @@
+ static void MDHaval_Start     _ANSI_ARGS_ ((VOID* context));
+ static void MDHaval_Update    _ANSI_ARGS_ ((VOID* context, unsigned int character));
+-static void MDHaval_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
+-static void MDHaval_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
++static void MDHaval_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, size_t bufLen));
++static void MDHaval_Final     _ANSI_ARGS_ ((VOID* digest, VOID* context));
+ 
+ /*
+@@ -169,5 +169,5 @@
+ VOID* context;
+ unsigned char* buffer;
+-int   bufLen;
++size_t   bufLen;
+ {
+   haval_hash ((CTX_TYPE*) context, (unsigned char*) buffer, bufLen);
+@@ -194,5 +194,5 @@
+ 
+ static void
+-MDHaval_Final (context, digest)
++MDHaval_Final (digest, context)
+ VOID* context;
+ VOID* digest;

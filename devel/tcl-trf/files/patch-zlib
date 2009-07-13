@@ -1,0 +1,300 @@
+--- generic/adler.c	2009-06-18 00:54:43.000000000 -0400
++++ generic/adler.c	2009-07-12 23:55:20.000000000 -0400
+@@ -29,4 +29,5 @@
+ 
+ #include "transformInt.h"
++#include <zlib.h>
+ 
+ /*
+@@ -47,7 +48,6 @@
+ static void MDAdler_Start     _ANSI_ARGS_ ((VOID* context));
+ static void MDAdler_Update    _ANSI_ARGS_ ((VOID* context, unsigned int character));
+-static void MDAdler_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
+-static void MDAdler_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
+-static int  MDAdler_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
++static void MDAdler_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, size_t bufLen));
++static void MDAdler_Final     _ANSI_ARGS_ ((VOID* digest, VOID* context));
+ 
+ /*
+@@ -63,5 +63,5 @@
+   MDAdler_UpdateBuf,
+   MDAdler_Final,
+-  MDAdler_Check
++  NULL
+ };
+ 
+@@ -121,5 +121,5 @@
+   /* call md specific initialization here */
+ 
+-  ADLER = zf.zadler32 (0L, Z_NULL, 0);
++  ADLER = adler32 (0L, Z_NULL, 0);
+ 
+   DONE (MDAdler_Start);
+@@ -154,5 +154,5 @@
+   unsigned char buf = character;
+ 
+-  ADLER = zf.zadler32 (ADLER, &buf, 1);
++  ADLER = adler32 (ADLER, &buf, 1);
+ }
+ 
+@@ -180,9 +180,9 @@
+ VOID* context;
+ unsigned char* buffer;
+-int   bufLen;
++size_t   bufLen;
+ {
+   /* call md specific update here */
+ 
+-  ADLER = zf.zadler32 (ADLER, buffer, bufLen);
++  ADLER = adler32 (ADLER, buffer, bufLen);
+ }
+ 
+@@ -207,5 +207,5 @@
+ 
+ static void
+-MDAdler_Final (context, digest)
++MDAdler_Final (digest, context)
+ VOID* context;
+ VOID* digest;
+@@ -222,36 +222,2 @@
+   out [3] = (char) ((adler >>  0) & 0xff);
+ }
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDAdler_Check --
+- *
+- *	------------------------------------------------*
+- *	Check for existence of libz, load it.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static int
+-MDAdler_Check (interp)
+-Tcl_Interp* interp;
+-{
+-  int res;
+-
+-  START (MDAdler_Check);
+-
+-  res = TrfLoadZlib (interp);
+-
+-  PRINT ("res = %d\n", res);
+-  DONE (MDAdler_Check);
+-  return res;
+-}
+-
+--- generic/crc_zlib.c	2009-06-18 00:54:43.000000000 -0400
++++ generic/crc_zlib.c	2009-07-12 23:51:04.000000000 -0400
+@@ -29,4 +29,5 @@
+ 
+ #include "transformInt.h"
++#include <zlib.h>
+ 
+ /*
+@@ -47,7 +48,6 @@
+ static void MDcrcz_Start     _ANSI_ARGS_ ((VOID* context));
+ static void MDcrcz_Update    _ANSI_ARGS_ ((VOID* context, unsigned int character));
+-static void MDcrcz_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
+-static void MDcrcz_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
+-static int  MDcrcz_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
++static void MDcrcz_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, size_t bufLen));
++static void MDcrcz_Final     _ANSI_ARGS_ ((VOID* digest, VOID* context));
+ 
+ /*
+@@ -63,5 +63,5 @@
+   MDcrcz_UpdateBuf,
+   MDcrcz_Final,
+-  MDcrcz_Check
++  NULL
+ };
+ 
+@@ -118,5 +118,5 @@
+   /* call md specific initialization here */
+ 
+-  CRC = zf.zcrc32 (0L, Z_NULL, 0);
++  CRC = crc32(0L, Z_NULL, 0);
+ }
+ 
+@@ -149,5 +149,5 @@
+   unsigned char buf = character;
+ 
+-  CRC = zf.zcrc32 (CRC, &buf, 1);
++  CRC = crc32(CRC, &buf, 1);
+ }
+ 
+@@ -175,9 +175,9 @@
+ VOID* context;
+ unsigned char* buffer;
+-int   bufLen;
++size_t   bufLen;
+ {
+   /* call md specific update here */
+ 
+-  CRC = zf.zcrc32 (CRC, buffer, bufLen);
++  CRC = crc32(CRC, buffer, bufLen);
+ }
+ 
+@@ -202,5 +202,5 @@
+ 
+ static void
+-MDcrcz_Final (context, digest)
++MDcrcz_Final (digest, context)
+ VOID* context;
+ VOID* digest;
+@@ -217,28 +217,2 @@
+   out [0] = (char) ((crc >>  0) & 0xff);
+ }
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDcrcz_Check --
+- *
+- *	------------------------------------------------*
+- *	Check for existence of libz, load it.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static int
+-MDcrcz_Check (interp)
+-Tcl_Interp* interp;
+-{
+-  return TrfLoadZlib (interp);
+-}
+-
+--- generic/zip_opt.c	Sat Nov 18 17:42:32 2000
++++ generic/zip_opt.c	Fri Feb 15 15:13:22 2002
+@@ -183,13 +183,4 @@
+ 
+   /*
+-   * 'zip' is used, therefore load the required library.
+-   * And bail out if it is not available.
+-   */
+-
+-  if (TCL_OK != TrfLoadZlib (interp)) {
+-    return TCL_ERROR;
+-  }
+-
+-  /*
+    * Now perform the real option check.
+    */
+--- generic/zip.c	2008-12-23 15:33:06.000000000 -0500
++++ generic/zip.c	2008-12-23 15:39:08.000000000 -0500
+@@ -28,4 +28,5 @@
+  */
+ 
++#include <zlib.h>
+ #include "transformInt.h"
+ 
+@@ -250,9 +251,9 @@
+ 
+ #if 0
+-  res = zf.zdeflateInit_ (&c->state, o->level,
++  res = deflateInit_ (&c->state, o->level,
+ 			 ZLIB_VERSION, sizeof(z_stream));
+ #endif
+ 
+-  res = zf.zdeflateInit2_ (&c->state, o->level, Z_DEFLATED,
++  res = deflateInit2_ (&c->state, o->level, Z_DEFLATED,
+ 			 o->nowrap  ?
+ 			 -MAX_WBITS :
+@@ -308,5 +309,5 @@
+   PRINT ("deflateEnd ()\n"); FL;
+ 
+-  zf.zdeflateEnd (&c->state);
++  deflateEnd (&c->state);
+ 
+   Tcl_Free ((char*) c->output_buffer);
+@@ -366,5 +367,5 @@
+ 
+     PRINT ("deflate (Z_NO_FLUSH)\n"); FL;
+-    res = zf.zdeflate (&c->state, Z_NO_FLUSH);
++    res = deflate (&c->state, Z_NO_FLUSH);
+ 
+     IN; PRINTLN (ZlibErrorMsg (&c->state, res)); FL; OT;
+@@ -451,5 +452,5 @@
+ 
+     PRINT ("deflate (Z_NO_FLUSH)\n"); FL;
+-    res = zf.zdeflate (&c->state, Z_NO_FLUSH);
++    res = deflate (&c->state, Z_NO_FLUSH);
+ 
+     IN; PRINTLN (ZlibErrorMsg (&c->state, res)); FL; OT;
+@@ -526,5 +527,5 @@
+ 
+     PRINT ("deflate (Z_FINISH)\n"); FL;
+-    res = zf.zdeflate (&c->state, Z_FINISH);
++    res = deflate (&c->state, Z_FINISH);
+ 
+     IN; PRINTLN (ZlibErrorMsg (&c->state, res)); FL; OT;
+@@ -587,5 +588,5 @@
+   /* execute conversion specific code here (ZIP) */
+ 
+-  zf.zdeflateReset (&c->state);
++  deflateReset (&c->state);
+ 
+   DONE (ZipClearEncoder); 
+@@ -648,9 +649,9 @@
+ 
+ #if 0
+-  res = zf.zinflateInit_ (&c->state,
++  res = inflateInit_ (&c->state,
+ 			 ZLIB_VERSION, sizeof (z_stream));
+ #endif
+ 
+-  res = zf.zinflateInit2_ (&c->state,
++  res = inflateInit2_ (&c->state,
+ 			 o->nowrap  ?
+ 			 -MAX_WBITS :
+@@ -705,5 +706,5 @@
+   PRINT ("inflateEnd ()\n"); FL;
+ 
+-  zf.zinflateEnd (&c->state);
++  inflateEnd (&c->state);
+ 
+   Tcl_Free ((char*) c->output_buffer);
+@@ -769,5 +770,5 @@
+ 
+     PRINT ("inflate (Z_NO_FLUSH)\n"); FL;
+-    res = zf.zinflate (&c->state, Z_NO_FLUSH);
++    res = inflate (&c->state, Z_NO_FLUSH);
+ 
+     IN; PRINTLN (ZlibErrorMsg (&c->state, res)); FL; OT;
+@@ -875,5 +876,5 @@
+ 
+     PRINT ("inflate (Z_NO_FLUSH)\n"); FL;
+-    res = zf.zinflate (&c->state, Z_NO_FLUSH);
++    res = inflate (&c->state, Z_NO_FLUSH);
+ 
+     IN; PRINTLN (ZlibErrorMsg (&c->state, res)); FL; OT;
+@@ -976,5 +977,5 @@
+ 
+     PRINT ("inflate (Z_FINISH)\n"); FL;
+-    res = zf.zinflate (&c->state, Z_FINISH);
++    res = inflate (&c->state, Z_FINISH);
+ 
+     IN; PRINTLN (ZlibErrorMsg (&c->state, res));
+@@ -1038,5 +1039,5 @@
+   /* execute conversion specific code here (ZIP) */
+ 
+-  zf.zinflateReset (&c->state);
++  inflateReset (&c->state);
+ 
+   DONE (ZipClearDecoder); 
