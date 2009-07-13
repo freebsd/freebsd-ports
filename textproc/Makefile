@@ -1018,6 +1018,7 @@
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-formosa
+    SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-markaby
