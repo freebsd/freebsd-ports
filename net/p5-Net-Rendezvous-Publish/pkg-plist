@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Rendezvous/Publish/.packlist
+%%SITE_PERL%%/Net/Rendezvous/Publish/Backend/Null.pm
+%%SITE_PERL%%/Net/Rendezvous/Publish/Service.pm
+%%SITE_PERL%%/Net/Rendezvous/Publish.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Rendezvous/Publish
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Rendezvous
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Rendezvous/Publish/Backend
+@dirrmtry %%SITE_PERL%%/Net/Rendezvous/Publish
+@dirrmtry %%SITE_PERL%%/Net/Rendezvous
+@dirrmtry %%SITE_PERL%%/Net
