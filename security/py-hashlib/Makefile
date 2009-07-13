@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hashlib
-PORTVERSION=	20060408a
+PORTVERSION=	20081119
 CATEGORIES=	security devel python
 MASTER_SITES=	http://code.krypto.org/python/hashlib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Backport of Python 2.5's haslib module
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.4
 USE_OPENSSL=	yes
 USE_PYDISTUTILS=	yes
 
