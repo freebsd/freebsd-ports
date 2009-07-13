@@ -1,22 +1,25 @@
-# New ports collection makefile for:	duplicity
-# Date created:				Wed Jun 11 19:53:46 CEST 2003
-# Whom:					Gerhard Häring <gh@ghaering.de>
+# New ports collection makefile for:	duplicity-devel
+# Date created:				Fri Jul 10 23:12:20 CEST 2009
+# Whom:					Peter Schuller <peter.schuller@infidyne.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.5.18
+PORTVERSION=	0.6.02
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	peter.schuller@infidyne.com
-COMMENT=	Untrusted backup using rsync algorithm
+COMMENT=	Untrusted backup using rsync algorithm (development/unstable version)
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		ncftp>=3.2.2:${PORTSDIR}/ftp/ncftp3
+
+CONFLICTS=	duplicity-[0-9]*
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
