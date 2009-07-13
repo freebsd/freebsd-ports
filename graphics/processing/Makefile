@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	processing
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.5
 PORTEPOCH=		1
 CATEGORIES=	graphics cad java
 MASTER_SITES=	http://processing.org/download/
