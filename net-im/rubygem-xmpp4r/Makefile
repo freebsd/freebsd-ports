@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xmpp4r
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	net-im ruby
 MASTER_SITES=	RF/xmpp4r
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	XMPP/Jabber library for Ruby
 
-USE_RUBY=		YES
+USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
 
