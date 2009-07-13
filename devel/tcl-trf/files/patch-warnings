@@ -1,0 +1,29 @@
+--- generic/transformInt.h	Tue Aug 21 01:51:33 2001
++++ generic/transformInt.h	Tue Apr  6 12:27:33 2004
+@@ -678,4 +678,8 @@
+ #define TCL_STORAGE_CLASS DLLIMPORT
+ 
++#ifndef CONST84
++#    define CONST84
++#endif
++
+ #ifdef __cplusplus
+ }
+--- generic/trfStubLib.c	Mon Sep 20 17:07:24 1999
++++ generic/trfStubLib.c	Tue Apr  6 13:13:38 2004
+@@ -61,5 +61,5 @@
+ #endif
+ 
+-char *
++CONST char *
+ Trf_InitStubs(interp, version, exact)
+     Tcl_Interp *interp;
+--- generic/registry.c	2009-06-18 00:54:44.000000000 -0400
++++ generic/registry.c	2009-07-12 21:05:24.000000000 -0400
+@@ -1405,5 +1405,5 @@
+    * [Bug 2788106].
+    */
+-  ckfree(trans);
++  ckfree((void *)trans);
+ 
+   DONE (TrfClose);

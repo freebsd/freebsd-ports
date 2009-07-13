@@ -1,0 +1,12 @@
+This  is  a  loadable  extension  to Tcl  providing  commands  for  data
+conversion, message  digests, zlib based  compression, error-correction,
+channel-based manipulation of  binary data. Trf extends  the language at
+the C-level with so-called  ``transformer''-procedures. With the help of
+some  patches (*)  to the  core  the package  is able  to intercept  all
+read/write operations on designated channels, thus giving it the ability
+to transform  the buffer  contents as desired.  This allows  things like
+transparent encryption,  compression, charset recoding, etc.  Build upon
+this  framework (and  as proof  of  concept) a  collection of  tcl-level
+commands was implemented.
+
+WWW: http://www.oche.de/~akupries/soft/trf/

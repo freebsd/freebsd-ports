@@ -1,0 +1,185 @@
+--- generic/md2.c	2009-06-18 00:54:43.000000000 -0400
++++ generic/md2.c	2009-07-13 00:28:17.000000000 -0400
+@@ -28,5 +28,6 @@
+  */
+ 
+-#include "loadman.h"
++#include "transformInt.h"
++#include <openssl/md2.h>
+ 
+ /*
+@@ -38,18 +39,8 @@
+  */
+ 
+-#define DIGEST_SIZE               (MD2_DIGEST_LENGTH)
++#define DIGEST_SIZE               (20)
+ #define CTX_TYPE                  MD2_CTX
+ 
+ /*
+- * Declarations of internal procedures.
+- */
+-
+-static void MDmd2_Start     _ANSI_ARGS_ ((VOID* context));
+-static void MDmd2_Update    _ANSI_ARGS_ ((VOID* context, unsigned int character));
+-static void MDmd2_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
+-static void MDmd2_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
+-static int  MDmd2_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
+-
+-/*
+  * Generator definition.
+  */
+@@ -59,9 +50,9 @@
+   sizeof (CTX_TYPE),
+   DIGEST_SIZE,
+-  MDmd2_Start,
+-  MDmd2_Update,
+-  MDmd2_UpdateBuf,
+-  MDmd2_Final,
+-  MDmd2_Check
++  (Trf_MDStart *)MD2_Init,
++  NULL,
++  (Trf_MDUpdateBuf *)MD2_Update,
++  (Trf_MDFinal *)MD2_Final,
++  NULL
+ };
+ 
+@@ -90,139 +81,2 @@
+   return Trf_RegisterMessageDigest (interp, &mdDescription);
+ }
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd2_Start --
+- *
+- *	------------------------------------------------*
+- *	Initialize the internal state of the message
+- *	digest generator.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDmd2_Start (context)
+-VOID* context;
+-{
+-  md2f.init ((MD2_CTX*) context);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd2_Update --
+- *
+- *	------------------------------------------------*
+- *	Update the internal state of the message digest
+- *	generator for a single character.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDmd2_Update (context, character)
+-VOID* context;
+-unsigned int   character;
+-{
+-  unsigned char buf = character;
+-
+-  md2f.update ((MD2_CTX*) context, &buf, 1);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd2_UpdateBuf --
+- *
+- *	------------------------------------------------*
+- *	Update the internal state of the message digest
+- *	generator for a character buffer.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDmd2_UpdateBuf (context, buffer, bufLen)
+-VOID* context;
+-unsigned char* buffer;
+-int   bufLen;
+-{
+-  md2f.update ((MD2_CTX*) context, (unsigned char*) buffer, bufLen);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd2_Final --
+- *
+- *	------------------------------------------------*
+- *	Generate the digest from the internal state of
+- *	the message digest generator.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDmd2_Final (context, digest)
+-VOID* context;
+-VOID* digest;
+-{
+-  md2f.final ((unsigned char*) digest, (MD2_CTX*) context);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd2_Check --
+- *
+- *	------------------------------------------------*
+- *	Do global one-time initializations of the message
+- *	digest generator.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		Loads the shared library containing the
+- *		MD2 functionality
+- *
+- *	Result:
+- *		A standard Tcl error code.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static int
+-MDmd2_Check (interp)
+-Tcl_Interp* interp;
+-{
+-  return TrfLoadMD2 (interp);
+-}

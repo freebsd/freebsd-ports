@@ -1,0 +1,257 @@
+--- generic/md5dig.c	2009-06-18 00:54:43.000000000 -0400
++++ generic/md5dig.c	2009-07-12 23:12:51.000000000 -0400
+@@ -28,6 +28,8 @@
+  */
+ 
+-#include "loadman.h"
++#include "transformInt.h"
+ 
++#include <sys/types.h>
++#include <openssl/md5.h>
+ /*
+  * Generator description
+@@ -38,6 +40,4 @@
+  */
+ 
+-#define MD5_CTXP (MD5_CTX*)
+-
+ #ifndef OTP
+ #define DIGEST_SIZE               (16)
+@@ -51,10 +51,7 @@
+  */
+ 
+-static void MDmd5_Start     _ANSI_ARGS_ ((VOID* context));
+-static void MDmd5_Update    _ANSI_ARGS_ ((VOID* context, unsigned int character));
+-static void MDmd5_UpdateBuf _ANSI_ARGS_ ((VOID* context,
+-				       unsigned char* buffer, int bufLen));
+-static void MDmd5_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
+-static int  MDmd5_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
++#ifdef OTP
++static void MDmd5_OTP_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
++#endif
+ 
+ /*
+@@ -71,9 +68,13 @@
+   sizeof (CTX_TYPE),
+   DIGEST_SIZE,
+-  MDmd5_Start,
+-  MDmd5_Update,
+-  MDmd5_UpdateBuf,
+-  MDmd5_Final,
+-  MDmd5_Check
++  (Trf_MDStart *)MD5_Init,
++  NULL,
++  (Trf_MDUpdateBuf *)MD5_Update,
++#ifdef OTP
++  MDmd5_OTP_Final,
++#else
++  (Trf_MDFinal *)MD5_Final,
++#endif
++  NULL,
+ };
+ 
+@@ -107,118 +108,9 @@
+ }
+ 
++#ifdef OTP
+ /*
+  *------------------------------------------------------*
+  *
+- *	MDmd5_Start --
+- *
+- *	------------------------------------------------*
+- *	Initialize the internal state of the message
+- *	digest generator.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDmd5_Start (context)
+-VOID* context;
+-{
+-  /*  MD5Init ((MD5_CTX*) context);*/
+-  md5f.init (MD5_CTXP context);
+-
+-#ifdef TRF_DEBUG
+-  {
+-    MD5_CTX* c = MD5_CTXP context;
+-    PRINT ("Init ABCD = %d %d %d %d\n", c->A, c->B, c->C, c->D); FL;
+-  }
+-#endif
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd5_Update --
+- *
+- *	------------------------------------------------*
+- *	Update the internal state of the message digest
+- *	generator for a single character.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDmd5_Update (context, character)
+-VOID* context;
+-unsigned int   character;
+-{
+-  unsigned char buf = character;
+-
+-  /*  MD5Update ((MD5_CTX*) context, &buf, 1); */
+-
+-  md5f.update (MD5_CTXP context, &buf, 1);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd5_UpdateBuf --
+- *
+- *	------------------------------------------------*
+- *	Update the internal state of the message digest
+- *	generator for a character buffer.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDmd5_UpdateBuf (context, buffer, bufLen)
+-VOID* context;
+-unsigned char* buffer;
+-int   bufLen;
+-{
+-  /*  MD5Update ((MD5_CTX*) context, (unsigned char*) buffer, bufLen);*/
+-
+-  PRTSTR ("update by %d (%s)\n", bufLen, buffer);
+-#ifdef TRF_DEBUG
+-  {
+-    MD5_CTX* c = MD5_CTXP context;
+-    PRINT ("Upd1 ABCD = %d %d %d %d\n", c->A, c->B, c->C, c->D); FL;
+-  }
+-#endif
+-
+-  md5f.update (MD5_CTXP context, (unsigned char*) buffer, bufLen);
+-
+-#ifdef TRF_DEBUG
+-  {
+-    MD5_CTX* c = MD5_CTXP context;
+-    PRINT ("Upd2 ABCD = %d %d %d %d\n", c->A, c->B, c->C, c->D); FL;
+-  }
+-#endif
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd5_Final --
++ *	MDmd5_OTP_Final --
+  *
+  *	------------------------------------------------*
+@@ -237,17 +129,12 @@
+ 
+ static void
+-MDmd5_Final (context, digest)
+-VOID* context;
++MDmd5_OTP_Final (digest, context)
+ VOID* digest;
++VOID* context;
+ {
+-#ifndef OTP
+-  /*  MD5Final ((unsigned char*) digest, (MD5_CTX*) context); */
+-  md5f.final ((unsigned char*) digest, MD5_CTXP context);
+-#else
+     int    i;
+     unsigned char result[16];
+ 
+-    /*    MD5Final ((unsigned char*) result, (MD5_CTX*) context);*/
+-    md5f.final ((unsigned char*) result, MD5_CTXP context);
++    MD5_Final (result, (MD5_CTX*) context);
+ 
+     for (i = 0; i < 8; i++)
+@@ -255,5 +142,4 @@
+ 
+     memcpy ((VOID *) digest, (VOID *) result, DIGEST_SIZE);
+-#endif
+ 
+ #ifdef TRF_DEBUG
+@@ -264,56 +150,3 @@
+ #endif
+ }
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd5_Check --
+- *
+- *	------------------------------------------------*
+- *	Do global one-time initializations of the message
+- *	digest generator.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		Loads the shared library containing the
+- *		SHA1 functionality
+- *
+- *	Result:
+- *		A standard Tcl error code.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static int
+-MDmd5_Check (interp)
+-Tcl_Interp* interp;
+-{
+-  return TrfLoadMD5 (interp);
+-#ifdef MD5_STATIC_BUILD
+-  /*return TCL_OK;*/
+-#else
+-#endif
+-}
+-
+-#if 0
+-/* Import the MD5 code in case of static linkage.
+- */
+-#ifdef MD5_STATIC_BUILD
+-/*
+- * External code from here on.
+- */
+-
+-#ifndef OTP
+-#include "../md5-crypt/md5.c" /* THREADING: import of one constant var, read-only => safe */
+-#endif
+-
+-md5Functions md5f = {
+-  0,
+-  md5_init_ctx,
+-  md5_process_bytes,
+-  md5_finish_ctx,
+-  0, /* no crypt code! */
+-};
+-
+-#endif
+ #endif
