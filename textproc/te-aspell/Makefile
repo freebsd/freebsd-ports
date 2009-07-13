@@ -11,7 +11,7 @@ PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	textproc
 
-MAINTAINER=	prudhvikrishna@gmail.com
+MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Aspell Telugu dictionary
 
 DICT=	 	te

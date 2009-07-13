@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	prudhvikrishna@gmail.com
+MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Entrans is an online, collaborative translation tool
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
