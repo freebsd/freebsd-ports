@@ -837,7 +837,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/version.py
 %%PYTHON_SITELIBDIR%%/numpy/version.pyc
 %%PYTHON_SITELIBDIR%%/numpy/version.pyo
-%%PORTDOCS%%%%DOCSDIR%%/numpy.pdf
+%%PORTDOCS%%%%DOCSDIR%%/numpybook.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/testing/tests
