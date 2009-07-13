@@ -1,0 +1,6 @@
+ooxcb (the object oriented X C binding is a new Python binding to the X server,
+developed for the samurai-x window manager. xpyb uses a wrapper generator to
+create python modules out of the XML X protocol descriptions of the xcb project.
+It aims to provide with an easy-to-use object-oriented interface to the X server.a
+
+WWW: http://samurai-x.org/
