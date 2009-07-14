@@ -8,6 +8,7 @@ bin/memslap
 bin/memstat
 include/libmemcached/memcached.h
 include/libmemcached/memcached.hh
+include/libmemcached/memcached_configure.h
 include/libmemcached/memcached_constants.h
 include/libmemcached/memcached_get.h
 include/libmemcached/memcached_pool.h
@@ -18,6 +19,7 @@ include/libmemcached/memcached_string.h
 include/libmemcached/memcached_types.h
 include/libmemcached/memcached_watchpoint.h
 include/libmemcached/memcached_util.h
+include/libmemcached/visibility.h
 lib/libmemcached.a
 lib/libmemcached.la
 lib/libmemcached.so
@@ -27,4 +29,4 @@ lib/libmemcachedutil.la
 lib/libmemcachedutil.so
 lib/libmemcachedutil.so.0
 libdata/pkgconfig/libmemcached.pc
-@dirrmtry include/libmemcached
+@dirrm include/libmemcached
