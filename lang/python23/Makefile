@@ -7,6 +7,7 @@
 
 PORTNAME=	python23
 PORTVERSION=	2.3.7
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -49,7 +50,7 @@ OPTIONS=	THREADS "Enable thread support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION} || !exists(${LOCALBASE}/bin/python)
 MLINKS=		${PYTHON_VERSION}.1 python.1
 PLIST_SUB+=	IF_DEFAULT=""
 .else
@@ -171,7 +172,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.3 ${WRKDIR}/idle2.3 \
 		${PREFIX}/bin
 
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION} || !exists(${LOCALBASE}/bin/python)
 	for f in ${BIN_SCRIPTS}; do \
 		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB}`; \
 		cd ${PREFIX}/bin && ${LN} -f $$TARGET $$f; \
