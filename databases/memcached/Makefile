@@ -44,6 +44,9 @@ CONFIGURE_ARGS+=	--enable-replication --disable-threads
 CONFIGURE_ARGS+=	--enable-threads
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -E -e 's!=(= "xyes")!\1!' ${WRKSRC}/configure
+
 post-configure:
 	@${REINPLACE_CMD} -e 's#doc/memcached.1##' ${WRKSRC}/Makefile
 
