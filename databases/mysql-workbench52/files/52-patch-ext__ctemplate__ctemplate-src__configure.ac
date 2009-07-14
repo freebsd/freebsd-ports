@@ -1,0 +1,23 @@
+--- ext/ctemplate/ctemplate-src/configure.ac.orig	2009-06-21 22:09:28.000000000 +0300
++++ ext/ctemplate/ctemplate-src/configure.ac	2009-06-21 22:11:16.000000000 +0300
+@@ -78,16 +78,16 @@
+ AC_SUBST(ac_cv_cxx_hash_namespace)
+ AC_SUBST(ac_cv_cxx_hash_map)
+ AC_SUBST(ac_cv_cxx_hash_set)
+-if test "$ac_cv___attribute__" == "yes"; then
++if test "$ac_cv___attribute__" = "yes"; then
+    AC_SUBST(ac_google_attribute, 1)
+ else
+    AC_SUBST(ac_google_attribute, 0)
+ fi
+-if test "$ac_cv_type_u_int64_t" == "yes"; then
++if test "$ac_cv_type_u_int64_t" = "yes"; then
+    AC_SUBST(ac_cv_uint64, u_int64_t)
+-elif test "$ac_cv_type_uint64_t" == "yes"; then
++elif test "$ac_cv_type_uint64_t" = "yes"; then
+    AC_SUBST(ac_cv_uint64, uint64_t)
+-elif test "$ac_cv_type___int64" == "yes"; then
++elif test "$ac_cv_type___int64" = "yes"; then
+    AC_SUBST(ac_cv_uint64, unsigned __int64)
+ else
+    AC_SUBST(ac_cv_uint64, unsigned long long)   # best we can do
