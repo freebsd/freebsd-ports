@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Find-Rule-VCS
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Exclude files and directories for Version Control Systems
 
-PERL_CONFIGURE=	YES
+BUILD_DEPENDS=	p5-File-Find-Rule>=0.20:${PORTSDIR}/devel/p5-File-Find-Rule \
+		p5-Text-Glob>=0.08:${PORTSDIR}/textproc/p5-Text-Glob
+RUN_DEPENDS=	p5-File-Find-Rule>=0.20:${PORTSDIR}/devel/p5-File-Find-Rule \
+		p5-Text-Glob>=0.08:${PORTSDIR}/textproc/p5-Text-Glob
+
+PERL_CONFIGURE=	5.5.3+
 
 MAN3=		File::Find::Rule::VCS.3
 
