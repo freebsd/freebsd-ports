@@ -414,6 +414,7 @@
     SUBDIR += libgksu
     SUBDIR += libgksuui
     SUBDIR += libieee1284
+    SUBDIR += libpcbsd
     SUBDIR += libretto-config
     SUBDIR += libutempter
     SUBDIR += lineak-defaultplugin
