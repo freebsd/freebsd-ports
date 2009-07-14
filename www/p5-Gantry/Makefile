@@ -7,6 +7,7 @@
 
 PORTNAME=	Gantry
 PORTVERSION=	3.54
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +15,23 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web application framework for mod_perl, cgi, etc
 
+BUILD_DEPENDS=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
+		${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+		${SITE_PERL}/CGI/Simple.pm:${PORTSDIR}/www/p5-CGI-Simple \
+		${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \
+		${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+		${SITE_PERL}/Hash/Merge.pm:${PORTSDIR}/textproc/p5-Hash-Merge \
+		${SITE_PERL}/HTML/Prototype.pm:${PORTSDIR}/www/p5-HTML-Prototype \
+		${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		p5-Sub-Install>0:${PORTSDIR}/devel/p5-Sub-Install \
+		p5-Mail-RFC822-Address>0:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
+		p5-Config-General>0:${PORTSDIR}/devel/p5-Config-General \
+		p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
+		p5-Template-Toolkit>=2.0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Template-Plugin-HTML-SuperForm>0:${PORTSDIR}/textproc/p5-Template-Plugin-HTML-SuperForm
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
 		${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
@@ -24,9 +42,12 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/HTML/Prototype.pm:${PORTSDIR}/www/p5-HTML-Prototype \
 		${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		p5-Template-Toolkit>=2.0:${PORTSDIR}/www/p5-Template-Toolkit
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
+		p5-Sub-Install>0:${PORTSDIR}/devel/p5-Sub-Install \
+		p5-Mail-RFC822-Address>0:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
+		p5-Config-General>0:${PORTSDIR}/devel/p5-Config-General \
+		p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
+		p5-Template-Toolkit>=2.0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Template-Plugin-HTML-SuperForm>0:${PORTSDIR}/textproc/p5-Template-Plugin-HTML-SuperForm
 
 PERL_MODBUILD=	5.8.0+
 
@@ -116,6 +137,9 @@ MAN3=		Gantry.3 \
 		Gantry::Utils::TablePerms.3 \
 		Gantry::Utils::Threeway.3 \
 		Template::Plugin::GantryAuthCookie.3
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/home/httpd/html/gantry,${WWWDIR},g' -e 's,\$ENV{'GANTRY_TEMPLATE_PATH'},${WWWDIR},g' ${WRKSRC}/Build.PL
 
 pre-configure:
 	@${MKDIR} ${WWWDIR}
