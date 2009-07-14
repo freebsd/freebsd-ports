@@ -35,11 +35,10 @@ PORTDOCS=	memory_management.txt protocol.txt
 
 .if defined(WITH_REPCACHED)
 # WWW: http://repcached.lab.klab.org/
-BROKEN=			Waiting a new repcached version
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE}
 PATCH_SITE_SUBDIR=	repcached
 PATCH_DIST_STRIP+=	-p1
-PATCHFILES+=		repcached-2.2-1.2.6.patch.gz
+PATCHFILES+=		repcached-2.2-${PORTVERSION}.patch.gz
 CONFIGURE_ARGS+=	--enable-replication --disable-threads
 .else
 CONFIGURE_ARGS+=	--enable-threads

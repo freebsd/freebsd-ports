@@ -24,6 +24,6 @@
  
 -if test "x$enable_threads" == "xyes"; then
 +if test "x$enable_threads" = "xyes"; then
-   { $as_echo "$as_me:$LINENO: checking for library containing pthread_create" >&5
+   { echo "$as_me:$LINENO: checking for library containing pthread_create" >&5
  $as_echo_n "checking for library containing pthread_create... " >&6; }
  if test "${ac_cv_search_pthread_create+set}" = set; then
