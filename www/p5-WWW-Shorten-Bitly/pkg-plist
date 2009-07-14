@@ -3,5 +3,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/Bitly
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/WWW/Shorten
+@dirrmtry %%SITE_PERL%%/WWW

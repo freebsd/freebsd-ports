@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	WWW-Shorten-Bitly
-PORTVERSION=	1.06
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	max@FreeBSD.org
-COMMENT=	Abstract interface to URL shortening sites
+COMMENT=	Abstract interface to bit.ly, one of URL shortening sites
 
 BUILD_DEPENDS=	p5-JSON-Any>=1.18:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-WWW-Shorten>=1.9:${PORTSDIR}/www/p5-WWW-Shorten \
