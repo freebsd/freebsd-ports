@@ -65,7 +65,7 @@ do-install:
 		${INSTALL_MAN} $$m ${MANNPREFIX}/man/mann/ ;\
 	done
 
-post-build test:
+check regression-test post-build test:
 	cd ${WRKSRC}/tests && ${SETENV} TCLLIBPATH="${WRKSRC}" ${TCLSH} all
 
 MANN=	adler.n ascii85.n base64.n bin.n bz2.n crc-zlib.n crc.n	\
