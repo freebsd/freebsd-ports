@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Util
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for utilities for data and data types
 
 RUN_DEPENDS=	\
-	p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat
+	p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
+	p5-Sub-Uplevel>0:${PORTSDIR}/devel/p5-Sub-Uplevel
 
 PERL_CONFIGURE=	yes
 
