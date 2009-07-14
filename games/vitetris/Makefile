@@ -6,21 +6,25 @@
 #
 
 PORTNAME=	vitetris
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	games
 MASTER_SITES=	http://victornils.net/tetris/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Terminal-based tetris clone in vein of nintendo tetris
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	#
-CONFIGURE_ARGS=	curses="-lncurses" \
-		xlib=no
+CONFIGURE_ARGS=	--prefix=${PREFIX} --datarootdir=${PREFIX}/share \
+		curses="-lncurses" xlib=no
 
 PLIST_FILES=	bin/vitetris \
-		share/allegro/licence.txt
-PLIST_DIRS=	share/allegro
+		share/allegro/licence.txt \
+		share/allegro/README \
+		share/pixmaps/vitetris.xpm \
+		share/applications/vitetris.desktop
+PLIST_DIRS=	share/allegro \
+		share/applications
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,docdir,datadir,g' \
