@@ -1,0 +1,7 @@
+check_ice is a Nagios plugin-in that checks if a stream is up or
+down on a shoutcast or icecast server. The program will look at
+the three digit error code (ie. 200, 404, etc.) to give the proper
+result code that Nagios can use to know if the stream is up, in
+warning or in critical.
+
+WWW: http://www.lns.com/papers/check_ice/

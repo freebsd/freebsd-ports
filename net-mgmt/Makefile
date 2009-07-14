@@ -109,6 +109,7 @@
     SUBDIR += nagios-certexp-plugin
     SUBDIR += nagios-check_bacula
     SUBDIR += nagios-check_clamav
+    SUBDIR += nagios-check_ice
     SUBDIR += nagios-check_nick
     SUBDIR += nagios-check_ports
     SUBDIR += nagios-check_puppet
