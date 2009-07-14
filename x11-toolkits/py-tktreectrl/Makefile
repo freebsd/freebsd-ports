@@ -7,13 +7,13 @@
 
 PORTNAME=	tktreectrl
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk python
 MASTER_SITES=	http://klappnase.bubble.org/TkinterTreectrl/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TkinterTreectrl-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	TkTreectrl Python bindings
 
 LIB_DEPENDS=	treectrl.0:${PORTSDIR}/x11-toolkits/tktreectrl
