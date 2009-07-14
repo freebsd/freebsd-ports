@@ -1,0 +1,11 @@
+Used in its basic form, this module provides an interface for generating basic 
+HTML form elements much like HTML::StickyForms does. The main difference is 
+HTML::SuperForm returns HTML::SuperForm::Field objects rather than plain HTML. 
+This allows for more flexibilty when generating forms for a complex application.
+
+To get the most out of this module, use it as a base (Super) class for your own 
+form object which generates your own custom fields. If you don't use it this way, 
+I guess there's really nothing Super about it. Example are shown later in the document.
+
+The interface was designed with mod_perl and the Template Toolkit in mind, 
+but it works equally well in any cgi environment.

@@ -434,6 +434,7 @@
     SUBDIR += p5-HTML-Fraction
     SUBDIR += p5-HTML-RewriteAttributes
     SUBDIR += p5-HTML-SBC
+    SUBDIR += p5-HTML-SuperForm
     SUBDIR += p5-HTML-TagFilter
     SUBDIR += p5-HTML-Tidy
     SUBDIR += p5-HTML-Tiny

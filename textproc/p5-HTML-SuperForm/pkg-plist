@@ -1,0 +1,18 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/SuperForm/.packlist
+%%SITE_PERL%%/HTML/SuperForm.pm
+%%SITE_PERL%%/HTML/SuperForm/Field.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/Checkbox.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/CheckboxGroup.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/Hidden.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/Password.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/Radio.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/RadioGroup.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/Select.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/Submit.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/Text.pm
+%%SITE_PERL%%/HTML/SuperForm/Field/Textarea.pm
+@dirrm %%SITE_PERL%%/HTML/SuperForm/Field
+@dirrm %%SITE_PERL%%/HTML/SuperForm
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/SuperForm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
