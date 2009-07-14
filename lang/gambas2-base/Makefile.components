@@ -109,8 +109,8 @@ BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
 
 USE_GL=		gl glu
 
-CONFIGURE_ARGS+=	--with-qtopengl-includes=${LOCALBASE}/include \
-			--with-qtopengl-libraries=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-opengl-includes=${LOCALBASE}/include \
+			--with-opengl-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-image"
