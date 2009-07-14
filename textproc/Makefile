@@ -339,6 +339,7 @@
     SUBDIR += localize
     SUBDIR += lt-aspell
     SUBDIR += ltxml
+    SUBDIR += luaexpat
     SUBDIR += lucene
     SUBDIR += lv-aspell
     SUBDIR += m17n-contrib

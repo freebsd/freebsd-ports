@@ -1,0 +1,32 @@
+--- config.orig	2006-06-08 20:41:48.000000000 +0000
++++ config	2009-07-03 03:00:20.000000000 +0000
+@@ -1,15 +1,15 @@
+ # Installation directories
+ # System's libraries directory (where binary libraries are installed)
+-LUA_LIBDIR= /usr/local/lib/lua/5.0
++LUA_LIBDIR= ${LUA_MODLIBDIR}
+ # System's lua directory (where Lua libraries are installed)
+-LUA_DIR= /usr/local/share/lua/5.0
++LUA_DIR= ${LUA_MODSHAREDIR}
+ # Lua includes directory
+-LUA_INC= /usr/local/include
++LUA_INC= ${LUA_INCDIR}
+ # Expat includes directory
+-EXPAT_INC= /usr/local/include
++EXPAT_INC= ${LOCALBASE}/include
+ 
+ # OS dependent
+-LIB_OPTION= -shared #for Linux
++LIB_OPTION= -L${LOCALBASE}/lib -shared #for Linux
+ #LIB_OPTION= -bundle -undefined dynamic_lookup #for MacOS X
+ 
+ LIBNAME= $T.so.$V
+@@ -18,7 +18,7 @@
+ # first version digit * 100 + second version digit
+ # e.g. Lua 5.0.2 => 500, Lua 5.1 => 501, Lua 5.1.1 => 501)
+ LUA_VERSION_NUM= 500
+-COMPAT_DIR= ../compat/src
++COMPAT_DIR= ${LUA_MODLIBDIR}
+ 
+ # Compilation parameters
+ CWARNS = -Wall -pedantic \
