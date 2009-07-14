@@ -1640,6 +1640,7 @@
     SUBDIR += p5-MooseX-Traits
     SUBDIR += p5-MooseX-Types
     SUBDIR += p5-MooseX-Types-DateTime-ButMaintained
+    SUBDIR += p5-MooseX-Types-DateTimeX
     SUBDIR += p5-MooseX-Types-Path-Class
     SUBDIR += p5-MooseX-Types-Structured
     SUBDIR += p5-Mouse
