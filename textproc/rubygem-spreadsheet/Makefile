@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spreadsheet
-PORTVERSION=	0.6.3.1
+PORTVERSION=	0.6.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF
 
