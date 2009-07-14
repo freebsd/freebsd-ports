@@ -1,12 +1,14 @@
---- doc/Makefile.in.orig	Thu Dec 30 00:42:11 2004
-+++ doc/Makefile.in	Thu Jan  6 18:18:11 2005
-@@ -147,8 +147,8 @@
-              texi2html.ascii
- 
+Install into the proper directories.
+
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -162,8 +162,8 @@
+ #CLEANFILES = texi2html.ps texi2html.pdf texi2html.html \
+ #             texi2html.ascii
  #
 -texinfodata = $(datadir)/texinfo
 -texinfohtmldir = $(texinfodata)/html
-+texinfodata = $(datadir)/doc/texinfo
++texinfodata = $(datadir)/doc/texi2html
 +texinfohtmldir = $(texinfodata)
  texinfohtml_DATA = texi2html.html
  
