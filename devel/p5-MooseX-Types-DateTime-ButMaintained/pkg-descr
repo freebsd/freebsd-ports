@@ -1,0 +1,9 @@
+This module packages several Moose::Util::TypeConstraints with
+coercions, designed to work with the DateTime suite of objects.
+
+This module is just the MooseX::Types::DateTime without the requirement
+on DateTimeX::Easy (which requires DateTime::Manip). As of 0.05
+this module supports globally unique Olson abbreviations, and dies
+when they are not globally unique.
+
+WWW: http://search.cpan.org/dist/MooseX-Types-DateTime-ButMaintained/
