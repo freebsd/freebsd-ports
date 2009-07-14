@@ -11,6 +11,7 @@ bin/mp3info2
 %%SITE_PERL%%/MP3/Tag/Inf.pm
 %%SITE_PERL%%/MP3/Tag/Cue.pm
 %%SITE_PERL%%/MP3/Tag/ID3v2-Data.pod
+%%SITE_PERL%%/MP3/Tag/ImageExifTool.pm
 %%SITE_PERL%%/MP3/Tag/ImageSize.pm
 %%SITE_PERL%%/Normalize/Text/Music_Fields/L_van_Beethoven.comp
 %%SITE_PERL%%/Normalize/Text/Music_Fields/Music_Fields-rus.lst
