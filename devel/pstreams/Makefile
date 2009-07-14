@@ -9,7 +9,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	mail@andr.ru
+MAINTAINER=	eg@fbsd.lt
 COMMENT=	C++ utility for simple IOStream-based IPC
 
 USE_GMAKE=	yes
