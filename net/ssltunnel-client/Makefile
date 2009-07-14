@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	ssltunnel
-PORTVERSION=	1.15
-PORTREVISION=	1
+PORTVERSION=	1.16
 CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/ssltunnel/download/
 PKGNAMESUFFIX=	-client
@@ -30,10 +29,6 @@ WITHOUT_GNOME=	yes
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		does not compile with OpenSSL 0.9.8b
-.endif
 
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME=gtk12
