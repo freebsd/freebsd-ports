@@ -1660,6 +1660,7 @@
     SUBDIR += p5-Object-Realize-Later
     SUBDIR += p5-Object-Signature
     SUBDIR += p5-Object-Tiny
+    SUBDIR += p5-Olson-Abbreviations
     SUBDIR += p5-P4
     SUBDIR += p5-P4-Client
     SUBDIR += p5-PAR

@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Olson/Abbreviations.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Olson/Abbreviations/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Olson/Abbreviations
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Olson
+@dirrmtry %%SITE_PERL%%/Olson

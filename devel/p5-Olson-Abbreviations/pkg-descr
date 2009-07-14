@@ -1,0 +1,4 @@
+This module should help you with converting commonly used and often
+ambigious olson abbreviations into TZ offset notation.
+
+WWW: http://search.cpan.org/dist/Olson-Abbreviations/
