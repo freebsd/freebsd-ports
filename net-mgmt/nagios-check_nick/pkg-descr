@@ -1,0 +1,3 @@
+check_nick is a Nagios plugin-in written in python that will
+connect to an IRC server and check if a particular nick is
+online.
