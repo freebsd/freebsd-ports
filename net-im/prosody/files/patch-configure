@@ -1,0 +1,42 @@
+--- orig.configure	2009-06-12 14:35:23.000000000 +0000
++++ configure	2009-06-25 19:03:24.000000000 +0000
+@@ -5,11 +5,11 @@
+ PREFIX=/usr/local
+ SYSCONFDIR="$PREFIX/etc/prosody"
+ DATADIR="$PREFIX/var/lib/prosody"
+-LUA_SUFFIX=""
++#LUA_SUFFIX=""
+ LUA_DIR="/usr"
+ LUA_BINDIR="/usr/bin"
+-LUA_INCDIR="/usr/include"
+-LUA_LIBDIR="/usr/lib"
++#LUA_INCDIR="/usr/include"
++#LUA_LIBDIR="/usr/lib"
+ IDN_LIB=idn
+ OPENSSL_LIB=crypto
+ CC=gcc
+@@ -26,7 +26,7 @@
+ 
+ --help                      This help.
+ --ostype=OS                 Use one of the OS presets.
+-                            May be one of: debian, macosx
++                            May be one of: debian, macosx, freebsd
+ --prefix=DIR                Prefix where Prosody should be installed.
+                             Default is $PREFIX
+ --sysconfdir=DIR            Location where the config file should be installed.
+@@ -150,6 +150,15 @@
+ 	CFLAGS="-Wall"
+ 	LFLAGS="-bundle -undefined dynamic_lookup"
+ 	fi	
++	if [ "$OSTYPE" = "freebsd" ]
++	then 
++	LUA_INCDIR_SET=yes
++	LUA_LIBDIR_SET=yes
++	CFLAGS="-D_POSIX_SOURCE -I${LOCALBASE}/include"
++	LFLAGS="-lm -shared -L${LOCALBASE}/lib"
++	LUA_SUFFIX_SET=yes
++	LUA_LIB=lua
++	fi
+ fi
+ 
+ if [ "$PREFIX_SET" = "yes" -a ! "$SYSCONFDIR_SET" = "yes" ]

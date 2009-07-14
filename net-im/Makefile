@@ -120,6 +120,7 @@
     SUBDIR += pidgin-sipe
     SUBDIR += pidgin-twitter
     SUBDIR += pork
+    SUBDIR += prosody
     SUBDIR += psi
     SUBDIR += py-jabber
     SUBDIR += py-msnp
