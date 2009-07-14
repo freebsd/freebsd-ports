@@ -8,7 +8,9 @@
 %%XPI_XPIDIR%%/chrome/content/blockedpagepattern.xul
 %%XPI_XPIDIR%%/chrome/content/chooseproxy.js
 %%XPI_XPIDIR%%/chrome/content/chooseproxy.xul
+%%XPI_XPIDIR%%/chrome/content/colorvalidator.js
 %%XPI_XPIDIR%%/chrome/content/firefoxOptionsOverlay.xul
+%%XPI_XPIDIR%%/chrome/content/firefoxOverlay-svg.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/foxyproxy.css
 %%XPI_XPIDIR%%/chrome/content/foxyproxySongbird.css
@@ -157,6 +159,10 @@
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/torwizhelp.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi-VN/amo.properties
+%%XPI_XPIDIR%%/chrome/locale/vi-VN/foxyproxy.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi-VN/foxyproxy.properties
+%%XPI_XPIDIR%%/chrome/locale/vi-VN/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/foxyproxy.properties
@@ -208,6 +214,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/th-TH
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tr-TR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/uk-UA
+@dirrm %%XPI_XPIDIR%%/chrome/locale/vi-VN
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/chrome/locale
