@@ -2,44 +2,51 @@ bin/bsdconv
 bin/bsdconv_mktable
 include/bsdconv.h
 lib/libbsdconv.so
-lib/libbsdconv.so.1
-share/bsdconv/inter/UNIX
-share/bsdconv/inter/NL2BR
-share/bsdconv/inter/MAC
-share/bsdconv/inter/CHT
-share/bsdconv/inter/WIN
-share/bsdconv/inter/DUMMY
-share/bsdconv/inter/CHS
-share/bsdconv/from/3F
-share/bsdconv/from/UTF-8
-share/bsdconv/from/CP950
-share/bsdconv/from/ISO-8859-1
-share/bsdconv/from/BIG5-5C
-share/bsdconv/from/UTF-8.so
-share/bsdconv/from/MOZ18
-share/bsdconv/from/BIG5
-share/bsdconv/from/ASCII
-share/bsdconv/from/HTMLENTITY.so
-share/bsdconv/from/HTMLENTITY
-share/bsdconv/to/UTF-8
-share/bsdconv/to/ISO-8859-1
-share/bsdconv/to/CP950
-share/bsdconv/to/ASCII-ESCAPED-UNICODE
-share/bsdconv/to/ASCII-HTML-IMG
-share/bsdconv/to/ASCII-HTML-ENTITY.so
-share/bsdconv/to/UTF-8.so
-share/bsdconv/to/3F.so
-share/bsdconv/to/HTML-IMG
-share/bsdconv/to/ASCII-HTML-ENTITY
-share/bsdconv/to/ASCII
-share/bsdconv/to/3F
-share/bsdconv/to/SOURCE
-share/bsdconv/to/BIG5-5C
-share/bsdconv/to/HTMLENTITY
-share/bsdconv/to/ASCII-HTML-IMG.so
-share/bsdconv/to/JAVA
-share/bsdconv/to/ASCII-ESCAPED-UNICODE.so
-@dirrmtry share/bsdconv/inter
-@dirrmtry share/bsdconv/from
-@dirrmtry share/bsdconv/to
-@dirrmtry share/bsdconv
+lib/libbsdconv.so.2
+%%DATADIR%%/from/3F
+%%DATADIR%%/from/ASCII
+%%DATADIR%%/from/ASCII-NAMED-HTML-ENTITY
+%%DATADIR%%/from/ASCII-NUMERIC-HTML-ENTITY
+%%DATADIR%%/from/ASCII-NUMERIC-HTML-ENTITY.so
+%%DATADIR%%/from/BIG5
+%%DATADIR%%/from/BIG5-5C
+%%DATADIR%%/from/CP936
+%%DATADIR%%/from/CP950
+%%DATADIR%%/from/HTMLENTITY
+%%DATADIR%%/from/ISO-8859-1
+%%DATADIR%%/from/MOZ18
+%%DATADIR%%/from/NAMED-HTMLENTITY
+%%DATADIR%%/from/UTF-8
+%%DATADIR%%/from/UTF-8.so
+%%DATADIR%%/inter/CHS
+%%DATADIR%%/inter/CHT
+%%DATADIR%%/inter/DUMMY
+%%DATADIR%%/inter/MAC
+%%DATADIR%%/inter/NL2BR
+%%DATADIR%%/inter/UNIX
+%%DATADIR%%/inter/WIN
+%%DATADIR%%/to/3F
+%%DATADIR%%/to/3F.so
+%%DATADIR%%/to/ASCII
+%%DATADIR%%/to/ASCII-ESCAPED-UNICODE
+%%DATADIR%%/to/ASCII-ESCAPED-UNICODE.so
+%%DATADIR%%/to/ASCII-HEX-NUMERIC-HTML-ENTITY
+%%DATADIR%%/to/ASCII-HEX-NUMERIC-HTML-ENTITY.so
+%%DATADIR%%/to/ASCII-HTML-IMG
+%%DATADIR%%/to/ASCII-HTML-IMG.so
+%%DATADIR%%/to/ASCII-NAMED-HTML-ENTITY
+%%DATADIR%%/to/BIG5-5C
+%%DATADIR%%/to/CP936
+%%DATADIR%%/to/CP950
+%%DATADIR%%/to/HTML-IMG
+%%DATADIR%%/to/HTMLENTITY
+%%DATADIR%%/to/ISO-8859-1
+%%DATADIR%%/to/JAVA
+%%DATADIR%%/to/NAMED-HTMLENTITY
+%%DATADIR%%/to/SOURCE
+%%DATADIR%%/to/UTF-8
+%%DATADIR%%/to/UTF-8.so
+@dirrmtry %%DATADIR%%/inter
+@dirrmtry %%DATADIR%%/from
+@dirrmtry %%DATADIR%%/to
+@dirrmtry %%DATADIR%%
