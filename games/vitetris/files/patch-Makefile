@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Sep 13 11:45:37 2008
-+++ Makefile	Mon Sep 22 09:31:15 2008
+--- Makefile.orig	2009-06-18 01:46:00.000000000 +0200
++++ Makefile	2009-07-14 17:55:52.000000000 +0200
 @@ -1,11 +1,11 @@
  include config.mk
  
@@ -15,45 +15,3 @@
  
  default: build
  	@echo Done.
-@@ -15,13 +15,13 @@ $(PROGNAME):
- 	$(MAKE) build
- 
- build: src/src-conf.mk
--	$(MAKE) -Csrc tetris
-+	cd src; $(MAKE) tetris
- 	mv -f src/tetris$(EXE) $(PROGNAME)
- 	@echo stripping symbols to reduce program size:
- 	-strip --strip-all $(PROGNAME)
- 
- gameserver: src/netw/gameserver.c
--	$(MAKE) -Csrc/netw gameserver
-+	cd src/netw; $(MAKE) gameserver
- 	mv -f src/netw/gameserver .
- 
- src/src-conf.mk: config.mk Makefile src-conf.sh
-@@ -54,12 +54,12 @@ src/src-conf.mk: config.mk Makefile src-conf.sh
- 	./src-conf.sh obj pctimer $(PCTIMER)
- 
- install: $(PROGNAME)
--	$(INSTALL) -d $(bindir) $(docdir)
--	$(INSTALL) -m755 $(PROGNAME) $(bindir)
--	$(INSTALL) -m644 README licence.txt $(docdir)
-+	$(INSTALL) -d $(DESTDIR)$(bindir) $(DESTDIR)$(docdir)
-+	$(INSTALL) -m755 $(PROGNAME) $(DESTDIR)$(bindir)
-+	$(INSTALL) -m644 licence.txt $(DESTDIR)$(docdir)
- 	if [ -n "$(ALLEGRO)" ]; then \
--  $(INSTALL) -d $(datadir); \
--  $(INSTALL) -m644 pc8x16.fnt $(datadir); \
-+  $(INSTALL) -d $(DESTDIR)$(datadir); \
-+  $(INSTALL) -m644 pc8x16.fnt $(DESTDIR)$(datadir); \
- fi
- 	@echo Done.
- 	@echo You may also wish to create the system-wide highscore file
-@@ -84,6 +84,6 @@ uninstall:
- 	-rmdir $(datadir)
- clean:
- 	rm -f systest systest.exe
--	$(MAKE) -Csrc clean
-+	cd src; $(MAKE) clean
- 
- .PHONY: default build install install-hiscores uninstall clean
