@@ -7,6 +7,7 @@
 export __MAKE_CONF=/dev/null
 export PORT_DBDIR=/nonexistent
 export PKG_DBDIR=/nonexistent
+export LOCALBASE=/nonexistent
 
 if [ -z "${PORTSDIR}" ]; then
 	PORTSDIR=/usr/ports
