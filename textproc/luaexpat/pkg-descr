@@ -1,0 +1,15 @@
+LuaExpat is a SAX XML parser based on the Expat library. SAX is the Simple API
+for XML and allows programs to:
+
+* process a XML document incrementally, thus being able to handle huge
+  documents without memory penalties;
+* register handler functions which are called by the parser during the
+  processing of the document, handling the document elements or text.
+
+With an event-based API like SAX the XML document can be fed to the parser in
+chunks, and the parsing begins as soon as the parser receives the first
+document chunk. LuaExpat reports parsing events (such as the start and end of
+elements) directly to the application through callbacks. The parsing of huge
+documents can benefit from this piecemeal operation.
+
+WWW: http://www.keplerproject.org/luaexpat
