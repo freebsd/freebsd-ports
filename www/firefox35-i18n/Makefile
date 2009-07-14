@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	firefox3-i18n
-PORTVERSION=	3.0.11
+PORTNAME=	firefox35-i18n
+PORTVERSION=	3.5
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
 DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
-MAINTAINER=	yokota@res.otaru-uc.ac.jp
-COMMENT=	Localized interface for Firefox3
+MAINTAINER=	gecko@FreeBSD.org
+COMMENT=	Localized interface for Firefox3.5
 
 USE_XPI=	*firefox3
 
