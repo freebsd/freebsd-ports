@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}\
-		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/obrien/
+		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/obrien/:local
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
@@ -27,7 +27,7 @@ BADPATCHES=	007 036 049 071 072 074 088 089 093 101 138 150 172 191 194 204 205
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N7.2.${p}}
 .endfor
-PATCHFILES:=	${PATCHFILES:S/041/041%/}
+PATCHFILES:=	${PATCHFILES:S/041/041%:local/}
 
 MAINTAINER?=	obrien@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
