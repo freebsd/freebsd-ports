@@ -1,6 +1,6 @@
 # New ports collection makefile for:    luaexpat
 # Date created:				25 June 2009
-# Whom:					Andrew Lewis <dru@silenceisdefeat.net>
+# Whom:					Andrew Lewis <freeghb@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://luaforge.net/frs/download.php/2469/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	dru@silenceisdefeat.net
+MAINTAINER=	freeghb@gmail.com
 COMMENT=	LuaExpat is a SAX XML parser based on the Expat library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

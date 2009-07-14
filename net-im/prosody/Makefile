@@ -1,6 +1,6 @@
 # New ports collection makefile for:    prosody
 # Date created:				25 June 2009
-# Whom:					Andrew Lewis <dru@silenceisdefeat.net>
+# Whom:					Andrew Lewis <freeghb@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.4.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/
 
-MAINTAINER=	dru@silenceisdefeat.net
+MAINTAINER=	freeghb@gmail.com
 COMMENT=	A simple extensible XMPP server written in Lua
 
 BUILD_DEPENDS=	${LOCALBASE}/include/stringprep.h:${PORTSDIR}/dns/libidn
