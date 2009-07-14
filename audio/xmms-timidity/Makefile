@@ -6,6 +6,7 @@
 
 PORTNAME=	xmms-timidity
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.shikadi.net/utils/files/
 
@@ -17,10 +18,9 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_LDCONFIG=	${PREFIX}/lib/xmms/Input
 
-USE_GCC=	3.4
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
-CFLAGS+=	`glib-config --cflags` -g -fPIC
+CFLAGS+=	-I${LOCALBASE}/include `glib-config --cflags` -g -fPIC
 
 FILES=	xmms-timidity.cpp
 PLIST_FILES=	lib/xmms/Input/libxmms-timidity.so
