@@ -1,0 +1,11 @@
+--- frontend/linux/workbench/Makefile.am.orig	2009-05-22 03:24:59.000000000 +0300
++++ frontend/linux/workbench/Makefile.am	2009-06-26 23:10:26.000000000 +0300
+@@ -52,7 +52,7 @@
+ 
+ 
+ mysql-workbench: mysql-workbench.in
+-	sed -e "s@#libdir#@$(libdir)@" $< > $@
++	sed -e "s@#libdir#@$(libdir)@" -e "s|^#!/bin/bash|#!/bin/sh|" mysql-workbench.in > $@
+ 
+ 
+ mysql_workbench_bin_SOURCES=\

@@ -1,0 +1,7 @@
+--- modules/db/Makefile.am.orig	2009-06-21 23:37:59.000000000 +0300
++++ modules/db/Makefile.am	2009-06-21 23:38:09.000000000 +0300
+@@ -10,4 +10,3 @@
+ 
+ dbutils_grt_la_SOURCES=src/dbutils.cpp
+ dbutils_grt_la_LDFLAGS=-module
+-dnl dbutils_grt_la_LIBADD=$(top_srcdir)/backend/grtdb/libgrtdbbe.la $(top_srcdir)/backend/grt/libgrtbe.la

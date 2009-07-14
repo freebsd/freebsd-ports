@@ -1,0 +1,14 @@
+--- configure.in.orig	2009-06-19 02:45:09.000000000 +0300
++++ configure.in	2009-06-23 13:23:55.000000000 +0300
+@@ -35,9 +35,9 @@
+   std_edition=$enableval, std_edition=no)
+ 
+ if test x$std_edition = xyes; then
+-     echo -en "#ifndef __WB_CONFIG_H__\n#define __WB_CONFIG_H__\n#define EDITION_SE\n#define COMMERCIAL_CODE\n#endif\n" > wb_config.h
++     echo -e "#ifndef __WB_CONFIG_H__\n#define __WB_CONFIG_H__\n#define EDITION_SE\n#define COMMERCIAL_CODE\n#endif" > wb_config.h
+ else
+-     echo -en "#ifndef __WB_CONFIG_H__\n#define __WB_CONFIG_H__\n#undef COMMERCIAL_CODE\n#define EDITION_OSS\n#endif\n" > wb_config.h
++     echo -e "#ifndef __WB_CONFIG_H__\n#define __WB_CONFIG_H__\n#undef COMMERCIAL_CODE\n#define EDITION_OSS\n#endif" > wb_config.h
+ fi
+ 
+ AC_CHECK_HEADERS([sys/select.h])
