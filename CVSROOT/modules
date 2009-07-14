@@ -2537,6 +2537,7 @@ dungeon                         ports/games/dungeon
 dungeoncrawl                    ports/games/dungeoncrawl
 dupfind                         ports/sysutils/dupfind
 duplicity                       ports/sysutils/duplicity
+duplicity-devel                 ports/sysutils/duplicity-devel
 duplo                           ports/devel/duplo
 dupmerge                        ports/sysutils/dupmerge
 durep                           ports/sysutils/durep
@@ -9823,6 +9824,7 @@ oooqs                           ports/x11/oooqs
 oooqs2                          ports/x11/oooqs2
 oops                            ports/www/oops
 oorexx                          ports/lang/oorexx
+ooxcb                           ports/x11/ooxcb
 op                              ports/security/op
 opal                            ports/net/opal
 open                            ports/sysutils/open
@@ -10196,6 +10198,7 @@ p5-Audio-MPD                    ports/audio/p5-Audio-MPD
 p5-Audio-MPD-Common             ports/audio/p5-Audio-MPD-Common
 p5-Audio-Mixer                  ports/audio/p5-Audio-Mixer
 p5-Audio-Musepack               ports/audio/p5-Audio-Musepack
+p5-Audio-Scan                   ports/audio/p5-Audio-Scan
 p5-Audio-Scrobbler              ports/audio/p5-Audio-Scrobbler
 p5-Audio-WMA                    ports/audio/p5-Audio-WMA
 p5-Audio-Wav                    ports/audio/p5-Audio-Wav
@@ -11749,6 +11752,7 @@ p5-LWP-UserAgent-WithCache      ports/www/p5-LWP-UserAgent-WithCache
 p5-LWPx-ParanoidAgent           ports/www/p5-LWPx-ParanoidAgent
 p5-LaTeX-Driver                 ports/textproc/p5-LaTeX-Driver
 p5-LaTeX-Encode                 ports/textproc/p5-LaTeX-Encode
+p5-LaTeX-Pod                    ports/textproc/p5-LaTeX-Pod
 p5-LaTeX-TOM                    ports/textproc/p5-LaTeX-TOM
 p5-LaTeX-Table                  ports/textproc/p5-LaTeX-Table
 p5-Layout-Manager               ports/graphics/p5-Layout-Manager
@@ -12243,6 +12247,7 @@ p5-Net-Random                   ports/net/p5-Net-Random
 p5-Net-RawIP                    ports/net/p5-Net-RawIP
 p5-Net-RawSock                  ports/net/p5-Net-RawSock
 p5-Net-Rendezvous               ports/net/p5-Net-Rendezvous
+p5-Net-Rendezvous-Publish       ports/net/p5-Net-Rendezvous-Publish
 p5-Net-Rsh                      ports/net/p5-Net-Rsh
 p5-Net-SAML                     ports/security/p5-Net-SAML
 p5-Net-SAP                      ports/net/p5-Net-SAP
@@ -12476,6 +12481,7 @@ p5-Parse-IRC                    ports/irc/p5-Parse-IRC
 p5-Parse-Method-Signatures      ports/devel/p5-Parse-Method-Signatures
 p5-Parse-PerlConfig             ports/devel/p5-Parse-PerlConfig
 p5-Parse-PhoneNumber            ports/textproc/p5-Parse-PhoneNumber
+p5-Parse-Pidl                   ports/devel/p5-Parse-Pidl
 p5-Parse-RecDescent             ports/devel/p5-Parse-RecDescent
 p5-Parse-Syslog                 ports/textproc/p5-Parse-Syslog
 p5-Parse-Syslog-Mail            ports/mail/p5-Parse-Syslog-Mail
@@ -13653,6 +13659,7 @@ p5-audio-mixer                  ports/audio/p5-Audio-Mixer
 p5-audio-mpd                    ports/audio/p5-Audio-MPD
 p5-audio-mpd-common             ports/audio/p5-Audio-MPD-Common
 p5-audio-musepack               ports/audio/p5-Audio-Musepack
+p5-audio-scan                   ports/audio/p5-Audio-Scan
 p5-audio-scrobbler              ports/audio/p5-Audio-Scrobbler
 p5-audio-wav                    ports/audio/p5-Audio-Wav
 p5-audio-wma                    ports/audio/p5-Audio-WMA
@@ -15218,6 +15225,7 @@ p5-kwalify                      ports/textproc/p5-Kwalify
 p5-kwiki                        ports/www/p5-Kwiki
 p5-latex-driver                 ports/textproc/p5-LaTeX-Driver
 p5-latex-encode                 ports/textproc/p5-LaTeX-Encode
+p5-latex-pod                    ports/textproc/p5-LaTeX-Pod
 p5-latex-table                  ports/textproc/p5-LaTeX-Table
 p5-latex-tom                    ports/textproc/p5-LaTeX-TOM
 p5-layout-manager               ports/graphics/p5-Layout-Manager
@@ -15736,6 +15744,7 @@ p5-net-rawip                    ports/net/p5-Net-RawIP
 p5-net-rawsock                  ports/net/p5-Net-RawSock
 p5-net-rblclient                ports/dns/p5-Net-RBLClient
 p5-net-rendezvous               ports/net/p5-Net-Rendezvous
+p5-net-rendezvous-publish       ports/net/p5-Net-Rendezvous-Publish
 p5-net-rsh                      ports/net/p5-Net-Rsh
 p5-net-rtp                      ports/net/p5-Net-RTP
 p5-net-saml                     ports/security/p5-Net-SAML
@@ -15884,6 +15893,7 @@ p5-parse-irc                    ports/irc/p5-Parse-IRC
 p5-parse-method-signatures      ports/devel/p5-Parse-Method-Signatures
 p5-parse-perlconfig             ports/devel/p5-Parse-PerlConfig
 p5-parse-phonenumber            ports/textproc/p5-Parse-PhoneNumber
+p5-parse-pidl                   ports/devel/p5-Parse-Pidl
 p5-parse-recdescent             ports/devel/p5-Parse-RecDescent
 p5-parse-syslog                 ports/textproc/p5-Parse-Syslog
 p5-parse-syslog-mail            ports/mail/p5-Parse-Syslog-Mail
@@ -18304,6 +18314,8 @@ planets                         ports/astro/planets
 planner                         ports/deskutils/planner
 planner.el                      ports/deskutils/planner.el
 plans                           ports/deskutils/plans
+plasma-applet-daisy             ports/deskutils/plasma-applet-daisy
+plasma-applet-geekclock         ports/x11-clocks/plasma-applet-geekclock
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
 plasma-applet-playwolf          ports/deskutils/plasma-applet-playwolf
 plasma-applet-simpleweatherforecast  ports/deskutils/plasma-applet-simpleweatherforecast
@@ -19014,6 +19026,7 @@ py-gtkscintilla                 ports/x11-toolkits/py-gtkscintilla
 py-gtksourceview                ports/x11-toolkits/py-gtksourceview
 py-gui                          ports/x11-toolkits/py-gui
 py-gvgen                        ports/graphics/py-gvgen
+py-h5py                         ports/science/py-h5py
 py-hashlib                      ports/security/py-hashlib
 py-hashring                     ports/devel/py-hashring
 py-hcluster                     ports/science/py-hcluster
@@ -19433,6 +19446,7 @@ py-twitter                      ports/net/py-twitter
 py-twofish                      ports/security/py-twofish
 py-txamqp                       ports/net/py-txamqp
 py-unit                         ports/devel/py-unit
+py-unittestplus                 ports/devel/py-unittestplus
 py-urlgrabber                   ports/www/py-urlgrabber
 py-urlimport                    ports/devel/py-urlimport
 py-urljr                        ports/www/py-urljr
@@ -19511,6 +19525,7 @@ py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
 py25-bsddb                      ports/databases/py25-bsddb
 py2html                         ports/textproc/py2html
+py31-tkinter                    ports/x11-toolkits/py31-tkinter
 py_otp_interface                ports/devel/py_otp_interface
 pyawale                         ports/games/pyawale
 pybaz                           ports/devel/pybaz
@@ -20749,6 +20764,7 @@ samba-vscan                     ports/security/samba-vscan
 samba3                          ports/net/samba3
 samba32                         ports/net/samba32
 samba33                         ports/net/samba33
+samba4-devel                    ports/net/samba4-devel
 samba4wins                      ports/net/samba4wins
 sambasentinel                   ports/net/sambasentinel
 samefile                        ports/sysutils/samefile
@@ -21802,6 +21818,7 @@ tailor                          ports/devel/tailor
 taipan                          ports/games/taipan
 talkfilters                     ports/misc/talkfilters
 talksoup                        ports/irc/talksoup
+talloc                          ports/devel/talloc
 tamago                          ports/editors/tamago
 tamago-emacs21                  ports/editors/tamago-emacs21
 tangogps                        ports/astro/tangogps
@@ -21976,6 +21993,7 @@ tetrinet                        ports/games/tetrinet
 tetrinet-x                      ports/games/tetrinet-x
 tetrons                         ports/games/tetrons
 tetzle                          ports/games/tetzle
+tevent                          ports/devel/tevent
 tex                             ports/print/tex
 tex-omegaware-old               ports/print/tex-omegaware-old
 tex-texmflocal                  ports/print/tex-texmflocal
@@ -22360,6 +22378,7 @@ trustedqsl                      ports/comms/trustedqsl
 truthtable                      ports/math/truthtable
 tryst                           ports/net/tryst
 tryst-examples                  ports/net/tryst-examples
+trytond                         ports/finance/trytond
 ts                              ports/sysutils/ts
 tsclient                        ports/net/tsclient
 tse3                            ports/audio/tse3
