@@ -113,6 +113,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e '/^linkcmd =/s,"ld",cc,' \
 	    -e 's/= readline[(][)];/= "s";/' \
+	    -e 's,/usr/local/include,${PREFIX}/include,' \
 	    -e 's,/usr/local/lib,${PREFIX}/lib,' \
 	    ${WRKSRC}/src/tools/install.neko
 .if !empty(LIBKEYNAME)
