@@ -10,7 +10,7 @@ PORTVERSION=	0.1.19
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/smplayer
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Themes for smplayer
 
 USE_BZIP2=	yes
