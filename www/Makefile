@@ -1370,6 +1370,7 @@
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-erubis
+    SUBDIR += rubygem-feed-normalizer
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-htauth

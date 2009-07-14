@@ -1,0 +1,11 @@
+Feed normalizer wraps various RSS and Atom parsers, and returns
+a single unified object graph, regardless of the underlying feed format.
+
+Feed normalizer attempts to parse a given feed using all available
+configured parsers.
+
+Feed normalizer is useful when the representation of the data of
+an underlying RSS/Atom feed should be the same regardless of the underlying
+format and its terminology.
+
+WWW:	http://rubyforge.org/projects/feed-normalizer/
