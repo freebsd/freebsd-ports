@@ -21,4 +21,7 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	bin/csv2xml
 MAKE_ARGS=	FLAGS="${CXXFLAGS}"
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/src/Makefile ${WRKSRC}/man/Makefile
+
 .include <bsd.port.mk>
