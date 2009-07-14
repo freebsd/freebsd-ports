@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	texi2html
-PORTVERSION=	1.76
-PORTREVISION=	1
+PORTVERSION=	1.82
 PORTEPOCH=	1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	hrs
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Texinfo to HTML converter
@@ -39,7 +38,9 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	sleep 2
 	${TOUCH} ${WRKSRC}/translations.pl
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's| install-texinfohtmlDATA||g' ${WRKSRC}/doc/Makefile.in
+.endif
 
 .include <bsd.port.mk>
