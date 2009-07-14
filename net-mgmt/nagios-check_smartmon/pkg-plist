@@ -1,0 +1,2 @@
+libexec/nagios/check_smartmon
+@dirrmtry libexec/nagios

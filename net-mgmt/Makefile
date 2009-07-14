@@ -111,6 +111,7 @@
     SUBDIR += nagios-check_clamav
     SUBDIR += nagios-check_ports
     SUBDIR += nagios-check_puppet
+    SUBDIR += nagios-check_smartmon
     SUBDIR += nagios-devel
     SUBDIR += nagios-geom
     SUBDIR += nagios-pf-plugin
