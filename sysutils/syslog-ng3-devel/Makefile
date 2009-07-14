@@ -7,6 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 PKGNAMESUFFIX=	3
