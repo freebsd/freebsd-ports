@@ -50,6 +50,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/secure.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/secure.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/secure.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/util.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/error.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/error.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/error.pyo
@@ -68,207 +71,136 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/log.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/log.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/log.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._bar-bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._bg.jpg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._hatch-yellow.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._header.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._highlight.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._icon-16.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._logo.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._main-nav-bg-on.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._main-nav-bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._plus.jpg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._tab-brown.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._tab-white.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._tab-yellow-highlight.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._tab-yellow.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._warning.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/bar-bg.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/bg.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/favicon.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/hatch-yellow.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/header.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/highlight.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/icon-16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/logo.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/main-nav-bg-on.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/main-nav-bg.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/plus.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/pylons-logo.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/pylons-powered-02.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/tab-brown.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/tab-traceback.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/tab-white.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/tab-yellow-highlight.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/tab-yellow.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/warning.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/style/._orange.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/javascripts/traceback.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/style/black.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/style/itraceback.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/style/orange.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/middleware.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/middleware.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/._controller.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/._restcontroller.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/._test_controller.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/controller.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+egg+.egg-info/._paste_deploy_config.ini_tmpl_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+egg+.egg-info/paste_deploy_config.ini_tmpl_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/.___init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/._websetup.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/__init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/.___init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/._environment.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/._middleware.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/._routing.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/deployment.ini_tmpl_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/environment.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/middleware.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/routing.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/.___init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/._error.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/._template.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/__init__.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/error.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/template.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/.___init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/._app_globals.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/._base.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/._helpers.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/__init__.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/app_globals.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/base.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/helpers.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/model/.___init__.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/model/__init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public/._index.html_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/model/meta.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public/bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public/favicon.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public/index.html_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/templates/._.distutils_placeholder
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public/pylons-logo.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/templates/.distutils_placeholder
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/.___init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/._test_models.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/templates/__init__.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/__init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/functional/.___init__.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/functional/__init__.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/test_models.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/websetup.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._MANIFEST.in_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._README.txt_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._development.ini_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._setup.cfg_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._setup.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._test.ini_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/MANIFEST.in_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/README.txt_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/development.ini_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/docs/._index.txt_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/docs/index.txt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/ez_setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/ez_setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/ez_setup.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/setup.cfg_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/setup.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/test.ini_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+egg+.egg-info/._paste_deploy_config.ini_tmpl_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+egg+.egg-info/paste_deploy_config.ini_tmpl_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/.___init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/._helpers.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/._routing.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/._wsgiapp.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/__init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/controllers/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/config/deployment.ini_tmpl_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/controllers/__init__.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/helpers.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public/._index.html_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public/bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public/favicon.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public/index.html_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public/pylons-logo.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/routing.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/templates/._.distutils_placeholder
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/templates/.distutils_placeholder
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/tests/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/templates/__init__.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/tests/__init__.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/wsgiapp.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._MANIFEST.in_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._README.txt_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._development.ini_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._setup.cfg_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._setup.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._test.ini_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/MANIFEST.in_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/README.txt_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/development.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/ez_setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/ez_setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/ez_setup.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/setup.cfg_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/setup.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/test.ini_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/restcontroller.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/test_controller.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/test_restcontroller.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templating.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templating.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templating.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/test.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/test.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/testutil.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/testutil.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/testutil.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/util.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/wsgiapp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/wsgiapp.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/wsgiapp.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/conftest.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/conftest.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/conftest.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_controller.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_controller.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_controller.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_authenticate_form.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_authenticate_form.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_authenticate_form.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_cache.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_cache.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_cache.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_https.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_https.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_https.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_jsonify.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_jsonify.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_jsonify.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_validate.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_validate.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_validate.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_deprecated.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_deprecated.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_deprecated.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_xmlrpc.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_xmlrpc.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_xmlrpc.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/controllers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+egg+.egg-info
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/docs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/javascripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/style
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/model
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/functional
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/model
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+egg+.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/docs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/config
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/controllers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/style
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/i18n
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

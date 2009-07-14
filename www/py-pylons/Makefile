@@ -6,38 +6,43 @@
 #
 
 PORTNAME=	pylons
-PORTVERSION=	0.9.6.2
-PORTREVISION=	1
+PORTVERSION=	0.9.7
+PORTREVISION=	0
 CATEGORIES=	www python
-MASTER_SITES=	http://pylonshq.com/download/0.9.6.2/
+MASTER_SITES=	http://pylonshq.com/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pylons-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Pylons Web Framework
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.3:${PORTSDIR}/www/py-paste \
-		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.3:${PORTSDIR}/www/py-pastedeploy \
-		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.3.2:${PORTSDIR}/www/py-pastescript \
-		${PYTHON_PKGNAMEPREFIX}beaker>=0.6.3:${PORTSDIR}/www/py-beaker \
-		${PYTHON_PKGNAMEPREFIX}decorator>=2.0.1:${PORTSDIR}/devel/py-decorator \
-		${PYTHON_PKGNAMEPREFIX}formencode>=0.7:${PORTSDIR}/www/py-formencode \
-		${PYTHON_PKGNAMEPREFIX}mako>=0.1.5:${PORTSDIR}/textproc/py-mako \
-		${PYTHON_PKGNAMEPREFIX}nose>=0.9.2:${PORTSDIR}/devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}routes>=1.6.3:${PORTSDIR}/www/py-routes \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=1.7.1:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.3.2:${PORTSDIR}/www/py-webhelpers \
-		myghty>=1.1:${PORTSDIR}/www/myghty
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.7.2:${PORTSDIR}/www/py-paste \
+		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.3.3:${PORTSDIR}/www/py-pastedeploy \
+		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.7.3:${PORTSDIR}/www/py-pastescript \
+		${PYTHON_PKGNAMEPREFIX}beaker>=1.2.2:${PORTSDIR}/www/py-beaker \
+		${PYTHON_PKGNAMEPREFIX}decorator>=2.3.2:${PORTSDIR}/devel/py-decorator \
+		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.1:${PORTSDIR}/www/py-formencode \
+		${PYTHON_PKGNAMEPREFIX}mako>=0.2.4:${PORTSDIR}/textproc/py-mako \
+		${PYTHON_PKGNAMEPREFIX}nose>=0.10.4:${PORTSDIR}/devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}routes>=1.10.3:${PORTSDIR}/www/py-routes \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.8:${PORTSDIR}/devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.6.4:${PORTSDIR}/www/py-webhelpers \
+		${PYTHON_PKGNAMEPREFIX}WebError>=0.10.1:${PORTSDIR}/www/py-WebError \
+		${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:${PORTSDIR}/www/py-webob \
+		${PYTHON_PKGNAMEPREFIX}WebTest>=1.1:${PORTSDIR}/www/py-WebTest \
+		${PYTHON_PKGNAMEPREFIX}Tempita>=0.2:${PORTSDIR}/textproc/py-Tempita \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0.4:${PORTSDIR}/textproc/py-docutils \
+		${PYTHON_PKGNAMEPREFIX}Genshi>=0.4.4:${PORTSDIR}/textproc/py-genshi \
+		${PYTHON_PKGNAMEPREFIX}pygments>=0.7:${PORTSDIR}/textproc/py-pygments \
+		${PYTHON_PKGNAMEPREFIX}TurboCheetah>=0.9.5:${PORTSDIR}/devel/py-turbocheetah \
+		${PYTHON_PKGNAMEPREFIX}kid>=0.9:${PORTSDIR}/devel/py-kid \
+		${PYTHON_PKGNAMEPREFIX}TurboKid>=0.9.1:${PORTSDIR}/devel/py-turbokid \
+		${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:${PORTSDIR}/devel/py-cheetah
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Pylons
 PYDISTUTILS_NOEGGINFO=	yes
-
-post-install:
-	${FIND} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG} \
-		-type d -exec ${CHMOD} 755 {} +
-	${FIND} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG} \
-		-type f -exec ${CHMOD} ${SHAREMODE} {} +
 
 .include <bsd.port.mk>
