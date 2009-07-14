@@ -1,0 +1,21 @@
+bin/pc-ethernetconfig
+bin/pc-netadmin
+bin/pc-nettray
+bin/pc-wificonfig
+lib/kde4/kcm_pcbsdnetwork.so
+share/apps/pc-netmanager/pics/info.png
+share/apps/pc-netmanager/pics/defaulticon.png
+share/apps/pc-netmanager/pics/tray_wifi.png
+share/apps/pc-netmanager/pics/tray_wifi30.png
+share/apps/pc-netmanager/pics/network_local_dis.png
+share/apps/pc-netmanager/pics/network_local.png
+share/apps/pc-netmanager/pics/tray_wifi60.png
+share/apps/pc-netmanager/pics/network_wifi_dis.png
+share/apps/pc-netmanager/pics/network_wifi.png
+share/apps/pc-netmanager/pics/tray_local_dis.png
+share/apps/pc-netmanager/pics/tray_local.png
+share/apps/pc-netmanager/pics/tray_wifi85.png
+share/apps/pc-netmanager/pics/tray_wifi_dis.png
+share/kde4/services/pcnetwork.desktop
+@dirrm share/apps/pc-netmanager/pics
+@dirrm share/apps/pc-netmanager
