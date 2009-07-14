@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	2.0.10
+PORTVERSION=	3.0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
-PKGNAMESUFFIX=	2
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
+PKGNAMESUFFIX=	3
+DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
 
-MAINTAINER=	ivan.lago@ifom-ieo-campus.it
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
