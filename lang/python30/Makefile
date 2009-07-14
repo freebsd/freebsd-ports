@@ -6,7 +6,7 @@
 
 PORTNAME=	python30
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -58,7 +58,7 @@ OPTIONS=	THREADS "Enable thread support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION} || !exists(${LOCALBASE}/bin/python)
 MLINKS=		${PYTHON_VERSION}.1 python.1
 PLIST_SUB+=	IF_DEFAULT=""
 .else
@@ -204,7 +204,7 @@ post-install:
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION} || !exists(${LOCALBASE}/bin/python)
 	for f in ${BIN_FILES}; do \
 		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB}`; \
 		cd ${PREFIX}/bin && ${LN} -f $$TARGET $$f; \
