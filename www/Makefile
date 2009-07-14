@@ -210,12 +210,13 @@
     SUBDIR += fhttpd
     SUBDIR += firefox
     SUBDIR += firefox-devel
-    SUBDIR += firefox3-devel
-    SUBDIR += firefox35
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
     SUBDIR += firefox3
     SUBDIR += firefox3-i18n
+    SUBDIR += firefox3-devel
+    SUBDIR += firefox35
+    SUBDIR += firefox35-i18n
     SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
     SUBDIR += flickcurl
