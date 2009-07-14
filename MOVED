@@ -4116,4 +4116,4 @@ www/trac-restrictedarea||2009-07-07|Has expired: Not supported anymore; function
 mail/claws-mail-pdf_viewer||2009-07-07|license problems
 deskutils/plasma-applet-quicklauncher||2009-07-10|Not supported anymore; functionality in kdebase4-workspace now
 databases/phpminadmin|databases/adminer|2009-07-14|Project was renamed
-
+net-mgmt/net-snmp53||2009-07-13|Has expired: Use net-mgmt/net-snmp
