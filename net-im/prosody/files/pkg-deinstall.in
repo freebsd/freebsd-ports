@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+POST-DEINSTALL)
+	echo "===> post-deinstallation information for $1:"
+	echo ""
+	echo "     Note:"
+	echo "     Prosody related user accounts and groups were not removed."
+	echo ""
+	echo "     To remove the 'prosody' user and the 'prosody' group which were"
+	echo "     created by a default installation of this package, run"
+	echo ""
+	echo "     pw userdel -n prosody"
+	echo "     pw groupdel -n prosody"
+	;;
+*)
+	;;
+esac
+exit 0

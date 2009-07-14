@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: prosody
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# prosody_enable (bool):   Set to NO by default.
+#                Set it to YES to enable Prosody
+#
+
+. %%RC_SUBR%%
+
+name="prosody"
+rcvar=`set_rcvar`
+pidfile="%%PREFIX%%/var/lib/prosody/prosody.pid"
+command="%%PREFIX%%/bin/prosodyctl"
+
+load_rc_config $name
+
+prosody=${prosody_enable-"NO"}
+command_args="$1"
+
+status_cmd=prosody_status_cmd
+
+prosody_status_cmd()
+{
+	%%PREFIX%%/bin/prosodyctl status
+}
+
+run_rc_command "$1"
