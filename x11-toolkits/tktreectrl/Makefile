@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tktreectrl
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.9
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF
 
