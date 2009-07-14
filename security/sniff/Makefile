@@ -8,19 +8,19 @@
 PORTNAME=		sniff
 PORTVERSION=		1.0
 CATEGORIES=		security
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	fenner
+MASTER_SITES=		LOCAL/fenner
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Program to sniff logins and passwords
 
 MAN1=			sniff.1
-PLIST_FILES=		sbin/sniff
+
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure
 
+PLIST_FILES=		sbin/sniff
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|PREFIX=|PREFIX?=|g' \
-	${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
