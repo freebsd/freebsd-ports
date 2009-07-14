@@ -1,0 +1,2 @@
+%%LUA_MODLIBDIR%%/ssl.so
+%%LUA_MODSHAREDIR%%/ssl.lua
