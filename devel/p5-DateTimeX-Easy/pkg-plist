@@ -1,0 +1,7 @@
+%%SITE_PERL%%/DateTimeX/Easy/DateParse.pm
+%%SITE_PERL%%/DateTimeX/Easy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTimeX/Easy/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTimeX/Easy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTimeX
+@dirrmtry %%SITE_PERL%%/DateTimeX/Easy
+@dirrmtry %%SITE_PERL%%/DateTimeX
