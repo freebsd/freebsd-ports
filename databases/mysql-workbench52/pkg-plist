@@ -538,4 +538,4 @@ share/mysql-workbench/workbench.rc
 @dirrm share/mysql-workbench/libraries
 @dirrm share/mysql-workbench/images
 @dirrm share/mysql-workbench
-@dirrmtry shared/applications
+@dirrmtry share/applications
