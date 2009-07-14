@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Net/GBARR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Client interface to LDAP servers
+COMMENT=	A Client interface to LDAP (includes Net::LDAP)
 
 BUILD_DEPENDS=	${SITE_PERL}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		${SITE_PERL}/URI/ldap.pm:${PORTSDIR}/net/p5-URI \
