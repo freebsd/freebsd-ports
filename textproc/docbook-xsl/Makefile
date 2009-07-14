@@ -74,7 +74,7 @@ PLIST_SUB+=	EPUB="@comment "
 PLIST_SUB+=	EXTENSIONS=""
 MODULES+=	extensions
 .else
-PLIST_SUB+=	EXTENSONS="@comment "
+PLIST_SUB+=	EXTENSIONS="@comment "
 .endif
 .if defined(WITH_FO)
 PLIST_SUB+=	FO=""
