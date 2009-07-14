@@ -133,7 +133,6 @@
     SUBDIR += net-snmp
     SUBDIR += net-snmp-tkmib
     SUBDIR += net-snmp4
-    SUBDIR += net-snmp53
     SUBDIR += netams
     SUBDIR += netams-front
     SUBDIR += netdisco
