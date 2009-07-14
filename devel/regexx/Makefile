@@ -8,15 +8,13 @@
 
 PORTNAME=	regexx
 PORTVERSION=	0.98.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete regular expressions C++ solution
-
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -29,5 +27,7 @@ post-patch:
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/pcre/Makefile.in
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| examples||g' \
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
