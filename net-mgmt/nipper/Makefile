@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	nipper
-PORTVERSION=	0.12.6
+PORTVERSION=	0.11.10
+PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steinex@nognu.de
 COMMENT=	Netdev config analyzer
 
 PLIST_FILES=	bin/${PORTNAME} etc/nipper.conf.sample
