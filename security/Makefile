@@ -272,6 +272,7 @@
     SUBDIR += lockdown
     SUBDIR += logcheck
     SUBDIR += lsh
+    SUBDIR += luasec
     SUBDIR += lxnb
     SUBDIR += lynis
     SUBDIR += mac-robber
