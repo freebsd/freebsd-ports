@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.08
-PORTREVISION=	1
+PORTVERSION=	3.1415
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -62,17 +61,16 @@ PLIST_SUB=	W3M="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		"s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
+	@${REINPLACE_CMD} -i '' \
+		-e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
-	@${RM} ${WRKSRC}/IkiWiki/Plugin/mdwn.pm.bak
-	@${REINPLACE_CMD} -e \
-		"s|/etc/ikiwiki/wikilist|${PREFIX}/etc/ikiwiki/wikilist|" \
+	@${REINPLACE_CMD} -i '' \
+		-e "s|/etc/ikiwiki/wikilist|${PREFIX}/etc/ikiwiki/wikilist|" \
 		${WRKSRC}/ikiwiki-mass-rebuild \
 		${WRKSRC}/doc/ikiwiki-mass-rebuild.mdwn \
 		${WRKSRC}/ikiwiki-update-wikilist \
 		${WRKSRC}/doc/ikiwiki-update-wikilist.mdwn
-	@${REINPLACE_CMD} \
+	@${REINPLACE_CMD} -i '' \
 		-e 's|$$(PREFIX)/share/man|$$(PREFIX)/man|' \
 		-e 's|-wholename|-path|' \
 		-e 's|\(-install -d $$(DESTDIR)/etc/ikiwiki\)|#\1|' \
@@ -81,15 +79,24 @@ post-patch:
 		-e 's|\(-install -m 0644 auto-blog.setup\)|#\1|' \
 		-e 's|$$(DESTDIR)$$(PREFIX)/share/ikiwiki/examples|${EXAMPLESDIR}|' \
 		${WRKSRC}/Makefile.PL
-	@${REINPLACE_CMD} -e \
-		"s|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|g" \
+	@${REINPLACE_CMD} -i '' \
+		-e "s|share/ikiwiki/examples|share/examples/ikiwiki|" \
+		${WRKSRC}/IkiWiki/Setup/Automator.pm
+	@${REINPLACE_CMD} -i '' \
+		-e "s|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|g" \
 		${WRKSRC}/IkiWiki/Plugin/search.pm
-	@${RM} ${WRKSRC}/IkiWiki/Plugin/search.pm.bak
+	@${REINPLACE_CMD} -i '' \
+		-e "s|/etc/highlight|${LOCALBASE}/etc/highlight|" \
+		-e "s|/usr/share/highlight|${LOCALBASE}/share/highlight|" \
+		${WRKSRC}/IkiWiki/Plugin/highlight.pm
 .ifndef(WITH_W3M)
-	@${REINPLACE_CMD} -e '/w3m/d' -e '/W3M/d' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' \
+		-e '/w3m/d' \
+		-e '/W3M/d' \
+		 ${WRKSRC}/Makefile.PL
 .endif
 .if defined(NOPORTEXAMPLES)
-	@${REINPLACE_CMD} \
+	@${REINPLACE_CMD} -i '' \
 		-e 's|\(install -d ${EXAMPLESDIR}\)|#\1|' \
 		-e 's|\(cp -aL doc/examples\)|#\1|' \
 		-e 's|\(install -m 644 doc/examples\)|#\1|' \

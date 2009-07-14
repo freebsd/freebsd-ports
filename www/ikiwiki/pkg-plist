@@ -1,5 +1,4 @@
 %%DATADIR%%/basewiki/favicon.ico
-%%DATADIR%%/basewiki/index.mdwn
 %%DATADIR%%/basewiki/ikiwiki.mdwn
 %%DATADIR%%/basewiki/ikiwiki/blog.mdwn
 %%DATADIR%%/basewiki/ikiwiki/directive.mdwn
@@ -13,6 +12,7 @@
 %%DATADIR%%/basewiki/ikiwiki/subpage.mdwn
 %%DATADIR%%/basewiki/ikiwiki/subpage/linkingrules.mdwn
 %%DATADIR%%/basewiki/ikiwiki/wikilink.mdwn
+%%DATADIR%%/basewiki/index.mdwn
 %%DATADIR%%/basewiki/local.css
 %%DATADIR%%/basewiki/recentchanges.mdwn
 %%DATADIR%%/basewiki/sandbox.mdwn
@@ -28,6 +28,7 @@
 %%DATADIR%%/directives/ikiwiki/directive/brokenlinks.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/calendar.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/color.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/comment.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/copy.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/cut.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/cutpaste.mdwn
@@ -107,14 +108,15 @@
 %%DATADIR%%/templates/comment.tmpl
 %%DATADIR%%/templates/commentmoderation.tmpl
 %%DATADIR%%/templates/editcomment.tmpl
-%%DATADIR%%/templates/editpage.tmpl
 %%DATADIR%%/templates/editconflict.tmpl
 %%DATADIR%%/templates/editcreationconflict.tmpl
 %%DATADIR%%/templates/editfailedsave.tmpl
+%%DATADIR%%/templates/editpage.tmpl
 %%DATADIR%%/templates/editpagegone.tmpl
 %%DATADIR%%/templates/feedlink.tmpl
 %%DATADIR%%/templates/googleform.tmpl
 %%DATADIR%%/templates/inlinepage.tmpl
+%%DATADIR%%/templates/microblog.tmpl
 %%DATADIR%%/templates/misc.tmpl
 %%DATADIR%%/templates/page.tmpl
 %%DATADIR%%/templates/passwordmail.tmpl
@@ -144,6 +146,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
 %%SITE_PERL%%/IkiWiki/Plugin/creole.pm
 %%SITE_PERL%%/IkiWiki/Plugin/cutpaste.pm
+%%SITE_PERL%%/IkiWiki/Plugin/darcs.pm
 %%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editpage.pm
@@ -160,6 +163,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/goto.pm
 %%SITE_PERL%%/IkiWiki/Plugin/graphviz.pm
 %%SITE_PERL%%/IkiWiki/Plugin/haiku.pm
+%%SITE_PERL%%/IkiWiki/Plugin/highlight.pm
 %%SITE_PERL%%/IkiWiki/Plugin/hnb.pm
 %%SITE_PERL%%/IkiWiki/Plugin/html.pm
 %%SITE_PERL%%/IkiWiki/Plugin/htmlbalance.pm
