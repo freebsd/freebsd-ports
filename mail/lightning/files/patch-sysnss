@@ -7,8 +7,8 @@
 -
  ifndef MOZ_NATIVE_JPEG
  tier_1_dirs	+= jpeg
---- security/manager/Makefile.in.orig	Tue Mar 28 14:36:54 2006
-+++ security/manager/Makefile.in	Tue Mar 28 14:40:29 2006
+--- security/manager/Makefile.in.orig	2008-05-24 01:45:26.000000000 +0200
++++ security/manager/Makefile.in	2009-07-11 18:33:46.000000000 +0200
 @@ -54,22 +54,13 @@
  	SSL3_LIB \
  	SOFTOKEN3_LIB \
@@ -32,7 +32,7 @@
  # Default
  HAVE_FREEBL_LIBS = 1
  
-@@ -217,11 +208,6 @@
+@@ -218,11 +209,6 @@
  .nss.cleaned: .nss.checkout
  ifndef MOZ_NATIVE_NSS
  	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
@@ -44,11 +44,19 @@
  	touch $@
  endif
  
-@@ -248,47 +234,6 @@
+@@ -249,55 +235,6 @@
  	cd $(DIST)/lib; cp -f $(LIB_PREFIX)mozdbm_s.$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX); $(RANLIB) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
  endif
  ifndef MOZ_NATIVE_NSS
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib/util $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib $(DEFAULT_GMAKE_FLAGS) export
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/util $(DEFAULT_GMAKE_FLAGS) libs
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/freebl $(DEFAULT_GMAKE_FLAGS) libs
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/softoken $(DEFAULT_GMAKE_FLAGS) libs
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/util $(DEFAULT_GMAKE_FLAGS) clean
+-	# In NSS 3.11.8-3.11.9, lib/ssl/derive.c includes cmd/lib/secutil.h.
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) export
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) DIRS="util base dev pki pki1 certdb certhigh pk11wrap cryptohi nss ssl pkcs12 pkcs7 smime crmf jar ckfw ckfw/builtins"
 -ifndef SKIP_CHK
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS)
@@ -92,7 +100,7 @@
  endif
  	$(MAKE) -C boot $@
  	$(MAKE) -C ssl $@
-@@ -299,42 +244,6 @@
+@@ -308,42 +245,6 @@
  
  install::
  ifndef MOZ_NATIVE_NSS
@@ -135,7 +143,7 @@
  endif
  	$(MAKE) -C boot $@
  	$(MAKE) -C ssl $@
-@@ -351,12 +260,6 @@
+@@ -360,12 +261,6 @@
  	$(MAKE) -C pki $@
  endif
  ifndef MOZ_NATIVE_NSS
