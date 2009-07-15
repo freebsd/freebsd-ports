@@ -3,8 +3,6 @@ sbin/healthd
 @unexec if cmp -s %D/etc/healthd.conf %D/etc/healthd.conf.sample; then rm -f %D/etc/healthd.conf; fi
 etc/healthd.conf.sample
 @exec if [ ! -f %D/etc/healthd.conf ]; then cp -p %D/%F %B/healthd.conf; fi
-@unexec if cmp -s %D/etc/rc.d/healthd.sh %D/etc/rc.d/healthd.sh.sample; then rm -f %D/etc/rc.d/healthd.sh; fi
-etc/rc.d/healthd.sh
-%%PORTDOCS%%share/doc/healthd/README
-%%PORTDOCS%%share/doc/healthd/PROTOCOL
-%%PORTDOCS%%@dirrm share/doc/healthd
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/PROTOCOL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
