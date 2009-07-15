@@ -26,8 +26,6 @@ load_rc_config $name
 
 [ -z "$snortsam_enable" ]    && snortsam_enable="NO"
 [ -z "$snortsam_conf" ]      && snortsam_conf="%%PREFIX%%/etc/snortsam/snortsam.conf"
-[ -z "$snortsam_flags" ]     && snortsam_flags=""
-
 [ -n "$snortsam_conf" ]      && snortsam_flags="$snortsam_flags $snortsam_conf"
 
 run_rc_command "$1"

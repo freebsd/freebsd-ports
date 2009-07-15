@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/mpd/files/Attic/mpd.in,v 1.1 2007-01-10 06:47:24 vd Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/mpd/files/Attic/mpd.in,v 1.2 2009-07-15 16:55:51 dougb Exp $
 #
 # PROVIDE: mpd
 # REQUIRE: NETWORKING syslogd
@@ -20,11 +20,10 @@ mpd_enable="${mpd_enable:-NO}"
 name=mpd
 rcvar=`set_rcvar`
 
-prefix=%%PREFIX%%
-procname=${prefix}/sbin/mpd
+procname=%%PREFIX%%/sbin/mpd
 pidfile=/var/run/mpd.pid
-required_files="${prefix}/etc/mpd/mpd.conf ${prefix}/etc/mpd/mpd.links"
-command="${prefix}/sbin/mpd"
+required_files="%%PREFIX%%/etc/mpd/mpd.conf %%PREFIX%%/etc/mpd/mpd.links"
+command="%%PREFIX%%/sbin/mpd"
 
 load_rc_config ${name}
 run_rc_command "$1"

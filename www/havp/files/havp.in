@@ -11,9 +11,9 @@
 # Add the following lines to /etc/rc.conf to enable c-icap:
 #
 # havp_enable="YES"
+# havp_flags="<set as needed>"
 #
 # See '%%PREFIX%%/sbin/havp --help' for flags
-#
 
 . %%RC_SUBR%%
 
@@ -28,6 +28,5 @@ required_files="%%PREFIX%%/etc/havp/blacklist %%PREFIX%%/etc/havp/havp.config %%
 # read settings, set default values
 load_rc_config "$name"
 : ${havp_enable="NO"}
-: ${havp_flags=""}
 
 run_rc_command "$1"

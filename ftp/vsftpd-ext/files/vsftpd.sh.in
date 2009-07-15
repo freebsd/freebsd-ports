@@ -27,7 +27,6 @@ rcvar=`set_rcvar`
 
 load_rc_config "$name"
 : ${vsftpd_enable:="NO"}
-: ${vsftpd_flags:=""}
 
 command="%%PREFIX%%/libexec/$name"
 required_files="%%PREFIX%%/etc/$name.conf"

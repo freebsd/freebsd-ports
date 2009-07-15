@@ -17,10 +17,9 @@ epmd_enable=${epmd_enable:-"NO"}
 name=epmd
 rcvar=`set_rcvar`
 
-prefix=%%PREFIX%%
-procname=${prefix}/bin/epmd
-start_cmd="${prefix}/bin/epmd -daemon"
-stop_cmd="${prefix}/bin/epmd -kill >/dev/null"
+procname=%%PREFIX%%/bin/epmd
+start_cmd="%%PREFIX%%/bin/epmd -daemon"
+stop_cmd="%%PREFIX%%/bin/epmd -kill >/dev/null"
 
 load_rc_config ${name}
 run_rc_command "$1"

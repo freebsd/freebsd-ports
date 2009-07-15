@@ -7,12 +7,6 @@
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 # KEYWORD: shutdown
-#
-# NOTE for FreeBSD 5.0+:
-# If you want this script to start with the base rc scripts
-# move dtcps.sh to /etc/rc.d/dtcps
-
-prefix=%%PREFIX%%
 
 # Define these dtcps_* variables in one of these files:
 #	/etc/rc.conf
@@ -22,10 +16,10 @@ prefix=%%PREFIX%%
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 dtcps_enable=${dtcps_enable:-"NO"}		# Enable dtcps
-#dtcps_program="${prefix}/sbin/dtcps"		# Location of dtcps
-dtcps_tunif=${dtcps_tunif:-""}			# tunnel interface
-dtcps_prefix=${dtcps_prefix:-""}		# prefix for host tunnel type
-dtcps_flags=${dtcps_flags:-""}			# Flags to dtcps program
+# dtcps_program="%%PREFIX%%/sbin/dtcps"		# Location of dtcps
+# dtcps_tunif=${dtcps_tunif:-""}		# tunnel interface
+# dtcps_prefix=${dtcps_prefix:-""}		# prefix for host tunnel type
+# dtcps_flags=${dtcps_flags:-""}		# Flags to dtcps program
 
 # interface cloning example
 #dtcps_tunif='gif70'
@@ -43,7 +37,7 @@ dtcps_flags=${dtcps_flags:-""}			# Flags to dtcps program
 
 name="dtcps"
 rcvar=`set_rcvar`
-command="${prefix}/sbin/${name}"
+command="%%PREFIX%%/sbin/${name}"
 command_interpreter="%%RUBY%%"
 pidfile="/var/run/${name}.pid"
 start_precmd="dtcps_prestart"

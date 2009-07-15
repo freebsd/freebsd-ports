@@ -17,11 +17,10 @@ webmin_enable=${webmin_enable:-"NO"}
 name=webmin
 rcvar=`set_rcvar`
 
-prefix=%%PREFIX%%
 procname=%%PERL5%%
 pidfile=/var/log/webmin/miniserv.pid
-required_dirs=${prefix}/etc/webmin
-command=${prefix}/etc/webmin/start
+required_dirs=%%PREFIX%%/etc/webmin
+command=%%PREFIX%%/etc/webmin/start
 
 load_rc_config ${name}
 run_rc_command "$1"

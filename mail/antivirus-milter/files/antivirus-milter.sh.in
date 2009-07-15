@@ -10,8 +10,6 @@
 # KEYWORD: shutdown
 #
 
-prefix=%%PREFIX%%
-
 # Define these antivirus_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
@@ -22,14 +20,14 @@ prefix=%%PREFIX%%
 antivirus_enable=${antivirus_enable:-"NO"}      # Enable antivirus-milter
 antivirus_pidfile=${antivirus_pidfile:-"%%ANTIVIRUS%%/run/antivirus.pid"} # Path to pidfile
 antivirus_socket=${antivirus_socket:-"%%ANTIVIRUS%%/antivirus.sock"} # Path to socket
-antivirus_flags=${antivirus_flags:-""} # Flags to antivirus
+#antivirus_flags=${antivirus_flags:-""} # Flags to antivirus
 
 . /etc/rc.subr
 
 name="antivirus"
 rcvar=`set_rcvar`
-command="${prefix}/libexec/antivirus"
-required_files="${prefix}/etc/antivirus.conf"
+command="%%PREFIX%%/libexec/antivirus"
+required_files="%%PREFIX%%/etc/antivirus.conf"
 start_precmd="antivirus_prestart"
 stop_postcmd="antivirus_poststop"
 
@@ -47,5 +45,3 @@ pidfile="${antivirus_pidfile}"
 command_args="-p local:${antivirus_socket} ${antivirus_flags}"
 
 run_rc_command "$1"
-
-# eof

@@ -12,8 +12,9 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
+# smokeping_flags="<set as needed>"
+
 smokeping_enable=${smokeping_enable-"NO"}
-smokeping_flags=${smokeping_flags-""}
 smokeping_pidfile=${smokeping_pidfile-"%%PREFIX%%/var/smokeping/smokeping.pid"}
 smokeping_logfile=${smokeping_logfile-"/var/log/smokeping.log"}
 smokeping_user=${smokeping_user-"%%USER%%"}

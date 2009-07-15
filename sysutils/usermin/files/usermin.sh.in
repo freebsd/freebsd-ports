@@ -17,11 +17,10 @@ usermin_enable=${usermin_enable:-"NO"}
 name=usermin
 rcvar=`set_rcvar`
 
-prefix=%%PREFIX%%
 procname=%%PERL5%%
 pidfile=/var/log/usermin/miniserv.pid
-required_dirs=${prefix}/etc/usermin
-command=${prefix}/etc/usermin/start
+required_dirs=%%PREFIX%%/etc/usermin
+command=%%PREFIX%%/etc/usermin/start
 
 load_rc_config ${name}
 run_rc_command "$1"

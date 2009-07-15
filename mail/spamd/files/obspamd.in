@@ -19,7 +19,6 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 obspamd_enable=${obspamd_enable:-"NO"}
-obspamd_flags=${obspamd_flags:-""}
 
 . %%RC_SUBR%%
 

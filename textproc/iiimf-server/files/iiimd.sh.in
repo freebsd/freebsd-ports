@@ -6,15 +6,13 @@
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 
-prefix=%%PREFIX%%
-
 iiimd_enable=${iiimd_enable:-"NO"}
 
 . %%RC_SUBR%%
 
 name="iiimd"
 rcvar=`set_rcvar`
-command="${prefix}/bin/iiimd"
+command="%%PREFIX%%/bin/iiimd"
 
 load_rc_config $name
 command_args="> /dev/null 2>&1 &"

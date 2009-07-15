@@ -28,14 +28,13 @@
 name="dhcp6c"
 rcvar=${name}_enable
 
-prefix="%%PREFIX%%"
-command="${prefix}/sbin/${name}"
+command="%%PREFIX%%/sbin/${name}"
 start_precmd="${name}_precmd"
 
 load_rc_config $name
 
 : ${dhcp6c_enable="NO"}
-: ${dhcp6c_config="${prefix}/etc/${name}.conf"}
+: ${dhcp6c_config="%%PREFIX%%/etc/${name}.conf"}
 : ${dhcp6c_pidfile="/var/run/${name}.pid"}
 
 required_files="${dhcp6c_config}"

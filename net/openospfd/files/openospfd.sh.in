@@ -8,12 +8,12 @@
 # BEFORE:  securelevel
 # KEYWORD: shutdown
 
-# Add the following line to /etc/rc.conf to enable `openospfd':
+# Add the following lines to /etc/rc.conf to enable openospfd:
 #
 # openospfd_enable="YES"
+# openospfd_flags="<set as needed>"
 #
 # See ospfd(8) for openospfd_flags
-#
 
 . "%%RC_SUBR%%"
 
@@ -26,6 +26,5 @@ required_files="%%PREFIX%%/etc/ospfd.conf"
 
 load_rc_config "$name"
 : ${openospfd_enable="NO"}
-: ${openospfd_flags=""}
 
 run_rc_command "$1"

@@ -22,9 +22,9 @@ load_rc_config ${name}
 
 # override these variables in /etc/rc.conf
 dhcpd_enable=${dhcpd_enable:-"NO"}
-dhcpd_flags=${dhcpd_flags:-} # -q -early_chroot		# command option(s)
+# dhcpd_flags=""		# -q -early_chroot	# command option(s)
+# dhcpd_ifaces=""					# ethernet interface(s)
 dhcpd_conf=${dhcpd_conf:-%%PREFIX%%/etc/${name}.conf}	# configuration file
-dhcpd_ifaces=${dhcpd_ifaces:-}				# ethernet interface(s)
 dhcpd_withumask=${dhcpd_withumask:-022}			# file creation mask
 
 dhcpd_chuser_enable=${dhcpd_chuser_enable:-"%%PARANOIA%%"}	# runs w/o privileges?
@@ -35,12 +35,12 @@ dhcpd_chroot_enable=${dhcpd_chroot_enable:-"NO"}	# runs chrooted?
 dhcpd_devfs_enable=${dhcpd_devfs_enable:-"YES"}		# devfs if available?
 dhcpd_makedev_enable=${dhcpd_makedev_enable:-"NO"}	# MAKEDEV instead of devfs?
 dhcpd_rootdir=${dhcpd_rootdir:-/var/db/${name}}		# directory to run in
-dhcpd_includedir=${dhcpd_includedir:-}			# directory for included config files
+# dhcpd_includedir=""			# directory for included config files
 
 # untested
 dhcpd_jail_enable=${dhcpd_jail_enable:-"NO"}		# runs imprisoned?
-dhcpd_hostname=${dhcpd_hostname:-}			# jail hostname
-dhcpd_ipaddress=${dhcpd_ipaddress:-}			# jail ip address
+# dhcpd_hostname=""					# jail hostname
+# dhcpd_ipaddress=""					# jail ip address
 
 safe_run ()	# rc command [args...]
 {

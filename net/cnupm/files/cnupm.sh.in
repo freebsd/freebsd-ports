@@ -8,7 +8,7 @@
 #
 # cnupm_enable="YES"
 # cnupm_ifaces="rl0"	# Change this with your interface!
-# cnupm_flags=""		# Set this one to override default flags
+# cnupm_flags=""	# Set this one to override default flags
 #
 # See cnupm(8) for flags
 #

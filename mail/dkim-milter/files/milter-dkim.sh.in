@@ -59,7 +59,6 @@ load_rc_config $name
 : ${milterdkim_alg=""}
 # Options other than above can be set with $milterdkim_flags.
 # see dkim-milter documentation for detail.
-: ${milterdkim_flags=""}
 
 if [ -n "$2" ]; then
     profile="$2"

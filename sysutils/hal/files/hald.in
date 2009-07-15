@@ -9,13 +9,12 @@
 # Add the following line to /etc/rc.conf to enable the HAL daemon:
 #
 # hald_enable="YES"
-#
+# hald_flags="<set as needed>"
 
 . %%RC_SUBR%%
 . %%GNOME_SUBR%%
 
 hald_enable=${hald_enable-${gnome_enable}}
-hald_flags=${hald_flags-""}
 
 name=hald
 rcvar=`set_rcvar`

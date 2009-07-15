@@ -10,8 +10,6 @@
 # KEYWORD: shutdown
 #
 
-prefix=%%PREFIX%%
-
 # Define these rblmilter_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
@@ -27,7 +25,7 @@ rblmilter_flags=${rblmilter_flags:-"-l -r -d relays.ordb.org"} # Flags to rblmil
 
 name="rblmilter"
 rcvar=`set_rcvar`
-command="${prefix}/sbin/rbl-milter"
+command="%%PREFIX%%/sbin/rbl-milter"
 start_precmd="rblmilter_prestart"
 stop_postcmd="rblmilter_poststop"
 extra_commands="reload"

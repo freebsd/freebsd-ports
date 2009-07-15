@@ -25,6 +25,5 @@ required_files="%%PREFIX%%/etc/$name.conf"
 load_rc_config $name
 
 : ${wizd_enable="NO"}
-: ${wizd_flags=""}
 
 run_rc_command "$1"

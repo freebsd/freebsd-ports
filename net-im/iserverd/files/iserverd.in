@@ -10,7 +10,6 @@
 #
 
 name=iserverd
-prefix=%%PREFIX%%
 
 . %%RC_SUBR%%
 
@@ -21,7 +20,7 @@ iserverd_enable=${iserverd_enable:-"NO"}
 iserverd_user=iserv
 
 rcvar=`set_rcvar`
-command=${prefix}/bin/iserverd
+command=%%PREFIX%%/bin/iserverd
 command_args="-o"
 
 pidfile="/var/run/iserverd/iserverd.pid"

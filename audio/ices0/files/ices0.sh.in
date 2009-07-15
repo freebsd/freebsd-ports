@@ -8,11 +8,10 @@
 # BEFORE:  login
 # KEYWORD: shutdown
 
-# Add the following line to /etc/rc.conf to enable `ices0':
+# Add the following lines to /etc/rc.conf to enable ices0:
 #
-#ices0_enable="YES"
-#ices0_flags=""
-#
+# ices0_enable="YES"
+# ices0_flags="<set as needed>"
 
 . "/etc/rc.subr"
 
@@ -26,6 +25,5 @@ required_files="%%PREFIX%%/etc/ices.conf"
 # read configuration and set defaults
 load_rc_config "$name"
 : ${ices0_enable="NO"}
-: ${ices0_flags=""}
 
 run_rc_command "$1"

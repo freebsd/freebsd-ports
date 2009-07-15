@@ -13,8 +13,10 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
+# powermand_enable="YES"
+# powermand_flags="<set as needed>"
+
 powermand_enable=${powermand_enable:-"NO"}
-powermand_flags=${powermand_flags:-""}
 
 . %%RC_SUBR%%
 

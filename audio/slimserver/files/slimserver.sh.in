@@ -10,7 +10,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable slimserver:
 #
-#slimserver_enable="YES"
+# slimserver_enable="YES"
+# slimserver_flags="<set as needed>"
 #
 
 . %%RC_SUBR%%
@@ -73,6 +74,5 @@ slimserver_poststop()
 load_rc_config ${name}
 
 slimserver_enable=${slimserver_enable:-"NO"}
-slimserver_flags=${slimserver_flags:-""}
 
 run_rc_command "$1"

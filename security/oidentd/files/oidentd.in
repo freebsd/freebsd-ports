@@ -10,7 +10,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable oidentd:
 #
-#oidentd_enable="YES"
+# oidentd_enable="YES"
+# oidentd_flags="<set as needed>"
 #
 # See oidentd(8) for flags.
 #
@@ -26,7 +27,6 @@ command=%%PREFIX%%/sbin/${name}
 
 oidentd_enable=${oidentd_enable:-"NO"}
 oidentd_conf=${oidentd_conf:-"%%PREFIX%%/etc/${name}.conf"}
-oidentd_flags=${oidentd_flags:-""}
 
 oidentd_precmd ()
 {

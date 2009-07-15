@@ -18,7 +18,7 @@ gmetasnap_enable="${gmetasnap_enable-NO}"
 gmetasnap_rrddir="/var/db/ganglia/rrds"
 gmetasnap_snapdir="/var/db/ganglia/snaps"
 gmetasnap_snapname="snap"
-gmetasnap_flags=""
+# gmetasnap_flags=""
 gmetasnap_command="%%PREFIX%%/sbin/gmetasnap"
 
 ### gmond ###

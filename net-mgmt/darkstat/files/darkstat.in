@@ -42,7 +42,6 @@ load_rc_config $name
 : ${darkstat_dir="/var/run/darkstat"}
 : ${darkstat_pidname="darkstat.pid"}
 : ${darkstat_dropuser="nobody"}
-: ${darkstat_flags=""}
 pidfile="${darkstat_dir}/${darkstat_pidname}"
 
 darkstat_prestart()

@@ -20,8 +20,6 @@
 name="macroscope"
 rcvar=$(set_rcvar)
 
-prefix="%%PREFIX%%"
-
 start_precmd()
 {
 	return 0

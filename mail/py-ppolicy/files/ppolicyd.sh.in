@@ -6,15 +6,12 @@
 # PROVIDE: ppolicyd
 # REQUIRE: TWISTD
 # KEYWORD: shutdown
-#
-prefix=%%PREFIX%%
 
 # Define these ppolicyd_* variables in one of these files:
 #       /etc/rc.conf
 #       /etc/rc.conf.local
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
 
 . %%RC_SUBR%%
 

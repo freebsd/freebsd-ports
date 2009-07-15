@@ -11,14 +11,12 @@
 # fprotd_scanmail_enable="YES"
 #
 
-prefix=%%PREFIX%%
-
 . /etc/rc.subr
 
 name=fprotd_scanmail
 rcvar=`set_rcvar`
 pidfile="/var/run/scanmail.pid"
-command="${prefix}/f-prot/tools/scan-mail.pl"
+command="%%PREFIX%%/f-prot/tools/scan-mail.pl"
 command_args="> /dev/null 2>&1"
 command_interpreter="/usr/bin/perl"
 

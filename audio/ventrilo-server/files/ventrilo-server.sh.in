@@ -8,10 +8,8 @@
 
 . %%RC_SUBR%%
 
-prefix=%%PREFIX%%
-
 name=ventrilo
-homedir="${prefix}/ventrilo-server"
+homedir="%%PREFIX%%/ventrilo-server"
 pidfile="${homedir}/ventrilo_srv.pid"
 ventrilo_user=${name}
 command="${homedir}/ventrilo_srv"

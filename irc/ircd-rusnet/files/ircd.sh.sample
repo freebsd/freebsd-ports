@@ -5,7 +5,7 @@ PATH=/bin:/usr/bin
 daemon=ircd
 daemon_path=/usr/local/sbin
 daemon_pid=/var/run/ircd/$daemon.pid
-daemon_flags=
+#daemon_flags=
 
 case $1 in
     start)

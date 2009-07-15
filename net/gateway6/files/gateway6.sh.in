@@ -29,6 +29,5 @@ required_files=%%PREFIX%%/etc/gw6c.conf
 load_rc_config $name
 
 : ${gateway6_enable="NO"}
-: ${gateway6_flags=""}
 
 run_rc_command "$1"

@@ -22,7 +22,6 @@ command="%%PREFIX%%/sbin/rpc.dracd"
 load_rc_config $name
 
 : ${dracd_enable="NO"}
-: ${dracd_flags=""}
 
 required_files="%%PREFIX%%/etc/dracd.allow"
 

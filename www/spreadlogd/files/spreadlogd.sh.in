@@ -10,9 +10,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable spread:
 #
-#spreadlogd_enable="YES"
-#
-#
+# spreadlogd_enable="YES"
+# spreadlogd_flags="<set as needed>"
 
 . %%RC_SUBR%%
 
@@ -20,14 +19,13 @@ name=spreadlogd
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/sbin/spreadlogd"
-command_args=""
 pidfile=/var/run/${name}.pid
 required_files=%%PREFIX%%/etc/${name}.conf
+
+load_rc_config ${name}
 
 # set defaults
 
 spreadlogd_enable=${spreadlogd_enable:-"NO"}
-spreadlogd_flags=${spreadlogd_flags:-""}
 
-load_rc_config ${name}
 run_rc_command "$1"

@@ -11,15 +11,14 @@
 #  virtuoso_enable="YES"
 #  # optional
 #  virtuoso_config="%%PREFIX%%/virtuoso/db/virtuoso.ini"
-#  virtuoso_flags=""
+#  virtuoso_flags="<set as needed>"
 #
 # This scripts takes one of the following commands:
 #
 #   start stop restart reload status
 #
 
-prefix=%%PREFIX%%
-command=${prefix}/bin/virtuoso
+command=%%PREFIX%%/bin/virtuoso
 
 . %%RC_SUBR%%
 
@@ -27,7 +26,6 @@ load_rc_config virtuoso
 
 # set defaults
 virtuoso_enable=${virtuoso_enable:-"NO"}
-virtuoso_flags=${virtuoso_flags:-""}
 virtuoso_user=virtuoso
 eval virtuoso_config=${virtuoso_config:-"~${virtuoso_user}/db/virtuoso.ini"}
 virtuoso_class=${virtuoso_class:-"default"}

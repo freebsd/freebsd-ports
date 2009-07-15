@@ -12,6 +12,7 @@
 # Add the following lines to /etc/rc.conf to enable bnetd:
 #
 # bnetd_enable="YES"
+# bnetd_flags="<set as needed>"
 #
 # See bnetd(1) for flags
 #
@@ -35,6 +36,5 @@ stop_postcmd()
 load_rc_config $name
 
 : ${bnetd_enable="NO"}
-: ${bnetd_flags=""}
 
 run_rc_command "$1"

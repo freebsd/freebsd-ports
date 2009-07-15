@@ -13,7 +13,7 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 openxpki_enable="${openxpki_enable-NO}"
-openxpki_flags=""
+# openxpki_flags=""
 openxpki_pidfile="%%PREFIX%%/var/openxpki/openxpki.pid"
 
 case "$1" in 

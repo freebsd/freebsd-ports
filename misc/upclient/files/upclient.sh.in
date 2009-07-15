@@ -5,10 +5,10 @@
 # PROVIDE: upclient
 # REQUIRE: DAEMON
 #
-# Add the following line to /etc/rc.conf to enable upclient:
+# Add the following lines to /etc/rc.conf to enable upclient:
 #
 # upclient_enable="YES"
-#
+# upclient_flags="<set as needed>"
 
 upclient_precmd ()
 {
@@ -30,7 +30,6 @@ upclient_precmd ()
 }
 
 upclient_enable="${upclient_enable-NO}"
-upclient_flags=
 
 . %%RC_SUBR%%
 

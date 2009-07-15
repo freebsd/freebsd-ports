@@ -22,7 +22,6 @@ load_rc_config $name
 
 : ${bopm_enable="NO"}
 : ${bopm_config="%%PREFIX%%/etc/bopm.conf"}
-: ${bopm_flags=""}
 
 bopm_user="bopm"
 pidfile="%%LOGDIR%%/bopm.pid"

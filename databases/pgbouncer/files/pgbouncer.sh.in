@@ -8,9 +8,10 @@
 # BEFORE:  securelevel
 # KEYWORD: shutdown
 
-# Add the following line to /etc/rc.conf to enable `pgbouncer':
+# Add the following lines to /etc/rc.conf to enable pgbouncer:
 #
-#pgbouncer_enable="YES"
+# pgbouncer_enable="YES"
+# pgbouncer_flags="<set as needed>"
 #
 
 . "%%RC_SUBR%%"
@@ -30,6 +31,5 @@ required_files="${config_file}"
 load_rc_config "$name"
 : ${pgbouncer_enable="NO"}
 : ${pgbouncer_user="%%PGBOUNCER_USER%%"}
-: ${pgbouncer_flags=""}
 
 run_rc_command "$1"

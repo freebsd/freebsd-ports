@@ -8,9 +8,10 @@
 # BEFORE:  securelevel
 # KEYWORD: shutdown
 
-# Add the following line to /etc/rc.conf to enable `%%NAME%%':
+# Add the following lines to /etc/rc.conf to enable `%%NAME%%':
 #
-#%%NAME%%_enable="YES"
+# %%NAME%%_enable="YES"
+# %%NAME%%_flags="<set as needed>"
 #
 # See rsync(1) for %%NAME%%_flags
 #
@@ -28,6 +29,5 @@ required_files="%%PREFIX%%/etc/$name.conf"
 # read configuration and set defaults
 load_rc_config "$name"
 : ${%%NAME%%_enable="NO"}
-: ${%%NAME%%_flags=""}
 
 run_rc_command "$1"

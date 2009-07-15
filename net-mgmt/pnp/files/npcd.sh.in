@@ -26,7 +26,6 @@ command_args="-d"
 pidfile=/var/run/${name}.pid
 
 : ${npcd_enable="NO"}
-: ${npcd_flags=""}
 : ${npcd_configfile:="%%PREFIX%%/etc/pnp/npcd.cfg"}
 
 load_rc_config "${name}"

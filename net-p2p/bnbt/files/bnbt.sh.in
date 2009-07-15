@@ -10,7 +10,8 @@
 
 # Add the following line to /etc/rc.conf to enable `bnbt':
 #
-#bnbt_enable="YES"
+# bnbt_enable="YES"
+# bnbt_flags="<set as needed>"
 #
 # See bnbt(1) for bnbt_flags
 #
@@ -33,6 +34,5 @@ required_dirs="/var/log/$name"
 # read settings, set default values
 load_rc_config "$name"
 : ${bnbt_enable="NO"}
-: ${bnbt_flags=""}
 
 run_rc_command "$1"

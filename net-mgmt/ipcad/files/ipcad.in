@@ -11,7 +11,7 @@
 #				Default is "NO".
 # ipcad_conf (file):		Set local of config file.
 #				Default is "%%PREFIX%%/etc/ipcad.conf".
-#
+# ipcad_flags="<set as needed>"
 
 . %%RC_SUBR%%
 
@@ -22,7 +22,6 @@ load_rc_config ${name}
 
 : ${ipcad_enable="NO"}
 : ${ipcad_conf="%%PREFIX%%/etc/ipcad.conf"}
-: ${ipcad_flags=""}
 
 required_files="${ipcad_conf}"
 command=%%PREFIX%%/bin/ipcad

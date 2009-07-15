@@ -12,9 +12,9 @@
 
 # override these variables in /etc/rc.conf
 dhcrelay_enable=${dhcrelay_enable:-"NO"}
-dhcrelay_flags=${dhcrelay_flags:-}			# command option(s)
-dhcrelay_servers=${dhcrelay_servers:-}			# dhcrelay server(s)
-dhcrelay_ifaces=${dhcrelay_ifaces:-}			# ethernet interface(s)
+# dhcrelay_flags=${dhcrelay_flags:-}			# command option(s)
+# dhcrelay_servers=${dhcrelay_servers:-}		# dhcrelay server(s)
+# dhcrelay_ifaces=${dhcrelay_ifaces:-}			# ethernet interface(s)
 
 dhcrelay_precmd ()
 {

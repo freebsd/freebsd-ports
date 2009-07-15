@@ -18,7 +18,8 @@
 #
 # Add the following line to enable `ng_ipacct':
 #
-#ng_ipacct_enable="YES"
+# ng_ipacct_enable="YES"
+# ng_ipacct_flags="<set as needed>"
 #
 # See %%PREFIX%%/etc/ng_ipacct.conf for futher reference.
 
@@ -189,6 +190,5 @@ fi
 load_rc_config $name
 
 : ${ng_ipacct_enable="NO"}
-: ${ng_ipacct_flags=""}
 
 run_rc_command "$1"

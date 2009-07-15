@@ -20,7 +20,6 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${rinetd_enable="NO"}
-: ${rinetd_flags=""}
 
 command="%%PREFIX%%/sbin/rinetd"
 pidfile="/var/run/rinetd.pid"

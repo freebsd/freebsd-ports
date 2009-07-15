@@ -37,8 +37,6 @@ pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/nginx/nginx.conf
 
 [ -z "$nginx_enable" ]		&& nginx_enable="NO"
-[ -z "$nginx_profiles" ]	&& nginx_profiles=""
-[ -z "$nginx_flags" ]		&& nginx_flags=""
 [ -z "$nginxlimits_enable" ]	&& nginxlimits_enable="NO"
 [ -z "$nginxlimits_args" ]	&& nginxlimits_args="-e -U %%WWWOWN%%"
 

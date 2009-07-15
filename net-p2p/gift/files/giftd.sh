@@ -16,8 +16,8 @@
 
 giftd_enable="${giftd_enable-NO}"
 giftd_flags="-d -q"
-giftd_user=""
-giftd_local_dir=""
+# giftd_user=""
+# giftd_local_dir=""
 
 . "%%RC_SUBR%%"
 

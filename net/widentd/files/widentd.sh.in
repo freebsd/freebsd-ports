@@ -7,8 +7,7 @@
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 # KEYWORD: shutdown
-#
-prefix=%%PREFIX%%
+
 
 # Define these widentd_* variables in one of these files:
 #
@@ -31,7 +30,7 @@ widentd_enable=${widentd_enable-"NO"}
 
 name="widentd"
 rcvar=`set_rcvar`
-command="${prefix}/sbin/widentd"
+command="%%PREFIX%%/sbin/widentd"
 
 load_rc_config $name
 

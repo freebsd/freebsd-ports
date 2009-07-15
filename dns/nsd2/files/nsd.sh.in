@@ -5,27 +5,25 @@
 # PROVIDE: nsd
 # REQUIRE: DAEMON
 #
-# Add the following line to /etc/rc.conf to enable nsd:
+# Add the following lines to /etc/rc.conf to enable nsd:
 #
 # nsd_enable="YES"
-#
+# nsd_flags="<set as needed>"
+
 
 . %%RC_SUBR%%
 
 name=nsd
 rcvar=`set_rcvar`
 
-prefix=%%PREFIX%%
-
 required_files=%%NSDDIR%%/nsd.zones
 
-command=/usr/local/sbin/${name}
+command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
 
 # set defaults
 
 nsd_enable=${nsd_enable:-"NO"}
-nsd_flags=${nsd_flags:-""}
 
 load_rc_config ${name}
 run_rc_command "$1"

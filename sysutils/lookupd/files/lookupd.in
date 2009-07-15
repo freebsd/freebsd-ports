@@ -11,9 +11,9 @@
 # Add the following lines to /etc/rc.conf to enable lookupd:
 #
 # lookupd_enable="YES"
+# lookupd_flags="<set as needed>"
 #
 # See lookupd(8) for flags
-#
 
 . %%RC_SUBR%%
 
@@ -24,7 +24,6 @@ command=%%PREFIX%%/sbin/lookupd
 
 lookupd_enable=${lookupd_enable:-"NO"}
 lookupd_pidfile=${lookupd_pidfile:-"/var/run/lookupd.pid"}
-lookupd_flags=${lookupd_flags:-""}
 
 load_rc_config $name
 run_rc_command "$1"

@@ -27,7 +27,6 @@ load_rc_config $name
 # set default
 : ${cpupowerd_enable="NO"}
 : ${cpupowerd_config="%%PREFIX%%/etc/cpupowerd.conf"}
-: ${cpupowerd_flags=""}
 
 command_args="-d -c ${cpupowerd_config} ${cpupowerd_flags}"
 

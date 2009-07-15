@@ -16,6 +16,5 @@ command="/usr/local/sbin/expiretable"
 load_rc_config "$name"
 
 expiretable_enable=${expiretable_enable-"NO"}
-expiretable_flags=${expiretable_flags-""}
 
 run_rc_command "$1"

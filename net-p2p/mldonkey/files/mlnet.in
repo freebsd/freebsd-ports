@@ -27,8 +27,6 @@ procname="%%PREFIX%%/bin/${name}-real"
 load_rc_config "${name}"
 : ${mlnet_enable="NO"}
 : ${mlnet_user="$(whoami)"}
-: ${mlnet_flags=""}
-: ${mlnet_logfile=""}
 
 pidfile="$(eval echo ~${mlnet_user}/.mldonkey/$(basename ${procname}).pid)"
 required_dirs="$(eval echo ~${mlnet_user})"

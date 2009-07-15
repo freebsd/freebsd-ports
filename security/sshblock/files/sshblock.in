@@ -22,6 +22,5 @@ command="%%PREFIX%%/sbin/sshblock"
 
 load_rc_config $name
 : ${sshblock_enable="NO"}
-: ${sshblock_flags=""}
 
 run_rc_command "$1"

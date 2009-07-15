@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net-mgmt/net-snmp-devel/files/Attic/snmpd.sh.in,v 1.7 2007-10-27 07:20:34 kuriyama Exp $
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/net-snmp-devel/files/Attic/snmpd.sh.in,v 1.8 2009-07-15 16:55:58 dougb Exp $
 #
 # PROVIDE: snmpd
 # REQUIRE: DAEMON
@@ -8,10 +8,10 @@
 # Add the following line to /etc/rc.conf to enable snmpd:
 #
 # snmpd_enable="YES"
+# snmpd_flags="<set as needed>"
 #
 
 snmpd_enable=${snmpd_enable-"NO"}
-snmpd_flags=${snmpd_flags-""}
 snmpd_pidfile=${snmpd_pidfile-"/var/run/snmpd.pid"}
 snmpd_conffile=${snmpd_conffile-""}
 snmpd_flush_cache=${snmpd_flush_cache-"NO"}

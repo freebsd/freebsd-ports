@@ -10,8 +10,6 @@
 # KEYWORD: shutdown
 #
 
-prefix=%%PREFIX%%
-
 # Define these vbsfilter_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
@@ -21,13 +19,13 @@ prefix=%%PREFIX%%
 #
 vbsfilter_enable=${vbsfilter_enable:-"NO"}      # Enable vbsfilter-milter
 vbsfilter_socket=${vbsfilter_socket:-"/var/run/vbsfilter"} # Path to socket
-vbsfilter_flags=${vbsfilter_flags:-""} # Flags to vbsfilter
+# vbsfilter_flags="" # Flags to vbsfilter
 
 . /etc/rc.subr
 
 name="vbsfilter"
 rcvar=`set_rcvar`
-command="${prefix}/libexec/vbsfilter"
+command="%%PREFIX%%/libexec/vbsfilter"
 procname="${command}"
 start_precmd="vbsfilter_prestart"
 stop_postcmd="vbsfilter_poststop"
@@ -42,7 +40,7 @@ vbsfilter_poststop() {
 
 load_rc_config $name
 
-command_args="-p local:${vbsfilter_socket} ${vbsfilter_flags}"
+command_args="-p local:${vbsfilter_socket}"
 
 run_rc_command "$1"
 

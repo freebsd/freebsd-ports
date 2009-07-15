@@ -31,6 +31,5 @@ required_files=%%PREFIX%%/etc/${name}.conf
 load_rc_config ${name}
 
 healthd_enable=${healthd_enable:-"NO"}
-healthd_flags=${healthd_flags:-""}
 
 run_rc_command "$1"

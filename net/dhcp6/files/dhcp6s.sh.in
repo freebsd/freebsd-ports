@@ -26,14 +26,13 @@
 name="dhcp6s"
 rcvar=${name}_enable
 
-prefix=%%PREFIX%%
-command=${prefix}/sbin/${name}
+command=%%PREFIX%%/sbin/${name}
 start_precmd="${name}_precmd"
 
 load_rc_config $name
 
 : ${dhcp6s_enable="NO"}
-: ${dhcp6s_config="${prefix}/etc/${name}.conf"}
+: ${dhcp6s_config="%%PREFIX%%/etc/${name}.conf"}
 
 required_files=${dhcp6s_config}
 command_args="-c ${dhcp6s_config} ${dhcp6s_flags} ${dhcp6s_interface}"

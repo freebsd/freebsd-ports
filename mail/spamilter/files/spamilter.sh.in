@@ -10,8 +10,6 @@
 # KEYWORD: shutdown
 #
 
-prefix=%%PREFIX%%
-
 # Define these spamilter_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
@@ -20,15 +18,15 @@ prefix=%%PREFIX%%
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 spamilter_enable=${spamilter_enable:-"NO"}      # Enable spamilter-milter
-spamilter_flags=${spamilter_flags:-""} # Flags to spamilter
+# spamilter_flags="" # Flags to spamilter
 
 . /etc/rc.subr
 
 name="spamilter"
 rcvar=`set_rcvar`
-command="${prefix}/bin/spamilter"
+command="%%PREFIX%%/bin/spamilter"
 pidfile="/tmp/Spamilter.pid"
-required_files="${prefix}/etc/spamilter.rc"
+required_files="%%PREFIX%%/etc/spamilter.rc"
 start_precmd="spamilter_prestart"
 stop_postcmd="spamilter_poststop"
 
@@ -42,8 +40,4 @@ spamilter_poststop() {
 
 load_rc_config $name
 
-command_args="${spamilter_flags}"
-
 run_rc_command "$1"
-
-# eof

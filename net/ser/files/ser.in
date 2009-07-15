@@ -5,8 +5,6 @@
 
 # PROVIDE: ser
 # REQUIRE: DAEMON mysql postgresql
-#
-prefix=%%PREFIX%%
 
 # Add the following lines to /etc/rc.conf to enable ser:
 #
@@ -16,7 +14,7 @@ prefix=%%PREFIX%%
 
 name="ser"
 rcvar=`set_rcvar`
-command="${prefix}/sbin/${name}"
+command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 command_args="-P ${pidfile} > /dev/null"
 

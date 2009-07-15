@@ -4,7 +4,7 @@
 (
 daemon=pppoe-server
 daemon_path=/usr/local/sbin
-daemon_flags=
+#daemon_flags=
 
 case $1 in
     start)

@@ -9,12 +9,12 @@
 # Add the following line to /etc/rc.conf to enable perdition.imaps
 #
 # perdition_imaps_enable="YES"
+# perdition_imaps_flags="<set as needed>"
 #
 # See perdition(8) for flags
 #
 
 perdition_imaps_enable=${perdition_imaps_enable-"NO"}
-perdition_imaps_flags=${perdition_imaps_flags-""}
 
 . %%RC_SUBR%%
 
