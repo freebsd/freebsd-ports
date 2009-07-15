@@ -309,6 +309,7 @@ adesklets                       ports/deskutils/adesklets
 adgali                          ports/games/adgali
 adime                           ports/devel/adime
 admesh                          ports/cad/admesh
+adminer                         ports/databases/adminer
 adms                            ports/cad/adms
 admsmb                          ports/security/ADMsmb
 admsnmp                         ports/security/ADMsnmp
@@ -7554,6 +7555,7 @@ libpasori                       ports/devel/libpasori
 libpathan                       ports/textproc/libpathan
 libpbl                          ports/databases/libpbl
 libpcapnav                      ports/net/libpcapnav
+libpcbsd                        ports/sysutils/libpcbsd
 libpcd                          ports/graphics/libpcd
 libpci                          ports/devel/libpci
 libpciaccess                    ports/devel/libpciaccess
@@ -8272,7 +8274,9 @@ lua50-luasocket                 ports/net/lua50-luasocket
 lua50-posix                     ports/devel/lua50-posix
 lua50-pty                       ports/devel/lua50-pty
 luabind                         ports/devel/luabind
+luaexpat                        ports/textproc/luaexpat
 luajava                         ports/devel/luajava
+luasec                          ports/security/luasec
 luasocket                       ports/net/luasocket
 luasql-mysql                    ports/databases/luasql-mysql
 luasql-postgres                 ports/databases/luasql-postgres
@@ -9161,6 +9165,8 @@ mysql-navigator                 ports/databases/mysql-navigator
 mysql-proxy                     ports/databases/mysql-proxy
 mysql-q4m                       ports/databases/mysql-q4m
 mysql-udf                       ports/databases/mysql-udf
+mysql-workbench51               ports/databases/mysql-workbench51
+mysql-workbench52               ports/databases/mysql-workbench52
 mysql2odbc                      ports/databases/mysql2odbc
 mysql2pgsql                     ports/databases/mysql2pgsql
 mysql323-client                 ports/databases/mysql323-client
@@ -9210,8 +9216,11 @@ nagios-base-logos               ports/misc/nagios-base-logos
 nagios-certexp-plugin           ports/net-mgmt/nagios-certexp-plugin
 nagios-check_bacula             ports/net-mgmt/nagios-check_bacula
 nagios-check_clamav             ports/net-mgmt/nagios-check_clamav
+nagios-check_ice                ports/net-mgmt/nagios-check_ice
+nagios-check_nick               ports/net-mgmt/nagios-check_nick
 nagios-check_ports              ports/net-mgmt/nagios-check_ports
 nagios-check_puppet             ports/net-mgmt/nagios-check_puppet
+nagios-check_smartmon           ports/net-mgmt/nagios-check_smartmon
 nagios-devel                    ports/net-mgmt/nagios-devel
 nagios-geom                     ports/net-mgmt/nagios-geom
 nagios-pf-plugin                ports/net-mgmt/nagios-pf-plugin
@@ -9326,7 +9335,6 @@ net-p2p_dcd                     ports/net-p2p/dcd
 net-snmp                        ports/net-mgmt/net-snmp
 net-snmp-tkmib                  ports/net-mgmt/net-snmp-tkmib
 net-snmp4                       ports/net-mgmt/net-snmp4
-net-snmp53                      ports/net-mgmt/net-snmp53
 net2ftp                         ports/ftp/net2ftp
 net6                            ports/net/net6
 net_jags                        ports/net/jags
@@ -11020,6 +11028,7 @@ p5-DateTime-Format-DateParse    ports/devel/p5-DateTime-Format-DateParse
 p5-DateTime-Format-Duration     ports/devel/p5-DateTime-Format-Duration
 p5-DateTime-Format-Epoch        ports/devel/p5-DateTime-Format-Epoch
 p5-DateTime-Format-Excel        ports/devel/p5-DateTime-Format-Excel
+p5-DateTime-Format-Flexible     ports/devel/p5-DateTime-Format-Flexible
 p5-DateTime-Format-HTTP         ports/devel/p5-DateTime-Format-HTTP
 p5-DateTime-Format-IBeat        ports/devel/p5-DateTime-Format-IBeat
 p5-DateTime-Format-ICal         ports/devel/p5-DateTime-Format-ICal
@@ -11043,6 +11052,7 @@ p5-DateTime-TimeZone-Alias      ports/devel/p5-DateTime-TimeZone-Alias
 p5-DateTime-TimeZone-LMT        ports/devel/p5-DateTime-TimeZone-LMT
 p5-DateTime-Util-Astro          ports/devel/p5-DateTime-Util-Astro
 p5-DateTime-Util-Calc           ports/devel/p5-DateTime-Util-Calc
+p5-DateTimeX-Easy               ports/devel/p5-DateTimeX-Easy
 p5-Decision-ACL                 ports/devel/p5-Decision-ACL
 p5-DelimMatch                   ports/textproc/p5-DelimMatch
 p5-Devel-Arena                  ports/devel/p5-Devel-Arena
@@ -11957,6 +11967,7 @@ p5-Math-Geometry                ports/math/p5-Math-Geometry
 p5-Math-Geometry-Planar         ports/math/p5-Math-Geometry-Planar
 p5-Math-Geometry-Planar-GPC     ports/math/p5-Math-Geometry-Planar-GPC
 p5-Math-Geometry-Planar-Offset  ports/math/p5-Math-Geometry-Planar-Offset
+p5-Math-Geometry-Voronoi        ports/math/p5-Math-Geometry-Voronoi
 p5-Math-Interpolate             ports/math/p5-Math-Interpolate
 p5-Math-Intersection-StraightLine  ports/math/p5-Math-Intersection-StraightLine
 p5-Math-LinearCombination       ports/math/p5-Math-LinearCombination
@@ -12084,6 +12095,8 @@ p5-MooseX-Storage               ports/devel/p5-MooseX-Storage
 p5-MooseX-StrictConstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-MooseX-Traits                ports/devel/p5-MooseX-Traits
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
+p5-MooseX-Types-DateTime-ButMaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
+p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-MooseX-Types-Structured      ports/devel/p5-MooseX-Types-Structured
 p5-Mouse                        ports/devel/p5-Mouse
@@ -12346,6 +12359,7 @@ p5-Object-Signature             ports/devel/p5-Object-Signature
 p5-Object-Tiny                  ports/devel/p5-Object-Tiny
 p5-Ogg-Vorbis-Header            ports/audio/p5-Ogg-Vorbis-Header
 p5-Ogg-Vorbis-Header-PurePerl   ports/audio/p5-Ogg-Vorbis-Header-PurePerl
+p5-Olson-Abbreviations          ports/devel/p5-Olson-Abbreviations
 p5-OpenCA-CRL                   ports/security/p5-OpenCA-CRL
 p5-OpenCA-CRR                   ports/security/p5-OpenCA-CRR
 p5-OpenCA-PKCS7                 ports/security/p5-OpenCA-PKCS7
@@ -14407,6 +14421,7 @@ p5-datetime-format-dbi          ports/devel/p5-DateTime-Format-DBI
 p5-datetime-format-duration     ports/devel/p5-DateTime-Format-Duration
 p5-datetime-format-epoch        ports/devel/p5-DateTime-Format-Epoch
 p5-datetime-format-excel        ports/devel/p5-DateTime-Format-Excel
+p5-datetime-format-flexible     ports/devel/p5-DateTime-Format-Flexible
 p5-datetime-format-http         ports/devel/p5-DateTime-Format-HTTP
 p5-datetime-format-ibeat        ports/devel/p5-DateTime-Format-IBeat
 p5-datetime-format-ical         ports/devel/p5-DateTime-Format-ICal
@@ -14430,6 +14445,7 @@ p5-datetime-timezone-alias      ports/devel/p5-DateTime-TimeZone-Alias
 p5-datetime-timezone-lmt        ports/devel/p5-DateTime-TimeZone-LMT
 p5-datetime-util-astro          ports/devel/p5-DateTime-Util-Astro
 p5-datetime-util-calc           ports/devel/p5-DateTime-Util-Calc
+p5-datetimex-easy               ports/devel/p5-DateTimeX-Easy
 p5-db_file-lock                 ports/devel/p5-DB_File-Lock
 p5-dbd-anydata                  ports/databases/p5-DBD-AnyData
 p5-dbd-csv                      ports/databases/p5-DBD-CSV
@@ -15423,6 +15439,7 @@ p5-math-geometry                ports/math/p5-Math-Geometry
 p5-math-geometry-planar         ports/math/p5-Math-Geometry-Planar
 p5-math-geometry-planar-gpc     ports/math/p5-Math-Geometry-Planar-GPC
 p5-math-geometry-planar-offset  ports/math/p5-Math-Geometry-Planar-Offset
+p5-math-geometry-voronoi        ports/math/p5-Math-Geometry-Voronoi
 p5-math-gmp                     ports/math/p5-Math-GMP
 p5-math-gsl                     ports/math/p5-Math-GSL
 p5-math-interpolate             ports/math/p5-Math-Interpolate
@@ -15573,6 +15590,8 @@ p5-moosex-storage               ports/devel/p5-MooseX-Storage
 p5-moosex-strictconstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-moosex-traits                ports/devel/p5-MooseX-Traits
 p5-moosex-types                 ports/devel/p5-MooseX-Types
+p5-moosex-types-datetime-butmaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
+p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-moosex-types-structured      ports/devel/p5-MooseX-Types-Structured
 p5-mouse                        ports/devel/p5-Mouse
@@ -15842,6 +15861,7 @@ p5-object-tiny                  ports/devel/p5-Object-Tiny
 p5-ogg-vorbis-header            ports/audio/p5-Ogg-Vorbis-Header
 p5-ogg-vorbis-header-pureperl   ports/audio/p5-Ogg-Vorbis-Header-PurePerl
 p5-ole-storage_lite             ports/devel/p5-OLE-Storage_Lite
+p5-olson-abbreviations          ports/devel/p5-Olson-Abbreviations
 p5-ootools                      ports/devel/p5-OOTools
 p5-openca-crl                   ports/security/p5-OpenCA-CRL
 p5-openca-crr                   ports/security/p5-OpenCA-CRR
@@ -17143,6 +17163,7 @@ pbnj                            ports/security/pbnj
 pbzip2                          ports/archivers/pbzip2
 pcal                            ports/print/pcal
 pcb                             ports/cad/pcb
+pcbsd-netmanager                ports/net/pcbsd-netmanager
 pcc                             ports/lang/pcc
 pccts                           ports/devel/pccts
 pcemu                           ports/emulators/pcemu
@@ -18109,7 +18130,6 @@ phplogcon                       ports/sysutils/phplogcon
 phplot                          ports/graphics/phplot
 phpmailer                       ports/mail/phpmailer
 phpmailer2                      ports/mail/phpmailer2
-phpminadmin                     ports/databases/phpminadmin
 phpminiadmin                    ports/databases/phpminiadmin
 phpmp                           ports/www/phpmp
 phpmyadmin                      ports/databases/phpmyadmin
@@ -18672,6 +18692,7 @@ pronto                          ports/mail/pronto
 proofgeneral                    ports/math/proofgeneral
 props                           ports/x11/props
 prosearch                       ports/net/prosearch
+prosody                         ports/net-im/prosody
 prosper                         ports/textproc/prosper
 protobuf                        ports/devel/protobuf
 protomol                        ports/biology/protomol
@@ -20585,6 +20606,7 @@ rubygem-highline                ports/devel/rubygem-highline
 rubygem-hoe                     ports/devel/rubygem-hoe
 rubygem-hpricot                 ports/www/rubygem-hpricot
 rubygem-htauth                  ports/www/rubygem-htauth
+rubygem-htmlentities            ports/textproc/rubygem-htmlentities
 rubygem-htmltools               ports/textproc/rubygem-htmltools
 rubygem-httparty                ports/www/rubygem-httparty
 rubygem-httpclient              ports/www/rubygem-httpclient
@@ -20627,6 +20649,7 @@ rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-ohcount                 ports/misc/rubygem-ohcount
 rubygem-open4                   ports/devel/rubygem-open4
 rubygem-openid                  ports/net/rubygem-openid
+rubygem-opml                    ports/textproc/rubygem-opml
 rubygem-parsetree               ports/devel/rubygem-parsetree
 rubygem-passenger               ports/www/rubygem-passenger
 rubygem-pdfwriter               ports/print/rubygem-pdfwriter
@@ -20653,6 +20676,7 @@ rubygem-rcov                    ports/devel/rubygem-rcov
 rubygem-rdiscount               ports/textproc/rubygem-rdiscount
 rubygem-redcloth                ports/www/rubygem-redcloth
 rubygem-rfacebook               ports/www/rubygem-rfacebook
+rubygem-rfeedfinder             ports/www/rubygem-rfeedfinder
 rubygem-rgl                     ports/devel/rubygem-rgl
 rubygem-rightaws                ports/net/rubygem-rightaws
 rubygem-rightflexiscale         ports/net/rubygem-rightflexiscale
@@ -20684,6 +20708,7 @@ rubygem-scrubyt                 ports/www/rubygem-scrubyt
 rubygem-scruffy                 ports/graphics/rubygem-scruffy
 rubygem-sequel                  ports/devel/rubygem-sequel
 rubygem-sexp_processor          ports/devel/rubygem-sexp_processor
+rubygem-simple-rss              ports/www/rubygem-simple-rss
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-soap4r                  ports/devel/rubygem-soap4r
@@ -21211,6 +21236,7 @@ sloccount                       ports/misc/sloccount
 slock                           ports/x11/slock
 slony1                          ports/databases/slony1
 sloth                           ports/sysutils/sloth
+slowloris                       ports/benchmarks/slowloris
 slrn                            ports/news/slrn
 slrnconf                        ports/news/slrnconf
 slrnface                        ports/news/slrnface
@@ -21774,6 +21800,7 @@ sysinfo                         ports/sysutils/sysinfo
 syslinux                        ports/sysutils/syslinux
 syslog-ng                       ports/sysutils/syslog-ng
 syslog-ng2                      ports/sysutils/syslog-ng2
+syslog-ng3                      ports/sysutils/syslog-ng3
 syslogger                       ports/sysutils/syslogger
 sysmon                          ports/net-mgmt/sysmon
 system-config-printer           ports/print/system-config-printer
@@ -23039,6 +23066,7 @@ wfb2sql                         ports/databases/wfb2sql
 wfmath                          ports/math/wfmath
 wget                            ports/ftp/wget
 wget4web                        ports/www/wget4web
+wgetpaste                       ports/www/wgetpaste
 wgetpro                         ports/ftp/wgetpro
 whatmask                        ports/net-mgmt/whatmask
 whatpix                         ports/sysutils/whatpix
