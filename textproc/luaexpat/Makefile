@@ -16,17 +16,18 @@ COMMENT=	LuaExpat is a SAX XML parser based on the Expat library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-ONLY_FOR_ARCHS=	i386
-
 MAKEFILE=	makefile
 ALL_TARGET=	lib
 USE_LUA=	5.0-5.1
+LUA_PREMK=	yes
 WANT_LUA_VER=	5.1
 
 CFLAGS+=	-fPIC
 
-.if ${USE_LUA} == 5.0
+.include <bsd.port.pre.mk>
+
+.if ${LUA_VER} == 5.0
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:build
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
