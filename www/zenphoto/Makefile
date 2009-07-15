@@ -5,13 +5,14 @@
 
 PORTNAME=	zenphoto
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.zenphoto.org/files/
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A simpler web photo gallery
 
-USE_PHP=	mysql gd session mbstring gettext
+USE_PHP=	mysql gd session mbstring gettext pcre json
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
