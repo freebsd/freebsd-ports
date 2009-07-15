@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,6 +29,7 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
 		${SITE_PERL}/IPC/Cmd.pm:${PORTSDIR}/devel/p5-IPC-Cmd \
 		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Locale-Msgfmt>=0.14:${PORTSDIR}/devel/p5-Locale-Msgfmt \
 		${SITE_PERL}/Module/Inspector.pm:${PORTSDIR}/devel/p5-Module-Inspector \
 		${SITE_PERL}/Module/Refresh.pm:${PORTSDIR}/devel/p5-Module-Refresh \
 		${SITE_PERL}/Module/Starter.pm:${PORTSDIR}/devel/p5-Module-Starter \
@@ -59,8 +60,9 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
+		p5-PPIx-EditorTools>=0.04:${PORTSDIR}/textproc/p5-PPIx-EditorTools \
 		p5-Wx>=0.91:${PORTSDIR}/x11-toolkits/p5-Wx
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
@@ -69,16 +71,17 @@ USE_DISPLAY=	yes
 PERL_CONFIGURE=	yes
 USE_PERL5=	5.8.5+
 USE_GETTEXT=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
 .if exists(${PERL})
 PERL_THREADS!=	${PERL} -V::usethreads
 .if ${PERL_THREADS}!="'define';"
-IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
+#IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
 .endif
 .else
-IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
+#IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
 .endif
 
 .if ${PERL_LEVEL} >= 501000
@@ -121,6 +124,7 @@ MAN3=		Padre.3 \
 		Padre::PluginManager.3 \
 		Padre::Pod2HTML.3 \
 		Padre::Search.3 \
+		Padre::Service.3 \
 		Padre::Task.3 \
 		Padre::Task::HTTPClient.3 \
 		Padre::Task::LWP.3 \
@@ -137,6 +141,7 @@ MAN3=		Padre.3 \
 		Padre::Transform.3 \
 		Padre::Transform::Perl::UpdateCopyright.3 \
 		Padre::Util.3 \
+		Padre::Wx.3 \
 		Padre::Wx::Ack.3 \
 		Padre::Wx::App.3 \
 		Padre::Wx::CPAN.3 \
