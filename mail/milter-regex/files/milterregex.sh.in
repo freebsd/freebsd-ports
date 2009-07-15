@@ -8,13 +8,7 @@
 # REQUIRE: DAEMON
 # BEFORE: mail
 # KEYWORD: shutdown
-#
-# NOTE for FreeBSD 5.0 through 6.0:
-# If you want this script to start with the base rc scripts
-# move milterregex to /etc/rc.d/milterregex
-# Not necessary for 6.1+
 
-prefix=%%PREFIX%%
 spooldir=%%SPOOLDIR%%
 
 # Define these milterregex_* variables in one of these files:
@@ -25,16 +19,15 @@ spooldir=%%SPOOLDIR%%
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 [ -z "$milterregex_enable" ] && milterregex_enable="NO"	# Enable milter-regex
-#milterregex_program="${prefix}/libexec/milter-regex"	# Location of milter-regex
-[ -z "$milterregex_flags" ] && milterregex_flags="" # Flags to milter-regex program
+# milterregex_flags="" # Flags to milter-regex program
 
 . /etc/rc.subr
 
 name="milterregex"
 rcvar=`set_rcvar`
-command="${prefix}/libexec/milter-regex"
+command="%%PREFIX%%/libexec/milter-regex"
 pidfile="${spooldir}/milter-regex.pid"
-required_files="${prefix}/etc/milter-regex.conf"
+required_files="%%PREFIX%%/etc/milter-regex.conf"
 stop_postcmd="milterregex_poststop"
 
 milterregex_poststop() {

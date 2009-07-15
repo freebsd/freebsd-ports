@@ -10,8 +10,6 @@
 # KEYWORD: shutdown
 #
 
-prefix=%%PREFIX%%
-
 # Define these noattach_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
@@ -22,14 +20,14 @@ prefix=%%PREFIX%%
 noattach_enable=${noattach_enable:-"NO"}      # Enable noattach
 noattach_pidfile=${noattach_pidfile:-"/var/run/noattach.pid"} # Path to pidfile
 noattach_socket=${noattach_socket:-"/var/run/noattach"} # Path to socket
-noattach_flags=${noattach_flags:-""} # Flags to noattach
+# noattach_flags="" # Flags to noattach
 
 . /etc/rc.subr
 
 name="noattach"
 rcvar=`set_rcvar`
-command="${prefix}/libexec/${name}"
-required_files="${prefix}/etc/noattach.patterns"
+command="%%PREFIX%%/libexec/${name}"
+required_files="%%PREFIX%%/etc/noattach.patterns"
 start_precmd="noattach_prestart"
 stop_postcmd="noattach_poststop"
 reload_cmd="noattach_reload"
@@ -52,5 +50,3 @@ pidfile="${noattach_pidfile}"
 command_args="-p local:${noattach_socket} ${noattach_flags}"
 
 run_rc_command "$1"
-
-# eof

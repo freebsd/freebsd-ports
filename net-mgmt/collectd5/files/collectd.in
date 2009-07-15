@@ -22,6 +22,5 @@ command=%%PREFIX%%/sbin/${name}
 load_rc_config $name
 
 : ${collectd_enable="NO"}
-: ${collectd_flags=""}
 
 run_rc_command "$1"

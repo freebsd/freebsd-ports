@@ -23,7 +23,7 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 command="%%PREFIX%%/sbin/$name"
-command_args="${spampd_flags} --pid=${spampd_pidfile}"
+command_args="--pid=${spampd_pidfile}"
 pidfile="${spampd_pidfile}"
 sig_stop="-KILL"
 stop_cmd="stop_cmd"

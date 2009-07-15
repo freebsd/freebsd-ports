@@ -9,11 +9,11 @@
 
 # Add the following line to /etc/rc.conf to enable `%%PORTNAME%%':
 #
-#%%PORTNAME%%_enable="YES"
+# %%PORTNAME%%_enable="YES"
 #
 # Other rc.conf variables:
 #
-#  %%PORTNAME%%_flags    Set to "-v" for verbose mode.
+# %%PORTNAME%%_flags    Set to "-v" for verbose mode.
 #
 
 . %%RC_SUBR%%
@@ -43,6 +43,5 @@ status_cmd()
 
 load_rc_config "$name"
 : ${%%PORTNAME%%_enable="NO"}
-: ${%%PORTNAME%%_flags=""}
 
 run_rc_command "$1"

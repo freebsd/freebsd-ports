@@ -26,11 +26,10 @@ load_rc_config $name
 
 : ${rrdbot_enable="NO"}
 : ${rrdbot_pidfile="/var/run/rrdbotd.pid"}
-: ${rrdbot_flags=""}
 
 pidfile="${rrdbot_pidfile}"
 
 command="%%PREFIX%%/sbin/rrdbotd"
-command_args="-p ${rrdbot_pidfile} ${rrdbot_flags}"
+command_args="-p ${rrdbot_pidfile}"
 
 run_rc_command "$1"

@@ -11,7 +11,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable pdns_recursor:
 #
-#pdns_recursor_enable="YES"
+# pdns_recursor_enable="YES"
+# pdns_recursor_flags="<set as needed>"
 #
 # See pdns_recursor(8) for flags.
 #
@@ -27,7 +28,6 @@ command=%%PREFIX%%/sbin/pdns_recursor
 
 pdns_recursor_enable=${pdns_recursor_enable:-"NO"}
 pdns_recursor_conf=${pdns_recursor_conf:-"%%PREFIX%%/etc/pdns/recursor.conf"}
-pdns_recursor_flags=${pdns_recursor_flags:-""}
 
 load_rc_config ${name}
 

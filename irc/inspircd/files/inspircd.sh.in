@@ -12,6 +12,7 @@
 # %%PORTNAME%%_enable="YES"
 #
 # Other rc.conf variables:
+# %%PORTNAME%%_flags="<set as needed>"
 #
 # %%PORTNAME%%_config="%%ETCDIR%%/%%PORTNAME%%.conf"
 #                          -- path to config file
@@ -35,7 +36,6 @@ load_rc_config ${name}
 : ${%%PORTNAME%%_enable="NO"}
 : ${%%PORTNAME%%_config="%%ETCDIR%%/%%PORTNAME%%.conf"}
 : ${%%PORTNAME%%_pidfile="%%INSPIRCD_RUN%%/%%PORTNAME%%.pid"}
-: ${%%PORTNAME%%_flags=""}
 : ${%%PORTNAME%%_user="%%INSPIRCD_USR%%"}
 : ${%%PORTNAME%%_group="%%INSPIRCD_GRP%%"}
 : ${%%PORTNAME%%_logfile="%%INSPIRCD_LOG%%"}

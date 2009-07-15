@@ -30,7 +30,6 @@ load_rc_config ${name}
 
 : ${privoxy_enable="NO"}
 : ${privoxy_config="%%PREFIX%%/etc/privoxy/config"}
-: ${privoxy_flags=""}
 : ${privoxy_user="privoxy"}
 : ${privoxy_pidfile="/var/run/privoxy/privoxy.pid"}
 

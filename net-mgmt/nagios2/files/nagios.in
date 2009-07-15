@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net-mgmt/nagios2/files/Attic/nagios.in,v 1.1 2008-09-03 00:30:56 pgollucci Exp $
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/nagios2/files/Attic/nagios.in,v 1.2 2009-07-15 16:55:58 dougb Exp $
 #
 
 # PROVIDE: nagios
@@ -34,7 +34,6 @@ reload_precmd="nagios_checkconfig"
 sig_reload=HUP
 
 [ -z "${nagios_enable}" ]       && nagios_enable="NO"
-[ -z "${nagios_flags}" ]        && nagios_flags=""
 [ -z "${nagios_configfile}" ]   && nagios_configfile="%%PREFIX%%/etc/nagios/nagios.cfg"
 
 load_rc_config "${name}"

@@ -8,6 +8,10 @@
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
+# Add the following lines to /etc/rc.conf to enable ser2net:
+# ser2net_enable="YES"
+# ser2net_flags="<set as needed>"
+
 . %%RC_SUBR%%
 
 name="ser2net"
@@ -16,7 +20,6 @@ command="%%PREFIX%%/sbin/ser2net"
 
 load_rc_config $name
 : ${ser2net_enable="NO"}
-: ${ser2net_flags=""}
 : ${ser2net_pidfile="/var/run/ser2net.pid"}
 
 start_cmd="/usr/sbin/daemon -p ${ser2net_pidfile} $command $rc_flags $command_args"

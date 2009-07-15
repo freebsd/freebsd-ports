@@ -47,6 +47,5 @@ stop_postcmd()
 # read settings, set default values
 load_rc_config $name
 : ${msyslogd_enable="NO"}
-: ${msyslogd_flags=""}
 
 run_rc_command "$1"

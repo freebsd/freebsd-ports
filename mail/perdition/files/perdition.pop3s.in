@@ -6,15 +6,15 @@
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
-# Add the following line to /etc/rc.conf to enable perdition.pop3s
+# Add the following lines to /etc/rc.conf to enable perdition.pop3s
 #
 # perdition_pop3s_enable="YES"
+# perdition_pop3s_flags="<set as needed>"
 #
 # See perdition(8) for flags
 #
 
 perdition_pop3s_enable=${perdition_pop3s_enable-"NO"}
-perdition_pop3s_flags=${perdition_pop3s_flags-""}
 
 . %%RC_SUBR%%
 

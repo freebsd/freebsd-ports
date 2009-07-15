@@ -10,7 +10,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable %%PORTNAME%%:
 #
-#%%PORTNAME%%_enable="YES"
+# %%PORTNAME%%_enable="YES"
+# %%PORTNAME%%_flags="<set as needed>"
 #
 
 . %%RC_SUBR%%
@@ -72,6 +73,5 @@ command_args="--daemon --prefsfile=${conffile} --pidfile=${pidfile}"
 load_rc_config ${name}
 
 %%PORTNAME%%_enable=${%%PORTNAME%%_enable:-"NO"}
-%%PORTNAME%%_flags=${%%PORTNAME%%_flags:-""}
 
 run_rc_command "$1"

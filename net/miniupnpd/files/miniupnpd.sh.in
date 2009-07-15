@@ -8,13 +8,16 @@
 
 . %%RC_SUBR%%
 
-miniupnpd_enable=${miniupnpd_enable:-"NO"}
-miniupnpd_config=${miniupnpd_config:-"%%PREFIX%%/etc/miniupnpd.conf"}
-miniupnpd_flags=${miniupnpd_flags}
+# Add the following line to /etc/rc.conf to enable miniupnpd
+# miniupnpd_enable="YES"
+# miniupnpd_flags="<set as needed>"
 
 name=miniupnpd
 rcvar=`set_rcvar`
 load_rc_config $name
+
+miniupnpd_enable=${miniupnpd_enable:-"NO"}
+miniupnpd_config=${miniupnpd_config:-"%%PREFIX%%/etc/miniupnpd.conf"}
 
 command="%%PREFIX%%/sbin/miniupnpd"
 pidfile="/var/run/${name}.pid"

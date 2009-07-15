@@ -7,12 +7,6 @@
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 # KEYWORD: shutdown
-#
-# NOTE for FreeBSD 5.0+:
-# If you want this script to start with the base rc scripts
-# move racoon.sh to /etc/rc.d/racoon
-
-prefix=%%PREFIX%%
 
 # Define these racoon_* variables in one of these files:
 #	/etc/rc.conf
@@ -22,7 +16,6 @@ prefix=%%PREFIX%%
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 [ -z "$racoon_enable" ] && racoon_enable="NO"	# Disable by default
-#racoon_program="${prefix}/sbin/racoon"		# Location of racoon
 #racoon_flags=""				# Flags to racoon program
 racoon_create_dirs=NO				# Create $required_dirs (for
 						#  /var mfs)?
@@ -31,10 +24,10 @@ racoon_create_dirs=NO				# Create $required_dirs (for
 
 name="racoon"
 rcvar=`set_rcvar`
-command="${prefix}/sbin/${name}"
+command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 socketfile="%%STATEDIR%%/${name}.sock"
-required_files="${prefix}/etc/${name}/${name}.conf"
+required_files="%%PREFIX%%/etc/${name}/${name}.conf"
 required_dirs="%%STATEDIR%%"
 start_precmd="racoon_cleanup"
 stop_postcmd="racoon_cleanup"

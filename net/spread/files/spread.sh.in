@@ -10,7 +10,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable spread:
 #
-#spread_enable="YES"
+# spread_enable="YES"
+# spread_flags="<set as needed>"
 #
 # See spread(1) for flags
 #
@@ -28,7 +29,6 @@ required_files=%%PREFIX%%/etc/${name}.conf
 # set defaults
 
 spread_enable=${spread_enable:-"NO"}
-spread_flags=${spread_flags:-""}
 
 load_rc_config ${name}
 run_rc_command "$1"

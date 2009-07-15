@@ -19,13 +19,11 @@ load_rc_config ${name}
 : ${lircd_enable="NO"}
 : ${lircd_device="/dev/lirc0"}
 
-
-prefix=%%PREFIX%%
-procname=${prefix}/sbin/lircd
+procname=%%PREFIX%%/sbin/lircd
 pidfile=/var/run/lircd.pid
-lircd_config="${prefix}/etc/lircd.conf"
+lircd_config="%%PREFIX%%/etc/lircd.conf"
 required_files=${lircd_config}
-command="${prefix}/sbin/lircd"
+command="%%PREFIX%%/sbin/lircd"
 command_args="-d ${lircd_device} ${lircd_config}"
 
 run_rc_command "$1"

@@ -10,7 +10,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable powerdns:
 #
-#pdns_enable="YES"
+# pdns_enable="YES"
+# pdns_flags="<set as needed>"
 #
 # See pdns_server(8) for flags.
 #
@@ -26,7 +27,6 @@ command=%%PREFIX%%/sbin/pdns_server
 
 pdns_enable=${pdns_enable:-"NO"}
 pdns_conf=${pdns_conf:-"%%PREFIX%%/etc/pdns/pdns.conf"}
-pdns_flags=${pdns_flags:-""}
 
 load_rc_config ${name}
 

@@ -9,12 +9,12 @@
 # Add the following line to /etc/rc.conf to enable perdition.imap4s
 #
 # perdition_imap4s_enable="YES"
+# perdition_imap4s_flags="<set as needed>"
 #
 # See perdition(8) for flags
 #
 
 perdition_imap4s_enable=${perdition_imap4s_enable-"NO"}
-perdition_imap4s_flags=${perdition_imap4s_flags-""}
 
 . %%RC_SUBR%%
 

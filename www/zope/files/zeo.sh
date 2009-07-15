@@ -7,8 +7,6 @@
 # REQUIRE: DAEMON
 # BEFORE: zope
 # KEYWORD: shutdown
-#
-prefix=%%PREFIX%%
 
 # Define these zope_* variables in one of these files:
 #       /etc/rc.conf

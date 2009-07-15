@@ -36,7 +36,6 @@ required_files=%%PREFIX%%/etc/apache/httpsd.conf
 load_rc_config $name
 
 [ -z "$apache_enable" ]       && apache_enable="NO"
-[ -z "$apache_flags" ]        && apache_flags=""
 [ -z "$apachelimits_enable" ] && apachelimits_enable="NO"
 [ -z "$apachelimits_args" ]   && apachelimits_args="-e -C daemon"
 

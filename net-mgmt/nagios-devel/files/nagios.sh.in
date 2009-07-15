@@ -34,7 +34,6 @@ reload_precmd="nagios_checkconfig"
 sig_reload=HUP
 
 [ -z "${nagios_enable}" ] && nagios_enable="NO"
-[ -z "${nagios_flags}" ] && nagios_flags=""
 [ -z "${nagios_configfile}" ] && nagios_configfile="%%PREFIX%%/etc/nagios/nagios.cfg"
 
 load_rc_config "${name}"

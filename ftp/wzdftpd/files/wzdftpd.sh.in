@@ -9,18 +9,18 @@
 # KEYWORD: shutdown
 #
 
-prefix=%%PREFIX%%
+# Add the following lines to /etc/rc.conf to enable wzdftpd
+# wzdftpd_enable="YES"
+# wzdftpd_flags="<set as needed>"
 
 wzdftpd_enable=${wzdftpd_enable:-"NO"}		# Enable wzdftpd
-wzdftpd_program="${prefix}/sbin/wzdftpd"	# Location of wzdftpd
-wzdftpd_flags=${wzdftpd_flags:-""}		# Flags to wzdftpd
 
 . %%RC_SUBR%%
 
 name="wzdftpd"
 rcvar=`set_rcvar`
-command="${prefix}/sbin/${name}"
-required_files="${prefix}/etc/wzd.cfg"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/wzd.cfg"
 
 load_rc_config $name
 run_rc_command "$1"

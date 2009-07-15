@@ -10,7 +10,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable frox:
 #
-#frox_enable="YES"
+# frox_enable="YES"
+# frox_flags="<set as needed>"
 #
 # See frox(8) for flags
 #
@@ -34,7 +35,6 @@ stop_postcmd()
 # set defaults
 
 frox_enable=${frox_enable:-"NO"}
-frox_flags=${frox_flags:-""}
 
 load_rc_config $name
 run_rc_command "$1"

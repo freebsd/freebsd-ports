@@ -12,7 +12,6 @@
 #
 
 vtunclient_enable=${vtunclient_enable:-"NO"}
-vtunclient_flags=${vtunclient_flags:-""}
 
 . %%RC_SUBR%%
 

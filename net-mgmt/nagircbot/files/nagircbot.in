@@ -9,6 +9,7 @@
 # Add the following lines to /etc/rc.conf to enable nagircbot:
 #
 # nagircbot_enable="YES"
+# nagircbot_flags="<set as needed>"
 #
 # You must configure at least some flags to make it connect to a server. See -h.
 #
@@ -25,7 +26,6 @@ command_args="-P $pidfile -z nagios"
 # set defaults
 
 nagircbot_enable=${nagircbot_enable:-"NO"}
-nagircbot_flags=${nagircbot_flags:-""}
 
 load_rc_config ${name}
 run_rc_command "$1"

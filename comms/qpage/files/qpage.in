@@ -26,8 +26,6 @@ load_rc_config $name
 
 : ${qpage_enable="NO"}
 : ${qpage_queue_interval="10"}
-: ${qpage_cfg_file=""}
-: ${qpage_flags=""}
 
 stop_cmd=${name}_stop
 extra_commands="reload"

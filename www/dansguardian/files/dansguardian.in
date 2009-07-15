@@ -11,8 +11,11 @@
 #       /etc/rc.conf.d/dansguardian
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# dansguardian_enable="YES"
+# dansguardian_flags="<set as needed>"
+
 dansguardian_enable=${dansguardian_enable:-"NO"}
-dansguardian_flags=${dansguardian_flags:-""}
 dansguardian_pidfile=${dansguardian_pidfile:-"/var/run/dansguardian.pid"}
 
 . %%RC_SUBR%%

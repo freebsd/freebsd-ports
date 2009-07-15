@@ -5,8 +5,7 @@
 # PROVIDE: jabberd
 # REQUIRE: %%REQUIRE%%
 # KEYWORD: shutdown
-#
-prefix=%%PREFIX%%
+
 
 # Define these jabberd_* variables in one of these files:
 #       /etc/rc.conf
@@ -23,7 +22,7 @@ jabberd_user=${jabberd_user-"%%JABBER_USER%%"}
 name="jabberd"
 rcvar=`set_rcvar`
 command_interpreter="%%PERL%%"
-command="${prefix}/bin/jabberd"
+command="%%PREFIX%%/bin/jabberd"
 command_args="-b"
 stop_postcmd=jabberd_post_stopcmd
 

@@ -10,7 +10,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable dbmail-imapd: 
 #
-#dbmail_imapd_enable="YES"
+# dbmail_imapd_enable="YES"
+# dbmail_imapd_flags="<set as needed>"
 #
 # See dbmail-imapd(8) for flags
 #
@@ -27,6 +28,5 @@ required_files=%%PREFIX%%/etc/dbmail.conf
 # read settings, set default values
 load_rc_config "$name"
 : ${dbmail_imapd_enable="NO"}
-: ${dbmail_imapd_flags=""}
 
 run_rc_command "$1"

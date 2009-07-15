@@ -24,10 +24,9 @@ load_rc_config $name
 
 : ${ngircd_enable="NO"}
 : ${ngircd_conf="%%PREFIX%%/etc/ngircd.conf"}
-: ${ngircd_flags=""}
 
 required_files="${ngircd_conf}"
 command=%%PREFIX%%/sbin/ngircd
-command_args="-f ${ngircd_conf} ${ngircd_flags}"
+command_args="-f ${ngircd_conf}"
 
 run_rc_command "$1"

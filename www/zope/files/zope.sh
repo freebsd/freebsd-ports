@@ -1,14 +1,12 @@
 #!/bin/sh
 
 # Start or stop zope
-# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.7 2006-02-20 20:47:50 dougb Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.8 2009-07-15 16:56:10 dougb Exp $
 
 # PROVIDE: zope
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 # KEYWORD: shutdown
-#
-prefix=%%PREFIX%%
 
 # Define these zope_* variables in one of these files:
 #       /etc/rc.conf

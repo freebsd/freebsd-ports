@@ -28,7 +28,6 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${tclhttpd_enable="NO"}
-: ${tclhttpd_flags=""}
 : ${tclhttpd_stdout_log="/var/log/tclhttpd-stdout.log"}
 : ${tclhttpd_stderr_log="/var/log/tclhttpd-stderr.log"}
 

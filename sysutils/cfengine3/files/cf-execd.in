@@ -25,6 +25,5 @@ command="%%PREFIX%%/sbin/${name}"
 load_rc_config $name
 
 : ${cf-execd_enable="NO"}
-: ${cf-execd_flags=""}
 
 run_rc_command "$1"

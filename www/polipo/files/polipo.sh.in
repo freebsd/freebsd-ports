@@ -5,12 +5,16 @@
 # REQUIRE: NETWORK
 # KEYWORD: shutdown
 
+# Add the following lines to /etc/rc.conf to enable polipo:
+# polipo_enable="YES"
+# polipo_flags="<set as needed>"
+
 . %%RC_SUBR%%
 
 name=polipo
 rcvar=`set_rcvar`
+
 polipo_enable=${polipo_enable:-"NO"}
-polipo_flags=${polipo_flags:-""}
 polipo_user=%%USER%%
 polipo_group=%%GROUP%%
 pidfile=%%PPIDFILE%%

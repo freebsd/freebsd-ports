@@ -39,8 +39,6 @@ stop_postcmd()
 
 # set defaults
 ftpsesame_enable=${ftpsesame_enable:-"NO"}
-ftpsesame_interface=${ftpsesame_interface-""}
-ftpsesame_flags=${ftpsesame_flags-""}
 
 load_rc_config $name
 command_args=${ftpsesame_interface:+"-i ${ftpsesame_interface}"}

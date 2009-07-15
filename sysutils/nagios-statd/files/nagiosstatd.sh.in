@@ -10,10 +10,9 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable nagiosstatd:
 # nagiosstatd_enable (bool): Set to "NO" by default.
 #                          Set it to "YES" to enable nagiosstatd 
-#
+# nagiosstatd_flags="<set as needed>"
 
 nagiosstatd_enable=${nagiosstatd_enable-"NO"}
-nagiosstatd_flags=${nagiosstatd_flags-""}
 nagiosstatd_pidfile=${nagiosstatd_pidfile-"/var/run/nagiosstatd.pid"}
 
 . %%RC_SUBR%%

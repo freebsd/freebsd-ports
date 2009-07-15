@@ -13,7 +13,6 @@
 #
 
 xsi_enable=${xsi_enable-"NO"}
-xsi_flags=${xsi_flags-""}
 
 . %%RC_SUBR%%
 

@@ -11,6 +11,7 @@
 # Add the following lines to /etc/rc.conf to enable c-icap:
 #
 # c_icap_enable="YES"
+# c_icap_flags="<set as needed>"
 #
 # See '%%PREFIX%%/bin/c-icap --help' for flags
 #
@@ -30,6 +31,5 @@ stop_postcmd="rm -f $pidfile"
 # read settings, set default values
 load_rc_config "$name"
 : ${c_icap_enable="NO"}
-: ${c_icap_flags=""}
 
 run_rc_command "$1"

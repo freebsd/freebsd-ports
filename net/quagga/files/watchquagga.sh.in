@@ -31,7 +31,6 @@ stop_postcmd()
 load_rc_config $name
 
 : ${watchquagga_enable="NO"}
-: ${watchquagga_flags=""}
 
 command=%%PREFIX%%/sbin/watchquagga
 pidfile=%%LOCALSTATE_DIR%%/watchquagga.pid

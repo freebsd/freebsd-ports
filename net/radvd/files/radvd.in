@@ -13,11 +13,11 @@
 
 name=radvd
 rcvar=`set_rcvar`
-prefix=%%PREFIX%%
+
 pidfile=/var/run/${name}.pid
-command="${prefix}/sbin/${name}"
+command="%%PREFIX%%/sbin/${name}"
 command_args="-p ${pidfile}"
-required_files="${prefix}/etc/${name}.conf"
+required_files="%%PREFIX%%/etc/${name}.conf"
 
 load_rc_config $name
 : ${radvd_enable="NO"}

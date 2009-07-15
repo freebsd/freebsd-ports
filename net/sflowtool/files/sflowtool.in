@@ -3,6 +3,10 @@
 # PROVIDE: sflowtool
 # REQUIRE: DAEMON
 
+# Add the following line to /etc/rc.conf to enable sflowtool:
+# sflowtool_enable="YES"
+# sflowtool_flags="<set as needed>"
+
 .  %%RC_SUBR%%
 
 name="sflowtool"
@@ -12,7 +16,6 @@ command="%%PREFIX%%/bin/sflowtool"
 load_rc_config $name
 # Set defaults
 : ${sflowtool_enable="NO"}
-: ${sflowtool_flags=""}
 : ${sflowtool_pidfile="/var/run/${name}.pid"}
 
 start_cmd="/usr/sbin/daemon -f -p ${sflowtool_pidfile} ${command} ${sflowtool_flags}"

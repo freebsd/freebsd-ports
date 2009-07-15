@@ -113,7 +113,5 @@ status_cmd()
 load_rc_config $name
 
 : ${ipacctd_enable="NO"}
-: ${ipacctd_rules=""}
-: ${ipacctd_flags=""}
 
 run_rc_command "$1"

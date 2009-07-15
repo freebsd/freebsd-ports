@@ -75,8 +75,6 @@ esac
 
 rcvar=$(set_rcvar)
 
-prefix="%%PREFIX%%"
-
 openvpn_precmd()
 {
 	for i in $interfaces ; do
@@ -118,8 +116,8 @@ load_rc_config ${name}
 eval ": \${${name}_enable:=\"NO\"}"
 eval ": \${${name}_flags:=\"\"}"
 eval ": \${${name}_if:=\"\"}"
-eval ": \${${name}_configfile:=\"${prefix}/etc/openvpn/${name}.conf\"}"
-eval ": \${${name}_dir:=\"${prefix}/etc/openvpn\"}"
+eval ": \${${name}_configfile:=\"%%PREFIX%%/etc/openvpn/${name}.conf\"}"
+eval ": \${${name}_dir:=\"%%PREFIX%%/etc/openvpn\"}"
 
 configfile="$(eval echo \${${name}_configfile})"
 dir="$(eval echo \${${name}_dir})"

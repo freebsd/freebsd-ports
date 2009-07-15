@@ -83,7 +83,6 @@ load_rc_config $name
 : ${flow_fanout_pid="%%FLOW_CAPTURE_PIDDIR%%/flow-fanout.pid"}
 : ${flow_fanout_user="flowtools"}
 : ${flow_fanout_group="flowtools"}
-: ${flow_fanout_flags=""}
 
 pidfile="${flow_fanout_pid}.${flow_fanout_port}"
 

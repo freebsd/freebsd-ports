@@ -8,10 +8,10 @@
 # Add the following line to /etc/rc.conf to enable snmpd:
 #
 # snmpd_enable="YES"
+# snmpd_flags="<set as needed>"
 #
 
 snmpd_enable=${snmpd_enable-"NO"}
-snmpd_flags=${snmpd_flags-""}
 snmpd_pidfile=${snmpd_pidfile-"/var/run/snmpd.pid"}
 snmpd_conffile=${snmpd_conffile-""}
 snmpd_flush_cache=${snmpd_flush_cache-"NO"}

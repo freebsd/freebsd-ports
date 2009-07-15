@@ -12,6 +12,7 @@
 # "-p" options will be added automatically, you should not specify them. Please
 # see the examples and the ftpd-ssl(8) man page for more information.
 #
+# bsdftpd_ssl_flags="<set as needed>"
 
 . %%RC_SUBR%%
 
@@ -26,7 +27,6 @@ stop_postcmd="rm -f /var/run/ftpd.pid"
 # Set defaults
 
 bsdftpd_ssl_enable=${bsdftpd_ssl_enable:-"NO"}
-bsdftpd_ssl_flags=${bsdftpd_ssl_flags:-""}
 
 # Run the daemon
 

@@ -57,7 +57,6 @@ load_rc_config $name
 : ${milterbatv_key=""}
 # Options other than above can be set with $milterbatv_flags.
 # see batv-milter documentation for detail.
-: ${milterbatv_flags=""}
 
 if [ -n "$2" ]; then
     profile="$2"

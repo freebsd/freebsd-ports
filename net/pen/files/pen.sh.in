@@ -9,10 +9,10 @@
 # KEYWORD: shutdown
 
 #
-# Add the following line to /etc/rc.conf to enable pen:
+# Add the following lines to /etc/rc.conf to enable pen:
 #
 # pen_enable="YES"
-#
+# pen_flags="<set as needed>"
 
 . %%RC_SUBR%%
 
@@ -22,7 +22,6 @@ rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/pen
 
 pen_enable=${pen_enable:-"NO"}
-pen_flags=${pen_flags:-""}
 
 load_rc_config $name
 run_rc_command "$1"

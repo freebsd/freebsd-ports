@@ -43,8 +43,6 @@ pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/apache22/httpd.conf
 
 [ -z "$apache22_enable" ]       && apache22_enable="NO"
-[ -z "$apache22_profiles" ]     && apache22_profiles=""
-[ -z "$apache22_flags" ]        && apache22_flags=""
 [ -z "$apache22limits_enable" ] && apache22limits_enable="NO"
 [ -z "$apache22limits_args" ]   && apache22limits_args="-e -C daemon"
 [ -z "$apache22_http_accept_enable" ] && apache22_http_accept_enable="NO"

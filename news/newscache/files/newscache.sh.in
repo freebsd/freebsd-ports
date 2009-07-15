@@ -5,12 +5,12 @@
 # PROVIDE: newscache
 # REQUIRE: DAEMON
 #
-# Add the following line to /etc/rc.conf to enable newscache:
+# Add the following lines to /etc/rc.conf to enable newscache:
 #
 # newscache_enable="YES"
-#
+# newscache_flags="<set as needed>"
+
 newscache_enable=${newscache_enable-"NO"}
-newscache_flags=${newscache_flags-""}
 
 . %%RC_SUBR%%
 

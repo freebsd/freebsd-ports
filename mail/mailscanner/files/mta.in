@@ -69,7 +69,6 @@ load_rc_config $name
 
 : ${mta_enable="NO"}
 : ${mta_type="sendmail"}
-: ${mta_flags=""}
 
 case "${mta_type}" in
 

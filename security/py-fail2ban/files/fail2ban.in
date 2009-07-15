@@ -4,8 +4,11 @@
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 
+# Add the following lines to /etc/rc.conf to enable fail2ban:
+# fail2ban_enable="YES"
+# fail2ban_flags="<set as needed>"
+
 fail2ban_enable=${fail2ban_enable-"NO"}
-fail2ban_flags=${fail2ban_flags-""}
 fail2ban_pidfile=${fail2ban_pidfile-"/var/run/fail2ban/fail2ban.pid"}
 
 . %%RC_SUBR%%

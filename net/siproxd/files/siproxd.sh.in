@@ -5,21 +5,17 @@
 
 # PROVIDE: siproxd
 # REQUIRE: DAEMON
-#
-# NOTE for FreeBSD 5.0+:
-# If you want this script to start with the base rc scripts
-# move siproxd.sh to /etc/rc.d/siproxd
+
 # Define these siproxd_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/siproxd
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
+# siproxd_enable="YES"
+# siproxd_flags=""		# Flags to siproxd program
 
 siproxd_enable=${siproxd_enable:-"NO"}	# Enable siproxd
-siproxd_flags=${siproxd_flags:-""}	# Flags to siproxd program
-#siproxd_program="%%PREFIX%%/sbin/siproxd"	# Location of siproxd
 
 . %%RC_SUBR%%
 

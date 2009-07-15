@@ -19,7 +19,6 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 obspamlogd_enable=${obspamlogd_enable:-"NO"}
-obspamlogd_flags=${obspamlogd_flags:-""}
 
 . %%RC_SUBR%%
 

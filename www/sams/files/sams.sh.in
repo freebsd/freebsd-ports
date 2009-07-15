@@ -12,8 +12,10 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
+# sams_enable="YES"
+# sams_flags="<set as needed>"
+
 sams_enable=${sams_enable-"NO"}
-sams_flags=${sams_flags-""}
 sams_pidfile=${sams_pidfile-"/var/run/samsdaemon.pid"}
 
 . %%RC_SUBR%%

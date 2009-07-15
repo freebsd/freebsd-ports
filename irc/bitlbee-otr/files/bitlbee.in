@@ -6,6 +6,10 @@
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 
+# Add the following lines to /etc/rc.conf to enable bitlbee:
+# bitlbee_enable="YES"
+# bitlbee_flags="<set as needed>"
+
 . %%RC_SUBR%%
 
 name="bitlbee"
@@ -16,7 +20,6 @@ load_rc_config $name
 : ${bitlbee_enable="NO"}
 : ${bitlbee_user="%%BITLBEEUSER%%"}
 : ${bitlbee_config="%%PREFIX%%/etc/bitlbee/bitlbee.conf"}
-: ${bitlbee_flags=""}
 
 required_files="${bitlbee_config}"
 command="%%PREFIX%%/sbin/bitlbee"

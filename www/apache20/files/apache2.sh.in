@@ -42,8 +42,6 @@ required_files=%%PREFIX%%/etc/apache2/httpd.conf
 
 [ -z "$apache2_enable" ]       && apache2_enable="NO"
 [ -z "${apache2ssl_enable}" ]  && apache2ssl_enable="NO"
-[ -z "$apache2_profiles" ]     && apache2_profiles=""
-[ -z "$apache2_flags" ]        && apache2_flags=""
 [ -z "$apache2limits_enable" ] && apache2limits_enable="NO"
 [ -z "$apache2limits_args" ]   && apache2limits_args="-e -C daemon"
 

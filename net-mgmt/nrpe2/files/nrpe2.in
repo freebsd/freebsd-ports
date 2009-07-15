@@ -28,7 +28,6 @@ extra_commands="reload"
 sig_reload=HUP
 
 [ -z "${nrpe2_enable}" ] && nrpe2_enable="NO"
-[ -z "${nrpe2_flags}" ] && nrpe2_flags=""
 [ -z "${nrpe2_configfile}" ] && nrpe2_configfile="%%PREFIX%%/etc/nrpe.cfg"
 [ -z "${nrpe2_pidfile}" ] && nrpe2_pidfile="%%NAGIOSDIR%%/nrpe2.pid"
 

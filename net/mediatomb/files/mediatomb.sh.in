@@ -16,13 +16,13 @@
 . %%RC_SUBR%%
 
 mediatomb_enable=${mediatomb_enable-"NO"}
+# mediatomb_flags="<set as needed>"
+# mediatomb_interface="<set as needed>"
 mediatomb_mtuser=${mediatomb_mtuser-"%%MEDIATOMB_USER%%"}
 mediatomb_mtgroup=${mediatomb_mtgroup-"%%MEDIATOMB_GROUP%%"}
 mediatomb_config=${mediatomb_config-"%%PREFIX%%/etc/mediatomb/config.xml"}
-mediatomb_flags=${mediatomb_flags-""}
 mediatomb_logfile=${mediatomb_logfile-"%%MEDIATOMB_DIR%%/mediatomb.log"}
 mediatomb_pidfile=${mediatomb_pidfile-"%%MEDIATOMB_DIR%%/mediatomb.pid"}
-mediatomb_interface=${mediatomb_interface-""}
 
 name="mediatomb"
 rcvar=`set_rcvar`

@@ -11,14 +11,12 @@
 # fprotd_enable="YES"
 #
 
-prefix=%%PREFIX%%
-
 . /etc/rc.subr
 
 name=fprotd
 rcvar=`set_rcvar`
 start_precmd="fprotd_precmd"
-command="${prefix}/f-prot/f-protd"
+command="%%PREFIX%%/f-prot/f-protd"
 command_args="> /dev/null 2>&1"
 
 required_files="/etc/f-prot.conf"
@@ -26,7 +24,7 @@ required_files="/etc/f-prot.conf"
 load_rc_config ${name}
 
 : ${fprotd_enable=NO}
-: ${fprotd_virus_defs=${prefix}/f-prot}
+: ${fprotd_virus_defs=%%PREFIX%%/f-prot}
 
 fprotd_precmd()
 {

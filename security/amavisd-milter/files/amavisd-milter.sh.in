@@ -11,7 +11,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable amavisd-milter:
 #
-#amavisd_milter_enable="YES"
+# amavisd_milter_enable="YES"
+# amavisd_milter_flags="<set as needed>"
 #
 
 . %%RC_SUBR%%
@@ -23,7 +24,6 @@ load_rc_config $name
 
 # Set defaults
 : ${amavisd_milter_enable:="NO"}
-: ${amavisd_milter_flags=""}
 : ${amavisd_milter_user="%%AMAVISUSER%%"}
 
 pidfile="${amavisd_milter_pidfile:-%%AMAVISDIR%%/amavisd-milter.pid}"

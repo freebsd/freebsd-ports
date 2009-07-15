@@ -25,8 +25,7 @@
 name="dhcp6relay"
 rcvar=${name}_enable
 
-prefix=%%PREFIX%%
-command=${prefix}/sbin/${name}
+command=%%PREFIX%%/sbin/${name}
 start_precmd="${name}_precmd"
 
 load_rc_config $name

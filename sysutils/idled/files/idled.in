@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/idled/files/Attic/idled.in,v 1.1 2009-07-15 05:09:46 pgollucci Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/idled/files/Attic/idled.in,v 1.2 2009-07-15 16:56:06 dougb Exp $
 #
 
 # PROVIDE: idled
@@ -11,7 +11,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable idled:
 #
-#idled_enable="YES"
+# idled_enable="YES"
+# idled_flags="<set as needed>"
 #
 # See idled(8) for flags
 #
@@ -27,7 +28,6 @@ required_files=%%PREFIX%%/etc/idled.cf
 # set defaults
 
 idled_enable=${idled_enable:-"NO"}
-idled_flags=${idled_flags:-""}
 
 load_rc_config $name
 run_rc_command "$1"

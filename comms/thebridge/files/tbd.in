@@ -9,13 +9,13 @@
 # KEYWORD: shutdown
 
 #
-# Add the following line to /etc/rc.conf to enable tbd:
+# Add the following lines to /etc/rc.conf to enable tbd:
 #
 # tbd_enable="YES"
+# tbd_flags="<set as needed>"
 #
 
 tbd_enable=${tbd_enable-"NO"}
-tbd_flags=${tbd_flags-""}
 
 . %%RC_SUBR%%
 

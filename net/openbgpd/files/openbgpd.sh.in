@@ -8,12 +8,12 @@
 # BEFORE:  securelevel
 # KEYWORD: shutdown
 
-# Add the following line to /etc/rc.conf to enable `openbgpd':
+# Add the following lines to /etc/rc.conf to enable openbgpd:
 #
 # openbgpd_enable="YES"
+# openbgpd_flags="<set as needed>"
 #
 # See bgpd(8) for openbgpd_flags
-#
 
 . "%%RC_SUBR%%"
 
@@ -26,6 +26,5 @@ required_files="%%PREFIX%%/etc/bgpd.conf"
 
 load_rc_config "$name"
 : ${openbgpd_enable="NO"}
-: ${openbgpd_flags=""}
 
 run_rc_command "$1"

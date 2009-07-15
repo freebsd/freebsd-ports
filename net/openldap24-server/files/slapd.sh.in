@@ -106,11 +106,8 @@ load_rc_config $name
 if [ -n "${slapd_args+set}" ]; then
   warn "slapd_args is deprecated, use slapd_flags"
   : ${slapd_flags="$slapd_args"}
-else
-  : ${slapd_flags=""}
 fi
 : ${slapd_owner="ldap:ldap"}
-: ${slapd_sockets=""}
 : ${slapd_sockets_mode="666"}
 
 run_rc_command "$1"

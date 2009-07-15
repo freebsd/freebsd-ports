@@ -11,7 +11,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable proftpd:
 #
-#proftpd_enable="YES"
+# proftpd_enable="YES"
+# proftpd_flags="<set as needed>"
 #
 # See proftpd(8) for flags
 #
@@ -35,7 +36,6 @@ stop_postcmd()
 # set defaults
 
 proftpd_enable=${proftpd_enable:-"NO"}
-proftpd_flags=${proftpd_flags:-""}
 
 extra_commands="reload"
 

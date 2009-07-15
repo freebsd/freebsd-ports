@@ -27,7 +27,6 @@ command_args=">/dev/null 2>/dev/null &"
 # set defaults
 
 lldpd_enable=${lldpd_enable:-"NO"}
-lldpd_flags=${lldpd_flags:-""}
 
 load_rc_config $name
 run_rc_command "$1"
