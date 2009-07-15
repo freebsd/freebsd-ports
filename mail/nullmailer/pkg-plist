@@ -7,7 +7,6 @@ sbin/nullmailer-queue
 sbin/nullmailer-send
 etc/nullmailer/me.sample
 etc/nullmailer/remotes.sample
-etc/rc.d/nullmail.sh
 @exec mkdir -p %%LOCALSTATEDIR%%/nullmailer/queue
 @exec chmod 700 %%LOCALSTATEDIR%%/nullmailer/queue
 @exec mkdir -p %%LOCALSTATEDIR%%/nullmailer/tmp
