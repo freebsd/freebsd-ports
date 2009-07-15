@@ -7,6 +7,7 @@
 
 PORTNAME=	bnbt
 PORTVERSION=	8.5
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://opensource.depthstrike.com/${PORTNAME}/
 DISTNAME=	${SNAPSHOT}-${PORTNAME}${PORTVERSION:C/\.//}-src
