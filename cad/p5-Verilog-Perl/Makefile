@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Verilog-Perl
-PORTVERSION=	3.210
+PORTVERSION=	3.211
 CATEGORIES=	cad perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	otacilio.neto@ee.ufcg.edu.br
 COMMENT=	Building point for Verilog support in the Perl language
 
+BUILD_DEPENDS=	flex>=2.5.35:${PORTSDIR}/textproc/flex
+
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_BISON=	yes
+USE_BISON=	build
 
 PERL_CONFIGURE=	yes
 
