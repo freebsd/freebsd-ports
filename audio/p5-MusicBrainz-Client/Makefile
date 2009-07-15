@@ -26,4 +26,7 @@ MAN3=		MusicBrainz::Client.3 \
 		MusicBrainz::Client::Simple::Artist.3 \
 		MusicBrainz::Client::Simple::Track.3
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
