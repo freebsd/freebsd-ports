@@ -9,7 +9,7 @@ http://www.freebsd.org/cgi/query-pr.cgi?pr=127946
  //__________________________________________________________________________________________________
  RTTI::RTTI() SAL_THROW( () )
 -#if __FreeBSD_version < 602103
-+#ifdef FREEBSD /* #i22253# */
++#if __FreeBSD_version < 702104 /* #i22253# */
      : m_hApp( dlopen( 0, RTLD_NOW | RTLD_GLOBAL ) )
  #else
      : m_hApp( dlopen( 0, RTLD_LAZY ) )
@@ -18,7 +18,7 @@ http://www.freebsd.org/cgi/query-pr.cgi?pr=127946
  
          OString symName( buf.makeStringAndClear() );
 -#if __FreeBSD_version < 602103 /* #i22253# */
-+#ifdef FREEBSD /* #i22253# */
++#if __FreeBSD_version < 702104 /* #i22253# */
          rtti = (type_info *)dlsym( RTLD_DEFAULT, symName.getStr() );
  #else
          rtti = (type_info *)dlsym( m_hApp, symName.getStr() );
