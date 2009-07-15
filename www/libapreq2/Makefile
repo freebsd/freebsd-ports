@@ -7,6 +7,7 @@
 
 PORTNAME=	libapreq2
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
@@ -19,6 +20,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:262 libtool:15
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
+
+MAKE_ENV+=     MAKE=${GMAKE} ## MakeMaker blows it without this
 
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
