@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/sysutils/uptimec/files/Attic/uptimec.in,v 1.1 2009-07-15 06:41:07 pgollucci Exp $
 #
 
 # PROVIDE: uptimec
