@@ -1,0 +1,14 @@
+THANKO USB AM/FM Radio controller
+
+commands usage:
+ -fm <freqeuncy>    : set FM frequency, e.g. '-fm 77.4'
+ -stop              : stop amfm radio
+
+Limitations:
+	you need root authority.
+	currently AM Radio mode is not supported.
+
+THANKO Co. USB AM/FM RADIO
+WWW: http://www.thanko.jp/usbamfmradio/
+
+WWW: http://d.hatena.ne.jp/pair/20080620/1213969553#c
