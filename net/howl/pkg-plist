@@ -3,7 +3,6 @@ bin/mDNSPublish
 bin/mDNSQuery
 bin/mDNSResolve
 bin/mDNSResponder
-etc/rc.d/mdnsresponder.sh
 include/howl/corby/buffer.h
 include/howl/corby/channel.h
 include/howl/corby/corby.h

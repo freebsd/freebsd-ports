@@ -13,33 +13,25 @@ MASTER_SITES=	http://www.porchdogsoft.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zeroconf/Bonjour(tm) implementation
 
+CONFLICTS=	avahi-[0-9]*
+
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
-GNU_CONFIGURE=	yes
-USE_RC_SUBR=	yes
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-
 USE_LDCONFIG=	yes
-MAN8=		mDNSResponder.8
+GNU_CONFIGURE=	yes
+
+USE_RC_SUBR=	mdnsresponder
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
-RC_SCRIPTS_SUB=	RC_SUBR=${RC_SUBR} PREFIX=${PREFIX}
 
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
-CONFLICTS=	avahi-[0-9]*
-
-post-extract:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/mdnsresponder.sh > ${WRKSRC}/mdnsresponder.sh
+MAN8=		mDNSResponder.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mdnsresponder.sh \
-		${PREFIX}/etc/rc.d/mdnsresponder.sh
 
 .include <bsd.port.mk>
