@@ -142,7 +142,7 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
  					reinterpret_cast<
 --- bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2009-06-13 15:39:58.000000000 +0900
 +++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2009-06-13 15:42:43.000000000 +0900
-@@ -32,10 +32,10 @@
+@@ -32,6 +32,7 @@
  #include "precompiled_bridges.hxx"
  
  #include <stdio.h>
@@ -150,16 +150,12 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
  #include <dlfcn.h>
  #include <cxxabi.h>
  #include <hash_map>
--#include <sys/param.h>
- 
- #include <rtl/strbuf.hxx>
- #include <rtl/ustrbuf.hxx>
 @@ -121,7 +121,7 @@
  };
  //__________________________________________________________________________________________________
  RTTI::RTTI() SAL_THROW( () )
 -#if __FreeBSD_version < 602103
-+#ifdef FREEBSD /* #i22253# */
++#if __FreeBSD_version < 702104 /* #i22253# */
      : m_hApp( dlopen( 0, RTLD_NOW | RTLD_GLOBAL ) )
  #else
      : m_hApp( dlopen( 0, RTLD_LAZY ) )
@@ -168,7 +164,7 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
          
          OString symName( buf.makeStringAndClear() );
 -#if __FreeBSD_version < 602103  /* #i22253# */
-+#ifdef FREEBSD /* #i22253# */
++#if __FreeBSD_version < 702104 /* #i22253# */
          rtti = (type_info *)dlsym( RTLD_DEFAULT, symName.getStr() );
  #else
          rtti = (type_info *)dlsym( m_hApp, symName.getStr() );
