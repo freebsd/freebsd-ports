@@ -7,6 +7,7 @@
 
 PORTNAME=	papi
 PORTVERSION=	3.6.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
@@ -261,15 +262,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/include
 .endfor
 .if defined(WITH_FTESTS)
-	${MKDIR} ${PREFIX}/share/ftests
+	${MKDIR} ${DATADIR}/ftests
 .for f in ${PAPI_FORTRAN_TESTS}
-	${INSTALL_PROGRAM} ${WRKSRC}/ftests/${f} ${PREFIX}/share/ftests
+	${INSTALL_PROGRAM} ${WRKSRC}/ftests/${f} ${DATADIR}/ftests
 .endfor
 .endif
 .if defined(WITH_CTESTS)
-	${MKDIR} ${PREFIX}/share/ctests
+	${MKDIR} ${DATADIR}/ctests
 .for f in ${PAPI_C_TESTS}
-	${INSTALL_PROGRAM} ${WRKSRC}/ctests/${f} ${PREFIX}/share/ctests
+	${INSTALL_PROGRAM} ${WRKSRC}/ctests/${f} ${DATADIR}/ctests
 .endfor
 .endif
 .for f in ${PAPI_LIBS}
