@@ -6,8 +6,7 @@
 #   $MCom: ports/mail/lightning/Makefile,v 1.1 2006/10/14 03:49:20 ahze Exp $
 
 PORTNAME=	lightning
-PORTVERSION=	0.7
-PORTREVISION=	5
+PORTVERSION=	0.9
 CATEGORIES=	mail deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}/source
@@ -67,7 +66,6 @@ post-patch:
 
 port-pre-install:
 	${MKDIR} ${FAKEDIR}/${LIGHTNING_DIR}
-	${UNZIP_CMD} ${WRKSRC}/dist/xpi-stage/lightning.xpi -d ${FAKEDIR}/${LIGHTNING_DIR}
 
 pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLIST}
