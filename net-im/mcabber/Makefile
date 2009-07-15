@@ -7,6 +7,7 @@
 
 PORTNAME=	mcabber
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
@@ -37,7 +38,7 @@ LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 .endif
 
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.17:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.18:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=--enable-gpgme
 .else
 CONFIGURE_ARGS+=--disable-gpgme

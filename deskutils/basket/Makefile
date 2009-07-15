@@ -6,7 +6,7 @@
 
 PORTNAME=	basket
 PORTVERSION=	1.0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://basket.kde.org/downloads/
 
@@ -33,7 +33,7 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="kontact_plugin"
 
 .if defined(WITH_GPGME)
 RUN_DEPENDS+=	pinentry-qt:${PORTSDIR}/security/pinentry-qt
-LIB_DEPENDS+=	gpgme.17:${PORTSDIR}/security/gpgme \
+LIB_DEPENDS+=	gpgme.18:${PORTSDIR}/security/gpgme \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 .else
 CONFIGURE_ARGS+=	--with-encryption=no
