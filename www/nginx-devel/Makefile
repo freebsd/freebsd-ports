@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 NGINX_ACCESSKEY_MODULE_VERSION=	2.0.3
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:accesskey/}
 MASTER_SITE_SUBDIR+=	osa/:accesskey
-DISTFILES+=  	nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}.tar.gz:accesskey
+DISTFILES+=	nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}.tar.gz:accesskey
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}
 .endif
 
@@ -144,7 +144,7 @@ NGINX_FANCYINDEX_MODULE_VERSION=	0.1b5
 MASTER_SITES+=	http://furi-ku.org/nginx/fancyindex/:fancyindex
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
 MASTER_SITE_SUBDIR+=	osa/:fancyindex
-DISTFILES+=  	nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}.tar.bz2:fancyindex
+DISTFILES+=	nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}.tar.bz2:fancyindex
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}
 .endif
 
