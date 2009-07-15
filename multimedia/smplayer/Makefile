@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A complete front-end based on QT4 for mplayer
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
