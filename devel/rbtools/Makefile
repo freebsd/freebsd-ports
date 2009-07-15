@@ -1,0 +1,24 @@
+# New ports collection makefile for:	rbtools
+# Date created:				Jul 15 2009
+# Whom:					Florent Thoumie <flz@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	rbtools
+DISTVERSION=	0.2beta1
+CATEGORIES=	devel
+MASTER_SITES=	http://downloads.review-board.org/releases/
+DISTNAME=	RBTools-${DISTVERSION}
+
+MAINTAINER=	flz@FreeBSD.org
+COMMENT=	ReviewBoard Toolset
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=1.4:${PORTSDIR}/devel/py-simplejson
+
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	RBTools
+PYDISTUTILS_PKGVERSION=	${DISTVERSION}
+
+.include <bsd.port.mk>

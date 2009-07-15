@@ -2533,6 +2533,7 @@
     SUBDIR += ragel
     SUBDIR += raknet
     SUBDIR += rapidsvn
+    SUBDIR += rbtools
     SUBDIR += re2c
     SUBDIR += readline
     SUBDIR += regexx
