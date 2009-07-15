@@ -26,6 +26,7 @@ USE_DISPLAY=	yes
 PERL_CONFIGURE=	yes
 CC=		${CXX}
 CFLAGS+=	-pthread -Wno-write-strings
+MAKE_JOBS_UNSAFE=	yes
 
 .if defined(WITH_UNICODE)
 WX_UNICODE=	yes
