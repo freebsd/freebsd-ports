@@ -7,6 +7,7 @@
 
 PORTNAME=	Alien-wxWidgets
 PORTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,9 +21,13 @@ OPTIONS=	UNICODE "Build with Unicode support"    on
 
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
-PERL_MODBUILD=	YES
+PERL_MODBUILD=	5.6.0+
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500809
+BUILD_DEPENDS+=	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
 
 .if defined(WITH_UNICODE)
 WX_UNICODE=	yes
