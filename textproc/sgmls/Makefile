@@ -24,6 +24,9 @@ MAN1=		sgmls.1 sgmlsasp.1 rast.1
 PROGS=		sgmls sgmlsasp rast
 DOCS=		ChangeLog INSTALL LICENSE NEWS README TODO
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
+
 post-build:
 .for file in ${PROGS}
 	@${STRIP_CMD} ${WRKSRC}/${file}
@@ -34,8 +37,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@-${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
