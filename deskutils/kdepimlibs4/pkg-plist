@@ -366,13 +366,13 @@ lib/libakonadi-kmime.so.5
 lib/libakonadi-kmime.so.5.0.1
 %%WITH_PTH%%lib/libgpgme++-pth.so
 %%WITH_PTH%%lib/libgpgme++-pth.so.2
-%%WITH_PTH%%lib/libgpgme++-pth.so.2.0.2
+%%WITH_PTH%%lib/libgpgme++-pth.so.2.0.3
 lib/libgpgme++-pthread.so
 lib/libgpgme++-pthread.so.2
-lib/libgpgme++-pthread.so.2.0.2
+lib/libgpgme++-pthread.so.2.0.3
 lib/libgpgme++.so
 lib/libgpgme++.so.2
-lib/libgpgme++.so.2.0.2
+lib/libgpgme++.so.2.0.3
 lib/libkabc.so
 lib/libkabc.so.5
 lib/libkabc.so.5.0.1

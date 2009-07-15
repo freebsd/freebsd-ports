@@ -594,7 +594,7 @@ lib/libakregatorprivate.so
 lib/libgpgme++.a
 lib/libgpgme++.la
 lib/libgpgme++.so
-lib/libgpgme++.so.3
+lib/libgpgme++.so.4
 lib/libgwsoap.a
 lib/libgwsoap.la
 lib/libgwsoap.so

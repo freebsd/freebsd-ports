@@ -7,6 +7,7 @@
 
 PORTNAME=	ayttm
 PORTVERSION=	0.5.0.82
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
@@ -16,7 +17,7 @@ COMMENT=	A "chat" program that combines AIM, ICQ, and Yahoo! Chat into one
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		jasper.4:${PORTSDIR}/graphics/jasper \
-		gpgme.17:${PORTSDIR}/security/gpgme \
+		gpgme.18:${PORTSDIR}/security/gpgme \
 		pspell.16:${PORTSDIR}/textproc/aspell
 
 OPTIONS=	ARTS	"Enable aRts support"		off \
