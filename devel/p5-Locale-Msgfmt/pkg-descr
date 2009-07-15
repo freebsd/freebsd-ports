@@ -1,0 +1,4 @@
+This module does the same thing as msgfmt from GNU gettext-tools,
+except this is pure Perl.
+
+WWW: http://search.cpan.org/dist/Locale-Msgfmt/

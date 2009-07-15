@@ -1,0 +1,13 @@
+bin/msgfmt.pl
+%%SITE_PERL%%/Locale/Msgfmt/po.pm
+%%SITE_PERL%%/Locale/Msgfmt/Utils.pm
+%%SITE_PERL%%/Locale/Msgfmt/mo.pm
+%%SITE_PERL%%/Locale/Msgfmt.pm
+%%SITE_PERL%%/Module/Install/Msgfmt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Msgfmt/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Msgfmt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
+@dirrmtry %%SITE_PERL%%/Locale/Msgfmt
+@dirrmtry %%SITE_PERL%%/Locale
+@dirrmtry %%SITE_PERL%%/Module/Install
+@dirrmtry %%SITE_PERL%%/Module
