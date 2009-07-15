@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	1.78
+PORTVERSION=	1.79
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF \
 		http://www.scintilla.org/
@@ -30,7 +30,7 @@ SUB_FILES=	pkg-message
 MAN1=		scite.1
 
 .if defined(PACKAGE_BUILDING)
-IGNORE=		x11-toolkits/scintilla does not build with GTK+2 support by default
+IGNORE=		requires x11-toolkits/scintilla to be built with GTK+2 support
 .endif
 
 pre-configure:
