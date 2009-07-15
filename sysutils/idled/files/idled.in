@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/sysutils/idled/files/Attic/idled.in,v 1.1 2009-07-15 05:09:46 pgollucci Exp $
 #
 
 # PROVIDE: idled
