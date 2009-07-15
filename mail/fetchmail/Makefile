@@ -10,10 +10,11 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.9
+PORTVERSION=	6.3.10
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://homepages.uni-paderborn.de/mandree/fetchmail/:ma \
+		http://mandree.home.pages.de/fetchmail/:ma \
 		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
 MASTER_SITE_SUBDIR=	fetchmail/:DEFAULT \
 			system/mail/pop/fetchmail/:sunsite \
@@ -37,8 +38,6 @@ CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 		--with-hesiod=no --enable-fallback=no PYTHON=:
 # bsd.openssl.mk will add the LDFLAGS to CONFIGURE_ENV:
 LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 MAKE_ENV+=	${CONFIGURE_ENV}
 MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1
@@ -49,13 +48,14 @@ OPTIONS=	X11	"Python/Tkinter dependencies for fetchmailconf" off \
 		POP2	"Build pop2 support (obsolete)." off \
 		GSSAPI	"Build GSSAPI support (requires KRB5_HOME to be set)" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_X11)
 USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
+
+.include <bsd.port.pre.mk>
 
 # Pop2 is obsolete
 .if defined(WITH_POP2)
@@ -128,7 +128,7 @@ pre-configure:
 	@${ECHO_CMD} "Unable to detect Kerberos in your system. Disabling GSSAPI support."
 .endif
 .else
-	@${ECHO_CMD} "GSSAPI requires Kerberos which is not enabled in your current configuration."
+	@${ECHO_CMD} "GSSAPI requires Kerberos, but Kerberos is disabled."
 .endif
 .endif
 
