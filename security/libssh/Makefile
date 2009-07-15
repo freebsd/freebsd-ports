@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh.org/files/
 
