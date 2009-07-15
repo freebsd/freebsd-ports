@@ -6,28 +6,20 @@
 # REQUIRE: DAEMON
 #
 # Howl's mDNSResponder, a Zeroconf (Bonjour) service advertisement daemon.
-#
 
-mdnsresponder_enable=${mdnsresponder_enable-"NO"}
-mdnsresponder_flags=${mdnsresponder_flags-""}
+# Add the following lines to /etc/rc.conf to enable mdnsresponder:
+# mdnsresponder_enable="YES"
+# mdnsresponder_flags="<set as needed>"
 
 . %%RC_SUBR%%
 
 name=mdnsresponder
 rcvar=`set_rcvar`
 
-start_cmd=mdnsresponder_start
-stop_cmd=mdnsresponder_stop
-
-mdnsresponder_start() {
-    checkyesno mdnsresponder_enable && echo "Starting mDNSResponder." && \
-    	%%PREFIX%%/bin/mDNSResponder ${mdnsresponder_flags}
-}
-
-mdnsresponder_stop() {
-    checkyesno mdnsresponder_enable && echo "Stopping mDNSResponder." && \
-    	killall mDNSResponder
-}
+command=%%PREFIX%%/bin/mDNSResponder
 
 load_rc_config ${name}
+
+mdnsresponder_enable=${mdnsresponder_enable-"NO"}
+
 run_rc_command "$1"
