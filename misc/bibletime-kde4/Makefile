@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-kde4
@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	An opensource Bible study tool
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword15
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.0.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python \
 		clucene.0:${PORTSDIR}/textproc/clucene
