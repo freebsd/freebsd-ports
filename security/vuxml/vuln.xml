@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c444c8b7-7169-11de-9ab7-000c29a67389">
+    <topic>isc-dhcp-client -- Stack overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>isc-dhcp31-client</name>
+	<range><le>3.1.1</le></range>
+      </package>
+      <package>
+	<name>isc-dhcp30-client</name>
+	<range><le>3.0.7</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/410676">
+	  <p>The ISC DHCP dhclient application contains a stack buffer
+	    overflow, which may allow a remote, unauthenticated attacker to
+	    execute arbitrary code with root privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0692</cvename>
+      <url>https://www.isc.org/node/468</url>
+      <url>http://secunia.com/advisories/35785</url>
+      <url>http://www.kb.cert.org/vuls/id/410676</url>
+    </references>
+    <dates>
+      <discovery>2009-07-14</discovery>
+      <entry>2009-07-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be927298-6f97-11de-b444-001372fd0af2">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
