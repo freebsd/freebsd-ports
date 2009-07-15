@@ -1,0 +1,11 @@
+--- ./Makefile.orig	2009-06-28 14:24:15.000000000 +0900
++++ ./Makefile	2009-06-28 14:26:05.000000000 +0900
+@@ -0,0 +1,8 @@
++CFLAGS=-I${PREFIX}/include -L${PREFIX}/lib -lhid
++TARGET=amfm
++SRC=amfm.c
++
++all: ${TARGET}
++
++${TARGET}: ${SRC}
++	cc -o amfm ${CFLAGS} amfm.c
