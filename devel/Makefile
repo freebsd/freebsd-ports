@@ -1540,6 +1540,7 @@
     SUBDIR += p5-Locale-Maketext-Gettext
     SUBDIR += p5-Locale-Maketext-Lexicon
     SUBDIR += p5-Locale-Maketext-Simple
+    SUBDIR += p5-Locale-Msgfmt
     SUBDIR += p5-Locale-PGetText
     SUBDIR += p5-Locale-PO
     SUBDIR += p5-Locale-gettext
