@@ -8,6 +8,8 @@
 
 COMMENT=	The ISC Dynamic Host Configuration Protocol client
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/c444c8b7-7169-11de-9ab7-000c29a67389.html
+
 # Local variables
 #
 
