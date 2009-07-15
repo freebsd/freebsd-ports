@@ -9,15 +9,3 @@
        break;
  
      case 2:
-@@ -232,10 +234,8 @@
-       break;
-     }
- 
--    rak::address_info::free_address_info(ai);
--
-   } catch (torrent::local_error& e) {
--    rak::address_info::free_address_info(ai);
-+    //rak::address_info::free_address_info(ai);
- 
-     throw torrent::input_error(e.what());
-   }
