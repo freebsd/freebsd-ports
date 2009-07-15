@@ -4,15 +4,15 @@
 #
 # $FreeBSD$
 #
-# Currently, the following 61 languages are supported.
+# Currently, the following 74 languages are supported.
 #
-FIREFOX_I18N_ALL_=	af ar be bg bn-IN ca cs cy da de \
-			el en-GB eo es-AR es-ES et eu fi fr fy-NL \
-			ga-IE gl gu-IN he hi-IN hu id is it ja \
-			ka kn ko ku lt lv mk mn mr nb-NO \
-			nl nn-NO oc pa-IN pl pt-BR pt-PT ro ru si \
-			sk sl sq sr sv-SE te th tr uk zh-CN \
-			zh-TW
+FIREFOX_I18N_ALL_=	af ar as be bg bn-BD bn-IN ca cs cy da de el \
+			en-GB eo es-AR es-CL es-ES es-MX et eu fa fi \
+			fr fy-NL ga-IE gl gu-IN he hi-IN hr hu id is \
+			it ja ka kk kn ko ku lt lv mk ml mn mr nb-NO \
+			nl nn-NO oc or pa-IN pl pt-BR pt-PT rm ro ru \
+			si sk sl sq sr sv-SE ta-LK ta te th tr uk vi \
+			zh-CN zh-TW
 
 .if defined(FIREFOX_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 FIREFOX_I18N=   ${FIREFOX_I18N_ALL_}
@@ -23,11 +23,17 @@ FIREFOX_I18N+=  af
 .ifndef WITHOUT_LANG_AR
 FIREFOX_I18N+=  ar
 .endif
+.ifndef WITHOUT_LANG_AS
+FIREFOX_I18N+=  as
+.endif
 .ifndef WITHOUT_LANG_BE
 FIREFOX_I18N+=  be
 .endif
 .ifndef WITHOUT_LANG_BG
 FIREFOX_I18N+=  bg
+.endif
+.ifndef WITHOUT_LANG_BB
+FIREFOX_I18N+=  bn-BD
 .endif
 .ifndef WITHOUT_LANG_BN
 FIREFOX_I18N+=  bn-IN
@@ -59,14 +65,23 @@ FIREFOX_I18N+=  eo
 .ifndef WITHOUT_LANG_SA
 FIREFOX_I18N+=  es-AR
 .endif
+.ifndef WITHOUT_LANG_SC
+FIREFOX_I18N+=  es-CL
+.endif
 .ifndef WITHOUT_LANG_ES
 FIREFOX_I18N+=  es-ES
+.endif
+.ifndef WITHOUT_LANG_SM
+FIREFOX_I18N+=  es-MX
 .endif
 .ifndef WITHOUT_LANG_ET
 FIREFOX_I18N+=  et
 .endif
 .ifndef WITHOUT_LANG_EU
 FIREFOX_I18N+=  eu
+.endif
+.ifndef WITHOUT_LANG_FA
+FIREFOX_I18N+=  fa
 .endif
 .ifndef WITHOUT_LANG_FI
 FIREFOX_I18N+=  fi
@@ -92,6 +107,9 @@ FIREFOX_I18N+=  he
 .ifndef WITHOUT_LANG_HI
 FIREFOX_I18N+=  hi-IN
 .endif
+.ifndef WITHOUT_LANG_HR
+FIREFOX_I18N+=  hr
+.endif
 .ifndef WITHOUT_LANG_HU
 FIREFOX_I18N+=  hu
 .endif
@@ -109,6 +127,9 @@ FIREFOX_I18N+=  ja
 .endif
 .ifndef WITHOUT_LANG_KA
 FIREFOX_I18N+=  ka
+.endif
+.ifndef WITHOUT_LANG_KK
+FIREFOX_I18N+=  kk
 .endif
 .ifndef WITHOUT_LANG_KN
 FIREFOX_I18N+=  kn
@@ -128,6 +149,9 @@ FIREFOX_I18N+=  lv
 .ifndef WITHOUT_LANG_MK
 FIREFOX_I18N+=  mk
 .endif
+.ifndef WITHOUT_LANG_ML
+FIREFOX_I18N+=  ml
+.endif
 .ifndef WITHOUT_LANG_MN
 FIREFOX_I18N+=  mn
 .endif
@@ -146,6 +170,9 @@ FIREFOX_I18N+=  nn-NO
 .ifndef WITHOUT_LANG_OC
 FIREFOX_I18N+=  oc
 .endif
+.ifndef WITHOUT_LANG_OR
+FIREFOX_I18N+=  or
+.endif
 .ifndef WITHOUT_LANG_PA
 FIREFOX_I18N+=  pa-IN
 .endif
@@ -157,6 +184,9 @@ FIREFOX_I18N+=  pt-BR
 .endif
 .ifndef WITHOUT_LANG_PT
 FIREFOX_I18N+=  pt-PT
+.endif
+.ifndef WITHOUT_LANG_RM
+FIREFOX_I18N+=  rm
 .endif
 .ifndef WITHOUT_LANG_RO
 FIREFOX_I18N+=  ro
@@ -182,6 +212,12 @@ FIREFOX_I18N+=  sr
 .ifndef WITHOUT_LANG_SV
 FIREFOX_I18N+=  sv-SE
 .endif
+.ifndef WITHOUT_LANG_TL
+FIREFOX_I18N+=  tl
+.endif
+.ifndef WITHOUT_LANG_TA
+FIREFOX_I18N+=  ta
+.endif
 .ifndef WITHOUT_LANG_TE
 FIREFOX_I18N+=  te
 .endif
@@ -193,6 +229,9 @@ FIREFOX_I18N+=  tr
 .endif
 .ifndef WITHOUT_LANG_UK
 FIREFOX_I18N+=  uk
+.endif
+.ifndef WITHOUT_LANG_VI
+FIREFOX_I18N+=  vi
 .endif
 .ifndef WITHOUT_LANG_CN
 FIREFOX_I18N+=  zh-CN
