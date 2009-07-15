@@ -2,32 +2,32 @@ bin/vhier
 bin/vpassert
 bin/vppreproc
 bin/vrename
-%%SITE_PERL%%/mach/Verilog/EditFiles.pm
-%%SITE_PERL%%/mach/Verilog/Getopt.pm
-%%SITE_PERL%%/mach/Verilog/Language.pm
-%%SITE_PERL%%/mach/Verilog/Netlist.pm
-%%SITE_PERL%%/mach/Verilog/Netlist/Cell.pm
-%%SITE_PERL%%/mach/Verilog/Netlist/File.pm
-%%SITE_PERL%%/mach/Verilog/Netlist/Interface.pm
-%%SITE_PERL%%/mach/Verilog/Netlist/Logger.pm
-%%SITE_PERL%%/mach/Verilog/Netlist/Module.pm
-%%SITE_PERL%%/mach/Verilog/Netlist/Net.pm
-%%SITE_PERL%%/mach/Verilog/Netlist/Pin.pm
-%%SITE_PERL%%/mach/Verilog/Netlist/Port.pm
-%%SITE_PERL%%/mach/Verilog/Netlist/Subclass.pm
-%%SITE_PERL%%/mach/Verilog/Parser.pm
-%%SITE_PERL%%/mach/Verilog/Preproc.pm
-%%SITE_PERL%%/mach/Verilog/SigParser.pm
-%%SITE_PERL%%/mach/Verilog/Std.pm
-%%SITE_PERL%%/mach/Verilog/Verilog-Perl.pod
-%%SITE_PERL%%/mach/auto/Verilog/Language/.packlist
-%%SITE_PERL%%/mach/auto/Verilog/Parser/Parser.bs
-%%SITE_PERL%%/mach/auto/Verilog/Parser/Parser.so
-%%SITE_PERL%%/mach/auto/Verilog/Preproc/Preproc.bs
-%%SITE_PERL%%/mach/auto/Verilog/Preproc/Preproc.so
-@dirrm %%SITE_PERL%%/mach/auto/Verilog/Preproc
-@dirrm %%SITE_PERL%%/mach/auto/Verilog/Parser
-@dirrm %%SITE_PERL%%/mach/auto/Verilog/Language
-@dirrm %%SITE_PERL%%/mach/auto/Verilog
-@dirrm %%SITE_PERL%%/mach/Verilog/Netlist
-@dirrm %%SITE_PERL%%/mach/Verilog
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/EditFiles.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Getopt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Language.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist/Cell.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist/Interface.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist/Logger.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist/Module.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist/Net.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist/Pin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist/Port.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist/Subclass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Preproc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/SigParser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Std.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Verilog-Perl.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Language/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Parser/Parser.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Parser/Parser.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc/Preproc.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc/Preproc.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Parser
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Language
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Verilog
