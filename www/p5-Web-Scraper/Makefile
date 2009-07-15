@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Web-Scraper
-PORTVERSION=	0.28
+PORTVERSION=	0.30
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,6 +29,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar
 
 PERL_CONFIGURE=	5.8.1+
 
-MAN3=		Web::Scraper.3 Web::Scraper::Filter.3
+MAN3=		Web::Scraper.3 Web::Scraper::Filter.3 Web::Scraper::LibXML.3
 
 .include <bsd.port.mk>
