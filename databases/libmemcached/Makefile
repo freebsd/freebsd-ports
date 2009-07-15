@@ -17,6 +17,7 @@ COMMENT=	A C and C++ client library to the memcached server
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget pkgconfig
+CONFIGURE_ARGS=	--with-memcached=no
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
