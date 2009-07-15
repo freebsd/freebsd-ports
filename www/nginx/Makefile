@@ -23,6 +23,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_MODULE "Enable HTTP module" on \
 		HTTP_ACCESSKEY_MODULE "Enable http_accesskey module" off \
 		HTTP_ADDITION_MODULE "Enable http_addition module" off \
+		HTTP_CACHE_MODULE "Enable http_cache module" on \
 		HTTP_DAV_MODULE "Enable http_webdav module" off \
 		HTTP_EVAL_MODULE "Enable eval module" off \
 		HTTP_FANCYINDEX_MODULE "Enable http_fancyindex module" off \
@@ -123,6 +124,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_
 CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
+.if defined(WITHOUT_HTTP_CACHE_MODULE)
+CONFIGURE_ARGS+=--without-http-cache
+.endif
+
 .if defined(WITH_HTTP_DAV_MODULE)
 CONFIGURE_ARGS+=--with-http_dav_module
 .endif
@@ -139,7 +144,7 @@ NGINX_FANCYINDEX_MODULE_VERSION=	0.1b5
 MASTER_SITES+=	http://furi-ku.org/nginx/fancyindex/:fancyindex
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
 MASTER_SITE_SUBDIR+=	osa/:fancyindex
-DISTFILES+=  	nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}.tar.bz2:fancyindex
+DISTFILES+=	nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}.tar.bz2:fancyindex
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}
 .endif
 
