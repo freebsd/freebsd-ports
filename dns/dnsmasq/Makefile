@@ -7,6 +7,7 @@
 
 PORTNAME=	dnsmasq
 PORTVERSION=	2.49
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		${MASTER_SITE_GENTOO}
