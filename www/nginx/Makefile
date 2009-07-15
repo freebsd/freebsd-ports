@@ -17,41 +17,41 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
-OPTIONS=	DEBUG "Enable nginx debugging" off \
-		IPV6 "Enable IPv6" off \
-		GOOGLE_PERFTOOLS "Enable google perftools module" off \
-		HTTP_MODULE "Enable HTTP module" on \
-		HTTP_ACCESSKEY_MODULE "Enable http_accesskey module" off \
-		HTTP_ADDITION_MODULE "Enable http_addition module" off \
-		HTTP_CACHE_MODULE "Enable http_cache module" on \
-		HTTP_DAV_MODULE "Enable http_webdav module" off \
-		HTTP_EVAL_MODULE "Enable eval module" off \
-		HTTP_FANCYINDEX_MODULE "Enable http_fancyindex module" off \
-		HTTP_FLV_MODULE "Enable http_flv module" off \
+OPTIONS=	DEBUG			"Enable nginx debugging" off \
+		IPV6			"Enable IPv6" off \
+		GOOGLE_PERFTOOLS	"Enable google perftools module" off \
+		HTTP_MODULE		"Enable HTTP module" on \
+		HTTP_ADDITION_MODULE	"Enable http_addition module" off \
+		HTTP_CACHE_MODULE	"Enable http_cache module" on \
+		HTTP_DAV_MODULE		"Enable http_webdav module" off \
+		HTTP_FLV_MODULE		"Enable http_flv module" off \
 		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
-		HTTP_MOGILEFS_MODULE "Enable mogilefs module" off \
-		HTTP_PERL_MODULE "Enable http_perl module" off \
+		HTTP_PERL_MODULE	"Enable http_perl module" off \
 		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
-		HTTP_REALIP_MODULE "Enable http_realip module" off \
-		HTTP_RESPONSE_MODULE "Enable http_response module" off \
-		HTTP_REWRITE_MODULE "Enable http_rewrite module" on \
+		HTTP_REALIP_MODULE	"Enable http_realip module" off \
+		HTTP_REWRITE_MODULE	"Enable http_rewrite module" on \
 		HTTP_SECURE_LINK_MODULE "Enable http_secure_link module" off \
-		HTTP_SSL_MODULE "Enable http_ssl module" off \
-		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
-		HTTP_SUB_MODULE "Enable http_sub module" off \
-		HTTP_UPLOAD_MODULE "Enable upload module" off \
-		HTTP_UPLOAD_PROGRESS "Enable upload_progress module" off \
-		HTTP_UPSTREAM_FAIR "Enable upstream fair module" off \
-		HTTP_UPSTREAM_KEEPALIVE "Enable upstream keepalive module" off \
-		HTTP_XSLT_MODULE "Enable http_xslt module" off \
-		HTTP_ZIP_MODULE "Enable http_zip module" off \
-		MAIL_MODULE "Enable IMAP4/POP3/SMTP proxy module" off \
-		MAIL_IMAP_MODULE "Enable IMAP4 proxy module" off \
-		MAIL_POP3_MODULE "Enable POP3 proxy module" off \
-		MAIL_SMTP_MODULE "Enable SMTP proxy module" off \
-		MAIL_SSL_MODULE "Enable mail_ssl module" off \
-		PASSENGER_MODULE "Enable passenger module" off \
-		WWW "Enable html sample files" on
+		HTTP_SSL_MODULE		"Enable http_ssl module" off \
+		HTTP_STATUS_MODULE	"Enable http_stub_status module" on \
+		HTTP_SUB_MODULE		"Enable http_sub module" off \
+		HTTP_XSLT_MODULE	"Enable http_xslt module" off \
+		MAIL_MODULE		"Enable IMAP4/POP3/SMTP proxy module" off \
+		MAIL_IMAP_MODULE	"Enable IMAP4 proxy module" off \
+		MAIL_POP3_MODULE	"Enable POP3 proxy module" off \
+		MAIL_SMTP_MODULE	"Enable SMTP proxy module" off \
+		MAIL_SSL_MODULE		"Enable mail_ssl module" off \
+		WWW			"Enable html sample files" on \
+		HTTP_ACCESSKEY_MODULE	"3rd party http_accesskey module" off \
+		HTTP_EVAL_MODULE	"3rd party eval module" off \
+		HTTP_FANCYINDEX_MODULE	"3rd party http_fancyindex module" off \
+		HTTP_MOGILEFS_MODULE	"3rd party mogilefs module" off \
+		HTTP_RESPONSE_MODULE	"3rd party http_response module" off \
+		HTTP_UPLOAD_MODULE	"3rd party upload module" off \
+		HTTP_UPLOAD_PROGRESS	"3rd party upload_progress module" off \
+		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
+		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
+		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
+		PASSENGER_MODULE	"3rd party passenger module" off
 
 WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
