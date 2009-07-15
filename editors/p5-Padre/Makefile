@@ -78,10 +78,10 @@ MAKE_JOBS_UNSAFE=	yes
 .if exists(${PERL})
 PERL_THREADS!=	${PERL} -V::usethreads
 .if ${PERL_THREADS}!="'define';"
-#IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
+IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
 .endif
 .else
-#IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
+IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
 .endif
 
 .if ${PERL_LEVEL} >= 501000
