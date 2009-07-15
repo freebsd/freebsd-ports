@@ -18,16 +18,13 @@ ALL_TARGET=	${PORTNAME}
 MAN1=	etunnel.1
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-	's|CC=gcc|CC?=gcc|g ; \
-	s|PREFIX=|PREFIX?=|g ; \
-	s|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|CC=gcc|CC?=gcc|g' -e 's|/usr/local|${PREFIX}|g' -e 's|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
 
