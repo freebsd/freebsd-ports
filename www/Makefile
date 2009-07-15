@@ -609,7 +609,6 @@
     SUBDIR += p5-Apache-Filter
     SUBDIR += p5-Apache-Gallery
     SUBDIR += p5-Apache-GopherHandler
-    SUBDIR += p5-Apache-Htpasswd
     SUBDIR += p5-Apache-Icon
     SUBDIR += p5-Apache-Language
     SUBDIR += p5-Apache-MP3
