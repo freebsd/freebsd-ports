@@ -1,0 +1,13 @@
+%%SITE_PERL%%/PPIx/EditorTools/FindUnmatchedBrace.pm
+%%SITE_PERL%%/PPIx/EditorTools/IntroduceTemporaryVariable.pm
+%%SITE_PERL%%/PPIx/EditorTools/RenamePackage.pm
+%%SITE_PERL%%/PPIx/EditorTools/ReturnObject.pm
+%%SITE_PERL%%/PPIx/EditorTools/RenamePackageFromPath.pm
+%%SITE_PERL%%/PPIx/EditorTools/RenameVariable.pm
+%%SITE_PERL%%/PPIx/EditorTools/FindVariableDeclaration.pm
+%%SITE_PERL%%/PPIx/EditorTools.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx/EditorTools/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx/EditorTools
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx
+@dirrmtry %%SITE_PERL%%/PPIx/EditorTools
+@dirrmtry %%SITE_PERL%%/PPIx
