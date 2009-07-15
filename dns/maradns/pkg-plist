@@ -4,12 +4,10 @@ bin/duende
 bin/getzone
 bin/fetchzone
 etc/mararc.sample
-etc/rc.d/maradns.sh
-etc/rc.d/zoneserver.sh
-etc/maradns/example_csv2
-@exec mkdir -p %D/etc/maradns/logger
-@dirrmtry etc/maradns/logger
-@dirrmtry etc/maradns
+%%ETCDIR%%/example_csv2
+@exec mkdir -p %D/%%ETCDIR%%/logger
+@dirrmtry %%ETCDIR%%/logger
+@dirrmtry %%ETCDIR%%
 sbin/maradns
 sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/QuickStart
@@ -153,16 +151,16 @@ sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/update.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/win_service.html
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/example_authoritative_mararc.txt
-%%EXAMPLESDIR%%/example_csv1
-%%EXAMPLESDIR%%/example_csv1.txt
-%%EXAMPLESDIR%%/example_csv2
-%%EXAMPLESDIR%%/example_full_mararc
-%%EXAMPLESDIR%%/example_full_mararc.orig
-%%EXAMPLESDIR%%/example_mararc
-%%EXAMPLESDIR%%/example_recursive_mararc.txt
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_authoritative_mararc.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_csv1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_csv1.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_csv2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_full_mararc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_full_mararc.orig
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_mararc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_recursive_mararc.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/advocacy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/compression
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/csv2-1.4-ideas

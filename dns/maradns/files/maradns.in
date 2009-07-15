@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: maradns
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+
+. %%RC_SUBR%%
+
+name="maradns"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/duende"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config $name
+
+maradns_enable=${maradns_enable-"NO"}
+
+run_rc_command "$1"
