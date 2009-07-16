@@ -1,0 +1,58 @@
+--- Hash/MD5.py.orig	2009-06-19 12:46:41.000000000 +0100
++++ Hash/MD5.py	2009-06-19 12:50:24.000000000 +0100
+@@ -3,11 +3,20 @@
+ 
+ __revision__ = "$Id: MD5.py,v 1.4 2002/07/11 14:31:19 akuchling Exp $"
+ 
+-from md5 import *
++__all__ = ['new', 'digest_size']
+ 
+-import md5
+-if hasattr(md5, 'digestsize'):
+-    digest_size = digestsize
+-    del digestsize
+-del md5
+ 
++try:
++    # The md5 module is deprecated in Python 2.6, so use hashlib when possible.
++    import hashlib
++    def new(data=""):
++        return hashlib.md5(data)
++    digest_size = new().digest_size
++
++except ImportError:
++    from md5 import *
++    import md5
++    if hasattr(md5, 'digestsize'):
++        digest_size = digestsize
++        del digestsize
++    del md5
+--- Hash/SHA.py.orig	2009-06-19 12:46:52.000000000 +0100
++++ Hash/SHA.py	2009-06-19 12:49:49.000000000 +0100
+@@ -3,9 +3,20 @@
+ 
+ __revision__ = "$Id: SHA.py,v 1.4 2002/07/11 14:31:19 akuchling Exp $"
+ 
+-from sha import *
+-import sha
+-if hasattr(sha, 'digestsize'):
+-    digest_size = digestsize
+-    del digestsize
+-del sha
++__all__ = ['new', 'digest_size']
++
++
++try:
++    # The md5 module is deprecated in Python 2.6, so use hashlib when possible.
++    import hashlib
++    def new(data=""):
++        return hashlib.sha1(data)
++    digest_size = new().digest_size
++
++except ImportError:
++    from sha import *
++    import sha
++    if hasattr(sha, 'digestsize'):
++        digest_size = digestsize
++        del digestsize
++    del sha
