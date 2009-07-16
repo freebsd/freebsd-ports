@@ -41,7 +41,7 @@ QT_COMPONENTS=	assistant corelib dbus designer gui network opengl  \
 		porting_build uic3_build
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_BlueZ:BOOL=OFF \
