@@ -1,0 +1,93 @@
+include/SFML/Audio.hpp
+include/SFML/Audio/AudioResource.hpp
+include/SFML/Audio/Listener.hpp
+include/SFML/Audio/Music.hpp
+include/SFML/Audio/Sound.hpp
+include/SFML/Audio/SoundBuffer.hpp
+include/SFML/Audio/SoundBufferRecorder.hpp
+include/SFML/Audio/SoundRecorder.hpp
+include/SFML/Audio/SoundStream.hpp
+include/SFML/Config.hpp
+include/SFML/Graphics.hpp
+include/SFML/Graphics/Color.hpp
+include/SFML/Graphics/Drawable.hpp
+include/SFML/Graphics/Font.hpp
+include/SFML/Graphics/Glyph.hpp
+include/SFML/Graphics/Image.hpp
+include/SFML/Graphics/Matrix3.hpp
+include/SFML/Graphics/Matrix3.inl
+include/SFML/Graphics/PostFX.hpp
+include/SFML/Graphics/Rect.hpp
+include/SFML/Graphics/Rect.inl
+include/SFML/Graphics/RenderTarget.hpp
+include/SFML/Graphics/RenderWindow.hpp
+include/SFML/Graphics/Shape.hpp
+include/SFML/Graphics/Sprite.hpp
+include/SFML/Graphics/String.hpp
+include/SFML/Graphics/View.hpp
+include/SFML/Network.hpp
+include/SFML/Network/Ftp.hpp
+include/SFML/Network/Http.hpp
+include/SFML/Network/IPAddress.hpp
+include/SFML/Network/Packet.hpp
+include/SFML/Network/Selector.hpp
+include/SFML/Network/Selector.inl
+include/SFML/Network/SelectorBase.hpp
+include/SFML/Network/SocketHelper.hpp
+include/SFML/Network/SocketTCP.hpp
+include/SFML/Network/SocketUDP.hpp
+include/SFML/Network/Sockets.hpp
+include/SFML/Network/Unix/SocketHelper.hpp
+include/SFML/Network/Win32/SocketHelper.hpp
+include/SFML/System.hpp
+include/SFML/System/Clock.hpp
+include/SFML/System/Lock.hpp
+include/SFML/System/Mutex.hpp
+include/SFML/System/NonCopyable.hpp
+include/SFML/System/Randomizer.hpp
+include/SFML/System/Resource.hpp
+include/SFML/System/Resource.inl
+include/SFML/System/ResourcePtr.inl
+include/SFML/System/Sleep.hpp
+include/SFML/System/Thread.hpp
+include/SFML/System/Unicode.hpp
+include/SFML/System/Unicode.inl
+include/SFML/System/Unix/Mutex.hpp
+include/SFML/System/Unix/Thread.hpp
+include/SFML/System/Vector2.hpp
+include/SFML/System/Vector2.inl
+include/SFML/System/Vector3.hpp
+include/SFML/System/Vector3.inl
+include/SFML/System/Win32/Mutex.hpp
+include/SFML/System/Win32/Thread.hpp
+include/SFML/Window.hpp
+include/SFML/Window/Context.hpp
+include/SFML/Window/Event.hpp
+include/SFML/Window/Input.hpp
+include/SFML/Window/OpenGL.hpp
+include/SFML/Window/VideoMode.hpp
+include/SFML/Window/Window.hpp
+include/SFML/Window/WindowHandle.hpp
+include/SFML/Window/WindowListener.hpp
+include/SFML/Window/WindowSettings.hpp
+include/SFML/Window/WindowStyle.hpp
+lib/libsfml-audio.so
+lib/libsfml-audio.so.1.5
+lib/libsfml-graphics.so
+lib/libsfml-graphics.so.1.5
+lib/libsfml-network.so
+lib/libsfml-network.so.1.5
+lib/libsfml-system.so
+lib/libsfml-system.so.1.5
+lib/libsfml-window.so
+lib/libsfml-window.so.1.5
+@dirrm include/SFML/Window
+@dirrm include/SFML/System/Win32
+@dirrm include/SFML/System/Unix
+@dirrm include/SFML/System
+@dirrm include/SFML/Network/Win32
+@dirrm include/SFML/Network/Unix
+@dirrm include/SFML/Network
+@dirrm include/SFML/Graphics
+@dirrm include/SFML/Audio
+@dirrm include/SFML
