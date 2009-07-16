@@ -21,6 +21,7 @@
 %%XPI_XPIDIR%%/chrome/content/Common/Util.js
 %%XPI_XPIDIR%%/chrome/content/Common/nsDragAndDrop.js
 %%XPI_XPIDIR%%/chrome/content/Common/nsTransferable.js
+%%XPI_XPIDIR%%/chrome/content/Common/pImageLoader.js
 %%XPI_XPIDIR%%/chrome/content/Definition/CollectionManager.js
 %%XPI_XPIDIR%%/chrome/content/Definition/Geometry.js
 %%XPI_XPIDIR%%/chrome/content/Definition/ShapeDef.js
@@ -43,7 +44,6 @@
 %%XPI_XPIDIR%%/chrome/content/Icons/24.png
 %%XPI_XPIDIR%%/chrome/content/Icons/32.png
 %%XPI_XPIDIR%%/chrome/content/Icons/48.png
-%%XPI_XPIDIR%%/chrome/content/Pencil.kpf
 %%XPI_XPIDIR%%/chrome/content/PropertyType/Alignment.js
 %%XPI_XPIDIR%%/chrome/content/PropertyType/Bool.js
 %%XPI_XPIDIR%%/chrome/content/PropertyType/Bound.js
@@ -86,6 +86,7 @@
 %%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/rectangle-grad.png
 %%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/rectangle.png
 %%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/rich-text.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/triangle.png
 %%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Definition.xml
 %%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/button.png
 %%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/callout1.png
@@ -184,6 +185,7 @@
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/document-open-menu.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/document-save-menu.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/edit-clear-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/edit-copy-menu.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/format-indent-less-menu.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/format-indent-more-menu.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/format-text-bold-menu.png
@@ -221,6 +223,8 @@
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/color-wheel-70.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/color-wheel-90.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/down.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/make-same-horizontal-space.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/make-same-vertical-space.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/pencil-icon.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/rasterize.png
 %%XPI_XPIDIR%%/chrome/content/UI/Icons/select.png
@@ -241,7 +245,6 @@
 %%XPI_XPIDIR%%/chrome/content/UI/Window.xul
 %%XPI_XPIDIR%%/chrome/content/UI/blank.html
 %%XPI_XPIDIR%%/chrome/content/UI/editor-blank.html
-%%XPI_XPIDIR%%/chrome/content/XHTML.html
 %%XPI_XPIDIR%%/chrome/content/XferHelper/DragObservers.js
 %%XPI_XPIDIR%%/chrome/content/XferHelper/PNGImageXferHelper.js
 %%XPI_XPIDIR%%/chrome/content/XferHelper/RichTextXferHelper.js
