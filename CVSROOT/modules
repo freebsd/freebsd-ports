@@ -445,6 +445,7 @@ amavisd-milter                  ports/security/amavisd-milter
 amavisd-new                     ports/security/amavisd-new
 amb-plugins                     ports/audio/amb-plugins
 amberfish                       ports/textproc/amberfish
+amfm                            ports/misc/amfm
 amiwm                           ports/x11-wm/amiwm
 amoebax                         ports/games/amoebax
 amp                             ports/audio/amp
@@ -3303,13 +3304,13 @@ firedns                         ports/dns/firedns
 fireflies                       ports/x11/fireflies
 firefly                         ports/audio/firefly
 firefox                         ports/www/firefox
-firefox-devel                   ports/www/firefox-devel
 firefox-i18n                    ports/www/firefox-i18n
 firefox-remote                  ports/www/firefox-remote
 firefox3                        ports/www/firefox3
 firefox3-devel                  ports/www/firefox3-devel
 firefox3-i18n                   ports/www/firefox3-i18n
 firefox35                       ports/www/firefox35
+firefox35-i18n                  ports/www/firefox35-i18n
 firemime                        ports/mail/firemime
 firepay                         ports/mail/firepay
 fireprofile                     ports/databases/fireprofile
@@ -11518,6 +11519,7 @@ p5-HTML-Strip                   ports/www/p5-HTML-Strip
 p5-HTML-StripScripts            ports/www/p5-HTML-StripScripts
 p5-HTML-StripScripts-Parser     ports/www/p5-HTML-StripScripts-Parser
 p5-HTML-Summary                 ports/www/p5-HTML-Summary
+p5-HTML-SuperForm               ports/textproc/p5-HTML-SuperForm
 p5-HTML-Table                   ports/www/p5-HTML-Table
 p5-HTML-TableExtract            ports/www/p5-HTML-TableExtract
 p5-HTML-TableLayout             ports/www/p5-HTML-TableLayout
@@ -11822,6 +11824,7 @@ p5-Locale-Maketext-Gettext      ports/devel/p5-Locale-Maketext-Gettext
 p5-Locale-Maketext-Lexicon      ports/devel/p5-Locale-Maketext-Lexicon
 p5-Locale-Maketext-Simple       ports/devel/p5-Locale-Maketext-Simple
 p5-Locale-Msgcat                ports/misc/p5-Locale-Msgcat
+p5-Locale-Msgfmt                ports/devel/p5-Locale-Msgfmt
 p5-Locale-PGetText              ports/devel/p5-Locale-PGetText
 p5-Locale-PO                    ports/devel/p5-Locale-PO
 p5-Locale-SubCountry            ports/misc/p5-Locale-SubCountry
@@ -12467,6 +12470,7 @@ p5-POSIX-strptime               ports/devel/p5-POSIX-strptime
 p5-PPI                          ports/textproc/p5-PPI
 p5-PPI-HTML                     ports/textproc/p5-PPI-HTML
 p5-PPI-XS                       ports/textproc/p5-PPI-XS
+p5-PPIx-EditorTools             ports/textproc/p5-PPIx-EditorTools
 p5-PPerl                        ports/devel/p5-PPerl
 p5-PV                           ports/devel/p5-PV
 p5-Package-Constants            ports/devel/p5-Package-Constants
@@ -12899,6 +12903,7 @@ p5-Template-Plugin-Clickable    ports/www/p5-Template-Plugin-Clickable
 p5-Template-Plugin-Clickable-Email  ports/www/p5-Template-Plugin-Clickable-Email
 p5-Template-Plugin-Comma        ports/www/p5-Template-Plugin-Comma
 p5-Template-Plugin-FillInForm   ports/www/p5-Template-Plugin-FillInForm
+p5-Template-Plugin-HTML-SuperForm  ports/textproc/p5-Template-Plugin-HTML-SuperForm
 p5-Template-Plugin-JSON         ports/www/p5-Template-Plugin-JSON
 p5-Template-Plugin-JavaScript   ports/www/p5-Template-Plugin-JavaScript
 p5-Template-Plugin-Lingua-EN-Inflect  ports/textproc/p5-Template-Plugin-Lingua-EN-Inflect
@@ -15023,6 +15028,7 @@ p5-html-strip                   ports/www/p5-HTML-Strip
 p5-html-stripscripts            ports/www/p5-HTML-StripScripts
 p5-html-stripscripts-parser     ports/www/p5-HTML-StripScripts-Parser
 p5-html-summary                 ports/www/p5-HTML-Summary
+p5-html-superform               ports/textproc/p5-HTML-SuperForm
 p5-html-table                   ports/www/p5-HTML-Table
 p5-html-tableextract            ports/www/p5-HTML-TableExtract
 p5-html-tablelayout             ports/www/p5-HTML-TableLayout
@@ -15317,6 +15323,7 @@ p5-locale-maketext-gettext      ports/devel/p5-Locale-Maketext-Gettext
 p5-locale-maketext-lexicon      ports/devel/p5-Locale-Maketext-Lexicon
 p5-locale-maketext-simple       ports/devel/p5-Locale-Maketext-Simple
 p5-locale-msgcat                ports/misc/p5-Locale-Msgcat
+p5-locale-msgfmt                ports/devel/p5-Locale-Msgfmt
 p5-locale-pgettext              ports/devel/p5-Locale-PGetText
 p5-locale-po                    ports/devel/p5-Locale-PO
 p5-locale-subcountry            ports/misc/p5-Locale-SubCountry
@@ -16083,6 +16090,7 @@ p5-pperl                        ports/devel/p5-PPerl
 p5-ppi                          ports/textproc/p5-PPI
 p5-ppi-html                     ports/textproc/p5-PPI-HTML
 p5-ppi-xs                       ports/textproc/p5-PPI-XS
+p5-ppix-editortools             ports/textproc/p5-PPIx-EditorTools
 p5-prefork                      ports/devel/p5-prefork
 p5-prima                        ports/x11-toolkits/p5-Prima
 p5-probe-perl                   ports/sysutils/p5-Probe-Perl
@@ -16429,6 +16437,7 @@ p5-template-plugin-clickable    ports/www/p5-Template-Plugin-Clickable
 p5-template-plugin-clickable-email  ports/www/p5-Template-Plugin-Clickable-Email
 p5-template-plugin-comma        ports/www/p5-Template-Plugin-Comma
 p5-template-plugin-fillinform   ports/www/p5-Template-Plugin-FillInForm
+p5-template-plugin-html-superform  ports/textproc/p5-Template-Plugin-HTML-SuperForm
 p5-template-plugin-javascript   ports/www/p5-Template-Plugin-JavaScript
 p5-template-plugin-json         ports/www/p5-Template-Plugin-JSON
 p5-template-plugin-lingua-en-inflect  ports/textproc/p5-Template-Plugin-Lingua-EN-Inflect
@@ -20588,6 +20597,7 @@ rubygem-facets                  ports/devel/rubygem-facets
 rubygem-fastercsv               ports/devel/rubygem-fastercsv
 rubygem-fastthread              ports/devel/rubygem-fastthread
 rubygem-fattr                   ports/devel/rubygem-fattr
+rubygem-feed-normalizer         ports/www/rubygem-feed-normalizer
 rubygem-ferret                  ports/textproc/rubygem-ferret
 rubygem-formosa                 ports/textproc/rubygem-formosa
 rubygem-gd2                     ports/graphics/rubygem-gd2
