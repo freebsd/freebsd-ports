@@ -1183,6 +1183,7 @@
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-ParseBinary
+    SUBDIR += p5-Data-Path
     SUBDIR += p5-Data-Postponed
     SUBDIR += p5-Data-Properties
     SUBDIR += p5-Data-Random
