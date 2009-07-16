@@ -32,6 +32,7 @@
     SUBDIR += aqsis
     SUBDIR += asciio
     SUBDIR += autopano-sift
+    SUBDIR += autopano-sift-c
     SUBDIR += autoq3d
     SUBDIR += autotrace
     SUBDIR += aview

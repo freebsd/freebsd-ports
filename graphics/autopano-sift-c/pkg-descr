@@ -1,0 +1,7 @@
+This is autopano-sift-2.4 ported to plain "C"
+The source is kept as close as possible to the original version.
+
+It should have the same inputs and outputs as the original "C#" version
+which is available in ports as graphics/autopano-sift
+
+WWW: http://hugin.sourceforge.net/docs/manual/Autopano-sift-C.html
