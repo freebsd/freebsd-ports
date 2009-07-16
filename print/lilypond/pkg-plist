@@ -270,8 +270,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/scm/framework-scm.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/framework-socket.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/framework-svg.scm
-%%DATADIR%%/%%PORTVERSION%%/scm/framework-tex.scm
-%%DATADIR%%/%%PORTVERSION%%/scm/framework-texstr.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/fret-diagrams.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/graphviz.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/harp-pedals.scm
@@ -291,8 +289,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/scm/output-ps.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/output-socket.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/output-svg.scm
-%%DATADIR%%/%%PORTVERSION%%/scm/output-tex.scm
-%%DATADIR%%/%%PORTVERSION%%/scm/output-texstr.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/page.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/paper-system.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/paper.scm
@@ -311,13 +307,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/scm/to-xml.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/translation-functions.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/x11-color.scm
-%%DATADIR%%/%%PORTVERSION%%/tex/lily-ps-defs.tex
 %%DATADIR%%/%%PORTVERSION%%/tex/lilypond-tex-metrics.tex
-%%DATADIR%%/%%PORTVERSION%%/tex/lilyponddefs.tex
-%%DATADIR%%/%%PORTVERSION%%/tex/txi-de.tex
-%%DATADIR%%/%%PORTVERSION%%/tex/txi-en.tex
-%%DATADIR%%/%%PORTVERSION%%/tex/txi-es.tex
-%%DATADIR%%/%%PORTVERSION%%/tex/txi-fr.tex
 %%DATADIR%%/%%PORTVERSION%%/vim/compiler/lilypond.vim
 %%DATADIR%%/%%PORTVERSION%%/vim/ftdetect/lilypond.vim
 %%DATADIR%%/%%PORTVERSION%%/vim/ftplugin/lilypond.vim
