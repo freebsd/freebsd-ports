@@ -26,6 +26,8 @@ do-install:
 	@cd ${WRKDIR} && tar cf - xml2rfc | \
 		tar -C ${PREFIX}/lib/${XXE_DIR}/addon -xf -
 
-.include "${.CURDIR}/../xxe/Makefile.inc"
+BROKEN=	does not compile
+
+#.include "${.CURDIR}/../xxe/Makefile.inc"
 
 .include <bsd.port.mk>
