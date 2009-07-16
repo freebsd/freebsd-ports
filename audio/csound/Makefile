@@ -18,7 +18,7 @@ DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	csound
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Sound synthesizer
 
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \

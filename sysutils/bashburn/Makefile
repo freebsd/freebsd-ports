@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	BashBurn-${PORTVERSION}
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	CD burning bash script
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
