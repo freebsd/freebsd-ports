@@ -12,7 +12,7 @@ CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A comprehensive desktop publishing program
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

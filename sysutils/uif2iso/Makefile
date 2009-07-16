@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/distfiles/ \
 		http://www.rwxrwxrwx.net/distfiles/
 
-MAINTAINER=	carpetsmoker@rwxrwxrwx.net
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Convert MagicISO UIF files to ISO9660
 
 PLIST_FILES=	bin/uif2iso

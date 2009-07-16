@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Ncurses CD burning bash script
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
