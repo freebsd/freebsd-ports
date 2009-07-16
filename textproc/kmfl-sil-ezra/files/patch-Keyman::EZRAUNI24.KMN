@@ -1,0 +1,14 @@
+--- Keyman/EZRAUNI24.KMN.orig	2009-07-01 09:56:34.000000000 +0200
++++ Keyman/EZRAUNI24.KMN	2009-07-01 09:56:08.000000000 +0200
+@@ -63,9 +63,10 @@
+ 
+ 
+ NAME "Ezra SIL Unicode 2.4"
+-BITMAP HebDispy      c 8/21/02
++BITMAP HEBDISPY.bmp      c 8/21/02
+ c HOTKEY "^+M"
+ VERSION 6.0         c 7/9/02 
++store(&language) "Biblical Hebrew"
+ 
+ begin UNICODE > use(Main)  
+ 
