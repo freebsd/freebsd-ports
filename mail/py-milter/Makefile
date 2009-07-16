@@ -21,7 +21,7 @@ LIB_DEPENDS=	milter.2:${PORTSDIR}/mail/sendmail
 .endif
 
 DIST_SUBDIR=	python
-USE_PYTHON=	2.4
+USE_PYTHON=	2.4-2.9
 USE_PYDISTUTILS=yes
 
 .include <bsd.port.mk>
