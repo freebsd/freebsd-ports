@@ -6,24 +6,16 @@
 #
 
 PORTNAME=	sp
-PORTVERSION=	0.9.29
-CATEGORIES=	math python
-MASTER_SITES=	http://mirrors.geoexpat.com/cran/src/contrib/ \
-		http://cran.rakanu.com/src/contrib/ \
-		http://cran.cnr.berkeley.edu/src/contrib/
-PKGNAMEPREFIX=	R-
-DISTNAME=	${PORTNAME}_0.9-29
+PORTVERSION=	0.9.37
+CATEGORIES=	math
+PKGNAMEPREFIX=	R-cran-
+DISTNAME=	${PORTNAME}_0.9-37
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	R Classes and Methods for Spatial Data
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
-RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
+R_MOD=  yes
 
-NO_BUILD=	yes
-R_INS=		R CMD INSTALL
-
-do-install:
-		@cd ${WRKDIR} && ${R_INS} ${PORTNAME}
+.include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 
 .include <bsd.port.mk>
