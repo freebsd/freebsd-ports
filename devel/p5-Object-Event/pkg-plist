@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Object/Event.pm
+%%SITE_PERL%%/mach/auto/Object/Event/.packlist
+@dirrmtry %%SITE_PERL%%/Object/Event
+@dirrmtry %%SITE_PERL%%/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Event
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
