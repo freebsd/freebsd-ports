@@ -166,6 +166,7 @@
     SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += du2ps
+    SUBDIR += duff
     SUBDIR += dump9660
     SUBDIR += dupfind
     SUBDIR += duplicity
