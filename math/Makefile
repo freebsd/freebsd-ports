@@ -13,7 +13,6 @@
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-sm
     SUBDIR += R-cran-sp
-    SUBDIR += R-sp
     SUBDIR += aamath
     SUBDIR += abakus
     SUBDIR += abs
