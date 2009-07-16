@@ -1,0 +1,11 @@
+This is a keyboard for input of the complex Biblical Hebrew (including
+cantillation marks) with Unicode fonts. It is written in Keyman keyboard
+language and developed by SIL Non-Roman Script Initiative (NRSI).
+
+This port installs the keyboard so that it can be used through SCIM KMFL
+IMEngine (textproc/scim-kmfl-imengine).
+
+The keyboard is provided under the terms of MIT/X11 License.
+
+WWW: http://scripts.sil.org/SILHebrUnic2
+     http://scripts.sil.org/SILHebrUni_Documentation
