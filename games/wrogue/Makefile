@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	todoom
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	steinex@nognu.de
 COMMENT=	A gothic science fantasy roguelike game
 
 USE_BZIP2=	yes

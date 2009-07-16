@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	avanor
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	steinex@nognu.de
 COMMENT=	Rogue-like game with easy ADOM-like user interface
 
 USE_BZIP2=	yes
