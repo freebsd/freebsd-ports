@@ -1,0 +1,21 @@
+This keyboard is designed to enable simple input of most Latin script
+languages, including all major European Latin-script languages. The
+keyboard is written in KMN Keyboard Language by the KMN language
+developer, Tavultesoft (http://www.tavultesoft.com). The keyboard
+uses punctuation and letter keys in sequence to access diacritic and
+other letters.
+
+This port installs the keyboard so that it can be used through SCIM
+KMFL IMEngine (textproc/scim-kmfl-imengine).
+
+Some of the supported languages include: Afrikaans, Albanian,
+Balearic, Basque, Breton, Catalan, Croatian, Czech, Danish, Dutch,
+Esperanto, Estonian, Faroese, Finnish, French, Gaelic, Galician,
+German, Hungarian, Icelandic, Inuktitut, Italian, Kashubian, Ladin,
+Latvian, Lithuanian, Maltese, Norwegian, Nynorsk, Polish, Portugese,
+Romansch, Saami, Serbian, Slovak, Slovenian, Sorbian, Spanish,
+Swedish, Tagalog, Turkish, Valencian, Vlaams, Walloon, Welsh and Zulu.
+
+The keyboard is distributed under the terms of 3-clause BSD-licence.
+
+WWW: http://eurolatin.keymankeyboards.com/
