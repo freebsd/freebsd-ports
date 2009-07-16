@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Hyperlatex
-DISTVERSION=	2.8b
-PORTREVISION=	1
+DISTVERSION=	2.9a
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=hyperlatex
@@ -15,7 +14,6 @@ MASTER_SITE_SUBDIR=hyperlatex
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce HTML and printed documents from LaTeX source
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.8
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
