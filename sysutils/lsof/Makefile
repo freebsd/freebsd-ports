@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.82
+PORTVERSION=	4.83A
 PORTEPOCH=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.SpringDaemons.com/stas/ \
@@ -31,7 +31,7 @@ MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
 
 #Please leave the below line in for the next clean up.
-#FIXUP_RELEASE=	YES
+FIXUP_RELEASE=	YES
 .if defined(FIXUP_RELEASE)
 DISTNAME=	${PORTNAME}_${PORTVERSION}.freebsd
 .else
