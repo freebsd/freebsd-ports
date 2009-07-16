@@ -12,7 +12,7 @@ MASTER_SITES=	http://crimson.seul.org/files/ \
 		http://www.carpetsmoker.net/distfiles/ \
 		http://www.xs4all.nl/~tournoij/distfiles/
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	steinex@nognu.de
 COMMENT=	Tactical war game in the tradition of Battle Isle
 
 GNU_CONFIGURE=	yes
