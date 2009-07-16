@@ -1,0 +1,25 @@
+--- ./intl/Makefile.in.orig	2009-07-02 04:46:40.000000000 +0200
++++ ./intl/Makefile.in	2009-07-15 16:36:29.000000000 +0200
+@@ -43,6 +43,22 @@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ mkinstalldirs = $(SHELL) $(MKINSTALLDIRS)
+ 
++@SET_MAKE@
++
++@ifGNUmake@ V =
++@ifGNUmake@ ifeq ($(strip $(V)),)
++@ifGNUmake@ #  E = @echo
++@ifGNUmake@ #  Q = @
++@ifGNUmake@    E = @E@
++@ifGNUmake@    Q = @Q@
++@ifGNUmake@ else
++@ifGNUmake@    E = @\#
++@ifGNUmake@    Q =
++@ifGNUmake@ endif
++
++@ifNotGNUmake@ E = @E@
++@ifNotGNUmake@ Q = @Q@
++
+ l = @INTL_LIBTOOL_SUFFIX_PREFIX@
+ 
+ AR = ar

@@ -9,3 +9,12 @@
  stdlib.h string.h unistd.h sys/param.h
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+@@ -16592,7 +16592,7 @@
+ 	lib/e2p/e2p.pc lib/blkid/blkid.pc lib/ext2fs/ext2fs.pc \
+ 	misc/Makefile ext2ed/Makefile e2fsck/Makefile \
+ 	debugfs/Makefile tests/Makefile tests/progs/Makefile \
+-	resize/Makefile doc/Makefile intl/Makefile po/Makefile.in ; do
++	resize/Makefile doc/Makefile intl/Makefile intl/libgnuintl.h po/Makefile.in ; do
+ 	if test -d `dirname ${srcdir}/$i` ; then
+ 		outlist="$outlist $i"
+ 	fi

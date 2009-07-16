@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--enable-elf-shlibs
 WITHOUT_NLS=	yes
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 MAKE_ARGS=	LIB_SUBDIRS=lib/blkid
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	libs
 INSTALL_TARGET=	install install-shlibs
@@ -32,7 +33,7 @@ pre-build:
 	${MKDIR} ${WRKSRC}/lib/blkid/elfshared
 
 post-build:
-	cd ${WRKSRC}/lib/uuid && ${MAKE}
-	cd ${INSTALL_WRKSRC} && ${MAKE} check
+	cd ${WRKSRC}/lib/uuid && ${GMAKE}
+	cd ${INSTALL_WRKSRC} && ${GMAKE} check
 
 .include "${MASTERDIR}/Makefile"
