@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	2.3.5
-PORTREVISION=	3
+PORTVERSION=	2.3.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.3/
 
@@ -51,8 +50,6 @@ ADDITIONAL_DOCS=README.aliases README.exim README.ldap \
 		README.smtp README.solaris README.usermap
 PORTDOCS=	${MAIN_DOCS} ${ADDITIONAL_DOCS}
 SUB_FILES=	pkg-message
-
-PLIST_SUB+=	PORTNAME=${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
