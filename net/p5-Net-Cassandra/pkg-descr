@@ -1,0 +1,6 @@
+This module provides an interface the to Cassandra distributed
+database. It uses the Thrift interface. This is changing rapidly and
+supports the development version of Cassandra built from Subversion
+trunk.
+
+WWW:	http://search.cpan.org/dist/Net-Cassandra/

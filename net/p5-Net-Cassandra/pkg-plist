@@ -1,0 +1,20 @@
+%%SITE_PERL%%/Net/Cassandra.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Cassandra.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Constants.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Thrift.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Thrift/BinaryProtocol.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Thrift/BufferedTransport.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Thrift/FramedTransport.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Thrift/HttpClient.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Thrift/MemoryBuffer.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Thrift/Protocol.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Thrift/Socket.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Thrift/Transport.pm
+%%SITE_PERL%%/Net/Cassandra/Backend/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Cassandra/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Cassandra
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Cassandra/Backend/Thrift
+@dirrmtry %%SITE_PERL%%/Net/Cassandra/Backend
+@dirrmtry %%SITE_PERL%%/Net/Cassandra
+@dirrmtry %%SITE_PERL%%/Net
