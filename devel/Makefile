@@ -2712,6 +2712,7 @@
     SUBDIR += sedsed
     SUBDIR += semantic
     SUBDIR += sfio
+    SUBDIR += sfml
     SUBDIR += sfslite
     SUBDIR += sfslite-dbg
     SUBDIR += sfslite-noopt

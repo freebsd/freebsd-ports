@@ -1,0 +1,19 @@
+--- src/SFML/Audio/Makefile.orig	2009-05-28 19:57:04.000000000 +0400
++++ src/SFML/Audio/Makefile	2009-07-07 19:51:57.000000000 +0400
+@@ -19,13 +19,13 @@
+ 	$(AR) $(ARFLAGS) $(LIBNAME) $(OBJ) $(OBJVORBIS)
+ 
+ libsfml-audio.so: $(OBJ) $(OBJVORBIS)
+-	$(CPP) $(LDFLAGS) -Wl,-soname,$(LIB).$(VERSION) -o $(LIBNAME) $(OBJ) $(OBJVORBIS) -lsndfile -lopenal
++	$(CXX) $(LDFLAGS) -Wl,-soname,$(LIB).$(VERSION) -o $(LIBNAME) $(OBJ) $(OBJVORBIS) -lsndfile -lopenal
+ 
+ $(OBJ): %.o: %.cpp
+-	$(CPP) -o $@ -c $< $(CFLAGS)
++	$(CXX) -o $@ -c $< $(CXXFLAGS)
+ 
+ $(OBJVORBIS): %.o: %.c
+-	$(CC) -o $@ -c $< $(CFLAGSEXT)
++	$(CC) -o $@ -c $< $(CFLAGS)
+ 
+ .PHONY: clean mrproper
+ 
