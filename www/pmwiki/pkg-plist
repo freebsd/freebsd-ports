@@ -159,6 +159,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Security
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SecurityVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SimultaneousEdits
+%%PMWIKIDIR%%/wikilib.d/PmWiki.SitePageActions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SitePreferences
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SkinTemplates
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Skins
