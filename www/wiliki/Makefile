@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wiliki
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	www scheme
 MASTER_SITES=	SF
 DISTNAME=	WiLiKi-${PORTVERSION}
@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/gauche/${GAUCHE_VER}/lib/dbm/gdbm.scm:${PORTSDIR
 
 GNU_CONFIGURE=	yes
 VARDIR=		/var/wiliki
+MAKE_JOBS_UNSAFE=	yes
+USE_GETTEXT=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -39,6 +41,9 @@ post-patch:
 		-e 's,/home/shiro/data/wikidata.dbm,/var/wiliki/data.dbm,' \
 		-e 's,wiliki2?\.css,/&,' \
 		-e "s/:language 'jp/:language 'en/" ${WRKSRC}/src/*.cgi
+
+post-build:
+	cd ${WRKSRC}/po && ${MAKE} ja.gmo
 
 post-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin
