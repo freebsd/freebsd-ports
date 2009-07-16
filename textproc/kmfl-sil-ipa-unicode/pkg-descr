@@ -4,11 +4,7 @@ language. The keyboard is developed by SIL Non-Roman Script Initiative
 (NRSI). This port installs the keyboard so that it can be used through
 SCIM KMFL IMEngine (textproc/scim-kmfl-imengine).
                          
-This open source keyboard is provided under SIL's Freeware licence
-(http://www.sil.org/computing/catalog/freeware.html) which makes it
-free for personal use only and non-distributable. Besides,
-                              
-  <quot>If you plan to redistribute your modified keyboard you must
-  rename it.</quot>
+This keyboard is provided under SIL International X11-style License
+(http://scripts.sil.org/X11License).
 	                          
 WWW: http://scripts.sil.org/UniIPAKeyboard#dee994f5

@@ -5,25 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	scim-kmfl-sil-ipa-unicode5
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_112_Src\&filename=/:1 \
-		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_112.pdf\&filename=/:2
-DISTFILES=	IPAUni_Src11.zip:1 \
-   		IPA+Unicode+5.0c_ver+1.1.2_KMN.pdf:2
+MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12_Src\&filename=/:1 \
+		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12.pdf\&filename=/:2
+DISTFILES=	IPAUni_Src12.zip:1 \
+   		IPA+Unicode+5.1_ver+1.2_KMN.pdf:2
 DIST_SUBDIR=	kmfl
-EXTRACT_ONLY=	IPAUni_Src11.zip
+EXTRACT_ONLY=	IPAUni_Src12.zip
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
-COMMENT=	IPA Unicode 5 mnemonic keyboard for KMFL IMEngine of SCIM
+COMMENT=	IPA Unicode 5.1 mnemonic keyboard for KMFL IMEngine of SCIM
 
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp \
  		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/kmfl.so:${PORTSDIR}/textproc/scim-kmfl-imengine
 
-RESTRICTED=	SIL's Freeware License (a) doesn't allow distribution, (b) makes keyboard free for personal use only, (c) doesn't allow distribution of modified keyboard sources under the same name.
-
-WRKSRC=		${WRKDIR}/IPA112
+WRKSRC=		${WRKDIR}/IPA12
+USE_DOS2UNIX=	IPAUni12.kmn
 NO_BUILD=	yes
 USE_ZIP=	yes
 
@@ -35,9 +33,9 @@ SCIM_KMFL_ICONS_DIR=	share/scim/kmfl/icons
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 DOCSLIST=	${WRKSRC}/welcome.htm \
-		${DISTDIR}/${DIST_SUBDIR}/IPA+Unicode+5.0c_ver+1.1.2_KMN.pdf
-PLIST_FILES=	${SCIM_KMFL_DIR}/IPAUni11.kmn \
-		${SCIM_KMFL_ICONS_DIR}/IPA93.bmp \
+		${DISTDIR}/${DIST_SUBDIR}/IPA+Unicode+5.1_ver+1.2_KMN.pdf
+PLIST_FILES=	${SCIM_KMFL_DIR}/IPAUni12.kmn \
+		${SCIM_KMFL_ICONS_DIR}/ipa.bmp \
 		${SCIM_KMFL_ICONS_DIR}/sil.bmp
 
 do-install:
