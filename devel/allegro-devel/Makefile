@@ -46,6 +46,8 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 DEMO=		demo.c demo.dat demo.h music.txt ../readme.txt
 SHLIB_VER=	43
 
+PORTSCOUT=	limit:^4\.3\.[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_AL)
