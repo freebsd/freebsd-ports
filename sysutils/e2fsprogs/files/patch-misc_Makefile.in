@@ -1,5 +1,5 @@
---- a/misc/Makefile.in.orig	2009-04-22 14:59:33.000000000 +0200
-+++ b/misc/Makefile.in	2009-04-24 09:47:25.000000000 +0200
+--- a/misc/Makefile.in.orig	2009-07-11 21:25:17.000000000 +0200
++++ b/misc/Makefile.in	2009-07-15 15:56:29.000000000 +0200
 @@ -25,14 +25,14 @@
  
  SPROGS=		mke2fs badblocks tune2fs dumpe2fs $(BLKID_PROG) logsave \
@@ -12,18 +12,18 @@
 +			logsave.8 e2undo.8 @FSCK_MAN@
  FMANPAGES=	mke2fs.conf.5
  
--UPROGS=		chattr lsattr uuidgen
--UMANPAGES=	chattr.1 lsattr.1 uuidgen.1
+-UPROGS=		chattr lsattr @UUID_CMT@ uuidgen
+-UMANPAGES=	chattr.1 lsattr.1 @UUID_CMT@ uuidgen.1
 +UPROGS=		chattr lsattr
 +UMANPAGES=	chattr.1 lsattr.1
  
  LPROGS=		@E2INITRD_PROG@
  
-@@ -456,35 +456,10 @@
+@@ -457,34 +457,9 @@
  		echo "	INSTALL_DATA $(man5dir)/$$i"; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
  	done
--	@if test -f $(DESTDIR)$(root_sysconfdir)/mke2fs.conf; then \
+-	$(Q) if test -f $(DESTDIR)$(root_sysconfdir)/mke2fs.conf; then \
 -		if cmp -s $(DESTDIR)$(root_sysconfdir)/mke2fs.conf \
 -			$(srcdir)/mke2fs.conf; then \
 -			true; \
@@ -48,14 +48,11 @@
 -		fi; \
 -	else \
 -		echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
--		$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
++	$(Q) echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
+ 		$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
 -			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf; \
 -	fi
--
-+	echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
-+  	$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
-+		$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.dist
-+ 
++			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.dist
+ 
  install-strip: install
- 	@for i in $(SPROGS); do \
- 		echo "	STRIP $(root_sbindir)/$$i"; \
+ 	$(Q) for i in $(SPROGS); do \

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	misc devel
 PKGNAMESUFFIX=	-libuuid
 
@@ -18,6 +18,7 @@ CONFIGURE_ARGS=	--enable-elf-shlibs
 WITHOUT_NLS=	yes
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 MAKE_ARGS=	LIB_SUBDIRS=lib/uuid
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	libs
 INSTALL_TARGET=	install install-shlibs
@@ -47,8 +48,8 @@ pre-build:
 # failure to launch uuidd is fine (one might be running, or we may lack
 # privileges); if it works, it'll quit after 50 seconds
 post-build:
-	cd ${WRKSRC}/misc && ${MAKE} uuidgen uuidgen.1 uuidd uuidd.8
-	( ulimit -t 5 ; cd ${INSTALL_WRKSRC} && { ../../misc/uuidd -T50 || true ; ${MAKE} check ; } )
+	cd ${WRKSRC}/misc && ${GMAKE} uuidgen uuidgen.1 uuidd uuidd.8
+	cd ${INSTALL_WRKSRC} && ( ulimit -t 5 && ${GMAKE} check )
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/misc/uuidgen ${PREFIX}/bin/
