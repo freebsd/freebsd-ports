@@ -61,7 +61,7 @@ post-patch:
 # switch to new directory name not complete
 	(cd ${WRKSRC} && ${LN} -sf common mysql-gui-common)
 # UTF-8 input file
-	(${TR} -d "\357\273\277" < \
+	(LC_CTYPE=C ${TR} -d "\357\273\277" < \
 	    ${WRKSRC}/common/library/base-library/source/myx_database_model.c > \
 	    ${WRKSRC}/common/library/base-library/source/myx_database_model.c.new && \
 	    ${MV} ${WRKSRC}/common/library/base-library/source/myx_database_model.c.new \

@@ -1,0 +1,45 @@
+--- query-browser/source/linux/MQResultSetView.cc~	2007-04-27 14:46:09.000000000 +0200
++++ query-browser/source/linux/MQResultSetView.cc	2009-01-04 20:59:03.000000000 +0100
+@@ -474,7 +474,29 @@
+                                 PIXCACHE->load("field_overlay_view.png"),
+                                 PIXCACHE->load("field_overlay_null.png"));
+         rend->set_blob_icon(PIXCACHE->load("blob_icon.png"));
+-        rend->set_max_text_width(prefs.max_blob_length);
++        if (prefs.max_blob_length == 0)
++        {
++          unsigned int w = 1;
++          
++          if (result->columns[i].column_type == MYX_RSCT_TEXT)
++            for (unsigned int j = 0; j < result->rows_num; j++)
++            {
++              gchar *gcp;
++              gssize nbytes = result->rows[j].fields[i].value_length;
++
++              if ((gcp = g_utf8_strchr(result->rows[j].fields[i].value,
++                                       nbytes, g_utf8_get_char("\n"))) != NULL)
++                nbytes = gcp - result->rows[j].fields[i].value;
++              glong this_len = g_utf8_strlen(result->rows[j].fields[i].value, nbytes);
++              if (this_len > w)
++                w = this_len;
++            }
++          rend->set_max_text_width(w);
++        }
++        else
++        {
++          rend->set_max_text_width(prefs.max_blob_length);
++        }
+         rend->property_column()= i;
+         rend->set_delegate(this);
+ 
+--- query-browser/res/linux/qb_preferences.glade~	2006-05-16 03:04:19.000000000 +0200
++++ query-browser/res/linux/qb_preferences.glade	2009-01-02 19:14:04.000000000 +0100
+@@ -116,7 +116,8 @@
+ 	<widget class="GtkLabel" id="label35">
+ 	  <property name="visible">True</property>
+ 	  <property name="label" translatable="yes">&lt;small&gt;BLOB/text columns in resultsets will be truncated
+-to this size for display.&lt;/small&gt;</property>
++to this size for display.  Value 0 means automatic
++column width (i.e., width of largest value).&lt;/small&gt;</property>
+ 	  <property name="use_underline">False</property>
+ 	  <property name="use_markup">True</property>
+ 	  <property name="justify">GTK_JUSTIFY_LEFT</property>
