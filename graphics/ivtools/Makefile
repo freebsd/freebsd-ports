@@ -18,11 +18,12 @@ COMMENT=	Drawing editors derived from idraw
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_ARGS=	--with-tiff=${PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-USE_LDCONFIG=	yes
 MAKE_ARGS=	ARCH=FREEBSD
 USE_XORG=	x11 xaw ice xext
 
@@ -34,4 +35,9 @@ MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 .if ${ARCH} == "amd64"
 BROKEN=		incomplete pkg-plist
 .endif
+
+.if ${OSVERSION} <= 604100
+USE_GCC=	4.2+
+.endif
+
 .include <bsd.port.post.mk>
