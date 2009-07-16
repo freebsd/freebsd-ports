@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	zenmap
-DISTVERSION=	4.90RC1
+PORTVERSION=	5.00
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
+		http://nmap.ucsd.edu/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
 		http://www.mirrorservice.org/sites/ftp.wiretapped.net/pub/security/network-mapping/nmap/ \
 		http://mirror.sg.depaul.edu/pub/security/nmap/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	nmap-${DISTVERSION}
+DISTNAME=	nmap-${PORTVERSION}
 
 MAINTAINER=	daniel@roe.ch
 COMMENT=	GUI frontend for the nmap scanning utility
