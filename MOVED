@@ -4118,4 +4118,4 @@ deskutils/plasma-applet-quicklauncher||2009-07-10|Not supported anymore; functio
 databases/phpminadmin|databases/adminer|2009-07-14|Project was renamed
 net-mgmt/net-snmp53||2009-07-13|Has expired: Use net-mgmt/net-snmp
 www/firefox-devel||2009-07-13|Please use www/firefox3 or www/firefox35
-
+R-sp|R-cran-sp|2009-07-17|Port was renamed
