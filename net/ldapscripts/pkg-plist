@@ -26,6 +26,7 @@ sbin/ldaprenamemachine
 sbin/ldaprenamegroup
 sbin/ldapsetpasswd
 sbin/ldapfinger
+sbin/ldapgid
 sbin/ldapid
 sbin/ldapmodifygroup
 sbin/ldapmodifymachine

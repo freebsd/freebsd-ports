@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ldapscripts
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://contribs.martymac.com/ldapscripts/
@@ -40,7 +39,7 @@ MAN1=	ldapaddgroup.1 ldapaddmachine.1 ldapadduser.1 ldapaddusertogroup.1 \
 	ldapdeletegroup.1 ldapdeleteuser.1 ldapdeleteuserfromgroup.1 \
 	ldaprenameuser.1 ldapsetprimarygroup.1 lsldap.1 ldaprenamemachine.1 \
 	ldaprenamegroup.1 ldapinit.1 ldapdeletemachine.1 ldapsetpasswd.1 \
-	ldapfinger.1 ldapid.1 ldapmodifygroup.1 ldapmodifymachine.1 \
+	ldapfinger.1 ldapgid.1 ldapid.1 ldapmodifygroup.1 ldapmodifymachine.1 \
 	ldapmodifyuser.1
 MAN5=	ldapscripts.5
 
