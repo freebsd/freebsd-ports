@@ -1527,6 +1527,7 @@
     SUBDIR += trac-xmlrpc
     SUBDIR += transmission-web
     SUBDIR += transproxy
+    SUBDIR += ttf2eot
     SUBDIR += twhttpd
     SUBDIR += twig
     SUBDIR += twiki
