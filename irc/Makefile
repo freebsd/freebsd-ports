@@ -143,5 +143,6 @@
     SUBDIR += xchat1
     SUBDIR += zircon
     SUBDIR += znc
+    SUBDIR += znc-extra
 
 .include <bsd.port.subdir.mk>

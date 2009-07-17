@@ -1,0 +1,61 @@
+lib/znc/adminlog.so
+lib/znc/antiidle.so
+lib/znc/autoreply.so
+lib/znc/autovoice.so
+lib/znc/blockuser.so
+lib/znc/buffextras.so
+lib/znc/connect_throttle.so
+lib/znc/ctcpflood.so
+lib/znc/discon_kick.so
+lib/znc/fakeonline.so
+lib/znc/fixfreenode.so
+lib/znc/lastseen.so
+lib/znc/listsockets.so
+lib/znc/log.so
+lib/znc/motdfile.so
+lib/znc/notify_connect.so
+lib/znc/route_replies.so
+lib/znc/send_raw.so
+share/znc/webadmin/skins/default.de/Footer.tmpl
+share/znc/webadmin/skins/default.de/Header.tmpl
+share/znc/webadmin/skins/default.de/ListUsers.tmpl
+share/znc/webadmin/skins/default.de/Channel.tmpl
+share/znc/webadmin/skins/default.de/Settings.tmpl
+share/znc/webadmin/skins/default.de/UserPage.tmpl
+share/znc/webadmin/skins/default.de/Main.tmpl
+share/znc/webadmin/skins/default.de/Error.tmpl
+share/znc/webadmin/skins/default.de/img/favicon.ico
+share/znc/webadmin/skins/default.de/css/main.css
+share/znc/webadmin/skins/graphiX.de/css/main.css
+share/znc/webadmin/skins/graphiX.de/img/favicon.ico
+share/znc/webadmin/skins/graphiX.de/img/graphix_bg.jpg
+share/znc/webadmin/skins/graphiX.de/img/graphix_header.jpg
+share/znc/webadmin/skins/graphiX.de/Footer.tmpl
+share/znc/webadmin/skins/graphiX.de/Header.tmpl
+share/znc/webadmin/skins/graphiX.de/ListUsers.tmpl
+share/znc/webadmin/skins/graphiX.de/Channel.tmpl
+share/znc/webadmin/skins/graphiX.de/Settings.tmpl
+share/znc/webadmin/skins/graphiX.de/UserPage.tmpl
+share/znc/webadmin/skins/graphiX.de/Main.tmpl
+share/znc/webadmin/skins/graphiX.de/Error.tmpl
+share/znc/webadmin/skins/ice.de/css/main.css
+share/znc/webadmin/skins/ice.de/img/favicon.ico
+share/znc/webadmin/skins/ice.de/img/linkbg.jpg
+share/znc/webadmin/skins/ice.de/img/pagebg.gif
+share/znc/webadmin/skins/ice.de/Footer.tmpl
+share/znc/webadmin/skins/ice.de/Header.tmpl
+share/znc/webadmin/skins/ice.de/ListUsers.tmpl
+share/znc/webadmin/skins/ice.de/Channel.tmpl
+share/znc/webadmin/skins/ice.de/Settings.tmpl
+share/znc/webadmin/skins/ice.de/UserPage.tmpl
+share/znc/webadmin/skins/ice.de/Main.tmpl
+share/znc/webadmin/skins/ice.de/Error.tmpl
+@dirrmtry share/znc/webadmin/skins/default.de/css
+@dirrmtry share/znc/webadmin/skins/default.de/img
+@dirrmtry share/znc/webadmin/skins/default.de
+@dirrmtry share/znc/webadmin/skins/graphiX.de/css
+@dirrmtry share/znc/webadmin/skins/graphiX.de/img
+@dirrmtry share/znc/webadmin/skins/graphiX.de
+@dirrmtry share/znc/webadmin/skins/ice.de/css
+@dirrmtry share/znc/webadmin/skins/ice.de/img
+@dirrmtry share/znc/webadmin/skins/ice.de
