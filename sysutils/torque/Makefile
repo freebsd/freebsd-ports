@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	torque
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.7
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.clusterresources.com/downloads/torque/
 
