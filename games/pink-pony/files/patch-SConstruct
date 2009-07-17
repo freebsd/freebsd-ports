@@ -1,0 +1,13 @@
+--- SConstruct.orig	2009-06-22 12:58:28.000000000 +0400
++++ SConstruct	2009-07-09 23:42:45.000000000 +0400
+@@ -1,8 +1,7 @@
+ import os
+ 
+-env = Environment()
+-env['CC'] = 'g++'
+-env['CCFLAGS'] = '-Wall -Wextra -Wno-unused-parameter -O0 -ggdb -msse3 -I/usr/include/OpenEXR -I./lib -I./external/tinyXML'
++env = Environment(ENV=os.environ, **dict((k, v.split()) for k, v in ARGUMENTS.iteritems()))
++env.Append(CCFLAGS = '-Wall -Wextra -Wno-unused-parameter -I./lib -I./external/tinyXML'.split())
+ env['LIBS'] = ['GLU', 'GL', 'protobuf', 'IL', 'ILUT', 'audiere']
+ env.ParseConfig("pkg-config IlmBase --cflags --libs")
+ env.ParseConfig("pkg-config libglfw --cflags --libs")
