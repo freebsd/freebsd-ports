@@ -13,8 +13,11 @@ MASTER_SITE_SUBDIR=	net-snmp
 PKGNAMEPREFIX=	p5-
 DISTNAME=	ucd-snmp-${PORTVERSION}
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl5 module for interfacing with the CMU SNMP library
+
+DEPRECATED=	Perl SNMP module is now a part of net-mgmt/net-snmp
+EXPIRATION_DATE=	2009-08-15
 
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 
