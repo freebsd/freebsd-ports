@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2009.05.30
-PORTREVISION=	1
+PORTVERSION=	2009.06.29
 CATEGORIES=	www
 MASTER_SITES=	http://bitbucket.org/rg3/youtube-dl/raw/${PORTVERSION}/
 DISTNAME=	youtube-dl
