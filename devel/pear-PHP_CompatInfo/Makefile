@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/File/Find.php:${PORTSDIR}/sysutils/pear-File_Find \
 		${PEARDIR}/Event/Dispatcher.php:${PORTSDIR}/devel/pear-Event_Dispatcher
 
-PORTSCOUT=	skipv:1.9.0a1,1.9.0b1
+PORTSCOUT=	skipv:1.9.0a1,1.9.0b1,1.9.0b2
 USE_PHP=	tokenizer
 USE_DOS2UNIX=	yes
 
