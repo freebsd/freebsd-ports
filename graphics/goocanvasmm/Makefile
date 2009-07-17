@@ -6,7 +6,7 @@
 #   $MCom: ports/graphics/goocanvasmm/Makefile,v 1.2 2009/01/09 11:30:01 kwm Exp $
 
 PORTNAME=	goocanvasmm
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
