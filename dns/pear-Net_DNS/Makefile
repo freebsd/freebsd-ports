@@ -15,7 +15,7 @@ COMMENT=	Resolver library used to communicate with a DNS server
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PORTSCOUT=	skipv:1.2.0b1,1.00b2,1.00b1
+PORTSCOUT=	skipv:1.00b2,1.00b1
 USE_PHP=	mhash
 CATEGORY=	Net
 FILES=		DNS/RR/A.php DNS/RR/AAAA.php DNS/RR/CNAME.php DNS/RR/HINFO.php \
