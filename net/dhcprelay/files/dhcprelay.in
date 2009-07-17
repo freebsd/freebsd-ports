@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/dhcprelay/files/Attic/dhcprelay.sh.in,v 1.3 2006-03-21 02:48:21 edwin Exp $
+# $FreeBSD$
 #
 # PROVIDE: dhcprelay
 # REQUIRE: DAEMON
