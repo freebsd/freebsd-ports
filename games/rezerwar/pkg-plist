@@ -1,0 +1,30 @@
+bin/rezerwar
+%%DATADIR%%/gfx/a_chimneys/chimneys_01.bmp
+%%DATADIR%%/gfx/a_sky/sky.bmp
+%%DATADIR%%/gfx/gameback.bmp
+%%DATADIR%%/gfx/gamemenu.bmp
+%%DATADIR%%/gfx/splash/tdc.bmp
+%%DATADIR%%/gfx/sprites.bmp
+%%DATADIR%%/levels/tuto_01.lvl
+%%DATADIR%%/levels/tuto_02.lvl
+%%DATADIR%%/levels/tuto_03.lvl
+%%DATADIR%%/levels/tuto_04.lvl
+%%DATADIR%%/levels/tuto_05.lvl
+%%DATADIR%%/levels/tuto_06.lvl
+%%DATADIR%%/music/level1.mp3
+%%DATADIR%%/music/menu.mp3
+%%DATADIR%%/sfx/boom.ogg.wav
+%%DATADIR%%/sfx/horn.ogg.wav
+%%DATADIR%%/sfx/lazer.ogg.wav
+%%DATADIR%%/sfx/menunav.ogg.wav
+%%DATADIR%%/sfx/menuselect.ogg.wav
+%%DATADIR%%/sfx/tack1.ogg.wav
+%%DATADIR%%/sfx/tick1.ogg.wav
+@dirrm %%DATADIR%%/sfx
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/gfx/splash
+@dirrm %%DATADIR%%/gfx/a_sky
+@dirrm %%DATADIR%%/gfx/a_chimneys
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%
