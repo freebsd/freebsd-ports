@@ -7,6 +7,7 @@
 
 PORTNAME=	ctorrent
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.rahul.net/dholmes/ctorrent/
 DISTNAME=	${PORTNAME}-dnh${PORTVERSION}
@@ -21,12 +22,13 @@ PLIST_FILES=	bin/ctorrent
 
 PORTDOCS=	README-DNH.TXT UserGuide
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}/
 .endfor
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
