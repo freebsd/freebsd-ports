@@ -88,6 +88,7 @@
     SUBDIR += tclgeomap
     SUBDIR += tkgeomap
     SUBDIR += viking
+    SUBDIR += wcslib
     SUBDIR += weatherget
     SUBDIR += weatherspect
     SUBDIR += wmglobe
