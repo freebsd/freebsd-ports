@@ -630,6 +630,7 @@
     SUBDIR += phpua-ut2003
     SUBDIR += pinball
     SUBDIR += pingus
+    SUBDIR += pink-pony
     SUBDIR += pioneers
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
