@@ -26,18 +26,13 @@ HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 WRKMAN=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/man
 
-# Although the package may not install the fortran binaries, it requires the
-# fortran compiler
-USE_FORTRAN=	yes
-FFLAGS=		-fdefault-integer-8 -fno-range-check
-
 OPTIONS=	CTESTS "Install C tests" On
 OPTIONS+=	FTESTS "Install Fortran tests" On
 OPTIONS+=	DEBUG  "Add debug information (increased verbosity)" Off
 
 .include <bsd.port.pre.mk>
 
-HAS_HWMPC!=     ${SYSCTL} kern.hwpmc >/dev/null 2>&1 && echo yes || true
+HAS_HWMPC!=	${SYSCTL} kern.hwpmc >/dev/null 2>&1 && echo yes || true
 
 .if ${HAS_HWMPC} != "yes"
 IGNORE=		needs hwmpc module loaded or compiled into the kernel. \
@@ -48,12 +43,16 @@ IGNORE=		needs hwmpc module loaded or compiled into the kernel. \
 PLIST_SUB+=	CTESTS="@comment "
 .else
 PLIST_SUB+=	CTESTS=""
+CONFIGURE_ARGS+=	--with-tests=ctests
 .endif
 
 .if defined(WITHOUT_FTESTS)
 PLIST_SUB+=	FTESTS="@comment "
 .else
 PLIST_SUB+=	FTESTS=""
+USE_FORTRAN=	yes
+CONFIGURE_ARGS+=	--with-tests="ctests ftests"
+FFLAGS=		-fdefault-integer-8 -fno-range-check
 .endif
 
 .if defined(WITHOUT_DEBUG)
