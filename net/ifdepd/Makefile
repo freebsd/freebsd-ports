@@ -5,6 +5,7 @@
 
 PORTNAME=	ifdepd
 PORTVERSION=	20050420
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://alex.bmg.gv.at/programs/
 
@@ -13,15 +14,9 @@ COMMENT=	Interface Dependancy daemon
 
 MAN8=		ifdepd.8
 
-PLIST_FILES=	bin/ifdepd \
-		etc/rc.d/ifdepd.sh
+PLIST_FILES=	bin/ifdepd
 
-USE_RC_SUBR=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/etc/rc\.subr|${RC_SUBR}|; s|/usr/local|${PREFIX}|' \
-		${WRKSRC}/ifdepd.sh
+USE_RC_SUBR=	${PORTNAME}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
