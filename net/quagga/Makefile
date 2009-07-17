@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.12
+PORTVERSION=	0.99.13
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -26,6 +26,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 USE_PERL5_BUILD=	yes
+BUILD_DEPENDS+=		gawk:${PORTSDIR}/lang/gawk
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
