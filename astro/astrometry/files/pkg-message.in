@@ -1,0 +1,9 @@
+--------------------------------------------------------------------------
+astronometry was sucessfully installed.
+
+You'll find this distribution in %%PREFIX%%/astrometry
+
+Although the code is released under a GPL license, you will also need
+to download some data files, and these are distributed under different
+license. See %%PREFIX%%/astrometry/doc/GETTING-INDEXES
+--------------------------------------------------------------------------
