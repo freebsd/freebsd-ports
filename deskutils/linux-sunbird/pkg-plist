@@ -97,7 +97,6 @@ lib/%%APP_NAME%%/components/libcalbasecomps.so
 lib/%%APP_NAME%%/components/libimgicon.so
 lib/%%APP_NAME%%/components/libjsd.so
 lib/%%APP_NAME%%/components/libmozgnome.so
-lib/%%APP_NAME%%/components/libwebdav.so
 lib/%%APP_NAME%%/components/libxpinstall.so
 lib/%%APP_NAME%%/components/locale.xpt
 lib/%%APP_NAME%%/components/lwbrk.xpt
@@ -153,7 +152,6 @@ lib/%%APP_NAME%%/components/urlformatter.xpt
 lib/%%APP_NAME%%/components/wcap.xpt
 lib/%%APP_NAME%%/components/webBrowser_core.xpt
 lib/%%APP_NAME%%/components/webbrowserpersist.xpt
-lib/%%APP_NAME%%/components/webdav.xpt
 lib/%%APP_NAME%%/components/webshell_idls.xpt
 lib/%%APP_NAME%%/components/widget.xpt
 lib/%%APP_NAME%%/components/windowds.xpt
@@ -176,6 +174,12 @@ lib/%%APP_NAME%%/defaults/pref/sunbird-l10n.js
 lib/%%APP_NAME%%/defaults/pref/sunbird.js
 lib/%%APP_NAME%%/defaults/profile/prefs.js
 lib/%%APP_NAME%%/dependentlibs.list
+lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org/chrome.manifest
+lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org/chrome/calendar-timezones-en-US.jar
+lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org/chrome/chromelist.txt
+lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org/defaults/preferences/preferences.js
+lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org/install.rdf
+lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org/timezones.sqlite
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/chrome.manifest
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/libqfaservices.so
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/qfaservices.xpt
@@ -192,10 +196,12 @@ lib/%%APP_NAME%%/greprefs/xpinstall.js
 lib/%%APP_NAME%%/icons/mozicon128.png
 lib/%%APP_NAME%%/icons/mozicon16.xpm
 lib/%%APP_NAME%%/icons/mozicon50.xpm
+lib/%%APP_NAME%%/js/calAlarm.js
 lib/%%APP_NAME%%/js/calAlarmMonitor.js
 lib/%%APP_NAME%%/js/calAlarmService.js
 lib/%%APP_NAME%%/js/calAttachment.js
 lib/%%APP_NAME%%/js/calAttendee.js
+lib/%%APP_NAME%%/js/calAuthUtils.js
 lib/%%APP_NAME%%/js/calCachedCalendar.js
 lib/%%APP_NAME%%/js/calCalendarManager.js
 lib/%%APP_NAME%%/js/calCalendarSearchService.js
@@ -217,8 +223,11 @@ lib/%%APP_NAME%%/js/calMonthGridPrinter.js
 lib/%%APP_NAME%%/js/calOutlookCSVImportExport.js
 lib/%%APP_NAME%%/js/calProtocolHandler.js
 lib/%%APP_NAME%%/js/calProviderBase.js
+lib/%%APP_NAME%%/js/calProviderUtils.js
 lib/%%APP_NAME%%/js/calRecurrenceInfo.js
+lib/%%APP_NAME%%/js/calRelation.js
 lib/%%APP_NAME%%/js/calStorageCalendar.js
+lib/%%APP_NAME%%/js/calTimezoneService.js
 lib/%%APP_NAME%%/js/calTodo.js
 lib/%%APP_NAME%%/js/calTransactionManager.js
 lib/%%APP_NAME%%/js/calUtils.js
@@ -228,8 +237,8 @@ lib/%%APP_NAME%%/js/calWcapErrors.js
 lib/%%APP_NAME%%/js/calWcapRequest.js
 lib/%%APP_NAME%%/js/calWcapSession.js
 lib/%%APP_NAME%%/js/calWcapUtils.js
+lib/%%APP_NAME%%/js/calWeekInfoService.js
 lib/%%APP_NAME%%/js/calWeekPrinter.js
-lib/%%APP_NAME%%/js/calWeekTitleService.js
 lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
 lib/%%APP_NAME%%/libmozjs.so
@@ -306,6 +315,10 @@ lib/%%APP_NAME%%/xpicleanup
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org
+@dirrm lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org/defaults/preferences
+@dirrm lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org/defaults
+@dirrm lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org/chrome
+@dirrm lib/%%APP_NAME%%/extensions/calendar-timezones@mozilla.org
 @dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
 @dirrm lib/%%APP_NAME%%/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}
 @dirrm lib/%%APP_NAME%%/extensions
