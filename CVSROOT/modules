@@ -770,6 +770,7 @@ automake19                      ports/devel/automake19
 automoc4                        ports/devel/automoc4
 automounter                     ports/sysutils/automounter
 autopano-sift                   ports/graphics/autopano-sift
+autopano-sift-c                 ports/graphics/autopano-sift-c
 autopsy                         ports/sysutils/autopsy
 autoq3d                         ports/graphics/autoq3d
 autorespond                     ports/mail/autorespond
@@ -2527,6 +2528,7 @@ dtv                             ports/multimedia/dtv
 du2ps                           ports/sysutils/du2ps
 dualserver                      ports/dns/dualserver
 duel                            ports/games/duel
+duff                            ports/sysutils/duff
 duhdraw                         ports/graphics/duhdraw
 duke3d-data                     ports/games/duke3d-data
 dumb                            ports/audio/dumb
@@ -10950,6 +10952,7 @@ p5-Data-Page                    ports/databases/p5-Data-Page
 p5-Data-Pageset                 ports/databases/p5-Data-Pageset
 p5-Data-ParseBinary             ports/devel/p5-Data-ParseBinary
 p5-Data-Password                ports/security/p5-Data-Password
+p5-Data-Path                    ports/devel/p5-Data-Path
 p5-Data-Postponed               ports/devel/p5-Data-Postponed
 p5-Data-Properties              ports/devel/p5-Data-Properties
 p5-Data-Random                  ports/devel/p5-Data-Random
@@ -14347,6 +14350,7 @@ p5-data-page                    ports/databases/p5-Data-Page
 p5-data-pageset                 ports/databases/p5-Data-Pageset
 p5-data-parsebinary             ports/devel/p5-Data-ParseBinary
 p5-data-password                ports/security/p5-Data-Password
+p5-data-path                    ports/devel/p5-Data-Path
 p5-data-postponed               ports/devel/p5-Data-Postponed
 p5-data-properties              ports/devel/p5-Data-Properties
 p5-data-random                  ports/devel/p5-Data-Random
@@ -19978,6 +19982,7 @@ rbllookup                       ports/dns/rbllookup
 rbllookup-ng                    ports/dns/rbllookup-ng
 rbot                            ports/irc/rbot
 rbscrobbler                     ports/audio/rbscrobbler
+rbtools                         ports/devel/rbtools
 rc                              ports/shells/rc
 rc5pipe                         ports/security/rc5pipe
 rc_subr                         ports/sysutils/rc_subr
@@ -20881,7 +20886,9 @@ scim                            ports/textproc/scim
 scim-bridge                     ports/textproc/scim-bridge
 scim-bridge-qt4                 ports/textproc/scim-bridge-qt4
 scim-input-pad                  ports/textproc/scim-input-pad
+scim-kmfl-european-latin        ports/textproc/scim-kmfl-european-latin
 scim-kmfl-imengine              ports/textproc/scim-kmfl-imengine
+scim-kmfl-sil-ezra              ports/textproc/scim-kmfl-sil-ezra
 scim-kmfl-sil-ipa-unicode5      ports/textproc/scim-kmfl-sil-ipa-unicode5
 scim-m17n                       ports/textproc/scim-m17n
 scim-openvanilla                ports/textproc/scim-openvanilla
@@ -21046,6 +21053,7 @@ sfbol                           ports/games/sfbol
 sfdisk                          ports/sysutils/sfdisk
 sfio                            ports/devel/sfio
 sflowtool                       ports/net/sflowtool
+sfml                            ports/devel/sfml
 sformat                         ports/sysutils/sformat
 sfront                          ports/audio/sfront
 sfs                             ports/security/sfs
