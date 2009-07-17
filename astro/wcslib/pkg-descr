@@ -1,0 +1,7 @@
+"WCSLIB is a C library, supplied with a full set of Fortran wrappers, that
+ implements the "World Coordinate System" (WCS) convention in FITS (Flexible
+ Image Transport System).  It also includes a PGPLOT-based routine, PGSBOX,
+ for drawing general curvilinear coordinate graticules and a number of
+ utility programs." - from README file.
+
+WWW: http://www.atnf.csiro.au/people/mcalabre/WCS/index.html
