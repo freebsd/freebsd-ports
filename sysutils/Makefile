@@ -825,6 +825,7 @@
     SUBDIR += wait_on
     SUBDIR += watchdog
     SUBDIR += watchfolder
+    SUBDIR += watchmen
     SUBDIR += webjob
     SUBDIR += webmin
     SUBDIR += weedit
