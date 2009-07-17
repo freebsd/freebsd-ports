@@ -5,5 +5,4 @@ etc/junkbuster/cookiefile.sample
 etc/junkbuster/configfile.sample
 etc/junkbuster/forwardfile.sample
 etc/junkbuster/trustfile.sample
-etc/rc.d/junkbuster
 @dirrmtry etc/junkbuster
