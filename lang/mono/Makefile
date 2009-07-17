@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	2.4.2.1
+PORTVERSION=	2.4.2.2
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -27,12 +27,10 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--program-transform-name=\'\' \
-		--with-moonlinght=no \
-		--with-preview=yes \
-		--with-sigaltstack=no \
-		--mandir=${PREFIX}/man
 MAKE_ARGS=	EXTERNAL_MCS=false
+USE_GETTEXT=	yes
+
+OPTIONS=	MOON	"Enable Moonlight Profile (2.1 Alpha)"	on
 
 # Set location for .wapi creation.
 MONO_SHARED_DIR=${WRKDIR}
@@ -62,6 +60,14 @@ MAN5=		mdoc.5 mono-config.5
 .if ${ARCH} == "amd64"
 USE_FAM=	yes
 MAKE_ARGS+=	MONO_GENERIC_SHARING=none #https://bugzilla.novell.com/show_bug.cgi?id=434457
+.endif
+
+.if defined(WITH_MOON) && !defined(WITHOUT_MOON)
+CONFIGURE_ARGS+=	--with-moonlight
+PLIST_SUB+=	MOON=""
+.else
+CONFIGURE_ARGS+=	--without-moonlight
+PLIST_SUB+=	MOON="@comment "
 .endif
 
 pre-everything::
