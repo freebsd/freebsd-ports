@@ -6,7 +6,7 @@
 
 PORTNAME=	junkbuster
 PORTVERSION=	2.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://f2.org/download/ \
 		http://www.junkbusters.com/ht/en/
@@ -20,7 +20,7 @@ ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster
 MAN1=		junkbuster.1
 SUB_FILES=	junkbuster pkg-message
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNUREGEXP=	's:gnu_regex.h:gnu/regex.h:'
@@ -43,8 +43,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/sforward.ini ${JDIR}/forwardfile.sample
 	@${INSTALL_DATA} ${WRKSRC}/strust.ini ${JDIR}/trustfile.sample
 	@${INSTALL_MAN} ${WRKSRC}/junkbuster.1 ${PREFIX}/man/man1/
-
-	@${INSTALL_SCRIPT} ${WRKDIR}/junkbuster ${PREFIX}/etc/rc.d/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
