@@ -1,3 +1,6 @@
 MD5 (postmark_1.51.orig.tar.gz) = b494167c2df1850004110ab28e5ad164
 SHA256 (postmark_1.51.orig.tar.gz) = 7cb7c31d4e7725ce8d8e11fb7df62ed700dee4dbd5ca1e31bf3a9161fc890b41
 SIZE (postmark_1.51.orig.tar.gz) = 13394
+MD5 (postmark_1.51-5.diff.gz) = 783b68e0f016918da368c0c81ade3fd0
+SHA256 (postmark_1.51-5.diff.gz) = 65bddac38d38d51ba0c0662c3a2fcc28d868a104316fd1afbe93e15556ed7d36
+SIZE (postmark_1.51-5.diff.gz) = 3509
