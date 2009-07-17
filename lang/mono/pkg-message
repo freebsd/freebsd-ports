@@ -3,9 +3,8 @@ If you have build/runtime errors with Mono and Gtk# apps please try the
 following first:
 
 * Build Mono and gtk+ (x11-toolkits/gtk20) without CPUTYPE and with the
-  default FreeBSD CFLAGS as Mono has been known to expose compiler bugs.
-  - 5.x:		'-O -pipe'
-  - 6.x and higher:	'-O2 -fno-strict-aliasing -pipe'
+  default FreeBSD CFLAGS ('-O2 -fno-strict-aliasing -pipe') as Mono has
+  been known to expose compiler bugs.
 
 * Try building and running Mono with the GENERIC kernel.
   - Mono requires SYSVSHM, SYSVMSG, and SYSVSEM which are part of the
@@ -22,4 +21,9 @@ following first:
 
     # echo "kern.ipc.semmni=40" >> /boot/loader.conf
     # echo "kern.ipc.semmns=300" >> /boot/loader.conf
+
+* If you are in a jailed environment, ensure System V IPC are enabled.
+  You can rely on the security.jail.sysvipc_allowed  sysctl to check
+  this status.  The following enables this feature on the host system:
+    # echo "jail_sysvipc_allow=\"YES\"" >> /etc/rc.conf
 ************************************************************************
