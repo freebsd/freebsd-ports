@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c1ef9b33-72a6-11de-82ea-0030843d3802">
+    <topic>firefox35 -- corrupt JIT state after deep return from native function</topic>
+    <affects>
+      <package>
+	<name>firefox35</name>
+	<range><lt>3.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/2009/mfsa2009-41.html">
+	  <p>Firefox user zbyte reported a crash that we determined could result
+	    in an exploitable memory corruption problem. In certain cases after a
+	    return from a native function, such as escape(), the Just-in-Time
+	    (JIT) compiler could get into a corrupt state. This could be exploited
+	    by an attacker to run arbitrary code such as installing malware.</p>
+	  <p>This vulnerability does not affect earlier versions of Firefox
+	    which do not support the JIT feature.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-41.html</url>
+      <url>http://www.kb.cert.org/vuls/id/443060</url>
+    </references>
+    <dates>
+      <discovery>2009-07-16</discovery>
+      <entry>2009-07-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c444c8b7-7169-11de-9ab7-000c29a67389">
     <topic>isc-dhcp-client -- Stack overflow vulnerability</topic>
     <affects>
