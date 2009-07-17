@@ -8,6 +8,7 @@
 
 PORTNAME=	seahorse-plugins
 PORTVERSION=	2.26.2
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
