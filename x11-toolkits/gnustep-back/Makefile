@@ -19,6 +19,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
@@ -33,7 +34,6 @@ USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_XORG=		xft xrender xmu xext x11
-USE_FREETYPE=		yes
 
 NO_PACKAGE=	GPL3
 MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${LOCALBASE}/include"
