@@ -7,6 +7,7 @@
 
 PORTNAME=	dhcprelay
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
@@ -15,12 +16,10 @@ COMMENT=	Lightweight DHCP Relay Agent with GIF tunnel support
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
-PLIST_FILES=	bin/dhcprelay etc/rc.d/dhcprelay.sh
-USE_RC_SUBR=	yes
-SUB_FILES=	dhcprelay.sh
+PLIST_FILES=	bin/dhcprelay 
+USE_RC_SUBR=	${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dhcprelay ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/dhcprelay.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
