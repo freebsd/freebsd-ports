@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+
+# PROVIDE: ifdepd
+# REQUIRE: netif routing
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable ifdepd:
+#
+#ifdepd_enable="YES"
+#ifdepd_src_ifaces="em0:em1"
+#ifdepd_dst_ifaces="carp1"
+
+. /etc/rc.subr
+
+name="ifdepd"
+rcvar=`set_rcvar`
+command="/usr/local/bin/ifdepd"
+start_cmd="ifdepd_start"
+stop_cmd="ifdepd_stop"
+
+ifdepd_enable=${ifdepd_enable:-"NO"}
+load_rc_config $name
+
+ifdepd_start()
+{
+	echo 'Starting ifdepd.'
+	ifdepd_src_ifaces=`echo $ifdepd_src_ifaces | sed -E 's/[ \t]+/:/g'`
+	ifdepd_dst_ifaces=`echo $ifdepd_dst_ifaces | sed -E 's/[ \t]+/:/g'`
+	if checkyesno ${rcvar} && [ "x${ifdepd_src_ifaces}" != "x" ] &&
+	   [ "x${ifdepd_dst_ifaces}" != "x" ]; then
+		$command -d -S ${ifdepd_src_ifaces} -D ${ifdepd_dst_ifaces}
+	else
+		warn '$ifdepd_ifaces is not set.'
+	fi
+}
+
+ifdepd_stop()
+{
+	echo 'Stopping ifdepd.'
+	killall ifdepd
+}
+
+run_rc_command "$1"
