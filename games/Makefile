@@ -430,6 +430,7 @@
     SUBDIR += lbreakout2
     SUBDIR += ldmud
     SUBDIR += legends
+    SUBDIR += legesmotus
     SUBDIR += lexter
     SUBDIR += lgeneral
     SUBDIR += lgeneral-data
