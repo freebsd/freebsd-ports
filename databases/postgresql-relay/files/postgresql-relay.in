@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/postgresql-relay/files/Attic/postgresql-relay.sh.in,v 1.1 2006-04-01 11:57:25 edwin Exp $
+# $FreeBSD$
 #
 
 # PROVIDE: postgresql-relay
@@ -24,9 +24,8 @@ rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/postgresql-relay
 required_files=%%PREFIX%%/etc/postgresql-relay.conf
 
-# set defaults
+load_rc_config $name
 
 postgresqlrelay_enable=${postgresqlrelay_enable:-"NO"}
 
-load_rc_config $name
 run_rc_command "$1"
