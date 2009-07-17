@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -33,8 +33,7 @@ post-install:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|CXXFLAGS=|CXXFLAGS= ${CXXFLAGS} | ; \
-		s|CXX=(.*)|CXX= ${CXX}|' \
+	@${REINPLACE_CMD} -e '/CXXFLAGS=/d ; /CXX=/d' \
 		${WRKSRC}/Makefile
 
 do-install:
