@@ -729,9 +729,10 @@
     SUBDIR += r1q2
     SUBDIR += race
     SUBDIR += reminiscence
+    SUBDIR += rezerwar
     SUBDIR += rfksay
-    SUBDIR += rigsofrods
     SUBDIR += ri-li
+    SUBDIR += rigsofrods
     SUBDIR += robocode
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
