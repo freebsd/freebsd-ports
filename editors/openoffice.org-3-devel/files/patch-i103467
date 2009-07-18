@@ -1,0 +1,110 @@
+Index: source/drivers/mozab/makefile.mk
+===================================================================
+--- connectivity/source/drivers/mozab/makefile.mk	(revision 273857)
++++ connectivity/source/drivers/mozab/makefile.mk	(working copy)
+@@ -83,6 +83,11 @@
+ ENABLE_EXCEPTIONS=TRUE
+ VISIBILITY_HIDDEN=TRUE
+ 
++.IF "$(OS)"!="WNT" 
++COMPONENT_CONFIG_DATA=$(TARGET)2.xcu
++COMPONENT_CONFIG_SCHEMA=$(TARGET)2.xcs
++.ENDIF
++
+ # --- Settings ----------------------------------
+ 
+ .IF "$(DBGUTIL_OJ)"!=""
+@@ -94,24 +99,10 @@
+ .INCLUDE :  $(PRJ)$/version.mk
+ 
+ # --- Files -------------------------------------
+-# redefine because win and linux differ
+-.IF "$(OS)"=="WNT" 
+-LOCALIZEDFILES= \
+-    $(TARGET).xcu
+-.ELSE
+-LOCALIZEDFILES= \
+-    $(TARGET)2.xcu
+-.ENDIF
+ 
+-XCUFILES= \
+-    $(LOCALIZEDFILES) \
+-
+-
+-
+ SLOFILES=\
+ 		$(SLO)$/MDriver.obj						\
+ 		$(SLO)$/MServices.obj
+-
+ 			
+ # --- MOZAB BASE Library -----------------------------------
+ 
+@@ -201,17 +192,6 @@
+ 
+ .INCLUDE : $(PRJ)$/target.pmk
+ 
+-.IF "$(GUI)"=="WNT" 
+-.ELSE
+-ALLTAR: "$(PWD)$/$(MISC)$/registry$/schema$/$(PACKAGEDIR)$/$(TARGET)2.xcs" "$(PWD)$/$(MISC)$/registry$/data$/$(PACKAGEDIR)$/$(TARGET).xcu"
+-"$(PWD)$/$(MISC)$/registry$/schema$/$(PACKAGEDIR)$/$(TARGET)2.xcs" : $(SOLARXMLDIR)$/registry$/schema$/$(PACKAGEDIR)$/Drivers.xcs
+-    @@-$(MKDIRHIER) $(@:d)
+-    $(COPY) $< $@
+-"$(PWD)$/$(MISC)$/registry$/data$/$(PACKAGEDIR)$/$(TARGET).xcu" : "$(PWD)$/$(MISC)$/registry$/data$/$(PACKAGEDIR)$/$(TARGET)2.xcu" 
+-    @@-$(MKDIRHIER) $(@:d)
+-    $(COPY) $< $@
+-.ENDIF
+-
+ # --- filter file ------------------------------
+ 
+ $(MISC)$/$(SHL1TARGET).flt: makefile.mk
+Index: makefile.pmk
+===================================================================
+--- connectivity/makefile.pmk	(revision 273857)
++++ connectivity/makefile.pmk	(working copy)
+@@ -55,8 +55,10 @@
+ PACKAGE=org.openoffice.Office.DataAccess
+ .INCLUDE :  settings.mk
+ 
++COMPONENT_CONFIG_DATA*=$(TARGET).xcu
++
+ LOCALIZEDFILES= \
+-    $(TARGET).xcu
++    $(COMPONENT_CONFIG_DATA)
+ 
+ XCUFILES= \
+     $(LOCALIZEDFILES) \
+Index: target.pmk
+===================================================================
+--- connectivity/target.pmk	(revision 273857)
++++ connectivity/target.pmk	(working copy)
+@@ -31,7 +31,10 @@
+ 
+ .INCLUDE : target.mk
+ 
+-ALLTAR: "$(PWD)$/$(MISC)$/registry$/schema$/$(PACKAGEDIR)$/$(TARGET).xcs"
+-"$(PWD)$/$(MISC)$/registry$/schema$/$(PACKAGEDIR)$/$(TARGET).xcs" : $(SOLARXMLDIR)$/registry$/schema$/$(PACKAGEDIR)$/Drivers.xcs
++COMPONENT_CONFIG_SCHEMA*=$(TARGET).xcs
++
++ALLTAR: "$(PWD)$/$(MISC)$/registry$/schema$/$(PACKAGEDIR)$/$(COMPONENT_CONFIG_SCHEMA)"
++"$(PWD)$/$(MISC)$/registry$/schema$/$(PACKAGEDIR)$/$(COMPONENT_CONFIG_SCHEMA)" : $(SOLARXMLDIR)$/registry$/schema$/$(PACKAGEDIR)$/Drivers.xcs
+     @@-$(MKDIRHIER) $(@:d)
+     $(COPY) $< $@
++
+
+
+Index: source/ooo/file_library_ooo.scp
+===================================================================
+--- scp2/source/ooo/file_library_ooo.scp	(revision 273857)
++++ scp2/source/ooo/file_library_ooo.scp	(working copy)
+@@ -958,7 +958,11 @@
+     TXT_FILE_BODY;
+     Styles = (PACKED);
+     Dir = gid_Dir_Share_Registry_Modules_Oo_Office_DataAccess_Drivers;
++#ifdef WNT
+     Name = "/registry/spool/DataAccess/mozab.xcu";
++#else
++    Name = "/registry/spool/DataAccess/mozab2.xcu";
++#endif
+ End
+ 
+ STD_UNO_LIB_FILE(gid_File_Lib_Mozab,mozab)
