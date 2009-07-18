@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.1.25
-PORTREVISION=	1
+DISTVERSION=	1.1.26
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SFE \
@@ -106,9 +105,7 @@ post-install:
 .for i in README ANNOUNCE AUTHORS LICENSE
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.for i in progman uninstaller winedbg winemine
-	@${INSTALL_DATA} ${WRKSRC}/programs/${i}/README ${DOCSDIR}/README.${i}
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${DOCSDIR}/README.winedbg
 	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
 	@${MKDIR} ${DESKTOPDIR}
