@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.22.2
-PORTREVISION=	1
+PORTVERSION=	2.24.0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -35,7 +34,7 @@ MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
 MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 dotty.1 gc.1 \
 		gv2gxl.1 gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 lneato.1 \
-		nop.1 prune.1 sccmap.1 tred.1 unflatten.1
+		nop.1 osage.1 prune.1 sccmap.1 tred.1 unflatten.1
 MAN3=		cdt.3 cgraph.3 graph.3 gvc.3 pathplan.3
 MAN7=		graphviz.7
 MLINKS=		dot.1 circo.1 \
@@ -60,9 +59,9 @@ PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted.tcl \
 			tclpkg/tclpathplan/demo/pathplan.tcl tclpkg/tkspline/demo/spline.tcl
 PATCH_TK_SCRIPTS=	${PATCH_TCL_SCRIPTS}
 
-PDOCS_TXT=	AUTHORS NEWS ChangeLog cpl1.0.txt doc/Dot.ref doc/latex_suggestions.txt
+PDOCS_TXT=	doc/Dot.ref doc/latex_suggestions.txt
 PDOCS_PDF=	doc/*.pdf */*/*.pdf
-PDOCS_HTML=	doc/*.html doc/info/*.html doc/info/*.gif
+PDOCS_HTML=	doc/*.html doc/info/*.gif
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
@@ -414,10 +413,11 @@ post-install: install-ldconfig-file
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${FIX_INCLUDE} ${PREFIX}/include/graphviz/
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/doc
 	@${MKDIR} ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/pdf
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} ${PDOCS_TXT} ${DOCSDIR}/ && \
+		${INSTALL_DATA} ${PDOCS_TXT} ${DOCSDIR}/doc/ && \
 		${INSTALL_DATA} ${PDOCS_PDF} ${DOCSDIR}/pdf/ && \
 		${INSTALL_DATA} ${PDOCS_HTML} ${DOCSDIR}/html/
 .	for i in neato.pdf twopi.pdf fdp.pdf circo.pdf
