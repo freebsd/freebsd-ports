@@ -7,6 +7,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	2.9.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -16,7 +17,7 @@ DISTNAME=	OpenSceneGraph-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

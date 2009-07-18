@@ -7,7 +7,7 @@
 
 PORTNAME=	cake
 PORTVERSION=	2005.12.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.calodox.scene.org/morbac/cake/download/ \
 		${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
@@ -38,7 +38,7 @@ LIB_DEPENDS=	glut.11:${PORTSDIR}/graphics/freeglut
 .else
 USE_GL=		glut
 .endif
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 post-patch: .SILENT
 	${FIND} -E ${WRKDIR} -type f \( -iregex ".*\.(cpp|h)" -or \

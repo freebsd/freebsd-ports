@@ -8,7 +8,7 @@
 
 PORTNAME=	gman
 PORTVERSION=	0.9.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/gman
@@ -22,7 +22,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user-friendly graphical front end for the man system
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview	\
 		man2html:${PORTSDIR}/textproc/man2html
 

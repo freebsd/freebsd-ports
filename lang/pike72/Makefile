@@ -7,7 +7,7 @@
 
 PORTNAME=	pike72
 PORTVERSION=	7.2.570
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pike/7.2/unofficial/ \
 		ftp://ftp.us.caudium.net/pub/pike/7.2/unofficial/ 
@@ -16,7 +16,7 @@ DISTNAME=	pike-${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		mird.1:${PORTSDIR}/databases/mird \

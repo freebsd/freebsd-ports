@@ -7,7 +7,7 @@
 
 PORTNAME=	sdlquake2
 PORTVERSION=	0.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://koti.mbnet.fi/~turol/sdlquake2/
 
@@ -32,7 +32,7 @@ PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CLIENT)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 USE_GL=		yes
 USE_SDL=	sdl

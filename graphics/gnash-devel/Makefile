@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	20081208
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://mirror.amdmi3.ru/ \
@@ -20,7 +20,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GNU Flash movie player
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		curl.5:${PORTSDIR}/ftp/curl \
 		ungif.5:${PORTSDIR}/graphics/libungif
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	fontforge
 PORTVERSION=	20090622
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -17,7 +18,7 @@ COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
 
 LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		freetype.9:${PORTSDIR}/print/freetype2 \

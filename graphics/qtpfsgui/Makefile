@@ -7,7 +7,7 @@
 
 PORTNAME=	qtpfsgui
 PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=	A graphical user interface that provides a workflow for HDR imaging
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 LIB_DEPENDS=	exiv2.7:${PORTSDIR}/graphics/exiv2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		fftw3f.5:${PORTSDIR}/math/fftw3-float

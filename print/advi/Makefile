@@ -8,7 +8,7 @@
 
 PORTNAME=	advi
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${CI_DEPEND}:${PORTSDIR}/graphics/ocaml-images \
 		kpsewhich:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
 

@@ -7,14 +7,14 @@
 
 PORTNAME=	jpegpixi
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zero-based.org/software/jpegpixi/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Useful to correct images from digtal camera with CCD defects
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

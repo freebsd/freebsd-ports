@@ -7,7 +7,7 @@
 
 PORTNAME=	aterm
 PORTVERSION=	0.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	japanese x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_AUTOTOOLS=	autoconf:262:env

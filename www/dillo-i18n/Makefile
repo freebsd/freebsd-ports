@@ -16,7 +16,7 @@
 
 PORTNAME=	dillo
 PORTVERSION=	${DILLOVERSION}.${I18NVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://teki.jpn.ph/pc/software/
 PKGNAMESUFFIX=	-i18n
@@ -26,7 +26,7 @@ MAINTAINER=	tmseck@netcologne.de
 COMMENT=	A fast, small graphical Web browser with support for i18n
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 DILLOVERSION=	0.8.6

@@ -7,7 +7,7 @@
 
 PORTNAME=	gracer
 PORTVERSION=	0.1.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ COMMENT=	A 3D motor sport simulator
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tcl84.1:${PORTSDIR}/lang/tcl84
 
 USE_GL=		glut

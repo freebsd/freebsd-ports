@@ -1,29 +1,10 @@
---- configure.orig	1998-03-21 20:08:57.000000000 +0100
-+++ configure	2008-08-05 12:48:47.000000000 +0200
-@@ -1529,7 +1533,6 @@
- 
- if test "x$LTSHARED" != xno  -o  "x$LTSTATIC" != xno; then
-   USELIBTOOL="yes"
--  LIBTOOL="./libtool"
-   O="lo"
-   A="la"
-   LN='$(LIBTOOL) --mode=link $(CC)'
-@@ -1559,7 +1562,8 @@
-   if test "x$LTSTATIC" = xno; then
-     disable_static="--disable-static"
-   fi
--  $srcdir/ltconfig $disable_shared $disable_static $srcdir/ltmain.sh
-+  pic_flag="-fPIC"
-+  $ac_aux_dir/ltconfig $disable_shared $disable_static $ac_aux_dir/ltmain.sh
- fi
- 
- # Select memory manager depending on user input.
-@@ -1647,7 +1651,7 @@
- # Extract the library version ID from jpeglib.h.
- echo $ac_n "checking libjpeg version number""... $ac_c" 1>&6
- echo "configure:1650: checking libjpeg version number" >&5
--JPEG_LIB_VERSION=`sed -e '/^#define JPEG_LIB_VERSION/!d' -e 's/^[^0-9]*\([0-9][0-9]*\).*$/\1/' $srcdir/jpeglib.h`
-+JPEG_LIB_VERSION=9
- echo "$ac_t""$JPEG_LIB_VERSION" 1>&6
+--- configure.orig	2009-06-14 18:25:26.000000000 +0200
++++ configure	2009-06-30 13:10:03.000000000 +0200
+@@ -14754,6 +14754,7 @@
+ JPEG_LIB_VERSION="`expr $JPEG_LIB_VERSION / 10`:`expr $JPEG_LIB_VERSION % 10`"
+ { $as_echo "$as_me:$LINENO: result: $JPEG_LIB_VERSION" >&5
+ $as_echo "$JPEG_LIB_VERSION" >&6; }
++JPEG_LIB_VERSION="10"
  
  
+ ac_config_files="$ac_config_files Makefile"

@@ -7,7 +7,7 @@
 
 PORTNAME=	xforms
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:savannah/} \
@@ -21,7 +21,7 @@ REINPLACE_ARGS=	-i ""
 MAINTAINER?=	ports@FreeBSD.ORG
 COMMENT?=	A graphical user interface toolkit for X Window System
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 .if defined(WITH_I18N)

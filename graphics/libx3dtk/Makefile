@@ -8,7 +8,7 @@
 
 PORTNAME=	libx3dtk
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://artis.imag.fr/Members/Yannick.Legoc/X3D/libs/
 DISTNAME=	X3DToolKit-${PORTVERSION:R}.${PORTVERSION:E}
@@ -17,7 +17,7 @@ MAINTAINER=	tanis@gaspode.franken.de
 COMMENT=	An LGPL C++ Toolkit for X3D
 
 BUILD_DEPENDS=	${QMAKE}:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		QGLViewer.2:${PORTSDIR}/graphics/libqglviewer
 
 WRKSRC=		${WRKDIR}/X3DToolKit-1.0

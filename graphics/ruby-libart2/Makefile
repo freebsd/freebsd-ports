@@ -8,6 +8,7 @@
 
 PORTNAME=	libart2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -18,7 +19,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for Libart2
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_RUBY=	yes

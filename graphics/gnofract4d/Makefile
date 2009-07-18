@@ -7,8 +7,11 @@
 
 PORTNAME=	gnofract4d
 PORTVERSION=	3.10
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
+
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator

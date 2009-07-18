@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.64
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -21,7 +21,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 8.x PostScript interpreter
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,8,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 

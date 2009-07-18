@@ -8,6 +8,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.1.25
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SFE \
@@ -19,7 +20,7 @@ COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		png.5:${PORTSDIR}/graphics/png \
 		xml2:${PORTSDIR}/textproc/libxml2

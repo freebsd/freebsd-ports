@@ -7,7 +7,7 @@
 
 PORTNAME=	panda
 PORTVERSION=	0.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby extension library to access Panda
 
 LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

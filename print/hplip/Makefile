@@ -7,7 +7,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	2.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hplip
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	hplip
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		sane.1:${PORTSDIR}/graphics/sane-backends \
 		cups.2:${PORTSDIR}/print/cups-base \
 		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp

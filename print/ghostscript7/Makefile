@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript7
 PORTVERSION=	7.07
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
@@ -22,7 +22,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 7.x PostScript interpreter
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 

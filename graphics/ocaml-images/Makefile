@@ -8,7 +8,7 @@
 
 PORTNAME=	images
 PORTVERSION=	2.2
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/
@@ -27,7 +27,7 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GHOSTSCRIPT=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	efltk
 PORTVERSION=	2.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/ede
 
@@ -15,7 +15,7 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Extended Fast Light Toolkit
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

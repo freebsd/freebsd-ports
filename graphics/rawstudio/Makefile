@@ -7,13 +7,14 @@
 
 PORTNAME=	rawstudio
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Rawstudio is an open-source program to read and manipulate RAW images
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		exiv2.7:${PORTSDIR}/graphics/exiv2 \
 		dbus-1.3:${PORTSDIR}/devel/dbus

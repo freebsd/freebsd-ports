@@ -8,7 +8,7 @@
 PORTNAME=	cups
 PORTVERSION=	1.3.10
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
@@ -71,7 +71,7 @@ DESCR=		${MASTERDIR}/pkg-descr.client
 .elif defined(CUPS_IMAGE)
 CUPS_SUFFIX=	-image
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 COMMENT2=	Library cupsimage

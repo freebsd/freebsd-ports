@@ -7,7 +7,7 @@
 
 PORTNAME=	ofc
 PORTVERSION=	0.8.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ofc.dvoudheusden.net/download/
 
@@ -16,7 +16,7 @@ COMMENT=	The Objective-C Foundation Classes library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	sdl

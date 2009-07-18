@@ -7,7 +7,7 @@
 
 PORTNAME=	XmHTML
 PORTVERSION=	1.1.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits www
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Motif widget set for displaying HTML 3.2 documents
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 USE_AUTOTOOLS=	libtool:15:env
 USE_MOTIF=	yes

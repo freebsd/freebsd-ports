@@ -7,6 +7,7 @@
 
 PORTNAME=	irrlicht
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	High performance realtime 3D engine
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes

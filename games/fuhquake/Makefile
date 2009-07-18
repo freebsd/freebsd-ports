@@ -7,7 +7,7 @@
 
 PORTNAME=	fuhquake
 PORTVERSION=	0.31
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.fuhquake.net/files/releases/v${PORTVERSION}/ \
 		ftp://gibbage.mine.nu/clients/fuhquake/releases/v${PORTVERSION}/ \
@@ -46,7 +46,7 @@ IGNORE=		needs at least one client (GLX or X11)
 .if defined(WITH_GLX)
 USE_GL=		yes
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	GLX=""
 CLIENTS+=	glx
 .else

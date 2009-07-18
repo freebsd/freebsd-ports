@@ -7,6 +7,7 @@
 
 PORTNAME=	flightgear-atlas
 PORTVERSION=	0.3.1.20090529
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://contribs.martymac.com/FreeBSD-ports/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -18,7 +19,7 @@ COMMENT=	A map viewer for use with the FlightGear flight simulator
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		curl.5:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear \

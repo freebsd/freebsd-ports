@@ -7,7 +7,7 @@
 
 PORTNAME=	gimpshop
 PORTVERSION=	2.2.11
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
 		http://freebsd.powered.net/distfiles/

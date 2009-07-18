@@ -7,14 +7,14 @@
 
 PORTNAME=	openuniverse
 DISTVERSION=	1.0beta3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL Solar System simulator for X Window System
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 USE_GL=		glut
 

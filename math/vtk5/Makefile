@@ -8,7 +8,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visualization Toolkit
 
 LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

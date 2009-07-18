@@ -6,6 +6,7 @@
 
 PORTNAME=		ziproxy
 PORTVERSION=		2.7.0
+PORTREVISION=	1
 CATEGORIES=		www
 MASTER_SITES=		SF
 
@@ -14,7 +15,7 @@ COMMENT=		A forwarding, non-caching, compressing proxy server
 
 LIB_DEPENDS=		ungif.5:${PORTSDIR}/graphics/libungif \
 			png.5:${PORTSDIR}/graphics/png \
-			jpeg.9:${PORTSDIR}/graphics/jpeg
+			jpeg.10:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=		yes
 

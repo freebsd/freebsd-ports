@@ -7,7 +7,7 @@
 
 PORTNAME=	epeg
 PORTVERSION=	0.9.1.042
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An immensely fast JPEG thumbnailing library
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

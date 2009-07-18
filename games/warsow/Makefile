@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.42
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://data.rodix.free.fr/warsow/files/ \
 		http://88.191.19.21/wsw/
@@ -45,7 +45,7 @@ IGNORE=		requires at least one of CLIENT or SERVER options
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 USE_GL=		yes
 USE_SDL=	yes
 USE_XORG=	xinerama xxf86dga

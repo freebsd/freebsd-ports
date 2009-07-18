@@ -7,7 +7,7 @@
 
 PORTNAME=	xli
 PORTVERSION=	1.17.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://pantransit.reptiles.org/prog/xli/ \
 		${MASTER_SITE_XCONTRIB}
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xli, xsetbg, xview, xlito - utilities to display images on X11
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/xli-${XLI_SNAPVER}
 

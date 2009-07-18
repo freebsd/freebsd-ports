@@ -7,6 +7,7 @@
 
 PORTNAME=	generator
 PORTVERSION=	0.35.r4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.squish.net/generator/cbiere/generator/
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}-0.35${PKGNAMESUFFIX}-r4
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
 USE_SDL=	sdl

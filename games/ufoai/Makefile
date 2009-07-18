@@ -7,7 +7,7 @@
 
 PORTNAME=	ufoai
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:S/$/-/}${PORTVERSION}-source
@@ -17,7 +17,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A strategy game featuring tactical combat
 
 LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		curl:${PORTSDIR}/ftp/curl
 

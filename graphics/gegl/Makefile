@@ -7,7 +7,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.0.${GEGL_MINOR}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.0/
 
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=--without-graphviz
 .endif
 
 .if !defined(WITHOUT_JPEG)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEG=""
 .else
 CONFIGURE_ARGS+=--without-libjpeg

@@ -7,6 +7,7 @@
 
 PORTNAME=	gphoto2
 PORTVERSION=	2.4.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -16,7 +17,7 @@ COMMENT=	A command-line frontend to libgphoto2
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		aa.1:${PORTSDIR}/graphics/aalib \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
 USE_GNOME=	gnometarget

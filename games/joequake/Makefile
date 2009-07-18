@@ -7,7 +7,7 @@
 
 PORTNAME=	joequake
 PORTVERSION=	0.15b1329
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://runecentral.com/joequake/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
@@ -44,7 +44,7 @@ IGNORE=		needs at least one interface (GLX or X11)
 
 .if !defined(WITHOUT_GLX)
 USE_GL=		yes
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 ALL_TARGET+=	glx
 PLIST_SUB+=	GLX=""
 .else

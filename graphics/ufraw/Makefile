@@ -7,14 +7,14 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Read and manipulate raw images from digital cameras
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview \

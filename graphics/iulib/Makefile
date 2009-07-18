@@ -7,7 +7,7 @@
 
 PORTNAME=	iulib
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	A library of image understanding-related algorithms
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 OPTIONS=	SDL "Enable SDL for graphical debugging" off \

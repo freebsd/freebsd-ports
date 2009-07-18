@@ -7,7 +7,7 @@
 
 PORTNAME=	cheetah
 PORTVERSION=	0.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ based light-weight web browser
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gtk12

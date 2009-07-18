@@ -7,7 +7,7 @@
 
 PORTNAME=	wizd
 PORTVERSION=	24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net multimedia
 MASTER_SITES=	SF
 DISTFILES=	wizd_sources_v${PORTVERSION}.zip simplicity_v1-2.zip

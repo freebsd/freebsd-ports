@@ -7,6 +7,7 @@
 
 PORTNAME=	leptonlib
 PORTVERSION=	1.60
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,7 +15,7 @@ MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 PROJECTHOST=	leptonica

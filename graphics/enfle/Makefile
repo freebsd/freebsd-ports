@@ -7,7 +7,7 @@
 
 PORTNAME=	enfle
 PORTVERSION=	20071024
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/files/stable/
 
@@ -17,7 +17,7 @@ COMMENT=	Simple plugin-based graphics viewer
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
 LIB_DEPENDS=	arc.1:${PORTSDIR}/archivers/libarc \
 		jasper.4:${PORTSDIR}/graphics/jasper \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \

@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -104,7 +104,7 @@ PLIST_SUB+=	ESOUND="@comment "
 .endif
 
 .if !defined(WITHOUT_JPEG)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEG=""
 .else
 CONFIGURE_ARGS+=--disable-libjpeg

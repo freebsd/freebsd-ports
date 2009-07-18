@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games ipv6
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/
 DISTNAME=	quake2-r${PORTVERSION}
@@ -74,7 +74,7 @@ PLIST_SUB+=	GLX="@comment "
 
 .if defined(WITH_EYECANDY)
 DISTFILES+=	maxpak.pak
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 MAKE_ARGS+=	BUILD_QMAX=YES
 PLIST_SUB+=	QMAX=""
 .else

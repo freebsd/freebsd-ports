@@ -8,7 +8,7 @@
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.6.6
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -31,7 +31,7 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		gegl-0.0.22:${PORTSDIR}/graphics/gegl

@@ -7,7 +7,7 @@
 
 PORTNAME=	jahshaka
 PORTVERSION=	1.9a9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}fx
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	Video and film composing, editing and special fx system
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 USE_GL=		glut
 USE_QT_VER=	3

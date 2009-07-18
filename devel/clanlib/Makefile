@@ -8,7 +8,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-0.8/ \
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Cross-platform game SDK
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mikmod:${PORTSDIR}/audio/libmikmod \
 		vorbis:${PORTSDIR}/audio/libvorbis

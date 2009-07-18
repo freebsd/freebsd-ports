@@ -7,7 +7,7 @@
 
 PORTNAME=	stepmania
 PORTVERSION=	20071121
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
@@ -18,7 +18,7 @@ COMMENT=	Stepmania dance and rhythm game
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		m.3:${PORTSDIR}/misc/compat5x
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js

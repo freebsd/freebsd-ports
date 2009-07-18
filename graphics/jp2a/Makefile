@@ -7,14 +7,14 @@
 
 PORTNAME=	jp2a
 PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts JPG images to ASCII
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		curl.5:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes

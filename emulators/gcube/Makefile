@@ -7,7 +7,7 @@
 
 PORTNAME=	gcube
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.liquidx.org/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gamecube emulator
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/${PORTVERSION}
 USE_GL=		yes

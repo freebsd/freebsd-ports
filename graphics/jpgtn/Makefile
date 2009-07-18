@@ -7,6 +7,7 @@
 
 PORTNAME=	jpgtn
 PORTVERSION=	2.06
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/misc
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/misc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates thumbnails of JPEG images
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}

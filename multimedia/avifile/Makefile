@@ -7,7 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.7.43
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AVI player/converter with numerous codecs, including MPEG-4(DivX ;-))
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_SUBMAKE=	yes
 USE_BZIP2=	yes

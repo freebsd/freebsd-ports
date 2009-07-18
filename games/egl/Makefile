@@ -7,7 +7,7 @@
 
 PORTNAME=	egl
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://egl.quakedev.com/files/:src \
 		ftp://ftp.alepulver.com.ar/distfiles/:data
@@ -40,7 +40,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CLIENT)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 USE_GL=		yes
 PLIST_SUB+=	CLIENT=""

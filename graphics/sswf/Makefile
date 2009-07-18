@@ -7,6 +7,7 @@
 
 PORTNAME=	sswf
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library and script language tool to create Flash movies
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

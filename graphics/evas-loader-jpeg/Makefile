@@ -7,6 +7,7 @@
 
 PORTNAME=	loader-jpeg
 PORTVERSION=	0.9.9.042
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/
@@ -16,7 +17,7 @@ DISTNAME=	evas-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (JPEG engine)
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes

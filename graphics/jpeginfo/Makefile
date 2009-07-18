@@ -7,13 +7,14 @@
 
 PORTNAME=	jpeginfo
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 
 MAINTAINER=	ache@freebsd.org
 COMMENT=	Generate listing and MD5, check jpegs for error, delete broken ones
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

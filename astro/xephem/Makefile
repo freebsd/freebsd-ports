@@ -7,7 +7,7 @@
 
 PORTNAME=	xephem
 PORTVERSION=	3.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 
@@ -15,7 +15,7 @@ MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	An interactive astronomical ephemeris program
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 USE_MOTIF=	yes
 USE_GMAKE=	yes

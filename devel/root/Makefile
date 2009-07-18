@@ -7,7 +7,7 @@
 
 PORTNAME=		root
 PORTVERSION=		5.02.00
-PORTREVISION=	5
+PORTREVISION=		6
 CATEGORIES=		devel science math
 MASTER_SITES=		ftp://root.cern.ch/root/
 DISTNAME=		${PORTNAME}_v${PORTVERSION}.source
@@ -30,7 +30,7 @@ WRKSRC=			${WRKDIR}/${PORTNAME}
 F77?=			f77
 
 LIB_DEPENDS=		freetype.9:${PORTSDIR}/print/freetype2
-LIB_DEPENDS+=		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=		jpeg.10:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=		gmp.8:${PORTSDIR}/math/libgmp4

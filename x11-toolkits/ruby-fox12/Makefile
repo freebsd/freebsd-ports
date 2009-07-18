@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.2.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	fxruby
@@ -20,7 +20,7 @@ COMMENT=	Ruby extension module to use FOX 1.2, aka FXRuby
 
 LIB_DEPENDS=	FOX-1.2:${PORTSDIR}/x11-toolkits/fox12 \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		fxscintilla.19:${PORTSDIR}/x11-toolkits/fxscintilla-fox12
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}12

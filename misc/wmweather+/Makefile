@@ -6,7 +6,7 @@
 
 PORTNAME=		wmweather+
 PORTVERSION=		2.11
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		misc windowmaker geography
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	wmweatherplus

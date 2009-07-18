@@ -8,7 +8,7 @@
 
 PORTNAME?=	xscreensaver-gnome
 PORTVERSION=	5.08
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -16,7 +16,8 @@ DISTNAME=	xscreensaver-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat (for GNOME users)
 
-LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle
+LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 CONFLICTS?=	xscreensaver-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 

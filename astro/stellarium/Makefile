@@ -7,6 +7,7 @@
 
 PORTNAME=	stellarium
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
@@ -14,7 +15,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A 3D photo-realistic sky renderer
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 

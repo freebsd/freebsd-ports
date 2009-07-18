@@ -7,13 +7,14 @@
 
 PORTNAME=	libdv
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	Quasar DV codec (libdv): software codec for DV video encoding format
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes

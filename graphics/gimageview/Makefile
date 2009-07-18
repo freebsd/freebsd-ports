@@ -7,7 +7,7 @@
 
 PORTNAME=	gimageview
 PORTVERSION=	0.2.27
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gtkmmviewer
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Yet another GTK+ based image viewer
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes
 WANT_GNOME=	yes

@@ -8,6 +8,7 @@
 
 PORTNAME=	sam2p
 PORTVERSION=	0.45
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/

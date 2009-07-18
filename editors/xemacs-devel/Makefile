@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
@@ -25,7 +25,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
 .if !defined(WITHOUT_X11)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces

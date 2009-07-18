@@ -6,6 +6,7 @@
 
 PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -14,7 +15,7 @@ COMMENT=	Lightweight video thumbnailer that can be used by file managers
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		swscale:${PORTSDIR}/multimedia/ffmpeg \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"

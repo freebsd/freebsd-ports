@@ -8,6 +8,7 @@
 
 PORTNAME=	swftools
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.swftools.org/
 
@@ -15,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SWF manipulation and generation utilities
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig

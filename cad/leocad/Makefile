@@ -7,7 +7,7 @@
 
 PORTNAME=	leocad
 PORTVERSION=	0.73
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CAD program that uses bricks similar to those found in many toys
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_GL=		glut

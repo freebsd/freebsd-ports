@@ -7,7 +7,7 @@
 
 PORTNAME=	qudos
 PORTVERSION=	0.40.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
 DISTNAME=	QuDos-${PORTVERSION}-src
@@ -67,7 +67,7 @@ PLIST_SUB+=	${mod}="@comment "
 
 .if !defined(WITHOUT_GLX) || !defined(WITHOUT_SDLGL)
 USE_GL=		yes
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 .endif
 
