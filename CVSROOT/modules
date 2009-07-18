@@ -207,7 +207,7 @@ R-cran-car                      ports/math/R-cran-car
 R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-igraph                   ports/math/R-cran-igraph
 R-cran-sm                       ports/math/R-cran-sm
-R-sp                            ports/math/R-sp
+R-cran-sp                       ports/math/R-cran-sp
 STk                             ports/lang/STk
 Sather                          ports/lang/Sather
 SciPlot                         ports/graphics/SciPlot
@@ -688,6 +688,7 @@ astk-client                     ports/cad/astk-client
 astk-serveur                    ports/cad/astk-serveur
 astmanproxy                     ports/net/astmanproxy
 astrolog                        ports/misc/astrolog
+astrometry                      ports/astro/astrometry
 astyle                          ports/devel/astyle
 astzclock                       ports/x11-clocks/astzclock
 asunder                         ports/audio/asunder
@@ -12149,6 +12150,7 @@ p5-Net-Blogger                  ports/net/p5-Net-Blogger
 p5-Net-CIDR                     ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite                ports/net/p5-Net-CIDR-Lite
 p5-Net-CSTA                     ports/net/p5-Net-CSTA
+p5-Net-Cassandra                ports/net/p5-Net-Cassandra
 p5-Net-DAAP-Client              ports/audio/p5-Net-DAAP-Client
 p5-Net-DAAP-DMAP                ports/audio/p5-Net-DAAP-DMAP
 p5-Net-DAV-Server               ports/net/p5-Net-DAV-Server
@@ -12358,6 +12360,7 @@ p5-Object-Accessor              ports/devel/p5-Object-Accessor
 p5-Object-Array                 ports/devel/p5-Object-Array
 p5-Object-Declare               ports/devel/p5-Object-Declare
 p5-Object-Enum                  ports/devel/p5-Object-Enum
+p5-Object-Event                 ports/devel/p5-Object-Event
 p5-Object-InsideOut             ports/devel/p5-Object-InsideOut
 p5-Object-MultiType             ports/devel/p5-Object-MultiType
 p5-Object-Realize-Later         ports/devel/p5-Object-Realize-Later
@@ -15653,6 +15656,7 @@ p5-net-bittorrent               ports/net-p2p/p5-Net-BitTorrent
 p5-net-bittorrent-file          ports/net-p2p/p5-Net-BitTorrent-File
 p5-net-bittorrent-peerpacket    ports/net-p2p/p5-Net-BitTorrent-PeerPacket
 p5-net-blogger                  ports/net/p5-Net-Blogger
+p5-net-cassandra                ports/net/p5-Net-Cassandra
 p5-net-cidr                     ports/net-mgmt/p5-Net-CIDR
 p5-net-cidr-lite                ports/net/p5-Net-CIDR-Lite
 p5-net-csta                     ports/net/p5-Net-CSTA
@@ -15864,6 +15868,7 @@ p5-object-accessor              ports/devel/p5-Object-Accessor
 p5-object-array                 ports/devel/p5-Object-Array
 p5-object-declare               ports/devel/p5-Object-Declare
 p5-object-enum                  ports/devel/p5-Object-Enum
+p5-object-event                 ports/devel/p5-Object-Event
 p5-object-insideout             ports/devel/p5-Object-InsideOut
 p5-object-multitype             ports/devel/p5-Object-MultiType
 p5-object-realize-later         ports/devel/p5-Object-Realize-Later
@@ -19910,8 +19915,8 @@ r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-igraph                   ports/math/R-cran-igraph
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
+r-cran-sp                       ports/math/R-cran-sp
 r-cran-zelig                    ports/math/R-cran-Zelig
-r-sp                            ports/math/R-sp
 r1q2                            ports/games/r1q2
 rabbitmq                        ports/net/rabbitmq
 rabl_client                     ports/mail/rabl_client
@@ -22437,6 +22442,7 @@ tt                              ports/games/tt
 tta                             ports/audio/tta
 ttbudget                        ports/net/ttbudget
 ttcp                            ports/benchmarks/ttcp
+ttf2eot                         ports/www/ttf2eot
 ttf2pt1                         ports/print/ttf2pt1
 ttfquery                        ports/print/ttfquery
 ttftot42                        ports/print/ttftot42
@@ -23028,6 +23034,7 @@ wbl                             ports/mail/wbl
 wbxml2                          ports/textproc/wbxml2
 wcalc                           ports/math/wcalc
 wcol                            ports/www/wcol
+wcslib                          ports/astro/wcslib
 wdiag                           ports/net-mgmt/wdiag
 wdiff                           ports/textproc/wdiff
 wdm                             ports/x11/wdm
@@ -24608,6 +24615,7 @@ zms                             ports/mail/zms
 zmtx-zmrx                       ports/comms/zmtx-zmrx
 znavigator                      ports/www/znavigator
 znc                             ports/irc/znc
+znc-extra                       ports/irc/znc-extra
 znibbles                        ports/games/znibbles
 zniper                          ports/net/zniper
 zodb3                           ports/databases/zodb3
