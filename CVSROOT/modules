@@ -3944,7 +3944,6 @@ gcal                            ports/deskutils/gcal
 gcalcli                         ports/deskutils/gcalcli
 gcalctool                       ports/math/gcalctool
 gcb                             ports/x11/gcb
-gcc-ooo                         ports/lang/gcc-ooo
 gcc295                          ports/lang/gcc295
 gcc34                           ports/lang/gcc34
 gcc42                           ports/lang/gcc42
