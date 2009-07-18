@@ -140,11 +140,6 @@ include/wine/windows/d3drmdef.h
 include/wine/windows/d3drmobj.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
-include/wine/windows/d3dx8.h
-include/wine/windows/d3dx8core.h
-include/wine/windows/d3dx8math.h
-include/wine/windows/d3dx8math.inl
-include/wine/windows/d3dx8mesh.h
 include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9core.h
 include/wine/windows/d3dx9math.h
@@ -352,11 +347,14 @@ include/wine/windows/msxml2did.h
 include/wine/windows/msxmldid.h
 include/wine/windows/nb30.h
 include/wine/windows/ndrtypes.h
+include/wine/windows/netcon.h
+include/wine/windows/netcon.idl
 include/wine/windows/netfw.h
 include/wine/windows/netfw.idl
 include/wine/windows/npapi.h
 include/wine/windows/nspapi.h
 include/wine/windows/ntddcdrm.h
+include/wine/windows/ntddndis.h
 include/wine/windows/ntddscsi.h
 include/wine/windows/ntddstor.h
 include/wine/windows/ntdsapi.h
@@ -468,6 +466,7 @@ include/wine/windows/storage.h
 include/wine/windows/strmif.h
 include/wine/windows/strmif.idl
 include/wine/windows/svrapi.h
+include/wine/windows/t2embapi.h
 include/wine/windows/tapi.h
 include/wine/windows/tchar.h
 include/wine/windows/textserv.h
@@ -496,6 +495,8 @@ include/wine/windows/vfwmsgs.h
 include/wine/windows/vmr9.h
 include/wine/windows/vmr9.idl
 include/wine/windows/vmrender.idl
+include/wine/windows/wbemcli.h
+include/wine/windows/wbemcli.idl
 include/wine/windows/wfext.h
 include/wine/windows/winbase.h
 include/wine/windows/wincodec.h
@@ -624,7 +625,6 @@ lib/wine/d3d8.dll.so
 lib/wine/d3d9.dll.so
 lib/wine/d3dim.dll.so
 lib/wine/d3drm.dll.so
-lib/wine/d3dx8.dll.so
 lib/wine/d3dx9_24.dll.so
 lib/wine/d3dx9_25.dll.so
 lib/wine/d3dx9_26.dll.so
@@ -747,7 +747,6 @@ lib/wine/libd3d8.def
 lib/wine/libd3d9.def
 lib/wine/libd3dim.def
 lib/wine/libd3drm.def
-lib/wine/libd3dx8.def
 lib/wine/libd3dx9.def
 lib/wine/libd3dxof.def
 lib/wine/libdbghelp.def
@@ -1099,6 +1098,7 @@ lib/wine/wintrust.dll.so
 lib/wine/winver.exe.so
 lib/wine/wldap32.dll.so
 lib/wine/wmi.dll.so
+lib/wine/wmiutils.dll.so
 lib/wine/wnaspi32.dll.so
 lib/wine/wordpad.exe.so
 lib/wine/wow32.dll.so
@@ -1165,11 +1165,8 @@ share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.progman
-%%PORTDOCS%%%%DOCSDIR%%/README.uninstaller
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
-%%PORTDOCS%%%%DOCSDIR%%/README.winemine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/wine
 @dirrm include/wine/windows/ddk
