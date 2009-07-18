@@ -1,7 +1,0 @@
-GCC, the GNU Compiler Collection includes gcc, g++
-for OpenOffice.org compilation
-
-This port installs the various front ends as gcc-ooo, and g++-ooo
-into the ${PREFIX}/bin directory.
-
-WWW: http://gcc.gnu.org/

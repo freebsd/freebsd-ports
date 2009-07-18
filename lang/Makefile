@@ -87,7 +87,6 @@
     SUBDIR += gambit-c
     SUBDIR += gauche
     SUBDIR += gawk
-    SUBDIR += gcc-ooo
     SUBDIR += gcc295
     SUBDIR += gcc34
     SUBDIR += gcc42
