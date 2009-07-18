@@ -414,6 +414,7 @@
     SUBDIR += mod_auth_pam2
     SUBDIR += mod_auth_pgsql
     SUBDIR += mod_auth_pgsql2
+    SUBDIR += mod_auth_pubtkt
     SUBDIR += mod_auth_remote
     SUBDIR += mod_auth_useragent
     SUBDIR += mod_auth_xradius
