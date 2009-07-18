@@ -7,7 +7,7 @@
 
 PORTNAME=	hpijs
 PORTVERSION=	2.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpinkjet
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	hpinkjet
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Drivers and support resources for HP Inkjet Printers
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--disable-dependency-tracking

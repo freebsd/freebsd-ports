@@ -7,7 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.17.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone	\
 		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
 		js.1:${PORTSDIR}/lang/spidermonkey			\
-		jpeg.9:${PORTSDIR}/graphics/jpeg			\
+		jpeg.10:${PORTSDIR}/graphics/jpeg			\
 		png.5:${PORTSDIR}/graphics/png				\
 		curl.5:${PORTSDIR}/ftp/curl
 

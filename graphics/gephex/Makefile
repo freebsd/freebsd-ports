@@ -7,13 +7,14 @@
 
 PORTNAME=	gephex
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gephex.org/download/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software-based interactive video-effect system
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 OPTIONS=	SDL	"Turn on SDL support"		on \
 		AALIB	"Turn on AALIB support"		on \
@@ -39,6 +40,7 @@ CONFIGURE_ARGS=	--without-ASOUNDLIB --without-AVIFILE \
 MAN1=		gephex-engine.1 gephex-gui.1 gephex.1
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
+PORTREVISION=	1
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gridpix
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pgollucci
@@ -16,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Present large images efficiently over the Internet
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnetpbm.a:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 # create necessary directories -- don't want to depend on an http
 # server port since we don't know which one the user wants

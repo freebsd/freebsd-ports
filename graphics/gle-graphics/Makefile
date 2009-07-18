@@ -7,7 +7,7 @@
 
 PORTNAME=	gle-graphics
 PORTVERSION=	4.0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	glx
@@ -40,7 +40,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_BITMAP_IMAGES)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiffxx.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	 --with-jpeg=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=${LOCALBASE}

@@ -7,7 +7,7 @@
 
 PORTNAME=	amanith
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.amanith.org/download/files/ \
 		http://louhi.kempele.fi/~skyostil/projects/pyamanith/dist/
@@ -18,7 +18,7 @@ COMMENT=	C++ CrossPlatform framework designed for 2d & 3d vector graphics
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_QT_VER=	3

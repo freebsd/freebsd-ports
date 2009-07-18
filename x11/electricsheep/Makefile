@@ -7,7 +7,7 @@
 
 PORTNAME=	electricsheep
 PORTVERSION=	2.6.8
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
@@ -16,7 +16,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	A nice distributed screensaver
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/x11/xloadimage \

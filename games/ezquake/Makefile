@@ -7,6 +7,7 @@
 
 PORTNAME=	ezquake
 PORTVERSION=	1.9
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	SF:ezquake \
@@ -46,7 +47,7 @@ IGNORE=		needs at least one interface (GLX or X11)
 .endif
 
 .if !defined(WITHOUT_GLX)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 USE_GL=		yes
 ALL_TARGET+=	glx
 PLIST_SUB+=	GLX=""

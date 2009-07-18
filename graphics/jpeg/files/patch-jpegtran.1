@@ -1,33 +1,9 @@
---- jpegtran.1.orig	Sun Aug  3 16:01:01 1997
-+++ jpegtran.1	Fri Oct  8 14:51:56 2004
-@@ -71,12 +71,23 @@
- .PP
- The image can be losslessly transformed by giving one of these switches:
- .TP
-+.B \-crop WxH+X+Y
-+Crop to a rectangular subarea of width W, height H starting at point X,Y.
-+Allows the Width and or Height of the image to exceed the image.
-+.TP
-+.B \-drop +X+Y
-+Drop another image. Overlay part of the source image at point width
-+W + height H. 
-+.TP
- .B \-flip horizontal
- Mirror image horizontally (left-right).
- .TP
- .B \-flip vertical
- Mirror image vertically (top-bottom).
- .TP
-+.B \-perfect
-+Fails with an error if there is any loss durring the transformation.
-+.TP
- .B \-rotate 90
- Rotate image 90 degrees clockwise.
- .TP
-@@ -161,6 +172,14 @@
+--- jpegtran.1.orig	2009-03-28 19:18:21.000000000 +0100
++++ jpegtran.1	2009-07-01 09:19:36.000000000 +0200
+@@ -195,6 +195,14 @@
  Copy all extra markers.  This setting preserves miscellaneous markers
- found in the source file, such as JFIF thumbnails and Photoshop settings.
- In some files these extra markers can be sizable.
+ found in the source file, such as JFIF thumbnails, Exif data, and Photoshop
+ settings.  In some files these extra markers can be sizable.
 +See 'EXIF FILES' for special tratement of EXIF markers.
 +.TP
 +.B \-copy exif
@@ -36,10 +12,10 @@
 +marker it is copied and the JFIF marker (incompatible with EXIF) is
 +omitted. If there is no EXIF marker a JFIF one is emitted as usual.  See 'EXIF
 +FILES' for special tratement of EXIF markers.
- .PP
+ .IP
  The default behavior is
  .BR "\-copy comments" .
-@@ -189,6 +208,26 @@
+@@ -223,6 +231,26 @@
  .B \-debug
  Same as
  .BR \-verbose .

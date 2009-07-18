@@ -7,6 +7,7 @@
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.22
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
@@ -15,7 +16,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhanced TightVNC Viewer (SSVNC: SSL/SSH VNC viewer)
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel \
 		xterm:${PORTSDIR}/x11/xterm
 

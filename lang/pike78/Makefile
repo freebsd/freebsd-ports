@@ -7,6 +7,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	7.8.316
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
@@ -18,7 +19,7 @@ DISTNAME=	Pike-v${PORTVERSION}
 MAINTAINER=	johans@stack.nl
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		pcre.0:${PORTSDIR}/devel/pcre \

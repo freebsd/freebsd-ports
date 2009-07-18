@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.95
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.bytesex.org/releases/xawtv/
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 RUN_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		${LOCALBASE}/lib/X11/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 OPTIONS=	AA		"Enable AA support" on \
 		DV		"Enable reading/writing raw dv files" off \

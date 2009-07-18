@@ -7,7 +7,7 @@
 
 PORTNAME=	tremor
 PORTVERSION=	3.2.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/:src \
 		http://tremor.quakedev.com/:data
@@ -20,7 +20,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhaced Quake engine based on JoeQuake
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 

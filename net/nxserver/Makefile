@@ -7,7 +7,7 @@
 
 PORTNAME=	nxserver
 PORTVERSION=	2.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://web04.nomachine.com/download/${PORTVERSION}/sources/
 DISTFILES=	nx-X11-${PORTVERSION}-3.tar.gz \
@@ -26,7 +26,7 @@ MAINTAINER=	freenx@deweyonline.com
 COMMENT=	Low-bandwidth X network server
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 # freetype version included does not compile on 64bit

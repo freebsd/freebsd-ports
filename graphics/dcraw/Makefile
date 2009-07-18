@@ -7,13 +7,14 @@
 
 PORTNAME=	dcraw
 PORTVERSION=	8.93
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Decoder for RAW files from digital cameras
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
 USE_BZIP2=	yes

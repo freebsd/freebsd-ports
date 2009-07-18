@@ -7,7 +7,7 @@
 
 PORTNAME=	nucleo
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/ \
 		http://freebsd.nsu.ru/distfiles/metisse/
@@ -16,7 +16,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Toolkit to explore video and human-computer interaction
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	aterm
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	x11	# `+=' is for slave ports
 MASTER_SITES=	SF
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--with-png=no
 
 .if !defined(WITHOUT_JPEG)
 CONFIGURE_ARGS+=	--with-jpeg
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 .else
 CONFIGURE_ARGS+=	--with-jpeg=no
 .endif

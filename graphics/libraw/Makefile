@@ -7,6 +7,7 @@
 
 PORTNAME=	libraw
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -19,7 +20,7 @@ OPTIONS=	OPTIMIZED_CFLAGS "Enable optimization" off \
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
 .if defined(WITH_OPTIMIZED_CFLAGS)

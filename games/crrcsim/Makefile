@@ -7,7 +7,7 @@
 
 PORTNAME=	crrcsim
 PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS
 
@@ -16,7 +16,7 @@ COMMENT=	Model-airplane flight simulation program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	portaudio.2:${PORTSDIR}/audio/portaudio2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

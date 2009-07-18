@@ -7,6 +7,7 @@
 
 PORTNAME=	libopenraw
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
@@ -14,7 +15,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Library for camera RAW files decoding
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	libxml2

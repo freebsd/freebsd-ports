@@ -7,7 +7,7 @@
 
 PORTNAME=	xv
 PORTVERSION=	3.10a
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/:base \
 		${MASTER_SITE_SOURCEFORGE}
@@ -22,7 +22,7 @@ PATCHFILES=	xv-3.10a-enhancements.20070520-20081216.diff
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	An X11 program that displays images of various formats
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		jasper.4:${PORTSDIR}/graphics/jasper

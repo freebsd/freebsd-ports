@@ -7,6 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
@@ -127,7 +128,7 @@ CONFIGURE_ARGS+=	--with-jasper=${LOCALBASE}
 .endif
 
 .if !defined(WITHOUT_JPEG)
-LIB_DEPENDS+=		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=		jpeg.10:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--with-libjpeg=${LOCALBASE}
 .endif
 
@@ -188,6 +189,7 @@ RUN_DEPENDS+=	${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 PYEASYINSTALL_CMD=	${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 PYDISTUTILS_PKGNAME=	${PORTNAME:U}
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}
+PORTREVISION=	1
 _OSRELEASE!=		${UNAME} -r
 PYEASYINSTALL_OSARCH=	-${OPSYS:L}-${_OSRELEASE}-${ARCH}
 PYEASYINSTALL_EGG=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg

@@ -7,7 +7,7 @@
 
 PORTNAME=	kaffe
 PORTVERSION=	1.1.7.r1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	java devel
 #MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
 MASTER_SITES=	http://www.kaffe.org/~robilad/
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-1.1.7-rc1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform Java virtual machine with JIT compiler and AWT package
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		gmp.8:${PORTSDIR}/math/libgmp4

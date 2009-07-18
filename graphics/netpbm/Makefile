@@ -11,6 +11,7 @@ PORTVERSION=	${DEVEL_PORTVERSION}
 .else
 PORTVERSION=	10.26.63
 .endif
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +28,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A toolkit for conversion of images between different formats
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit
 #		jasper.4:${PORTSDIR}/graphics/jasper

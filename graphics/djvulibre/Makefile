@@ -7,14 +7,14 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.22
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	DjVu viewers and browser plugin
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		djvulibre.22:${PORTSDIR}/graphics/djvulibre-nox11
 

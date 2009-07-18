@@ -6,7 +6,7 @@
 
 PORTNAME=	swiggle
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Swiggle is a commandline web image gallery generator
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		exif.12:${PORTSDIR}/graphics/libexif
 
 post-patch:

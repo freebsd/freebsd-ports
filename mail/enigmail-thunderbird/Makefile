@@ -7,6 +7,7 @@
 
 PORTNAME=	enigmail
 PORTVERSION=	0.95.7
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
 PKGNAMEPREFIX?=	thunderbird-
@@ -16,7 +17,7 @@ COMMENT?=	A GnuPG extension for the Thunderbird mail client
 
 EXTRACT_DEPENDS=${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:patch
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		nspr4:${PORTSDIR}/devel/nspr \
 		nss3:${PORTSDIR}/security/nss

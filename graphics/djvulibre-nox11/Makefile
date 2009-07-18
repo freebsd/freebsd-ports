@@ -7,7 +7,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.22
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu
 PKGNAMESUFFIX=	-nox11
@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-nox11
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_ICONV=	yes

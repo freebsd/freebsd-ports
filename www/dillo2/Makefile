@@ -6,6 +6,7 @@
 
 PORTNAME=	dillo
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/
 
@@ -15,7 +16,7 @@ COMMENT=	A fast, small graphical Web browser built upon fltk2
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2
 RUN_DEPENDS=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2 \
 		wget:${PORTSDIR}/ftp/wget
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes

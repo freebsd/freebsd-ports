@@ -7,7 +7,7 @@
 
 PORTNAME=	hdf
 PORTVERSION=	4.2r3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/:src \
 		ftp://ftp.hdfgroup.org/HDF/Documentation/${PORTVERSION}/:doc \
@@ -22,7 +22,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		sz.2:${PORTSDIR}/science/szip
 
 CONFLICTS=	netcdf-*

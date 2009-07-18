@@ -7,13 +7,14 @@
 
 PORTNAME=	jpegoptim
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to optimize jpeg files
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-libjpeg=${LOCALBASE}

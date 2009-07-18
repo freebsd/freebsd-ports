@@ -7,7 +7,7 @@
 
 PORTNAME=	allacrost
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	allacrost_demo_source_${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A single player 2D role-playing game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libluabind.a:${PORTSDIR}/devel/luabind
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		openal.0:${PORTSDIR}/audio/openal \
 		ogg.6:${PORTSDIR}/audio/libogg \

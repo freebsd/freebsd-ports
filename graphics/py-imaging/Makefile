@@ -7,7 +7,7 @@
 
 PORTNAME=	imaging
 PORTVERSION=	1.1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/media/downloads/ \
 		http://www.pythonware.net/storage/
@@ -17,7 +17,7 @@ DISTNAME=	Imaging-${PORTVERSION}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	The Python Imaging Library
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 UNIQUENAME=	py-${PORTNAME}

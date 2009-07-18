@@ -8,7 +8,7 @@
 PORTNAME=	devil
 PORTVERSION=	1.7.8
 PORTEPOCH=	1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil
 DISTNAME=	DevIL-${PORTVERSION}
@@ -47,7 +47,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .if defined(WITHOUT_JPEG)
 CONFIGURE_ARGS+=--disable-jpeg
 .else
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--enable-jpeg
 .endif
 

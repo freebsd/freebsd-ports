@@ -8,7 +8,7 @@
 
 PORTNAME=	sunclock
 PORTVERSION=	3.56
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/ \
 		http://mbsd.msk.ru/dist/
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/ \
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes

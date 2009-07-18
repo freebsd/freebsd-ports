@@ -7,6 +7,7 @@
 
 PORTNAME=	swi-pl
 PORTVERSION=	5.6.64
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/ \
 		ftp://ftp.swi.psy.uva.nl/SWI-Prolog/

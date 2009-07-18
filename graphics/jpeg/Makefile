@@ -8,8 +8,7 @@
 # version number) when updating this port.  Thank you.
 
 PORTNAME=	jpeg
-PORTVERSION=	6b
-PORTREVISION=	7
+PORTVERSION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \
@@ -22,7 +21,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
 
-WRKSRC=		${WRKDIR}/jpeg-6b
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -47,13 +46,13 @@ post-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/jpeg
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jpeg
-	@${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/jpeg
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jpeg/
+	@${INSTALL_DATA} ${WRKSRC}/*.txt ${PREFIX}/share/doc/jpeg/
 .endif
 .for header in ${ADDITIONAL_HEADER}
-	@${INSTALL_DATA} ${WRKSRC}/${header} ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/${header} ${PREFIX}/include/
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/jpegexiforient ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/exifautotran ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/jpegexiforient ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/exifautotran ${PREFIX}/bin/
 
 .include <bsd.port.mk>

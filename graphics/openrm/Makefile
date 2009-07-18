@@ -7,7 +7,7 @@
 
 PORTNAME=		openrm
 PORTVERSION=		1.6.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		graphics
 MASTER_SITES=		SF
 DISTNAME=		${PORTNAME}-devel-${PORTVERSION}-1
@@ -19,7 +19,7 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/rm${PORTVERSION:S/.//g}
 .ifdef (WITH_DEMOS)

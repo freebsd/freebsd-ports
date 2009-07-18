@@ -7,7 +7,7 @@
 
 PORTNAME=	mmosaic
 PORTVERSION=	3.7.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.enst.fr/pub/mbone/mMosaic/ \
 		ftp://ftp.uni-koeln.de/net/inet/WWW/mosaic/unix/ \
@@ -17,7 +17,7 @@ DISTNAME=	mMosaic-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web browser based on Mosaic, but with many modernizations
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 RESTRICTED=	"academic, research and internal business purposes only, without a fee"

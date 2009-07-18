@@ -7,7 +7,7 @@
 
 PORTNAME=	paraview
 PORTVERSION=	2.4.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v2.4/
 
@@ -16,7 +16,7 @@ COMMENT=	ParaView is a powerful scientific data visualization application
 
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2

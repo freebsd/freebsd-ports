@@ -7,6 +7,7 @@
 
 PORTNAME=	fltk
 PORTVERSION=	2.0.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/snapshots
@@ -26,7 +27,7 @@ COMMENT=	Fast Light Toolkit version 2 (development snapshot)
 # support will be disabled without breaking the build.
 BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 SNAPSHOT=	r6671

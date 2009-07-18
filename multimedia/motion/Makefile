@@ -7,7 +7,7 @@
 
 PORTNAME=	motion
 PORTVERSION=	3.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ack@telefonica.net
 COMMENT=	A motion detection application
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		avformat.1:${PORTSDIR}/multimedia/ffmpeg
 
 ONLY_FOR_ARCHS=	i386 amd64

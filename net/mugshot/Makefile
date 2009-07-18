@@ -7,14 +7,14 @@
 
 PORTNAME=	mugshot
 PORTVERSION=	1.1.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://download.mugshot.org/client/sources/linux/
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	The official client for Mugshot network
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg:install \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg:install \
 		Xss.1:${PORTSDIR}/x11/xorg-libraries:install \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \

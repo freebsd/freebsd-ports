@@ -8,6 +8,7 @@
 
 PORTNAME=	armagetron
 PORTVERSION=	0.2.8.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/armagetronad
 DISTNAME=	armagetronad-${PORTVERSION}
@@ -24,7 +25,7 @@ CONFIGURE_ENV=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include `${SDL_CONFIG} --cflag
 CONFIGURE_ARGS=	--disable-etc
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 

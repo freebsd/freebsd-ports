@@ -7,6 +7,7 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	5.08
+PORTREVISION=	1
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -15,6 +16,7 @@ MAINTAINER?=	DougB@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
 
 LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		glade-2.0.0:${PORTSDIR}/devel/libglade2

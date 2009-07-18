@@ -7,6 +7,7 @@
 
 PORTNAME=	mtpaint
 PORTVERSION=	3.31
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -15,7 +16,7 @@ COMMENT=	Simple painting program
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jasper.4:${PORTSDIR}/graphics/jasper \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		openjpeg.2:${PORTSDIR}/graphics/openjpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \

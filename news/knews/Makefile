@@ -7,14 +7,14 @@
 
 PORTNAME=	knews
 PORTVERSION=	1.0b.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	news
 MASTER_SITES=	http://www.matematik.su.se/~kjj/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A threaded nntp newsreader for X
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		compface:${PORTSDIR}/mail/faces
 RUN_DEPENDS=	newsp:${PORTSDIR}/print/mp-letter

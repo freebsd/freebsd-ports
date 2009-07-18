@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.6.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	fxruby
@@ -20,7 +20,7 @@ COMMENT=	Ruby extension module to use FOX 1.6, aka FXRuby
 
 LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		fxscintilla.19:${PORTSDIR}/x11-toolkits/fxscintilla
 

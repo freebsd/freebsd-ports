@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://transcode.kabewm.com/ \
 		http://fromani.exit1.org/
@@ -16,7 +16,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A text-console utility for video stream processing
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2 \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv

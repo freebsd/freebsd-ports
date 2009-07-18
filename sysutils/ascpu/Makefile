@@ -7,14 +7,14 @@
 
 PORTNAME=	ascpu
 PORTVERSION=	1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/ascpu/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	CPU statistics monitor utility for XFree86
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

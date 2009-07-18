@@ -7,7 +7,7 @@
 
 PORTNAME=	lcms
 PORTVERSION=	1.18a
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -40,7 +40,7 @@ PLIST_SUB+=	TIFFICC="@comment "
 .endif
 
 .if defined(WITH_JPEGICC)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEGICC=""
 MAN1+=		jpegicc.1
 .else

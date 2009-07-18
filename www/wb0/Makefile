@@ -7,7 +7,7 @@
 
 PORTNAME=	wb0
 PORTVERSION=	000324
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www graphics
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/wb0/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web browser for svgalib which can show pictures
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx-current
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		vga.1:${PORTSDIR}/graphics/svgalib \
 		png.5:${PORTSDIR}/graphics/png
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	drscheme
 PORTVERSION=	370
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -24,7 +24,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo	\
-		jpeg.9:${PORTSDIR}/graphics/jpeg	\
+		jpeg.10:${PORTSDIR}/graphics/jpeg	\
 		png.5:${PORTSDIR}/graphics/png
 
 USE_XORG=	xft x11 xrender xaw

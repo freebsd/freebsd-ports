@@ -14,14 +14,14 @@ include/jpeglib.h
 lib/libjpeg.a
 lib/libjpeg.la
 lib/libjpeg.so
-lib/libjpeg.so.9
+lib/libjpeg.so.10
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/coderules.doc
-%%PORTDOCS%%%%DOCSDIR%%/filelist.doc
-%%PORTDOCS%%%%DOCSDIR%%/install.doc
-%%PORTDOCS%%%%DOCSDIR%%/jconfig.doc
-%%PORTDOCS%%%%DOCSDIR%%/libjpeg.doc
-%%PORTDOCS%%%%DOCSDIR%%/structure.doc
-%%PORTDOCS%%%%DOCSDIR%%/usage.doc
-%%PORTDOCS%%%%DOCSDIR%%/wizard.doc
+%%PORTDOCS%%%%DOCSDIR%%/coderules.txt
+%%PORTDOCS%%%%DOCSDIR%%/filelist.txt
+%%PORTDOCS%%%%DOCSDIR%%/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/jconfig.txt
+%%PORTDOCS%%%%DOCSDIR%%/libjpeg.txt
+%%PORTDOCS%%%%DOCSDIR%%/structure.txt
+%%PORTDOCS%%%%DOCSDIR%%/usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/wizard.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

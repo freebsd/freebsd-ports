@@ -93,7 +93,7 @@ USE_OPENSSL=	yes
 .if ${PHP_MODNAME} == "gd"
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 .	if !defined(WITHOUT_X11)
 USE_XORG=	xpm
 .	endif

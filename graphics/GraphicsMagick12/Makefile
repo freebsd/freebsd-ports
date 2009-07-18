@@ -7,6 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/

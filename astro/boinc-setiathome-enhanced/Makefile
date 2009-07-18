@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	${SETI_PORTVERSION_FULL}.${AP_PORTVERSION_FULL}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTFILES=	astropulse-${AP_PORTVERSION_FULL}.tar.bz2 setiathome-${SETI_PORTVERSION_FULL}.tar.bz2
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		xcb.2:${PORTSDIR}/x11/libxcb
 
 USE_GL=		gl glu glut

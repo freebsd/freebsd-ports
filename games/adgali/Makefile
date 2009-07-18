@@ -8,14 +8,14 @@
 
 PORTNAME=	adgali
 PORTVERSION=	0.2.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games devel
 MASTER_SITES=	http://adgali.apiou.org/download/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An open source game library useful for 2D game development
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2 \

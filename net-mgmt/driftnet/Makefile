@@ -7,7 +7,7 @@
 
 PORTNAME=	driftnet
 PORTVERSION=	0.1.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ex-parrot.com/~chris/driftnet/ \
 		http://www.vanheusden.com/mirrors/
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tool to grab images out of (your) TCP connections
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.10:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 USE_GNOME=	gtk12

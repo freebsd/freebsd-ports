@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	1.0.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		swig:${PORTSDIR}/devel/swig13 \
 		jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \

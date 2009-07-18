@@ -1,14 +1,6 @@
---- rdjpgcom.c.orig	Sun Oct 12 00:41:04 1997
-+++ rdjpgcom.c	Thu Mar 18 06:37:23 2004
-@@ -14,6 +14,7 @@
- #define JPEG_CJPEG_DJPEG	/* to get the command-line config symbols */
- #include "jinclude.h"		/* get auto-config symbols, <stdio.h> */
- 
-+#include <locale.h>		/* to declare setlocale() */
- #include <ctype.h>		/* to declare isupper(), tolower() */
- #ifdef USE_SETMODE
- #include <fcntl.h>		/* to declare setmode()'s parameter macros */
-@@ -120,6 +121,7 @@
+--- rdjpgcom.c.orig	2009-04-03 01:30:13.000000000 +0200
++++ rdjpgcom.c	2009-06-30 13:49:16.000000000 +0200
+@@ -124,6 +124,7 @@
  #define M_EOI   0xD9		/* End Of Image (end of datastream) */
  #define M_SOS   0xDA		/* Start Of Scan (begins compressed data) */
  #define M_APP0	0xE0		/* Application-specific marker, type N */
@@ -16,7 +8,7 @@
  #define M_APP12	0xEC		/* (we don't bother to list all 16 APPn's) */
  #define M_COM   0xFE		/* COMment */
  
-@@ -210,6 +212,175 @@
+@@ -214,6 +215,175 @@
    }
  }
  
@@ -192,20 +184,10 @@
  
  /*
   * Process a COM marker.
-@@ -231,6 +402,7 @@
-     ERREXIT("Erroneous JPEG marker length");
-   length -= 2;
+@@ -381,6 +551,15 @@
+       process_COM(raw);
+       break;
  
-+  setlocale(LC_ALL, "");
-   while (length > 0) {
-     ch = read_1_byte();
-     /* Emit the character in a readable form.
-@@ -363,6 +535,15 @@
- 
-     case M_COM:
-       process_COM();
-+      break;
-+
 +    case M_APP1:
 +      /* APP1 is usually the EXIF marker used by digital cameras, attempt to
 +       * process it to give some useful info. */
@@ -213,6 +195,8 @@
 +        process_APP1();
 +      } else
 +        skip_variable();
-       break;
- 
++      break;
++
      case M_APP12:
+       /* Some digital camera makers put useful textual information into
+        * APP12 markers, so we print those out too when in -verbose mode.

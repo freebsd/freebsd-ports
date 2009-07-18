@@ -7,6 +7,7 @@
 
 PORTNAME=	ida
 PORTVERSION=	2.07
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	fbida-${PORTVERSION}
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Small and fast motif-based image viewer and editor
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ungif.5:${PORTSDIR}/graphics/libungif \

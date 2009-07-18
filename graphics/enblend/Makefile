@@ -7,7 +7,7 @@
 
 PORTNAME=	enblend
 PORTVERSION=	3.1.r20080615
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vd/enblend
@@ -18,7 +18,7 @@ COMMENT=	A tool for image blending with multiresolution splines
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/pool/pool.hpp:${PORTSDIR}/devel/boost \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms \
 		xmi.1:${PORTSDIR}/graphics/plotutils \
 		tiff.4:${PORTSDIR}/graphics/tiff

@@ -7,6 +7,7 @@
 
 PORTNAME=	bmeps
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ MAINTAINER=	corky1951@comcast.net
 COMMENT=	Convert bitmap images (PNG/JPEG/NetPBM) to EPS
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		netpbm.1:${PORTSDIR}/graphics/netpbm
 
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include"

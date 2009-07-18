@@ -7,7 +7,7 @@
 
 PORTNAME=	eet
 PORTVERSION=	0.9.10.042
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Enlightenment Data Handling Library
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

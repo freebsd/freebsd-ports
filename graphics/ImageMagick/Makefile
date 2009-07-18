@@ -392,7 +392,10 @@ WITHOUT_IMAGEMAGICK_TESTS=yes
 .endif
 
 .if defined(WITH_IMAGEMAGICK_TESTS) && !defined(WITHOUT_IMAGEMAGICK_TESTS)
+# jpeg-7 fails in ValidateImageFormatsOnDisk
+.if defined(WITH_IMAGEMAGICK_TEST_JPEG7)
 post-build:	test
+.endif
 .endif
 
 .include <bsd.port.post.mk>
