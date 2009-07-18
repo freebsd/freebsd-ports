@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2008-10-28 19:25:44.000000000 +0000
++++ src/Makefile	2009-03-23 18:39:37.000000000 +0000
+@@ -9,7 +9,7 @@
+ 	$(APXS) -c -Wc,"-Wall -ansi $(CFLAGS)" -Wl,"$(LDFLAGS)" -l crypto $(MOD).c
+ 
+ install: $(TARGET)
+-	$(APXS) -i $(TARGET)
++	$(APXS) -i -a -n auth_pubtkt $(TARGET)
+ 
+ clean:
+ 	-rm -f $(MOD).o $(MOD).so $(MOD).la $(MOD).lo $(MOD).slo

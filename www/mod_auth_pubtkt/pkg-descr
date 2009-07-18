@@ -1,0 +1,9 @@
+mod_auth_pubtkt is a simple Web single sign-on (SSO) solution for Apache. It
+validates authentication tickets provided by the client in a cookie using
+public-key cryptography (DSA or RSA). Thus, only the login server that
+generates the tickets needs to possess the private key, while Web servers
+can verify tickets given only the public key. The implementation of the
+login server is left to the user, but an example and a library in PHP are
+provided with the distribution.
+
+WWW: http://neon1.net/mod_auth_pubtkt/
