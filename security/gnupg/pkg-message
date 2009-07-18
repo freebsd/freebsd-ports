@@ -11,7 +11,8 @@ The following ports of pinentry dialogs are available:
 security/pinentry-curses	(ncurses based dialog)
 security/pinentry-gtk		(GTK 1.2 based dialog)
 security/pinentry-gtk2		(GTK 2.x based dialog)
-security/pinentry-qt		(QT based dialog)
+security/pinentry-qt		(QT3 based dialog)
+security/pinentry-q4		(QT4 based dialog)
 
 ###############################################################################
 
