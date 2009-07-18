@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	exempi
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
