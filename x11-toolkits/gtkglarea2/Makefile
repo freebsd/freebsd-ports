@@ -6,8 +6,7 @@
 #    $MCom: ports/x11-toolkits/gtkglarea2/Makefile,v 1.2 2006/09/10 00:51:17 mezz Exp $
 
 PORTNAME=	gtkglarea
-PORTVERSION=	1.99.0
-PORTREVISION=	11
+PORTVERSION=	2.0.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DISTNAME=	gtkglarea-${PORTVERSION}
