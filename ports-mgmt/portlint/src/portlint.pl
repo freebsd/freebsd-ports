@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.184 2009/07/09 00:59:29 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.187 2009/07/18 21:39:30 marcus Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 12;
-my $micro = 0;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -911,7 +911,7 @@ sub checkplist {
 		}
 
 		if ($_ =~ m#man/([^/]+/)?man([$manchapters])/([^\.]+\.[$manchapters])(\.gz)?$#) {
-			if ($4 eq '') {
+			if (!$4) {
 				$plistman{$2} .= ' ' . $3;
 				if ($mancompress) {
 					&perror("FATAL", $file, $.,
@@ -928,7 +928,7 @@ sub checkplist {
 				}
 			}
 			$plistmanall{$2} .= ' ' . $3;
-			if ($1 ne '') {
+			if ($1) {
 				$manlangs{substr($1, 0, length($1) - 1)}++;
 			}
 		}
@@ -1960,13 +1960,13 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	}
 
 	#
-	# whole file: check for --build, --mandir, --infodir, and --prefix
+	# whole file: check for --build, --mandir, and --infodir
 	# when GNU_CONFIGURE
 	#
 	if (exists $makevar{GNU_CONFIGURE} &&
 		$makevar{GNU_CONFIGURE} ne '' &&
-		$makevar{CONFIGURE_ARGS} =~ /--(prefix|build|(man|info)dir)/) {
-		&perror("WARN", $file, -1, "--build, --mandir, --infodir and --prefix ".
+		$makevar{CONFIGURE_ARGS} =~ /--(build|(man|info)dir)/) {
+		&perror("WARN", $file, -1, "--build, --mandir, and --infodir ".
 			"are not needed in CONFIGURE_ARGS as they are already set in ".
 			"bsd.port.mk.");
 	}
