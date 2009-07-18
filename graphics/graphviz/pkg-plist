@@ -21,6 +21,7 @@ bin/lneato
 bin/mm2gv
 bin/neato
 bin/nop
+bin/osage
 bin/prune
 bin/sccmap
 %%WITH_SMYRNA%%bin/smyrna
@@ -67,6 +68,7 @@ include/graphviz/gvplugin_device.h
 include/graphviz/pack.h
 include/graphviz/gv.i
 include/graphviz/gv.cpp
+include/graphviz/graphviz_version.h
 lib/graphviz/config6
 lib/graphviz/libcdt.so
 lib/graphviz/libcdt.so.4
@@ -194,19 +196,18 @@ libdata/pkgconfig/libgraph.pc
 libdata/pkgconfig/libcgraph.pc
 libdata/pkgconfig/libpathplan.pc
 libdata/pkgconfig/libgvc.pc
+%%PORTDOCS%%%%DATADIR%%/doc/AUTHORS
+%%PORTDOCS%%%%DATADIR%%/doc/COPYING
+%%PORTDOCS%%%%DATADIR%%/doc/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/doc/Dot.ref
+%%PORTDOCS%%%%DATADIR%%/doc/NEWS
+%%PORTDOCS%%%%DATADIR%%/doc/cpl1.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/latex_suggestions.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/html/arrows.html
 %%PORTDOCS%%%%DOCSDIR%%/html/build.html
 %%PORTDOCS%%%%DOCSDIR%%/html/char.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/winbuild.html
-%%PORTDOCS%%%%DOCSDIR%%/html/attrs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/colors.html
-%%PORTDOCS%%%%DOCSDIR%%/html/command.html
-%%PORTDOCS%%%%DOCSDIR%%/html/grammar.html
-%%PORTDOCS%%%%DOCSDIR%%/html/lang.html
-%%PORTDOCS%%%%DOCSDIR%%/html/output.html
-%%PORTDOCS%%%%DOCSDIR%%/html/shapes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Mcircle.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Mdiamond.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Msquare.gif
@@ -359,6 +360,7 @@ libdata/pkgconfig/libgvc.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/neato.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/neatoguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/nop.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdf/osage.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/pathplan.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/prune.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/sccmap.1.pdf
@@ -368,12 +370,6 @@ libdata/pkgconfig/libgvc.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/twopi.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/twopi.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/unflatten.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/cpl1.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/Dot.ref
-%%PORTDOCS%%%%DOCSDIR%%/latex_suggestions.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.tcl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.tcl.README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/doted.tcl
@@ -530,6 +526,7 @@ libdata/pkgconfig/libgvc.pc
 @exec mkdir -p %D/lib/graphviz/ocaml
 @exec mkdir -p %D/lib/graphviz/perl
 @exec mkdir -p %D/lib/graphviz/php
+@exec mkdir -p %D/lib/graphviz/python26
 @exec mkdir -p %D/lib/graphviz/python25
 @exec mkdir -p %D/lib/graphviz/python24
 @exec mkdir -p %D/lib/graphviz/python23
@@ -548,6 +545,7 @@ libdata/pkgconfig/libgvc.pc
 @dirrm lib/graphviz/ocaml
 @dirrm lib/graphviz/perl
 @dirrm lib/graphviz/php
+@dirrm lib/graphviz/python26
 @dirrm lib/graphviz/python25
 @dirrm lib/graphviz/python24
 @dirrm lib/graphviz/python23
@@ -570,6 +568,7 @@ libdata/pkgconfig/libgvc.pc
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pathplan_data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
