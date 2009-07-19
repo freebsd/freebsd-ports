@@ -9,7 +9,8 @@ PORTNAME=	timeless
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	shaun
 
 MAINTAINER=	nehe@cruzinternet.com
 COMMENT=	FreeBSD/SDL port of Tran's Timeless Demo with Sound

@@ -9,7 +9,8 @@ PORTNAME=	knock
 PORTVERSION=	0.5.20051124
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	shaun
 
 MAINTAINER=	sbrabez@gmail.com
 COMMENT=	A flexible port-knocking server and client
