@@ -26,6 +26,8 @@ COMMENT=		The GNU Ada Compiler system
 LIB_DEPENDS=		gmp.8:${PORTSDIR}/math/libgmp4 \
 			mpfr.3:${PORTSDIR}/math/mpfr
 
+ONLY_FOR_ARCHS=		i386
+
 USE_GMAKE=		yes
 USE_BISON=		build
 USE_ICONV=		yes
