@@ -12,7 +12,6 @@
     SUBDIR += afterglow
     SUBDIR += aide
     SUBDIR += aimsniff
-    SUBDIR += altivore
     SUBDIR += amap
     SUBDIR += amavis-stats
     SUBDIR += amavisd-milter
