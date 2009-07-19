@@ -9,9 +9,7 @@ PORTNAME=	raster3d
 DISTVERSION=	2.7d
 PORTREVISION=	1
 CATEGORIES=	graphics biology
-MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/		\
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/old/
+MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${DISTVERSION}
 
 MAINTAINER=	shaun@FreeBSD.org
@@ -37,6 +35,10 @@ MANL=		avs2ps.l label3d.l r3d_objects.l rastep.l render.l rods.l  \
 
 pre-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} freebsd
+	@${REINPLACE_CMD} -e 's#prefix#PREFIX#g' \
+	                  -e 's#^LIBDIRS.*=.*#LIBDIRS	= -L${LOCALBASE}/lib#g' \
+	                  -e 's#^INCDIRS.*=.*#INCDIRS	= -I/usr/include -I${LOCALBASE}/include#g' \
+	                  ${WRKSRC}/Makefile*
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${BINARIES} ${PREFIX}/bin
