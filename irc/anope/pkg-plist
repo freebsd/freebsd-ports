@@ -82,7 +82,6 @@ libexec/anope/tools/epona2anope
 %%DATADIR%%/modules/hs_set.so
 %%DATADIR%%/modules/hs_setall.so
 %%DATADIR%%/modules/hybrid.so
-%%DATADIR%%/modules/inspircd10.so
 %%DATADIR%%/modules/inspircd11.so
 %%DATADIR%%/modules/ms_cancel.so
 %%DATADIR%%/modules/ms_check.so
