@@ -7,7 +7,7 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090719:
-  AFFECTS: users of www/jpeg
+  AFFECTS: users of graphics/jpeg
   AUTHOR: dinoex@FreeBSD.org
 
   jpeg has been updated to 7.0.
