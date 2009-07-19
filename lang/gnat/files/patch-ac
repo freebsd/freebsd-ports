@@ -1,20 +1,11 @@
---- gcc/ada/Makefile.in.orig	Tue May  2 19:26:32 2006
-+++ gcc/ada/Makefile.in	Mon Dec 25 11:10:56 2006
-@@ -895,7 +895,7 @@
-   mlib-tgt.adb<mlib-tgt-linux.adb
+--- gcc/ada/gcc-interface/Makefile.in.orig	2009-05-19 07:11:52.000000000 -0400
++++ gcc/ada/gcc-interface/Makefile.in	2009-06-18 08:40:38.000000000 -0400
+@@ -1083,7 +1083,7 @@
    GNATLIB_SHARED = gnatlib-shared-dual
  
--  THREADSLIB= -lc_r
+   EH_MECHANISM=-gcc
+-  THREADSLIB= -lpthread
 +  THREADSLIB= $(PTHREAD_LIBS)
    GMEM_LIB = gmemlib
    PREFIX_OBJS = $(PREFIX_REAL_OBJS)
    LIBRARY_VERSION := $(LIB_VERSION)
-@@ -1413,7 +1413,7 @@
- # go into the directory.  The pthreads emulation is built in the threads
- # subdirectory and copied.
- LIBGNAT_SRCS = ada.h adaint.c adaint.h argv.c cio.c cstreams.c \
--  errno.c exit.c cal.c ctrl_c.c env.c env.h \
-+  errno.c exit.c cal.c ctrl_c.c env.c env.h types.h \
-   raise.h raise.c sysdep.c aux-io.c init.c initialize.c seh_init.c \
-   final.c tracebak.c tb-alvms.c tb-alvxw.c tb-gcc.c expect.c mkdir.c \
-   socket.c gsocket.h targext.c $(EXTRA_LIBGNAT_SRCS)
