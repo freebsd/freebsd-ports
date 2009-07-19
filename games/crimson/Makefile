@@ -2,15 +2,12 @@
 # Date created:				3 May 2001
 # Whom:					Jan Jungnickel <jan@jungnickel.com>
 #
-# $Carpetsmoker: ports/games/crimson/Makefile,v 1.2 2008/01/26 16:04:12 carpetsmoker Exp $
 # $FreeBSD$
 
 PORTNAME=	crimson
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	games
-MASTER_SITES=	http://crimson.seul.org/files/ \
-		http://www.carpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/~tournoij/distfiles/
+MASTER_SITES=	http://crimson.seul.org/files/
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	Tactical war game in the tradition of Battle Isle
