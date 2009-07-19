@@ -10,8 +10,7 @@ DISTVERSION=	2.3b
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/	\
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME:L}-${DISTVERSION}
 

@@ -8,8 +8,7 @@
 PORTNAME=	wapsh
 PORTVERSION=	1.0.1
 CATEGORIES=	shells
-MASTER_SITES=	http://www.exolution.de/geschaeft/produkte/wapsh/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.exolution.de/geschaeft/produkte/wapsh/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

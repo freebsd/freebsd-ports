@@ -8,8 +8,7 @@
 PORTNAME=	tetgen
 PORTVERSION=	1.4.2
 CATEGORIES=	math
-MASTER_SITES=	http://www.wias-berlin.de/people/si/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.wias-berlin.de/people/si/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

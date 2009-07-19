@@ -8,8 +8,7 @@
 PORTNAME=	LMAP-CID2SPF
 DISTVERSION=	0.9
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://www.baschny.de/spf/	\
-		http://mirror.inerd.com/FreeBSD/distfiles/p5-LMAP-CID2SPF/
+MASTER_SITES=	http://www.baschny.de/spf/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org

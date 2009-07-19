@@ -9,8 +9,7 @@ PORTNAME=	quickie
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://${PORTNAME}.sourceforge.net/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A small footprint, fast Wiki engine written in C++
