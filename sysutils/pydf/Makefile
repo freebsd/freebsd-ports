@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pydf
-PORTVERSION=	6
+PORTVERSION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kassiopeia.juls.savba.sk/~garabik/software/pydf/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

@@ -1,21 +1,23 @@
---- pydf.original	Tue Dec  4 23:02:26 2007
-+++ pydf	Tue Dec  4 23:02:14 2007
+--- pydf.orig  2009-04-10 13:00:07.000000000 +0000
++++ pydf       2009-07-15 12:54:08.000000000 +0000
 @@ -1,4 +1,4 @@
 -#! /usr/bin/python
 +#! %%PYTHON_CMD%%
 
  import sys, os, string, types, commands, struct
  from optparse import OptionParser
-@@ -166,7 +166,7 @@
+@@ -169,8 +169,8 @@
  #end of default definitions
 
  # read configuration file
 -for i in ["/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
+-    if os.path.isfile(i):
 +for i in ["%%PREFIX%%/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
-     if os.path.isfile(i):
++      if os.path.isfile(i):
          execfile(i)
 
-@@ -336,9 +336,9 @@
+
+@@ -344,9 +344,9 @@
          except OSError, IOError:
              status = 10*[0]
 
@@ -25,18 +27,18 @@
 -            fs_blocksize = status[F_FRSIZE]
 +            fs_blocksize = status[F_BSIZE]
          free = status[F_BFREE]
-         used = long(status[F_BLOCKS]-free)
          size = status[F_BLOCKS]
-@@ -351,7 +351,7 @@
-         avail_f = myformat(avail, sizeformat, fs_blocksize)
-
-         try:
--            perc = round(100.*used/size, 1)
-+            perc = round(100.*used/(avail+used), 1)
-         except ZeroDivisionError:
-             perc = 0
-         perc_f = str(perc)
-@@ -419,7 +419,7 @@
+         avail = status[F_BAVAIL]
+@@ -375,7 +375,7 @@
+             used_f = myformat(used, sizeformat, fs_blocksize)
+             avail_f = myformat(avail, sizeformat, fs_blocksize)
+             try:
+-                perc = round(100.*used/size, 1)
++                perc = round(100.*used/(avail+used), 1)
+                 perc_f = str(perc)
+             except ZeroDivisionError:
+                 perc = 0
+@@ -444,7 +444,7 @@
      "test if fs (as type) is a special one"
      "in addition, a filesystem is special if it has number of blocks equal to 0"
      fs = fs.lower()
