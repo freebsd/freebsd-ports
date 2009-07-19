@@ -50,6 +50,7 @@
     SUBDIR += audacious-mac
     SUBDIR += audacity
     SUBDIR += audacity-devel
+    SUBDIR += audex
     SUBDIR += audiere
     SUBDIR += audiotag
     SUBDIR += aumix
