@@ -1,0 +1,29 @@
+bin/audex
+share/applications/kde4/audex.desktop
+share/apps/audex/audexui.rc
+share/apps/audex/images/amazon.png
+share/apps/audex/images/canada.png
+share/apps/audex/images/france.png
+share/apps/audex/images/germany.png
+share/apps/audex/images/italy.png
+share/apps/audex/images/japan.png
+share/apps/audex/images/netherlands.png
+share/apps/audex/images/nocover.png
+share/apps/audex/images/poland.png
+share/apps/audex/images/portugal.png
+share/apps/audex/images/spain.png
+share/apps/audex/images/sweden.png
+share/apps/audex/images/uk.png
+share/apps/audex/images/usa.png
+share/apps/solid/actions/audex-rip-audiocd.desktop
+share/icons/hicolor/128x128/apps/audex.png
+share/icons/hicolor/16x16/apps/audex.png
+share/icons/hicolor/32x32/apps/audex.png
+share/icons/hicolor/48x48/apps/audex.png
+share/icons/hicolor/64x64/apps/audex.png
+share/locale/cs/LC_MESSAGES/audex.mo
+share/locale/de/LC_MESSAGES/audex.mo
+share/locale/nl/LC_MESSAGES/audex.mo
+share/locale/pt_BR/LC_MESSAGES/audex.mo
+@dirrm share/apps/audex/images
+@dirrm share/apps/audex
