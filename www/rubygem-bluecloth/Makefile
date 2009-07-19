@@ -3,8 +3,7 @@
 # $FreeBSD$
 
 PORTNAME=	bluecloth
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	http://www.deveiate.org/code/
 DISTNAME=	BlueCloth-${PORTVERSION}
