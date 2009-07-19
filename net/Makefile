@@ -465,6 +465,7 @@
     SUBDIR += p5-Cisco-IPPhone
     SUBDIR += p5-Daemon-Generic
     SUBDIR += p5-EasyTCP
+    SUBDIR += p5-Event-tcp
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-File-RsyncP
     SUBDIR += p5-Filesys-SmbClient
