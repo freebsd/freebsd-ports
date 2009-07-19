@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pandoc
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	textproc haskell
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -35,6 +35,10 @@ OPTIONS=	HIGHLIGHTING "Syntax highlighting support" off
 BUILD_DEPENDS+=	hs-highlighting-kate-ghc>=0.2:${PORTSDIR}/textproc/hs-highlighting-kate-ghc
 MAKE_ARGS=	CABALOPTS+="-fhighlighting"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/Text.Pandoc.TH,/Text.Pandoc.TH/; /Paths_pandoc/d' \
+		${WRKSRC}/pandoc.cabal
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dist/build/pandoc/pandoc ${PREFIX}/bin
