@@ -11,7 +11,7 @@
 %%DATADIR%%/etc/web2ldap/ldapoidreg.py
 %%DATADIR%%/etc/web2ldap/ldapoidreg.pyc
 %%DATADIR%%/etc/web2ldap/localschema.ldif
-%%DATADIR%%/etc/web2ldap/ssl/crt/stroeder.com_Server_CA_no._2008-07.pem
+%%DATADIR%%/etc/web2ldap/ssl/crt/trusted-certs.crt
 %%DATADIR%%/etc/web2ldap/templates/add_group.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_msorganization.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_msperson.ldif
@@ -179,6 +179,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/__init__.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/__init__.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/__init__.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/acp133.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/acp133.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/activedirectory.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/activedirectory.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/asn1objects.py
@@ -209,6 +211,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/mssfu30.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/nis.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/nis.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/opends.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/opends.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/openldap.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/openldap.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/pgpkeysrv.py
@@ -227,6 +231,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/schac.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/subentries.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/subentries.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/vchupwdpolicy.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/vchupwdpolicy.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/vpim.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/vpim.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/x500dsa.py
