@@ -2,11 +2,100 @@ Index: bgpd/bgpd.conf.5
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.conf.5,v
 retrieving revision 1.1.1.1
-retrieving revision 1.2
-diff -u -p -r1.1.1.1 -r1.2
+retrieving revision 1.4
+diff -u -p -r1.1.1.1 -r1.4
 --- bgpd/bgpd.conf.5	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/bgpd.conf.5	30 Jun 2009 06:40:07 -0000	1.2
-@@ -611,11 +611,11 @@ is responsible for managing the session 
++++ bgpd/bgpd.conf.5	9 Jul 2009 17:22:14 -0000	1.4
+@@ -1,4 +1,4 @@
+-.\" $OpenBSD: bgpd.conf.5,v 1.88 2008/03/22 08:38:38 claudio Exp $
++.\" $OpenBSD: bgpd.conf.5,v 1.94 2009/06/07 00:31:22 claudio Exp $
+ .\"
+ .\" Copyright (c) 2004 Claudio Jeker <claudio@openbsd.org>
+ .\" Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
+@@ -16,7 +16,7 @@
+ .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .\"
+-.Dd $Mdocdate: March 22 2008 $
++.Dd $Mdocdate: June 4 2009 $
+ .Dt BGPD.CONF 5
+ .Os
+ .Sh NAME
+@@ -123,14 +123,26 @@ sets the local AS to 65001.
+ The AS numbers 64512 \(en 65534 are designated for private use.
+ The AS number 23456 is a specially designated Autonomous System Number and
+ should not be used.
+-4-byte AS numbers are specified as two numbers separated by a dot.
+-For example:
++4-byte AS numbers are specified as two numbers separated by a dot
++(ASDOT format),
++for example:
+ .Bd -literal -offset indent
+ AS 3.10
+ .Ed
+ .Pp
++or as a large number (ASPLAIN format), for example:
++.Bd -literal -offset indent
++AS 196618
++.Ed
++.Pp
++.It Ic connect-retry Ar seconds
++Set the number of seconds before retrying to open a connection.
++This timer should be sufficiently large in EBGP configurations.
++The default is 120 seconds.
++.Pp
+ .It Xo
+ .Ic dump
++.Op Ic rib Ar name
+ .Pq Ic table Ns \&| Ns Ic table-mp
+ .Ar file Op Ar timeout
+ .Xc
+@@ -145,7 +157,8 @@ Dump the RIB, a.k.a. the
+ and all BGP messages in Multi-threaded Routing Toolkit (MRT) format.
+ Dumping the RIB is normally an expensive operation,
+ but it should not influence the session handling.
+-Excessive dumping may result in delayed update processing.
++It is possible to dump alternate RIB with the use of
++.Ar name .
+ .Pp
+ For example, the following will dump the entire table to the
+ .Xr strftime 3 Ns -expanded
+@@ -297,6 +310,21 @@ is only compared between peers belonging
+ .Pp
+ .It Xo
+ .Ic rde
++.Ic rib Ar name
++.Op Ic no Ic evaluate
++.Xc
++Creat an additional RIB named
++.Ar name .
++It is possible to disable the decision process per RIB with the
++.Ic no Ic evaluate
++flag.
++.Ic Adj-RIB-In
++and
++.Ic Loc-RIB
++are created automaticaly and used as default.
++.Pp
++.It Xo
++.Ic rde
+ .Ic route-age
+ .Pq Ic ignore Ns \&| Ns Ic evaluate
+ .Xc
+@@ -561,6 +589,12 @@ Inherited from the global configuration 
+ Set the minimal acceptable holdtime.
+ Inherited from the global configuration if not given.
+ .Pp
++.It Ic interface Ar interface
++Set an interface used for a nexthop with a link-local IPv6 address.
++Note that if this is not specified and a link-local IPv6 address is
++received as nexthop of the peer, it will be marked as invalid and
++ignored.
++.Pp
+ .It Xo
+ .Ic ipsec
+ .Pq Ic ah Ns \&| Ns Ic esp
+@@ -611,11 +645,11 @@ is responsible for managing the session 
  With
  .Xr isakmpd 8 ,
  it is sufficient to copy the peer's public key, found in
@@ -20,7 +109,44 @@ diff -u -p -r1.1.1.1 -r1.2
  The local public key must be copied to the peer in the same way.
  As
  .Xr bgpd 8
-@@ -1137,8 +1137,8 @@ For prefixes with equally long paths, th
+@@ -670,6 +704,9 @@ Do not attempt to actively open a TCP co
+ .It Ic remote-as Ar as-number
+ Set the AS number of the remote system.
+ .Pp
++.It rib .Ar name
++Bind the neighbor to the specified RIB.
++.Pp
+ .It Ic route-reflector Op Ar address
+ Act as an RFC 2796
+ .Em route-reflector
+@@ -728,6 +765,18 @@ tcp md5sig key deadbeef
+ .Ed
+ .Pp
+ .It Xo
++.Ic transparent-as
++.Pq Ic yes Ns \&| Ns Ic no
++.Xc
++If set to
++.Ic yes ,
++.Em AS paths
++to EBGP neighbors are not prepended with their own AS.
++The default is inherited from the global
++.Ic transparent-as
++setting.
++.Pp
++.It Xo
+ .Ic ttl-security
+ .Pq Ic yes Ns \&| Ns Ic no
+ .Xc
+@@ -1048,6 +1097,7 @@ will be adjusted by adding or subtractin
+ .Ar number ;
+ otherwise it will be set to
+ .Ar number .
++The default is 100.
+ .Pp
+ .It Ic med Ar number
+ .It Ic metric Ar number
+@@ -1137,8 +1187,8 @@ For prefixes with equally long paths, th
  is selected.
  .El
  .Sh FILES
