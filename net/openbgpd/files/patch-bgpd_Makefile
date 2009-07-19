@@ -2,12 +2,13 @@ Index: bgpd/Makefile
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/Makefile,v
 retrieving revision 1.1.1.1
-retrieving revision 1.4
-diff -u -p -r1.1.1.1 -r1.4
+retrieving revision 1.6
+diff -u -p -r1.1.1.1 -r1.6
 --- bgpd/Makefile	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/Makefile	3 Jul 2009 15:32:15 -0000	1.4
-@@ -1,17 +1,20 @@
- #	$OpenBSD: Makefile,v 1.27 2007/12/20 17:08:47 henning Exp $
++++ bgpd/Makefile	9 Jul 2009 17:22:14 -0000	1.6
+@@ -1,17 +1,23 @@
+-#	$OpenBSD: Makefile,v 1.27 2007/12/20 17:08:47 henning Exp $
++#	$OpenBSD: Makefile,v 1.28 2009/06/25 14:14:54 deraadt Exp $
  
 -.PATH:		${.CURDIR}/..
 +.PATH:		${.CURDIR}/.. ${.CURDIR}/../openbsd-compat
@@ -27,6 +28,9 @@ diff -u -p -r1.1.1.1 -r1.4
  CFLAGS+= -Wshadow -Wpointer-arith -Wcast-qual
  CFLAGS+= -Wsign-compare
 +CFLAGS+= -DCONFFILE=\"${CONFFILE}\"
++.if defined(IPV6_LINKLOCAL_PEER)
++CFLAGS+= -DIPV6_LINKLOCAL_PEER
++.endif
  YFLAGS=
  MAN= bgpd.8 bgpd.conf.5
  
