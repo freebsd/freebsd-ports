@@ -3,6 +3,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/web/LICENSE
+%%DATADIR%%/web/images/buttons/cancel.png
 %%DATADIR%%/web/images/buttons/file_priority_buttons.png
 %%DATADIR%%/web/images/buttons/file_wanted_buttons.png
 %%DATADIR%%/web/images/buttons/info_activity.png
