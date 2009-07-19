@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	playd
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.6
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://www.logvinov.ru/files/dist/playd/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	killasmurf86@gmail.com
 COMMENT=	Very easy to use mplayer sh wrapper script, with useful features
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-PROJECTHOST=	playd-sh
+CONFLICTS=	playd2-2.[0-9]*
 PLIST_FILES=	bin/playd
 MAN1=		playd.1
+WRKSRC=		${WRKDIR}/playd
 
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/playd ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/playd.sh ${PREFIX}/bin/playd
 	${INSTALL_MAN} ${WRKSRC}/playd.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
