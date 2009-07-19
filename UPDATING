@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090719:
+  AFFECTS: users of www/jpeg
+  AUTHOR: dinoex@FreeBSD.org
+
+  jpeg has been updated to 7.0.
+  Quick instructions:
+  	pkg_delete -r jpeg-6b_7
+  Please rebuild all ports that depends on it.
+
 20090704:
   AFFECTS: users of www/yaws
   AUTHOR: olgeni@FreeBSD.org
