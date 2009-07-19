@@ -64,7 +64,6 @@ ads-java-novm-*		databases/adstudio	Only free for qualified Open Source
 						Software Developers but a commercial
 						license is required for all other
 						usages
-altivore.c		security/altivore	No redistribution allowed
 annelid-*		games/annelid		Redistribution is limited
 apache_*ssl_*		www/apache13-ssl	Crypto; export-controlled
 apache2/mod_traf_thief-*.c www/mod_traf_thief	No license
