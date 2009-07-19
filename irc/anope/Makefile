@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anope
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
@@ -15,7 +15,9 @@ COMMENT=	A set of IRC services for IRC networks
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-bindir=${PREFIX}/libexec/anope \
+CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" \
+		--includedir="${LOCALBASE}/include" \
+		--with-bindir=${PREFIX}/libexec/anope \
 		--with-datadir=${DATADIR} \
 		--with-rungroup=ircdru
 USE_PERL5_BUILD=	yes
