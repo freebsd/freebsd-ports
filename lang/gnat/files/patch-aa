@@ -1,11 +1,11 @@
---- gcc/Makefile.in.orig	Wed Nov 23 23:55:21 2005
-+++ gcc/Makefile.in	Thu Nov 24 10:47:11 2005
-@@ -2871,7 +2871,7 @@
+--- gcc/Makefile.in.orig	2009-06-18 08:32:18.000000000 -0400
++++ gcc/Makefile.in	2009-06-18 08:32:34.000000000 -0400
+@@ -3923,7 +3923,7 @@
  # Install the driver last so that the window when things are
  # broken is small.
- install: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
+ install: install-common $(INSTALL_HEADERS) \
 -    install-cpp install-man install-info install-@POSUB@ \
 +    install-cpp install-man install-@POSUB@ \
-     lang.install-normal install-driver
+     install-driver
  
  # Handle cpp installation.
