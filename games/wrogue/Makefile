@@ -2,15 +2,13 @@
 # Date created:		2007-02-26
 # Whom:			Martin Tournoij <carpetsmoker@xs4all.nl>
 #
-# $Carpetsmoker: ports/games/wrogue/Makefile,v 1.4 2008/01/27 04:50:01 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	wrogue
 PORTVERSION=	0.8.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	todoom
+MASTER_SITES=	SF/todoom
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	A gothic science fantasy roguelike game
