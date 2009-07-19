@@ -60,6 +60,7 @@ PKGNAMESUFFIX=	#empty
 CONFIGURE_ARGS+=--disable-pthread
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+nopthreads
 .else
+LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--enable-pthread
 .endif
 
