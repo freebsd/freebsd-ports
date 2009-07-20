@@ -7,7 +7,7 @@
 
 PORTNAME=	eblook
 PORTVERSION=	1.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
@@ -15,7 +15,7 @@ DIST_SUBDIR=	eb
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Interactive EB interface command for seraching words in electoric dictionaries
 
-LIB_DEPENDS=	eb.12:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.14:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-eb-includes=${PREFIX}/include \
