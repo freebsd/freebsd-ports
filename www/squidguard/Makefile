@@ -7,6 +7,7 @@
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.squidguard.org/Downloads/
 
@@ -24,27 +25,46 @@ CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-sg-logdir=${LOGDIR} \
 		--exec-prefix=${PREFIX}
 
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${PREFIX}/include"
+
 CFGINPUT=	${.CURDIR}/files/sgcfg.in
 
 SQUID_UID?=	squid
 SQUID_GID?=	squid
 
 DATADIR?=	/var/db/${PORTNAME}
+SAMPLE_BL_DIR=	${DATADIR}.sample
+PLIST_SUB+=	SAMPLE_BL_DIR=${SAMPLE_BL_DIR}
 _DATADIR=	${WRKDIR}/data
 LOGDIR?=	/var/log
 
-SUB_FILES=	pkg-message
-SUB_LIST=	PORTNAME=${PORTNAME}
+SUB_FILES=	pkg-message pkg-deinstall
+SUB_LIST=	PORTNAME=${PORTNAME} \
+		SAMPLE_BL_DIR=${SAMPLE_BL_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+OPTIONS=	SAMPLE_BL	"Install sample blacklists" On \
+		LDAP		"Enable LDAP support" Off
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_LDAP)
+CONFIGURE_ARGS+=	--with-ldap
+USE_OPENLDAP=		yes
+.else
+CONFIGURE_ARGS+=	--without-ldap
+.endif
+
+.if defined(WITHOUT_SAMPLE_BL)
+INSTALL_BL=	no
+PLIST_SUB+=	BLACKLIST="@comment "
+.else
 .if !exists(${DATADIR})
-PLIST_SUB+=	BLACKLIST=""
 INSTALL_BL=	yes
 .else
-PLIST_SUB+=	BLACKLIST="@comment "
 INSTALL_BL=	no
+.endif
+PLIST_SUB+=	BLACKLIST=""
 .endif
 
 pre-fetch:
@@ -63,7 +83,7 @@ post-patch:
 	fi
 
 post-build:
-.if ${INSTALL_BL} == "yes"
+.if !defined(WITHOUT_SAMPLE_BL)
 	@${ECHO_MSG} "===>   Building blacklists"
 	${MKDIR} ${_DATADIR}
 	@${TAR} -C ${_DATADIR} --exclude *.diff -pxzf \
@@ -77,6 +97,12 @@ pre-install:
 #
 # Install blacklists
 #
+.if !defined(WITHOUT_SAMPLE_BL)
+	@${MKDIR} ${SAMPLE_BL_DIR}
+	@${CP} -Rpf ${_DATADIR}/* ${SAMPLE_BL_DIR}
+	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${SAMPLE_BL_DIR}
+	${CHMOD} -R 550 ${SAMPLE_BL_DIR}
+.endif
 .if ${INSTALL_BL} == "yes"
 	@${ECHO_MSG} "===>   Installing blacklists"
 	@${MKDIR} ${DATADIR}

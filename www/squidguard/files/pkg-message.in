@@ -3,5 +3,8 @@
 = To the contain "url_rewrite_program %%PREFIX%%/bin/%%PORTNAME%%"
 = and create a configuration file for %%PORTNAME%%.
 =
+= On disinstallation if you want to completely remove the blacklists
+= you will have to manually remove what remains in %%DATADIR%%.
+= 
 = To activate the changes do a %%PREFIX%%/sbin/squid -k reconfigure
 ===================================================================
