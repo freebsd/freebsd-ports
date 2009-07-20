@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-gmail-notifier
 PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -15,7 +15,7 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A Gmail Inbox Monitor for the GNOME2 desktop
 
 LIB_PC_DEPENDS=	libnotify:devel/libnotify	\
-		libsoup-2.2:devel/libsoup22	\
+		libsoup-2.4:devel/libsoup	\
 		gnome-keyring-1:security/gnome-keyring
 
 BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|:C|:|.pc:${PORTSDIR}/|}
