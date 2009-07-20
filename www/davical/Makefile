@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	davical
-PORTVERSION=	0.9.6.3
+PORTVERSION=	0.9.7
 CATEGORIES?=	www
 MASTER_SITES=	SF/rscds
-DISTNAME=	davical_${PORTVERSION}
+DISTNAME=	davical_${PORTVERSION}-0
 
 MAINTAINER=	maurice@castro.aus.net
 COMMENT=	A simple CalDAV server using a postgres backend
@@ -19,9 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/include/php/ext/pgsql:${PORTSDIR}/databases/php5-pgsql
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
 		${LOCALBASE}/bin/pwgen:${PORTSDIR}/sysutils/pwgen \
-		php-libawl>=0.34:${PORTSDIR}/devel/php-libawl
+		php-libawl>=0.37:${PORTSDIR}/devel/php-libawl
 
-WRKSRC=		${WRKDIR}/davical-${PORTVERSION}
+WRKSRC=		${WRKDIR}/davical-${PORTVERSION}-0
 
 NO_BUILD=	yes
 

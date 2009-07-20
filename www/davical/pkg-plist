@@ -8,6 +8,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/dba/base-data.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/caldav_functions.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/create-database.sh
+%%PORTDOCS%%%%DOCSDIR%%/dba/rrule_functions-8.1.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/davical.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.10.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.11.sql
@@ -261,6 +262,7 @@
 %%WWWDIR%%/inc/page-footer.php
 %%WWWDIR%%/inc/page-header.php
 %%WWWDIR%%/inc/PdoQuery.php
+%%WWWDIR%%/inc/PublicSession.php
 @dirrm %%WWWDIR%%/inc
 @dirrm %%WWWDIR%%/htdocs/js
 @dirrm %%WWWDIR%%/htdocs/images
