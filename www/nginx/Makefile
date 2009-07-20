@@ -45,6 +45,8 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_EVAL_MODULE	"3rd party eval module" off \
 		HTTP_FANCYINDEX_MODULE	"3rd party http_fancyindex module" off \
 		HTTP_MOGILEFS_MODULE	"3rd party mogilefs module" off \
+		HTTP_MP4_H264_MODULE	"3rd party mp4/h264 module" off \
+		HTTP_NOTICE_MODULE	"3rd party notice module" off \
 		HTTP_RESPONSE_MODULE	"3rd party http_response module" off \
 		HTTP_UPLOAD_MODULE	"3rd party upload module" off \
 		HTTP_UPLOAD_PROGRESS	"3rd party upload_progress module" off \
@@ -71,6 +73,9 @@ NGINX_RUNDIR?=	${NGINX_VARDIR}/run
 NGINX_TMPDIR?=	${NGINX_VARDIR}/tmp/nginx
 HTTP_PORT?=	80
 
+NGINX_ACCESSLOG?=	${NGINX_LOGDIR}/nginx-access.log
+NGINX_ERRORLOG?=	${NGINX_LOGDIR}/nginx-error.log
+
 CONFLICTS?=	nginx-devel-0.*
 USE_RC_SUBR=	nginx.sh
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX} WWWOWN=${WWWOWN}
@@ -82,7 +87,7 @@ CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--conf-path=${ETCDIR}/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
-		--error-log-path=${NGINX_LOGDIR}/nginx-error.log \
+		--error-log-path=${NGINX_ERRORLOG} \
 		--user=${WWWOWN} --group=${WWWGRP}
 
 .if defined(WITHOUT_HTTP_MODULE) && defined(WITHOUT_MAIL_MODULE)
@@ -110,7 +115,7 @@ CONFIGURE_ARGS+=--with-google_perftools_module
 CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
 		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
-		--http-log-path=${NGINX_LOGDIR}/nginx-access.log
+		--http-log-path=${NGINX_ACCESSLOG}
 
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
 NGINX_ACCESSKEY_MODULE_VERSION=	2.0.3
@@ -161,6 +166,18 @@ NGINX_MOGILEFS_MODULE_VERSION=	1.0.1
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:mogilefs
 DISTFILES+=	nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}.tar.gz:mogilefs
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}
+.endif
+
+.if defined(WITH_HTTP_MP4_H264_MODULE)
+MASTER_SITES+=	http://i.6.cn/:mp4streaming
+DISTFILES+=	nginx_mp4_streaming_public_20081229.tar.bz2:mp4streaming
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mp4_streaming_public
+.endif
+
+.if defined(WITH_HTTP_NOTICE_MODULE)
+MASTER_SITES+=	http://xph.us/dist/nginx-notice/:notice2
+DISTFILES+=	nginx-notice-2.tar.gz:notice2
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-notice-2
 .endif
 
 .if defined(WITH_HTTP_PERL_MODULE)
@@ -320,6 +337,10 @@ post-patch:
 .if defined(WITH_HTTP_UPLOAD_PROGRESS)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
+.endif
+.if defined(WITH_HTTP_NOTICE_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 .endif
 .if defined(WITH_PASSENGER_MODULE)
 	@${REINPLACE_CMD} 's!g++!${CXX}!' \
