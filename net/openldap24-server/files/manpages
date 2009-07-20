@@ -245,4 +245,5 @@ MAN8+=	slapacl.8 \
 	slapdn.8 \
 	slapindex.8 \
 	slappasswd.8 \
+	slapschema.8 \
 	slaptest.8
