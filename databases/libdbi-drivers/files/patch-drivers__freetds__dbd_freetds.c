@@ -1,6 +1,6 @@
---- drivers/freetds/dbd_freetds.c.orig	Thu Sep  8 16:41:25 2005
-+++ drivers/freetds/dbd_freetds.c	Sat Oct  1 23:34:11 2005
-@@ -453,6 +453,7 @@
+--- ./drivers/freetds/dbd_freetds.c.orig	2007-12-31 14:10:44.000000000 -0800
++++ ./drivers/freetds/dbd_freetds.c	2009-07-20 01:30:00.373376559 -0700
+@@ -454,6 +454,7 @@
  {
      dbi_result_t *res;
      char *sql_cmd;
@@ -8,7 +8,7 @@
  
      if (db == NULL || db[0] == '\0') {
  	/* Use current database */
-@@ -460,7 +461,6 @@
+@@ -461,7 +462,6 @@
  	return res;
      }
  
@@ -16,7 +16,7 @@
      if (conn->current_db)
  	/* Reserved current DB name */
  	current_db = strdup(conn->current_db);
-@@ -508,9 +508,9 @@
+@@ -509,9 +509,9 @@
  {
      /* foo's -> 'foo''s' */
      size_t len;
@@ -27,7 +27,7 @@
  
      len = _dbd_freetds_escape_chars(dest + 1, orig, strlen(orig), escaped);
  
-@@ -559,6 +559,8 @@
+@@ -560,6 +560,8 @@
       * everything else will be filled in by DBI */
  
      unsigned int idx = 0;
@@ -36,7 +36,7 @@
      dbi_result_t *result = NULL;
      dbi_row_t *row = NULL;
      FREETDSCON *tdscon = (FREETDSCON *) conn->connection;
-@@ -628,9 +630,6 @@
+@@ -629,9 +631,6 @@
  		    return NULL;
  		}
  
@@ -46,7 +46,7 @@
  		_translate_freetds_type(datafmt[idx], &type, &attribs);
  		/* Fill fields value in result */
  		_dbd_result_add_field(result, idx, datafmt[idx]->name, type, attribs);
-@@ -884,6 +883,7 @@
+@@ -885,6 +884,7 @@
      dbi_row_t *row = NULL;
      unsigned int idx = 0;
      void *addr = NULL;
@@ -54,7 +54,7 @@
  
      FREETDSCON *tdscon = (FREETDSCON *) conn->connection;
  
-@@ -911,8 +911,7 @@
+@@ -912,8 +912,7 @@
  		    dstfmt.format = CS_FMT_UNUSED;
  
  		    addr = malloc(sizeof(CS_NUMERIC_TYPE));
