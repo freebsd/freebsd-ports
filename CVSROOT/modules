@@ -734,6 +734,7 @@ audacious-plugins               ports/multimedia/audacious-plugins
 audacious-skins                 ports/x11-themes/audacious-skins
 audacity                        ports/audio/audacity
 audacity-devel                  ports/audio/audacity-devel
+audex                           ports/audio/audex
 audiere                         ports/audio/audiere
 audio_dcd                       ports/audio/dcd
 audio_mpc                       ports/audio/mpc
@@ -3944,7 +3945,6 @@ gcal                            ports/deskutils/gcal
 gcalcli                         ports/deskutils/gcalcli
 gcalctool                       ports/math/gcalctool
 gcb                             ports/x11/gcb
-gcc-ooo                         ports/lang/gcc-ooo
 gcc295                          ports/lang/gcc295
 gcc34                           ports/lang/gcc34
 gcc42                           ports/lang/gcc42
@@ -11201,6 +11201,7 @@ p5-Event-ExecFlow               ports/devel/p5-Event-ExecFlow
 p5-Event-Lib                    ports/devel/p5-Event-Lib
 p5-Event-Notify                 ports/devel/p5-Event-Notify
 p5-Event-RPC                    ports/devel/p5-Event-RPC
+p5-Event-tcp                    ports/net/p5-Event-tcp
 p5-Every                        ports/devel/p5-Every
 p5-Excel-Template               ports/textproc/p5-Excel-Template
 p5-Exception-Class              ports/devel/p5-Exception-Class
@@ -14692,6 +14693,7 @@ p5-event-execflow               ports/devel/p5-Event-ExecFlow
 p5-event-lib                    ports/devel/p5-Event-Lib
 p5-event-notify                 ports/devel/p5-Event-Notify
 p5-event-rpc                    ports/devel/p5-Event-RPC
+p5-event-tcp                    ports/net/p5-Event-tcp
 p5-every                        ports/devel/p5-Every
 p5-ex-lib                       ports/devel/p5-ex-lib
 p5-excel-template               ports/textproc/p5-Excel-Template
