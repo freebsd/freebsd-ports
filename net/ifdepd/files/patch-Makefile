@@ -1,5 +1,5 @@
 --- ./Makefile.orig	2005-04-20 09:30:18.000000000 -0400
-+++ ./Makefile	2009-07-17 14:38:38.391992090 -0400
++++ ./Makefile	2009-07-19 22:46:18.989207649 -0400
 @@ -4,10 +4,8 @@
  PROG = ifdepd
  RM = rm -f
@@ -12,7 +12,7 @@
  MAN8 = ifdepd.8
  
  OBJ = ifdepd.o
-@@ -22,18 +20,13 @@
+@@ -22,18 +20,12 @@
  			${RM} *.o ${PROJ} *.core core ${PROG} tags *.err
  
  install:		${PROG}
@@ -22,7 +22,6 @@
 -.endif
 -			${INSTALL} -o root -g wheel -m 644 ${MAN8} ${PREFIX}/man/man8
 +			${BSD_INSTALL_PROGRAM} ${PROG} ${PREFIX}/bin
-+			${BSD_INSTALL_SCRIPT} ${PROG}.sh ${PREFIX}/etc/rc.d
 +			${BSD_INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8
  
  deinstall:
@@ -34,7 +33,7 @@
  
  ${PROG}:		${OBJ}
  			${CC} ${CFLAGS} -o ${PROG} ${OBJ} ${LIBS}
-@@ -41,4 +34,4 @@
+@@ -41,4 +33,4 @@
  %.o: %.cc %.H %.h
  	$(CCXX) $(CXXFLAGS) -c $<
  
