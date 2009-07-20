@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -73,6 +73,9 @@ NGINX_RUNDIR?=	${NGINX_VARDIR}/run
 NGINX_TMPDIR?=	${NGINX_VARDIR}/tmp/nginx
 HTTP_PORT?=	80
 
+NGINX_ACCESSLOG?=	${NGINX_LOGDIR}/nginx-access.log
+NGINX_ERRORLOG?=	${NGINX_LOGDIR}/nginx-error.log
+
 CONFLICTS?=	nginx-0.7.*
 USE_RC_SUBR=	nginx.sh
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX} WWWOWN=${WWWOWN}
@@ -84,7 +87,7 @@ CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--conf-path=${ETCDIR}/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
-		--error-log-path=${NGINX_LOGDIR}/nginx-error.log \
+		--error-log-path=${NGINX_ERRORLOG} \
 		--user=${WWWOWN} --group=${WWWGRP}
 
 .if defined(WITHOUT_HTTP_MODULE) && defined(WITHOUT_MAIL_MODULE)
@@ -112,7 +115,7 @@ CONFIGURE_ARGS+=--with-google_perftools_module
 CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
 		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
-		--http-log-path=${NGINX_LOGDIR}/nginx-access.log
+		--http-log-path=${NGINX_ACCESSLOG}
 
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
 NGINX_ACCESSKEY_MODULE_VERSION=	2.0.3
