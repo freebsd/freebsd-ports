@@ -1,0 +1,13 @@
+--- ./Makefile.orig	2008-03-24 23:22:09.000000000 +0900
++++ ./Makefile	2009-07-20 23:23:39.000000000 +0900
+@@ -2,8 +2,9 @@
+ SRC = usbrh_main.c
+ EXE = usbrh
+ 
++all:	$(EXE)
+ $(EXE): $(SRC)
+-	gcc -lusb -g -o $@ $^
++	gcc -lusb -g -o $@ $(SRC)
+ 
+ clean: 
+ 	rm $(EXE)

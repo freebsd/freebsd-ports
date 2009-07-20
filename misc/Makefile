@@ -520,6 +520,7 @@
     SUBDIR += upclient
     SUBDIR += us-zipcodes
     SUBDIR += usbrh
+    SUBDIR += usbrh-libusb
     SUBDIR += utftools
     SUBDIR += vera
     SUBDIR += videotext
