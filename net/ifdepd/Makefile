@@ -5,7 +5,7 @@
 
 PORTNAME=	ifdepd
 PORTVERSION=	20050420
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://alex.bmg.gv.at/programs/
 
