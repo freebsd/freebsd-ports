@@ -32,51 +32,30 @@ etc/squid/squidGuard.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/squidGuard.gif
 %%PORTDOCS%%%%DOCSDIR%%/README.blacklists
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%BLACKLIST%%@cwd %%DATADIR%%
+%%BLACKLIST%%@cwd %%SAMPLE_BL_DIR%%
 %%BLACKLIST%%ads/domains
-%%BLACKLIST%%ads/domains.db
 %%BLACKLIST%%ads/urls
-%%BLACKLIST%%ads/urls.db
 %%BLACKLIST%%aggressive/domains
-%%BLACKLIST%%aggressive/domains.db
 %%BLACKLIST%%aggressive/urls
-%%BLACKLIST%%aggressive/urls.db
 %%BLACKLIST%%audio-video/domains
-%%BLACKLIST%%audio-video/domains.db
 %%BLACKLIST%%audio-video/urls
-%%BLACKLIST%%audio-video/urls.db
 %%BLACKLIST%%drugs/domains
-%%BLACKLIST%%drugs/domains.db
 %%BLACKLIST%%drugs/urls
-%%BLACKLIST%%drugs/urls.db
 %%BLACKLIST%%gambling/domains
-%%BLACKLIST%%gambling/domains.db
 %%BLACKLIST%%gambling/urls
-%%BLACKLIST%%gambling/urls.db
 %%BLACKLIST%%hacking/domains
-%%BLACKLIST%%hacking/domains.db
 %%BLACKLIST%%hacking/urls
-%%BLACKLIST%%hacking/urls.db
 %%BLACKLIST%%mail/domains
-%%BLACKLIST%%mail/domains.db
 %%BLACKLIST%%porn/domains
-%%BLACKLIST%%porn/domains.db
 %%BLACKLIST%%porn/urls
-%%BLACKLIST%%porn/urls.db
 %%BLACKLIST%%porn/expressions
 %%BLACKLIST%%proxy/domains
-%%BLACKLIST%%proxy/domains.db
 %%BLACKLIST%%proxy/urls
-%%BLACKLIST%%proxy/urls.db
 %%BLACKLIST%%violence/domains
-%%BLACKLIST%%violence/domains.db
 %%BLACKLIST%%violence/urls
-%%BLACKLIST%%violence/urls.db
 %%BLACKLIST%%violence/expressions
 %%BLACKLIST%%warez/domains
-%%BLACKLIST%%warez/domains.db
 %%BLACKLIST%%warez/urls
-%%BLACKLIST%%warez/urls.db
 %%BLACKLIST%%@dirrm ads
 %%BLACKLIST%%@dirrm aggressive
 %%BLACKLIST%%@dirrm audio-video
@@ -89,4 +68,5 @@ etc/squid/squidGuard.conf.sample
 %%BLACKLIST%%@dirrm violence
 %%BLACKLIST%%@dirrm warez
 %%BLACKLIST%%@cwd /
-%%BLACKLIST%%@dirrm %%DATADIR%%
+%%BLACKLIST%%@dirrm %%SAMPLE_BL_DIR%%
+%%BLACKLIST%%@dirrmtry %%DATADIR%%

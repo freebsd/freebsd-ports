@@ -1,0 +1,11 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+echo "If you are completely removing squidguard you may want to also"
+echo "manually delete the blacklists in %%DATADIR%%"
+
+exit 0
