@@ -41,6 +41,8 @@ USE_GNOME=	libglade2 intltool libgnome gtk20 pango orbit2
 USE_LUA=	5.1
 LUA_COMPS=	lua
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 700000
 BROKEN=	does not build on 6.x
 .endif
@@ -56,7 +58,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GNOME2_DIR="${LOCALBASE}" LDFLAGS="${LDFLAGS}"  LUA_LIBS="-llua"
 
-.include <bsd.port.pre.mk>
 
 USE_MYSQL=	client
 IGNORE_WITH_MYSQL=	323 40 41
