@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	mguesser
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mnogosearch.org/guesser/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for guessing a text's charset and language
 
-CFLAGS+=	-DUDM_GUESSER_STANDALONG -DLMDIR=\"${PREFIX}/share/mguesser\"
-
 post-patch:
 	${REINPLACE_CMD} -E \
 		"s/^CC=.+//g; s|^CFLAGS=|CFLAGS+=|g; s|-Wall -g||g; \
-		s|./maps|${PREFIX}/share/mguesser|g" ${WRKSRC}/Makefile
+		s|./maps|${PREFIX}/share/mguesser|g; \
+		s/0.3/0.4/" \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mguesser ${PREFIX}/bin
