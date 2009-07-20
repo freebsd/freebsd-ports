@@ -9,27 +9,22 @@
 #
 # dhcprelay_enable="YES"
 #
-
-# override these variables in /etc/rc.conf
-dhcprelay_enable=${dhcprelay_enable:-"NO"}
-dhcprelay_server=${dhcprelay_server:-}		# dhcprelay server(s)
-dhcprelay_ifaces=${dhcprelay_ifaces:-}		# ethernet interface(s)
-
-dhcprelay_precmd ()
-{
-    rc_flags="${rc_flags} ${dhcprelay_ifaces} ${dhcprelay_server}"
-}
+# dhcprelay_server=""	# dhcprelay server(s)
+# dhcprelay_ifaces=""	# ethernet interface(s)
 
 . %%RC_SUBR%%
 
 name=dhcprelay
 rcvar=$(set_rcvar)
+
 pidfile=/var/run/${name}.pid
-command=/usr/local/bin/${name}
+command=%%PREFIX%%/bin/${name}
+command_args="${dhcprelay_ifaces} ${dhcprelay_server}"
 
-start_precmd=${name}_precmd
-
-echo $rc_flags
+# echo $rc_flags
 
 load_rc_config ${name}
+
+dhcprelay_enable=${dhcprelay_enable:"NO"}
+
 run_rc_command "$1"
