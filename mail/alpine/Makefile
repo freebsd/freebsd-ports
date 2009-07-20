@@ -160,10 +160,11 @@ post-patch:
 	    ${WRKSRC}/doc/tech-notes.txt ${WRKSRC}/doc/tech-notes/*.html \
 	    ${WRKSRC}/pith/pine.hlp ; do \
 		${CP} $$i $$i.presed ; \
-		${SED}	-e "s:/usr/local/etc/:${PREFIX}/etc/:g" \
-		    -e "s:/usr/local/lib/:${PREFIX}/etc/:g" \
+		${SED} -e "s:/usr/local/lib/:${PREFIX}/etc/:g" \
+		    -e "s:/usr/local/pine.conf:${PREFIX}/etc/pine.conf:g" \
+		    -e "s:pine\.conf:alpine.conf:g" \
+		    -e "s:/usr/local:${PREFIX}:g" \
 		    -e "s:@@PREFIX@@:${PREFIX}:g" \
-		    -e "s:/usr/local/pine.conf:${PREFIX}/etc/alpine.conf:g" \
 		    $$i.presed > $$i ; \
 	done
 
