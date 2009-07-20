@@ -7,7 +7,7 @@
 
 PORTNAME=	instiki
 PORTVERSION=	0.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ruby
 MASTER_SITES=	RF
 #DISTNAME=	${PORTNAME}-0.12.0
@@ -41,7 +41,7 @@ RUBY_SHEBANG_FILES=instiki
 REV=		${RUBY_VER}
 GEMS_BASE_DIR=	lib/ruby/gems/${REV}
 SPEC_DIR=	${GEMS_BASE_DIR}/specifications
-BUILD_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/bluecloth-1.0.1.gemspec:${PORTSDIR}/www/rubygem-bluecloth
+BUILD_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/BlueCloth-1.0.1.gemspec:${PORTSDIR}/www/rubygem-bluecloth
 EXTRA_PATCHES+=	${FILESDIR}/bluecloth-patch-lib-chunks-engines-rb
 .endif
 
