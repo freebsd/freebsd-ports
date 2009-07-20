@@ -65,6 +65,8 @@ lib/dia/libvdx_filter.la
 lib/dia/libvdx_filter.so
 lib/dia/libwpg_filter.la
 lib/dia/libwpg_filter.so
+%%WMF%%lib/dia/libwmf_filter.la
+%%WMF%%lib/dia/libwmf_filter.so
 lib/dia/libxfig_filter.la
 lib/dia/libxfig_filter.so
 lib/dia/libxslt_filter.la
