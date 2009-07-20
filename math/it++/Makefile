@@ -17,6 +17,9 @@ DISTNAME=	itpp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematical, signal processing and communication library
 
+DEPRECATED=	fails to compile with up-to-date compilers, nobody really interested to maintain this
+EXPIRATION_DATE=2009-08-20
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
