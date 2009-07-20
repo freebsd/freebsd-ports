@@ -7,11 +7,11 @@
 
 PORTNAME=	dynamips
 DISTVERSION=	0.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Cisco 3600/7200 Simulator
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
