@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	scnc
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	net security
 MASTER_SITES=	http://gomor.org/files/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	# none
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sbrabez@gmail.com
 COMMENT=	SSL Capable Netcat
@@ -23,10 +20,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PLIST_FILES=	bin/${PORTNAME}
 NO_BUILD=	yes
-
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${_DISTDIR}/scnc ${WRKSRC}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
