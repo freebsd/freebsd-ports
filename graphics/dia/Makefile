@@ -8,7 +8,7 @@
 
 PORTNAME=	dia
 DISTVERSION=	0.97
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
@@ -46,6 +46,13 @@ PLIST_SUB+=	PYTHON="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+LIB_DEPENDS+=	EMF.1:${PORTSDIR}/graphics/libemf
+PLIST_SUB+=	WMF=""
+.else
+PLIST_SUB+=	WMF="@comment "
+.endif
+
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=		libgnomeui
 INSTALLS_OMF=		yes
@@ -72,10 +79,13 @@ post-patch:
 		's,\(^GTK_LIBS.*\),\1 ${PTHREAD_LIBS}, ; \
 		 s,\(^GTK_CFLAGS = \),\1 ${PTHREAD_CFLAGS} ,'
 .endif
+.if ${ARCH} != "i386"
+	@${REINPLACE_CMD} -e 's|wmf||g' ${WRKSRC}/plug-ins/Makefile.in
+.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl| ; \
-	    	s|echo aout|echo elf|g' \
+		s|echo aout|echo elf|g ; s|/usr/include/libEMF|${LOCALBASE}/include/libEMF|g' \
 		${WRKSRC}/configure
 
 post-install:
