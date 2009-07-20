@@ -43,6 +43,7 @@ post-patch::
 
 pre-build:
 	${MKDIR} ${WRKSRC}/lib/uuid/elfshared
+	cd ${WRKSRC}/util && ${GMAKE} subst
 
 # ulimit guards against runaway tests
 # failure to launch uuidd is fine (one might be running, or we may lack
