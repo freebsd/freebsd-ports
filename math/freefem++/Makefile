@@ -28,6 +28,8 @@ RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		bamg:${PORTSDIR}/math/bamg
 
 RESTRICTED=	No resale or commercial use
+DEPRECATED=	fails to compile with up-to-date compilers, nobody really interested
+EXPIRATION_DATE=2009-08-20
 
 USE_FORTRAN=		yes
 FORTRANLIBDIR=		`${DIRNAME} \`${FC} -print-libgcc-file-name\``
