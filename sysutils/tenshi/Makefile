@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tenshi
-PORTVERSION=		0.10
+PORTVERSION=		0.11
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.inversepath.com/tenshi/
 
