@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2009.06.02
+PORTVERSION=	2009.07.09
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net devel
@@ -79,6 +79,8 @@ liveMedia=		\
 		liveMedia/include/DarwinInjector.hh \
 		liveMedia/include/DeviceSource.hh \
 		liveMedia/include/DigestAuthentication.hh \
+		liveMedia/include/DVVideoRTPSink.hh \
+		liveMedia/include/DVVideoStreamFramer.hh \
 		liveMedia/include/FileServerMediaSubsession.hh \
 		liveMedia/include/FileSink.hh \
 		liveMedia/include/FramedFileSource.hh \
