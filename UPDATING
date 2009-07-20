@@ -16,7 +16,7 @@ upgrades.
 
 	# portupgrade -fr net/openldap24-client
 			or
-	# portmaster -R net/openldap24-client
+	# portmaster -r net/openldap24-client
 
 20090719:
   AFFECTS: users of graphics/jpeg
