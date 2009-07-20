@@ -386,6 +386,7 @@ post-patch:
 		-e "s|\([^:]*:.*\) install-demoDATA\(.*\)|\1\2|g" \
 		-e "s|\([^:]*:.*\) install-demoSCRIPTS\(.*\)|\1\2|g" \
 		-e "s|\([^:]*:.*\) install-pathplanexampleDATA\(.*\)|\1\2|g" \
+		-e 's|txtdir = $$(pkgdatadir)/doc|txtdir = ${DOCSDIR}|' \
 		-e 's|demodir = $$(pkgdatadir)/demo|demodir = ${EXAMPLESDIR}|';
 	@${REINPLACE_CMD} \
 		-e 's|^\.SUFFIXES: \(.*\)\.1\(.*\)|.SUFFIXES: \1 \2|' \
@@ -405,6 +406,10 @@ post-patch:
 		${WRKSRC}/cmd/smyrna/tvnodes.h
 	@${REINPLACE_CMD} -e 's|#include "regex_win32.h"|#include <regex.h>|' \
 		${WRKSRC}/cmd/smyrna/btree.c
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
+		${WRKSRC}/Makefile.in
+.endif
 
 post-install: install-ldconfig-file
 	cd ${WRKSRC}/lib/expr && \
@@ -412,11 +417,11 @@ post-install: install-ldconfig-file
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${FIX_INCLUDE} ${PREFIX}/include/graphviz/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/doc
+	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/pdf
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} ${PDOCS_TXT} ${DOCSDIR}/doc/ && \
+		${INSTALL_DATA} ${PDOCS_TXT} ${DOCSDIR}/ && \
 		${INSTALL_DATA} ${PDOCS_PDF} ${DOCSDIR}/pdf/ && \
 		${INSTALL_DATA} ${PDOCS_HTML} ${DOCSDIR}/html/
 .	for i in neato.pdf twopi.pdf fdp.pdf circo.pdf

@@ -196,13 +196,12 @@ libdata/pkgconfig/libgraph.pc
 libdata/pkgconfig/libcgraph.pc
 libdata/pkgconfig/libpathplan.pc
 libdata/pkgconfig/libgvc.pc
-%%PORTDOCS%%%%DATADIR%%/doc/AUTHORS
-%%PORTDOCS%%%%DATADIR%%/doc/COPYING
-%%PORTDOCS%%%%DATADIR%%/doc/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/doc/Dot.ref
-%%PORTDOCS%%%%DATADIR%%/doc/NEWS
-%%PORTDOCS%%%%DATADIR%%/doc/cpl1.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/doc/latex_suggestions.txt
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/Dot.ref
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/cpl1.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/html/build.html
 %%PORTDOCS%%%%DOCSDIR%%/html/char.html
@@ -314,6 +313,7 @@ libdata/pkgconfig/libgvc.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/trapezium.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/triangle.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tripleoctagon.gif
+%%PORTDOCS%%%%DOCSDIR%%/latex_suggestions.txt
 %%PORTDOCS%%%%DOCSDIR%%/pdf/acyclic.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/bcomps.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/ccomps.1.pdf
@@ -568,7 +568,6 @@ libdata/pkgconfig/libgvc.pc
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pathplan_data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
