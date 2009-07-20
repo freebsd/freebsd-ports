@@ -41,6 +41,10 @@ USE_GNOME=	libglade2 intltool libgnome gtk20 pango orbit2
 USE_LUA=	5.1
 LUA_COMPS=	lua
 
+.if ${OSVERSION} < 700000
+BROKEN=	does not build on 6.x
+.endif
+
 .if ${PKGNAMESUFFIX} == 51
 CONFLICTS=	mysql-workbench-oss52*
 .endif
