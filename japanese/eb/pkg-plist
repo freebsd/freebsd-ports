@@ -21,7 +21,7 @@ include/eb/zio.h
 lib/libeb.a
 lib/libeb.la
 lib/libeb.so
-lib/libeb.so.12
+lib/libeb.so.14
 share/aclocal/eb4.m4
 %%DOCSDIR%%/eb-01.html
 %%DOCSDIR%%/eb-02.html

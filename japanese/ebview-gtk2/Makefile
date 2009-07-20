@@ -7,7 +7,7 @@
 
 PORTNAME=	ebview
 PORTVERSION=	0.3.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	japanese
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-gtk2
@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
 
-LIB_DEPENDS=	eb.12:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.14:${PORTSDIR}/japanese/eb
 
 CONFLICTS=	ja-ebview-0*
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	4.3.4
+PORTVERSION=	4.4.1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.sra.co.jp/pub/misc/eb/old/eb-${PORTVERSION:C/^([0-9]+)\.([0-9]+).*/\1.\2/}/
