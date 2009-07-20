@@ -6,38 +6,27 @@
 #
 
 PORTNAME=	cut
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.falvotech.com/content/cut/2.4/downloads/
+MASTER_SITES=	http://www.falvotech.com/content/cut/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit Testing Framework for C, C++ and Objective-C
 
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+USE_PYTHON_RUN=	yes
+ALL_TARGET=	build
 
-WRKSRC=		${WRKDIR}/repo
-
-# related to build target
-ALL_TARGET=	bin/cutgen
-
-# cut interface is compatible at major version number
-major=		2
+post-patch:
+.for FILE in common.py cutgen.py options.py parser.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PREFIX}/bin/python|' \
+		${WRKSRC}/${FILE}
+.endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/cutgen ${PREFIX}/bin/cutgen-${major}
-	${CP} -R ${WRKSRC}/include/* ${PREFIX}/include/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/tutorial
-	${CP} ${WRKSRC}/LICENSE ${WRKSRC}/docs/README ${WRKSRC}/CHANGELOG ${DOCSDIR}/
-	${CP} -R ${WRKSRC}/docs/tutorials/sergei_gnezdov/*.c\
-			${WRKSRC}/docs/tutorials/sergei_gnezdov/*.h\
-			${WRKSRC}/docs/tutorials/sergei_gnezdov/*.dvi\
-			${WRKSRC}/docs/tutorials/sergei_gnezdov/*.pdf\
-			${WRKSRC}/docs/tutorials/sergei_gnezdov/*.ps\
-			${DOCSDIR}/tutorial/
-	${MKDIR} ${EXAMPLESDIR}/
-	${CP} -R ${WRKSRC}/test/* ${EXAMPLESDIR}/
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/cutgen ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/cutgen.py ${PREFIX}/bin
+.for FILE in common.py lexer.py options.py parser.py
+	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/${FILE} ${PREFIX}/bin/cutgen_${FILE}
+.endfor
 
 .include <bsd.port.mk>
