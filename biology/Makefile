@@ -70,6 +70,7 @@
     SUBDIR += phrap
     SUBDIR += phred
     SUBDIR += phylip
+    SUBDIR += phyml
     SUBDIR += platon
     SUBDIR += povchem
     SUBDIR += primer3

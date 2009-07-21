@@ -1,0 +1,11 @@
+--- configure.ac.orig	2009-07-17 14:57:39.000000000 -0600
++++ configure.ac	2009-07-17 14:57:55.000000000 -0600
+@@ -58,8 +58,6 @@
+ esac
+ # End of cross-compilation macros
+ 
+-CFLAGS+=" -O3 -fomit-frame-pointer -funroll-loops -Wall"
+-
+ AC_CONFIG_FILES([Makefile])
+ AC_OUTPUT
+ 
