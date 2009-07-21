@@ -107,4 +107,10 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 800079
+IGNORE=		the port can't be used with the default linux base port (linux_base-f10)
+.endif
+
+.include <bsd.port.post.mk>
