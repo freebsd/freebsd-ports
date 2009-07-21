@@ -2,7 +2,7 @@ bin/teredo-mire
 sbin/miredo
 sbin/miredo-server
 sbin/miredo-checkconf
-lib/libteredo.so.4
+lib/libteredo.so.5
 lib/libteredo.a
 lib/libteredo.la
 lib/libteredo.so
