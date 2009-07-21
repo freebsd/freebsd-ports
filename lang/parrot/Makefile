@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	parrot
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	lang
 #MASTER_SITES=	CPAN
 #MASTER_SITE_SUBDIR=	../../authors/id/A/AR/ARANDAL
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages

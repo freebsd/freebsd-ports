@@ -138,7 +138,6 @@ lib/parrot/%%PARROT_VER%%/languages/pge/PGE/Perl6Regex.pir
 lib/parrot/%%PARROT_VER%%/languages/pge/PGE/Regex.pir
 lib/parrot/%%PARROT_VER%%/languages/pge/PGE/builtins.pg
 lib/parrot/%%PARROT_VER%%/languages/pge/STATUS
-lib/parrot/%%PARROT_VER%%/languages/pge/demo.pir
 lib/parrot/%%PARROT_VER%%/library/CGI/QueryHash.pbc
 lib/parrot/%%PARROT_VER%%/library/CGI/QueryHash.pir
 lib/parrot/%%PARROT_VER%%/library/Config/JSON.pbc
@@ -173,6 +172,7 @@ lib/parrot/%%PARROT_VER%%/library/NCI/Utils.pir
 lib/parrot/%%PARROT_VER%%/library/NCI/call_toolkit_init.pbc
 lib/parrot/%%PARROT_VER%%/library/NCI/call_toolkit_init.pir
 lib/parrot/%%PARROT_VER%%/library/OpenGL.pir
+lib/parrot/%%PARROT_VER%%/library/OpenGL/Math.pir
 lib/parrot/%%PARROT_VER%%/library/P6object.pbc
 lib/parrot/%%PARROT_VER%%/library/P6object.pir
 lib/parrot/%%PARROT_VER%%/library/PGE.pbc
@@ -275,6 +275,7 @@ lib/parrot/%%PARROT_VER%%/library/postgres.pir
 lib/parrot/%%PARROT_VER%%/library/random_lib.pir
 lib/parrot/%%PARROT_VER%%/library/uuid.pir
 lib/parrot/%%PARROT_VER%%/library/yaml_dumper.pir
+lib/parrot/%%PARROT_VER%%/parrot_config.o
 @comment libdata/pkgconfig/parrot.pc
 %%DOCSDIR%%/%%PARROT_VER%%/LICENSE
 %%DOCSDIR%%/%%PARROT_VER%%/NEWS
@@ -292,7 +293,6 @@ lib/parrot/%%PARROT_VER%%/library/yaml_dumper.pir
 %%PARROT_DOCS%%/ops/io.pod
 %%PARROT_DOCS%%/ops/math.pod
 %%PARROT_DOCS%%/ops/object.pod
-%%PARROT_DOCS%%/ops/obscure.pod
 %%PARROT_DOCS%%/ops/pic.pod
 %%PARROT_DOCS%%/ops/pmc.pod
 %%PARROT_DOCS%%/ops/set.pod
@@ -325,6 +325,7 @@ lib/parrot/%%PARROT_VER%%/library/yaml_dumper.pir
 @dirrm lib/parrot/%%PARROT_VER%%/library/SDL
 @dirrm lib/parrot/%%PARROT_VER%%/library/Parrot
 @dirrm lib/parrot/%%PARROT_VER%%/library/PGE
+@dirrm lib/parrot/%%PARROT_VER%%/library/OpenGL
 @dirrm lib/parrot/%%PARROT_VER%%/library/NCI
 @dirrm lib/parrot/%%PARROT_VER%%/library/Math/Random
 @dirrm lib/parrot/%%PARROT_VER%%/library/Math
