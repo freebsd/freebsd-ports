@@ -39,6 +39,7 @@ MAKE_ENV+=		LIBRPATH="${PREFIX}/lib"
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
 USE_PERL5_BUILD=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
 	dsa.1 dsaparam.1 ec.1 ecparam.1 enc.1 errstr.1 gendsa.1 genrsa.1 \
