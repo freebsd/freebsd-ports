@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Image/Heatmap.pm
+%%SITE_PERL%%/Image/Heatmap/bolilla.png
+%%SITE_PERL%%/Image/Heatmap/colors.png
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Heatmap/.packlist
+@dirrm %%SITE_PERL%%/Image/Heatmap
+@dirrmtry %%SITE_PERL%%/Image
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Heatmap
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
