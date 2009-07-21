@@ -12,7 +12,7 @@
 @@ -1128,7 +1128,10 @@
  
  #if defined(DEFAULT_SYSCONFDIR)
-   if (DEFAULT_SYSCONFDIR[0])
+   if (DEFAULT_SYSCONFDIR != "")
 +  {
      errors += add_directory(alloc, DEFAULT_SYSCONFDIR, dirs);
 +    errors += add_directory(alloc, DEFAULT_SYSCONFDIR "/mysql", dirs);

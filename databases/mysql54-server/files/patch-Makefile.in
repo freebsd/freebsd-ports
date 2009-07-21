@@ -10,7 +10,7 @@
 -			@sql_union_dirs@ unittest storage plugin \
 -			@sql_server@ @man_dirs@ tests \
 -			netware @libmysqld_dirs@ \
--			mysql-test support-files sql-bench @tools_dirs@ \
+-			mysql-test support-files sql-bench \
 -			win
 +SUBDIRS =
  
