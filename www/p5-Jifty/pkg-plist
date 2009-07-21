@@ -89,6 +89,7 @@ bin/jifty
 %%SITE_PERL%%/Jifty/Plugin/ClassLoader.pm
 %%SITE_PERL%%/Jifty/Plugin/CompressedCSSandJS/Dispatcher.pm
 %%SITE_PERL%%/Jifty/Plugin/CompressedCSSandJS.pm
+%%SITE_PERL%%/Jifty/Plugin/Config/Action/AddConfig.pm
 %%SITE_PERL%%/Jifty/Plugin/Config/Action/Config.pm
 %%SITE_PERL%%/Jifty/Plugin/Config/Action/Restart.pm
 %%SITE_PERL%%/Jifty/Plugin/Config/Dispatcher.pm
@@ -111,6 +112,9 @@ bin/jifty
 %%SITE_PERL%%/Jifty/Plugin/RequestInspector.pm
 %%SITE_PERL%%/Jifty/Plugin/SQLQueries/View.pm
 %%SITE_PERL%%/Jifty/Plugin/SQLQueries.pm
+%%SITE_PERL%%/Jifty/Plugin/SetupWizard.pm
+%%SITE_PERL%%/Jifty/Plugin/SetupWizard/Action/TestDatabaseConnectivity.pm
+%%SITE_PERL%%/Jifty/Plugin/SetupWizard/View.pm
 %%SITE_PERL%%/Jifty/Plugin/SinglePage/Dispatcher.pm
 %%SITE_PERL%%/Jifty/Plugin/SinglePage.pm
 %%SITE_PERL%%/Jifty/Plugin/SkeletonApp/Dispatcher.pm
@@ -239,6 +243,8 @@ bin/jifty
 @dirrmtry %%SITE_PERL%%/Jifty/Plugin/SQLQueries
 @dirrmtry %%SITE_PERL%%/Jifty/Plugin/SinglePage
 @dirrmtry %%SITE_PERL%%/Jifty/Plugin/SkeletonApp
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/SetupWizard/Action
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/SetupWizard
 @dirrmtry %%SITE_PERL%%/Jifty/Plugin/TestServerWarnings
 @dirrmtry %%SITE_PERL%%/Jifty/Plugin/User/Mixin/Model
 @dirrmtry %%SITE_PERL%%/Jifty/Plugin/User/Mixin
