@@ -214,6 +214,7 @@
     SUBDIR += phonon-gstreamer
     SUBDIR += phonon-xine
     SUBDIR += playd
+    SUBDIR += playd2
     SUBDIR += podcatcher
     SUBDIR += poe
     SUBDIR += ppm2fli
