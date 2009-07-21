@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Binary file viewer and editor
 
+BROKEN=		does not build
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --with-extraincdir="${LOCALBASE}/include" \
 		--ld="${CC}" --with-extralibdir="${LOCALBASE}/lib" \
