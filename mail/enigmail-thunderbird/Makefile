@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION=	0.95.7
-PORTREVISION=	1
+PORTVERSION=	0.96.0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
 PKGNAMEPREFIX?=	thunderbird-
