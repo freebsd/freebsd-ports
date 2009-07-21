@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Config-General
-PORTVERSION=	2.42
+PORTVERSION=	2.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl5 module for handling Apache-style configuration files
 
 PERL_CONFIGURE=	YES
