@@ -855,7 +855,11 @@ MLINKS=	dgst.1 md4.1 \
 OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
+.if ( ${OSVERSION} >= 800105 )
+OPENSSL_SHLIBVER?=	6
+.else
 OPENSSL_SHLIBVER?=	5
+.endif
 
 .if !defined(WITHOUT_SSE2)
 # disable runtime SSE2 detection
