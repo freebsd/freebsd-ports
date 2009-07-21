@@ -180,6 +180,7 @@
     SUBDIR += codeville
     SUBDIR += codeworker
     SUBDIR += colorer
+    SUBDIR += colorgcc
     SUBDIR += commoncpp
     SUBDIR += compiz-bcop
     SUBDIR += configkit
