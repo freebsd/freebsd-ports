@@ -1,0 +1,38 @@
+%%PYTHON_SITELIBDIR%%/py_interface/__init__.py
+%%PYTHON_SITELIBDIR%%/py_interface/__init__.pyc
+%%PYTHON_SITELIBDIR%%/py_interface/__init__.pyo
+%%PYTHON_SITELIBDIR%%/py_interface/erl_async_conn.py
+%%PYTHON_SITELIBDIR%%/py_interface/erl_async_conn.pyc
+%%PYTHON_SITELIBDIR%%/py_interface/erl_async_conn.pyo
+%%PYTHON_SITELIBDIR%%/py_interface/erl_common.py
+%%PYTHON_SITELIBDIR%%/py_interface/erl_common.pyc
+%%PYTHON_SITELIBDIR%%/py_interface/erl_common.pyo
+%%PYTHON_SITELIBDIR%%/py_interface/erl_epmd.py
+%%PYTHON_SITELIBDIR%%/py_interface/erl_epmd.pyc
+%%PYTHON_SITELIBDIR%%/py_interface/erl_epmd.pyo
+%%PYTHON_SITELIBDIR%%/py_interface/erl_eventhandler.py
+%%PYTHON_SITELIBDIR%%/py_interface/erl_eventhandler.pyc
+%%PYTHON_SITELIBDIR%%/py_interface/erl_eventhandler.pyo
+%%PYTHON_SITELIBDIR%%/py_interface/erl_node.py
+%%PYTHON_SITELIBDIR%%/py_interface/erl_node.pyc
+%%PYTHON_SITELIBDIR%%/py_interface/erl_node.pyo
+%%PYTHON_SITELIBDIR%%/py_interface/erl_node_conn.py
+%%PYTHON_SITELIBDIR%%/py_interface/erl_node_conn.pyc
+%%PYTHON_SITELIBDIR%%/py_interface/erl_node_conn.pyo
+%%PYTHON_SITELIBDIR%%/py_interface/erl_opts.py
+%%PYTHON_SITELIBDIR%%/py_interface/erl_opts.pyc
+%%PYTHON_SITELIBDIR%%/py_interface/erl_opts.pyo
+%%PYTHON_SITELIBDIR%%/py_interface/erl_term.py
+%%PYTHON_SITELIBDIR%%/py_interface/erl_term.pyc
+%%PYTHON_SITELIBDIR%%/py_interface/erl_term.pyo
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_test_erl_node_pingpong.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_epmd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_conn.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_pingpong.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_pingpong.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_tk_1.py
+@dirrm %%PYTHON_SITELIBDIR%%/py_interface
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
