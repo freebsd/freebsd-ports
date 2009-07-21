@@ -7,6 +7,7 @@
 
 PORTNAME=	autopano-sift-C
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/hugin
 
@@ -14,7 +15,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Automatic panorama control point generation tool, C port
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		pano13:${PORTSDIR}/graphics/libpano13
 
