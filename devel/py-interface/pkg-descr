@@ -1,0 +1,28 @@
+The Py-Interface is a python-implementation of an Erlang node.
+
+The py_interface provides the possibility to create a node that may be used
+for communication with other Erlang nodes.
+
+Some characteristics:
+
+o The Python nodes are hidden, like the Java nodes 
+
+o The Python node supports 
+  - registering the Python node in the epmd 
+  - sending and receiving message 
+  - executing remote procedure calls (the rpc:call(M,F,A) mechanism) 
+
+o The Python node does currently not do: 
+  - linking 
+  - tracing 
+
+o The Python node translates Erlang types to Python types as far as there is a
+  reasonable Python counterpart. If there is not, then a class is used. 
+
+o The Python node is a single threaded callback-driven process. 
+
+o The Python node runs on Python 2.5 and Erlang R12. It may well still work
+  with older version of both Python and Erlang. Development started on
+  Python 1.5 and Erlang R7. 
+
+WWW: http://www.lysator.liu.se/~tab/erlang/py_interface/
