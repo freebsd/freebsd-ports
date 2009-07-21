@@ -427,7 +427,6 @@ alltray                         ports/x11/alltray
 alpine                          ports/mail/alpine
 altermime                       ports/mail/altermime
 althea                          ports/mail/althea
-altivore                        ports/security/altivore
 am-aspell                       ports/textproc/am-aspell
 am-utils                        ports/sysutils/am-utils
 amanda-client                   ports/misc/amanda-client
@@ -20555,6 +20554,7 @@ ruby-tzfile                     ports/devel/ruby-tzfile
 ruby-usersguide                 ports/lang/ruby-usersguide
 ruby-vorbisfile                 ports/audio/ruby-vorbisfile
 ruby-vpim                       ports/misc/ruby-vpim
+ruby-wgettsv                    ports/www/ruby-wgettsv
 ruby-wirble                     ports/devel/ruby-wirble
 ruby-wx                         ports/x11-toolkits/ruby-wx
 ruby-x11                        ports/x11/ruby-X11
@@ -22734,6 +22734,7 @@ urwfonts-ttf                    ports/x11-fonts/urwfonts-ttf
 us-zipcodes                     ports/misc/us-zipcodes
 usbhotkey                       ports/sysutils/usbhotkey
 usbrh                           ports/misc/usbrh
+usbrh-libusb                    ports/misc/usbrh-libusb
 usbutil                         ports/sysutils/usbutil
 usbutils                        ports/sysutils/usbutils
 uschedule                       ports/sysutils/uschedule
