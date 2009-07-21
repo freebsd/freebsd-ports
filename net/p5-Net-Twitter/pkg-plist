@@ -2,7 +2,6 @@
 %%SITE_PERL%%/Net/Identica.pm
 %%SITE_PERL%%/Net/Twitter.pm
 %%SITE_PERL%%/Net/Twitter/Search.pm
-%%SITE_PERL%%/Net/Twitter/OAuth/UserAgent.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/TwitterVision.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/REST.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/Search.pm
