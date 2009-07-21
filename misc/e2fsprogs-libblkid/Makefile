@@ -31,6 +31,7 @@ PKGDIR=		${.CURDIR}
 
 pre-build:
 	${MKDIR} ${WRKSRC}/lib/blkid/elfshared
+	cd ${WRKSRC}/util && ${GMAKE} subst
 
 post-build:
 	cd ${WRKSRC}/lib/uuid && ${GMAKE}
