@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		miredo
-PORTVERSION=	 	1.1.6
-PORTREVISION=	 	1
+PORTVERSION=	 	1.1.7
 CATEGORIES=		net ipv6
 MASTER_SITES=		http://www.remlab.net/files/miredo/archive/
 
@@ -26,7 +25,7 @@ MAN5=			miredo-server.conf.5 miredo.conf.5
 MAN8=			miredo-server.8 miredo.8 miredo-checkconf.8
 USE_RC_SUBR=		miredo_server miredo
 
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
