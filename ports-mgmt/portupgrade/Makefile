@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	pkgtools-${DISTVERSION}
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
 
 OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend" on \
