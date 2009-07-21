@@ -17,6 +17,7 @@ COMMENT=	A Python implementation of an Erlang node
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	py_${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py_${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py_${PORTNAME}
 
