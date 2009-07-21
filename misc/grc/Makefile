@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	grc
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	misc
 MASTER_SITES=	http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
