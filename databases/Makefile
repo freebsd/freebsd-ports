@@ -206,6 +206,9 @@
     SUBDIR += mysql51-client
     SUBDIR += mysql51-scripts
     SUBDIR += mysql51-server
+    SUBDIR += mysql54-client
+    SUBDIR += mysql54-scripts
+    SUBDIR += mysql54-server
     SUBDIR += mysql60-client
     SUBDIR += mysql60-scripts
     SUBDIR += mysql60-server
