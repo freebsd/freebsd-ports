@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	crack
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
