@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ruby_parser
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RUBYFORGE/parsetree
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	A ruby parser written in pure ruby
