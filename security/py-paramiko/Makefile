@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paramiko
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	security python
 MASTER_SITES=	http://www.lag.net/paramiko/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
