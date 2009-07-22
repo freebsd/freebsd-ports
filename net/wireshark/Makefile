@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
