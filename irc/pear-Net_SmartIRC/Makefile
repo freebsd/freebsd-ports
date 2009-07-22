@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_SmartIRC
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	irc www pear
 
 MAINTAINER=	ports@FreeBSD.org
