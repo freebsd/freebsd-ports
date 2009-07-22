@@ -39,8 +39,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/src/config.c
-	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}|g' ${WRKSRC}/config.sample
-	@${REINPLACE_CMD} -e 's|PREFIX|${PREFIX}|g' ${WRKSRC}/man/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/config.sample
+	@${REINPLACE_CMD} -e 's|PREFIX|${PREFIX}/|g' ${WRKSRC}/man/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/man/i3.man
 
 # Create the manpage
 post-build:
