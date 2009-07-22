@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lam
-PORTVERSION=	7.1.4
+PORTVERSION=	7.1.5b2
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.lam-mpi.org/download/files/ \
 		http://www.thinkingnerds.com/lam/download/files/
