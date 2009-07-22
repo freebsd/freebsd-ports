@@ -1,9 +1,30 @@
 bin/task
+%%DATADIR%%/scripts/bash/task_completion.sh
+%%DATADIR%%/scripts/vim/ftdetect/task.vim
+%%DATADIR%%/scripts/vim/README
+%%DATADIR%%/scripts/vim/syntax/taskdata.vim
+%%DATADIR%%/scripts/vim/syntax/taskedit.vim
+%%DATADIR%%/scripts/zsh/_task
+%%DATADIR%%/i18n/strings.de-DE
+%%DATADIR%%/i18n/strings.en-US
+%%DATADIR%%/i18n/strings.es-ES
+%%DATADIR%%/i18n/strings.fr-FR
+%%DATADIR%%/i18n/strings.nl-NL
+%%DATADIR%%/i18n/strings.sv-SE
+%%DATADIR%%/i18n/tips.de-DE
+%%DATADIR%%/i18n/tips.en-US
+%%DATADIR%%/i18n/tips.sv-SE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/task_completion.sh
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/scripts/bash
+@dirrm %%DATADIR%%/scripts/vim/syntax
+@dirrm %%DATADIR%%/scripts/vim/ftdetect
+@dirrm %%DATADIR%%/scripts/vim
+@dirrm %%DATADIR%%/scripts/zsh
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/i18n
+@dirrm %%DATADIR%%
