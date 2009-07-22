@@ -10,7 +10,7 @@ PORTVERSION=	2.0.5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PORTVERSION}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
