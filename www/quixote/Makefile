@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quixote
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	www python
 MASTER_SITES=	http://quixote.ca/releases/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
