@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	3.50
+PORTVERSION=	3.55
 DISTVERSIONSUFFIX=	-1.rh9.rf
-PORTREVISION=	3
 CATEGORIES=	www multimedia
 MASTER_SITES=	CENKES http://apt.sw.be/packages/mplayerplug-in/ \
 		ftp://fr2.rpmfind.net/linux/dag/redhat/9/en/i386/dag/RPMS/
