@@ -32,7 +32,6 @@ IGNORE=	you have the 'USE_GCC' variable defined either in environment or in make
 
 .if (${ARCH} == alpha)
 BROKEN=			Does not compile on alpha
-WITHOUT_CPU_CFLAGS=	yes
 .endif
 
 WITHOUT_CPU_CFLAGS=	yes
@@ -47,6 +46,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
 #CONFIGURE_ARGS+=	--program-suffix=-295
+CONFIGURE_ARGS+=	--build=${CONFIGURE_TARGET} --host=${CONFIGURE_TARGET}
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
@@ -77,6 +77,29 @@ pre-configure:
 	@# configure.in by patching it.
 	@${TOUCH} ${WRKSRC}/gcc/configure
 	@${TOUCH} ${WRKSRC}/gcc/cstamp-h.in
+
+# The LATE_ARGS mess up gcc's configure script. Roll our own target here
+do-configure:
+	CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
+		| ${XARGS} -n 1 ${DIRNAME}); \
+	for _D in $${CONFIG_GUESS_DIRS}; do \
+		${CP} -f ${TEMPLATES}/config.guess $${_D}/config.guess; \
+		${CHMOD} a+rx $${_D}/config.guess; \
+	    ${CP} -f ${TEMPLATES}/config.sub $${_D}/config.sub; \
+		${CHMOD} a+rx $${_D}/config.sub; \
+	done
+	(cd ${CONFIGURE_WRKSRC} && \
+		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
+	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+	    INSTALL_DATA="${INSTALL_DATA}" \
+	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
+			 ${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
+			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+			 ${FALSE}; \
+		fi)
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
