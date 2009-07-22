@@ -1,6 +1,7 @@
 include/gl2ps.h
 lib/libgl2ps.a
 lib/libgl2ps.so
+lib/libgl2ps.so.1
 %%EXAMPLESDIR%%/gl2psTest.c
 %%EXAMPLESDIR%%/gl2psTestSimple.c
 %%EXAMPLESDIR%%/Makefile
