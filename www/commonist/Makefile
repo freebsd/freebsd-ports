@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commonist
-PORTVERSION=	0.3.32
+PORTVERSION=	0.3.40
 CATEGORIES=	www java
 MASTER_SITES=	http://djini.de/software/commonist/
 
