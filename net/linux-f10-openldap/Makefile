@@ -7,6 +7,7 @@
 
 PORTNAME=	openldap
 PORTVERSION=	2.4.12
+PORTREVISION=	1
 CATEGORIES=	net linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
@@ -20,7 +21,7 @@ RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 DESCR=	${.CURDIR}/../openldap24-server/pkg-descr
 
-PLIST_FILES=	usr/lib/liblber-2.4.so.2 usr/lib/liblber-2.4.so.2.2.0 usr/lib/libldap-2.4.so.2 usr/lib/libldap-2.4.so.2.2.0 usr/lib/libldap_r-2.4.so.2 usr/lib/libldap_r-2.4.so.2.2.0
+PLIST_FILES=	usr/lib/liblber-2.4.so.2 usr/lib/liblber-2.4.so.2.2.0 usr/lib/libldap-2.4.so.2 usr/lib/libldap-2.4.so.2.2.0 usr/lib/libldap_r-2.4.so.2 usr/lib/libldap_r-2.4.so.2.2.0 etc/openldap
 DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	ANNOUNCEMENT CHANGES COPYRIGHT LICENSE README
 MANPREFIX=	${PREFIX}/usr/share
