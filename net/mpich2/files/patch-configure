@@ -1,11 +1,11 @@
---- ./configure.orig	2009-06-03 03:49:17.000000000 +0200
-+++ ./configure	2009-06-23 19:16:46.000000000 +0200
-@@ -36119,12 +36119,12 @@
+--- configure.orig	2009-07-21 23:48:05.000000000 +0200
++++ configure	2009-07-22 18:53:59.000000000 +0200
+@@ -36096,12 +36096,12 @@
    return 0;
  }
  _ACEOF
--for ac_lib in '' pthread; do
-+for ac_lib in '' $PTHREAD_LIBS; do
+-for ac_lib in '' thread; do
++for ac_lib in '' -lpthread; do
    if test -z "$ac_lib"; then
      ac_res="none required"
    else
@@ -16,27 +16,3 @@
    fi
    rm -f conftest.$ac_objext conftest$ac_exeext
  if { (ac_try="$ac_link"
-@@ -36248,11 +36248,11 @@
-   	    { $as_echo "$as_me:$LINENO: result: $pac_cv_lib_pthread_broken" >&5
- $as_echo "$pac_cv_lib_pthread_broken" >&6; }
- 	    if test "$pac_cv_lib_pthread_broken" = yes ; then
--                # Try again with -lpthread
-+                # Try again with pthread
- 	        { $as_echo "$as_me:$LINENO: checking whether pthread routines with explicit lib are broken" >&5
--$as_echo_n "checking whether pthread routines with explicit lib are broken... " >&6; }
-+$as_echo_n "checking whether $PTHREAD_LIBS routines with explicit lib are broken... " >&6; }
- 		saveLIBS=$LIBS
--		LIBS="$LIBS -lpthread"
-+		LIBS="$LIBS $PTHREAD_LIBS"
- 	        if test "$cross_compiling" = yes; then
-   pac_cv_lib_pthread_broken_explicit=unknown
- else
-@@ -36608,7 +36608,7 @@
- _ACEOF
- 
- 	fi
--	THR_LIBS="$THR_LIBS -lpthread"
-+	THR_LIBS="$THR_LIBS $PTHREAD_LIBS"
- 	MPICH2_THREAD_PACKAGE=pthreads
- 	;;
-     solaris)
