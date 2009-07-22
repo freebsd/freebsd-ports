@@ -25,10 +25,4 @@ MAN3=		Test::LectroTest.3 \
 		Test::LectroTest::TestRunner.3 \
 		Test::LectroTest::Tutorial.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

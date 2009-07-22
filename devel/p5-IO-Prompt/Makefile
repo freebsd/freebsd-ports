@@ -28,10 +28,4 @@ MAN3=	IO::Prompt.3
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if m|use 5.008;|' \
-		${WRKSRC}/lib/IO/Prompt.pm
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -182,13 +182,6 @@ MAN3=		PSGConf.3 \
 		PSGConf::Util.3 \
 		psgconf-intro.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
-.endif
-
 PKGINSTALL=	${WRKSRC}/postinstall
 PKGDEINSTALL=	${WRKSRC}/postinstall
 
@@ -201,4 +194,4 @@ post-install:
 	@${CP} ${WRKSRC}/etc/psgconf_modules ${PREFIX}/etc/psgconf_modules.sample
 	PKG_PREFIX=${PREFIX} PKG_MGR=FreeBSD::Ports ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

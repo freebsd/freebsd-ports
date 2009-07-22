@@ -40,15 +40,4 @@ MAN3=		CGI::Kwiki.3 \
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-# Damn ExtUtils::MM_Unix, and Damn Module::Install !!!
-post-configure:
-	@${PERL} -pi -e 'if (/MAN3PODS/) { $$_ .= "\tlib/CGI/Kwiki/Config.pm \\\n\tlib/CGI/Kwiki/Config_yaml.pm \\\n" };' \
-		     -e 'if (/manifypods :/) {$$_ .= "\tlib/CGI/Kwiki/Config.pm \\\n\tlib/CGI/Kwiki/Config_yaml.pm \\\n" };' \
-		     -e 'if (/\@\$$\(POD2MAN\)/) { $$_ .= "\tlib/CGI/Kwiki/Config.pm \\\n\t\$$(INST_MAN3DIR)/CGI::Kwiki::Config.\$$(MAN3EXT) \\\n\tlib/CGI/Kwiki/Config_yaml.pm \\\n\t\$$(INST_MAN3DIR)/CGI::Kwiki::Config_yaml.\$$(MAN3EXT) \\\n"};' \
-			${WRKSRC}/Makefile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

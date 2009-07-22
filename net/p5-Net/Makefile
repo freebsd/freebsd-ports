@@ -32,11 +32,4 @@ MAN3=		Net::Cmd.3 \
 		Net::Time.3 \
 		Net::libnetFAQ.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

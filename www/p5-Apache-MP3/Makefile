@@ -34,11 +34,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/apache_mp3/* ${DATADIR}
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
-RUN_DEPENDS+=	${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

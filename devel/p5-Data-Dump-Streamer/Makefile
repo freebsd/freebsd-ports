@@ -14,19 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Stream a highly accurate breadth first data dump in Perl code
 
-RUN_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
-		${SITE_PERL}/${PERL_ARCH}/B/Utils.pm:${PORTSDIR}/devel/p5-B-Utils
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
+		${SITE_PERL}/${PERL_ARCH}/B/Utils.pm:${PORTSDIR}/devel/p5-B-Utils \
+		${SITE_PERL}/${PERL_ARCH}/PadWalker.pm:${PORTSDIR}/devel/p5-PadWalker
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	DDS
 
 MAN3=		DDS.3 Data::Dump::Streamer.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/PadWalker.pm:${PORTSDIR}/devel/p5-PadWalker
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

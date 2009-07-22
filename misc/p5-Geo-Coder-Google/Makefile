@@ -26,10 +26,4 @@ MAN3=		Geo::Coder::Google.3
 post-patch:
 	@${REINPLACE_CMD} -e 's/-122.397323/-122.397711/' ${WRKSRC}/t/01_live.t
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

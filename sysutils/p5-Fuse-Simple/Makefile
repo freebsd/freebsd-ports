@@ -21,10 +21,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Fuse::Simple.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	${SITE_PERL}/Switch.pm:${PORTSDIR}/lang/p5-Switch
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,23 +21,19 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERL_CONFIGURE=	yes
 
+SIGNAL_PATCH=p5.8-patch-sigalrm
 
 post-extract:
 	${MV} ${WRKSRC}/Net/vICQ/*  ${WRKSRC}
 	${RM} ${WRKSRC}/install.pl
+
+post-patch:
+	@${ECHO_MSG} "===>  Applying patch ${SIGNAL_PATCH} for ${PKGNAME}"
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/${SIGNAL_PATCH}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vicq ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/examples/vicq
 	${INSTALL_DATA} ${WRKSRC}/vicqrc.example ${PREFIX}/share/examples/vicq
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
-SIGNAL_PATCH=p5.8-patch-sigalrm
-post-patch:
-	@${ECHO_MSG} "===>  Applying patch ${SIGNAL_PATCH} for ${PKGNAME}"
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/${SIGNAL_PATCH}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

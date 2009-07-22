@@ -273,9 +273,4 @@ post-install:
 .endif
 	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-.endif
-
 .include <bsd.port.post.mk>

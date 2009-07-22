@@ -23,11 +23,4 @@ PERL_MODBUILD=	yes
 
 MAN3=		IO::YAML.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-BUILD_DEPENDS+=	${SITE_PERL}/Errno.pm:${PORTSDIR}/devel/p5-Errno
-RUN_DEPENDS+=	${SITE_PERL}/Errno.pm:${PORTSDIR}/devel/p5-Errno
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

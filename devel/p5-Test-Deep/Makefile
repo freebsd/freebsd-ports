@@ -20,13 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
 MAN3=		Test::Deep.3 Test::Deep::NoTest.3
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 

@@ -25,12 +25,6 @@ SHAREGRP=	news
 INSTALL+=	-b
 PKGDEINSTALL=	${PKGINSTALL}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/news,${PREFIX}/news,g' ${WRKSRC}/cleanfeed*
 
@@ -42,4 +36,4 @@ do-install:
 post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -37,10 +37,6 @@ MAN3=		XML::Feed.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
 .if ${PERL_LEVEL} < 500905
 RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif

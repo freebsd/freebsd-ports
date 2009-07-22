@@ -28,12 +28,6 @@ MAN8=			tenshi.8
 
 PORTDOCS=		README Changelog
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
-.endif
-
 post-patch:
 	@${PERL5} -pi.bak -e ' \
 		s"/usr/bin/perl"${PERL}" if $$. == 1; \
@@ -50,4 +44,4 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

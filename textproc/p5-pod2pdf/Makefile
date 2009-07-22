@@ -24,11 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN1=		pod2pdf.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-podlators>0:${PORTSDIR}/textproc/p5-podlators
-BUILD_DEPENDS+=	p5-podlators>0:${PORTSDIR}/textproc/p5-podlators
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

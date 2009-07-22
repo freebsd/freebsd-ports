@@ -18,16 +18,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Mail::Sender.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.endif
-
 post-patch:
 .if defined(BATCH)
 	@${PERL} -pi -e 's/res = <STDIN>;/res = "N";/' ${WRKSRC}/Config.PL
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

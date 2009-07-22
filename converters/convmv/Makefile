@@ -19,10 +19,4 @@ PLIST_FILES=	bin/convmv
 
 MAN1=		convmv.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500701
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

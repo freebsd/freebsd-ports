@@ -26,10 +26,4 @@ MAN1=		svnnotify.1
 MAN3=		SVN::Notify.3 SVN::Notify::Alternative.3 SVN::Notify::HTML.3 \
 		SVN::Notify::HTML::ColorDiff.3 SVN::Notify::Filter.3 SVN::Notify::Filter::Trac.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-RUN_DEPENDS+=	p5-Getopt-Long>=2.34:${PORTSDIR}/devel/p5-Getopt-Long
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

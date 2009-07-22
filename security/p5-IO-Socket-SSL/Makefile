@@ -30,14 +30,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/example/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
 .if defined(WITH_IDN)
 RUN_DEPENDS+=	p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

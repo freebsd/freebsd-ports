@@ -87,13 +87,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-EXTRA_DEPENDS=	p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes \
-		p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-BUILD_DEPENDS+=	${EXTRA_DEPENDS}
-RUN_DEPENDS+=	${EXTRA_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

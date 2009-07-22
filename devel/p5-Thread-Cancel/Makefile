@@ -22,16 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Thread::Cancel.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later. Install lang/perl5.8 then try again
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "--------------------------------------------------------"
 	@${ECHO_MSG} "This module requires a threaded perl.  If your install"
 	@${ECHO_MSG} "is not threaded please install lang/perl5.8 with threads"
 	@${ECHO_MSG} "--------------------------------------------------------"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

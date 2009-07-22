@@ -25,8 +25,4 @@ MAN3=		File::Rsync.3
 post-patch:
 		@${REINPLACE_CMD} -e "s,<STDIN>,'${LOCALBASE}/bin/rsync'," ${WRKSRC}/makepm.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

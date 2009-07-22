@@ -20,11 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Application.3 CGI::Application::Mailform.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
-		p5-Net>=0:${PORTSDIR}/net/p5-Net
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

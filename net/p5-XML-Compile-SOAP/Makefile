@@ -34,10 +34,4 @@ MAN3=		XML::Compile::SOAP.3 \
 		XML::Compile::Transport::SOAPHTTP.3 XML::Compile::WSDL11.3 \
 		XML::Compile::XOP.3 XML::Compile::XOP::Include.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500702
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

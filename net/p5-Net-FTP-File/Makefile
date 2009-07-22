@@ -19,11 +19,4 @@ MAN3=	Net::FTP::File.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	p5-Net>=0:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS+=	p5-Net>=0:${PORTSDIR}/net/p5-Net
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

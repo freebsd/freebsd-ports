@@ -38,7 +38,8 @@ MAN3=		Spoon.3 \
 		Spoon::Registry.3 \
 		Spoon::Template.3 \
 		Spoon::Template::TT2.3 \
-		Spoon::Utils.3
+		Spoon::Utils.3 \
+		Spoon::Config.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
@@ -49,16 +50,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
-post-patch:
-	@${PERL} -i -pe '$$_ = "" if $$. == 3' \
-		${WRKSRC}/lib/Spoon/Base.pm
-.else
-MAN3+=		Spoon::Config.3
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -22,12 +22,6 @@ USE_PERL5=	yes
 RUN_DEPENDS=	${SITE_PERL}/Net/Server/Fork.pm:${PORTSDIR}/net/p5-Net-Server
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
-.endif
-
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -47,9 +41,6 @@ pre-su-install:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/munin-node.sh ${PREFIX}/etc/rc.d/munin-node.sh
-.if ${PERL_LEVEL} < 500800
-	${INSTALL_SCRIPT} ${WRKDIR}/munin-node-revive.sh ${PREFIX}/bin/munin-node-revive
-.endif
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf ${PREFIX}/etc/munin/munin-node.conf.sample
 	${INSTALL_DATA} ${FILESDIR}/plugins.conf ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf.sample
 	@if [ ! -f ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf ]; then \
@@ -63,4 +54,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} ${DISTNAME} | ${SED} -e 's/munin_//' > ${PREFIX}/etc/munin/VERSION.node
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

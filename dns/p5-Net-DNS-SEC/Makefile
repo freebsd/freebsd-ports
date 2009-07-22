@@ -40,8 +40,4 @@ MAN3=		Net::DNS::Keyset.3 Net::DNS::RR::DS.3 Net::DNS::RR::KEY.3 \
 RUN_DEPENDS+=	p5-Digest-SHA>=5.23:${PORTSDIR}/security/p5-Digest-SHA
 .endif
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
 .include <bsd.port.post.mk>

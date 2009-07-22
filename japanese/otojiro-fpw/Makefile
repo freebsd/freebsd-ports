@@ -32,11 +32,7 @@ SRCFILE?=	otojiro.txt
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500801
-JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
-.else
 JCODE=	${SITE_PERL}/Jcode.pm
-.endif
 
 DICT_ARCHIVE!=	${ECHO_CMD} ${DICT_PATH}/eijiro-original/*.exe || ${TRUE}
 .if exists(${DICT_ARCHIVE})

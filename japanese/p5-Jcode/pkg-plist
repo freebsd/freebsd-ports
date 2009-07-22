@@ -1,19 +1,5 @@
-%%WRAPPER%%%%SITE_PERL%%/Jcode.pm
-%%WRAPPER%%%%SITE_PERL%%/Jcode/Nihongo.pod
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/Jcode.pm
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Constants.pm
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/H2Z.pm
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Nihongo.pod
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Tr.pm
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Unicode.pm
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Unicode/Constants.pm
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Unicode/NoXS.pm
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/_Classic.pm
+%%SITE_PERL%%/Jcode.pm
+%%SITE_PERL%%/Jcode/Nihongo.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode/.packlist
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode/Unicode/Unicode.bs
-%%REALMOD%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode/Unicode/Unicode.so
-%%REALMOD%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Unicode
-%%REALMOD%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Jcode
-%%REALMOD%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode/Unicode
-%%WRAPPER%%@dirrm %%SITE_PERL%%/Jcode
+@dirrm %%SITE_PERL%%/Jcode
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode

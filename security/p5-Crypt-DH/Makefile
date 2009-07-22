@@ -23,11 +23,4 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt \
 		%%SITE_PERL%%/Crypt
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

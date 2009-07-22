@@ -24,13 +24,7 @@ PERL_CONFIGURE=	YES
 
 MAN3=		MIME::Lite.3 MIME::changes.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
 post-extract:
 	@${PERL} -i -ne 'print unless m,^#-, .. m,;$$, or m,^if, .. m,^},' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

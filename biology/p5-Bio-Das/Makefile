@@ -39,8 +39,4 @@ MAN3=	Bio::Das.3 Bio::Das::AGPServer::Config.3 Bio::Das::AGPServer::Daemon.3 \
 RUN_DEPENDS+=	p5-Compress-Zlib>=1:${PORTSDIR}/archivers/p5-Compress-Zlib
 .endif
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-MIME-Base64>=2.12:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
 .include <bsd.port.post.mk>

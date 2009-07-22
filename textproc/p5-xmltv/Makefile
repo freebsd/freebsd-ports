@@ -61,17 +61,6 @@ PORTDOCS=	COPYING \
 		tv_check_doc.jpg
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	\
-	${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \
-	${SITE_PERL}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-RUN_DEPENDS+=	\
-	${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \
-	${SITE_PERL}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-.endif
-
 MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 tv_find_grabbers.1 \
 	tv_grab_ar.1 tv_grab_be.1 tv_grab_br_net.1 \
 	tv_grab_ch_search.1 tv_grab_combiner.1 tv_grab_dk.1 \
@@ -118,4 +107,4 @@ post-install:
 	@${MKDIR} ${PREFIX}/${CGIDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/choose/tv_pick/tv_pick_cgi ${PREFIX}/${CGIDIR}/tv_pick.cgi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -22,10 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Test::Benchmark.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703 && ${PERL_LEVEL} != 500602
-BUILD_DEPENDS+=	${SITE_PERL}/Test/Builder.pm:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

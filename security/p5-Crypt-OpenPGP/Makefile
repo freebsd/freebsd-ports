@@ -55,14 +55,4 @@ MAN3=		Crypt::OpenPGP::ErrorHandler.3 Crypt::OpenPGP::Key.3 \
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/Crypt/OpenPGP/Ciphertext.pm.orig
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-DEPENDS_56=	p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-MIME-Base64>0:${PORTSDIR}/converters/p5-MIME-Base64 \
-		p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5
-BUILD_DEPENDS+=	${DEPENDS_56}
-RUN_DEPENDS+=	${DEPENDS_56}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

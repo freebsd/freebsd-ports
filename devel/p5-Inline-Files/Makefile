@@ -20,11 +20,4 @@ PERL_CONFIGURE=	yes
 MAN3=	Inline::Files.3 \
 	Inline::Files::Virtual.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter
-RUN_DEPENDS+=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

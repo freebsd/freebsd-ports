@@ -30,10 +30,4 @@ MAN3=		forks.3 forks::signals.3 \
 		threads::shared::hash.3 \
 		threads::shared::scalar.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500702
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

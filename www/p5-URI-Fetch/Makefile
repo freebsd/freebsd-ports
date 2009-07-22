@@ -29,15 +29,6 @@ PERL_CONFIGURE=	yes
 MAN3=	URI::Fetch.3 \
 	URI::Fetch::Response.3
 
-post-patch:
-	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
-.endif
-
 .if !defined(WITHOUT_ZLIB)
 RUN_DEPENDS+=	p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib
 .endif
@@ -46,4 +37,7 @@ RUN_DEPENDS+=	p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS+=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
+
+.include <bsd.port.mk>

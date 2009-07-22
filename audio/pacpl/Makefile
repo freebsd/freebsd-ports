@@ -75,10 +75,6 @@ PLIST_SUB+=	AMAROK="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500701
-RUN_DEPENDS+=	p5-Switch>0:${PORTSDIR}/lang/p5-Switch
-.endif
-
 .if defined(WITH_BLADEENC)
 RUN_DEPENDS+=	bladeenc:${PORTSDIR}/audio/bladeenc
 .endif

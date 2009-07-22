@@ -58,14 +58,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500801
-RUN_DEPENDS+=	p5-MIME-Base64>=2.2:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
 .if ${PERL_LEVEL} < 500905
 RUN_DEPENDS+=	p5-File-Temp>=0.18:${PORTSDIR}/devel/p5-File-Temp
 .endif

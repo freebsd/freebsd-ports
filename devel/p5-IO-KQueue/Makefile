@@ -18,13 +18,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		IO::KQueue.3
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${PERL_LEVEL} < 500800
-	${REINPLACE_CMD} -e 's/const //' ${WRKSRC}/KQueue.xs
-.endif
-
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
@@ -32,4 +25,4 @@ post-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -52,11 +52,6 @@ MAN3=		Net::Amazon::S3.3 Net::Amazon::S3::Bucket.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
 .if ${PERL_LEVEL} < 500904
 RUN_DEPENDS+=	p5-IO>=1.14:${PORTSDIR}/devel/p5-IO
 .endif

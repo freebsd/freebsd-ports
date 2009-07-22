@@ -26,11 +26,4 @@ PERL_CONFIGURE=	yes
 MAN3=		WWW::Spinn3r.3 \
 		WWW::Spinn3r::Synced.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

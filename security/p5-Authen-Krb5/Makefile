@@ -21,12 +21,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Authen::Krb5.3
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
-.if ${PERL_LEVEL} < 500800
-	@${REINPLACE_CMD} -e 's,const char,char,g' ${WRKSRC}/Krb5.xs
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

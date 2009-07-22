@@ -35,12 +35,8 @@ MAN3=		Encode.3 \
 		Encode::Unicode::UTF7.3 \
 		encoding.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} > 500800
 post-patch:
 	${PERL} -pi -e '$$_="" if $$.>=24 && $$.<=26; $$_="my \@exe_files=();\n" if $$.==25' ${WRKSRC}/Makefile.PL
-.endif
 
 post-configure:
 	@${FIND} ${WRKSRC}/ -name Makefile -exec \
@@ -49,4 +45,4 @@ post-configure:
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -32,16 +32,10 @@ MAN3=		Perlbal.3 \
 		Perlbal::Test.3 \
 		Perlbal::Util.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
 .ifndef NOPORTDOCS
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

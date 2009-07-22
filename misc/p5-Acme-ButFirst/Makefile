@@ -18,10 +18,4 @@ MAN3=	Acme::ButFirst.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,10 +25,4 @@ PERL_MODBUILD=	yes
 
 MAN3=	Catalyst::Plugin::Scheduler.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

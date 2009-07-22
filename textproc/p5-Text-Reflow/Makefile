@@ -18,10 +18,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Text::Reflow.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} > 500800
 EXTRA_PATCHES=	${PATCHDIR}/5.8-Reflow.pm
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

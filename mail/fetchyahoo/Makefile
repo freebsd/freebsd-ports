@@ -31,12 +31,6 @@ PORTDOCS=	COPYING ChangeLog Credits INSTALL TODO index.html
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
-.endif
-
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/fetchyahoo ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
@@ -49,4 +43,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

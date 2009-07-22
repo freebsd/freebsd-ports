@@ -22,11 +22,4 @@ MAN3=		IPC::Run3.3 \
 		IPC::Run3::ProfPP.3 \
 		IPC::Run3::ProfReporter.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

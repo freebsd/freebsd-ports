@@ -21,10 +21,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::Address::Ethernet.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500702
-RUN_DEPENDS+=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

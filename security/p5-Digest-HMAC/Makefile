@@ -23,10 +23,4 @@ MAN3=		Digest::HMAC.3 \
 		Digest::HMAC_MD5.3 \
 		Digest::HMAC_SHA1.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
