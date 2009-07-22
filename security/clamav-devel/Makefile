@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20090625
+PORTVERSION=	20090722
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -27,6 +27,7 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		ICONV "Enable ICONV support" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
