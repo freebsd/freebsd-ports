@@ -169,6 +169,7 @@
     SUBDIR += openoffice.org-3
     SUBDIR += openoffice.org-3-RC
     SUBDIR += openoffice.org-3-devel
+    SUBDIR += openoffice.org-vcltesttool
     SUBDIR += p5-Padre
     SUBDIR += pdfedit
     SUBDIR += pico-alpine
