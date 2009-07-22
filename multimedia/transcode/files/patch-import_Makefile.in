@@ -1,11 +1,11 @@
---- import/Makefile.in.orig	2008-08-15 00:00:00.000000000 -0400
-+++ import/Makefile.in	2008-08-15 00:01:38.000000000 -0400
-@@ -798,7 +798,7 @@
- @NET_STREAM_TRUE@NET_MOD = import_net.la
- BSDAV_MOD = import_bsdav.la
- pkgdir = $(MOD_PATH)
--SUBDIRS = nuv v4l
-+SUBDIRS = v4l %%NUV%% 
- pkg_LTLIBRARIES = \
- 	import_avi.la \
- 	import_mpeg2.la \
+--- import/Makefile.in.orig	2009-07-18 08:16:35.000000000 -0400
++++ import/Makefile.in	2009-07-18 11:11:51.000000000 -0400
+@@ -458,7 +458,7 @@
+   distclean-recursive maintainer-clean-recursive
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = framegen nuv v4l
++DIST_SUBDIRS = framegen v4l %%NUV%%
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ A52_CFLAGS = @A52_CFLAGS@
+ A52_LIBS = @A52_LIBS@
