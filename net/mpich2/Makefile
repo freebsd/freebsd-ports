@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpich2
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 PORTEPOCH=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${PORTVERSION}/
@@ -33,12 +33,17 @@ USE_PERL5_BUILD=yes
 USE_GNOME=	pkgconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-romio --enable-sharedlibs=gcc
+CONFIGURE_ARGS=	--enable-romio --enable-sharedlibs=gcc	\
+		--docdir=${DOCSDIR}
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" CPPFLAGS="-I${LOCALBASE}/include"	\
-		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}"
+		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}"			\
+		PACKAGE=${PORTNAME}
 FFLAGS?=	-O2
 NOCCACHE=	yes
-MAKE_ENV=	CCACHE_DISABLE=yes
+MAKE_ENV=	CCACHE_DISABLE=yes PACKAGE=${PORTNAME}
+.if defined(WITH_DEBUG)
+MAKE_ENV+=	VERBOSE=1
+.endif
 
 USE_FORTRAN=	yes
 F90FLAGS+=	${FFLAGS}
@@ -83,7 +88,9 @@ LIBSSO=		fmpich mpich mpichcxx
 
 THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
 		test/mpi/threads/pt2pt/Makefile.in		\
-		src/mpe2/src/logging/configure
+		src/mpe2/src/logging/configure			\
+		src/mpi/romio/configure src/openpa/configure	\
+		src/pm/hydra/configure
 LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
 		src/mpe2/src/slog2sdk/trace_sample/configure	\
 		src/mpe2/src/graphics/configure

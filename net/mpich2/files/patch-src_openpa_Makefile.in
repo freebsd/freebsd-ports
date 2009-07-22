@@ -1,22 +1,28 @@
---- ./src/openpa/Makefile.in.orig	2009-06-03 03:50:27.000000000 +0200
-+++ ./src/openpa/Makefile.in	2009-06-26 20:57:38.000000000 +0200
-@@ -214,13 +214,13 @@
- 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+--- ./src/openpa/Makefile.in.orig	2009-07-21 23:48:43.000000000 +0200
++++ ./src/openpa/Makefile.in	2009-07-22 18:57:27.000000000 +0200
+@@ -260,16 +260,16 @@
+ $(am__aclocal_m4_deps):
  install-dist_docDATA: $(dist_doc_DATA)
  	@$(NORMAL_INSTALL)
 -	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
--	@list='$(dist_doc_DATA)'; for p in $$list; do \
+-	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
+-	for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  f=$(am__strip_dir) \
--	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
--	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
 -	done
 +%%PORTDOCS%%	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
-+%%PORTDOCS%%	@list='$(dist_doc_DATA)'; for p in $$list; do \
++%%PORTDOCS%%	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
++%%PORTDOCS%%	for p in $$list; do \
 +%%PORTDOCS%%	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-+%%PORTDOCS%%	  f=$(am__strip_dir) \
-+%%PORTDOCS%%	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
-+%%PORTDOCS%%	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
++%%PORTDOCS%%	  echo "$$d$$p"; \
++%%PORTDOCS%%	done | $(am__base_list) | \
++%%PORTDOCS%%	while read files; do \
++%%PORTDOCS%%	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
++%%PORTDOCS%%	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
 +%%PORTDOCS%%	done
  
  uninstall-dist_docDATA:

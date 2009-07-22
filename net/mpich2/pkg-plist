@@ -77,6 +77,7 @@ bin/clog2_repair
 %%PM_MPD%%bin/mpdtrace.pyo
 bin/mpecc.in
 bin/mpefc.in
+bin/mpic++
 bin/mpicc
 bin/mpich2version
 bin/mpicxx
@@ -147,6 +148,10 @@ include/primitives/opa_by_lock.h
 include/primitives/opa_emulated.h
 include/primitives/opa_gcc_ia64.h
 include/primitives/opa_gcc_intel_32_64.h
+include/primitives/opa_gcc_intel_32_64_barrier.h
+include/primitives/opa_gcc_intel_32_64_ops.h
+include/primitives/opa_gcc_intel_32_64_p3.h
+include/primitives/opa_gcc_intel_32_64_p3barrier.h
 include/primitives/opa_gcc_intrinsics.h
 include/primitives/opa_gcc_ppc.h
 include/primitives/opa_gcc_sicortex.h
@@ -702,53 +707,53 @@ sbin/mpeuninstall
 %%PORTDOCS%%%%DOCSDIR%%/www4/MPE_TagsEnd.html
 %%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Update.html
 %%PORTDOCS%%%%DOCSDIR%%/www4/libmpe.cit
-share/examples_collchk/Makefile
-share/examples_collchk/Makefile.in
-share/examples_collchk/composite.c
-share/examples_collchk/scatterv.c
-share/examples_collchk/time_allreduce.c
-share/examples_collchk/time_alltoallv.c
-share/examples_collchk/time_alltoallv0.c
-share/examples_collchk/time_bcast.c
-share/examples_collchk/wrong_composite.c
-share/examples_collchk/wrong_int_byte.c
-share/examples_collchk/wrong_reals.f
-share/examples_collchk/wrong_root.c
-share/examples_collchk/wrong_scatterv.c
-%%X11%%share/examples_graphics/Makefile
-%%X11%%share/examples_graphics/Makefile.in
-%%X11%%share/examples_graphics/cpi.c
-%%X11%%share/examples_graphics/cxgraphics.c
-%%X11%%share/examples_graphics/fxgraphics.f
-share/examples_logging/Makefile
-share/examples_logging/Makefile.in
-share/examples_logging/comm1_isr.c
-share/examples_logging/comm1_isr_loop.c
-share/examples_logging/comm2_connect_accept.c
-share/examples_logging/comm2_spawn_child.c
-share/examples_logging/comm2_spawn_parent.c
-share/examples_logging/cpi.c
-share/examples_logging/cpilog.c
-share/examples_logging/cpilog_pack.c
-share/examples_logging/fcomm1_isr.f
-share/examples_logging/fpilog.f
-share/examples_logging/fpilog_pack.F
-share/examples_logging/iotest.c
-share/examples_logging/log_cost.c
-share/examples_logging/openmp_mpilog.F
-share/examples_logging/openmp_sendrecv.c
-share/examples_logging/pthread_allreduce.c
-share/examples_logging/pthread_sendrecv.c
-share/examples_logging/pthread_sendrecv_user.c
-share/examples_logging/srtest.c
-%%JAVA%%share/logfiles/barrier.rlog
-%%JAVA%%share/logfiles/fpilog.clog
-%%JAVA%%share/logfiles/fpilog.slog2
-share/mpich2.module
-%%JAVA%%@dirrm share/logfiles
-@dirrm share/examples_logging
-%%X11%%@dirrm share/examples_graphics
-@dirrm share/examples_collchk
+%%DATADIR%%/examples_collchk/Makefile
+%%DATADIR%%/examples_collchk/Makefile.in
+%%DATADIR%%/examples_collchk/composite.c
+%%DATADIR%%/examples_collchk/scatterv.c
+%%DATADIR%%/examples_collchk/time_allreduce.c
+%%DATADIR%%/examples_collchk/time_alltoallv.c
+%%DATADIR%%/examples_collchk/time_alltoallv0.c
+%%DATADIR%%/examples_collchk/time_bcast.c
+%%DATADIR%%/examples_collchk/wrong_composite.c
+%%DATADIR%%/examples_collchk/wrong_int_byte.c
+%%DATADIR%%/examples_collchk/wrong_reals.f
+%%DATADIR%%/examples_collchk/wrong_root.c
+%%DATADIR%%/examples_collchk/wrong_scatterv.c
+%%X11%%%%DATADIR%%/examples_graphics/Makefile
+%%X11%%%%DATADIR%%/examples_graphics/Makefile.in
+%%X11%%%%DATADIR%%/examples_graphics/cpi.c
+%%X11%%%%DATADIR%%/examples_graphics/cxgraphics.c
+%%X11%%%%DATADIR%%/examples_graphics/fxgraphics.f
+%%DATADIR%%/examples_logging/Makefile
+%%DATADIR%%/examples_logging/Makefile.in
+%%DATADIR%%/examples_logging/comm1_isr.c
+%%DATADIR%%/examples_logging/comm1_isr_loop.c
+%%DATADIR%%/examples_logging/comm2_connect_accept.c
+%%DATADIR%%/examples_logging/comm2_spawn_child.c
+%%DATADIR%%/examples_logging/comm2_spawn_parent.c
+%%DATADIR%%/examples_logging/cpi.c
+%%DATADIR%%/examples_logging/cpilog.c
+%%DATADIR%%/examples_logging/cpilog_pack.c
+%%DATADIR%%/examples_logging/fcomm1_isr.f
+%%DATADIR%%/examples_logging/fpilog.f
+%%DATADIR%%/examples_logging/fpilog_pack.F
+%%DATADIR%%/examples_logging/iotest.c
+%%DATADIR%%/examples_logging/log_cost.c
+%%DATADIR%%/examples_logging/openmp_mpilog.F
+%%DATADIR%%/examples_logging/openmp_sendrecv.c
+%%DATADIR%%/examples_logging/pthread_allreduce.c
+%%DATADIR%%/examples_logging/pthread_sendrecv.c
+%%DATADIR%%/examples_logging/pthread_sendrecv_user.c
+%%DATADIR%%/examples_logging/srtest.c
+%%JAVA%%%%DATADIR%%/logfiles/barrier.rlog
+%%JAVA%%%%DATADIR%%/logfiles/fpilog.clog
+%%JAVA%%%%DATADIR%%/logfiles/fpilog.slog2
+%%JAVA%%@dirrm %%DATADIR%%/logfiles
+@dirrm %%DATADIR%%/examples_logging
+%%X11%%@dirrm %%DATADIR%%/examples_graphics
+@dirrm %%DATADIR%%/examples_collchk
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www1
