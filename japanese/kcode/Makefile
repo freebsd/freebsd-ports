@@ -24,13 +24,7 @@ MANLANG=	ja
 MAN1=		kcode.1
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
-.else
 RUN_DEPENDS=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
-.endif
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -41,4 +35,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/kcode ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/kcode.1 ${MAN1PREFIX}/man/ja/man1/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

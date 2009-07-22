@@ -32,10 +32,4 @@ MAN3=		Net::ACL.3 Net::ACL::Bootstrap.3 Net::ACL::File.3 \
 		Net::ACL::Rule.3 Net::ACL::Set.3 Net::ACL::Set::Add.3 \
 		Net::ACL::Set::Scalar.3 Net::ACL::Set::Union.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,13 +23,4 @@ MAN3=	Net::Whois::ARIN.3 \
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-UNIVERSAL-isa>=0:${PORTSDIR}/devel/p5-UNIVERSAL-isa \
-		p5-UNIVERSAL-can>=0:${PORTSDIR}/devel/p5-UNIVERSAL-can
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

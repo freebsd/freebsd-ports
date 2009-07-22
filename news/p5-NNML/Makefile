@@ -21,17 +21,10 @@ RESTRICTED=	License unknown
 MAN1=		nnmirror.1 nnsync.1 overview.1
 MAN3=		NNML::Server.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500702
-BUILD_DEPENDS=	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.endif
-
 .if defined(BATCH)
 CONFIGURE_ARGS+=	< /dev/null
 .else
 IS_INTERACTIVE=	yes
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -34,13 +34,6 @@ RUN_DEPENDS+=		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 			${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 			${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
-			${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
 .if defined(WITH_WIKICKER_RECENTLOG)
 RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-IPC-ShareLite
 .endif
@@ -52,11 +45,7 @@ RUN_DEPENDS+=		${SITE_PERL}/DB_File/Lock.pm:${PORTSDIR}/devel/p5-DB_File-Lock
 RUN_DEPENDS+=		${SITE_PERL}/Cache/Memcached.pm:${PORTSDIR}/databases/p5-Cache-Memcached
 .endif
 
-.if ${PERL_LEVEL} < 500801
-JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
-.else
 JCODE=	${SITE_PERL}/Jcode.pm
-.endif
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 WIKIAUTO=		${SITE_PERL}/auto/${PORTNAME}
@@ -106,4 +95,4 @@ post-install:
 		-e 's|%%HostName%%|${HOST}|' < ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

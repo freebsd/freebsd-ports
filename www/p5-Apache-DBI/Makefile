@@ -42,10 +42,4 @@ PLIST_DIRS= %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBI \
 	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache \
 	%%SITE_PERL%%/Apache
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

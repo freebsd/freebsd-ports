@@ -22,14 +22,7 @@ MAN3=		NetAddr::IP.3 \
 	NetAddr::IP::Util.3 \
 	NetAddr::IP::UtilPP.3
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${PERL} -ni -e 'print unless /^=head1/../^=cut/' ${WRKSRC}/Lite/Util/Makefile.PL
 
-.if ${PERL_LEVEL} < 500700
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

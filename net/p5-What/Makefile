@@ -24,10 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		What.3 What::MTA.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500702
-BUILD_DEPENDS+=	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

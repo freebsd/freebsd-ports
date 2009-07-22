@@ -183,7 +183,7 @@ CONFIGURE_ARGS+=	--disable-dbus
 PLIST_SUB+=		DBUS="@comment not installed: "
 .endif
 
-.if defined(WITH_PERL) && ${PERL_LEVEL} >= 500800
+.if defined(WITH_PERL)
 USE_PERL5=		yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=		PERL:=""
@@ -293,9 +293,6 @@ PLIST_SUB+=		ZEPHYR="@comment not installed: "
 .endif
 
 pre-everything::
-.if defined(WITH_PERL) && ${PERL_LEVEL} < 500800
-	@${ECHO_MSG} "WARNING: Perl scripting disabled (Perl 5.8 requirement not met)."
-.endif
 .if defined(WITHOUT_GNUTLS) && defined(WITHOUT_NSS)
 	@${ECHO_MSG} "WARNING: In order to use MSN, you must enable the GNUTLS and/or NSS options."
 .endif

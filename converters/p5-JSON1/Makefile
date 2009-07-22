@@ -24,10 +24,4 @@ MAN3=		Apache::JSONRPC.3 JSON.3 JSON::Converter.3 \
 		JSON::PP.3 JSON::PP5005.3 JSON::PP56.3 JSON::Parser.3 \
 		JSONRPC.3 JSONRPC::Transport::HTTP.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

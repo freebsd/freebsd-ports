@@ -372,11 +372,6 @@ MAN7=	LAM.7 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
 .if ${ARCH} == "i386"
 PLIST_SUB+=	I386=""
 .else

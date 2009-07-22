@@ -18,10 +18,6 @@ MAN3=		Digest::SHA::PurePerl.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
 .if ${PERL_LEVEL} < 500803
 RUN_DEPENDS+=	${SITE_PERL}/Digest/base.pm:${PORTSDIR}/security/p5-Digest
 .endif

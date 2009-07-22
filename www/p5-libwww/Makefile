@@ -38,15 +38,7 @@ MAN3=	Bundle::LWP.3 File::Listing.3 HTML::Form.3 HTTP::Config.3 \
 	WWW::RobotRules::AnyDBM_File.3 lwpcook.3 lwptut.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
-		p5-Net>=2.58:${PORTSDIR}/net/p5-Net
-.endif
-
 .if ${PERL_LEVEL} < 500903
 RUN_DEPENDS+=	p5-Compress-Zlib>=1.10:${PORTSDIR}/archivers/p5-Compress-Zlib
 .endif
-
 .include <bsd.port.post.mk>

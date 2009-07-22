@@ -20,12 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Parse::Syslog.3
 
-.include <bsd.port.pre.mk>
-
-# requires Time::Local 1.07_94
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/Time/Local.pm:${PORTSDIR}/devel/p5-Time-Local
-RUN_DEPENDS+=	${SITE_PERL}/Time/Local.pm:${PORTSDIR}/devel/p5-Time-Local
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

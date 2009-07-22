@@ -18,12 +18,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Audio::WMA.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /use 5.008/g;' \
-		${WRKSRC}/Makefile.PL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

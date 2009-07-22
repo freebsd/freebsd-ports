@@ -37,12 +37,6 @@ CONFLICTS=	cvsweb-2.*
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
 .if defined(PACKAGE_BUILDING) || !defined(CVSROOT) || empty(CVSROOT)
@@ -121,4 +115,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -37,10 +37,4 @@ MAN3=		Net::BitTorrent.3 \
 		Net::BitTorrent::Util.3 \
 		Net::BitTorrent::Version.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

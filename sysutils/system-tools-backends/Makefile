@@ -31,14 +31,8 @@ CONFIGURE_ARGS=	--with-stb-group=wheel \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500800
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
 post-configure:
 	@${REINPLACE_CMD} -e 's|@GETTEXT_PACKAGE@|system-tools-backends|g' \
 		${WRKSRC}/po/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

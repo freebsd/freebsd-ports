@@ -32,15 +32,8 @@ RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-base \
 		espgs:${PORTSDIR}/print/cups-pstoraster
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-PLIST_SUB+=	LANGINFO=""
-.else
 NO_BUILD=	yes
 PLIST_SUB+=	LANGINFO="@comment "
-.endif
 
 REINPLACE_ARGS=	-i ""
 USE_GMAKE=	yes
@@ -90,4 +83,4 @@ post-patch:
 .endif
 	@${GZIP_CMD} ${WRKSRC}/doc/manpages/*/muttprint.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -62,12 +62,6 @@ WITH_SPEEDYCGI=	yes
 .endif # exists(${PERL})
 .endif # perl5.8
 
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
-.endif
-
 .if defined(WITH_LEARNSPAM) || defined(WITH_SPAMCHECK_ALL)
 WITH_SPAMCHECK=	true
 .endif

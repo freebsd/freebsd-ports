@@ -27,10 +27,4 @@ MAN3=		Net::Frame::Dump.3 \
 		Net::Frame::Dump::Online.3 \
 		Net::Frame::Dump::Writer.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

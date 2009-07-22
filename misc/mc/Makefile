@@ -103,12 +103,6 @@ CONFIGURE_ARGS+=--with-screen=mcslang
 CONFIGURE_ARGS+=--without-subshell
 .endif
 
-.if defined(WITH_PERL_MODULES) || !(defined(WITHOUT_PERL_MODULES) || defined(MINIMAL))
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-.endif
-
 MAN1=		mc.1 mcedit.1 mcview.1
 _MAN1=		mc.1
 .for lang in ${_MANLANG}

@@ -22,10 +22,4 @@ MAN3=		ExtUtils::PkgConfig.3
 post-patch:
 	@${PERL} -pi -e '$$_="" if $$.==1' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-EXTRA_PATCHES=	${PATCHDIR}/500600-Makefile.PL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

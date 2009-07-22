@@ -14,16 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Perl module to provide Error/exception support for perl: Error
 
+MAKE_JOBS_SAFE=  yes
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Error.3 Error::Simple.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-
-MAKE_JOBS_SAFE=  yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

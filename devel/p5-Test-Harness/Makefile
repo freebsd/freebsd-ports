@@ -60,21 +60,15 @@ MAN3=		App::Prove.3 \
 		Test::HACKING.3 \
 		Test::Harness.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
 PLIST_SUB=	P5_PREFIX="p5"
 MAN1=		p5prove.1
+
 pre-patch:
 	@${MV} ${WRKSRC}/bin/prove ${WRKSRC}/bin/p5prove
 	@${PERL} -pi -e "s,^bin/prove$$,bin/p5prove," ${WRKSRC}/MANIFEST
 	@${PERL} -pi -e "s,'bin/prove','bin/p5prove'," ${WRKSRC}/Makefile.PL
-.else
-MAN1=		prove.1
-PLIST_SUB=	P5_PREFIX=""
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

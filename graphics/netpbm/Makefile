@@ -60,13 +60,6 @@ PLIST_SUB+=	DEVEL=""
 PLIST_SUB+=	DEVEL="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-# -O causes an ICE in converter/other/exif.c with gcc 3.3.3 on sparc64.
-CFLAGS+=	-O0
-.endif
-
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		 -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -88,8 +81,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${DOCSDIR}/
 .endif
 
-.if !defined(WITHOUT_PERL) && ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

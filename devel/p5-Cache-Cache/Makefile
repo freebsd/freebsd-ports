@@ -42,10 +42,4 @@ MAN3=	Cache::BaseCache.3 \
 	Cache::SizeAwareMemoryCache.3 \
 	Cache::SizeAwareSharedMemoryCache.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Storable>=1.014:${PORTSDIR}/devel/p5-Storable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

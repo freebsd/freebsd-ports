@@ -46,16 +46,4 @@ MAN3=		Bundle::HTTP::WebTest.3 \
 		HTTP::WebTest::Test.3 HTTP::WebTest::TestResult.3 \
 		HTTP::WebTest::Utils.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS_56=	\
-	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
-	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
-.endif
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -51,12 +51,6 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
-.else
 JCODE=	${SITE_PERL}/Jcode.pm
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

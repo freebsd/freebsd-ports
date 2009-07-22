@@ -32,10 +32,4 @@ MAN3=		Finance::QuoteHist.3 \
 		Finance::QuoteHist::Google.3 \
 		Finance::QuoteHist::BusinessWeek.3 \
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

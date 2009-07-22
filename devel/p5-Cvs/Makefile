@@ -34,18 +34,9 @@ MAN3=           Cvs.3 Cvs::Command::Base.3 Cvs::Command::Checkout.3 \
 		Cvs::Result::Tag.3 Cvs::Result::Update.3 \
 		Cvs::Command::Rtag.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-RUN_DEPENDS+=   ${SITE_PERL}/${PERL_ARCH}/IO/Handle.pm:${PORTSDIR}/devel/p5-IO
-.endif
-
-.if ${PERL_LEVEL} >= 500800
 RUN_DEPENDS+=    ${SITE_PERL}/${PERL_ARCH}/IO/Tty.pm:${PORTSDIR}/devel/p5-IO-Tty
-.endif
-
 RUN_DEPENDS+=   ${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS+=   ${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
 RUN_DEPENDS+=   ${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

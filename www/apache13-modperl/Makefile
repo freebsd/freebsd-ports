@@ -138,16 +138,12 @@ MAN3=	Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Bundle::Apache.3 \
 		Apache::Debug.3 mod_perl.3 Apache::SIG.3 Apache::Resource.3 \
 		Apache::RegistryLoader.3 Apache::StatINC.3 Apache::Include.3 \
-		Apache::PerlSections.3 cgi_to_mod_perl.3 \
+		Apache::PerlSections.3 Apache::MyConfig.3 cgi_to_mod_perl.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
 		mod_perl_tuning.3
 
 MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 		${SUEXEC_MAN}
-
-.if ${PERL_LEVEL} >= 500800
-MAN3+=		Apache::MyConfig.3
-.endif
 
 pre-configure:
 	@ cd ${WRKSRC_MODPERL}; \

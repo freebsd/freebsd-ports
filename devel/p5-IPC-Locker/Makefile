@@ -21,11 +21,4 @@ MAN1=	lockerd.1 lockersh.1 pidstat.1 pidstatd.1 pidwatch.1 \
 MAN3=	IPC::Locker.3 IPC::Locker::Server.3 \
 	IPC::PidStat.3 IPC::PidStat::PidServer.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Net>=0:${PORTSDIR}/net/p5-Net \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

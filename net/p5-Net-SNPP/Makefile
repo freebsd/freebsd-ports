@@ -24,11 +24,4 @@ post-patch:
 		${WRKSRC}/lib/Net/SNPP/Server.pm
 	@${RM} ${WRKSRC}/lib/Net/SNPP/Server.pm.orig
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

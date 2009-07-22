@@ -89,11 +89,4 @@ MAN3=	Algorithm::Evolutionary.3 \
 post-patch:
 	${PERL} -pi -e 's/(.*?(\S+::Wheel).*)/use \2;\1/' ${WRKSRC}/lib/Algorithm/Evolutionary/Op/GeneralGeneration.pm
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Memoize>=0:${PORTSDIR}/devel/p5-Memoize \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,18 +23,13 @@ GNU_CONFIGURE=	yes
 MAN1=		rsnapshot.1 rsnapshot-diff.1
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/bin/pod2man,pod2man,' ${WRKSRC}/Makefile.in
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e 's,/usr/bin/pod2man,pod2man,' ${WRKSRC}/Makefile.in
-.if ${PERL_LEVEL} < 500800
-	${REINPLACE_CMD} -e "s, -n 'rsnapshot',," ${WRKSRC}/Makefile.in
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

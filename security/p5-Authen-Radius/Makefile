@@ -34,8 +34,6 @@ RADDBFILES=	dictionary \
 		dictionary.versanet \
 		dictionary.xtradius
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	@${RM} ${WRKSRC}/install-radius-db.PL
 	@${PERL} -pi -e 's|/etc/raddb|${DATADIR}|' ${WRKSRC}/Radius.pm
@@ -46,9 +44,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/raddb/${FILE} ${DATADIR}/${FILE}
 .endfor
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -77,11 +77,4 @@ post-install:
 	@${PERL} -p -e 's,PREFIX,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Net>=0:${PORTSDIR}/net/p5-Net
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

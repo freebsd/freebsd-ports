@@ -19,12 +19,7 @@ PERL_CONFIGURE=		yes
 MAN3=			Number::Format.3
 WRKSRC=			${WRKDIR}/${PORTNAME}-1.72
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${PERL} -pi -e 's/en_US/en_US.US-ASCII/' ${WRKSRC}/t/*.t
-.if ${PERL_LEVEL} < 500800
-	${PERL} -pi -e '$$_="" if m{5.008}' ${WRKSRC}/Format.pm
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

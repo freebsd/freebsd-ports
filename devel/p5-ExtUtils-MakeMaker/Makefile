@@ -30,18 +30,9 @@ MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \
 	ExtUtils::MM_QNX.3 ExtUtils::MM_AIX.3 ExtUtils::MakeMaker::Config.3 \
 	ExtUtils::Command.3 ExtUtils::MM_Darwin.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
 PLIST_SUB+=	EXE_FILES="@comment "
-.else
-MAN1+=		instmodsh.1
-PLIST_SUB+=	EXE_FILES=""
-.endif
 
 post-patch:
-.if ${PERL_LEVEL} >= 500800
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

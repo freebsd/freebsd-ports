@@ -37,10 +37,6 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500801
-RUN_DEPENDS+=	p5-Getopt-Long>=2.34:${PORTSDIR}/devel/p5-Getopt-Long
-.endif
-
 .if ${PERL_LEVEL} < 500807
 RUN_DEPENDS+=	p5-CGI.pm>=3.10:${PORTSDIR}/www/p5-CGI.pm
 .endif

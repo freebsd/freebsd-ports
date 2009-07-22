@@ -23,10 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Cache.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

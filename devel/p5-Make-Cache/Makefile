@@ -25,11 +25,4 @@ MAN3=		Make::Cache.3 \
 		Make::Cache::Obj.3 \
 		Make::Cache::Runtime.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=1:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Storable>=1:${PORTSDIR}/devel/p5-Storable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

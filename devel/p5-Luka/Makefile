@@ -30,10 +30,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Luka.3 Luka::Conf.3 Luka::Exceptions.3 Luka::Mailer.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500702
-BUILD_DEPENDS+=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

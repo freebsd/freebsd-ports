@@ -37,10 +37,4 @@ MAN3=		Pipeline::Segment.3 Pipeline::Store::ISA.3 Pipeline.3 \
 		Pipeline::Error::AsyncResults.3 Pipeline::Segment::Tester.3 \
 		Pipeline::Segment::Async::IThreads.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

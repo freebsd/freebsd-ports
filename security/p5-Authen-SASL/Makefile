@@ -31,14 +31,8 @@ MAN3+=	Authen::SASL::Perl::GSSAPI.3
 MAN3+=	Authen::SASL::Perl::LOGIN.3
 MAN3+=	Authen::SASL::Perl::PLAIN.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
 .if !defined(WITHOUT_KERBEROS)
 RUN_DEPENDS+=	p5-GSSAPI>0:${PORTSDIR}/security/p5-GSSAPI
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

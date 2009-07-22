@@ -26,13 +26,4 @@ MAN3=	Mail::IMAPClient.3 \
 	Mail::IMAPClient::MessageSet.3 \
 	Mail::IMAPClient::Thread.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-IO>=1.26:${PORTSDIR}/devel/p5-IO \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

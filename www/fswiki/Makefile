@@ -22,6 +22,8 @@ USE_ZIP=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 
+JCODE=	${SITE_PERL}/Jcode.pm
+
 post-extract:
 	${SED} -e 's|__DATADIR__|${DATADIR}|' ${FILESDIR}/setup.sh \
 		>${WRKSRC}/setup.sh
@@ -39,12 +41,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wiki.cgi ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${DATADIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
-.else
-JCODE=	${SITE_PERL}/Jcode.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -45,10 +45,4 @@ MAN3=		WWW::Search.3 \
 		WWW::Search::Simple.3 \
 		WWW::Search::Test.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Net>=0:${PORTSDIR}/net/p5-Net
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

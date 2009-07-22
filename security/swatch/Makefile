@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${BUILD_DEPENDS_56} \
 	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INSTALLMAN1DIR=${PREFIX}/man/man1
@@ -37,12 +38,4 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/swatch.sh ${PREFIX}/etc/rc.d
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS_56=	\
-	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

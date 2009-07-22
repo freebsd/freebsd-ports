@@ -26,10 +26,4 @@ CONFLICTS=	p5-Net-SNMP3-[0-9]*
 MAN1=		snmpkey.1
 MAN3=		Net::SNMP.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${ARCH_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

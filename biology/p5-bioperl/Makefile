@@ -978,15 +978,6 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::Variation::VariantI.3 \
 		Bio::WebAgent.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or better
-.endif
-.endif
-
 # now install all extra stuff (docs, examples, scripts, models)
 post-install:
 	${MKDIR} ${DATADIR}
@@ -1001,4 +992,4 @@ post-install:
 	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

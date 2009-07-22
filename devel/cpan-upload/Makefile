@@ -24,10 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN1=	cpan-upload.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Net>=2.28:${PORTSDIR}/net/p5-Net
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

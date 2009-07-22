@@ -18,11 +18,4 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Class::Field.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
-RUN_DEPENDS+=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
