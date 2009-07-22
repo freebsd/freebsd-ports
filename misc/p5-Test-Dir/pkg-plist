@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Test/Dir.pm
+%%SITE_PERL%%/Test/Folder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dir/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dir
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
