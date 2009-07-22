@@ -1,5 +1,4 @@
 bin/swatch
-etc/rc.d/swatch.sh
 %%SITE_PERL%%/Swatch/Actions.pm
 %%SITE_PERL%%/Swatch/Threshold.pm
 %%SITE_PERL%%/Swatch/Throttle.pm
