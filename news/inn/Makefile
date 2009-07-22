@@ -12,7 +12,7 @@ CATEGORIES=	news ipv6
 MASTER_SITES?=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR?=	${PORTNAME}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 USE_RC_SUBR=	innd.sh

@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.pdc.kth.se/pub/heimdal/src/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/pub/heimdal/src/ \
 		ftp://ftp.ayamura.org/pub/heimdal/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popular BSD-licensed implementation of Kerberos 5
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* srp-[0-9]*
