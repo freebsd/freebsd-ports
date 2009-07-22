@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	jCIFS
 # Date created:			Mar 8, 2005
 # Whom:				ijliao
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	jcifs
-PORTVERSION=	1.3.10
+PORTVERSION=	1.3.11
 PORTEPOCH=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/
