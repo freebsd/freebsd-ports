@@ -4,7 +4,18 @@ www/glpi/LISEZMOI.txt
 www/glpi/README.txt
 www/glpi/ajax/addfollowup.php
 www/glpi/ajax/autocompletion.php
+www/glpi/ajax/bookmark.tabs.php
+www/glpi/ajax/cartridge.tabs.php
+www/glpi/ajax/central.tabs.php
 www/glpi/ajax/comments.php
+www/glpi/ajax/computer.tabs.php
+www/glpi/ajax/computerdisk.tabs.php
+www/glpi/ajax/config.tabs.php
+www/glpi/ajax/consumable.tabs.php
+www/glpi/ajax/contact.tabs.php
+www/glpi/ajax/contract.tabs.php
+www/glpi/ajax/display.tabs.php
+www/glpi/ajax/document.tabs.php
 www/glpi/ajax/dropdownAllItems.php
 www/glpi/ajax/dropdownConnect.php
 www/glpi/ajax/dropdownConnectPort.php
@@ -13,8 +24,9 @@ www/glpi/ajax/dropdownConnectPortDeviceType.php
 www/glpi/ajax/dropdownDevice.php
 www/glpi/ajax/dropdownDocument.php
 www/glpi/ajax/dropdownFindNum.php
-www/glpi/ajax/dropdownInstallLicense.php
+www/glpi/ajax/dropdownInstallVersion.php
 www/glpi/ajax/dropdownMassiveAction.php
+www/glpi/ajax/dropdownMassiveActionAuthMethods.php
 www/glpi/ajax/dropdownMassiveActionField.php
 www/glpi/ajax/dropdownMassiveActionPorts.php
 www/glpi/ajax/dropdownNetpoint.php
@@ -25,25 +37,46 @@ www/glpi/ajax/dropdownTrackingDeviceType.php
 www/glpi/ajax/dropdownUsers.php
 www/glpi/ajax/dropdownUsersTracking.php
 www/glpi/ajax/dropdownValue.php
+www/glpi/ajax/enterprise.tabs.php
+www/glpi/ajax/entity.tabs.php
+www/glpi/ajax/entitytree.php
+www/glpi/ajax/entitytreesons.php
+www/glpi/ajax/group.tabs.php
 www/glpi/ajax/inputtext.php
+www/glpi/ajax/mailing.tabs.php
+www/glpi/ajax/monitor.tabs.php
+www/glpi/ajax/networking.port.php
+www/glpi/ajax/networking.tabs.php
+www/glpi/ajax/ocsng.tabs.php
+www/glpi/ajax/peripheral.tabs.php
+www/glpi/ajax/phone.tabs.php
 www/glpi/ajax/planning.php
+www/glpi/ajax/preference.tabs.php
+www/glpi/ajax/printer.tabs.php
 www/glpi/ajax/private_public.php
-www/glpi/ajax/profiles.php
+www/glpi/ajax/profile.tabs.php
 www/glpi/ajax/ruleaction.php
 www/glpi/ajax/ruleactionvalue.php
 www/glpi/ajax/rulecriteria.php
 www/glpi/ajax/rulecriteriavalue.php
+www/glpi/ajax/software.tabs.php
+www/glpi/ajax/softwarelicense.tabs.php
+www/glpi/ajax/softwareversion.tabs.php
 www/glpi/ajax/textarea.php
+www/glpi/ajax/tracking.tabs.php
 www/glpi/ajax/transfers.php
 www/glpi/ajax/uemailUpdate.php
 www/glpi/ajax/updateLicenses.php
-www/glpi/ajax/updateSearch.php
+www/glpi/ajax/updateMetaSearch.php
 www/glpi/ajax/updateTrackingDeviceType.php
+www/glpi/ajax/updatecurrenttab.php
+www/glpi/ajax/user.tabs.php
 www/glpi/ajax/viewfollowup.php
 www/glpi/config/.htaccess
 www/glpi/config/based_config.php
 www/glpi/config/config.php
 www/glpi/config/define.php
+www/glpi/css/ext-all-glpi.css
 www/glpi/css/nothing.gif
 www/glpi/css/print.css
 www/glpi/css/style_install.css
@@ -60,6 +93,9 @@ www/glpi/files/_plugins/remove.txt
 www/glpi/files/_sessions/remove.txt
 www/glpi/files/_tmp/remove.txt
 www/glpi/files/_uploads/remove.txt
+www/glpi/front/auth.imap.php
+www/glpi/front/auth.ldap.php
+www/glpi/front/auth.others.php
 www/glpi/front/backup.php
 www/glpi/front/bookmark.php
 www/glpi/front/cartridge.edit.php
@@ -68,6 +104,7 @@ www/glpi/front/cartridge.php
 www/glpi/front/central.php
 www/glpi/front/computer.form.php
 www/glpi/front/computer.php
+www/glpi/front/computerdisk.form.php
 www/glpi/front/consumable.edit.php
 www/glpi/front/consumable.form.php
 www/glpi/front/consumable.php
@@ -217,6 +254,8 @@ www/glpi/front/setup.version.php
 www/glpi/front/software.form.php
 www/glpi/front/software.licenses.php
 www/glpi/front/software.php
+www/glpi/front/softwarelicense.form.php
+www/glpi/front/softwareversion.form.php
 www/glpi/front/stat.global.php
 www/glpi/front/stat.graph.php
 www/glpi/front/stat.item.php
@@ -237,14 +276,6 @@ www/glpi/front/user.form.my.php
 www/glpi/front/user.form.php
 www/glpi/front/user.php
 www/glpi/front/user.vcard.php
-www/glpi/help/en_GB.html
-www/glpi/help/es_ES.html
-www/glpi/help/fr_FR.html
-www/glpi/help/hd-en_GB.html
-www/glpi/help/hd-es_ES.html
-www/glpi/help/hd-fr_FR.html
-www/glpi/help/hd-it_IT.html
-www/glpi/help/pt_PT.html
 www/glpi/inc/admininfo.class.php
 www/glpi/inc/ajax.function.php
 www/glpi/inc/alert.class.php
@@ -309,6 +340,7 @@ www/glpi/inc/peripheral.class.php
 www/glpi/inc/phone.class.php
 www/glpi/inc/planning.class.php
 www/glpi/inc/planning.function.php
+www/glpi/inc/plugin.class.php
 www/glpi/inc/plugin.function.php
 www/glpi/inc/printer.class.php
 www/glpi/inc/profile.class.php
@@ -350,7 +382,7 @@ www/glpi/index.php
 www/glpi/install/index.php
 www/glpi/install/install.php
 www/glpi/install/mysql/.htaccess
-www/glpi/install/mysql/glpi-0.71.3-empty.sql
+www/glpi/install/mysql/glpi-0.72-empty.sql
 www/glpi/install/update.php
 www/glpi/install/update_031_04.php
 www/glpi/install/update_042_05.php
@@ -362,6 +394,7 @@ www/glpi/install/update_0681_07.php
 www/glpi/install/update_068_0681.php
 www/glpi/install/update_06_065.php
 www/glpi/install/update_0712_0713.php
+www/glpi/install/update_0713_072.php
 www/glpi/install/update_071_0712.php
 www/glpi/install/update_07_071.php
 www/glpi/install/update_content.php
@@ -374,52 +407,265 @@ www/glpi/lib/cache_lite/Lite/Output.php
 www/glpi/lib/cache_lite/TODO
 www/glpi/lib/cache_lite/docs/examples
 www/glpi/lib/cache_lite/docs/technical
-www/glpi/lib/calendar/aqua/active-bg.gif
-www/glpi/lib/calendar/aqua/dark-bg.gif
-www/glpi/lib/calendar/aqua/hover-bg.gif
-www/glpi/lib/calendar/aqua/menuarrow.gif
-www/glpi/lib/calendar/aqua/normal-bg.gif
-www/glpi/lib/calendar/aqua/rowhover-bg.gif
-www/glpi/lib/calendar/aqua/status-bg.gif
-www/glpi/lib/calendar/aqua/theme.css
-www/glpi/lib/calendar/aqua/title-bg.gif
-www/glpi/lib/calendar/aqua/today-bg.gif
-www/glpi/lib/calendar/calendar-setup.js
-www/glpi/lib/calendar/calendar.js
-www/glpi/lib/calendar/images/close.gif
-www/glpi/lib/calendar/images/close_over.gif
-www/glpi/lib/calendar/images/down.gif
-www/glpi/lib/calendar/images/down_over.gif
-www/glpi/lib/calendar/images/left.gif
-www/glpi/lib/calendar/images/left_over.gif
-www/glpi/lib/calendar/images/right.gif
-www/glpi/lib/calendar/images/right_over.gif
-www/glpi/lib/calendar/lang/calendar-bg.js
-www/glpi/lib/calendar/lang/calendar-br.js
-www/glpi/lib/calendar/lang/calendar-ca.js
-www/glpi/lib/calendar/lang/calendar-cs.js
-www/glpi/lib/calendar/lang/calendar-da.js
-www/glpi/lib/calendar/lang/calendar-de.js
-www/glpi/lib/calendar/lang/calendar-el.js
-www/glpi/lib/calendar/lang/calendar-en.js
-www/glpi/lib/calendar/lang/calendar-es.js
-www/glpi/lib/calendar/lang/calendar-fr.js
-www/glpi/lib/calendar/lang/calendar-hu.js
-www/glpi/lib/calendar/lang/calendar-it.js
-www/glpi/lib/calendar/lang/calendar-ja.js
-www/glpi/lib/calendar/lang/calendar-lt.js
-www/glpi/lib/calendar/lang/calendar-lv.js
-www/glpi/lib/calendar/lang/calendar-nl.js
-www/glpi/lib/calendar/lang/calendar-pl.js
-www/glpi/lib/calendar/lang/calendar-ro.js
-www/glpi/lib/calendar/lang/calendar-ru.js
-www/glpi/lib/calendar/lang/calendar-sv.js
-www/glpi/lib/calendar/lang/calendar-tr.js
-www/glpi/lib/control.modal.js
+www/glpi/lib/extjs/CHANGES.html
+www/glpi/lib/extjs/INCLUDE_ORDER.txt
+www/glpi/lib/extjs/adapter/ext/ext-base.js
+www/glpi/lib/extjs/adapter/prototype/effects.js
+www/glpi/lib/extjs/adapter/prototype/ext-prototype-adapter.js
+www/glpi/lib/extjs/adapter/prototype/prototype.js
+www/glpi/lib/extjs/adapter/prototype/scriptaculous.js
+www/glpi/lib/extjs/ext-all-debug.js
+www/glpi/lib/extjs/ext-all.js
+www/glpi/lib/extjs/license.txt
+www/glpi/lib/extjs/locale/ext-lang-af.js
+www/glpi/lib/extjs/locale/ext-lang-bg.js
+www/glpi/lib/extjs/locale/ext-lang-ca.js
+www/glpi/lib/extjs/locale/ext-lang-cs.js
+www/glpi/lib/extjs/locale/ext-lang-da.js
+www/glpi/lib/extjs/locale/ext-lang-de.js
+www/glpi/lib/extjs/locale/ext-lang-el_GR.js
+www/glpi/lib/extjs/locale/ext-lang-en.js
+www/glpi/lib/extjs/locale/ext-lang-en_GB.js
+www/glpi/lib/extjs/locale/ext-lang-en_UK.js
+www/glpi/lib/extjs/locale/ext-lang-es.js
+www/glpi/lib/extjs/locale/ext-lang-fa.js
+www/glpi/lib/extjs/locale/ext-lang-fi.js
+www/glpi/lib/extjs/locale/ext-lang-fr.js
+www/glpi/lib/extjs/locale/ext-lang-fr_CA.js
+www/glpi/lib/extjs/locale/ext-lang-gr.js
+www/glpi/lib/extjs/locale/ext-lang-he.js
+www/glpi/lib/extjs/locale/ext-lang-hr.js
+www/glpi/lib/extjs/locale/ext-lang-hu.js
+www/glpi/lib/extjs/locale/ext-lang-id.js
+www/glpi/lib/extjs/locale/ext-lang-it.js
+www/glpi/lib/extjs/locale/ext-lang-ja.js
+www/glpi/lib/extjs/locale/ext-lang-ko.js
+www/glpi/lib/extjs/locale/ext-lang-lt.js
+www/glpi/lib/extjs/locale/ext-lang-lv.js
+www/glpi/lib/extjs/locale/ext-lang-mk.js
+www/glpi/lib/extjs/locale/ext-lang-nl.js
+www/glpi/lib/extjs/locale/ext-lang-no_NB.js
+www/glpi/lib/extjs/locale/ext-lang-no_NN.js
+www/glpi/lib/extjs/locale/ext-lang-pl.js
+www/glpi/lib/extjs/locale/ext-lang-pt.js
+www/glpi/lib/extjs/locale/ext-lang-pt_BR.js
+www/glpi/lib/extjs/locale/ext-lang-pt_PT.js
+www/glpi/lib/extjs/locale/ext-lang-ro.js
+www/glpi/lib/extjs/locale/ext-lang-ru.js
+www/glpi/lib/extjs/locale/ext-lang-sk.js
+www/glpi/lib/extjs/locale/ext-lang-sl.js
+www/glpi/lib/extjs/locale/ext-lang-sr.js
+www/glpi/lib/extjs/locale/ext-lang-sr_RS.js
+www/glpi/lib/extjs/locale/ext-lang-sv_SE.js
+www/glpi/lib/extjs/locale/ext-lang-th.js
+www/glpi/lib/extjs/locale/ext-lang-tr.js
+www/glpi/lib/extjs/locale/ext-lang-ukr.js
+www/glpi/lib/extjs/locale/ext-lang-vn.js
+www/glpi/lib/extjs/locale/ext-lang-zh_CN.js
+www/glpi/lib/extjs/locale/ext-lang-zh_TW.js
+www/glpi/lib/extjs/resources/ext-all.css
+www/glpi/lib/extjs/resources/images/default/box/corners-blue.gif
+www/glpi/lib/extjs/resources/images/default/box/corners.gif
+www/glpi/lib/extjs/resources/images/default/box/l-blue.gif
+www/glpi/lib/extjs/resources/images/default/box/l.gif
+www/glpi/lib/extjs/resources/images/default/box/r-blue.gif
+www/glpi/lib/extjs/resources/images/default/box/r.gif
+www/glpi/lib/extjs/resources/images/default/box/tb-blue.gif
+www/glpi/lib/extjs/resources/images/default/box/tb.gif
+www/glpi/lib/extjs/resources/images/default/button/btn-arrow.gif
+www/glpi/lib/extjs/resources/images/default/button/btn-sprite.gif
+www/glpi/lib/extjs/resources/images/default/dd/drop-add.gif
+www/glpi/lib/extjs/resources/images/default/dd/drop-no.gif
+www/glpi/lib/extjs/resources/images/default/dd/drop-yes.gif
+www/glpi/lib/extjs/resources/images/default/editor/tb-sprite.gif
+www/glpi/lib/extjs/resources/images/default/form/clear-trigger.gif
+www/glpi/lib/extjs/resources/images/default/form/date-trigger.gif
+www/glpi/lib/extjs/resources/images/default/form/error-tip-corners.gif
+www/glpi/lib/extjs/resources/images/default/form/exclamation.gif
+www/glpi/lib/extjs/resources/images/default/form/search-trigger.gif
+www/glpi/lib/extjs/resources/images/default/form/text-bg.gif
+www/glpi/lib/extjs/resources/images/default/form/trigger-tpl.gif
+www/glpi/lib/extjs/resources/images/default/form/trigger.gif
+www/glpi/lib/extjs/resources/images/default/gradient-bg.gif
+www/glpi/lib/extjs/resources/images/default/grid/Thumbs.db
+www/glpi/lib/extjs/resources/images/default/grid/arrow-left-white.gif
+www/glpi/lib/extjs/resources/images/default/grid/arrow-right-white.gif
+www/glpi/lib/extjs/resources/images/default/grid/col-move-bottom.gif
+www/glpi/lib/extjs/resources/images/default/grid/col-move-top.gif
+www/glpi/lib/extjs/resources/images/default/grid/columns.gif
+www/glpi/lib/extjs/resources/images/default/grid/dirty.gif
+www/glpi/lib/extjs/resources/images/default/grid/done.gif
+www/glpi/lib/extjs/resources/images/default/grid/drop-no.gif
+www/glpi/lib/extjs/resources/images/default/grid/drop-yes.gif
+www/glpi/lib/extjs/resources/images/default/grid/footer-bg.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid-blue-hd.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid-blue-split.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid-hrow.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid-loading.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid-split.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid-vista-hd.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid3-hd-btn.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid3-hrow-over.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid3-hrow.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid3-special-col-bg.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid3-special-col-sel-bg.gif
+www/glpi/lib/extjs/resources/images/default/grid/group-by.gif
+www/glpi/lib/extjs/resources/images/default/grid/group-expand-sprite.gif
+www/glpi/lib/extjs/resources/images/default/grid/hd-pop.gif
+www/glpi/lib/extjs/resources/images/default/grid/hmenu-asc.gif
+www/glpi/lib/extjs/resources/images/default/grid/hmenu-desc.gif
+www/glpi/lib/extjs/resources/images/default/grid/hmenu-lock.gif
+www/glpi/lib/extjs/resources/images/default/grid/hmenu-lock.png
+www/glpi/lib/extjs/resources/images/default/grid/hmenu-unlock.gif
+www/glpi/lib/extjs/resources/images/default/grid/hmenu-unlock.png
+www/glpi/lib/extjs/resources/images/default/grid/invalid_line.gif
+www/glpi/lib/extjs/resources/images/default/grid/loading.gif
+www/glpi/lib/extjs/resources/images/default/grid/mso-hd.gif
+www/glpi/lib/extjs/resources/images/default/grid/nowait.gif
+www/glpi/lib/extjs/resources/images/default/grid/page-first-disabled.gif
+www/glpi/lib/extjs/resources/images/default/grid/page-first.gif
+www/glpi/lib/extjs/resources/images/default/grid/page-last-disabled.gif
+www/glpi/lib/extjs/resources/images/default/grid/page-last.gif
+www/glpi/lib/extjs/resources/images/default/grid/page-next-disabled.gif
+www/glpi/lib/extjs/resources/images/default/grid/page-next.gif
+www/glpi/lib/extjs/resources/images/default/grid/page-prev-disabled.gif
+www/glpi/lib/extjs/resources/images/default/grid/page-prev.gif
+www/glpi/lib/extjs/resources/images/default/grid/pick-button.gif
+www/glpi/lib/extjs/resources/images/default/grid/refresh.gif
+www/glpi/lib/extjs/resources/images/default/grid/row-check-sprite.gif
+www/glpi/lib/extjs/resources/images/default/grid/row-expand-sprite.gif
+www/glpi/lib/extjs/resources/images/default/grid/row-over.gif
+www/glpi/lib/extjs/resources/images/default/grid/row-sel.gif
+www/glpi/lib/extjs/resources/images/default/grid/sort_asc.gif
+www/glpi/lib/extjs/resources/images/default/grid/sort_desc.gif
+www/glpi/lib/extjs/resources/images/default/grid/wait.gif
+www/glpi/lib/extjs/resources/images/default/layout/collapse.gif
+www/glpi/lib/extjs/resources/images/default/layout/expand.gif
+www/glpi/lib/extjs/resources/images/default/layout/gradient-bg.gif
+www/glpi/lib/extjs/resources/images/default/layout/mini-bottom.gif
+www/glpi/lib/extjs/resources/images/default/layout/mini-left.gif
+www/glpi/lib/extjs/resources/images/default/layout/mini-right.gif
+www/glpi/lib/extjs/resources/images/default/layout/mini-top.gif
+www/glpi/lib/extjs/resources/images/default/layout/ns-collapse.gif
+www/glpi/lib/extjs/resources/images/default/layout/ns-expand.gif
+www/glpi/lib/extjs/resources/images/default/layout/panel-close.gif
+www/glpi/lib/extjs/resources/images/default/layout/panel-title-bg.gif
+www/glpi/lib/extjs/resources/images/default/layout/panel-title-light-bg.gif
+www/glpi/lib/extjs/resources/images/default/layout/stick.gif
+www/glpi/lib/extjs/resources/images/default/layout/stuck.gif
+www/glpi/lib/extjs/resources/images/default/layout/tab-close-on.gif
+www/glpi/lib/extjs/resources/images/default/layout/tab-close.gif
+www/glpi/lib/extjs/resources/images/default/menu/checked.gif
+www/glpi/lib/extjs/resources/images/default/menu/group-checked.gif
+www/glpi/lib/extjs/resources/images/default/menu/item-over.gif
+www/glpi/lib/extjs/resources/images/default/menu/menu-parent.gif
+www/glpi/lib/extjs/resources/images/default/menu/menu.gif
+www/glpi/lib/extjs/resources/images/default/menu/unchecked.gif
+www/glpi/lib/extjs/resources/images/default/panel/corners-sprite.gif
+www/glpi/lib/extjs/resources/images/default/panel/left-right.gif
+www/glpi/lib/extjs/resources/images/default/panel/light-hd.gif
+www/glpi/lib/extjs/resources/images/default/panel/tool-sprite-tpl.gif
+www/glpi/lib/extjs/resources/images/default/panel/tool-sprites.gif
+www/glpi/lib/extjs/resources/images/default/panel/tools-sprites-trans.gif
+www/glpi/lib/extjs/resources/images/default/panel/top-bottom.gif
+www/glpi/lib/extjs/resources/images/default/panel/top-bottom.png
+www/glpi/lib/extjs/resources/images/default/panel/white-corners-sprite.gif
+www/glpi/lib/extjs/resources/images/default/panel/white-left-right.gif
+www/glpi/lib/extjs/resources/images/default/panel/white-top-bottom.gif
+www/glpi/lib/extjs/resources/images/default/progress/progress-bg.gif
+www/glpi/lib/extjs/resources/images/default/qtip/bg.gif
+www/glpi/lib/extjs/resources/images/default/qtip/close.gif
+www/glpi/lib/extjs/resources/images/default/qtip/tip-sprite.gif
+www/glpi/lib/extjs/resources/images/default/s.gif
+www/glpi/lib/extjs/resources/images/default/shadow-c.png
+www/glpi/lib/extjs/resources/images/default/shadow-lr.png
+www/glpi/lib/extjs/resources/images/default/shadow.png
+www/glpi/lib/extjs/resources/images/default/shared/blue-loading.gif
+www/glpi/lib/extjs/resources/images/default/shared/calendar.gif
+www/glpi/lib/extjs/resources/images/default/shared/glass-bg.gif
+www/glpi/lib/extjs/resources/images/default/shared/hd-sprite.gif
+www/glpi/lib/extjs/resources/images/default/shared/large-loading.gif
+www/glpi/lib/extjs/resources/images/default/shared/left-btn.gif
+www/glpi/lib/extjs/resources/images/default/shared/loading-balls.gif
+www/glpi/lib/extjs/resources/images/default/shared/right-btn.gif
+www/glpi/lib/extjs/resources/images/default/shared/warning.gif
+www/glpi/lib/extjs/resources/images/default/sizer/e-handle-dark.gif
+www/glpi/lib/extjs/resources/images/default/sizer/e-handle.gif
+www/glpi/lib/extjs/resources/images/default/sizer/ne-handle-dark.gif
+www/glpi/lib/extjs/resources/images/default/sizer/ne-handle.gif
+www/glpi/lib/extjs/resources/images/default/sizer/nw-handle-dark.gif
+www/glpi/lib/extjs/resources/images/default/sizer/nw-handle.gif
+www/glpi/lib/extjs/resources/images/default/sizer/s-handle-dark.gif
+www/glpi/lib/extjs/resources/images/default/sizer/s-handle.gif
+www/glpi/lib/extjs/resources/images/default/sizer/se-handle-dark.gif
+www/glpi/lib/extjs/resources/images/default/sizer/se-handle.gif
+www/glpi/lib/extjs/resources/images/default/sizer/square.gif
+www/glpi/lib/extjs/resources/images/default/sizer/sw-handle-dark.gif
+www/glpi/lib/extjs/resources/images/default/sizer/sw-handle.gif
+www/glpi/lib/extjs/resources/images/default/slider/slider-bg.png
+www/glpi/lib/extjs/resources/images/default/slider/slider-thumb.png
+www/glpi/lib/extjs/resources/images/default/slider/slider-v-bg.png
+www/glpi/lib/extjs/resources/images/default/slider/slider-v-thumb.png
+www/glpi/lib/extjs/resources/images/default/tabs/scroll-left.gif
+www/glpi/lib/extjs/resources/images/default/tabs/scroll-right.gif
+www/glpi/lib/extjs/resources/images/default/tabs/scroller-bg.gif
+www/glpi/lib/extjs/resources/images/default/tabs/tab-btm-inactive-left-bg.gif
+www/glpi/lib/extjs/resources/images/default/tabs/tab-btm-inactive-right-bg.gif
+www/glpi/lib/extjs/resources/images/default/tabs/tab-btm-left-bg.gif
+www/glpi/lib/extjs/resources/images/default/tabs/tab-btm-right-bg.gif
+www/glpi/lib/extjs/resources/images/default/tabs/tab-close.gif
+www/glpi/lib/extjs/resources/images/default/tabs/tab-strip-bg.gif
+www/glpi/lib/extjs/resources/images/default/tabs/tab-strip-bg.png
+www/glpi/lib/extjs/resources/images/default/tabs/tab-strip-btm-bg.gif
+www/glpi/lib/extjs/resources/images/default/tabs/tabs-sprite.gif
+www/glpi/lib/extjs/resources/images/default/toolbar/bg.gif
+www/glpi/lib/extjs/resources/images/default/toolbar/btn-arrow-light.gif
+www/glpi/lib/extjs/resources/images/default/toolbar/btn-arrow.gif
+www/glpi/lib/extjs/resources/images/default/toolbar/btn-over-bg.gif
+www/glpi/lib/extjs/resources/images/default/toolbar/gray-bg.gif
+www/glpi/lib/extjs/resources/images/default/toolbar/tb-bg.gif
+www/glpi/lib/extjs/resources/images/default/toolbar/tb-btn-sprite.gif
+www/glpi/lib/extjs/resources/images/default/tree/arrows.gif
+www/glpi/lib/extjs/resources/images/default/tree/drop-add.gif
+www/glpi/lib/extjs/resources/images/default/tree/drop-between.gif
+www/glpi/lib/extjs/resources/images/default/tree/drop-no.gif
+www/glpi/lib/extjs/resources/images/default/tree/drop-over.gif
+www/glpi/lib/extjs/resources/images/default/tree/drop-under.gif
+www/glpi/lib/extjs/resources/images/default/tree/drop-yes.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-end-minus-nl.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-end-minus.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-end-plus-nl.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-end-plus.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-end.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-line.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-minus-nl.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-minus.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-plus-nl.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow-plus.gif
+www/glpi/lib/extjs/resources/images/default/tree/elbow.gif
+www/glpi/lib/extjs/resources/images/default/tree/folder-open.gif
+www/glpi/lib/extjs/resources/images/default/tree/folder.gif
+www/glpi/lib/extjs/resources/images/default/tree/leaf.gif
+www/glpi/lib/extjs/resources/images/default/tree/loading.gif
+www/glpi/lib/extjs/resources/images/default/tree/s.gif
+www/glpi/lib/extjs/resources/images/default/window/icon-error.gif
+www/glpi/lib/extjs/resources/images/default/window/icon-info.gif
+www/glpi/lib/extjs/resources/images/default/window/icon-question.gif
+www/glpi/lib/extjs/resources/images/default/window/icon-warning.gif
+www/glpi/lib/extjs/resources/images/default/window/left-corners.png
+www/glpi/lib/extjs/resources/images/default/window/left-right.png
+www/glpi/lib/extjs/resources/images/default/window/right-corners.png
+www/glpi/lib/extjs/resources/images/default/window/top-bottom.png
+www/glpi/lib/extjs/s.gif
+www/glpi/lib/extrajs/datetime.js
+www/glpi/lib/extrajs/spancombobox.js
+www/glpi/lib/extrajs/xdatefield.js
 www/glpi/lib/ezpdf/class.ezpdf.php
 www/glpi/lib/ezpdf/class.pdf.php
 www/glpi/lib/ezpdf/fonts/Helvetica.afm
 www/glpi/lib/ezpdf/fonts/php_Helvetica.afm
+www/glpi/lib/icalcreator/iCalcreator.class.php
+www/glpi/lib/icalcreator/lgpl.txt
 www/glpi/lib/index.php
 www/glpi/lib/phpcas/CAS.php
 www/glpi/lib/phpcas/COPYRIGHT
@@ -435,28 +681,23 @@ www/glpi/lib/phpcas/languages/german.php
 www/glpi/lib/phpcas/languages/greek.php
 www/glpi/lib/phpcas/languages/japanese.php
 www/glpi/lib/phpcas/languages/languages.php
+www/glpi/lib/phpmailer/ChangeLog.txt
 www/glpi/lib/phpmailer/LICENSE
+www/glpi/lib/phpmailer/README
 www/glpi/lib/phpmailer/class.phpmailer.php
+www/glpi/lib/phpmailer/class.pop3.php
 www/glpi/lib/phpmailer/class.smtp.php
+www/glpi/lib/phpmailer/codeworxtech.html
 www/glpi/lib/phpmailer/language/phpmailer.lang-en.php
-www/glpi/lib/prototype.js
-www/glpi/lib/scriptaculous/MIT-LICENSE
-www/glpi/lib/scriptaculous/README
-www/glpi/lib/scriptaculous/builder.js
-www/glpi/lib/scriptaculous/controls.js
-www/glpi/lib/scriptaculous/dragdrop.js
-www/glpi/lib/scriptaculous/effects.js
-www/glpi/lib/scriptaculous/scriptaculous.js
-www/glpi/lib/scriptaculous/slider.js
-www/glpi/lib/scriptaculous/sound.js
-www/glpi/lib/scriptaculous/unittest.js
 www/glpi/lib/tiny_mce/langs/ar.js
 www/glpi/lib/tiny_mce/langs/bg.js
 www/glpi/lib/tiny_mce/langs/bs.js
 www/glpi/lib/tiny_mce/langs/ca.js
+www/glpi/lib/tiny_mce/langs/ch.js
 www/glpi/lib/tiny_mce/langs/cs.js
 www/glpi/lib/tiny_mce/langs/da.js
 www/glpi/lib/tiny_mce/langs/de.js
+www/glpi/lib/tiny_mce/langs/dv.js
 www/glpi/lib/tiny_mce/langs/el.js
 www/glpi/lib/tiny_mce/langs/en.js
 www/glpi/lib/tiny_mce/langs/es.js
@@ -464,198 +705,168 @@ www/glpi/lib/tiny_mce/langs/et.js
 www/glpi/lib/tiny_mce/langs/fa.js
 www/glpi/lib/tiny_mce/langs/fi.js
 www/glpi/lib/tiny_mce/langs/fr.js
+www/glpi/lib/tiny_mce/langs/gl.js
 www/glpi/lib/tiny_mce/langs/he.js
 www/glpi/lib/tiny_mce/langs/hr.js
 www/glpi/lib/tiny_mce/langs/hu.js
 www/glpi/lib/tiny_mce/langs/ia.js
 www/glpi/lib/tiny_mce/langs/ii.js
+www/glpi/lib/tiny_mce/langs/is.js
 www/glpi/lib/tiny_mce/langs/it.js
 www/glpi/lib/tiny_mce/langs/ja.js
 www/glpi/lib/tiny_mce/langs/ko.js
 www/glpi/lib/tiny_mce/langs/lt.js
 www/glpi/lib/tiny_mce/langs/lv.js
+www/glpi/lib/tiny_mce/langs/mk.js
+www/glpi/lib/tiny_mce/langs/mn.js
+www/glpi/lib/tiny_mce/langs/ms.js
 www/glpi/lib/tiny_mce/langs/nb.js
 www/glpi/lib/tiny_mce/langs/nl.js
 www/glpi/lib/tiny_mce/langs/nn.js
 www/glpi/lib/tiny_mce/langs/pl.js
 www/glpi/lib/tiny_mce/langs/pt.js
+www/glpi/lib/tiny_mce/langs/ro.js
 www/glpi/lib/tiny_mce/langs/ru.js
+www/glpi/lib/tiny_mce/langs/sc.js
+www/glpi/lib/tiny_mce/langs/se.js
+www/glpi/lib/tiny_mce/langs/si.js
 www/glpi/lib/tiny_mce/langs/sk.js
 www/glpi/lib/tiny_mce/langs/sl.js
+www/glpi/lib/tiny_mce/langs/sq.js
 www/glpi/lib/tiny_mce/langs/sr.js
 www/glpi/lib/tiny_mce/langs/sv.js
 www/glpi/lib/tiny_mce/langs/tr.js
+www/glpi/lib/tiny_mce/langs/tt.js
 www/glpi/lib/tiny_mce/langs/tw.js
 www/glpi/lib/tiny_mce/langs/uk.js
 www/glpi/lib/tiny_mce/langs/vi.js
 www/glpi/lib/tiny_mce/langs/zh.js
 www/glpi/lib/tiny_mce/license.txt
-www/glpi/lib/tiny_mce/plugins/cleanup/editor_plugin.js
-www/glpi/lib/tiny_mce/plugins/cleanup/editor_plugin_src.js
-www/glpi/lib/tiny_mce/plugins/cleanup/readme.txt
 www/glpi/lib/tiny_mce/plugins/directionality/editor_plugin.js
 www/glpi/lib/tiny_mce/plugins/directionality/editor_plugin_src.js
-www/glpi/lib/tiny_mce/plugins/directionality/images/ltr.gif
-www/glpi/lib/tiny_mce/plugins/directionality/images/rtl.gif
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ca.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/cs.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/cy.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/da.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/de.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/el.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/en.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/es.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/fa.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/fi.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/fr.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/fr_ca.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/he.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/hu.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/is.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/it.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ja.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ja_euc-jp.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ja_shift_jis.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ja_utf-8.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ko.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/nb.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/nl.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/nn.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/pl.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/pt_br.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ro.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ru.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ru_CP1251.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/ru_KOI8-R.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/si.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/sk.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/sq.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/sr.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/sv.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/sv_utf8.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/tr.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/uk.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/uk_CP1251.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/uk_KOI8-U.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/vi.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/zh_cn.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/zh_cn_utf8.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/zh_tw.js
-www/glpi/lib/tiny_mce/plugins/directionality/langs/zh_tw_utf8.js
-www/glpi/lib/tiny_mce/plugins/directionality/readme.txt
+www/glpi/lib/tiny_mce/plugins/safari/blank.htm
+www/glpi/lib/tiny_mce/plugins/safari/editor_plugin.js
+www/glpi/lib/tiny_mce/plugins/safari/editor_plugin_src.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/css/searchreplace.css
+www/glpi/lib/tiny_mce/plugins/searchreplace/editor_plugin.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/editor_plugin_src.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/js/searchreplace.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ar_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/bg_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/bs_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ca_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ch_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/cs_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/da_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/de_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/dv_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/el_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/en_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/es_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/et_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/fa_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/fi_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/fr_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/gl_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/he_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/hr_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/hu_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ia_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ii_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/is_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/it_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ja_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ko_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/lt_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/lv_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/mk_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/mn_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ms_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/nb_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/nl_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/nn_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/pl_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/pt_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ro_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/ru_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/sc_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/se_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/si_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/sk_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/sl_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/sq_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/sr_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/sv_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/tr_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/tt_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/tw_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/uk_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/vi_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/langs/zh_dlg.js
+www/glpi/lib/tiny_mce/plugins/searchreplace/searchreplace.htm
 www/glpi/lib/tiny_mce/plugins/table/cell.htm
 www/glpi/lib/tiny_mce/plugins/table/css/cell.css
 www/glpi/lib/tiny_mce/plugins/table/css/row.css
 www/glpi/lib/tiny_mce/plugins/table/css/table.css
 www/glpi/lib/tiny_mce/plugins/table/editor_plugin.js
 www/glpi/lib/tiny_mce/plugins/table/editor_plugin_src.js
-www/glpi/lib/tiny_mce/plugins/table/images/buttons.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_cell_props.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_delete.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_delete_col.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_delete_row.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_insert_col_after.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_insert_col_before.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_insert_row_after.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_insert_row_before.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_merge_cells.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_row_props.gif
-www/glpi/lib/tiny_mce/plugins/table/images/table_split_cells.gif
 www/glpi/lib/tiny_mce/plugins/table/js/cell.js
 www/glpi/lib/tiny_mce/plugins/table/js/merge_cells.js
 www/glpi/lib/tiny_mce/plugins/table/js/row.js
 www/glpi/lib/tiny_mce/plugins/table/js/table.js
-www/glpi/lib/tiny_mce/plugins/table/jscripts/cell.js
-www/glpi/lib/tiny_mce/plugins/table/jscripts/merge_cells.js
-www/glpi/lib/tiny_mce/plugins/table/jscripts/row.js
-www/glpi/lib/tiny_mce/plugins/table/jscripts/table.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ar_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/bg_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/bs_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ca.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ca_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/cs.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ch_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/cs_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/cy.js
-www/glpi/lib/tiny_mce/plugins/table/langs/da.js
 www/glpi/lib/tiny_mce/plugins/table/langs/da_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/de.js
 www/glpi/lib/tiny_mce/plugins/table/langs/de_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/el.js
+www/glpi/lib/tiny_mce/plugins/table/langs/dv_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/el_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/en.js
 www/glpi/lib/tiny_mce/plugins/table/langs/en_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/es.js
 www/glpi/lib/tiny_mce/plugins/table/langs/es_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/et_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/fa.js
 www/glpi/lib/tiny_mce/plugins/table/langs/fa_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/fi.js
 www/glpi/lib/tiny_mce/plugins/table/langs/fi_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/fr.js
-www/glpi/lib/tiny_mce/plugins/table/langs/fr_ca.js
 www/glpi/lib/tiny_mce/plugins/table/langs/fr_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/he.js
+www/glpi/lib/tiny_mce/plugins/table/langs/gl_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/he_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/hr_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/hu.js
 www/glpi/lib/tiny_mce/plugins/table/langs/hu_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ia_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ii_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/is.js
-www/glpi/lib/tiny_mce/plugins/table/langs/it.js
+www/glpi/lib/tiny_mce/plugins/table/langs/is_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/it_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ja.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ja_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ja_euc-jp.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ja_shift_jis.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ja_utf-8.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ko.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ko_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/lt_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/lv_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/nb.js
+www/glpi/lib/tiny_mce/plugins/table/langs/mk_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/mn_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ms_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/nb_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/nl.js
 www/glpi/lib/tiny_mce/plugins/table/langs/nl_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/nn.js
 www/glpi/lib/tiny_mce/plugins/table/langs/nn_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/pl.js
 www/glpi/lib/tiny_mce/plugins/table/langs/pl_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/pt_br.js
 www/glpi/lib/tiny_mce/plugins/table/langs/pt_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ro.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ru.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ru_CP1251.js
-www/glpi/lib/tiny_mce/plugins/table/langs/ru_KOI8-R.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ro_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ru_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/si.js
-www/glpi/lib/tiny_mce/plugins/table/langs/sk.js
+www/glpi/lib/tiny_mce/plugins/table/langs/sc_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/se_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/si_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/sk_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/sl_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/sq.js
-www/glpi/lib/tiny_mce/plugins/table/langs/sr.js
+www/glpi/lib/tiny_mce/plugins/table/langs/sq_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/sr_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/sv.js
 www/glpi/lib/tiny_mce/plugins/table/langs/sv_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/sv_utf8.js
-www/glpi/lib/tiny_mce/plugins/table/langs/tr.js
 www/glpi/lib/tiny_mce/plugins/table/langs/tr_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/tt_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/tw_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/uk.js
-www/glpi/lib/tiny_mce/plugins/table/langs/uk_CP1251.js
-www/glpi/lib/tiny_mce/plugins/table/langs/uk_KOI8-U.js
 www/glpi/lib/tiny_mce/plugins/table/langs/uk_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/vi.js
 www/glpi/lib/tiny_mce/plugins/table/langs/vi_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/zh_cn.js
-www/glpi/lib/tiny_mce/plugins/table/langs/zh_cn_utf8.js
 www/glpi/lib/tiny_mce/plugins/table/langs/zh_dlg.js
-www/glpi/lib/tiny_mce/plugins/table/langs/zh_tw.js
-www/glpi/lib/tiny_mce/plugins/table/langs/zh_tw_utf8.js
 www/glpi/lib/tiny_mce/plugins/table/merge_cells.htm
-www/glpi/lib/tiny_mce/plugins/table/readme.txt
 www/glpi/lib/tiny_mce/plugins/table/row.htm
 www/glpi/lib/tiny_mce/plugins/table/table.htm
 www/glpi/lib/tiny_mce/themes/advanced/about.htm
@@ -682,12 +893,16 @@ www/glpi/lib/tiny_mce/themes/advanced/langs/bs.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/bs_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ca.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ca_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ch.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ch_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/cs.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/cs_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/da.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/da_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/de.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/de_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/dv.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/dv_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/el.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/el_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/en.js
@@ -702,6 +917,8 @@ www/glpi/lib/tiny_mce/themes/advanced/langs/fi.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/fi_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/fr.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/fr_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/gl.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/gl_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/he.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/he_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/hr.js
@@ -712,6 +929,8 @@ www/glpi/lib/tiny_mce/themes/advanced/langs/ia.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ia_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ii.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ii_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/is.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/is_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/it.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/it_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ja.js
@@ -722,6 +941,12 @@ www/glpi/lib/tiny_mce/themes/advanced/langs/lt.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/lt_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/lv.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/lv_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/mk.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/mk_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/mn.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/mn_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ms.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ms_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/nb.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/nb_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/nl.js
@@ -732,18 +957,30 @@ www/glpi/lib/tiny_mce/themes/advanced/langs/pl.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/pl_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/pt.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/pt_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ro.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ro_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ru.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ru_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/sc.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/sc_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/se.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/se_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/si.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/si_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sk.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sk_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sl.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sl_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/sq.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/sq_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sr.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sr_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sv.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sv_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/tr.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/tr_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/tt.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/tt_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/tw.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/tw_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/uk.js
@@ -778,9 +1015,11 @@ www/glpi/lib/tiny_mce/themes/simple/langs/ar.js
 www/glpi/lib/tiny_mce/themes/simple/langs/bg.js
 www/glpi/lib/tiny_mce/themes/simple/langs/bs.js
 www/glpi/lib/tiny_mce/themes/simple/langs/ca.js
+www/glpi/lib/tiny_mce/themes/simple/langs/ch.js
 www/glpi/lib/tiny_mce/themes/simple/langs/cs.js
 www/glpi/lib/tiny_mce/themes/simple/langs/da.js
 www/glpi/lib/tiny_mce/themes/simple/langs/de.js
+www/glpi/lib/tiny_mce/themes/simple/langs/dv.js
 www/glpi/lib/tiny_mce/themes/simple/langs/el.js
 www/glpi/lib/tiny_mce/themes/simple/langs/en.js
 www/glpi/lib/tiny_mce/themes/simple/langs/es.js
@@ -788,27 +1027,38 @@ www/glpi/lib/tiny_mce/themes/simple/langs/et.js
 www/glpi/lib/tiny_mce/themes/simple/langs/fa.js
 www/glpi/lib/tiny_mce/themes/simple/langs/fi.js
 www/glpi/lib/tiny_mce/themes/simple/langs/fr.js
+www/glpi/lib/tiny_mce/themes/simple/langs/gl.js
 www/glpi/lib/tiny_mce/themes/simple/langs/he.js
 www/glpi/lib/tiny_mce/themes/simple/langs/hr.js
 www/glpi/lib/tiny_mce/themes/simple/langs/hu.js
 www/glpi/lib/tiny_mce/themes/simple/langs/ia.js
 www/glpi/lib/tiny_mce/themes/simple/langs/ii.js
+www/glpi/lib/tiny_mce/themes/simple/langs/is.js
 www/glpi/lib/tiny_mce/themes/simple/langs/it.js
 www/glpi/lib/tiny_mce/themes/simple/langs/ja.js
 www/glpi/lib/tiny_mce/themes/simple/langs/ko.js
 www/glpi/lib/tiny_mce/themes/simple/langs/lt.js
 www/glpi/lib/tiny_mce/themes/simple/langs/lv.js
+www/glpi/lib/tiny_mce/themes/simple/langs/mk.js
+www/glpi/lib/tiny_mce/themes/simple/langs/mn.js
+www/glpi/lib/tiny_mce/themes/simple/langs/ms.js
 www/glpi/lib/tiny_mce/themes/simple/langs/nb.js
 www/glpi/lib/tiny_mce/themes/simple/langs/nl.js
 www/glpi/lib/tiny_mce/themes/simple/langs/nn.js
 www/glpi/lib/tiny_mce/themes/simple/langs/pl.js
 www/glpi/lib/tiny_mce/themes/simple/langs/pt.js
+www/glpi/lib/tiny_mce/themes/simple/langs/ro.js
 www/glpi/lib/tiny_mce/themes/simple/langs/ru.js
+www/glpi/lib/tiny_mce/themes/simple/langs/sc.js
+www/glpi/lib/tiny_mce/themes/simple/langs/se.js
+www/glpi/lib/tiny_mce/themes/simple/langs/si.js
 www/glpi/lib/tiny_mce/themes/simple/langs/sk.js
 www/glpi/lib/tiny_mce/themes/simple/langs/sl.js
+www/glpi/lib/tiny_mce/themes/simple/langs/sq.js
 www/glpi/lib/tiny_mce/themes/simple/langs/sr.js
 www/glpi/lib/tiny_mce/themes/simple/langs/sv.js
 www/glpi/lib/tiny_mce/themes/simple/langs/tr.js
+www/glpi/lib/tiny_mce/themes/simple/langs/tt.js
 www/glpi/lib/tiny_mce/themes/simple/langs/tw.js
 www/glpi/lib/tiny_mce/themes/simple/langs/uk.js
 www/glpi/lib/tiny_mce/themes/simple/langs/vi.js
@@ -825,7 +1075,6 @@ www/glpi/lib/tiny_mce/tiny_mce_popup.js
 www/glpi/lib/tiny_mce/tiny_mce_src.js
 www/glpi/lib/tiny_mce/utils/editable_selects.js
 www/glpi/lib/tiny_mce/utils/form_utils.js
-www/glpi/lib/tiny_mce/utils/mclayer.js
 www/glpi/lib/tiny_mce/utils/mctabs.js
 www/glpi/lib/tiny_mce/utils/validate.js
 www/glpi/lib/vcardclass/classes-vcard.php
@@ -839,8 +1088,11 @@ www/glpi/locales/el_EL.php
 www/glpi/locales/en_GB.php
 www/glpi/locales/es_AR.php
 www/glpi/locales/es_ES.php
+www/glpi/locales/es_MX.php
 www/glpi/locales/fr_FR.php
 www/glpi/locales/gl_ES.php
+www/glpi/locales/he_HE.php
+www/glpi/locales/hr_HR.php
 www/glpi/locales/hu_HU.php
 www/glpi/locales/it_IT.php
 www/glpi/locales/ja_JP.php
@@ -848,11 +1100,14 @@ www/glpi/locales/lt_LT.php
 www/glpi/locales/lv_LV.php
 www/glpi/locales/nl_BE.php
 www/glpi/locales/nl_NL.php
+www/glpi/locales/no_NB.php
+www/glpi/locales/no_NN.php
 www/glpi/locales/pl_PL.php
 www/glpi/locales/pt_BR.php
 www/glpi/locales/pt_PT.php
 www/glpi/locales/ro_RO.php
 www/glpi/locales/ru_RU.php
+www/glpi/locales/sl_SI.php
 www/glpi/locales/sv_SE.php
 www/glpi/locales/tr_TR.php
 www/glpi/locales/zh_CN.php
@@ -880,6 +1135,38 @@ www/glpi/pics/dollaradd.png
 www/glpi/pics/edit.png
 www/glpi/pics/entity_all.png
 www/glpi/pics/expand.gif
+www/glpi/pics/extjs/panel/corners-sprite.gif
+www/glpi/pics/extjs/panel/left-right.gif
+www/glpi/pics/extjs/panel/light-hd.gif
+www/glpi/pics/extjs/panel/tool-sprite-tpl.gif
+www/glpi/pics/extjs/panel/tool-sprites.gif
+www/glpi/pics/extjs/panel/tools-sprites-trans.gif
+www/glpi/pics/extjs/panel/top-bottom.gif
+www/glpi/pics/extjs/panel/top-bottom.png
+www/glpi/pics/extjs/panel/white-corners-sprite.gif
+www/glpi/pics/extjs/panel/white-left-right.gif
+www/glpi/pics/extjs/panel/white-top-bottom.gif
+www/glpi/pics/extjs/tabs/scroll-left.gif
+www/glpi/pics/extjs/tabs/scroll-right.gif
+www/glpi/pics/extjs/tabs/scroller-bg.gif
+www/glpi/pics/extjs/tabs/tab-btm-inactive-left-bg.gif
+www/glpi/pics/extjs/tabs/tab-btm-inactive-right-bg.gif
+www/glpi/pics/extjs/tabs/tab-btm-left-bg.gif
+www/glpi/pics/extjs/tabs/tab-btm-right-bg.gif
+www/glpi/pics/extjs/tabs/tab-close.gif
+www/glpi/pics/extjs/tabs/tab-strip-bg.gif
+www/glpi/pics/extjs/tabs/tab-strip-bg.png
+www/glpi/pics/extjs/tabs/tab-strip-btm-bg.gif
+www/glpi/pics/extjs/tabs/tabs-sprite.gif
+www/glpi/pics/extjs/window/icon-error.gif
+www/glpi/pics/extjs/window/icon-info.gif
+www/glpi/pics/extjs/window/icon-question.gif
+www/glpi/pics/extjs/window/icon-warning.gif
+www/glpi/pics/extjs/window/left-corners.png
+www/glpi/pics/extjs/window/left-corners.pspimage
+www/glpi/pics/extjs/window/left-right.png
+www/glpi/pics/extjs/window/right-corners.png
+www/glpi/pics/extjs/window/top-bottom.png
 www/glpi/pics/faqadd.png
 www/glpi/pics/faqdelete.png
 www/glpi/pics/faqedit.png
@@ -893,13 +1180,12 @@ www/glpi/pics/fd_nav2.png
 www/glpi/pics/fd_nav3.png
 www/glpi/pics/fd_ssmenu.png
 www/glpi/pics/first.png
+www/glpi/pics/first_off.png
 www/glpi/pics/folder-open.png
 www/glpi/pics/folder.png
 www/glpi/pics/fond-central.png
 www/glpi/pics/fond-stats.gif
 www/glpi/pics/fond.png
-www/glpi/pics/fondTR.png
-www/glpi/pics/fondTR2.png
 www/glpi/pics/fond_form.png
 www/glpi/pics/fond_form_on.png
 www/glpi/pics/fond_ico_cons.png
@@ -975,7 +1261,12 @@ www/glpi/pics/icones/xml-dist.png
 www/glpi/pics/icones/zip-dist.png
 www/glpi/pics/l.gif
 www/glpi/pics/last.png
+www/glpi/pics/last_off.png
 www/glpi/pics/left.png
+www/glpi/pics/left_off.png
+www/glpi/pics/leftsearch.png
+www/glpi/pics/loader.png
+www/glpi/pics/lock.png
 www/glpi/pics/login_glpi.png
 www/glpi/pics/logo-glpi-login.png
 www/glpi/pics/logoOcs.png
@@ -996,7 +1287,6 @@ www/glpi/pics/moins.png
 www/glpi/pics/moyenne.png
 www/glpi/pics/new.png
 www/glpi/pics/noir.png
-www/glpi/pics/null-header.png
 www/glpi/pics/ok.png
 www/glpi/pics/ok2.png
 www/glpi/pics/old_done.png
@@ -1025,6 +1315,8 @@ www/glpi/pics/reservation.png
 www/glpi/pics/reset.png
 www/glpi/pics/rien.gif
 www/glpi/pics/right.png
+www/glpi/pics/right_off.png
+www/glpi/pics/rightsearch.png
 www/glpi/pics/sauvegardes.png
 www/glpi/pics/showdeleted.png
 www/glpi/pics/slk.png
@@ -1040,6 +1332,8 @@ www/glpi/plugins/remove.txt
 www/glpi/script.js
 www/glpi/scripts/.htaccess
 www/glpi/scripts/compute_dictionnary.php
+www/glpi/scripts/glpi_cron_curl.sh
+www/glpi/scripts/glpi_cron_lynx.sh
 www/glpi/scripts/ldap_mass_sync.php
 www/glpi/scripts/ocsng_mass_import.php
 www/glpi/scripts/ocsng_mass_sync.php
@@ -1048,6 +1342,10 @@ www/glpi/status.php
 @dirrm www/glpi/scripts
 @dirrm www/glpi/plugins
 @dirrm www/glpi/pics/icones
+@dirrm www/glpi/pics/extjs/window
+@dirrm www/glpi/pics/extjs/tabs
+@dirrm www/glpi/pics/extjs/panel
+@dirrm www/glpi/pics/extjs
 @dirrm www/glpi/pics
 @dirrm www/glpi/locales
 @dirrm www/glpi/lib/vcardclass
@@ -1070,30 +1368,53 @@ www/glpi/status.php
 @dirrm www/glpi/lib/tiny_mce/themes/advanced
 @dirrm www/glpi/lib/tiny_mce/themes
 @dirrm www/glpi/lib/tiny_mce/plugins/table/langs
-@dirrm www/glpi/lib/tiny_mce/plugins/table/jscripts
 @dirrm www/glpi/lib/tiny_mce/plugins/table/js
-@dirrm www/glpi/lib/tiny_mce/plugins/table/images
 @dirrm www/glpi/lib/tiny_mce/plugins/table/css
 @dirrm www/glpi/lib/tiny_mce/plugins/table
-@dirrm www/glpi/lib/tiny_mce/plugins/directionality/langs
-@dirrm www/glpi/lib/tiny_mce/plugins/directionality/images
+@dirrm www/glpi/lib/tiny_mce/plugins/searchreplace/langs
+@dirrm www/glpi/lib/tiny_mce/plugins/searchreplace/js
+@dirrm www/glpi/lib/tiny_mce/plugins/searchreplace/css
+@dirrm www/glpi/lib/tiny_mce/plugins/searchreplace
+@dirrm www/glpi/lib/tiny_mce/plugins/safari
 @dirrm www/glpi/lib/tiny_mce/plugins/directionality
-@dirrm www/glpi/lib/tiny_mce/plugins/cleanup
 @dirrm www/glpi/lib/tiny_mce/plugins
 @dirrm www/glpi/lib/tiny_mce/langs
 @dirrm www/glpi/lib/tiny_mce
-@dirrm www/glpi/lib/scriptaculous
 @dirrm www/glpi/lib/phpmailer/language
 @dirrm www/glpi/lib/phpmailer
 @dirrm www/glpi/lib/phpcas/languages
 @dirrm www/glpi/lib/phpcas/PGTStorage
 @dirrm www/glpi/lib/phpcas
+@dirrm www/glpi/lib/icalcreator
 @dirrm www/glpi/lib/ezpdf/fonts
 @dirrm www/glpi/lib/ezpdf
-@dirrm www/glpi/lib/calendar/lang
-@dirrm www/glpi/lib/calendar/images
-@dirrm www/glpi/lib/calendar/aqua
-@dirrm www/glpi/lib/calendar
+@dirrm www/glpi/lib/extrajs
+@dirrm www/glpi/lib/extjs/resources/images/default/window
+@dirrm www/glpi/lib/extjs/resources/images/default/tree
+@dirrm www/glpi/lib/extjs/resources/images/default/toolbar
+@dirrm www/glpi/lib/extjs/resources/images/default/tabs
+@dirrm www/glpi/lib/extjs/resources/images/default/slider
+@dirrm www/glpi/lib/extjs/resources/images/default/sizer
+@dirrm www/glpi/lib/extjs/resources/images/default/shared
+@dirrm www/glpi/lib/extjs/resources/images/default/qtip
+@dirrm www/glpi/lib/extjs/resources/images/default/progress
+@dirrm www/glpi/lib/extjs/resources/images/default/panel
+@dirrm www/glpi/lib/extjs/resources/images/default/menu
+@dirrm www/glpi/lib/extjs/resources/images/default/layout
+@dirrm www/glpi/lib/extjs/resources/images/default/grid
+@dirrm www/glpi/lib/extjs/resources/images/default/form
+@dirrm www/glpi/lib/extjs/resources/images/default/editor
+@dirrm www/glpi/lib/extjs/resources/images/default/dd
+@dirrm www/glpi/lib/extjs/resources/images/default/button
+@dirrm www/glpi/lib/extjs/resources/images/default/box
+@dirrm www/glpi/lib/extjs/resources/images/default
+@dirrm www/glpi/lib/extjs/resources/images
+@dirrm www/glpi/lib/extjs/resources
+@dirrm www/glpi/lib/extjs/locale
+@dirrm www/glpi/lib/extjs/adapter/prototype
+@dirrm www/glpi/lib/extjs/adapter/ext
+@dirrm www/glpi/lib/extjs/adapter
+@dirrm www/glpi/lib/extjs
 @dirrm www/glpi/lib/cache_lite/docs
 @dirrm www/glpi/lib/cache_lite/Lite
 @dirrm www/glpi/lib/cache_lite
@@ -1101,7 +1422,6 @@ www/glpi/status.php
 @dirrm www/glpi/install/mysql
 @dirrm www/glpi/install
 @dirrm www/glpi/inc
-@dirrm www/glpi/help
 @dirrm www/glpi/front
 @dirrm www/glpi/files/_uploads
 @dirrm www/glpi/files/_tmp
