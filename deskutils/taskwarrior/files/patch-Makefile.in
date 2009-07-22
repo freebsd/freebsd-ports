@@ -1,0 +1,32 @@
+--- Makefile.in.orig	2009-07-21 22:49:24.000000000 +0200
++++ Makefile.in	2009-07-22 12:01:39.000000000 +0200
+@@ -153,9 +153,9 @@
+ bindir = @bindir@
+ build_alias = @build_alias@
+ builddir = @builddir@
+-datadir = @datadir@
++datadir = %%DATADIR%%
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/doc/${PACKAGE}-${VERSION}
++docdir = %%DOCSDIR%%
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host_alias = @host_alias@
+@@ -185,13 +185,13 @@
+ dist_man_MANS = doc/man/task.1 doc/man/taskrc.5 doc/man/task-tutorial.5
+ doc_DATA = AUTHORS ChangeLog COPYING NEWS README
+ EXTRA_DIST = INSTALL
+-bashscriptsdir = $(docdir)
++bashscriptsdir = $(datadir)
+ nobase_dist_bashscripts_DATA = scripts/bash/task_completion.sh
+-zshscriptsdir = $(docdir)
++zshscriptsdir = $(datadir)
+ nobase_dist_zshscripts_DATA = scripts/zsh/_task
+-vimscriptsdir = $(docdir)
++vimscriptsdir = $(datadir)
+ nobase_dist_vimscripts_DATA = scripts/vim/README scripts/vim/ftdetect/task.vim scripts/vim/syntax/taskdata.vim scripts/vim/syntax/taskedit.vim
+-i18ndir = $(docdir)
++i18ndir = $(datadir)
+ nobase_dist_i18n_DATA = i18n/strings.de-DE i18n/strings.en-US i18n/strings.es-ES i18n/strings.fr-FR i18n/strings.nl-NL i18n/strings.sv-SE i18n/tips.de-DE i18n/tips.en-US i18n/tips.sv-SE
+ all: auto.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
