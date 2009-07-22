@@ -1,5 +1,5 @@
---- client/dhclient.c.orig	2008-01-22 17:28:23.000000000 +0000
-+++ client/dhclient.c	2008-05-26 08:17:53.000000000 +0000
+--- client/dhclient.c.orig	2008-01-22 12:28:23.000000000 -0500
++++ client/dhclient.c	2009-07-15 15:02:28.000000000 -0400
 @@ -38,6 +38,13 @@
  #include "dhcpd.h"
  #include "version.h"
@@ -242,7 +242,19 @@
  	add_timeout (cur_time + client -> interval,
  		     send_request, client, 0, 0);
  }
-@@ -2624,6 +2734,13 @@
+@@ -2509,8 +2619,9 @@
+ 					 (struct option_state *)0,
+ 					 lease -> options,
+ 					 &global_scope, oc, MDL)) {
+-		if (data.len > 3) {
+-			struct iaddr netmask, subnet, broadcast;
++		struct iaddr netmask;
++		if (data.len > 3 && data.len <= sizeof(netmask.iabuf)) {
++			struct iaddr subnet, broadcast;
+ 
+ 			memcpy (netmask.iabuf, data.data, data.len);
+ 			netmask.len = data.len;
+@@ -2624,6 +2735,13 @@
  		 */
  		if (leaseFile != NULL)
  			fclose(leaseFile);
@@ -256,7 +268,7 @@
  		execve (scriptName, argv, envp);
  		log_error ("execve (%s, ...): %m", scriptName);
  		exit (0);
-@@ -2810,8 +2927,10 @@
+@@ -2810,8 +2928,10 @@
  			      case S_STOPPED:
  				break;
  			}
@@ -267,7 +279,7 @@
  		}
  	}
  }
-@@ -3039,7 +3158,9 @@
+@@ -3039,7 +3159,9 @@
  		    break;
  
  		  case server_awaken:
@@ -277,7 +289,7 @@
  		    break;
  		}
  	    }
-@@ -3177,3 +3298,265 @@
+@@ -3177,3 +3299,265 @@
  	data_string_forget (&ddns_dhcid, MDL);
  	return rcode;
  }

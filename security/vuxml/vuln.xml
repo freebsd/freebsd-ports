@@ -75,7 +75,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>isc-dhcp30-client</name>
-	<range><le>3.0.7</le></range>
+	<range><lt>3.0.7_1</lt></range>
       </package>
     </affects>
     <description>
@@ -97,6 +97,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-07-14</discovery>
       <entry>2009-07-15</entry>
+      <modified>2009-07-21</modified>
     </dates>
   </vuln>
 
