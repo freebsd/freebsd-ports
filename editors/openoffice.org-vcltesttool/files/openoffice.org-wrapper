@@ -1,15 +1,7 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-vcltesttool/files/openoffice.org-wrapper,v 1.3 2006-11-12 22:11:35 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-vcltesttool/files/openoffice.org-wrapper,v 1.4 2009-07-22 09:53:44 maho Exp $
 
 oopath=%%PREFIX%%/%%INSTALLATION_BASEDIR%%/program/
-program=`echo $0 | sed -e 's|.*-%%OOOTAG%%-||'`
+$oopath/testtool
 
-case $program in
-$0)
-	$oopath/soffice "$@"
-	;;
-	*)
-	$oopath/$program "$@"
-	;;
-esac

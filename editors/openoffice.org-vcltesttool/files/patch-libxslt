@@ -1,0 +1,11 @@
+--- libxslt/libxslt-1.1.16.patch~	2009-07-11 13:38:52.000000000 +0900
++++ libxslt/libxslt-1.1.16.patch	2009-07-11 13:39:11.000000000 +0900
+@@ -30,7 +30,7 @@
+   fi
+   
+   
+-! if test "1" == "1"
++! if test "1" = "1"
+   then
+   	XMLVERS=`$XML_CONFIG --version`
+   	if test `echo $XMLVERS | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'` -ge `echo $LIBXML_REQUIRED_VERSION | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
