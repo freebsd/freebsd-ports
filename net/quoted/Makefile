@@ -7,6 +7,7 @@
 
 PORTNAME=	quoted
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.mrp3.com/webutil/
 
@@ -18,10 +19,6 @@ MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-USE_RC_SUBR=	 yes
-RC_SUFX=	.sh
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g; s,/etc/rc.subr,${RC_SUBR},g;" ${WRKSRC}/quoted.sh.rc.freebsd
+USE_RC_SUBR=	 ${PORTNAME}
 
 .include <bsd.port.mk>

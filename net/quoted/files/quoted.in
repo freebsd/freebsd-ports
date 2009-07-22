@@ -1,0 +1,74 @@
+#!/bin/sh
+#
+# PROVIDE: quoted
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD shutdown
+# AUTHOR:  Bob Frazier
+
+quoted_enable=${quoted_enable:-"NO"}
+
+user="nobody"
+
+. %%RC_SUBR%%
+
+name="quoted"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/${name}"
+command_args="-d -p:17"
+command_plus_args="${command} ${command_args}"
+pidfile="/var/run/${name}.pid"
+required_files="%%PREFIX%%/etc/quotes"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+quoted_start()
+{
+  pid=$(check_pidfile ${pidfile} ${command})
+  if [ -z ${pid} ]; then
+    if [ -e ${required_files} ] ; then
+      ${command_plus_args}
+      sleep 1
+      pid=`ps ax | awk '{if (match($5, ".*/quoted$") || $5 == "quoted") print $1}`
+      if [ -z ${pid} ]; then
+        echo "${name} failed to start"
+        return 1
+      else
+        echo ${pid} >${pidfile}
+        echo "${name} started."
+        pid=$(check_pidfile ${pidfile} ${command})
+        if [ -z ${pid} ]; then
+          echo "Warning:  pid file ${pidfile} is corrupt."
+          echo "The ${name} daemon may not stop properly via the rc.d script."
+        fi
+        return 0;
+      fi
+    else
+      echo "Required file(s) ${required_files} missing"
+    fi
+  else
+    echo "${name} is already running"
+    return 0
+    # not an error
+  fi
+
+# if I get here something went wrong
+  return 2
+}
+
+quoted_stop()
+{
+  pid=$(check_pidfile ${pidfile} ${command})
+  if [ -z ${pid} ]; then
+    echo ${name} not running?  Check ${pidfile}
+    return 1
+  fi
+  echo "Stopping ${name}"
+  kill -${sig_stop:-TERM} ${pid}
+  [ $? -ne 0 ] && [ -z "$rc_force" ] && return 1
+  wait_for_pids ${pid}
+}
+
+load_rc_config $name
+run_rc_command "$1"
+
