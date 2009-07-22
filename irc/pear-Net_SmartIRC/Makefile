@@ -9,7 +9,7 @@ PORTNAME=	Net_SmartIRC
 PORTVERSION=	1.0.1
 CATEGORIES=	irc www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for communication with IRC networks
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
