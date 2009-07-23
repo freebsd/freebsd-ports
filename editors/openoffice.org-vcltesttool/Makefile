@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Automated testtool for the openoffice.org
 
-USE_GNOME=	desktopfileutils gtk20
+USE_GNOME=	desktopfileutils gtk20 gnomevfs2
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GMAKE=	yes
