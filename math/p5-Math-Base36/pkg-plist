@@ -1,5 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Base36/.packlist
 %%SITE_PERL%%/Math/Base36.pm
+%%SITE_PERL%%/auto/Math/Base36/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Base36
+@dirrm %%SITE_PERL%%/auto/Math/Base36
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math
+@dirrmtry %%SITE_PERL%%/auto/Math
