@@ -1,11 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Critic/Bangs/.packlist
 %%SITE_PERL%%/Perl/Critic/Bangs.pm
-%%SITE_PERL%%/Perl/Critic/NoPlan.pm
-%%SITE_PERL%%/Perl/Critic/NumberedNames.pm
-%%SITE_PERL%%/Perl/Critic/VagueNames.pm
-%%SITE_PERL%%/Perl/Critic/CommentedOutCode.pm
-%%SITE_PERL%%/Perl/Critic/FlagComments.pm
-%%SITE_PERL%%/Perl/Critic/RefProto.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Bangs/ProhibitCommentedOutCode.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Bangs/ProhibitFlagComments.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Bangs/ProhibitNoPlan.pm
