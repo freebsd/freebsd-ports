@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Example-InstantCRUD
-PORTVERSION=	0.0.30
+PORTVERSION=	0.033
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -46,6 +46,7 @@ PERL_CONFIGURE=	5.8.1+
 
 MAN1=	instantcrud.pl.1
 MAN3=	Catalyst::Example::Controller::InstantCRUD.3 \
+	Catalyst::Example::Controller::InstantCRUD::REST.3 \
 	Catalyst::Example::InstantCRUD.3 \
 	Catalyst::Helper::Controller::InstantCRUD.3 \
 	Catalyst::Helper::InstantCRUD.3 \
