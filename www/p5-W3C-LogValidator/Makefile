@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	W3C-LogValidator
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -36,12 +36,12 @@ MAN3=	W3C::LogValidator.3 \
 	W3C::LogValidator::Output::Raw.3 \
 	W3C::LogValidator::SurveyEngine.3
 
-.ifndef (NOPORTDOCS)
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/samples/NewModule.pm ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/samples/NewOutputModule.pm ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/samples/logprocess.conf ${EXAMPLESDIR}
+.ifndef (NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/samples/NewModule.pm ${EXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/samples/NewOutputModule.pm ${EXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/samples/logprocess.conf ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
