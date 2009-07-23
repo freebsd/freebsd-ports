@@ -26,7 +26,9 @@ name="obspamlogd"
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/libexec/spamlogd"
-start_precmd="${name}_precmd"
+start_precmd="obspamlogd_precmd"
+stop_postcmd="obspamlogd_cleanup"
+pidfile="/var/run/spamlogd.pid"
 
 obspamlogd_precmd()
 {
@@ -42,6 +44,11 @@ obspamlogd_precmd()
 		echo ""
 	fi
 	return ${_rc}
+}
+
+obspamlogd_cleanup()
+{
+	/bin/rm -f ${pidfile}
 }
 
 load_rc_config $name

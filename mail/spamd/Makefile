@@ -6,19 +6,14 @@
 #
 
 PORTNAME=	spamd
-PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTVERSION=	4.5.0
 CATEGORIES=	mail
 MASTER_SITES=	BERLIOS
 MASTER_SITE_SUBDIR=freebsdspamd
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	ohauer@gmx.de
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
-
-.include <bsd.port.pre.mk>
-
-LOCAL_PFCTL=	/sbin/pfctl
 
 USE_RC_SUBR?=	obspamd obspamlogd
 
@@ -31,11 +26,12 @@ SPAMDGID=	${SPAMDUID}
 
 MAN5=		spamd.conf.5
 MAN8=		spamd.8 spamd-setup.8 spamdb.8 spamlogd.8
-PORTDOCS=	ipfw-spamd.txt
+PORTDOCS=	ipfw-spamd.txt spamdb.txt
 
 PLIST_DIRS=	etc/spamd
-PLIST_FILES=	libexec/spamd libexec/spamlogd \
-		sbin/spamd-setup sbin/spamdb \
+PLIST_FILES=	libexec/spamlogd \
+		sbin/spamd-setup \
+		sbin/spamdb \
 		etc/spamd/spamd.conf.sample
 
 CONFIG_DIR=		${PREFIX}/etc/spamd
@@ -47,12 +43,35 @@ PLIST_SUB=	SPAMDDIR=${SPAMDDIR} \
 		SPAMDUID=${SPAMDUID} \
 		SPAMDGID=${SPAMDGID}
 
+# If you are a CPANEL user the this option is for you!
+# CPANEL sends periodic a 'kill -TERM spamd' to the SpamAssassin spamd, and
+# this kills also the OpenBSD spamd daemon.
+# With this option spamd will be installed as obspamd, and the rc script will
+# be adjusted. Man page and pid file will not be renamed!
+.if !defined(CPANEL)
+PLIST_FILES+=	libexec/spamd
+PLIST_SUB+=	SPAMDBIN=spamd
+.else
+PLIST_FILES+=	libexec/obspamd
+PLIST_SUB+=	SPAMDBIN=obspamd
+.endif
+
 SUB_FILES=	pkg-install \
 		pkg-deinstall \
 		pkg-message
 
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} " **** UPGRADE WARNING:  SYNC PROTOCOL CHANGED ****"
+	@${ECHO} " If you have spamd in distributed environment stop"
+	@${ECHO} " sync between old (4.1.x) and new version"
+	@${ECHO} " until every node is updated"
+	@${ECHO} ""
+	@read -p "Hit ^c now to stop, any key to continue: " -t 5 a || true
+	@${ECHO} ""
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
@@ -61,7 +80,11 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 do-install:
+.if !defined(CPANEL)
 	${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${PREFIX}/libexec
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${PREFIX}/libexec/obspamd
+.endif
 	${INSTALL_PROGRAM} ${WRKSRC}/spamlogd/spamlogd ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/spamd-setup/spamd-setup ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/spamdb/spamdb ${PREFIX}/sbin
@@ -82,6 +105,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/ipfw-spamd.txt ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/spamdb.txt ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

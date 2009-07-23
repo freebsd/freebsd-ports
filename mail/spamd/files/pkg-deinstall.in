@@ -16,6 +16,8 @@ if [ "$2" = "POST-DEINSTALL" ]; then
   fi
 
   if [ -e "${SPAMDDIR}" ]; then
-    echo "You should manually remove the \"${SPAMDDIR}\" directory."
+    if [ "${SPAMDDIR}" != "/var/empty" ]; then
+       echo "You should manually remove the \"${SPAMDDIR}\" directory."
+    fi
   fi
 fi

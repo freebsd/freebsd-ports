@@ -20,23 +20,22 @@ To enable spamd you need:
   rdr pass inet proto tcp from any to any \
       port smtp -> 127.0.0.1 port spamd
 
+New features:
+  - sync for spamdb is now implemented (parameter -Y)
+    See %%PREFIX%%/%%DOCSDIR%%/ for usage manual.
+  - spamdb and spamlogd whiteexp times can now adjusted
+    with parameter -W
+
+
  !!!!!!!!!!!! --  I M P O T A N T  -  N O T E S  -- !!!!!!!!!!!!!!!!!
- !
- ! changes in Ver. 4.1.x:
- !  - UID/GID is reserved to: _spamd:_spamd
- !    check the owner of /var/db/spamd
- !  - greylisting is now the default
- !  - paramer: -b is now blacklist (Ver. < 4.1.x it is bind address)
- !  - paramer: -l is now listen address
- !  - spamdb: format is now HASH, helo/ehlo is also stored in db
- !    convert will be done at the first start of spamd
- !    if you have scripts that use spamdb review this scripts
- !  - config files: new location is %%PREFIX%%/etc/spamd
- !  - spamtrapp addresses: remove the surrounding '< >' signs
- !  - pfspamd.sh was renamed to the obspamd
- !  - IPFW support (beta) added to the sources.
- !    See %%PREFIX%%/%%DOCSDIR%%/spamd-ipfw.txt for usage manual.
- !
+
+  **** UPGRADE WARNING:  SYNC PROTOCOL CHANGED ****
+
+    The sync protocol has changed for versions > 4.1.x
+
+    If spamd is installed in distributed environment and sync is 
+    enabled, stop sync at every node until they are updated.
+  
  !!!!!!!!!!!! --  I M P O T A N T  -  N O T E S  -- !!!!!!!!!!!!!!!!!
 
 **********************************************************************
