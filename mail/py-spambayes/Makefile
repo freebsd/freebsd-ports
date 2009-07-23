@@ -16,9 +16,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Bayesian anti-spam filter written in Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py25-bsddb
+# bypass infrastructure bug
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-USE_PYTHON=		2.5
+OPTIONS=	PYTHON26	"Build with Python 2.6 (with unofficial patch)"	off
+
 USE_PYDISTUTILS=	yes
 USE_RC_SUBR=	pyspamd
 LOCALSTATDIR?=	/var/db/spambayes
@@ -77,5 +79,16 @@ post-install:
 .endif
 	@${MKDIR} ${CACHEDIR}
 	@${MKDIR} ${DBDIR}
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PYTHON26)
+USE_PYTHON=		2.6
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-python26
+.else
+USE_PYTHON=		2.5
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py25-bsddb
+.endif
 
 .include <bsd.port.mk>
