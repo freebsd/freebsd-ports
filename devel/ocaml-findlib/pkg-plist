@@ -20,7 +20,7 @@ lib/ocaml/site-lib/findlib/fl_package_base.mli
 lib/ocaml/site-lib/findlib/topfind.cmi
 lib/ocaml/site-lib/findlib/topfind.mli
 lib/ocaml/site-lib/graphics/META
-lib/ocaml/site-lib/labltk/META
+%%TK%%lib/ocaml/site-lib/labltk/META
 lib/ocaml/site-lib/num-top/META
 lib/ocaml/site-lib/num-top/num_top.cma
 lib/ocaml/site-lib/num-top/num_top.cmi
@@ -106,11 +106,11 @@ lib/ocaml/topfind
 @dirrm lib/ocaml/site-lib/stdlib
 @dirrm lib/ocaml/site-lib/num-top
 @dirrm lib/ocaml/site-lib/num
-@dirrm lib/ocaml/site-lib/labltk
 @dirrm lib/ocaml/site-lib/graphics
 @dirrm lib/ocaml/site-lib/findlib
 @dirrm lib/ocaml/site-lib/dynlink
 @dirrm lib/ocaml/site-lib/dbm
 @dirrm lib/ocaml/site-lib/camlp4
 @dirrm lib/ocaml/site-lib/bigarray
+@dirrmtry lib/ocaml/site-lib/labltk
 @dirrmtry lib/ocaml/site-lib
