@@ -7,6 +7,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/ClassData.pm
 %%SITE_PERL%%/Catalyst/Component.pm
 %%SITE_PERL%%/Catalyst/Component/ApplicationAttribute.pm
+%%SITE_PERL%%/Catalyst/Component/ContextClosure.pm
 %%SITE_PERL%%/Catalyst/Controller.pm
 %%SITE_PERL%%/Catalyst/Delta.pod
 %%SITE_PERL%%/Catalyst/DispatchType.pm
@@ -23,6 +24,8 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter.pm
 %%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter/Watcher.pm
 %%SITE_PERL%%/Catalyst/Exception.pm
+%%SITE_PERL%%/Catalyst/Exception/Detach.pm
+%%SITE_PERL%%/Catalyst/Exception/Go.pm
 %%SITE_PERL%%/Catalyst/Log.pm
 %%SITE_PERL%%/Catalyst/Model.pm
 %%SITE_PERL%%/Catalyst/Request.pm
@@ -40,6 +43,7 @@ bin/catalyst.pl
 @dirrmtry %%SITE_PERL%%/Catalyst/Request
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual/Installation
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual
+@dirrmtry %%SITE_PERL%%/Catalyst/Exception
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine

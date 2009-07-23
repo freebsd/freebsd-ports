@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.80005
+PORTVERSION=	5.80007
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -54,6 +54,7 @@ MAN3=	Catalyst.3 \
 	Catalyst::ClassData.3 \
 	Catalyst::Component.3 \
 	Catalyst::Component::ApplicationAttribute.3 \
+	Catalyst::Component::ContextClosure.3 \
 	Catalyst::Controller.3 \
 	Catalyst::Delta.3 \
 	Catalyst::DispatchType.3 \
@@ -70,6 +71,8 @@ MAN3=	Catalyst.3 \
 	Catalyst::Engine::HTTP::Restarter.3 \
 	Catalyst::Engine::HTTP::Restarter::Watcher.3 \
 	Catalyst::Exception.3 \
+	Catalyst::Exception::Detach.3 \
+	Catalyst::Exception::Go.3 \
 	Catalyst::Log.3 \
 	Catalyst::Model.3 \
 	Catalyst::Request.3 \
