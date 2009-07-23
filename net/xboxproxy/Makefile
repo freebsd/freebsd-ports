@@ -6,9 +6,9 @@
 
 PORTNAME=	xboxproxy
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://www.csh.rit.edu/~psionic/projects/xboxproxy/
+MASTER_SITES=	http://www.semicomplete.com/files/xboxproxy/
 DISTNAME=	proxy-${PORTVERSION}
 
 MAINTAINER=	ports@mawer.org
@@ -16,6 +16,7 @@ COMMENT=	A proxy for the XBox system link protocol
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
+USE_RC_SUBR=	xboxproxy
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=xbox
 
