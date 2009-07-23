@@ -25,16 +25,20 @@ obspamd_enable=${obspamd_enable:-"NO"}
 name="obspamd"
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/libexec/spamd"
+command="%%PREFIX%%/libexec/%%SPAMDBIN%%"
 start_precmd="obspamd_precmd"
 start_postcmd="obspamd_postcmd"
 restart_postcmd="obspamd_postcmd"
+stop_postcmd="obspamd_cleanup"
 pidfile="/var/run/spamd.pid"
 
 obspamd_precmd()
 {
 	_rc=0
-	echo "${obspamd_flags}" | grep "\-b" 2>&1 > /dev/null
+    # we need the white-space in the grep expr. to limit a failure
+    # in parsing the flags, for example if someone
+    # defined the word 'IP-based' in the banner.
+	echo "${obspamd_flags}" | grep " \-b" 2>&1 > /dev/null
 	if [ $? -eq 1 ]; then
 		/sbin/mount -p | grep 'fdescfs.*/dev/fd.*fdescfs.*rw' 2>&1 > /dev/null
 		_rc=${?}
@@ -54,9 +58,14 @@ obspamd_postcmd()
 {
 	if [ -x %%PREFIX%%/sbin/spamd-setup ]; then
 		if [ -r %%PREFIX%%/etc/spamd/spamd.conf ]; then
-			%%PREFIX%%/sbin/spamd-setup &
+			%%PREFIX%%/sbin/spamd-setup -D
 		fi
 	fi
+}
+
+obspamd_cleanup()
+{
+	/bin/rm -f ${pidfile}
 }
 
 load_rc_config $name
