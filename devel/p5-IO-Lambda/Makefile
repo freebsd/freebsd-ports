@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Lambda
-PORTVERSION=	1.02
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5 parallel net www databases
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +27,7 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--no-online-tests
 
 MAN3=	IO::Lambda.3 \
+	IO::Lambda::Backtrace.3 \
 	IO::Lambda::Compat.3 \
 	IO::Lambda::DBI.3 \
 	IO::Lambda::DNS.3 \
@@ -39,6 +40,7 @@ MAN3=	IO::Lambda.3 \
 	IO::Lambda::Loop::Prima.3 \
 	IO::Lambda::Loop::Select.3 \
 	IO::Lambda::Message.3 \
+	IO::Lambda::Mutex.3 \
 	IO::Lambda::Poll.3 \
 	IO::Lambda::SNMP.3 \
 	IO::Lambda::Signal.3 \

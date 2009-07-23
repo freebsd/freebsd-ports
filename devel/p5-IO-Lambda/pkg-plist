@@ -1,5 +1,6 @@
 %%SITE_PERL%%/IO/Lambda.pm
 %%SITE_PERL%%/IO/Lambda/Compat.pm
+%%SITE_PERL%%/IO/Lambda/Backtrace.pm
 %%SITE_PERL%%/IO/Lambda/DBI.pm
 %%SITE_PERL%%/IO/Lambda/DNS.pm
 %%SITE_PERL%%/IO/Lambda/Fork.pm
@@ -12,6 +13,7 @@
 %%SITE_PERL%%/IO/Lambda/Loop/Prima.pm
 %%SITE_PERL%%/IO/Lambda/Loop/Select.pm
 %%SITE_PERL%%/IO/Lambda/Message.pm
+%%SITE_PERL%%/IO/Lambda/Mutex.pm
 %%SITE_PERL%%/IO/Lambda/Poll.pm
 %%SITE_PERL%%/IO/Lambda/SNMP.pm
 %%SITE_PERL%%/IO/Lambda/Signal.pm
