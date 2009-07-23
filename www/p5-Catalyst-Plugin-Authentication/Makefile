@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authentication
-PORTVERSION=	0.10012
-PORTREVISION=	1
+PORTVERSION=	0.100091
 PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -16,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Infrastructure plugin for the Catalyst authentication framework
 
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-Session>=0.10:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
@@ -35,7 +34,6 @@ MAN3=	Catalyst::Authentication::Credential::Password.3 \
 	Catalyst::Authentication::User::Hash.3 \
 	Catalyst::Plugin::Authentication.3 \
 	Catalyst::Plugin::Authentication::Credential::Password.3 \
-	Catalyst::Authentication::Credential::Remote.3 \
 	Catalyst::Plugin::Authentication::Internals.3 \
 	Catalyst::Plugin::Authentication::Store::Minimal.3 \
 	Catalyst::Plugin::Authentication::User.3 \
