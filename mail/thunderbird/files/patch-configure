@@ -1,6 +1,15 @@
---- configure.orig	2007-07-30 02:45:45.000000000 -0400
-+++ configure	2007-07-30 02:46:26.000000000 -0400
-@@ -20025,7 +20025,7 @@ MOZILLA_1_8_BRANCH=1
+--- configure.orig	2008-10-19 18:21:23.000000000 +0200
++++ configure	2009-07-23 09:44:48.000000000 +0200
+@@ -5408,7 +5408,7 @@
+     CPU_ARCH=sparc
+     ;;
+ 
+-x86_64 | sparc | ppc | ia64)
++amd64 | x86_64 | sparc | ppc | ia64)
+     CPU_ARCH="$OS_TEST"
+     ;;
+ esac
+@@ -20065,7 +20065,7 @@
  LIBS_PATH=
  for lib_arg in $NSPR_LIBS $TK_LIBS; do
    case $lib_arg in
