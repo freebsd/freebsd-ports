@@ -1,4 +1,4 @@
-@comment $FreeBSD$
+
 %%SITE_PERL%%/DateTime/Locale.pm
 %%SITE_PERL%%/DateTime/Locale/Base.pm
 %%SITE_PERL%%/DateTime/Locale/Catalog.pm
@@ -47,6 +47,9 @@
 %%SITE_PERL%%/DateTime/Locale/bn.pm
 %%SITE_PERL%%/DateTime/Locale/bn_BD.pm
 %%SITE_PERL%%/DateTime/Locale/bn_IN.pm
+%%SITE_PERL%%/DateTime/Locale/bo.pm
+%%SITE_PERL%%/DateTime/Locale/bo_CN.pm
+%%SITE_PERL%%/DateTime/Locale/bo_IN.pm
 %%SITE_PERL%%/DateTime/Locale/bs.pm
 %%SITE_PERL%%/DateTime/Locale/bs_BA.pm
 %%SITE_PERL%%/DateTime/Locale/byn.pm
@@ -165,6 +168,8 @@
 %%SITE_PERL%%/DateTime/Locale/gez_ET.pm
 %%SITE_PERL%%/DateTime/Locale/gl.pm
 %%SITE_PERL%%/DateTime/Locale/gl_ES.pm
+%%SITE_PERL%%/DateTime/Locale/gsw.pm
+%%SITE_PERL%%/DateTime/Locale/gsw_CH.pm
 %%SITE_PERL%%/DateTime/Locale/gu.pm
 %%SITE_PERL%%/DateTime/Locale/gu_IN.pm
 %%SITE_PERL%%/DateTime/Locale/gv.pm
@@ -238,8 +243,14 @@
 %%SITE_PERL%%/DateTime/Locale/kpe_LR.pm
 %%SITE_PERL%%/DateTime/Locale/ku.pm
 %%SITE_PERL%%/DateTime/Locale/ku_Arab.pm
+%%SITE_PERL%%/DateTime/Locale/ku_Arab_IQ.pm
+%%SITE_PERL%%/DateTime/Locale/ku_Arab_IR.pm
+%%SITE_PERL%%/DateTime/Locale/ku_Arab_SY.pm
+%%SITE_PERL%%/DateTime/Locale/ku_IQ.pm
+%%SITE_PERL%%/DateTime/Locale/ku_IR.pm
 %%SITE_PERL%%/DateTime/Locale/ku_Latn.pm
 %%SITE_PERL%%/DateTime/Locale/ku_Latn_TR.pm
+%%SITE_PERL%%/DateTime/Locale/ku_SY.pm
 %%SITE_PERL%%/DateTime/Locale/ku_TR.pm
 %%SITE_PERL%%/DateTime/Locale/kw.pm
 %%SITE_PERL%%/DateTime/Locale/kw_GB.pm
@@ -277,6 +288,8 @@
 %%SITE_PERL%%/DateTime/Locale/my_MM.pm
 %%SITE_PERL%%/DateTime/Locale/nb.pm
 %%SITE_PERL%%/DateTime/Locale/nb_NO.pm
+%%SITE_PERL%%/DateTime/Locale/nds.pm
+%%SITE_PERL%%/DateTime/Locale/nds_DE.pm
 %%SITE_PERL%%/DateTime/Locale/ne.pm
 %%SITE_PERL%%/DateTime/Locale/ne_IN.pm
 %%SITE_PERL%%/DateTime/Locale/ne_NP.pm
@@ -292,6 +305,8 @@
 %%SITE_PERL%%/DateTime/Locale/nso_ZA.pm
 %%SITE_PERL%%/DateTime/Locale/ny.pm
 %%SITE_PERL%%/DateTime/Locale/ny_MW.pm
+%%SITE_PERL%%/DateTime/Locale/oc.pm
+%%SITE_PERL%%/DateTime/Locale/oc_FR.pm
 %%SITE_PERL%%/DateTime/Locale/om.pm
 %%SITE_PERL%%/DateTime/Locale/om_ET.pm
 %%SITE_PERL%%/DateTime/Locale/om_KE.pm
@@ -398,6 +413,8 @@
 %%SITE_PERL%%/DateTime/Locale/to_TO.pm
 %%SITE_PERL%%/DateTime/Locale/tr.pm
 %%SITE_PERL%%/DateTime/Locale/tr_TR.pm
+%%SITE_PERL%%/DateTime/Locale/trv.pm
+%%SITE_PERL%%/DateTime/Locale/trv_TW.pm
 %%SITE_PERL%%/DateTime/Locale/ts.pm
 %%SITE_PERL%%/DateTime/Locale/ts_ZA.pm
 %%SITE_PERL%%/DateTime/Locale/tt.pm
