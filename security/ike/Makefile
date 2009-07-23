@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ike
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	security net
-MASTER_SITES=	http://www.shrew.net/vpn/
+MASTER_SITES=	http://www.shrew.net/download/ike/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 EXTRACT_SUFX=	.tbz2
 
@@ -58,7 +57,10 @@ post-patch:
 .ifdef(WITH_NATT)
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@${ECHO_MSG} "===> ATTENTION: You need a kernel patch to enable NAT-Traversal functionality!"
-. if ${OSVERSION} < 699999
+. if ${OSVERSION} < 600000
+	@${ECHO_MSG} "===>     There is no known NAT-T patch for FreeBSD 1 - 5!!!"
+. endif
+. if ${OSVERSION} > 600000 && ${OSVERSION} < 699999
 	@${ECHO_MSG} "===>     http://ipsec-tools.sf.net/freebsd6-natt.diff"
 . endif
 . if ${OSVERSION} > 700000 && ${OSVERSION} < 799999
