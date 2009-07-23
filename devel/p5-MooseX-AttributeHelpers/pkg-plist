@@ -1,7 +1,7 @@
+
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeHelpers/.packlist
 %%SITE_PERL%%/MooseX/AttributeHelpers.pm
-%%SITE_PERL%%/MooseX/AttributeHelpers/Base.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Bool.pm
-%%SITE_PERL%%/MooseX/AttributeHelpers/Collection.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Collection/Array.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Collection/Bag.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Collection/Hash.pm
@@ -20,12 +20,25 @@
 %%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider/String.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Number.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/String.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeHelpers/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeHelpers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Base.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Bool.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Collection.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Collection/Array.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Collection/Bag.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Collection/Hash.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Collection/ImmutableHash.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Collection/List.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Counter.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Number.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Trait/String.pm
+@dirrmtry %%SITE_PERL%%/mach/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Collection
+@dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Trait
 @dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider
 @dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Meta/Method
 @dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Collection
 @dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers
 @dirrmtry %%SITE_PERL%%/MooseX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeHelpers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
