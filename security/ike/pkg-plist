@@ -5,6 +5,6 @@ sbin/iked
 bin/ikea
 bin/ikec
 lib/libike.so
-lib/libike.so.2.1.0
+lib/libike.so.2.1.4
 lib/libpfk.so
-lib/libpfk.so.2.1.0
+lib/libpfk.so.2.1.4
