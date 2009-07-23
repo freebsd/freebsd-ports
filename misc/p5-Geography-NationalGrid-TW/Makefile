@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Geography-NationalGrid-TW
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	misc perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chinsan@FreeBSD.org
-COMMENT=	Convert Taiwan Datum (TWD67/TM2, TWD97/TM2) to/from Latitude and Longitude
+COMMENT=	Convert Taiwan Datum (TWD67/TM2, TWD97/TM2) to/from Lat and Long
 
 BUILD_DEPENDS=	p5-Geography-NationalGrid>=0:${PORTSDIR}/misc/p5-Geography-NationalGrid
 RUN_DEPENDS=	${BUILD_DEPENDS}
