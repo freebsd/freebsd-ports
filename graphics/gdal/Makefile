@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
@@ -129,7 +129,7 @@ CONFIGURE_ARGS+=	--with-jasper=${LOCALBASE}
 
 .if !defined(WITHOUT_JPEG)
 LIB_DEPENDS+=		jpeg.10:${PORTSDIR}/graphics/jpeg
-CONFIGURE_ARGS+=	--with-libjpeg=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-jpeg=${LOCALBASE}
 .endif
 
 .if defined(WITH_MYSQL)
