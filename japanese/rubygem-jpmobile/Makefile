@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	jpmobile
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.6
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A Rails plugin for Japanese mobile-phones
 
-BUILD_DEPENDS=	rubygem-actionpack>=1.12.5:${PORTSDIR}/www/rubygem-actionpack \
-		rubygem-hpricot>=0.4:${PORTSDIR}/www/rubygem-hpricot
-RUN_DEPENDS=	rubygem-actionpack>=1.12.5:${PORTSDIR}/www/rubygem-actionpack \
-		rubygem-hpricot>=0.4:${PORTSDIR}/www/rubygem-hpricot
+BUILD_DEPENDS=	rubygem-actionpack>=2.3.2:${PORTSDIR}/www/rubygem-actionpack
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
