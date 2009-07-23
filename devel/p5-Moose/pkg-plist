@@ -74,6 +74,7 @@
 %%SITE_PERL%%/Moose/Meta/TypeCoercion/Union.pm
 %%SITE_PERL%%/Moose/Meta/TypeConstraint.pm
 %%SITE_PERL%%/Moose/Meta/TypeConstraint/Class.pm
+%%SITE_PERL%%/Moose/Meta/TypeConstraint/DuckType.pm
 %%SITE_PERL%%/Moose/Meta/TypeConstraint/Enum.pm
 %%SITE_PERL%%/Moose/Meta/TypeConstraint/Parameterizable.pm
 %%SITE_PERL%%/Moose/Meta/TypeConstraint/Parameterized.pm

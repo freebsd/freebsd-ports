@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.81
+PORTVERSION=	0.87
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -103,6 +103,7 @@ MAN3=	Moose.3 \
 	Moose::Meta::TypeCoercion::Union.3 \
 	Moose::Meta::TypeConstraint.3 \
 	Moose::Meta::TypeConstraint::Class.3 \
+	Moose::Meta::TypeConstraint::DuckType.3 \
 	Moose::Meta::TypeConstraint::Enum.3 \
 	Moose::Meta::TypeConstraint::Parameterizable.3 \
 	Moose::Meta::TypeConstraint::Parameterized.3 \
@@ -120,10 +121,10 @@ MAN3=	Moose.3 \
 	Test::Moose.3 \
 	oose.3
 
-post-install:
-	@${CAT} ${PKGDIR}/pkg-message
-
 post-extract:
 	@${PERL} -i -ne 'print unless m,^(test_requires|check_conflicts),' ${WRKSRC}/Makefile.PL
+
+post-install:
+	@${CAT} ${PKGDIR}/pkg-message
 
 .include <bsd.port.mk>
