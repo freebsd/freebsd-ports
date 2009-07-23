@@ -6,10 +6,9 @@
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/Instance.pm
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/Object.pm
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/SweetArgs.pm
-%%SITE_PERL%%/MooseX/POE/Object/Deferred.pm
 %%SITE_PERL%%/MooseX/POE/Role.pm
 %%SITE_PERL%%/MooseX/POE/SweetArgs.pm
-%%SITE_PERL%%/ooseX/POE.pm
+%%SITE_PERL%%/MooseX/POE.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
