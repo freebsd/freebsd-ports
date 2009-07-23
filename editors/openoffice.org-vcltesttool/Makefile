@@ -80,6 +80,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		ant:${PORTSDIR}/devel/apache-ant
 
 LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
