@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2009-07-14 18:53:07.000000000 +1000
++++ CMakeLists.txt	2009-07-23 21:41:59.000000000 +1000
+@@ -55,16 +55,3 @@
+ add_subdirectory(doc)
+ add_subdirectory(include)
+ add_subdirectory(libssh)
+-
+-# build samples
+-include_directories(${CMAKE_SOURCE_DIR}/include)
+-
+-if (UNIX AND NOT WIN32)
+-  if (WITH_SFTP AND WITH_SERVER)
+-    add_executable(samplessh sample.c)
+-    add_executable(samplesshd samplesshd.c)
+-
+-    target_link_libraries(samplessh ${LIBSSH_SHARED_LIBRARY})
+-    target_link_libraries(samplesshd ${LIBSSH_SHARED_LIBRARY})
+-  endif (WITH_SFTP AND WITH_SERVER)
+-endif (UNIX AND NOT WIN32)
