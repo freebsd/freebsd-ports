@@ -9926,6 +9926,7 @@ openoffice.org-3                ports/editors/openoffice.org-3
 openoffice.org-3-RC             ports/editors/openoffice.org-3-RC
 openoffice.org-3-devel          ports/editors/openoffice.org-3-devel
 openoffice.org-3-rc             ports/editors/openoffice.org-3-RC
+openoffice.org-vcltesttool      ports/editors/openoffice.org-vcltesttool
 openospfd                       ports/net/openospfd
 openpgpsdk                      ports/security/openpgpsdk
 openproj                        ports/deskutils/openproj
