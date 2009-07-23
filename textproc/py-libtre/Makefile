@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtre
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	textproc python
 MASTER_SITES=	http://laurikari.net/tre/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
