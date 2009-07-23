@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# PROVIDE: xboxproxy
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf to enable xboxproxy
+#
+# xboxproxy_enable (bool):   Set to "NO" by default.
+#                            Set it to "YES" to enable xboxproxy.
+# xboxproxy_flags (str):     Additional flags to pass to xboxproxy.
+#                            Defaults to -x -b -m.
+#
+
+. %%RC_SUBR%%
+
+name="xboxproxy"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${xboxproxy_enable="NO"}
+: ${xboxproxy_flags="-x -b -m"}
+
+
+start_cmd="${name}_start"
+pidfile="/var/run/xboxproxy.pid"
+command="%%PREFIX%%/bin/${name}"
+
+
+xboxproxy_start() {
+	echo "Starting ${name}."
+	/usr/sbin/daemon -p $pidfile ${command} ${xboxproxy_flags}
+}
+
+
+run_rc_command "$1"
+
