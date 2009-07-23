@@ -1,0 +1,11 @@
+--- include/Makefile.in.orig	2009-07-23 14:45:21.000000000 +0200
++++ include/Makefile.in	2009-07-23 14:45:34.000000000 +0200
+@@ -712,8 +712,6 @@
+ @HAVE_DTRACE_TRUE@probes_mysql_dtrace.h: $(DTRACEPROVIDER)
+ @HAVE_DTRACE_TRUE@	$(DTRACE) $(DTRACEFLAGS) -h -s $(DTRACEPROVIDER) -o $@
+ 
+-probes_mysql_nodtrace.h: $(DTRACEPROVIDER)
+-	@PERL@ $(top_srcdir)/scripts/dheadgen.pl -f $(DTRACEPROVIDER) > $@
+ 
+ # Don't update the files from bitkeeper
+ %::SCCS/s.%
