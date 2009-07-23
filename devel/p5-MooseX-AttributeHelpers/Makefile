@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-AttributeHelpers
-PORTVERSION=	0.17
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,15 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Extend your attribute interfaces
 
-RUN_DEPENDS=	p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=	MooseX::AttributeHelpers.3 \
-	MooseX::AttributeHelpers::Base.3 \
 	MooseX::AttributeHelpers::Bool.3 \
-	MooseX::AttributeHelpers::Collection.3 \
 	MooseX::AttributeHelpers::Collection::Array.3 \
 	MooseX::AttributeHelpers::Collection::Bag.3 \
 	MooseX::AttributeHelpers::Collection::Hash.3 \
@@ -40,7 +38,18 @@ MAN3=	MooseX::AttributeHelpers.3 \
 	MooseX::AttributeHelpers::MethodProvider::List.3 \
 	MooseX::AttributeHelpers::MethodProvider::String.3 \
 	MooseX::AttributeHelpers::Number.3 \
-	MooseX::AttributeHelpers::String.3
+	MooseX::AttributeHelpers::String.3 \
+	MooseX::AttributeHelpers::Trait::Base.3 \
+	MooseX::AttributeHelpers::Trait::Bool.3 \
+	MooseX::AttributeHelpers::Trait::Collection.3 \
+	MooseX::AttributeHelpers::Trait::Collection::Array.3 \
+	MooseX::AttributeHelpers::Trait::Collection::Bag.3 \
+	MooseX::AttributeHelpers::Trait::Collection::Hash.3 \
+	MooseX::AttributeHelpers::Trait::Collection::ImmutableHash.3 \
+	MooseX::AttributeHelpers::Trait::Collection::List.3 \
+	MooseX::AttributeHelpers::Trait::Counter.3 \
+	MooseX::AttributeHelpers::Trait::Number.3 \
+	MooseX::AttributeHelpers::Trait::String.3
 
 post-extract:
 	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
