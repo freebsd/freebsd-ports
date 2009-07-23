@@ -27,8 +27,8 @@
 -	-I/usr/local/include/gtkhtml /
 +	-I${LOCALBASE}/tcl$(TCL_VERSION) \
 +	-I${LOCALBASE}/include/gtksourceview-2.0 \
-+	-I${LOCALBASE}/include/libglade-2.0/  \
-+	-I${LOCALBASE}/include/gtkhtml /
++	-I${LOCALBASE}/include/libglade-2.0 \
++	-I${LOCALBASE}/include/gtkhtml
  
  # don't forget to add libs for new widgets!!
  export LIBS := $(shell pkg-config \
