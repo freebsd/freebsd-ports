@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	libtre
-PORTVERSION=	0.7.5
-PORTREVISION=	3
+PORTVERSION=	0.7.6
 CATEGORIES=	textproc
-MASTER_SITES=	http://laurikari.net/tre/ \
-		LOCAL/jkoshy
+MASTER_SITES=	http://laurikari.net/tre/
 DISTNAME=	tre-${PORTVERSION}
 
 MAINTAINER=	bf1783@gmail.com
@@ -116,7 +114,7 @@ pgo-post-run:
 
 pgo-clean:
 # Selectively clean some directories.
-. for dir in gnulib src tests
+. for dir in src tests
 	@(cd ${BUILD_WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE} clean)
 . endfor
 # Only remove some files from lib to preserve profiling information.
