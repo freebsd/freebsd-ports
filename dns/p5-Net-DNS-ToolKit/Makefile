@@ -16,7 +16,9 @@ COMMENT=	Tools for working with DNS packets
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/DNS/Codes.pm:${PORTSDIR}/dns/p5-Net-DNS-Codes \
 		${SITE_PERL}/${PERL_ARCH}/NetAddr/IP/Util.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+MAKE_JOBS_UNSAFE=	yes
 
 PERL_CONFIGURE=	yes
 
