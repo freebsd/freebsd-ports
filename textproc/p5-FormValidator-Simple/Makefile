@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		FormValidator-Simple
-PORTVERSION=		0.23
+PORTVERSION=	0.28
 CATEGORIES=		textproc perl5
 MASTER_SITES=		CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LY/LYOKATO
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		lbr@FreeBSD.org
 COMMENT=		Validation with simple chains of constraints
 
-RUN_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
+BUILD_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Data-Accessor>=0.03:${PORTSDIR}/devel/p5-Class-Data-Accessor \
@@ -28,14 +28,14 @@ RUN_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML \
 		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-DateTime-Format-Strptime>=1.07:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=		FormValidator::Simple.3 \
 		FormValidator::Simple::Results.3
 
-# included AutoInstall.pm bugs out on multi-dot version numbers, so let 
+# included AutoInstall.pm bugs out on multi-dot version numbers, so let
 # ports handle all the installation requirements...
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^requires/' ${WRKSRC}/Makefile.PL
