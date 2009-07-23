@@ -11,10 +11,10 @@ bin/logprocess.pl
 %%SITE_PERL%%/W3C/LogValidator/Output/Raw.pm
 %%SITE_PERL%%/W3C/LogValidator/SurveyEngine.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LogValidator/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/NewModule.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/NewOutputModule.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/logprocess.conf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NewModule.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NewOutputModule.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logprocess.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LogValidator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C
 @dirrm %%SITE_PERL%%/W3C/LogValidator/Output
