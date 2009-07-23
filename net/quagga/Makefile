@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.13
+PORTVERSION=	0.99.14
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
