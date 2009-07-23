@@ -15,6 +15,7 @@
 %%SITE_PERL%%/auto/File/Util/flock_rules.al
 %%SITE_PERL%%/auto/File/Util/isbin.al
 %%SITE_PERL%%/auto/File/Util/last_access.al
+%%SITE_PERL%%/auto/File/Util/last_changed.al
 %%SITE_PERL%%/auto/File/Util/last_modified.al
 %%SITE_PERL%%/auto/File/Util/load_dir.al
 %%SITE_PERL%%/auto/File/Util/make_dir.al
@@ -24,6 +25,7 @@
 %%SITE_PERL%%/auto/File/Util/readlimit.al
 %%SITE_PERL%%/auto/File/Util/return_path.al
 %%SITE_PERL%%/auto/File/Util/size.al
+%%SITE_PERL%%/auto/File/Util/touch.al
 %%SITE_PERL%%/auto/File/Util/trunc.al
 %%SITE_PERL%%/auto/File/Util/unlock_open_handle.al
 %%SITE_PERL%%/auto/File/Util/use_flock.al
