@@ -7,6 +7,7 @@
 
 PORTNAME=	gnocl
 PORTVERSION=	0.9.94
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF/gnocl
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	GTK+ and Gnome extension for Tcl
 
 USE_GMAKE=	yes
 USE_ZIP=	yes
-USE_GNOME=	gtk20 libglade2 gtksourceview2 gtkhtml3
+USE_GNOME=	gtk20 libglade2 gtksourceview2 gtkhtml3 gnomelibs
 USE_TCL=	84
 USE_LDCONFIG=	yes
 
