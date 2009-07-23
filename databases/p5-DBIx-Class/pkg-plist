@@ -81,6 +81,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Row.pm
 %%SITE_PERL%%/DBIx/Class/SQLAHacks.pm
 %%SITE_PERL%%/DBIx/Class/SQLAHacks/OracleJoins.pm
+%%SITE_PERL%%/DBIx/Class/SQLAHacks/MySQL.pm
 %%SITE_PERL%%/DBIx/Class/Schema.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Versioned.pm
 %%SITE_PERL%%/DBIx/Class/Serialize/Storable.pm
