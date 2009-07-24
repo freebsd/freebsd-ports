@@ -24,6 +24,10 @@ USE_PERL5_BUILD=true
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not build
+.endif
+
 # This port only works on i386 right now.
 ONLY_FOR_ARCHS=	i386
 
