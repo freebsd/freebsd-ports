@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	exaile
-DISTVERSION=	0.2.99.2
-PORTREVISION=	2
+DISTVERSION=	0.2.99.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}_0.3.0a2
+DISTNAME=	${PORTNAME}-0.3.0a3
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	AmaroK replacement for GTK+ (developmental series)
 
 RUN_DEPENDS=	py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	pygtk2
 USE_GSTREAMER=	python good
@@ -71,13 +70,6 @@ PLIST_SUB+=	NLS="@comment "
 
 .if !defined(WITHOUT_SEXY)
 RUN_DEPENDS+=	py*-sexy>=0.1.9:${PORTSDIR}/x11-toolkits/py-sexy
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|PREFIX =|PREFIX \?=|;s|LIBDIR =|LIBDIR \?=|' \
-		-e 's|LIBDIR|LIBINSTALLDIR|g' ${WRKSRC}/Makefile
-.if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} -e 's|exaile\.mo|SKIP_NLS_HACK|' ${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.mk>
