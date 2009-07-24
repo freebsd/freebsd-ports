@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	5.5
+PORTVERSION=	5.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://code.suckless.org/dl/${PORTNAME}/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -25,7 +25,7 @@ PORTDOCS=	LICENSE README
 pre-everything::
 	@${ECHO_MSG} "You can build dwm with your own config.h using the DWM_CONF knob:"
 	@${ECHO_MSG} "make DWM_CONF=/path/to/dwm/config.h install clean"
-	@${ECHO_MSG} "Note: Pre-5.5 config.h-files no longer work."
+	@${ECHO_MSG} "Note: Pre-5.6 config.h-files no longer work."
 
 post-extract:
 .if defined(DWM_CONF)
