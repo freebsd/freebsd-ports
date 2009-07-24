@@ -1,0 +1,969 @@
+bin/cp2foss
+bin/departition
+bin/fo_notify
+bin/fossinit
+bin/fossjobs
+bin/fosslic
+@unexec if cmp -s %D/etc/fossology/Db.conf %D/etc/fossology/Db.conf.sample; then rm -f %D/etc/fossology/Db.conf; fi
+etc/fossology/Db.conf.sample
+@exec [ -f %D/etc/fossology/Db.conf ] || cp %D/etc/fossology/Db.conf.sample %D/etc/fossology/Db.conf
+@unexec if cmp -s %D/etc/fossology/Depth.conf %D/etc/fossology/Depth.conf.sample; then rm -f %D/etc/fossology/Depth.conf; fi
+etc/fossology/Depth.conf.sample
+@exec [ -f %D/etc/fossology/Depth.conf ] || cp %D/etc/fossology/Depth.conf.sample %D/etc/fossology/Depth.conf
+@unexec if cmp -s %D/etc/fossology/Hosts.conf %D/etc/fossology/Hosts.conf.sample; then rm -f %D/etc/fossology/Hosts.conf; fi
+etc/fossology/Hosts.conf.sample
+@exec [ -f %D/etc/fossology/Hosts.conf ] || cp %D/etc/fossology/Hosts.conf.sample %D/etc/fossology/Hosts.conf
+@unexec if cmp -s %D/etc/fossology/Proxy.conf %D/etc/fossology/Proxy.conf.sample; then rm -f %D/etc/fossology/Proxy.conf; fi
+etc/fossology/Proxy.conf.sample
+@exec [ -f %D/etc/fossology/Proxy.conf ] || cp %D/etc/fossology/Proxy.conf.sample %D/etc/fossology/Proxy.conf
+@unexec if cmp -s %D/etc/fossology/RepPath.conf %D/etc/fossology/RepPath.conf.sample; then rm -f %D/etc/fossology/RepPath.conf; fi
+etc/fossology/RepPath.conf.sample
+@exec [ -f %D/etc/fossology/RepPath.conf ] || cp %D/etc/fossology/RepPath.conf.sample %D/etc/fossology/RepPath.conf
+include/libfossdb.h
+include/libfossrepo.h
+lib/fossology/agents/Filter_License
+lib/fossology/agents/adj2nest
+lib/fossology/agents/bsam-engine
+lib/fossology/agents/delagent
+lib/fossology/agents/engine-shell
+lib/fossology/agents/filter_clean
+lib/fossology/agents/licinspect
+lib/fossology/agents/mimetype
+lib/fossology/agents/pkgmetagetta
+lib/fossology/agents/selftest
+lib/fossology/agents/specagent
+lib/fossology/agents/sqlagent
+lib/fossology/agents/ununpack
+lib/fossology/agents/wget_agent
+lib/fossology/checksum
+lib/fossology/dbcheck
+lib/fossology/dbcreate
+lib/fossology/fo-postinstall
+lib/fossology/fo_watchdog
+lib/fossology/fossology-scheduler
+lib/fossology/fossologyinit.sql
+lib/fossology/mkschedconf
+lib/fossology/repcat
+lib/fossology/repcopyin
+lib/fossology/repexist
+lib/fossology/rephost
+lib/fossology/repmmapcheck
+lib/fossology/reppath
+lib/fossology/repremove
+lib/fossology/repwrite
+lib/libfossdb.a
+lib/libfossrepo.a
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.multi
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/agents/UnMagic.mime
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v1.1
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v1.1.meta
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v1.2
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v1.2.meta
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v2.0
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v2.0.meta
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v2.1
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v2.1.meta
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v3.0
+%%DATADIR%%/agents/licenses/AFL/AFL/Academic Free License v3.0.meta
+%%DATADIR%%/agents/licenses/AFL/License Text Protection
+%%DATADIR%%/agents/licenses/AFL/License Text Protection.meta
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v1.0
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v1.0 reference
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v1.0 reference.meta
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v1.0.meta
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v1.1
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v1.1.meta
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v2.0
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v2.0.meta
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v2.1
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v2.1.meta
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v3.0
+%%DATADIR%%/agents/licenses/AFL/OSL/Open Software License v3.0.meta
+%%DATADIR%%/agents/licenses/APSL/Apple Public Source License v1.0
+%%DATADIR%%/agents/licenses/APSL/Apple Public Source License v1.0.meta
+%%DATADIR%%/agents/licenses/APSL/Apple Public Source License v1.1
+%%DATADIR%%/agents/licenses/APSL/Apple Public Source License v1.1.meta
+%%DATADIR%%/agents/licenses/APSL/Apple Public Source License v1.2
+%%DATADIR%%/agents/licenses/APSL/Apple Public Source License v1.2.meta
+%%DATADIR%%/agents/licenses/APSL/Apple Public Source License v2.0
+%%DATADIR%%/agents/licenses/APSL/Apple Public Source License v2.0.meta
+%%DATADIR%%/agents/licenses/Adaptive/Adaptive v1.0
+%%DATADIR%%/agents/licenses/Adaptive/Adaptive v1.0 Appendix A
+%%DATADIR%%/agents/licenses/Adaptive/Adaptive v1.0 Appendix A.meta
+%%DATADIR%%/agents/licenses/Adaptive/Adaptive v1.0.meta
+%%DATADIR%%/agents/licenses/Adobe/Adobe
+%%DATADIR%%/agents/licenses/Adobe/Adobe AFM short
+%%DATADIR%%/agents/licenses/Adobe/Adobe AFM short.meta
+%%DATADIR%%/agents/licenses/Adobe/Adobe short
+%%DATADIR%%/agents/licenses/Adobe/Adobe short.meta
+%%DATADIR%%/agents/licenses/Adobe/Adobe.meta
+%%DATADIR%%/agents/licenses/Aptana/Aptana Public License v1.0
+%%DATADIR%%/agents/licenses/Aptana/Aptana Public License v1.0.meta
+%%DATADIR%%/agents/licenses/Artistic/Artistic v1.0
+%%DATADIR%%/agents/licenses/Artistic/Artistic v1.0 short
+%%DATADIR%%/agents/licenses/Artistic/Artistic v1.0 short.meta
+%%DATADIR%%/agents/licenses/Artistic/Artistic v1.0.meta
+%%DATADIR%%/agents/licenses/Artistic/Artistic v2.0
+%%DATADIR%%/agents/licenses/Artistic/Artistic v2.0.meta
+%%DATADIR%%/agents/licenses/Artistic/Artistic v2.0beta4
+%%DATADIR%%/agents/licenses/Artistic/Artistic v2.0beta4.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Academy of Motion Picture Arts and Sciences
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Academy of Motion Picture Arts and Sciences.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v1.0
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v1.0.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v1.1
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v1.1.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v2.0
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v2.0 reference
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v2.0 reference 2
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v2.0 reference 2.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v2.0 reference.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Apache/Apache Software License v2.0.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/BSD new
+%%DATADIR%%/agents/licenses/BSD/BSD.new/BSD new short
+%%DATADIR%%/agents/licenses/BSD/BSD.new/BSD new short.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/BSD new.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/BSD variant
+%%DATADIR%%/agents/licenses/BSD/BSD.new/BSD variant.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/CWI
+%%DATADIR%%/agents/licenses/BSD/BSD.new/CWI.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Cryptix
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Cryptix.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Entessa Public License
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Entessa Public License.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Maia Mailguard License
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Maia Mailguard License.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Naumen Public License
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Naumen Public License.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/OpenPBS
+%%DATADIR%%/agents/licenses/BSD/BSD.new/OpenPBS.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/PHP/PHP v3.0
+%%DATADIR%%/agents/licenses/BSD/BSD.new/PHP/PHP v3.0.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Phorum
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Phorum.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/SSLeay
+%%DATADIR%%/agents/licenses/BSD/BSD.new/SSLeay.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Vovida Software License v1.0
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Vovida Software License v1.0.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Zend
+%%DATADIR%%/agents/licenses/BSD/BSD.new/Zend.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Attribution Assurance License
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Attribution Assurance License.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD As-Is clause
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD As-Is clause.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD Gov
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD Gov.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD Harvard
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD Harvard.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD NRL
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD NRL.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD UCRegents
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD UCRegents variant 2
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD UCRegents variant 2.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD UCRegents.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD old
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD old.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD zlib
+%%DATADIR%%/agents/licenses/BSD/BSD.old/BSD zlib.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Boost Software License
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Boost Software License.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/FreeBSD
+%%DATADIR%%/agents/licenses/BSD/BSD.old/FreeBSD.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/INRIA-OSL
+%%DATADIR%%/agents/licenses/BSD/BSD.old/INRIA-OSL.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Intel-OSL
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Intel-OSL.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Jython
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Jython.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/OpenLDAP
+%%DATADIR%%/agents/licenses/BSD/BSD.old/OpenLDAP.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/OpenSSL
+%%DATADIR%%/agents/licenses/BSD/BSD.old/OpenSSL.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Sleepycat
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Sleepycat short
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Sleepycat short.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Sleepycat.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Zope/Zope v1.0
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Zope/Zope v1.0.meta
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Zope/Zope v2.0
+%%DATADIR%%/agents/licenses/BSD/BSD.old/Zope/Zope v2.0.meta
+%%DATADIR%%/agents/licenses/CDDL/CDDL v1.0
+%%DATADIR%%/agents/licenses/CDDL/CDDL v1.0.meta
+%%DATADIR%%/agents/licenses/CPAL/CPAL v1.0
+%%DATADIR%%/agents/licenses/CPAL/CPAL v1.0.meta
+%%DATADIR%%/agents/licenses/CPL/Common Public License v0.5
+%%DATADIR%%/agents/licenses/CPL/Common Public License v0.5.meta
+%%DATADIR%%/agents/licenses/CPL/Common Public License v1.0
+%%DATADIR%%/agents/licenses/CPL/Common Public License v1.0.meta
+%%DATADIR%%/agents/licenses/CPL/IBM/IBM_PL/IBM Public License v1.0
+%%DATADIR%%/agents/licenses/CPL/IBM/IBM_PL/IBM Public License v1.0.meta
+%%DATADIR%%/agents/licenses/Corporate/ATI/ATI Software EULA
+%%DATADIR%%/agents/licenses/Corporate/ATI/ATI Software EULA.meta
+%%DATADIR%%/agents/licenses/Corporate/Adobe/Adobe Flex 2.0.1 SDK EULA
+%%DATADIR%%/agents/licenses/Corporate/Adobe/Adobe Flex 2.0.1 SDK EULA.meta
+%%DATADIR%%/agents/licenses/Corporate/Adobe/Adobe Product License Agreement
+%%DATADIR%%/agents/licenses/Corporate/Adobe/Adobe Product License Agreement.meta
+%%DATADIR%%/agents/licenses/Corporate/Agere LT Modem Driver License
+%%DATADIR%%/agents/licenses/Corporate/Agere LT Modem Driver License.meta
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Common Documentation License v1.0
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Common Documentation License v1.0.meta
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Quicktime License
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Quicktime License.meta
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Quicktime Pro7 License
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Quicktime Pro7 License Exhibit A
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Quicktime Pro7 License Exhibit A.meta
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Quicktime Pro7 License.meta
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Squeak
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple Squeak.meta
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple iTunes License
+%%DATADIR%%/agents/licenses/Corporate/Apple/Apple iTunes License.meta
+%%DATADIR%%/agents/licenses/Corporate/CA/TOSL/Computer Associates Trusted Open Source License v1.1
+%%DATADIR%%/agents/licenses/Corporate/CA/TOSL/Computer Associates Trusted Open Source License v1.1.meta
+%%DATADIR%%/agents/licenses/Corporate/HP/HP-UX JRE
+%%DATADIR%%/agents/licenses/Corporate/HP/HP-UX JRE.meta
+%%DATADIR%%/agents/licenses/Corporate/HP/HP-UX Java
+%%DATADIR%%/agents/licenses/Corporate/HP/HP-UX Java.meta
+%%DATADIR%%/agents/licenses/Corporate/HP/Hewlett-Packard
+%%DATADIR%%/agents/licenses/Corporate/HP/Hewlett-Packard.meta
+%%DATADIR%%/agents/licenses/Corporate/Helix/Helix DNA Technology BinaryResearch Use License
+%%DATADIR%%/agents/licenses/Corporate/Helix/Helix DNA Technology BinaryResearch Use License.meta
+%%DATADIR%%/agents/licenses/Corporate/IBM/IBM JRE
+%%DATADIR%%/agents/licenses/Corporate/IBM/IBM JRE.meta
+%%DATADIR%%/agents/licenses/Corporate/IBM/IBM reciprocal
+%%DATADIR%%/agents/licenses/Corporate/IBM/IBM reciprocal.meta
+%%DATADIR%%/agents/licenses/Corporate/Intel/Intel
+%%DATADIR%%/agents/licenses/Corporate/Intel/Intel reference
+%%DATADIR%%/agents/licenses/Corporate/Intel/Intel reference.meta
+%%DATADIR%%/agents/licenses/Corporate/Intel/Intel-BSD
+%%DATADIR%%/agents/licenses/Corporate/Intel/Intel-BSD.meta
+%%DATADIR%%/agents/licenses/Corporate/Intel/Intel.meta
+%%DATADIR%%/agents/licenses/Corporate/Logica/Logica Open Source License v1.0
+%%DATADIR%%/agents/licenses/Corporate/Logica/Logica Open Source License v1.0.meta
+%%DATADIR%%/agents/licenses/Corporate/Lucent/Lucent Public License v1.0
+%%DATADIR%%/agents/licenses/Corporate/Lucent/Lucent Public License v1.0.meta
+%%DATADIR%%/agents/licenses/Corporate/Lucent/Lucent Public License v1.02
+%%DATADIR%%/agents/licenses/Corporate/Lucent/Lucent Public License v1.02.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft EULA
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft EULA 2003
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft EULA 2003.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft EULA Software
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft EULA Software.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft EULA.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Limited Public License
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Limited Public License.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Limited Reciprocal License
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Limited Reciprocal License.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Public License
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Public License.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Reciprocal License
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Reciprocal License.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Reference License
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Reference License.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft SDK EULA
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft SDK EULA.meta
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Shared Source License
+%%DATADIR%%/agents/licenses/Corporate/Microsoft/Microsoft Shared Source License.meta
+%%DATADIR%%/agents/licenses/Corporate/Motorola
+%%DATADIR%%/agents/licenses/Corporate/Motorola.meta
+%%DATADIR%%/agents/licenses/Corporate/MySQL/MySQL AB Exception
+%%DATADIR%%/agents/licenses/Corporate/MySQL/MySQL AB Exception.meta
+%%DATADIR%%/agents/licenses/Corporate/NCD/Network Computing Devices 1993
+%%DATADIR%%/agents/licenses/Corporate/NCD/Network Computing Devices 1993.meta
+%%DATADIR%%/agents/licenses/Corporate/NetComponents/NetComponents
+%%DATADIR%%/agents/licenses/Corporate/NetComponents/NetComponents.meta
+%%DATADIR%%/agents/licenses/Corporate/Nokia/Nokia Open Source License v1.0a
+%%DATADIR%%/agents/licenses/Corporate/Nokia/Nokia Open Source License v1.0a.meta
+%%DATADIR%%/agents/licenses/Corporate/Nvidia/Nvidia Software License
+%%DATADIR%%/agents/licenses/Corporate/Nvidia/Nvidia Software License variant 1
+%%DATADIR%%/agents/licenses/Corporate/Nvidia/Nvidia Software License variant 1.meta
+%%DATADIR%%/agents/licenses/Corporate/Nvidia/Nvidia Software License.meta
+%%DATADIR%%/agents/licenses/Corporate/Nvidia/Nvidia Source Code
+%%DATADIR%%/agents/licenses/Corporate/Nvidia/Nvidia Source Code.meta
+%%DATADIR%%/agents/licenses/Corporate/RSA/RSA-Security
+%%DATADIR%%/agents/licenses/Corporate/RSA/RSA-Security.meta
+%%DATADIR%%/agents/licenses/Corporate/SGI/SGI CID v1.0
+%%DATADIR%%/agents/licenses/Corporate/SGI/SGI CID v1.0.meta
+%%DATADIR%%/agents/licenses/Corporate/SGI/SGI FSL B v1.0
+%%DATADIR%%/agents/licenses/Corporate/SGI/SGI FSL B v1.0.meta
+%%DATADIR%%/agents/licenses/Corporate/SGI/SGI FSL B v1.1
+%%DATADIR%%/agents/licenses/Corporate/SGI/SGI FSL B v1.1.meta
+%%DATADIR%%/agents/licenses/Corporate/SGI/SGI GLX v1.0
+%%DATADIR%%/agents/licenses/Corporate/SGI/SGI GLX v1.0.meta
+%%DATADIR%%/agents/licenses/Corporate/Skype
+%%DATADIR%%/agents/licenses/Corporate/Skype.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Bigelow&Holmes
+%%DATADIR%%/agents/licenses/Corporate/Sun/Bigelow&Holmes.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License TSA v1.0
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License TSA v1.0.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License v2.3
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License v2.3 Attachment
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License v2.3 Attachment.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License v2.3.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License v3.0
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License v3.0 Supplement
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License v3.0 Supplement.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Community Source License v3.0.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Contributor Agreement
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Contributor Agreement reference
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Contributor Agreement reference.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Contributor Agreement.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Glassfish Software License
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Glassfish Software License.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Binary Code License
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Binary Code License J2SDK
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Binary Code License J2SDK.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Binary Code License supplement
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Binary Code License supplement.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Binary Code License.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Free with Copyright variant 1
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Free with Copyright variant 1.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Free with Copyright variant 2
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Free with Copyright variant 2.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Sun Public License
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems Sun Public License.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems variant 1
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems variant 1.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems variant 2
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Microsystems variant 2.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Solaris Source Code License Foundation Release
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Solaris Source Code License Foundation Release Attachment A-1
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Solaris Source Code License Foundation Release Attachment A-1.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Solaris Source Code License Foundation Release Preamble
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Solaris Source Code License Foundation Release Preamble.meta
+%%DATADIR%%/agents/licenses/Corporate/Sun/Sun Solaris Source Code License Foundation Release.meta
+%%DATADIR%%/agents/licenses/Corporate/Yahoo/Yahoo Toolbar License
+%%DATADIR%%/agents/licenses/Corporate/Yahoo/Yahoo Toolbar License variant 2
+%%DATADIR%%/agents/licenses/Corporate/Yahoo/Yahoo Toolbar License variant 2.meta
+%%DATADIR%%/agents/licenses/Corporate/Yahoo/Yahoo Toolbar License variant 3
+%%DATADIR%%/agents/licenses/Corporate/Yahoo/Yahoo Toolbar License variant 3.meta
+%%DATADIR%%/agents/licenses/Corporate/Yahoo/Yahoo Toolbar License.meta
+%%DATADIR%%/agents/licenses/Creative_Commons/Creative Commons GPL
+%%DATADIR%%/agents/licenses/Creative_Commons/Creative Commons GPL.meta
+%%DATADIR%%/agents/licenses/Creative_Commons/Creative Commons LGPL
+%%DATADIR%%/agents/licenses/Creative_Commons/Creative Commons LGPL.meta
+%%DATADIR%%/agents/licenses/Creative_Commons/Creative Commons Public Domain
+%%DATADIR%%/agents/licenses/Creative_Commons/Creative Commons Public Domain.meta
+%%DATADIR%%/agents/licenses/Creative_Commons/Creative Commons Public License
+%%DATADIR%%/agents/licenses/Creative_Commons/Creative Commons Public License.meta
+%%DATADIR%%/agents/licenses/EPL/Eclipse Public License v1.0
+%%DATADIR%%/agents/licenses/EPL/Eclipse Public License v1.0 reference
+%%DATADIR%%/agents/licenses/EPL/Eclipse Public License v1.0 reference.meta
+%%DATADIR%%/agents/licenses/EPL/Eclipse Public License v1.0.meta
+%%DATADIR%%/agents/licenses/Edu/CMU/Carnegie Mellon University 1991
+%%DATADIR%%/agents/licenses/Edu/CMU/Carnegie Mellon University 1991.meta
+%%DATADIR%%/agents/licenses/Edu/CMU/Carnegie Mellon University 1998
+%%DATADIR%%/agents/licenses/Edu/CMU/Carnegie Mellon University 1998.meta
+%%DATADIR%%/agents/licenses/Edu/CMU/Carnegie Mellon University 2000
+%%DATADIR%%/agents/licenses/Edu/CMU/Carnegie Mellon University 2000.meta
+%%DATADIR%%/agents/licenses/Edu/Educational Community License
+%%DATADIR%%/agents/licenses/Edu/Educational Community License.meta
+%%DATADIR%%/agents/licenses/Edu/Univ of Cambridge
+%%DATADIR%%/agents/licenses/Edu/Univ of Cambridge.meta
+%%DATADIR%%/agents/licenses/Edu/Univ of Edinburgh
+%%DATADIR%%/agents/licenses/Edu/Univ of Edinburgh.meta
+%%DATADIR%%/agents/licenses/Edu/Univ of Notre Dame
+%%DATADIR%%/agents/licenses/Edu/Univ of Notre Dame.meta
+%%DATADIR%%/agents/licenses/Edu/University of Utah Public License
+%%DATADIR%%/agents/licenses/Edu/University of Utah Public License.meta
+%%DATADIR%%/agents/licenses/Eiffel/Eiffel Forum License v1
+%%DATADIR%%/agents/licenses/Eiffel/Eiffel Forum License v1.meta
+%%DATADIR%%/agents/licenses/Eiffel/Eiffel Forum License v2
+%%DATADIR%%/agents/licenses/Eiffel/Eiffel Forum License v2.meta
+%%DATADIR%%/agents/licenses/FSF/FSF
+%%DATADIR%%/agents/licenses/FSF/FSF variant 1
+%%DATADIR%%/agents/licenses/FSF/FSF variant 1.meta
+%%DATADIR%%/agents/licenses/FSF/FSF variant 2
+%%DATADIR%%/agents/licenses/FSF/FSF variant 2.meta
+%%DATADIR%%/agents/licenses/FSF/FSF variant 3
+%%DATADIR%%/agents/licenses/FSF/FSF variant 3.meta
+%%DATADIR%%/agents/licenses/FSF/FSF variant 4
+%%DATADIR%%/agents/licenses/FSF/FSF variant 4.meta
+%%DATADIR%%/agents/licenses/FSF/FSF.meta
+%%DATADIR%%/agents/licenses/Free/Beerware
+%%DATADIR%%/agents/licenses/Free/Beerware.meta
+%%DATADIR%%/agents/licenses/Free/Fair License
+%%DATADIR%%/agents/licenses/Free/Fair License.meta
+%%DATADIR%%/agents/licenses/Free/Free clause
+%%DATADIR%%/agents/licenses/Free/Free clause variant 2
+%%DATADIR%%/agents/licenses/Free/Free clause variant 2.meta
+%%DATADIR%%/agents/licenses/Free/Free clause variant 3
+%%DATADIR%%/agents/licenses/Free/Free clause variant 3.meta
+%%DATADIR%%/agents/licenses/Free/Free clause variant 4
+%%DATADIR%%/agents/licenses/Free/Free clause variant 4.meta
+%%DATADIR%%/agents/licenses/Free/Free clause.meta
+%%DATADIR%%/agents/licenses/Free/Free use no change clause
+%%DATADIR%%/agents/licenses/Free/Free use no change clause.meta
+%%DATADIR%%/agents/licenses/Free/Free with files clause
+%%DATADIR%%/agents/licenses/Free/Free with files clause.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 1
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 1.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 10
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 10.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 11
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 11.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 3
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 3.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 4
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 4.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 5
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 5.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 8
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 8.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 9
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Free with copyright clause variant 9.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/UC Regents free with copyright clause
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/UC Regents free with copyright clause.meta
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Unidex
+%%DATADIR%%/agents/licenses/Free/FreeWithCopyright/Unidex.meta
+%%DATADIR%%/agents/licenses/Free/WTFPL
+%%DATADIR%%/agents/licenses/Free/WTFPL.meta
+%%DATADIR%%/agents/licenses/FreeArtLicense/Free Art License v1.2
+%%DATADIR%%/agents/licenses/FreeArtLicense/Free Art License v1.2.meta
+%%DATADIR%%/agents/licenses/FreeType/FreeType
+%%DATADIR%%/agents/licenses/FreeType/FreeType reference
+%%DATADIR%%/agents/licenses/FreeType/FreeType reference.meta
+%%DATADIR%%/agents/licenses/FreeType/FreeType.meta
+%%DATADIR%%/agents/licenses/GPL/Affero/Affero GPL v1.0
+%%DATADIR%%/agents/licenses/GPL/Affero/Affero GPL v1.0.meta
+%%DATADIR%%/agents/licenses/GPL/Affero/Affero GPL v3.0
+%%DATADIR%%/agents/licenses/GPL/Affero/Affero GPL v3.0.meta
+%%DATADIR%%/agents/licenses/GPL/Affero/Affero Preamble v1.0
+%%DATADIR%%/agents/licenses/GPL/Affero/Affero Preamble v1.0.meta
+%%DATADIR%%/agents/licenses/GPL/Affero/Affero Preamble v3.0
+%%DATADIR%%/agents/licenses/GPL/Affero/Affero Preamble v3.0.meta
+%%DATADIR%%/agents/licenses/GPL/CopyLeft reference
+%%DATADIR%%/agents/licenses/GPL/CopyLeft reference.meta
+%%DATADIR%%/agents/licenses/GPL/Dual MPL GPL
+%%DATADIR%%/agents/licenses/GPL/Dual MPL GPL.meta
+%%DATADIR%%/agents/licenses/GPL/Exception/GPL exception clause 1
+%%DATADIR%%/agents/licenses/GPL/Exception/GPL exception clause 1.meta
+%%DATADIR%%/agents/licenses/GPL/Exception/GPL exception clause 2
+%%DATADIR%%/agents/licenses/GPL/Exception/GPL exception clause 2.meta
+%%DATADIR%%/agents/licenses/GPL/GFDL/GNU Free Documentation License v1.1 reference 1
+%%DATADIR%%/agents/licenses/GPL/GFDL/GNU Free Documentation License v1.1 reference 1.meta
+%%DATADIR%%/agents/licenses/GPL/GFDL/GNU Free Documentation License v1.1 reference 2
+%%DATADIR%%/agents/licenses/GPL/GFDL/GNU Free Documentation License v1.1 reference 2.meta
+%%DATADIR%%/agents/licenses/GPL/GFDL/GNU Free Documentation License v1.2
+%%DATADIR%%/agents/licenses/GPL/GFDL/GNU Free Documentation License v1.2 reference
+%%DATADIR%%/agents/licenses/GPL/GFDL/GNU Free Documentation License v1.2 reference.meta
+%%DATADIR%%/agents/licenses/GPL/GFDL/GNU Free Documentation License v1.2.meta
+%%DATADIR%%/agents/licenses/GPL/GPL Font Exception clause
+%%DATADIR%%/agents/licenses/GPL/GPL Font Exception clause.meta
+%%DATADIR%%/agents/licenses/GPL/GPL JavaScript Exception clause
+%%DATADIR%%/agents/licenses/GPL/GPL JavaScript Exception clause.meta
+%%DATADIR%%/agents/licenses/GPL/GPL for Computer Programs of the Public Administration
+%%DATADIR%%/agents/licenses/GPL/GPL for Computer Programs of the Public Administration.meta
+%%DATADIR%%/agents/licenses/GPL/GPL from FSF reference
+%%DATADIR%%/agents/licenses/GPL/GPL from FSF reference.meta
+%%DATADIR%%/agents/licenses/GPL/GPL reference
+%%DATADIR%%/agents/licenses/GPL/GPL reference.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL GNU C Library variant
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL GNU C Library variant.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL gettext library variant
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL gettext library variant.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.0
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.0 reference
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.0 reference.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.0 with exceptions
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.0 with exceptions.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.0.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.1
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.1 Preamble
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.1 Preamble.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.1 reference
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.1 reference 1
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.1 reference 1.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.1 reference.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v2.1.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v3.0
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL v3.0.meta
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL wxWindows Library Licence v3.0 variant
+%%DATADIR%%/agents/licenses/GPL/LGPL/LGPL wxWindows Library Licence v3.0 variant.meta
+%%DATADIR%%/agents/licenses/GPL/W3C/World Wide Web Consortium 2001
+%%DATADIR%%/agents/licenses/GPL/W3C/World Wide Web Consortium 2001.meta
+%%DATADIR%%/agents/licenses/GPL/W3C/World Wide Web Consortium Documents 2002
+%%DATADIR%%/agents/licenses/GPL/W3C/World Wide Web Consortium Documents 2002.meta
+%%DATADIR%%/agents/licenses/GPL/W3C/World Wide Web Consortium Software 2002
+%%DATADIR%%/agents/licenses/GPL/W3C/World Wide Web Consortium Software 2002.meta
+%%DATADIR%%/agents/licenses/GPL/v1/GPL v1
+%%DATADIR%%/agents/licenses/GPL/v1/GPL v1 Preamble
+%%DATADIR%%/agents/licenses/GPL/v1/GPL v1 Preamble.meta
+%%DATADIR%%/agents/licenses/GPL/v1/GPL v1 reference
+%%DATADIR%%/agents/licenses/GPL/v1/GPL v1 reference.meta
+%%DATADIR%%/agents/licenses/GPL/v1/GPL v1.meta
+%%DATADIR%%/agents/licenses/GPL/v2/Free with copyright clause
+%%DATADIR%%/agents/licenses/GPL/v2/Free with copyright clause.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL from FSF reference 1
+%%DATADIR%%/agents/licenses/GPL/v2/GPL from FSF reference 1.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL from FSF reference 2
+%%DATADIR%%/agents/licenses/GPL/v2/GPL from FSF reference 2.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 Java Index Serialization Package variant
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 Java Index Serialization Package variant.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 Preamble
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 Preamble.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 2
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 2.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 3
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 3.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 4
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 4.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 5
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 5.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 6
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 6.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 7
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 7.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 8
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 8.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 9
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference 9.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2 reference.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2+ reference 1
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2+ reference 1.meta
+%%DATADIR%%/agents/licenses/GPL/v2/GPL v2.meta
+%%DATADIR%%/agents/licenses/GPL/v2/McKornik Jr. Public License
+%%DATADIR%%/agents/licenses/GPL/v2/McKornik Jr. Public License.meta
+%%DATADIR%%/agents/licenses/GPL/v2/RealNetworks/RealNetworks Community Source Licensing
+%%DATADIR%%/agents/licenses/GPL/v2/RealNetworks/RealNetworks Community Source Licensing.meta
+%%DATADIR%%/agents/licenses/GPL/v2/RealNetworks/RealNetworks Public Source License v1.0
+%%DATADIR%%/agents/licenses/GPL/v2/RealNetworks/RealNetworks Public Source License v1.0 reference
+%%DATADIR%%/agents/licenses/GPL/v2/RealNetworks/RealNetworks Public Source License v1.0 reference.meta
+%%DATADIR%%/agents/licenses/GPL/v2/RealNetworks/RealNetworks Public Source License v1.0.meta
+%%DATADIR%%/agents/licenses/GPL/v2/Sybase Open Watcom Public License v1.0
+%%DATADIR%%/agents/licenses/GPL/v2/Sybase Open Watcom Public License v1.0.meta
+%%DATADIR%%/agents/licenses/GPL/v2/eCos
+%%DATADIR%%/agents/licenses/GPL/v2/eCos.meta
+%%DATADIR%%/agents/licenses/GPL/v3/GPL v3
+%%DATADIR%%/agents/licenses/GPL/v3/GPL v3 Preamble
+%%DATADIR%%/agents/licenses/GPL/v3/GPL v3 Preamble.meta
+%%DATADIR%%/agents/licenses/GPL/v3/GPL v3 reference 1
+%%DATADIR%%/agents/licenses/GPL/v3/GPL v3 reference 1.meta
+%%DATADIR%%/agents/licenses/GPL/v3/GPL v3 reference 2
+%%DATADIR%%/agents/licenses/GPL/v3/GPL v3 reference 2.meta
+%%DATADIR%%/agents/licenses/GPL/v3/GPL v3.meta
+%%DATADIR%%/agents/licenses/Gov/CeCILL-B_V1-en
+%%DATADIR%%/agents/licenses/Gov/CeCILL-B_V1-en.meta
+%%DATADIR%%/agents/licenses/Gov/CeCILL-B_V1-fr
+%%DATADIR%%/agents/licenses/Gov/CeCILL-B_V1-fr.meta
+%%DATADIR%%/agents/licenses/Gov/CeCILL-C_V1-en
+%%DATADIR%%/agents/licenses/Gov/CeCILL-C_V1-en.meta
+%%DATADIR%%/agents/licenses/Gov/CeCILL-C_V1-fr
+%%DATADIR%%/agents/licenses/Gov/CeCILL-C_V1-fr.meta
+%%DATADIR%%/agents/licenses/Gov/CeCILL_V1-fr
+%%DATADIR%%/agents/licenses/Gov/CeCILL_V1-fr.meta
+%%DATADIR%%/agents/licenses/Gov/CeCILL_V1.1-US
+%%DATADIR%%/agents/licenses/Gov/CeCILL_V1.1-US.meta
+%%DATADIR%%/agents/licenses/Gov/CeCILL_V2-en
+%%DATADIR%%/agents/licenses/Gov/CeCILL_V2-en.meta
+%%DATADIR%%/agents/licenses/Gov/CeCILL_V2-fr
+%%DATADIR%%/agents/licenses/Gov/CeCILL_V2-fr.meta
+%%DATADIR%%/agents/licenses/Gov/Government clause
+%%DATADIR%%/agents/licenses/Gov/Government clause.meta
+%%DATADIR%%/agents/licenses/Gov/MITRE Collaborative Virtual Workspace License
+%%DATADIR%%/agents/licenses/Gov/MITRE Collaborative Virtual Workspace License.meta
+%%DATADIR%%/agents/licenses/Gov/NASA Open Source v1.3
+%%DATADIR%%/agents/licenses/Gov/NASA Open Source v1.3.meta
+%%DATADIR%%/agents/licenses/Gov/Standard ML of New Jersey
+%%DATADIR%%/agents/licenses/Gov/Standard ML of New Jersey.meta
+%%DATADIR%%/agents/licenses/Historical/Historical Permission Notice and Disclaimer
+%%DATADIR%%/agents/licenses/Historical/Historical Permission Notice and Disclaimer.meta
+%%DATADIR%%/agents/licenses/Historical/Historical free with copyright clause
+%%DATADIR%%/agents/licenses/Historical/Historical free with copyright clause.meta
+%%DATADIR%%/agents/licenses/ICU/ICU v1.8.1
+%%DATADIR%%/agents/licenses/ICU/ICU v1.8.1 variant
+%%DATADIR%%/agents/licenses/ICU/ICU v1.8.1 variant.meta
+%%DATADIR%%/agents/licenses/ICU/ICU v1.8.1.meta
+%%DATADIR%%/agents/licenses/IETF/IETF
+%%DATADIR%%/agents/licenses/IETF/IETF variant
+%%DATADIR%%/agents/licenses/IETF/IETF variant.meta
+%%DATADIR%%/agents/licenses/IETF/IETF.meta
+%%DATADIR%%/agents/licenses/MIT/Imlib2
+%%DATADIR%%/agents/licenses/MIT/Imlib2.meta
+%%DATADIR%%/agents/licenses/MIT/JasPer
+%%DATADIR%%/agents/licenses/MIT/JasPer.meta
+%%DATADIR%%/agents/licenses/MIT/MIT (modern)
+%%DATADIR%%/agents/licenses/MIT/MIT (modern) with sublicense
+%%DATADIR%%/agents/licenses/MIT/MIT (modern) with sublicense.meta
+%%DATADIR%%/agents/licenses/MIT/MIT (modern).meta
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle)
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle) no ads clause
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle) no ads clause.meta
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle) with disclaimer 1
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle) with disclaimer 1.meta
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle) with disclaimer 2
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle) with disclaimer 2.meta
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle) with disclaimer 3
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle) with disclaimer 3.meta
+%%DATADIR%%/agents/licenses/MIT/MIT (oldstyle).meta
+%%DATADIR%%/agents/licenses/MIT/MIT Bigelow&Holmes Luxi font variant
+%%DATADIR%%/agents/licenses/MIT/MIT Bigelow&Holmes Luxi font variant.meta
+%%DATADIR%%/agents/licenses/MIT/MIT CMU style
+%%DATADIR%%/agents/licenses/MIT/MIT CMU style.meta
+%%DATADIR%%/agents/licenses/MIT/MIT Free with copyright clause
+%%DATADIR%%/agents/licenses/MIT/MIT Free with copyright clause.meta
+%%DATADIR%%/agents/licenses/MIT/MIT HP-DEC variant
+%%DATADIR%%/agents/licenses/MIT/MIT HP-DEC variant.meta
+%%DATADIR%%/agents/licenses/MIT/MIT MLton variant
+%%DATADIR%%/agents/licenses/MIT/MIT MLton variant.meta
+%%DATADIR%%/agents/licenses/MIT/MIT New Jersey variant
+%%DATADIR%%/agents/licenses/MIT/MIT New Jersey variant.meta
+%%DATADIR%%/agents/licenses/MIT/MIT Unicode variant
+%%DATADIR%%/agents/licenses/MIT/MIT Unicode variant.meta
+%%DATADIR%%/agents/licenses/MIT/NCSA
+%%DATADIR%%/agents/licenses/MIT/NCSA.meta
+%%DATADIR%%/agents/licenses/MIT/X.Net License
+%%DATADIR%%/agents/licenses/MIT/X.Net License.meta
+%%DATADIR%%/agents/licenses/MIT/X11
+%%DATADIR%%/agents/licenses/MIT/X11.meta
+%%DATADIR%%/agents/licenses/MPL/CUA Office Public License v1.0
+%%DATADIR%%/agents/licenses/MPL/CUA Office Public License v1.0.meta
+%%DATADIR%%/agents/licenses/MPL/Dual MPL MIT
+%%DATADIR%%/agents/licenses/MPL/Dual MPL MIT.meta
+%%DATADIR%%/agents/licenses/MPL/Interbase
+%%DATADIR%%/agents/licenses/MPL/Interbase.meta
+%%DATADIR%%/agents/licenses/MPL/MPL contributor clause with dual license
+%%DATADIR%%/agents/licenses/MPL/MPL contributor clause with dual license.meta
+%%DATADIR%%/agents/licenses/MPL/MPL v1.0
+%%DATADIR%%/agents/licenses/MPL/MPL v1.0.meta
+%%DATADIR%%/agents/licenses/MPL/MPL v1.1
+%%DATADIR%%/agents/licenses/MPL/MPL v1.1 reference
+%%DATADIR%%/agents/licenses/MPL/MPL v1.1 reference.meta
+%%DATADIR%%/agents/licenses/MPL/MPL v1.1.meta
+%%DATADIR%%/agents/licenses/MPL/NPL contributor clause with dual license
+%%DATADIR%%/agents/licenses/MPL/NPL contributor clause with dual license.meta
+%%DATADIR%%/agents/licenses/MPL/NPL v1.1
+%%DATADIR%%/agents/licenses/MPL/NPL v1.1 reference
+%%DATADIR%%/agents/licenses/MPL/NPL v1.1 reference.meta
+%%DATADIR%%/agents/licenses/MPL/NPL v1.1.meta
+%%DATADIR%%/agents/licenses/MPL/Netizen Open Source License
+%%DATADIR%%/agents/licenses/MPL/Netizen Open Source License.meta
+%%DATADIR%%/agents/licenses/MPL/Open Public License v1.0
+%%DATADIR%%/agents/licenses/MPL/Open Public License v1.0.meta
+%%DATADIR%%/agents/licenses/MPL/Ricoh Source Code Public License
+%%DATADIR%%/agents/licenses/MPL/Ricoh Source Code Public License.meta
+%%DATADIR%%/agents/licenses/MPL/SISSL/SISSL v1.1
+%%DATADIR%%/agents/licenses/MPL/SISSL/SISSL v1.1 reference 1
+%%DATADIR%%/agents/licenses/MPL/SISSL/SISSL v1.1 reference 1.meta
+%%DATADIR%%/agents/licenses/MPL/SISSL/SISSL v1.1 reference 2
+%%DATADIR%%/agents/licenses/MPL/SISSL/SISSL v1.1 reference 2.meta
+%%DATADIR%%/agents/licenses/MPL/SISSL/SISSL v1.1.meta
+%%DATADIR%%/agents/licenses/MPL/gSOAP Public License
+%%DATADIR%%/agents/licenses/MPL/gSOAP Public License.meta
+%%DATADIR%%/agents/licenses/Mandriva/Mandriva
+%%DATADIR%%/agents/licenses/Mandriva/Mandriva.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Aladdin Free Public License
+%%DATADIR%%/agents/licenses/MiscOSS/Aladdin Free Public License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/BitTorrent
+%%DATADIR%%/agents/licenses/MiscOSS/BitTorrent reference
+%%DATADIR%%/agents/licenses/MiscOSS/BitTorrent reference.meta
+%%DATADIR%%/agents/licenses/MiscOSS/BitTorrent.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Bitstream
+%%DATADIR%%/agents/licenses/MiscOSS/Bitstream.meta
+%%DATADIR%%/agents/licenses/MiscOSS/C_Migemo License
+%%DATADIR%%/agents/licenses/MiscOSS/C_Migemo License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Catharon Open Source License
+%%DATADIR%%/agents/licenses/MiscOSS/Catharon Open Source License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Condor
+%%DATADIR%%/agents/licenses/MiscOSS/Condor.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Copy clause
+%%DATADIR%%/agents/licenses/MiscOSS/Copy clause.meta
+%%DATADIR%%/agents/licenses/MiscOSS/EU DataGrid Software License
+%%DATADIR%%/agents/licenses/MiscOSS/EU DataGrid Software License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Frameworx Open License v1.0
+%%DATADIR%%/agents/licenses/MiscOSS/Frameworx Open License v1.0.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Giftware
+%%DATADIR%%/agents/licenses/MiscOSS/Giftware.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Glide
+%%DATADIR%%/agents/licenses/MiscOSS/Glide.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Hacktivismo Enhanced-Source Software License Agreement
+%%DATADIR%%/agents/licenses/MiscOSS/Hacktivismo Enhanced-Source Software License Agreement.meta
+%%DATADIR%%/agents/licenses/MiscOSS/IJG
+%%DATADIR%%/agents/licenses/MiscOSS/IJG.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Internet Software Consortium
+%%DATADIR%%/agents/licenses/MiscOSS/Internet Software Consortium.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Jabber Open Source License v1.0
+%%DATADIR%%/agents/licenses/MiscOSS/Jabber Open Source License v1.0.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Jahia Community Source License
+%%DATADIR%%/agents/licenses/MiscOSS/Jahia Community Source License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.0
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.0.meta
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.1
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.1.meta
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.2
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.2.meta
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.3a
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.3a reference
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.3a reference.meta
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.3a.meta
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.3c
+%%DATADIR%%/agents/licenses/MiscOSS/LaTeX Project Public License v1.3c.meta
+%%DATADIR%%/agents/licenses/MiscOSS/MSNTP License
+%%DATADIR%%/agents/licenses/MiscOSS/MSNTP License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Motosoto Open Source License
+%%DATADIR%%/agents/licenses/MiscOSS/Motosoto Open Source License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Nethack General Public License
+%%DATADIR%%/agents/licenses/MiscOSS/Nethack General Public License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Open Directory License
+%%DATADIR%%/agents/licenses/MiscOSS/Open Directory License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Open Motif Public End User License
+%%DATADIR%%/agents/licenses/MiscOSS/Open Motif Public End User License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Open Services Gateway Initiative
+%%DATADIR%%/agents/licenses/MiscOSS/Open Services Gateway Initiative.meta
+%%DATADIR%%/agents/licenses/MiscOSS/OpenContent License
+%%DATADIR%%/agents/licenses/MiscOSS/OpenContent License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Pine License
+%%DATADIR%%/agents/licenses/MiscOSS/Pine License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Q Public License v1.0
+%%DATADIR%%/agents/licenses/MiscOSS/Q Public License v1.0.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Ruby
+%%DATADIR%%/agents/licenses/MiscOSS/Ruby.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Scilab License
+%%DATADIR%%/agents/licenses/MiscOSS/Scilab License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/TCL
+%%DATADIR%%/agents/licenses/MiscOSS/TCL.meta
+%%DATADIR%%/agents/licenses/MiscOSS/Vim
+%%DATADIR%%/agents/licenses/MiscOSS/Vim.meta
+%%DATADIR%%/agents/licenses/MiscOSS/gnuplot
+%%DATADIR%%/agents/licenses/MiscOSS/gnuplot.meta
+%%DATADIR%%/agents/licenses/MiscOSS/iMatix
+%%DATADIR%%/agents/licenses/MiscOSS/iMatix.meta
+%%DATADIR%%/agents/licenses/MiscOSS/mecab-ipadic
+%%DATADIR%%/agents/licenses/MiscOSS/mecab-ipadic.meta
+%%DATADIR%%/agents/licenses/MiscOSS/qmail License
+%%DATADIR%%/agents/licenses/MiscOSS/qmail License.meta
+%%DATADIR%%/agents/licenses/MiscOSS/zlib/InfoZip
+%%DATADIR%%/agents/licenses/MiscOSS/zlib/InfoZip.meta
+%%DATADIR%%/agents/licenses/MiscOSS/zlib/zLib
+%%DATADIR%%/agents/licenses/MiscOSS/zlib/zLib.meta
+%%DATADIR%%/agents/licenses/OCLC/OCLC Research Public License v1.0
+%%DATADIR%%/agents/licenses/OCLC/OCLC Research Public License v1.0.meta
+%%DATADIR%%/agents/licenses/OCLC/OCLC Research Public License v2.0
+%%DATADIR%%/agents/licenses/OCLC/OCLC Research Public License v2.0.meta
+%%DATADIR%%/agents/licenses/OpenGameLicense/Open Game License
+%%DATADIR%%/agents/licenses/OpenGameLicense/Open Game License.meta
+%%DATADIR%%/agents/licenses/OpenGroup/Open Group
+%%DATADIR%%/agents/licenses/OpenGroup/Open Group Test Suite License
+%%DATADIR%%/agents/licenses/OpenGroup/Open Group Test Suite License.meta
+%%DATADIR%%/agents/licenses/OpenGroup/Open Group.meta
+%%DATADIR%%/agents/licenses/OpenPublicationLicense/Open Publication License reference
+%%DATADIR%%/agents/licenses/OpenPublicationLicense/Open Publication License reference.meta
+%%DATADIR%%/agents/licenses/OpenPublicationLicense/Open Publication License v1.0
+%%DATADIR%%/agents/licenses/OpenPublicationLicense/Open Publication License v1.0.meta
+%%DATADIR%%/agents/licenses/Python/JPython
+%%DATADIR%%/agents/licenses/Python/JPython.meta
+%%DATADIR%%/agents/licenses/Python/PSF/Python Software Foundation v2.1.1
+%%DATADIR%%/agents/licenses/Python/PSF/Python Software Foundation v2.1.1.meta
+%%DATADIR%%/agents/licenses/Python/PSF/Python Software Foundation v2.2
+%%DATADIR%%/agents/licenses/Python/PSF/Python Software Foundation v2.2.meta
+%%DATADIR%%/agents/licenses/Python/Python BeOpen
+%%DATADIR%%/agents/licenses/Python/Python BeOpen.meta
+%%DATADIR%%/agents/licenses/Python/Python CNRI v1.6
+%%DATADIR%%/agents/licenses/Python/Python CNRI v1.6.1
+%%DATADIR%%/agents/licenses/Python/Python CNRI v1.6.1.meta
+%%DATADIR%%/agents/licenses/Python/Python CNRI v1.6.meta
+%%DATADIR%%/agents/licenses/Python/Python InfoSeek variant
+%%DATADIR%%/agents/licenses/Python/Python InfoSeek variant.meta
+%%DATADIR%%/agents/licenses/RPL/Reciprocal Public License v1.1
+%%DATADIR%%/agents/licenses/RPL/Reciprocal Public License v1.1.meta
+%%DATADIR%%/agents/licenses/RPL/Reciprocal Public License v1.5
+%%DATADIR%%/agents/licenses/RPL/Reciprocal Public License v1.5.meta
+%%DATADIR%%/agents/licenses/RedHat/Red Hat EULA
+%%DATADIR%%/agents/licenses/RedHat/Red Hat EULA.meta
+%%DATADIR%%/agents/licenses/RedHat/Red Hat reference
+%%DATADIR%%/agents/licenses/RedHat/Red Hat reference.meta
+%%DATADIR%%/agents/licenses/RedHat/eCos v1.1
+%%DATADIR%%/agents/licenses/RedHat/eCos v1.1.meta
+%%DATADIR%%/php/pathinclude.php
+%%DATADIR%%/www/common/common-active.php
+%%DATADIR%%/www/common/common-agents.php
+%%DATADIR%%/www/common/common-cache.php
+%%DATADIR%%/www/common/common-cli.php
+%%DATADIR%%/www/common/common-dir.php
+%%DATADIR%%/www/common/common-folders.php
+%%DATADIR%%/www/common/common-job.php
+%%DATADIR%%/www/common/common-license.php
+%%DATADIR%%/www/common/common-menu.php
+%%DATADIR%%/www/common/common-parm.php
+%%DATADIR%%/www/common/common-plugin.php
+%%DATADIR%%/www/common/common-repo.php
+%%DATADIR%%/www/common/common.php
+%%DATADIR%%/www/csshover.htc
+%%DATADIR%%/www/fossology.css
+%%DATADIR%%/www/images/fossology-flow4.png
+%%DATADIR%%/www/images/fossology-logo.gif
+%%DATADIR%%/www/images/logo2.png
+%%DATADIR%%/www/images/pig.gif
+%%DATADIR%%/www/images/right-point-bullet.gif
+%%DATADIR%%/www/images/white.png
+%%DATADIR%%/www/index.php
+%%DATADIR%%/www/plugins/TBD.php
+%%DATADIR%%/www/plugins/admin-check-template.php
+%%DATADIR%%/www/plugins/admin-dashboard.php
+%%DATADIR%%/www/plugins/admin-db-vacuum.php
+%%DATADIR%%/www/plugins/admin-db.php
+%%DATADIR%%/www/plugins/admin-folder-create.php
+%%DATADIR%%/www/plugins/admin-folder-delete.php
+%%DATADIR%%/www/plugins/admin-folder-edit.php
+%%DATADIR%%/www/plugins/admin-folder-move.php
+%%DATADIR%%/www/plugins/admin-upload-delete.php
+%%DATADIR%%/www/plugins/admin-upload-edit.php
+%%DATADIR%%/www/plugins/admin-upload-move.php
+%%DATADIR%%/www/plugins/agent-add.php
+%%DATADIR%%/www/plugins/agent-license-once-compare.php
+%%DATADIR%%/www/plugins/agent-license-once.php
+%%DATADIR%%/www/plugins/agent-license-reanalyze.php
+%%DATADIR%%/www/plugins/agent-license.php
+%%DATADIR%%/www/plugins/agent-mimetype.php
+%%DATADIR%%/www/plugins/agent-pkgmetagetta.php
+%%DATADIR%%/www/plugins/agent-remove-license.php
+%%DATADIR%%/www/plugins/agent-specagent.php
+%%DATADIR%%/www/plugins/agent-unpack.php
+%%DATADIR%%/www/plugins/ajax-upload-agents.php
+%%DATADIR%%/www/plugins/ajax-uploads.php
+%%DATADIR%%/www/plugins/core-auth.php
+%%DATADIR%%/www/plugins/core-db.php
+%%DATADIR%%/www/plugins/core-debug-flush-cache.php
+%%DATADIR%%/www/plugins/core-debug-menus.php
+%%DATADIR%%/www/plugins/core-debug-plugins.php
+%%DATADIR%%/www/plugins/core-debug-user.php
+%%DATADIR%%/www/plugins/core-init.php
+%%DATADIR%%/www/plugins/core-schema.dat
+%%DATADIR%%/www/plugins/core-schema.php
+%%DATADIR%%/www/plugins/jobs-runningjobs.php
+%%DATADIR%%/www/plugins/jobs-showjobs-upload.php
+%%DATADIR%%/www/plugins/jobs-showjobs.php
+%%DATADIR%%/www/plugins/search-file-advance.php
+%%DATADIR%%/www/plugins/search-file-by-license.php
+%%DATADIR%%/www/plugins/search-file-by-licgroup.php
+%%DATADIR%%/www/plugins/search-file.php
+%%DATADIR%%/www/plugins/search-repo.php
+%%DATADIR%%/www/plugins/ui-about.php
+%%DATADIR%%/www/plugins/ui-browse.php
+%%DATADIR%%/www/plugins/ui-default.php
+%%DATADIR%%/www/plugins/ui-download.php
+%%DATADIR%%/www/plugins/ui-folders.php
+%%DATADIR%%/www/plugins/ui-license-tree.php
+%%DATADIR%%/www/plugins/ui-license.php
+%%DATADIR%%/www/plugins/ui-licgroup-debug.php
+%%DATADIR%%/www/plugins/ui-licgroup-default.php
+%%DATADIR%%/www/plugins/ui-licgroup-manage.php
+%%DATADIR%%/www/plugins/ui-licgroup.php
+%%DATADIR%%/www/plugins/ui-licterm-default.dat
+%%DATADIR%%/www/plugins/ui-licterm-default.php
+%%DATADIR%%/www/plugins/ui-licterm-manage.php
+%%DATADIR%%/www/plugins/ui-menus.php
+%%DATADIR%%/www/plugins/ui-pig.php
+%%DATADIR%%/www/plugins/ui-refresh.php
+%%DATADIR%%/www/plugins/ui-topnav.php
+%%DATADIR%%/www/plugins/ui-treenav.php
+%%DATADIR%%/www/plugins/ui-view-info.php
+%%DATADIR%%/www/plugins/ui-view-license.php
+%%DATADIR%%/www/plugins/ui-view-meta.php
+%%DATADIR%%/www/plugins/ui-view.php
+%%DATADIR%%/www/plugins/ui-welcome.php
+%%DATADIR%%/www/plugins/upload-file.php
+%%DATADIR%%/www/plugins/upload-instructions.php
+%%DATADIR%%/www/plugins/upload-srv-files.php
+%%DATADIR%%/www/plugins/upload-url.php
+%%DATADIR%%/www/plugins/user-add.php
+%%DATADIR%%/www/plugins/user-del.php
+%%DATADIR%%/www/plugins/user-edit-any.php
+%%DATADIR%%/www/plugins/user-edit-self.php
+%%DATADIR%%/www/template/template-plugin.php
+%%DATADIR%%/www/xhtml1-frameset.dtd
+@dirrm %%DATADIR%%/www/template
+@dirrm %%DATADIR%%/www/plugins
+@dirrm %%DATADIR%%/www/images
+@dirrm %%DATADIR%%/www/common
+@dirrm %%DATADIR%%/www
+@dirrm %%DATADIR%%/php
+@dirrm %%DATADIR%%/agents/licenses/RedHat
+@dirrm %%DATADIR%%/agents/licenses/RPL
+@dirrm %%DATADIR%%/agents/licenses/Python/PSF
+@dirrm %%DATADIR%%/agents/licenses/Python
+@dirrm %%DATADIR%%/agents/licenses/OpenPublicationLicense
+@dirrm %%DATADIR%%/agents/licenses/OpenGroup
+@dirrm %%DATADIR%%/agents/licenses/OpenGameLicense
+@dirrm %%DATADIR%%/agents/licenses/OCLC
+@dirrm %%DATADIR%%/agents/licenses/MiscOSS/zlib
+@dirrm %%DATADIR%%/agents/licenses/MiscOSS
+@dirrm %%DATADIR%%/agents/licenses/Mandriva
+@dirrm %%DATADIR%%/agents/licenses/MPL/SISSL
+@dirrm %%DATADIR%%/agents/licenses/MPL
+@dirrm %%DATADIR%%/agents/licenses/MIT
+@dirrm %%DATADIR%%/agents/licenses/IETF
+@dirrm %%DATADIR%%/agents/licenses/ICU
+@dirrm %%DATADIR%%/agents/licenses/Historical
+@dirrm %%DATADIR%%/agents/licenses/Gov
+@dirrm %%DATADIR%%/agents/licenses/GPL/v3
+@dirrm %%DATADIR%%/agents/licenses/GPL/v2/RealNetworks
+@dirrm %%DATADIR%%/agents/licenses/GPL/v2
+@dirrm %%DATADIR%%/agents/licenses/GPL/v1
+@dirrm %%DATADIR%%/agents/licenses/GPL/W3C
+@dirrm %%DATADIR%%/agents/licenses/GPL/LGPL
+@dirrm %%DATADIR%%/agents/licenses/GPL/GFDL
+@dirrm %%DATADIR%%/agents/licenses/GPL/Exception
+@dirrm %%DATADIR%%/agents/licenses/GPL/Affero
+@dirrm %%DATADIR%%/agents/licenses/GPL
+@dirrm %%DATADIR%%/agents/licenses/FreeType
+@dirrm %%DATADIR%%/agents/licenses/FreeArtLicense
+@dirrm %%DATADIR%%/agents/licenses/Free/FreeWithCopyright
+@dirrm %%DATADIR%%/agents/licenses/Free
+@dirrm %%DATADIR%%/agents/licenses/FSF
+@dirrm %%DATADIR%%/agents/licenses/Eiffel
+@dirrm %%DATADIR%%/agents/licenses/Edu/CMU
+@dirrm %%DATADIR%%/agents/licenses/Edu
+@dirrm %%DATADIR%%/agents/licenses/EPL
+@dirrm %%DATADIR%%/agents/licenses/Creative_Commons
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Yahoo
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Sun
+@dirrm %%DATADIR%%/agents/licenses/Corporate/SGI
+@dirrm %%DATADIR%%/agents/licenses/Corporate/RSA
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Nvidia
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Nokia
+@dirrm %%DATADIR%%/agents/licenses/Corporate/NetComponents
+@dirrm %%DATADIR%%/agents/licenses/Corporate/NCD
+@dirrm %%DATADIR%%/agents/licenses/Corporate/MySQL
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Microsoft
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Lucent
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Logica
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Intel
+@dirrm %%DATADIR%%/agents/licenses/Corporate/IBM
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Helix
+@dirrm %%DATADIR%%/agents/licenses/Corporate/HP
+@dirrm %%DATADIR%%/agents/licenses/Corporate/CA/TOSL
+@dirrm %%DATADIR%%/agents/licenses/Corporate/CA
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Apple
+@dirrm %%DATADIR%%/agents/licenses/Corporate/Adobe
+@dirrm %%DATADIR%%/agents/licenses/Corporate/ATI
+@dirrm %%DATADIR%%/agents/licenses/Corporate
+@dirrm %%DATADIR%%/agents/licenses/CPL/IBM/IBM_PL
+@dirrm %%DATADIR%%/agents/licenses/CPL/IBM
+@dirrm %%DATADIR%%/agents/licenses/CPL
+@dirrm %%DATADIR%%/agents/licenses/CPAL
+@dirrm %%DATADIR%%/agents/licenses/CDDL
+@dirrm %%DATADIR%%/agents/licenses/BSD/BSD.old/Zope
+@dirrm %%DATADIR%%/agents/licenses/BSD/BSD.old
+@dirrm %%DATADIR%%/agents/licenses/BSD/BSD.new/PHP
+@dirrm %%DATADIR%%/agents/licenses/BSD/BSD.new/Apache
+@dirrm %%DATADIR%%/agents/licenses/BSD/BSD.new
+@dirrm %%DATADIR%%/agents/licenses/BSD
+@dirrm %%DATADIR%%/agents/licenses/Artistic
+@dirrm %%DATADIR%%/agents/licenses/Aptana
+@dirrm %%DATADIR%%/agents/licenses/Adobe
+@dirrm %%DATADIR%%/agents/licenses/Adaptive
+@dirrm %%DATADIR%%/agents/licenses/APSL
+@dirrm %%DATADIR%%/agents/licenses/AFL/OSL
+@dirrm %%DATADIR%%/agents/licenses/AFL/AFL
+@dirrm %%DATADIR%%/agents/licenses/AFL
+@dirrm %%DATADIR%%/agents/licenses
+@dirrm %%DATADIR%%/agents
+@unexec rmdir %D/%%DATADIR%% >/dev/null || echo "If you are permanently removing FOSSology, please manually remove the repository files in \"%D/%%DATADIR%%\"." | fmt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/fossology/agents
+@dirrm lib/fossology
+@dirrmtry etc/fossology

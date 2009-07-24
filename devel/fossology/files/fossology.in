@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# REQUIRE: DAEMON postgresql
+# PROVIDE: fossology
+#
+
+. %%RC_SUBR%%
+
+name="fossology"
+rcvar=`set_rcvar`
+load_rc_config "$name"
+: ${fossology_enable="NO"}
+
+SCHEDULER="%%PREFIX%%/lib/fossology/fossology-scheduler"
+WATCHDOG="%%PREFIX%%/lib/fossology/fo_watchdog"
+
+start_cmd="fossology_start"
+stop_cmd="fossology_stop"
+
+# FIXME: status command not implemented, but only one instance
+#        is allowed so there aren't problems for now.
+
+fossology_start()
+{
+	echo "Starting fossology."
+# XXX: Enter /var/tmp because uses shm_open in current directory,
+#      otherwise patch scheduler.c
+	cd /var/tmp && ${SCHEDULER} -d -R
+	cd /var/tmp && ${WATCHDOG}
+}
+
+fossology_stop()
+{
+	echo "Stopping fossology."
+	${WATCHDOG} -k
+	${SCHEDULER} -k
+}
+
+run_rc_command "$1"
