@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.24.1
-PORTREVISION=	3
+PORTVERSION=	1.4.25
+#PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -171,7 +171,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
 .endif
 
 .if defined(WITH_CODEC_PATCH)
-PATCHFILES=	asterisk-1.4.24-codec-negotiation-20090326.diff.gz
+PATCHFILES=	asterisk-1.4.25-codec-negotiation-20090526.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
 EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
 .else
@@ -180,7 +180,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/nocodecnego-patch-Makefile
 
 .if defined(WITH_MISC_PATCHES)
 EXTRA_PATCHES+=	${PATCHDIR}/dtmf_debug.diff
-EXTRA_PATCHES+=	${PATCHDIR}/feature_disconnect.diff
 EXTRA_PATCHES+=	${PATCHDIR}/sip_force_callid.diff
 EXTRA_PATCHES+=	${PATCHDIR}/sip_set_auth.diff
 .if defined(WITH_CODEC_PATCH)

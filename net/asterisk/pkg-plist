@@ -445,10 +445,10 @@ share/asterisk/moh/LICENSE-asterisk-moh-freeplay-wav
 share/asterisk/moh/fpm-calm-river.wav
 share/asterisk/moh/fpm-sunshine.wav
 share/asterisk/moh/fpm-world-mix.wav
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.14
-share/asterisk/sounds/CHANGES-asterisk-core-en-1.4.14
-share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.14
-share/asterisk/sounds/LICENSE-asterisk-core-en-1.4.14
+share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.15
+share/asterisk/sounds/CHANGES-asterisk-core-en-1.4.15
+share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.15
+share/asterisk/sounds/LICENSE-asterisk-core-en-1.4.15
 share/asterisk/sounds/agent-alreadyon.gsm
 share/asterisk/sounds/agent-incorrect.gsm
 share/asterisk/sounds/agent-loggedoff.gsm
