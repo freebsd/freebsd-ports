@@ -5,11 +5,11 @@
 #
 
 PORTNAME=	omegaT
-PORTVERSION=	1.7.3.4
+PORTVERSION=	1.8.1.5
 CATEGORIES=	editors java x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	omegat
-DISTNAME=	OmegaT_1.7.3_04_Source
+DISTNAME=	OmegaT_1.8.1_05_Source
 
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	A powerfull translation memory application written in Java
@@ -27,9 +27,14 @@ WRKSRC=		${WRKDIR}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	omegaT.sh omegat.prefs
 
+DESKTOP_ENTRIES="OmegaT" "Translation memory application" \
+		"${DATADIR}/images/OmegaT.png" \
+		"omegaT" "Application;Office;WordProcessor;" \
+		false
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/omegaT.sh ${PREFIX}/bin/${PORTNAME}
-	@cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} \* ${JAVASHAREDIR}/${PORTNAME}
+	@cd ${WRKDIR} && ${COPYTREE_BIN}  ${PORTNAME}  ${JAVASHAREDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/omegat.prefs ${JAVASHAREDIR}/${PORTNAME}
 
 post-build:
