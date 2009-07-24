@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	libtunepimp-old
-PORTVERSION=	0.4.2
-PORTREVISION=	7
+PORTVERSION=	0.4.4
 PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.au.musicbrainz.org/pub/musicbrainz/
 DISTNAME=	libtunepimp-${PORTVERSION}
 
-MAINTAINER=	fluffy@ael.ru
+MAINTAINER=	fluffy@Fluffy.Khv.RU
 COMMENT=	Client library for musicbrainz
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		tag:${PORTSDIR}/audio/taglib \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
-CONFLICTS=	trm-0* libtunepimp-0*
+CONFLICTS=	trm-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool:15
@@ -49,6 +48,5 @@ post-configure:
 	@${REINPLACE_CMD} -e \
 	's|PREFIX"/lib/tunepimp/plugins"|PREFIX"/lib/tunepimp-0.4/tunepimp/plugins"|g' \
 		${WRKSRC}/lib/tunepimp.cpp
-
 
 .include <bsd.port.mk>
