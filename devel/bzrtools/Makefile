@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	1.16.0
+PORTVERSION=	1.17.0
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/27839802/
+MASTER_SITES=	https://launchpadlibrarian.net/28981998/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Extensions to devel/bazaar-ng
