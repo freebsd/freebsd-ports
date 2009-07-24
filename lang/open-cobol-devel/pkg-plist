@@ -20,6 +20,7 @@ lib/libcob.la
 lib/libcob.so
 lib/libcob.so.1
 %%NLS%%share/locale/ja/LC_MESSAGES/open-cobol.mo
+%%DATADIR%%/copy/screenio.cpy
 %%DATADIR%%/config/bs2000.conf
 %%DATADIR%%/config/cobol2002.conf
 %%DATADIR%%/config/cobol85.conf
@@ -27,6 +28,7 @@ lib/libcob.so.1
 %%DATADIR%%/config/ibm.conf
 %%DATADIR%%/config/mf.conf
 %%DATADIR%%/config/mvs.conf
+@dirrm %%DATADIR%%/copy
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
 @dirrm include/libcob

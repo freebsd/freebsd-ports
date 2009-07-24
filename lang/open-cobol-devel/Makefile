@@ -1,21 +1,21 @@
-# ex:ts=8
-# Ports collection makefile for:	open-cobol
-# Date created:			Aug 6, 2002
-# Whom:				ijliao
+# Ports collection makefile for:        open-cobol-devel
+# Date created:                 23 July 2009
+# Whom:                         Glen Barber <glen.j.barber@gmail.com>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	open-cobol
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
+PORTREVISION=	0
 CATEGORIES=	lang
-MASTER_SITES=	SF
+MASTER_SITES=	http://freebsd.dev-urandom.com/open-cobol/
 
 MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	An open-source COBOL compiler
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+
+CONFLICTS=	open-cobol-1.[0]
 
 USE_GNOME=	gnometarget
 USE_BDB=	yes
