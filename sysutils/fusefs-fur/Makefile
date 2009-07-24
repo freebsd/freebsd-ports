@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fur
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	sysutils palm
-MASTER_SITES=	http://www.infis.univ.ts.it/~riccardo/downloads/
+MASTER_SITES=	SF/synce
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	FUR-${PORTVERSION}
 
