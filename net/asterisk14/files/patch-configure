@@ -1,47 +1,15 @@
---- configure.orig	2008-12-15 19:43:59.000000000 +0200
-+++ configure	2009-01-26 22:19:11.000000000 +0200
-@@ -3957,8 +3957,6 @@
+--- configure.orig	2009-04-27 22:29:46.000000000 +0300
++++ configure	2009-05-26 12:59:22.000000000 +0300
+@@ -4064,8 +4064,6 @@
  case "${host_os}" in
       freebsd*)
       ac_default_prefix=/usr/local
 -     CPPFLAGS=-I/usr/local/include
 -     LDFLAGS=-L/usr/local/lib
       ;;
-      *)
-      ac_default_prefix=/usr
-@@ -26022,6 +26020,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <ptlib.h>
- #include <${HOME}/openh323/include/h323.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -26062,6 +26061,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <ptlib.h>
- #include <${HOME}/openh323/include/h323.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -26164,6 +26164,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <ptlib.h>
- #include </usr/local/include/openh323/h323.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -26204,6 +26205,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <ptlib.h>
- #include </usr/local/include/openh323/h323.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -26456,7 +26458,7 @@
+      darwin*)
+ 
+@@ -27145,7 +27143,7 @@
  
  	fi
  
@@ -49,8 +17,8 @@
 +	PLATFORM_OPENH323="h323_${OPENH323_SUFFIX}"
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
- 	   { echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
-@@ -30834,6 +30836,7 @@
+ 	   { $as_echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
+@@ -31624,6 +31622,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -58,7 +26,7 @@
  #include <h323.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -30874,6 +30877,7 @@
+@@ -31665,6 +31664,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
