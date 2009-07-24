@@ -1,0 +1,34 @@
+add file attached as files/patch-utf8_fix and recompile it.
+
+Patch attached with submission follows:
+
+--- lib/ofx_preproc.cpp.orig	2009-07-24 18:48:05.000000000 +0900
++++ lib/ofx_preproc.cpp	2009-07-24 20:34:52.000000000 +0900
+@@ -151,7 +151,7 @@
+ 		  fromcode=LIBOFX_DEFAULT_INPUT_ENCODING;
+ 		}
+ 	      }
+-	      else if(ofx_encoding.compare("USASCII")==0) {
++	      else if(ofx_encoding.compare("UTF-8")==0) {
+ 		fromcode="UTF-8";
+ 	      }
+ 	      else
+@@ -170,6 +170,16 @@
+ 	      header_name.assign(s_buffer.substr(0,header_separator_idx));
+ 	      header_value.assign(s_buffer.substr(header_separator_idx+1));
+ 	      message_out(DEBUG,"ofx_proc_file():Header: "+header_name+" with value: "+header_value+" has been found");
++
++	      if((header_separator_idx = header_value.find('\r', 0))
++		 != std::string::npos)
++		header_value.resize(header_separator_idx);
++
++	      if((header_separator_idx = header_value.find('\n', 0))
++		 != std::string::npos)
++		header_value.resize(header_separator_idx);
++	      
++
+ 	      if(header_name.compare("ENCODING")==0) {
+ 		ofx_encoding.assign(header_value);
+ 	      }
+
+
