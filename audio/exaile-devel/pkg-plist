@@ -1,4 +1,5 @@
 %%DATADIR%%/data/glade/about_dialog.glade
+%%DATADIR%%/data/glade/appearance_prefs_pane.glade
 %%DATADIR%%/data/glade/collection_manager.glade
 %%DATADIR%%/data/glade/collection_panel.glade
 %%DATADIR%%/data/glade/cover_prefs_pane.glade
@@ -6,6 +7,7 @@
 %%DATADIR%%/data/glade/covermanager.glade
 %%DATADIR%%/data/glade/coverwindow.glade
 %%DATADIR%%/data/glade/device_manager.glade
+%%DATADIR%%/data/glade/device_panel.glade
 %%DATADIR%%/data/glade/files_panel.glade
 %%DATADIR%%/data/glade/general_prefs_pane.glade
 %%DATADIR%%/data/glade/main.glade
@@ -23,7 +25,18 @@
 %%DATADIR%%/data/images/exailelogo.png
 %%DATADIR%%/data/images/genre.png
 %%DATADIR%%/data/images/icon.png
-%%DATADIR%%/data/images/largeicon.png
+%%DATADIR%%/data/images/media-playlist-dynamic16.png
+%%DATADIR%%/data/images/media-playlist-dynamic22.png
+%%DATADIR%%/data/images/media-playlist-dynamic24.png
+%%DATADIR%%/data/images/media-playlist-dynamic32.png
+%%DATADIR%%/data/images/media-playlist-repeat16.png
+%%DATADIR%%/data/images/media-playlist-repeat22.png
+%%DATADIR%%/data/images/media-playlist-repeat24.png
+%%DATADIR%%/data/images/media-playlist-repeat32.png
+%%DATADIR%%/data/images/media-playlist-shuffle16.png
+%%DATADIR%%/data/images/media-playlist-shuffle22.png
+%%DATADIR%%/data/images/media-playlist-shuffle24.png
+%%DATADIR%%/data/images/media-playlist-shuffle32.png
 %%DATADIR%%/data/images/nocover.png
 %%DATADIR%%/data/images/playlist.png
 %%DATADIR%%/data/images/splash.png
@@ -31,6 +44,14 @@
 %%DATADIR%%/data/images/track.png
 %%DATADIR%%/data/images/trayicon.png
 %%DATADIR%%/data/images/year.png
+%%DATADIR%%/plugins/alarmclock/PLUGININFO
+%%DATADIR%%/plugins/alarmclock/__init__.py
+%%DATADIR%%/plugins/alarmclock/__init__.pyc
+%%DATADIR%%/plugins/alarmclock/__init__.pyo
+%%DATADIR%%/plugins/alarmclock/acprefs.py
+%%DATADIR%%/plugins/alarmclock/acprefs.pyc
+%%DATADIR%%/plugins/alarmclock/acprefs.pyo
+%%DATADIR%%/plugins/alarmclock/acprefs_pane.glade
 %%DATADIR%%/plugins/amazoncovers/PLUGININFO
 %%DATADIR%%/plugins/amazoncovers/__init__.py
 %%DATADIR%%/plugins/amazoncovers/__init__.pyc
@@ -52,10 +73,26 @@
 %%DATADIR%%/plugins/audioscrobbler/asprefs.pyc
 %%DATADIR%%/plugins/audioscrobbler/asprefs.pyo
 %%DATADIR%%/plugins/audioscrobbler/asprefs_pane.glade
+%%DATADIR%%/plugins/bookmarks/PLUGININFO
+%%DATADIR%%/plugins/bookmarks/__init__.py
+%%DATADIR%%/plugins/bookmarks/__init__.pyc
+%%DATADIR%%/plugins/bookmarks/__init__.pyo
+%%DATADIR%%/plugins/bookmarks/bookmarks_pane.glade
+%%DATADIR%%/plugins/bookmarks/bookmarksprefs.py
+%%DATADIR%%/plugins/bookmarks/bookmarksprefs.pyc
+%%DATADIR%%/plugins/bookmarks/bookmarksprefs.pyo
 %%DATADIR%%/plugins/cd/PLUGININFO
 %%DATADIR%%/plugins/cd/__init__.py
 %%DATADIR%%/plugins/cd/__init__.pyc
 %%DATADIR%%/plugins/cd/__init__.pyo
+%%DATADIR%%/plugins/desktopcover/PLUGININFO
+%%DATADIR%%/plugins/desktopcover/__init__.py
+%%DATADIR%%/plugins/desktopcover/__init__.pyc
+%%DATADIR%%/plugins/desktopcover/__init__.pyo
+%%DATADIR%%/plugins/desktopcover/prefs.py
+%%DATADIR%%/plugins/desktopcover/prefs.pyc
+%%DATADIR%%/plugins/desktopcover/prefs.pyo
+%%DATADIR%%/plugins/desktopcover/prefs.ui
 %%DATADIR%%/plugins/gnomemmkeys/PLUGININFO
 %%DATADIR%%/plugins/gnomemmkeys/__init__.py
 %%DATADIR%%/plugins/gnomemmkeys/__init__.pyc
@@ -64,6 +101,13 @@
 %%DATADIR%%/plugins/ipod/__init__.py
 %%DATADIR%%/plugins/ipod/__init__.pyc
 %%DATADIR%%/plugins/ipod/__init__.pyo
+%%DATADIR%%/plugins/lastfmcovers/PLUGININFO
+%%DATADIR%%/plugins/lastfmcovers/__init__.py
+%%DATADIR%%/plugins/lastfmcovers/__init__.pyc
+%%DATADIR%%/plugins/lastfmcovers/__init__.pyo
+%%DATADIR%%/plugins/lastfmcovers/test.py
+%%DATADIR%%/plugins/lastfmcovers/test.pyc
+%%DATADIR%%/plugins/lastfmcovers/test.pyo
 %%DATADIR%%/plugins/lastfmdynamic/PLUGININFO
 %%DATADIR%%/plugins/lastfmdynamic/__init__.py
 %%DATADIR%%/plugins/lastfmdynamic/__init__.pyc
@@ -114,6 +158,26 @@
 %%DATADIR%%/plugins/lastfmradio/xspf.py
 %%DATADIR%%/plugins/lastfmradio/xspf.pyc
 %%DATADIR%%/plugins/lastfmradio/xspf.pyo
+%%DATADIR%%/plugins/librivox/PLUGININFO
+%%DATADIR%%/plugins/librivox/__init__.py
+%%DATADIR%%/plugins/librivox/__init__.pyc
+%%DATADIR%%/plugins/librivox/__init__.pyo
+%%DATADIR%%/plugins/librivox/about_window.py
+%%DATADIR%%/plugins/librivox/about_window.pyc
+%%DATADIR%%/plugins/librivox/about_window.pyo
+%%DATADIR%%/plugins/librivox/book_icon.png
+%%DATADIR%%/plugins/librivox/clock.png
+%%DATADIR%%/plugins/librivox/ebook.png
+%%DATADIR%%/plugins/librivox/librivoxsearch.py
+%%DATADIR%%/plugins/librivox/librivoxsearch.pyc
+%%DATADIR%%/plugins/librivox/librivoxsearch.pyo
+%%DATADIR%%/plugins/lyricsfly/PLUGININFO
+%%DATADIR%%/plugins/lyricsfly/__init__.py
+%%DATADIR%%/plugins/lyricsfly/__init__.pyc
+%%DATADIR%%/plugins/lyricsfly/__init__.pyo
+%%DATADIR%%/plugins/lyricsfly/test.py
+%%DATADIR%%/plugins/lyricsfly/test.pyc
+%%DATADIR%%/plugins/lyricsfly/test.pyo
 %%DATADIR%%/plugins/lyricwiki/PLUGININFO
 %%DATADIR%%/plugins/lyricwiki/__init__.py
 %%DATADIR%%/plugins/lyricwiki/__init__.pyc
@@ -125,6 +189,38 @@
 %%DATADIR%%/plugins/massstorage/__init__.py
 %%DATADIR%%/plugins/massstorage/__init__.pyc
 %%DATADIR%%/plugins/massstorage/__init__.pyo
+%%DATADIR%%/plugins/moodbar/PLUGININFO
+%%DATADIR%%/plugins/moodbar/__init__.py
+%%DATADIR%%/plugins/moodbar/__init__.pyc
+%%DATADIR%%/plugins/moodbar/__init__.pyo
+%%DATADIR%%/plugins/mpris/PLUGININFO
+%%DATADIR%%/plugins/mpris/__init__.py
+%%DATADIR%%/plugins/mpris/__init__.pyc
+%%DATADIR%%/plugins/mpris/__init__.pyo
+%%DATADIR%%/plugins/mpris/exaile_mpris.py
+%%DATADIR%%/plugins/mpris/exaile_mpris.pyc
+%%DATADIR%%/plugins/mpris/exaile_mpris.pyo
+%%DATADIR%%/plugins/mpris/mpris_player.py
+%%DATADIR%%/plugins/mpris/mpris_player.pyc
+%%DATADIR%%/plugins/mpris/mpris_player.pyo
+%%DATADIR%%/plugins/mpris/mpris_root.py
+%%DATADIR%%/plugins/mpris/mpris_root.pyc
+%%DATADIR%%/plugins/mpris/mpris_root.pyo
+%%DATADIR%%/plugins/mpris/mpris_tag_converter.py
+%%DATADIR%%/plugins/mpris/mpris_tag_converter.pyc
+%%DATADIR%%/plugins/mpris/mpris_tag_converter.pyo
+%%DATADIR%%/plugins/mpris/mpris_tracklist.py
+%%DATADIR%%/plugins/mpris/mpris_tracklist.pyc
+%%DATADIR%%/plugins/mpris/mpris_tracklist.pyo
+%%DATADIR%%/plugins/mpris/test.py
+%%DATADIR%%/plugins/mpris/test.pyc
+%%DATADIR%%/plugins/mpris/test.pyo
+%%DATADIR%%/plugins/multialarmclock/PLUGININFO
+%%DATADIR%%/plugins/multialarmclock/__init__.py
+%%DATADIR%%/plugins/multialarmclock/__init__.pyc
+%%DATADIR%%/plugins/multialarmclock/__init__.pyo
+%%DATADIR%%/plugins/multialarmclock/alarmclk.glade
+%%DATADIR%%/plugins/multialarmclock/clock32.png
 %%DATADIR%%/plugins/notify/PLUGININFO
 %%DATADIR%%/plugins/notify/__init__.py
 %%DATADIR%%/plugins/notify/__init__.pyc
@@ -139,6 +235,32 @@
 %%DATADIR%%/plugins/notify/test.py
 %%DATADIR%%/plugins/notify/test.pyc
 %%DATADIR%%/plugins/notify/test.pyo
+%%DATADIR%%/plugins/notifyosd/PLUGININFO
+%%DATADIR%%/plugins/notifyosd/__init__.py
+%%DATADIR%%/plugins/notifyosd/__init__.pyc
+%%DATADIR%%/plugins/notifyosd/__init__.pyo
+%%DATADIR%%/plugins/notifyosd/notifyosd_cover.py
+%%DATADIR%%/plugins/notifyosd/notifyosd_cover.pyc
+%%DATADIR%%/plugins/notifyosd/notifyosd_cover.pyo
+%%DATADIR%%/plugins/notifyosd/notifyosdprefs.py
+%%DATADIR%%/plugins/notifyosd/notifyosdprefs.pyc
+%%DATADIR%%/plugins/notifyosd/notifyosdprefs.pyo
+%%DATADIR%%/plugins/notifyosd/notifyosdprefs_pane.glade
+%%DATADIR%%/plugins/notifyosd/test.py
+%%DATADIR%%/plugins/notifyosd/test.pyc
+%%DATADIR%%/plugins/notifyosd/test.pyo
+%%DATADIR%%/plugins/replaygain/PLUGININFO
+%%DATADIR%%/plugins/replaygain/__init__.py
+%%DATADIR%%/plugins/replaygain/__init__.pyc
+%%DATADIR%%/plugins/replaygain/__init__.pyo
+%%DATADIR%%/plugins/replaygain/replaygainprefs.py
+%%DATADIR%%/plugins/replaygain/replaygainprefs.pyc
+%%DATADIR%%/plugins/replaygain/replaygainprefs.pyo
+%%DATADIR%%/plugins/replaygain/replaygainprefs_pane.glade
+%%DATADIR%%/plugins/screensaverpause/PLUGININFO
+%%DATADIR%%/plugins/screensaverpause/__init__.py
+%%DATADIR%%/plugins/screensaverpause/__init__.pyc
+%%DATADIR%%/plugins/screensaverpause/__init__.pyo
 %%DATADIR%%/plugins/shoutcast/PLUGININFO
 %%DATADIR%%/plugins/shoutcast/__init__.py
 %%DATADIR%%/plugins/shoutcast/__init__.pyc
@@ -146,6 +268,18 @@
 %%DATADIR%%/plugins/shoutcast/test.py
 %%DATADIR%%/plugins/shoutcast/test.pyc
 %%DATADIR%%/plugins/shoutcast/test.pyo
+%%DATADIR%%/plugins/streamripper/PLUGININFO
+%%DATADIR%%/plugins/streamripper/__init__.py
+%%DATADIR%%/plugins/streamripper/__init__.pyc
+%%DATADIR%%/plugins/streamripper/__init__.pyo
+%%DATADIR%%/plugins/streamripper/srprefs.py
+%%DATADIR%%/plugins/streamripper/srprefs.pyc
+%%DATADIR%%/plugins/streamripper/srprefs.pyo
+%%DATADIR%%/plugins/streamripper/streamripper.glade
+%%DATADIR%%/plugins/tagcovers/PLUGININFO
+%%DATADIR%%/plugins/tagcovers/__init__.py
+%%DATADIR%%/plugins/tagcovers/__init__.pyc
+%%DATADIR%%/plugins/tagcovers/__init__.pyo
 %%NLS%%share/locale/an/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/exaile.mo
@@ -208,6 +342,7 @@
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/exaile.mo
 bin/exaile
+etc/xdg/exaile/settings.ini
 lib/exaile/exaile.py
 lib/exaile/xl/__init__.py
 lib/exaile/xl/__init__.pyc
@@ -290,9 +425,24 @@ lib/exaile/xl/metadata/wv.pyo
 lib/exaile/xl/nls.py
 lib/exaile/xl/nls.pyc
 lib/exaile/xl/nls.pyo
-lib/exaile/xl/player.py
-lib/exaile/xl/player.pyc
-lib/exaile/xl/player.pyo
+lib/exaile/xl/player/__init__.py
+lib/exaile/xl/player/__init__.pyc
+lib/exaile/xl/player/__init__.pyo
+lib/exaile/xl/player/_base.py
+lib/exaile/xl/player/_base.pyc
+lib/exaile/xl/player/_base.pyo
+lib/exaile/xl/player/engine_normal.py
+lib/exaile/xl/player/engine_normal.pyc
+lib/exaile/xl/player/engine_normal.pyo
+lib/exaile/xl/player/engine_unified.py
+lib/exaile/xl/player/engine_unified.pyc
+lib/exaile/xl/player/engine_unified.pyo
+lib/exaile/xl/player/pipe.py
+lib/exaile/xl/player/pipe.pyc
+lib/exaile/xl/player/pipe.pyo
+lib/exaile/xl/player/queue.py
+lib/exaile/xl/player/queue.pyc
+lib/exaile/xl/player/queue.pyo
 lib/exaile/xl/playlist.py
 lib/exaile/xl/playlist.pyc
 lib/exaile/xl/playlist.pyo
@@ -359,6 +509,9 @@ lib/exaile/xlgui/panel/__init__.pyo
 lib/exaile/xlgui/panel/collection.py
 lib/exaile/xlgui/panel/collection.pyc
 lib/exaile/xlgui/panel/collection.pyo
+lib/exaile/xlgui/panel/device.py
+lib/exaile/xlgui/panel/device.pyc
+lib/exaile/xlgui/panel/device.pyo
 lib/exaile/xlgui/panel/files.py
 lib/exaile/xlgui/panel/files.pyc
 lib/exaile/xlgui/panel/files.pyo
@@ -380,6 +533,9 @@ lib/exaile/xlgui/plugins.pyo
 lib/exaile/xlgui/prefs/__init__.py
 lib/exaile/xlgui/prefs/__init__.pyc
 lib/exaile/xlgui/prefs/__init__.pyo
+lib/exaile/xlgui/prefs/appearance_prefs.py
+lib/exaile/xlgui/prefs/appearance_prefs.pyc
+lib/exaile/xlgui/prefs/appearance_prefs.pyo
 lib/exaile/xlgui/prefs/cover_prefs.py
 lib/exaile/xlgui/prefs/cover_prefs.pyc
 lib/exaile/xlgui/prefs/cover_prefs.pyo
@@ -407,41 +563,57 @@ lib/exaile/xlgui/tray.pyo
 share/applications/exaile.desktop
 share/pixmaps/exaile.png
 @dirrmtry share/applications
+@dirrm etc/xdg/exaile
+@dirrm etc/xdg
 @dirrm lib/exaile/xlgui/prefs
 @dirrm lib/exaile/xlgui/panel
 @dirrm lib/exaile/xlgui
+@dirrm lib/exaile/xl/player
 @dirrm lib/exaile/xl/metadata
 @dirrm lib/exaile/xl
-@dirrm lib/exaile/lib
 @dirrm lib/exaile
+@dirrm %%DATADIR%%/plugins/tagcovers
+@dirrm %%DATADIR%%/plugins/streamripper
 @dirrm %%DATADIR%%/plugins/shoutcast
+@dirrm %%DATADIR%%/plugins/screensaverpause
+@dirrm %%DATADIR%%/plugins/replaygain
+@dirrm %%DATADIR%%/plugins/notifyosd
 @dirrm %%DATADIR%%/plugins/notify
+@dirrm %%DATADIR%%/plugins/multialarmclock
+@dirrm %%DATADIR%%/plugins/mpris
+@dirrm %%DATADIR%%/plugins/moodbar
 @dirrm %%DATADIR%%/plugins/massstorage
 @dirrm %%DATADIR%%/plugins/lyricwiki
+@dirrm %%DATADIR%%/plugins/lyricsfly
+@dirrm %%DATADIR%%/plugins/librivox
 @dirrm %%DATADIR%%/plugins/lastfmradio/data
 @dirrm %%DATADIR%%/plugins/lastfmradio
 @dirrm %%DATADIR%%/plugins/lastfmdynamic
+@dirrm %%DATADIR%%/plugins/lastfmcovers
 @dirrm %%DATADIR%%/plugins/ipod
 @dirrm %%DATADIR%%/plugins/gnomemmkeys
+@dirrm %%DATADIR%%/plugins/desktopcover
 @dirrm %%DATADIR%%/plugins/cd
+@dirrm %%DATADIR%%/plugins/bookmarks
 @dirrm %%DATADIR%%/plugins/audioscrobbler
 @dirrm %%DATADIR%%/plugins/amazoncovers
+@dirrm %%DATADIR%%/plugins/alarmclock
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/data/images
 @dirrm %%DATADIR%%/data/glade
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/an/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/an
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/frp
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tl
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/frp
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%NLS%%@dirrmtry share/locale/an/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/an
