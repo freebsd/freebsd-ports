@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ MAINTAINER=	cm@therek.net
 COMMENT=	Perl Application Development and Refactoring Environment
 
 BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
+		p5-Capture-Tiny>=0.06:${PORTSDIR}/devel/p5-Capture-Tiny \
 		${SITE_PERL}/Class/Adapter.pm:${PORTSDIR}/devel/p5-Class-Adapter \
 		${SITE_PERL}/Class/Unload.pm:${PORTSDIR}/devel/p5-Class-Unload \
 		${SITE_PERL}/Devel/Dumpvar.pm:${PORTSDIR}/devel/p5-Devel-Dumpvar \
@@ -27,10 +28,8 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/IPC/Cmd.pm:${PORTSDIR}/devel/p5-IPC-Cmd \
 		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Locale-Msgfmt>=0.14:${PORTSDIR}/devel/p5-Locale-Msgfmt \
-		${SITE_PERL}/Module/Inspector.pm:${PORTSDIR}/devel/p5-Module-Inspector \
 		${SITE_PERL}/Module/Refresh.pm:${PORTSDIR}/devel/p5-Module-Refresh \
 		${SITE_PERL}/Module/Starter.pm:${PORTSDIR}/devel/p5-Module-Starter \
 		${SITE_PERL}/ORLite.pm:${PORTSDIR}/databases/p5-ORLite \
