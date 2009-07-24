@@ -7,7 +7,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.0.${GEGL_MINOR}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.0/
 
@@ -20,13 +20,16 @@ OPTIONS=	CAIRO		"Enable Cairo" on \
 		FFMPEG		"Enable videos through ffmpeg" on \
 		GRAPHVIZ	"Enable Graphviz" on \
 		JPEG		"Enable JPEG format support" on \
+		LUA		"Enable LUA" on \
 		OPENEXR		"Enable High Dynamic Range (HDR) format support" on \
 		OPENRAW		"Enable RAW camera format support" on \
+		OPTIMIZE	"Enable optimizations autodetection (MMX, SSE)" off \
 		PANGO		"Enable rendering through Pango " on \
 		PNG		"Enable PNG format support" on \
 		RSVG		"Enable RSVG format support" on \
+		SDL		"Enable SDL" on \
 		SPIRO		"Enable Spiro" on \
-		SDL		"Enable SDL" on
+		V4L		"Enable Video4Linux" on
 
 USE_GNOME=	gtk20 glib20 pkgconfig gnomehack
 USE_BZIP2=	yes
@@ -35,10 +38,7 @@ USE_RUBY=	build
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.0
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--disable-sse \
-		--disable-mmx
 
 GEGL_MINOR=	22
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
@@ -78,6 +78,12 @@ CONFIGURE_ARGS+=--without-libjpeg
 PLIST_SUB+=	JPEG="@comment "
 .endif
 
+.if !defined(WITHOUT_LUA)
+USE_LUA=	5.1
+.else
+CONFIGURE_ARGS+=--without-lua
+.endif
+
 .if !defined(WITHOUT_OPENEXR)
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
 PLIST_SUB+=	OPENEXR=""
@@ -92,6 +98,11 @@ PLIST_SUB+=	OPENRAW=""
 .else
 CONFIGURE_ARGS+=--without-libopenraw
 PLIST_SUB+=	OPENRAW="@comment "
+.endif
+
+.if defined(WITHOUT_OPTIMIZE)
+CONFIGURE_ARGS+=--disable-mmx \
+		--disable-sse
 .endif
 
 .if !defined(WITHOUT_PANGO)
@@ -130,6 +141,14 @@ LIB_DEPENDS+=	spiro.0:${PORTSDIR}/graphics/libspiro
 CONFIGURE_ARGS+=--without-libspiro
 .endif
 
+.if !defined(WITHOUT_V4L)
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+PLIST_SUB+=	V4L=""
+.else
+CONFIGURE_ARGS+=--without-libv4l
+PLIST_SUB+=	V4L="@comment "
+.endif
+
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc
 .else
@@ -138,6 +157,7 @@ CONFIGURE_ARGS+=	--disable-docs
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-T||' ${WRKSRC}/docs/Makefile.am ${WRKSRC}/docs/Makefile.in
+	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g' ${WRKSRC}/configure
 
 post-build:
 .if !defined(NOPORTDOCS)

@@ -200,6 +200,8 @@ lib/gegl-0.0/tonemap.la
 lib/gegl-0.0/tonemap.so
 lib/gegl-0.0/unsharp-mask.la
 lib/gegl-0.0/unsharp-mask.so
+%%V4L%%lib/gegl-0.0/v4l.la
+%%V4L%%lib/gegl-0.0/v4l.so
 lib/gegl-0.0/value-invert.la
 lib/gegl-0.0/value-invert.so
 lib/gegl-0.0/whitebalance.la
@@ -259,8 +261,8 @@ libdata/pkgconfig/gegl.pc
 @dirrm include/gegl-0.0
 @dirrm lib/gegl-0.0
 %%PORTDOCS%%@dirrm share/gtk-doc/html/gegl
-%%PORTDOCS%%@dirrm share/gtk-doc/html
-%%PORTDOCS%%@dirrm share/gtk-doc
+%%PORTDOCS%%@dirrmtry share/gtk-doc/html
+%%PORTDOCS%%@dirrmtry share/gtk-doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/gallery
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
