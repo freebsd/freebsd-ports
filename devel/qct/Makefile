@@ -7,10 +7,10 @@
 
 PORTNAME=	qct
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://qct.sourceforge.net/ \
 		ftp://ftp.ipt.ru/pub/download/${PORTNAME}/
-WRKSRC=		${WRKDIR}/qct
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	QCT GUI commit tool
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
+WRKSRC=		${WRKDIR}/qct
 
 post-install:
 .if !defined(NOPORTDOCS)
