@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://dpw.threerings.net/projects/ipmi-kmod/
 
-MAINTAINER=	snb@threerings.net
+MAINTAINER=	snb@FreeBSD.org
 COMMENT=	Backport of ipmi driver from FreeBSD 7-CURRENT for FreeBSD 5.3 - 6.1
 
 SUB_FILES=	pkg-install pkg-deinstall

@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://dpw.threerings.net/projects/openvpn-auth-ldap/
 DISTNAME=	auth-ldap-${PORTVERSION}
 
-MAINTAINER=	snb@threerings.net
+MAINTAINER=	snb@FreeBSD.org
 COMMENT=	LDAP authentication plugin for OpenVPN
 
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c \
