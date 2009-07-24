@@ -8,6 +8,7 @@
 
 PORTNAME=	findlib
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -33,16 +34,6 @@ PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 MAN1=	ocamlfind.1
 MAN5=	META.5 findlib.conf.5 site-lib.5
 
-.if !exists(${LOCALBASE}/lib/ocaml/site-lib/labltk)
-WITHOUT_TK=	yes
-.endif
-
-.if defined(WITHOUT_TK)
-PLIST_SUB+=	TK="@comment "
-.else
-PLIST_SUB+=	TK=""
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's,(${PATTERN}+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \3,' \
@@ -60,4 +51,16 @@ post-install:
 	"! -regex .*ref-man.*")
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !exists(${LOCALBASE}/lib/ocaml/labltk)
+WITHOUT_TK=	yes
+.endif
+
+.if defined(WITHOUT_TK)
+PLIST_SUB+=	TK="@comment "
+.else
+PLIST_SUB+=	TK=""
+.endif
+
+.include <bsd.port.post.mk>
