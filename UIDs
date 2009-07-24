@@ -142,6 +142,7 @@ puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/sbin/nologin
 openacs:*:820:820::0:0:OpenACS Daemon User:/nonexistent:/usr/sbin/nologin
 dotlrn:*:821:821::0:0:.LRN Daemon User:/nonexistent:/usr/sbin/nologin
 netdisco:*:840:840::0:0:netdisco daemon:/nonexistent:/usr/sbin/nologin
+fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash
 bacula:*:910:910::0:0:Bacula Daemon:/var/db/bacula:/usr/sbin/nologin
 iserv:*:911:911::0:0:Iserv Daemon:/nonexistent:/usr/sbin/nologin
 _sj3:*:912:912::0:0:SJ3 Daemon:/nonexistent:/usr/sbin/nologin
