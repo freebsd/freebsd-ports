@@ -17,9 +17,9 @@ COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	\
 	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-	p5-Class-MOP>=0.83:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.89:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
+	p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 	p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
 	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
