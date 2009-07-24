@@ -1,0 +1,100 @@
+--- common/fo-postinstall.in.orig	2009-07-13 21:51:17.000000000 +0000
++++ common/fo-postinstall.in	2009-07-15 00:37:37.000000000 +0000
+@@ -8,22 +8,15 @@
+ # right thing, regardless of the success of previous runs.
+ 
+ ## Options parsing and setup
+-# parse options
+-OPTS=`getopt -o adwseoh --long agent,database,web,web-only,scheduler,scheduler-only,everything,overwrite,help -n 'fo-postinstall' -- "$@"`
+ 
+-if [ $? != 0 ]; then
+-   echo "ERROR: Bad option specified."
+-   OPTS="--help"
+-fi
+-
+-eval set -- "$OPTS"
++# FIXME: joint options do not work (i.e. "-as" instead of "-a -s")
+ 
+ # if no options or just -o then do everything
+-if [ "$OPTS" = " --" -o "$OPTS" = " -o --" ]; then
++if [ $# -eq 0 -o "$1" = "-o" ]; then
+    EVERYTHING=1
+ fi
+ 
+-while true; do
++while [ $# -gt 0 ]; do
+    case "$1" in
+       -a|--agent) AGENT=1; shift;;
+       -d|--database) DATABASE=1; shift;;
+@@ -105,15 +98,10 @@
+    echo "*** Creating user and group ***"
+ 
+    # check for group
+-   if grep -q "^{$PROJECTGROUP}:" /etc/group; then
++   if pw groupshow {$PROJECTGROUP} 2>/dev/null 1>&2; then
+       echo "NOTE: group '{$PROJECTGROUP}' already exists, good."
+    else
+-      # use addgroup if it exists since it supports --system
+-      if [ -f /usr/sbin/addgroup -a ! -L /usr/sbin/addgroup ]; then
+-         addgroup --system {$PROJECTGROUP}
+-      else
+-         groupadd {$PROJECTGROUP}
+-      fi
++      pw groupadd {$PROJECTGROUP} -g 901
+       if [ "$?" != "0" ] ; then
+          echo "ERROR: Unable to create group '{$PROJECTGROUP}'"
+          exit 1
+@@ -123,25 +111,18 @@
+    fi
+ 
+    # check for user
+-   if grep -q "^{$PROJECTUSER}:" /etc/passwd; then
++   if pw usershow {$PROJECTUSER} 2>/dev/null 1>&2; then
+       echo "NOTE: user '{$PROJECTUSER}' already exists, good."
+       USERSHELL=`grep "^{$PROJECTUSER}:" /etc/passwd |cut -d: -f 7`
+-      if [ "$USERSHELL" = "/bin/false" ]; then
++      if [ "$USERSHELL" = "/usr/sbin/nologin" ]; then
+          echo "ERROR: {$PROJECTUSER} shell must be a real shell"
+          exit 1
+       fi
+    else
+       # ensure that the full parent path of the HOME exists first
+       mkdir -p $\{REPO%/*/*\}
+-      # use adduser if it exists since it supports --system, but
+-      # not if it's a symlink (probably to /usr/sbin/useradd)
+-      if [ -f /usr/sbin/adduser -a ! -L /usr/sbin/adduser ]; then
+-         adduser --gecos "{$PROJECT}" --ingroup {$PROJECTGROUP} --system \
+-           --shell /bin/bash --home "$\{REPO%/*\}" {$PROJECTUSER}
+-      else
+-         useradd -c "{$PROJECT}" -g {$PROJECTGROUP} -m \
+-           -s /bin/bash -d "$\{REPO%/*\}" {$PROJECTUSER}
+-      fi
++      pw useradd {$PROJECTUSER} -u 901 -g {$PROJECTGROUP} -h - \
++          -s "/bin/bash" -d "$\{REPO%/*\}" -c "FOSSology user"
+       if [ "$?" != "0" ] ; then
+          echo "ERROR: Unable to create user '{$PROJECTUSER}'"
+          exit 1
+@@ -284,19 +265,12 @@
+    echo "*** Setting up the web interface ***"
+ 
+    # See if web server user exists, if so add to the group.
+-   # check for www-data (Debian, etc)
+-   grep -q "^www-data:" /etc/passwd
+-   if [ $? == 0 ] ; then
+-     echo "NOTE: Adding user www-data to group {$PROJECTGROUP}"
+-     # this is smart enough to not add multiple times so it's ok to repeat
+-     usermod -G {$PROJECTGROUP} -a www-data
+-   fi
+-   # check for apache (RHEL/CentOS, etc)
+-   grep -q "^apache:" /etc/passwd
++   # check for www (FreeBSD)
++   grep -q "^www:" /etc/passwd
+    if [ $? == 0 ] ; then
+-     echo "NOTE: Adding user apache to group {$PROJECTGROUP}"
++     echo "NOTE: Adding user www to group {$PROJECTGROUP}"
+      # this is smart enough to not add multiple times so it's ok to repeat
+-     usermod -G {$PROJECTGROUP} -a apache
++     pw groupmod {$PROJECTGROUP} -m www
+    fi
+ 
+ fi # end of WEBONLY

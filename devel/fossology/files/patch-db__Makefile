@@ -1,0 +1,17 @@
+--- ./db/Makefile.orig	2008-11-21 18:23:31.000000000 -0200
++++ ./db/Makefile	2009-07-23 01:39:18.000000000 -0300
+@@ -16,14 +16,6 @@
+ install: all
+ 	$(INSTALL_DATA) fossologyinit.sql $(DESTDIR)$(LIBEXECDIR)/fossologyinit.sql
+ 	$(INSTALL_PROGRAM) dbcreate $(DESTDIR)$(LIBEXECDIR)/dbcreate
+-	@if [ ! -f "$(DESTDIR)/etc/cron.d/fossology" -o "$(OVERWRITE)" ]; then \
+-	   mkdir -p $(DESTDIR)/etc/cron.d/; \
+-	   echo "NOTE: using default version for $(DESTDIR)/etc/cron.d/fossology"; \
+-	   $(INSTALL_DATA) db.cron $(DESTDIR)/etc/cron.d/fossology; \
+-	else \
+-	   echo "WARNING: $(DESTDIR)/etc/cron.d/fossology already exists."; \
+-	   echo "  Not overwriting, consider checking it by hand or use the OVERWRITE option."; \
+-	fi
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(LIBEXECDIR)/fossologyinit.sql

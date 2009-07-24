@@ -1,0 +1,24 @@
+--- ./common/Makefile.orig	2008-12-03 22:32:36.000000000 +0000
++++ ./common/Makefile	2009-06-12 02:31:54.000000000 +0000
+@@ -28,17 +28,17 @@
+ 	fi
+ 
+ 	@for file in $(CONFFILES); do \
+-		if [ ! -f $(DESTDIR)$(CONFPATH)/$$file -o "$(OVERWRITE)" ] ; then \
++		if [ ! -f $(DESTDIR)$(CONFPATH)/$${file}.sample -o "$(OVERWRITE)" ] ; then \
+ 			echo "NOTE: using default version for $(DESTDIR)$(CONFPATH)/$$file"; \
+-		 	$(INSTALL_DATA) defconf/$$file $(DESTDIR)$(CONFPATH)/$$file; \
++		 	$(INSTALL_DATA) defconf/$$file $(DESTDIR)$(CONFPATH)/$${file}.sample; \
+ 		else \
+ 			echo "WARNING: $(DESTDIR)$(CONFPATH)/$$file already exists."; \
+ 			echo "  Not overwriting, consider checking it by hand or use the OVERWRITE option."; \
+ 		fi \
+ 	done
+-	if [ ! -f $(DESTDIR)$(CONFPATH)/Db.conf -o "$(OVERWRITE)" ] ; then \
++	if [ ! -f $(DESTDIR)$(CONFPATH)/Db.conf.sample -o "$(OVERWRITE)" ] ; then \
+ 		echo "NOTE: using default version for $(DESTDIR)$(CONFPATH)/Db.conf"; \
+-	 	$(INSTALL) -m 660 defconf/Db.conf $(DESTDIR)$(CONFPATH)/Db.conf; \
++	 	$(INSTALL) -m 660 defconf/Db.conf $(DESTDIR)$(CONFPATH)/Db.conf.sample; \
+ 	else \
+ 		echo "WARNING: $(DESTDIR)$(CONFPATH)/Db.conf already exists."; \
+ 		echo "  Not overwriting, consider checking it by hand or use the OVERWRITE option."; \

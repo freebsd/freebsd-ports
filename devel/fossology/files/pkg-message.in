@@ -1,0 +1,58 @@
+==============================================================================
+FOSSology has been installed!
+
+The following is a quick setup guide, for more information see the
+documentation available at "%%DOCSDIR%%".
+
+1. Install PostgreSQL server: initialize database and start the daemon.
+
+2. Increase shared memory limit, by running:
+   # sysctl kern.ipc.shmmax=512000000
+
+   And to make the change persistent add this line to /etc/sysctl.conf:
+   kern.ipc.shmmax=512000000
+
+3. Configure PHP: put the following in your php.ini file:
+
+   max_execution_time = 90
+   memory_limit = 702M
+   post_max_size = 701M
+   upload_max_filesize = 700M
+
+4. Configure Apache, add the following to your httpd.conf:
+
+   Alias /repo/ %%DATADIR%%/www/
+   <Directory "%%DATADIR%%/www">
+     AllowOverride None
+     Options FollowSymLinks MultiViews
+     Order allow,deny
+     Allow from all
+     # uncomment to turn on php error reporting
+     #php_flag display_errors on
+     #php_value error_reporting 2039
+   </Directory>
+
+5. Add the following to a robots.txt file to avoid them to index the site:
+
+   User-agent: *
+   Disallow: /repo
+
+6. Run the post installation setup script:
+
+   # %%PREFIX%%/lib/fossology/fo-postinstall
+
+   IMPORTANT: if you have the web server running, you must restart it
+   because the "www" user has been added to the "fossy" group. Without
+   this you will get a "Permission denied" when accessing
+   "http://localhost/repo/".
+
+7. Enable at startup, add the following line to /etc/rc.conf:
+
+   fossology_enable="YES"
+
+   To start now use this additional command (requires previous, at least
+   you use "forcestart" instead of "start"):
+
+   # %%PREFIX%%/etc/rc.d/fossology start
+
+==============================================================================

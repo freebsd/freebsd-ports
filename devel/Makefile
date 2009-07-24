@@ -354,6 +354,7 @@
     SUBDIR += fnorb
     SUBDIR += fortran-utils
     SUBDIR += fortytwo-encore
+    SUBDIR += fossology
     SUBDIR += fpc-bfd
     SUBDIR += fpc-fcl-async
     SUBDIR += fpc-fcl-base

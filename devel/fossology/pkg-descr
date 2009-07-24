@@ -1,0 +1,24 @@
+The FOSSology project started out as an internal development effort at Hewlett
+Packard Company (HP). As part of HP's own internal IT governance process, we
+needed a tool that would quickly and accurately describe how a given open
+source project was licensed. Rather than simply collecting a project's
+advertised license (as given at their website or in their documentation), this
+tool needed to analyze all of the source code for a given project and
+intelligently report all of the licenses being used, based on the license
+declarations and tell-tale phrases that identify software licensing.
+
+Thus was born FOSSology - "The study of FOSS." As development progressed, we
+quickly realized that the analysis of open source licensing was only one
+application of what was quickly becoming a valuable general-purpose software
+data mining framework.
+
+HP understands the broad value of these tools for helping IT organizations to
+confidently adopt open source software, as well as to uncover what open source
+software is being used within their environments. Furthermore, we believe this
+tool will be helpful for open source developers and distributors to build a
+thorough licensing picture of the projects and packages they produce. Thus it
+is being provided to the broader FOSS community with the intent of building a
+vibrant, open community of users and contributors who will help make the
+framework and the agents as valuable as possible.
+
+WWW: http://fossology.org/
