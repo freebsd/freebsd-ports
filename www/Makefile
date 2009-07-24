@@ -1758,6 +1758,7 @@
     SUBDIR += yahoo-ui
     SUBDIR += yanopaste
     SUBDIR += yaws
+    SUBDIR += yii
     SUBDIR += youtube_dl
     SUBDIR += yuicompressor
     SUBDIR += zend-framework

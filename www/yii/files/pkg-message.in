@@ -1,0 +1,13 @@
+
+***************************************************************
+Now you need to adjust PHP's include_path to contain
+	`%%DATADIR%%/framework'
+
+For example, insert:
+        include_path = ".:%%DATADIR%%/framework"
+
+into `%%LOCALBASE%%/etc/php.ini'.
+
+For more general information about the Yii, please
+visit: http://www.yiiframework.com/
+***************************************************************
