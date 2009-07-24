@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://dpw.threerings.net/projects/farbot/
 DISTNAME=	farbot-1.0-beta2
 
-MAINTAINER=	snb@threerings.net
+MAINTAINER=	snb@FreeBSD.org
 COMMENT=	FreeBSD Automated Release Bot
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	SF
 
-MAINTAINER=	snb@threerings.net
+MAINTAINER=	snb@FreeBSD.org
 COMMENT=	OpenSSL-based signcode utility
 
 PLIST_FILES=	bin/osslsigncode
