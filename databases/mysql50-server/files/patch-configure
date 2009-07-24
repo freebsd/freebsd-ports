@@ -1,15 +1,6 @@
 --- configure.orig	Thu Jul 27 20:53:44 2006
 +++ configure	Thu Aug 10 10:16:48 2006
-@@ -20093,8 +20093,6 @@
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
- 
--# Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
- 
- # Prevent multiple expansion
- 
-@@ -25651,8 +25649,8 @@
+@@ -25651,8 +25651,8 @@
  # Some system specific hacks
  #
  
