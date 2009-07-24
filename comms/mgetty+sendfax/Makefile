@@ -7,7 +7,7 @@
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.35
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
