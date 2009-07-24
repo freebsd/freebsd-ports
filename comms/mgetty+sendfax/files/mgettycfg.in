@@ -19,7 +19,7 @@ foreach (keys(%var)) {
 }
 
 $a = 1;
-$devices = $var{'ports'} ? $var{'ports'} : "cuaa1";
+$devices = $var{'ports'} ? $var{'ports'} : "cuad1";
 while ($a) {
     $devices = &ask ("list of devices", $devices);
 
