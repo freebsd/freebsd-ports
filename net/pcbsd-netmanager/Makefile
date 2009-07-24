@@ -16,6 +16,8 @@ COMMENT=	PC-BSD Networking Utilities for KDE4
 
 LIB_DEPENDS=	pcbsd.0:${PORTSDIR}/sysutils/libpcbsd
 
+BROKEN=		does not link
+
 WRKSRC=		${WRKDIR}/pcbsd-netmanager
 
 USE_GZIP=	yes
