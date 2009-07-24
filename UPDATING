@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090724:
+  AFFECTS: users of www/rubygem-rails
+  AUTHOR: pgollucci@FreeBSD.org
+
+  Rails has been updated to 2.3.3. As always make sure you check the changes
+     http://weblog.rubyonrails.org/
+
 20090720:
   AFFECTS: users of net/openldap24-{client,server}
   AUTHOR: delphij@FreeBSD.org
