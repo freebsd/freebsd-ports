@@ -1,0 +1,1531 @@
+@comment $FreeBSD$
+bin/yiic
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/assets/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/css/main.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/.htaccess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/commands/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/commands/shell/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/Portlet.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/RecentComments.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/TagCloud.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/UserIdentity.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/UserLogin.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/UserMenu.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/views/recentComments.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/views/tagCloud.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/views/userLogin.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/components/views/userMenu.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/config/console.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/config/main.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/config/params.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/controllers/CommentController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/controllers/PostController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/data/blog.db
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/data/schema.mssql.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/data/schema.mysql.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/data/schema.sqlite.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/extensions/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/messages/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/models/Comment.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/models/LoginForm.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/models/Post.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/models/Tag.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/models/User.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/runtime/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/comment/_form.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/comment/_list.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/comment/list.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/comment/update.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/layouts/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/layouts/main.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/post/_form.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/post/_post.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/post/admin.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/post/create.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/post/list.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/post/show.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/post/update.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/system/error.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/system/error403.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/views/system/error404.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/yiic
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/yiic.bat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/themes/classic/css/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/themes/classic/views/.htaccess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/themes/classic/views/layouts/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/themes/classic/views/site/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/themes/classic/views/system/.yii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/assets/empty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/.htaccess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/config/main.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/controllers/GameController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/controllers/words.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/runtime/empty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/views/game/guess.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/views/game/lose.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/views/game/play.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/views/game/win.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hangman/protected/views/layouts/main.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/helloworld/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/helloworld/protected/.htaccess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/helloworld/protected/controllers/SiteController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/.actionScriptProperties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/.flexProperties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/.project
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/.settings/com.adobe.flexbuilder.project.prefs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/.settings/org.eclipse.core.resources.prefs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/bin/AC_OETags.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/bin/history/history.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/bin/history/history.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/bin/history/historyFrame.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/bin/phonebook.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/bin/phonebook.swf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/bin/playerProductInstall.swf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/html-template/AC_OETags.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/html-template/history/history.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/html-template/history/history.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/html-template/history/historyFrame.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/html-template/index.template.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/html-template/playerProductInstall.swf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/flex/phonebook.mxml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/protected/.htaccess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/protected/components/UserIdentity.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/protected/config/main.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/protected/controllers/SiteController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/protected/data/phonebook.db
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/protected/data/schema.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/protected/models/Contact.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/phonebook/protected/views/site/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/css/main.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/.htaccess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/bg/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/config.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/de/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/de_de/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/es/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/fr/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/he/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/hu/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/id/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/it/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/ja/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/nl/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/no/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/pl/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/pt/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/ro/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/ru/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/sv/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/vi/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/zh_cn/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/zh_tw/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/.htaccess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/de/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/de_de/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/es/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/fr/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/he/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error400.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error401.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error404.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error500.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error503.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/exception.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/log-firebug.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/log.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/profile-callstack-firebug.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/profile-callstack.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/profile-summary-firebug.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/profile-summary.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ja/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/no/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/pt/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ro/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ru/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/sv/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/zh/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/zh_cn/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/zh_tw/index.php
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/zh_tw
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/zh_cn
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/zh
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/sv
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ru
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ro
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/pt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/no
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ja
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/id
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/he
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/fr
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/es
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/de_de
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/de
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/zh_tw
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/zh_cn
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/vi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/sv
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ru
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ro
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/pt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/no
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/nl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ja
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/it
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/id
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/hu
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/he
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/fr
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/es
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/de_de
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/de
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/bg
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/views/site
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/views
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/models
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/components
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/html-template/history
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/html-template
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/bin/history
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/bin
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/.settings
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/helloworld/protected/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/helloworld/protected
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/helloworld
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/views/layouts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/views/game
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/views
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/runtime
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/assets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes/classic/views/system
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes/classic/views/site
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes/classic/views/layouts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes/classic/views
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes/classic/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes/classic
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views/system
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views/post
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views/layouts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views/comment
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/runtime
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/models
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/messages
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/extensions
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/components/views
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/components
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/commands/shell
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/commands
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/assets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/framework/.htaccess
+%%DATADIR%%/framework/YiiBase.php
+%%DATADIR%%/framework/base/CApplication.php
+%%DATADIR%%/framework/base/CApplicationComponent.php
+%%DATADIR%%/framework/base/CBehavior.php
+%%DATADIR%%/framework/base/CComponent.php
+%%DATADIR%%/framework/base/CErrorEvent.php
+%%DATADIR%%/framework/base/CErrorHandler.php
+%%DATADIR%%/framework/base/CException.php
+%%DATADIR%%/framework/base/CExceptionEvent.php
+%%DATADIR%%/framework/base/CHttpException.php
+%%DATADIR%%/framework/base/CModel.php
+%%DATADIR%%/framework/base/CModelBehavior.php
+%%DATADIR%%/framework/base/CModelEvent.php
+%%DATADIR%%/framework/base/CModule.php
+%%DATADIR%%/framework/base/CSecurityManager.php
+%%DATADIR%%/framework/base/CStatePersister.php
+%%DATADIR%%/framework/base/interfaces.php
+%%DATADIR%%/framework/caching/CApcCache.php
+%%DATADIR%%/framework/caching/CCache.php
+%%DATADIR%%/framework/caching/CDbCache.php
+%%DATADIR%%/framework/caching/CDummyCache.php
+%%DATADIR%%/framework/caching/CEAcceleratorCache.php
+%%DATADIR%%/framework/caching/CFileCache.php
+%%DATADIR%%/framework/caching/CMemCache.php
+%%DATADIR%%/framework/caching/CXCache.php
+%%DATADIR%%/framework/caching/CZendDataCache.php
+%%DATADIR%%/framework/caching/dependencies/CCacheDependency.php
+%%DATADIR%%/framework/caching/dependencies/CChainedCacheDependency.php
+%%DATADIR%%/framework/caching/dependencies/CDbCacheDependency.php
+%%DATADIR%%/framework/caching/dependencies/CDirectoryCacheDependency.php
+%%DATADIR%%/framework/caching/dependencies/CExpressionDependency.php
+%%DATADIR%%/framework/caching/dependencies/CFileCacheDependency.php
+%%DATADIR%%/framework/caching/dependencies/CGlobalStateCacheDependency.php
+%%DATADIR%%/framework/cli/commands/MessageCommand.php
+%%DATADIR%%/framework/cli/commands/ShellCommand.php
+%%DATADIR%%/framework/cli/commands/WebAppCommand.php
+%%DATADIR%%/framework/cli/commands/shell/ControllerCommand.php
+%%DATADIR%%/framework/cli/commands/shell/CrudCommand.php
+%%DATADIR%%/framework/cli/commands/shell/HelpCommand.php
+%%DATADIR%%/framework/cli/commands/shell/ModelCommand.php
+%%DATADIR%%/framework/cli/commands/shell/ModuleCommand.php
+%%DATADIR%%/framework/cli/runtime/.yii
+%%DATADIR%%/framework/cli/views/shell/controller/controller.php
+%%DATADIR%%/framework/cli/views/shell/controller/view.php
+%%DATADIR%%/framework/cli/views/shell/crud/_form.php
+%%DATADIR%%/framework/cli/views/shell/crud/admin.php
+%%DATADIR%%/framework/cli/views/shell/crud/controller.php
+%%DATADIR%%/framework/cli/views/shell/crud/create.php
+%%DATADIR%%/framework/cli/views/shell/crud/list.php
+%%DATADIR%%/framework/cli/views/shell/crud/show.php
+%%DATADIR%%/framework/cli/views/shell/crud/update.php
+%%DATADIR%%/framework/cli/views/shell/model/model.php
+%%DATADIR%%/framework/cli/views/shell/module/components/.yii
+%%DATADIR%%/framework/cli/views/shell/module/controllers/DefaultController.php
+%%DATADIR%%/framework/cli/views/shell/module/models/.yii
+%%DATADIR%%/framework/cli/views/shell/module/module.php
+%%DATADIR%%/framework/cli/views/shell/module/views/default/index.php
+%%DATADIR%%/framework/cli/views/shell/module/views/layouts/.yii
+%%DATADIR%%/framework/cli/views/webapp/assets/.yii
+%%DATADIR%%/framework/cli/views/webapp/css/bg.gif
+%%DATADIR%%/framework/cli/views/webapp/css/form.css
+%%DATADIR%%/framework/cli/views/webapp/css/main.css
+%%DATADIR%%/framework/cli/views/webapp/images/.yii
+%%DATADIR%%/framework/cli/views/webapp/index.php
+%%DATADIR%%/framework/cli/views/webapp/protected/.htaccess
+%%DATADIR%%/framework/cli/views/webapp/protected/commands/shell/.yii
+%%DATADIR%%/framework/cli/views/webapp/protected/components/MainMenu.php
+%%DATADIR%%/framework/cli/views/webapp/protected/components/UserIdentity.php
+%%DATADIR%%/framework/cli/views/webapp/protected/components/views/mainMenu.php
+%%DATADIR%%/framework/cli/views/webapp/protected/config/console.php
+%%DATADIR%%/framework/cli/views/webapp/protected/config/main.php
+%%DATADIR%%/framework/cli/views/webapp/protected/controllers/SiteController.php
+%%DATADIR%%/framework/cli/views/webapp/protected/extensions/.yii
+%%DATADIR%%/framework/cli/views/webapp/protected/messages/.yii
+%%DATADIR%%/framework/cli/views/webapp/protected/models/ContactForm.php
+%%DATADIR%%/framework/cli/views/webapp/protected/models/LoginForm.php
+%%DATADIR%%/framework/cli/views/webapp/protected/runtime/.yii
+%%DATADIR%%/framework/cli/views/webapp/protected/views/layouts/main.php
+%%DATADIR%%/framework/cli/views/webapp/protected/views/site/contact.php
+%%DATADIR%%/framework/cli/views/webapp/protected/views/site/index.php
+%%DATADIR%%/framework/cli/views/webapp/protected/views/site/login.php
+%%DATADIR%%/framework/cli/views/webapp/protected/views/system/.yii
+%%DATADIR%%/framework/cli/views/webapp/protected/yiic
+%%DATADIR%%/framework/cli/views/webapp/protected/yiic.bat
+%%DATADIR%%/framework/cli/views/webapp/protected/yiic.php
+%%DATADIR%%/framework/cli/views/webapp/themes/classic/views/.htaccess
+%%DATADIR%%/framework/cli/views/webapp/themes/classic/views/layouts/.yii
+%%DATADIR%%/framework/cli/views/webapp/themes/classic/views/site/.yii
+%%DATADIR%%/framework/cli/views/webapp/themes/classic/views/system/.yii
+%%DATADIR%%/framework/collections/CAttributeCollection.php
+%%DATADIR%%/framework/collections/CConfiguration.php
+%%DATADIR%%/framework/collections/CList.php
+%%DATADIR%%/framework/collections/CListIterator.php
+%%DATADIR%%/framework/collections/CMap.php
+%%DATADIR%%/framework/collections/CMapIterator.php
+%%DATADIR%%/framework/collections/CQueue.php
+%%DATADIR%%/framework/collections/CQueueIterator.php
+%%DATADIR%%/framework/collections/CStack.php
+%%DATADIR%%/framework/collections/CStackIterator.php
+%%DATADIR%%/framework/collections/CTypedList.php
+%%DATADIR%%/framework/console/CConsoleApplication.php
+%%DATADIR%%/framework/console/CConsoleCommand.php
+%%DATADIR%%/framework/console/CConsoleCommandRunner.php
+%%DATADIR%%/framework/console/CHelpCommand.php
+%%DATADIR%%/framework/db/CDbCommand.php
+%%DATADIR%%/framework/db/CDbConnection.php
+%%DATADIR%%/framework/db/CDbDataReader.php
+%%DATADIR%%/framework/db/CDbException.php
+%%DATADIR%%/framework/db/CDbTransaction.php
+%%DATADIR%%/framework/db/ar/CActiveFinder.php
+%%DATADIR%%/framework/db/ar/CActiveRecord.php
+%%DATADIR%%/framework/db/ar/CActiveRecordBehavior.php
+%%DATADIR%%/framework/db/schema/CDbColumnSchema.php
+%%DATADIR%%/framework/db/schema/CDbCommandBuilder.php
+%%DATADIR%%/framework/db/schema/CDbCriteria.php
+%%DATADIR%%/framework/db/schema/CDbExpression.php
+%%DATADIR%%/framework/db/schema/CDbSchema.php
+%%DATADIR%%/framework/db/schema/CDbTableSchema.php
+%%DATADIR%%/framework/db/schema/mssql/CMssqlColumnSchema.php
+%%DATADIR%%/framework/db/schema/mssql/CMssqlCommandBuilder.php
+%%DATADIR%%/framework/db/schema/mssql/CMssqlPdoAdapter.php
+%%DATADIR%%/framework/db/schema/mssql/CMssqlSchema.php
+%%DATADIR%%/framework/db/schema/mssql/CMssqlTableSchema.php
+%%DATADIR%%/framework/db/schema/mysql/CMysqlColumnSchema.php
+%%DATADIR%%/framework/db/schema/mysql/CMysqlSchema.php
+%%DATADIR%%/framework/db/schema/mysql/CMysqlTableSchema.php
+%%DATADIR%%/framework/db/schema/oci/COciColumnSchema.php
+%%DATADIR%%/framework/db/schema/oci/COciCommandBuilder.php
+%%DATADIR%%/framework/db/schema/oci/COciSchema.php
+%%DATADIR%%/framework/db/schema/oci/COciTableSchema.php
+%%DATADIR%%/framework/db/schema/pgsql/CPgsqlColumnSchema.php
+%%DATADIR%%/framework/db/schema/pgsql/CPgsqlSchema.php
+%%DATADIR%%/framework/db/schema/pgsql/CPgsqlTableSchema.php
+%%DATADIR%%/framework/db/schema/sqlite/CSqliteColumnSchema.php
+%%DATADIR%%/framework/db/schema/sqlite/CSqliteCommandBuilder.php
+%%DATADIR%%/framework/db/schema/sqlite/CSqliteSchema.php
+%%DATADIR%%/framework/i18n/CChoiceFormat.php
+%%DATADIR%%/framework/i18n/CDateFormatter.php
+%%DATADIR%%/framework/i18n/CDbMessageSource.php
+%%DATADIR%%/framework/i18n/CGettextMessageSource.php
+%%DATADIR%%/framework/i18n/CLocale.php
+%%DATADIR%%/framework/i18n/CMessageSource.php
+%%DATADIR%%/framework/i18n/CNumberFormatter.php
+%%DATADIR%%/framework/i18n/CPhpMessageSource.php
+%%DATADIR%%/framework/i18n/data/README.txt
+%%DATADIR%%/framework/i18n/data/aa.php
+%%DATADIR%%/framework/i18n/data/aa_dj.php
+%%DATADIR%%/framework/i18n/data/aa_er.php
+%%DATADIR%%/framework/i18n/data/aa_er_saaho.php
+%%DATADIR%%/framework/i18n/data/aa_et.php
+%%DATADIR%%/framework/i18n/data/af.php
+%%DATADIR%%/framework/i18n/data/af_na.php
+%%DATADIR%%/framework/i18n/data/af_za.php
+%%DATADIR%%/framework/i18n/data/ak.php
+%%DATADIR%%/framework/i18n/data/ak_gh.php
+%%DATADIR%%/framework/i18n/data/am.php
+%%DATADIR%%/framework/i18n/data/am_et.php
+%%DATADIR%%/framework/i18n/data/ar.php
+%%DATADIR%%/framework/i18n/data/ar_ae.php
+%%DATADIR%%/framework/i18n/data/ar_bh.php
+%%DATADIR%%/framework/i18n/data/ar_dz.php
+%%DATADIR%%/framework/i18n/data/ar_eg.php
+%%DATADIR%%/framework/i18n/data/ar_iq.php
+%%DATADIR%%/framework/i18n/data/ar_jo.php
+%%DATADIR%%/framework/i18n/data/ar_kw.php
+%%DATADIR%%/framework/i18n/data/ar_lb.php
+%%DATADIR%%/framework/i18n/data/ar_ly.php
+%%DATADIR%%/framework/i18n/data/ar_ma.php
+%%DATADIR%%/framework/i18n/data/ar_om.php
+%%DATADIR%%/framework/i18n/data/ar_qa.php
+%%DATADIR%%/framework/i18n/data/ar_sa.php
+%%DATADIR%%/framework/i18n/data/ar_sd.php
+%%DATADIR%%/framework/i18n/data/ar_sy.php
+%%DATADIR%%/framework/i18n/data/ar_tn.php
+%%DATADIR%%/framework/i18n/data/ar_ye.php
+%%DATADIR%%/framework/i18n/data/as.php
+%%DATADIR%%/framework/i18n/data/as_in.php
+%%DATADIR%%/framework/i18n/data/az.php
+%%DATADIR%%/framework/i18n/data/az_az.php
+%%DATADIR%%/framework/i18n/data/az_cyrl.php
+%%DATADIR%%/framework/i18n/data/az_cyrl_az.php
+%%DATADIR%%/framework/i18n/data/az_latn.php
+%%DATADIR%%/framework/i18n/data/az_latn_az.php
+%%DATADIR%%/framework/i18n/data/be.php
+%%DATADIR%%/framework/i18n/data/be_by.php
+%%DATADIR%%/framework/i18n/data/bg.php
+%%DATADIR%%/framework/i18n/data/bg_bg.php
+%%DATADIR%%/framework/i18n/data/bn.php
+%%DATADIR%%/framework/i18n/data/bn_bd.php
+%%DATADIR%%/framework/i18n/data/bn_in.php
+%%DATADIR%%/framework/i18n/data/bs.php
+%%DATADIR%%/framework/i18n/data/bs_ba.php
+%%DATADIR%%/framework/i18n/data/byn.php
+%%DATADIR%%/framework/i18n/data/byn_er.php
+%%DATADIR%%/framework/i18n/data/ca.php
+%%DATADIR%%/framework/i18n/data/ca_es.php
+%%DATADIR%%/framework/i18n/data/cch.php
+%%DATADIR%%/framework/i18n/data/cch_ng.php
+%%DATADIR%%/framework/i18n/data/cop.php
+%%DATADIR%%/framework/i18n/data/cs.php
+%%DATADIR%%/framework/i18n/data/cs_cz.php
+%%DATADIR%%/framework/i18n/data/cy.php
+%%DATADIR%%/framework/i18n/data/cy_gb.php
+%%DATADIR%%/framework/i18n/data/da.php
+%%DATADIR%%/framework/i18n/data/da_dk.php
+%%DATADIR%%/framework/i18n/data/de.php
+%%DATADIR%%/framework/i18n/data/de_at.php
+%%DATADIR%%/framework/i18n/data/de_be.php
+%%DATADIR%%/framework/i18n/data/de_ch.php
+%%DATADIR%%/framework/i18n/data/de_de.php
+%%DATADIR%%/framework/i18n/data/de_li.php
+%%DATADIR%%/framework/i18n/data/de_lu.php
+%%DATADIR%%/framework/i18n/data/dv.php
+%%DATADIR%%/framework/i18n/data/dv_mv.php
+%%DATADIR%%/framework/i18n/data/dz.php
+%%DATADIR%%/framework/i18n/data/dz_bt.php
+%%DATADIR%%/framework/i18n/data/ee.php
+%%DATADIR%%/framework/i18n/data/ee_gh.php
+%%DATADIR%%/framework/i18n/data/ee_tg.php
+%%DATADIR%%/framework/i18n/data/el.php
+%%DATADIR%%/framework/i18n/data/el_cy.php
+%%DATADIR%%/framework/i18n/data/el_gr.php
+%%DATADIR%%/framework/i18n/data/el_polyton.php
+%%DATADIR%%/framework/i18n/data/en.php
+%%DATADIR%%/framework/i18n/data/en_as.php
+%%DATADIR%%/framework/i18n/data/en_au.php
+%%DATADIR%%/framework/i18n/data/en_be.php
+%%DATADIR%%/framework/i18n/data/en_bw.php
+%%DATADIR%%/framework/i18n/data/en_bz.php
+%%DATADIR%%/framework/i18n/data/en_ca.php
+%%DATADIR%%/framework/i18n/data/en_dsrt.php
+%%DATADIR%%/framework/i18n/data/en_dsrt_us.php
+%%DATADIR%%/framework/i18n/data/en_gb.php
+%%DATADIR%%/framework/i18n/data/en_gu.php
+%%DATADIR%%/framework/i18n/data/en_hk.php
+%%DATADIR%%/framework/i18n/data/en_ie.php
+%%DATADIR%%/framework/i18n/data/en_in.php
+%%DATADIR%%/framework/i18n/data/en_jm.php
+%%DATADIR%%/framework/i18n/data/en_mh.php
+%%DATADIR%%/framework/i18n/data/en_mp.php
+%%DATADIR%%/framework/i18n/data/en_mt.php
+%%DATADIR%%/framework/i18n/data/en_na.php
+%%DATADIR%%/framework/i18n/data/en_nz.php
+%%DATADIR%%/framework/i18n/data/en_ph.php
+%%DATADIR%%/framework/i18n/data/en_pk.php
+%%DATADIR%%/framework/i18n/data/en_sg.php
+%%DATADIR%%/framework/i18n/data/en_shaw.php
+%%DATADIR%%/framework/i18n/data/en_tt.php
+%%DATADIR%%/framework/i18n/data/en_um.php
+%%DATADIR%%/framework/i18n/data/en_us.php
+%%DATADIR%%/framework/i18n/data/en_us_posix.php
+%%DATADIR%%/framework/i18n/data/en_vi.php
+%%DATADIR%%/framework/i18n/data/en_za.php
+%%DATADIR%%/framework/i18n/data/en_zw.php
+%%DATADIR%%/framework/i18n/data/eo.php
+%%DATADIR%%/framework/i18n/data/es.php
+%%DATADIR%%/framework/i18n/data/es_ar.php
+%%DATADIR%%/framework/i18n/data/es_bo.php
+%%DATADIR%%/framework/i18n/data/es_cl.php
+%%DATADIR%%/framework/i18n/data/es_co.php
+%%DATADIR%%/framework/i18n/data/es_cr.php
+%%DATADIR%%/framework/i18n/data/es_do.php
+%%DATADIR%%/framework/i18n/data/es_ec.php
+%%DATADIR%%/framework/i18n/data/es_es.php
+%%DATADIR%%/framework/i18n/data/es_gt.php
+%%DATADIR%%/framework/i18n/data/es_hn.php
+%%DATADIR%%/framework/i18n/data/es_mx.php
+%%DATADIR%%/framework/i18n/data/es_ni.php
+%%DATADIR%%/framework/i18n/data/es_pa.php
+%%DATADIR%%/framework/i18n/data/es_pe.php
+%%DATADIR%%/framework/i18n/data/es_pr.php
+%%DATADIR%%/framework/i18n/data/es_py.php
+%%DATADIR%%/framework/i18n/data/es_sv.php
+%%DATADIR%%/framework/i18n/data/es_us.php
+%%DATADIR%%/framework/i18n/data/es_uy.php
+%%DATADIR%%/framework/i18n/data/es_ve.php
+%%DATADIR%%/framework/i18n/data/et.php
+%%DATADIR%%/framework/i18n/data/et_ee.php
+%%DATADIR%%/framework/i18n/data/eu.php
+%%DATADIR%%/framework/i18n/data/eu_es.php
+%%DATADIR%%/framework/i18n/data/fa.php
+%%DATADIR%%/framework/i18n/data/fa_af.php
+%%DATADIR%%/framework/i18n/data/fa_ir.php
+%%DATADIR%%/framework/i18n/data/fi.php
+%%DATADIR%%/framework/i18n/data/fi_fi.php
+%%DATADIR%%/framework/i18n/data/fil.php
+%%DATADIR%%/framework/i18n/data/fil_ph.php
+%%DATADIR%%/framework/i18n/data/fo.php
+%%DATADIR%%/framework/i18n/data/fo_fo.php
+%%DATADIR%%/framework/i18n/data/fr.php
+%%DATADIR%%/framework/i18n/data/fr_be.php
+%%DATADIR%%/framework/i18n/data/fr_ca.php
+%%DATADIR%%/framework/i18n/data/fr_ch.php
+%%DATADIR%%/framework/i18n/data/fr_fr.php
+%%DATADIR%%/framework/i18n/data/fr_lu.php
+%%DATADIR%%/framework/i18n/data/fr_mc.php
+%%DATADIR%%/framework/i18n/data/fr_sn.php
+%%DATADIR%%/framework/i18n/data/fur.php
+%%DATADIR%%/framework/i18n/data/fur_it.php
+%%DATADIR%%/framework/i18n/data/ga.php
+%%DATADIR%%/framework/i18n/data/ga_ie.php
+%%DATADIR%%/framework/i18n/data/gaa.php
+%%DATADIR%%/framework/i18n/data/gaa_gh.php
+%%DATADIR%%/framework/i18n/data/gez.php
+%%DATADIR%%/framework/i18n/data/gez_er.php
+%%DATADIR%%/framework/i18n/data/gez_et.php
+%%DATADIR%%/framework/i18n/data/gl.php
+%%DATADIR%%/framework/i18n/data/gl_es.php
+%%DATADIR%%/framework/i18n/data/gu.php
+%%DATADIR%%/framework/i18n/data/gu_in.php
+%%DATADIR%%/framework/i18n/data/gv.php
+%%DATADIR%%/framework/i18n/data/gv_gb.php
+%%DATADIR%%/framework/i18n/data/ha.php
+%%DATADIR%%/framework/i18n/data/ha_arab.php
+%%DATADIR%%/framework/i18n/data/ha_arab_ng.php
+%%DATADIR%%/framework/i18n/data/ha_arab_sd.php
+%%DATADIR%%/framework/i18n/data/ha_gh.php
+%%DATADIR%%/framework/i18n/data/ha_latn.php
+%%DATADIR%%/framework/i18n/data/ha_latn_gh.php
+%%DATADIR%%/framework/i18n/data/ha_latn_ne.php
+%%DATADIR%%/framework/i18n/data/ha_latn_ng.php
+%%DATADIR%%/framework/i18n/data/ha_ne.php
+%%DATADIR%%/framework/i18n/data/ha_ng.php
+%%DATADIR%%/framework/i18n/data/ha_sd.php
+%%DATADIR%%/framework/i18n/data/haw.php
+%%DATADIR%%/framework/i18n/data/haw_us.php
+%%DATADIR%%/framework/i18n/data/he.php
+%%DATADIR%%/framework/i18n/data/he_il.php
+%%DATADIR%%/framework/i18n/data/hi.php
+%%DATADIR%%/framework/i18n/data/hi_in.php
+%%DATADIR%%/framework/i18n/data/hr.php
+%%DATADIR%%/framework/i18n/data/hr_hr.php
+%%DATADIR%%/framework/i18n/data/hu.php
+%%DATADIR%%/framework/i18n/data/hu_hu.php
+%%DATADIR%%/framework/i18n/data/hy.php
+%%DATADIR%%/framework/i18n/data/hy_am.php
+%%DATADIR%%/framework/i18n/data/hy_am_revised.php
+%%DATADIR%%/framework/i18n/data/ia.php
+%%DATADIR%%/framework/i18n/data/id.php
+%%DATADIR%%/framework/i18n/data/id_id.php
+%%DATADIR%%/framework/i18n/data/ig.php
+%%DATADIR%%/framework/i18n/data/ig_ng.php
+%%DATADIR%%/framework/i18n/data/ii.php
+%%DATADIR%%/framework/i18n/data/ii_cn.php
+%%DATADIR%%/framework/i18n/data/in.php
+%%DATADIR%%/framework/i18n/data/is.php
+%%DATADIR%%/framework/i18n/data/is_is.php
+%%DATADIR%%/framework/i18n/data/it.php
+%%DATADIR%%/framework/i18n/data/it_ch.php
+%%DATADIR%%/framework/i18n/data/it_it.php
+%%DATADIR%%/framework/i18n/data/iu.php
+%%DATADIR%%/framework/i18n/data/iw.php
+%%DATADIR%%/framework/i18n/data/ja.php
+%%DATADIR%%/framework/i18n/data/ja_jp.php
+%%DATADIR%%/framework/i18n/data/ka.php
+%%DATADIR%%/framework/i18n/data/ka_ge.php
+%%DATADIR%%/framework/i18n/data/kaj.php
+%%DATADIR%%/framework/i18n/data/kaj_ng.php
+%%DATADIR%%/framework/i18n/data/kam.php
+%%DATADIR%%/framework/i18n/data/kam_ke.php
+%%DATADIR%%/framework/i18n/data/kcg.php
+%%DATADIR%%/framework/i18n/data/kcg_ng.php
+%%DATADIR%%/framework/i18n/data/kfo.php
+%%DATADIR%%/framework/i18n/data/kfo_ci.php
+%%DATADIR%%/framework/i18n/data/kk.php
+%%DATADIR%%/framework/i18n/data/kk_cyrl.php
+%%DATADIR%%/framework/i18n/data/kk_cyrl_kz.php
+%%DATADIR%%/framework/i18n/data/kk_kz.php
+%%DATADIR%%/framework/i18n/data/kl.php
+%%DATADIR%%/framework/i18n/data/kl_gl.php
+%%DATADIR%%/framework/i18n/data/km.php
+%%DATADIR%%/framework/i18n/data/km_kh.php
+%%DATADIR%%/framework/i18n/data/kn.php
+%%DATADIR%%/framework/i18n/data/kn_in.php
+%%DATADIR%%/framework/i18n/data/ko.php
+%%DATADIR%%/framework/i18n/data/ko_kr.php
+%%DATADIR%%/framework/i18n/data/kok.php
+%%DATADIR%%/framework/i18n/data/kok_in.php
+%%DATADIR%%/framework/i18n/data/kpe.php
+%%DATADIR%%/framework/i18n/data/kpe_gn.php
+%%DATADIR%%/framework/i18n/data/kpe_lr.php
+%%DATADIR%%/framework/i18n/data/ku.php
+%%DATADIR%%/framework/i18n/data/ku_arab.php
+%%DATADIR%%/framework/i18n/data/ku_latn.php
+%%DATADIR%%/framework/i18n/data/ku_latn_tr.php
+%%DATADIR%%/framework/i18n/data/ku_tr.php
+%%DATADIR%%/framework/i18n/data/kw.php
+%%DATADIR%%/framework/i18n/data/kw_gb.php
+%%DATADIR%%/framework/i18n/data/ky.php
+%%DATADIR%%/framework/i18n/data/ky_kg.php
+%%DATADIR%%/framework/i18n/data/ln.php
+%%DATADIR%%/framework/i18n/data/ln_cd.php
+%%DATADIR%%/framework/i18n/data/ln_cg.php
+%%DATADIR%%/framework/i18n/data/lo.php
+%%DATADIR%%/framework/i18n/data/lo_la.php
+%%DATADIR%%/framework/i18n/data/lt.php
+%%DATADIR%%/framework/i18n/data/lt_lt.php
+%%DATADIR%%/framework/i18n/data/lv.php
+%%DATADIR%%/framework/i18n/data/lv_lv.php
+%%DATADIR%%/framework/i18n/data/mk.php
+%%DATADIR%%/framework/i18n/data/mk_mk.php
+%%DATADIR%%/framework/i18n/data/ml.php
+%%DATADIR%%/framework/i18n/data/ml_in.php
+%%DATADIR%%/framework/i18n/data/mn.php
+%%DATADIR%%/framework/i18n/data/mn_cn.php
+%%DATADIR%%/framework/i18n/data/mn_cyrl.php
+%%DATADIR%%/framework/i18n/data/mn_cyrl_mn.php
+%%DATADIR%%/framework/i18n/data/mn_mn.php
+%%DATADIR%%/framework/i18n/data/mn_mong.php
+%%DATADIR%%/framework/i18n/data/mn_mong_cn.php
+%%DATADIR%%/framework/i18n/data/mo.php
+%%DATADIR%%/framework/i18n/data/mr.php
+%%DATADIR%%/framework/i18n/data/mr_in.php
+%%DATADIR%%/framework/i18n/data/ms.php
+%%DATADIR%%/framework/i18n/data/ms_bn.php
+%%DATADIR%%/framework/i18n/data/ms_my.php
+%%DATADIR%%/framework/i18n/data/mt.php
+%%DATADIR%%/framework/i18n/data/mt_mt.php
+%%DATADIR%%/framework/i18n/data/my.php
+%%DATADIR%%/framework/i18n/data/my_mm.php
+%%DATADIR%%/framework/i18n/data/nb.php
+%%DATADIR%%/framework/i18n/data/nb_no.php
+%%DATADIR%%/framework/i18n/data/ne.php
+%%DATADIR%%/framework/i18n/data/ne_in.php
+%%DATADIR%%/framework/i18n/data/ne_np.php
+%%DATADIR%%/framework/i18n/data/nl.php
+%%DATADIR%%/framework/i18n/data/nl_be.php
+%%DATADIR%%/framework/i18n/data/nl_nl.php
+%%DATADIR%%/framework/i18n/data/nn.php
+%%DATADIR%%/framework/i18n/data/nn_no.php
+%%DATADIR%%/framework/i18n/data/no.php
+%%DATADIR%%/framework/i18n/data/nr.php
+%%DATADIR%%/framework/i18n/data/nr_za.php
+%%DATADIR%%/framework/i18n/data/nso.php
+%%DATADIR%%/framework/i18n/data/nso_za.php
+%%DATADIR%%/framework/i18n/data/ny.php
+%%DATADIR%%/framework/i18n/data/ny_mw.php
+%%DATADIR%%/framework/i18n/data/om.php
+%%DATADIR%%/framework/i18n/data/om_et.php
+%%DATADIR%%/framework/i18n/data/om_ke.php
+%%DATADIR%%/framework/i18n/data/or.php
+%%DATADIR%%/framework/i18n/data/or_in.php
+%%DATADIR%%/framework/i18n/data/pa.php
+%%DATADIR%%/framework/i18n/data/pa_arab.php
+%%DATADIR%%/framework/i18n/data/pa_arab_pk.php
+%%DATADIR%%/framework/i18n/data/pa_guru.php
+%%DATADIR%%/framework/i18n/data/pa_guru_in.php
+%%DATADIR%%/framework/i18n/data/pa_in.php
+%%DATADIR%%/framework/i18n/data/pa_pk.php
+%%DATADIR%%/framework/i18n/data/pl.php
+%%DATADIR%%/framework/i18n/data/pl_pl.php
+%%DATADIR%%/framework/i18n/data/ps.php
+%%DATADIR%%/framework/i18n/data/ps_af.php
+%%DATADIR%%/framework/i18n/data/pt.php
+%%DATADIR%%/framework/i18n/data/pt_br.php
+%%DATADIR%%/framework/i18n/data/pt_pt.php
+%%DATADIR%%/framework/i18n/data/ro.php
+%%DATADIR%%/framework/i18n/data/ro_md.php
+%%DATADIR%%/framework/i18n/data/ro_ro.php
+%%DATADIR%%/framework/i18n/data/root.php
+%%DATADIR%%/framework/i18n/data/ru.php
+%%DATADIR%%/framework/i18n/data/ru_ru.php
+%%DATADIR%%/framework/i18n/data/ru_ua.php
+%%DATADIR%%/framework/i18n/data/rw.php
+%%DATADIR%%/framework/i18n/data/rw_rw.php
+%%DATADIR%%/framework/i18n/data/sa.php
+%%DATADIR%%/framework/i18n/data/sa_in.php
+%%DATADIR%%/framework/i18n/data/se.php
+%%DATADIR%%/framework/i18n/data/se_fi.php
+%%DATADIR%%/framework/i18n/data/se_no.php
+%%DATADIR%%/framework/i18n/data/sh.php
+%%DATADIR%%/framework/i18n/data/sh_ba.php
+%%DATADIR%%/framework/i18n/data/sh_cs.php
+%%DATADIR%%/framework/i18n/data/sh_yu.php
+%%DATADIR%%/framework/i18n/data/si.php
+%%DATADIR%%/framework/i18n/data/si_lk.php
+%%DATADIR%%/framework/i18n/data/sid.php
+%%DATADIR%%/framework/i18n/data/sid_et.php
+%%DATADIR%%/framework/i18n/data/sk.php
+%%DATADIR%%/framework/i18n/data/sk_sk.php
+%%DATADIR%%/framework/i18n/data/sl.php
+%%DATADIR%%/framework/i18n/data/sl_si.php
+%%DATADIR%%/framework/i18n/data/so.php
+%%DATADIR%%/framework/i18n/data/so_dj.php
+%%DATADIR%%/framework/i18n/data/so_et.php
+%%DATADIR%%/framework/i18n/data/so_ke.php
+%%DATADIR%%/framework/i18n/data/so_so.php
+%%DATADIR%%/framework/i18n/data/sq.php
+%%DATADIR%%/framework/i18n/data/sq_al.php
+%%DATADIR%%/framework/i18n/data/sr.php
+%%DATADIR%%/framework/i18n/data/sr_ba.php
+%%DATADIR%%/framework/i18n/data/sr_cs.php
+%%DATADIR%%/framework/i18n/data/sr_cyrl.php
+%%DATADIR%%/framework/i18n/data/sr_cyrl_ba.php
+%%DATADIR%%/framework/i18n/data/sr_cyrl_cs.php
+%%DATADIR%%/framework/i18n/data/sr_cyrl_me.php
+%%DATADIR%%/framework/i18n/data/sr_cyrl_rs.php
+%%DATADIR%%/framework/i18n/data/sr_cyrl_yu.php
+%%DATADIR%%/framework/i18n/data/sr_latn.php
+%%DATADIR%%/framework/i18n/data/sr_latn_ba.php
+%%DATADIR%%/framework/i18n/data/sr_latn_cs.php
+%%DATADIR%%/framework/i18n/data/sr_latn_me.php
+%%DATADIR%%/framework/i18n/data/sr_latn_rs.php
+%%DATADIR%%/framework/i18n/data/sr_latn_yu.php
+%%DATADIR%%/framework/i18n/data/sr_me.php
+%%DATADIR%%/framework/i18n/data/sr_rs.php
+%%DATADIR%%/framework/i18n/data/sr_yu.php
+%%DATADIR%%/framework/i18n/data/ss.php
+%%DATADIR%%/framework/i18n/data/ss_sz.php
+%%DATADIR%%/framework/i18n/data/ss_za.php
+%%DATADIR%%/framework/i18n/data/st.php
+%%DATADIR%%/framework/i18n/data/st_ls.php
+%%DATADIR%%/framework/i18n/data/st_za.php
+%%DATADIR%%/framework/i18n/data/sv.php
+%%DATADIR%%/framework/i18n/data/sv_fi.php
+%%DATADIR%%/framework/i18n/data/sv_se.php
+%%DATADIR%%/framework/i18n/data/sw.php
+%%DATADIR%%/framework/i18n/data/sw_ke.php
+%%DATADIR%%/framework/i18n/data/sw_tz.php
+%%DATADIR%%/framework/i18n/data/syr.php
+%%DATADIR%%/framework/i18n/data/syr_sy.php
+%%DATADIR%%/framework/i18n/data/ta.php
+%%DATADIR%%/framework/i18n/data/ta_in.php
+%%DATADIR%%/framework/i18n/data/te.php
+%%DATADIR%%/framework/i18n/data/te_in.php
+%%DATADIR%%/framework/i18n/data/tg.php
+%%DATADIR%%/framework/i18n/data/tg_cyrl.php
+%%DATADIR%%/framework/i18n/data/tg_cyrl_tj.php
+%%DATADIR%%/framework/i18n/data/tg_tj.php
+%%DATADIR%%/framework/i18n/data/th.php
+%%DATADIR%%/framework/i18n/data/th_th.php
+%%DATADIR%%/framework/i18n/data/ti.php
+%%DATADIR%%/framework/i18n/data/ti_er.php
+%%DATADIR%%/framework/i18n/data/ti_et.php
+%%DATADIR%%/framework/i18n/data/tig.php
+%%DATADIR%%/framework/i18n/data/tig_er.php
+%%DATADIR%%/framework/i18n/data/tl.php
+%%DATADIR%%/framework/i18n/data/tn.php
+%%DATADIR%%/framework/i18n/data/tn_za.php
+%%DATADIR%%/framework/i18n/data/to.php
+%%DATADIR%%/framework/i18n/data/to_to.php
+%%DATADIR%%/framework/i18n/data/tr.php
+%%DATADIR%%/framework/i18n/data/tr_tr.php
+%%DATADIR%%/framework/i18n/data/trv.php
+%%DATADIR%%/framework/i18n/data/ts.php
+%%DATADIR%%/framework/i18n/data/ts_za.php
+%%DATADIR%%/framework/i18n/data/tt.php
+%%DATADIR%%/framework/i18n/data/tt_ru.php
+%%DATADIR%%/framework/i18n/data/ug.php
+%%DATADIR%%/framework/i18n/data/ug_arab.php
+%%DATADIR%%/framework/i18n/data/ug_arab_cn.php
+%%DATADIR%%/framework/i18n/data/ug_cn.php
+%%DATADIR%%/framework/i18n/data/uk.php
+%%DATADIR%%/framework/i18n/data/uk_ua.php
+%%DATADIR%%/framework/i18n/data/ur.php
+%%DATADIR%%/framework/i18n/data/ur_in.php
+%%DATADIR%%/framework/i18n/data/ur_pk.php
+%%DATADIR%%/framework/i18n/data/uz.php
+%%DATADIR%%/framework/i18n/data/uz_af.php
+%%DATADIR%%/framework/i18n/data/uz_arab.php
+%%DATADIR%%/framework/i18n/data/uz_arab_af.php
+%%DATADIR%%/framework/i18n/data/uz_cyrl.php
+%%DATADIR%%/framework/i18n/data/uz_cyrl_uz.php
+%%DATADIR%%/framework/i18n/data/uz_latn.php
+%%DATADIR%%/framework/i18n/data/uz_latn_uz.php
+%%DATADIR%%/framework/i18n/data/uz_uz.php
+%%DATADIR%%/framework/i18n/data/ve.php
+%%DATADIR%%/framework/i18n/data/ve_za.php
+%%DATADIR%%/framework/i18n/data/vi.php
+%%DATADIR%%/framework/i18n/data/vi_vn.php
+%%DATADIR%%/framework/i18n/data/wal.php
+%%DATADIR%%/framework/i18n/data/wal_et.php
+%%DATADIR%%/framework/i18n/data/wo.php
+%%DATADIR%%/framework/i18n/data/wo_latn.php
+%%DATADIR%%/framework/i18n/data/wo_latn_sn.php
+%%DATADIR%%/framework/i18n/data/wo_sn.php
+%%DATADIR%%/framework/i18n/data/xh.php
+%%DATADIR%%/framework/i18n/data/xh_za.php
+%%DATADIR%%/framework/i18n/data/yo.php
+%%DATADIR%%/framework/i18n/data/yo_ng.php
+%%DATADIR%%/framework/i18n/data/zh.php
+%%DATADIR%%/framework/i18n/data/zh_cn.php
+%%DATADIR%%/framework/i18n/data/zh_hans.php
+%%DATADIR%%/framework/i18n/data/zh_hans_cn.php
+%%DATADIR%%/framework/i18n/data/zh_hans_hk.php
+%%DATADIR%%/framework/i18n/data/zh_hans_mo.php
+%%DATADIR%%/framework/i18n/data/zh_hans_sg.php
+%%DATADIR%%/framework/i18n/data/zh_hant.php
+%%DATADIR%%/framework/i18n/data/zh_hant_hk.php
+%%DATADIR%%/framework/i18n/data/zh_hant_mo.php
+%%DATADIR%%/framework/i18n/data/zh_hant_tw.php
+%%DATADIR%%/framework/i18n/data/zh_hk.php
+%%DATADIR%%/framework/i18n/data/zh_mo.php
+%%DATADIR%%/framework/i18n/data/zh_sg.php
+%%DATADIR%%/framework/i18n/data/zh_tw.php
+%%DATADIR%%/framework/i18n/data/zu.php
+%%DATADIR%%/framework/i18n/data/zu_za.php
+%%DATADIR%%/framework/i18n/gettext/CGettextFile.php
+%%DATADIR%%/framework/i18n/gettext/CGettextMoFile.php
+%%DATADIR%%/framework/i18n/gettext/CGettextPoFile.php
+%%DATADIR%%/framework/logging/CDbLogRoute.php
+%%DATADIR%%/framework/logging/CEmailLogRoute.php
+%%DATADIR%%/framework/logging/CFileLogRoute.php
+%%DATADIR%%/framework/logging/CLogFilter.php
+%%DATADIR%%/framework/logging/CLogRoute.php
+%%DATADIR%%/framework/logging/CLogRouter.php
+%%DATADIR%%/framework/logging/CLogger.php
+%%DATADIR%%/framework/logging/CProfileLogRoute.php
+%%DATADIR%%/framework/logging/CWebLogRoute.php
+%%DATADIR%%/framework/messages/bg/yii.php
+%%DATADIR%%/framework/messages/config.php
+%%DATADIR%%/framework/messages/de/yii.php
+%%DATADIR%%/framework/messages/es/yii.php
+%%DATADIR%%/framework/messages/fr/yii.php
+%%DATADIR%%/framework/messages/gr/yii.php
+%%DATADIR%%/framework/messages/he/yii.php
+%%DATADIR%%/framework/messages/hu/yii.php
+%%DATADIR%%/framework/messages/id/yii.php
+%%DATADIR%%/framework/messages/it/yii.php
+%%DATADIR%%/framework/messages/ja/yii.php
+%%DATADIR%%/framework/messages/nl/yii.php
+%%DATADIR%%/framework/messages/no/yii.php
+%%DATADIR%%/framework/messages/pl/yii.php
+%%DATADIR%%/framework/messages/pt/yii.php
+%%DATADIR%%/framework/messages/ro/yii.php
+%%DATADIR%%/framework/messages/ru/yii.php
+%%DATADIR%%/framework/messages/sr_sr/yii.php
+%%DATADIR%%/framework/messages/sr_yu/yii.php
+%%DATADIR%%/framework/messages/sv/yii.php
+%%DATADIR%%/framework/messages/uk/yii.php
+%%DATADIR%%/framework/messages/vi/yii.php
+%%DATADIR%%/framework/messages/zh_cn/yii.php
+%%DATADIR%%/framework/messages/zh_tw/yii.php
+%%DATADIR%%/framework/utils/CDateTimeParser.php
+%%DATADIR%%/framework/utils/CFileHelper.php
+%%DATADIR%%/framework/utils/CMarkdownParser.php
+%%DATADIR%%/framework/utils/CPropertyValue.php
+%%DATADIR%%/framework/utils/CTimestamp.php
+%%DATADIR%%/framework/utils/CVarDumper.php
+%%DATADIR%%/framework/utils/mimeTypes.php
+%%DATADIR%%/framework/validators/CCaptchaValidator.php
+%%DATADIR%%/framework/validators/CCompareValidator.php
+%%DATADIR%%/framework/validators/CDefaultValueValidator.php
+%%DATADIR%%/framework/validators/CEmailValidator.php
+%%DATADIR%%/framework/validators/CExistValidator.php
+%%DATADIR%%/framework/validators/CFileValidator.php
+%%DATADIR%%/framework/validators/CFilterValidator.php
+%%DATADIR%%/framework/validators/CInlineValidator.php
+%%DATADIR%%/framework/validators/CNumberValidator.php
+%%DATADIR%%/framework/validators/CRangeValidator.php
+%%DATADIR%%/framework/validators/CRegularExpressionValidator.php
+%%DATADIR%%/framework/validators/CRequiredValidator.php
+%%DATADIR%%/framework/validators/CStringValidator.php
+%%DATADIR%%/framework/validators/CTypeValidator.php
+%%DATADIR%%/framework/validators/CUniqueValidator.php
+%%DATADIR%%/framework/validators/CUrlValidator.php
+%%DATADIR%%/framework/validators/CValidator.php
+%%DATADIR%%/framework/vendors/README.html
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/ABAP.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/CPP.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/CSS.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/DIFF.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/DTD.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Generator.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/HTML.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/JAVA.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/JAVASCRIPT.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/MYSQL.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/PERL.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/PHP.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/PYTHON.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/RUBY.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/Array.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/BB.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/Console.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/Html.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/HtmlTags.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/JSON.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/XML.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/SQL.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/XML.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/README
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/TODO
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/abap.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/cpp.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/css.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/diff.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/dtd.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/generate
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/generate.bat
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/html.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/java.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/javascript.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/mysql.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/package.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/perl.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/php.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/python.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/ruby.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/sample.css
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/sql.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/xml.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/highlight.css
+%%DATADIR%%/framework/vendors/adodb/LICENSE.txt
+%%DATADIR%%/framework/vendors/cldr/LICENSE.txt
+%%DATADIR%%/framework/vendors/gettext/LICENSE.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/HTMLPurifier.standalone.php
+%%DATADIR%%/framework/vendors/htmlpurifier/LICENSE.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder/Xml.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Exception.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Directive.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Id.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Namespace.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Validator.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.PurifierLinkifyDocURL.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Language.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksEscaping.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksScope.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksTidyImpl.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/FilterParam.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Test.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Base.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Host.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/info.ini
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/EntityLookup/entities.ser
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Filter/YouTube.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/classes/en-x-test.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/messages/en-x-test.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/messages/en-x-testmini.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/messages/en.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Lexer/PEARSax3.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Lexer/PH5P.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer/CSSDefinition.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.css
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.js
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.php
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer/HTMLDefinition.php
+%%DATADIR%%/framework/vendors/jquery/LICENSE.txt
+%%DATADIR%%/framework/vendors/jquery/autocomplete/LICENSE.txt
+%%DATADIR%%/framework/vendors/jquery/maskedinput/LICENSE.txt
+%%DATADIR%%/framework/vendors/jquery/treeview/LICENSE.txt
+%%DATADIR%%/framework/vendors/json/LICENSE.txt
+%%DATADIR%%/framework/vendors/markdown/LICENSE.txt
+%%DATADIR%%/framework/vendors/markdown/markdown.php
+%%DATADIR%%/framework/views/de/error.php
+%%DATADIR%%/framework/views/de/error400.php
+%%DATADIR%%/framework/views/de/error403.php
+%%DATADIR%%/framework/views/de/error404.php
+%%DATADIR%%/framework/views/de/error500.php
+%%DATADIR%%/framework/views/de/error503.php
+%%DATADIR%%/framework/views/de/exception.php
+%%DATADIR%%/framework/views/de/log-firebug.php
+%%DATADIR%%/framework/views/de/log.php
+%%DATADIR%%/framework/views/de/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/de/profile-callstack.php
+%%DATADIR%%/framework/views/de/profile-summary-firebug.php
+%%DATADIR%%/framework/views/de/profile-summary.php
+%%DATADIR%%/framework/views/error.php
+%%DATADIR%%/framework/views/error400.php
+%%DATADIR%%/framework/views/error403.php
+%%DATADIR%%/framework/views/error404.php
+%%DATADIR%%/framework/views/error500.php
+%%DATADIR%%/framework/views/error503.php
+%%DATADIR%%/framework/views/exception.php
+%%DATADIR%%/framework/views/fr/error.php
+%%DATADIR%%/framework/views/fr/error400.php
+%%DATADIR%%/framework/views/fr/error403.php
+%%DATADIR%%/framework/views/fr/error404.php
+%%DATADIR%%/framework/views/fr/error500.php
+%%DATADIR%%/framework/views/fr/error503.php
+%%DATADIR%%/framework/views/fr/exception.php
+%%DATADIR%%/framework/views/fr/log-firebug.php
+%%DATADIR%%/framework/views/fr/log.php
+%%DATADIR%%/framework/views/fr/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/fr/profile-callstack.php
+%%DATADIR%%/framework/views/fr/profile-summary-firebug.php
+%%DATADIR%%/framework/views/fr/profile-summary.php
+%%DATADIR%%/framework/views/he/error.php
+%%DATADIR%%/framework/views/he/error400.php
+%%DATADIR%%/framework/views/he/error403.php
+%%DATADIR%%/framework/views/he/error404.php
+%%DATADIR%%/framework/views/he/error500.php
+%%DATADIR%%/framework/views/he/error503.php
+%%DATADIR%%/framework/views/he/exception.php
+%%DATADIR%%/framework/views/he/log-firebug.php
+%%DATADIR%%/framework/views/he/log.php
+%%DATADIR%%/framework/views/he/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/he/profile-callstack.php
+%%DATADIR%%/framework/views/he/profile-summary-firebug.php
+%%DATADIR%%/framework/views/he/profile-summary.php
+%%DATADIR%%/framework/views/id/error.php
+%%DATADIR%%/framework/views/id/error400.php
+%%DATADIR%%/framework/views/id/error403.php
+%%DATADIR%%/framework/views/id/error404.php
+%%DATADIR%%/framework/views/id/error500.php
+%%DATADIR%%/framework/views/id/error503.php
+%%DATADIR%%/framework/views/id/exception.php
+%%DATADIR%%/framework/views/id/log-firebug.php
+%%DATADIR%%/framework/views/id/log.php
+%%DATADIR%%/framework/views/id/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/id/profile-callstack.php
+%%DATADIR%%/framework/views/id/profile-summary-firebug.php
+%%DATADIR%%/framework/views/id/profile-summary.php
+%%DATADIR%%/framework/views/ja/error.php
+%%DATADIR%%/framework/views/ja/error400.php
+%%DATADIR%%/framework/views/ja/error403.php
+%%DATADIR%%/framework/views/ja/error404.php
+%%DATADIR%%/framework/views/ja/error500.php
+%%DATADIR%%/framework/views/ja/error503.php
+%%DATADIR%%/framework/views/ja/exception.php
+%%DATADIR%%/framework/views/ja/log-firebug.php
+%%DATADIR%%/framework/views/ja/log.php
+%%DATADIR%%/framework/views/ja/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/ja/profile-callstack.php
+%%DATADIR%%/framework/views/ja/profile-summary-firebug.php
+%%DATADIR%%/framework/views/ja/profile-summary.php
+%%DATADIR%%/framework/views/log-firebug.php
+%%DATADIR%%/framework/views/log.php
+%%DATADIR%%/framework/views/nl/error.php
+%%DATADIR%%/framework/views/nl/error400.php
+%%DATADIR%%/framework/views/nl/error403.php
+%%DATADIR%%/framework/views/nl/error404.php
+%%DATADIR%%/framework/views/nl/error500.php
+%%DATADIR%%/framework/views/nl/error503.php
+%%DATADIR%%/framework/views/nl/exception.php
+%%DATADIR%%/framework/views/nl/log-firebug.php
+%%DATADIR%%/framework/views/nl/log.php
+%%DATADIR%%/framework/views/nl/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/nl/profile-callstack.php
+%%DATADIR%%/framework/views/nl/profile-summary-firebug.php
+%%DATADIR%%/framework/views/nl/profile-summary.php
+%%DATADIR%%/framework/views/no/error.php
+%%DATADIR%%/framework/views/no/error400.php
+%%DATADIR%%/framework/views/no/error403.php
+%%DATADIR%%/framework/views/no/error404.php
+%%DATADIR%%/framework/views/no/error500.php
+%%DATADIR%%/framework/views/no/error503.php
+%%DATADIR%%/framework/views/no/exception.php
+%%DATADIR%%/framework/views/no/log-firebug.php
+%%DATADIR%%/framework/views/no/log.php
+%%DATADIR%%/framework/views/no/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/no/profile-callstack.php
+%%DATADIR%%/framework/views/no/profile-summary-firebug.php
+%%DATADIR%%/framework/views/no/profile-summary.php
+%%DATADIR%%/framework/views/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/profile-callstack.php
+%%DATADIR%%/framework/views/profile-summary-firebug.php
+%%DATADIR%%/framework/views/profile-summary.php
+%%DATADIR%%/framework/views/pt/error.php
+%%DATADIR%%/framework/views/pt/error400.php
+%%DATADIR%%/framework/views/pt/error403.php
+%%DATADIR%%/framework/views/pt/error404.php
+%%DATADIR%%/framework/views/pt/error500.php
+%%DATADIR%%/framework/views/pt/error503.php
+%%DATADIR%%/framework/views/pt/exception.php
+%%DATADIR%%/framework/views/pt/log-firebug.php
+%%DATADIR%%/framework/views/pt/log.php
+%%DATADIR%%/framework/views/pt/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/pt/profile-callstack.php
+%%DATADIR%%/framework/views/pt/profile-summary-firebug.php
+%%DATADIR%%/framework/views/pt/profile-summary.php
+%%DATADIR%%/framework/views/ro/error.php
+%%DATADIR%%/framework/views/ro/error400.php
+%%DATADIR%%/framework/views/ro/error403.php
+%%DATADIR%%/framework/views/ro/error404.php
+%%DATADIR%%/framework/views/ro/error500.php
+%%DATADIR%%/framework/views/ro/error503.php
+%%DATADIR%%/framework/views/ro/exception.php
+%%DATADIR%%/framework/views/ro/log-firebug.php
+%%DATADIR%%/framework/views/ro/log.php
+%%DATADIR%%/framework/views/ro/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/ro/profile-callstack.php
+%%DATADIR%%/framework/views/ro/profile-summary-firebug.php
+%%DATADIR%%/framework/views/ro/profile-summary.php
+%%DATADIR%%/framework/views/sv/error.php
+%%DATADIR%%/framework/views/sv/error400.php
+%%DATADIR%%/framework/views/sv/error403.php
+%%DATADIR%%/framework/views/sv/error404.php
+%%DATADIR%%/framework/views/sv/error500.php
+%%DATADIR%%/framework/views/sv/error503.php
+%%DATADIR%%/framework/views/sv/exception.php
+%%DATADIR%%/framework/views/sv/log-firebug.php
+%%DATADIR%%/framework/views/sv/log.php
+%%DATADIR%%/framework/views/sv/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/sv/profile-callstack.php
+%%DATADIR%%/framework/views/sv/profile-summary-firebug.php
+%%DATADIR%%/framework/views/sv/profile-summary.php
+%%DATADIR%%/framework/views/zh_cn/error.php
+%%DATADIR%%/framework/views/zh_cn/error400.php
+%%DATADIR%%/framework/views/zh_cn/error403.php
+%%DATADIR%%/framework/views/zh_cn/error404.php
+%%DATADIR%%/framework/views/zh_cn/error500.php
+%%DATADIR%%/framework/views/zh_cn/error503.php
+%%DATADIR%%/framework/views/zh_cn/exception.php
+%%DATADIR%%/framework/views/zh_cn/log-firebug.php
+%%DATADIR%%/framework/views/zh_cn/log.php
+%%DATADIR%%/framework/views/zh_cn/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/zh_cn/profile-callstack.php
+%%DATADIR%%/framework/views/zh_cn/profile-summary-firebug.php
+%%DATADIR%%/framework/views/zh_cn/profile-summary.php
+%%DATADIR%%/framework/views/zh_tw/error.php
+%%DATADIR%%/framework/views/zh_tw/error400.php
+%%DATADIR%%/framework/views/zh_tw/error403.php
+%%DATADIR%%/framework/views/zh_tw/error404.php
+%%DATADIR%%/framework/views/zh_tw/error500.php
+%%DATADIR%%/framework/views/zh_tw/error503.php
+%%DATADIR%%/framework/views/zh_tw/exception.php
+%%DATADIR%%/framework/views/zh_tw/log-firebug.php
+%%DATADIR%%/framework/views/zh_tw/log.php
+%%DATADIR%%/framework/views/zh_tw/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/zh_tw/profile-callstack.php
+%%DATADIR%%/framework/views/zh_tw/profile-summary-firebug.php
+%%DATADIR%%/framework/views/zh_tw/profile-summary.php
+%%DATADIR%%/framework/web/CAssetManager.php
+%%DATADIR%%/framework/web/CBaseController.php
+%%DATADIR%%/framework/web/CCacheHttpSession.php
+%%DATADIR%%/framework/web/CClientScript.php
+%%DATADIR%%/framework/web/CController.php
+%%DATADIR%%/framework/web/CDbHttpSession.php
+%%DATADIR%%/framework/web/CExtController.php
+%%DATADIR%%/framework/web/CFormModel.php
+%%DATADIR%%/framework/web/CHttpCookie.php
+%%DATADIR%%/framework/web/CHttpRequest.php
+%%DATADIR%%/framework/web/CHttpSession.php
+%%DATADIR%%/framework/web/CHttpSessionIterator.php
+%%DATADIR%%/framework/web/COutputEvent.php
+%%DATADIR%%/framework/web/CPagination.php
+%%DATADIR%%/framework/web/CSort.php
+%%DATADIR%%/framework/web/CTheme.php
+%%DATADIR%%/framework/web/CThemeManager.php
+%%DATADIR%%/framework/web/CUploadedFile.php
+%%DATADIR%%/framework/web/CUrlManager.php
+%%DATADIR%%/framework/web/CWebApplication.php
+%%DATADIR%%/framework/web/CWebModule.php
+%%DATADIR%%/framework/web/actions/CAction.php
+%%DATADIR%%/framework/web/actions/CInlineAction.php
+%%DATADIR%%/framework/web/actions/CViewAction.php
+%%DATADIR%%/framework/web/auth/CAccessControlFilter.php
+%%DATADIR%%/framework/web/auth/CAuthAssignment.php
+%%DATADIR%%/framework/web/auth/CAuthItem.php
+%%DATADIR%%/framework/web/auth/CAuthManager.php
+%%DATADIR%%/framework/web/auth/CBaseUserIdentity.php
+%%DATADIR%%/framework/web/auth/CDbAuthManager.php
+%%DATADIR%%/framework/web/auth/CPhpAuthManager.php
+%%DATADIR%%/framework/web/auth/CUserIdentity.php
+%%DATADIR%%/framework/web/auth/CWebUser.php
+%%DATADIR%%/framework/web/auth/schema.sql
+%%DATADIR%%/framework/web/filters/CFilter.php
+%%DATADIR%%/framework/web/filters/CFilterChain.php
+%%DATADIR%%/framework/web/filters/CInlineFilter.php
+%%DATADIR%%/framework/web/helpers/CGoogleApi.php
+%%DATADIR%%/framework/web/helpers/CHtml.php
+%%DATADIR%%/framework/web/helpers/CJSON.php
+%%DATADIR%%/framework/web/helpers/CJavaScript.php
+%%DATADIR%%/framework/web/js/packages.php
+%%DATADIR%%/framework/web/js/source/autocomplete/indicator.gif
+%%DATADIR%%/framework/web/js/source/autocomplete/jquery.autocomplete.css
+%%DATADIR%%/framework/web/js/source/jquery.ajaxqueue.js
+%%DATADIR%%/framework/web/js/source/jquery.autocomplete.js
+%%DATADIR%%/framework/web/js/source/jquery.bgiframe.js
+%%DATADIR%%/framework/web/js/source/jquery.cookie.js
+%%DATADIR%%/framework/web/js/source/jquery.dimensions.js
+%%DATADIR%%/framework/web/js/source/jquery.js
+%%DATADIR%%/framework/web/js/source/jquery.maskedinput.js
+%%DATADIR%%/framework/web/js/source/jquery.metadata.js
+%%DATADIR%%/framework/web/js/source/jquery.min.js
+%%DATADIR%%/framework/web/js/source/jquery.multifile.js
+%%DATADIR%%/framework/web/js/source/jquery.rating.js
+%%DATADIR%%/framework/web/js/source/jquery.rating.js.patch
+%%DATADIR%%/framework/web/js/source/jquery.treeview.async.js
+%%DATADIR%%/framework/web/js/source/jquery.treeview.js
+%%DATADIR%%/framework/web/js/source/jquery.yii.js
+%%DATADIR%%/framework/web/js/source/jquery.yiitab.js
+%%DATADIR%%/framework/web/js/source/rating/delete.gif
+%%DATADIR%%/framework/web/js/source/rating/jquery.rating.css
+%%DATADIR%%/framework/web/js/source/rating/star.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/file.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/folder-closed.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/folder.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/minus.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/plus.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-black-line.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-black.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-default-line.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-default.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-famfamfam-line.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-famfamfam.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-gray-line.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-gray.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-red-line.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/treeview-red.gif
+%%DATADIR%%/framework/web/js/source/treeview/jquery.treeview.css
+%%DATADIR%%/framework/web/js/source/yiitab/jquery.yiitab.css
+%%DATADIR%%/framework/web/renderers/CPradoViewRenderer.php
+%%DATADIR%%/framework/web/renderers/CViewRenderer.php
+%%DATADIR%%/framework/web/services/CWebService.php
+%%DATADIR%%/framework/web/services/CWebServiceAction.php
+%%DATADIR%%/framework/web/services/CWsdlGenerator.php
+%%DATADIR%%/framework/web/widgets/CAutoComplete.php
+%%DATADIR%%/framework/web/widgets/CClipWidget.php
+%%DATADIR%%/framework/web/widgets/CContentDecorator.php
+%%DATADIR%%/framework/web/widgets/CFilterWidget.php
+%%DATADIR%%/framework/web/widgets/CFlexWidget.php
+%%DATADIR%%/framework/web/widgets/CHtmlPurifier.php
+%%DATADIR%%/framework/web/widgets/CInputWidget.php
+%%DATADIR%%/framework/web/widgets/CMarkdown.php
+%%DATADIR%%/framework/web/widgets/CMaskedTextField.php
+%%DATADIR%%/framework/web/widgets/CMultiFileUpload.php
+%%DATADIR%%/framework/web/widgets/COutputCache.php
+%%DATADIR%%/framework/web/widgets/COutputProcessor.php
+%%DATADIR%%/framework/web/widgets/CStarRating.php
+%%DATADIR%%/framework/web/widgets/CTabView.php
+%%DATADIR%%/framework/web/widgets/CTextHighlighter.php
+%%DATADIR%%/framework/web/widgets/CTreeView.php
+%%DATADIR%%/framework/web/widgets/CWidget.php
+%%DATADIR%%/framework/web/widgets/captcha/CCaptcha.php
+%%DATADIR%%/framework/web/widgets/captcha/CCaptchaAction.php
+%%DATADIR%%/framework/web/widgets/captcha/Duality.ttf
+%%DATADIR%%/framework/web/widgets/pagers/CBasePager.php
+%%DATADIR%%/framework/web/widgets/pagers/CLinkPager.php
+%%DATADIR%%/framework/web/widgets/pagers/CListPager.php
+%%DATADIR%%/framework/web/widgets/pagers/pager.css
+%%DATADIR%%/framework/web/widgets/views/flexWidget.php
+%%DATADIR%%/framework/yii-powered.png
+%%DATADIR%%/framework/yii.php
+%%DATADIR%%/framework/yiic
+%%DATADIR%%/framework/yiic.bat
+%%DATADIR%%/framework/yiic.php
+%%DATADIR%%/framework/yiilite.php
+@dirrm %%DATADIR%%/framework/web/widgets/views
+@dirrm %%DATADIR%%/framework/web/widgets/pagers
+@dirrm %%DATADIR%%/framework/web/widgets/captcha
+@dirrm %%DATADIR%%/framework/web/widgets
+@dirrm %%DATADIR%%/framework/web/services
+@dirrm %%DATADIR%%/framework/web/renderers
+@dirrm %%DATADIR%%/framework/web/js/source/yiitab
+@dirrm %%DATADIR%%/framework/web/js/source/treeview/images
+@dirrm %%DATADIR%%/framework/web/js/source/treeview
+@dirrm %%DATADIR%%/framework/web/js/source/rating
+@dirrm %%DATADIR%%/framework/web/js/source/autocomplete
+@dirrm %%DATADIR%%/framework/web/js/source
+@dirrm %%DATADIR%%/framework/web/js
+@dirrm %%DATADIR%%/framework/web/helpers
+@dirrm %%DATADIR%%/framework/web/filters
+@dirrm %%DATADIR%%/framework/web/auth
+@dirrm %%DATADIR%%/framework/web/actions
+@dirrm %%DATADIR%%/framework/web
+@dirrm %%DATADIR%%/framework/views/zh_tw
+@dirrm %%DATADIR%%/framework/views/zh_cn
+@dirrm %%DATADIR%%/framework/views/sv
+@dirrm %%DATADIR%%/framework/views/ro
+@dirrm %%DATADIR%%/framework/views/pt
+@dirrm %%DATADIR%%/framework/views/no
+@dirrm %%DATADIR%%/framework/views/nl
+@dirrm %%DATADIR%%/framework/views/ja
+@dirrm %%DATADIR%%/framework/views/id
+@dirrm %%DATADIR%%/framework/views/he
+@dirrm %%DATADIR%%/framework/views/fr
+@dirrm %%DATADIR%%/framework/views/de
+@dirrm %%DATADIR%%/framework/views
+@dirrm %%DATADIR%%/framework/vendors/markdown
+@dirrm %%DATADIR%%/framework/vendors/json
+@dirrm %%DATADIR%%/framework/vendors/jquery/treeview
+@dirrm %%DATADIR%%/framework/vendors/jquery/maskedinput
+@dirrm %%DATADIR%%/framework/vendors/jquery/autocomplete
+@dirrm %%DATADIR%%/framework/vendors/jquery
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Lexer
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/messages
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/classes
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Filter
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/EntityLookup
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/HTML
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/DefinitionCache
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone
+@dirrm %%DATADIR%%/framework/vendors/htmlpurifier
+@dirrm %%DATADIR%%/framework/vendors/gettext
+@dirrm %%DATADIR%%/framework/vendors/cldr
+@dirrm %%DATADIR%%/framework/vendors/adodb
+@dirrm %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer
+@dirrm %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter
+@dirrm %%DATADIR%%/framework/vendors/TextHighlighter/Text
+@dirrm %%DATADIR%%/framework/vendors/TextHighlighter
+@dirrm %%DATADIR%%/framework/vendors
+@dirrm %%DATADIR%%/framework/validators
+@dirrm %%DATADIR%%/framework/utils
+@dirrm %%DATADIR%%/framework/messages/zh_tw
+@dirrm %%DATADIR%%/framework/messages/zh_cn
+@dirrm %%DATADIR%%/framework/messages/vi
+@dirrm %%DATADIR%%/framework/messages/uk
+@dirrm %%DATADIR%%/framework/messages/sv
+@dirrm %%DATADIR%%/framework/messages/sr_yu
+@dirrm %%DATADIR%%/framework/messages/sr_sr
+@dirrm %%DATADIR%%/framework/messages/ru
+@dirrm %%DATADIR%%/framework/messages/ro
+@dirrm %%DATADIR%%/framework/messages/pt
+@dirrm %%DATADIR%%/framework/messages/pl
+@dirrm %%DATADIR%%/framework/messages/no
+@dirrm %%DATADIR%%/framework/messages/nl
+@dirrm %%DATADIR%%/framework/messages/ja
+@dirrm %%DATADIR%%/framework/messages/it
+@dirrm %%DATADIR%%/framework/messages/id
+@dirrm %%DATADIR%%/framework/messages/hu
+@dirrm %%DATADIR%%/framework/messages/he
+@dirrm %%DATADIR%%/framework/messages/gr
+@dirrm %%DATADIR%%/framework/messages/fr
+@dirrm %%DATADIR%%/framework/messages/es
+@dirrm %%DATADIR%%/framework/messages/de
+@dirrm %%DATADIR%%/framework/messages/bg
+@dirrm %%DATADIR%%/framework/messages
+@dirrm %%DATADIR%%/framework/logging
+@dirrm %%DATADIR%%/framework/i18n/gettext
+@dirrm %%DATADIR%%/framework/i18n/data
+@dirrm %%DATADIR%%/framework/i18n
+@dirrm %%DATADIR%%/framework/db/schema/sqlite
+@dirrm %%DATADIR%%/framework/db/schema/pgsql
+@dirrm %%DATADIR%%/framework/db/schema/oci
+@dirrm %%DATADIR%%/framework/db/schema/mysql
+@dirrm %%DATADIR%%/framework/db/schema/mssql
+@dirrm %%DATADIR%%/framework/db/schema
+@dirrm %%DATADIR%%/framework/db/ar
+@dirrm %%DATADIR%%/framework/db
+@dirrm %%DATADIR%%/framework/console
+@dirrm %%DATADIR%%/framework/collections
+@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/system
+@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/site
+@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/layouts
+@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic/views
+@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic
+@dirrm %%DATADIR%%/framework/cli/views/webapp/themes
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/views/system
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/views/site
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/views/layouts
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/views
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/runtime
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/models
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/messages
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/extensions
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/controllers
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/config
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/components/views
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/components
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/commands/shell
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/commands
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected
+@dirrm %%DATADIR%%/framework/cli/views/webapp/images
+@dirrm %%DATADIR%%/framework/cli/views/webapp/css
+@dirrm %%DATADIR%%/framework/cli/views/webapp/assets
+@dirrm %%DATADIR%%/framework/cli/views/webapp
+@dirrm %%DATADIR%%/framework/cli/views/shell/module/views/layouts
+@dirrm %%DATADIR%%/framework/cli/views/shell/module/views/default
+@dirrm %%DATADIR%%/framework/cli/views/shell/module/views
+@dirrm %%DATADIR%%/framework/cli/views/shell/module/models
+@dirrm %%DATADIR%%/framework/cli/views/shell/module/controllers
+@dirrm %%DATADIR%%/framework/cli/views/shell/module/components
+@dirrm %%DATADIR%%/framework/cli/views/shell/module
+@dirrm %%DATADIR%%/framework/cli/views/shell/model
+@dirrm %%DATADIR%%/framework/cli/views/shell/crud
+@dirrm %%DATADIR%%/framework/cli/views/shell/controller
+@dirrm %%DATADIR%%/framework/cli/views/shell
+@dirrm %%DATADIR%%/framework/cli/views
+@dirrm %%DATADIR%%/framework/cli/runtime
+@dirrm %%DATADIR%%/framework/cli/commands/shell
+@dirrm %%DATADIR%%/framework/cli/commands
+@dirrm %%DATADIR%%/framework/cli
+@dirrm %%DATADIR%%/framework/caching/dependencies
+@dirrm %%DATADIR%%/framework/caching
+@dirrm %%DATADIR%%/framework/base
+@dirrm %%DATADIR%%/framework
+@dirrm %%DATADIR%%
