@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	xboard
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
 
+BROKEN=		does not build
+
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 
 USE_XORG=	xt xpm xaw
