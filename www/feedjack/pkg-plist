@@ -1,75 +1,91 @@
 bin/feedjack_update.py
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/__init__.py
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/fjcache.py
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/fjcloud.py
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/fjlib.py
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/models.py
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/urls.py
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/views.py
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/fjcache.pyc
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/fjcloud.pyc
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/fjlib.pyc
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/models.pyc
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/urls.pyc
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/views.pyc
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/fjcache.pyo
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/fjcloud.pyo
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/fjlib.pyo
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/models.pyo
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/urls.pyo
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/views.pyo
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feedjack/foaf.xml
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feedjack/opml.xml
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feedjack/default/post_list.html
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feedjack/sinx/post_list.html
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feeds/rss_description.html
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feeds/rss_title.html
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/style.css
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/button-atom.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/button-css.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/button-django.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/button-foaf.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/button-hacker.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/button-opml.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/button-rss.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/button-xhtml.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/feed.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/faces/nobody.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/default.css
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/dot.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/fade.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/h2_bg.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/posts.css
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/smiley.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/theme.css
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/img/css.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/img/django_80x15.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/img/hacker.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/img/rss20.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/img/xhtml.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/img/faces/nobody.png
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/EGG-INFO/scripts/feedjack_update.py
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feedjack/default
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feedjack/sinx
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feedjack
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates/feeds
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/templates
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img/faces
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default/img
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/default
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/img/faces
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx/img
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack/sinx
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static/feedjack
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack/static
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/EGG-INFO/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg/feedjack
-@dirrm %%PYTHON_SITELIBDIR%%/Feedjack-%%FEEDJACKVER%%-py%%PYTHONVER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/feedjack_update.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/admin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/admin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/fjcache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/fjcache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/fjcache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/fjcloud.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/fjcloud.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/fjcloud.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/fjlib.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/fjlib.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/fjlib.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/en/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/en/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/es/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/es/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/sr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/sr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/button-atom.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/button-css.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/button-django.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/button-foaf.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/button-hacker.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/button-opml.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/button-rss.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/button-xhtml.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/faces/nobody.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/feed.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/style.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/default.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/dot.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/fade.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/h2_bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/img/css.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/img/django_80x15.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/img/faces/nobody.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/img/hacker.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/img/rss20.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/img/xhtml.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/posts.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/smiley.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/theme.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feedjack/default/post_list.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feedjack/foaf.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feedjack/opml.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feedjack/sinx/post_list.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feeds/rss_description.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feeds/rss_title.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/views.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feeds
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feedjack/sinx
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feedjack/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates/feedjack
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/img/faces
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx/img
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/sinx
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img/faces
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default/img
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static/feedjack
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/sr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/sr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/feedjack
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
