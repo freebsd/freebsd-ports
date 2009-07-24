@@ -88,6 +88,8 @@ CONFIGURE_ARGS+=	--without-curl
 REINPLACE_ARGS=	-i ""
 AP_EXTRAS+=	-DWITH_LIBXML2
 
+CONFIGURE_ARGS+=	--with-apxs=${APXS} --with-pcre=${LOCALBASE}
+
 post-patch:
 	@${REINPLACE_CMD} -e '\
 		s|SecRuleEngine On|SecRuleEngine DetectionOnly|; \
@@ -98,6 +100,7 @@ post-patch:
 .if defined(WITH_LUA)
 	${REINPLACE_CMD} -e 's|%%LUA_VER%%|${LUA_VER}|' ${WRKSRC}/configure
 .endif
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 
 post-build:
 .if defined(WITH_MLOGC)
