@@ -17,4 +17,7 @@ DEPRECATED=	"author has abandoned this program"
 
 #MAN1=		ppptraf.1
 
+post-patch:
+	${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," ${WRKSRC}/Makefile
+
 .include <bsd.port.mk>
