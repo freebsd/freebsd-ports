@@ -8,7 +8,7 @@
 
 PORTNAME=	open-cobol
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -16,6 +16,8 @@ MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	An open-source COBOL compiler
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+
+CONFLICTS=	open-cobol-1.[1]*
 
 USE_GNOME=	gnometarget
 USE_BDB=	yes

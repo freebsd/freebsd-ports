@@ -6,7 +6,7 @@
 
 PORTNAME=	open-cobol
 PORTVERSION=	1.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://freebsd.dev-urandom.com/open-cobol/
 
@@ -15,8 +15,9 @@ COMMENT=	An open-source COBOL compiler
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
-CONFLICTS=	open-cobol-1.[0]
+CONFLICTS=	open-cobol-1.[0]*
 
+LATEST_LINK=	open-cobol-devel
 USE_GNOME=	gnometarget
 USE_BDB=	yes
 USE_GMAKE=	yes
