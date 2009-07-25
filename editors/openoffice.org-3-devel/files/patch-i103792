@@ -1,0 +1,169 @@
+adding -lpangox-1.0 see http://www.openoffice.org/issues/show_bug.cgi?id=103772
+
+--- moz/seamonkey-source-1.1.14.patch	2009-06-27 09:39:41.000000000 +0900
++++ moz/seamonkey-source-1.1.14.patch	2009-07-02 11:12:36.000000000 +0900
+@@ -6345,3 +6345,164 @@
+  
+  clean clobber::
+  	rm -rf $(DIST)/$(APP_NAME).app
++
++
++###################MAHO's FREEBSD PART###################
++--- misc/mozilla/gfx/src/gtk/Makefile.in	2007-10-08 21:09:58.000000000 +0200
+++++ misc/build/mozilla/gfx/src/gtk/Makefile.in	2008-08-18 14:10:04.000000000 +0200
++@@ -207,7 +207,7 @@
++ EXTRA_DSO_LDOPTS += $(MOZ_PANGO_LIBS)
++ endif
++ 
++-EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(MOZ_GTK_LDFLAGS) $(MOZ_XFT_LIBS) $(MOZ_GTK2_LIBS)
+++EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(MOZ_GTK_LDFLAGS) $(MOZ_XFT_LIBS) $(MOZ_GTK2_LIBS) -lpangox-1.0
++ CXXFLAGS	+= $(MOZ_GTK_CFLAGS) $(MOZ_GTK2_CFLAGS)
++ CFLAGS		+= $(MOZ_GTK_CFLAGS) $(MOZ_GTK2_CFLAGS)
++
++--- misc/mozilla/config/config.mk	2009-06-28 16:28:27.000000000 +0900
+++++ misc/build/mozilla/config/config.mk	2009-06-28 16:18:04.000000000 +0900
++@@ -774,6 +774,13 @@
++ endif # IS_COMPONENT
++ endif # SunOS
++ 
+++ifeq ($(OS_ARCH),FreeBSD)
+++EXTRA_DSO_LDOPTS += -Wl,-rpath,\$$ORIGIN:\$$ORIGIN/../ure-link/lib
+++ifdef IS_COMPONENT
+++EXTRA_DSO_LDOPTS += -Wl,-rpath,\$$ORIGIN/..:\$$ORIGIN/../../ure-link/lib
+++endif # IS_COMPONENT
+++endif # FreeBSD
+++
++ #
++ # Include any personal overrides the user might think are needed.
++ #
++--- misc/mozilla/nsprpub/lib/ds/Makefile.in	2009-06-28 16:28:27.000000000 +0900
+++++ misc/build/mozilla/nsprpub/lib/ds/Makefile.in	2009-06-28 16:22:16.000000000 +0900
++@@ -83,6 +83,10 @@
++ MKSHLIB += -Wl,-rpath,\$$ORIGIN:\$$ORIGIN/../ure-link/lib
++ endif
++ 
+++ifeq ($(OS_ARCH),FreeBSD)
+++MKSHLIB += -Wl,-rpath,\$$ORIGIN:\$$ORIGIN/../ure-link/lib
+++endif
+++
++ ifeq ($(OS_ARCH),SunOS)
++ OS_LIBS = -lc
++ MAPFILE = $(OBJDIR)/pldsmap.sun
++--- misc/mozilla/nsprpub/lib/libc/src/Makefile.in	2009-06-28 16:28:27.000000000 +0900
+++++ misc/build/mozilla/nsprpub/lib/libc/src/Makefile.in	2009-06-28 16:23:31.000000000 +0900
++@@ -93,6 +93,10 @@
++ MKSHLIB += -Wl,-rpath,\$$ORIGIN:\$$ORIGIN/../ure-link/lib
++ endif
++ 
+++ifeq ($(OS_ARCH),FreeBSD)
+++MKSHLIB += -Wl,-rpath,\$$ORIGIN:\$$ORIGIN/../ure-link/lib
+++endif
+++
++ ifeq ($(OS_ARCH),SunOS)
++ OS_LIBS = -lc
++ MAPFILE = $(OBJDIR)/plcmap.sun
++--- misc/mozilla/security/coreconf/FreeBSD.mk	2009-06-28 16:28:27.000000000 +0900
+++++ misc/build/mozilla/security/coreconf/FreeBSD.mk	2009-06-28 16:25:10.000000000 +0900
++@@ -52,6 +52,7 @@
++ 
++ DSO_CFLAGS		= -fPIC
++ DSO_LDOPTS		= -shared -Wl,-soname -Wl,$(notdir $@)
+++DSO_LDOPTS		+= -Wl,-rpath,\$$ORIGIN:\$$ORIGIN/../ure-link/lib
++ 
++ #
++ # The default implementation strategy for FreeBSD is pthreads.
++--- misc/mozilla/config/mkdepend/imakemdep.h	2009-06-29 02:48:45.000000000 +0900
+++++ misc/build/mozilla/config/mkdepend/imakemdep.h	2009-06-29 02:48:01.000000000 +0900
++@@ -277,8 +277,8 @@
++ # ifdef __i386__
++ 	"-D__i386__",
++ # endif
++-# ifdef __x86_64__
++-	"-D__x86_64__",
+++# if defined(__amd64__) || defined(__x86_64__)
+++       "-D__amd64__ -D__x86_64__",
++ # endif
++ # ifdef __GNUC__
++ 	"-traditional",
++
++--- misc/mozilla/directory/c-sdk/ldap/libraries/libldap/Makefile.in	2009-07-02 10:03:28.000000000 +0900
+++++ misc/build/mozilla/directory/c-sdk/ldap/libraries/libldap/Makefile.in	2009-07-02 10:14:17.000000000 +0900
++@@ -249,6 +249,10 @@
++ EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME) -pthread
++ endif
++ 
+++ifeq ($(OS_ARCH), FreeBSD)
+++EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME)
+++endif
+++
++ ###########################################################################
++ 
++ ifeq ($(USE_DLL_EXPORTS_FILE), 1)
++
++########################################
++following is re_comp issue. FBSD has re_comp in /usr/lib/libcompat.a,
++but since re_comp, re_exec are deprecated, shared libs are not provided.
++This causes a problem for amd64 arch at extension project like following:
++
++Making: ../../../unxfbsdx.pro/lib/ldapbe2.uno.so
++ccache c++ -Wl,-z,combreloc -Wl,-rpath,'$ORIGIN:$ORIGIN/../ure-link/lib' -shared -L../../../unxfbsdx.pro/lib -L../lib -L/work/seamonkey/ports/editors/openoffice.org-3-devel/work/moz2seamonkey01/solenv/unxfbsdx/lib -L/work/seamonkey/ports/editors/openoffice.org-3-devel/work/moz2seamonkey01/solver/300/unxfbsdx.pro/lib -L/work/seamonkey/ports/editors/openoffice.org-3-devel/work/moz2seamonkey01/solenv/unxfbsdx/lib -L/usr/local/diablo-jdk1.6.0/lib -L/usr/local/diablo-jdk1.6.0/jre/lib/amd64 -L/usr/local/diablo-jdk1.6.0/jre/lib/amd64/server -L/usr/local/diablo-jdk1.6.0/jre/lib/amd64/native_threads -L/usr/local/lib ../../../unxfbsdx.pro/slo/ldapbe2.uno_version.o -o ../../../unxfbsdx.pro/lib/ldapbe2.uno.so ../../../unxfbsdx.pro/slo/ldapuserprofilebe.o ../../../unxfbsdx.pro/slo/ldapuserprof.o ../../../unxfbsdx.pro/slo/ldapaccess.o ../../../unxfbsdx.pro/slo/ldapuserprofilelayer.o ../../../unxfbsdx.pro/slo/propertysethelper.o ../../../unxfbsdx.pro/slo/componentdef.o -lldap50 -luno_cppuhelpergcc3 -luno_cppu -luno_salhelpergcc3 -luno_sal -lcompat -Wl,-Bstatic -llber50 -pthread -lm -Wl,-Bdynamic -lstlport_gcc
++/usr/bin/ld: /usr/lib/libcompat.a(regex.o): relocation R_X86_64_32 can not be used when making a shared object; recompile with -fPIC
++/usr/lib/libcompat.a: could not read symbols: Bad value
++dmake:  Error code 1, while making '../../../unxfbsdx.pro/lib/ldapbe2.uno.so'
++.
++
++However, simply activating via "#define NEED_BSDREGEX" doesn't work as
++regex.h in seamonkey and /usr/include/unistd.h conflicts. We cannot
++stop include unistd.h :-(
++
++In file included from getfilter.c:53:
++../../../ldap/include/regex.h:76: error: conflicting types for 're_comp'
++/usr/include/unistd.h:516: error: previous declaration of 're_comp' was here
++../../../ldap/include/regex.h:77: error: conflicting types for 're_exec'
++/usr/include/unistd.h:517: error: previous declaration of 're_exec' was here
++
++--- misc/mozilla/directory/c-sdk/ldap/include/portable.h	2006-02-03 23:44:40.000000000 +0900
+++++ misc/build/mozilla/directory/c-sdk/ldap/include/portable.h	2009-07-02 10:35:23.000000000 +0900
++@@ -131,7 +131,7 @@
++  * some systems don't have the BSD re_comp and re_exec routines
++  */
++ #ifndef NEED_BSDREGEX
++-#if ( defined( SYSV ) || defined( NETBSD ) || defined( freebsd ) || defined( linux ) || defined( DARWIN )) && !defined(sgi)
+++#if ( defined( SYSV ) || defined( NETBSD ) || defined( FREEBSD ) || defined( linux ) || defined( DARWIN )) && !defined(sgi)
++ #define NEED_BSDREGEX
++ #endif
++ #endif
++
++--- misc/mozilla/directory/c-sdk/ldap/libraries/libldap/regex.c	2006-02-03 23:44:42.000000000 +0900
+++++ misc/build/mozilla/directory/c-sdk/ldap/libraries/libldap/regex.c	2009-07-02 11:05:54.000000000 +0900
++@@ -267,7 +267,7 @@
++  
++ char *     
++ LDAP_CALL
++-re_comp( char *pat )
+++re_comp( const char *pat )
++ {
++ 	register REGEXCHAR *p;          /* pattern pointer   */
++ 	register REGEXCHAR *mp=nfa;     /* nfa pointer       */
++@@ -513,7 +513,7 @@
++ 
++ int
++ LDAP_CALL
++-re_exec( char *lp )
+++re_exec( const char *lp )
++ {
++ 	register REGEXCHAR c;
++ 	register REGEXCHAR *ep = 0;
++--- misc/mozilla/directory/c-sdk/ldap/include/regex.h	2006-02-03 23:44:40.000000000 +0900
+++++ misc/build/mozilla/directory/c-sdk/ldap/include/regex.h	2009-07-02 11:05:24.000000000 +0900
++@@ -73,8 +73,8 @@
++ int re_init( void );
++ void re_lock( void );
++ int re_unlock( void );
++-char * LDAP_CALL re_comp( char *pat );
++-int LDAP_CALL re_exec( char *lp );
+++char * LDAP_CALL re_comp( const char *pat );
+++int LDAP_CALL re_exec( const char *lp );
++ void LDAP_CALL re_modw( char *s );
++ int LDAP_CALL re_subs( char *src, char *dst );
++ #else /* NEEDPROTOS */
