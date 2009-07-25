@@ -916,6 +916,7 @@
     SUBDIR += ocaml-xstr
     SUBDIR += ocaml-xstrp4
     SUBDIR += ocamlweb
+    SUBDIR += ocfpcsc
     SUBDIR += ode
     SUBDIR += ode-devel
     SUBDIR += ois

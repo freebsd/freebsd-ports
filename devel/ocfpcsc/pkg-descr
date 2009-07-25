@@ -1,0 +1,5 @@
+A library to provide a means to use Open Card Framework to talk 
+to PC/SC supported smartcard readers.
+
+Author: David Corcoran
+WWW:	http://www.musclecard.com/middleware/

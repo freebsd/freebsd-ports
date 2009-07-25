@@ -1,0 +1,7 @@
+%%PLUGIN%%lib/browser_plugins/libOCFPCSC1.so
+%%PLUGIN%%lib/browser_plugins/libWINSCARD.so
+lib/libOCFPCSC1.so
+lib/libOCFPCSC1.so.1
+lib/libWINSCARD.so
+lib/libWINSCARD.so.1
+%%PLUGIN%%@dirrmtry lib/browser_plugins
