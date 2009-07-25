@@ -18,6 +18,7 @@ apps/ROX-Filer/Messages/et_EE/LC_MESSAGES/ROX-Filer.mo
 apps/ROX-Filer/Messages/eu/LC_MESSAGES/ROX-Filer.mo
 apps/ROX-Filer/Messages/fi/LC_MESSAGES/ROX-Filer.mo
 apps/ROX-Filer/Messages/fr/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/gl/LC_MESSAGES/ROX-Filer.mo
 apps/ROX-Filer/Messages/hu/LC_MESSAGES/ROX-Filer.mo
 apps/ROX-Filer/Messages/it/LC_MESSAGES/ROX-Filer.mo
 apps/ROX-Filer/Messages/ja/LC_MESSAGES/ROX-Filer.mo
@@ -182,6 +183,8 @@ share/mime/packages/rox.xml
 @dirrm apps/ROX-Filer/Messages/it
 @dirrm apps/ROX-Filer/Messages/hu/LC_MESSAGES
 @dirrm apps/ROX-Filer/Messages/hu
+@dirrm apps/ROX-Filer/Messages/gl/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/gl
 @dirrm apps/ROX-Filer/Messages/fr/LC_MESSAGES
 @dirrm apps/ROX-Filer/Messages/fr
 @dirrm apps/ROX-Filer/Messages/fi/LC_MESSAGES
