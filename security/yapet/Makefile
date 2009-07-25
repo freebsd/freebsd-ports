@@ -7,8 +7,13 @@
 
 PORTNAME=	yapet
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.guengel.ch/myapps/yapet/downloads/ http://homepage.hispeed.ch/rostertag/yapet/
+
+PATCH_SITES=	http://www.guengel.ch/myapps/yapet/downloads/patches/ http://homepage.hispeed.ch/rostertag/yapet/patches/
+PATCHFILES=	yapet_cfgfile-0.4.diff yapet_csv2yapet-0.4.diff
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rafi@guengel.ch
 COMMENT=	A curses based password manager
@@ -18,6 +23,8 @@ MANCOMPRESSED=	no
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:262 automake:110 aclocal:110
+ACLOCAL_ARGS=	-I m4
 
 OPTIONS=	TTITLE "Enable Terminal Title" ON \
 		CSV2YAPET "Build csv2yapet" ON
@@ -49,6 +56,16 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--enable-install-doc
+PLIST_SUB+=		NOPORTDOCS=""
+.else
+CONFIGURE_ARGS+=	--disable-install-doc
+PLIST_SUB+=		NOPORTDOCS="@comment "
+.undef MAN1
+.undef MANCOMPRESSED
 .endif
 
 .include <bsd.port.post.mk>
