@@ -3496,6 +3496,7 @@ fortunelock                     ports/sysutils/fortunelock
 fortytwo                        ports/graphics/fortytwo
 fortytwo-bdb                    ports/databases/fortytwo-bdb
 fortytwo-encore                 ports/devel/fortytwo-encore
+fossology                       ports/devel/fossology
 fotaq                           ports/games/fotaq
 fotofix                         ports/graphics/fotofix
 fourcdns                        ports/dns/fourcdns
@@ -9848,6 +9849,7 @@ open                            ports/sysutils/open
 open-axiom                      ports/math/open-axiom
 open-beagle                     ports/devel/open-beagle
 open-cobol                      ports/lang/open-cobol
+open-cobol-devel                ports/lang/open-cobol-devel
 open-motif                      ports/x11-toolkits/open-motif
 open-vm-tools                   ports/emulators/open-vm-tools
 open-vm-tools-nox11             ports/emulators/open-vm-tools-nox11
@@ -24402,6 +24404,7 @@ yencode                         ports/news/yencode
 yersinia                        ports/security/yersinia
 yfklog                          ports/comms/yfklog
 yi-aspell                       ports/textproc/yi-aspell
+yii                             ports/www/yii
 yodl                            ports/textproc/yodl
 yorick                          ports/lang/yorick
 yorick-doc                      ports/lang/yorick-doc
