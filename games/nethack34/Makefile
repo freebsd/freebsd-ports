@@ -45,16 +45,30 @@ MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 GRAPHICS=	GNOME_GRAPHICS
 .elif ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
+#
+# Patch notes:
+# 1) hpmon and statuscolors conflict with one another
+# 2) menucolors patch must be applied before statuscolors
+#
+.if defined(WITH_HPMON) && defined(WITH_STATUSCOLORS)
+IGNORE=		you cannot enable both HPMON and STATUSCOLORS
+.endif
 .if defined(WITH_MENUCOLORS)
 PATCHFILES+=	nh343-menucolor.diff
 PATCH_SITES+=	http://bilious.homelinux.org/~paxed/nethack/
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DMENU_COLOR_REGEX_POSIX
 .endif
+.if defined(WITH_STATUSCOLORS)
+PATCHFILES+=	nh343-statuscolors.fixed.patch
+PATCH_SITES+=	http://jdc.parodius.com/nethack/ \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|wxs|}
+PATCH_DIST_STRIP=	-p1
+.endif
 .if defined(WITH_HPMON)
 PATCHFILES+=	hpmon.diff
 PATCH_SITES+=	http://www.netsonic.fi/~walker/nh/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|wxs|}
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DHPMON
 .endif
