@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox-filer
-PORTVERSION=	2.8
-PORTREVISION=	2
+PORTVERSION=	2.10
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	SF/rox
 DISTNAME=	rox-filer-${PORTVERSION}
@@ -22,7 +21,7 @@ USE_AUTOTOOLS=	autoconf:213
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 sm xaw xproto
-USE_GNOME=	pkgconfig glib20 gtk20 libxml2 gnomevfs2 pango libglade2
+USE_GNOME=	atk gconf2 glib20 gnomevfs2 gtk20 libglade2 libidl libxml2 orbit2 pango pkgconfig
 HAS_CONFIGURE=	yes
 
 MAN1=		rox.1
