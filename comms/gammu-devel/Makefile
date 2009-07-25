@@ -21,10 +21,6 @@ CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 USE_CMAKE=	yes
 USE_GNOME=	pkgconfig
 
-.if (${ARCH} == "amd64")
-USE_GCC=	4.3
-.endif
-
 .if defined(WITH_PYTHON_GAMMU)
 USE_PYTHON=	YES
 PLIST_SUB=	WITH_PYTHON_GAMMU=""
@@ -46,6 +42,10 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64")
+USE_GCC=	4.3
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
