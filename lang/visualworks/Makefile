@@ -87,7 +87,8 @@ DISTFILES+=	CntrbCOAST.tar.gz
 DISTFILES+=	CntrbDome.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_JUN)
-DISTFILES+=	CntrbJun.tar.gz
+DISTFILES+=	CntrbJun.tar.gz \
+		CntrbHeeg.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_SEASIDE)
 DISTFILES+=	CntrbSeaside.tar.gz
