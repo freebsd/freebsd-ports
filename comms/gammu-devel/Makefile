@@ -21,6 +21,10 @@ CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 USE_CMAKE=	yes
 USE_GNOME=	pkgconfig
 
+.if (${ARCH} == "amd64")
+USE_GCC=	4.3
+.endif
+
 .if defined(WITH_PYTHON_GAMMU)
 USE_PYTHON=	YES
 PLIST_SUB=	WITH_PYTHON_GAMMU=""
