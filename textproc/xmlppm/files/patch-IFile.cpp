@@ -1,5 +1,5 @@
---- IFile.cpp.orig	Thu Jun 10 04:16:13 2004
-+++ IFile.cpp	Tue Aug 17 23:21:02 2004
+--- src/IFile.cpp.orig	Thu Jun 10 04:16:13 2004
++++ src/IFile.cpp	Tue Aug 17 23:21:02 2004
 @@ -73,7 +73,7 @@
     writing the output.  Then flush the file.  */
  void ifflush(IFILE* ifile) {
