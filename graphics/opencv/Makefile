@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/opencvlibrary
 
-MAINTAINER=	msabramo@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Computer Vision Library from Intel
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
