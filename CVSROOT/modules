@@ -9694,6 +9694,7 @@ ocaml-yaxpo                     ports/textproc/ocaml-yaxpo
 ocaml-zip                       ports/archivers/ocaml-zip
 ocamlduce                       ports/lang/ocamlduce
 ocamlweb                        ports/devel/ocamlweb
+ocfpcsc                         ports/devel/ocfpcsc
 oclock                          ports/x11-clocks/oclock
 ocp                             ports/audio/ocp
 ocrad                           ports/graphics/ocrad
