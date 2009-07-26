@@ -12,6 +12,7 @@
 #				Set to "YES" to enable dnetc.
 # dnetc_dir (path):		Set to "%%BINDIR%%" by default.
 # dnetc_user (user):		Set to "%%CLIENTUSER%%" by default.
+# dnetc_idprio (priority):	Unset by default. See idprio manpage.
 #
 
 . %%RC_SUBR%%
@@ -41,7 +42,7 @@ dnetc_start()
 	if ps -x -o ucomm -U${dnetc_user} | grep ${name} >/dev/null; then
 		echo "${name} already running?"
 	else
-		su -m ${dnetc_user} -c "${dnetc_dir}/${name} -quiet" >/dev/null 2>&1
+		${dnetc_idprio:+idprio} ${dnetc_idprio} su -m ${dnetc_user} -c "${dnetc_dir}/${name} -quiet" >/dev/null 2>&1
 		echo -n " ${name}"
 	fi
 }

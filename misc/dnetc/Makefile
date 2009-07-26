@@ -49,7 +49,7 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-REVISION=	0
+REVISION=	1
 VERSION=	2.9103.509
 .if ${OSVERSION} >= 700055
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
@@ -61,7 +61,7 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
 
 .if ${ARCH} == amd64
-REVISION=	0
+REVISION=	1
 VERSION=	2.9103.509
 .if ${OSVERSION} >= 700055
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
@@ -73,7 +73,7 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
 
 .if ${ARCH} == sparc64
-REVISION=	0
+REVISION=	1
 VERSION=	2.9103.509
 .if ${OSVERSION} >= 700055
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
@@ -85,7 +85,7 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
 
 .if ${ARCH} == alpha
-REVISION=	3
+REVISION=	4
 VERSION=	2.9003.481
 .endif
 
