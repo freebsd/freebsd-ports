@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.0.0.p1
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
-DISTNAME=	LiVES-${PORTVERSION:S/.p/-pre/}
+DISTNAME=	LiVES-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video editing system
 
-BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		oil-0.3.0:${PORTSDIR}/devel/liboil \
 		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
@@ -26,7 +24,6 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		sox:${PORTSDIR}/audio/sox \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		convert:${PORTSDIR}/graphics/ImageMagick \
-		${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r \
 		sswf:${PORTSDIR}/graphics/sswf \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
@@ -36,6 +33,8 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		x264:${PORTSDIR}/multimedia/x264 \
 		xmms:${PORTSDIR}/multimedia/xmms
+
+OPTIONS=	FREI0R "Enable frei0r support" off
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
@@ -63,6 +62,17 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_FREI0R)
+BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+RUN_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+PLIST_SUB+=	FREI0R=""
+.else
+CONFIGURE_ENV+=	ac_cv_header_frei0r_h=no
+PLIST_SUB+=	FREI0R="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/s|-ldl ||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; \
@@ -72,12 +82,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|off64_t|off_t|g ; \
 		 s|lseek64|lseek|g' ${WRKSRC}/${file}
 .endfor
+	@${REINPLACE_CMD} -e 's|/usr/lib/|${LOCALBASE}/lib/|g' \
+		${WRKSRC}/lives-plugins/weed-plugins/frei0r.c
 	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e \
 		'/FLAGS/s|-O3||g ; \
 		 /FLAGS/s|-ldl||g ; \
 		 /flags/s|-L/usr/lib64||g ; \
-		 /flags/s|-W,-Bsymbolic||g ; \
+		 /flags/s|-Wl,-Bsymbolic||g ; \
 		 /flags/s|--tag=disable-static||g'
 
 post-install:
@@ -88,4 +100,4 @@ post-install:
 .endfor 
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
