@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerman
-PORTVERSION=	2.3.4
-#PORTREVISION=	1
+PORTVERSION=	2.3.5
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	SF/powerman
 
@@ -20,11 +19,11 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-httppower --localstatedir=${DESTDIR}/var \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	powerman.sh
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -DHAVE_CURL
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		pm.1 powerman.1
