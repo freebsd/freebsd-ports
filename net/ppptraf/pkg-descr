@@ -4,7 +4,7 @@ PPPTraf is a ncurses program used to monitor bytes in/out over a PPP
 connection. If ran on a router, and supplied with all IPs on the lan,
 a table is drawn showing the bytes in/out (sent/received) for all
 hosts on the LAN, and a total. This program was primarily written for
-people that are charged by volume (bytes recieved).
+people that are charged by volume (bytes received).
 
 I'm looking for feedback, as i have some big improvements planned.
 
