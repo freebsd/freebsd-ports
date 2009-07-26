@@ -70,16 +70,16 @@ LCDPROC_DRIVERS=bayrad \
 .if defined(WITH_USB)
 . if ${OSVERSION} < 800069
 LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
+CONFIGURE_ARGS+=	--with-libusb
 . else
-CONFIGURE_ARGS+=	--with-libusb-libraries=/usr
+CONFIGURE_ARGS+=	--with-libusb=/usr
 . endif
-CONFIGURE_ARGS+=	--enable-libusb
 PLIST_SUB+=		USB=""
 LCDPROC_DRIVERS+=IOWarrior \
 		picolcd \
 		shuttleVFD
 .else
-CONFIGURE_ARGS+=	--disable-libusb
+CONFIGURE_ARGS+=	--without-libusb
 PLIST_SUB+=		USB="@comment "
 .endif
 
