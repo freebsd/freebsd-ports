@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	spectools
-PORTVERSION=	200710.r2
-PORTREVISION=	1
+PORTVERSION=	200906.r1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.kismetwireless.net/code/
-DISTNAME=	spectools-2007-10-R2
+MASTER_SITES=	http://www.kismetwireless.net/code/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	brix
+DISTNAME=	spectools-2009-06-R1
 
 MAINTAINER=	brix@FreeBSD.org
-COMMENT=	Tools for the 2.4GHz Wi-Spy spectrum analyzers from MetaGeek LLC
+COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -22,7 +23,27 @@ USE_GMAKE=	yes
 
 PORTDOCS=	README
 
-OPTIONS=	GTK "Enable graphical client" On
+OPTIONS=	GTK "Enable graphical client" On \
+		NCURSES "Enable ncurses client" On
+
+ALL_TARGET=	spectool_net spectool_raw
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GTK)
+ALL_TARGET+=	spectool_gtk
+LIB_DEPENDS+=	gtk:${PORTSDIR}/x11-toolkits/gtk20
+PLIST_SUB+=	GTK=""
+.else
+PLIST_SUB+=	GTK="@comment "
+.endif
+
+.if defined(WITH_NCURSES)
+ALL_TARGET+=	spectool_curses
+PLIST_SUB+=	NCURSES=""
+.else
+PLIST_SUB+=	NCURSES="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -36,21 +57,14 @@ IGNORE=	is unsupported on systems prior to FreeBSD v700027
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .endif
 
-ALL_TARGET=	spectool_net spectool_raw
-
-.if defined(WITH_GTK)
-ALL_TARGET+=	spectool_gtk
-LIB_DEPENDS+=	gtk:${PORTSDIR}/x11-toolkits/gtk20
-PLIST_SUB=	GTK=""
-.else
-PLIST_SUB=	GTK="@comment "
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spectool_net ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/spectool_raw ${PREFIX}/bin
 .if defined(WITH_GTK)
 	${INSTALL_PROGRAM} ${WRKSRC}/spectool_gtk ${PREFIX}/bin
+.endif
+.if defined(WITH_NCURSES)
+	${INSTALL_PROGRAM} ${WRKSRC}/spectool_curses ${PREFIX}/bin
 .endif
 
 post-install:
