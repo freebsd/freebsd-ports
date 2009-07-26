@@ -34,6 +34,10 @@ CONFLICTS=	samhain-client-2*
 CFLAGS+=	-fPIC
 .endif
 
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 800000
+BROKEN=		does not compile
+.endif
+
 .if defined(WITH_GPG)
 BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 .endif

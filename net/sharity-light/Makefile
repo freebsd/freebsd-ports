@@ -19,6 +19,12 @@ MAN8=		smbmount.8
 PLIST_FILES=	sbin/shlight sbin/unshlight
 PORTDOCS=	*
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800100
+BROKEN=		does not compile
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKDIR}/unshlight
 	@${CP} ${FILESDIR}/unshlight.c ${WRKDIR}/unshlight
@@ -37,4 +43,4 @@ do-install:
 .endif
 	${INSTALL_MAN} ${WRKSRC}/smbmount.8 ${PREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
