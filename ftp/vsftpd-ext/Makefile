@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	vsftpd-ext
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
-PKGNAMESUFFIX?=	1${SSL_SUFFIX}${PKGNAMESUFFIX2}
+PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	vsftpd-${PORTVERSION}
 
 PATCH_SITES=	http://vsftpd.devnet.ru/files/${PORTVERSION}/ext.1/diff/
