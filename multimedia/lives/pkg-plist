@@ -62,8 +62,8 @@ lib/lives/plugins/effects/realtime/weed/fg_bg_removal.la
 lib/lives/plugins/effects/realtime/weed/fg_bg_removal.so
 lib/lives/plugins/effects/realtime/weed/fireTV.la
 lib/lives/plugins/effects/realtime/weed/fireTV.so
-lib/lives/plugins/effects/realtime/weed/frei0r.la
-lib/lives/plugins/effects/realtime/weed/frei0r.so
+%%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r.la
+%%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r.so
 lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.la
 lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.so
 lib/lives/plugins/effects/realtime/weed/haip.la
@@ -263,23 +263,22 @@ share/applications/LiVES.desktop
 %%DATADIR%%/plugins/effects/RFXscripts/wave.script
 %%DATADIR%%/themes/camera/frame.jpg
 %%DATADIR%%/themes/camera/main.jpg
+%%DATADIR%%/themes/crayons/frame.jpg
+%%DATADIR%%/themes/crayons/main.jpg
+%%DATADIR%%/themes/crayons-bright/frame.jpg
+%%DATADIR%%/themes/crayons-bright/main.jpg
 %%DATADIR%%/themes/cutting_room/frame.jpg
 %%DATADIR%%/themes/cutting_room/main.jpg
-%%DATADIR%%/themes/default/frame.jpg
-%%DATADIR%%/themes/default/main.jpg
 %%DATADIR%%/themes/editor/frame.jpg
 %%DATADIR%%/themes/editor/main.jpg
-%%DATADIR%%/themes/greenish/frame.jpg
-%%DATADIR%%/themes/greenish/main.jpg
 %%DATADIR%%/themes/lives-splash.png
 %%DATADIR%%/themes/pinks/frame.jpg
 %%DATADIR%%/themes/pinks/main.jpg
-%%DATADIR%%/themes/sunburst/frame.jpg
-%%DATADIR%%/themes/sunburst/main.jpg
 share/locale/cs/LC_MESSAGES/lives.mo
 share/locale/de_DE/LC_MESSAGES/lives.mo
 share/locale/es/LC_MESSAGES/lives.mo
 share/locale/fr/LC_MESSAGES/lives.mo
+share/locale/he/LC_MESSAGES/lives.mo
 share/locale/hu/LC_MESSAGES/lives.mo
 share/locale/it/LC_MESSAGES/lives.mo
 share/locale/ja/LC_MESSAGES/lives.mo
@@ -288,15 +287,15 @@ share/locale/pl/LC_MESSAGES/lives.mo
 share/locale/pt/LC_MESSAGES/lives.mo
 share/locale/pt_BR/LC_MESSAGES/lives.mo
 share/locale/ru/LC_MESSAGES/lives.mo
+share/locale/sk/LC_MESSAGES/lives.mo
 share/locale/tr/LC_MESSAGES/lives.mo
 share/locale/zh_CN/LC_MESSAGES/lives.mo
 share/pixmaps/lives.xpm
-@dirrm %%DATADIR%%/themes/sunburst
 @dirrm %%DATADIR%%/themes/pinks
-@dirrm %%DATADIR%%/themes/greenish
 @dirrm %%DATADIR%%/themes/editor
-@dirrm %%DATADIR%%/themes/default
 @dirrm %%DATADIR%%/themes/cutting_room
+@dirrm %%DATADIR%%/themes/crayons-bright
+@dirrm %%DATADIR%%/themes/crayons
 @dirrm %%DATADIR%%/themes/camera
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/plugins/effects/RFXscripts
