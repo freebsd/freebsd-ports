@@ -400,6 +400,7 @@
     SUBDIR += linux-f8-openal
     SUBDIR += linux-f8-sdl_mixer
     SUBDIR += linux-freealut
+    SUBDIR += linux-genpuid
     SUBDIR += linux-libaudiofile
     SUBDIR += linux-libmad
     SUBDIR += linux-libogg
