@@ -23,6 +23,8 @@ PLIST_FILES=	lib/xmms/Input/libsexyspc.a \
 		lib/xmms/Input/libsexyspc.la \
 		lib/xmms/Input/libsexyspc.so
 
+BROKEN=		fails to build
+
 ONLY_FOR_ARCHS=	i386	# contains x86 assembler code
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
