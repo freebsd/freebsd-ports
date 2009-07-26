@@ -1,27 +1,31 @@
 %%DATADIR%%/Classes/AgentLauncher$1.class
 %%DATADIR%%/Classes/AgentLauncher$2.class
 %%DATADIR%%/Classes/AgentLauncher.class
+%%DATADIR%%/Classes/Start.class
+%%DATADIR%%/Classes/Base/bin_linux/Dimes
+%%DATADIR%%/Classes/Base/bin_linux/libwrapper-linux-x86-32.so
+%%DATADIR%%/Classes/Base/bin_linux/libwrapper.so
+%%DATADIR%%/Classes/Base/bin_linux/testwrapper
+%%DATADIR%%/Classes/Base/bin_linux/wrapper
+%%DATADIR%%/Classes/Base/bin_linux/wrapper.jar
+%%DATADIR%%/Classes/Base/bin_linux/wrapper-linux-x86-32
 %%DATADIR%%/Classes/Base/conf/countries-xml.txt
 %%DATADIR%%/Classes/Base/conf/logging.properties
 %%DATADIR%%/Classes/Base/conf/properties.xml
+%%DATADIR%%/Classes/Base/conf/wrapper.conf
 %%DATADIR%%/Classes/Base/resources/About16.gif
-%%DATADIR%%/Classes/Base/resources/CommunicationDetector.dll
 %%DATADIR%%/Classes/Base/resources/DIMES.gif
 %%DATADIR%%/Classes/Base/resources/DIMESIcon.ico
 %%DATADIR%%/Classes/Base/resources/DIMES_Large.jpg
 %%DATADIR%%/Classes/Base/resources/Delete16.gif
 %%DATADIR%%/Classes/Base/resources/DimesSplash.jpg
 %%DATADIR%%/Classes/Base/resources/Help16.gif
-%%DATADIR%%/Classes/Base/resources/IDW.jar
-%%DATADIR%%/Classes/Base/resources/MTR.dll
-%%DATADIR%%/Classes/Base/resources/MySystray4j.jar
 %%DATADIR%%/Classes/Base/resources/Pause16.gif
 %%DATADIR%%/Classes/Base/resources/Play16.gif
 %%DATADIR%%/Classes/Base/resources/Properties16.gif
 %%DATADIR%%/Classes/Base/resources/Save16.gif
 %%DATADIR%%/Classes/Base/resources/Stop16.gif
 %%DATADIR%%/Classes/Base/resources/StopRed16.gif
-%%DATADIR%%/Classes/Base/resources/WebComponent16.gif
 %%DATADIR%%/Classes/Base/resources/WebComponent24.gif
 %%DATADIR%%/Classes/Base/resources/a1.GIF
 %%DATADIR%%/Classes/Base/resources/about.txt
@@ -44,7 +48,6 @@
 %%DATADIR%%/Classes/Base/resources/m1.GIF
 %%DATADIR%%/Classes/Base/resources/n1.GIF
 %%DATADIR%%/Classes/Base/resources/network.gif
-%%DATADIR%%/Classes/Base/resources/packettrain.dll
 %%DATADIR%%/Classes/Base/resources/pacman.gif
 %%DATADIR%%/Classes/Base/resources/redWebComponent.gif
 %%DATADIR%%/Classes/Base/resources/s1.GIF
@@ -53,18 +56,35 @@
 %%DATADIR%%/Classes/Base/resources/skinlf.jar
 %%DATADIR%%/Classes/Base/resources/snail.ico
 %%DATADIR%%/Classes/Base/resources/snail.jpg
-%%DATADIR%%/Classes/Base/resources/systray4j.dll
 %%DATADIR%%/Classes/Base/resources/toxicthemepack.zip
 %%DATADIR%%/Classes/Base/resources/winnerFace.gif
+%%DATADIR%%/Classes/Base/resources/default.in
+%%DATADIR%%/Classes/Base/resources/dimespacket.sys
+%%DATADIR%%/Classes/Base/resources/BrowserLauncher2-1_3.jar
+%%DATADIR%%/Classes/Base/resources/DIMESIcon.gif
+%%DATADIR%%/Classes/Base/resources/JavaNetworkStack.jar
+%%DATADIR%%/Classes/Base/resources/aquathemepack.zip
+%%DATADIR%%/Classes/Base/resources/commons-io-1.3.2.jar
+%%DATADIR%%/Classes/Base/resources/fatalEthemepack.zip
+%%DATADIR%%/Classes/Base/resources/modernthemepack.zip
+%%DATADIR%%/Classes/Base/resources/restart2.gif
+%%DATADIR%%/Classes/Base/resources/skinlf-old.jar
+%%DATADIR%%/Classes/Base/resources/stunt.jar
+%%DATADIR%%/Classes/Base/resources/tigerGraphitethemepack.zip
 %%DATADIR%%/Classes/JARs/10.jar
 %%DATADIR%%/Classes/JARs/dimesAgent.keystore
-%%DATADIR%%/Classes/JARs/jarsigner
+%%DATADIR%%/Classes/dimes/service/Stop.class
 %%DATADIR%%/Licences/DIMES-license.txt
 %%DATADIR%%/Licences/dom4j-license.txt
 %%DATADIR%%/Licences/gpl.txt
 %%DATADIR%%/Licences/lgpl.txt
-%%DATADIR%%/agent.sh
-%%DATADIR%%/colors.sh
+%%DATADIR%%/scripts_linux/Makefile
+%%DATADIR%%/scripts_linux/agent.sh
+%%DATADIR%%/scripts_linux/colors.sh
+%%DATADIR%%/linuxAgent.sh
+%%DATADIR%%/linuxService.sh
+%%DATADIR%%/linuxStopService.sh
+%%DATADIR%%/linuxServiceStatus.sh
 @dirrm %%DATADIR%%/Licences
 @dirrm %%DATADIR%%/Classes/JARs
 @dirrm %%DATADIR%%/Classes/Base/resources
@@ -75,6 +95,12 @@
 @dirrm %%DATADIR%%/Classes/Base/Incoming/Keepalive
 @dirrm %%DATADIR%%/Classes/Base/Incoming
 @dirrm %%DATADIR%%/Classes/Base/History
+@dirrm %%DATADIR%%/Classes/Base/bin_linux
+@dirrm %%DATADIR%%/Classes/Base/dimes/service
+@dirrm %%DATADIR%%/Classes/Base/dimes
 @dirrm %%DATADIR%%/Classes/Base
+@dirrm %%DATADIR%%/Classes/dimes/service
+@dirrm %%DATADIR%%/Classes/dimes
 @dirrm %%DATADIR%%/Classes
+@dirrm %%DATADIR%%/scripts_linux
 @dirrm %%DATADIR%%
