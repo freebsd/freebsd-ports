@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.32.1
+PORTVERSION=	2.34.0
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		BERLIOS/fc-solve
@@ -67,6 +67,12 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS INSTALL README README.win32.txt TODO USAGE
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for file in ctypes-test.py
+	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
 .endfor
 .endif
 

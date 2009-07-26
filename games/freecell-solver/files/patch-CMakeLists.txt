@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2009-06-24 22:03:08.000000000 +0900
-+++ CMakeLists.txt	2009-06-26 00:20:23.000000000 +0900
-@@ -136,6 +136,8 @@
+--- CMakeLists.txt.orig	2009-07-11 00:28:26.000000000 +0900
++++ CMakeLists.txt	2009-07-11 22:27:38.000000000 +0900
+@@ -137,6 +137,8 @@
  SET (FCS_STACK_STORAGE_LIBAVL2_TREE_TYPE "avl" CACHE STRING "The libavl2 tree type used for the stack storage. Ignored if not set to libavl2")
  SET (LIBAVL2_SOURCE_DIR "/usr/src/avl-2.0.3" CACHE STRING "The location of the libavl2 source tree (from which files are copied)")
  
@@ -9,7 +9,7 @@
  IF (NOT (STATES_TYPE MATCHES "^(INDIRECT_STACK_STATES|COMPACT_STATES|DEBUG_STATES)$"))
      MESSAGE(FATAL_ERROR "STATES_TYPE should be ('INDIRECT_STACK_STATES', 'COMPACT_STATES' or 'DEBUG_STATES')")
  ENDIF(NOT (STATES_TYPE MATCHES "^(INDIRECT_STACK_STATES|COMPACT_STATES|DEBUG_STATES)$"))
-@@ -289,7 +291,7 @@
+@@ -290,7 +292,7 @@
  CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
  
  SET(COMPILER_FLAGS_TO_CHECK 
@@ -18,7 +18,7 @@
  )
  
  IF (CPU_ARCH)
-@@ -348,7 +350,11 @@
+@@ -352,7 +354,11 @@
  # Optionally link against Google's TCMalloc if it's available:
  # http://goog-perftools.sourceforge.net/
  # This gives better performance for the threaded programs.
@@ -29,9 +29,9 @@
 +
 +ENDIF (FCS_USE_TCMALLOC)
  
- TARGET_LINK_LIBRARIES (freecell-solver 
-     ${MATH_LIB} ${LIBTCMALLOC_LIB} ${LIBREDBLACK_LIB} ${LIBJUDY_LIB}
-@@ -369,7 +375,6 @@
+ SET(LIBTCMALLOC_LIB_LIST)
+ IF(LIBTCMALLOC_LIB STREQUAL "LIBTCMALLOC_LIB-NOTFOUND")
+@@ -380,7 +386,6 @@
  
  IF (CMAKE_USE_PTHREADS_INIT)
      FCS_ADD_EXEC(freecell-solver-multi-thread-solve threaded_range_solver.c)
@@ -39,7 +39,7 @@
  ENDIF (CMAKE_USE_PTHREADS_INIT)
  
  IF (MY_LINK_FLAGS)
-@@ -473,18 +478,6 @@
+@@ -490,18 +495,6 @@
  
  INSTALL(
      FILES
@@ -58,3 +58,12 @@
          "fcs_cl.h"
          "fcs_enums.h"
          "fcs_move.h"
+@@ -515,7 +508,7 @@
+     FILES
+         "${CMAKE_CURRENT_BINARY_DIR}/lib${CPACK_PACKAGE_NAME}.pc"
+     DESTINATION 
+-        "lib/pkgconfig"
++        "libdata/pkgconfig"
+ )
+ 
+ # Rebuild config.h if ver.txt has changed.
