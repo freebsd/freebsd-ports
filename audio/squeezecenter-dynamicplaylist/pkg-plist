@@ -20,8 +20,10 @@
 %%SLIMDIR%%/Plugins/DynamicPlayList/LICENSE.txt
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistalbum.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistartist.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistcustomtag.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistdecade.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistgenre.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistmixedtag.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistplaylist.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylisttrack.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistyear.xml

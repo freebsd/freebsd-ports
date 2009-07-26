@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dynamicplaylist
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7
 CATEGORIES=	audio
 MASTER_SITES=	http://erland.homeip.net/download/do/downloadapplication?name=slimserver-dynamicplaylist&filename=/
 PKGNAMEPREFIX=	squeezecenter-
