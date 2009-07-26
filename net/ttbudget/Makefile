@@ -33,6 +33,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile
+.endif
+
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif

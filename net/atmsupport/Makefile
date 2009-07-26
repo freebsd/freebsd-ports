@@ -25,4 +25,10 @@ USE_LDCONFIG=	yes
 
 MAN1=	unidecode.1 uniencode.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000 && ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>

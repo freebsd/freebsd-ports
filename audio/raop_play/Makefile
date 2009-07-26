@@ -28,7 +28,13 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000 && ${ARCH} == "amd64"
+BROKEN=		incomplete build
+.endif
+
 pre-build:
 	${CP} ${FILESDIR}/getline.c ${FILESDIR}/getline.h ${WRKSRC}/rendezvous/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
