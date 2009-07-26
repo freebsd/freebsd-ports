@@ -50,5 +50,9 @@ post-patch:
 .if ${OSVERSION} > 800090
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-libusb20
 .endif
+.if ${OSVERSION} >= 800100
+	@${REINPLACE_CMD} -e 's,usb_revision.h,usbdi.h,g' \
+	${WRKSRC}/../apps/kinfocenter/usbview/usbdevices.h
+.endif
 
 .include <bsd.port.post.mk>
