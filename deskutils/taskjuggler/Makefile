@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	taskjuggler
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.taskjuggler.org/download/
 
@@ -20,21 +19,20 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/
 		poster:${PORTSDIR}/print/poster \
 		bash:${PORTSDIR}/shells/bash \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS=	DOCS "Build documentation" on \
 		KDE "Build KDE frontend" on
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
-USE_GNOME=	gnometarget
 USE_PERL5_RUN=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-docdir=${EXAMPLESDIR}/
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_CFLAGS}"
+CONFIGURE_ARGS=	--with-docdir=${EXAMPLESDIR}/
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
@@ -52,10 +50,10 @@ CONFIGURE_ARGS+=--disable-docs
 .if !defined(WITHOUT_KDE)
 LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3 \
 		kcal.2:${PORTSDIR}/deskutils/kdepim3
-PLIST_SUB+=	WITH_KDE=""
+PLIST_SUB+=	KDE=""
 .else
 CONFIGURE_ARGS+=--with-kde-support=no
-PLIST_SUB+=	WITH_KDE="@comment "
+PLIST_SUB+=	KDE="@comment "
 .endif
 
 .if defined(SESSION_MANAGER)
