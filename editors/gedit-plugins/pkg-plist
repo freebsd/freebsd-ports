@@ -55,10 +55,12 @@ share/gedit-2/plugins/bookmarks/bookmark.png
 share/gedit-2/plugins/drawspaces/drawspaces.ui
 %%PYTHON%%share/gedit-2/plugins/sessionsaver/sessionsaver.ui
 share/locale/ar/LC_MESSAGES/gedit-plugins.mo
+share/locale/as/LC_MESSAGES/gedit-plugins.mo
 share/locale/az/LC_MESSAGES/gedit-plugins.mo
 share/locale/be/LC_MESSAGES/gedit-plugins.mo
 share/locale/be@latin/LC_MESSAGES/gedit-plugins.mo
 share/locale/bg/LC_MESSAGES/gedit-plugins.mo
+share/locale/bn_IN/LC_MESSAGES/gedit-plugins.mo
 share/locale/ca/LC_MESSAGES/gedit-plugins.mo
 share/locale/cs/LC_MESSAGES/gedit-plugins.mo
 share/locale/da/LC_MESSAGES/gedit-plugins.mo
@@ -139,3 +141,7 @@ share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
