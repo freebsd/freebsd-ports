@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sdlmame
-PORTVERSION=	0.132
+PORTVERSION=	0.133
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/FreeBSD/ports/distfiles/ \
+MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/ \
 		http://rbelmont.mameworld.info/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
