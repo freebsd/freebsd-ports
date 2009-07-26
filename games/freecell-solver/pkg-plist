@@ -16,12 +16,14 @@ lib/libfreecell-solver.a
 lib/libfreecell-solver.so
 lib/libfreecell-solver.so.0
 lib/libfreecell-solver.so.0.5.0
+libdata/pkgconfig/libfreecell-solver.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.win32.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ctypes-test.py
 %%DATADIR%%/presetrc
 %%DATADIR%%/presets/abra-kadabra.sh
 %%DATADIR%%/presets/cool-jives.sh
@@ -32,8 +34,10 @@ lib/libfreecell-solver.so.0.5.0
 %%DATADIR%%/presets/john_galt_line-500.sh
 %%DATADIR%%/presets/rin-tin-tin.sh
 %%DATADIR%%/presets/sand-stone.sh
+%%DATADIR%%/presets/toons-for-twenty-somethings.sh
 %%DATADIR%%/presets/yellow-brick-road.sh
 @dirrm %%DATADIR%%/presets
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/freecell-solver
