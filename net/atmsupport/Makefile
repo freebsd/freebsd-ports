@@ -27,7 +27,7 @@ MAN1=	unidecode.1 uniencode.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000 && ${ARCH} == "amd64"
+.if ${OSVERSION} >= 800097
 BROKEN=		does not compile
 .endif
 
