@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssmping
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.venaas.no/multicast/ssmping/
 
