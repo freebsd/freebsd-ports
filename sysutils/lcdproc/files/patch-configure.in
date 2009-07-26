@@ -1,0 +1,88 @@
+Index: configure.in
+===================================================================
+RCS file: /cvsroot/lcdproc/lcdproc/configure.in,v
+retrieving revision 1.79
+diff -u -r1.79 configure.in
+--- configure.in	6 Jun 2009 16:01:38 -0000	1.79
++++ configure.in	20 Jul 2009 06:38:04 -0000
+@@ -230,26 +230,63 @@
+ 
+ dnl ######################################################################
+ dnl libusb support
++dnl Stolen from the gnupg project and modified for LCDproc's need.
++dnl
++dnl Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+ dnl ######################################################################
+ AC_MSG_CHECKING([if libusb support has been enabled]);
+-AC_ARG_ENABLE(libusb,
+-	[AS_HELP_STRING([--disable-libusb],[disable USB support using libusb])],
+-	[ if test "$enableval" != "no"; then
+-		enable_libusb="yes"
+-	fi ],
+-	[ enable_libusb=yes ]
+-)
+-AC_MSG_RESULT($enable_libusb) 
+-
+-if test "$enable_libusb" = "yes"; then
+-	ifdef([PKG_CHECK_MODULES],
+-		[PKG_CHECK_MODULES(LIBUSB, libusb,
+-			[AC_DEFINE(HAVE_LIBUSB, [1], [Define to 1 if you have libusb])],
+-			[ enable_libusb=no ])],
+-		[AC_MSG_WARN([pkg-config not (fully) installed; drivers requiring libusb may not be built])])	
++AC_ARG_WITH(libusb,
++	AC_HELP_STRING([--with-libusb=DIR],
++		[look for the libusb library in DIR]),
++		[_do_libusb=$withval],[_do_libusb=yes])
++AC_MSG_RESULT($_do_libusb) 
++
++if test "$_do_libusb" != "no" ; then
++	if test -d "$withval" ; then
++		CPPFLAGS="${CPPFLAGS} -I$withval/include"
++		LDFLAGS="${LDFLAGS} -L$withval/lib"
++		AC_PATH_PROG([_usb_config],["$_do_libusb/bin/libusb-config"])
++	else
++		AC_PATH_PROG([_usb_config],[libusb-config])
++	fi
++
++	_libusb_save_libs=$LIBS
++	_libusb_save_cflags=$CFLAGS
++
++	if test x$_usb_config != "x" ; then
++		_libusb_try_libs=`$_usb_config --libs`
++		_libusb_try_cflags=`$_usb_config --cflags`
++	else
++		_libusb_try_libs="-lusb"
++		_libusb_try_cflags=""
++	fi
++
++	LIBS="$LIBS $_libusb_try_libs"
++	CFLAGS="$CFLAGS $_libusb_try_cflags"
++
++	AC_MSG_CHECKING([whether libusb is present and sane])
++
++	AC_LINK_IFELSE(AC_LANG_PROGRAM([#include <usb.h>],[
++		usb_interrupt_write(NULL,0,NULL,0,0);
++		]),enable_libusb=yes,enable_libusb=no)
++
++	AC_MSG_RESULT([$enable_libusb])
++
++	if test "$enable_libusb" = "yes" ; then
++		AC_DEFINE(HAVE_LIBUSB, [1], [Define to 1 if you have libusb])
++		AC_SUBST(LIBUSB_CFLAGS, $_libusb_try_cflags)
++		AC_SUBST(LIBUSB_LIBS, $_libusb_try_libs)
++	fi
++
++	LIBS=$_libusb_save_libs
++	CFLAGS=$_libusb_save_cflags
++
++	unset _libusb_save_libs
++	unset _libusb_save_cflags
++	unset _libusb_try_libs
++	unset _libusb_try_cflags
+ fi
+-AC_SUBST(LIBUSB_LIBS)
+-AC_SUBST(LIBUSB_CFLAGS)
++
+ 
+ dnl ######################################################################
+ dnl libftdi support
