@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chmsee
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -42,7 +42,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/REQUIRED/s|libxul-embedding-unstable|${GTKMOZEMBED_LIB}|g ; \
+		'/REQUIRED/s|libxul-.*=1.9.0.999|${GTKMOZEMBED_LIB}|g ; \
 		 /FLAVOUR/s|libxul|${GECKO}|g' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e \
 		's|.desktop.in|.desktop.skel|g' ${WRKSRC}/data/CMakeLists.txt
