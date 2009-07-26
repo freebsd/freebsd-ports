@@ -7,7 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3026/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -45,7 +45,7 @@ USE_LDCONFIG=	yes
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if (defined(WITHOUT_USB) || ${OSVERSION} > 800000)
+.if defined(WITHOUT_USB)
 CONFIGURE_ARGS+=	--disable-libusb
 .else
 .if ${OSVERSION} < 800069
