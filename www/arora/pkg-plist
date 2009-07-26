@@ -2,6 +2,8 @@ bin/arora
 bin/arora-placesimport
 bin/htmlToXBel
 share/applications/arora.desktop
+%%NLS%%share/arora/locale/ast.qm
+%%NLS%%share/arora/locale/ca.qm
 %%NLS%%share/arora/locale/cs_CZ.qm
 %%NLS%%share/arora/locale/da_DK.qm
 %%NLS%%share/arora/locale/de_DE.qm
@@ -29,6 +31,7 @@ share/applications/arora.desktop
 %%NLS%%share/arora/locale/tr_TR.qm
 %%NLS%%share/arora/locale/uk.qm
 %%NLS%%share/arora/locale/zh_CN.qm
+%%NLS%%share/arora/locale/zh_TW.qm
 share/icons/hicolor/128x128/apps/arora.png
 share/icons/hicolor/16x16/apps/arora.png
 share/icons/hicolor/32x32/apps/arora.png
@@ -44,6 +47,6 @@ share/pixmaps/arora.xpm
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm share/arora/locale
-@dirrm share/arora
+%%NLS%%@dirrm share/arora/locale
+%%NLS%%@dirrm share/arora
 @dirrmtry share/applications
