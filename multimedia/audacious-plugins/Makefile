@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -44,7 +43,6 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		STATUSICON	"Enable X11 Status Icon plugin"		on  \
 		AOSD		"Enable X11 Audacious OSD plugin"	on  \
 		AOSDXCOMP	"Enable X11 Audacious OSD X Composite Support" on  \
-		ROOTVIS		"Enable X11 RootWindow vis plugin"      on  \
 		ADPLUG		"Enable AdPlug plugin"			off \
 		VORBIS		"Enable Ogg Vorbis input plugin"	off \
 		FLAC		"Enable FLAC input plugin"		off \
@@ -68,7 +66,8 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		TTA		"Enable TrueAudio plugin"		on  \
 		GNOME		"Build with gnomevfs/gconf support"	off \
 		NLS		"Native Language Support"		on  \
-		CURL		"curl for lastfm/scrobbler support"	off
+		CURL		"curl for lastfm/scrobbler support"	off \
+		SSE2		"Enable SSE2 support"			on
 
 .include <bsd.port.pre.mk>
 
@@ -97,10 +96,10 @@ PLIST_SUB+=	ESDPLUGIN="@comment "
 
 .if !defined(WITHOUT_MP3)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
-CONFIGURE_ARGS+=--enable-libmad
+CONFIGURE_ARGS+=--enable-mp3
 PLIST_SUB+=	MP3PLUGIN=""
 .else
-CONFIGURE_ARGS+=--disable-libmad
+CONFIGURE_ARGS+=--disable-mp3
 PLIST_SUB+=	MP3PLUGIN="@comment "
 .endif
 
@@ -110,15 +109,6 @@ CONFIGURE_ARGS+=--enable-rocklight
 .else
 CONFIGURE_ARGS+=--disable-rocklight
 PLIST_SUB+=	ROCKLIGHTPLUGIN="@comment "
-.endif
-
-.if !defined(WITHOUT_ROOTVIS)
-USE_EFL=	imlib2
-CONFIGURE_ARGS+=--enable-rootvis
-PLIST_SUB+=	ROOTPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-rootvis
-PLIST_SUB+=	ROOTPLUGIN="@comment "
 .endif
 
 .if defined(WITH_LIRC)
@@ -371,6 +361,12 @@ LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 PLIST_SUB+=     CURLPLUGIN=""
 .else
 PLIST_SUB+=     CURLPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_SSE2)
+CONFIGURE_ARGS+=--disable-sse2
+.else
+CONFIGURE_ARGS+=--enable-sse2
 .endif
 
 .if !defined(WITHOUT_NLS)

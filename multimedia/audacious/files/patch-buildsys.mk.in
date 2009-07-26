@@ -1,6 +1,6 @@
---- buildsys.mk.in.orig	2009-05-14 11:22:45.000000000 +0200
-+++ buildsys.mk.in	2009-05-14 11:23:14.000000000 +0200
-@@ -123,7 +123,7 @@
+--- buildsys.mk.in.orig	2009-07-07 00:39:11.000000000 +0200
++++ buildsys.mk.in	2009-07-18 09:45:43.000000000 +0200
+@@ -124,7 +124,7 @@
  	done; \
  	if test x"$$regen" = x"1" -a x"$$deps" != "x"; then \
  		${DEPEND_STATUS}; \
@@ -9,3 +9,12 @@
  			rm -f $$deps; \
  			${DEPEND_OK}; \
  		else \
+@@ -144,7 +144,7 @@
+ 
+ ${PROG} ${PROG_NOINST}: ${EXT_DEPS} ${OBJS}
+ 	${LINK_STATUS}
+-	if ${LD} -o $@ ${OBJS} ${LDFLAGS} ${LIBS}; then \
++	if ${LD} -o $@ ${OBJS} ${LIBS} ${LDFLAGS} ; then \
+ 		${LINK_OK}; \
+ 	else \
+ 		${LINK_FAILED}; \

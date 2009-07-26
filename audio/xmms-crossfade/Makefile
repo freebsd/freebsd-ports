@@ -7,7 +7,7 @@
 
 PORTNAME=	crossfade
 PORTVERSION=	0.3.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ CENKES
 PKGNAMEPREFIX=	${APP}-

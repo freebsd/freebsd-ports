@@ -3,6 +3,7 @@ bin/audacious2
 %%WITH_DBUS%%include/audacious/audctrl.h
 include/audacious/audconfig.h
 include/audacious/auddrct.h
+include/audacious/audtag.h
 include/audacious/audutil.h
 include/audacious/configdb.h
 include/audacious/custom_uri.h
@@ -26,10 +27,12 @@ include/audacious/playlist_container.h
 include/audacious/plugin.h
 include/audacious/preferences.h
 include/audacious/rcfile.h
+include/audacious/scanner.h
 include/audacious/ui_fileinfopopup.h
 include/audacious/ui_plugin_menu.h
 include/audacious/ui_preferences.h
 include/audacious/util.h
+include/audacious/vis_runner.h
 include/libSAD/libSAD.h
 include/libSAD/common.h
 include/libSAD/dither.h
@@ -49,6 +52,9 @@ lib/libaudcore.so.1.0.0
 lib/libaudid3tag.so
 lib/libaudid3tag.so.2
 lib/libaudid3tag.so.2.0.0
+lib/libaudtag.so
+lib/libaudtag.so.1
+lib/libaudtag.so.1.0.0
 lib/libaudutil.so
 lib/libaudutil.so.1
 lib/libaudutil.so.1.0.0
@@ -314,6 +320,7 @@ share/applications/audacious2.desktop
 %%NLS%%share/locale/ka/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/audacious.mo

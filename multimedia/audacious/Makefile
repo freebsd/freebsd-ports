@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -85,8 +85,14 @@ post-patch:
 	@${REINPLACE_CMD} 's|FMT_FIXED32,|FMT_FIXED32|g; \
 		s|OUTPUT_PLUGIN_INIT_FOUND_DEVICES,|OUTPUT_PLUGIN_INIT_FOUND_DEVICES|g' \
 		${WRKSRC}/src/audacious/plugin.h
-	@${REINPLACE_CMD} 's|WIDGET_FONT_BTN,|WIDGET_FONT_BTN|g' \
+	@${REINPLACE_CMD} 's|WIDGET_COMBO_BOX,|WIDGET_COMBO_BOX|g; \
+		s|VALUE_NULL,|VALUE_NULL|g' \
 		${WRKSRC}/src/audacious/preferences.h
+	@${REINPLACE_CMD} 's|glib-2\.0/||g' \
+		${WRKSRC}/src/libaudtag/util.h \
+		${WRKSRC}/src/libaudtag/wma/guid.c \
+		${WRKSRC}/src/libaudtag/wma/wma.c \
+		${WRKSRC}/src/libaudtag/wma/wma_fmt.h
 .if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
 	@${REINPLACE_CMD} 's|$${REGEX_LIBS}|& -L${LOCALBASE}/lib -lexecinfo|' \
 		${WRKSRC}/src/audacious/Makefile

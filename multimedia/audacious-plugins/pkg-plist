@@ -11,6 +11,7 @@ lib/audacious/Effect/voice_removal.so
 lib/audacious/General/alarm.so
 %%AOSDPLUGIN%%lib/audacious/General/aosd.so
 %%DBUS%%lib/audacious/General/gnomeshortcuts.so
+lib/audacious/General/gtkui.so
 lib/audacious/General/hotkey.so
 %%LIRCPLUGIN%%lib/audacious/General/lirc.so
 %%CURLPLUGIN%%lib/audacious/General/scrobbler.so
@@ -33,7 +34,6 @@ lib/audacious/Input/metronom.so
 %%MTPPLUGIN%%lib/audacious/General/mtp_up.so
 %%MPCPLUGIN%%lib/audacious/Input/musepack.so
 lib/audacious/Input/psf2.so
-lib/audacious/Input/sexypsf.so
 %%SIDPLUGIN%%lib/audacious/Input/sid.so
 %%SNDFILEPLUGIN%%lib/audacious/Input/sndfile.so
 %%TIMIDITYPLUGIN%%lib/audacious/Input/timidity.so
@@ -58,7 +58,6 @@ lib/audacious/Transport/gio.so
 lib/audacious/Visualization/blur_scope.so
 %%PARANORMALPLUGIN%%lib/audacious/Visualization/paranormal.so
 %%ROCKLIGHTPLUGIN%%lib/audacious/Visualization/rocklight.so
-%%ROOTPLUGIN%%lib/audacious/Visualization/rootvis.so
 lib/audacious/Visualization/spectrum.so
 %%PARANORMALPLUGIN%%share/audacious/paranormal/Presets/aerdan_-_cloudscape.pnv
 %%PARANORMALPLUGIN%%share/audacious/paranormal/Presets/aerdan_-_cloudscape2.pnv
@@ -108,6 +107,7 @@ share/audacious/images/xiph.png
 %%NLS%%share/locale/et/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/audacious-plugins.mo

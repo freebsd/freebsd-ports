@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-dumb
 PORTVERSION=	0.57
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netswarm.net/misc/ \
 		CRITICAL
