@@ -134,9 +134,15 @@
 %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedplaylists.xml
 %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedyears.template
 %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedyears.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_mostplayedalbumsforartist.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_mostplayedalbumsforgenre.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_mostplayedalbumsforyear.xml
 %%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_mostplayedforartist.xml
 %%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_mostplayedforgenre.xml
 %%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_mostplayedforyear.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedalbumsforartist.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedalbumsforgenre.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedalbumsforyear.xml
 %%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedforartist.xml
 %%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedforgenre.xml
 %%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedforyear.xml
