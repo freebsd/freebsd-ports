@@ -18,6 +18,11 @@ etc/powerman/cyclades-pm42.dev
 etc/powerman/cyclades-pm8.dev
 etc/powerman/dli.dev
 etc/powerman/hp3488.dev
+etc/powerman/hpilo.dev
+etc/powerman/hpmp.dev
+etc/powerman/hpmpblade.dev
+etc/powerman/hpmpcell.dev
+etc/powerman/hpmpdome.dev
 etc/powerman/ibmbladecenter.dev
 etc/powerman/icebox.dev
 etc/powerman/icebox3.dev
@@ -25,6 +30,7 @@ etc/powerman/ics8064.dev
 etc/powerman/ilom.dev
 etc/powerman/ipmi.dev
 etc/powerman/ipmipower.dev
+etc/powerman/lom.dev
 etc/powerman/phantom.dev
 etc/powerman/plmpower.dev
 etc/powerman/powerman.conf.example
@@ -38,11 +44,15 @@ lib/libpowerman.a
 lib/libpowerman.la
 lib/libpowerman.so
 lib/libpowerman.so.0
+lib/stonith/plugins/external/powerman
 libdata/pkgconfig/libpowerman.pc
 sbin/httppower
 sbin/plmpower
 sbin/powermand
 sbin/vpcd
+@dirrm lib/stonith/plugins/external
+@dirrm lib/stonith/plugins
+@dirrm lib/stonith
 @dirrmtry etc/powerman
 @cwd /
 @dirrmtry /var/run/powerman
