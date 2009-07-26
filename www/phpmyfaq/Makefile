@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	2.0.15
+PORTVERSION=	2.5.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 
@@ -15,7 +15,7 @@ COMMENT=	A multilingual, completely database-driven FAQ-system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_PHP=	mysql pcre pdf session xml xmlrpc zlib
+USE_PHP=	json mysql pcre pdf session xml xmlrpc xmlwriter zlib
 FAQ_DIR=	attachments data images inc pdf xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
