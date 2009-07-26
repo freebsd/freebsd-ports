@@ -84,9 +84,9 @@
 %%XPI_XPIDIR%%/lite/infoIcon.png
 %%XPI_XPIDIR%%/lite/warningIcon.png
 %%XPI_XPIDIR%%/locale/Makefile.in
-%%XPI_XPIDIR%%/locale/bg/editors.dtd
-%%XPI_XPIDIR%%/locale/bg/firebug.dtd
-%%XPI_XPIDIR%%/locale/bg/firebug.properties
+%%XPI_XPIDIR%%/locale/bg-BG/editors.dtd
+%%XPI_XPIDIR%%/locale/bg-BG/firebug.dtd
+%%XPI_XPIDIR%%/locale/bg-BG/firebug.properties
 %%XPI_XPIDIR%%/locale/ca-AD/editors.dtd
 %%XPI_XPIDIR%%/locale/ca-AD/firebug.dtd
 %%XPI_XPIDIR%%/locale/ca-AD/firebug.properties
@@ -117,9 +117,9 @@
 %%XPI_XPIDIR%%/locale/it-IT/editors.dtd
 %%XPI_XPIDIR%%/locale/it-IT/firebug.dtd
 %%XPI_XPIDIR%%/locale/it-IT/firebug.properties
-%%XPI_XPIDIR%%/locale/ja/editors.dtd
-%%XPI_XPIDIR%%/locale/ja/firebug.dtd
-%%XPI_XPIDIR%%/locale/ja/firebug.properties
+%%XPI_XPIDIR%%/locale/ja-JP/editors.dtd
+%%XPI_XPIDIR%%/locale/ja-JP/firebug.dtd
+%%XPI_XPIDIR%%/locale/ja-JP/firebug.properties
 %%XPI_XPIDIR%%/locale/jar.mn
 %%XPI_XPIDIR%%/locale/ko-KR/editors.dtd
 %%XPI_XPIDIR%%/locale/ko-KR/firebug.dtd
@@ -152,6 +152,7 @@
 %%XPI_XPIDIR%%/locale/zh-TW/firebug.dtd
 %%XPI_XPIDIR%%/locale/zh-TW/firebug.properties
 %%XPI_XPIDIR%%/platform/Darwin/chrome.manifest
+%%XPI_XPIDIR%%/skin/classic/Templarian_inspector.png
 %%XPI_XPIDIR%%/skin/classic/activation-menu.png
 %%XPI_XPIDIR%%/skin/classic/arrowDown.png
 %%XPI_XPIDIR%%/skin/classic/arrowUp.png
@@ -159,6 +160,8 @@
 %%XPI_XPIDIR%%/skin/classic/breakNext.png
 %%XPI_XPIDIR%%/skin/classic/breakNextActive.png
 %%XPI_XPIDIR%%/skin/classic/breakNextArmed.gif
+%%XPI_XPIDIR%%/skin/classic/breakNextArmed.png
+%%XPI_XPIDIR%%/skin/classic/breakNextDisabled.png
 %%XPI_XPIDIR%%/skin/classic/breakpoint.png
 %%XPI_XPIDIR%%/skin/classic/breakpointCondition.png
 %%XPI_XPIDIR%%/skin/classic/breakpointDisabled.png
@@ -267,11 +270,20 @@
 %%XPI_XPIDIR%%/skin/classic/win/detach.png
 %%XPI_XPIDIR%%/skin/classic/win/detachActive.png
 %%XPI_XPIDIR%%/skin/classic/win/detachHover.png
+%%XPI_XPIDIR%%/skin/classic/win/down.png
+%%XPI_XPIDIR%%/skin/classic/win/downActive.png
+%%XPI_XPIDIR%%/skin/classic/win/downHover.png
 %%XPI_XPIDIR%%/skin/classic/win/firebug.css
 %%XPI_XPIDIR%%/skin/classic/win/min.png
 %%XPI_XPIDIR%%/skin/classic/win/minActive.png
 %%XPI_XPIDIR%%/skin/classic/win/minHover.png
+%%XPI_XPIDIR%%/skin/classic/win/off.png
+%%XPI_XPIDIR%%/skin/classic/win/offActive.png
+%%XPI_XPIDIR%%/skin/classic/win/offHover.png
 %%XPI_XPIDIR%%/skin/classic/win/panel.css
+%%XPI_XPIDIR%%/skin/classic/win/pause.png
+%%XPI_XPIDIR%%/skin/classic/win/pauseActive.png
+%%XPI_XPIDIR%%/skin/classic/win/pauseDisabled.png
 %%XPI_XPIDIR%%/skin/classic/win/search.png
 %%XPI_XPIDIR%%/skin/classic/win/tabBg.png
 %%XPI_XPIDIR%%/skin/classic/win/tabLeft.png
@@ -298,7 +310,7 @@
 @dirrm %%XPI_XPIDIR%%/icons/default
 @dirrm %%XPI_XPIDIR%%/icons
 @dirrm %%XPI_XPIDIR%%/lite
-@dirrm %%XPI_XPIDIR%%/locale/bg
+@dirrm %%XPI_XPIDIR%%/locale/bg-BG
 @dirrm %%XPI_XPIDIR%%/locale/ca-AD
 @dirrm %%XPI_XPIDIR%%/locale/cs-CZ
 @dirrm %%XPI_XPIDIR%%/locale/da-DK
@@ -309,7 +321,7 @@
 @dirrm %%XPI_XPIDIR%%/locale/fr-FR
 @dirrm %%XPI_XPIDIR%%/locale/hu-HU
 @dirrm %%XPI_XPIDIR%%/locale/it-IT
-@dirrm %%XPI_XPIDIR%%/locale/ja
+@dirrm %%XPI_XPIDIR%%/locale/ja-JP
 @dirrm %%XPI_XPIDIR%%/locale/ko-KR
 @dirrm %%XPI_XPIDIR%%/locale/nl-NL
 @dirrm %%XPI_XPIDIR%%/locale/pl-PL
