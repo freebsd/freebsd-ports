@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sdlmess
-PORTVERSION=	0.131
+PORTVERSION=	0.133
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/FreeBSD/ports/distfiles/ \
-		http://rbelmont.mameworld.info/
+MASTER_SITES=	http://rbelmont.mameworld.info/ \
+		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	elbarto@ArcadeBSD.org

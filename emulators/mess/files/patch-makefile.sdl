@@ -1,5 +1,5 @@
---- makefile.sdl.orig	2009-03-13 16:53:53.000000000 +0000
-+++ makefile.sdl	2009-03-17 23:44:38.000000000 +0000
+--- makefile.sdl.orig	2009-07-23 03:54:02.000000000 +0200
++++ makefile.sdl	2009-07-23 03:55:21.000000000 +0200
 @@ -59,7 +59,7 @@
  ifeq ($(OSD),windows)
  TARGETOS = win32
@@ -16,7 +16,7 @@
 -CC = @gcc
 -LD = @gcc
 +CC := @$(CC)
-+LD = @$(CC)
++LD := @$(CC)
  MD = -mkdir$(EXE)
  RM = @rm -f
  
@@ -38,6 +38,15 @@
  else
  CCOMFLAGS += -fno-strict-aliasing $(ARCHOPTS)
  endif
+@@ -379,7 +379,7 @@
+ 	-I$(SRC)/lib/util \
+ 	-I$(SRC)/osd \
+ 	-I$(SRC)/osd/$(OSD) \
+-
++	-I$(LOCALBASE)/include \
+ 
+ 
+ #-------------------------------------------------
 @@ -392,7 +392,7 @@
  ifneq ($(TARGETOS),macosx)
  ifneq ($(TARGETOS),os2)
