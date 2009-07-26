@@ -1,0 +1,15 @@
+--- module/drv.h.orig	2008-10-14 12:50:44.000000000 +0400
++++ module/drv.h	2009-07-23 22:03:04.000000000 +0400
+@@ -89,7 +89,12 @@
+ 		if (fifobuf == NULL) {
+ 			    printf("no memory for buffer\n");
+ 			    return -1;}
++#if __FreeBSD_version < 800000
+ 		knlist_init(&echo_rsel.si_note, NULL, NULL, NULL, NULL);
++#else
++		knlist_init(&echo_rsel.si_note, NULL, NULL, NULL, NULL,NULL);
++#endif
++		
+ 		socketlock = 0;
+                       break;
+        case MOD_UNLOAD:
