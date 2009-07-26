@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlplaylist
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4
 CATEGORIES=	audio
 MASTER_SITES=	http://erland.homeip.net/download/do/downloadapplication?name=slimserver-sqlplaylist&filename=/
 PKGNAMEPREFIX=	squeezecenter-
