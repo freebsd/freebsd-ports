@@ -1,3 +1,4 @@
 %%GTK%%bin/spectool_gtk
+%%NCURSES%%bin/spectool_curses
 bin/spectool_net
 bin/spectool_raw
