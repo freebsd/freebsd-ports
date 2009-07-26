@@ -15,19 +15,39 @@ load_rc_config $name
 
 : ${spawn_fcgi_enable="NO"}
 : ${spawn_fcgi_app="%%LOCALBASE%%/bin/php-cgi"}
+: ${spawn_fcgi_app_args=""}
 : ${spawn_fcgi_pidfile="/var/run/spawn-fcgi.pid"}
-: ${spawn_fcgi_user="www"}
-: ${spawn_fcgi_group="www"}
+: ${spawn_fcgi_username="www"}
+: ${spawn_fcgi_groupname="www"}
+: ${spawn_fcgi_chroot_dir=""}
 : ${spawn_fcgi_bindaddr="127.0.0.1"}
 : ${spawn_fcgi_bindport="9000"}
+: ${spawn_fcgi_bindsocket=""}
+: ${spawn_fcgi_bindsocket_mode="0777"}
 : ${spawn_fcgi_children="5"}
 : ${spawn_fcgi_max_requests="1000"}
 : ${spawn_fcgi_web_server_addrs=""}
 : ${spawn_fcgi_allowed_env=""}
 : ${spawn_fcgi_path_env="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin"}
 
+if [ -z "${spawn_fcgi_bindsocket}" ]; then
+    _spawn_fcgi_bind="-a ${spawn_fcgi_bindaddr} -p ${spawn_fcgi_bindport}"
+else
+    if [ -n "${spawn_fcgi_bindsocket_mode}" ]; then
+        _spawn_fcgi_bind="-s ${spawn_fcgi_bindsocket} -M ${spawn_fcgi_bindsocket_mode}"
+    else
+        _spawn_fcgi_bind="-s ${spawn_fcgi_bindsocket}"
+    fi
+fi
+
+if [ -n "${spawn_fcgi_chroot_dir}" ]; then
+    _spawn_fcgi_chroot="-c ${spawn_fcgi_chroot_dir}"
+else
+    _spawn_fcgi_chroot=""
+fi
+
 command="/usr/local/bin/spawn-fcgi"
-command_args="-u ${spawn_fcgi_user} -g ${spawn_fcgi_group} -a ${spawn_fcgi_bindaddr} -p ${spawn_fcgi_bindport} -P ${spawn_fcgi_pidfile} -- ${spawn_fcgi_app}"
+command_args="-u ${spawn_fcgi_username} -g ${spawn_fcgi_groupname} ${_spawn_fcgi_bind} ${_spawn_fcgi_chroot} -P ${spawn_fcgi_pidfile} -- ${spawn_fcgi_app} ${spawn_fcgi_app_args}"
 pidfile=${spawn_fcgi_pidfile}
 procname=${spawn_fcgi_app}
 
@@ -39,10 +59,8 @@ stop_postcmd="${name}_stop_postcmd"
 
 spawn_fcgi_start_precmd()
 {
-    touch ${pidfile}
-    chown ${spawn_fcgi_user}:${spawn_fcgi_group} ${pidfile}
     export PATH=${spawn_fcgi_path_env}
-    export USER=${spawn_fcgi_user}
+    export USER=${spawn_fcgi_username}
     export PHP_FCGI_CHILDREN=${spawn_fcgi_children}
     export PHP_FCGI_MAX_REQUESTS=${spawn_fcgi_max_requests}
     export FCGI_WEB_SERVER_ADDRS=${spawn_fcgi_web_server_addrs}
@@ -60,8 +78,10 @@ spawn_fcgi_start_precmd()
 spawn_fcgi_stop_postcmd()
 {
     rm -f ${pidfile}
-}
 
-load_rc_config $name
+    if [ -n "${spawn_fcgi_bindsocket}" -a -S "${spawn_fcgi_chroot_dir}${spawn_fcgi_bindsocket}" ]; then
+        rm -f ${spawn_fcgi_chroot_dir}${spawn_fcgi_bindsocket}
+    fi
+}
 
 run_rc_command "$1"
