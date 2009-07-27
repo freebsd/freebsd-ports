@@ -162,7 +162,7 @@ CONFIGURE_ARGS+=--with-http_gzip_static_module
 .endif
 
 .if defined(WITH_HTTP_MOGILEFS_MODULE)
-NGINX_MOGILEFS_MODULE_VERSION=	1.0.1
+NGINX_MOGILEFS_MODULE_VERSION=	1.0.2
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:mogilefs
 DISTFILES+=	nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}.tar.gz:mogilefs
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}
