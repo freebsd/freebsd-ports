@@ -214,6 +214,7 @@
     SUBDIR += libpst
     SUBDIR += librfc822
     SUBDIR += libsieve
+    SUBDIR += libspamtest
     SUBDIR += libspf
     SUBDIR += libspf2
     SUBDIR += libspf2-10
