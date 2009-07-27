@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e1156e90-7ad6-11de-b26a-0048543d60ce">
+    <topic>squid -- several remote denial of service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.0.1</ge><lt>3.0.17</lt></range>
+	<range><ge>3.1.0.8</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid security advisory 2009:2 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2009_2.txt">
+	  <p>Due to incorrect buffer limits and related bound checks Squid
+	    is vulnerable to a denial of service attack when processing
+	    specially crafted requests or responses.</p>
+	  <p>Due to incorrect data validation Squid is vulnerable to a
+	    denial of service attack when processing specially crafted
+	    responses.</p>
+	  <p>These problems allow any trusted client or external server to
+	    perform a denial of service attack on the Squid service.</p>
+	</blockquote>
+	<p>Squid-2.x releases are not affected.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2009_2.txt</url>
+    </references>
+    <dates>
+      <discovery>2009-07-27</discovery>
+      <entry>2009-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c1ef9b33-72a6-11de-82ea-0030843d3802">
     <topic>firefox35 -- corrupt JIT state after deep return from native function</topic>
     <affects>
