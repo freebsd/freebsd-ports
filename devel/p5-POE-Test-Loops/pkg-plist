@@ -26,6 +26,10 @@ bin/poe-gen-tests
 %%SITE_PERL%%/POE/Test/Loops/wheel_readwrite.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_tail.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_sf_unix.pm
+%%SITE_PERL%%/POE/Test/Loops/z_kogman_sig_order.pm
+%%SITE_PERL%%/POE/Test/Loops/z_steinert_signal_integrity.pm
+%%SITE_PERL%%/POE/Test/Loops/z_merijn_sigchld_system.pm
+%%SITE_PERL%%/POE/Test/Loops/z_rt39872_sigchld_stop.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test/Loops
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test
 @dirrmtry %%SITE_PERL%%/POE/Test/Loops
