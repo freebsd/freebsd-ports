@@ -6,25 +6,36 @@
 #
 
 PORTNAME=	gpa
-PORTVERSION=	0.7.6
-PORTREVISION=	3
+PORTVERSION=	0.9.0
 CATEGORIES=	security
-MASTER_SITES=	http://wald.intevation.org/frs/download.php/350/
+MASTER_SITES=	http://wald.intevation.org/frs/download.php/603/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A graphical frontend for the GNU Privacy Guard
 
-LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme
-BUILD_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
+LIB_DEPENDS=	gpgme.18:${PORTSDIR}/security/gpgme
+BUILD_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg \
+		libassuan>=1.0.4:${PORTSDIR}/security/libassuan
 RUN_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share
+MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.mk>
+OPTIONS=	NLS "Native language support" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+.include <bsd.port.post.mk>
