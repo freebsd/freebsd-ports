@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 
@@ -220,16 +219,15 @@ MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 .endif
 
 .if defined(WITH_EXAMPLES)
-PLIST_SUB+=             EXAMPLES=""
+PLIST_SUB+=		EXAMPLES=""
 NOMANCOMPRESS=	true
 MANCOMPRESSED=	no
-MAN1=	ldns-chaos.1 ldns-nsec3-hash.1 ldns-update.1 ldns-compare-zones.1 \
-	ldns-read-zone.1 ldns-verify-zone.1 ldns-dpa.1 ldns-resolver.1 \
-	ldns-version.1 ldns-key2ds.1 ldns-revoke.1 ldns-walk.1 \
-	ldns-keyfetcher.1 ldns-rrsig.1 ldns-zcat.1 ldns-keygen.1 \
-	ldns-signzone.1 ldns-zsplit.1 ldns-mx.1 ldns-testns.1 ldnsd.1 \
-	ldns-notify.1 
-
+MAN1=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 ldns-key2ds.1 \
+	ldns-keyfetcher.1 ldns-keygen.1 ldns-mx.1 ldns-notify.1 \
+	ldns-nsec3-hash.1 ldns-read-zone.1 ldns-resolver.1 ldns-revoke.1 \
+	ldns-rrsig.1 ldns-signzone.1 ldns-testns.1 ldns-update.1 \
+	ldns-verify-zone.1 ldns-version.1 ldns-walk.1 ldns-zcat.1 \
+	ldns-zsplit.1 ldnsd.1
 post-configure:
 	@(cd ${WRKSRC}/examples; ./configure --prefix=${PREFIX} \
 		--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man \
