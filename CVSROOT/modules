@@ -8011,6 +8011,7 @@ linux-fontconfig                ports/x11-fonts/linux-fontconfig
 linux-freealut                  ports/audio/linux-freealut
 linux-gdk-pixbuf                ports/graphics/linux-gdk-pixbuf
 linux-geepee32                  ports/emulators/linux-geepee32
+linux-genpuid                   ports/audio/linux-genpuid
 linux-gid                       ports/cad/linux-gid
 linux-gorky17-demo              ports/games/linux-gorky17-demo
 linux-gspca-kmod                ports/multimedia/linux-gspca-kmod
