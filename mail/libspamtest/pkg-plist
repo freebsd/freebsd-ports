@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+ap-mailfilter3/lib/libspamtest.a
+ap-mailfilter3/lib/libspamtest_r.a
+ap-mailfilter3/include/msgstore.h
+ap-mailfilter3/include/spamtest.h
+@dirrmtry ap-mailfilter3/lib
+@dirrmtry ap-mailfilter3/include
+@dirrmtry ap-mailfilter3

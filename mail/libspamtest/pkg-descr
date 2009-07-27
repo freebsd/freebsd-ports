@@ -1,0 +1,7 @@
+The Kaspersky Antispam 3.0 software is a efficient anti-spam solution. It uses
+sophisticated methods to fight spam with very low false positive rate.  Client
+software for various MTA is provided.
+
+This package installs hand compiled spamtest library.
+
+WWW: http://kaspersky.com
