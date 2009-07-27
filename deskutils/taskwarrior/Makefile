@@ -23,10 +23,6 @@ MAN5=	taskrc.5 task-tutorial.5
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
-EXTRA_PATCHES=	${PATCHDIR}/extra-32bit
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|; s|%%DATADIR%%|${DATADIR}|' \
 	    ${WRKSRC}/Makefile.in
