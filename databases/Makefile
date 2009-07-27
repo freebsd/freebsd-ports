@@ -592,6 +592,7 @@
     SUBDIR += qt4-sqlite3-plugin
     SUBDIR += rdb
     SUBDIR += rdfdb
+    SUBDIR += redis
     SUBDIR += rrdman
     SUBDIR += rrdtool
     SUBDIR += rrdtool10
