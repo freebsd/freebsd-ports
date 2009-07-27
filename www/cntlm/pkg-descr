@@ -1,0 +1,11 @@
+Cntlm is an NTLM/NTLMv2 authenticating HTTP proxy. It takes the address of your
+proxy or proxies (host1..N and port1..N) and opens a listening socket,
+forwarding each request to the parent proxy (moving in a circular list if the
+active parent stops working). Along the way, a connection to the parent is
+created anew and authenticated or, if available, previously cached connection
+is reused to achieve higher efficiency and faster responses. When the chain is
+set up, cntlm should be used as a proxy in your applications. Cntlm also
+integrates transparent TCP/IP port forwarding (tunneling) through the parent
+(incl. authentication).
+
+WWW: http://cntlm.sourceforge.net/

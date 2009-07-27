@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# PROVIDE: cntlm
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf to enable cntlm
+#
+# cntlm_enable (bool):   Set to "NO" by default.
+#                        Set it to "YES" to enable cntlm.
+# cntlm_config (path):   Config file. Defaults to /usr/local/etc/cntlm.conf.
+# cntlm_user (str):      User to run cntlm as
+# cntlm_flags (str):     Additional flags to pass to cntlm
+#
+
+. %%RC_SUBR%%
+
+name="cntlm"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${cntlm_enable="NO"}
+: ${cntlm_config="%%{PREFIX}/etc/cntlm.conf"}
+: ${cntlm_flags=""}
+: ${cntlm_user="nobody"}
+
+pidfile=/var/run/${name}.pid
+command=%%PREFIX%%/bin/${name}
+command_args="-P $pidfile -c $cntlm_config"
+
+start_precmd="cntlm_prestartcmd"
+
+cntlm_prestartcmd() {
+        touch $pidfile
+        chown $cntlm_user $pidfile
+}
+
+run_rc_command "$1"
+

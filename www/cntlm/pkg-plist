@@ -1,0 +1,4 @@
+@unexec if cmp -s %D/etc/cntlm.conf.sample %D/etc/cntlm.conf; then rm -f %D/etc/cntlm.conf; fi
+bin/cntlm
+etc/cntlm.conf.sample
+@exec if [ ! -f %D/etc/cntlm.conf ]; then cp -p %D/%F %B/cntlm.conf; fi
