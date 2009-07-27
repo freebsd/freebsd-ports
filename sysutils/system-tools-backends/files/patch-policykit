@@ -1,0 +1,46 @@
+Allow root to send messages to all the system tools backends, so they 
+work even when CVE-2008-4311 has been fixed.
+    
+Also disallow normal user access by destination, not by interface (fd.o 
+#18961).
+
+Original patch by Simon McVittie, updated for the PolicyKit version by 
+Josselin Mouette with advice from Colin Walters.
+
+Index: system-tools-backends-2.6.0/system-tools-backends.conf
+===================================================================
+--- system-tools-backends.conf	2008-03-09 14:21:45.000000000 +0100
++++ system-tools-backends.conf	2009-03-11 22:21:09.145371060 +0100
+@@ -22,11 +22,7 @@
+     <allow send_interface="org.freedesktop.SystemToolsBackends.Platform" send_member="getPlatform"/>
+     -->
+ 
+-    <!-- configuration modules can't be accessed directly... -->
+-    <deny send_interface="org.freedesktop.SystemToolsBackends"/>
+-    <deny send_interface="org.freedesktop.SystemToolsBackends.Platform"/>
+-
+-    <!-- ...so petitions go through the dispatcher instead -->
++    <!-- Only allow talking to the dispatcher -->
+     <allow send_destination="org.freedesktop.SystemToolsBackends"/>
+   </policy>
+ 
+@@ -49,7 +45,17 @@
+ 
+     <!-- be able to speak to configuration modules,
+          so any message to them has to go through the dispatcher -->
+-    <allow send_interface="org.freedesktop.SystemToolsBackends"/>
+-    <allow send_interface="org.freedesktop.SystemToolsBackends.Platform"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.Platform"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.GroupsConfig"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.HostsConfig"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.IfacesConfig"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.NFSConfig"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.NTPConfig"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.ServicesConfig"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.SMBConfig"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.TimeConfig"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.UserConfig"/>
++    <allow send_destination="org.freedesktop.SystemToolsBackends.UsersConfig"/>
+   </policy>
+ </busconfig>
