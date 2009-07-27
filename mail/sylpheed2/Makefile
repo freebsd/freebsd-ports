@@ -114,7 +114,7 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac libsylph src po manual faq$$|SUBDIRS = ac libsylph src po|g' \
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac libsylph src plugin po manual faq$$|SUBDIRS = ac libsylph src plugin po|g' \
 		${WRKSRC}/Makefile.in
 .else
 .for i in ${MAKEFILES}
