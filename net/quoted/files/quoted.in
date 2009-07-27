@@ -1,8 +1,10 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
 # PROVIDE: quoted
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 # AUTHOR:  Bob Frazier
 
 quoted_enable=${quoted_enable:-"NO"}

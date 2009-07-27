@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $Id: healthd.sh,v 1.1.2.7 2004/06/23 14:11:57 housley Exp $
+# $FreeBSD$
 #
+# $Id: healthd.sh,v 1.1.2.7 2004/06/23 14:11:57 housley Exp $
 
 # PROVIDE: healthd
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
-#
 # Add the following line to /etc/rc.conf to enable healthd:
 #
 #healthd_enable="YES"
