@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xephem
-PORTVERSION=	3.7.3
-PORTREVISION=	2
+PORTVERSION=	3.7.4
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 

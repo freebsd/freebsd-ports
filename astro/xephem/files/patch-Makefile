@@ -1,9 +1,9 @@
---- Makefile.orig	Fri Nov 18 16:43:09 2005
-+++ Makefile	Mon Dec  5 12:58:21 2005
+--- Makefile.orig	2009-07-26 16:36:37.000000000 +0000
++++ Makefile	2009-07-26 16:39:34.000000000 +0000
 @@ -10,9 +10,9 @@
- # back here and compile and link all the *.c files into one executable, xephem.
+ # one executable, xephem.
  
- # -I and -L flags to find required supporting XEphem libraries
+ # These -I and -L flags point to the supporting XEphem libraries
 -LIBINC = -I../../libastro -I../../libip -I../../liblilxml -I../../libjpegd -I../../libpng -I../../libz
 -LIBLNK = -L../../libastro -L../../libip -L../../liblilxml -L../../libjpegd -L../../libpng -L../../libz
 -LIBLIB = -lastro -lip -llilxml -ljpegd -lpng -lz
@@ -13,16 +13,30 @@
  
  # MOTIFI is the directory containing the Xm directory of include files.
  # MOTIFL is the directory containing the libXm.a library.
-@@ -31,7 +31,7 @@
+@@ -24,18 +24,18 @@
+ MOTIFL = $(MOTIF)
+ endif
+ ifndef MOTIFI
+-MOTIFI = /usr/X11R6/include
++MOTIFI = %%LOCALBASE%%/include
+ endif
+ ifndef MOTIFL
+-MOTIFL = /usr/X11R6/lib
++MOTIFL = %%LOCALBASE%%/lib
+ endif
  
  # for linux and Apple OS X
+ # some systems now use just /usr/X11 (not /usr/X11R6)
  CC = gcc
--CLDFLAGS = -g
-+#CLDFLAGS = -g
- CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -I$(MOTIFI) -I/usr/X11R6/include
- LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/usr/X11R6/lib
- XLIBS = $(MOTIFL)/libXm.a -lXp -lXt -lXext -lSM -lICE -lXmu -lX11
-@@ -181,10 +181,7 @@
+ CLDFLAGS = -g
+-CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -I$(MOTIFI) -I/usr/X11R6/include
+-LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/usr/X11R6/lib
++CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -I$(MOTIFI) -I%%LOCALBASE%%/include
++LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L%%LOCALBASE%%/lib
+ XLIBS = $(MOTIFL)/libXm.a -lXp -lXt -lXext -lXmu -lX11
+ LIBS = $(XLIBS) $(LIBLIB) -lm
+ 
+@@ -189,10 +189,7 @@
  libs:
  	cd ../../libastro; make
  	cd ../../libip; make
@@ -32,4 +46,4 @@
 -	cd ../../libz; make
  
  clean:
- 	touch x.o
+ 	rm -fr *.o ../../lib*/*.[ao]
