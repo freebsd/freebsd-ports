@@ -16,9 +16,11 @@ COMMENT=	Domainkeys milter for Sendmail
 USE_RC_SUBR=	milter-dk.sh
 USE_OPENSSL=	yes
 
+.if !defined(BUILDING_INDEX)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
 .if ${IPCCHECK:Mimplemented}
 IGNORE=		your system does not support sysvipc
+.endif
 .endif
 
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)

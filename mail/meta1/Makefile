@@ -18,7 +18,7 @@ COMMENT=	Secure and efficient mail gateway
 NOT_FOR_ARCHS=	ia64
 CONFLICTS=	smx-*
 
-.if !defined(SENDMAIL_WITHOUT_SHMEM)
+.if !defined(SENDMAIL_WITHOUT_SHMEM) && !defined(BUILDING_INDEX)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
 .if ${IPCCHECK:Mimplemented}
 IGNORE=		your system does not support sysvipc
