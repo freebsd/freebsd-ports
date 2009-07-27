@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	phpldapadmin
-PORTVERSION=	1.1.0.7
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to administer LDAP over the web
