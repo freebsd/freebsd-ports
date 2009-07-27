@@ -1,0 +1,6 @@
+bin/redis-server
+bin/redis-benchmark
+bin/redis-cli
+@unexec (cmp -s %D/etc/redis.conf %D/etc/redis.conf.sample && rm -f %D/etc/redis.conf) || true
+etc/redis.conf.sample
+@exec [ -f %B/redis.conf ] || cp %B/%f %B/redis.conf
