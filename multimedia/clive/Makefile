@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.3
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-WWW-Curl>=4.05:${PORTSDIR}/www/p5-WWW-Curl \
 		p5-Class-Singleton>=1.4:${PORTSDIR}/devel/p5-Class-Singleton \
-		p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile
+		p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
+		p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny
 
 # deskutils/ljclive, multimedia/clive1 (same executable/manpage/distfile name)
 CONFLICTS=	clive-[0-1]* ljclive-[0-9]*

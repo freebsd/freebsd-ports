@@ -9,6 +9,9 @@ bin/clive
 %%SITE_PERL%%/clive/Host/Youtube.pm
 %%SITE_PERL%%/clive/Host/Break.pm
 %%SITE_PERL%%/clive/Host/Google.pm
+%%SITE_PERL%%/clive/Host/Spiegel.pm
+%%SITE_PERL%%/clive/Host/Golem.pm
+%%SITE_PERL%%/clive/Host/Ehrensenf.pm
 %%SITE_PERL%%/clive/Progress/Bar.pm
 %%SITE_PERL%%/clive/Exec.pm
 %%SITE_PERL%%/clive/Util.pm
@@ -20,6 +23,7 @@ bin/clive
 %%SITE_PERL%%/clive/Curl.pm
 %%SITE_PERL%%/clive/Log.pm
 %%SITE_PERL%%/clive/Error.pm
+%%SITE_PERL%%/clive/Compat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/clive/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/clive
 @dirrmtry %%SITE_PERL%%/clive/Host
