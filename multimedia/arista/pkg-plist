@@ -27,6 +27,13 @@ share/pixmaps/arista.svg
 %%DATADIR%%/locale/es/LC_MESSAGES/arista.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/arista.mo
 %%DATADIR%%/locale/it/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/pt_BR/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/ca/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/ar/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/pl/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/fi/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/ja/LC_MESSAGES/arista.mo
+%%DATADIR%%/locale/ast/LC_MESSAGES/arista.mo
 %%DATADIR%%/locale/templates/arista.pot
 %%DATADIR%%/presets/computer.svg
 %%DATADIR%%/presets/computer.xml
@@ -40,6 +47,13 @@ share/pixmaps/arista.svg
 %%DATADIR%%/presets/ps3.xml
 %%DATADIR%%/presets/psp.svg
 %%DATADIR%%/presets/psp.xml
+%%DATADIR%%/presets/pda.png
+%%DATADIR%%/presets/pda.xml
+%%DATADIR%%/presets/nwz-818.svg
+%%DATADIR%%/presets/nokia-nseries.svg
+%%DATADIR%%/presets/nokia-nseries.xml
+%%DATADIR%%/presets/nwz-818.xml
+%%DATADIR%%/ui/props.ui
 %%DATADIR%%/ui/about.ui
 %%DATADIR%%/ui/icon-small.svg
 %%DATADIR%%/ui/icon.svg
@@ -54,10 +68,24 @@ share/pixmaps/arista.svg
 @dirrmtry %%DATADIR%%/locale/it/LC_MESSAGES
 @dirrmtry %%DATADIR%%/locale/de/LC_MESSAGES
 @dirrmtry %%DATADIR%%/locale/es/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ca/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/pt_BR/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ar/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/pl/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/fi/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ja/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ast/LC_MESSAGES
 @dirrmtry %%DATADIR%%/locale/fr
 @dirrmtry %%DATADIR%%/locale/it
 @dirrmtry %%DATADIR%%/locale/de
 @dirrmtry %%DATADIR%%/locale/es
+@dirrmtry %%DATADIR%%/locale/ca
+@dirrmtry %%DATADIR%%/locale/pt_BR
+@dirrmtry %%DATADIR%%/locale/ar
+@dirrmtry %%DATADIR%%/locale/pl
+@dirrmtry %%DATADIR%%/locale/fi
+@dirrmtry %%DATADIR%%/locale/ja
+@dirrmtry %%DATADIR%%/locale/ast
 @dirrmtry %%DATADIR%%/locale/templates
 @dirrmtry %%DATADIR%%/locale
 @dirrmtry %%DATADIR%%/presets

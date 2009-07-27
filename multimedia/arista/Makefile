@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	arista
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://programmer-art.org/media/releases/arista-transcoder/ \
-		http://launchpad.net/arista/+milestone/0.9.1/+download/
+		http://launchpadlibrarian.net/28489828/
 
 MAINTAINER=	steve@mouf.net
 COMMENT=	An easy to use multimedia transcoder for the GNOME Desktop
