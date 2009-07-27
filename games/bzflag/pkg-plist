@@ -18,6 +18,7 @@ bin/bzfs
 %%DATADIR%%/bzflag-256x256.png
 %%DATADIR%%/bzflag-32x32.xpm
 %%DATADIR%%/bzflag-48x48.png
+%%DATADIR%%/bzflag.desktop
 %%DATADIR%%/caution.png
 %%DATADIR%%/clouds.png
 %%DATADIR%%/dusty_flare.png
