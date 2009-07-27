@@ -113,6 +113,7 @@ _bbstored:*:505:
 nullmail:*:522:
 dkimproxy:*:525:
 pgbouncer:*:534:
+redis:*:535:
 ejabberd:*:543:
 qtss:*:554:
 ircdru:*:555:
