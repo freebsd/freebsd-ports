@@ -41,6 +41,8 @@ include/ldns/rdata.h
 include/ldns/resolver.h
 include/ldns/rr.h
 include/ldns/rr_functions.h
+include/ldns/sha1.h
+include/ldns/sha2.h
 include/ldns/str2host.h
 include/ldns/tsig.h
 include/ldns/update.h
