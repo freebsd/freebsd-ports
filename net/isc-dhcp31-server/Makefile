@@ -7,19 +7,17 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2p1
 PORTREVISION=	${DHCP_PORTREVISION}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.1-history
 PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	31-${SUBSYS}
-DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
-
-BROKEN=		Not yet integrated and tested
 
 PORTREVISION_SERVER=	0
 PORTREVISION_CLIENT=	0
@@ -85,29 +83,6 @@ PKGDEINSTALL=	${PKGINSTALL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${.CURDIR}/pkg-plist
 
-# Local variables
-#
-
-# for instance, possible versions are:
-#	1.2.r3.4 (or 1.2.b3.4), 1.2.r3 (or 1.2.b3), 1.2.3, 1.2
-# which have to become:
-#	1.2rc3pl4 (or 1.2beta3pl4), 1.2rc3 (or 1.2beta3), 1.2.3, 1.2
-# so, the magic things are:
-VERSION=
-PATCHLEVEL=
-.if ${PORTVERSION:R:E:M[br]*} != ""
-RELEASE=	${PORTVERSION:R:R}
-VERSION=	${PORTVERSION:R:E:S/b/beta/:S/r/rc/}
-PATCHLEVEL=	pl${PORTVERSION:E}
-.elif ${PORTVERSION:E:M[br]*} != ""
-RELEASE=	${PORTVERSION:R}
-VERSION=	${PORTVERSION:E:S/b/beta/:S/r/rc/}
-#.elif ${PORTVERSION:R:E} != ""
-#RELEASE=	${PORTVERSION:R}
-#PATCHLEVEL=	pl${PORTVERSION:E}
-.else
-RELEASE=	${PORTVERSION}
-.endif
 
 PATCH_SUBDIRS=	common minires dst omapip
 .if ${SUBSYS} == server || ${SUBSYS} == devel
