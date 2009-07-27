@@ -7,6 +7,51 @@ bin/sylpheed
 %%PORTDOCS%%%%DOCSDIR%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/TODO.ja
+include/sylpheed/plugin.h
+include/sylpheed/sylph/account.h
+include/sylpheed/sylph/base64.h
+include/sylpheed/sylph/codeconv.h
+include/sylpheed/sylph/customheader.h
+include/sylpheed/sylph/defs.h
+include/sylpheed/sylph/displayheader.h
+include/sylpheed/sylph/enums.h
+include/sylpheed/sylph/filter.h
+include/sylpheed/sylph/folder.h
+include/sylpheed/sylph/html.h
+include/sylpheed/sylph/imap.h
+include/sylpheed/sylph/mbox.h
+include/sylpheed/sylph/md5.h
+include/sylpheed/sylph/md5_hmac.h
+include/sylpheed/sylph/mh.h
+include/sylpheed/sylph/news.h
+include/sylpheed/sylph/nntp.h
+include/sylpheed/sylph/pop.h
+include/sylpheed/sylph/prefs.h
+include/sylpheed/sylph/prefs_account.h
+include/sylpheed/sylph/prefs_common.h
+include/sylpheed/sylph/procheader.h
+include/sylpheed/sylph/procmime.h
+include/sylpheed/sylph/procmsg.h
+include/sylpheed/sylph/quoted-printable.h
+include/sylpheed/sylph/recv.h
+include/sylpheed/sylph/session.h
+include/sylpheed/sylph/smtp.h
+include/sylpheed/sylph/socket.h
+include/sylpheed/sylph/ssl.h
+include/sylpheed/sylph/stringtable.h
+include/sylpheed/sylph/syl-marshal.h
+include/sylpheed/sylph/sylmain.h
+include/sylpheed/sylph/unmime.h
+include/sylpheed/sylph/utils.h
+include/sylpheed/sylph/uuencode.h
+include/sylpheed/sylph/virtual.h
+include/sylpheed/sylph/xml.h
+lib/libsylph-0.la
+lib/libsylph-0.so
+lib/libsylph-0.so.0
+lib/libsylpheed-plugin-0.la
+lib/libsylpheed-plugin-0.so
+lib/libsylpheed-plugin-0.so.0
 share/applications/sylpheed.desktop
 share/locale/be/LC_MESSAGES/sylpheed.mo
 share/locale/cs/LC_MESSAGES/sylpheed.mo
@@ -97,6 +142,7 @@ share/pixmaps/sylpheed.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-22.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-23.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-24.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-25.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-4.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-5.html
@@ -116,4 +162,6 @@ share/pixmaps/sylpheed.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/sylpheed/sylph
+@dirrm include/sylpheed
 @dirrmtry share/applications
