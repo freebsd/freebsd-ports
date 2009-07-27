@@ -105,6 +105,7 @@ include/fxt/bits/graycode.h
 include/fxt/bits/graypower.h
 include/fxt/bits/grsnegative.h
 include/fxt/bits/hilbert.h
+include/fxt/bits/ith-one-idx.h
 include/fxt/bits/negbin.h
 include/fxt/bits/nextgray.h
 include/fxt/bits/parenwords.h
@@ -355,6 +356,7 @@ include/fxt/perm/graypermute.h
 include/fxt/perm/grayrevpermute.h
 include/fxt/perm/haarpermute.h
 include/fxt/perm/mrotate.h
+include/fxt/perm/perm2ccf.h
 include/fxt/perm/permapply.h
 include/fxt/perm/permapplyfunc.h
 include/fxt/perm/permcomplement.h

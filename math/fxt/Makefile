@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	fxt
 # Date created:			Nov 28, 2001
 # Whom:				ijliao
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	fxt
-PORTVERSION=	2009.07.14
+PORTVERSION=	2009.07.26
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 EXTRACT_SUFX=	.tgz
