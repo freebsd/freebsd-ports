@@ -1,5 +1,5 @@
---- server/dhcpd.c.orig	Thu Jun 10 19:59:52 2004
-+++ server/dhcpd.c	Fri Jun 25 15:49:09 2004
+--- server/dhcpd.c.orig	2009-07-18 12:17:49.000000000 +0000
++++ server/dhcpd.c	2009-07-18 12:16:17.000000000 +0000
 @@ -47,6 +47,22 @@
  #include "version.h"
  #include <omapip/omapip_p.h>
@@ -22,8 +22,8 @@
 +
  static void usage PROTO ((void));
  
- TIME cur_time;
-@@ -195,6 +211,35 @@
+ struct iaddr server_identifier;
+@@ -193,6 +209,46 @@
  	omapi_object_dereference (&listener, MDL);
  }
  
@@ -42,14 +42,25 @@
 +#endif /* PARANOIA */
 +
 +#if defined (JAIL)
-+static void setup_jail (char *chroot_dir, char *hostname, u_int32_t ip_number)
++#if !defined(JAIL_API_VERSION)
++#define	JAIL_API_VERSION	0
++#endif
++static void setup_jail (char *chroot_dir, char *hostname, struct in_addr ip_addr)
 +{
 +      struct jail j;
 +
-+      j.version = 0;
++      memset(&j, 0, sizeof(j));
++      j.version = JAIL_API_VERSION;
 +      j.path = chroot_dir;
 +      j.hostname = hostname;
-+      j.ip_number = ip_number;
++#if JAIL_API_VERSION == 0
++      j.ip_number = ntoh1(ip_addr.s_addr);
++#elif JAIL_API_VERSION ==2
++      j.ip4s = 1;
++      j.ip4 = &ip_addr;
++#else
++#error Unsupported jail API
++#endif
 +
 +      if (jail (&j) < 0)
 +              log_fatal ("jail(%s, %s): %m", chroot_dir, hostname);
@@ -59,7 +70,7 @@
  int main (argc, argv, envp)
  	int argc;
  	char **argv, **envp;
-@@ -227,6 +272,25 @@
+@@ -225,6 +281,25 @@
  	char *traceinfile = (char *)0;
  	char *traceoutfile = (char *)0;
  #endif
@@ -78,14 +89,14 @@
 +#endif /* PARANOIA || JAIL */
 +#if defined (JAIL)
 +	char *set_jail = 0;
-+	u_int32_t jail_ip_address = 0; /* Good as long as it's IPv4 ... */
++	struct in_addr jail_ip_address;
 +	int no_dhcpd_jail = 0;
 +	char *s2;
 +#endif /* JAIL */
  
- 	/* Make sure we have stdin, stdout and stderr. */
- 	status = open ("/dev/null", O_RDWR);
-@@ -289,6 +353,39 @@
+         /* Make sure that file descriptors 0 (stdin), 1, (stdout), and
+            2 (stderr) are open. To do this, we assume that when we
+@@ -290,6 +365,38 @@
  			if (++i == argc)
  				usage ();
  			server = argv [i];
@@ -119,13 +130,12 @@
 +				usage ();
 +			if (inet_pton (AF_INET, argv[i], &jail_ip_address) < 0)
 +				log_fatal ("invalid ip address: %s", argv[i]);
-+			jail_ip_address = ntohl (jail_ip_address);
 +			no_dhcpd_jail = 1;
 +#endif /* JAIL */
  		} else if (!strcmp (argv [i], "-cf")) {
  			if (++i == argc)
  				usage ();
-@@ -366,6 +463,28 @@
+@@ -367,6 +474,27 @@
  	if (!no_dhcpd_pid && (s = getenv ("PATH_DHCPD_PID"))) {
  		path_dhcpd_pid = s;
  	}
@@ -148,13 +158,12 @@
 +		set_jail = s;
 +		if (inet_pton (AF_INET, s2, &jail_ip_address) < 0)
 +			log_fatal ("invalid ip address: %s", s2);
-+		jail_ip_address = ntohl (jail_ip_address);
 +	}
 +#endif /* JAIL */
  
  	if (!quiet) {
  		log_info ("%s %s", message, DHCP_VERSION);
-@@ -388,6 +507,57 @@
+@@ -393,6 +521,57 @@
  					     trace_seed_stop, MDL);
  #endif
  
@@ -212,7 +221,7 @@
  	/* Default to the DHCP/BOOTP port. */
  	if (!local_port)
  	{
-@@ -462,6 +632,9 @@
+@@ -467,6 +646,9 @@
  #endif
  
  	/* Initialize icmp support... */
@@ -222,7 +231,7 @@
  	if (!cftest && !lftest)
  		icmp_startup (1, lease_pinged);
  
-@@ -491,6 +664,14 @@
+@@ -496,6 +678,14 @@
  
  	postconf_initialization (quiet);
  
@@ -237,7 +246,7 @@
          /* test option should cause an early exit */
   	if (cftest && !lftest) 
   		exit(0);
-@@ -533,7 +714,22 @@
+@@ -538,7 +728,22 @@
  		else if (pid)
  			exit (0);
  	}
@@ -259,8 +268,8 @@
 +  
  	/* Read previous pid file. */
  	if ((i = open (path_dhcpd_pid, O_RDONLY)) >= 0) {
- 		status = read (i, pbuf, (sizeof pbuf) - 1);
-@@ -877,8 +1073,24 @@
+ 		status = read(i, pbuf, (sizeof pbuf) - 1);
+@@ -877,8 +1082,24 @@
  	log_info (copyright);
  	log_info (arr);
  

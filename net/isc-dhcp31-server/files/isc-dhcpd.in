@@ -700,6 +700,20 @@ dhcpd_uninstall ()
 	fi
 }
 
+dhcpd_checkconfig ()
+{
+        local rc_flags_mod
+        setup_flags
+	rc_flags_mod="$rc_flags"
+        # Eliminate '-q' flag if it is present
+	case "$rc_flags" in
+	"-q")	rc_flags_mod=`echo "$(rc_flags)" | sed -Ee 's/(^-q|-q|-q$)'//` ;;
+	esac
+        if ! ${command} -t -q ${rc_flags_mod}; then
+                err 1 "`${command} -t ${rc_flags_mod}` Configuration file sanity check failed"
+        fi
+}
+
 rcvar=${name}_enable
 load_rc_config ${name}
 
@@ -718,6 +732,7 @@ pidfile=${_dhcpd_pidfile}
 required_files=${dhcpd_conf}
 start_precmd=${name}_precmd
 stop_postcmd=${name}_postcmd
+restart_precmd="dhcpd_checkconfig"
 install_cmd=dhcpd_install
 uninstall_cmd=dhcpd_uninstall
 extra_commands="install uninstall"
