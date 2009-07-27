@@ -74,6 +74,10 @@ USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 .if ${ARCH} == "sparc64"
 IGNORE=		not yet ported to sparc64
 .endif
