@@ -112,6 +112,10 @@ WITHOUT_JAVA=	yo	# No package for Java ATM
 USE_GMAKE=	yes
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=	Requested timer clock_gettime (POSIX) is not available for ${OSREL}
+.endif
+
 .if !defined(NOPORTDOCS)
 .include "${FILESDIR}/manpages"
 .endif
