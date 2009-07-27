@@ -33,7 +33,9 @@ upgrades.
   Please rebuild all ports that depends on it.
 
   If you use portmaster please use:
-	portmaster -r jpeg*
+	portmaster -r jpeg-
+	Or if you would prefer a more gradual approach:
+	portmaster -w jpeg- (Check the man page for more information)
   If you use portupgrade please use:
 	portupgrade -fr graphics/jpeg
 
