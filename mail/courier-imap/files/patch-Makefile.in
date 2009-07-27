@@ -1,33 +1,42 @@
---- Makefile.in.orig	Thu Dec  9 03:07:01 2004
-+++ Makefile.in	Sun Jan  2 21:17:35 2005
-@@ -248,7 +248,7 @@
- 	COPYING.GPL NEWS.html $(TEMPLFILES)\
- sysconftool
+--- Makefile.in.orig	2009-06-27 19:26:28.000000000 +0200
++++ Makefile.in	2009-07-27 19:19:27.000000000 +0200
+@@ -307,7 +307,7 @@
+ EXTRA_DIST = 00README.NOW.OR.SUFFER README README.cygwin COPYING.GPL \
+ 	NEWS.html $(TEMPLFILES) pgpkeys.txt sysconftool
  sysconf_DATA = imapd.dist imapd-ssl.dist pop3d.dist pop3d-ssl.dist \
 -	imapd.cnf pop3d.cnf quotawarnmsg.example
 +	quotawarnmsg.example
  
  libexec_SCRIPTS = imapd.rc imapd-ssl.rc pop3d.rc pop3d-ssl.rc
- HTML2TXT = `which lynx 2>/dev/null && echo "lynx -dump -nolist" && exit; echo "links -dump"`
-@@ -506,8 +506,8 @@
- 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
- 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
- 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
--	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
--	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
-+	  echo " %%INSTALL_MAN%% '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
-+	  %%INSTALL_MAN%% "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
- 	done
+ HTML2TXT = links -dump -no-numbering -no-references
+@@ -659,8 +659,8 @@
+ 	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
+ 	while read files; do \
+ 	  test -z "$$files" || { \
+-	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man1dir)'"; \
+-	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man1dir)" || exit $$?; }; \
++	    echo " %%INSTALL_MAN%% $$files '$(DESTDIR)$(man1dir)'"; \
++	    %%INSTALL_MAN%% $$files "$(DESTDIR)$(man1dir)" || exit $$?; }; \
+ 	done; }
+ 
  uninstall-man1:
- 	@$(NORMAL_UNINSTALL)
-@@ -551,8 +551,8 @@
- 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
- 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
- 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
--	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man8dir)/$$inst'"; \
--	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man8dir)/$$inst"; \
-+	  echo " %%INSTALL_MAN%% '$$file' '$(DESTDIR)$(man8dir)/$$inst'"; \
-+	  %%INSTALL_MAN%% "$$file" "$(DESTDIR)$(man8dir)/$$inst"; \
- 	done
+@@ -690,15 +690,15 @@
+ 	sed 'N;N;s,\n, ,g' | { \
+ 	list=; while read file base inst; do \
+ 	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
+-	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man8dir)/$$inst'"; \
+-	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man8dir)/$$inst" || exit $$?; \
++	    echo " %%INSTALL_MAN%% '$$file' '$(DESTDIR)$(man8dir)/$$inst'"; \
++	    %%INSTALL_MAN%% "$$file" "$(DESTDIR)$(man8dir)/$$inst" || exit $$?; \
+ 	  fi; \
+ 	done; \
+ 	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
+ 	while read files; do \
+ 	  test -z "$$files" || { \
+-	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man8dir)'"; \
+-	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man8dir)" || exit $$?; }; \
++	    echo " %%INSTALL_MAN%% $$files '$(DESTDIR)$(man8dir)'"; \
++	    %%INSTALL_MAN%% $$files "$(DESTDIR)$(man8dir)" || exit $$?; }; \
+ 	done; }
+ 
  uninstall-man8:
- 	@$(NORMAL_UNINSTALL)
