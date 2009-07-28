@@ -13,6 +13,7 @@
     SUBDIR += basiliskII
     SUBDIR += bfe
     SUBDIR += bochs
+    SUBDIR += bsnes
     SUBDIR += bsvc
     SUBDIR += catapult
     SUBDIR += cinc

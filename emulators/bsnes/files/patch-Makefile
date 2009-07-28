@@ -1,0 +1,29 @@
+--- Makefile.orig	2009-06-07 01:56:29.000000000 +0000
++++ Makefile	2009-07-03 10:10:19.032836854 +0000
+@@ -6,8 +6,8 @@
+ ### compiler ###
+ ################
+ 
+-c     := $(compiler)
+-cpp   := $(subst cc,++,$(compiler))
++c     := ${CC}
++cpp   := ${CXX}
+ flags := -O3 -fomit-frame-pointer -Ilib
+ link  :=
+ 
+@@ -36,6 +36,15 @@
+   ruby += input.carbon
+ 
+   link += $(if $(findstring audio.openal,$(ruby)),-framework OpenAL)
++else ifeq ($(platform),bsd)
++  link += -s
++  flags += -I${LOCALBASE}/include
++
++  ruby := VIDEO
++  ruby += AUDIO
++  ruby += INPUT
++
++  link += $(if $(findstring audio.openal,$(ruby)),-lopenal)
+ else ifeq ($(platform),win)
+   link += -mwindows
+ # link += -mconsole

@@ -1,0 +1,13 @@
+--- lib/nall/Makefile-qt.orig	2009-06-15 00:10:35.000000000 +0200
++++ lib/nall/Makefile-qt	2009-06-15 00:12:05.000000000 +0200
+@@ -30,6 +30,10 @@
+   qtlib += -framework Cocoa
+   qtlib += -framework AppKit
+   qtlib += -framework ApplicationServices
++else ifeq ($(platform),bsd)
++  qtinc := `pkg-config --cflags QtCore QtGui`
++  qtlib := `pkg-config --libs QtCore QtGui`
++  moc := moc-qt4
+ else ifeq ($(platform),win)
+   ifeq ($(qtpath),)
+     # find Qt install directory from PATH environment variable
