@@ -87,6 +87,12 @@ post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
 
+post-patch:
+.if ${OSVERSION} >= 800100
+	@${REINPLACE_CMD} -e 's,usb_revision.h,usbdi.h,g' \
+		${WRKSRC}/kcontrol/usbview/usbdevices.h
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/kdeprint/descriptions/Makefile.in
