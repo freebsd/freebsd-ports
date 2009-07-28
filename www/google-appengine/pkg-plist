@@ -330,7 +330,7 @@ bin/dev_appserver.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/downloads.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-noborder-120x30.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-silver-120x30.gif
-%%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine_lowres.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine_lowres.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/buddypoke.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/cloudstatus.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/demo_video.jpg
@@ -350,7 +350,7 @@ bin/dev_appserver.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/program_policies.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/terms.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/whyappengine.html
-%%PORTDOCS%%%%DOCSDIR%%/css/codesite.pack.01312008.css
+%%PORTDOCS%%%%DOCSDIR%%/css/codesite.pack.04102009.css
 %%PORTDOCS%%%%DOCSDIR%%/css/iehacks.css
 %%PORTDOCS%%%%DOCSDIR%%/css/semantic_headers.css
 %%PORTDOCS%%%%DOCSDIR%%/images/cleardot.gif
@@ -363,7 +363,8 @@ bin/dev_appserver.py
 %%PORTDOCS%%%%DOCSDIR%%/images/show-arrow.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/sprites08132008.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/js/codesite.pack.01312008.js
+%%PORTDOCS%%%%DOCSDIR%%/js/codesite_head.pack.04102009.js
+%%PORTDOCS%%%%DOCSDIR%%/js/codesite_tail.pack.04102009.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/guestbook/app.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/guestbook/guestbook.py
 %%DATADIR%%/VERSION
@@ -393,6 +394,11 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/api/images/images_not_implemented_stub.py
 %%DATADIR%%/google/appengine/api/images/images_service_pb.py
 %%DATADIR%%/google/appengine/api/images/images_stub.py
+%%DATADIR%%/google/appengine/api/labs/__init__.py
+%%DATADIR%%/google/appengine/api/labs/taskqueue/__init__.py
+%%DATADIR%%/google/appengine/api/labs/taskqueue/taskqueue.py
+%%DATADIR%%/google/appengine/api/labs/taskqueue/taskqueue_service_pb.py
+%%DATADIR%%/google/appengine/api/labs/taskqueue/taskqueue_stub.py
 %%DATADIR%%/google/appengine/api/mail.py
 %%DATADIR%%/google/appengine/api/mail_errors.py
 %%DATADIR%%/google/appengine/api/mail_service_pb.py
@@ -401,6 +407,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/api/memcache/memcache_service_pb.py
 %%DATADIR%%/google/appengine/api/memcache/memcache_stub.py
 %%DATADIR%%/google/appengine/api/namespace_manager/__init__.py
+%%DATADIR%%/google/appengine/api/queueinfo.py
 %%DATADIR%%/google/appengine/api/quota.py
 %%DATADIR%%/google/appengine/api/urlfetch.py
 %%DATADIR%%/google/appengine/api/urlfetch_errors.py
@@ -426,6 +433,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/datastore/datastore_pb.py
 %%DATADIR%%/google/appengine/datastore/entity_pb.py
 %%DATADIR%%/google/appengine/dist/__init__.py
+%%DATADIR%%/google/appengine/dist/_library.py
 %%DATADIR%%/google/appengine/dist/ftplib.py
 %%DATADIR%%/google/appengine/dist/httplib.py
 %%DATADIR%%/google/appengine/dist/neo_cgi.py
@@ -447,13 +455,18 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/admin/templates/css/memcache.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/nav.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/pager.css
+%%DATADIR%%/google/appengine/ext/admin/templates/css/queues.css
+%%DATADIR%%/google/appengine/ext/admin/templates/css/tasks.css
 %%DATADIR%%/google/appengine/ext/admin/templates/datastore.html
 %%DATADIR%%/google/appengine/ext/admin/templates/datastore_edit.html
 %%DATADIR%%/google/appengine/ext/admin/templates/images/google.gif
 %%DATADIR%%/google/appengine/ext/admin/templates/interactive-output.html
 %%DATADIR%%/google/appengine/ext/admin/templates/interactive.html
+%%DATADIR%%/google/appengine/ext/admin/templates/js/webhook.js
 %%DATADIR%%/google/appengine/ext/admin/templates/memcache.html
 %%DATADIR%%/google/appengine/ext/admin/templates/pager.html
+%%DATADIR%%/google/appengine/ext/admin/templates/queues.html
+%%DATADIR%%/google/appengine/ext/admin/templates/tasks.html
 %%DATADIR%%/google/appengine/ext/bulkload/__init__.py
 %%DATADIR%%/google/appengine/ext/bulkload/constants.py
 %%DATADIR%%/google/appengine/ext/db/__init__.py
@@ -1644,6 +1657,7 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/google/appengine/ext/gql
 @dirrm %%DATADIR%%/google/appengine/ext/db
 @dirrm %%DATADIR%%/google/appengine/ext/bulkload
+@dirrm %%DATADIR%%/google/appengine/ext/admin/templates/js
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/images
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/css
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates
@@ -1655,6 +1669,8 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/google/appengine/base
 @dirrm %%DATADIR%%/google/appengine/api/namespace_manager
 @dirrm %%DATADIR%%/google/appengine/api/memcache
+@dirrm %%DATADIR%%/google/appengine/api/labs/taskqueue
+@dirrm %%DATADIR%%/google/appengine/api/labs
 @dirrm %%DATADIR%%/google/appengine/api/images
 @dirrm %%DATADIR%%/google/appengine/api/capabilities
 @dirrm %%DATADIR%%/google/appengine/api
