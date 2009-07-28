@@ -1,0 +1,5 @@
+%%SITE_PERL%%/String/RewritePrefix.pm
+%%SITE_PERL%%/mach/auto/String/RewritePrefix/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/String/RewritePrefix
+@dirrmtry %%SITE_PERL%%/mach/auto/String
+@dirrmtry %%SITE_PERL%%/String
