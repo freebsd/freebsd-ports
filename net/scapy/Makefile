@@ -8,7 +8,7 @@
 
 PORTNAME=	scapy
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://secdev.org/projects/scapy/files/
 
