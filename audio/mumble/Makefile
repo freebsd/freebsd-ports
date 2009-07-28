@@ -15,7 +15,7 @@ MAINTAINER=	marius@nuenneri.ch
 COMMENT=	A voice chat software primarily intended for use while gaming
 
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex \
-		boost_iostreams:${PORTSDIR}/devel/boost
+		boost_iostreams:${PORTSDIR}/devel/boost-libs
 
 USE_GMAKE=	yes
 USE_QT_VER=	4

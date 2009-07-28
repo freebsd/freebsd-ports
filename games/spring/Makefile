@@ -18,7 +18,7 @@ COMMENT=	A project aiming to create a new and versatile RTS Engine
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		openal.0:${PORTSDIR}/audio/openal \
 		GLEW.1:${PORTSDIR}/graphics/glew \
-		boost_thread.4:${PORTSDIR}/devel/boost \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		IL.2:${PORTSDIR}/graphics/devil \
 		ogg.6:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis

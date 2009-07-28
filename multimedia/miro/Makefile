@@ -16,7 +16,7 @@ COMMENT=	A video player to get internet TV broadcasts
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex				\
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
-LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python		\
+LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs		\
 		xine.1:${PORTSDIR}/multimedia/libxine
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb	\
 		${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23	\

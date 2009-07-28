@@ -16,7 +16,7 @@ DISTNAME=	QuantLib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive software framework for quantitative finance
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/QuantLib-${PORTVERSION}
 

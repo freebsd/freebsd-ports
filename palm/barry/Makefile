@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	meitolake@gmail.com
 COMMENT=	C++ library for interfacing with the BlackBerry Handheld
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

@@ -22,7 +22,7 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		squirrel.0:${PORTSDIR}/lang/squirrel \
 		freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_SCONS=	yes

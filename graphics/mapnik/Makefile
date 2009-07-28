@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
 		${PYTHON_PKGNAMEPREFIX}icu>=0.8.1:${PORTSDIR}/devel/py-icu \
 		${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:${PORTSDIR}/graphics/py-cairo \
 		${LOCALBASE}/include/cairomm-1.0/cairomm/cairomm.h:${PORTSDIR}/graphics/cairomm \
-		${LOCALBASE}/include/boost/python.hpp:${PORTSDIR}/devel/boost-python
+		${LOCALBASE}/include/boost/python.hpp:${PORTSDIR}/devel/boost-python-libs
 
 USE_PGSQL=	yes
 USE_BZIP2=	yes

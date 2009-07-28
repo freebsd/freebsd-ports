@@ -57,11 +57,8 @@ BROKEN=		Does not compile
 BROKEN=		Gets internal gcc error on ${ARCH}
 .endif
 
-.if exists(${LOCALBASE}/include/boost/python.hpp)
-LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python
-.else
-LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost
-.endif
+LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
 
 pre-everything::
 	@${ECHO_MSG}

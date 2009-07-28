@@ -21,7 +21,7 @@ LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		jack.0:${PORTSDIR}/audio/jack \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		boost_date_time.4:${PORTSDIR}/devel/boost \
+		boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		lo.7:${PORTSDIR}/audio/liblo \

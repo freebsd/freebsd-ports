@@ -20,7 +20,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		exiv2:${PORTSDIR}/graphics/exiv2 \
 		pano13:${PORTSDIR}/graphics/libpano13 \
-		boost_date_time:${PORTSDIR}/devel/boost
+		boost_date_time:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		gmake:${PORTSDIR}/devel/gmake

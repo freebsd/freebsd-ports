@@ -159,7 +159,7 @@ OOOEXTENSIONS+=		swext/wiki-publisher.oxt
 OOOEXTENSIONS+=		sun-report-builder.oxt
 
 .if ${ARCH} == amd64
-LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
+LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost-libs
 CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
 .endif
 .if (${OSVERSION} <= 602102)

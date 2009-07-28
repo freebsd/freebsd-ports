@@ -18,7 +18,7 @@ USE_WX=		2.6+
 WANT_UNICODE=	yes
 MAKE_JOBS_SAFE=	yes
 
-LIB_DEPENDS+=	boost_regex:${PORTSDIR}/devel/boost
+LIB_DEPENDS+=	boost_regex:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}

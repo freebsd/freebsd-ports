@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program seeks to become a full featured open source SVG editor
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gc.1:${PORTSDIR}/devel/boehm-gc \

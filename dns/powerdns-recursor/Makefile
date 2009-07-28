@@ -16,7 +16,8 @@ DISTNAME=	pdns-recursor-${PORTVERSION}
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	An advanced DNS recursor
 
-BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
+		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

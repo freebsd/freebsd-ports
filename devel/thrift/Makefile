@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	bms
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Framework for scalable cross-language services development
 
-# NOTYET: boost-libs
-LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
 		event-1.4:${PORTSDIR}/devel/libevent
 
 USE_AUTOTOOLS=	autoconf:262:env autoheader:262:env aclocal:19:env \

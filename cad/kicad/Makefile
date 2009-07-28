@@ -24,7 +24,7 @@ DIST_SUBDIR=		${PORTNAME}
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 DOCVERSION=	1.1
 LIBVERSION=	1.0

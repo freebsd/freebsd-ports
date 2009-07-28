@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	romain@blogreen.org
 COMMENT=	A C/C++ Debugger for GNOME
 
-LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \
 		gtop-2.0:${PORTSDIR}/devel/libgtop \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24 \

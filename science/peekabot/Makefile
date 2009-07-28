@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	chris@officialunix.com
 COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
 
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2\
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

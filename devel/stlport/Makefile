@@ -57,8 +57,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-templ-expr-user_config.h.diff
 .if defined(WITH_BOOST_SUPPORT)
 EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-boost-support-user_config.h.diff
 MAKE_ENV+= STLP_BUILD_BOOST_PATH=${LOCALBASE}/include
-BUILD_DEPENDS+= ${LOCALBASE}/include/boost/config/stdlib/stlport.hpp:${PORTSDIR}/devel/boost
-RUN_DEPENDS+= ${LOCALBASE}/include/boost/config/stdlib/stlport.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS+= ${LOCALBASE}/include/boost/config/stdlib/stlport.hpp:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS+= ${LOCALBASE}/include/boost/config/stdlib/stlport.hpp:${PORTSDIR}/devel/boost-libs
 .endif
 
 pre-configure:

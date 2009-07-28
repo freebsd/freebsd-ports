@@ -16,7 +16,8 @@ DISTNAME=	pdns-${PORTVERSION}
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with multiple backends including SQL
 
-BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
+		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 CONFLICTS=	powerdns-devel-[0-9]*
 

@@ -16,7 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	OpenGL Graphic User Interface Library
 
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
-		boost_python.4:${PORTSDIR}/devel/boost-python \
+		boost_python.4:${PORTSDIR}/devel/boost-python-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SCONS=	yes

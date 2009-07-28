@@ -26,7 +26,7 @@ PATCHFILES=	patch-platex-${PORTVERSION}.diff
 MAINTAINER=	yokota@res.otaru-uc.ac.jp
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 

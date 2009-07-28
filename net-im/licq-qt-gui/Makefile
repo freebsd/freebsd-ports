@@ -13,7 +13,7 @@ PKGNAMESUFFIX?=	${KDE_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Qt plugin for licq
 
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"

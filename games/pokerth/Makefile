@@ -14,7 +14,7 @@ DISTNAME=	PokerTH-${PORTVERSION}-src
 MAINTAINER=	mad@madpilot.net
 COMMENT=	A poker game written in C++/QT4
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		mikmod.2:${PORTSDIR}/audio/libmikmod \
 		gnutls.26:${PORTSDIR}/security/gnutls \
 		curl.5:${PORTSDIR}/ftp/curl

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	wesnoth
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	wesnoth-1.5*

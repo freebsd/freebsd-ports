@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION:S/.m/-m/}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Extensible cross-platform build tool suite
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bjam:${PORTSDIR}/devel/boost
+RUN_DEPENDS=	${LOCALBASE}/bin/bjam:${PORTSDIR}/devel/boost-jam
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/g}

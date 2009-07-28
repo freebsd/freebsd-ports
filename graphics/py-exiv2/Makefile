@@ -17,7 +17,7 @@ MAINTAINER=	dindin@dindin.ru
 COMMENT=	Python bindings for exiv2
 
 LIB_DEPENDS=	exiv2.7:${PORTSDIR}/graphics/exiv2\
-		boost_python.4:${PORTSDIR}/devel/boost-python
+		boost_python.4:${PORTSDIR}/devel/boost-python-libs
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes

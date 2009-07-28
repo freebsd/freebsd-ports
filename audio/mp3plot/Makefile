@@ -13,7 +13,7 @@ MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Mp3 bitrate plot tool
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 OPTIONS=	GD "Enable support for GD library" on \
 		IMAGEMAGICK "Enable support for Magick++" off

@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.drobilla.net/
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	FlowCanvas is an interactive Gtkmm/Gnomecanvasmm widget
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		gvc.5:${PORTSDIR}/graphics/graphviz

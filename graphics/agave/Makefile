@@ -15,7 +15,7 @@ MAINTAINER=	smyru@heron.pl
 COMMENT=	A color scheme builder for the GNOME desktop
 
 LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
-		boost_thread.4:${PORTSDIR}/devel/boost
+		boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 # --disable-gnome option is broken in 0.4.2
 #OPTIONS=	GNOME	"Adds GNOME support"	on

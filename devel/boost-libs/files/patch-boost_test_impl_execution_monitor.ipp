@@ -1,4 +1,4 @@
---- boost/test/impl/execution_monitor.ipp.orig	Mon Oct 13 12:20:26 2008
+--- boost/test/impl/execution_monitor.ipp	Mon Oct 13 12:20:26 2008
 +++ boost/test/impl/execution_monitor.ipp	Sun Nov  9 00:36:42 2008
 @@ -289,50 +289,11 @@
  

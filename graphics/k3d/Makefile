@@ -22,7 +22,7 @@ LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick \
 		gts.5:${PORTSDIR}/graphics/gts \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		boost_signals.4:${PORTSDIR}/devel/boost \
+		boost_signals.4:${PORTSDIR}/devel/boost-libs \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	ppmtompeg:${PORTSDIR}/graphics/netpbm
 

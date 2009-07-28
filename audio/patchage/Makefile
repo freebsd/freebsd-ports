@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.drobilla.net/
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Modular patch bay for Jack
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		raul.2:${PORTSDIR}/audio/raul \

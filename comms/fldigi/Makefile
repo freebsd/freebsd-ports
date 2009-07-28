@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/por
 		fltk-threads>=0:${PORTSDIR}/x11-toolkits/fltk-threads
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		sndfile:${PORTSDIR}/audio/libsndfile \
-		boost_wave:${PORTSDIR}/devel/boost \
+		boost_wave:${PORTSDIR}/devel/boost-libs \
 		pulse:${PORTSDIR}/audio/pulseaudio
 
 USE_DOS2UNIX=	yes

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fully-configurable hex grid generator
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/lexical_cast.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/lexical_cast.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 USE_GMAKE=	yes

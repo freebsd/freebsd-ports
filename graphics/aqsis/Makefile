@@ -14,11 +14,12 @@ MASTER_SITES=	SF
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A photorealistic rendering system
 
-BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost \
+BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		bison:${PORTSDIR}/devel/bison \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		fltk-threads>=0:${PORTSDIR}/x11-toolkits/fltk-threads
 LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		aprutil-1.3:${PORTSDIR}/devel/apr \
 		db-4.2.2:${PORTSDIR}/databases/db42

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	vd/enblend
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A tool for image blending with multiresolution splines
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/pool/pool.hpp:${PORTSDIR}/devel/boost \
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/pool/pool.hpp:${PORTSDIR}/devel/boost-libs \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
 		jpeg.10:${PORTSDIR}/graphics/jpeg \

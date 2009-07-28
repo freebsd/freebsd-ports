@@ -15,7 +15,7 @@ COMMENT=	An OpenGL presentation viewer on a spinning cube
 
 LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
 		poppler-glib:${PORTSDIR}/graphics/poppler-gtk \
-		boost_program_options:${PORTSDIR}/devel/boost
+		boost_program_options:${PORTSDIR}/devel/boost-libs
 
 USE_GL=		glut
 GNU_CONFIGURE=	yes

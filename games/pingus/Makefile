@@ -15,7 +15,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Lemmings-like game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		boost_regex.4:${PORTSDIR}/devel/boost \
+		boost_regex.4:${PORTSDIR}/devel/boost-libs \
 		physfs.1:${PORTSDIR}/devel/physfs
 
 USE_BZIP2=	yes

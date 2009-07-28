@@ -19,7 +19,7 @@ BUILD_DEPENDS=	eigen>=2.0.0:${PORTSDIR}/math/eigen2 \
 RUN_DEPENDS=	${PYNUMPY} \
 		sip:${PORTSDIR}/devel/py-sip
 LIB_DEPENDS=	openbabel.3:${PORTSDIR}/science/openbabel \
-		boost_python:${PORTSDIR}/devel/boost-python
+		boost_python:${PORTSDIR}/devel/boost-python-libs
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes

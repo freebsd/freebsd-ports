@@ -108,8 +108,11 @@
     SUBDIR += boehm-gc
     SUBDIR += bonobo
     SUBDIR += bonobo-conf
-    SUBDIR += boost
-    SUBDIR += boost-python
+    SUBDIR += boost-all
+    SUBDIR += boost-docs
+    SUBDIR += boost-jam
+    SUBDIR += boost-libs
+    SUBDIR += boost-python-libs
     SUBDIR += boost_build
     SUBDIR += bouml
     SUBDIR += bouml-doc

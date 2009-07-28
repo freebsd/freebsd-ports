@@ -15,7 +15,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		boost_thread.4:${PORTSDIR}/devel/boost
+		boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

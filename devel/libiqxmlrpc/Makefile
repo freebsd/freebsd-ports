@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Free, object-oriented XML-RPC implementation written in C++
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost\
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs\
 		xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
 
 GNU_CONFIGURE=	yes

@@ -21,7 +21,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/share/texmf/tex/latex/prettyref/prettyref.sty:${PORTSDIR}/print/latex-prettyref \
 		${LOCALBASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf

@@ -13,7 +13,7 @@ MASTER_SITES=	SF/crow-designer
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ binding to the GuiLoader library
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	guiloader.1:${PORTSDIR}/devel/guiloader \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 

@@ -217,7 +217,7 @@ PLIST_SUB+=		OPENWRITER:="@comment "
 .endif
 
 .if defined(WITH_OPENXML) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS+=		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 USE_GNOME+=		libgsf
 CONFIGURE_ARGS+=	--enable-OpenXML
 PLIST_SUB+=		OPENXML:=""
