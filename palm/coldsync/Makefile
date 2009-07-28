@@ -7,7 +7,7 @@
 
 PORTNAME=	coldsync
 PORTVERSION=	2.2.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	palm comms
 MASTER_SITES=	http://www.coldsync.org/download/
 
@@ -54,7 +54,7 @@ INFO=		conduits
 
 .include <bsd.port.pre.mk>
 
-CFLAGS+=	-D__BSD_VISIBLE=1
+CFLAGS+=	-O0 -D__BSD_VISIBLE=1
 CONFIGURE_ARGS+=	--disable-pedantic --without-perl --with-usb
 
 post-patch:
