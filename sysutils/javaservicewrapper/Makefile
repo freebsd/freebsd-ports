@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	javaservicewrapper
-PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTVERSION=	3.3.5
 CATEGORIES=	sysutils java
-MASTER_SITES=	SF/wrapper
+MASTER_SITES=	http://wrapper.tanukisoftware.org/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
 
 MAINTAINER=	alepulver@FreeBSD.org
@@ -17,15 +16,16 @@ COMMENT=	Application to solve problems common to many Java applications
 
 USE_GMAKE=	yes
 USE_JAVA=	1.3+
+USE_ANT=	yes
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS} -fPIC|' \
-		${WRKSRC}/src/c/Makefile-freebsd-x86-32
+		${WRKSRC}/src/c/Makefile-freebsd-x86-32.gmake
 
 do-build:
-	@cd ${WRKSRC} && ${SH} build32.sh
+	@cd ${WRKSRC} && ${SETENV} ANT_HOME="${LOCALBASE}" ${SH} build32.sh
 
 do-install:
 	${MKDIR} ${DATADIR}
