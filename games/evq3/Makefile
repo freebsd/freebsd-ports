@@ -18,8 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	The Marriage of XreaL and Icculus.org Q3 w/ Improvements
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
