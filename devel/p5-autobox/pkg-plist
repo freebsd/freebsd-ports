@@ -1,0 +1,8 @@
+%%SITE_PERL%%/mach/auto/autobox/.packlist
+%%SITE_PERL%%/mach/auto/autobox/autobox.bs
+%%SITE_PERL%%/mach/auto/autobox/autobox.so
+%%SITE_PERL%%/mach/autobox.pm
+%%SITE_PERL%%/mach/autobox.pod
+%%SITE_PERL%%/mach/autobox/universal.pm
+@dirrmtry %%SITE_PERL%%/mach/autobox
+@dirrmtry %%SITE_PERL%%/mach/auto/autobox
