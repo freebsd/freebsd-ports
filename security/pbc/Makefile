@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pbc
-PORTVERSION=	0.4.19
-PORTREVISION=	1
+PORTVERSION=	0.4.21
 CATEGORIES=	security
 MASTER_SITES=	http://crypto.stanford.edu/pbc/files/
 
