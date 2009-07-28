@@ -7,6 +7,7 @@
 
 PORTNAME=	Web-Scraper
 PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web Scraping Toolkit inspired by Scrapi
 
-RUN_DEPENDS=	p5-HTML-Entities>0:${PORTSDIR}/www/p5-HTML-Parser \
+RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Selector-XPath>=0.03:${PORTSDIR}/www/p5-HTML-Selector-XPath \
 		p5-HTML-Tagset>0:${PORTSDIR}/www/p5-HTML-Tagset \
 		p5-HTML-TreeBuilder-LibXML>=0.04:${PORTSDIR}/www/p5-HTML-TreeBuilder-LibXML \
