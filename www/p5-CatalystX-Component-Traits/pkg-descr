@@ -1,0 +1,6 @@
+Adds a Catalyst::Component "COMPONENT" method to your Catalyst component base
+class.  This method reads the optional traits parameter from app and component
+config and instantiates the component subclass with those traits using
+"new_with_traits" in MooseX::Traits from MooseX::Traits::Pluggable.
+
+WWW: http://search.cpan.org/dist/CatalystX-Component-Traits/
