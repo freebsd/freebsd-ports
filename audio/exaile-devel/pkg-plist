@@ -564,7 +564,7 @@ share/applications/exaile.desktop
 share/pixmaps/exaile.png
 @dirrmtry share/applications
 @dirrm etc/xdg/exaile
-@dirrm etc/xdg
+@dirrmtry etc/xdg
 @dirrm lib/exaile/xlgui/prefs
 @dirrm lib/exaile/xlgui/panel
 @dirrm lib/exaile/xlgui
