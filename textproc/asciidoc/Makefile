@@ -7,6 +7,7 @@
 
 PORTNAME=	asciidoc
 PORTVERSION=	8.4.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 		SF
@@ -14,7 +15,8 @@ MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A text document format for writing short documents and man pages
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
+		getopt>=0:${PORTSDIR}/misc/getopt
 
 USE_PYTHON=	2.4+
 USE_GMAKE=	yes
@@ -31,5 +33,9 @@ MAN1=		a2x.1 asciidoc.1
 pre-patch:
 	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|g" \
 		${WRKSRC}/a2x ${WRKSRC}/asciidoc.py
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${LOCALBASE}|g" \
+		${WRKSRC}/a2x
 
 .include <bsd.port.mk>
