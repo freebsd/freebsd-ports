@@ -1,0 +1,11 @@
+Apertium is an open-source machine translation platform, initially aimed
+at related-language pairs but recently expanded to deal with more
+divergent language pairs (such as English-Catalan). The platform
+provides:
+
+1. a language-independent machine translation engine
+2. tools to manage the linguistic data necessary to build a machine
+   translation system for a given language pair and
+3. linguistic data for a growing number of language pairs
+
+WWW: http://www.apertium.org/
