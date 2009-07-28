@@ -4,3 +4,7 @@ bin/gambas2-database-manager.gambas
 bin/gambas2.gambas
 bin/gbs2.gambas
 bin/gbs2
+%%DATADIR%%/icons/application-x-gambasscript.png
+%%DATADIR%%/icons/application-x-gambasserverpage.png
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%

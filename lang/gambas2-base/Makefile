@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gambas2
-PORTVERSION=	2.13.0
+PORTVERSION=	2.15.0
 CATEGORIES?=	lang kde
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:S/2//g}
@@ -28,6 +28,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=		--disable-debug \
 			--disable-optimization \
+			--disable-preloading \
 			--with-intl-includes=${LOCALBASE}/include \
 			--with-intl-libraries=${LOCALBASE}/lib \
 			--with-conv-includes=${LOCALBASE}/include \
