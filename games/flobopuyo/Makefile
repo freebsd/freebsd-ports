@@ -10,7 +10,7 @@ PORTVERSION=	0.20
 PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.ios-software.com/flobopuyo/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org

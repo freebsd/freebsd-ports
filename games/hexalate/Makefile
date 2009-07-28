@@ -9,7 +9,7 @@ PORTNAME=	hexalate
 PORTVERSION=	1.0.0
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org

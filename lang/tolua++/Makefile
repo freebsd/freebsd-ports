@@ -10,7 +10,7 @@ PORTVERSION=	1.0.92
 PORTREVISION=	3
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.codenix.com/~tolua/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An extended version of tolua, a tool to integrate C/C++ code with Lua

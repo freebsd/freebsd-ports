@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://goonies.jorito.net/download/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}_r${PORTVERSION:C/\./-/g}
 EXTRACT_SUFX=	.tgz
 

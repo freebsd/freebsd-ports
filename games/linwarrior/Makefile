@@ -9,7 +9,7 @@ PORTNAME=	linwarrior
 PORTVERSION=	20090529
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackcraft.de/games/linwarrior_3d/downloads/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

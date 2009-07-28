@@ -10,7 +10,7 @@ PORTVERSION=	2.8.1
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${PORTVERSION}/source/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

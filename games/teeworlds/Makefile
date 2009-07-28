@@ -9,7 +9,7 @@ PORTNAME=	teeworlds
 PORTVERSION=	0.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.teeworlds.com/files/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 

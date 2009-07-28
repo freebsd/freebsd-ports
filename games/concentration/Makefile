@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/concentration/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Find all matching pairs of icons as fast as possible

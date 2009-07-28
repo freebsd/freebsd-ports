@@ -9,7 +9,7 @@ PORTNAME=	gondola
 PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	http://arcticpaint.com/static/gondola/downloads/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	Gondola-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org

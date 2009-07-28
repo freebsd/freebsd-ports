@@ -8,7 +8,7 @@
 PORTNAME=	stransball2
 PORTVERSION=	1.5
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/ \
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		http://braingames.bugreport.nl/stransball2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:C/\.//}-linux
 

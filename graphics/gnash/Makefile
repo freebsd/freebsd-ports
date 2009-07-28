@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 # getgnash.org is slow
 MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://mirror.amdmi3.ru/ \
+		http://mirror.amdmi3.ru/distfiles/ \
 		http://getgnash.org/packages/releases/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 

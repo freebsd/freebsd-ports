@@ -10,7 +10,7 @@ PORTVERSION=	0.5.1
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://olofson.net/kobodl/download/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	KoboDeluxe-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

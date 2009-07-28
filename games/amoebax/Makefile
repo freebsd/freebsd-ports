@@ -9,7 +9,7 @@ PORTNAME=	amoebax
 PORTVERSION=	0.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.emma-soft.com/games/amoebax/download/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cute and addictive Puyo Puyo like game

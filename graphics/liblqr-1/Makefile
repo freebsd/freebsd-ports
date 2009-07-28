@@ -9,7 +9,7 @@ PORTNAME=	liblqr-1
 DISTVERSION=	0.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An easy to use C/C++ seam carving library

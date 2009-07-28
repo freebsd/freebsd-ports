@@ -9,7 +9,7 @@ PORTNAME=	catdoc
 PORTVERSION=	0.94.2
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://mirror.amdmi3.ru/ \
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|} \
 		ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
 		ftp://ftp.demos.ru/pub/sunfreeware/SOURCES/

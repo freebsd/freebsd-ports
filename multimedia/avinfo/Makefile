@@ -10,7 +10,7 @@ PORTNAME=	avinfo
 PORTVERSION=	1.0.a15
 CATEGORIES=	multimedia
 MASTER_SITES=	http://shounen.ru/soft/avinfo/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}unix
 
 MAINTAINER=	amdmi3@FreeBSD.org

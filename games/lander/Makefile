@@ -9,7 +9,7 @@ PORTNAME=	lander
 PORTVERSION=	0.5.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lunar Lander clone

@@ -10,7 +10,7 @@ PORTVERSION=	0.1.9
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A rewritten engine for Flashback

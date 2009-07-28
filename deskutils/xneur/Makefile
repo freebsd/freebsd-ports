@@ -9,7 +9,7 @@ PORTNAME=	xneur
 PORTVERSION=	0.9.4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Auto keyboard switcher
