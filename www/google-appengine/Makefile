@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 PORTREVISION=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -24,7 +24,7 @@ PROJECTHOST=	googleappengine
 
 NO_BUILD=	yes
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.5-2.6
 USE_ZIP=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
@@ -38,7 +38,7 @@ XARGS_ARGS=	-0
 REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
 
 GAEDATADIR=	google lib new_project_template templates tools
-GAEDOCSREL=	20090422
+GAEDOCSREL=	20090508
 
 post-patch:
 	@${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
