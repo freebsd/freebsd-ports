@@ -1,5 +1,14 @@
 --- ./code/qcommon/vm_x86_64.c.orig	2007-10-09 02:47:22.000000000 -0300
 +++ ./code/qcommon/vm_x86_64.c	2008-03-04 10:45:08.000000000 -0300
+@@ -246,7 +246,7 @@
+ #else
+ #define JMPIARG \
+ 	emit("movq $%lu, %%rax", vm->codeBase+vm->instructionPointers[iarg]); \
+-	emit("jmpq *%rax");
++	emit("jmpq *%%rax");
+ #endif
+  
+ // integer compare and jump
 @@ -534,7 +534,7 @@
  	{
  		compiledOfs = assembler_get_code_size();
