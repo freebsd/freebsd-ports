@@ -587,6 +587,7 @@
     SUBDIR += p5-String-Format
     SUBDIR += p5-String-Fraction
     SUBDIR += p5-String-Koremutake
+    SUBDIR += p5-String-RewritePrefix
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote
     SUBDIR += p5-String-ShowDiff
