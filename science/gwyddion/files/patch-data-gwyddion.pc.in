@@ -1,0 +1,9 @@
+--- data/gwyddion.pc.in.orig	2007-10-18 15:06:29.000000000 +0200
++++ data/gwyddion.pc.in	2009-07-22 16:39:38.000000000 +0200
+@@ -12,5 +12,5 @@
+ Description: Gwyddion library
+ Version: @VERSION@
+ Requires: glib-2.0 >= 2.6.0 gtk+-2.0 >= 2.6.0 pangoft2 @GTKGLEXT_DEPENDENCY@ @FFTW3_DEPENDENCY@
+-Libs: -L${libdir} -lgwyapp2 -lgwymodule2 -lgwydgets2 -lgwydraw2 -lgwyprocess2 -lgwyddion2 @LIBTIFF@
++Libs: -L${libdir} -lgwyapp2 -lgwymodule2 -lgwydgets2 -lgwydraw2 -lgwyprocess2 -lgwyddion2
+ Cflags: -I${includedir}/gwyddion -I${libdir}/gwyddion/include
