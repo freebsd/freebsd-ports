@@ -9,7 +9,7 @@
 -        if os.access('%s/pythonfilter.conf' % x, os.R_OK):
 -            config = open('%s/pythonfilter.conf' % x)
 -            break
-+    configDir = ('/usr/local/etc')
++    configDir = ('%%PREFIX%%/etc')
 +    if os.access('%s/pythonfilter.conf' % configDir, os.R_OK):
 +            config = open('%s/pythonfilter.conf' % configDir)
  except IOError:
