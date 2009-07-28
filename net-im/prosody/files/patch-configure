@@ -1,6 +1,6 @@
---- orig.configure	2009-06-12 14:35:23.000000000 +0000
-+++ configure	2009-06-25 19:03:24.000000000 +0000
-@@ -5,11 +5,11 @@
+--- configure.orig	2009-07-20 14:00:03.000000000 +0000
++++ configure	2009-07-21 20:19:47.000000000 +0000
+@@ -5,17 +5,17 @@
  PREFIX=/usr/local
  SYSCONFDIR="$PREFIX/etc/prosody"
  DATADIR="$PREFIX/var/lib/prosody"
@@ -14,7 +14,15 @@
 +#LUA_LIBDIR="/usr/lib"
  IDN_LIB=idn
  OPENSSL_LIB=crypto
- CC=gcc
+-CC=gcc
++#CC=gcc
+ LD=gcc
+ 
+-CFLAGS="-fPIC -Wall"
++#CFLAGS="-fPIC -Wall"
+ LFLAGS="-shared"
+ 
+ # Help
 @@ -26,7 +26,7 @@
  
  --help                      This help.
@@ -32,7 +40,7 @@
 +	then 
 +	LUA_INCDIR_SET=yes
 +	LUA_LIBDIR_SET=yes
-+	CFLAGS="-D_POSIX_SOURCE -I${LOCALBASE}/include"
++	CFLAGS="-fPIC -D_POSIX_SOURCE -I${LOCALBASE}/include"
 +	LFLAGS="-lm -shared -L${LOCALBASE}/lib"
 +	LUA_SUFFIX_SET=yes
 +	LUA_LIB=lua
@@ -40,3 +48,15 @@
  fi
  
  if [ "$PREFIX_SET" = "yes" -a ! "$SYSCONFDIR_SET" = "yes" ]
+@@ -298,9 +307,9 @@
+ REQUIRE_CONFIG=$REQUIRE_CONFIG
+ IDN_LIB=$IDN_LIB
+ OPENSSL_LIB=$OPENSSL_LIB
+-CFLAGS=$CFLAGS
++CFLAGS+=$CFLAGS
+ LFLAGS=$LFLAGS
+-CC=$CC
++CC?=$CC
+ LD=$LD
+ 
+ EOF

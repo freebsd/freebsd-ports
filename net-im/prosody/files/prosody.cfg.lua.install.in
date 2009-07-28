@@ -56,6 +56,7 @@ Host "*"
 				"version"; -- Replies to server version requests
 			  	"uptime"; -- Report how long server has been running
 			  	"time"; -- Let others know the time here on this server
+				"pep"; -- Enables users to publish their mood, activity, playing music and more
 			  	"ping"; -- Replies to XMPP pings with pongs
 
 			-- Other specific functionality
