@@ -7,6 +7,7 @@
 
 PORTNAME=	ttbudget
 PORTVERSION=	5.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://paradox.lissyara.su/ \
 		http://lissyara.su/patch/skystar3/
@@ -32,10 +33,6 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000
-BROKEN=		does not compile
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
