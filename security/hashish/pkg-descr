@@ -1,8 +1,0 @@
-Hashish is a file and string hashing utility that computes cryptograhpic
-hashes. It is cross platform and includes a gui front end. Supports drag
-and drop file hashing.  Hex and Base64.
-
-Hashing algorithms: MD5, SHA-1, SHA-2 (256/384/512), RIPEMD-160,
- HAVAL (3/4/5), Tiger, CRC32, Panama.
-
-WWW: http://hashish.sourceforge.net/

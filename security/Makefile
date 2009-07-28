@@ -178,7 +178,6 @@
     SUBDIR += hackbot
     SUBDIR += hafiye
     SUBDIR += hamachi
-    SUBDIR += hashish
     SUBDIR += heimdal
     SUBDIR += hlfl
     SUBDIR += hmap
@@ -757,7 +756,6 @@
     SUBDIR += slurpie
     SUBDIR += slush
     SUBDIR += smap
-    SUBDIR += smtpmap
     SUBDIR += smtpscan
     SUBDIR += smurflog
     SUBDIR += sniff

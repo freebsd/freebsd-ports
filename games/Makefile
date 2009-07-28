@@ -38,7 +38,6 @@
     SUBDIR += allacrost
     SUBDIR += amoebax
     SUBDIR += amphetamine
-    SUBDIR += amy
     SUBDIR += an
     SUBDIR += anagramarama
     SUBDIR += angband
