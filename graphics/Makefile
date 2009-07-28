@@ -455,6 +455,7 @@
     SUBDIR += libvisual04-plugins
     SUBDIR += libwmf
     SUBDIR += libwpcg
+    SUBDIR += libwpg
     SUBDIR += libx3dtk
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
