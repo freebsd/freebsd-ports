@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proxyper
-PORTVERSION=	343
-PORTREVISION=	1
+PORTVERSION=	347
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/proxyper/ \
 		http://http.distributed.net/pub/dcti/proxyper/
@@ -32,10 +31,12 @@ SHAREMODE=	644
 
 .include <bsd.port.pre.mk>
 
+WRKSRC=		${WRKDIR}/proxyper${PORTVERSION}-freebsd-x86
+
 .if ${OSVERSION} >= 700055
 DISTNAME=	proxyper${PORTVERSION}-freebsd7-x86
 .else
-DISTNAME=	proxyper${PORTVERSION}-freebsd4-x86
+DISTNAME=	proxyper${PORTVERSION}-freebsd6-x86
 .endif
 
 do-install:
