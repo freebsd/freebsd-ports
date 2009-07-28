@@ -28,6 +28,7 @@ SCRIPTSDIR=	${PREFIX}/libexec/filters
 
 OPTIONS=	DEBUG		"debug module"					on \
 		NODUPLICATES	"noduplicates module"				off \
+		LOCALSENDERS	"localsenders module"				off \
 		CLAMAV_CLAMD	"clamav filter with py-pyclamd \ mutually"	off \
 		CLAMAV_LIB	"clamav filter with py-clamav  / exclusive"	off \
 		SPAMASSASSIN	"spamassassin module"				off \
@@ -41,7 +42,6 @@ OPTIONS=	DEBUG		"debug module"					on \
 		PRIVATEADDR	"privateaddr module"				off \
 		SPFCHECK	"spfcheck module"				off \
 		NOSUCCESSDSN	"nosuccessdsn module"				off \
-		LOCALSENDERS	"localsenders module"				off \
 		COMEAGAIN	"comeagain module"				off \
 		GREYLIST	"greylist module"				off \
 		DIALBACK	"dialback module"				off \
@@ -77,6 +77,9 @@ post-configure:
 .endif
 .if defined(WITH_NODUPLICATES)
 	@${ECHO_MSG} noduplicate >> ${WRKSRC}/pythonfilter.conf.sample
+.endif
+.if defined(WITH_LOCALSENDERS)
+	@${ECHO_MSG} localsenders >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
 .if defined(WITH_CLAMAV_CLAMD) || defined(WITH_CLAMAV_LIB)
 	@${ECHO_MSG} clamav >> ${WRKSRC}/pythonfilter.conf.sample
@@ -114,9 +117,6 @@ post-configure:
 .if defined(WITH_NOSUCCESSDSN)
 	@${ECHO_MSG} nosuccessdsn >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_LOCALSENDERS)
-	@${ECHO_MSG} localsenders >> ${WRKSRC}/pythonfilter.conf.sample
-.endif
 .if defined(WITH_COMEAGAIN)
 	@${ECHO_MSG} comeagain >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
@@ -132,6 +132,12 @@ post-configure:
 .if defined(WITH_ATTACHMENTS)
 	@${ECHO_MSG} attachments >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
+.if defined(WITH_QUOTA)
+	@${ECHO_MSG} quota >> ${WRKSRC}/pythonfilter.conf.sample
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pythonfilter
 
 post-install:
 	${MKDIR} ${LOCALSTATEDIR}/pythonfilter
