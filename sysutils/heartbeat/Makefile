@@ -1,4 +1,4 @@
-# New ports collection makefile for:	hearbeat
+# New ports collection makefile for:	heartbeat
 # Date created:				18 March 2005
 # Whom:					Scott Kleihege <scott-ports@tummy.com>
 #
