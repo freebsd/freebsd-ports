@@ -7,7 +7,7 @@
 -#include <dev/usb/usb.h>
 +#include <libusb20.h>
 +#include <dev/usb/usb_ioctl.h>
-+/*#include <dev/usb/usb_revision.h>*/
++#include <dev/usb/usb_revision.h>
  #endif
  
  class USBDB;
