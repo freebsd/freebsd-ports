@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	smasher
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.0
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		http://distfiles.officialunix.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	chris@officialunix.com

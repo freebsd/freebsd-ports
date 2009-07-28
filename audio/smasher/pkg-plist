@@ -29,6 +29,18 @@ bin/smasher
 %%DATADIR%%/png/gradient-anticlock-spiral_24x24_gauss_gs.png
 %%DATADIR%%/png/warp.png
 %%DATADIR%%/png/warp4.png
+%%DATADIR%%/png/stock_internet_gs.png
+%%DATADIR%%/presets/amen_break_i.smash
+%%DATADIR%%/presets/amen_break_ii.smash
+%%DATADIR%%/presets/amen_break_iii.smash
+%%DATADIR%%/presets/blank.smash
+%%DATADIR%%/presets/electric_guitar.smash
+%%DATADIR%%/presets/guitar.smash
+%%DATADIR%%/presets/piano_i.smash
+%%DATADIR%%/presets/piano_ii.smash
+%%DATADIR%%/presets/synth_i.smash
+%%DATADIR%%/presets/synth_ii.smash
+%%DATADIR%%/presets/tr-808.smash
 %%DATADIR%%/samples/Amen_Break.wav
 %%DATADIR%%/samples/Piano.wav
 %%DATADIR%%/samples/TR-808.wav
@@ -51,4 +63,5 @@ share/pixmaps/smasher.png
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/png
 @dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/presets
 @dirrm %%DATADIR%%
