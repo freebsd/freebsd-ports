@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	rsvndump
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel
-MASTER_SITES=	http://saubue.boolsoft.org/projects/rsvndump/ \
-		LOCAL/glarkin
+MASTER_SITES=	SF
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Remote Subversion repository dumpfile generator
