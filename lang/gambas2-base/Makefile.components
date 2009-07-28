@@ -1,6 +1,5 @@
 PLIST=			${.CURDIR}/pkg-plist
 PATCHDIR=		${.CURDIR}/files
-EXTRA_PATCHES+=		${.CURDIR}/../../lang/gambas2-base/files/patch-main-share_gb_common.h
 
 GAMBAS_COMPONENT?=	${PKGNAMESUFFIX:S/-/./g:S/^.//g}
 GAMBAS_COMPDIRE=	${LOCALBASE}/lib/gambas2
@@ -196,6 +195,9 @@ CONFIGURE_ARGS+=	--with-qtopengl-includes=${LOCALBASE}/include/GL \
 .endif
 
 post-patch:
+.if ${PKGNAMESUFFIX} == "-ide"
+	@${REINPLACE_CMD} -e 's|#$$hOut |#$$hOut, |g' ${WRKSRC}/app/src/gbs2/MServerPage.module
+.endif
 	@cd ${WRKSRC} && \
 		${FIND} * -type f -name configure -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 			-e 's|-pipe -Wall -Wno-unused-value -fsigned-char|$$CFLAGS|g' \

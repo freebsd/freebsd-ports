@@ -39,6 +39,7 @@ lib/gambas2/gb.gui.so.0
 lib/gambas2/gb.gui.so
 lib/gambas2/gb.gui.la
 lib/gambas2/gb.component
+%%DATADIR%%/icons/application-x-gambas.png
 %%DATADIR%%/info/gb.debug.info
 %%DATADIR%%/info/gb.debug.list
 %%DATADIR%%/info/gb.eval.info
@@ -56,5 +57,6 @@ lib/gambas2/gb.component
 %%DATADIR%%/info/gb.info
 %%DATADIR%%/info/gb.list
 @dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/icons
 @dirrmtry %%DATADIR%%/info
 @dirrmtry %%DATADIR%%
