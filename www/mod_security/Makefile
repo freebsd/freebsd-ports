@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_security
 PORTVERSION=	2.5.9
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mod-security
@@ -45,7 +46,7 @@ OPTIONS=	LUA "Embedded Lua language support" off \
 .if !defined(SKIP_RULES)
 SUB_FILES+=	pkg-message.rules
 .if defined(WITH_MLOGC)
-PLIST_FILES+=	${PREFIX}/bin/mlogc
+PLIST_FILES+=	bin/mlogc
 .endif
 PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules
 PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2
@@ -75,7 +76,7 @@ PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_
 .if defined(WITH_LUA)
 USE_LUA=	5.1+
 CONFIGURE_ARGS+=	--with-lua=${LOCALBASE}
-LIB_DEPENDS+=	lua.1:${PORTSDIR}/lang/lua
+LIB_DEPENDS+=	lua-5.1.1:${PORTSDIR}/lang/lua
 .else
 CONFIGURE_ARGS+=	--without-lua
 .endif
