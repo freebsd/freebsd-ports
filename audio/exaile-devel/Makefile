@@ -7,6 +7,7 @@
 
 PORTNAME=	exaile
 DISTVERSION=	0.2.99.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
@@ -71,5 +72,9 @@ PLIST_SUB+=	NLS="@comment "
 .if !defined(WITHOUT_SEXY)
 RUN_DEPENDS+=	py*-sexy>=0.1.9:${PORTSDIR}/x11-toolkits/py-sexy
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|(DESTDIR)/etc/xdg|(PREFIX)/etc/xdg|' \
+	${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
