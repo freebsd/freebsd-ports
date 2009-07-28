@@ -1,0 +1,8 @@
+%%SITE_PERL%%/constant/abs.pm
+%%SITE_PERL%%/constant/def.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/def/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/def
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/constant

@@ -2058,6 +2058,7 @@
     SUBDIR += p5-base
     SUBDIR += p5-boolean
     SUBDIR += p5-capitalization
+    SUBDIR += p5-constant-def
     SUBDIR += p5-constant-lexical
     SUBDIR += p5-doxygenfilter
     SUBDIR += p5-enum
