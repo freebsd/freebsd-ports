@@ -1,0 +1,5 @@
+AuthCAS aims at providing a Perl API to Yale's Central Authentication
+System (CAS). Only a basic Perl library is provided with CAS whereas
+AuthCAS is a full object-oriented library.
+
+WWW:	http://cpan.uwinnipeg.ca/dist/AuthCAS
