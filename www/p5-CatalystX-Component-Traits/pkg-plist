@@ -1,0 +1,7 @@
+%%SITE_PERL%%/CatalystX/Component/Traits.pm
+%%SITE_PERL%%/mach/auto/CatalystX/Component/Traits/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/CatalystX/Component/Traits
+@dirrmtry %%SITE_PERL%%/mach/auto/CatalystX/Component
+@dirrmtry %%SITE_PERL%%/mach/auto/CatalystX
+@dirrmtry %%SITE_PERL%%/CatalystX/Component
+@dirrmtry %%SITE_PERL%%/CatalystX
