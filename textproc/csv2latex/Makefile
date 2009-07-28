@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	csv2latex
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 PORTEPOCH=	1
 CATEGORIES=	textproc converters
 MASTER_SITES=	http://brouits.free.fr/csv2latex/
