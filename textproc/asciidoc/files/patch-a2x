@@ -1,0 +1,61 @@
+--- a2x.orig	2009-07-23 18:51:01.485493322 +0200
++++ a2x	2009-07-23 18:52:01.107211768 +0200
+@@ -9,11 +9,12 @@
+ 
+ VERSION=1.0.0
+ BASENAME=$(basename "$0")
++GETOPT=%%PREFIX%%/bin/getopt
+ REALNAME="$0"
+ if [ ! -e "$REALNAME" ]; then
+     REALNAME=$(which "$REALNAME")
+ fi
+-REALNAME="$(readlink -f "$REALNAME")"
++REALNAME="$(/bin/realpath "$REALNAME")"
+ CONF_DIR=/etc/asciidoc
+ # FOP executable is named fop on some systems.
+ FOP_COMMAND="fop.sh"
+@@ -244,14 +245,14 @@
+     if [ -z "$*" ]; then
+         help; exit 0
+     fi
+-    require "getopt"
+-    getopt -T >/dev/null
++    require "$GETOPT"
++    $GETOPT -T >/dev/null
+     if [ $? -ne 4 ]; then
+         quit "enhanced getopt(1) required"
+     fi
+     short_opts="a:d:D:f:hLnsv"
+     long_opts="attribute:,asciidoc-opts:,destination-dir:,doctype:,help,icons-dir:,dry-run,format:,copy,icons,skip-asciidoc,stylesheet:,unsafe,version,verbose,xsltproc-opts:,dblatex-opts:,fop,fop-opts:,no-xmllint"
+-    args=$(getopt -o $short_opts -l $long_opts -n $BASENAME -- "$@" 2>/dev/null)
++    args=$($GETOPT -o $short_opts -l $long_opts -n $BASENAME -- "$@" 2>/dev/null)
+     if [ $? -ne 0 ]; then
+         quit "invalid command options, run: a2x --help"
+     fi
+@@ -494,7 +495,7 @@
+         quit "file not found: $xsl"
+     fi
+     to_docbook
+-    xml=$(readlink -f "$SRC_DIR/$SRC_NAME.xml")
++    xml=$(/bin/realpath "$SRC_DIR/$SRC_NAME.xml")
+     html="$SRC_NAME.html"
+     copy_stylesheet_and_icons "$DESTINATION_DIR"
+     execute_command_2 "cd \"$DESTINATION_DIR\""
+@@ -527,7 +528,7 @@
+         quit "file not found: $xsl"
+     fi
+     to_docbook
+-    xml=$(readlink -f "$SRC_DIR/$SRC_NAME.xml")
++    xml=$(/bin/realpath "$SRC_DIR/$SRC_NAME.xml")
+     if [ ! -d "$chunkdir" ]; then
+         execute_command_2 "mkdir \"$chunkdir\""
+     fi
+@@ -549,7 +550,7 @@
+         quit "file not found: $xsl"
+     fi
+     to_docbook "-d manpage"
+-    xml=$(readlink -f "$SRC_DIR/$SRC_NAME.xml")
++    xml=$(/bin/realpath "$SRC_DIR/$SRC_NAME.xml")
+     execute_command_2 "cd \"$DESTINATION_DIR\""
+     execute_command_2 "xsltproc $XSLTPROC_OPTS --nonet \
+         \"$xsl\" \"$xml\""
