@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mypaint
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/mypaint/ \
 		http://mirror.amdmi3.ru/distfiles/
