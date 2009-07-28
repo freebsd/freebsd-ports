@@ -64,6 +64,12 @@ MAN1=		cp2foss.1 fo_notify.1 fossjobs.1 fosslic.1
 FOSS_DB?=	${DATADIR}/repository
 LIBDIR=		${PREFIX}/lib	# is /usr/lib by default, and affects build
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+IGNORE=		needs at least FreeBSD 7.x, because it uses librt
+.endif
+
 post-patch:
 # Fix paths (respect PREFIX, etc)
 	@${GREP} -Rl /bin/bash ${WRKSRC} | ${GREP} -v UnMagic.mime | \
@@ -119,4 +125,4 @@ post-install:
 .endfor
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
