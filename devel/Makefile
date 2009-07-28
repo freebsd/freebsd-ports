@@ -2052,6 +2052,7 @@
     SUBDIR += p5-ZML
     SUBDIR += p5-accessors
     SUBDIR += p5-aliased
+    SUBDIR += p5-autobox
     SUBDIR += p5-base
     SUBDIR += p5-boolean
     SUBDIR += p5-capitalization
