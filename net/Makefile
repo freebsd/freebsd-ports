@@ -107,6 +107,7 @@
     SUBDIR += danamics
     SUBDIR += dante
     SUBDIR += datapipe
+    SUBDIR += dbeacon
     SUBDIR += delegate
     SUBDIR += desktop-data-model
     SUBDIR += despoof

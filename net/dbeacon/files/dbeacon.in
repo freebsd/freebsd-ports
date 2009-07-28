@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dbeacon
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable dbeacon.
+#
+# dbeacon_enable="YES"
+# dbeacon_flags=""	Extra flags passed to start command.
+#
+# See dbeacon(1) for flags.
+
+dbeacon_enable=${dbeacon_enable-"NO"}
+dbeacon_flags=${dbeacon_flags-""}
+
+. %%RC_SUBR%%
+
+name="dbeacon"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/${name}"
+
+load_rc_config $name
+
+run_rc_command "$1"
