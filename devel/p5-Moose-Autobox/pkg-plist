@@ -1,0 +1,19 @@
+%%SITE_PERL%%/Moose/Autobox.pm
+%%SITE_PERL%%/Moose/Autobox/Array.pm
+%%SITE_PERL%%/Moose/Autobox/Code.pm
+%%SITE_PERL%%/Moose/Autobox/Defined.pm
+%%SITE_PERL%%/Moose/Autobox/Hash.pm
+%%SITE_PERL%%/Moose/Autobox/Indexed.pm
+%%SITE_PERL%%/Moose/Autobox/Item.pm
+%%SITE_PERL%%/Moose/Autobox/List.pm
+%%SITE_PERL%%/Moose/Autobox/Number.pm
+%%SITE_PERL%%/Moose/Autobox/Ref.pm
+%%SITE_PERL%%/Moose/Autobox/Scalar.pm
+%%SITE_PERL%%/Moose/Autobox/String.pm
+%%SITE_PERL%%/Moose/Autobox/Undef.pm
+%%SITE_PERL%%/Moose/Autobox/Value.pm
+%%SITE_PERL%%/mach/auto/Moose/Autobox/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/Moose/Autobox
+@dirrmtry %%SITE_PERL%%/mach/auto/Moose
+@dirrmtry %%SITE_PERL%%/Moose/Autobox
+@dirrmtry %%SITE_PERL%%/Moose
