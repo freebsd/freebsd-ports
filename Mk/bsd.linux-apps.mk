@@ -70,7 +70,7 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl dri esound expat fon
 _LINUX_APPS_ALL+=
 
 # 2.6.16 components
-_LINUX_26_APPS=		cyrus-sasl2 libidn libssh2 nspr nss openldap \
+_LINUX_26_APPS=		cyrus-sasl2 dbusglib dbuslibs libidn libssh2 nspr nss openldap \
 			sqlite3 tcl84 tk84
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
@@ -145,6 +145,17 @@ curl_DEPENDS=		cyrus-sasl2 openldap
 cyrus-sasl2_f10_FILE=	${LINUXBASE}/usr/lib/libsasl2.so.2.0.22
 cyrus-sasl2_DETECT=	${cyrus-sasl2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 cyrus-sasl2_PORT=	${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-cyrus-sasl2
+
+# no dbusglib_FILE
+# no dbusglib_f8_FILE
+dbusglib_f10_FILE=	${LINUXBASE}/usr/lib/libdbus-glib-1.so.2
+dbusglib_DETECT=	${dbusglib${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+dbusglib_DEPENDS=	dbuslibs expat
+
+# no dbuslibs_FILE
+# no dbuslibs_f8_FILE
+dbuslibs_f10_FILE=	${LINUXBASE}/lib/libdbus-1.so.3
+dbuslibs_DETECT=	${dbuslibs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 
 dri_FILE=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1
 dri_f8_FILE=		${LINUXBASE}/usr/lib/libGL.so.1
