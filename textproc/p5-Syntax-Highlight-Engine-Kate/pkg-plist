@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate.pm
-%%SITE_PERL%%/Syntax/Highlight/Engine/Kate.pod
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/ABC.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/AHDL.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/ANSI_C89.pm
