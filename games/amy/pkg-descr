@@ -1,9 +1,0 @@
-A chess program for playing and analyzing games. Amy comes complete with
-an opening book build from about 12000 master games. Please read the
-README file to find out how build your own book or use endgame tablebases.
-
-The user interface is command line based. For a graphical user interface
-install xboard (xboard) and use the '-fcp Amy' switch to play
-against Amy.
-
-WWW: http://www.tgreiner.net/software.html
