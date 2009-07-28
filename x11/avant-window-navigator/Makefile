@@ -10,7 +10,7 @@ PORTVERSION=	0.3.2.1
 PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://launchpadlibrarian.net/26374006/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dock-like navigation bar

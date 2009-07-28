@@ -9,7 +9,7 @@ PORTNAME=	maxr
 PORTVERSION=	0.2.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.maxr.org/downloads/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Mechanized Assault and Exploration Reloaded

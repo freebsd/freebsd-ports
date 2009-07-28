@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
 # Original braingames site is really slow
-MASTER_SITES=	http://mirror.amdmi3.ru/ \
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		http://www.braingames.getput.com/f1spirit/downloads/
 DISTNAME=	f1spirit-linux
 

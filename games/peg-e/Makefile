@@ -9,7 +9,7 @@ PORTNAME=	peg-e
 PORTVERSION=	1.1.0
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/peg-e/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org

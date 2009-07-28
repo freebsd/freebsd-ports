@@ -9,7 +9,7 @@ PORTNAME=	hedgewars
 PORTVERSION=	0.9.11
 CATEGORIES=	games
 MASTER_SITES=	http://hedgewars.org/download/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

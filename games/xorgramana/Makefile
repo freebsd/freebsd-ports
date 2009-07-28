@@ -9,7 +9,7 @@ PORTNAME=	xorgramana
 PORTVERSION=	0.0.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.jwm-art.net/XorGramana/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	XorGramana-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

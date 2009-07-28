@@ -9,7 +9,7 @@ PORTNAME=	powder
 PORTVERSION=	111
 CATEGORIES=	games
 MASTER_SITES=	http://www.zincland.com/powder/release/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org

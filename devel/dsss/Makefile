@@ -9,7 +9,7 @@ PORTNAME=	dsss
 PORTVERSION=	0.75
 CATEGORIES=	devel
 MASTER_SITES=	http://svn.dsource.org/projects/dsss/downloads/${PORTVERSION}/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	D Shared Software System

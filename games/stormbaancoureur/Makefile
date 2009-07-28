@@ -10,7 +10,7 @@ PORTVERSION=	2.1.5
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://bram.creative4vision.nl/stormbaancoureur/download/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simulated obstacle course for automobiles

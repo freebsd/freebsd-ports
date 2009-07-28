@@ -9,7 +9,7 @@ PORTVERSION=	1.3
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://qt.osdn.org.ua/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Qt-version of the NetWalk game

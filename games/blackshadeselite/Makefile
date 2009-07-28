@@ -10,7 +10,7 @@ PORTVERSION=	0.0.1
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/blackshadeselite/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Psychic Bodyguard FPS - protect the VIP

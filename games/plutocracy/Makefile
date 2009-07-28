@@ -8,7 +8,7 @@
 PORTNAME=	plutocracy
 PORTVERSION=	0.0.20081229
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Multiplayer 3D economy/trade-based RTS

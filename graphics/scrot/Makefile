@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A screen capture utility that utilizes Imlib2
