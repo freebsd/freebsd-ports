@@ -16,9 +16,8 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		http://mirrors.ibiblio.org/pub/mirrors/proftpd/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
 		http://labratsoftware.com/mod_sql_tds/:sql_tds \
-		http://www.alaskaparadise.com/freebsd/:clam \
+		https://secure.thrallingpenguin.com/redmine/attachments/download/1/:clam \
 		http://www.smartftp.com/oss/proftpd/:digest \
-		LOCAL/beech:clam \
 		LOCAL/beech:digest \
 		LOCAL/beech:sql_tds
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -221,9 +220,9 @@ MODULES:=${MODULES}:mod_quotatab_sql
 .endif
 
 .if defined(WITH_CLAMAV)
-#http://www.thrallingpenguin.com/resources/mod_clamav-0.10.tar.bz2
-DISTFILES+=	mod_clamav-0.10.tar.bz2:clam
-EXTRACT_ONLY+=	mod_clamav-0.10.tar.bz2
+#https://secure.thrallingpenguin.com/redmine/attachments/download/1/mod_clamav-0.11rc.tar.gz
+DISTFILES+=	mod_clamav-0.11rc.tar.gz:clam
+#EXTRACT_ONLY+=	mod_clamav-0.11rc.tar.gz
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_mod_xfer.c
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
@@ -275,7 +274,8 @@ MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
 
 post-extract:
 .if defined(WITH_CLAMAV)
-	@${CP} ${WRKDIR}/mod_clamav-0.10/mod_clamav.* ${WRKSRC}/contrib
+	(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mod_clamav-0.11rc.tar.gz ${EXTRACT_AFTER_ARGS})
+	@${CP} ${WRKDIR}/mod_clamav-0.11rc/mod_clamav.* ${WRKSRC}/contrib
 .endif
 .if defined(WITH_DIGEST)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_digest.c ${WRKSRC}/modules/
