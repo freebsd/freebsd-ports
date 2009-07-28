@@ -338,6 +338,7 @@
     SUBDIR += linuxdoc
     SUBDIR += localize
     SUBDIR += lt-aspell
+    SUBDIR += lttoolbox
     SUBDIR += ltxml
     SUBDIR += luaexpat
     SUBDIR += lucene
