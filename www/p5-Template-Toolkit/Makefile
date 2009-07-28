@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	2.21
+PORTVERSION=	2.22
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathT
 		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-OPTIONS=TEXT_AUTOFORMAT "With Text::Autoformat Plugin"		off \
-	IMAGE_INFO	"With Image::Info Plugin"		off \
+OPTIONS=IMAGE_INFO	"With Image::Info Plugin"		off \
 	IMAGE_SIZE	"With Image::Size Plugin"		off \
 	DATE_CALC	"With Date::Calc Plugin"		off \
 	POD_POM		"With Pod::POM Plugin"			off
@@ -32,9 +31,6 @@ MASTER_SITE_BACKUP+=	http://www.template-toolkit.org/download/
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TEXT_AUTOFORMAT)
-BUILD_DEPENDS+=${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat
-.endif
 .if defined(WITH_IMAGE_INFO)
 BUILD_DEPENDS+=${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info
 .endif

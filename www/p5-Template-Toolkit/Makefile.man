@@ -31,7 +31,6 @@ MAN3+=	Template::Namespace::Constants.3
 MAN3+=	Template::Parser.3
 MAN3+=	Template::Plugin.3
 MAN3+=	Template::Plugin::Assert.3
-MAN3+=	Template::Plugin::Autoformat.3
 MAN3+=	Template::Plugin::CGI.3
 MAN3+=	Template::Plugin::Datafile.3
 MAN3+=	Template::Plugin::Date.3

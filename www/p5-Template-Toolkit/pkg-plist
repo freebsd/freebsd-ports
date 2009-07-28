@@ -27,7 +27,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Assert.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Autoformat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/CGI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Datafile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Date.pm
