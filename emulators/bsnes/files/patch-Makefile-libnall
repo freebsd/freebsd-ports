@@ -1,0 +1,26 @@
+--- lib/nall/Makefile.orig	2009-06-05 08:23:39.000000000 +0000
++++ lib/nall/Makefile	2009-07-03 10:19:25.113813347 +0000
+@@ -22,6 +22,9 @@
+   else ifneq ($(findstring Darwin,$(uname)),)
+     platform := osx
+     delete = rm -f $1
++  else ifneq ($(findstring FreeBSD,$(uname)),)
++    platform := bsd
++    delete = rm -f $1
+   else
+     platform := x
+     delete = rm -f $1
+@@ -29,11 +32,11 @@
+ endif
+ 
+ ifeq ($(compiler),)
+-  compiler := gcc
++  compiler := ${CC}
+ endif
+ 
+ ifeq ($(prefix),)
+-  prefix := /usr/local
++  prefix := ${PREFIX}
+ endif
+ 
+ #####
