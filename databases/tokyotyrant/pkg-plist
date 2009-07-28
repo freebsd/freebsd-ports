@@ -4,6 +4,7 @@
 %%DATADIR%%/THANKS
 %%DATADIR%%/doc/index.html
 %%DATADIR%%/ext/mapreduce.lua
+%%DATADIR%%/ext/queue.lua
 %%DATADIR%%/ext/senatus.lua
 %%DATADIR%%/ext/usherette.lua
 bin/tcrmgr
@@ -18,7 +19,7 @@ include/ttutil.h
 lib/libtokyotyrant.a
 lib/libtokyotyrant.so
 lib/libtokyotyrant.so.3
-lib/libtokyotyrant.so.3.11.0
+lib/libtokyotyrant.so.3.16.0
 lib/ttskeldir.so
 lib/ttskelmock.so
 lib/ttskelnull.so

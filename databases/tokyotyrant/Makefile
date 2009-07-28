@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tokyotyrant
-PORTVERSION=	1.1.28
-PORTREVISION=	2
+PORTVERSION=	1.1.33
 CATEGORIES=	databases
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	tokyocabinet
@@ -28,6 +27,9 @@ MAN3=		tcrdb.3 tculog.3 ttutil.3
 MAN8=		ttservctl.8
 
 OPTIONS=	LUA	"Enable LUA support" off
+
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
