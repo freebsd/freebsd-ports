@@ -90,6 +90,7 @@ SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 USE_GETTEXT=	yes
 PLIST_SUB+=	WITH_NLS=""
 .else
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	WITH_NLS="@comment "
 .endif
 
