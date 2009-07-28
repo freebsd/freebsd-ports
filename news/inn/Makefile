@@ -6,13 +6,13 @@
 #
 
 PORTNAME?=	inn
-PORTVERSION?=	2.4.5
+PORTVERSION?=	2.4.6
 PORTREVISION?=	0
 CATEGORIES=	news ipv6
 MASTER_SITES?=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR?=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Fluffy@fluffy.khv.ru
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 USE_RC_SUBR=	innd.sh
@@ -56,10 +56,10 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 			--with-ssl=${OPENSSLBASE}		\
 			--enable-ipv6
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_BERKELEYDB)
-USE_BDB=		3+
+USE_BDB=		44+
 CONFIGURE_ENV+=		DB_VER=db${BDB_VER}
 CONFIGURE_ENV+=		DB_LIB=${BDB_LIB_NAME}
 CONFIGURE_ARGS+=	--with-berkeleydb=${LOCALBASE}
@@ -250,4 +250,4 @@ post-install:
 	fi)
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL PORTMODE
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
