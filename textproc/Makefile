@@ -17,6 +17,7 @@
     SUBDIR += ant-xinclude-task
     SUBDIR += antiword
     SUBDIR += apache-solr
+    SUBDIR += apertium
     SUBDIR += archmage
     SUBDIR += ascii2pdf
     SUBDIR += asciidoc
