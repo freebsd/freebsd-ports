@@ -20042,6 +20042,7 @@ recvnet                         ports/net/recvnet
 red5                            ports/www/red5
 redet                           ports/textproc/redet
 redir                           ports/net/redir
+redis                           ports/databases/redis
 redland                         ports/textproc/redland
 redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
