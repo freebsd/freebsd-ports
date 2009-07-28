@@ -1,0 +1,4 @@
+MooseX::Traits::Pluggable - an extension to MooseX::Traits.  Adds support for
+class precedence search for traits and some extra attributes.
+
+WWW: http://search.cpan.org/dist/MooseX-Traits-Pluggable/
