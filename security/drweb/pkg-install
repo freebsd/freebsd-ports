@@ -46,7 +46,7 @@ echo "*.*             ${DRWEB_VARPREFIX}/drwebd.log"
 
 echo ""
 echo "You may also add this crontab entry to /etc/crontab"
-echo "0 12 * * * root ${DRWEB_PREFIX}/update/update.pl"
+echo "0 4 * * * root ${DRWEB_PREFIX}/update/update.pl"
 echo ""
 
 [ "$ex" = "1" ] && exit 1

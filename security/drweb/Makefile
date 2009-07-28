@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=	4.44.1
-PORTREVISION=	1
+PORTVERSION=	4.44.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/70/ \
 		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/ \
