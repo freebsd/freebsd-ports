@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prosody
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/
 
@@ -19,8 +19,8 @@ RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket \
 	${LUA_MODLIBDIR}/lxp.so:${PORTSDIR}/textproc/luaexpat
 
 USE_RC_SUBR=	prosody
-
-ONLY_FOR_ARCHS=	i386
+MAN1=		prosodyctl.1
+MANCOMPRESSED=	no
 
 USE_LUA=	5.1
 WANT_LUA_VER=	5.1

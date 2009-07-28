@@ -1,0 +1,11 @@
+--- Makefile.orig	2009-07-27 18:22:51.000000000 +0000
++++ Makefile	2009-07-27 18:23:25.000000000 +0000
+@@ -6,7 +6,7 @@
+ MODULES = $(DESTDIR)$(PREFIX)/lib/prosody/modules
+ SOURCE = $(DESTDIR)$(PREFIX)/lib/prosody
+ DATA = $(DESTDIR)$(DATADIR)
+-MAN = $(DESTDIR)$(PREFIX)/share/man
++MAN = $(DESTDIR)$(PREFIX)/man
+ 
+ INSTALLEDSOURCE = $(PREFIX)/lib/prosody
+ INSTALLEDCONFIG = $(SYSCONFDIR)

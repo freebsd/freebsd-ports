@@ -4,7 +4,7 @@
 #
 
 PW=/usr/sbin/pw
-UID=1789
+UID=242
 GID=$UID
 USER="prosody"
 GROUP="prosody"
