@@ -1,40 +1,60 @@
 bin/pcmanfm
+%%NLS%%share/locale/af/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/da/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/et/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/he/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/id/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pcmanfm.mo
-%%NLS%%share/locale/no/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pcmanfm.mo
-%%NLS%%share/locale/pt_PT/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
-%%NLS%%share/locale/sv_SE/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ps/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/pcmanfm.mo
 share/pixmaps/pcmanfm.png
 share/applications/pcmanfm.desktop
-%%DATADIR%%/icons/file.png
-%%DATADIR%%/icons/folder.png
-%%DATADIR%%/mount.rules
-%%DATADIR%%/ui/prefdlg.glade
-%%DATADIR%%/ui/appchooserdlg.glade
-%%DATADIR%%/ui/file_properties.glade
-%%DATADIR%%/ui/about-dlg.glade
+share/applications/pcmanfm-find.desktop
+share/applications/pcmanfm-folder-handler.desktop
 share/mime/packages/libmimetype.xml
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
+%%DATADIR%%/mount.rules
+%%DATADIR%%/ui/prefdlg.ui
+%%DATADIR%%/ui/appchooserdlg.ui
+%%DATADIR%%/ui/file_properties.ui
+%%DATADIR%%/ui/about-dlg.ui
+%%DATADIR%%/ui/find-files.ui
+%%DATADIR%%/ui/godlg.ui
 @dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv_SE
+@dirrmtry share/pixmaps
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK

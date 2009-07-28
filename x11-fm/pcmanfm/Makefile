@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pcmanfm
-PORTVERSION=	0.3.6.2
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
@@ -17,6 +16,7 @@ COMMENT=	PCMan File Manager
 
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 
+USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
