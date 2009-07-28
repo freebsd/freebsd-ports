@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Azalea is a GNUstep window mamager
+COMMENT=	Azalea is a GNUstep window manager
 
 PORTSCOUT=	limit:^0\.2
 
