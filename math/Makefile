@@ -374,6 +374,7 @@
     SUBDIR += p5-Set-IntSpan-Fast-XS
     SUBDIR += p5-Set-Partition
     SUBDIR += p5-Set-Window
+    SUBDIR += p5-Statistics-Basic
     SUBDIR += p5-Statistics-Benford
     SUBDIR += p5-Statistics-ChiSquare
     SUBDIR += p5-Statistics-Contingency
