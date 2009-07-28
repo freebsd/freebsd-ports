@@ -1,5 +1,5 @@
 bin/gnarwl
-etc/gnarwl.cfg
+etc/gnarwl.cfg.sample
 sbin/damnit
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/FAQ.gz
@@ -11,10 +11,12 @@ sbin/damnit
 %%DOCSDIR%%/README
 %%DOCSDIR%%/example.ldif
 var/lib/gnarwl/.forward
-var/lib/gnarwl/badheaders.db
-var/lib/gnarwl/blacklist.db
-var/lib/gnarwl/header.txt
-var/lib/gnarwl/footer.txt
+var/lib/gnarwl/badheaders.db.sample
+var/lib/gnarwl/blacklist.db.sample
+var/lib/gnarwl/badheaders.txt.sample
+var/lib/gnarwl/blacklist.txt.sample
+var/lib/gnarwl/header.txt.sample
+var/lib/gnarwl/footer.txt.sample
 @dirrm %%DOCSDIR%%
 @dirrm var/lib/gnarwl/bin
 @dirrm var/lib/gnarwl/block

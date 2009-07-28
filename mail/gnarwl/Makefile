@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	gnarwl
-PORTVERSION=	3.3
-PORTREVISION=	1
+PORTVERSION=	3.6
 CATEGORIES=	mail
-MASTER_SITES=	http://www.home.unix-ag.org/patrick/software/gnarwl/ \
-		ftp://ftp.oav.net/pkg_freebsd/distfiles/
+MASTER_SITES=	http://www.onyxbits.de/sites/default/files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
