@@ -13,7 +13,7 @@ MASTER_SITES=	SF/crow-designer
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern GUI builder for the GTK+ toolkit
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		guiloader-c++.1:${PORTSDIR}/devel/guiloader-c++ \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24

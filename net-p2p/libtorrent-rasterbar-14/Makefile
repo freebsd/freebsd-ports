@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-rasterbar-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library implementing a BitTorrent client (devel version)
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
 
 CONFLICTS=	rblibtorrent-[0-9]*
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg.6:${PORTSDIR}/audio/libogg \
 		pcrecpp.0:${PORTSDIR}/devel/pcre \
-		boost_regex:${PORTSDIR}/devel/boost
+		boost_regex:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

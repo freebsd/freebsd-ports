@@ -21,7 +21,7 @@ LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		rsvg-2:${PORTSDIR}/graphics/librsvg2 \
-		boost_date_time.4:${PORTSDIR}/devel/boost \
+		boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sexymm.2:${PORTSDIR}/x11-toolkits/libsexymm \
 		ofa.0:${PORTSDIR}/audio/libofa \

@@ -16,7 +16,7 @@ COMMENT=	A popular ICQ-compatible plugin-based program
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 .endif
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
 
 USE_ICONV=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}

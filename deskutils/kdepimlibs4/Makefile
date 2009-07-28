@@ -17,7 +17,7 @@ COMMENT=	Libraries for KDE-PIM applications
 
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		boost_python:${PORTSDIR}/devel/boost-python \
+		boost_python:${PORTSDIR}/devel/boost-python-libs \
 		ical.43:${PORTSDIR}/devel/libical
 
 USE_KDE4=	kdelibs akonadi kdeprefix kdehier automoc4

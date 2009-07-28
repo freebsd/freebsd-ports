@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	rb
 MAINTAINER=	johan@stromnet.se
 COMMENT=	A C++ library implementing a BitTorrent client
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

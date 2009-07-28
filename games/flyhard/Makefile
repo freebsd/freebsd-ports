@@ -15,7 +15,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Game resembling Thrust, but with lots of shooting and puzzles
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

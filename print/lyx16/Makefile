@@ -21,7 +21,7 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 
 OPTIONS=	QT	"Use Qt (instead of XForms)"	${QT_PRESENT}	\
 		ASPELL	"Utilize ASPELL library"	on	\

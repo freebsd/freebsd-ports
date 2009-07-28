@@ -15,7 +15,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Free editor for manipulating PDF documents (QT3 GUI and CLI)
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 USE_BZIP2=	yes

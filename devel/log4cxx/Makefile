@@ -25,7 +25,7 @@ WITH_BOOST=	yes
 .endif
 
 .if defined(WITH_BOOST)
-BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost-libs
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
 

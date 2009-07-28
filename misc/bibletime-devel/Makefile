@@ -18,7 +18,7 @@ COMMENT=	An opensource Bible study tool
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.0.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python \
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		clucene.0:${PORTSDIR}/textproc/clucene
 
 USE_OPENSSL=	yes

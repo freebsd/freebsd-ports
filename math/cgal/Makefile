@@ -19,8 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc_html${EXTRACT_SUFX}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A computational geometry library
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost
-RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \
 		gmp.8:${PORTSDIR}/math/libgmp4 \
 		mpfr.3:${PORTSDIR}/math/mpfr

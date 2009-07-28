@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	C++ Bittorrent client using wxWidgets, libtorrent and boost
 
-LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		torrent.1:${PORTSDIR}/net-p2p/rblibtorrent
 
 USE_WX=		2.6

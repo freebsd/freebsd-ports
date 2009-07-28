@@ -23,7 +23,7 @@ MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	The FlightGear flight simulator
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		boost_thread.4:${PORTSDIR}/devel/boost
+		boost_thread.4:${PORTSDIR}/devel/boost-libs
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \

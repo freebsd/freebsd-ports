@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python bindings for Scott Wheeler's TagLib
 
-LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python \
+LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs \
 		tag.6:${PORTSDIR}/audio/taglib
 
 HAS_CONFIGURE=	yes

@@ -14,10 +14,10 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}-freebsd
 MAINTAINER=	tech@wooztalk.com
 COMMENT=	Meet your World Wide Web neighbors
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
-    		boost_serialization.4:${PORTSDIR}/devel/boost \
-    		boost_regex.4:${PORTSDIR}/devel/boost \
-    		boost_filesystem.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+    		boost_serialization.4:${PORTSDIR}/devel/boost-libs \
+    		boost_regex.4:${PORTSDIR}/devel/boost-libs \
+    		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		curl.5:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes

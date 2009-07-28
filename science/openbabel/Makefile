@@ -31,7 +31,7 @@ BROKEN=		does not compile on ia64 (gcc internal error)
 .endif
 
 .if (${OSVERSION} < 700042)
-LIB_DEPENDS+=	boost_thread.4:${PORTSDIR}/devel/boost-python
+LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
 .endif
 
 post-extract:

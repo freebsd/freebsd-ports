@@ -13,7 +13,7 @@ MASTER_SITES=	http://mirror.facebook.com/facebook/flvtool++/
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Tool for hinting and manipulating the metadata of FLV files
 
-LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs
 
 CFLAGS+=	-I${LOCALBASE}/include/boost
 NO_WRKSUBDIR=	yes

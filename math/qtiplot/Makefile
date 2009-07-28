@@ -16,7 +16,7 @@ COMMENT=	An Origin clone for data analysis and scientific plotting
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-		boost_date_time:${PORTSDIR}/devel/boost
+		boost_date_time:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

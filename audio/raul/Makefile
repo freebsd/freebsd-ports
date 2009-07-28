@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.drobilla.net/
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	C++ utility library primarily aimed at audio/musical applications
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		jack.0:${PORTSDIR}/audio/jack \
 		lash.2:${PORTSDIR}/audio/lash \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm

@@ -16,7 +16,7 @@ COMMENT=	An interactive generator of planets and terrain
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	boost_program_options.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_program_options.4:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Access applications, files, and bookmarks with just a few keystrokes
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/core.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/core.hpp:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_DOS2UNIX=	readme.lyx readme.txt

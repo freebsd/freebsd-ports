@@ -16,7 +16,7 @@ DISTNAME=	gSculpt-${PORTVERSION}-alpha-src
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	An Opensource 3D modelling application
 
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 

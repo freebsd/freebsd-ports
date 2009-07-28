@@ -16,7 +16,7 @@ COMMENT=	Collection of entertaining, educational programs for KDE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile \
 		gmm++>=3.0.4:${PORTSDIR}/math/gmm++
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python \
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		nova:${PORTSDIR}/astro/libnova \
 		openbabel.3:${PORTSDIR}/science/openbabel \
 		cfitsio.0:${PORTSDIR}/astro/cfitsio \

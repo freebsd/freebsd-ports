@@ -13,7 +13,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ncurses-based console plugin for Licq
 
 LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk \
-		boost_regex.4:${PORTSDIR}/devel/boost
+		boost_regex.4:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \

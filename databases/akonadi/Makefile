@@ -13,7 +13,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for kdepim
 
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 RUN_DEPENDS=	${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin

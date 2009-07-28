@@ -17,7 +17,9 @@ COMMENT=	A Warlords II clone
 LIB_DEPENDS=	glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		gnet-2.0:${PORTSDIR}/net/gnet2 \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
-BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
+
+BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
+		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-light
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D platform jump and run game
 
-LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		claw_application.1:${PORTSDIR}/devel/libclaw
 
 USE_BZIP2=	yes

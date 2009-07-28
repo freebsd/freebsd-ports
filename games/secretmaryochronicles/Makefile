@@ -17,7 +17,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Secret Maryo Chronicles two-dimensional platform game
 
 LIB_DEPENDS=	CEGUIBase.3:${PORTSDIR}/graphics/cegui \
-		boost_filesystem.4:${PORTSDIR}/devel/boost \
+		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes

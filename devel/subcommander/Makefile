@@ -16,7 +16,7 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Qt based multiplatform subversion client, diff & merge tool
 
 LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28 \
-		boost_thread.4:${PORTSDIR}/devel/boost \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		svn_client-1.0:${PORTSDIR}/devel/subversion
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

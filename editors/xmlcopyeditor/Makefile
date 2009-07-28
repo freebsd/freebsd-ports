@@ -29,7 +29,7 @@ USE_DOS2UNIX=	src/templates/DTD.dtd \
 		src/rng/docbookxi.rnc \
 		src/po/en_us/messages.po
 
-BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS+=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		aspell.16:${PORTSDIR}/textproc/aspell \

@@ -14,7 +14,7 @@ DISTNAME=	AlephOne-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	The open source version of Bungie's Marathon game
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 
 USE_BZIP2=	yes

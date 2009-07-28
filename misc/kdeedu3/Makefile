@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Collection of entertaining, educational programs for KDE
 
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
 
 CONFLICTS+=	kwordquiz-[0-9]* kgeography-[0-9]*
 

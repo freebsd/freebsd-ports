@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	AI script based strategy game
 
-LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes

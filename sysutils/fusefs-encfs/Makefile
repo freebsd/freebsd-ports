@@ -17,7 +17,7 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	An encrypted pass-through FUSE filesystem
 
 LIB_DEPENDS=	rlog:${PORTSDIR}/devel/rlog \
-		boost_serialization:${PORTSDIR}/devel/boost
+		boost_serialization:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 

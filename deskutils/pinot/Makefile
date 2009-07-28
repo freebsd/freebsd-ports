@@ -22,7 +22,7 @@ LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core	\
 		textcat.0:${PORTSDIR}/textproc/libtextcat	\
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26	\
-		boost_thread.4:${PORTSDIR}/devel/boost		\
+		boost_thread.4:${PORTSDIR}/devel/boost-libs		\
 		exif.12:${PORTSDIR}/graphics/libexif		\
 		gmime-2.4:${PORTSDIR}/mail/gmime24		\
 		tag.6:${PORTSDIR}/audio/taglib			\

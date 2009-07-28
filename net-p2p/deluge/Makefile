@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
 
 BUILD_DEPENDS=	easy_install-${PYTHON_VER}:${PORTSDIR}/devel/py-setuptools
-LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python
+LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS=	easy_install-${PYTHON_VER}:${PORTSDIR}/devel/py-setuptools \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \

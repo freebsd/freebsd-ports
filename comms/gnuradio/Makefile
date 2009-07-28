@@ -23,7 +23,7 @@ BUILD_DEPENDS=	sdcc:${PORTSDIR}/lang/sdcc \
 		guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
-		boost_python:${PORTSDIR}/devel/boost-python
+		boost_python:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem
 

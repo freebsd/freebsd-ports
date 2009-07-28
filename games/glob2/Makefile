@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Globulation 2 - a free and innovative strategy game
 
-BUILD_DEPENDS=		${LOCALBASE}/include/boost/rational.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=		${LOCALBASE}/include/boost/rational.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=		vorbis.4:${PORTSDIR}/audio/libvorbis	\
 			speex.1:${PORTSDIR}/audio/speex		\
 			fribidi.0:${PORTSDIR}/converters/fribidi\

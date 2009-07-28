@@ -17,7 +17,7 @@ COMMENT=	Open-source 2D game engine
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		physfs.1:${PORTSDIR}/devel/physfs \
 		freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

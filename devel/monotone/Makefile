@@ -13,7 +13,7 @@ MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost \
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/lib/libbotan-1.6.5.so:${PORTSDIR}/security/botan
 RUN_DEPENDS=	${LOCALBASE}/lib/libbotan-1.6.5.so:${PORTSDIR}/security/botan
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \

@@ -17,9 +17,9 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Metalink generation tool
 
 LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
-		boost_filesystem.4:${PORTSDIR}/devel/boost \
-		boost_program_options.4:${PORTSDIR}/devel/boost \
-		boost_regex.4:${PORTSDIR}/devel/boost
+		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
+		boost_program_options.4:${PORTSDIR}/devel/boost-libs \
+		boost_regex.4:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	AWK="${AWK}" \
