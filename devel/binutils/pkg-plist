@@ -92,4 +92,4 @@ lib/libopcodes.la
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ld.mo
-%%PRE7%%@dirrmtry elf
+%%PRE7%%@dirrmtry lib/elf
