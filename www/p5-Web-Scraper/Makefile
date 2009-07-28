@@ -7,7 +7,7 @@
 
 PORTNAME=	Web-Scraper
 PORTVERSION=	0.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tagset>0:${PORTSDIR}/www/p5-HTML-Tagset \
 		p5-HTML-TreeBuilder-LibXML>=0.04:${PORTSDIR}/www/p5-HTML-TreeBuilder-LibXML \
 		p5-HTML-TreeBuilder-XPath>=0.08:${PORTSDIR}/www/p5-HTML-TreeBuilder-XPath \
-		p5-HTML-TreeBuilder>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-XML-XPathEngine>=0.08:${PORTSDIR}/textproc/p5-XML-XPathEngine \
