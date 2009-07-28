@@ -2056,6 +2056,7 @@
     SUBDIR += p5-forks
     SUBDIR += p5-github_creator
     SUBDIR += p5-iCal-Parser
+    SUBDIR += p5-lib-abs
     SUBDIR += p5-libalarm
     SUBDIR += p5-local-lib
     SUBDIR += p5-mixin
