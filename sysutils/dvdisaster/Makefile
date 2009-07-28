@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdisaster
-PORTVERSION=	0.70.6
-PORTREVISION=	1
+PORTVERSION=	0.72
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -22,13 +21,17 @@ MAKEFILE=	GNUmakefile
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--png-includes=${LOCALBASE}/include \
+		--png-libraries=${LOCALBASE}/lib
 USE_GMAKE=	yes
 
 PORTSCOUT=	limitw:1,even
 
-MAN1=	dvdisaster.1
+MAN1=		dvdisaster.1
 MANLANG=	"" cs de it
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC} && \
