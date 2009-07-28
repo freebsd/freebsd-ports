@@ -44,12 +44,12 @@ OPTIONS=	XMMS "Enable XMMS Kopete nowlistening plugin" off
 
 .include <bsd.port.pre.mk>
 
-.if exists(/usr/sbin/pppd)
-CMAKE_ARGS+=	-DBUILD_kppp:BOOL=ON
-PLIST_SUB+=	KPPP=""
-.else
+.if ${OSVERSION} >= 800074
 CMAKE_ARGS+=	-DBUILD_kppp:BOOL=OFF
 PLIST_SUB+=	KPPP="@comment "
+.else
+CMAKE_ARGS+=	-DBUILD_kppp:BOOL=ON
+PLIST_SUB+=	KPPP=""
 .endif
 
 .if defined(WITH_XMMS)
