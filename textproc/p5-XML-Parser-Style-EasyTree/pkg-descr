@@ -1,0 +1,4 @@
+This module provides an XML::Parser style for generating a simple tree
+out of XML.
+
+WWW: http://search.cpan.org/dist/XML-Parser-Style-EasyTree/

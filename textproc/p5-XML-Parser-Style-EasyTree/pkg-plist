@@ -1,0 +1,9 @@
+%%SITE_PERL%%/XML/Parser/Style/EasyTree.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Style/EasyTree/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Style/EasyTree
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Style
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser
+@dirrmtry %%SITE_PERL%%/XML/Parser/Style
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Parser
+@dirrmtry %%SITE_PERL%%/XML
