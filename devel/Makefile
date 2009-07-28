@@ -761,6 +761,7 @@
     SUBDIR += lincvs
     SUBDIR += linux-allegro
     SUBDIR += linux-f10-allegro
+    SUBDIR += linux-f10-dbus-glib
     SUBDIR += linux-f10-dbus-libs
     SUBDIR += linux-f10-libglade
     SUBDIR += linux-f10-libglade2
