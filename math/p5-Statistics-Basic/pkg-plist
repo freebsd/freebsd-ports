@@ -1,0 +1,31 @@
+%%SITE_PERL%%/Statistics/Basic.pm
+%%SITE_PERL%%/Statistics/Basic.pod
+%%SITE_PERL%%/Statistics/Basic/ComputedVector.pm
+%%SITE_PERL%%/Statistics/Basic/ComputedVector.pod
+%%SITE_PERL%%/Statistics/Basic/Correlation.pm
+%%SITE_PERL%%/Statistics/Basic/Correlation.pod
+%%SITE_PERL%%/Statistics/Basic/Covariance.pm
+%%SITE_PERL%%/Statistics/Basic/Covariance.pod
+%%SITE_PERL%%/Statistics/Basic/LeastSquareFit.pm
+%%SITE_PERL%%/Statistics/Basic/LeastSquareFit.pod
+%%SITE_PERL%%/Statistics/Basic/Mean.pm
+%%SITE_PERL%%/Statistics/Basic/Mean.pod
+%%SITE_PERL%%/Statistics/Basic/Median.pm
+%%SITE_PERL%%/Statistics/Basic/Median.pod
+%%SITE_PERL%%/Statistics/Basic/Mode.pm
+%%SITE_PERL%%/Statistics/Basic/Mode.pod
+%%SITE_PERL%%/Statistics/Basic/StdDev.pm
+%%SITE_PERL%%/Statistics/Basic/StdDev.pod
+%%SITE_PERL%%/Statistics/Basic/Variance.pm
+%%SITE_PERL%%/Statistics/Basic/Variance.pod
+%%SITE_PERL%%/Statistics/Basic/Vector.pm
+%%SITE_PERL%%/Statistics/Basic/Vector.pod
+%%SITE_PERL%%/Statistics/Basic/_OneVectorBase.pm
+%%SITE_PERL%%/Statistics/Basic/_OneVectorBase.pod
+%%SITE_PERL%%/Statistics/Basic/_TwoVectorBase.pm
+%%SITE_PERL%%/Statistics/Basic/_TwoVectorBase.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Basic/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Basic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
+@dirrmtry %%SITE_PERL%%/Statistics/Basic
+@dirrmtry %%SITE_PERL%%/Statistics
