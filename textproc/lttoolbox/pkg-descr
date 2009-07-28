@@ -1,0 +1,10 @@
+lttoolbox is a toolbox for lexical processing, morphological analysis
+and generation of words. The analysis is the process of splitting of
+words splitting a word (e.g. cats) into its lemma 'cat' and the
+grammatical information <n><pl>.  The generation is the opposite
+process.
+The package is split into three programs, lt-comp, the compiler,
+lt-proc, the processor, and lt-expand, which generates all possible
+mappings between surface forms and lexical forms in the dictionary.
+
+WWW: http://wiki.apertium.org/wiki/Lttoolbox

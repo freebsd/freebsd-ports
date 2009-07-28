@@ -1,0 +1,39 @@
+bin/lt-comp
+bin/lt-expand
+bin/lt-proc
+bin/lt-tmxcomp
+bin/lt-tmxproc
+include/lttoolbox-3.1/lttoolbox/alphabet.h
+include/lttoolbox-3.1/lttoolbox/buffer.h
+include/lttoolbox-3.1/lttoolbox/compiler.h
+include/lttoolbox-3.1/lttoolbox/compression.h
+include/lttoolbox-3.1/lttoolbox/entry_token.h
+include/lttoolbox-3.1/lttoolbox/exception.h
+include/lttoolbox-3.1/lttoolbox/expander.h
+include/lttoolbox-3.1/lttoolbox/fst_processor.h
+include/lttoolbox-3.1/lttoolbox/lt_locale.h
+include/lttoolbox-3.1/lttoolbox/ltstr.h
+include/lttoolbox-3.1/lttoolbox/match_exe.h
+include/lttoolbox-3.1/lttoolbox/match_node.h
+include/lttoolbox-3.1/lttoolbox/match_state.h
+include/lttoolbox-3.1/lttoolbox/my_stdio.h
+include/lttoolbox-3.1/lttoolbox/node.h
+include/lttoolbox-3.1/lttoolbox/pattern_list.h
+include/lttoolbox-3.1/lttoolbox/pool.h
+include/lttoolbox-3.1/lttoolbox/regexp_compiler.h
+include/lttoolbox-3.1/lttoolbox/sorted_vector.h
+include/lttoolbox-3.1/lttoolbox/state.h
+include/lttoolbox-3.1/lttoolbox/tmx_compiler.h
+include/lttoolbox-3.1/lttoolbox/trans_exe.h
+include/lttoolbox-3.1/lttoolbox/transducer.h
+include/lttoolbox-3.1/lttoolbox/xml_parse_util.h
+lib/liblttoolbox3-3.1.so
+lib/liblttoolbox3-3.1.so.0
+lib/liblttoolbox3.a
+lib/liblttoolbox3.la
+lib/liblttoolbox3.so
+libdata/pkgconfig/lttoolbox-3.1.pc
+%%DATADIR%%/dix.dtd
+@dirrm %%DATADIR%%
+@dirrm include/lttoolbox-3.1/lttoolbox
+@dirrm include/lttoolbox-3.1
