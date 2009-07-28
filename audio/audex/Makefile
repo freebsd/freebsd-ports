@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	audex
-DISTVERSION=	0.71b3
+DISTVERSION=	0.71b5
 CATEGORIES=	audio kde
-MASTER_SITES=	http://opensource.maniatek.de/${PORTNAME}/files/
+MASTER_SITES=	${MASTER_SITE_GENTOO} \
+		http://opensource.maniatek.de/${PORTNAME}/files/
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Audio CD ripping utility for KDE4
@@ -23,6 +25,7 @@ USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network qt3support sql svg xml \
 		qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
