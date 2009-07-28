@@ -1,0 +1,38 @@
+diff -u --new-file --recursive ../gnarwl-3.6.orig/configure.ac ./configure.ac
+--- ../gnarwl-3.6.orig/configure.ac	Mon Dec  9 17:49:38 2002
++++ ./configure.ac	Mon Mar 29 14:08:48 2004
+@@ -6,6 +6,17 @@
+ # Checks for programs.
+ AC_PROG_CC
+ 
++# Add some includes things
++
++if test -d /usr/local/include; then
++  CPPFLAGS="$CPPFLAGS -I/usr/local/include"
++fi
++
++if test -d /usr/local/lib; then
++  LDFLAGS="$LDFLAGS -L/usr/local/lib"
++fi
++
++
+ AC_ARG_WITH(homedir,AC_HELP_STRING([--with-homedir=DIR],[Homedir for the gnarwl user]),[homedir="$withval"],[homedir="\${prefix}/var/lib/gnarwl"])
+ AC_ARG_WITH(docdir,AC_HELP_STRING([--with-docdir=DIR],[Where to install the docs]),docdir="$withval",docdir="\${prefix}/share/doc/packages/gnarwl")
+ AC_ARG_WITH(useradd_prog,AC_HELP_STRING([--with-useradd_prog=DIR],[Programm for adding users]),useradd_prog="$withval",useradd_prog="/usr/sbin/useradd")
+@@ -28,7 +39,15 @@
+ AC_CHECK_LIB([ldap],[ldap_init])
+ AC_CHECK_FUNCS([ldap_set_option])
+ 
++AC_CHECK_LIB([iconv],[iconv])
+ AC_CHECK_FUNCS([iconv])
++
++AC_CHECK_LIB([dl],[dlopen])
++
++dnl I dunno why libresolv is needed on linux so make a klundge for that.
++
++AC_CHECK_FUNC(gethostbyname, , [AC_CHECK_LIB(resolv, gethostbyname)])
++AC_CHECK_FUNC(gethostbyname, , [AC_CHECK_LIB(nsl, gethostbyname)])
+ 
+ AC_DEFINE_UNQUOTED(UMASK,$permmask)
+ AC_DEFINE_UNQUOTED(MAXLINE,$maxline)
+
