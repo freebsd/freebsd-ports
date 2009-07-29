@@ -68,6 +68,7 @@ lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/oberthur.profile
 %%DATADIR%%/pkcs15.profile
 %%DATADIR%%/rutoken.profile
+%%DATADIR%%/rutoken_ecp.profile
 %%DATADIR%%/setcos.profile
 %%DATADIR%%/starcos.profile
 %%SIGNER%%@dirrmtry %%WEBPLUGINS_DIR%%
