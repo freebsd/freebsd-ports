@@ -11,6 +11,8 @@
 %%SITE_PERL%%/AnyEvent/Impl/Perl.pm
 %%SITE_PERL%%/AnyEvent/Impl/Qt.pm
 %%SITE_PERL%%/AnyEvent/Impl/Tk.pm
+%%SITE_PERL%%/AnyEvent/Impl/IOAsync.pm
+%%SITE_PERL%%/AnyEvent/TLS.pm
 %%SITE_PERL%%/AnyEvent/Intro.pod
 %%SITE_PERL%%/AnyEvent/Socket.pm
 %%SITE_PERL%%/AnyEvent/Strict.pm
