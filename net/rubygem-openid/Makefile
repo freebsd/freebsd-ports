@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openid
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.7
 CATEGORIES=	net rubygems
 MASTER_SITES=	http://www.openidenabled.com/files/ruby-openid/packages/ \
 		RF
