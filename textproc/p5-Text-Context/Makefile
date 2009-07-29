@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Context
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Handle highlighting search result context snippets
 
 RUN_DEPENDS=	p5-Text-Context-EitherSide>=1.1:${PORTSDIR}/textproc/p5-Text-Context-EitherSide \
-		p5-UNIVERSAL-require>=0.03:${PORTSDIR}/devel/p5-UNIVERSAL-require
+		p5-UNIVERSAL-require>=0.03:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
