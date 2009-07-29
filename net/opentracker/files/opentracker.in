@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PROVIDE: opentracker
+# REQUIRE: LOGIN
+
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable opentracker:
+# opentracker_enable (bool):	Set to "NO" by default.
+# opentracker_config (path):	Set to 
+#				"%%PREFIX%%/etc/opentracker/opentracker.conf"
+#				by default
+
+. %%RC_SUBR%%
+
+name="opentracker"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${opentracker_enable="NO"}
+: ${opentracker_config="%%PREFIX%%/etc/opentracker/opentracker.conf"}
+
+command="/usr/sbin/daemon"
+command_args="-p /var/run/opentracker.pid %%PREFIX%%/bin/opentracker -f ${opentracker_config}"
+procname="%%PREFIX%%/bin/opentracker"
+pidfile="/var/run/opentracker.pid"
+required_files=${opentracker_config}
+
+run_rc_command "$1"
