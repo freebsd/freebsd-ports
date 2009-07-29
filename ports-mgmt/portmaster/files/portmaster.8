@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd January 26, 2009
+.Dd July 29, 2009
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -32,7 +32,7 @@
 .Nd manage your ports without external databases or languages
 .Sh SYNOPSIS
 Common Flags:
-.Op Fl -force-config CGHgntvw [B|b] [uf|i] [D|d]
+.Op Fl -force-config CGHgntvw [B|b] [f|i] [D|d]
 .Op Fl m Ar arguments for make
 .Op Fl x Ar glob pattern to exclude from building
 .Nm
@@ -276,13 +276,13 @@ verbose output
 .It Fl w
 save old shared libraries before deinstall
 .It Fl u
-unattended mode -- accept defaults for all but 'make config'
-.Pp
-PLEASE NOTE: Under most circumstances this option is not
-necessary, and may produce unwanted results.
-If you experience problems with
-.Nm ,
-please try running it without this option first.
+This option has been deprecated.
+It did very little previously, and not what most users expected.
+Please check the
+.Fl d
+and
+.Fl D
+options to achieve most of the same effect.
 .It [-R] Fl f
 always rebuild ports (overrides
 .Fl i )
@@ -308,12 +308,11 @@ replace the installed port with a port from a different origin
 .It [-R] Fl r Ar name/glob of port in /var/db/pkg
 rebuild the specified port, and all ports that depend on it
 .It Fl R
-restart an update, skipping ports already up to date.
-Used with
+used with the
 .Fl r
 or
 .Fl f
-options.
+options to skip ports updated on a previous run.
 .It Fl a
 check all ports, update as necessary
 .It Fl l
@@ -482,10 +481,8 @@ option, and a new version exists, the existence of the
 file will be mentioned.
 .It 3. If you do a regular update of the port, or if the
 .Fl a
-option is being used, you will be asked if you want to
-update the port anyway; unless the
-.Fl u
-option is being used, in which case the port will be ignored.
+option is being used you will be asked if you want to
+update the port anyway.
 .El
 .Pp
 .It Pa /var/db/pkg/*/PM_UPGRADE_DONE_FLAG
@@ -618,6 +615,16 @@ to do a complete reinstallation of all your ports:
 .Dl "the installations and then run --clean-distfiles[-all] again when"
 .Dl "you are done.  You might also want to consider using the"
 .Dl "--force-config option when installing the new ports."
+.Pp
+Alternatively you could use
+.Nm Fl a Fl f Fl D
+to do an
+.Dq in place
+update of your ports.
+If that process is interrupted for any reason you can use
+.Nm Fl a Fl f Fl D Fl R
+to avoid rebuilding ports already rebuilt on previous runs.
+However the first method (delete everything and reinstall) is preferred.
 .Sh SEE ALSO
 .Xr make 1 ,
 .Xr pkg_delete 1 ,
