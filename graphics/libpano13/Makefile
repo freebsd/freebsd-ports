@@ -7,7 +7,7 @@
 
 PORTNAME=	libpano13
 PORTVERSION=	2.9.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	panotools
@@ -53,8 +53,10 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 JAVA_OS=	native
 CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
+PLIST_SUB=	JAVA=""
 .else
 CONFIGURE_ARGS+=	--without-java
+PLIST_SUB=	JAVA="@comment "
 .endif
 
 pre-configure:
