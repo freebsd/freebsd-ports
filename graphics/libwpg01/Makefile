@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwpg
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-DOCSDIR=	${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
 .else
 post-patch:
 	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/docs//g' ${WRKSRC}/Makefile.in
