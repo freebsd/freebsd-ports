@@ -27,7 +27,7 @@ BADPATCHES=	007 036 049 071 072 074 088 089 093 101 138 150 172 191 194 204 205 
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N7.2.${p}}
 .endfor
-PATCHFILES:=	${PATCHFILES:S/041/041%:local/}
+PATCHFILES:=	${PATCHFILES:S/041/041^:local/}
 
 MAINTAINER?=	obrien@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
