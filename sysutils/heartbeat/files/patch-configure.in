@@ -1,0 +1,88 @@
+--- configure.in.orig	2008-08-18 07:32:19.000000000 -0500
++++ configure.in	2008-10-11 22:56:48.000000000 -0500
+@@ -65,6 +65,13 @@
+ 
+ pf_argv_set=""
+ case "$host_os" in
++*freebsd*)
++		LIBS="-L/usr/local/lib"
++		CPPFLAGS="$CPPFLAGS -I/usr/local/include"
++		INIT_EXT=""
++		REBOOT_OPTIONS="-d"
++		POWEROFF_OPTIONS="-p"
++		;;
+ *bsd*)		LIBS="-L/usr/local/lib"
+ 		CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ 		INIT_EXT=".sh"
+@@ -224,7 +231,7 @@
+ oldincludedir=`var "$oldincludedir" "$exec_prefix/include"`
+ infodir=`var "$infodir" "$prefix/info"`
+ mandir=`var "$mandir" "$exec_prefix/man"`
+-docdir=${datadir}/doc/${HB_PKG}-${VERSION}
++docdir=${datadir}/doc/heartbeat
+ libdir=`var "$libdir" "$exec_prefix/lib"`
+ libexecdir=`var "$libexecdir" "$exec_prefix/libexec"`
+ noarchlibdir=`var "$noarchlibdir" "$prefix/lib"`
+@@ -237,6 +244,7 @@
+ dnl Always tries to set the compiler to ANSI C via options (AM)
+ dnl Can force other with environment variable "CC".
+ AC_PROG_CC
++AM_PROG_CC_C_O
+ AC_PROG_CC_STDC
+ 
+ dnl ************************************************************************
+@@ -542,7 +550,7 @@
+ AC_PATH_PROGS(MAILCMD, mail, mailx)
+ AC_SUBST(MAILCMD)
+ AC_DEFINE_UNQUOTED(IFCONFIG, "$IFCONFIG", path to the ifconfig command)
+-AC_PATH_PROGS(LIBNETCONFIG, libnet-config)
++AC_PATH_PROGS(LIBNETCONFIG, libnet113-config)
+ AC_PATH_PROGS(GETENT, getent)
+ AC_PATH_PROGS(IP2UTIL, ip, /sbin/ip)
+ AC_PATH_PROGS(XML2CONFIG, xml2-config)
+@@ -725,13 +733,13 @@
+       AC_MSG_RESULT(using old version of API)
+       dnl The old version of the API REQUIRES $LIBNETCONFIG
+       dnl so we can only deal with new API unless we have it.
+-      AC_CHECK_LIB(net, libnet_get_hwaddr, [],
++      AC_CHECK_LIB(net-1, libnet_get_hwaddr, [],
+       [FatalMissingThing "libnet" "You need libnet to continue."			\
+ 		"You can get libnet from http://www.packetfactory.net/libnet"		\
+ 		"Note that some RPMs split libnet up into libnet and libnet-devel."	\
+ 		"In this case you have to install libnet-devel"])
+       LIBNETDEFINES=""
+-      LIBNETLIBS=" -lnet"
++      LIBNETLIBS=" -lnet-1"
+       if test "$ac_cv_lib_nsl_t_open" = yes; then
+          LIBNETLIBS="-lnsl $LIBNETLIBS"
+       fi
+@@ -739,7 +747,7 @@
+          LIBNETLIBS="-lsocket $LIBNETLIBS"
+       fi
+ 
+-      libnet=net
++      libnet=net-1
+ else
+       LIBNETDEFINES="`$LIBNETCONFIG --defines` `$LIBNETCONFIG --cflags`";
+       LIBNETLIBS="`$LIBNETCONFIG --libs`";
+@@ -2393,13 +2401,13 @@
+ dnl	Note: reduce LIBS; in particular, ltdl can cause confusion.
+ dnl	Possibly better:  move 'LIBS="$LIBS -lltdl"' from above to beyond here.
+ dnl
+-AC_MSG_CHECKING(for getpid() consistency in multi-process/threads program)
+-ac_save_LIBS=$LIBS
+-LIBS="-lpthread"
+-AC_TRY_RUN(`cat $srcdir/config/pidtest.c`, 
+-AC_MSG_RESULT(ok), 
+-[AC_MSG_RESULT(fail); AC_DEFINE(GETPID_INCONSISTENT, 1 , [pid inconsistent])],)
+-LIBS=$ac_save_LIBS
++dnl AC_MSG_CHECKING(for getpid() consistency in multi-process/threads program)
++dnl ac_save_LIBS=$LIBS
++dnl LIBS="-lpthread"
++dnl AC_TRY_RUN(`cat $srcdir/config/pidtest.c`, 
++dnl AC_MSG_RESULT(ok), 
++dnl [AC_MSG_RESULT(fail); AC_DEFINE(GETPID_INCONSISTENT, 1 , [pid inconsistent])],)
++dnl LIBS=$ac_save_LIBS
+ 
+ dnl check byte order
+ AC_MSG_CHECKING(for byteorder)

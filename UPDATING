@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090729:
+  AFFECTS: users of sysutils/heartbeat
+  AUTHOR: ports@encarnate.com
+
+  Heartbeat has been upgraded to the 2.1.4 release.  Older configurations
+  based on version 1 should still work.  Read more about the new features
+  and possible configuration changes at the following urls:
+     http://clusterlabs.org/wiki/Documentation (Configuration 0.6 Explained)
+     http://www.linux-ha.org/GettingStartedRevisedV2
+
 20090724:
   AFFECTS: users of www/rubygem-rails
   AUTHOR: pgollucci@FreeBSD.org

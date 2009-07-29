@@ -1,0 +1,39 @@
+--- heartbeat/init.d/heartbeat.in.orig	2008-08-18 07:32:19.000000000 -0500
++++ heartbeat/init.d/heartbeat.in	2008-10-16 02:49:27.000000000 -0500
+@@ -45,6 +45,27 @@
+ ### END INIT INFO
+ 
+ 
++# FreeBSD
++# PROVIDE: heartbeat
++# REQUIRE: LOGIN
++# KEYWORD: shutdown
++
++# Add the following line to /etc/rc.conf to enable heartbeat:
++# heartbeat_enable="YES"
++
++. /etc/rc.subr
++name="heartbeat"
++rcvar='set_rcvar'
++load_rc_config $name
++: ${heartbeat_enable="NO"}
++
++if ! checkyesno "heartbeat_enable"; then
++	exit 0
++fi
++
++set `echo $1 | sed s/fast//`
++
++
+ HA_DIR=@sysconfdir@/ha.d; export HA_DIR
+ CONFIG=$HA_DIR/ha.cf
+ . $HA_DIR/shellfuncs
+@@ -161,7 +182,7 @@
+     fi
+     
+ 
+-    $HA_BIN/ha_logd -d >/dev/null 2>&1
++    $HA_BIN/ha_logd -d -c $HA_DIR/logd.cf >/dev/null 2>&1
+     if 
+ 	[ $? -ne 0 ]
+     then

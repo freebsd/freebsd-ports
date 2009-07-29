@@ -1,138 +1,132 @@
-#! /bin/sh
+#!/bin/sh
 
-ask() {
-    local question default answer
+USER=hacluster
+GROUP=haclient
+UID=275
+GID=${UID}
 
-    question=$1
-    default=$2
-    # pkg_add fails anyhow, if we do not create the user/group
-    if [ "x${BATCH}" = xno ]; then
-	read -p "${question} [${default}]? " answer
-    fi
-    if [ "x${answer}" = x ]; then
-	answer=${default}
-    fi
-    echo ${answer}
-}
-
-yesno() {
-    local dflt question answer
-
-    question=$1
-    dflt=$2
-    while :; do
-	answer=$(ask "${question}" "${dflt}")
-	case "${answer}" in
-	[Yy]*)		return 0;;
-	[Nn]*)		return 1;;
-	esac
-	echo "Please answer yes or no."
-    done
-}
-
-make_account() {
-    local u g uid gid
-
-    u=$1
-    g=$2
-    uid=$3
-    gid=$4
-
-    if pw group show "${g}" >/dev/null 2>&1; then
-	echo "You already have a group \"${g}\", so I will use it."
-    else
-	echo "You need a group \"${g}\"."
-	if yesno "Would you like me to create it" y; then
-	    pw groupadd ${g} -g ${gid} || exit
-	    echo "Done."
-	else
-	    echo "Please create it manually, and try again."
-	    exit 1
-	fi
-    fi
-    
-    if pw user show "${u}" >/dev/null 2>&1; then
-	echo "You already have a user \"${u}\", so I will use it."
-    else
-	echo "You need a user \"${u}\"."
-	if yesno "Would you like me to create it" y; then
-	    pw useradd ${u} -u ${uid} -g ${g} -h - -d /nonexistant \
-		-s /sbin/nologin -c "Heartbeat cluster user" || exit
-	    echo "Done."
-	else
-	    echo "Please create it, and try again."
-	    exit 1
-	fi
-    fi
-}
-
-delete_account() {
-    local u g
-
-    u=$1
-    g=$2
-    if yesno "Do you want me to remove group \"${g}\"" y; then
-	echo "Removing group \"${g}\""
-        pw groupdel -n ${g}
-        echo "Done."
-    fi
-    if yesno "Do you want me to remove user \"${u}\"" y; then
-	echo "Removing user \"${u}\""
-        pw userdel -n ${u}
-        echo "Done."
-    fi
-}
+BATCH=${BATCH:-%%BATCH%%}
 
 case $2 in
 
 PRE-INSTALL)
-    echo ""
-    user=hacluster
-    group=haclient
-    uid=275
-    gid=275
-    make_account ${user} ${group} $uid $gid
 
-    echo "Adding empty dirs and pid file."
-    test -d /var/lib/heartbeat/ckpt || \
-            install -d -m 755 /var/lib/heartbeat/ckpt
-    test -d /var/lib/heartbeat/ccm || \
-            install -d -m 750 -o ${user} -g ${group} /var/lib/heartbeat/ccm
-    test -d /var/lib/heartbeat/cores/root || \
-            install -d -m 700 /var/lib/heartbeat/cores/root
-    test -d /var/lib/heartbeat/cores/nobody || \
-            install -d -m 700 -o nobody /var/lib/heartbeat/cores/nobody
-    test -d /var/lib/heartbeat/cores/hacluster || \
-            install -d -m 700 -o ${user} /var/lib/heartbeat/cores/hacluster
-    test -d /var/lock/subsys || \
-            install -d -m 755 /var/lock/subsys
-    test -f /var/run/heartbeat.pid || \
-            install -m 644 -o ${user} -g ${group} /dev/null \
-                /var/run/heartbeat.pid
-    ;;
+	echo -e "\n\n"
+
+	# Create account
+	echo -n "Creating heartbeat user group... "
+	if pw group show "${GROUP}" >/dev/null 2>&1; then
+		echo "Group \"${GROUP}\" already exists."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	echo -n "Creating heartbeat user id... "
+	if pw user show "${USER}" >/dev/null 2>&1; then
+		echo "User \"${USER}\" already exists."
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d /nonexistent -s /sbin/nologin -c "Heartbeat Daemon"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+
+	# Create /var environment
+	echo -n "Creating /var environment... "
+	test -d /var/run/heartbeat/ccm || \
+		install -d -m 750 -o ${USER} -g ${GROUP} /var/run/heartbeat/ccm
+	test -d /var/run/heartbeat/crm || \
+		install -d -m 750 -o ${USER} -g ${GROUP} /var/run/heartbeat/crm
+	test -d /var/lib/heartbeat/cores || \
+		install -d -m 755 /var/lib/heartbeat/cores
+	test -d /var/lib/heartbeat/cores/hacluster || \
+		install -d -m 700 -o ${USER} /var/lib/heartbeat/cores/hacluster
+	test -d /var/lib/heartbeat/cores/nobody || \
+		install -d -m 700 -o nobody /var/lib/heartbeat/cores/nobody
+	test -d /var/lib/heartbeat/cores/root || \
+		install -d -m 700 /var/lib/heartbeat/cores/root
+	test -d /var/lib/heartbeat/crm || \
+		install -d -m 750 -o ${USER} -g ${GROUP} /var/lib/heartbeat/crm
+	test -d /var/lib/heartbeat/fencing || \
+		install -d -m 770 -g ${GROUP} /var/lib/heartbeat/fencing
+	test -d /var/lib/heartbeat/lrm || \
+		install -d -m 770 -g ${GROUP} /var/lib/heartbeat/lrm
+	test -d /var/lib/heartbeat/mgmt || \
+		install -d -m 770 -g ${GROUP} /var/lib/heartbeat/mgmt
+	test -d /var/lib/heartbeat/pengine || \
+		install -d -m 750 -o ${USER} -g ${GROUP} /var/run/heartbeat/pengine
+	test -f /var/run/heartbeat.pid || \
+		install -m 644 -o ${USER} -g ${GROUP} /dev/null \
+			/var/run/heartbeat.pid
+	echo "DONE"
+
+	echo -e "\n\n"
+
+	;;
 
 DEINSTALL)
-    if ps -axc | grep -q heartbeat; then
-        if yesno "There are some heartbeat processes running.  Shall I kill them" y
-        then
-            killall heartbeat
-            sleep 2
-        else
-            echo "OK ... I hope you know what you are doing."
-        fi
-    fi
 
-    delete_account hacluster haclient
+	echo -e "\n\n"
 
-    echo "Removing runtime files"
-    if [ -d /var/lib/heartbeat ]; then
-        rm -r /var/lib/heartbeat
-    fi
-    if [ -f /var/lock/subsys/heartbeat ]; then
-        rm /var/lock/subsys/heartbeat
-    fi
-    if [ -f /var/run/heartbeat.pid ]; then
-        rm /var/run/heartbeat.pid
-    fi
-    ;;
+	# Check for running processes
+	echo -n "Checking if heartbeat is running... "
+	if ps -axc | grep -q heartbeat; then
+		echo -n "FOUND "
+		killall heartbeat
+		echo "KILLED"
+	else
+		echo "NO"
+	fi
+
+	# Remove Heartbeat account
+	echo -n "Removing heartbeat account... "
+	pw groupdel -n ${GROUP}
+	pw userdel -n ${USER}
+	echo "DONE"
+
+	# Cleanup /var environment
+	echo -n "Cleaning up /var environment... "
+
+	if [ "$BATCH" = "NO" ]; then
+		echo ""
+		default="n"
+		read -p "    Remove runtime files (cluster config)? [yn]: " answer
+
+		case "$answer" in
+			[Yy]*)	answer=y ;;
+			[Nn]*)	answer=n ;;
+			*)		answer=n ;;
+		esac
+
+		if [ "$answer" = "y" ]; then
+			echo -n "    Removing runtime files... "
+			test -d /var/run/heartbeat && \
+				rm -r /var/run/heartbeat
+			test -d /var/lib/heartbeat && \
+				rm -r /var/lib/heartbeat
+			test -f /var/lock/subsys/heartbeat && \
+				rm /var/lock/subsys/heartbeat
+			test -f /var/run/heartbeat.pid && \
+				rm /var/run/heartbeat.pid
+			echo "DONE"
+		else
+			echo "Preserving runtime files... DONE"
+		fi
+	else
+		echo "NA"
+	fi
+
+	echo -e "\n\n"
+
+	;;
 esac

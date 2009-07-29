@@ -1,0 +1,11 @@
+--- ldirectord/ldirectord.in.orig	2007-08-01 21:06:54.000000000 -0500
++++ ldirectord/ldirectord.in	2007-12-18 00:15:04.000000000 -0600
+@@ -674,7 +674,7 @@
+ 
+ # main code
+ if ($opt_h) {
+-	exec_wrapper("/usr/bin/perldoc -U $LDIRECTORD");
++	exec_wrapper("@bindir@/perldoc -U $LDIRECTORD");
+ 	&ld_exit(127, "Exec failed");
+ }
+ if ($opt_v) {
