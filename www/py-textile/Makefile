@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP \
 		${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Textile markup generator written in Python
 
 PROJECTHOST=	pytextile

@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Customizable ANSI Code Converter
 
 USE_BZIP2=	yes

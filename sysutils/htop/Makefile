@@ -10,7 +10,7 @@ PORTVERSION=	0.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A better top(1) - interactive process viewer
 
 OPTIONS=	LSOF "Enable lsof support" On

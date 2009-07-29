@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://git.dollyfish.net.nz/releases/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A multi-file tail on both local and remote hosts
 
 RUN_DEPENDS=	p5-IO>=0:${PORTSDIR}/devel/p5-IO \

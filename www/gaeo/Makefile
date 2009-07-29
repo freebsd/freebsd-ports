@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	An open-source web framework running on Google App Engine
 
 RUN_DEPENDS=	google-appengine>=1.1.0:${PORTSDIR}/www/google-appengine \

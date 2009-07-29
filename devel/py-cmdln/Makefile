@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A python module for easily building good multi-command scripts
 
 USE_ZIP=	yes

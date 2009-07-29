@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	source/p/py
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTVERSION}
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	An agile development and test support library
 
 USE_PYTHON=	2.4+

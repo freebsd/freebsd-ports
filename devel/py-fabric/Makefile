@@ -12,7 +12,7 @@ MASTER_SITES=	http://distfiles.yzlin.org/ \
 		http://git.fabfile.org/cgit.cgi/fabric/snapshot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A simple pythonic remote deployment tool
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7:${PORTSDIR}/security/py-paramiko
