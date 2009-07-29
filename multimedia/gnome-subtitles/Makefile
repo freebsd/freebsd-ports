@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	marcin@studio4plus.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor with video preview
 
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
