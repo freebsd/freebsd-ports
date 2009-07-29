@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+include/opencore-amrnb/interf_dec.h
+include/opencore-amrnb/interf_enc.h
+include/opencore-amrwb/dec_if.h
+include/opencore-amrwb/if_rom.h
+lib/libopencore-amrnb.a
+lib/libopencore-amrnb.so
+lib/libopencore-amrnb.so.0
+lib/libopencore-amrnb.so.0.1.1
+lib/libopencore-amrwb.a
+lib/libopencore-amrwb.so
+lib/libopencore-amrwb.so.0
+lib/libopencore-amrwb.so.0.1.1
+@dirrmtry include/opencore-amrwb
+@dirrmtry include/opencore-amrnb
