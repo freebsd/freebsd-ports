@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mixi-Scraper
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +21,7 @@ BUILD_DEPENDS=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Web-Scraper>=0.17:${PORTSDIR}/www/p5-Web-Scraper \
-		p5-WWW-Mechanize>=1.30:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-WWW-Mechanize-DecodedContent>=0.02:${PORTSDIR}/www/p5-WWW-Mechanize-DecodedContent
+		p5-WWW-Mechanize>=1.50:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
