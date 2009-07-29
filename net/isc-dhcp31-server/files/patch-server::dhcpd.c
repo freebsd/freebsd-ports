@@ -55,7 +55,7 @@
 +      j.hostname = hostname;
 +#if JAIL_API_VERSION == 0
 +      j.ip_number = ntohl(ip_addr.s_addr);
-+#elif JAIL_API_VERSION ==2
++#elif JAIL_API_VERSION == 2
 +      j.ip4s = 1;
 +      j.ip4 = &ip_addr;
 +#else
