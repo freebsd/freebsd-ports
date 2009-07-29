@@ -1,0 +1,15 @@
+This is South, intelligent schema migrations for Django apps.
+
+South is:
+
+    * Intelligent; it knows if you've missed out a migration or two
+    * Database independent, so there's no hassle if you need to move databases.
+    * Easy; it can write migrations for you, and it takes about a minute to
+      convert your app over to use South.
+    * Designed for a pluggable Django world; you can declare dependencies
+      between apps so they all migrate together correctly, and you can still
+      use syncdb for your non-migrated apps without it interfering.
+    * Useful for data too; you can write migrations to transform legacy data.
+    * Better (we think, anyway) than the alternatives.
+
+WWW: http://south.aeracode.org/

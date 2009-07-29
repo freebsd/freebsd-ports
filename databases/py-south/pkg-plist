@@ -1,0 +1,92 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/modelsparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/orm.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/migration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/modelsparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/orm.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/migration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/sqlite3.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/postgresql_psycopg2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/generic.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/mysql.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/sqlite3.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/postgresql_psycopg2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/generic.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/mysql.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/sqlite3.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/postgresql_psycopg2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/generic.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db/mysql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/syncdb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/migrate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/startmigration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/syncdb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/migrate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/startmigration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/syncdb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/migrate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands/startmigration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/logic.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/modelsparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/db.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/logic.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/modelsparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/db.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/0002_eggs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/0003_alter_spam.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/0001_spam.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/0002_eggs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/0003_alter_spam.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/0001_spam.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/0002_eggs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/0003_alter_spam.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations/0001_spam.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/logic.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/modelsparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/db.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/modelsparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/orm.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/migration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/db
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/management
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests/fakeapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
