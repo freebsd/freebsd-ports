@@ -42,7 +42,7 @@ umask 022
 version () {
 	local rcs cvs
 
-	rcs='$Id: portmaster,v 2.37 2009/01/27 00:31:29 doug Exp $'
+	rcs='$Id: portmaster,v 2.43 2009/07/29 22:14:39 dougb Exp $'
 	cvs='$FreeBSD$'
 
 	rcs="${rcs#*,v }" ; rcs="${rcs%% *}"
@@ -134,7 +134,8 @@ safe_exit () {
 		if [ -z "$TRAP" ]; then
 			if [ -n "$UPDATE_REQ_BYS" -o -n "$PM_FORCE" ]; then
 	# Outdent
-	files=`find $pdb -type f -name PM_UPGRADE_DONE_FLAG`
+	[ -n "$UPDATE_REQ_BYS" -o -n "$PM_FORCE" ] &&
+		files=`find $pdb -type f -name PM_UPGRADE_DONE_FLAG`
 	if [ -n "$files" ]; then
 		[ -n "$PM_SU_VERBOSE" ] &&
 			echo "===>>> Deleting 'install complete' flags"
@@ -161,7 +162,7 @@ safe_exit () {
 		for f in ${TMPDIR}/f-${PARENT_PID}-*; do pm_unlink $f ; done
 
 		case "$DISPLAY_LIST" in
-		*' '*)	if [ -z "$UNATTENDED" -a -n "$TRAP" ]; then
+		*' '*)	if [ -n "$TRAP" ]; then
 	echo "===>>> There are messages from installed ports to display,"
 	echo "       but first take a moment to review the error messages"
 	echo -n "       above.  Then press Enter when ready to proceed. "
@@ -169,9 +170,7 @@ safe_exit () {
 				echo ''
 			fi
 
-			p='less -e'
-			if [ -n "$UNATTENDED" ]; then p=cat;
-			elif [ -n "$PAGER" ]; then p=$PAGER; fi
+			[ -n "$PAGER" ] && p=$PAGER || p='less -e'
 			( for f in $DISPLAY_LIST; do
 				echo "===>>> pkg-message for $f"
 					cat $pdb/$f/+DISPLAY
@@ -222,7 +221,7 @@ usage () {
 	version
 	echo ''
 	echo 'Usage:'
-	echo "Common flags: [--force-config] [-CGHKgntvw B|b uf|i D|d]"
+	echo "Common flags: [--force-config] [-CGHKgntvw B|b f|i D|d]"
 	echo "    [-m <arguments for make>]"
 	echo "    [-x <glob pattern to exclude from building>]"
 	echo "${0##*/} [Common flags] <full name of port directory in $pdb>"
@@ -270,7 +269,7 @@ usage () {
 	echo '-t recurse dependencies thoroughly, using all-depends-list'
 	echo '-v verbose output'
 	echo '-w save old shared libraries before deinstall'
-	echo "-u unattended mode -- accept defaults for all but 'make config'"
+	echo "-u DEPRECATED"
 	echo '[-R] -f always rebuild ports (overrides -i)'
 	echo '-i interactive update -- ask whether to rebuild ports'
 	echo '-D no cleaning of distfiles'
@@ -282,7 +281,7 @@ usage () {
 	echo ''
 	echo '-o replace the installed port with a port from a different origin'
 	echo '[-R] -r rebuild port, and all ports that depend on it'
-	echo '-R restart an update, skipping ports already up to date'
+	echo '-R used with -[rf] to skip ports updated on a previous run'
 	echo '-a check all ports, update as necessary'
 	echo ''
 	echo '-l list installed ports by category'
@@ -618,6 +617,20 @@ read_distinfos () {
 	[ -e "${DI_FILES}-e" ] && unlink ${DI_FILES}-e
 }
 
+globstrip () {
+	local in
+
+	in=$1
+
+	case "$in" in
+	*\*) in=`echo $in | sed s/.$//`
+	esac
+
+	in=${in%\\}
+
+	echo $in
+}
+
 #=============== End functions relevant to --features and main ===============
 #=============== Begin code relevant only to --features ===============
 
@@ -785,10 +798,10 @@ while getopts 'BCDFGHKLRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
 	r)	UPDATE_REQ_BYS=ropt ; portdir=`origin_from_pdb $OPTARG` ;;
 	s)	CLEAN_STALE=sopt ;;
 	t)	RECURSE_THOROUGH=topt; ARGS="-t $ARGS" ;;
-	u)	UNATTENDED=uopt; ARGS="-u $ARGS" ;;
+	u)	echo "===>>> The -u option has been deprecated" ; echo '' ;;
 	v)	PM_VERBOSE=vopt; ARGS="-v $ARGS" ;;
 	w)	SAVE_SHARED=wopt; ARGS="-w $ARGS" ;;
-	x)	EXCL=$OPTARG ;;
+	x)	EXCL=`globstrip $OPTARG` ;;
 	*)	echo '' ; echo "===>>> Try ${0##*/} --help"; exit 1 ;;
 	esac
 done
@@ -796,13 +809,6 @@ shift $(( $OPTIND - 1 ))
 
 # Error checking for getopts
 [ -n "$PM_FORCE" ] && unset INTERACTIVE_UPDATE
-if [ -n "$UNATTENDED" ]; then
-	unset INTERACTIVE_UPDATE
-	if [ -z "$DONT_SCRUB_DISTFILES" -a -z "$ALWAYS_SCRUB_DISTFILES" ]; then
-		ALWAYS_SCRUB_DISTFILES=always_scrub
-		ARGS="-d $ARGS"
-	fi
-fi
 [ -n "$BACKUP" -a -n "$NO_BACKUP" ] &&
 	fail "The -b and -B options are mutually exclusive"
 [ -n "$ALWAYS_SCRUB_DISTFILES" -a -n "$DONT_SCRUB_DISTFILES" ] &&
@@ -985,21 +991,17 @@ backup_package () {
 			NB_DELETE="${NB_DELETE}${pkg} "
 		fi
 	else
-		if [ -z "$UNATTENDED" ]; then
-			echo ''
-			echo "===>>> Backup package creation failed for ${1}!"
-			echo ''
-			echo "===>>> Ignore this error  [i]"
-			echo "===>>> Abort              [a]"
-			echo ''
-			echo -n "===>>> How would you like to proceed? [i] "
-			local answer ; read answer
-			case "$answer" in
-			a)	fail "Backup package creation failed for $1" ;;
-			esac
-		else
-			fail "Backup package creation failed for $1"
-		fi
+		echo ''
+		echo "===>>> Backup package creation failed for ${1}!"
+		echo ''
+		echo "===>>> Ignore this error  [i]"
+		echo "===>>> Abort              [a]"
+		echo ''
+		echo -n "===>>> How would you like to proceed? [i] "
+		local answer ; read answer
+		case "$answer" in
+		a)	fail "Backup package creation failed for $1" ;;
+		esac
 	fi
 }
 
@@ -1401,11 +1403,11 @@ if [ -n "$CLEAN_STALE" ]; then
 
 			exec $0 -s $ARGS
 			;;
-		*) echo -n "	===>>> Remove empty +REQUIRED_BY file? [n] "
+		*) echo -n "	===>>> Keep listing $iport as a dependency? [n] "
 			read answer
 			case "$answer" in
-			[yY])	pm_unlink_s $file ;;
-			*)	no_del_list="${no_del_list}${iport}:" ;;
+			[yY])	no_del_list="${no_del_list}${iport}:" ;;
+			*)	pm_unlink_s $file ;;
 			esac
 			;;
 		esac
@@ -1475,12 +1477,15 @@ check_exclude () {
 check_fetch_only () {
 	[ -n "$FETCH_ONLY" ] || return 0
 
-	local sleep
+	local sleep nf fetches
 
 	echo ''
 	sleep=5
 	while `ls ${TMPDIR}/f-${PARENT_PID}-fetchlog-* >/dev/null 2>&1`; do
-		echo "===>>> Waiting for all distfile fetches to finish"
+		nf=`ps -ax | grep [f]etch | wc -l`
+		nf=${nf##* }
+		fetches=fetches ; [ "$nf" -eq 1 ] && fetches=fetch
+		echo "===>>> Waiting for ${nf##* } distfile $fetches to finish"
 		sleep $sleep
 
 		if [ $sleep -eq 10 ]; then
@@ -1746,9 +1751,19 @@ if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" ]; then
 	# Outdent
 	files=`find $pdb -type f -name PM_UPGRADE_DONE_FLAG`
 	if [ -n "$files" ]; then
-		[ -n "$PM_SU_VERBOSE" ] &&
+		echo "===>>> There are 'install complete' flags from a previous"
+		echo -n "       -[rf] run of ${0##*/}, delete them? [n] "
+		read answer
+		case "$answer" in
+		[yY]) [ -n "$PM_SU_VERBOSE" ] &&
 			echo "===>>> Deleting 'install complete' flags"
-		pm_find_s $pdb -type f -name PM_UPGRADE_DONE_FLAG -delete
+		pm_find_s $pdb -type f -name PM_UPGRADE_DONE_FLAG -delete ;;
+		*) echo -n "===>>> Enable the -R option? [n] "
+			read answer
+			case "$answer" in
+			[yY]) RESTART=Ropt ; ARGS="-R $ARGS" ;;
+			esac ;;
+		esac
 	fi
 	# Outdent
 		fi
@@ -1884,7 +1899,7 @@ no_valid_port () {
 # Figure out what we are going to be working on
 if [ -z "$REPLACE_ORIGIN" ]; then
 	[ -n "$portdir" ] && { argv=$portdir ; unset portdir; }
-	argv=${argv:-$1} ; argv=${argv%/}
+	argv=${argv:-$1} ; argv=${argv%/} ; argv=`globstrip $argv`
 	case "$argv" in
 	'')	echo '' ; no_valid_port ;;
 	$pd/*)	portdir=${argv#$pd/} ;;
@@ -1896,7 +1911,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
 	esac
 
 	if [ -z "$portdir" -a -z "$upg_port" ]; then
-		glob_dirs=`find $pdb -maxdepth 1 -type d -name ${argv%\*}\*`
+		glob_dirs=`find $pdb -maxdepth 1 -type d -name ${argv}\*`
 		case "$glob_dirs" in
 		*\*|'')	echo '' ; no_valid_port ;;
 		# Match a newline in multiple responses from find
@@ -1966,7 +1981,7 @@ if [ -e "$pdb/$upg_port/+IGNOREME" ]; then
 		# Only need to prompt for this once if -ai
 		case "$INTERACTIVE_YES" in
 		*:${upg_port}:*) ;;	# Let it build
-		*)	if [ -z "$UNATTENDED" -a -z "$FETCH_ONLY" ]; then
+		*)	if [ -z "$FETCH_ONLY" ]; then
 				echo ''
 				echo "===>>> $upg_port has an +IGNOREME file"
 				echo ''
