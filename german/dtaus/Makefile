@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dtaus
-PORTVERSION=	0.7
+PORTVERSION=	0.9
 CATEGORIES=	german finance
 MASTER_SITES=	http://www.infodrom.org/projects/dtaus/download/
 
