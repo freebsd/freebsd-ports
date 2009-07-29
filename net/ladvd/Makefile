@@ -7,6 +7,7 @@
 
 PORTNAME=	ladvd
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://blinkenlights.nl/software/ladvd/
 
@@ -15,9 +16,8 @@ COMMENT=	A minimal CDP/LLDP sender
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
-ONLY_FOR_ARCHS=	i386
-
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-chroot-dir=/var/empty
 
 PORTDOCS=	*
 MAN8=		ladvd.8
