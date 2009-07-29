@@ -1,0 +1,23 @@
+include/embedded_innodb-1.0/innodb.h
+lib/libinnodb.a
+lib/libinnodb.la
+lib/libinnodb.so
+lib/libinnodb.so.2
+share/embedded_innodb-1.0/examples/COPYING
+share/embedded_innodb-1.0/examples/Makefile.examples
+share/embedded_innodb-1.0/examples/README
+share/embedded_innodb-1.0/examples/ib_cfg.c
+share/embedded_innodb-1.0/examples/ib_cursor.c
+share/embedded_innodb-1.0/examples/ib_logger.c
+share/embedded_innodb-1.0/examples/ib_mt_stress.c
+share/embedded_innodb-1.0/examples/ib_perf1.c
+share/embedded_innodb-1.0/examples/ib_test1.c
+share/embedded_innodb-1.0/examples/ib_test2.c
+share/embedded_innodb-1.0/examples/ib_test3.c
+share/embedded_innodb-1.0/examples/ib_test5.c
+share/embedded_innodb-1.0/examples/ib_types.c
+share/embedded_innodb-1.0/examples/test0aux.c
+share/embedded_innodb-1.0/examples/test0aux.h
+@dirrm include/embedded_innodb-1.0
+@dirrm share/embedded_innodb-1.0/examples
+@dirrm share/embedded_innodb-1.0
