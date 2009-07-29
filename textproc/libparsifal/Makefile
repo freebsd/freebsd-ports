@@ -11,7 +11,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
 USE_AUTOTOOLS=	libtool:15

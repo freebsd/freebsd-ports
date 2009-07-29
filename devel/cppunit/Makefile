@@ -9,7 +9,7 @@ PORTVERSION=	1.12.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	C++ port of the JUnit framework for unit testing
 
 USE_AUTOTOOLS=	libtool:15

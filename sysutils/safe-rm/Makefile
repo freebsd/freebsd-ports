@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Wrapper around the rm command to prevent accidental deletions
 
 USE_PERL5_RUN=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/E/Extremes
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yzlin@cs.nctu.edu.tw
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Production-quality 'Min' and 'Max' objects (adapted from PEP 326)
 
 USE_PYTHON=	yes
