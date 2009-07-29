@@ -7,6 +7,7 @@
 
 PORTNAME=	Data-ICal
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,5 +39,8 @@ MAN3=	Data::ICal.3 \
 	Data::ICal::Entry::TimeZone::Standard.3 \
 	Data::ICal::Entry::Todo.3 \
 	Data::ICal::Property.3
+
+post-extract:
+	@${PERL} -i -ne 'print unless /^(test_requires|auto_install|recommends|configure_requires)/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
