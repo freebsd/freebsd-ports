@@ -19,9 +19,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Computer Graphics Kit
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		boost_python.4:${PORTSDIR}/devel/boost-python-libs \
 		scons:${PORTSDIR}/devel/scons
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_python.4:${PORTSDIR}/devel/boost-python-libs
 
 USE_GL=		yes
 USE_PYTHON=	yes
