@@ -1,4 +1,3 @@
-bin/precomp
 bin/rndr
 bin/sdrc
 bin/sdrinfo
@@ -7,21 +6,37 @@ bin/texmake
 include/pixie/dlo.h
 include/pixie/dsply.h
 include/pixie/implicit.h
+include/pixie/ptcapi.h
 include/pixie/ri.h
 include/pixie/sdr.h
 include/pixie/shadeop.h
-lib/pixie/file.so
-lib/pixie/framebuffer.so
+lib/pixie/displays/file.a
+lib/pixie/displays/file.la
+lib/pixie/displays/file.so
+lib/pixie/displays/framebuffer.a
+lib/pixie/displays/framebuffer.la
+lib/pixie/displays/framebuffer.so
+lib/pixie/displays/openexr.a
+lib/pixie/displays/openexr.la
+lib/pixie/displays/openexr.so
+lib/pixie/displays/rgbe.a
+lib/pixie/displays/rgbe.la
+lib/pixie/displays/rgbe.so
 lib/pixie/libpixiecommon.a
+lib/pixie/libpixiecommon.la
 lib/pixie/libpixiecommon.so
 lib/pixie/libpixiecommon.so.0
 lib/pixie/libri.a
+lib/pixie/libri.la
 lib/pixie/libri.so
 lib/pixie/libri.so.0
 lib/pixie/libsdr.a
+lib/pixie/libsdr.la
 lib/pixie/libsdr.so
 lib/pixie/libsdr.so.0
-lib/pixie/rgbe.so
+lib/pixie/modules/gui.a
+lib/pixie/modules/gui.la
+lib/pixie/modules/gui.so
 %%DATADIR%%/shaders/ambientindirect.sdr
 %%DATADIR%%/shaders/ambientindirect.sl
 %%DATADIR%%/shaders/ambientlight.sdr
@@ -78,5 +93,7 @@ lib/pixie/rgbe.so
 %%DATADIR%%/shaders/spotlight.sl
 @dirrm %%DATADIR%%/shaders
 @dirrm %%DATADIR%%
+@dirrm lib/pixie/modules
+@dirrm lib/pixie/displays
 @dirrm lib/pixie
 @dirrm include/pixie
