@@ -7,6 +7,7 @@
 
 PORTNAME=	uuid
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -35,9 +36,15 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 PLIST_SUB+=	WITH_PERL='@comment '
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC -DPIC
+.endif
+
 regression-test: test
 
 test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
