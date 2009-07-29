@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	apache-tomcat
-PORTVERSION=	6.0.18
+PORTNAME=	tomcat
+PORTVERSION=	6.0.20
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-6/v${PORTVERSION}/bin
+DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 6.x branch
@@ -19,40 +20,32 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
 USE_RC_SUBR=	tomcat6.sh
-SUB_FILES=	pkg-install pkg-deinstall
+SUB_FILES=	pkg-install
 
 MAJOR_VER=	${PORTVERSION:R}
-APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R}
+APP_HOME?=	${PREFIX}/${DISTNAME:R}
 LOG_DIR=	${APP_HOME}/logs
-APP_TITLE=	Apache Tomcat
-APP_SHORTNAME=	tomcat${MAJOR_VER:S/.//}
+APP_SHORTNAME=	${PORTNAME}${MAJOR_VER:S/.//}
 TOMCAT_USER?=	www
 TOMCAT_GROUP?=	www
-PW?=		/usr/sbin/pw
 HTTP_PORT?=	8180
 SHUTDOWN_PORT?=	8005
 AJP_1_3_PORT?=	8009
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
-PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/apache-tomcat-${PORTVERSION}
-REPLACE_FILES=	${WRKSRC}/conf/server.xml
-REPLACE_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 JAR_FILE=	bin/bootstrap.jar
-PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${TOMCAT_USER} WWWGRP=${TOMCAT_GROUP}
-LATEST_LINK=	${APP_SHORTNAME}
+CONF_FILES=	catalina.policy catalina.properties context.xml logging.properties server.xml tomcat-users.xml web.xml
 CONF_EXT=	sample
-PLIST_SUB+=	CONF_EXT=${CONF_EXT}
+PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} CONF_EXT=${CONF_EXT} \
+		WWWOWN=${TOMCAT_USER} WWWGRP=${TOMCAT_GROUP}
+LATEST_LINK=	${APP_SHORTNAME}
 
 SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		APP_HOME=${APP_HOME} \
 		APP_SHORTNAME=${APP_SHORTNAME} \
-		APP_TITLE="${APP_TITLE}" \
 		GROUP=${TOMCAT_GROUP} \
 		HTTP_PORT=${HTTP_PORT} \
 		JAR_FILE=${JAR_FILE} \
-		PID_FILE=${PID_FILE} \
 		SHUTDOWN_PORT=${SHUTDOWN_PORT} \
 		STDERR_LOG=${STDERR_LOG} \
 		STDOUT_LOG=${STDOUT_LOG} \
@@ -75,14 +68,11 @@ pre-patch:
 	@${ECHO_MSG} "   Logfile stderr:           ${STDERR_LOG}"
 
 post-patch:
-	@${ECHO_MSG} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
-	@${ECHO_MSG} " [ DONE ]"
-
-.for file in ${REPLACE_FILES}
-	@${ECHO_MSG} -n ">> Customizing `basename ${file}`..."
-	@${SED} ${REPLACE_LIST_TEMP} ${file} > ${WRKDIR}/`basename ${file}`
-	@${ECHO_MSG} " [ DONE ]"
+	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${WRKSRC}/conf/server.xml
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.exe'` \
+		`${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.bak'`
+.for f in ${CONF_FILES}
+	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.${CONF_EXT}
 .endfor
 
 pre-install:
@@ -92,27 +82,20 @@ do-install:
 	@${ECHO_MSG} -n ">> Creating destination directory..."
 	@${MKDIR} ${APP_HOME}
 	@${MKDIR} ${LOG_DIR}
+	@${MKDIR} ${APP_HOME}/endorsed
 	@${ECHO_MSG} " [ DONE ]"
 
-	@${ECHO_MSG} ">> Copying files to destination directory..."
-	@${CP} ${WRKDIR}/server.xml ${WRKSRC}/conf/
-	@(cd ${WRKSRC};${FIND} conf -type f | ${SED} -e '/${CONF_EXT}/d') \
-		| while read a; do \
-			${MV} ${WRKSRC}/$$a ${WRKSRC}/$$a.${CONF_EXT}; \
-			if [ ! -e "${APP_HOME}/$$a" ]; then \
-				${ECHO_MSG} "	Installing local configuration file: ${APP_HOME}/$$a"; \
-				${CP} ${WRKSRC}/$$a.${CONF_EXT} ${WRKSRC}/$$a; \
-			else \
-				${ECHO_MSG} "	Preserving local configuration file: ${APP_HOME}/$$a"; \
-			fi; \
-		done
+	@${ECHO_MSG} -n ">> Copying files to destination directory..."
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
 	@${ECHO_MSG} " [ DONE ]"
 
-	@${ECHO_MSG} -n ">> Creating log files..."
-	@${INSTALL} -m 664 -o ${TOMCAT_USER} -g ${TOMCAT_GROUP} /dev/null ${STDOUT_LOG}
-	@${INSTALL} -m 664 -o ${TOMCAT_USER} -g ${TOMCAT_GROUP} /dev/null ${STDERR_LOG}
-	@${ECHO_MSG} " [ DONE ]"
+.for f in ${CONF_FILES}
+.	if !exists(${APP_HOME}/conf/${f})
+		@${CP} ${APP_HOME}/conf/${f}.${CONF_EXT} ${APP_HOME}/conf/${f}
+.	else
+		@${ECHO_MSG} ">> Preserving local configuration file: ${f} [ DONE ]"
+.	endif
+.endfor
 
 	@${ECHO_MSG} -n ">> Creating symlink to tools.jar..."
 	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/lib/tools.jar
@@ -120,14 +103,11 @@ do-install:
 
 	@${ECHO_MSG} -n ">> Fixing ownership settings..."
 	@${CHOWN} -R ${TOMCAT_USER}:${TOMCAT_GROUP} ${APP_HOME}/conf ${APP_HOME}/logs \
-		${APP_HOME}/temp ${APP_HOME}/work
+		${APP_HOME}/temp ${APP_HOME}/webapps ${APP_HOME}/work
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Fixing permissions..."
-	@@${FIND} ${APP_HOME} -type d -print0 | xargs -0 ${CHMOD} 755
+	@${FIND} ${APP_HOME} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_MSG} " [ DONE ]"
-
-post-install:
-	@${ECHO_MSG} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
 
 .include <bsd.port.post.mk>

@@ -2,7 +2,7 @@ Apache Tomcat is a web server written in 100% Pure Java.
 
 Apache Tomcat version 6.0 implements the Servlet 2.5 and JavaServer Pages 2.1
 specifications from the Java Community Process, and includes many additional
-features that make it a useful platform for developing and deploying web app
--lications and web services.
+features that make it a useful platform for developing and deploying web
+applications and web services.
 
 WWW: http://tomcat.apache.org/
