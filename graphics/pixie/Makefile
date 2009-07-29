@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pixie
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.6
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	Pixie-src-${PORTVERSION}
@@ -15,39 +15,38 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A photorealistic renderer with Pixar's RenderMan-like interface
 
-BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex \
-		bison:${PORTSDIR}/devel/bison
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		fltk_gl.1:${PORTSDIR}/x11-toolkits/fltk \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
+LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		fltk_gl.1:${PORTSDIR}/x11-toolkits/fltk
 
 NOT_FOR_ARCHS=	amd64
 
-PORTDOCS=*
-USE_GL=		yes
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
-USE_AUTOTOOLS=	autoconf:262 aclocal:19 automake:19 libtool:15
-CONFIGURE_ENV=	CFLAGS="-O0 -fPIC -pipe -I${LOCALBASE}/include" \
-		CXXFLAGS="-O0 -pipe -fPIC -I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/OpenEXR" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=	--with-docdir=${PREFIX}/share/doc/${PORTNAME} \
-	--with-shaderdir=${PREFIX}/share/${PORTNAME}/shaders \
-	--with-modeldir=${PREFIX}/share/${PORTNAME} \
-	--with-texturedir=${PREFIX}/share/${PORTNAME} \
-	--with-proceduraldir=${PREFIX}/share/${PORTNAME} \
-	--with-displaysdir=${PREFIX}/lib/${PORTNAME} \
-	--with-openexr=${LOCALBASE}/lib \
-	--enable-openexr-threads --disable-openexrtest
-
-USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 WRKSRC=		${WRKDIR}/Pixie
 
-PIXIE_EXES=	precomp rndr sdrc sdrinfo show texmake
-PIXIE_SHLIBS=	file framebuffer rgbe
+USE_GNOME=	gnomehack
+USE_GL=		glu
+USE_BISON=	build
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
+		--libdir=${PREFIX}/lib/pixie \
+		--with-docdir=${DOCSDIR} \
+		--with-shaderdir=${DATADIR}/shaders \
+		--with-ribdir=${DATADIR}/ribs \
+		--with-texturedir=${DATADIR}/textures \
+		--with-displaysdir=${PREFIX}/lib/pixie/displays \
+		--with-modulesdir=${PREFIX}/lib/pixie/modules \
+		--with-openexr-prefix=${LOCALBASE} \
+		--enable-openexr-threads
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-SUB_LIST+=	PORTNAME=${PORTNAME}
+MAN1=		rndr.1 sdrc.1 sdrinfo.1 texmake.1
+PORTDOCS=	*
+
+CFLAGS+=	-fPIC
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -56,62 +55,21 @@ BROKEN=		Does not compile on sparc64
 .endif
 
 post-patch:
-	@${FIND} -X ${WRKSRC} -name '*.cpp' -or -name '*.h' | \
-		${XARGS} ${REINPLACE_CMD} -i '' -e 's|malloc\.h|stdlib\.h|g'
-
-pre-configure:
-	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
-
-do-install:
-# exes
-.for i in ${PIXIE_EXES}
-	if [ "`${FILE} -b ${WRKSRC}/src/${i}/${i} | ${GREP} script`" ]; then \
-	  ${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/${i} ${PREFIX}/bin; \
-	else \
-	  ${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/${i} ${PREFIX}/bin; \
-	fi;
+	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g ; \
+		 /^install-data-am:/s|install-nobase_docDATA||g' ${WRKSRC}/Makefile.in
+.for file in src/ri/Makefile.in src/sdr/Makefile.in
+	@${REINPLACE_CMD} -e '/^includedir/s|=.*$$|= @includedir@|g' ${WRKSRC}/${file}
 .endfor
 
-# libs
-	# avoid conflicts by installing in separate dir
-	@${INSTALL} -d ${PREFIX}/lib/${PORTNAME}
-.for i in common
-	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/libpixie${i}.a \
-		${PREFIX}/lib/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/libpixie${i}.so.0 \
-		${PREFIX}/lib/${PORTNAME}
-	${LN} -sf ${PREFIX}/lib/${PORTNAME}/libpixie${i}.so.0 \
-		${PREFIX}/lib/${PORTNAME}/libpixie${i}.so
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog DEVNOTES LICENSE NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-.for i in sdr ri
-	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/lib${i}.a \
-		${PREFIX}/lib/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/lib${i}.so.0 \
-		${PREFIX}/lib/${PORTNAME}
-	${LN} -sf ${PREFIX}/lib/${PORTNAME}/lib${i}.so.0 \
-		${PREFIX}/lib/${PORTNAME}/lib${i}.so
-.endfor
-
-.for i in ${PIXIE_SHLIBS}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/${i}.so \
-		${PREFIX}/lib/${PORTNAME}
-.endfor
-
-# includes
-	@${INSTALL} -d ${PREFIX}/include/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/src/sdr/sdr.h ${PREFIX}/include/${PORTNAME}
-.for i in dlo dsply implicit ri shadeop
-	${INSTALL_DATA} ${WRKSRC}/src/ri/${i}.h ${PREFIX}/include/${PORTNAME}
-.endfor
-
-# shaders
-	@${INSTALL} -d ${DATADIR}
-	@${INSTALL} -d ${DATADIR}/shaders
-	@${INSTALL_DATA} ${WRKSRC}/shaders/* ${DATADIR}/shaders
-
-# docs
-.ifndef (NOPORTDOCS)
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${FIND} . ! -name "*Makefile*" | \
+		${CPIO} -dump -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>
