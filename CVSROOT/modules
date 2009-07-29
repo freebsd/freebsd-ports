@@ -460,7 +460,6 @@ amrstat                         ports/sysutils/amrstat
 amsn                            ports/net-im/amsn
 amspsfnt                        ports/print/amspsfnt
 amule2                          ports/net-p2p/amule2
-amy                             ports/games/amy
 an                              ports/games/an
 anacron                         ports/sysutils/anacron
 anagramarama                    ports/games/anagramarama
@@ -1140,8 +1139,11 @@ bonobo-conf                     ports/devel/bonobo-conf
 boodler                         ports/audio/boodler
 bookmarkbridge                  ports/www/bookmarkbridge
 bookreader                      ports/deskutils/bookreader
-boost                           ports/devel/boost
-boost-python                    ports/devel/boost-python
+boost-all                       ports/devel/boost-all
+boost-docs                      ports/devel/boost-docs
+boost-jam                       ports/devel/boost-jam
+boost-libs                      ports/devel/boost-libs
+boost-python-libs               ports/devel/boost-python-libs
 boost_build                     ports/devel/boost_build
 bopm                            ports/irc/bopm
 borzoi                          ports/security/borzoi
@@ -1647,6 +1649,7 @@ cnd                             ports/net/cnd
 cnet                            ports/net/cnet
 cnews                           ports/news/cnews
 cnslock                         ports/x11/cnslock
+cntlm                           ports/www/cntlm
 cnupm                           ports/net/cnupm
 cobf                            ports/devel/cobf
 coccinella                      ports/net-im/coccinella
@@ -5067,7 +5070,6 @@ hapy                            ports/devel/hapy
 harbour                         ports/lang/harbour
 harvest                         ports/www/harvest
 hashcash                        ports/mail/hashcash
-hashish                         ports/security/hashish
 haskell-mode.el                 ports/lang/haskell-mode.el
 hastymail                       ports/www/hastymail
 hatari                          ports/emulators/hatari
@@ -7637,6 +7639,7 @@ libsocketcpp                    ports/net/libsocketcpp
 libsoup                         ports/devel/libsoup
 libsoup-reference               ports/devel/libsoup-reference
 libsoup22                       ports/devel/libsoup22
+libspamtest                     ports/mail/libspamtest
 libspectre                      ports/print/libspectre
 libspectrum                     ports/emulators/libspectrum
 libspf                          ports/mail/libspf
@@ -7730,6 +7733,7 @@ libwnck-reference               ports/x11-toolkits/libwnck-reference
 libworkman                      ports/audio/libworkman
 libwpcg                         ports/graphics/libwpcg
 libwpd                          ports/textproc/libwpd
+libwpg                          ports/graphics/libwpg
 libwps                          ports/textproc/libwps
 libwww                          ports/www/libwww
 libx11                          ports/x11/libX11
@@ -7896,6 +7900,8 @@ linux-f10-atk                   ports/accessibility/linux-f10-atk
 linux-f10-cairo                 ports/graphics/linux-f10-cairo
 linux-f10-curl                  ports/ftp/linux-f10-curl
 linux-f10-cyrus-sasl2           ports/security/linux-f10-cyrus-sasl2
+linux-f10-dbus-glib             ports/devel/linux-f10-dbus-glib
+linux-f10-dbus-libs             ports/devel/linux-f10-dbus-libs
 linux-f10-dri                   ports/graphics/linux-f10-dri
 linux-f10-esound                ports/audio/linux-f10-esound
 linux-f10-expat                 ports/textproc/linux-f10-expat
@@ -10114,6 +10120,7 @@ p5-Any-Moose                    ports/devel/p5-Any-Moose
 p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
+p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
 p5-Apache-AddHostPath           ports/www/p5-Apache-AddHostPath
 p5-Apache-Admin-Config          ports/www/p5-Apache-Admin-Config
@@ -10464,6 +10471,7 @@ p5-Catalyst-Component-InstancePerContext  ports/www/p5-Catalyst-Component-Instan
 p5-Catalyst-Controller-BindLex  ports/www/p5-Catalyst-Controller-BindLex
 p5-Catalyst-Controller-FormBuilder  ports/www/p5-Catalyst-Controller-FormBuilder
 p5-Catalyst-Controller-HTML-FormFu  ports/www/p5-Catalyst-Controller-HTML-FormFu
+p5-Catalyst-Controller-RequestToken  ports/www/p5-Catalyst-Controller-RequestToken
 p5-Catalyst-Devel               ports/www/p5-Catalyst-Devel
 p5-Catalyst-Engine-Apache       ports/www/p5-Catalyst-Engine-Apache
 p5-Catalyst-Engine-HTTP-POE     ports/www/p5-Catalyst-Engine-HTTP-POE
@@ -10560,6 +10568,7 @@ p5-Catalyst-View-TT             ports/www/p5-Catalyst-View-TT
 p5-Catalyst-View-TT-ControllerLocal  ports/www/p5-Catalyst-View-TT-ControllerLocal
 p5-Catalyst-View-Templated      ports/www/p5-Catalyst-View-Templated
 p5-Catalyst-View-XSLT           ports/www/p5-Catalyst-View-XSLT
+p5-CatalystX-Component-Traits   ports/www/p5-CatalystX-Component-Traits
 p5-Cdk                          ports/devel/p5-Cdk
 p5-Cflow                        ports/net-mgmt/p5-Cflow
 p5-Chart-Clicker                ports/graphics/p5-Chart-Clicker
@@ -11090,6 +11099,7 @@ p5-Devel-Gladiator              ports/devel/p5-Devel-Gladiator
 p5-Devel-GlobalDestruction      ports/devel/p5-Devel-GlobalDestruction
 p5-Devel-Leak                   ports/devel/p5-Devel-Leak
 p5-Devel-Leak-Object            ports/devel/p5-Devel-Leak-Object
+p5-Devel-LeakGuard-Object       ports/devel/p5-Devel-LeakGuard-Object
 p5-Devel-LeakTrace              ports/devel/p5-Devel-LeakTrace
 p5-Devel-LeakTrace-Fast         ports/devel/p5-Devel-LeakTrace-Fast
 p5-Devel-LexAlias               ports/devel/p5-Devel-LexAlias
@@ -12091,6 +12101,7 @@ p5-Mojo                         ports/www/p5-Mojo
 p5-MojoMojo                     ports/www/p5-MojoMojo
 p5-Mon                          ports/net-mgmt/p5-Mon
 p5-Moose                        ports/devel/p5-Moose
+p5-Moose-Autobox                ports/devel/p5-Moose-Autobox
 p5-Moose-Policy                 ports/devel/p5-Moose-Policy
 p5-MooseX-Async                 ports/devel/p5-MooseX-Async
 p5-MooseX-AttributeHelpers      ports/devel/p5-MooseX-AttributeHelpers
@@ -12113,6 +12124,7 @@ p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
 p5-MooseX-Storage               ports/devel/p5-MooseX-Storage
 p5-MooseX-StrictConstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-MooseX-Traits                ports/devel/p5-MooseX-Traits
+p5-MooseX-Traits-Pluggable      ports/devel/p5-MooseX-Traits-Pluggable
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-DateTime-ButMaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
@@ -12817,6 +12829,7 @@ p5-SpringGraph                  ports/graphics/p5-SpringGraph
 p5-Squatting                    ports/www/p5-Squatting
 p5-Stanford-DNSserver           ports/dns/p5-Stanford-DNSserver
 p5-Stat-lsMode                  ports/sysutils/p5-Stat-lsMode
+p5-Statistics-Basic             ports/math/p5-Statistics-Basic
 p5-Statistics-Benford           ports/math/p5-Statistics-Benford
 p5-Statistics-ChiSquare         ports/math/p5-Statistics-ChiSquare
 p5-Statistics-Contingency       ports/math/p5-Statistics-Contingency
@@ -12849,6 +12862,7 @@ p5-String-LRC                   ports/devel/p5-String-LRC
 p5-String-Multibyte             ports/converters/p5-String-Multibyte
 p5-String-Parity                ports/devel/p5-String-Parity
 p5-String-Random                ports/devel/p5-String-Random
+p5-String-RewritePrefix         ports/textproc/p5-String-RewritePrefix
 p5-String-RexxParse             ports/devel/p5-String-RexxParse
 p5-String-Scanf                 ports/textproc/p5-String-Scanf
 p5-String-SetUTF8               ports/converters/p5-String-SetUTF8
@@ -13459,6 +13473,7 @@ p5-XML-OPML-LibXML              ports/textproc/p5-XML-OPML-LibXML
 p5-XML-Parser                   ports/textproc/p5-XML-Parser
 p5-XML-Parser-EasyTree          ports/textproc/p5-XML-Parser-EasyTree
 p5-XML-Parser-Lite-Tree         ports/textproc/p5-XML-Parser-Lite-Tree
+p5-XML-Parser-Style-EasyTree    ports/textproc/p5-XML-Parser-Style-EasyTree
 p5-XML-Parser-Style-Elemental   ports/textproc/p5-XML-Parser-Style-Elemental
 p5-XML-Quote                    ports/textproc/p5-XML-Quote
 p5-XML-RAI                      ports/textproc/p5-XML-RAI
@@ -13590,6 +13605,7 @@ p5-any-moose                    ports/devel/p5-Any-Moose
 p5-anydata                      ports/devel/p5-AnyData
 p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
+p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
 p5-apache-admin-config          ports/www/p5-Apache-Admin-Config
 p5-apache-antispam              ports/www/p5-Apache-AntiSpam
@@ -13730,6 +13746,7 @@ p5-authen-smb                   ports/security/p5-Authen-Smb
 p5-authen-tacacsplus            ports/security/p5-Authen-TacacsPlus
 p5-authen-ticket                ports/security/p5-Authen-Ticket
 p5-authen-typekey               ports/security/p5-Authen-TypeKey
+p5-autobox                      ports/devel/p5-autobox
 p5-autoloader                   ports/devel/p5-AutoLoader
 p5-autoxs-header                ports/devel/p5-AutoXS-Header
 p5-axkit                        ports/www/p5-AxKit
@@ -13868,6 +13885,7 @@ p5-catalyst-component-instancepercontext  ports/www/p5-Catalyst-Component-Instan
 p5-catalyst-controller-bindlex  ports/www/p5-Catalyst-Controller-BindLex
 p5-catalyst-controller-formbuilder  ports/www/p5-Catalyst-Controller-FormBuilder
 p5-catalyst-controller-html-formfu  ports/www/p5-Catalyst-Controller-HTML-FormFu
+p5-catalyst-controller-requesttoken  ports/www/p5-Catalyst-Controller-RequestToken
 p5-catalyst-devel               ports/www/p5-Catalyst-Devel
 p5-catalyst-engine-apache       ports/www/p5-Catalyst-Engine-Apache
 p5-catalyst-engine-http-poe     ports/www/p5-Catalyst-Engine-HTTP-POE
@@ -13964,6 +13982,7 @@ p5-catalyst-view-templated      ports/www/p5-Catalyst-View-Templated
 p5-catalyst-view-tt             ports/www/p5-Catalyst-View-TT
 p5-catalyst-view-tt-controllerlocal  ports/www/p5-Catalyst-View-TT-ControllerLocal
 p5-catalyst-view-xslt           ports/www/p5-Catalyst-View-XSLT
+p5-catalystx-component-traits   ports/www/p5-CatalystX-Component-Traits
 p5-cdb_file                     ports/databases/p5-CDB_File
 p5-cdb_file-generator           ports/databases/p5-CDB_File-Generator
 p5-cddb                         ports/audio/p5-CDDB
@@ -14573,6 +14592,7 @@ p5-devel-gladiator              ports/devel/p5-Devel-Gladiator
 p5-devel-globaldestruction      ports/devel/p5-Devel-GlobalDestruction
 p5-devel-leak                   ports/devel/p5-Devel-Leak
 p5-devel-leak-object            ports/devel/p5-Devel-Leak-Object
+p5-devel-leakguard-object       ports/devel/p5-Devel-LeakGuard-Object
 p5-devel-leaktrace              ports/devel/p5-Devel-LeakTrace
 p5-devel-leaktrace-fast         ports/devel/p5-Devel-LeakTrace-Fast
 p5-devel-lexalias               ports/devel/p5-Devel-LexAlias
@@ -15277,6 +15297,7 @@ p5-lchown                       ports/sysutils/p5-Lchown
 p5-lego-rcx                     ports/misc/p5-LEGO-RCX
 p5-lexical-alias                ports/devel/p5-Lexical-Alias
 p5-lexical-persistence          ports/devel/p5-Lexical-Persistence
+p5-lib-abs                      ports/devel/p5-lib-abs
 p5-libalarm                     ports/devel/p5-libalarm
 p5-libapreq                     ports/www/p5-libapreq
 p5-libapreq-static              ports/www/p5-libapreq-static
@@ -15596,6 +15617,7 @@ p5-mojo                         ports/www/p5-Mojo
 p5-mojomojo                     ports/www/p5-MojoMojo
 p5-mon                          ports/net-mgmt/p5-Mon
 p5-moose                        ports/devel/p5-Moose
+p5-moose-autobox                ports/devel/p5-Moose-Autobox
 p5-moose-policy                 ports/devel/p5-Moose-Policy
 p5-moosex-async                 ports/devel/p5-MooseX-Async
 p5-moosex-attributehelpers      ports/devel/p5-MooseX-AttributeHelpers
@@ -15618,6 +15640,7 @@ p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
 p5-moosex-storage               ports/devel/p5-MooseX-Storage
 p5-moosex-strictconstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-moosex-traits                ports/devel/p5-MooseX-Traits
+p5-moosex-traits-pluggable      ports/devel/p5-MooseX-Traits-Pluggable
 p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-datetime-butmaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
@@ -16326,6 +16349,7 @@ p5-sru                          ports/www/p5-SRU
 p5-ssn-validate                 ports/devel/p5-SSN-Validate
 p5-stanford-dnsserver           ports/dns/p5-Stanford-DNSserver
 p5-stat-lsmode                  ports/sysutils/p5-Stat-lsMode
+p5-statistics-basic             ports/math/p5-Statistics-Basic
 p5-statistics-benford           ports/math/p5-Statistics-Benford
 p5-statistics-chisquare         ports/math/p5-Statistics-ChiSquare
 p5-statistics-contingency       ports/math/p5-Statistics-Contingency
@@ -16358,6 +16382,7 @@ p5-string-lrc                   ports/devel/p5-String-LRC
 p5-string-multibyte             ports/converters/p5-String-Multibyte
 p5-string-parity                ports/devel/p5-String-Parity
 p5-string-random                ports/devel/p5-String-Random
+p5-string-rewriteprefix         ports/textproc/p5-String-RewritePrefix
 p5-string-rexxparse             ports/devel/p5-String-RexxParse
 p5-string-scanf                 ports/textproc/p5-String-Scanf
 p5-string-setutf8               ports/converters/p5-String-SetUTF8
@@ -17011,6 +17036,7 @@ p5-xml-opml-libxml              ports/textproc/p5-XML-OPML-LibXML
 p5-xml-parser                   ports/textproc/p5-XML-Parser
 p5-xml-parser-easytree          ports/textproc/p5-XML-Parser-EasyTree
 p5-xml-parser-lite-tree         ports/textproc/p5-XML-Parser-Lite-Tree
+p5-xml-parser-style-easytree    ports/textproc/p5-XML-Parser-Style-EasyTree
 p5-xml-parser-style-elemental   ports/textproc/p5-XML-Parser-Style-Elemental
 p5-xml-quote                    ports/textproc/p5-XML-Quote
 p5-xml-rai                      ports/textproc/p5-XML-RAI
@@ -21335,7 +21361,6 @@ smtpclient                      ports/mail/smtpclient
 smtpd                           ports/mail/smtpd
 smtpfeed                        ports/mail/smtpfeed
 smtpmail                        ports/mail/smtpmail
-smtpmap                         ports/security/smtpmap
 smtpproxy                       ports/mail/smtpproxy
 smtprc                          ports/mail/smtprc
 smtpscan                        ports/security/smtpscan
