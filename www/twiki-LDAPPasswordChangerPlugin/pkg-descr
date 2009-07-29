@@ -1,0 +1,7 @@
+This plugin asks for and changes your password at a pre-configured LDAP server.
+The users willing to change his/her password must be authenticated already.
+This plugin makes no sense for the Guest user.
+
+Author: Luis Campos De Carvalho
+
+WWW: http://twiki.org/cgi-bin/view/Plugins/LDAPPasswordChangerPlugin

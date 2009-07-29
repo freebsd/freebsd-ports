@@ -1547,6 +1547,7 @@
     SUBDIR += twiki-GluePlugin
     SUBDIR += twiki-InterwikiPlugin
     SUBDIR += twiki-JSCalendarContrib
+    SUBDIR += twiki-LDAPPasswordChangerPlugin
     SUBDIR += twiki-LdapContrib
     SUBDIR += twiki-LdapNgPlugin
     SUBDIR += twiki-MailerContrib
