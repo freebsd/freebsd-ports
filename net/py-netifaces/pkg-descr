@@ -1,0 +1,7 @@
+Getting network addresses from Python
+
+It.s been irritating me for ages that it isn.t possible to
+straightforwardly get the network address(es) of the machine
+you.re running on from a Python program.
+
+WWW:	http://alastairs-place.net/netifaces/
