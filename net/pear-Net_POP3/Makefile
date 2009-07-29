@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_POP3
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	net pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
-FILES=		POP3.php
-TESTS=		Net_POP3_example.php
-_TESTSDIR=	.
+FILES=		Net/POP3.php
+DOCS=		examples/Net_POP3_example.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
