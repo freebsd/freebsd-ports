@@ -95,8 +95,8 @@ fi
 
 java_command="%%LOCALBASE%%/bin/java \
 	${tomcat%%TOMCAT_VERSION%%_java_opts} \
-	-Djava.endorsed.dirs=$JAVA_ENDORSED_DIRS \
-	-classpath %%TOMCAT_HOME%%/%%JAR_FILE%%:%%TOMCAT_HOME%%/bin/commons-logging-api.jar:${tomcat%%TOMCAT_VERSION%%_classpath} \
+	-Djava.endorsed.dirs=%%TOMCAT_HOME%%/endorsed \
+	-classpath %%TOMCAT_HOME%%/%%JAR_FILE%%:${tomcat%%TOMCAT_VERSION%%_classpath} \
 	-Dcatalina.base=${tomcat%%TOMCAT_VERSION%%_catalina_base} \
 	-Dcatalina.home=${tomcat%%TOMCAT_VERSION%%_catalina_home} \
 	-Djava.io.tmpdir=${tomcat%%TOMCAT_VERSION%%_catalina_tmpdir} \
