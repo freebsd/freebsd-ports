@@ -49,7 +49,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>A security issue has been reported in Mono, which can be
 	    exploited by malicious people to conduct spoofing attacks.</p>
 	  <p>The security issue is caused due to an error when processing
-	    certain XML signatures.
+	    certain XML signatures.</p>
 	</blockquote>
       </body>
     </description>
