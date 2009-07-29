@@ -1,0 +1,4 @@
+bin/opentracker
+@unexec if cmp -s %D/etc/opentracker/opentracker.conf.sample %D/etc/opentracker/opentracker.conf; then rm -f %D/etc/opentracker/opentracker.conf; fi
+etc/opentracker/opentracker.conf.sample
+@dirrm etc/opentracker

@@ -1,0 +1,58 @@
+--- Makefile.orig	2009-06-27 16:48:37.000000000 +0100
++++ Makefile	2009-06-27 18:19:43.000000000 +0100
+@@ -8,14 +8,14 @@
+ # LIBOWFAT_LIBRARY=$(PREFIX)/lib
+ 
+ # BSD flavour
+-# PREFIX?=/usr/local
+-# LIBOWFAT_HEADERS=$(PREFIX)/include/libowfat
+-# LIBOWFAT_LIBRARY=$(PREFIX)/lib
++PREFIX?=/usr/local
++LIBOWFAT_HEADERS=$(LOCALBASE)/include/libowfat
++LIBOWFAT_LIBRARY=$(LOCALBASE)/lib
+ 
+ # Debug flavour
+-PREFIX?=..
+-LIBOWFAT_HEADERS=$(PREFIX)/libowfat
+-LIBOWFAT_LIBRARY=$(PREFIX)/libowfat
++# PREFIX?=..
++# LIBOWFAT_HEADERS=$(PREFIX)/libowfat
++# LIBOWFAT_LIBRARY=$(PREFIX)/libowfat
+ 
+ BINDIR?=$(PREFIX)/bin
+ 
+@@ -31,7 +31,7 @@
+ #FEATURES+=-DWANT_LOG_NETWORKS
+ #FEATURES+=-DWANT_RESTRICT_STATS
+ #FEATURES+=-DWANT_IP_FROM_PROXY
+-FEATURES+=-DWANT_FULLSCRAPE
++#FEATURES+=-DWANT_FULLSCRAPE
+ 
+ #FEATURES+=-D_DEBUG_HTTPERROR
+ 
+@@ -46,23 +46,15 @@
+ SOURCES=opentracker.c trackerlogic.c scan_urlencoded_query.c ot_mutex.c ot_stats.c ot_vector.c ot_clean.c ot_udp.c ot_iovec.c ot_fullscrape.c ot_accesslist.c ot_http.c ot_livesync.c
+ 
+ OBJECTS = $(SOURCES:%.c=%.o)
+-OBJECTS_debug = $(SOURCES:%.c=%.debug.o)
+ 
+-.SUFFIXES: .debug.o .o .c
++.SUFFIXES: .o .c
+ 
+-all: $(BINARY) $(BINARY).debug
++all: $(BINARY)
+ 
+ CFLAGS_production = $(CFLAGS) $(OPTS_production) $(FEATURES)
+-CFLAGS_debug = $(CFLAGS) $(OPTS_debug) $(FEATURES)
+ 
+ $(BINARY): $(OBJECTS) $(HEADERS)
+ 	$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
+-	strip $@
+-$(BINARY).debug: $(OBJECTS_debug) $(HEADERS)
+-	$(CC) -o $@ $(OBJECTS_debug) $(LDFLAGS)
+-
+-.c.debug.o : $(HEADERS)
+-	$(CC) -c -o $@ $(CFLAGS_debug) $(<:.debug.o=.c)
+ 
+ .c.o : $(HEADERS)
+ 	$(CC) -c -o $@ $(CFLAGS_production) $<

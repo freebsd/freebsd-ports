@@ -449,6 +449,7 @@
     SUBDIR += openradius
     SUBDIR += openser
     SUBDIR += openslp
+    SUBDIR += opentracker
     SUBDIR += openverse
     SUBDIR += ortp
     SUBDIR += osrtspproxy
