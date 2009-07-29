@@ -74,6 +74,7 @@ tomcat%%TOMCAT_VERSION%%_stop_timeout="${tomcat%%TOMCAT_VERSION%%_stop_timeout:-
 name="tomcat%%TOMCAT_VERSION%%"
 rcvar=`set_rcvar`
 pidfile="/var/run/%%APP_SHORTNAME%%.pid"
+procname="java"
 
 load_rc_config "${name}"
 
@@ -104,17 +105,6 @@ java_command="%%LOCALBASE%%/bin/java \
 
 log_args=">> ${tomcat%%TOMCAT_VERSION%%_stdout_log} \
 	2>> ${tomcat%%TOMCAT_VERSION%%_stderr_log} "
-
-# Subvert the check_pid_file procname check.
-if [ -f $pidfile ]; then
-  read rc_pid junk < $pidfile
-  if [ ! -z "$rc_pid" ]; then
-    procname=`ps -o command= -p $rc_pid | cut -f1 -d ' '`
-  fi
-fi
-if [ -z "$procname" ]; then
-  procname=nonexistent
-fi
 
 required_files="${tomcat%%TOMCAT_VERSION%%_catalina_home}/conf/server.xml"
 
