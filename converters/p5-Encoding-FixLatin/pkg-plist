@@ -1,0 +1,6 @@
+bin/fix_latin
+%%SITE_PERL%%/Encoding/FixLatin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding/FixLatin/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding/FixLatin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding
+@dirrmtry %%SITE_PERL%%/Encoding
