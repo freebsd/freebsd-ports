@@ -1,17 +1,43 @@
 bin/warzone2100
-%%DATADIR%%/mp.wz
-%%DATADIR%%/warzone.wz
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Readme.de
-%%PORTDOCS%%%%DOCSDIR%%/Readme.de.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/Readme.en
-%%PORTDOCS%%%%DOCSDIR%%/Readme.en.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/styles/readme.print.css
-%%PORTDOCS%%%%DOCSDIR%%/styles/readme.screen.css
-share/icons/warzone2100.png
 share/applications/warzone2100.desktop
+share/icons/warzone2100.png
+%%NLS%%share/locale/cs/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/da/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/de/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/es/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/fy/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/it/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/la/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/warzone2100.mo
+%%DATADIR%%/base.wz
+%%DATADIR%%/mods/multiplay/aivolution.wz
+%%DATADIR%%/mods/multiplay/ntw.wz
+%%DATADIR%%/mp.wz
+%%DATADIR%%/music/menu.ogg
+%%DATADIR%%/music/music.wpl
+%%DATADIR%%/music/track1.ogg
+%%DATADIR%%/music/track2.ogg
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/mods/multiplay
+@dirrm %%DATADIR%%/mods
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/styles
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%@dirrmtry share/locale/la/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/la
+%%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fy
 @dirrmtry share/applications
 @dirrmtry share/icons
