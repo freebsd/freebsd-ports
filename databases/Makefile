@@ -48,6 +48,7 @@
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += edb
+    SUBDIR += embedded_innodb
     SUBDIR += emma
     SUBDIR += erlang-mysql
     SUBDIR += erserver

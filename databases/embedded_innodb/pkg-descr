@@ -1,0 +1,15 @@
+This is the standalone version of the MySQL storage engine InnoDB.
+
+Made for application developers, device makers and ISVs, Embedded InnoDB
+provides all the features of InnoDB in an embeddable form, without the
+overhead of the MySQL server.
+
+Embedded InnoDB is used independently of MySQL. It is designed to be linked
+directly into application programs, and provides highly efficient, low-level
+database management services, not using SQL.
+
+Embedded InnoDB provides concurrency control, sophisticated indexing and crash
+recovery. It is used via non-SQL, ISAM-like API for creating and querying
+tables and executing other data management functions.
+
+WWW: http://www.innodb.com/products/embedded-innodb/
