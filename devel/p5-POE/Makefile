@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	1.0040
+PORTVERSION=	1.0070
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathT
 		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
 		${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter \
 		${SITE_PERL}/${PERL_ARCH}/IO.pm:${PORTSDIR}/devel/p5-IO \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		p5-Storable>=2.16:${PORTSDIR}/devel/p5-Storable \
+		p5-POE-Test-Loops>=1.021:${PORTSDIR}/devel/p5-POE-Test-Loops \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
