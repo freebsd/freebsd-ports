@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openct
-PORTVERSION=	0.6.16
+PORTVERSION=	0.6.17
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
