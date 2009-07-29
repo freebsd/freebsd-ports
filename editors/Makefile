@@ -86,6 +86,7 @@
     SUBDIR += kile
     SUBDIR += klat
     SUBDIR += klat4
+    SUBDIR += koffice-i18n
     SUBDIR += koffice-i18n-af
     SUBDIR += koffice-i18n-bg
     SUBDIR += koffice-i18n-br
