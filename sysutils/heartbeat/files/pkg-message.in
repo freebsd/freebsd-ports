@@ -1,0 +1,25 @@
+
+#                                                      #
+##                                                    ##
+###                                                  ###
+########################################################
+###                                                  ###
+##                                                    ##
+#                                                      #
+
+    INFORMATION:
+    - Configuration directory: %%PREFIX%%/etc/ha.d 
+
+
+    CAVEATS:
+    - bcast is not available on FreeBSD.
+    - BasicSanityCheck is not available on FreeBSD.
+
+#                                                      #
+##                                                    ##
+###                                                  ###
+########################################################
+###                                                  ###
+##                                                    ##
+#                                                      #
+

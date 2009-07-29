@@ -1,24 +1,21 @@
-heartbeat is a basic high-availability subsystem.  It will run
-scripts at initialization, and when machines go up or down.  This
-version will also perform IP address takeover using gratuitous ARPs.
+The Heartbeat program is one of the core components of the Linux-HA 
+(High-Availability Linux) project. Heartbeat is highly portable, 
+and runs on every known Linux platform, and also on FreeBSD and 
+Solaris. Ports to other OSes are also in progress.
 
-It implements the following kinds of heartbeats:
-        - Bidirectional Serial Rings ("raw" serial ports)
-        - UDP/IP broadcast (ethernet, etc)
-        - Unicast heartbeats
-        - "ping" heartbeats (for routers, switches, etc.)
-           (to be used for breaking ties in 2-node systems)
+Heartbeat is the first piece of software which was written for the 
+Linux-HA project. It performs death-of-node detection, 
+communications and cluster management in one process.
 
-ldirectord is a stand-alone daemon to monitor services.
+The Heartbeat program has been around for a while. It has a great 
+many strengths, and yet there were a few weaknesses in version 1 
+that needed to be addressed:
 
-The STONITH module (a.k.a. STOMITH) provides an extensible interface
-for remotely powering down a node in the cluster.
+- limitation on two nodes for cluster size
+- inability to monitor resources for their correct operation
+- minimal ability to express dependency information 
 
-PILS is an generalized and portable open source Plugin and Interface
-Loading System.  PILS manages both plugins (loadable objects), and
-the interfaces these plugins implement.  PILS is designed to support
-any number of plugins implementing any number of interfaces.
+This release removes these limitations.
 
-WWW: http://linux-ha.org/
 
-Scott Kleihege <scott-ports@tummy.com>
+WWW: http://linux-ha.org
