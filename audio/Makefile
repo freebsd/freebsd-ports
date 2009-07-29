@@ -495,6 +495,7 @@
     SUBDIR += oggsplit
     SUBDIR += openal
     SUBDIR += openal-soft
+    SUBDIR += opencore-amr
     SUBDIR += openspc
     SUBDIR += opmixer
     SUBDIR += optimfrog
