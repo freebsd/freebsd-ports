@@ -124,6 +124,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/nodetree_virtual.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_fsm.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_mnesia.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ram_file_io_server.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ram_file_io_server_old.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/randoms.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sha.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/shaper.beam
