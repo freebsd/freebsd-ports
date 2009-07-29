@@ -43,7 +43,8 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off \
 		SQLITE "Use SQLite backend" off \
 		SSL "Enable SSL support (imaps or google spellcheck)" off \
-		LOCALCHECK "Install internal spellchecker" off
+		LOCALCHECK "Install internal spellchecker" off \
+		AUTOCOMP "Enable autocomplete in login form" off
 
 .include <bsd.port.pre.mk>
 
@@ -83,6 +84,10 @@ post-extract:
 post-patch:
 	@${RM} ${WRKSRC}/bin/*.sh
 	@${RM} ${WRKSRC}/config/main.inc.php.dist.orig
+.if defined(WITH_AUTOCOMP)
+	@${REINPLACE_CMD} "s/ autocomplete=\"off\"//g" \
+		${WRKSRC}/skins/default/templates/login.html
+.endif
 .if defined(WITH_REPLACE_MAIL_URL)
 	@${REINPLACE_CMD} "s/'mail'/'${MAIL}'/g" ${WRKSRC}/index.php \
 		${WRKSRC}/program/include/rcmail.php \
