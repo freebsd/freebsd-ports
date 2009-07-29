@@ -73,7 +73,7 @@ tomcat%%TOMCAT_VERSION%%_stop_timeout="${tomcat%%TOMCAT_VERSION%%_stop_timeout:-
 
 name="tomcat%%TOMCAT_VERSION%%"
 rcvar=`set_rcvar`
-pidfile="%%PID_FILE%%"
+pidfile="/var/run/%%APP_SHORTNAME%%.pid"
 
 load_rc_config "${name}"
 
@@ -109,7 +109,7 @@ log_args=">> ${tomcat%%TOMCAT_VERSION%%_stdout_log} \
 if [ -f $pidfile ]; then
   read rc_pid junk < $pidfile
   if [ ! -z "$rc_pid" ]; then
-    procname=`ps -o ucomm= $rc_pid`
+    procname=`ps -o command= -p $rc_pid | cut -f1 -d ' '`
   fi
 fi
 if [ -z "$procname" ]; then
@@ -147,7 +147,7 @@ tomcat%%TOMCAT_VERSION%%_stop() {
 	${java_command} stop
 	tomcat_wait_max_for_pid ${tomcat%%TOMCAT_VERSION%%_stop_timeout} ${rc_pid}
 	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
-	echo -n > ${pidfile}
+	rm -f ${pidfile}
 }
 
 tomcat_wait_max_for_pid() {

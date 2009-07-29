@@ -9,15 +9,6 @@
  
    <!--APR library loader. Documentation at /docs/apr.html -->
    <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
-@@ -15,7 +15,7 @@
-   <!-- Global JNDI resources
-        Documentation at /docs/jndi-resources-howto.html
-   -->
--  <GlobalNamingResources>
-+ <GlobalNamingResources>
-     <!-- Editable user database that can also be used by
-          UserDatabaseRealm to authenticate users
-     -->
 @@ -47,7 +47,7 @@
           APR (HTTP/AJP) Connector: /docs/apr.html
           Define a non-SSL HTTP/1.1 Connector on port 8080
