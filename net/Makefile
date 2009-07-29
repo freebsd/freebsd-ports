@@ -772,6 +772,7 @@
     SUBDIR += py-medusa
     SUBDIR += py-mp-random
     SUBDIR += py-netaddr
+    SUBDIR += py-netifaces
     SUBDIR += py-netstring
     SUBDIR += py-oauth
     SUBDIR += py-pcap
