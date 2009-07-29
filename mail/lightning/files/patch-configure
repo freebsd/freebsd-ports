@@ -1,0 +1,11 @@
+--- configure.orig	2009-07-28 09:36:01.000000000 +0200
++++ configure	2009-07-28 09:37:09.000000000 +0200
+@@ -5408,7 +5408,7 @@
+     CPU_ARCH=sparc
+     ;;
+ 
+-x86_64 | sparc | ppc | ia64)
++amd64 | x86_64 | sparc | ppc | ia64)
+     CPU_ARCH="$OS_TEST"
+     ;;
+ esac
