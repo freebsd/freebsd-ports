@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mma
-DISTVERSION=	1.4
-#PORTREVISION=	0
+DISTVERSION=	1.5
+PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -33,7 +33,8 @@ FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
 .if !defined (NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-pdf-${DISTVERSION:S,a,,}.tar.gz
 .if !defined (NO_INSTALL_MANPAGES)
-MAN1=	mma.1 mma-libdoc.1 mma-renum.1
+MAN1=	mma.1 mma-renum.1
+MAN8=	mma-libdoc.8
 .endif
 .endif
 
@@ -58,7 +59,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}/pdf && ${CP} ${WRKDOC}/*.pdf ${DOCSDIR}/pdf/
 	@cd ${DOCSDIR} && ${RM} -R man
 .if !defined(NO_INSTALL_MANPAGES)
-	@cd ${WRKSRC}/docs/man && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1/
+	@cd ${WRKSRC}/docs/man && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1/ && ${INSTALL_MAN} ${MAN8} ${MANPREFIX}/man/man8/
 .endif
 .endif
 
