@@ -25,10 +25,8 @@ stop_cmd="fossology_stop"
 fossology_start()
 {
 	echo "Starting fossology."
-# XXX: Enter /var/tmp because uses shm_open in current directory,
-#      otherwise patch scheduler.c
-	cd /var/tmp && ${SCHEDULER} -d -R
-	cd /var/tmp && ${WATCHDOG}
+	${SCHEDULER} -d -R
+	${WATCHDOG}
 }
 
 fossology_stop()
