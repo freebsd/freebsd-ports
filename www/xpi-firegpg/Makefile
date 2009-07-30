@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://getfiregpg.org/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	stable
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extension that acts as an assistant for using GPG
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
