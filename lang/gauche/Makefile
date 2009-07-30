@@ -9,8 +9,7 @@ PORTNAME=	gauche
 PORTVERSION=	0.8.13	# Keep databases/gauche-gdbm in sync with this
 PORTREVISION=	2
 CATEGORIES=	lang scheme
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	Gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -42,6 +41,8 @@ USE_ICONV=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		gosh.1 gauche-config.1
+
+MAKE_JOBS_UNSAFE=yes
 
 .if !defined(NOPORTDOCS)
 INFO=		gauche-refe gauche-refj
