@@ -90,6 +90,10 @@ USE_PERL5=	YES
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+.if ${OSVERSION} >= 800000
+BROKEN=		Incorrect pkg-plist
+.endif
+
 .ifdef(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
 .else
