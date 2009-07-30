@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pink-pony
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -31,19 +31,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	README
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's,(GLSL|levels|models|music|sounds|textures)/,${DATADIR}/&,' \
+	@${REINPLACE_CMD} -Ee 's,(GLSL|levels|models|music|textures)/,${DATADIR}/&,' \
 		${WRKSRC}/pony.options ${WRKSRC}/PinkPony.cc ${WRKSRC}/lib/*.cc
 	@${REINPLACE_CMD} -e 's|pony.options|${PREFIX}/etc/pink-pony.conf|' \
 		${WRKSRC}/PinkPony.cc
-
-post-configure:
-	cd ${WRKSRC}/lib && ${LOCALBASE}/bin/protoc --cpp_out=. mesh.proto
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Pony ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/pony.options ${PREFIX}/etc/pink-pony.conf
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \
-		"GLSL levels models music sounds textures" ${DATADIR}
+		"GLSL levels models music textures" ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/

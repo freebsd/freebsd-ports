@@ -3,6 +3,8 @@ etc/pink-pony.conf
 %%DATADIR%%/GLSL/draw_particles.frag
 %%DATADIR%%/GLSL/draw_particles.geom
 %%DATADIR%%/GLSL/draw_particles.vert
+%%DATADIR%%/GLSL/draw_particles_cpu.frag
+%%DATADIR%%/GLSL/draw_particles_cpu.vert
 %%DATADIR%%/GLSL/heart.frag
 %%DATADIR%%/GLSL/heart.vert
 %%DATADIR%%/GLSL/heightmap.frag
@@ -17,32 +19,21 @@ etc/pink-pony.conf
 %%DATADIR%%/levels/heart.png
 %%DATADIR%%/levels/ring.png
 %%DATADIR%%/levels/skull.png
-%%DATADIR%%/models/Heart.mesh.xml
 %%DATADIR%%/models/Heart.pmesh
-%%DATADIR%%/models/Pony-animated.mesh.xml
 %%DATADIR%%/models/Pony-animated.pmesh
 %%DATADIR%%/models/Pony-animated.pskeleton
-%%DATADIR%%/models/Pony-animated.skeleton.xml
-%%DATADIR%%/models/candy.blend
-%%DATADIR%%/models/heart.blend
-%%DATADIR%%/models/pony-animated.blend
-%%DATADIR%%/models/pony.blend
 %%DATADIR%%/music/To be happy.mp3
-%%DATADIR%%/sounds/explosion.wav
-%%DATADIR%%/sounds/heart.wav
 %%DATADIR%%/textures/four.png
 %%DATADIR%%/textures/grass.png
 %%DATADIR%%/textures/heart-particle.png
 %%DATADIR%%/textures/noise.png
 %%DATADIR%%/textures/one.png
-%%DATADIR%%/textures/pony-blue.png
 %%DATADIR%%/textures/pony.png
 %%DATADIR%%/textures/sand.png
 %%DATADIR%%/textures/sky.png
 %%DATADIR%%/textures/three.png
 %%DATADIR%%/textures/two.png
 @dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/models
 @dirrm %%DATADIR%%/levels
