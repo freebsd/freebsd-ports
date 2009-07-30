@@ -962,7 +962,7 @@ lib/libfossrepo.a
 @dirrm %%DATADIR%%/agents/licenses/AFL
 @dirrm %%DATADIR%%/agents/licenses
 @dirrm %%DATADIR%%/agents
-@unexec rmdir %D/%%DATADIR%% >/dev/null || echo "If you are permanently removing FOSSology, please manually remove the repository files in \"%D/%%DATADIR%%\"." | fmt
+@unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing FOSSology, please manually remove the repository files in \"%D/%%DATADIR%%\"." | fmt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/fossology/agents
 @dirrm lib/fossology

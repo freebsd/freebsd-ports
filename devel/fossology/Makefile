@@ -11,14 +11,13 @@
 #   archivers/rpm4 -> archivers/rpm2cpio
 #
 # TODO:
-# - Add status command to rc.d script (run through "daemon -p ...").
-# - Make it shm_open in /var/tmp from lockfs.c rather than changing
-#   current directory.
+# - Add status command to rc.d script (run through "daemon -p ...")
 # - Add crontab entry for postgres db optimizations?
 #
 
 PORTNAME=	fossology
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -97,15 +96,6 @@ post-patch:
 		${WRKSRC}/cli/fo_notify.php
 # Add path to repository (might be hardcoded in other parts of FOSSology)
 	@${ECHO_CMD} "${FOSS_DB}" > ${WRKSRC}/common/defconf/RepPath.conf
-
-# XXX: this is done in rc.d script, but program could be modified as well
-# Fix shm file path
-#	@${REINPLACE_CMD} -Ee 's|"(fossology-scheduler)"|"/var/tmp/\1"|' \
-#		${WRKSRC}/scheduler/lockfs.c
-# Do not chdir to "/" as it does not have permission to create files there
-	@${REINPLACE_CMD} -e 's|daemon(0,|daemon(1,|' \
-		${WRKSRC}/scheduler/scheduler.c \
-		${WRKSRC}/scheduler/fo_watchdog.c
 # Do not install init.d script (we use our own)
 	@${REINPLACE_CMD} -Ee 's|^(install: all) install-init|\1|' \
 		${WRKSRC}/scheduler/Makefile
