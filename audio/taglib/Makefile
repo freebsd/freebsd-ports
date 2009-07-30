@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://ktown.kde.org/~wheeler/files/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Library for manipulating ID3 tags and Ogg comments
 
 USE_AUTOTOOLS=	libtool:15
