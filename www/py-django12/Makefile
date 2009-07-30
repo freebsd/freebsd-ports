@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Django-${PORTVERSION}-final
+DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -22,8 +21,6 @@ USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Django
-PYDISTUTILS_PKGVERSION=	1.0_final
-PYDISTUTILS_EGGINFO=	Django-${PORTVERSION}_final-${PYTHON_VERSION:S/thon//}.egg-info
 
 CONFLICTS=	py2[0-9]-django-devel-[0-9]*
 
