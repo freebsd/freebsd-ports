@@ -14,5 +14,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math/Polygon
 @dirrmtry %%SITE_PERL%%/Math
-@dirrmtry %%SITE_PERL%%/mach/auto/Math/Polygon
-@dirrmtry %%SITE_PERL%%/mach/auto/Math
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math

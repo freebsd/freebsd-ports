@@ -1,10 +1,10 @@
 %%SITE_PERL%%/Ogg/Vorbis/Header/PurePerl.pm
 %%SITE_PERL%%/Ogg/Vorbis/Header/ogginfo.pl
-%%SITE_PERL%%/mach/auto/Ogg/Vorbis/Header/PurePerl/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Ogg/Vorbis/Header/PurePerl
-@dirrmtry %%SITE_PERL%%/mach/auto/Ogg/Vorbis/Header
-@dirrmtry %%SITE_PERL%%/mach/auto/Ogg/Vorbis
-@dirrmtry %%SITE_PERL%%/mach/auto/Ogg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/Header/PurePerl/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/Header/PurePerl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/Header
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ogg/Vorbis
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ogg
 @dirrmtry %%SITE_PERL%%/Ogg/Vorbis/Header
 @dirrmtry %%SITE_PERL%%/Ogg/Vorbis
 @dirrmtry %%SITE_PERL%%/Ogg

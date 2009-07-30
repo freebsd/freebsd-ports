@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Devel/SimpleTrace.pm
-%%SITE_PERL%%/mach/auto/Devel/SimpleTrace/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/SimpleTrace/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/SimpleTrace
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrmtry %%SITE_PERL%%/Devel

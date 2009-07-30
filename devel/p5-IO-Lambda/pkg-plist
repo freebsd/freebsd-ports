@@ -19,8 +19,8 @@
 %%SITE_PERL%%/IO/Lambda/Signal.pm
 %%SITE_PERL%%/IO/Lambda/Socket.pm
 %%SITE_PERL%%/IO/Lambda/Thread.pm
-%%SITE_PERL%%/mach/auto/IO/Lambda/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/IO/Lambda
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Lambda/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Lambda
 @dirrm %%SITE_PERL%%/IO/Lambda/Loop
 @dirrm %%SITE_PERL%%/IO/Lambda/HTTP/Authen
 @dirrm %%SITE_PERL%%/IO/Lambda/HTTP

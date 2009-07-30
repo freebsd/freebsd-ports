@@ -5,7 +5,7 @@
 %%SITE_PERL%%/Gtk2/Ex/Dialogs/ChooseFile.pm
 %%SITE_PERL%%/Gtk2/Ex/Dialogs/ErrorMsg.pm
 %%SITE_PERL%%/Gtk2/Ex/Dialogs/ChoosePreviewFile.pm
-%%SITE_PERL%%/mach/auto/Gtk2/Ex/Dialogs/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Dialogs/.packlist
 @dirrmtry %%SITE_PERL%%/Gtk2/Ex/Dialogs
 @dirrmtry %%SITE_PERL%%/Gtk2/Ex
 @dirrmtry %%SITE_PERL%%/Gtk2

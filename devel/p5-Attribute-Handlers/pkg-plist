@@ -1,5 +1,5 @@
-%%SITE_PERL%%/mach/auto/Attribute/Handlers/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute/Handlers/.packlist
 %%SITE_PERL%%/Attribute/Handlers.pm
-@dirrm %%SITE_PERL%%/mach/auto/Attribute/Handlers
-@dirrm %%SITE_PERL%%/mach/auto/Attribute
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute/Handlers
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute
 @dirrm %%SITE_PERL%%/Attribute

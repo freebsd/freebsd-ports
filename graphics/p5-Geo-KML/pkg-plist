@@ -1,4 +1,4 @@
-%%SITE_PERL%%/mach/auto/Geo/KML/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/KML/.packlist
 %%SITE_PERL%%/Geo/KML.pm
 %%SITE_PERL%%/Geo/KML.pod
 %%SITE_PERL%%/Geo/KML/Util.pm
@@ -18,8 +18,8 @@
 @dirrmtry %%SITE_PERL%%/Geo/KML/xsd/xal-2.0
 @dirrmtry %%SITE_PERL%%/Geo/KML/xsd
 @dirrmtry %%SITE_PERL%%/Geo/KML
-@dirrmtry %%SITE_PERL%%/mach/auto/Geo/KML
-@dirrmtry %%SITE_PERL%%/mach/auto/Geo
-@dirrmtry %%SITE_PERL%%/mach/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/KML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/mach
 @dirrmtry %%SITE_PERL%%/Geo

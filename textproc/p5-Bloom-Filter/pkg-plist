@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Bloom/Filter.pm
 @dirrmtry %%SITE_PERL%%/Bloom
-%%SITE_PERL%%/mach/auto/Bloom/Filter/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Bloom/Filter
-@dirrmtry %%SITE_PERL%%/mach/auto/Bloom
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bloom/Filter/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bloom/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bloom

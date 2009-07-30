@@ -4,4 +4,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/TraceSAX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrm %%SITE_PERL%%/Devel/TraceSAX
-@dirrmtry lib/perl5/site_perl/5.8.7/Devel
+@dirrmtry %%SITE_PERL%%/Devel

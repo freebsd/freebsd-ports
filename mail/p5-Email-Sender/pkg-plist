@@ -21,9 +21,9 @@
 %%SITE_PERL%%/Email/Sender/Transport/Test.pm
 %%SITE_PERL%%/Email/Sender/Transport/Wrapper.pm
 %%SITE_PERL%%/Email/Sender/Util.pm
-%%SITE_PERL%%/mach/auto/Email/Sender/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Email/Sender
-@dirrmtry %%SITE_PERL%%/mach/auto/Email
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/Email/Sender/Transport/SMTP
 @dirrmtry %%SITE_PERL%%/Email/Sender/Transport
 @dirrmtry %%SITE_PERL%%/Email/Sender/Success

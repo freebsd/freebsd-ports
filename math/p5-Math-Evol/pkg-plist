@@ -1,6 +1,6 @@
 bin/ps_evol
 %%SITE_PERL%%/Math/Evol.pm
-%%SITE_PERL%%/mach/auto/Math/Evol/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Evol/.packlist
 @dirrmtry %%SITE_PERL%%/Math
-@dirrm %%SITE_PERL%%/mach/auto/Math/Evol
-@dirrmtry %%SITE_PERL%%/mach/auto/Math
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Evol
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math

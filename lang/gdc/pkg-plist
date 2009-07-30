@@ -91,8 +91,8 @@ include/d/%%GCC_VER%%/std/c/linux/ldblcompat.d
 include/d/%%GCC_VER%%/std/c/linux/linux.d
 include/d/%%GCC_VER%%/std/c/linux/linuxextern.d
 include/d/%%GCC_VER%%/std/c/linux/socket.d
-include/d/%%GCC_VER%%/std/c/mach/mach.d
-include/d/%%GCC_VER%%/std/c/mach/mach_extern.d
+include/d/%%GCC_VER%%/std/c/%%PERL_ARCH%%/mach.d
+include/d/%%GCC_VER%%/std/c/%%PERL_ARCH%%/mach_extern.d
 include/d/%%GCC_VER%%/std/c/skyos/compat.d
 include/d/%%GCC_VER%%/std/c/skyos/skyos.d
 include/d/%%GCC_VER%%/std/c/unix/unix.d

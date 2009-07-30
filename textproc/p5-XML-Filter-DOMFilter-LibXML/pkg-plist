@@ -1,8 +1,8 @@
 %%SITE_PERL%%/XML/Filter/DOMFilter/LibXML.pm
 @dirrm %%SITE_PERL%%/XML/Filter/DOMFilter
 @dirrm %%SITE_PERL%%/XML/Filter
-%%SITE_PERL%%/mach/auto/XML/Filter/DOMFilter/LibXML/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/XML/Filter/DOMFilter/LibXML
-@dirrm %%SITE_PERL%%/mach/auto/XML/Filter/DOMFilter
-@dirrm %%SITE_PERL%%/mach/auto/XML/Filter
-@dirrm %%SITE_PERL%%/mach/auto/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/DOMFilter/LibXML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/DOMFilter/LibXML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/DOMFilter
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

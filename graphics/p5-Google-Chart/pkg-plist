@@ -36,8 +36,8 @@
 @dirrm %%SITE_PERL%%/Google/Chart/Axis
 @dirrm %%SITE_PERL%%/Google/Chart
 @dirrmtry %%SITE_PERL%%/Google
-%%SITE_PERL%%/mach/auto/Google/Chart/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/Google/Chart
-@dirrm %%SITE_PERL%%/mach/auto/Google
-@dirrmtry %%SITE_PERL%%/mach/auto
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Chart/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Chart
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/mach

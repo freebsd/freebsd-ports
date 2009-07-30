@@ -1,9 +1,9 @@
-%%SITE_PERL%%/mach/auto/Class/Std/Fast/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Std/Fast/.packlist
 %%SITE_PERL%%/Class/Std/Fast.pm
 %%SITE_PERL%%/Class/Std/Fast/Storable.pm
-@dirrm %%SITE_PERL%%/mach/auto/Class/Std/Fast
-@dirrmtry %%SITE_PERL%%/mach/auto/Class/Std
-@dirrmtry %%SITE_PERL%%/mach/auto/Class
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Std/Fast
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Std
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/Std/Fast
 @dirrmtry %%SITE_PERL%%/Class/Std
 @dirrmtry %%SITE_PERL%%/Class

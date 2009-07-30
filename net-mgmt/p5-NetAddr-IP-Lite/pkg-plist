@@ -37,13 +37,13 @@
 %%SITE_PERL%%/auto/NetAddr/IP/UtilPP/_bcdcheck.al
 %%SITE_PERL%%/auto/NetAddr/IP/UtilPP/simple_pack.al
 %%SITE_PERL%%/auto/NetAddr/IP/UtilPP/autosplit.ix
-%%SITE_PERL%%/mach/auto/NetAddr/IP/Lite/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Lite/.packlist
 @dirrm %%SITE_PERL%%/NetAddr/IP
 @dirrm %%SITE_PERL%%/auto/NetAddr/IP/UtilPP
 @dirrm %%SITE_PERL%%/auto/NetAddr/IP/Util
 @dirrm %%SITE_PERL%%/auto/NetAddr/IP
-@dirrm %%SITE_PERL%%/mach/auto/NetAddr/IP/Lite
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Lite
 @dirrmtry %%SITE_PERL%%/NetAddr
-@dirrmtry %%SITE_PERL%%/mach/auto/NetAddr/IP
-@dirrmtry %%SITE_PERL%%/mach/auto/NetAddr
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr
 @dirrmtry %%SITE_PERL%%/auto/NetAddr/

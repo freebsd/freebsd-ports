@@ -2,7 +2,7 @@ bin/deploy_magetab_db.pl
 bin/fix_ae_magetab.pl
 bin/read_magetab.pl
 bin/unload_magetab_namespace.pl
-%%SITE_PERL%%/mach/auto/Bio/MAGETAB/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/MAGETAB/.packlist
 %%SITE_PERL%%/Bio/MAGETAB/Util/Reader/DataMatrix.pm
 %%SITE_PERL%%/Bio/MAGETAB/Util/Reader/TagValueFile.pm
 %%SITE_PERL%%/Bio/MAGETAB/Util/Reader/Tabfile.pm
@@ -60,8 +60,8 @@ bin/unload_magetab_namespace.pl
 %%SITE_PERL%%/Bio/MAGETAB/FactorValue.pm
 %%SITE_PERL%%/Bio/MAGETAB/DataMatrix.pm
 %%SITE_PERL%%/Bio/MAGETAB.pm
-@dirrm %%SITE_PERL%%/mach/auto/Bio/MAGETAB
-@dirrmtry %%SITE_PERL%%/mach/auto/Bio
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/MAGETAB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
 @dirrm %%SITE_PERL%%/Bio/MAGETAB/Util/Reader
 @dirrm %%SITE_PERL%%/Bio/MAGETAB/Util/Writer
 @dirrm %%SITE_PERL%%/Bio/MAGETAB/Util

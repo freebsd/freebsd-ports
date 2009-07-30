@@ -16,8 +16,8 @@
 %%SITE_PERL%%/Class/Component/Attribute.pm
 %%SITE_PERL%%/Class/Component/Plugin.pm
 %%SITE_PERL%%/Class/Component.pm
-%%SITE_PERL%%/mach/auto/Class/Component/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Class/Component
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Component/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Component
 @dirrmtry %%SITE_PERL%%/Class/Component/Component/Plaggerize
 @dirrmtry %%SITE_PERL%%/Class/Component/Component/Autocall
 @dirrmtry %%SITE_PERL%%/Class/Component/Component

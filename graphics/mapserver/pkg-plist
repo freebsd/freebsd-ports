@@ -8,12 +8,12 @@ bin/shptreetst
 bin/shptreevis
 bin/sortshp
 %%WITH_MAPSERV%%www/cgi-bin/mapserv
-%%WITH_PERL%%%%SITE_PERL%%/mach/auto/mapscript/mapscript.so
-%%WITH_PERL%%%%SITE_PERL%%/mach/auto/mapscript/mapscript.bs
-%%WITH_PERL%%%%SITE_PERL%%/mach/auto/mapscript/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/mach/mapscript.pm
-%%WITH_PERL%%lib/perl5/%%PERL_VER%%/mach/perllocal.pod
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/mach/auto/mapscript
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/mapscript.pm
+%%WITH_PERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript
 %%WITH_PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
 %%WITH_PHP%%@dirrmtry %%PHP_EXTENSION_DIR%%
 %%WITH_PHP%%@dirrmtry etc/php

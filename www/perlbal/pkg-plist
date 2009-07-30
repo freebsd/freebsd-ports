@@ -43,9 +43,9 @@
 %%SITE_PERL%%/Perlbal/Test/WebServer.pm
 %%SITE_PERL%%/Perlbal/UploadListener.pm
 %%SITE_PERL%%/Perlbal/Util.pm
-%%SITE_PERL%%/mach/auto/Perlbal/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perlbal/.packlist
 bin/perlbal
-@dirrm %%SITE_PERL%%/mach/auto/Perlbal
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perlbal
 @dirrm %%SITE_PERL%%/Perlbal/Test
 @dirrm %%SITE_PERL%%/Perlbal/Plugin
 @dirrm %%SITE_PERL%%/Perlbal

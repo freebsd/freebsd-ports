@@ -1,17 +1,17 @@
-%%SITE_PERL%%/mach/Device/USB.pm
-%%SITE_PERL%%/mach/Device/USB/Bus.pm
-%%SITE_PERL%%/mach/Device/USB/DevConfig.pm
-%%SITE_PERL%%/mach/Device/USB/DevEndpoint.pm
-%%SITE_PERL%%/mach/Device/USB/DevInterface.pm
-%%SITE_PERL%%/mach/Device/USB/Device.pm
-%%SITE_PERL%%/mach/Device/USB/FAQ.pod
-%%SITE_PERL%%/mach/Device/dump_usb.pl
-%%SITE_PERL%%/mach/auto/Device/USB/.packlist
-%%SITE_PERL%%/mach/auto/Device/USB/USB.bs
-%%SITE_PERL%%/mach/auto/Device/USB/USB.so
-@dirrm %%SITE_PERL%%/mach/auto/Device/USB
-@dirrmtry %%SITE_PERL%%/mach/auto/Device
-@dirrmtry %%SITE_PERL%%/mach/auto
-@dirrmtry %%SITE_PERL%%/mach/Device/USB
-@dirrmtry %%SITE_PERL%%/mach/Device
+%%SITE_PERL%%/%%PERL_ARCH%%/Device/USB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Device/USB/Bus.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Device/USB/DevConfig.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Device/USB/DevEndpoint.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Device/USB/DevInterface.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Device/USB/Device.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Device/USB/FAQ.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Device/dump_usb.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/USB/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/USB/USB.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/USB/USB.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/USB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Device/USB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Device
 @dirrmtry %%SITE_PERL%%/mach

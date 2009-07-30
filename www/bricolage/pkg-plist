@@ -2908,8 +2908,8 @@ bricolage/data/burn/comp/oc_1/story.mc
 %%SITE_PERL%%/Bric/Util/Trans/SFTP.pm
 %%SITE_PERL%%/Bric/Util/Trans/WebDAV.pm
 %%SITE_PERL%%/Bric/Util/UserPref.pm
-%%SITE_PERL%%/mach/auto/Bric/.packlist
-%%SITE_PERL%%/mach/auto/bric_bin/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bric/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/bric_bin/.packlist
 %%DATADIR%%/Pg.sql
 
 @dirrm %%DATADIR%%
@@ -2959,8 +2959,8 @@ bricolage/data/burn/comp/oc_1/story.mc
 @dirrm %%SITE_PERL%%/Bric/App/Callback
 @dirrm %%SITE_PERL%%/Bric/App
 @dirrm %%SITE_PERL%%/Bric
-@dirrm %%SITE_PERL%%/mach/auto/Bric
-@dirrm %%SITE_PERL%%/mach/auto/bric_bin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bric
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/bric_bin
 @dirrm bricolage/upgrade/1.10.3
 @dirrm bricolage/upgrade/1.10.2
 @dirrm bricolage/upgrade/1.10.1

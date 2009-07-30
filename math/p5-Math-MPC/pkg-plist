@@ -1,7 +1,7 @@
-%%SITE_PERL%%/mach/Math/MPC.pm
-%%SITE_PERL%%/mach/auto/Math/MPC/.packlist
-%%SITE_PERL%%/mach/auto/Math/MPC/MPC.bs
-%%SITE_PERL%%/mach/auto/Math/MPC/MPC.so
-@dirrm %%SITE_PERL%%/mach/Math
-@dirrm %%SITE_PERL%%/mach/auto/Math/MPC
-@dirrmtry %%SITE_PERL%%/mach/auto/Math
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/MPC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPC/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPC/MPC.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPC/MPC.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Math
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math

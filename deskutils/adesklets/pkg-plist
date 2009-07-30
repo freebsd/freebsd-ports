@@ -10,7 +10,7 @@ bin/adesklets_submit
 %%PERL%%%%SITE_PERL%%/adesklets.pm
 %%PERL%%%%SITE_PERL%%/updateproto.pl
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/adesklets/.packlist
-%%PERL%%lib/perl5/%%PERL_VER%%/mach/perllocal.pod
+%%PERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
 %%PERL%%lib/perl5/%%PERL_VER%%/man/man3/adesklets.3
 %%PYTHON_SITELIBDIR%%/posix_signal.so
 %%PYTHON_SITELIBDIR%%/adesklets/__init__.py

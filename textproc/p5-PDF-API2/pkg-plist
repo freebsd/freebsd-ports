@@ -1,4 +1,4 @@
-%%SITE_PERL%%/mach/auto/PDF/API2/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API2/.packlist
 %%SITE_PERL%%/PDF/API2.pm
 %%SITE_PERL%%/PDF/API2/Content.pm
 %%SITE_PERL%%/PDF/API2/Lite.pm
@@ -195,8 +195,8 @@
 %%SITE_PERL%%/PDF/API2/fonts/langcover.txt
 %%SITE_PERL%%/PDF/API2/fonts/status.txt
 %%SITE_PERL%%/PDF/API2/fonts/unicover.txt
-@dirrm %%SITE_PERL%%/mach/auto/PDF/API2
-@dirrmtry %%SITE_PERL%%/mach/auto/PDF
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
 @dirrm %%SITE_PERL%%/PDF/API2/Basic/PDF
 @dirrm %%SITE_PERL%%/PDF/API2/Basic/TTF/Mort
 @dirrm %%SITE_PERL%%/PDF/API2/Basic/TTF/Kern

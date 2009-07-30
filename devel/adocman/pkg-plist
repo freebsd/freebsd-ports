@@ -11,5 +11,5 @@ bin/xml_export
 %%PORTDOCS%%%%DOCSDIR%%/adocman.html
 %%PORTDOCS%%%%DOCSDIR%%/xml_export.html
 @dirrm %%SITE_PERL%%/Alexandria
-@dirrm %%SITE_PERL%%/mach/auto/Alexandria
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Alexandria
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

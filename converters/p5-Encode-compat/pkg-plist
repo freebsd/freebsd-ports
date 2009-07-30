@@ -1,9 +1,9 @@
-%%SITE_PERL%%/mach/auto/Encode/compat/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/compat/.packlist
 %%SITE_PERL%%/Encode/compat.pm
 %%SITE_PERL%%/Encode/compat/5006001.pm
 %%SITE_PERL%%/Encode/compat/common.pm
 %%SITE_PERL%%/Encode/compat/Alias.pm
-@dirrm %%SITE_PERL%%/mach/auto/Encode/compat
-@dirrmtry %%SITE_PERL%%/mach/auto/Encode
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/compat
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
 @dirrm %%SITE_PERL%%/Encode/compat
 @dirrmtry %%SITE_PERL%%/Encode

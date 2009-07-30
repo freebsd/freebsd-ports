@@ -4,7 +4,7 @@ bin/latex2ps
 %%SITE_PERL%%/LaTeX/Driver.pm
 %%SITE_PERL%%/LaTeX/Driver/Paths.pm
 %%SITE_PERL%%/LaTeX/Driver/FilterProgram.pm
-%%SITE_PERL%%/mach/auto/LaTeX-Driver/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/LaTeX-Driver
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX-Driver/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX-Driver
 @dirrm %%SITE_PERL%%/LaTeX/Driver
 @dirrmtry %%SITE_PERL%%/LaTeX
