@@ -83,7 +83,7 @@ post-extract:
 
 post-patch:
 	@${RM} ${WRKSRC}/bin/*.sh
-	@${RM} ${WRKSRC}/config/main.inc.php.dist.orig
+	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
 .if defined(WITH_AUTOCOMP)
 	@${REINPLACE_CMD} "s/ autocomplete=\"off\"//g" \
 		${WRKSRC}/skins/default/templates/login.html
