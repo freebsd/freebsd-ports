@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSU implementation of POSIX.5, the POSIX Ada binding
 
-BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
+BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes

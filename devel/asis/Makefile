@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNAT implementation of the Ada Semantic Interface Specification
 
-BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
+BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 USE_LDCONFIG=	yes
 
