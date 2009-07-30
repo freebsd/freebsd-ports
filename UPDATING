@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090730:
+  AFFECTS: users of www/tomcat6
+  AUTHOR: ale@FreeBSD.org
+
+  Tomcat has been updated to 6.0.20 release and the installation
+  directory is changed from apache-tomcat6.0 to apache-tomcat-6.0.
+  Backup your configuration files before updating Tomcat, since
+  the previous port will delete them on deinstall.
+
 20090729:
   AFFECTS: users of sysutils/heartbeat
   AUTHOR: ports@encarnate.com
