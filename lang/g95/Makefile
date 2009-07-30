@@ -30,7 +30,7 @@ LIBF95=		libf95.a-${G95VERSION}
 
 CONFIGURE_ARGS+=--with-gcc-dir=${GCCBUILDDIR}
 
-PLIST_FILES=	bin/g95 bin/f95 lib/libf95.a
+PLIST_FILES=	bin/g95 bin/f95 bin/f951 lib/libf95.a
 PORTDOCS=	G95Manual.pdf
 
 .include <bsd.port.pre.mk>
@@ -58,6 +58,7 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/g95 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/f951 ${PREFIX}/bin
 	${LN} -fs ${PREFIX}/bin/g95 ${PREFIX}/bin/f95
 	${INSTALL_DATA} ${WRKSRC}/${LIBF95}/libf95.a ${PREFIX}/lib
 
