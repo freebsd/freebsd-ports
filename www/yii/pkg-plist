@@ -860,9 +860,9 @@ bin/yiic
 %%DATADIR%%/framework/messages/bg/yii.php
 %%DATADIR%%/framework/messages/config.php
 %%DATADIR%%/framework/messages/de/yii.php
+%%DATADIR%%/framework/messages/el/yii.php
 %%DATADIR%%/framework/messages/es/yii.php
 %%DATADIR%%/framework/messages/fr/yii.php
-%%DATADIR%%/framework/messages/gr/yii.php
 %%DATADIR%%/framework/messages/he/yii.php
 %%DATADIR%%/framework/messages/hu/yii.php
 %%DATADIR%%/framework/messages/id/yii.php
@@ -1463,9 +1463,9 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/messages/id
 @dirrm %%DATADIR%%/framework/messages/hu
 @dirrm %%DATADIR%%/framework/messages/he
-@dirrm %%DATADIR%%/framework/messages/gr
 @dirrm %%DATADIR%%/framework/messages/fr
 @dirrm %%DATADIR%%/framework/messages/es
+@dirrm %%DATADIR%%/framework/messages/el
 @dirrm %%DATADIR%%/framework/messages/de
 @dirrm %%DATADIR%%/framework/messages/bg
 @dirrm %%DATADIR%%/framework/messages
