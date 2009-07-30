@@ -527,6 +527,7 @@ apcupsd                         ports/sysutils/apcupsd
 apel                            ports/editors/apel
 apel-emacs21                    ports/editors/apel-emacs21
 apercu                          ports/www/apercu
+apertium                        ports/textproc/apertium
 apg                             ports/security/apg
 apinger                         ports/net/apinger
 apollon                         ports/net-p2p/apollon
@@ -1208,6 +1209,7 @@ bsflite                         ports/net-im/bsflite
 bsh                             ports/lang/bsh
 bsmtp                           ports/mail/bsmtp
 bsmtrace                        ports/security/bsmtrace
+bsnes                           ports/emulators/bsnes
 bsnmp-regex                     ports/net-mgmt/bsnmp-regex
 bsnmp-ucd                       ports/net-mgmt/bsnmp-ucd
 bsnmptools                      ports/net-mgmt/bsnmptools
@@ -2052,6 +2054,7 @@ db4o-mono                       ports/databases/db4o-mono
 dbXML                           ports/databases/dbXML
 dbacl                           ports/textproc/dbacl
 dbconnect                       ports/databases/dbconnect
+dbeacon                         ports/net/dbeacon
 dbench                          ports/benchmarks/dbench
 dbf                             ports/databases/dbf
 dbf2mysql                       ports/databases/dbf2mysql
@@ -2831,6 +2834,7 @@ emacs-wiki                      ports/textproc/emacs-wiki
 emacs.app                       ports/editors/emacs.app
 emacs21                         ports/editors/emacs21
 embassy                         ports/biology/embassy
+embedded_innodb                 ports/databases/embedded_innodb
 ember                           ports/games/ember
 emboss                          ports/biology/emboss
 embryo                          ports/lang/embryo
@@ -8267,6 +8271,7 @@ ltm                             ports/net/ltm
 ltmdm                           ports/comms/ltmdm
 ltrace                          ports/sysutils/ltrace
 ltris                           ports/games/ltris
+lttoolbox                       ports/textproc/lttoolbox
 ltxml                           ports/textproc/ltxml
 lua                             ports/lang/lua
 lua-bitlib                      ports/devel/lua-bitlib
@@ -9884,6 +9889,7 @@ opencdk                         ports/security/opencdk
 opencity                        ports/games/opencity
 openclipart                     ports/graphics/openclipart
 openconnect                     ports/security/openconnect
+opencore-amr                    ports/audio/opencore-amr
 openct                          ports/security/openct
 opencv                          ports/graphics/opencv
 opencvs                         ports/devel/opencvs
@@ -9956,6 +9962,7 @@ openspc                         ports/audio/openspc
 openssh-askpass                 ports/security/openssh-askpass
 openssh-portable                ports/security/openssh-portable
 opentaxsolver                   ports/finance/opentaxsolver
+opentracker                     ports/net/opentracker
 openttd                         ports/games/openttd
 openuniverse                    ports/astro/openuniverse
 openupsd                        ports/sysutils/openupsd
@@ -10230,6 +10237,7 @@ p5-Audio-Scan                   ports/audio/p5-Audio-Scan
 p5-Audio-Scrobbler              ports/audio/p5-Audio-Scrobbler
 p5-Audio-WMA                    ports/audio/p5-Audio-WMA
 p5-Audio-Wav                    ports/audio/p5-Audio-Wav
+p5-AuthCAS                      ports/security/p5-AuthCAS
 p5-Authen-Bitcard               ports/security/p5-Authen-Bitcard
 p5-Authen-Captcha               ports/security/p5-Authen-Captcha
 p5-Authen-CyrusSASL             ports/security/p5-Authen-CyrusSASL
@@ -11209,6 +11217,7 @@ p5-Encode                       ports/converters/p5-Encode
 p5-Encode-Detect                ports/converters/p5-Encode-Detect
 p5-Encode-JIS2K                 ports/converters/p5-Encode-JIS2K
 p5-Encode-compat                ports/converters/p5-Encode-compat
+p5-Encoding-FixLatin            ports/converters/p5-Encoding-FixLatin
 p5-Env-PS1                      ports/devel/p5-Env-PS1
 p5-Env-Path                     ports/devel/p5-Env-Path
 p5-Errno                        ports/devel/p5-Errno
@@ -13716,6 +13725,7 @@ p5-audio-scan                   ports/audio/p5-Audio-Scan
 p5-audio-scrobbler              ports/audio/p5-Audio-Scrobbler
 p5-audio-wav                    ports/audio/p5-Audio-Wav
 p5-audio-wma                    ports/audio/p5-Audio-WMA
+p5-authcas                      ports/security/p5-AuthCAS
 p5-authen-bitcard               ports/security/p5-Authen-Bitcard
 p5-authen-captcha               ports/security/p5-Authen-Captcha
 p5-authen-cyrussasl             ports/security/p5-Authen-CyrusSASL
@@ -14226,6 +14236,7 @@ p5-config-std                   ports/devel/p5-Config-Std
 p5-config-tiny                  ports/devel/p5-Config-Tiny
 p5-configreader                 ports/devel/p5-ConfigReader
 p5-configreader-simple          ports/devel/p5-ConfigReader-Simple
+p5-constant-def                 ports/devel/p5-constant-def
 p5-constant-lexical             ports/devel/p5-constant-lexical
 p5-context-preserve             ports/devel/p5-Context-Preserve
 p5-contextual-return            ports/devel/p5-Contextual-Return
@@ -14710,6 +14721,7 @@ p5-encode                       ports/converters/p5-Encode
 p5-encode-compat                ports/converters/p5-Encode-compat
 p5-encode-detect                ports/converters/p5-Encode-Detect
 p5-encode-jis2k                 ports/converters/p5-Encode-JIS2K
+p5-encoding-fixlatin            ports/converters/p5-Encoding-FixLatin
 p5-enum                         ports/devel/p5-enum
 p5-env-path                     ports/devel/p5-Env-Path
 p5-env-ps1                      ports/devel/p5-Env-PS1
@@ -19440,6 +19452,7 @@ py-snmp4-mibs                   ports/net-mgmt/py-snmp4-mibs
 py-soappy                       ports/net/py-soappy
 py-soappy-devel                 ports/net/py-soappy-devel
 py-soapy                        ports/net/py-soapy
+py-south                        ports/databases/py-south
 py-soya3d                       ports/graphics/py-soya3d
 py-spambayes                    ports/mail/py-spambayes
 py-spark                        ports/devel/py-spark
@@ -22547,6 +22560,7 @@ twiki-EmptyPlugin               ports/www/twiki-EmptyPlugin
 twiki-GluePlugin                ports/www/twiki-GluePlugin
 twiki-InterwikiPlugin           ports/www/twiki-InterwikiPlugin
 twiki-JSCalendarContrib         ports/www/twiki-JSCalendarContrib
+twiki-LDAPPasswordChangerPlugin  ports/www/twiki-LDAPPasswordChangerPlugin
 twiki-LdapContrib               ports/www/twiki-LdapContrib
 twiki-LdapNgPlugin              ports/www/twiki-LdapNgPlugin
 twiki-MailerContrib             ports/www/twiki-MailerContrib
@@ -22580,6 +22594,7 @@ twiki-interwikiplugin           ports/www/twiki-InterwikiPlugin
 twiki-jscalendarcontrib         ports/www/twiki-JSCalendarContrib
 twiki-ldapcontrib               ports/www/twiki-LdapContrib
 twiki-ldapngplugin              ports/www/twiki-LdapNgPlugin
+twiki-ldappasswordchangerplugin  ports/www/twiki-LDAPPasswordChangerPlugin
 twiki-mailercontrib             ports/www/twiki-MailerContrib
 twiki-mathmodeplugin            ports/www/twiki-MathModePlugin
 twiki-newuserplugin             ports/www/twiki-NewUserPlugin
