@@ -15,16 +15,14 @@ DISTNAME=	wrapper_${PORTVERSION}_src
 MAINTAINER=	mikej@rogers.com
 COMMENT=	Application to solve problems common to many Java applications
 
+BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
+
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_GMAKE=	yes
 USE_JAVA=	1.3+
 USE_ANT=	yes
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ANT_HOME="${LOCALBASE}" ${SH} build32.sh
 
 .include <bsd.port.pre.mk>
 
