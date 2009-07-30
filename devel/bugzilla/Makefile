@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	3.2.3
+PORTVERSION?=	3.4
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -21,6 +21,7 @@ OPTIONS=	MYSQL "MySQL database support" off \
 		PATCH_VIEWER "Patch Viewer" on \
 		MORE_HTML "More HTML in Product/Group Descriptions" on \
 		INBOUND_EMAIL "Inbound Email" off \
+		MAIL_QUEUEING "Mail Queueing" off \
 		MOVE_BUGZ "Move Bugs Between Installations" off \
 		BMP2PNG "BMP Attachments to PNGs" off \
 		XMLRPC "XML-RPC Interface" off \
@@ -38,6 +39,10 @@ RUN_DEPENDS+=	\
 		p5-Template-Toolkit>=2.15:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME \
 		p5-Email-MIME-Modifier>=1.442:${PORTSDIR}/mail/p5-Email-MIME-Modifier
@@ -100,6 +105,11 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-P
 .ifdef WITH_INBOUND_EMAIL
 RUN_DEPENDS+=	${SITE_PERL}/Email/MIME/Attachment/Stripper.pm:${PORTSDIR}/mail/p5-Email-MIME-Attachment-Stripper \
 		${SITE_PERL}/Email/Reply.pm:${PORTSDIR}/mail/p5-Email-Reply
+.endif
+
+.ifdef WITH_MAIL_QUEUEING
+RUN_DEPENDS+=	p5-TheSchwartz>=0:${PORTSDIR}/devel/p5-TheSchwartz \
+		p5-Daemon-Generic>=0:${PORTSDIR}/net/p5-Daemon-Generic
 .endif
 
 .ifdef WITH_MOVE_BUGZ
