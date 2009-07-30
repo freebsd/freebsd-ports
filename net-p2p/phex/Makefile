@@ -6,72 +6,33 @@
 #
 
 PORTNAME=	phex
-PORTVERSION=	3.2.6.106
+PORTVERSION=	3.4.2.116
 CATEGORIES=	net-p2p java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A Java multi platform and spyware free gnutella client
-
-#WRKSRC= 	${WRKDIR}/${PORTNAME}/lib
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_ZIP=	yes
 NO_BUILD=	yes
-PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
-JAVAVM=		${LOCALBASE}/bin/java
-JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
+SUB_FILES=	${PORTNAME}.sh
+SUB_LIST=	JAVA_VERSION=${JAVA_VERSION}
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-DOC_FILES=	Phex_other.htm Phex_win.htm
-JAR_FILES=	\
-		MRJAdapter.jar \
-		commons-collections-3.2.jar \
-		commons-httpclient-3.0.1.jar \
-		commons-logging.jar \
-		forms-1.1.0.jar \
-		looks-2.1.4.jar \
-		phex.jar
-
-PORTDOCS=	${DOC_FILES}
-
-PLIST_FILES+=	bin/${PORTNAME}
-
-.for jar in ${JAR_FILES}
-PLIST_FILES+=	%%JAR_DIR%%/${jar}
-.endfor
-
-PLIST_DIRS+=	\
-		%%JAR_DIR%%
-
-post-patch:
-# remove trailing ^M
-	@${REINPLACE_CMD} -E \
-		-e 's!!!' ${WRKSRC}/docs/readme/*
-	@${SED} -e  "s|%%JAR_DIR%%|${JAR_DIR}|; \
-		s|%%JAR_FILE%%|${JAR_FILE}|; \
-		s|%%JAVA_VERSION%%|${JAVA_VERSION}|; \
-		s|%%JAVAVM%%|${JAVAVM}|;s|%%PREFIX%%|${PREFIX}|" \
-		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
+PORTDOCS=	Phex_other.htm \
+		Undocumented.htm
 
 do-install:
-	@${MKDIR} ${PREFIX}/${JAR_DIR}
-.for jar in ${JAR_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/lib/${jar} ${PREFIX}/${JAR_DIR}
-.endfor
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME}
-.ifndef(NOPORTDOCS)
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/lib/* ${DATADIR}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/docs/readme/${doc} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/readme/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-JAR_FILE=	${PORTNAME}.jar
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
