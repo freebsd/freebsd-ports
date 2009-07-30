@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	term-ansicolor
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUBY_SETUP=	install.rb
 
 NO_BUILD=	yes
 
-DOCS=		README.en
+DOCS=		doc-main.txt
 EXAMPLES=	examples/*
 
 do-install:

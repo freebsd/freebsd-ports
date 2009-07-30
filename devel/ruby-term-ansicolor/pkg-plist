@@ -1,7 +1,9 @@
 %%RUBY_SITELIBDIR%%/term/ansicolor.rb
+%%RUBY_SITELIBDIR%%/term/ansicolor/version.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cdiff.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc-main.txt
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%/term/ansicolor
 @dirrmtry %%RUBY_SITELIBDIR%%/term
