@@ -1,8 +1,8 @@
 %%SITE_PERL%%/Lingua/Stem/It.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/It/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/Lingua/Stem/It
-@dirrmtry %%SITE_PERL%%/mach/auto/Lingua/Stem
-@dirrmtry %%SITE_PERL%%/mach/auto/Lingua
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/It
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrmtry %%SITE_PERL%%/Lingua/Stem
 @dirrmtry %%SITE_PERL%%/Lingua
 @dirrmtry %%SITE_PERL%%

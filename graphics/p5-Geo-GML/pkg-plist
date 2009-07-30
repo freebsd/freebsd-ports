@@ -1,4 +1,4 @@
-%%SITE_PERL%%/mach/auto/Geo/GML/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GML/.packlist
 %%SITE_PERL%%/Geo/GML.pm
 %%SITE_PERL%%/Geo/GML.pod
 %%SITE_PERL%%/Geo/GML/GeoPoint.pod
@@ -332,7 +332,7 @@
 @dirrmtry %%SITE_PERL%%/Geo/GML/xsd
 @dirrmtry %%SITE_PERL%%/Geo/GML
 @dirrmtry %%SITE_PERL%%/Geo
-@dirrmtry %%SITE_PERL%%/mach/auto/Geo/GML
-@dirrmtry %%SITE_PERL%%/mach/auto/Geo
-@dirrmtry %%SITE_PERL%%/mach/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/mach

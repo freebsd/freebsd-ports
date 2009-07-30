@@ -1,7 +1,7 @@
 %%SITE_PERL%%/LaTeX/Encode.pm
 %%SITE_PERL%%/LaTeX/Encode/EncodingTable.pm
-%%SITE_PERL%%/mach/auto/LaTeX/Encode/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/LaTeX/Encode
-@dirrmtry %%SITE_PERL%%/mach/auto/LaTeX
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX/Encode/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX/Encode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX
 @dirrm %%SITE_PERL%%/LaTeX/Encode
 @dirrmtry %%SITE_PERL%%/LaTeX

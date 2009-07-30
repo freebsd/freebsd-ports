@@ -10,6 +10,6 @@ bin/t2-write-js.pl
 %%SITE_PERL%%/T2/Method.pm
 %%SITE_PERL%%/T2/Schema.pm
 %%SITE_PERL%%/T2/Storage.pm
-%%SITE_PERL%%/mach/auto/T2/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/T2
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/T2/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/T2
 @dirrm %%SITE_PERL%%/T2

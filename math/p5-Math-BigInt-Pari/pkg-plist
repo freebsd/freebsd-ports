@@ -1,4 +1,4 @@
 @comment $FreeBSD$
-lib/perl5/site_perl/5.8.9/Math/BigInt/Pari.pm
-lib/perl5/site_perl/5.8.9/mach/auto/Math/BigInt/Pari/.packlist
-@dirrmtry lib/perl5/site_perl/5.8.9/mach/auto/Math/BigInt/Pari
+%%SITE_PERL%%/Math/BigInt/Pari.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/Pari/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/Pari

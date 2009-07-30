@@ -13,8 +13,8 @@
 %%SITE_PERL%%/Net/Analysis/TCPMonologue.pm
 %%SITE_PERL%%/Net/Analysis/TCPSession.pm
 %%SITE_PERL%%/Net/Analysis/Time.pm
-@dirrmtry %%SITE_PERL%%/mach/auto/Net/Analysis
-@dirrmtry %%SITE_PERL%%/mach/auto/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Analysis
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/Analysis/Listener
 @dirrmtry %%SITE_PERL%%/Net/Analysis
 @dirrmtry %%SITE_PERL%%/Net

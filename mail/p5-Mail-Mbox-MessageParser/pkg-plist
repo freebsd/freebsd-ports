@@ -10,5 +10,5 @@
 @dirrmtry %%SITE_PERL%%/Mail/Mbox
 @dirrmtry %%SITE_PERL%%/Mail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Mbox/MessageParser
-@dirrmtry %%SITE_PERL%%/mach/auto/Mail/Mbox
-@dirrmtry %%SITE_PERL%%/mach/auto/Mail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Mbox
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail

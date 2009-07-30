@@ -1,9 +1,9 @@
-%%SITE_PERL%%/mach/auto/Graphics/ColorNames/WWW/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/ColorNames/WWW/.packlist
 %%SITE_PERL%%/Graphics/ColorNames/IE.pm
 %%SITE_PERL%%/Graphics/ColorNames/WWW.pm
 %%SITE_PERL%%/Graphics/ColorNames/SVG.pm
-@dirrmtry %%SITE_PERL%%/mach/auto/Graphics/ColorNames/WWW
-@dirrmtry %%SITE_PERL%%/mach/auto/Graphics/ColorNames
-@dirrmtry %%SITE_PERL%%/mach/auto/Graphics
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/ColorNames/WWW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/ColorNames
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
 @dirrmtry %%SITE_PERL%%/Graphics/ColorNames
 @dirrmtry %%SITE_PERL%%/Graphics

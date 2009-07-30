@@ -3,10 +3,10 @@
 %%SITE_PERL%%/IO/Compress/Base/Common.pm
 %%SITE_PERL%%/IO/Uncompress/AnyUncompress.pm
 %%SITE_PERL%%/IO/Uncompress/Base.pm
-%%SITE_PERL%%/mach/auto/IO/Compress/Base/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/IO/Compress/Base
-@dirrmtry %%SITE_PERL%%/mach/auto/IO/Compress
-@dirrmtry %%SITE_PERL%%/mach/auto/IO
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Base/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Base
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/IO/Uncompress
 @dirrmtry %%SITE_PERL%%/IO/Compress/Base
 @dirrmtry %%SITE_PERL%%/IO/Compress

@@ -5,7 +5,7 @@ bin/objcache
 %%SITE_PERL%%/Make/Cache/Hash.pm
 %%SITE_PERL%%/Make/Cache/Obj.pm
 %%SITE_PERL%%/Make/Cache/Runtime.pm
-%%SITE_PERL%%/mach/auto/Make/Cache/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Make/Cache/.packlist
 @dirrm %%SITE_PERL%%/Make/Cache
 @dirrmtry %%SITE_PERL%%/Make
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Make/Cache

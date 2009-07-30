@@ -1,4 +1,4 @@
-%%SITE_PERL%%/mach/auto/PDF/API3/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API3/.packlist
 %%SITE_PERL%%/PDF/API3.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Annotation.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/PDF/Array.pm
@@ -219,5 +219,5 @@
 @dirrm %%SITE_PERL%%/PDF/API3/Compat
 @dirrm %%SITE_PERL%%/PDF/API3
 @dirrmtry %%SITE_PERL%%/PDF
-@dirrm %%SITE_PERL%%/mach/auto/PDF/API3
-@dirrmtry %%SITE_PERL%%/mach/auto/PDF
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF

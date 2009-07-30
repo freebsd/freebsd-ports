@@ -24,9 +24,9 @@
 %%SITE_PERL%%/HTTP/MobileAttribute/Plugin.pm
 %%SITE_PERL%%/HTTP/MobileAttribute/Request.pm
 %%SITE_PERL%%/HTTP/MobileAttribute.pm
-%%SITE_PERL%%/mach/auto/HTTP/MobileAttribute/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/HTTP/MobileAttribute
-@dirrmtry %%SITE_PERL%%/mach/auto/HTTP
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAttribute/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAttribute
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
 @dirrmtry %%SITE_PERL%%/HTTP/MobileAttribute/Request
 @dirrmtry %%SITE_PERL%%/HTTP/MobileAttribute/Plugin/IS
 @dirrmtry %%SITE_PERL%%/HTTP/MobileAttribute/Plugin

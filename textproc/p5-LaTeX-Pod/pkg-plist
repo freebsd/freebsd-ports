@@ -1,6 +1,6 @@
 bin/latex2pod
 %%SITE_PERL%%/LaTeX/Pod.pm
-%%SITE_PERL%%/mach/auto/LaTeX/Pod/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/LaTeX/Pod
-@dirrmtry %%SITE_PERL%%/mach/auto/LaTeX
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX/Pod/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX/Pod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX
 @dirrmtry %%SITE_PERL%%/LaTeX

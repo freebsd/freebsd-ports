@@ -2,7 +2,7 @@
 %%SITE_PERL%%/HTML/Template/Associate/DBI.pm
 %%SITE_PERL%%/HTML/Template/Associate/FormValidator.pm
 @dirrm %%SITE_PERL%%/HTML/Template/Associate
-%%SITE_PERL%%/mach/auto/HTML/Template/Associate/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/HTML/Template/Associate
-@dirrm %%SITE_PERL%%/mach/auto/HTML/Template
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Associate/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Associate
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template
 @dirrmtry %%SITE_PERL%%/HTML/Template

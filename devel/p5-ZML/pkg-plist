@@ -1,3 +1,3 @@
 %%SITE_PERL%%/ZML.pm
-%%SITE_PERL%%/mach/auto/ZML/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/ZML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZML

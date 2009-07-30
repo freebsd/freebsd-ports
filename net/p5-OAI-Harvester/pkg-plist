@@ -14,7 +14,7 @@ bin/oai-listsets
 %%SITE_PERL%%/Net/OAI/Record/Header.pm
 %%SITE_PERL%%/Net/OAI/Record/OAI_DC.pm
 %%SITE_PERL%%/Net/OAI/ResumptionToken.pm
-%%SITE_PERL%%/mach/auto/OAI-Harvester/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/OAI-Harvester
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OAI-Harvester/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OAI-Harvester
 @dirrm %%SITE_PERL%%/Net/OAI/Record
 @dirrm %%SITE_PERL%%/Net/OAI

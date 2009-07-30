@@ -1,7 +1,7 @@
 %%SITE_PERL%%/Module/Recursive/Require.pm
-%%SITE_PERL%%/mach/auto/Module/Recursive/Require/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Module/Recursive/Require
-@dirrmtry %%SITE_PERL%%/mach/auto/Module/Recursive
-@dirrmtry %%SITE_PERL%%/mach/auto/Module
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Recursive/Require/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Recursive/Require
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Recursive
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
 @dirrmtry %%SITE_PERL%%/Module/Recursive
 @dirrmtry %%SITE_PERL%%/Module

@@ -1,3 +1,3 @@
 bin/mp3cd
-%%SITE_PERL%%/mach/auto/mp3cd/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/mp3cd
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3cd/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3cd
