@@ -1,0 +1,15 @@
+bin/phex
+%%DATADIR%%/bcpg-jdk15-140.jar
+%%DATADIR%%/bcprov-jdk15-140.jar
+%%DATADIR%%/commons-collections-3.2.jar
+%%DATADIR%%/commons-httpclient-3.0.1.jar
+%%DATADIR%%/forms-1.1.0.jar
+%%DATADIR%%/jcl-over-slf4j-1.5.6.jar
+%%DATADIR%%/logback-classic-0.9.13.jar
+%%DATADIR%%/logback-core-0.9.13.jar
+%%DATADIR%%/looks-2.1.4.jar
+%%DATADIR%%/mrjadapter-1.1.jar
+%%DATADIR%%/phex.jar
+%%DATADIR%%/slf4j-api-1.5.6.jar
+%%DATADIR%%/xSocket-2.2.jar
+@dirrm %%DATADIR%%
