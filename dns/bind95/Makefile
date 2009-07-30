@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=	--without-libxml2
 
 .if defined(WITH_IDN)
 CONFIGURE_ARGS+=	--with-idn=${LOCALBASE} --with-libiconv=${LOCALBASE}
-BUILD_DEPENDS+=		runidn:${PORTSDIR}/dns/idnkit
+LIB_DEPENDS+=		idnkit.1:${PORTSDIR}/dns/idnkit
 .else
 CONFIGURE_ARGS+=	--without-idn
 .endif
