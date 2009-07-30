@@ -8,7 +8,7 @@
 PORTNAME=	rainbowcrack
 PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	http://cerrg.com/dax/rainbowcrack/
+MASTER_SITES=	http://www.defconph.org/~semprix/ports/rainbowcrack/
 
 MAINTAINER=	semprix@bsdmail.org
 COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
