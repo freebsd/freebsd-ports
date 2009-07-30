@@ -310,7 +310,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_misc.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_monitor.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_scgi.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_standalone.html
 @comment directories in revers order
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/ssi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/sidebars
