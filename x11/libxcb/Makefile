@@ -17,8 +17,10 @@ COMMENT=	The X protocol C-language Binding (XCB) library
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
+		xcb-proto>=1.5:${PORTSDIR}/x11/xcb-proto \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
+		xcb-proto>=1.5:${PORTSDIR}/x11/xcb-proto \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
 
 CONFIGURE_ARGS+=	--disable-build-docs --without-doxygen
