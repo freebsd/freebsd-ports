@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	luasec
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	security
-MASTER_SITES=	http://luaforge.net/frs/download.php/4059/
+MASTER_SITES=	http://luaforge.net/frs/download.php/4160/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	freeghb@gmail.com
+MAINTAINER=	kelly.hays@jkhfamily.org
 COMMENT=	A Lua binding for the OpenSSL library to provide TLS/SSL communication
 
 RUN_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
