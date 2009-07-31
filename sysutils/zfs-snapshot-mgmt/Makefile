@@ -10,7 +10,7 @@ PORTVERSION=	20090201
 CATEGORIES=	sysutils
 MASTER_SITES=	http://marcin.studio4plus.com/files/
 
-MAINTAINER=	marcin@studio4plus.com
+MAINTAINER=	marius@nuenneri.ch
 COMMENT=	Automatic ZFS snapshot management tool
 
 USE_RUBY=	yes
