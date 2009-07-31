@@ -31,6 +31,8 @@ PLIST_SUB+=	NLS="@comment "
 EXTRA_PATCHES=	${FILESDIR}/nls-patch-CMakeLists.txt
 .endif
 
+BROKEN=		fails to build
+
 DOCSDIR=	${PREFIX}/share/doc
 
 MAN1=	kdesvn.1 kdesvnaskpass.1
