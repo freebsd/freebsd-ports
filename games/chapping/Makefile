@@ -7,6 +7,7 @@
 
 PORTNAME=	chapping
 PORTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://forja.rediris.es/frs/download.php/760/ \
 		http://mirror.amdmi3.ru/distfiles/

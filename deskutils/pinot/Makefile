@@ -7,6 +7,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\

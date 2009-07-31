@@ -7,7 +7,7 @@
 
 PORTNAME=	mapagi
 PORTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://members.ferrara.linux.it/calicant/mapagi/
 

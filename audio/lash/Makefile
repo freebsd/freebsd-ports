@@ -7,7 +7,7 @@
 
 PORTNAME=	lash
 PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.savannah.gnu.org/releases/lash/
 

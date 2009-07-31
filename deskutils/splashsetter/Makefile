@@ -7,7 +7,7 @@
 
 PORTNAME=	splashsetter
 PORTVERSION=	0.6.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 

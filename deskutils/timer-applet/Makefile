@@ -7,6 +7,7 @@
 
 PORTNAME=	timer-applet
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SFE/timerapplet
 

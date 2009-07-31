@@ -7,7 +7,7 @@
 
 PORTNAME=	festalon
 PORTVERSION=	0.5.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/festalon/ \
 		CRITICAL

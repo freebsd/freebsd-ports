@@ -7,7 +7,7 @@
 
 PORTNAME=	kovpn
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security kde
 MASTER_SITES=	https://projects.fslab.de/projects/kovpn/chrome/site/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.pre7

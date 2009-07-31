@@ -7,6 +7,7 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 

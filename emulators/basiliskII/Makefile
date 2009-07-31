@@ -7,7 +7,7 @@
 
 PORTNAME=	basiliskII
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	http://gwenole.beauchesne.info/projects/basilisk2/files/
 MASTER_SITE_SUBDIR=	basilisk

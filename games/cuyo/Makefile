@@ -7,6 +7,7 @@
 
 PORTNAME=	cuyo
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.publicns.net/pub/nongnu/cuyo/
 DISTNAME=	${PORTNAME}-2.~-1.1

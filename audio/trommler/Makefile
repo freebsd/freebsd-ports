@@ -7,6 +7,7 @@
 
 PORTNAME=	trommler
 PORTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://muth.org/Robert/Trommler/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

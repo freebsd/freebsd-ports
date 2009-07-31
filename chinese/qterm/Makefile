@@ -7,7 +7,7 @@
 
 PORTNAME=	qterm
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.yuanjue.net/download/

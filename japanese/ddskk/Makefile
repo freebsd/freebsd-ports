@@ -7,7 +7,7 @@
 
 PORTNAME=	ddskk
 PORTVERSION=	13.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/ \
 		ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \

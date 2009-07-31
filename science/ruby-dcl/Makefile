@@ -7,6 +7,7 @@
 
 PORTNAME=	dcl
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://www.gfd-dennou.org/arch/ruby/products/ruby-dcl/ \
 		http://dennou-h.gfd-dennou.org/arch/ruby/products/ruby-dcl/ \

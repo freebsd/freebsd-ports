@@ -7,6 +7,7 @@
 
 PORTNAME=	fsharp
 PORTVERSION=	1.9.6.16
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://download.microsoft.com/download/F/7/4/F74A3170-261C-4E8F-B1A8-2E352C61A89B/
 DISTNAME=	fsharp

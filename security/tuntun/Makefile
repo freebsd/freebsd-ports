@@ -7,6 +7,7 @@
 
 PORTNAME=	tuntun
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	http://tuntun.googlecode.com/files/
 

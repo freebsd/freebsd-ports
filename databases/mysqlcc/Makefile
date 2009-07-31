@@ -7,7 +7,7 @@
 
 PORTNAME=	mysqlcc
 PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	ftp://sunsite.dk/pub/databases/mysql/Downloads/MySQLCC/ \
 		http://mysql.mirrors.pair.com/Downloads/MySQLCC/ \

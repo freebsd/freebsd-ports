@@ -8,7 +8,7 @@
 
 PORTNAME=	gkrellmfmonitor
 PORTVERSION=	2.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	http://makovick.googlepages.com/
 DISTNAME=	gkrellm-fmonitor-${PORTVERSION}

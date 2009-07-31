@@ -7,7 +7,7 @@
 
 PORTNAME=	ksynaptics
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://qsynaptics.sourceforge.net/
 

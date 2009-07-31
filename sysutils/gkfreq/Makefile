@@ -7,7 +7,7 @@
 
 PORTNAME=	gkfreq
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 DISTNAME=	gkrellm-gkfreq-${PORTVERSION}
 MASTER_SITES=	http://www.peakunix.net/downloads/

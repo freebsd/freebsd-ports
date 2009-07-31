@@ -6,6 +6,7 @@
 
 PORTNAME=	latex-caption
 PORTVERSION=	3.1.20080401
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}

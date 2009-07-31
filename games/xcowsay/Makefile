@@ -7,6 +7,7 @@
 
 PORTNAME=	xcowsay
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.nickg.me.uk/files/ LOCAL/chinsan/games
 

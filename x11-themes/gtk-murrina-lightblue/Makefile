@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-murrina-lightblue
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	45384-MurrinaLightBlue

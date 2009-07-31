@@ -7,7 +7,7 @@
 
 PORTNAME=	emms
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gnu.org/software/emms/download/ \
 		http://dryice.name/computer/FreeBSD/distfiles/

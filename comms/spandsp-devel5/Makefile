@@ -7,6 +7,7 @@
 
 PORTNAME=	spandsp
 PORTVERSION=	0.0.5.p3
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
 		ftp://ftp.rewt.org.uk/pub/distfiles/

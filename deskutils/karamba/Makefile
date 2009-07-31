@@ -6,7 +6,7 @@
 
 PORTNAME=	karamba
 PORTVERSION=	0.17
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.efd.lth.se/~d98hk/karamba/src/
 

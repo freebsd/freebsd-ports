@@ -7,6 +7,7 @@
 
 PORTNAME=	proofgeneral
 PORTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
 DISTNAME=	ProofGeneral-3.7.1

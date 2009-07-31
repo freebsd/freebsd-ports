@@ -7,7 +7,7 @@
 
 PORTNAME=	ksteak
 PORTVERSION=	1.0.0.p2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	german kde
 MASTER_SITES=	http://www.der-fritz.de/ksteak/
 DISTNAME=	ksteak-1.0.0pre2

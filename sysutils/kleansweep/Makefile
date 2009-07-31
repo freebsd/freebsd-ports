@@ -7,7 +7,7 @@
 
 PORTNAME=	kleansweep
 PORTVERSION=	0.2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=		bush
 PORTVERSION=		1.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		shells
 MASTER_SITES=		http://www.pegasoft.ca/downloads/	\
 			http://66.11.182.223/downloads/

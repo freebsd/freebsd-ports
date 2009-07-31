@@ -7,7 +7,7 @@
 
 PORTNAME=	rmap
 PORTVERSION=	1.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.reza.net/rmap/
 

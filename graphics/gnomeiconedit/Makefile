@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomeiconedit
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/giconedit
 DISTNAME=	gnome-iconedit-${PORTVERSION}

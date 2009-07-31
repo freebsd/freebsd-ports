@@ -7,7 +7,7 @@
 
 PORTNAME=	reciteword
 PORTVERSION=	0.8.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	chinese
 MASTER_SITES=	http://reciteword.cosoft.org.cn/reciteword/download/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/

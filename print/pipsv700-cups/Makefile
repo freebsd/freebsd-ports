@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	2.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 MASTERDIR=	${.CURDIR}/../pips800
 COMMENT=	Photo Image Print System for Linux --- EPSON PX-V700 (for CUPS)
 

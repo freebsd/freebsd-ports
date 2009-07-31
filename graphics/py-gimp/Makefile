@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports/graphics/py-gimp/Makefile,v 1.4 2007/10/24 21:22:00 ahze Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	pmail
 PORTVERSION=	0.5.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail python gnome
 MASTER_SITES=	# previous mastersites disappeared in 2001 and 2002
 

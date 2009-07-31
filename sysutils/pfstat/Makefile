@@ -7,6 +7,7 @@
 
 PORTNAME=	pfstat
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

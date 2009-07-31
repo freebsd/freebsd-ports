@@ -8,6 +8,7 @@
 
 PORTNAME=	IPA
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.prima.eu.org/IPA/ CPAN/Prima/KARASIK
 

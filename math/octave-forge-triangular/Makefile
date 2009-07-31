@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-triangular
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=     math
 
 MAINTAINER=	stephen@missouri.edu

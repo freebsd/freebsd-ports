@@ -6,6 +6,7 @@
 
 PORTNAME=	dikt
 PORTVERSION=	1g
+PORTREVISION=	1
 CATEGORIES=	textproc net kde
 MASTER_SITES=	http://diktv1.googlepages.com/	\
 		LOCAL/beech

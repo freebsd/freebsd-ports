@@ -7,7 +7,7 @@
 
 PORTNAME=	tdfsb
 PORTVERSION=	0.0.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.determinate.net/webdata/data/
 

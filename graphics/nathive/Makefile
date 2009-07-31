@@ -7,6 +7,7 @@
 
 PORTNAME=	nathive
 PORTVERSION=	0.813
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.nathive.org/packages/ \
 		http://mirror.amdmi3.ru/distfiles/

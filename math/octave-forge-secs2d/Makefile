@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-secs2d
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

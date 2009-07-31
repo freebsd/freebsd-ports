@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	2.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 MASTERDIR=	${.CURDIR}/../pips800
 COMMENT=	Photo Image Print System for Linux --- EPSON Stylus CX3500/CX3600 Series
 

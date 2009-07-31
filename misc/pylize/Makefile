@@ -8,7 +8,7 @@
 
 PORTNAME=	pylize
 PORTVERSION=	1.3.b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc textproc
 MASTER_SITES=	http://www.chrisarndt.de/en/software/pylize/download/ \
 		http://dryice.name/computer/FreeBSD/distfiles/

@@ -7,6 +7,7 @@
 
 PORTNAME=	skribe
 PORTVERSION=	1.2l
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Skribe/
 DISTNAME=	${PORTNAME}${PORTVERSION}

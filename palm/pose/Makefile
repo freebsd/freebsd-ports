@@ -7,7 +7,7 @@
 
 PORTNAME=	pose
 PORTVERSION=	3.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	palm emulators
 MASTER_SITES=	http://www.palmos.com/dev/tools/emulator/sources/ \
 		http://www.palmos.com/dev/tools/emulator/:skins

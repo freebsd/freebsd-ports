@@ -7,7 +7,7 @@
 
 PORTNAME=	gfont
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print www
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/gfont/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	FSViewer.app
 PORTVERSION=	0.2.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fm windowmaker
 MASTER_SITES=	http://www.bayernline.de/~gscholz/linux/fsviewer/
 

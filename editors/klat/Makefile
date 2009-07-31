@@ -7,7 +7,7 @@
 
 PORTNAME=	klat
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://research.edm.uhasselt.be/jori/klat/ \
 		http://research.edm.luc.ac.be/jori/klat/

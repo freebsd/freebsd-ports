@@ -7,7 +7,7 @@
 
 PORTNAME=	ko.TeX-fonts-base
 PORTVERSION=	0.1.0.20070927
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean print
 MASTER_SITES=	http://ftp.ktug.or.kr/KTUG/ko.TeX/current/
 DISTNAME=	ko.tex-unfonts-base-20070927

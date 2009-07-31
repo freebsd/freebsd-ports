@@ -7,6 +7,7 @@
 
 PORTNAME=	hippo-canvas
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 

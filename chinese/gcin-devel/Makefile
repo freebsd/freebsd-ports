@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.4.5.pre2
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
   		http://cle.linux.org.tw/gcin/download/:main \

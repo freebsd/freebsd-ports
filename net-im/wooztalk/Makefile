@@ -7,6 +7,7 @@
 
 PORTNAME=	wooztalk
 PORTVERSION=	0.9.9a
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.wooztalk.com/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}-freebsd

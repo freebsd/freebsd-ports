@@ -7,7 +7,7 @@
 
 PORTNAME=	yaml-mode.el
 PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://yaml-mode.clouder.jp/attachment/wiki/WikiStart/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

@@ -7,6 +7,7 @@
 
 PORTNAME=	itools
 PORTVERSION=	0.60.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://download.hforge.org/itools/0.60/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

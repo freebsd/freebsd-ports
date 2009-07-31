@@ -7,7 +7,7 @@
 
 PORTNAME=	slgtkdatabox
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://laurent.perez2.free.fr/comp/slang/modules/
 EXTRACT_SUFX=	.tgz

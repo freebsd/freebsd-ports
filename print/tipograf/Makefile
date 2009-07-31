@@ -8,7 +8,7 @@
 
 PORTNAME=	tipograf
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://www.falk-henrich.de/download/
 

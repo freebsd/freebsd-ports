@@ -7,6 +7,7 @@
 
 PORTNAME=	xwordpy
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://x-word.org/
 DISTNAME=	xword-${PORTVERSION}

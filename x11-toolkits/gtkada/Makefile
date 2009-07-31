@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	2.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://libre2.adacore.com/GtkAda/ \
 		http://libre.act-europe.fr/GtkAda/ \

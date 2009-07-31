@@ -9,7 +9,7 @@
 
 PORTNAME=	kpopup
 PORTVERSION=	0.9.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im kde
 MASTER_SITES=	http://www.henschelsoft.de/kpopup/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/

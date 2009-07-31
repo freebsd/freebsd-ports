@@ -8,7 +8,7 @@
 
 PORTNAME=	narval
 PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/narval/ \
 		http://www.logilab.org/ftp/pub/narval/

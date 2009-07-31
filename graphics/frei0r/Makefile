@@ -7,6 +7,7 @@
 
 PORTNAME=	frei0r
 PORTVERSION=	1.1.22
+PORTREVISION=	1
 DISTVERSIONPREFIX=	plugins-
 CATEGORIES=	graphics
 MASTER_SITES=	http://propirate.net/${PORTNAME}/ \

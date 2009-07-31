@@ -7,7 +7,7 @@
 
 PORTNAME=	java-access-bridge
 PORTVERSION=	1.18.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	accessibility java gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

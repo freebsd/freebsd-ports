@@ -7,7 +7,7 @@
 
 PORTNAME=	dolphin
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	http://www.brueffer.de/distfiles/
 

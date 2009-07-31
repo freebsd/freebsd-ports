@@ -7,6 +7,7 @@
 
 PORTNAME=	e_dbus
 PORTVERSION=	20080223
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/

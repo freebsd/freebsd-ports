@@ -7,6 +7,7 @@
 
 PORTNAME=	alarm-clock
 PORTVERSION=	0.9.11.2
+PORTREVISION=	1
 CATEGORIES=	x11-clocks deskutils
 MASTER_SITES=	http://dp0154.debowypark.waw.pl/ac/downloads/
 

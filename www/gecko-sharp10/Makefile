@@ -8,7 +8,7 @@
 
 PORTNAME=	gecko-sharp
 PORTVERSION=	0.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/gecko-sharp/
 

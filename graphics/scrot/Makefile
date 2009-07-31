@@ -7,7 +7,7 @@
 
 PORTNAME=	scrot
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/

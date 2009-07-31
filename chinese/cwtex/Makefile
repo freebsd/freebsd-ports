@@ -7,7 +7,7 @@
 
 PORTNAME=	cwtex
 PORTVERSION=	16.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	http://ftp.ussg.iu.edu/FreeBSD/distfiles/ \
 		http://ftp.nara.wide.ad.jp/pub/FreeBSD/distfiles/

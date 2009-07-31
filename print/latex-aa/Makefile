@@ -7,6 +7,7 @@
 
 PORTNAME=	latex-aa
 PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	print astro science
 MASTER_SITES=	ftp://ftp.edpsciences.org/pub/aa/
 DISTNAME=	aa-package

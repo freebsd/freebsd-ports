@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellsun
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	astro
 MASTER_SITES=	http://nwalsh.com/hacks/gkrellsun/
 

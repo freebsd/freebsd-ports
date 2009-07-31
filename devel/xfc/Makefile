@@ -7,7 +7,7 @@
 
 PORTNAME=	xfc
 PORTVERSION=	4.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel xfce
 MASTER_SITES=	http://xfc.xfce.org/download/${PORTVERSION}/src/
 

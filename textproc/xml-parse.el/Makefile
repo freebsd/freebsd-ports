@@ -7,7 +7,7 @@
 
 PORTNAME=	xml-parse.el
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://dryice.name/computer/FreeBSD/distfiles/ \
 		http://sacha.free.net.ph/notebook/emacs/

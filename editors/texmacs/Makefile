@@ -7,7 +7,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/%SUBDIR%/ \
 		ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \

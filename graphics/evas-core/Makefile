@@ -7,6 +7,7 @@
 
 PORTNAME=	core
 PORTVERSION=	0.9.9.042
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/

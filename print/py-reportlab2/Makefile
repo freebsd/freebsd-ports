@@ -7,6 +7,7 @@
 
 PORTNAME=	reportlab2
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.org/ftp/ \
 		ftp://ftp.reportlab.org/

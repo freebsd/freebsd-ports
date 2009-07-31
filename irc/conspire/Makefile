@@ -6,6 +6,7 @@
 
 PORTNAME=	conspire
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	irc gnome
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tbz2

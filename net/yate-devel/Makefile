@@ -8,7 +8,7 @@
 PORTNAME=	yate
 PORTVERSION=	1.3.0.p2
 DISTVERSION=	${PORTVERSION:S/.p/-/}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net comms
 MASTER_SITES=	http://cto.homelinux.net/pub/FreeBSD/ports/distfiles/ \
 		${MASTER_SITE_LOCAL}

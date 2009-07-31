@@ -7,7 +7,7 @@
 
 PORTNAME=	lincvs
 PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel kde
 MASTER_SITES=	http://lincvs.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src

@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm-helium
 PORTVERSION=	2.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	http://makovick.googlepages.com/
 EXTRACT_SUFX=	.tgz

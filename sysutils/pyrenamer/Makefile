@@ -8,6 +8,7 @@
 
 PORTNAME=	pyrenamer
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://www.infinicode.org/code/pyrenamer/files/
 

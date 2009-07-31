@@ -7,7 +7,7 @@
 
 PORTNAME=	sdlCC
 PORTVERSION=	0.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://chinesecheckers.vegard2.no/ \
 		http://jcatki.no-ip.org/files/

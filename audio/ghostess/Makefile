@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostess
 PORTVERSION=	20081213
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.smbolton.com/linux/
 

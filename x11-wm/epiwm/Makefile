@@ -7,7 +7,7 @@
 
 PORTNAME=	epiwm
 PORTVERSION=	0.5.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.nongnu.org/epiwm/download/
 

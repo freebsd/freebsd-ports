@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-im-vi
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	vietnamese textproc gnome
 MASTER_SITES=	http://dev.gentoo.org/~pclouds/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	basicdsp
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	cad hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/ \
 		${MASTER_SITE_LOCAL}

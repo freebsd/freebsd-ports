@@ -8,7 +8,7 @@
 
 PORTNAME=	imc
 PORTVERSION=	4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://users.skynet.be/Peter.Verthez/projects/imc/
 

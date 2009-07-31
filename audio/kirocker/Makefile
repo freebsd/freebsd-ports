@@ -7,7 +7,7 @@
 
 PORTNAME=	kirocker
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	http://slaout.linux62.org/kirocker/downloads/ \
 		http://contrib.pardus.org.tr/archives/ \

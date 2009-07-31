@@ -8,7 +8,7 @@
 
 PORTNAME=	gtkspell
 PORTVERSION=	2.0.15
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://gtkspell.sourceforge.net/download/
 

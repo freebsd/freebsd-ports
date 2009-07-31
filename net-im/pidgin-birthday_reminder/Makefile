@@ -7,6 +7,7 @@
 
 PORTNAME=	birthday_reminder
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF/pidgin-birthday
 PKGNAMEPREFIX=	pidgin-

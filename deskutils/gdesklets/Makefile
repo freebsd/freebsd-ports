@@ -7,7 +7,7 @@
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.35.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gdesklets.de/files/ \
 		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}

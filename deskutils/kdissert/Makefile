@@ -7,7 +7,7 @@
 
 PORTNAME=	kdissert
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://freehackers.org/~tnagy/kdissert/ \
 		http://bsdguru.org/distfiles/

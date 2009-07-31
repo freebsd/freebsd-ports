@@ -8,7 +8,7 @@
 
 PORTNAME=	wmdrawer
 PORTVERSION=	0.10.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/:tarball \
 		http://wikitest.freebsd.org/wiki/common/:pixmap

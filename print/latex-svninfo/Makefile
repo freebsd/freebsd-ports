@@ -6,6 +6,7 @@
 
 PORTNAME=	svninfo
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.brucker.ch/projects/svninfo/download/ \
 		${MASTER_SITE_LOCAL}

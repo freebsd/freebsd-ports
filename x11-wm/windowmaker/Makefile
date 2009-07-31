@@ -7,7 +7,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.92.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://dougbarton.us/Downloads/

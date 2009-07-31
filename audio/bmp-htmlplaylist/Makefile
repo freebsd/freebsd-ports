@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-htmlplaylist
 PORTVERSION=	0.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/bmp-plugins/ \
 		${MASTER_SITE_LOCAL}

@@ -7,6 +7,7 @@
 
 PORTNAME=	stransball2
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		http://braingames.bugreport.nl/stransball2/

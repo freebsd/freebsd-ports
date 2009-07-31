@@ -7,7 +7,7 @@
 
 PORTNAME=	imlib2_loaders
 PORTVERSION=	1.4.1.000
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \

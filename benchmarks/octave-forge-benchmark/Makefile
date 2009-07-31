@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-benchmark
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks math
 
 MAINTAINER=	stephen@missouri.edu

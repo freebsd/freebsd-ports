@@ -7,7 +7,7 @@
 
 PORTNAME=	kappdock
 PORTVERSION=	0.46.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.Informatik.Uni-Oldenburg.DE/~bigboss/kappdock/
 DISTNAME=	${PORTNAME}-0.46-1

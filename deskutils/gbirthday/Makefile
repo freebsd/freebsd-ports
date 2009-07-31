@@ -7,6 +7,7 @@
 
 PORTNAME=	gbirthday
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF
 

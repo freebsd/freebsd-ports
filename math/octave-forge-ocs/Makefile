@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-ocs
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

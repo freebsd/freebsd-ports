@@ -7,7 +7,7 @@
 
 PORTNAME=	phpsview
 PORTVERSION=	10.0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.saillard.org/linux/pwc/old-releases/
 DISTNAME=	${REALNAME}-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	kartofel
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://kartofel.jfedor.org/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/

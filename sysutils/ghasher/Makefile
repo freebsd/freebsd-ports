@@ -7,7 +7,7 @@
 
 PORTNAME=	ghasher
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://asgaard.homelinux.org/code/ghasher/
 

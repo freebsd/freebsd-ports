@@ -7,7 +7,7 @@
 
 PORTNAME=	tuxmath
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/2191/

@@ -7,7 +7,7 @@
 
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 

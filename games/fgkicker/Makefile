@@ -7,7 +7,7 @@
 
 PORTNAME=	fgkicker
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.larfeliz.be/projects/files/fgkicker/
 EXTRACT_SUFX=	.tgz

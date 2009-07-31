@@ -7,7 +7,7 @@
 
 PORTNAME=	crystality
 PORTVERSION=	0.92
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.ussg.iu.edu/FreeBSD/distfiles/ \
 		http://T32.TecNik93.com/FreeBSD/others_ports/xmms-crystality/sources/

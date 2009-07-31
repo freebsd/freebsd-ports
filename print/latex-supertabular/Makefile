@@ -7,6 +7,7 @@
 
 PORTNAME=	latex-supertabular
 PORTVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/supertabular/
 DISTFILES=	supertabular.dtx supertabular.ins ${DOC_FILES}

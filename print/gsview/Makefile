@@ -7,6 +7,7 @@
 
 PORTNAME=	gsview
 PORTVERSION=	4.9
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 

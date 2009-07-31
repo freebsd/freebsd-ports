@@ -7,7 +7,7 @@
 
 PORTNAME=	silo
 PORTVERSION=	4.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
 

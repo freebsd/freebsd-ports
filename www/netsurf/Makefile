@@ -8,7 +8,7 @@
 PORTNAME=	netsurf
 PORTVERSION=	1.1
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.netsurf-browser.org/download/ CENKES
 

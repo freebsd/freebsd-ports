@@ -6,7 +6,7 @@
 
 PORTNAME=	texfamily
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/texfam-1.2/ \
 		${MASTER_SITE_LOCAL}

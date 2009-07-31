@@ -7,7 +7,7 @@
 
 PORTNAME=	shim
 DISTVERSION=	1.1b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://corp.efnet.net/~lamer/pegasosppc/download/ CENKES
 

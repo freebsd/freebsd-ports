@@ -8,7 +8,7 @@
 
 PORTNAME=	Gtk2-Html2
 PORTVERSION=	0.03
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	http://asofyet.org/muppet/software/gtk2-perl/
 PKGNAMEPREFIX=	p5-

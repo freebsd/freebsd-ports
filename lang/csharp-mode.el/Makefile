@@ -7,6 +7,7 @@
 
 PORTNAME=	csharp-mode.el
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://mfgames.com/linux/releases/
 DISTNAME=	${PORTNAME:S|.el$||}-${PORTVERSION}

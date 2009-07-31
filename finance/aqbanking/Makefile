@@ -7,6 +7,7 @@
 
 PORTNAME=	aqbanking
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
 DISTFILES=	download.php\?package=03\&release=37\&file=01\&dummy=aqbanking-${PORTVERSION}.tar.gz

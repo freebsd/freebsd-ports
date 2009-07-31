@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qt-bluecurve-theme
-PORTREVISION=	2
+PORTREVISION=	4
 COMMENT=	The Bluecurve QT theme
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes

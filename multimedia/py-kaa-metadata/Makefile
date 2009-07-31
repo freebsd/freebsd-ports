@@ -7,6 +7,7 @@
 
 PORTNAME=	kaa-metadata
 PORTVERSION=	0.7.6
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	freevo

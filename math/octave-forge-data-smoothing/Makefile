@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-data-smoothing
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

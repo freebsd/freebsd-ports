@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmmultiping
 PORTVERSION=	2.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/ \
 		http://depot.fsck.ch/mirror/distfiles/

@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	https://support.process-one.net/doc/download/attachments/415/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/erlang-mysql/

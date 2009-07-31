@@ -7,7 +7,7 @@
 
 PORTNAME=	jaffm
 PORTVERSION=	1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://binary.is/download/
 

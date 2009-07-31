@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrelltop
 PORTVERSION=	2.2.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://psychology.rutgers.edu/~zaimi/html/gkrelltop/
 DISTNAME=	${PORTNAME}_2.2-6

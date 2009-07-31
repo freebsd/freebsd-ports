@@ -7,7 +7,7 @@
 
 PORTNAME=	uae
 PORTVERSION=	0.8.25
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/ \
 		http://www.electronghost.co.uk/~bernds/

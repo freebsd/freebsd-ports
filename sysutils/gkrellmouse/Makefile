@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmouse
 PORTVERSION=	0.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nafpik.com/paul/gkrellmouse/ \
 		http://mirror2.unixfreunde.de/ \
