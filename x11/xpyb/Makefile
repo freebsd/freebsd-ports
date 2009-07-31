@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xpyb
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	dist
@@ -16,7 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	Python bindings to access X Window System protocol via libxcb
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
+		xcb-proto>=1.1:${PORTSDIR}/x11/xcb-proto
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb
 
 USE_BZIP2=	yes
