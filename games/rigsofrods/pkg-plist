@@ -226,5 +226,4 @@ libexec/rigsofrods/rorconfig
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%
 @dirrm libexec/rigsofrods
-@dirrm libexec
 @dirrm lib/rigsofrods
