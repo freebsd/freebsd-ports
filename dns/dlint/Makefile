@@ -9,7 +9,8 @@
 PORTNAME=	dlint
 PORTVERSION=	1.4.0
 CATEGORIES=	dns
-MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/dns/
+MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/dns/ \
+		http://www.sourcefiles.org/Networking/Tools/DNS/
 DISTNAME=	dlint${PORTVERSION}
 
 MAINTAINER=	kimelto@gmail.com
