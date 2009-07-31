@@ -131,11 +131,14 @@ bin/rdiffdir
 @dirrm %%PYTHON_SITELIBDIR%%/duplicity
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/CVS-README
 %%PORTDOCS%%%%DOCSDIR%%/LOG-README
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/REPO-README
 %%PORTDOCS%%%%DOCSDIR%%/tarfile-LICENSE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/locale/en_GB/LC_MESSAGES/duplicity.mo
+share/locale/eo/LC_MESSAGES/duplicity.mo
 share/locale/io/LC_MESSAGES/duplicity.mo
+share/locale/zh_CN/LC_MESSAGES/duplicity.mo
 @dirrmtry share/locale/io/LC_MESSAGES
 @dirrmtry share/locale/io
