@@ -14,9 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Reusable tests for POE Loop authors
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
 MAN3=	POE::Test::Loops.3
