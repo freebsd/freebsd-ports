@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	3.14
+PORTVERSION=	3.15
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -37,7 +37,7 @@ LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=	-geoip
 .endif
 .if defined(WITH_UPNP)
-LIB_DEPENDS+=	miniupnpc.3:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	miniupnpc.4:${PORTSDIR}/net/miniupnpc
 CONFIGURE_ARGS+=	-upnp
 .endif
 .if defined(WITH_RUBY)
@@ -45,11 +45,6 @@ USE_RUBY=	yes
 CONFIGURE_ARGS+=	-ruby
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
-
-do-patch:
-	${REINPLACE_CMD} -e 's|int a;|int a=1;|' \
-		-e 's|/usr/local/|${LOCALBASE}/|' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
