@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Coro
-PORTVERSION=	5.161
+PORTVERSION=	5.162
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Event>=0.89:${PORTSDIR}/devel/p5-Event \
 		${SITE_PERL}/${PERL_ARCH}/IO/AIO.pm:${PORTSDIR}/devel/p5-IO-AIO
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	5.8.2+
 
 MAN3=		Coro.3 Coro::AIO.3 Coro::AnyEvent.3 Coro::Channel.3 \
 		Coro::Handle.3 Coro::BDB.3 Coro::Debug.3 \
