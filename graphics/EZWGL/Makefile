@@ -7,7 +7,7 @@
 
 PORTNAME=	EZWGL
 PORTVERSION=	1.50
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz

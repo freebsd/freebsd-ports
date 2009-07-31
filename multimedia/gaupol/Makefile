@@ -7,7 +7,7 @@
 
 PORTNAME=	gaupol
 PORTVERSION=	0.13.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ CENKES
 

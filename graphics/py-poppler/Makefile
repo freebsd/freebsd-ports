@@ -7,6 +7,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.gnome.org/~gianmt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

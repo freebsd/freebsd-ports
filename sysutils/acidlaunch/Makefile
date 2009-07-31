@@ -7,7 +7,7 @@
 
 PORTNAME=	acidlaunch
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://linuxgamers.net/download/
 

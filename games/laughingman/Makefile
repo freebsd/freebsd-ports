@@ -7,6 +7,7 @@
 
 PORTNAME=	laughingman
 PORTVERSION=	0.20070610
+PORTREVISION=	1
 CATEGORIES=	games multimedia graphics
 MASTER_SITES=	http://www.masayashi.com/wp-content/uploads/2007/04/
 DISTNAME=	LaughingMan_proj

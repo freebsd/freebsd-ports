@@ -7,7 +7,7 @@
 
 PORTNAME=	e-uae
 DISTVERSION=	0.8.29.w4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.rcdrummond.net/uae/${DISTNAME}/
 DISTNAME=	e-uae-0.8.29-WIP4

@@ -7,6 +7,7 @@
 
 PORTNAME=	twelf
 PORTVERSION=	1.5R1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www-2.cs.cmu.edu/~twelf/dist/ http://www.cs.cmu.edu/~twelf/dist/
 DISTNAME=	twelf-1-5R1

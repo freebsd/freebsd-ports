@@ -8,7 +8,7 @@
 
 PORTNAME=	kmovisto
 PORTVERSION=	0.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://mitglied.lycos.de/pageofmh/download/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	greycstoration
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.haypocalc.com/perso/prog/greycstoration/ \
 				http://bio3k.softboard.ru/uploads/arch/

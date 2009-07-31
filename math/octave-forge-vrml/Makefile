@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-vrml
 PORTVERSION=	1.0.10
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

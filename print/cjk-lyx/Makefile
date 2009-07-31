@@ -7,7 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.4.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print chinese japanese korean
 MASTER_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/qt/ \
 		ftp://ftp.u-aizu.ac.jp/pub/tex/cjk-lyx/qt/ \

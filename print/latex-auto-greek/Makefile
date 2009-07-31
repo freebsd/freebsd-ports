@@ -6,7 +6,7 @@
 
 PORTNAME=	latex-auto-greek
 PORTVERSION=	1.0b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://a.physics.upatras.gr/~mplekos/files/
 

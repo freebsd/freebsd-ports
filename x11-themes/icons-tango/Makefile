@@ -7,7 +7,7 @@
 
 PORTNAME=	icons-tango
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://tango.freedesktop.org/releases/ \
 		${MASTER_SITE_GENTOO}

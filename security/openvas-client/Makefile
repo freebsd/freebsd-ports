@@ -7,7 +7,7 @@
 
 PORTNAME=	openvas-client
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/420/
 

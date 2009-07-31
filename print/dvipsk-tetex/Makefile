@@ -6,7 +6,7 @@
 
 PORTNAME=	dvipsk-tetex
 PORTVERSION=	5.95a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1

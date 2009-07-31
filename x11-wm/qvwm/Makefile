@@ -7,7 +7,7 @@
 
 PORTNAME=	qvwm
 PORTVERSION=	1.1.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.csg.is.titech.ac.jp/~kourai/qvwm/archive/qvwm/ \
 		ftp://ftp.chg.ru/pub/X11/windowmanagers/qvwm/

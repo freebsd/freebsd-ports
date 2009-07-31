@@ -7,7 +7,7 @@
 
 PORTNAME=	lcdtest
 PORTVERSION=	1.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.brouhaha.com/~eric/software/lcdtest/download/ \
 		CENKES

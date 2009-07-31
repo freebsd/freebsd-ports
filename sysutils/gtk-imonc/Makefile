@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-imonc
 PORTVERSION=	0.6.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://userpage.fu-berlin.de/~zeank/gtk-imonc/download/
 

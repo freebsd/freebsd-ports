@@ -8,6 +8,7 @@
 
 PORTNAME=	mhwaveedit
 PORTVERSION=	1.4.15
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 

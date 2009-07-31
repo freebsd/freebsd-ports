@@ -7,6 +7,7 @@
 
 PORTNAME=	libpanelappletmm
 PORTVERSION=	2.26.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

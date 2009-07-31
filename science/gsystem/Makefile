@@ -7,7 +7,7 @@
 
 PORTNAME=	gsystem
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science devel games
 MASTER_SITES=	ftp://ftp.g-system.at/pub/gsystem/releases/development/${PORTVERSION}/
 DISTNAME=	G-System-${PORTVERSION}

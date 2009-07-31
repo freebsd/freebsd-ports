@@ -7,7 +7,7 @@
 
 PORTNAME=	ogle
 PORTVERSION=	0.9.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 PKGNAMESUFFIX=	-gui

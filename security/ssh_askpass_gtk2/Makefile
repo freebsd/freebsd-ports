@@ -7,7 +7,7 @@
 
 PORTNAME=	ssh_askpass_gtk2
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.cgabriel.org/download/ssh-askpass-fullscreen/
 DISTNAME=	ssh-askpass-fullscreen-${PORTVERSION}

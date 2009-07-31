@@ -7,7 +7,7 @@
 
 PORTNAME=	chameleon
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://ftp.us.debian.org/debian/pool/main/c/chameleon/ \
 		ftp://carroll.aset.psu.edu/pub/linux/distributions/debian/pool/main/c/chameleon/ \

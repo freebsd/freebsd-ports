@@ -7,7 +7,7 @@
 
 PORTNAME=	vm
 PORTVERSION=	7.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.seanet.com/~kylemonger/vm/ \
 		ftp://ftp.uni-mainz.de/pub/software/gnu/vm/ \

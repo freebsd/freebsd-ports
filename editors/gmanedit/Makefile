@@ -7,6 +7,7 @@
 
 PORTNAME=	gmanedit
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/gmanedit2
 

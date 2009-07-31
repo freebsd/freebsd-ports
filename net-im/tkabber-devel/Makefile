@@ -7,6 +7,7 @@
 
 PORTNAME=	tkabber
 PORTVERSION=	0.11.1.a.20090410
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel

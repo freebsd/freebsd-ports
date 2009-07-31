@@ -7,6 +7,7 @@
 
 PORTNAME=	gigedit
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 

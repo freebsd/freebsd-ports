@@ -8,6 +8,7 @@
 
 PORTNAME=	evolution-jescs
 PORTVERSION=	2.26.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

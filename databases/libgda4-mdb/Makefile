@@ -6,7 +6,7 @@
 #   $MCom: ports/databases/libgda4-mdb/Makefile,v 1.1 2008/08/18 23:53:35 kwm Exp $
 #
 
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX?=	-mdb
 

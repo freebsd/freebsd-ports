@@ -7,7 +7,7 @@
 
 PORTNAME=	synce
 PORTVERSION=	0.7.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-

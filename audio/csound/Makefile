@@ -8,6 +8,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	5.07
+PORTREVISION=	1
 CATEGORIES=	audio lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.carpetsmoker.net/distfiles/:manual \

@@ -7,6 +7,7 @@
 
 PORTNAME=	moonshine
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://abock.org/${PORTNAME}/releases/
 

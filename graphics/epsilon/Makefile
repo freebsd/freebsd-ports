@@ -7,7 +7,7 @@
 
 PORTNAME=	epsilon
 PORTVERSION=	0.3.0.012
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \

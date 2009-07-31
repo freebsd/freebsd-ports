@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkimageview
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	LOCAL/chinsan http://people.freebsd.org/~chinsan/
 # http://trac.bjourne.webfactional.com/

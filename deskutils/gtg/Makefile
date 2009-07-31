@@ -7,7 +7,7 @@
 
 PORTNAME=	gtg
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome python
 MASTER_SITES=	http://launchpad.net/gtg/trunk/${PORTVERSION}/+download/ \
 		http://freebsd.unixfreunde.de/sources/

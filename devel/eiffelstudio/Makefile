@@ -7,7 +7,7 @@
 
 PORTNAME=	eiffelstudio
 PORTVERSION=	5.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.rit.edu/pub/mirrors/ise/download/57/ \
 		ftp://ftp.inf.ethz.ch/pub/mirror/eiffel/57/ \

@@ -6,7 +6,7 @@
 
 PORTNAME=	crossvc
 PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://lincvs.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src

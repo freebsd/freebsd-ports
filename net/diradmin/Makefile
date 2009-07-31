@@ -7,7 +7,7 @@
 
 PORTNAME=	diradmin
 PORTVERSION=	1.5.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://diradmin.open-it.org/releases/ \
 		http://diradmin.open-it.org/releases/old/

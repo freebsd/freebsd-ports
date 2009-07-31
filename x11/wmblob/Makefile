@@ -7,7 +7,7 @@
 
 PORTNAME=	wmblob
 PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://dockapps.org/files/155/541/
 

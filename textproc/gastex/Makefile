@@ -7,7 +7,7 @@
 
 PORTNAME=	gastex
 PORTVERSION=	2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.lsv.ens-cachan.fr/~gastin/gastex/
 DISTFILES=	gastex.sty gastex.pro ex-gastex.tex

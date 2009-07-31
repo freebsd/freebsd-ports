@@ -7,6 +7,7 @@
 
 PORTNAME=	coq
 PORTVERSION=	8.2.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/V${PORTVERSION:R}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/

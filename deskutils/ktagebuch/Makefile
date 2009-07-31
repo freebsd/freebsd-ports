@@ -6,7 +6,7 @@
 
 PORTNAME=		ktagebuch
 PORTVERSION=		0.74
-PORTREVISION=		5
+PORTREVISION=	6
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.theblessing.net/programming/${PORTNAME}/
 

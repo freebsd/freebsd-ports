@@ -7,7 +7,7 @@
 
 PORTNAME=		vmd
 PORTVERSION=		1.8.3
-PORTREVISION=		2
+PORTREVISION=	3
 CATEGORIES=		science graphics python tcl tk
 MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.97/:tachyon \
 			ftp://ftp.ebi.ac.uk/pub/software/unix/stride/src/:stride

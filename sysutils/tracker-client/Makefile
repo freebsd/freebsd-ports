@@ -8,7 +8,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.6.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.gnome.org/~jamiemcc/tracker/
 PKGNAMESUFFIX?=	-client

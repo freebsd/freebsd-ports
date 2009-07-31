@@ -7,6 +7,7 @@
 
 PORTNAME=	eps2png
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	CPAN/../../authors/id/J/JV/JV
 

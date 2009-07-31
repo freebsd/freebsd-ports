@@ -7,7 +7,7 @@
 
 PORTNAME=	qca-tls
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://delta.affinix.com/download/qca/ \
 		http://psi.affinix.com/beta/

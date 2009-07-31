@@ -8,6 +8,7 @@
 
 PORTNAME=	tuxguitar
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	audio java
 MASTER_SITES=	SF:src \
 		http://www.alsa-project.org/~james/sound-fonts/:fluid

@@ -7,7 +7,7 @@
 
 PORTNAME=	dctc
 PORTVERSION=	0.66
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-p2p gnome
 MASTER_SITES=	http://unixpages.org/distfiles/
 PKGNAMESUFFIX=	-gui

@@ -7,7 +7,7 @@
 
 PORTNAME=	prepstools
 PORTVERSION=	2.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 

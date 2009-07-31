@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmwho
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/

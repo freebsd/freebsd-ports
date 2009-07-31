@@ -7,6 +7,7 @@
 
 PORTNAME=	objectdetect
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 

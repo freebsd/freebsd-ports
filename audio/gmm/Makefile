@@ -7,6 +7,7 @@
 
 PORTNAME=	gmm
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://gogglesmm.googlecode.com/files/
 DISTNAME=	musicmanager-${PORTVERSION}

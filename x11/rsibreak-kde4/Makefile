@@ -7,7 +7,7 @@
 
 PORTNAME=	rsibreak
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde
 MASTER_SITES=	http://www.rsibreak.org/files/
 

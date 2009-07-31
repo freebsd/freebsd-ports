@@ -7,6 +7,7 @@
 
 PORTNAME=	biniax2
 PORTVERSION=	1.30
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mordred.dir.bg/biniax/ \
 		http://mirror.amdmi3.ru/distfiles/

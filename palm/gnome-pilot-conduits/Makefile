@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-pilot-conduits
 PORTVERSION=	2.0.17
+PORTREVISION=	1
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0

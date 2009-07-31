@@ -7,6 +7,7 @@
 
 PORTNAME=	g3data
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.frantz.fi/software/
 

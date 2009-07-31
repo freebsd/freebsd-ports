@@ -7,7 +7,7 @@
 
 PORTNAME=	sakura
 PORTVERSION=	2.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/ \
 		LOCAL/chinsan/${PORTNAME}/

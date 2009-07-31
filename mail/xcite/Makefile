@@ -7,7 +7,7 @@
 
 PORTNAME=	xcite
 PORTVERSION=	1.58
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.gentei.org/~yuuji/software/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

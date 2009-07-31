@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-parallel
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

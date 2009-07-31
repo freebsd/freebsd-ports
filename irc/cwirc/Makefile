@@ -7,6 +7,7 @@
 
 PORTNAME=	cwirc
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	irc comms hamradio
 MASTER_SITES=	http://users.skynet.be/ppc/cwirc/download/ \
 		http://www.db.net/downloads/ \

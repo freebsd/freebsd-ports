@@ -7,6 +7,7 @@
 
 PORTNAME=	amoebax
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.emma-soft.com/games/amoebax/download/ \
 		http://mirror.amdmi3.ru/distfiles/

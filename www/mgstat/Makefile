@@ -7,7 +7,7 @@
 
 PORTNAME=	mgstat
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 

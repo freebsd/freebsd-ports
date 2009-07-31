@@ -7,6 +7,7 @@
 
 PORTNAME=	sedumi
 PORTVERSION=    1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/sedumi|}
 # http://sedumi.mcmaster.ca/

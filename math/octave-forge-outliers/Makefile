@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-outliers
 PORTVERSION=	0.13.9
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

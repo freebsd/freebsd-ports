@@ -7,6 +7,7 @@
 
 PORTNAME=	jack-rack
 PORTVERSION=	1.4.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/jack-rack
 

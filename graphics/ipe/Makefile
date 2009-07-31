@@ -7,7 +7,7 @@
 
 PORTNAME=	ipe
 PORTVERSION=	6.0.p23
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://ipe.compgeom.org/ \
 		http://tclab.kaist.ac.kr/~otfried/Ipe/

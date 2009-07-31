@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-lila-theme
 PORTVERSION=	0.5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
 DISTNAME=	lila-gtk-${PORTVERSION}

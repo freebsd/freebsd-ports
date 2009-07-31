@@ -7,7 +7,7 @@
 
 PORTNAME=	gcb
 PORTVERSION=	0.2.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://freebsd.flatrate.ru/distfiles/ \
 		http://ccbsd9.csie.nctu.edu.tw/~cp76/gcb/

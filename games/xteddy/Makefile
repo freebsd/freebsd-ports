@@ -7,7 +7,7 @@
 
 PORTNAME=	xteddy
 PORTVERSION=	2.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://staffwww.itn.liu.se/~stegu/xteddy/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	imhangul
 PORTVERSION=	0.9.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	korean x11-toolkits
 MASTER_SITES=	http://kldp.net/frs/download.php/2808/
 

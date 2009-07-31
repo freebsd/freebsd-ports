@@ -7,6 +7,7 @@
 
 PORTNAME=	toilet
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://libcaca.zoy.org/files/ CENKES
 

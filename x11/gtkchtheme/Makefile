@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkchtheme
 PORTVERSION=	0.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://plasmasturm.org/code/gtk-chtheme/
 DISTNAME=	gtk-chtheme-${PORTVERSION}

@@ -8,6 +8,7 @@
 
 PORTNAME=	embassy
 PORTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/ \
 		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/

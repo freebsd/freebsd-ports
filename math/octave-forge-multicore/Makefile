@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-multicore
 PORTVERSION=	0.2.15
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

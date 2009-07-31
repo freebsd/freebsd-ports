@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkradiant
 PORTVERSION=	1.5.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|source/:id|} \
 		http://www.bsd-geek.de/FreeBSD/distfiles/:fb

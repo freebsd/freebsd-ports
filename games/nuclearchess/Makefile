@@ -7,6 +7,7 @@
 
 PORTNAME=	nuclearchess
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://user.cs.tu-berlin.de/~karlb/${PORTNAME}/
 

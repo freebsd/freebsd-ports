@@ -7,6 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.16.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \

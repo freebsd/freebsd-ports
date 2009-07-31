@@ -7,7 +7,7 @@
 
 PORTNAME=	kseg
 PORTVERSION=	0.403
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.mit.edu/~ibaran/

@@ -7,6 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.75
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://gd.tuwien.ac.at/infosys/network/tools/mtr/ \

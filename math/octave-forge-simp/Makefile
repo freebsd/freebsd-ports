@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-simp
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

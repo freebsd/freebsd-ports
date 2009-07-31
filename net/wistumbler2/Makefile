@@ -7,7 +7,7 @@
 
 PORTNAME=	wistumbler2
 PORTVERSION=	2.00
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nopcode.org/prj/wistumbler2/
 DISTNAME=	wistumbler${PORTVERSION}-pre7

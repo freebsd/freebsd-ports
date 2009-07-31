@@ -8,7 +8,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	1.0.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	http://people.freedesktop.org/~alp/webkit/gtk/
 PKGNAMESUFFIX=	-gtk2

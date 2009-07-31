@@ -6,7 +6,7 @@
 
 PORTNAME=	oooqs
 PORTVERSION=	2.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/segfaultskde/
 

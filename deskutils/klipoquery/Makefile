@@ -6,7 +6,7 @@
 
 PORTNAME=	klipoquery
 PORTVERSION=	0.2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.michael-vonrueden.de/${PORTNAME}/
 

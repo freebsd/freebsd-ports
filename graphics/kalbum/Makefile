@@ -6,7 +6,7 @@
 
 PORTNAME=		kalbum
 PORTVERSION=		0.8.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.paldandy.com/kalbum/data/${PORTNAME}-${PORTVERSION}/
 

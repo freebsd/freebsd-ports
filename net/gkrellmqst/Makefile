@@ -8,7 +8,7 @@
 
 PORTNAME=	gkrellmqst
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net games
 MASTER_SITES=	http://tadpol.org/projects/archives/ \
 		http://freebsd.unixfreunde.de/sources/

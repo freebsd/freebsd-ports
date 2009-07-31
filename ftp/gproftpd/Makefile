@@ -7,7 +7,7 @@
 
 PORTNAME=	gproftpd
 PORTVERSION=	8.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://mange.dynalias.org/linux/gproftpd/
 

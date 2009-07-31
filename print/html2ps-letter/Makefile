@@ -7,7 +7,7 @@
 
 PORTNAME=	html2ps
 DISTVERSION=	1.0b5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://user.it.uu.se/~jan/

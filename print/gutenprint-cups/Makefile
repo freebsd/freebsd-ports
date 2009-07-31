@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports/print/gutenprint-cups/Makefile,v 1.1 2007/03/30 16:42:47 ahze Exp $
 
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-cups
 

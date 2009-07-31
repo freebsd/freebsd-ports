@@ -7,7 +7,7 @@
 
 PORTNAME=	xjtext
 PORTVERSION=	1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese
 MASTER_SITES=	http://plaza.harmonix.ne.jp/~onizuka/
 DISTNAME=	XJTEXT-${PORTVERSION}

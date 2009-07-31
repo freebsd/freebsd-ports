@@ -7,7 +7,7 @@
 
 PORTNAME=	gx
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://perticone.homelinux.net/sergio/c++/gx/src/ CENKES
 

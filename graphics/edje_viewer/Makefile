@@ -8,7 +8,7 @@
 
 PORTNAME=	edje_viewer
 PORTVERSION=	20080223
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 

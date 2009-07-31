@@ -8,7 +8,7 @@
 
 PORTNAME=	transcalc
 PORTVERSION=	0.14
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	cad
 MASTER_SITES=	http://transcalc.sourceforge.net/
 

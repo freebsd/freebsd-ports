@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports/sysutils/tracker-gnome/Makefile,v 1.2 2009/04/09 03:24:09 mezz Exp $
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Tracker GNOME applet, search tool, and preference programs
 

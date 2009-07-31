@@ -7,6 +7,7 @@
 
 PORTNAME=	linuxdcpp
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
 MASTER_SITE_SUBDIR=	danfe

@@ -7,6 +7,7 @@
 
 PORTNAME=	sobby
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://releases.0x539.de/sobby/ \
 		http://www.atarininja.org/~wxs/distfiles/

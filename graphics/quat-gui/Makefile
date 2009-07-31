@@ -7,7 +7,7 @@
 
 PORTNAME=	quat
 PORTVERSION=	1.20
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.physcip.uni-stuttgart.de/phy11733/download/
 PKGNAMESUFFIX=	-gui

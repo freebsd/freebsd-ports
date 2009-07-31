@@ -7,7 +7,7 @@
 
 PORTNAME=	xpaint
 PORTVERSION=	2.7.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.ac-grenoble.fr/Office/

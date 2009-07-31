@@ -7,7 +7,7 @@
 
 PORTNAME=	pager
 PORTVERSION=	0.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/

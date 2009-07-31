@@ -7,6 +7,7 @@
 
 PORTNAME=		gnome-globalmenu
 PORTVERSION=		0.7.5
+PORTREVISION=	1
 CATEGORIES=		deskutils
 MASTER_SITES=		http://gnome2-globalmenu.googlecode.com/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	ganyremote
 PORTVERSION=	5.10
+PORTREVISION=	1
 CATEGORIES=	deskutils comms gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	anyremote

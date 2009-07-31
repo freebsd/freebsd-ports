@@ -7,7 +7,7 @@
 
 PORTNAME=	py-gnome
 PORTVERSION=	1.4.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python/1.4

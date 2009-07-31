@@ -7,7 +7,7 @@
 
 PORTNAME=	widgetfactory
 PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.stellingwerff.com/TheWidgetFactory/
 DISTNAME=	the${PORTNAME}-${PORTVERSION}

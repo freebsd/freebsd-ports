@@ -7,6 +7,7 @@
 
 PORTNAME=	vboxgtk
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils emulators gnome
 MASTER_SITES=	http://www.xente.mundo-r.com/narf/vboxgtk/releases/ \
 		LOCAL/avl

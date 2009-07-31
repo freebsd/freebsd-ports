@@ -7,6 +7,7 @@
 
 PORTNAME=	psvn
 PORTVERSION=	34661
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 #MASTER_SITES=	http://svn.collab.net/viewvc/*checkout*/svn/trunk/contrib/client-side/emacs/
 MASTER_SITES=	http://svn.collab.net/viewvc/svn/trunk/contrib/client-side/emacs/

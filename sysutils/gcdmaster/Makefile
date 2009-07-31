@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcdmaster
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	GNOME frontend for cdrdao
 

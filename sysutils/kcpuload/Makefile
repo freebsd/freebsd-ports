@@ -7,7 +7,7 @@
 
 PORTNAME=	kcpuload
 PORTVERSION=	1.99
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.brueffer.de/distfiles/
 

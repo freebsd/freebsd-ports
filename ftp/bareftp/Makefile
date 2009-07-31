@@ -7,6 +7,7 @@
 
 PORTNAME=	bareftp
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	gnotime
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/gttr:gttr SF/qof:qof
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gttr \

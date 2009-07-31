@@ -8,7 +8,7 @@
 
 PORTNAME=	dbus-sharp
 PORTVERSION=	0.62
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 DISTNAME=	dbus-${PORTVERSION}

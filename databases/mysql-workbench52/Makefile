@@ -6,6 +6,7 @@
 #
 
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 PKGNAMESUFFIX=	52
 
 MAINTAINER=	gelraen.ua@gmail.com

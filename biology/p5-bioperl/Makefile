@@ -7,6 +7,7 @@
 
 PORTNAME=	bioperl
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	http://bioperl.org/DIST/ \
 		CPAN

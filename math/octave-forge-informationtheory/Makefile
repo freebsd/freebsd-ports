@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-informationtheory
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

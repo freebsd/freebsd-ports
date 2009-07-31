@@ -6,7 +6,7 @@
 
 PORTNAME=	gpscorrelate
 PORTVERSION=	1.5.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro geography
 MASTER_SITES=	http://freefoote.dview.net/linux/
 

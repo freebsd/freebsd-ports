@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-symbolic
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

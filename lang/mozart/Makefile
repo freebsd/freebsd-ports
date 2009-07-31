@@ -7,7 +7,7 @@
 
 PORTNAME=	mozart
 PORTVERSION=	1.3.1.20040616
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang tk parallel
 MASTER_SITES=	http://www.mozart-oz.org/download/mozart-ftp/store/1.3.1-2004-06-16/
 DISTFILES=	${DISTNAME}-src.tar.gz

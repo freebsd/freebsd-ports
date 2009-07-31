@@ -7,7 +7,7 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	20071023
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://www.brueffer.de/distfiles/
 PKGNAMESUFFIX=	-devel

@@ -7,6 +7,7 @@
 
 PORTNAME=	focusblur
 PORTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://sudakyo.hp.infoseek.co.jp/gimp/fblur/ \
 		http://www.dindin.ru/download/

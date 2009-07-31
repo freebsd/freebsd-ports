@@ -7,6 +7,7 @@
 
 PORTNAME=	mpdscribble
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd
 

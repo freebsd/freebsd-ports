@@ -7,7 +7,7 @@
 
 PORTNAME=	yamt
 PORTVERSION=	0.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/

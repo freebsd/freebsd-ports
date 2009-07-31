@@ -7,7 +7,7 @@
 
 PORTNAME=	GD
 PORTVERSION=	0.7.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.daifukuya.com/archive/kagemai/lib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

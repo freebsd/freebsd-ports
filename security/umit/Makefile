@@ -7,7 +7,7 @@
 
 PORTNAME=	umit
 PORTVERSION=	0.9.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 				http://bio3k.softboard.ru/uploads/arch/

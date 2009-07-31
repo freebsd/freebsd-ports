@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkada-gps
 PORTVERSION=	3.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://libre.adacore.com/
 EXTRACT_SUFX=	-src.tgz

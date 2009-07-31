@@ -7,7 +7,7 @@
 
 PORTNAME=	gnubg
 PORTVERSION=	0.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnubg.org/media/sources/:src \
 		${MASTER_SITE_GNU_ALPHA:S/$/:ts/}

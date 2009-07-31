@@ -7,7 +7,7 @@
 
 PORTNAME=	animenfo
 PORTVERSION=	20020819
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.animenfo.com/extension/files/
 PKGNAMESUFFIX=	-client-gui-gtk${PKGNAMESUFFIX2}

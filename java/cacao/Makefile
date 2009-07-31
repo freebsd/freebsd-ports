@@ -6,7 +6,7 @@
 
 PORTNAME=	cacao
 PORTVERSION=	0.98
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.complang.tuwien.ac.at/cacaojvm/download/cacao-${PORTVERSION}/
 

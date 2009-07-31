@@ -7,7 +7,7 @@
 
 PORTNAME=	solarconquest
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://games.sajthelper.com/ \
 		${MASTER_SITE_LOCAL} \

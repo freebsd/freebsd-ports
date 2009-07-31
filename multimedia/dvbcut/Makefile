@@ -7,6 +7,7 @@
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mr511.de/dvbcut/
 

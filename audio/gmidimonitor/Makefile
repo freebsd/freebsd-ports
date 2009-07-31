@@ -7,6 +7,7 @@
 
 PORTNAME=	gmidimonitor
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/gmidimonitor/
 

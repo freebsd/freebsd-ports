@@ -7,7 +7,7 @@
 
 PORTNAME=	qscanplot
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 # per distfile survey, mastersite disappeared in March 2003
 MASTER_SITES=	# http://www.gae.ucm.es/~gonzalez/qscanplot/

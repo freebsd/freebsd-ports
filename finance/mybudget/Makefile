@@ -7,7 +7,7 @@
 
 PORTNAME=	myBudget
 PORTVERSION=	0.60
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.abisource.com/~msevior/
 

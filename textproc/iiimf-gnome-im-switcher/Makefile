@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-im-switcher
 PORTVERSION=	12.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-

@@ -7,7 +7,7 @@
 
 PORTNAME=	manualsize
 PORTVERSION=	0.6a
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://myfotomx.com/files/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/

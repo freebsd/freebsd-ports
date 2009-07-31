@@ -7,7 +7,7 @@
 
 PORTNAME=	icoconvert
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mox.net/downloads/ \
 		http://www.xunix.org/~flz/distfiles/

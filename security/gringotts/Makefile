@@ -7,7 +7,7 @@
 
 PORTNAME=	gringotts
 PORTVERSION=	1.2.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	BERLIOS \
 		ftp://ftp.nuug.no/pub/anders/distfiles/

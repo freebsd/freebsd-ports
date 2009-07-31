@@ -7,6 +7,7 @@
 
 PORTNAME=	vagalume
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://vagalume.igalia.com/files/source/

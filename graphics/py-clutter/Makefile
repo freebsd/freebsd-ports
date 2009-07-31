@@ -7,7 +7,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clutter-project.org/sources/pyclutter/0.8/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

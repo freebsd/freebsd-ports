@@ -8,7 +8,7 @@
 
 PORTNAME=	klassmodeler
 PORTVERSION=	0.8.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.jameswells.net/KlassModeler/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}.bsd

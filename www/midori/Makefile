@@ -8,6 +8,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 

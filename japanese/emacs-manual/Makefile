@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs-manual
 PORTVERSION=	13.20000303
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/emacs-20.x/:ascii \
 		${MASTER_SITE_GNU:S/$/:gnu/}

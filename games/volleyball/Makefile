@@ -7,7 +7,7 @@
 
 PORTNAME=	volleyball
 PORTVERSION=	0.8.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/volleyball/descargas/ \
 		http://mirror.amdmi3.ru/distfiles/

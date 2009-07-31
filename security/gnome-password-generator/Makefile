@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-password-generator
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome python
 MASTER_SITES=	SF/gnome-password
 

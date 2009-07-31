@@ -7,7 +7,7 @@
 
 PORTNAME=	gopod
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://gopod.free-go.net/gopod/ \
 		CRITICAL

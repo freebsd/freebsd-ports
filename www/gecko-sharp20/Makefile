@@ -8,6 +8,7 @@
 
 PORTNAME=	gecko-sharp
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/${PORTNAME}2/
 DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}

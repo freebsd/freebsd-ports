@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-fixed
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=     math
 
 MAINTAINER=	stephen@missouri.edu

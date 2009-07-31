@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-struct
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

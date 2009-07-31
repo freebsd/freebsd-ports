@@ -7,7 +7,7 @@
 
 PORTNAME=	trayicons
 PORTVERSION=	1.03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://depot.fsck.ch/mirror/distfiles/ \
 		http://sweb.cz/tripie/gkrellm/trayicons/dist/

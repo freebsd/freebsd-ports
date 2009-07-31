@@ -7,7 +7,7 @@
 
 PORTNAME=	vertex
 PORTVERSION=	0.1.15
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://wolfpack.twu.net/users/wolfpack/
 

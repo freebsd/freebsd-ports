@@ -7,7 +7,7 @@
 
 PORTNAME=	qsstv
 PORTVERSION=	6.0a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/snapshots/download/ \
 		${MASTER_SITE_LOCAL}

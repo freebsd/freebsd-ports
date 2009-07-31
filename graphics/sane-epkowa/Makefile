@@ -43,6 +43,7 @@
 
 PORTNAME=	epkowa
 PORTVERSION=	2.11.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://lx1.avasys.jp/iscan/${PORTVERSION}/
 DISTNAME= iscan_${PORTVERSION}-1

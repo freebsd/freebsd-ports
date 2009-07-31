@@ -7,7 +7,7 @@
 
 PORTNAME=	xlines
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.trolltech.com/contrib/
 DISTNAME=	${PORTNAME}

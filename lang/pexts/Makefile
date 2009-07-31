@@ -7,7 +7,7 @@
 
 PORTNAME=	pexts
 PORTVERSION=	20020121
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
 		http://ftp.oav.net/pkg_freebsd/distfiles/ \

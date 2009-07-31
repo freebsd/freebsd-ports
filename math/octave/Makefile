@@ -7,7 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/

@@ -7,7 +7,7 @@
 
 PORTNAME=	kiwi
 PORTVERSION=	1.9.25
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://download.gnome.org/sources/${PORTNAME}/1.9/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

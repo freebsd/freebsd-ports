@@ -6,7 +6,7 @@
 
 PORTNAME=	latex-mathabx
 PORTVERSION=	1.0.20050518
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://auemath.aichi-edu.ac.jp/~khotta/ghost/abx/
 DISTFILES=	mathabx${EXTRACT_SUFX} abxtype1${EXTRACT_SUFX}
