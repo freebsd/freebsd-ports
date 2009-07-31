@@ -21,7 +21,7 @@
                  'rdiffdir.1']),
 -              ('share/doc/duplicity-%s' % version_string,
 -               ['COPYING',
--                'CVS-README',
+-                'REPO-README',
 -                'LOG-README',
 -                'README',
 -                'tarfile-LICENSE',
