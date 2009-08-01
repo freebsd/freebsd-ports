@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	abby
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	legatvs@gmail.com
 COMMENT=	Front-end for c/clive
 
-OPTIONS=	CCLIVE "Use cclive as back-end" on \
-		CLIVE  "Use clive as back-end" off
+OPTIONS=	CCLIVE "Use cclive backend" on \
+		CLIVE  "Use clive backend" off
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -25,7 +25,7 @@ PLIST_FILES=	bin/abby
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} "QT+=network xml" -unix PREFIX=${PREFIX} abby.pro
+		${QMAKE} -unix PREFIX=${PREFIX} abby.pro
 
 .include <bsd.port.pre.mk>
 
@@ -33,11 +33,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abby ${PREFIX}/bin/abby
 
 .if defined(WITHOUT_CCLIVE)
-RUN_DEPENDS+=	cclive>=0.4.4:${PORTSDIR}/multimedia/cclive
+RUN_DEPENDS+=	cclive>=0.4.6:${PORTSDIR}/multimedia/cclive
 .endif
 
 .if defined(WITH_CLIVE)
-RUN_DEPENDS+=	clive>=2.2.1:${PORTSDIR}/multimedia/clive
+RUN_DEPENDS+=	clive>=2.2.3:${PORTSDIR}/multimedia/clive
 .endif
 
 .include <bsd.port.post.mk>
