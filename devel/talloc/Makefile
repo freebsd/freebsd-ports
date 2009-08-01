@@ -14,7 +14,7 @@ PKGNAMESUFFIX=
 
 COMMENT=		Hierarchical pool based memory allocator
 
-CONFLICTS=
+CONFLICTS=		samba-3.3*
 
 SAMBA_PORT?=		samba4-devel
 SAMBA_SUBPORT=		yes
