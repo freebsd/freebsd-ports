@@ -1,3 +1,3 @@
-MD5 (xorg/driver/xf86-video-nouveau-0.0.10.20090514.9656762.tar.bz2) = 86aff4923c1b2143aae0f7f2ac65b5a3
-SHA256 (xorg/driver/xf86-video-nouveau-0.0.10.20090514.9656762.tar.bz2) = eaa2f230770338c08839d0c6f7211ef9624a19eb305689f3f012df3ab92cb5c7
-SIZE (xorg/driver/xf86-video-nouveau-0.0.10.20090514.9656762.tar.bz2) = 556039
+MD5 (xorg/driver/xf86-video-nouveau-0.0.10.20090728.e259925.tar.bz2) = 8e0b3246a8b2a49a9609b1bdf6279e64
+SHA256 (xorg/driver/xf86-video-nouveau-0.0.10.20090728.e259925.tar.bz2) = 48e328a04a2dc9ea5dfebd21eae7c23987dcf53dcd3db7bee477d873cbb31906
+SIZE (xorg/driver/xf86-video-nouveau-0.0.10.20090728.e259925.tar.bz2) = 552302

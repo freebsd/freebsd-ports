@@ -20,15 +20,18 @@ MAN4=		nouveau.4x
 
 MAKE_JOBS_SAFE=	yes
 
-SNAPDATE=	20090514
-SNAPREV=	9656762
-
 post-configure:
 	${REINPLACE_CMD} '/NV_DRIVER_DATE/s/".*"/"${SNAPDATE}.${SNAPREV}"/' ${WRKSRC}/config.h
 
+post-install:	.SILENT
+	${ECHO_MSG}
+	${CAT} ${PKGMESSAGE}
+	${ECHO_MSG}
+
 GIT_WORK=	${WRKDIR}/${PORTNAME}.git-clone
-GIT_REV=	$$(date -ur$$(git log --pretty=format:%ct -1 \
-			) +%Y%m%d).$$(git log --pretty=format:%h -1)
+GIT_DATE=	$$(date -ur$$(git log --pretty=format:%ct -1 ) +%Y%m%d)
+GIT_REV=	$$(git log --pretty=format:%h -1)
+NEWDISTNAME=	${DISTNAME:S/${SNAPDATE}.${SNAPREV}$$//}${GIT_DATE}.${GIT_REV}
 
 maint-gen-distfile:
 	git clone git://anongit.freedesktop.org/nouveau/xf86-video-nouveau \
@@ -37,11 +40,17 @@ maint-gen-distfile:
 	( cd ${GIT_WORK}; \
 	  git log --stat >ChangeLog; \
 	  autoreconf -if; \
-	  ${TAR} cjf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME:S/${SNAPDATE}.${SNAPREV}$$//}${GIT_REV}.tar.bz2 \
-	  	--exclude '.git*' --exclude autogen.sh --exclude autom4te.cache \
-	  	-s "|${GIT_WORK}|${DISTNAME:S/${SNAPDATE}.${SNAPREV}$$//}${GIT_REV}|" \
-	  	${GIT_WORK} )
+	  ${TAR} cjf ${DISTDIR}/${DIST_SUBDIR}/${NEWDISTNAME}${EXTRACT_SUFX} \
+	  	--exclude '.git*' --exclude autogen.sh \
+		--exclude autom4te.cache \
+	  	-s "|${GIT_WORK}|${NEWDISTNAME}|" \
+	  	${GIT_WORK}; \
+	  ${ECHO_CMD} "SNAPDATE=	${GIT_DATE}" \
+		>${MASTERDIR}/Makefile.rev; \
+	  ${ECHO_CMD} "SNAPREV=	${GIT_REV}" \
+		>>${MASTERDIR}/Makefile.rev )
 
 	${RM} -rf ${GIT_WORK}
 
+.include "Makefile.rev"
 .include <bsd.port.mk>
