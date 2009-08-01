@@ -1,30 +1,24 @@
---- src/bsd/kernel_routes.c.orig	2009-03-17 23:52:47.000000000 +0200
-+++ src/bsd/kernel_routes.c	2009-03-21 19:45:54.000000000 +0200
-@@ -176,7 +176,9 @@
-       memcpy(walker, sdl, sdl->sdl_len);
-       walker += sdl_size;
-       rtm->rtm_addrs |= RTA_GATEWAY;
-+#ifdef RTF_CLONING
-       rtm->rtm_flags |= RTF_CLONING;
-+#endif
- #ifndef _WRS_KERNEL
-       rtm->rtm_flags &= ~RTF_HOST;
- #endif
-@@ -295,7 +297,7 @@
- #endif
-     memcpy(walker, &sin6, sizeof(sin6));
-     walker += sin_size;
--    rtm->rtm_addrs = RTA_GATEWAY;
-+    rtm->rtm_addrs |= RTA_GATEWAY;
-   }
-   else {
-     /*
-@@ -313,7 +315,7 @@
- #endif
-     memcpy(walker, &sin6, sizeof(sin6));
-     walker += sin_size;
--    rtm->rtm_addrs = RTA_GATEWAY;
-+    rtm->rtm_addrs |= RTA_GATEWAY;
-     rtm->rtm_flags |= RTF_GATEWAY;
-   }
+--- src/bsd/kernel_routes.c.orig	2009-02-01 19:57:23.000000000 +0000
++++ src/bsd/kernel_routes.c	2009-06-17 15:57:01.000000000 +0000
+@@ -95,8 +95,8 @@
+   sin4.sin_len = sizeof(sin4);
+   sin4.sin_family = AF_INET;
  
+-  sin_size = 1 + ((sizeof(struct sockaddr_in) - 1) | 3);
+-  sdl_size = 1 + ((sizeof(struct sockaddr_dl) - 1) | 3);
++  sin_size = 1 + ((sizeof(struct sockaddr_in) - 1) | (sizeof(long) - 1));
++  sdl_size = 1 + ((sizeof(struct sockaddr_dl) - 1) | (sizeof(long) - 1));
+ 
+   /**********************************************************************
+    *                  FILL THE ROUTING MESSAGE HEADER
+@@ -250,8 +252,8 @@
+   sdl.sdl_len = sizeof(sdl);
+   sdl.sdl_family = AF_LINK;
+ 
+-  sin_size = 1 + ((sizeof(struct sockaddr_in6) - 1) | 3);
+-  sdl_size = 1 + ((sizeof(struct sockaddr_dl) - 1) | 3);
++  sin_size = 1 + ((sizeof(struct sockaddr_in6) - 1) | (sizeof(long) - 1));
++  sdl_size = 1 + ((sizeof(struct sockaddr_dl) - 1) | (sizeof(long) - 1));
+ 
+   /**********************************************************************
+    *                  FILL THE ROUTING MESSAGE HEADER
