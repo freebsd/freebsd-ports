@@ -38,11 +38,11 @@ Note:  Please add new entries to the beginning of this file.
     <topic>BIND -- Dynamic update message remote DoS</topic>
     <affects>
       <package>
-	<name>bind9</name>
-	<range><lt>9.3.6.1.1</lt></range>
+        <name>bind9</name>
+        <range><lt>9.3.6.1.1</lt></range>
       </package>
       <system>
-	<name>FreeBSD</name>
+        <name>FreeBSD</name>
         <range><ge>6.3</ge><lt>6.3_12</lt></range>
         <range><ge>6.4</ge><lt>6.4_6</lt></range>
         <range><ge>7.1</ge><lt>7.1_7</lt></range>
@@ -51,23 +51,23 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<h1>Problem Description:</h1>
-	<p>When named(8) receives a specially crafted dynamic update
-	  message an internal assertion check is triggered which causes
-	  named(8) to exit.</p>
-	<p>To trigger the problem, the dynamic update message must contains
-	  a record of type "ANY" and at least one resource record set (RRset)
-	  for this fully qualified domain name (FQDN) must exist on the
-	  server.</p>
-	<h1>Impact:</h1>
-	<p>An attacker which can send DNS requests to a nameserver can cause
-	  it to exit, thus creating a Denial of Service situation.</p>
-	<h1>Workaround:</h1>
-	<p>No generally applicable workaround is available, but some firewalls
-	  may be able to prevent nsupdate DNS packets from reaching the
-	  nameserver.</p>
-	<p>NOTE WELL: Merely configuring named(8) to ignore dynamic updates
-	  is NOT sufficient to protect it from this vulnerability.</p>
+        <h1>Problem Description:</h1>
+          <p>When named(8) receives a specially crafted dynamic update
+            message an internal assertion check is triggered which causes
+            named(8) to exit.</p>
+          <p>To trigger the problem, the dynamic update message must contains
+            a record of type "ANY" and at least one resource record set (RRset)
+            for this fully qualified domain name (FQDN) must exist on the
+            server.</p>
+        <h1>Impact:</h1>
+          <p>An attacker which can send DNS requests to a nameserver can cause
+            it to exit, thus creating a Denial of Service situation.</p>
+        <h1>Workaround:</h1>
+          <p>No generally applicable workaround is available, but some firewalls
+            may be able to prevent nsupdate DNS packets from reaching the
+            nameserver.</p>
+          <p>NOTE WELL: Merely configuring named(8) to ignore dynamic updates
+            is NOT sufficient to protect it from this vulnerability.</p>
       </body>
     </description>
     <references>
@@ -78,7 +78,7 @@ Note:  Please add new entries to the beginning of this file.
     </references>
     <dates>
       <discovery>2009-07-28</discovery>
-      <entry>2009-07-29</entry>
+      <entry>2009-08-01</entry>
     </dates>
   </vuln>
 
@@ -1608,7 +1608,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <freebsdsa>SA-09:08.openssl</freebsdsa>
-    <cvename>CVE-2009-0590</cvename>
+      <cvename>CVE-2009-0590</cvename>
     </references>
     <dates>
       <discovery>2009-03-25</discovery>
