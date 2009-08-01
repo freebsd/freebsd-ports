@@ -1,0 +1,15 @@
+The DRM part is still not in the kernel tree and will not be there
+until it stabilized. It won't happen anytime soon. So, consider using
+the following patch in the meantime unless you don't want any hardware
+accelerated 2D like EXA and Xvideo.
+
+http://people.freebsd.org/~rnoland/drm-nouveau-062309.patch
+
+Installing it should be as simple as below procedure provided you have
+base sources in /usr/src.
+
+    # cd /usr/src/sys
+    # fetch http://people.freebsd.org/~rnoland/drm-nouveau-062309.patch
+    # patch -sp0 -i drm-nouveau-062309.patch
+    # cd modules/drm
+    # make depend all install
