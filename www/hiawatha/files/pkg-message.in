@@ -2,7 +2,7 @@
 
 The Hiawatha webserver is now installed.
 
-Edit the configuration files in %%ETCDIRX%% to suit your needs.
+Edit the configuration files in %%ETCDIR%% to suit your needs.
 
 Add hiawatha_enable="YES" to rc.conf and start Hiawatha by running:
 %%PREFIX%%/etc/rc.d/hiawatha start

@@ -72,9 +72,19 @@ post-install:
 	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/extra/,} ${EXAMPLESDIR}/
 .endif
 	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/doc/,} ${MAN1PREFIX}/man/man1/
-	@${INSTALL_DATA} ${CONFIG_FILES:S,^,${WRKSRC}/etc/${PORTNAME}/,} ${ETCDIR}/
-	@${MKDIR} ${WWWDIR}
-	@${CP} -f ${WRKSRC}/doc/index.html ${WWWDIR}/
+.for FILE in ${CONFIG_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/etc/hiawatha/${FILE} ${PREFIX}/etc/hiawatha/${FILE}.sample
+	@if [ ! -f ${PREFIX}/etc/hiawatha/${FILE} ]; then \
+		${CP} -p ${WRKSRC}/etc/hiawatha/${FILE} ${PREFIX}/etc/hiawatha/${FILE} ; \
+	fi
+.endfor
+	@if [ ! -d ${WWWDIR} ]; then \
+		@${MKDIR} ${WWWDIR} ; \
+	fi
+	@${CP} ${WRKSRC}/doc/index.html ${WWWDIR}/index.hiawatha.html
+	@if [ ! -f ${WWWDIR}/index.html ] ; then \
+		${CP} ${WRKSRC}/doc/index.html ${WWWDIR}/ ; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -4,11 +4,24 @@ sbin/hiawatha
 sbin/newroot
 sbin/php-fcgi
 sbin/wigwam
-%%ETCDIR%%/cgi-wrapper.conf
-%%ETCDIR%%/httpd.conf
-%%ETCDIR%%/mimetype.conf
-%%ETCDIR%%/php-fcgi.conf
-%%WWWDIR%%/index.html
+@unexec if cmp -s %D/etc/hiawatha/cgi-wrapper.conf.sample %D/etc/hiawatha/cgi-wrapper.conf ; then rm -f %D/etc/hiawatha/cgi-wrapper.conf; fi
+%%ETCDIR%%/cgi-wrapper.conf.sample
+@exec if [ ! -f %D/etc/hiawatha/cgi-wrapper.conf ] ; then cp -p %D/%F %%ETCDIR%%/cgi-wrapper.conf; fi
+@unexec if cmp -s %D/etc/hiawatha/httpd.conf.sample %D/etc/hiawatha/httpd.conf ; then rm -f %D/etc/hiawatha/httpd.conf; fi
+%%ETCDIR%%/httpd.conf.sample
+@exec if [ ! -f %D/etc/hiawatha/httpd.conf ] ; then cp -p %D/%F %%ETCDIR%%/httpd.conf; fi
+@unexec if cmp -s %D/etc/hiawatha/mimetype.conf.sample %D/etc/hiawatha/mimetype.conf ; then rm -f %D/etc/hiawatha/mimetype.conf; fi
+%%ETCDIR%%/mimetype.conf.sample
+@exec if [ ! -f %D/etc/hiawatha/mimetype.conf ] ; then cp -p %D/%F %%ETCDIR%%/mimetype.conf; fi
+@unexec if cmp -s %D/etc/hiawatha/php-fcgi.conf.sample %D/etc/hiawatha/php-fcgi.conf ; then rm -f %D/etc/hiawatha/php-fcgi.conf; fi
+%%ETCDIR%%/php-fcgi.conf.sample
+@exec if [ ! -f %D/etc/hiawatha/php-fcgi.conf ] ; then cp -p %D/%F %%ETCDIR%%/php-fcgi.conf; fi
+@unexec t=`/bin/ls %D/etc/hiawatha`; if [ -z "$t" ]; then echo "Configuration directory is empty, remove it."; rmdir %D/etc/hiawatha; fi;
+@unexec t=`/bin/ls /var/log/hiawatha`; if [ -z "$t" ]; then echo "Log directory is empty, remove it."; rmdir /var/log/hiawatha; fi;
+@unexec if cmp -s %D/www/hiawatha/index.html %D/www/hiawatha/index.hiawatha.html ; then rm -f %D/www/hiawatha/index.html; fi
+%%WWWDIR%%/index.hiawatha.html
+@exec if [ ! -f %D/www/hiawatha/index.html ] ; then cp -p %D/%F %%WWWDIR%%/index.html; fi
+@unexec t=`/bin/ls %D/www/hiawatha`; if [ -z "$t" ]; then echo "WWW directory is empty, remove it."; rmdir %D/www/hiawatha; fi;
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -17,7 +30,5 @@ sbin/wigwam
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mkcert
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/newroot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/php-fcgi
-@dirrm %%ETCDIR%%
-@dirrm %%WWWDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
