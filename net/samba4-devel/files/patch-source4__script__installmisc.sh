@@ -6,7 +6,7 @@
  mkdir -p $SETUPDIR || exit 1
 +for p in enableaccount newuser provision provision-backend setexpiry setpassword upgrade
 +do
-+	chmod 055 setup/$p
++	chmod 0555 setup/$p
 +	cp setup/$p $SETUPDIR || exit 1
 +done
 +cp -R setup/ad-schema $SETUPDIR || exit 1
