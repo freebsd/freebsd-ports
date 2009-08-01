@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-mag
-PORTVERSION=	0.15.7
+PORTVERSION=	0.15.8
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
