@@ -6824,6 +6824,7 @@ ko-xpdf                         ports/korean/xpdf
 kobodeluxe                      ports/games/kobodeluxe
 koctave                         ports/math/koctave
 kodos                           ports/devel/kodos
+koffice-i18n                    ports/editors/koffice-i18n
 koffice-i18n-af                 ports/editors/koffice-i18n-af
 koffice-i18n-bg                 ports/editors/koffice-i18n-bg
 koffice-i18n-br                 ports/editors/koffice-i18n-br
@@ -16259,6 +16260,7 @@ p5-search-saryer                ports/textproc/p5-Search-Saryer
 p5-search-vectorspace           ports/textproc/p5-Search-VectorSpace
 p5-search-xapian                ports/databases/p5-Search-Xapian
 p5-self                         ports/devel/p5-self
+p5-self-init                    ports/devel/p5-self-init
 p5-sendmail-accessdb            ports/mail/p5-Sendmail-AccessDB
 p5-sendmail-milter              ports/mail/p5-Sendmail-Milter
 p5-senna                        ports/textproc/p5-Senna
@@ -19001,6 +19003,7 @@ py-cog                          ports/devel/py-cog
 py-configobj                    ports/devel/py-configobj
 py-coverage                     ports/devel/py-coverage
 py-crack                        ports/security/py-crack
+py-creole                       ports/textproc/py-creole
 py-cryptkit                     ports/security/py-cryptkit
 py-cssutils                     ports/www/py-cssutils
 py-csv                          ports/textproc/py-csv
@@ -19240,6 +19243,7 @@ py-ncurses                      ports/devel/py-ncurses
 py-netCDF4                      ports/science/py-netCDF4
 py-netaddr                      ports/net/py-netaddr
 py-netcdf4                      ports/science/py-netCDF4
+py-netifaces                    ports/net/py-netifaces
 py-netstring                    ports/net/py-netstring
 py-networkx                     ports/math/py-networkx
 py-nevow                        ports/www/py-nevow
