@@ -11,10 +11,10 @@ CATEGORIES=	editors
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Binary file viewer and editor
-
-BROKEN=		does not build
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --with-extraincdir="${LOCALBASE}/include" \
