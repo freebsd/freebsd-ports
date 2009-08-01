@@ -16,7 +16,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* samba-3.[2-9]* sharity-light-1.* tdb-1.*
+CONFLICTS?=		*samba-3.[1-9]* samba4-* tdb-1.*
 
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes

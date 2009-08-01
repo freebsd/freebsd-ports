@@ -17,7 +17,7 @@ PATCH_DIST_STRIP=	-p0
 MAINTAINER=		kuriyama@FreeBSD.org
 COMMENT=		Japanese Samba
 
-CONFLICTS=		ja-samba-2.* samba-2.* samba-3.0.* sharity-light-1.*
+CONFLICTS=		samba-3.* samba4-* tdb-1.*
 
 SAMBA_PORT=		samba3
 
