@@ -7,6 +7,7 @@
 
 PORTNAME?=		${SAMBA_PORTNAME}
 PORTVERSION?=		${SAMBA_VERSION}
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba4
@@ -16,7 +17,7 @@ DISTNAME=		${SAMBA_DISTNAME}
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=
+CONFLICTS?=		*samba-3.*
 
 SAMBA_PORTNAME=		samba4
 SAMBA_VERSION=		4.0.0.a8
@@ -42,9 +43,9 @@ USE_PERL5=		yes
 USE_PYTHON=		yes
 USE_GMAKE=		yes
 USE_ICONV=		yes
-USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		pkgconfig
+USE_LDCONFIG=		${SAMBA_LIBDIR}
 USE_AUTOTOOLS=		autoconf:262 autoheader:262
 # directories
 VARDIR=			/var
@@ -86,7 +87,6 @@ OPTIONS=	\
 		EXT_TEVENT	"With external libtevent" on \
 		POPT		"With system-wide POPT library" on \
 		PCH		"With precompiled headers" off
-
 .endif
 
 .include <bsd.port.pre.mk>

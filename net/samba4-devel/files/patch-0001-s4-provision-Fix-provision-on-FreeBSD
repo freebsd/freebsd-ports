@@ -1,0 +1,31 @@
+From 1887ad0a26cca026c3503f0ef4e40f8eff42a121 Mon Sep 17 00:00:00 2001
+From: Andrew Bartlett <abartlet@samba.org>
+Date: Wed, 22 Jul 2009 18:04:58 +1000
+Subject: [PATCH] s4:provision Fix provision on FreeBSD
+
+We were missing the 'cn' attribute, which we then prepare a sorted
+list based on.  On Linux, strcmp(NULL, NULL) does not segfault, where
+it does on FreeBSD.
+
+Reported by Timur I. Bakeyev <timur@com.bat.ru>
+
+Andrew Bartlett
+---
+ source4/scripting/python/samba/ms_schema.py |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/source4/scripting/python/samba/ms_schema.py b/source4/scripting/python/samba/ms_schema.py
+index 2e8050e..a0abc33 100644
+--- a/source4/scripting/python/samba/ms_schema.py
++++ b/source4/scripting/python/samba/ms_schema.py
+@@ -226,6 +226,7 @@ def __transform_entry(entry, objectClass):
+     assert(cn)
+     entry.insert(0, ["dn", "CN=%s,${SCHEMADN}" % cn])
+     entry.insert(1, ["objectClass", ["top", objectClass]])
++    entry.insert(2, ["cn", cn])
+     
+     for l in entry:
+         key = l[0].lower()
+-- 
+1.6.3.1
+
