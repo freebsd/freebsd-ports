@@ -23,6 +23,9 @@ lib/farsight2-0.0/librawudp-transmitter.so
 lib/gstreamer-0.10/libfsfunnel.a
 lib/gstreamer-0.10/libfsfunnel.la
 lib/gstreamer-0.10/libfsfunnel.so
+lib/gstreamer-0.10/libfsmsnconference.a
+lib/gstreamer-0.10/libfsmsnconference.la
+lib/gstreamer-0.10/libfsmsnconference.so
 lib/gstreamer-0.10/libfsrtcpfilter.a
 lib/gstreamer-0.10/libfsrtcpfilter.la
 lib/gstreamer-0.10/libfsrtcpfilter.so
@@ -71,9 +74,16 @@ share/gtk-doc/html/farsight2-libs-0.10/style.css
 share/gtk-doc/html/farsight2-libs-0.10/up.png
 share/gtk-doc/html/farsight2-plugins-0.10/ch01.html
 share/gtk-doc/html/farsight2-plugins-0.10/ch02.html
+share/gtk-doc/html/farsight2-plugins-0.10/ch03.html
 share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-0.10.devhelp
 share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-0.10.devhelp2
 share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsFunnel.html
+share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsMsnCamCamRecvConference.html
+share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsMsnCamSendConference.html
+share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsMsnConference.html
+share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsMsnParticipant.html
+share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsMsnSession.html
+share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsMsnStream.html
 share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsMulticastStreamTransmitter.html
 share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsNiceStreamTransmitter.html
 share/gtk-doc/html/farsight2-plugins-0.10/farsight2-plugins-FsRawUdpStreamTransmitter.html
@@ -88,6 +98,7 @@ share/gtk-doc/html/farsight2-plugins-0.10/index.sgml
 share/gtk-doc/html/farsight2-plugins-0.10/left.png
 share/gtk-doc/html/farsight2-plugins-0.10/pt01.html
 share/gtk-doc/html/farsight2-plugins-0.10/pt02.html
+share/gtk-doc/html/farsight2-plugins-0.10/pt03.html
 share/gtk-doc/html/farsight2-plugins-0.10/right.png
 share/gtk-doc/html/farsight2-plugins-0.10/style.css
 share/gtk-doc/html/farsight2-plugins-0.10/up.png
