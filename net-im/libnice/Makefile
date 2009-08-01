@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnice
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://nice.freedesktop.org/releases/
 
