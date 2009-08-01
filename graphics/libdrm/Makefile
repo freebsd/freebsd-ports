@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdrm
-PORTVERSION=	2.4.11
+PORTVERSION=	2.4.12
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 
