@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bmeps
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,42 +14,28 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Convert bitmap images (PNG/JPEG/NetPBM) to EPS
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
-		netpbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	dkbif.1:${PORTSDIR}/devel/dklibs
 
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include"
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		bmeps.1
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bmeps ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/bmeps.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/bmepsoe.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/jpgeps.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/pngeps.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/pnmeps.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libbmeps.a ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/man/man1/bmeps.1 ${PREFIX}/man/man1
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=	bmeps.1
+.endif
 
 post-install:
+.if !defined(NO_INSTALL_MANPAGES)
+	${MKDIR} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 ${MANPREFIX}/man/man1
+.endif
+
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/DOCU/*.css ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/DOCU/*.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/DOCU/*.png ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/*.tex ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/*.txt ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/EXAMPLES/*.bb ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/EXAMPLES/*.jpg ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/EXAMPLES/*.ps ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/EXAMPLES/*.tex ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/EXAMPLES/*.txt ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/DOCU/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
