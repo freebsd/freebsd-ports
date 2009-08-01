@@ -1,5 +1,5 @@
---- plugins/nuatilus/seahorse-tool.c.orig	2009-08-01 15:27:07.000000000 -0400
-+++ plugins/nuatilus/seahorse-tool.c	2009-08-01 15:23:46.000000000 -0400
+--- plugins/nautilus/seahorse-tool.c.orig	2009-08-01 15:27:07.000000000 -0400
++++ plugins/nautilus/seahorse-tool.c	2009-08-01 15:23:46.000000000 -0400
 @@ -171,6 +171,9 @@ prompt_recipients (gpgme_key_t *signkey)
          
          if (recips) {
