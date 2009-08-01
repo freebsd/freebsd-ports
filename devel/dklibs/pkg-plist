@@ -1,0 +1,227 @@
+bin/bifconf
+bin/dkpref
+bin/jhelp
+bin/stc
+bin/tracecc
+bin/trana
+include/dk.h
+include/dkapp.h
+include/dkbf.h
+include/dkbif.h
+include/dkbifi.h
+include/dkconfd.h
+include/dkconfig.h
+include/dkconftr.h
+include/dkcp.h
+include/dkenc.h
+include/dkerror.h
+include/dkfont.h
+include/dkl2l.h
+include/dkle.h
+include/dklic.h
+include/dklogc.h
+include/dkma.h
+include/dkmem.h
+include/dkof.h
+include/dkproto.h
+include/dkpstr.h
+include/dkpstrc.h
+include/dkrandc.h
+include/dksdbi.h
+include/dksf.h
+include/dksfc.h
+include/dksignal.h
+include/dkslsupp.h
+include/dksto.h
+include/dkstr.h
+include/dkstream.h
+include/dkstt.h
+include/dktcpip.h
+include/dktrace.h
+include/dktypes.h
+include/dkwin.h
+include/tracecc.h
+include/traceco.h
+lib/libdkappr.so
+lib/libdkappr.so.%%VERSION_PLUGIN%%
+lib/libdkappr.so.%%MAJOR_VERSION%%
+lib/libdkbif.so
+lib/libdkbif.so.%%VERSION_PLUGIN%%
+lib/libdkbif.so.%%MAJOR_VERSION%%
+lib/libdkc.so
+lib/libdkc.so.%%VERSION_PLUGIN%%
+lib/libdkc.so.%%MAJOR_VERSION%%
+lib/libdklatsup.so
+lib/libdklatsup.so.%%VERSION_PLUGIN%%
+lib/libdklatsup.so.%%MAJOR_VERSION%%
+lib/libdknet.so
+lib/libdknet.so.%%VERSION_PLUGIN%%
+lib/libdknet.so.%%MAJOR_VERSION%%
+lib/libdkport.so
+lib/libdkport.so.%%VERSION_PLUGIN%%
+lib/libdkport.so.%%MAJOR_VERSION%%
+lib/libdksdbi.so
+lib/libdksdbi.so.%%VERSION_PLUGIN%%
+lib/libdksdbi.so.%%MAJOR_VERSION%%
+lib/libdktrace.so
+lib/libdktrace.so.%%VERSION_PLUGIN%%
+lib/libdktrace.so.%%MAJOR_VERSION%%
+%%ETCDIR%%/appdefaults
+%%ETCDIR%%/appdefaults.sample
+%%DATADIR%%/cp.850
+%%DATADIR%%/de/utf-8/dkapp.stt
+%%DATADIR%%/de/utf-8/dkappd.stt
+%%DATADIR%%/de/utf-8/dkappe.stt
+%%DATADIR%%/de/dkapp.stt
+%%DATADIR%%/de/dkappd.stt
+%%DATADIR%%/de/dkappe.stt
+%%DATADIR%%/dkapp.stt
+%%DATADIR%%/dkappd.stt
+%%DATADIR%%/dkappe.stt
+%%DATADIR%%/dkpref/de/utf-8/dkpref.stt
+%%DATADIR%%/dkpref/de/dkpref.txt
+%%DATADIR%%/dkpref/de/dkpref.stt
+%%DATADIR%%/dkpref/en/dkpref.txt
+%%DATADIR%%/dkpref/en/utf-8/dkpref.stt
+%%DATADIR%%/dkpref/en/dkpref.stt
+%%DATADIR%%/dkpref/dkpref.stt
+%%DATADIR%%/dkpref/dkpref.txt
+%%DATADIR%%/dkpref/utf-8
+%%DATADIR%%/en/utf-8/dkapp.stt
+%%DATADIR%%/en/utf-8/dkappd.stt
+%%DATADIR%%/en/utf-8/dkappe.stt
+%%DATADIR%%/en/dkapp.stt
+%%DATADIR%%/en/dkappd.stt
+%%DATADIR%%/en/dkappe.stt
+%%DATADIR%%/stc/de/utf-8/stc.stt
+%%DATADIR%%/stc/de/stc.txt
+%%DATADIR%%/stc/de/stc.stt
+%%DATADIR%%/stc/en/utf-8/stc.stt
+%%DATADIR%%/stc/en/stc.txt
+%%DATADIR%%/stc/en/stc.stt
+%%DATADIR%%/stc/stc.txt
+%%DATADIR%%/stc/stc.stt
+%%DATADIR%%/tracecc/de/tracecc2.txt
+%%DATADIR%%/tracecc/de/utf-8/tracecc.stt
+%%DATADIR%%/tracecc/de/utf-8/tracecca.stt
+%%DATADIR%%/tracecc/de/tracecc.stt
+%%DATADIR%%/tracecc/de/tracecca.stt
+%%DATADIR%%/tracecc/en/tracecc2.txt
+%%DATADIR%%/tracecc/en/utf-8/tracecc.stt
+%%DATADIR%%/tracecc/en/utf-8/tracecca.stt
+%%DATADIR%%/tracecc/en/tracecc.stt
+%%DATADIR%%/tracecc/en/tracecca.stt
+%%DATADIR%%/tracecc/dktrace/dktrace.c
+%%DATADIR%%/tracecc/dktrace/dktrace.h
+%%DATADIR%%/tracecc/utf-8/tracecc.stt
+%%DATADIR%%/tracecc/utf-8/tracecca.stt
+%%DATADIR%%/tracecc/tracecc.stt
+%%DATADIR%%/tracecc/tracecca.stt
+%%DATADIR%%/trana/de/trana.txt
+%%DATADIR%%/trana/de/utf-8/trana.stt
+%%DATADIR%%/trana/de/trana.stt
+%%DATADIR%%/trana/en/utf-8/trana.stt
+%%DATADIR%%/trana/en/trana.stt
+%%DATADIR%%/trana/utf-8/trana.stt
+%%DATADIR%%/trana/trana.stt
+%%DATADIR%%/uc2lat-t/00/00/00.dat
+%%DATADIR%%/uc2lat-t/00/00/01.dat
+%%DATADIR%%/utf-8/dkapp.stt
+%%DATADIR%%/utf-8/dkappd.stt
+%%DATADIR%%/utf-8/dkappe.stt
+%%PORTDOCS%%%%DOCSDIR%%/tracecc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/enc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dklibs.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ChooseDirectory.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc11.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc10.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc09.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc08.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc07.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc06.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc05.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc04.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc03.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc02.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc01.png
+%%PORTDOCS%%%%DOCSDIR%%/tracegui.png
+%%PORTDOCS%%%%DOCSDIR%%/sflogo.png
+%%PORTDOCS%%%%DOCSDIR%%/sc19.png
+%%PORTDOCS%%%%DOCSDIR%%/sc18.png
+%%PORTDOCS%%%%DOCSDIR%%/sc17.png
+%%PORTDOCS%%%%DOCSDIR%%/sc16.png
+%%PORTDOCS%%%%DOCSDIR%%/sc15.png
+%%PORTDOCS%%%%DOCSDIR%%/sc14.png
+%%PORTDOCS%%%%DOCSDIR%%/sc13.png
+%%PORTDOCS%%%%DOCSDIR%%/sc12.png
+%%PORTDOCS%%%%DOCSDIR%%/sc11.png
+%%PORTDOCS%%%%DOCSDIR%%/sc10.png
+%%PORTDOCS%%%%DOCSDIR%%/sc09.png
+%%PORTDOCS%%%%DOCSDIR%%/sc08.png
+%%PORTDOCS%%%%DOCSDIR%%/sc07.png
+%%PORTDOCS%%%%DOCSDIR%%/sc06.png
+%%PORTDOCS%%%%DOCSDIR%%/sc05.png
+%%PORTDOCS%%%%DOCSDIR%%/sc04.png
+%%PORTDOCS%%%%DOCSDIR%%/sc03.png
+%%PORTDOCS%%%%DOCSDIR%%/sc02.png
+%%PORTDOCS%%%%DOCSDIR%%/sc01.png
+%%PORTDOCS%%%%DOCSDIR%%/Run.png
+%%PORTDOCS%%%%DOCSDIR%%/Options.png
+%%PORTDOCS%%%%DOCSDIR%%/Exit.png
+%%PORTDOCS%%%%DOCSDIR%%/w32sc12.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/tuto.html
+%%PORTDOCS%%%%DOCSDIR%%/tracegui.html
+%%PORTDOCS%%%%DOCSDIR%%/tracecc.html
+%%PORTDOCS%%%%DOCSDIR%%/stc.html
+%%PORTDOCS%%%%DOCSDIR%%/sort.html
+%%PORTDOCS%%%%DOCSDIR%%/security.html
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/projects.html
+%%PORTDOCS%%%%DOCSDIR%%/prefs.html
+%%PORTDOCS%%%%DOCSDIR%%/latex.html
+%%PORTDOCS%%%%DOCSDIR%%/io.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/inst_w32.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/gui.html
+%%PORTDOCS%%%%DOCSDIR%%/font.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/usage.html
+@dirrm %%ETCDIR%%
+@dirrm %%DATADIR%%/de/utf-8
+@dirrm %%DATADIR%%/de
+@dirrm %%DATADIR%%/dkpref/en/utf-8
+@dirrm %%DATADIR%%/dkpref/en
+@dirrm %%DATADIR%%/dkpref/de/utf-8
+@dirrm %%DATADIR%%/dkpref/de
+@dirrm %%DATADIR%%/dkpref
+@dirrm %%DATADIR%%/en/utf-8
+@dirrm %%DATADIR%%/en
+@dirrm %%DATADIR%%/stc/de/utf-8
+@dirrm %%DATADIR%%/stc/de
+@dirrm %%DATADIR%%/stc/en/utf-8
+@dirrm %%DATADIR%%/stc/en
+@dirrm %%DATADIR%%/stc
+@dirrm %%DATADIR%%/tracecc/dktrace
+@dirrm %%DATADIR%%/tracecc/de/utf-8
+@dirrm %%DATADIR%%/tracecc/de
+@dirrm %%DATADIR%%/tracecc/en/utf-8
+@dirrm %%DATADIR%%/tracecc/en
+@dirrm %%DATADIR%%/tracecc/utf-8
+@dirrm %%DATADIR%%/tracecc
+@dirrm %%DATADIR%%/trana/de/utf-8
+@dirrm %%DATADIR%%/trana/de
+@dirrm %%DATADIR%%/trana/en/utf-8
+@dirrm %%DATADIR%%/trana/en
+@dirrm %%DATADIR%%/trana/utf-8
+@dirrm %%DATADIR%%/trana
+@dirrm %%DATADIR%%/utf-8
+@dirrm %%DATADIR%%/uc2lat-t/00/00
+@dirrm %%DATADIR%%/uc2lat-t/00
+@dirrm %%DATADIR%%/uc2lat-t
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,155 @@
+--- Makefile-shared-linux.in.orig	2009-02-16 08:10:43.000000000 -0800
++++ Makefile-shared-linux.in	2009-07-19 14:41:01.000000000 -0700
+@@ -1,5 +1,6 @@
+ 
+ SOVERS=1.23
++MAJORVERS=1
+ 
+ # The build prefix
+ pp=
+@@ -13,7 +14,7 @@
+ sysconfdir = @sysconfdir@
+ scd=$(sysconfdir)
+ libdir = @libdir@
+-sharedlibdir = $(libdir)/shared
++sharedlibdir = $(libdir)
+ mandir = @mandir@
+ includedir = @includedir@
+ srcdir = @srcdir@
+@@ -54,18 +55,14 @@
+ all:	$(progs) $(libs) stc-static
+ 	-[ -d lib ] || mkdir lib
+ 	-[ -d share ] || mkdir share
+-	-[ -d share/doc ] || mkdir share/doc
+-	-[ -d share/doc/dklibs ] || mkdir share/doc/dklibs
+ 	-[ -d share/stc ] || mkdir -p share/stc
+ 	-[ -d share/tracecc ] || mkdir -p share/tracecc
+ 	-[ -d share/trana ] || mkdir -p share/trana
+ 	-[ -d share/utf-8 ] || mkdir -p share/utf-8
+-	-[ -d share/stc/utf-8 ] || mkdir -p share/stc/utf-8
+ 	-[ -d share/tracecc/utf-8 ] || mkdir -p share/tracecc/utf-8
+ 	-[ -d share/trana/utf-8 ] || mkdir -p share/trana/utf-8
+ 	chmod 755 lib
+ 	chmod 755 share
+-	chmod 755 share/doc
+ 	chmod 755 share/stc
+ 	chmod 755 share/tracecc
+ 	chmod 755 share/trana
+@@ -92,22 +89,12 @@
+ 	-cp share/tracecc/en/utf-8/tracecca.* share/tracecc/utf-8
+ 	-cp share/trana/en/utf-8/trana.* share/trana/utf-8
+ 	-cp share/dkpref/en/utf-8/dkpref.* share/dkpref/utf-8
+-	cp DOCU/*.pdf share/doc/dklibs
+-	cp DOCU/*.png share/doc/dklibs
+-	cp DOCU/*.css share/doc/dklibs
+-	cp DOCU/*.html share/doc/dklibs
+ 	find lib -type d -exec chmod 755 {} \;
+ 	find lib -type f -exec chmod 644 {} \;
+ 	find share -type d -exec chmod 755 {} \;
+ 	find share -type f -exec chmod 644 {} \;
+ 	cp appdefaults.sample appdefaults
+ 	chmod 755 showdd
+-	chmod 755 tracecc-gui
+-	chmod 755 tracegui.jar
+-	find Java/dklibsj/doc -type d -exec chmod ugo+rx {} \;
+-	find Java/dklibsj/doc -type f -exec chmod ugo+r {} \;
+-	find Java/TraceGUI/doc -type d -exec chmod ugo+rx {} \;
+-	find Java/TraceGUI/doc -type f -exec chmod ugo+r {} \;
+ 	./showdd $(datadir) >> appdefaults
+ 	touch all
+ 
+@@ -135,18 +122,8 @@
+ 	-chmod 755 $(pp)$(datadir)
+ 	-[ -d $(pp)$(includedir) ] || mkdir -p $(pp)$(includedir)
+ 	-chmod 755 $(pp)$(includedir)
+-	-[ -d $(pp)$(mandir) ] || mkdir -p $(pp)$(mandir)
+-	-chmod 755 $(pp)$(mandir)
+ 	-[ -d $(pp)$(sysconfdir) ] || mkdir -p $(pp)$(sysconfdir)
+ 	-chmod 755 $(pp)$(sysconfdir)
+-	-[ -d $(pp)$(datadir)/doc ] || mkdir -p $(pp)$(datadir)/doc
+-	-chmod 755 $(pp)$(datadir)/doc
+-	-[ -d $(pp)$(datadir)/doc/javadoc ] || mkdir -p $(pp)$(datadir)/doc/javadoc
+-	-chmod 755 $(pp)$(datadir)/doc/javadoc
+-	-[ -d $(pp)$(datadir)/doc/javadoc/dklibsj ] || mkdir -p $(pp)$(datadir)/doc/javadoc/dklibsj
+-	-chmod 755 $(pp)$(datadir)/doc/javadoc/dklibsj
+-	-[ -d $(pp)$(datadir)/doc/javadoc/TraceGUI ] || mkdir -p $(pp)$(datadir)/doc/javadoc/TraceGUI
+-	-chmod 755 $(pp)$(datadir)/doc/javadoc/TraceGUI
+ 	chmod 644 *.so
+ 	tar cf - *.so | (cd $(pp)$(libdir) ; tar xf -)
+ 	-[ ! -f $(pp)$(libdir)/libdklatsup.so.$(SOVERS) ] || rm -f $(pp)$(libdir)/libdklatsup.so.$(SOVERS)
+@@ -162,36 +139,52 @@
+ 	-[ ! -f $(pp)$(libdir)/libdktrace.so.$(SOVERS) ] || rm -f $(pp)$(libdir)/libdktrace.so.$(SOVERS)
+ 	-[ ! -f $(pp)$(libdir)/libdktrace.so ] || rm -f $(pp)$(libdir)/libdktrace.so
+ 	cp libdklatsup.so.$(SOVERS) $(pp)$(libdir)/libdklatsup.so.$(SOVERS)
++	ln -sf $(libdir)/libdklatsup.so.$(SOVERS) $(pp)$(libdir)/libdklatsup.so.$(MAJORVERS)
+ 	ln -sf $(libdir)/libdklatsup.so.$(SOVERS) $(pp)$(libdir)/libdklatsup.so
+ 	cp libdkport.so.$(SOVERS) $(pp)$(libdir)/libdkport.so.$(SOVERS)
++	ln -sf $(libdir)/libdkport.so.$(SOVERS) $(pp)$(libdir)/libdkport.so.$(MAJORVERS)
+ 	ln -sf $(libdir)/libdkport.so.$(SOVERS) $(pp)$(libdir)/libdkport.so
+ 	cp libdkc.so.$(SOVERS) $(pp)$(libdir)/libdkc.so.$(SOVERS)
++	ln -sf $(libdir)/libdkc.so.$(SOVERS) $(pp)$(libdir)/libdkc.so.$(MAJORVERS)
+ 	ln -sf $(libdir)/libdkc.so.$(SOVERS) $(pp)$(libdir)/libdkc.so
+ 	cp libdkappr.so.$(SOVERS) $(pp)$(libdir)/libdkappr.so.$(SOVERS)
++	ln -sf $(libdir)/libdkappr.so.$(SOVERS) $(pp)$(libdir)/libdkappr.so.$(MAJORVERS)
+ 	ln -sf $(libdir)/libdkappr.so.$(SOVERS) $(pp)$(libdir)/libdkappr.so
+ 	cp libdknet.so.$(SOVERS) $(pp)$(libdir)/libdknet.so.$(SOVERS)
++	ln -sf $(libdir)/libdknet.so.$(SOVERS) $(pp)$(libdir)/libdknet.so.$(MAJORVERS)
+ 	ln -sf $(libdir)/libdknet.so.$(SOVERS) $(pp)$(libdir)/libdknet.so
+ 	cp libdktrace.so.$(SOVERS) $(pp)$(libdir)/libdktrace.so.$(SOVERS)
++	ln -sf $(libdir)/libdktrace.so.$(SOVERS) $(pp)$(libdir)/libdktrace.so.$(MAJORVERS)
+ 	ln -sf $(libdir)/libdktrace.so.$(SOVERS) $(pp)$(libdir)/libdktrace.so
+ 	cp libdkbif.so.$(SOVERS) $(pp)$(libdir)/libdkbif.so.$(SOVERS)
++	ln -sf $(libdir)/libdkbif.so.$(SOVERS) $(pp)$(libdir)/libdkbif.so.$(MAJORVERS)
+ 	ln -sf $(libdir)/libdkbif.so.$(SOVERS) $(pp)$(libdir)/libdkbif.so
+ 	cp libdksdbi.so.$(SOVERS) $(pp)$(libdir)/libdksdbi.so.$(SOVERS)
++	ln -sf $(pp)$(libdir)/libdksdbi.so.$(SOVERS) $(pp)$(libdir)/libdksdbi.so.$(MAJORVERS)
+ 	ln -sf $(pp)$(libdir)/libdksdbi.so.$(SOVERS) $(pp)$(libdir)/libdksdbi.so
+ 	chmod 644 $(pp)$(libdir)/libdklatsup.so.$(SOVERS)
++	chmod 644 $(pp)$(libdir)/libdklatsup.so.$(MAJORVERS)
+ 	chmod 644 $(pp)$(libdir)/libdklatsup.so
+ 	chmod 644 $(pp)$(libdir)/libdkport.so.$(SOVERS)
++	chmod 644 $(pp)$(libdir)/libdkport.so.$(MAJORVERS)
+ 	chmod 644 $(pp)$(libdir)/libdkport.so
+ 	chmod 644 $(pp)$(libdir)/libdkc.so.$(SOVERS)
++	chmod 644 $(pp)$(libdir)/libdkc.so.$(MAJORVERS)
+ 	chmod 644 $(pp)$(libdir)/libdkc.so
+ 	chmod 644 $(pp)$(libdir)/libdkappr.so.$(SOVERS)
++	chmod 644 $(pp)$(libdir)/libdkappr.so.$(MAJORVERS)
+ 	chmod 644 $(pp)$(libdir)/libdkappr.so
+ 	chmod 644 $(pp)$(libdir)/libdknet.so.$(SOVERS)
++	chmod 644 $(pp)$(libdir)/libdknet.so.$(MAJORVERS)
+ 	chmod 644 $(pp)$(libdir)/libdknet.so
+ 	chmod 644 $(pp)$(libdir)/libdktrace.so.$(SOVERS)
++	chmod 644 $(pp)$(libdir)/libdktrace.so.$(MAJORVERS)
+ 	chmod 644 $(pp)$(libdir)/libdktrace.so
+ 	chmod 644 $(pp)$(libdir)/libdkbif.so.$(SOVERS)
++	chmod 644 $(pp)$(libdir)/libdkbif.so.$(MAJORVERS)
+ 	chmod 644 $(pp)$(libdir)/libdkbif.so
+ 	chmod 644 $(pp)$(libdir)/libdksdbi.so.$(SOVERS)
++	chmod 644 $(pp)$(libdir)/libdksdbi.so.$(MAJORVERS)
+ 	chmod 644 $(pp)$(libdir)/libdksdbi.so
+ 	chmod 644 *.h
+ 	mv config.h config.h.do-not-install
+@@ -210,22 +203,12 @@
+ 	chmod 755 $(pp)$(bindir)/bifconf
+ 	cp jhelp $(pp)$(bindir)/jhelp
+ 	chmod 755 $(pp)$(bindir)/jhelp
+-	cp tracecc-gui $(pp)$(bindir)/tracecc-gui
+-	chmod 755 $(pp)$(bindir)/tracecc-gui
+-	cp tracegui.jar $(pp)$(bindir)/tracegui.jar
+-	chmod 755 $(pp)$(bindir)/tracegui.jar
+-	cp dklibsj.jar $(pp)$(bindir)/dklibsj.jar
+-	chmod 755  $(pp)$(bindir)/dklibsj.jar
+ 	cp dkpref $(pp)$(bindir)/dkpref
+ 	chmod 755 $(pp)$(bindir)/dkpref
+ 	-cp appdefaults $(pp)$(scd)/appdefaults.sample
+ 	-[ -f $(pp)$(scd)/appdefaults ] || cp appdefaults $(pp)$(scd)/appdefaults
+-	-(cd man; tar cf - ./*) | (cd $(pp)$(mandir) ; tar xf -)
+ 	-(cd share; tar cf - ./*) | (cd $(pp)$(datadir) ; tar xf -)
+-	-(cd Java/dklibsj/doc; tar cf - .) | (cd $(pp)$(datadir)/doc/javadoc/dklibsj && tar xf -)
+-	-(cd Java/TraceGUI/doc; tar cf - .) | (cd $(pp)$(datadir)/doc/javadoc/TraceGUI && tar xf -)
+ 	ldconfig
+-	echo Documentation was installed in $(pp)$(datadir)/doc/dklibs
+ 
+ 
+ PORTOBJ1=	dkslsupp.o dkma.o dksf.o dkstrdc.o dkstr.o dkenc.o 
