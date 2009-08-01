@@ -10,6 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -94,6 +95,10 @@ MAN1=		vlc.1 \
 		vlc-wrapper.1
 
 .include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 701000)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_misc_thread.c
+.endif
 
 WITH_VLC_DEFAULT_FONT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
