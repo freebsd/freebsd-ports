@@ -8,8 +8,10 @@
 PORTNAME=	xlog
 PORTVERSION=	2.0.3
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
+MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
+		http://pg4i.chronos.org.uk/download/ \
 		http://www.qsl.net/pg4i/download/
+MASTER_SITE_SUBDIR=	xlog
 
 MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio logging application
