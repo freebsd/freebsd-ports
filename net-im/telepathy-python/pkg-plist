@@ -190,6 +190,9 @@
 %%PYTHON_SITELIBDIR%%/telepathy/server/channelhandler.py
 %%PYTHON_SITELIBDIR%%/telepathy/server/channelhandler.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/server/channelhandler.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/server/channelmanager.py
+%%PYTHON_SITELIBDIR%%/telepathy/server/channelmanager.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/server/channelmanager.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/server/conn.py
 %%PYTHON_SITELIBDIR%%/telepathy/server/conn.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/server/conn.pyo

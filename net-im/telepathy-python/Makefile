@@ -6,7 +6,7 @@
 #    $MCom: ports/net-im/telepathy-python/Makefile,v 1.5 2009/01/08 07:07:51 marcus Exp $
 
 PORTNAME=	telepathy-python
-PORTVERSION=	0.15.8
+PORTVERSION=	0.15.10
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
