@@ -3486,22 +3486,22 @@ security/cyrus-sasl||2008-06-17|Has expired: Unsupported, please move to cyrus-s
 converters/compface|mail/faces|2008-06-17|Removed in favour to mail/faces.
 security/p5-openxpki-client-cli||2008-06-18|Has expired: no longer supported. Use p5-openxpki-client-html-mason instead
 audio/mbrola||2008-06-18|Has expired: relies on forbidden port misc/compat3x; last release 2000
-emulators/linux-winetools|||2008-06-18|Has expired: very old, discontinued, and replaced by emulators/wine-doors
+emulators/linux-winetools||2008-06-18|Has expired: very old, discontinued, and replaced by emulators/wine-doors
 games/linux-x-plane||2008-06-18|Relies on expired, unfetchable installer port
-games/linux-x-plane-net-installer|||2008-06-18|Has expired: unfetchable
-japanese/vje30|||2008-06-18|Has expired: depends on forbidden port misc/compat3x
-math/sc|||2008-06-18|Has expired: distfile disappeared
-math/umfpack|||2008-06-18|Has expired: Outdated subset of math/suitesparse
-net/apache-soap|||2008-06-18|Has expired: Development has been ceased, superseded by www/axis.
-net/archie|||2008-06-18|Has expired: No servers active anymore
-net/xarchie|||2008-06-18|Has expired: No servers active anymore
-net/p5-Net-Z3950|||2008-06-18|Has expired: does not compile with yaz 3.x, deprecated in favor of ZOOM-Perl (net/p5-Net-Z3950-ZOOM)
-net/vls|||2008-06-18|Has expired: Does not build with current libdvbpsi. Development has been moved to multimedia/vlc
-net-mgmt/nsc|||2008-06-18|Has expired: Project abandoned
-security/amavisd|||2008-06-18|Has expired: depends on misc/compat3x, which has security problems; old version
-games/linux-goodway|||2008-06-18|A tool for a port that was removed
-graphics/gtkcairo|||2008-06-19|Unused, unfetchable, obsolete
-net/openospfd-devel|||2008-06-19|Has expired: no longer maintained
+games/linux-x-plane-net-installer||2008-06-18|Has expired: unfetchable
+japanese/vje30||2008-06-18|Has expired: depends on forbidden port misc/compat3x
+math/sc||2008-06-18|Has expired: distfile disappeared
+math/umfpack||2008-06-18|Has expired: Outdated subset of math/suitesparse
+net/apache-soap||2008-06-18|Has expired: Development has been ceased, superseded by www/axis.
+net/archie||2008-06-18|Has expired: No servers active anymore
+net/xarchie||2008-06-18|Has expired: No servers active anymore
+net/p5-Net-Z3950||2008-06-18|Has expired: does not compile with yaz 3.x, deprecated in favor of ZOOM-Perl (net/p5-Net-Z3950-ZOOM)
+net/vls||2008-06-18|Has expired: Does not build with current libdvbpsi. Development has been moved to multimedia/vlc
+net-mgmt/nsc||2008-06-18|Has expired: Project abandoned
+security/amavisd||2008-06-18|Has expired: depends on misc/compat3x, which has security problems; old version
+games/linux-goodway||2008-06-18|A tool for a port that was removed
+graphics/gtkcairo||2008-06-19|Unused, unfetchable, obsolete
+net/openospfd-devel||2008-06-19|Has expired: no longer maintained
 x11-servers/xorg-server-snap|x11-servers/xorg-server|2008-06-19|Has expired: no longer maintained
 devel/dumb|audio/dumb|2008-06-23|Moved to better category audio
 archivers/dynamite|archivers/libdynamite|2008-06-22|Moved to archivers/libdynamite.
@@ -3752,7 +3752,7 @@ games/fgfs-base|games/flightgear-data|2009-01-15|Renamed
 lang/gcc41|lang/gcc42|2009-01-17|Abandoned upstream, superseded by gcc42 and, preferrably, gcc43
 devel/apr-svn|devel/apr|2009-01-18|Only needed for FreeBSD 5.2 and below for threading
 math/elmer-mathlibs||2009-01-18|Removed
-textproc/py-wbxml|||2009-01-19|Expired: No longer supported by developers
+textproc/py-wbxml||2009-01-19|Expired: No longer supported by developers
 mail/claws-mail-smime|mail/claws-mail|2009-01-19|The SMIME plugin is included in the main port via the GPGME option now
 www/fpc-httpd||2009-01-19|Splitted to www/fpc-httpd13 www/fpc-httpd20 and www/fpc-httpd22
 multimedia/vlc-devel||2009-01-19|Removed - merged into multimedia/vlc
