@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RK/RKOBES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eg@fbsd.lt
 COMMENT=	Search CPAN using a SQLite database
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite	\
