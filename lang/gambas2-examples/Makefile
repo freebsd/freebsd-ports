@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 
 NO_BUILD=	yes
 
+FETCH_ARGS=		 -pRr
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - "${DISTNAME}/examples"
 
 do-install:

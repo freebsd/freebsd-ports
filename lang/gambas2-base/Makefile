@@ -37,6 +37,7 @@ CONFIGURE_WRKSRC?=	${WRKSRC}/main
 BUILD_WRKSRC?=		${WRKSRC}/main
 INSTALL_WRKSRC?=	${WRKSRC}/main
 
+FETCH_ARGS=		-pRr
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - "${DISTNAME}/acinclude.m4" "${DISTNAME}/component.am" \
 			"${DISTNAME}/config.sub" "${DISTNAME}/depcomp" "${DISTNAME}/install-sh" \
 			"${DISTNAME}/ltmain.sh" "${DISTNAME}/COPYING" "${DISTNAME}/config.guess" \
