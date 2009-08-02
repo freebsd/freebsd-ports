@@ -11,7 +11,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MSN Connection library
 
 LIB_PC_DEPENDS=	pygobject-2.0.pc:${PORTSDIR}/devel/py-gobject
