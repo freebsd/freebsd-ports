@@ -10,7 +10,7 @@ PORTVERSION=	4.6
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
+MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	oivulf@gmail.com
