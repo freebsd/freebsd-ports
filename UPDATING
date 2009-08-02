@@ -10,19 +10,19 @@ upgrades.
   AFFECTS: users of x11-drivers/xf86-video-nouveau
   AUTHOR: rnoland@FreeBSD.org
 
-  An updated libdrm and xf86-video-nouveau have been committed.
-  These update the API version to 0.0.14 and if you are using
-  drm you will need to update your kernel patch.  See pkg-message
-  in xf86-video-nouveau for details.
- 
+  An updated libdrm and xf86-video-nouveau have been committed.  These
+  update the API version to 0.0.14 and if you are using DRM you will need
+  to update your kernel patch.  See pkg-message in xf86-video-nouveau for
+  details.
+
 20090730:
   AFFECTS: users of www/tomcat6
   AUTHOR: ale@FreeBSD.org
 
-  Tomcat has been updated to 6.0.20 release and the installation
-  directory is changed from apache-tomcat6.0 to apache-tomcat-6.0.
-  Backup your configuration files before updating Tomcat, since
-  the previous port will delete them on deinstall.
+  Tomcat has been updated to 6.0.20 release and the installation directory
+  is changed from apache-tomcat6.0 to apache-tomcat-6.0.  Backup your
+  configuration files before updating Tomcat, since the previous port will
+  delete them on deinstall.
 
 20090729:
   AFFECTS: users of sysutils/heartbeat
@@ -30,7 +30,8 @@ upgrades.
 
   Heartbeat has been upgraded to the 2.1.4 release.  Older configurations
   based on version 1 should still work.  Read more about the new features
-  and possible configuration changes at the following urls:
+  and possible configuration changes at the following URLs:
+
      http://clusterlabs.org/wiki/Documentation (Configuration 0.6 Explained)
      http://www.linux-ha.org/GettingStartedRevisedV2
 
@@ -38,33 +39,38 @@ upgrades.
   AFFECTS: users of www/rubygem-rails
   AUTHOR: pgollucci@FreeBSD.org
 
-  Rails has been updated to 2.3.3. As always make sure you check the changes
-     http://weblog.rubyonrails.org/
+  Rails has been updated to 2.3.3.  As always, make sure you check the
+  changes at http://weblog.rubyonrails.org/.
 
 20090720:
   AFFECTS: users of net/openldap24-{client,server}
   AUTHOR: delphij@FreeBSD.org
 
-  OpenLDAP has been upgraded to 2.4.17, which requires a shared
-  library version bump.  Therefore, you need to reinstall all
-  ports depending on it.  Run something like:
+  OpenLDAP has been upgraded to 2.4.17, which requires a shared library
+  version bump.  Therefore, you need to reinstall all ports depending on it.
+  Run something like:
 
 	# portupgrade -fr net/openldap24-client
-			or
+  or
 	# portmaster -r net/openldap24-client
 
 20090719:
   AFFECTS: users of graphics/jpeg
   AUTHOR: dinoex@FreeBSD.org
 
-  jpeg has been updated to 7.0.
-  Please rebuild all ports that depends on it.
+  The IJG jpeg library has been updated to version 7.0.  Please rebuild all
+  ports that depend on it.
 
-  If you use portmaster please use:
+  If you use portmaster:
+
 	portmaster -r jpeg-
-	Or if you would prefer a more gradual approach:
+
+  Or, if you would prefer a more gradual approach:
+
 	portmaster -w jpeg- (Check the man page for more information)
-  If you use portupgrade please use:
+
+  If you use portupgrade:
+
 	portupgrade -fr graphics/jpeg
 
 20090704:
@@ -84,8 +90,10 @@ upgrades.
   HTML5 page: "Bad system call (core dumped)" you need to load the sem
   module (kldload sem).
 
-  To load sem on every boot put the following into your
-  /boot/loader.conf: sem_load="YES"
+  To load sem module on every boot, put the following into your
+  /boot/loader.conf:
+
+	sem_load="YES"
 
 20090624:
   AFFECTS: users of mail/crm114
