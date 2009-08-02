@@ -20,6 +20,8 @@ COMMENT=	Allows manual selection of login server on login page
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
 		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 
+FORBIDDEN=	This plugin has been compromised
+
 SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
 .ifdef SQUIRRELDIR
