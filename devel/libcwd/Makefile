@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C++ Debugging Support Library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-threading --disable-pch --disable-location
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

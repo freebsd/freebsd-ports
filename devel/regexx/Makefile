@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete regular expressions C++ solution
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 MAKE_ENV+=      INCLUDES="-I${WRKSRC}/pcre"
 

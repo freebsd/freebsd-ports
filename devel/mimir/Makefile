@@ -15,7 +15,7 @@ COMMENT=	Data-structure library used by the Elan Programming Environment
 
 MAN1=		dcg.1
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

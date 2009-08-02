@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	. archive
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library which provides a file_iterator class
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

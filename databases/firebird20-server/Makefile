@@ -23,7 +23,7 @@ USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 aclocal:19 libtool:15
+USE_AUTOTOOLS=	autoconf:262 aclocal:19 libtool:22
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal \
 		-I ${WRKSRC}/m4
 MAKE_JOBS_UNSAFE=	yes

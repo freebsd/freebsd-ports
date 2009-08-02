@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	mad
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes

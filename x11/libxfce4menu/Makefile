@@ -15,7 +15,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 library for a freedesktop.org compliant menu implementation
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

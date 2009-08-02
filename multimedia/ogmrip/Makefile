@@ -38,7 +38,7 @@ OPTIONS=	GUI      "Build the GTK+ GUI"                           on  \
 USE_GNOME=	glib20 gnomehack libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_EJECT_PROG="/usr/sbin/cdcontrol"

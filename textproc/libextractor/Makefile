@@ -7,7 +7,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	0.5.20b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
 
 USE_GNOME=	glib20
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:22
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/libextractor

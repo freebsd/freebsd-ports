@@ -21,7 +21,7 @@ LIB_DEPENDS=	Half.6:${PORTSDIR}/graphics/ilmbase
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS+=--enable-imfexamples

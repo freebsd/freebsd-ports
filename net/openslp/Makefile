@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	openslp
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open-source implementation of the Service Location Protocol
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

@@ -24,7 +24,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tk extension (with shared libs)
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 WRKSRC=		${WRKDIR}/blt2.4z
 GNU_CONFIGURE=	yes

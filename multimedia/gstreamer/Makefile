@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack glib20 libxml2 ltverhack ltasneededhack
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
 		--disable-docs-build \

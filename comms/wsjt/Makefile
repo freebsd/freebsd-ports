@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-portaudio-include-dir=${LOCALBASE}/include/portaudio2 \
 		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
 USE_GMAKE=	yes
 USE_PYTHON=	2.4+
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

@@ -29,7 +29,7 @@ CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}" \
 		LIBS="`${CAT} ${ORACLE_HOME}/lib/sysliblist`"\
 		AUTOHEADER=true
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lclntst8 -lcompat -lpthread -lm/-lclntst8 -lcompat ${PTHREAD_LIBS} -lm/' ${WRKSRC}/configure

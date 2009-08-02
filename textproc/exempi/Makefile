@@ -16,7 +16,7 @@ COMMENT=	A port of Adobe XMP SDK to work on UNIX
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	ltverhack gnomehack gnometarget
 CONFIGURE_ARGS=	--enable-unittest=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

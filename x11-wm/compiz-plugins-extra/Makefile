@@ -28,7 +28,7 @@ USE_GNOME=	gnomehack intltool
 USE_XORG=	glproto
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 GCONF_SCHEMAS=	compiz-3d.schemas \
 		compiz-addhelper.schemas \

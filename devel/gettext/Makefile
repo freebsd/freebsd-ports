@@ -18,7 +18,7 @@ COMMENT=	GNU gettext package
 USE_ICONV=	yes
 LIBTOOLFILES=	autoconf-lib-link/configure gettext-runtime/configure \
 		gettext-runtime/libasprintf/configure gettext-tools/configure
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		AUTOCONF="${TRUE}" \
 		AUTOMAKE="${TRUE}" \

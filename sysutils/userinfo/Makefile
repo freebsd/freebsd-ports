@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	bjk
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show information about local users
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 
 MAN1=		ui.1

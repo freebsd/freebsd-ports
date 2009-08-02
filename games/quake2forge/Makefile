@@ -15,7 +15,7 @@ DISTNAME=	quake2-${PORTVERSION}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	First Person Shooter with many addons available
 
-USE_AUTOTOOLS=	autoconf:262 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:22
 USE_BZIP2=	yes
 
 CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/${PORTNAME}/' \

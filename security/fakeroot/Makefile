@@ -17,7 +17,7 @@ COMMENT=	Simulate the root user behaviour
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-ipc=tcp
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

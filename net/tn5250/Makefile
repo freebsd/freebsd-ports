@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	5250 Telnet protocol and Terminal
 
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--enable-os-dir=no --with-ssl=${OPENSSLBASE}
 USE_LDCONFIG=	yes
 

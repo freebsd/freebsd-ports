@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-2003.1
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

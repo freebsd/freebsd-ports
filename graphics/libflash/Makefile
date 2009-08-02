@@ -20,7 +20,7 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 
 USE_XORG=	x11 xext xkbfile xt
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
 		LDFLAGS="-L${LOCALBASE}/lib"

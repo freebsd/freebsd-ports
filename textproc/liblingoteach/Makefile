@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	lingoteach
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A library for parsing lesson files based on the LingoTeach DTD
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
 GNU_CONFIGURE=	yes

@@ -17,7 +17,7 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Standalone version of arguments parsing functions from GLIBC
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 libtool:15
+USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 libtool:22
 AUTOMAKE_ARGS=	-c -a
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 USE_LDCONFIG=	yes

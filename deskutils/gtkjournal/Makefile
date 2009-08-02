@@ -23,7 +23,7 @@ LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20 \
 PLIST_FILES=	bin/gtkjournal lib/libsqlitemm.a lib/libsqlitemm.la \
 		lib/libsqlitemm.so lib/libsqlitemm.so.0
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

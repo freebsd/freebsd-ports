@@ -17,7 +17,7 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

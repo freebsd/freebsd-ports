@@ -16,7 +16,7 @@ COMMENT=	A Microsoft file word processor format import filter library
 
 LIB_DEPENDS=	wpd-0.8.8:${PORTSDIR}/textproc/libwpd
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomeprefix gnomehack ltverhack
 USE_LDCONFIG=	yes
 

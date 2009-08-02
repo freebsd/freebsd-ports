@@ -23,7 +23,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 USE_KDELIBS_VER=	3
 USE_GNOME=	gtk12 gnometarget
 USE_SDL=	sdl
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-xmms-prefix=${LOCALBASE} \
 		--with-smpeg-prefix=${LOCALBASE} \
 		--with-vorbis-prefix=${LOCALBASE} \

@@ -1,9 +1,9 @@
---- ./Makefile.am.orig	2009-01-19 02:10:49.000000000 -0500
-+++ ./Makefile.am	2009-01-19 02:11:12.000000000 -0500
-@@ -30,7 +30,7 @@
+--- Makefile.in.orig	2009-07-13 13:34:54.000000000 -0500
++++ Makefile.in	2009-07-13 13:35:06.000000000 -0500
+@@ -235,7 +235,7 @@
+ 
  # require automake 1.4
  AUTOMAKE_OPTIONS = 1.4
- 
 -SUBDIRS = util src tests debian .
 +SUBDIRS = util src .
  

@@ -20,7 +20,7 @@ COMMENT=		Fido-Internet Gateway and Tosser
 BUILD_DEPENDS=		${LOCALBASE}/news/bin/innconfval:${PORTSDIR}/news/inn
 .endif
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USE_PERL5=		yes

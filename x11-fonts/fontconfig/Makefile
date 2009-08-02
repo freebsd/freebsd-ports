@@ -23,7 +23,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack pkgconfig ltverhack
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \

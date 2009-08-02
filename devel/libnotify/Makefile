@@ -20,7 +20,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 USE_GNOME=	gnomehack gnometarget intlhack glib20 gtk20 ltverhack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS= --without-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

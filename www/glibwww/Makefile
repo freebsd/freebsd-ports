@@ -16,7 +16,7 @@ COMMENT=	A library for people wanting to use libwww with gtk/gnome
 
 LIB_DEPENDS=	wwwzip.1:${PORTSDIR}/www/libwww
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gnomelibs
 GNU_CONFIGURE=	yes

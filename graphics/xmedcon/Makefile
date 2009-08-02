@@ -30,7 +30,7 @@ OPTIONS=	X11 "With X11" on \
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_SUBMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \

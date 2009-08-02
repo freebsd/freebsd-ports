@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	libnss-mysql
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	NSS module using a MySQL database for backend
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

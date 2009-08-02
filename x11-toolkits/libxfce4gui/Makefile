@@ -16,7 +16,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 widget library required by xfce4 and xfwm4
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes

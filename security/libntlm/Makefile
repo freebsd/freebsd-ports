@@ -15,7 +15,7 @@ MAINTAINER=	jochen@daten-chaos.de
 COMMENT=	A library that implement Microsoft's NTLM authentication
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

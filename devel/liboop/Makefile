@@ -20,7 +20,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		tcl84.1:${PORTSDIR}/lang/tcl84 \
 		wwwcore.1:${PORTSDIR}/www/libwww
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GNOME=	glib12 glib20 gnomehack gnometarget
 GNU_CONFIGURE=	yes

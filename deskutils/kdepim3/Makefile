@@ -29,7 +29,7 @@ _NO_KDE_FINAL=	yes
 USE_BZIP2=	yes
 USE_BISON=	build
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 USE_LDCONFIG=	yes

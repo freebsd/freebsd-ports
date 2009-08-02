@@ -31,7 +31,7 @@ OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \
 		TESTS "Run bundled self-tests after build" on
 
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes

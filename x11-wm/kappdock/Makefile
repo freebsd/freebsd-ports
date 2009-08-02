@@ -18,7 +18,7 @@ COMMENT=	A dock-like applet for KDE3
 
 USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include \
 		--enable-threads \
 		--disable-closure

@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 
 WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include

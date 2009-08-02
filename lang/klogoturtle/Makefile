@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LOGO Interpreter for the KDE Desktop
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 
 post-patch:

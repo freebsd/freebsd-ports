@@ -18,7 +18,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnometarget
 USE_MOTIF=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi --with-motif
 USE_LDCONFIG=	yes

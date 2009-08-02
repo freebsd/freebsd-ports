@@ -27,7 +27,7 @@ INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:22
 
 .include <bsd.port.pre.mk>
 

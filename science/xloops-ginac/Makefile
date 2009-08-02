@@ -20,7 +20,7 @@ LIB_DEPENDS=	ginac-1.4.0:${PORTSDIR}/math/GiNaC
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 autoconf:262 automake:110 \
-		libtool:15
+		libtool:22
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

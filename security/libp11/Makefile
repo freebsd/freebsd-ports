@@ -7,13 +7,14 @@
 
 PORTNAME=	libp11
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A small layer on top of PKCS\#11 API
 
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:22
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig

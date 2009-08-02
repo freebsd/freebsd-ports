@@ -15,7 +15,7 @@ COMMENT=	KDE konsole application acting like the Quake-console
 
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 

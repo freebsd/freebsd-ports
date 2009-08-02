@@ -24,7 +24,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnomehier gtk20 gtksourceview2 libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${GCCLIBDIR}"
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake --without-gnome

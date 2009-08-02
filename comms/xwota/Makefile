@@ -19,7 +19,7 @@ COMMENT=	X version of who is on the air
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-install:
 .if	!defined(NOPORTDOCS)

@@ -14,7 +14,7 @@ DISTNAME=	valley-${PORTVERSION}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	The Valley is a rewrite of an old RPG from the early 1980s
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_SDL=	sdl

@@ -16,7 +16,7 @@ COMMENT=	C library for the Flickr API
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack gnometarget ltverhack libxml2 pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc

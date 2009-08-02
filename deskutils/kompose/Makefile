@@ -19,7 +19,7 @@ EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-old_configure
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_EFL=	imlib2
 INSTALLS_ICONS=	yes
 

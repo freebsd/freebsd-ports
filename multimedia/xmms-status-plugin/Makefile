@@ -18,7 +18,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 USE_XORG=	x11 xpm
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

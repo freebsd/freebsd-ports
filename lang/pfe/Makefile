@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GCC=	4.2+
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	pfe/configure
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 

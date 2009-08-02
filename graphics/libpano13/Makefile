@@ -22,7 +22,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 USE_GNOME=	gtk20 glib20 pango atk
 
 USE_AUTOTOOLS=	autoconf:262:env autoheader:262:env aclocal:110:env \
-		automake:110:env libtool:15:env
+		automake:110:env libtool:22:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gtk-2.0 \
 			-I${LOCALBASE}/include/glib-2.0 \

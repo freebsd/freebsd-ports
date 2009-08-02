@@ -7,6 +7,7 @@
 
 PORTNAME=	sphinxbase
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cmusphinx
@@ -17,15 +18,13 @@ COMMENT=	CMU SPhinx Speech recognition system base
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15 automake:19
+USE_GNOME=	gnomehack
+USE_AUTOTOOLS=	libtool:22
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		OSVERSION=${OSVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

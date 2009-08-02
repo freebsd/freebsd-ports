@@ -17,7 +17,7 @@ COMMENT=	Python SNMP module based on net-snmp
 
 LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

@@ -1,4 +1,5 @@
 lib/libbegemot.a
+lib/libbegemot.la
 lib/libbegemot.so
 lib/libbegemot.so.1
 include/begemot.h

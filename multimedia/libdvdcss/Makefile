@@ -18,7 +18,7 @@ COMMENT=	Portable abstraction library for DVD decryption
 
 NO_CDROM=	CSS code may violate the DMCA
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

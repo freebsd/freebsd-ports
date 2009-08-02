@@ -14,12 +14,11 @@ MASTER_SITES=	SF
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-pthreads --disable-html-docs
-MAKE_ENV+=	RM=${RM}
 USE_LDCONFIG=	yes
 
 .include "Makefile.man"

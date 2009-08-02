@@ -20,7 +20,7 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms \
 		nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_XORG=	x11
 USE_GNOME+=	gdkpixbuf gnomehack pkgconfig
 GNU_CONFIGURE=	yes

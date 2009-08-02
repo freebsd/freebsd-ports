@@ -1,13 +1,10 @@
 bin/audiotool
 bin/tonetool
 include/cc++/audio2.h
-lib/ccaudio2-%%CCVERSION%%/adpcm.a
 lib/ccaudio2-%%CCVERSION%%/adpcm.la
 lib/ccaudio2-%%CCVERSION%%/adpcm.so
-lib/ccaudio2-%%CCVERSION%%/g711.a
 lib/ccaudio2-%%CCVERSION%%/g711.la
 lib/ccaudio2-%%CCVERSION%%/g711.so
-lib/ccaudio2-%%CCVERSION%%/oki.a
 lib/ccaudio2-%%CCVERSION%%/oki.la
 lib/ccaudio2-%%CCVERSION%%/oki.so
 lib/libccaudio2-%%CCVERSION%%.so
@@ -18,4 +15,3 @@ lib/libccaudio2.so
 libdata/pkgconfig/libccaudio2.pc
 @dirrmtry include/cc++
 @dirrm lib/ccaudio2-%%CCVERSION%%
-

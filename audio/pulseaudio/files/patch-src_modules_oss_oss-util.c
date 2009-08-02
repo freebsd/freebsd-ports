@@ -1,5 +1,5 @@
---- src/modules/oss-util.c.orig	2007-11-08 21:45:25.000000000 -0500
-+++ src/modules/oss-util.c	2008-01-09 17:00:45.000000000 -0500
+--- src/modules/oss/oss-util.c.orig	2007-11-08 21:45:25.000000000 -0500
++++ src/modules/oss/oss-util.c	2008-01-09 17:00:45.000000000 -0500
 @@ -44,6 +44,22 @@
  
  #include "oss-util.h"
@@ -23,15 +23,3 @@
  int pa_oss_open(const char *device, int *mode, int* pcaps) {
      int fd = -1;
      int caps;
-@@ -300,7 +316,11 @@ static int get_device_number(const char 
-     int r;
- 
-     if (!(p = rp = pa_readlink(dev))) {
-+#ifdef ENOLINK
-         if (errno != EINVAL && errno != ENOLINK) {
-+#else
-+        if (errno != EINVAL) {
-+#endif
-             r = -1;
-             goto finish;
-         }

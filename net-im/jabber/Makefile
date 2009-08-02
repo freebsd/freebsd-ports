@@ -33,7 +33,7 @@ USE_RC_SUBR=	jabber
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	${PREFIX}/lib/jabber
 
 .if !defined(NO_INSTALL_MANPAGES)

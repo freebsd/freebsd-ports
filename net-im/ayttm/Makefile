@@ -7,7 +7,7 @@
 
 PORTNAME=	ayttm
 PORTVERSION=	0.5.0.82
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
@@ -30,7 +30,7 @@ USE_XORG=	xpm xscrnsaver
 USE_GNOME=	gnometarget gtk20
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:22 libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-oscar --disable-workwizu --enable-smtp --enable-lj
 

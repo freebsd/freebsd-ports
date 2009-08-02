@@ -17,7 +17,7 @@ MAINTAINER=	pmarquis@pobox.com
 COMMENT=	A profiling tool for KDE
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	KDB2HTML=${PREFIX}/bin/kdb2html
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}

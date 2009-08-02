@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libxslt
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:15
+USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_DOLT_BASH=""

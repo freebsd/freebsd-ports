@@ -16,7 +16,7 @@ COMMENT=	C++ library to build and query a full text inverted index
 USE_GNOME=	gnomehack gnometarget
 USE_BISON=	build
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-unac
 USE_LDCONFIG=	yes

@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_BDB=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-berkeley-db
 USE_LDCONFIG=	yes

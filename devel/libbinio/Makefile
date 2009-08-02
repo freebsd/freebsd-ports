@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Binary I/O stream class library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

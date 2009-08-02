@@ -20,7 +20,7 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE}
 MAKE_JOBS_SAFE=	yes

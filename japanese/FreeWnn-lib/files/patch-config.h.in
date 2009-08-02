@@ -3,7 +3,7 @@ Index: config.h.in
 RCS file: /home/cvs/private/hrs/freewnn/config.h.in,v
 retrieving revision 1.1.1.1
 retrieving revision 1.2
-diff -d -u -I\$FreeBSD$ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 -r1.2
+diff -d -u -I\$FreeBSD$ -w -r1.1.1.1 -r1.2
 --- config.h.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
 +++ config.h.in	2 Jan 2009 21:09:32 -0000	1.2
 @@ -33,12 +33,24 @@

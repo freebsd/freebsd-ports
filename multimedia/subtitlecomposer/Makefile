@@ -16,7 +16,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Subtitle editor for KDE
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_KDELIBS_VER=3
 USE_XORG=	xext
 GNU_CONFIGURE=	yes

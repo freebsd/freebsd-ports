@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.5.9
 
 MAN1=		dgs.1 dpsnx.agent.1

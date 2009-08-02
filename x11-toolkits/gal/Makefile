@@ -26,7 +26,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 GNOME_HTML_DIR=	${PREFIX}/share/doc/gal
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--enable-static --with-libiconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

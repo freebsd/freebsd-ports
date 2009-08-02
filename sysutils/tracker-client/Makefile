@@ -39,7 +39,7 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	core
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-video-extractor=gstreamer \

@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-3.99-u4-b5
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Monkey's Audio lossless codec
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static

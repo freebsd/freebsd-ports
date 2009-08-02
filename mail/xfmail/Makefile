@@ -20,7 +20,7 @@ COMMENT=	An X Window System application for receiving electronic mail
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes

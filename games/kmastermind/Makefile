@@ -16,7 +16,7 @@ COMMENT=	Mastermind game designed for K Desktop Environment
 
 BUILD_DEPENDS=		${NONEXISTENT}:${PORTSDIR}/x11/kdelibs3:extract
 
-USE_AUTOTOOLS=		automake:19:env autoconf:262:env libtool:15
+USE_AUTOTOOLS=		automake:19:env autoconf:262:env libtool:22
 USE_PERL5_BUILD=	yes
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes

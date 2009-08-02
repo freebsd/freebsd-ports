@@ -18,7 +18,7 @@ LIB_DEPENDS=	telepathy.2:${PORTSDIR}/net-im/libtelepathy \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_GNOME=	gnomeprefix pkgconfig gconf2 libxslt gnomehack ltverhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

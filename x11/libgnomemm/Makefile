@@ -18,7 +18,7 @@ COMMENT=	C++ wrapper for libgnome library
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnome
 GNU_CONFIGURE=	yes

@@ -22,7 +22,7 @@ LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
 CFLAGS:=	${CFLAGS} -O2
 USE_GSTREAMER=	yes good
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 OPTIONS=	MP3 "mp3 files support" on \

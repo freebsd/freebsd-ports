@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus plugin that allows you to encrypt the contents of a folder
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GNOME=	nautilus2 eel2
 PKGCONFIGS=	gtk+-2.0 libglade-2.0 libnautilus-extension libgnomeui-2.0

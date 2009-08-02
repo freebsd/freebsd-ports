@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	netdude
 MAINTAINER=	brenton.chang@gmail.com
 COMMENT=	A libpcap wrapper library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

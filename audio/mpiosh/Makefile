@@ -7,6 +7,7 @@
 
 PORTNAME=	mpiosh
 PORTVERSION=	0.7.1.p2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/mpio
 DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}
@@ -18,10 +19,11 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 libtool:15
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 libtool:22
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -liconv"
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 .include <bsd.port.pre.mk>
 
@@ -30,16 +32,6 @@ LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
 .endif
-
-patch-autotools:
-	${DO_NADA}
-
-#
-# Get rid of .la and static library files
-#
-post-configure:
-	@${REINPLACE_CMD} -E -e \
-	    '/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
 
 post-patch:
 .if ${OSVERSION} >= 800069

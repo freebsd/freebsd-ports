@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.seasip.demon.co.uk/Unix/LibDsk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulation of uPD765a Floppy Disc Controller
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 OPTIONS=	LIBDSK "With LIBDSK support (recommended)" on

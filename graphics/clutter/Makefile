@@ -17,7 +17,7 @@ COMMENT=	OpenGL based interactive canvas library
 LIB_DEPENDS=	json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig gtk20 gnomehack ltverhack gnomeprefix
 USE_GL=		gl
 USE_XORG=	glproto x11 xfixes xdamage xcomposite xi

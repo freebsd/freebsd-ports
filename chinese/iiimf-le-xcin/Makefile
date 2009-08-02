@@ -22,7 +22,7 @@ USE_XORG=	x11 xproto
 WRKSRC=		${WRKDIR}/iiimf-xcin
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
-USE_AUTOTOOLS=	automake:19 autoheader:262 autoconf:262 libtool:15
+USE_AUTOTOOLS=	automake:19 autoheader:262 autoconf:262 libtool:22
 AUTOMAKE_ARGS=	--add-missing
 
 do-extract:

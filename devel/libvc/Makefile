@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	rolo
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vCard library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_BISON=	build
 GNU_CONFIGURE=	yes

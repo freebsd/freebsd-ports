@@ -21,7 +21,7 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 .endif
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_BDB=	41+

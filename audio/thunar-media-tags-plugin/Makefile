@@ -24,6 +24,6 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget gnomehack gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libexo thunar
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>

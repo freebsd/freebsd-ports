@@ -19,7 +19,7 @@ RUN_DEPENDS=		gpgv:${PORTSDIR}/security/gnupg1
 CONFLICTS=		kdeutils-3.[2-6].*
 
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 USE_KDELIBS_VER=	3
 
 post-patch:

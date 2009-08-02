@@ -27,8 +27,8 @@ USE_GNOME=	pkgconfig
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
-USE_AUTOTOOLS=	libtool:15 aclocal:19
-
+USE_AUTOTOOLS=	libtool:22 aclocal:19
+LIBTOOLFILES=	acinclude.m4 configure
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} -lintl -L${PREFIX}/lib"
 CONFIGURE_ARGS+=--with-qt-dir=${QT_PREFIX} \
 		--without-included-sqlite
@@ -40,6 +40,6 @@ USE_KDELIBS_VER=	3
 pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}/admin
 	@${CP} ${LIBTOOL_M4} ${WRKSRC}/admin
-	@${CP} ${PREFIX}/include/clamav-config.h ${WRKSRC}/src/klamd
+	@${CP} ${LOCALBASE}/include/clamav-config.h ${WRKSRC}/src/klamd
 
 .include <bsd.port.post.mk>

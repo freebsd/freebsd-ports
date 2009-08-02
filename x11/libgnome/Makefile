@@ -30,7 +30,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack esound libbonobo \
 USE_BISON=	build
 USE_XORG=	xpm
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

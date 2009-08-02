@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ WebCore JavaScript interpreter
 
 USE_GNOME=	gnomehack gnometarget gtk20
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes

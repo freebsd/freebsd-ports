@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 USE_GNOME=	gnomehack intltool libxml2
 

@@ -19,7 +19,7 @@ USE_XORG=	xtst xt xaw xmu
 
 #weird libtool issue http://gcc.gnu.org/bugzilla/show_bug.cgi?id=28442
 EXTRA_PATCHES+=	${.CURDIR}/files/patch-configure
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .if ${MACHINE_ARCH} != i386
 BROKEN=	Only for gcj supported platforms

@@ -18,7 +18,7 @@ COMMENT=	Buzztard gstreamer plugins
 
 LIB_DEPENDS=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GSTREAMER=	yes
 USE_GNOME=	gnomehack ltverhack
 USE_LDCONFIG=	yes

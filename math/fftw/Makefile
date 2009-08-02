@@ -22,7 +22,7 @@ COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 FFTW_FLAVOR?=	default
 FFTW_SUFIX=
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

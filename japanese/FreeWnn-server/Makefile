@@ -21,7 +21,7 @@ COMMENT?=	A Japanese/Chinese/Korean input method (Japanese server)
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:22
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	# defined below
 MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}"

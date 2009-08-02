@@ -17,7 +17,7 @@ COMMENT=		Panel applet for editing and accessing the KDE addressbook
 USE_KDEBASE_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 USE_LDCONFIG=		yes
 CONFIGURE_ENV=		LDFLAGS="${PTHREAD_LIBS}"
 

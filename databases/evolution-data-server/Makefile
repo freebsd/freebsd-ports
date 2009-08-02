@@ -30,7 +30,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui ltverhack \
 		ltasneededhack
 USE_OPENLDAP=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BDB=	41+
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static \

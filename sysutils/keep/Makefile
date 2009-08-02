@@ -19,7 +19,7 @@ RUN_DEPENDS=	rdiff-backup:${PORTSDIR}/sysutils/rdiff-backup
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 

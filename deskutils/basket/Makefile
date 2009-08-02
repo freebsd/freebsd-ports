@@ -15,7 +15,7 @@ COMMENT=	Desktop organization tool
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 OPTIONS=	KONTACT	"Kontact plugin" on \

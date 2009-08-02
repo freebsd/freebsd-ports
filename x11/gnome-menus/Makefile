@@ -19,7 +19,7 @@ USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack glib20 ltverhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

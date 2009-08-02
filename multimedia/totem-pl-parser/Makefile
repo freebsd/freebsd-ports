@@ -24,7 +24,7 @@ USE_GNOME=	gnomehack gnomeprefix gnomevfs2 intlhack evolutiondataserver \
 		ltverhack
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

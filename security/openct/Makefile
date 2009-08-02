@@ -7,6 +7,7 @@
 
 PORTNAME=	openct
 PORTVERSION=	0.6.17
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -16,7 +17,7 @@ COMMENT=	A middleware framework for smart card terminals
 
 OPTIONS=	PCSC "Enable PC/SC support" off
 
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:22
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

@@ -23,7 +23,7 @@ COMMENT=	IJG's jpeg compression utilities
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 

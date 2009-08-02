@@ -21,7 +21,7 @@ RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget libxml2 ltverhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \

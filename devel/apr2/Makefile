@@ -31,7 +31,7 @@ APR_VERSION=	1.3.6
 APU_VERSION=	1.3.8
 
 USE_ICONV=		yes
-USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:15:env
+USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:22:env
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=		yes

@@ -20,7 +20,7 @@ COMMENT=	Sather compiler
 # NOTE: currently build fails with threaded Tk
 #
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-BUILD_DEPENDS=	${LOCALBASE}/bin/libtool:${PORTSDIR}/devel/libtool15
+BUILD_DEPENDS=	${LOCALBASE}/bin/libtool:${PORTSDIR}/devel/libtool22
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

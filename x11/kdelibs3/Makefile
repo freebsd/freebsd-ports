@@ -58,7 +58,7 @@ PREFIX=		${KDE_PREFIX}
 
 USE_LDCONFIG=	${PREFIX}/lib/kde3
 
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=  libtool:22
 CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--disable-as-needed \
 		--enable-mt \

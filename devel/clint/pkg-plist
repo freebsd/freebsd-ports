@@ -1,7 +1,6 @@
 bin/clint
 include/clint/exceptions.h
 include/clint/python.h
-lib/clint/python.a
 lib/clint/python.la
 lib/clint/python.so
 lib/clint/python.so.0

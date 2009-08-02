@@ -20,7 +20,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	sdl
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

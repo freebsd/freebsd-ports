@@ -22,7 +22,7 @@ USE_BISON=	build
 INSTALLS_OMF=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomedocutils libglade2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

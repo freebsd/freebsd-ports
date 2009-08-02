@@ -29,7 +29,7 @@ USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui ltverhack
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

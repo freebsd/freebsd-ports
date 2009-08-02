@@ -24,7 +24,7 @@ USE_XORG=	xinerama xext xpm xmu sm ice
 USE_BISON=	build
 USE_GL=		yes
 USE_MOTIF=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	ARCH="${OPSYS:L}" \
 		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

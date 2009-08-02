@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-gamma
 MAINTAINER=	andy.lavr@gmail.com
 COMMENT=	Most SOCKS-friendly applications way with Tor
 
-USE_AUTOTOOLS=	libtool:15 aclocal:110 autoconf:262
+USE_AUTOTOOLS=	libtool:22 aclocal:110 autoconf:262
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
 USE_GMAKE=	yes

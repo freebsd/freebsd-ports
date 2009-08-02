@@ -1,0 +1,24 @@
+--- configure.orig	2009-06-29 17:49:28.000000000 -0500
++++ configure	2009-06-29 17:51:20.000000000 -0500
+@@ -22038,8 +22038,8 @@
+ 
+ 
+   if test "$have_gnutls" = yes; then
+-    GGZTLS_INCLUDES="-I $gnutls_includes"
+-    GGZTLS_LDFLAGS="-L $gnutls_libraries"
++    GGZTLS_INCLUDES="-I$gnutls_includes"
++    GGZTLS_LDFLAGS="-L$gnutls_libraries"
+     LIB_GGZTLS=$gnutls_lib
+     { echo "$as_me:$LINENO: result: using GnuTLS" >&5
+ echo "${ECHO_T}using GnuTLS" >&6; }
+@@ -22295,8 +22295,8 @@
+ 
+ 
+   if test "$have_ssl" = yes; then
+-    GGZTLS_INCLUDES="-I $ssl_includes"
+-    GGZTLS_LDFLAGS="-L $ssl_libraries"
++    GGZTLS_INCLUDES="-I$ssl_includes"
++    GGZTLS_LDFLAGS="-L$ssl_libraries"
+     LIB_GGZTLS=$ssl_lib
+     { echo "$as_me:$LINENO: result: using OpenSSL" >&5
+ echo "${ECHO_T}using OpenSSL" >&6; }

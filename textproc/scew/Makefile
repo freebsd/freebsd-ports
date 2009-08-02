@@ -17,7 +17,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

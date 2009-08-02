@@ -1,0 +1,76 @@
+--- Wnn/romkan/Makefile.in.orig	2009-07-12 22:17:42.000000000 -0500
++++ Wnn/romkan/Makefile.in	2009-07-12 22:18:01.000000000 -0500
+@@ -46,7 +46,7 @@
+ 
+ .c.o:
+ 	$(RM) $@
+-	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $<
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(_NOOP_) $<
+ 
+ clean::
+ 	$(RM) -r .libs
+--- Wnn/jlib.V3/Makefile.in.orig	2009-07-12 22:19:13.000000000 -0500
++++ Wnn/jlib.V3/Makefile.in	2009-07-12 22:21:06.000000000 -0500
+@@ -71,12 +71,12 @@
+ 
+ .c.o:
+ 	$(RM) $@
+-	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $*.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(_NOOP_) $*.c
+ 
+ all:: libjd.la
+ 
+ libjd.la: $(OBJS) $(EXTRALIBRARYDEPS)
+-	$(LIBTOOL) $(CC) -o $@ $(OBJS:.o=.lo) -rpath $(WNNLIBDIR) -version-info $(WNNJLIBVERSION)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS:.o=.lo) -rpath $(WNNLIBDIR) -version-info $(WNNJLIBVERSION)
+ 
+ lintlib:: llib-ljd.ln
+ 
+@@ -87,7 +87,7 @@
+ install:: libjd.la
+ 	@if [ -d $(DESTDIR)$(WNNLIBDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(WNNLIBDIR)); fi
+-	$(LIBTOOL) $(INSTALL) $(INSTLIBFLAGS) libjd.la $(DESTDIR)$(WNNLIBDIR)
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTLIBFLAGS) libjd.la $(DESTDIR)$(WNNLIBDIR)
+ 
+ install:: jlib.h
+ 	@if [ -d $(DESTDIR)$(JWNNINCDIR) ]; then set +x; \
+@@ -109,13 +109,13 @@
+ 	done
+ 
+ $(OBJ2) : $(SRC2)
+-	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ3) : $(SRC3)
+-	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ4) : $(SRC4)
+-	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
+ 
+ depend:: .depend
+ 
+--- kWnn/romkan/Makefile.in.orig	2009-07-12 22:26:37.000000000 -0500
++++ kWnn/romkan/Makefile.in	2009-07-12 22:26:55.000000000 -0500
+@@ -48,7 +48,7 @@
+ 
+ .c.o:
+ 	$(RM) $@
+-	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $<
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(_NOOP_) $<
+ 
+ clean::
+ 	$(RM) -r .libs
+--- cWnn/romkan/Makefile.in.orig	2009-07-12 22:29:35.000000000 -0500
++++ cWnn/romkan/Makefile.in	2009-07-12 22:29:49.000000000 -0500
+@@ -48,7 +48,7 @@
+ 
+ .c.o:
+ 	$(RM) $@
+-	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $<
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(_NOOP_) $<
+ 
+ clean::
+ 	$(RM) -r .libs

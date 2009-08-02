@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Generic Hash Table
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--datarootdir=${PREFIX}
 USE_LDCONFIG=	yes
 

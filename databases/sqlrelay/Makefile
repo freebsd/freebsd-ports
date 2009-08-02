@@ -18,7 +18,7 @@ COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 LIB_DEPENDS=	rudiments.1:${PORTSDIR}/devel/rudiments
 
 USE_GMAKE=		yes
-USE_AUTOTOOLS=	autoconf:262 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:22
 CONFIGURE_ENV=		${SQLRELAY_CONFIGURE_ENV} \
 			CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \

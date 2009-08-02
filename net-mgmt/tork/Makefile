@@ -16,7 +16,7 @@ COMMENT=	TorK is an Anonymity Manager for the KDE Desktop
 
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	libtool:15 aclocal:19
+USE_AUTOTOOLS=	libtool:22 aclocal:19
 USE_GETTEXT=	yes
 USE_XORG=	xext
 USE_LDCONFIG=	yes

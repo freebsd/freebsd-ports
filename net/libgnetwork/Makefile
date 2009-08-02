@@ -15,7 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GLib-based networking wrapper
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2

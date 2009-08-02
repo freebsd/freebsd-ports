@@ -21,7 +21,7 @@ USE_GNOME=	pkgconfig gnomehack libxml2
 USE_PERL5=	yes
 USE_TCL=	yes
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	autoconf:262 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-perl-binding --with-python=${PYTHON_CMD} \

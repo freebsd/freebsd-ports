@@ -19,7 +19,7 @@ LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes

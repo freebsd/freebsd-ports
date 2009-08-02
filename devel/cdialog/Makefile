@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	An enhanced version of 'dialog' to work with ncurses
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME} --with-libtool

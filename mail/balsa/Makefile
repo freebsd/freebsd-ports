@@ -8,7 +8,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -31,7 +31,7 @@ USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gtkhtml3 \
 		libgnomeprintui
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:22
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-threads \

@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 ALL_TARGET=	both
 USE_LDCONFIG=	yes
 

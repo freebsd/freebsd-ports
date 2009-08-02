@@ -1,0 +1,11 @@
+--- autogen.sh.orig	2009-07-11 20:59:22.000000000 -0500
++++ autogen.sh	2009-07-11 20:59:32.000000000 -0500
+@@ -73,7 +73,7 @@
+  rm -f aclocal.m4
+  cp $LIBTOOL_M4 aclocal.m4
+ fi
+-$LIBTOOLIZE --copy --force || exit 1
++$LIBTOOLIZE --copy --force --install || exit 1
+ 
+ echo "Running autoheader ..."
+ $AUTOHEADER || exit 1

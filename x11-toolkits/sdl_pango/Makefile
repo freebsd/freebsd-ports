@@ -19,7 +19,7 @@ PATCHFILES=	SDL_Pango-0.1.2-API-adds.patch
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	SDL_Pango is the SDL API to the Pango text rendering engine of GNOME 2.x
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_SDL=	sdl
 USE_GNOME=	pango
 GNU_CONFIGURE=	yes

@@ -15,7 +15,7 @@ MASTER_SITES=	http://dl.maptools.org/dl/shapelib/ \
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
-USE_AUTOTOOLS=	libtool:15:env
+USE_AUTOTOOLS=	libtool:22:env
 USE_LDCONFIG=	yes
 
 OPTIONS=	PROJ4 "Cartographic Projections library" off

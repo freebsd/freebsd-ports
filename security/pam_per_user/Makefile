@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.feep.net/pub/software/PAM/pam_per_user/
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	PAM module for per-user authentication
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 MAN5=		pam_per_user.5
 

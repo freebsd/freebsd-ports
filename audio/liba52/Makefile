@@ -15,7 +15,7 @@ DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A free library for decoding ATSC A/52 streams, aka AC-3
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes

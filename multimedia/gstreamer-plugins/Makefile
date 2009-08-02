@@ -52,7 +52,7 @@ WANT_GSTREAMER=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME+=	gnomehack gnometarget pkgconfig ltverhack ltasneededhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GST_PLUGIN?=	base
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

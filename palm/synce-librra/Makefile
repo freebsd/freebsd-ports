@@ -22,7 +22,7 @@ OPTIONS?=	TOOLS	"Build with minor rra command line tools" on \
 		RECURR	"Enable experimential recurrence support" off
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gnometarget

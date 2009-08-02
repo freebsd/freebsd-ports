@@ -19,7 +19,7 @@ MAINTAINER=	koziol@hdfgroup.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure c++/configure
 CONFIGURE_ARGS=	--disable-debug \

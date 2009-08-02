@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack libglade2 libartlgpl2 ltverhack referencehack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc

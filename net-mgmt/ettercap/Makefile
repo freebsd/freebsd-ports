@@ -8,7 +8,7 @@
 PORTNAME=		ettercap
 PORTVERSION=		0.7.3
 DISTVERSIONPREFIX=	NG-
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=		1
 CATEGORIES=		net-mgmt security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -27,7 +27,7 @@ OPTIONS=	GTK	"Build with GTK2+ GUI"	on \
 		PCRE	"Build with PCRE regexps in filters"	on
 
 WANT_GNOME=	yes
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:22
 GNU_CONFIGURE=	yes
 
 MAN5=		etter.conf.5

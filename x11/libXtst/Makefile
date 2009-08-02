@@ -15,7 +15,7 @@ COMMENT=	X Test extension
 
 XORG_CAT=	lib
 USE_XORG=	x11 xext recordproto:both xextproto inputproto:both
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 MAN3=		XTestQueryExtension.3 \
 		XTestCompareCursorWithWindow.3 \

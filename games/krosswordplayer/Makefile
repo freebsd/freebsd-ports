@@ -15,6 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE crossword puzzle game
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>

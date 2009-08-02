@@ -19,7 +19,7 @@ LATEST_LINK=	gtkglarea2
 USE_GNOME=	gnomehack gtk20
 USE_BZIP2=	yes
 USE_GL=		yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-lib-GL
 

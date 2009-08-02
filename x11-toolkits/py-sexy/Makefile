@@ -18,7 +18,7 @@ COMMENT=	Libsexy bindings for Python
 
 LIB_DEPENDS=	sexy.2:${PORTSDIR}/x11-toolkits/libsexy
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pygtk2 pkgconfig
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

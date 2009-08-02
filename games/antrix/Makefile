@@ -17,7 +17,7 @@ COMMENT=	Free stable dedicated-server for World of Warcraft
 
 BUILD_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
-USE_AUTOTOOLS=	aclocal:19 libtoolize autoconf:262 autoheader:262 automake:19 libtool:15
+USE_AUTOTOOLS=	aclocal:19 libtoolize autoconf:262 autoheader:262 automake:19 libtool:22
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-a
 USE_MYSQL=	yes

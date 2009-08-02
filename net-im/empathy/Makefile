@@ -30,7 +30,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	evolutiondataserver gnomehack gnomeprefix pygtk2 ltverhack \
 		gnomepanel
 USE_GSTREAMER=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PYTHON=	yes

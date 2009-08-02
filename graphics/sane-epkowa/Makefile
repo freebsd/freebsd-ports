@@ -43,7 +43,7 @@
 
 PORTNAME=	epkowa
 PORTVERSION=	2.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://lx1.avasys.jp/iscan/${PORTVERSION}/
 DISTNAME= iscan_${PORTVERSION}-1
@@ -60,12 +60,12 @@ WRKSRC=${WRKDIR}/iscan-${PORTVERSION}
 MAN5=		sane-epkowa.5
 
 # We use LIB_DEPENDS, but the dependency is also at build time
-LIB_DEPENDS+=	ltdl:${PORTSDIR}/devel/libltdl15
+LIB_DEPENDS+=	ltdl:${PORTSDIR}/devel/libltdl22
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 LIB_DEPENDS+=	getline:${PORTSDIR}/devel/libgetline
 LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
 
-#BUILD_DEPENDS+=	${LOCALBASE}/lib/libltdl.so:${PORTSDIR}/devel/libltdl15
+#BUILD_DEPENDS+=	${LOCALBASE}/lib/libltdl.so:${PORTSDIR}/devel/libltdl22
 
 # gtk libraries are used by the frontend, which we do not build, however
 # the configure script relies on that and fails if not present, so as

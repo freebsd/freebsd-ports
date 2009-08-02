@@ -23,7 +23,7 @@ LIB_DEPENDS=		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 			ao:${PORTSDIR}/audio/libao
 
 USE_GNOME=		gnomehack gnomeprefix
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 USE_LDCONFIG=		yes
 LIBTOOLFLAGS=		--tag=CXX
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

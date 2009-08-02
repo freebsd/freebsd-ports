@@ -29,7 +29,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost-lib
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
 
-USE_AUTOTOOLS=	automake:15 autoconf:262 libtool:15
+USE_AUTOTOOLS=	automake:15 autoconf:262 libtool:22
 AUTOMAKE_ARGS=	--add-missing
 LIBTOOL_VARS=	--force --automake
 

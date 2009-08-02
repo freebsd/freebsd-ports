@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for high-performance 2D graphics
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig

@@ -19,7 +19,7 @@ RUN_DEPENDS=	osb-jscore>=0.5.2:${PORTSDIR}/lang/osb-jscore
 
 USE_XORG=	x11 xt
 USE_GNOME=	gnomehack gnometarget gtk20
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes

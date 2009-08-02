@@ -32,7 +32,7 @@ USE_BZIP2=	yes
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig ltverhack
 USE_GMAKE=	yes

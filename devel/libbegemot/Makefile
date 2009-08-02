@@ -7,7 +7,7 @@
 
 PORTNAME=	libbegemot
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~harti/libbegemot/
 DISTNAME=	libbegemot-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	A function library for begemot tools
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libltdl:15 libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:262:env libltdl:22 libtool:22
 USE_LDCONFIG=	yes
 
 
@@ -28,6 +28,9 @@ MLINKS=	xalloc.1 xrealloc.1
 run-autotools::
 	@(cd ${CONFIGURE_WRKSRC} && ${ACLOCAL} -I ${LIBTOOL_SHAREDIR}/libltdl/)
 	@(cd ${CONFIGURE_WRKSRC} && ${AUTOCONF})
+	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+		-e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+			${WRKSRC}/configure
 
 post-install:
 .for i in ${MAN1}

@@ -29,7 +29,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GSTREAMER=	good
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libwnck \
 		gnomedocutils gnomepanel

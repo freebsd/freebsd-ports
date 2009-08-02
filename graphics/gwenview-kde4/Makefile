@@ -21,7 +21,7 @@ LIB_DEPENDS=	kipi.2:${PORTSDIR}/graphics/libkipi \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 CONFIGURE_ARGS+=--enable-kipi
 

@@ -19,7 +19,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		artsc.0:${PORTSDIR}/audio/arts
 
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 PLIST_FILES=	lib/xmms/Output/libarts.a \
 		lib/xmms/Output/libarts.la \

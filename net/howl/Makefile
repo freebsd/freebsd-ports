@@ -15,7 +15,7 @@ COMMENT=	Zeroconf/Bonjour(tm) implementation
 
 CONFLICTS=	avahi-[0-9]*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_LDCONFIG=	yes

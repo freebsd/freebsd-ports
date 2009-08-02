@@ -17,7 +17,7 @@ COMMENT=	An anti-aliased font support for gtk+
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_ICONV=	yes

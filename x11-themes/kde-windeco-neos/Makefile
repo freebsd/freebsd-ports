@@ -18,7 +18,7 @@ COMMENT=	KDE window decoration
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 WRKSRC=		${WRKDIR}/kwin-${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

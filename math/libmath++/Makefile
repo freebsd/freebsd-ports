@@ -13,9 +13,9 @@ MASTER_SITES=	http://www.robertjohnkaper.com/downloads/atlantik/
 MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	C++ Library for Symbolic and Numeric Calculus Applications
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

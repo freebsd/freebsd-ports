@@ -16,7 +16,7 @@ COMMENT=	Display various information right on your desktop
 EXTRA_PATCHES=	${.CURDIR}/../../comms/kallers/files/patch-configure
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

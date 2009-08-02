@@ -23,7 +23,7 @@ USE_RC_SUBR=	racoon.sh
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \

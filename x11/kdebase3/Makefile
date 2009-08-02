@@ -41,7 +41,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=  libtool:22
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 

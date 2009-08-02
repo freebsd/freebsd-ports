@@ -15,7 +15,7 @@ MASTER_SITES=	http://dspam.nuclearelephant.com/sources/extras/ \
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	GPL implementation of the Bayesian Noise Reduction algorithm
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/${PORTNAME}

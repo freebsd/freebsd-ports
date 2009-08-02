@@ -14,7 +14,7 @@ MASTER_SITES=	http://crazney.net/programs/itunes/files/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	C lib used to connect to iTunes(R) music shares
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes

@@ -24,7 +24,7 @@ LIB_DEPENDS=	nessus.4:${PORTSDIR}/security/nessus-libraries
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	YES

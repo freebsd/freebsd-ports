@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel intlhack \
 		ltverhack
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}

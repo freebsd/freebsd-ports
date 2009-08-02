@@ -28,7 +28,7 @@ USE_GNOME=	gnomehack \
 		gtk20
 WANT_GNOME=	yes
 USE_XORG=	xpm
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 		--with-dvdcontrol=${LOCALBASE} \

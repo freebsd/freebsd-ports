@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Single instance application library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 ltverhack
 USE_LDCONFIG=	yes

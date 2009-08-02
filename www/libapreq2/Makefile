@@ -18,7 +18,7 @@ COMMENT=	Generic Apache2 Request Library
 USE_APACHE=	2.0+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:262 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:22
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
 
 MAKE_ENV+=     MAKE=${GMAKE} ## MakeMaker blows it without this

@@ -17,7 +17,7 @@ COMMENT=	Tools for testing the ATM subsystem
 
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tcldir=${LOCALBASE}

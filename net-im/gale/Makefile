@@ -21,7 +21,7 @@ LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww \
 
 USE_ICONV=	yes
 USE_GNOME=	glib12
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	configure liboop/configure
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

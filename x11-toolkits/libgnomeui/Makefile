@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libbonoboui ltverhack \
 		referencehack gvfs
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BISON=	build
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

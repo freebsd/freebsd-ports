@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	libsigsegv
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Handling page faults in user mode
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	lthack
 USE_ICONV=	yes
 USE_GMAKE=	yes

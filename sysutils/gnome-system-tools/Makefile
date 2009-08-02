@@ -25,7 +25,7 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomehack gnomeprefix intlhack nautilus2
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--enable-services
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

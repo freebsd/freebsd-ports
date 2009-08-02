@@ -17,6 +17,6 @@ IGNORE=		needs xf86_ansic.h which doesn't exist with recent xserver
 
 XORG_CAT=	driver
 MAN4=		magictouch.4x
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>

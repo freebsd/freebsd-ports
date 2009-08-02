@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2009-07-19 14:49:35.000000000 -0400
++++ src/Makefile.in	2009-07-19 14:56:39.000000000 -0400
+@@ -2668,7 +2668,7 @@ libpulsecommon_@PA_MAJORMINORMICRO@_la_C
+ libpulsecommon_@PA_MAJORMINORMICRO@_la_LDFLAGS = $(AM_LDFLAGS) \
+ 	-avoid-version $(am__append_17)
+ libpulsecommon_@PA_MAJORMINORMICRO@_la_LIBADD = $(AM_LIBADD) \
+-	$(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) $(am__append_19) \
++	$(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) -lexecinfo $(am__append_19) \
+ 	$(am__append_23)
+ 
+ ###################################

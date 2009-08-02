@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 USE_SUBMAKE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 

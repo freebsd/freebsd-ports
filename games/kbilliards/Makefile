@@ -22,7 +22,7 @@ USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 CFLAGS+=	-Dsqrtl=sqrt
 

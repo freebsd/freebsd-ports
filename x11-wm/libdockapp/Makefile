@@ -16,7 +16,7 @@ COMMENT=	Standard library for Window Maker dock apps
 USE_BZIP2=	yes
 USE_XORG=	xext xpm
 USE_GNOME=	gnometarget
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--without-font --without-examples
 USE_LDCONFIG=	yes
 

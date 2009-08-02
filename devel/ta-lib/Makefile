@@ -17,7 +17,7 @@ COMMENT=	A UNIX, POSIX Library for Technical Analysis
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 post-patch:

@@ -21,7 +21,7 @@ CONFLICTS=	kdeartwork-3.5.[0-9]*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 WRKSRC=		${WRKDIR}/smooth-blend-${PORTVERSION}
 
 .include <bsd.port.mk>

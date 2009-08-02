@@ -41,7 +41,6 @@ lib/libamarok.la
 lib/libamarok.so
 lib/libamarok.so.0
 lib/ruby_lib/http11.rb
-lib/ruby_lib/libhttp11.a
 lib/ruby_lib/libhttp11.la
 lib/ruby_lib/libhttp11.so
 lib/ruby_lib/libhttp11.so.0

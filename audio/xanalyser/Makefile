@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_MOTIF=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 MAN1=		xanalyser.1
 PLIST_FILES=	bin/xanalyser \
 		lib/X11/app-defaults/XAnalyser

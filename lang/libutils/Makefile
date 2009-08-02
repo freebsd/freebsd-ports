@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support lib for Tensile/NSL
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 USE_LDCONFIG=	yes
 

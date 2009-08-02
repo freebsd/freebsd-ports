@@ -17,7 +17,7 @@ COMMENT=		Bibliography tool for KDE/Postgres/BibTeX
 
 USE_PGSQL=		yes
 USE_KDEBASE_VER=	3
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 USE_GMAKE=		yes
 CONFIGURE_ARGS+=	--with-pg-includes=${LOCALBASE}/include \
 			--with-pg-libs=${LOCALBASE}/lib

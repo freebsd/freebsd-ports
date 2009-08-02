@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 # getgnash.org is slow
 MASTER_SITES=	${MASTER_SITE_GNU} \
@@ -34,7 +34,7 @@ USE_GCC=	4.2+	# triggers compiler error on gcc 3.4
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:22
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \

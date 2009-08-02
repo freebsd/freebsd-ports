@@ -31,7 +31,7 @@ LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		wv2.2:${PORTSDIR}/textproc/wv2
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

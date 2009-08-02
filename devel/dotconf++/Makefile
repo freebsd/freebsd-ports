@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	Configuration file parser written in C++
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 USE_LDCONFIG=	yes
 

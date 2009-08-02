@@ -16,7 +16,7 @@ MAINTAINER=	corky1951@comcast.net
 COMMENT=	An ANSI C library for parsing GNU style command line arguments
 
 USE_GNOME=	gnometarget
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 MAN3=		argtable2.3

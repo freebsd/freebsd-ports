@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 MAINTAINER=	konstantin@saurbier.net
 COMMENT=	A library for programs conforming to DNS RFCs and drafts
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

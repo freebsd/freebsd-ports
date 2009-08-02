@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 MAN1=		htsserver.1 httrack.1 proxytrack.1 webhttrack.1

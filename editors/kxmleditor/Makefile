@@ -16,7 +16,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	XML editor for KDE
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

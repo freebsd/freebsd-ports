@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Library for manipulating IPTC metadata stored in image files
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

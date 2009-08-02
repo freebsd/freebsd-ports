@@ -16,7 +16,7 @@ COMMENT=	Collect information from all over the Internet
 
 USE_BZIP2=		yes
 USE_PERL5=		yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	configure src/gatherer/curl/configure
 USE_LDCONFIG=	yes
 NO_MTREE=		yes

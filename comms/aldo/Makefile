@@ -18,7 +18,7 @@ LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:15
+USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:22
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
 USE_GMAKE=	yes

@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 ALL_TARGET=	dict
 INSTALL_TARGET=	install.dict
 MAN1=		dict.1 dictl.1

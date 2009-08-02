@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 USE_XORG=	x11 xcomposite xdamage
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomeprefix intlhack gnomehack gconf2 ltverhack gtk20
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

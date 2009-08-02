@@ -7,7 +7,7 @@
 
 PORTNAME=	mapnik
 PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	${MASTER_SITE_BERLIOS}/${PORTNAME}/
 
@@ -16,7 +16,7 @@ COMMENT=	A Free Toolkit For Developing Mapping Applications
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		proj:${PORTSDIR}/graphics/proj \
-		ltdl:${PORTSDIR}/devel/libltdl15 \
+		ltdl:${PORTSDIR}/devel/libltdl22 \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		cairo.2:${PORTSDIR}/graphics/cairo \

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to access SMI MIB information
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	glame
 PORTVERSION=	2.0.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF
 
@@ -24,7 +24,7 @@ USE_XORG=	xbitmaps x11
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:22 libtool:22
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"

@@ -18,7 +18,7 @@ COMMENT=	An alternative GUI for the Xine media player
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gtk20 gnomehier
 USE_GMAKE=	yes
 USE_GCC=	4.2+

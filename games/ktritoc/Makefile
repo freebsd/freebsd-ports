@@ -16,7 +16,7 @@ COMMENT=	A Tic-tac-toe like boardgame
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	${RM} -r ${WRKSRC}/ktritoc/doc/ktritoc/dtd

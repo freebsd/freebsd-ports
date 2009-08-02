@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:${PORTSDIR}/math/jama
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		rle.1:${PORTSDIR}/graphics/urt
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GL=		gl
 USE_XORG=	x11 xt xi xproto xext inputproto

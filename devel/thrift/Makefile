@@ -18,7 +18,7 @@ LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
 		event-1.4:${PORTSDIR}/devel/libevent
 
 USE_AUTOTOOLS=	autoconf:262:env autoheader:262:env aclocal:19:env \
-		automake:19:env libtool:15:env
+		automake:19:env libtool:22:env
 USE_GNOME=	pkgconfig
 USE_BZIP2=	yes
 USE_GCC=	4.2+

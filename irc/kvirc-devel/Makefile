@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	chris@officialunix.com
 COMMENT=	IRC client for QT and KDE
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes

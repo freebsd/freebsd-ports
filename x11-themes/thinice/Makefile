@@ -19,6 +19,6 @@ COMMENT=	A clean-looking GTK Theme Engine
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-theme-${PORTVERSION}
 
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>

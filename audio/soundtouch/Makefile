@@ -15,7 +15,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open-source audio processing library
 
 CONFIGURE_ARGS=	--enable-shared=yes
-USE_AUTOTOOLS=	autoconf:262 automake:19:env libtool:15
+USE_AUTOTOOLS=	autoconf:262 automake:19:env libtool:22
 USE_LDCONFIG=	yes
 
 pre-configure:

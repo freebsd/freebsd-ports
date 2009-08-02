@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gnomeprintmm-2.5.2:${PORTSDIR}/print/libgnomeprintmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeprintui

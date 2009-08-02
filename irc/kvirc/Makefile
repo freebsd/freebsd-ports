@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/source
 MAINTAINER=	chris@officialunix.com
 COMMENT=	IRC client for QT and KDE
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

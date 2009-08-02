@@ -15,7 +15,7 @@ COMMENT=	A C library for writing servers
 
 USE_GNOME=	glib20 gnomehack
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-gtk-doc
 USE_LDCONFIG=	yes
 

@@ -17,12 +17,12 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	C++ library for reading and generating files in the ELF binary format
 
-BUILD_DEPENDS=	libtoolize:${PORTSDIR}/devel/libtool15
+BUILD_DEPENDS=	libtoolize:${PORTSDIR}/devel/libtool22
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262 libtool:15
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262 libtool:22
 AUTOMAKE_ARGS=	-c -a
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 

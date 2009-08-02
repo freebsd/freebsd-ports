@@ -17,7 +17,7 @@ COMMENT=	Portable abstraction library for DVD navigation
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-dvdread-tree=${LOCALBASE}/include

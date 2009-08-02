@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	3.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
-USE_AUTOTOOLS=	autoconf:262 libltdl:15
+USE_AUTOTOOLS=	autoconf:262 libltdl:22
 USE_RC_SUBR=	nagios
 
 CONFLICTS=	nagios-[12].* nagios-devel-*

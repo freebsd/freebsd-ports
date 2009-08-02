@@ -18,7 +18,7 @@ LIB_DEPENDS=	mxp:${PORTSDIR}/net/libmxp
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 USE_LDCONFIG=	yes

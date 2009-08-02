@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Type 1 Rasterizer Library for UNIX/X11
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 ALL_TARGET=	without_doc
 USE_LDCONFIG=	yes
 

@@ -16,7 +16,7 @@ COMMENT=	A small library for rendering Postscript documents
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gnomeprefix ltverhack
 USE_GHOSTSCRIPT=yes

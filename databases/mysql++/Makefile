@@ -23,7 +23,7 @@ NOT_FOR_ARCHS_REASON_sparc64=	Fails to compile
 
 USE_MYSQL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
 USE_LDCONFIG=	yes
 

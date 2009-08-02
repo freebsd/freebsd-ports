@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
 USE_GNOME=	gnomehack pkgconfig
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

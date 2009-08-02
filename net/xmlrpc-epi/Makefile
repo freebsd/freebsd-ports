@@ -18,7 +18,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"		\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 CONFIGURE_ARGS=	--program-transform="s|^|xre-|" \

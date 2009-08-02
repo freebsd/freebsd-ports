@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK theme engine designed to look nice with the GNOME desktop
 
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 post-patch:

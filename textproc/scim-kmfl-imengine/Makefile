@@ -23,7 +23,7 @@ LIB_DEPENDS=	kmfl:${PORTSDIR}/textproc/libkmfl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_XORG=	x11 xkbfile
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gtk20 intltool intlhack pkgconfig glib20
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes

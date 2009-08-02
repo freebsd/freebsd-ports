@@ -21,7 +21,7 @@ CONFLICTS=	unixODBC-[0-9]*
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-iodbc-inidir=${INIDIR}
 USE_LDCONFIG=	yes

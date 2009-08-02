@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomedocutils gnomehack gnomeprefix gnometarget intlhack libgnomeui
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15 autoconf:262:env aclocal:19:env automake:19:env
+USE_AUTOTOOLS=	libtool:22 autoconf:262:env aclocal:19:env automake:19:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

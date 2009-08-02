@@ -32,7 +32,7 @@ CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
 		freeradius-mysql-[0-9].* freeradius-[013-9].*
 
 USE_RC_SUBR=	radiusd.sh
-USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:262
+USE_AUTOTOOLS=	libltdl:22 libtool:22 autoconf:262
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.alwins-world.de/programs/download/kmysqladmin/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical frontend for administration of mysql servers
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_MYSQL=	yes
 USE_QT_VER=	3
 USE_KDELIBS_VER=3

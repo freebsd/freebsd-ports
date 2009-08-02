@@ -18,7 +18,7 @@ COMMENT=	Abstraction layer for interprocess communication
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig glib20 gnomehack
 USE_LDCONFIG=	yes

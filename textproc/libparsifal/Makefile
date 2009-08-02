@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

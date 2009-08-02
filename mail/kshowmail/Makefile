@@ -18,7 +18,7 @@ LIB_DEPENDS=	mimelib.1:${PORTSDIR}/deskutils/kdepim3
 USE_KDELIBS_VER=	3
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:22:env
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

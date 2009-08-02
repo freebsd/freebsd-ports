@@ -48,7 +48,6 @@ lib/c_icap/srv_url_check.a
 lib/c_icap/srv_url_check.so
 lib/c_icap/srv_url_check.la
 @dirrm lib/c_icap
-lib/libicapapi.a
 lib/libicapapi.la
 lib/libicapapi.so.0
 lib/libicapapi.so

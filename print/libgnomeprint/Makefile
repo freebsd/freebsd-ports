@@ -29,7 +29,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier glib20 pango libxml2 \
 		libartlgpl2 ltverhack
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

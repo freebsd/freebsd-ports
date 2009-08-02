@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	fame
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A video encoding library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -46,7 +46,7 @@ post-extract:
 
 # iconv.m4 is located in ${LOCALBASE}/share/aclocal
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 libtool:15
+USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 libtool:22
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include \

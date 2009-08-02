@@ -17,7 +17,7 @@ COMMENT=	Thai language support library
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:15 autoconf:262 libtool:15
+USE_AUTOTOOLS=	automake:15 autoconf:262 libtool:22
 MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	all check

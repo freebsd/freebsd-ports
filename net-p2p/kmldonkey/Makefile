@@ -18,7 +18,7 @@ COMMENT=	KDE integration for MLDonkey eDonkey P2P client
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--program-transform-name=''
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

@@ -17,7 +17,7 @@ COMMENT=	A sound library for enlightenment package
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gnomehack
 USE_LDCONFIG=	yes

@@ -17,7 +17,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		goocanvas.3:${PORTSDIR}/graphics/goocanvas
 
 USE_GNOME=	gnomehack ltverhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

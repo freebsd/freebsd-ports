@@ -27,7 +27,7 @@ COMMENT=	Library and tools to support IPMI-capable hardware
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \

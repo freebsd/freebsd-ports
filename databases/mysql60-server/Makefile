@@ -18,7 +18,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql60-client databases/mysql60-scripts
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \

@@ -24,7 +24,7 @@ CONFLICTS=	libmorph*
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_XORG=	xbitmaps x11 xaw xext
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-waili

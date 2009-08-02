@@ -19,7 +19,7 @@ COMMENT=	A theme engine based on GtkStep and Step-pastel
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
 
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \

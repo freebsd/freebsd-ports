@@ -22,7 +22,7 @@ CONFLICTS=	rblibtorrent-[0-9]*
 
 USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 libtool:15
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 libtool:22
 ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug \

@@ -27,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 
 TEXMFMAIN=	${PREFIX}/share/texmf

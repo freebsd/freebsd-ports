@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	buddy
 MAINTAINER=	llwang@infor.org
 COMMENT=	A Binary Decision Diagram library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

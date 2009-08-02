@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open Source implementation of the Lotus Sametime protocol
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
 USE_LDCONFIG=	yes

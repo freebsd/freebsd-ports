@@ -19,7 +19,7 @@ MAINTAINER=	ports@dclg.ca
 COMMENT=	A GL Tubing and Extrusion Library
 
 USE_GL=		glut
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"LIBS=-L${LOCALBASE}/lib -lXext ${PTHREAD_LIBS}"

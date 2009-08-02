@@ -14,6 +14,6 @@ COMMENT=	Old X library
 
 XORG_CAT=	lib
 USE_XORG=	x11
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>

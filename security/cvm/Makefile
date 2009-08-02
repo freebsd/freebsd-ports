@@ -19,7 +19,7 @@ LIB_DEPENDS=	bg.2:${PORTSDIR}/devel/bglibs
 
 CONFLICTS=	bglibs-1.00*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	#none
 USE_LDCONFIG=	yes
 LDFLAGS?=	-s

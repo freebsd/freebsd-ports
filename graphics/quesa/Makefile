@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GL=		glut
 USE_XORG=	x11 ice xmu xi
 .ifdef (WITH_EXAMPLES)

@@ -18,7 +18,7 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A library for posting electronic mail
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

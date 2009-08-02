@@ -7,7 +7,7 @@
 
 PORTNAME=	nmm
 PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.motama.com/download/
 
@@ -36,16 +36,10 @@ USE_GNOME=	lthack libxml2	# lthack + autotools stuff below? To verify!
 USE_GMAKE=	yes
 USE_XORG=	x11
 
-#
-# The port will reconfigure in the build stage. Using the autotools rebuild
-# does not work, it complains about some missing libtool stuff. By setting
-# the :env part below, we are sure we get the tools installed so that
-# the automatic rebuild via automake/autoconf works. Ideally this should
-# be fixed correctly, but so far I haven't found the correct way...
-#
-USE_AUTOTOOLS=	libltdl libtool:15 \
-		autoconf:262:env autoheader:262:env \
-		automake:19:env aclocal:19:env
+USE_AUTOTOOLS=	libltdl:22 libtool:22 \
+		autoconf:262 autoheader:262 \
+		automake:19 aclocal:19
+ACLOCAL_ARGS=	-I ${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal -I .
 
 CONFIGURE_ARGS=	--program-prefix=nmm- \
 		--enable-final \

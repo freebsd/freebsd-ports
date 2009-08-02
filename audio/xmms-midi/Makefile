@@ -18,7 +18,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 PLIST_FILES=	lib/xmms/Input/libmid.a \

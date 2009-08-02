@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Free Gerber Viewer
 
 USE_GNOME=	desktopfileutils gnomehack gtk20
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

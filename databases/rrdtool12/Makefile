@@ -21,7 +21,7 @@ LATEST_LINK=	${PORTNAME}12
 
 CONFLICTS=	rrdtool-1.0* rrdtool-1.3*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

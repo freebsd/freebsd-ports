@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
 		ltverhack referencehack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-openssl \

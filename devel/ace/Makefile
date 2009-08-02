@@ -18,7 +18,7 @@ COMMENT=	The Adaptive Communication Environment for C++
 
 CONFLICTS=	ace+tao-5*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

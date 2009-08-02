@@ -3,6 +3,7 @@
 # Whom:				Markus Brueffer <markus@FreeBSD.org>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	amarok
 PORTVERSION=	1.4.10
@@ -24,7 +25,7 @@ MIN_OPTIONS_VER=	${PORTNAME}-1.4.1
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
 USE_SDL=	sdl
 USE_RUBY=	yes

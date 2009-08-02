@@ -19,7 +19,7 @@ EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}

@@ -16,7 +16,7 @@ MAINTAINER=	gnome@freebsd.org
 COMMENT=	An implementation of the IETF's Calendaring and Scheduling protocols
 
 USE_GNOME=	gnomehack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes

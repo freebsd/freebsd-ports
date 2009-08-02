@@ -18,7 +18,7 @@ LIB_DEPENDS=	synaptics:${PORTSDIR}/x11/libsynaptics
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 post-patch:

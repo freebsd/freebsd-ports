@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Utility to determine file type
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--enable-fsect-man5

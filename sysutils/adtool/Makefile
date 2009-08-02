@@ -16,7 +16,7 @@ COMMENT=	Active Directory administration tool
 
 USE_GMAKE=	yes
 USE_OPENLDAP=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 

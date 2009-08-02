@@ -23,7 +23,7 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 
 USE_BZIP2=	yes
 USE_GNOME=	gtksourceview gnomehack gtksharp20
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 post-patch:

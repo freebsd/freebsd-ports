@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_XORG=	xtst
 
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=  libtool:22
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=kopete lanbrowsing filesharing

@@ -21,7 +21,7 @@ PLIST_FILES=	lib/bmp/Input/libwma.so \
 		lib/bmp/Input/libwma.a
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.pre.mk>
 

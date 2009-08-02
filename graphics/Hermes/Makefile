@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast pixel formats conversion library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

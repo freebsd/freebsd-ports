@@ -26,7 +26,7 @@ USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gtksourceview2 \
 		desktopfileutils gnomedocutils ltasneededhack
 WANT_GNOME=	yes

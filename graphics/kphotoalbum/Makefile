@@ -20,7 +20,7 @@ LIB_DEPENDS=		kipi.2:${PORTSDIR}/graphics/libkipi \
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}

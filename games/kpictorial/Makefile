@@ -15,7 +15,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Little logical game for KDE
 
 USE_KDELIBS_VER=	3
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 USE_GMAKE=		yes
 
 post-patch:

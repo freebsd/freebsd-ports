@@ -19,7 +19,7 @@ LIB_DEPENDS=	cln.5:${PORTSDIR}/math/cln
 USE_GNOME=	glib20 gnomehack gnometarget intlhack libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 post-patch:

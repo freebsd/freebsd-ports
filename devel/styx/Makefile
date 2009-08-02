@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.speculate.de/styx/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scanner/parser generator
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

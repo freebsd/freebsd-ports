@@ -19,7 +19,7 @@ LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -15,7 +15,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Display scientific data as dynamic plot
 
 USE_MOTIF=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

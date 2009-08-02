@@ -22,7 +22,7 @@ OPTIONS=	MOTION_AVG "Use experimental motion averaging code" off
 USE_BZIP2=	yes
 USE_MOTIF=	yes
 USE_GL=		glu
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-motif=${LOCALBASE} --with-opengl=${LOCALBASE}
 USE_LDCONFIG=	yes
 

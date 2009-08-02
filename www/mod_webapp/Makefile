@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr:configure
 
 USE_APACHE=	yes
 USE_PYTHON_BUILD=yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

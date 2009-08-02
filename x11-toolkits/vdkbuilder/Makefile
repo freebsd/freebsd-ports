@@ -19,7 +19,7 @@ LIB_DEPENDS=	vdk.6:${PORTSDIR}/x11-toolkits/vdk
 
 USE_GNOME=	gnometarget gtk20
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-opt=no

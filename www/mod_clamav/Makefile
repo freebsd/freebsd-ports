@@ -16,7 +16,7 @@ COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 
 MAKE_JOBS_SAFE=  yes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_APACHE=	2.2
 GNU_CONFIGURE=	yes
 

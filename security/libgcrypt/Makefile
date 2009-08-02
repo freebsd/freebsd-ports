@@ -16,7 +16,7 @@ COMMENT=	General purpose crypto library based on code used in GnuPG
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes

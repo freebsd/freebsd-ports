@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-openvanilla
 PORTVERSION=	0.7.2.20070514
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	rafan
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim	\
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:22
 WRKSRC=		${WRKDIR}/${DISTNAME}/Loaders/SCIM
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

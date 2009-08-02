@@ -18,7 +18,7 @@ LIB_DEPENDS=	sphinxfe.0:${PORTSDIR}/audio/sphinxbase
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=libtool:15
+USE_AUTOTOOLS=libtool:22
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/sphinxbase" \
 		LDFLAGS="-L${LOCALBASE}/lib"

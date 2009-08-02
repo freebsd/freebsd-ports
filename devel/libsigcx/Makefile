@@ -20,7 +20,7 @@ LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
 USE_GNOME=	gnomehack gnometarget gtk20
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
 		ac_cv_path_DOXYGEN=""
 USE_LDCONFIG=	yes

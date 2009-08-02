@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 MAN3=		popt.3

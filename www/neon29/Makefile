@@ -19,7 +19,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	neon26-[0-9]*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 .ifndef WITHOUT_OPENSSL

@@ -16,7 +16,7 @@ COMMENT=	Check bank codes of German banks
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_PYTHON=	2.3+
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 MAN1=		ktoblzcheck.1

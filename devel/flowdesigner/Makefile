@@ -21,7 +21,7 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 
 USE_GNOME=	gnomehack gnometarget libgnomeui libxml2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	${CONFIGURE_SCRIPT} FuzzyEngine/configure \
 		HMM/configure NNet/configure \
 		VQ/configure audio_blocks/configure \

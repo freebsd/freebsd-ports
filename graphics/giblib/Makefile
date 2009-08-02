@@ -14,7 +14,7 @@ MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility library that includes a wrapper for imlib2
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes

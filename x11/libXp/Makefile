@@ -15,7 +15,7 @@ COMMENT=	X print library
 
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto xau printproto:both
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 MAN3=	XpCancelDoc.3 \
 	XpCancelJob.3 \

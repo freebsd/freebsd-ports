@@ -21,7 +21,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 CONFLICTS=	rrdtool-1.0*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.edu-linux.org/down/
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A General Framework for Developing Spatial Indices
 
-USE_AUTOTOOLS=	libtool:15:env
+USE_AUTOTOOLS=	libtool:22:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

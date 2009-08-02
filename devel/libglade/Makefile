@@ -18,7 +18,7 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomedb
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bonobo --enable-gnomedb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

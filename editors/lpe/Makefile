@@ -20,7 +20,7 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

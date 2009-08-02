@@ -14,7 +14,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Message Queuing for C++
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack gnometarget pkgconfig ltverhack
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

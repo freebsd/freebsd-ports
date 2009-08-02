@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_XORG=	xtst
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 # XXX - Workaround for a badly rolled tarball.
 #pre-configure:

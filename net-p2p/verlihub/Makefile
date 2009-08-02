@@ -24,7 +24,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_RC_SUBR=	verlihub
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

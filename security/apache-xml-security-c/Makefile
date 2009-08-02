@@ -26,7 +26,7 @@ LIB_DEPENDS+=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-xerces=${LOCALBASE}
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

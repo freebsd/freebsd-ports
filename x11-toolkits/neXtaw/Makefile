@@ -14,7 +14,7 @@ MASTER_SITES=	http://siag.nu/pub/neXtaw/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Athena Widgets with N*XTSTEP appearance
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_XORG=	xmu x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

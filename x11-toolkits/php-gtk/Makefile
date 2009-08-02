@@ -15,7 +15,7 @@ MASTER_SITES=	http://gtk.php.net/distributions/ \
 MAINTAINER=	zaa@zaa.pp.ru
 COMMENT=	An extension to use gtk in PHP-applications
 
-USE_AUTOTOOLS=	automake:19:env autoconf:262 libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:262 libtool:22:env
 GNU_CONFIGURE=	yes
 USE_PHP=	pcre
 USE_PHP_BUILD=	yes

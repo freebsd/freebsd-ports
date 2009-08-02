@@ -16,7 +16,7 @@ COMMENT=	Small XML parsing library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-docdir=no
 MAKE_JOBS_SAFE=	yes

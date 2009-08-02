@@ -17,7 +17,7 @@ COMMENT=	Universal Plug and Play Software Development Kit
 
 CONFLICTS=	upnp-1.0.*
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_DOS2UNIX=	yes

@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/Pixie
 USE_GNOME=	gnomehack
 USE_GL=		glu
 USE_BISON=	build
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
 		--libdir=${PREFIX}/lib/pixie \

@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_XORG=	sm xext x11
 USE_GMAKE=	yes

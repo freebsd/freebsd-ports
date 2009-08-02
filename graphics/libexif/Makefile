@@ -16,7 +16,7 @@ COMMENT=	Library to read digital camera file meta-data
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack ltverhack pkgconfig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-docs

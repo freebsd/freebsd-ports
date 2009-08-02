@@ -18,7 +18,7 @@ COMMENT=	Viewer for kernel geom layer
 
 LIB_DEPENDS=	gvc:${PORTSDIR}/graphics/graphviz
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gtk20 librsvg2
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

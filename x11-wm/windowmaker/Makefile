@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDI
 
 MAKE_JOBS_SAFE=	yes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_XORG=	xpm

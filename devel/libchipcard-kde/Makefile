@@ -18,7 +18,7 @@ COMMENT=		KDE tools for LibChipCard
 LIB_DEPENDS=		chipcard.20:${PORTSDIR}/devel/libchipcard:install
 
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 CONFIGURE_ARGS+=	--with-distri=freebsd --with-kde3-prefix=${LOCALBASE}\
 			--with-applnk-dir=${PREFIX}/share/applnk/Utilities
 USE_KDELIBS_VER=	3

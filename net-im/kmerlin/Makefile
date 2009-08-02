@@ -18,7 +18,7 @@ COMMENT=	An IM (Instant Messenger) KDE client for the Microsoft MSN Network
 
 USE_XORG=	xscrnsaver
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE}

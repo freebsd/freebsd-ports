@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Astronomical Calculation Library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

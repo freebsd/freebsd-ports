@@ -30,7 +30,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack glib20 ltverhack referencehack
 CONFIGURE_ARGS=	--with-qt=no \
 		--with-html-dir=${PREFIX}/share/doc \

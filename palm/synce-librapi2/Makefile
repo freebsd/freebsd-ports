@@ -17,7 +17,7 @@ COMMENT?=	Utilities/libraries to make RAPI calls on WinCE devices
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_LDCONFIG=	yes

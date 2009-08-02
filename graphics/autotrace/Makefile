@@ -17,7 +17,7 @@ COMMENT=	Convert bitmap to vector graphics
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
     		MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \

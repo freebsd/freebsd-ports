@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel \
 		libgnomeprintui gnomedesktop ltverhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

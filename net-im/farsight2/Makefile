@@ -21,7 +21,7 @@ USE_PYTHON=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 ltverhack gnometarget \
 		pygtk2
 USE_GSTREAMER=	core good bad python
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

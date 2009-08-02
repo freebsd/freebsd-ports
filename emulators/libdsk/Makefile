@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.seasip.info/Unix/LibDsk/ \
 MAINTAINER=	pixel@hugbox.org
 COMMENT=	Enables access to disks and disk images; also via serial line
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 MAN1=	apriboot.1 dskdump.1 dskform.1 dskid.1 dskscan.1 dsktrans.1\

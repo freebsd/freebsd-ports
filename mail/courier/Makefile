@@ -61,7 +61,7 @@ CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_FAM=	yes
 USE_GETTEXT=	yes

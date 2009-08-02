@@ -18,7 +18,7 @@ LIB_DEPENDS=	xxl.2:${PORTSDIR}/devel/xxl:install
 
 CONFIGURE_ARGS=	--with-xxl=${LOCALBASE}
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)

@@ -17,7 +17,7 @@ COMMENT=	Portable font rendering library for C++
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GL=		glu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

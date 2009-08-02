@@ -15,7 +15,7 @@ RUN_DEPENDS=	uim-pref-qt:${PORTSDIR}/textproc/uim-qt
 USE_GCC=	4.2+
 USE_KDELIBS_VER=3
 USE_QT_VER=	3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

@@ -36,7 +36,7 @@ LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 		dps.0:${PORTSDIR}/x11/dgs		\
 		readline.6:${PORTSDIR}/devel/readline
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick"	\
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 

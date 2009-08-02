@@ -16,7 +16,7 @@ COMMENT?=	LZRTF compression library
 
 MAKE_JOBS_SAFE=	yes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -25,7 +25,7 @@ USE_GNOME?=	gnomehack ltverhack glib20 intltool
 USE_GETTEXT=	yes
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 AVAHI_SLAVE?=	no
 CONFIGURE_ARGS?=--with-distro=freebsd \

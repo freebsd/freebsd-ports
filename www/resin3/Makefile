@@ -18,7 +18,7 @@ JAVA_VERSION=		1.2+
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
 USE_OPENSSL=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 USE_LDCONFIG=		yes
 
 # Customizable settings

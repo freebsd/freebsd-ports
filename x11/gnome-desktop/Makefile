@@ -32,7 +32,7 @@ USE_BISON=	build
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project" \
 		--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

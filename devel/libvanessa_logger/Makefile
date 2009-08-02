@@ -15,7 +15,7 @@ DISTNAME=	vanessa_logger-${PORTVERSION}
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Library that provides a generic logging layer
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 

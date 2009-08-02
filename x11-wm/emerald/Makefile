@@ -26,7 +26,7 @@ USE_GNOME=	gnomehack gtk20 libwnck pango
 USE_XORG=	xrender
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 MAN1=		emerald.1 \
 		emerald-theme-manager.1

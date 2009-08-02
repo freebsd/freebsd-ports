@@ -16,7 +16,7 @@ DISTNAME=	libGenome-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for developing bioinformatic related software in C++
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

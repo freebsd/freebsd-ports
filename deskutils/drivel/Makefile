@@ -23,7 +23,7 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack gtksourceview
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

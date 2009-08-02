@@ -18,7 +18,7 @@ COMMENT=	Libraries to support 3dfx Voodoo3/4/5/Banshee with the DRI
 USE_XORG=	xxf86vm xxf86dga
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:262 libtool:15
+USE_AUTOTOOLS=	automake:14 autoconf:262 libtool:22
 AUTOMAKE_ARGS=	-a
 USE_GMAKE=	yes
 MAKE_ARGS=	PREPROCESSOR=/usr/bin/cpp

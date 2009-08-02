@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	04
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack pkgconfig
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

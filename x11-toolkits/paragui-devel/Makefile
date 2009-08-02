@@ -23,7 +23,7 @@ LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 
 CONFLICTS=	paragui-[0-9]*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_SDL=	sdl image ttf
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

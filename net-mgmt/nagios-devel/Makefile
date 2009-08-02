@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
@@ -22,7 +23,7 @@ LATEST_LINK=	nagios-devel
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_PHP=	yes
-USE_AUTOTOOLS=	autoconf:262 libltdl:15
+USE_AUTOTOOLS=	autoconf:262 libltdl:22
 USE_RC_SUBR=	nagios.sh
 
 CONFLICTS=	nagios-[123].*

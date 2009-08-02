@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reliable event logging protocol library
 
 USE_GNOME=	gnomehack pkgconfig
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/${PORTNAME}.h \

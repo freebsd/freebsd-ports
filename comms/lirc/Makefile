@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	lirc
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Linux Infared Remote Control
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11

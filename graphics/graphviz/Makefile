@@ -7,6 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.24.0
+PORTREVISION=	1
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -22,7 +23,7 @@ LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 
 USE_BISON=	build
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:22 libtool:22
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

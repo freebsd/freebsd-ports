@@ -17,7 +17,7 @@ COMMENT=	A library to access GSM mobile phones through GSM modems
 
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 

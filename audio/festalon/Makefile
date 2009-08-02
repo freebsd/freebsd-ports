@@ -18,7 +18,7 @@ COMMENT?=	A command line player for .nsf and .hes audio files
 
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 

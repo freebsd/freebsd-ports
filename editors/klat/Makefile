@@ -17,7 +17,7 @@ COMMENT=	A LaTeX source editor for KDE
 
 GNU_CONFIGURE=	yes
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

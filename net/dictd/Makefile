@@ -22,7 +22,7 @@ MAN8=		dictd.8
 
 USE_RC_SUBR=	${PORTNAME}.sh
 USE_BISON=	build
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--without-local-zlib

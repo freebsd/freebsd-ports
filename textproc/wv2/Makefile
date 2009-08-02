@@ -16,7 +16,7 @@ COMMENT=	A library providing routines to access Microsoft Word files
 
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} --disable-debug
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnometarget libgsf
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

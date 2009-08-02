@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 post-patch:

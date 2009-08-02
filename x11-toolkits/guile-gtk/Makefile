@@ -19,7 +19,7 @@ LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget ltverhack gdkpixbuf libglade
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-gtkgl=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
