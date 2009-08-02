@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	marcin@studio4plus.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle handling library for .NET/Mono
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
