@@ -1,9 +1,5 @@
-pymsn is the library behind the msn connection manager :
-telepathy-butterfly. It is a rewrite of the libivy msn library used in
-the Ivy msn client. pymsn uses the glib mainloop to process the network
-events in an asynchronous manner.
+Papyon is the library behind the msn connection manager : telepathy-butterfly.
+It is a fork of the unmaintained pymsn msn library. papyon uses the glib
+mainloop to process the network events in an asynchronous manner.
 
-WWW: http://telepathy.freedesktop.org/
-
-- Florent Thoumie
-flz@FreeBSD.org
+WWW: http://telepathy.freedesktop.org/wiki/Papyon
