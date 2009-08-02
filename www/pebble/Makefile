@@ -7,6 +7,7 @@
 
 PORTNAME=	pebble
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	pebble
@@ -16,13 +17,13 @@ COMMENT=	Lightweight, open source, Java EE blogging tool
 
 PATCH_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${LOCALBASE}/apache-tomcat6.0/bin/catalina.sh:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-6.0/bin/catalina.sh:${PORTSDIR}/www/tomcat6
 
 USE_ZIP=	yes
 
 NO_BUILD=	yes
 
-WEBAPP_SUBDIR=	apache-tomcat6.0/webapps
+WEBAPP_SUBDIR=	apache-tomcat-6.0/webapps
 WEBAPP_DIR=	${PREFIX}/${WEBAPP_SUBDIR}
 
 PEBBLE_HOME?=	/var/lib/${PORTNAME}
