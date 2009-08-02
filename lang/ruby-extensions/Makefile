@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	boumenot@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful extensions for Ruby's standard classes
 
 RUBY_SETUP=	install.rb
