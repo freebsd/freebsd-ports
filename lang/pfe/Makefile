@@ -28,7 +28,7 @@ MAN1=		pfe.1
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" && ${OSVERSION} < 700000
-CFLAGS+=	-fno-builtin-strcat -fno-builtin-strlen
+BROKEN=		does not compile
 .endif
 
 post-patch:
