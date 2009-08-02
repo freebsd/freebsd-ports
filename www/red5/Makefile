@@ -7,7 +7,7 @@
 
 PORTNAME=	red5
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	http://www.nielsenaa.com/red5-installers/   \
 		http://www.red5.fr/release/0.7.0/war/
@@ -41,8 +41,8 @@ WEBAPPDIR=	${PREFIX}/apache-tomcat4.1/webapps
 RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
 WEBAPPDIR=	${PREFIX}/tomcat5.5/webapps
 .elif defined(WITH_TOMCAT6)
-RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat6.0:${PORTSDIR}/www/tomcat6
-WEBAPPDIR=	${PREFIX}/apache-tomcat6.0/webapps
+RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0:${PORTSDIR}/www/tomcat6
+WEBAPPDIR=	${PREFIX}/apache-tomcat-6.0/webapps
 .else
 IGNORE=	please select one version of Tomcat
 .endif
