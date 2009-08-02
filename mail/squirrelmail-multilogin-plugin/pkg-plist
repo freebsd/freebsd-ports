@@ -2,6 +2,7 @@
 %%SQUIRRELDIR%%/plugins/multilogin/patches/index.php
 %%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.1.diff
 %%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.12.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.15.diff
 %%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.2.diff
 %%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.3a.diff
 %%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.4.diff
