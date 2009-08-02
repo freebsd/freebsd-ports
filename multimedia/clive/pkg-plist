@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/clive
 %%SITE_PERL%%/clive/Host/Vimeo.pm
 %%SITE_PERL%%/clive/Host/Redtube.pm
@@ -12,6 +13,9 @@ bin/clive
 %%SITE_PERL%%/clive/Host/Spiegel.pm
 %%SITE_PERL%%/clive/Host/Golem.pm
 %%SITE_PERL%%/clive/Host/Ehrensenf.pm
+%%SITE_PERL%%/clive/Host/Clipfish.pm
+%%SITE_PERL%%/clive/Host/Funnyhub.pm
+%%SITE_PERL%%/clive/Host/Myubo.pm
 %%SITE_PERL%%/clive/Progress/Bar.pm
 %%SITE_PERL%%/clive/Exec.pm
 %%SITE_PERL%%/clive/Util.pm
