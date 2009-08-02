@@ -66,7 +66,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-setup.py
 SEM_MSG=	""
 .else
 IGNORE=		POSIX semaphore support only works in FreeBSD 7-STABLE and later
-.
 .endif # ${OSVERSION} >= 701106
 .else # !defined(WITH_SEM)
 SEM_MSG=	"@comment "
