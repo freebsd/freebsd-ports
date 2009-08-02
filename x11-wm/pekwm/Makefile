@@ -10,12 +10,9 @@ PORTVERSION=	0.1.11
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://pekwm.org/projects/3/files/ \
-		http://www.carpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/~tournoij/distfiles/ \
-		http://www.rwxrwxrwx.net/distfiles/
+MASTER_SITES=	http://pekwm.org/projects/3/files/
 
-MAINTAINER=	carpetsmoker@rwxrwxrwx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light, Unobtrusive, and configurable windowmanager
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \

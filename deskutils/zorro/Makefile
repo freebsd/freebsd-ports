@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 DISTNAME=	${PORTNAME}-1.1p8
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple to-do list manager
 
 USE_TK_RUN=	yes

@@ -10,9 +10,7 @@ PORTNAME=	cdialog
 PORTVERSION=	1.1.20080819
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://invisible-island.net/dialog/ \
-		http://www.xs4all.nl/~tournoij/distfiles/ \
-		http://www.rwxrwxrwx.net/distfiles/
+MASTER_SITES=	ftp://invisible-island.net/dialog/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 

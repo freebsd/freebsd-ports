@@ -12,7 +12,7 @@ CATEGORIES=	misc tk
 MASTER_SITES=	http://laurent.riesterer.free.fr/regexp/
 DISTNAME=	visual_regexp-${PORTVERSION}
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive regexp design tool
 
 USE_TK_RUN=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 PORTREVISION=	2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for representing XML data in a tree structure
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

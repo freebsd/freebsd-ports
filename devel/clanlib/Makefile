@@ -11,13 +11,11 @@ PORTVERSION=	0.8.1
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.clanlib.org/download/releases-0.8/ \
-		http://www.carpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/~tournoij/distfiles/
+MASTER_SITES=	http://www.clanlib.org/download/releases-0.8/
 DISTNAME=	ClanLib-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \

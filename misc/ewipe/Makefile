@@ -9,11 +9,9 @@ PORTNAME=	ewipe
 PORTVERSION=	1.2.0
 PORTREVISION=	3
 CATEGORIES?=	misc tk
-MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/ \
-		http://www.carpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/~tournoij/distfiles/
+MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/
 
-MAINTAINER?=	carpetsmoker@xs4all.nl
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Tcl/tk-based presentation tool
 
 .if defined(KANJI)

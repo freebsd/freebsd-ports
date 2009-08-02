@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	gSculpt-${PORTVERSION}-alpha-src
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Opensource 3D modelling application
 
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs

@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse a configuration file in the same syntax as the Apache web server
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/auto/Class/MethodMaker/MethodMaker.so:${PORTSDIR}/devel/p5-Class-MethodMaker \

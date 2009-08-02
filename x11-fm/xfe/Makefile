@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
-MAINTAINER=	carpetsmoker@rwxrwxrwx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MS-Explorer like filemanager for X
 
 LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 \
