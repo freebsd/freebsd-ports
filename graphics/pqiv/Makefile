@@ -9,13 +9,10 @@ PORTNAME=	pqiv
 PORTVERSION=	0.8
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.pberndt.com/raw//Programme/Linux/pqiv/_download/ \
-		http://www.carpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/~tournoij/distfiles/ \
-		http://www.rwxrwxrwx.net/distfiles/
+MASTER_SITES=	http://www.pberndt.com/raw//Programme/Linux/pqiv/_download/
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	carpetsmoker@rwxrwxrwx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pretty Quick Image Viewer
 
 USE_BZIP2=	yes

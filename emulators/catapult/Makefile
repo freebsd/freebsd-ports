@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	openmsx
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION:S/R1/-R1/}
 
-MAINTAINER=	carpetsmoker@rwxrwxrwx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for openMSX
 
 BUILD_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx

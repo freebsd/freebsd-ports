@@ -9,11 +9,9 @@ PORTNAME=	clig
 PORTVERSION=	1.9.11.1
 PORTREVISION=	1
 CATEGORIES=	devel tcl
-MASTER_SITES=	http://wsd.iitb.fhg.de/~geg/clighome/ \
-  		http://www.carpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/~tournoij/distfiles/
+MASTER_SITES=	http://wsd.iitb.fhg.de/~geg/clighome/
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto-generate an (argc, argv) processor, usage message, and manpage
 
 NO_BUILD=	yes

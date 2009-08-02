@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	methane
 DISTNAME=	methane-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of the Amiga platform game of the same name
 
 LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib \

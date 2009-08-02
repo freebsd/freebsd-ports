@@ -10,12 +10,10 @@ PORTNAME=	grabc
 PORTVERSION=	1.1
 PORTREVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	http://muquit.com/muquit/software/grabc/ \
-		http://www.carpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/~tournoij/distfiles/
+MASTER_SITES=	http://muquit.com/muquit/software/grabc/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grab a color from screen
 
 PLIST_FILES=	bin/grabc

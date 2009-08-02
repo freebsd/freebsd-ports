@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd
 
-MAINTAINER=	carpetsmoker@rwxrwxrwx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Musicpd last.fm client
 
 LIB_DEPENDS=	soup:${PORTSDIR}/devel/libsoup

@@ -9,13 +9,11 @@ PORTNAME=	e93
 PORTVERSION=	1.3.4
 PORTREVISION=	2
 CATEGORIES=	editors tcl tk
-MASTER_SITES=	ftp://ftp.e93.org/pub/ \
-  		http://www.crpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/~tournoij/distfiles/
+MASTER_SITES=	ftp://ftp.e93.org/pub/
 DISTNAME=	${PORTNAME}-1.3r4X
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nifty editor based on Tcl/Tk
 
 USE_TCL=	84

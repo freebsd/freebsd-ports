@@ -11,7 +11,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PCMan File Manager
 
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification

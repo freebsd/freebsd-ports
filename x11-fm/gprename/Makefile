@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
-MAINTAINER=	carpetsmoker@rwxrwxrwx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script for renaming multiple files
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

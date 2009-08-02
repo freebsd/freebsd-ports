@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc tcl
 MASTER_SITES=	http://www.flightlab.com/~joe/cost/
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGML/XML application programming tool
 
 USE_TCL=	84

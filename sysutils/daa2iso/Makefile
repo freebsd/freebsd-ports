@@ -8,8 +8,7 @@
 PORTNAME=	daa2iso
 PORTVERSION=	0.1.7b
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.xs4all.nl/distfiles/ \
-		http://www.rwxrwxrwx.net/distfiles/
+MASTER_SITES=	http://www.xs4all.nl/distfiles/
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Convert PowerISO DAA files to ISO9660

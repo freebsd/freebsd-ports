@@ -14,7 +14,7 @@ CATEGORIES=	games
 #MASTER_SITE_SUBDIR=	${PORTNAME}
 MASTER_SITES=	http://trophy.sourceforge.net/archives/
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A single player racing game
 
 LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib

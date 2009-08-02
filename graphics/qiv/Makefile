@@ -10,14 +10,11 @@ PORTNAME=	qiv
 PORTVERSION=	2.1.p12
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.klografx.net/qiv/download/ \
-		http://www.carpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/~tournoij/distfiles/ \
-		http://www.rwxrwxrwx.net/distfiles/
+MASTER_SITES=	http://www.klografx.net/qiv/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p12/-pre12/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib image viewer
 
 OPTIONS=	XINERAMA "use multiple monitors" off

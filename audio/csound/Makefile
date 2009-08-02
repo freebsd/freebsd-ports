@@ -10,13 +10,11 @@ PORTNAME=	csound
 PORTVERSION=	5.07
 PORTREVISION=	1
 CATEGORIES=	audio lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.carpetsmoker.net/distfiles/:manual \
-		http://www.xs4all.nl/~tournoij/distfiles/:manual \
-		http://www.rwxrwxrwx.net/distfiles/:manual
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src/} \
+		${MASTER_SITE_LOCAL:S/$/:manual/}
+MASTER_SITE_SUBDIR=	${PORTNAME:S/$/:src/} wxs/:manual
 DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}.0
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 DIST_SUBDIR=	csound
 
 MAINTAINER=	scjamorim@bsd.com.br

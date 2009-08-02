@@ -11,7 +11,7 @@ CATEGORIES=	math tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mpexpr
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple precision math for Tcl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

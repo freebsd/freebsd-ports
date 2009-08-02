@@ -8,8 +8,7 @@
 PORTNAME=	uif2iso
 PORTVERSION=	0.1.7a
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.xs4all.nl/distfiles/ \
-		http://www.rwxrwxrwx.net/distfiles/
+MASTER_SITES=	http://www.xs4all.nl/distfiles/
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Convert MagicISO UIF files to ISO9660

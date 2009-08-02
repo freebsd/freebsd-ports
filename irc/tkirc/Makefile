@@ -12,7 +12,7 @@ CATEGORIES=	irc tk
 MASTER_SITES=	http://netsplit.de/tkirc2/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI for the ircII Internet Relay Chat client
 
 RUN_DEPENDS=	irc:${PORTSDIR}/irc/ircII

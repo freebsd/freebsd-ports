@@ -12,7 +12,7 @@ CATEGORIES=	editors tcl tk
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vi clone inspired by the userfriendly comic strip
 
 USE_TCL=	yes

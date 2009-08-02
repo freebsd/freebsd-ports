@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A minimalist break enforcer for linux/unix for the prevention of RSI
 
 USE_XORG=	x11

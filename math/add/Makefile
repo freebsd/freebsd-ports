@@ -8,11 +8,10 @@
 PORTNAME=	add
 PORTVERSION=	20070214
 CATEGORIES=	math
-MASTER_SITES=	ftp://dickey.his.com/add/ \
-		http://www.carpetsmoker.net/distfiles/
+MASTER_SITES=	ftp://dickey.his.com/add/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen editing calculator
 
 GNU_CONFIGURE=	yes
