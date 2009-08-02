@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sdl_gfx
-PORTVERSION=	2.0.18
+PORTVERSION=	2.0.19
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/
 MASTER_SITE_SUBDIR=	SDL_gfx-${PORTVERSION:R}
@@ -16,6 +16,7 @@ DISTNAME=	SDL_gfx-${PORTVERSION}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
+MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl
 USE_GMAKE=	yes
@@ -37,6 +38,7 @@ CONFIGURE_ARGS=--disable-mmx
 .endif
 
 post-patch:
-	@${CHMOD} a+x ${WRKSRC}/install-sh
+	@${REINPLACE_CMD} -e 's|\$(libdir)/pkgconfig|\$(libdir)/libdata/pkgconfig|' \
+	    ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

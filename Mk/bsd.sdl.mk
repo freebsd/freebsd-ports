@@ -53,7 +53,7 @@ _SUBDIR_console=	devel
 _LIB_console=		SDL_console-2.1
 _REQUIRES_console=	sdl
 
-_VERSION_gfx=	0
+_VERSION_gfx=	18
 _SUBDIR_gfx=	graphics
 _REQUIRES_gfx=	sdl
 
