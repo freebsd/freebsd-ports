@@ -10,7 +10,7 @@ CATEGORIES=	security python
 MASTER_SITES=	http://trevp.net/tlslite/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module implenting SSL 3.0, TLS 1.0 and TLS 1.1
 
 USE_PYTHON=	yes

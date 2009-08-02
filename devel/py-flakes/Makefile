@@ -12,7 +12,7 @@ MASTER_SITES=	http://divmod.org/static/projects/pyflakes/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyflakes-${PORTVERSION}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pyflakes is a program that analyzes Python programs for errors
 
 USE_PYTHON=	yes

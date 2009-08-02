@@ -10,7 +10,7 @@ PORTVERSION=	0.2.1.1
 DISTVERSIONSUFFIX=	-tb
 CATEGORIES=	mail
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays your IMAP quota in statusbar
 
 XPI_DISTNAME=	display_quota

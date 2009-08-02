@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicdns.org/files/
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Open Fingerprint Architecture Library
 
 LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \

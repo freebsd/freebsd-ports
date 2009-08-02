@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-musicbrainz2-${DISTVERSION}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Next Generation Python bindings for MusicBrainz
 
 BUILD_DEPENDS=	${PYCTYPES}

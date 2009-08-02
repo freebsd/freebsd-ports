@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	sidplay-${PORTVERSION}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A player that plays Commodore SID music files using libsidplay2
 
 LIB_DEPENDS=	sidplay2.1:${PORTSDIR}/audio/libsidplay2

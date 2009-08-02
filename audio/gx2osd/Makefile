@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://eclipser.no-ip.org/
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OSD client for XMMS2
 
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \

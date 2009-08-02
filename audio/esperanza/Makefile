@@ -10,7 +10,7 @@ PORTVERSION=	0.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://exodus.xmms.se/~tru/esperanza/0.4/
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced QT4 XMMS2 client
 
 LIB_DEPENDS=	xmmsclient++.3:${PORTSDIR}/audio/cpp-xmms2
