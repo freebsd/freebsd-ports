@@ -27,7 +27,7 @@ CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]* srp-[0-9]* \
 
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_DOS2UNIX=	README
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

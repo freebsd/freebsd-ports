@@ -16,7 +16,7 @@ COMMENT=	Lightweight malloc debugger
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-install:
 .if !defined(NOPORTDOCS)

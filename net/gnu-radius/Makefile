@@ -6,7 +6,7 @@
 
 PORTNAME=	gnu-radius
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
@@ -19,7 +19,7 @@ CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
 USE_RC_SUBR=	radiusd.sh
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:22 libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

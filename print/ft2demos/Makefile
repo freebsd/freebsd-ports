@@ -25,7 +25,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 USE_BZIP2=	yes
 USE_XORG=	xext
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15:env
+USE_AUTOTOOLS=	libtool:22:env
 MAKE_ENV=	TOP_DIR="${FREETYPE_WRKSRC}"
 MAKE_ARGS=	X11_PATH="${LOCALBASE}"
 

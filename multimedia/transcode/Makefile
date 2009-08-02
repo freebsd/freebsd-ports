@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-isystem /usr/include -isystem ${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		SDL_CONFIG="${SDL_CONFIG}"

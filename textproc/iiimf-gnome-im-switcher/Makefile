@@ -25,7 +25,7 @@ USE_GNOME=	intltool gconf2 libglade2 libgnomeui \
 		gnomepanel gnomeprefix gnomehack
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22:env
 
 GCONF_SCHEMAS=	gnome-im-properties.schemas gnome-im-switcher.schemas
 

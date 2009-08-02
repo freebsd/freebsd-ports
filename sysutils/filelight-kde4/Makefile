@@ -15,7 +15,7 @@ MAINTAINER=	decept0@gmail.com
 COMMENT=	Represent a file system as a set of concentric segmented-rings
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

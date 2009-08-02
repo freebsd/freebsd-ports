@@ -19,7 +19,7 @@ LIB_DEPENDS=	gnet.7:${PORTSDIR}/net/gnet
 
 USE_GNOME=	gnomehack gnomeprefix libglade
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gnome=yes --enable-debug=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

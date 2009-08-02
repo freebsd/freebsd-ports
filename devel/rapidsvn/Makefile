@@ -23,7 +23,7 @@ USE_WX=	2.6
 WX_CONF_ARGS=	absolute
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 libtool:15 automake:19
+USE_AUTOTOOLS=	autoconf:262 libtool:22 automake:19
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-apu-config=apu-1-config \

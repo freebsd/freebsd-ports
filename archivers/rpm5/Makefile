@@ -28,7 +28,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen \
 .endif
 
 DB_VERSION?=	45
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	configure db3/configure db/dist/configure \
 		file/configure zlib/configure xar/configure
 USE_GMAKE=	yes

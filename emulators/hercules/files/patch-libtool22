@@ -1,0 +1,75 @@
+--- Makefile.in.orig	2009-07-13 15:39:03.000000000 -0500
++++ Makefile.in	2009-07-13 15:39:06.000000000 -0500
+@@ -257,13 +257,13 @@
+ libhercu_la_DEPENDENCIES = $(am__DEPENDENCIES_1) libhercs.la
+ am__libhercu_la_SOURCES_DIST = version.c hscutl.c hscutl2.c codepage.c \
+ 	logger.c logmsg.c hdl.c hostinfo.c hsocket.c memrchr.c \
+-	parser.c pttrace.c fthreads.c fishhang.c ltdl.c
++	parser.c pttrace.c fthreads.c fishhang.c
+ am__objects_5 = fthreads.lo
+ @BUILD_FTHREADS_TRUE@am__objects_8 = $(am__objects_5)
+ am__objects_6 = fishhang.lo
+ @BUILD_FISHHANG_TRUE@@BUILD_FTHREADS_TRUE@am__objects_9 =  \
+ @BUILD_FISHHANG_TRUE@@BUILD_FTHREADS_TRUE@	$(am__objects_6)
+-@OPTION_DYNAMIC_LOAD_TRUE@am__objects_10 = ltdl.lo
++@OPTION_DYNAMIC_LOAD_TRUE@am__objects_10 = 
+ am_libhercu_la_OBJECTS = version.lo hscutl.lo hscutl2.lo codepage.lo \
+ 	logger.lo logmsg.lo hdl.lo hostinfo.lo hsocket.lo memrchr.lo \
+ 	parser.lo pttrace.lo $(am__objects_8) $(am__objects_9) \
+@@ -626,7 +626,7 @@
+ @OPTION_DYNAMIC_LOAD_FALSE@DYNSRC = $(dyndev_SRC)
+ @OPTION_DYNAMIC_LOAD_TRUE@DYNSRC = 
+ @OPTION_DYNAMIC_LOAD_FALSE@LTDL = 
+-@OPTION_DYNAMIC_LOAD_TRUE@LTDL = ltdl.c
++@OPTION_DYNAMIC_LOAD_TRUE@LTDL = 
+ @OPTION_DYNAMIC_LOAD_FALSE@DYNMOD_LD_FLAGS = 
+ @OPTION_DYNAMIC_LOAD_TRUE@DYNMOD_LD_FLAGS = -module         \
+ @OPTION_DYNAMIC_LOAD_TRUE@                   -no-undefined    \
+@@ -843,8 +843,7 @@
+                              memrchr.c        \
+                              $(dynamic_SRC)   \
+                              $(extra_SRC)     \
+-                             $(dyndev_SRC)    \
+-                             ltdl.c
++                             $(dyndev_SRC)
+ 
+ libherc_la_LDFLAGS = $(LIB_LD_FLAGS)
+ libherc_la_LIBADD = libhercs.la     \
+@@ -1089,7 +1088,6 @@
+                  hdl.h          \
+                  crypto.h       \
+                  sockdev.h      \
+-                 ltdl.h         \
+                  herc_getopt.h  \
+                  service.h      \
+                  chsc.h         \
+@@ -1465,7 +1463,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/loadparm.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/logger.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/logmsg.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ltdl.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/machchk.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/memrchr.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/opcode.Plo@am__quote@
+--- crypto/Makefile.in.orig	2009-07-13 15:39:40.000000000 -0500
++++ crypto/Makefile.in	2009-07-13 15:39:44.000000000 -0500
+@@ -244,7 +244,7 @@
+ @OPTION_DYNAMIC_LOAD_FALSE@DYNSRC = $(dyndev_SRC)
+ @OPTION_DYNAMIC_LOAD_TRUE@DYNSRC = 
+ @OPTION_DYNAMIC_LOAD_FALSE@LTDL = 
+-@OPTION_DYNAMIC_LOAD_TRUE@LTDL = ../ltdl.c
++@OPTION_DYNAMIC_LOAD_TRUE@LTDL = 
+ @OPTION_DYNAMIC_LOAD_FALSE@DYNMOD_LD_FLAGS = 
+ @OPTION_DYNAMIC_LOAD_TRUE@DYNMOD_LD_FLAGS = -module         \
+ @OPTION_DYNAMIC_LOAD_TRUE@                   -no-undefined   \
+--- decNumber/Makefile.in.orig	2009-07-13 15:40:23.000000000 -0500
++++ decNumber/Makefile.in	2009-07-13 15:40:25.000000000 -0500
+@@ -258,7 +258,7 @@
+ @BUILD_SHARED_FALSE@XSTATIC = -static
+ @BUILD_SHARED_TRUE@XSTATIC = 
+ @OPTION_DYNAMIC_LOAD_FALSE@LTDL = 
+-@OPTION_DYNAMIC_LOAD_TRUE@LTDL = ../ltdl.c
++@OPTION_DYNAMIC_LOAD_TRUE@LTDL = 
+ @OPTION_DYNAMIC_LOAD_FALSE@LIB_LD_FLAGS = $(XSTATIC)    \
+ @OPTION_DYNAMIC_LOAD_FALSE@		   -no-undefined \
+ @OPTION_DYNAMIC_LOAD_FALSE@		   -avoid-version

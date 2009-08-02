@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	libnurbs
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A C++ library for representing curves or surfaces
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/"
 USE_LDCONFIG=	yes

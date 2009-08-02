@@ -21,7 +21,7 @@ LIB_DEPENDS=	oil-0.3.0:${PORTSDIR}/devel/liboil \
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gtk20 ltverhack
 USE_GSTREAMER=	core good mp3 ffmpeg
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"
 

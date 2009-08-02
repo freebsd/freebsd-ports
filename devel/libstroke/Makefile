@@ -16,7 +16,7 @@ COMMENT=	A stroke translation library
 
 USE_XORG=	x11
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 

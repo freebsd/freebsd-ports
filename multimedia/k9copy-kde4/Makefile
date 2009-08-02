@@ -21,7 +21,7 @@ RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LDCONFIG=	yes

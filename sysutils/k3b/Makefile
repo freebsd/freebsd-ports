@@ -19,7 +19,7 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-k3bsetup=no --without-resmgr --without-hal
 USE_GMAKE=	yes
 USE_CDRTOOLS=	yes

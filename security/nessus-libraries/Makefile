@@ -26,7 +26,7 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries
 
 USE_BISON=	build
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--enable-cipher
 .if defined(WITH_NESSUS_BPF_SHARE)
 CONFIGURE_ARGS+=	--enable-bpf-sharing

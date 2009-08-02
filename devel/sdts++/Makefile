@@ -17,7 +17,7 @@ COMMENT=	C++ library for SDTS related development
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

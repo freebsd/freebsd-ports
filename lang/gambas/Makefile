@@ -6,7 +6,7 @@
 
 PORTNAME=		gambas
 PORTVERSION=		1.0.19
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		lang
 MASTER_SITES=		SF
 
@@ -16,7 +16,7 @@ COMMENT=		Gambas Almost Means BASic
 LIB_DEPENDS=		curl.5:${PORTSDIR}/ftp/curl	\
 			ml.0:${PORTSDIR}/math/ldouble
 
-USE_AUTOTOOLS=		libltdl:15 libtool:15
+USE_AUTOTOOLS=		libltdl:22 libtool:22
 USE_KDELIBS_VER=	3
 USE_GETTEXT=		yes
 USE_BZIP2=		yes

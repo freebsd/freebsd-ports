@@ -16,7 +16,7 @@ DISTNAME=	SDL_sound-${PORTVERSION}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A SDL audio library and player for some popular sound file formats
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

@@ -20,7 +20,7 @@ LIB_DEPENDS=	alut.1:${PORTSDIR}/audio/freealut \
 USE_GL=		glut
 USE_SDL=	sdl
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	ac_cv_header_boost_test_unit_test_hpp=no \
 		ac_cv_lib_freeglut_glutGetModifiers=no

@@ -16,7 +16,7 @@ MAINTAINER=	ryan.moe@fastfreedom.net
 COMMENT=	GNOME file and desktop manager
 
 WRKSRC=		${WRKDIR}/velocity-0.1.0
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GNOME=	libgnomeui gnomedesktop librsvg2
 CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`" \

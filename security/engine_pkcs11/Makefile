@@ -15,7 +15,7 @@ COMMENT=	An implementation of a PKCS\#11 engine for OpenSSL
 
 LIB_DEPENDS=	p11.3:${PORTSDIR}/security/libp11
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig

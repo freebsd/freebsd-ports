@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=mysqlcppapi
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fork of mysql++ C++ API for MySQL
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_MYSQL=	yes
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes

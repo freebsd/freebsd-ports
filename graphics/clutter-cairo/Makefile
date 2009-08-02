@@ -18,7 +18,7 @@ LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack ltverhack
 USE_XORG=	xp x11
 USE_LDCONFIG=	yes

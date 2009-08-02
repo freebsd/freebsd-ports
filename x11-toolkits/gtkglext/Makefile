@@ -21,7 +21,7 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GL=		yes
 USE_XORG=	xt
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

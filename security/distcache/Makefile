@@ -20,7 +20,7 @@ CONFLICTS=	distcache-devel-*
 
 USE_BZIP2=	yes
 USE_RC_SUBR=	dc_server.sh
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 

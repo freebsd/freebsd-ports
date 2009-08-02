@@ -17,7 +17,7 @@ COMMENT=	A powerful scientific skinnable calculator
 USE_QT_VER=	3
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

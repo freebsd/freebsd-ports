@@ -14,7 +14,7 @@ COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 
 USE_GNOME=	gnometarget
 USE_BISON=	build
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 regression-test:

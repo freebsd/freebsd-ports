@@ -17,7 +17,7 @@ COMMENT=	A simple GTK-2 terminal with tabs
 
 USE_GNOME=	gnometarget vte
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	README

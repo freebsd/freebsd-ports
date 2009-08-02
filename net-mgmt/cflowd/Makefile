@@ -18,7 +18,7 @@ COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 
 LIB_DEPENDS=	Arts.0:${PORTSDIR}/net-mgmt/arts++
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_LDCONFIG=	yes

@@ -17,7 +17,7 @@ BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
 USE_GNOME=	pkgconfig
 USE_SQLITE=	3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_path_PYTHON=no \

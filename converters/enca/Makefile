@@ -14,7 +14,7 @@ MASTER_SITES=	http://trific.ath.cx/Ftp/enca/ \
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	A package for detecting encoding of text files
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig
 USE_ICONV=	yes
 USE_BZIP2=	yes

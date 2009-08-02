@@ -17,7 +17,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	A low memory usage xterm replacement that supports color
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_PERL5_BUILD=yes
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

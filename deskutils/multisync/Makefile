@@ -20,7 +20,7 @@ WRKSRCMASTER=	${WRKDIR}/multisync-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env libtool:15
+USE_AUTOTOOLS=	automake:19:env libtool:22
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 pre-configure:

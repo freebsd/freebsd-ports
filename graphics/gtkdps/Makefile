@@ -21,7 +21,7 @@ LIB_DEPENDS+=	dpstk.0:${PORTSDIR}/x11/dgs
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-dps-includes=${LOCALBASE}/include \
 		--with-dps-libraries=${LOCALBASE}/lib

@@ -18,7 +18,7 @@ COMMENT=	TI calculator link cables library
 
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig
 USE_LDCONFIG=	yes

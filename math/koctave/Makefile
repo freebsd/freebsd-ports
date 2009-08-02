@@ -19,7 +19,7 @@ RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
 USE_QT_VER=	3
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	${REINPLACE_CMD} -e '/kde_appsdir/s|applnk||g' ${WRKSRC}/configure

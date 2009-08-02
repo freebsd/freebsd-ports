@@ -20,7 +20,7 @@ USE_XORG=	x11
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomeprefix gnomehack gtk20 libartlgpl2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

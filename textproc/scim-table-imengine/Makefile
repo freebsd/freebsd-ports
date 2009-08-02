@@ -19,7 +19,7 @@ COMMENT=	SCIM table based input method engine
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack
@@ -48,7 +48,7 @@ pre-patch:
 BUILD_DEPENDS+=	skim:${PORTSDIR}/textproc/skim
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_SUB=	SKIM=""
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 post-patch:
 	@${REINPLACE_CMD} -e "/^DIST_SUBDIRS/s/$$/ skim/" \
 		-e "/^@SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR =/s/$$/ skim/" \

@@ -18,7 +18,7 @@ COMMENT=	Cross-platform multimedia development API
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes

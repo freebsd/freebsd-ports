@@ -21,7 +21,7 @@ PREFIX=		${KDE_PREFIX}
 
 USE_XORG=	xtst
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=  libtool:22
 USE_GMAKE=	yes
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"

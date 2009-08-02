@@ -16,7 +16,7 @@ COMMENT=	Simple Ogg API
 
 LIB_DEPENDS=	ogg.6:${PORTSDIR}/audio/libogg
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

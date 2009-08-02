@@ -17,7 +17,7 @@ COMMENT=	C++ library to create, manipulate, and render SVG files
 
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15 automake:15 autoconf:262
+USE_AUTOTOOLS=	libtool:22 automake:15 autoconf:262
 USE_GNOME=	libartlgpl2
 USE_GMAKE=	yes
 USE_WX=		2.6

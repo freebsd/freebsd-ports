@@ -20,7 +20,7 @@ OPTIONS=	GNOME		"Build with gnome support" on \
 		TIGHTVNC	"vncviewer support" off \
 		XNEST		"X via Xnest support (experimental)" off
 
-USE_AUTOTOOLS=	libtool:15 automake:19 autoconf:262
+USE_AUTOTOOLS=	libtool:22 automake:19 autoconf:262
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

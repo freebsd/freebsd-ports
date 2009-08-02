@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig ltverhack
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 
 DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html

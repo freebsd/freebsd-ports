@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtkmm12 \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GL=		yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

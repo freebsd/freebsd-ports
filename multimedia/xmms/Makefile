@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:15
+USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \

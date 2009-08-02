@@ -50,7 +50,7 @@ LIB_TCLX=	${LOCALBASE}/lib/tclx${TCL_VER}/libtclx${TCL_VER}.so
 PATCH_WRKSRC=	${WRKDIR}/OpenCASCADE${PORTVERSION}.0
 WRKSRC=		${PATCH_WRKSRC}/ros
 REINPLACE_ARGS=	-i ""
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	ros/configure
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}				\
 		--with-tk=${TK_LIBDIR}					\

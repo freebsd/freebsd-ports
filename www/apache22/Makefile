@@ -36,13 +36,13 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
-			LIBTOOL_M4=${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4 \
+			LIBTOOL_M4=${LIBTOOL_M4} \
 			AUTOHEADER=${AUTOHEADER}
 
 USE_APACHE=		common22
 USE_BZIP2=		yes
 USE_ICONV=		yes
-USE_AUTOTOOLS=		autoconf:262 libtool:15
+USE_AUTOTOOLS=		autoconf:262 libtool:22
 USE_PERL5=		yes
 USE_RC_SUBR=		apache22 htcacheclean
 LIBTOOLFILES=		configure

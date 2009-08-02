@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}alpha
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A library for Microsoft compression formats
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

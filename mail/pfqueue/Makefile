@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A console-based tool for handling Postfix 1, Postfix 2 and Exim queues
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"

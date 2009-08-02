@@ -20,7 +20,7 @@ COMMENT=	Kicker applet for displaying Amarok info
 RUN_DEPENDS=	amarok:${PORTSDIR}/audio/amarok
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_KDELIBS_VER=3
 INSTALLS_ICONS=	yes
 

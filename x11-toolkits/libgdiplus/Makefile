@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_LDCONFIG=   yes
 LIBTOOLFILES=	configure cairo/configure
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 # Included cairo does not work for us.  Enable below when Mono catches

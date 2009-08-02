@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A full featured command-line backup tool, aimed for disks
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

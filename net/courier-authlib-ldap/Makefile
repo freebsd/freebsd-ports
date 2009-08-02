@@ -8,7 +8,7 @@
 PKGNAMESUFFIX=	-ldap
 
 COMMENT=	LDAP support for the Courier authentication library
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net mail
 
 MASTERDIR=	${.CURDIR}/../../security/courier-authlib

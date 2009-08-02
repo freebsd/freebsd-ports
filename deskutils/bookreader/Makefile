@@ -18,6 +18,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>

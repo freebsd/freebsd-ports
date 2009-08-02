@@ -19,7 +19,7 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 
 USE_GNOME=	gnomehack glib20 ltverhack
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
 		--disable-doxygen-docs \

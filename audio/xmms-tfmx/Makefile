@@ -19,7 +19,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gnometarget gtk12 lthack
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 PLIST_FILES=	lib/xmms/Input/libtfmx.so
 

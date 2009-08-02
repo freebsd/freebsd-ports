@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME?=	gnomehack gnomeprefix glib20 libxml2 ltverhack intlhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS?=--without-gnome-vfs --without-python --with-gio \
 		--without-bonobo
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \

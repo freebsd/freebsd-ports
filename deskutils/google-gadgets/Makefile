@@ -7,7 +7,7 @@
 
 PORTNAME=	google-gadgets
 PORTVERSION=	0.10.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -39,7 +39,7 @@ USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" CPPFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-ltdl-install=no
-USE_AUTOTOOLS=	libtool:15:env autoconf:262:env automake:110:env aclocal:110:env libltdl:15
+USE_AUTOTOOLS=	libtool:22:env autoconf:262:env automake:110:env aclocal:110:env libltdl:22
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack
 INSTALLS_ICONS=	yes

@@ -19,7 +19,7 @@ COMMENT=	Class Library for Numbers
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes

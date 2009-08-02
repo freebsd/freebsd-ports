@@ -18,7 +18,7 @@ COMMENT=	A general drawing canvas from dia dialog editor
 USE_GNOME=	gnomehack gnometarget pygnome2
 USE_PYTHON=	2.2+
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes

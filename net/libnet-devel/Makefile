@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r1$//}-RC-01
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for creating IP packets (development version)
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

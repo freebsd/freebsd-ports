@@ -15,7 +15,7 @@ COMMENT=	A grammar checking library
 
 USE_GNOME=	gnomehack gnometarget ltverhack
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--enable-pthreads \

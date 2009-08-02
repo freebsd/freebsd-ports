@@ -24,7 +24,7 @@ COMMENT=	Secure Internet Live Conferencing (SILC) network toolkit
 
 CONFLICTS=	silc-client-1.1.* silc-irssi-client-1.1.*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

@@ -18,7 +18,7 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_FAM=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for calculating fields of view on low resolution rasters
 
 USE_GNOME=	gnomehack pkgconfig
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	ac_cv_prog_doxygen=no ac_cv_path_SDL_CONFIG=no
 USE_LDCONFIG=	yes
 

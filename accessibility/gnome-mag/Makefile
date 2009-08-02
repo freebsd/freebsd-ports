@@ -20,7 +20,7 @@ USE_XORG=	xfixes xdamage ice xcomposite sm
 USE_GNOME=	gnomehack gnomeprefix atspi libbonobo intlhack ltverhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

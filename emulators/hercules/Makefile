@@ -7,7 +7,7 @@
 
 PORTNAME=	hercules
 PORTVERSION=	3.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.hercules-390.org/
 
@@ -18,9 +18,12 @@ OPTIONS=	PTHREADS "Build with pthreads instead of fthreads." on \
 		NLS "Build with native language support." on \
 		DEBUG "Enable for debugging hercules itself." off
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22 libltdl:22
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=	yes
+
+post-extract:
+	${RM} ${WRKSRC}/ltdl.*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
@@ -29,6 +32,8 @@ post-patch:
 .else
 	@${REINPLACE_CMD} -e 's,^datadir = @datadir@,datadir = ${PREFIX}/share/doc/,' ${WRKSRC}/html/Makefile.in
 .endif
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		'/^libherc_la_LIBADD/s|=|= -lltdl |g'
 
 MAN1=			cckddiag.1 dasdseq.1
 MAN4=			cckd.4

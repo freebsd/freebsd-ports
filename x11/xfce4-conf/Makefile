@@ -18,7 +18,7 @@ COMMENT=	XFce 4 configuration mananger
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

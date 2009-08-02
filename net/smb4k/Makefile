@@ -20,7 +20,7 @@ RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
 
 USE_KDEBASE_VER=	3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

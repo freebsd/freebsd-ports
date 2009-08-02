@@ -15,7 +15,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
 USE_GNOME=	pkgconfig gnomehack gnometarget ltverhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-glib

@@ -18,7 +18,7 @@ COMMENT=	A GTK+2 widget to display large amounts of numerical data
 
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gtk20
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS+=	--includedir="${PREFIX}/include/${PORTNAME}" \
 			--with-html-dir="${PREFIX}/share/doc"
 

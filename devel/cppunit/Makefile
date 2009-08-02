@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	C++ port of the JUnit framework for unit testing
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

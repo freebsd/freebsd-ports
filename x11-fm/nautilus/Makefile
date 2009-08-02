@@ -28,7 +28,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
 		librsvg2 desktopfileutils ltverhack gvfs ltasneededhack
 GNOME_DESKTOP_VERSION=2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"

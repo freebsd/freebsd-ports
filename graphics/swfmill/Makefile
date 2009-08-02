@@ -16,7 +16,7 @@ COMMENT=	xml2swf and swf2xml processor with import functionalities
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig libxml2 libxslt
 
 GNU_CONFIGURE=	YES

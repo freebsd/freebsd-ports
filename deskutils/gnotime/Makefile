@@ -8,7 +8,7 @@
 
 PORTNAME=	gnotime
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/gttr:gttr SF/qof:qof
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gttr \
@@ -23,7 +23,7 @@ USE_XORG=	xscrnsaver
 USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgnomeui
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15 libltdl:15
+USE_AUTOTOOLS=	libtool:22 libltdl:22
 LIBTOOLFILES=	configure ../${QOF_DISTNAME}/configure
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		LIBQOF_CFLAGS="${LIBQOF_CFLAGS}" LIBQOF_LIBS="${LIBQOF_LIBS}"

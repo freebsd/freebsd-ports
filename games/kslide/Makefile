@@ -16,7 +16,7 @@ COMMENT=	KDE puzzle game
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
 
 post-patch:

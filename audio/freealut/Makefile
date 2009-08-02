@@ -16,7 +16,7 @@ COMMENT=	The OpenAL Utility Toolkit
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes

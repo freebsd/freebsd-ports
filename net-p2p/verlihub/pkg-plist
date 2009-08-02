@@ -97,7 +97,6 @@ lib/libverlihub.a
 lib/libverlihub.la
 lib/libverlihub.so
 lib/libverlihub.so.0
-lib/libvhapi.a
 lib/libvhapi.la
 lib/libvhapi.so
 lib/libvhapi.so.0

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=synce
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Extract data from InstallShield CAB files
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_LDCONFIG=	yes

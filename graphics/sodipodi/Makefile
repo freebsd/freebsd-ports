@@ -19,7 +19,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2 desktopfileutils
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--without-gnome-print \
 		--with-popt
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \

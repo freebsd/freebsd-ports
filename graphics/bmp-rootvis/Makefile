@@ -23,6 +23,6 @@ PLIST_FILES=	lib/bmp/Visualization/librootvis.so \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>

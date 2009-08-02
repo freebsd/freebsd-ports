@@ -19,7 +19,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomehier evolutiondataserver
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GCONF_SCHEMAS=	contacts.schemas
 MAN1=		${PORTNAME}.1
 # CFLAGS+=	-g

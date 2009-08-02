@@ -13,7 +13,7 @@ DISTFILES=	# none
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Autotools meta-port
 
-RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool15
+RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool22
 
 PLIST_FILES=	share/${PORTNAME}
 NO_BUILD=	yes

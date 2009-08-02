@@ -41,7 +41,7 @@ WRKSRC=		${WRKDIR}/plt-${PORTVERSION}/src/build
 USE_ICONV=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15:env
+USE_AUTOTOOLS=	libtool:22:env
 
 # no man files in this version: run plt-help for helpdesk
 MAN1=	drscheme.1 mred.1 mzc.1 mzscheme.1 \

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.1/
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A simple, powerful configuration-file parser
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

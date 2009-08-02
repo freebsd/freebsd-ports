@@ -16,7 +16,7 @@ COMMENT=	A C++ library for generation of Excel(TM) files
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS.*src\).*|\1|' \

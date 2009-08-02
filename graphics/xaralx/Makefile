@@ -25,7 +25,7 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config \
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_AUTOTOOLS=	autoconf:262:env aclocal:19:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:262:env aclocal:19:env automake:19:env libtool:22:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--program-suffix=${PKGNAMESUFFIX}
 

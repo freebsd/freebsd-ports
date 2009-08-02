@@ -40,7 +40,7 @@ CONFIGURE_ARGS=	--with-iodbc
 CONFIGURE_ARGS+=--libdir=${PREFIX}/mysql2odbc
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 .include <bsd.port.post.mk>

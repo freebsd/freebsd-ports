@@ -17,7 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

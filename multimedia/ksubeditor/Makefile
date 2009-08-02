@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/stamp-h.in

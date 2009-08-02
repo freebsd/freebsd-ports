@@ -30,7 +30,7 @@ COUCH_USER?=	couchdb
 
 USE_RC_SUBR=	couchdb
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		--localstatedir=/var \

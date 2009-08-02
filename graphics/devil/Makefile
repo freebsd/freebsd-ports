@@ -29,7 +29,7 @@ OPTIONS=	JPEG	"Enable JPEG support"		on \
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:22
 ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

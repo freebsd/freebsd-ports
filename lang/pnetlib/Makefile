@@ -23,7 +23,7 @@ USE_XLIB=	yes
 .endif
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

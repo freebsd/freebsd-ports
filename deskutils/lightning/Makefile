@@ -18,7 +18,7 @@ DISTNAME=	lightning-${PORTNAME}-${DISTVERSION}-source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Redesign of the Mozilla Calendar with XUL interface
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes

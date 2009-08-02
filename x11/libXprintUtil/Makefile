@@ -14,6 +14,6 @@ COMMENT=	The XprintUtil library
 
 XORG_CAT=	lib
 USE_XORG=	printproto:both x11 xau xp xt
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>

@@ -19,7 +19,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		xml-security-c.14:${PORTSDIR}/security/apache-xml-security-c
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

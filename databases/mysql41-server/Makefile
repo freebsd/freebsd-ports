@@ -17,7 +17,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql41-client
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \

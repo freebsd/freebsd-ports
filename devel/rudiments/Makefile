@@ -16,7 +16,7 @@ COMMENT=	A utility C++ class library for daemons, clients, servers and more
 USE_GNOME=	gnometarget pkgconfig
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 		PTHREADLIB="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLINC} \

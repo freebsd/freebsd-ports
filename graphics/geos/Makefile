@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	konstantin@saurbier.net
 COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	YES
 USE_BZIP2=	YES
 

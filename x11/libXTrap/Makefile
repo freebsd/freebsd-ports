@@ -14,6 +14,6 @@ COMMENT=	The XTrap library
 
 XORG_CAT=	lib
 USE_XORG=	trapproto:both x11 xext xextproto xt
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>

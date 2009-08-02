@@ -23,7 +23,7 @@ COMMENT=	Dynamic pixel format conversion library
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig gnomehack ltverhack
 USE_GMAKE=	yes
 

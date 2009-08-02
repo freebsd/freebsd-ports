@@ -20,7 +20,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:22
 ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \

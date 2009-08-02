@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	El-Kabong is a speedy, yet forgiving, SAX-style HTML parser
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -23,7 +23,7 @@ USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 USE_GETTEXT=		yes
 USE_LDCONFIG=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 CONFIGURE_ENV=		CXXFLAGS="${CFLAGS} -I${WRKSRC}" CFLAGS="${CFLAGS} -I${WRKSRC}"
 DVB_HEADERS=		ca.h dmx.h frontend.h net.h audio.h video.h
 

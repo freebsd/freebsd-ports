@@ -8,7 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.6.6b
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -20,7 +20,7 @@ COMMENT=	An anonymous, distributed, reputation-based network
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:22 libtool:22
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

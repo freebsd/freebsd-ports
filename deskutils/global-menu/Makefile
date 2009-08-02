@@ -20,7 +20,7 @@ USE_BZIP2=		yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15 automake:19:env autoheader:262:env
+USE_AUTOTOOLS=		libtool:22 automake:19:env autoheader:262:env
 INSTALLS_ICONS=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

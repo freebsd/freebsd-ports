@@ -7,6 +7,7 @@
 
 PORTNAME=	opensc
 PORTVERSION=	0.11.9
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -18,7 +19,7 @@ OPTIONS=	OPENCT "Enable direct OpenCT backend support" on \
 		PCSC "Enable PC/SC backend support" off \
 		SIGNER "Enable signer browser plugin" off
 
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:22
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

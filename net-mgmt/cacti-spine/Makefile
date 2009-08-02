@@ -21,14 +21,13 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}
 USE_MYSQL=	YES
 USE_OPENSSL=	YES
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
-.for file in config.guess config.sub ltmain.sh
-	@${LN} -fs ${LIBTOOL_SHAREDIR}/${file} ${WRKSRC}/config/${file}
-.endfor
-	@${LN} -fs ${LIBTOOL} ${WRKSRC}/libtool
 	@${REINPLACE_CMD} 's,#define\ *DEFAULT_CONF_FILE .*,#define DEFAULT_CONF_FILE "${PREFIX}/etc/spine.conf",' ${WRKSRC}/spine.h
+
+pre-configure:
+	@(cd ${WRKSRC} ; ${LIBTOOLIZE} --copy --force --install)
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/spine ${PREFIX}/bin
@@ -36,4 +35,5 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/spine.conf ${EXAMPLESDIR}
 	@[ -e ${PREFIX}/etc/spine.conf ] || \
 		${INSTALL_DATA} ${EXAMPLESDIR}/spine.conf ${PREFIX}/etc/
+
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ COMMENT=	Library that supports startup notification spec from freedesktop.org
 LIB_DEPENDS=	xcb-aux.0:${PORTSDIR}/x11/xcb-util
 
 USE_XORG=	x11
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes

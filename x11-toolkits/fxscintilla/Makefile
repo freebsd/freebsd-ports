@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS+=	--enable-shared --disable-static
 USE_LDCONFIG=	yes
 

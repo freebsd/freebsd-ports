@@ -28,7 +28,7 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	PYTHON	"Enable Python scripting and modules" off
 
-USE_AUTOTOOLS=	autoheader:262 autoconf:262 automake:110 aclocal:110 libtool:15:env
+USE_AUTOTOOLS=	autoheader:262 autoconf:262 automake:110 aclocal:110 libtool:22
 AUTOMAKE_ARGS=	--add-missing --foreign
 ACLOCAL_ARGS=
 AUTOCONF_ARGS=

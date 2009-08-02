@@ -1,0 +1,24 @@
+# New ports collection makefile for:	libtool
+# Date created:		6 May 1998
+# Whom:			Motoyuki Kasahara <m-kasahr@sra.co.jp>
+#
+# $FreeBSD$
+#
+
+PORTNAME?=	libtool
+PORTVERSION=	2.2.6a
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	libtool
+DISTNAME=	libtool-${PORTVERSION}
+
+MAINTAINER=	kwm@FreeBSD.org
+COMMENT?=	Generic shared library support script
+
+WRKSRC=		${WRKDIR}/libtool-${PORTVERSION:S|a||}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS?= --disable-ltdl-install
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+INFO?=		libtool
+
+.include <bsd.port.mk>

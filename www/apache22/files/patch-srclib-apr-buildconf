@@ -14,19 +14,10 @@
     if [ -z "$ltfile" -o ! -f "$ltfile" ]; then
       ltpath=`dirname $libtoolize`
 -     ltfile=`cd $ltpath/../share/aclocal ; pwd`/libtool.m4
-+     ltfile=${LIBTOOL_M4-`cd $ltpath/../../share/aclocal ; pwd`/${LIBTOOL_VERSION}.m4}
++     ltfile=${LIBTOOL_M4}
     fi
  fi
    
-@@ -61,7 +61,7 @@
-     exit 1
- fi
- 
--echo "buildconf: Using libtool.m4 at ${ltfile}."
-+echo "buildconf: Using libtool${LIBTOOL_VERSION}.m4 at ${ltfile}."
- 
- cat $ltfile | sed -e 's/LIBTOOL=\(.*\)top_build/LIBTOOL=\1apr_build/' > build/libtool.m4
- 
 @@ -87,8 +87,11 @@
  # Remove autoconf 2.5x's cache directory
  rm -rf autom4te*.cache

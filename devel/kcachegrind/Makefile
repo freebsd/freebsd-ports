@@ -18,7 +18,7 @@ COMMENT=	Profiling Visualization Tool
 ONLY_FOR_ARCHS=	i386 amd64
 CONFLICTS=	kdesdk3-[0-9]*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 INSTALLS_ICONS=	yes

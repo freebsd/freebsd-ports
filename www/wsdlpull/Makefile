@@ -19,7 +19,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 MAKE_JOBS_SAFE=  yes
 
 USE_GNOME=	gnometarget
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/wsdl
 USE_LDCONFIG=	yes

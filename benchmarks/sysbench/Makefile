@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 OPTIONS=	LARGEFILE "Enable Largefile support" on \
 		MYSQL "Enable MySQL support" on \

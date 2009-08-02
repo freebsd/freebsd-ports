@@ -93,7 +93,7 @@ OPTIONS+=	CGI "Install CGI (pulls in Apache or see below)" off
 OPTIONS+=	LIGHTTPD "RUN_DEPEND on LightHTTPD, not Apache" off
 
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 .ifdef(SNAP_DATE)
 USE_AUTOTOOLS+=	autoconf:262:env automake:19
 .endif

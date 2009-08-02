@@ -31,7 +31,7 @@ USE_XORG=	ice x11 xext xv
 USE_GNOME=	esound
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_header_mpeg_h=no \
 		ac_cv_header_libmpeg3_h=no \

@@ -28,7 +28,7 @@ LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter \
 		clutter-gtk-0.8:${PORTSDIR}/graphics/clutter-gtk
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack pygnome2 pygtk2
 USE_GSTREAMER=	yes
 USE_PYTHON=	2.4+

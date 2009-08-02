@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/lib//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-cipher cryptographic library (used in PHP)
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--enable-static
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes

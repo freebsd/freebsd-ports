@@ -16,7 +16,7 @@ COMMENT=	XSL formatter that produces PDF and PostScript
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget libgnomeprint libxslt \
 		libxml2 gtk20 glib20 pango

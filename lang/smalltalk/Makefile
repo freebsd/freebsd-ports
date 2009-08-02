@@ -21,7 +21,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 OPTIONS=	TCLTK "Enable Tcl/Tk binding" on \
 		PGSQL "PostgreSQL binding" on
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
 USE_SQLITE=	yes

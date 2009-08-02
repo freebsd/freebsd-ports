@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL game engine library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

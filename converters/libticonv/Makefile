@@ -16,7 +16,7 @@ DISTNAME=	tilibs2-20080110
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator character set library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig
 USE_LDCONFIG=	yes

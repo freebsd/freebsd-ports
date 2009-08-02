@@ -18,7 +18,7 @@ OPTIONS=	GNOMEGUI	"With gnome gui"		no
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack ltverhack libxml2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

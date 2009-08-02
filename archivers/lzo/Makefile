@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	libs/compression
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Portable speedy, lossless data compression library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes

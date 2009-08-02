@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xau xdmcp
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf"

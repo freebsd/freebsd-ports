@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	maitretarot
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Core library of MaitreTarot, a Tarot card game
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		glib20 libxml2 lthack

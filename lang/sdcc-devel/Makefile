@@ -123,7 +123,7 @@ PLIST_SUB+=		DEVLIB=""
 CONFIGURE_ARGS+=	--disable-ucsim
 PLIST_SUB+=		UCSIM="@comment "
 .else
-USE_AUTOTOOLS+=		libtool:15
+USE_AUTOTOOLS+=		libtool:22
 LIBTOOLFILES=		sim/ucsim/configure
 PLIST_SUB+=		UCSIM=""
 .endif

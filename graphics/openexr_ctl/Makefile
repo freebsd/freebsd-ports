@@ -20,7 +20,7 @@ LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
 
-USE_AUTOTOOLS=	autoconf:262:env libtool:15
+USE_AUTOTOOLS=	autoconf:262:env libtool:22
 
 MAN1=		ccache-swig.1
 

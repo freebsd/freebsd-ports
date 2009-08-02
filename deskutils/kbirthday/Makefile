@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.gfai.de/~jaham/download/ \
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	KDE kicker-applet that reminds you of birthdays and anniversaries
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_LDCONFIG=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://shibboleth.internet2.edu/downloads/${PORTNAME}/${DISTVERSIO
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnometarget gnomehack

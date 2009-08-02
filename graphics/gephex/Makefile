@@ -30,7 +30,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build uic_build
 USE_XORG=	xv
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:18 autoconf:262 libtool:15
+USE_AUTOTOOLS=	automake:18 autoconf:262 libtool:22
 AUTOMAKE_ARGS=	--foreign
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-ASOUNDLIB --without-AVIFILE \

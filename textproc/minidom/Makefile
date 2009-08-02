@@ -17,7 +17,7 @@ COMMENT=	A minimal implementation of the Document Object Model
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes

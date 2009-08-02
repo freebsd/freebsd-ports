@@ -14,7 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight C library that eases the writing of UNIX daemons
 
 CONFIGURE_ARGS=	--disable-lynx
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack gnometarget ltverhack
 USE_LDCONFIG=	yes
 

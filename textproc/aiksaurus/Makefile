@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	aiksaurus
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A set of libraries and applications which provide a thesaurus
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME?=	gnomehack gnometarget
 USE_LDCONFIG=	yes

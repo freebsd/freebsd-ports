@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.intra2net.com/de/produkte/opensource/ftdi/TGZ/
 MAINTAINER=	o.davydenko@gmail.com
 COMMENT=	A library (using libusb) to talk to FTDI chips
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 USE_LDCONFIG=		yes

@@ -680,7 +680,7 @@
     SUBDIR += liblogging
     SUBDIR += liblouis
     SUBDIR += liblouisxml
-    SUBDIR += libltdl15
+    SUBDIR += libltdl22
     SUBDIR += libmaa
     SUBDIR += libmatheval
     SUBDIR += libmba
@@ -744,7 +744,7 @@
     SUBDIR += libticalcs
     SUBDIR += libtifiles
     SUBDIR += libtifiles2
-    SUBDIR += libtool15
+    SUBDIR += libtool22
     SUBDIR += libublio
     SUBDIR += libukcprog
     SUBDIR += libunicode

@@ -17,7 +17,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 ltverhack gnometarget
 USE_GSTREAMER=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_GETIFADDRS" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -19,7 +19,7 @@ COMMENT=	MPEG-1 player in GTK+ capable of playing MPEG-1 format streams
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_SDL=	sdl
 USE_BZIP2=	yes
 USE_GNOME=	gtk12

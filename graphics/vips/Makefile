@@ -34,7 +34,7 @@ PYPRESENT!=	which python > /dev/null && echo on || echo off
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango libxml2
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 

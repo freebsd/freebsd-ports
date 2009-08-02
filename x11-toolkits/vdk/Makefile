@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	vdklib
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for GTK+ toolkit
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack gnometarget gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

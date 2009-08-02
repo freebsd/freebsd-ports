@@ -1,0 +1,145 @@
+--- bootstrap.mk.orig	2009-07-15 09:34:19.000000000 -0500
++++ bootstrap.mk	2009-07-15 09:34:31.000000000 -0500
+@@ -49,11 +49,7 @@
+ endef
+ 
+ all: bootstrap
+-update: aclocal.m4 config.h.in Makefile.in ltmain.sh configure \
+-	update-libltdl
+-update-libltdl: gnu/libltdl/aclocal.m4 gnu/libltdl/config.h.in \
+-		gnu/libltdl/Makefile.in gnu/libltdl/ltmain.sh \
+-		gnu/libltdl/configure
++update: aclocal.m4 config.h.in Makefile.in ltmain.sh configure
+ 
+ check-autoconf check-aclocal check-automake check-libtool \
+ check-libtoolize check-autoheader: check-%:
+@@ -66,42 +62,26 @@
+ 	fi
+ 
+ bootstrap: bootstrap-libtoolize bootstrap-aclocal bootstrap-autoheader \
+-	   bootstrap-automake bootstrap-autoconf bootstrap-ltdl
++	   bootstrap-automake bootstrap-autoconf
+ 
+ bootstrap-libtoolize bootstrap-aclocal bootstrap-autoheader \
+ bootstrap-automake bootstrap-autoconf: bootstrap-%: check-%
+ 	$($*) $(P3L_$*_OPTIONS)
+ 
+-bootstrap-ltdl: check-autoconf check-automake check-aclocal check-autoheader
+-	cd gnu/libltdl && $(aclocal)
+-	cd gnu/libltdl && $(autoheader)
+-	cd gnu/libltdl && $(automake) $(P3L_automake_OPTIONS)
+-	cd gnu/libltdl && $(autoconf) $(P3L_autoconf_OPTIONS)
+ 
+-gnu/libltdl/aclocal.m4: gnu/libltdl/configure.ac
+-	cd gnu/libltdl && $(aclocal)
+ aclocal.m4: configure.ac
+ 	$(aclocal) $(P3L_aclocal_OPTIONS)
+ 
+-gnu/libltdl/config.h.in: gnu/libltdl/aclocal.m4 gnu/libltdl/configure.ac
+-	cd gnu/libltdl && $(autoheader)
+-	touch $@
+ config.h.in: aclocal.m4 configure.ac
+ 	$(autoheader) $(P3L_autoheader_OPTIONS)
+ 	touch $@
+ 
+-gnu/libltdl/Makefile.in: gnu/libltdl/configure.ac gnu/libltdl/Makefile.am
+-	cd gnu/libltdl && $(automake) $(P3L_automake_OPTIONS)
+ Makefile.in: configure.ac Makefile.am
+ 	$(automake) $(P3L_automake_OPTIONS)
+ 
+-gnu/libltdl/ltmain.sh: gnu/libltdl/Makefile.am gnu/libltdl/configure.ac
+-	cd gnu/libltdl && $(libtoolize) $(P3L_libtoolize_OPTIONS)
+ ltmain.sh: Makefile.am configure.ac
+ 	$(libtoolize) $(P3L_libtoolize_OPTIONS)
+ 
+-gnu/libltdl/configure: gnu/libltdl/aclocal.m4 gnu/libltdl/configure.ac
+-	cd gnu/libltdl && $(autoconf) $(P3L_autoconf_OPTIONS)
+ configure: aclocal.m4 configure.ac
+ 	$(autoconf) $(P3L_autoconf_OPTIONS)
+ 
+@@ -111,4 +91,4 @@
+ .PHONY: check-autoconf check-aclocal check-automake check-libtool \
+ 	check-libtoolize check-autoheader boostrap boostrap-libtoolize \
+ 	bootstrap-aclocal bootstrap-autoheader bootstrap-automake \
+-	bootstrap-autoconf bootstrap-ltdl update update-libltdl
++	bootstrap-autoconf update
+--- configure.orig	2009-07-15 09:29:11.000000000 -0500
++++ configure	2009-07-15 09:31:35.000000000 -0500
+@@ -300,7 +300,7 @@
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subdirs_all="$ac_subdirs_all gnu/libltdl"
++ac_subdirs_all="$ac_subdirs_all"
+ 
+ # Initialize some variables set by options.
+ ac_init_help=
+@@ -3144,15 +3144,8 @@
+ 
+   fi
+ 
+-  case $enable_ltdl_convenience in
+-  no) { { echo "$as_me:3148: error: this package needs a convenience libltdl" >&5
+-echo "$as_me: error: this package needs a convenience libltdl" >&2;}
+-   { (exit 1); exit 1; }; } ;;
+-  "") enable_ltdl_convenience=yes
+-      ac_configure_args="$ac_configure_args --enable-ltdl-convenience" ;;
+-  esac
+-  LIBLTDL='${top_builddir}/'gnu/libltdl/libltdlc.la
+-  INCLTDL='-I${top_srcdir}/'gnu/libltdl
++LIBLTDL='-lltdl'
++INCLTDL='-I/usr/local/include'
+ 
+ # Check whether --enable-shared or --disable-shared was given.
+ if test "${enable_shared+set}" = set; then
+@@ -10374,7 +10367,7 @@
+ 	P3L_BUILTIN_LIST=`echo "$P3L_BUILTIN_LIST" | sed -e "s% test-modules % %g"`
+ fi
+ 
+-subdirs="$subdirs gnu/libltdl"
++subdirs="$subdirs"
+ 
+ if test "x$static_daemon" != "xno"
+ then
+--- gnu/Makefile.in.orig	2009-07-15 09:35:48.000000000 -0500
++++ gnu/Makefile.in	2009-07-15 09:35:51.000000000 -0500
+@@ -138,7 +138,7 @@
+ install_sh = @install_sh@
+ moddocdir = @moddocdir@
+ 
+-SUBDIRS = getopt libltdl md5
++SUBDIRS = getopt md5
+ 
+ EXTRA_DIST = README
+ subdir = gnu
+--- src/Makefile.in.orig	2009-07-15 09:37:37.000000000 -0500
++++ src/Makefile.in	2009-07-15 09:37:39.000000000 -0500
+@@ -143,7 +143,7 @@
+ CLEANFILES = *~ TAGS gmon.out builtin-modules.c
+ DISTCLEANFILES = stamp-builtin depcomp
+ 
+-LTDL_LIB = $(top_builddir)/gnu/libltdl/libltdlc.la
++LTDL_LIB = -lltdl
+ 
+ @HAVE_MD5_LIB_TRUE@MD5_LIB = -lmd
+ @HAVE_MD5_LIB_FALSE@MD5_LIB = $(top_builddir)/gnu/md5/libmd5.la
+@@ -157,7 +157,6 @@
+ 			$(EXTRA_CFLAGS)
+ 
+ INCLUDES = -I$(top_builddir)/includes \
+-			-I$(top_srcdir)/gnu/libltdl \
+ 			-I$(top_srcdir)/includes \
+ 			-DSYSCONFDIR=\"$(sysconfdir)\" \
+ 			-DMODULEDIR=\"$(pkglibdir)\" \
+@@ -204,10 +203,8 @@
+ 	misc.$(OBJEXT) module.$(OBJEXT) standalone.$(OBJEXT)
+ nodist_pop3lite_OBJECTS = builtin-modules.$(OBJEXT)
+ pop3lite_OBJECTS = $(am_pop3lite_OBJECTS) $(nodist_pop3lite_OBJECTS)
+-@HAVE_MD5_LIB_TRUE@pop3lite_DEPENDENCIES = \
+-@HAVE_MD5_LIB_TRUE@	$(top_builddir)/gnu/libltdl/libltdlc.la
++@HAVE_MD5_LIB_TRUE@pop3lite_DEPENDENCIES = 
+ @HAVE_MD5_LIB_FALSE@pop3lite_DEPENDENCIES = \
+-@HAVE_MD5_LIB_FALSE@	$(top_builddir)/gnu/libltdl/libltdlc.la \
+ @HAVE_MD5_LIB_FALSE@	$(top_builddir)/gnu/md5/libmd5.la
+ 
+ DEFS = @DEFS@

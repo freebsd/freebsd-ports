@@ -17,7 +17,7 @@ COMMENT=	A program for back up of directories or files
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_KDELIBS_VER=3

@@ -19,7 +19,7 @@ COMMENT=	Universal SQL/Application Server
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-readline\
 		--with-iodbc=${LOCALBASE}\
 		--enable-bpel-vad\

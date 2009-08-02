@@ -19,7 +19,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME?=	gnomehack libxml2 ltverhack
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--localstatedir=/var \
 	        --with-test-socket-dir=${WRKDIR} \

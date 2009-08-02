@@ -38,7 +38,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
 
-USE_AUTOTOOLS=	libtool:15 aclocal:110
+USE_AUTOTOOLS=	libtool:22 aclocal:110
 
 LIBTOOLFILES=	${WRKSRC}/configure
 

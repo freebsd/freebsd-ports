@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A translator library for geospatial data formats
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

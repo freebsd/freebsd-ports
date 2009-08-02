@@ -37,7 +37,7 @@ CONFIGURE_ENV=	HDF5HOME=${LOCALBASE} CPPFLAGS="${PTHREAD_CFLAGS}"	\
 CONFIGURE_ARGS=	--with-f90=${FC} --docdir=${DOCSDIR}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:22
 USE_LDCONFIG=	yes
 
 DOC2FIX=	. gif html jpg png tests

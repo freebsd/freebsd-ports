@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Berkeley Automounter Suite of Utilities
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 PORTDOCS=	AUTHORS BUGS COPYING FAQ NEWS README.attrcache
 

@@ -22,7 +22,7 @@ OPTIONS=	MYSQL		"Build with MySQL support" on \
 		SIEVE		"Build w. support for Sieve mail sorting language" off \
 		LDAP		"Build with support for LDAP authentication" off
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	YES

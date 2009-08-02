@@ -16,7 +16,7 @@ COMMENT=	Open source scep server
 
 MAKE_JOBS_SAFE=  yes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
 USE_APACHE=	1.3+

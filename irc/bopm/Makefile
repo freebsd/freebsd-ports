@@ -16,7 +16,7 @@ COMMENT=	Open proxy and DNSBL monitor, designed for use with ircds
 
 LOGDIR=		/var/log/${PORTNAME}
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	configure src/libopm/configure
 CONFIGURE_ARGS=		--sysconfdir=${PREFIX}/etc --localstatedir=${LOGDIR}
 

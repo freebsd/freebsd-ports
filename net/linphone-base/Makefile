@@ -22,7 +22,7 @@ CONFLICTS=	ortp-[0-9]*
 
 USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	configure oRTP/configure mediastreamer2/configure
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-ipv6 --disable-manual --disable-ewarning \

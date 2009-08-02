@@ -23,7 +23,7 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15 autoconf:262
+USE_AUTOTOOLS=	libtool:22 autoconf:262
 USE_GNOME=	pkgconfig gtk20
 USE_GSTREAMER=	good mad
 INSTALLS_ICONS=	yes

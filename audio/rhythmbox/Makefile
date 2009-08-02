@@ -33,7 +33,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 nautilus2
 WANT_GNOME=	yes
 USE_GSTREAMER=	flac mp3 gnomevfs gconf jpeg
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-vala --with-libbrasero-media \
 		--without-libnautilus-burn
 INSTALLS_ICONS=	yes

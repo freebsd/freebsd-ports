@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Easy to use IRC client for KDE
 
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 

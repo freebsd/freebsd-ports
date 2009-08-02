@@ -14,7 +14,7 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	decept0@gmail.com
 COMMENT=	Quake-style terminal emulator based on KDE's Konsole
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes

@@ -19,7 +19,7 @@ COMMENT=	An overhead, OpenGL space shooter
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		ftgl.2:${PORTSDIR}/graphics/ftgl
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GL=		gl
 USE_SDL=	sdl

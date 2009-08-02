@@ -21,7 +21,7 @@ LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 USE_KDELIBS_VER=3
 USE_XORG=	xkbfile
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/config.h.in

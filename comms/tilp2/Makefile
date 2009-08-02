@@ -21,7 +21,7 @@ LIB_DEPENDS=	ticables2.1:${PORTSDIR}/comms/libticables2 \
 		ticalcs2.7:${PORTSDIR}/comms/libticalcs2 \
 		ticonv.3:${PORTSDIR}/converters/libticonv
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 

@@ -15,7 +15,7 @@ DISTNAME=	gc${PORTVERSION:S/.a/alpha/}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes

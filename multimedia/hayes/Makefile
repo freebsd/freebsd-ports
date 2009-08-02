@@ -18,7 +18,7 @@ LIB_DEPENDS=		noatun:${PORTSDIR}/multimedia/kdemultimedia3
 USE_KDEBASE_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 CONFIGURE_ENV=		LDFLAGS="${PTHREAD_LIBS}"
 
 post-patch:

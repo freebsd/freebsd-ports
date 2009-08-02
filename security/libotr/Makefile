@@ -24,7 +24,7 @@ LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 MAKE_JOBS_SAFE=	yes
 
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	autoconf:262 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:22
 USE_LDCONFIG=	yes
 
 MAN1=		otr_toolkit.1

@@ -20,7 +20,7 @@ LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig gnomehack gnomeprefix ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/libnotify `pkg-config --cflags glibmm-2.4 libnotify gtkmm-2.4`"
 USE_LDCONFIG=	yes

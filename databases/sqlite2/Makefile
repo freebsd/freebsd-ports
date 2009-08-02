@@ -17,7 +17,7 @@ COMMENT=	An SQL database engine in a C library
 
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	YES
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints

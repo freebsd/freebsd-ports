@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	jamlib
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A JAM subroutine library
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 NO_INSTALL_MANPAGES=	yes
 USE_LDCONFIG=	yes

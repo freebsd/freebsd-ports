@@ -15,7 +15,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	XML API for C++
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -17,7 +17,7 @@ EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 
 MAN1=	kover.1 cddb-id.1
 

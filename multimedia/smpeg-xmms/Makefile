@@ -21,7 +21,7 @@ LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
 
 USE_GNOME=	gnomehack gtk12
 USE_SDL=	sdl
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

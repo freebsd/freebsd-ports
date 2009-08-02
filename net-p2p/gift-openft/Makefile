@@ -18,7 +18,7 @@ COMMENT=	An OpenFT plugin for giFT
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift \
 		db3.3:${PORTSDIR}/databases/db3
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

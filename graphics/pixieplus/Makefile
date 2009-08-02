@@ -20,7 +20,7 @@ LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
 
 BROKEN=		does not compile
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_KDELIBS_VER=3
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes

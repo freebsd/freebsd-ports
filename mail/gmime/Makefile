@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
 
 CONFLICTS=	gmime-2.1.*
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	YES
 USE_GNOME=	glib12
 USE_ICONV=	yes

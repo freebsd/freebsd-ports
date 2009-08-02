@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gnetlibrary.org/src/
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A simple network library built upon Glib
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack glib12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

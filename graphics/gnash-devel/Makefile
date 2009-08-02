@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	20081208
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
@@ -38,7 +38,7 @@ USE_GCC=	4.2+	# triggers compiler error on gcc 3.4
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
-USE_AUTOTOOLS=	libltdl:15 libtool:15:env
+USE_AUTOTOOLS=	libltdl:22 libtool:22:env
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -28,7 +28,7 @@ USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_PERL5_RUN=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:22:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_CFLAGS}"

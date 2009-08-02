@@ -19,7 +19,7 @@ COMMENT=	C library that supports plugin printer driver for Ghostscript
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget lthack pkgconfig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 MAN1=		ijs-config.1

@@ -17,7 +17,7 @@ COMMENT=	A program for viewing several fonts at once
 
 USE_XORG=	x11
 USE_GNOME=	libgnomeui gnomeprefix
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:

@@ -7,7 +7,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.6.3
-PORTREVISION=	6
+PORTREVISION=		6
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
@@ -30,7 +30,7 @@ WITH_OPENSSL_PORT=	yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
-USE_AUTOTOOLS=		libtool:15
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS?=	--enable-shared
 # CONFIGURE_ARGS+=	--disable-thread-support
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \

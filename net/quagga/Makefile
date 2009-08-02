@@ -23,7 +23,7 @@ COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 
 CONFLICTS=	openbgpd-[0-9]* zebra-0*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 USE_PERL5_BUILD=	yes

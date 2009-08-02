@@ -18,7 +18,7 @@ COMMENT=	C/C++ reference manual for KDevelop
 RUN_DEPENDS=	kdevelop:${PORTSDIR}/devel/kdevelop
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 

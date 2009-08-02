@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_OPENSSL=	YES
 USE_RC_SUBR=	stunnel
 

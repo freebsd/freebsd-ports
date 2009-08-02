@@ -20,7 +20,7 @@ DEST=		${WRKSRC}/src/libsphinx2/
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
-USE_AUTOTOOLS=libtool:15
+USE_AUTOTOOLS=libtool:22
 
 # contains i386 sound code
 ONLY_FOR_ARCHS=	i386

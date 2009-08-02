@@ -18,7 +18,7 @@ CONFLICTS=	libiodbc-[0-9]*
 
 USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		--with-libiconv-prefix=${LOCALBASE}
 USE_LDCONFIG=	yes

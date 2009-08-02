@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.gris.uni-tuebingen.de/grisalt/projects/qglviewer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use OpenGL to play around with three dimensional scenes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

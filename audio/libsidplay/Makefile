@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sec@42.org
 COMMENT=	A Commodore SID-chip emulator library to play SID music files
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

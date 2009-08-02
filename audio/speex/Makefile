@@ -21,7 +21,7 @@ CONFLICTS=	speex-devel-[0-9]*
 
 USE_GNOME=	gnomehack gnometarget ltverhack
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}

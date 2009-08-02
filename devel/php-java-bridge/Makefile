@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PHP module wich connects the PHP object with the Java/ECMA 335 object
 
-USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:22:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_JAVA=	yes
@@ -36,15 +36,11 @@ post-install:
 		${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/modules/RunJavaBridge \
 		${PREFIX}/lib/php/${PHP_EXT_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/modules/libnatcJavaBridge.a \
-		${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/modules/libnatcJavaBridge.so \
 		${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${ECHO_CMD} "lib/php/${PHP_EXT_DIR}/JavaBridge.jar" \
 		>> ${TMPPLIST}
 	${ECHO_CMD} "lib/php/${PHP_EXT_DIR}/RunJavaBridge" \
-		>> ${TMPPLIST}
-	${ECHO_CMD} "lib/php/${PHP_EXT_DIR}/libnatcJavaBridge.a" \
 		>> ${TMPPLIST}
 	${ECHO_CMD} "lib/php/${PHP_EXT_DIR}/libnatcJavaBridge.so" \
 	 	>> ${TMPPLIST}

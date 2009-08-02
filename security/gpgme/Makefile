@@ -19,7 +19,7 @@ COMMENT=	A library to make access to GnuPG easier
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

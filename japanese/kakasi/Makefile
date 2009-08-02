@@ -13,7 +13,7 @@ MASTER_SITES=	http://kakasi.namazu.org/stable/
 MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	Kanji-Kana Simple Inverter, language filter for Japanese
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 
 MANLANG=	ja

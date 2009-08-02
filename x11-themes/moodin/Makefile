@@ -16,7 +16,7 @@ COMMENT=	Splash screen engine for KDE
 
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

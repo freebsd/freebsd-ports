@@ -18,7 +18,7 @@ COMMENT=	Control mobile phones with your PC
 USE_KDELIBS_VER=3
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

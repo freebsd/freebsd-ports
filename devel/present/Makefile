@@ -18,7 +18,7 @@ COMMENT=	A library for reading Microsoft PowerPoint(tm) documents
 LIB_DEPENDS=	goffice-1.2:${PORTSDIR}/devel/goffice1
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

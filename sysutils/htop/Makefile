@@ -19,7 +19,7 @@ NOT_FOR_ARCHS=	sparc64
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc --enable-unicode
-USE_AUTOTOOLS=	autoconf:262 aclocal:19 automake:19 libtool:15
+USE_AUTOTOOLS=	autoconf:262 aclocal:19 automake:19 libtool:22
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR}
 
 USE_PYTHON_BUILD=	yes

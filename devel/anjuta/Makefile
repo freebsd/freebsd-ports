@@ -29,7 +29,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
 		neato:${PORTSDIR}/graphics/graphviz \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
-		libtool:${PORTSDIR}/devel/libtool15 \
+		libtool:${PORTSDIR}/devel/libtool22 \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
 		exctags:${PORTSDIR}/devel/ctags
 

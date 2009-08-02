@@ -20,7 +20,7 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 USE_XORG=	ice
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gtk20 gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

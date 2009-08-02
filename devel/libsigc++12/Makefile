@@ -21,7 +21,7 @@ COMMENT=	Callback Framework for C++
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 LATEST_LINK=	libsigc++12
 USE_LDCONFIG=	yes

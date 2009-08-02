@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 USE_GNOME=	gnomehack gnometarget intlhack pkgconfig
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 USE_LDCONFIG=	yes

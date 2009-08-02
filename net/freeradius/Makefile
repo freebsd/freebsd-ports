@@ -7,7 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION?=	1.1.7
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -39,7 +39,7 @@ CONFLICTS+=	freeradius-mysql-[0-9].* freeradius-[02-9].*
 NO_LATEST_LINK=	yes
 
 USE_RC_SUBR=	radiusd.sh
-USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:262
+USE_AUTOTOOLS=	libltdl:22 libtool:22 autoconf:262
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

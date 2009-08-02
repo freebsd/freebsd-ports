@@ -7,7 +7,7 @@
 
 PORTNAME=	camserv
 PORTVERSION=	0.5.1
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -22,7 +22,7 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 
 ONLY_FOR_ARCHS=	i386 alpha
 
-USE_AUTOTOOLS=	autoconf:262 libtool:15 libltdl:15
+USE_AUTOTOOLS=	autoconf:262 libtool:22 libltdl:22
 USE_EFL=	imlib2
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \

@@ -7,7 +7,7 @@
 
 PORTNAME=	libnewmail
 PORTVERSION=	0.3
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	mail
 MASTER_SITES=	http://0pointer.de/lennart/projects/libnewmail/ \
 		http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/
@@ -18,7 +18,7 @@ COMMENT=	Generic mail checking library
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
 		oop.4:${PORTSDIR}/devel/liboop
 
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:22 libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

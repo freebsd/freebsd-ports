@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--disable-jpeghdr --disable-matlab \
 CONFIGURE_ENV=	CPPFLAGS="${PFS_CPPFLAGS}" \
 		LDFLAGS="${PFS_LDFLAGS}" \
 		PKG_CONFIG_PATH="${LOCALBASE}/libdata/pkgconfig"
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig

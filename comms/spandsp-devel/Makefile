@@ -20,7 +20,7 @@ COMMENT=	A DSP library and software FAX machine
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/spandsp-${DISTVERSION:C/pre.*//}
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes

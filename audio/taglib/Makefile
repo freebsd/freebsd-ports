@@ -13,7 +13,7 @@ MASTER_SITES=	http://ktown.kde.org/~wheeler/files/src/
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Library for manipulating ID3 tags and Ogg comments
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

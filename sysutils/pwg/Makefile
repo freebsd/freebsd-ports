@@ -18,7 +18,7 @@ COMMENT=	A small tool to generate secure, random passwords
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 INSTALLS_ICONS=	yes
 
 post-patch:

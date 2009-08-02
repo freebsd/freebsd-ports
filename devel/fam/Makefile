@@ -17,7 +17,7 @@ COMMENT=	A file alteration monitor
 
 CFLAGS+=	-Wno-deprecated
 
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262 libtool:15
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262 libtool:22
 AUTOMAKE_ARGS=	-c -a
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget

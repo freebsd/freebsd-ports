@@ -8,7 +8,7 @@
 
 PORTNAME=	netdude
 PORTVERSION=	0.4.8a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
 
 LIB_DEPENDS=	netdude.0:${PORTSDIR}/net/libnetdude
 
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:22 libtool:22
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

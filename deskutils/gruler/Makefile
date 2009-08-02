@@ -15,7 +15,7 @@ MAINTAINER=	smyru@heron.pl
 COMMENT=	A simple customizable GTK screen ruler
 
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 

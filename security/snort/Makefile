@@ -58,7 +58,7 @@ LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
 .endif
 
 .if !defined(WITHOUT_DYNAMIC)
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--enable-dynamicplugin
 PLIST_SUB+=	DYNAMIC=""

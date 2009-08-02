@@ -16,7 +16,7 @@ COMMENT=	KDE/Qt log file viewer
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 

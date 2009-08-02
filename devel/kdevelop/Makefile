@@ -40,7 +40,7 @@ USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BDB=	yes
-USE_AUTOTOOLS=  libtool:15 autotools:run
+USE_AUTOTOOLS=  libtool:22 autotools:run
 _NO_KDE_FINAL=	yes
 CONFIGURE_ARGS+=--with-qtdoc-dir=${LOCALBASE}/share/doc/qt/html \
 		--with-db-includedir=${BDB_INCLUDE_DIR} \

@@ -24,7 +24,7 @@ LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_FORTRAN=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12
 USE_ICONV=	yes

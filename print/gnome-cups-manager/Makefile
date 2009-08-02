@@ -20,7 +20,7 @@ COMMENT=	Admistration tool for cups
 LIB_DEPENDS=	gnomecups-1.0.1:${PORTSDIR}/print/libgnomecups
 RUN_DEPENDS=	gnomesu:${PORTSDIR}/security/libgnomesu
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \

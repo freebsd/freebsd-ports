@@ -16,7 +16,7 @@ COMMENT=	Alarm timer plugin for beep-media-player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes

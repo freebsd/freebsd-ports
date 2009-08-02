@@ -17,7 +17,7 @@ EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_BZIP2=		yes
 USE_KDEBASE_VER=	3
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}

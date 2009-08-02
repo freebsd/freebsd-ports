@@ -23,7 +23,7 @@ LIB_DEPENDS=	mysqlclient.15:${PORTSDIR}/databases/mysql50-client \
 OPTIONS=	QUERY_BROWSER	"Build the MySQL Query Browser"	on \
 		ADMINISTRATOR	"Build the MySQL Administrator"	on
 
-USE_AUTOTOOLS=	autoconf:262 libtool:15 automake:110
+USE_AUTOTOOLS=	autoconf:262 libtool:22 automake:110
 USE_GNOME=	gnomelibs libglade2 gtkhtml3 libgnomeprint intlhack gtksourceview
 USE_GL=		gl glut
 USE_GMAKE=	yes

@@ -23,7 +23,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 USE_GNOME=	gnomehack gnometarget gtksharp10
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--enable-mono \
 		--disable-python \
 		--disable-gcj \

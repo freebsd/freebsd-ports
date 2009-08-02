@@ -16,7 +16,7 @@ MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A KDE3 graphical frontend for diff
 
 USE_KDEBASE_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	${PREFIX}/lib/kde3

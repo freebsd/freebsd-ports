@@ -25,7 +25,7 @@ LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 USE_SDL=	image mixer sdl
 USE_GMAKE=	yes
 USE_GL=		gl
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-debug

@@ -24,7 +24,7 @@ ORACLE_HOME?=	${LOCALBASE}/oracle8-client
 ORACLE_VER=	8i	# Client version
 
 ONLY_FOR_ARCHS=	i386
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 autoheader:262 libtool:15
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 autoheader:262 libtool:22
 USE_QT_VER=	4
 QT_COMPONENTS=	gui corelib sql xml network linguist moc_build uic_build rcc_build
 USE_GMAKE=	yes

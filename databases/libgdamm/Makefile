@@ -19,7 +19,7 @@ COMMENT=	C++ wrapper for libgda4 library
 LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgda4

@@ -6,15 +6,16 @@
 #
 
 PORTNAME?=	libtool
-PORTVERSION=	1.5.26
+PORTVERSION=	2.2.6a
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
 DISTNAME=	libtool-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT?=	Generic shared library support script
 
+WRKSRC=		${WRKDIR}/libtool-${PORTVERSION:S|a||}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --disable-ltdl-install
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"

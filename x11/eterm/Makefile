@@ -18,7 +18,7 @@ COMMENT?=	X11 terminal emulator based on rxvt/xterm
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 LIB_DEPENDS=	ast.2:${PORTSDIR}/devel/libast
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \

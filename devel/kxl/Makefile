@@ -15,7 +15,7 @@ DISTNAME=	KXL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual, sound library for games
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_XORG=	xpm x11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

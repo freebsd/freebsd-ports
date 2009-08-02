@@ -15,7 +15,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Canvas widget for GTK+
 
 USE_GNOME=	gtk20 gnomehack ltverhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 

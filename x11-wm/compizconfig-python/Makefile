@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack glib20
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	@${REINPLACE_CMD} -e \

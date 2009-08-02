@@ -14,7 +14,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library to provide abstract access to various archives
 
 USE_CMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 patch-autotools:

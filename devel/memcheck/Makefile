@@ -13,7 +13,7 @@ MASTER_SITES=	http://hald.dnsalias.net/projects/memcheck/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Memory Allocation Checker
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

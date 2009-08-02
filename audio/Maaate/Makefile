@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/M/m/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG audio analysis toolkit
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

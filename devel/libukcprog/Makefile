@@ -21,7 +21,7 @@ COMMENT=	Generally useful low level routines
 
 NO_CDROM=	License (see source) does not permit selling for profit
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 MAN3=		ukcprog.3
 DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes

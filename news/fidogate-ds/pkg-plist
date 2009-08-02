@@ -33,7 +33,6 @@ bin/runinc
 bin/senduu
 bin/senduumail
 bin/sumcrc
-lib/fidogate/libfidogate.a
 lib/fidogate/libfidogate.la
 lib/fidogate/libfidogate.so
 lib/fidogate/libfidogate.so.5

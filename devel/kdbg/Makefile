@@ -16,7 +16,7 @@ COMMENT=	A graphical user interface around gdb using KDE
 
 USE_KDELIBS_VER=	3
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--with-kde-version=3

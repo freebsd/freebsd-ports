@@ -7,6 +7,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -21,9 +22,10 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		net-1.1.3:${PORTSDIR}/net/libnet-devel \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		xml2:${PORTSDIR}/textproc/libxml2
-PATCH_DEPENDS=	${LOCALBASE}/bin/libtoolize:${PORTSDIR}/devel/libtool15
+PATCH_DEPENDS=	${LOCALBASE}/bin/libtoolize:${PORTSDIR}/devel/libtool22
 
-USE_AUTOTOOLS=	autoconf:262 autoheader:262 automake:110 aclocal:110 libtool:15
+USE_AUTOTOOLS=	autoconf:262 autoheader:262 automake:110 aclocal:110 \
+		libtool:22 libltdl:22
 AUTOMAKE_ARGS+=	--add-missing --include-deps --copy
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 
@@ -36,8 +38,8 @@ USE_PYTHON=	yes
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libnet113" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libnet113"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libnet113" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet113"
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--localstatedir=/var \
@@ -70,7 +72,7 @@ BATCH=NO
 
 .if defined(WITH_MGMT)
 BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
-RUN_DEPENDS+=		py-gtk2:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:${PORTSDIR}/x11-toolkits/py-gtk2
 PLIST_SUB+=		MGMT=""
 .else
 CONFIGURE_ARGS+=	--disable-mgmt

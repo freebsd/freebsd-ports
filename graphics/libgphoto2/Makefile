@@ -7,6 +7,7 @@
 
 PORTNAME=	libgphoto2
 PORTVERSION=	2.4.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -19,7 +20,7 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget pkgconfig ltverhack
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15 libltdl:15
+USE_AUTOTOOLS=	libtool:22 libltdl:22
 LIBTOOLFILES=	configure libgphoto2_port/configure
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" LIBLTDL="-L${LOCALBASE}/lib -lltdl"

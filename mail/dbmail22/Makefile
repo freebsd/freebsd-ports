@@ -24,7 +24,7 @@ OPTIONS=	MYSQL		"Build with MySQL support" on \
 		SIEVE		"Build w. support for Sieve mail sorting language" off \
 		LDAP		"Build with support for LDAP authentication" off
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	YES
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh dbmail-timsieved.sh

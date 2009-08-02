@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	automake:110 aclocal:110 libtool:15
+USE_AUTOTOOLS=	automake:110 aclocal:110 libtool:22
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lpthread"

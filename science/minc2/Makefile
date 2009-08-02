@@ -28,7 +28,7 @@ COMMENT=	Medical Imaging NetCDF
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
 		hdf5.0:${PORTSDIR}/science/hdf5
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"

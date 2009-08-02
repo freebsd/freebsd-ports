@@ -20,7 +20,7 @@ MAKE_ENV=	PERL=${PERL}
 CONFLICTS=	rrdtool-1.2*
 LATEST_LINK=	rrdtool10
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-local-zlib \
 		--program-transform-name=''

@@ -16,7 +16,7 @@ COMMENT=	An XSLT and XIncludes Filter module for Apache 2.0
 MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	2.0
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 HAS_CONFIGURE=	yes
 USE_GNOME=	libxslt
 

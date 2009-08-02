@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_SDL=	image sdl
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes

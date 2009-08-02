@@ -7,7 +7,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math science
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		gd.4:${PORTSDIR}/graphics/gd \
 		qhull.5:${PORTSDIR}/math/qhull
 
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:22
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

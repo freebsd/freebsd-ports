@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig glib20 gnomehack
 USE_LDCONFIG=	yes

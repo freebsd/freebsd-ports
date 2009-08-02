@@ -25,7 +25,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_XORG=	xaw xft xt
 USE_GNOME=	gnometarget libxml2 pkgconfig
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 USE_LDCONFIG=	yes

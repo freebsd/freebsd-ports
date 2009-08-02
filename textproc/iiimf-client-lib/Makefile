@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/lib/iiimcf

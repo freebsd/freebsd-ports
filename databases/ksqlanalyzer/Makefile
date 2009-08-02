@@ -16,7 +16,7 @@ COMMENT=	MSSQL database client for KDE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 post-patch:

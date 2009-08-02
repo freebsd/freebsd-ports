@@ -17,7 +17,7 @@ COMMENT=	TI calculator file types library
 
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

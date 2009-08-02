@@ -14,7 +14,7 @@ MASTER_SITES=	http://software.frodo.looijaard.name/psiconv/files/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A conversion utility to convert Psion 5(MX) files into other formats
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

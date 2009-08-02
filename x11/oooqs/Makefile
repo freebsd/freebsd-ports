@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.berlios.de/segfaultskde/
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Quick launcher for Open Office
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 

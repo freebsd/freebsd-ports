@@ -15,7 +15,7 @@ COMMENT=	X11 Xinerama library
 
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto xineramaproto:both
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 MAN3=		Xinerama.3 \
 		XineramaQueryExtension.3 \

@@ -26,7 +26,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 
 USE_GNOME=	gnomehack glib20 libxml2 ltverhack referencehack gconf2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc

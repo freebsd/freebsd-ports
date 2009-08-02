@@ -43,7 +43,7 @@ WRKSRC=		${WRKDIR}/plt-${PORTVERSION}/src
 USE_ICONV=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15:env
+USE_AUTOTOOLS=	libtool:22:env
 
 MAN1=		drscheme.1 help-desk.1 mred.1 mzscheme.1 tex2page.1
 

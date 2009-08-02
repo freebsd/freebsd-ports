@@ -18,7 +18,7 @@ COMMENT=	Library for delta compression of streams
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -17,7 +17,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		hal.1:${PORTSDIR}/sysutils/hal
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 USE_GNOME=	gnomehack gnometarget
 CONFIGURE_ARGS+=	--with-libiconv-prefix="${LOCALBASE}" \

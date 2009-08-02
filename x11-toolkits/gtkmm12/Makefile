@@ -18,7 +18,7 @@ COMMENT=	C++ wrapper for gtk, a x11 graphics library
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

@@ -17,7 +17,7 @@ LIB_DEPENDS=	hamlib.2:${PORTSDIR}/comms/hamlib
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:22:env
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

@@ -16,7 +16,7 @@ COMMENT=	A mesh and field I/O library and scientific database
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"

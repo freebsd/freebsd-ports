@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.smbolton.com/linux/
 MAINTAINER=	freebsd-ports@coreland.ath.cx
 COMMENT=	Alsa compatibility library to build DSSI
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

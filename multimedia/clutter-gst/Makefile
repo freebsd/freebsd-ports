@@ -17,7 +17,7 @@ COMMENT=	Clutter GStreamer integration
 LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack ltverhack gnomeprefix
 USE_GSTREAMER=	yes
 USE_XORG=	xp x11

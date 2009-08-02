@@ -44,7 +44,7 @@ OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		WALLPAPER "set your image as wallpaper" on
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes

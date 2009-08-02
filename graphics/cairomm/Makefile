@@ -17,7 +17,7 @@ COMMENT=	C++ interface to cairo
 LIB_DEPENDS=	xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget ltverhack

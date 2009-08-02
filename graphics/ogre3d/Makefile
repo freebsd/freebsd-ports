@@ -30,7 +30,7 @@ OPTIONS=	GTK	"Use GTK instead of Xt gui"	off \
 		DEMOS	"Build OGRE demos"		off
 
 GNU_CONFIGURE=	YES
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USE_GNOME=	gnomehack

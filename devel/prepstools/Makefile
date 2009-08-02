@@ -16,7 +16,7 @@ COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${DEFAULT_PGSQL_VER}-server
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gconf2 glib20 libgnomeui

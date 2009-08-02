@@ -21,7 +21,7 @@ CONFLICTS=	kile-i18n-[0-9]*
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 OPTIONS=	KPDF "Use KPDF and KDVI for viewing" on

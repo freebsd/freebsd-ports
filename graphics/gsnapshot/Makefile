@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gould
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk+ based screen capture
 
-USE_AUTOTOOLS=	automake:15:env libtool:15
+USE_AUTOTOOLS=	automake:15:env libtool:22
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_XORG=	x11

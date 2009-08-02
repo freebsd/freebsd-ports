@@ -15,7 +15,7 @@ MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A two window file-manager for KDE, like midnight or norton commander
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 

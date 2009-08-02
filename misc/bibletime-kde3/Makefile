@@ -24,7 +24,7 @@ CONFIGURE_ARGS= --with-sword-dir=${LOCALBASE} --with-clucene-dir=${LOCALBASE}
 PORTSCOUT=	ignore:1
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

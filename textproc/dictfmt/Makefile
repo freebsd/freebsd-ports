@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-cflags="${CFLAGS}"
 ALL_TARGET=	dictfmt
 INSTALL_TARGET=	install.dictfmt
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 MAN1=		dictfmt.1 dictfmt_index2suffix.1 dictfmt_index2word.1 \
 		dictunformat.1

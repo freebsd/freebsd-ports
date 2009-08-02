@@ -24,7 +24,7 @@ LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp \
 		zrtpcpp.0:${PORTSDIR}/devel/libzrtpcpp
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BISON=	build
 USE_XORG=	xext
 USE_GMAKE=	yes

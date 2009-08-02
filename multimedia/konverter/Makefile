@@ -19,7 +19,7 @@ BUILD_DEPENDS=	avimerge:${PORTSDIR}/multimedia/transcode \
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure

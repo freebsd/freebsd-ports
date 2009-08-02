@@ -16,7 +16,7 @@ COMMENT=	A simple turing machine simulator for GNOME 2
 
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 INSTALLS_OMF=	yes

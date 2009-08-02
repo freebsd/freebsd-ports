@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A free MPEG1 video player library with sound support
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

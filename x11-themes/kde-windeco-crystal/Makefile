@@ -18,7 +18,7 @@ COMMENT=	Transparent KDE window decoration
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_LATEST_LINK=	yes

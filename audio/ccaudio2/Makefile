@@ -17,7 +17,7 @@ LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp
 
 CONFLICTS=	ccaudio-[0-9]*
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnometarget gnomehack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

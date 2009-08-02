@@ -15,7 +15,7 @@ COMMENT=	Compute molecular dynamics
 
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --program-suffix="" --enable-shared

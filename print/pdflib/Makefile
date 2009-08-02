@@ -18,7 +18,7 @@ RESTRICTED=	many odd restrictions on usage and distribution
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-java=no --with-py=no --with-ruby=no --with-tcl=no
 
 .if defined(WITH_PERL)

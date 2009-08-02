@@ -21,7 +21,7 @@ CONFLICTS=	simicq-[0-9]* sim-im-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_QT_VER=	3
 USE_XORG=	x11 xext xscrnsaver
 USE_OPENSSL=	yes

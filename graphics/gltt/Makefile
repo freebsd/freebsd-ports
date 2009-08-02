@@ -14,7 +14,7 @@ MASTER_SITES=	http://gltt.sourceforge.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType fonts rendering using OpenGL
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GL=		gl glut
 USE_FREETYPE=	yes
 USE_GMAKE=	yes

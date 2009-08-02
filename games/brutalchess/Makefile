@@ -22,7 +22,7 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XORG=		x11 xext xt xmu xi
 
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 
 USE_GL=			yes
 USE_SDL=		sdl image

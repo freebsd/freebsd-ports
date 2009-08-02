@@ -16,7 +16,7 @@ COMMENT=	A language for the Finite Element Method
 
 USE_XORG=	ice sm x11 xt
 USE_GNOME=	gnometarget
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
 MAN1=		freefem.1

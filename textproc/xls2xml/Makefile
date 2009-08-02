@@ -19,7 +19,7 @@ COMMENT=	A utility for converting MS Excel files to XML
 LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole \
 		xml.5:${PORTSDIR}/textproc/libxml
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

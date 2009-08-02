@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.remlab.net/files/libident/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small library to interface the ident protocol server (rfc1413)
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -20,7 +20,7 @@ COMMENT=	A picture viewer designed to run under KDE 3.x
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_KDEBASE_VER=	3
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 USE_LDCONFIG=		yes
 CONFIGURE_ARGS+=	--disable-pgsql
 

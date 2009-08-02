@@ -17,7 +17,7 @@ COMMENT=	An OpenGL widget for the GTK+ GUI toolkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12 lthack
 GNU_CONFIGURE=	yes

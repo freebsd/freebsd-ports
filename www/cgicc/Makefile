@@ -15,7 +15,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A C++ class library for writing CGI applications
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}

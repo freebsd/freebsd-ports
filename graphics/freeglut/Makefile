@@ -16,7 +16,7 @@ COMMENT=		An alternative to the OpenGL Utility Toolkit (GLUT) library
 
 CONFLICTS=		libglut-[0-9]*
 
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 USE_XORG=		ice

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/mysql${MYSQL_VER}-server:bui
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_MYSQL=	yes
 WANT_MYSQL_VER?=	51
 

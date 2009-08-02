@@ -36,7 +36,7 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 
 USE_FORTRAN=	yes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 .if defined(WITH_ATLAS)
 BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas -latlas

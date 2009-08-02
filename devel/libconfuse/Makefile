@@ -20,7 +20,7 @@ LIB_DEPENDS+=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
 .endif
 
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig
 CONFIGURE_ARGS+=	--disable-nls

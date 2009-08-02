@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-qt
 COMMENT=	QT modules of uim input method
 
 USE_QT_VER=	3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 
 LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
 

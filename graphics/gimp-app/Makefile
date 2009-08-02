@@ -43,7 +43,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XORG=	xpm xmu xext
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME+=	gnomehack intltool intlhack gtk20 libartlgpl2 ltverhack \
 		desktopfileutils
 USE_LDCONFIG=	yes

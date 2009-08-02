@@ -22,7 +22,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 
 USE_GNOME=	gnomehack gtk20 libxml2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 

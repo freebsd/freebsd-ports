@@ -18,7 +18,7 @@ COMMENT=	Clone of Mdir, mc-style terminal file manager
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

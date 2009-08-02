@@ -21,7 +21,7 @@ LIB_DEPENDS=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk \
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

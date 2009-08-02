@@ -22,7 +22,7 @@ LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtkmm12 \
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
 		--with-gtkmm-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="`${LOCALBASE}/bin/sigc-config --cflags`"

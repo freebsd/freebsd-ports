@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262:env automake:110:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:262:env automake:110:env libtool:22:env
 CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

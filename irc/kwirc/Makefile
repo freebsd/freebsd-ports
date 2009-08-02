@@ -16,7 +16,7 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	IRC client for KDE
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 

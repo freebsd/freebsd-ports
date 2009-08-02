@@ -20,7 +20,7 @@ COMMENT=	A configuration database system for GNOME
 
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget glib12 gtk12 oaf libxml orbit

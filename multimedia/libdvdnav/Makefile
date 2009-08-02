@@ -23,7 +23,7 @@ CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-transform-name=''
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15 autoconf:262 automake:16
+USE_AUTOTOOLS=	libtool:22 autoconf:262 automake:16
 
 post-patch:
 	${REINPLACE_CMD} -e \

@@ -16,7 +16,7 @@ MAINTAINER=	dudu@dudu.ro
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
 USE_MYSQL=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --enable-thread-check
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes

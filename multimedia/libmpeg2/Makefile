@@ -14,7 +14,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 
 USE_GNOME=	gnometarget ltverhack
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

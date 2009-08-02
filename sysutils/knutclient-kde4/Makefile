@@ -19,7 +19,7 @@ BUILD_DEPENDS=	automake>=0:${PORTSDIR}/devel/automake19
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-fast-perl --enable-mt --program-transform-name=''
 
 post-patch:

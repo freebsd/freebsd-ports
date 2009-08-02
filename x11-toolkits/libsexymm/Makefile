@@ -17,7 +17,7 @@ COMMENT=	C++ bindings for libsexy
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		sexy:${PORTSDIR}/x11-toolkits/libsexy
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

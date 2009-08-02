@@ -20,7 +20,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		expat.6:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
 .if defined(WITH_MYSQL)
 # To quote the author:

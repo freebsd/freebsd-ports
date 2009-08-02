@@ -17,7 +17,7 @@ COMMENT=	A library that allows application developers to connect to PG
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl:install
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

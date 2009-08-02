@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Evolutionary Computation Framework
 
 CONFLICTS=	beagle-[0-9]*
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--enable-optimization --with-zlib=/usr
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes

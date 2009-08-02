@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui evolutiondataserver gnomemenus gnomedesktop
 
-USE_AUTOTOOLS=	autoconf:262 autoheader:262 automake:19 aclocal:19 libtool:15
+USE_AUTOTOOLS=	autoconf:262 autoheader:262 automake:19 aclocal:19 libtool:22
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-a
 LIBTOOLFILES=

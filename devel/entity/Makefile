@@ -21,7 +21,7 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-tcl=no
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_LDCONFIG=	${PREFIX}/lib/entity/clib

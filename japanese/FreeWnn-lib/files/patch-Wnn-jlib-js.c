@@ -3,7 +3,7 @@ Index: Wnn/jlib/js.c
 RCS file: /home/cvs/private/hrs/freewnn/Wnn/jlib/js.c,v
 retrieving revision 1.1.1.1
 retrieving revision 1.2
-diff -d -u -I\$FreeBSD$ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 -r1.2
+diff -d -u -I\$FreeBSD$ -w -r1.1.1.1 -r1.2
 --- Wnn/jlib/js.c	20 Dec 2008 07:13:30 -0000	1.1.1.1
 +++ Wnn/jlib/js.c	2 Jan 2009 21:55:55 -0000	1.2
 @@ -132,9 +132,7 @@
