@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	libwbxml
 DISTNAME=	libwbxml-${PORTVERSION}
 
-MAINTAINER=	czauner+ports@onlineloop.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library & tools for converting wbxml<->xml
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
