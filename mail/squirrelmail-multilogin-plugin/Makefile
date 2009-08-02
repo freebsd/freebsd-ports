@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	multilogin
-PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-
@@ -19,8 +18,6 @@ COMMENT=	Allows manual selection of login server on login page
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
 		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
-
-FORBIDDEN=	This plugin has been compromised
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
