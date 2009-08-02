@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}docs-20090121.zip
 
-MAINTAINER=	yukinopo@livedoor.com
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A PHP class for creating scientific and business charts
 
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
