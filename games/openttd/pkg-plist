@@ -40,6 +40,7 @@ bin/openttd
 %%DATADIR%%/lang/portuguese.lng
 %%DATADIR%%/lang/romanian.lng
 %%DATADIR%%/lang/russian.lng
+%%DATADIR%%/lang/serbian.lng
 %%DATADIR%%/lang/simplified_chinese.lng
 %%DATADIR%%/lang/slovak.lng
 %%DATADIR%%/lang/slovenian.lng
