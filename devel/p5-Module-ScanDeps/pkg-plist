@@ -1,5 +1,6 @@
 bin/scandeps.pl
 %%SITE_PERL%%/Module/ScanDeps.pm
+%%SITE_PERL%%/Module/ScanDeps/Cache.pm
 %%SITE_PERL%%/Module/ScanDeps/DataFeed.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/ScanDeps/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/ScanDeps
