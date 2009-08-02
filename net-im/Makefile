@@ -104,6 +104,7 @@
     SUBDIR += p5-Net-XMPP
     SUBDIR += p5-Net-XMPP2
     SUBDIR += p5-POE-Component-Client-MSN
+    SUBDIR += papyon
     SUBDIR += pebrot
     SUBDIR += pidgin
     SUBDIR += pidgin-birthday_reminder
