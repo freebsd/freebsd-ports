@@ -29,6 +29,7 @@ OPTIONS=	SSE2 "Use SSE2-optimized code" Off
 
 .if defined(WITH_SSE2)
 CONFIGURE_ARGS+=	--enable-sse2
+CFLAGS+=		-msse2
 .else
 CONFIGURE_ARGS+=	--disable-sse2
 .endif
