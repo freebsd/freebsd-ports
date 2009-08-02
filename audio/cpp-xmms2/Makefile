@@ -9,7 +9,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 PKGNAMEPREFIX=	cpp-
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Bindings for XMMS2
 
 LIB_DEPENDS+=	boost_signals.4:${PORTSDIR}/devel/boost-libs \

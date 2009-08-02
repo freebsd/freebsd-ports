@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/Python/netstring/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module implenting the netstring protocol
 
 USE_PYTHON=	yes

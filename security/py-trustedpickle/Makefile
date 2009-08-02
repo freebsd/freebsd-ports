@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TrustedPickle
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrustedPickle is a Python (de)Pickler with a way to verify the data
 
 USE_PYTHON=	yes

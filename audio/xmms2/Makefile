@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 PORTREVISION?=	2
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 
 .if !defined(XMMS2_SLAVE)

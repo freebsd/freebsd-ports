@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sidplay2
 DISTNAME=	sidplay-libs-${PORTVERSION}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 
 USE_GNOME=	gnomehack gnometarget pkgconfig

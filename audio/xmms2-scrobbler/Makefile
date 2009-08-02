@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://exodus.xmms.se/~tilman/
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A last.fm submission client for XMMS2
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient_ext.so:${PORTSDIR}/audio/ruby-xmms2 \

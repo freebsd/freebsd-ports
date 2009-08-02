@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://5ko.free.fr/dl/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end shell script to convert DVD image, device, or VIDEO_TS to mkv with xvid and ogg or mp3 audio
 
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \

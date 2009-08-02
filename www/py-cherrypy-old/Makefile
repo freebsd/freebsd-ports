@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-old
 DISTNAME=	CherryPy-${PORTVERSION:C/\.b$/beta/}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pythonic, object-oriented web development framework
 
 USE_PYTHON=	2.3+

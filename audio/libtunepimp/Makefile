@@ -13,7 +13,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.au.musicbrainz.org/pub/musicbrainz/
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client library for musicbrainz
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \

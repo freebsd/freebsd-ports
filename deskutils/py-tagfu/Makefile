@@ -10,7 +10,7 @@ CATEGORIES=	deskutils devel python
 MASTER_SITES=	http://www.geekfire.com/~alex/tagfu/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for tagging urls with tags or metadata
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite22

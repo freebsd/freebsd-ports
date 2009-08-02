@@ -10,7 +10,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/w/wsgiref/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backport of Python 2.5's wsgiref module
 
 USE_ZIP=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=		CHEESESHOP
 MASTER_SITE_SUBDIR=	source/M/Markdown
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		alexbl@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Text markup to HTML conversion engine for Python
 
 USE_ZIP=		yes

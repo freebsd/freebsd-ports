@@ -11,7 +11,7 @@ MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for libtunepimp
 
 BUILD_DEPENDS=	${PYCTYPES}
