@@ -27,4 +27,14 @@ USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig gnomehack ltverhack
 USE_GMAKE=	yes
 
-.include <bsd.port.mk>
+OPTIONS=	SIMD "Use cpu-specific optimizations if available" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SIMD)
+CONFIGURE_ARGS+=--enable-mmx \
+		--enable-sse \
+		--enable-altivec
+.endif
+
+.include <bsd.port.post.mk>
