@@ -12,7 +12,7 @@ MASTER_SITES=http://pablotron.org/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	boumenot@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of enhancements of irb
 
 DOCS_EN=	README

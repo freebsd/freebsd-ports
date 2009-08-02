@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${RUBY_DBI_DISTNAME}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	boumenot@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQLite driver for DBI-for-Ruby
 
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2

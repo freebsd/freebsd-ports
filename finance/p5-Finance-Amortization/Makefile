@@ -11,7 +11,7 @@ CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	boumenot@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple amortization schedules
 
 PERL_CONFIGURE=	yes

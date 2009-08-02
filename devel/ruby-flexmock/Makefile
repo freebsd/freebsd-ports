@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	boumenot@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple mock object for Ruby
 
 USE_RUBY=	yes
