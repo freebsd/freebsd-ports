@@ -6,6 +6,7 @@ bin/git-receive-pack
 bin/git-upload-archive
 %%CVS%%bin/git-cvsserver
 bin/git-shell
+libexec/git-core/git
 libexec/git-core/git-add
 libexec/git-core/git-add--interactive
 libexec/git-core/git-am
@@ -699,6 +700,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.3.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.3.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.3.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.3.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.4.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
