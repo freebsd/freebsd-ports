@@ -16,8 +16,8 @@ Andrew Bartlett
 
 diff --git a/source4/scripting/python/samba/ms_schema.py b/source4/scripting/python/samba/ms_schema.py
 index 2e8050e..a0abc33 100644
---- a/source4/scripting/python/samba/ms_schema.py
-+++ b/source4/scripting/python/samba/ms_schema.py
+--- source4/scripting/python/samba/ms_schema.py
++++ source4/scripting/python/samba/ms_schema.py
 @@ -226,6 +226,7 @@ def __transform_entry(entry, objectClass):
      assert(cn)
      entry.insert(0, ["dn", "CN=%s,${SCHEMADN}" % cn])
