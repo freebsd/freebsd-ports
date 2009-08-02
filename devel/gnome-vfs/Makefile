@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
 USE_GMAKE=	yes
@@ -33,7 +32,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-openssl \
 		--disable-gnutls \
 		--disable-howl \
-		--enable-hal \
 		--with-hal-mount=/sbin/mount \
 		--with-hal-umount=/sbin/umount
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DPTHREAD_LIB=\"${PTHREAD_LIBS}\""
@@ -47,7 +45,8 @@ GCONF_SCHEMAS=	desktop_default_applications.schemas \
 		system_http_proxy.schemas system_smb.schemas
 
 OPTIONS=	SAMBA "Enable SMB volume support" on \
-		MDNS "Enable Bonjour/Rendezvous support" on
+		MDNS "Enable Bonjour/Rendezvous support" on \
+		HAL "Enable HAL support" on
 
 .include <bsd.port.pre.mk>
 
@@ -57,6 +56,13 @@ USE_FAM=	yes
 
 .if exists(${LOCALBASE}/lib/libkrb5.so)
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
+.endif
+
+.if !defined(WITHOUT_HAL)
+CONFIGURE_ARGS+=--enable-hal
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+.else
+CONFIGURE_ARGS+=--disable-hal
 .endif
 
 .if !defined(WITHOUT_SAMBA)
