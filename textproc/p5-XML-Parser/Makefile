@@ -7,7 +7,7 @@
 
 PORTNAME=	XML-Parser
 PORTVERSION=	2.36
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -49,9 +49,25 @@ post-patch:
 		${CONV_ENC} shift_jis ${XMLPARSER_SJIS}.enc > shift_jis.enc
 	@${ECHO_CMD} Parser/Encodings/Shift_JIS.enc >> ${WRKSRC}/MANIFEST
 .endif
+	@${CP} ${FILESDIR}/*.enc ${WRKSRC}/Parser/Encodings/
+.for e in 1 6 10 11 13 14 15
+	@${ECHO_CMD} Parser/Encodings/iso-8859-${e}.enc >> ${WRKSRC}/MANIFEST
+.endfor
 
 post-configure:
 	@${PERL} -i -pe 's|^(CC = ).*|$$1 ${CC}|;' \
 		-e 's|^(CCFLAGS = ).*|$$1 ${CFLAGS}|' ${WRKSRC}/Expat/Makefile
+
+XE=	${.CURDIR}/../p5-XML-Encoding
+extract-encodings:
+	@cd ${XE}; \
+	${MAKE} patch; \
+	${CHMOD} og+rX `make -VWRKSRC`
+
+build-encodings:
+.for e in 1 6 10 11 13 14 15
+	@cd `cd ${XE}; ${MAKE} -VWRKSRC`; \
+	compile_encoding -o ${FILESDIR}/iso-8859-${e}.enc maps/iso-8859-${e}.xml
+.endfor
 
 .include <bsd.port.mk>
