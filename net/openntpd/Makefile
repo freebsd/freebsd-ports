@@ -6,27 +6,39 @@
 #
 
 PORTNAME=	openntpd
-PORTVERSION=	3.9p1
-PORTREVISION=	2
+PORTVERSION=	4.4
 PORTEPOCH=	2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenNTPD/ \
-		ftp://ftp.kd85.com/pub/OpenBSD/OpenNTPD/ \
-	 	ftp://ftp.jp.openbsd.org/pub/OpenBSD/OpenNTPD/
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
+MASTER_SITE_SUBDIR=	OpenNTPD
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	OpenBSD's Network Time Protocol daemon
 
 USE_RC_SUBR=	openntpd
-GNU_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/ntpd
 MAKE_JOBS_SAFE=	yes
 
 MAN5=		ntpd.conf.5
 MAN8=		ntpd.8
 
+.include <bsd.port.pre.mk>
+
+# requires adjtime(NULL, &olddelta) by unprivileged user
+.if ${OSVERSION} < 700000
+IGNORE=		is unsupported prior to FreeBSD 7.0
+.endif
+
+post-extract:
+.for i in compat.h adjfreq.c arc4random.c
+	@${CP} ${FILESDIR}/$i ${WRKSRC}
+.endfor
+
 pre-build:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
-		${WRKSRC}/ntpd.conf.5 ${WRKSRC}/ntpd.8
+	    ${WRKSRC}/ntpd.h ${WRKSRC}/ntpd.conf.5 ${WRKSRC}/ntpd.8
 
 do-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -34,9 +46,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/ntpd.conf.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/ntpd.8 ${PREFIX}/man/man8
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/ntpd.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/ntpd.conf ${EXAMPLESDIR}
 	@if [ ! -f ${PREFIX}/etc/ntpd.conf ]; then \
-		${CP} -p ${EXAMPLESDIR}/ntpd.conf ${PREFIX}/etc; \
+		${CP} ${EXAMPLESDIR}/ntpd.conf ${PREFIX}/etc; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

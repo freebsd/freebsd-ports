@@ -2,5 +2,5 @@
 sbin/ntpd
 @unexec if cmp -s %D/etc/ntpd.conf %D/%%EXAMPLESDIR%%/ntpd.conf; then rm -f %D/etc/ntpd.conf; fi
 %%EXAMPLESDIR%%/ntpd.conf
-@exec if [ ! -f %D/etc/ntpd.conf ]; then cp -p %D/%F %D/etc; fi
+@exec if [ ! -f %D/etc/ntpd.conf ]; then cp %D/%F %D/etc; fi
 @dirrm %%EXAMPLESDIR%%
