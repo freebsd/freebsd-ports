@@ -39,6 +39,8 @@ nvidia.ko
 %%LINUX%%usr/lib/libGL.so.1
 %%LINUX%%usr/lib/libGLcore.so.%%SHLIB_VERSION%%
 %%LINUX%%usr/lib/libGLcore.so.1
+%%LINUX%%usr/lib/libcuda.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libcuda.so.1
 %%LINUX%%usr/lib/libnvidia-tls.so.%%SHLIB_VERSION%%
 %%LINUX%%usr/lib/libnvidia-tls.so.1
 %%LINUX%%usr/lib/libvdpau.so.%%SHLIB_VERSION%%
