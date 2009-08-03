@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
 DISTNAME=	idzebra-${PORTVERSION}
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z39.50/SR server software
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
