@@ -7,6 +7,7 @@
 
 PORTNAME=	TurboGears
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://files.turbogears.org/eggs/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy-old>=2.3:${PORTSDIR}/www/py-cherryp
 		${PYTHON_PKGNAMEPREFIX}simplejson>=1.4:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}TurboCheetah>=1.0:${PORTSDIR}/devel/py-turbocheetah \
 		${PYTHON_PKGNAMEPREFIX}TurboKid>=1.0.4:${PORTSDIR}/devel/py-turbokid \
-		${PYTHON_PKGNAMEPREFIX}TurboJson>=1.1.4:${PORTSDIR}/devel/py-turbojson
+		${PYTHON_PKGNAMEPREFIX}TurboJson>=1.1.4:${PORTSDIR}/devel/py-turbojson11
 
 USE_GETTEXT=	yes
 USE_PYTHON=	2.4+
