@@ -22,6 +22,9 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/x11/xloadimage \
 		curl:${PORTSDIR}/ftp/curl
 
+DEPRECATED=	No tarball for new versions, sheep server is gone
+EXPIRATION_DATE=	2009-10-01
+
 MAKE_JOBS_SAFE=	yes
 
 USE_SDL=	sdl
