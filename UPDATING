@@ -17,8 +17,8 @@ upgrades.
   Portmaster:
   -----------
 
-  portmaster -o devel/libtool22 libtool-1.5\*
-  portmaster -o devel/libltdl22 libltdl-1.5\*
+  portmaster -o devel/libtool22 devel/libtool15
+  portmaster -o devel/libltdl22 devel/libltdl15
 
   Portupgrade:
   ------------
