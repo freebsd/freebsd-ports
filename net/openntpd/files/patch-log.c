@@ -1,9 +1,7 @@
-
 $FreeBSD$
-
---- log.c.orig
-+++ log.c
-@@ -28,6 +28,10 @@
+--- log.c.orig	2007-08-22 23:04:30.000000000 +0200
++++ log.c	2009-08-01 22:08:01.000000000 +0200
+@@ -26,6 +26,10 @@
  
  #include "ntpd.h"
  
@@ -12,9 +10,9 @@ $FreeBSD$
 +#endif
 +
  int	 debug;
+ extern int debugsyslog;
  
- void	 logit(int, const char *, ...);
-@@ -40,7 +44,7 @@
+@@ -39,7 +43,7 @@ log_init(int n_debug)
  	debug = n_debug;
  
  	if (!debug)

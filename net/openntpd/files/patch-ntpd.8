@@ -1,55 +1,70 @@
-
 $FreeBSD$
-
---- ntpd.8.orig
-+++ ntpd.8
-@@ -53,6 +53,20 @@
- .Xr adjtime 2
- will be logged.
- .Pp
-+.Nm
-+is usually started at boot time, and can be enabled by
-+setting the following in
-+.Pa /etc/rc.conf :
-+.Pp
-+.Dl openntpd_enable=\&"YES\&"
-+.Pp
-+See
-+.Xr rc 8
-+and
-+.Xr rc.conf 5
-+for more information on the boot process
-+and enabling daemons.
-+.Pp
- When
+--- ntpd.8.orig	2009-08-01 21:32:41.000000000 +0200
++++ ntpd.8	2009-08-01 21:40:29.000000000 +0200
+@@ -29,8 +29,7 @@
+ .Sh DESCRIPTION
+ The
  .Nm
- starts up, it reads settings from a configuration file,
-@@ -72,7 +86,7 @@
+-daemon synchronizes the local clock to one or more remote NTP servers
+-or local timedelta sensors.
++daemon synchronizes the local clock to one or more remote NTP servers.
+ .Nm
+ can also act as an NTP server itself,
+ redistributing the local time.
+@@ -52,7 +51,7 @@ Use
  .Ar file
  as the configuration file,
  instead of the default
 -.Pa /etc/ntpd.conf .
 +.Pa %%PREFIX%%/etc/ntpd.conf .
- .It Fl S
- Do not set the time immediately at startup.
- This is the default.
-@@ -86,8 +100,8 @@
- .Nm .
- .El
+ .It Fl n
+ Configtest mode.
+ Only check the configuration file for validity.
+@@ -91,19 +90,19 @@ will be logged.
+ After the local clock is synchronized,
+ .Nm
+ adjusts the clock frequency using the
+-.Xr adjfreq 2
++.Xr ntp_adjtime 2
+ system call to compensate for systematic drift.
+ .Pp
+ .Nm
+ is usually started at boot time, and can be enabled by
+ setting
+-.Va ntpd_flags
++.Va openntpd_enable
+ in
+-.Pa /etc/rc.conf.local .
++.Pa /etc/rc.conf .
+ See
+ .Xr rc 8
+ and
+-.Xr rc.conf 8
++.Xr rc.conf 5
+ for more information on the boot process
+ and enabling daemons.
+ .Pp
+@@ -123,19 +122,19 @@ receives a
+ signal, it writes its peer and sensor status to
+ .Xr syslog 3 .
  .Sh FILES
--.Bl -tag -width "/etc/ntpd.confXXX" -compact
+-.Bl -tag -width "/var/db/ntpd.driftXXX" -compact
 -.It Pa /etc/ntpd.conf
 +.Bl -tag -width "%%PREFIX%%/etc/ntpd.confXXX" -compact
 +.It Pa %%PREFIX%%/etc/ntpd.conf
- default
- .Nm
- configuration file
-@@ -96,6 +110,8 @@
+ Default configuration file.
+ .It Pa /var/db/ntpd.drift
+ Drift file.
+ .El
+ .Sh SEE ALSO
  .Xr date 1 ,
+-.Xr adjfreq 2 ,
  .Xr adjtime 2 ,
++.Xr ntp_adjtime 2 ,
  .Xr ntpd.conf 5 ,
 +.Xr rc.conf 5 ,
-+.Xr rc 8 ,
+ .Xr rc 8 ,
+-.Xr rc.conf 8 ,
  .Xr rdate 8 ,
  .Xr timed 8
  .Rs

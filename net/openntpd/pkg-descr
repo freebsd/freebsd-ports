@@ -1,4 +1,4 @@
-OpenBSD's ntpd, portable version.
+OpenBSD's ntpd.
 
 The ntpd daemon implements the Simple Network Time Protocol version 4 as
 described in RFC 2030 and the Network Time Protocol version 3 as de-
