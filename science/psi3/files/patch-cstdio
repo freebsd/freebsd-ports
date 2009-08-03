@@ -1,0 +1,72 @@
+--- src/lib/libpsio/psio.hpp~	2008-11-25 02:50:44.000000000 +0900
++++ src/lib/libpsio/psio.hpp	2009-08-03 19:03:57.000000000 +0900
+@@ -3,7 +3,7 @@
+ 
+ #include <string>
+ #include <map>
+-
++#include <cstdio>
+ #include <libpsio/config.h>
+ 
+ namespace psi {
+--- src/lib/libutil/libutil.h~	2008-12-09 05:23:16.000000000 +0900
++++ src/lib/libutil/libutil.h	2009-08-03 19:07:37.000000000 +0900
+@@ -4,6 +4,7 @@
+ #include <vector>
+ #include <iostream>
+ #include <sstream>
++#include <cstdio>
+ #include <sys/time.h>
+ 
+ extern FILE *outfile;
+--- src/bin/mcscf/block_matrix.h~	2008-12-09 05:23:16.000000000 +0900
++++ src/bin/mcscf/block_matrix.h	2009-08-03 19:37:15.000000000 +0900
+@@ -4,7 +4,7 @@
+ #include "block_vector.h"
+ #include "matrix_base.h"
+ #include <string>
+-
++#include <cstdio>
+ extern FILE* outfile;
+ 
+ namespace psi{ namespace mcscf{
+--- src/bin/mcscf/sblock_vector.cc~	2008-12-09 05:23:16.000000000 +0900
++++ src/bin/mcscf/sblock_vector.cc	2009-08-03 20:00:47.000000000 +0900
+@@ -2,6 +2,7 @@
+ #include <psifiles.h>
+ 
+ #include "sblock_vector.h"
++#include <cstdio>
+ 
+ extern FILE* outfile;
+ 
+--- src/bin/mcscf/block_vector.cc~	2008-12-09 05:23:16.000000000 +0900
++++ src/bin/mcscf/block_vector.cc	2009-08-03 20:27:14.000000000 +0900
+@@ -1,6 +1,7 @@
+ #include "block_vector.h"
+ #include "vector_base.h"
+ #include "memory_manager.h"
++#include <cstdio>
+ 
+ extern FILE* outfile;
+ 
+--- src/bin/mcscf/memory_manager.h~	2008-12-09 05:23:16.000000000 +0900
++++ src/bin/mcscf/memory_manager.h	2009-08-03 21:09:02.000000000 +0900
+@@ -3,6 +3,7 @@
+ 
+ #include <map>
+ #include <vector>
++#include <cstdio>
+ #include <string>
+ 
+ namespace psi{ namespace mcscf{
+--- src/bin/psimrcc/memory_manager.h~	2008-08-14 07:25:41.000000000 +0900
++++ src/bin/psimrcc/memory_manager.h	2009-08-03 21:10:00.000000000 +0900
+@@ -10,6 +10,7 @@
+ #include <map>
+ #include <vector>
+ #include <string>
++#include <cstdio>
+ 
+ namespace psi{ namespace psimrcc{
+ 
