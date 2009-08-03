@@ -22,14 +22,26 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/lib/tls/tls.tcl:${PORTSDIR}/devel/tcltls \
 		dtplite:${PORTSDIR}/devel/tcllib
 
-GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tk=${LOCALBASE}/lib/tk8.4
 
-CONFIGURE_ENV=	TK_INC_SPEC=${LOCALBASE}/include/tk8.4/generic
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		TK_INC_SPEC=${LOCALBASE}/include/tk8.4/generic
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
