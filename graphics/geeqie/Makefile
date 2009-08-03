@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image viewer forked from GQview
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
