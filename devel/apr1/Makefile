@@ -19,7 +19,7 @@ LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	THREADS "Enable Threads in apr"						on  \
-			IPV6	"Enable IPV6 Support in apr"				off \
+			IPV6	"Enable IPV6 Support in apr"				on	\
 			GDBM	"Enable GNU dbm support in apr-util"		on  \
 			BDB		"Enable Berkley BDB support in apr-util"	on  \
 			NDBM	"Enable NDBM support in apr-util"			off \
@@ -27,7 +27,7 @@ OPTIONS=	THREADS "Enable Threads in apr"						on  \
 			MYSQL	"Enable MySQL suport in apr-util"			off \
 			PGSQL	"Enable Postgresql suport in apr-util"		off
 
-APR_VERSION=	1.3.6
+APR_VERSION=	1.3.7
 APU_VERSION=	1.3.8
 
 USE_ICONV=		yes
