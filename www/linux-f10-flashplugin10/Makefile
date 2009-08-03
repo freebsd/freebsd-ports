@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	10.0r22
+PORTVERSION=	10.0r32
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		ftp://ftp.ipt.ru/pub/download/:suplib
@@ -27,7 +27,7 @@ RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/install_flash_player_10_linux
+WRKSRC=		${WRKDIR}
 
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so
