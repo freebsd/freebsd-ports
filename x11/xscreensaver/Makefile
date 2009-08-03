@@ -38,7 +38,6 @@ OPTIONS=	ALL_FORTUNES "Run fortune with -sa argument" off \
 		KERBEROS "Add support for kerberos" off \
 		PAM "Add support for pam authentication" off \
 		SETUID_HACKS "Install sonar hack suid so it can ping" off \
-		SHEEP "Add extra port x11/electricsheep" off \
 		FIREF "Add extra port x11/fireflies" off \
 		XAOS1 "Add extra port graphics/xaos" off \
 		XDALI "Add extra port x11-clocks/xdaliclock" off \
@@ -68,9 +67,6 @@ PLIST_SUB+=		PAM="@comment not installed: "
 CONFIGURE_ARGS+=	--with-setuid-hacks
 .endif
 
-.if defined(WITH_SHEEP)
-RUN_DEPENDS+=	electricsheep:${PORTSDIR}/x11/electricsheep
-.endif
 .if defined(WITH_FIREF)
 RUN_DEPENDS+=	${X11BASE}/bin/xscreensaver-hacks/fireflies:${PORTSDIR}/x11/fireflies
 .endif

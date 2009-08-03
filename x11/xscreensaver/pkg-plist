@@ -405,7 +405,6 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/xrayswarm.xml
 %%DATADIR%%/config/xspirograph.xml
 %%DATADIR%%/config/zoom.xml
-%%DATADIR%%/config/electricsheep.xml
 %%DATADIR%%/config/xaos.xml
 %%DATADIR%%/config/xdaliclock.xml
 %%DATADIR%%/config/xearth.xml
