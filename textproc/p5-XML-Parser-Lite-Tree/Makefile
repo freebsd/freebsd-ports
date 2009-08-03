@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	XML::Parser::Lite::Tree
 # Date created:			Apr 27, 2005
 # Whom:				ijliao
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	XML-Parser-Lite-Tree
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
