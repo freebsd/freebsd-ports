@@ -1,3 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Diff3/.packlist
 %%SITE_PERL%%/Text/Diff3.pm
 %%SITE_PERL%%/Text/Diff3/Base.pm
 %%SITE_PERL%%/Text/Diff3/Diff3.pm
@@ -8,11 +9,7 @@
 %%SITE_PERL%%/Text/Diff3/Range2.pm
 %%SITE_PERL%%/Text/Diff3/Range3.pm
 %%SITE_PERL%%/Text/Diff3/Text.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Diff3/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/merge.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/randam3.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Diff3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrm %%SITE_PERL%%/Text/Diff3
+@dirrmtry %%SITE_PERL%%/Text/Diff3
 @dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Diff3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
