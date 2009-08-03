@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	LaTeX-Table
-PORTVERSION=	0.9.16
+PORTVERSION=	0.9.17
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Perl extension for the automatic generation of LaTeX tables
