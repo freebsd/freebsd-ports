@@ -12,7 +12,7 @@ CATEGORIES=	www editors linux
 MASTER_SITES=	ftp://sunsite.icm.edu.pl/pub/www/asWedit/
 DISTNAME=	asWedit-4.0-i386.linux
 
-MAINTAINER=	brett@peloton.runet.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An easy to use HTML and text editor
 
 RESTRICTED=	Commercial software

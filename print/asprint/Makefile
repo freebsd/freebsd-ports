@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/asprint
 DISTNAME=	asprint
 
-MAINTAINER=	brett@peloton.runet.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple browser to allow a user to print
 
 PLIST_FILES=	bin/asprint
