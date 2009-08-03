@@ -4,3 +4,7 @@ to %%PREFIX%%/share/eagle to write a program key file.
 Once this has been done, you can delete the "eagle" directory in your 
 /root directory, which is created during the initially startup, and 
 run it as a normal user.
+
+It is entirely possible that you need linux 2.6 emulation support
+in the kernel.  The /usr/ports/UPDATING entry on 20080318 has
+good instructions on how to run linux 2.6.16 kernel emulation.

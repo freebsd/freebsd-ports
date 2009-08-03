@@ -1,0 +1,19 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
+
+DATADIR="%%DATADIR%%"
+
+post-deinstall() {
+	echo "WARNING: If you will *NOT* use this package anymore, please remote 
+the"
+	echo " following file manually:"
+	echo " ${DATADIR}/bin/eagle.key"
+	echo
+}
+
+case $2 in
+	POST-DEINSTALL)
+		post-deinstall
+		;;
+esac
