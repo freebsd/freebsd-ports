@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	pydev
-PORTVERSION=	1.4.2
-#PORTREVISION=	0
-#PORTEPOCH=	0
+PORTVERSION=	1.4.7.2843
+PORTREVISION=	0
 CATEGORIES=	java devel python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	eclipse-
-DISTFILES=	org.python.pydev.feature-${PORTVERSION:S,.,_,g}.zip
+DISTFILES=	org.python.pydev.feature-${PORTVERSION}.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Eclipse plugin for Python and Jython development
@@ -28,13 +27,11 @@ USE_JAVA=	yes
 USE_ZIP=	yes
 
 do-install:
-	@cd ${WRKDIR} && ${CP} -R eclipse ${PREFIX}/;
+.for d in features plugins
+	cd ${WRKDIR}/${d} && ${COPYTREE_SHARE} . ${PREFIX}/eclipse/${d}
+.endfor
 
 post-install:
-	@cd ${WRKDIR}; \
-	${ECHO_CMD} "@comment pkg-plist automatically generated" >> ${TMPPLIST}; \
-	${FIND} -s eclipse -type f -exec ${ECHO_CMD} {} ";" >> ${TMPPLIST}; \
-	${FIND} -s eclipse -type d | ${SORT} -r | ${GREP} -vE '^eclipse$$|^eclipse/plugins$$|^eclipse/features$$' | ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST};
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
