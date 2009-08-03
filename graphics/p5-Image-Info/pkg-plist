@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info/.packlist
 %%SITE_PERL%%/Image/Info.pm
 %%SITE_PERL%%/Image/Info/BMP.pm
 %%SITE_PERL%%/Image/Info/GIF.pm
@@ -6,12 +7,14 @@
 %%SITE_PERL%%/Image/Info/PNG.pm
 %%SITE_PERL%%/Image/Info/PPM.pm
 %%SITE_PERL%%/Image/Info/SVG.pm
+%%SITE_PERL%%/Image/Info/SVG/XMLLibXMLReader.pm
+%%SITE_PERL%%/Image/Info/SVG/XMLSimple.pm
 %%SITE_PERL%%/Image/Info/TIFF.pm
 %%SITE_PERL%%/Image/Info/XBM.pm
 %%SITE_PERL%%/Image/Info/XPM.pm
 %%SITE_PERL%%/Image/TIFF.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info
+@dirrmtry %%SITE_PERL%%/Image/Info/SVG
 @dirrmtry %%SITE_PERL%%/Image/Info
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 @dirrmtry %%SITE_PERL%%/Image
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
