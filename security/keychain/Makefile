@@ -6,31 +6,34 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	2.6.8
+PORTVERSION=	2.6.9
 CATEGORIES=	security
-MASTER_SITES=	http://dev.gentoo.org/~agriffis/keychain/ \
-		http://agriffis.n01se.net/keychain/ \
+MASTER_SITES=	http://www.funtoo.org/archive/keychain/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A user-friendly front-end to ssh-agent(1)
 
-USE_BZIP2=	yes
-NO_BUILD=	yes
+USE_BZIP2=		yes
+USE_GMAKE=		yes
+USE_PERL5_BUILD=	yes
 
 MAN1=		keychain.1
 
 PLIST_FILES=	bin/keychain
 
-PORTDOCS=	ChangeLog README
+PORTDOCS=	ChangeLog README.rst
 
 .if !exists(${LOCALBASE}/bin/ssh-agent) && !exists(/usr/bin/ssh-agent)
 RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh-portable
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/sed -i/sed -i "" -e/' ${WRKSRC}/Makefile
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/keychain ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/keychain ${PREFIX}/bin/keychain
 	${INSTALL_MAN} ${WRKSRC}/keychain.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
