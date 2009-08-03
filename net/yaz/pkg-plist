@@ -18,6 +18,7 @@ include/yaz/daemon.h
 include/yaz/diagbib1.h
 include/yaz/diagsru_update.h
 include/yaz/diagsrw.h
+include/yaz/errno.h
 include/yaz/icu.h
 include/yaz/ill-core.h
 include/yaz/ill.h
@@ -119,6 +120,7 @@ share/doc/yaz/asn.external.html
 share/doc/yaz/asn.html
 share/doc/yaz/asn.pdu.html
 share/doc/yaz/asn.preparing.html
+share/doc/yaz/bib1.html
 share/doc/yaz/common/id.png
 share/doc/yaz/common/style1.css
 share/doc/yaz/comstack.addresses.html
