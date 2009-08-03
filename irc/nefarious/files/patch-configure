@@ -1,0 +1,11 @@
+--- configure.orig	2009-07-31 23:06:12.000000000 -0300
++++ configure	2009-07-31 23:06:29.000000000 -0300
+@@ -10364,7 +10364,7 @@
+ 
+   test -n "$BASH" && break
+ done
+-test -n "$BASH" || BASH="/bin/bash"
++test -n "$BASH" || BASH="/usr/local/bin/bash"
+ 
+ 
+ { echo "$as_me:$LINENO: checking for posix non-blocking" >&5

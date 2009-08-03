@@ -6,28 +6,31 @@
 #
 
 PORTNAME=	Nefarious
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.0
 CATEGORIES=	irc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	evilnet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	IRC server used by evilnet based off of Undernet\'s ircu
+
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 PLIST_SUB+=	INSTALL_PREFIX=${INSTALL_PREFIX:S/${PREFIX}\///}
 MAN8=		ircd.8
 
+.if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--enable-ssl
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !defined(INSTALL_PREFIX)
 INSTALL_PREFIX=${PREFIX}/${PORTNAME}
-.endif
-
-.if defined(WITH_OPENSSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
 .if defined(WITH_CHROOT)
