@@ -11,7 +11,7 @@ CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.brockman.se/software/ruby-event-loop/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An Event loop for Ruby
 
 USE_RUBY=	yes
