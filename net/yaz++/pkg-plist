@@ -3,12 +3,14 @@ include/yazpp/cql2rpn.h
 include/yazpp/gdu.h
 include/yazpp/gduqueue.h
 include/yazpp/ir-assoc.h
+include/yazpp/limit-connect.h
 include/yazpp/pdu-assoc.h
 include/yazpp/pdu-observer.h
 include/yazpp/query.h
 include/yazpp/record-cache.h
 include/yazpp/socket-manager.h
 include/yazpp/socket-observer.h
+include/yazpp/timestat.h
 include/yazpp/z-assoc.h
 include/yazpp/z-databases.h
 include/yazpp/z-query.h
