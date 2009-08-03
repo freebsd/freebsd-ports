@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Text-Diff3
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compute three-way differences between texts
 
 MAN3=	Text::Diff3.3 \
@@ -26,16 +26,5 @@ MAN3=	Text::Diff3.3 \
 	Text::Diff3::Text.3
 
 PERL_CONFIGURE=	yes
-
-post-patch:
-	@${RM} ${WRKSRC}/*.orig
-	@${MKDIR} ${WRKSRC}/examples
-	@${MV} ${WRKSRC}/*.pl ${WRKSRC}/examples
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
