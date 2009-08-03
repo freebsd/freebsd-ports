@@ -18,31 +18,6 @@
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  
  toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
-@@ -349,15 +349,6 @@
-     }
- }
- 
--# FIXME: this should not use os.name.
--if [ os.name ] != NT && [ os.name ] != OSF && [ os.name ] != HPUX && [ os.name ] != AIX
--{
--    # OSF does have an option called -soname but it does not seem to work as
--    # expected, therefore it has been disabled.
--    HAVE_SONAME   = "" ;
--    SONAME_OPTION = -h ;
--}
--
- 
- toolset.flags gcc.compile USER_OPTIONS <cflags> ;
- toolset.flags gcc.compile.c++ USER_OPTIONS <cxxflags> ;
-@@ -793,7 +784,7 @@
- # Differs from 'link' above only by -shared.
- actions link.dll bind LIBRARIES
- {
--    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
-+    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
- }
- 
- rule setup-threading ( targets * : sources * : properties * )
 @@ -811,7 +811,7 @@
              }        
              case *bsd :

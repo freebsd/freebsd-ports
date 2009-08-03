@@ -59,15 +59,20 @@ do-build:
 
 # Remove non-python headers
 	cd ${WRKSRC} && \
-	${FIND} boost -not -path '*python*' -delete
+ 	${FIND} boost -not -path '*boost/python*' -delete
 
 do-install:
 # Install libraries
-	${INSTALL_DATA} ${WRKSRC}/bin.v2/libs/python/build/gcc-4.2.1/release/link-static/threading-multi/libboost_python.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/bin.v2/libs/python/build/gcc-4.2.1/release/threading-multi/libboost_python.so.${PORTVERSION} ${PREFIX}/lib/libboost_python.so.${BOOST_SHARED_LIB_VER}
+	${FIND} ${WRKSRC}/bin.v2/libs/python -type f -name "*.a"\
+ 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
+
+	${FIND} -E ${WRKSRC}/bin.v2/libs/python -type f \
+ 		-regex '.*so' \
+		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
 
 # Create symlink for shared library
 	cd ${PREFIX}/lib/ && \
+	${MV} "libboost_python.so" "libboost_python.so.${BOOST_SHARED_LIB_VER}" && \
 	${LN} -fs "libboost_python.so.${BOOST_SHARED_LIB_VER}" "libboost_python.so"
 
 # Install headers
