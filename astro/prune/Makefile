@@ -7,6 +7,7 @@
 
 PORTNAME=	prune
 PORTVERSION=	7
+PORTREVISION=	1
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/prune/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -16,6 +17,8 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Application for viewing, editing and converting GPS coordinate data
+
+CONFLICTS=	graphviz-[0-9]*
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
