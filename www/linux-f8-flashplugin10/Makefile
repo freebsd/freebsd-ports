@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	10.0r22
+PORTVERSION=	10.0r32
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		http://tijl.ulyssis.be/mirror/:suplib
@@ -26,7 +26,7 @@ RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlinux-f8-flashsupport*:C/:[^:]+$//}
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/install_flash_player_10_linux
+WRKSRC=		${WRKDIR}
 LATEST_LINK=	flash10
 
 USE_NPAPI=	linux-*
