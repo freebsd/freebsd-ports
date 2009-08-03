@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.code-monkey.de/pub/ruby-eet/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-eet-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby support for reading and writing EET files
 
 LIB_DEPENDS=	eet.9:${PORTSDIR}/devel/eet
