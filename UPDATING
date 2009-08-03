@@ -11,7 +11,7 @@ upgrades.
   AUTHOR: mezz@FreeBSD.org
 
   The devel/libtool15 and devel/libltdl15 ports have been moved to libtool22
-  and libltdl22 respectively then updated to 2.2.6a. You will need to run
+  and libltdl22, respectively, then updated to 2.2.6a. You will need to run
   portmaster or portupgrade to properly perform the upgrade:
 
   Portmaster:
@@ -27,8 +27,8 @@ upgrades.
   portupgrade -o devel/libltdl22 libltdl-1.5\*
 
   After that, you will need to rebuild all ports that depend on libltdl. Since
-  all dependent ports' PORTREVISIONs have been bump, you can run portupgrade or
-  portmaster with '-a' to complete the upgrade.
+  all dependent ports' PORTREVISIONs have been bumped, you can run portupgrade
+  or portmaster with '-a' to complete the upgrade.
 
 20090801:
   AFFECTS: users of x11-drivers/xf86-video-nouveau
