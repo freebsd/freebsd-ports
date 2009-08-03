@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz++
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazpp/
 DISTNAME=	yazpp-${PORTVERSION}
