@@ -31,7 +31,7 @@ RUN_DEPENDS+=\
 
 .for LANG in af az be bg bn br bs ca cs csb cy da el en_GB eo es et eu fa fi fy ga gl \
 	hi hr hsb is it kk km lt lv mk mn ms mt nb nds nl nn nso pa ro rw se sk sl \
-	sr sr@Latn ss sv ta te tg th tr uz ven wa xh zu
+	sr sr_Latn ss sv ta te tg th tr uz ven wa xh zu
 RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde3-i18n-${LANG}
 .endfor
