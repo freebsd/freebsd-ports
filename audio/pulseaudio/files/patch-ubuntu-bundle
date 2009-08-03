@@ -879,15 +879,3 @@ Index: pulseaudio-0.9.14/src/daemon/daemon.conf.in
 -; default-fragment-size-msec = 25
 +default-fragments = 8
 +default-fragment-size-msec = 10
-===================================================================
---- src/daemon/default.pa.in	2009-02-13 19:12:33.000000000 -0500
-+++ src/daemon/default.pa.in	2009-02-13 19:13:03.000000000 -0500
-@@ -58,7 +58,7 @@
- 
- ### Automatically load driver modules depending on the hardware available
- .ifexists module-hal-detect@PA_SOEXT@
--load-module module-hal-detect
-+load-module module-hal-detect tsched=0
- .else
- ### Alternatively use the static hardware detection module (for systems that
- ### lack HAL support)
