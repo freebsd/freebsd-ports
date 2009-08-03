@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	3.0.5
-PORTREVISION=	4
+PORTVERSION=	3.2.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -25,13 +24,19 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		glpk.23:${PORTSDIR}/math/glpk \
 		hdf5:${PORTSDIR}/science/hdf5 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
-		qhull:${PORTSDIR}/math/qhull
+		qhull:${PORTSDIR}/math/qhull \
+		arpack:${PORTSDIR}/math/arpack \
+		fftw3f:${PORTSDIR}/math/fftw3-float \
+		fftw3:${PORTSDIR}/math/fftw3 \
+		ftgl:${PORTSDIR}/graphics/ftgl \
+		fltk:${PORTSDIR}/x11-toolkits/fltk \
+		GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 autoheader:262
+USE_AUTOTOOLS=	autoconf:262
 
 INFO=		octave liboctave
 MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
@@ -94,9 +99,6 @@ WITH_PTMALLOC=yes
 LIB_DEPENDS+=	ptmalloc:${PORTSDIR}/devel/ptmalloc
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lptmalloc"
 .endif
-
-pre-configure:
-	@cd ${WRKSRC}/scripts ; ${AUTOCONF}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/liboctave/liboctave.info ${PREFIX}/info
