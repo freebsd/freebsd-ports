@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	io
-PORTVERSION=	0.0.2008.01.20
+PORTVERSION=	0.0.2009.08.03
 CATEGORIES=	lang
-MASTER_SITES=	http://io.urbanape.com/release/ \
-		http://www.sigusr1.org/~steve/
-DISTNAME=	Io-${PORTVERSION:S/0.0.//:S/./-/g}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+    		http://people.freebsd.org/~gahr/distfiles/
+DISTNAME=	io-${PORTVERSION:S/0.0.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Small prototype-based programming language
 
 USE_GMAKE=	yes
@@ -59,10 +59,4 @@ post-install:
 	@cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: dumps core
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
