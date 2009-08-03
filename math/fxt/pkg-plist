@@ -1040,6 +1040,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mod/rabinmiller-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mod/rabinmiller-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nextarg.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/ccf2perm-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/ccf2perm-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/cycles-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/cycles-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/perm-decomp-demo.cc
