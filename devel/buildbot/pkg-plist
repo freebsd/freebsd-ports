@@ -185,6 +185,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/about.py
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/about.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/about.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/status/web/auth.py
+%%PYTHON_SITELIBDIR%%/buildbot/status/web/auth.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/status/web/auth.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/base.py
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/base.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/base.pyo
@@ -197,6 +200,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/builder.py
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/builder.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/builder.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/status/web/buildstatus.py
+%%PYTHON_SITELIBDIR%%/buildbot/status/web/buildstatus.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/status/web/buildstatus.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/changes.py
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/changes.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/status/web/changes.pyo
@@ -293,6 +299,12 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/mail/freshcvs.7
 %%PYTHON_SITELIBDIR%%/buildbot/test/mail/freshcvs.8
 %%PYTHON_SITELIBDIR%%/buildbot/test/mail/freshcvs.9
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/launchpad.1
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/launchpad.2
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/launchpad.3
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/launchpad.4
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/launchpad.5
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/launchpad.6
 %%PYTHON_SITELIBDIR%%/buildbot/test/mail/svn-commit.1
 %%PYTHON_SITELIBDIR%%/buildbot/test/mail/svn-commit.2
 %%PYTHON_SITELIBDIR%%/buildbot/test/mail/syncmail.1
@@ -319,6 +331,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_buildstep.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_buildstep.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_buildstep.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_changemaster.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_changemaster.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_changemaster.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_changes.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_changes.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_changes.pyo
@@ -349,6 +364,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_mergerequests.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_mergerequests.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_mergerequests.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_ordering.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_ordering.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_ordering.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_p4poller.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_p4poller.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_p4poller.pyo
