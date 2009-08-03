@@ -439,7 +439,7 @@ sqlite3_DETECT=		${sqlite3${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 sqlite3_PORT=		${PORTSDIR}/databases/linux${LINUX_DIST_SUFFIX}-sqlite3
 
 # no tcl84_FILE
-tcl84_f8_FILE=		${LINUXBASE}/usr/lib/tcl8.4
+tcl84_f8_FILE=		${LINUXBASE}/usr/lib/libtcl8.4.so
 # XXX: tcl85!!!
 tcl84_f10_FILE=		${LINUXBASE}/usr/lib/libtcl8.5.so
 tcl84_DETECT=		${tcl84${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
