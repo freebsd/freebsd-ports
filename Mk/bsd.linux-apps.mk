@@ -443,7 +443,11 @@ tcl84_f8_FILE=		${LINUXBASE}/usr/lib/libtcl8.4.so
 # XXX: tcl85!!!
 tcl84_f10_FILE=		${LINUXBASE}/usr/lib/libtcl8.5.so
 tcl84_DETECT=		${tcl84${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+.  if ${LINUX_DIST_SUFFIX} == "-f8"
 tcl84_PORT=		${PORTSDIR}/lang/linux${LINUX_DIST_SUFFIX}-tcl84
+.  else
+tcl84_PORT=		${PORTSDIR}/lang/linux${LINUX_DIST_SUFFIX}-tcl85
+.  endif
 
 tiff_FILE=			${LINUXBASE}/usr/lib/libtiff.so.3.7.1
 tiff_f8_FILE=		${LINUXBASE}/usr/lib/libtiff.so.3.8.2
@@ -457,7 +461,11 @@ tk84_f8_FILE=		${LINUXBASE}/usr/lib/libtk8.4.so
 # XXX: tk85!!!
 tk84_f10_FILE=		${LINUXBASE}/usr/lib/libtk8.5.so
 tk84_DETECT=		${tk84${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+.  if ${LINUX_DIST_SUFFIX} == "-f8"
 tk84_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-tk84
+.  else
+tk84_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-tk85
+.  endif
 tk84_DEPENDS=		xorglibs
 
 xorglibs_FILE=		${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2.0
