@@ -1,97 +1,110 @@
 bin/io
 bin/io_static
+lib/libiovmall.so
+lib/libiovmall.a
 include/io/BStream.h
-include/io/BStreamTag.h
-include/io/Base.h
-include/io/Collector.h
-include/io/CollectorMarker.h
-include/io/CollectorMarker_inline.h
-include/io/Collector_inline.h
-include/io/Common.h
-include/io/Common_inline.h
-include/io/ConvertUTF.h
-include/io/Coro.h
-include/io/Date.h
-include/io/Duration.h
-include/io/DynLib.h
-include/io/IoBlock.h
-include/io/IoCFunction.h
-include/io/IoCall.h
-include/io/IoCollector.h
-include/io/IoCompiler.h
-include/io/IoConfig.h
-include/io/IoContext.h
-include/io/IoCoroutine.h
-include/io/IoDate.h
-include/io/IoDebugger.h
-include/io/IoDirectory.h
-include/io/IoDuration.h
-include/io/IoDynLib.h
-include/io/IoFile.h
-include/io/IoFile_stat.h
-include/io/IoLexer.h
-include/io/IoList.h
-include/io/IoMap.h
-include/io/IoMessage.h
-include/io/IoMessage_inline.h
-include/io/IoMessage_opShuffle.h
-include/io/IoMessage_parser.h
-include/io/IoNumber.h
-include/io/IoObject.h
-include/io/IoObject_flow.h
-include/io/IoObject_inline.h
-include/io/IoObject_persistence.h
-include/io/IoObject_struct.h
-include/io/IoSandbox.h
-include/io/IoSeq.h
-include/io/IoSeq_immutable.h
-include/io/IoSeq_inline.h
-include/io/IoSeq_mutable.h
-include/io/IoSeq_vector.h
-include/io/IoState.h
-include/io/IoState_callbacks.h
-include/io/IoState_coros.h
-include/io/IoState_debug.h
-include/io/IoState_eval.h
-include/io/IoState_exceptions.h
-include/io/IoState_inline.h
-include/io/IoState_symbols.h
-include/io/IoSystem.h
-include/io/IoTag.h
-include/io/IoTag_inline.h
-include/io/IoToken.h
-include/io/IoVM.h
-include/io/IoVMApi.h
-include/io/IoVersion.h
-include/io/IoWeakLink.h
-include/io/List.h
-include/io/List_inline.h
-include/io/MainArgs.h
-include/io/PHash.h
-include/io/PHash_inline.h
-include/io/PortableGettimeofday.h
-include/io/PortableStdint.h
-include/io/PortableStrlcpy.h
-include/io/PortableStrptime.h
-include/io/PortableTruncate.h
-include/io/PortableUContext.h
-include/io/PortableUContext386.h
-include/io/PortableUContextPPC.h
-include/io/PortableUsleep.h
-include/io/RandomGen.h
-include/io/SHash.h
-include/io/SHash_inline.h
-include/io/Sorting.h
-include/io/Stack.h
-include/io/Stack_inline.h
-include/io/UArray.h
-include/io/UArray_character.h
-include/io/UArray_format.h
-include/io/UArray_math.h
-include/io/UArray_path.h
-include/io/UArray_stream.h
-include/io/UArray_string.h
+include/io/utf8internal.h
+include/io/utf8.h
+include/io/cencode.h
+include/io/cdecode.h
 include/io/UArray_utf.h
+include/io/UArray_string.h
+include/io/UArray_stream.h
+include/io/UArray_path.h
+include/io/UArray_math.h
+include/io/UArray_format.h
+include/io/UArray_character.h
+include/io/UArray.h
+include/io/Stack_inline.h
+include/io/Stack.h
+include/io/RandomGen.h
+include/io/PortableUsleep.h
+include/io/PortableUContextPPC.h
+include/io/PortableUContext386.h
+include/io/PortableUContext.h
+include/io/PHash.h
+include/io/PortableTruncate.h
+include/io/PortableStrptime.h
+include/io/PortableStrlcpy.h
+include/io/PortableStdint.h
+include/io/PortableSorting.h
+include/io/PortableGettimeofday.h
+include/io/PointerHash_struct.h
+include/io/PointerHash_inline.h
+include/io/PointerHash.h
+include/io/PHash_struct.h
+include/io/PHash_inline.h
+include/io/MainArgs.h
+include/io/List_inline.h
+include/io/List.h
+include/io/IoWeakLink.h
+include/io/IoVersion.h
+include/io/IoVMApi.h
+include/io/IoVM.h
+include/io/IoToken.h
+include/io/IoTag_inline.h
+include/io/IoTag.h
+include/io/IoSystem.h
+include/io/IoState_symbols.h
+include/io/IoState_inline.h
+include/io/IoState_exceptions.h
+include/io/IoState_eval.h
+include/io/IoState_debug.h
+include/io/IoState_coros.h
+include/io/IoState_callbacks.h
+include/io/IoState.h
+include/io/IoSeq_vector.h
+include/io/IoSeq_mutable.h
+include/io/IoSeq_inline.h
+include/io/IoSeq_immutable.h
+include/io/IoSeq.h
+include/io/IoSandbox.h
+include/io/IoObject_struct.h
+include/io/IoObject_inline.h
+include/io/IoObject_flow.h
+include/io/IoObject.h
+include/io/IoNumber.h
+include/io/IoMessage_parser.h
+include/io/IoMessage_opShuffle.h
+include/io/IoMessage_inline.h
+include/io/IoMessage.h
+include/io/IoMap.h
+include/io/IoList.h
+include/io/IoLexer.h
+include/io/IoFile_stat.h
+include/io/IoFile.h
+include/io/IoError.h
+include/io/IoDynLib.h
+include/io/IoDuration.h
+include/io/IoDirectory.h
+include/io/IoDebugger.h
+include/io/IoDate.h
+include/io/IoCoroutine.h
+include/io/IoContext.h
+include/io/IoConfig.h
+include/io/IoCompiler.h
+include/io/IoCollector.h
+include/io/IoCall.h
+include/io/IoCFunction.h
+include/io/IoBlock.h
+include/io/Hash_murmur.h
+include/io/Hash_superfast.h
+include/io/Hash_fnv.h
+include/io/DynLib.h
+include/io/Duration.h
+include/io/Date.h
+include/io/Coro.h
+include/io/Common_inline.h
+include/io/Common.h
+include/io/Collector_inline.h
+include/io/CollectorMarker_inline.h
+include/io/CollectorMarker.h
+include/io/Collector.h
+include/io/CHash_inline.h
+include/io/CHash.h
+include/io/Base.h
+include/io/BStreamTag.h
+include/io/utf_convert.h
 lib/io/addons/AsyncRequest/_build/dll/libIoAsyncRequest.so
 lib/io/addons/AsyncRequest/_build/headers/IoAsyncRequest.h
 lib/io/addons/AsyncRequest/_build/lib/libIoAsyncRequest.a
@@ -118,8 +131,8 @@ lib/io/addons/Blowfish/source/IoBlowfish.h
 lib/io/addons/Blowfish/source/IoBlowfishInit.c
 lib/io/addons/Blowfish/source/blowfish.c
 lib/io/addons/Blowfish/source/blowfish.h
-lib/io/addons/Blowfish/tests/BlowfishTest.io
-lib/io/addons/Blowfish/tests/run.io
+lib/io/addons/Blowfish/tests/correctness/BlowfishTest.io
+lib/io/addons/Blowfish/tests/correctness/run.io
 lib/io/addons/Box/Makefile
 lib/io/addons/Box/_build/dll/libIoBox.so
 lib/io/addons/Box/_build/headers/IoBox.h
@@ -136,7 +149,8 @@ lib/io/addons/Box/source/IoBox.c
 lib/io/addons/Box/source/IoBox.h
 lib/io/addons/Box/source/IoBoxApi.h
 lib/io/addons/Box/source/IoBoxInit.c
-lib/io/addons/Box/tests/BoxTest.io
+lib/io/addons/Box/tests/correctness/BoxTest.io
+lib/io/addons/Box/tests/correctness/run.io
 lib/io/addons/Box/tests/performance/SpeedResults.txt
 lib/io/addons/Box/tests/performance/mandlebrot.c
 lib/io/addons/Box/tests/performance/mandlebrot.io
@@ -144,7 +158,6 @@ lib/io/addons/Box/tests/performance/mandlebrot.py
 lib/io/addons/Box/tests/performance/runSpeedTests.io
 lib/io/addons/Box/tests/performance/speed.io
 lib/io/addons/Box/tests/performance/speed.py
-lib/io/addons/Box/tests/run.io
 lib/io/addons/CGI/_build/dll/libIoCGI.so
 lib/io/addons/CGI/_build/lib/libIoCGI.a
 lib/io/addons/CGI/_build/objs/IoCGIInit.o
@@ -154,7 +167,8 @@ lib/io/addons/CGI/io/CGI.io
 lib/io/addons/CGI/protos
 lib/io/addons/CGI/source/.forgit
 lib/io/addons/CGI/source/IoCGIInit.c
-lib/io/addons/CGI/tests/run.io
+lib/io/addons/CGI/tests/correctness/CGITest.io
+lib/io/addons/CGI/tests/correctness/run.io
 lib/io/addons/ContinuedFraction/_build/dll/libIoContinuedFraction.so
 lib/io/addons/ContinuedFraction/_build/lib/libIoContinuedFraction.a
 lib/io/addons/ContinuedFraction/_build/objs/IoContinuedFractionInit.o
@@ -210,6 +224,8 @@ lib/io/addons/Flux/io/Flux/TextureGroup.io
 lib/io/addons/Flux/io/Flux/TextureSet.io
 lib/io/addons/Flux/io/Flux/View.io
 lib/io/addons/Flux/io/Flux/Views/AlertPanel.io
+lib/io/addons/Flux/io/Flux/Views/AnimatedAlertPanel.io
+lib/io/addons/Flux/io/Flux/Views/AttributeAnimator.io
 lib/io/addons/Flux/io/Flux/Views/Browser.io
 lib/io/addons/Flux/io/Flux/Views/BusyView.io
 lib/io/addons/Flux/io/Flux/Views/Button.io
@@ -220,10 +236,13 @@ lib/io/addons/Flux/io/Flux/Views/HScrollArea.io
 lib/io/addons/Flux/io/Flux/Views/HScroller.io
 lib/io/addons/Flux/io/Flux/Views/HSlider.io
 lib/io/addons/Flux/io/Flux/Views/HStackView.io
+lib/io/addons/Flux/io/Flux/Views/HTabView.io
 lib/io/addons/Flux/io/Flux/Views/ImageView.io
 lib/io/addons/Flux/io/Flux/Views/ImageWell.io
 lib/io/addons/Flux/io/Flux/Views/Label.io
 lib/io/addons/Flux/io/Flux/Views/LoginPanel.io
+lib/io/addons/Flux/io/Flux/Views/MatrixView.io
+lib/io/addons/Flux/io/Flux/Views/MediaView.io
 lib/io/addons/Flux/io/Flux/Views/Menu.io
 lib/io/addons/Flux/io/Flux/Views/MenuItem.io
 lib/io/addons/Flux/io/Flux/Views/MovieView.io
@@ -233,6 +252,7 @@ lib/io/addons/Flux/io/Flux/Views/PopUpButton.io
 lib/io/addons/Flux/io/Flux/Views/SavePanel.io
 lib/io/addons/Flux/io/Flux/Views/ScrollBar.io
 lib/io/addons/Flux/io/Flux/Views/SheetView.io
+lib/io/addons/Flux/io/Flux/Views/SplitView.io
 lib/io/addons/Flux/io/Flux/Views/Text.io
 lib/io/addons/Flux/io/Flux/Views/TextCell.io
 lib/io/addons/Flux/io/Flux/Views/TextField.io
@@ -240,6 +260,7 @@ lib/io/addons/Flux/io/Flux/Views/VKnob.io
 lib/io/addons/Flux/io/Flux/Views/VScrollArea.io
 lib/io/addons/Flux/io/Flux/Views/VScroller.io
 lib/io/addons/Flux/io/Flux/Views/VStackView.io
+lib/io/addons/Flux/io/Flux/Views/VTabView.io
 lib/io/addons/Flux/io/Flux/Views/VideoView.io
 lib/io/addons/Flux/io/Flux/Views/Window.io
 lib/io/addons/Flux/io/Flux/new/HelloWorld.io
@@ -807,7 +828,6 @@ lib/io/addons/Flux/samples/Debugger/cursor.tif
 lib/io/addons/Flux/samples/Debugger/debug.io
 lib/io/addons/Flux/samples/Debugger/foo.io
 lib/io/addons/Flux/samples/Debugger/menu.io
-lib/io/addons/Flux/samples/Debugger/messageview.io
 lib/io/addons/Flux/samples/Diagram/Background.io
 lib/io/addons/Flux/samples/Diagram/DBox.io
 lib/io/addons/Flux/samples/Diagram/LabelView.io
@@ -892,8 +912,8 @@ lib/io/addons/Fnmatch/depends
 lib/io/addons/Fnmatch/source/IoFnmatch.c
 lib/io/addons/Fnmatch/source/IoFnmatch.h
 lib/io/addons/Fnmatch/source/IoFnmatchInit.c
-lib/io/addons/Fnmatch/tests/FnmatchTest.io
-lib/io/addons/Fnmatch/tests/run.io
+lib/io/addons/Fnmatch/tests/correctness/FnmatchTest.io
+lib/io/addons/Fnmatch/tests/correctness/run.io
 lib/io/addons/LZO/_build/dll/libIoLZO.so
 lib/io/addons/LZO/_build/headers/IoLZODecoder.h
 lib/io/addons/LZO/_build/headers/IoLZOEncoder.h
@@ -919,8 +939,8 @@ lib/io/addons/LZO/source/lzodefs.h
 lib/io/addons/LZO/source/minilzo.c
 lib/io/addons/LZO/source/minilzo.h
 lib/io/addons/LZO/source/minilzo_COPYING
-lib/io/addons/LZO/tests/LZOTest.io
-lib/io/addons/LZO/tests/run.io
+lib/io/addons/LZO/tests/correctness/LZOTest.io
+lib/io/addons/LZO/tests/correctness/run.io
 lib/io/addons/Loki/_build/dll/libIoLoki.so
 lib/io/addons/Loki/_build/headers/IoLinker.h
 lib/io/addons/Loki/_build/lib/libIoLoki.a
@@ -960,7 +980,7 @@ lib/io/addons/Loki/samples/shootout/reverse-complement.io
 lib/io/addons/Loki/source/IoLinker.c
 lib/io/addons/Loki/source/IoLinker.h
 lib/io/addons/Loki/source/IoLokiInit.c
-lib/io/addons/Loki/tests/testcg.io
+lib/io/addons/Loki/tests/correctness/testcg.io
 lib/io/addons/MD5/_build/dll/libIoMD5.so
 lib/io/addons/MD5/_build/headers/IoMD5.h
 lib/io/addons/MD5/_build/headers/md5.h
@@ -978,7 +998,7 @@ lib/io/addons/MD5/source/IoMD5.h
 lib/io/addons/MD5/source/IoMD5Init.c
 lib/io/addons/MD5/source/md5.c
 lib/io/addons/MD5/source/md5.h
-lib/io/addons/MD5/tests/MD5Test.io
+lib/io/addons/MD5/tests/correctness/MD5Test.io
 lib/io/addons/NetworkAdapter/_build/dll/libIoNetworkAdapter.so
 lib/io/addons/NetworkAdapter/_build/headers/IoNetworkAdapter.h
 lib/io/addons/NetworkAdapter/_build/headers/OSXMacAddress.h
@@ -1014,8 +1034,8 @@ lib/io/addons/Random/depends
 lib/io/addons/Random/source/IoRandom.c
 lib/io/addons/Random/source/IoRandom.h
 lib/io/addons/Random/source/IoRandomInit.c
-lib/io/addons/Random/tests/ListTest.io
-lib/io/addons/Random/tests/run.io
+lib/io/addons/Random/tests/correctness/ListTest.io
+lib/io/addons/Random/tests/correctness/run.io
 lib/io/addons/Range/_build/dll/libIoRange.so
 lib/io/addons/Range/_build/headers/IoRange.h
 lib/io/addons/Range/_build/headers/IoRange_inline.h
@@ -1030,7 +1050,7 @@ lib/io/addons/Range/source/IoRange.c
 lib/io/addons/Range/source/IoRange.h
 lib/io/addons/Range/source/IoRangeInit.c
 lib/io/addons/Range/source/IoRange_inline.h
-lib/io/addons/Range/tests/run.io
+lib/io/addons/Range/tests/correctness/run.io
 lib/io/addons/Rational/_build/dll/libIoRational.so
 lib/io/addons/Rational/_build/lib/libIoRational.a
 lib/io/addons/Rational/_build/objs/IoRationalInit.o
@@ -1040,8 +1060,8 @@ lib/io/addons/Rational/io/Rational.io
 lib/io/addons/Rational/samples/Sample.io
 lib/io/addons/Rational/source/.forgit
 lib/io/addons/Rational/source/IoRationalInit.c
-lib/io/addons/Rational/tests/RationalTest.io
-lib/io/addons/Rational/tests/run.io
+lib/io/addons/Rational/tests/correctness/RationalTest.io
+lib/io/addons/Rational/tests/correctness/run.io
 lib/io/addons/ReadLine/_build/dll/libIoReadLine.so
 lib/io/addons/ReadLine/_build/headers/IoReadLine.h
 lib/io/addons/ReadLine/_build/lib/libIoReadLine.a
@@ -1067,7 +1087,7 @@ lib/io/addons/SHA1/source/IoSHA1.h
 lib/io/addons/SHA1/source/IoSHA1Init.c
 lib/io/addons/SHA1/source/sha1.c
 lib/io/addons/SHA1/source/sha1.h
-lib/io/addons/SHA1/tests/SHA1Test.io
+lib/io/addons/SHA1/tests/correctness/SHA1Test.io
 lib/io/addons/SqlDatabase/_build/dll/libIoSqlDatabase.so
 lib/io/addons/SqlDatabase/_build/lib/libIoSqlDatabase.a
 lib/io/addons/SqlDatabase/_build/objs/IoSqlDatabaseInit.o
@@ -1124,8 +1144,8 @@ lib/io/addons/Thread/source/Thread.c
 lib/io/addons/Thread/source/Thread.h
 lib/io/addons/Thread/source/ThreadMutex.c
 lib/io/addons/Thread/source/ThreadMutex.h
-lib/io/addons/Thread/tests/ThreadTest.io
-lib/io/addons/Thread/tests/run.io
+lib/io/addons/Thread/tests/correctness/ThreadTest.io
+lib/io/addons/Thread/tests/correctness/run.io
 lib/io/addons/User/_build/dll/libIoUser.so
 lib/io/addons/User/_build/headers/IoUser.h
 lib/io/addons/User/_build/lib/libIoUser.a
@@ -1136,8 +1156,8 @@ lib/io/addons/User/depends
 lib/io/addons/User/source/IoUser.c
 lib/io/addons/User/source/IoUser.h
 lib/io/addons/User/source/IoUserInit.c
-lib/io/addons/User/tests/UserTest.io
-lib/io/addons/User/tests/run.io
+lib/io/addons/User/tests/correctness/UserTest.io
+lib/io/addons/User/tests/correctness/run.io
 lib/io/addons/Zlib/Makefile
 lib/io/addons/Zlib/_build/dll/libIoZlib.so
 lib/io/addons/Zlib/_build/headers/IoZlibDecoder.h
@@ -1155,11 +1175,10 @@ lib/io/addons/Zlib/source/IoZlibDecoder.h
 lib/io/addons/Zlib/source/IoZlibEncoder.c
 lib/io/addons/Zlib/source/IoZlibEncoder.h
 lib/io/addons/Zlib/source/IoZlibInit.c
-lib/io/addons/Zlib/tests/ZlibTest.io
-lib/io/addons/Zlib/tests/run.io
-lib/io/addons/Zlib/tests/test.gz
-lib/libiovmall.a
-lib/libiovmall.so
+lib/io/addons/Zlib/tests/correctness/ZlibTest.io
+lib/io/addons/Zlib/tests/correctness/run.io
+lib/io/addons/Zlib/tests/correctness/test.gz
+@dirrm lib/io/addons/Zlib/tests/correctness
 @dirrm lib/io/addons/Zlib/tests
 @dirrm lib/io/addons/Zlib/source
 @dirrm lib/io/addons/Zlib/io
@@ -1169,6 +1188,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/Zlib/_build/dll
 @dirrm lib/io/addons/Zlib/_build
 @dirrm lib/io/addons/Zlib
+@dirrm lib/io/addons/User/tests/correctness
 @dirrm lib/io/addons/User/tests
 @dirrm lib/io/addons/User/source
 @dirrm lib/io/addons/User/_build/objs
@@ -1177,6 +1197,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/User/_build/dll
 @dirrm lib/io/addons/User/_build
 @dirrm lib/io/addons/User
+@dirrm lib/io/addons/Thread/tests/correctness
 @dirrm lib/io/addons/Thread/tests
 @dirrm lib/io/addons/Thread/source
 @dirrm lib/io/addons/Thread/_build/objs
@@ -1210,6 +1231,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/SqlDatabase/_build/dll
 @dirrm lib/io/addons/SqlDatabase/_build
 @dirrm lib/io/addons/SqlDatabase
+@dirrm lib/io/addons/SHA1/tests/correctness
 @dirrm lib/io/addons/SHA1/tests
 @dirrm lib/io/addons/SHA1/source
 @dirrm lib/io/addons/SHA1/io
@@ -1226,6 +1248,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/ReadLine/_build/dll
 @dirrm lib/io/addons/ReadLine/_build
 @dirrm lib/io/addons/ReadLine
+@dirrm lib/io/addons/Rational/tests/correctness
 @dirrm lib/io/addons/Rational/tests
 @dirrm lib/io/addons/Rational/source
 @dirrm lib/io/addons/Rational/samples
@@ -1236,6 +1259,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/Rational/_build/dll
 @dirrm lib/io/addons/Rational/_build
 @dirrm lib/io/addons/Rational
+@dirrm lib/io/addons/Range/tests/correctness
 @dirrm lib/io/addons/Range/tests
 @dirrm lib/io/addons/Range/source
 @dirrm lib/io/addons/Range/io
@@ -1245,6 +1269,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/Range/_build/dll
 @dirrm lib/io/addons/Range/_build
 @dirrm lib/io/addons/Range
+@dirrm lib/io/addons/Random/tests/correctness
 @dirrm lib/io/addons/Random/tests
 @dirrm lib/io/addons/Random/source
 @dirrm lib/io/addons/Random/_build/objs
@@ -1268,6 +1293,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/NetworkAdapter/_build/dll
 @dirrm lib/io/addons/NetworkAdapter/_build
 @dirrm lib/io/addons/NetworkAdapter
+@dirrm lib/io/addons/MD5/tests/correctness
 @dirrm lib/io/addons/MD5/tests
 @dirrm lib/io/addons/MD5/source
 @dirrm lib/io/addons/MD5/samples
@@ -1278,6 +1304,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/MD5/_build/dll
 @dirrm lib/io/addons/MD5/_build
 @dirrm lib/io/addons/MD5
+@dirrm lib/io/addons/Loki/tests/correctness
 @dirrm lib/io/addons/Loki/tests
 @dirrm lib/io/addons/Loki/source
 @dirrm lib/io/addons/Loki/samples/shootout/C/nsieve-bits
@@ -1293,6 +1320,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/Loki/_build/dll
 @dirrm lib/io/addons/Loki/_build
 @dirrm lib/io/addons/Loki
+@dirrm lib/io/addons/LZO/tests/correctness
 @dirrm lib/io/addons/LZO/tests
 @dirrm lib/io/addons/LZO/source
 @dirrm lib/io/addons/LZO/io
@@ -1302,6 +1330,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/LZO/_build/dll
 @dirrm lib/io/addons/LZO/_build
 @dirrm lib/io/addons/LZO
+@dirrm lib/io/addons/Fnmatch/tests/correctness
 @dirrm lib/io/addons/Fnmatch/tests
 @dirrm lib/io/addons/Fnmatch/source
 @dirrm lib/io/addons/Fnmatch/_build/objs
@@ -1631,6 +1660,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/ContinuedFraction/_build/dll
 @dirrm lib/io/addons/ContinuedFraction/_build
 @dirrm lib/io/addons/ContinuedFraction
+@dirrm lib/io/addons/CGI/tests/correctness
 @dirrm lib/io/addons/CGI/tests
 @dirrm lib/io/addons/CGI/source
 @dirrm lib/io/addons/CGI/io
@@ -1641,6 +1671,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/CGI/_build
 @dirrm lib/io/addons/CGI
 @dirrm lib/io/addons/Box/tests/performance
+@dirrm lib/io/addons/Box/tests/correctness
 @dirrm lib/io/addons/Box/tests
 @dirrm lib/io/addons/Box/source
 @dirrm lib/io/addons/Box/io
@@ -1650,6 +1681,7 @@ lib/libiovmall.so
 @dirrm lib/io/addons/Box/_build/dll
 @dirrm lib/io/addons/Box/_build
 @dirrm lib/io/addons/Box
+@dirrm lib/io/addons/Blowfish/tests/correctness
 @dirrm lib/io/addons/Blowfish/tests
 @dirrm lib/io/addons/Blowfish/source
 @dirrm lib/io/addons/Blowfish/io
