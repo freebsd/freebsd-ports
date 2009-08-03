@@ -148,8 +148,6 @@ OOOEXTENSIONS+=		sun-report-builder.oxt
 
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
-LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost-libs
-CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
 .endif
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
