@@ -2317,6 +2317,7 @@ dkfilter                        ports/mail/dkfilter
 dkftpbench                      ports/benchmarks/dkftpbench
 dkim-milter                     ports/mail/dkim-milter
 dkimproxy                       ports/mail/dkimproxy
+dklibs                          ports/devel/dklibs
 dkns                            ports/editors/dkns
 dlint                           ports/dns/dlint
 dlume                           ports/deskutils/dlume
@@ -17186,6 +17187,7 @@ paperkey                        ports/security/paperkey
 papi                            ports/devel/papi
 paprefs                         ports/audio/paprefs
 paps                            ports/print/paps
+papyon                          ports/net-im/papyon
 paq                             ports/archivers/paq
 par                             ports/textproc/par
 par2cmdline                     ports/archivers/par2cmdline
