@@ -1,5 +1,17 @@
 bin/geeqie
+lib/geeqie/geeqie-import
+lib/geeqie/geeqie-rotate
+lib/geeqie/geeqie-symlink
+lib/geeqie/geeqie-ufraw
 share/applications/geeqie.desktop
+%%DATADIR%%/applications/geeqie-import-geeqie.desktop
+%%DATADIR%%/applications/geeqie-import-gqview.desktop
+%%DATADIR%%/applications/geeqie-ufraw-id.desktop
+%%DATADIR%%/applications/geeqie-ufraw-recursive.desktop
+%%DATADIR%%/applications/geeqie-ufraw.desktop
+%%DATADIR%%/applications/rotate.desktop
+%%DATADIR%%/applications/symlink.desktop
+%%DATADIR%%/template.desktop
 share/locale/ar/LC_MESSAGES/geeqie.mo
 share/locale/be/LC_MESSAGES/geeqie.mo
 share/locale/bg/LC_MESSAGES/geeqie.mo
@@ -34,6 +46,9 @@ share/locale/vi/LC_MESSAGES/geeqie.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/geeqie.mo
 share/locale/zh_TW/LC_MESSAGES/geeqie.mo
 share/pixmaps/geeqie.png
+@dirrm %%DATADIR%%/applications
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrm lib/geeqie
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
