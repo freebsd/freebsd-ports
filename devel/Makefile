@@ -2478,6 +2478,7 @@
     SUBDIR += py-traits
     SUBDIR += py-turbocheetah
     SUBDIR += py-turbojson
+    SUBDIR += py-turbojson11
     SUBDIR += py-turbokid
     SUBDIR += py-twisted
     SUBDIR += py-twistedCore
