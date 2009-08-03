@@ -41,6 +41,7 @@ EXPR?=		/bin/expr
 FALSE?=		false				# Shell builtin
 FILE?=		/usr/bin/file
 FIND?=		/usr/bin/find
+FLEX?=		/usr/bin/flex
 FMT?=		/usr/bin/fmt
 GMAKE?=		gmake
 GREP?=		/usr/bin/grep
@@ -112,5 +113,19 @@ ECHO_CMD?=	echo				# Shell builtin
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=	${ECHO_CMD}
+
+.if exists(${LOCALBASE}/sbin/pkg_info)
+PKG_CMD?=	${LOCALBASE}/sbin/pkg_create
+PKG_ADD?=	${LOCALBASE}/sbin/pkg_add
+PKG_DELETE?=	${LOCALBASE}/sbin/pkg_delete
+PKG_INFO?=	${LOCALBASE}/sbin/pkg_info
+PKG_VERSION?=	${LOCALBASE}/sbin/pkg_version
+.else
+PKG_CMD?=	/usr/sbin/pkg_create
+PKG_ADD?=	/usr/sbin/pkg_add
+PKG_DELETE?=	/usr/sbin/pkg_delete
+PKG_INFO?=	/usr/sbin/pkg_info
+PKG_VERSION?=	/usr/sbin/pkg_version
+.endif
 
 .endif
