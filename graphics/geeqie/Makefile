@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	geeqie
-DISTVERSION=	1.0alpha3
-PORTREVISION=	2
+DISTVERSION=	1.0beta2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -18,6 +17,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
 		--htmldir="${DOCSDIR}/html" \
 		--with-htmldir="${DOCSDIR}/html" \
@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS+=	top_builddir="${WRKSRC}"
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 MAN1=		geeqie.1
@@ -59,8 +60,8 @@ CONFIGURE_ARGS+=--disable-lirc
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -r %F||' \
-		${WRKSRC}/geeqie.desktop
+	@${REINPLACE_CMD} -e 's|MAP_ANONYMOUS|MAP_ANON|' ${WRKSRC}/src/main.c
+	@${REINPLACE_CMD} -e 's| -r %F||' ${WRKSRC}/geeqie.desktop
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-helpDATA||' \
 		${WRKSRC}/doc/Makefile.in
