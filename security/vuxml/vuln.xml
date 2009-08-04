@@ -242,7 +242,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>squid</name>
 	<range><ge>3.0.1</ge><lt>3.0.17</lt></range>
-	<range><ge>3.1.0.8</ge></range>
+	<range><ge>3.1.0.1</ge><lt>3.1.0.12</lt></range>
       </package>
     </affects>
     <description>
@@ -267,6 +267,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-07-27</discovery>
       <entry>2009-07-27</entry>
+       <modified>2009-08-05</modified>
     </dates>
   </vuln>
 
