@@ -11,6 +11,7 @@
 %%QT_INCDIR_REL%%/Qsci/qscilexercpp.h
 %%QT_INCDIR_REL%%/Qsci/qscilexercsharp.h
 %%QT_INCDIR_REL%%/Qsci/qscilexercss.h
+%%QT_INCDIR_REL%%/Qsci/qscilexercustom.h
 %%QT_INCDIR_REL%%/Qsci/qscilexerd.h
 %%QT_INCDIR_REL%%/Qsci/qscilexerdiff.h
 %%QT_INCDIR_REL%%/Qsci/qscilexerfortran.h
@@ -38,10 +39,12 @@
 %%QT_INCDIR_REL%%/Qsci/qsciprinter.h
 %%QT_INCDIR_REL%%/Qsci/qsciscintilla.h
 %%QT_INCDIR_REL%%/Qsci/qsciscintillabase.h
+%%QT_INCDIR_REL%%/Qsci/qscistyle.h
+%%QT_INCDIR_REL%%/Qsci/qscistyledtext.h
 %%QT_LIBDIR_REL%%/libqscintilla2.so
 %%QT_LIBDIR_REL%%/libqscintilla2.so.5
-%%QT_LIBDIR_REL%%/libqscintilla2.so.5.0
-%%QT_LIBDIR_REL%%/libqscintilla2.so.5.0.1
+%%QT_LIBDIR_REL%%/libqscintilla2.so.5.1
+%%QT_LIBDIR_REL%%/libqscintilla2.so.5.1.0
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -60,7 +63,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/Scintilla/ScintillaToDo.html
 %%PORTDOCS%%%%DOCSDIR%%/Scintilla/ScintillaUsage.html
 %%PORTDOCS%%%%DOCSDIR%%/Scintilla/Steps.html
+%%PORTDOCS%%%%DOCSDIR%%/Scintilla/annotations.png
 %%PORTDOCS%%%%DOCSDIR%%/Scintilla/index.html
+%%PORTDOCS%%%%DOCSDIR%%/Scintilla/styledmargin.png
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciAPIs-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciAPIs.html
@@ -86,6 +91,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCSS.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCSharp-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCSharp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCustom-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCustom.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerD-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerD.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerDiff-members.html
@@ -140,8 +147,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciScintilla.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciScintillaBase-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciScintillaBase.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_556434f8084a0975d5f9aa83df897544.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_e71f21f8efaf379e3645c15d5d7e326c.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciStyle-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciStyledText-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciStyledText.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_944256396c06c0295aa2eca7dcfea282.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_d32dfe2bcddd0b2d894b9fb13d6bdd4d.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
@@ -240,6 +252,7 @@ share/qt4/qsci/api/python/Python-2.5.api
 share/qt4/qsci/api/python/Python-2.6.api
 %%NLS%%share/qt4/translations/qscintilla_cs.qm
 %%NLS%%share/qt4/translations/qscintilla_de.qm
+%%NLS%%share/qt4/translations/qscintilla_es.qm
 %%NLS%%share/qt4/translations/qscintilla_fr.qm
 %%NLS%%share/qt4/translations/qscintilla_pt_br.qm
 %%NLS%%share/qt4/translations/qscintilla_ru.qm

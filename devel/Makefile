@@ -2448,6 +2448,7 @@
     SUBDIR += py-qt4-help
     SUBDIR += py-qt4-qscintilla2
     SUBDIR += py-qt4-script
+    SUBDIR += py-qt4-scripttools
     SUBDIR += py-qt4-test
     SUBDIR += py-rbtree
     SUBDIR += py-repl

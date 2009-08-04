@@ -9,8 +9,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/icons/image6.xpm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/mainwindow.qrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/mainwindow.ui
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/mainwindow_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/mainwindow_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/ui_mainwindow.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/ui_mainwindow.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/webbrowser.py
@@ -23,8 +21,53 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs_rc.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/colors.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/colors.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/demoitem.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/demoitem.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/demoitemanimation.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/demoitemanimation.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/demoscene.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/demoscene.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/demotextitem.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/demotextitem.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/dockitem.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/dockitem.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/examplecontent.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/examplecontent.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/guide.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/guide.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/guidecircle.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/guidecircle.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/guideline.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/guideline.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/headingitem.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/headingitem.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/imageitem.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/imageitem.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/images/demobg.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/images/qtlogo_small.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/images/trolltech-logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/itemcircleanimation.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/itemcircleanimation.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/letteritem.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/letteritem.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/mainwindow.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/mainwindow.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/menucontent.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/menucontent.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/menumanager.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/menumanager.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/qtdemo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/qtdemo.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/qtdemo.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/scanitem.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/scanitem.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/score.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/score.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/textbutton.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/textbutton.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/qtdemo/xml/examples.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/calculatorform/calculatorform.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/calculatorform/calculatorform.pyc
@@ -74,22 +117,28 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/pythonconsolewidget.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/pythonconsolewidget.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/screenshot.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/screenshot.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/images/bad.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/images/heart.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/images/trash.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/complexwizard.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/complexwizard.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/classwizard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/classwizard.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/classwizard.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/images/background.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/images/banner.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/images/logo1.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/images/logo2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/images/logo3.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/images/watermark1.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/classwizard/images/watermark2.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog/configdialog.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog/configdialog.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog/configdialog.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog/configdialog_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog/configdialog_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog/images/config.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog/images/query.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog/images/update.png
@@ -97,51 +146,39 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/extension.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/findfiles.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/findfiles.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/simplewizard.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/simplewizard.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/standarddialogs.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/standarddialogs.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/tabdialog.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/tabdialog.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/trivialwizard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/trivialwizard.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons/images/boat.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons/images/car.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons/images/house.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggabletext/words.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/fridgemagnets/words.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle/example.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/collidingmice.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/collidingmice.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/images/cheese.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/mice.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/mice_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/mice_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/background1.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/background2.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/background3.png
@@ -160,8 +197,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/images/head.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/elasticnodes.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/elasticnodes.pyc
@@ -178,8 +213,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/ui_backside.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/ui_backside.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/README
@@ -188,37 +221,38 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart/chart.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart/chart.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart/chart.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart/chart_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart/chart_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart/mydata.cht
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart/qtdata.cht
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/dirview.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/dirview.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/images.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/editabletreemodel/default.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/editabletreemodel/editabletreemodel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/editabletreemodel/editabletreemodel.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/editabletreemodel/editabletreemodel.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/editabletreemodel/mainwindow.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/editabletreemodel/ui_mainwindow.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/editabletreemodel/ui_mainwindow.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/fetchmore.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/fetchmore.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/images/qt.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/pixelator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/pixelator.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/pixelator_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/pixelator_rc.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/pixelator.qrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/puzzle/example.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/puzzle/puzzle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/puzzle/puzzle.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/puzzle/puzzle.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/puzzle/puzzle_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/puzzle/puzzle_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/simpledommodel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/simpledommodel.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/simpletreemodel/default.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/spinboxdelegate.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/spinboxdelegate.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layouts/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layouts/basiclayout.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layouts/basiclayout.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layouts/basiclayouts.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layouts/basiclayouts.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layouts/borderlayout.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layouts/borderlayout.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layouts/flowlayout.py
@@ -227,8 +261,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application/application.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application/application.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application/application.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application/application_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application/application_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application/images/copy.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application/images/cut.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application/images/new.png
@@ -238,8 +270,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets/images/new.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets/images/print.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets/images/save.png
@@ -253,8 +283,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/mdi/mdi.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/mdi/mdi.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/mdi/mdi.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/mdi/mdi_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/mdi/mdi_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/menus.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/menus.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/recentfiles.py
@@ -268,8 +296,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/sdi/sdi.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/sdi/sdi.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/sdi/sdi.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/sdi/sdi_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/sdi/sdi_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/blockingfortuneclient.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/blockingfortuneclient.pyc
@@ -284,13 +310,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp/ftp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp/ftp.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp/ftp.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp/ftp_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp/ftp_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp/images/cdtoparent.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp/images/dir.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp/images/file.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/http.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/http.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/http/authenticationdialog.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/http/http.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/http/http.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/loopback.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/loopback.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/threadedfortuneserver.py
@@ -315,27 +340,22 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/textures/textures.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/textures/textures.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/textures/textures.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/textures/textures_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/textures/textures_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/basicdrawing/images/brick.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/basicdrawing/images/qt-logo.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/concentriccircles.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/concentriccircles.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/painterpaths.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/painterpaths.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/files/bubbles.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/files/cubic.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/files/spheres.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/svgviewer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/svgviewer.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/svgviewer.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/svgviewer_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/svgviewer_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/transformations.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/transformations.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/phonon/README
@@ -355,12 +375,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/calendar.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/orderform.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/orderform.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter/examples/example
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter_rc.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/textobject/files/heart.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/textobject/textobject.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/textobject/textobject.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script/helloscript.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script/helloscript.pyc
@@ -394,8 +413,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/i18n.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/i18n.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/i18n.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/i18n_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/i18n_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/translations/i18n_ar.qm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/translations/i18n_ar.ts
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/translations/i18n_cs.qm
@@ -426,56 +443,27 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/translations/i18n_sv.ts
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/translations/i18n_zh.qm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/translations/i18n_zh.ts
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/demos.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/displayshape.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/displayshape.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/displaywidget.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/displaywidget.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/examples.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/images/qt4-logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/images/rb-logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/launcher.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/launcher.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/qtdemo.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/qtdemo.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/qtdemo.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/qtdemo.rc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/qtdemo_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/qtdemo_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/regexp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/regexp.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/settingseditor/inifiles/troll.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/settingseditor/inifiles/licensepage.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/settingseditor/inifiles/qsa.ini
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/settingseditor/settingseditor.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/settingseditor/settingseditor.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t1.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t1.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t10.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t10.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t11.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t11.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t12.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t12.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t13.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t13.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t14.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t14.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t2.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t3.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t3.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t4.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t4.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t5.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t5.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t6.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t6.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t7.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t7.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t8.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t8.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t9.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/t9.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part1.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part2.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part3.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part4.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part4.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part5.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part5.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part6.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part6.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part7.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/addressbook/part7.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/analogclock.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/analogclock.pyc
@@ -500,24 +488,16 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images/monkey_on_16x16.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images/monkey_on_32x32.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images/monkey_on_64x64.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images/qtopia_16x16.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images/qtopia_32x32.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images/qtopia_48x48.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images/qt_extended_16x16.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images/qt_extended_32x32.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images/qt_extended_48x48.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/imageviewer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/imageviewer.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/lineedits.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/lineedits.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/icons/eject.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/icons/play-pause.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/icons/quit.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/icons/stop.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/animation.mng
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/movie.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/movie.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/movie.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/movie_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/movie_rc.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/screenshot.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/screenshot.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/scribble.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/scribble.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/shapedclock.py
@@ -536,8 +516,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/tooltips/tooltips.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/tooltips/tooltips.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/tooltips/tooltips.qrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/tooltips/tooltips_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/tooltips/tooltips_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/wiggly.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/wiggly.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/windowflags.py
@@ -556,16 +534,14 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xml
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/tooltips/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/tooltips
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/movie/icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/movie
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/icons/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/addressbook
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/settingseditor/inifiles
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/settingseditor
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/qtdemo/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/qtdemo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/i18n/translations
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/i18n
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/codecs/encodedfiles
@@ -574,8 +550,8 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/threads
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sql
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/script
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/richtext/syntaxhighlighter/examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/richtext/syntaxhighlighter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/richtext/textobject/files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/richtext/textobject
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/richtext
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pyuic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/phonon
@@ -587,6 +563,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/opengl/textures/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/opengl/textures
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/opengl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/network/http
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/network/ftp/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/network/ftp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/network
@@ -604,6 +581,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/puzzle
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/pixelator/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/pixelator
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/editabletreemodel
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/chart
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/padnavigator/images
@@ -623,6 +601,8 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dialogs/configdialog/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dialogs/configdialog
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dialogs/classwizard/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dialogs/classwizard
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dialogs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/desktop/systray/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/desktop/systray
@@ -632,6 +612,9 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/designer/plugins
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/designer/calculatorform
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/designer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/qtdemo/xml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/qtdemo/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/qtdemo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/embeddeddialogs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/activeqt/webbrowser/icons

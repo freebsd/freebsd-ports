@@ -50,6 +50,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/cursor-wait.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/cursor-whatsthis.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/effectwidget.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/filedialogurls.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/foreignkeys.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/frames.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/graphicsview-ellipseitem-pie.png
@@ -93,6 +94,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/macintosh-treeview.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/mainwindow-docks.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/mainwindowlayout.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/mdi-cascade.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/mdi-tile.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/modelindex-no-parent.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/modelview-begin-append-columns.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/modelview-begin-append-rows.png
@@ -178,7 +181,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qmatrix-combinedtransformation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qmatrix-representation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qmatrix-simpletransformation.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/qmdiarea-arrange.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qmdisubwindowlayout.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qmessagebox-crit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qmessagebox-info.png
@@ -221,6 +223,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qpen-dash.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qpen-dashdot.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qpen-dashdotdot.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/qpen-dashpattern.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qpen-demo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qpen-dot.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qpen-flat.png
@@ -267,6 +270,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtexttableformat-cell.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtransform-combinedtransformation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtransform-combinedtransformation2.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/qtransform-representation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtransform-simpletransformation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtwizard-aero1.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtwizard-aero2.png
@@ -289,7 +293,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qvboxlayout-with-5-children.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qwebview-diagram.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qwebview-url.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/qworkspace-arrange.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/rb-logo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/relationaltable.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/rintersect.png
@@ -330,6 +333,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-abstractaudiooutput.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-abstractvideooutput.html
+%%PORTDOCS%%%%DOCSDIR%%/html/phonon-audiocapturedevice.html
+%%PORTDOCS%%%%DOCSDIR%%/html/phonon-audiochanneldescription.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-audiooutput.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-audiooutputdevice.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-audiooutputdevicemodel.html
@@ -349,6 +354,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-path.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-seekslider.html
+%%PORTDOCS%%%%DOCSDIR%%/html/phonon-subtitledescription.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-videoplayer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-videowidget.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phonon-volumeslider.html
@@ -369,6 +375,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qabstractitemview.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qabstractlistmodel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qabstractmessagehandler.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qabstractnetworkcache.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qabstractprintdialog-printdialogoptions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qabstractprintdialog.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qabstractproxymodel.html
@@ -407,6 +414,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qclipboard.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qcloseevent.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qcolor.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qcolordialog-colordialogoptions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qcolordialog.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qcolumnview.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qcombobox.html
@@ -499,6 +507,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qfontcombobox-fontfilters.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qfontcombobox.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qfontdatabase.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qfontdialog-fontdialogoptions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qfontdialog.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qfontinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qfontmetrics.html
@@ -580,12 +589,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qicon.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qicondragevent.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qiconengine.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qiconenginev2-availablesizesargument.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qiconenginev2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qimage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qimageiohandler.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qimagereader.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qimagewriter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qinputcontext.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qinputcontextfactory.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qinputdialog-inputdialogoptions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qinputdialog.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qinputevent.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qinputmethodevent-attribute.html
@@ -649,11 +661,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qmutexlocker.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qnetworkaccessmanager.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qnetworkaddressentry.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qnetworkcachemetadata.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qnetworkcookie.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qnetworkcookiejar.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qnetworkdiskcache.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qnetworkinterface-interfaceflags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qnetworkinterface.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qnetworkproxy-capabilities.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qnetworkproxy.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qnetworkproxyfactory.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qnetworkproxyquery.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qnetworkreply.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qnetworkrequest.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qobject.html
@@ -702,6 +719,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qpydesignermembersheetextension.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qpydesignerpropertysheetextension.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qpydesignertaskmenuextension.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qpytextobject.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qradialgradient.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qradiobutton.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qreadlocker.html
@@ -723,7 +741,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qscriptengine-qobjectwrapoptions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qscriptengine.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qscriptengineagent.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qscriptenginedebugger.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qscriptstring.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qscriptsyntaxcheckresult.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qscriptvalue-propertyflags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qscriptvalue-resolveflags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qscriptvalue.html
@@ -808,6 +828,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptionframe.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptionframev2-framefeatures.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptionframev2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptionframev3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiongraphicsitem.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiongroupbox.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptionheader.html
@@ -821,7 +842,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiontab-cornerwidgets.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiontab.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiontabbarbase.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiontabbarbasev2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiontabv2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiontabv3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiontabwidgetframe.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiontitlebar.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qstyleoptiontoolbar-toolbarfeatures.html
@@ -889,6 +912,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextdocument-findflags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextdocument.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextdocumentfragment.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qtextdocumentwriter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextedit-autoformatting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextedit-extraselection.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextedit.html
@@ -910,6 +934,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextlist.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextlistformat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextobject.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qtextobjectinterface.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextoption-flags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextoption-tab.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtextoption.html
@@ -942,6 +967,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qtreewidgetitemiterator-iteratorflags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtreewidgetitemiterator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtscript.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qtscripttools.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtsql.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtsvg.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qttest.html
@@ -962,11 +988,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qvariant.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qvboxlayout.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwaitcondition.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qwebdatabase.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebframe.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebhistory.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebhistoryinterface.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebhistoryitem.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebhittestresult.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qwebpage-choosemultiplefilesextensionoption.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qwebpage-choosemultiplefilesextensionreturn.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebpage-extensionoption.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebpage-extensionreturn.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebpage-findflags.html
@@ -976,6 +1005,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebpluginfactory-mimetype.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebpluginfactory-plugin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebpluginfactory.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qwebsecurityorigin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebsettings.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwebview.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qwhatsthis.html

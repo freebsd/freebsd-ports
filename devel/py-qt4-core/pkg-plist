@@ -18,6 +18,12 @@ bin/pyuic4
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/indenter.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/indenter.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/indenter.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/misc.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/misc.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/misc.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/proxy_type.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/proxy_type.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/proxy_type.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/qobjectcreator.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/qobjectcreator.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler/qobjectcreator.pyo
@@ -36,6 +42,9 @@ bin/pyuic4
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/__init__.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/__init__.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/driver.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/driver.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/driver.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/exceptions.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/exceptions.pyo
@@ -45,6 +54,27 @@ bin/pyuic4
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/objcreator.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/objcreator.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/objcreator.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/__init__.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/ascii_upper.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/ascii_upper.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/ascii_upper.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/encode_utf8.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/encode_utf8.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/encode_utf8.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/invoke.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/invoke.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/invoke.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/load_plugin.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/load_plugin.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/load_plugin.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/proxy_base.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/proxy_base.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/proxy_base.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/string_io.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/string_io.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/string_io.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/properties.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/properties.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/properties.pyo
@@ -54,6 +84,9 @@ bin/pyuic4
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/uiparser.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/uiparser.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/uiparser.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/phonon.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/phonon.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/phonon.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qaxcontainer.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qaxcontainer.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qaxcontainer.pyo
@@ -143,6 +176,7 @@ bin/pyuic4
 %%API%%share/qt4/qsci/api/python/QtCore.api
 %%SIP%%@dirrm share/py-sip/QtCore
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins
+@dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/Loader
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic

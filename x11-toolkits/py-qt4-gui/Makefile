@@ -6,7 +6,6 @@
 
 PORTNAME=	gui
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-cor
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT_VER=	4
-QT_COMPONENTS=	gui imageformats inputmethods iconengines qmake_build
+QT_COMPONENTS=	gui imageformats inputmethods iconengines qmake_build moc_build
 
 OPTIONS=	API		"Install QtGui API for QScintilla2" on \
 		DEBUG		"Enable debugging in generated code" off \
@@ -64,6 +63,10 @@ PLIST_SUB+=	SIP=""
 .endif
 .if defined(WITH_TRACING)
 ARGS+=		--trace
+.endif
+
+.if ${ARCH} == "sparc64" && ${OSVERSION} >= 700000
+BROKEN=		Does not compile on sparc64
 .endif
 
 do-configure:

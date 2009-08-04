@@ -1,0 +1,4 @@
+PyQt4 is a set of Python bindings for Trolltech's Qt4 application framework.
+This package provides the QtScript module.
+
+WWW: http://www.riverbankcomputing.co.uk/pyqt/
