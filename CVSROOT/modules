@@ -6533,8 +6533,8 @@ kde3-i18n-se                    ports/misc/kde3-i18n-se
 kde3-i18n-sk                    ports/misc/kde3-i18n-sk
 kde3-i18n-sl                    ports/misc/kde3-i18n-sl
 kde3-i18n-sr                    ports/misc/kde3-i18n-sr
-kde3-i18n-sr@Latn               ports/misc/kde3-i18n-sr@Latn
-kde3-i18n-sr@latn               ports/misc/kde3-i18n-sr@Latn
+kde3-i18n-sr_Latn               ports/misc/kde3-i18n-sr_Latn
+kde3-i18n-sr_latn               ports/misc/kde3-i18n-sr_Latn
 kde3-i18n-ss                    ports/misc/kde3-i18n-ss
 kde3-i18n-sv                    ports/misc/kde3-i18n-sv
 kde3-i18n-ta                    ports/misc/kde3-i18n-ta
@@ -6864,8 +6864,8 @@ koffice-i18n-se                 ports/editors/koffice-i18n-se
 koffice-i18n-sk                 ports/editors/koffice-i18n-sk
 koffice-i18n-sl                 ports/editors/koffice-i18n-sl
 koffice-i18n-sr                 ports/editors/koffice-i18n-sr
-koffice-i18n-sr@Latn            ports/editors/koffice-i18n-sr@Latn
-koffice-i18n-sr@latn            ports/editors/koffice-i18n-sr@Latn
+koffice-i18n-sr_Latn            ports/editors/koffice-i18n-sr_Latn
+koffice-i18n-sr_latn            ports/editors/koffice-i18n-sr_Latn
 koffice-i18n-sv                 ports/editors/koffice-i18n-sv
 koffice-i18n-ta                 ports/editors/koffice-i18n-ta
 koffice-i18n-tg                 ports/editors/koffice-i18n-tg
@@ -7456,7 +7456,7 @@ liblouisxml                     ports/devel/liblouisxml
 liblqr-1                        ports/graphics/liblqr-1
 liblrdf                         ports/textproc/liblrdf
 liblscp                         ports/audio/liblscp
-libltdl15                       ports/devel/libltdl15
+libltdl22                       ports/devel/libltdl22
 liblug                          ports/graphics/liblug
 liblzxcomp                      ports/archivers/liblzxcomp
 libmaa                          ports/devel/libmaa
@@ -7693,7 +7693,7 @@ libtifiles2                     ports/devel/libtifiles2
 libtnl                          ports/net/libtnl
 libtomcrypt                     ports/security/libtomcrypt
 libtommath                      ports/math/libtommath
-libtool15                       ports/devel/libtool15
+libtool22                       ports/devel/libtool22
 libtorrent                      ports/net-p2p/libtorrent
 libtorrent-devel                ports/net-p2p/libtorrent-devel
 libtrace                        ports/net/libtrace
@@ -19514,6 +19514,7 @@ py-turbodjango                  ports/www/py-turbodjango
 py-turbogears                   ports/www/py-turbogears
 py-turbojinja                   ports/devel/py-TurboJinja
 py-turbojson                    ports/devel/py-turbojson
+py-turbojson11                  ports/devel/py-turbojson11
 py-turbokid                     ports/devel/py-turbokid
 py-turbomail                    ports/mail/py-turbomail
 py-turbosetup                   ports/www/py-turbosetup
