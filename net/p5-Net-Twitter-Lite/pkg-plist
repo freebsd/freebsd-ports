@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Net/Twitter/Lite.pm
+%%SITE_PERL%%/Net/Twitter/Lite/Error.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Twitter/Lite/.packlist
+@dirrmtry %%SITE_PERL%%/Net/Twitter/Lite
+@dirrmtry %%SITE_PERL%%/Net/Twitter
+@dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Twitter/Lite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Twitter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

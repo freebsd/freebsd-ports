@@ -1,0 +1,11 @@
+This module provides a perl interface to the Twitter APIs. It uses the
+same API definitions as Net::Twitter, but without the extra bells and
+whistles and without the additional dependencies. Same great taste,
+less filling.
+
+This module is related to, but is not part of the "Net::Twitter"
+distribution. It's API methods and API method documentation are
+generated from "Net::Twitter"'s internals. It exists for those who
+cannot, or prefer not to install Moose and its dependencies.
+
+WWW: http://search.cpan.org/dist/Net-Twitter-Lite/

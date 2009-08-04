@@ -595,6 +595,7 @@
     SUBDIR += p5-Net-Traceroute6
     SUBDIR += p5-Net-Trackback
     SUBDIR += p5-Net-Twitter
+    SUBDIR += p5-Net-Twitter-Lite
     SUBDIR += p5-Net-VNC
     SUBDIR += p5-Net-Wake
     SUBDIR += p5-Net-Whois
