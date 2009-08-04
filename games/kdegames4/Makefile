@@ -6,7 +6,6 @@
 
 PORTNAME=	kdegames
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -26,7 +25,7 @@ KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	opengl gui svg iconengines pixeltool \
 		qmake_build moc_build rcc_build uic_build
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	FREEBSD "Install FreeBSD card desk" off
 

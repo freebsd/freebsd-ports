@@ -6,7 +6,6 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -22,6 +21,7 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		otr.4:${PORTSDIR}/security/libotr \
 		vncserver.0:${PORTSDIR}/net/libvncserver \
 		msn.0:${PORTSDIR}/net-im/libmsn \
+		gadu:${PORTSDIR}/polish/libgadu \
 		gmp.8:${PORTSDIR}/math/libgmp4 \
 		ortp.5:${PORTSDIR}/net/ortp \
 		decibel.0:${PORTSDIR}/net-im/decibel \
@@ -32,14 +32,14 @@ RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
-USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
+USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4 kdeexp
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 USE_SQLITE=	yes
 QT_COMPONENTS=	corelib opengl dbus qt3support gui network xml porting_build \
 		qmake_build moc_build rcc_build uic_build uic3_build
 USE_OPENSSL=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	XMMS "Enable XMMS Kopete nowlistening plugin" off
 

@@ -12,7 +12,10 @@ include/Soprano/Client/DBusModel
 include/Soprano/Client/DBusNodeIterator
 include/Soprano/Client/DBusQueryResultIterator
 include/Soprano/Client/DBusStatementIterator
+include/Soprano/Graph
+include/Soprano/LanguageTag
 include/Soprano/Client/LocalSocketClient
+include/Soprano/NRLModel
 include/Soprano/Client/SparqlModel
 include/Soprano/Client/TcpClient
 include/Soprano/Error/Error
@@ -87,6 +90,7 @@ include/soprano/dummymodel.h
 include/soprano/error.h
 include/soprano/filtermodel.h
 include/soprano/global.h
+include/soprano/graph.h
 include/soprano/indexfiltermodel.h
 include/soprano/indexqueryhit.h
 include/soprano/inferencemodel.h
@@ -97,6 +101,7 @@ include/soprano/iterator.h
 include/soprano/iteratorbackend.h
 include/soprano/literalvalue.h
 include/soprano/localsocketclient.h
+include/soprano/languagetag.h
 include/soprano/locator.h
 include/soprano/model.h
 include/soprano/mutexmodel.h
@@ -105,6 +110,7 @@ include/soprano/node.h
 include/soprano/nodeiterator.h
 include/soprano/nodepattern.h
 include/soprano/nrl.h
+include/soprano/nrlmodel.h
 include/soprano/owl.h
 include/soprano/parser.h
 include/soprano/plugin.h
@@ -122,6 +128,7 @@ include/soprano/sil.h
 include/soprano/simplenodeiterator.h
 include/soprano/simplestatementiterator.h
 include/soprano/soprano.h
+include/soprano/sopranomacros.h
 include/soprano/soprano_export.h
 include/soprano/sopranotypes.h
 include/soprano/sparqlmodel.h
@@ -136,13 +143,13 @@ include/soprano/xesam.h
 include/soprano/xsd.h
 lib/libsoprano.so
 lib/libsoprano.so.4
-lib/libsoprano.so.4.1.0
+lib/libsoprano.so.4.2.0
 lib/libsopranoclient.so
 lib/libsopranoclient.so.1
-lib/libsopranoclient.so.1.0.0
+lib/libsopranoclient.so.1.1.0
 lib/libsopranoindex.so
 lib/libsopranoindex.so.1
-lib/libsopranoindex.so.1.0.0
+lib/libsopranoindex.so.1.1.0
 lib/libsopranoserver.so
 lib/libsopranoserver.so.1
 lib/libsopranoserver.so.1.0.0
@@ -153,6 +160,7 @@ lib/soprano/libsoprano_raptorserializer.so
 %%REDLAND%%lib/soprano/libsoprano_redlandbackend.so
 %%SESAME2%%lib/soprano/libsoprano_sesame2backend.so
 libdata/pkgconfig/soprano.pc
+share/cmake/Modules/SopranoAddOntology.cmake
 share/dbus-1/interfaces/org.soprano.Model.xml
 share/dbus-1/interfaces/org.soprano.NodeIterator.xml
 share/dbus-1/interfaces/org.soprano.QueryResultIterator.xml
@@ -166,7 +174,7 @@ share/dbus-1/interfaces/org.soprano.StatementIterator.xml
 %%SESAME2%%%%DATADIR%%/plugins/sesame2backend.desktop
 %%DATADIR%%/rules/nrl.rules
 %%DATADIR%%/rules/rdfs.rules
-%%SESAME2%%%%DATADIR%%/sesame2/openrdf-sesame-2.1.4-onejar.jar
+%%SESAME2%%%%DATADIR%%/sesame2/openrdf-sesame-2.2.4-onejar.jar
 %%SESAME2%%%%DATADIR%%/sesame2/slf4j-api-1.5.5.jar
 %%SESAME2%%%%DATADIR%%/sesame2/slf4j-simple-1.5.5.jar
 %%SESAME2%%%%DATADIR%%/sesame2/SopranoSesame2Wrapper.class
@@ -174,6 +182,8 @@ share/dbus-1/interfaces/org.soprano.StatementIterator.xml
 @dirrm %%DATADIR%%/rules
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
+@dirrmtry share/cmake/Modules
+@dirrmtry share/cmake
 @dirrm lib/soprano
 @dirrm include/soprano
 @dirrm include/Soprano/Vocabulary

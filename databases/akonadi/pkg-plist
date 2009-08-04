@@ -7,12 +7,14 @@ include/akonadi/private/imapset_p.h
 include/akonadi/private/notificationmessage_p.h
 include/akonadi/private/protocol_p.h
 include/akonadi/private/xdgbasedirs_p.h
+lib/cmake/Akonadi/AkonadiConfig.cmake
+lib/cmake/Akonadi/AkonadiConfigVersion.cmake
 lib/libakonadiprivate.so
 lib/libakonadiprivate.so.1
-lib/libakonadiprivate.so.1.1.2
+lib/libakonadiprivate.so.1.2.0
 lib/libakonadiprotocolinternals.so
 lib/libakonadiprotocolinternals.so.1
-lib/libakonadiprotocolinternals.so.1.1.2
+lib/libakonadiprotocolinternals.so.1.2.0
 libdata/pkgconfig/akonadi.pc
 share/config/akonadi/mysql-global.conf
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
@@ -31,6 +33,10 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 share/dbus-1/services/org.freedesktop.Akonadi.Control.service
 share/mime/packages/akonadi-mime.xml
 @dirrm share/config/akonadi
+@dirrmtry share/apps/cmake/modules
+@dirrmtry share/apps/cmake
+@dirrm lib/cmake/Akonadi
+@dirrm lib/cmake
 @dirrmtry include/akonadi/private
 @dirrmtry include/akonadi
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

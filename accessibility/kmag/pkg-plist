@@ -1108,7 +1108,7 @@ share/icons/mono/scalable/actions/suspend_to_ram.svgz
 share/icons/mono/scalable/actions/syntax.svgz
 share/icons/mono/scalable/actions/system-lock-screen.svgz
 share/icons/mono/scalable/actions/system-log-out.svgz
-share/icons/mono/scalable/actions/system-restart.svgz
+share/icons/mono/scalable/actions/system-reboot.svgz
 share/icons/mono/scalable/actions/system-run.svgz
 share/icons/mono/scalable/actions/system-search.svgz
 share/icons/mono/scalable/actions/system-shutdown.svgz
@@ -2266,3 +2266,5 @@ share/kde4/servicetypes/kttsd_synthplugin.desktop
 @dirrm share/apps/kmousetool/sounds
 @dirrm share/apps/kmousetool
 @dirrm share/apps/kmag
+@dirrmtry share/apps/cmake/modules
+@dirrmtry share/apps/cmake

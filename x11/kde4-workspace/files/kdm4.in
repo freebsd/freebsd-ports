@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# PROVIDE: kdm4
+# REQUIRE: LOGIN cleanvar moused syscons dbus hald
+#
+# Add the following to /etc/rc.conf to start kdm at boot time:
+#
+# kdm4_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+kdm4_enable=${kdm4_enable-"NO"}
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/kde4/bin:/usr/local/kde4/sbin
+
+GENKDMCONF=%%PREFIX%%/bin/genkdmconf
+KDMCONFDIR=%%PREFIX%%/share/config/kdm
+
+name=kdm4
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/kdm-bin"
+pidfile="/var/run/kdm.pid"
+procname="%%PREFIX%%/bin/kdm-bin"
+start_cmd="kdm_start"
+
+kdm_start()
+{
+    if ! checkyesno kdm4_enable ; then
+	return 0
+    fi
+    echo "Starting ${name}."
+
+    #Configure kdm if needed
+    if [ ! -r ${KDMCONFDIR}/kdmrc ]; then
+	echo "Generating KDM configuration";
+	${GENKDMCONF} --no-old --in ${KDMCONFDIR};
+    else
+	echo "Updating KDM configuration";
+	${GENKDMCONF} --in ${KDMCONFDIR};
+    fi
+
+    ( iter=0
+    while ! ps -axoargs | grep "^/usr/libexec/getty " | grep -qv grep >/dev/null 2>&1; do
+	if [ ${iter} -eq 60 ]; then
+	    break
+	fi
+	sleep 10
+	iter=$(expr ${iter} + 1)
+    done
+    ${command} ${kdm4_flags} ) &
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

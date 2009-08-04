@@ -7,7 +7,6 @@
 
 PORTNAME=	kdebindings
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde python
 PKGNAMESUFFIX=	-kde
 
@@ -24,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 BINDLANG=	python
 BINDMODULE=	pykde4
 
-USE_KDE4=	akonadi pimlibs
+USE_KDE4=	akonadi kdelibs pimlibs workspace
 USE_PYTHON=	2.5+
 
 SUB_FILES=	kdebindings4.pth

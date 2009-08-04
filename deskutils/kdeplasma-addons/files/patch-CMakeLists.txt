@@ -1,0 +1,28 @@
+--- ../CMakeLists.txt.orig	2009-04-06 07:00:39.000000000 +1100
++++ ../CMakeLists.txt	2009-06-26 11:00:58.000000000 +1100
+@@ -26,16 +26,20 @@
+ endif (DEPEND_PACKAGE_Marble)
+ macro_log_feature(MARBLE_FOUND "Marble" "Desktop Globe" "http://marble.kde.org" FALSE "" "RECOMMENDED: Marble is used to provide a desktop globe wallpaper for Plasma.")
+ 
+-if (NEPOMUK_FOUND)
+-  include_directories( ${SOPRANO_INCLUDE_DIR} ${NEPOMUK_INCLUDE_DIR} )
+-endif (NEPOMUK_FOUND)
+-
+ add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+-include_directories (${KDE4_INCLUDES}
++INCLUDE_DIRECTORIES (${QT_QTGUI_INCLUDE_DIR}
++                     ${QT_QTCORE_INCLUDE_DIR}
++                     ${QT_QTXML_INCLUDE_DIR}
++                     ${PHONON_INCLUDE_DIR}
++                     ${KDE4_INCLUDES}
+                      ${KDE4WORKSPACE_INCLUDE_DIR}
+                      ${KDEPIMLIBS_INCLUDE_DIR}
+                      ${CMAKE_CURRENT_SOURCE_DIR}/libs)
+ 
++if (NEPOMUK_FOUND)
++  include_directories( ${SOPRANO_INCLUDE_DIR} ${NEPOMUK_INCLUDE_DIR} )
++endif (NEPOMUK_FOUND)
++
+ add_subdirectory(libs)
+ add_subdirectory(applets)
+ add_subdirectory(dataengines)

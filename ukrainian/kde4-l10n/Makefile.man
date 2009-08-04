@@ -34,6 +34,7 @@ MAN1=	adddebug.1 \
 	kross.1 \
 	ktouch.1 \
 	makekdewidgets.1 \
+	plasmaengineexplorer.1 \
 	po2xml.1 \
 	preparetips.1 \
 	pruneemptydirs.1 \
@@ -54,4 +55,6 @@ MAN8=	kbuildsycoca4.8 \
 	kcookiejar4.8 \
 	kded4.8 \
 	kdeinit4.8 \
-	meinproc4.8
+	meinproc4.8 \
+	nepomukserver.8 \
+	nepomukservicestub.8

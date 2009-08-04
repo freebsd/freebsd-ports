@@ -17,6 +17,7 @@ share/locale/tg/LC_MESSAGES/drkonqi.mo
 share/locale/tg/LC_MESSAGES/filetypes.mo
 share/locale/tg/LC_MESSAGES/htmlsearch.mo
 share/locale/tg/LC_MESSAGES/imagerename_plugin.mo
+share/locale/tg/LC_MESSAGES/irkick.mo
 share/locale/tg/LC_MESSAGES/joystick.mo
 share/locale/tg/LC_MESSAGES/juk.mo
 share/locale/tg/LC_MESSAGES/kabc_dir.mo
@@ -79,7 +80,6 @@ share/locale/tg/LC_MESSAGES/kcmcgi.mo
 share/locale/tg/LC_MESSAGES/kcmcolors.mo
 share/locale/tg/LC_MESSAGES/kcmcomponentchooser.mo
 share/locale/tg/LC_MESSAGES/kcmcrypto.mo
-share/locale/tg/LC_MESSAGES/kcmcss.mo
 share/locale/tg/LC_MESSAGES/kcmenergy.mo
 share/locale/tg/LC_MESSAGES/kcmfonts.mo
 share/locale/tg/LC_MESSAGES/kcmhtmlsearch.mo
@@ -107,6 +107,7 @@ share/locale/tg/LC_MESSAGES/kcmkwinrules.mo
 share/locale/tg/LC_MESSAGES/kcmkwm.mo
 share/locale/tg/LC_MESSAGES/kcmlaunch.mo
 share/locale/tg/LC_MESSAGES/kcmlilo.mo
+share/locale/tg/LC_MESSAGES/kcmlirc.mo
 share/locale/tg/LC_MESSAGES/kcmlocale.mo
 share/locale/tg/LC_MESSAGES/kcmnic.mo
 share/locale/tg/LC_MESSAGES/kcmnotify.mo
@@ -129,6 +130,7 @@ share/locale/tg/LC_MESSAGES/kdebugdialog.mo
 share/locale/tg/LC_MESSAGES/kded_phononserver.mo
 share/locale/tg/LC_MESSAGES/kdelibs4.mo
 share/locale/tg/LC_MESSAGES/kdelibs_colors4.mo
+share/locale/tg/LC_MESSAGES/kdelirc.mo
 share/locale/tg/LC_MESSAGES/kdepasswd.mo
 share/locale/tg/LC_MESSAGES/kdepimwizards.mo
 share/locale/tg/LC_MESSAGES/kdeqt.mo
@@ -330,9 +332,9 @@ share/locale/tg/LC_MESSAGES/nsplugin.mo
 share/locale/tg/LC_MESSAGES/okular.mo
 share/locale/tg/LC_MESSAGES/parley.mo
 share/locale/tg/LC_MESSAGES/phonon_kde.mo
+share/locale/tg/LC_MESSAGES/plasma-desktop.mo
 share/locale/tg/LC_MESSAGES/plasma-overlay.mo
 share/locale/tg/LC_MESSAGES/plasma-shells-common.mo
-share/locale/tg/LC_MESSAGES/plasma.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_desktop.mo
@@ -343,14 +345,14 @@ share/locale/tg/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_quicklaunch.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_system-monitor.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_systemtray.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_webbrowser.mo
-share/locale/tg/LC_MESSAGES/plasma_appletscript_qedje.mo
 share/locale/tg/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/tg/LC_MESSAGES/plasma_containment_saverdesktop.mo
+share/locale/tg/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
 share/locale/tg/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/tg/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/tg/LC_MESSAGES/plasma_runner_locations.mo

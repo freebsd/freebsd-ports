@@ -7,6 +7,7 @@ share/locale/kn/LC_MESSAGES/joystick.mo
 share/locale/kn/LC_MESSAGES/kaccess.mo
 share/locale/kn/LC_MESSAGES/kappfinder.mo
 share/locale/kn/LC_MESSAGES/kblankscrn.mo
+share/locale/kn/LC_MESSAGES/kcertpart.mo
 share/locale/kn/LC_MESSAGES/kcm_autostart.mo
 share/locale/kn/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/kn/LC_MESSAGES/kcm_emoticons.mo
@@ -17,14 +18,12 @@ share/locale/kn/LC_MESSAGES/kcm_pci.mo
 share/locale/kn/LC_MESSAGES/kcm_phonon.mo
 share/locale/kn/LC_MESSAGES/kcm_phononxine.mo
 share/locale/kn/LC_MESSAGES/kcm_solid.mo
-share/locale/kn/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/kn/LC_MESSAGES/kcmaccess.mo
 share/locale/kn/LC_MESSAGES/kcmbackground.mo
 share/locale/kn/LC_MESSAGES/kcmbell.mo
 share/locale/kn/LC_MESSAGES/kcmcgi.mo
 share/locale/kn/LC_MESSAGES/kcmcolors.mo
 share/locale/kn/LC_MESSAGES/kcmcomponentchooser.mo
-share/locale/kn/LC_MESSAGES/kcmcss.mo
 share/locale/kn/LC_MESSAGES/kcmenergy.mo
 share/locale/kn/LC_MESSAGES/kcmfonts.mo
 share/locale/kn/LC_MESSAGES/kcmhtmlsearch.mo
@@ -36,7 +35,6 @@ share/locale/kn/LC_MESSAGES/kcmioslaveinfo.mo
 share/locale/kn/LC_MESSAGES/kcmkclock.mo
 share/locale/kn/LC_MESSAGES/kcmkded.mo
 share/locale/kn/LC_MESSAGES/kcmkdnssd.mo
-share/locale/kn/LC_MESSAGES/kcmkeyboard.mo
 share/locale/kn/LC_MESSAGES/kcmkeys.mo
 share/locale/kn/LC_MESSAGES/kcmkio.mo
 share/locale/kn/LC_MESSAGES/kcmkonq.mo
@@ -74,8 +72,8 @@ share/locale/kn/LC_MESSAGES/kdmconfig.mo
 share/locale/kn/LC_MESSAGES/kdmgreet.mo
 share/locale/kn/LC_MESSAGES/keditbookmarks.mo
 share/locale/kn/LC_MESSAGES/kfile.mo
+share/locale/kn/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/kn/LC_MESSAGES/kfindpart.mo
-share/locale/kn/LC_MESSAGES/kfmclient.mo
 share/locale/kn/LC_MESSAGES/kfontinst.mo
 share/locale/kn/LC_MESSAGES/kgreet_classic.mo
 share/locale/kn/LC_MESSAGES/kgreet_generic.mo
@@ -92,6 +90,7 @@ share/locale/kn/LC_MESSAGES/kio_bookmarks.mo
 share/locale/kn/LC_MESSAGES/kio_finger.mo
 share/locale/kn/LC_MESSAGES/kio_fish.mo
 share/locale/kn/LC_MESSAGES/kio_floppy.mo
+share/locale/kn/LC_MESSAGES/kio_help4.mo
 share/locale/kn/LC_MESSAGES/kio_ldap.mo
 share/locale/kn/LC_MESSAGES/kio_man.mo
 share/locale/kn/LC_MESSAGES/kio_nepomuksearch.mo
@@ -110,6 +109,7 @@ share/locale/kn/LC_MESSAGES/klipper.mo
 share/locale/kn/LC_MESSAGES/kmenuedit.mo
 share/locale/kn/LC_MESSAGES/kmimetypefinder.mo
 share/locale/kn/LC_MESSAGES/knetattach.mo
+share/locale/kn/LC_MESSAGES/knotificationitem-1.mo
 share/locale/kn/LC_MESSAGES/knotify4.mo
 share/locale/kn/LC_MESSAGES/konqueror.mo
 share/locale/kn/LC_MESSAGES/konsole.mo
@@ -152,9 +152,9 @@ share/locale/kn/LC_MESSAGES/nepomuk.mo
 share/locale/kn/LC_MESSAGES/nepomuksearch.mo
 share/locale/kn/LC_MESSAGES/nsplugin.mo
 share/locale/kn/LC_MESSAGES/phonon_kde.mo
+share/locale/kn/LC_MESSAGES/plasma-desktop.mo
 share/locale/kn/LC_MESSAGES/plasma-overlay.mo
 share/locale/kn/LC_MESSAGES/plasma-shells-common.mo
-share/locale/kn/LC_MESSAGES/plasma.mo
 share/locale/kn/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/kn/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/kn/LC_MESSAGES/plasma_runner_powerdevil.mo

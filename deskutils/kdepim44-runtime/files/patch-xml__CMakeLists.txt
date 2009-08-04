@@ -1,0 +1,33 @@
+--- ../xml/CMakeLists.txt.orig	2009-06-03 22:54:34.000000000 +1100
++++ ../xml/CMakeLists.txt	2009-07-05 22:39:32.000000000 +1100
+@@ -1,21 +1,24 @@
+ project (akonadixml)
+ 
+-if ( LIBXML2_FOUND )
+-  add_definitions( -DHAVE_LIBXML2 )
+-endif ( LIBXML2_FOUND )
+-
+-add_subdirectory( tests )
+-
+ add_definitions( -DQT_NO_CAST_FROM_ASCII )
+ add_definitions( -DQT_NO_CAST_TO_ASCII )
+ 
+ include_directories(
++    ${QT_QTGUI_INCLUDE_DIR}
++    ${QT_QTCORE_INCLUDE_DIR}
++    ${QT_QTXML_INCLUDE_DIR}
+     ${AKONADI_INCLUDE_DIR}
+     ${KDE4_INCLUDES}
+     ${KDEPIMLIBS_INCLUDE_DIR}
+     ${LIBXML2_INCLUDE_DIR}
+ )
+ 
++if ( LIBXML2_FOUND )
++  add_definitions( -DHAVE_LIBXML2 )
++endif ( LIBXML2_FOUND )
++
++add_subdirectory( tests )
++
+ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}" )
+ 
+ set( akonadixml_SRCS

@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeadmin
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	sysutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -37,7 +36,7 @@ OPTIONS=	PRINTER_CONFIG "Install printer configuration utility" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PRINTER_CONFIG)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/system-config-printer-kde:${PORTSDIR}/print/system-config-printer-kde
+RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/system-config-printer-kde/system-config-printer-kde.py:${PORTSDIR}/print/system-config-printer-kde
 .endif
 
 post-extract:

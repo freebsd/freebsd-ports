@@ -547,6 +547,7 @@ share/locale/ml/LC_MESSAGES/kcertpart.mo
 share/locale/ml/LC_MESSAGES/kcm_autostart.mo
 share/locale/ml/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/ml/LC_MESSAGES/kcm_emoticons.mo
+share/locale/ml/LC_MESSAGES/kcm_krfb.mo
 share/locale/ml/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/ml/LC_MESSAGES/kcm_memory.mo
 share/locale/ml/LC_MESSAGES/kcm_partition.mo
@@ -560,7 +561,6 @@ share/locale/ml/LC_MESSAGES/kcmbell.mo
 share/locale/ml/LC_MESSAGES/kcmcgi.mo
 share/locale/ml/LC_MESSAGES/kcmcolors.mo
 share/locale/ml/LC_MESSAGES/kcmcomponentchooser.mo
-share/locale/ml/LC_MESSAGES/kcmcss.mo
 share/locale/ml/LC_MESSAGES/kcmenergy.mo
 share/locale/ml/LC_MESSAGES/kcmfonts.mo
 share/locale/ml/LC_MESSAGES/kcmhtmlsearch.mo
@@ -580,6 +580,7 @@ share/locale/ml/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/ml/LC_MESSAGES/kcmkurifilt.mo
 share/locale/ml/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/ml/LC_MESSAGES/kcmkwindecoration.mo
+share/locale/ml/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/ml/LC_MESSAGES/kcmkwm.mo
 share/locale/ml/LC_MESSAGES/kcmlaunch.mo
 share/locale/ml/LC_MESSAGES/kcmlocale.mo
@@ -614,7 +615,6 @@ share/locale/ml/LC_MESSAGES/kfile.mo
 share/locale/ml/LC_MESSAGES/kfile_avi.mo
 share/locale/ml/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ml/LC_MESSAGES/kfile_kig.mo
-share/locale/ml/LC_MESSAGES/kfile_torrent.mo
 share/locale/ml/LC_MESSAGES/kfile_wav.mo
 share/locale/ml/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/ml/LC_MESSAGES/kfindpart.mo
@@ -629,6 +629,7 @@ share/locale/ml/LC_MESSAGES/khotkeys.mo
 share/locale/ml/LC_MESSAGES/khotnewstuff.mo
 share/locale/ml/LC_MESSAGES/khtmlkttsd.mo
 share/locale/ml/LC_MESSAGES/kiconfinder.mo
+share/locale/ml/LC_MESSAGES/kinetd.mo
 share/locale/ml/LC_MESSAGES/kinfocenter.mo
 share/locale/ml/LC_MESSAGES/kio4.mo
 share/locale/ml/LC_MESSAGES/kio_applications.mo
@@ -637,6 +638,7 @@ share/locale/ml/LC_MESSAGES/kio_bookmarks.mo
 share/locale/ml/LC_MESSAGES/kio_finger.mo
 share/locale/ml/LC_MESSAGES/kio_fish.mo
 share/locale/ml/LC_MESSAGES/kio_floppy.mo
+share/locale/ml/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/ml/LC_MESSAGES/kio_man.mo
 share/locale/ml/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/ml/LC_MESSAGES/kio_nfs.mo
@@ -645,6 +647,7 @@ share/locale/ml/LC_MESSAGES/kio_sftp.mo
 share/locale/ml/LC_MESSAGES/kio_smb.mo
 share/locale/ml/LC_MESSAGES/kio_thumbnail.mo
 share/locale/ml/LC_MESSAGES/kio_trash.mo
+share/locale/ml/LC_MESSAGES/kio_zeroconf.mo
 share/locale/ml/LC_MESSAGES/kioclient.mo
 share/locale/ml/LC_MESSAGES/kioexec.mo
 share/locale/ml/LC_MESSAGES/klipper.mo
@@ -662,6 +665,7 @@ share/locale/ml/LC_MESSAGES/konqueror.mo
 share/locale/ml/LC_MESSAGES/konsole.mo
 share/locale/ml/LC_MESSAGES/kpartsaver.mo
 share/locale/ml/LC_MESSAGES/kpasswdserver.mo
+share/locale/ml/LC_MESSAGES/kppplogview.mo
 share/locale/ml/LC_MESSAGES/kquitapp.mo
 share/locale/ml/LC_MESSAGES/krandr.mo
 share/locale/ml/LC_MESSAGES/krdb.mo
@@ -720,29 +724,28 @@ share/locale/ml/LC_MESSAGES/nsplugin.mo
 share/locale/ml/LC_MESSAGES/parley.mo
 share/locale/ml/LC_MESSAGES/phonon-xine.mo
 share/locale/ml/LC_MESSAGES/phonon_kde.mo
+share/locale/ml/LC_MESSAGES/plasma-desktop.mo
 share/locale/ml/LC_MESSAGES/plasma-overlay.mo
 share/locale/ml/LC_MESSAGES/plasma-shells-common.mo
-share/locale/ml/LC_MESSAGES/plasma.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_desktop.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_folderview.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_quicklaunch.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_system-monitor.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_systemtray.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_webbrowser.mo
-share/locale/ml/LC_MESSAGES/plasma_appletscript_qedje.mo
 share/locale/ml/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/ml/LC_MESSAGES/plasma_containment_saverdesktop.mo
+share/locale/ml/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_rss.mo

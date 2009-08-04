@@ -17,6 +17,7 @@ MAN1=	adddebug.1 \
 	kappfinder.1 \
 	kate.1 \
 	kbookmarkmerger.1 \
+	kbruch.1 \
 	kdesu.1 \
 	kfind.1 \
 	kig.1 \
@@ -38,3 +39,5 @@ MAN1=	adddebug.1 \
 MAN6=	amor.6 \
 	khangman.6 \
 	kpat.6
+MAN8=	kded4.8 \
+	kdeinit4.8

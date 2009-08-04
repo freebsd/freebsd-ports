@@ -41,6 +41,7 @@ include/libkdeedu/keduvocmultiplechoice.h
 include/libkdeedu/keduvocpersonalpronoun.h
 include/libkdeedu/keduvoctext.h
 include/libkdeedu/keduvoctranslation.h
+include/libkdeedu/keduvocwordflags.h
 include/libkdeedu/keduvocwordtype.h
 include/libkdeedu/libkdeedu_science_export.h
 include/libkdeedu/libkdeedu_ui_export.h
@@ -59,62 +60,76 @@ include/libkiten/EntryList.h
 include/libkiten/HistoryPtrList.h
 include/libkiten/kromajiedit.h
 include/libkiten/libkitenexport.h
+include/marble/AbstractDataPlugin.h
+include/marble/AbstractDataPluginItem.h
+include/marble/AbstractDataPluginModel.h
+include/marble/AbstractFloatItem.h
 include/marble/AbstractLayerInterface.h
 include/marble/AbstractProjection.h
-include/marble/AbstractProjectionHelper.h
-include/marble/BoundingBox.h
 include/marble/ClipPainter.h
 include/marble/EquirectProjection.h
-include/marble/EquirectProjectionHelper.h
 include/marble/ExtDateTime.h
+include/marble/GeoDataAccuracy.h
 include/marble/GeoDataColorStyle.h
 include/marble/GeoDataContainer.h
+include/marble/GeoDataContainer_p.h
 include/marble/GeoDataCoordinates.h
 include/marble/GeoDataCoordinates_p.h
 include/marble/GeoDataDocument.h
+include/marble/GeoDataDocument_p.h
 include/marble/GeoDataFeature.h
+include/marble/GeoDataFeature_p.h
 include/marble/GeoDataFolder.h
 include/marble/GeoDataGeometry.h
+include/marble/GeoDataGeometry_p.h
 include/marble/GeoDataHotSpot.h
 include/marble/GeoDataIconStyle.h
 include/marble/GeoDataLabelStyle.h
 include/marble/GeoDataLatLonAltBox.h
 include/marble/GeoDataLatLonBox.h
 include/marble/GeoDataLineString.h
+include/marble/GeoDataLineString_p.h
 include/marble/GeoDataLineStyle.h
 include/marble/GeoDataLinearRing.h
+include/marble/GeoDataLinearRing_p.h
 include/marble/GeoDataMultiGeometry.h
+include/marble/GeoDataMultiGeometry_p.h
 include/marble/GeoDataObject.h
 include/marble/GeoDataPlacemark.h
+include/marble/GeoDataPlacemark_p.h
 include/marble/GeoDataPoint.h
+include/marble/GeoDataPoint_p.h
 include/marble/GeoDataPolyStyle.h
 include/marble/GeoDataPolygon.h
+include/marble/GeoDataPolygon_p.h
 include/marble/GeoDataStyle.h
 include/marble/GeoDataStyleMap.h
 include/marble/GeoDataStyleSelector.h
 include/marble/GeoDocument.h
+include/marble/GeoGraphicsItem.h
 include/marble/GeoPainter.h
 include/marble/LatLonEdit.h
 include/marble/MapThemeManager.h
 include/marble/MapThemeSortFilterProxyModel.h
 include/marble/MarbleAboutDialog.h
-include/marble/MarbleAbstractFloatItem.h
 include/marble/MarbleControlBox.h
 include/marble/MarbleDataFacade.h
 include/marble/MarbleDirs.h
+include/marble/MarbleGraphicsItem.h
 include/marble/MarbleMap.h
 include/marble/MarbleModel.h
 include/marble/MarbleNavigator.h
-include/marble/MarbleRenderPlugin.h
-include/marble/MarbleRenderPluginInterface.h
 include/marble/MarbleWidget.h
 include/marble/MarbleWidgetInputHandler.h
 include/marble/MercatorProjection.h
-include/marble/MercatorProjectionHelper.h
+include/marble/Planet.h
+include/marble/PluginInterface.h
 include/marble/Quaternion.h
+include/marble/RenderPlugin.h
+include/marble/RenderPluginInterface.h
+include/marble/ScreenGraphicsItem.h
 include/marble/Serializable.h
 include/marble/SphericalProjection.h
-include/marble/SphericalProjectionHelper.h
 include/marble/SunLocator.h
 include/marble/TileCreator.h
 include/marble/TileCreatorDialog.h
@@ -123,16 +138,35 @@ include/marble/ViewportParams.h
 include/marble/geodata_export.h
 include/marble/global.h
 include/marble/marble_export.h
+lib/avogadro-kalzium/colors/libchargecolor.so
+lib/avogadro-kalzium/colors/libdistancecolor.so
+lib/avogadro-kalzium/colors/libindexcolor.so
+lib/avogadro-kalzium/colors/libresiduecolor.so
+lib/avogadro-kalzium/engines/libaxesengine.so
+lib/avogadro-kalzium/engines/libcartoonengine.so
+lib/avogadro-kalzium/engines/libdipoleengine.so
+lib/avogadro-kalzium/engines/libforceengine.so
+lib/avogadro-kalzium/engines/libhbondengine.so
 lib/avogadro-kalzium/engines/liblabelengine.so
 lib/avogadro-kalzium/engines/liborbitalengine.so
+lib/avogadro-kalzium/engines/liboverlayengine.so
+lib/avogadro-kalzium/engines/libpolygonengine.so
 lib/avogadro-kalzium/engines/libribbonengine.so
 lib/avogadro-kalzium/engines/libringengine.so
+lib/avogadro-kalzium/engines/libsimplewireengine.so
 lib/avogadro-kalzium/engines/libsphereengine.so
 lib/avogadro-kalzium/engines/libstickengine.so
+lib/avogadro-kalzium/engines/libsurfaceengine.so
 lib/avogadro-kalzium/engines/libwireengine.so
+lib/avogadro-kalzium/tools/libaligntool.so
+lib/avogadro-kalzium/tools/libautoopttool.so
+lib/avogadro-kalzium/tools/libautorotatetool.so
+lib/avogadro-kalzium/tools/libbondcentrictool.so
 lib/avogadro-kalzium/tools/libclickmeasuretool.so
 lib/avogadro-kalzium/tools/libdrawtool.so
+lib/avogadro-kalzium/tools/libmanipulatetool.so
 lib/avogadro-kalzium/tools/libnavigatetool.so
+lib/avogadro-kalzium/tools/libselectrotatetool.so
 lib/kde4/kigpart.so
 lib/kde4/libkmplotpart.so
 lib/kde4/libmarble_part.so
@@ -144,12 +178,16 @@ lib/kde4/plasma_engine_kalzium.so
 lib/kde4/plasma_engine_parley.so
 lib/kde4/plugins/designer/kalziumuiwidgets.so
 lib/kde4/plugins/marble/CompassFloatItem.so
+lib/kde4/plugins/marble/CrosshairsPlugin.so
+lib/kde4/plugins/marble/GeoRendererPlugin.so
+lib/kde4/plugins/marble/GraticulePlugin.so
 lib/kde4/plugins/marble/MapScaleFloatItem.so
-lib/kde4/plugins/marble/MarbleCrosshairsPlugin.so
-lib/kde4/plugins/marble/MarbleGeoDataPlugin.so
-lib/kde4/plugins/marble/MarbleOverviewMap.so
-lib/kde4/plugins/marble/MarbleStarsPlugin.so
 lib/kde4/plugins/marble/NavigationFloatItem.so
+lib/kde4/plugins/marble/OverviewMap.so
+lib/kde4/plugins/marble/Photo.so
+lib/kde4/plugins/marble/QNamNetworkPlugin.so
+lib/kde4/plugins/marble/StarsPlugin.so
+lib/kde4/plugins/marble/Wikipedia.so
 lib/libSatLib.so
 lib/libSatLib.so.5
 lib/libSatLib.so.5.0.1
@@ -158,7 +196,7 @@ lib/libanalitza.so.5
 lib/libanalitza.so.5.0.1
 lib/libavogadro-kalzium.so
 lib/libavogadro-kalzium.so.0
-lib/libavogadro-kalzium.so.0.8.0
+lib/libavogadro-kalzium.so.0.9.3
 lib/libcompoundviewer.so
 lib/libcompoundviewer.so.5
 lib/libcompoundviewer.so.5.0.1
@@ -673,6 +711,17 @@ share/apps/kgeography/flags/bangladesh.png
 share/apps/kgeography/flags/barbados.png
 share/apps/kgeography/flags/belarus.png
 share/apps/kgeography/flags/belgium.png
+share/apps/kgeography/flags/belgium/antwerp.png
+share/apps/kgeography/flags/belgium/brussels.png
+share/apps/kgeography/flags/belgium/east_flanders.png
+share/apps/kgeography/flags/belgium/flemish_brabant.png
+share/apps/kgeography/flags/belgium/hainaut.png
+share/apps/kgeography/flags/belgium/liege.png
+share/apps/kgeography/flags/belgium/limburg.png
+share/apps/kgeography/flags/belgium/luxembourg.png
+share/apps/kgeography/flags/belgium/namur.png
+share/apps/kgeography/flags/belgium/walloon_brabant.png
+share/apps/kgeography/flags/belgium/west_flanders.png
 share/apps/kgeography/flags/belize.png
 share/apps/kgeography/flags/benin.png
 share/apps/kgeography/flags/bhutan.png
@@ -1030,6 +1079,26 @@ share/apps/kgeography/flags/philippines.png
 share/apps/kgeography/flags/pitcairn_islands.png
 share/apps/kgeography/flags/poland.png
 share/apps/kgeography/flags/portugal.png
+share/apps/kgeography/flags/portugal/aveiro.png
+share/apps/kgeography/flags/portugal/azores.png
+share/apps/kgeography/flags/portugal/beja.png
+share/apps/kgeography/flags/portugal/braga.png
+share/apps/kgeography/flags/portugal/braganca.png
+share/apps/kgeography/flags/portugal/castelo_branco.png
+share/apps/kgeography/flags/portugal/coimbra.png
+share/apps/kgeography/flags/portugal/evora.png
+share/apps/kgeography/flags/portugal/faro.png
+share/apps/kgeography/flags/portugal/guarda.png
+share/apps/kgeography/flags/portugal/leiria.png
+share/apps/kgeography/flags/portugal/lisboa.png
+share/apps/kgeography/flags/portugal/madeira.png
+share/apps/kgeography/flags/portugal/portalegre.png
+share/apps/kgeography/flags/portugal/porto.png
+share/apps/kgeography/flags/portugal/santarem.png
+share/apps/kgeography/flags/portugal/setubal.png
+share/apps/kgeography/flags/portugal/viana_do_castelo.png
+share/apps/kgeography/flags/portugal/vila_real.png
+share/apps/kgeography/flags/portugal/viseu.png
 share/apps/kgeography/flags/puerto_rico.png
 share/apps/kgeography/flags/qatar.png
 share/apps/kgeography/flags/romania.png
@@ -1258,6 +1327,8 @@ share/apps/kgeography/luxembourg_cantons.kgm
 share/apps/kgeography/luxembourg_cantons.png
 share/apps/kgeography/malaysia.kgm
 share/apps/kgeography/malaysia.png
+share/apps/kgeography/manipur.kgm
+share/apps/kgeography/manipur.png
 share/apps/kgeography/mexico_states.kgm
 share/apps/kgeography/mexico_states.png
 share/apps/kgeography/mongolia.kgm
@@ -1292,6 +1363,10 @@ share/apps/kgeography/philippines.kgm
 share/apps/kgeography/philippines.png
 share/apps/kgeography/poland.kgm
 share/apps/kgeography/poland.png
+share/apps/kgeography/portugal_districts.kgm
+share/apps/kgeography/portugal_districts.png
+share/apps/kgeography/portugal_provinces.kgm
+share/apps/kgeography/portugal_provinces.png
 share/apps/kgeography/portugal_regions.kgm
 share/apps/kgeography/portugal_regions.png
 share/apps/kgeography/puertorico.kgm
@@ -1308,6 +1383,8 @@ share/apps/kgeography/san-marino.kgm
 share/apps/kgeography/san-marino.png
 share/apps/kgeography/saudi_arabia.kgm
 share/apps/kgeography/saudi_arabia.png
+share/apps/kgeography/sikkim.kgm
+share/apps/kgeography/sikkim.png
 share/apps/kgeography/slovakia.kgm
 share/apps/kgeography/slovakia.png
 share/apps/kgeography/slovenia_traditional.kgm
@@ -1334,6 +1411,8 @@ share/apps/kgeography/tajikistan.kgm
 share/apps/kgeography/tajikistan.png
 share/apps/kgeography/thailand.kgm
 share/apps/kgeography/thailand.png
+share/apps/kgeography/tripura.kgm
+share/apps/kgeography/tripura.png
 share/apps/kgeography/turkey.kgm
 share/apps/kgeography/turkey.png
 share/apps/kgeography/turkmenistan.kgm
@@ -1855,6 +1934,7 @@ share/apps/kstars/classic.colors
 share/apps/kstars/clines.dat
 share/apps/kstars/cnames.dat
 share/apps/kstars/comets.dat
+share/apps/kstars/defaultflag.gif
 share/apps/kstars/earth.B0.vsop
 share/apps/kstars/earth.B1.vsop
 share/apps/kstars/earth.B2.vsop
@@ -1881,6 +1961,7 @@ share/apps/kstars/icons/hicolor/22x22/actions/kstars_cbound.png
 share/apps/kstars/icons/hicolor/22x22/actions/kstars_clines.png
 share/apps/kstars/icons/hicolor/22x22/actions/kstars_cnames.png
 share/apps/kstars/icons/hicolor/22x22/actions/kstars_deepsky.png
+share/apps/kstars/icons/hicolor/22x22/actions/kstars_flag.png
 share/apps/kstars/icons/hicolor/22x22/actions/kstars_grid.png
 share/apps/kstars/icons/hicolor/22x22/actions/kstars_horizon.png
 share/apps/kstars/icons/hicolor/22x22/actions/kstars_mw.png
@@ -1889,6 +1970,7 @@ share/apps/kstars/icons/hicolor/22x22/actions/kstars_stars.png
 share/apps/kstars/icons/hicolor/32x32/actions/kstars_clines.png
 share/apps/kstars/icons/hicolor/32x32/actions/kstars_cnames.png
 share/apps/kstars/icons/hicolor/32x32/actions/kstars_deepsky.png
+share/apps/kstars/icons/hicolor/32x32/actions/kstars_flag.png
 share/apps/kstars/icons/hicolor/32x32/actions/kstars_grid.png
 share/apps/kstars/icons/hicolor/32x32/actions/kstars_horizon.png
 share/apps/kstars/icons/hicolor/32x32/actions/kstars_mw.png
@@ -1897,6 +1979,7 @@ share/apps/kstars/icons/hicolor/32x32/actions/kstars_stars.png
 share/apps/kstars/icons/hicolor/48x48/actions/kstars_clines.png
 share/apps/kstars/icons/hicolor/48x48/actions/kstars_cnames.png
 share/apps/kstars/icons/hicolor/48x48/actions/kstars_deepsky.png
+share/apps/kstars/icons/hicolor/48x48/actions/kstars_flag.png
 share/apps/kstars/icons/hicolor/48x48/actions/kstars_grid.png
 share/apps/kstars/icons/hicolor/48x48/actions/kstars_horizon.png
 share/apps/kstars/icons/hicolor/48x48/actions/kstars_mw.png
@@ -1909,6 +1992,7 @@ share/apps/kstars/icons/hicolor/64x64/actions/kstars_clines.png
 share/apps/kstars/icons/hicolor/64x64/actions/kstars_cnames.png
 share/apps/kstars/icons/hicolor/64x64/actions/kstars_colors.png
 share/apps/kstars/icons/hicolor/64x64/actions/kstars_deepsky.png
+share/apps/kstars/icons/hicolor/64x64/actions/kstars_flag.png
 share/apps/kstars/icons/hicolor/64x64/actions/kstars_grid.png
 share/apps/kstars/icons/hicolor/64x64/actions/kstars_guides.png
 share/apps/kstars/icons/hicolor/64x64/actions/kstars_horizon.png
@@ -1916,6 +2000,7 @@ share/apps/kstars/icons/hicolor/64x64/actions/kstars_mw.png
 share/apps/kstars/icons/hicolor/64x64/actions/kstars_planets.png
 share/apps/kstars/icons/hicolor/64x64/actions/kstars_solarsystem.png
 share/apps/kstars/icons/hicolor/64x64/actions/kstars_stars.png
+share/apps/kstars/icons/hicolor/64x64/actions/kstars_xplanet.png
 share/apps/kstars/icons/hicolor/scalable/actions/kstars_cbound.svgz
 share/apps/kstars/icons/hicolor/scalable/actions/kstars_clines.svgz
 share/apps/kstars/icons/hicolor/scalable/actions/kstars_cnames.svgz
@@ -2182,6 +2267,7 @@ share/apps/ktouch/nederlands_junior.ktouch.xml
 share/apps/ktouch/no.keyboard.xml
 share/apps/ktouch/norwegian.ktouch.xml
 share/apps/ktouch/polish.ktouch.xml
+share/apps/ktouch/qc.keyboard.xml
 share/apps/ktouch/ru-winkeys.keyboard.xml
 share/apps/ktouch/ru.keyboard.xml
 share/apps/ktouch/russian.ktouch.xml
@@ -2199,7 +2285,6 @@ share/apps/ktouch/turkish.ktouch.xml
 share/apps/ktouch/typewriter.wav
 share/apps/ktouch/uk.winkeys.keyboard.xml
 share/apps/ktouch/ukrainian.ktouch.xml
-share/apps/ktouch/qc.keyboard.xml
 share/apps/ktouch/up.wav
 share/apps/kturtle/kturtleui.rc
 share/apps/kvtml/en/animals.kvtml
@@ -2421,6 +2506,7 @@ share/apps/marble/data/bitmaps/lake.png
 share/apps/marble/data/bitmaps/manned_landing.png
 share/apps/marble/data/bitmaps/mountain_1.png
 share/apps/marble/data/bitmaps/nation.png
+share/apps/marble/data/bitmaps/observatory.png
 share/apps/marble/data/bitmaps/ocean.png
 share/apps/marble/data/bitmaps/osm.png
 share/apps/marble/data/bitmaps/other.png
@@ -2912,518 +2998,6 @@ share/apps/marble/data/maps/earth/srtm/3/000007/000007_000012.jpg
 share/apps/marble/data/maps/earth/srtm/3/000007/000007_000013.jpg
 share/apps/marble/data/maps/earth/srtm/3/000007/000007_000014.jpg
 share/apps/marble/data/maps/earth/srtm/3/000007/000007_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000000/000000_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000001/000001_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000002/000002_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000003/000003_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000004/000004_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000005/000005_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000006/000006_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000007/000007_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000008/000008_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000009/000009_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000010/000010_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000011/000011_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000012/000012_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000013/000013_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000014/000014_000031.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000000.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000001.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000002.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000003.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000004.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000005.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000006.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000007.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000008.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000009.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000010.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000011.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000012.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000013.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000014.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000015.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000016.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000017.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000018.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000019.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000020.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000021.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000022.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000023.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000024.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000025.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000026.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000027.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000028.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000029.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000030.jpg
-share/apps/marble/data/maps/earth/srtm/4/000015/000015_000031.jpg
 share/apps/marble/data/maps/earth/srtm/srtm-preview.png
 share/apps/marble/data/maps/earth/srtm/srtm.dgml
 share/apps/marble/data/maps/earth/temp-dec/temp-dec-preview.png
@@ -3437,18 +3011,13 @@ share/apps/marble/data/maps/moon/clementine/clementine.dgml
 share/apps/marble/data/maps/moon/clementine/clementine.jpg
 share/apps/marble/data/maps/moon/clementine/legend.html
 share/apps/marble/data/mwdbii/DATELINE.PNT
-share/apps/marble/data/mwdbii/PAUST.PNT
-share/apps/marble/data/mwdbii/PBORDER.PNT
-share/apps/marble/data/mwdbii/PCANPROV.PNT
 share/apps/marble/data/mwdbii/PCOAST.PNT
 share/apps/marble/data/mwdbii/PDIFFBORDER.PNT
 share/apps/marble/data/mwdbii/PGLACIER.PNT
 share/apps/marble/data/mwdbii/PISLAND.PNT
 share/apps/marble/data/mwdbii/PLAKE.PNT
 share/apps/marble/data/mwdbii/PLAKEISLAND.PNT
-share/apps/marble/data/mwdbii/PMEXICO.PNT
 share/apps/marble/data/mwdbii/PUSA48.DIFF.PNT
-share/apps/marble/data/mwdbii/PUSA48.PNT
 share/apps/marble/data/mwdbii/RIVER.PNT
 share/apps/marble/data/placemarks/baseplacemarks.cache
 share/apps/marble/data/placemarks/boundaryplacemarks.cache
@@ -3558,6 +3127,23 @@ share/apps/parley/plugins/google_images.py
 share/apps/parley/plugins/google_images.ui
 share/apps/parley/plugins/leo-dict.desktop
 share/apps/parley/plugins/leo-dict.py
+share/apps/parley/plugins/mwclient/README.txt
+share/apps/parley/plugins/mwclient/__init__.py
+share/apps/parley/plugins/mwclient/client.py
+share/apps/parley/plugins/mwclient/compatibility.py
+share/apps/parley/plugins/mwclient/errors.py
+share/apps/parley/plugins/mwclient/ex.py
+share/apps/parley/plugins/mwclient/http.py
+share/apps/parley/plugins/mwclient/listing.py
+share/apps/parley/plugins/mwclient/page.py
+share/apps/parley/plugins/mwclient/page_nowriteapi.py
+share/apps/parley/plugins/mwclient/simplejson/__init__.py
+share/apps/parley/plugins/mwclient/simplejson/decoder.py
+share/apps/parley/plugins/mwclient/simplejson/encoder.py
+share/apps/parley/plugins/mwclient/simplejson/jsonfilter.py
+share/apps/parley/plugins/mwclient/simplejson/scanner.py
+share/apps/parley/plugins/wiktionary_sound.desktop
+share/apps/parley/plugins/wiktionary_sound.py
 share/apps/parley/tips
 share/apps/parley/xslt/flashcards.xsl
 share/apps/parley/xslt/table.xsl
@@ -4207,6 +3793,8 @@ share/kde4/services/plasma_parley.desktop
 @dirrm share/apps/step/examples
 @dirrm share/apps/step
 @dirrm share/apps/parley/xslt
+@dirrm share/apps/parley/plugins/mwclient/simplejson
+@dirrm share/apps/parley/plugins/mwclient
 @dirrm share/apps/parley/plugins
 @dirrm share/apps/parley/icons/oxygen/scalable/actions
 @dirrm share/apps/parley/icons/oxygen/scalable
@@ -4230,23 +3818,6 @@ share/kde4/services/plasma_parley.desktop
 @dirrm share/apps/marble/data/maps/moon
 @dirrm share/apps/marble/data/maps/earth/temp-july
 @dirrm share/apps/marble/data/maps/earth/temp-dec
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000015
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000014
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000013
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000012
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000011
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000010
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000009
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000008
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000007
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000006
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000005
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000004
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000003
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000002
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000001
-@dirrm share/apps/marble/data/maps/earth/srtm/4/000000
-@dirrm share/apps/marble/data/maps/earth/srtm/4
 @dirrm share/apps/marble/data/maps/earth/srtm/3/000007
 @dirrm share/apps/marble/data/maps/earth/srtm/3/000006
 @dirrm share/apps/marble/data/maps/earth/srtm/3/000005
@@ -4403,6 +3974,7 @@ share/kde4/services/plasma_parley.desktop
 @dirrm share/apps/kgeography/flags/ukraine
 @dirrm share/apps/kgeography/flags/spain
 @dirrm share/apps/kgeography/flags/slovakia
+@dirrm share/apps/kgeography/flags/portugal
 @dirrm share/apps/kgeography/flags/peru
 @dirrm share/apps/kgeography/flags/japan
 @dirrm share/apps/kgeography/flags/italy
@@ -4413,11 +3985,14 @@ share/kde4/services/plasma_parley.desktop
 @dirrm share/apps/kgeography/flags/colombia
 @dirrm share/apps/kgeography/flags/canada
 @dirrm share/apps/kgeography/flags/brazil
+@dirrm share/apps/kgeography/flags/belgium
 @dirrm share/apps/kgeography/flags/australia
 @dirrm share/apps/kgeography/flags
 @dirrm share/apps/kgeography
 @dirrm share/apps/kbruch/pics
 @dirrm share/apps/kbruch
+@dirrmtry share/apps/katepart/syntax
+@dirrmtry share/apps/katepart
 @dirrm share/apps/kanagram/sounds
 @dirrm share/apps/kanagram/images
 @dirrm share/apps/kanagram
@@ -4445,6 +4020,8 @@ share/kde4/services/plasma_parley.desktop
 @dirrm share/apps/kalzium/data/hazardsymbols
 @dirrm share/apps/kalzium/data
 @dirrm share/apps/kalzium
+@dirrmtry share/apps/cmake/modules
+@dirrmtry share/apps/cmake
 @dirrm share/apps/blinken/sounds
 @dirrm share/apps/blinken/images
 @dirrm share/apps/blinken/fonts
@@ -4452,6 +4029,7 @@ share/kde4/services/plasma_parley.desktop
 @dirrm lib/kde4/plugins/marble
 @dirrm lib/avogadro-kalzium/tools
 @dirrm lib/avogadro-kalzium/engines
+@dirrm lib/avogadro-kalzium/colors
 @dirrm lib/avogadro-kalzium
 @dirrm include/marble
 @dirrm include/libkiten

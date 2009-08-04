@@ -154,6 +154,7 @@
     SUBDIR += kdebase4-workspace
     SUBDIR += kdelibs3
     SUBDIR += kdelibs4
+    SUBDIR += kdelibs4-experimental
     SUBDIR += kdelibs3-nocups
     SUBDIR += keylaunch
     SUBDIR += keynav

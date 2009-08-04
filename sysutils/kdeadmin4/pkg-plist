@@ -76,26 +76,19 @@ share/doc/HTML/en/kuser/common
 share/doc/HTML/en/kuser/index.cache.bz2
 share/doc/HTML/en/kuser/index.docbook
 share/doc/HTML/en/kuser/kuser.png
-share/icons/hicolor/128x128/apps/ksystemlog.png
 share/icons/hicolor/128x128/apps/kuser.png
 share/icons/hicolor/16x16/apps/knetworkconf.png
-share/icons/hicolor/16x16/apps/ksystemlog.png
 share/icons/hicolor/16x16/apps/kuser.png
 share/icons/hicolor/22x22/actions/network_connected_lan_knc.png
 share/icons/hicolor/22x22/actions/network_disconnected_lan.png
 share/icons/hicolor/22x22/actions/network_disconnected_wlan.png
 share/icons/hicolor/22x22/actions/network_traffic_wlan.png
 share/icons/hicolor/22x22/apps/knetworkconf.png
-share/icons/hicolor/22x22/apps/ksystemlog.png
 share/icons/hicolor/22x22/apps/kuser.png
 share/icons/hicolor/32x32/apps/knetworkconf.png
-share/icons/hicolor/32x32/apps/ksystemlog.png
 share/icons/hicolor/32x32/apps/kuser.png
-share/icons/hicolor/48x48/apps/ksystemlog.png
 share/icons/hicolor/48x48/apps/kuser.png
-share/icons/hicolor/64x64/apps/ksystemlog.png
 share/icons/hicolor/64x64/apps/kuser.png
-share/icons/hicolor/scalable/apps/ksystemlog.svgz
 share/kde4/services/kcm_cron.desktop
 share/kde4/services/kcm_knetworkconfmodule.desktop
 @dirrm share/doc/HTML/en/kuser
@@ -112,3 +105,5 @@ share/kde4/services/kcm_knetworkconfmodule.desktop
 @dirrm share/apps/knetworkconf/pixmaps
 @dirrm share/apps/knetworkconf/backends
 @dirrm share/apps/knetworkconf
+@dirrmtry share/apps/cmake/modules
+@dirrmtry share/apps/cmake

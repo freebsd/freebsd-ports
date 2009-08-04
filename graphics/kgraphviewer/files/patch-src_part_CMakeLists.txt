@@ -1,0 +1,11 @@
+--- src/part/CMakeLists.txt.orig	2009-07-30 23:25:29.000000000 +1100
++++ src/part/CMakeLists.txt	2009-08-03 02:07:52.000000000 +1100
+@@ -15,7 +15,7 @@
+ kde4_add_plugin(kgraphviewerpart ${kgraphviewerpart_PART_SRCS})
+ 
+ add_definitions(-DQT_STL)
+-target_link_libraries(kgraphviewerpart  ${QT_QTXML_LIBRARY} ${QT_QTSVG_LIBRARY} ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KHTML_LIBS} ${KDE4_KWALLETCLIENT_LIBS} ${KDE4_KDESU_LIBS} gvc graph pathplan cdt)
++target_link_libraries(kgraphviewerpart  ${QT_QTXML_LIBRARY} ${QT_QTSVG_LIBRARY} ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KHTML_LIBS} ${KDE4_KWALLETCLIENT_LIBS} ${KDE4_KDESU_LIBS} ${LIBGVC_LIBRARY} gvc graph pathplan cdt)
+ 
+ install( TARGETS kgraphviewerpart DESTINATION ${PLUGIN_INSTALL_DIR})
+ 

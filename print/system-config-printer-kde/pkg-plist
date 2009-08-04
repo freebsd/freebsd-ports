@@ -1,6 +1,9 @@
-bin/system-config-printer-kde
-share/applications/kde4/system-config-printer-kde.desktop
 share/apps/system-config-printer-kde/new-printer.ui
-share/apps/system-config-printer-kde/system-config-printer-kde.py
 share/apps/system-config-printer-kde/system-config-printer.ui
+share/apps/system-config-printer-kde/system-config-printer-kde.py
+share/apps/system-config-printer-kde/options.py
+share/apps/system-config-printer-kde/optionwidgets.py
+share/apps/system-config-printer-kde/ipp-browse-dialog.ui
+share/apps/system-config-printer-kde/smb-browse-dialog.ui
+share/kde4/services/system-config-printer-kde.desktop
 @dirrm share/apps/system-config-printer-kde

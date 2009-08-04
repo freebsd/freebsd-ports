@@ -55,6 +55,21 @@ share/doc/HTML/pt/kgraphviewer/index.docbook
 share/doc/HTML/sv/kgraphviewer/common
 share/doc/HTML/sv/kgraphviewer/index.cache.bz2
 share/doc/HTML/sv/kgraphviewer/index.docbook
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-ask1.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-ask2.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-ask3.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-config1.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-config2.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-config3.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-init.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-main.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-pagesmarges.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-ppview1.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-ppview2.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-ppview3.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-psetup1.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-zmax.png
+share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-zmin.png
 share/doc/HTML/uk/kgraphviewer/common
 share/doc/HTML/uk/kgraphviewer/index.cache.bz2
 share/doc/HTML/uk/kgraphviewer/index.docbook
@@ -75,6 +90,7 @@ share/locale/ga/LC_MESSAGES/kgraphviewer.mo
 share/locale/gl/LC_MESSAGES/kgraphviewer.mo
 share/locale/hi/LC_MESSAGES/kgraphviewer.mo
 share/locale/hne/LC_MESSAGES/kgraphviewer.mo
+share/locale/is/LC_MESSAGES/kgraphviewer.mo
 share/locale/it/LC_MESSAGES/kgraphviewer.mo
 share/locale/ja/LC_MESSAGES/kgraphviewer.mo
 share/locale/km/LC_MESSAGES/kgraphviewer.mo
@@ -98,6 +114,7 @@ share/locale/tr/LC_MESSAGES/kgraphviewer.mo
 share/locale/uk/LC_MESSAGES/kgraphviewer.mo
 share/locale/vi/LC_MESSAGES/kgraphviewer.mo
 share/locale/zh_CN/LC_MESSAGES/kgraphviewer.mo
+share/locale/zh_TW/LC_MESSAGES/kgraphviewer.mo
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
 @dirrmtry share/locale/mai/LC_MESSAGES

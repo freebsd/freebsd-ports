@@ -1,0 +1,8 @@
+KDE4 is the K Desktop Environment for Unix, Windows, and Mac OS X.
+
+These kde4 ports intend to provide early access to KDE4 for FreeBSD
+developers, porters and beta testers. Use at your own risk!
+
+This package provides PIM runtime libs for KDE4.
+
+WWW: http://www.kde.org/

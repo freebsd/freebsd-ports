@@ -251,5 +251,7 @@ share/kde4/services/kxsldbg_part.desktop
 @dirrm share/apps/kfilereplacepart/icons
 @dirrm share/apps/kfilereplacepart
 @dirrm share/apps/kfilereplace
+@dirrmtry share/apps/cmake/modules
+@dirrmtry share/apps/cmake
 @dirrm share/applnk/.hidden
 @dirrm share/applnk

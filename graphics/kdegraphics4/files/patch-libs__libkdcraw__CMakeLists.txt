@@ -1,12 +1,14 @@
---- ../libs/libkdcraw/CMakeLists.txt.orig	2008-06-03 17:48:03.000000000 +0400
-+++ ../libs/libkdcraw/CMakeLists.txt	2008-08-18 20:05:56.000000000 +0400
-@@ -62,7 +62,7 @@
- SUBDIRS(profiles)
+--- ../libs/libkdcraw/CMakeLists.txt.orig	2009-05-06 12:13:22.000000000 +0200
++++ ../libs/libkdcraw/CMakeLists.txt	2009-06-07 01:15:33.000000000 +0200
+@@ -114,9 +114,9 @@
+ # =======================================================
  
  IF(NOT WIN32)
--  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libkdcraw.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw.pc)
-+  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libkdcraw.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw-kde4.pc)
-   CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libkdcraw.lsm.cmake ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw.lsm)
--  INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
-+  INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw-kde4.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+-    CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libkdcraw.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw.pc)
++    CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libkdcraw.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw-kde4.pc)
+     CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libkdcraw.lsm.cmake ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw.lsm)
+-    INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
++    INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libkdcraw-kde4.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
  ENDIF(NOT WIN32)
+ 
+ SUBDIRS(icons)

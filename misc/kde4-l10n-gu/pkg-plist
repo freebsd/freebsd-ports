@@ -10,6 +10,7 @@ share/locale/gu/LC_MESSAGES/kaccess.mo
 share/locale/gu/LC_MESSAGES/kalzium.mo
 share/locale/gu/LC_MESSAGES/kalzium_qt.mo
 share/locale/gu/LC_MESSAGES/kanagram.mo
+share/locale/gu/LC_MESSAGES/kapman.mo
 share/locale/gu/LC_MESSAGES/kappfinder.mo
 share/locale/gu/LC_MESSAGES/katepart4.mo
 share/locale/gu/LC_MESSAGES/kblankscrn.mo
@@ -32,7 +33,6 @@ share/locale/gu/LC_MESSAGES/kcmcgi.mo
 share/locale/gu/LC_MESSAGES/kcmcolors.mo
 share/locale/gu/LC_MESSAGES/kcmcomponentchooser.mo
 share/locale/gu/LC_MESSAGES/kcmcrypto.mo
-share/locale/gu/LC_MESSAGES/kcmcss.mo
 share/locale/gu/LC_MESSAGES/kcmenergy.mo
 share/locale/gu/LC_MESSAGES/kcmfonts.mo
 share/locale/gu/LC_MESSAGES/kcmhtmlsearch.mo
@@ -131,6 +131,7 @@ share/locale/gu/LC_MESSAGES/kreadconfig.mo
 share/locale/gu/LC_MESSAGES/krunner.mo
 share/locale/gu/LC_MESSAGES/kshorturifilter.mo
 share/locale/gu/LC_MESSAGES/ksmserver.mo
+share/locale/gu/LC_MESSAGES/kstars.mo
 share/locale/gu/LC_MESSAGES/kstart.mo
 share/locale/gu/LC_MESSAGES/kstyle_config.mo
 share/locale/gu/LC_MESSAGES/kstyle_keramik_config.mo
@@ -162,8 +163,8 @@ share/locale/gu/LC_MESSAGES/nepomuk.mo
 share/locale/gu/LC_MESSAGES/nepomuksearch.mo
 share/locale/gu/LC_MESSAGES/nsplugin.mo
 share/locale/gu/LC_MESSAGES/phonon_kde.mo
+share/locale/gu/LC_MESSAGES/plasma-desktop.mo
 share/locale/gu/LC_MESSAGES/plasma-overlay.mo
-share/locale/gu/LC_MESSAGES/plasma.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_desktop.mo
@@ -174,14 +175,14 @@ share/locale/gu/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_quicklaunch.mo
+share/locale/gu/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_system-monitor.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_systemtray.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_webbrowser.mo
-share/locale/gu/LC_MESSAGES/plasma_appletscript_qedje.mo
 share/locale/gu/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/gu/LC_MESSAGES/plasma_containment_saverdesktop.mo
+share/locale/gu/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_locations.mo
