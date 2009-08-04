@@ -604,6 +604,7 @@
     SUBDIR += policykit
     SUBDIR += policykit-gnome
     SUBDIR += policykit-kde
+    SUBDIR += policykit-qt
     SUBDIR += powerman
     SUBDIR += prips
     SUBDIR += procmap

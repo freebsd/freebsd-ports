@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -31,9 +30,9 @@ QT_COMPONENTS=	corelib opengl dbus qt3support \
 		qmake_build moc_build rcc_build uic_build
 
 USE_GETTEXT=	yes
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_KDE4=	kdelibs runtime workspace kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_RAW1394:BOOL=OFF
@@ -44,6 +43,10 @@ MAN1=		kappfinder.1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}
 
@@ -53,7 +56,7 @@ post-patch:
 .endif
 .if ${OSVERSION} >= 800100
 	@${REINPLACE_CMD} -e 's,usb_revision.h,usbdi.h,g' \
-	${WRKSRC}/../apps/kinfocenter/usbview/usbdevices.h
+		${WRKSRC}/../apps/kinfocenter/usbview/usbdevices.h
 .endif
 
 .include <bsd.port.post.mk>

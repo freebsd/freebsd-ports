@@ -7,7 +7,6 @@
 
 PORTNAME=	konq-plugins
 PORTVERSION=	${EXTRA_VER}
-PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
@@ -26,6 +25,6 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 
-EXTRA_VER=	4.2.3
+EXTRA_VER=	4.3.0
 
 .include <bsd.port.mk>

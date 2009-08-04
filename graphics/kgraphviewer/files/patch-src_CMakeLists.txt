@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2009-07-30 23:25:29.000000000 +1100
++++ src/CMakeLists.txt	2009-08-03 02:07:27.000000000 +1100
+@@ -15,7 +15,7 @@
+ 
+ kde4_add_executable(kgraphviewer ${kgraphviewer_SRCS})
+ 
+-target_link_libraries(kgraphviewer  ${QT_AND_KDECORE_LIBS} ${KDE4_KHTML_LIBS}  gvc graph pathplan cdt)
++target_link_libraries(kgraphviewer  ${QT_AND_KDECORE_LIBS} ${KDE4_KHTML_LIBS} ${LIBGVC_LIBRARY} gvc graph pathplan cdt)
+ 
+ install( TARGETS kgraphviewer ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 

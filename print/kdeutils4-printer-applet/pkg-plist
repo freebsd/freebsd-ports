@@ -3,5 +3,10 @@ share/apps/printer-applet/printer-applet-printers.ui
 share/apps/printer-applet/printer-applet.py
 share/apps/printer-applet/printer-applet.ui
 share/apps/printer-applet/printer-appletui.rc
+share/apps/printer-applet/printer-applet.notifyrc
+share/apps/printer-applet/statereason.py
+share/apps/printer-applet/monitor.py
+share/apps/printer-applet/authconn.py
+share/apps/printer-applet/debug.py
 share/autostart/printer-applet.desktop
 @dirrm share/apps/printer-applet

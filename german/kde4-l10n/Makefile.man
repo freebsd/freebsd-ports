@@ -14,9 +14,9 @@ MAN1=	adddebug.1 \
 	extend_dmalloc.1 \
 	extractrc.1 \
 	fixincludes.1 \
+	kabcclient.1 \
 	kalzium.1 \
 	kappfinder.1 \
-	kabcclient.1 \
 	kate.1 \
 	kbookmarkmerger.1 \
 	kbruch.1 \
@@ -34,6 +34,7 @@ MAN1=	adddebug.1 \
 	kross.1 \
 	ktouch.1 \
 	makekdewidgets.1 \
+	plasmaengineexplorer.1 \
 	po2xml.1 \
 	preparetips.1 \
 	pruneemptydirs.1 \
@@ -43,8 +44,8 @@ MAN1=	adddebug.1 \
 	swappo.1 \
 	transxx.1 \
 	xml2pot.1 \
-	zonetab2pot.py.1 \
-	xsldbg.1
+	xsldbg.1 \
+	zonetab2pot.py.1
 MAN6=	amor.6 \
 	khangman.6 \
 	kpat.6
@@ -54,4 +55,6 @@ MAN8=	kbuildsycoca4.8 \
 	kcookiejar4.8 \
 	kded4.8 \
 	kdeinit4.8 \
-	meinproc4.8
+	meinproc4.8 \
+	nepomukservicestub.8 \
+	nepomukserver.8

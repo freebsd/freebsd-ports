@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	akonadi
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	databases kde ipv6
 MASTER_SITES=	http://download.akonadi-project.org/
 DIST_SUBDIR=	KDE
@@ -13,7 +13,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for kdepim
 
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
+		soprano.4:${PORTSDIR}/textproc/soprano
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 RUN_DEPENDS=	${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
@@ -26,7 +27,6 @@ USE_MYSQL=	server
 USE_KDE4=	kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}

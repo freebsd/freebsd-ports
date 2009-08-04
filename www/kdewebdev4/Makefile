@@ -6,7 +6,6 @@
 
 PORTNAME=	kdewebdev
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -25,7 +24,7 @@ USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build \
 		porting_build uic3_build
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		xsldbg.1
 

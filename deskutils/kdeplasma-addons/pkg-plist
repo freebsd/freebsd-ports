@@ -1,20 +1,31 @@
 bin/lancelot
+include/conversion/converter.h
+include/conversion/plasmaconversion_export.h
+include/conversion/unit.h
+include/conversion/unitcategory.h
+include/conversion/value.h
 include/lancelot/Global.h
 include/lancelot/lancelot.h
 include/lancelot/lancelot_export.h
 include/lancelot/layouts/CardLayout.h
 include/lancelot/layouts/ColumnLayout.h
-include/lancelot/models/ActionListViewModels.h
-include/lancelot/models/PassagewayViewModels.h
+include/lancelot/models/ActionListModel.h
+include/lancelot/models/ActionTreeModel.h
+include/lancelot/models/ActionTreeModelProxy.h
+include/lancelot/models/MergedActionListModel.h
+include/lancelot/models/PlasmaServiceListModel.h
+include/lancelot/models/StandardActionListModel.h
+include/lancelot/models/StandardActionTreeModel.h
 include/lancelot/widgets/ActionListView.h
 include/lancelot/widgets/BasicWidget.h
 include/lancelot/widgets/ExtenderButton.h
 include/lancelot/widgets/HoverIcon.h
 include/lancelot/widgets/Panel.h
 include/lancelot/widgets/PassagewayView.h
+include/lancelot/widgets/PopupList.h
+include/lancelot/widgets/PopupMenu.h
 include/lancelot/widgets/ResizeBordersPanel.h
 include/lancelot/widgets/Widget.h
-include/lancelot/widgets/WidgetPositioner.h
 lib/kde4/kcm_krunner_spellcheck.so
 lib/kde4/krunner_browserhistory.so
 lib/kde4/krunner_contacts.so
@@ -23,9 +34,10 @@ lib/kde4/krunner_katesessions.so
 lib/kde4/krunner_konquerorsessions.so
 lib/kde4/krunner_konsolesessions.so
 lib/kde4/krunner_spellcheckrunner.so
+lib/kde4/plasma-applet_systemloadviewer.so
 lib/kde4/plasma_applet_bball.so
 lib/kde4/plasma_applet_binaryclock.so
-lib/kde4/plasma_applet_bluemarble.so
+lib/kde4/plasma_applet_bubblemon.so
 lib/kde4/plasma_applet_calculator.so
 lib/kde4/plasma_applet_charselect.so
 lib/kde4/plasma_applet_comic.so
@@ -44,101 +56,118 @@ lib/kde4/plasma_applet_lancelot_part.so
 lib/kde4/plasma_applet_leavenote.so
 lib/kde4/plasma_applet_life.so
 lib/kde4/plasma_applet_luna.so
+lib/kde4/plasma_applet_magnifique.so
+lib/kde4/plasma_applet_mediaplayer.so
+lib/kde4/plasma_applet_microblog.so
 lib/kde4/plasma_applet_news.so
 lib/kde4/plasma_applet_notes.so
 lib/kde4/plasma_applet_nowplaying.so
+lib/kde4/plasma_applet_opendesktop.so
 lib/kde4/plasma_applet_paste.so
 lib/kde4/plasma_applet_pastebin.so
 lib/kde4/plasma_applet_previewer.so
 lib/kde4/plasma_applet_rssnow.so
+lib/kde4/plasma_applet_rtm.so
 lib/kde4/plasma_applet_showdashboard.so
 lib/kde4/plasma_applet_showdesktop.so
 lib/kde4/plasma_applet_timer.so
-lib/kde4/plasma_applet_twitter.so
+lib/kde4/plasma_applet_unitconverter.so
+lib/kde4/plasma_applet_weather.so
 lib/kde4/plasma_applet_weatherstation.so
 lib/kde4/plasma_comic_krossprovider.so
 lib/kde4/plasma_engine_comic.so
-lib/kde4/plasma_engine_twitter.so
+lib/kde4/plasma_engine_microblog.so
+lib/kde4/plasma_engine_ocs.so
+lib/kde4/plasma_engine_potd.so
+lib/kde4/plasma_engine_rtm.so
 lib/kde4/plasma_packagestructure_comic.so
+lib/kde4/plasma_potd_apodprovider.so
+lib/kde4/plasma_potd_epodprovider.so
+lib/kde4/plasma_potd_flickrprovider.so
+lib/kde4/plasma_potd_oseiprovider.so
+lib/kde4/plasma_potd_wcpotdprovider.so
+lib/kde4/plasma_wallpaper_mandelbrot.so
+lib/kde4/plasma_wallpaper_marble.so
+lib/kde4/plasma_wallpaper_pattern.so
+lib/kde4/plasma_wallpaper_virus.so
+lib/kde4/plasma_wallpaper_weather.so
+lib/libconversion.so
+lib/libconversion.so.5
+lib/libconversion.so.5.0.1
 lib/liblancelot.so
 lib/liblancelot.so.0
-lib/liblancelot.so.0.5.0
+lib/liblancelot.so.0.7.0
+lib/libocsclient.so
+lib/libocsclient.so.5
+lib/libocsclient.so.5.0.1
 lib/libplasmacomicprovidercore.so
 lib/libplasmacomicprovidercore.so.1
 lib/libplasmacomicprovidercore.so.1.0.0
-lib/libplasmaconverter.so
-lib/libplasmaconverter.so.5
-lib/libplasmaconverter.so.5.0.1
+lib/libplasmapotdprovidercore.so
+lib/libplasmapotdprovidercore.so.1
+lib/libplasmapotdprovidercore.so.1.0.0
+lib/libplasmaweather.so
+lib/libplasmaweather.so.5
+lib/libplasmaweather.so.5.0.1
+lib/librtm.so
+lib/librtm.so.5
+lib/librtm.so.5.0.1
 share/apps/bball/bball.svgz
 share/apps/bball/bounce.ogg
 share/apps/bball/football.svgz
-share/apps/desktoptheme/Aya/lancelot/main-background.svgz
+share/apps/cmake/modules/FindConversion.cmake
+share/apps/desktoptheme/Aya/lancelot/action-list-view-categories-applet.svgz
+share/apps/desktoptheme/Aya/lancelot/action-list-view-categories-extender.svgz
+share/apps/desktoptheme/Aya/lancelot/action-list-view-categories.svgz
+share/apps/desktoptheme/Aya/lancelot/action-list-view-headers-plasma-applet.svgz
+share/apps/desktoptheme/Aya/lancelot/action-list-view-headers.svgz
+share/apps/desktoptheme/Aya/lancelot/action-list-view-items-extender.svgz
+share/apps/desktoptheme/Aya/lancelot/action-list-view-items.svgz
+share/apps/desktoptheme/Aya/lancelot/inner-background.svgz
 share/apps/desktoptheme/Aya/lancelot/passageway-view-buttons-extender.svgz
 share/apps/desktoptheme/Aya/lancelot/passageway-view-buttons.svgz
 share/apps/desktoptheme/Aya/lancelot/passageway-view-inactivebuttons.svgz
 share/apps/desktoptheme/Aya/lancelot/passageway-view-spacer.svgz
-share/apps/desktoptheme/Aya/lancelot/plasma-theme.config
 share/apps/desktoptheme/Aya/lancelot/section-buttons.svgz
 share/apps/desktoptheme/Aya/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/Aya/lancelot/system-buttons.svgz
 share/apps/desktoptheme/Aya/lancelot/theme.config
-share/apps/desktoptheme/Elegance/lancelot/action-list-view-categories-extender.svgz
-share/apps/desktoptheme/Elegance/lancelot/action-list-view-categories.svgz
-share/apps/desktoptheme/Elegance/lancelot/action-list-view-items-extender.svgz
-share/apps/desktoptheme/Elegance/lancelot/action-list-view-items.svgz
-share/apps/desktoptheme/Elegance/lancelot/main-background.svgz
-share/apps/desktoptheme/Elegance/lancelot/passageway-view-buttons-extender.svgz
-share/apps/desktoptheme/Elegance/lancelot/passageway-view-buttons.svgz
-share/apps/desktoptheme/Elegance/lancelot/passageway-view-inactivebuttons.svgz
-share/apps/desktoptheme/Elegance/lancelot/passageway-view-spacer.svgz
-share/apps/desktoptheme/Elegance/lancelot/plasma-theme.config
-share/apps/desktoptheme/Elegance/lancelot/section-buttons.svgz
+share/apps/desktoptheme/Elegance/lancelot/inner-background.svgz
 share/apps/desktoptheme/Elegance/lancelot/system-buttons.svgz
 share/apps/desktoptheme/Elegance/lancelot/theme.config
+share/apps/desktoptheme/Silicon/lancelot/action-list-view-categories-applet.svgz
 share/apps/desktoptheme/Silicon/lancelot/action-list-view-categories-extender.svgz
 share/apps/desktoptheme/Silicon/lancelot/action-list-view-categories.svgz
+share/apps/desktoptheme/Silicon/lancelot/action-list-view-headers-plasma-applet.svgz
+share/apps/desktoptheme/Silicon/lancelot/action-list-view-headers.svgz
 share/apps/desktoptheme/Silicon/lancelot/action-list-view-items-extender.svgz
 share/apps/desktoptheme/Silicon/lancelot/action-list-view-items.svgz
-share/apps/desktoptheme/Silicon/lancelot/main-background.svgz
+share/apps/desktoptheme/Silicon/lancelot/extender-button-icon.svgz
+share/apps/desktoptheme/Silicon/lancelot/inner-background.svgz
+share/apps/desktoptheme/Silicon/lancelot/lancelot-context-extender.svgz
+share/apps/desktoptheme/Silicon/lancelot/lancelot-context.svgz
 share/apps/desktoptheme/Silicon/lancelot/passageway-view-buttons-extender.svgz
 share/apps/desktoptheme/Silicon/lancelot/passageway-view-buttons.svgz
 share/apps/desktoptheme/Silicon/lancelot/passageway-view-inactivebuttons.svgz
 share/apps/desktoptheme/Silicon/lancelot/passageway-view-spacer.svgz
-share/apps/desktoptheme/Silicon/lancelot/plasma-theme.config
 share/apps/desktoptheme/Silicon/lancelot/section-buttons.svgz
+share/apps/desktoptheme/Silicon/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/Silicon/lancelot/system-buttons.svgz
 share/apps/desktoptheme/Silicon/lancelot/theme.config
+share/apps/desktoptheme/default/bubblemon/bubble.svg
+share/apps/desktoptheme/default/fifteenPuzzle/greensquare.svgz
 share/apps/desktoptheme/default/lancelot/action-list-view-categories-extender.svgz
 share/apps/desktoptheme/default/lancelot/action-list-view-categories.svgz
-share/apps/desktoptheme/default/lancelot/action-list-view-headers-plasma-applet.svgz
 share/apps/desktoptheme/default/lancelot/action-list-view-headers.svgz
 share/apps/desktoptheme/default/lancelot/action-list-view-items-extender.svgz
 share/apps/desktoptheme/default/lancelot/action-list-view-items.svgz
-share/apps/desktoptheme/default/lancelot/action-list-view-scroll-down-plasma-applet.svgz
-share/apps/desktoptheme/default/lancelot/action-list-view-scroll-down.svgz
-share/apps/desktoptheme/default/lancelot/action-list-view-scroll-up-plasma-applet.svgz
-share/apps/desktoptheme/default/lancelot/action-list-view-scroll-up.svgz
 share/apps/desktoptheme/default/lancelot/extender-button-icon.svgz
 share/apps/desktoptheme/default/lancelot/inner-background.svgz
-share/apps/desktoptheme/default/lancelot/lancelot-context-extender.svgz
-share/apps/desktoptheme/default/lancelot/lancelot-context.svgz
 share/apps/desktoptheme/default/lancelot/main-background.svgz
 share/apps/desktoptheme/default/lancelot/passageway-view-buttons-extender.svgz
 share/apps/desktoptheme/default/lancelot/passageway-view-buttons.svgz
 share/apps/desktoptheme/default/lancelot/passageway-view-inactivebuttons.svgz
 share/apps/desktoptheme/default/lancelot/passageway-view-spacer.svgz
-share/apps/desktoptheme/default/lancelot/plasma-theme.config
-share/apps/desktoptheme/default/lancelot/scroll-bar-background-bar-down.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-background-bar-left.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-background-bar-right.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-background-bar-up.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-background.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-button-down-icon.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-button-left-icon.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-button-right-icon.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-button-up-icon.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-handle-horizontal.svgz
-share/apps/desktoptheme/default/lancelot/scroll-bar-handle-vertical.svgz
 share/apps/desktoptheme/default/lancelot/section-buttons.svgz
 share/apps/desktoptheme/default/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/default/lancelot/system-buttons.svgz
@@ -148,79 +177,139 @@ share/apps/desktoptheme/default/rssnow/left.svgz
 share/apps/desktoptheme/default/rssnow/right.svgz
 share/apps/desktoptheme/default/rssnow/rssnow.svgz
 share/apps/desktoptheme/default/stylesheets/news.css
+share/apps/desktoptheme/default/weather/wind-arrows.svgz
 share/apps/desktoptheme/default/weatherstation/lcd.svgz
 share/apps/desktoptheme/default/weatherstation/lcd_panel.svgz
-share/apps/desktoptheme/default/widgets/eyes.svgz
+share/apps/desktoptheme/default/widgets/eyes.svg
 share/apps/desktoptheme/default/widgets/luna.svgz
+share/apps/desktoptheme/default/widgets/microblog.svgz
 share/apps/desktoptheme/default/widgets/notes.svgz
 share/apps/desktoptheme/default/widgets/picture-frame-default.svgz
 share/apps/desktoptheme/default/widgets/previewer-16.svgz
 share/apps/desktoptheme/default/widgets/previewer-22.svgz
 share/apps/desktoptheme/default/widgets/timer.svgz
-share/apps/desktoptheme/default/widgets/twitter.svgz
+share/apps/desktoptheme/heron/lancelot/action-list-view-categories-applet.svgz
 share/apps/desktoptheme/heron/lancelot/action-list-view-categories-extender.svgz
 share/apps/desktoptheme/heron/lancelot/action-list-view-categories.svgz
+share/apps/desktoptheme/heron/lancelot/action-list-view-headers-plasma-applet.svgz
+share/apps/desktoptheme/heron/lancelot/action-list-view-headers.svgz
 share/apps/desktoptheme/heron/lancelot/action-list-view-items-extender.svgz
 share/apps/desktoptheme/heron/lancelot/action-list-view-items.svgz
-share/apps/desktoptheme/heron/lancelot/main-background.svgz
+share/apps/desktoptheme/heron/lancelot/extender-button-icon.svgz
+share/apps/desktoptheme/heron/lancelot/inner-background.svgz
+share/apps/desktoptheme/heron/lancelot/lancelot-context-extender.svgz
+share/apps/desktoptheme/heron/lancelot/lancelot-context.svgz
 share/apps/desktoptheme/heron/lancelot/passageway-view-buttons-extender.svgz
 share/apps/desktoptheme/heron/lancelot/passageway-view-buttons.svgz
 share/apps/desktoptheme/heron/lancelot/passageway-view-inactivebuttons.svgz
 share/apps/desktoptheme/heron/lancelot/passageway-view-spacer.svgz
-share/apps/desktoptheme/heron/lancelot/plasma-theme.config
 share/apps/desktoptheme/heron/lancelot/section-buttons.svgz
+share/apps/desktoptheme/heron/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/heron/lancelot/system-buttons.svgz
 share/apps/desktoptheme/heron/lancelot/theme.config
+share/apps/desktoptheme/oxygen/lancelot/action-list-view-categories-applet.svgz
+share/apps/desktoptheme/oxygen/lancelot/action-list-view-categories-extender.svgz
+share/apps/desktoptheme/oxygen/lancelot/action-list-view-categories.svgz
+share/apps/desktoptheme/oxygen/lancelot/action-list-view-headers-plasma-applet.svgz
+share/apps/desktoptheme/oxygen/lancelot/action-list-view-headers.svgz
+share/apps/desktoptheme/oxygen/lancelot/action-list-view-items-extender.svgz
+share/apps/desktoptheme/oxygen/lancelot/action-list-view-items.svgz
+share/apps/desktoptheme/oxygen/lancelot/extender-button-icon.svgz
+share/apps/desktoptheme/oxygen/lancelot/inner-background.svgz
+share/apps/desktoptheme/oxygen/lancelot/lancelot-context-extender.svgz
+share/apps/desktoptheme/oxygen/lancelot/lancelot-context.svgz
+share/apps/desktoptheme/oxygen/lancelot/passageway-view-buttons-extender.svgz
+share/apps/desktoptheme/oxygen/lancelot/passageway-view-buttons.svgz
+share/apps/desktoptheme/oxygen/lancelot/passageway-view-inactivebuttons.svgz
+share/apps/desktoptheme/oxygen/lancelot/passageway-view-spacer.svgz
+share/apps/desktoptheme/oxygen/lancelot/section-buttons.svgz
+share/apps/desktoptheme/oxygen/lancelot/system-buttons-extender.svgz
+share/apps/desktoptheme/oxygen/lancelot/system-buttons.svgz
+share/apps/desktoptheme/oxygen/lancelot/theme.config
+share/apps/desktoptheme/slim-glow/lancelot/action-list-view-categories-applet.svgz
 share/apps/desktoptheme/slim-glow/lancelot/action-list-view-categories-extender.svgz
 share/apps/desktoptheme/slim-glow/lancelot/action-list-view-categories.svgz
+share/apps/desktoptheme/slim-glow/lancelot/action-list-view-headers-plasma-applet.svgz
+share/apps/desktoptheme/slim-glow/lancelot/action-list-view-headers.svgz
 share/apps/desktoptheme/slim-glow/lancelot/action-list-view-items-extender.svgz
 share/apps/desktoptheme/slim-glow/lancelot/action-list-view-items.svgz
-share/apps/desktoptheme/slim-glow/lancelot/main-background.svgz
+share/apps/desktoptheme/slim-glow/lancelot/extender-button-icon.svgz
+share/apps/desktoptheme/slim-glow/lancelot/inner-background.svgz
+share/apps/desktoptheme/slim-glow/lancelot/lancelot-context-extender.svgz
+share/apps/desktoptheme/slim-glow/lancelot/lancelot-context.svgz
 share/apps/desktoptheme/slim-glow/lancelot/passageway-view-buttons-extender.svgz
 share/apps/desktoptheme/slim-glow/lancelot/passageway-view-buttons.svgz
 share/apps/desktoptheme/slim-glow/lancelot/passageway-view-inactivebuttons.svgz
 share/apps/desktoptheme/slim-glow/lancelot/passageway-view-spacer.svgz
-share/apps/desktoptheme/slim-glow/lancelot/plasma-theme.config
 share/apps/desktoptheme/slim-glow/lancelot/section-buttons.svgz
+share/apps/desktoptheme/slim-glow/lancelot/system-buttons-extender.svgz
+share/apps/desktoptheme/slim-glow/lancelot/system-buttons.svgz
 share/apps/desktoptheme/slim-glow/lancelot/theme.config
-share/apps/plasma-bluemarble/atmosphere.frag
-share/apps/plasma-bluemarble/atmosphere.vert
-share/apps/plasma-bluemarble/earth-night.png
-share/apps/plasma-bluemarble/earth.frag
-share/apps/plasma-bluemarble/earth.png
-share/apps/plasma-bluemarble/earth.vert
+share/apps/lancelot/lancelot.notifyrc
+share/apps/plasma-applet-opendesktop/user.css
+share/apps/plasma/services/rtmauth.operations
+share/apps/plasma/services/rtmtask.operations
+share/apps/plasma/services/rtmtasks.operations
 share/apps/plasma/services/tweet.operations
+share/apps/plasma_pastebin/plasma_pastebin.notifyrc
+share/apps/plasma_wallpaper_pattern/patterns/fish.desktop
+share/apps/plasma_wallpaper_pattern/patterns/fish.png
+share/apps/plasma_wallpaper_pattern/patterns/flowers.desktop
+share/apps/plasma_wallpaper_pattern/patterns/flowers.png
+share/apps/plasma_wallpaper_pattern/patterns/night-rock.desktop
+share/apps/plasma_wallpaper_pattern/patterns/night-rock.jpg
+share/apps/plasma_wallpaper_pattern/patterns/pavement.desktop
+share/apps/plasma_wallpaper_pattern/patterns/pavement.png
+share/apps/plasma_wallpaper_pattern/patterns/rattan.desktop
+share/apps/plasma_wallpaper_pattern/patterns/rattan.png
+share/apps/plasma_wallpaper_pattern/patterns/stonewall2.desktop
+share/apps/plasma_wallpaper_pattern/patterns/stonewall2.png
+share/apps/plasma_wallpaper_pattern/patterns/triangles.desktop
+share/apps/plasma_wallpaper_pattern/patterns/triangles.png
+share/apps/plasma_wallpaper_pattern/patterns/xeroxstar.desktop
+share/apps/plasma_wallpaper_pattern/patterns/xeroxstar.png
 share/apps/rssnow/feeds
 share/config/comic.knsrc
+share/config/virus_wallpaper.knsrc
 share/dbus-1/services/org.kde.lancelot.service
+share/icons/hicolor/128x128/apps/bball.png
 share/icons/hicolor/128x128/apps/lancelot-part.png
 share/icons/hicolor/128x128/apps/lancelot.png
 share/icons/hicolor/128x128/apps/previewer.png
+share/icons/hicolor/16x16/apps/bball.png
 share/icons/hicolor/16x16/apps/lancelot-part.png
 share/icons/hicolor/16x16/apps/lancelot.png
 share/icons/hicolor/16x16/apps/previewer.png
 share/icons/hicolor/22x22/apps/lancelot-part.png
 share/icons/hicolor/22x22/apps/lancelot.png
 share/icons/hicolor/22x22/apps/previewer.png
+share/icons/hicolor/32x32/apps/bball.png
 share/icons/hicolor/32x32/apps/lancelot-part.png
 share/icons/hicolor/32x32/apps/lancelot.png
 share/icons/hicolor/32x32/apps/previewer.png
+share/icons/hicolor/48x48/apps/bball.png
 share/icons/hicolor/48x48/apps/lancelot-part.png
 share/icons/hicolor/48x48/apps/lancelot.png
 share/icons/hicolor/48x48/apps/previewer.png
+share/icons/hicolor/64x64/apps/bball.png
 share/icons/hicolor/64x64/apps/lancelot-part.png
 share/icons/hicolor/64x64/apps/lancelot.png
 share/icons/hicolor/64x64/apps/previewer.png
+share/icons/hicolor/scalable/apps/bball.svgz
 share/icons/hicolor/scalable/apps/fifteenpuzzle.svgz
-share/icons/oxygen/scalable/apps/bball.svgz
+share/icons/oxygen/scalable/apps/accessories-dictionary.svgz
 share/kde4/services/ServiceMenus/preview.desktop
+share/kde4/services/apodprovider.desktop
 share/kde4/services/browserhistory.desktop
+share/kde4/services/epodprovider.desktop
+share/kde4/services/flickrprovider.desktop
 share/kde4/services/katesessions.desktop
 share/kde4/services/konquerorsessions.desktop
 share/kde4/services/konsolesessions.desktop
+share/kde4/services/oseiprovider.desktop
 share/kde4/services/plasma-applet-bball.desktop
 share/kde4/services/plasma-applet-binaryclock.desktop
-share/kde4/services/plasma-applet-bluemarble.desktop
+share/kde4/services/plasma-applet-bubblemon.desktop
 share/kde4/services/plasma-applet-calculator.desktop
 share/kde4/services/plasma-applet-charselect.desktop
 share/kde4/services/plasma-applet-eyes.desktop
@@ -233,21 +322,32 @@ share/kde4/services/plasma-applet-lancelot-part.desktop
 share/kde4/services/plasma-applet-leavenote.desktop
 share/kde4/services/plasma-applet-life.desktop
 share/kde4/services/plasma-applet-luna.desktop
+share/kde4/services/plasma-applet-magnifique.desktop
+share/kde4/services/plasma-applet-mediaplayer.desktop
+share/kde4/services/plasma-applet-microblog.desktop
 share/kde4/services/plasma-applet-news.desktop
 share/kde4/services/plasma-applet-nowplaying.desktop
+share/kde4/services/plasma-applet-opendesktop.desktop
 share/kde4/services/plasma-applet-paste.desktop
 share/kde4/services/plasma-applet-pastebin.desktop
 share/kde4/services/plasma-applet-previewer.desktop
+share/kde4/services/plasma-applet-rememberthemilk.desktop
 share/kde4/services/plasma-applet-rssnow.desktop
 share/kde4/services/plasma-applet-showdashboard.desktop
 share/kde4/services/plasma-applet-showdesktop.desktop
+share/kde4/services/plasma-applet-systemloadviewer.desktop
 share/kde4/services/plasma-applet-timer.desktop
+share/kde4/services/plasma-applet-unitconverter.desktop
+share/kde4/services/plasma-applet-weather.desktop
 share/kde4/services/plasma-applet-weatherstation.desktop
 share/kde4/services/plasma-clock-fuzzy.desktop
 share/kde4/services/plasma-comic-default.desktop
 share/kde4/services/plasma-dataengine-comic.desktop
-share/kde4/services/plasma-dataengine-twitter.desktop
+share/kde4/services/plasma-dataengine-microblog.desktop
+share/kde4/services/plasma-dataengine-ocs.desktop
+share/kde4/services/plasma-dataengine-potd.desktop
 share/kde4/services/plasma-dict-default.desktop
+share/kde4/services/plasma-engine-rtm.desktop
 share/kde4/services/plasma-fileWatcher-default.desktop
 share/kde4/services/plasma-frame-default.desktop
 share/kde4/services/plasma-kolourpicker-default.desktop
@@ -257,30 +357,48 @@ share/kde4/services/plasma-runner-contacts.desktop
 share/kde4/services/plasma-runner-converter.desktop
 share/kde4/services/plasma-runner-spellchecker.desktop
 share/kde4/services/plasma-runner-spellchecker_config.desktop
-share/kde4/services/plasma-twitter-default.desktop
+share/kde4/services/plasma-wallpaper-mandelbrot.desktop
+share/kde4/services/plasma-wallpaper-marble.desktop
+share/kde4/services/plasma-wallpaper-pattern.desktop
+share/kde4/services/plasma-wallpaper-virus.desktop
+share/kde4/services/plasma-wallpaper-weather.desktop
+share/kde4/services/wcpotdprovider.desktop
 share/kde4/servicetypes/plasma_comicprovider.desktop
+share/kde4/servicetypes/plasma_potdprovider.desktop
 share/mime/packages/lancelotpart-mime.xml
-share/mime/text/x-lancelotpart.xml
 @dirrm share/apps/rssnow
-@dirrm share/apps/plasma-bluemarble
+@dirrm share/apps/plasma_wallpaper_pattern/patterns
+@dirrm share/apps/plasma_wallpaper_pattern
+@dirrm share/apps/plasma_pastebin
+@dirrm share/apps/plasma-applet-opendesktop
+@dirrm share/apps/lancelot
 @dirrm share/apps/desktoptheme/slim-glow/lancelot
-@dirrm share/apps/desktoptheme/slim-glow
+@dirrmtry share/apps/desktoptheme/slim-glow
+@dirrm share/apps/desktoptheme/oxygen/lancelot
+@dirrmtry share/apps/desktoptheme/oxygen
 @dirrm share/apps/desktoptheme/heron/lancelot
-@dirrm share/apps/desktoptheme/heron
+@dirrmtry share/apps/desktoptheme/heron
 @dirrm share/apps/desktoptheme/default/weatherstation
+@dirrm share/apps/desktoptheme/default/weather
 @dirrm share/apps/desktoptheme/default/stylesheets
 @dirrm share/apps/desktoptheme/default/rssnow
 @dirrm share/apps/desktoptheme/default/lancelot
+@dirrm share/apps/desktoptheme/default/fifteenPuzzle
+@dirrm share/apps/desktoptheme/default/bubblemon
 @dirrm share/apps/desktoptheme/Silicon/lancelot
-@dirrm share/apps/desktoptheme/Silicon
+@dirrmtry share/apps/desktoptheme/Silicon
 @dirrm share/apps/desktoptheme/Elegance/lancelot
-@dirrm share/apps/desktoptheme/Elegance
+@dirrmtry share/apps/desktoptheme/Elegance
+@dirrmtry share/apps/desktoptheme/Clean-Bend
 @dirrm share/apps/desktoptheme/Aya/lancelot
-@dirrm share/apps/desktoptheme/Aya
+@dirrmtry share/apps/desktoptheme/Aya
+@dirrmtry share/apps/cmake/modules
+@dirrmtry share/apps/cmake
 @dirrm share/apps/bball
 @dirrm include/lancelot/widgets
 @dirrm include/lancelot/models
 @dirrm include/lancelot/layouts
 @dirrm include/lancelot
+@dirrm include/conversion
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

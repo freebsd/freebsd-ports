@@ -1,4 +1,5 @@
-MAN1=	ark.1 \
+MAN1=	adddebug.1 \
+	ark.1 \
 	cheatmake.1 \
 	checkXML.1 \
 	create_cvsignore.1 \
@@ -23,10 +24,13 @@ MAN1=	ark.1 \
 	kdesu.1 \
 	kfind.1 \
 	kig.1 \
+	kjs.1 \
+	kjscmd.1 \
 	kmag.1 \
 	kmousetool.1 \
 	kmouth.1 \
 	kmplot.1 \
+	kross.1 \
 	ktouch.1 \
 	makekdewidgets.1 \
 	po2xml.1 \
@@ -38,10 +42,15 @@ MAN1=	ark.1 \
 	swappo.1 \
 	transxx.1 \
 	xml2pot.1 \
+	xsldbg.1 \
 	zonetab2pot.py.1
 MAN6=	amor.6 \
 	khangman.6 \
 	kpat.6
 MAN7=	kdeoptions.7 \
 	qtoptions.7
-MAN8=	kbuildsycoca4.8
+MAN8=	kbuildsycoca4.8 \
+	kcookiejar4.8 \
+	kded4.8 \
+	kdeinit4.8 \
+	meinproc4.8 \

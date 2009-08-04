@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -19,7 +18,9 @@ COMMENT=	Basic applications for the KDE system
 
 LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
 		dbus-1.3:${PORTSDIR}/devel/dbus \
+		utempter:${PORTSDIR}/sysutils/libutempter \
 		hal.1:${PORTSDIR}/sysutils/hal \
+		polkit-qt-core.0:${PORTSDIR}/sysutils/policykit-qt \
 		xklavier.12:${PORTSDIR}/x11/libxklavier
 RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
@@ -32,19 +33,25 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap
 
 SUB_FILES=	kdm
-USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
+USE_RC_SUBR=	kdm4
+USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4 oxygen \
+		kdeexp
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	assistant corelib dbus designer gui network opengl  \
 		script svg sql qt3support qtestlib xml webkit \
 		qmake_build moc_build rcc_build uic_build \
-		porting_build uic3_build
+		porting_build uic3_build phonon
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
+MAN1=	plasmaengineexplorer.1
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
+		-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include" \
+		-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
+		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_BlueZ:BOOL=OFF \
 		-DWITH_Sensors:BOOL=OFF \
 		-DWITH_NetworkManager:BOOL=OFF \
@@ -64,14 +71,25 @@ LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 post-extract:
 	${MKDIR} ${WRKSRC}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/../startkde.cmake \
+		${WRKSRC}/../kcontrol/kfontinst/lib/KfiConstants.h \
+		${WRKSRC}/../kcontrol/kfontinst/kio/KioFonts.cpp \
+		${WRKSRC}/../kcontrol/kxkb/x11helper.cpp \
+		${WRKSRC}/../kdm/kfrontend/genkdmconf.c
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|<qhash.h>|<QHash>|'\
-		${WRKSRC}/../kwin/effects/thumbnailaside.h
+		${WRKSRC}/../kwin/effects/thumbnailaside/thumbnailaside.h
 .for item in b2/b2client.cpp kwmtheme/kwmthemeclient.cpp\
 		laptop/laptopclient.cpp modernsystem/modernsys.cpp\
 		redmond/redmond.cpp
 	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|'\
 		${WRKSRC}/../kwin/clients/${item}
+	${REINPLACE_CMD} -e 's|addToUtmp ""|addToUtmp "${LOCALBASE}/lib"|' \
+		-e 's|(utempter.h|(${LOCALBASE}/include/utempter.h|' \
+	${WRKSRC}/../kwrited/CMakeLists.txt
 .endfor
 
 post-install:

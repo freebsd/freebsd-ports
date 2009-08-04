@@ -1,0 +1,106 @@
+bin/akonadi2xml
+bin/akonadi_birthdays_resource
+bin/akonadi_distlist_resource
+bin/akonadi_ical_resource
+bin/akonadi_imap_resource
+bin/akonadi_kabc_resource
+bin/akonadi_kcal_resource
+bin/akonadi_knut_resource
+bin/akonadi_localbookmarks_resource
+bin/akonadi_maildir_resource
+bin/akonadi_microblog_resource
+bin/akonadi_nepomuk_contact_feeder
+bin/akonadi_nepomuk_email_feeder
+bin/akonadi_nepomuktag_resource
+bin/akonadi_nntp_resource
+bin/akonadi_strigi_feeder
+bin/akonadi_vcard_resource
+bin/akonadi_vcarddir_resource
+bin/akonadiconsole
+bin/akonaditray
+bin/kres-migrator
+include/akonadi/xml/akonadi-xml_export.h
+include/akonadi/xml/xmldocument.h
+include/akonadi/xml/xmlreader.h
+include/akonadi/xml/xmlwritejob.h
+include/akonadi/xml/xmlwriter.h
+lib/kde4/akonadi_serializer_addressee.so
+lib/kde4/akonadi_serializer_bookmark.so
+lib/kde4/akonadi_serializer_contactgroup.so
+lib/kde4/akonadi_serializer_kcal.so
+lib/kde4/akonadi_serializer_mail.so
+lib/kde4/akonadi_serializer_microblog.so
+lib/kde4/kabc_akonadi.so
+lib/kde4/kcal_akonadi.so
+lib/kde4/kcm_akonadi.so
+lib/kde4/kcm_akonadi_resources.so
+lib/kde4/kcm_akonadi_server.so
+lib/kde4/kio_akonadi.so
+lib/libakonadi-kabccommon.so
+lib/libakonadi-kabccommon.so.5
+lib/libakonadi-kabccommon.so.5.0.1
+lib/libakonadi-kcal.so
+lib/libakonadi-kcal.so.5
+lib/libakonadi-kcal.so.5.0.1
+lib/libakonadi-xml.so
+lib/libakonadi-xml.so.5
+lib/libakonadi-xml.so.5.0.1
+lib/libakonadi_next.so
+lib/libakonadi_next.so.5
+lib/libakonadi_next.so.5.0.1
+lib/libkdepim-copy.so
+lib/libkdepim-copy.so.5
+lib/libkdepim-copy.so.5.0.1
+lib/libmaildir.so
+lib/libmaildir.so.5
+lib/libmaildir.so.5.0.1
+share/akonadi/agents/birthdaysresource.desktop
+share/akonadi/agents/distlistresource.desktop
+share/akonadi/agents/icalresource.desktop
+share/akonadi/agents/imapresource.desktop
+share/akonadi/agents/kabcresource.desktop
+share/akonadi/agents/kcalresource.desktop
+share/akonadi/agents/knutresource.desktop
+share/akonadi/agents/localbookmarksresource.desktop
+share/akonadi/agents/maildirresource.desktop
+share/akonadi/agents/microblog.desktop
+share/akonadi/agents/nepomukcontactfeeder.desktop
+share/akonadi/agents/nepomukemailfeeder.desktop
+share/akonadi/agents/nepomuktagresource.desktop
+share/akonadi/agents/nntpresource.desktop
+share/akonadi/agents/notesresource.desktop
+share/akonadi/agents/strigifeeder.desktop
+share/akonadi/agents/vcarddirresource.desktop
+share/akonadi/agents/vcardresource.desktop
+share/applications/kde4/akonadiconsole.desktop
+share/applications/kde4/akonaditray.desktop
+share/apps/akonadi/akonadi-xml.xsd
+share/apps/akonadi/firstrun/defaultaddressbook
+share/apps/akonadi/firstrun/defaultcalendar
+share/apps/akonadi/plugins/serializer/akonadi_serializer_addressee.desktop
+share/apps/akonadi/plugins/serializer/akonadi_serializer_bookmark.desktop
+share/apps/akonadi/plugins/serializer/akonadi_serializer_contactgroup.desktop
+share/apps/akonadi/plugins/serializer/akonadi_serializer_kcal.desktop
+share/apps/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
+share/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
+share/apps/akonadi_knut_resource/knut-template.xml
+share/apps/akonadiconsole/akonadiconsoleui.rc
+share/config/kres-migratorrc
+share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
+share/kde4/services/akonadi.protocol
+share/kde4/services/kcm_akonadi.desktop
+share/kde4/services/kcm_akonadi_resources.desktop
+share/kde4/services/kcm_akonadi_server.desktop
+share/kde4/services/kresources/kabc/akonadi.desktop
+share/kde4/services/kresources/kcal/akonadi.desktop
+share/mime/packages/kdepim-mime.xml
+share/mime/application/x-vnd.kde.notes.xml
+@dirrm share/apps/akonadiconsole
+@dirrm share/apps/akonadi_knut_resource
+@dirrm share/apps/akonadi/plugins/serializer
+@dirrm share/apps/akonadi/plugins
+@dirrm share/apps/akonadi/firstrun
+@dirrm share/apps/akonadi
+@dirrm share/akonadi/agents
+@dirrm share/akonadi
+@dirrm include/akonadi/xml

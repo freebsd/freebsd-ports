@@ -17,9 +17,7 @@ MAN1=	ark.1 \
 	kabcclient.1 \
 	kalzium.1 \
 	kappfinder.1 \
-	kapptemplate.1 \
 	karm.1 \
-	kate.1 \
 	kbookmarkmerger.1 \
 	kbruch.1 \
 	kconfig_compiler.1 \

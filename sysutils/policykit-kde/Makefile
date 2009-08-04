@@ -18,6 +18,8 @@ COMMENT=	PolicyKit manager for KDE
 
 LIB_DEPENDS=	polkit.2:${PORTSDIR}/sysutils/policykit
 
+BROKEN=		is already included in kde 4.3
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdeprefix automoc4

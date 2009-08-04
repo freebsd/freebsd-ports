@@ -1,8 +1,8 @@
---- ../kio/kfile/kpropertiesdialog.cpp.orig	2009-05-28 23:22:21.000000000 +0400
-+++ ../kio/kfile/kpropertiesdialog.cpp	2009-05-29 23:35:59.000000000 +0400
-@@ -1774,7 +1774,15 @@
+--- ../kio/kfile/kpropertiesdialog.cpp.orig	2009-05-06 14:14:38.000000000 +0400
++++ ../kio/kfile/kpropertiesdialog.cpp	2009-05-30 00:46:08.000000000 +0400
+@@ -1804,7 +1804,15 @@
  #else
-     gid_t *groups = NULL;
+     QVarLengthArray<gid_t> groups;
  #endif
 +#ifdef Q_OS_FREEBSD
 +#include <osreldate.h>
@@ -13,6 +13,6 @@
 +#else
      if (getgrouplist(strUser, user->pw_gid, NULL, &groupCount) < 0) {
 +#endif
- #ifdef Q_OS_MAC
-         groups = new int[groupCount];
- #else
+         groups.resize(groupCount);
+         if (groups.data())
+             getgrouplist(strUser, user->pw_gid, groups.data(), &groupCount);

@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2009-07-30 23:28:35.000000000 +1100
++++ CMakeLists.txt	2009-08-03 02:17:59.000000000 +1100
+@@ -7,6 +7,18 @@
+ include (KDE4Defaults)
+ include (MacroLibrary)
+ 
++INCLUDE(FindPkgConfig)
++PKG_CHECK_MODULES(LIBGVC libgvc>=2.24.0)
++FIND_PATH(LIBGVC_INCLUDE NAMES gvc.h
++  PATHS ${LIBGVC_INCLUDE_DIRS} ${CMAKE_BINARY_DIR}/include NO_DEFAULT_PATH)
++FIND_LIBRARY(LIBGVC_LIBRARY NAMES gvc graph cdt pathplan	
++  PATHS ${LIBGVC_LIBRARY_DIRS} ${CMAKE_BINARY_DIR}/lib NO_DEFAULT_PATH)
++
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(LIBGVC DEFAULT_MSG LIBGVC_INCLUDE LIBGVC_LIBRARY_DIRS)
++SET(LIBGVC_LIBRARIES ${LIBGVC_LIBRARY})
++SET(LIBGVC_INCLUDES ${LIBGVC_INCLUDE})
++
+ # are these two really required ?
+ find_package(ZLIB REQUIRED)
+ if (APPLE)
+@@ -14,7 +26,7 @@
+ endif (APPLE)
+ find_package(KdepimLibs REQUIRED)
+ 
+-FIND_PROGRAM(DOT_EXECUTABLE NAMES dot  PATHS /usr/bin/  )
++FIND_PROGRAM(DOT_EXECUTABLE NAMES dot  PATHS /usr/bin/ /usr/local/bin/  )
+ if(NOT DOT_EXECUTABLE)
+    MESSAGE(STATUS "GraphViz not found. You will need it at runtime")
+ endif(NOT DOT_EXECUTABLE)

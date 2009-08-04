@@ -6,7 +6,6 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,7 +15,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion
+LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 LATEST_LINK=	${PORTNAME}4
 
@@ -29,7 +29,7 @@ QT_COMPONENTS=	network gui svg qt3support \
 		qmake_build moc_build rcc_build uic_build \
 		porting_build uic3_build
 USE_GMAKE=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=	adddebug.1 \
 	cervisia.1 \

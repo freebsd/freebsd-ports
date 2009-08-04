@@ -1,4 +1,5 @@
 bin/ark
+bin/irkick
 bin/kcalc
 bin/kcharselect
 bin/kdessh
@@ -13,17 +14,25 @@ bin/superkaramba
 bin/sweeper
 lib/kde4/kcm_kdf.so
 lib/kde4/kcm_kwallet.so
-lib/kde4/kerfuffle_7zip.so
+lib/kde4/kcm_lirc.so
+lib/kde4/kerfuffle_7z.so
+lib/kde4/kerfuffle_clirar.so
+lib/kde4/kerfuffle_clizip.so
 lib/kde4/kerfuffle_libarchive.so
+lib/kde4/kerfuffle_libbz2.so
 lib/kde4/kerfuffle_libgz.so
-lib/kde4/kerfuffle_libzip.so
-lib/kde4/kerfuffle_rar.so
+lib/kde4/kerfuffle_libxz.so
 lib/kde4/libarkpart.so
+%%KONQUI%%lib/kde4/libextracthere.so
 lib/kde4/libkbytearrayedit.so
 lib/kde4/liboktetapart.so
 lib/kde4/plasma_package_superkaramba.so
 lib/kde4/plasma_scriptengine_superkaramba.so
+lib/libkdeinit4_irkick.so
 lib/libkdeinit4_kcalc.so
+lib/libkdelirc_shared.so
+lib/libkdelirc_shared.so.1
+lib/libkdelirc_shared.so.1.0.0
 lib/libkerfuffle.so
 lib/libkerfuffle.so.5
 lib/libkerfuffle.so.5.0.1
@@ -39,6 +48,7 @@ lib/libsuperkaramba.so.5.0.1
 share/applications/kde4/KCharSelect.desktop
 share/applications/kde4/KFloppy.desktop
 share/applications/kde4/ark.desktop
+share/applications/kde4/irkick.desktop
 share/applications/kde4/kcalc.desktop
 share/applications/kde4/kdf.desktop
 share/applications/kde4/kgpg.desktop
@@ -51,14 +61,13 @@ share/applications/kde4/superkaramba.desktop
 share/applications/kde4/sweeper.desktop
 share/apps/ark/ark_part.rc
 share/apps/ark/arkui.rc
+share/apps/irkick/irkick.notifyrc
 share/apps/kcalc/kcalcui.rc
 share/apps/kcalc/scienceconstants.xml
 share/apps/kcharselect/kcharselectui.rc
 share/apps/kconf_update/kcalcrc.upd
 share/apps/kconf_update/kcharselect.upd
 share/apps/kdf/kdfui.rc
-share/apps/kdf/pics/delete.png
-share/apps/kdf/pics/tick.png
 share/apps/kgpg/icons/oxygen/16x16/actions/document-export-key.png
 share/apps/kgpg/icons/oxygen/16x16/actions/document-import-key.png
 share/apps/kgpg/icons/oxygen/16x16/actions/document-properties-key.png
@@ -102,8 +111,29 @@ share/apps/kwalletmanager/kwalleteditor.rc
 share/apps/kwalletmanager/kwalletmanager.rc
 share/apps/okteta/oktetaui.rc
 share/apps/oktetapart/oktetapartui.rc
+share/apps/profiles/amarok.profile.xml
+share/apps/profiles/dragonplayer.profile.xml
+share/apps/profiles/klauncher.profile.xml
+share/apps/profiles/kmix.profile.xml
+share/apps/profiles/konqueror.profile.xml
+share/apps/profiles/noatun.profile.xml
+share/apps/profiles/okular.profile.xml
+share/apps/profiles/profile.dtd
+share/apps/profiles/shutdown.profile.xml
+share/apps/profiles/suspend.profile.xml
+share/apps/profiles/vlc.profile.xml
+share/apps/remotes/AppleRemote.remote.xml
+share/apps/remotes/AsusDH.remote.xml
+share/apps/remotes/RM-0010.remote.xml
+share/apps/remotes/cimr100.remote.xml
+share/apps/remotes/hauppauge.remote.xml
+share/apps/remotes/packbell.remote.xml
+share/apps/remotes/remote.dtd
+share/apps/remotes/sherwood.remote.xml
+share/apps/remotes/sonytv.remote.xml
 share/apps/superkaramba/superkarambaui.rc
 share/apps/sweeper/sweeperui.rc
+share/autostart/irkick.desktop
 share/autostart/kgpg.desktop
 share/config.kcfg/ark.kcfg
 share/config.kcfg/kcalc.kcfg
@@ -116,6 +146,9 @@ share/doc/HTML/en/ark/common
 share/doc/HTML/en/ark/index.cache.bz2
 share/doc/HTML/en/ark/index.docbook
 share/doc/HTML/en/ark/man-ark.1.docbook
+share/doc/HTML/en/irkick/common
+share/doc/HTML/en/irkick/index.cache.bz2
+share/doc/HTML/en/irkick/index.docbook
 share/doc/HTML/en/kcalc/commands.docbook
 share/doc/HTML/en/kcalc/common
 share/doc/HTML/en/kcalc/index.cache.bz2
@@ -123,6 +156,9 @@ share/doc/HTML/en/kcalc/index.docbook
 share/doc/HTML/en/kcharselect/common
 share/doc/HTML/en/kcharselect/index.cache.bz2
 share/doc/HTML/en/kcharselect/index.docbook
+share/doc/HTML/en/kcmlirc/common
+share/doc/HTML/en/kcmlirc/index.cache.bz2
+share/doc/HTML/en/kcmlirc/index.docbook
 share/doc/HTML/en/kcontrol/blockdevices/common
 share/doc/HTML/en/kcontrol/blockdevices/index.cache.bz2
 share/doc/HTML/en/kcontrol/blockdevices/index.docbook
@@ -142,6 +178,7 @@ share/doc/HTML/en/kgpg/keygen.png
 share/doc/HTML/en/kgpg/keymanage.png
 share/doc/HTML/en/kgpg/keyprop.png
 share/doc/HTML/en/kgpg/keys.png
+share/doc/HTML/en/kgpg/keyserver-search.png
 share/doc/HTML/en/kgpg/keyserver.png
 share/doc/HTML/en/kgpg/kicker.png
 share/doc/HTML/en/kgpg/options.png
@@ -192,6 +229,7 @@ share/icons/hicolor/16x16/apps/kwalletmanager2.png
 share/icons/hicolor/16x16/apps/kwikdisk.png
 share/icons/hicolor/16x16/apps/okteta.png
 share/icons/hicolor/16x16/apps/superkaramba.png
+share/icons/hicolor/22x22/apps/irkick.png
 share/icons/hicolor/22x22/apps/kdf.png
 share/icons/hicolor/22x22/apps/kfloppy.png
 share/icons/hicolor/22x22/apps/kgpg.png
@@ -222,30 +260,50 @@ share/icons/hicolor/64x64/apps/kwalletmanager.png
 share/icons/hicolor/64x64/apps/kwalletmanager2.png
 share/icons/hicolor/64x64/apps/kwikdisk.png
 share/icons/hicolor/64x64/apps/superkaramba.png
+share/icons/hicolor/scalable/apps/irkick.svgz
 share/icons/hicolor/scalable/apps/superkaramba.svgz
+share/icons/oxygen/128x128/devices/infrared-remote.png
 share/icons/oxygen/16x16/apps/kcmdf.png
+share/icons/oxygen/16x16/devices/infrared-remote.png
+share/icons/oxygen/22x22/actions/irkickflash.png
+share/icons/oxygen/22x22/actions/irkickoff.png
 share/icons/oxygen/22x22/apps/kcmdf.png
+share/icons/oxygen/22x22/devices/infrared-remote.png
 share/icons/oxygen/32x32/apps/kcmdf.png
+share/icons/oxygen/32x32/devices/infrared-remote.png
+share/icons/oxygen/42x42/devices/infrared-remote.png
+share/icons/oxygen/48x48/devices/infrared-remote.png
+share/icons/oxygen/64x64/devices/infrared-remote.png
+share/icons/oxygen/8x8/devices/infrared-remote.png
+share/icons/oxygen/scalable/actions/irkickflash.svgz
+share/icons/oxygen/scalable/actions/irkickoff.svgz
+share/icons/oxygen/scalable/devices/infrared-remote.svgz
 share/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
 share/kde4/services/ServiceMenus/ark_servicemenu.desktop
 share/kde4/services/ServiceMenus/encryptfile.desktop
 share/kde4/services/ServiceMenus/encryptfolder.desktop
 share/kde4/services/ServiceMenus/floppy_format.desktop
 share/kde4/services/ServiceMenus/viewdecrypted.desktop
+%%KONQUI%%share/kde4/services/ark_dndextract.desktop
 share/kde4/services/ark_part.desktop
 share/kde4/services/kbytearrayedit.desktop
+share/kde4/services/kcm_lirc.desktop
 share/kde4/services/kcmdf.desktop
-share/kde4/services/kerfuffle_7zip.desktop
+share/kde4/services/kerfuffle_7z.desktop
+share/kde4/services/kerfuffle_clirar.desktop
+share/kde4/services/kerfuffle_clizip.desktop
 share/kde4/services/kerfuffle_libarchive.desktop
+share/kde4/services/kerfuffle_libbz2.desktop
 share/kde4/services/kerfuffle_libgz.desktop
-share/kde4/services/kerfuffle_libzip.desktop
-share/kde4/services/kerfuffle_rar.desktop
+share/kde4/services/kerfuffle_libxz.desktop
 share/kde4/services/kwalletconfig.desktop
 share/kde4/services/kwalletmanager_show.desktop
 share/kde4/services/oktetapart.desktop
 share/kde4/services/plasma-package-superkaramba.desktop
 share/kde4/services/plasma-scriptengine-superkaramba.desktop
 share/kde4/servicetypes/kerfufflePlugin.desktop
+@dirrmtry share/icons/oxygen/42x42/devices
+@dirrmtry share/icons/oxygen/42x42
 @dirrm share/doc/HTML/en/superkaramba
 @dirrm share/doc/HTML/en/okteta
 @dirrm share/doc/HTML/en/kwallet
@@ -254,11 +312,14 @@ share/kde4/servicetypes/kerfufflePlugin.desktop
 @dirrm share/doc/HTML/en/kfloppy
 @dirrm share/doc/HTML/en/kdf
 @dirrm share/doc/HTML/en/kcontrol/blockdevices
+@dirrm share/doc/HTML/en/kcmlirc
 @dirrm share/doc/HTML/en/kcharselect
 @dirrm share/doc/HTML/en/kcalc
+@dirrm share/doc/HTML/en/irkick
 @dirrm share/doc/HTML/en/ark
 @dirrm share/apps/sweeper
 @dirrm share/apps/superkaramba
+@dirrm share/apps/remotes
 @dirrm share/apps/oktetapart
 @dirrm share/apps/okteta
 @dirrm share/apps/kwalletmanager/icons/oxygen/22x22/actions
@@ -285,7 +346,7 @@ share/kde4/servicetypes/kerfufflePlugin.desktop
 @dirrm share/apps/kgpg/icons/oxygen
 @dirrm share/apps/kgpg/icons
 @dirrm share/apps/kgpg
-@dirrm share/apps/kdf/pics
 @dirrm share/apps/kdf
 @dirrm share/apps/kcalc
+@dirrm share/apps/irkick
 @dirrm share/apps/ark

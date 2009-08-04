@@ -3,6 +3,7 @@ bin/juk
 bin/kmix
 bin/kmixctrl
 bin/kscd
+bin/mplayerthumbsconfig
 include/audiocdencoder.h
 include/libkcddb/cdinfo.h
 include/libkcddb/cdinfodialog.h
@@ -21,6 +22,7 @@ lib/kde4/libaudiocd_encoder_flac.so
 lib/kde4/libaudiocd_encoder_lame.so
 lib/kde4/libaudiocd_encoder_vorbis.so
 lib/kde4/libaudiocd_encoder_wav.so
+lib/kde4/videopreview.so
 lib/libaudiocdplugins.so
 lib/libaudiocdplugins.so.5
 lib/libaudiocdplugins.so.5.0.1
@@ -38,6 +40,7 @@ share/applications/kde4/kmix.desktop
 share/applications/kde4/kscd.desktop
 share/apps/dragonplayer/dragonlogo.png
 share/apps/dragonplayer/dragonplayerui.rc
+share/apps/juk/juk.notifyrc
 share/apps/juk/jukui-rtl.rc
 share/apps/juk/jukui.rc
 share/apps/juk/pics/playing.png
@@ -50,41 +53,45 @@ share/apps/kmix/kmixui.rc
 share/apps/kmix/pics/kmixdocked.png
 share/apps/kmix/pics/kmixdocked_error.png
 share/apps/kmix/pics/kmixdocked_mute.png
-share/apps/kmix/pics/mix_ac97.png
-share/apps/kmix/pics/mix_audio.png
-share/apps/kmix/pics/mix_bass.png
-share/apps/kmix/pics/mix_cd.png
-share/apps/kmix/pics/mix_digital.png
-share/apps/kmix/pics/mix_ext.png
-share/apps/kmix/pics/mix_headphone.png
-share/apps/kmix/pics/mix_microphone.png
-share/apps/kmix/pics/mix_midi.png
-share/apps/kmix/pics/mix_recmon.png
 share/apps/kmix/pics/mix_record.png
-share/apps/kmix/pics/mix_surround.png
-share/apps/kmix/pics/mix_treble.png
-share/apps/kmix/pics/mix_unknown.png
-share/apps/kmix/pics/mix_video.png
-share/apps/kmix/pics/mix_volume.png
+share/apps/kmix/pics/mixer-ac97.png
+share/apps/kmix/pics/mixer-capture.png
+share/apps/kmix/pics/mixer-cd.png
+share/apps/kmix/pics/mixer-digital.png
+share/apps/kmix/pics/mixer-front.png
+share/apps/kmix/pics/mixer-headset.png
+share/apps/kmix/pics/mixer-lfe.png
+share/apps/kmix/pics/mixer-line.png
+share/apps/kmix/pics/mixer-master.png
+share/apps/kmix/pics/mixer-microphone.png
+share/apps/kmix/pics/mixer-midi.png
+share/apps/kmix/pics/mixer-pcm-default.png
+share/apps/kmix/pics/mixer-pcm.png
+share/apps/kmix/pics/mixer-surround.png
+share/apps/kmix/pics/mixer-video.png
 share/apps/kmix/profiles/ALSA.default.xml
 share/apps/kmix/profiles/OSS.default.xml
 share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
-share/apps/kscd/skin/BubbleGum.svg
-share/apps/kscd/skin/Melon.svg
-share/apps/kscd/skin/NGRemote.svg
-share/apps/kscd/skin/Orange2.svg
-share/apps/kscd/skin/SquaredMelon.svg
+share/apps/kscd/skin/Chrome.svg
+share/apps/kscd/skin/Obsidian-Coast.svg
+share/apps/kscd/skin/Steel.svg
 share/apps/kscd/skin/default.svg
 share/apps/profiles/kscd.profile.xml
 share/apps/solid/actions/dragonplayer-opendvd.desktop
+share/apps/solid/actions/kscd-play-audiocd.desktop
+share/apps/videothumbnail/sprocket-large.png
+share/apps/videothumbnail/sprocket-medium.png
+share/apps/videothumbnail/sprocket-small.png
 share/autostart/kmix_autostart.desktop
 share/autostart/restore_kmix_volumes.desktop
 share/config.kcfg/audiocd_lame_encoder.kcfg
 share/config.kcfg/audiocd_vorbis_encoder.kcfg
 share/config.kcfg/kscd.kcfg
 share/config.kcfg/libkcddb.kcfg
+share/config.kcfg/mplayerthumbs.kcfg
 share/config/dragonplayerrc
 share/dbus-1/interfaces/org.kde.KMix.xml
+share/dbus-1/interfaces/org.kde.juk.collection.xml
 share/dbus-1/interfaces/org.kde.juk.player.xml
 share/dbus-1/interfaces/org.kde.juk.search.xml
 share/dbus-1/interfaces/org.kde.kscd.cdplayer.xml
@@ -158,18 +165,20 @@ share/icons/oxygen/22x22/actions/player-volume-muted.png
 share/icons/oxygen/32x32/actions/player-volume-muted.png
 share/icons/oxygen/48x48/actions/player-volume-muted.png
 share/icons/oxygen/scalable/actions/player-volume-muted.svgz
-share/kde4/services/ServiceMenus/audiocd_play.desktop
 share/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
+share/kde4/services/ServiceMenus/jukservicemenu.desktop
 share/kde4/services/audiocd.desktop
 share/kde4/services/audiocd.protocol
 share/kde4/services/dragonplayer_part.desktop
 share/kde4/services/kmixctrl_restore.desktop
 share/kde4/services/libkcddb.desktop
+share/kde4/services/videopreview.desktop
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/kmix
 @dirrm share/doc/HTML/en/kioslave/audiocd
 @dirrm share/doc/HTML/en/juk
 @dirrm share/doc/HTML/en/dragonplayer
+@dirrm share/apps/videothumbnail
 @dirrm share/apps/kscd/skin
 @dirrm share/apps/kscd
 @dirrm share/apps/kmix/profiles
