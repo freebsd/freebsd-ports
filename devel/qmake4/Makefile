@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV+=	FILESDIR="${FILESDIR}"
 #USE_BZIP2=	yes
+MAKE_JOBS_SAFE=	yes
 
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	'${DISTNAME}/config.tests/unix/padstring' \
