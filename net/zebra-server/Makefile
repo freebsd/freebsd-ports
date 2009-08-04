@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	zebra-server
-PORTVERSION=	2.0.28
+PORTVERSION=	2.0.40
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
 DISTNAME=	idzebra-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ben@gibbed.org
 COMMENT=	Z39.50/SR server software
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \
 
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_TCL=	84
+USE_TCL=	84+
 
 MAN1=		idzebra-config-2.0.1 zebraidx-2.0.1
 MAN8=		zebrasrv-2.0.8
