@@ -1,12 +1,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance-QuoteHist/.packlist
 %%SITE_PERL%%/Finance/QuoteHist.pm
+%%SITE_PERL%%/Finance/QuoteHist/BusinessWeek.pm
 %%SITE_PERL%%/Finance/QuoteHist/Generic.pm
+%%SITE_PERL%%/Finance/QuoteHist/Google.pm
 %%SITE_PERL%%/Finance/QuoteHist/MSN.pm
 %%SITE_PERL%%/Finance/QuoteHist/QuoteMedia.pm
 %%SITE_PERL%%/Finance/QuoteHist/Yahoo.pm
+%%SITE_PERL%%/Finance/QuoteHist/Yahoo/Australia.pm
 %%SITE_PERL%%/Finance/QuoteHist/Yahoo_AU.pm
-%%SITE_PERL%%/Finance/QuoteHist/Google.pm
-%%SITE_PERL%%/Finance/QuoteHist/BusinessWeek.pm
+@dirrmtry %%SITE_PERL%%/Finance/QuoteHist/Yahoo
 @dirrmtry %%SITE_PERL%%/Finance/QuoteHist
 @dirrmtry %%SITE_PERL%%/Finance
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance-QuoteHist
