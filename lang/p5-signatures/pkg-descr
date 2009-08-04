@@ -1,0 +1,4 @@
+With this Perl module, you can specify subroutine signatures and have
+variables automatically defined within the subroutine.
+
+WWW: http://search.cpan.org/dist/signatures/
