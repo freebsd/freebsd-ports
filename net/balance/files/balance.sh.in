@@ -38,8 +38,11 @@ start_cmd()
 			eval flags=\"\${balance_${host}_flags}\"
 			eval address=\"\${balance_${host}_address}\"
 			eval targets=\"\${balance_${host}_targets}\"
+			if [ "" != "${address}" ]; then
+				flags="${flags} -b ${address}"
+			fi
 			for port in ${ports}; do
-				"${command}" ${flags} -b ${address} ${port} ${targets}
+				"${command}" ${flags} ${port} ${targets}
 			done
 		done
 	fi
@@ -51,9 +54,15 @@ stop_cmd()
 		for host in ${balance_hosts}; do
 			eval ports=\"\${balance_${host}_ports}\"
 			eval address=\"\${balance_${host}_address}\"
+			flags=""
+			if [ "" != "${address}" ]; then
+				flags="-b ${address}"
+			else
+				address='*'
+			fi
 			for port in ${ports}; do
 				echo "balance at ${address}:${port}"
-				"${command}" -b ${address} -c kill ${port}
+				"${command}" ${flags} -c kill ${port}
 			done
 		done
 	fi
@@ -65,9 +74,15 @@ status_cmd()
 		for host in ${balance_hosts}; do
 			eval ports=\"\${balance_${host}_ports}\"
 			eval address=\"\${balance_${host}_address}\"
+			flags=""
+			if [ "" != "${address}" ]; then
+				flags="-b ${address}"
+			else
+				address='*'
+			fi
 			for port in ${ports}; do
 				echo "balance at ${address}:${port}"
-				"${command}" -b ${address} -c show ${port}
+				"${command}" ${flags} -c show ${port}
 			done
 		done
 	fi
