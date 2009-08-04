@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://fromani.exit1.org/
@@ -242,6 +243,7 @@ post-patch:
 pre-configure:
 	@${REINPLACE_CMD} -E -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|-ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|WRKSRC|${WRKSRC}|g' ${WRKSRC}/export/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|<quicktime/|<lqt/|g' \
 		${WRKSRC}/configure \
