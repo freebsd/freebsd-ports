@@ -15,11 +15,10 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	vivek@khera.org
 COMMENT=	PostgreSQL master to multiple replicas replication system
 
-PGSQL_PORT=	${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
-RUN_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT}
-BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT}
+BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 GNU_CONFIGURE=	yes
+USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_RC_SUBR=	slon.sh
@@ -30,6 +29,8 @@ SUB_LIST+=	NAME=slon
 OPTIONS=	PERLTOOLS "Install perl configuration tools" Off
 
 .include <bsd.port.pre.mk>
+
+IGNORE_WITH_PGSQL=	84
 
 .if defined(WITH_PERLTOOLS)
 USE_PERL5=	yes
