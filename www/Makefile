@@ -1330,6 +1330,7 @@
     SUBDIR += py-webunit
     SUBDIR += py-webware
     SUBDIR += py-webware-component
+    SUBDIR += py-wikitools
     SUBDIR += py-wsgiauth
     SUBDIR += py-wsgiref
     SUBDIR += pyblosxom

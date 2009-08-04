@@ -1,0 +1,26 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/wikitools/__init__.py
+%%PYTHON_SITELIBDIR%%/wikitools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/wikitools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/wikitools/api.py
+%%PYTHON_SITELIBDIR%%/wikitools/api.pyc
+%%PYTHON_SITELIBDIR%%/wikitools/api.pyo
+%%PYTHON_SITELIBDIR%%/wikitools/category.py
+%%PYTHON_SITELIBDIR%%/wikitools/category.pyc
+%%PYTHON_SITELIBDIR%%/wikitools/category.pyo
+%%PYTHON_SITELIBDIR%%/wikitools/page.py
+%%PYTHON_SITELIBDIR%%/wikitools/page.pyc
+%%PYTHON_SITELIBDIR%%/wikitools/page.pyo
+%%PYTHON_SITELIBDIR%%/wikitools/pagelist.py
+%%PYTHON_SITELIBDIR%%/wikitools/pagelist.pyc
+%%PYTHON_SITELIBDIR%%/wikitools/pagelist.pyo
+%%PYTHON_SITELIBDIR%%/wikitools/user.py
+%%PYTHON_SITELIBDIR%%/wikitools/user.pyc
+%%PYTHON_SITELIBDIR%%/wikitools/user.pyo
+%%PYTHON_SITELIBDIR%%/wikitools/wiki.py
+%%PYTHON_SITELIBDIR%%/wikitools/wiki.pyc
+%%PYTHON_SITELIBDIR%%/wikitools/wiki.pyo
+%%PYTHON_SITELIBDIR%%/wikitools/wikifile.py
+%%PYTHON_SITELIBDIR%%/wikitools/wikifile.pyc
+%%PYTHON_SITELIBDIR%%/wikitools/wikifile.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/wikitools
