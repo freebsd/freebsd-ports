@@ -13,7 +13,7 @@ MASTER_SITES=	http://develooper.com/code/mpaf/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module that adds a client IP header to outgoing proxy requests
 
 MAKE_JOBS_SAFE=  yes

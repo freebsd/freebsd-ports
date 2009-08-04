@@ -12,7 +12,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A time/date applet for WindowMaker with fishes swimming around
 
 USE_GNOME=	gtk12

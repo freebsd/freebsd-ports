@@ -12,7 +12,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show where disk space is taken up
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
