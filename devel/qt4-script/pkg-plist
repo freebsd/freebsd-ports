@@ -21,6 +21,7 @@ include/qt4/QtScript/QScriptEngineAgent
 include/qt4/QtScript/QScriptExtensionInterface
 include/qt4/QtScript/QScriptExtensionPlugin
 include/qt4/QtScript/QScriptString
+include/qt4/QtScript/QScriptSyntaxCheckResult
 include/qt4/QtScript/QScriptValue
 include/qt4/QtScript/QScriptValueIterator
 include/qt4/QtScript/QScriptValueList
@@ -42,9 +43,9 @@ lib/qt4/libQtScript.la
 lib/qt4/libQtScript.prl
 lib/qt4/libQtScript.so
 lib/qt4/libQtScript.so.4
-lib/qt4/libQtScript.so.4.4
-lib/qt4/libQtScript.so.4.4.3
-%%DEBUG%%lib/qt4/libQtScript.so.4.4.3.debug
+lib/qt4/libQtScript.so.4.5
+lib/qt4/libQtScript.so.4.5.2
+%%DEBUG%%lib/qt4/libQtScript.so.4.5.2.debug
 libdata/pkgconfig/QtScript.pc
 @dirrm include/qt4/QtScript
 @dirrmtry include/qt4/Qt

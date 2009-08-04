@@ -3,6 +3,7 @@ include/qt4/Qt/qgl.h
 include/qt4/Qt/qglcolormap.h
 include/qt4/Qt/qglframebufferobject.h
 include/qt4/Qt/qglpixelbuffer.h
+include/qt4/Qt/glgc_shader_source.h
 include/qt4/QtOpenGL/QGLColormap
 include/qt4/QtOpenGL/QGLContext
 include/qt4/QtOpenGL/QGLFormat
@@ -18,13 +19,14 @@ include/qt4/QtOpenGL/qgl.h
 include/qt4/QtOpenGL/qglcolormap.h
 include/qt4/QtOpenGL/qglframebufferobject.h
 include/qt4/QtOpenGL/qglpixelbuffer.h
+include/qt4/QtOpenGL/glgc_shader_source.h
 lib/qt4/libQtOpenGL.la
 lib/qt4/libQtOpenGL.prl
 lib/qt4/libQtOpenGL.so
 lib/qt4/libQtOpenGL.so.4
-lib/qt4/libQtOpenGL.so.4.4
-lib/qt4/libQtOpenGL.so.4.4.3
-%%DEBUG%%lib/qt4/libQtOpenGL.so.4.4.3.debug
+lib/qt4/libQtOpenGL.so.4.5
+lib/qt4/libQtOpenGL.so.4.5.2
+%%DEBUG%%lib/qt4/libQtOpenGL.so.4.5.2.debug
 libdata/pkgconfig/QtOpenGL.pc
 @dirrm include/qt4/QtOpenGL
 @dirrmtry include/qt4/Qt

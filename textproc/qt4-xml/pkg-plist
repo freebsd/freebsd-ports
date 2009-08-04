@@ -52,9 +52,9 @@ lib/qt4/libQtXml.la
 lib/qt4/libQtXml.prl
 lib/qt4/libQtXml.so
 lib/qt4/libQtXml.so.4
-lib/qt4/libQtXml.so.4.4
-lib/qt4/libQtXml.so.4.4.3
-%%DEBUG%%lib/qt4/libQtXml.so.4.4.3.debug
+lib/qt4/libQtXml.so.4.5
+lib/qt4/libQtXml.so.4.5.2
+%%DEBUG%%lib/qt4/libQtXml.so.4.5.2.debug
 libdata/pkgconfig/QtXml.pc
 @dirrm include/qt4/QtXml
 @dirrmtry include/qt4/Qt

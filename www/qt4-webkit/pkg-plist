@@ -1,4 +1,6 @@
 include/qt4/Qt/qwebframe.h
+include/qt4/Qt/qwebdatabase.h
+include/qt4/Qt/qwebsecurityorigin.h
 include/qt4/Qt/qwebhistory.h
 include/qt4/Qt/qwebhistoryinterface.h
 include/qt4/Qt/qwebkitglobal.h
@@ -15,9 +17,13 @@ include/qt4/QtWebKit/QWebHitTestResult
 include/qt4/QtWebKit/QWebPage
 include/qt4/QtWebKit/QWebPluginFactory
 include/qt4/QtWebKit/QWebSettings
+include/qt4/QtWebKit/QWebDatabase
 include/qt4/QtWebKit/QWebView
 include/qt4/QtWebKit/QtWebKit
+include/qt4/QtWebKit/QWebSecurityOrigin
 include/qt4/QtWebKit/qwebframe.h
+include/qt4/QtWebKit/qwebdatabase.h
+include/qt4/QtWebKit/qwebsecurityorigin.h
 include/qt4/QtWebKit/qwebhistory.h
 include/qt4/QtWebKit/qwebhistoryinterface.h
 include/qt4/QtWebKit/qwebkitglobal.h
@@ -29,9 +35,9 @@ lib/qt4/libQtWebKit.la
 lib/qt4/libQtWebKit.prl
 lib/qt4/libQtWebKit.so
 lib/qt4/libQtWebKit.so.4
-lib/qt4/libQtWebKit.so.4.4
-lib/qt4/libQtWebKit.so.4.4.3
-%%DEBUG%%lib/qt4/libQtWebKit.so.4.4.3.debug
+lib/qt4/libQtWebKit.so.4.5
+lib/qt4/libQtWebKit.so.4.5.2
+@comment %%DEBUG%%lib/qt4/libQtWebKit.so.4.5.2.debug
 libdata/pkgconfig/QtWebKit.pc
 @dirrm include/qt4/QtWebKit
 @dirrmtry include/qt4/Qt

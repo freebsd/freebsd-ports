@@ -20,9 +20,10 @@ COMMENT=	Qt documentation browser
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build qt3support corelib \
-		gui network sql xml doc help
+		gui network sql xml doc help webkit
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 
@@ -35,7 +36,7 @@ DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/dbus src/opengl src/phonon \
 		src/qt3support src/script src/svg src/testlib \
 		src/tools src/xmlpatterns src/3rdparty/clucene \
-		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
+		src/3rdparty/kdebase src/3rdparty/kdelibs
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 .for dne in ${DO_NOT_EXTRACT}
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'

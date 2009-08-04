@@ -32,9 +32,9 @@ lib/qt4/libQtHelp.la
 lib/qt4/libQtHelp.prl
 lib/qt4/libQtHelp.so
 lib/qt4/libQtHelp.so.4
-lib/qt4/libQtHelp.so.4.4
-lib/qt4/libQtHelp.so.4.4.3
-%%DEBUG%%lib/qt4/libQtHelp.so.4.4.3.debug
+lib/qt4/libQtHelp.so.4.5
+lib/qt4/libQtHelp.so.4.5.2
+%%DEBUG%%lib/qt4/libQtHelp.so.4.5.2.debug
 libdata/pkgconfig/QtHelp.pc
 @dirrm include/qt4/QtHelp
 @dirrmtry include/qt4/Qt

@@ -21,11 +21,12 @@ MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
 .if defined(QT_DIST)
 #CONFLICTS+=	Currently there are no conflicts \o/
 
-CONFIGURE_ARGS+=-fast ${CUPS} -platform ${QMAKESPEC} \
+CONFIGURE_ARGS+=-fast -platform ${QMAKESPEC} \
 		-L${PREFIX}/${QT_LIBDIR_REL} \
 		-qt-gif -system-libjpeg -system-libpng \
 		-system-libmng -system-libtiff -system-zlib \
-		-confirm-license \
+		-opensource -confirm-license \
+		-no-pch \
 		-prefix ${PREFIX} \
 		-bindir ${PREFIX}/bin \
 		-libdir ${PREFIX}/${QT_LIBDIR_REL} \
@@ -42,9 +43,9 @@ CONFIGURE_ARGS+=-fast ${CUPS} -platform ${QMAKESPEC} \
 CONFIGURE_ARGS+=-no-mmx -no-3dnow -no-sse -no-sse2
 .endif #defined(PACKAGE_BUILDING)
 
-.if defined(PORTNAME) && ${PORTNAME} != "xmlpatterns"
-CONFIGURE_ARGS+=-no-exceptions
-.endif
+# .if defined(PORTNAME) && ${PORTNAME} != "xmlpatterns"
+# CONFIGURE_ARGS+=-no-exceptions
+# .endif
 
 .if defined(WANT_QT_DEBUG)
 CONFIGURE_ARGS+=-debug
@@ -94,14 +95,14 @@ QTCGFLIBS?=
 # QT4 version
 # Don't forget to update ${PORTSDIR}/devel/qt4/files/configure !
 #
-QT4_VERSION?=		4.4.3
+QT4_VERSION?=		4.5.2
 
 _QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \
 			dbus designer doc help help-tools gui iconengines imageformats \
 			inputmethods linguist l10n makeqpf moc network opengl \
 			pixeltool porting  phonon phonon-gst qdbusviewer \
-			qmake qt3support qtconfig qtestlib qvfb rcc script \
+			qmake qt3support qtconfig qtestlib qvfb rcc script scripttools \
 			sql svg uic uic3 webkit xml xmlpatterns xmlpatterns-tool
 
 accessible_DEPENDS=	accessibility/qt4-accessible
@@ -142,6 +143,7 @@ qtestlib_DEPENDS=	devel/qt4-qtestlib
 qvfb_DEPENDS=		devel/qt4-qvfb
 rcc_DEPENDS=		devel/qt4-rcc
 script_DEPENDS=		devel/qt4-script
+scripttools_DEPENDS=	devel/qt4-scripttools
 sql_DEPENDS=		databases/qt4-sql
 svg_DEPENDS=		graphics/qt4-svg
 uic_DEPENDS=		devel/qt4-uic
@@ -151,104 +153,12 @@ xml_DEPENDS=		textproc/qt4-xml
 xmlpatterns_DEPENDS=	textproc/qt4-xmlpatterns
 xmlpatterns-tool_DEPENDS=	textproc/qt4-xmlpatterns-tool
 
-accessible_build_DEPENDS=	${accessible_DEPENDS}
-assistant_build_DEPENDS=	${assistant_DEPENDS}
-assistant-adp_build_DEPENDS=	${assistant-adp_DEPENDS}
-assistantclient_build_DEPENDS=	${assistantclient_DEPENDS}
-assistantclient_build_NAME=	${assistantclient_NAME}
-clucene_build_DEPENDS=		${clucene_DEPENDS}
-codecs-cn_build_DEPENDS=	${codecs-cn_DEPENDS}
-codecs-jp_build_DEPENDS=	${codecs-jp_DEPENDS}
-codecs-kr_build_DEPENDS=	${codecs-kr_DEPENDS}
-codecs-tw_build_DEPENDS=	${codecs-tw_DEPENDS}
-corelib_build_DEPENDS=		${corelib_DEPENDS}
-dbus_build_DEPENDS=		${dbus_DEPENDS}
-designer_build_DEPENDS=		${designer_DEPENDS}
-doc_build_DEPENDS=		${doc_DEPENDS}
-gui_build_DEPENDS=		${gui_DEPENDS}
-help_build_DEPENDS=		${help_DEPENDS}
-help-tools_build_DEPENDS=	${help-tools_DEPENDS}
-iconengines_build_DEPENDS=	${iconengines_DEPENDS}
-imageformats_build_DEPENDS=	${imageformats_DEPENDS}
-inputmethods_build_DEPENDS=	${inputmethods_DEPENDS}
-linguist_build_DEPENDS=		${linguist_DEPENDS}
-l10n_build_DEPENDS=		${l10n_DEPENDS}
-makeqpf_build_DEPENDS=		${makeqpf_DEPENDS}
-moc_build_DEPENDS=		${moc_DEPENDS}
-network_build_DEPENDS=		${network_DEPENDS}
-opengl_build_DEPENDS=		${opengl_DEPENDS}
-pixeltool_build_DEPENDS=	${pixeltool_DEPENDS}
-phonon_build_DEPENDS=		${phonon_DEPENDS}
-phonon-gst_build_DEPENDS=	${phonon-gst_DEPENDS}
-porting_build_DEPENDS=		${porting_DEPENDS}
-qdbusviewer_build_DEPENDS=	${qdbusviewer_DEPENDS}
-qmake_build_DEPENDS=		${qmake_DEPENDS}
-qt3support_build_DEPENDS=	${qt3support_DEPENDS}
-qtconfig_build_DEPENDS=		${qtconfig_DEPENDS}
-qtestlib_build_DEPENDS=		${qtestlib_DEPENDS}
-qvfb_build_DEPENDS=		${qvfb_DEPENDS}
-rcc_build_DEPENDS=		${rcc_DEPENDS}
-script_build_DEPENDS=		${script_DEPENDS}
-sql_build_DEPENDS=		${sql_DEPENDS}
-svg_build_DEPENDS=		${svg_DEPENDS}
-uic_build_DEPENDS=		${uic_DEPENDS}
-uic3_build_DEPENDS=		${uic3_DEPENDS}
-webkit_build_DEPENDS=		${webkit_DEPENDS}
-xml_build_DEPENDS=		${xml_DEPENDS}
-xmlpatterns_build_DEPENDS=	${xmlpatterns_DEPENDS}
-xmlpatterns-tool_build_DEPENDS=	${xmlpatterns-tool_DEPENDS}
-
-accessible_run_DEPENDS=		${accessible_DEPENDS}
-assistant_run_DEPENDS=		${assistant_DEPENDS}
-assistant-adp_run_DEPENDS=	${assistant-adp_DEPENDS}
-assistantclient_run_DEPENDS=	${assistantclient_DEPENDS}
-assistantclient_run_NAME=	${assistantclient_NAME}
-clucene_run_DEPENDS=		${clucene_DEPENDS}
-codecs-cn_run_DEPENDS=		${codecs-cn_DEPENDS}
-codecs-jp_run_DEPENDS=		${codecs-jp_DEPENDS}
-codecs-kr_run_DEPENDS=		${codecs-kr_DEPENDS}
-codecs-tw_run_DEPENDS=		${codecs-tw_DEPENDS}
-corelib_run_DEPENDS=		${corelib_DEPENDS}
-dbus_run_DEPENDS=		${dbus_DEPENDS}
-designer_run_DEPENDS=		${designer_DEPENDS}
-doc_run_DEPENDS=		${doc_DEPENDS}
-gui_run_DEPENDS=		${gui_DEPENDS}
-help_run_DEPENDS=		${help_DEPENDS}
-help-tools_run_DEPENDS=		${help-tools_DEPENDS}
-iconengines_run_DEPENDS=	${iconengines_DEPENDS}
-imageformats_run_DEPENDS=	${imageformats_DEPENDS}
-inputmethods_run_DEPENDS=	${inputmethods_DEPENDS}
-linguist_run_DEPENDS=		${linguist_DEPENDS}
-l10n_run_DEPENDS=		${l10n_DEPENDS}
-makeqpf_run_DEPENDS=		${makeqpf_DEPENDS}
-moc_run_DEPENDS=		${moc_DEPENDS}
-network_run_DEPENDS=		${network_DEPENDS}
-opengl_run_DEPENDS=		${opengl_DEPENDS}
-pixeltool_run_DEPENDS=		${pixeltool_DEPENDS}
-phonon_run_DEPENDS=		${phonon_DEPENDS}
-phonon-gst_run_DEPENDS=		${phonon-gst_DEPENDS}
-porting_run_DEPENDS=		${porting_DEPENDS}
-qdbusviewer_run_DEPENDS=	${qdbusviewer_DEPENDS}
-qmake_run_DEPENDS=		${qmake_DEPENDS}
-qt3support_run_DEPENDS=		${qt3support_DEPENDS}
-qtconfig_run_DEPENDS=		${qtconfig_DEPENDS}
-qtestlib_run_DEPENDS=		${qtestlib_DEPENDS}
-qvfb_run_DEPENDS=		${qvfb_DEPENDS}
-rcc_run_DEPENDS=		${rcc_DEPENDS}
-script_run_DEPENDS=		${script_DEPENDS}
-sql_run_DEPENDS=		${sql_DEPENDS}
-svg_run_DEPENDS=		${svg_DEPENDS}
-uic_run_DEPENDS=		${uic_DEPENDS}
-uic3_run_DEPENDS=		${uic3_DEPENDS}
-webkit_run_DEPENDS=		${webkit_DEPENDS}
-xml_run_DEPENDS=		${xml_DEPENDS}
-xmlpatterns_run_DEPENDS=	${xmlpatterns_DEPENDS}
-xmlpatterns-tool_run_DEPENDS=	${xmlpatterns-tool_DEPENDS}
-
 .if defined(_POSTMKINCLUDED) && !defined(Qt_Post_Include)
 Qt_Post_Include= bsd.qt.mk
 
 .for component in ${_QT_COMPONENTS_ALL}
+${component}_build_DEPENDS=	${${component}_DEPENDS}
+${component}_run_DEPENDS=	${${component}_DEPENDS}
 _QT_COMPONENTS_SUFFIXED+=${component} ${component}_build ${component}_run
 .endfor
 

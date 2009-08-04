@@ -7,6 +7,7 @@ include/qt4/Qt/qatomic.h
 include/qt4/Qt/qatomic_alpha.h
 include/qt4/Qt/qatomic_arch.h
 include/qt4/Qt/qatomic_arm.h
+include/qt4/Qt/qatomic_armv6.h
 include/qt4/Qt/qatomic_avr32.h
 include/qt4/Qt/qatomic_bfin.h
 include/qt4/Qt/qatomic_bootstrap.h
@@ -17,6 +18,8 @@ include/qt4/Qt/qatomic_mips.h
 include/qt4/Qt/qatomic_parisc.h
 include/qt4/Qt/qatomic_powerpc.h
 include/qt4/Qt/qatomic_s390.h
+include/qt4/Qt/qatomic_sh.h
+include/qt4/Qt/qatomic_sh4a.h
 include/qt4/Qt/qatomic_sparc.h
 include/qt4/Qt/qatomic_x86_64.h
 include/qt4/Qt/qbasicatomic.h
@@ -92,6 +95,8 @@ include/qt4/Qt/qset.h
 include/qt4/Qt/qsettings.h
 include/qt4/Qt/qshareddata.h
 include/qt4/Qt/qsharedmemory.h
+include/qt4/Qt/qsharedpointer.h
+include/qt4/Qt/qsharedpointer_impl.h
 include/qt4/Qt/qsignalmapper.h
 include/qt4/Qt/qsize.h
 include/qt4/Qt/qsocketnotifier.h
@@ -201,6 +206,7 @@ include/qt4/QtCore/QHashDummyValue
 include/qt4/QtCore/QHashIterator
 include/qt4/QtCore/QHashNode
 include/qt4/QtCore/QIODevice
+include/qt4/QtCore/QIncompatibleFlag
 include/qt4/QtCore/QIntForSize
 include/qt4/QtCore/QIntForType
 include/qt4/QtCore/QInternal
@@ -221,10 +227,13 @@ include/qt4/QtCore/QLocale
 include/qt4/QtCore/QMap
 include/qt4/QtCore/QMapData
 include/qt4/QtCore/QMapIterator
+include/qt4/QtCore/QMapNode
+include/qt4/QtCore/QMapPayloadNode
 include/qt4/QtCore/QMetaClassInfo
 include/qt4/QtCore/QMetaEnum
 include/qt4/QtCore/QMetaMethod
 include/qt4/QtCore/QMetaObject
+include/qt4/QtCore/QMetaObjectExtraData
 include/qt4/QtCore/QMetaProperty
 include/qt4/QtCore/QMetaType
 include/qt4/QtCore/QMetaTypeId
@@ -274,6 +283,7 @@ include/qt4/QtCore/QSettings
 include/qt4/QtCore/QSharedData
 include/qt4/QtCore/QSharedDataPointer
 include/qt4/QtCore/QSharedMemory
+include/qt4/QtCore/QSharedPointer
 include/qt4/QtCore/QSignalMapper
 include/qt4/QtCore/QSize
 include/qt4/QtCore/QSizeF
@@ -318,6 +328,7 @@ include/qt4/QtCore/QUuid
 include/qt4/QtCore/QVarLengthArray
 include/qt4/QtCore/QVariant
 include/qt4/QtCore/QVariantComparisonHelper
+include/qt4/QtCore/QVariantHash
 include/qt4/QtCore/QVariantList
 include/qt4/QtCore/QVariantMap
 include/qt4/QtCore/QVector
@@ -325,6 +336,7 @@ include/qt4/QtCore/QVectorData
 include/qt4/QtCore/QVectorIterator
 include/qt4/QtCore/QVectorTypedData
 include/qt4/QtCore/QWaitCondition
+include/qt4/QtCore/QWeakPointer
 include/qt4/QtCore/QWriteLocker
 include/qt4/QtCore/QXmlStreamAttribute
 include/qt4/QtCore/QXmlStreamAttributes
@@ -373,6 +385,7 @@ include/qt4/QtCore/qatomic.h
 include/qt4/QtCore/qatomic_alpha.h
 include/qt4/QtCore/qatomic_arch.h
 include/qt4/QtCore/qatomic_arm.h
+include/qt4/QtCore/qatomic_armv6.h
 include/qt4/QtCore/qatomic_avr32.h
 include/qt4/QtCore/qatomic_bfin.h
 include/qt4/QtCore/qatomic_bootstrap.h
@@ -383,6 +396,8 @@ include/qt4/QtCore/qatomic_mips.h
 include/qt4/QtCore/qatomic_parisc.h
 include/qt4/QtCore/qatomic_powerpc.h
 include/qt4/QtCore/qatomic_s390.h
+include/qt4/QtCore/qatomic_sh.h
+include/qt4/QtCore/qatomic_sh4a.h
 include/qt4/QtCore/qatomic_sparc.h
 include/qt4/QtCore/qatomic_x86_64.h
 include/qt4/QtCore/qbasicatomic.h
@@ -458,6 +473,8 @@ include/qt4/QtCore/qset.h
 include/qt4/QtCore/qsettings.h
 include/qt4/QtCore/qshareddata.h
 include/qt4/QtCore/qsharedmemory.h
+include/qt4/QtCore/qsharedpointer.h
+include/qt4/QtCore/qsharedpointer_impl.h
 include/qt4/QtCore/qsignalmapper.h
 include/qt4/QtCore/qsize.h
 include/qt4/QtCore/qsocketnotifier.h
@@ -503,9 +520,9 @@ lib/qt4/libQtCore.la
 lib/qt4/libQtCore.prl
 lib/qt4/libQtCore.so
 lib/qt4/libQtCore.so.4
-lib/qt4/libQtCore.so.4.4
-%%DEBUG%%lib/qt4/libQtCore.so.4.4.3.debug
-lib/qt4/libQtCore.so.4.4.3
+lib/qt4/libQtCore.so.4.5
+lib/qt4/libQtCore.so.4.5.2
+%%DEBUG%%lib/qt4/libQtCore.so.4.5.2.debug
 lib/qt4/plugins/.keep_me
 libdata/pkgconfig/QtCore.pc
 share/qt4/mkspecs/qconfig.pri

@@ -2,15 +2,15 @@ SHLIB_NAME=	libqsql${DB}.so
 
 VPATH=		${PLUGIN}:${DRIVER}
 CXXFLAGS+=	-I${DRIVER} \
-		-I${PREFIX}/include/qt4 \
-		-I${PREFIX}/include/qt4/Qt \
+		-I${QT_INCDIR} \
+		-I${QT_INCDIR}/Qt \
 		-I${LOCALBASE}/include/mysql \
 		-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS} -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_PLUGIN \
 		-DQT_SQL_LIB -DQT_CORE_LIB -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -DQT_SHARED
-LDADD=		-L${PREFIX}/lib/qt4 -L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS} -lQtSql -lmysqlclient_r 
+LDADD=		-L${QT_LIBDIR} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS} -lQtSql -lmysqlclient_r 
 MOC?=		${LOCALBASE}/bin/moc-qt4
-SRCS=		main.cpp qsql_${DB}.cpp moc_qsql_${DB}.cpp
+SRCS=		main.cpp qsql_${DB}.cpp moc_qsql_${DB}.cpp qsql_${DB}.moc
 
 LIBDIR=		${PREFIX}/lib/qt4/plugins/sqldrivers
 
@@ -19,6 +19,9 @@ ${LIBDIR}:
 
 moc_qsql_${DB}.cpp: qsql_${DB}.h
 	$(MOC) $(.ALLSRC) -o $(.TARGET)
+
+qsql_${DB}.moc: qsql_${DB}.cpp
+	$(MOC) $(.ALLSRC) -o ${DRIVER}/$(.TARGET)
 
 beforeinstall:	${LIBDIR}
 

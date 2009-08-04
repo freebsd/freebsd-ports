@@ -22,7 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build assistantclient \
 		corelib designer gui network opengl sql svg qtestlib xml \
 		imageformats_run dbus script webkit phonon help assistant_run \
-		phonon-gst
+		phonon-gst scripttools xmlpatterns
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	qvfb
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	0
+PORTREVISION=0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -23,6 +23,7 @@ QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib gui opengl
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 USE_XORG=	xtst
+MAKE_JOBS_SAVE=	yes
 
 HAS_CONFIGURE=	yes
 
@@ -43,6 +44,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
+
+CONFIGURE_ARGS+=        -I../../include/Qt -I../../include
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}

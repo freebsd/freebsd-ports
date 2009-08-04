@@ -22,6 +22,7 @@ QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib \
 		gui sql xml doc help
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

@@ -1,6 +1,6 @@
---- configure.orig	2008-04-28 17:11:12.000000000 +0400
-+++ configure	2008-06-15 11:00:20.000000000 +0400
-@@ -1887,12 +1887,6 @@
+--- ./configure.orig	2009-04-22 03:57:35.000000000 +0400
++++ ./configure	2009-05-21 02:46:31.000000000 +0400
+@@ -2084,12 +2084,6 @@
          chmod 755 "$outpath/bin/syncqt"
      fi
  
@@ -13,7 +13,7 @@
      # symlink the doc directory
      rm -rf "$outpath/doc"
      ln -s "$relpath/doc" "$outpath/doc"
-@@ -1931,7 +1925,7 @@
+@@ -2128,7 +2122,7 @@
  # find a make command
  if [ -z "$MAKE" ]; then
      MAKE=
@@ -22,7 +22,7 @@
          if "$WHICH" $mk >/dev/null 2>&1; then
              MAKE=`$WHICH $mk`
              break
-@@ -3791,7 +3785,7 @@
+@@ -4006,7 +4000,7 @@
  }
  
  # build qmake
@@ -31,7 +31,116 @@
      echo "Creating qmake. Please wait..."
  
      OLD_QCONFIG_H=
-@@ -6309,7 +6303,7 @@
+@@ -4734,12 +4728,13 @@
+     fi
+ 
+     # Check we actually have X11 :-)
+-    if ! "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/x11/xlib "XLib" $L_FLAGS $I_FLAGS $l_FLAGS $X11TESTS_FLAGS; then
+-        echo "Basic XLib functionality test failed!"
+-        echo " You might need to modify the include and library search paths by editing"
+-        echo " QMAKE_INCDIR_X11 and QMAKE_LIBDIR_X11 in ${XQMAKESPEC}."
+-        exit 1
+-    fi
++# Requires X11 environment, disable test
++#     if ! "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/x11/xlib "XLib" $L_FLAGS $I_FLAGS $l_FLAGS $X11TESTS_FLAGS; then
++#         echo "Basic XLib functionality test failed!"
++#         echo " You might need to modify the include and library search paths by editing"
++#         echo " QMAKE_INCDIR_X11 and QMAKE_LIBDIR_X11 in ${XQMAKESPEC}."
++#         exit 1
++#     fi
+ 
+     # auto-detect OpenGL support (es1 = OpenGL ES 1.x Common, es1cl = ES 1.x common lite, es2 = OpenGL ES 2.x)
+     if [ "$CFG_OPENGL" = "auto" ] || [ "$CFG_OPENGL" = "yes" ]; then
+@@ -5569,7 +5564,7 @@
+         QT_CONFIG="$QT_CONFIG phonon-backend"
+     fi
+ else
+-    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_PHONON"
++#    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_PHONON"
+ fi
+ 
+ # disable accessibility
+@@ -5581,7 +5576,7 @@
+ 
+ # enable opengl
+ if [ "$CFG_OPENGL" = "no" ]; then
+-    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_OPENGL"
++#    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_OPENGL"
+ else
+     QT_CONFIG="$QT_CONFIG opengl"
+ fi
+@@ -5946,7 +5941,7 @@
+ if [ "$CFG_XMLPATTERNS" = "yes" ]; then
+     QT_CONFIG="$QT_CONFIG xmlpatterns"
+ else
+-    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XMLPATTERNS"
++#     QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XMLPATTERNS"
+ fi
+ 
+ if [ "$CFG_SVG" = "yes" ]; then
+@@ -6442,10 +6437,10 @@
+ [ "$CFG_JPEG" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IMAGEFORMAT_JPEG"
+ [ "$CFG_MNG" != "yes" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IMAGEFORMAT_MNG"
+ [ "$CFG_ZLIB" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_ZLIB"
+-[ "$CFG_EXCEPTIONS" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_EXCEPTIONS"
++# [ "$CFG_EXCEPTIONS" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_EXCEPTIONS"
+ [ "$CFG_IPV6" = "no" ]       && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IPV6"
+ [ "$CFG_SXE" = "no" ]        && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SXE"
+-[ "$CFG_DBUS" = "no" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_DBUS"
++# [ "$CFG_DBUS" = "no" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_DBUS"
+ 
+ if [ "$PLATFORM_QWS" != "yes" ]; then
+     [ "$CFG_GRAPHICS_SYSTEM" = "raster" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_GRAPHICSSYSTEM_RASTER"
+@@ -6453,33 +6448,33 @@
+ fi
+ 
+ # X11/Unix/Mac only configs
+-[ "$CFG_CUPS" = "no" ]       && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_CUPS"
++%%CUPS%%[ "$CFG_CUPS" = "no" ]       && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_CUPS"
+ [ "$CFG_ICONV" = "no" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_ICONV"
+ [ "$CFG_GLIB" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_GLIB"
+-[ "$CFG_GSTREAMER" != "yes" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_GSTREAMER"
+-[ "$CFG_QGTKSTYLE" != "yes" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_STYLE_GTK"
++# [ "$CFG_GSTREAMER" != "yes" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_GSTREAMER"
++%%QGTKSTYLE%%[ "$CFG_QGTKSTYLE" != "yes" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_STYLE_GTK"
+ [ "$CFG_CLOCK_MONOTONIC" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_CLOCK_MONOTONIC"
+ [ "$CFG_MREMAP" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_MREMAP"
+ [ "$CFG_GETADDRINFO" = "no" ]&& QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_GETADDRINFO"
+ [ "$CFG_IPV6IFNAME" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IPV6IFNAME"
+ [ "$CFG_GETIFADDRS" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_GETIFADDRS"
+ [ "$CFG_INOTIFY" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_INOTIFY"
+-[ "$CFG_NAS" = "no" ]        && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_NAS"
++%%NAS%%[ "$CFG_NAS" = "no" ]        && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_NAS"
+ [ "$CFG_NIS" = "no" ]        && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_NIS"
+ [ "$CFG_OPENSSL" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_OPENSSL"
+ [ "$CFG_OPENSSL" = "linked" ]&& QCONFIG_FLAGS="$QCONFIG_FLAGS QT_LINKED_OPENSSL"
+ 
+-[ "$CFG_SM" = "no" ]         && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SESSIONMANAGER"
+-[ "$CFG_XCURSOR" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XCURSOR"
+-[ "$CFG_XFIXES" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XFIXES"
+-[ "$CFG_FONTCONFIG" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_FONTCONFIG"
+-[ "$CFG_XINERAMA" = "no" ]   && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XINERAMA"
+-[ "$CFG_XKB" = "no" ]        && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XKB"
+-[ "$CFG_XRANDR" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XRANDR"
+-[ "$CFG_XRENDER" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XRENDER"
+-[ "$CFG_MITSHM" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_MITSHM"
+-[ "$CFG_XSHAPE" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SHAPE"
+-[ "$CFG_XINPUT" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XINPUT QT_NO_TABLET"
++# [ "$CFG_SM" = "no" ]         && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SESSIONMANAGER"
++# [ "$CFG_XCURSOR" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XCURSOR"
++# [ "$CFG_XFIXES" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XFIXES"
++# [ "$CFG_FONTCONFIG" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_FONTCONFIG"
++# [ "$CFG_XINERAMA" = "no" ]   && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XINERAMA"
++# [ "$CFG_XKB" = "no" ]        && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XKB"
++# [ "$CFG_XRANDR" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XRANDR"
++# [ "$CFG_XRENDER" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XRENDER"
++# [ "$CFG_MITSHM" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_MITSHM"
++# [ "$CFG_XSHAPE" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SHAPE"
++# [ "$CFG_XINPUT" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XINPUT QT_NO_TABLET"
+ 
+ [ "$CFG_XCURSOR" = "runtime" ]   && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_RUNTIME_XCURSOR"
+ [ "$CFG_XINERAMA" = "runtime" ]  && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_RUNTIME_XINERAMA"
+@@ -6989,7 +6984,7 @@
  if [ -f "${relpath}/projects.pro" ]; then
      mkfile="${outpath}/Makefile"
      [ -f "$mkfile" ] && chmod +w "$mkfile"
@@ -40,7 +149,7 @@
  fi
  
  # .projects      -> projects to process
-@@ -6482,7 +6476,7 @@
+@@ -7162,7 +7157,7 @@
              echo "  for $a\c"
          fi
  

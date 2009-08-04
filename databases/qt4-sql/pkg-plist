@@ -1,5 +1,8 @@
 include/qt4/Qt/QtSql
 include/qt4/Qt/qsql.h
+include/qt4/Qt/qsql_db2.h
+include/qt4/Qt/qsql_oci.h
+include/qt4/Qt/qsql_tds.h
 include/qt4/Qt/qsql_ibase.h
 include/qt4/Qt/qsql_mysql.h
 include/qt4/Qt/qsql_odbc.h
@@ -52,6 +55,15 @@ include/qt4/QtSql/QtSql
 include/qt4/QtSql/qsql.h
 include/qt4/QtSql/qsql_ibase.h
 include/qt4/QtSql/qsql_mysql.h
+include/qt4/QtSql/qsql_db2.h
+include/qt4/QtSql/qsql_oci.h
+include/qt4/QtSql/qsql_tds.h
+include/qt4/QtSql/QDB2Result
+include/qt4/QtSql/QDB2Driver
+include/qt4/QtSql/QOCIResult
+include/qt4/QtSql/QOCIDriver
+include/qt4/QtSql/QTDSResult
+include/qt4/QtSql/QTDSDriver
 include/qt4/QtSql/qsql_odbc.h
 include/qt4/QtSql/qsql_psql.h
 include/qt4/QtSql/qsql_sqlite.h
@@ -73,9 +85,9 @@ lib/qt4/libQtSql.la
 lib/qt4/libQtSql.prl
 lib/qt4/libQtSql.so
 lib/qt4/libQtSql.so.4
-lib/qt4/libQtSql.so.4.4
-lib/qt4/libQtSql.so.4.4.3
-%%DEBUG%%lib/qt4/libQtSql.so.4.4.3.debug
+lib/qt4/libQtSql.so.4.5
+lib/qt4/libQtSql.so.4.5.2
+%%DEBUG%%lib/qt4/libQtSql.so.4.5.2.debug
 libdata/pkgconfig/QtSql.pc
 @dirrm include/qt4/QtSql
 @dirrmtry include/qt4/Qt

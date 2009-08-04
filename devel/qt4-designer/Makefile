@@ -23,6 +23,7 @@ QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build assistant_run \
 		qt3support corelib gui network script sql xml webkit
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4
@@ -32,7 +33,7 @@ CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
-		src/dbus src/opengl src/phonon \
+		src/dbus src/opengl \
 		src/sql src/svg src/testlib \
 		src/xmlpatterns src/3rdparty/clucene \
 		src/3rdparty/kdebase src/3rdparty/kdelibs

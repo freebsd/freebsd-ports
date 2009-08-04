@@ -1,0 +1,14 @@
+include/qt4/Qt/QtScriptTools
+include/qt4/Qt/qscriptenginedebugger.h
+include/qt4/QtScriptTools/QScriptEngineDebugger
+include/qt4/QtScriptTools/QtScriptTools
+include/qt4/QtScriptTools/qscriptenginedebugger.h
+lib/qt4/libQtScriptTools.la
+lib/qt4/libQtScriptTools.prl
+lib/qt4/libQtScriptTools.so
+lib/qt4/libQtScriptTools.so.4
+lib/qt4/libQtScriptTools.so.4.5
+lib/qt4/libQtScriptTools.so.4.5.2
+%%DEBUG%%lib/qt4/libQtScriptTools.so.4.5.2.debug
+libdata/pkgconfig/QtScriptTools.pc
+@dirrm include/qt4/QtScriptTools

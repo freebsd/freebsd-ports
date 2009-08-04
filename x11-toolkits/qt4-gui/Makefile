@@ -8,7 +8,7 @@
 
 PORTNAME=	gui
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -21,6 +21,8 @@ COMMENT=	Qt graphical user interface library
 LIB_DEPENDS?=	png:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
+MAKE_JOBS_SAFE=	yes
+
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib
 QT_NONSTANDARD=	yes
@@ -32,7 +34,7 @@ USE_XORG=	xrender xrandr xinerama inputproto xfixes \
 		sm xcursor xext x11 ice xi xt
 
 ALL_TARGET=	first
-CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
+CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH 
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
 
@@ -50,22 +52,26 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
-OPTIONS=	CUPS "Enable printing support (requires CUPS)" off \
-		NAS "Enable sound support (requires NAS)" off
+CONFIGURE_ARGS+=	-I../../include/Qt -I../../include
 
-.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
 
-.if !defined(WITHOUT_CUPS) || defined(PACKAGE_BUILDING)
+.if ${QT4_OPTIONS:MCUPS}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/print/cups-client
-CUPS=	-cups -L${LOCALBASE}/lib -I. -I../../include/Qt -I../../include -I${LOCALBASE}/include
-.elif defined(WITHOUT_CUPS)
-CUPS=
+CONFIGURE_ARGS+=-cups -L${LOCALBASE}/lib -I. -I${LOCALBASE}/include
 .endif
 
-.if !defined(WITHOUT_NAS)
+.if ${QT4_OPTIONS:MQGTKSTYLE}
+USE_GNOME=	gtk20
+CONFIGURE_ARGS+=-gtkstyle
+.else
+CONFIGURE_ARGS+=-no-gtkstyle
+.endif
+
+.if ${QT4_OPTIONS:MNAS}
 LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=-system-nas-sound
-.elif defined(WITHOUT_NAS)
+.else
 CONFIGURE_ARGS+=-no-nas-sound
 .endif
 
@@ -85,4 +91,4 @@ post-configure:
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/../../lib/pkgconfig/QtGui.pc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

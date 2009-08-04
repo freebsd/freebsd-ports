@@ -22,6 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build qt3support corelib gui network sql xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAVE=	yes
 
 HAS_CONFIGURE=	yes
 

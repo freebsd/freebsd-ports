@@ -1,3 +1,5 @@
+bin/lconvert
+%%DEBUG%%bin/lconvert.debug
 bin/linguist-qt4
 %%DEBUG%%bin/linguist-qt4.debug
 bin/lrelease-qt4

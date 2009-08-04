@@ -31,7 +31,7 @@ CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
 
-DO_NOT_EXTRACT= demos doc examples mkspecs qmake tools translations \
+DO_NOT_EXTRACT= demos doc examples qmake tools translations \
 		src/dbus src/gui src/network src/opengl src/phonon \
 		src/qt3support src/script src/sql src/svg src/testlib \
 		src/tools src/xml src/xmlpatterns src/3rdparty/clucene \

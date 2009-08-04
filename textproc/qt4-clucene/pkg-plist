@@ -2,7 +2,7 @@ lib/qt4/libQtCLucene.la
 lib/qt4/libQtCLucene.prl
 lib/qt4/libQtCLucene.so
 lib/qt4/libQtCLucene.so.4
-lib/qt4/libQtCLucene.so.4.4
-lib/qt4/libQtCLucene.so.4.4.3
-%%DEBUG%%lib/qt4/libQtCLucene.so.4.4.3.debug
+lib/qt4/libQtCLucene.so.4.5
+lib/qt4/libQtCLucene.so.4.5.2
+%%DEBUG%%lib/qt4/libQtCLucene.so.4.5.2.debug
 libdata/pkgconfig/QtCLucene.pc

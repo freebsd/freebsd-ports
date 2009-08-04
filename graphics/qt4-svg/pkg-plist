@@ -16,9 +16,9 @@ lib/qt4/libQtSvg.la
 lib/qt4/libQtSvg.prl
 lib/qt4/libQtSvg.so
 lib/qt4/libQtSvg.so.4
-lib/qt4/libQtSvg.so.4.4
-lib/qt4/libQtSvg.so.4.4.3
-%%DEBUG%%lib/qt4/libQtSvg.so.4.4.3.debug
+lib/qt4/libQtSvg.so.4.5
+lib/qt4/libQtSvg.so.4.5.2
+%%DEBUG%%lib/qt4/libQtSvg.so.4.5.2.debug
 libdata/pkgconfig/QtSvg.pc
 @dirrm include/qt4/QtSvg
 @dirrmtry include/qt4/Qt

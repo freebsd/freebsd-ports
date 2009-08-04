@@ -22,6 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 
@@ -33,7 +34,7 @@ MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake tools translations \
 		src/dbus src/gui src/network src/opengl \
 		src/phonon src/qt3support src/script src/sql src/svg \
-		src/testlib src/xml src/xmlpatterns src/3rdparty/clucene \
+		src/testlib src/xmlpatterns src/3rdparty/clucene \
 		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 .for dne in ${DO_NOT_EXTRACT}
@@ -50,5 +51,8 @@ pre-configure:
 		${WRKSRC}/${PORTNAME}.pro
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake
+
+do-build:
+	cd ${CONFIGURE_WRKSRC}/src/tools/bootstrap/ && make
 
 .include <bsd.port.mk>
