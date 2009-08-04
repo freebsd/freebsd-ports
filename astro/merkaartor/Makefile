@@ -7,7 +7,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.13.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.merkaartor.org/downloads/source/
 
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build linguist_build \
-		gui network svg webkit xml imageformats
+		gui network svg webkit xml imageformats script scripttools
 
 MAN1=		merkaartor.1
 
