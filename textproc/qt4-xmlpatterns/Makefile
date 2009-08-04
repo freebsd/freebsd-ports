@@ -20,7 +20,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build corelib network
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAVE=	yes
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4
