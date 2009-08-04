@@ -12,7 +12,7 @@ MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		http://ftp.uk.musicbrainz.org/pub/musicbrainz/picard/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Next generation MusicBrainz Tagger
 
 LIB_DEPENDS=	ofa.0:${PORTSDIR}/audio/libofa \
