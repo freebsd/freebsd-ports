@@ -1,13 +1,11 @@
---- Makefile.ori	Thu Jul 26 10:00:31 2007
-+++ Makefile	Tue Sep 25 18:36:53 2007
-@@ -14,9 +14,8 @@
+--- Makefile.orig	2009-08-04 10:55:36.000000000 +0200
++++ Makefile	2009-08-04 10:55:46.000000000 +0200
+@@ -17,7 +17,7 @@
+ TARGET=httping
  
- include version
+ WFLAGS=-Wall -W
+-OFLAGS=-O2
++OFLAGS?=-O2
+ CFLAGS=$(WFLAGS) $(OFLAGS) -DVERSION=\"$(VERSION)\"
  
--DEBUG=-g # -D_DEBUG
- LDFLAGS+=-lssl -lcrypto $(DEBUG)
--CFLAGS+=-O2 -Wall -DVERSION=\"$(VERSION)\" $(DEBUG)
-+CFLAGS+=-DVERSION=\"$(VERSION)\"
- 
- OBJS=mem.o http.o io.o str.o error.o utils.o main.o tcp.o mssl.o res.o
- 
+ PACKAGE=$(TARGET)-$(VERSION)
