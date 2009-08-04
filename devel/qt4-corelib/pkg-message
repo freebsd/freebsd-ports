@@ -1,0 +1,16 @@
+=====================================================================
+
+Qt4 can be built with optional support for:
+ - Common UNIX Printing System (CUPS)
+ - Network Audio System (NAS)
+ - Qt style that renders using GTK (QGTKSTYLE)
+
+In order to enable them, you need add
+	QT4_OPTIONS=	CUPS NAS QGTKSTYLE
+to your /etc/make.conf and compile devel/qt4-corelib and 
+x11-toolkits/qt4-gui ports.
+
+Attention! Whenever you change the QT4_OPTIONS both
+devel/qt4-corelib and x11-toolkits/qt4-gui ports must be rebuilt!
+
+=====================================================================

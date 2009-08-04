@@ -11,6 +11,7 @@ include/qt4/Qt/qtestevent.h
 include/qt4/Qt/qtesteventloop.h
 include/qt4/Qt/qtestkeyboard.h
 include/qt4/Qt/qtestmouse.h
+include/qt4/Qt/qbenchmark.h
 include/qt4/Qt/qtestspontaneevent.h
 include/qt4/Qt/qtestsystem.h
 include/qt4/QtTest/QEventSizeOfChecker
@@ -28,6 +29,7 @@ include/qt4/QtTest/QTestKeyClicksEvent
 include/qt4/QtTest/QTestKeyEvent
 include/qt4/QtTest/QTestMouseEvent
 include/qt4/QtTest/QtTest
+include/qt4/QtTest/qbenchmark.h
 include/qt4/QtTest/qsignalspy.h
 include/qt4/QtTest/qtest.h
 include/qt4/QtTest/qtest_global.h
@@ -46,9 +48,9 @@ lib/qt4/libQtTest.la
 lib/qt4/libQtTest.prl
 lib/qt4/libQtTest.so
 lib/qt4/libQtTest.so.4
-lib/qt4/libQtTest.so.4.4
-lib/qt4/libQtTest.so.4.4.3
-%%DEBUG%%lib/qt4/libQtTest.so.4.4.3.debug
+lib/qt4/libQtTest.so.4.5
+lib/qt4/libQtTest.so.4.5.2
+%%DEBUG%%lib/qt4/libQtTest.so.4.5.2.debug
 libdata/pkgconfig/QtTest.pc
 @dirrm include/qt4/QtTest
 @dirrmtry include/qt4/Qt

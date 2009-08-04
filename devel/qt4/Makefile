@@ -7,7 +7,7 @@
 
 PORTNAME=	qt4
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=0
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -26,8 +26,8 @@ USE_QT_VER=	4
 QT_COMPONENTS=	accessible assistant assistant-adp assistantclient \
 		clucene  corelib dbus designer doc help gui iconengines \
 		imageformats inputmethods network opengl qdbusviewer \
-		qt3support qtestlib qvfb script sql svg webkit xml \
-		xmlpatterns xmlpatterns-tool
+		qt3support qtestlib qvfb script scripttools sql svg webkit \
+		xml xmlpatterns xmlpatterns-tool
 
 NO_BUILD=	yes
 

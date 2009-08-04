@@ -31,6 +31,50 @@ include/qt4/Qt/videowidgetinterface.h
 include/qt4/Qt/volumefadereffect.h
 include/qt4/Qt/volumefaderinterface.h
 include/qt4/Qt/volumeslider.h
+include/qt4/phonon/AbstractAudioOutput
+include/qt4/phonon/AbstractMediaStream
+include/qt4/phonon/AbstractVideoOutput
+include/qt4/phonon/AddonInterface
+include/qt4/phonon/AudioCaptureDevice
+include/qt4/phonon/AudioCaptureDeviceModel
+include/qt4/phonon/AudioChannelDescription
+include/qt4/phonon/AudioChannelDescriptionModel
+include/qt4/phonon/AudioOutput
+include/qt4/phonon/AudioOutputDevice
+include/qt4/phonon/AudioOutputDeviceModel
+include/qt4/phonon/AudioOutputInterface
+include/qt4/phonon/AudioOutputInterface40
+include/qt4/phonon/AudioOutputInterface42
+include/qt4/phonon/BackendCapabilities
+include/qt4/phonon/BackendInterface
+include/qt4/phonon/Effect
+include/qt4/phonon/EffectDescription
+include/qt4/phonon/EffectDescriptionModel
+include/qt4/phonon/EffectInterface
+include/qt4/phonon/EffectParameter
+include/qt4/phonon/EffectWidget
+include/qt4/phonon/Global
+include/qt4/phonon/MediaController
+include/qt4/phonon/MediaNode
+include/qt4/phonon/MediaObject
+include/qt4/phonon/MediaObjectInterface
+include/qt4/phonon/MediaSource
+include/qt4/phonon/ObjectDescription
+include/qt4/phonon/ObjectDescriptionData
+include/qt4/phonon/ObjectDescriptionModel
+include/qt4/phonon/ObjectDescriptionModelData
+include/qt4/phonon/Path
+include/qt4/phonon/PlatformPlugin
+include/qt4/phonon/SeekSlider
+include/qt4/phonon/StreamInterface
+include/qt4/phonon/SubtitleDescription
+include/qt4/phonon/SubtitleDescriptionModel
+include/qt4/phonon/VideoPlayer
+include/qt4/phonon/VideoWidget
+include/qt4/phonon/VideoWidgetInterface
+include/qt4/phonon/VolumeFaderEffect
+include/qt4/phonon/VolumeFaderInterface
+include/qt4/phonon/VolumeSlider
 include/qt4/phonon/abstractaudiooutput.h
 include/qt4/phonon/abstractmediastream.h
 include/qt4/phonon/abstractvideooutput.h
@@ -64,15 +108,16 @@ include/qt4/phonon/videowidgetinterface.h
 include/qt4/phonon/volumefadereffect.h
 include/qt4/phonon/volumefaderinterface.h
 include/qt4/phonon/volumeslider.h
+include/qt4/Phonon
 lib/qt4/libphonon.la
 lib/qt4/libphonon.prl
 lib/qt4/libphonon.so
 lib/qt4/libphonon.so.4
-lib/qt4/libphonon.so.4.1
-lib/qt4/libphonon.so.4.1.3
-%%DEBUG%%lib/qt4/libphonon.so.4.1.3.debug
+lib/qt4/libphonon.so.4.3
+lib/qt4/libphonon.so.4.3.1
+%%DEBUG%%lib/qt4/libphonon.so.4.3.1.debug
 libdata/pkgconfig/phonon.pc
 @dirrm include/qt4/phonon
 @dirrmtry include/qt4/Qt
 @dirrmtry include/qt4
-@dirrmtry lib/qt4/plugins/phonon_backend
+@dirrmtry %%QT_PLUGINDIR_REL%%/phonon_backend

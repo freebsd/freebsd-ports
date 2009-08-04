@@ -8,6 +8,7 @@
 
 PORTNAME=	opengl
 PORTVERSION=	${QT4_VERSION}
+PORTREVISION=0
 CATEGORIES?=	x11
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -26,6 +27,7 @@ HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4
 USE_GL=		glu
 USE_XORG=	x11
+MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -44,6 +46,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
+
+CONFIGURE_ARGS+=        -I../../include/Qt -I../../include
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}

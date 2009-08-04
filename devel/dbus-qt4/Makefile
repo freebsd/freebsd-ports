@@ -25,7 +25,6 @@ QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_UNSAFE=	yes
-
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4
 

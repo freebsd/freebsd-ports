@@ -42,8 +42,8 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
-CONFIGURE_WRKSRC=${WRKSRC}/../../
+BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .include <bsd.port.pre.mk>
 
@@ -53,20 +53,21 @@ IGNORE=		conflicts with KDE4 phonon. Please, deinstall multimedia/phonon
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${MKDIR} ${WRKSRC}/../../mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
+	${MKDIR} ${WRKSRC}/mkspecs
+	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 
-post-configure:
+pre-install:
 	${REINPLACE_CMD} \
 		-e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		-e 's|.*$$(QMAKE).*||g' \
-		${WRKSRC}/Makefile
+		${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
-		${WRKSRC}/../../lib/pkgconfig/phonon.pc
+		${WRKSRC}/lib/pkgconfig/phonon.pc
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/qt4/plugins/phonon_backend
+	${MKDIR} ${QT_PLUGINDIR}/phonon_backend
+	${LN} -sf ${LOCALBASE}/include/qt4/phonon ${LOCALBASE}/include/qt4/Phonon
+	${LN} -sf ${LOCALBASE}/include/qt4/Phonon/phononnamespace.h ${LOCALBASE}/include/qt4/Phonon/Global
 
 .include <bsd.port.post.mk>

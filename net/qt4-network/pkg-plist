@@ -1,5 +1,6 @@
 include/qt4/Qt/QtNetwork
 include/qt4/Qt/qabstractsocket.h
+include/qt4/Qt/qabstractnetworkcache.h
 include/qt4/Qt/qauthenticator.h
 include/qt4/Qt/qftp.h
 include/qt4/Qt/qhostaddress.h
@@ -9,6 +10,7 @@ include/qt4/Qt/qlocalserver.h
 include/qt4/Qt/qlocalsocket.h
 include/qt4/Qt/qnetworkaccessmanager.h
 include/qt4/Qt/qnetworkcookie.h
+include/qt4/Qt/qnetworkdiskcache.h
 include/qt4/Qt/qnetworkinterface.h
 include/qt4/Qt/qnetworkproxy.h
 include/qt4/Qt/qnetworkreply.h
@@ -25,6 +27,7 @@ include/qt4/Qt/qtcpsocket.h
 include/qt4/Qt/qudpsocket.h
 include/qt4/Qt/qurlinfo.h
 include/qt4/QtNetwork/QAbstractSocket
+include/qt4/QtNetwork/QAbstractNetworkCache
 include/qt4/QtNetwork/QAuthenticator
 include/qt4/QtNetwork/QFtp
 include/qt4/QtNetwork/QHostAddress
@@ -43,6 +46,10 @@ include/qt4/QtNetwork/QNetworkCookieJar
 include/qt4/QtNetwork/QNetworkInterface
 include/qt4/QtNetwork/QNetworkProxy
 include/qt4/QtNetwork/QNetworkReply
+include/qt4/QtNetwork/QNetworkDiskCache
+include/qt4/QtNetwork/QNetworkProxyQuery
+include/qt4/QtNetwork/QNetworkProxyFactory
+include/qt4/QtNetwork/QNetworkCacheMetaData
 include/qt4/QtNetwork/QNetworkRequest
 include/qt4/QtNetwork/QSsl
 include/qt4/QtNetwork/QSslCertificate
@@ -58,6 +65,7 @@ include/qt4/QtNetwork/QUrlInfo
 include/qt4/QtNetwork/Q_IPV6ADDR
 include/qt4/QtNetwork/QtNetwork
 include/qt4/QtNetwork/qabstractsocket.h
+include/qt4/QtNetwork/qabstractnetworkcache.h
 include/qt4/QtNetwork/qauthenticator.h
 include/qt4/QtNetwork/qftp.h
 include/qt4/QtNetwork/qhostaddress.h
@@ -67,6 +75,7 @@ include/qt4/QtNetwork/qlocalserver.h
 include/qt4/QtNetwork/qlocalsocket.h
 include/qt4/QtNetwork/qnetworkaccessmanager.h
 include/qt4/QtNetwork/qnetworkcookie.h
+include/qt4/QtNetwork/qnetworkdiskcache.h
 include/qt4/QtNetwork/qnetworkinterface.h
 include/qt4/QtNetwork/qnetworkproxy.h
 include/qt4/QtNetwork/qnetworkreply.h
@@ -85,10 +94,10 @@ include/qt4/QtNetwork/qurlinfo.h
 lib/qt4/libQtNetwork.la
 lib/qt4/libQtNetwork.prl
 lib/qt4/libQtNetwork.so
-%%DEBUG%%lib/qt4/libQtNetwork.so.4.4.3.debug
+%%DEBUG%%lib/qt4/libQtNetwork.so.4.5.2.debug
 lib/qt4/libQtNetwork.so.4
-lib/qt4/libQtNetwork.so.4.4
-lib/qt4/libQtNetwork.so.4.4.3
+lib/qt4/libQtNetwork.so.4.5
+lib/qt4/libQtNetwork.so.4.5.2
 libdata/pkgconfig/QtNetwork.pc
 @dirrm include/qt4/QtNetwork
 @dirrmtry include/qt4/Qt

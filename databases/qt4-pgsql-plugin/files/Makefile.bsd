@@ -2,15 +2,15 @@ SHLIB_NAME=	libqsql${DB}.so
 
 VPATH=		${PLUGIN}:${DRIVER}
 CXXFLAGS+=	-I${DRIVER} \
-		-I${PREFIX}/include/qt4 \
-		-I${PREFIX}/include/qt4/Qt \
+		-I${QT_INCDIR} \
+		-I${QT_INCDIR}/Qt \
 		-I${LOCALBASE}/include/postgresql/server \
 		-I${LOCALBASE}/include -I${X11BASE}/include \
 		${PTHREAD_CFLAGS} -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII \
 		-DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -D_LARGEFILE64_SOURCE \
 		-D_LARGEFILE_SOURCE -DQT_SHARED
 MOC?=		${LOCALBASE}/bin/moc-qt4
-LDADD=		-L${PREFIX}/lib/qt4 -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lQtSql -lpq
+LDADD=		-L${QT_LIBDIR} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lQtSql -lpq
 SRCS=		main.cpp qsql_${DB}.cpp moc_qsql_${DB}.cpp
 
 LIBDIR=		${PREFIX}/lib/qt4/plugins/sqldrivers

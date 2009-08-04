@@ -1,2 +1,3 @@
 lib/qt4/plugins/phonon_backend/libphonon_gstreamer.so
+%%DEBUG%%lib/qt4/plugins/phonon_backend/libphonon_gstreamer.so.debug
 @dirrmtry lib/qt4/plugins/phonon_backend

@@ -24,9 +24,11 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4
+
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -47,13 +49,21 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
-.include <bsd.port.pre.mk>
+EXTRA_PATCHES=${.CURDIR}/../../devel/qt4/files/extrapatch-configure
+
+.include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
+
+pre-everything::
+	@${CAT} ${PKGMESSAGE}
+
+post-patch:
+	${REINPLACE_CMD} -e '${QT4_OPTIONS_REPLACE}' ${CONFIGURE_WRKSRC}/configure
 
 pre-configure:
-	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
+
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' ${WRKSRC}/Makefile
@@ -61,17 +71,10 @@ post-configure:
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/../../lib/pkgconfig/QtCore.pc
-	#hack to hard-code the feature part of qconfig.h
-	${HEAD} -n 27 ${WRKSRC}/global/qconfig.h > ${WRKDIR}/qconfig.tmp
-	${CHMOD} 644 ${WRKSRC}/global/qconfig.h
-	${CAT} ${WRKDIR}/qconfig.tmp ${FILESDIR}/qconfig.h.in > ${WRKSRC}/global/qconfig.h
-.if ${OSVERSION} >= 700042
-	${ECHO_CMD} "#define QT_VISIBILITY_AVAILABLE" >> ${WRKSRC}/global/qconfig.h
-.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/qt4/plugins
 	${TOUCH} ${PREFIX}/lib/qt4/plugins/.keep_me
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/mkspecs/qconfig.pri ${PREFIX}/share/qt4/mkspecs/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,15 @@
+#qt4-corelib and qt4-gui must recompiled both when changing options
+QT4_OPTIONS_ALL=CUPS QGTKSTYLE NAS
+QT4_OPTIONS?=
+.if defined(PACKAGE_BUILDING)
+QT4_OPTIONS+=	CUPS
+.endif
+
+.for opt in ${QT4_OPTIONS_ALL}
+${opt}_REPLACE=\#
+QT4_OPTIONS_REPLACE+=	s,%%${opt}%%,${${opt}_REPLACE},g;
+.endfor
+
+.for opt in ${QT4_OPTIONS}
+${opt}_REPLACE=
+.endfor

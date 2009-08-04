@@ -1,3 +1,13 @@
-lib/qt4/plugins/iconengines/libqsvgicon.so
-%%DEBUG%%lib/qt4/plugins/iconengines/libqsvgicon.so.debug
-@dirrmtry lib/qt4/plugins/iconengines
+lib/qt4/plugins/imageformats/libqgif.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqgif.so.debug
+lib/qt4/plugins/imageformats/libqjpeg.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqjpeg.so.debug
+lib/qt4/plugins/imageformats/libqmng.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqmng.so.debug
+lib/qt4/plugins/imageformats/libqsvg.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqsvg.so.debug
+lib/qt4/plugins/imageformats/libqtiff.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqtiff.so.debug
+lib/qt4/plugins/imageformats/libqico.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqico.so.debug
+@dirrmtry lib/qt4/plugins/imageformats

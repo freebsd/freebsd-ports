@@ -8,7 +8,7 @@
 
 PORTNAME=	imageformats
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=0
 CATEGORIES?=	graphics
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -27,6 +27,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui svg xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAFE=	true
 
 HAS_CONFIGURE=	yes
 

@@ -22,6 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 
@@ -50,5 +51,8 @@ pre-configure:
 		${WRKSRC}/${PORTNAME}.pro
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake
+
+do-build:
+	cd ${CONFIGURE_WRKSRC}/src/tools/bootstrap/ && make
 
 .include <bsd.port.mk>

@@ -19,6 +19,8 @@ include/qt4/Qt/qdbusmessage.h
 include/qt4/Qt/qdbusmetatype.h
 include/qt4/Qt/qdbusreply.h
 include/qt4/Qt/qdbusserver.h
+include/qt4/Qt/qdbuspendingcall.h
+include/qt4/Qt/qdbuspendingreply.h
 include/qt4/QtDBus/QDBusAbstractAdaptor
 include/qt4/QtDBus/QDBusAbstractInterface
 include/qt4/QtDBus/QDBusArgument
@@ -35,6 +37,10 @@ include/qt4/QtDBus/QDBusServer
 include/qt4/QtDBus/QDBusSignature
 include/qt4/QtDBus/QDBusVariant
 include/qt4/QtDBus/QtDBus
+include/qt4/QtDBus/QDBusPendingCall
+include/qt4/QtDBus/QDBusPendingCallWatcher
+include/qt4/QtDBus/QDBusPendingReplyData
+include/qt4/QtDBus/QDBusPendingReply
 include/qt4/QtDBus/qdbusabstractadaptor.h
 include/qt4/QtDBus/qdbusabstractinterface.h
 include/qt4/QtDBus/qdbusargument.h
@@ -47,15 +53,17 @@ include/qt4/QtDBus/qdbusinterface.h
 include/qt4/QtDBus/qdbusmacros.h
 include/qt4/QtDBus/qdbusmessage.h
 include/qt4/QtDBus/qdbusmetatype.h
+include/qt4/QtDBus/qdbuspendingcall.h
+include/qt4/QtDBus/qdbuspendingreply.h
 include/qt4/QtDBus/qdbusreply.h
 include/qt4/QtDBus/qdbusserver.h
 lib/qt4/libQtDBus.la
 lib/qt4/libQtDBus.prl
 lib/qt4/libQtDBus.so
 lib/qt4/libQtDBus.so.4
-lib/qt4/libQtDBus.so.4.4
-lib/qt4/libQtDBus.so.4.4.3
-%%DEBUG%%lib/qt4/libQtDBus.so.4.4.3.debug
+lib/qt4/libQtDBus.so.4.5
+lib/qt4/libQtDBus.so.4.5.2
+%%DEBUG%%lib/qt4/libQtDBus.so.4.5.2.debug
 libdata/pkgconfig/QtDBus.pc
 @dirrm include/qt4/QtDBus
 @dirrmtry include/qt4/Qt

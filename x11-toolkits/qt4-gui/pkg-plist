@@ -74,6 +74,7 @@ include/qt4/Qt/qgraphicsview.h
 include/qt4/Qt/qgraphicswidget.h
 include/qt4/Qt/qgridlayout.h
 include/qt4/Qt/qgroupbox.h
+include/qt4/Qt/qgtkstyle.h
 include/qt4/Qt/qheaderview.h
 include/qt4/Qt/qicon.h
 include/qt4/Qt/qiconengine.h
@@ -169,6 +170,7 @@ include/qt4/Qt/qtextbrowser.h
 include/qt4/Qt/qtextcursor.h
 include/qt4/Qt/qtextdocument.h
 include/qt4/Qt/qtextdocumentfragment.h
+include/qt4/Qt/qtextdocumentwriter.h
 include/qt4/Qt/qtextedit.h
 include/qt4/Qt/qtextformat.h
 include/qt4/Qt/qtextlayout.h
@@ -330,6 +332,7 @@ include/qt4/QtGui/QGraphicsView
 include/qt4/QtGui/QGraphicsWidget
 include/qt4/QtGui/QGridLayout
 include/qt4/QtGui/QGroupBox
+include/qt4/QtGui/QGtkStyle
 include/qt4/QtGui/QHBoxLayout
 include/qt4/QtGui/QHeaderView
 include/qt4/QtGui/QHelpEvent
@@ -472,6 +475,7 @@ include/qt4/QtGui/QStyleOptionDockWidgetV2
 include/qt4/QtGui/QStyleOptionFocusRect
 include/qt4/QtGui/QStyleOptionFrame
 include/qt4/QtGui/QStyleOptionFrameV2
+include/qt4/QtGui/QStyleOptionFrameV3
 include/qt4/QtGui/QStyleOptionGraphicsItem
 include/qt4/QtGui/QStyleOptionGroupBox
 include/qt4/QtGui/QStyleOptionHeader
@@ -487,7 +491,9 @@ include/qt4/QtGui/QStyleOptionSlider
 include/qt4/QtGui/QStyleOptionSpinBox
 include/qt4/QtGui/QStyleOptionTab
 include/qt4/QtGui/QStyleOptionTabBarBase
+include/qt4/QtGui/QStyleOptionTabBarBaseV2
 include/qt4/QtGui/QStyleOptionTabV2
+include/qt4/QtGui/QStyleOptionTabV3
 include/qt4/QtGui/QStyleOptionTabWidgetFrame
 include/qt4/QtGui/QStyleOptionTitleBar
 include/qt4/QtGui/QStyleOptionToolBar
@@ -519,6 +525,7 @@ include/qt4/QtGui/QTextCharFormat
 include/qt4/QtGui/QTextCursor
 include/qt4/QtGui/QTextDocument
 include/qt4/QtGui/QTextDocumentFragment
+include/qt4/QtGui/QTextDocumentWriter
 include/qt4/QtGui/QTextEdit
 include/qt4/QtGui/QTextFormat
 include/qt4/QtGui/QTextFragment
@@ -661,6 +668,7 @@ include/qt4/QtGui/qgraphicsview.h
 include/qt4/QtGui/qgraphicswidget.h
 include/qt4/QtGui/qgridlayout.h
 include/qt4/QtGui/qgroupbox.h
+include/qt4/QtGui/qgtkstyle.h
 include/qt4/QtGui/qheaderview.h
 include/qt4/QtGui/qicon.h
 include/qt4/QtGui/qiconengine.h
@@ -756,6 +764,7 @@ include/qt4/QtGui/qtextbrowser.h
 include/qt4/QtGui/qtextcursor.h
 include/qt4/QtGui/qtextdocument.h
 include/qt4/QtGui/qtextdocumentfragment.h
+include/qt4/QtGui/qtextdocumentwriter.h
 include/qt4/QtGui/qtextedit.h
 include/qt4/QtGui/qtextformat.h
 include/qt4/QtGui/qtextlayout.h
@@ -793,9 +802,9 @@ lib/qt4/libQtGui.la
 lib/qt4/libQtGui.prl
 lib/qt4/libQtGui.so
 lib/qt4/libQtGui.so.4
-lib/qt4/libQtGui.so.4.4
-lib/qt4/libQtGui.so.4.4.3
-%%DEBUG%%lib/qt4/libQtGui.so.4.4.3.debug
+lib/qt4/libQtGui.so.4.5
+lib/qt4/libQtGui.so.4.5.2
+%%DEBUG%%lib/qt4/libQtGui.so.4.5.2.debug
 libdata/pkgconfig/QtGui.pc
 @dirrm include/qt4/QtGui
 @dirrmtry include/qt4/Qt
