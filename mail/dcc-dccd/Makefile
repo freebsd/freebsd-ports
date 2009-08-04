@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.108
+PORTVERSION=	1.3.113
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		http://www.rhyolite.com/anti-spam/dcc/source/old/ \

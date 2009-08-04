@@ -19,6 +19,7 @@ dcc/libexec/cron-dccd
 %%WITH_DCCD%%dcc/libexec/dbclean
 %%WITH_DCCD%%dcc/libexec/dblist
 %%WITH_DCCD%%dcc/libexec/dump-clients
+dcc/libexec/dcc-nagios
 dcc/libexec/dcc-stats-collect
 dcc/libexec/dcc-stats-graph
 dcc/libexec/dcc-stats-init
