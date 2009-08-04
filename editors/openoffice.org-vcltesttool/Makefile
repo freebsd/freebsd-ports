@@ -43,7 +43,6 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 MANUAL_PACKAGE_BUILD=	loops builds on pointyhat
 .else
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
-BROKEN=			does not build
 .endif
 
 #Linux/Solaris/Windows m226, MacOSX: m243
@@ -104,7 +103,8 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-system-stdlibs				\
 			--with-epm=internal				\
 			--with-jdk-home="${JAVA_HOME}"			\
-			--disable-binfilter
+			--disable-binfilter				\
+			--with-vba-package-format="builtin"
 
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
