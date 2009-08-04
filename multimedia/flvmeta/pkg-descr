@@ -1,0 +1,5 @@
+FLVmeta is a metadata injector for Adobe Flash Video files
+(FLV). It is able to inject all known metadata tags into the
+onMetaData event, as well as insert an onLastSecond event.
+
+WWW:	http://code.google.com/p/flvmeta/
