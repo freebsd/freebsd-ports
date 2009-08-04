@@ -1,0 +1,22 @@
+--- qorganizer.cpp.orig	2009-04-06 07:56:17 +0000
++++ qorganizer.cpp	2009-04-06 07:56:23 +0000
+@@ -1511,7 +1511,7 @@ void CQTextEdit::insertFromMimeData( con
+          QImage *image = new QImage(origin); 
+          if(!image->isNull())
+           {
+-           document->addResource(QTextDocument::ImageResource,origin,image);
++           document->addResource(QTextDocument::ImageResource,origin,QVariant::fromValue(image));
+            cursor.insertImage(origin);
+           }
+          delete image;
+--- qorganizer.h.orig	2009-04-06 07:56:12 +0000
++++ qorganizer.h	2009-04-06 07:56:39 +0000
+@@ -104,6 +104,8 @@ class CQTextEdit:public QTextEdit
+  
+ };
+ 
++Q_DECLARE_METATYPE(QImage*);
++
+ //LineEdit with clear button on the right.
+ 
+ class LineEdit : public QLineEdit
