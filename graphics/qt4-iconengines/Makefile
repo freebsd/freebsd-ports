@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	imageformats
+PORTNAME=	iconengines
 PORTVERSION=	${QT4_VERSION}
 PORTREVISION=0
 CATEGORIES?=	graphics
@@ -16,18 +16,13 @@ DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt imageformat plugins for GIF, JPEG, MNG and SVG
-
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		mng:${PORTSDIR}/graphics/libmng \
-		png:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+COMMENT=	Qt SVG icon engine plugin
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui svg xml
+QT_COMPONENTS=	qmake_build moc_build corelib gui svg xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	true
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 
@@ -41,19 +36,18 @@ DO_NOT_EXTRACT=	demos doc examples mkspecs qmake tools translations \
 		src/qt3support src/script src/sql src/testlib \
 		src/tools src/xmlpatterns src/3rdparty/clucene \
 		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
-EXTRACT_AFTER_ARGS=	|${TAR} -xf -
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 .for dne in ${DO_NOT_EXTRACT}
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src/plugins/${PORTNAME}
-CONFIGURE_WRKSRC=${WRKSRC}/../../..
+WRKSRC=		${WRKDIR}/${DISTNAME}/src/plugins/iconengines/svgiconengine
+CONFIGURE_WRKSRC=${WRKSRC}/../../../..
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${MKDIR} ${WRKSRC}/../../../mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../bin/moc
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../../bin/rcc
+	${MKDIR} ${WRKSRC}/../../../../mkspecs
+	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../../bin/qmake
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../../bin/moc
 
 .include <bsd.port.mk>
