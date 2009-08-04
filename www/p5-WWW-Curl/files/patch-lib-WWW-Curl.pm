@@ -2,7 +2,7 @@ Fix a grammatical error.
 
 --- lib/WWW/Curl.pm.orig
 +++ lib/WWW/Curl.pm
-@@ -306,7 +306,7 @@
+@@ -311,7 +311,7 @@
  
  Version 3.01 added some support for pre-multi versions of libcurl.
  
