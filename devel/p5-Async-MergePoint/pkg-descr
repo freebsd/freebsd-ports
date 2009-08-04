@@ -1,0 +1,16 @@
+Often in program logic, multiple different steps need to be taken that
+are independent of each other, but their total result is needed before
+the next step can be taken. In synchonous code, the usual approach is
+to do them sequentially.
+
+An asynchronous or event-based program could do this, but if each step
+involves some IO idle time, better overall performance can often be
+gained by running the steps in parallel. A Async::MergePoint object
+can then be used to wait for all of the steps to complete, before
+passing the combined result of each step on to the next stage.
+
+This module was originally part of the IO::Async distribution, but was
+removed under the inspiration of Pedro Melo's Async::Hooks
+distribution, because it doesn't itself contain anything IO-specific.
+
+WWW:    http://search.cpan.org/dist/Async-MergePoint/

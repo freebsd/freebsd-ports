@@ -997,6 +997,7 @@
     SUBDIR += p5-Array-Group
     SUBDIR += p5-Array-Iterator
     SUBDIR += p5-Array-Window
+    SUBDIR += p5-Async-MergePoint
     SUBDIR += p5-AtExit
     SUBDIR += p5-Attribute-Handlers
     SUBDIR += p5-Attribute-Handlers-Prospective
