@@ -7,6 +7,7 @@
 
 PORTNAME=	olsrd
 DISTVERSION=	0.5.6-r5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.5/ \
 		http://ftp2.za.freebsd.org/pub/mesh/pc/protocols/olsr/
