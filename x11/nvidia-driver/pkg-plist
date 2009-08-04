@@ -27,7 +27,6 @@ lib/libXvMCNVIDIA.so
 lib/libXvMCNVIDIA.a
 lib/libXvMCNVIDIA_dynamic.so.1
 %%MODULESDIR%%/libnvidia-wfb.so.1
-%%MODULESDIR%%/drivers/nvidia_drv.o
 %%MODULESDIR%%/drivers/nvidia_drv.so
 %%MODULESDIR%%/extensions/libglx.so.1
 @dirrmtry %%MODULESDIR%%/drivers

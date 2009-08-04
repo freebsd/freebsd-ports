@@ -108,14 +108,15 @@ post-install:
 # pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's
 .if ${NVVERSION} < 817400
 	@${REINPLACE_CMD} '/libnvidia-cfg/d' ${TMPPLIST}
-.else
-	@${REINPLACE_CMD} '/nvidia_drv\.o/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 974600
 	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 1802900
-	@${REINPLACE_CMD} '/libcuda/d ; /libvdpau/d' ${TMPPLIST}
+	@${REINPLACE_CMD} '/libvdpau/d' ${TMPPLIST}
+.endif
+.if ${NVVERSION} < 1851829
+	@${REINPLACE_CMD} '/libcuda/d' ${TMPPLIST}
 .endif
 # Some applications need this symlink (see PR ports/72877)
 	@${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
