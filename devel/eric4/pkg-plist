@@ -2486,7 +2486,7 @@ share/qt4/qsci/api/ruby/eric4.api
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/pixmaps
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/icons/default
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/icons
-@dirrm %%PYTHON_SITELIBDIR%%/eric4/i18n
+@dirrmtry %%PYTHON_SITELIBDIR%%/eric4/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/ViewManager
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/VCS
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Utilities/ClassBrowsers
