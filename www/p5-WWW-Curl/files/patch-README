@@ -3,7 +3,7 @@ Fix a typo.
 --- README.orig
 +++ README
 @@ -3,7 +3,7 @@
- The perl module WWW::Curl provides an interface to the cURL library "libcurl".
+ The Perl module WWW::Curl provides an interface to the cURL library "libcurl".
  See http://curl.haxx.se/ for more information on cURL and libcurl.
  
 -This module requires libcurl and the corresponding headerfiles to be
@@ -11,3 +11,30 @@ Fix a typo.
  installed. You then may install this module via the usual way
  (for installation on Windows please see README.Win32):
  
+@@ -27,9 +27,9 @@
+ This module, starting from version 4 requires at least Perl 5.6 and libcurl 7.10.8.
+ These releases are more than 5 years old and they have multiple security vulnerabilities,
+ it is advised that you upgrade as soon as possible to a more recent, secure version.
+-Anything older than these versions of Perl and libcurl respectively are not supported.
++Anything older than these versions of Perl and libcurl respectively is not supported.
+ 
+-Windows specific fixes and patches are welcome as testing is mainly focused on linux.
++Windows specific fixes and patches are welcome as testing is mainly focused on Linux.
+ 
+ The module provides the same functionality, except as noted in the documentation, 
+ as libcurl provides to C programs. Please refer to the documentation of libcurl for the
+@@ -45,12 +45,12 @@
+ Parts of the callback support were added Forrest Cahoon
+ <forrest.cahoon at merrillcorp.com>
+ 
+-More callback support, many tests additional documentation and Makefile
++More callback support, many tests, additional documentation, and Makefile
+ features have been added by Cris Bailiff <c.bailiff+curl at devsecure.com>
+ 
+ Curl multi support has been added by Sebastian Riedel <sri at oook.de>
+ 
+-The current maintainer is Cris Bailiff <c.bailiff+curl at devsecure.com> and
++The current maintainers are Cris Bailiff <c.bailiff+curl at devsecure.com> and
+ Bálint Szilakszi <szbalint at cpan.org>
+ 
+ The latest version is available on CPAN and can be downloaded from
