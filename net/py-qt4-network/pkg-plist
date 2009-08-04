@@ -1,5 +1,6 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtNetwork.so
 %%SIP%%share/py-sip/QtNetwork/QtNetworkmod.sip
+%%SIP%%share/py-sip/QtNetwork/qabstractnetworkcache.sip
 %%SIP%%share/py-sip/QtNetwork/qabstractsocket.sip
 %%SIP%%share/py-sip/QtNetwork/qauthenticator.sip
 %%SIP%%share/py-sip/QtNetwork/qftp.sip
@@ -10,6 +11,7 @@
 %%SIP%%share/py-sip/QtNetwork/qlocalsocket.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkaccessmanager.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkcookie.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkdiskcache.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkinterface.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkproxy.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkreply.sip

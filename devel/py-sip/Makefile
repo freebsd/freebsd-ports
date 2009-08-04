@@ -25,6 +25,8 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR}\
 		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR}
 
+PORTDOCS=	*
+
 .include "files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
@@ -45,9 +47,8 @@ post-configure:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} && cd ${WRKSRC} && ${INSTALL_DATA}\
-		doc/sipref.txt doc/sipref.html\
-		NEWS LICENSE ${DOCSDIR}
+	${MKDIR} ${DOCSDIR} && cd ${WRKSRC}/doc/html && \
+		${COPYTREE_SHARE} \. ${DOCSDIR}
 .endif
 	${MKDIR} ${DATADIR} &&\
 		cd ${PYTHONPREFIX_SITELIBDIR} &&\

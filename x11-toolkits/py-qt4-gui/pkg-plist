@@ -72,6 +72,7 @@
 %%SIP%%share/py-sip/QtGui/qimagereader.sip
 %%SIP%%share/py-sip/QtGui/qimagewriter.sip
 %%SIP%%share/py-sip/QtGui/qinputcontext.sip
+%%SIP%%share/py-sip/QtGui/qinputcontextfactory.sip
 %%SIP%%share/py-sip/QtGui/qinputdialog.sip
 %%SIP%%share/py-sip/QtGui/qitemdelegate.sip
 %%SIP%%share/py-sip/QtGui/qitemeditorfactory.sip
@@ -115,6 +116,7 @@
 %%SIP%%share/py-sip/QtGui/qprogressdialog.sip
 %%SIP%%share/py-sip/QtGui/qproxymodel.sip
 %%SIP%%share/py-sip/QtGui/qpushbutton.sip
+%%SIP%%share/py-sip/QtGui/qpytextobject.sip
 %%SIP%%share/py-sip/QtGui/qradiobutton.sip
 %%SIP%%share/py-sip/QtGui/qregion.sip
 %%SIP%%share/py-sip/QtGui/qrgb.sip
@@ -151,6 +153,7 @@
 %%SIP%%share/py-sip/QtGui/qtextcursor.sip
 %%SIP%%share/py-sip/QtGui/qtextdocument.sip
 %%SIP%%share/py-sip/QtGui/qtextdocumentfragment.sip
+%%SIP%%share/py-sip/QtGui/qtextdocumentwriter.sip
 %%SIP%%share/py-sip/QtGui/qtextedit.sip
 %%SIP%%share/py-sip/QtGui/qtextformat.sip
 %%SIP%%share/py-sip/QtGui/qtextlayout.sip
