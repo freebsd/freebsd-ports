@@ -19,6 +19,7 @@ COMMENT=	A CDDA extraction tool (also known as ripper)
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		cdparanoia.1
 
