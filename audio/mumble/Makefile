@@ -39,6 +39,8 @@ BROKEN=		Does not compile on FreeBSD < 7.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
+	@${REINPLACE_CMD} -e 's|qt_ja_jp|qt_ja_JP|' \
+	${WRKSRC}/src/mumble/mumble_qt.qrc ${WRKSRC}/src/mumble/mumble.pro
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} QMAKESPEC=${QMAKESPEC} ${QMAKE} PREFIX=${PREFIX} main.pro "CONFIG+=${CONFIG}"
