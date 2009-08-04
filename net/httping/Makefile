@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httping
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		CRITICAL
@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A ping-like tool for HTTP requests
 
+USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		httping.1
