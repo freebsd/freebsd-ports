@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.hvsc.c64.org/Downloads/ \
 DISTNAME=	${PORTNAME:S/-/_/}_Tool_source_${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Update program for the HVSC C= 64 SID tune collection
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake

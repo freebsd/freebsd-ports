@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module implementing config inclusion from MySQL databases
 
 MAKE_JOBS_SAFE=  yes
