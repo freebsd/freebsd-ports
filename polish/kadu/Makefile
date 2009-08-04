@@ -41,8 +41,8 @@ CMAKE_ARGS=		-DENABLE_AUTODOWNLOAD:BOOL=OFF
 CMAKE_USE_PTHREAD=	yes
 
 USE_QT_VER=		4
-QT_COMPONENTS=		gui dbus linguist_build network qt3support webkit xml \
-			qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=		gui dbus network qt3support script webkit xml \
+			qmake_build linguist_build moc_build rcc_build uic_build
 WANT_GNOME=		yes
 INSTALLS_ICONS=		yes
 
