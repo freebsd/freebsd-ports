@@ -91,7 +91,7 @@ COMMENT=	HTTP Caching Proxy (BETA Version)
 
 LATEST_LINK=	squid31
 
-SQUID_BETA_VER=	8
+SQUID_BETA_VER=	13
 
 CONFLICTS=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
@@ -102,6 +102,7 @@ USE_RC_SUBR=	squid
 SQUID_UID?=	squid
 SQUID_GID?=	squid
 
+MAN1=		squidclient.1
 MAN8=		cachemgr.cgi.8 squid.8 squid_radius_auth.8
 docs=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
 PORTDOCS=	${docs:T}
@@ -163,7 +164,7 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_CACHE_MGR_ACCESS_DENIED ERR_CANNOT_FORWARD \
 		ERR_CONNECT_FAIL ERR_DNS_FAIL ERR_ESI ERR_FORWARDING_DENIED \
 		ERR_FTP_DISABLED ERR_FTP_FAILURE ERR_FTP_FORBIDDEN \
-		ERR_FTP_NOT_FOUND ERR_FTP_PUT_CREATED \
+		ERR_FTP_LISTING ERR_FTP_NOT_FOUND ERR_FTP_PUT_CREATED \
 		ERR_FTP_PUT_ERROR ERR_FTP_PUT_MODIFIED ERR_FTP_UNAVAILABLE \
 		ERR_ICAP_FAILURE ERR_INVALID_REQ ERR_INVALID_RESP \
 		ERR_INVALID_URL ERR_LIFETIME_EXP ERR_NO_RELAY \
@@ -171,17 +172,20 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_SECURE_CONNECT_FAIL ERR_SHUTTING_DOWN ERR_SOCKET_FAILURE \
 		ERR_TOO_BIG ERR_UNSUP_REQ ERR_UNSUP_HTTPVERSION \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
-# XXX:
-# This is a workaround for the problem that this file does not exist
-# in the "old-style" error directories (errors/<Language>).
-error_files_new_only=	ERR_FTP_LISTING
 
-error_dirs_old=	Hebrew Hungarian Korean Lithuanian Polish Portuguese  \
-		Slovak Traditional_Chinese
-
-error_dirs_new=	ar az bg ca cs da de el en en-au en-gb en-nz en-us es et \
-		fa fi fr hy id it ja lv nl pt-br ro ru sr sv tr uk uz zh-cn \
+error_dirs=	ar az bg ca cs da de el en es et fa fi fr he hu hy id it \
+		ja ko lt lv ms nl pl pt pt-br ro ru sk sr sv th tr uk uz \
+		zh-cn zh-tw \
 		templates
+
+error_dir_links=	ar-ae ar-bh ar-dz ar-eg ar-iq ar-jo ar-kw ar-lb \
+			ar-ly ar-ma ar-om ar-qa ar-sa ar-sy ar-tn ar-ye \
+			az-az bg-bg cs-cz da-dk de-de el-gr en-au en-ca \
+			en-gb en-in en-nz en-sg en-tt en-uk en-us en-za \
+			es-ar es-pe es-es et-ee fi-fi fr-fr he-il hu-hu \
+			hy-am id-id it-it ja-jp ko-kr lt-lt lv-lv ms-my \
+			nl-nl pl-pl pt-pt ro-ro ru-ru sk-sk sr-sp sv-se \
+			th-th tr-tr uk-ua zh-hk zh-mo zh-sg
 
 libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
 		msnt_auth ncsa_auth ntlm_smb_lm_auth pam_auth smb_auth \
@@ -217,7 +221,8 @@ CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
 		--enable-removal-policies="lru heap" \
 		--disable-linux-netfilter \
 		--disable-linux-tproxy \
-		--disable-epoll
+		--disable-epoll \
+		--disable-translation
 
 .include <bsd.port.pre.mk>
 
@@ -257,10 +262,8 @@ CONFIGURE_ARGS+=	--enable-auth="basic digest negotiate ntlm" \
 			--enable-ntlm-auth-helpers="smb_lm"
 .if !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
 CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
-# XXX:
-# these files moved from libexec to sbin : Bug or Feature?
-sbin+=	negotiate_kerb_auth negotiate_kerb_auth_test \
-	squid_kerb_auth squid_kerb_auth_test
+libexec+=	negotiate_kerb_auth negotiate_kerb_auth_test \
+		squid_kerb_auth squid_kerb_auth_test
 .endif
 
 # Storage schemes:
@@ -406,15 +409,12 @@ PLIST_DIRS=	etc/squid/icons libexec/squid
 PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
 		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,}
 
-.for d in ${error_dirs_old}
+PLIST_FILES+=	etc/squid/errors/COPYRIGHT etc/squid/errors/TRANSLATORS
+.for d in ${error_dirs}
 PLIST_DIRS+=	etc/squid/errors/${d}
 PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 .endfor
-.for d in ${error_dirs_new}
-PLIST_DIRS+=	etc/squid/errors/${d}
-PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
-PLIST_FILES+=	${error_files_new_only:S,^,etc/squid/errors/${d}/,}
-.endfor
+PLIST_FILES+=	${error_dir_links:S,^,etc/squid/errors/,}
 PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
 post-patch:
