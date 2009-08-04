@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20090430
+PORTVERSION=	20090731
 CATEGORIES=	japanese
-MASTER_SITES=	http://dist.bsdlab.org/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kuriyama
 DISTFILES=	ken_all-${PORTVERSION_K}.lzh jigyosyo-${PORTVERSION_J}.lzh
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -41,5 +42,8 @@ fetch2:
 	${MV} ken_all.lzh `date -r $${m} +ken_all-%Y%m%d.lzh`
 	m=`stat -f %m jigyosyo.lzh`; \
 	${MV} jigyosyo.lzh `date -r $${m} +jigyosyo-%Y%m%d.lzh`
+
+scp:
+	scp *.lzh localdist:public_distfiles
 
 .include <bsd.port.mk>
