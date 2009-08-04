@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bind9
-PORTVERSION=	9.4.3.2
+PORTVERSION=	9.4.3.3
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -21,7 +21,7 @@ COMMENT=	Bind9, patched for use with a PostgreSQL-based backend
 CONFLICTS=	bind9-9.* bind9-sdb-ldap-* host-*
 
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
-ISCVERSION=	9.4.3-P2
+ISCVERSION=	9.4.3-P3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
