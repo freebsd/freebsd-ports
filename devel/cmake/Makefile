@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTVERSION=	2.6.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 
@@ -38,16 +37,8 @@ MAN1=		ccmake.1 \
 		ctest.1
 
 post-patch:
-	@${GREP} -rl '/usr/local' ${WRKSRC}/Modules ${WRKSRC}/Tests | \
-		${XARGS} ${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g'
 	@${GREP} -rl '/usr/X11R6' ${WRKSRC}/Modules ${WRKSRC}/Tests | \
 		${XARGS} ${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/Source/cmLocalGenerator.cxx
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/Source/CPack/cmCPackGenerator.cxx
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/bootstrap
 	@${REINPLACE_CMD} -e 's,/opt/kde4,${LOCALBASE}/kde4,g' \
 		${WRKSRC}/Modules/FindKDE4.cmake
 

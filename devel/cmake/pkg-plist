@@ -81,7 +81,9 @@ bin/ctest
 %%DATADIR%%/Modules/CPack.Description.plist.in
 %%DATADIR%%/Modules/CPack.Info.plist.in
 %%DATADIR%%/Modules/CPack.OSXScriptLauncher.in
+%%DATADIR%%/Modules/CPack.OSXScriptLauncher.rsrc.in
 %%DATADIR%%/Modules/CPack.OSXX11.Info.plist.in
+%%DATADIR%%/Modules/CPack.OSXX11.main.scpt.in
 %%DATADIR%%/Modules/CPack.RuntimeScript.in
 %%DATADIR%%/Modules/CPack.STGZ_Header.sh.in
 %%DATADIR%%/Modules/CPack.VolumeIcon.icns.in
