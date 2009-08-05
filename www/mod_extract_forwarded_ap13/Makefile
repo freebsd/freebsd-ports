@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://web.warhound.org/${PORTNAME}/ \
 		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
 
 MAKE_JOBS_SAFE=  yes

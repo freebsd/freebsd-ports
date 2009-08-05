@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Enables the use of external mechanisms for user authentication
 
 CONFLICTS=	apache-contrib-1.*
