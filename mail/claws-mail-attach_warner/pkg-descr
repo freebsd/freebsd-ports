@@ -1,2 +1,4 @@
 Warns when the user composes a message mentioning an attachment in
 the message body without attaching any files to the message.
+
+WWW:	http://www.claws-mail.org/plugin.php?plugin=attachwarner

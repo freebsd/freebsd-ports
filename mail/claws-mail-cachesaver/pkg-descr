@@ -1,2 +1,4 @@
 This plugin saves the caches every 60 seconds (or user-defined period).
 It helps avoiding the loss of metadata on crashes.
+
+WWW:	http://www.claws-mail.org/plugins.php
