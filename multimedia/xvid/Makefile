@@ -7,6 +7,7 @@
 
 PORTNAME=	xvid
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
@@ -34,7 +35,7 @@ OPTIONS=	OPTIMIZED_CFLAGS "Use XviD's default optimizations" off
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
