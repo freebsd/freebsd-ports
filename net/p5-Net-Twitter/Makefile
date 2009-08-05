@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-Twitter
 PORTVERSION=	3.03000
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl interface to twitter.com
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+    		${SITE_PERL}/MooseX/MultiInitArg.pm:${PORTSDIR}/devel/p5-MooseX-MultiInitArg \
 		${SITE_PERL}/MooseX/Traits.pm:${PORTSDIR}/devel/p5-MooseX-Traits \
 		${SITE_PERL}/namespace/autoclean.pm:${PORTSDIR}/devel/p5-namespace-autoclean \
 		${SITE_PERL}/Net/OAuth/Simple.pm:${PORTSDIR}/net/p5-Net-OAuth-Simple \
