@@ -125,6 +125,7 @@
     SUBDIR += kchmviewer-kde4
     SUBDIR += kdepim3
     SUBDIR += kdepim4
+    SUBDIR += kdepim4-runtime
     SUBDIR += kdepimlibs4
     SUBDIR += kdeplasma-addons
     SUBDIR += kdissert
