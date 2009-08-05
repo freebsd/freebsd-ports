@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
@@ -23,13 +22,17 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui network moc_build qmake_build rcc_build uic_build
+QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
+QMAKE_ARGS=	PREFIX=${PREFIX} ICONDIR=${PREFIX}/share/pixmaps \
+		DESKTOPDIR=${DESKTOPDIR} -unix
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	XDVI "view dvi with xdvi" On \
 		GV "view ps with gv" On \
 		XPDF "view pdf with xpdf" On
+
+STRIP_FILES=	bin/texmaker
 
 .include <bsd.port.pre.mk>
 
@@ -45,12 +48,15 @@ RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,^\(utilities.path =\).*,\1 ${DATADIR},' \
-		${WRKSRC}/texmaker.pro
-
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} texmaker.pro
+		${QMAKE} ${QMAKE_ARGS} texmaker.pro
+
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|'
+
+post-install:
+	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 
 .include <bsd.port.post.mk>
