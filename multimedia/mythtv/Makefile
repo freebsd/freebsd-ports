@@ -24,13 +24,13 @@ RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin \
 		wget:${PORTSDIR}/ftp/wget
 
-ONLY_FOR_ARCHS= i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_MYSQL=	51
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-LOCALE_CLEANUP= LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
+LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
 		LC_TIME=""
 CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
@@ -80,6 +80,10 @@ LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
 .if defined(WITH_MYSQL_LOCAL)
 RUN_DEPENDS+=	mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 .endif
+
+post-patch:
+		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+			${WRKSRC}/configure
 
 post-extract:
 		@${ECHO_CMD} export QMAKESPEC=${QMAKESPEC}
