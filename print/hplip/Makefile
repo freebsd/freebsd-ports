@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2 \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters
 
-CONFLICTS=	hpijs-*
+CONFLICTS=	hpijs-[0-9]* hplip-[3-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
