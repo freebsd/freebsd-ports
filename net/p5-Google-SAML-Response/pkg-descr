@@ -1,0 +1,18 @@
+Google::SAML::Response can be used to generate a signed XML document
+that is needed for logging your users into Google using SSO.
+
+You have some sort of web application that can identify and
+authenticate users. You want users to be able to use some sort of
+Google service such as Google mail.
+
+When using SSO with your Google partner account, your users will send
+a request to a Google URL. If the user isn't already logged in to
+Google, Google will redirect him to a URL that you can define. Behind
+this URL, you need to have a script that authenticates users in your
+original framework and generates a SAML response for Google that you
+send back to the user whose browser will then submit it back to
+Google. If everything works, users will then be logged into their
+Google account and they don't even have to know their usernames or
+passwords.
+
+WWW:	http://search.cpan.org/dist/Google-SAML-Response/
