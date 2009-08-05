@@ -6,7 +6,7 @@
 
 PORTNAME=	phonon
 PORTVERSION=	4.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/4.2.1/src
@@ -16,8 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Phonon xine backend
 
-LIB_DEPENDS=	phonon.4:${PORTSDIR}/multimedia/phonon \
-		xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 CONFLICTS=	phonon-4.3.0*
 
@@ -25,7 +24,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	kdehier automoc4 kdeprefix
 USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus xml \
+QT_COMPONENTS=	gui dbus xml phonon \
 		qmake_build moc_build rcc_build uic_build
 
 post-patch:
