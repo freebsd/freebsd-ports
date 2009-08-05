@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ class library for writing CGI applications
 
 USE_AUTOTOOLS=	libtool:22
