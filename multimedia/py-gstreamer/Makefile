@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.15
-PORTREVISION=	1
+PORTVERSION=	0.10.16
 CATEGORIES=	multimedia python gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,8 +31,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DLFCN|dl|g' ${WRKSRC}/gst/__init__.py
-.for d in audio-controller.py decodebin.py pipeline-tester mixer.py vumeter.py
-	@${REINPLACE_CMD} -e 's|alsasink|osssink|g' -e 's|alsasrc|osssink|g' \
+	@${REINPLACE_CMD} -e 's|alsasink|osssink|g' -e 's|alsasrc|osssrc|g' \
+		${WRKSRC}/gst/extend/jukebox.py \
+		${WRKSRC}/common/m4/gst-default.m4
+.for d in audio-controller.py decodebin.py mixer.py vumeter.py
+	@${REINPLACE_CMD} -e 's|alsasink|osssink|g' -e 's|alsasrc|osssrc|g' \
 		${WRKSRC}/examples/${d}
 .endfor
 
