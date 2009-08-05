@@ -2454,6 +2454,7 @@
     SUBDIR += py-qt4-test
     SUBDIR += py-rbtree
     SUBDIR += py-repl
+    SUBDIR += py-repoze.who
     SUBDIR += py-resourcepackage
     SUBDIR += py-reverse
     SUBDIR += py-rlcompleter2
