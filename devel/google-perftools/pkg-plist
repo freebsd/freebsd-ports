@@ -2,10 +2,12 @@ bin/pprof
 include/google/heap-checker.h
 include/google/heap-profiler.h
 include/google/malloc_extension.h
+include/google/malloc_extension_c.h
 include/google/malloc_hook.h
+include/google/malloc_hook_c.h
 include/google/profiler.h
 include/google/stacktrace.h
-include/google/malloc_hook_c.h
+include/google/tcmalloc.h
 lib/libprofiler.a
 lib/libprofiler.la
 lib/libprofiler.so
@@ -14,6 +16,10 @@ lib/libtcmalloc.a
 lib/libtcmalloc.la
 lib/libtcmalloc.so
 lib/libtcmalloc.so.0
+lib/libtcmalloc_and_profiler.a
+lib/libtcmalloc_and_profiler.la
+lib/libtcmalloc_and_profiler.so
+lib/libtcmalloc_and_profiler.so.0
 lib/libtcmalloc_minimal.a
 lib/libtcmalloc_minimal.la
 lib/libtcmalloc_minimal.so
@@ -30,7 +36,6 @@ lib/libtcmalloc_minimal.so.0
 %%PORTDOCS%%%%DOCSDIR%%/cpuprofile.html
 %%PORTDOCS%%%%DOCSDIR%%/designstyle.css
 %%PORTDOCS%%%%DOCSDIR%%/heap-example1.png
-%%PORTDOCS%%%%DOCSDIR%%/heap_checker.html
 %%PORTDOCS%%%%DOCSDIR%%/heapprofile.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/overview.dot

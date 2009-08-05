@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-perftools
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
@@ -29,7 +29,7 @@ post-patch:
 
 post-build:
 	@${ECHO}
-	@${ECHO} "Be aware that 1 (heap-checker-death_unittest) out of 23 self tests is known to fail."
+	@${ECHO} "Be aware that 3 (sampling_test.sh,profiledata_unittest,profiler_unittest.sh) out of 29 self tests is known to fail."
 	@${ECHO} "Run 'make check' and try to fix that. Thanks!"
 	@${ECHO} "Be aware that another self test (profiler_unittest) can randomly fail on the loaded system."
 	@${ECHO}
