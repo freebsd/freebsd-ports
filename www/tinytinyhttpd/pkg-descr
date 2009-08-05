@@ -1,0 +1,15 @@
+tinytinyhttpd is a very lightweight HTTP server written in C.
+It supports multi threads, customization, directory listing and CGI.
+It is confirmed to run the following software under tinytinyhttpd
+with no hassle:
+
+* MTOS(Movable Type Open Source) (perl)
+* WordPress (php)
+* blogn Plus (php)
+* tDiary (ruby)
+* PukiWiki (php)
+* NucreusCMS (php)
+* blosxom (perl)
+
+AUTHOR: mattn the ossan
+WWW: http://github.com/mattn/tinytinyhttpd/tree/master
