@@ -29,10 +29,9 @@ OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
 		KDETOYS "Miscellaneous small applications" on \
 		KDEUTILS "Utilities like kcalc, kcharselect, etc" on \
 		KDEWEBDEV "Website development environment" on \
-		XINE "Xine backend for Phonon (recommended)" on \
-		GSTREAMER "Gstreamer backend for Phonon" off
+		XINE "Xine backend for Phonon" on
 
-USE_KDE4=	kdelibs kdebase pimlibs workspace kdeprefix runtime
+USE_KDE4=	kdelibs kdebase pimlibs workspace kdeprefix runtime oxygen
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
@@ -81,9 +80,6 @@ RUN_DEPENDS+=	kdewebdev>=4:${PORTSDIR}/www/kdewebdev4
 .endif
 .if !defined(WITHOUT_XINE)
 RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_xine.so:${PORTSDIR}/multimedia/phonon-xine
-.endif
-.if defined(WITH_GSTREAMER)
-RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_gstreamer.so:${PORTSDIR}/multimedia/phonon-gstreamer
 .endif
 
 do-install:
