@@ -1478,6 +1478,7 @@
     SUBDIR += tinymce
     SUBDIR += tinymce3
     SUBDIR += tinyproxy
+    SUBDIR += tinytinyhttpd
     SUBDIR += tomcat-native
     SUBDIR += tomcat41
     SUBDIR += tomcat55
