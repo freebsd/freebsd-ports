@@ -2,13 +2,13 @@ mysqlbackup: create MySQL-database servers backup easy
 
 Why mysqlbackup?
 
-1. Required minimum coding to create everyday MySQL-backups with some
+1. Requires minimum coding to create everyday MySQL-backups with some
 additional functions.
 
 2. Backups can be compressed on-the-fly and automatically rotated after
 specified number of a days past.
 
-3. It is includes basic database maintenance: check, optimize tables before
+3. Includes basic database maintenance: check, optimize tables before
 backup creation.
 
 4. It can be safely used on a large MySQL installations (1000+ databases).
