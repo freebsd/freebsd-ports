@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MooseX/MultiInitArg/Attribute.pm
+%%SITE_PERL%%/MooseX/MultiInitArg/Trait.pm
+%%SITE_PERL%%/MooseX/MultiInitArg.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MultiInitArg/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MultiInitArg
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/MultiInitArg
+@dirrmtry %%SITE_PERL%%/MooseX
