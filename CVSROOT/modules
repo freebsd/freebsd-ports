@@ -3409,6 +3409,7 @@ fluxcms                         ports/www/fluxcms
 fluxconf                        ports/x11-wm/fluxconf
 fluxter                         ports/x11-wm/fluxter
 flv2mpeg4                       ports/multimedia/flv2mpeg4
+flvmeta                         ports/multimedia/flvmeta
 flvtool++                       ports/multimedia/flvtool++
 flvw                            ports/x11-toolkits/flvw
 flwm                            ports/x11-wm/flwm
@@ -8121,6 +8122,7 @@ linux-sun-jdk16                 ports/java/linux-sun-jdk16
 linux-sun-jre15                 ports/java/linux-sun-jre15
 linux-sun-jre16                 ports/java/linux-sun-jre16
 linux-sunbird                   ports/deskutils/linux-sunbird
+linux-systemsimcell             ports/emulators/linux-systemsimcell
 linux-thunderbird               ports/mail/linux-thunderbird
 linux-tiff                      ports/graphics/linux-tiff
 linux-ucl                       ports/archivers/linux-ucl
@@ -10223,6 +10225,7 @@ p5-Astro-SpaceTrack             ports/astro/p5-Astro-SpaceTrack
 p5-Astro-SunTime                ports/astro/p5-Astro-SunTime
 p5-Astro-Sunrise                ports/astro/p5-Astro-Sunrise
 p5-Astro-satpass                ports/astro/p5-Astro-satpass
+p5-Async-MergePoint             ports/devel/p5-Async-MergePoint
 p5-AtExit                       ports/devel/p5-AtExit
 p5-Attribute-Handlers           ports/devel/p5-Attribute-Handlers
 p5-Attribute-Handlers-Prospective  ports/devel/p5-Attribute-Handlers-Prospective
@@ -10287,6 +10290,7 @@ p5-B-Generate                   ports/devel/p5-B-Generate
 p5-B-Graph                      ports/devel/p5-B-Graph
 p5-B-Hooks-EndOfScope           ports/devel/p5-B-Hooks-EndOfScope
 p5-B-Hooks-OP-Check             ports/devel/p5-B-Hooks-OP-Check
+p5-B-Hooks-OP-PPAddr            ports/devel/p5-B-Hooks-OP-PPAddr
 p5-B-Hooks-Parser               ports/devel/p5-B-Hooks-Parser
 p5-B-Keywords                   ports/devel/p5-B-Keywords
 p5-B-LexInfo                    ports/www/p5-B-LexInfo
@@ -12344,6 +12348,7 @@ p5-Net-Traceroute               ports/net/p5-Net-Traceroute
 p5-Net-Traceroute6              ports/net/p5-Net-Traceroute6
 p5-Net-Trackback                ports/net/p5-Net-Trackback
 p5-Net-Twitter                  ports/net/p5-Net-Twitter
+p5-Net-Twitter-Lite             ports/net/p5-Net-Twitter-Lite
 p5-Net-VNC                      ports/net/p5-Net-VNC
 p5-Net-Wake                     ports/net/p5-Net-Wake
 p5-Net-Whois                    ports/net/p5-Net-Whois
@@ -13711,6 +13716,7 @@ p5-astro-simbad-client          ports/astro/p5-Astro-SIMBAD-Client
 p5-astro-spacetrack             ports/astro/p5-Astro-SpaceTrack
 p5-astro-sunrise                ports/astro/p5-Astro-Sunrise
 p5-astro-suntime                ports/astro/p5-Astro-SunTime
+p5-async-mergepoint             ports/devel/p5-Async-MergePoint
 p5-atexit                       ports/devel/p5-AtExit
 p5-attribute-handlers           ports/devel/p5-Attribute-Handlers
 p5-attribute-handlers-prospective  ports/devel/p5-Attribute-Handlers-Prospective
@@ -13776,6 +13782,7 @@ p5-b-generate                   ports/devel/p5-B-Generate
 p5-b-graph                      ports/devel/p5-B-Graph
 p5-b-hooks-endofscope           ports/devel/p5-B-Hooks-EndOfScope
 p5-b-hooks-op-check             ports/devel/p5-B-Hooks-OP-Check
+p5-b-hooks-op-ppaddr            ports/devel/p5-B-Hooks-OP-PPAddr
 p5-b-hooks-parser               ports/devel/p5-B-Hooks-Parser
 p5-b-keywords                   ports/devel/p5-B-Keywords
 p5-b-lexinfo                    ports/www/p5-B-LexInfo
@@ -15872,6 +15879,7 @@ p5-net-traceroute               ports/net/p5-Net-Traceroute
 p5-net-traceroute6              ports/net/p5-Net-Traceroute6
 p5-net-trackback                ports/net/p5-Net-Trackback
 p5-net-twitter                  ports/net/p5-Net-Twitter
+p5-net-twitter-lite             ports/net/p5-Net-Twitter-Lite
 p5-net-vcard                    ports/misc/p5-Net-vCard
 p5-net-vnc                      ports/net/p5-Net-VNC
 p5-net-wake                     ports/net/p5-Net-Wake
@@ -16289,6 +16297,7 @@ p5-shell-perl                   ports/shells/p5-Shell-Perl
 p5-shell-source                 ports/devel/p5-Shell-Source
 p5-shipit                       ports/devel/p5-ShipIt
 p5-shout                        ports/audio/p5-Shout
+p5-signatures                   ports/lang/p5-signatures
 p5-sledge                       ports/www/p5-Sledge
 p5-sledge-plugin-cachecontent   ports/www/p5-Sledge-Plugin-CacheContent
 p5-sledge-plugin-download       ports/www/p5-Sledge-Plugin-Download
