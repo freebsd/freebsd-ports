@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.23
+PORTVERSION=	0.10.24
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		GNOME
@@ -18,7 +18,7 @@ COMMENT=	Development framework for creating media applications
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-CFLAGS:=	${CFLAGS} -O2
+CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USE_BISON=	build
 USE_XORG=	x11 xv xext videoproto xextproto
 USE_BZIP2=	yes
@@ -29,7 +29,6 @@ USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
-		--disable-docs-build \
 		--disable-failing-tests \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
