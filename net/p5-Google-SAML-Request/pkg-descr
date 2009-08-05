@@ -1,0 +1,7 @@
+Google::SAML::Request will parse (and, for the sake of completeness,
+create) SAML requests as used by Google. Please note that
+Google::SAML::Request is by no means a full implementation of the SAML
+2.0 standard. But if you want to talk to Google to authenticate users,
+you should be fine.
+
+WWW:	http://search.cpan.org/dist/Google-SAML-Request/

@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML/Request/.packlist
+%%SITE_PERL%%/Google/SAML/Request.pm
+@dirrmtry %%SITE_PERL%%/Google/SAML
+@dirrmtry %%SITE_PERL%%/Google
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML/Request
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google
