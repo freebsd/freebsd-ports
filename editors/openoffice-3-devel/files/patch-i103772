@@ -1,0 +1,49 @@
+Index: makefile.mk
+===================================================================
+--- moz/makefile.mk	(revision 274452)
++++ moz/makefile.mk	(working copy)
+@@ -57,11 +57,13 @@
+ .EXPORT : DISABLE_MOZ_EXECUTABLE
+ 
+ .IF "$(SYSBASE)"!="" && "$(OS)" == "LINUX"
+-# hmm... rather gcc specific switches...
++## hmm... rather gcc specific switches...
+ CFLAGS:=-isystem $(SYSBASE)/usr/include -B$(SYSBASE)/usr/lib
+-LDFLAGS:=-L$(SYSBASE)/lib -L$(SYSBASE)/usr/lib -L$(SYSBASE)/usr/X11R6/lib
++LDFLAGS:= -Wl,--unresolved-symbols=ignore-in-shared-libs -L$(SYSBASE)/lib -L$(SYSBASE)/usr/lib -L$(SYSBASE)/usr/X11R6/lib
+ SYSBASE_X11:=--x-includes=$(SYSBASE)/usr/include/X11 --x-libraries=$(SYSBASE)/usr/X11R6/lib
+-.EXPORT : CFLAGS LDFLAGS
++MOZ_ENABLE_COREXFONTS=1
++MOZILLA_CONFIGURE_FLAGS +=--disable-xft
++.EXPORT : CFLAGS LDFLAGS MOZ_ENABLE_COREXFONTS
+ .ENDIF			# "$(SYSBASE)"!="" && "$(OS)" == "LINUX"
+ 
+ .IF "$(SYSBASE)"!="" && "$(OS)" == "MACOSX"
+@@ -124,7 +126,6 @@
+ 				--disable-boehm \
+ 				--disable-jsloader \
+ 				--disable-canvas \
+-				--disable-xft \
+ 				--disable-freetype2 \
+ 				--disable-gnomeui \
+ 				--disable-image-encoders \
+Index: seamonkey-source-1.1.14.patch
+===================================================================
+--- moz/seamonkey-source-1.1.14.patch	(revision 274452)
++++ moz/seamonkey-source-1.1.14.patch	(working copy)
+@@ -328,15 +328,6 @@
+  *)
+  	echo $ac_n "checking for gethostbyname_r in -lc_r""... $ac_c" 1>&6
+  echo "configure:8620: checking for gethostbyname_r in -lc_r" >&5
+-@@ -12259,7 +12283,7 @@
+- gtk2)
+-     MOZ_ENABLE_GTK2=1
+-     MOZ_ENABLE_XREMOTE=1
+--    MOZ_ENABLE_COREXFONTS=${MOZ_ENABLE_COREXFONTS-}
+-+    MOZ_ENABLE_COREXFONTS=${MOZ_ENABLE_COREXFONTS-1}
+-     TK_CFLAGS='$(MOZ_GTK2_CFLAGS)'
+-     TK_LIBS='$(MOZ_GTK2_LIBS)'
+-     cat >> confdefs.h <<\EOF
+ @@ -19233,7 +19257,8 @@
+             MOZ_CAIRO_LIBS="-lmozcairo -lmozlibpixman $CAIRO_FT_LIBS"
+  
