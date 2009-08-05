@@ -1,0 +1,6 @@
+This module creates a layer on top of DOM that allows you to program
+in a "push" style rather than "pull". Once the document has been parsed
+and you have a DOM object, you can call on the DOMHandler's traverse()
+method to apply a set of call-back routines to all the nodes in a tree.
+
+WWW: http://search.cpan.org/dist/XML-DOMHandler-1.0/

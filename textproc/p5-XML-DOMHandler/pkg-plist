@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOMHandler/.packlist
+%%SITE_PERL%%/XML/DOMHandler.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOMHandler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML
