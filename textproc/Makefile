@@ -731,6 +731,7 @@
     SUBDIR += p5-XML-DOM-Lite
     SUBDIR += p5-XML-DOM-XPath
     SUBDIR += p5-XML-DOM2
+    SUBDIR += p5-XML-DOMHandler
     SUBDIR += p5-XML-DT
     SUBDIR += p5-XML-DTDParser
     SUBDIR += p5-XML-DifferenceMarkup
