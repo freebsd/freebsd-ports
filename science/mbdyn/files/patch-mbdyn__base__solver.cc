@@ -1,20 +1,20 @@
---- mbdyn/base/solver.cc.orig	Thu Feb 10 14:49:22 2005
-+++ mbdyn/base/solver.cc	Sat Feb 12 17:14:57 2005
-@@ -95,10 +95,17 @@
+--- mbdyn/base/solver.cc.orig	2009-06-24 23:13:44.000000000 +0900
++++ mbdyn/base/solver.cc	2009-08-05 11:32:29.000000000 +0900
+@@ -109,10 +109,17 @@
+ };
  
- #ifdef HAVE_SIGNAL
- static volatile sig_atomic_t mbdyn_keep_going = 1;
+ volatile sig_atomic_t mbdyn_keep_going = MBDYN_KEEP_GOING;
 +#if defined(__FreeBSD__)
-+static __sighandler_t *mbdyn_sh_term = SIG_DFL;
-+static __sighandler_t *mbdyn_sh_int = SIG_DFL;
-+static __sighandler_t *mbdyn_sh_hup = SIG_DFL;
-+static __sighandler_t *mbdyn_sh_pipe = SIG_DFL;
++__sighandler_t *mbdyn_sh_term = SIG_DFL;
++__sighandler_t *mbdyn_sh_int = SIG_DFL;
++__sighandler_t *mbdyn_sh_hup = SIG_DFL;
++__sighandler_t *mbdyn_sh_pipe = SIG_DFL;
 +#else
- static __sighandler_t mbdyn_sh_term = SIG_DFL;
- static __sighandler_t mbdyn_sh_int = SIG_DFL;
- static __sighandler_t mbdyn_sh_hup = SIG_DFL;
- static __sighandler_t mbdyn_sh_pipe = SIG_DFL;
+ __sighandler_t mbdyn_sh_term = SIG_DFL;
+ __sighandler_t mbdyn_sh_int = SIG_DFL;
+ __sighandler_t mbdyn_sh_hup = SIG_DFL;
+ __sighandler_t mbdyn_sh_pipe = SIG_DFL;
 +#endif
  
- static void
- really_exit_handler(int signum)
+ extern "C" void
+ mbdyn_really_exit_handler(int signum)

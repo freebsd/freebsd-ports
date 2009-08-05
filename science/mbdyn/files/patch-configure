@@ -1,0 +1,22 @@
+--- configure.in	2009-08-05 12:29:39.000000000 +0900
++++ configure.in	2009-08-05 12:29:50.000000000 +0900
+@@ -765,7 +765,7 @@
+ dnl Add fortran lib
+ dnl
+ case `basename "$F77"` in
+-gfortran)
++gfortran*)
+ 	F2C_LIBS="$F2C_LIBS -lgfortran"
+ 	;;
+ *)
+--- configure~	2009-06-24 20:45:44.000000000 +0900
++++ configure	2009-08-05 12:29:56.000000000 +0900
+@@ -27344,7 +27344,7 @@
+ fi
+ 
+ case `basename "$F77"` in
+-gfortran)
++gfortran*)
+ 	F2C_LIBS="$F2C_LIBS -lgfortran"
+ 	;;
+ *)
