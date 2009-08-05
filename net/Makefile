@@ -475,6 +475,7 @@
     SUBDIR += p5-Geo-IP
     SUBDIR += p5-Geo-IP-PurePerl
     SUBDIR += p5-Geo-IPfree
+    SUBDIR += p5-Google-SAML-Request
     SUBDIR += p5-Google-SAML-Response
     SUBDIR += p5-Gopher-Server
     SUBDIR += p5-IO-INET6
