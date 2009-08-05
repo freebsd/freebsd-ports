@@ -6,19 +6,18 @@
 #
 
 PORTNAME=		markdown
-PORTVERSION=		1.7
+PORTVERSION=		2.0.1
 CATEGORIES=		textproc python
 MASTER_SITES=		CHEESESHOP
-MASTER_SITE_SUBDIR=	source/M/Markdown
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+DISTNAME=		Markdown-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		wenheping@gmail.com
 COMMENT=		Text markup to HTML conversion engine for Python
 
-USE_ZIP=		yes
 USE_PYTHON=		2.4+
 USE_PYDISTUTILS=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PYDISTUTILS_PKGNAME=	Markdown
 
 .include <bsd.port.mk>
