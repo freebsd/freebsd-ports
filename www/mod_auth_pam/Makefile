@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/ \
 		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication
 
 MAKE_JOBS_SAFE=  yes

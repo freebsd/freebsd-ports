@@ -12,7 +12,7 @@ CATEGORIES=	www audio
 MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/ \
 		http://depot.fsck.ch/mirror/distfiles/
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	apache@fsck.ch
 COMMENT=	Apache module that allows downloading and streaming of audio
 
 OPTIONS=	NLS "Native language support" on \
