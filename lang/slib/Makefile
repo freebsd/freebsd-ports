@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	slib
-PORTVERSION=	3a4
-PORTREVISION=	1
+PORTVERSION=	3b1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 DISTFILES=	slib2d6${EXTRACT_SUFX} \
-		slib${PORTVERSION}${EXTRACT_SUFX}
+		slib-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable scheme library
@@ -26,7 +25,6 @@ post-extract:
 	@${RM} ${WRKSRC}/formatst.scm ${WRKSRC}/report.scm
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/;;(format/(format/' ${WRKSRC}/mklibcat.scm
 	@${REINPLACE_CMD} -e 's|/usr/lib/slib|${PREFIX}/share/slib|' ${WRKSRC}/guile.init
 
 do-install:
