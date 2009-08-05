@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	Net_Dict
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	net www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	PEAR interface to the DICT protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
 		${PEARDIR}/Cache.php:${PORTSDIR}/sysutils/pear-Cache
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Net
-FILES=		Dict.php
+FILES=		Net/Dict.php
 DOCS=		dict.php
 
 .include <bsd.port.pre.mk>
