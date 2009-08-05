@@ -839,6 +839,7 @@
     SUBDIR += menhir
     SUBDIR += mercator
     SUBDIR += mercurial
+    SUBDIR += mercurialeclipse
     SUBDIR += meta-cvs
     SUBDIR += mico
     SUBDIR += mime
