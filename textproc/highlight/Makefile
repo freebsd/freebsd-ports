@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
