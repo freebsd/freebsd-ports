@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mbdyn
-PORTVERSION=	1.2.7
-PORTREVISION=	2
+PORTVERSION=	1.3.9
 CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
@@ -16,22 +15,16 @@ COMMENT=	A MultiBody Dynamics analysis system
 
 LIB_DEPENDS=	umfpack:${PORTSDIR}/math/suitesparse
 
-BROKEN=		fails to build with GCC 4.3 as needed for Fortran
-
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=	--program-prefix='' --with-umfpack=yes
-CPPFLAGS+=	-I${LOCALBASE}/include/suitesparse ${PTHREAD_CFLAGS}
-LDFLAGS+=	-lm -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_FORTRAN=	yes
-FORTRANLIBS=	-lgfortranbegin -lgfortran
-GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
-
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_ARGS+=	AUTOMAKE="${TRUE}"
-
 MAN1=		mbdyn.1
+CPPFLAGS+=	-I${LOCALBASE}/include/suitesparse
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib/${CC} -L${LOCALBASE}/lib" \
+		CPPFLAGS="${CPPFLAGS}"
+CONFIGURE_ARGS+=	--program-prefix=''
+
+LIB_DEPENDS+=	arpack:${PORTSDIR}/math/arpack
 
 OPTIONS=	MPI "Enable mpich-support" off \
 		METIS "Enable metis-support" off \
@@ -41,23 +34,22 @@ OPTIONS=	MPI "Enable mpich-support" off \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-CONFIGURE_ARGS+=	--with-blas=atlas
-.else
+USE_BLAS?=	reference
+
+. if ${USE_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 CONFIGURE_ARGS+=	--with-blas=blas
+.elif ${USE_BLAS} == gotoblas
+LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
+CONFIGURE_ARGS+=	--with-blas=goto
+.elif ${USE_BLAS} == atlas
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+CONFIGURE_ARGS+=        --with-blas=atlas
 .endif
-
-pre-configure:
-	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/configure.in
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 
 .if defined(WITH_MPI)
-BUILD_DEPENDS+=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
+LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=	--with-mpi=pmpi
 CPPFLAGS+=	-I${LOCALBASE}/mpich/include -I${LOCALBASE}/mpich/include/mpi2c++
 LDFLAGS+=	-L${LOCALBASE}/mpich/lib
@@ -66,7 +58,7 @@ CONFIGURE_ARGS+=	--with-mpi=no
 .endif
 
 .if defined(WITH_METIS)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
+LIB_DEPENDS+=	metis:${PORTSDIR}/math/metis
 CONFIGURE_ARGS+=	--with-metis=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
 .else
@@ -81,8 +73,8 @@ CONFIGURE_ARGS+=	--with-chaco=no
 .endif
 
 .if defined(WITH_GINAC)
-IGNORE=		you enabled GiNaC-support, which is not implemented yet
-#BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
+LIB_DEPENDS+=	metis:${PORTSDIR}/math/metis
+LIB_DEPENDS+=	ginac:${PORTSDIR}/math/GiNaC
 CONFIGURE_ARGS+=	--with-ginac=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
 .else
@@ -96,10 +88,6 @@ CONFIGURE_ARGS+=	--with-tcl=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 .else
 CONFIGURE_ARGS+=	--with-tcl=no
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
 .endif
 
 .include <bsd.port.post.mk>

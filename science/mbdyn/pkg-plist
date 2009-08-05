@@ -1,5 +1,7 @@
-bin/mbdyn
-bin/2vec2phi
+bin/ann_in
+bin/ann_sf
+bin/ann_sim
+bin/ann_tr
 bin/autopilot
 bin/c81merge
 bin/c81test
@@ -8,11 +10,12 @@ bin/crypt
 bin/dae-intg
 bin/deriv
 bin/env
+bin/eu2phi
 bin/eu2rot
 bin/femgen
 bin/intg
-bin/logproc
-bin/mbplot
+bin/mbdyn
+bin/mbdyn2easyanim.sh
 bin/posrel
 bin/rot2eu
 bin/rot2eup
@@ -21,16 +24,16 @@ bin/rotrel
 bin/sockdrive
 bin/socket2stream
 bin/stream2socket
+bin/trim
 bin/vec2rot
-lib/libmbutil.la
-lib/libmbutil.a
-lib/libmbmath.la
-lib/libmbmath.a
-lib/liby12.la
-lib/liby12.a
-lib/libcolamd_mbdyn.la
-lib/libcolamd_mbdyn.a
-lib/libnaive.la
-lib/libnaive.a
-lib/libmbwrap.la
-lib/libmbwrap.a
+share/Aster/cms.py
+share/awk/abs2rel.awk
+share/awk/mbdyn2easyanim.awk
+share/awk/mbdyn2pod.awk
+share/awk/periodize.awk
+share/c81/naca0012.c81
+share/octave/pod.m
+@dirrm share/octave
+@dirrm share/c81
+@dirrm share/awk
+@dirrm share/Aster
