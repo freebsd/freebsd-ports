@@ -8,6 +8,6 @@ mod_extract_forwarded can be dangerous for host based access control because
 X-Forwarded-For is easily spoofed. Because of this you can configure which
 proxies you trust or don't trust.
 
-WWW: http://web.warhound.org/mod_extract_forwarded/
+WWW: http://www.openinfo.co.uk/apache/
 
 - Anders Nordby <anders@fix.no>
