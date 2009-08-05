@@ -1,11 +1,11 @@
---- ../ksysguard/gui/SystemLoad.sgrd.orig	2009-02-03 20:22:46.000000000 +0100
-+++ ../ksysguard/gui/SystemLoad.sgrd	2009-02-03 20:22:58.000000000 +0100
+--- ../ksysguard/gui/SystemLoad2.sgrd.orig	2009-06-09 18:07:55.000000000 +0200
++++ ../ksysguard/gui/SystemLoad2.sgrd	2009-07-03 09:35:29.000000000 +0200
 @@ -3,7 +3,7 @@
  <WorkSheet title="System Load" interval="0.5" locked="1" rows="3" columns="1" >
   <host port="-1" command="ksysguardd" shell="" name="localhost" />
-  <display title="CPU History" svgBackground="widgets/plot-background" autoRange="0" class="FancyPlotter" column="0" row="0" vLines="0" vScroll="0" >
+  <display title="CPU History" svgBackground="widgets/plot-background" autoRange="0" class="FancyPlotter" column="0" row="0" version="1">
 -  <beam sensorType="float" hostName="localhost" regexpSensorName="cpu/cpu.*/TotalLoad" color="0xffff8000,0xffe20800" />
 +  <beam sensorType="float" hostName="localhost" regexpSensorName="cpu/.*/TotalLoad" color="0xffff8000,0xffe20800" />
   </display>
-  <display title="Memory and Swap History" svgBackground="widgets/plot-background" autoRange="0" class="FancyPlotter" column="0" row="1" vLines="0" vScroll="0" >
+  <display title="Memory and Swap History" svgBackground="widgets/plot-background" autoRange="0" class="FancyPlotter" column="0" row="1" version="1" >
    <beam summationName="Memory" sensorName="mem/physical/application" sensorType="integer" hostName="localhost" color="0xffc000c0" />
