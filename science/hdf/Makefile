@@ -28,6 +28,7 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 CONFLICTS=	netcdf-*
 
 USE_FORTRAN=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
