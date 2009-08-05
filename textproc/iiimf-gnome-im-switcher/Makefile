@@ -16,6 +16,8 @@ DISTNAME=	iiimf-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IIIMF gnome input method switcher
 
+BROKEN=		It removes a few files in /usr/local/* during the configure. Therefore, it is not safe
+
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
