@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	Event_Dispatcher
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR dispatch notifications using PHP callbacks
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Event
-FILES=		Dispatcher.php Notification.php
+FILES=		Event/Dispatcher.php Event/Notification.php
 EXAMPLES=	bubbling.php cancel.php debugging.php notification-class.php \
 		object.php
-TESTS=		Console_TestListener.php Dispatcher_testcase.php test.php
+TESTS=		AllTests.php DispatcherTest.php
 
 post-extract:
 .for file in ${FILES}
