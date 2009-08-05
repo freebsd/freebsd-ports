@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdc1394
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -17,7 +17,11 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
-MAN1=		dc1394_reset_bus.1 \
-		dc1394_vloopback.1
+MAN1=		dc1394_multiview.1 \
+		dc1394_reset_bus.1 \
+		dc1394_vloopback.1 \
+		grab_color_image.1 \
+		grab_gray_image.1 \
+		grab_partial_image.1
 
 .include <bsd.port.mk>
