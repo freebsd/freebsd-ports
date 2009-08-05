@@ -22,6 +22,7 @@ include/gstreamer-%%VERSION%%/gst/base/gstpushsrc.h
 include/gstreamer-%%VERSION%%/gst/base/gsttypefindhelper.h
 %%CHECK%%include/gstreamer-%%VERSION%%/gst/check/gstbufferstraw.h
 %%CHECK%%include/gstreamer-%%VERSION%%/gst/check/gstcheck.h
+%%CHECK%%include/gstreamer-%%VERSION%%/gst/check/gstconsistencychecker.h
 include/gstreamer-%%VERSION%%/gst/controller/gstcontroller.h
 include/gstreamer-%%VERSION%%/gst/controller/gstcontrolsource.h
 include/gstreamer-%%VERSION%%/gst/controller/gstinterpolationcontrolsource.h
@@ -31,6 +32,7 @@ include/gstreamer-%%VERSION%%/gst/glib-compat.h
 include/gstreamer-%%VERSION%%/gst/gst.h
 include/gstreamer-%%VERSION%%/gst/gstbin.h
 include/gstreamer-%%VERSION%%/gst/gstbuffer.h
+include/gstreamer-%%VERSION%%/gst/gstbufferlist.h
 include/gstreamer-%%VERSION%%/gst/gstbus.h
 include/gstreamer-%%VERSION%%/gst/gstcaps.h
 include/gstreamer-%%VERSION%%/gst/gstchildproxy.h
@@ -73,6 +75,7 @@ include/gstreamer-%%VERSION%%/gst/gstsystemclock.h
 include/gstreamer-%%VERSION%%/gst/gsttaglist.h
 include/gstreamer-%%VERSION%%/gst/gsttagsetter.h
 include/gstreamer-%%VERSION%%/gst/gsttask.h
+include/gstreamer-%%VERSION%%/gst/gsttaskpool.h
 include/gstreamer-%%VERSION%%/gst/gsttrace.h
 include/gstreamer-%%VERSION%%/gst/gsttypefind.h
 include/gstreamer-%%VERSION%%/gst/gsttypefindfactory.h
