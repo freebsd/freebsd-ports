@@ -318,6 +318,7 @@
     SUBDIR += jetty
     SUBDIR += joomla
     SUBDIR += joomla15
+    SUBDIR += jspacker
     SUBDIR += jspwiki
     SUBDIR += jtoolkit
     SUBDIR += junkbuster

@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/jspacker
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SamplePacked.htm
+%%DATADIR%%/Pack.pm
+%%DATADIR%%/ParseMaster.pm
+%%DATADIR%%/jsPacker.pl
+@dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+%%PERL5%% -I%%DATADIR%% %%DATADIR%%/%%JSPACKER%% $@
