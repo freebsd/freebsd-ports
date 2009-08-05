@@ -1126,6 +1126,10 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar/FeedEntryViewer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar/FeedViewerEntry.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ca/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ca/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ca/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ca/PeopleEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs/FeedEntryEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs/FeedEntryViewer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs/FeedViewerEntry.js
@@ -1198,10 +1202,22 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/FeedEntryViewer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/FeedViewerEntry.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sk/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sk/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sk/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sk/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sl/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sl/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sl/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sl/PeopleEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv/FeedEntryEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv/FeedEntryViewer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv/FeedViewerEntry.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/th/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/th/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/th/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/th/PeopleEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr/FeedEntryEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr/FeedEntryViewer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr/FeedViewerEntry.js
@@ -1441,6 +1457,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/UploadImage.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ar/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ca/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/da/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/TableDialog.js
@@ -1459,7 +1476,10 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt-pt/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sk/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sl/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sv/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/th/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/tr/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/TableDialog.js
@@ -1476,6 +1496,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/embed/Object.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/embed/Quicktime.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/embed/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/embed/flashVars.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/embed/resources/version.mov
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/LICENSE
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/README
@@ -1562,6 +1583,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/FileInputAuto.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/FilePickerTextBox.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/FilePickerTextBox.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/FileUploader.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/HorizontalRangeSlider.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/PasswordValidator.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/RangeSlider.css
@@ -2118,6 +2140,8 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ar/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ar/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ca/FilePicker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ca/RollingList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ca/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/Wizard.js
@@ -2155,10 +2179,16 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sk/FilePicker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sk/RollingList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sk/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sl/FilePicker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sl/RollingList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sl/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sv/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sv/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/th/FilePicker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/th/RollingList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/th/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/tr/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/tr/Wizard.js
@@ -2489,6 +2519,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/CodeGenerator/Php/Method.php
 %%DATADIR%%/library/Zend/CodeGenerator/Php/Parameter.php
 %%DATADIR%%/library/Zend/CodeGenerator/Php/Property.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Property/DefaultValue.php
 %%DATADIR%%/library/Zend/Config.php
 %%DATADIR%%/library/Zend/Config/Exception.php
 %%DATADIR%%/library/Zend/Config/Ini.php
@@ -2526,6 +2557,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Controller/Plugin/ActionStack.php
 %%DATADIR%%/library/Zend/Controller/Plugin/Broker.php
 %%DATADIR%%/library/Zend/Controller/Plugin/ErrorHandler.php
+%%DATADIR%%/library/Zend/Controller/Plugin/PutHandler.php
 %%DATADIR%%/library/Zend/Controller/Request/Abstract.php
 %%DATADIR%%/library/Zend/Controller/Request/Apache404.php
 %%DATADIR%%/library/Zend/Controller/Request/Exception.php
@@ -2590,6 +2622,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Oci.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Pgsql.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Sqlite.php
+%%DATADIR%%/library/Zend/Db/Adapter/Sqlsrv.php
+%%DATADIR%%/library/Zend/Db/Adapter/Sqlsrv/Exception.php
 %%DATADIR%%/library/Zend/Db/Exception.php
 %%DATADIR%%/library/Zend/Db/Expr.php
 %%DATADIR%%/library/Zend/Db/Profiler.php
@@ -2610,8 +2644,11 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Db/Statement/Pdo.php
 %%DATADIR%%/library/Zend/Db/Statement/Pdo/Ibm.php
 %%DATADIR%%/library/Zend/Db/Statement/Pdo/Oci.php
+%%DATADIR%%/library/Zend/Db/Statement/Sqlsrv.php
+%%DATADIR%%/library/Zend/Db/Statement/Sqlsrv/Exception.php
 %%DATADIR%%/library/Zend/Db/Table.php
 %%DATADIR%%/library/Zend/Db/Table/Abstract.php
+%%DATADIR%%/library/Zend/Db/Table/Definition.php
 %%DATADIR%%/library/Zend/Db/Table/Exception.php
 %%DATADIR%%/library/Zend/Db/Table/Row.php
 %%DATADIR%%/library/Zend/Db/Table/Row/Abstract.php
@@ -2623,6 +2660,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Db/Table/Select/Exception.php
 %%DATADIR%%/library/Zend/Debug.php
 %%DATADIR%%/library/Zend/Dojo.php
+%%DATADIR%%/library/Zend/Dojo/BuildLayer.php
 %%DATADIR%%/library/Zend/Dojo/Data.php
 %%DATADIR%%/library/Zend/Dojo/Exception.php
 %%DATADIR%%/library/Zend/Dojo/Form.php
@@ -2713,6 +2751,30 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Feed/Entry/Atom.php
 %%DATADIR%%/library/Zend/Feed/Entry/Rss.php
 %%DATADIR%%/library/Zend/Feed/Exception.php
+%%DATADIR%%/library/Zend/Feed/Reader.php
+%%DATADIR%%/library/Zend/Feed/Reader/Entry/Atom.php
+%%DATADIR%%/library/Zend/Feed/Reader/Entry/Rss.php
+%%DATADIR%%/library/Zend/Feed/Reader/EntryAbstract.php
+%%DATADIR%%/library/Zend/Feed/Reader/EntryInterface.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/Atom/Entry.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/Atom/Feed.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/Content/Entry.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/CreativeCommons/Entry.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/CreativeCommons/Feed.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/DublinCore/Entry.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/DublinCore/Feed.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/EntryAbstract.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/FeedAbstract.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/Podcast/Entry.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/Podcast/Feed.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/Slash/Entry.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/Syndication/Feed.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/Thread/Entry.php
+%%DATADIR%%/library/Zend/Feed/Reader/Extension/WellFormedWeb/Entry.php
+%%DATADIR%%/library/Zend/Feed/Reader/Feed/Atom.php
+%%DATADIR%%/library/Zend/Feed/Reader/Feed/Rss.php
+%%DATADIR%%/library/Zend/Feed/Reader/FeedAbstract.php
+%%DATADIR%%/library/Zend/Feed/Reader/FeedInterface.php
 %%DATADIR%%/library/Zend/Feed/Rss.php
 %%DATADIR%%/library/Zend/File/Transfer.php
 %%DATADIR%%/library/Zend/File/Transfer/Adapter/Abstract.php
@@ -3198,7 +3260,41 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Layout/Controller/Plugin/Layout.php
 %%DATADIR%%/library/Zend/Layout/Exception.php
 %%DATADIR%%/library/Zend/Ldap.php
+%%DATADIR%%/library/Zend/Ldap/Attribute.php
+%%DATADIR%%/library/Zend/Ldap/Collection.php
+%%DATADIR%%/library/Zend/Ldap/Collection/Iterator/Default.php
+%%DATADIR%%/library/Zend/Ldap/Collection/Iterator/Interface.php
+%%DATADIR%%/library/Zend/Ldap/Converter.php
+%%DATADIR%%/library/Zend/Ldap/Dn.php
 %%DATADIR%%/library/Zend/Ldap/Exception.php
+%%DATADIR%%/library/Zend/Ldap/Filter.php
+%%DATADIR%%/library/Zend/Ldap/Filter/Abstract.php
+%%DATADIR%%/library/Zend/Ldap/Filter/And.php
+%%DATADIR%%/library/Zend/Ldap/Filter/Exception.php
+%%DATADIR%%/library/Zend/Ldap/Filter/Logical.php
+%%DATADIR%%/library/Zend/Ldap/Filter/Mask.php
+%%DATADIR%%/library/Zend/Ldap/Filter/Not.php
+%%DATADIR%%/library/Zend/Ldap/Filter/Or.php
+%%DATADIR%%/library/Zend/Ldap/Filter/String.php
+%%DATADIR%%/library/Zend/Ldap/Ldif/Encoder.php
+%%DATADIR%%/library/Zend/Ldap/Node.php
+%%DATADIR%%/library/Zend/Ldap/Node/Abstract.php
+%%DATADIR%%/library/Zend/Ldap/Node/ChildrenIterator.php
+%%DATADIR%%/library/Zend/Ldap/Node/Collection.php
+%%DATADIR%%/library/Zend/Ldap/Node/RootDse.php
+%%DATADIR%%/library/Zend/Ldap/Node/RootDse/ActiveDirectory.php
+%%DATADIR%%/library/Zend/Ldap/Node/RootDse/OpenLdap.php
+%%DATADIR%%/library/Zend/Ldap/Node/RootDse/eDirectory.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema/ActiveDirectory.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema/AttributeType/ActiveDirectory.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema/AttributeType/Interface.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema/AttributeType/OpenLdap.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema/Item.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema/ObjectClass/ActiveDirectory.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema/ObjectClass/Interface.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema/ObjectClass/OpenLdap.php
+%%DATADIR%%/library/Zend/Ldap/Node/Schema/OpenLdap.php
 %%DATADIR%%/library/Zend/Loader.php
 %%DATADIR%%/library/Zend/Loader/Autoloader.php
 %%DATADIR%%/library/Zend/Loader/Autoloader/Interface.php
@@ -3213,6 +3309,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/aa.xml
 %%DATADIR%%/library/Zend/Locale/Data/aa_DJ.xml
 %%DATADIR%%/library/Zend/Locale/Data/aa_ER.xml
+%%DATADIR%%/library/Zend/Locale/Data/aa_ER_SAAHO.xml
 %%DATADIR%%/library/Zend/Locale/Data/aa_ET.xml
 %%DATADIR%%/library/Zend/Locale/Data/af.xml
 %%DATADIR%%/library/Zend/Locale/Data/af_NA.xml
@@ -3254,6 +3351,9 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/bn.xml
 %%DATADIR%%/library/Zend/Locale/Data/bn_BD.xml
 %%DATADIR%%/library/Zend/Locale/Data/bn_IN.xml
+%%DATADIR%%/library/Zend/Locale/Data/bo.xml
+%%DATADIR%%/library/Zend/Locale/Data/bo_CN.xml
+%%DATADIR%%/library/Zend/Locale/Data/bo_IN.xml
 %%DATADIR%%/library/Zend/Locale/Data/bs.xml
 %%DATADIR%%/library/Zend/Locale/Data/bs_BA.xml
 %%DATADIR%%/library/Zend/Locale/Data/byn.xml
@@ -3295,6 +3395,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/en_BW.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_BZ.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_CA.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_Dsrt.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_Dsrt_US.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_GB.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_GU.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_HK.xml
@@ -3371,6 +3473,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/gez_ET.xml
 %%DATADIR%%/library/Zend/Locale/Data/gl.xml
 %%DATADIR%%/library/Zend/Locale/Data/gl_ES.xml
+%%DATADIR%%/library/Zend/Locale/Data/gsw.xml
+%%DATADIR%%/library/Zend/Locale/Data/gsw_CH.xml
 %%DATADIR%%/library/Zend/Locale/Data/gu.xml
 %%DATADIR%%/library/Zend/Locale/Data/gu_IN.xml
 %%DATADIR%%/library/Zend/Locale/Data/gv.xml
@@ -3446,13 +3550,20 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/kpe_LR.xml
 %%DATADIR%%/library/Zend/Locale/Data/ku.xml
 %%DATADIR%%/library/Zend/Locale/Data/ku_Arab.xml
+%%DATADIR%%/library/Zend/Locale/Data/ku_Arab_IQ.xml
+%%DATADIR%%/library/Zend/Locale/Data/ku_Arab_IR.xml
+%%DATADIR%%/library/Zend/Locale/Data/ku_Arab_SY.xml
+%%DATADIR%%/library/Zend/Locale/Data/ku_IQ.xml
+%%DATADIR%%/library/Zend/Locale/Data/ku_IR.xml
 %%DATADIR%%/library/Zend/Locale/Data/ku_Latn.xml
 %%DATADIR%%/library/Zend/Locale/Data/ku_Latn_TR.xml
+%%DATADIR%%/library/Zend/Locale/Data/ku_SY.xml
 %%DATADIR%%/library/Zend/Locale/Data/ku_TR.xml
 %%DATADIR%%/library/Zend/Locale/Data/kw.xml
 %%DATADIR%%/library/Zend/Locale/Data/kw_GB.xml
 %%DATADIR%%/library/Zend/Locale/Data/ky.xml
 %%DATADIR%%/library/Zend/Locale/Data/ky_KG.xml
+%%DATADIR%%/library/Zend/Locale/Data/likelySubtags.xml
 %%DATADIR%%/library/Zend/Locale/Data/ln.xml
 %%DATADIR%%/library/Zend/Locale/Data/ln_CD.xml
 %%DATADIR%%/library/Zend/Locale/Data/ln_CG.xml
@@ -3462,6 +3573,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/lt_LT.xml
 %%DATADIR%%/library/Zend/Locale/Data/lv.xml
 %%DATADIR%%/library/Zend/Locale/Data/lv_LV.xml
+%%DATADIR%%/library/Zend/Locale/Data/metazoneInfo.xml
 %%DATADIR%%/library/Zend/Locale/Data/mk.xml
 %%DATADIR%%/library/Zend/Locale/Data/mk_MK.xml
 %%DATADIR%%/library/Zend/Locale/Data/ml.xml
@@ -3485,6 +3597,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/my_MM.xml
 %%DATADIR%%/library/Zend/Locale/Data/nb.xml
 %%DATADIR%%/library/Zend/Locale/Data/nb_NO.xml
+%%DATADIR%%/library/Zend/Locale/Data/nds.xml
+%%DATADIR%%/library/Zend/Locale/Data/nds_DE.xml
 %%DATADIR%%/library/Zend/Locale/Data/ne.xml
 %%DATADIR%%/library/Zend/Locale/Data/ne_IN.xml
 %%DATADIR%%/library/Zend/Locale/Data/ne_NP.xml
@@ -3498,8 +3612,11 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/nr_ZA.xml
 %%DATADIR%%/library/Zend/Locale/Data/nso.xml
 %%DATADIR%%/library/Zend/Locale/Data/nso_ZA.xml
+%%DATADIR%%/library/Zend/Locale/Data/numberingSystems.xml
 %%DATADIR%%/library/Zend/Locale/Data/ny.xml
 %%DATADIR%%/library/Zend/Locale/Data/ny_MW.xml
+%%DATADIR%%/library/Zend/Locale/Data/oc.xml
+%%DATADIR%%/library/Zend/Locale/Data/oc_FR.xml
 %%DATADIR%%/library/Zend/Locale/Data/om.xml
 %%DATADIR%%/library/Zend/Locale/Data/om_ET.xml
 %%DATADIR%%/library/Zend/Locale/Data/om_KE.xml
@@ -3514,7 +3631,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/pa_PK.xml
 %%DATADIR%%/library/Zend/Locale/Data/pl.xml
 %%DATADIR%%/library/Zend/Locale/Data/pl_PL.xml
-%%DATADIR%%/library/Zend/Locale/Data/plurals.xml
+%%DATADIR%%/library/Zend/Locale/Data/postalCodeData.xml
 %%DATADIR%%/library/Zend/Locale/Data/ps.xml
 %%DATADIR%%/library/Zend/Locale/Data/ps_AF.xml
 %%DATADIR%%/library/Zend/Locale/Data/pt.xml
@@ -3609,6 +3726,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/to_TO.xml
 %%DATADIR%%/library/Zend/Locale/Data/tr.xml
 %%DATADIR%%/library/Zend/Locale/Data/tr_TR.xml
+%%DATADIR%%/library/Zend/Locale/Data/trv.xml
+%%DATADIR%%/library/Zend/Locale/Data/trv_TW.xml
 %%DATADIR%%/library/Zend/Locale/Data/ts.xml
 %%DATADIR%%/library/Zend/Locale/Data/ts_ZA.xml
 %%DATADIR%%/library/Zend/Locale/Data/tt.xml
@@ -3684,6 +3803,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Log/Writer/Mock.php
 %%DATADIR%%/library/Zend/Log/Writer/Null.php
 %%DATADIR%%/library/Zend/Log/Writer/Stream.php
+%%DATADIR%%/library/Zend/Log/Writer/Syslog.php
 %%DATADIR%%/library/Zend/Mail.php
 %%DATADIR%%/library/Zend/Mail/Exception.php
 %%DATADIR%%/library/Zend/Mail/Message.php
@@ -3794,6 +3914,30 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Paginator/ScrollingStyle/Jumping.php
 %%DATADIR%%/library/Zend/Paginator/ScrollingStyle/Sliding.php
 %%DATADIR%%/library/Zend/Pdf.php
+%%DATADIR%%/library/Zend/Pdf/Action.php
+%%DATADIR%%/library/Zend/Pdf/Action/GoTo.php
+%%DATADIR%%/library/Zend/Pdf/Action/GoTo3DView.php
+%%DATADIR%%/library/Zend/Pdf/Action/GoToE.php
+%%DATADIR%%/library/Zend/Pdf/Action/GoToR.php
+%%DATADIR%%/library/Zend/Pdf/Action/Hide.php
+%%DATADIR%%/library/Zend/Pdf/Action/ImportData.php
+%%DATADIR%%/library/Zend/Pdf/Action/JavaScript.php
+%%DATADIR%%/library/Zend/Pdf/Action/Launch.php
+%%DATADIR%%/library/Zend/Pdf/Action/Movie.php
+%%DATADIR%%/library/Zend/Pdf/Action/Named.php
+%%DATADIR%%/library/Zend/Pdf/Action/Rendition.php
+%%DATADIR%%/library/Zend/Pdf/Action/ResetForm.php
+%%DATADIR%%/library/Zend/Pdf/Action/SetOCGState.php
+%%DATADIR%%/library/Zend/Pdf/Action/Sound.php
+%%DATADIR%%/library/Zend/Pdf/Action/SubmitForm.php
+%%DATADIR%%/library/Zend/Pdf/Action/Thread.php
+%%DATADIR%%/library/Zend/Pdf/Action/Trans.php
+%%DATADIR%%/library/Zend/Pdf/Action/URI.php
+%%DATADIR%%/library/Zend/Pdf/Action/Unknown.php
+%%DATADIR%%/library/Zend/Pdf/Annotation.php
+%%DATADIR%%/library/Zend/Pdf/Annotation/FileAttachment.php
+%%DATADIR%%/library/Zend/Pdf/Annotation/Link.php
+%%DATADIR%%/library/Zend/Pdf/Annotation/Text.php
 %%DATADIR%%/library/Zend/Pdf/Cmap.php
 %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding.php
 %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding/Static.php
@@ -3804,6 +3948,18 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Pdf/Color/GrayScale.php
 %%DATADIR%%/library/Zend/Pdf/Color/Html.php
 %%DATADIR%%/library/Zend/Pdf/Color/Rgb.php
+%%DATADIR%%/library/Zend/Pdf/Destination.php
+%%DATADIR%%/library/Zend/Pdf/Destination/Explicit.php
+%%DATADIR%%/library/Zend/Pdf/Destination/Fit.php
+%%DATADIR%%/library/Zend/Pdf/Destination/FitBoundingBox.php
+%%DATADIR%%/library/Zend/Pdf/Destination/FitBoundingBoxHorizontally.php
+%%DATADIR%%/library/Zend/Pdf/Destination/FitBoundingBoxVertically.php
+%%DATADIR%%/library/Zend/Pdf/Destination/FitHorizontally.php
+%%DATADIR%%/library/Zend/Pdf/Destination/FitRectangle.php
+%%DATADIR%%/library/Zend/Pdf/Destination/FitVertically.php
+%%DATADIR%%/library/Zend/Pdf/Destination/Named.php
+%%DATADIR%%/library/Zend/Pdf/Destination/Unknown.php
+%%DATADIR%%/library/Zend/Pdf/Destination/Zoom.php
 %%DATADIR%%/library/Zend/Pdf/Element.php
 %%DATADIR%%/library/Zend/Pdf/Element/Array.php
 %%DATADIR%%/library/Zend/Pdf/Element/Boolean.php
@@ -3840,10 +3996,15 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Pdf/Filter/Interface.php
 %%DATADIR%%/library/Zend/Pdf/Font.php
 %%DATADIR%%/library/Zend/Pdf/Image.php
+%%DATADIR%%/library/Zend/Pdf/NameTree.php
+%%DATADIR%%/library/Zend/Pdf/Outline.php
+%%DATADIR%%/library/Zend/Pdf/Outline/Created.php
+%%DATADIR%%/library/Zend/Pdf/Outline/Loaded.php
 %%DATADIR%%/library/Zend/Pdf/Page.php
 %%DATADIR%%/library/Zend/Pdf/Parser.php
 %%DATADIR%%/library/Zend/Pdf/Parser/Stream.php
 %%DATADIR%%/library/Zend/Pdf/PhpArray.php
+%%DATADIR%%/library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
 %%DATADIR%%/library/Zend/Pdf/Resource.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font/CidFont.php
@@ -3876,6 +4037,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Pdf/Resource/ImageFactory.php
 %%DATADIR%%/library/Zend/Pdf/StringParser.php
 %%DATADIR%%/library/Zend/Pdf/Style.php
+%%DATADIR%%/library/Zend/Pdf/Target.php
 %%DATADIR%%/library/Zend/Pdf/Trailer.php
 %%DATADIR%%/library/Zend/Pdf/Trailer/Generator.php
 %%DATADIR%%/library/Zend/Pdf/Trailer/Keeper.php
@@ -3887,6 +4049,27 @@ bin/zf.php
 %%DATADIR%%/library/Zend/ProgressBar/Adapter/JsPull.php
 %%DATADIR%%/library/Zend/ProgressBar/Adapter/JsPush.php
 %%DATADIR%%/library/Zend/ProgressBar/Exception.php
+%%DATADIR%%/library/Zend/Queue.php
+%%DATADIR%%/library/Zend/Queue/Adapter/Activemq.php
+%%DATADIR%%/library/Zend/Queue/Adapter/AdapterAbstract.php
+%%DATADIR%%/library/Zend/Queue/Adapter/AdapterInterface.php
+%%DATADIR%%/library/Zend/Queue/Adapter/Array.php
+%%DATADIR%%/library/Zend/Queue/Adapter/Db.php
+%%DATADIR%%/library/Zend/Queue/Adapter/Db/Message.php
+%%DATADIR%%/library/Zend/Queue/Adapter/Db/Queue.php
+%%DATADIR%%/library/Zend/Queue/Adapter/Db/queue.sql
+%%DATADIR%%/library/Zend/Queue/Adapter/Memcacheq.php
+%%DATADIR%%/library/Zend/Queue/Adapter/Null.php
+%%DATADIR%%/library/Zend/Queue/Adapter/PlatformJobQueue.php
+%%DATADIR%%/library/Zend/Queue/Exception.php
+%%DATADIR%%/library/Zend/Queue/Message.php
+%%DATADIR%%/library/Zend/Queue/Message/Iterator.php
+%%DATADIR%%/library/Zend/Queue/Message/PlatformJob.php
+%%DATADIR%%/library/Zend/Queue/Stomp/Client.php
+%%DATADIR%%/library/Zend/Queue/Stomp/Client/Connection.php
+%%DATADIR%%/library/Zend/Queue/Stomp/Client/ConnectionInterface.php
+%%DATADIR%%/library/Zend/Queue/Stomp/Frame.php
+%%DATADIR%%/library/Zend/Queue/Stomp/FrameInterface.php
 %%DATADIR%%/library/Zend/Reflection/Class.php
 %%DATADIR%%/library/Zend/Reflection/Docblock.php
 %%DATADIR%%/library/Zend/Reflection/Docblock/Tag.php
@@ -3904,7 +4087,9 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Rest/Client/Exception.php
 %%DATADIR%%/library/Zend/Rest/Client/Result.php
 %%DATADIR%%/library/Zend/Rest/Client/Result/Exception.php
+%%DATADIR%%/library/Zend/Rest/Controller.php
 %%DATADIR%%/library/Zend/Rest/Exception.php
+%%DATADIR%%/library/Zend/Rest/Route.php
 %%DATADIR%%/library/Zend/Rest/Server.php
 %%DATADIR%%/library/Zend/Rest/Server/Exception.php
 %%DATADIR%%/library/Zend/Search/Exception.php
@@ -4023,11 +4208,14 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Abstract.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Availabilityzones.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/CloudWatch.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Ebs.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Elasticip.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Exception.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Image.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Instance.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Instance/Reserved.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Instance/Windows.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Keypair.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Region.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Response.php
@@ -4045,6 +4233,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/Amazon/S3/Exception.php
 %%DATADIR%%/library/Zend/Service/Amazon/S3/Stream.php
 %%DATADIR%%/library/Zend/Service/Amazon/SimilarProduct.php
+%%DATADIR%%/library/Zend/Service/Amazon/Sqs.php
+%%DATADIR%%/library/Zend/Service/Amazon/Sqs/Exception.php
 %%DATADIR%%/library/Zend/Service/Audioscrobbler.php
 %%DATADIR%%/library/Zend/Service/Delicious.php
 %%DATADIR%%/library/Zend/Service/Delicious/Exception.php
@@ -4168,11 +4358,26 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Tag/Item.php
 %%DATADIR%%/library/Zend/Tag/ItemList.php
 %%DATADIR%%/library/Zend/Tag/Taggable.php
+%%DATADIR%%/library/Zend/Test/DbAdapter.php
+%%DATADIR%%/library/Zend/Test/DbStatement.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint/DomQuery.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint/Exception.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint/Redirect.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint/ResponseHeader.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/ControllerTestCase.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/DatabaseTestCase.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/Connection.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/DataSet/DbRowset.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/DataSet/DbTable.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/DataSet/DbTableDataSet.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/DataSet/QueryDataSet.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/DataSet/QueryTable.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/Exception.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/Metadata/Generic.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/Operation/DeleteAll.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/Operation/Insert.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/Operation/Truncate.php
+%%DATADIR%%/library/Zend/Test/PHPUnit/Db/SimpleTester.php
 %%DATADIR%%/library/Zend/Text/Exception.php
 %%DATADIR%%/library/Zend/Text/Figlet.php
 %%DATADIR%%/library/Zend/Text/Figlet/Exception.php
@@ -4195,6 +4400,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Tool/Framework/Action/Interface.php
 %%DATADIR%%/library/Zend/Tool/Framework/Action/Repository.php
 %%DATADIR%%/library/Zend/Tool/Framework/Client/Abstract.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Config.php
 %%DATADIR%%/library/Zend/Tool/Framework/Client/Console.php
 %%DATADIR%%/library/Zend/Tool/Framework/Client/Console/ArgumentParser.php
 %%DATADIR%%/library/Zend/Tool/Framework/Client/Console/HelpSystem.php
@@ -4210,6 +4416,9 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Tool/Framework/Client/Response.php
 %%DATADIR%%/library/Zend/Tool/Framework/Client/Response/ContentDecorator/Interface.php
 %%DATADIR%%/library/Zend/Tool/Framework/Client/Response/ContentDecorator/Separator.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Storage.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Storage/AdapterInterface.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Storage/Directory.php
 %%DATADIR%%/library/Zend/Tool/Framework/Exception.php
 %%DATADIR%%/library/Zend/Tool/Framework/Loader/Abstract.php
 %%DATADIR%%/library/Zend/Tool/Framework/Loader/IncludePathLoader.php
@@ -4243,6 +4452,9 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Tool/Framework/System/Provider/Manifest.php
 %%DATADIR%%/library/Zend/Tool/Framework/System/Provider/Phpinfo.php
 %%DATADIR%%/library/Zend/Tool/Framework/System/Provider/Version.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Content/Engine.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Content/Engine/CodeGenerator.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Content/Engine/Phtml.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Exception.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Filesystem/Abstract.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Filesystem/Directory.php
@@ -4341,6 +4553,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Translate/Adapter/Xliff.php
 %%DATADIR%%/library/Zend/Translate/Adapter/XmlTm.php
 %%DATADIR%%/library/Zend/Translate/Exception.php
+%%DATADIR%%/library/Zend/Translate/Plural.php
 %%DATADIR%%/library/Zend/Uri.php
 %%DATADIR%%/library/Zend/Uri/Exception.php
 %%DATADIR%%/library/Zend/Uri/Http.php
@@ -4406,6 +4619,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/View/Exception.php
 %%DATADIR%%/library/Zend/View/Helper/Abstract.php
 %%DATADIR%%/library/Zend/View/Helper/Action.php
+%%DATADIR%%/library/Zend/View/Helper/BaseUrl.php
 %%DATADIR%%/library/Zend/View/Helper/Cycle.php
 %%DATADIR%%/library/Zend/View/Helper/DeclareVars.php
 %%DATADIR%%/library/Zend/View/Helper/Doctype.php
@@ -4873,8 +5087,11 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/RouterTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/TranslateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/ViewTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/_files/ZfAppBootstrapCustomView.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/BootstrapBaseCircularDependency.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfAppBadBootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfAppBootstrap.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfAppNoBootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfModuleBootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.inc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.ini
@@ -4950,7 +5167,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/FileTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/MethodTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/ParameterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Property/DefaultValueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/PropertyTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestClassWithManyProperties.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestSampleSingleClass.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/IniTest.php
@@ -5000,6 +5219,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Plugin/ActionStackTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Plugin/BrokerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Plugin/ErrorHandlerTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Plugin/PutHandlerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Request/Apache404Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Request/HttpTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Request/HttpTestCaseTest.php
@@ -5072,6 +5292,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/Pdo/SqliteTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/Pdo/TestCommon.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/SkipTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/SqlsrvTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/Static.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/TestCommon.php
@@ -5093,6 +5314,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Profiler/Pdo/PgsqlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Profiler/Pdo/SqliteTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Profiler/ProfilerCustom.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Profiler/SqlsrvTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Profiler/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Profiler/TestCommon.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Select/Db2Test.php
@@ -5105,6 +5327,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Select/Pdo/OciTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Select/Pdo/PgsqlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Select/Pdo/SqliteTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Select/SqlsrvTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Select/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Select/TestCommon.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/SkipTests.php
@@ -5119,6 +5342,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Statement/Pdo/PgsqlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Statement/Pdo/SqliteTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Statement/Pdo/TestCommon.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Statement/SqlsrvTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Statement/Static.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Statement/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Statement/TestCommon.php
@@ -5142,6 +5366,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Relationships/Pdo/OciTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Relationships/Pdo/PgsqlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Relationships/Pdo/SqliteTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Relationships/SqlsrvTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Relationships/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Relationships/TestCommon.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/Db2Test.php
@@ -5154,12 +5379,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/Pdo/OciTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/Pdo/PgsqlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/Pdo/SqliteTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/SqlsrvTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestCommon.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestMockRow.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestMyRow.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestStandaloneRow.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestTableRow.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/Db2Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/MysqliTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/OdbcTest.php
@@ -5170,9 +5392,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/Pdo/OciTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/Pdo/PgsqlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/Pdo/SqliteTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/SqlsrvTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/TestCommon.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/TestMyRowset.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/Db2Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/MysqliTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/OdbcTest.php
@@ -5183,20 +5405,27 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/Pdo/OciTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/Pdo/PgsqlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/Pdo/SqliteTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/SqlsrvTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/TestCommon.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/SqlsrvTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/StaticTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TableAccounts.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TableAccountsCustom.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TableBugs.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TableBugsCustom.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TableBugsProducts.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TableBugsProductsCustom.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TableProducts.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TableProductsCustom.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TableSpecial.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TestCommon.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/TestSetup.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/Row/TestMockRow.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/Row/TestMyRow.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/Row/TestStandaloneRow.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/Row/TestTableRow.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/Rowset/TestMyRowset.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/TableAccounts.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/TableAccountsCustom.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/TableBugs.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/TableBugsCustom.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/TableBugsProducts.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/TableBugsProductsCustom.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/TableProducts.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/TableProductsCustom.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/TableSpecial.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/TestSetup.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/TestUtil/Common.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/TestUtil/Db2.php
@@ -5209,9 +5438,11 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/TestUtil/Pdo/Oci.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/TestUtil/Pdo/Pgsql.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/TestUtil/Pdo/Sqlite.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/TestUtil/Sqlsrv.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/TestUtil/Static.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/DebugTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/BuildLayerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/DataTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/DojoTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/Form/AllTests.php
@@ -5280,6 +5511,11 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/TimeTextBoxTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/ValidationTextBoxTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/VerticalSliderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/_files/BuildLayer.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/_files/BuildLayerJavascript.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/_files/BuildLayerOnLoad.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/_files/BuildProfile.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/_files/BuildProfileWithDependencies.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dom/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dom/Query/Css2XpathTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dom/Query/ResultTest.php
@@ -5294,6 +5530,582 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Entry/RssTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/ImportTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/IteratorTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/AtomTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/CommonTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/RssTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datecreated/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datecreated/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datemodified/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datemodified/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/description/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/description/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/enclosure/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/enclosure/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/id/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/id/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/links/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/links/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/title/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/title/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Common/atom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Common/atom_rewrittenbydom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Common/rss.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/atom10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/atom10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/atom10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/atom10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/atom10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/atom10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/atom10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/slash10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/slash10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/slash10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/slash10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/slash10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/slash10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/slash10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/thread10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/thread10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/thread10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/thread10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/thread10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/thread10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/thread10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/atom10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/atom10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/atom10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/atom10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/atom10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/atom10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/atom10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/thread10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/thread10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/thread10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/thread10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/thread10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/thread10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/thread10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/wellformedweb/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/wellformedweb/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/wellformedweb/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/wellformedweb/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/wellformedweb/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/wellformedweb/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/wellformedweb/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/atom10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/atom10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/atom10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/atom10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/atom10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/atom10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/atom10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/description/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/description/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/description/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/description/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/description/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/description/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/description/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/atom10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/atom10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/atom10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/atom10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/atom10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/atom10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/atom10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/enclosure/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/enclosure/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/title/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/title/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/title/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/title/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/title/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/title/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/title/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/AtomTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/CommonTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/RssTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/author/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/author/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/copyright/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/copyright/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datecreated/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datecreated/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datemodified/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datemodified/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/description/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/description/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/title/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/title/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Common/atom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Common/atom_rewrittenbydom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Common/rss.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/atom10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/atom10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/atom10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/atom10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/atom10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/atom10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/atom10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/atom10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/atom10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/atom10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/atom10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/atom10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/atom10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/atom10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rdf/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/atom10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/atom10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/atom10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/atom10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/atom10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/atom10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/atom10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc10/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc10/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc10/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc10/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc10/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc10/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc10/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc11/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc11/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc11/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc11/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc11/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc11/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc11/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/H-OnlineComAtom10Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/LautDeRdfTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/PodcastRss2Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/WordpressAtom10Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/WordpressRss2DcAtomTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/_files/h-online.com-atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/_files/laut.de-rdf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/_files/podcast.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/_files/wordpress-atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/_files/wordpress-rss2-dc-atom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/My/Extension/JungleBooks/Entry.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/My/Extension/JungleBooks/Feed.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/ReaderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/AtomPublishingTest-before-update.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/AtomPublishingTest-created-entry.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/AtomPublishingTest-expected-update.xml
@@ -5354,6 +6166,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/StringTrimTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/StripNewlinesTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/StripTagsTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Word/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Word/CamelCaseToDashTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Word/CamelCaseToSeparatorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Word/CamelCaseToUnderscoreTest.php
@@ -5718,6 +6531,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/_files/testImage.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/CommonHttpTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/CurlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/ProxyAdapterTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/SkipTests.php
@@ -5726,12 +6540,16 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/SocketTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/TestAdapterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF2098-multibytepostdata.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF4238-zerolineresponse.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF7038-multipartarrayrequest.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/staticFile.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testCookies.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testExceptionOnReadTimeout.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testGetData.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testHeaders.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testHttpAuth.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testMultibyteChunkedResponseZF6218.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testPostData.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testRawPostData.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testRedirections.php
@@ -5748,11 +6566,14 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_404
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_500
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_chunked
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_chunked_case
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_crlf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_deflate
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_deflate_iis
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_gzip
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_leadingws
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_lfonly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_multibyte_body
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_multiline_header
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_unknown
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_with_cookies
@@ -5802,10 +6623,42 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts/plugin.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts/test/layout.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/AttributeTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/BindTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/CanonTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/ConnectTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/ConverterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/CopyRenameTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/CrudTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Dn/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Dn/CreationTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Dn/EscapingTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Dn/ExplodingTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Dn/ImplodingTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Dn/MiscTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Dn/ModificationTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/FilterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Ldif/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Ldif/SimpleDecoderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Ldif/SimpleEncoderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Node/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Node/AttributeIterationTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Node/ChildrenIterationTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Node/ChildrenTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Node/OfflineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Node/OnlineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Node/RootDseTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Node/SchemaTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/Node/UpdateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/OfflineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/OnlineTestCase.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/OriginalBindTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/OriginalCanonTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/OriginalConnectTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/OriginalOfflineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/SearchTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/TestCase.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/_files/AttributeTest.input.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloadDoesNotHideParseError.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloadableClass.php
@@ -5942,7 +6795,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Paginator/_files/test.sqlite
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Paginator/_files/testempty.sqlite
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/PaginatorTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/ActionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/DestinationTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/DrawingTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Element/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Element/ArrayTest.php
@@ -5959,6 +6814,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Element/String/BinaryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Element/StringTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/FactoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/NamedDestinationsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/ProcessingTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_files/pdfarchiving.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_files/stamp.jpg
@@ -5984,6 +6840,33 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter/MockupStream.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/ProgressBarTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/ActivemqTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/AdapterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/ArrayTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/DbTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/Iterator2.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/MemcacheqTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/MessageTestClass.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/NullTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/PlatformJobQueueTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/StompIOTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/StompTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/WARNING.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Custom/DbForUpdate.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Custom/Message.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Custom/Messages.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Custom/Queue.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/CustomTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/FactoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Message/IteratorTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/MessageTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Queue1Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Queue2Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/QueueBaseTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/QueueTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Stomp/ClientTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Stomp/FrameTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/ClassTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock/AllTests.php
@@ -6002,7 +6885,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/RegistryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/ClientTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/ControllerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/ResultTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/RouteTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/ServerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/responses/returnArray.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/responses/returnError.xml
@@ -6104,11 +6989,14 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/AvailabilityzonesTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/CloudWatchTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/EbsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/Ec2Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/ElasticipTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/ImageTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/InstanceReservedTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/InstanceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/InstanceWindowsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/KeypairTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/RegionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/SecuritygroupsTest.php
@@ -6120,6 +7008,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/StreamTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files/testdata
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files/testdata.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OfflineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OnlineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files/mozart_result.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/AlbumDataTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/AllTests.php
@@ -6334,8 +7225,32 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/ItemListTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/ItemTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/DbAdapterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/DbStatementTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/ControllerTestCaseTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/ConnectionTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet/DataSetTestCase.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet/DbRowsetTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet/DbTableDataSetTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet/DbTableTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet/QueryDataSetTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet/QueryTableTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Integration/AbstractTestCase.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Integration/MysqlIntegrationTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Integration/SqLiteIntegrationTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Integration/_files/sqliteIntegrationFixture.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Metadata/GenericTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation/DeleteAllTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation/InsertTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation/TruncateTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation/_files/insertFixture.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation/_files/truncateFixture.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/SimpleTesterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/TestCaseTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/controllers/ErrorController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/controllers/IndexController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/controllers/ZendTestPhpUnitFooController.php
@@ -6507,6 +7422,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Db/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Db/NoRecordExistsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Db/RecordExistsTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Db/_files/Db/MockHasResult.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Db/_files/Db/MockNoResult.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/DigitsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/EmailAddressTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/AllTests.php
@@ -6560,6 +7477,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/ActionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/BaseUrlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/CycleTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/DeclareVarsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/DoctypeTest.php
@@ -6623,6 +7541,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch_mindepth.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch_noparents.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch_np_bd.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch_np_bd2.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/partial.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/translated.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/acl.xml
@@ -6650,11 +7569,11 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/ServerUrlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/TranslateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/UrlTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/controllers/BarController.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/controllers/FooController.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/bar/baz.phtml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/foo/bar.phtml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/foo/baz.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/controllers/ActionBarController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/controllers/ActionFooController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/action-bar/baz.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/action-foo/bar.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/action-foo/baz.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/partialActionCall.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/partialLoop.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/partialLoopCouter.phtml
@@ -6732,6 +7651,8 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/foo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/foo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/bar
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/action-foo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/action-bar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/controllers
@@ -6753,6 +7674,8 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/Sitemap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/File/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/File
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/Db/_files/Db
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/Db/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/Db
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Uri/_files
@@ -6835,6 +7758,13 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/controllers
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Metadata
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Integration/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Integration
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/_classes
@@ -6866,6 +7796,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2
@@ -6901,6 +7832,11 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock/Tag
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Reflection
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue/Stomp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue/Message
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue/Custom
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue/Adapter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/ProgressBar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf/_fonts
@@ -6956,6 +7892,10 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Ldap/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Ldap/Node
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Ldap/Ldif
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Ldap/Dn
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Ldap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts/test
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts-basepath/scripts
@@ -7028,11 +7968,170 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/File/Transfer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/File
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/My/Extension/JungleBooks
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/My/Extension
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/My
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/atom10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rdf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/atom10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/atom10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Common
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/title/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/title
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/description/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/description
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datemodified/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datemodified
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datecreated/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datecreated
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/copyright/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/copyright
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/author/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/author
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/title
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/enclosure/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/enclosure
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/atom10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/description
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/atom10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/wellformedweb
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/thread10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/atom10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/thread10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/slash10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/atom10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc11
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Common
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/title/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/title
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/links/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/links
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/id/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/id
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/enclosure/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/enclosure
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/description/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/description
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datemodified/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datemodified
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datecreated/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datecreated
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Entry
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Dom/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Dom/Query
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Dom
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Dojo/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Dojo/View
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/_files/locale
@@ -7043,6 +8142,11 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Dojo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/TestUtil/Pdo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/TestUtil
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/cachefiles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/Rowset
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/Row
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/Pdo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Table/Select
@@ -7124,6 +8228,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Config/Writer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Config
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Property
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock/Tag
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php
@@ -7155,6 +8260,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Resource/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Resource
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Module
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Bootstrap
@@ -7279,6 +8385,8 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Tool/Project/Context/Zf
 @dirrm %%DATADIR%%/library/Zend/Tool/Project/Context/System
 @dirrm %%DATADIR%%/library/Zend/Tool/Project/Context/Filesystem
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Context/Content/Engine
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Context/Content
 @dirrm %%DATADIR%%/library/Zend/Tool/Project/Context
 @dirrm %%DATADIR%%/library/Zend/Tool/Project
 @dirrm %%DATADIR%%/library/Zend/Tool/Framework/System/Provider
@@ -7290,6 +8398,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Tool/Framework/Manifest
 @dirrm %%DATADIR%%/library/Zend/Tool/Framework/Loader/IncludePathLoader
 @dirrm %%DATADIR%%/library/Zend/Tool/Framework/Loader
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client/Storage
 @dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client/Response/ContentDecorator
 @dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client/Response
 @dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client/Interactive
@@ -7304,6 +8413,10 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Text/Table
 @dirrm %%DATADIR%%/library/Zend/Text/Figlet
 @dirrm %%DATADIR%%/library/Zend/Text
+@dirrm %%DATADIR%%/library/Zend/Test/PHPUnit/Db/Operation
+@dirrm %%DATADIR%%/library/Zend/Test/PHPUnit/Db/Metadata
+@dirrm %%DATADIR%%/library/Zend/Test/PHPUnit/Db/DataSet
+@dirrm %%DATADIR%%/library/Zend/Test/PHPUnit/Db
 @dirrm %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint
 @dirrm %%DATADIR%%/library/Zend/Test/PHPUnit
 @dirrm %%DATADIR%%/library/Zend/Test
@@ -7331,7 +8444,9 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Service/Nirvanix
 @dirrm %%DATADIR%%/library/Zend/Service/Flickr
 @dirrm %%DATADIR%%/library/Zend/Service/Delicious
+@dirrm %%DATADIR%%/library/Zend/Service/Amazon/Sqs
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon/S3
+@dirrm %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Instance
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon/Ec2
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon
 @dirrm %%DATADIR%%/library/Zend/Service
@@ -7370,6 +8485,16 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Reflection/Docblock/Tag
 @dirrm %%DATADIR%%/library/Zend/Reflection/Docblock
 @dirrm %%DATADIR%%/library/Zend/Reflection
+@dirrm %%DATADIR%%/library/Zend/Queue/Stomp/IO
+@dirrm %%DATADIR%%/library/Zend/Queue/Stomp/Frame
+@dirrm %%DATADIR%%/library/Zend/Queue/Stomp/Client/Connection
+@dirrm %%DATADIR%%/library/Zend/Queue/Stomp/Client
+@dirrm %%DATADIR%%/library/Zend/Queue/Stomp/Base
+@dirrm %%DATADIR%%/library/Zend/Queue/Stomp
+@dirrm %%DATADIR%%/library/Zend/Queue/Message
+@dirrm %%DATADIR%%/library/Zend/Queue/Adapter/Db
+@dirrm %%DATADIR%%/library/Zend/Queue/Adapter
+@dirrm %%DATADIR%%/library/Zend/Queue
 @dirrm %%DATADIR%%/library/Zend/ProgressBar/Adapter
 @dirrm %%DATADIR%%/library/Zend/ProgressBar
 @dirrm %%DATADIR%%/library/Zend/Pdf/Trailer
@@ -7381,6 +8506,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font
 @dirrm %%DATADIR%%/library/Zend/Pdf/Resource
 @dirrm %%DATADIR%%/library/Zend/Pdf/Parser
+@dirrm %%DATADIR%%/library/Zend/Pdf/Outline
 @dirrm %%DATADIR%%/library/Zend/Pdf/Filter/Compression
 @dirrm %%DATADIR%%/library/Zend/Pdf/Filter
 @dirrm %%DATADIR%%/library/Zend/Pdf/FileParserDataSource
@@ -7393,9 +8519,12 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Pdf/Element/Reference
 @dirrm %%DATADIR%%/library/Zend/Pdf/Element/Object
 @dirrm %%DATADIR%%/library/Zend/Pdf/Element
+@dirrm %%DATADIR%%/library/Zend/Pdf/Destination
 @dirrm %%DATADIR%%/library/Zend/Pdf/Color
 @dirrm %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding
 @dirrm %%DATADIR%%/library/Zend/Pdf/Cmap
+@dirrm %%DATADIR%%/library/Zend/Pdf/Annotation
+@dirrm %%DATADIR%%/library/Zend/Pdf/Action
 @dirrm %%DATADIR%%/library/Zend/Pdf
 @dirrm %%DATADIR%%/library/Zend/Paginator/ScrollingStyle
 @dirrm %%DATADIR%%/library/Zend/Paginator/Adapter
@@ -7436,6 +8565,15 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Loader/PluginLoader
 @dirrm %%DATADIR%%/library/Zend/Loader/Autoloader
 @dirrm %%DATADIR%%/library/Zend/Loader
+@dirrm %%DATADIR%%/library/Zend/Ldap/Node/Schema/ObjectClass
+@dirrm %%DATADIR%%/library/Zend/Ldap/Node/Schema/AttributeType
+@dirrm %%DATADIR%%/library/Zend/Ldap/Node/Schema
+@dirrm %%DATADIR%%/library/Zend/Ldap/Node/RootDse
+@dirrm %%DATADIR%%/library/Zend/Ldap/Node
+@dirrm %%DATADIR%%/library/Zend/Ldap/Ldif
+@dirrm %%DATADIR%%/library/Zend/Ldap/Filter
+@dirrm %%DATADIR%%/library/Zend/Ldap/Collection/Iterator
+@dirrm %%DATADIR%%/library/Zend/Ldap/Collection
 @dirrm %%DATADIR%%/library/Zend/Ldap
 @dirrm %%DATADIR%%/library/Zend/Layout/Controller/Plugin
 @dirrm %%DATADIR%%/library/Zend/Layout/Controller/Action/Helper
@@ -7511,6 +8649,19 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/File/Transfer/Adapter
 @dirrm %%DATADIR%%/library/Zend/File/Transfer
 @dirrm %%DATADIR%%/library/Zend/File
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Feed
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension/WellFormedWeb
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension/Thread
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension/Syndication
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension/Slash
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension/Podcast
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension/DublinCore
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension/CreativeCommons
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension/Content
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension/Atom
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Extension
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader/Entry
+@dirrm %%DATADIR%%/library/Zend/Feed/Reader
 @dirrm %%DATADIR%%/library/Zend/Feed/Entry
 @dirrm %%DATADIR%%/library/Zend/Feed/Builder/Header
 @dirrm %%DATADIR%%/library/Zend/Feed/Builder
@@ -7528,6 +8679,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Db/Table/Rowset
 @dirrm %%DATADIR%%/library/Zend/Db/Table/Row
 @dirrm %%DATADIR%%/library/Zend/Db/Table
+@dirrm %%DATADIR%%/library/Zend/Db/Statement/Sqlsrv
 @dirrm %%DATADIR%%/library/Zend/Db/Statement/Pdo
 @dirrm %%DATADIR%%/library/Zend/Db/Statement/Oracle
 @dirrm %%DATADIR%%/library/Zend/Db/Statement/Mysqli
@@ -7535,6 +8687,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Db/Statement
 @dirrm %%DATADIR%%/library/Zend/Db/Select
 @dirrm %%DATADIR%%/library/Zend/Db/Profiler
+@dirrm %%DATADIR%%/library/Zend/Db/Adapter/Sqlsrv
 @dirrm %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Ibm
 @dirrm %%DATADIR%%/library/Zend/Db/Adapter/Pdo
 @dirrm %%DATADIR%%/library/Zend/Db/Adapter/Oracle
@@ -7566,6 +8719,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Console
 @dirrm %%DATADIR%%/library/Zend/Config/Writer
 @dirrm %%DATADIR%%/library/Zend/Config
+@dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Property
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Member
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock/Tag
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock
@@ -7823,7 +8977,10 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/tr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/th
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sv
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt
@@ -7842,6 +8999,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/da
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ca
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ar
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins
@@ -7880,7 +9038,10 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh-tw
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/th
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt
@@ -7899,6 +9060,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/de
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/da
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ca
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget
@@ -8111,6 +9273,8 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo
 %%DOJO%%@dirrm %%DATADIR%%/externals
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/foo
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/bar
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/mvc/controllers
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files/project1
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/System
@@ -8125,11 +9289,15 @@ bin/zf.php
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/OpenId/Provider/Storage/_files
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Memory/_files
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts-basepath/filters
-%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/cachefiles
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Controller/views/helpers
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Controller/views/filters
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Config/Writer/temp
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/OpenId/_files
+@exec mkdir -p %D/%%DATADIR%%/library/Zend/Queue/Stomp/IO
+@exec mkdir -p %D/%%DATADIR%%/library/Zend/Queue/Stomp/Frame
+@exec mkdir -p %D/%%DATADIR%%/library/Zend/Queue/Stomp/Client/Connection
+@exec mkdir -p %D/%%DATADIR%%/library/Zend/Queue/Stomp/Base
 %%DOJO%%@exec mkdir -p %D/%%DATADIR%%/externals/dojo/dojox/analytics/logger/logs
