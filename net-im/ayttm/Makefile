@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	ayttm
-PORTVERSION=	0.5.0.82
-PORTREVISION=	2
+PORTVERSION=	0.5.0.111
 CATEGORIES=	net-im
-MASTER_SITES=	SF
+.for mirror in nchc kent ufpr heanet switch puzzle osdn ovh
+MASTER_SITES+=http://${mirror}.dl.sourceforge.net/project/ayttm/ayttm/${PORTVERSION:R}-${PORTVERSION:E}/
+.endfor
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	unixmania@gmail.com
@@ -78,8 +79,5 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-L/usr/local/lib/pth/||g ; \
 		 s|-lproxy|../libproxy/libproxy.a|g' ${WRKSRC}/src/Makefile.in
-
-post-build:
-	@${ECHO} 'Categories=Application;Network;' >> ${WRKSRC}/ayttm.desktop
 
 .include <bsd.port.post.mk>
