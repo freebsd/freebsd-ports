@@ -17,8 +17,8 @@
  
  void cc_log(const char *format, ...);
  void fatal(const char *msg);
---- hash.c.orig	Wed Sep  8 21:36:22 2004
-+++ hash.c	Wed Sep  8 21:36:25 2004
+--- hash.c.orig	2004-09-13 12:38:30.000000000 +0200
++++ hash.c	2009-07-21 23:37:00.000000000 +0200
 @@ -20,17 +20,22 @@
  */
  
@@ -46,7 +46,7 @@
  }
  
  void hash_string(const char *s)
-@@ -46,35 +51,40 @@
+@@ -46,35 +51,44 @@
  /* add contents of a file to the hash */
  void hash_file(const char *fname)
  {
@@ -72,12 +72,16 @@
 +               close(fd);
 +               fatal(__FUNCTION__);
 +       }
-+       buf = mmap(NULL, stats.st_size, PROT_READ, MAP_PRIVATE, fd, 0); 
-+       if (buf == MAP_FAILED) {
-+               cc_log("Failed to mmap %s\n", fname);
-+               close(fd);
-+               fatal(__FUNCTION__);
-+        }       
++       if( stats.st_size == 0 )
++	       buf = NULL;
++       else {
++	       buf = mmap(NULL, stats.st_size, PROT_READ, MAP_PRIVATE, fd, 0); 
++	       if (buf == MAP_FAILED) {
++		       cc_log("Failed to mmap %s\n", fname);
++		       close(fd);
++		       fatal(__FUNCTION__);
++		}       
++       }
 +
 +        hash_buffer(buf, stats.st_size);
  	close(fd);
