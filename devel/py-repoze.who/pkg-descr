@@ -1,0 +1,4 @@
+repoze.who is an identification and authentication framework
+for arbitrary WSGI applications. It acts as WSGI middleware.
+
+WWW:	http://www.repoze.org/
