@@ -1,2 +1,4 @@
 This plugin enables vCalendar message handling like that produced by
 Evolution or Outlook, and handles webCal subscriptions.
+
+WWW:	http://www.claws-mail.org/plugin.php?plugin=vcalendar
