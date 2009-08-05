@@ -292,12 +292,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-2621</cvename>
+      <cvename>CVE-2009-2622</cvename>
       <url>http://www.squid-cache.org/Advisories/SQUID-2009_2.txt</url>
     </references>
     <dates>
       <discovery>2009-07-27</discovery>
       <entry>2009-07-27</entry>
-       <modified>2009-08-05</modified>
+       <modified>2009-08-06</modified>
     </dates>
   </vuln>
 
