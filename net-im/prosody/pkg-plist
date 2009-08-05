@@ -1,8 +1,5 @@
 bin/prosody
 bin/prosodyctl
-%%ETCDIR%%/certs/localhost.cert
-%%ETCDIR%%/certs/localhost.key
-%%ETCDIR%%/prosody.cfg.lua
 lib/prosody/core/actions.lua
 lib/prosody/core/componentmanager.lua
 lib/prosody/core/configmanager.lua
@@ -95,8 +92,6 @@ lib/prosody/util/timer.lua
 lib/prosody/util/uuid.lua
 lib/prosody/util/xmlrpc.lua
 lib/prosody/util/ztact.lua
-@dirrm %%ETCDIR%%/certs
-@dirrm %%ETCDIR%%
 @dirrm lib/prosody/util
 @dirrm lib/prosody/net
 @dirrm lib/prosody/modules

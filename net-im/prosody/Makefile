@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	prosody
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/
 
-MAINTAINER=	freeghb@gmail.com
+MAINTAINER=	kelly.hays@jkhfamily.org
 COMMENT=	A simple extensible XMPP server written in Lua
 
 BUILD_DEPENDS=	${LOCALBASE}/include/stringprep.h:${PORTSDIR}/dns/libidn
 RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket \
-	${LUA_MODLIBDIR}/ssl.so:${PORTSDIR}/security/luasec \
-	${LUA_MODLIBDIR}/lxp.so:${PORTSDIR}/textproc/luaexpat
+		${LUA_MODLIBDIR}/ssl.so:${PORTSDIR}/security/luasec \
+		${LUA_MODLIBDIR}/lxp.so:${PORTSDIR}/textproc/luaexpat
 
 USE_RC_SUBR=	prosody
 MAN1=		prosodyctl.1
