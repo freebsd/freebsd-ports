@@ -18,7 +18,7 @@ COMMENT=	GNU Common Lisp
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -43,10 +43,6 @@ INFO=	gcl-si gcl-tk
 PLIST_SUB=	GCL_VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Gcl compiled with gcc42 dumps core
-.endif
 
 pre-configure:
 	${SED} -i '' \
