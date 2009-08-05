@@ -491,6 +491,7 @@
     SUBDIR += p5-Lingua-Treebank
     SUBDIR += p5-Lucene
     SUBDIR += p5-MARC
+    SUBDIR += p5-MARC-Charset
     SUBDIR += p5-MARC-Lint
     SUBDIR += p5-MARC-Record
     SUBDIR += p5-MKDoc-XML

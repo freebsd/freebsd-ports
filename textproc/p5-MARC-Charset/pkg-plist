@@ -1,0 +1,10 @@
+%%SITE_PERL%%/MARC/Charset.pm
+%%SITE_PERL%%/MARC/Charset/Code.pm
+%%SITE_PERL%%/MARC/Charset/Constants.pm
+%%SITE_PERL%%/MARC/Charset/Compiler.pm
+%%SITE_PERL%%/MARC/Charset/Table.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC/Charset/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC/Charset
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC
+@dirrm %%SITE_PERL%%/MARC/Charset
+@dirrmtry %%SITE_PERL%%/MARC

@@ -1,0 +1,6 @@
+MARC::Charset allows you to turn MARC-8 encoded strings into UTF-8
+strings. MARC-8 is a single byte character encoding that predates
+unicode, and allows you to put non-Roman scripts in MARC bibliographic
+records.
+
+WWW:	http://search.cpan.org/dist/MARC-Charset
