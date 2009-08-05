@@ -36,20 +36,23 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e '/^pkgconfigdir/s,$$(libdir),%%PREFIX%%/libdata,g' \
 		${BUILDDIR}/Makefile.am
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		-e "s,%%PREFIX%%,${PREFIX},g" \
 		${WRKSRC}/Makefile \
 		${BUILDDIR}/Makefile.am \
 		${BUILDDIR}/../EIMIL/Makefile.am
-	${REINPLACE_CMD} -e "s,/usr/lib/iiim,${LOCALBASE}/lib/iiim,g" \
+	@${REINPLACE_CMD} -e "s,/usr/lib/iiim,${LOCALBASE}/lib/iiim,g" \
 		${WRKSRC}/lib/CSConv/csconv.h
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} reconfig
+	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+			  -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+		${BUILDDIR}/../EIMIL/configure ${BUILDDIR}/configure
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
 
 .include <bsd.port.post.mk>
