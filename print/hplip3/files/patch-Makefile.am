@@ -1,37 +1,33 @@
---- Makefile.am.orig	Fri Sep 21 15:36:07 2007
-+++ Makefile.am	Tue Oct  9 19:31:35 2007
-@@ -45,7 +45,7 @@
- www243dir = $(docdir)/install/step4/suse
- dist_www243_DATA = $(wwwsrc)/install/step4/suse/*
- www251dir = $(docdir)/install/manual
--dist_www251_DATA = $(wwwsrc)/install/manual/*
-+dist_www251_DATA = $(wwwsrc)/install/manual/*.html
- www252dir = $(docdir)/install/manual/distros
- dist_www252_DATA = $(wwwsrc)/install/manual/distros/*
- www261dir = $(docdir)/install/install
-@@ -53,13 +53,13 @@
+--- Makefile.am.orig	2009-06-18 01:00:23.000000000 +0400
++++ Makefile.am	2009-06-29 02:25:37.000000000 +0400
+@@ -24,11 +24,11 @@
+ if DOC_BUILD
+ wwwsrc = doc
+ www0dir = $(docdir)
+-dist_www0_DATA = $(wwwsrc)/index.html $(wwwsrc)/commandline.html $(wwwsrc)/copying.html $(wwwsrc)/devicemanager.html $(wwwsrc)/faxtrouble.html $(wwwsrc)/gettinghelp.html $(wwwsrc)/hpscan.html $(wwwsrc)/mainttask.html $(wwwsrc)/plugins.html $(wwwsrc)/print.html $(wwwsrc)/printing.html $(wwwsrc)/printoptions.html $(wwwsrc)/printtroubleshooting.html $(wwwsrc)/scanning.html $(wwwsrc)/scantrouble.html $(wwwsrc)/sendfax.html $(wwwsrc)/setup.html $(wwwsrc)/systray.html $(wwwsrc)/troubleshooting.html $(wwwsrc)/uninstalling.html $(wwwsrc)/upgrading.html
++dist_www0_DATA = $(wwwsrc)/*.html
  www3dir = $(docdir)/styles
- dist_www3_DATA = $(wwwsrc)/styles/*
+-dist_www3_DATA = $(wwwsrc)/styles/*
++dist_www3_DATA = $(wwwsrc)/styles/*.css
  www4dir = $(docdir)/images
 -dist_www4_DATA = $(wwwsrc)/images/*
-+dist_www4_DATA = $(wwwsrc)/images/*.png
- www5dir = $(docdir)/supported_devices
- dist_www5_DATA = $(wwwsrc)/supported_devices/*
- www6dir = $(docdir)/tech_docs
--dist_www6_DATA = $(wwwsrc)/tech_docs/*
-+dist_www6_DATA = $(wwwsrc)/tech_docs/*.html
- www61dir = $(docdir)/tech_docs/man_pages
--dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*
-+dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*.html
- www7dir = $(docdir)/troubleshooting
- dist_www7_DATA = $(wwwsrc)/troubleshooting/*
++dist_www4_DATA = $(wwwsrc)/images/*.png $(wwwsrc)/images/*.ico
  endif
-@@ -131,7 +131,7 @@
- dist_postscript_DATA = data/ps/testpage.ps.gz data/ps/clean_page.pdf.gz
- dist_models_DATA = data/models/models.dat
- if GUI_BUILD
--dist_images_DATA = data/images/*
-+dist_images_DATA = data/images/*.png
- endif
- dist_pcl_DATA = data/pcl/align1_8xx.pcl.gz data/pcl/align1_9xx.pcl.gz data/pcl/align2_8xx.pcl.gz data/pcl/align3_8xx.pcl.gz data/pcl/align4_8xx.pcl.gz \
- 	data/pcl/align5_8xx.pcl.gz data/pcl/align2_9xx.pcl.gz data/pcl/align3_9xx.pcl.gz data/pcl/align4_450.pcl.gz data/pcl/align6_450.pcl.gz \
+ 
+ if HPLIP_BUILD
+@@ -89,10 +89,11 @@
+ hp_mkuri_LDADD = -ldl libhpmud.la
+ 
+ # hpmud.rules
+-rulesdir = /etc/udev/rules.d
+-dist_rules_DATA = data/rules/55-hpmud.rules data/rules/56-hpmud_support.rules
+-halpredir = /usr/share/hal/fdi/preprobe/10osvendor
+-dist_halpre_DATA = data/rules/20-hplip-devices.fdi
++# FreeBSD doesn't use udev so why install the rules?
++#rulesdir = /etc/udev/rules.d
++#dist_rules_DATA = data/rules/55-hpmud.rules data/rules/56-hpmud_support.rules
++#halpredir = /usr/share/hal/fdi/preprobe/10osvendor
++#dist_halpre_DATA = data/rules/20-hplip-devices.fdi
+ 
+ # hplip.conf
+ hplip_confdir = /etc/hp

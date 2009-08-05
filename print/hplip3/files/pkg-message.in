@@ -13,9 +13,9 @@ below.
 
 **************** UPGRADE FROM 1.X NOTICE *****************
 
-Add the following to your rc.conf:
-
-hpssd_enable="YES"
+*Please note, the new version does not need a rc.d startup file
+hplip now has it's own toolbox icon which gets started,
+during system startup.
 
 So all you have to do if you have a custom ruleset setup
 is add the following to that ruleset in devfs.rules:
