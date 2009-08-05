@@ -118,6 +118,7 @@
     SUBDIR += hp2xx
     SUBDIR += hpijs
     SUBDIR += hplip
+    SUBDIR += hplip3
     SUBDIR += hs-hscolour
     SUBDIR += hs-hscolour-docs
     SUBDIR += html2latex

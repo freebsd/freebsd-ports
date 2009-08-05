@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-rep
 		espgs:${PORTSDIR}/print/cups-pstoraster \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters
 
-CONFLICTS=	hpijs-[0-9]* hplip-[0-9]*
+CONFLICTS=	hpijs-[0-9]* hplip-2*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
