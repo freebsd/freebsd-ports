@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-app-ldap
 DISTVERSION=	2.0rc1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.mezzo.net/asterisk/
 DISTNAME=	app_ldap-${DISTVERSION}
@@ -21,8 +21,5 @@ BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_OPENLDAP=	yes
-
-PLIST_FILES=	lib/asterisk/modules/app_ldap.so \
-		etc/asterisk/ldap.conf.sample
 
 .include <bsd.port.mk>
