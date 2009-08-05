@@ -78,7 +78,6 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/remote_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/require_paths_builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/requirement.rb
-%%RUBY_SITELIBDIR%%/rubygems/rubygems_version.rb
 %%RUBY_SITELIBDIR%%/rubygems/security.rb
 %%RUBY_SITELIBDIR%%/rubygems/server.rb
 %%RUBY_SITELIBDIR%%/rubygems/source_index.rb
