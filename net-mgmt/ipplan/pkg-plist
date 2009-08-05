@@ -543,7 +543,6 @@
 %%IPPLANDIR%%/user/modifydns.php
 %%IPPLANDIR%%/user/modifydnsform.php
 %%IPPLANDIR%%/user/modifydnsrecord.php
-%%IPPLANDIR%%/user/modifydnsrecord.php.rej
 %%IPPLANDIR%%/user/modifydnsrecordform.php
 %%IPPLANDIR%%/user/modifyipform.php
 %%IPPLANDIR%%/user/modifyipformmul.php
