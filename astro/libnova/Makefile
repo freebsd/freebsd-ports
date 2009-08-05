@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	libnova
 # Date created:			Oct 23, 2002
 # Whom:				ijliao
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	libnova
-PORTVERSION=	0.12.3
+PORTVERSION=	0.13.0
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
@@ -20,9 +19,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-#post-extract:
-#	@${TAR} xf ${WRKDIR}/${PORTNAME}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} -C ${WRKDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
