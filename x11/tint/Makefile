@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	tint2
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
+
+MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
@@ -37,6 +39,9 @@ post-patch:
 	@${CP} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.presed
 	@${SED} -e "s# install-dist_docDATA##" \
 	    ${WRKSRC}/Makefile.in.presed > ${WRKSRC}/Makefile.in
+	@${CP} ${WRKSRC}/src/tint.c ${WRKSRC}/src/tint.c.presed
+	@${SED} -e "s#SIGCLD#SIGCHLD#g" ${WRKSRC}/src/tint.c.presed > \
+	    ${WRKSRC}/src/tint.c
 
 pre-install:
 	${ECHO} "rmdir ${X11BASE}/etc/xdg 2>/dev/null || true" > \
