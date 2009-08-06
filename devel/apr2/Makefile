@@ -27,8 +27,8 @@ OPTIONS=	THREADS "Enable Threads in apr"						on  \
 			MYSQL	"Enable MySQL suport in apr-util"			off \
 			PGSQL	"Enable Postgresql suport in apr-util"		off
 
-APR_VERSION=	1.3.7
-APU_VERSION=	1.3.8
+APR_VERSION=	1.3.8
+APU_VERSION=	1.3.9
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:22:env
