@@ -16,6 +16,8 @@ DISTNAME=	qutim_${PORTVERSION}
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	A Qt4-based lightweight ICQ client with advanced features
 
+BROKEN=		doesn't build with new QT 4.5
+
 USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build uic_build
