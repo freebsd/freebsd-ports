@@ -1,0 +1,7 @@
+Index: usr/lib/nspluginwrapper/i386/linux/npviewer
+@@ -1,4 +1,5 @@
+ #!/bin/sh
+ TARGET_OS=linux
+ TARGET_ARCH=i386
++ulimit -s 32768 2>/dev/null
+ . /usr/local/lib/nspluginwrapper/noarch/npviewer
