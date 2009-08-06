@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://downloads.sourceforge.net/project/qrupdate/qrupdate/1.0/ \
 		http://transact.dl.sourceforge.net/project/qrupdate/qrupdate/1.0/
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	robertjenssen@ozemail.com.au
 COMMENT=	Fortran library for fast updates of QR and Cholesky decomposition
 
 FETCH_ARGS=	-p
