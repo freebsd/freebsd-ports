@@ -24,6 +24,9 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus xml qtestlib \
 		qmake_build moc_build rcc_build uic_build
 
+IGNORE=		superseded by multimedia/qt4-phonon
+EXPIRATION_DATE=2009-10-06
+
 .include <bsd.port.pre.mk>
 
 .if exists(${QT_LIBDIR}/libphonon.so)
