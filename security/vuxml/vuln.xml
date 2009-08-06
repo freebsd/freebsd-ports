@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bce1f76d-82d0-11de-88ea-001a4d49522b">
+    <topic>subversion -- heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<name>subversion-freebsd</name>
+	<range><lt>1.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Subversion Security Advisory reports:</p>
+	<blockquote cite="http://subversion.tigris.org/security/CVE-2009-2411-advisory.txt">
+	  <p>Subversion clients and servers have multiple heap
+	    overflow issues in the parsing of binary deltas.  This is
+	    related to an allocation vulnerability in the APR library
+	    used by Subversion.</p>
+
+	  <p>Clients with commit access to a vulnerable server can
+	    cause a remote heap overflow; servers can cause a heap
+	    overflow on vulnerable clients that try to do a checkout
+	    or update.</p>
+
+	  <p>This can lead to a DoS (an exploit has been tested) and
+	    to arbitrary code execution (no exploit tested, but the
+	    possibility is clear).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-2411</cvename>
+      <url>http://subversion.tigris.org/security/CVE-2009-2411-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2009-08-06</discovery>
+      <entry>2009-08-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d67b517d-8214-11de-88ea-001a4d49522b">
     <topic>bugzilla -- product name information leak</topic>
     <affects>
