@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	konversation
-DISTVERSION=	1.2-alpha3
-PORTREVISION=	1
+DISTVERSION=	1.2-alpha5
 CATEGORIES=	irc kde
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A user friendly IRC client for KDE
+
+LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
 
 LATEST_LINK=	${PORTNAME}-kde4
 
@@ -23,5 +24,6 @@ USE_XORG=	x11 xscrnsaver
 USE_KDE4=	kdeprefix pimlibs automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

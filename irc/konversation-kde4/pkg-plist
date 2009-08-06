@@ -136,6 +136,40 @@ share/doc/HTML/en/konversation/webbrowser_screen_co.png
 share/doc/HTML/et/konversation/common
 share/doc/HTML/et/konversation/index.cache.bz2
 share/doc/HTML/et/konversation/index.docbook
+share/doc/HTML/sv/konversation/addchannel.png
+share/doc/HTML/sv/konversation/addnetwork_co.png
+share/doc/HTML/sv/konversation/addserver_co.png
+share/doc/HTML/sv/konversation/channel_screen_tour_co.png
+share/doc/HTML/sv/konversation/channellist_screen_co.png
+share/doc/HTML/sv/konversation/checkidentities.png
+share/doc/HTML/sv/konversation/colorchooser_screen.png
+share/doc/HTML/sv/konversation/common
+share/doc/HTML/sv/konversation/dccstatus_screen_co.png
+share/doc/HTML/sv/konversation/first_channel_co.png
+share/doc/HTML/sv/konversation/first_serverlist_co.png
+share/doc/HTML/sv/konversation/highlighting_screen_co.png
+share/doc/HTML/sv/konversation/identities_adv_co.png
+share/doc/HTML/sv/konversation/identities_away_co.png
+share/doc/HTML/sv/konversation/identities_gen_co.png
+share/doc/HTML/sv/konversation/index.cache.bz2
+share/doc/HTML/sv/konversation/index.docbook
+share/doc/HTML/sv/konversation/kimproxy_create_screen2.png
+share/doc/HTML/sv/konversation/kimproxy_create_screen_co.png
+share/doc/HTML/sv/konversation/logviewer_co.png
+share/doc/HTML/sv/konversation/nicksonline_co.png
+share/doc/HTML/sv/konversation/nickthemes_screen_co.png
+share/doc/HTML/sv/konversation/notification_screen_co.png
+share/doc/HTML/sv/konversation/notifylist_screen_co.png
+share/doc/HTML/sv/konversation/osd_demo.png
+share/doc/HTML/sv/konversation/osd_screen_co.png
+share/doc/HTML/sv/konversation/quickbuttons_screen.png
+share/doc/HTML/sv/konversation/quickconnect_screen.png
+share/doc/HTML/sv/konversation/serverlist_co.png
+share/doc/HTML/sv/konversation/urlcatcher_screen_co.png
+share/doc/HTML/sv/konversation/webbrowser_screen_co.png
+share/doc/HTML/uk/konversation/common
+share/doc/HTML/uk/konversation/index.cache.bz2
+share/doc/HTML/uk/konversation/index.docbook
 share/icons/hicolor/128x128/apps/konversation.png
 share/icons/hicolor/16x16/actions/kimproxyaway.png
 share/icons/hicolor/16x16/actions/kimproxyoffline.png
@@ -161,6 +195,7 @@ share/kde4/services/konvirc.protocol
 share/kde4/services/konvirc6.protocol
 share/locale/ar/LC_MESSAGES/konversation.mo
 share/locale/bg/LC_MESSAGES/konversation.mo
+share/locale/ca/LC_MESSAGES/konversation.mo
 share/locale/da/LC_MESSAGES/konversation.mo
 share/locale/de/LC_MESSAGES/konversation.mo
 share/locale/el/LC_MESSAGES/konversation.mo
@@ -173,7 +208,7 @@ share/locale/he/LC_MESSAGES/konversation.mo
 share/locale/hu/LC_MESSAGES/konversation.mo
 share/locale/it/LC_MESSAGES/konversation.mo
 share/locale/ja/LC_MESSAGES/konversation.mo
-share/locale/ko/LC_MESSAGES/konversation.mo
+share/locale/nds/LC_MESSAGES/konversation.mo
 share/locale/nl/LC_MESSAGES/konversation.mo
 share/locale/pt/LC_MESSAGES/konversation.mo
 share/locale/pt_BR/LC_MESSAGES/konversation.mo
@@ -183,6 +218,8 @@ share/locale/tr/LC_MESSAGES/konversation.mo
 share/locale/uk/LC_MESSAGES/konversation.mo
 share/locale/zh_CN/LC_MESSAGES/konversation.mo
 share/locale/zh_TW/LC_MESSAGES/konversation.mo
+@dirrm share/doc/HTML/uk/konversation
+@dirrm share/doc/HTML/sv/konversation
 @dirrm share/doc/HTML/et/konversation
 @dirrm share/doc/HTML/en/konversation
 @dirrm share/apps/konversation/themes/square
