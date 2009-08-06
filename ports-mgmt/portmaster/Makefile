@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	portmaster
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
