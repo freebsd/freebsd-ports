@@ -55,6 +55,8 @@ PLIST_DIRS=	etc/popper
 
 LATEST_LINK=	popper
 
+PORTSCOUT=      limit:^2\.
+
 post-patch:
 	$(RM) ${WRKSRC}/md5.h
 	$(CP) ${FILESDIR}/sendto.c ${WRKSRC}
