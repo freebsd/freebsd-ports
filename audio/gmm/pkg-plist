@@ -1,0 +1,6 @@
+bin/gmm
+share/applications/gmm.desktop
+share/icons/hicolor/48x48/apps/gmm.png
+share/locale/de/LC_MESSAGES/gogglesmm.mo
+share/locale/es/LC_MESSAGES/gogglesmm.mo
+@dirrmtry share/applications
