@@ -35,7 +35,9 @@ MAKE_JOBS_UNSAFE=	yes
 
 # It asks for list of directories to do test for file locking
 # (defaults to /tmp and ".", so return should suffice in most cases).
-.if !defined(BATCH) # handled in patch-aa
+.if defined(BATCH) # handled in patch-aa
+MAKE_ARGS+=	-DBATCH
+.else
 IS_INTERACTIVE=	yes
 .endif
 
