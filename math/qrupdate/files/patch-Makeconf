@@ -1,0 +1,22 @@
+--- Makeconf.orig	2009-03-11 15:08:32.000000000 +0900
++++ Makeconf	2009-08-06 12:30:47.000000000 +0900
+@@ -1,14 +1,14 @@
+ # set this to your compiler's executable name (e.g. gfortran, g77)
+-FC=gfortran
++FC=%%FC%%
+ # requested flags
+-FFLAGS=-fimplicit-none -O3 -funroll-loops 
++FFLAGS=%%FFLAGS%%
+ # set if you need shared library
+-FPICFLAGS=-fPIC
++FPICFLAGS=%%PICFLAG%%
+ 
+ # BLAS library (only required for tests)
+-BLAS=-lblas
++#BLAS=-L/usr/local/lib -lblas
+ # LAPACK library (only required for tests)
+-LAPACK=-llapack
++#LAPACK=-llapack
+ 
+ # Library version
+ VERSION=1.0

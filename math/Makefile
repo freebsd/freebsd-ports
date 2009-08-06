@@ -440,6 +440,7 @@
     SUBDIR += qd
     SUBDIR += qgfe
     SUBDIR += qhull
+    SUBDIR += qrupdate
     SUBDIR += qscanplot
     SUBDIR += qtiplot
     SUBDIR += qtiplot-doc

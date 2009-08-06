@@ -1,0 +1,37 @@
+--- Makefile.orig	2009-02-06 20:12:00.000000000 +1100
++++ Makefile	2009-08-06 01:20:12.000000000 +1000
+@@ -21,6 +21,8 @@
+ 
+ include Makeconf
+ 
++all: solib
++
+ help:
+ 	@echo
+ 	@echo "The following targets are available:"
+@@ -34,20 +36,20 @@
+ lib:
+ 	make -C src/ lib
+ solib:
+-	make -C src/ solib
++	gmake -C src/ solib
+ test: lib
+ 	make -C test/
+ 
+ clean:
+ 	rm -f libqrupdate.a libqrupdate.so
+-	make -C src/ clean
+-	make -C test/ clean
++	gmake -C src/ clean
++	gmake -C test/ clean
+ 
+ install:
+-	make -C src/ install
++	gmake -C src/ install
+ 
+ install-shlib:
+-	make -C src/ install-shlib
++	gmake -C src/ install-shlib
+ 
+ install-staticlib:
+ 	make -C src/ install-staticlib
