@@ -7,7 +7,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://gwenole.beauchesne.info/projects/nspluginwrapper/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RPMFILE}
@@ -53,6 +53,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/src/npw-config.c
+	${RM} ${WRKSRC}/usr/lib/nspluginwrapper/i386/linux/npviewer.orig
+
 post-install:
 	${MKDIR} ${LIBDIR}/i386/linux
 	${INSTALL_SCRIPT} ${WRKSRC}/usr/lib/nspluginwrapper/i386/linux/* \
