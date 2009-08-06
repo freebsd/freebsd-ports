@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--disable-debug \
 		--with-ssl=/usr \
 		--with-zlib=/usr
 ALL_TARGET=	lib progs
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
