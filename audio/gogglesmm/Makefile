@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmm
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.10.5
 CATEGORIES=	audio
 MASTER_SITES=	http://gogglesmm.googlecode.com/files/
 DISTNAME=	musicmanager-${PORTVERSION}
@@ -26,16 +25,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-WANT_GNOME=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	README AUTHORS
-PLIST_DIRS=	share/applications
-PLIST_FILES=	bin/gmm						\
-		share/applications/gmm.desktop			\
-		share/icons/hicolor/48x48/apps/gmm.png		\
-		share/locale/de/LC_MESSAGES/gogglesmm.mo
 
 CONFIGURE_ENV=	OPT_CFLAGS=" "
 
@@ -45,23 +38,13 @@ CONFIGURE_ENV=	OPT_CFLAGS=" "
 CONFIGURE_ARGS+=--without-new-remote
 .endif
 
-post-extract:
-	${REINPLACE_CMD} -i '' -e "s|/bin/bash|${PREFIX}/bin/bash|" \
-		${WRKSRC}/configure
+post-patch:
+	@${REINPLACE_CMD} -i '' -e "s|/bin/bash|${LOCALBASE}/bin/bash|; \
+		s|/usr/local|${LOCALBASE}|" ${WRKSRC}/configure
 
 post-configure:
-	${REINPLACE_CMD} -i '' -e 's| -D | |' \
+	@${REINPLACE_CMD} -i '' -e 's| -[DT] | |g' \
 		${WRKSRC}/Makefile
-
-	${REINPLACE_CMD} -i '' -e 's| -T | |' \
-		${WRKSRC}/Makefile
-
-pre-install:
-	[ -d ${PREFIX}/share/applications ] ||	\
-	    ${MKDIR} ${PREFIX}/share/applications
-
-	[ -d ${PREFIX}/share/locale/de/LC_MESSAGES ] ||
-	    ${MKDIR} ${PREFIX}/share/locale/de/LC_MESSAGES
 
 post-install:
 .if !defined(NOPORTDOCS)
