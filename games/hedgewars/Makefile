@@ -24,7 +24,9 @@ USE_CMAKE=	yes
 USE_SDL=	sdl mixer image ttf net
 USE_FPC=	opengl
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build network qmake_build rcc_build svg xml
+QT_COMPONENTS=	corelib gui moc_build network \
+		qmake_build rcc_build svg xml \
+		uic_build
 MAKE_JOBS_SAFE=	yes
 
 post-patch:
