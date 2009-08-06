@@ -1,0 +1,10 @@
+Index: bin/googleearth
+@@ -34,6 +34,8 @@
+     dirname $fullpath
+ }
+ 
++ulimit -s 32768 2>/dev/null
++
+ GOOGLEEARTH_DATA_PATH=/usr/local/share/google-earth
+ if [ "${GOOGLEEARTH_DATA_PATH}" = "" ]; then
+     GOOGLEEARTH_DATA_PATH="`FindPath $0`"
