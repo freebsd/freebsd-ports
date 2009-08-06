@@ -5212,6 +5212,7 @@ hping                           ports/net/hping
 hping-devel                     ports/net/hping-devel
 hpl                             ports/benchmarks/hpl
 hplip                           ports/print/hplip
+hplip3                          ports/print/hplip3
 hppsmtools                      ports/graphics/hppsmtools
 hptools                         ports/devel/hptools
 hr-aspell                       ports/textproc/hr-aspell
@@ -6343,6 +6344,7 @@ jsmath-fonts-sprite             ports/math/jsmath-fonts-sprite
 jsmin                           ports/devel/jsmin
 json-c                          ports/devel/json-c
 json-glib                       ports/devel/json-glib
+jspacker                        ports/www/jspacker
 jspice3                         ports/cad/jspice3
 jspwiki                         ports/www/jspwiki
 jtag                            ports/devel/jtag
@@ -6549,6 +6551,7 @@ kde3-i18n-wa                    ports/misc/kde3-i18n-wa
 kde3-i18n-xh                    ports/misc/kde3-i18n-xh
 kde3-i18n-zu                    ports/misc/kde3-i18n-zu
 kde4                            ports/x11/kde4
+kde4-icons-oxygen               ports/x11-themes/kde4-icons-oxygen
 kde4-l10n                       ports/misc/kde4-l10n
 kde4-l10n-bg                    ports/misc/kde4-l10n-bg
 kde4-l10n-bn_IN                 ports/misc/kde4-l10n-bn_IN
@@ -6630,6 +6633,7 @@ kdehier4                        ports/misc/kdehier4
 kdelibs3                        ports/x11/kdelibs3
 kdelibs3-nocups                 ports/x11/kdelibs3-nocups
 kdelibs4                        ports/x11/kdelibs4
+kdelibs4-experimental           ports/x11/kdelibs4-experimental
 kdemultimedia3                  ports/multimedia/kdemultimedia3
 kdemultimedia4                  ports/multimedia/kdemultimedia4
 kdenetwork3                     ports/net/kdenetwork3
@@ -6637,6 +6641,7 @@ kdenetwork4                     ports/net/kdenetwork4
 kdenlive                        ports/multimedia/kdenlive
 kdepim3                         ports/deskutils/kdepim3
 kdepim4                         ports/deskutils/kdepim4
+kdepim4-runtime                 ports/deskutils/kdepim4-runtime
 kdepimlibs4                     ports/deskutils/kdepimlibs4
 kdeplasma-addons                ports/deskutils/kdeplasma-addons
 kdesdk3                         ports/devel/kdesdk3
@@ -8266,6 +8271,7 @@ lrzsz                           ports/comms/lrzsz
 lsdb                            ports/databases/lsdb
 lsdvd                           ports/multimedia/lsdvd
 lsh                             ports/security/lsh
+lshell                          ports/shells/lshell
 lsknobs                         ports/ports-mgmt/lsknobs
 lsof                            ports/sysutils/lsof
 lsysexp                         ports/biology/lsysexp
@@ -8550,6 +8556,7 @@ menumaker                       ports/deskutils/menumaker
 meqcc                           ports/games/meqcc
 mercator                        ports/devel/mercator
 mercurial                       ports/devel/mercurial
+mercurialeclipse                ports/devel/mercurialeclipse
 mercury                         ports/net-im/mercury
 mergeant                        ports/databases/mergeant
 mergelog                        ports/www/mergelog
@@ -11468,6 +11475,8 @@ p5-Goo                          ports/deskutils/p5-Goo
 p5-Google-Chart                 ports/graphics/p5-Google-Chart
 p5-Google-Checkout              ports/devel/p5-Google-Checkout
 p5-Google-Data-JSON             ports/textproc/p5-Google-Data-JSON
+p5-Google-SAML-Request          ports/net/p5-Google-SAML-Request
+p5-Google-SAML-Response         ports/net/p5-Google-SAML-Response
 p5-Gopher-Server                ports/net/p5-Gopher-Server
 p5-Graph                        ports/math/p5-Graph
 p5-Graph-Easy                   ports/graphics/p5-Graph-Easy
@@ -11897,6 +11906,7 @@ p5-Logfile-Rotate               ports/devel/p5-Logfile-Rotate
 p5-Lucene                       ports/textproc/p5-Lucene
 p5-Luka                         ports/devel/p5-Luka
 p5-MARC                         ports/textproc/p5-MARC
+p5-MARC-Charset                 ports/textproc/p5-MARC-Charset
 p5-MARC-Lint                    ports/textproc/p5-MARC-Lint
 p5-MARC-Record                  ports/textproc/p5-MARC-Record
 p5-MD5                          ports/security/p5-MD5
@@ -12132,6 +12142,7 @@ p5-MooseX-Log-Log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-MooseX-Meta-TypeConstraint-ForceCoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
 p5-MooseX-Method-Signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-MooseX-MethodAttributes      ports/devel/p5-MooseX-MethodAttributes
+p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Policy-SemiAffordanceAccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
@@ -13438,6 +13449,7 @@ p5-XML-DOM                      ports/textproc/p5-XML-DOM
 p5-XML-DOM-Lite                 ports/textproc/p5-XML-DOM-Lite
 p5-XML-DOM-XPath                ports/textproc/p5-XML-DOM-XPath
 p5-XML-DOM2                     ports/textproc/p5-XML-DOM2
+p5-XML-DOMHandler               ports/textproc/p5-XML-DOMHandler
 p5-XML-DT                       ports/textproc/p5-XML-DT
 p5-XML-DTDParser                ports/textproc/p5-XML-DTDParser
 p5-XML-DifferenceMarkup         ports/textproc/p5-XML-DifferenceMarkup
@@ -14977,6 +14989,8 @@ p5-goo                          ports/deskutils/p5-Goo
 p5-google-chart                 ports/graphics/p5-Google-Chart
 p5-google-checkout              ports/devel/p5-Google-Checkout
 p5-google-data-json             ports/textproc/p5-Google-Data-JSON
+p5-google-saml-request          ports/net/p5-Google-SAML-Request
+p5-google-saml-response         ports/net/p5-Google-SAML-Response
 p5-gopher-server                ports/net/p5-Gopher-Server
 p5-gps                          ports/astro/p5-GPS
 p5-gps-babel                    ports/astro/p5-GPS-Babel
@@ -15476,6 +15490,7 @@ p5-make-cache                   ports/devel/p5-Make-Cache
 p5-makefile-dom                 ports/textproc/p5-Makefile-DOM
 p5-makefile-parser              ports/textproc/p5-Makefile-Parser
 p5-marc                         ports/textproc/p5-MARC
+p5-marc-charset                 ports/textproc/p5-MARC-Charset
 p5-marc-lint                    ports/textproc/p5-MARC-Lint
 p5-marc-record                  ports/textproc/p5-MARC-Record
 p5-markup-perl                  ports/www/p5-Markup-Perl
@@ -15654,6 +15669,7 @@ p5-moosex-log-log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-moosex-meta-typeconstraint-forcecoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
 p5-moosex-method-signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-moosex-methodattributes      ports/devel/p5-MooseX-MethodAttributes
+p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-policy-semiaffordanceaccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
@@ -17011,6 +17027,7 @@ p5-xml-dom                      ports/textproc/p5-XML-DOM
 p5-xml-dom-lite                 ports/textproc/p5-XML-DOM-Lite
 p5-xml-dom-xpath                ports/textproc/p5-XML-DOM-XPath
 p5-xml-dom2                     ports/textproc/p5-XML-DOM2
+p5-xml-domhandler               ports/textproc/p5-XML-DOMHandler
 p5-xml-doubleencodedentities    ports/textproc/p5-XML-DoubleEncodedEntities
 p5-xml-driver-html              ports/textproc/p5-XML-Driver-HTML
 p5-xml-dt                       ports/textproc/p5-XML-DT
@@ -18508,6 +18525,7 @@ policyd2                        ports/mail/policyd2
 policykit                       ports/sysutils/policykit
 policykit-gnome                 ports/sysutils/policykit-gnome
 policykit-kde                   ports/sysutils/policykit-kde
+policykit-qt                    ports/sysutils/policykit-qt
 polipo                          ports/www/polipo
 poly1305aes                     ports/security/poly1305aes
 polygraph                       ports/benchmarks/polygraph
@@ -19400,6 +19418,7 @@ py-qt4-opengl                   ports/x11/py-qt4-opengl
 py-qt4-phonon                   ports/multimedia/py-qt4-phonon
 py-qt4-qscintilla2              ports/devel/py-qt4-qscintilla2
 py-qt4-script                   ports/devel/py-qt4-script
+py-qt4-scripttools              ports/devel/py-qt4-scripttools
 py-qt4-sql                      ports/databases/py-qt4-sql
 py-qt4-svg                      ports/graphics/py-qt4-svg
 py-qt4-test                     ports/devel/py-qt4-test
@@ -19415,6 +19434,7 @@ py-relatorio                    ports/print/py-relatorio
 py-repl                         ports/devel/py-repl
 py-reportlab                    ports/print/py-reportlab
 py-reportlab2                   ports/print/py-reportlab2
+py-repoze.who                   ports/devel/py-repoze.who
 py-resourcepackage              ports/devel/py-resourcepackage
 py-restclient                   ports/www/py-restclient
 py-reverend                     ports/textproc/py-reverend
@@ -19585,6 +19605,7 @@ py-webtest                      ports/www/py-WebTest
 py-webunit                      ports/www/py-webunit
 py-webware                      ports/www/py-webware
 py-webware-component            ports/www/py-webware-component
+py-wikitools                    ports/www/py-wikitools
 py-wmdockapps                   ports/x11-toolkits/py-wmdockapps
 py-wordnet                      ports/textproc/py-wordnet
 py-wsgi_xmlrpc                  ports/devel/py-wsgi_xmlrpc
@@ -19882,6 +19903,7 @@ qt4-qtestlib                    ports/devel/qt4-qtestlib
 qt4-qvfb                        ports/devel/qt4-qvfb
 qt4-rcc                         ports/devel/qt4-rcc
 qt4-script                      ports/devel/qt4-script
+qt4-scripttools                 ports/devel/qt4-scripttools
 qt4-sql                         ports/databases/qt4-sql
 qt4-sqlite-plugin               ports/databases/qt4-sqlite-plugin
 qt4-sqlite3-plugin              ports/databases/qt4-sqlite3-plugin
@@ -22234,6 +22256,7 @@ tinypy                          ports/lang/tinypy
 tinyq                           ports/devel/tinyq
 tinystats                       ports/dns/tinystats
 tinysu                          ports/security/tinysu
+tinytinyhttpd                   ports/www/tinytinyhttpd
 tinywm                          ports/x11-wm/tinywm
 tinyxml                         ports/textproc/tinyxml
 tipograf                        ports/print/tipograf
