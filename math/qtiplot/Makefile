@@ -7,6 +7,7 @@
 
 PORTNAME=	qtiplot
 DISTVERSION=	0.9.7.6
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
@@ -34,13 +35,14 @@ DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"qtiplot" "" false
 
 OPTIONS=	DOCS "Install the QtiPlot Handbook" on \
-		PYTHON "Python scripting support" on
+		PYTHON "Python scripting support (broken)" off
 
 STRIP_FILES=	bin/qtiplot share/qtiplot/fitPlugins/*.so.1.0.0
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_PYTHON)
+BROKEN=		not compatible with PyQt-4.5
 USE_PYTHON=	yes
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
