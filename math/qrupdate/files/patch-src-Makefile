@@ -1,0 +1,14 @@
+--- src/Makefile.orig	2009-08-06 01:21:58.000000000 +1000
++++ src/Makefile	2009-08-06 01:28:32.000000000 +1000
+@@ -52,9 +52,9 @@
+ install: install-shlib install-staticlib
+ 
+ install-shlib: ../libqrupdate.so
+-	install -D -m644 ../libqrupdate.so $(PREFIX)/lib/libqrupdate.so.$(VERSION)
++	install -s ../libqrupdate.so $(PREFIX)/lib/libqrupdate.so.$(VERSION)
+ 	ln -s libqrupdate.so.$(VERSION) $(PREFIX)/lib/libqrupdate.so.$(MAJOR)
+ 	ln -s libqrupdate.so.$(VERSION) $(PREFIX)/lib/libqrupdate.so
+ 
+ install-staticlib: ../libqrupdate.a
+-	install -D -m644 ../libqrupdate.a $(PREFIX)/lib/libqrupdate.a
++	install -s ../libqrupdate.a $(PREFIX)/lib/libqrupdate.a

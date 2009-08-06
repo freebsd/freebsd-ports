@@ -1,0 +1,4 @@
+qrupdate is a Fortran library for fast updates of QR and Cholesky 
+decomposition. It was originally part of GNU-Octave.
+
+WWW: http://qrupdate.sourceforge.net/
