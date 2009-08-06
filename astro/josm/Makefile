@@ -20,7 +20,8 @@ COMMENT=	A comprehensive editor for OpenStreetMap.org database
 NO_WRKSUBDIR=	yes
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build network webkit
+QT_COMPONENTS=	corelib gui moc_build network webkit script \
+		rcc_build uic_build
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.5+
