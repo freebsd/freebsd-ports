@@ -24,7 +24,8 @@ OPTIONS=	JPEG	"Enable JPEG support"		on \
 		TIFF	"Enable TIFF support"		on \
 		X11	"Enable X11 support"		on \
 		SDL	"Enable SDL support"		off \
-		NVTT	"Enable NVidia texture tools support" off
+		NVTT	"Enable NVidia texture tools support" off \
+		SIMD	"Enable SIMD autodetection (AltiVec, SSE3,...)" off
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
@@ -34,8 +35,7 @@ ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-ILU \
-		--disable-allegro --disable-directx8 --disable-directx9 \
-		--disable-altivec --disable-sse --disable-sse2 --disable-sse3
+		--disable-allegro --disable-directx8 --disable-directx9
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -107,6 +107,10 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-to
 LDFLAGS+=	${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=--without-nvtt
+.endif
+
+.if !defined(WITH_SIMD)
+CONFIGURE_ARGS+=--disable-altivec --disable-sse --disable-sse2 --disable-sse3
 .endif
 
 post-patch:
