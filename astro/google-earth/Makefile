@@ -7,6 +7,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	5.0.11733.9347
+PORTREVISION=	1
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTNAME=	GoogleEarthLinux
@@ -45,7 +46,7 @@ do-extract:
 	@cd ${WRKSRC} && ${TAR} xf googleearth-data.tar && ${RM} -f googleearth-data.tar
 	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} -f googleearth-linux-x86.tar
 
-do-patch:
+pre-patch:
 	@${REINPLACE_CMD} -i "" -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|' ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e "s|^# Let's boogie.*|rm -f \$${HOME}/.googleearth/instance-running-lock|" ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
@@ -54,7 +55,8 @@ do-patch:
 
 do-build:
 	@${SETENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
-	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh
+	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh \
+		bin/googleearth.orig
 
 pre-su-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
