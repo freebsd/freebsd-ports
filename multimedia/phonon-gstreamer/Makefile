@@ -28,6 +28,9 @@ QT_COMPONENTS=	gui dbus xml opengl \
 		qmake_build moc_build rcc_build uic_build
 USE_GSTREAMER=	yes
 
+IGNORE=		superseded by multimedia/qt4-phonon-gst
+EXPIRATION_DATE=2009-10-06
+
 post-patch:
 #fix finding automoc when PREFIX is not matched KDE4_PREFIX
 	${REINPLACE_CMD} -e 's|NO_DEFAULT_PATH|${KDE4_PREFIX} NO_DEFAULT_PATH|' \
