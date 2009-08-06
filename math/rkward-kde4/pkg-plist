@@ -461,6 +461,7 @@ share/apps/rkward/plots/stem.rkh
 share/apps/rkward/plots/stem.xml
 share/apps/rkward/plots/stripchart_plot.php
 share/apps/rkward/plots/stripchart_plot.xml
+share/apps/rkward/resource.ver
 share/apps/rkward/rkcatchedx11windowpart.rc
 share/apps/rkward/rkcommandeditorwindowpart.rc
 share/apps/rkward/rkcommandlogpart.rc
@@ -469,6 +470,7 @@ share/apps/rkward/rkdummypart.rc
 share/apps/rkward/rkeditordataframepart.rc
 share/apps/rkward/rkhelpwindow.rc
 share/apps/rkward/rkoutputwindow.rc
+share/apps/rkward/rkstandardactions.rc
 share/apps/rkward/rktoplevelwindowgui.rc
 share/apps/rkward/rkwardui.rc
 share/apps/rkward/simple_anova/code.php
@@ -565,10 +567,8 @@ lib/R/library/rkward/help/public
 lib/R/library/rkward/html/00Index.html
 lib/R/library/rkward/html/public.html
 lib/R/library/rkward/latex/public.tex
-lib/R/library/rkward/libs/rkward.so
 lib/R/library/rkward/man/rkward.Rd.gz
 @dirrm lib/R/library/rkward/man
-@dirrm lib/R/library/rkward/libs
 @dirrm lib/R/library/rkward/latex
 @dirrm lib/R/library/rkward/html
 @dirrm lib/R/library/rkward/help
