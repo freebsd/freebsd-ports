@@ -3,3 +3,12 @@ share/applications/kde4/kchmviewer.desktop
 share/icons/crystalsvg/128x128/apps/kchmviewer.png
 share/icons/crystalsvg/48x48/apps/kchmviewer.png
 share/icons/crystalsvg/64x64/apps/kchmviewer.png
+share/locale/cs/LC_MESSAGES/kchmviewer.mo
+share/locale/fr/LC_MESSAGES/kchmviewer.mo
+share/locale/hu/LC_MESSAGES/kchmviewer.mo
+share/locale/it/LC_MESSAGES/kchmviewer.mo
+share/locale/nl/LC_MESSAGES/kchmviewer.mo
+share/locale/ru/LC_MESSAGES/kchmviewer.mo
+share/locale/sv/LC_MESSAGES/kchmviewer.mo
+share/locale/tr/LC_MESSAGES/kchmviewer.mo
+share/locale/zh_CN/LC_MESSAGES/kchmviewer.mo

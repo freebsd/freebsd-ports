@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kchmviewer
-PORTVERSION=	4.0
-PORTREVISION=	3
+PORTVERSION=	4.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 
@@ -23,5 +22,6 @@ USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui network svg xml designer_build \
 		qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
