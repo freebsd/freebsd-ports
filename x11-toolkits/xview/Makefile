@@ -18,6 +18,8 @@ DISTNAME=	xview3.2p1-X11R6
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
+MAKE_JOBS_UNSAFE=	yes
+
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
@@ -37,6 +39,10 @@ X11BASE2FIX=	clients/olwmslave/help_file.c	lib/libxview/help/help_file.c	\
 		lib/libxview/misc/gettext.h	lib/libxview/textsw/txt_e_menu.c
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 800089
+CFLAGS+=	-DCOMPAT_43TTY
+.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+;' \
