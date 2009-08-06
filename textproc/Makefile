@@ -494,6 +494,7 @@
     SUBDIR += p5-MARC-Charset
     SUBDIR += p5-MARC-Lint
     SUBDIR += p5-MARC-Record
+    SUBDIR += p5-MARC-XML
     SUBDIR += p5-MKDoc-XML
     SUBDIR += p5-Makefile-DOM
     SUBDIR += p5-Makefile-Parser

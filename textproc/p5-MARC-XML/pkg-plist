@@ -1,0 +1,6 @@
+bin/marc2xml
+bin/xml2marc
+%%SITE_PERL%%/MARC/File/SAX.pm
+%%SITE_PERL%%/MARC/File/XML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC-XML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC-XML
