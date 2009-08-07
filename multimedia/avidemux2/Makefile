@@ -28,6 +28,8 @@ CONFLICTS=	avidemux2-2.[0-35-9].*
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+BROKEN=		need a update for Qt 4.5
+
 USE_GNOME=	libxml2
 USE_QT_VER=	4
 QT_COMPONENTS=
