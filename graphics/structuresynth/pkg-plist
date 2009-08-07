@@ -1,33 +1,53 @@
-bin/structuresynth
+bin/structure-synth
+share/applications/structure-synth.desktop
+share/pixmaps/structure-synth.png
 %%DATADIR%%/Examples/Arc Sphere.es
 %%DATADIR%%/Examples/Ball.es
 %%DATADIR%%/Examples/BinaryKite.es
-%%DATADIR%%/Examples/Boxes II.es
+%%DATADIR%%/Examples/CSG test.es
 %%DATADIR%%/Examples/City of Glass.es
 %%DATADIR%%/Examples/Default.es
 %%DATADIR%%/Examples/Frame In Frame.es
 %%DATADIR%%/Examples/Grinder.es
-%%DATADIR%%/Examples/Invader.es
 %%DATADIR%%/Examples/Jugend2D.es
 %%DATADIR%%/Examples/Menger.es
 %%DATADIR%%/Examples/MeshTest.es
 %%DATADIR%%/Examples/Mondrian.es
 %%DATADIR%%/Examples/Nabla.es
+%%DATADIR%%/Examples/NablaSystem.es
+%%DATADIR%%/Examples/NineWorthies.es
+%%DATADIR%%/Examples/Nouveau.es
+%%DATADIR%%/Examples/Nouveau2.es
 %%DATADIR%%/Examples/Octopod II.es
 %%DATADIR%%/Examples/RoundTree.es
 %%DATADIR%%/Examples/SpiralTree2D.es
+%%DATADIR%%/Examples/Thingy.es
 %%DATADIR%%/Examples/Torus2.es
 %%DATADIR%%/Examples/Torus3.es
 %%DATADIR%%/Examples/Trees 3d.es
 %%DATADIR%%/Examples/Tube.es
+%%DATADIR%%/Examples/Tutorials/Blend.es
+%%DATADIR%%/Examples/Tutorials/Preprocessor.es
+%%DATADIR%%/Examples/Tutorials/PreprocessorGUI.es
+%%DATADIR%%/Examples/Tutorials/Primitives.es
+%%DATADIR%%/Examples/Tutorials/RandomColor.es
+%%DATADIR%%/Examples/Tutorials/TriangleComposites.es
+%%DATADIR%%/Misc/Blender_Importer_2.py
+%%DATADIR%%/Misc/Blender_Importer_2.rendertemplate
+%%DATADIR%%/Misc/SunFlow-Monochrome.rendertemplate
+%%DATADIR%%/Misc/Sunflow-Colored.rendertemplate
+%%DATADIR%%/Misc/Sunflow-Meta-Neon22.rendertemplate
+%%DATADIR%%/Misc/Sunflow-Textured.rendertemplate
+%%DATADIR%%/Misc/Sunflow-Ultimate-Groovelock.rendertemplate
+%%DATADIR%%/Misc/Sunflow-Ward.rendertemplate
 %%DATADIR%%/Misc/about.html
 %%DATADIR%%/Misc/icon.jpg
 %%DATADIR%%/Misc/povray.rendertemplate
+%%DATADIR%%/Misc/povray2.rendertemplate
 %%DATADIR%%/Misc/renderman.rendertemplate
 %%DATADIR%%/Misc/splash.png
-%%DATADIR%%/Misc/sunflow.rendertemplate
-%%DATADIR%%/Misc/sunflowcolored.rendertemplate
-%%DATADIR%%/Misc/sunflowmulticolored.rendertemplate
 @dirrm %%DATADIR%%/Misc
+@dirrm %%DATADIR%%/Examples/Tutorials
 @dirrm %%DATADIR%%/Examples
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
