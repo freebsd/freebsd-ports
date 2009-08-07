@@ -5,11 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20080924
-PORTREVISION=	1
+PORTVERSION=	20090313
+DISTVERSION=	20090131
 CATEGORIES=	games
-MASTER_SITES=	http://wiki.eduke32.com/stuff/source_code/
-DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://dukeworld.duke4.net/eduke32/source_code/
+DISTFILES=	${PORTNAME}_src_${DISTVERSION}${EXTRACT_SUFX}
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${PORTNAME}_src_${PORTVERSION}.diff
 
 MAINTAINER=	olivier@gid0.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
@@ -19,11 +21,12 @@ USE_GMAKE=	yes
 USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
-WRKSRC=		${WRKDIR}/${PORTNAME}_src_${PORTVERSION}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}_src_${DISTVERSION}
+PATCH_ARGS=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP} -l
 
-OPTIONS=	MIDI		"Enable MIDI support"			On \
+OPTIONS=	MIDI		"Enable original MIDI music support"	On \
 		TIMIDITYPLUS	"Use Timidity++ instead of Timidity"	Off \
-		VORBIS		"Enable Ogg Vorbis support"		On
+		VORBIS		"Enable Ogg Vorbis music files support"	On
 
 .include "${.CURDIR}/../duke3d-data/Makefile.include"
 
@@ -63,8 +66,8 @@ post-patch:
 		 s|/usr/X11R6|${LOCALBASE}|; \
 		 s|sdl-config|${SDL_CONFIG}|' \
 		${WRKSRC}/Makefile \
-		${WRKSRC}/../build/Makefile \
-		${WRKSRC}/../build/Makefile.shared
+		${WRKSRC}/build/Makefile \
+		${WRKSRC}/build/Makefile.shared
 	@${REINPLACE_CMD} -e 's|LINUX|BSD|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/share/games/eduke32|${DN3DDIR}|' \
 		${WRKSRC}/source/game.c ${WRKSRC}/source/astub.c
