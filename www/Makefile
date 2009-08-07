@@ -1017,6 +1017,7 @@
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Path-Class-URI
     SUBDIR += p5-PodToHTML
+    SUBDIR += p5-REST-Google-Apps-Provisioning
     SUBDIR += p5-RT-Authen-ExternalAuth
     SUBDIR += p5-RT-Client-REST
     SUBDIR += p5-RT-Extension-LDAPImport
