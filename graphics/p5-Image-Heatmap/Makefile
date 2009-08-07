@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-Heatmap
-PORTVERSION=	0.556
+PORTVERSION=	0.557
 CATEGORIES=	graphics
 MASTER_SITES=	CPAN/../../authors/id/W/WA/WAZZUTEKE
 
