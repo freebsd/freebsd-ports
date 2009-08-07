@@ -48,16 +48,18 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote
 	cite="http://developer.joomla.org/security/news/303-20090723-core-com-mailto-timeout-issue.html">
 	  <p>In com_mailto, it was possible to bypass timeout protection against
-	  sending automated emails.</p>
+	    sending automated emails.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <url>http://developer.joomla.org/security.html</url>
+      <url>http://secunia.com/advisories/36097/</url>
     </references>
     <dates>
       <discovery>2009-07-22</discovery>
       <entry>2009-08-07</entry>
+      <modified>2009-08-07</modified>
     </dates>
   </vuln>
 
