@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		zkt
-PORTVERSION=		0.98
+DISTVERSION=		0.99c
 CATEGORIES=		dns
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.hznet.de/dns/zkt/
@@ -23,6 +23,7 @@ PLIST_FILES=		sbin/dnssec-zkt \
 MAN8=			dnssec-zkt.8 dnssec-signer.8
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-configpath=${DIR_NAMED_CONF}
+MAKE_JOBS_SAFE=		yes
 
 .include <bsd.port.pre.mk>
 
