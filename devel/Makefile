@@ -2556,6 +2556,7 @@
     SUBDIR += qt4-scripttools
     SUBDIR += qt4-uic
     SUBDIR += qt4-uic3
+    SUBDIR += qtscriptgenerator
     SUBDIR += quilt
     SUBDIR += radrails
     SUBDIR += ragel
