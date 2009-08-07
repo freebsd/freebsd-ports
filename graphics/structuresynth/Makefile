@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	structuresynth
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	StructureSynth-Source-v${PORTVERSION}
@@ -17,11 +17,12 @@ COMMENT=	Rule-based 3D structure generator
 USE_ZIP=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build corelib gui opengl moc_build rcc_build xml script
-
-WRKSRC=		${WRKDIR}/structuresynth
+MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}/structure-synth
 
 post-extract:
-	@${MV} ${WRKDIR}/"Structure Synth Source" ${WRKDIR}/structuresynth
+	@${MV} "${WRKDIR}/Structure Synth Source Code" ${WRKSRC}
+	@${RM} -rf ${WRKSRC}/Examples/DontDeploy
 
 post-patch:
 	@${REINPLACE_CMD} -e '/examplesDir/ s|"Examples"|"${DATADIR}/Examples"|; \
@@ -29,16 +30,18 @@ post-patch:
 		${WRKSRC}/StructureSynth/GUI/MainWindow.cpp
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -project
-	@${ECHO_CMD} "QT+=opengl xml script" >> ${WRKSRC}/structuresynth.pro
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		-spec ${QMAKESPEC} structuresynth.pro
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} -project \
+		-after "CONFIG+=opengl" -after "QT+=xml opengl script"
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/structuresynth ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${DATADIR}/Examples
-	${INSTALL_DATA} ${WRKSRC}/Examples/*.es ${DATADIR}/Examples
-	${MKDIR} ${DATADIR}/Misc
-	${INSTALL_DATA} ${WRKSRC}/Misc/* ${DATADIR}/Misc
+	${INSTALL_PROGRAM} ${WRKSRC}/structure-synth ${PREFIX}/bin/
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "Examples Misc" ${DATADIR}/
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/structure-synth.desktop \
+		${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/images/fileicons/StructureSynth-256.png \
+		${PREFIX}/share/pixmaps/structure-synth.png
 
 .include <bsd.port.mk>
