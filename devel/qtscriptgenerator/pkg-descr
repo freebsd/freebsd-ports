@@ -1,0 +1,10 @@
+Qt Script Generator is a tool that generates Qt bindings for Qt Script.
+With the generated bindings you get access to substantial portions
+of the Qt API from within Qt Script.
+
+Qt is a cross-platform application framework for desktop and embedded
+development. It includes an intuitive API and a rich C++ class
+library, integrated tools for GUI development and internationalization,
+and support for Java? and C++ development.
+
+WWW: http://qtscriptgenerator.googlecode.com
