@@ -302,6 +302,7 @@
     SUBDIR += xmms-weasel
     SUBDIR += xmps
     SUBDIR += xmps-win32-plugin
+    SUBDIR += xporthdmv
     SUBDIR += xtheater
     SUBDIR += xvid
     SUBDIR += xvid4conf
