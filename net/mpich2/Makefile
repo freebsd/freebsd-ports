@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mpich2
-PORTVERSION=	1.1.1
-PORTEPOCH=	3
+DISTVERSION=	1.1.1p1
+PORTEPOCH=	4
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${PORTVERSION}/
+MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
 DIST_SUBDIR=	mpich
 #PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/mpich2-patch/
 #PATCHFILES=
