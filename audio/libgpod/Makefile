@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	libgpod
-PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTVERSION=	0.7.2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtkpod
+MASTER_SITES=	SF/gtkpod
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A library for direct access of iPod's contents
@@ -34,11 +32,6 @@ pre-patch: .SILENT
 	${REINPLACE_CMD} -e \
 		's,libdir)/pkgconfig,prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.in
-# Stop configure script want Perl and XML::Parser (delete 22 lines)
-	${REINPLACE_CMD} '19785,19807d' ${WRKSRC}/configure
-# Fix bogus test(1) syntax to get rid of annoying warnings
-	${REINPLACE_CMD} -E 's,(if test [[:graph:]]+ )==,\1=,' \
-		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's, docs,,' ${WRKSRC}/Makefile.in
 .endif
