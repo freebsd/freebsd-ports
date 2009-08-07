@@ -1,0 +1,13 @@
+repoze.who-testutil is a repoze.who plugin which modifies
+repoze.who's original middleware to make it easier to forge
+authentication, without bypassing identification (this is,
+running the metadata providers).
+
+It's been created to ease testing of repoze.who-powered
+applications, in a way independent of the identifiers,
+authenticators and challengers used originally by your
+application, so that you won't have to update your test
+suite as your application grows and the authentication
+method changes.
+
+WWW:	http://code.gustavonarea.net/repoze.who-testutil/
