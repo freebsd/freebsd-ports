@@ -1,0 +1,5 @@
+This splits the taglib plugins that used to be in Amarok into a separate
+package, for use by amarok-utils as well as Amarok itself (plus anyone
+else that wants to use it).
+
+WWW: http://websvn.kde.org/trunk/kdesupport/taglib-extras/
