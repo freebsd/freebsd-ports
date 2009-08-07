@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.rabson.org/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
 
 ONLY_FOR_ARCHS=	i386
