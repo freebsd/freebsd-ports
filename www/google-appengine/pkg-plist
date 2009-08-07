@@ -429,6 +429,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/cron/groc.py
 %%DATADIR%%/google/appengine/cron/groctimespecification.py
 %%DATADIR%%/google/appengine/datastore/__init__.py
+%%DATADIR%%/google/appengine/datastore/action_pb.py
 %%DATADIR%%/google/appengine/datastore/datastore_index.py
 %%DATADIR%%/google/appengine/datastore/datastore_pb.py
 %%DATADIR%%/google/appengine/datastore/entity_pb.py
@@ -473,11 +474,13 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/db/djangoforms.py
 %%DATADIR%%/google/appengine/ext/db/polymodel.py
 %%DATADIR%%/google/appengine/ext/gql/__init__.py
+%%DATADIR%%/google/appengine/ext/key_range/__init__.py
 %%DATADIR%%/google/appengine/ext/preload/__init__.py
 %%DATADIR%%/google/appengine/ext/remote_api/__init__.py
 %%DATADIR%%/google/appengine/ext/remote_api/handler.py
 %%DATADIR%%/google/appengine/ext/remote_api/remote_api_pb.py
 %%DATADIR%%/google/appengine/ext/remote_api/remote_api_stub.py
+%%DATADIR%%/google/appengine/ext/remote_api/throttle.py
 %%DATADIR%%/google/appengine/ext/search/__init__.py
 %%DATADIR%%/google/appengine/ext/webapp/__init__.py
 %%DATADIR%%/google/appengine/ext/webapp/template.py
@@ -487,6 +490,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/runtime/apiproxy.py
 %%DATADIR%%/google/appengine/runtime/apiproxy_errors.py
 %%DATADIR%%/google/appengine/tools/__init__.py
+%%DATADIR%%/google/appengine/tools/adaptive_thread_pool.py
 %%DATADIR%%/google/appengine/tools/appcfg.py
 %%DATADIR%%/google/appengine/tools/appengine_rpc.py
 %%DATADIR%%/google/appengine/tools/bulkload_client.py
@@ -497,10 +501,13 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_login.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_main.py
 %%DATADIR%%/google/appengine/tools/os_compat.py
+%%DATADIR%%/google/appengine/tools/remote_api_shell.py
+%%DATADIR%%/google/appengine/tools/requeue.py
 %%DATADIR%%/google/net/__init__.py
 %%DATADIR%%/google/net/proto/ProtocolBuffer.py
 %%DATADIR%%/google/net/proto/RawMessage.py
 %%DATADIR%%/google/net/proto/__init__.py
+%%DATADIR%%/google/net/proto/message_set.py
 %%DATADIR%%/google/pyglib/__init__.py
 %%DATADIR%%/google/pyglib/gexcept.py
 %%DATADIR%%/lib/antlr3/AUTHORS
@@ -1654,6 +1661,7 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/google/appengine/ext/search
 @dirrm %%DATADIR%%/google/appengine/ext/remote_api
 @dirrm %%DATADIR%%/google/appengine/ext/preload
+@dirrm %%DATADIR%%/google/appengine/ext/key_range
 @dirrm %%DATADIR%%/google/appengine/ext/gql
 @dirrm %%DATADIR%%/google/appengine/ext/db
 @dirrm %%DATADIR%%/google/appengine/ext/bulkload
