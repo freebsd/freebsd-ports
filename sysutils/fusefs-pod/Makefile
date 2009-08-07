@@ -6,7 +6,7 @@
 
 PORTNAME=	pod
 PORTVERSION=	0.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils audio
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	fusepod/
@@ -17,7 +17,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FUSE-based filesystem for iPod
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs\
-		gpod.3:${PORTSDIR}/audio/libgpod\
+		gpod.5:${PORTSDIR}/audio/libgpod\
 		tag.6:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 

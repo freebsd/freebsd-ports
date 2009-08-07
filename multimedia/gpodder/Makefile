@@ -7,7 +7,7 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	0.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gpodder
@@ -52,7 +52,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_IPOD)
-LIB_DEPENDS+=	gpod.3:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
 .endif
 
