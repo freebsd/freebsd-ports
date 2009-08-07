@@ -2456,6 +2456,7 @@
     SUBDIR += py-rbtree
     SUBDIR += py-repl
     SUBDIR += py-repoze.who
+    SUBDIR += py-repoze.who-testutil
     SUBDIR += py-resourcepackage
     SUBDIR += py-reverse
     SUBDIR += py-rlcompleter2
