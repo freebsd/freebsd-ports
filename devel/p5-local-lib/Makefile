@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	local-lib
-PORTVERSION=	1.004003
+PORTVERSION=	1.004004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/A/AP/APEIRON
@@ -17,7 +17,8 @@ COMMENT=	Perl extension to create and use a local lib/ with PERL5LIB
 
 RUN_DEPENDS=	\
 	p5-ExtUtils-CBuilder>0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
-	p5-Module-Build>=0.28:${PORTSDIR}/devel/p5-Module-Build
+	p5-Module-Build>=0.28:${PORTSDIR}/devel/p5-Module-Build \
+	p5-ExtUtils-Install>=1.43:${PORTSDIR}/devel/p5-ExtUtils-Install
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
