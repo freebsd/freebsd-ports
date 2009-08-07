@@ -1,0 +1,10 @@
+--- mutt_ldap_query.pl.in.orig	2008-06-14 14:24:46.000000000 +0400
++++ mutt_ldap_query.pl.in	2009-08-06 13:36:39.000000000 +0400
+@@ -33,6 +33,7 @@
+ my $version = 0;
+ my $ldap_server_nickname = '';
+ my $config_file = '';
++my $prefix = '@prefix@';
+ 
+ # hostname of your ldap server
+ our $ldap_server = 'ldap.four11.com';
