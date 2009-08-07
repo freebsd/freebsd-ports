@@ -1,6 +1,6 @@
---- configure.in~	2008-07-22 10:30:06.000000000 +0900
-+++ configure.in	2008-09-22 15:04:07.000000000 +0900
-@@ -855,9 +855,10 @@
+--- configure.in	2009-05-26 20:38:48.000000000 +0900
++++ configure.in	2009-08-07 13:12:41.000000000 +0900
+@@ -890,9 +890,10 @@
  ### Checks for BLAS and LAPACK libraries:
  # (Build subdirectories of libcruft if they aren't found on the system.)
  sinclude(acx_blas.m4)
@@ -13,3 +13,12 @@
  ACX_LAPACK([BLAS_LIBS="$LAPACK_LIBS $BLAS_LIBS"], [LAPACK_DIR="lapack"])
  AC_SUBST(BLAS_DIR)
  AC_SUBST(LAPACK_DIR)
+@@ -1120,7 +1121,7 @@
+ warn_arpack="arpack not found. This will result in a lack of the eigs function."
+ if test "$with_arpack" = yes; then
+   with_arpack=no
+-  AC_CHECK_LIB(arpack, F77_FUNC(dseupd,DSEUPD), [ARPACK_LIBS="-larpack"; with_arpack=yes], , $LAPACK_LIBS $FLIBS)
++  AC_CHECK_LIB(arpack, F77_FUNC(dseupd,DSEUPD), [ARPACK_LIBS="-larpack"; with_arpack=yes], , $BLAS_LIBS $LAPACK_LIBS $FLIBS)
+   if test "$with_arpack" = yes; then
+     AC_DEFINE(HAVE_ARPACK, 1, [Define if the ARPACK library is used.])
+     warn_arpack=
