@@ -2,3 +2,5 @@ The package python-musicbrainz2 is a client library written in python which
 provides easy object oriented access to the MusicBrainz database using the 
 XMLWebService. It has been written from scratch and uses a different model 
 than PythonMusicbrainz, the first generation python bindings.
+
+WWW: http://musicbrainz.org/doc/python-musicbrainz2
