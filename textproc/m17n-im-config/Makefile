@@ -9,8 +9,8 @@ PORTNAME=	m17n-im-config
 PORTVERSION=	0.9.0
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://anthesphoria.net/FreeBSD/ports/distfiles/ \
-		http://www.m17n.org/common/im-config/
+MASTER_SITES=	http://www.m17n.org/common/im-config/ \
+		http://anthesphoria.net/FreeBSD/ports/distfiles/
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	A GUI for per-user configuration of m17n-lib input methods
