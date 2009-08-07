@@ -27,8 +27,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/Cookie.js.html
 %%PORTDOCS%%%%DOCSDIR%%/CurrentPageReport.js.html
 %%PORTDOCS%%%%DOCSDIR%%/CustomEvent.js.html
+%%PORTDOCS%%%%DOCSDIR%%/DD.html
 %%PORTDOCS%%%%DOCSDIR%%/DD.js.html
+%%PORTDOCS%%%%DOCSDIR%%/DDProxy.html
 %%PORTDOCS%%%%DOCSDIR%%/DDProxy.js.html
+%%PORTDOCS%%%%DOCSDIR%%/DDTarget.html
 %%PORTDOCS%%%%DOCSDIR%%/DDTarget.js.html
 %%PORTDOCS%%%%DOCSDIR%%/DataSource.js.html
 %%PORTDOCS%%%%DOCSDIR%%/DataTable.js.html
@@ -44,19 +47,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/Element.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Env.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Event.js.html
+%%PORTDOCS%%%%DOCSDIR%%/EventProvider.html
 %%PORTDOCS%%%%DOCSDIR%%/EventProvider.js.html
 %%PORTDOCS%%%%DOCSDIR%%/FirstPageLink.js.html
 %%PORTDOCS%%%%DOCSDIR%%/FlashAdapter.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Get.js.html
 %%PORTDOCS%%%%DOCSDIR%%/HTMLNode.js.html
+%%PORTDOCS%%%%DOCSDIR%%/IEStyle.js.html
 %%PORTDOCS%%%%DOCSDIR%%/ImageLoader.js.html
 %%PORTDOCS%%%%DOCSDIR%%/JSON.html
 %%PORTDOCS%%%%DOCSDIR%%/JSON.js.html
 %%PORTDOCS%%%%DOCSDIR%%/KeyListener.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Lang.js.html
 %%PORTDOCS%%%%DOCSDIR%%/LastPageLink.js.html
+%%PORTDOCS%%%%DOCSDIR%%/LogMsg.html
 %%PORTDOCS%%%%DOCSDIR%%/LogMsg.js.html
+%%PORTDOCS%%%%DOCSDIR%%/LogReader.html
 %%PORTDOCS%%%%DOCSDIR%%/LogReader.js.html
+%%PORTDOCS%%%%DOCSDIR%%/LogWriter.html
 %%PORTDOCS%%%%DOCSDIR%%/LogWriter.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Logger.js.html
 %%PORTDOCS%%%%DOCSDIR%%/MenuNode.js.html
@@ -74,7 +82,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/PieChart.js.html
 %%PORTDOCS%%%%DOCSDIR%%/PreviousPageLink.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Profiler.js.html
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RecordSet.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Region.js.html
 %%PORTDOCS%%%%DOCSDIR%%/RootNode.js.html
@@ -104,6 +111,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/TreeView.js.html
 %%PORTDOCS%%%%DOCSDIR%%/TreeViewEd.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Type.js.html
+%%PORTDOCS%%%%DOCSDIR%%/UIComponentTemplate.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Uploader.js.html
 %%PORTDOCS%%%%DOCSDIR%%/UserAction.js.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.env.html
@@ -138,9 +146,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Connect.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Cookie.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.CustomEvent.html
-%%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.DD.html
-%%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.DDProxy.html
-%%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.DDTarget.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.DataSource.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.DataSourceBase.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Date.html
@@ -153,7 +158,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Easing.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Element.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Event.html
-%%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.EventProvider.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.FunctionDataSource.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Get.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.History.html
@@ -176,6 +180,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.ShouldError.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.ShouldFail.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Sort.html
+%%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.StyleSheet.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Subscriber.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.UnexpectedError.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.UnexpectedValue.html
@@ -226,9 +231,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.LayoutUnit.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.LineChart.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.LineSeries.html
-%%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.LogMsg.html
-%%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.LogReader.html
-%%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.LogWriter.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.Logger.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.Menu.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.MenuBar.html
@@ -249,6 +251,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.Paginator.ui.PageLinks.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.Paginator.ui.PreviousPageLink.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.Paginator.ui.RowsPerPageDropdown.html
+%%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.Paginator.ui.YourComponent.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.Panel.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.PieChart.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.PieSeries.html
@@ -283,10 +286,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.TreeView.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.widget.Uploader.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO_config.html
-%%PORTDOCS%%%%DOCSDIR%%/assets/'
 %%PORTDOCS%%%%DOCSDIR%%/assets/ac-js
 %%PORTDOCS%%%%DOCSDIR%%/assets/api-js
 %%PORTDOCS%%%%DOCSDIR%%/assets/api.css
+%%PORTDOCS%%%%DOCSDIR%%/assets/bg_hd.gif
 %%PORTDOCS%%%%DOCSDIR%%/assets/reset-fonts-grids-min.css
 %%PORTDOCS%%%%DOCSDIR%%/assets/yui.png
 %%PORTDOCS%%%%DOCSDIR%%/button.js.html
@@ -302,7 +305,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/index.json
 %%PORTDOCS%%%%DOCSDIR%%/layout.js.html
 %%PORTDOCS%%%%DOCSDIR%%/layoutunit.js.html
+%%PORTDOCS%%%%DOCSDIR%%/markupTests.js.html
 %%PORTDOCS%%%%DOCSDIR%%/menu.js.html
+%%PORTDOCS%%%%DOCSDIR%%/menuariaplugin.js.html
 %%PORTDOCS%%%%DOCSDIR%%/menubar.js.html
 %%PORTDOCS%%%%DOCSDIR%%/menubaritem.js.html
 %%PORTDOCS%%%%DOCSDIR%%/menuitem.js.html
@@ -338,6 +343,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/module_resize.html
 %%PORTDOCS%%%%DOCSDIR%%/module_selector.html
 %%PORTDOCS%%%%DOCSDIR%%/module_slider.html
+%%PORTDOCS%%%%DOCSDIR%%/module_stylesheet.html
 %%PORTDOCS%%%%DOCSDIR%%/module_tabview.html
 %%PORTDOCS%%%%DOCSDIR%%/module_treeview.html
 %%PORTDOCS%%%%DOCSDIR%%/module_uploader.html
@@ -347,7 +353,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/profilerviewer.js.html
 %%PORTDOCS%%%%DOCSDIR%%/raw.json
 %%PORTDOCS%%%%DOCSDIR%%/resize.js.html
+%%PORTDOCS%%%%DOCSDIR%%/scriptTests.js.html
 %%PORTDOCS%%%%DOCSDIR%%/simple-editor.js.html
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.js.html
 %%PORTDOCS%%%%DOCSDIR%%/swfobject.js.html
 %%PORTDOCS%%%%DOCSDIR%%/toolbar-button.js.html
 %%PORTDOCS%%%%DOCSDIR%%/toolbar.js.html
@@ -436,6 +444,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/assets/buttonariaplugin-min.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/assets/buttonariaplugin.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/assets/calendar_icon.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/assets/checkbox.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/assets/ella.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/assets/ggbridge.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/assets/gloss.png
@@ -486,6 +495,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button-ariaplugin.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button-ariaplugin_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button-ariaplugin_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button-menu-select.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button-menu-select_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button-menu-select_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button-menu-swap.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button-menu-swap_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button-menu-swap_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/assets/calbtn.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/calcontainer.html
@@ -537,6 +552,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/carousel/csl_imagentext.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/carousel/csl_imagentext_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/carousel/csl_imagentext_source.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/carousel/csl_pagination.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/carousel/csl_pagination_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/carousel/csl_pagination_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/carousel/csl_reveal.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/carousel/csl_reveal_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/carousel/csl_reveal_source.html
@@ -556,12 +574,21 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-quickstart.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-quickstart_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-quickstart_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-rotation.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-rotation_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-rotation_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-skins.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-skins_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-skins_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-stacked.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-stacked_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-stacked_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-styles.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-styles_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-styles_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-tabview.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-tabview_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-tabview_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-xhr-polling.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-xhr-polling_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/charts-xhr-polling_log.html
@@ -689,6 +716,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookie/cookie-simple-example.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookie/cookie-subcookie-example.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookie/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datasource/datasource_table_to_array.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datasource/datasource_table_to_array_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datasource/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/assets/html/blank.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/assets/images/dt_history_flow.png
@@ -709,6 +738,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_basic.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_basic_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_basic_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_bhm.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_bhm_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_bhm_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_cellediting.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_cellediting_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_cellediting_log.html
@@ -748,16 +780,22 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_nestedheaders.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_nestedheaders_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_nestedheaders_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_polling.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_polling_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_polling_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_row_coloring.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_row_coloring_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_row_coloring_log.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowadddelete.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowadddelete_clean.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowadddelete_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowdatamod.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowdatamod_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowdatamod_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowselect.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowselect_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowselect_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_skinning.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_tabview.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_tabview_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_tabview_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_xhrjson.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_xhrjson_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_xhrjson_log.html
@@ -858,6 +896,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/code_editor.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/code_editor_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/code_editor_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/dialog_editor.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/dialog_editor_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/dialog_editor_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/editor_adv_editor.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/editor_adv_editor_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/editor_adv_editor_log.html
@@ -912,11 +953,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/assets/border.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/assets/getNews.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/assets/neutral.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/assets/simple_get.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/assets/text.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/get-css-basic.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/get-css-basic_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/get-script-basic.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/get-script-basic_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/get-script-simple.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/get-script-simple_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grids/grids-doc-custom.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grids/grids-doc-custom_source.html
@@ -1002,10 +1046,17 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/imageloader/imgloadtabs_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/imageloader/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/assets/data.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/assets/jsonConnect.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/json_connect.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/json_connect_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/json_convert_values.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/json_convert_values_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/json_convert_values_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/json_freeze_thaw.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/json_freeze_thaw_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json/json_freeze_thaw_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/adv_layout.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/adv_layout_source.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/assets/css/bg-fader.gif
@@ -1050,6 +1101,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logger/log_basic_source.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logger/log_reading.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logger/log_skinning.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logger/log_skinning_source.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logger/log_writing.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menu/applicationmenubar.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menu/applicationmenubar_source.html
@@ -1206,6 +1258,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slider/slider_vert_swapped.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slider/slider_vert_swapped_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slider/slider_vert_swapped_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stylesheet/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stylesheet/stylesheet_anim_multi.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stylesheet/stylesheet_anim_multi_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stylesheet/stylesheet_anim_multi_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stylesheet/stylesheet_theme.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stylesheet/stylesheet_theme_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stylesheet/stylesheet_theme_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabview/addtab.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabview/addtab_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabview/addtab_log.html
@@ -1338,6 +1397,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uploader/assets/uploadFileButton.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uploader/assets/uploader.swf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uploader/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uploader/uploader-advanced-cookie.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uploader/uploader-advanced-cookie_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uploader/uploader-advanced-postvars.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uploader/uploader-advanced-postvars_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uploader/uploader-advanced-queue.html
@@ -1384,12 +1445,14 @@
 %%WWWDIR%%/assets/yui.gif
 %%WWWDIR%%/assets/yuiDistribution.css
 %%WWWDIR%%/assets/yuilib.jpg
-%%WWWDIR%%/build/animation/README
 %%WWWDIR%%/build/animation/animation-debug.js
 %%WWWDIR%%/build/animation/animation-min.js
 %%WWWDIR%%/build/animation/animation.js
+%%WWWDIR%%/build/assets/skins/sam/ajax-loader.gif
 %%WWWDIR%%/build/assets/skins/sam/asc.gif
 %%WWWDIR%%/build/assets/skins/sam/autocomplete.css
+%%WWWDIR%%/build/assets/skins/sam/bg-h.gif
+%%WWWDIR%%/build/assets/skins/sam/bg-v.gif
 %%WWWDIR%%/build/assets/skins/sam/blankimage.png
 %%WWWDIR%%/build/assets/skins/sam/button.css
 %%WWWDIR%%/build/assets/skins/sam/calendar.css
@@ -1440,17 +1503,14 @@
 %%WWWDIR%%/build/assets/skins/sam/treeview.css
 %%WWWDIR%%/build/assets/skins/sam/wait.gif
 %%WWWDIR%%/build/assets/skins/sam/yuitest.css
-%%WWWDIR%%/build/autocomplete/README
 %%WWWDIR%%/build/autocomplete/assets/autocomplete-core.css
 %%WWWDIR%%/build/autocomplete/assets/skins/sam/autocomplete-skin.css
 %%WWWDIR%%/build/autocomplete/assets/skins/sam/autocomplete.css
 %%WWWDIR%%/build/autocomplete/autocomplete-debug.js
 %%WWWDIR%%/build/autocomplete/autocomplete-min.js
 %%WWWDIR%%/build/autocomplete/autocomplete.js
-%%WWWDIR%%/build/base/README
 %%WWWDIR%%/build/base/base-min.css
 %%WWWDIR%%/build/base/base.css
-%%WWWDIR%%/build/button/README
 %%WWWDIR%%/build/button/assets/button-core.css
 %%WWWDIR%%/build/button/assets/skins/sam/button-skin.css
 %%WWWDIR%%/build/button/assets/skins/sam/button.css
@@ -1464,7 +1524,6 @@
 %%WWWDIR%%/build/button/button-debug.js
 %%WWWDIR%%/build/button/button-min.js
 %%WWWDIR%%/build/button/button.js
-%%WWWDIR%%/build/calendar/README
 %%WWWDIR%%/build/calendar/assets/calendar-core.css
 %%WWWDIR%%/build/calendar/assets/calendar.css
 %%WWWDIR%%/build/calendar/assets/calgrad.png
@@ -1476,20 +1535,18 @@
 %%WWWDIR%%/build/calendar/calendar-debug.js
 %%WWWDIR%%/build/calendar/calendar-min.js
 %%WWWDIR%%/build/calendar/calendar.js
-%%WWWDIR%%/build/carousel/README
 %%WWWDIR%%/build/carousel/assets/ajax-loader.gif
 %%WWWDIR%%/build/carousel/assets/carousel-core.css
+%%WWWDIR%%/build/carousel/assets/skins/sam/ajax-loader.gif
 %%WWWDIR%%/build/carousel/assets/skins/sam/carousel-skin.css
 %%WWWDIR%%/build/carousel/assets/skins/sam/carousel.css
-%%WWWDIR%%/build/carousel/carousel-beta-debug.js
-%%WWWDIR%%/build/carousel/carousel-beta-min.js
-%%WWWDIR%%/build/carousel/carousel-beta.js
-%%WWWDIR%%/build/charts/README
+%%WWWDIR%%/build/carousel/carousel-debug.js
+%%WWWDIR%%/build/carousel/carousel-min.js
+%%WWWDIR%%/build/carousel/carousel.js
 %%WWWDIR%%/build/charts/assets/charts.swf
-%%WWWDIR%%/build/charts/charts-experimental-debug.js
-%%WWWDIR%%/build/charts/charts-experimental-min.js
-%%WWWDIR%%/build/charts/charts-experimental.js
-%%WWWDIR%%/build/colorpicker/README
+%%WWWDIR%%/build/charts/charts-debug.js
+%%WWWDIR%%/build/charts/charts-min.js
+%%WWWDIR%%/build/charts/charts.js
 %%WWWDIR%%/build/colorpicker/assets/colorpicker-core.css
 %%WWWDIR%%/build/colorpicker/assets/hue_thumb.png
 %%WWWDIR%%/build/colorpicker/assets/picker_mask.png
@@ -1501,11 +1558,9 @@
 %%WWWDIR%%/build/colorpicker/colorpicker-debug.js
 %%WWWDIR%%/build/colorpicker/colorpicker-min.js
 %%WWWDIR%%/build/colorpicker/colorpicker.js
-%%WWWDIR%%/build/connection/README
 %%WWWDIR%%/build/connection/connection-debug.js
 %%WWWDIR%%/build/connection/connection-min.js
 %%WWWDIR%%/build/connection/connection.js
-%%WWWDIR%%/build/container/README
 %%WWWDIR%%/build/container/assets/alrt16_1.gif
 %%WWWDIR%%/build/container/assets/blck16_1.gif
 %%WWWDIR%%/build/container/assets/close12_1.gif
@@ -1523,15 +1578,12 @@
 %%WWWDIR%%/build/container/container_core-debug.js
 %%WWWDIR%%/build/container/container_core-min.js
 %%WWWDIR%%/build/container/container_core.js
-%%WWWDIR%%/build/cookie/README
 %%WWWDIR%%/build/cookie/cookie-debug.js
 %%WWWDIR%%/build/cookie/cookie-min.js
 %%WWWDIR%%/build/cookie/cookie.js
-%%WWWDIR%%/build/datasource/README
 %%WWWDIR%%/build/datasource/datasource-debug.js
 %%WWWDIR%%/build/datasource/datasource-min.js
 %%WWWDIR%%/build/datasource/datasource.js
-%%WWWDIR%%/build/datatable/README
 %%WWWDIR%%/build/datatable/assets/datatable-core.css
 %%WWWDIR%%/build/datatable/assets/datatable.css
 %%WWWDIR%%/build/datatable/assets/skins/sam/datatable-skin.css
@@ -1541,15 +1593,12 @@
 %%WWWDIR%%/build/datatable/datatable-debug.js
 %%WWWDIR%%/build/datatable/datatable-min.js
 %%WWWDIR%%/build/datatable/datatable.js
-%%WWWDIR%%/build/dom/README
 %%WWWDIR%%/build/dom/dom-debug.js
 %%WWWDIR%%/build/dom/dom-min.js
 %%WWWDIR%%/build/dom/dom.js
-%%WWWDIR%%/build/dragdrop/README
 %%WWWDIR%%/build/dragdrop/dragdrop-debug.js
 %%WWWDIR%%/build/dragdrop/dragdrop-min.js
 %%WWWDIR%%/build/dragdrop/dragdrop.js
-%%WWWDIR%%/build/editor/README
 %%WWWDIR%%/build/editor/assets/editor-core.css
 %%WWWDIR%%/build/editor/assets/simpleeditor-core.css
 %%WWWDIR%%/build/editor/assets/skins/sam/blankimage.png
@@ -1566,45 +1615,35 @@
 %%WWWDIR%%/build/editor/simpleeditor-debug.js
 %%WWWDIR%%/build/editor/simpleeditor-min.js
 %%WWWDIR%%/build/editor/simpleeditor.js
-%%WWWDIR%%/build/element/README
-%%WWWDIR%%/build/element/element-beta-debug.js
-%%WWWDIR%%/build/element/element-beta-min.js
-%%WWWDIR%%/build/element/element-beta.js
-%%WWWDIR%%/build/event/README
+%%WWWDIR%%/build/element/element-debug.js
+%%WWWDIR%%/build/element/element-min.js
+%%WWWDIR%%/build/element/element.js
 %%WWWDIR%%/build/event/event-debug.js
 %%WWWDIR%%/build/event/event-min.js
 %%WWWDIR%%/build/event/event.js
-%%WWWDIR%%/build/fonts/README
 %%WWWDIR%%/build/fonts/fonts-min.css
 %%WWWDIR%%/build/fonts/fonts.css
-%%WWWDIR%%/build/get/README
 %%WWWDIR%%/build/get/get-debug.js
 %%WWWDIR%%/build/get/get-min.js
 %%WWWDIR%%/build/get/get.js
-%%WWWDIR%%/build/grids/README
 %%WWWDIR%%/build/grids/grids-min.css
 %%WWWDIR%%/build/grids/grids.css
-%%WWWDIR%%/build/history/README
 %%WWWDIR%%/build/history/assets/blank.html
 %%WWWDIR%%/build/history/history-debug.js
 %%WWWDIR%%/build/history/history-min.js
 %%WWWDIR%%/build/history/history.js
-%%WWWDIR%%/build/imagecropper/README
 %%WWWDIR%%/build/imagecropper/assets/imagecropper-core.css
 %%WWWDIR%%/build/imagecropper/assets/skins/sam/imagecropper-skin.css
 %%WWWDIR%%/build/imagecropper/assets/skins/sam/imagecropper.css
-%%WWWDIR%%/build/imagecropper/imagecropper-beta-debug.js
-%%WWWDIR%%/build/imagecropper/imagecropper-beta-min.js
-%%WWWDIR%%/build/imagecropper/imagecropper-beta.js
-%%WWWDIR%%/build/imageloader/README
+%%WWWDIR%%/build/imagecropper/imagecropper-debug.js
+%%WWWDIR%%/build/imagecropper/imagecropper-min.js
+%%WWWDIR%%/build/imagecropper/imagecropper.js
 %%WWWDIR%%/build/imageloader/imageloader-debug.js
 %%WWWDIR%%/build/imageloader/imageloader-min.js
 %%WWWDIR%%/build/imageloader/imageloader.js
-%%WWWDIR%%/build/json/README
 %%WWWDIR%%/build/json/json-debug.js
 %%WWWDIR%%/build/json/json-min.js
 %%WWWDIR%%/build/json/json.js
-%%WWWDIR%%/build/layout/README
 %%WWWDIR%%/build/layout/assets/layout-core.css
 %%WWWDIR%%/build/layout/assets/skins/sam/layout-skin.css
 %%WWWDIR%%/build/layout/assets/skins/sam/layout.css
@@ -1612,7 +1651,6 @@
 %%WWWDIR%%/build/layout/layout-debug.js
 %%WWWDIR%%/build/layout/layout-min.js
 %%WWWDIR%%/build/layout/layout.js
-%%WWWDIR%%/build/logger/README
 %%WWWDIR%%/build/logger/assets/logger-core.css
 %%WWWDIR%%/build/logger/assets/logger.css
 %%WWWDIR%%/build/logger/assets/skins/sam/logger-skin.css
@@ -1620,7 +1658,6 @@
 %%WWWDIR%%/build/logger/logger-debug.js
 %%WWWDIR%%/build/logger/logger-min.js
 %%WWWDIR%%/build/logger/logger.js
-%%WWWDIR%%/build/menu/README
 %%WWWDIR%%/build/menu/assets/menu-core.css
 %%WWWDIR%%/build/menu/assets/menu.css
 %%WWWDIR%%/build/menu/assets/menu_down_arrow.png
@@ -1647,34 +1684,29 @@
 %%WWWDIR%%/build/menu/menu-debug.js
 %%WWWDIR%%/build/menu/menu-min.js
 %%WWWDIR%%/build/menu/menu.js
-%%WWWDIR%%/build/paginator/README
 %%WWWDIR%%/build/paginator/assets/paginator-core.css
 %%WWWDIR%%/build/paginator/assets/skins/sam/paginator-skin.css
 %%WWWDIR%%/build/paginator/assets/skins/sam/paginator.css
 %%WWWDIR%%/build/paginator/paginator-debug.js
 %%WWWDIR%%/build/paginator/paginator-min.js
 %%WWWDIR%%/build/paginator/paginator.js
-%%WWWDIR%%/build/profiler/README
 %%WWWDIR%%/build/profiler/profiler-debug.js
 %%WWWDIR%%/build/profiler/profiler-min.js
 %%WWWDIR%%/build/profiler/profiler.js
-%%WWWDIR%%/build/profilerviewer/README
+%%WWWDIR%%/build/profilerviewer/assets/profilerviewer-core.css
 %%WWWDIR%%/build/profilerviewer/assets/skins/sam/asc.gif
 %%WWWDIR%%/build/profilerviewer/assets/skins/sam/desc.gif
 %%WWWDIR%%/build/profilerviewer/assets/skins/sam/header_background.png
+%%WWWDIR%%/build/profilerviewer/assets/skins/sam/profilerviewer-skin.css
 %%WWWDIR%%/build/profilerviewer/assets/skins/sam/profilerviewer.css
 %%WWWDIR%%/build/profilerviewer/assets/skins/sam/wait.gif
-%%WWWDIR%%/build/profilerviewer/profilerviewer-beta-debug.js
-%%WWWDIR%%/build/profilerviewer/profilerviewer-beta-min.js
-%%WWWDIR%%/build/profilerviewer/profilerviewer-beta.js
-%%WWWDIR%%/build/reset-fonts-grids/README
+%%WWWDIR%%/build/profilerviewer/profilerviewer-debug.js
+%%WWWDIR%%/build/profilerviewer/profilerviewer-min.js
+%%WWWDIR%%/build/profilerviewer/profilerviewer.js
 %%WWWDIR%%/build/reset-fonts-grids/reset-fonts-grids.css
-%%WWWDIR%%/build/reset-fonts/README
 %%WWWDIR%%/build/reset-fonts/reset-fonts.css
-%%WWWDIR%%/build/reset/README
 %%WWWDIR%%/build/reset/reset-min.css
 %%WWWDIR%%/build/reset/reset.css
-%%WWWDIR%%/build/resize/README
 %%WWWDIR%%/build/resize/assets/resize-core.css
 %%WWWDIR%%/build/resize/assets/skins/sam/layout_sprite.png
 %%WWWDIR%%/build/resize/assets/skins/sam/resize-skin.css
@@ -1682,20 +1714,21 @@
 %%WWWDIR%%/build/resize/resize-debug.js
 %%WWWDIR%%/build/resize/resize-min.js
 %%WWWDIR%%/build/resize/resize.js
-%%WWWDIR%%/build/selector/README
-%%WWWDIR%%/build/selector/selector-beta-debug.js
-%%WWWDIR%%/build/selector/selector-beta-min.js
-%%WWWDIR%%/build/selector/selector-beta.js
-%%WWWDIR%%/build/slider/README
+%%WWWDIR%%/build/selector/selector-debug.js
+%%WWWDIR%%/build/selector/selector-min.js
+%%WWWDIR%%/build/selector/selector.js
 %%WWWDIR%%/build/slider/assets/bg-fader.gif
 %%WWWDIR%%/build/slider/assets/bg-h.gif
 %%WWWDIR%%/build/slider/assets/bg-v-e.gif
 %%WWWDIR%%/build/slider/assets/bg-v.gif
 %%WWWDIR%%/build/slider/assets/left-thumb.png
 %%WWWDIR%%/build/slider/assets/right-thumb.png
+%%WWWDIR%%/build/slider/assets/skins/sam/bg-h.gif
+%%WWWDIR%%/build/slider/assets/skins/sam/bg-v.gif
 %%WWWDIR%%/build/slider/assets/skins/sam/slider-skin.css
 %%WWWDIR%%/build/slider/assets/skins/sam/slider.css
 %%WWWDIR%%/build/slider/assets/slider-core.css
+%%WWWDIR%%/build/slider/assets/slider-skin.css
 %%WWWDIR%%/build/slider/assets/thumb-bar.gif
 %%WWWDIR%%/build/slider/assets/thumb-e.gif
 %%WWWDIR%%/build/slider/assets/thumb-fader.gif
@@ -1705,7 +1738,9 @@
 %%WWWDIR%%/build/slider/slider-debug.js
 %%WWWDIR%%/build/slider/slider-min.js
 %%WWWDIR%%/build/slider/slider.js
-%%WWWDIR%%/build/tabview/README
+%%WWWDIR%%/build/stylesheet/stylesheet-debug.js
+%%WWWDIR%%/build/stylesheet/stylesheet-min.js
+%%WWWDIR%%/build/stylesheet/stylesheet.js
 %%WWWDIR%%/build/tabview/assets/border_tabs.css
 %%WWWDIR%%/build/tabview/assets/loading.gif
 %%WWWDIR%%/build/tabview/assets/skin-sam.css
@@ -1716,41 +1751,36 @@
 %%WWWDIR%%/build/tabview/tabview-debug.js
 %%WWWDIR%%/build/tabview/tabview-min.js
 %%WWWDIR%%/build/tabview/tabview.js
-%%WWWDIR%%/build/treeview/README
+%%WWWDIR%%/build/treeview/assets/check0.gif
+%%WWWDIR%%/build/treeview/assets/check1.gif
+%%WWWDIR%%/build/treeview/assets/check2.gif
+%%WWWDIR%%/build/treeview/assets/loading.gif
 %%WWWDIR%%/build/treeview/assets/skins/sam/loading.gif
 %%WWWDIR%%/build/treeview/assets/skins/sam/treeview-loading.gif
 %%WWWDIR%%/build/treeview/assets/skins/sam/treeview-skin.css
 %%WWWDIR%%/build/treeview/assets/skins/sam/treeview-sprite.gif
 %%WWWDIR%%/build/treeview/assets/skins/sam/treeview.css
-%%WWWDIR%%/build/treeview/assets/sprite-menu.gif
-%%WWWDIR%%/build/treeview/assets/sprite-orig.gif
 %%WWWDIR%%/build/treeview/assets/treeview-core.css
 %%WWWDIR%%/build/treeview/assets/treeview-loading.gif
-%%WWWDIR%%/build/treeview/assets/treeview-menu.css
-%%WWWDIR%%/build/treeview/assets/treeview.css
+%%WWWDIR%%/build/treeview/assets/treeview-skin.css
+%%WWWDIR%%/build/treeview/assets/treeview-sprite.gif
 %%WWWDIR%%/build/treeview/treeview-debug.js
 %%WWWDIR%%/build/treeview/treeview-min.js
 %%WWWDIR%%/build/treeview/treeview.js
-%%WWWDIR%%/build/uploader/README
 %%WWWDIR%%/build/uploader/assets/uploader.swf
+%%WWWDIR%%/build/uploader/uploader-debug.js
 %%WWWDIR%%/build/uploader/uploader-experimental-debug.js
-%%WWWDIR%%/build/uploader/uploader-experimental-min.js
-%%WWWDIR%%/build/uploader/uploader-experimental.js
-%%WWWDIR%%/build/utilities/README
+%%WWWDIR%%/build/uploader/uploader-min.js
+%%WWWDIR%%/build/uploader/uploader.js
 %%WWWDIR%%/build/utilities/utilities.js
-%%WWWDIR%%/build/yahoo-dom-event/README
 %%WWWDIR%%/build/yahoo-dom-event/yahoo-dom-event.js
-%%WWWDIR%%/build/yahoo/README
 %%WWWDIR%%/build/yahoo/yahoo-debug.js
 %%WWWDIR%%/build/yahoo/yahoo-min.js
 %%WWWDIR%%/build/yahoo/yahoo.js
-%%WWWDIR%%/build/yuiloader-dom-event/README
 %%WWWDIR%%/build/yuiloader-dom-event/yuiloader-dom-event.js
-%%WWWDIR%%/build/yuiloader/README
 %%WWWDIR%%/build/yuiloader/yuiloader-debug.js
 %%WWWDIR%%/build/yuiloader/yuiloader-min.js
 %%WWWDIR%%/build/yuiloader/yuiloader.js
-%%WWWDIR%%/build/yuitest/README
 %%WWWDIR%%/build/yuitest/assets/skins/sam/yuitest-skin.css
 %%WWWDIR%%/build/yuitest/assets/skins/sam/yuitest.css
 %%WWWDIR%%/build/yuitest/assets/testlogger.css
@@ -1762,58 +1792,115 @@
 %%WWWDIR%%/build/yuitest/yuitest_core-min.js
 %%WWWDIR%%/build/yuitest/yuitest_core.js
 %%WWWDIR%%/index.html
-%%WWWDIR%%/tests/YUI.html
-%%WWWDIR%%/tests/animation.html
-%%WWWDIR%%/tests/assets/xframe.html
-%%WWWDIR%%/tests/autocomplete.html
-%%WWWDIR%%/tests/base.html
-%%WWWDIR%%/tests/calendar.html
-%%WWWDIR%%/tests/colorpicker.html
-%%WWWDIR%%/tests/config.html
-%%WWWDIR%%/tests/connection/setForm.html
-%%WWWDIR%%/tests/connection/submitReporter.php
-%%WWWDIR%%/tests/cookie.html
-%%WWWDIR%%/tests/datasource.html
-%%WWWDIR%%/tests/datatable.html
-%%WWWDIR%%/tests/datatable/219708.html
-%%WWWDIR%%/tests/datatable/ColumnSet.js
-%%WWWDIR%%/tests/datatable/DataTable.js
-%%WWWDIR%%/tests/datatable/RecordSet.js
-%%WWWDIR%%/tests/date.php
-%%WWWDIR%%/tests/datemath.html
-%%WWWDIR%%/tests/dom.html
-%%WWWDIR%%/tests/dragdrop.html
-%%WWWDIR%%/tests/editor.html
-%%WWWDIR%%/tests/element.html
-%%WWWDIR%%/tests/imageloader.html
-%%WWWDIR%%/tests/logger.html
-%%WWWDIR%%/tests/menu.html
-%%WWWDIR%%/tests/module.html
-%%WWWDIR%%/tests/paginator/basic.html
-%%WWWDIR%%/tests/paginator/example.html
-%%WWWDIR%%/tests/profiler.html
-%%WWWDIR%%/tests/selector.html
-%%WWWDIR%%/tests/slider/background.html
-%%WWWDIR%%/tests/slider/base.html
-%%WWWDIR%%/tests/slider/base_animated.html
-%%WWWDIR%%/tests/slider/base_dual.html
-%%WWWDIR%%/tests/slider/base_graduated.html
-%%WWWDIR%%/tests/slider/base_graduated_region.html
-%%WWWDIR%%/tests/slider/base_region.html
-%%WWWDIR%%/tests/slider/grad_win_resize.html
-%%WWWDIR%%/tests/slider/move_setval.html
-%%WWWDIR%%/tests/slider/offscreen.html
-%%WWWDIR%%/tests/tabview.html
-%%WWWDIR%%/tests/yahoo.html
-%%WWWDIR%%/tests/yuiloader.html
-%%WWWDIR%%/tests/yuiloader_config.html
-%%WWWDIR%%/tests/yuiloader_rollup.html
-%%WWWDIR%%/tests/yuitest.html
+%%WWWDIR%%/tests/animation/tests/animation.html
+%%WWWDIR%%/tests/autocomplete/tests/autocomplete.html
+%%WWWDIR%%/tests/calendar/tests/calendar.html
+%%WWWDIR%%/tests/calendar/tests/datemath.html
+%%WWWDIR%%/tests/carousel/tests/AllTests.html
+%%WWWDIR%%/tests/carousel/tests/markupTests.js
+%%WWWDIR%%/tests/carousel/tests/scriptTests.js
+%%WWWDIR%%/tests/colorpicker/tests/colorpicker.html
+%%WWWDIR%%/tests/common/tests/YUI.html
+%%WWWDIR%%/tests/connection/tests/setForm.html
+%%WWWDIR%%/tests/connection/tests/submitReporter.php
+%%WWWDIR%%/tests/container/tests/config.html
+%%WWWDIR%%/tests/container/tests/module.html
+%%WWWDIR%%/tests/cookie/tests/cookie.html
+%%WWWDIR%%/tests/datasource/tests/datasource.html
+%%WWWDIR%%/tests/datasource/tests/date.php
+%%WWWDIR%%/tests/datasource/tests/php/proxy_ylocal.php
+%%WWWDIR%%/tests/datasource/tests/php/xhr_table.php
+%%WWWDIR%%/tests/datatable/tests/2099844.html
+%%WWWDIR%%/tests/datatable/tests/datatable.html
+%%WWWDIR%%/tests/datatable/tests/datatable/ColumnSet.js
+%%WWWDIR%%/tests/datatable/tests/datatable/DataTable.js
+%%WWWDIR%%/tests/datatable/tests/datatable/RecordSet.js
+%%WWWDIR%%/tests/dom/tests/dom.html
+%%WWWDIR%%/tests/dragdrop/tests/index.html
+%%WWWDIR%%/tests/editor/tests/index.html
+%%WWWDIR%%/tests/element/tests/element.html
+%%WWWDIR%%/tests/imageloader/tests/imageloader.html
+%%WWWDIR%%/tests/logger/tests/logger.html
+%%WWWDIR%%/tests/menu/tests/menu.html
+%%WWWDIR%%/tests/paginator/tests/basic.html
+%%WWWDIR%%/tests/paginator/tests/example.html
+%%WWWDIR%%/tests/profiler/tests/profiler.html
+%%WWWDIR%%/tests/selector/tests/selector.html
+%%WWWDIR%%/tests/slider/tests/background.html
+%%WWWDIR%%/tests/slider/tests/base.html
+%%WWWDIR%%/tests/slider/tests/base_animated.html
+%%WWWDIR%%/tests/slider/tests/base_dual.html
+%%WWWDIR%%/tests/slider/tests/base_graduated.html
+%%WWWDIR%%/tests/slider/tests/base_graduated_region.html
+%%WWWDIR%%/tests/slider/tests/base_region.html
+%%WWWDIR%%/tests/slider/tests/grad_win_resize.html
+%%WWWDIR%%/tests/slider/tests/move_setval.html
+%%WWWDIR%%/tests/slider/tests/offscreen.html
+%%WWWDIR%%/tests/stylesheet/tests/stylesheet.html
+%%WWWDIR%%/tests/tabview/tests/tabview.html
+%%WWWDIR%%/tests/yahoo/tests/assets/xframe.html
+%%WWWDIR%%/tests/yahoo/tests/yahoo.html
+%%WWWDIR%%/tests/yuiloader/tests/yuiloader.html
+%%WWWDIR%%/tests/yuiloader/tests/yuiloader_config.html
+%%WWWDIR%%/tests/yuiloader/tests/yuiloader_rollup.html
+%%WWWDIR%%/tests/yuitest/tests/yuitest.html
+@dirrm %%WWWDIR%%/tests/yuitest/tests
+@dirrm %%WWWDIR%%/tests/yuitest
+@dirrm %%WWWDIR%%/tests/yuiloader/tests
+@dirrm %%WWWDIR%%/tests/yuiloader
+@dirrm %%WWWDIR%%/tests/yahoo/tests/assets
+@dirrm %%WWWDIR%%/tests/yahoo/tests
+@dirrm %%WWWDIR%%/tests/yahoo
+@dirrm %%WWWDIR%%/tests/tabview/tests
+@dirrm %%WWWDIR%%/tests/tabview
+@dirrm %%WWWDIR%%/tests/stylesheet/tests
+@dirrm %%WWWDIR%%/tests/stylesheet
+@dirrm %%WWWDIR%%/tests/slider/tests
 @dirrm %%WWWDIR%%/tests/slider
+@dirrm %%WWWDIR%%/tests/selector/tests
+@dirrm %%WWWDIR%%/tests/selector
+@dirrm %%WWWDIR%%/tests/profiler/tests
+@dirrm %%WWWDIR%%/tests/profiler
+@dirrm %%WWWDIR%%/tests/paginator/tests
 @dirrm %%WWWDIR%%/tests/paginator
+@dirrm %%WWWDIR%%/tests/menu/tests
+@dirrm %%WWWDIR%%/tests/menu
+@dirrm %%WWWDIR%%/tests/logger/tests
+@dirrm %%WWWDIR%%/tests/logger
+@dirrm %%WWWDIR%%/tests/imageloader/tests
+@dirrm %%WWWDIR%%/tests/imageloader
+@dirrm %%WWWDIR%%/tests/element/tests
+@dirrm %%WWWDIR%%/tests/element
+@dirrm %%WWWDIR%%/tests/editor/tests
+@dirrm %%WWWDIR%%/tests/editor
+@dirrm %%WWWDIR%%/tests/dragdrop/tests
+@dirrm %%WWWDIR%%/tests/dragdrop
+@dirrm %%WWWDIR%%/tests/dom/tests
+@dirrm %%WWWDIR%%/tests/dom
+@dirrm %%WWWDIR%%/tests/datatable/tests/datatable
+@dirrm %%WWWDIR%%/tests/datatable/tests
 @dirrm %%WWWDIR%%/tests/datatable
+@dirrm %%WWWDIR%%/tests/datasource/tests/php
+@dirrm %%WWWDIR%%/tests/datasource/tests
+@dirrm %%WWWDIR%%/tests/datasource
+@dirrm %%WWWDIR%%/tests/cookie/tests
+@dirrm %%WWWDIR%%/tests/cookie
+@dirrm %%WWWDIR%%/tests/container/tests
+@dirrm %%WWWDIR%%/tests/container
+@dirrm %%WWWDIR%%/tests/connection/tests
 @dirrm %%WWWDIR%%/tests/connection
-@dirrm %%WWWDIR%%/tests/assets
+@dirrm %%WWWDIR%%/tests/common/tests
+@dirrm %%WWWDIR%%/tests/common
+@dirrm %%WWWDIR%%/tests/colorpicker/tests
+@dirrm %%WWWDIR%%/tests/colorpicker
+@dirrm %%WWWDIR%%/tests/carousel/tests
+@dirrm %%WWWDIR%%/tests/carousel
+@dirrm %%WWWDIR%%/tests/calendar/tests
+@dirrm %%WWWDIR%%/tests/calendar
+@dirrm %%WWWDIR%%/tests/autocomplete/tests
+@dirrm %%WWWDIR%%/tests/autocomplete
+@dirrm %%WWWDIR%%/tests/animation/tests
+@dirrm %%WWWDIR%%/tests/animation
 @dirrm %%WWWDIR%%/tests
 @dirrm %%WWWDIR%%/build/yuitest/assets/skins/sam
 @dirrm %%WWWDIR%%/build/yuitest/assets/skins
@@ -1834,6 +1921,7 @@
 @dirrm %%WWWDIR%%/build/tabview/assets/skins
 @dirrm %%WWWDIR%%/build/tabview/assets
 @dirrm %%WWWDIR%%/build/tabview
+@dirrm %%WWWDIR%%/build/stylesheet
 @dirrm %%WWWDIR%%/build/slider/assets/skins/sam
 @dirrm %%WWWDIR%%/build/slider/assets/skins
 @dirrm %%WWWDIR%%/build/slider/assets
@@ -1950,6 +2038,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/treeview
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tabview/assets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tabview
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stylesheet
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slider/assets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slider
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/selector
