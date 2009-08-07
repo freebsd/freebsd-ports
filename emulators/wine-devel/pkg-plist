@@ -93,6 +93,7 @@ include/wine/windows/axextend.idl
 include/wine/windows/basetsd.h
 include/wine/windows/basetyps.h
 include/wine/windows/bcrypt.h
+include/wine/windows/binres.idl
 include/wine/windows/bits.h
 include/wine/windows/bits.idl
 include/wine/windows/bits1_5.h
@@ -115,6 +116,7 @@ include/wine/windows/cor.h
 include/wine/windows/corerror.h
 include/wine/windows/corhdr.h
 include/wine/windows/cpl.h
+include/wine/windows/crtrow.idl
 include/wine/windows/cryptdlg.h
 include/wine/windows/cryptuiapi.h
 include/wine/windows/ctxtcall.h
@@ -147,6 +149,9 @@ include/wine/windows/d3dx9math.inl
 include/wine/windows/d3dx9mesh.h
 include/wine/windows/d3dx9shader.h
 include/wine/windows/d3dx9tex.h
+include/wine/windows/dbccmd.idl
+include/wine/windows/dbcses.idl
+include/wine/windows/dbdsad.idl
 include/wine/windows/dbghelp.h
 include/wine/windows/dbinit.idl
 include/wine/windows/dbprop.idl
@@ -386,6 +391,7 @@ include/wine/windows/oledb.idl
 include/wine/windows/oledlg.h
 include/wine/windows/oleidl.h
 include/wine/windows/oleidl.idl
+include/wine/windows/opnrst.idl
 include/wine/windows/optary.h
 include/wine/windows/optary.idl
 include/wine/windows/pdh.h
@@ -437,6 +443,7 @@ include/wine/windows/sensevts.h
 include/wine/windows/sensevts.idl
 include/wine/windows/servprov.h
 include/wine/windows/servprov.idl
+include/wine/windows/sesprp.idl
 include/wine/windows/setupapi.h
 include/wine/windows/sfc.h
 include/wine/windows/shdispid.h
@@ -895,9 +902,11 @@ lib/wine/mscat32.dll.so
 lib/wine/mscms.dll.so
 lib/wine/mscoree.dll.so
 lib/wine/msctf.dll.so
+lib/wine/msdaps.dll.so
 lib/wine/msdmo.dll.so
 lib/wine/msftedit.dll.so
 lib/wine/msg711.acm.so
+lib/wine/msgsm32.acm.so
 lib/wine/mshtml.dll.so
 lib/wine/mshtml.tlb.so
 lib/wine/msi.dll.so
