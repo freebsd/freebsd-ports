@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.9
+PORTVERSION=	2.11
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
 
 USE_GMAKE=	yes
@@ -26,7 +26,7 @@ MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	ChangeLog INSTALL README README_DE README_INDENT \
+PORTDOCS=	ChangeLog INSTALL README README_DE \
 		README_LANGLIST README_REGEX TODO
 
 .endif
@@ -45,7 +45,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN1}.gz ${MANPREFIX}/man/man1
 	@${MKDIR} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/filetypes.conf ${ETCDIR}
-.for d in helpmsg indentSchemes langDefs themes
+.for d in langDefs themes
 	@${MKDIR} ${DATADIR}/$d
 	${INSTALL_DATA} ${WRKSRC}/$d/* ${DATADIR}/$d
 .endfor
