@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	joomla15
-PORTVERSION=	1.5.13
+PORTVERSION=	1.5.14
 CATEGORIES=	www
-MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/10697/42193/ \
+MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/10785/42653/ \
 		http://web.dti.supsi.ch/downloads/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 
