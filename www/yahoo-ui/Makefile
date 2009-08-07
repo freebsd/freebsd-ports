@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	yahoo
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	yui
+MASTER_SITES=	http://yuilibrary.com/downloads/yui2/
 PKGNAMESUFFIX=	-ui
-DISTNAME=	yui_${PORTVERSION}
+DISTNAME=	yui_${PORTVERSION}b
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	The Yahoo! User Interface (YUI) Library
@@ -84,7 +83,6 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-	@${CP} ${WRKSRC}/README ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
