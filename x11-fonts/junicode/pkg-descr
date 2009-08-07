@@ -16,7 +16,8 @@ mark-to-mark (mkmk), small caps (smcp and c2sc), old-style figures (onum),
 super- and subscript numbers (sups and subs) and Unicode fractions (frac).
 
 Junicode's OpenType style sets provide support for Nordic and Insular
-letter-forms, Old English typography, enlarged minuscules, swash letters
-and MUFI's overlined characters and historic ligatures.
+letter-forms, Old English typography, enlarged minuscules, swash letters,
+E caudata, alternate yogh and MUFI's overlined/deleted characters and
+historic ligatures.
 
 WWW: http://junicode.sourceforge.net/

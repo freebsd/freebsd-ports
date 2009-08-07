@@ -5,6 +5,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/Junicode.pdf
 %%PORTDOCS%%%%DOCSDIR%%/License.pdf
 %%PORTDOCS%%%%DOCSDIR%%/aelfric_job.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mufi.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
