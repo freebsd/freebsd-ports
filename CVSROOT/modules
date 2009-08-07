@@ -11909,6 +11909,7 @@ p5-MARC                         ports/textproc/p5-MARC
 p5-MARC-Charset                 ports/textproc/p5-MARC-Charset
 p5-MARC-Lint                    ports/textproc/p5-MARC-Lint
 p5-MARC-Record                  ports/textproc/p5-MARC-Record
+p5-MARC-XML                     ports/textproc/p5-MARC-XML
 p5-MD5                          ports/security/p5-MD5
 p5-MIDI                         ports/audio/p5-MIDI
 p5-MIME-Base32                  ports/converters/p5-MIME-Base32
@@ -15493,6 +15494,7 @@ p5-marc                         ports/textproc/p5-MARC
 p5-marc-charset                 ports/textproc/p5-MARC-Charset
 p5-marc-lint                    ports/textproc/p5-MARC-Lint
 p5-marc-record                  ports/textproc/p5-MARC-Record
+p5-marc-xml                     ports/textproc/p5-MARC-XML
 p5-markup-perl                  ports/www/p5-Markup-Perl
 p5-masonx-interp-withcallbacks  ports/www/p5-MasonX-Interp-WithCallbacks
 p5-masonx-profiler              ports/www/p5-MasonX-Profiler
@@ -19843,6 +19845,7 @@ qpxtool                         ports/sysutils/qpxtool
 qq                              ports/net-im/qq
 qrfcview                        ports/deskutils/qrfcview
 qrq                             ports/comms/qrq
+qrupdate                        ports/math/qrupdate
 qsa                             ports/devel/qsa
 qscan                           ports/mail/qscan
 qscanplot                       ports/math/qscanplot
