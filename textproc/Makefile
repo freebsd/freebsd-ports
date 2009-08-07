@@ -723,6 +723,7 @@
     SUBDIR += p5-XML-AutoWriter
     SUBDIR += p5-XML-Bare
     SUBDIR += p5-XML-Canonical
+    SUBDIR += p5-XML-CanonicalizeXML
     SUBDIR += p5-XML-Catalog
     SUBDIR += p5-XML-Clean
     SUBDIR += p5-XML-Code

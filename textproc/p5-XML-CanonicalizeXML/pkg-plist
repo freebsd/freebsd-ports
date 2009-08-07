@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/CanonicalizeXML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/CanonicalizeXML/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/CanonicalizeXML/CanonicalizeXML.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/CanonicalizeXML/CanonicalizeXML.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/CanonicalizeXML/autosplit.ix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/CanonicalizeXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/mach/XML
+@dirrmtry %%SITE_PERL%%/mach
