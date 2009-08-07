@@ -54,9 +54,13 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} reconfig
+	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+			  -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+		${BUILDDIR}/configure
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
 
 post-install:
+	${MKDIR} ${PREFIX}/etc/iiim
 	${INSTALL_DATA} ${BUILDDIR}/src/le.xml.conf.sample ${PREFIX}/etc/iiim/
 
 .include <bsd.port.post.mk>
