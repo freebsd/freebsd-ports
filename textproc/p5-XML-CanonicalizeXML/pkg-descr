@@ -1,0 +1,4 @@
+Perl extension for inclusive and exclusive canonicalization of XML
+using libxml2.
+
+WWW:	http://search.cpan.org/dist/XML-CanonicalizeXML/
