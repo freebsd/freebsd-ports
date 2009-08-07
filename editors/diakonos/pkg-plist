@@ -24,6 +24,7 @@ etc/diakonos-256-colour.conf.dist
 %%RUBY_SITELIBDIR%%/diakonos/clipboard-xclip.rb
 %%RUBY_SITELIBDIR%%/diakonos/clipboard.rb
 %%RUBY_SITELIBDIR%%/diakonos/config.rb
+%%RUBY_SITELIBDIR%%/diakonos/cursor.rb
 %%RUBY_SITELIBDIR%%/diakonos/extension.rb
 %%RUBY_SITELIBDIR%%/diakonos/extension-set.rb
 %%RUBY_SITELIBDIR%%/diakonos/core-ext/bignum.rb
@@ -46,6 +47,7 @@ etc/diakonos-256-colour.conf.dist
 %%RUBY_SITELIBDIR%%/diakonos/functions/cursor.rb
 %%RUBY_SITELIBDIR%%/diakonos/functions/grepping.rb
 %%RUBY_SITELIBDIR%%/diakonos/functions/indentation.rb
+%%RUBY_SITELIBDIR%%/diakonos/functions/readline.rb
 %%RUBY_SITELIBDIR%%/diakonos/functions/search.rb
 %%RUBY_SITELIBDIR%%/diakonos/functions/selection.rb
 %%RUBY_SITELIBDIR%%/diakonos/functions/sessions.rb
@@ -58,15 +60,19 @@ etc/diakonos-256-colour.conf.dist
 %%RUBY_SITELIBDIR%%/diakonos/installation.rb
 %%RUBY_SITELIBDIR%%/diakonos/interaction.rb
 %%RUBY_SITELIBDIR%%/diakonos/keying.rb
+%%RUBY_SITELIBDIR%%/diakonos/key-map.rb
 %%RUBY_SITELIBDIR%%/diakonos/list.rb
 %%RUBY_SITELIBDIR%%/diakonos/logging.rb
+%%RUBY_SITELIBDIR%%/diakonos/mode.rb
 %%RUBY_SITELIBDIR%%/diakonos/readline.rb
 %%RUBY_SITELIBDIR%%/diakonos/sessions.rb
+%%RUBY_SITELIBDIR%%/diakonos/search.rb
 %%RUBY_SITELIBDIR%%/diakonos/sized-array.rb
 %%RUBY_SITELIBDIR%%/diakonos/text-mark.rb
 %%RUBY_SITELIBDIR%%/diakonos/vendor/fuzzy_file_finder.rb
 %%RUBY_SITELIBDIR%%/diakonos/version.rb
 %%RUBY_SITELIBDIR%%/diakonos/window.rb
+%%RUBY_SITELIBDIR%%/diakonos/readline/functions.rb
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -107,4 +113,5 @@ etc/diakonos-256-colour.conf.dist
 @dirrm %%RUBY_SITELIBDIR%%/diakonos/display
 @dirrm %%RUBY_SITELIBDIR%%/diakonos/functions
 @dirrm %%RUBY_SITELIBDIR%%/diakonos/vendor
+@dirrm %%RUBY_SITELIBDIR%%/diakonos/readline
 @dirrm %%RUBY_SITELIBDIR%%/diakonos

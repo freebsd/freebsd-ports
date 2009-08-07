@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	diakonos
-PORTVERSION=	0.8.11
+PORTVERSION=	0.8.12
 CATEGORIES=	editors ruby
-MASTER_SITES=	http://purepistos.net/diakonos/
+MASTER_SITES=	http://purepistos.net/diakonos/ \
+		http://distfiles.officialunix.com/
 
 MAINTAINER=	chris@officialunix.com
 COMMENT=	A Linux editor for the masses
