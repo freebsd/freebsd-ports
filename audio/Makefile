@@ -692,6 +692,7 @@
     SUBDIR += swhplugins
     SUBDIR += tagger
     SUBDIR += taglib
+    SUBDIR += taglib-extras
     SUBDIR += taglib-sharp
     SUBDIR += taglookup
     SUBDIR += tagtool
