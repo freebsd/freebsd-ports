@@ -40,6 +40,8 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>subversion</name>
 	<name>subversion-freebsd</name>
+	<name>p5-subversion</name>
+	<name>py-subversion</name>
 	<range><lt>1.6.4</lt></range>
       </package>
     </affects>
@@ -51,12 +53,10 @@ Note:  Please add new entries to the beginning of this file.
 	    overflow issues in the parsing of binary deltas.  This is
 	    related to an allocation vulnerability in the APR library
 	    used by Subversion.</p>
-
 	  <p>Clients with commit access to a vulnerable server can
 	    cause a remote heap overflow; servers can cause a heap
 	    overflow on vulnerable clients that try to do a checkout
 	    or update.</p>
-
 	  <p>This can lead to a DoS (an exploit has been tested) and
 	    to arbitrary code execution (no exploit tested, but the
 	    possibility is clear).</p>
@@ -70,6 +70,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-08-06</discovery>
       <entry>2009-08-06</entry>
+      <modified>2009-08-07</modified>
     </dates>
   </vuln>
 
