@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pngcrush
-PORTVERSION=	1.6.16
+PORTVERSION=	1.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/pmt
 
