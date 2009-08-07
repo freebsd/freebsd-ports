@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="739b94a4-838b-11de-938e-003048590f9e">
+    <topic>joomla15 -- com_mailto Timeout Issue</topic>
+    <affects>
+      <package>
+	<name>joomla15</name>
+	<range><lt>1.5.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joomla! Security Center reports:</p>
+	<blockquote
+	cite="http://developer.joomla.org/security/news/303-20090723-core-com-mailto-timeout-issue.html">
+	  <p>In com_mailto, it was possible to bypass timeout protection against
+	  sending automated emails.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://developer.joomla.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2009-07-22</discovery>
+      <entry>2009-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bce1f76d-82d0-11de-88ea-001a4d49522b">
     <topic>subversion -- heap overflow vulnerability</topic>
     <affects>
