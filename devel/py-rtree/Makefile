@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rtree
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.0
 CATEGORIES=	devel science python
-MASTER_SITES=	${MASTER_SITE_CHEESESHOP}source/R/Rtree/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Rtree-${PORTVERSION}
 
@@ -26,6 +26,7 @@ PYEASYINSTALL_ARCHDEP=	yes
 WRKSRC=			${WRKDIR}/${DISTNAME}
 
 post-extract:
-	${REINPLACE_CMD} -e 's#/tmp/lasjunk#${LOCALBASE}#g' ${WRKSRC}/setup.cfg
+	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
+		${WRKSRC}/setup.cfg
 
 .include <bsd.port.mk>
