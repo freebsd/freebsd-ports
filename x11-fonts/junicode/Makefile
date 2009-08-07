@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	junicode
-PORTVERSION=	0.6.16
+PORTVERSION=	0.6.17
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|g}
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
-COMMENT=	Unicode/MUFI OpenType font for medievalists (Latin, IPA, Runic and Greek)
+COMMENT=	Unicode/MUFI OpenType font for medievalists (Latin, IPA, Runic, Greek)
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS:=	${BUILD_DEPENDS}
