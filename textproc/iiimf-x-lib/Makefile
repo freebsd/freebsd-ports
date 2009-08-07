@@ -48,6 +48,9 @@ post-patch:
 
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} reconfig
+	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+			  -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+		${BUILDDIR}/configure
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
 
 .include <bsd.port.post.mk>
