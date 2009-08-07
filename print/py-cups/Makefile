@@ -6,8 +6,7 @@
 #    $MCom: ports/print/py-cups/Makefile,v 1.1 2008/03/20 13:55:32 ahze Exp $
 
 PORTNAME=	cups
-PORTVERSION=	1.9.45
-PORTREVISION=	1
+PORTVERSION=	1.9.46
 CATEGORIES=	print python
 MASTER_SITES=	http://cyberelk.net/tim/data/pycups/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
