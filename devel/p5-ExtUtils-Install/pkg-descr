@@ -1,0 +1,8 @@
+This module handles the installing and uninstalling of perl modules,
+scripts, man pages, etc...
+
+Both install() and uninstall() are specific to the way
+ExtUtils::MakeMaker handles the installation and deinstallation of
+perl modules. They are not designed as general purpose tools.
+
+WWW: http://search.cpan.org/dist/ExtUtils-Install/
