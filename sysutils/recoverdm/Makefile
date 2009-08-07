@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	recoverdm
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/recoverdm/
 EXTRACT_SUFX=	.tgz

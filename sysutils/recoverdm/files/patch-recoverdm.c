@@ -1,6 +1,6 @@
---- recoverdm.c.orig	Fri Dec  2 13:34:00 2005
-+++ recoverdm.c	Mon Jan 23 16:51:28 2006
-@@ -179,7 +179,7 @@
+--- recoverdm.c.orig	2009-07-25 22:13:33.105079513 +0900
++++ recoverdm.c	2009-07-25 22:17:04.086068813 +0900
+@@ -181,7 +181,7 @@
  
  		if (rc == 0)
  		{
@@ -9,7 +9,7 @@
  				rc = -1;
  		}
  
-@@ -261,7 +261,7 @@
+@@ -267,7 +267,7 @@
  		case 'V':
  			return 0;
  		case 'b':
@@ -18,7 +18,7 @@
  			break;
  		case '?':
  		case 'h':
-@@ -295,7 +295,7 @@
+@@ -307,7 +307,7 @@
  	buffer = (char *)mymalloc(block_size, "sectorbuffer");
  	buffer2 = (char *)mymalloc(block_size, "sectorbuffer for retries");
  
@@ -27,12 +27,12 @@
  	if (fdout == -1)
  	{
  		printf("Cannot create file %s! (%s)\n", file_out, strerror(errno));
-@@ -430,7 +430,7 @@
+@@ -442,7 +442,7 @@
  				/* always mark the sector as tricky */
  				if (dsecfile)
  				{
--					fprintf(dsecfile, "%lld %ld\n", curpos, block_size);
-+					fprintf(dsecfile, "%lld %ld\n", curpos, (long)block_size);
+-					fprintf(dsecfile, "%lld %ld\n", curpos, block_size*skip_value);
++					fprintf(dsecfile, "%lld %ld\n", curpos, (long)(block_size*skip_value));
  					fflush(dsecfile);
  				}
  
