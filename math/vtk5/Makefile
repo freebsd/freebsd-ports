@@ -8,7 +8,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -50,7 +50,8 @@ USE_GL=		yes
 USE_LDCONFIG=	yes
 
 OPTIONS=	MANGLEDMESA	"Use off-screen (Mangled) Mesa" Off \
-		VTKMPEG2	"Install patented MPEG2 encoder module" Off
+		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
+		GL2PS           "Install support conversion OpenGL to PostScript" On
 
 PLIST_SUB=	VER=${PORTVERSION} VER1=${PORTVERSION:R} VER2=${PORTVERSION:R:R}
 
@@ -105,6 +106,12 @@ CMAKE_ARGS+=	-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.0 \
 		-DvtkMPEG2Encode_LIBRARIES=vtkMPEG2Encode \
 		-DVTK_USE_PATENTED:BOOL=ON \
 		-DVTK_USE_MPEG2_ENCODER:BOOL=ON
+.endif
+
+.if defined(WITH_GL2PS)
+LIB_DEPENDS+=	gl2ps.1:${PORTSDIR}/print/gl2ps
+CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
+PLIST_FILES+=	include/vtk-5.0/vtkGL2PSExporter.h
 .endif
 
 post-extract:
