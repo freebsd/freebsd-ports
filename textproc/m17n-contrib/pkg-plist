@@ -4,6 +4,7 @@ share/m17n/as-inscript.mim
 share/m17n/as-phonetic.mim
 share/m17n/bn-inscript.mim
 share/m17n/bn-probhat.mim
+share/m17n/cs-kbd.mim
 share/m17n/eo-h-f.mim
 share/m17n/eo-h.mim
 share/m17n/eo-plena.mim
@@ -19,6 +20,7 @@ share/m17n/icons/as-inscript.png
 share/m17n/icons/as-phonetic.png
 share/m17n/icons/bn-inscript.png
 share/m17n/icons/bn-probhat.png
+share/m17n/icons/cs-kbd.png
 share/m17n/icons/eo-h-fundamente.png
 share/m17n/icons/eo-h-sistemo.png
 share/m17n/icons/eo-plena.png
@@ -40,18 +42,22 @@ share/m17n/icons/or-inscript.png
 share/m17n/icons/pa-inscript.png
 share/m17n/icons/pa-jhelum.png
 share/m17n/icons/pa-phonetic.png
+share/m17n/icons/ps-phonetic.png
 share/m17n/icons/sd-inscript.png
 share/m17n/icons/ta-inscript.png
 share/m17n/icons/ta-phonetic.png
 share/m17n/icons/ta-tamil99.png
 share/m17n/icons/ta-typewriter.png
+share/m17n/icons/ta-vutam.png
 share/m17n/icons/te-inscript.png
 share/m17n/icons/te-pothana.png
 share/m17n/icons/ur-phonetic.png
 share/m17n/icons/vi-nom-vni.png
 share/m17n/icons/vi-nom.png
+share/m17n/icons/zh-zhuyin.png
 share/m17n/kn-inscript.mim
 share/m17n/kn-kgp.mim
+share/m17n/ks-kbd.mim
 share/m17n/ml-inscript.mim
 share/m17n/ml-mozhi.mim
 share/m17n/ml-swanalekha.mim
@@ -65,6 +71,7 @@ share/m17n/or-phonetic.mim
 share/m17n/pa-inscript.mim
 share/m17n/pa-jhelum.mim
 share/m17n/pa-phonetic.mim
+share/m17n/ps-phonetic.mim
 share/m17n/ru-translit.mim
 share/m17n/sd-inscript.mim
 share/m17n/si-phonetic-dynamic.mim
@@ -74,6 +81,7 @@ share/m17n/ta-inscript.mim
 share/m17n/ta-phonetic.mim
 share/m17n/ta-tamil99.mim
 share/m17n/ta-typewriter.mim
+share/m17n/ta-vutam.mim
 share/m17n/tai-sonla.mim
 share/m17n/te-apple.mim
 share/m17n/te-inscript.mim
@@ -83,5 +91,7 @@ share/m17n/ur-phonetic.mim
 share/m17n/vi-han.mim
 share/m17n/vi-nom-vni.mim
 share/m17n/vi-nom.mim
+share/m17n/zh-pinyin-vi.mim
+share/m17n/zh-zhuyin.mim
 @dirrmtry share/m17n/icons
 @dirrmtry share/m17n
