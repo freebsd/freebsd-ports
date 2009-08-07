@@ -9,7 +9,8 @@ PORTNAME=	wikitemplates
 PORTVERSION=	0.3.0p3
 PORTREVISION=	2
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.gerritbeine.de/download/trac/
+MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
+		LOCAL/glarkin
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION:S/p/rc/}
 
@@ -17,9 +18,7 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Templates for the Trac wiki
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-1.1_r1-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-ctxtnavadd
-
-BROKEN=		bad depobj
+		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-2.0-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-ctxtnavadd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 USE_PYTHON=	2.3+
