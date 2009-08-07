@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devede
-DISTVERSION=	3.12c
+DISTVERSION=	3.14.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
@@ -16,20 +16,29 @@ COMMENT=	Create video DVDs, VCDs, sVCDs or CVDs from any number of video files
 
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		spumux:${PORTSDIR}/multimedia/dvdauthor \
-		vcdimager:${PORTSDIR}/multimedia/vcdimager \
-		${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
+		vcdimager:${PORTSDIR}/multimedia/vcdimager
 
 USE_BZIP2=	yes
+USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_CDRTOOLS=	yes
 NO_BUILD=	yes
 
-OPTIONS=	PSYCO "Use psyco to compile the python scripts" Off \
+OPTIONS=	PSYCO "Enable devel/py-psyco optimization support" off
 
 # Strip last character not present in distribution.
 WRKSRC=		${WRKDIR}/${DISTNAME:C/b//}
 
+DEJAVU_FONTSDIR=	${LOCALBASE}/lib/X11/fonts/dejavu
+DEJAVU_FONTFILE=	${DEJAVU_FONTSDIR}/DejaVuSans.ttf
+
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+.undef WITH_PSYCO
+
+WITHOUT_PSYCO=	yes
+.endif
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
@@ -40,6 +49,20 @@ PLIST_SUB+=	NLS=""
 
 PORTDOCS=	docs/*
 
+DEVEDE_INTERFACE=	aboutdialog1.ui add_subtitle.ui add_subtitle2.ui \
+			codepages.lst languages.lst waborted_dialog.ui \
+			wcancel_dialog.ui wcancel_job_dialog.ui \
+			wdel_chapter_dialog.ui wdel_subtitle.ui \
+			wdel_title_dialog.ui wdisk_type.ui \
+			wempty_titles_dialog.ui wend_dialog.ui \
+			werase_dialog.ui werror_dialog.ui wfile.ui \
+			wfolder_dialog.ui wfolder_exists.ui \
+			wloadconfig.ui wloosecurrent.ui wmain.ui \
+			wmenu_preview_ntsc.ui wmenu_preview_pal.ui \
+			wmenu_properties.ui wnofonts.ui wpreview_dialog.ui \
+			wpreviewagain_dialog.ui wprograms.ui \
+			wprogress.ui wsaveconfig.ui \
+			wtitle_properties_dialog.ui wwarning_dialog.ui
 DEVEDE_LIBS=	devede_bincue.py devede_convert.py devede_delete.py \
 		devede_dialogs.py devede_disctype.py devede_dvd.py \
 		devede_dvdmenu.py devede_executor.py devede_fonts.py \
@@ -54,16 +77,32 @@ DEVEDE_PIXMAPS=	background.png barras.png base_ntsc.mpg base_ntsc_wide.mpg \
 
 .if defined(WITH_PSYCO)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
+EXTRA_PATCHES+=	${FILESDIR}/extra-psyco-patch-devede.py
 .endif
+
+post-patch:
+# Fix general locations
+	@${REINPLACE_CMD} -E \
+		-e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%PORTNAME%%|${PORTNAME}|' \
+		-e 's|%%DATADIR%%|${DATADIR}|' \
+		-e 's|%%DOCSDIR%%|${DOCSDIR}|' \
+		${WRKSRC}/devede.py
+# Fix font location
+	@${REINPLACE_CMD} -E \
+		-e 's,/usr/share/fonts/truetype/ttf-dejavu/(DejaVuSans|dejavusans).ttf,${DEJAVU_FONTFILE},g' \
+		${WRKSRC}/devede_fonts.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/devede.py ${PREFIX}/bin/devede
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/devede.glade ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/devede.svg ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/devedesans.ttf ${DATADIR}
 .for pixmap in ${DEVEDE_PIXMAPS}
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/${pixmap} ${DATADIR}
+.endfor
+.for interface in ${DEVEDE_INTERFACE}
+	${INSTALL_DATA} ${WRKSRC}/interface/${interface} ${DATADIR}
 .endfor
 	@${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/devede.desktop ${DESKTOPDIR}
