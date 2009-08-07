@@ -78,7 +78,7 @@ validate:
 	@${SH} ${FILESDIR}/validate.sh "${VUXML_FILE}"
 
 tidy:
-	@${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FILE}"
+	${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FILE}" > "${VUXML_FILE}.tidy"
 
 newentry:
 	@${SH} ${FILESDIR}/newentry.sh "${VUXML_FILE}"
