@@ -904,8 +904,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Secunia reports:</p>
-        <blockquote
-          cite="http://secunia.com/advisories/35284/">
+        <blockquote cite="http://secunia.com/advisories/35284/">
           <p>Some vulnerabilities have been reported in APR-util, which
             can be exploited by malicious users and malicious people to
             cause a DoS (Denial of Service).</p>
@@ -919,8 +918,7 @@ Note:  Please add new entries to the beginning of this file.
              application using the library.</p>
         </blockquote>
         <p>RedHat reports:</p>
-        <blockquote
-          cite="https://bugzilla.redhat.com/show_bug.cgi?id=3D504390">
+        <blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=3D504390">
           <p>A single NULL byte buffer overflow flaw was found in
           apr-util's apr_brigade_vprintf() function.</p>
         </blockquote>
@@ -940,6 +938,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2009-06-08</entry>
     </dates>
   </vuln>
+
   <vuln vid="4f838b74-50a1-11de-b01f-001c2514716c">
     <topic>dokuwiki -- Local File Inclusion with register_globals on</topic>
     <affects>
@@ -1144,35 +1143,35 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-   <vuln vid="4175c811-f690-4898-87c5-755b3cf1bac6">
-     <topic>ntp -- stack-based buffer overflow</topic>
-     <affects>
-       <package>
-         <name>ntp</name>
-         <range><lt>4.2.4p7</lt></range>
-       </package>
-     </affects>
-     <description>
-       <body xmlns="http://www.w3.org/1999/xhtml">
-         <p>US-CERT reports:</p>
-         <blockquote cite="http://www.kb.cert.org/vuls/id/853097">
-           <p>ntpd contains a stack buffer overflow which may allow a remote
-             unauthenticated attacker to execute arbitrary code on a vulnerable
-             system or create a denial of service.</p>
-         </blockquote>
-       </body>
-     </description>
+  <vuln vid="4175c811-f690-4898-87c5-755b3cf1bac6">
+    <topic>ntp -- stack-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.4p7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/853097">
+	  <p>ntpd contains a stack buffer overflow which may allow a remote
+	    unauthenticated attacker to execute arbitrary code on a vulnerable
+	    system or create a denial of service.</p>
+	</blockquote>
+      </body>
+    </description>
      <references>
       <bid>35017</bid>
       <cvename>CVE-2009-0159</cvename>
       <cvename>CVE-2009-1252</cvename>
       <url>http://www.kb.cert.org/vuls/id/853097</url>
      </references>
-     <dates>
-       <discovery>2009-05-06</discovery>
-       <entry>2009-05-20</entry>
-     </dates>
-   </vuln>
+    <dates>
+      <discovery>2009-05-06</discovery>
+      <entry>2009-05-20</entry>
+    </dates>
+  </vuln>
 
   <vuln vid="5ed2f96b-33b7-4863-8c6b-540d22344424">
     <topic>imap-uw -- University of Washington IMAP c-client Remote Format String Vulnerability</topic>
@@ -1463,8 +1462,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia reports:</p>
-        <blockquote
-          cite="http://secunia.com/advisories/3459796">
+        <blockquote cite="http://secunia.com/advisories/3459796">
 	  <p>Certain input passed to the "Apache::Status" and "Apache2::Status"
 	    modules is not properly sanitised before being returned to the user.
 	    This can be exploited to execute arbitrary HTML and script code in a
@@ -1686,8 +1684,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Wireshark team reports:</p>
-        <blockquote
-          cite="http://www.wireshark.org/security/wnpa-sec-2009-02.html">
+        <blockquote cite="http://www.wireshark.org/security/wnpa-sec-2009-02.html">
           <p>Wireshark 1.0.7 fixes the following vulnerabilities:</p>
           <ul>
             <li>The PROFINET dissector was vulnerable to a format
@@ -1730,8 +1727,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Gentoo security team summarizes:</p>
-        <blockquote
-          cite="http://www.gentoo.org/security/en/glsa/glsa-200904-20.xml">
+        <blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200904-20.xml">
           <p>The following issues were reported in CUPS:</p>
           <ul>
             <li>iDefense reported an integer overflow in the
@@ -1925,7 +1921,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="3b18e237-2f15-11de-9672-0030843d3802">
-    <topic>mozilla  -- multiple vulnerabilities</topic>
+    <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -2372,8 +2368,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Vendor reports:</p>
-	<blockquote
-	  cite="http://www.wireshark.org/security/wnpa-sec-2009-01.html">
+	<blockquote cite="http://www.wireshark.org/security/wnpa-sec-2009-01.html">
 	  <p>On non-Windows systems Wireshark could crash if the HOME
 	    environment variable contained sprintf-style string formatting
 	    characters. Wireshark could crash while reading a malformed
@@ -3183,7 +3178,7 @@ Note:  Please add new entries to the beginning of this file.
       <discovery>2009-02-09</discovery>
       <entry>2009-02-11</entry>
     </dates>
-  </vuln>      
+  </vuln>
 
   <vuln vid="cc47fafe-f823-11dd-94d9-0030843d3802">
     <topic>typo3 -- cross-site scripting and information disclosure</topic>
@@ -3434,8 +3429,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Todd Miller reports:</p>
-        <blockquote
-          cite="http://www.gratisoft.us/pipermail/sudo-announce/2009-February/000085.html">
+        <blockquote cite="http://www.gratisoft.us/pipermail/sudo-announce/2009-February/000085.html">
           <p>A bug was introduced in Sudo's group matching code in version
 	    1.6.9 when support for matching based on the supplemental group
 	    vector was added.  This bug may allow certain users listed in
@@ -3683,8 +3677,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Core Security Technologies reports:</p>
-	<blockquote
-	cite="http://www.coresecurity.com/content/openfire-multiple-vulnerabilities">
+	<blockquote cite="http://www.coresecurity.com/content/openfire-multiple-vulnerabilities">
 	  <p>Multiple cross-site scripting vulnerabilities have been found
 	    which may lead to arbitrary remote code execution on the server
 	    running the application due to unauthorized upload of Java plugin
@@ -3867,7 +3860,7 @@ Note:  Please add new entries to the beginning of this file.
       <discovery>2007-11-14</discovery>
       <entry>2009-01-15</entry>
     </dates>
-  </vuln> 
+  </vuln>
 
   <vuln vid="5ccb1c14-e357-11dd-a765-0030843d3802">
     <topic>mplayer -- vulnerability in STR files processor</topic>
@@ -4662,8 +4655,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>CORE Security Technologies reports:</p>
-        <blockquote
-          cite="http://www.coresecurity.com/content/vinagre-format-string">
+        <blockquote cite="http://www.coresecurity.com/content/vinagre-format-string">
           <p>A format string error has been found on the
 	    vinagre_utils_show_error() function that can be exploited via
 	    commands issued from a malicious server containing format
@@ -4923,8 +4915,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The MediaWiki development team reports:</p>
-	<blockquote
-	cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2008-December/000080.html">
+	<blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2008-December/000080.html">
 	  <p>Certain unspecified input is not properly sanitised before being
 	    returned to the user. This can be exploited to execute arbitrary HTML
 	    and script code in a user's browser session in context of an affected
@@ -5230,8 +5221,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Debian reports:</p>
-	<blockquote
-	cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=496403">
+	<blockquote cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=496403">
 	  <p>Faxspool in mgetty 1.1.36 allows local users to overwrite
 	    arbitrary files via a symlink attack on a /tmp/faxsp.####
 	    temporary file.</p>
@@ -7255,8 +7245,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>A phpMyAdmin security announcement:</p>
-	<blockquote
-	cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-7">
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-7">
 	  <p>The server_databases.php script was vulnerable to an attack coming
 	  from a user who is already logged-on to phpMyAdmin, where he can
 	  execute shell code (if the PHP configuration permits commands like
@@ -8081,7 +8070,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>James Yonan reports:</p>
 	<blockquote cite="http://openvpn.net/index.php/documentation/change-log/changelog-21.html">
-	  <p>Security Fix &#x2013; affects non-Windows OpenVPN clients running
+	  <p>Security Fix - affects non-Windows OpenVPN clients running
 	    OpenVPN 2.1-beta14 through 2.1-rc8 (OpenVPN 2.0.x clients are NOT
 	    vulnerable nor are any versions of the OpenVPN server
 	    vulnerable).</p>
@@ -13850,8 +13839,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="45500f74-5947-11dc-87c1-000e2e5785ad">
-    <topic>fetchmail -- denial of service on reject of local warning
-      message</topic>
+    <topic>fetchmail -- denial of service on reject of local warning message</topic>
     <affects>
       <package>
 	<name>fetchmail</name>
@@ -17205,7 +17193,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Matthias Andree reports:</p>
 	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2006-03.txt">
 	  <p>When delivering messages to a message delivery agent by means
-	    of the &quot;mda&quot; option, fetchmail can crash (by passing
+	    of the "mda" option, fetchmail can crash (by passing
 	    a NULL pointer to ferror() and fflush()) when refusing a message.
 	    SMTP and LMTP delivery modes aren't affected.</p>
 	</blockquote>
@@ -17237,16 +17225,16 @@ Note:  Please add new entries to the beginning of this file.
 	    vulnerabilities.</p>
 	  <ul>
 	    <li>sslcertck/sslfingerprint options should have implied
-	      &quot;sslproto tls1&quot; in order to enforce TLS negotiation,
+	      "sslproto tls1" in order to enforce TLS negotiation,
 	      but did not.</li>
-	    <li>Even with &quot;sslproto tls1&quot; in the config, fetches
+	    <li>Even with "sslproto tls1" in the config, fetches
 	      would go ahead in plain text if STLS/STARTTLS wasn't available
 	      (not advertised, or advertised but rejected).</li>
 	    <li>POP3 fetches could completely ignore all TLS options
 	      whether available or not because it didn't reliably issue
 	      CAPA before checking for STLS support - but CAPA is a
 	      requisite for STLS. Whether or not CAPAbilities were probed,
-	      depended on the &quot;auth&quot; option. (Fetchmail only
+	      depended on the "auth" option. (Fetchmail only
 	      tried CAPA if the auth option was not set at all, was set
 	      to gssapi, kerberos, kerberos_v4, otp, or cram-md5.)</li>
 	    <li>POP3 could fall back to using plain text passwords, even
@@ -17561,8 +17549,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="077c2dca-8f9a-11db-ab33-000e0c2e438a">
-    <topic>openssl -- Incorrect PKCS#1 v1.5 padding validation in
-      crypto(3)</topic>
+    <topic>openssl -- Incorrect PKCS#1 v1.5 padding validation in crypto(3)</topic>
     <affects>
       <system>
 	<name>FreeBSD</name>
@@ -18363,7 +18350,7 @@ Note:  Please add new entries to the beginning of this file.
 	    create a denial of service attack (DoS). The problem is triggered
 	    by sending the library an HTTP request that uses multipart MIME
 	    encoding and as an invalid boundary specifier that begins with
-	    &quot;-&quot; instead of &quot;--&quot;. Once triggered it will
+	    "-" instead of "--". Once triggered it will
 	    exhaust all available memory resources effectively creating a DoS
 	    condition.</p>
 	</blockquote>
@@ -20793,7 +20780,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Jean-David Maillefer reports a Denial of Service vulnerability
 	  within MySQL.  The vulnerability is caused by improper checking
 	  of the data_format routine, which cause the MySQL server to
-	  crash.  The crash is triggered by the following code:<br />
+	  crash.  The crash is triggered by the following code:<br/>
 	  <code>"SELECT date_format('%d%s', 1);</code></p>
       </body>
     </description>
