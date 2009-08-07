@@ -15,6 +15,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Framework for VoIP and IP applications
 
 USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 CMAKE_SOURCE_PATH=	..
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build uic_build moc_build rcc_build xml dbus
