@@ -8,11 +8,12 @@
 
 PORTNAME=	distcc
 PORTVERSION=	2.18.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 #PATCH_SITES=	http://0pointer.de/public/
-PATCH_SITES=	LOCAL/ahze
+PATCH_SITES=	${MASTER_SITES_LOCAL}
+PATCH_SITE_SUBDIR=	ahze
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
@@ -49,7 +50,7 @@ CFLAGS+=	-DHAVE_AVAHI
 .if defined(WITH_COMPILER_LINKS)
 CCLINKDIR?=		libexec/distcc
 PLIST_DIRS=		${CCLINKDIR}
-GNU_COMPILERS=		295 32 33 34 40 41 42 43
+GNU_COMPILERS=		34 42 43 44 -ooo
 DISTCC_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if ${ARCH} == "i386"
 DISTCC_COMPILERS+=	icc icpc
