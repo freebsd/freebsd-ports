@@ -3,22 +3,25 @@ bin/mirage
 %%PYTHON_SITELIBDIR%%/mirage.py
 %%PYTHON_SITELIBDIR%%/mirage.pyc
 %%PYTHON_SITELIBDIR%%/mirage.pyo
+%%PYTHON_SITELIBDIR%%/xmouse.so
 share/applications/mirage.desktop
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
+share/locale/cs/LC_MESSAGES/mirage.mo
 share/locale/de/LC_MESSAGES/mirage.mo
 share/locale/es/LC_MESSAGES/mirage.mo
 share/locale/fr/LC_MESSAGES/mirage.mo
+share/locale/hu/LC_MESSAGES/mirage.mo
 share/locale/it/LC_MESSAGES/mirage.mo
 share/locale/pl/LC_MESSAGES/mirage.mo
 share/locale/ru/LC_MESSAGES/mirage.mo
-%%DATADIR%%/CHANGELOG
-%%DATADIR%%/COPYING
-%%DATADIR%%/README
-%%DATADIR%%/TODO
-%%DATADIR%%/TRANSLATORS
 %%DATADIR%%/mirage_blank.png
 %%DATADIR%%/stock_fullscreen.png
 %%DATADIR%%/stock_leave-fullscreen.png
 %%DATADIR%%/stock_shuffle.png
 share/pixmaps/mirage.png
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
