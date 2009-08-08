@@ -31,6 +31,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra::patch-fuser.c \
 .if ${OSVERSION} >= 800066
 EXTRA_PATCHES+=	${FILESDIR}/extra::patch-msdosfs.c
 .endif
+.if ${OSVERSION} >= 800101
+BROKEN=		does not compile on 8.X
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
