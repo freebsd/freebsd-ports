@@ -350,7 +350,6 @@
     SUBDIR += tcl86-thread
     SUBDIR += tclX
     SUBDIR += tcltutor
-    SUBDIR += tinycobol
     SUBDIR += tinypy
     SUBDIR += tolua
     SUBDIR += tolua++

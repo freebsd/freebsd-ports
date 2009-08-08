@@ -4132,3 +4132,4 @@ devel/libtool15|devel/libtool22|2009-08-02|Update to libtool22
 devel/libltdl15|devel/libltdl22|2009-08-02|Update to libltdl22
 editors/koffice-i18n-sr@Latn|editors/koffice-i18n-sr_Latn|2009-08-02|Use editors/koffice-i18n-sr_Latn
 misc/kde3-i18n-sr@Latn|misc/kde3-i18n-sr_Latn|2009-08-02|Use misc/kde3-i18n-sr_Latn
+lang/tinycobol||2009-08-08|Has expired: no longer being developed; consider using lang/open-cobol instead
