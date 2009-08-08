@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.5.9
+PORTREVISION=	1
 CATEGORIES=	databases linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	sqlite-${PORTVERSION}-${RPMVERSION}
@@ -28,6 +29,7 @@ DOCSDIR=	${PREFIX}/usr/share/doc/sqlite-${PORTVERSION}
 PORTDOCS=	README
 MANPREFIX=	${PREFIX}/usr/share
 MAN1=		sqlite3.1
+MANCOMPRESSED=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

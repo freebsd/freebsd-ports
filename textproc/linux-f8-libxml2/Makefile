@@ -7,7 +7,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
@@ -30,6 +30,7 @@ PORTDOCS=	AUTHORS ChangeLog.gz Copyright NEWS README TODO
 MANPREFIX=	${PREFIX}/usr/share
 MAN1=		xmlcatalog.1 xmllint.1
 MAN3=		libxml.3
+MANCOMPRESSED=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>
