@@ -20,6 +20,8 @@ BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
 BROKEN=		does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2009-09-08
 ONLY_FOR_ARCHS=	i386
 USE_MYSQL=	yes
 USE_GMAKE=	yes
