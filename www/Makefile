@@ -1795,7 +1795,6 @@
     SUBDIR += zope-formulator
     SUBDIR += zope-generator
     SUBDIR += zope-groupuserfolder
-    SUBDIR += zope-guf
     SUBDIR += zope-i18nlayer
     SUBDIR += zope-kupu
     SUBDIR += zope-mimetypesregistry
