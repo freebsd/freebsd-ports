@@ -18,6 +18,6 @@ pidfile=%%ASSP_HOME%%/pid
 
 load_rc_config $name
 : ${assp_enable="NO"}
-: ${assp_flags="%%ASSP_HOME%%"}
+: ${assp_args="%%ASSP_HOME%%"}
 
 run_rc_command "$1"

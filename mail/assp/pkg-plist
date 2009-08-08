@@ -56,7 +56,7 @@ sbin/assplog
 %%PORTDOCS%%%%DOCSDIR%%/Legacy - ASSP Documentation.htm
 %%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rm %%ASSP_HOME%%/log
+@unexec rm %%ASSP_HOME%%/logs
 @unexec rm %%ASSP_HOME%%/reports
 @unexec rm %%ASSP_HOME%%/images
 @unexec rm %%ASSP_HOME%%/files
