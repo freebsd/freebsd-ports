@@ -6,29 +6,53 @@
 #
 
 PORTNAME=	awale
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	games
-MASTER_SITES=	SAVANNAH CENKES
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	African board game
 
-USE_TK_RUN=	yes
-GNU_CONFIGURE=	yes
-PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS
-MAN1=	${PORTNAME}.1 x${PORTNAME}.1
-PATCH_TK_SCRIPTS=	src/xawale.tcl
+OPTIONS=	GUI "Installs Tcl/Tk GUI" on
 
-pre-patch:
-	@${REINPLACE_CMD} -e '/^#define.*VERSION/d' ${WRKSRC}/src/awale.c
-	@${REINPLACE_CMD} -e '/^pkgdatadir =/s|=.*|=${DATADIR}|'\
-		${WRKSRC}/src/Makefile.in
+MAN1=		${PORTNAME}.1
 
-post-install:
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_GUI)
+PLIST_SUB+=	GUI="@comment "
+.else
+USE_TK_WRAPPER=	yes
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+MAN1+=		x${PORTNAME}.1
+PLIST_SUB+=	GUI=""
 .endif
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '/bin\/bash/d' ${WRKSRC}/src/xawale.tcl
+	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/src/x${PORTNAME}
+	@${ECHO_CMD} "${DATADIR}/xawale.tcl" >> ${WRKSRC}/src/x${PORTNAME}
+
+do-build:
+	(cd ${WRKSRC}/src && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+.for f in README *.bmp *.gif *.ico *.png
+	${INSTALL_DATA} ${WRKSRC}/src/${f} ${DATADIR}
+.endfor
+.if !defined(WITHOUT_X11)
+	${INSTALL_SCRIPT} ${WRKSRC}/src/x${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/x${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/src/xawale.tcl ${DATADIR}
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in AUTHORS ChangeLog NEWS README THANKS
+	cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
 bin/awale
-bin/xawale
+%%GUI%%bin/xawale
 %%DATADIR%%/Awale.gif
 %%DATADIR%%/AwaleBanner.bmp
 %%DATADIR%%/README
@@ -13,11 +13,23 @@ bin/xawale
 %%DATADIR%%/Trou07.gif
 %%DATADIR%%/Trou08.gif
 %%DATADIR%%/Trou09.gif
-%%DATADIR%%/awale.png
+%%DATADIR%%/Trou10.gif
+%%DATADIR%%/Trou11.gif
+%%DATADIR%%/Trou12.gif
+%%DATADIR%%/Trou13.gif
+%%DATADIR%%/Trou14.gif
+%%DATADIR%%/Trou15.gif
 %%DATADIR%%/awale.ico
+%%DATADIR%%/awale.png
 %%DATADIR%%/copyright.gif
 %%DATADIR%%/fr.gif
 %%DATADIR%%/sp.gif
 %%DATADIR%%/uk.gif
-%%DATADIR%%/xawale.tcl
+%%GUI%%%%DATADIR%%/xawale.tcl
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
