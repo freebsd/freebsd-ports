@@ -37,6 +37,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 PLIST_SUB=	XMLCATALOG="${LOCALBASE}/bin/xmlcatalog" \
 		CATALOG_PORTS_XML="${LOCALBASE}/share/xml/catalog.ports"
 
+OPTIONS=		PYTHON  "Use Python"    on
+
+.include <bsd.port.options.mk>
+
 .if !defined(WITHOUT_PYTHON)
 BUILD_DEPENDS+=	${PYEXPAT}
 RUN_DEPENDS+=	${PYEXPAT}
