@@ -11257,6 +11257,7 @@ p5-ExtUtils-CBuilder            ports/devel/p5-ExtUtils-CBuilder
 p5-ExtUtils-Command             ports/devel/p5-ExtUtils-Command
 p5-ExtUtils-Constant            ports/devel/p5-ExtUtils-Constant
 p5-ExtUtils-Depends             ports/devel/p5-ExtUtils-Depends
+p5-ExtUtils-Install             ports/devel/p5-ExtUtils-Install
 p5-ExtUtils-MakeMaker           ports/devel/p5-ExtUtils-MakeMaker
 p5-ExtUtils-MakeMaker-Coverage  ports/devel/p5-ExtUtils-MakeMaker-Coverage
 p5-ExtUtils-Manifest            ports/devel/p5-ExtUtils-Manifest
@@ -13437,6 +13438,7 @@ p5-XML-Atom-Syndication         ports/textproc/p5-XML-Atom-Syndication
 p5-XML-AutoWriter               ports/textproc/p5-XML-AutoWriter
 p5-XML-Bare                     ports/textproc/p5-XML-Bare
 p5-XML-Canonical                ports/textproc/p5-XML-Canonical
+p5-XML-CanonicalizeXML          ports/textproc/p5-XML-CanonicalizeXML
 p5-XML-Catalog                  ports/textproc/p5-XML-Catalog
 p5-XML-Clean                    ports/textproc/p5-XML-Clean
 p5-XML-Code                     ports/textproc/p5-XML-Code
@@ -14774,6 +14776,7 @@ p5-extutils-cbuilder            ports/devel/p5-ExtUtils-CBuilder
 p5-extutils-command             ports/devel/p5-ExtUtils-Command
 p5-extutils-constant            ports/devel/p5-ExtUtils-Constant
 p5-extutils-depends             ports/devel/p5-ExtUtils-Depends
+p5-extutils-install             ports/devel/p5-ExtUtils-Install
 p5-extutils-makemaker           ports/devel/p5-ExtUtils-MakeMaker
 p5-extutils-makemaker-coverage  ports/devel/p5-ExtUtils-MakeMaker-Coverage
 p5-extutils-manifest            ports/devel/p5-ExtUtils-Manifest
@@ -17014,6 +17017,7 @@ p5-xml-atom-syndication         ports/textproc/p5-XML-Atom-Syndication
 p5-xml-autowriter               ports/textproc/p5-XML-AutoWriter
 p5-xml-bare                     ports/textproc/p5-XML-Bare
 p5-xml-canonical                ports/textproc/p5-XML-Canonical
+p5-xml-canonicalizexml          ports/textproc/p5-XML-CanonicalizeXML
 p5-xml-catalog                  ports/textproc/p5-XML-Catalog
 p5-xml-clean                    ports/textproc/p5-XML-Clean
 p5-xml-code                     ports/textproc/p5-XML-Code
@@ -19933,6 +19937,7 @@ qtorrent                        ports/net-p2p/qtorrent
 qtpfsgui                        ports/graphics/qtpfsgui
 qtpixmap                        ports/x11-toolkits/qtpixmap
 qtpkg                           ports/ports-mgmt/qtpkg
+qtscriptgenerator               ports/devel/qtscriptgenerator
 qtstalker                       ports/finance/qtstalker
 qtv                             ports/games/qtv
 qu-aspell                       ports/textproc/qu-aspell
@@ -21960,6 +21965,7 @@ tacshell                        ports/net/tacshell
 tads                            ports/games/tads
 tagger                          ports/audio/tagger
 taglib                          ports/audio/taglib
+taglib-extras                   ports/audio/taglib-extras
 taglib-sharp                    ports/audio/taglib-sharp
 taglookup                       ports/audio/taglookup
 tagtool                         ports/audio/tagtool
@@ -24252,6 +24258,7 @@ xplot                           ports/math/xplot
 xplsprinters                    ports/x11/xplsprinters
 xpn                             ports/news/xpn
 xpns                            ports/misc/xpns
+xporthdmv                       ports/multimedia/xporthdmv
 xpostit                         ports/deskutils/xpostit
 xpostitPlus                     ports/deskutils/xpostitPlus
 xpostitplus                     ports/deskutils/xpostitPlus
