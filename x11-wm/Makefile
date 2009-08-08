@@ -132,6 +132,7 @@
     SUBDIR += wmfs
     SUBDIR += wmg
     SUBDIR += wmii
+    SUBDIR += wmname
     SUBDIR += wmthemeinstall
     SUBDIR += xcompmgr
     SUBDIR += xfce
