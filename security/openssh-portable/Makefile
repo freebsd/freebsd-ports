@@ -70,7 +70,7 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800037
-#BROKEN=		does not compile
+BROKEN=		does not compile
 .endif
 
 .if defined(WITH_X509) && ( defined(WITH_HPN) || defined(WITH_LPK))
