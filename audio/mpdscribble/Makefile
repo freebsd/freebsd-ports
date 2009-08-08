@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	mpdscribble
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Musicpd last.fm client
 
-LIB_DEPENDS=	soup:${PORTSDIR}/devel/libsoup
+OPTIONS=	SOUP    "Use libsoup for HTTP client library"    off
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 pkgconfig
@@ -23,17 +22,28 @@ MAN1=		mpdscribble.1
 
 USE_RC_SUBR=	mpdscribble
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SOUP)
+LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup
+CONFIGURE_ARGS+=	--with-http-client=soup
+.else
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--with-http-client=curl
+.endif
+
 do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mpdscribble ${PREFIX}/bin/mpdscribble
+	${INSTALL_MAN} ${WRKSRC}/doc/mpdscribble.1 ${MANPREFIX}/man/man1/mpdscribble.1
+	${INSTALL_DATA} ${WRKSRC}/doc/mpdscribble.conf ${PREFIX}/etc/mpdscribble.conf.sample
+.if !exists(${PREFIX}/etc/mpdscribble.conf)
+	@(cd ${PREFIX}/etc && ${CP} mpdscribble.conf.sample mpdscribble.conf)
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in README AUTHORS NEWS
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.for file in AUTHORS NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-	@[ -f ${PREFIX}/etc/mpdscribble.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/doc/mpdscribble.conf ${PREFIX}/etc/mpdscribble.conf
-	@${INSTALL_DATA} ${WRKSRC}/doc/mpdscribble.conf ${PREFIX}/etc/mpdscribble.conf.sample
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/mpdscribble ${PREFIX}/bin/mpdscribble
-	@${INSTALL_MAN} ${WRKSRC}/doc/mpdscribble.1 ${PREFIX}/man/man1/mpdscribble.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
