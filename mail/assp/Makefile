@@ -7,7 +7,7 @@
 
 PORTNAME=	assp
 PORTVERSION=	1.5.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
@@ -49,7 +49,6 @@ OPTIONS=	EMVALID	"RFC822 recipient address validator" on \
 		DNSBL	"DNS block list checking" on \
 		MYSQL	"Use MySQL db to store white/red/delaylists" off \
 		MATCHRE	"Match IP ranges and CIDR blocks in lists" on \
-		SIMPLE	"Use procedural Web Page interfaces" on \
 		SENDERB	"Country Code checks" on \
 		MIMEMOD	"Multiple Attachement detection" on \
 		SSL	"SSL secure sockets support" on \
@@ -61,6 +60,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${DISTNAME}/${PORTNAME:U}
 
 SUB_LIST+=	RC_SCRIPT=${RC_SCRIPT}${RC_SUBR_SUFFIX}
 
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS+=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
+
 .if !defined(WITHOUT_EMVALID)
 RUN_DEPENDS+=	${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid
 .endif
@@ -70,7 +72,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
 .if !defined(WITHOUT_SPF)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
 
@@ -107,10 +108,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Tie/RDBM.pm:${PORTSDIR}/databases/p5-Tie-DBI
 
 .if !defined(WITHOUT_MATCHRE)
 RUN_DEPENDS+=	${SITE_PERL}/Net/IP/Match/Regexp.pm:${PORTSDIR}/net-mgmt/p5-Net-IP-Match-Regexp
-.endif
-
-.if !defined(WITHOUT_SIMPLE)
-RUN_DEPENDS+=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 .endif
 
 .if !defined(WITHOUT_SENDERB)
@@ -181,7 +178,7 @@ do-install:
 	${LN} -s ${DATADIR}/files ${ASSP_HOME}
 	${LN} -s ${DATADIR}/images ${ASSP_HOME}
 	${LN} -s ${DATADIR}/reports ${ASSP_HOME}
-	${LN} -s ${ASSP_LOG} ${ASSP_HOME}/log
+	${LN} -s ${ASSP_LOG} ${ASSP_HOME}/logs
 
 	${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/periodic-assp.sh ${PREFIX}/etc/periodic/daily/510.assp
