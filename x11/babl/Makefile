@@ -31,10 +31,10 @@ OPTIONS=	SIMD "Use cpu-specific optimizations if available" off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SIMD)
-CONFIGURE_ARGS+=--enable-mmx \
-		--enable-sse \
-		--enable-altivec
+.if defined(WITHOUT_SIMD)
+CONFIGURE_ARGS+=--disable-mmx \
+		--disable-sse \
+		--disable-altivec
 .endif
 
 .include <bsd.port.post.mk>
