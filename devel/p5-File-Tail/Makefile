@@ -10,7 +10,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl Module to read the end of a file as it\'s appended to
 
 PERL_CONFIGURE=	YES
