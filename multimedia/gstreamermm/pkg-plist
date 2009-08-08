@@ -1,5 +1,8 @@
 include/gstreamermm-%%GST_VERSION%%/gstreamermm.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/adder.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/alsamixer.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/alsasink.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/alsasrc.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/audioclock.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/audioconvert.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/audiofilter.h
@@ -72,6 +75,9 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/plugin.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/pluginfeature.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/preset.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/adder_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/alsamixer_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/alsasink_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/alsasrc_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audioclock_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audioconvert_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audiofilter_p.h
@@ -146,12 +152,16 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/pushsrc_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/query_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/queue_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/registry_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/ringbuffer_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/segment_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/structure_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/systemclock_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/taglist_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/tagsetter_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/task_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/tcpclientsink_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/tcpclientsrc_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/tcpserversrc_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/tee_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/textoverlay_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/textrender_p.h
@@ -183,12 +193,16 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/pushsrc.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/query.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/queue.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/registry.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/ringbuffer.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/segment.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/structure.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/systemclock.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/taglist.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/tagsetter.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/task.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/tcpclientsink.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/tcpclientsrc.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/tcpserversrc.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/tee.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/textoverlay.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/textrender.h
@@ -218,20 +232,30 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/ximagesink.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/xml.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/xoverlay.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/xvimagesink.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm_get_plugin_defs/get_plugin_defs.h
+lib/gstreamermm-%%GST_VERSION%%/gen/generate_plugin_gmmproc_file
 lib/gstreamermm-%%GST_VERSION%%/include/gstreamermmconfig.h
 lib/gstreamermm-%%GST_VERSION%%/proc/m4/class_boxedtype_extra.m4
 lib/gstreamermm-%%GST_VERSION%%/proc/m4/class_gstminiobject.m4
 lib/gstreamermm-%%GST_VERSION%%/proc/m4/convert.m4
 lib/gstreamermm-%%GST_VERSION%%/proc/m4/convert_gst.m4
+lib/gstreamermm-%%GST_VERSION%%/proc/m4/ctocpp.m4
+lib/gstreamermm-%%GST_VERSION%%/proc/m4/ctocpp_base.m4
+lib/gstreamermm-%%GST_VERSION%%/proc/m4/ctocpp_gstreamermm.m4
 lib/gstreamermm-%%GST_VERSION%%/proc/m4/shared.m4
 lib/libgstreamermm-%%GST_VERSION%%.la
 lib/libgstreamermm-%%GST_VERSION%%.so
 lib/libgstreamermm-%%GST_VERSION%%.so.2
+lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.la
+lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so
+lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so.2
 libdata/pkgconfig/gstreamermm-%%GST_VERSION%%.pc
 @dirrm lib/gstreamermm-%%GST_VERSION%%/proc/m4
 @dirrm lib/gstreamermm-%%GST_VERSION%%/proc
 @dirrm lib/gstreamermm-%%GST_VERSION%%/include
+@dirrm lib/gstreamermm-%%GST_VERSION%%/gen
 @dirrm lib/gstreamermm-%%GST_VERSION%%
+@dirrm include/gstreamermm-%%GST_VERSION%%/gstreamermm_get_plugin_defs
 @dirrm include/gstreamermm-%%GST_VERSION%%/gstreamermm/private
 @dirrm include/gstreamermm-%%GST_VERSION%%/gstreamermm
 @dirrm include/gstreamermm-%%GST_VERSION%%
