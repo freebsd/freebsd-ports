@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lp_solve
-PORTVERSION=	5.5.0.13
+PORTVERSION=	5.5.0.14
 CATEGORIES=	math
 MASTER_SITES=	SF/lpsolve
 DISTNAME=	${PORTNAME}_${PORTVERSION}_source
@@ -17,6 +17,14 @@ COMMENT=	Linear Programming Solver
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:R:R}
 
 USE_LDCONFIG=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+LPSOLVE_ARCH=	ux32
+.else
+LPSOLVE_ARCH=	ux64
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "ccc" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -31,14 +39,14 @@ do-build:
 	cd ${WRKSRC}/lpsolve55 ; ${SH} -x ccc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lp_solve/lp_solve ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lp_solve/bin/${LPSOLVE_ARCH}/lp_solve ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/include/lpsolve
-.for i in lp_Hash.h lp_SOS.h lp_lib.h lp_matrix.h lp_mipbb.h lp_types.h lp_utils.h 
+.for i in declare.h fortify.h ini.h lp_*.h lpkit.h lpsolve.h ufortify.h yacc_read.h
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include/lpsolve
 .endfor
-.for i in lpsolve55/liblpsolve55.a lpsolve55/liblpsolve55.so
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/lib
+.for i in liblpsolve55.a liblpsolve55.so
+	${INSTALL_DATA} ${WRKSRC}/lpsolve55/bin/${LPSOLVE_ARCH}/${i} ${PREFIX}/lib
 .endfor
 	${LN} -sf liblpsolve55.so ${PREFIX}/lib/liblpsolve55.so.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
