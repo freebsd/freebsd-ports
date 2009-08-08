@@ -2,7 +2,7 @@
 # Copyright 2009 by NAKATA Maho <maho@FreeBSD.org> <maho@openoffice.org>
 # All rights reserved.
 use Cwd;
-use File::HomeDir; #devel/p5-File-HomeDir
+use File::HomeDir; #devel/p5-File-HomeDir, libfile-homedir-perl
 
 sub parse_option {
         while ($_ = shift) {
@@ -28,6 +28,15 @@ $ooo_codeline=@_[0];
 $ooo_milestone=@_[1];
 $ooo_milestone=~ s/m//; 
 
+####
+### Customize according your needs
+$path_to_testttol = "/usr/local/openoffice.org-vcltesttool/program";
+$path_to_ooo = "/usr/local/openoffice.org-$ooo_tag/openoffice.org3/program"
+#for other environments
+#$path_to_testttol = "/opt/openoffice-vcltesttool/testtool.bin";
+#$path_to_ooo = "/usr/lib/openoffice/program";
+####
+
 $ooo_testautomation_archive_name="OOo_" . "$ooo_tag" . "_testautomation.tar.bz2" ;
 $ooo_testautomation_site="http://ooopackages.good-day.net/pub/OpenOffice.org/qa/testautomation/";
 
@@ -35,22 +44,20 @@ if (!$ooo_tag_flag) {die "please speficy OOo tag\n";}
 print "testing tag: $ooo_tag at ";
 system("date\n");
 print "downloading testautomation environment....\n";
-system ("ftp $ooo_testautomation_site" . "$ooo_testautomation_archive_name" . "\n");
+system ("wget $ooo_testautomation_site" . "$ooo_testautomation_archive_name" . "\n");
 print "done\n";
 
 print "Downloading category list for scripts at $ooo_tag \n";
 
 $uri="index.php\?option=com_quaste\&task=tests_overview\&workspace=" . "$ooo_codeline" . "\&milestone=" . "m$ooo_milestone";
 $caturi="http://quaste.services.openoffice.org/" . $uri . "\&download=1";
-system ("wget \"$caturi\"\n");
 $catlist=$ooo_codeline . "_m$ooo_milestone" . ".txt" ;
-rename $uri . "\&download=1" , $catlist;
+system ("wget -O $catlist \"$caturi\"\n");
 
 print "Downloading hid list for scripts at $ooo_tag \n";
 $hiduri="http://quaste.services.openoffice.org/" . $uri . "\&download=2";
-system ("wget \"$hiduri\"\n");
 $hidlist="hid.lst";
-rename $uri . "\&download=2" , $hidlist;
+system ("wget -O $hidlist \"$hiduri\"\n");
 print "Download done...\n";
 
 print "extracting testautomation environment....\n";
@@ -69,8 +76,9 @@ system ("grep bas $catlist >  $ooo_tag/testautomation/tools/run_tests/$catlist\n
 $location=getcwd() . "/$ooo_tag/testautomation/" ;
 system ("mkdir $location/errorlogs\n");
 $location=~ s/\//\\\//g;
+$path_to_testttol =~ s/\//\\\//g;
 system ("sed -i.bak 's/sLocation=\"\"/sLocation=\"$location\"/\' $ooo_tag/testautomation/tools/run_tests/run_tests.sh\n");
-system ("sed -i.bak 's/sTestTool=\"\"/sTestTool=\"\\/usr\\/local\\/openoffice.org-vcltesttool\\/program\\/testtool\"/' $ooo_tag/testautomation/tools/run_tests/run_tests.sh\n");
+system ("sed -i.bak 's/sTestTool=\"\"/sTestTool=\"$path_to_testttol\\/testtool\"/' $ooo_tag/testautomation/tools/run_tests/run_tests.sh\n");
 
 #adjust ~/.testtoolrc
 $HOME = File::HomeDir->my_home;
@@ -82,8 +90,8 @@ print TESTTOOLRC "[Misc]\n";
 print TESTTOOLRC "CurrentProfile=_profile_Default\n";
 print TESTTOOLRC "ServerTimeout=4500\n";
 print TESTTOOLRC "[OOoProgramDir]\n";
-print TESTTOOLRC "Type=/usr/local/openoffice.org-$ooo_tag/openoffice.org3/program/\n";
-print TESTTOOLRC "Current=/usr/local/openoffice.org-$ooo_tag/openoffice.org3/program\n";
+print TESTTOOLRC "Type=$path_to_ooo/\n";
+print TESTTOOLRC "Current=$path_to_ooo\n";
 print TESTTOOLRC "All=.\n";
 print TESTTOOLRC "\n";
 print TESTTOOLRC "[Crashreporter]\n";
