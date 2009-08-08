@@ -1,5 +1,16 @@
 bin/prosody
 bin/prosodyctl
+@unexec if cmp -s %D/etc/prosody/prosody.cfg.lua.sample %D/etc/prosody/prosody.cfg.lua; then rm -f %D/etc/prosody/prosody.cfg.lua; fi
+etc/prosody/prosody.cfg.lua.sample
+@exec if [ ! -f %D/etc/prosody/prosody.cfg.lua ]; then cp -p %D/etc/prosody/prosody.cfg.lua.sample %D/etc/prosody/prosody.cfg.lua; fi
+@unexec if cmp -s %D/etc/prosody/certs/localhost.cert.sample %D/etc/prosody/certs/localhost.cert; then rm -f %D/etc/prosody/certs/localhost.cert; fi
+etc/prosody/certs/localhost.cert.sample
+@exec if [ ! -f %D/etc/prosody/certs/localhost.cert ]; then cp -p %D/etc/prosody/certs/localhost.cert.sample %D/etc/prosody/certs/localhost.cert; fi
+@unexec if cmp -s %D/etc/prosody/certs/localhost.key.sample %D/etc/prosody/certs/localhost.key; then rm -f %D/etc/prosody/certs/localhost.key; fi
+etc/prosody/certs/localhost.key.sample
+@exec if [ ! -f %D/etc/prosody/certs/localhost.key ]; then cp -p %D/etc/prosody/certs/localhost.key.sample %D/etc/prosody/certs/localhost.key; fi
+@dirrmtry etc/prosody/certs
+@dirrmtry etc/prosody
 lib/prosody/core/actions.lua
 lib/prosody/core/componentmanager.lua
 lib/prosody/core/configmanager.lua
