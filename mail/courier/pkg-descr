@@ -1,7 +1,7 @@
 Courier is a modular multiprotocol mail server that's designed to
 strike a balance between reasonable performance, flexibility and
 features:
-   
+
  * Can be configured to function as an intermediate mail relay, or
    as a mail server that receives mail for one or more domains, or
    anything in between.

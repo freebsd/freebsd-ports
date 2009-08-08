@@ -62,11 +62,11 @@ MLINKS=	dot-forward.1 dotforward.1 \
 .if defined(WITH_LDAP) && !defined(WITHOUT_LDAP)
 #MAN8+=	courierldapaliasd.8
 .endif
-	
+
 .if defined(WITH_SENDFAX) && !defined(WITHOUT_SENDFAX)
 MAN8+=	courierfax.8
 .endif
-	
+
 .if defined(WITH_UUCP) && !defined(WITHOUT_UUCP)
 MAN8+=	courieruucp.8
 MLINKS+=courieruucp.8 makeuucpneighbors.8
