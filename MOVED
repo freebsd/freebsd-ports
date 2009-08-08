@@ -4135,3 +4135,4 @@ misc/kde3-i18n-sr@Latn|misc/kde3-i18n-sr_Latn|2009-08-02|Use misc/kde3-i18n-sr_L
 lang/tinycobol||2009-08-08|Has expired: no longer being developed; consider using lang/open-cobol instead
 net/ppptraf||2009-08-08|Removed: "author has abandoned this program"
 www/zope-guf||2009-08-08|Removed: "no longer being developed: use SimpleUserFolder or exUserFolder instead"
+misc/xenmenu||2009-08-08|Removed: Project abandoned in 1998

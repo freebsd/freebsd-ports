@@ -1,8 +1,0 @@
-With xenmenu, users have an easy-to-understand yet flexable menu
-programming language with which to create pleasing menus quickly
-and easily.  These menus, stored as plain ASCII files, can be
-modified on the fly and reinstalled without having to recompile
-anything or halting xenmenu while reconfiguring.  Xenmenu can 
-also be used as a secure user shell.
-
-WWW: http://www.xenos.net/software/xenmenu/
