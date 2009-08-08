@@ -282,6 +282,7 @@
     SUBDIR += kde4-l10n-gl
     SUBDIR += kde4-l10n-gu
     SUBDIR += kde4-l10n-hi
+    SUBDIR += kde4-l10n-hne
     SUBDIR += kde4-l10n-it
     SUBDIR += kde4-l10n-is
     SUBDIR += kde4-l10n-kk
