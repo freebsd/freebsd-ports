@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/Aspyct/__init__.py
+%%PYTHON_SITELIBDIR%%/Aspyct/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Aspyct/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Aspyct/aop.py
+%%PYTHON_SITELIBDIR%%/Aspyct/aop.pyc
+%%PYTHON_SITELIBDIR%%/Aspyct/aop.pyo
+%%PYTHON_SITELIBDIR%%/Aspyct/core/__init__.py
+%%PYTHON_SITELIBDIR%%/Aspyct/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Aspyct/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Aspyct/core/common.py
+%%PYTHON_SITELIBDIR%%/Aspyct/core/common.pyc
+%%PYTHON_SITELIBDIR%%/Aspyct/core/common.pyo
+%%PYTHON_SITELIBDIR%%/Aspyct/core/py2x.py
+%%PYTHON_SITELIBDIR%%/Aspyct/core/py2x.pyc
+%%PYTHON_SITELIBDIR%%/Aspyct/core/py2x.pyo
+%%PYTHON_SITELIBDIR%%/Aspyct/meta.py
+%%PYTHON_SITELIBDIR%%/Aspyct/meta.pyc
+%%PYTHON_SITELIBDIR%%/Aspyct/meta.pyo
+%%PYTHON_SITELIBDIR%%/Aspyct/unit.py
+%%PYTHON_SITELIBDIR%%/Aspyct/unit.pyc
+%%PYTHON_SITELIBDIR%%/Aspyct/unit.pyo
+%%PYTHON_SITELIBDIR%%/Aspyct/utils.py
+%%PYTHON_SITELIBDIR%%/Aspyct/utils.pyc
+%%PYTHON_SITELIBDIR%%/Aspyct/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Aspyct/core
+@dirrm %%PYTHON_SITELIBDIR%%/Aspyct
