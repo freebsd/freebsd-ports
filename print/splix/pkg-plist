@@ -1,29 +1,36 @@
 @comment $FreeBSD$
-libexec/cups/filter/rastertospl2
+libexec/cups/filter/rastertoqpdl
+libexec/cups/filter/pstoqpdl
 share/cups/model/dell/1100.ppd
 share/cups/model/dell/1110.ppd
 share/cups/model/samsung/clp200.ppd
 share/cups/model/samsung/clp300.ppd
 share/cups/model/samsung/clp500.ppd
 share/cups/model/samsung/clp510.ppd
+share/cups/model/samsung/clp550.ppd
 share/cups/model/samsung/clp600.ppd
 share/cups/model/samsung/clp610.ppd
+share/cups/model/samsung/clx216x.ppd
 share/cups/model/samsung/clx2170.ppd
 share/cups/model/samsung/clx3160.ppd
 share/cups/model/samsung/ml1510.ppd
 share/cups/model/samsung/ml1520.ppd
 share/cups/model/samsung/ml1610.ppd
 share/cups/model/samsung/ml1630.ppd
+share/cups/model/samsung/ml1640.ppd
 share/cups/model/samsung/ml1710.ppd
 share/cups/model/samsung/ml1740.ppd
 share/cups/model/samsung/ml1750.ppd
 share/cups/model/samsung/ml2010.ppd
 share/cups/model/samsung/ml2150.ppd
 share/cups/model/samsung/ml2250.ppd
+share/cups/model/samsung/ml2251.ppd
 share/cups/model/samsung/ml2510.ppd
 share/cups/model/samsung/ml2550.ppd
 share/cups/model/samsung/ml3050.ppd
 share/cups/model/samsung/ml3560.ppd
+share/cups/model/samsung/scx4200.ppd
+share/cups/model/samsung/scx4500.ppd
 share/cups/model/xerox/ph3115.ppd
 share/cups/model/xerox/ph3116.ppd
 share/cups/model/xerox/ph3117.ppd
@@ -32,11 +39,13 @@ share/cups/model/xerox/ph3121.ppd
 share/cups/model/xerox/ph3122.ppd
 share/cups/model/xerox/ph3130.ppd
 share/cups/model/xerox/ph3150.ppd
+share/cups/model/xerox/ph3160.ppd
 share/cups/model/xerox/ph3420.ppd
 share/cups/model/xerox/ph3425.ppd
 share/cups/model/xerox/ph5500.ppd
 share/cups/model/xerox/ph6100.ppd
 share/cups/model/xerox/ph6110.ppd
+share/cups/model/xerox/wc3119.ppd
 @dirrm share/cups/model/dell
 @dirrm share/cups/model/samsung
 @dirrm share/cups/model/xerox

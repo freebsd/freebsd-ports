@@ -1,0 +1,24 @@
+  +=======================================================================+
+  |                  !!!      IMPORTANT NOTICE      !!!                   |
+  +=======================================================================+
+  |      If you are upgrading your current version, you MUST delete       |
+  |     your printer in the CUPS interface and install it again. This     |
+  |   operation MUST be done since CUPS make a copy of the PPD file and   |
+  |                this file is modified between versions.                |
+  +=======================================================================+
+
+Installation of the color profile for color printers:
+-----------------------------------------------------
+
+        Color printers needs color profile files to get better results. These
+files are provided by your printer manufacturer and you have to install them
+manually. To do that, download the linux official drivers and locate the "cms"
+directory. Install them with the command:
+
+                # make installcms CMSDIR=/path/to/cms/directory \
+                        MANUFACTURER=samsung or xerox or dell
+
+        Samsung color profile files are available at:
+                (Then use MANUFACTURER=samsung)
+
+                http://splix.ap2c.org/samsung_cms.tar.bz2
