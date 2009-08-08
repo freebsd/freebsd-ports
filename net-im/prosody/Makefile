@@ -7,6 +7,7 @@
 
 PORTNAME=	prosody
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/
 
@@ -29,11 +30,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+="--ostype=freebsd"
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" LUA_SUFFIX="-${LUA_VER}" LUA_LIBDIR="${LUA_LIBDIR}" LUA_INCDIR="${LUA_INCDIR}"
 
-SUB_FILES=	pkg-install pkg-deinstall prosody.cfg.lua.install
+SUB_FILES=	pkg-install pkg-deinstall
 
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	${MV} ${WRKDIR}/prosody.cfg.lua.install ${WRKSRC}/prosody.cfg.lua.install
 	${REINPLACE_CMD} -e 's|/usr/bin/env lua|${LUA_CMD}|' ${WRKSRC}/prosody ${WRKSRC}/prosodyctl
 
 post-install:

@@ -40,7 +40,12 @@ PRE-INSTALL)
 	;;
 
 POST-INSTALL)
-	chown "${USER}" $PREFIX/var/lib/prosody
+	chown "${USER}:${GROUP}" $PREFIX/var/lib/prosody
+	for file in `find $PREFIX/etc/prosody -type f`; do
+		if [ ! -s "${file%.sample}" ]; then
+			cp -p $file ${file%.sample}
+		fi
+	done
 	;;
 *)
 	echo "?"

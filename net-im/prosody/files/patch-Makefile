@@ -1,5 +1,5 @@
---- Makefile.orig	2009-07-27 18:22:51.000000000 +0000
-+++ Makefile	2009-07-27 18:23:25.000000000 +0000
+--- Makefile.orig	2009-07-29 12:54:54.000000000 -0500
++++ Makefile	2009-08-06 21:25:36.000000000 -0500
 @@ -6,7 +6,7 @@
  MODULES = $(DESTDIR)$(PREFIX)/lib/prosody/modules
  SOURCE = $(DESTDIR)$(PREFIX)/lib/prosody
@@ -9,3 +9,17 @@
  
  INSTALLEDSOURCE = $(PREFIX)/lib/prosody
  INSTALLEDCONFIG = $(SYSCONFDIR)
+@@ -29,10 +29,11 @@
+ 	install -m644 util/* $(SOURCE)/util
+ 	install -m644 fallbacks/* $(SOURCE)/fallbacks
+ 	install -m644 plugins/* $(MODULES)
+-	install -m644 certs/* $(CONFIG)/certs
++	install -m644 certs/localhost.cert $(CONFIG)/certs/localhost.cert.sample
++	install -m644 certs/localhost.key $(CONFIG)/certs/localhost.key.sample
+ 	install -m644 plugins/* $(MODULES)
+ 	install -m644 man/prosodyctl.man $(MAN)/man1/prosodyctl.1
+-	test -e $(CONFIG)/prosody.cfg.lua || install -m644 prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua
++	install -m644 prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua.sample
+ 	test -e prosody.version && install prosody.version $(SOURCE)/prosody.version || true
+ 	$(MAKE) install -C util-src
+ 
