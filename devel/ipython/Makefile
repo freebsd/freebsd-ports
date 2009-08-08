@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10
 CATEGORIES=	devel python
-MASTER_SITES=	http://ipython.scipy.org/dist/ \
-		${MASTER_SITE_LOCAL} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	dryice
+MASTER_SITES=	http://ipython.scipy.org/dist/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	An enhanced Interactive Python shell
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect \
@@ -23,7 +20,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		ipython.1 pycolor.1
+MAN1=		ipython.1 pycolor.1 \
+		ipcluster.1 ipcontroller.1 \
+		ipengine.1 ipython-wx.1 \
+		ipythonx.1 irunner.1
 MANCOMPRESSED=	yes
 
 .ifndef	NOPORTDOCS
