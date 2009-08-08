@@ -1,5 +1,5 @@
---- src/joystick/bsd/SDL_sysjoystick.c.orig	2009-03-12 22:54:57.000000000 +0100
-+++ src/joystick/bsd/SDL_sysjoystick.c	2009-03-12 23:04:53.000000000 +0100
+--- src/joystick/bsd/SDL_sysjoystick.c.orig	2007-12-31 05:47:55.000000000 +0100
++++ src/joystick/bsd/SDL_sysjoystick.c	2009-08-05 08:34:06.000000000 +0200
 @@ -74,6 +74,13 @@
  #define MAX_JOY_JOYS	2
  #define MAX_JOYS	(MAX_UHID_JOYS + MAX_JOY_JOYS)
@@ -28,11 +28,11 @@
  		goto usberr;
  	}
 -
+ 	rep = &hw->inreport;
 +#if defined(__FREEBSD__) && (__FreeBSD_version > 800063)
 +       rep->rid = hid_get_report_id(fd);
 +       if (rep->rid < 0) {
 +#else
- 	rep = &hw->inreport;
  	if (ioctl(fd, USB_GET_REPORT_ID, &rep->rid) < 0) {
 +#endif
  		rep->rid = -1; /* XXX */
