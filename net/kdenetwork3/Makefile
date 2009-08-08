@@ -22,17 +22,14 @@ LIB_DEPENDS=	slp:${PORTSDIR}/net/openslp
 OPTIONS=	KOPETE	"Install kopete multi-protocol instant messenger" OFF
 
 USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
-
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_XORG=	xtst
 
-USE_AUTOTOOLS=  libtool:22
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=kopete lanbrowsing filesharing
 
 CONFIGURE_ARGS+=--with-ssl-dir=${OPENSSLBASE}
@@ -44,9 +41,19 @@ CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800074
+DO_NOT_COMPILE+=	kppp
+PLIST_SUB+=	KPPP="@comment "
+KPPP=
+.else
+KPPP=		kppp
+PLIST_SUB+=	KPPP=""
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} \
 	-E -e '/^SUBDIRS/s/lisa//g' \
+	 -e '/^SUBDIRS/s/kppp/${KPPP}/g' \
 		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} \
 	-e 's|/etc/security/|${LOCALBASE}/etc/|g' \
