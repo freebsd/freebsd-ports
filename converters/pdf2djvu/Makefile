@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdf2djvu
-PORTVERSION=	0.4.12
-PORTREVISION=	4
+PORTVERSION=	0.5.10
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFFIX}
@@ -17,14 +16,14 @@ COMMENT=	Pdf2djvu creates DjVu files from PDF files
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pstreams/pstream.h:${PORTSDIR}/devel/pstreams
 LIB_DEPENDS=	poppler.4:${PORTSDIR}/graphics/poppler
-
-USE_GMAKE=	yes
-PLIST_FILES=	bin/pdf2djvu
-
 LIB_DEPENDS+=	djvulibre.22:${PORTSDIR}/graphics/djvulibre-nox11
 
-MAKE_ENV=	LDLIBS="${LDFLAGS} ${PTHREAD_LIBS}"
-MAN1=	pdf2djvu.1
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}
+USE_GMAKE=	yes
+
+PLIST_FILES=	bin/pdf2djvu
+MAN1=		pdf2djvu.1
 MANCOMPRESSED=	no
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
