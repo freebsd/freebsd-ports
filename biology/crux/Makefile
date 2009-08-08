@@ -7,7 +7,7 @@
 
 PORTNAME=      crux
 PORTVERSION=   1.1.0
-CATEGORIES=    python biology
+CATEGORIES=    biology python
 MASTER_SITES=  http://www.canonware.com/download/Crux/
 
 MAINTAINER=    jasone@FreeBSD.org
