@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -62,6 +62,8 @@ LAPACK=		-llapack
 post-patch:
 	@${REINPLACE_CMD} -e 's|set term png|set term dumb|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| DOMAIN| CEPHES_DOMAIN|g' \
+		${WRKSRC}/cephes/iv.c
 	@${REINPLACE_CMD} -e 's|@gnome_prefix@|@prefix@|g' \
 		${WRKSRC}/gnome/gretl.keys.in
 
