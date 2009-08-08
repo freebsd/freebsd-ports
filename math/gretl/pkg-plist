@@ -15,6 +15,7 @@ include/gretl/dbread.h
 include/gretl/describe.h
 include/gretl/discrete.h
 include/gretl/estimate.h
+include/gretl/flow_control.h
 include/gretl/forecast.h
 include/gretl/genfuncs.h
 include/gretl/genmain.h
@@ -71,6 +72,9 @@ include/gretl/usermat.h
 include/gretl/var.h
 include/gretl/varprint.h
 include/gretl/vartest.h
+lib/gretl-gtk2/anova.a
+lib/gretl-gtk2/anova.la
+lib/gretl-gtk2/anova.so
 lib/gretl-gtk2/arbond.a
 lib/gretl-gtk2/arbond.la
 lib/gretl-gtk2/arbond.so
