@@ -752,7 +752,6 @@
     SUBDIR += pppd23
     SUBDIR += pppload
     SUBDIR += pppoa
-    SUBDIR += ppptraf
     SUBDIR += pptpclient
     SUBDIR += ptpd
     SUBDIR += prosearch
