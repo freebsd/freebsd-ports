@@ -192,6 +192,7 @@ post-patch:
 		s|%%GIMP_UI_LIBS%%|${GIMP_UI_LIBS}|' \
 			${WRKSRC}/plug-ins/pygimp/Makefile.in
 	@${REINPLACE_CMD} -e 's|"libpng"|"libpng12"|' \
+	    	-e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
 
 post-install:
