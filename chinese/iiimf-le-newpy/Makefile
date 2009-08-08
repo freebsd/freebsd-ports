@@ -61,6 +61,9 @@ do-configure:
 	@cd ${BUILDDIR} && ${REINPLACE_CMD} \
 	 -e "/LE_TARGETS=/s,%%LE_TARGETS%%,${LE_TARGETS}," configure.ac
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} reconfig
+	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+			  -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+		${BUILDDIR}/configure
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
 
 .include <bsd.port.post.mk>
