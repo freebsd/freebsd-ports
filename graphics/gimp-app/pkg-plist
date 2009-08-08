@@ -334,7 +334,7 @@ libexec/gimp/2.2/plug-ins/edge-neon
 libexec/gimp/2.2/plug-ins/edge-sobel
 libexec/gimp/2.2/plug-ins/emboss
 libexec/gimp/2.2/plug-ins/engrave
-libexec/gimp/2.2/plug-ins/file-aa
+%%AA%%libexec/gimp/2.2/plug-ins/file-aa
 libexec/gimp/2.2/plug-ins/file-bmp
 libexec/gimp/2.2/plug-ins/file-cel
 libexec/gimp/2.2/plug-ins/file-compressor
@@ -353,10 +353,10 @@ libexec/gimp/2.2/plug-ins/file-header
 libexec/gimp/2.2/plug-ins/file-html-table
 libexec/gimp/2.2/plug-ins/file-ico
 libexec/gimp/2.2/plug-ins/file-jpeg
-libexec/gimp/2.2/plug-ins/file-mng
+%%MNG%%libexec/gimp/2.2/plug-ins/file-mng
 libexec/gimp/2.2/plug-ins/file-pat
 libexec/gimp/2.2/plug-ins/file-pcx
-libexec/gimp/2.2/plug-ins/file-pdf
+%%POPPLER%%libexec/gimp/2.2/plug-ins/file-pdf
 libexec/gimp/2.2/plug-ins/file-pix
 libexec/gimp/2.2/plug-ins/file-png
 libexec/gimp/2.2/plug-ins/file-pnm
@@ -372,7 +372,7 @@ libexec/gimp/2.2/plug-ins/file-tga
 libexec/gimp/2.2/plug-ins/file-tiff-load
 libexec/gimp/2.2/plug-ins/file-tiff-save
 libexec/gimp/2.2/plug-ins/file-uri
-libexec/gimp/2.2/plug-ins/file-wmf
+%%WMF%%libexec/gimp/2.2/plug-ins/file-wmf
 libexec/gimp/2.2/plug-ins/file-xbm
 libexec/gimp/2.2/plug-ins/file-xjt
 libexec/gimp/2.2/plug-ins/file-xpm

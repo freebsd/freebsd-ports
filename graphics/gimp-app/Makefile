@@ -8,7 +8,7 @@
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.6.6
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -25,12 +25,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
-		wmf.2:${PORTSDIR}/graphics/libwmf \
-		poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk \
-		aa.1:${PORTSDIR}/graphics/aalib \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		lcms.1:${PORTSDIR}/graphics/lcms \
@@ -64,12 +59,17 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if !defined(GIMP_SLAVE)
 WANT_GNOME=	yes
 
-OPTIONS?=	DEBUG "debugging" off \
+OPTIONS?=	AA "Ascii Art plug-in" on \
 		DBUS "D-BUS support" on \
+		EXIF "reading meta-data from camera/scanner" on \
 		GVFS "Use GVFS for the URI plug-in" on \
 		HELPBROWSER "internal help browser" on \
+		MNG "MNG format support" on \
 		MP "multiple processor support" off \
-		RSVG "SVG format support" on
+		POPPLER "PDF format support" on \
+		RSVG "SVG format support" on \
+		SIMD "Use cpu-specific optimizations if available" off \
+		WMF "wmf plugin" on
 .endif
 
 .include <bsd.port.pre.mk>
@@ -91,22 +91,8 @@ MLINKS=	gimp-2.6.1 gimp.1 \
 	gimp-console-2.6.1 gimp-console.1 \
 	gimprc-2.6.5 gimprc.5
 
-.if defined(WITHOUT_RSVG)
-CONFIGURE_ARGS+=	--without-librsvg
-PLIST_SUB+=		SVG="@comment "
-.else
-USE_GNOME+=		librsvg2
-PLIST_SUB+=		SVG=""
-.endif
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if defined(WITH_MP)
-CONFIGURE_ARGS+=	--enable-mp
-.else
-CONFIGURE_ARGS+=	--disable-mp
 .endif
 
 .if ${HAVE_GNOME:Mgnomehier}!="" || defined(WITH_GNOME)
@@ -114,6 +100,35 @@ USE_GNOME+=		desktopfileutils gnomehier
 PLIST_SUB+=		GNOME=""
 .else
 PLIST_SUB+=		GNOME="@comment "
+.endif
+
+.if defined(WITH_AA)
+LIB_DEPENDS+=		aa.1:${PORTSDIR}/graphics/aalib
+PLIST_SUB+=		AA=""
+.else
+CONFIGURE_ARGS+=	--without-aa
+PLIST_SUB+=		AA="@comment "
+.endif
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=	--with-dbus
+.else
+CONFIGURE_ARGS+=	--without-dbus
+.endif
+
+.if defined(WITH_EXIF)
+LIB_DEPENDS+=		exif.12:${PORTSDIR}/graphics/libexif
+.else
+CONFIGURE_ARGS+=	--without-libexif
+.endif
+
+.if defined(WITH_GVFS) || ${HAVE_GNOME:Mgvfs}!=""
+LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+USE_GNOME+=	gvfs
+.  if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
+.  endif
 .endif
 
 .if defined(WITH_HELPBROWSER)
@@ -125,19 +140,48 @@ CONFIGURE_ARGS+=	--without-webkit
 PLIST_SUB+=		HELPBROWSER="@comment "
 .endif
 
-.if defined(WITH_DBUS)
-LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-CONFIGURE_ARGS+=	--with-dbus
+.if defined(WITH_MNG)
+LIB_DEPENDS+=		mng.1:${PORTSDIR}/graphics/libmng
+PLIST_SUB+=		MNG=""
 .else
-CONFIGURE_ARGS+=	--without-dbus
+CONFIGURE_ARGS+=	--without-libmng
+PLIST_SUB+=		MNG="@comment "
 .endif
 
-.if defined(WITH_GVFS) || ${HAVE_GNOME:Mgvfs}!=""
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
-USE_GNOME+=	gvfs
-.  if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_GNOME+=	libgnomeui
-.  endif
+.if defined(WITH_MP)
+CONFIGURE_ARGS+=	--enable-mp
+.else
+CONFIGURE_ARGS+=	--disable-mp
+.endif
+
+.if defined(WITH_POPPLER)
+LIB_DEPENDS+=		poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
+PLIST_SUB+=		POPPLER=""
+.else
+CONFIGURE_ARGS+=	--without-poppler
+PLIST_SUB+=		POPPLER="@comment "
+.endif
+
+.if defined(WITH_RSVG)
+USE_GNOME+=		librsvg2
+PLIST_SUB+=		SVG=""
+.else
+CONFIGURE_ARGS+=	--without-librsvg
+PLIST_SUB+=		SVG="@comment "
+.endif
+
+.if defined(WITH_WMF)
+LIB_DEPENDS+=		wmf.2:${PORTSDIR}/graphics/libwmf
+PLIST_SUB+=		WMF=""
+.else
+CONFIGURE_ARGS+=	--without-wmf
+PLIST_SUB+=		WMF="@comment "
+.endif
+
+.if !defined(WITH_SIMD)
+CONFIGURE_ARGS+=	--disable-mmx \
+			--disable-sse \
+			--disable-altivec
 .endif
 
 .endif
