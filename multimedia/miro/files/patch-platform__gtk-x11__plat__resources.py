@@ -1,19 +1,17 @@
---- platform/gtk-x11/plat/resources.py.orig	2009-02-12 06:37:07.000000000 +0900
-+++ platform/gtk-x11/plat/resources.py	2009-02-13 01:56:28.000000000 +0900
-@@ -29,10 +29,10 @@
- import os
- import urllib
+--- platform/gtk-x11/plat/resources.py.orig	2009-07-25 12:41:11.000000000 +0900
++++ platform/gtk-x11/plat/resources.py	2009-07-30 15:48:04.000000000 +0900
+@@ -44,8 +44,8 @@
+ import platform
  
--resource_root = os.environ.get('MIRO_RESOURCE_ROOT', '/usr/share/miro/resources/')
-+resource_root = os.environ.get('MIRO_RESOURCE_ROOT', '%%PREFIX%%/share/miro/resources/')
- resource_root = os.path.abspath(resource_root)
+ resource_root = os.path.abspath(os.environ.get('MIRO_RESOURCE_ROOT',
+-                                               '/usr/share/miro/resources/'))
+-share_root = os.path.abspath(os.environ.get('MIRO_SHARE_ROOT', '/usr/share/'))
++                                               '%%PREFIX%%/share/miro/resources/'))
++share_root = os.path.abspath(os.environ.get('MIRO_SHARE_ROOT', '%%PREFIX%%/share/'))
  
--share_root = os.environ.get('MIRO_SHARE_ROOT', '/usr/share/')
-+share_root = os.environ.get('MIRO_SHARE_ROOT', '%%PREFIX%%/share/')
- share_root = os.path.abspath(share_root)
- 
- # Note: some of these functions are probably not absolutely correct in
-@@ -63,7 +63,7 @@
+ def root():
+     return resource_root
+@@ -71,7 +71,7 @@
      return u"file://%s" % urllib.quote(absolute_path)
  
  def theme_path(theme, relative_path):

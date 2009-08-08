@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Miro
-PORTVERSION=	2.0.5
+PORTVERSION=	2.5.2
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -37,6 +37,7 @@ USE_GETTEXT=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:L}
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}"
+INSTALLS_ICONS=	yes
 INSTALLS_EGGINFO=	yes
 
 MANCOMPRESSED=	yes
