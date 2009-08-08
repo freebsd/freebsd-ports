@@ -39,7 +39,7 @@ yesno() {
 
 replace() {
     local orig repl
-    
+
     orig=$1
     repl=$2
     if [ -e ${orig} ]; then

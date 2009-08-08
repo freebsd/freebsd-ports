@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.61.1
+PORTVERSION=	0.62.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -181,6 +181,13 @@ OPTIONS+=on
 OPTIONS+=off
 .endif
 
+OPTIONS+=WEBMAILFLAGS "webmail show flags patch"
+.if defined(WITH_WEBMAILFLAGS)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
 OPTIONS+=WEBMAILXFACE "experimental webmail X-Face patch"
 .if defined(WITH_WEBMAILXFACE)
 OPTIONS+=on
@@ -190,6 +197,20 @@ OPTIONS+=off
 
 OPTIONS+=WEBMAILRSENT "enable Autorename Sent folder"
 .if !defined(WITHOUT_WEBMAILRSENT)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=SYSTEMALIASES "symlink system /etc/aliases"
+.if !defined(WITHOUT_SYSTEMALIASES)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=EMPTYALIASES "create empty aliases file"
+.if defined(WITH_EMPTYALIASES)
 OPTIONS+=on
 .else
 OPTIONS+=off
@@ -211,6 +232,22 @@ SUB_LIST+=	WITHLDAP=""
 CONFIGURE_ARGS+=--without-ldapaliasd
 PLIST_SUB+=	WITHLDAP="@comment "
 SUB_LIST+=	WITHLDAP="@comment "
+.endif
+
+.if defined(WITH_SYSTEMALIASES) && !defined(WITHOUT_SYSTEMALIASES)
+PLIST_SUB+=	WITHSYSTEMALIASES=""
+SUB_LIST+=	WITHSYSTEMALIASES=""
+.else
+PLIST_SUB+=	WITHSYSTEMALIASES="@comment "
+SUB_LIST+=	WITHSYSTEMALIASES="@comment "
+.endif
+
+.if defined(WITH_EMPTYALIASES) && !defined(WITHOUT_EMPTYALIASES)
+PLIST_SUB+=	WITHEMPTYALIASES=""
+SUB_LIST+=	WITHEMPTYALIASES=""
+.else
+PLIST_SUB+=	WITHEMPTYALIASES="@comment "
+SUB_LIST+=	WITHEMPTYALIASES="@comment "
 .endif
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
@@ -284,6 +321,11 @@ EXTRA_PATCHES+= ${FILESDIR}/extra-patch-maildrop__maildir.C
 
 .if defined(WITH_WEBMAILXFACE) || !defined(WITHOUT_WEBMAILXFACE)
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-webmail__msg2html.c
+.endif
+
+.if defined(WITH_WEBMAILFLAGS) || !defined(WITHOUT_WEBMAILFLAGS)
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-webmail__folder.c ${FILESDIR}/extra-patch-webmail__maildir.c
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-webmail__maildir.h ${FILESDIR}/extra-patch-webmail__images__sqwebmail.css
 .endif
 
 .if defined(WITH_WEBMAILRSENT) || !defined(WITHOUT_WEBMAILRSENT)

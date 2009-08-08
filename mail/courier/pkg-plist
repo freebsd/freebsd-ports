@@ -63,7 +63,6 @@ bin/sendmail
 bin/testmxlookup
 bin/webmlmd
 bin/webmlmd.rc
-etc/courier/aliases/system
 etc/courier/courierd.dist
 etc/courier/crontab
 etc/courier/dsndelayed.txt
@@ -111,7 +110,9 @@ etc/courier/smtpaccess/default
 etc/courier/sqwebmaild.dist
 etc/courier/webmail.authpam
 etc/courier/webmlmrc.dist
-@exec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
+%%WITHSYSTEMALIASES%%@exec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
+%%WITHEMPTYALIASES%%@exec true > %D/etc/courier/aliases/system
+@unexec rm -f %D/etc/courier/aliases/system
 @exec [ -f %D/etc/courier/courierd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/courierd.dist
 @exec [ -f %D/etc/courier/esmtpd-msa.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd-msa.dist
 @exec [ -f %D/etc/courier/esmtpd-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd-ssl.dist
@@ -174,7 +175,7 @@ libexec/filters/perlfilter
 @dirrm libexec/courier/modules
 @dirrm libexec/courier/webmail
 @dirrm libexec/courier
-@dirrm libexec/filters
+@dirrmtry libexec/filters
 sbin/aliaslookup
 sbin/courier
 sbin/courieresmtpd

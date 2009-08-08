@@ -58,7 +58,10 @@ OWNER0=	bin/courier-config \
 	libexec/filters/dupfilter \
 	libexec/filters/perlfilter \
 	sbin/courier \
-	sbin/courierldapaliasd \
 	sbin/couriertcpd \
 	sbin/showconfig \
 	sbin/webmaild
+
+.if defined(WITH_LDAP) && !defined(WITHOUT_LDAP)
+OWNER0+=sbin/courierldapaliasd
+.endif
