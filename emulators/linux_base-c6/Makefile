@@ -7,6 +7,7 @@
 
 PORTNAME=		f10
 PORTVERSION=		10
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../updates/${PORTVERSION}/${LINUX_RPM_ARCH} \
@@ -28,14 +29,14 @@ BIN_DISTFILES=	basesystem-10.0-1.noarch.rpm \
 		compat-libstdc++-33-3.2.3-64.${LINUX_RPM_ARCH}.rpm \
 		coreutils-6.12-20.fc10.${LINUX_RPM_ARCH}.rpm \
 		db4-4.7.25-7.fc10.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-1.41.4-4.fc10.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-libs-1.41.4-4.fc10.${LINUX_RPM_ARCH}.rpm \
-		elfutils-0.140-1.fc10.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-1.41.4-6.fc10.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-libs-1.41.4-6.fc10.${LINUX_RPM_ARCH}.rpm \
+		elfutils-0.141-1.fc10.${LINUX_RPM_ARCH}.rpm \
 		fedora-release-10-1.noarch.rpm \
 		filesystem-2.4.19-1.fc10.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.3.7-3.fc10.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-29.fc10.${LINUX_RPM_ARCH}.rpm \
-		glib-1.2.10-30.fc10.${LINUX_RPM_ARCH}.rpm \
+		glib-1.2.10-32.fc10.${LINUX_RPM_ARCH}.rpm \
 		glib2-2.18.4-2.fc10.${LINUX_RPM_ARCH}.rpm \
 		glibc-2.9-3.${LINUX_RPM_ARCH}.rpm \
 		glibc-common-2.9-3.${LINUX_RPM_ARCH}.rpm \
@@ -74,14 +75,14 @@ SRC_DISTFILES+=	acl-2.2.47-3.fc10.src.rpm \
 		compat-db-4.6.21-5.fc10.src.rpm \
 		coreutils-6.12-17.fc10.src.rpm \
 		db4-4.7.25-5.fc10.src.rpm \
-		e2fsprogs-1.41.3-2.fc10.src.rpm \
-		elfutils-0.137-3.fc10.src.rpm \
+		e2fsprogs-1.41.4-6.fc10.src.rpm \
+		elfutils-0.141-1.fc10.src.rpm \
 		fedora-release-10-1.src.rpm \
 		filesystem-2.4.19-1.fc10.src.rpm \
 		freetype-2.3.7-1.fc10.src.rpm \
 		gcc-4.3.2-7.src.rpm \
 		gdbm-1.8.0-29.fc10.src.rpm \
-		glib-1.2.10-30.fc10.src.rpm \
+		glib-1.2.10-32.fc10.src.rpm \
 		glib2-2.18.2-3.fc10.src.rpm \
 		glibc-2.9-2.src.rpm \
 		grep-2.5.1a-61.fc10.src.rpm \

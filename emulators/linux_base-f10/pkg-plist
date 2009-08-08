@@ -875,8 +875,8 @@ usr/share/doc/db4-4.7.25/LICENSE
 usr/share/doc/db4-4.7.25/README
 usr/share/doc/e2fsprogs-1.41.4/README
 usr/share/doc/e2fsprogs-1.41.4/RELEASE-NOTES
-usr/share/doc/elfutils-0.140/README
-usr/share/doc/elfutils-0.140/TODO
+usr/share/doc/elfutils-0.141/README
+usr/share/doc/elfutils-0.141/TODO
 usr/share/doc/fedora-release-10/GPL
 usr/share/doc/freetype-2.3.7/ChangeLog
 usr/share/doc/freetype-2.3.7/README
@@ -3775,7 +3775,7 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/doc/gdbm-1.8.0
 @dirrm usr/share/doc/freetype-2.3.7
 @dirrm usr/share/doc/fedora-release-10
-@dirrm usr/share/doc/elfutils-0.140
+@dirrm usr/share/doc/elfutils-0.141
 @dirrm usr/share/doc/e2fsprogs-1.41.4
 @dirrm usr/share/doc/db4-4.7.25
 @dirrm usr/share/doc/coreutils-6.12/textutils
