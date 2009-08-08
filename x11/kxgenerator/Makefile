@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 
-DEPRECATED=	Project abandoned
+DEPRECATED=	Project abandoned, master site disappeared
+EXPIRATION_DATE=2009-09-08
 
 post-patch:
 	cd ${WRKSRC}/src && ${REINPLACE_CMD} -e "s:/usr:${LOCALBASE}:g" \
