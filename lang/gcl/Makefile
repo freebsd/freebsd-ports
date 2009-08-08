@@ -18,7 +18,7 @@ COMMENT=	GNU Common Lisp
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
