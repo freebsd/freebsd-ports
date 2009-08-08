@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc
-MASTER_SITES=	SF/translate
+MASTER_SITES=	SF/translate \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts between many translation formats
@@ -36,11 +37,11 @@ MAN1=		csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \
 		php2po.1 po2csv.1 po2html.1 po2ical.1 po2ini.1 \
 		po2moz.1 po2oo.1 po2php.1 po2prop.1 po2rc.1 \
 		po2symb.1 po2tiki.1 po2tmx.1 po2ts.1 po2txt.1 \
-		po2wordfast.1 po2xliff.1 poclean.1 pocompile.1 poconflicts.1 \
-		podebug.1 pofilter.1 pogrep.1 pomerge.1 porestructure.1 \
-		posegment.1 poswap.1 pot2po.1 pretranslate.1 prop2po.1 \
-		rc2po.1 symb2po.1 tiki2po.1 ts2po.1 txt2po.1 \
-		xliff2odf.1 xliff2oo.1 xliff2po.1
+		po2web2py.1 po2wordfast.1 po2xliff.1 poclean.1 pocompile.1 \
+		poconflicts.1 podebug.1 pofilter.1 pogrep.1 pomerge.1 \
+		porestructure.1 posegment.1 poswap.1 pot2po.1 pretranslate.1 \
+		prop2po.1 rc2po.1 symb2po.1 tiki2po.1 ts2po.1 \
+		txt2po.1 web2py2po.1 xliff2odf.1 xliff2oo.1 xliff2po.1
 
 post-patch:
 	@${FIND} ${WRKSRC}/tools -type f -print0 | ${XARGS} -0 \
