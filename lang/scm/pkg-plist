@@ -1,6 +1,8 @@
 bin/scm
 bin/scmlit
 lib/scm/COPYING
+lib/scm/COPYING.LESSER
+lib/scm/Idiffer.scm
 lib/scm/Iedline.scm
 lib/scm/Init%%VERSION%%.scm
 lib/scm/Link.scm
@@ -8,20 +10,31 @@ lib/scm/Macexp.scm
 lib/scm/Macro.scm
 lib/scm/Transcen.scm
 lib/scm/Tscript.scm
+lib/scm/build
+lib/scm/build.scm
 lib/scm/byte.so
+lib/scm/bytenumb.so
+lib/scm/compile.scm
 lib/scm/crs.so
+lib/scm/differ.so
 lib/scm/edline.so
 lib/scm/gsubr.so
+lib/scm/hobbit.scm
 lib/scm/implcat
 lib/scm/ioext.so
+lib/scm/keysymdef.scm
 lib/scm/mkimpcat.scm
+lib/scm/patchlvl.h
 lib/scm/posix.so
 lib/scm/r4rstest.scm
 lib/scm/ramap.so
 lib/scm/record.so
 lib/scm/require.scm
 lib/scm/rgx.so
+lib/scm/rwb-isam.scm
 lib/scm/sc2.so
+lib/scm/scmhob.h
+lib/scm/scmhob.scm
 lib/scm/slib/Bev2slib.scm
 lib/scm/slib/Template.scm
 lib/scm/slib/alist.scm
@@ -188,6 +201,11 @@ lib/scm/slib/yasyn.scm
 lib/scm/slibcat
 lib/scm/socket.so
 lib/scm/unix.so
+lib/scm/wbtab.scm
+%%X11%%lib/scm/x.so
+lib/scm/x11.scm
+lib/scm/xatoms.scm
+lib/scm/xevent.scm
 @dirrm lib/scm/slib/psd
 @dirrm lib/scm/slib
 @dirrm lib/scm

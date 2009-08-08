@@ -21,4 +21,4 @@ By default -DSICP is turned on, with the expectation that this is the major
 reason for this port.  This means test.scm will fail on three tests in section
 6.1.  Where strict R4S compliance is important, recompile without the SICP flag.
 
-WWW: http://swiss.csail.mit.edu/~jaffer/SCM
+WWW: http://people.csail.mit.edu/jaffer/SCM
