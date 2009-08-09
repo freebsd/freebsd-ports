@@ -1,7 +1,6 @@
 lib/iiim/le/CannaLE/CannaLE.so
-lib/iiim/le/CannaLE/aux.so
 lib/iiim/le/CannaLE/aux.la
-lib/iiim/le/CannaLE/aux.a
+lib/iiim/le/CannaLE/aux.so
 lib/iiim/le/CannaLE/auxmenu
 @dirrm lib/iiim/le/CannaLE
 @dirrmtry lib/iiim/le
