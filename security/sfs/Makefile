@@ -36,6 +36,8 @@ LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 
 .if ${ARCH} != "i386"
 IGNORE=		nfsmounter component fails to execute correctly on ${ARCH} systems
+.elif ${OSVERSION} >= 800000
+BROKEN=		does not build
 .endif
 
 MAN1=	\
