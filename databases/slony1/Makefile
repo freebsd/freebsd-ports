@@ -9,8 +9,8 @@ PORTNAME=	slony1
 PORTVERSION=	1.2.16
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/1.2/source/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-docs${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}-docs${EXTRACT_SUFX}
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	PostgreSQL master to multiple replicas replication system
@@ -27,6 +27,8 @@ SUB_FILES=	pkg-message slon-mkservice.sh
 SUB_LIST+=	NAME=slon
 
 OPTIONS=	PERLTOOLS "Install perl configuration tools" Off
+
+CONFLICTS?=     slony1v2-*
 
 .include <bsd.port.pre.mk>
 
@@ -76,7 +78,6 @@ post-install:
 	${MKDIR} ${DOCSDIR}/adminguide
 	${MKDIR} ${DOCSDIR}/howto
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/INSTALL ${WRKSRC}/SAMPLE ${WRKSRC}/README ${WRKSRC}/HISTORY-1.1 ${WRKSRC}/UPGRADING ${DOCSDIR}
-#	${INSTALL_DATA} ${WRKSRC}/doc/*/*.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
 	${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${DOCSDIR}/adminguide/
 .endif
