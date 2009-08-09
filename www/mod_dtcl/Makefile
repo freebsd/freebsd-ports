@@ -23,6 +23,12 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 USE_APACHE=	1.3
 MAKE_ENV+=	TCL_VERSION=${TCL_VER}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile on 8.X
+.endif
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libmod_dtcl.so.1* \
 		${PREFIX}/libexec/apache/mod_dtcl.so
@@ -34,4 +40,4 @@ do-install:
 	${SED} 's,/usr/local,${LOCALBASE},g' ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
