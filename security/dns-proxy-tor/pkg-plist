@@ -1,9 +1,0 @@
-bin/dns-proxy-tor
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/changelog
-%%PORTDOCS%%%%DOCSDIR%%/filter-examples
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@exec mkdir -p %D/var/run/dns-proxy-tor
-@exec chown _dns-proxy-tor:_dns-proxy-tor %D/var/run/dns-proxy-tor
-@dirrmtry var/run/dns-proxy-tor

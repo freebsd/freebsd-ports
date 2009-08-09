@@ -1,9 +1,0 @@
-bin/trans-proxy-tor
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/changelog
-%%PORTDOCS%%%%DOCSDIR%%/filter-examples
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@exec mkdir -p %D/var/run/trans-proxy-tor
-@exec chown _trans-proxy-tor:_trans-proxy-tor %D/var/run/trans-proxy-tor
-@dirrmtry var/run/trans-proxy-tor
