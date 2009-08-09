@@ -1,92 +1,89 @@
 lib/iiim/le/default/default.so
-lib/iiim/le/unitle/common/ctim.so.0
-lib/iiim/le/unitle/common/ctim.so
-lib/iiim/le/unitle/common/ctim.la
-lib/iiim/le/unitle/common/ctim.a
-lib/iiim/le/unitle/common/txt2bin
-lib/iiim/le/unitle/common/bin2txt
-lib/iiim/le/unitle/common/search
-lib/iiim/le/unitle/common/xctim.so.0
-lib/iiim/le/unitle/common/xctim.so
-lib/iiim/le/unitle/common/xctim.la
-lib/iiim/le/unitle/common/xctim.a
-lib/iiim/le/unitle/common/x_txt2bin
-lib/iiim/le/unitle/common/codepoint_im.so.0
-lib/iiim/le/unitle/common/codepoint_im.so
-lib/iiim/le/unitle/common/codepoint_im.la
-lib/iiim/le/unitle/common/codepoint_im.a
-lib/iiim/le/unitle/HINDI/phonetic.cfg
-lib/iiim/le/unitle/HINDI/data/inscript.data
-lib/iiim/le/unitle/HINDI/data/trans.data
-lib/iiim/le/unitle/HINDI/data/phonetic.data
-lib/iiim/le/unitle/TAMIL/phonetic.cfg
-lib/iiim/le/unitle/TAMIL/data/inscript.data
-lib/iiim/le/unitle/TAMIL/data/trans.data
-lib/iiim/le/unitle/TAMIL/data/phonetic.data
-lib/iiim/le/unitle/KANNADA/phonetic.cfg
-lib/iiim/le/unitle/KANNADA/data/inscript.data
-lib/iiim/le/unitle/KANNADA/data/kgp.data
-lib/iiim/le/unitle/MALAYALAM/phonetic.cfg
-lib/iiim/le/unitle/MALAYALAM/data/inscript.data
-lib/iiim/le/unitle/TELUGU/phonetic.cfg
-lib/iiim/le/unitle/TELUGU/data/inscript.data
-lib/iiim/le/unitle/GUJARATI/phonetic.cfg
-lib/iiim/le/unitle/GUJARATI/data/inscript.data
-lib/iiim/le/unitle/GUJARATI/data/phonetic.data
-lib/iiim/le/unitle/BENGALI/phonetic.cfg
+lib/iiim/le/unitle/AM_ET/data/amharic.data
+lib/iiim/le/unitle/ARABIC/data/arabic.data
 lib/iiim/le/unitle/BENGALI/data/inscript.data
 lib/iiim/le/unitle/BENGALI/data/probhat.data
-lib/iiim/le/unitle/GURMUKHI/phonetic.cfg
+lib/iiim/le/unitle/BENGALI/phonetic.cfg
+lib/iiim/le/unitle/CYRILLIC/data/cyrillic.data
+lib/iiim/le/unitle/EUROPEAN/data/euro.data
+lib/iiim/le/unitle/GREEK/data/greek.data
+lib/iiim/le/unitle/GUJARATI/data/inscript.data
+lib/iiim/le/unitle/GUJARATI/data/phonetic.data
+lib/iiim/le/unitle/GUJARATI/phonetic.cfg
 lib/iiim/le/unitle/GURMUKHI/data/inscript.data
 lib/iiim/le/unitle/GURMUKHI/data/phonetic.data
+lib/iiim/le/unitle/GURMUKHI/phonetic.cfg
+lib/iiim/le/unitle/HEBREW/data/hebrew.data
+lib/iiim/le/unitle/HINDI/data/inscript.data
+lib/iiim/le/unitle/HINDI/data/phonetic.data
+lib/iiim/le/unitle/HINDI/data/trans.data
+lib/iiim/le/unitle/HINDI/phonetic.cfg
+lib/iiim/le/unitle/KANNADA/data/inscript.data
+lib/iiim/le/unitle/KANNADA/data/kgp.data
+lib/iiim/le/unitle/KANNADA/phonetic.cfg
+lib/iiim/le/unitle/MALAYALAM/data/inscript.data
+lib/iiim/le/unitle/MALAYALAM/phonetic.cfg
+lib/iiim/le/unitle/TAMIL/data/inscript.data
+lib/iiim/le/unitle/TAMIL/data/phonetic.data
+lib/iiim/le/unitle/TAMIL/data/trans.data
+lib/iiim/le/unitle/TAMIL/phonetic.cfg
+lib/iiim/le/unitle/TELUGU/data/inscript.data
+lib/iiim/le/unitle/TELUGU/phonetic.cfg
+lib/iiim/le/unitle/TI_ER/data/eritrean.data
 lib/iiim/le/unitle/UNICODE-HEX/codepoint.cfg
 lib/iiim/le/unitle/UNICODE-OCTAL/codepoint.cfg
+lib/iiim/le/unitle/VIETNAMESE/data/vietnamese.data
+lib/iiim/le/unitle/common/bin2txt
+lib/iiim/le/unitle/common/codepoint_im.la
+lib/iiim/le/unitle/common/codepoint_im.so
+lib/iiim/le/unitle/common/codepoint_im.so.0
+lib/iiim/le/unitle/common/ctim.la
+lib/iiim/le/unitle/common/ctim.so
+lib/iiim/le/unitle/common/ctim.so.0
+lib/iiim/le/unitle/common/search
+lib/iiim/le/unitle/common/txt2bin
+lib/iiim/le/unitle/common/x_txt2bin
+lib/iiim/le/unitle/common/xctim.la
+lib/iiim/le/unitle/common/xctim.so
+lib/iiim/le/unitle/common/xctim.so.0
+lib/iiim/le/unitle/hotkey_config.xml
 lib/iiim/le/unitle/sysime.cfg
 lib/iiim/le/unitle/unitle.so
-lib/iiim/le/unitle/hotkey_config.xml
-lib/iiim/le/unitle/EUROPEAN/data/euro.data
-lib/iiim/le/unitle/CYRILLIC/data/cyrillic.data
-lib/iiim/le/unitle/GREEK/data/greek.data
-lib/iiim/le/unitle/ARABIC/data/arabic.data
-lib/iiim/le/unitle/HEBREW/data/hebrew.data
-lib/iiim/le/unitle/VIETNAMESE/data/vietnamese.data
-lib/iiim/le/unitle/TI_ER/data/eritrean.data
-lib/iiim/le/unitle/AM_ET/data/amharic.data
-@dirrm lib/iiim/le/default
 @dirrm lib/iiim/le/unitle/common
-@dirrm lib/iiim/le/unitle/HINDI/data
-@dirrm lib/iiim/le/unitle/HINDI
-@dirrm lib/iiim/le/unitle/TAMIL/data
-@dirrm lib/iiim/le/unitle/TAMIL
-@dirrm lib/iiim/le/unitle/KANNADA/data
-@dirrm lib/iiim/le/unitle/KANNADA
-@dirrm lib/iiim/le/unitle/MALAYALAM/data
-@dirrm lib/iiim/le/unitle/MALAYALAM
+@dirrm lib/iiim/le/unitle/VIETNAMESE/data
+@dirrm lib/iiim/le/unitle/VIETNAMESE
+@dirrm lib/iiim/le/unitle/UNICODE-OCTAL
+@dirrm lib/iiim/le/unitle/UNICODE-HEX
+@dirrm lib/iiim/le/unitle/TI_ER/data
+@dirrm lib/iiim/le/unitle/TI_ER
 @dirrm lib/iiim/le/unitle/TELUGU/data
 @dirrm lib/iiim/le/unitle/TELUGU
-@dirrm lib/iiim/le/unitle/GUJARATI/data
-@dirrm lib/iiim/le/unitle/GUJARATI
-@dirrm lib/iiim/le/unitle/BENGALI/data
-@dirrm lib/iiim/le/unitle/BENGALI
+@dirrm lib/iiim/le/unitle/TAMIL/data
+@dirrm lib/iiim/le/unitle/TAMIL
+@dirrm lib/iiim/le/unitle/MALAYALAM/data
+@dirrm lib/iiim/le/unitle/MALAYALAM
+@dirrm lib/iiim/le/unitle/KANNADA/data
+@dirrm lib/iiim/le/unitle/KANNADA
+@dirrm lib/iiim/le/unitle/HINDI/data
+@dirrm lib/iiim/le/unitle/HINDI
+@dirrm lib/iiim/le/unitle/HEBREW/data
+@dirrm lib/iiim/le/unitle/HEBREW
 @dirrm lib/iiim/le/unitle/GURMUKHI/data
 @dirrm lib/iiim/le/unitle/GURMUKHI
-@dirrm lib/iiim/le/unitle/UNICODE-HEX
-@dirrm lib/iiim/le/unitle/UNICODE-OCTAL
+@dirrm lib/iiim/le/unitle/GUJARATI/data
+@dirrm lib/iiim/le/unitle/GUJARATI
+@dirrm lib/iiim/le/unitle/GREEK/data
+@dirrm lib/iiim/le/unitle/GREEK
 @dirrm lib/iiim/le/unitle/EUROPEAN/data
 @dirrm lib/iiim/le/unitle/EUROPEAN
 @dirrm lib/iiim/le/unitle/CYRILLIC/data
 @dirrm lib/iiim/le/unitle/CYRILLIC
-@dirrm lib/iiim/le/unitle/GREEK/data
-@dirrm lib/iiim/le/unitle/GREEK
+@dirrm lib/iiim/le/unitle/BENGALI/data
+@dirrm lib/iiim/le/unitle/BENGALI
 @dirrm lib/iiim/le/unitle/ARABIC/data
 @dirrm lib/iiim/le/unitle/ARABIC
-@dirrm lib/iiim/le/unitle/HEBREW/data
-@dirrm lib/iiim/le/unitle/HEBREW
-@dirrm lib/iiim/le/unitle/VIETNAMESE/data
-@dirrm lib/iiim/le/unitle/VIETNAMESE
-@dirrm lib/iiim/le/unitle/TI_ER/data
-@dirrm lib/iiim/le/unitle/TI_ER
 @dirrm lib/iiim/le/unitle/AM_ET/data
 @dirrm lib/iiim/le/unitle/AM_ET
 @dirrm lib/iiim/le/unitle
+@dirrm lib/iiim/le/default
 @dirrmtry lib/iiim/le
