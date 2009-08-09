@@ -2,7 +2,6 @@
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/CREDITS
 %%DOCSDIR%%/NEWS
-%%DOCSDIR%%/SUPPORT
 bin/sbcl
 lib/sbcl/asdf-install/.cvsignore
 lib/sbcl/asdf-install/Makefile
@@ -150,6 +149,7 @@ lib/sbcl/sb-posix/sb-posix.fasl
 lib/sbcl/sb-posix/sb-posix.texinfo
 lib/sbcl/sb-posix/test-passed
 lib/sbcl/sb-posix/test-lab/.keep_me
+lib/sbcl/sb-queue/sb-queue.fasl
 lib/sbcl/sb-rotate-byte/.cvsignore
 lib/sbcl/sb-rotate-byte/Makefile
 lib/sbcl/sb-rotate-byte/README
@@ -221,6 +221,7 @@ lib/sbcl/site-systems/.keep_me
 @dirrm lib/sbcl/sb-simple-streams
 @dirrm lib/sbcl/sb-rt
 @dirrm lib/sbcl/sb-rotate-byte
+@dirrm lib/sbcl/sb-queue
 @dirrm lib/sbcl/sb-posix/alien
 @dirrm lib/sbcl/sb-posix/test-lab
 @dirrm lib/sbcl/sb-posix

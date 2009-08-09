@@ -9,12 +9,14 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.29.2
+PORTVERSION=	1.0.30.0
 PORTREVISION=	0
 CATEGORIES=	lang lisp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+#		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
-MASTER_SITE_SUBDIR=	sbcl
+#MASTER_SITE_SUBDIR=	sbcl/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-source${SBCLPATCHLEVEL}
 
 MAINTAINER=	stas@FreeBSD.org
@@ -76,9 +78,10 @@ BOOT_ARCH_OS_LIST=	${ARCH}-freebsd${OSVER_MAJOR}
 LISP_EXTRA_ARG=	--dynamic-space-size ${DYNAMIC_SPACE_SIZE}
 . endif
 
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 . for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
 BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH_OS}
-DISTFILES:=	${DISTNAME}${EXTRACT_SUFX} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}:binaries
+DISTFILES:=	${DISTFILES} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}:binaries
 . endfor
 LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core ${LISP_EXTRA_ARG} --disable-debugger --userinit /dev/null --sysinit /dev/null"
 
@@ -118,6 +121,7 @@ do-install:
 
 post-install:
 .for DIR in ${EMPTY_DIRS}
+	${MKDIR} ${PREFIX}/lib/sbcl/${DIR}/
 	@${TOUCH} ${PREFIX}/lib/sbcl/${DIR}/.keep_me
 .endfor
 
