@@ -1,0 +1,20 @@
+# $FreeBSD: /tmp/pcvs/ports/devel/libpasori/files/Makefile.lib.usb20,v 1.1 2009-08-09 07:03:55 stas Exp $
+
+.PATH:		${.CURDIR}/../src
+
+LIB=		pasori
+SRCS=		libpasori_command.c libpasori_com_libusb.c \
+		libpasori_polling.c 
+INCS=		libpasori.h libpasori_com.h libpasori_command.h \
+		libpasori_config.h libpasori_liblocal.h
+
+LIBDIR=		${LOCALBASE}/lib
+INCLUDEDIR=	${LOCALBASE}/include 
+NO_PROFILE=
+SHLIB_MAJOR=	1
+
+CFLAGS+=	-D__LIBPASORI_WITH_LIBUSB
+CFLAGS+=	-Wall -W
+LDFLAGS+=	-lusb
+
+.include <bsd.lib.mk>
