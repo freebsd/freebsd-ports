@@ -27,6 +27,8 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		mird.1:${PORTSDIR}/databases/mird \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
+CONFLICTS=	pike7[26]-[0-9]*
+
 OPTIONS=	TTF "Add FreeType 1 support" on \
 		FREETYPE "Add FreeType 2 support" on \
 		MYSQL "Add MySQL support" on \
