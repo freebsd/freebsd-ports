@@ -20,6 +20,8 @@ BUILD_DEPENDS=	lemon:${PORTSDIR}/devel/lemon \
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		curl.5:${PORTSDIR}/ftp/curl
 
+BROKEN=		does not compile
+
 USE_GMAKE=	yes
 USE_GNOME=	libglade2 libxml2
 MAKEFILE=	makefile
