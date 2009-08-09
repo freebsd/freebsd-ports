@@ -26,4 +26,8 @@ following first:
   You can rely on the security.jail.sysvipc_allowed  sysctl to check
   this status.  The following enables this feature on the host system:
     # echo "jail_sysvipc_allow=\"YES\"" >> /etc/rc.conf
+
+* Some process information are acceded through /proc (e.g. when using
+  NUnit) and procfs(5) has to be mounted for these features to work:
+    # echo "proc            /proc   procfs  rw 0 0" >> /etc/fstab
 ************************************************************************
