@@ -71,4 +71,8 @@ PLIST_SUB+=		WITH_XMLRPC_C="@comment "
 
 DEFAULT_ENCODING?=	euc_jp
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile on 8.X
+.endif
+
 .include <bsd.port.post.mk>
