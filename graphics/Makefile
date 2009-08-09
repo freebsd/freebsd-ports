@@ -385,6 +385,7 @@
     SUBDIR += kradview
     SUBDIR += kudu
     SUBDIR += kuickshow
+    SUBDIR += kuickshow-kde4
     SUBDIR += l2p
     SUBDIR += landscape
     SUBDIR += laternamagica
