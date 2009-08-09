@@ -10,4 +10,10 @@ Slony-I is developed as a system for data centers and backup
 sites, where the normal mode of operation is that all nodes
 are available.
 
+Differences from 1.2 stream
+
+- Removal of TABLE ADD KEY
+
+- It drops all support for databases prior to Postgres version 8.3.
+
 WWW: http://www.slony.info/

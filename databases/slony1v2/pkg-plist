@@ -2,21 +2,12 @@ bin/slon
 bin/slonik
 bin/slony_logshipper
 lib/postgresql/slony1_funcs.so
-lib/postgresql/xxid.so
 etc/slon.conf-sample
 sbin/slon-mkservice
 share/postgresql/slony1_base.sql
-share/postgresql/slony1_base.v74.sql
-share/postgresql/slony1_base.v80.sql
-share/postgresql/slony1_base.v81.sql
+share/postgresql/slony1_base.v83.sql
 share/postgresql/slony1_funcs.sql
-share/postgresql/slony1_funcs.v74.sql
-share/postgresql/slony1_funcs.v80.sql
-share/postgresql/slony1_funcs.v81.sql
-share/postgresql/xxid.v74.sql
-share/postgresql/xxid.v80.sql
-share/postgresql/xxid.v81.sql
-%%PERLTOOLS%%sbin/show_configuration
+share/postgresql/slony1_funcs.v83.sql
 %%PERLTOOLS%%sbin/slon_kill
 %%PERLTOOLS%%sbin/slon_start
 %%PERLTOOLS%%sbin/slon_watchdog
@@ -55,6 +46,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/cmds.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/commandreference.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/complexenv.png
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/complexfail.png
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/concepts.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/ddlchanges.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/definingsets.html
@@ -62,7 +54,6 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/failover.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/firstdb.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.add-empty-table-to-replication-integer-integer-text-text-text-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.add-missing-table-field-text-text-text-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.addpartiallogindices.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.altertableforreplication-integer.html
@@ -107,7 +98,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.enablesubscription-integer-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.failednode-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.failednode2-integer-integer-integer-bigint-bigint.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.failoverset-int-integer-integer-integer-bigint.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.failoverset-int-integer-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.forwardconfirm-integer-integer-bigint-timestamp-without-time-zone.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.generate-sync-event-interval.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.getlocalnodeid-name.html
@@ -123,7 +114,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.logtrigger.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.mergeset-int-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.mergeset-integer-integer.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.moveset-int-integer-integer-integer-bigint.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.moveset-int-integer-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.moveset-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.reachablefromnode-integer-integerarray.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.rebuildlistenentries.html
@@ -134,7 +125,6 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.registry-set-int4-text-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.registry-set-text-text-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.registry-set-timestamp-text-timestamp-without-time-zone.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.replicate-partition-integer-text-text-text-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.sequencelastvalue-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.sequencesetvalue-integer-integer-bigint-bigint.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.setaddsequence-int-integer-integer-text-text.html
@@ -181,7 +171,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.upgradeschema-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/hdrcmds.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/help.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/i13365.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/i13318.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/listenpaths.html
@@ -253,7 +243,6 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/stmtwaitevent.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/subscribenodes.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/supportedplatforms.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-config-lock.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-confirm.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-event.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-listen.html
