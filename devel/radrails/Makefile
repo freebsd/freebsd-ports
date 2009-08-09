@@ -19,6 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rails:${PORTSDIR}/www/rubygem-rails
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+BROKEN=		does not build
+
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
