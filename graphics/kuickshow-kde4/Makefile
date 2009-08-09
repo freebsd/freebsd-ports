@@ -6,36 +6,25 @@
 #
 
 PORTNAME=	kuickshow
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTVERSION=	${APP_VER}.${EXTRA_VER}
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
-PKGNAMEPREFIX=	kdegraphics-
-DISTNAME=	kdegraphics-${PORTVERSION}
-DIST_SUBDIR=	KDE
+MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
+DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
+DIST_SUBDIR=	KDE/extragear
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE image viewer
 
-CONFLICTS=	kdegraphics-3.1.* kdegraphics-3.2.[0-3]
-
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
-
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool:22
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/kdegraphics-${PORTVERSION}
-USE_LDCONFIG=	yes
-
 USE_GNOME=	imlib
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib opengl qmake_build moc_build rcc_build uic_build
+USE_CMAKE=	yes
+USE_GETTEXT=	yes
 
-pre-configure:
-	${ECHO_CMD} ${PORTNAME} doc > ${WRKSRC}/inst-apps
-	${REINPLACE_CMD} \
-	's|^SUBDIRS =.*${PORTNAME}.*$$|SUBDIRS =\. ${PORTNAME}|g' \
-		${WRKSRC}/doc/Makefile.in
+APP_VER=	0.9.1
+EXTRA_VER=	4.3.0
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>

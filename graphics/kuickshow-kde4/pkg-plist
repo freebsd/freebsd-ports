@@ -1,11 +1,6 @@
 bin/kuickshow
-lib/kde3/kuickshow.a
-lib/kde3/kuickshow.la
-lib/kde3/kuickshow.so
-lib/libkdeinit_kuickshow.a
-lib/libkdeinit_kuickshow.la
-lib/libkdeinit_kuickshow.so
-share/applications/kde/kuickshow.desktop
+lib/libkdeinit4_kuickshow.so
+share/applications/kde4/kuickshow.desktop
 share/apps/kuickshow/im_palette.pal
 share/apps/kuickshow/pics/about.png
 share/apps/kuickshow/pics/calibrate.png
@@ -16,13 +11,131 @@ share/apps/kuickshow/pics/ksslide.png
 share/apps/kuickshow/pics/kuickshow-day.jpg
 share/apps/kuickshow/pics/kuickshow-night.jpg
 share/apps/kuickshow/pics/logo.png
+share/doc/HTML/da/kuickshow/common
+share/doc/HTML/da/kuickshow/index.cache.bz2
+share/doc/HTML/da/kuickshow/index.docbook
+share/doc/HTML/de/kuickshow/common
+share/doc/HTML/de/kuickshow/index.cache.bz2
+share/doc/HTML/de/kuickshow/index.docbook
+share/doc/HTML/de/kuickshow/screenshot.png
 share/doc/HTML/en/kuickshow/common
 share/doc/HTML/en/kuickshow/index.cache.bz2
 share/doc/HTML/en/kuickshow/index.docbook
 share/doc/HTML/en/kuickshow/screenshot.png
+share/doc/HTML/es/kuickshow/common
+share/doc/HTML/es/kuickshow/index.cache.bz2
+share/doc/HTML/es/kuickshow/index.docbook
+share/doc/HTML/et/kuickshow/common
+share/doc/HTML/et/kuickshow/index.cache.bz2
+share/doc/HTML/et/kuickshow/index.docbook
+share/doc/HTML/fr/kuickshow/common
+share/doc/HTML/fr/kuickshow/index.cache.bz2
+share/doc/HTML/fr/kuickshow/index.docbook
+share/doc/HTML/fr/kuickshow/screenshot.png
+share/doc/HTML/it/kuickshow/common
+share/doc/HTML/it/kuickshow/index.cache.bz2
+share/doc/HTML/it/kuickshow/index.docbook
+share/doc/HTML/pt/kuickshow/common
+share/doc/HTML/pt/kuickshow/index.cache.bz2
+share/doc/HTML/pt/kuickshow/index.docbook
+share/doc/HTML/pt_BR/kuickshow/common
+share/doc/HTML/pt_BR/kuickshow/index.cache.bz2
+share/doc/HTML/pt_BR/kuickshow/index.docbook
+share/doc/HTML/ru/kuickshow/common
+share/doc/HTML/ru/kuickshow/index.cache.bz2
+share/doc/HTML/ru/kuickshow/index.docbook
+share/doc/HTML/sv/kuickshow/common
+share/doc/HTML/sv/kuickshow/index.cache.bz2
+share/doc/HTML/sv/kuickshow/index.docbook
+share/doc/HTML/uk/kuickshow/common
+share/doc/HTML/uk/kuickshow/index.cache.bz2
+share/doc/HTML/uk/kuickshow/index.docbook
 share/icons/hicolor/16x16/apps/kuickshow.png
 share/icons/hicolor/22x22/apps/kuickshow.png
 share/icons/hicolor/32x32/apps/kuickshow.png
+share/locale/af/LC_MESSAGES/kuickshow.mo
+share/locale/ar/LC_MESSAGES/kuickshow.mo
+share/locale/be/LC_MESSAGES/kuickshow.mo
+share/locale/bg/LC_MESSAGES/kuickshow.mo
+share/locale/bn/LC_MESSAGES/kuickshow.mo
+share/locale/br/LC_MESSAGES/kuickshow.mo
+share/locale/ca/LC_MESSAGES/kuickshow.mo
+share/locale/cs/LC_MESSAGES/kuickshow.mo
+share/locale/cy/LC_MESSAGES/kuickshow.mo
+share/locale/da/LC_MESSAGES/kuickshow.mo
+share/locale/de/LC_MESSAGES/kuickshow.mo
+share/locale/el/LC_MESSAGES/kuickshow.mo
+share/locale/en_GB/LC_MESSAGES/kuickshow.mo
+share/locale/es/LC_MESSAGES/kuickshow.mo
+share/locale/et/LC_MESSAGES/kuickshow.mo
+share/locale/eu/LC_MESSAGES/kuickshow.mo
+share/locale/fa/LC_MESSAGES/kuickshow.mo
+share/locale/fi/LC_MESSAGES/kuickshow.mo
+share/locale/fr/LC_MESSAGES/kuickshow.mo
+share/locale/ga/LC_MESSAGES/kuickshow.mo
+share/locale/gl/LC_MESSAGES/kuickshow.mo
+share/locale/he/LC_MESSAGES/kuickshow.mo
+share/locale/hi/LC_MESSAGES/kuickshow.mo
+share/locale/hne/LC_MESSAGES/kuickshow.mo
+share/locale/hr/LC_MESSAGES/kuickshow.mo
+share/locale/hu/LC_MESSAGES/kuickshow.mo
+share/locale/is/LC_MESSAGES/kuickshow.mo
+share/locale/it/LC_MESSAGES/kuickshow.mo
+share/locale/ja/LC_MESSAGES/kuickshow.mo
+share/locale/km/LC_MESSAGES/kuickshow.mo
+share/locale/lt/LC_MESSAGES/kuickshow.mo
+share/locale/lv/LC_MESSAGES/kuickshow.mo
+share/locale/mai/LC_MESSAGES/kuickshow.mo
+share/locale/mk/LC_MESSAGES/kuickshow.mo
+share/locale/ms/LC_MESSAGES/kuickshow.mo
+share/locale/nb/LC_MESSAGES/kuickshow.mo
+share/locale/nds/LC_MESSAGES/kuickshow.mo
+share/locale/ne/LC_MESSAGES/kuickshow.mo
+share/locale/nl/LC_MESSAGES/kuickshow.mo
+share/locale/nn/LC_MESSAGES/kuickshow.mo
+share/locale/oc/LC_MESSAGES/kuickshow.mo
+share/locale/pa/LC_MESSAGES/kuickshow.mo
+share/locale/pl/LC_MESSAGES/kuickshow.mo
+share/locale/pt/LC_MESSAGES/kuickshow.mo
+share/locale/pt_BR/LC_MESSAGES/kuickshow.mo
+share/locale/ro/LC_MESSAGES/kuickshow.mo
+share/locale/ru/LC_MESSAGES/kuickshow.mo
+share/locale/se/LC_MESSAGES/kuickshow.mo
+share/locale/sk/LC_MESSAGES/kuickshow.mo
+share/locale/sl/LC_MESSAGES/kuickshow.mo
+share/locale/sv/LC_MESSAGES/kuickshow.mo
+share/locale/ta/LC_MESSAGES/kuickshow.mo
+share/locale/tg/LC_MESSAGES/kuickshow.mo
+share/locale/th/LC_MESSAGES/kuickshow.mo
+share/locale/tr/LC_MESSAGES/kuickshow.mo
+share/locale/uk/LC_MESSAGES/kuickshow.mo
+share/locale/uz/LC_MESSAGES/kuickshow.mo
+share/locale/uz@cyrillic/LC_MESSAGES/kuickshow.mo
+share/locale/vi/LC_MESSAGES/kuickshow.mo
+share/locale/xh/LC_MESSAGES/kuickshow.mo
+share/locale/zh_CN/LC_MESSAGES/kuickshow.mo
+share/locale/zh_TW/LC_MESSAGES/kuickshow.mo
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/hne/LC_MESSAGES
+@dirrmtry share/locale/hne
+@dirrm share/doc/HTML/uk/kuickshow
+@dirrm share/doc/HTML/sv/kuickshow
+@dirrm share/doc/HTML/ru/kuickshow
+@dirrm share/doc/HTML/pt_BR/kuickshow
+@dirrm share/doc/HTML/pt/kuickshow
+@dirrm share/doc/HTML/it/kuickshow
+@dirrm share/doc/HTML/fr/kuickshow
+@dirrm share/doc/HTML/et/kuickshow
+@dirrm share/doc/HTML/es/kuickshow
 @dirrm share/doc/HTML/en/kuickshow
+@dirrm share/doc/HTML/de/kuickshow
+@dirrm share/doc/HTML/da/kuickshow
 @dirrm share/apps/kuickshow/pics
 @dirrm share/apps/kuickshow
