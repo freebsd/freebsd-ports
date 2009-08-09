@@ -6573,6 +6573,7 @@ kde4-l10n-ga                    ports/misc/kde4-l10n-ga
 kde4-l10n-gl                    ports/misc/kde4-l10n-gl
 kde4-l10n-gu                    ports/misc/kde4-l10n-gu
 kde4-l10n-hi                    ports/misc/kde4-l10n-hi
+kde4-l10n-hne                   ports/misc/kde4-l10n-hne
 kde4-l10n-is                    ports/misc/kde4-l10n-is
 kde4-l10n-it                    ports/misc/kde4-l10n-it
 kde4-l10n-kk                    ports/misc/kde4-l10n-kk
@@ -12652,6 +12653,7 @@ p5-RDF-Simple                   ports/textproc/p5-RDF-Simple
 p5-RDFStore                     ports/textproc/p5-RDFStore
 p5-REST-Application             ports/net/p5-REST-Application
 p5-REST-Google                  ports/net/p5-REST-Google
+p5-REST-Google-Apps-Provisioning  ports/www/p5-REST-Google-Apps-Provisioning
 p5-RIFF-Info                    ports/multimedia/p5-RIFF-Info
 p5-RPC-Simple                   ports/net/p5-RPC-Simple
 p5-RPC-XML                      ports/net/p5-RPC-XML
@@ -13362,6 +13364,7 @@ p5-WWW-Mechanize-CGI            ports/www/p5-WWW-Mechanize-CGI
 p5-WWW-Mechanize-DecodedContent  ports/www/p5-WWW-Mechanize-DecodedContent
 p5-WWW-Mechanize-FormFiller     ports/www/p5-WWW-Mechanize-FormFiller
 p5-WWW-Mechanize-GZip           ports/www/p5-WWW-Mechanize-GZip
+p5-WWW-Mechanize-Meta           ports/www/p5-WWW-Mechanize-Meta
 p5-WWW-Mechanize-Pluggable      ports/www/p5-WWW-Mechanize-Pluggable
 p5-WWW-Mechanize-Plugin-phpBB   ports/www/p5-WWW-Mechanize-Plugin-phpBB
 p5-WWW-Mechanize-Shell          ports/www/p5-WWW-Mechanize-Shell
@@ -16238,6 +16241,7 @@ p5-resourcepool-resource-soap-lite  ports/net/p5-ResourcePool-Resource-SOAP-Lite
 p5-resources                    ports/devel/p5-Resources
 p5-rest-application             ports/net/p5-REST-Application
 p5-rest-google                  ports/net/p5-REST-Google
+p5-rest-google-apps-provisioning  ports/www/p5-REST-Google-Apps-Provisioning
 p5-return-value                 ports/devel/p5-Return-Value
 p5-riff-info                    ports/multimedia/p5-RIFF-Info
 p5-roman                        ports/math/p5-Roman
@@ -16961,6 +16965,7 @@ p5-www-mechanize-cgi            ports/www/p5-WWW-Mechanize-CGI
 p5-www-mechanize-decodedcontent  ports/www/p5-WWW-Mechanize-DecodedContent
 p5-www-mechanize-formfiller     ports/www/p5-WWW-Mechanize-FormFiller
 p5-www-mechanize-gzip           ports/www/p5-WWW-Mechanize-GZip
+p5-www-mechanize-meta           ports/www/p5-WWW-Mechanize-Meta
 p5-www-mechanize-pluggable      ports/www/p5-WWW-Mechanize-Pluggable
 p5-www-mechanize-plugin-phpbb   ports/www/p5-WWW-Mechanize-Plugin-phpBB
 p5-www-mechanize-shell          ports/www/p5-WWW-Mechanize-Shell
@@ -18743,7 +18748,6 @@ ppower4                         ports/textproc/ppower4
 pppd23                          ports/net/pppd23
 pppload                         ports/net/pppload
 pppoa                           ports/net/pppoa
-ppptraf                         ports/net/ppptraf
 ppracer                         ports/games/ppracer
 pptpclient                      ports/net/pptpclient
 ppunpack                        ports/archivers/ppunpack
@@ -18987,6 +18991,7 @@ py-apolicy                      ports/mail/py-apolicy
 py-argparse                     ports/devel/py-argparse
 py-asn1                         ports/devel/py-asn1
 py-aspects                      ports/devel/py-aspects
+py-aspyct                       ports/devel/py-aspyct
 py-astLib                       ports/astro/py-astLib
 py-astlib                       ports/astro/py-astLib
 py-astng                        ports/devel/py-astng
@@ -19440,7 +19445,9 @@ py-relatorio                    ports/print/py-relatorio
 py-repl                         ports/devel/py-repl
 py-reportlab                    ports/print/py-reportlab
 py-reportlab2                   ports/print/py-reportlab2
+py-repoze.what                  ports/devel/py-repoze.what
 py-repoze.who                   ports/devel/py-repoze.who
+py-repoze.who-testutil          ports/devel/py-repoze.who-testutil
 py-resourcepackage              ports/devel/py-resourcepackage
 py-restclient                   ports/www/py-restclient
 py-reverend                     ports/textproc/py-reverend
@@ -22252,7 +22259,6 @@ tintin++-devel                  ports/net/tintin++-devel
 tinybsd                         ports/sysutils/tinybsd
 tinyca                          ports/security/tinyca
 tinycdb                         ports/databases/tinycdb
-tinycobol                       ports/lang/tinycobol
 tinyerp-server                  ports/finance/tinyerp-server
 tinyfugue                       ports/net/tinyfugue
 tinylaf                         ports/devel/tinylaf
@@ -23330,6 +23336,7 @@ wmmount                         ports/sysutils/wmmount
 wmmp3                           ports/audio/wmmp3
 wmmsg                           ports/x11/wmmsg
 wmmultipop3                     ports/mail/wmmultipop3
+wmname                          ports/x11-wm/wmname
 wmnd                            ports/net/wmnd
 wmnet                           ports/net/wmnet
 wmnet2                          ports/net/wmnet2
@@ -23636,7 +23643,6 @@ xemacs-mule-packages            ports/editors/xemacs-mule-packages
 xemacs-packages                 ports/editors/xemacs-packages
 xemacs21-mule                   ports/editors/xemacs21-mule
 xengine                         ports/benchmarks/xengine
-xenmenu                         ports/misc/xenmenu
 xenomorph                       ports/graphics/xenomorph
 xenon                           ports/editors/xenon
 xenophilia                      ports/x11-themes/xenophilia
@@ -24760,7 +24766,6 @@ zope-filesystemsite             ports/www/zope-FileSystemSite
 zope-formulator                 ports/www/zope-formulator
 zope-generator                  ports/www/zope-generator
 zope-groupuserfolder            ports/www/zope-groupuserfolder
-zope-guf                        ports/www/zope-guf
 zope-i18nlayer                  ports/www/zope-i18nlayer
 zope-kupu                       ports/www/zope-kupu
 zope-mimetypesregistry          ports/www/zope-mimetypesregistry
