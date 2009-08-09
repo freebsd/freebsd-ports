@@ -24,6 +24,8 @@ QT_COMPONENTS=	corelib opengl qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 
+LATEST_LINK=	${PORTNAME}-kde4
+
 APP_VER=	0.9.1
 EXTRA_VER=	4.3.0
 
