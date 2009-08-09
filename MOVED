@@ -4136,3 +4136,5 @@ lang/tinycobol||2009-08-08|Has expired: no longer being developed; consider usin
 net/ppptraf||2009-08-08|Removed: "author has abandoned this program"
 www/zope-guf||2009-08-08|Removed: "no longer being developed: use SimpleUserFolder or exUserFolder instead"
 misc/xenmenu||2009-08-08|Removed: Project abandoned in 1998
+security/dns-proxy-tor||2009-08-09|Removed
+security/trans-proxy-tor||2009-08-09|Removed: trans-proxy-tor is rendered obsolete by Tor\'s TransPort option  (currently only available in tor-devel)

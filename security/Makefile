@@ -101,7 +101,6 @@
     SUBDIR += distcache
     SUBDIR += distcache-devel
     SUBDIR += dmitry
-    SUBDIR += dns-proxy-tor
     SUBDIR += donkey
     SUBDIR += doorman
     SUBDIR += doscan
@@ -818,7 +817,6 @@
     SUBDIR += tlswrap
     SUBDIR += tor
     SUBDIR += tor-devel
-    SUBDIR += trans-proxy-tor
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131

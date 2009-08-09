@@ -1,9 +1,0 @@
-dns-proxy-tor is a DNS server that stops
-DNS leaks with applications that don't support
-or aren't configured to use socks4a or Tor's DNS
-resolution.
-
-WWW: http://p56soo2ibjkx23xo.onion/
-(Hidden service, only accessible through Tor)
-Author: tup <tup at mailvault.com>
-License: None (dns-proxy-tor is in the public domain)
