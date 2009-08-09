@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	slony1
-PORTVERSION=	1.2.16
+PORTNAME=	slony1v2
+PORTVERSION=	2.0.2
 CATEGORIES=	databases
-MASTER_SITES=	http://main.slony.info/downloads/1.2/source/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-docs${EXTRACT_SUFX}
+MASTER_SITES=	http://main.slony.info/downloads/2.0/source/
+DISTNAME=	slony1-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}-docs${EXTRACT_SUFX}
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	PostgreSQL master to multiple replicas replication system
@@ -28,9 +29,11 @@ SUB_LIST+=	NAME=slon
 
 OPTIONS=	PERLTOOLS "Install perl configuration tools" Off
 
+CONFLICTS?=     slony1-*
+
 .include <bsd.port.pre.mk>
 
-IGNORE_WITH_PGSQL=	84
+IGNORE_WITH_PGSQL=	73 74 80 81 82 84
 
 .if defined(WITH_PERLTOOLS)
 USE_PERL5=	yes
@@ -53,7 +56,7 @@ CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
   --with-pgpkglibdir=${LOCALBASE}/lib/postgresql \
   --with-pgsharedir=${LOCALBASE}/share/postgresql
 
-DEFAULT_PGSQL_VER?=80
+DEFAULT_PGSQL_VER?=83
 
 # Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/postmaster)
@@ -76,7 +79,6 @@ post-install:
 	${MKDIR} ${DOCSDIR}/adminguide
 	${MKDIR} ${DOCSDIR}/howto
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/INSTALL ${WRKSRC}/SAMPLE ${WRKSRC}/README ${WRKSRC}/HISTORY-1.1 ${WRKSRC}/UPGRADING ${DOCSDIR}
-#	${INSTALL_DATA} ${WRKSRC}/doc/*/*.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
 	${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${DOCSDIR}/adminguide/
 .endif
