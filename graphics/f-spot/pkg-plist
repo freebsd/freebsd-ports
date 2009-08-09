@@ -3,12 +3,23 @@ bin/f-spot-import
 bin/f-spot-sqlite-upgrade
 lib/f-spot/Cms.dll
 lib/f-spot/Cms.dll.config
+lib/f-spot/Cms.dll.mdb
+lib/f-spot/FSpot.Bling.dll
+lib/f-spot/FSpot.Bling.dll.mdb
 lib/f-spot/FSpot.Core.dll
+lib/f-spot/FSpot.Core.dll.mdb
 lib/f-spot/FSpot.JobScheduler.dll
+lib/f-spot/FSpot.JobScheduler.dll.mdb
+lib/f-spot/FSpot.Platform.dll
+lib/f-spot/FSpot.Platform.dll.mdb
 lib/f-spot/FSpot.Query.dll
+lib/f-spot/FSpot.Query.dll.mdb
 lib/f-spot/FSpot.Utils.dll
 lib/f-spot/FSpot.Utils.dll.config
+lib/f-spot/FSpot.Utils.dll.mdb
 lib/f-spot/FSpot.Widgets.dll
+lib/f-spot/FSpot.Widgets.dll.config
+lib/f-spot/FSpot.Widgets.dll.mdb
 lib/f-spot/FlickrNet.dll
 lib/f-spot/Mono.Addins.Gui.dll
 lib/f-spot/Mono.Addins.Setup.dll
@@ -44,28 +55,25 @@ lib/f-spot/extensions/TabbloExport.dll
 lib/f-spot/extensions/ZipExport.dll
 lib/f-spot/f-spot.exe
 lib/f-spot/f-spot.exe.config
+lib/f-spot/f-spot.exe.mdb
 lib/f-spot/f-spot.global.addins
 lib/f-spot/gio-sharp.dll
 lib/f-spot/gio-sharp.dll.config
+lib/f-spot/gkeyfile-sharp.dll
 lib/f-spot/gnome-keyring-sharp.dll
+lib/f-spot/gtk-sharp-beans.dll
+lib/f-spot/gtk-sharp-beans.dll.config
 lib/f-spot/libfspot.a
 lib/f-spot/libfspot.la
 lib/f-spot/libfspot.so
 lib/f-spot/libfspot.so.0
-lib/f-spot/libfspoteog.a
-lib/f-spot/libfspoteog.la
-lib/f-spot/libfspoteog.so
-lib/f-spot/libfspoteog.so.0
 lib/f-spot/libfspotjpegtran.a
 lib/f-spot/libfspotjpegtran.la
 lib/f-spot/libfspotjpegtran.so
 lib/f-spot/libfspotjpegtran.so.0
 lib/f-spot/libgphoto2-sharp.dll
 lib/f-spot/libgphoto2-sharp.dll.config
-lib/gio-sharp-unstable/gio-sharp.dll
-lib/gio-sharp-unstable/gio-sharp.dll.config
 libdata/pkgconfig/f-spot.pc
-libdata/pkgconfig/gio-sharp-unstable.pc
 libexec/gnome-screensaver/f-spot-screensaver
 share/applications/f-spot-import.desktop
 share/applications/f-spot-view.desktop
@@ -146,6 +154,7 @@ share/applications/screensavers/f-spot-screensaver.desktop
 %%DATADIR%%/icons/hicolor/24x24/places/film-roll.png
 %%DATADIR%%/icons/hicolor/24x24/status/mode-browse.png
 %%DATADIR%%/icons/hicolor/24x24/status/mode-image-edit.png
+%%DATADIR%%/icons/hicolor/256x256/apps/f-spot.png
 %%DATADIR%%/icons/hicolor/32x32/actions/object-rotate-left.png
 %%DATADIR%%/icons/hicolor/32x32/actions/object-rotate-right.png
 %%DATADIR%%/icons/hicolor/32x32/actions/view-fullscreen.png
@@ -162,7 +171,6 @@ share/applications/screensavers/f-spot-screensaver.desktop
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/view-fullscreen.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/view-restore.svg
-%%DATADIR%%/icons/hicolor/scalable/apps/f-spot.svg
 %%DATADIR%%/icons/hicolor/scalable/emblems/emblem-event.svg
 %%DATADIR%%/icons/hicolor/scalable/emblems/emblem-places.svg
 %%DATADIR%%/icons/hicolor/scalable/status/mode-browse.svg
@@ -177,6 +185,17 @@ share/gnome/help/f-spot/C/figures/f-spot-sepia.png
 share/gnome/help/f-spot/C/figures/f-spot-slideshow.png
 share/gnome/help/f-spot/C/figures/f-spot-soft-focus.png
 share/gnome/help/f-spot/C/figures/f-spot-straighten.png
+share/gnome/help/f-spot/cs/f-spot.xml
+share/gnome/help/f-spot/cs/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/cs/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/cs/figures/f-spot-crop.png
+share/gnome/help/f-spot/cs/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/cs/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/cs/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/cs/figures/f-spot-sepia.png
+share/gnome/help/f-spot/cs/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/cs/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/cs/figures/f-spot-straighten.png
 share/gnome/help/f-spot/da/f-spot.xml
 share/gnome/help/f-spot/da/figures/f-spot-adjust-colors.png
 share/gnome/help/f-spot/da/figures/f-spot-autocolor.png
@@ -188,6 +207,17 @@ share/gnome/help/f-spot/da/figures/f-spot-sepia.png
 share/gnome/help/f-spot/da/figures/f-spot-slideshow.png
 share/gnome/help/f-spot/da/figures/f-spot-soft-focus.png
 share/gnome/help/f-spot/da/figures/f-spot-straighten.png
+share/gnome/help/f-spot/de/f-spot.xml
+share/gnome/help/f-spot/de/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/de/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/de/figures/f-spot-crop.png
+share/gnome/help/f-spot/de/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/de/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/de/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/de/figures/f-spot-sepia.png
+share/gnome/help/f-spot/de/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/de/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/de/figures/f-spot-straighten.png
 share/gnome/help/f-spot/es/f-spot.xml
 share/gnome/help/f-spot/es/figures/f-spot-adjust-colors.png
 share/gnome/help/f-spot/es/figures/f-spot-autocolor.png
@@ -268,9 +298,11 @@ share/gnome/help/f-spot/sv/figures/f-spot-straighten.png
 share/icons/hicolor/16x16/apps/f-spot.png
 share/icons/hicolor/22x22/apps/f-spot.png
 share/icons/hicolor/24x24/apps/f-spot.png
+share/icons/hicolor/256x256/apps/f-spot.png
 share/icons/hicolor/32x32/apps/f-spot.png
-share/icons/hicolor/scalable/apps/f-spot.svg
+share/icons/hicolor/48x48/apps/f-spot.png
 share/locale/ar/LC_MESSAGES/f-spot.mo
+share/locale/as/LC_MESSAGES/f-spot.mo
 share/locale/be@latin/LC_MESSAGES/f-spot.mo
 share/locale/bg/LC_MESSAGES/f-spot.mo
 share/locale/ca/LC_MESSAGES/f-spot.mo
@@ -288,19 +320,23 @@ share/locale/fa/LC_MESSAGES/f-spot.mo
 share/locale/fi/LC_MESSAGES/f-spot.mo
 share/locale/fr/LC_MESSAGES/f-spot.mo
 share/locale/gl/LC_MESSAGES/f-spot.mo
+share/locale/gu/LC_MESSAGES/f-spot.mo
 share/locale/he/LC_MESSAGES/f-spot.mo
 share/locale/hi/LC_MESSAGES/f-spot.mo
 share/locale/hu/LC_MESSAGES/f-spot.mo
 share/locale/it/LC_MESSAGES/f-spot.mo
 share/locale/ja/LC_MESSAGES/f-spot.mo
 share/locale/ka/LC_MESSAGES/f-spot.mo
+share/locale/kn/LC_MESSAGES/f-spot.mo
 share/locale/ko/LC_MESSAGES/f-spot.mo
 share/locale/lt/LC_MESSAGES/f-spot.mo
 share/locale/lv/LC_MESSAGES/f-spot.mo
 share/locale/mk/LC_MESSAGES/f-spot.mo
+share/locale/mr/LC_MESSAGES/f-spot.mo
 share/locale/nb/LC_MESSAGES/f-spot.mo
 share/locale/nl/LC_MESSAGES/f-spot.mo
 share/locale/oc/LC_MESSAGES/f-spot.mo
+share/locale/or/LC_MESSAGES/f-spot.mo
 share/locale/pa/LC_MESSAGES/f-spot.mo
 share/locale/pl/LC_MESSAGES/f-spot.mo
 share/locale/pt/LC_MESSAGES/f-spot.mo
@@ -311,6 +347,7 @@ share/locale/sk/LC_MESSAGES/f-spot.mo
 share/locale/sr/LC_MESSAGES/f-spot.mo
 share/locale/sr@latin/LC_MESSAGES/f-spot.mo
 share/locale/sv/LC_MESSAGES/f-spot.mo
+share/locale/ta/LC_MESSAGES/f-spot.mo
 share/locale/th/LC_MESSAGES/f-spot.mo
 share/locale/uk/LC_MESSAGES/f-spot.mo
 share/locale/vi/LC_MESSAGES/f-spot.mo
@@ -318,7 +355,9 @@ share/locale/zh_CN/LC_MESSAGES/f-spot.mo
 share/locale/zh_HK/LC_MESSAGES/f-spot.mo
 share/locale/zh_TW/LC_MESSAGES/f-spot.mo
 share/omf/f-spot/f-spot-C.omf
+share/omf/f-spot/f-spot-cs.omf
 share/omf/f-spot/f-spot-da.omf
+share/omf/f-spot/f-spot-de.omf
 share/omf/f-spot/f-spot-es.omf
 share/omf/f-spot/f-spot-fr.omf
 share/omf/f-spot/f-spot-it.omf
@@ -341,14 +380,17 @@ share/omf/f-spot/f-spot-sv.omf
 @dirrm share/gnome/help/f-spot/fr
 @dirrm share/gnome/help/f-spot/es/figures
 @dirrm share/gnome/help/f-spot/es
+@dirrm share/gnome/help/f-spot/de/figures
+@dirrm share/gnome/help/f-spot/de
 @dirrm share/gnome/help/f-spot/da/figures
 @dirrm share/gnome/help/f-spot/da
+@dirrm share/gnome/help/f-spot/cs/figures
+@dirrm share/gnome/help/f-spot/cs
 @dirrm share/gnome/help/f-spot/C/figures
 @dirrm share/gnome/help/f-spot/C
 @dirrm share/gnome/help/f-spot
 @dirrm %%DATADIR%%/icons/hicolor/scalable/status
 @dirrm %%DATADIR%%/icons/hicolor/scalable/emblems
-@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable
 @dirrm %%DATADIR%%/icons/hicolor/32x32/status
@@ -357,6 +399,8 @@ share/omf/f-spot/f-spot-sv.omf
 @dirrm %%DATADIR%%/icons/hicolor/32x32/apps
 @dirrm %%DATADIR%%/icons/hicolor/32x32/actions
 @dirrm %%DATADIR%%/icons/hicolor/32x32
+@dirrm %%DATADIR%%/icons/hicolor/256x256/apps
+@dirrm %%DATADIR%%/icons/hicolor/256x256
 @dirrm %%DATADIR%%/icons/hicolor/24x24/status
 @dirrm %%DATADIR%%/icons/hicolor/24x24/places
 @dirrm %%DATADIR%%/icons/hicolor/24x24/emblems
@@ -381,8 +425,9 @@ share/omf/f-spot/f-spot-sv.omf
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
 @dirrmtry share/applications/screensavers
 @dirrmtry libexec/gnome-screensaver
-@dirrm lib/gio-sharp-unstable
 @dirrm lib/f-spot/extensions
 @dirrm lib/f-spot

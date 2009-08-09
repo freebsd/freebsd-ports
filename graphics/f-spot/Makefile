@@ -3,12 +3,10 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.45 2007/08/26 05:10:23 killfill Exp $
 #
 
 PORTNAME=	f-spot
-PORTVERSION=	0.5.0.3
-PORTREVISION=	2
+PORTVERSION=	0.6.0.0
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -38,16 +36,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} 's|target="liblcms.so.1"|target="liblcms.so"|g ; \
-		s|target="libexif.so.@EXIF_SOVERSION@"|target="libexif.so"|g' \
-		${WRKSRC}/src/f-spot.exe.config.in
-	@${REINPLACE_CMD} 's|target="libgphoto2.so.2"|target="libgphoto2.so"|g'\
-	    	${WRKSRC}/libgphoto2-sharp/libgphoto2-sharp.dll.config
 	@${REINPLACE_CMD} 's|#!/bin/bash|#!/usr/bin/env bash|g' \
 		${WRKSRC}/src/f-spot.in \
 		${WRKSRC}/tools/f-spot-import
-	@${REINPLACE_CMD} 's|G_GNUC_FUNCTION|G_STRLOC|g' \
-		${WRKSRC}/libfspot/f-jpeg-utils.c
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
