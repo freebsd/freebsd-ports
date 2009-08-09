@@ -19,6 +19,8 @@ COMMENT=	Internet/Intranet Input Method Server Framework
 LIB_DEPENDS=	iiimp.1:${PORTSDIR}/textproc/iiimf-protocol-lib \
 		iiimcf.3:${PORTSDIR}/textproc/iiimf-client-lib
 
+BROKEN=		It removes a few files in /usr/local/* during the configure. Therefore, it is not safe
+
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
