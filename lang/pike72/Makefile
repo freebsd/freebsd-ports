@@ -22,6 +22,8 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		mird.1:${PORTSDIR}/databases/mird \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
+CONFLICTS=	pike7[68]*-[0-9]*
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 USE_BISON=	build
