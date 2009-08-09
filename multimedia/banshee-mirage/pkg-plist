@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+lib/libmirageaudio.so
+lib/libmirageaudio.la
+lib/libmirageaudio.a
+lib/banshee-1/Extensions/Mirage.dll
+lib/banshee-1/Extensions/Mirage.dll.mdb
+lib/banshee-1/Extensions/Banshee.Mirage.dll
+lib/banshee-1/Extensions/Banshee.Mirage.dll.mdb
+share/locale/de/LC_MESSAGES/mirage.mo
+share/locale/it/LC_MESSAGES/mirage.mo
+@dirrmtry lib/banshee-1/Extensions
