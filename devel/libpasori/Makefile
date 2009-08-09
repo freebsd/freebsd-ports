@@ -19,20 +19,20 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/lib ${WRKSRC}/lpdump ${WRKSRC}/lptest
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
+.if ${OSVERSION} < 800069
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/lib/Makefile
+.else
+	@${CP} ${FILESDIR}/Makefile.lib.usb20 ${WRKSRC}/lib/Makefile
+.endif
 	@${CP} ${FILESDIR}/Makefile.lpdump ${WRKSRC}/lptest/Makefile
 	@${CP} ${FILESDIR}/Makefile.lptest ${WRKSRC}/lpdump/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800064
-BROKEN=		does not build
-.endif
 
 .include <bsd.port.post.mk>
