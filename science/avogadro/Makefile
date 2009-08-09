@@ -31,6 +31,8 @@ USE_GCC=	4.3+
 USE_PYTHON=	2.5+
 MAKE_JOBS_SAFE=	yes
 
+BROKEN=		does not build with new py-sip
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700013
