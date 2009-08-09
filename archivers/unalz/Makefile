@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unalz
-PORTVERSION=	0.62
+PORTVERSION=	0.63
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/
 EXTRACT_SUFX=	.tgz
