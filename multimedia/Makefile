@@ -14,6 +14,7 @@
     SUBDIR += avifile
     SUBDIR += avinfo
     SUBDIR += banshee
+    SUBDIR += banshee-mirage
     SUBDIR += beep-media-player
     SUBDIR += bmp-extra-plugins
     SUBDIR += bmpx
