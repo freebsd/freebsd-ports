@@ -33,6 +33,7 @@ lib/ROX-Lib2/Help/python/rox.proxy.html
 lib/ROX-Lib2/Help/python/rox.saving.html
 lib/ROX-Lib2/Help/python/rox.session.html
 lib/ROX-Lib2/Help/python/rox.settings.html
+lib/ROX-Lib2/Help/python/rox.singleton.html
 lib/ROX-Lib2/Help/python/rox.su.html
 lib/ROX-Lib2/Help/python/rox.suchild.html
 lib/ROX-Lib2/Help/python/rox.tasks.html
@@ -138,6 +139,9 @@ lib/ROX-Lib2/python/rox/session.pyo
 lib/ROX-Lib2/python/rox/settings.py
 lib/ROX-Lib2/python/rox/settings.pyc
 lib/ROX-Lib2/python/rox/settings.pyo
+lib/ROX-Lib2/python/rox/singleton.py
+lib/ROX-Lib2/python/rox/singleton.pyc
+lib/ROX-Lib2/python/rox/singleton.pyo
 lib/ROX-Lib2/python/rox/su.py
 lib/ROX-Lib2/python/rox/su.pyc
 lib/ROX-Lib2/python/rox/su.pyo
