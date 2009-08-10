@@ -1,0 +1,39 @@
+*********************************************************************
+You have just installed Foswiki with a sample Apache configuration
+file.
+
+To complete the installation, please:
+
+- Copy %%CONFDIR%%/foswiki.conf.sample to
+  %%CONFDIR%%/foswiki.conf 
+
+- Review the contents of %%CONFDIR%%/foswiki.conf
+  to ensure they match your local security policies, and modify the
+  file if necessary.
+
+- If you want to configure Foswiki from a remote machine, search for the
+  following in %%CONFDIR%%/foswiki.conf:
+
+  <FilesMatch "^configure.*">
+      SetHandler cgi-script
+      Order Deny,Allow
+      Deny from all
+      Allow from 127.0.0.1
+      Require user JohnDoe
+      Satisfy Any
+  </FilesMatch>
+
+  Add your IP address to the end of the "Allow from 127.0.0.1" line, and
+  you will be able to access the configure script without logging in. Make
+  sure to remove your IP after you have set up your own user account.
+
+- Restart Apache.
+
+- Browse to the /foswiki URL on your web server and enter the configuration
+  page.
+
+- Configure the Foswiki installation according to your needs.
+
+- Visit http://foswiki.org/System/InstallationGuide#Configure_Foswiki for
+  additional post-installation configuration information.
+

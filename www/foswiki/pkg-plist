@@ -1,0 +1,2257 @@
+%%NOAPACHE%%%%CONFDIR%%/foswiki.conf.sample
+%%WWWDIR%%/AUTHORS
+%%WWWDIR%%/COPYING
+%%WWWDIR%%/COPYRIGHT
+%%WWWDIR%%/INSTALL.html
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/ReleaseHistory.html
+%%WWWDIR%%/ReleaseNotes01x00.html
+%%WWWDIR%%/UpgradeGuide.html
+%%WWWDIR%%/bin/.htaccess.txt
+%%WWWDIR%%/bin/LocalLib.cfg.txt
+%%WWWDIR%%/bin/LocalLib.cfg
+%%WWWDIR%%/bin/attach
+%%WWWDIR%%/bin/changes
+%%WWWDIR%%/bin/configure
+%%WWWDIR%%/bin/edit
+%%WWWDIR%%/bin/login
+%%WWWDIR%%/bin/logon
+%%WWWDIR%%/bin/logos/favicon.ico
+%%WWWDIR%%/bin/logos/foswiki-logo-slogan.png
+%%WWWDIR%%/bin/logos/info.gif
+%%WWWDIR%%/bin/logos/warning.gif
+%%WWWDIR%%/bin/manage
+%%WWWDIR%%/bin/oops
+%%WWWDIR%%/bin/preview
+%%WWWDIR%%/bin/rdiff
+%%WWWDIR%%/bin/rdiffauth
+%%WWWDIR%%/bin/register
+%%WWWDIR%%/bin/rename
+%%WWWDIR%%/bin/resetpasswd
+%%WWWDIR%%/bin/rest
+%%WWWDIR%%/bin/save
+%%WWWDIR%%/bin/search
+%%WWWDIR%%/bin/setlib.cfg
+%%WWWDIR%%/bin/statistics
+%%WWWDIR%%/bin/upload
+%%WWWDIR%%/bin/view
+%%WWWDIR%%/bin/viewauth
+%%WWWDIR%%/bin/viewfile
+@unexec if [ ! -s %%WWWDIR%%/data/.htpasswd ]; then rm -f %D/%%WWWDIR%%/data/.htpasswd; fi
+%%WWWDIR%%/data/Main/AdminGroup.txt
+%%WWWDIR%%/data/Main/AdminUser.txt
+%%WWWDIR%%/data/Main/GroupTemplate.txt
+%%WWWDIR%%/data/Main/NobodyGroup.txt
+%%WWWDIR%%/data/Main/PatternSkinUserViewTemplate.txt
+%%WWWDIR%%/data/Main/ProjectContributor.txt
+%%WWWDIR%%/data/Main/RegistrationAgent.txt
+%%WWWDIR%%/data/Main/SitePreferences.txt
+%%WWWDIR%%/data/Main/UnknownUser.txt
+%%WWWDIR%%/data/Main/UserHomepageHeader.txt
+%%WWWDIR%%/data/Main/UserList.txt
+%%WWWDIR%%/data/Main/UserListByDateJoined.txt
+%%WWWDIR%%/data/Main/UserListByLocation.txt
+%%WWWDIR%%/data/Main/UserListHeader.txt
+%%WWWDIR%%/data/Main/WebAtom.txt
+%%WWWDIR%%/data/Main/WebChanges.txt
+%%WWWDIR%%/data/Main/WebCreateNewTopic.txt
+%%WWWDIR%%/data/Main/WebHome.txt
+%%WWWDIR%%/data/Main/WebIndex.txt
+%%WWWDIR%%/data/Main/WebLeftBarExample.txt
+%%WWWDIR%%/data/Main/WebNotify.txt
+%%WWWDIR%%/data/Main/WebPreferences.txt
+%%WWWDIR%%/data/Main/WebRss.txt
+%%WWWDIR%%/data/Main/WebSearch.txt
+%%WWWDIR%%/data/Main/WebSearchAdvanced.txt
+%%WWWDIR%%/data/Main/WebStatistics.txt
+%%WWWDIR%%/data/Main/WebTopicList.txt
+%%WWWDIR%%/data/Main/WikiGroups.txt
+%%WWWDIR%%/data/Main/WikiGuest.txt
+%%WWWDIR%%/data/Sandbox/CommentPluginExampleComments.txt
+%%WWWDIR%%/data/Sandbox/CommentPluginTemplateExample.txt
+%%WWWDIR%%/data/Sandbox/PluginTestEmptyPlugin.txt
+%%WWWDIR%%/data/Sandbox/WebAtom.txt
+%%WWWDIR%%/data/Sandbox/WebChanges.txt
+%%WWWDIR%%/data/Sandbox/WebCreateNewTopic.txt
+%%WWWDIR%%/data/Sandbox/WebHome.txt
+%%WWWDIR%%/data/Sandbox/WebIndex.txt
+%%WWWDIR%%/data/Sandbox/WebLeftBarExample.txt
+%%WWWDIR%%/data/Sandbox/WebNotify.txt
+%%WWWDIR%%/data/Sandbox/WebPreferences.txt
+%%WWWDIR%%/data/Sandbox/WebRss.txt
+%%WWWDIR%%/data/Sandbox/WebSearch.txt
+%%WWWDIR%%/data/Sandbox/WebSearchAdvanced.txt
+%%WWWDIR%%/data/Sandbox/WebStatistics.txt
+%%WWWDIR%%/data/Sandbox/WebTopicList.txt
+%%WWWDIR%%/data/System/AccessControl.txt
+%%WWWDIR%%/data/System/AccessKeys.txt
+%%WWWDIR%%/data/System/AdminDocumentationCategory.txt
+%%WWWDIR%%/data/System/AdminSkillsAssumptions.txt
+%%WWWDIR%%/data/System/AdminToolsCategory.txt
+%%WWWDIR%%/data/System/AnApplicationWithWikiForm.txt
+%%WWWDIR%%/data/System/AppendixEncodeURLsWithUTF8.txt
+%%WWWDIR%%/data/System/BeginnersStartHere.txt
+%%WWWDIR%%/data/System/BehaviourContrib.txt
+%%WWWDIR%%/data/System/BookView.txt
+%%WWWDIR%%/data/System/BulkRegistration.txt
+%%WWWDIR%%/data/System/BulkResetPassword.txt
+%%WWWDIR%%/data/System/BumpyWord.txt
+%%WWWDIR%%/data/System/CascadingStyleSheets.txt
+%%WWWDIR%%/data/System/CategoryCategory.txt
+%%WWWDIR%%/data/System/ChangeEmailAddress.txt
+%%WWWDIR%%/data/System/ChangePassword.txt
+%%WWWDIR%%/data/System/ClassMethod.txt
+%%WWWDIR%%/data/System/CommandAndCGIScripts.txt
+%%WWWDIR%%/data/System/CommentPlugin.txt
+%%WWWDIR%%/data/System/CommentPluginExamples.txt
+%%WWWDIR%%/data/System/CommentPluginTemplate.txt
+%%WWWDIR%%/data/System/CompleteDocumentation.txt
+%%WWWDIR%%/data/System/Contribs.txt
+%%WWWDIR%%/data/System/ContributedAddOns.txt
+%%WWWDIR%%/data/System/DataForms.txt
+%%WWWDIR%%/data/System/DefaultPreferences.txt
+%%WWWDIR%%/data/System/DefaultPreferencesForm.txt
+%%WWWDIR%%/data/System/DeleteOrRenameATopic.txt
+%%WWWDIR%%/data/System/DeleteOrRenameAnAttachment.txt
+%%WWWDIR%%/data/System/DeveloperDocumentationCategory.txt
+%%WWWDIR%%/data/System/DevelopingPlugins.txt
+%%WWWDIR%%/data/System/DocumentGraphics.txt
+%%WWWDIR%%/data/System/DontNotify.txt
+%%WWWDIR%%/data/System/DownloadSources.txt
+%%WWWDIR%%/data/System/EditDoesNotIncreaseTheRevision.txt
+%%WWWDIR%%/data/System/EditTablePlugin.txt
+%%WWWDIR%%/data/System/EditingShorthand.txt
+%%WWWDIR%%/data/System/EmptyPlugin.txt
+%%WWWDIR%%/data/System/EnhancementRequests.txt
+%%WWWDIR%%/data/System/ExampleTopicTemplate.txt
+%%WWWDIR%%/data/System/FaqTemplate.txt
+%%WWWDIR%%/data/System/FileAttachment.txt
+%%WWWDIR%%/data/System/FileAttribute.txt
+%%WWWDIR%%/data/System/ForceNewRevision.txt
+%%WWWDIR%%/data/System/FormatTokens.txt
+%%WWWDIR%%/data/System/FormattedSearch.txt
+%%WWWDIR%%/data/System/FrequentlyAskedQuestions.txt
+%%WWWDIR%%/data/System/GlossaryOfTerms.txt
+%%WWWDIR%%/data/System/GnuGeneralPublicLicense.txt
+%%WWWDIR%%/data/System/GoBox.txt
+%%WWWDIR%%/data/System/GoodStyle.txt
+%%WWWDIR%%/data/System/HiddenAttachment.txt
+%%WWWDIR%%/data/System/HierarchicalNavigation.txt
+%%WWWDIR%%/data/System/HierarchicalNavigationChildExample.txt
+%%WWWDIR%%/data/System/IfStatements.txt
+%%WWWDIR%%/data/System/IncludeTopicsAndWebPages.txt
+%%WWWDIR%%/data/System/InstallationGuide.txt
+%%WWWDIR%%/data/System/InstalledPlugins.txt
+%%WWWDIR%%/data/System/InstantEnhancements.txt
+%%WWWDIR%%/data/System/InterWikis.txt
+%%WWWDIR%%/data/System/InterwikiPlugin.txt
+%%WWWDIR%%/data/System/JSCalendarContrib.txt
+%%WWWDIR%%/data/System/JSCalendarContribInline.txt
+%%WWWDIR%%/data/System/JavascriptFiles.txt
+%%WWWDIR%%/data/System/LanguageSelector.txt
+%%WWWDIR%%/data/System/LoginName.txt
+%%WWWDIR%%/data/System/Macros.txt
+%%WWWDIR%%/data/System/MacrosQuickStart.txt
+%%WWWDIR%%/data/System/MailerContrib.txt
+%%WWWDIR%%/data/System/MainFeatures.txt
+%%WWWDIR%%/data/System/ManagingTopics.txt
+%%WWWDIR%%/data/System/ManagingUsers.txt
+%%WWWDIR%%/data/System/ManagingWebs.txt
+%%WWWDIR%%/data/System/MetaData.txt
+%%WWWDIR%%/data/System/MoveTopic.txt
+%%WWWDIR%%/data/System/NewUserTemplate.txt
+%%WWWDIR%%/data/System/ObjectMethod.txt
+%%WWWDIR%%/data/System/PatternSkin.txt
+%%WWWDIR%%/data/System/PatternSkinColorSettings.txt
+%%WWWDIR%%/data/System/PatternSkinCss.txt
+%%WWWDIR%%/data/System/PatternSkinCssCookbook.txt
+%%WWWDIR%%/data/System/PatternSkinCssCookbookCenterPage.txt
+%%WWWDIR%%/data/System/PatternSkinCssCookbookCenterPageBorder.txt
+%%WWWDIR%%/data/System/PatternSkinCssCookbookEditTableStyle.txt
+%%WWWDIR%%/data/System/PatternSkinCssCookbookFonts.txt
+%%WWWDIR%%/data/System/PatternSkinCssCookbookNoLeftBar.txt
+%%WWWDIR%%/data/System/PatternSkinCssCookbookNoTopBar.txt
+%%WWWDIR%%/data/System/PatternSkinCustomization.txt
+%%WWWDIR%%/data/System/PatternSkinElements.txt
+%%WWWDIR%%/data/System/PatternSkinGraphics.txt
+%%WWWDIR%%/data/System/PatternSkinHeaderArt.txt
+%%WWWDIR%%/data/System/PatternSkinWebCreateNewTopicTemplate.txt
+%%WWWDIR%%/data/System/PerlDoc.txt
+%%WWWDIR%%/data/System/PlainSkin.txt
+%%WWWDIR%%/data/System/Plugins.txt
+%%WWWDIR%%/data/System/PreferenceSettings.txt
+%%WWWDIR%%/data/System/PreferencesPlugin.txt
+%%WWWDIR%%/data/System/PreviewBackground.txt
+%%WWWDIR%%/data/System/PrintSkin.txt
+%%WWWDIR%%/data/System/ProjectContributor.txt
+%%WWWDIR%%/data/System/ProjectLogos.txt
+%%WWWDIR%%/data/System/QuerySearch.txt
+%%WWWDIR%%/data/System/QuietSave.txt
+%%WWWDIR%%/data/System/ReferenceManual.txt
+%%WWWDIR%%/data/System/RegistrationApprovals.txt
+%%WWWDIR%%/data/System/RegularExpression.txt
+%%WWWDIR%%/data/System/ReleaseHistory.txt
+%%WWWDIR%%/data/System/ReleaseNotes01x00.txt
+%%WWWDIR%%/data/System/RenameWeb.txt
+%%WWWDIR%%/data/System/RenderListPlugin.txt
+%%WWWDIR%%/data/System/ResetPassword.txt
+%%WWWDIR%%/data/System/SearchDoesNotWork.txt
+%%WWWDIR%%/data/System/SearchHelp.txt
+%%WWWDIR%%/data/System/SearchPatternCookbook.txt
+%%WWWDIR%%/data/System/ShortHand.txt
+%%WWWDIR%%/data/System/ShortcutMacros.txt
+%%WWWDIR%%/data/System/SimultaneousEdits.txt
+%%WWWDIR%%/data/System/SiteChanges.txt
+%%WWWDIR%%/data/System/SiteMap.txt
+%%WWWDIR%%/data/System/SitePermissions.txt
+%%WWWDIR%%/data/System/SiteTools.txt
+%%WWWDIR%%/data/System/SkinBrowser.txt
+%%WWWDIR%%/data/System/SkinTemplates.txt
+%%WWWDIR%%/data/System/Skins.txt
+%%WWWDIR%%/data/System/SlideShowPlugin.txt
+%%WWWDIR%%/data/System/SmiliesPlugin.txt
+%%WWWDIR%%/data/System/SpreadSheetPlugin.txt
+%%WWWDIR%%/data/System/StandardColors.txt
+%%WWWDIR%%/data/System/StartingPoints.txt
+%%WWWDIR%%/data/System/StaticMethod.txt
+%%WWWDIR%%/data/System/SystemRequirements.txt
+%%WWWDIR%%/data/System/TWikiCompatibilityPlugin.txt
+%%WWWDIR%%/data/System/TablePlugin.txt
+%%WWWDIR%%/data/System/TemplateTopics.txt
+%%WWWDIR%%/data/System/TemplateWeb.txt
+%%WWWDIR%%/data/System/TextEditor.txt
+%%WWWDIR%%/data/System/TextFormattingRules.txt
+%%WWWDIR%%/data/System/TimBernersLee.txt
+%%WWWDIR%%/data/System/TimeSpecifications.txt
+%%WWWDIR%%/data/System/TinyMCEFrequentlyAskedQuestions.txt
+%%WWWDIR%%/data/System/TinyMCEPlugin.txt
+%%WWWDIR%%/data/System/TinyMCEQuickHelp.txt
+%%WWWDIR%%/data/System/TipTopic001.txt
+%%WWWDIR%%/data/System/TipTopic002.txt
+%%WWWDIR%%/data/System/TipTopic003.txt
+%%WWWDIR%%/data/System/TipTopic004.txt
+%%WWWDIR%%/data/System/TipTopic005.txt
+%%WWWDIR%%/data/System/TipTopic006.txt
+%%WWWDIR%%/data/System/TipTopic007.txt
+%%WWWDIR%%/data/System/TipTopic008.txt
+%%WWWDIR%%/data/System/TipTopic009.txt
+%%WWWDIR%%/data/System/TipTopic010.txt
+%%WWWDIR%%/data/System/TipTopic011.txt
+%%WWWDIR%%/data/System/TipTopic012.txt
+%%WWWDIR%%/data/System/TipTopic013.txt
+%%WWWDIR%%/data/System/TipTopic014.txt
+%%WWWDIR%%/data/System/TipTopic015.txt
+%%WWWDIR%%/data/System/TipTopic016.txt
+%%WWWDIR%%/data/System/TipTopic017.txt
+%%WWWDIR%%/data/System/TipTopic018.txt
+%%WWWDIR%%/data/System/TipTopic019.txt
+%%WWWDIR%%/data/System/TipTopic020.txt
+%%WWWDIR%%/data/System/TipTopic021.txt
+%%WWWDIR%%/data/System/TipTopic022.txt
+%%WWWDIR%%/data/System/TipTopic023.txt
+%%WWWDIR%%/data/System/TipTopic024.txt
+%%WWWDIR%%/data/System/TipTopic025.txt
+%%WWWDIR%%/data/System/TipTopic026.txt
+%%WWWDIR%%/data/System/TipTopic027.txt
+%%WWWDIR%%/data/System/TipTopic028.txt
+%%WWWDIR%%/data/System/TipTopic029.txt
+%%WWWDIR%%/data/System/TipsContrib.txt
+%%WWWDIR%%/data/System/TipsOfTheDay.txt
+%%WWWDIR%%/data/System/TipsOfTheDayAddNew.txt
+%%WWWDIR%%/data/System/TipsOfTheDayAdmin.txt
+%%WWWDIR%%/data/System/TipsOfTheDayInclude.txt
+%%WWWDIR%%/data/System/TipsOfTheDayTemplate.txt
+%%WWWDIR%%/data/System/TipsTopics.txt
+%%WWWDIR%%/data/System/TopicDoesNotExistViewTemplate.txt
+%%WWWDIR%%/data/System/TopicUserMappingContrib.txt
+%%WWWDIR%%/data/System/TopicsAndWebs.txt
+%%WWWDIR%%/data/System/TwentyMinuteTutorial.txt
+%%WWWDIR%%/data/System/TwistyPlugin.txt
+%%WWWDIR%%/data/System/UpgradeGuide.txt
+%%WWWDIR%%/data/System/UserAuthentication.txt
+%%WWWDIR%%/data/System/UserDocumentationCategory.txt
+%%WWWDIR%%/data/System/UserForm.txt
+%%WWWDIR%%/data/System/UserRegistration.txt
+%%WWWDIR%%/data/System/UserSetting.txt
+%%WWWDIR%%/data/System/UserToolsCategory.txt
+%%WWWDIR%%/data/System/UsersGuide.txt
+%%WWWDIR%%/data/System/UsersTemplate.txt
+%%WWWDIR%%/data/System/UsingHTML.txt
+%%WWWDIR%%/data/System/VarACTIVATEDPLUGINS.txt
+%%WWWDIR%%/data/System/VarADDTOHEAD.txt
+%%WWWDIR%%/data/System/VarALLVARIABLES.txt
+%%WWWDIR%%/data/System/VarAQUA.txt
+%%WWWDIR%%/data/System/VarATTACHURL.txt
+%%WWWDIR%%/data/System/VarATTACHURLPATH.txt
+%%WWWDIR%%/data/System/VarAUTHREALM.txt
+%%WWWDIR%%/data/System/VarBASETOPIC.txt
+%%WWWDIR%%/data/System/VarBASEWEB.txt
+%%WWWDIR%%/data/System/VarBB.txt
+%%WWWDIR%%/data/System/VarBB2.txt
+%%WWWDIR%%/data/System/VarBB3.txt
+%%WWWDIR%%/data/System/VarBB4.txt
+%%WWWDIR%%/data/System/VarBLACK.txt
+%%WWWDIR%%/data/System/VarBLUE.txt
+%%WWWDIR%%/data/System/VarBR.txt
+%%WWWDIR%%/data/System/VarBROWN.txt
+%%WWWDIR%%/data/System/VarBULLET.txt
+%%WWWDIR%%/data/System/VarCALC.txt
+%%WWWDIR%%/data/System/VarCARET.txt
+%%WWWDIR%%/data/System/VarCOMMENT.txt
+%%WWWDIR%%/data/System/VarDATE.txt
+%%WWWDIR%%/data/System/VarDISPLAYTIME.txt
+%%WWWDIR%%/data/System/VarEDITACTION.txt
+%%WWWDIR%%/data/System/VarEDITTABLE.txt
+%%WWWDIR%%/data/System/VarENCODE.txt
+%%WWWDIR%%/data/System/VarENDCOLOR.txt
+%%WWWDIR%%/data/System/VarENDSECTION.txt
+%%WWWDIR%%/data/System/VarENV.txt
+%%WWWDIR%%/data/System/VarFAILEDPLUGINS.txt
+%%WWWDIR%%/data/System/VarFORMFIELD.txt
+%%WWWDIR%%/data/System/VarGMTIME.txt
+%%WWWDIR%%/data/System/VarGRAY.txt
+%%WWWDIR%%/data/System/VarGREEN.txt
+%%WWWDIR%%/data/System/VarGROUPS.txt
+%%WWWDIR%%/data/System/VarH.txt
+%%WWWDIR%%/data/System/VarHOMETOPIC.txt
+%%WWWDIR%%/data/System/VarHTTP.txt
+%%WWWDIR%%/data/System/VarHTTPHOST.txt
+%%WWWDIR%%/data/System/VarHTTPS.txt
+%%WWWDIR%%/data/System/VarI.txt
+%%WWWDIR%%/data/System/VarICON.txt
+%%WWWDIR%%/data/System/VarICONURL.txt
+%%WWWDIR%%/data/System/VarICONURLPATH.txt
+%%WWWDIR%%/data/System/VarIF.txt
+%%WWWDIR%%/data/System/VarINCLUDE.txt
+%%WWWDIR%%/data/System/VarINCLUDINGTOPIC.txt
+%%WWWDIR%%/data/System/VarINCLUDINGWEB.txt
+%%WWWDIR%%/data/System/VarLANGUAGE.txt
+%%WWWDIR%%/data/System/VarLANGUAGES.txt
+%%WWWDIR%%/data/System/VarLIME.txt
+%%WWWDIR%%/data/System/VarLOCALSITEPREFS.txt
+%%WWWDIR%%/data/System/VarLOGIN.txt
+%%WWWDIR%%/data/System/VarLOGOUT.txt
+%%WWWDIR%%/data/System/VarM.txt
+%%WWWDIR%%/data/System/VarMAINWEB.txt
+%%WWWDIR%%/data/System/VarMAKETEXT.txt
+%%WWWDIR%%/data/System/VarMAROON.txt
+%%WWWDIR%%/data/System/VarMETA.txt
+%%WWWDIR%%/data/System/VarMETASEARCH.txt
+%%WWWDIR%%/data/System/VarN.txt
+%%WWWDIR%%/data/System/VarNAVY.txt
+%%WWWDIR%%/data/System/VarNOP.txt
+%%WWWDIR%%/data/System/VarNOTIFYTOPIC.txt
+%%WWWDIR%%/data/System/VarOLIVE.txt
+%%WWWDIR%%/data/System/VarORANGE.txt
+%%WWWDIR%%/data/System/VarP.txt
+%%WWWDIR%%/data/System/VarPINK.txt
+%%WWWDIR%%/data/System/VarPLUGINDESCRIPTIONS.txt
+%%WWWDIR%%/data/System/VarPLUGINVERSION.txt
+%%WWWDIR%%/data/System/VarPUBURL.txt
+%%WWWDIR%%/data/System/VarPUBURLPATH.txt
+%%WWWDIR%%/data/System/VarPURPLE.txt
+%%WWWDIR%%/data/System/VarQ.txt
+%%WWWDIR%%/data/System/VarQUERYPARAMS.txt
+%%WWWDIR%%/data/System/VarQUERYSTRING.txt
+%%WWWDIR%%/data/System/VarRED.txt
+%%WWWDIR%%/data/System/VarREMOTEADDR.txt
+%%WWWDIR%%/data/System/VarREMOTEPORT.txt
+%%WWWDIR%%/data/System/VarREMOTEUSER.txt
+%%WWWDIR%%/data/System/VarRENDERLIST.txt
+%%WWWDIR%%/data/System/VarREVINFO.txt
+%%WWWDIR%%/data/System/VarS.txt
+%%WWWDIR%%/data/System/VarSCRIPTNAME.txt
+%%WWWDIR%%/data/System/VarSCRIPTSUFFIX.txt
+%%WWWDIR%%/data/System/VarSCRIPTURL.txt
+%%WWWDIR%%/data/System/VarSCRIPTURLPATH.txt
+%%WWWDIR%%/data/System/VarSEARCH.txt
+%%WWWDIR%%/data/System/VarSERVERTIME.txt
+%%WWWDIR%%/data/System/VarSESSIONID.txt
+%%WWWDIR%%/data/System/VarSESSIONVAR.txt
+%%WWWDIR%%/data/System/VarSESSIONVARIABLE.txt
+%%WWWDIR%%/data/System/VarSILVER.txt
+%%WWWDIR%%/data/System/VarSLIDESHOWEND.txt
+%%WWWDIR%%/data/System/VarSLIDESHOWSTART.txt
+%%WWWDIR%%/data/System/VarSPACEDTOPIC.txt
+%%WWWDIR%%/data/System/VarSPACEOUT.txt
+%%WWWDIR%%/data/System/VarSTARTINCLUDE.txt
+%%WWWDIR%%/data/System/VarSTARTSECTION.txt
+%%WWWDIR%%/data/System/VarSTATISTICSTOPIC.txt
+%%WWWDIR%%/data/System/VarSTOPINCLUDE.txt
+%%WWWDIR%%/data/System/VarSYSTEMWEB.txt
+%%WWWDIR%%/data/System/VarT.txt
+%%WWWDIR%%/data/System/VarTABLE.txt
+%%WWWDIR%%/data/System/VarTEAL.txt
+%%WWWDIR%%/data/System/VarTOC.txt
+%%WWWDIR%%/data/System/VarTOPIC.txt
+%%WWWDIR%%/data/System/VarTOPICLIST.txt
+%%WWWDIR%%/data/System/VarTOPICURL.txt
+%%WWWDIR%%/data/System/VarTWIKIWEB.txt
+%%WWWDIR%%/data/System/VarU.txt
+%%WWWDIR%%/data/System/VarURLPARAM.txt
+%%WWWDIR%%/data/System/VarUSERINFO.txt
+%%WWWDIR%%/data/System/VarUSERNAME.txt
+%%WWWDIR%%/data/System/VarUSERSWEB.txt
+%%WWWDIR%%/data/System/VarVAR.txt
+%%WWWDIR%%/data/System/VarVBAR.txt
+%%WWWDIR%%/data/System/VarWEB.txt
+%%WWWDIR%%/data/System/VarWEBLIST.txt
+%%WWWDIR%%/data/System/VarWEBPREFSTOPIC.txt
+%%WWWDIR%%/data/System/VarWHITE.txt
+%%WWWDIR%%/data/System/VarWIKIHOMEURL.txt
+%%WWWDIR%%/data/System/VarWIKINAME.txt
+%%WWWDIR%%/data/System/VarWIKIPREFSTOPIC.txt
+%%WWWDIR%%/data/System/VarWIKITOOLNAME.txt
+%%WWWDIR%%/data/System/VarWIKIUSERNAME.txt
+%%WWWDIR%%/data/System/VarWIKIUSERSTOPIC.txt
+%%WWWDIR%%/data/System/VarWIKIVERSION.txt
+%%WWWDIR%%/data/System/VarX.txt
+%%WWWDIR%%/data/System/VarY.txt
+%%WWWDIR%%/data/System/VarYELLOW.txt
+%%WWWDIR%%/data/System/WabiSabi.txt
+%%WWWDIR%%/data/System/WebAtom.txt
+%%WWWDIR%%/data/System/WebAtomBase.txt
+%%WWWDIR%%/data/System/WebBottomBarExample.txt
+%%WWWDIR%%/data/System/WebChanges.txt
+%%WWWDIR%%/data/System/WebChangesAlert.txt
+%%WWWDIR%%/data/System/WebCreateNewTopic.txt
+%%WWWDIR%%/data/System/WebCreateNewTopicTemplate.txt
+%%WWWDIR%%/data/System/WebHome.txt
+%%WWWDIR%%/data/System/WebIndex.txt
+%%WWWDIR%%/data/System/WebLeftBarCookbook.txt
+%%WWWDIR%%/data/System/WebLeftBarExample.txt
+%%WWWDIR%%/data/System/WebLeftBarLogin.txt
+%%WWWDIR%%/data/System/WebLeftBarPersonalTemplate.txt
+%%WWWDIR%%/data/System/WebLeftBarSearch.txt
+%%WWWDIR%%/data/System/WebLeftBarWebsList.txt
+%%WWWDIR%%/data/System/WebNotify.txt
+%%WWWDIR%%/data/System/WebPreferences.txt
+%%WWWDIR%%/data/System/WebPreferencesHelp.txt
+%%WWWDIR%%/data/System/WebRss.txt
+%%WWWDIR%%/data/System/WebRssBase.txt
+%%WWWDIR%%/data/System/WebSearch.txt
+%%WWWDIR%%/data/System/WebSearchAdvanced.txt
+%%WWWDIR%%/data/System/WebSiteTools.txt
+%%WWWDIR%%/data/System/WebStatistics.txt
+%%WWWDIR%%/data/System/WebTemplateTopics.txt
+%%WWWDIR%%/data/System/WebTopBarExample.txt
+%%WWWDIR%%/data/System/WebTopicCreator.txt
+%%WWWDIR%%/data/System/WebTopicEditTemplate.txt
+%%WWWDIR%%/data/System/WebTopicList.txt
+%%WWWDIR%%/data/System/WebsTable.txt
+%%WWWDIR%%/data/System/WelcomeGuest.txt
+%%WWWDIR%%/data/System/WhatIsWikiWiki.txt
+%%WWWDIR%%/data/System/WikiCulture.txt
+%%WWWDIR%%/data/System/WikiName.txt
+%%WWWDIR%%/data/System/WikiNotation.txt
+%%WWWDIR%%/data/System/WikiReferences.txt
+%%WWWDIR%%/data/System/WikiSyntax.txt
+%%WWWDIR%%/data/System/WikiSyntaxSummary.txt
+%%WWWDIR%%/data/System/WikiWikiClones.txt
+%%WWWDIR%%/data/System/WikiWord.txt
+%%WWWDIR%%/data/System/WysiwygPlugin.txt
+%%WWWDIR%%/data/System/WysiwygPluginSettings.txt
+%%WWWDIR%%/data/System/WysiwygPluginTopicLister.txt
+%%WWWDIR%%/data/System/YouAreHere.txt
+%%WWWDIR%%/data/TWiki/WebAtom.txt
+%%WWWDIR%%/data/TWiki/WebChanges.txt
+%%WWWDIR%%/data/TWiki/WebCreateNewTopic.txt
+%%WWWDIR%%/data/TWiki/WebHome.txt
+%%WWWDIR%%/data/TWiki/WebIndex.txt
+%%WWWDIR%%/data/TWiki/WebLeftBarExample.txt
+%%WWWDIR%%/data/TWiki/WebNotify.txt
+%%WWWDIR%%/data/TWiki/WebPreferences.txt
+%%WWWDIR%%/data/TWiki/WebRss.txt
+%%WWWDIR%%/data/TWiki/WebSearch.txt
+%%WWWDIR%%/data/TWiki/WebSearchAdvanced.txt
+%%WWWDIR%%/data/TWiki/WebStatistics.txt
+%%WWWDIR%%/data/TWiki/WebTopicList.txt
+%%WWWDIR%%/data/Trash/TrashAttachment.txt
+%%WWWDIR%%/data/Trash/WebAtom.txt
+%%WWWDIR%%/data/Trash/WebChanges.txt
+%%WWWDIR%%/data/Trash/WebHome.txt
+%%WWWDIR%%/data/Trash/WebIndex.txt
+%%WWWDIR%%/data/Trash/WebLeftBarExample.txt
+%%WWWDIR%%/data/Trash/WebNotify.txt
+%%WWWDIR%%/data/Trash/WebPreferences.txt
+%%WWWDIR%%/data/Trash/WebRss.txt
+%%WWWDIR%%/data/Trash/WebSearch.txt
+%%WWWDIR%%/data/Trash/WebSearchAdvanced.txt
+%%WWWDIR%%/data/Trash/WebStatistics.txt
+%%WWWDIR%%/data/Trash/WebTopicList.txt
+%%WWWDIR%%/data/_default/WebAtom.txt
+%%WWWDIR%%/data/_default/WebChanges.txt
+%%WWWDIR%%/data/_default/WebCreateNewTopic.txt
+%%WWWDIR%%/data/_default/WebHome.txt
+%%WWWDIR%%/data/_default/WebIndex.txt
+%%WWWDIR%%/data/_default/WebLeftBar.txt
+%%WWWDIR%%/data/_default/WebNotify.txt
+%%WWWDIR%%/data/_default/WebPreferences.txt
+%%WWWDIR%%/data/_default/WebRss.txt
+%%WWWDIR%%/data/_default/WebSearch.txt
+%%WWWDIR%%/data/_default/WebSearchAdvanced.txt
+%%WWWDIR%%/data/_default/WebStatistics.txt
+%%WWWDIR%%/data/_default/WebTopicList.txt
+%%WWWDIR%%/data/_empty/WebPreferences.txt
+%%WWWDIR%%/data/mime.types
+%%WWWDIR%%/foswiki_httpd_conf.txt
+%%WWWDIR%%/index.html
+%%WWWDIR%%/lib/Assert.pm
+%%WWWDIR%%/lib/CPAN/lib/Algorithm/Diff.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Driver.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Driver/DBI.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Driver/db_file.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Driver/file.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Driver/mysql.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Driver/postgresql.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Driver/sqlite.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/ErrorHandler.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/ID/incr.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/ID/md5.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/ID/static.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Serialize/default.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Serialize/freezethaw.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Serialize/storable.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Test/Default.pm
+%%WWWDIR%%/lib/CPAN/lib/CGI/Session/Tutorial.pm
+%%WWWDIR%%/lib/CPAN/lib/Error.pm
+%%WWWDIR%%/lib/CPAN/lib/Locale/Maketext/Extract.pm
+%%WWWDIR%%/lib/CPAN/lib/Locale/Maketext/Extract/Run.pm
+%%WWWDIR%%/lib/CPAN/lib/Locale/Maketext/Lexicon.pm
+%%WWWDIR%%/lib/CPAN/lib/Locale/Maketext/Lexicon/Auto.pm
+%%WWWDIR%%/lib/CPAN/lib/Locale/Maketext/Lexicon/Gettext.pm
+%%WWWDIR%%/lib/CPAN/lib/Locale/Maketext/Lexicon/Msgcat.pm
+%%WWWDIR%%/lib/CPAN/lib/Locale/Maketext/Lexicon/Tie.pm
+%%WWWDIR%%/lib/CPAN/lib/Text/Diff.pm
+%%WWWDIR%%/lib/DEPENDENCIES
+%%WWWDIR%%/lib/Foswiki.pm
+%%WWWDIR%%/lib/Foswiki.spec
+%%WWWDIR%%/lib/Foswiki/Access.pm
+%%WWWDIR%%/lib/Foswiki/AccessControlException.pm
+%%WWWDIR%%/lib/Foswiki/AggregateIterator.pm
+%%WWWDIR%%/lib/Foswiki/Attach.pm
+%%WWWDIR%%/lib/Foswiki/Attrs.pm
+%%WWWDIR%%/lib/Foswiki/Compatibility.pm
+%%WWWDIR%%/lib/Foswiki/Configure/CSS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checker.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/AuthScripts.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/BasicSanity.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/CGISetup.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/ConfigurationLogName.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/DataDir.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/DebugFileName.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/DefaultUrlHost.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/DispScriptUrlPath.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Environment.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Htpasswd/Encoding.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Htpasswd/FileName.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/LocalesDir.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/LogFileName.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/LoginManager.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/LoginNameFilterIn.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/LowerNational.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/MSWin32.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/MailProgram.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/MimeTypesFileName.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/MinPasswordLength.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/NameFilter.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/OS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/PROXY/HOST.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/PubDir.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/PubUrlPath.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/EgrepCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/ExtOption.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/FgrepCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/SearchAlgorithm.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/asciiFileSuffixes.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/ciCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/ciDateCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/coCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/delRevCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/diffCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/histCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/infoCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/initBinaryCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/initTextCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/lockCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/rlogDateCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/tmpBinaryCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS/unlockCmd.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Register/AllowLoginName.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Register/NeedVerification.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/RegistrationApprovals.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/SafeEnvPath.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/ScriptSuffix.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/ScriptUrlPath.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Sessions/ExpireAfter.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Site/CharSet.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Site/Locale.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/StoreImpl.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/TemplateDir.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/UploadFilter.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/UpperNational.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/UseClientSessions.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/UseLocale.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/WarningFileName.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/WebMasterEmail.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/WorkingDir.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/cygwin.pm
+%%WWWDIR%%/lib/Foswiki/Configure/FINDEXTENSIONS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/FoswikiCfg.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Item.pm
+%%WWWDIR%%/lib/Foswiki/Configure/JS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/LANGUAGES.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Load.pm
+%%WWWDIR%%/lib/Foswiki/Configure/PLUGINS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Pluggable.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Root.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Section.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Type.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/BOOLEAN.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/COMMAND.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/LANGUAGE.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/NUMBER.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/OCTAL.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/PASSWORD.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/PATH.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/PERL.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/REGEX.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/SELECT.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/SELECTCLASS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/STRING.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/UNKNOWN.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/URL.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Types/URLPATH.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UI.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/AUTH.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/EXTEND.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/EXTENSIONS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/FINDEXTENSIONS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/LANGUAGES.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/PLUGINS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/PasswordProtected.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/Root.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/Section.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/TAGS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/UPDATE.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/Value.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Value.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Valuer.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/BehaviourContrib.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/JSCalendarContrib.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Change.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/CompatibilityHacks.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Config.spec
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Constants.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Subscriber.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Subscription.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/TopicContext.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/UpData.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/WebNotify.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/PatternSkin.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/TipsContrib.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/TopicUserMappingContrib.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/TopicUserMappingContrib/Config.spec
+%%WWWDIR%%/lib/Foswiki/Engine.pm
+%%WWWDIR%%/lib/Foswiki/Engine/CGI.pm
+%%WWWDIR%%/lib/Foswiki/Engine/CLI.pm
+%%WWWDIR%%/lib/Foswiki/Engine/Legacy.pm
+%%WWWDIR%%/lib/Foswiki/EngineException.pm
+%%WWWDIR%%/lib/Foswiki/Form.pm
+%%WWWDIR%%/lib/Foswiki/Form/Checkbox.pm
+%%WWWDIR%%/lib/Foswiki/Form/Date.pm
+%%WWWDIR%%/lib/Foswiki/Form/FieldDefinition.pm
+%%WWWDIR%%/lib/Foswiki/Form/Label.pm
+%%WWWDIR%%/lib/Foswiki/Form/ListFieldDefinition.pm
+%%WWWDIR%%/lib/Foswiki/Form/Radio.pm
+%%WWWDIR%%/lib/Foswiki/Form/Select.pm
+%%WWWDIR%%/lib/Foswiki/Form/Text.pm
+%%WWWDIR%%/lib/Foswiki/Form/Textarea.pm
+%%WWWDIR%%/lib/Foswiki/Func.pm
+%%WWWDIR%%/lib/Foswiki/I18N.pm
+%%WWWDIR%%/lib/Foswiki/I18N/Extract.pm
+%%WWWDIR%%/lib/Foswiki/I18N/Fallback.pm
+%%WWWDIR%%/lib/Foswiki/If/Node.pm
+%%WWWDIR%%/lib/Foswiki/If/OP_allows.pm
+%%WWWDIR%%/lib/Foswiki/If/OP_context.pm
+%%WWWDIR%%/lib/Foswiki/If/OP_defined.pm
+%%WWWDIR%%/lib/Foswiki/If/OP_dollar.pm
+%%WWWDIR%%/lib/Foswiki/If/OP_ingroup.pm
+%%WWWDIR%%/lib/Foswiki/If/OP_isempty.pm
+%%WWWDIR%%/lib/Foswiki/If/OP_istopic.pm
+%%WWWDIR%%/lib/Foswiki/If/OP_isweb.pm
+%%WWWDIR%%/lib/Foswiki/If/Parser.pm
+%%WWWDIR%%/lib/Foswiki/IncludeHandlers/doc.pm
+%%WWWDIR%%/lib/Foswiki/IncludeHandlers/http.pm
+%%WWWDIR%%/lib/Foswiki/IncludeHandlers/https.pm
+%%WWWDIR%%/lib/Foswiki/Infix/Error.pm
+%%WWWDIR%%/lib/Foswiki/Infix/Node.pm
+%%WWWDIR%%/lib/Foswiki/Infix/Parser.pm
+%%WWWDIR%%/lib/Foswiki/Iterator.pm
+%%WWWDIR%%/lib/Foswiki/LineIterator.pm
+%%WWWDIR%%/lib/Foswiki/ListIterator.pm
+%%WWWDIR%%/lib/Foswiki/Logger.pm
+%%WWWDIR%%/lib/Foswiki/Logger/PlainFile.pm
+%%WWWDIR%%/lib/Foswiki/LoginManager.pm
+%%WWWDIR%%/lib/Foswiki/LoginManager/ApacheLogin.pm
+%%WWWDIR%%/lib/Foswiki/LoginManager/Session.pm
+%%WWWDIR%%/lib/Foswiki/LoginManager/TemplateLogin.pm
+%%WWWDIR%%/lib/Foswiki/Merge.pm
+%%WWWDIR%%/lib/Foswiki/Meta.pm
+%%WWWDIR%%/lib/Foswiki/Net.pm
+%%WWWDIR%%/lib/Foswiki/Net/HTTPResponse.pm
+%%WWWDIR%%/lib/Foswiki/Net/UserCredAgent.pm
+%%WWWDIR%%/lib/Foswiki/OopsException.pm
+%%WWWDIR%%/lib/Foswiki/Plugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/CommentPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/CommentPlugin/Comment.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/EditTablePlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/EditTablePlugin/Core.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/EditTablePlugin/Data.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/EditTablePlugin/EditTableData.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/EmptyPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/InterwikiPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/PreferencesPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/RenderListPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/SlideShowPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/SlideShowPlugin/SlideShow.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/SmiliesPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/SpreadSheetPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/SpreadSheetPlugin/Calc.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/TWikiCompatibilityPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/TWikiCompatibilityPlugin/Config.spec
+%%WWWDIR%%/lib/Foswiki/Plugins/TablePlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/TablePlugin/Core.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/TinyMCEPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/TwistyPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin/Constants.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin/HTML2TML.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin/HTML2TML/Base.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin/HTML2TML/Leaf.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin/HTML2TML/Node.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin/HTML2TML/WC.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin/TML2HTML.pm
+%%WWWDIR%%/lib/Foswiki/Plurals.pm
+%%WWWDIR%%/lib/Foswiki/Prefs.pm
+%%WWWDIR%%/lib/Foswiki/Prefs/Parser.pm
+%%WWWDIR%%/lib/Foswiki/Prefs/PrefsCache.pm
+%%WWWDIR%%/lib/Foswiki/Query/BinaryOP.pm
+%%WWWDIR%%/lib/Foswiki/Query/HoistREs.pm
+%%WWWDIR%%/lib/Foswiki/Query/Node.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_and.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_d2n.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_dot.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_eq.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_gt.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_gte.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_lc.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_length.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_like.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_lt.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_lte.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_ne.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_not.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_ob.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_or.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_ref.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_uc.pm
+%%WWWDIR%%/lib/Foswiki/Query/OP_where.pm
+%%WWWDIR%%/lib/Foswiki/Query/Parser.pm
+%%WWWDIR%%/lib/Foswiki/Query/UnaryOP.pm
+%%WWWDIR%%/lib/Foswiki/Render.pm
+%%WWWDIR%%/lib/Foswiki/Request.pm
+%%WWWDIR%%/lib/Foswiki/Request/Upload.pm
+%%WWWDIR%%/lib/Foswiki/Response.pm
+%%WWWDIR%%/lib/Foswiki/Sandbox.pm
+%%WWWDIR%%/lib/Foswiki/Search.pm
+%%WWWDIR%%/lib/Foswiki/Store.pm
+%%WWWDIR%%/lib/Foswiki/Store/QueryAlgorithms/BruteForce.pm
+%%WWWDIR%%/lib/Foswiki/Store/RcsFile.pm
+%%WWWDIR%%/lib/Foswiki/Store/RcsLite.pm
+%%WWWDIR%%/lib/Foswiki/Store/RcsWrap.pm
+%%WWWDIR%%/lib/Foswiki/Store/SearchAlgorithms/Forking.pm
+%%WWWDIR%%/lib/Foswiki/Store/SearchAlgorithms/PurePerl.pm
+%%WWWDIR%%/lib/Foswiki/Templates.pm
+%%WWWDIR%%/lib/Foswiki/Time.pm
+%%WWWDIR%%/lib/Foswiki/UI.pm
+%%WWWDIR%%/lib/Foswiki/UI/ChangeForm.pm
+%%WWWDIR%%/lib/Foswiki/UI/Changes.pm
+%%WWWDIR%%/lib/Foswiki/UI/Edit.pm
+%%WWWDIR%%/lib/Foswiki/UI/Manage.pm
+%%WWWDIR%%/lib/Foswiki/UI/Oops.pm
+%%WWWDIR%%/lib/Foswiki/UI/Preview.pm
+%%WWWDIR%%/lib/Foswiki/UI/RDiff.pm
+%%WWWDIR%%/lib/Foswiki/UI/Register.pm
+%%WWWDIR%%/lib/Foswiki/UI/Rest.pm
+%%WWWDIR%%/lib/Foswiki/UI/Save.pm
+%%WWWDIR%%/lib/Foswiki/UI/Search.pm
+%%WWWDIR%%/lib/Foswiki/UI/Statistics.pm
+%%WWWDIR%%/lib/Foswiki/UI/Upload.pm
+%%WWWDIR%%/lib/Foswiki/UI/View.pm
+%%WWWDIR%%/lib/Foswiki/UserMapping.pm
+%%WWWDIR%%/lib/Foswiki/Users.pm
+%%WWWDIR%%/lib/Foswiki/Users/ApacheHtpasswdUser.pm
+%%WWWDIR%%/lib/Foswiki/Users/BaseUserMapping.pm
+%%WWWDIR%%/lib/Foswiki/Users/HtPasswdUser.pm
+%%WWWDIR%%/lib/Foswiki/Users/Password.pm
+%%WWWDIR%%/lib/Foswiki/Users/TopicUserMapping.pm
+%%WWWDIR%%/lib/Foswiki/Validation.pm
+%%WWWDIR%%/lib/Foswiki/ValidationException.pm
+@unexec if [ "`md5 -q %D/%%WWWDIR%%/lib/LocalSite.cfg`" = "c648a70f925757e7e982a5a13d47cfe7" ]; then rm -f %D/%%WWWDIR%%/lib/LocalSite.cfg; fi
+%%WWWDIR%%/lib/MANIFEST
+%%WWWDIR%%/lib/Monitor.pm
+%%WWWDIR%%/lib/TWiki.pm
+%%WWWDIR%%/lib/TWiki/Attrs.pm
+%%WWWDIR%%/lib/TWiki/Form.pm
+%%WWWDIR%%/lib/TWiki/Func.pm
+%%WWWDIR%%/lib/TWiki/LineIterator.pm
+%%WWWDIR%%/lib/TWiki/ListIterator.pm
+%%WWWDIR%%/lib/TWiki/Meta.pm
+%%WWWDIR%%/lib/TWiki/OopsException.pm
+%%WWWDIR%%/lib/TWiki/Plugins.pm
+%%WWWDIR%%/lib/TWiki/Prefs.pm
+%%WWWDIR%%/lib/TWiki/Sandbox.pm
+%%WWWDIR%%/lib/TWiki/Time.pm
+%%WWWDIR%%/lib/TWiki/UI.pm
+%%WWWDIR%%/locale/Foswiki.pot
+%%WWWDIR%%/locale/bg.po
+%%WWWDIR%%/locale/cs.po
+%%WWWDIR%%/locale/da.po
+%%WWWDIR%%/locale/de.po
+%%WWWDIR%%/locale/es.po
+%%WWWDIR%%/locale/fi.po
+%%WWWDIR%%/locale/fr.po
+%%WWWDIR%%/locale/it.po
+%%WWWDIR%%/locale/ja.po
+%%WWWDIR%%/locale/nl.po
+%%WWWDIR%%/locale/no.po
+%%WWWDIR%%/locale/pl.po
+%%WWWDIR%%/locale/pt-br.po
+%%WWWDIR%%/locale/pt.po
+%%WWWDIR%%/locale/ru.po
+%%WWWDIR%%/locale/sv.po
+%%WWWDIR%%/locale/uk.po
+%%WWWDIR%%/locale/zh-cn.po
+%%WWWDIR%%/locale/zh-tw.po
+%%WWWDIR%%/pub-htaccess.txt
+%%WWWDIR%%/pub/System/BeginnersStartHere/BT_logo.gif
+%%WWWDIR%%/pub/System/BeginnersStartHere/Disney_logo.gif
+%%WWWDIR%%/pub/System/BeginnersStartHere/EpicGames_logo.gif
+%%WWWDIR%%/pub/System/BeginnersStartHere/Motorola_logo.gif
+%%WWWDIR%%/pub/System/BeginnersStartHere/SAP_logo.gif
+%%WWWDIR%%/pub/System/BeginnersStartHere/hula.gif
+%%WWWDIR%%/pub/System/BeginnersStartHere/lego.gif
+%%WWWDIR%%/pub/System/BeginnersStartHere/myco.gif
+%%WWWDIR%%/pub/System/BeginnersStartHere/whiteboard.gif
+%%WWWDIR%%/pub/System/BehaviourContrib/behaviour.compressed.js
+%%WWWDIR%%/pub/System/BehaviourContrib/behaviour.compressed_src.js
+%%WWWDIR%%/pub/System/BehaviourContrib/behaviour.js
+%%WWWDIR%%/pub/System/BehaviourContrib/behaviour_src.js
+%%WWWDIR%%/pub/System/CommentPlugin/wikiringlogo20x20.png
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x11_photo.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x11_video.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x13_changes-small.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x13_detail-small.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x13_search-small.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_16x16.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_7x5_bullet-blue.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_FileTypeIcons.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Plugins_FormPlugin_error.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Plugins_TablePlugin_sort_icons.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Plugins_TagMePlugin_buttons_gradient.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_RSS_XML.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_closed.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_done.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_new.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_todo.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_updated.psd
+%%WWWDIR%%/pub/System/DocumentGraphics/_filetypes.txt
+%%WWWDIR%%/pub/System/DocumentGraphics/addon.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/air.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/airplane.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/application.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowbdown.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowbleft.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowbright.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowbup.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowdot.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowdown.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowleft.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowright-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowright.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/arrowup.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/as.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/attachfile.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/award.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/bat.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/bed.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/blank-bg.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/blank.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/bmp.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/book.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/bubble.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/bug.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/building.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/buildings.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/c.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/cachetopic.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/changes-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/changes.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/checked.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/choice-cancel.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/choice-no.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/choice-yes.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/closed.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/code.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/css.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/days.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/detail.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dll.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/doc.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/done.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_ld.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_lr.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_lrd.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_rd.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_ud.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_udl.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_udlr.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_udr.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_ul.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_ulr.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_ur.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/down.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/download.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/edittable.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/edittopic.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/else.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/eml.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/empty.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/exe.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/external.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/fax.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/feed.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/filter.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/fla.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/flag-gray-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/flag-gray.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/flag.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/folder.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/fon.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/food.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/gear.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/gif.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/globe.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/go_back.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/go_end.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/go_fb.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/go_ff.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/go_forward.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/go_start.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/graduation.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/group.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/h.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/hand.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/heart.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/help.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/hlp.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/home.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/hourglass.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/html.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/index.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/indexlist.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/info.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/java.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/jpg.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/js.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/key.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-aqua.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-blue.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-box-aqua.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-box-blue.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-box-gray.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-box-green.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-box-orange.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-box-purple.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-box-red.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-box-yellow.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-gray.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-green.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-orange.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-purple.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-red.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/led-yellow.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/left.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_ld.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_lr.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_lrd.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_rd.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_ud.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_udl.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_udlr.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_udr.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_ul.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_ulr.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_ur.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/line_ur_gray.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/lock.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/lockfolder.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/lockfoldergray.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/locktopic.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/locktopicgray.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/logout.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/luggage.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/mail.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/map.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/mdb.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/megaphone.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/minus.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/mobile.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/monospace.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/more-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/more.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/mov.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/move.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/mp3.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/new.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/newtopic.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/note.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/notify.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/package.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/parent_gray.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/parked.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/parts.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/pdf.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/pencil.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/person.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/persons.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/phone.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/photo.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/pl.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/plugin.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/plus.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/png.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/ppt.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/presentation.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/printtopic.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/processing-32-bg.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/processing-32.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/processing-bg.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/processing.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/proportional.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/ps.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/psd.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/puzzle.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/py.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/question.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/quiet.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/ram.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/recentchanges.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/refreshtopic.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/reg.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/rfc.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/right.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/rss-feed.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/rss-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/save.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/search-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/searchpackage.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/searchtag.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/searchtopic.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/sh.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/sitemap.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/sitetree.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/skin.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/skype.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/sniff.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/sort.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/stargold.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/starred.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/statistics.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/stop.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/svg.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/swf.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/table.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tablesortdiamond.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tablesortdown.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tablesortup.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag-black.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag-blue.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag-brown.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag-green.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag-magenta.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag-orange.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag-purple.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag-red.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag-yellow.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tag.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/target-blue.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/target-gray.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/target-green.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/target-orange.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/target-red.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/target.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tip.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/todo.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toggleclose-mini.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toggleclose-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toggleclose.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/togglecloseleft-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toggleopen-mini.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toggleopen-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toggleopen.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toggleopenleft-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toggleopenleft.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/topicbacklinks.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/topicdiffs.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/trash.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/ttf.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/txt.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/unchecked.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/up.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/updated.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/useractive.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/userinactive.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/uweb-bo.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/uweb-bo12.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/uweb-g.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/uweb-gs.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/uweb-m12.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/uweb-o.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/uweb-o12.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/uweb-oo.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/uweb-os.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/vector.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/video.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/viewtopic.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/vsd.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/warning.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/watch.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/wav.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/web-bg-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/web-bg.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/wip.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/wrench.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/wri.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/xls.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/xml-feed.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/xml-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/xml.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/xsl.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/zip.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/EditTablePluginCalendarExample.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/ScreenshotEditCell1.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/ScreenshotEditCell2.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/btn_delete.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/btn_delete_disabled.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/btn_delete_over.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/btn_move.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/btn_move_disabled.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/btn_move_over.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/edittable.css
+%%WWWDIR%%/pub/System/EditTablePlugin/edittable.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/edittable.js
+%%WWWDIR%%/pub/System/EditTablePlugin/img.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/menuarrow.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/move_done_bg_anim.gif
+%%WWWDIR%%/pub/System/EditTablePlugin/separator_bg_anim.gif
+%%WWWDIR%%/pub/System/FileAttachment/Sample.txt
+%%WWWDIR%%/pub/System/FileAttachment/Smile.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/ChangeLog
+%%WWWDIR%%/pub/System/JSCalendarContrib/README
+%%WWWDIR%%/pub/System/JSCalendarContrib/bugtest-hidden-selects.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-blue.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-blue2.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-brown.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-green.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-setup.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-setup_stripped.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-system.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-tas.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-1.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-2.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-cold-1.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-cold-2.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar.php
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar_stripped.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/dayinfo.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/doc/html/field-button.jpg
+%%WWWDIR%%/pub/System/JSCalendarContrib/doc/html/reference-Z-S.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/doc/html/reference.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/doc/html/reference.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/doc/reference.pdf
+%%WWWDIR%%/pub/System/JSCalendarContrib/foswiki.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/img.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/index.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-af.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-al.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-bg.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-big5-utf8.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-big5.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-br.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-ca.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-cs-utf8.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-cs-win.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-da.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-de.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-du.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-el.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-en.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-es.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-fi.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-fr.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-he-utf8.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-hr-utf8.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-hr.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-hu.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-it.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-jp.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-ko-utf8.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-ko.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-lt-utf8.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-lt.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-lv.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-nl.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-no.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-pl-utf8.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-pl.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-pt.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-ro.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-ru.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-ru_win_.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-si.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-sk.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-sp.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-sv.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-tr.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-zh.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/lang/cn_utf8.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/menuarrow.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/menuarrow2.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/multiple-dates.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/release-notes.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/simple-1.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/simple-2.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/simple-3.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/active-bg.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/dark-bg.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/hover-bg.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/menuarrow.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/normal-bg.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/rowhover-bg.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/status-bg.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/theme.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/title-bg.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/today-bg.gif
+%%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua/transparent-bg.png
+%%WWWDIR%%/pub/System/JSCalendarContrib/test-position.html
+%%WWWDIR%%/pub/System/JSCalendarContrib/test.php
+%%WWWDIR%%/pub/System/JSCalendarContrib/wikiringlogo20x20.png
+%%WWWDIR%%/pub/System/JavascriptFiles/foswiki.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiArray.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiCSS.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiEvent.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiForm.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiHTML.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiPref.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiString.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiStringUnicodeChars.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiStyles.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiWindow.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswiki_edit.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswiki_renamebase.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikilib.js
+%%WWWDIR%%/pub/System/JavascriptFiles/strikeone.js
+%%WWWDIR%%/pub/System/MailerContrib/logo.gif
+%%WWWDIR%%/pub/System/MailerContrib/wikiringlogo20x20.png
+%%WWWDIR%%/pub/System/PatternSkin/TWiki_header.gif
+%%WWWDIR%%/pub/System/PatternSkin/background_alert.gif
+%%WWWDIR%%/pub/System/PatternSkin/bg_button_gradient.gif
+%%WWWDIR%%/pub/System/PatternSkin/bg_buttoncancel_gradient.gif
+%%WWWDIR%%/pub/System/PatternSkin/bg_submit_gradient.gif
+%%WWWDIR%%/pub/System/PatternSkin/bullet-lock.gif
+%%WWWDIR%%/pub/System/PatternSkin/bullet-personal_sidebar.gif
+%%WWWDIR%%/pub/System/PatternSkin/bullet-toc.gif
+%%WWWDIR%%/pub/System/PatternSkin/button_arrow.gif
+%%WWWDIR%%/pub/System/PatternSkin/button_font_selector.gif
+%%WWWDIR%%/pub/System/PatternSkin/colors.css
+%%WWWDIR%%/pub/System/PatternSkin/column_left.css
+%%WWWDIR%%/pub/System/PatternSkin/column_none.css
+%%WWWDIR%%/pub/System/PatternSkin/column_right.css
+%%WWWDIR%%/pub/System/PatternSkin/column_twiki.css
+%%WWWDIR%%/pub/System/PatternSkin/form_gradient.gif
+%%WWWDIR%%/pub/System/PatternSkin/layout.css
+%%WWWDIR%%/pub/System/PatternSkin/pattern.js
+%%WWWDIR%%/pub/System/PatternSkin/pattern_edit.js
+%%WWWDIR%%/pub/System/PatternSkin/patternskin_screenshot.jpg
+%%WWWDIR%%/pub/System/PatternSkin/patternskin_screenshot_full.png
+%%WWWDIR%%/pub/System/PatternSkin/print.css
+%%WWWDIR%%/pub/System/PatternSkin/style.css
+%%WWWDIR%%/pub/System/PatternSkin/theme_foswiki.css
+%%WWWDIR%%/pub/System/PatternSkin/theme_foswiki_noframe.css
+%%WWWDIR%%/pub/System/PatternSkin/theme_twiki.css
+%%WWWDIR%%/pub/System/PatternSkin/top_bar_gradient.png
+%%WWWDIR%%/pub/System/PatternSkin/webtopiccreator.js
+%%WWWDIR%%/pub/System/PatternSkinCss/CSS_element_layout_view.pattern.tmpl.png
+%%WWWDIR%%/pub/System/PatternSkinCssCookbookCenterPage/centerpage.css
+%%WWWDIR%%/pub/System/PatternSkinCssCookbookCenterPageBorder/centerpageborder.css
+%%WWWDIR%%/pub/System/PatternSkinCssCookbookCenterPageBorder/gradient_page.gif
+%%WWWDIR%%/pub/System/PatternSkinCssCookbookCenterPageBorder/striped_pageshadow.gif
+%%WWWDIR%%/pub/System/PatternSkinCssCookbookEditTableStyle/edittable.css
+%%WWWDIR%%/pub/System/PatternSkinCssCookbookFonts/fonts.css
+%%WWWDIR%%/pub/System/PatternSkinCssCookbookNoLeftBar/hideleftbar.css
+%%WWWDIR%%/pub/System/PatternSkinCssCookbookNoTopBar/notopbar.css
+%%WWWDIR%%/pub/System/PatternSkinGraphics/bg_button_16x16_generic.psd
+%%WWWDIR%%/pub/System/PatternSkinGraphics/bg_button_gradient.psd
+%%WWWDIR%%/pub/System/PatternSkinGraphics/bg_buttoncancel_gradient.psd
+%%WWWDIR%%/pub/System/PatternSkinGraphics/bg_submit_gradient.psd
+%%WWWDIR%%/pub/System/PatternSkinGraphics/button_arrow.psd
+%%WWWDIR%%/pub/System/PatternSkinGraphics/button_font_selector.psd
+%%WWWDIR%%/pub/System/PatternSkinGraphics/top_bar_gradient.psd
+%%WWWDIR%%/pub/System/PlainSkin/fullscreen.gif
+%%WWWDIR%%/pub/System/PlainSkin/screenshot.gif
+%%WWWDIR%%/pub/System/PreviewBackground/blankltgraybg.gif
+%%WWWDIR%%/pub/System/PreviewBackground/blankwhitebg.gif
+%%WWWDIR%%/pub/System/PreviewBackground/preview2bg.gif
+%%WWWDIR%%/pub/System/PreviewBackground/previewbg.gif
+%%WWWDIR%%/pub/System/PrintSkin/fullscreen.gif
+%%WWWDIR%%/pub/System/PrintSkin/screenshot.gif
+%%WWWDIR%%/pub/System/ProjectContributor/AUTHORS
+%%WWWDIR%%/pub/System/ProjectLogos/favicon.ico
+%%WWWDIR%%/pub/System/ProjectLogos/foswiki-badge.gif
+%%WWWDIR%%/pub/System/ProjectLogos/foswiki-logo-slogan.png
+%%WWWDIR%%/pub/System/ProjectLogos/foswiki-logo.png
+%%WWWDIR%%/pub/System/ProjectLogos/foswiki-logo.xcf
+%%WWWDIR%%/pub/System/ProjectLogos/foswiki-poweredby.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/doc.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/dot_ud.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/dot_udr.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/dot_ur.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/email.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/empty.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/file.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/files.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/folder.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/folders.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/globe.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/group.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/home.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/image.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/pdf.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/person.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/persons.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/ppt.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/see.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/sound.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/trend.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/virtualhome.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/virtualperson.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/virtualpersons.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/xls.gif
+%%WWWDIR%%/pub/System/RenderListPlugin/zip.gif
+%%WWWDIR%%/pub/System/SkinTemplates/base.css
+%%WWWDIR%%/pub/System/SkinTemplates/default.css
+%%WWWDIR%%/pub/System/SkinTemplates/oopsmore_diff_debug.gif
+%%WWWDIR%%/pub/System/SkinTemplates/oopsmore_diff_sequential.gif
+%%WWWDIR%%/pub/System/SkinTemplates/oopsmore_diff_sidebyside.gif
+%%WWWDIR%%/pub/System/SlideShowPlugin/clearpixel.gif
+%%WWWDIR%%/pub/System/SlideShowPlugin/endpres.gif
+%%WWWDIR%%/pub/System/SlideShowPlugin/first.gif
+%%WWWDIR%%/pub/System/SlideShowPlugin/last.gif
+%%WWWDIR%%/pub/System/SlideShowPlugin/logo.gif
+%%WWWDIR%%/pub/System/SlideShowPlugin/next.gif
+%%WWWDIR%%/pub/System/SlideShowPlugin/prev.gif
+%%WWWDIR%%/pub/System/SlideShowPlugin/startpres.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/biggrin.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/confused.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/cool.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/devil.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/devilwink.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/eek.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/frown.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/indifferent.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/love.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/mad.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/no.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/redface.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/rolleyes.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/sealed.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/skull.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/smile.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/thumbs.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/tongue.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/wink.gif
+%%WWWDIR%%/pub/System/SmiliesPlugin/yes.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/foswiki.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/foswiki_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/foswiki_tiny.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/foswiki_tiny_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/screenshot.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/changelog
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/docs/index.html
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_advanced.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_advanced.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_flash_list.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_full.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_full.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_image_list.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_link_list.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_media_list.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_simple.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_template.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_template_list.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_word.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/example_word.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/logo.jpg
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/logo_over.jpg
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/templates/count.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/templates/editing_details.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/templates/editors_comment.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/templates/invoice.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/templates/layout1.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/templates/snippet1.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/blank.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/langs/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/license.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/css/advhr.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/images/advhr.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/jscripts/rule.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/rule.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/css/advimage.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/image.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/images/sample.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/jscripts/functions.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/css/advlink.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/jscripts/functions.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/link.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autosave/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autosave/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/cleanup/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/cleanup/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/cleanup/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/contextmenu/css/contextmenu.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/contextmenu/images/spacer.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/contextmenu/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/css/devkit.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/css/devkit_ui.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/devkit.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/images/flip_down.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/images/flip_up.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/jscripts/devkit.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/jscripts/diff.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/directionality/images/ltr.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/directionality/images/rtl.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/directionality/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/directionality/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/emotions.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/emotions.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-cool.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-cry.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-embarassed.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-foot-in-mouth.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-frown.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-innocent.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-kiss.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-laughing.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-money-mouth.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-sealed.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-smile.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-surprised.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-tongue-out.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-undecided.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-wink.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-yell.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/jscripts/functions.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/css/content.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/css/flash.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/flash.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/images/flash.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/jscripts/flash.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/attach.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/colours.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/css/popup.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/css/popup_src.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/images/attach.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/images/colour.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/images/hide.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/images/tt.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/attach.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/attach_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/colour.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/colour_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css/advimage.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/image.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/images/sample.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/jscripts/functions.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/jscripts/functions_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/blank.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/fullpage.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/images/add.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/images/fullpage.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/images/move_down.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/images/move_up.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/images/remove.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/jscripts/fullpage.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/css/page.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/fullscreen.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/images/fullscreen.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/iespell/images/iespell.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/iespell/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/iespell/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css/inlinepopup.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/spacer.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_close.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_maximize.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_minimize.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_resize.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/jscripts/mcwindows.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images/insertdate.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images/inserttime.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/images/absolute.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/images/backward.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/images/forward.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/images/insert_layer.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/images/insertlayer.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/images/movebackward.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/images/moveforward.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/css/content.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/css/media.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/images/flash.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/images/media.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/images/quicktime.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/images/realmedia.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/images/shockwave.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/images/windowsmedia.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/jscripts/embed.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/jscripts/media.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/media.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking/images/nonbreaking.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable/css/noneditable.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/blank.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/css/blank.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/css/pasteword.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/images/pastetext.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/images/pasteword.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/images/selectall.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/jscripts/pastetext.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/jscripts/pasteword.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/pastetext.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/pasteword.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/example.html
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/images/preview.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/jscripts/embed.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/print/images/print.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/print/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/print/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/save/images/cancel.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/save/images/save.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/save/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/save/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/replace.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/replace_all_button_bg.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/replace_button_bg.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/search.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/jscripts/searchreplace.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/searchreplace.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/css/props.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/images/apply_button_bg.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/images/style_info.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/images/styleprops.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/jscripts/props.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/props.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/cell.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/css/cell.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/css/row.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/css/table.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/buttons.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_cell_props.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_delete.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_delete_col.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_delete_row.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_col_after.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_col_before.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_row_after.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_row_before.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_merge_cells.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_row_props.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images/table_split_cells.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/jscripts/cell.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/jscripts/merge_cells.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/jscripts/row.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/jscripts/table.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/merge_cells.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/row.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/table.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/blank.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/css/template.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/images/template.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/jscripts/template.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/template.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars/images/visualchars.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/attributes.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/cite.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css/attributes.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css/popup.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css/xhtmlxtras.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/del.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images/abbr.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images/acronym.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images/attribs.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images/cite.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images/date_time.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images/del.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images/ins.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images/remove_button_bg.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/ins.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/abbr.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/acronym.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/attributes.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/cite.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/del.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/element_common.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/ins.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/zoom/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/zoom/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/zoom/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/about.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/anchor.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/charmap.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/color_picker.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/css/colorpicker.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_content.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_popup.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_ui.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/about.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/common_buttons.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/create_accessible_content.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_anchor_window.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_image_window.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_link_window.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_table_window.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/index.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_anchor_button.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_image_button.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_link_button.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_table_button.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/style.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/editor_template.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/editor_template_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/image.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/anchor.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/anchor_symbol.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/backcolor.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/bold.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_de_se.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_es.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_fr.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_ru.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_tw.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/browse.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/bullist.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/button_menu.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/buttons.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/cancel_button_bg.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/charmap.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/cleanup.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/close.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/code.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/color.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/colors.jpg
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/copy.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/custom_1.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/cut.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/forecolor.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/help.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/hr.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/image.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/indent.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/insert_button_bg.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/italic.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_de_se.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_es.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_ru.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_tw.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/justifycenter.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/justifyfull.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/justifyleft.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/justifyright.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/link.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/menu_check.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/newdocument.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/numlist.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/opacity.png
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/outdent.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/paste.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/redo.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/removeformat.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/separator.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/spacer.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/statusbar_resize.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/strikethrough.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/sub.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/sup.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/underline.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_es.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_fr.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_ru.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_tw.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/undo.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/unlink.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/visualaid.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_bg.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_end.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_sel_bg.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_sel_end.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tabs_bg.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/about.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/anchor.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/charmap.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/color_picker.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/image.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/link.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/source_editor.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/link.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/source_editor.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/css/editor_content.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/css/editor_popup.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/css/editor_ui.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/editor_template.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/editor_template_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/bold.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/bold_de_se.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/bold_fr.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/bold_ru.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/bold_tw.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/bullist.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/buttons.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/cleanup.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/italic.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/italic_de_se.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/italic_ru.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/italic_tw.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/numlist.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/redo.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/separator.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/spacer.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/strikethrough.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/underline.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/underline_fr.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/underline_ru.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/underline_tw.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images/undo.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/tiny_mce.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/tiny_mce_popup.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/tiny_mce_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/utils/editable_selects.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/utils/form_utils.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/utils/mclayer.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/utils/mctabs.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/utils/validate.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/readme
+%%WWWDIR%%/pub/System/TinyMCEPlugin/verbatim.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/wikiringlogo20x20.png
+%%WWWDIR%%/pub/System/TinyMCEPlugin/wysiwyg.css
+%%WWWDIR%%/pub/System/TinyMCEQuickHelp/Format_Drop_Down.gif
+%%WWWDIR%%/pub/System/TwistyPlugin/twisty.css
+%%WWWDIR%%/pub/System/TwistyPlugin/twisty.dojo.js
+%%WWWDIR%%/pub/System/TwistyPlugin/twisty.jquery.css
+%%WWWDIR%%/pub/System/TwistyPlugin/twisty.jquery.js
+%%WWWDIR%%/pub/System/TwistyPlugin/twisty.js
+%%WWWDIR%%/pub/System/WabiSabi/wabisabi.gif
+%%WWWDIR%%/pub/System/WindowsInstallCookbook/cygwin-icon.gif
+%%WWWDIR%%/pub/System/WysiwygPlugin/wikiringlogo20x20.png
+%%WWWDIR%%/readme.txt
+%%WWWDIR%%/robots.txt
+%%WWWDIR%%/root-htaccess.txt
+%%WWWDIR%%/subdir-htaccess.txt
+%%WWWDIR%%/templates/addform.tmpl
+%%WWWDIR%%/templates/attach.pattern.tmpl
+%%WWWDIR%%/templates/attach.tmpl
+%%WWWDIR%%/templates/attachagain.pattern.tmpl
+%%WWWDIR%%/templates/attachagain.tmpl
+%%WWWDIR%%/templates/attachnew.pattern.tmpl
+%%WWWDIR%%/templates/attachnew.tmpl
+%%WWWDIR%%/templates/attachtables.pattern.tmpl
+%%WWWDIR%%/templates/attachtables.tmpl
+%%WWWDIR%%/templates/backlinks.tmpl
+%%WWWDIR%%/templates/backlinksallwebs.tmpl
+%%WWWDIR%%/templates/backlinksweb.tmpl
+%%WWWDIR%%/templates/changeform.pattern.tmpl
+%%WWWDIR%%/templates/changeform.tmpl
+%%WWWDIR%%/templates/changes.pattern.tmpl
+%%WWWDIR%%/templates/changes.tmpl
+%%WWWDIR%%/templates/comments.tmpl
+%%WWWDIR%%/templates/css.pattern.tmpl
+%%WWWDIR%%/templates/css.tmpl
+%%WWWDIR%%/templates/cssmediatypes.tmpl
+%%WWWDIR%%/templates/edit.pattern.tmpl
+%%WWWDIR%%/templates/edit.tmpl
+%%WWWDIR%%/templates/editform.tmpl
+%%WWWDIR%%/templates/edittext.tmpl
+%%WWWDIR%%/templates/form.tmpl
+%%WWWDIR%%/templates/formtables.pattern.tmpl
+%%WWWDIR%%/templates/formtables.tmpl
+%%WWWDIR%%/templates/foswiki.pattern.tmpl
+%%WWWDIR%%/templates/foswiki.tmpl
+%%WWWDIR%%/templates/login.pattern.tmpl
+%%WWWDIR%%/templates/login.sudo.tmpl
+%%WWWDIR%%/templates/login.tmpl
+%%WWWDIR%%/templates/mailnotify.tmpl
+%%WWWDIR%%/templates/mailresetpassword.tmpl
+%%WWWDIR%%/templates/messages.tmpl
+%%WWWDIR%%/templates/moveattachment.tmpl
+%%WWWDIR%%/templates/newsletter.tmpl
+%%WWWDIR%%/templates/oops.pattern.tmpl
+%%WWWDIR%%/templates/oops.tmpl
+%%WWWDIR%%/templates/oopsaccessdenied.tmpl
+%%WWWDIR%%/templates/oopsalerts.tmpl
+%%WWWDIR%%/templates/oopsalertsnohtml.tmpl
+%%WWWDIR%%/templates/oopsattention.tmpl
+%%WWWDIR%%/templates/oopschangelanguage.tmpl
+%%WWWDIR%%/templates/oopsgeneric.tmpl
+%%WWWDIR%%/templates/oopslanguagechanged.tmpl
+%%WWWDIR%%/templates/oopsleaseconflict.tmpl
+%%WWWDIR%%/templates/oopsmore.tmpl
+%%WWWDIR%%/templates/oopssaveerr.tmpl
+%%WWWDIR%%/templates/preview.pattern.tmpl
+%%WWWDIR%%/templates/preview.tmpl
+%%WWWDIR%%/templates/rdiff.pattern.tmpl
+%%WWWDIR%%/templates/rdiff.tmpl
+%%WWWDIR%%/templates/registerconfirm.tmpl
+%%WWWDIR%%/templates/registerfailednotremoved.tmpl
+%%WWWDIR%%/templates/registerfailedremoved.tmpl
+%%WWWDIR%%/templates/registernotify.tmpl
+%%WWWDIR%%/templates/registernotifyadmin.tmpl
+%%WWWDIR%%/templates/rename.tmpl
+%%WWWDIR%%/templates/renameattachmentdelete.tmpl
+%%WWWDIR%%/templates/renamebase.pattern.tmpl
+%%WWWDIR%%/templates/renamebase.tmpl
+%%WWWDIR%%/templates/renameconfirm.tmpl
+%%WWWDIR%%/templates/renamedelete.pattern.tmpl
+%%WWWDIR%%/templates/renamedelete.tmpl
+%%WWWDIR%%/templates/renameweb.tmpl
+%%WWWDIR%%/templates/renamewebbase.pattern.tmpl
+%%WWWDIR%%/templates/renamewebbase.tmpl
+%%WWWDIR%%/templates/renamewebconfirm.tmpl
+%%WWWDIR%%/templates/renamewebdelete.tmpl
+%%WWWDIR%%/templates/search.pattern.tmpl
+%%WWWDIR%%/templates/search.text.tmpl
+%%WWWDIR%%/templates/search.tmpl
+%%WWWDIR%%/templates/searchbase.pattern.tmpl
+%%WWWDIR%%/templates/searchbookview.pattern.tmpl
+%%WWWDIR%%/templates/searchbookview.tmpl
+%%WWWDIR%%/templates/searchformat.pattern.tmpl
+%%WWWDIR%%/templates/searchformat.tmpl
+%%WWWDIR%%/templates/searchmeta.tmpl
+%%WWWDIR%%/templates/settings.pattern.tmpl
+%%WWWDIR%%/templates/settings.tmpl
+%%WWWDIR%%/templates/twiki.tmpl
+%%WWWDIR%%/templates/twistyplugin.dojo.tmpl
+%%WWWDIR%%/templates/twistyplugin.jquery.tmpl
+%%WWWDIR%%/templates/twistyplugin.pattern.tmpl
+%%WWWDIR%%/templates/twistyplugin.tmpl
+%%WWWDIR%%/templates/validate.tmpl
+%%WWWDIR%%/templates/view.pattern.tmpl
+%%WWWDIR%%/templates/view.plain.tmpl
+%%WWWDIR%%/templates/view.print.tmpl
+%%WWWDIR%%/templates/view.rss.tmpl
+%%WWWDIR%%/templates/view.rssatom.tmpl
+%%WWWDIR%%/templates/view.text.tmpl
+%%WWWDIR%%/templates/view.tmpl
+%%WWWDIR%%/templates/view.xml.tmpl
+%%WWWDIR%%/templates/viewbottombar.pattern.tmpl
+%%WWWDIR%%/templates/viewplain.pattern.tmpl
+%%WWWDIR%%/templates/viewplain.tmpl
+%%WWWDIR%%/templates/viewprint.pattern.tmpl
+%%WWWDIR%%/templates/viewprint.tmpl
+%%WWWDIR%%/templates/viewsidebar.pattern.tmpl
+%%WWWDIR%%/templates/viewtopbar.pattern.tmpl
+%%WWWDIR%%/templates/viewtopicactionbuttons.tmpl
+%%WWWDIR%%/tools/extender.pl
+%%WWWDIR%%/tools/geturl.pl
+%%WWWDIR%%/tools/html2tml.pl
+%%WWWDIR%%/tools/mailnotify
+%%WWWDIR%%/tools/rewriteshbang.pl
+%%WWWDIR%%/tools/tick_foswiki.pl
+%%WWWDIR%%/tools/tml2html.pl
+%%WWWDIR%%/tools/upgrade_emails.pl
+%%WWWDIR%%/working/.htaccess
+%%WWWDIR%%/working/README
+%%WWWDIR%%/working/registration_approvals/README
+%%WWWDIR%%/working/tmp/README
+%%WWWDIR%%/working/work_areas/README
+@dirrm %%WWWDIR%%/working/work_areas
+@dirrmtry %%WWWDIR%%/working/tmp
+@dirrm %%WWWDIR%%/working/registration_approvals
+@dirrmtry %%WWWDIR%%/working
+@dirrm %%WWWDIR%%/tools
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/pub/System/WysiwygPlugin
+@dirrm %%WWWDIR%%/pub/System/WindowsInstallCookbook
+@dirrm %%WWWDIR%%/pub/System/WabiSabi
+@dirrm %%WWWDIR%%/pub/System/TwistyPlugin
+@dirrm %%WWWDIR%%/pub/System/TinyMCEQuickHelp
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/utils
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/xp
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs/en
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/docs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/zoom
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/save/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/save/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/save
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/print/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/print/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/print
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/iespell/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/iespell/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/iespell
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullscreen
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/flash
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/directionality/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/directionality/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/directionality
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/devkit
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/contextmenu/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/contextmenu/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/contextmenu
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/cleanup
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/bbcode
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autosave/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autosave
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/images
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/templates
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/docs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin
+@dirrm %%WWWDIR%%/pub/System/SmiliesPlugin
+@dirrm %%WWWDIR%%/pub/System/SlideShowPlugin
+@dirrm %%WWWDIR%%/pub/System/SkinTemplates
+@dirrm %%WWWDIR%%/pub/System/RenderListPlugin
+@dirrm %%WWWDIR%%/pub/System/ProjectLogos
+@dirrm %%WWWDIR%%/pub/System/ProjectContributor
+@dirrm %%WWWDIR%%/pub/System/PrintSkin
+@dirrm %%WWWDIR%%/pub/System/PreviewBackground
+@dirrm %%WWWDIR%%/pub/System/PlainSkin
+@dirrm %%WWWDIR%%/pub/System/PatternSkinGraphics
+@dirrm %%WWWDIR%%/pub/System/PatternSkinCssCookbookNoTopBar
+@dirrm %%WWWDIR%%/pub/System/PatternSkinCssCookbookNoLeftBar
+@dirrm %%WWWDIR%%/pub/System/PatternSkinCssCookbookFonts
+@dirrm %%WWWDIR%%/pub/System/PatternSkinCssCookbookEditTableStyle
+@dirrm %%WWWDIR%%/pub/System/PatternSkinCssCookbookCenterPageBorder
+@dirrm %%WWWDIR%%/pub/System/PatternSkinCssCookbookCenterPage
+@dirrm %%WWWDIR%%/pub/System/PatternSkinCss
+@dirrm %%WWWDIR%%/pub/System/PatternSkin
+@dirrm %%WWWDIR%%/pub/System/MailerContrib
+@dirrm %%WWWDIR%%/pub/System/JavascriptFiles
+@dirrm %%WWWDIR%%/pub/System/JSCalendarContrib/skins/aqua
+@dirrm %%WWWDIR%%/pub/System/JSCalendarContrib/skins
+@dirrm %%WWWDIR%%/pub/System/JSCalendarContrib/lang
+@dirrm %%WWWDIR%%/pub/System/JSCalendarContrib/doc/html
+@dirrm %%WWWDIR%%/pub/System/JSCalendarContrib/doc
+@dirrm %%WWWDIR%%/pub/System/JSCalendarContrib
+@dirrm %%WWWDIR%%/pub/System/FileAttachment
+@dirrm %%WWWDIR%%/pub/System/EditTablePlugin
+@dirrm %%WWWDIR%%/pub/System/DocumentGraphics
+@dirrm %%WWWDIR%%/pub/System/CommentPlugin
+@dirrm %%WWWDIR%%/pub/System/BehaviourContrib
+@dirrm %%WWWDIR%%/pub/System/BeginnersStartHere
+@dirrm %%WWWDIR%%/pub/System
+@dirrmtry %%WWWDIR%%/pub
+@dirrm %%WWWDIR%%/locale
+@dirrm %%WWWDIR%%/lib/TWiki
+@dirrm %%WWWDIR%%/lib/Foswiki/Users
+@dirrm %%WWWDIR%%/lib/Foswiki/UI
+@dirrm %%WWWDIR%%/lib/Foswiki/Store/SearchAlgorithms
+@dirrm %%WWWDIR%%/lib/Foswiki/Store/QueryAlgorithms
+@dirrm %%WWWDIR%%/lib/Foswiki/Store
+@dirrm %%WWWDIR%%/lib/Foswiki/Request
+@dirrm %%WWWDIR%%/lib/Foswiki/Query
+@dirrm %%WWWDIR%%/lib/Foswiki/Prefs
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin/HTML2TML
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins/WysiwygPlugin
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins/TablePlugin
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins/TWikiCompatibilityPlugin
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins/SpreadSheetPlugin
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins/SlideShowPlugin
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins/EditTablePlugin
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins/CommentPlugin
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins
+@dirrm %%WWWDIR%%/lib/Foswiki/Net
+@dirrm %%WWWDIR%%/lib/Foswiki/LoginManager
+@dirrm %%WWWDIR%%/lib/Foswiki/Logger
+@dirrm %%WWWDIR%%/lib/Foswiki/Infix
+@dirrm %%WWWDIR%%/lib/Foswiki/IncludeHandlers
+@dirrm %%WWWDIR%%/lib/Foswiki/If
+@dirrm %%WWWDIR%%/lib/Foswiki/I18N
+@dirrm %%WWWDIR%%/lib/Foswiki/Form
+@dirrm %%WWWDIR%%/lib/Foswiki/Engine
+@dirrm %%WWWDIR%%/lib/Foswiki/Contrib/TopicUserMappingContrib
+@dirrm %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib
+@dirrm %%WWWDIR%%/lib/Foswiki/Contrib
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/UIs
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Types
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Site
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Sessions
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Register
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/RCS
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/PROXY
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Htpasswd
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure
+@dirrm %%WWWDIR%%/lib/Foswiki
+@dirrm %%WWWDIR%%/lib/CPAN/lib/Text
+@dirrm %%WWWDIR%%/lib/CPAN/lib/Locale/Maketext/Lexicon
+@dirrm %%WWWDIR%%/lib/CPAN/lib/Locale/Maketext/Extract
+@dirrm %%WWWDIR%%/lib/CPAN/lib/Locale/Maketext
+@dirrm %%WWWDIR%%/lib/CPAN/lib/Locale
+@dirrm %%WWWDIR%%/lib/CPAN/lib/CGI/Session/Test
+@dirrm %%WWWDIR%%/lib/CPAN/lib/CGI/Session/Serialize
+@dirrm %%WWWDIR%%/lib/CPAN/lib/CGI/Session/ID
+@dirrm %%WWWDIR%%/lib/CPAN/lib/CGI/Session/Driver
+@dirrm %%WWWDIR%%/lib/CPAN/lib/CGI/Session
+@dirrm %%WWWDIR%%/lib/CPAN/lib/CGI
+@dirrm %%WWWDIR%%/lib/CPAN/lib/Algorithm
+@dirrm %%WWWDIR%%/lib/CPAN/lib
+@dirrm %%WWWDIR%%/lib/CPAN
+@dirrmtry %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/data/_empty
+@dirrm %%WWWDIR%%/data/_default
+@dirrmtry %%WWWDIR%%/data/Trash
+@dirrmtry %%WWWDIR%%/data/TWiki
+@dirrmtry %%WWWDIR%%/data/System
+@dirrmtry %%WWWDIR%%/data/Sandbox
+@dirrmtry %%WWWDIR%%/data/Main
+@dirrmtry %%WWWDIR%%/data
+@dirrm %%WWWDIR%%/bin/logos
+@dirrm %%WWWDIR%%/bin
+@dirrmtry %%WWWDIR%%

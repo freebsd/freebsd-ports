@@ -226,6 +226,7 @@
     SUBDIR += fluxcms
     SUBDIR += fnord
     SUBDIR += formication
+    SUBDIR += foswiki
     SUBDIR += fpc-httpd13
     SUBDIR += fpc-httpd20
     SUBDIR += fpc-httpd22
