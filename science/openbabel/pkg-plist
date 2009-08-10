@@ -11,7 +11,7 @@ bin/obrotamer
 bin/obrotate
 bin/openbabel
 bin/roundtrip
-include/inchi/inchi_api.h
+include/inchi102/inchi_api.h
 include/openbabel-2.0/openbabel/alias.h
 include/openbabel-2.0/openbabel/atom.h
 include/openbabel-2.0/openbabel/atomclass.h
@@ -221,6 +221,9 @@ lib/openbabel/%%VERSION%%/mol2format.so
 lib/openbabel/%%VERSION%%/moldenformat.a
 lib/openbabel/%%VERSION%%/moldenformat.la
 lib/openbabel/%%VERSION%%/moldenformat.so
+lib/openbabel/%%VERSION%%/molproformat.a
+lib/openbabel/%%VERSION%%/molproformat.la
+lib/openbabel/%%VERSION%%/molproformat.so
 lib/openbabel/%%VERSION%%/molreportformat.a
 lib/openbabel/%%VERSION%%/molreportformat.la
 lib/openbabel/%%VERSION%%/molreportformat.so
@@ -299,6 +302,9 @@ lib/openbabel/%%VERSION%%/turbomoleformat.so
 lib/openbabel/%%VERSION%%/unichemformat.a
 lib/openbabel/%%VERSION%%/unichemformat.la
 lib/openbabel/%%VERSION%%/unichemformat.so
+lib/openbabel/%%VERSION%%/vaspformat.a
+lib/openbabel/%%VERSION%%/vaspformat.la
+lib/openbabel/%%VERSION%%/vaspformat.so
 lib/openbabel/%%VERSION%%/viewmolformat.a
 lib/openbabel/%%VERSION%%/viewmolformat.la
 lib/openbabel/%%VERSION%%/viewmolformat.so
@@ -366,4 +372,4 @@ libdata/pkgconfig/openbabel-2.0.pc
 @dirrm include/openbabel-2.0/openbabel/math
 @dirrm include/openbabel-2.0/openbabel
 @dirrm include/openbabel-2.0
-@dirrm include/inchi
+@dirrm include/inchi102
