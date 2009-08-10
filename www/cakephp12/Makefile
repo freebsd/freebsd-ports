@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.2.3.8166
+PORTVERSION=	1.2.4.8284
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/716/ \
+MASTER_SITES=	http://cakeforge.org/frs/download.php/724/ \
 		LOCAL/glarkin
 PKGNAMESUFFIX=	-devel
 DISTNAME=	cake_${PORTVERSION}
