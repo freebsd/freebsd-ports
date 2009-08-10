@@ -9,6 +9,7 @@ etc/portindex.cfg.sample
 %%SITE_PERL%%/FreeBSD/Portindex/Category.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Port.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Tree.pm
+%%SITE_PERL%%/FreeBSD/Portindex/TreeObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Portindex/.packlist
 @dirrm %%SITE_PERL%%/FreeBSD/Portindex
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Portindex
