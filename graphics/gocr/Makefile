@@ -8,7 +8,7 @@
 PORTNAME=	gocr
 PORTVERSION=	0.48
 CATEGORIES=	graphics
-MASTER_SITES=	SF/jocr
+MASTER_SITES=	http://www-e.uni-magdeburg.de/jschulen/ocr/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	An OCR (Optical Character Recognition) program
