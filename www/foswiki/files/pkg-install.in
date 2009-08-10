@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+WWWDIR=%%WWWDIR%%
+FIND=%%FIND%%
+CHMOD=%%CHMOD%%
+CHOWN=%%CHOWN%%
+TOUCH=%%TOUCH%%
+WWWOWN=%%WWWOWN%%
+WWWGRP=%%WWWGRP%%
+
+case $2 in
+	PRE-INSTALL)
+		;;
+	POST-INSTALL)
+		cd ${WWWDIR}/
+		${FIND} . -type d -print -exec ${CHMOD} 755 {} \;
+		${FIND} data -name '*.txt' -type f -exec ${CHMOD} 644 {} \;
+		${FIND} data pub -name '*,v' -type f -exec ${CHMOD} 444 {} \;
+		${FIND} lib -type f -exec ${CHMOD} 444 {} \;
+		${FIND} locale -type f -exec ${CHMOD} 444 {} \;
+		${FIND} pub -type f -exec ${CHMOD} 644 {} \;
+		${FIND} bin -type f -exec ${CHMOD} 555 {} \;
+		${FIND} bin/logos -type f -exec ${CHMOD} 444 {} \;
+		${FIND} templates -type f -exec ${CHMOD} 444 {} \;
+		${FIND} tools -type f -exec ${CHMOD} 555 {} \;
+		${TOUCH} data/.htpasswd
+		${CHMOD} 644 data/.htpasswd
+		${CHMOD} 644 data/mime.types
+		${CHMOD} 644 bin/LocalLib.cfg.txt bin/.htaccess.txt
+		${CHMOD} 444 bin/setlib.cfg
+		${CHMOD} 644 lib/LocalSite.cfg
+		${CHMOD} 444 tools/extender.pl
+		${CHMOD} 444 working/tmp/README working/README \
+			working/registration_approvals/README \
+			working/work_areas/README
+		${CHMOD} 660 working/.htaccess
+		${CHMOD} 444 AUTHORS COPYING COPYRIGHT index.html \
+			INSTALL.html LICENSE pub-htaccess.txt readme.txt \
+			robots.txt root-htaccess.txt subdir-htaccess.txt \
+			foswiki_httpd_conf.txt ReleaseNotes01x00.html
+		${CHOWN} -R ${WWWOWN}:${WWWGRP} .
+		;;
+	*)
+		echo "Unexpected Argument $2!!!"
+		exit 1
+		;;
+esac
+exit 0
