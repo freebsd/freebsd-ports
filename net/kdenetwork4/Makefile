@@ -60,7 +60,4 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 CMAKE_ARGS+=	-DWITH_Xmms:BOOL=OFF
 .endif
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 .include <bsd.port.post.mk>

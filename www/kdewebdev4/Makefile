@@ -28,7 +28,4 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		xsldbg.1
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 .include <bsd.port.mk>

@@ -23,7 +23,7 @@ lib/kde4/kerfuffle_libbz2.so
 lib/kde4/kerfuffle_libgz.so
 lib/kde4/kerfuffle_libxz.so
 lib/kde4/libarkpart.so
-%%KONQUI%%lib/kde4/libextracthere.so
+lib/kde4/libextracthere.so
 lib/kde4/libkbytearrayedit.so
 lib/kde4/liboktetapart.so
 lib/kde4/plasma_package_superkaramba.so
@@ -284,7 +284,7 @@ share/kde4/services/ServiceMenus/encryptfile.desktop
 share/kde4/services/ServiceMenus/encryptfolder.desktop
 share/kde4/services/ServiceMenus/floppy_format.desktop
 share/kde4/services/ServiceMenus/viewdecrypted.desktop
-%%KONQUI%%share/kde4/services/ark_dndextract.desktop
+share/kde4/services/ark_dndextract.desktop
 share/kde4/services/ark_part.desktop
 share/kde4/services/kbytearrayedit.desktop
 share/kde4/services/kcm_lirc.desktop

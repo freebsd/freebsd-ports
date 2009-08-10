@@ -7,23 +7,20 @@
 
 PORTNAME=	qimageblitz
 PORTVERSION=	0.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE 4 integrated X11 desktop
+COMMENT=	Graphical effects and filters library for KDE4
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes
-CMAKE_VERBOSE=	yes
 
 post-patch:
-	${MKDIR} ${WRKSRC}
 	${REINPLACE_CMD} -e \
 	    's,$${LIB_INSTALL_DIR}/pkgconfig,libdata/pkgconfig,' \
 	    ${WRKSRC}/blitz/CMakeLists.txt

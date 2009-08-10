@@ -29,18 +29,15 @@ QT_COMPONENTS=	corelib opengl dbus qt3support  webkit \
 
 MAKE_JOBS_SAFE=	yes
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 post-patch:
-	${GREP} -H -r "#include <q" ${WRKSRC}/.. | ${CUT} -d: -f1 | uniq | \
+	${GREP} -H -r "#include <q" ${WRKSRC} | ${CUT} -d: -f1 | uniq | \
 		${XARGS} ${REINPLACE_CMD} -f ${FILESDIR}/qt3to4headers.txt
 
 pre-configure:
 	#respect prefix, don't update mime when installing
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
 		-e '/^set/s,DBUS_INTERFACES_INSTALL_DIR,KDE4_DBUS_INTERFACES_DIR,g' \
-		${WRKSRC}/../applets/lancelot/app/src/CMakeLists.txt
+		${WRKSRC}/applets/lancelot/app/src/CMakeLists.txt
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime

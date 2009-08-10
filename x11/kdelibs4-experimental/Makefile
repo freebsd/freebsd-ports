@@ -8,18 +8,19 @@
 
 PORTNAME=	kdelibs-experimental
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMESUFFIX?=	# empty
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde at FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Experimantal set of libraries needed by KDE programs
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4 sharedmime
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -28,13 +29,4 @@ QT_COMPONENTS=	corelib opengl dbus phonon \
 		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
-
-post-extract:
-	${MKDIR} ${WRKSRC}
-
-pre-configure:
-
-post-install:
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

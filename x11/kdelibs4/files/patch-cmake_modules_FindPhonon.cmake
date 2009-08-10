@@ -1,5 +1,5 @@
---- ../cmake/modules/FindPhonon.cmake.orig	2008-12-04 11:35:54.000000000 +0300
-+++ ../cmake/modules/FindPhonon.cmake	2008-12-15 23:16:39.000000000 +0300
+--- ./cmake/modules/FindPhonon.cmake.orig	2008-12-04 11:35:54.000000000 +0300
++++ ./cmake/modules/FindPhonon.cmake	2008-12-15 23:16:39.000000000 +0300
 @@ -27,11 +27,11 @@
     endif(PHONON_INCLUDE_DIR AND PHONON_LIBRARY)
  

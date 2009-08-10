@@ -46,12 +46,10 @@ QT_COMPONENTS=	assistant corelib dbus designer gui network opengl  \
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
-MAN1=	plasmaengineexplorer.1
+
+MAN1=		plasmaengineexplorer.1
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
-		-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include" \
-		-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
-		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_BlueZ:BOOL=OFF \
 		-DWITH_Sensors:BOOL=OFF \
 		-DWITH_NetworkManager:BOOL=OFF \
@@ -68,28 +66,25 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .endif
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/../startkde.cmake \
-		${WRKSRC}/../kcontrol/kfontinst/lib/KfiConstants.h \
-		${WRKSRC}/../kcontrol/kfontinst/kio/KioFonts.cpp \
-		${WRKSRC}/../kcontrol/kxkb/x11helper.cpp \
-		${WRKSRC}/../kdm/kfrontend/genkdmconf.c
+		${PATCH_WRKSRC}/startkde.cmake \
+		${PATCH_WRKSRC}/kcontrol/kfontinst/lib/KfiConstants.h \
+		${PATCH_WRKSRC}/kcontrol/kfontinst/kio/KioFonts.cpp \
+		${PATCH_WRKSRC}/kcontrol/kxkb/x11helper.cpp \
+		${PATCH_WRKSRC}/kdm/kfrontend/genkdmconf.c
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|<qhash.h>|<QHash>|'\
-		${WRKSRC}/../kwin/effects/thumbnailaside/thumbnailaside.h
+		${PATCH_WRKSRC}/kwin/effects/thumbnailaside/thumbnailaside.h
 .for item in b2/b2client.cpp kwmtheme/kwmthemeclient.cpp\
 		laptop/laptopclient.cpp modernsystem/modernsys.cpp\
 		redmond/redmond.cpp
 	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|'\
-		${WRKSRC}/../kwin/clients/${item}
+		${PATCH_WRKSRC}/kwin/clients/${item}
 	${REINPLACE_CMD} -e 's|addToUtmp ""|addToUtmp "${LOCALBASE}/lib"|' \
 		-e 's|(utempter.h|(${LOCALBASE}/include/utempter.h|' \
-	${WRKSRC}/../kwrited/CMakeLists.txt
+	${PATCH_WRKSRC}/kwrited/CMakeLists.txt
 .endfor
 
 post-install:

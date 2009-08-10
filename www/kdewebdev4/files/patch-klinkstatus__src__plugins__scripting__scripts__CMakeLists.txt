@@ -1,5 +1,5 @@
---- ../klinkstatus/src/plugins/scripting/scripts/CMakeLists.txt.orig	2008-12-21 20:20:00.000000000 +0000
-+++ ../klinkstatus/src/plugins/scripting/scripts/CMakeLists.txt	2009-01-27 22:15:16.000000000 +0000
+--- ./klinkstatus/src/plugins/scripting/scripts/CMakeLists.txt.orig	2008-12-21 20:20:00.000000000 +0000
++++ ./klinkstatus/src/plugins/scripting/scripts/CMakeLists.txt	2009-01-27 22:15:16.000000000 +0000
 @@ -5,7 +5,7 @@
  macro_optional_find_package(RUBY)
  macro_log_feature(RUBY_FOUND "Ruby" "An Interpreted object-oriented scripting language" "http://www.ruby-lang.org" FALSE "" "For KLinkStatus example ruby scripts")

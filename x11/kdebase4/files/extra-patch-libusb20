@@ -1,6 +1,6 @@
-diff -u -r ../apps/kinfocenter/usbview/CMakeLists.txt ../apps/kinfocenter/usbview/CMakeLists.txt
---- ../apps/kinfocenter/usbview/CMakeLists.txt	2009-06-07 10:54:55.000000000 +0200
-+++ ../apps/kinfocenter/usbview/CMakeLists.txt	2009-06-07 10:55:58.000000000 +0200
+diff -u -r ./apps/kinfocenter/usbview/CMakeLists.txt ./apps/kinfocenter/usbview/CMakeLists.txt
+--- ./apps/kinfocenter/usbview/CMakeLists.txt	2009-06-07 10:54:55.000000000 +0200
++++ ./apps/kinfocenter/usbview/CMakeLists.txt	2009-06-07 10:55:58.000000000 +0200
 @@ -9,7 +9,7 @@
  kde4_add_plugin(kcm_usb ${kcm_usb_PART_SRCS})
  
@@ -10,9 +10,9 @@ diff -u -r ../apps/kinfocenter/usbview/CMakeLists.txt ../apps/kinfocenter/usbvie
  
  install(TARGETS kcm_usb  DESTINATION ${PLUGIN_INSTALL_DIR} )
  
-diff -u -r ../apps/kinfocenter/usbview/usbdevices.cpp ../apps/kinfocenter/usbview/usbdevices.cpp
---- ../apps/kinfocenter/usbview/usbdevices.cpp	2009-06-07 10:54:55.000000000 +0200
-+++ ../apps/kinfocenter/usbview/usbdevices.cpp	2009-06-07 10:55:58.000000000 +0200
+diff -u -r ./apps/kinfocenter/usbview/usbdevices.cpp ./apps/kinfocenter/usbview/usbdevices.cpp
+--- ./apps/kinfocenter/usbview/usbdevices.cpp	2009-06-07 10:54:55.000000000 +0200
++++ ./apps/kinfocenter/usbview/usbdevices.cpp	2009-06-07 10:55:58.000000000 +0200
 @@ -294,17 +294,25 @@
  
  /*
@@ -154,9 +154,9 @@ diff -u -r ../apps/kinfocenter/usbview/usbdevices.cpp ../apps/kinfocenter/usbvie
  	return true;
  }
  #endif
-diff -u -r ../apps/kinfocenter/usbview/usbdevices.h ../apps/kinfocenter/usbview/usbdevices.h
---- ../apps/kinfocenter/usbview/usbdevices.h	2009-06-07 10:54:55.000000000 +0200
-+++ ../apps/kinfocenter/usbview/usbdevices.h	2009-06-07 10:59:11.000000000 +0200
+diff -u -r ./apps/kinfocenter/usbview/usbdevices.h ./apps/kinfocenter/usbview/usbdevices.h
+--- ./apps/kinfocenter/usbview/usbdevices.h	2009-06-07 10:54:55.000000000 +0200
++++ ./apps/kinfocenter/usbview/usbdevices.h	2009-06-07 10:59:11.000000000 +0200
 @@ -14,18 +14,11 @@
  #include <QList>
  #include <QString>

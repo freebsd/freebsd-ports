@@ -1,5 +1,5 @@
---- ../cmake/modules/FindKDE4Internal.cmake.orig	2009-02-26 17:18:26.000000000 +0300
-+++ ../cmake/modules/FindKDE4Internal.cmake	2009-03-22 14:42:53.000000000 +0300
+--- ./cmake/modules/FindKDE4Internal.cmake.orig	2009-02-26 17:18:26.000000000 +0300
++++ ./cmake/modules/FindKDE4Internal.cmake	2009-03-22 14:42:53.000000000 +0300
 @@ -550,7 +550,7 @@
  # whether to install a CMake FooConfig.cmake into lib/foo/cmake/ or /lib/cmake/foo/
  # (with 2.6.3 and above also lib/cmake/foo/ is supported):

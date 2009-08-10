@@ -26,8 +26,6 @@ QT_COMPONENTS=	opengl gui svg qt3support \
 		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
-PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 OPTIONS=	GNOME "Use Gnome screensavers" off
 
 .include <bsd.port.pre.mk>
@@ -71,8 +69,5 @@ post-patch:
 			 -e 's|<qimage.h>|<QImage>|' \
 	    ${PATCH_WRKSRC}/${item}
 .endfor
-
-post-extract:
-	${MKDIR} ${WRKSRC}
 
 .include <bsd.port.post.mk>

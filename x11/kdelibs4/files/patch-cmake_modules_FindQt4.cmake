@@ -1,5 +1,5 @@
---- ../cmake/modules/FindQt4.cmake.orig	2008-10-17 15:01:33.000000000 +0400
-+++ ../cmake/modules/FindQt4.cmake	2008-12-16 00:40:06.000000000 +0300
+--- ./cmake/modules/FindQt4.cmake.orig	2008-10-17 15:01:33.000000000 +0400
++++ ./cmake/modules/FindQt4.cmake	2008-12-16 00:40:06.000000000 +0300
 @@ -1096,13 +1096,13 @@
      )
  

@@ -1,5 +1,5 @@
---- ../CMakeLists.txt.orig	2009-01-01 19:26:09.000000000 +0300
-+++ ../CMakeLists.txt	2009-03-07 10:02:36.000000000 +0300
+--- ./CMakeLists.txt.orig	2009-01-01 19:26:09.000000000 +0300
++++ ./CMakeLists.txt	2009-03-07 10:02:36.000000000 +0300
 @@ -220,7 +220,7 @@
  macro_write_basic_cmake_version_file(${CMAKE_CURRENT_BINARY_DIR}/KDE4WorkspaceConfigVersion.cmake 
                                       ${KDE4WORKSPACE_VERSION_MAJOR} ${KDE4WORKSPACE_VERSION_MINOR} ${KDE4WORKSPACE_VERSION_PATCH})

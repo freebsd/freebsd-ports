@@ -44,11 +44,8 @@ QT_COMPONENTS=	opengl gui svg iconengines pixeltool \
 		moc_build rcc_build uic_build qmake_build
 MAKE_JOBS_SAFE=	yes
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 post-patch:
-	${FIND} ${WRKSRC}/.. -type f -name CMakeLists.txt | ${XARGS} \
+	${FIND} ${PATCH_WRKSRC} -type f -name CMakeLists.txt | ${XARGS} \
 		${REINPLACE_CMD} -e 's|pkgconfig|../libdata/pkgconfig|'
 
 .include <bsd.port.mk>
