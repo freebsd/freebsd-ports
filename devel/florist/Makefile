@@ -28,8 +28,6 @@ MAKE_ARGS=	GMAKE=${GMAKE} PORTVERSION=${PORTVERSION} LN=${LN} \
 		RM=${RM}
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
 BROKEN= 	Does not build after gpl 2009 update to lang/gnat
 
 post-extract:
