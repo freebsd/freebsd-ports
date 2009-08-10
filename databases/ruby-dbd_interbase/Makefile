@@ -30,6 +30,9 @@ MASTER_PORT=	databases/ruby-dbi
 WRKSRC=		${RUBY_DBI_WRKSRC}
 CONFIGURE_ARGS=	--with=${PORTNAME}
 
+EXPIRATION_DATE=	2009-10-01
+DEPRECATED=	no longer under development
+
 .include "${.CURDIR}/../ruby-dbi/Makefile.common"
 
 .include <bsd.port.mk>
