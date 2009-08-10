@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nexuiz
-PORTVERSION=	2.4.2
-PORTREVISION=	3
+PORTVERSION=	2.5.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -16,13 +15,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-NO_PACKAGE=	Package will be 468MB, set FORCE_PACKAGE if you really want to build it
+NO_PACKAGE=	Package will be 724MB, set FORCE_PACKAGE if you really want to build it
 
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
 MAKEFILE=	BSDmakefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" CC="${CC}" \
+		DP_PRELOAD_DEPENDENCIES=yes \
 		OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops"
 ALL_TARGET=	#
 
@@ -33,6 +33,10 @@ OPTIONS=	CLIENT		"Build GLX client"		on \
 
 .include <bsd.port.pre.mk>
 
+.if !(defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT) || defined(WITH_SERVER))
+IGNORE=		requires at least one of [SDL_]CLIENT or SERVER options
+.endif
+
 .if !defined(WITHOUT_MAPPACK)
 DISTFILES+=	nexmappack_r2${EXTRACT_SUFX}
 PLIST_SUB+=	MAPPACK=""
@@ -40,12 +44,12 @@ PLIST_SUB+=	MAPPACK=""
 PLIST_SUB+=	MAPPACK="@comment "
 .endif
 
-.if !(defined(WITHOUT_CLIENT) && defined(WITHOUT_SDL_CLIENT))
-# Loads libraries at run-time, thus RUN_DEPENDS
-RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		${LOCALBASE}/lib/libpng.so:${PORTSDIR}/graphics/png \
-		${LOCALBASE}/lib/libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+.if defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT)
+LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		theora.0:${PORTSDIR}/multimedia/libtheora
 .endif
 
 .if !defined(WITHOUT_CLIENT)
@@ -73,30 +77,29 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20080511.zip \
+	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20090501.zip \
 		-d ${WRKDIR}/Nexuiz/sources
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/${MAKEFILE} \
-	    ${WRKSRC}/makefile.inc
-# Make Nexuiz' lhnetaddress structure really compatible with FreeBSD's
-# sockaddr_in, and fix value for LHNETADDRESSTYPE_INET6_FAMILY
-	@${REINPLACE_CMD} -e 's,10,28, ; \
-		s,short family,char sin_len; unsigned char family,' \
-			${WRKSRC}/lhnet.h
-
-do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
+		${WRKSRC}/${MAKEFILE} ${WRKSRC}/makefile.inc
+	@${REINPLACE_CMD} -e '/LDFLAGS_BSDSV/s,$$,-L${LOCALBASE}/lib,' \
+		${WRKSRC}/makefile.inc
 
 do-install:
-	${SH} -c '${FIND} ${WRKSRC} -name "darkplaces-*[^vp]" | \
+	${SH} -c '${FIND} ${WRKSRC} -name "darkplaces-*[^vpj]" | \
 		while read f ; do ${INSTALL_PROGRAM} $${f} \
 			${PREFIX}/bin/${PORTNAME}-$${f##*-} ; done'
-	@${MKDIR} ${DATADIR}/data
+	@${MKDIR} ${DATADIR}/data ${DATADIR}/havoc
 	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/*.pk3 ${DATADIR}/data
+	${INSTALL_DATA} ${WRKDIR}/Nexuiz/havoc/*.pk3 ${DATADIR}/havoc
 .if !defined(WITHOUT_MAPPACK)
 	${INSTALL_DATA} ${WRKDIR}/data/*.pk3 ${DATADIR}/data
+.endif
+.if !defined(WITHOUT_SERVER)
+	cd ${WRKDIR}/Nexuiz && ${COPYTREE_SHARE} server ${DATADIR}
+	${FIND} ${DATADIR}/server -type f -name \*.sh -o -name \*.pl | \
+		${XARGS} ${CHMOD} +x
 .endif
 
 .include <bsd.port.post.mk>

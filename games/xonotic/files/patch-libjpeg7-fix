@@ -1,0 +1,58 @@
+--- jpeg.c.orig
++++ jpeg.c
+@@ -46,7 +46,7 @@ typedef unsigned char jboolean;
+ typedef int jboolean;
+ #endif
+ 
+-#define JPEG_LIB_VERSION  62  // Version 6b
++#define JPEG_LIB_VERSION  70  // Version 7
+ 
+ typedef void *j_common_ptr;
+ typedef struct jpeg_compress_struct *j_compress_ptr;
+@@ -161,12 +161,13 @@ typedef struct {
+    * Values of 1,2,4,8 are likely to be supported.  Note that different
+    * components may receive different IDCT scalings.
+    */
+-  int DCT_scaled_size;
++  int DCT_h_scaled_size;
++  int DCT_v_scaled_size;
+   /* The downsampled dimensions are the component's actual, unpadded number
+-   * of samples at the main buffer (preprocessing/compression interface), thus
+-   * downsampled_width = ceil(image_width * Hi/Hmax)
+-   * and similarly for height.  For decompression, IDCT scaling is included, so
+-   * downsampled_width = ceil(image_width * Hi/Hmax * DCT_scaled_size/DCTSIZE)
++   * of samples at the main buffer (preprocessing/compression interface);
++   * DCT scaling is included, so
++   * downsampled_width = ceil(image_width * Hi/Hmax * DCT_h_scaled_size/DCTSIZE)
++   * and similarly for height.
+    */
+   JDIMENSION downsampled_width;  /* actual width in samples */
+   JDIMENSION downsampled_height; /* actual height in samples */
+@@ -268,7 +269,8 @@ struct jpeg_decompress_struct
+ 	void *marker_list;
+ 	int max_h_samp_factor;
+ 	int max_v_samp_factor;
+-	int min_DCT_scaled_size;
++	int min_DCT_h_scaled_size;	/* smallest DCT_h_scaled_size of any component */
++	int min_DCT_v_scaled_size;	/* smallest DCT_v_scaled_size of any component */
+ 	JDIMENSION total_iMCU_rows;
+ 	void *sample_range_limit;
+ 	int comps_in_scan;
+@@ -344,6 +346,8 @@ struct jpeg_compress_struct
+ 	jboolean progressive_mode;
+ 	int max_h_samp_factor;
+ 	int max_v_samp_factor;
++	int min_DCT_h_scaled_size;	/* smallest DCT_h_scaled_size of any component */
++	int min_DCT_v_scaled_size;	/* smallest DCT_v_scaled_size of any component */
+ 	JDIMENSION total_iMCU_rows;
+ 	int comps_in_scan;
+ 	jpeg_component_info *cur_comp_info[MAX_COMPS_IN_SCAN];
+@@ -473,7 +477,7 @@ qboolean JPEG_OpenLibrary (void)
+ #elif defined(MACOSX)
+ 		"libjpeg.62.dylib",
+ #else
+-		"libjpeg.so.62",
++		"libjpeg.so.10",
+ 		"libjpeg.so",
+ #endif
+ 		NULL

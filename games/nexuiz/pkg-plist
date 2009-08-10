@@ -2,7 +2,9 @@
 %%SDL_CLIENT%%bin/nexuiz-sdl
 %%SERVER%%bin/nexuiz-dedicated
 %%DATADIR%%/data/common-spog.pk3
-%%DATADIR%%/data/data20080511.pk3
+%%DATADIR%%/data/data20090501.pk3
+%%DATADIR%%/havoc/data20090501havoc.pk3
+@dirrm %%DATADIR%%/havoc
 %%MAPPACK%%%%DATADIR%%/data/79drdm5_beta2_nex.pk3
 %%MAPPACK%%%%DATADIR%%/data/79drgc2_nex.pk3
 %%MAPPACK%%%%DATADIR%%/data/CMP1-dm6_nex.pk3
@@ -40,5 +42,21 @@
 %%MAPPACK%%%%DATADIR%%/data/storm3dm3_nex.pk3
 %%MAPPACK%%%%DATADIR%%/data/straledm5_nex.pk3
 %%MAPPACK%%%%DATADIR%%/data/zpdm01_nex.pk3
+%%SERVER%%%%DATADIR%%/server/rcon2irc/rbiserver.pl
+%%SERVER%%%%DATADIR%%/server/rcon2irc/rcon2irc-example.conf
+%%SERVER%%%%DATADIR%%/server/rcon2irc/rcon2irc.pl
+%%SERVER%%%%DATADIR%%/server/rcon2irc/rcon2irc.txt
+%%SERVER%%@dirrm %%DATADIR%%/server/rcon2irc
+%%SERVER%%%%DATADIR%%/server/help.cfg
+%%SERVER%%%%DATADIR%%/server/rcon.pl
+%%SERVER%%%%DATADIR%%/server/readme.txt
+%%SERVER%%%%DATADIR%%/server/server.cfg
+%%SERVER%%%%DATADIR%%/server/server_havoc_linux.sh
+%%SERVER%%%%DATADIR%%/server/server_havoc_mac.sh
+%%SERVER%%%%DATADIR%%/server/server_havoc_windows.bat
+%%SERVER%%%%DATADIR%%/server/server_linux.sh
+%%SERVER%%%%DATADIR%%/server/server_mac.sh
+%%SERVER%%%%DATADIR%%/server/server_windows.bat
+%%SERVER%%@dirrm %%DATADIR%%/server
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
