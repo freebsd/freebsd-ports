@@ -883,6 +883,7 @@ EXTRACONFIGURE+=	zlib
 .endif
 
 .if defined(WITH_SCTP)
+BROKEN=		No patchset for 0.9.8
 .if ${OSVERSION} >= 702000
 PATCHFILES+=	tls-extractor.patch \
 		abbreviated-renegotiation.patch \
