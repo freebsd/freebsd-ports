@@ -203,6 +203,7 @@
     SUBDIR += planner
     SUBDIR += planner.el
     SUBDIR += plans
+    SUBDIR += plasma-applet-cwp
     SUBDIR += plasma-applet-daisy
     SUBDIR += plasma-applet-panelspacer
     SUBDIR += plasma-applet-playwolf
