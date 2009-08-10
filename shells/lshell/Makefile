@@ -7,6 +7,7 @@
 
 PORTNAME=	lshell
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
@@ -19,22 +20,25 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/lshell.py \
-		%%PYTHON_SITELIBDIR%%/lshell.pyc \
-		%%PYTHON_SITELIBDIR%%/lshell.pyo \
-		bin/lshell \
-		etc/lshell.conf
+SHELLS=		/etc/shells
 
 MAN1=	lshell.1
-
-DOCS=	README COPYING CHANGES
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/
 .endif
+	@${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
+	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
+	${INSTALL_DATA} -p ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf ; \
+	fi
+	@${ECHO_MSG} "Updating ${SHELLS}"
+	@${CP} ${SHELLS} ${SHELLS}.bak
+	@(${GREP} -v ${PREFIX}/bin/${PORTNAME} ${SHELLS}.bak; \
+	  ${ECHO_CMD} ${PREFIX}/bin/${PORTNAME}) > ${SHELLS}
+	@${RM} ${SHELLS}.bak
 
 .include <bsd.port.mk>
