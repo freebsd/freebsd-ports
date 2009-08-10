@@ -10,7 +10,7 @@ PORTVERSION=	0.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	fluffy@Fluffy.Khv.RU
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library for importing and converting Corel WordPerfect(tm) Graphics images
 
 LIB_DEPENDS=	wpd-0.8.8:${PORTSDIR}/textproc/libwpd

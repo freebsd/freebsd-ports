@@ -11,7 +11,7 @@ PORTVERSION=	0.40
 CATEGORIES=	misc
 MASTER_SITES=	http://www.jedrea.com/chmlib/
 
-MAINTAINER=	fluffy@Fluffy.Khv.RU
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
 USE_BZIP2=	yes

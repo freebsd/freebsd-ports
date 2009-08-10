@@ -13,7 +13,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
 DISTNAME=	${PORTNAME}core-${PORTVERSION}
 
-MAINTAINER=	fluffy@Fluffy.Khv.RU
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 
 GNU_CONFIGURE=	yes
