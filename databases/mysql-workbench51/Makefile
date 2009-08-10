@@ -24,7 +24,7 @@ LIB_DEPENDS+=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	PYTHON	"Enable Python scripting and modules" off
 
