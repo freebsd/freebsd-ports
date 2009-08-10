@@ -59,6 +59,7 @@ share/icons/hicolor/64x64/apps/psi.png
 %%DATADIR%%/iconsets/roster/crystal-yahoo.jisp
 %%DATADIR%%/iconsets/roster/default/ask.png
 %%DATADIR%%/iconsets/roster/default/away.png
+%%DATADIR%%/iconsets/roster/default/call.png
 %%DATADIR%%/iconsets/roster/default/chat.fading.png
 %%DATADIR%%/iconsets/roster/default/chatty.png
 %%DATADIR%%/iconsets/roster/default/dnd.png
@@ -101,6 +102,7 @@ share/icons/hicolor/64x64/apps/psi.png
 %%DATADIR%%/iconsets/system/default/eye_blue.png
 %%DATADIR%%/iconsets/system/default/filemanager.png
 %%DATADIR%%/iconsets/system/default/groupchat.png
+%%DATADIR%%/iconsets/system/default/gstreamer-logo-50.png
 %%DATADIR%%/iconsets/system/default/help.png
 %%DATADIR%%/iconsets/system/default/history.png
 %%DATADIR%%/iconsets/system/default/icondef.xml
