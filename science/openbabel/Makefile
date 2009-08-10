@@ -7,12 +7,14 @@
 #
 
 PORTNAME=	openbabel
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	science
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Chemistry file translation program
+
+LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
 
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_AUTOTOOLS=	libtool:22
@@ -24,14 +26,12 @@ MAN1=		obchiral.1 obconformer.1 obenergy.1 obfit.1 obgen.1 obgrep.1 \
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+MAKE_JOBS_SAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
 BROKEN=		does not compile on ia64 (gcc internal error)
-.endif
-
-.if (${OSVERSION} < 700042)
-LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
 .endif
 
 post-extract:
