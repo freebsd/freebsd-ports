@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	xorriso
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn
-DISTFILES=	${DISTNAME}-${PORTVERSION}.pl00${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-${PORTVERSION}.pl01${EXTRACT_SUFX}
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	ISO image manipulation tool based on Libburnia
 
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn \
 		isofs.6:${PORTSDIR}/devel/libisofs
 
