@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	WWW-Robot
-PORTVERSION=	0.025
+PORTVERSION=	0.026
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	WWW::Robot - configurable web traversal engine
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
