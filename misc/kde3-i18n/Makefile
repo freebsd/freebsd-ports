@@ -25,13 +25,14 @@ RUN_DEPENDS+=\
 	${LOCALBASE}/share/locale/hu/entry.desktop:${PORTSDIR}/hungarian/kde3-i18n \
 	${LOCALBASE}/share/locale/ko/entry.desktop:${PORTSDIR}/korean/kde3-i18n \
 	${LOCALBASE}/share/locale/ru/entry.desktop:${PORTSDIR}/russian/kde3-i18n \
+	${LOCALBASE}/share/locale/sr@Latn/entry.desktop:${PORTSDIR}/misc/kde3-i18n-sr_Latn \
 	${LOCALBASE}/share/locale/uk/entry.desktop:${PORTSDIR}/ukrainian/kde3-i18n \
 	${LOCALBASE}/share/locale/vi/entry.desktop:${PORTSDIR}/vietnamese/kde3-i18n \
 	${LOCALBASE}/share/locale/pl/entry.desktop:${PORTSDIR}/polish/kde3-i18n
 
 .for LANG in af az be bg bn br bs ca cs csb cy da el en_GB eo es et eu fa fi fy ga gl \
 	hi hr hsb is it kk km lt lv mk mn ms mt nb nds nl nn nso pa ro rw se sk sl \
-	sr sr_Latn ss sv ta te tg th tr uz ven wa xh zu
+	sr ss sv ta te tg th tr uz ven wa xh zu
 RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde3-i18n-${LANG}
 .endfor
