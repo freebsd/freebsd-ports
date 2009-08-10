@@ -2335,6 +2335,7 @@
     SUBDIR += py-cmdln
     SUBDIR += py-cog
     SUBDIR += py-configobj
+    SUBDIR += py-construct
     SUBDIR += py-coverage
     SUBDIR += py-ctags
     SUBDIR += py-ctypes

@@ -1,0 +1,6 @@
+Construct is a python library for parsing and building of data
+structures (binary or textual).
+It is based on the concept of defining data
+structures in a declarative manner,
+rather than procedural code: more complex constructs are
+composed of a hierarchy of simpler ones. 
