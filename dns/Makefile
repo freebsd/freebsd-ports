@@ -62,6 +62,7 @@
     SUBDIR += ldapdns
     SUBDIR += ldns
     SUBDIR += ldnsm
+    SUBDIR += libbind
     SUBDIR += libdjbdns
     SUBDIR += libidn
     SUBDIR += linux-f8-libidn
