@@ -1,0 +1,15 @@
+bin/lshell
+@exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+@unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+@unexec if cmp -s %D/etc/lshell.conf %D/etc/lshell.conf.sample; then rm -f %D/etc/lshell.conf; fi
+etc/lshell.conf.sample
+@exec if [ ! -f %D/etc/lshell.conf ]; then cp %B/%f %D/etc/lshell.conf; fi
+%%PYTHON_SITELIBDIR%%/lshell.py
+%%PYTHON_SITELIBDIR%%/lshell.pyc
+%%PYTHON_SITELIBDIR%%/lshell.pyo
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+@dirrmtry %%DATADIR%%
+@dirrmtry %%LOGDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
