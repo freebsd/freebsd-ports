@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-power-manager
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -20,7 +19,6 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
-
 USE_XFCE=	configenv panel
 
 MAN1=		xfce4-power-manager.1 xfce4-power-manager-settings.1
