@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpGedView
-PORTVERSION=	4.2
+PORTVERSION=	4.2.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	phpgedview
@@ -17,6 +17,7 @@ COMMENT=	Online genealogy viewer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+FETCH_ARGS=	-pRr
 
 USE_ZIP=	yes
 USE_PHP=	calendar dom gd pcre session xml
