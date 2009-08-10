@@ -34,7 +34,6 @@
 %%WWWDIR%%/graphics/back.gif
 %%WWWDIR%%/graphics/banner.jpg
 %%WWWDIR%%/graphics/bigPeople.png
-%%WWWDIR%%/graphics/bigServers.png
 %%WWWDIR%%/graphics/bigTools.png
 %%WWWDIR%%/graphics/catalog.png
 %%WWWDIR%%/graphics/dc.png
@@ -56,6 +55,7 @@
 %%WWWDIR%%/graphics/find.png
 %%WWWDIR%%/graphics/folder.png
 %%WWWDIR%%/graphics/forward.gif
+%%WWWDIR%%/graphics/gear.png
 %%WWWDIR%%/graphics/go.png
 %%WWWDIR%%/graphics/group.png
 %%WWWDIR%%/graphics/groupBig.png
@@ -68,6 +68,8 @@
 %%WWWDIR%%/graphics/keyBig.png
 %%WWWDIR%%/graphics/kolab.png
 %%WWWDIR%%/graphics/lam.png
+%%WWWDIR%%/graphics/lamdaemon.png
+%%WWWDIR%%/graphics/language.png
 %%WWWDIR%%/graphics/ldap-server.png
 %%WWWDIR%%/graphics/light.png
 %%WWWDIR%%/graphics/logo32.png
@@ -77,6 +79,7 @@
 %%WWWDIR%%/graphics/mailAlias.png
 %%WWWDIR%%/graphics/mailBig.png
 %%WWWDIR%%/graphics/minus.png
+%%WWWDIR%%/graphics/modules.png
 %%WWWDIR%%/graphics/n.png
 %%WWWDIR%%/graphics/netgroup.png
 %%WWWDIR%%/graphics/network-wired.png
@@ -91,9 +94,12 @@
 %%WWWDIR%%/graphics/phpGroupware.png
 %%WWWDIR%%/graphics/plus.png
 %%WWWDIR%%/graphics/process.png
+%%WWWDIR%%/graphics/profiles.png
 %%WWWDIR%%/graphics/refresh.png
 %%WWWDIR%%/graphics/samba.png
 %%WWWDIR%%/graphics/save.png
+%%WWWDIR%%/graphics/script.png
+%%WWWDIR%%/graphics/security.png
 %%WWWDIR%%/graphics/select.png
 %%WWWDIR%%/graphics/server-settings.png
 %%WWWDIR%%/graphics/server-small.png
@@ -229,6 +235,7 @@
 %%WWWDIR%%/templates/config/conflogin.php
 %%WWWDIR%%/templates/config/confmain.php
 %%WWWDIR%%/templates/config/confmodules.php
+%%WWWDIR%%/templates/config/confsave.php
 %%WWWDIR%%/templates/config/conftypes.php
 %%WWWDIR%%/templates/config/index.php
 %%WWWDIR%%/templates/config/mainlogin.php
