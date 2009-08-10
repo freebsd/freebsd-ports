@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
+BROKEN= 	Does not build after gpl 2009 update to lang/gnat
 WITHOUT_CPU_CFLAGS=	yes
 CFLAGS=		-O2 -pipe
 USE_GMAKE=	yes
