@@ -7,7 +7,7 @@
 
 PORTNAME=	zsnes
 PORTVERSION=	1.51
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
@@ -25,10 +25,11 @@ ONLY_FOR_ARCHS_REASON=	non-portable, for a portable emulator see emulators/snes9
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/}/src
 
-OPTIONS=	X11	"Enable X11 video driver"	on	\
-		OPENGL	"Enable OpenGL video driver"	off \
-		DEBUGGER	"Enable ZSNES debugger"	off \
-		JMA	"Enable JMA support"	on
+OPTIONS=	X11 "Enable X11 video driver" on \
+		OPENGL "Enable OpenGL video driver" off \
+		DEBUGGER "Enable ZSNES debugger" off \
+		JMA "Enable JMA support" on \
+		LIBAO "Enable libao support" off
 
 USE_BZIP2=	yes
 USE_SDL=	sdl
@@ -47,36 +48,40 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 602000
-IGNORE=		needs zlib >= 1.2.3 ,it is available on FreeBSD >= 6.2
+IGNORE=		needs zlib >= 1.2.3, it is available on FreeBSD >= 6.2
 .endif
 
 .if defined(WITH_DEBUGGER)
-CONFIGURE_ARGS+=--enable-debugger
+CONFIGURE_ARGS+=	--enable-debugger
 .else
-CONFIGURE_ARGS+=--disable-debugger
+CONFIGURE_ARGS+=	--disable-debugger
 .endif
 
 .if defined(WITH_JMA)
-CONFIGURE_ARGS+=--enable-jma
+CONFIGURE_ARGS+=	--enable-jma
 .else
-CONFIGURE_ARGS+=--disable-jma
+CONFIGURE_ARGS+=	--disable-jma
 .endif
 
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--without-x
+CONFIGURE_ARGS+=	--without-x
 PKGNAMESUFFIX=	-nox11
 .else
-CONFIGURE_ARGS+=--with-x
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-x
 .endif
 
 .if defined(WITH_OPENGL)
 USE_GL=		yes
-CONFIGURE_ARGS+=--enable-opengl
+CONFIGURE_ARGS+=	--enable-opengl
 .else
-CONFIGURE_ARGS+=--disable-opengl
+CONFIGURE_ARGS+=	--disable-opengl
+.endif
+
+.if defined(WITH_LIBAO)
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+CONFIGURE_ARGS+=	--enable-libao
+.else
+CONFIGURE_ARGS+=	--disable-libao
 .endif
 
 post-patch:
