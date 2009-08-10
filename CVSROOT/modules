@@ -863,6 +863,7 @@ bandwidthd                      ports/net-mgmt/bandwidthd
 banihstypos                     ports/games/banihstypos
 bannerfilter                    ports/www/bannerfilter
 banshee                         ports/multimedia/banshee
+banshee-mirage                  ports/multimedia/banshee-mirage
 bar                             ports/textproc/bar
 barbecue                        ports/graphics/barbecue
 barcode                         ports/graphics/barcode
@@ -2336,7 +2337,6 @@ dna-qc                          ports/biology/dna-qc
 dnetc                           ports/misc/dnetc
 dnews                           ports/news/dnews
 dnrd                            ports/dns/dnrd
-dns-proxy-tor                   ports/security/dns-proxy-tor
 dns2tcp                         ports/dns/dns2tcp
 dns_balance                     ports/dns/dns_balance
 dns_mre                         ports/dns/dns_mre
@@ -6963,6 +6963,7 @@ ku-aspell                       ports/textproc/ku-aspell
 kuake                           ports/deskutils/kuake
 kudu                            ports/graphics/kudu
 kuickshow                       ports/graphics/kuickshow
+kuickshow-kde4                  ports/graphics/kuickshow-kde4
 kuklomenos                      ports/games/kuklomenos
 kvirc                           ports/irc/kvirc
 kvirc-devel                     ports/irc/kvirc-devel
@@ -21372,6 +21373,7 @@ slnr                            ports/news/slnr
 sloccount                       ports/misc/sloccount
 slock                           ports/x11/slock
 slony1                          ports/databases/slony1
+slony1v2                        ports/databases/slony1v2
 sloth                           ports/sysutils/sloth
 slowloris                       ports/benchmarks/slowloris
 slrn                            ports/news/slrn
@@ -22487,7 +22489,6 @@ traindirector                   ports/games/traindirector
 tramp                           ports/net/tramp
 trang                           ports/textproc/trang
 trans                           ports/converters/trans
-trans-proxy-tor                 ports/security/trans-proxy-tor
 transcalc                       ports/cad/transcalc
 transcode                       ports/multimedia/transcode
 transfig                        ports/print/transfig
