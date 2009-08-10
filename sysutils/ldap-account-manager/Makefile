@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${PNAME}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
@@ -17,6 +17,7 @@ COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
+FETCH_CMD?=	/usr/bin/fetch -pRr
 NO_BUILD=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
