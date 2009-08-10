@@ -13,7 +13,7 @@ include/libHX/string.h
 include/libHX/wx_helper.hpp
 lib/libHX.la
 lib/libHX.so
-lib/libHX.so.19
+lib/libHX.so.20
 libdata/pkgconfig/libHX.pc
 @dirrm lib/pkgconfig
 @dirrm include/libHX
