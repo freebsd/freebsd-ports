@@ -10,24 +10,25 @@ upgrades.
   AFFECTS: users of multimedia/phonon*, x11/kdebase4*, deskutils/kdepim4
   AUTHOR: kde@FreeBSD.org
 
-  KDE4 has been updated to 4.3.0. KDE now uses qt4-phonon,
-  multimedia/phonon and multimedia/phonon-gstreamer are deprecated in favour of
-  their qt4 equivalents. You can still use multimedia/phonon-xine however.
-  A number of files have been moved between packages. The recommended update
-  procedure is to delete phonon, phonon-gstreamer,  kdebase-\*4\*, kdepim-4\*,
-  then update ports as usual and install desirable KDE4 ports:
+  KDE4 has been updated to version 4.3.0.  KDE now uses qt4-phonon;
+  multimedia/phonon and multimedia/phonon-gstreamer are deprecated in
+  favor of their qt4 equivalents.  You can still use multimedia/phonon-xine
+  however.  A number of files have been moved between packages.  The
+  recommended update procedure is to delete phonon, phonon-gstreamer,
+  kdebase-\*4\*, kdepim-4\*, then update ports as usual and install
+  desirable KDE4 ports:
 
-	# pkg_delete -f phonon-4\* phonon-gstreamer\* kdebase-\*4\* kdepim-4\*
-	# portmaster -a (or portupgrade -a)
-	# cd ${PORTSDIR}/x11/kde4 && make config && make install clean
+  # pkg_delete -f phonon-4\* phonon-gstreamer\* kdebase-\*4\* kdepim-4\*
+  # portmaster -a (or portupgrade -a)
+  # cd ${PORTSDIR}/x11/kde4 && make config && make install clean
 
 20090804:
-  AFFECTS: users of devel/dbus-qt4, devel/qt4-designer,
+  AFFECTS: users of devel/dbus-qt4, devel/qt4-designer
   AUTHOR: kde@FreeBSD.org
 
-  Qt4 ports have been updated to 4.5.2. The recommended update procedure is
-  to delete qt4-dbus and qt4-designer and update ports as usual. Install
-  qt4-designer if needed.
+  Qt4 ports have been updated to 4.5.2.  The recommended update procedure
+  is to delete qt4-dbus and qt4-designer, then update ports as usual.
+  Install qt4-designer if needed.
 
 20090802:
   AFFECTS: users of devel/libtool15 and devel/libltdl15
@@ -49,9 +50,9 @@ upgrades.
   portupgrade -o devel/libtool22 libtool-1.5\*
   portupgrade -o devel/libltdl22 libltdl-1.5\*
 
-  After that, you will need to rebuild all ports that depend on libltdl. Since
-  all dependent ports' PORTREVISIONs have been bumped, you can run portupgrade
-  or portmaster with '-a' to complete the upgrade.
+  After that, you will need to rebuild all ports that depend on libltdl.
+  Since all dependent ports' PORTREVISIONs have been bumped, you can run
+  portupgrade or portmaster with '-a' to complete the upgrade.
 
 20090801:
   AFFECTS: users of x11-drivers/xf86-video-nouveau
