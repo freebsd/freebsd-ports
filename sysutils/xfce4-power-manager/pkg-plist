@@ -79,17 +79,17 @@ share/xfce4/doc/C/images/xfpm-extended-settings.png
 share/xfce4/doc/C/images/xfpm-general-settings.png
 share/xfce4/doc/C/xfce4-power-manager.html
 share/xfce4/panel-plugins/xfce4-brightness-plugin.desktop
-@dirrm share/xfce4/panel-plugins
-@dirrm share/xfce4/doc/C/images
-@dirrm share/xfce4/doc/C
-@dirrm share/xfce4/doc
-@dirrm share/xfce4
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4/doc/C/images
+@dirrmtry share/xfce4/doc/C
+@dirrmtry share/xfce4/doc
+@dirrmtry share/xfce4
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
 @dirrmtry share/applications
-@dirrm libexec/xfce4/panel-plugins
-@dirrm libexec/xfce4
-@dirrm etc/xdg/autostart
-@dirrm etc/xdg
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
