@@ -1,0 +1,29 @@
+include/bind/arpa/inet.h
+include/bind/arpa/nameser.h
+include/bind/arpa/nameser_compat.h
+include/bind/isc/assertions.h
+include/bind/isc/ctl.h
+include/bind/isc/dst.h
+include/bind/isc/eventlib.h
+include/bind/isc/heap.h
+include/bind/isc/irpmarshall.h
+include/bind/isc/list.h
+include/bind/isc/logging.h
+include/bind/isc/memcluster.h
+include/bind/isc/misc.h
+include/bind/isc/tree.h
+include/bind/isc/platform.h
+include/bind/fd_setsize.h
+include/bind/hesiod.h
+include/bind/irp.h
+include/bind/irs.h
+include/bind/netdb.h
+include/bind/netgroup.h
+include/bind/res_update.h
+include/bind/resolv.h
+include/bind/sys/bitypes.h
+lib/libbind.a
+@dirrm include/bind/arpa
+@dirrm include/bind/isc
+@dirrm include/bind/sys
+@dirrm include/bind
