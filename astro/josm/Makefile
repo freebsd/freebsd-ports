@@ -7,6 +7,7 @@
 
 PORTNAME=	josm
 PORTVERSION=	1788
+PORTREVISION=	1
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/:josm \
 		http://svn.openstreetmap.org/applications/editors/josm/plugins/wmsplugin/:wmsplugin
@@ -20,8 +21,8 @@ COMMENT=	A comprehensive editor for OpenStreetMap.org database
 NO_WRKSUBDIR=	yes
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build network webkit script \
-		rcc_build uic_build
+QT_COMPONENTS=	corelib gui imageformats moc_build network script \
+		rcc_build uic_build webkit
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.5+
