@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	VersionControl_SVN
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel pear
 
 MAINTAINER=	glarkin@FreeBSD.org
@@ -46,7 +46,6 @@ FILES=		SVN.php \
 		SVN/Status.php \
 		SVN/Switch.php \
 		SVN/Update.php
-TESTS=		test.php
 EXAMPLES=	example1.php \
 		example_tree.php
 _EXAMPLESDIR=	docs/examples
