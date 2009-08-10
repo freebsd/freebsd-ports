@@ -6,8 +6,8 @@
 #    $MCom: ports-experimental/math/fftw3/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
 PORTNAME=	fftw3
-PORTVERSION=	3.2.1
-PORTREVISION?=	1
+PORTVERSION=	3.2.2
+PORTREVISION?=	0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
@@ -84,7 +84,10 @@ FFTW3_PKGNAMESUFFIX=	-float
 CONFIGURE_ARGS+=--enable-float
 .else
 .if ${FFTW3_FLAVOR}=="long"
+. if ${OSVERSION} < 800000
+ONLY_FOR_ARCHS=        i386 sparc64
 LIB_DEPENDS+=	ml.0:${PORTSDIR}/math/ldouble
+. endif
 FFTW3_SUFX=	l
 .if defined(FORTRAN_SHIM)
 FFTW3_PKGNAMESUFFIX=	-long-fortran
@@ -122,7 +125,7 @@ post-patch:
 		s|fftw-wisdom-to-conf: $(top_builddir)/config.status||; \
 		s|bin_SCRIPTS = fftw-wisdom-to-conf||' \
 			${WRKSRC}/tools/Makefile.in
-.if ${FFTW3_FLAVOR}=="long"
+.if ${FFTW3_FLAVOR}=="long" && ${OSVERSION} < 800000
 	@${REINPLACE_CMD} -e 's|cosl sinl tanl||' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|@LIBS@|-lml @LIBS@|'
