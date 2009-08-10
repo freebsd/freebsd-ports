@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avogadro
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -30,8 +30,6 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" -DLIB_INSTALL_DIR="${LOCALBASE}/l
 USE_GCC=	4.3+
 USE_PYTHON=	2.5+
 MAKE_JOBS_SAFE=	yes
-
-BROKEN=		does not build with new py-sip
 
 .include <bsd.port.pre.mk>
 

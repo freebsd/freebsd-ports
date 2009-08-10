@@ -9,9 +9,7 @@ include/avogadro/cube.h
 include/avogadro/elementtranslator.h
 include/avogadro/engine.h
 include/avogadro/extension.h
-include/avogadro/filetreeitem.h
 include/avogadro/fragment.h
-include/avogadro/glgraphicsview.h
 include/avogadro/glhit.h
 include/avogadro/global.h
 include/avogadro/glwidget.h
@@ -22,7 +20,6 @@ include/avogadro/molecule.h
 include/avogadro/moleculefile.h
 include/avogadro/navigate.h
 include/avogadro/neighborlist.h
-include/avogadro/openbabelwrapper.h
 include/avogadro/painter.h
 include/avogadro/painterdevice.h
 include/avogadro/periodictableview.h
@@ -43,9 +40,9 @@ include/avogadro/tool.h
 include/avogadro/toolgroup.h
 include/avogadro/undosequence.h
 include/avogadro/zmatrix.h
-lib/avogadro/AvogadroConfigVersion.cmake
 lib/avogadro/AvogadroBuildSettings.cmake
 lib/avogadro/AvogadroConfig.cmake
+lib/avogadro/AvogadroConfigVersion.cmake
 lib/avogadro/AvogadroLibraryDeps.cmake
 lib/avogadro/AvogadroUse.cmake
 lib/avogadro/cmake/FindEigen2.cmake
@@ -61,7 +58,6 @@ lib/avogadro/engines/dipoleengine.so
 lib/avogadro/engines/forceengine.so
 lib/avogadro/engines/hbondengine.so
 lib/avogadro/engines/labelengine.so
-lib/avogadro/engines/orbitalengine.so
 lib/avogadro/engines/overlayengine.so
 lib/avogadro/engines/polygonengine.so
 lib/avogadro/engines/ribbonengine.so
@@ -82,13 +78,13 @@ lib/avogadro/extensions/insertfragmentextension.so
 lib/avogadro/extensions/insertpeptideextension.so
 lib/avogadro/extensions/molecularpropextension.so
 lib/avogadro/extensions/networkfetchextension.so
-lib/avogadro/extensions/orbitalextension.so
 lib/avogadro/extensions/povrayextension.so
 lib/avogadro/extensions/propextension.so
 lib/avogadro/extensions/pythonterminal.so
 lib/avogadro/extensions/selectextension.so
 lib/avogadro/extensions/spectraextension.so
 lib/avogadro/extensions/supercellextension.so
+lib/avogadro/extensions/surfaceextension.so
 lib/avogadro/extensions/unitcellextension.so
 lib/avogadro/extensions/vibrationextension.so
 lib/avogadro/tools/aligntool.so
@@ -102,50 +98,49 @@ lib/avogadro/tools/navigatetool.so
 lib/avogadro/tools/selectrotatetool.so
 lib/libavogadro.so
 lib/libavogadro.so.0
-lib/libavogadro.so.0.9.6
-%%PYTHON_SITELIBDIR%%/Avogadro.py
-%%PYTHON_SITELIBDIR%%/_Avogadro.so
-%%DATADIR%%/builder/amino/d-lys.zmat
-%%DATADIR%%/builder/amino/l-his.zmat
+lib/libavogadro.so.0.9.7
+%%PYTHON_SITELIBDIR%%/Avogadro.so
 %%DATADIR%%/builder/amino/d-ala.zmat
-%%DATADIR%%/builder/amino/l-leu.zmat
-%%DATADIR%%/builder/amino/d-glu.zmat
-%%DATADIR%%/builder/amino/l-pyl.zmat
-%%DATADIR%%/builder/amino/d-cys.zmat
-%%DATADIR%%/builder/amino/l-sec.zmat
-%%DATADIR%%/builder/amino/l-val.zmat
-%%DATADIR%%/builder/amino/d-leu.zmat
-%%DATADIR%%/builder/amino/l-cys.zmat
-%%DATADIR%%/builder/amino/d-pro.zmat
 %%DATADIR%%/builder/amino/d-arg.zmat
-%%DATADIR%%/builder/amino/l-glu.zmat
-%%DATADIR%%/builder/amino/l-met.zmat
+%%DATADIR%%/builder/amino/d-asn.zmat
+%%DATADIR%%/builder/amino/d-asp.zmat
+%%DATADIR%%/builder/amino/d-cys.zmat
+%%DATADIR%%/builder/amino/d-gln.zmat
+%%DATADIR%%/builder/amino/d-glu.zmat
+%%DATADIR%%/builder/amino/d-his.zmat
+%%DATADIR%%/builder/amino/d-ile.zmat
+%%DATADIR%%/builder/amino/d-leu.zmat
+%%DATADIR%%/builder/amino/d-lys.zmat
+%%DATADIR%%/builder/amino/d-met.zmat
+%%DATADIR%%/builder/amino/d-phe.zmat
+%%DATADIR%%/builder/amino/d-pro.zmat
+%%DATADIR%%/builder/amino/d-ser.zmat
+%%DATADIR%%/builder/amino/d-thr.zmat
+%%DATADIR%%/builder/amino/d-trp.zmat
 %%DATADIR%%/builder/amino/d-tyr.zmat
 %%DATADIR%%/builder/amino/d-val.zmat
-%%DATADIR%%/builder/amino/l-ile.zmat
-%%DATADIR%%/builder/amino/l-thr.zmat
-%%DATADIR%%/builder/amino/d-asn.zmat
+%%DATADIR%%/builder/amino/gly.zmat
 %%DATADIR%%/builder/amino/l-ala.zmat
-%%DATADIR%%/builder/amino/d-ser.zmat
-%%DATADIR%%/builder/amino/l-phe.zmat
-%%DATADIR%%/builder/amino/d-gln.zmat
-%%DATADIR%%/builder/amino/d-thr.zmat
-%%DATADIR%%/builder/amino/d-asp.zmat
-%%DATADIR%%/builder/amino/d-trp.zmat
 %%DATADIR%%/builder/amino/l-arg.zmat
 %%DATADIR%%/builder/amino/l-asn.zmat
 %%DATADIR%%/builder/amino/l-asp.zmat
-%%DATADIR%%/builder/amino/l-trp.zmat
-%%DATADIR%%/builder/amino/d-ile.zmat
-%%DATADIR%%/builder/amino/l-ser.zmat
-%%DATADIR%%/builder/amino/gly.zmat
-%%DATADIR%%/builder/amino/l-lys.zmat
-%%DATADIR%%/builder/amino/d-met.zmat
-%%DATADIR%%/builder/amino/d-phe.zmat
+%%DATADIR%%/builder/amino/l-cys.zmat
 %%DATADIR%%/builder/amino/l-gln.zmat
-%%DATADIR%%/builder/amino/l-tyr.zmat
+%%DATADIR%%/builder/amino/l-glu.zmat
+%%DATADIR%%/builder/amino/l-his.zmat
+%%DATADIR%%/builder/amino/l-ile.zmat
+%%DATADIR%%/builder/amino/l-leu.zmat
+%%DATADIR%%/builder/amino/l-lys.zmat
+%%DATADIR%%/builder/amino/l-met.zmat
+%%DATADIR%%/builder/amino/l-phe.zmat
 %%DATADIR%%/builder/amino/l-pro.zmat
-%%DATADIR%%/builder/amino/d-his.zmat
+%%DATADIR%%/builder/amino/l-pyl.zmat
+%%DATADIR%%/builder/amino/l-sec.zmat
+%%DATADIR%%/builder/amino/l-ser.zmat
+%%DATADIR%%/builder/amino/l-thr.zmat
+%%DATADIR%%/builder/amino/l-trp.zmat
+%%DATADIR%%/builder/amino/l-tyr.zmat
+%%DATADIR%%/builder/amino/l-val.zmat
 %%DATADIR%%/fragments/alcohols/ethanol.cml
 %%DATADIR%%/fragments/alcohols/methanol.cml
 %%DATADIR%%/fragments/alcohols/propan-1-ol.cml
@@ -369,6 +364,7 @@ lib/libavogadro.so.0.9.6
 %%DATADIR%%/fragments/thiols/methanethiol.cml
 %%DATADIR%%/fragments/thiols/pentane-1-thiol.cml
 %%DATADIR%%/fragments/water.cml
+%%DATADIR%%/i18n/avogadro_af.qm
 %%DATADIR%%/i18n/avogadro_ar.qm
 %%DATADIR%%/i18n/avogadro_bg.qm
 %%DATADIR%%/i18n/avogadro_ca.qm
@@ -395,40 +391,37 @@ lib/libavogadro.so.0.9.6
 %%DATADIR%%/i18n/avogadro_uk.qm
 %%DATADIR%%/i18n/avogadro_zh_CN.qm
 %%DATADIR%%/i18n/avogadro_zh_TW.qm
-%%DATADIR%%/i18n/libavogadro_cs.qm
-%%DATADIR%%/i18n/libavogadro_es.qm
-%%DATADIR%%/i18n/libavogadro_zh_CN.qm
-%%DATADIR%%/i18n/libavogadro_tr.qm
-%%DATADIR%%/i18n/libavogadro_ko.qm
-%%DATADIR%%/i18n/libavogadro_ja.qm
-%%DATADIR%%/i18n/libavogadro_fr.qm
-%%DATADIR%%/i18n/libavogadro_ca.qm
-%%DATADIR%%/i18n/libavogadro_id.qm
-%%DATADIR%%/i18n/libavogadro_sk.qm
-%%DATADIR%%/i18n/libavogadro_zh_TW.qm
-%%DATADIR%%/i18n/libavogadro_de.qm
-%%DATADIR%%/i18n/libavogadro_it.qm
 %%DATADIR%%/i18n/libavogadro_ar.qm
-%%DATADIR%%/i18n/libavogadro_nb.qm
-%%DATADIR%%/i18n/libavogadro_uk.qm
-%%DATADIR%%/i18n/libavogadro_pl.qm
 %%DATADIR%%/i18n/libavogadro_bg.qm
-%%DATADIR%%/i18n/libavogadro_nl.qm
-%%DATADIR%%/i18n/libavogadro_en_GB.qm
-%%DATADIR%%/i18n/libavogadro_ru.qm
-%%DATADIR%%/i18n/libavogadro_pt.qm
-%%DATADIR%%/i18n/libavogadro_sv.qm
-%%DATADIR%%/i18n/libavogadro_fi.qm
+%%DATADIR%%/i18n/libavogadro_ca.qm
+%%DATADIR%%/i18n/libavogadro_cs.qm
+%%DATADIR%%/i18n/libavogadro_de.qm
 %%DATADIR%%/i18n/libavogadro_en_CA.qm
+%%DATADIR%%/i18n/libavogadro_en_GB.qm
+%%DATADIR%%/i18n/libavogadro_es.qm
+%%DATADIR%%/i18n/libavogadro_fi.qm
+%%DATADIR%%/i18n/libavogadro_fr.qm
+%%DATADIR%%/i18n/libavogadro_id.qm
+%%DATADIR%%/i18n/libavogadro_it.qm
+%%DATADIR%%/i18n/libavogadro_ja.qm
+%%DATADIR%%/i18n/libavogadro_ko.qm
+%%DATADIR%%/i18n/libavogadro_nb.qm
+%%DATADIR%%/i18n/libavogadro_nl.qm
+%%DATADIR%%/i18n/libavogadro_pl.qm
+%%DATADIR%%/i18n/libavogadro_pt.qm
 %%DATADIR%%/i18n/libavogadro_pt_BR.qm
+%%DATADIR%%/i18n/libavogadro_ru.qm
+%%DATADIR%%/i18n/libavogadro_sk.qm
+%%DATADIR%%/i18n/libavogadro_sv.qm
+%%DATADIR%%/i18n/libavogadro_tr.qm
+%%DATADIR%%/i18n/libavogadro_uk.qm
+%%DATADIR%%/i18n/libavogadro_zh_CN.qm
+%%DATADIR%%/i18n/libavogadro_zh_TW.qm
 share/libavogadro/engineScripts/wireframe.py
 share/libavogadro/extensionScripts/example.py
-@dirrm share/libavogadro/toolScripts
 @dirrm share/libavogadro/extensionScripts
 @dirrm share/libavogadro/engineScripts
 @dirrm share/libavogadro
-@dirrm %%DATADIR%%/builder/amino
-@dirrm %%DATADIR%%/builder
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/fragments/thiols
 @dirrm %%DATADIR%%/fragments/sulfoxides
@@ -455,6 +448,8 @@ share/libavogadro/extensionScripts/example.py
 @dirrm %%DATADIR%%/fragments/aldehydes
 @dirrm %%DATADIR%%/fragments/alcohols
 @dirrm %%DATADIR%%/fragments
+@dirrm %%DATADIR%%/builder/amino
+@dirrm %%DATADIR%%/builder
 @dirrm %%DATADIR%%
 @dirrm lib/avogadro/tools
 @dirrm lib/avogadro/extensions
