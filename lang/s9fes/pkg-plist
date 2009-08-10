@@ -13,6 +13,7 @@ bin/s9
 %%DATADIR%%/contrib/prolog-test.scm
 %%DATADIR%%/contrib/prolog.scm
 %%DATADIR%%/contrib/scheme.css
+%%DATADIR%%/contrib/stats.scm
 %%DATADIR%%/contrib/string-find.scm
 %%DATADIR%%/count.scm
 %%DATADIR%%/depth.scm
