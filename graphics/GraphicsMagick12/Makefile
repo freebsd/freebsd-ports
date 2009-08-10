@@ -10,7 +10,7 @@ PORTVERSION=	1.2.7
 PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
-		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
+		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.2/
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	glarkin@FreeBSD.org
