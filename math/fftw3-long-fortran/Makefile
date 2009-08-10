@@ -12,6 +12,4 @@ FFTW3_FLAVOR=	long
 FORTRAN_SHIM=	yes
 MASTERDIR=	${.CURDIR}/../../math/fftw3
 
-ONLY_FOR_ARCHS=	i386 sparc64
-
 .include "${MASTERDIR}/Makefile"
