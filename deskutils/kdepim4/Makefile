@@ -6,6 +6,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,14 +18,15 @@ COMMENT=	Libraries for KDE-PIM applications
 BUILD_DEPENDS=	libassuan>=1.0.4:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		boost_python:${PORTSDIR}/devel/boost-python-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		mal.1:${PORTSDIR}/palm/libmal \
 		pisock.9:${PORTSDIR}/palm/pilot-link \
 		qca.2:${PORTSDIR}/devel/qca
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_KDE4=	kdelibs kdeexp pimlibs pimruntime runtime workspace akonadi kdeprefix kdehier automoc4
+USE_KDE4=	kdelibs kdeexp pimlibs pimruntime \
+		akonadi kdeprefix kdehier automoc4 oxygen
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -58,12 +60,9 @@ PLIST_SUB+=	GNOKII="@comment "
 # PLIST_SUB+=	KITCHENSYNC="@comment "
 # .endif
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 pre-configure:
-	#respect prefix
-	${FIND} ${WRKSRC}/.. -type f -name CMakeLists.txt | ${XARGS} \
-	${REINPLACE_CMD} -e '/^install/s,KDE4_DBUS_INTERFACES_DIR,DBUS_INTERFACES_INSTALL_DIR,g'
+# respect prefix
+	${FIND} ${PATCH_WRKSRC} -type f -name CMakeLists.txt | ${XARGS} \
+	${REINPLACE_CMD} -e '/DESTINATION/s,KDE4_DBUS_INTERFACES_DIR,DBUS_INTERFACES_INSTALL_DIR,g'
 
 .include <bsd.port.post.mk>

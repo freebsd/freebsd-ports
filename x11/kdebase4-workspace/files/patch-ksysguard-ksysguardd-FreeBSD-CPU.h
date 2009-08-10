@@ -1,5 +1,5 @@
---- ../ksysguard/ksysguardd/FreeBSD/CPU.h.orig	2008-01-05 00:55:46.000000000 +0100
-+++ ../ksysguard/ksysguardd/FreeBSD/CPU.h	2009-02-03 16:26:12.000000000 +0100
+--- ./ksysguard/ksysguardd/FreeBSD/CPU.h.orig	2008-01-05 00:55:46.000000000 +0100
++++ ./ksysguard/ksysguardd/FreeBSD/CPU.h	2009-02-03 16:26:12.000000000 +0100
 @@ -35,6 +35,10 @@
  void printCPUNiceInfo(const char* cmd);
  void printCPUSys(const char* cmd);

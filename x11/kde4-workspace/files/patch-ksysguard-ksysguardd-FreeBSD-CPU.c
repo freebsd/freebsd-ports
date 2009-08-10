@@ -1,5 +1,5 @@
---- ../ksysguard/ksysguardd/FreeBSD/CPU.c.orig	2008-01-05 00:55:46.000000000 +0100
-+++ ../ksysguard/ksysguardd/FreeBSD/CPU.c	2009-02-03 20:54:08.000000000 +0100
+--- ./ksysguard/ksysguardd/FreeBSD/CPU.c.orig	2008-01-05 00:55:46.000000000 +0100
++++ ./ksysguard/ksysguardd/FreeBSD/CPU.c	2009-02-03 20:54:08.000000000 +0100
 @@ -49,11 +49,12 @@
  				   struct kinfo_cputime *);
  static struct kinfo_cputime cp_time, cp_old;

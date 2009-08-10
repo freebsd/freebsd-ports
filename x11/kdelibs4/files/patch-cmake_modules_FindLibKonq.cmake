@@ -1,5 +1,5 @@
---- ../cmake/modules/FindLibKonq.cmake.orig	2009-05-27 21:54:40.000000000 +0200
-+++ ../cmake/modules/FindLibKonq.cmake	2009-06-06 01:53:49.000000000 +0200
+--- ./cmake/modules/FindLibKonq.cmake.orig	2009-05-27 21:54:40.000000000 +0200
++++ ./cmake/modules/FindLibKonq.cmake	2009-06-06 01:53:49.000000000 +0200
 @@ -14,7 +14,7 @@
  
  find_path(LIBKONQ_INCLUDE_DIR konq_popupmenuplugin.h )

@@ -1,5 +1,5 @@
---- ../cmake/modules/FindKexiv2.cmake.orig	2009-01-06 17:27:37.000000000 +0000
-+++ ../cmake/modules/FindKexiv2.cmake	2009-01-25 08:34:53.000000000 +0000
+--- ./cmake/modules/FindKexiv2.cmake.orig	2009-01-06 17:27:37.000000000 +0000
++++ ./cmake/modules/FindKexiv2.cmake	2009-01-25 08:34:53.000000000 +0000
 @@ -49,7 +49,7 @@
        # in the FIND_PATH() and FIND_LIBRARY() calls
        INCLUDE(UsePkgConfig)

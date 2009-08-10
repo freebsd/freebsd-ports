@@ -1,5 +1,5 @@
---- ../kio/kio/kdirwatch.cpp.orgi	2009-01-27 18:07:49.000000000 +0100
-+++ ../kio/kio/kdirwatch.cpp	2009-01-27 18:15:04.000000000 +0100
+--- ./kio/kio/kdirwatch.cpp.orgi	2009-01-27 18:07:49.000000000 +0100
++++ ./kio/kio/kdirwatch.cpp	2009-01-27 18:15:04.000000000 +0100
 @@ -89,6 +89,9 @@
    } else if (method == "QFSWatch") {
      return KDirWatchPrivate::QFSWatch;

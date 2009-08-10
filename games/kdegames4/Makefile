@@ -32,10 +32,7 @@ OPTIONS=	FREEBSD "Install FreeBSD card desk" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FREEBSD)
-RUN_DEPENDS=	kde4-freebsd-carddeck>=1.0:${PORTSDIR}/games/freebsd-carddeck-kde4
+RUN_DEPENDS+=	kde4-freebsd-carddeck>=1.0:${PORTSDIR}/games/freebsd-carddeck-kde4
 .endif
-
-post-extract:
-	${MKDIR} ${WRKSRC}
 
 .include <bsd.port.post.mk>

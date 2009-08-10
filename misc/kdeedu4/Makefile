@@ -6,7 +6,7 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,13 +17,15 @@ COMMENT=	Collection of entertaining, educational programs for KDE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile \
 		eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
-		gmm++>=3.0.4:${PORTSDIR}/math/gmm++
+		gmm++>=3.0.4:${PORTSDIR}/math/gmm++ \
+		xplanet:${PORTSDIR}/astro/xplanet
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		nova:${PORTSDIR}/astro/libnova \
 		openbabel.3:${PORTSDIR}/science/openbabel \
 		cfitsio.0:${PORTSDIR}/astro/cfitsio \
 		qalculate.4:${PORTSDIR}/math/libqalculate \
 		gsl.13:${PORTSDIR}/math/gsl
+RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet
 
 LATEST_LINK=	${PORTNAME}4
 
@@ -48,8 +50,5 @@ MAN6=		khangman.6
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 		-DBOOST_PYTHON_INCLUDES="${LOCALBASE}/include;${PYTHON_INCLUDEDIR}" \
 		-DBOOST_PYTHON_LIBS="-L${LOCALBASE}/lib -lboost_python -l${PYTHON_VERSION}"
-
-post-extract:
-	${MKDIR} ${WRKSRC}
 
 .include <bsd.port.mk>

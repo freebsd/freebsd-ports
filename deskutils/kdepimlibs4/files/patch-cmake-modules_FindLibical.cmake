@@ -1,5 +1,5 @@
---- ../cmake/modules/FindLibical.cmake.orgi	2009-02-27 17:59:51.000000000 +0100
-+++ ../cmake/modules/FindLibical.cmake	2009-02-27 18:00:20.000000000 +0100
+--- ./cmake/modules/FindLibical.cmake.orgi	2009-02-27 17:59:51.000000000 +0100
++++ ./cmake/modules/FindLibical.cmake	2009-02-27 18:00:20.000000000 +0100
 @@ -52,7 +52,7 @@
  
  if(LIBICAL_INCLUDE_DIRS AND LIBICAL_LIBRARIES)

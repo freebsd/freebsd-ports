@@ -6,6 +6,7 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,7 +17,7 @@ COMMENT=	Libraries for KDE-PIM applications
 
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		boost_python:${PORTSDIR}/devel/boost-python-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		ical.43:${PORTSDIR}/devel/libical
 
 USE_KDE4=	kdelibs kdeexp akonadi kdeprefix kdehier automoc4
@@ -38,8 +39,7 @@ PLIST_SUB+=	WITH_PTH='@comment '
 .endif
 
 post-extract:
-	${MKDIR} ${WRKSRC}
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/../cmake/modules/*.cmake
+		${PATCH_WRKSRC}/cmake/modules/*.cmake
 
 .include <bsd.port.post.mk>

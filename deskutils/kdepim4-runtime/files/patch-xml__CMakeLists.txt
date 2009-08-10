@@ -1,5 +1,5 @@
---- ../xml/CMakeLists.txt.orig	2009-06-03 22:54:34.000000000 +1100
-+++ ../xml/CMakeLists.txt	2009-07-05 22:39:32.000000000 +1100
+--- ./xml/CMakeLists.txt.orig	2009-06-03 22:54:34.000000000 +1100
++++ ./xml/CMakeLists.txt	2009-07-05 22:39:32.000000000 +1100
 @@ -1,21 +1,24 @@
  project (akonadixml)
  

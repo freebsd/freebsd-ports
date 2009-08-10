@@ -1,5 +1,5 @@
---- ../apps/kinfocenter/usbview/usbdevices.h.orig	2008-10-17 03:00:14.000000000 -0800
-+++ ../apps/kinfocenter/usbview/usbdevices.h	2009-03-01 21:01:18.000000000 -0900
+--- ./apps/kinfocenter/usbview/usbdevices.h.orig	2008-10-17 03:00:14.000000000 -0800
++++ ./apps/kinfocenter/usbview/usbdevices.h	2009-03-01 21:01:18.000000000 -0900
 @@ -18,7 +18,12 @@
  #include <bus/usb/usb.h>
  #include <QStringList>

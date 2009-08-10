@@ -30,7 +30,4 @@ MAN1=	kmag.1 \
 	kmousetool.1 \
 	kmouth.1
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 .include <bsd.port.mk>

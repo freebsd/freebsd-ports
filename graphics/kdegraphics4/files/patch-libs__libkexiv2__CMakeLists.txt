@@ -1,5 +1,5 @@
---- ../libs/libkexiv2/CMakeLists.txt.orig	2008-06-03 17:48:03.000000000 +0400
-+++ ../libs/libkexiv2/CMakeLists.txt	2008-08-18 20:07:28.000000000 +0400
+--- ./libs/libkexiv2/CMakeLists.txt.orig	2008-06-03 17:48:03.000000000 +0400
++++ ./libs/libkexiv2/CMakeLists.txt	2008-08-18 20:07:28.000000000 +0400
 @@ -52,8 +52,8 @@
    SUBDIRS(libkexiv2)
  

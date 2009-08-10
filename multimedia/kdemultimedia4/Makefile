@@ -38,7 +38,15 @@ QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 USE_OPENLDAP=	yes
 MAKE_JOBS_SAFE=	yes
 
-post-extract:
-	${MKDIR} ${WRKSRC}
+OPTIONS=	PULSEAUDIO "KMix control for PulseAudio" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PULSEAUDIO)
+CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.else
+CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
+.endif
 
 .include <bsd.port.mk>

@@ -8,6 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,8 +18,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
+BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell
 LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		soprano.4:${PORTSDIR}/textproc/soprano \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
@@ -36,7 +36,6 @@ LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		lzma.0:${PORTSDIR}/archivers/lzmautils-devel \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info \
 		iceauth:${PORTSDIR}/x11/iceauth \
 		xauth:${PORTSDIR}/x11/xauth
 
@@ -50,7 +49,6 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_BISON=	build
 USE_OPENSSL=	yes
-USE_BDB=	40+
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui network opengl qt3support \
 		qtestlib script sql svg xml designer phonon \
@@ -61,13 +59,7 @@ MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DWITH_FAM:BOOL=Off \
 		-DWITH_ACL:BOOL=Off \
-		-DKDE4_PREFIX:String=${KDE4_PREFIX} \
-		-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include" \
-		-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
-		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
-CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include"
-CMAKE_ARGS+=	-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
-CMAKE_ARGS+=	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
+		-DKDE4_PREFIX:String=${KDE4_PREFIX}
 
 MAN1=	checkXML.1 \
 	kde4-config.1 \
@@ -93,35 +85,32 @@ LIB_DEPENDS+=	avahi-qt4:${PORTSDIR}/net/avahi-qt4 \
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 .endif
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/../kde3support/kdeui/k3sconfig.cpp \
-		${WRKSRC}/../kdecore/network/k3socks.cpp \
-		${WRKSRC}/../kdecore/kernel/kstandarddirs.cpp \
-		${WRKSRC}/../kdeui/dialogs/kcupsoptionswidget_p.cpp \
-		${WRKSRC}/../kdeui/kernel/start-session-bus.sh \
-		${WRKSRC}/../kio/kssl/kopenssl.cpp \
-		${WRKSRC}/../kio/kio/ksambashare.cpp \
-		${WRKSRC}/../kjsembed/qtonly/FindQJSInternal.cmake
+		${PATCH_WRKSRC}/kde3support/kdeui/k3sconfig.cpp \
+		${PATCH_WRKSRC}/kdecore/network/k3socks.cpp \
+		${PATCH_WRKSRC}/kdecore/kernel/kstandarddirs.cpp \
+		${PATCH_WRKSRC}/kdeui/dialogs/kcupsoptionswidget_p.cpp \
+		${PATCH_WRKSRC}/kdeui/kernel/start-session-bus.sh \
+		${PATCH_WRKSRC}/kio/kssl/kopenssl.cpp \
+		${PATCH_WRKSRC}/kio/kio/ksambashare.cpp \
+		${PATCH_WRKSRC}/kjsembed/qtonly/FindQJSInternal.cmake
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/../cmake/modules/*.cmake
-	${REINPLACE_CMD} -e 's|/usr/local/include/db4|${BDB_INCLUDE_DIR}|' \
-		-e 's|NAMES db|NAMES ${BDB_LIB_NAME} ${LOCALBASE}/lib|' \
-		${WRKSRC}/../cmake/modules/FindBerkeleyDB.cmake
-	${REINPLACE_CMD} -e 's|addToUtmp ""|addToUtmp "${LOCALBASE}/lib"|' \
-		-e 's|utempter.h|${LOCALBASE}/include/utempter.h|' \
-		${WRKSRC}/../ConfigureChecks.cmake
-	#prevent updating mime during build
+		${PATCH_WRKSRC}/cmake/modules/*.cmake \
+		${PATCH_WRKSRC}/ConfigureChecks.cmake
+#	FindBerkeleyDB.cmake should be rewritten to support multiple version
+#	provided by ports, instead of hardcoding one of them
+# 	${REINPLACE_CMD} -e 's|/usr/local/include/db4|${BDB_INCLUDE_DIR}|' \
+# 		-e 's|NAMES db|NAMES ${BDB_LIB_NAME} ${LOCALBASE}/lib|' \
+# 		${PATCH_WRKSRC}/cmake/modules/FindBerkeleyDB.cmake
+#	prevent updating mime during build
 #	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
-#		${WRKSRC}/../mimetypes/CMakeLists.txt
-	#default KDEHOME dir
+#		${PATCH_WRKSRC}/mimetypes/CMakeLists.txt
+#	default KDEHOME dir
 	${REINPLACE_CMD} -e '/KDE_DEFAULT_HOME/s|.kde|.kde4|' \
-		${WRKSRC}/../CMakeLists.txt
+		${PATCH_WRKSRC}/CMakeLists.txt
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime

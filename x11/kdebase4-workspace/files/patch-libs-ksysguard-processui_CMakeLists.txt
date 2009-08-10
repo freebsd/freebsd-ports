@@ -1,5 +1,5 @@
---- ../libs/ksysguard/processui/CMakeLists.txt.orig	2008-06-18 16:41:37.000000000 +0400
-+++ ../libs/ksysguard/processui/CMakeLists.txt	2008-06-28 13:56:54.000000000 +0400
+--- ./libs/ksysguard/processui/CMakeLists.txt.orig	2008-06-18 16:41:37.000000000 +0400
++++ ./libs/ksysguard/processui/CMakeLists.txt	2008-06-28 13:56:54.000000000 +0400
 @@ -1,7 +1,7 @@
  
  include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../  ../processcore/)

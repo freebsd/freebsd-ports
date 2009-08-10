@@ -1,5 +1,5 @@
---- ../cmake/modules/KDE4Defaults.cmake.orgi	2009-05-10 10:28:06.000000000 +0200
-+++ ../cmake/modules/KDE4Defaults.cmake	2009-05-10 10:29:00.000000000 +0200
+--- ./cmake/modules/KDE4Defaults.cmake.orgi	2009-05-10 10:28:06.000000000 +0200
++++ ./cmake/modules/KDE4Defaults.cmake	2009-05-10 10:29:00.000000000 +0200
 @@ -24,12 +24,12 @@
  # define the generic version of the libraries here
  # this makes it easy to advance it when the next KDE release comes

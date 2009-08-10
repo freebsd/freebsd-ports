@@ -25,7 +25,4 @@ MAKE_JOBS_SAFE=	yes
 
 MAN6=	amor.6
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 .include <bsd.port.mk>

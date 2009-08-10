@@ -1,5 +1,5 @@
---- ../ksysguard/gui/SystemLoad2.sgrd.orig	2009-06-09 18:07:55.000000000 +0200
-+++ ../ksysguard/gui/SystemLoad2.sgrd	2009-07-03 09:35:29.000000000 +0200
+--- ./ksysguard/gui/SystemLoad2.sgrd.orig	2009-06-09 18:07:55.000000000 +0200
++++ ./ksysguard/gui/SystemLoad2.sgrd	2009-07-03 09:35:29.000000000 +0200
 @@ -3,7 +3,7 @@
  <WorkSheet title="System Load" interval="0.5" locked="1" rows="3" columns="1" >
   <host port="-1" command="ksysguardd" shell="" name="localhost" />

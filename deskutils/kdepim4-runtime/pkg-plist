@@ -6,6 +6,7 @@ bin/akonadi_imap_resource
 bin/akonadi_kabc_resource
 bin/akonadi_kcal_resource
 bin/akonadi_knut_resource
+bin/akonadi_kolabproxy_resource
 bin/akonadi_localbookmarks_resource
 bin/akonadi_maildir_resource
 bin/akonadi_microblog_resource
@@ -61,6 +62,7 @@ share/akonadi/agents/imapresource.desktop
 share/akonadi/agents/kabcresource.desktop
 share/akonadi/agents/kcalresource.desktop
 share/akonadi/agents/knutresource.desktop
+share/akonadi/agents/kolabproxyresource.desktop
 share/akonadi/agents/localbookmarksresource.desktop
 share/akonadi/agents/maildirresource.desktop
 share/akonadi/agents/microblog.desktop
@@ -87,14 +89,15 @@ share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/akonadiconsole/akonadiconsoleui.rc
 share/config/kres-migratorrc
 share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
+share/icons/hicolor/64x64/apps/kolab.png
 share/kde4/services/akonadi.protocol
 share/kde4/services/kcm_akonadi.desktop
 share/kde4/services/kcm_akonadi_resources.desktop
 share/kde4/services/kcm_akonadi_server.desktop
 share/kde4/services/kresources/kabc/akonadi.desktop
 share/kde4/services/kresources/kcal/akonadi.desktop
-share/mime/packages/kdepim-mime.xml
 share/mime/application/x-vnd.kde.notes.xml
+share/mime/packages/kdepim-mime.xml
 @dirrm share/apps/akonadiconsole
 @dirrm share/apps/akonadi_knut_resource
 @dirrm share/apps/akonadi/plugins/serializer
@@ -104,3 +107,6 @@ share/mime/application/x-vnd.kde.notes.xml
 @dirrm share/akonadi/agents
 @dirrm share/akonadi
 @dirrm include/akonadi/xml
+@dirrmtry include/akonadi
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

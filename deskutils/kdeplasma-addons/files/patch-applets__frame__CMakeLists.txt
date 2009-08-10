@@ -1,5 +1,5 @@
---- ../applets/frame/CMakeLists.txt.orig	2009-05-15 04:26:59.000000000 +1100
-+++ ../applets/frame/CMakeLists.txt	2009-06-26 10:37:04.000000000 +1100
+--- ./applets/frame/CMakeLists.txt.orig	2009-05-15 04:26:59.000000000 +1100
++++ ./applets/frame/CMakeLists.txt	2009-06-26 10:37:04.000000000 +1100
 @@ -1,7 +1,20 @@
  project(plasma-frame)
  include (MacroLogFeature)

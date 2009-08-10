@@ -1,0 +1,14 @@
+--- ./resources/kolabproxy/CMakeLists.txt.orig	2009-08-04 09:09:41.000000000 +1100
++++ ./resources/kolabproxy/CMakeLists.txt	2009-08-10 19:40:23.000000000 +1100
+@@ -1,8 +1,10 @@
+ project(kolabproxy)
+ 
+ include_directories(
+-    ${kdepim-runtime_SOURCE_DIR}
++    ${QT_QTCORE_INCLUDE_DIR}
++    ${QT_QTGUI_INCLUDE_DIR}
+     ${QT_QTDBUS_INCLUDE_DIR}
++    ${kdepim-runtime_SOURCE_DIR}
+     ${Boost_INCLUDE_DIR}
+ )
+ 

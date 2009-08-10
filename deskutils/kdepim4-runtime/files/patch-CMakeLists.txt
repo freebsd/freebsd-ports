@@ -1,0 +1,11 @@
+--- ./CMakeLists.txt.orig	2009-08-10 19:43:44.000000000 +1100
++++ ./CMakeLists.txt	2009-08-10 19:58:07.000000000 +1100
+@@ -47,7 +47,7 @@
+ 
+ ############### Needed commands before building anything ###############
+ 
+-include_directories(${kdepim-runtime_SOURCE_DIR} ${kdepim-runtime_BINARY_DIR} ${AKONADI_INCLUDE_DIR} ${Boost_INCLUDE_DIR} ${KDE4_INCLUDES} ${KDEPIMLIBS_INCLUDE_DIRS})
++include_directories(${kdepim-runtime_SOURCE_DIR} ${kdepim-runtime_BINARY_DIR} ${KDE4_INCLUDES} ${KDEPIMLIBS_INCLUDE_DIRS} ${AKONADI_INCLUDE_DIR} ${Boost_INCLUDE_DIR})
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
+ 
+ 

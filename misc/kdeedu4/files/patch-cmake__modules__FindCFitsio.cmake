@@ -1,5 +1,5 @@
---- ../cmake/modules/FindCFitsio.cmake.orig	2008-12-21 20:20:00.000000000 +0000
-+++ ../cmake/modules/FindCFitsio.cmake	2009-01-30 22:25:02.000000000 +0000
+--- ./cmake/modules/FindCFitsio.cmake.orig	2008-12-21 20:20:00.000000000 +0000
++++ ./cmake/modules/FindCFitsio.cmake	2009-01-30 22:25:02.000000000 +0000
 @@ -23,19 +23,19 @@
    IF (NOT WIN32)
      find_package(PkgConfig)

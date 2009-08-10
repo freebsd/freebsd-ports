@@ -1,5 +1,5 @@
---- ../kio/kfile/kpropertiesdialog.cpp.orig	2009-05-06 14:14:38.000000000 +0400
-+++ ../kio/kfile/kpropertiesdialog.cpp	2009-05-30 00:46:08.000000000 +0400
+--- ./kio/kfile/kpropertiesdialog.cpp.orig	2009-05-06 14:14:38.000000000 +0400
++++ ./kio/kfile/kpropertiesdialog.cpp	2009-05-30 00:46:08.000000000 +0400
 @@ -1804,7 +1804,15 @@
  #else
      QVarLengthArray<gid_t> groups;

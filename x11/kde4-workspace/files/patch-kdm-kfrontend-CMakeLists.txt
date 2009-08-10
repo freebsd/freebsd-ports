@@ -1,5 +1,5 @@
---- ../kdm/kfrontend/CMakeLists.txt.orig	2008-07-30 17:02:54.000000000 +0300
-+++ ../kdm/kfrontend/CMakeLists.txt	2008-07-30 17:03:26.000000000 +0300
+--- ./kdm/kfrontend/CMakeLists.txt.orig	2008-07-30 17:02:54.000000000 +0300
++++ ./kdm/kfrontend/CMakeLists.txt	2008-07-30 17:03:26.000000000 +0300
 @@ -108,6 +108,6 @@
  build_confci()
  

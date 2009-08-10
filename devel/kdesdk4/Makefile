@@ -57,7 +57,4 @@ MAN1=	adddebug.1 \
 	xml2pot.1 \
 	zonetab2pot.py.1
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 .include <bsd.port.mk>
