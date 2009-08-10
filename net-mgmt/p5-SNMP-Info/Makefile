@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	snmp-info
@@ -18,10 +18,12 @@ LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
 PERL_CONFIGURE=	yes
 
-MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::Bridge.3 \
+MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::Layer3::Altiga.3 \
+	SNMP::Info::Layer3::Arista.3 SNMP::Info::Bridge.3 \
 	SNMP::Info::CDP.3 SNMP::Info::CiscoImage.3 SNMP::Info::CiscoQOS.3 \
 	SNMP::Info::CiscoRTT.3 SNMP::Info::CiscoStack.3 \
-	SNMP::Info::CiscoStats.3 SNMP::Info::CiscoVTP.3 SNMP::Info::Entity.3 \
+	SNMP::Info::CiscoStats.3 SNMP::Info::CiscoStpExtensions.3 \
+	SNMP::Info::CiscoVTP.3 SNMP::Info::Entity.3 \
 	SNMP::Info::EtherLike.3 SNMP::Info::FDP.3 SNMP::Info::Layer1.3 \
 	SNMP::Info::Layer1::Allied.3 SNMP::Info::Layer1::Asante.3 \
 	SNMP::Info::Layer1::Bayhub.3 SNMP::Info::Layer1::S3000.3 \

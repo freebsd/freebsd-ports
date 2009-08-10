@@ -10,6 +10,7 @@
 %%SITE_PERL%%/SNMP/Info/CiscoRTT.pm
 %%SITE_PERL%%/SNMP/Info/CiscoStack.pm
 %%SITE_PERL%%/SNMP/Info/CiscoStats.pm
+%%SITE_PERL%%/SNMP/Info/CiscoStpExtensions.pm
 %%SITE_PERL%%/SNMP/Info/CiscoVTP.pm
 %%SITE_PERL%%/SNMP/Info/Entity.pm
 %%SITE_PERL%%/SNMP/Info/EtherLike.pm
@@ -42,9 +43,11 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/Orinoco.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/ZyXEL_DSLAM.pm
 %%SITE_PERL%%/SNMP/Info/Layer3.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Arista.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Aironet.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/AlcatelLucent.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/AlteonAD.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Altiga.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/BayRS.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C3550.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C4000.pm
