@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.285
+PORTVERSION=	1.286
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/ \
 		http://christianserving.org/ports/mail/imapsync/
