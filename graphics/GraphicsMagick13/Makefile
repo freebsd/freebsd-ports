@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.5
-PORTREVISION=	2
+PORTVERSION=	1.3.6
 CATEGORIES=	graphics
-MASTER_SITES=	SF \
-		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
+MASTER_SITES=	LOCAL/glarkin \
+		http://www.sourcehosting.net/freebsd/distfiles/ \
+		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
