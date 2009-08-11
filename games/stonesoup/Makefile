@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref
 DISTNAME=	stone_soup-${PORTVERSION}-src
@@ -23,6 +23,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/source/
 
 SUB_FILES=	README.FreeBSD
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
+
+FETCH_ARGS?=    -pRr
 
 OPTIONS=	SDL		"SDL support (tiles interface)"	off \
 		SOUND		"Sound support"			off \
@@ -49,7 +51,7 @@ RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif #WITH_SOUND
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}/," ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e "s,%%SAVEDIR%%,${SAVEDIR}," ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/${MAKEFILE}
 .if defined(WITHOUT_LUA_BINDINGS)
