@@ -1,0 +1,11 @@
+--- makefile_bsdLP64_utf8.orig	2009-08-11 15:44:03.000000000 +0400
++++ makefile_bsdLP64_utf8	2009-08-11 15:44:26.000000000 +0400
+@@ -6,7 +6,7 @@
+ 
+ # the option -fno-strict-aliasing may not be available on some BSD versions 
+ 
+-CFLAGS = -m64 -Wall -Wno-uninitialized -fno-strict-aliasing -O2 -c -g -DREADLINE -DNEWLISP64 -DSUPPORT_UTF8 -D_BSD
++CFLAGS += -c -DREADLINE -DNEWLISP64 -DSUPPORT_UTF8 -D_BSD
+ # or without readline lib
+ #CFLAGS = -m64 -Wall -Wno-uninitialized -Wno-strict-aliasing -O2 -c -g -DNEWLISP64 -D_BSD
+ 
