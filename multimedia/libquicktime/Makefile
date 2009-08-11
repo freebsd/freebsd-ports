@@ -7,27 +7,34 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files
 
+.if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.endif
 
 USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
-USE_XORG=	xaw xv
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
-CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
+.else
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+.endif
 CFLAGS+=	-fPIC
+.if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
+USE_XORG=	xaw xv
+CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen
 MAN1=		lqtplay.1
 
-OPTIONS=	LAME "Enable Lame mp3 encoding support" Off \
-		OPENGL "Enable OpenGL support" On \
+OPTIONS=	OPENGL "Enable OpenGL support" On \
 		DV "Enable libdv support for digital cameras" On \
 		JPEG "Enable JPEG support" On \
 		PNG "Enable PNG support" On \
@@ -44,12 +51,18 @@ PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 		qt4l_license.html qt4l_opening.html qt4l_positioning.html \
 		qt4l_reading.html qt4l_util.html qt4l_writing.html
 
+.else
+CONFIGURE_ARGS+=	--without-x --enable-gpl --without-doxygen
+OPTIONS=	OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=	--without-cpuflags
 .endif
 
+.if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 .if ${HAVE_GNOME:Mgtk20}!="" && defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk
@@ -57,15 +70,6 @@ PLIST_SUB+=	GTK=""
 .else
 CONFIGURE_ARGS+=	--without-gtk
 PLIST_SUB+=	GTK="@comment "
-.endif
-
-.if defined(WITH_LAME)
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-PLIST_SUB+=	LAME=""
-CONFIGURE_ARGS+=	--with-lame
-.else
-PLIST_SUB+=	LAME="@comment "
-CONFIGURE_ARGS+=	--without-lame
 .endif
 
 .if !defined(WITHOUT_OPENGL)
@@ -152,6 +156,8 @@ CONFIGURE_ARGS+=	--enable-mmx
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
@@ -172,7 +178,7 @@ post-patch:
 pre-configure:
 	@${CHMOD} +x ${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTDOCS) && !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}

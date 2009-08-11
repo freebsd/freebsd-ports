@@ -24,8 +24,6 @@ lib/libquicktime/lqt_audiocodec.la
 lib/libquicktime/lqt_audiocodec.so
 %%DV%%lib/libquicktime/lqt_dv.la
 %%DV%%lib/libquicktime/lqt_dv.so
-%%LAME%%lib/libquicktime/lqt_lame.so
-%%LAME%%lib/libquicktime/lqt_lame.la
 %%FAAC%%lib/libquicktime/lqt_faac.la
 %%FAAC%%lib/libquicktime/lqt_faac.so
 %%FAAD%%lib/libquicktime/lqt_faad2.la
