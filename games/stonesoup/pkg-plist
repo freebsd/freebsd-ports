@@ -89,6 +89,7 @@ bin/stonesoup
 %%DATADIR%%/settings/menu_colours.txt
 %%DATADIR%%/settings/init.txt
 %%DATADIR%%/settings/food_colouring.txt
+%%DATADIR%%/settings/dolls.txt
 %%DATADIR%%/settings/autopickup_exceptions.txt
 %%DATADIR%%/settings/034_monster_glyphs.txt
 %%DATADIR%%/settings/travel_stoppers.txt
@@ -96,6 +97,7 @@ bin/stonesoup
 %%DATADIR%%/docs/ssh_guide.txt
 %%DATADIR%%/docs/quickstart.txt
 %%DATADIR%%/docs/pcre_license.txt
+%%DATADIR%%/docs/patch_guide.txt
 %%DATADIR%%/docs/options_guide.txt
 %%DATADIR%%/docs/mt19937.txt
 %%DATADIR%%/docs/monster_speech.txt
@@ -106,8 +108,11 @@ bin/stonesoup
 %%DATADIR%%/docs/keybind.txt
 %%DATADIR%%/docs/key_changes.txt
 %%DATADIR%%/docs/crawl_manual.txt
+%%DATADIR%%/docs/crawl-0.5.1-options.txt
+%%DATADIR%%/docs/crawl-0.5.0-options.txt
 %%DATADIR%%/docs/coding_conventions.txt
 %%DATADIR%%/docs/arena.txt
+%%DATADIR%%/docs/changelog.txt
 %%DATADIR%%/docs/aptitudes.txt
 %%DATADIR%%/docs/tiles_help.txt
 @exec chown -R root:games %D/%%DATADIR%%
