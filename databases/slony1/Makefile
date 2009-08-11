@@ -18,6 +18,7 @@ COMMENT=	PostgreSQL master to multiple replicas replication system
 BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 GNU_CONFIGURE=	yes
+USE_BISON=	build
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -28,7 +29,7 @@ SUB_LIST+=	NAME=slon
 
 OPTIONS=	PERLTOOLS "Install perl configuration tools" Off
 
-CONFLICTS?=     slony1v2-*
+CONFLICTS?=     slony1v2-2*
 
 .include <bsd.port.pre.mk>
 
