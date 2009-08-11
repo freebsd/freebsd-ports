@@ -20,8 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
 		${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		does not configure
-
 PERL_CONFIGURE=	yes
 
 MAN3=	GraphViz::Data::Structure.3
