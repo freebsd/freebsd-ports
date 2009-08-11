@@ -29,7 +29,8 @@ QT_COMPONENTS=	gui dbus xml opengl \
 USE_GSTREAMER=	yes
 
 IGNORE=		superseded by multimedia/qt4-phonon-gst
-EXPIRATION_DATE=2009-10-06
+EXPIRATION_DATE=	2009-09-06
+DEPRECATED=	${IGNORE}
 
 post-patch:
 #fix finding automoc when PREFIX is not matched KDE4_PREFIX
