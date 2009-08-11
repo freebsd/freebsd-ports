@@ -142,7 +142,7 @@ share/pixmaps/pidgin/arrow-right.xpm
 share/pixmaps/pidgin/arrow-up.xpm
 share/pixmaps/pidgin/buttons/edit.png
 share/pixmaps/pidgin/buttons/info.png
-share/pixmaps/pidgin/buttons/music.png
+%%DBUS%%share/pixmaps/pidgin/buttons/music.png
 share/pixmaps/pidgin/buttons/pause.png
 share/pixmaps/pidgin/dialogs/16/auth.png
 share/pixmaps/pidgin/dialogs/16/error.png
