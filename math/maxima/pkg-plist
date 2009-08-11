@@ -555,12 +555,15 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/matching.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/rtest_graphs.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/spring_embedding.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/wiener_index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/impdiff.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/implicit_plot.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/integer_sequence.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/integration/abs_integrate.html
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/integration/abs_integrate.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/integration/abs_integrate.texi
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/integration/hyperint.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/integration/partition.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/integration/rtest_abs_integrate.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/levin/levin.dem
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/levin/levin.mac
@@ -696,6 +699,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/hard_test.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/intervalArithmetic.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/lowLevel.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/multiCertificateOfPositivity.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/readme.txt
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/rootCounting.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/rootIsolation.mac
@@ -808,6 +812,12 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/dynamics.mac
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/plotdf.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/rtest_dynamics.mac
+%%DATADIR%%/%%PORTVERSION%%/share/hypergeometric/abramowitz_id.mac
+%%DATADIR%%/%%PORTVERSION%%/share/hypergeometric/hypergeometric.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/hypergeometric/hypergeometric_mac.mac
+%%DATADIR%%/%%PORTVERSION%%/share/hypergeometric/nfloat.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/hypergeometric/rtest_hg.mac
+%%DATADIR%%/%%PORTVERSION%%/share/hypergeometric/rtest_nfloat.mac
 %%DATADIR%%/%%PORTVERSION%%/share/integequations/inteqn.mac
 %%DATADIR%%/%%PORTVERSION%%/share/integequations/inteqn.usg
 %%DATADIR%%/%%PORTVERSION%%/share/integequations/intexs.mac
@@ -1323,6 +1333,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/src/gamma.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/generate-sys-proclaim.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/generr.lisp
+%%DATADIR%%/%%PORTVERSION%%/src/getopt.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/gnuplot.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/grind.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/hayat.lisp
@@ -1625,6 +1636,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_lambert_w.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_map.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_mset.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_plot.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_round.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_scalarp.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_sign.mac
@@ -1766,6 +1778,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/diffequations
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/draw
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/dynamics
+@dirrm %%DATADIR%%/%%PORTVERSION%%/share/hypergeometric
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/integequations
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/integration
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas
