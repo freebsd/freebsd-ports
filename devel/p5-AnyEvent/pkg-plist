@@ -1,11 +1,14 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/.packlist
+%%SITE_PERL%%/AE.pm
 %%SITE_PERL%%/AnyEvent.pm
+%%SITE_PERL%%/AnyEvent/Debug.pm
 %%SITE_PERL%%/AnyEvent/DNS.pm
 %%SITE_PERL%%/AnyEvent/Handle.pm
 %%SITE_PERL%%/AnyEvent/Impl/EV.pm
 %%SITE_PERL%%/AnyEvent/Impl/Event.pm
 %%SITE_PERL%%/AnyEvent/Impl/EventLib.pm
+%%SITE_PERL%%/AnyEvent/Impl/Irssi.pm
 %%SITE_PERL%%/AnyEvent/Impl/Glib.pm
 %%SITE_PERL%%/AnyEvent/Impl/POE.pm
 %%SITE_PERL%%/AnyEvent/Impl/Perl.pm
