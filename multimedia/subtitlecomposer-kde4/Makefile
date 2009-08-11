@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	subtitlecomposer
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=subcomposer
@@ -41,7 +40,6 @@ CMAKE_ARGS+=	-DWITH_Xine:Bool=Off
 .endif
 
 .if defined(WITH_GSTREAMER)
-BROKEN=		doesn't compile with GStreamer
 USE_GSTREAMER+=	yes
 .else
 CMAKE_ARGS+=	-DWITH_GStreamer:Bool=Off
