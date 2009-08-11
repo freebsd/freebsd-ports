@@ -16,7 +16,7 @@ COMMENT=	Simple non-linear movie editor
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		gavl.0:${PORTSDIR}/multimedia/gavl \
+		gavl.1:${PORTSDIR}/multimedia/gavl \
 		quicktime.0:${PORTSDIR}/multimedia/libquicktime \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		jack.0:${PORTSDIR}/audio/jack \

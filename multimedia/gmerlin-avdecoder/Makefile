@@ -14,7 +14,7 @@ MASTER_SITES=	SF/gmerlin
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	General purpose media decoding library
 
-LIB_DEPENDS=	gavl.0:${PORTSDIR}/multimedia/gavl
+LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes

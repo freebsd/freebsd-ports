@@ -17,7 +17,7 @@ MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Minimalistic plugin API for video effects
 
 LIB_DEPENDS=	cv.1:${PORTSDIR}/graphics/opencv \
-		gavl.0:${PORTSDIR}/multimedia/gavl
+		gavl.1:${PORTSDIR}/multimedia/gavl
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig

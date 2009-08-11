@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Multimedia framework
 
-LIB_DEPENDS=	gavl.0:${PORTSDIR}/multimedia/gavl
+LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-doxygen --without-texinfo --disable-alsa \
