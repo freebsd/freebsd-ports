@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xiphos
-PORTVERSION=	3.1
-PORTREVISION=	2
+PORTVERSION=	3.1.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gnomesword
@@ -16,7 +15,7 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
 
 RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell \
-		${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword15
+		${LOCALBASE}/lib/libsword-1.6.0.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 
