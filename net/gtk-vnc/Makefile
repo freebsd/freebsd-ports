@@ -14,6 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC viewer widget for GTK+
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
+		sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GNOME=	pygtk2 gnomehack
