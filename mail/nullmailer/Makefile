@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nullmailer
-PORTVERSION=	1.03
-PORTREVISION=	2
+PORTVERSION=	1.04
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
@@ -17,21 +16,20 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	MTA for hosts which relay to a fixed set of smart relays
 
-HAS_CONFIGURE=	yes
+LOCALSTATEDIR=	/var/spool
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR}
 
 USE_SUBMAKE=	yes
 
 USE_RC_SUBR=	${PORTNAME}
-SUB_FILES+=	pkg-install pkg-message 
+SUB_FILES+=	pkg-install pkg-message
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	LOCALSTATEDIR=${LOCALSTATEDIR}
 SUB_LIST+=	LOCALSTATEDIR=${LOCALSTATEDIR}
-
-LOCALSTATEDIR=	/var/spool
-
-CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR}
 
 MAN1=	nullmailer-inject.1 sendmail.1
 MAN7=	nullmailer.7
