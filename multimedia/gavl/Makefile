@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gavl
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin
 
