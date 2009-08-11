@@ -15,10 +15,10 @@ include/GraphicsMagick/Magick++/Montage.h
 include/GraphicsMagick/Magick++/Pixels.h
 include/GraphicsMagick/Magick++/STL.h
 include/GraphicsMagick/Magick++/TypeMetric.h
-include/GraphicsMagick/magick/PreRvIcccm.h
 include/GraphicsMagick/magick/api.h
 include/GraphicsMagick/magick/attribute.h
 include/GraphicsMagick/magick/blob.h
+include/GraphicsMagick/magick/cdl.h
 include/GraphicsMagick/magick/channel.h
 include/GraphicsMagick/magick/color.h
 include/GraphicsMagick/magick/colorspace.h
@@ -26,6 +26,7 @@ include/GraphicsMagick/magick/command.h
 include/GraphicsMagick/magick/compare.h
 include/GraphicsMagick/magick/composite.h
 include/GraphicsMagick/magick/compress.h
+include/GraphicsMagick/magick/confirm_access.h
 include/GraphicsMagick/magick/constitute.h
 include/GraphicsMagick/magick/decorate.h
 include/GraphicsMagick/magick/delegate.h
@@ -37,6 +38,7 @@ include/GraphicsMagick/magick/error.h
 include/GraphicsMagick/magick/forward.h
 include/GraphicsMagick/magick/fx.h
 include/GraphicsMagick/magick/gem.h
+include/GraphicsMagick/magick/hclut.h
 include/GraphicsMagick/magick/image.h
 include/GraphicsMagick/magick/list.h
 include/GraphicsMagick/magick/log.h
@@ -54,6 +56,7 @@ include/GraphicsMagick/magick/pixel_cache.h
 include/GraphicsMagick/magick/pixel_iterator.h
 include/GraphicsMagick/magick/profile.h
 include/GraphicsMagick/magick/quantize.h
+include/GraphicsMagick/magick/random.h
 include/GraphicsMagick/magick/registry.h
 include/GraphicsMagick/magick/render.h
 include/GraphicsMagick/magick/resize.h
@@ -65,8 +68,6 @@ include/GraphicsMagick/magick/timer.h
 include/GraphicsMagick/magick/transform.h
 include/GraphicsMagick/magick/utility.h
 include/GraphicsMagick/magick/version.h
-include/GraphicsMagick/magick/widget.h
-include/GraphicsMagick/magick/xwindow.h
 include/GraphicsMagick/wand/drawing_wand.h
 include/GraphicsMagick/wand/magick_wand.h
 include/GraphicsMagick/wand/pixel_wand.h
@@ -79,11 +80,11 @@ lib/GraphicsMagick/config/type.mgk
 lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.la
 lib/libGraphicsMagick++.so
-lib/libGraphicsMagick++.so.3
+lib/libGraphicsMagick++.so.4
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.la
 lib/libGraphicsMagick.so
-lib/libGraphicsMagick.so.3
+lib/libGraphicsMagick.so.4
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.la
 lib/libGraphicsMagickWand.so
@@ -135,6 +136,7 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Image.fig
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Image.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Image.png
+%%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Image.rst
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/ImageDesign.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/ImageMagick.png
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Install.html
@@ -171,10 +173,12 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/api_hyperlinks.rst
 %%PORTDOCS%%%%DOCSDIR%%/www/api/attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/blob.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/cdl.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/channel.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/color.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/compare.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/composite.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/confirm_access.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/constitute.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/decorate.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/deprecate.html
@@ -184,6 +188,7 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/enhance.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/error.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/fx.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/hclut.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/image.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/list.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick.html
@@ -227,10 +232,12 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/docutils-articles.css
 %%PORTDOCS%%%%DOCSDIR%%/www/download.html
 %%PORTDOCS%%%%DOCSDIR%%/www/download.rst
+%%PORTDOCS%%%%DOCSDIR%%/www/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/www/formats.html
 %%PORTDOCS%%%%DOCSDIR%%/www/formats.rst
 %%PORTDOCS%%%%DOCSDIR%%/www/gm.html
 %%PORTDOCS%%%%DOCSDIR%%/www/identify.html
+%%PORTDOCS%%%%DOCSDIR%%/www/images/ball.png
 %%PORTDOCS%%%%DOCSDIR%%/www/images/banner_bg.png
 %%PORTDOCS%%%%DOCSDIR%%/www/images/examples.jpg
 %%PORTDOCS%%%%DOCSDIR%%/www/images/gm-107x76.png
@@ -266,8 +273,8 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/tools.rst
 %%PORTDOCS%%%%DOCSDIR%%/www/utilities.html
 %%PORTDOCS%%%%DOCSDIR%%/www/utilities.rst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/Magick++
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
