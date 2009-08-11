@@ -26,6 +26,8 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
 
+CMAKE_SOURCE_PATH=	${WRKSRC}/..
+
 CONFLICTS=	bibletime-devel-2*
 
 .include <bsd.port.pre.mk>
@@ -33,14 +35,5 @@ CONFLICTS=	bibletime-devel-2*
 .if ${OSVERSION} < 700042
 BROKEN=	does on build on 6.x, use misc/bibletime-kde3
 .endif
-
-post-extract:
-	${MKDIR} ${WRKSRC}/build
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} \
-		-D CMAKE_BUILD_TYPE=Release \
-		-D CMAKE_INSTALL_PREFIX=${PREFIX} \
-		${WRKSRC}/..
 
 .include <bsd.port.post.mk>
