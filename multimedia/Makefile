@@ -141,6 +141,7 @@
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
     SUBDIR += libquicktime
+    SUBDIR += libquicktime-lame
     SUBDIR += libtheora
     SUBDIR += libtuner
     SUBDIR += libxine
