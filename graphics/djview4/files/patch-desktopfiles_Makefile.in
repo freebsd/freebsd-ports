@@ -1,11 +1,24 @@
---- desktopfiles/Makefile.in.orig	2007-09-11 20:44:47.000000000 +0400
-+++ desktopfiles/Makefile.in	2007-09-11 20:44:59.000000000 +0400
-@@ -58,7 +58,7 @@
+--- desktopfiles/Makefile.in.orig	2009-02-19 19:51:51.000000000 +0300
++++ desktopfiles/Makefile.in	2009-08-11 15:16:25.000000000 +0400
+@@ -52,7 +52,7 @@
+ 	  || cp ${srcdir}/prebuilt-$@ $@
+ 
+ hi-djview4.svgz: djview.svg
+-	gzip <$< >$@
++	gzip <${.ALLSRC} >$@
+ 
+ register-djview-menu: register-djview-menu.in
+ 	sed < ${srcdir}/register-djview-menu.in > register-djview-menu \
+@@ -69,10 +69,10 @@
  
  install-djview-files: FORCE
  	${INSTALL} -d ${DESTDIR}${datadir_djview}
 -	${INSTALL_PROGRAM} register-djview-menu ${DESTDIR}${datadir_djview}
 +	${INSTALL_SCRIPT} register-djview-menu ${DESTDIR}${datadir_djview}
- 	${INSTALL_DATA} ${srcdir}/*djview4.png ${DESTDIR}${datadir_djview}
- 	${INSTALL_DATA} ${srcdir}/*djview4.desktop ${DESTDIR}${datadir_djview}
+ 	${INSTALL_DATA} *djview4.png ${DESTDIR}${datadir_djview}
+ 	${INSTALL_DATA} *djview4.svgz ${DESTDIR}${datadir_djview}
+-	${INSTALL_PROGRAM} ${srcdir}/*djview4.desktop ${DESTDIR}${datadir_djview}
++	${INSTALL_DATA} ${srcdir}/*djview4.desktop ${DESTDIR}${datadir_djview}
  	-@echo "Run ${datadir_djview}/register-djview-menu install"
+ 	-@echo " to register the djview3 menu entries."
+ 
