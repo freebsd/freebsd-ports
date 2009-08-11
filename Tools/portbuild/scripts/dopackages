@@ -648,6 +648,10 @@ if [ "$nofinish" = 0 ]; then
     # Remove INDEX entries for packages that do not exist
     ${pb}/scripts/chopindex ${builddir}/ports/${INDEXFILE} ${builddir}/packages > ${builddir}/packages/INDEX
 
+    # Copy UPDATING and MOVED into the packages folder
+    cp ${builddir}/ports/UPDATING ${builddir}/packages/UPDATING
+    cp ${builddir}/ports/MOVED ${builddir}/packages/MOVED
+
     ls -asFlrt ${builddir}/packages/All > ${builddir}/logs/ls-lrt
     cp -p ${builddir}/make ${builddir}/logs
 
@@ -669,16 +673,12 @@ if [ "$nofinish" = 0 ]; then
     
     wait
     
-    if [ "$branch" != "4-exp" ]; then
-    # Currently broken - kk
-    #su ${user} -c "${pb}/scripts/cpdistfiles ${branch} > ${builddir}/cpdistfiles.log 2>&1 </dev/null" &
-	if [ "$ftp" = 1 ]; then
-	    echo "ended at $(date)"
-	    echo "================================================"
-	    echo "copying packages"
-	    echo "================================================"
-	    ${pb}/scripts/docppackages ${arch} ${branch} ${builddir}
-	fi
+    if [ "$ftp" = 1 ]; then
+        echo "ended at $(date)"
+        echo "================================================"
+        echo "copying packages"
+        echo "================================================"
+        ${pb}/scripts/docppackages ${arch} ${branch} ${builddir}
     fi
 fi
 
