@@ -1,11 +1,11 @@
---- Makefile.in.org	Mon Feb 12 09:51:32 2007
-+++ Makefile.in	Mon Feb 12 09:58:27 2007
-@@ -230,7 +230,7 @@
+--- Makefile.in.orig	2009-08-07 22:52:54.000000000 -0300
++++ Makefile.in	2009-08-07 22:54:01.000000000 -0300
+@@ -260,7 +260,7 @@
  	opendbx.spec \
  	ABOUT-NLS
  
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
- pkgconfig_DATA = opendbx.pc
+ pkgconfig_DATA = opendbx.pc opendbxplus.pc
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
