@@ -931,7 +931,7 @@ MASTER_SITE_PACKETSTORM+= \
 	http://packetstorm.offensive-security.com/%SUBDIR%/ \
 	http://packetstorm.igor.onlinedirect.bg/%SUBDIR%/ \
 	http://packetstorm.unixteacher.org/%SUBDIR%/ \
-	http://packetstorm.orion-hosting.co.uk/%SUBDIR%/ \
+	http://packetstorm.orion-hosting.co.uk/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_PERL_CPAN)
