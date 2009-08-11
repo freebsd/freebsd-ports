@@ -6,6 +6,7 @@
 
 PORTNAME=	arora
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,7 +20,7 @@ HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
 MAKE_JOBS_SAFE=	yes
 
-MAN1=		arora.1 arora-placesimport.1 htmlToXBel.1
+MAN1=		arora.1 arora-cacheinfo.1 arora-placesimport.1 htmlToXBel.1
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
@@ -37,14 +38,13 @@ do-configure:
 .endif
 	@${REINPLACE_CMD} -e "/INSTALLS/s|man man-compress||" \
 		${WRKSRC}/src/src.pro \
+		${WRKSRC}/tools/cacheinfo/cacheinfo.pro \
 		${WRKSRC}/tools/htmlToXBel/htmlToXBel.pro \
 		${WRKSRC}/tools/placesimport/placesimport.pro
 	@${REINPLACE_CMD} -e "/else/s|lrelease|lrelease-qt4|" \
 		${WRKSRC}/src/locale/locale.pri
 	@${REINPLACE_CMD} "/pkg-config/d" \
 		${WRKSRC}/src/src.pro
-	@${REINPLACE_CMD} "/cacheinfo/d" \
-		${WRKSRC}/tools/tools.pro
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS}
 
 post-configure:
@@ -54,6 +54,7 @@ post-configure:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/src/data/arora.1 \
+		${WRKSRC}/tools/cacheinfo/data/arora-cacheinfo.1 \
 		${WRKSRC}/tools/htmlToXBel/data/htmlToXBel.1 \
 		${WRKSRC}/tools/placesimport/data/arora-placesimport.1 \
 		${PREFIX}/man/man1
