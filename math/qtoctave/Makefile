@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	qtoctave
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	math
-MASTER_SITES=	http://forja.rediris.es/frs/download.php/877/
+MASTER_SITES=	http://forja.rediris.es/frs/download.php/1383/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt4 frontend for Octave
