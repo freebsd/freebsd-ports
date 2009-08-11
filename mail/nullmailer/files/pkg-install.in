@@ -98,8 +98,8 @@ EOF
 fi
 
 if [ x"$2" = xPOST-INSTALL ]; then
-    if [ ! -f ${PKG_PREFIX}/etc/nullmailer/me.sample ]; then
-	echo "Creating \"${PKG_PREFIX}/etc/nullmailer/me.sample\"."
-	echo `/bin/hostname` > ${PKG_PREFIX}/etc/nullmailer/me.sample
+    if [ ! -f %%PREFIX%%/etc/nullmailer/me.sample ]; then
+	echo "Creating \"%%PREFIX%%/etc/nullmailer/me.sample\"."
+	echo `/bin/hostname` > %%PREFIX%%/etc/nullmailer/me.sample
     fi
 fi
