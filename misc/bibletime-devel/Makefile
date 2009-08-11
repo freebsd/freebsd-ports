@@ -22,6 +22,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		clucene.0:${PORTSDIR}/textproc/clucene
 
+BROKEN=		Does not build
+EXPIRATION_DATE=	2009-08-16
+
 USE_OPENSSL=	yes
 KDE4_BUILDENV=	yes
 USE_KDE4=	kdeprefix runtime workspace automoc4
