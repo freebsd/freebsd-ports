@@ -14,3 +14,5 @@ It is provided as an alternative to GraphViz::Data::Grapher. Differences:
      doesn't by default.
    - GraphViz::Data:Structure can parse out globs and CODE references (almost
      as well as the debugger does).
+
+WWW: http://search.cpan.org/dist/GraphViz-Data-Structure/
