@@ -217,6 +217,7 @@ share/locale/nb_NO/LC_MESSAGES/xiphos.mo
 share/locale/nl/LC_MESSAGES/xiphos.mo
 share/locale/pt/LC_MESSAGES/xiphos.mo
 share/locale/pt_PT/LC_MESSAGES/xiphos.mo
+share/locale/sk/LC_MESSAGES/xiphos.mo
 share/locale/sv_SE/LC_MESSAGES/xiphos.mo
 share/pixmaps/xiphos/about.png
 share/pixmaps/xiphos/chat_icon-16.png
@@ -257,6 +258,7 @@ share/xiphos/dlg-un-16.png
 share/xiphos/epiphany-bookmarks.png
 share/xiphos/gnome-sound-properties.png
 share/xiphos/mailing_list_icon-16.png
+share/xiphos/markverse.glade
 share/xiphos/new_tab_button.png
 share/xiphos/silk-edit-bookmarks.png
 share/xiphos/sword_icon-16.png
