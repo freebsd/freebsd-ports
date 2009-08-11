@@ -118,7 +118,7 @@ RUN_DEPENDS+=	kdessh:${PORTSDIR}/misc/kdeutils3
 RUN_DEPENDS+=	kword:${PORTSDIR}/editors/koffice-kde3
 .endif
 .if !defined(WITHOUT_KDENETWORK)
-RUN_DEPENDS+=	kppp:${PORTSDIR}/net/kdenetwork3
+RUN_DEPENDS+=	kget:${PORTSDIR}/net/kdenetwork3
 .endif
 .if !defined(WITHOUT_KDEGRAPHICS)
 RUN_DEPENDS+=	kview:${PORTSDIR}/graphics/kdegraphics3
