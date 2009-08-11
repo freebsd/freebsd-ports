@@ -11,6 +11,7 @@ lib/neko/zlib.ndll
 %%APACHE22%%lib/neko/mod_neko2.ndll
 %%APACHE22%%lib/neko/mod_tora2.ndll
 %%MYSQL4%%lib/neko/mysql.ndll
+%%MYSQL5%%lib/neko/mysql5.ndll
 %%SQLITE3%%lib/neko/sqlite.ndll
 %%PCRE%%lib/neko/regexp.ndll
 %%GTK2%%lib/neko/ui.ndll

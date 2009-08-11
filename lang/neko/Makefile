@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	neko
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 CATEGORIES=	lang
 MASTER_SITES=	http://nekovm.org/_media/
 
@@ -22,6 +21,7 @@ USE_GMAKE=	yes
 OPTIONS=	APACHE13 "Build with mod_neko for Apache 1.3.x" off \
 		APACHE22 "Build with mod_neko for Apache 2.2.x" off \
 		MYSQL4   "Build with MySQL 4.x library" off \
+		MYSQL5   "Build with MySQL 5.x library" off \
 		SQLITE3  "Build with Sqlite 3.x SQL library" off \
 		PCRE     "Build with PCRE library" on \
 		GTK2     "Build with Gtk 2.x UI library" on
@@ -36,6 +36,10 @@ BC_CFLAGS:=	${CFLAGS}
 CFLAGS+=	-I${WRKSRC} -I${LOCALBASE}/include
 LDFLAGS+=	-L${BC_DIR}/.libs -L${LOCALBASE}/lib
 LIBKEYNAME=
+
+.if defined(WITH_APACHE13) && defined(WITH_APACHE22)
+IGNORE= option APACHE13 and APACHE22 conflict
+.endif
 
 .if defined(WITH_APACHE13)
 BUILD_DEPENDS+=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
@@ -57,6 +61,10 @@ LIBKEYNAME+=	mod_neko2 mod_tora2
 PLIST_SUB+=	APACHE22="@comment "
 .endif
 
+.if defined(WITH_MYSQL4) && defined(WITH_MYSQL5)
+IGNORE= option MYSQL4 and MYSQL5 conflict
+.endif
+
 .if defined(WITH_MYSQL4)
 BUILD_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql41-client
 RUN_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql41-client
@@ -65,6 +73,16 @@ PLIST_SUB+=	MYSQL4=
 .else
 LIBKEYNAME+=	mysql
 PLIST_SUB+=	MYSQL4="@comment "
+.endif
+
+.if defined(WITH_MYSQL5)
+BUILD_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql51-client
+RUN_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql51-client
+CFLAGS+=	-I${LOCALBASE}/include/mysql
+PLIST_SUB+=	MYSQL5=
+.else
+LIBKEYNAME+=	mysql5
+PLIST_SUB+=	MYSQL5="@comment "
 .endif
 
 .if defined(WITH_SQLITE3)
