@@ -12,7 +12,7 @@ etc/bash_completion.d/darcs
 %%SERVER%%share/darcs/xslt/repos.xslt
 %%SERVER%%share/darcs/xslt/rss.xslt
 %%SERVER%%share/darcs/xslt/styles.css
-@dirrm etc/bash_completion.d
+@dirrmtry etc/bash_completion.d
 %%SERVER%%@dirrmtry etc/darcs
 %%SERVER%%@dirrmtry www/cgi-bin
 %%SERVER%%@dirrm share/darcs/xslt
