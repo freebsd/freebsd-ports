@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Socket-Class
-PORTVERSION=	2.21
+PORTVERSION=	2.254
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ COMMENT=	A perl class to communicate with sockets
 PERL_CONFIGURE=	yes
 
 MAN3=		Socket::Class::Const.3 \
+		Socket::Class::CTX.3 \
 		Socket::Class::SSL.3 \
 		Socket::Class.3
 
