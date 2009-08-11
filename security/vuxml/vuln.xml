@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5179d85c-8683-11de-91b9-0022157515b2">
+    <topic>fetchmail -- improper SSL certificate subject verification</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><le>6.3.10</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2009-01.txt">
+	  <p>Moxie Marlinspike demonstrated in July 2009 that some CAs would
+	    sign certificates that contain embedded NUL characters in the
+	    Common Name or subjectAltName fields of ITU-T X.509
+	    certificates.</p>
+	  <p>Applications that would treat such X.509 strings as
+	    NUL-terminated C strings (rather than strings that contain an
+	    explicit length field) would only check the part up to and
+	    excluding the NUL character, so that certificate names such as
+	    www.good.example\0www.bad.example.com would be mistaken as a
+	    certificate name for www.good.example. fetchmail also had this
+	    design and implementation flaw.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-2666</cvename>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2009-01.txt</url>
+    </references>
+    <dates>
+      <discovery>2009-08-06</discovery>
+      <entry>2009-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="739b94a4-838b-11de-938e-003048590f9e">
     <topic>joomla15 -- com_mailto Timeout Issue</topic>
     <affects>
