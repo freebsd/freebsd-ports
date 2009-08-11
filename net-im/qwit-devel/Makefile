@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	qwit
-DISTVERSION=	r154
+DISTVERSION=	r215
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	qwit-${PORTVERSION}-src
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	qwit-ng-${PORTVERSION}-src
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	sokolov@TrueBSD.org
 COMMENT=	A Qt4-based lightweight Twitter client
@@ -19,12 +20,12 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml qmake_build moc_build rcc_build \
 		uic
 
-PLIST_FILES=	bin/qwit
+PLIST_FILES=	bin/qwit-devel
 
 pre-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o Makefile qwit.pro
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o Makefile qwit2.pro
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/qwit ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/qwit2 ${PREFIX}/bin/qwit-devel
 
 .include <bsd.port.mk>
