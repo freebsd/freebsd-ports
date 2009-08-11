@@ -1,4 +1,5 @@
 bin/arora
+bin/arora-cacheinfo
 bin/arora-placesimport
 bin/htmlToXBel
 share/applications/arora.desktop
