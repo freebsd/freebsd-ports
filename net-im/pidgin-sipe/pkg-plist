@@ -14,3 +14,13 @@ share/locale/zh_CN/LC_MESSAGES/pidgin-sipe.mo
 share/pixmaps/pidgin/protocols/16/sipe.png
 share/pixmaps/pidgin/protocols/22/sipe.png
 share/pixmaps/pidgin/protocols/48/sipe.png
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

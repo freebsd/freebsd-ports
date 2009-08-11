@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	pidgin-sipe
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	net-im
 MASTER_SITES=	SF/sipe
 
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	A plugin for Pidgin to provide LCS/OCS connectivity
 
-LIB_DEPENDS=	purple:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.5:${PORTSDIR}/net-im/libpurple
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
@@ -23,6 +22,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 USE_GETTEXT=	yes
+FETCH_ARGS=	-pRr
 
 CFLAGS+=	"-I/${LOCALBASE}/include"
 LIBS+=		"-L/${LOCALBASE}/lib"
@@ -30,5 +30,13 @@ LIBS+=		"-L/${LOCALBASE}/lib"
 CONFIGURE_ENV+=	LIBS="${LIBS}" \
 		COM_ERR_CFLAGS="-I/usr/include" \
 		COM_ERR_LIBS="-L/usr/lib -lcom_err"
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+.for f in AUTHORS ChangeLog COPYING HACKING INSTALL LICENSE NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.endif
 
 .include <bsd.port.mk>
