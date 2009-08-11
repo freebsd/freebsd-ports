@@ -38,6 +38,8 @@ lib/libquicktime/lqt_audiocodec.so
 %%PNG%%lib/libquicktime/lqt_png.so
 lib/libquicktime/lqt_rtjpeg.la
 lib/libquicktime/lqt_rtjpeg.so
+%%SCHROEDINGER%%lib/libquicktime/lqt_schroedinger.la
+%%SCHROEDINGER%%lib/libquicktime/lqt_schroedinger.so
 lib/libquicktime/lqt_videocodec.la
 lib/libquicktime/lqt_videocodec.so
 lib/libquicktime/lqt_vorbis.la

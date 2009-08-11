@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.3
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
@@ -36,6 +35,7 @@ OPTIONS=	LAME "Enable Lame mp3 encoding support" Off \
 		FAAC "Enable FAAC support" Off \
 		FAAD "Enable FAAD support" On \
 		X264 "Enable X264 codec support" On \
+		SCHROEDINGER "Enable dirac support" On \
 		GTK2 "Enable Gtk+2 Frontend" Off \
 		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
 
@@ -136,6 +136,14 @@ CONFIGURE_ARGS+=	--with-x264
 .else
 PLIST_SUB+=	X264="@comment "
 CONFIGURE_ARGS+=	--without-x264
+.endif
+
+.if !defined(WITHOUT_SCHROEDINGER)
+LIB_DEPENDS+=	schroedinger-1.0.2:${PORTSDIR}/multimedia/schroedinger
+PLIST_SUB+=	SCHROEDINGER=""
+.else
+PLIST_SUB+=	SCHROEDINGER="@comment "
+CONFIGURE_ARGS+=	--without-schroedinger
 .endif
 
 .if ${MACHINE_CPU:Mmmx}
