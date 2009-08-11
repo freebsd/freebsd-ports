@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JSON-RPC-Common
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Transport agnostic JSON RPC helper objects
 
-RUN_DEPENDS=	p5-Moose>=0.81:${PORTSDIR}/devel/p5-Moose \
+RUN_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
+		p5-Moose>=0.81:${PORTSDIR}/devel/p5-Moose \
 		p5-JSON>=2.11:${PORTSDIR}/converters/p5-JSON \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
