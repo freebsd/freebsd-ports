@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	motion
-PORTVERSION=	3.2.11
-PORTREVISION=	2
+PORTVERSION=	3.2.11.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 PATCH_SITES=	http://www.lavrsen.dk/twiki/pub/Motion/FreeBSDPatch/
-PATCHFILES=	motion-3.2.11.port-freebsd.diff.gz
+PATCHFILES=	motion-3.2.11.1.port-freebsd.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ack@telefonica.net
@@ -52,7 +51,7 @@ BUILD_DEPENDS+=	v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
 RUN_DEPENDS+=	/boot/modules/pwc.ko:${PORTSDIR}/multimedia/pwcbsd
 .endif
 
-.if defined(WITH_LINUXTHREADS)
+.if defined(WITH_LINUXTHREADS) || ${OSVERSION} < 504000
 CONFIGURE_ARGS=	--with-linuxthreads
 LIB_DEPENDS+=	lthread.[35]:${PORTSDIR}/devel/linuxthreads
 .endif
