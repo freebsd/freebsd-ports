@@ -143,7 +143,6 @@ share/irssi/scripts/ignoreoc.pl
 share/irssi/scripts/il.pl
 share/irssi/scripts/imdb.pl
 share/irssi/scripts/invitejoin.pl
-share/irssi/scripts/ipkb.pl
 share/irssi/scripts/ipupdate.pl
 share/irssi/scripts/irccomplete.pl
 share/irssi/scripts/ircgallery.pl
