@@ -18622,6 +18622,7 @@ ports_kzip                      ports/archivers/kzip
 ports_lam                       ports/net/lam
 ports_less                      ports/sysutils/less
 ports_libarchive                ports/archivers/libarchive
+ports_libbind                   ports/dns/libbind
 ports_libedit                   ports/devel/libedit
 ports_libisc                    ports/devel/libisc
 ports_libpcap                   ports/net/libpcap
@@ -19042,6 +19043,7 @@ py-cmdln                        ports/devel/py-cmdln
 py-cmemcache                    ports/databases/py-cmemcache
 py-cog                          ports/devel/py-cog
 py-configobj                    ports/devel/py-configobj
+py-construct                    ports/devel/py-construct
 py-coverage                     ports/devel/py-coverage
 py-crack                        ports/security/py-crack
 py-creole                       ports/textproc/py-creole
