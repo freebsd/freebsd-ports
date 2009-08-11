@@ -27,7 +27,6 @@
     SUBDIR += crf++
     SUBDIR += dcl
     SUBDIR += devisor
-    SUBDIR += dft++
     SUBDIR += dtiquery
     SUBDIR += ecs
     SUBDIR += elmer-eio
