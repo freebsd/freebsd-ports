@@ -57,7 +57,7 @@ if [ x"$2" = xDEINSTALL ]; then
     if [ ! -n "$BATCH" ]; then
 	if /bin/ps -axc | /usr/bin/grep -q nullmailer-send; then
 	    if yesno "There are some nullmailer processes running.  Shall I kill them" y; then
-		${PKG_PREFIX}/etc/rc.d/nullmail.sh stop
+		${PREFIX}/etc/rc.d/nullmail.sh stop
 		sleep 2
 	    else
 		echo "OK ... I hope you know what you are doing."
