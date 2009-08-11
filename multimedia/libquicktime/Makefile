@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files
 
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
