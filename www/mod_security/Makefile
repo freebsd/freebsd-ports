@@ -47,6 +47,9 @@ OPTIONS=	LUA "Embedded Lua language support" off \
 SUB_FILES+=	pkg-message.rules
 .if defined(WITH_MLOGC)
 PLIST_FILES+=	bin/mlogc
+.if ${OSVERSION} < 700000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fix-6.x-link
+.endif
 .endif
 PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules
 PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2
