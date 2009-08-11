@@ -145,10 +145,10 @@ lib/kde4/ktzeroconfplugin.so
 lib/kde4/plasma_engine_ktorrent.so
 lib/libbtcore.so
 lib/libbtcore.so.11
-lib/libbtcore.so.11.0.0
+lib/libbtcore.so.11.1.0
 lib/libktcore.so
 lib/libktcore.so.9
-lib/libktcore.so.9.1.0
+lib/libktcore.so.9.2.0
 lib/libktupnp.so
 lib/libktupnp.so.4
 lib/libktupnp.so.4.0.0
@@ -575,6 +575,7 @@ share/locale/ga/LC_MESSAGES/ktorrent.mo
 share/locale/gl/LC_MESSAGES/ktorrent.mo
 share/locale/hi/LC_MESSAGES/ktorrent.mo
 share/locale/hne/LC_MESSAGES/ktorrent.mo
+share/locale/is/LC_MESSAGES/ktorrent.mo
 share/locale/it/LC_MESSAGES/ktorrent.mo
 share/locale/ja/LC_MESSAGES/ktorrent.mo
 share/locale/km/LC_MESSAGES/ktorrent.mo

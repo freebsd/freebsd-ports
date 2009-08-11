@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	3.2.2
-DISTVERSIONSUFFIX=-1
-PORTREVISION=	2
+PORTVERSION=	3.2.3
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/
 
@@ -33,6 +31,8 @@ OPTIONS=	SYNDICATION "Enable RSS/Atom plugin" on \
 		PLASMA "Enable Ktorrent Plasma applet" on
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
