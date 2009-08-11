@@ -7,6 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.22.${SNAPSHOT}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://svn.powerdns.com/snapshots/${REVISION}/
@@ -142,7 +143,7 @@ PLIST_SUB+=		WITHSQLITE3="@comment "
 .endif
 
 .if defined(WITH_OPENDBX)
-LIB_DEPENDS+=		opendbx.[1-2]:${PORTSDIR}/databases/opendbx
+LIB_DEPENDS+=		opendbx.3:${PORTSDIR}/databases/opendbx
 CONFIGURE_MODULES+=	"opendbx"
 PLIST_SUB+=		WITHOPENDBX=""
 CXXFLAGS+=		-L${LOCALBASE}/lib
