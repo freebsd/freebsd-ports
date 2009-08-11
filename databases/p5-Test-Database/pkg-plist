@@ -1,6 +1,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Database/.packlist
 %%SITE_PERL%%/Test/Database.pm
+%%SITE_PERL%%/Test/Database/Driver.pm
+%%SITE_PERL%%/Test/Database/Driver/CSV.pm
+%%SITE_PERL%%/Test/Database/Driver/DBM.pm
+%%SITE_PERL%%/Test/Database/Driver/SQLite.pm
+%%SITE_PERL%%/Test/Database/Driver/SQLite2.pm
 %%SITE_PERL%%/Test/Database/Handle.pm
+%%SITE_PERL%%/Test/Database/Util.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Database
 @dirrm %%SITE_PERL%%/Test/Database/Driver
 @dirrm %%SITE_PERL%%/Test/Database
