@@ -1,9 +1,11 @@
 include/gavl/gavl.h
 include/gavl/gavl_version.h
+include/gavl/gavldefs.h
 include/gavl/gavldsp.h
 include/gavl/gavltime.h
+include/gavl/timecode.h
 lib/libgavl.la
 lib/libgavl.so
-lib/libgavl.so.0
+lib/libgavl.so.1
 libdata/pkgconfig/gavl.pc
 @dirrm include/gavl
