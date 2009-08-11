@@ -21,6 +21,7 @@ USE_JAVA=	yes
 USE_GL=		gl
 USE_XORG=	xt
 JAVA_VERSION=	1.5+
+JAVA_VENDOR=	freebsd bsdjava
 USE_ANT=	yes
 
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/^${PREFIX}\///} ARCH=${ARCH}
@@ -32,7 +33,7 @@ PORTDOCS=	*
 
 do-build:
 	cd ${WRKSRC}/vecmath && ${ANT} dist
-	cd ${WRKSRC}/j3d-core && ${ANT} -Dbuild.type=fcs -Dis${OPSYS}=yes jar-opt
+	cd ${WRKSRC}/j3d-core && ${ANT} -Dbuild.type=fcs -Dis${OPSYS}=yes -Dports.localbase=${LOCALBASE} jar-opt
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/j3d-core && ${ANT} -Dbuild.type=fcs -Dis${OPSYS}=yes docs-public
 .endif

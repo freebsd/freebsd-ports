@@ -1,7 +1,7 @@
-diff -ruN ./j3d-core/build.xml ../java3d-1.5.2/j3d-core/build.xml
---- ./j3d-core/build.xml	2008-05-24 08:31:19.000000000 +1200
-+++ ../java3d-1.5.2/j3d-core/build.xml	2008-07-21 23:00:14.000000000 +1200
-@@ -142,6 +142,15 @@
+diff -ruN ../java3d-1.5.2/j3d-core/build.xml ./j3d-core/build.xml
+--- ../java3d-1.5.2/j3d-core/build.xml	2008-05-24 08:31:19.000000000 +1200
++++ ./j3d-core/build.xml	2009-07-12 13:20:26.000000000 +1200
+@@ -142,6 +142,16 @@
      <echo message="version_file    = ${version_file}"/>
    </target>
  
@@ -12,12 +12,13 @@ diff -ruN ./j3d-core/build.xml ../java3d-1.5.2/j3d-core/build.xml
 +    <property name="platformname" value="freebsd-${os.arch}"/>
 +    <property name="platform" value="freebsd"/>
 +    <property name="install.bin" value="lib/${os.arch}"/>
++    <property name="ports.localbase" value="/usr/local"/>
 +  </target>
 +
    <target name="setupSolaris" if="isSolarisOnSparc">
      <property name="isUnix" value="true"/>
      <property name="shell" value="/usr/bin/ksh"/>
-@@ -232,7 +241,7 @@
+@@ -232,7 +242,7 @@
    </target>
  
    <target name="setupPlatform"
@@ -26,9 +27,9 @@ diff -ruN ./j3d-core/build.xml ../java3d-1.5.2/j3d-core/build.xml
      <property name="build-debug-gen" location="${build}/${platform}/debug/gen"/>
      <property name="build-opt-gen" location="${build}/${platform}/opt/gen"/>
      <property name="docname" value="${build.relprefix}-${version_file}-doc"/>
-diff -ruN ./j3d-core/src/classes/build.xml ../java3d-1.5.2/j3d-core/src/classes/build.xml
---- ./j3d-core/src/classes/build.xml	2008-02-29 09:17:18.000000000 +1300
-+++ ../java3d-1.5.2/j3d-core/src/classes/build.xml	2008-07-21 23:02:37.000000000 +1200
+diff -ruN ../java3d-1.5.2/j3d-core/src/classes/build.xml ./j3d-core/src/classes/build.xml
+--- ../java3d-1.5.2/j3d-core/src/classes/build.xml	2008-02-29 09:17:18.000000000 +1300
++++ ./j3d-core/src/classes/build.xml	2009-07-12 13:19:17.000000000 +1200
 @@ -95,6 +95,7 @@
     <javac srcdir="${src}/classes/share:${src}/classes/${wstype}:${jogl.pipeline.srcdir}:${core_utils_src}/classes/share:${build-opt-gen}/classes"            destdir="${build}/${platform}/opt/classes"
             source="1.5"
@@ -46,9 +47,9 @@ diff -ruN ./j3d-core/src/classes/build.xml ../java3d-1.5.2/j3d-core/src/classes/
               destdir="${build}/${platform}/javadocs/docs-public"
  	     bottom="${javadoc.bottom}"
               windowtitle="${build.javadoc.name} ${version}">
-diff -ruN ./j3d-core/src/native/build.xml ../java3d-1.5.2/j3d-core/src/native/build.xml
---- ./j3d-core/src/native/build.xml	2008-02-29 09:17:58.000000000 +1300
-+++ ../java3d-1.5.2/j3d-core/src/native/build.xml	2008-07-21 23:00:14.000000000 +1200
+diff -ruN ../java3d-1.5.2/j3d-core/src/native/build.xml ./j3d-core/src/native/build.xml
+--- ../java3d-1.5.2/j3d-core/src/native/build.xml	2008-02-29 09:17:58.000000000 +1300
++++ ./j3d-core/src/native/build.xml	2009-07-12 13:19:17.000000000 +1200
 @@ -3,6 +3,19 @@
  <!-- Ant file for building native files -->
  <project name="j3d-core native" default="compile-opt">
@@ -87,9 +88,9 @@ diff -ruN ./j3d-core/src/native/build.xml ../java3d-1.5.2/j3d-core/src/native/bu
  	<property name="bldType" value="opt"/>
  	<property name="javahCoreSrc"     
  	 location="${src}/classes/share/javax/media/j3d"/>
-diff -ruN ./j3d-core/src/native/ogl/build-freebsd.xml ../java3d-1.5.2/j3d-core/src/native/ogl/build-freebsd.xml
---- ./j3d-core/src/native/ogl/build-freebsd.xml	1970-01-01 12:00:00.000000000 +1200
-+++ ../java3d-1.5.2/j3d-core/src/native/ogl/build-freebsd.xml	2008-07-21 23:00:14.000000000 +1200
+diff -ruN ../java3d-1.5.2/j3d-core/src/native/ogl/build-freebsd.xml ./j3d-core/src/native/ogl/build-freebsd.xml
+--- ../java3d-1.5.2/j3d-core/src/native/ogl/build-freebsd.xml	1970-01-01 12:00:00.000000000 +1200
++++ ./j3d-core/src/native/ogl/build-freebsd.xml	2009-07-12 13:21:41.000000000 +1200
 @@ -0,0 +1,74 @@
 +<?xml version="1.0"?>
 +
@@ -117,12 +118,12 @@ diff -ruN ./j3d-core/src/native/ogl/build-freebsd.xml ../java3d-1.5.2/j3d-core/s
 +
 +    <!-- Compile the c source files-->
 +    <exec dir="${build}/${platform}/${bldType}/native/ogl/objs" executable="gcc">
-+	<arg line="-fPIC -march=k8 -I${oglsrc} -I/usr/local/include -I${java.home}/../include -I${java.home}/../include/freebsd -I${javahCoreTarget} ${bldFlag} -DLINUX ${cflags.cg} -c ${oglsrc}/DrawingSurfaceObjectAWT.c ${oglsrc}/Canvas3D.c ${oglsrc}/GraphicsContext3D.c  ${oglsrc}/NativeScreenInfo.c  ${oglsrc}/NativeConfigTemplate3D.c  ${oglsrc}/MasterControl.c  ${oglsrc}/GeometryArrayRetained.c  ${oglsrc}/Attributes.c  ${oglsrc}/CgShaderProgram.c  ${oglsrc}/GLSLShaderProgram.c  ${oglsrc}/Lights.c"/>
++	<arg line="-fPIC -march=k8 -I${oglsrc} -I${ports.localbase}/include -I${java.home}/../include -I${java.home}/../include/freebsd -I${javahCoreTarget} ${bldFlag} -DLINUX ${cflags.cg} -c ${oglsrc}/DrawingSurfaceObjectAWT.c ${oglsrc}/Canvas3D.c ${oglsrc}/GraphicsContext3D.c  ${oglsrc}/NativeScreenInfo.c  ${oglsrc}/NativeConfigTemplate3D.c  ${oglsrc}/MasterControl.c  ${oglsrc}/GeometryArrayRetained.c  ${oglsrc}/Attributes.c  ${oglsrc}/CgShaderProgram.c  ${oglsrc}/GLSLShaderProgram.c  ${oglsrc}/Lights.c"/>
 +    </exec>
 +
 +    <!-- Create the library file-->
 +    <exec dir="${build}/${platform}/${bldType}/native/ogl/objs" executable="ld">
-+	<arg line="DrawingSurfaceObjectAWT.o  Canvas3D.o  GraphicsContext3D.o  NativeScreenInfo.o  NativeConfigTemplate3D.o  MasterControl.o  GeometryArrayRetained.o  Attributes.o  CgShaderProgram.o  GLSLShaderProgram.o  Lights.o -G -z defs -L/usr/local/lib -lGL -lX11 -lXext -lm -lc -L${java.home}/lib/${os.arch} -ljawt -L${java.home}/lib/${os.arch}/server -ljvm  -o libj3dcore-ogl.so"/>
++	<arg line="DrawingSurfaceObjectAWT.o  Canvas3D.o  GraphicsContext3D.o  NativeScreenInfo.o  NativeConfigTemplate3D.o  MasterControl.o  GeometryArrayRetained.o  Attributes.o  CgShaderProgram.o  GLSLShaderProgram.o  Lights.o -G -z defs -L${ports.localbase}/lib -lGL -lX11 -lXext -lm -lc -L${java.home}/lib/${os.arch} -ljawt -L${java.home}/lib/${os.arch}/server -ljvm  -o libj3dcore-ogl.so"/>
 +    </exec>
 +
 +  </target>
