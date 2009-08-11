@@ -25,7 +25,8 @@ QT_COMPONENTS=	gui dbus xml qtestlib \
 		qmake_build moc_build rcc_build uic_build
 
 IGNORE=		superseded by multimedia/qt4-phonon
-EXPIRATION_DATE=2009-10-06
+EXPIRATION_DATE=	2009-09-06
+DEPRECATED=	${IGNORE}
 
 .include <bsd.port.pre.mk>
 
