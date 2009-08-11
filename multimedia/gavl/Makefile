@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A library for handling uncompressed video and audio data
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
