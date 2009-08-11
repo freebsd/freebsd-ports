@@ -1,36 +1,49 @@
+bin/odbx-sql
 include/odbx.h
+include/opendbx/api
+include/opendbx/api.h
+lib/libopendbxplus.a
+lib/libopendbxplus.la
 lib/libopendbx.a
 lib/libopendbx.la
+lib/libopendbxplus.so
+lib/libopendbxplus.so.1
 lib/libopendbx.so
-lib/libopendbx.so.2
+lib/libopendbx.so.3
 libdata/pkgconfig/opendbx.pc
+libdata/pkgconfig/opendbxplus.pc
+%%DATADIR%%/keywords
 %%NLS%%share/locale/de/LC_MESSAGES/opendbx.mo
+%%NLS%%share/locale/de/LC_MESSAGES/opendbx-utils.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/opendbx.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/opendbx-utils.mo
 %%WITHPGSQL%%lib/opendbx/libpgsqlbackend.a
 %%WITHPGSQL%%lib/opendbx/libpgsqlbackend.la
 %%WITHPGSQL%%lib/opendbx/libpgsqlbackend.so
-%%WITHPGSQL%%lib/opendbx/libpgsqlbackend.so.2
+%%WITHPGSQL%%lib/opendbx/libpgsqlbackend.so.3
 %%WITHMYSQL%%lib/opendbx/libmysqlbackend.a
 %%WITHMYSQL%%lib/opendbx/libmysqlbackend.la
 %%WITHMYSQL%%lib/opendbx/libmysqlbackend.so
-%%WITHMYSQL%%lib/opendbx/libmysqlbackend.so.2
+%%WITHMYSQL%%lib/opendbx/libmysqlbackend.so.3
 %%WITHSQLITE%%lib/opendbx/libsqlitebackend.a
 %%WITHSQLITE%%lib/opendbx/libsqlitebackend.la
 %%WITHSQLITE%%lib/opendbx/libsqlitebackend.so
-%%WITHSQLITE%%lib/opendbx/libsqlitebackend.so.2
+%%WITHSQLITE%%lib/opendbx/libsqlitebackend.so.3
 %%WITHSQLITE3%%lib/opendbx/libsqlite3backend.a
 %%WITHSQLITE3%%lib/opendbx/libsqlite3backend.la
 %%WITHSQLITE3%%lib/opendbx/libsqlite3backend.so
-%%WITHSQLITE3%%lib/opendbx/libsqlite3backend.so.2
+%%WITHSQLITE3%%lib/opendbx/libsqlite3backend.so.3
 %%WITHMSSQL%%lib/opendbx/libmssqlbackend.a
 %%WITHMSSQL%%lib/opendbx/libmssqlbackend.la
 %%WITHMSSQL%%lib/opendbx/libmssqlbackend.so
-%%WITHMSSQL%%lib/opendbx/libmssqlbackend.so.2
+%%WITHMSSQL%%lib/opendbx/libmssqlbackend.so.3
 %%WITHSYBASE%%lib/opendbx/libsybasebackend.a
 %%WITHSYBASE%%lib/opendbx/libsybasebackend.la
 %%WITHSYBASE%%lib/opendbx/libsybasebackend.so
-%%WITHSYBASE%%lib/opendbx/libsybasebackend.so.2
+%%WITHSYBASE%%lib/opendbx/libsybasebackend.so.3
+@dirrm include/opendbx
 @dirrm lib/opendbx
+@dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@quot
 %%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
