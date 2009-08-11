@@ -38,9 +38,6 @@ lib/libschroedinger-1.0.a
 lib/libschroedinger-1.0.la
 lib/libschroedinger-1.0.so
 lib/libschroedinger-1.0.so.2
-%%GSTREAMER%%lib/gstreamer-0.10/libgstschro.a
-%%GSTREAMER%%lib/gstreamer-0.10/libgstschro.la
-%%GSTREAMER%%lib/gstreamer-0.10/libgstschro.so
 libdata/pkgconfig/schroedinger-1.0.pc
 share/gtk-doc/html/schroedinger/home.png
 share/gtk-doc/html/schroedinger/index.html
