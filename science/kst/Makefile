@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTVERSION=	1.8.0
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/scientific
@@ -14,15 +13,16 @@ MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/scientific
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data viewing program for KDE
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
 		gsl.13:${PORTSDIR}/math/gsl
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	NETCDF "Enable netcdf file support" off \
 		CDF "Enable cdf file support" off
@@ -49,6 +49,7 @@ PLIST_SUB+=	CDF="@comment "
 .endif
 
 pre-configure:
+	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)
 	@${REINPLACE_CMD} -e 's|@kde_widgetdir@|@prefix@/lib/kde3/plugins/designer|' \
 		${WRKSRC}/kst/src/widgets/Makefile.in
 .if !defined(WITH_NETCDF)
