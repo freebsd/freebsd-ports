@@ -324,6 +324,13 @@ avr/lib/avr6/libprintf_flt.a
 avr/lib/avr6/libprintf_min.a
 avr/lib/avr6/libscanf_flt.a
 avr/lib/avr6/libscanf_min.a
+avr/lib/avrxmega3/crtx32a3.o
+avr/lib/avrxmega3/libc.a
+avr/lib/avrxmega3/libm.a
+avr/lib/avrxmega3/libprintf_flt.a
+avr/lib/avrxmega3/libprintf_min.a
+avr/lib/avrxmega3/libscanf_flt.a
+avr/lib/avrxmega3/libscanf_min.a
 avr/lib/avrxmega4/crtx64a3.o
 avr/lib/avrxmega4/libc.a
 avr/lib/avrxmega4/libm.a
