@@ -2204,7 +2204,6 @@ devstat                         ports/sysutils/devstat
 devtodo                         ports/devel/devtodo
 dfileserver                     ports/www/dfileserver
 dfm                             ports/x11-fm/dfm
-dft++                           ports/science/dft++
 dfu-util                        ports/comms/dfu-util
 dfuife-curses                   ports/devel/dfuife-curses
 dgd                             ports/net/dgd
@@ -3506,6 +3505,7 @@ fortytwo                        ports/graphics/fortytwo
 fortytwo-bdb                    ports/databases/fortytwo-bdb
 fortytwo-encore                 ports/devel/fortytwo-encore
 fossology                       ports/devel/fossology
+foswiki                         ports/www/foswiki
 fotaq                           ports/games/fotaq
 fotofix                         ports/graphics/fotofix
 fourcdns                        ports/dns/fourcdns
@@ -7607,6 +7607,7 @@ libqalculate                    ports/math/libqalculate
 libqglviewer                    ports/graphics/libqglviewer
 libqrencode                     ports/graphics/libqrencode
 libquicktime                    ports/multimedia/libquicktime
+libquicktime-lame               ports/multimedia/libquicktime-lame
 libranlib                       ports/math/libranlib
 libraw                          ports/graphics/libraw
 librcc                          ports/devel/librcc
@@ -18449,6 +18450,7 @@ planets                         ports/astro/planets
 planner                         ports/deskutils/planner
 planner.el                      ports/deskutils/planner.el
 plans                           ports/deskutils/plans
+plasma-applet-cwp               ports/deskutils/plasma-applet-cwp
 plasma-applet-daisy             ports/deskutils/plasma-applet-daisy
 plasma-applet-geekclock         ports/x11-clocks/plasma-applet-geekclock
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
@@ -20019,6 +20021,7 @@ qvplay                          ports/graphics/qvplay
 qvwm                            ports/x11-wm/qvwm
 qwdtools                        ports/games/qwdtools
 qwit                            ports/net-im/qwit
+qwit-devel                      ports/net-im/qwit-devel
 qwt4                            ports/x11-toolkits/qwt4
 qwt5                            ports/x11-toolkits/qwt5
 qwtplot3d                       ports/math/qwtplot3d
