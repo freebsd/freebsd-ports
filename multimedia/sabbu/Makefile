@@ -19,6 +19,10 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
+BROKEN=		does not compile with ffmpeg 0.5 and later
+DEPRECATED=	development has stopped in 2005
+EXPIRATION_DATE=	2009-10-12
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes

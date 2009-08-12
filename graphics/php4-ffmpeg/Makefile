@@ -21,6 +21,10 @@ COMMENT=	The ffmpeg shared extension for php
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
+BROKEN=		does not compile with ffmpeg 0.5 and later
+DEPRECATED=	development continues only for php5
+EXPIRATION_DATE=	2009-10-12
+
 CFLAGS+=	-I${LOCALBASE}/include
 DEFAULT_PHP_VER=4
 IGNORE_WITH_PHP=5
