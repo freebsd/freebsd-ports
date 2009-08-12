@@ -16,6 +16,8 @@ COMMENT=	Realtime audio/video encoder/converter and streaming server
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
+CONFLICTS=	ffmpeg-devel-20*
+
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
 USE_BZIP2=	yes
