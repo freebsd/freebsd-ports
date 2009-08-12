@@ -6,7 +6,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.49a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -208,8 +208,8 @@ pre-configure:
 		${WRKSRC}/user-def.mk
 .else
 	@${REINPLACE_CMD} -e \
-		's|%%FFMPEGCFLAGS%%|$$\(shell pkg-config --cflags libavcodec libavformat libavdevice\)|; \
-		s|%%FFMPEGLIBS%%|$$\(shell pkg-config --libs libavcodec libavformat libavdevice\)|;' \
+		's|%%FFMPEGCFLAGS%%|$$\(shell pkg-config --cflags libavcodec libavformat libavdevice libswscale\)|; \
+		s|%%FFMPEGLIBS%%|$$\(shell pkg-config --libs libavcodec libavformat libavdevice libswscale\)|;' \
 		${WRKSRC}/user-def.mk
 .endif
 
