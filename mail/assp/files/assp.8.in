@@ -241,9 +241,9 @@ to control the behavior.
 set to
 .I "YES"
 to start ASSP at boot time
-.IP assp_args
+.IP assp_flags
 passed to the ASSP client, default is
-.I assp_args="%%ASSP_HOME%%"
+.I assp_flags="%%ASSP_HOME%%"
 .IP assp_logexpire
 used by nightly script to expire logs, default is
 .I assp_logexpire="45"
