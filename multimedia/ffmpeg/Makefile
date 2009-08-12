@@ -6,14 +6,15 @@
 #      $Id: Makefile 77 2008-07-27 21:50:37Z buhnux $
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2008-07-27
-PORTREVISION=	11
+PORTVERSION=	0.5
+PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ahze
+MASTER_SITES=	http://ffmpeg.org/releases/
 
-MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	Realtime audio/video encoder/converter and streaming server
+
+BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
@@ -22,29 +23,35 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
-OPTIONS=	AMR_NB	"AMR narrowband encoder" off \
-		AMR_WB	"AMR wideband encoder" off \
+OPTIONS=	AMR_NB	"AMR Narrow Band encoder" off \
+		AMR_WB	"AMR Wide Band encoder" off \
+		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
 		FAAD	"FAAD mp4/aac audio decoder" on \
-		GSM	"gsm audio codec" off \
+		FFSERVER "Build and install ffserver" on \
+		GSM	"GSM audio codec" off \
 		IPV6	"IPV6 network support" on \
-		LAME	"lame MP3 codec" off \
-		LIBA52	"liba52 support"	on \
+		LAME	"LAME MP3 encoder" off \
+		OPENJPEG	"JPEG 2000 decoder" off \
 		OPTIMIZED_CFLAGS "Additional optimizations" off \
+		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
-		THEORA	"libtheora support (implies OGG)" on \
-		VORBIS	"libvorbisenc support (implies OGG)" on \
-		X264	"X.264 codec" on \
-		XVID	"XVID codec" off
+		SPEEX	"Speex audio decoder" off \
+		THEORA	"Theora encoder (implies OGG)" on \
+		VHOOK	"Video hook support" off \
+		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
+		X264	"H.264 encoder" on \
+		XVID	"Xvid encoder via xvidcore" on
 
-COMPAT_HEADERS=	libavcodec/avcodec.h \
+COMPAT_HEADERS=libavcodec/avcodec.h \
 	libavcodec/opt.h \
+	libavcodec/vdpau.h \
+	libavcodec/xvmc.h \
 	libavdevice/avdevice.h \
+	libavfilter/avfilter.h \
 	libavformat/avformat.h \
 	libavformat/avio.h \
-	libavformat/rtsp.h \
-	libavformat/rtspcodes.h \
-	libavutil/adler32.h  \
+	libavutil/adler32.h \
 	libavutil/avstring.h \
 	libavutil/avutil.h \
 	libavutil/base64.h \
@@ -57,128 +64,181 @@ COMPAT_HEADERS=	libavcodec/avcodec.h \
 	libavutil/mathematics.h \
 	libavutil/md5.h \
 	libavutil/mem.h \
-	libavutil/random.h \
+	libavutil/pixfmt.h \
 	libavutil/rational.h \
 	libavutil/sha1.h \
 	libpostproc/postprocess.h \
-	libswscale/rgb2rgb.h \
 	libswscale/swscale.h
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=--cc="${CC}" --prefix="${PREFIX}" \
-		--disable-debug \
-		--enable-memalign-hack \
+CONFIGURE_ARGS+=--prefix="${PREFIX}" \
+		--mandir="${PREFIX}/man" \
 		--enable-shared \
+		--enable-gpl \
+		--enable-swscale \
 		--enable-postproc \
+		--enable-avfilter \
+		--enable-avfilter-lavf \
+		--enable-pthreads \
+		--enable-x11grab \
+		--enable-memalign-hack \
+		--cc="${CC}" \
 		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
 		--extra-libs="${PTHREAD_LIBS}" \
-		--enable-gpl \
-		--enable-pthreads \
-		--enable-swscale \
-		--mandir=${PREFIX}/man
-CONFIGURE_ENV+=	LANG=C
-MAKE_ENV+=	INSTALL="${INSTALL}"
+		--disable-debug
 SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
-##
-DOC_FILES=	Changelog README
-# under subdir doc
-DOC_DOCFILES=	TODO faq.html ffmpeg-doc.html \
-		ffplay-doc.html ffserver-doc.html \
-		hooks.html optimization.txt
+DOC_FILES=	Changelog COPYING.GPL COPYING.LGPL \
+		CREDITS INSTALL MAINTAINERS README
+# under doc subdirectory
+DOC_DOCFILES=	APIchanges avutil.txt faq.html ffmpeg-doc.html \
+		ffmpeg_powerpc_performance_evaluation_howto.txt \
+		ffplay-doc.html ffserver-doc.html general.html \
+		issue_tracker.txt optimization.txt \
+		snow.txt soc.txt swscale.txt TODO
 PORTDOCS=	*
 
-## sse hardware vector support
+.ifndef(WITHOUT_FFSERVER)
+USE_RC_SUBR=	ffserver
+.endif
+
+# sse hardware vector support
 .if (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse} == "sse")
 WITH_BUILTIN_VECTOR=	yes
+.else
+CONFIGURE_ARGS+=	--disable-sse
 .endif
 
-##
-## support activation
-##
-## PORTDOCS
+# mmx support
+.if ${MACHINE_CPU:Mmmx} == ""
+CONFIGURE_ARGS+=	--disable-mmx
+WITHOUT_BUILTIN_VECTOR=	yes
+.endif
+
+# builtin vector, requires mmx
+.if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
+FFMPEG_CFLAGS+=		-msse
+.endif
+
+# PORTDOCS
 .ifndef(NOPORTDOCS)
-BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
-MAN1+=	ffmpeg.1 ffserver.1
+BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
+MAN1+=		ffmpeg.1
+. ifndef(WITHOUT_FFSERVER)
+MAN1+=		ffserver.1
+. endif
 .endif
 
+# optimizations
 .ifdef(WITH_OPTIMIZED_CFLAGS)
-CFLAGS:=		${CFLAGS:N-O*} -O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
+CFLAGS:=	${CFLAGS:N-O*} -O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
 .else
-CFLAGS:=		${CFLAGS:N-O0} -O2
-DEBUG_FLAGS+=		 -O2
+CFLAGS:=	${CFLAGS:N-O0} -O2
+DEBUG_FLAGS+=	-O2
 .endif
 
-## a52
-.if !defined(WITHOUT_LIBA52) && !defined(WITHOUT_A52)
-LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
-
-CONFIGURE_ARGS+=	--enable-liba52 \
-			--enable-liba52bin
-FFMPEG_LDFLAGS+=	-la52
-.else
-CONFIGURE_ARGS+=	--disable-liba52
-.endif
-
-.ifdef(WITH_FAAC)
-LIB_DEPENDS+=		faac.0:${PORTSDIR}/audio/faac
-CONFIGURE_ARGS+=	--enable-libfaac
-.else
-CONFIGURE_ARGS+=	--disable-libfaac
-.endif
-
-## faad
-.ifndef(WITHOUT_FAAD)
-LIB_DEPENDS+=		faad.2:${PORTSDIR}/audio/faad
-CONFIGURE_ARGS+=	--enable-libfaad \
-			--enable-libfaadbin
-.else
-CONFIGURE_ARGS+=	--disable-libfaad
-.endif
-
-## amr
+# amr
 .ifdef(WITH_AMR_NB)
-LIB_DEPENDS+=		amrnb.3:${PORTSDIR}/audio/libamrnb
+LIB_DEPENDS+=	amrnb.3:${PORTSDIR}/audio/libamrnb
 CONFIGURE_ARGS+=	--enable-libamr-nb --enable-nonfree
 .else
 CONFIGURE_ARGS+=	--disable-libamr-nb
 .endif
 
 .ifdef(WITH_AMR_WB)
-LIB_DEPENDS+=		amrwb.3:${PORTSDIR}/audio/libamrwb
+LIB_DEPENDS+=	amrwb.3:${PORTSDIR}/audio/libamrwb
 CONFIGURE_ARGS+=	--enable-libamr-wb --enable-nonfree
 .else
 CONFIGURE_ARGS+=	--disable-libamr-wb
 .endif
 
-USE_RC_SUBR=		ffserver
-
-.if ${MACHINE_CPU:Mmmx}==""
-CONFIGURE_ARGS+=	--disable-mmx
-
-WITHOUT_BUILTIN_VECTOR=	yes
+# dirac
+.ifdef(WITH_DIRAC)
+LIB_DEPENDS+=	dirac_encoder.1:${PORTSDIR}/multimedia/dirac
+CONFIGURE_ARGS+=	--enable-libdirac
+.else
+CONFIGURE_ARGS+=	--disable-libdirac
 .endif
-## gsm
-.ifdef(WITH_GSM)
-LIB_DEPENDS+=		gsm.1:${PORTSDIR}/audio/gsm
 
+# faac
+.ifdef(WITH_FAAC)
+LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
+CONFIGURE_ARGS+=	--enable-libfaac
+.else
+CONFIGURE_ARGS+=	--disable-libfaac
+.endif
+
+# faad
+.ifndef(WITHOUT_FAAD)
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
+CONFIGURE_ARGS+=	--enable-libfaad \
+			--enable-libfaadbin
+.else
+CONFIGURE_ARGS+=	--disable-libfaad
+.endif
+
+# ffserver
+.ifndef(WITHOUT_FFSERVER)
+PLIST_SUB+=	FFSERVER=""
+.else
+PLIST_SUB+=	FFSERVER="@comment "
+CONFIGURE_ARGS+=	--disable-ffserver
+.endif
+
+# gsm
+.ifdef(WITH_GSM)
+LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 CONFIGURE_ARGS+=	--enable-libgsm
 .else
 CONFIGURE_ARGS+=	--disable-libgsm
 .endif
-## mp3
+
+# vhook
+.if defined(WITH_VHOOK)
+USE_EFL=		imlib2
+LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
+PLIST_SUB+=	VHOOK=""
+.else
+CONFIGURE_ARGS+=	--disable-vhook
+PLIST_SUB+=	VHOOK="@comment "
+.endif
+
+# ipv6
+.ifndef(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+# mp3
 .ifdef(WITH_LAME)
-LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--enable-libmp3lame
 .else
 CONFIGURE_ARGS+=	--disable-libmp3lame
 .endif
 
-## SDL
+# openjpeg
+.ifdef(WITH_OPENJPEG)
+LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
+CONFIGURE_ARGS+=	--enable-libopenjpeg
+.else
+CONFIGURE_ARGS+=	--disable-libopenjpeg
+.endif
+
+# schroedinger
+.ifndef(WITHOUT_SCHROEDINGER)
+LIB_DEPENDS+=	schroedinger-1.0.2:${PORTSDIR}/multimedia/schroedinger
+CONFIGURE_ARGS+=	--enable-libschroedinger
+.else
+CONFIGURE_ARGS+=	--disable-libschroedinger
+.endif
+
+# sdl
 .ifdef(WITH_SDL)
 USE_SDL+=	sdl
 PLIST_FILES+=	bin/ffplay
@@ -189,19 +249,25 @@ MAN1+=	ffplay.1
 CONFIGURE_ARGS+=	--disable-ffplay
 .endif
 
-## theora
-.if !defined(WITHOUT_THEORA)
-LIB_DEPENDS+=		theora.0:${PORTSDIR}/multimedia/libtheora
+# speex
+.ifdef(WITH_SPEEX)
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+CONFIGURE_ARGS+=	--enable-libspeex
+.else
+CONFIGURE_ARGS+=	--disable-libspeex
+.endif
 
+# theora
+.ifndef(WITHOUT_THEORA)
+LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--enable-libtheora
 .else
 CONFIGURE_ARGS+=	--disable-libtheora
 .endif
 
-## vorbis
-.if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=		vorbisenc.2:${PORTSDIR}/audio/libvorbis
-
+# vorbis
+.ifndef(WITHOUT_VORBIS)
+LIB_DEPENDS+=	vorbisenc.2:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--enable-libvorbis
 FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .else
@@ -210,20 +276,15 @@ CONFIGURE_ARGS+=	--disable-libvorbis
 
 # x264
 .ifndef(WITHOUT_X264)
-LIB_DEPENDS+=		x264.65:${PORTSDIR}/multimedia/x264
-
+LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264
 .endif
-## builtin vector, requires mmx
-.if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
-FFMPEG_CFLAGS+=		-msse
-.endif
 
-## xvid
-.ifdef(WITH_XVID)
-LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
+# xvid
+.ifndef(WITHOUT_XVID)
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--enable-libxvid
 .else
 CONFIGURE_ARGS+=	--disable-libxvid
@@ -233,47 +294,22 @@ pre-configure:
 .if defined(WITHOUT_OGG) && (!defined(WITHOUT_VORBIS) || !defined(WITHOUT_THEORA))
 	@${ECHO_MSG}	WITH_VORBIS or WITH_THEORA defined, libogg will be built
 .endif
-.if defined(WITHOUT_VHOOK) && (defined(WITH_VHOOK_FREETYPE2) || defined(WITH_VHOOK_IMLIB2))
-	@${ECHO_MSG}	WITH_VHOOK_FREETYPE2 or WITH_VHOOK_IMLIB2 defined, video hooks will be built
-.endif
 
 post-patch:
-# Faad compat
+# faad compat
 	@${REINPLACE_CMD} -e 's|faacD|NeAACD|' ${WRKSRC}/libavcodec/libfaad.c
 # {C,LD}FLAGS safeness
-# fix x264 math, use correct log base 2 from math(3)
-.if ${OSVERSION} <= 601000
-	@${REINPLACE_CMD} -E \
-		-e 's| log2| log|' \
-		${WRKSRC}/libavcodec/libx264.c
-.endif
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/common.mak
+	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/subdir.mak
 	@${REINPLACE_CMD} -e 's|/etc/ffserver.conf|${PREFIX}/etc/ffserver.conf|' \
 		${WRKSRC}/ffserver.c
 	@${REINPLACE_CMD} -E \
 		-e "s|(EXTRALIBS[[:space:]]*=)|\1-L${LOCALBASE}/lib |g; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g; s|%%SHLIB_VER%%|${SHLIB_VER}|g; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|-pthread|${PTHREAD_LIBS}|g" \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-# force detection of texi2html
-.ifndef(NOPORTDOCS)
-	@${REINPLACE_CMD} -E \
-		-e 's|^(texi2html=)no|\1yes|' \
+	@${REINPLACE_CMD} -e 's|-ldl||; s|$$(LIBMAJOR)|${SHLIB_VER}|g;' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
-	@${REINPLACE_CMD} -e 's|-ldl||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.if defined(WITH_IMLIB2) && !defined(WITHOUT_IMLIB2)
-	@${REINPLACE_CMD} -E \
-		-e 's|^(imlib2).*$$|\1=yes|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
-.if !defined(WITHOUT_IPV6)
-	@${REINPLACE_CMD} -E \
-		-e 's|^(ipv6).*$$|\1=yes|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 .ifdef(WITH_SDL)
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
@@ -282,17 +318,6 @@ post-patch:
 		${XARGS} -n 10 ${REINPLACE_CMD} -E \
 		-e 's|#include <SDL|#include <SDL/SDL|'
 .endif
-.if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
-	@${REINPLACE_CMD} -E \
-		-e 's|^([[:space:]]+builtin_vector).*$$|\1=yes|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.else
-	@${REINPLACE_CMD} -E \
-		-e 's|^([[:space:]]+builtin_vector).*$$|\1=no|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
-	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/common.mak
 
 post-configure:
 .ifdef(WITHOUT_THEORA)
@@ -302,10 +327,12 @@ post-configure:
 .endif
 
 post-install:
+.ifndef(WITHOUT_FFSERVER)
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${PREFIX}/etc/ffserver.conf-dist
 	if [ ! -f ${PREFIX}/etc/ffserver.conf ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${PREFIX}/etc; \
 	fi
+.endif
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for FILE in ${DOC_FILES}
