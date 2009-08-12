@@ -1172,9 +1172,16 @@ MASTER_SITE_SAVANNAH+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-.for mirror in superb-east nchc kent easynews ufpr mesh heanet # garr
+.for mirror in garr superb-east nchc kent easynews ufpr mesh heanet
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
+.endfor
+.endif
+
+.if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_PROJECT)
+.for mirror in garr superb-east nchc kent easynews ufpr mesh heanet
+MASTER_SITE_SOURCEFORGE_PROJECT+= \
+	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
 .endfor
 .endif
 
@@ -1493,7 +1500,7 @@ MASTER_SITE_KERNEL_ORG+= \
 
 # Macro magic
 
-MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN SF:SOURCEFORGE SFE:SOURCEFORGE_EXTENDED \
+MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN SF:SOURCEFORGE SFP:SOURCEFORGE_PROJECT SFE:SOURCEFORGE_EXTENDED \
 			SFJP:SOURCEFORGE_JP RF:RUBYFORGE
 MASTER_SITES_SUBDIRS=	\
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
@@ -1514,6 +1521,7 @@ MASTER_SITES_SUBDIRS=	\
 			RUBY_GNOME:${RUBY_GNOME_MASTER_SITE_SUBDIR} \
 			SAVANNAH:${PORTNAME:L} \
 			SOURCEFORGE:${PORTNAME:L} \
+			SOURCEFORGE_PROJECT:${PORTNAME:L} \
 			SOURCEFORGE_EXTENDED:${PORTNAME:L} \
 			RUBYFORGE:${PORTNAME:L}
 
