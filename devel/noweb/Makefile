@@ -19,6 +19,7 @@ RUN_DEPENDS=	iconx:${PORTSDIR}/lang/icon
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 INSTALL_TARGET=	install-code install-man install-elisp
+MAKE_JOBS_UNSAFE=	yes
 MAN1=		cpif.1 htmltoc.1 nodefs.1 noindex.1 noroff.1 noroots.1 \
 		notangle.1 noweb.1 nuweb2noweb.1 sl2h.1
 MAN7=		nowebfilters.7 nowebstyle.7
