@@ -633,6 +633,7 @@
     SUBDIR += pioneers
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
+    SUBDIR += pipewalker
     SUBDIR += plee-the-bear
     SUBDIR += plonx
     SUBDIR += plutocracy
