@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
@@ -33,6 +33,7 @@ RUN_DEPENDS=	mpeg4ip-libmp4v2>=1.6.1:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 USE_GNOME=	gtk20
 USE_SDL=	sdl
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/SDL -I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -174,6 +175,7 @@ post-patch:
 		s|mp4v2/mp4.h|mp4.h|; \
 		s|<malloc.h>|<stdlib.h>|; \
 		s|<avcodec.h>|<libavcodec/avcodec.h>|; \
+		s|<swscale.h>|<libswscale/swscale.h>|; \
 		s|<strstream.h>|<iostream>|'
 # replacing distfile's libs with ports' versions
 # SDL related fixes
@@ -191,7 +193,7 @@ post-patch:
 		${WRKSRC}/doc/mp4v2/Makefile.in
 # objformat
 	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
-	@${REINPLACE_CMD} -e 's|$${enable_ffmpeg}/lib/libavcodec.a|-lavcodec|g' \
+	@${REINPLACE_CMD} -e 's|$${enable_ffmpeg}/lib/libavcodec.a|-lavcodec -lswscale|g' \
 		${WRKSRC}/configure
 
 post-install:
