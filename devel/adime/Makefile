@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	EitanAdlerList@gmail.com
 COMMENT=	Generate Allegro dialogs in a very simple way
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
