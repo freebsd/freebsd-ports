@@ -7,7 +7,7 @@
 
 PORTNAME=	google-appengine
 PORTVERSION=	1.2.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
@@ -39,6 +39,7 @@ REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
 
 GAEDATADIR=	google lib new_project_template templates tools
 GAEDOCSREL=	20090508
+GAESCRIPTS=	appcfg.py bulkload_client.py bulkloader.py dev_appserver.py
 
 post-patch:
 	@${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
@@ -46,7 +47,9 @@ post-patch:
 
 do-install:
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${GAEDATADIR}" ${DATADIR} "-not -path './demos*' -and -mindepth 1"
+.for D in ${GAEDATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${D} ${DATADIR}
+.endfor
 .if !defined(NOPORTEXAMPLES)
 	cd ${WRKSRC} && ${COPYTREE_SHARE} demos ${EXAMPLESDIR}
 .endif
@@ -55,10 +58,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/README ${DOCSDIR}
 	cd ${WRKDIR}/google-appengine-docs-${GAEDOCSREL} && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/dev_appserver.py ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/appcfg.py ${DATADIR}
+.for S in ${GAESCRIPTS}
+	${INSTALL_SCRIPT} ${WRKSRC}/${S} ${DATADIR}
+	${LN} ${LN_OPTS} ${DATADIR}/${S} ${PREFIX}/bin/${S}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/VERSION ${DATADIR}
-	${LN} ${LN_OPTS} ${DATADIR}/dev_appserver.py ${PREFIX}/bin/dev_appserver.py
-	${LN} ${LN_OPTS} ${DATADIR}/appcfg.py ${PREFIX}/bin/appcfg.py
 
 .include <bsd.port.mk>

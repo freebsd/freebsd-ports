@@ -1,5 +1,7 @@
 @comment $FreeBSD$
 bin/appcfg.py
+bin/bulkload_client.py
+bin/bulkloader.py
 bin/dev_appserver.py
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -369,6 +371,8 @@ bin/dev_appserver.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/guestbook/guestbook.py
 %%DATADIR%%/VERSION
 %%DATADIR%%/appcfg.py
+%%DATADIR%%/bulkload_client.py
+%%DATADIR%%/bulkloader.py
 %%DATADIR%%/dev_appserver.py
 %%DATADIR%%/google/__init__.py
 %%DATADIR%%/google/appengine/__init__.py
