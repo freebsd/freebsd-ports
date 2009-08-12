@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2430e9c3-8741-11de-938e-003048590f9e">
+    <topic>wordpress -- remote admin password reset vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>2.8.4,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><lt>2.8.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>WordPress reports:</p>
+	<blockquote cite="http://wordpress.org/development/2009/08/2-8-4-security-release/">
+	  <p>A specially crafted URL could be requested that would allow an
+	    attacker to bypass a security check to verify a user requested a
+	    password reset. As a result, the first account without a key in the
+	    database (usually the admin account) would have its password reset and
+	    a new password would be emailed to the account owner.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://wordpress.org/development/2009/08/2-8-4-security-release/</url>
+      <url>http://www.milw0rm.com/exploits/9410</url>
+    </references>
+    <dates>
+      <discovery>2009-08-10</discovery>
+      <entry>2009-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5179d85c-8683-11de-91b9-0022157515b2">
     <topic>fetchmail -- improper SSL certificate subject verification</topic>
     <affects>
