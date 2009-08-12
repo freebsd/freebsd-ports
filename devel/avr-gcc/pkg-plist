@@ -100,6 +100,7 @@ share/locale/zh_TW/LC_MESSAGES/gcc.mo
 @dirrm lib/gcc/avr/4.3.2/avr5
 @dirrm lib/gcc/avr/4.3.2/avr51
 @dirrm lib/gcc/avr/4.3.2/avr6
+@dirrm lib/gcc/avr/4.3.2/avrxmega3
 @dirrm lib/gcc/avr/4.3.2/avrxmega4
 @dirrm lib/gcc/avr/4.3.2/avrxmega5
 @dirrm lib/gcc/avr/4.3.2/avrxmega6
