@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmerlin-avdecoder
-PORTVERSION=	0.1.8
-PORTREVISION=	4
+PORTVERSION=	1.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin
 
@@ -44,6 +43,8 @@ OPTIONS=	GMERLIN	"Enable gmerlin support" on \
 		A52	"Enable A52 support" on \
 		DCA	"Enable DTS Coherent Acoustics decoder" on \
 		LIBCDIO	"Enable libcdio support" on \
+		OPENJPEG "Enable JPEG2000 support" on \
+		SCHROEDINGER "Enable dirac support" on \
 		OPTIMIZED_CFLAGS "Additional optimizations" on
 
 .include <bsd.port.pre.mk>
@@ -130,8 +131,10 @@ CONFIGURE_ARGS+=--disable-faad2
 
 .if !defined(WITHOUT_DVDREAD)
 LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+PLIST_SUB+=	DVDREAD=""
 .else
 CONFIGURE_ARGS+=--disable-dvdread
+PLIST_SUB+=	DVDREAD="@comment "
 .endif
 
 .if !defined(WITHOUT_FLAC)
@@ -167,8 +170,22 @@ CONFIGURE_ARGS+=--disable-libcda --disable-libdca
 
 .if !defined(WITHOUT_LIBCDIO)
 LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio
+PLIST_SUB+=	LIBCDIO=""
 .else
 CONFIGURE_ARGS+=--disable-libcdio
+PLIST_SUB+=	LIBCDIO="@comment "
+.endif
+
+.if !defined(WITHOUT_OPENJPEG)
+LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
+.else
+CONFIGURE_ARGS+=--disable-openjpeg
+.endif
+
+.if !defined(WITHOUT_SCHROEDINGER)
+LIB_DEPENDS+=	schroedinger-1.0.2:${PORTSDIR}/multimedia/schroedinger
+.else
+CONFIGURE_ARGS+=--disable-schroedinger
 .endif
 
 # vendor ocflags from configure
