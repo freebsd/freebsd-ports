@@ -651,6 +651,11 @@ if [ "$nofinish" = 0 ]; then
     # Copy UPDATING and MOVED into the packages folder
     cp ${builddir}/ports/UPDATING ${builddir}/packages/UPDATING
     cp ${builddir}/ports/MOVED ${builddir}/packages/MOVED
+    for f in INDEX MOVED UPDATING; do
+    	bzip2 -k ${builddir}/packages/$f
+	md5 ${builddir}/packages/$f.bz2 > ${builddir}/packages/$f.bz2.md5
+	sha256 ${builddir}/packages/$f.bz2 > ${builddir}/packages/$f.bz2.sha256
+    done
 
     ls -asFlrt ${builddir}/packages/All > ${builddir}/logs/ls-lrt
     cp -p ${builddir}/make ${builddir}/logs
