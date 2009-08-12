@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Domain-ExpireDate
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	dns net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module obtain expiration date of domain names
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece \
-		${SITE_PERL}/Net/Whois/Raw.pm:${PORTSDIR}/net/p5-Net-Whois-Raw
+		${SITE_PERL}/Net/Whois/Raw.pm:${PORTSDIR}/net/p5-Net-Whois-Raw \
+		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
