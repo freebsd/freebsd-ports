@@ -50,6 +50,7 @@
     SUBDIR += etoile-mediakit
     SUBDIR += etoile-multimediakit
     SUBDIR += ffmpeg
+    SUBDIR += ffmpeg-devel
     SUBDIR += ffmpeg2theora
     SUBDIR += ffmpegthumbnailer
     SUBDIR += flv2mpeg4
