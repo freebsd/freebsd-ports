@@ -20,6 +20,7 @@ bin/opera-devel
 %%DATADIR%%/defaults/xmlentities.ini
 %%DATADIR%%/encoding.bin
 %%DATADIR%%/extra/missingplugin.svg
+%%DATADIR%%/extra/missingpluginhover.svg
 %%DATADIR%%/extra/svg-mo.dat
 %%DATADIR%%/extra/svg-mobd.dat
 %%DATADIR%%/extra/svg-sa.dat
@@ -30,14 +31,18 @@ bin/opera-devel
 %%DATADIR%%/java/opera.jar
 %%DATADIR%%/java/opera.policy
 %%DATADIR%%/lngcode.txt
-%%DATADIR%%/locale/en-GB
-%%DATADIR%%/locale/en-GB/en-GB.lng
 %%DATADIR%%/locale/en/bookmarks.adr
 %%DATADIR%%/locale/en/en.lng
 %%DATADIR%%/locale/en/en.zip
 %%DATADIR%%/locale/en/license.txt
 %%DATADIR%%/locale/en/search.ini
 %%DATADIR%%/locale/en/standard_speeddial.ini
+%%DATADIR%%/locale/zh-tw/browser.js
+%%DATADIR%%/locale/zh-tw/turbosettings.xml
+%%DATADIR%%/locale/zh-cn/browser.js
+%%DATADIR%%/locale/zh-cn/turbosettings.xml
+%%DATADIR%%/locale/zh-hk/browser.js
+%%DATADIR%%/locale/zh-hk/turbosettings.xml
 %%DATADIR%%/scripts/common.js
 %%DATADIR%%/scripts/substance.js
 %%DATADIR%%/skin/standard_skin.zip
@@ -53,13 +58,21 @@ bin/opera-devel
 %%DATADIR%%/styles/im.css
 %%DATADIR%%/styles/image.css
 %%DATADIR%%/styles/images/bar.png
+%%DATADIR%%/styles/images/bullet.png
 %%DATADIR%%/styles/images/center.png
 %%DATADIR%%/styles/images/customize.gif
 %%DATADIR%%/styles/images/darkBox.png
 %%DATADIR%%/styles/images/defaultFavicon.png
+%%DATADIR%%/styles/images/error.png
+%%DATADIR%%/styles/images/file.png
 %%DATADIR%%/styles/images/flag.png
 %%DATADIR%%/styles/images/folder.png
+%%DATADIR%%/styles/images/header-expanded.png
+%%DATADIR%%/styles/images/header.png
+%%DATADIR%%/styles/images/info-header.png
+%%DATADIR%%/styles/images/Opera_256x256.png
 %%DATADIR%%/styles/images/opera.png
+%%DATADIR%%/styles/images/page-bot.png
 %%DATADIR%%/styles/images/red_center.png
 %%DATADIR%%/styles/images/red_left.png
 %%DATADIR%%/styles/images/red_right.png
@@ -67,10 +80,13 @@ bin/opera-devel
 %%DATADIR%%/styles/images/section.png
 %%DATADIR%%/styles/images/smartGroup.png
 %%DATADIR%%/styles/images/top.png
+%%DATADIR%%/styles/images/warning.png
 %%DATADIR%%/styles/info.css
+%%DATADIR%%/styles/m2_welcome_message.mbs
 %%DATADIR%%/styles/mathml.css
 %%DATADIR%%/styles/message.css
 %%DATADIR%%/styles/mime.css
+%%DATADIR%%/styles/opera.css
 %%DATADIR%%/styles/plugins.css
 %%DATADIR%%/styles/search.css
 %%DATADIR%%/styles/unstyledxml.css
@@ -109,7 +125,9 @@ bin/opera-devel
 @dirrm %%DATADIR%%/extra
 @dirrm %%DATADIR%%/java
 @dirrm %%DATADIR%%/locale/en
-@dirrm %%DATADIR%%/locale/en-GB
+@dirrm %%DATADIR%%/locale/zh-cn
+@dirrm %%DATADIR%%/locale/zh-hk
+@dirrm %%DATADIR%%/locale/zh-tw
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/scripts
