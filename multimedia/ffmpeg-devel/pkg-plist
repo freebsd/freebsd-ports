@@ -1,0 +1,119 @@
+bin/ffmpeg
+%%FFSERVER%%bin/ffserver
+%%FFSERVER%%@unexec if cmp -s %D/etc/ffserver.conf %D/etc/ffserver.conf-dist; then rm -f %D/etc/ffserver.conf; fi
+%%FFSERVER%%etc/ffserver.conf-dist
+%%FFSERVER%%@exec [ -f %B/ffserver.conf ] || cp %B/%f %B/ffserver.conf
+include/ffmpeg/adler32.h
+include/ffmpeg/avcodec.h
+include/ffmpeg/avdevice.h
+include/ffmpeg/avfilter.h
+include/ffmpeg/avformat.h
+include/ffmpeg/avio.h
+include/ffmpeg/avstring.h
+include/ffmpeg/avutil.h
+include/ffmpeg/base64.h
+include/ffmpeg/common.h
+include/ffmpeg/crc.h
+include/ffmpeg/fifo.h
+include/ffmpeg/intfloat_readwrite.h
+include/ffmpeg/log.h
+include/ffmpeg/lzo.h
+include/ffmpeg/mathematics.h
+include/ffmpeg/md5.h
+include/ffmpeg/mem.h
+include/ffmpeg/opt.h
+include/ffmpeg/pixfmt.h
+include/ffmpeg/postprocess.h
+include/ffmpeg/rational.h
+include/ffmpeg/sha1.h
+include/ffmpeg/swscale.h
+include/ffmpeg/vdpau.h
+include/ffmpeg/xvmc.h
+include/libavcodec/avcodec.h
+include/libavcodec/opt.h
+include/libavcodec/vdpau.h
+include/libavcodec/xvmc.h
+include/libavdevice/avdevice.h
+include/libavfilter/avfilter.h
+include/libavformat/avformat.h
+include/libavformat/avio.h
+include/libavutil/adler32.h
+include/libavutil/avstring.h
+include/libavutil/avutil.h
+include/libavutil/base64.h
+include/libavutil/common.h
+include/libavutil/crc.h
+include/libavutil/fifo.h
+include/libavutil/intfloat_readwrite.h
+include/libavutil/log.h
+include/libavutil/lzo.h
+include/libavutil/mathematics.h
+include/libavutil/md5.h
+include/libavutil/mem.h
+include/libavutil/pixfmt.h
+include/libavutil/rational.h
+include/libavutil/sha1.h
+include/libpostproc/postprocess.h
+include/postproc/postprocess.h
+include/libswscale/swscale.h
+lib/libavcodec.a
+lib/libavcodec.so
+lib/libavcodec.so.1
+lib/libavcodec.so.52.32.0
+lib/libavdevice.a
+lib/libavdevice.so
+lib/libavdevice.so.1
+lib/libavdevice.so.52.2.0
+lib/libavfilter.a
+lib/libavfilter.so
+lib/libavfilter.so.0.5.0
+lib/libavfilter.so.1
+lib/libavformat.a
+lib/libavformat.so
+lib/libavformat.so.1
+lib/libavformat.so.52.37.0
+lib/libavutil.a
+lib/libavutil.so
+lib/libavutil.so.1
+lib/libavutil.so.50.3.0
+lib/libpostproc.a
+lib/libpostproc.so
+lib/libpostproc.so.1
+lib/libpostproc.so.51.2.0
+lib/libswscale.a
+lib/libswscale.so
+lib/libswscale.so.0.7.1
+lib/libswscale.so.1
+libdata/pkgconfig/libavcodec.pc
+libdata/pkgconfig/libavdevice.pc
+libdata/pkgconfig/libavfilter.pc
+libdata/pkgconfig/libavformat.pc
+libdata/pkgconfig/libavutil.pc
+libdata/pkgconfig/libpostproc.pc
+libdata/pkgconfig/libswscale.pc
+%%DATADIR%%/libx264-baseline.ffpreset
+%%DATADIR%%/libx264-default.ffpreset
+%%DATADIR%%/libx264-fastfirstpass.ffpreset
+%%DATADIR%%/libx264-hq.ffpreset
+%%DATADIR%%/libx264-ipod320.ffpreset
+%%DATADIR%%/libx264-ipod640.ffpreset
+%%DATADIR%%/libx264-lossless_fast.ffpreset
+%%DATADIR%%/libx264-lossless_max.ffpreset
+%%DATADIR%%/libx264-lossless_medium.ffpreset
+%%DATADIR%%/libx264-lossless_slow.ffpreset
+%%DATADIR%%/libx264-lossless_slower.ffpreset
+%%DATADIR%%/libx264-lossless_ultrafast.ffpreset
+%%DATADIR%%/libx264-main.ffpreset
+%%DATADIR%%/libx264-max.ffpreset
+%%DATADIR%%/libx264-normal.ffpreset
+%%DATADIR%%/libx264-slowfirstpass.ffpreset
+@dirrm %%DATADIR%%
+@dirrm include/postproc
+@dirrm include/libswscale
+@dirrm include/libpostproc
+@dirrm include/libavutil
+@dirrm include/libavformat
+@dirrm include/libavfilter
+@dirrm include/libavdevice
+@dirrm include/libavcodec
+@dirrm include/ffmpeg
