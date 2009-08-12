@@ -23,6 +23,8 @@ lib/gcc/avr/4.3.2/avr51/libgcc.a
 lib/gcc/avr/4.3.2/avr51/libgcov.a
 lib/gcc/avr/4.3.2/avr6/libgcc.a
 lib/gcc/avr/4.3.2/avr6/libgcov.a
+lib/gcc/avr/4.3.2/avrxmega3/libgcc.a
+lib/gcc/avr/4.3.2/avrxmega3/libgcov.a
 lib/gcc/avr/4.3.2/avrxmega4/libgcc.a
 lib/gcc/avr/4.3.2/avrxmega4/libgcov.a
 lib/gcc/avr/4.3.2/avrxmega5/libgcc.a
