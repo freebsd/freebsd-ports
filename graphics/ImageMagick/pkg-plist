@@ -56,6 +56,7 @@ include/ImageMagick/magick/draw.h
 include/ImageMagick/magick/effect.h
 include/ImageMagick/magick/enhance.h
 include/ImageMagick/magick/exception.h
+include/ImageMagick/magick/fourier.h
 include/ImageMagick/magick/fx.h
 include/ImageMagick/magick/gem.h
 include/ImageMagick/magick/geometry.h
@@ -1366,6 +1367,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/download.html
 %%PORTDOCS%%%%DOCSDIR%%/www/escape.html
 %%PORTDOCS%%%%DOCSDIR%%/www/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/www/exception.html
 %%PORTDOCS%%%%DOCSDIR%%/www/formats.html
 %%PORTDOCS%%%%DOCSDIR%%/www/fx.html
 %%PORTDOCS%%%%DOCSDIR%%/www/high-dynamic-range.html
