@@ -21,6 +21,7 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 .if !defined(WITHOUT_NLS)

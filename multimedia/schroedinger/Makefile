@@ -34,6 +34,7 @@ LIB_DEPENDS+=	schroedinger-1.0.2:${PORTSDIR}/multimedia/schroedinger
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 .if defined(_BUILDING_GSTREAMER_PLUGIN)
 WANT_GSTREAMER=	yes
