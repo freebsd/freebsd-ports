@@ -121,7 +121,7 @@ else {
     $again = 'n';
   }
   # Loop while the user wants to
-  ROUND: while($again eq 'y') {
+  ROUND: while($again ne 'n') {
     # Always start with an empty list of leaves to cut
     my %leavestocut;
     # Initialize counter for progress status
@@ -259,7 +259,7 @@ else {
       goto AUTOPRUNE;
     } # AUTOPRUNE
 
-    print "Go on with new leaf packages ((y)es/[no])? ";
+    print "Go on with new leaf packages ([yes]/no)? ";
     # Get first character of input, without leading whitespace
     ($again) = (lc(<STDIN>) =~ /(\S)/o);
     print "\n";
