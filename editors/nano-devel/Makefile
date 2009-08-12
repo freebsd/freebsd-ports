@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nano-devel
-PORTVERSION=	2.1.9
-PORTREVISION=	1
+PORTNAME=	nano
+PORTVERSION=	2.1.10
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v2.1/ \
 		http://www.ewtoo.org/~astyanax/nano/dist/v2.1/
+PKGNAMESUFFIX=	-devel
 DISTNAME=	nano-${PORTVERSION}
 
 MAINTAINER=	EitanAdlerList@gmail.com
@@ -19,7 +19,6 @@ COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 CONFLICTS=	nano-2*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-all --enable-rc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
