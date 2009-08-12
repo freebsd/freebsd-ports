@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmerlin
-PORTVERSION=	0.3.8
-PORTREVISION=	2
+PORTVERSION=	0.4.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-doxygen --without-texinfo --disable-alsa \
 		--disable-v4l --disable-alsamixer --disable-camelot \
-		--without-cpuflags
+		--without-cpuflags --disable-v4l2 --disable-v4lconvert
 USE_GNOME=	gtk20 gnomehack libxml2
 USE_GL=		gl
 USE_XORG=	x11 xv xinerama ice
@@ -40,6 +39,7 @@ OPTIONS=	PULSEAUDIO "Enable PulseAudio support" on \
 		MUSICBRAINZ "Enable MusicBrainz support" on \
 		CDDB	"Enable CDDB support" on \
 		ESOUND	"Enable ESounD support" off \
+		JACK	"Enable Jack support" on \
 		JPEG	"Enable JPEG support" on \
 		PNG	"Enable PNG support" on \
 		TIFF	"Enable TIFF support" on \
@@ -49,6 +49,7 @@ OPTIONS=	PULSEAUDIO "Enable PulseAudio support" on \
 		KBD	"Build keyboard daemon" on \
 		TRANSCODER "Build transcoder" on \
 		VISUALIZER "Build visualizer" on \
+		THUMBNAILER "Build thumbnailer" on \
 		OPTIMIZED_CFLAGS "Additional optimizations" on
 
 .include <bsd.port.pre.mk>
@@ -101,6 +102,14 @@ PLIST_SUB+=	ESOUND=""
 .else
 CONFIGURE_ARGS+=--disable-esd
 PLIST_SUB+=	ESOUND="@comment "
+.endif
+
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+PLIST_SUB+=	JACK=""
+.else
+CONFIGURE_ARGS+=--disable-jack
+PLIST_SUB+=	JACK="@comment "
 .endif
 
 .if !defined(WITHOUT_JPEG)
@@ -171,6 +180,13 @@ CONFIGURE_ARGS+=--disable-visualizer
 PLIST_SUB+=	VISUALIZER="@comment "
 .endif
 
+.if !defined(WITHOUT_THUMBNAILER)
+PLIST_SUB+=	THUMBNAILER=""
+.else
+CONFIGURE_ARGS+=--disable-thumbnailer
+PLIST_SUB+=	THUMBNAILER="@comment "
+.endif
+
 # vendor ocflags from configure
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math
@@ -187,7 +203,8 @@ post-patch:
 		${WRKSRC}/apps/cmdlineplayer/Makefile.in \
 		${WRKSRC}/apps/kbd/Makefile.in \
 		${WRKSRC}/apps/player/Makefile.in \
-		${WRKSRC}/apps/transcoder/Makefile.in
+		${WRKSRC}/apps/transcoder/Makefile.in \
+		${WRKSRC}/apps/thumbnailer/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
