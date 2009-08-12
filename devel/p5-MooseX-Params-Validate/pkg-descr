@@ -1,0 +1,5 @@
+This module fills a gap in Moose by adding method parameter
+validation to Moose. This is just one of many developing options,
+it should not be considered the "official" one by any means though.
+
+WWW: http://search.cpan.org/dist/MooseX-Params-Validate/

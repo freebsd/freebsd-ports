@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Params/Validate/.packlist
+%%SITE_PERL%%/MooseX/Params/Validate.pm
+@dirrmtry %%SITE_PERL%%/MooseX/Params
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Params/Validate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Params
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
