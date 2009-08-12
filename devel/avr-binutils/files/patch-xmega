@@ -1,420 +1,24 @@
---- ./include/opcode/avr.h.orig	2008-08-09 07:35:13.000000000 +0200
-+++ ./include/opcode/avr.h	2009-01-07 17:46:15.000000000 +0100
-@@ -30,6 +30,8 @@
- #define AVR_ISA_BRK   0x0400 /* device has BREAK (on-chip debug) */
- #define AVR_ISA_EIND  0x0800 /* device has >128K program memory (none yet) */
- #define AVR_ISA_MOVW  0x1000 /* device has MOVW */
-+#define AVR_ISA_SPMX  0x2000 /* device has SPM Z[+] */
-+#define AVR_ISA_DES   0x4000 /* device has DES */
- 
- #define AVR_ISA_TINY1 (AVR_ISA_1200 | AVR_ISA_LPM)
- #define AVR_ISA_2xxx  (AVR_ISA_TINY1 | AVR_ISA_SRAM)
-@@ -48,6 +50,8 @@
- #define AVR_ISA_94K   (AVR_ISA_M603 | AVR_ISA_MUL | AVR_ISA_MOVW | AVR_ISA_LPMX)
- #define AVR_ISA_M323  (AVR_ISA_M161 | AVR_ISA_BRK)
- #define AVR_ISA_M128  (AVR_ISA_M323 | AVR_ISA_ELPM | AVR_ISA_ELPMX)
-+#define AVR_ISA_M256  (AVR_ISA_M128 | AVR_ISA_EIND)
-+#define AVR_ISA_XMEGA (AVR_ISA_M256 | AVR_ISA_SPMX | AVR_ISA_DES)
- 
- #define AVR_ISA_AVR1   AVR_ISA_TINY1
- #define AVR_ISA_AVR2   AVR_ISA_2xxx
-@@ -108,6 +112,7 @@
-    L - signed pc relative offset from -2048 to 2047
-    h - absolute code address (call, jmp)
-    S - immediate value from 0 to 7 (S = s << 4)
-+   E - immediate value from 0 to 15, shifted left by 4 (des)
-    ? - use this opcode entry if no parameters, else use next opcode entry
- 
-    Order is important - some binary opcodes have more than one name,
-@@ -168,7 +173,8 @@
- AVR_INSN (sleep,"",    "1001010110001000", 1, AVR_ISA_1200, 0x9588)
- AVR_INSN (break,"",    "1001010110011000", 1, AVR_ISA_BRK,  0x9598)
- AVR_INSN (wdr,  "",    "1001010110101000", 1, AVR_ISA_1200, 0x95a8)
--AVR_INSN (spm,  "",    "1001010111101000", 1, AVR_ISA_SPM,  0x95e8)
-+AVR_INSN (spm,  "?",   "1001010111101000", 1, AVR_ISA_SPM,  0x95e8)
-+AVR_INSN (spm,  "z",   "10010101111+1000", 1, AVR_ISA_SPMX, 0x95e8)
- 
- AVR_INSN (adc,  "r,r", "000111rdddddrrrr", 1, AVR_ISA_1200, 0x1c00)
- AVR_INSN (add,  "r,r", "000011rdddddrrrr", 1, AVR_ISA_1200, 0x0c00)
-@@ -282,3 +288,6 @@
- AVR_INSN (eicall, "",  "1001010100011001", 1, AVR_ISA_EIND, 0x9519)
- AVR_INSN (eijmp, "",   "1001010000011001", 1, AVR_ISA_EIND, 0x9419)
- 
-+/* DES instruction for encryption and decryption */
-+AVR_INSN (des,  "E",   "10010100EEEE1011", 1, AVR_ISA_DES,  0x940B)
-+
---- ./include/elf/avr.h.orig	2008-08-09 07:35:13.000000000 +0200
-+++ ./include/elf/avr.h	2009-01-07 17:46:15.000000000 +0100
-@@ -40,6 +40,13 @@
- #define E_AVR_MACH_AVR5 5
- #define E_AVR_MACH_AVR51 51
- #define E_AVR_MACH_AVR6 6 
-+#define E_AVR_MACH_XMEGA1 101
-+#define E_AVR_MACH_XMEGA2 102
-+#define E_AVR_MACH_XMEGA3 103
-+#define E_AVR_MACH_XMEGA4 104
-+#define E_AVR_MACH_XMEGA5 105
-+#define E_AVR_MACH_XMEGA6 106
-+#define E_AVR_MACH_XMEGA7 107
- 
- /* Relocations.  */
- START_RELOC_NUMBERS (elf_avr_reloc_type)
---- ./gas/doc/c-avr.texi.orig	2009-01-07 17:37:16.000000000 +0100
-+++ ./gas/doc/c-avr.texi	2009-01-07 17:46:28.000000000 +0100
-@@ -76,6 +76,19 @@
- Instruction set avr6 is for the enhanced AVR core with a 3-byte PC (MCU types:
- atmega2560, atmega2561).
- 
-+Instruction set avrxmega4 is for the XMEGA AVR cor with up to 64K program
-+memory space and less than 64K data space (MCU types: atxmega64a3).
-+
-+Instruction set avrxmega5 is for the XMEGA AVR core with up to 64K program 
-+memory space and greater than 64K data space (MCU types: atxmega64a1).
-+
-+Instruction set avrxmega6 is for the XMEGA AVR core with up to 256K program
-+memory space and less than 64K data space (MCU types: atxmega128a3,
-+atxmega256a3, atxmega256a3b).
-+
-+Instruction set avrxmega7 is for the XMEGA AVR core with up to 256K program
-+memory space and greater than 64K data space (MCU types: atxmega128a1).
-+
- @cindex @code{-mall-opcodes} command line option, AVR
- @item -mall-opcodes
- Accept all AVR opcodes, even if not supported by @code{-mmcu}.
---- ./gas/config/tc-avr.c.orig	2009-01-07 17:36:41.000000000 +0100
-+++ ./gas/config/tc-avr.c	2009-01-07 17:46:28.000000000 +0100
-@@ -27,20 +27,21 @@
- 
- struct avr_opcodes_s
- {
--  char *        name;
--  char *        constraints;
--  int           insn_size;		/* In words.  */
--  int           isa;
-+  char *name;
-+  char *constraints;
-+  char *opcode;
-+  int insn_size;		/* In words.  */
-+  int isa;
-   unsigned int  bin_opcode;
- };
- 
- #define AVR_INSN(NAME, CONSTR, OPCODE, SIZE, ISA, BIN) \
--{#NAME, CONSTR, SIZE, ISA, BIN},
-+{#NAME, CONSTR, OPCODE, SIZE, ISA, BIN},
- 
- struct avr_opcodes_s avr_opcodes[] =
- {
-   #include "opcode/avr.h"
--  {NULL, NULL, 0, 0, 0}
-+  {NULL, NULL, NULL, 0, 0, 0}
- };
- 
- const char comment_chars[] = ";";
-@@ -79,6 +80,13 @@
-   {"avr5",       AVR_ISA_AVR51,   bfd_mach_avr5},
-   {"avr51",      AVR_ISA_AVR51,   bfd_mach_avr51},
-   {"avr6",       AVR_ISA_AVR6,    bfd_mach_avr6},
-+  {"avrxmega1",  AVR_ISA_XMEGA,   bfd_mach_avrxmega1},
-+  {"avrxmega2",  AVR_ISA_XMEGA,   bfd_mach_avrxmega2},
-+  {"avrxmega3",  AVR_ISA_XMEGA,   bfd_mach_avrxmega3},
-+  {"avrxmega4",  AVR_ISA_XMEGA,   bfd_mach_avrxmega4},
-+  {"avrxmega5",  AVR_ISA_XMEGA,   bfd_mach_avrxmega5},
-+  {"avrxmega6",  AVR_ISA_XMEGA,   bfd_mach_avrxmega6},
-+  {"avrxmega7",  AVR_ISA_XMEGA,   bfd_mach_avrxmega7},
-   {"at90s1200",  AVR_ISA_1200,    bfd_mach_avr1},
-   {"attiny11",   AVR_ISA_AVR1,    bfd_mach_avr1},
-   {"attiny12",   AVR_ISA_AVR1,    bfd_mach_avr1},
-@@ -186,6 +194,12 @@
-   {"at90usb1287",AVR_ISA_AVR51,   bfd_mach_avr51},
-   {"atmega2560", AVR_ISA_AVR6,    bfd_mach_avr6},
-   {"atmega2561", AVR_ISA_AVR6,    bfd_mach_avr6},
-+  {"atxmega64a3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
-+  {"atxmega64a1", AVR_ISA_XMEGA,  bfd_mach_avrxmega5},
-+  {"atxmega128a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
-+  {"atxmega256a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
-+  {"atxmega256a3b",AVR_ISA_XMEGA, bfd_mach_avrxmega6},
-+  {"atxmega128a1", AVR_ISA_XMEGA, bfd_mach_avrxmega7},
-   {NULL, 0, 0}
- };
- 
-@@ -363,6 +377,10 @@
- 	"                   avr5  - enhanced AVR core with up to 64K program memory\n"
- 	"                   avr51 - enhanced AVR core with up to 128K program memory\n"
- 	"                   avr6  - enhanced AVR core with up to 256K program memory\n"
-+	"                   avrxmega4 - XMEGA, > 64K, <= 128K FLASH, <= 64K RAM\n"
-+	"                   avrxmega5 - XMEGA, > 64K, <= 128K FLASH, > 64K RAM\n"
-+	"                   avrxmega6 - XMEGA, > 128K, <= 256K FLASH, <= 64K RAM\n"
-+	"                   avrxmega7 - XMEGA, > 128K, <= 256K FLASH, > 64K RAM\n"
- 	"                   or immediate microcontroller name.\n"));
-   fprintf (stream,
-       _("  -mall-opcodes    accept all AVR opcodes, even if not supported by MCU\n"
-@@ -790,7 +808,12 @@
-       if (*str == '+')
- 	{
- 	  ++str;
--	  op_mask |= 1;
-+          char *s;
-+          for (s = opcode->opcode; *s; ++s)
-+            {
-+              if (*s == '+')
-+                op_mask |= (1 << (15 - (s - opcode->opcode)));
-+            }
- 	}
- 
-       /* attiny26 can do "lpm" and "lpm r,Z" but not "lpm r,Z+".  */
-@@ -907,6 +930,16 @@
-       }
-       break;
- 
-+    case 'E':
-+      {
-+	unsigned int x;
-+
-+	x = avr_get_constant (str, 15);
-+	str = input_line_pointer;
-+	op_mask |= (x << 4);
-+      }
-+      break;
-+    
-     case '?':
-       break;
- 
---- ./ld/emulparams/avrxmega6.sh.orig	2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega6.sh	2009-01-07 17:46:15.000000000 +0100
-@@ -0,0 +1,12 @@
-+ARCH=avr:106
-+MACHINE=
-+SCRIPT_NAME=avr
-+OUTPUT_FORMAT="elf32-avr"
-+MAXPAGESIZE=1
-+EMBEDDED=yes
-+TEMPLATE_NAME=elf32
-+
-+TEXT_LENGTH=1024K
-+DATA_ORIGIN=0x802000
-+DATA_LENGTH=0xffa0
-+EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega7.sh.orig	2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega7.sh	2009-01-07 17:46:15.000000000 +0100
-@@ -0,0 +1,12 @@
-+ARCH=avr:107
-+MACHINE=
-+SCRIPT_NAME=avr
-+OUTPUT_FORMAT="elf32-avr"
-+MAXPAGESIZE=1
-+EMBEDDED=yes
-+TEMPLATE_NAME=elf32
-+
-+TEXT_LENGTH=1024K
-+DATA_ORIGIN=0x802000
-+DATA_LENGTH=0xffa0
-+EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega1.sh.orig	2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega1.sh	2009-01-07 17:46:15.000000000 +0100
-@@ -0,0 +1,12 @@
-+ARCH=avr:101
-+MACHINE=
-+SCRIPT_NAME=avr
-+OUTPUT_FORMAT="elf32-avr"
-+MAXPAGESIZE=1
-+EMBEDDED=yes
-+TEMPLATE_NAME=elf32
-+
-+TEXT_LENGTH=1024K
-+DATA_ORIGIN=0x802000
-+DATA_LENGTH=0xffa0
-+EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega4.sh.orig	2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega4.sh	2009-01-07 17:46:15.000000000 +0100
-@@ -0,0 +1,12 @@
-+ARCH=avr:104
-+MACHINE=
-+SCRIPT_NAME=avr
-+OUTPUT_FORMAT="elf32-avr"
-+MAXPAGESIZE=1
-+EMBEDDED=yes
-+TEMPLATE_NAME=elf32
-+
-+TEXT_LENGTH=1024K
-+DATA_ORIGIN=0x802000
-+DATA_LENGTH=0xffa0
-+EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega5.sh.orig	2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega5.sh	2009-01-07 17:46:15.000000000 +0100
-@@ -0,0 +1,12 @@
-+ARCH=avr:105
-+MACHINE=
-+SCRIPT_NAME=avr
-+OUTPUT_FORMAT="elf32-avr"
-+MAXPAGESIZE=1
-+EMBEDDED=yes
-+TEMPLATE_NAME=elf32
-+
-+TEXT_LENGTH=1024K
-+DATA_ORIGIN=0x802000
-+DATA_LENGTH=0xffa0
-+EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega2.sh.orig	2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega2.sh	2009-01-07 17:46:15.000000000 +0100
-@@ -0,0 +1,12 @@
-+ARCH=avr:102
-+MACHINE=
-+SCRIPT_NAME=avr
-+OUTPUT_FORMAT="elf32-avr"
-+MAXPAGESIZE=1
-+EMBEDDED=yes
-+TEMPLATE_NAME=elf32
-+
-+TEXT_LENGTH=1024K
-+DATA_ORIGIN=0x802000
-+DATA_LENGTH=0xffa0
-+EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega3.sh.orig	2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega3.sh	2009-01-07 17:46:15.000000000 +0100
-@@ -0,0 +1,12 @@
-+ARCH=avr:103
-+MACHINE=
-+SCRIPT_NAME=avr
-+OUTPUT_FORMAT="elf32-avr"
-+MAXPAGESIZE=1
-+EMBEDDED=yes
-+TEMPLATE_NAME=elf32
-+
-+TEXT_LENGTH=1024K
-+DATA_ORIGIN=0x802000
-+DATA_LENGTH=0xffa0
-+EXTRA_EM_FILE=avrelf
---- ./ld/configure.tgt.orig	2008-08-09 07:35:13.000000000 +0200
-+++ ./ld/configure.tgt	2009-01-07 17:46:15.000000000 +0100
-@@ -107,7 +107,7 @@
- xscale-*-elf)		targ_emul=armelf
- 			;;
- avr-*-*)		targ_emul=avr2
--			targ_extra_emuls="avr1 avr25 avr3 avr31 avr35 avr4 avr5 avr51 avr6"
-+			targ_extra_emuls="avr1 avr25 avr3 avr31 avr35 avr4 avr5 avr51 avr6 avrxmega1 avrxmega2 avrxmega3 avrxmega4 avrxmega5 avrxmega6 avrxmega7"
- 			;;
- bfin-*-elf)		targ_emul=elf32bfin;
- 			targ_extra_emuls="elf32bfinfd"
---- ./ld/Makefile.in.orig	2008-09-09 10:02:19.000000000 +0200
-+++ ./ld/Makefile.in	2009-01-07 17:46:15.000000000 +0100
-@@ -393,6 +393,13 @@
- 	eavr5.o \
- 	eavr51.o \
- 	eavr6.o \
-+	eavrxmega1.o \
-+	eavrxmega2.o \
-+	eavrxmega3.o \
-+	eavrxmega4.o \
-+	eavrxmega5.o \
-+	eavrxmega6.o \
-+	eavrxmega7.o \
- 	ecoff_i860.o \
- 	ecoff_sparc.o \
- 	eelf32_spu.o \
-@@ -1476,6 +1483,34 @@
-   $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-   ${GEN_DEPENDS}
- 	${GENSCRIPTS} avr6 "$(tdir_avr2)"
-+eavrxmega1.c: $(srcdir)/emulparams/avrxmega1.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega1 "$(tdir_avr2)"
-+eavrxmega2.c: $(srcdir)/emulparams/avrxmega2.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega2 "$(tdir_avr2)"
-+eavrxmega3.c: $(srcdir)/emulparams/avrxmega3.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega3 "$(tdir_avr2)"
-+eavrxmega4.c: $(srcdir)/emulparams/avrxmega4.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega4 "$(tdir_avr2)"
-+eavrxmega5.c: $(srcdir)/emulparams/avrxmega5.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega5 "$(tdir_avr2)"
-+eavrxmega6.c: $(srcdir)/emulparams/avrxmega6.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega6 "$(tdir_avr2)"
-+eavrxmega7.c: $(srcdir)/emulparams/avrxmega7.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega7 "$(tdir_avr2)"
- ecoff_i860.c: $(srcdir)/emulparams/coff_i860.sh \
-   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/i860coff.sc ${GEN_DEPENDS}
- 	${GENSCRIPTS} coff_i860 "$(tdir_coff_i860)"
---- ./ld/Makefile.am.orig	2008-09-09 10:02:19.000000000 +0200
-+++ ./ld/Makefile.am	2009-01-07 17:46:15.000000000 +0100
-@@ -142,6 +142,13 @@
- 	eavr5.o \
- 	eavr51.o \
- 	eavr6.o \
-+	eavrxmega1.o \
-+	eavrxmega2.o \
-+	eavrxmega3.o \
-+	eavrxmega4.o \
-+	eavrxmega5.o \
-+	eavrxmega6.o \
-+	eavrxmega7.o \
- 	ecoff_i860.o \
- 	ecoff_sparc.o \
- 	eelf32_spu.o \
-@@ -646,6 +653,34 @@
-   $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-   ${GEN_DEPENDS}
- 	${GENSCRIPTS} avr6 "$(tdir_avr2)"
-+eavrxmega1.c: $(srcdir)/emulparams/avrxmega1.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega1 "$(tdir_avr2)"
-+eavrxmega2.c: $(srcdir)/emulparams/avrxmega2.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega2 "$(tdir_avr2)"
-+eavrxmega3.c: $(srcdir)/emulparams/avrxmega3.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega3 "$(tdir_avr2)"
-+eavrxmega4.c: $(srcdir)/emulparams/avrxmega4.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega4 "$(tdir_avr2)"
-+eavrxmega5.c: $(srcdir)/emulparams/avrxmega5.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega5 "$(tdir_avr2)"
-+eavrxmega6.c: $(srcdir)/emulparams/avrxmega6.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega6 "$(tdir_avr2)"
-+eavrxmega7.c: $(srcdir)/emulparams/avrxmega7.sh \
-+  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
-+  ${GEN_DEPENDS}
-+	${GENSCRIPTS} avrxmega7 "$(tdir_avr2)"
- ecoff_i860.c: $(srcdir)/emulparams/coff_i860.sh \
-   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/i860coff.sc ${GEN_DEPENDS}
- 	${GENSCRIPTS} coff_i860 "$(tdir_coff_i860)"
---- ./ld/emultempl/avrelf.em.orig	2008-07-07 02:46:51.000000000 +0200
-+++ ./ld/emultempl/avrelf.em	2009-01-07 17:46:15.000000000 +0100
-@@ -71,8 +71,10 @@
- 
-   gld${EMULATION_NAME}_before_allocation ();
- 
--  /* We only need stubs for the avr6 family.  */
--  if (strcmp ("${EMULATION_NAME}","avr6"))
-+  /* We only need stubs for avr6, avrxmega6, and avrxmega7. */
-+  if (strcmp ("${EMULATION_NAME}","avr6") 
-+      && strcmp ("${EMULATION_NAME}","avrxmega6")
-+      && strcmp ("${EMULATION_NAME}","avrxmega7") )
-     avr_no_stubs = TRUE;
- 
-   avr_elf_set_global_bfd_parameters ();
---- ./bfd/cpu-avr.c.orig	2008-08-09 07:35:12.000000000 +0200
-+++ ./bfd/cpu-avr.c	2009-01-07 17:46:15.000000000 +0100
+diff -ur ../binutils-2.19.orig/bfd/archures.c ./bfd/archures.c
+--- ../binutils-2.19.orig/bfd/archures.c	2008-08-09 07:35:12.000000000 +0200
++++ ./bfd/archures.c	2009-08-07 13:25:45.000000000 +0200
+@@ -357,6 +357,13 @@
+ .#define bfd_mach_avr5		5
+ .#define bfd_mach_avr51		51
+ .#define bfd_mach_avr6		6
++.#define bfd_mach_avrxmega1 101
++.#define bfd_mach_avrxmega2 102
++.#define bfd_mach_avrxmega3 103
++.#define bfd_mach_avrxmega4 104
++.#define bfd_mach_avrxmega5 105
++.#define bfd_mach_avrxmega6 106
++.#define bfd_mach_avrxmega7 107
+ .  bfd_arch_bfin,        {* ADI Blackfin *}
+ .#define bfd_mach_bfin          1
+ .  bfd_arch_cr16,       {* National Semiconductor CompactRISC (ie CR16). *}
+Only in ./bfd: archures.c.orig
+diff -ur ../binutils-2.19.orig/bfd/cpu-avr.c ./bfd/cpu-avr.c
+--- ../binutils-2.19.orig/bfd/cpu-avr.c	2008-08-09 07:35:12.000000000 +0200
++++ ./bfd/cpu-avr.c	2009-08-07 13:25:45.000000000 +0200
 @@ -126,7 +126,29 @@
    N (22, bfd_mach_avr51, "avr:51", FALSE, & arch_info_struct[9]),
  
@@ -446,24 +50,9 @@
  };
  
  const bfd_arch_info_type bfd_avr_arch =
---- ./bfd/archures.c.orig	2008-08-09 07:35:12.000000000 +0200
-+++ ./bfd/archures.c	2009-01-07 17:46:15.000000000 +0100
-@@ -357,6 +357,13 @@
- .#define bfd_mach_avr5		5
- .#define bfd_mach_avr51		51
- .#define bfd_mach_avr6		6
-+.#define bfd_mach_avrxmega1 101
-+.#define bfd_mach_avrxmega2 102
-+.#define bfd_mach_avrxmega3 103
-+.#define bfd_mach_avrxmega4 104
-+.#define bfd_mach_avrxmega5 105
-+.#define bfd_mach_avrxmega6 106
-+.#define bfd_mach_avrxmega7 107
- .  bfd_arch_bfin,        {* ADI Blackfin *}
- .#define bfd_mach_bfin          1
- .  bfd_arch_cr16,       {* National Semiconductor CompactRISC (ie CR16). *}
---- ./bfd/elf32-avr.c.orig	2008-08-09 07:35:12.000000000 +0200
-+++ ./bfd/elf32-avr.c	2009-01-07 17:46:15.000000000 +0100
+diff -ur ../binutils-2.19.orig/bfd/elf32-avr.c ./bfd/elf32-avr.c
+--- ../binutils-2.19.orig/bfd/elf32-avr.c	2008-08-09 07:35:12.000000000 +0200
++++ ./bfd/elf32-avr.c	2009-08-07 13:25:45.000000000 +0200
 @@ -1324,6 +1324,34 @@
      case bfd_mach_avr6:
        val = E_AVR_MACH_AVR6;
@@ -534,8 +123,449 @@
  	}
      }
    return bfd_default_set_arch_mach (abfd, bfd_arch_avr,
---- ./opcodes/avr-dis.c.orig	2007-07-05 11:49:00.000000000 +0200
-+++ ./opcodes/avr-dis.c	2009-01-07 17:46:15.000000000 +0100
+diff -ur ../binutils-2.19.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
+--- ../binutils-2.19.orig/gas/config/tc-avr.c	2009-08-07 13:24:59.000000000 +0200
++++ ./gas/config/tc-avr.c	2009-08-07 13:30:52.000000000 +0200
+@@ -27,20 +27,21 @@
+ 
+ struct avr_opcodes_s
+ {
+-  char *        name;
+-  char *        constraints;
+-  int           insn_size;		/* In words.  */
+-  int           isa;
++  char *name;
++  char *constraints;
++  char *opcode;
++  int insn_size;		/* In words.  */
++  int isa;
+   unsigned int  bin_opcode;
+ };
+ 
+ #define AVR_INSN(NAME, CONSTR, OPCODE, SIZE, ISA, BIN) \
+-{#NAME, CONSTR, SIZE, ISA, BIN},
++{#NAME, CONSTR, OPCODE, SIZE, ISA, BIN},
+ 
+ struct avr_opcodes_s avr_opcodes[] =
+ {
+   #include "opcode/avr.h"
+-  {NULL, NULL, 0, 0, 0}
++  {NULL, NULL, NULL, 0, 0, 0}
+ };
+ 
+ const char comment_chars[] = ";";
+@@ -79,6 +80,13 @@
+   {"avr5",       AVR_ISA_AVR51,   bfd_mach_avr5},
+   {"avr51",      AVR_ISA_AVR51,   bfd_mach_avr51},
+   {"avr6",       AVR_ISA_AVR6,    bfd_mach_avr6},
++  {"avrxmega1",  AVR_ISA_XMEGA,   bfd_mach_avrxmega1},
++  {"avrxmega2",  AVR_ISA_XMEGA,   bfd_mach_avrxmega2},
++  {"avrxmega3",  AVR_ISA_XMEGA,   bfd_mach_avrxmega3},
++  {"avrxmega4",  AVR_ISA_XMEGA,   bfd_mach_avrxmega4},
++  {"avrxmega5",  AVR_ISA_XMEGA,   bfd_mach_avrxmega5},
++  {"avrxmega6",  AVR_ISA_XMEGA,   bfd_mach_avrxmega6},
++  {"avrxmega7",  AVR_ISA_XMEGA,   bfd_mach_avrxmega7},
+   {"at90s1200",  AVR_ISA_1200,    bfd_mach_avr1},
+   {"attiny11",   AVR_ISA_AVR1,    bfd_mach_avr1},
+   {"attiny12",   AVR_ISA_AVR1,    bfd_mach_avr1},
+@@ -186,6 +194,16 @@
+   {"at90usb1287",AVR_ISA_AVR51,   bfd_mach_avr51},
+   {"atmega2560", AVR_ISA_AVR6,    bfd_mach_avr6},
+   {"atmega2561", AVR_ISA_AVR6,    bfd_mach_avr6},
++  {"atxmega16a4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
++  {"atxmega16d4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
++  {"atxmega32d4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
++  {"atxmega32a4", AVR_ISA_XMEGA,  bfd_mach_avrxmega3},
++  {"atxmega64a3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
++  {"atxmega64a1", AVR_ISA_XMEGA,  bfd_mach_avrxmega5},
++  {"atxmega128a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega256a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega256a3b",AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega128a1", AVR_ISA_XMEGA, bfd_mach_avrxmega7},
+   {NULL, 0, 0}
+ };
+ 
+@@ -363,6 +381,11 @@
+ 	"                   avr5  - enhanced AVR core with up to 64K program memory\n"
+ 	"                   avr51 - enhanced AVR core with up to 128K program memory\n"
+ 	"                   avr6  - enhanced AVR core with up to 256K program memory\n"
++	"                   avrxmega3 - XMEGA, > 8K, <= 64K FLASH, > 64K RAM\n"
++	"                   avrxmega4 - XMEGA, > 64K, <= 128K FLASH, <= 64K RAM\n"
++	"                   avrxmega5 - XMEGA, > 64K, <= 128K FLASH, > 64K RAM\n"
++	"                   avrxmega6 - XMEGA, > 128K, <= 256K FLASH, <= 64K RAM\n"
++	"                   avrxmega7 - XMEGA, > 128K, <= 256K FLASH, > 64K RAM\n"
+ 	"                   or immediate microcontroller name.\n"));
+   fprintf (stream,
+       _("  -mall-opcodes    accept all AVR opcodes, even if not supported by MCU\n"
+@@ -790,7 +813,12 @@
+       if (*str == '+')
+ 	{
+ 	  ++str;
+-	  op_mask |= 1;
++          char *s;
++          for (s = opcode->opcode; *s; ++s)
++            {
++              if (*s == '+')
++                op_mask |= (1 << (15 - (s - opcode->opcode)));
++            }
+ 	}
+ 
+       /* attiny26 can do "lpm" and "lpm r,Z" but not "lpm r,Z+".  */
+@@ -907,6 +935,16 @@
+       }
+       break;
+ 
++    case 'E':
++      {
++	unsigned int x;
++
++	x = avr_get_constant (str, 15);
++	str = input_line_pointer;
++	op_mask |= (x << 4);
++      }
++      break;
++    
+     case '?':
+       break;
+ 
+Only in ./gas/config: tc-avr.c.orig
+diff -ur ../binutils-2.19.orig/gas/doc/c-avr.texi ./gas/doc/c-avr.texi
+--- ../binutils-2.19.orig/gas/doc/c-avr.texi	2009-08-07 13:24:59.000000000 +0200
++++ ./gas/doc/c-avr.texi	2009-08-07 13:30:52.000000000 +0200
+@@ -76,6 +76,26 @@
+ Instruction set avr6 is for the enhanced AVR core with a 3-byte PC (MCU types:
+ atmega2560, atmega2561).
+ 
++Instruction set avrxmega2 is for the XMEGA AVR core with 8K to 64K program
++memory space and less than 64K data space (MCU types: atxmega16a4, atxmega16d4,
++atxmega32d4).
++
++Instruction set avrxmega3 is for the XMEGA AVR core with 8K to 64K program
++memory space and greater than 64K data space (MCU types: atxmega32a4).
++
++Instruction set avrxmega4 is for the XMEGA AVR core with up to 64K program
++memory space and less than 64K data space (MCU types: atxmega64a3).
++
++Instruction set avrxmega5 is for the XMEGA AVR core with up to 64K program 
++memory space and greater than 64K data space (MCU types: atxmega64a1).
++
++Instruction set avrxmega6 is for the XMEGA AVR core with up to 256K program
++memory space and less than 64K data space (MCU types: atxmega128a3,
++atxmega256a3, atxmega256a3b).
++
++Instruction set avrxmega7 is for the XMEGA AVR core with up to 256K program
++memory space and greater than 64K data space (MCU types: atxmega128a1).
++
+ @cindex @code{-mall-opcodes} command line option, AVR
+ @item -mall-opcodes
+ Accept all AVR opcodes, even if not supported by @code{-mmcu}.
+Only in ./gas/doc: c-avr.texi.orig
+diff -ur ../binutils-2.19.orig/include/elf/avr.h ./include/elf/avr.h
+--- ../binutils-2.19.orig/include/elf/avr.h	2008-08-09 07:35:13.000000000 +0200
++++ ./include/elf/avr.h	2009-08-07 13:25:45.000000000 +0200
+@@ -40,6 +40,13 @@
+ #define E_AVR_MACH_AVR5 5
+ #define E_AVR_MACH_AVR51 51
+ #define E_AVR_MACH_AVR6 6 
++#define E_AVR_MACH_XMEGA1 101
++#define E_AVR_MACH_XMEGA2 102
++#define E_AVR_MACH_XMEGA3 103
++#define E_AVR_MACH_XMEGA4 104
++#define E_AVR_MACH_XMEGA5 105
++#define E_AVR_MACH_XMEGA6 106
++#define E_AVR_MACH_XMEGA7 107
+ 
+ /* Relocations.  */
+ START_RELOC_NUMBERS (elf_avr_reloc_type)
+diff -ur ../binutils-2.19.orig/include/opcode/avr.h ./include/opcode/avr.h
+--- ../binutils-2.19.orig/include/opcode/avr.h	2008-08-09 07:35:13.000000000 +0200
++++ ./include/opcode/avr.h	2009-08-07 13:25:45.000000000 +0200
+@@ -30,6 +30,8 @@
+ #define AVR_ISA_BRK   0x0400 /* device has BREAK (on-chip debug) */
+ #define AVR_ISA_EIND  0x0800 /* device has >128K program memory (none yet) */
+ #define AVR_ISA_MOVW  0x1000 /* device has MOVW */
++#define AVR_ISA_SPMX  0x2000 /* device has SPM Z[+] */
++#define AVR_ISA_DES   0x4000 /* device has DES */
+ 
+ #define AVR_ISA_TINY1 (AVR_ISA_1200 | AVR_ISA_LPM)
+ #define AVR_ISA_2xxx  (AVR_ISA_TINY1 | AVR_ISA_SRAM)
+@@ -48,6 +50,8 @@
+ #define AVR_ISA_94K   (AVR_ISA_M603 | AVR_ISA_MUL | AVR_ISA_MOVW | AVR_ISA_LPMX)
+ #define AVR_ISA_M323  (AVR_ISA_M161 | AVR_ISA_BRK)
+ #define AVR_ISA_M128  (AVR_ISA_M323 | AVR_ISA_ELPM | AVR_ISA_ELPMX)
++#define AVR_ISA_M256  (AVR_ISA_M128 | AVR_ISA_EIND)
++#define AVR_ISA_XMEGA (AVR_ISA_M256 | AVR_ISA_SPMX | AVR_ISA_DES)
+ 
+ #define AVR_ISA_AVR1   AVR_ISA_TINY1
+ #define AVR_ISA_AVR2   AVR_ISA_2xxx
+@@ -108,6 +112,7 @@
+    L - signed pc relative offset from -2048 to 2047
+    h - absolute code address (call, jmp)
+    S - immediate value from 0 to 7 (S = s << 4)
++   E - immediate value from 0 to 15, shifted left by 4 (des)
+    ? - use this opcode entry if no parameters, else use next opcode entry
+ 
+    Order is important - some binary opcodes have more than one name,
+@@ -168,7 +173,8 @@
+ AVR_INSN (sleep,"",    "1001010110001000", 1, AVR_ISA_1200, 0x9588)
+ AVR_INSN (break,"",    "1001010110011000", 1, AVR_ISA_BRK,  0x9598)
+ AVR_INSN (wdr,  "",    "1001010110101000", 1, AVR_ISA_1200, 0x95a8)
+-AVR_INSN (spm,  "",    "1001010111101000", 1, AVR_ISA_SPM,  0x95e8)
++AVR_INSN (spm,  "?",   "1001010111101000", 1, AVR_ISA_SPM,  0x95e8)
++AVR_INSN (spm,  "z",   "10010101111+1000", 1, AVR_ISA_SPMX, 0x95e8)
+ 
+ AVR_INSN (adc,  "r,r", "000111rdddddrrrr", 1, AVR_ISA_1200, 0x1c00)
+ AVR_INSN (add,  "r,r", "000011rdddddrrrr", 1, AVR_ISA_1200, 0x0c00)
+@@ -282,3 +288,6 @@
+ AVR_INSN (eicall, "",  "1001010100011001", 1, AVR_ISA_EIND, 0x9519)
+ AVR_INSN (eijmp, "",   "1001010000011001", 1, AVR_ISA_EIND, 0x9419)
+ 
++/* DES instruction for encryption and decryption */
++AVR_INSN (des,  "E",   "10010100EEEE1011", 1, AVR_ISA_DES,  0x940B)
++
+Only in ./include/opcode: avr.h.orig
+diff -ur ../binutils-2.19.orig/ld/Makefile.am ./ld/Makefile.am
+--- ../binutils-2.19.orig/ld/Makefile.am	2008-09-09 10:02:19.000000000 +0200
++++ ./ld/Makefile.am	2009-08-07 13:25:45.000000000 +0200
+@@ -142,6 +142,13 @@
+ 	eavr5.o \
+ 	eavr51.o \
+ 	eavr6.o \
++	eavrxmega1.o \
++	eavrxmega2.o \
++	eavrxmega3.o \
++	eavrxmega4.o \
++	eavrxmega5.o \
++	eavrxmega6.o \
++	eavrxmega7.o \
+ 	ecoff_i860.o \
+ 	ecoff_sparc.o \
+ 	eelf32_spu.o \
+@@ -646,6 +653,34 @@
+   $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
+   ${GEN_DEPENDS}
+ 	${GENSCRIPTS} avr6 "$(tdir_avr2)"
++eavrxmega1.c: $(srcdir)/emulparams/avrxmega1.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega1 "$(tdir_avr2)"
++eavrxmega2.c: $(srcdir)/emulparams/avrxmega2.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega2 "$(tdir_avr2)"
++eavrxmega3.c: $(srcdir)/emulparams/avrxmega3.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega3 "$(tdir_avr2)"
++eavrxmega4.c: $(srcdir)/emulparams/avrxmega4.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega4 "$(tdir_avr2)"
++eavrxmega5.c: $(srcdir)/emulparams/avrxmega5.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega5 "$(tdir_avr2)"
++eavrxmega6.c: $(srcdir)/emulparams/avrxmega6.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega6 "$(tdir_avr2)"
++eavrxmega7.c: $(srcdir)/emulparams/avrxmega7.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega7 "$(tdir_avr2)"
+ ecoff_i860.c: $(srcdir)/emulparams/coff_i860.sh \
+   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/i860coff.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} coff_i860 "$(tdir_coff_i860)"
+Only in ./ld: Makefile.am.orig
+diff -ur ../binutils-2.19.orig/ld/Makefile.in ./ld/Makefile.in
+--- ../binutils-2.19.orig/ld/Makefile.in	2008-09-09 10:02:19.000000000 +0200
++++ ./ld/Makefile.in	2009-08-07 13:25:45.000000000 +0200
+@@ -393,6 +393,13 @@
+ 	eavr5.o \
+ 	eavr51.o \
+ 	eavr6.o \
++	eavrxmega1.o \
++	eavrxmega2.o \
++	eavrxmega3.o \
++	eavrxmega4.o \
++	eavrxmega5.o \
++	eavrxmega6.o \
++	eavrxmega7.o \
+ 	ecoff_i860.o \
+ 	ecoff_sparc.o \
+ 	eelf32_spu.o \
+@@ -1476,6 +1483,34 @@
+   $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
+   ${GEN_DEPENDS}
+ 	${GENSCRIPTS} avr6 "$(tdir_avr2)"
++eavrxmega1.c: $(srcdir)/emulparams/avrxmega1.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega1 "$(tdir_avr2)"
++eavrxmega2.c: $(srcdir)/emulparams/avrxmega2.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega2 "$(tdir_avr2)"
++eavrxmega3.c: $(srcdir)/emulparams/avrxmega3.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega3 "$(tdir_avr2)"
++eavrxmega4.c: $(srcdir)/emulparams/avrxmega4.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega4 "$(tdir_avr2)"
++eavrxmega5.c: $(srcdir)/emulparams/avrxmega5.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega5 "$(tdir_avr2)"
++eavrxmega6.c: $(srcdir)/emulparams/avrxmega6.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega6 "$(tdir_avr2)"
++eavrxmega7.c: $(srcdir)/emulparams/avrxmega7.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrxmega7 "$(tdir_avr2)"
+ ecoff_i860.c: $(srcdir)/emulparams/coff_i860.sh \
+   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/i860coff.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} coff_i860 "$(tdir_coff_i860)"
+Only in ./ld: Makefile.in.orig
+diff -ur ../binutils-2.19.orig/ld/configure.tgt ./ld/configure.tgt
+--- ../binutils-2.19.orig/ld/configure.tgt	2008-08-09 07:35:13.000000000 +0200
++++ ./ld/configure.tgt	2009-08-07 13:25:45.000000000 +0200
+@@ -107,7 +107,7 @@
+ xscale-*-elf)		targ_emul=armelf
+ 			;;
+ avr-*-*)		targ_emul=avr2
+-			targ_extra_emuls="avr1 avr25 avr3 avr31 avr35 avr4 avr5 avr51 avr6"
++			targ_extra_emuls="avr1 avr25 avr3 avr31 avr35 avr4 avr5 avr51 avr6 avrxmega1 avrxmega2 avrxmega3 avrxmega4 avrxmega5 avrxmega6 avrxmega7"
+ 			;;
+ bfin-*-elf)		targ_emul=elf32bfin;
+ 			targ_extra_emuls="elf32bfinfd"
+--- ./ld/emulparams/avrxmega1.sh.orig   2009-01-07 17:46:15.000000000 +0100
++++ ./ld/emulparams/avrxmega1.sh        2009-01-07 17:46:15.000000000 +0100
+@@ -0,0 +1,12 @@
++ARCH=avr:101
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf
+--- ./ld/emulparams/avrxmega4.sh.orig   2009-01-07 17:46:15.000000000 +0100
++++ ./ld/emulparams/avrxmega4.sh        2009-01-07 17:46:15.000000000 +0100
+@@ -0,0 +1,12 @@
++ARCH=avr:104
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf
+--- ./ld/emulparams/avrxmega5.sh.orig   2009-01-07 17:46:15.000000000 +0100
++++ ./ld/emulparams/avrxmega5.sh        2009-01-07 17:46:15.000000000 +0100
+@@ -0,0 +1,12 @@
++ARCH=avr:105
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf
+--- ./ld/emulparams/avrxmega2.sh.orig   2009-01-07 17:46:15.000000000 +0100
++++ ./ld/emulparams/avrxmega2.sh        2009-01-07 17:46:15.000000000 +0100
+@@ -0,0 +1,12 @@
++ARCH=avr:102
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf
+--- ./ld/emulparams/avrxmega3.sh.orig   2009-01-07 17:46:15.000000000 +0100
++++ ./ld/emulparams/avrxmega3.sh        2009-01-07 17:46:15.000000000 +0100
+@@ -0,0 +1,12 @@
++ARCH=avr:103
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf
+--- /dev/null   2008-02-14 11:03:25.784465400 -0700
++++ ld/emulparams/avrxmega6.sh  2008-02-14 09:08:29.546875000 -0700
+@@ -0,0 +1,12 @@
++ARCH=avr:106
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf
+--- /dev/null   2008-02-14 11:03:25.784465400 -0700
++++ ld/emulparams/avrxmega7.sh  2008-02-14 09:08:29.546875000 -0700
+@@ -0,0 +1,12 @@
++ARCH=avr:107
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf
+diff -ur ../binutils-2.19.orig/ld/emultempl/avrelf.em ./ld/emultempl/avrelf.em
+--- ../binutils-2.19.orig/ld/emultempl/avrelf.em	2008-07-07 02:46:51.000000000 +0200
++++ ./ld/emultempl/avrelf.em	2009-08-07 13:25:45.000000000 +0200
+@@ -71,8 +71,10 @@
+ 
+   gld${EMULATION_NAME}_before_allocation ();
+ 
+-  /* We only need stubs for the avr6 family.  */
+-  if (strcmp ("${EMULATION_NAME}","avr6"))
++  /* We only need stubs for avr6, avrxmega6, and avrxmega7. */
++  if (strcmp ("${EMULATION_NAME}","avr6") 
++      && strcmp ("${EMULATION_NAME}","avrxmega6")
++      && strcmp ("${EMULATION_NAME}","avrxmega7") )
+     avr_no_stubs = TRUE;
+ 
+   avr_elf_set_global_bfd_parameters ();
+diff -ur ../binutils-2.19.orig/opcodes/avr-dis.c ./opcodes/avr-dis.c
+--- ../binutils-2.19.orig/opcodes/avr-dis.c	2007-07-05 11:49:00.000000000 +0200
++++ ./opcodes/avr-dis.c	2009-08-07 13:25:45.000000000 +0200
 @@ -50,7 +50,7 @@
  
  static int
