@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fricas
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
@@ -14,14 +14,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-full
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	A computer algebra system, forked from axiom
 
-BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \
+BUILD_DEPENDS=	sbcl:${PORTSDIR}/lang/sbcl \
 		noweb:${PORTSDIR}/devel/noweb
-LIB_DEPENDS=	readline:${PORTSDIR}/devel/readline \
-		sigsegv:${PORTSDIR}/devel/libsigsegv
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lisp=clisp
+CONFIGURE_ARGS=	--with-lisp=sbcl
 USE_GMAKE=	yes
 USE_XORG=	x11 ice sm xpm
 USE_ICONV=	yes
