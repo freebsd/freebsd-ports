@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Icon programming language
 
 ALL_TARGET=	All
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		icon.1 icont.1
 
