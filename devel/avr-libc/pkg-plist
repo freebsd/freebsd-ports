@@ -411,6 +411,7 @@ share/doc/avr-libc/LICENSE
 @dirrm avr/lib/avr5
 @dirrm avr/lib/avr51
 @dirrm avr/lib/avr6
+@dirrm avr/lib/avrxmega3
 @dirrm avr/lib/avrxmega4
 @dirrm avr/lib/avrxmega5
 @dirrm avr/lib/avrxmega6
