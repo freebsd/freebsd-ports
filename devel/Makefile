@@ -1650,6 +1650,7 @@
     SUBDIR += p5-MooseX-MethodAttributes
     SUBDIR += p5-MooseX-MultiInitArg
     SUBDIR += p5-MooseX-POE
+    SUBDIR += p5-MooseX-Params-Validate
     SUBDIR += p5-MooseX-Policy-SemiAffordanceAccessor
     SUBDIR += p5-MooseX-SimpleConfig
     SUBDIR += p5-MooseX-Singleton
