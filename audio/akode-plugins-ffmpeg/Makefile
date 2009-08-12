@@ -19,6 +19,8 @@ COMMENT=	FFMPEG decoder plugin for akode
 
 LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 
+BROKEN=		does not compile with ffmpeg 0.5 and later
+
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
 PLUGIN=		ffmpeg_decoder
