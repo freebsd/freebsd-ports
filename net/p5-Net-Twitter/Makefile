@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	3.03000
-PORTREVISION=	1
+PORTVERSION=	3.04006
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +15,10 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl interface to twitter.com
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+    		${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA \
+    		${SITE_PERL}/Data/Visitor/Callback.pm:${PORTSDIR}/devel/p5-Data-Visitor \
+    		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+    		${SITE_PERL}/MooseX/AttributeHelpers.pm:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
     		${SITE_PERL}/MooseX/MultiInitArg.pm:${PORTSDIR}/devel/p5-MooseX-MultiInitArg \
 		${SITE_PERL}/MooseX/Traits.pm:${PORTSDIR}/devel/p5-MooseX-Traits \
 		${SITE_PERL}/namespace/autoclean.pm:${PORTSDIR}/devel/p5-namespace-autoclean \
@@ -31,6 +34,7 @@ MAN3=		Net::Twitter.3 Net::Twitter::Search.3 Net::Identica.3 \
 		Net::Twitter::Role::API::TwitterVision.3 \
 		Net::Twitter::OAuth.3 Net::Twitter::Core.3 \
 		Net::Twitter::API.3 Net::Twitter::Role::API::Search.3 \
+		Net::Twitter::Role::InflateObjects.3 \
 		Net::Twitter::Role::WrapError.3 \
 		Net::Twitter::Role::Legacy.3
 
