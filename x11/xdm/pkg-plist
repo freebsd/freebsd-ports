@@ -6,7 +6,6 @@ lib/X11/xdm/libXdmGreet.la
 lib/X11/xdm/libXdmGreet.so
 lib/X11/xdm/pixmaps/xorg-bw.xpm
 lib/X11/xdm/pixmaps/xorg.xpm
-lib/X11/xdm/xdm-config
 share/X11/app-defaults/Chooser
 @unexec if cmp -s %D/%%EXAMPLESDIR%%/GiveConsole %D/lib/X11/xdm/GiveConsole; then rm -f %D/lib/X11/xdm/GiveConsole; fi
 @unexec if cmp -s %D/%%EXAMPLESDIR%%/TakeConsole %D/lib/X11/xdm/TakeConsole; then rm -f %D/lib/X11/xdm/TakeConsole; fi
