@@ -2462,6 +2462,7 @@
     SUBDIR += py-repl
     SUBDIR += py-repoze.tm2
     SUBDIR += py-repoze.what
+    SUBDIR += py-repoze.what-pylons
     SUBDIR += py-repoze.who
     SUBDIR += py-repoze.who-testutil
     SUBDIR += py-resourcepackage
