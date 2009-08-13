@@ -53,7 +53,7 @@ include/ctpp2/VMSyscall.hpp
 lib/libctpp2-st.a
 lib/libctpp2.so
 lib/libctpp2.so.2
-lib/libctpp2.so.2.5.8
+lib/libctpp2.so.2.5.9
 share/locale/ru_RU.CP1251/LC_MESSAGES/ctpp2.mo
 share/locale/ru_RU.KOI8-R/LC_MESSAGES/ctpp2.mo
 @dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
