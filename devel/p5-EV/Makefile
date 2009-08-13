@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	EV
-PORTVERSION=	3.6
+PORTVERSION=	3.8
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Perl interface to libev, a high performance full-featured event loop
+
+RUN_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
