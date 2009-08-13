@@ -10,7 +10,7 @@ PORTVERSION=	10.0r32
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		http://tijl.ulyssis.be/mirror/:suplib
-PKGNAMEPREFIX=	linux-
+PKGNAMEPREFIX=	linux-f8-
 DISTFILES=	install_flash_player_10_linux.tar.gz:plugin \
 		linux-f8-flashsupport-9.0.1.i386.tar.gz:suplib
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
