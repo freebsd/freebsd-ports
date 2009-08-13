@@ -1,3 +1,4 @@
-MD5 (pgbouncer-1.3.tar.gz) = 95f79289ccb8322758c608015e31f1f5
-SHA256 (pgbouncer-1.3.tar.gz) = 87b489e173d7e66c440218e7b026943789da66c2b5bd6ef85f5a354a92a66cae
-SIZE (pgbouncer-1.3.tar.gz) = 160154
+MD5 (pgbouncer-1.3.1.tar.gz) = ccb2dbe8b6ce505e14762712c478982e
+SHA256 (pgbouncer-1.3.1.tar.gz) = 64559d85b5b07e5a98c0918c7111afb61114462f9ee1d6af79047024c134440a
+SIZE (pgbouncer-1.3.1.tar.gz) = 161518
+
