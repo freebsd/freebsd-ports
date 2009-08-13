@@ -48,6 +48,7 @@ post-patch:
 		${PATCH_WRKSRC}/khelpcenter/infotree.cpp \
 		${PATCH_WRKSRC}/kioslave/info/kde-info2html.conf \
 		${PATCH_WRKSRC}/kioslave/man/kio_man.cpp \
-		${PATCH_WRKSRC}/kioslave/man/man2html.cpp
+		${PATCH_WRKSRC}/kioslave/man/man2html.cpp \
+		${PATCH_WRKSRC}/cmake/modules/FindCLucene.cmake
 
 .include <bsd.port.post.mk>
