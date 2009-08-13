@@ -7,7 +7,7 @@
 
 PORTNAME=	cimg
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
@@ -23,8 +23,12 @@ MAKE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"	\
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"	\
 		X11PATH=${LOCALBASE}
 
+# Disable ffmpeg, does not build with ffmpeg 0.5
+WITHOUT_FFMPEG=	yes
+
 .if !defined(NOPORTDOCS)
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
 
