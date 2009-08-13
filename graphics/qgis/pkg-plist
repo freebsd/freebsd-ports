@@ -525,6 +525,7 @@ man/man1/qgis.man
 %%DATADIR%%/i18n/qt_ru.qm
 %%DATADIR%%/i18n/qgis_lo.qm
 %%DATADIR%%/i18n/qgis_lv.qm
+%%DATADIR%%/i18n/qgis_he.qm
 %%DATADIR%%/i18n/qgis_it.qm
 %%DATADIR%%/i18n/qgis_fr.qm
 %%DATADIR%%/i18n/qgis_ja.qm
@@ -565,8 +566,10 @@ bin/qgis
 bin/qgis_help
 lib/libqgis_core.so
 lib/libqgis_core.so.1.0
+lib/libqgis_core.so.1.0.2
 lib/libqgis_gui.so
 lib/libqgis_gui.so.1.0
+lib/libqgis_gui.so.1.0.2
 lib/qgis/libcopyrightlabelplugin.so
 lib/qgis/libdelimitedtextplugin.so
 lib/qgis/libdelimitedtextprovider.so
