@@ -1,5 +1,5 @@
---- dependencies/ogrenew/RenderSystems/GL/CMakeLists.txt.orig	2009-02-22 20:59:55.000000000 +0300
-+++ dependencies/ogrenew/RenderSystems/GL/CMakeLists.txt	2009-03-05 04:57:40.000000000 +0300
+--- dependencies/ogrenew/RenderSystems/GL/CMakeLists.txt.orig	2009-02-09 02:40:28.000000000 +0300
++++ dependencies/ogrenew/RenderSystems/GL/CMakeLists.txt	2009-08-12 23:57:24.000000000 +0400
 @@ -157,16 +157,19 @@
      src/GLX/OgreGLXWindow.cpp
      src/GLX/OgreGLXUtils.cpp

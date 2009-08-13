@@ -1,19 +1,16 @@
---- CMakeLists.txt.orig	2009-02-22 20:59:55.000000000 +0300
-+++ CMakeLists.txt	2009-03-05 04:01:24.000000000 +0300
-@@ -3,11 +3,11 @@
+--- CMakeLists.txt.orig	2009-06-28 01:07:12.000000000 +0400
++++ CMakeLists.txt	2009-08-12 23:48:27.000000000 +0400
+@@ -2,13 +2,6 @@
+ 
  project(RoR)
  
- #detup the default build mode
+-#detup the default build mode
 -IF(NOT CMAKE_BUILD_TYPE)
 -  SET(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
 -      "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
 -      FORCE)
 -ENDIF(NOT CMAKE_BUILD_TYPE)
-+#IF(NOT CMAKE_BUILD_TYPE)
-+#  SET(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
-+#      "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
-+#      FORCE)
-+#ENDIF(NOT CMAKE_BUILD_TYPE)
- 
+-
  # setup path for cmake add-ons
  SET(RoR_Dependencies_CMAKE_DIR "${RoR_SOURCE_DIR}/dependencies/cmake")
+ SET(BUILD_SHARED_LIBS ON)

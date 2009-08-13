@@ -1,6 +1,6 @@
---- configurator/source/configurator.cpp.orig	2009-02-22 20:59:55.000000000 +0300
-+++ configurator/source/configurator.cpp	2009-04-09 07:25:25.000000000 +0400
-@@ -1109,17 +1109,12 @@
+--- configurator/source/configurator.cpp.orig	2009-06-28 04:44:14.000000000 +0400
++++ configurator/source/configurator.cpp	2009-08-13 04:09:42.000000000 +0400
+@@ -1330,17 +1330,12 @@
  	char procpath[256];
  	char user_path[1024];
  	char program_path[1024];
@@ -20,7 +20,7 @@
  	UserPath=tfn.GetPath();
  #endif
  #if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
-@@ -2692,7 +2687,7 @@
+@@ -3031,7 +3026,7 @@
  	CreateProcess(NULL, wpath, NULL, NULL, false, NORMAL_PRIORITY_CLASS, NULL, NULL, &si, &pi);
  #endif
  #if OGRE_PLATFORM == OGRE_PLATFORM_LINUX

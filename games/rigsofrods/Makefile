@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	rigsofrods
-PORTVERSION=	0.36.1
-PORTREVISION=	3
+PORTVERSION=	0.36.2
 CATEGORIES=	games
-# I've trimmed source tarball by around 10x and bundled rorserver
-MASTER_SITES=	SF:contents \
-		http://mirror.amdmi3.ru/distfiles/:game
-DISTFILES=	${PORTNAME}-source-${PORTVERSION}-trimmed${EXTRACT_SUFX}:game \
-		${PORTNAME}-contents-${PORTVERSION}.zip:contents
-EXTRACT_ONLY=	${PORTNAME}-source-${PORTVERSION}-trimmed${EXTRACT_SUFX}
+MASTER_SITES=	SF
+DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-contents-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Truck, car, airplane and boat simulator with advanced physics
@@ -29,16 +26,17 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois \
 RUN_DEPENDS=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois \
 		xset:${PORTSDIR}/x11/xset
 
+USE_ZIP=	yes
 USE_XORG=	x11 xt xaw sm ice xext
-WRKSRC=		${WRKDIR}/${PORTVERSION}/build
+WRKSRC=		${WRKDIR}/${PORTNAME}-source-${PORTVERSION}/build
 USE_WX=		2.6+
 WX_UNICODE=	yes
 MAKE_JOBS_SAFE=	yes
 
 USE_CMAKE=	yes
-# CG unavailable for FreeBSD; paged also requires CG
+# CG unavailable for FreeBSD
 CMAKE_ARGS=	-DROR_BUILD_HYDRAX=TRUE \
-		-DROR_BUILD_PAGED=FALSE \
+		-DROR_BUILD_PAGED=TRUE \
 		-DROR_BUILD_LUASCRIPT=TRUE \
 		-DROR_BUILD_CONFIGURATOR=TRUE \
 		-DOGRE_BUILD_PLUGIN_CG=FALSE \
@@ -73,6 +71,11 @@ post-patch:
 		s|%%PREFIX%%|${PREFIX}|' \
 		${WRKSRC}/main/source/Settings.cpp \
 		${WRKSRC}/configurator/source/configurator.cpp
+.if ${OSVERSION} >= 800067
+# after strnlen was introduced, use it
+	@${REINPLACE_CMD} -e '/strnlen/ d' ${WRKSRC}/main/CMakeLists.txt \
+		${WRKSRC}/configurator/CMakeLists.txt
+.endif
 
 do-install:
 # libs
@@ -91,7 +94,7 @@ do-install:
 	${SED} -e '/Plugin_CgProgramManager/ s|^|#|' \
 		< ${WRKSRC}/bin/release/linux/plugins.cfg \
 		> ${DATADIR}/plugins.cfg
-	unzip -qq -o -d ${DATADIR} ${DISTDIR}/${PORTNAME}-contents-${PORTVERSION}.zip \
+	${UNZIP_CMD} -qq -o -d ${DATADIR} ${DISTDIR}/${PORTNAME}-contents-${PORTVERSION}.zip \
 		languages/\* resources/\* skeleton/\* streams/\*
 
 # wrappers
@@ -101,7 +104,7 @@ do-install:
 #docs
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	unzip -qq -o -d ${DOCSDIR} ${DISTDIR}/${PORTNAME}-contents-${PORTVERSION}.zip \
+	${UNZIP_CMD} -qq -o -d ${DOCSDIR} ${DISTDIR}/${PORTNAME}-contents-${PORTVERSION}.zip \
 		\*.pdf
 .endif
 

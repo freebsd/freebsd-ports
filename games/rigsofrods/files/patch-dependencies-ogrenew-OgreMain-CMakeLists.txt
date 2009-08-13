@@ -1,5 +1,5 @@
---- dependencies/ogrenew/OgreMain/CMakeLists.txt.orig	2009-02-22 20:59:55.000000000 +0300
-+++ dependencies/ogrenew/OgreMain/CMakeLists.txt	2009-03-05 05:36:44.000000000 +0300
+--- dependencies/ogrenew/OgreMain/CMakeLists.txt.orig	2009-02-19 19:05:28.000000000 +0300
++++ dependencies/ogrenew/OgreMain/CMakeLists.txt	2009-08-12 23:55:37.000000000 +0400
 @@ -449,7 +449,7 @@
    set(PLATFORM_LIBS ${X11_LIBRARIES} ${X11_Xt_LIB} ${XAW_LIBRARY})
    set(PLATFORM_HEADER_INSTALL "GLX")

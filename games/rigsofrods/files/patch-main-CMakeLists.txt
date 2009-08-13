@@ -1,6 +1,6 @@
---- main/CMakeLists.txt.orig	2009-02-22 20:59:55.000000000 +0300
-+++ main/CMakeLists.txt	2009-03-06 03:01:23.000000000 +0300
-@@ -12,12 +12,13 @@
+--- main/CMakeLists.txt.orig	2009-06-28 01:01:10.000000000 +0400
++++ main/CMakeLists.txt	2009-08-13 19:20:44.000000000 +0400
+@@ -170,11 +170,12 @@
    include_directories (${RoR_Dependencies_SOURCE_DIR}/Caelum-2006-11-09/include)
  endif(CAELUM_BUILD_NEW)
  
@@ -8,7 +8,6 @@
 -include_directories (${RoR_Dependencies_SOURCE_DIR}/openal-soft-1.6.372/include)
 -include_directories (${RoR_Dependencies_SOURCE_DIR}/OIS-HEAD/ois/includes)
  include_directories (${RoR_Dependencies_SOURCE_DIR}/moFileReader/include)
- include_directories (${RoR_Dependencies_SOURCE_DIR}/rorserver-sf/source)
  include_directories (${RoR_Dependencies_SOURCE_DIR}/mygui/include)
 +include_directories (${LOCALBASE}/include/OIS)
 +include_directories (${LOCALBASE}/include/AL)
@@ -17,8 +16,8 @@
  
  IF(WIN32)
    add_definitions("-D_CRT_SECURE_NO_WARNINGS")
-@@ -98,7 +99,7 @@
- add_executable(RoR ${ror_src} source/icon.rc)
+@@ -269,7 +270,7 @@
+ add_executable(RoR ${ror_src})
  
  # add dependencies
 -add_dependencies(RoR OgreMain caelum mysocketw ois mygui mofilereader)
@@ -26,7 +25,7 @@
  
  # optional features
  if(ROR_BUILD_HYDRAX)
-@@ -132,7 +133,6 @@
+@@ -299,7 +300,6 @@
    caelum
    mysocketw
    OgreMain
@@ -34,35 +33,21 @@
    mygui
    mofilereader
  )
-@@ -152,9 +152,8 @@
-   
+@@ -317,7 +317,7 @@
    target_link_libraries(RoR openal32)
  ELSEIF(UNIX)
--  SET_TARGET_PROPERTIES(RoR PROPERTIES COMPILE_FLAGS "-msse2 -msse2 -mmmx -msse -msse3 -mssse3 -m3dnow")
-+  SET_TARGET_PROPERTIES(RoR PROPERTIES COMPILE_FLAGS "-msse2 -msse2 -mmmx -msse -msse3 -m3dnow")
-   SET_TARGET_PROPERTIES(RoR PROPERTIES LINK_FLAGS    "")
--  target_link_libraries(RoR openal)
+   SET_TARGET_PROPERTIES(RoR PROPERTIES COMPILE_FLAGS "-msse2 -msse2 -mmmx -msse -msse3 -m3dnow")
+-  SET_TARGET_PROPERTIES(RoR PROPERTIES LINK_FLAGS    "")
++  SET_TARGET_PROPERTIES(RoR PROPERTIES LINK_FLAGS    "-L${LOCALBASE}/lib")
+   target_link_libraries(RoR openal)
  ELSEIF(APPLE)
  ENDIF(WIN32)
- 
-@@ -191,12 +190,14 @@
- ELSEIF(UNIX)
-   target_link_libraries(RoR
- #    /usr/lib/libossp-uuid_dce.so
--    /usr/lib/libzzip.so
--    /usr/lib/libfreetype.so
--    /usr/lib/libX11.so
--    /usr/lib/libXt.so
--
--    /usr/lib/libXaw.so
-+    ${LOCALBASE}/lib/libzzip.so
-+    ${LOCALBASE}/lib/libfreetype.so
-+    ${LOCALBASE}/lib/libX11.so
-+    ${LOCALBASE}/lib/libXt.so
-+
-+    ${LOCALBASE}/lib/libXaw.so
-+    ${LOCALBASE}/lib/libOIS.so
-+    ${LOCALBASE}/lib/libopenal.so
+@@ -369,6 +369,8 @@
+     X11
+     Xt
+     Xaw
++    OIS
++    openal
    )
  ELSEIF(APPLE)
  ENDIF(WIN32)
