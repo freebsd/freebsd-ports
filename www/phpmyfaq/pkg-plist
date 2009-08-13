@@ -731,6 +731,7 @@
 %%WWWDIR%%/inc/Comment.php
 %%WWWDIR%%/inc/Configuration.php
 %%WWWDIR%%/inc/constants.php
+%%WWWDIR%%/inc/constants_ldap.php
 %%WWWDIR%%/inc/data.php.original
 %%WWWDIR%%/inc/Db.php
 %%WWWDIR%%/inc/Enc.php
@@ -809,11 +810,12 @@
 %%WWWDIR%%/inc/PMF_DB/Mssql.php
 %%WWWDIR%%/inc/PMF_DB/Mysql.php
 %%WWWDIR%%/inc/PMF_DB/Mysqli.php
-%%WWWDIR%%/inc/PMF_DB/Oracle.php
+%%WWWDIR%%/inc/PMF_DB/Oci8.php
 %%WWWDIR%%/inc/PMF_DB/Pgsql.php
 %%WWWDIR%%/inc/PMF_DB/Sqlite.php
 %%WWWDIR%%/inc/PMF_DB/Sqlsrv.php
 %%WWWDIR%%/inc/PMF_DB/Sybase.php
+%%WWWDIR%%/inc/PMF_Enc/Enc.php
 %%WWWDIR%%/inc/PMF_Enc/EncCrypt.php
 %%WWWDIR%%/inc/PMF_Enc/EncMd5.php
 %%WWWDIR%%/inc/PMF_Enc/EncSha.php
@@ -856,7 +858,7 @@
 %%WWWDIR%%/install/mysql.update.sql.php
 %%WWWDIR%%/install/mysqli.sql.php
 %%WWWDIR%%/install/mysqli.update.sql.php
-%%WWWDIR%%/install/oracle.sql.php
+%%WWWDIR%%/install/oci8.sql.php
 %%WWWDIR%%/install/pgsql.sql.php
 %%WWWDIR%%/install/pgsql.update.sql.php
 %%WWWDIR%%/install/questionnaire.php
@@ -887,6 +889,7 @@
 %%WWWDIR%%/lang/language_it.php
 %%WWWDIR%%/lang/language_ja.php
 %%WWWDIR%%/lang/language_ko.php
+%%WWWDIR%%/lang/language_lt.php
 %%WWWDIR%%/lang/language_lv.php
 %%WWWDIR%%/lang/language_nb.php
 %%WWWDIR%%/lang/language_nl.php
