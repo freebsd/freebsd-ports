@@ -15,6 +15,7 @@
     SUBDIR += aolserver-nspostgres
     SUBDIR += bbdb
     SUBDIR += buzhug
+    SUBDIR += cassandra
     SUBDIR += cdb
     SUBDIR += clip
     SUBDIR += couchdb

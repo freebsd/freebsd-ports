@@ -1,0 +1,13 @@
+Cassandra is a highly scalable, eventually consistent, distributed,
+structured key-value store. Cassandra brings together the distributed
+systems technologies from Dynamo and the data model from Google's
+BigTable. Like Dynamo, Cassandra is eventually consistent. Like
+BigTable, Cassandra provides a ColumnFamily-based data model richer
+than typical key/value systems.
+
+Cassandra was open sourced by Facebook in 2008, where it was designed
+by one of the authors of Amazon's Dynamo. In a lot of ways you can
+think of Cassandra as Dynamo 2.0. Cassandra is in production use at
+Facebook but is still under heavy development.
+
+WWW:	http://incubator.apache.org/cassandra/
