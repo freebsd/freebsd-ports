@@ -5,25 +5,36 @@
 # BEFORE:  DAEMON
 # KEYWORD: shutdown
 #
-# Add the following line to /etc/rc.conf to enable dnsmasq:
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
 #
-# dnsmasq_enable="YES"
+# dnsmasq_enable (bool):  Set to "NO" by default.
+#                         Set it to "YES" to enable dnsmasq at boot.
 #
-
-# override these variables in /etc/rc.conf
-dnsmasq_enable=${dnsmasq_enable:-"NO"}
+# Further settings you can change in /etc/rc.conf if desired:
+#
+# dnsmasq_conf (path):    Set to %%PREFIX%%/etc/dnsmasq.conf by default.
+#                         Set it to another configuration file if you want.
+#
+# dnsmasq_flags (string): Empty by default. Set it to additional command
+#                         line arguments if desired.
+#
 
 . %%RC_SUBR%%
 
 name=dnsmasq
 rcvar=$(set_rcvar)
 
-command=%%PREFIX%%/sbin/${name}
-pidfile=/var/run/${name}.pid
-required_files=${dnsmasq_conf}
-
+command="%%PREFIX%%/sbin/${name}"
 extra_commands=reload
+pidfile=/var/run/${name}.pid
 
 load_rc_config ${name}
-run_rc_command "$1"
 
+: ${dnsmasq_enable="NO"}
+: ${dnsmasq_conf="%%PREFIX%%/etc/${name}.conf"}
+required_files=${dnsmasq_conf}
+
+command_args="-x $pidfile -C $dnsmasq_conf"
+
+run_rc_command "$1"

@@ -7,14 +7,14 @@
 
 PORTNAME=	dnsmasq
 PORTVERSION=	2.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	matthias.andree@gmx.de
-COMMENT=	Lightweight, easy to configure DNS forwarder and DHCP server
+COMMENT=	Lightweight DNS forwarder, DHCP and TFTP server
 
 MAN8=		dnsmasq.8
 
