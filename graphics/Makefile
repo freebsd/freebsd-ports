@@ -803,6 +803,7 @@
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-graphviz
     SUBDIR += rubygem-gruff
+    SUBDIR += rubygem-imagesize
     SUBDIR += rubygem-objectdetect
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-rmagick
