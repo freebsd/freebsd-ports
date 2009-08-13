@@ -396,18 +396,22 @@ class worker(threading.Thread):
         else:
             print
         try:
+            runenv={'HOME':"/root",
+                 'PATH':'/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/var/portbuild/scripts',
+                 'FD':" ".join(["%s.tbz" % p.name for p in pkg.fdep]),
+                 'ED':" ".join(["%s.tbz" % p.name for p in pkg.edep]),
+                 'PD':" ".join(["%s.tbz" % p.name for p in pkg.pdep]),
+                 'BD':" ".join(["%s.tbz" % p.name for p in pkg.bdep]),
+                 'RD':" ".join(["%s.tbz" % p.name for p in pkg.rdep])}
+	    for var in ["NOCLEAN", "NO_RESTRICTED", "NOPLISTCHECK", "NO_DISTFILES", "FETCH_ORIGINAL", "TRYBROKEN" ]:
+	         if var in os.environ:
+		     runenv[var] = os.environ.get(var)
             build = subprocess.Popen(
                 ["/bin/sh", "/var/portbuild/scripts/pdispatch",
                  self.arch, self.branch, self.buildid, self.machine,
                  "/var/portbuild/scripts/portbuild", "%s.tbz" % pkg.name,
                  pkg.path],
-                env={'HOME':"/root",
-                     'PATH':'/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/var/portbuild/scripts',
-                     'FD':" ".join(["%s.tbz" % p.name for p in pkg.fdep]),
-                     'ED':" ".join(["%s.tbz" % p.name for p in pkg.edep]),
-                     'PD':" ".join(["%s.tbz" % p.name for p in pkg.pdep]),
-                     'BD':" ".join(["%s.tbz" % p.name for p in pkg.bdep]),
-                     'RD':" ".join(["%s.tbz" % p.name for p in pkg.rdep])},
+		 env=runenv,    
                 stderr=subprocess.STDOUT, stdout=subprocess.PIPE, bufsize=0)
         except OSError, e:
             print >>sys.stderr, "[%s:%s]: Execution failed: %s" % \
