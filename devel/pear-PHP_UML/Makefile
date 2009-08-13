@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_UML
-PORTVERSION=	0.5.3
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	wenheping@gmail.com
@@ -23,6 +23,7 @@ OPTIONS=	PEAR_CONSOLE_COMMANDLINE "PEAR::Console_CommandLine support" off
 CATEGORY=	PHP
 FILES=		UML.php \
 		UML/Exception.php UML/FilePatternFilterIterator.php \
+		UML/FileScanner.php UML/FileScannerImpl.php \
 		UML/SimpleUID.php UML/Warning.php \
 		UML/Metamodel/Class.php UML/Metamodel/Enumeration.php \
 		UML/Metamodel/File.php UML/Metamodel/Interface.php \
@@ -57,8 +58,7 @@ EXAMPLES=	PHP_UML_by_PHP_UML_v1.xmi PHP_UML_by_PHP_UML_v2.xmi \
 		test3.php.txt test4.php.txt test5_cs.php.txt \
 		test_to_run.php test_with_api.php
 TESTS=		UmlParserTest.php UmlXmiTest.php \
-		suite/EMOF_test_sample.php \
-		suite/PHP_UML_test_sample.php \
+		suite/EMOF_test_sample.php suite/PHP_UML_test_sample.php \
 		suite/PHP_test_sample.php suite/bug-489398.php \
 		suite/bug-540341.php suite/bug-540368.php \
 		suite/bug-541886.php suite/bug-542586.php \
@@ -76,9 +76,11 @@ TESTS=		UmlParserTest.php UmlXmiTest.php \
 		suite/bug-loseunknowntags.php suite/test1.php \
 		suite/test2.php suite/test3.php \
 		suite/test4.php suite/test5_cs.php \
+		suite/test_internal.php \
 		suite/test_namespace1.php \
 		suite/test_namespace2.php \
 		suite/test_namespace3.php \
+		suite/test_only_api.php \
 		suite/data-providers/EMOF_test_sample.php.obj \
 		suite/data-providers/PHP_UML_test_sample.php.obj \
 		suite/data-providers/PHP_test_sample.php.obj \
@@ -118,9 +120,11 @@ TESTS=		UmlParserTest.php UmlXmiTest.php \
 		suite/data-providers/test3.php.obj \
 		suite/data-providers/test4.php.obj \
 		suite/data-providers/test5_cs.php.obj \
+		suite/data-providers/test_internal.php.obj \
 		suite/data-providers/test_namespace1.php.obj \
 		suite/data-providers/test_namespace2.php.obj \
-		suite/data-providers/test_namespace3.php.obj
+		suite/data-providers/test_namespace3.php.obj \
+		suite/data-providers/test_only_api.php.obj
 
 DATA=		phpuml.xml
 
