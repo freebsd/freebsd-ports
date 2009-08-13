@@ -7,7 +7,7 @@
 
 PORTNAME=	latex-cjk
 PORTVERSION=	4.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print chinese japanese korean
 MASTER_SITES=	http://cjk.ffii.org/ \
 		ftp://freebsd.csie.ntu.edu.tw/users/rafan/
@@ -41,7 +41,7 @@ WRKFONTDIR=	${WRKDIR}/fonts
 # Options: WITH_*/WITHOUT_*
 OPTIONS=	CCMAP       "CCT CCMap package (for PDFTeX's CID support)" on \
 		DVIPDFMX    "Install and configure DVIPDFMx for CJK" on \
-		UTF8ARPHIC  "Arphic free fonts in UTF-8 (no Type 1)" off
+		UTF8ARPHIC  "Arphic free fonts in UTF-8 (no Type 1)" on
 
 .include <bsd.port.pre.mk>
 

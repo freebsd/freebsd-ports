@@ -1,0 +1,65 @@
+--- texinput/UTF8/c70bkai.fd.orig	2009-08-12 01:28:25.000000000 +0800
++++ texinput/UTF8/c70bkai.fd	2009-08-12 01:28:53.000000000 +0800
+@@ -15,7 +15,11 @@
+ 
+ \DeclareFontFamily{C70}{bkai}{\hyphenchar \font\m@ne}
+ 
+-\DeclareFontShape{C70}{bkai}{m}{n}{<-> CJK * bkaiu}{\CJKnormal}
+-\DeclareFontShape{C70}{bkai}{bx}{n}{<-> CJKb * bkaiu}{\CJKbold}
++\DeclareFontShape{C70}{bkai}{m}{n}{<-> CJK * arb5kaiu}{\CJKnormal}
++\DeclareFontShape{C70}{bkai}{bx}{n}{<-> CJKb * arb5kaiu}{\CJKbold}
++\DeclareFontShape{C70}{bkai}{m}{sl}{<-> CJK * arb5kaiusl}{\CJKnormal}
++\DeclareFontShape{C70}{bkai}{bx}{sl}{<-> CJKb * arb5kaiusl}{\CJKbold}
++\DeclareFontShape{C70}{bkai}{m}{it}{<-> CJK * arb5kaiusl}{\CJKnormal}
++\DeclareFontShape{C70}{bkai}{bx}{it}{<-> CJKb * arb5kaiusl}{\CJKbold}
+ 
+ \endinput
+--- texinput/UTF8/c70bsmi.fd.orig	2009-08-12 01:29:35.000000000 +0800
++++ texinput/UTF8/c70bsmi.fd	2009-08-12 01:29:58.000000000 +0800
+@@ -15,7 +15,12 @@
+ 
+ \DeclareFontFamily{C70}{bsmi}{\hyphenchar \font\m@ne}
+ 
+-\DeclareFontShape{C70}{bsmi}{m}{n}{<-> CJK * bsmiu}{\CJKnormal}
+-\DeclareFontShape{C70}{bsmi}{bx}{n}{<-> CJKb * bsmiu}{\CJKbold}
++\DeclareFontShape{C70}{bsmi}{m}{n}{<-> CJK * arb5sungu}{\CJKnormal}
++\DeclareFontShape{C70}{bsmi}{bx}{n}{<-> CJKb * arb5sungu}{\CJKbold}
++\DeclareFontShape{C70}{bsmi}{m}{sl}{<-> CJK * arb5sungusl}{\CJKnormal}
++\DeclareFontShape{C70}{bsmi}{bx}{sl}{<-> CJKb * arb5sungusl}{\CJKbold}
++\DeclareFontShape{C70}{bsmi}{m}{it}{<-> CJK * arb5sungusl}{\CJKnormal}
++\DeclareFontShape{C70}{bsmi}{bx}{it}{<-> CJKb * arb5sungusl}{\CJKbold}
++
+ 
+ \endinput
+--- texinput/UTF8/c70gbsn.fd.orig	2009-08-12 01:31:12.000000000 +0800
++++ texinput/UTF8/c70gbsn.fd	2009-08-12 01:31:47.000000000 +0800
+@@ -15,7 +15,11 @@
+ 
+ \DeclareFontFamily{C70}{gbsn}{\hyphenchar \font\m@ne}
+ 
+-\DeclareFontShape{C70}{gbsn}{m}{n}{<-> CJK * gbsnu}{\CJKnormal}
+-\DeclareFontShape{C70}{gbsn}{bx}{n}{<-> CJKb * gbsnu}{\CJKbold}
++\DeclareFontShape{C70}{gbsn}{m}{n}{<-> CJK * argbsungu}{\CJKnormal}
++\DeclareFontShape{C70}{gbsn}{bx}{n}{<-> CJKb * argbsungu}{\CJKbold}
++\DeclareFontShape{C70}{gbsn}{m}{sl}{<-> CJK * argbsungusl}{\CJKnormal}
++\DeclareFontShape{C70}{gbsn}{bx}{sl}{<-> CJKb * argbsungusl}{\CJKbold}
++\DeclareFontShape{C70}{gbsn}{m}{it}{<-> CJK * argbsungusl}{\CJKnormal}
++\DeclareFontShape{C70}{gbsn}{bx}{it}{<-> CJKb * argbsungusl}{\CJKbold}
+ 
+ \endinput
+--- texinput/UTF8/c70gkai.fd.orig	2009-08-12 01:30:11.000000000 +0800
++++ texinput/UTF8/c70gkai.fd	2009-08-12 01:30:36.000000000 +0800
+@@ -15,7 +15,11 @@
+ 
+ \DeclareFontFamily{C70}{gkai}{\hyphenchar \font\m@ne}
+ 
+-\DeclareFontShape{C70}{gkai}{m}{n}{<-> CJK * gkaiu}{\CJKnormal}
+-\DeclareFontShape{C70}{gkai}{bx}{n}{<-> CJKb * gkaiu}{\CJKbold}
++\DeclareFontShape{C70}{gkai}{m}{n}{<-> CJK * argbkaiu}{\CJKnormal}
++\DeclareFontShape{C70}{gkai}{bx}{n}{<-> CJKb * argbkaiu}{\CJKbold}
++\DeclareFontShape{C70}{gkai}{m}{sl}{<-> CJK * argbkaiusl}{\CJKnormal}
++\DeclareFontShape{C70}{gkai}{bx}{sl}{<-> CJKb * argbkaiusl}{\CJKbold}
++\DeclareFontShape{C70}{gkai}{m}{it}{<-> CJK * argbkaiusl}{\CJKnormal}
++\DeclareFontShape{C70}{gkai}{bx}{it}{<-> CJKb * argbkaiusl}{\CJKbold}
+ 
+ \endinput
