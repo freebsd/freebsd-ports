@@ -1,0 +1,4 @@
+Stream::Reader is perl module intended for reading data from streams.
+It can be used for "on the fly" parsing big volumes data.
+
+WWW:	http://search.cpan.org/dist/Stream-Reader/

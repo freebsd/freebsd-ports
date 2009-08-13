@@ -1847,6 +1847,7 @@
     SUBDIR += p5-Spoon
     SUBDIR += p5-Storable
     SUBDIR += p5-Stream
+    SUBDIR += p5-Stream-Reader
     SUBDIR += p5-String-Approx
     SUBDIR += p5-String-CRC32
     SUBDIR += p5-String-Checker
