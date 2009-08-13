@@ -89,6 +89,7 @@ lib/vile/vile-yacc-filt
 %%PORTDOCS%%share/doc/vile/perl.doc
 %%PORTDOCS%%share/doc/vile/visvile.doc
 share/vile/ada.keywords
+share/vile/ant.keywords
 share/vile/as.keywords
 share/vile/as386.keywords
 share/vile/asm.keywords
@@ -153,6 +154,7 @@ share/vile/manpage.rc
 share/vile/mcrl.keywords
 share/vile/midl.keywords
 share/vile/modes.rc
+share/vile/mvn.keywords
 share/vile/nr.keywords
 share/vile/nsis.keywords
 share/vile/objc.keywords
@@ -186,6 +188,7 @@ share/vile/perl/winops.pm
 share/vile/php.keywords
 share/vile/pictmode.rc
 share/vile/pot.keywords
+share/vile/prolog.keywords
 share/vile/ps.keywords
 share/vile/py.keywords
 share/vile/rb.keywords
@@ -225,6 +228,7 @@ share/vile/which.rc
 share/vile/xml.keywords
 share/vile/xres.keywords
 share/vile/xs.keywords
+share/vile/xsl.keywords
 share/vile/yacc.keywords
 @dirrm share/vile/doc
 @dirrm share/vile/perl/Vile
