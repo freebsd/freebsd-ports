@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.070
+PORTVERSION=	0.074
 CATEGORIES=	irc ipv6
-MASTER_SITES=	SF
+MASTER_SITES=	SFP/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An advanced IRC bouncer
@@ -16,6 +16,7 @@ COMMENT=	An advanced IRC bouncer
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
+CONFIGURE_ARGS=	--disable-c-ares
 
 OPTIONS=	DEBUG		"Enable debugging" off \
 		IPV6		"Enable IPv6 support" off \
