@@ -2218,7 +2218,7 @@ lib/libpython2.6.a
 @dirrm %%PYTHON_LIBDIR%%/lib2to3/fixes
 @dirrm %%PYTHON_LIBDIR%%/lib2to3
 @dirrm %%PYTHON_LIBDIR%%/lib-tk
-@dirrm %%PYTHON_LIBDIR%%/lib-old
+@dirrmtry %%PYTHON_LIBDIR%%/lib-old
 @dirrm %%PYTHON_LIBDIR%%/lib-dynload
 @dirrm %%PYTHON_LIBDIR%%/json/tests
 @dirrm %%PYTHON_LIBDIR%%/json
