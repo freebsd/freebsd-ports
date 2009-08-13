@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.gnome.org/~gianmt/
+MASTER_SITES=	http://launchpad.net/poppler-python/trunk/development/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
