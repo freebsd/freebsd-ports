@@ -1,0 +1,13 @@
+MVision - theme for RoundCube Web Mail, the opensource PHP/MySQL web mail
+application.
+
+Features:
+
+- Three Pane Liquid Layout;
+- Fully supports Horizontal and Vertical layout views;
+- Additional configuration for either Horizontal or Vertical layout;
+- End user support for dynamically switching between Horizontal and Vertical
+  layouts;
+- Friendly looking theme with nice graphics;
+
+WWW: http://www.roundcubethemes.net/

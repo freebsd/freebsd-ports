@@ -1,0 +1,19 @@
+
+*******************************************************************************
+
+Make the following changes to RoundCube main configuration:
+
+%%LOCALBASE%%/www/roundcube/config/main.inc.php
+
+1) $rcmail_config['skin'] = 'mvision2_en';
+
+2) Remove "size" and "flag" (flag will still appear however) items:
+   $rcmail_config['list_cols'] = array('subject','from','date','attachment');
+
+3) $rcmail_config['preview_pane'] = true;
+
+4) Add new configuration line:
+   $rcmail_config['preview_pane_vertical'] = true;
+
+*******************************************************************************
+
