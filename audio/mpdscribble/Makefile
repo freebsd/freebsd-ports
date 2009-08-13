@@ -10,7 +10,7 @@ PORTVERSION=	0.18
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	Musicpd last.fm client
 
 OPTIONS=	SOUP    "Use libsoup for HTTP client library"    off
