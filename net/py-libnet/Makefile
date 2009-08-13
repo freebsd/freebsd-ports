@@ -8,6 +8,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pylibnet
@@ -45,8 +46,12 @@ BROKEN=		Does not compile on amd64 (tries to link non-PIC libnet.a into PIC shar
 post-patch:
 	${REINPLACE_CMD} -e 's,^const ,%constant ,' ${WRKSRC}/constants.i
 
+post-build:
+	${PYTHON_CMD} -m compileall ${WRKSRC}
+	${PYTHON_CMD} -O -m compileall ${WRKSRC}
+
 do-install:
-.for f in libnet.py _libnet.so
+.for f in libnet.py libnet.pyc libnet.pyo _libnet.so
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PYTHON_SITELIBDIR}
 .endfor
 .if !defined(NOPORTEXAMPLES)
