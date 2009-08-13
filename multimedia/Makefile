@@ -110,6 +110,7 @@
     SUBDIR += iriverter
     SUBDIR += iso2mkv
     SUBDIR += jahshaka
+    SUBDIR += jmref
     SUBDIR += k9copy
     SUBDIR += kaffeine
     SUBDIR += kaffeine-mozilla
