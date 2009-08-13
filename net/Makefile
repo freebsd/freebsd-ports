@@ -772,6 +772,7 @@
     SUBDIR += py-libdnet
     SUBDIR += py-libnet
     SUBDIR += py-medusa
+    SUBDIR += py-miniupnpc
     SUBDIR += py-mp-random
     SUBDIR += py-netaddr
     SUBDIR += py-netifaces
