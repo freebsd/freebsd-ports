@@ -4002,8 +4002,6 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Pdf/Outline/Loaded.php
 %%DATADIR%%/library/Zend/Pdf/Page.php
 %%DATADIR%%/library/Zend/Pdf/Parser.php
-%%DATADIR%%/library/Zend/Pdf/Parser/Stream.php
-%%DATADIR%%/library/Zend/Pdf/PhpArray.php
 %%DATADIR%%/library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
 %%DATADIR%%/library/Zend/Pdf/Resource.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font.php
@@ -4994,7 +4992,13 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/TestConfiguration.php.dist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/TestHelper.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/AclTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Acl/AclTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Acl/_files/ExtendedAclZF2234.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Acl/_files/MockAssertion.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Acl/_files/UseCase1/Acl.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Acl/_files/UseCase1/BlogPost.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Acl/_files/UseCase1/User.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Acl/_files/UseCase1/UserIsBlogPostOwnerAssertion.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/IntrospectorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files/ZendAmfAdobeIntrospectorTest.php
@@ -6882,6 +6886,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/PropertyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/_files/FileOfFunctions.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/_files/TestSampleClass.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/_files/TestSampleInterface.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/RegistryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/ClientTest.php
@@ -8278,6 +8283,9 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Acl/_files/UseCase1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Acl/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Acl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot/Zend-Log-Writer-Firebug
@@ -8505,7 +8513,6 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font/CidFont
 @dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font
 @dirrm %%DATADIR%%/library/Zend/Pdf/Resource
-@dirrm %%DATADIR%%/library/Zend/Pdf/Parser
 @dirrm %%DATADIR%%/library/Zend/Pdf/Outline
 @dirrm %%DATADIR%%/library/Zend/Pdf/Filter/Compression
 @dirrm %%DATADIR%%/library/Zend/Pdf/Filter
