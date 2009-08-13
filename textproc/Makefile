@@ -608,6 +608,7 @@
     SUBDIR += p5-Template-Plugin-Lingua-EN-Inflect
     SUBDIR += p5-Template-Plugin-XML-Escape
     SUBDIR += p5-Test-Perl-Critic
+    SUBDIR += p5-Text-ASCIIMathML
     SUBDIR += p5-Text-ASCIITable
     SUBDIR += p5-Text-Affixes
     SUBDIR += p5-Text-Aligner
