@@ -568,6 +568,7 @@
     SUBDIR += rlytest
     SUBDIR += rmilter
     SUBDIR += roundcube
+    SUBDIR += roundcube-air
     SUBDIR += roundcube-groupvice
     SUBDIR += roundcube-mvision2
     SUBDIR += rss2email
