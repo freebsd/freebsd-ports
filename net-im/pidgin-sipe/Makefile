@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pidgin-sipe
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	net-im
-MASTER_SITES=	SF/sipe
+MASTER_SITES=	SFP/sipe/sipe/${DISTNAME}
 
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	A plugin for Pidgin to provide LCS/OCS connectivity
@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 USE_GETTEXT=	yes
-FETCH_ARGS=	-pRr
 
 CFLAGS+=	"-I/${LOCALBASE}/include"
 LIBS+=		"-L/${LOCALBASE}/lib"
@@ -34,7 +33,7 @@ CONFIGURE_ENV+=	LIBS="${LIBS}" \
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-.for f in AUTHORS ChangeLog COPYING HACKING INSTALL LICENSE NEWS README TODO
+.for f in AUTHORS ChangeLog COPYING HACKING INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
