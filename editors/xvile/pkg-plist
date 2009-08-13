@@ -107,6 +107,7 @@ share/xvile/vile/vileinit.rc
 share/xvile/vile/vileperl.rc
 share/xvile/vile/which.rc
 share/xvile/vile/vile.hlp
+share/xvile/vile/ant.keywords
 share/xvile/vile/as.keywords
 share/xvile/vile/as386.keywords
 share/xvile/vile/asm.keywords
@@ -153,6 +154,7 @@ share/xvile/vile/mailcap.keywords
 share/xvile/vile/make.keywords
 share/xvile/vile/mcrl.keywords
 share/xvile/vile/midl.keywords
+share/xvile/vile/mvn.keywords
 share/xvile/vile/nr.keywords
 share/xvile/vile/nsis.keywords
 share/xvile/vile/objc.keywords
@@ -160,6 +162,7 @@ share/xvile/vile/perl.keywords
 share/xvile/vile/php.keywords
 share/xvile/vile/py.keywords
 share/xvile/vile/pot.keywords
+share/xvile/vile/prolog.keywords
 share/xvile/vile/rb.keywords
 share/xvile/vile/rc.keywords
 share/xvile/vile/rcs.keywords
@@ -188,6 +191,7 @@ share/xvile/vile/wbt.keywords
 share/xvile/vile/xml.keywords
 share/xvile/vile/xres.keywords
 share/xvile/vile/xs.keywords
+share/xvile/vile/xsl.keywords
 share/xvile/vile/yacc.keywords
 share/xvile/macros/color-ls.rc
 share/xvile/macros/dates.rc
