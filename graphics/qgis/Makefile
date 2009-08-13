@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qgis
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/qgis/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -20,6 +19,7 @@ LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		gsl.13:${PORTSDIR}/math/gsl \
 		gdal:${PORTSDIR}/graphics/gdal
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BISON=	build
 USE_CMAKE=	yes
 USE_QT_VER=	4
