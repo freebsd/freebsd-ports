@@ -1,0 +1,53 @@
+bin/waheela
+share/applications/kde4/waheela.desktop
+share/apps/waheela/themes/Bubbles/background-wide.jpg
+share/apps/waheela/themes/Bubbles/background.jpg
+share/apps/waheela/themes/Bubbles/preview.jpg
+share/apps/waheela/themes/Bubbles/theme.config
+share/apps/waheela/themes/ColorWaves/background.jpg
+share/apps/waheela/themes/ColorWaves/preview.jpg
+share/apps/waheela/themes/ColorWaves/theme.config
+share/apps/waheela/themes/DreamingGirl/background-wide.jpg
+share/apps/waheela/themes/DreamingGirl/background.jpg
+share/apps/waheela/themes/DreamingGirl/preview.jpg
+share/apps/waheela/themes/DreamingGirl/theme.config
+share/apps/waheela/themes/FloralGlow/background.jpg
+share/apps/waheela/themes/FloralGlow/preview.jpg
+share/apps/waheela/themes/FloralGlow/theme.config
+share/apps/waheela/themes/HoneyComb/background-wide.jpg
+share/apps/waheela/themes/HoneyComb/background.jpg
+share/apps/waheela/themes/HoneyComb/preview.jpg
+share/apps/waheela/themes/HoneyComb/theme.config
+share/apps/waheela/themes/LakePowell/background.jpg
+share/apps/waheela/themes/LakePowell/preview.jpg
+share/apps/waheela/themes/LakePowell/theme.config
+share/apps/waheela/themes/SunsetBliss/background.jpg
+share/apps/waheela/themes/SunsetBliss/preview.jpg
+share/apps/waheela/themes/SunsetBliss/theme.config
+share/apps/waheela/themes/TheSoundOfNature/background.jpg
+share/apps/waheela/themes/TheSoundOfNature/preview.jpg
+share/apps/waheela/themes/TheSoundOfNature/theme.config
+share/apps/waheela/themes/Tiles/background-wide.jpg
+share/apps/waheela/themes/Tiles/preview.jpg
+share/apps/waheela/themes/Tiles/theme.config
+share/apps/waheela/themes/VirtualWorld/background.jpg
+share/apps/waheela/themes/VirtualWorld/preview.jpg
+share/apps/waheela/themes/VirtualWorld/theme.config
+share/icons/hicolor/128x128/apps/waheela.png
+share/icons/hicolor/16x16/apps/waheela.png
+share/icons/hicolor/22x22/apps/waheela.png
+share/icons/hicolor/32x32/apps/waheela.png
+share/icons/hicolor/48x48/apps/waheela.png
+share/icons/hicolor/64x64/apps/waheela.png
+@dirrm share/apps/waheela/themes/VirtualWorld
+@dirrm share/apps/waheela/themes/Tiles
+@dirrm share/apps/waheela/themes/TheSoundOfNature
+@dirrm share/apps/waheela/themes/SunsetBliss
+@dirrm share/apps/waheela/themes/LakePowell
+@dirrm share/apps/waheela/themes/HoneyComb
+@dirrm share/apps/waheela/themes/FloralGlow
+@dirrm share/apps/waheela/themes/DreamingGirl
+@dirrm share/apps/waheela/themes/ColorWaves
+@dirrm share/apps/waheela/themes/Bubbles
+@dirrm share/apps/waheela/themes
+@dirrm share/apps/waheela
