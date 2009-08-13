@@ -16,6 +16,7 @@
     SUBDIR += bluegps
     SUBDIR += bluez-firmware
     SUBDIR += bpl+
+    SUBDIR += callsign
     SUBDIR += cdr_read
     SUBDIR += chu
     SUBDIR += comserv
