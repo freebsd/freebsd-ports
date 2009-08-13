@@ -1,0 +1,19 @@
+
+*******************************************************************************
+
+Some minor change to the configuration might have to be done:
+
+Theme GroupVice has been developed for RoundCube 0.2-beta. If you use this
+version you'll need the following changes to your configuration:
+
+%%LOCALBASE%%/www/roundcube/config/main.inc.php
+
+$rcmail_config['list_cols'] = array('flag', 'size', 'from', 'subject', 'date');
+
+If you use RoundCube 0.2-stable, svn version r2078 or higher, no changes to
+the configuration are necessary.
+
+Please note: this theme is not compatible with Internet Explorer 6.x.
+
+*******************************************************************************
+
