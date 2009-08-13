@@ -373,12 +373,14 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/enved.scm
 %%SCHEME%%%%DATADIR%%/eval-c.scm
 %%SCHEME%%%%DATADIR%%/examp.scm
+%%SCHEME%%%%DATADIR%%/expandn.scm
 %%SCHEME%%%%DATADIR%%/export-all.scm
 %%SCHEME%%%%DATADIR%%/extensions.scm
 %%SCHEME%%%%DATADIR%%/fade.scm
 %%SCHEME%%%%DATADIR%%/fft-menu.scm
 %%SCHEME%%%%DATADIR%%/fix-optargs.scm
 %%SCHEME%%%%DATADIR%%/fmv.scm
+%%SCHEME%%%%DATADIR%%/fullmix.scm
 %%SCHEME%%%%DATADIR%%/frame.scm
 %%SCHEME%%%%DATADIR%%/freeverb.scm
 %%SCHEME%%%%DATADIR%%/generators.scm
@@ -409,6 +411,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/new-effects.scm
 %%SCHEME%%%%DATADIR%%/noise.scm
 %%SCHEME%%%%DATADIR%%/numerics.scm
+%%SCHEME%%%%DATADIR%%/nrev.scm
 %%SCHEME%%%%DATADIR%%/oo.scm
 %%SCHEME%%%%DATADIR%%/osc.scm
 %%SCHEME%%%%DATADIR%%/oscope.scm
