@@ -12,99 +12,78 @@ libexec/rigsofrods/RoR
 libexec/rigsofrods/rorconfig
 %%DATADIR%%/languages/ar/codes.txt
 %%DATADIR%%/languages/ar/ror.mo
-%%DATADIR%%/languages/ar/ror.po
 %%DATADIR%%/languages/bg/codes.txt
 %%DATADIR%%/languages/bg/ror.mo
-%%DATADIR%%/languages/bg/ror.po
 %%DATADIR%%/languages/bn/codes.txt
 %%DATADIR%%/languages/bn/ror.mo
-%%DATADIR%%/languages/bn/ror.po
+%%DATADIR%%/languages/ca/codes.txt
+%%DATADIR%%/languages/ca/ror.mo
 %%DATADIR%%/languages/cs/codes.txt
 %%DATADIR%%/languages/cs/ror.mo
-%%DATADIR%%/languages/cs/ror.po
 %%DATADIR%%/languages/da/codes.txt
 %%DATADIR%%/languages/da/ror.mo
-%%DATADIR%%/languages/da/ror.po
 %%DATADIR%%/languages/de/codes.txt
 %%DATADIR%%/languages/de/ror.mo
-%%DATADIR%%/languages/de/ror.po
 %%DATADIR%%/languages/el/codes.txt
 %%DATADIR%%/languages/el/ror.mo
-%%DATADIR%%/languages/el/ror.po
 %%DATADIR%%/languages/en/codes.txt
 %%DATADIR%%/languages/en/ror.mo
-%%DATADIR%%/languages/en/ror.po
 %%DATADIR%%/languages/es/codes.txt
 %%DATADIR%%/languages/es/ror.mo
-%%DATADIR%%/languages/es/ror.po
 %%DATADIR%%/languages/et/codes.txt
 %%DATADIR%%/languages/et/ror.mo
-%%DATADIR%%/languages/et/ror.po
 %%DATADIR%%/languages/fi/codes.txt
 %%DATADIR%%/languages/fi/ror.mo
-%%DATADIR%%/languages/fi/ror.po
 %%DATADIR%%/languages/fr/codes.txt
 %%DATADIR%%/languages/fr/ror.mo
-%%DATADIR%%/languages/fr/ror.po
+%%DATADIR%%/languages/he/codes.txt
+%%DATADIR%%/languages/he/ror.mo
 %%DATADIR%%/languages/hi/codes.txt
 %%DATADIR%%/languages/hi/ror.mo
-%%DATADIR%%/languages/hi/ror.po
 %%DATADIR%%/languages/hu/codes.txt
 %%DATADIR%%/languages/hu/ror.mo
-%%DATADIR%%/languages/hu/ror.po
 %%DATADIR%%/languages/id/codes.txt
 %%DATADIR%%/languages/id/ror.mo
-%%DATADIR%%/languages/id/ror.po
 %%DATADIR%%/languages/is/codes.txt
 %%DATADIR%%/languages/is/ror.mo
-%%DATADIR%%/languages/is/ror.po
 %%DATADIR%%/languages/it/codes.txt
 %%DATADIR%%/languages/it/ror.mo
-%%DATADIR%%/languages/it/ror.po
 %%DATADIR%%/languages/ja/codes.txt
-%%DATADIR%%/languages/ja/ror.po
+%%DATADIR%%/languages/ja/ror.mo
 %%DATADIR%%/languages/la/codes.txt
 %%DATADIR%%/languages/la/ror.mo
-%%DATADIR%%/languages/la/ror.po
 %%DATADIR%%/languages/lt/codes.txt
 %%DATADIR%%/languages/lt/ror.mo
-%%DATADIR%%/languages/lt/ror.po
+%%DATADIR%%/languages/lv/codes.txt
+%%DATADIR%%/languages/lv/ror.mo
+%%DATADIR%%/languages/nb/codes.txt
+%%DATADIR%%/languages/nb/ror.mo
 %%DATADIR%%/languages/nl/codes.txt
 %%DATADIR%%/languages/nl/ror.mo
-%%DATADIR%%/languages/nl/ror.po
 %%DATADIR%%/languages/nn/codes.txt
 %%DATADIR%%/languages/nn/ror.mo
-%%DATADIR%%/languages/nn/ror.po
+%%DATADIR%%/languages/no/codes.txt
+%%DATADIR%%/languages/no/ror.mo
 %%DATADIR%%/languages/pl/codes.txt
 %%DATADIR%%/languages/pl/ror.mo
-%%DATADIR%%/languages/pl/ror.po
 %%DATADIR%%/languages/pt/codes.txt
 %%DATADIR%%/languages/pt/ror.mo
-%%DATADIR%%/languages/pt/ror.po
 %%DATADIR%%/languages/ro/codes.txt
 %%DATADIR%%/languages/ro/ror.mo
-%%DATADIR%%/languages/ro/ror.po
 %%DATADIR%%/languages/ru/codes.txt
 %%DATADIR%%/languages/ru/ror.mo
-%%DATADIR%%/languages/ru/ror.po
 %%DATADIR%%/languages/sk/codes.txt
 %%DATADIR%%/languages/sk/ror.mo
-%%DATADIR%%/languages/sk/ror.po
 %%DATADIR%%/languages/sl/codes.txt
 %%DATADIR%%/languages/sl/ror.mo
-%%DATADIR%%/languages/sl/ror.po
 %%DATADIR%%/languages/sv/codes.txt
 %%DATADIR%%/languages/sv/ror.mo
-%%DATADIR%%/languages/sv/ror.po
 %%DATADIR%%/languages/tr/codes.txt
 %%DATADIR%%/languages/tr/ror.mo
-%%DATADIR%%/languages/tr/ror.po
 %%DATADIR%%/languages/ur/codes.txt
 %%DATADIR%%/languages/ur/ror.mo
-%%DATADIR%%/languages/ur/ror.po
 %%DATADIR%%/languages/zh/codes.txt
 %%DATADIR%%/languages/zh/ror.mo
-%%DATADIR%%/languages/zh/ror.po
 %%DATADIR%%/plugins.cfg
 %%DATADIR%%/resources/OgreCore.zip
 %%DATADIR%%/resources/airfoils.zip
@@ -118,6 +97,7 @@ libexec/rigsofrods/rorconfig
 %%DATADIR%%/resources/scripts.zip
 %%DATADIR%%/resources/sounds.zip
 %%DATADIR%%/resources/textures.zip
+%%DATADIR%%/skeleton/cache/.do.not.delete
 %%DATADIR%%/skeleton/config/RoR.cfg
 %%DATADIR%%/skeleton/config/categories.cfg
 %%DATADIR%%/skeleton/config/editor.cfg
@@ -125,7 +105,12 @@ libexec/rigsofrods/rorconfig
 %%DATADIR%%/skeleton/config/input.map
 %%DATADIR%%/skeleton/config/inputevents.cfg
 %%DATADIR%%/skeleton/config/ogre.cfg
+%%DATADIR%%/skeleton/config/torque_models.cfg
 %%DATADIR%%/skeleton/config/wavefield.cfg
+%%DATADIR%%/skeleton/logs/.do.not.delete
+%%DATADIR%%/skeleton/packs/.do.not.delete
+%%DATADIR%%/skeleton/terrains/.do.not.delete
+%%DATADIR%%/skeleton/vehicles/.do.not.delete
 %%DATADIR%%/streams/final/terrains/BajaTrack.zip
 %%DATADIR%%/streams/final/terrains/BakersRanch.zip
 %%DATADIR%%/streams/final/terrains/Flatmap.zip
@@ -201,8 +186,11 @@ libexec/rigsofrods/rorconfig
 @dirrm %%DATADIR%%/languages/ro
 @dirrm %%DATADIR%%/languages/pt
 @dirrm %%DATADIR%%/languages/pl
+@dirrm %%DATADIR%%/languages/no
 @dirrm %%DATADIR%%/languages/nn
 @dirrm %%DATADIR%%/languages/nl
+@dirrm %%DATADIR%%/languages/nb
+@dirrm %%DATADIR%%/languages/lv
 @dirrm %%DATADIR%%/languages/lt
 @dirrm %%DATADIR%%/languages/la
 @dirrm %%DATADIR%%/languages/ja
@@ -211,6 +199,7 @@ libexec/rigsofrods/rorconfig
 @dirrm %%DATADIR%%/languages/id
 @dirrm %%DATADIR%%/languages/hu
 @dirrm %%DATADIR%%/languages/hi
+@dirrm %%DATADIR%%/languages/he
 @dirrm %%DATADIR%%/languages/fr
 @dirrm %%DATADIR%%/languages/fi
 @dirrm %%DATADIR%%/languages/et
@@ -220,6 +209,7 @@ libexec/rigsofrods/rorconfig
 @dirrm %%DATADIR%%/languages/de
 @dirrm %%DATADIR%%/languages/da
 @dirrm %%DATADIR%%/languages/cs
+@dirrm %%DATADIR%%/languages/ca
 @dirrm %%DATADIR%%/languages/bn
 @dirrm %%DATADIR%%/languages/bg
 @dirrm %%DATADIR%%/languages/ar

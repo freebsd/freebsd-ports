@@ -1,6 +1,6 @@
---- main/source/Settings.cpp.orig	2009-02-22 20:59:55.000000000 +0300
-+++ main/source/Settings.cpp	2009-04-09 07:24:33.000000000 +0400
-@@ -123,17 +123,10 @@
+--- main/source/Settings.cpp.orig	2009-06-17 00:15:08.000000000 +0400
++++ main/source/Settings.cpp	2009-08-13 04:10:33.000000000 +0400
+@@ -132,17 +132,10 @@
  	//true program path is impossible to get from POSIX functions
  	//lets hack!
  	pid_t pid = getpid();

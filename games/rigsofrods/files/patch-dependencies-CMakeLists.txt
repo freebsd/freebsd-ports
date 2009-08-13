@@ -1,20 +1,18 @@
---- dependencies/CMakeLists.txt.orig	2009-02-22 20:59:55.000000000 +0300
-+++ dependencies/CMakeLists.txt	2009-03-05 03:49:28.000000000 +0300
-@@ -6,9 +6,9 @@
+--- dependencies/CMakeLists.txt.orig	2009-06-28 01:05:16.000000000 +0400
++++ dependencies/CMakeLists.txt	2009-08-12 23:52:12.000000000 +0400
+@@ -6,9 +6,7 @@
  endif(ROR_BUILD_LUASCRIPT)
  
  add_subdirectory("mysocketw")
 -add_subdirectory("OIS-HEAD")
-+#add_subdirectory("OIS-HEAD")
  #add_subdirectory("openal-soft-1.5.304")
 -add_subdirectory("openal-soft-1.6.372")
-+#add_subdirectory("openal-soft-1.6.372")
  
  set(OGRE_SET_DISABLE_FREEIMAGE 1)
  add_subdirectory("ogrenew")
-@@ -34,4 +34,4 @@
- add_subdirectory("raknet")
- endif(ROR_BUILD_NEWNET)
+@@ -30,4 +28,4 @@
+ 
+ add_subdirectory("moFileReader")
  
 -add_subdirectory("mygui")
 \ No newline at end of file
