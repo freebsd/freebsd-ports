@@ -2459,6 +2459,7 @@
     SUBDIR += py-qt4-test
     SUBDIR += py-rbtree
     SUBDIR += py-repl
+    SUBDIR += py-repoze.tm2
     SUBDIR += py-repoze.what
     SUBDIR += py-repoze.who
     SUBDIR += py-repoze.who-testutil
