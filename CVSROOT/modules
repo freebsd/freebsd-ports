@@ -3253,6 +3253,7 @@ ffcall                          ports/devel/ffcall
 ffe                             ports/textproc/ffe
 ffff                            ports/graphics/ffff
 ffmpeg                          ports/multimedia/ffmpeg
+ffmpeg-devel                    ports/multimedia/ffmpeg-devel
 ffmpeg2theora                   ports/multimedia/ffmpeg2theora
 ffmpegthumbnailer               ports/multimedia/ffmpegthumbnailer
 ffproxy                         ports/www/ffproxy
@@ -4842,6 +4843,7 @@ gstreamer-plugins-vorbis        ports/audio/gstreamer-plugins-vorbis
 gstreamer-plugins-wavpack       ports/audio/gstreamer-plugins-wavpack
 gstreamer-plugins-x264          ports/multimedia/gstreamer-plugins-x264
 gstreamer-plugins-xvid          ports/multimedia/gstreamer-plugins-xvid
+gstreamer-schroedinger          ports/multimedia/gstreamer-schroedinger
 gstreamermm                     ports/multimedia/gstreamermm
 gsubedit                        ports/multimedia/gsubedit
 gsview                          ports/print/gsview
@@ -12149,6 +12151,7 @@ p5-MooseX-Method-Signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-MooseX-MethodAttributes      ports/devel/p5-MooseX-MethodAttributes
 p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
+p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
 p5-MooseX-Policy-SemiAffordanceAccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
@@ -15680,6 +15683,7 @@ p5-moosex-meta-typeconstraint-forcecoercion  ports/devel/p5-MooseX-Meta-TypeCons
 p5-moosex-method-signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-moosex-methodattributes      ports/devel/p5-MooseX-MethodAttributes
 p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
+p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-policy-semiaffordanceaccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
@@ -18343,6 +18347,7 @@ pipemeter                       ports/sysutils/pipemeter
 pipenightdreams                 ports/games/pipenightdreams
 pipepanic                       ports/games/pipepanic
 pipestatus                      ports/devel/pipestatus
+pipewalker                      ports/games/pipewalker
 pips-sc60s                      ports/print/pips-sc60s
 pips-sc65_66s                   ports/print/pips-sc65_66s
 pips-sc80s                      ports/print/pips-sc80s
