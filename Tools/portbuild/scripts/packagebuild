@@ -440,6 +440,7 @@ class worker(threading.Thread):
 #            retcode = 0
 
         conn = QManagerClientConn(stderr = sys.stderr)
+        timeout = 1
         try:
             (code, vars) = conn.command("release", {'id':pkg.id})
         except RequestError, e:
