@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AddOns
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://www.turbogears.org/2.0/downloads/2.0.1/
