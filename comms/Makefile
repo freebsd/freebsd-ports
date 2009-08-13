@@ -112,6 +112,7 @@
     SUBDIR += qsstv
     SUBDIR += ruby-serialport
     SUBDIR += ruby-termios
+    SUBDIR += rubygem-callsign
     SUBDIR += rxtx
     SUBDIR += scmxx
     SUBDIR += scud
