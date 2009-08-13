@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	automounter
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	bsdadminscripts
+MASTER_SITES=	SFP/bsdadminscripts/${PORTNAME}/
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Provides scripts to dynamically configure amd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 NO_BUILD=	yes
-MANCOMPRESSED=	no
+MANCOMPRESSED=	yes
 
 .if defined(NOPORTDOCS)
 NOPORTDOCS=	-nodoc
@@ -26,7 +25,7 @@ MAN8=		automounter.8
 .endif
 
 plist: patch
-		@cd ${WRKSRC}; ./list.sh -nodoc > ${PLIST}
+		@cd ${WRKSRC}; ./plist.sh -nodoc > ${PLIST}
 
 do-install:
 		@cd ${WRKSRC}; ./install.sh -prefix=${PREFIX} ${NOPORTDOCS}
