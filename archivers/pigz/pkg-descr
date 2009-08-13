@@ -3,4 +3,4 @@ capable Parallel Implementation of GZip, nicknamed PIGZ. Version 1.5
 implements nearly all of gzip's functionality, including decompression
 of .gz and .Z (Unix compress) files.
 
-WWW:	http://www.c10n.info/archives/505
+WWW:	http://www.zlib.net/pigz/

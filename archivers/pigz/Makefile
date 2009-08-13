@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	pigz
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	archivers
-MASTER_SITES=	http://zlib.net/pigz/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://www.zlib.net/pigz/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Parallel GZIP
 
 do-install:
-.for FILE in pigz pigzn pigzt
-	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/bin/
+.for FILE in pigz pigzn pigzt unpigz
+	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>
