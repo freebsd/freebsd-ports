@@ -45,6 +45,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>de-wordpress</name>
 	<range><lt>2.8.4</lt></range>
       </package>
+      <package>
+	<name>wordpress-mu</name>
+	<range><lt>2.8.4a</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -65,6 +69,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-08-10</discovery>
       <entry>2009-08-12</entry>
+      <modified>2009-08-13</modified>
     </dates>
   </vuln>
 
@@ -73,7 +78,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>fetchmail</name>
-	<range><le>6.3.10</le></range>
+	<range><lt>6.3.11</lt></range>
       </package>
     </affects>
     <description>
@@ -101,6 +106,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-08-06</discovery>
       <entry>2009-08-11</entry>
+      <modified>2009-08-13</modified>
     </dates>
   </vuln>
 
