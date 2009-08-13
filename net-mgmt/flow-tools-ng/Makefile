@@ -49,7 +49,7 @@ FLOW_CAPTURE_GID=	174
 FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
 
 .if defined(WITH_PGSQL)
-CONFIGURE_ARGS+=--with-postgresql="${PREFIX}"
+CONFIGURE_ARGS+=--with-postgresql
 USE_PGSQL=	yes
 .else
 CONFIGURE_ARGS+=--without-postgresql
