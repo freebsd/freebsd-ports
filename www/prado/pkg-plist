@@ -843,7 +843,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System/_TShellApplication_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System/_interfaces_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System/_prado_php.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/blank.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/_0.cfs
 %%PORTDOCS%%%%DOCSDIR%%/manual/classtrees_System.Caching.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/classtrees_System.Collections.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/classtrees_System.Data.ActiveRecord.Relations.html
@@ -879,6 +879,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/default/_Web_UI_ActiveControls_TActiveFileUpload_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/default/_Web_UI_ActiveControls_TDraggable_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/default/_Web_UI_ActiveControls_TDropContainer_php.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/deletable
 %%PORTDOCS%%%%DOCSDIR%%/manual/elementindex.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/elementindex_System.Caching.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/elementindex_System.Collections.html
@@ -946,11 +947,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/li_System.Xml.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/li_System.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/li_default.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/media/banner.css
+%%PORTDOCS%%%%DOCSDIR%%/manual/media/background.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/media/bg_left.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/media/empty.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/media/manual.css
+%%PORTDOCS%%%%DOCSDIR%%/manual/media/style.css
 %%PORTDOCS%%%%DOCSDIR%%/manual/media/stylesheet.css
-%%PORTDOCS%%%%DOCSDIR%%/manual/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/search.php
+%%PORTDOCS%%%%DOCSDIR%%/manual/segments
 %%PORTDOCS%%%%DOCSDIR%%/manual/todolist.html
-%%PORTDOCS%%%%DOCSDIR%%/prado3_manual.chm
 %%PORTDOCS%%%%DOCSDIR%%/quickstart.pdf
 %%PORTDOCS%%%%DOCSDIR%%/specs/application.dtd
 %%PORTDOCS%%%%DOCSDIR%%/specs/application.xsd
@@ -1546,6 +1551,9 @@
 %%PORTEXAMPLES%%%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Introduction.page
 %%PORTEXAMPLES%%%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/DragDrop/Home.page
 %%PORTEXAMPLES%%%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/DragDrop/Home.php
+%%PORTEXAMPLES%%%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/DragDrop/images/product1.png
+%%PORTEXAMPLES%%%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/DragDrop/images/product2.png
+%%PORTEXAMPLES%%%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/DragDrop/images/trash.png
 %%PORTEXAMPLES%%%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveButton/Home.page
 %%PORTEXAMPLES%%%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveButton/Home.php
 %%PORTEXAMPLES%%%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveCheckBox/Home.page
@@ -3324,7 +3332,7 @@
 %%PORTEXAMPLES%%@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveCustomValidator
 %%PORTEXAMPLES%%@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveCheckBox
 %%PORTEXAMPLES%%@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveButton
-%%PORTEXAMPLES%%@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/DragDrop/assets
+%%PORTEXAMPLES%%@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/DragDrop/images
 %%PORTEXAMPLES%%@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/DragDrop
 %%PORTEXAMPLES%%@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples
 %%PORTEXAMPLES%%@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls
@@ -3556,7 +3564,6 @@
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%WWWDIR%%/demos/soap/protected/runtime
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%WWWDIR%%/demos/soap/assets
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%WWWDIR%%/demos/quickstart/protected/runtime
-%%PORTEXAMPLES%%@exec mkdir -p %D/%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/DragDrop/assets
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%WWWDIR%%/demos/quickstart/assets
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%WWWDIR%%/demos/personal/protected/runtime
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%WWWDIR%%/demos/personal/assets
