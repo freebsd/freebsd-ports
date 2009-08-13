@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	10.7
+PORTVERSION=	10.8
 CATEGORIES=	audio
-MASTER_SITES=	SF \
+MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
 
 MAINTAINER=	dhn@FreeBSD.org
