@@ -28,6 +28,7 @@
     SUBDIR += iconv
     SUBDIR += iconv-extra
     SUBDIR += iconv-rfc1345
+    SUBDIR += igbinary
     SUBDIR += ish
     SUBDIR += konwert
     SUBDIR += ktextdecode

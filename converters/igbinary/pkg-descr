@@ -1,0 +1,7 @@
+Igbinary is a drop in replacement for the standard PHP serializer.
+Instead of time and space consuming textual representation, igbinary
+stores PHP data structures in a compact binary form. Savings are
+significant when using memcached or similar memory based storages for
+serialized data.
+
+WWW:	http://opensource.dynamoid.com/
