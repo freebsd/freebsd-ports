@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.6.3
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -23,6 +22,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sahil@tandon.net
 COMMENT=	A secure alternative to widely-used Sendmail
 
+VDAVERSION=	2.6.2
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
@@ -55,8 +55,10 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	${STATUS_OpenLDAP} \
 		CDB		"CDB maps lookups"					${STATUS_CDB} \
 		NIS		"NIS maps lookups"					${STATUS_NIS} \
-		VDA		"VDA (Virtual Delivery Agent)"				${STATUS_VDA} \
+		VDA		"VDA (Virtual Delivery Agent 32Bit)"				${STATUS_VDA} \
 		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test}
+
+.include <bsd.port.options.mk>
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	postlock.1 postlog.1 postmap.1 postmulti.1 postqueue.1 postsuper.1 \
@@ -86,8 +88,6 @@ MAKEFILEFLAGS+=	DEBUG=
 .endif
 
 MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
-
-.include <bsd.port.pre.mk>
 
 POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
@@ -195,9 +195,10 @@ POSTFIX_CCARGS+=	-DHAS_NIS
 _REQUIRE+=		ypserv
 .endif
 
+# 32Bit VDA patch (64Bit has different patch)
 .if defined(WITH_VDA)
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
-PATCHFILES+=		postfix-${PORTVERSION}-vda-ng.patch.gz
+PATCHFILES+=		postfix-${VDAVERSION}-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
 PLIST_SUB+=	VDA=""
 .else
@@ -321,4 +322,4 @@ post-install:
 	@${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${DAEMONDIR}/postfix-files
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
