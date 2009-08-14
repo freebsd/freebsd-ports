@@ -7,7 +7,7 @@
 
 PORTNAME=	php-gtk
 PORTVERSION=	1.0.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -29,7 +29,6 @@ WRKSRC=${WRKDIR}/php_gtk-${PORTVERSION}
 PORTSCOUT=	limit:^1\.
 
 OPTIONS=	LIBGLADE	"GladeXML support in php-gtk" on \
-		SCINTILLA	"Scintilla support" on \
 		GDK_PIXBUF	"Enable pixbuf support" on \
 		GTKHTML		"Enable Gtkhtml support" on
 
@@ -48,13 +47,6 @@ USE_GNOME+=	libglade
 ENVSCE+=	-DHAVE_LIBGLADE
 .else
 CONFIGURE_ARGS+=	--disable-libglade
-.endif
-
-.if !defined(WITHOUT_SCINTILLA)
-BUILD_DEPENDS+=	${LOCALBASE}/include/scintilla/gtkscintilla.h:${PORTSDIR}/x11-toolkits/gtkscintilla
-LIB_DEPENDS+=	gtkscintilla.0:${PORTSDIR}/x11-toolkits/gtkscintilla
-ENVSCE+=	-DHAVE_SCINTILLA=1 # -DPHP_GTK_COMPILE_DL_SCINTILLA=1
-CONFIGURE_ARGS+=	--enable-scintilla
 .endif
 
 .if !defined(WITHOUT_GDK_PIXBUF)
