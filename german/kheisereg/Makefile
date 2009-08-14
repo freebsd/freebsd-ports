@@ -8,7 +8,8 @@ PORTNAME=		kheisereg
 PORTVERSION=		0.8
 PORTREVISION=	6
 CATEGORIES=		german kde
-MASTER_SITES=		http://www.gantz-edv.de/kheisereg/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	markus
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		KDE utility to search within the Heise Register
