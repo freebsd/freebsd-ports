@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		rmilter
-PORTVERSION=		1.5.18
+PORTVERSION=		1.5.24
 CATEGORIES=		mail
 MASTER_SITES=		http://cebka.pp.ru/distfiles/
 
