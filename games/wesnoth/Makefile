@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -33,7 +32,8 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
 
-MANLANG=	"" cs de en_GB es fi fr hu it lt pl sr sr@latin sv tr zh_CN
+MANLANG=	"" cs de en_GB es fi fr hu it lt pl sr sr@latin sv tr \
+		zh_CN zh_TW
 
 MAN6=		wesnoth.6
 MAN6_GL=	wesnoth.6
