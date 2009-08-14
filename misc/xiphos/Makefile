@@ -8,8 +8,8 @@
 PORTNAME=	xiphos
 PORTVERSION=	3.1.1
 CATEGORIES=	misc gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	gnomesword
+MASTER_SITES=	SFP
+MASTER_SITE_SUBDIR=	gnomesword/Xiphos/${PORTVERSION}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
