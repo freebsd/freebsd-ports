@@ -24,6 +24,12 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build uic_build moc_build rcc_build
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042
+CMAKE_USE_PTHREAD=	yes
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}
 
@@ -32,4 +38,4 @@ post-patch:
 		"s,$${LIB_INSTALL_DIR}/pkgconfig,data/pkgconfig,g"\
 		${WRKSRC}/../CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
