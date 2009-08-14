@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python module for miniupnpc
