@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA \
 CONFLICTS=	clive-[0-1]* ljclive-[0-9]*
 
 OPTIONS=	CACHE	 "With video page cache" off \
-		SIGWINCH "With resizable progressbar" on
+		SIGWINCH "With resizing progressbar" on
 
 MAN1=		clive.1
 
