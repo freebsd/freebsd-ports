@@ -20,6 +20,8 @@ COMMENT=	LaTeX macro package for drawing Message Sequence Charts
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 
+BROKEN=		checksum mismatch
+
 NO_SIZE=	yes # Most mirrors don't provide size-data
 
 NO_BUILD=	yes
