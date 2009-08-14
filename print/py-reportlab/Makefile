@@ -7,7 +7,7 @@
 
 PORTNAME=	reportlab
 PORTVERSION=	1.21.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.org/ftp/ \
 		ftp://ftp.reportlab.org/ \
@@ -34,6 +34,7 @@ DOCS=	RML_UserGuide.pdf RML_UserGuide_1_0.pdf diagradoc.pdf graphguide.pdf \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/rl_config.py
+	@${REINPLACE_CMD} -e 's#with#with26#g' ${WRKSRC}/lib/PyFontify.py
 
 .include <bsd.port.pre.mk>
 

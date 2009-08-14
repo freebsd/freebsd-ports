@@ -210,6 +210,8 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/signsandsymbols.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/signsandsymbols.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/PyFontify.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/PyFontify.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/PyFontify.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/__init__.pyo
