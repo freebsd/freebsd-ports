@@ -1319,6 +1319,7 @@ calife-devel                    ports/security/calife-devel
 callgen323                      ports/net/callgen323
 callgrind                       ports/devel/callgrind
 callid                          ports/misc/callid
+callsign                        ports/comms/callsign
 cam                             ports/audio/cam
 camediaplay                     ports/graphics/camediaplay
 camera                          ports/graphics/camera
@@ -1335,6 +1336,7 @@ caribbeanstud                   ports/games/CaribbeanStud
 carthage                        ports/textproc/carthage
 cartotheque                     ports/deskutils/cartotheque
 cascade                         ports/cad/cascade
+cassandra                       ports/databases/cassandra
 castget                         ports/www/castget
 castor                          ports/java/castor
 castpodder                      ports/multimedia/castpodder
@@ -13091,6 +13093,7 @@ p5-Test-YAML-Meta               ports/devel/p5-Test-YAML-Meta
 p5-Test-YAML-Valid              ports/devel/p5-Test-YAML-Valid
 p5-Test-use-ok                  ports/devel/p5-Test-use-ok
 p5-TestGen4Web-Runner           ports/www/p5-TestGen4Web-Runner
+p5-Text-ASCIIMathML             ports/textproc/p5-Text-ASCIIMathML
 p5-Text-ASCIITable              ports/textproc/p5-Text-ASCIITable
 p5-Text-Affixes                 ports/textproc/p5-Text-Affixes
 p5-Text-Aligner                 ports/textproc/p5-Text-Aligner
@@ -14237,6 +14240,7 @@ p5-color-library                ports/graphics/p5-Color-Library
 p5-color-rgb                    ports/graphics/p5-Color-Rgb
 p5-commands-guarded             ports/devel/p5-Commands-Guarded
 p5-commitbit                    ports/devel/p5-CommitBit
+p5-common-sense                 ports/devel/p5-common-sense
 p5-compress-bzip2               ports/archivers/p5-Compress-Bzip2
 p5-compress-leadingblankspaces  ports/www/p5-Compress-LeadingBlankSpaces
 p5-compress-lzf                 ports/archivers/p5-Compress-LZF
@@ -16665,6 +16669,7 @@ p5-tex-encode                   ports/textproc/p5-TeX-Encode
 p5-tex-hyphen                   ports/textproc/p5-TeX-Hyphen
 p5-text-affixes                 ports/textproc/p5-Text-Affixes
 p5-text-aligner                 ports/textproc/p5-Text-Aligner
+p5-text-asciimathml             ports/textproc/p5-Text-ASCIIMathML
 p5-text-asciitable              ports/textproc/p5-Text-ASCIITable
 p5-text-aspell                  ports/textproc/p5-Text-Aspell
 p5-text-autoformat              ports/textproc/p5-Text-Autoformat
@@ -19266,6 +19271,7 @@ py-mhash                        ports/security/py-mhash
 py-migrate                      ports/databases/py-migrate
 py-milter                       ports/mail/py-milter
 py-ming                         ports/graphics/py-ming
+py-miniupnpc                    ports/net/py-miniupnpc
 py-mlpy                         ports/science/py-mlpy
 py-mnemosyne                    ports/games/py-mnemosyne
 py-mp-random                    ports/net/py-mp-random
@@ -19455,6 +19461,7 @@ py-relatorio                    ports/print/py-relatorio
 py-repl                         ports/devel/py-repl
 py-reportlab                    ports/print/py-reportlab
 py-reportlab2                   ports/print/py-reportlab2
+py-repoze.tm2                   ports/devel/py-repoze.tm2
 py-repoze.what                  ports/devel/py-repoze.what
 py-repoze.who                   ports/devel/py-repoze.who
 py-repoze.who-testutil          ports/devel/py-repoze.who-testutil
@@ -19560,6 +19567,7 @@ py-tofu                         ports/net/py-tofu
 py-toscawidgets                 ports/devel/py-ToscaWidgets
 py-trace2html                   ports/devel/py-trace2html
 py-traits                       ports/devel/py-traits
+py-transaction                  ports/devel/py-transaction
 py-trustedpickle                ports/security/py-trustedpickle
 py-turbocheetah                 ports/devel/py-turbocheetah
 py-turbodjango                  ports/www/py-turbodjango
@@ -20283,6 +20291,8 @@ rotix                           ports/textproc/rotix
 rotorouter                      ports/net-mgmt/rotorouter
 rottdc                          ports/games/rottdc
 roundcube                       ports/mail/roundcube
+roundcube-groupvice             ports/mail/roundcube-groupvice
+roundcube-mvision2              ports/mail/roundcube-mvision2
 roundup                         ports/www/roundup
 routers2                        ports/net-mgmt/routers2
 routers2-extensions             ports/net-mgmt/routers2-extensions
@@ -20706,6 +20716,7 @@ rubygem-authlogic               ports/devel/rubygem-authlogic
 rubygem-bioruby                 ports/devel/rubygem-bioruby
 rubygem-bluecloth               ports/www/rubygem-bluecloth
 rubygem-builder                 ports/devel/rubygem-builder
+rubygem-callsign                ports/comms/rubygem-callsign
 rubygem-capistrano              ports/sysutils/rubygem-capistrano
 rubygem-captcha                 ports/graphics/rubygem-captcha
 rubygem-chronic                 ports/devel/rubygem-chronic
@@ -20757,6 +20768,7 @@ rubygem-httparty                ports/www/rubygem-httparty
 rubygem-httpclient              ports/www/rubygem-httpclient
 rubygem-icalendar               ports/devel/rubygem-icalendar
 rubygem-igraph                  ports/devel/rubygem-igraph
+rubygem-imagesize               ports/graphics/rubygem-imagesize
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
@@ -23124,6 +23136,7 @@ wackamole                       ports/net/wackamole
 wacko                           ports/www/wacko
 wadcomblog                      ports/www/wadcomblog
 wahcade                         ports/emulators/wahcade
+waheela                         ports/audio/waheela
 waiho                           ports/ftp/waiho
 waimea                          ports/x11-wm/waimea
 waimea-devel                    ports/x11-wm/waimea-devel
