@@ -10,7 +10,7 @@ PORTNAME=	opendx
 PORTVERSION=	4.4.4
 PORTREVISION=	2
 CATEGORIES=	graphics math
-MASTER_SITES=	http://opendx.npaci.edu/source/
+MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
 
 MAINTAINER=	stephen@missouri.edu
