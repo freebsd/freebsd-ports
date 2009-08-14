@@ -8,7 +8,7 @@
 PORTNAME=	miniupnpc
 PORTVERSION=	1.3
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
 MAINTAINER=	dinoex@FreeBSD.org
