@@ -109,7 +109,6 @@ include/mythtv/libmythui/mythimage.h
 include/mythtv/libmythui/mythlistbutton.h
 include/mythtv/libmythui/mythmainwindow.h
 include/mythtv/libmythui/mythpainter.h
-include/mythtv/libmythui/mythpainter_ogl.h
 include/mythtv/libmythui/mythpainter_qt.h
 include/mythtv/libmythui/mythscreenstack.h
 include/mythtv/libmythui/mythscreentype.h

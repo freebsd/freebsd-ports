@@ -7,7 +7,7 @@
 
 PORTNAME=	mythtv-frontend
 PORTVERSION=	0.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/
@@ -37,8 +37,7 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC="${QMAKESPEC}"
 
 CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" CPPFLAGS="${CPPFLAGS}  ${QTCPPFLAGS}" \
-		QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}" \
-		CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+		QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}" LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-v4l --disable-ivtv --disable-firewire \
 		--disable-dvb --disable-dbox2 --disable-hdhomerun --disable-iptv \
@@ -63,6 +62,10 @@ pre-everything::
 	@${ECHO_MSG} "    make WITH_OPENGL=yes install clean"
 	@${ECHO_MSG}
 	@sleep 3
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	${WRKSRC}/configure
 
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
