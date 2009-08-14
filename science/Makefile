@@ -72,6 +72,7 @@
     SUBDIR += libint
     SUBDIR += liblinear
     SUBDIR += liboglappth
+    SUBDIR += libquantum
     SUBDIR += libsvm
     SUBDIR += libsvm-python
     SUBDIR += linsmith

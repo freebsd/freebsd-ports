@@ -1,0 +1,5 @@
+lib/libquantum.a
+lib/libquantum.la
+lib/libquantum.so
+lib/libquantum.so.7
+include/quantum.h

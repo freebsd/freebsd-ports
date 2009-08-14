@@ -1,0 +1,7 @@
+libquantum is a C library for the simulation of quantum
+mechanics, with a special focus laid to quantum computing.
+It started as a pure quantum computer simulator, but
+support for general quantum simulation has been recently
+added.
+
+WWW:	http://www.libquantum.de/
