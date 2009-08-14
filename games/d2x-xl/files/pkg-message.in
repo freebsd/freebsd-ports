@@ -1,8 +1,29 @@
 ************************************************************
-You need to get data files from an original Descent 2 or 1
-CD or from the free demo and place them in:
+You need to get data files from an original Descent 2 CD.
+The CD contains a file named descent2.sow which must be
+extracted with unarj to:
 
   %%DATADIR%%/data
+
+After extraction the following files may be deleted:
+
+  d2-2plyr.hog
+  d2-2plyr.mn2
+  d2.bat
+  d2chaos.hog
+  d2chaos.mn2
+  d2icons.dll
+  descent2.dem
+  descentg.ini
+  endnote.txt
+  modem.lst
+  pcxview.exe
+  readme.txt
+
+If you want the original movies to play back, copy *.mvl
+from the CD to:
+
+  %%DATADIR%%/movies
 
 See http://www.descent2.de/ for more information and addons.
 ************************************************************
