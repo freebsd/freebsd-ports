@@ -31,7 +31,7 @@ $ooo_milestone=~ s/m//;
 ####
 ### Customize according your needs
 $path_to_testttol = "/usr/local/openoffice.org-vcltesttool/program";
-$path_to_ooo = "/usr/local/openoffice.org-$ooo_tag/openoffice.org3/program"
+$path_to_ooo = "/usr/local/openoffice.org-$ooo_tag/openoffice.org3/program";
 #for other environments
 #$path_to_testttol = "/opt/openoffice-vcltesttool/testtool.bin";
 #$path_to_ooo = "/usr/lib/openoffice/program";
@@ -123,3 +123,10 @@ print TESTTOOLRC "[LRU]\n";
 print TESTTOOLRC "MaxLRU=4\n";
 
 close(TESTTOOLRC);
+
+###########
+#checking hid.lst (generated and QUASTe)
+system ("cat $path_to_ooo/../../hid.lst | sort > hid.lst.genrated\n");
+system ("sed 's/\r//' hid.lst | sort > hid.lst.quaste\n");
+system ("diff -u hid.lst.genrated hid.lst.quaste > hid.lst.diff\n");
+system ("cat hid.lst.diff\n");
