@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MooseX/SemiAffordanceAccessor.pm
+%%SITE_PERL%%/MooseX/SemiAffordanceAccessor/Role/Attribute.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/SemiAffordanceAccessor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/MooseX/SemiAffordanceAccessor/Role
+@dirrmtry %%SITE_PERL%%/MooseX/SemiAffordanceAccessor
+@dirrmtry %%SITE_PERL%%/MooseX
