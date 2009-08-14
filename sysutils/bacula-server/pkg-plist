@@ -53,6 +53,8 @@ sbin/dbcheck
 %%DATADIR%%/mtx-changer
 %%DATADIR%%/mtx-changer.conf
 %%DATADIR%%/query.sql
+%%DATADIR%%/startmysql
+%%DATADIR%%/stopmysql
 %%DATADIR%%/update_bacula_tables
 %%DATADIR%%/update_%%DBTYPE%%_tables
 

@@ -1,7 +1,7 @@
 ################################################################################
 
 NOTE:
-Sample files are installed in ${PREFIX}/etc:
+Sample files are installed in %%PREFIX%%/etc:
 bconsole.conf.sample, bacula-barcodes.sample, bacula-fd.conf.sample
 
   Please read this file:
