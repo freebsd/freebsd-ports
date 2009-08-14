@@ -8,7 +8,7 @@
 PORTNAME=	sympa
 PORTVERSION=	5.4.4
 CATEGORIES=	mail
-MASTER_SITES?=	http://www.sympa.org/distribution/
+MASTER_SITES?=	http://www.sympa.org/distribution/old/
 
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Sympa is an electronic mailing list manager
