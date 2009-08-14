@@ -2209,6 +2209,7 @@
     SUBDIR += pecl-bbcode
     SUBDIR += pecl-bcompiler
     SUBDIR += pecl-expect
+    SUBDIR += pecl-gearman
     SUBDIR += pecl-hidef
     SUBDIR += pecl-htscanner
     SUBDIR += pecl-inclued
