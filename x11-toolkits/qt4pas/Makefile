@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qt4pas
-PORTVERSION=	1.68
+PORTVERSION=	1.70
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://users.telenet.be/Jan.Van.hijfte/qtforfpc/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/V/}_Qt${QT4_VER_MIN}
@@ -16,9 +16,9 @@ COMMENT=	Qt4 binding for FreePascal
 
 USE_LDCONFIG=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui
+QT_COMPONENTS=	corelib gui network script webkit
 
-QT4_VER_MIN=	4.4.3
+QT4_VER_MIN=	4.5.0
 
 .include <bsd.port.pre.mk>
 
