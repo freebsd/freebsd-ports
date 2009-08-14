@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	1.79
+PORTVERSION=	2.00
 CATEGORIES=	editors gnome
-MASTER_SITES=	SF \
-		http://www.scintilla.org/
-MASTER_SITE_SUBDIR=	scintilla
+MASTER_SITES=	SFP/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A full-featured SCIntilla based Text Editor for GTK/GNOME
 
-LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
+LIB_DEPENDS=	scintilla.2:${PORTSDIR}/x11-toolkits/scintilla
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
@@ -28,16 +26,6 @@ MAKEFILE=	makefile
 SUB_FILES=	pkg-message
 
 MAN1=		scite.1
-
-.if defined(PACKAGE_BUILDING)
-IGNORE=		requires x11-toolkits/scintilla to be built with GTK+2 support
-.endif
-
-pre-configure:
-	@if [ -n "`${PKG_INFO} -E 'scintilla-[0-9]*' 2> /dev/null`" ]; then \
-		${ECHO_CMD} "${PKGNAME}: requires x11-toolkits/scintilla to be built with GTK+2."; \
-		${FALSE}; \
-	fi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]CC[)]|(CXX)|g ; s|gcc|$$(CC)|g ; s| -Os||g' \
@@ -62,7 +50,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DOCSDIR}
 .endif
 
+.if !defined(NOPORTDOCS)
 post-install:
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
