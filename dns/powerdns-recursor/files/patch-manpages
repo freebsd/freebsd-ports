@@ -4,8 +4,8 @@
  .\"    Manual: 
  .\"    Source: 
  .\"
--.TH "PDNS_RECURSOR" "1" "03/22/2008" "" ""
-+.TH "PDNS_RECURSOR" "8" "03/22/2008" "" ""
+-.TH "PDNS_RECURSOR" "1" "07/30/2009" "" ""
++.TH "PDNS_RECURSOR" "8" "07/30/2009" "" ""
  .\" disable hyphenation
  .nh
  .\" disable justification (adjust text to left margin only)
@@ -13,10 +13,10 @@
  \fIpdns_recursor\fR [\-\-daemon] [\-\-local\-address] [\-\-help, \-h] [\-\-allow\-from]
  .sp
  .SH "DESCRIPTION"
--pdns_recursor(1) is a high performance, simple and secure recursing nameserver. It currently powers over two million internet connections.
-+pdns_recursor(8) is a high performance, simple and secure recursing nameserver. It currently powers over two million internet connections.
+-pdns_recursor(1) is a high performance, simple and secure recursing nameserver\&. It currently powers over two million internet connections\&.
++pdns_recursor(8) is a high performance, simple and secure recursing nameserver\&. It currently powers over two million internet connections\&.
  .sp
- The recursor is configured via a configuration file, but each item in that file can be overridden on the command line.
+ The recursor is configured via a configuration file, but each item in that file can be overridden on the command line\&.
  .sp
 @@ -243,7 +243,7 @@
  Website: http://wiki.powerdns.com, http://www.powerdns.com
@@ -33,19 +33,19 @@
  .\"    Manual: 
  .\"    Source: 
  .\"
--.TH "REC_CONTROL" "1" "03/16/2008" "" ""
-+.TH "REC_CONTROL" "8" "03/16/2008" "" ""
+-.TH "REC_CONTROL" "1" "07/30/2009" "" ""
++.TH "REC_CONTROL" "8" "07/30/2009" "" ""
  .\" disable hyphenation
  .nh
  .\" disable justification (adjust text to left margin only)
 @@ -16,7 +16,7 @@
- \fIrec_control\fR [\-\-help] [\-\-socket\-dir] [\-\-socket\-pid] command ..
+ \fIrec_control\fR [\-\-help] [\-\-socket\-dir] [\-\-socket\-pid] command \&.\&.
  .sp
  .SH "DESCRIPTION"
--rec_control(1) allows the operator to control a running instance of the pdns_recursor.
-+rec_control(8) allows the operator to control a running instance of the pdns_recursor.
+-rec_control(1) allows the operator to control a running instance of the pdns_recursor\&.
++rec_control(8) allows the operator to control a running instance of the pdns_recursor\&.
  .sp
- The commands that can be passed to the recursor are described on http://doc.powerdns.com/rec\-control.html
+ The commands that can be passed to the recursor are described on http://doc\&.powerdns\&.com/rec\-control\&.html
  .sp
 @@ -105,7 +105,7 @@
  Website: http://wiki.powerdns.com, http://www.powerdns.com
