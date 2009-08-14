@@ -6,19 +6,23 @@
 #
 
 PORTNAME=	d2x-xl
-PORTVERSION=	1.13.127
+PORTVERSION=	1.14.94
 CATEGORIES=	games
-MASTER_SITES=	http://www.descent2.de/downloads/
-DISTFILES=	${PORTNAME}-src-${PORTVERSION}.rar
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|sourceforge/%SUBDIR%/$|project/${PORTNAME}/Linux/|}:source \
+		${MASTER_SITE_SOURCEFORGE:S|sourceforge/%SUBDIR%/$|project/${PORTNAME}/Data/|}:data \
+		http://www.descent2.de/downloads/:source,data
+DISTFILES=	${PORTNAME}-src-${PORTVERSION}.rar:source \
+		${PORTNAME}-data-1.14.0.rar:data
 
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	Community Unix port of Descent 2 Game
 
-EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
+EXTRACT_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug --enable-release=yes --with-sharepath=${PREFIX}/share/d2x-xl
-USE_SDL=	sdl mixer
+CONFIGURE_ARGS=	--disable-debug --enable-release=yes \
+		--with-sharepath=${PREFIX}/share/d2x-xl
+USE_SDL=	sdl mixer image
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal:110 \
 		autoheader:262 \
@@ -29,7 +33,6 @@ AUTOMAKE_ARGS=	--add-missing --copy
 USE_DOS2UNIX=	missing depcomp
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	bin/d2x-xl
 
 OPTIONS=	OPENGL "Use OpenGL for 3D graphics" on
 
@@ -39,8 +42,12 @@ OPTIONS=	OPENGL "Use OpenGL for 3D graphics" on
 BROKEN=		Does not compile on sparc64
 .endif
 
+.if ${OSVERSION} <= 700000
+BROKEN=		does not compile
+.endif
+
 .if !defined(WITHOUT_OPENGL)
-USE_GL=		gl glu glut
+USE_GL=		gl glu
 CONFIGURE_ARGS+=--with-opengl
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 .endif
@@ -48,8 +55,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \
-		unrar x ${DISTDIR}/${DISTFILES} >/dev/null && \
-		unrar x ${PORTNAME}-makefiles.rar >/dev/null && \
+		unrar x -o+ ${DISTDIR}/${PORTNAME}-src-${PORTVERSION}.rar >/dev/null && \
+		unrar x -o+ ${PORTNAME}-makefiles.rar >/dev/null && \
 		${CHMOD} +x configure
 
 post-patch:
@@ -60,6 +67,9 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'
 
 do-install:
+	@${MKDIR} ${DATADIR}
+	@cd ${DATADIR} && \
+		unrar x -o+ ${DISTDIR}/${PORTNAME}-data-1.14.0.rar >/dev/null
 	${INSTALL_PROGRAM} ${WRKSRC}/d2x-xl ${PREFIX}/bin/d2x-xl
 	@${CAT} ${PKGMESSAGE}
 
