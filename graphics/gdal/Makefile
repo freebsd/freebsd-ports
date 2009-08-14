@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--with-expat=no
 .endif
 
 .if defined(WITH_GEOS)
-LIB_DEPENDS+=		geos.0:${PORTSDIR}/graphics/geos
+LIB_DEPENDS+=		geos.7:${PORTSDIR}/graphics/geos
 CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
 .else
 CONFIGURE_ARGS+=	--with-geos=no
