@@ -1,0 +1,4 @@
+WebService::Google::Sets provides function-based access to the Sets
+service hosted at Google Labs, http://labs.google.com/sets .
+
+WWW: http://search.cpan.org/dist/WebService-Google-Sets/
