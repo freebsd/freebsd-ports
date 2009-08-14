@@ -9,7 +9,8 @@ PORTNAME=	gmpc-lyrics
 PORTVERSION=	0.18.0
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/download/Programs/gmpc/${PORTVERSION}/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/0.18.0/${PORTVERSION}/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A Lyrics Provider plugin for gmpc

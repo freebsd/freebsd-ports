@@ -10,8 +10,8 @@ PORTVERSION=	0.18.0
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
-
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
+		http://freebsd.unixfreunde.de/sources/
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Full featured GTK2 client for musicpd
 

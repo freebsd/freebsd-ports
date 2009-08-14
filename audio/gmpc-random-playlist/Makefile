@@ -9,7 +9,8 @@ PORTNAME=	gmpc-random-playlist
 PORTVERSION=	0.15.5.0
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/
+MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A random playlist plugin for gmpc
