@@ -9,7 +9,8 @@ PORTNAME=	hdf
 PORTVERSION=	4.2r3
 PORTREVISION=	4
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/:src \
+MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF/prev-releases/HDF4.2r3/src/:src \
+		ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/:src \
 		ftp://ftp.hdfgroup.org/HDF/Documentation/${PORTVERSION}/:doc \
 		ftp://ftp.hdfgroup.org/HDF/Documentation/HDF4.2r3/:doc \
 		http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/:doc_szip
