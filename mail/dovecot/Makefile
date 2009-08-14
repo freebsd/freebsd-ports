@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.1.16
+PORTVERSION=	1.2.3
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.dovecot.org/releases/1.1/
+MASTER_SITES=	http://www.dovecot.org/releases/1.2/
 
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	Secure and compact IMAP and POP3 servers
@@ -219,6 +219,7 @@ post-patch:
 .endif
 	@${LN} -f ${WRKSRC}/dovecot-example.conf		${WRKSRC}/dovecot.conf
 	@${LN} -f ${WRKSRC}/doc/dovecot-db-example.conf		${WRKSRC}/doc/dovecot-db.conf
+	@${LN} -f ${WRKSRC}/doc/dovecot-dict-sql-example.conf	${WRKSRC}/doc/dovecot-dict-sql.conf
 	@${LN} -f ${WRKSRC}/doc/dovecot-ldap-example.conf	${WRKSRC}/doc/dovecot-ldap.conf
 	@${LN} -f ${WRKSRC}/doc/dovecot-sql-example.conf	${WRKSRC}/doc/dovecot-sql.conf
 
@@ -228,6 +229,7 @@ pre-install:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/dovecot.conf ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-db.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-dict-sql.conf ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-ldap.conf ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-sql.conf ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf ${EXAMPLESDIR}
