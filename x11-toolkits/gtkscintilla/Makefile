@@ -18,6 +18,9 @@ COMMENT=	A wrapper for the Scintilla editing component
 
 LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
 
+DEPRECATED=	no longer under development, last release in 2002
+EXPIRATION_DATE=	2009-10-13
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
