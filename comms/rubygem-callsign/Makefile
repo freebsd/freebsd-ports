@@ -6,7 +6,7 @@
 
 PORTNAME=	callsign
 PORTVERSION=	1.0.3
-CATEGORIES=	comms rubygems
+CATEGORIES=	comms rubygems hamradio
 MASTER_SITES=	RF
 
 MAINTAINER=	codeblock@eighthbit.net
