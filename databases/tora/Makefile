@@ -66,4 +66,7 @@ pre-configure:
 		${PREFIX2FIX:S|^|${WRKSRC}/|}
 .endif
 
+pre-build:
+	cd ${WRKSRC}/src && ${MAKE} clean-local
+
 .include <bsd.port.post.mk>
