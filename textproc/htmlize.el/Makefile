@@ -23,6 +23,8 @@ EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKSRC}/htmlize.el
 
+BROKEN=		checksum mismatch
+
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/htmlize.el \
 		${EMACS_SITE_LISPDIR}/htmlize.elc
 
