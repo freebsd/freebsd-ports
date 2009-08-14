@@ -7,14 +7,14 @@
 
 PORTNAME=	spatialite
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Spatial Extensions for SQLite
 
-LIB_DEPENDS=	geos_c.6:${PORTSDIR}/graphics/geos/ \
+LIB_DEPENDS=	geos_c.7:${PORTSDIR}/graphics/geos/ \
 		proj.5:${PORTSDIR}/graphics/proj/ \
 		iconv.3:${PORTSDIR}/converters/libiconv/
 
