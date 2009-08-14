@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtualbox
-DISTVERSION=	2.2.51.r20457
-PORTREVISION=	3
+DISTVERSION=	3.0.51r22226
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -26,6 +25,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		kmk:${PORTSDIR}/devel/kBuild
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		xslt.2:${PORTSDIR}/textproc/libxslt \
 		curl.5:${PORTSDIR}/ftp/curl
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -35,7 +35,6 @@ USE_SDL=	sdl
 USE_CDRTOOLS=	yes
 USE_PYTHON=	yes
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.51r20457
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
@@ -45,7 +44,7 @@ CONFLICTS=	bcc-[0-9]*
 VBOXGROUP?=	vboxusers
 VBOXGID?=	920
 VBOX_FRONTENDS=	VBoxBFE VBoxHeadless VBoxSDL
-VBOX_GUEST_VER=	2.2.4
+VBOX_GUEST_VER=	3.0.4
 
 SUB_FILES=	pkg-install
 
@@ -57,7 +56,8 @@ OPTIONS=	QT4 "Build with QT4 Frontend" on \
 		DEBUG "Build with debugging symbols" off \
 		GUESTADDITIONS "Build with Guest Additions" off \
 		DBUS "Build with D-Bus and HAL support" on \
-		PULSEAUDIO "Build with PulseAudio" off
+		PULSEAUDIO "Build with PulseAudio" off \
+		NLS "Native language support" on
 
 .include <bsd.port.options.mk>
 
@@ -77,6 +77,7 @@ PLIST_SUB+=	QT4=""
 .else
 CONFIGURE_ARGS+=--disable-qt4
 PLIST_SUB+=	QT4="@comment "
+WITHOUT_NLS=	yes
 .endif
 
 .if defined(WITH_GUESTADDITIONS)
@@ -103,6 +104,12 @@ CONFIGURE_ARGS+=--disable-dbus
 
 .if !defined(WITH_PULSEAUDIO)
 CONFIGURE_ARGS+=--disable-pulse
+.endif
+
+.if !defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !exists(${SRC_BASE}/sys/kern/bus_if.m)
@@ -154,8 +161,19 @@ do-install:
 	${MKDIR} ${KMODDIR}
 	${INSTALL_KLD} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/vboxdrv.ko ${KMODDIR}
 
+	${MKDIR} ${DATADIR}
+	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom && ${COPYTREE_SHARE} "idl samples" ${DATADIR})
+
+	${MKDIR} ${PREFIX}/include/virtualbox
+	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/include && ${COPYTREE_SHARE} "*" ${PREFIX}/include/virtualbox)
+
 	${MKDIR} ${PREFIX}/lib/virtualbox
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 components" ${PREFIX}/lib/virtualbox)
+
+.if !defined(WITHOUT_NLS)
+	${MKDIR} ${PREFIX}/lib/virtualbox/nls
+	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/VirtualBox/qtnls && ${COPYTREE_SHARE} "*.qm" ${PREFIX}/lib/virtualbox/nls)
+.endif
 
 	${MKDIR} ${PREFIX}/bin
 .for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS} VBoxTestOGL
@@ -175,6 +193,9 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/
 	${LN} -sf ${PREFIX}/lib/virtualbox/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/VBoxGuestAdditions.iso
 .endif
+
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/virtualbox
+	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/python && ${COPYTREE_SHARE} "*" ${PYTHONPREFIX_SITELIBDIR}/virtualbox)
 
 post-install:
 	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
