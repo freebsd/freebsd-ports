@@ -1,5 +1,5 @@
---- makefile.orig	2009-03-19 14:14:18.000000000 +0100
-+++ makefile	2009-03-25 05:24:41.000000000 +0100
+--- makefile.orig	2009-08-14 00:29:05.000000000 +0200
++++ makefile	2009-08-14 00:31:28.000000000 +0200
 @@ -59,7 +59,7 @@
  ifeq ($(OSD),windows)
  TARGETOS = win32
@@ -38,25 +38,24 @@
  
  # add an EXE suffix to get the final emulator name
  EMULATOR = $(FULLNAME)$(EXE)
-@@ -337,7 +337,7 @@
- # and make all errors into warnings
+@@ -338,7 +338,7 @@
  ifneq ($(OPTIMIZE),0)
  ifneq ($(TARGETOS),os2)
+ ifndef IA64
 -CCOMFLAGS += -Werror -fno-strict-aliasing $(ARCHOPTS)
 +CCOMFLAGS += -fno-strict-aliasing $(ARCHOPTS)
  else
- CCOMFLAGS += -fno-strict-aliasing $(ARCHOPTS)
  endif
-@@ -379,7 +379,7 @@
+ else
+@@ -382,6 +382,7 @@
  	-I$(SRC)/lib/util \
  	-I$(SRC)/osd \
  	-I$(SRC)/osd/$(OSD) \
--
-+	-I$(LOCALBASE)/include
++	-I$(LOCALBASE)/include \
  
  
- #-------------------------------------------------
-@@ -392,7 +392,7 @@
+ 
+@@ -395,7 +396,7 @@
  ifneq ($(TARGETOS),macosx)
  ifneq ($(TARGETOS),os2)
  ifneq ($(TARGETOS),solaris)
