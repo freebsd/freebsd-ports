@@ -18,6 +18,9 @@ COMMENT=	A Python bindings for gtkscintilla library
 
 LIB_DEPENDS=	gtkscintilla.0:${PORTSDIR}/x11-toolkits/gtkscintilla
 
+DEPRECATED=     no longer under development, last release in 2002
+EXPIRATION_DATE=        2009-10-13
+
 USE_PYTHON=	yes
 USE_GNOME=	gtk12
 MAKE_ENV=	PYTHON_INCLUDE="${PYTHON_INCLUDEDIR}"
