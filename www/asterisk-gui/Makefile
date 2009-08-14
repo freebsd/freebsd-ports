@@ -9,7 +9,7 @@ PORTNAME=	asterisk-gui
 PORTVERSION=	2.0.4
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.digium.com/pub/telephony/asterisk-gui/releases/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk-gui/releases/
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	An asterisk ajax web manager
