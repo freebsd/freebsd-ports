@@ -14,8 +14,9 @@ MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
-PATCH_SITES=	http://sctp.fh-muenster.de/dtls/
-PATCHFILES=	dtls-bugs.patch
+#PATCH_SITES=	http://sctp.fh-muenster.de/dtls/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCHFILES=	dtls-bugs-2009-05-18.patch
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
