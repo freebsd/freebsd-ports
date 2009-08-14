@@ -17,6 +17,8 @@ COMMENT=	A multi-threaded proxy server for Asterisk
 
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
+BROKEN=		does not fetch
+
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 
