@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jag
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	games
 MASTER_SITES=	http://jag.xlabsoft.com/files/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,6 +32,6 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} PREFIX=${PREFIX} Game.pro
+		${QMAKE} ${QMAKEFLAGS} Game.pro
 
 .include <bsd.port.mk>
