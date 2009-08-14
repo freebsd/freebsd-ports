@@ -1,3 +1,6 @@
 MD5 (rpm-5.0.3.tar.gz) = b3df4e54e84cf3344ce6b76fa2a8d5bf
 SHA256 (rpm-5.0.3.tar.gz) = 224d15c52511b453b2a63e6447b279a622c03af5fe373a67757979f4d00cd042
 SIZE (rpm-5.0.3.tar.gz) = 9337992
+MD5 (rpm-5.0.3.1.patch) = 4f572f9eaf70c8f7884495fd56217f3b
+SHA256 (rpm-5.0.3.1.patch) = 868633cf46089b19f5770021ec779e155a1547321734bbc4fc995cbfc02e7099
+SIZE (rpm-5.0.3.1.patch) = 483

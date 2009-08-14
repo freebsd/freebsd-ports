@@ -6,14 +6,16 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-5.0/
+PATCHFILES=	rpm-5.0.3.1.patch
+PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	afb@rpm5.org
 COMMENT=	The RPM Package Manager
 
-LIB_DEPENDS=	db-4.5:${PORTSDIR}/databases/db45 \
+LIB_DEPENDS=	db-${DB_VERSION:C/(.)/\1./}:${PORTSDIR}/databases/db${DB_VERSION} \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		popt.0:${PORTSDIR}/devel/popt \
 		beecrypt.10:${PORTSDIR}/security/beecrypt \
