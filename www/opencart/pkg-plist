@@ -14,9 +14,9 @@
 %%WWWDIR%%/admin/controller/common/logout.php
 %%WWWDIR%%/admin/controller/common/menu.php
 %%WWWDIR%%/admin/controller/common/permission.php
+%%WWWDIR%%/admin/controller/customer/contact.php
 %%WWWDIR%%/admin/controller/customer/coupon.php
 %%WWWDIR%%/admin/controller/customer/customer.php
-%%WWWDIR%%/admin/controller/customer/mail.php
 %%WWWDIR%%/admin/controller/customer/order.php
 %%WWWDIR%%/admin/controller/error/not_found.php
 %%WWWDIR%%/admin/controller/error/permission.php
@@ -25,11 +25,12 @@
 %%WWWDIR%%/admin/controller/extension/payment.php
 %%WWWDIR%%/admin/controller/extension/shipping.php
 %%WWWDIR%%/admin/controller/extension/total.php
-%%WWWDIR%%/admin/controller/feed/bidhopper.php
-%%WWWDIR%%/admin/controller/feed/bizrate.php
-%%WWWDIR%%/admin/controller/feed/edirectory.php
-%%WWWDIR%%/admin/controller/feed/froogle.php
-%%WWWDIR%%/admin/controller/feed/yahoo.php
+%%WWWDIR%%/admin/controller/feed/bidhopper.php_
+%%WWWDIR%%/admin/controller/feed/bizrate.php_
+%%WWWDIR%%/admin/controller/feed/edirectory.php_
+%%WWWDIR%%/admin/controller/feed/googlebase.php_
+%%WWWDIR%%/admin/controller/feed/shopping.php_
+%%WWWDIR%%/admin/controller/feed/yahoo.php_
 %%WWWDIR%%/admin/controller/localisation/country.php
 %%WWWDIR%%/admin/controller/localisation/currency.php
 %%WWWDIR%%/admin/controller/localisation/geo_zone.php
@@ -45,125 +46,71 @@
 %%WWWDIR%%/admin/controller/module/currency.php
 %%WWWDIR%%/admin/controller/module/information.php
 %%WWWDIR%%/admin/controller/module/manufacturer.php
-%%WWWDIR%%/admin/controller/payment/2checkout.php
-%%WWWDIR%%/admin/controller/payment/asiapay.php
-%%WWWDIR%%/admin/controller/payment/authorizenet.php
+%%WWWDIR%%/admin/controller/payment/asiapay.php_
+%%WWWDIR%%/admin/controller/payment/authorizenet_aim.php_
+%%WWWDIR%%/admin/controller/payment/authorizenet_sim.php_
 %%WWWDIR%%/admin/controller/payment/bank_transfer.php
-%%WWWDIR%%/admin/controller/payment/bluepay.php
-%%WWWDIR%%/admin/controller/payment/ccavenue.php
-%%WWWDIR%%/admin/controller/payment/ccnow.php
+%%WWWDIR%%/admin/controller/payment/bluepay.php_
+%%WWWDIR%%/admin/controller/payment/ccavenue.php_
+%%WWWDIR%%/admin/controller/payment/ccnow.php_
 %%WWWDIR%%/admin/controller/payment/cheque.php
-%%WWWDIR%%/admin/controller/payment/chronopay.php
+%%WWWDIR%%/admin/controller/payment/chronopay.php_
 %%WWWDIR%%/admin/controller/payment/cod.php
-%%WWWDIR%%/admin/controller/payment/egold.php
-%%WWWDIR%%/admin/controller/payment/eway.php
-%%WWWDIR%%/admin/controller/payment/hsbc.php
-%%WWWDIR%%/admin/controller/payment/linkpoint.php
-%%WWWDIR%%/admin/controller/payment/liqpay.php
-%%WWWDIR%%/admin/controller/payment/malse.php
+%%WWWDIR%%/admin/controller/payment/egold.php_
+%%WWWDIR%%/admin/controller/payment/eway.php_
+%%WWWDIR%%/admin/controller/payment/hsbc.php_
+%%WWWDIR%%/admin/controller/payment/linkpoint.php_
+%%WWWDIR%%/admin/controller/payment/liqpay.php_
+%%WWWDIR%%/admin/controller/payment/malse.php_
 %%WWWDIR%%/admin/controller/payment/moneybookers.php
-%%WWWDIR%%/admin/controller/payment/nochex.php
-%%WWWDIR%%/admin/controller/payment/payjunction.php
-%%WWWDIR%%/admin/controller/payment/paymate.php
-%%WWWDIR%%/admin/controller/payment/paypal.php
-%%WWWDIR%%/admin/controller/payment/protx.php
-%%WWWDIR%%/admin/controller/payment/psigate.php
-%%WWWDIR%%/admin/controller/payment/secpay.php
-%%WWWDIR%%/admin/controller/payment/verisign.php
+%%WWWDIR%%/admin/controller/payment/nochex.php_
+%%WWWDIR%%/admin/controller/payment/payjunction.php_
+%%WWWDIR%%/admin/controller/payment/paymate.php_
+%%WWWDIR%%/admin/controller/payment/paypoint.php_
+%%WWWDIR%%/admin/controller/payment/pp_direct.php
+%%WWWDIR%%/admin/controller/payment/pp_direct_uk.php
+%%WWWDIR%%/admin/controller/payment/pp_express.php_
+%%WWWDIR%%/admin/controller/payment/pp_express_uk.php_
+%%WWWDIR%%/admin/controller/payment/pp_standard.php
+%%WWWDIR%%/admin/controller/payment/psigate.php_
+%%WWWDIR%%/admin/controller/payment/sagepay.php
+%%WWWDIR%%/admin/controller/payment/twocheckout.php_
+%%WWWDIR%%/admin/controller/payment/verisign.php_
 %%WWWDIR%%/admin/controller/payment/worldpay.php
 %%WWWDIR%%/admin/controller/report/purchased.php
 %%WWWDIR%%/admin/controller/report/sale.php
 %%WWWDIR%%/admin/controller/report/viewed.php
 %%WWWDIR%%/admin/controller/setting/setting.php
-%%WWWDIR%%/admin/controller/shipping/fedex.php
+%%WWWDIR%%/admin/controller/shipping/citylink.php
+%%WWWDIR%%/admin/controller/shipping/fedex.php_
 %%WWWDIR%%/admin/controller/shipping/flat.php
 %%WWWDIR%%/admin/controller/shipping/free.php
 %%WWWDIR%%/admin/controller/shipping/item.php
-%%WWWDIR%%/admin/controller/shipping/percent.php
-%%WWWDIR%%/admin/controller/shipping/royal_mail.php
-%%WWWDIR%%/admin/controller/shipping/ups.php
-%%WWWDIR%%/admin/controller/shipping/usps.php
+%%WWWDIR%%/admin/controller/shipping/parcelforce_48.php
+%%WWWDIR%%/admin/controller/shipping/royal_mail_1st_class_recorded.php_
+%%WWWDIR%%/admin/controller/shipping/royal_mail_1st_class_standard.php_
+%%WWWDIR%%/admin/controller/shipping/royal_mail_2nd_class_recorded.php_
+%%WWWDIR%%/admin/controller/shipping/royal_mail_2nd_class_standard.php_
+%%WWWDIR%%/admin/controller/shipping/royal_mail_airmail.php_
+%%WWWDIR%%/admin/controller/shipping/royal_mail_airsure.php_
+%%WWWDIR%%/admin/controller/shipping/royal_mail_international_signed.php_
+%%WWWDIR%%/admin/controller/shipping/royal_mail_special_delivery.php_
+%%WWWDIR%%/admin/controller/shipping/royal_mail_standard_parcels.php_
+%%WWWDIR%%/admin/controller/shipping/royal_mail_surface.php_
+%%WWWDIR%%/admin/controller/shipping/ups.php_
+%%WWWDIR%%/admin/controller/shipping/usps.php_
 %%WWWDIR%%/admin/controller/shipping/weight.php
-%%WWWDIR%%/admin/controller/shipping/zone.php
 %%WWWDIR%%/admin/controller/tool/backup.php
 %%WWWDIR%%/admin/controller/total/coupon.php
+%%WWWDIR%%/admin/controller/total/handling.php
 %%WWWDIR%%/admin/controller/total/low_order_fee.php
 %%WWWDIR%%/admin/controller/total/shipping.php
 %%WWWDIR%%/admin/controller/total/sub_total.php
 %%WWWDIR%%/admin/controller/total/tax.php
 %%WWWDIR%%/admin/controller/total/total.php
 %%WWWDIR%%/admin/controller/user/user.php
-%%WWWDIR%%/admin/controller/user/user_group.php
+%%WWWDIR%%/admin/controller/user/user_permission.php
 %%WWWDIR%%/admin/index.php
-%%WWWDIR%%/admin/language/dutch/catalog/category.php
-%%WWWDIR%%/admin/language/dutch/catalog/download.php
-%%WWWDIR%%/admin/language/dutch/catalog/image.php
-%%WWWDIR%%/admin/language/dutch/catalog/information.php
-%%WWWDIR%%/admin/language/dutch/catalog/manufacturer.php
-%%WWWDIR%%/admin/language/dutch/catalog/product.php
-%%WWWDIR%%/admin/language/dutch/catalog/review.php
-%%WWWDIR%%/admin/language/dutch/common/home.php
-%%WWWDIR%%/admin/language/dutch/common/login.php
-%%WWWDIR%%/admin/language/dutch/common/permission.php
-%%WWWDIR%%/admin/language/dutch/customer/coupon.php
-%%WWWDIR%%/admin/language/dutch/customer/customer.php
-%%WWWDIR%%/admin/language/dutch/customer/order.php
-%%WWWDIR%%/admin/language/dutch/customer/send_mail.php
-%%WWWDIR%%/admin/language/dutch/dutch.php
-%%WWWDIR%%/admin/language/dutch/error/not_found.php
-%%WWWDIR%%/admin/language/dutch/error/permission.php
-%%WWWDIR%%/admin/language/dutch/extension/payment.php
-%%WWWDIR%%/admin/language/dutch/extension/shipping.php
-%%WWWDIR%%/admin/language/dutch/extension/total.php
-%%WWWDIR%%/admin/language/dutch/google/optimizer.php
-%%WWWDIR%%/admin/language/dutch/localisation/country.php
-%%WWWDIR%%/admin/language/dutch/localisation/currency.php
-%%WWWDIR%%/admin/language/dutch/localisation/geo_zone.php
-%%WWWDIR%%/admin/language/dutch/localisation/language.php
-%%WWWDIR%%/admin/language/dutch/localisation/order_status.php
-%%WWWDIR%%/admin/language/dutch/localisation/stock_status.php
-%%WWWDIR%%/admin/language/dutch/localisation/tax_class.php
-%%WWWDIR%%/admin/language/dutch/localisation/weight_class.php
-%%WWWDIR%%/admin/language/dutch/localisation/zone.php
-%%WWWDIR%%/admin/language/dutch/module/footer.php
-%%WWWDIR%%/admin/language/dutch/module/header.php
-%%WWWDIR%%/admin/language/dutch/module/menu.php
-%%WWWDIR%%/admin/language/dutch/payment/2checkout.php
-%%WWWDIR%%/admin/language/dutch/payment/asiapay.php
-%%WWWDIR%%/admin/language/dutch/payment/authorizenet.php
-%%WWWDIR%%/admin/language/dutch/payment/bluepay.php
-%%WWWDIR%%/admin/language/dutch/payment/ccavenue.php
-%%WWWDIR%%/admin/language/dutch/payment/ccnow.php
-%%WWWDIR%%/admin/language/dutch/payment/chronopay.php
-%%WWWDIR%%/admin/language/dutch/payment/cod.php
-%%WWWDIR%%/admin/language/dutch/payment/egold.php
-%%WWWDIR%%/admin/language/dutch/payment/eway.php
-%%WWWDIR%%/admin/language/dutch/payment/hsbc.php
-%%WWWDIR%%/admin/language/dutch/payment/linkpoint.php
-%%WWWDIR%%/admin/language/dutch/payment/malse.php
-%%WWWDIR%%/admin/language/dutch/payment/moneybookers.php
-%%WWWDIR%%/admin/language/dutch/payment/nochex.php
-%%WWWDIR%%/admin/language/dutch/payment/payjunction.php
-%%WWWDIR%%/admin/language/dutch/payment/paymate.php
-%%WWWDIR%%/admin/language/dutch/payment/paypal.php
-%%WWWDIR%%/admin/language/dutch/payment/protx.php
-%%WWWDIR%%/admin/language/dutch/payment/psigate.php
-%%WWWDIR%%/admin/language/dutch/payment/secpay.php
-%%WWWDIR%%/admin/language/dutch/payment/verisign.php
-%%WWWDIR%%/admin/language/dutch/payment/worldpay.php
-%%WWWDIR%%/admin/language/dutch/report/purchased.php
-%%WWWDIR%%/admin/language/dutch/report/sale.php
-%%WWWDIR%%/admin/language/dutch/report/viewed.php
-%%WWWDIR%%/admin/language/dutch/setting/mail.php
-%%WWWDIR%%/admin/language/dutch/setting/setting.php
-%%WWWDIR%%/admin/language/dutch/shipping/flat.php
-%%WWWDIR%%/admin/language/dutch/shipping/item.php
-%%WWWDIR%%/admin/language/dutch/shipping/zone.php
-%%WWWDIR%%/admin/language/dutch/tool/backup.php
-%%WWWDIR%%/admin/language/dutch/total/coupon.php
-%%WWWDIR%%/admin/language/dutch/total/shipping.php
-%%WWWDIR%%/admin/language/dutch/user/user.php
-%%WWWDIR%%/admin/language/dutch/user/user_group.php
 %%WWWDIR%%/admin/language/english/catalog/category.php
 %%WWWDIR%%/admin/language/english/catalog/download.php
 %%WWWDIR%%/admin/language/english/catalog/image.php
@@ -177,9 +124,9 @@
 %%WWWDIR%%/admin/language/english/common/login.php
 %%WWWDIR%%/admin/language/english/common/menu.php
 %%WWWDIR%%/admin/language/english/common/permission.php
+%%WWWDIR%%/admin/language/english/customer/contact.php
 %%WWWDIR%%/admin/language/english/customer/coupon.php
 %%WWWDIR%%/admin/language/english/customer/customer.php
-%%WWWDIR%%/admin/language/english/customer/mail.php
 %%WWWDIR%%/admin/language/english/customer/order.php
 %%WWWDIR%%/admin/language/english/english.php
 %%WWWDIR%%/admin/language/english/error/not_found.php
@@ -192,7 +139,8 @@
 %%WWWDIR%%/admin/language/english/feed/bidhopper.php
 %%WWWDIR%%/admin/language/english/feed/bizrate.php
 %%WWWDIR%%/admin/language/english/feed/edirectory.php
-%%WWWDIR%%/admin/language/english/feed/froogle.php
+%%WWWDIR%%/admin/language/english/feed/googlebase.php
+%%WWWDIR%%/admin/language/english/feed/shopping.php
 %%WWWDIR%%/admin/language/english/feed/yahoo.php
 %%WWWDIR%%/admin/language/english/localisation/country.php
 %%WWWDIR%%/admin/language/english/localisation/currency.php
@@ -210,9 +158,9 @@
 %%WWWDIR%%/admin/language/english/module/feed.php
 %%WWWDIR%%/admin/language/english/module/information.php
 %%WWWDIR%%/admin/language/english/module/manufacturer.php
-%%WWWDIR%%/admin/language/english/payment/2checkout.php
 %%WWWDIR%%/admin/language/english/payment/asiapay.php
-%%WWWDIR%%/admin/language/english/payment/authorizenet.php
+%%WWWDIR%%/admin/language/english/payment/authorizenet_aim.php
+%%WWWDIR%%/admin/language/english/payment/authorizenet_sim.php
 %%WWWDIR%%/admin/language/english/payment/bank_transfer.php
 %%WWWDIR%%/admin/language/english/payment/bluepay.php
 %%WWWDIR%%/admin/language/english/payment/ccavenue.php
@@ -230,28 +178,43 @@
 %%WWWDIR%%/admin/language/english/payment/nochex.php
 %%WWWDIR%%/admin/language/english/payment/payjunction.php
 %%WWWDIR%%/admin/language/english/payment/paymate.php
-%%WWWDIR%%/admin/language/english/payment/paypal.php
-%%WWWDIR%%/admin/language/english/payment/protx.php
+%%WWWDIR%%/admin/language/english/payment/paypoint.php
+%%WWWDIR%%/admin/language/english/payment/pp_direct.php
+%%WWWDIR%%/admin/language/english/payment/pp_direct_uk.php
+%%WWWDIR%%/admin/language/english/payment/pp_express.php
+%%WWWDIR%%/admin/language/english/payment/pp_express_uk.php
+%%WWWDIR%%/admin/language/english/payment/pp_standard.php
 %%WWWDIR%%/admin/language/english/payment/psigate.php
-%%WWWDIR%%/admin/language/english/payment/secpay.php
+%%WWWDIR%%/admin/language/english/payment/sagepay.php
+%%WWWDIR%%/admin/language/english/payment/twocheckout.php
 %%WWWDIR%%/admin/language/english/payment/verisign.php
 %%WWWDIR%%/admin/language/english/payment/worldpay.php
 %%WWWDIR%%/admin/language/english/report/purchased.php
 %%WWWDIR%%/admin/language/english/report/sale.php
 %%WWWDIR%%/admin/language/english/report/viewed.php
 %%WWWDIR%%/admin/language/english/setting/setting.php
+%%WWWDIR%%/admin/language/english/shipping/citylink.php
 %%WWWDIR%%/admin/language/english/shipping/fedex.php
 %%WWWDIR%%/admin/language/english/shipping/flat.php
 %%WWWDIR%%/admin/language/english/shipping/free.php
 %%WWWDIR%%/admin/language/english/shipping/item.php
-%%WWWDIR%%/admin/language/english/shipping/percent.php
-%%WWWDIR%%/admin/language/english/shipping/royal_mail.php
+%%WWWDIR%%/admin/language/english/shipping/parcelforce_48.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_1st_class_recorded.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_1st_class_standard.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_2nd_class_recorded.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_2nd_class_standard.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_airmail.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_airsure.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_international_signed.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_special_delivery.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_standard_parcels.php
+%%WWWDIR%%/admin/language/english/shipping/royal_mail_surface.php
 %%WWWDIR%%/admin/language/english/shipping/ups.php
 %%WWWDIR%%/admin/language/english/shipping/usps.php
 %%WWWDIR%%/admin/language/english/shipping/weight.php
-%%WWWDIR%%/admin/language/english/shipping/zone.php
 %%WWWDIR%%/admin/language/english/tool/backup.php
 %%WWWDIR%%/admin/language/english/total/coupon.php
+%%WWWDIR%%/admin/language/english/total/handling.php
 %%WWWDIR%%/admin/language/english/total/low_order_fee.php
 %%WWWDIR%%/admin/language/english/total/shipping.php
 %%WWWDIR%%/admin/language/english/total/sub_total.php
@@ -259,408 +222,6 @@
 %%WWWDIR%%/admin/language/english/total/total.php
 %%WWWDIR%%/admin/language/english/user/user.php
 %%WWWDIR%%/admin/language/english/user/user_group.php
-%%WWWDIR%%/admin/language/french/catalog/category.php
-%%WWWDIR%%/admin/language/french/catalog/download.php
-%%WWWDIR%%/admin/language/french/catalog/image.php
-%%WWWDIR%%/admin/language/french/catalog/information.php
-%%WWWDIR%%/admin/language/french/catalog/manufacturer.php
-%%WWWDIR%%/admin/language/french/catalog/product.php
-%%WWWDIR%%/admin/language/french/catalog/review.php
-%%WWWDIR%%/admin/language/french/common/home.php
-%%WWWDIR%%/admin/language/french/common/login.php
-%%WWWDIR%%/admin/language/french/common/permission.php
-%%WWWDIR%%/admin/language/french/customer/coupon.php
-%%WWWDIR%%/admin/language/french/customer/customer.php
-%%WWWDIR%%/admin/language/french/customer/mail.php
-%%WWWDIR%%/admin/language/french/customer/order.php
-%%WWWDIR%%/admin/language/french/error/not_found.php
-%%WWWDIR%%/admin/language/french/error/permission.php
-%%WWWDIR%%/admin/language/french/extension/payment.php
-%%WWWDIR%%/admin/language/french/extension/shipping.php
-%%WWWDIR%%/admin/language/french/extension/total.php
-%%WWWDIR%%/admin/language/french/french.php
-%%WWWDIR%%/admin/language/french/localisation/country.php
-%%WWWDIR%%/admin/language/french/localisation/currency.php
-%%WWWDIR%%/admin/language/french/localisation/geo_zone.php
-%%WWWDIR%%/admin/language/french/localisation/language.php
-%%WWWDIR%%/admin/language/french/localisation/order_status.php
-%%WWWDIR%%/admin/language/french/localisation/stock_status.php
-%%WWWDIR%%/admin/language/french/localisation/tax_class.php
-%%WWWDIR%%/admin/language/french/localisation/weight_class.php
-%%WWWDIR%%/admin/language/french/localisation/zone.php
-%%WWWDIR%%/admin/language/french/module/footer.php
-%%WWWDIR%%/admin/language/french/module/header.php
-%%WWWDIR%%/admin/language/french/module/menu.php
-%%WWWDIR%%/admin/language/french/payment/2checkout.php
-%%WWWDIR%%/admin/language/french/payment/asiapay.php
-%%WWWDIR%%/admin/language/french/payment/authorizenet.php
-%%WWWDIR%%/admin/language/french/payment/bluepay.php
-%%WWWDIR%%/admin/language/french/payment/ccavenue.php
-%%WWWDIR%%/admin/language/french/payment/ccnow.php
-%%WWWDIR%%/admin/language/french/payment/chronopay.php
-%%WWWDIR%%/admin/language/french/payment/cod.php
-%%WWWDIR%%/admin/language/french/payment/egold.php
-%%WWWDIR%%/admin/language/french/payment/eway.php
-%%WWWDIR%%/admin/language/french/payment/hsbc.php
-%%WWWDIR%%/admin/language/french/payment/linkpoint.php
-%%WWWDIR%%/admin/language/french/payment/malse.php
-%%WWWDIR%%/admin/language/french/payment/moneybookers.php
-%%WWWDIR%%/admin/language/french/payment/nochex.php
-%%WWWDIR%%/admin/language/french/payment/payjunction.php
-%%WWWDIR%%/admin/language/french/payment/paymate.php
-%%WWWDIR%%/admin/language/french/payment/paypal.php
-%%WWWDIR%%/admin/language/french/payment/protx.php
-%%WWWDIR%%/admin/language/french/payment/psigate.php
-%%WWWDIR%%/admin/language/french/payment/secpay.php
-%%WWWDIR%%/admin/language/french/payment/verisign.php
-%%WWWDIR%%/admin/language/french/payment/worldpay.php
-%%WWWDIR%%/admin/language/french/report/purchased.php
-%%WWWDIR%%/admin/language/french/report/sale.php
-%%WWWDIR%%/admin/language/french/report/viewed.php
-%%WWWDIR%%/admin/language/french/setting/setting.php
-%%WWWDIR%%/admin/language/french/shipping/flat.php
-%%WWWDIR%%/admin/language/french/shipping/item.php
-%%WWWDIR%%/admin/language/french/shipping/zone.php
-%%WWWDIR%%/admin/language/french/tool/backup.php
-%%WWWDIR%%/admin/language/french/total/coupon.php
-%%WWWDIR%%/admin/language/french/total/low_order_fee.php
-%%WWWDIR%%/admin/language/french/total/shipping.php
-%%WWWDIR%%/admin/language/french/total/sub_total.php
-%%WWWDIR%%/admin/language/french/total/tax.php
-%%WWWDIR%%/admin/language/french/total/total.php
-%%WWWDIR%%/admin/language/french/user/user.php
-%%WWWDIR%%/admin/language/french/user/user_group.php
-%%WWWDIR%%/admin/language/hungarian/catalog/category.php
-%%WWWDIR%%/admin/language/hungarian/catalog/download.php
-%%WWWDIR%%/admin/language/hungarian/catalog/image.php
-%%WWWDIR%%/admin/language/hungarian/catalog/information.php
-%%WWWDIR%%/admin/language/hungarian/catalog/manufacturer.php
-%%WWWDIR%%/admin/language/hungarian/catalog/product.php
-%%WWWDIR%%/admin/language/hungarian/catalog/review.php
-%%WWWDIR%%/admin/language/hungarian/common/home.php
-%%WWWDIR%%/admin/language/hungarian/common/login.php
-%%WWWDIR%%/admin/language/hungarian/common/permission.php
-%%WWWDIR%%/admin/language/hungarian/customer/coupon.php
-%%WWWDIR%%/admin/language/hungarian/customer/customer.php
-%%WWWDIR%%/admin/language/hungarian/customer/mail.php
-%%WWWDIR%%/admin/language/hungarian/customer/order.php
-%%WWWDIR%%/admin/language/hungarian/error/not_found.php
-%%WWWDIR%%/admin/language/hungarian/error/permission.php
-%%WWWDIR%%/admin/language/hungarian/extension/payment.php
-%%WWWDIR%%/admin/language/hungarian/extension/shipping.php
-%%WWWDIR%%/admin/language/hungarian/extension/total.php
-%%WWWDIR%%/admin/language/hungarian/hungarian.php
-%%WWWDIR%%/admin/language/hungarian/localisation/country.php
-%%WWWDIR%%/admin/language/hungarian/localisation/currency.php
-%%WWWDIR%%/admin/language/hungarian/localisation/geo_zone.php
-%%WWWDIR%%/admin/language/hungarian/localisation/language.php
-%%WWWDIR%%/admin/language/hungarian/localisation/order_status.php
-%%WWWDIR%%/admin/language/hungarian/localisation/stock_status.php
-%%WWWDIR%%/admin/language/hungarian/localisation/tax_class.php
-%%WWWDIR%%/admin/language/hungarian/localisation/weight_class.php
-%%WWWDIR%%/admin/language/hungarian/localisation/zone.php
-%%WWWDIR%%/admin/language/hungarian/module/footer.php
-%%WWWDIR%%/admin/language/hungarian/module/header.php
-%%WWWDIR%%/admin/language/hungarian/module/menu.php
-%%WWWDIR%%/admin/language/hungarian/payment/2checkout.php
-%%WWWDIR%%/admin/language/hungarian/payment/asiapay.php
-%%WWWDIR%%/admin/language/hungarian/payment/authorizenet.php
-%%WWWDIR%%/admin/language/hungarian/payment/bluepay.php
-%%WWWDIR%%/admin/language/hungarian/payment/ccavenue.php
-%%WWWDIR%%/admin/language/hungarian/payment/ccnow.php
-%%WWWDIR%%/admin/language/hungarian/payment/chronopay.php
-%%WWWDIR%%/admin/language/hungarian/payment/cod.php
-%%WWWDIR%%/admin/language/hungarian/payment/egold.php
-%%WWWDIR%%/admin/language/hungarian/payment/eway.php
-%%WWWDIR%%/admin/language/hungarian/payment/hsbc.php
-%%WWWDIR%%/admin/language/hungarian/payment/linkpoint.php
-%%WWWDIR%%/admin/language/hungarian/payment/malse.php
-%%WWWDIR%%/admin/language/hungarian/payment/moneybookers.php
-%%WWWDIR%%/admin/language/hungarian/payment/nochex.php
-%%WWWDIR%%/admin/language/hungarian/payment/payjunction.php
-%%WWWDIR%%/admin/language/hungarian/payment/paymate.php
-%%WWWDIR%%/admin/language/hungarian/payment/paypal.php
-%%WWWDIR%%/admin/language/hungarian/payment/protx.php
-%%WWWDIR%%/admin/language/hungarian/payment/psigate.php
-%%WWWDIR%%/admin/language/hungarian/payment/secpay.php
-%%WWWDIR%%/admin/language/hungarian/payment/verisign.php
-%%WWWDIR%%/admin/language/hungarian/payment/worldpay.php
-%%WWWDIR%%/admin/language/hungarian/report/purchased.php
-%%WWWDIR%%/admin/language/hungarian/report/sale.php
-%%WWWDIR%%/admin/language/hungarian/report/viewed.php
-%%WWWDIR%%/admin/language/hungarian/setting/setting.php
-%%WWWDIR%%/admin/language/hungarian/shipping/flat.php
-%%WWWDIR%%/admin/language/hungarian/shipping/item.php
-%%WWWDIR%%/admin/language/hungarian/shipping/zone.php
-%%WWWDIR%%/admin/language/hungarian/tool/backup.php
-%%WWWDIR%%/admin/language/hungarian/total/coupon.php
-%%WWWDIR%%/admin/language/hungarian/total/low_order_fee.php
-%%WWWDIR%%/admin/language/hungarian/total/shipping.php
-%%WWWDIR%%/admin/language/hungarian/total/sub_total.php
-%%WWWDIR%%/admin/language/hungarian/total/tax.php
-%%WWWDIR%%/admin/language/hungarian/total/total.php
-%%WWWDIR%%/admin/language/hungarian/user/user.php
-%%WWWDIR%%/admin/language/hungarian/user/user_group.php
-%%WWWDIR%%/admin/language/italian/catalog/category.php
-%%WWWDIR%%/admin/language/italian/catalog/download.php
-%%WWWDIR%%/admin/language/italian/catalog/image.php
-%%WWWDIR%%/admin/language/italian/catalog/information.php
-%%WWWDIR%%/admin/language/italian/catalog/manufacturer.php
-%%WWWDIR%%/admin/language/italian/catalog/product.php
-%%WWWDIR%%/admin/language/italian/catalog/review.php
-%%WWWDIR%%/admin/language/italian/common/home.php
-%%WWWDIR%%/admin/language/italian/common/login.php
-%%WWWDIR%%/admin/language/italian/common/permission.php
-%%WWWDIR%%/admin/language/italian/customer/coupon.php
-%%WWWDIR%%/admin/language/italian/customer/customer.php
-%%WWWDIR%%/admin/language/italian/customer/order.php
-%%WWWDIR%%/admin/language/italian/customer/send_mail.php
-%%WWWDIR%%/admin/language/italian/error/not_found.php
-%%WWWDIR%%/admin/language/italian/error/permission.php
-%%WWWDIR%%/admin/language/italian/extension/payment.php
-%%WWWDIR%%/admin/language/italian/extension/shipping.php
-%%WWWDIR%%/admin/language/italian/extension/total.php
-%%WWWDIR%%/admin/language/italian/google/optimizer.php
-%%WWWDIR%%/admin/language/italian/italian.php
-%%WWWDIR%%/admin/language/italian/localisation/country.php
-%%WWWDIR%%/admin/language/italian/localisation/currency.php
-%%WWWDIR%%/admin/language/italian/localisation/geo_zone.php
-%%WWWDIR%%/admin/language/italian/localisation/language.php
-%%WWWDIR%%/admin/language/italian/localisation/order_status.php
-%%WWWDIR%%/admin/language/italian/localisation/stock_status.php
-%%WWWDIR%%/admin/language/italian/localisation/tax_class.php
-%%WWWDIR%%/admin/language/italian/localisation/weight_class.php
-%%WWWDIR%%/admin/language/italian/localisation/zone.php
-%%WWWDIR%%/admin/language/italian/module/footer.php
-%%WWWDIR%%/admin/language/italian/module/header.php
-%%WWWDIR%%/admin/language/italian/module/menu.php
-%%WWWDIR%%/admin/language/italian/payment/2checkout.php
-%%WWWDIR%%/admin/language/italian/payment/asiapay.php
-%%WWWDIR%%/admin/language/italian/payment/authorizenet.php
-%%WWWDIR%%/admin/language/italian/payment/bluepay.php
-%%WWWDIR%%/admin/language/italian/payment/ccavenue.php
-%%WWWDIR%%/admin/language/italian/payment/ccnow.php
-%%WWWDIR%%/admin/language/italian/payment/chronopay.php
-%%WWWDIR%%/admin/language/italian/payment/cod.php
-%%WWWDIR%%/admin/language/italian/payment/egold.php
-%%WWWDIR%%/admin/language/italian/payment/eway.php
-%%WWWDIR%%/admin/language/italian/payment/hsbc.php
-%%WWWDIR%%/admin/language/italian/payment/linkpoint.php
-%%WWWDIR%%/admin/language/italian/payment/malse.php
-%%WWWDIR%%/admin/language/italian/payment/moneybookers.php
-%%WWWDIR%%/admin/language/italian/payment/nochex.php
-%%WWWDIR%%/admin/language/italian/payment/payjunction.php
-%%WWWDIR%%/admin/language/italian/payment/paymate.php
-%%WWWDIR%%/admin/language/italian/payment/paypal.php
-%%WWWDIR%%/admin/language/italian/payment/protx.php
-%%WWWDIR%%/admin/language/italian/payment/psigate.php
-%%WWWDIR%%/admin/language/italian/payment/secpay.php
-%%WWWDIR%%/admin/language/italian/payment/verisign.php
-%%WWWDIR%%/admin/language/italian/payment/worldpay.php
-%%WWWDIR%%/admin/language/italian/report/purchased.php
-%%WWWDIR%%/admin/language/italian/report/sale.php
-%%WWWDIR%%/admin/language/italian/report/viewed.php
-%%WWWDIR%%/admin/language/italian/setting/mail.php
-%%WWWDIR%%/admin/language/italian/setting/setting.php
-%%WWWDIR%%/admin/language/italian/shipping/flat.php
-%%WWWDIR%%/admin/language/italian/shipping/item.php
-%%WWWDIR%%/admin/language/italian/shipping/zone.php
-%%WWWDIR%%/admin/language/italian/tool/backup.php
-%%WWWDIR%%/admin/language/italian/total/coupon.php
-%%WWWDIR%%/admin/language/italian/total/shipping.php
-%%WWWDIR%%/admin/language/italian/user/user.php
-%%WWWDIR%%/admin/language/italian/user/user_group.php
-%%WWWDIR%%/admin/language/japanese/catalog/category.php
-%%WWWDIR%%/admin/language/japanese/catalog/download.php
-%%WWWDIR%%/admin/language/japanese/catalog/image.php
-%%WWWDIR%%/admin/language/japanese/catalog/information.php
-%%WWWDIR%%/admin/language/japanese/catalog/manufacturer.php
-%%WWWDIR%%/admin/language/japanese/catalog/product.php
-%%WWWDIR%%/admin/language/japanese/catalog/review.php
-%%WWWDIR%%/admin/language/japanese/common/home.php
-%%WWWDIR%%/admin/language/japanese/common/login.php
-%%WWWDIR%%/admin/language/japanese/common/permission.php
-%%WWWDIR%%/admin/language/japanese/customer/coupon.php
-%%WWWDIR%%/admin/language/japanese/customer/customer.php
-%%WWWDIR%%/admin/language/japanese/customer/order.php
-%%WWWDIR%%/admin/language/japanese/customer/send_mail.php
-%%WWWDIR%%/admin/language/japanese/error/not_found.php
-%%WWWDIR%%/admin/language/japanese/error/permission.php
-%%WWWDIR%%/admin/language/japanese/extension/payment.php
-%%WWWDIR%%/admin/language/japanese/extension/shipping.php
-%%WWWDIR%%/admin/language/japanese/extension/total.php
-%%WWWDIR%%/admin/language/japanese/google/optimizer.php
-%%WWWDIR%%/admin/language/japanese/japanese.php
-%%WWWDIR%%/admin/language/japanese/localisation/country.php
-%%WWWDIR%%/admin/language/japanese/localisation/currency.php
-%%WWWDIR%%/admin/language/japanese/localisation/geo_zone.php
-%%WWWDIR%%/admin/language/japanese/localisation/language.php
-%%WWWDIR%%/admin/language/japanese/localisation/order_status.php
-%%WWWDIR%%/admin/language/japanese/localisation/stock_status.php
-%%WWWDIR%%/admin/language/japanese/localisation/tax_class.php
-%%WWWDIR%%/admin/language/japanese/localisation/weight_class.php
-%%WWWDIR%%/admin/language/japanese/localisation/zone.php
-%%WWWDIR%%/admin/language/japanese/module/footer.php
-%%WWWDIR%%/admin/language/japanese/module/header.php
-%%WWWDIR%%/admin/language/japanese/module/menu.php
-%%WWWDIR%%/admin/language/japanese/payment/2checkout.php
-%%WWWDIR%%/admin/language/japanese/payment/asiapay.php
-%%WWWDIR%%/admin/language/japanese/payment/authorizenet.php
-%%WWWDIR%%/admin/language/japanese/payment/bluepay.php
-%%WWWDIR%%/admin/language/japanese/payment/ccavenue.php
-%%WWWDIR%%/admin/language/japanese/payment/ccnow.php
-%%WWWDIR%%/admin/language/japanese/payment/chronopay.php
-%%WWWDIR%%/admin/language/japanese/payment/cod.php
-%%WWWDIR%%/admin/language/japanese/payment/egold.php
-%%WWWDIR%%/admin/language/japanese/payment/eway.php
-%%WWWDIR%%/admin/language/japanese/payment/hsbc.php
-%%WWWDIR%%/admin/language/japanese/payment/linkpoint.php
-%%WWWDIR%%/admin/language/japanese/payment/malse.php
-%%WWWDIR%%/admin/language/japanese/payment/moneybookers.php
-%%WWWDIR%%/admin/language/japanese/payment/nochex.php
-%%WWWDIR%%/admin/language/japanese/payment/payjunction.php
-%%WWWDIR%%/admin/language/japanese/payment/paymate.php
-%%WWWDIR%%/admin/language/japanese/payment/paypal.php
-%%WWWDIR%%/admin/language/japanese/payment/protx.php
-%%WWWDIR%%/admin/language/japanese/payment/psigate.php
-%%WWWDIR%%/admin/language/japanese/payment/secpay.php
-%%WWWDIR%%/admin/language/japanese/payment/verisign.php
-%%WWWDIR%%/admin/language/japanese/payment/worldpay.php
-%%WWWDIR%%/admin/language/japanese/report/purchased.php
-%%WWWDIR%%/admin/language/japanese/report/sale.php
-%%WWWDIR%%/admin/language/japanese/report/viewed.php
-%%WWWDIR%%/admin/language/japanese/setting/mail.php
-%%WWWDIR%%/admin/language/japanese/setting/setting.php
-%%WWWDIR%%/admin/language/japanese/shipping/flat.php
-%%WWWDIR%%/admin/language/japanese/shipping/item.php
-%%WWWDIR%%/admin/language/japanese/shipping/zone.php
-%%WWWDIR%%/admin/language/japanese/tool/backup.php
-%%WWWDIR%%/admin/language/japanese/total/coupon.php
-%%WWWDIR%%/admin/language/japanese/total/shipping.php
-%%WWWDIR%%/admin/language/japanese/user/user.php
-%%WWWDIR%%/admin/language/japanese/user/user_group.php
-%%WWWDIR%%/admin/language/persian/catalog/category.php
-%%WWWDIR%%/admin/language/persian/catalog/download.php
-%%WWWDIR%%/admin/language/persian/catalog/image.php
-%%WWWDIR%%/admin/language/persian/catalog/information.php
-%%WWWDIR%%/admin/language/persian/catalog/manufacturer.php
-%%WWWDIR%%/admin/language/persian/catalog/option.php
-%%WWWDIR%%/admin/language/persian/catalog/product.php
-%%WWWDIR%%/admin/language/persian/catalog/review.php
-%%WWWDIR%%/admin/language/persian/common/home.php
-%%WWWDIR%%/admin/language/persian/common/login.php
-%%WWWDIR%%/admin/language/persian/common/permission.php
-%%WWWDIR%%/admin/language/persian/customer/coupon.php
-%%WWWDIR%%/admin/language/persian/customer/customer.php
-%%WWWDIR%%/admin/language/persian/customer/order.php
-%%WWWDIR%%/admin/language/persian/customer/send_mail.php
-%%WWWDIR%%/admin/language/persian/error/not_found.php
-%%WWWDIR%%/admin/language/persian/error/permission.php
-%%WWWDIR%%/admin/language/persian/extension/payment.php
-%%WWWDIR%%/admin/language/persian/extension/shipping.php
-%%WWWDIR%%/admin/language/persian/extension/total.php
-%%WWWDIR%%/admin/language/persian/localisation/country.php
-%%WWWDIR%%/admin/language/persian/localisation/currency.php
-%%WWWDIR%%/admin/language/persian/localisation/geo_zone.php
-%%WWWDIR%%/admin/language/persian/localisation/language.php
-%%WWWDIR%%/admin/language/persian/localisation/order_status.php
-%%WWWDIR%%/admin/language/persian/localisation/stock_status.php
-%%WWWDIR%%/admin/language/persian/localisation/tax_class.php
-%%WWWDIR%%/admin/language/persian/localisation/weight_class.php
-%%WWWDIR%%/admin/language/persian/localisation/zone.php
-%%WWWDIR%%/admin/language/persian/module/footer.php
-%%WWWDIR%%/admin/language/persian/module/header.php
-%%WWWDIR%%/admin/language/persian/module/menu.php
-%%WWWDIR%%/admin/language/persian/payment/cod.php
-%%WWWDIR%%/admin/language/persian/payment/paypal.php
-%%WWWDIR%%/admin/language/persian/persian.php
-%%WWWDIR%%/admin/language/persian/report/purchased.php
-%%WWWDIR%%/admin/language/persian/report/sale.php
-%%WWWDIR%%/admin/language/persian/report/viewed.php
-%%WWWDIR%%/admin/language/persian/setting/mail.php
-%%WWWDIR%%/admin/language/persian/setting/setting.php
-%%WWWDIR%%/admin/language/persian/shipping/flat.php
-%%WWWDIR%%/admin/language/persian/shipping/item.php
-%%WWWDIR%%/admin/language/persian/shipping/zone.php
-%%WWWDIR%%/admin/language/persian/tool/backup.php
-%%WWWDIR%%/admin/language/persian/total/coupon.php
-%%WWWDIR%%/admin/language/persian/total/shipping.php
-%%WWWDIR%%/admin/language/persian/user/user.php
-%%WWWDIR%%/admin/language/persian/user/user_group.php
-%%WWWDIR%%/admin/language/russian/catalog/category.php
-%%WWWDIR%%/admin/language/russian/catalog/download.php
-%%WWWDIR%%/admin/language/russian/catalog/image.php
-%%WWWDIR%%/admin/language/russian/catalog/information.php
-%%WWWDIR%%/admin/language/russian/catalog/manufacturer.php
-%%WWWDIR%%/admin/language/russian/catalog/product.php
-%%WWWDIR%%/admin/language/russian/catalog/review.php
-%%WWWDIR%%/admin/language/russian/common/home.php
-%%WWWDIR%%/admin/language/russian/common/login.php
-%%WWWDIR%%/admin/language/russian/common/permission.php
-%%WWWDIR%%/admin/language/russian/customer/coupon.php
-%%WWWDIR%%/admin/language/russian/customer/customer.php
-%%WWWDIR%%/admin/language/russian/customer/mail.php
-%%WWWDIR%%/admin/language/russian/customer/order.php
-%%WWWDIR%%/admin/language/russian/error/not_found.php
-%%WWWDIR%%/admin/language/russian/error/permission.php
-%%WWWDIR%%/admin/language/russian/extension/payment.php
-%%WWWDIR%%/admin/language/russian/extension/shipping.php
-%%WWWDIR%%/admin/language/russian/extension/total.php
-%%WWWDIR%%/admin/language/russian/google/optimizer.php
-%%WWWDIR%%/admin/language/russian/localisation/country.php
-%%WWWDIR%%/admin/language/russian/localisation/currency.php
-%%WWWDIR%%/admin/language/russian/localisation/geo_zone.php
-%%WWWDIR%%/admin/language/russian/localisation/language.php
-%%WWWDIR%%/admin/language/russian/localisation/order_status.php
-%%WWWDIR%%/admin/language/russian/localisation/stock_status.php
-%%WWWDIR%%/admin/language/russian/localisation/tax_class.php
-%%WWWDIR%%/admin/language/russian/localisation/weather.txt
-%%WWWDIR%%/admin/language/russian/localisation/weight_class.php
-%%WWWDIR%%/admin/language/russian/localisation/zone.php
-%%WWWDIR%%/admin/language/russian/module/footer.php
-%%WWWDIR%%/admin/language/russian/module/header.php
-%%WWWDIR%%/admin/language/russian/module/menu.php
-%%WWWDIR%%/admin/language/russian/payment/2checkout.php
-%%WWWDIR%%/admin/language/russian/payment/asiapay.php
-%%WWWDIR%%/admin/language/russian/payment/authorizenet.php
-%%WWWDIR%%/admin/language/russian/payment/bluepay.php
-%%WWWDIR%%/admin/language/russian/payment/ccavenue.php
-%%WWWDIR%%/admin/language/russian/payment/ccnow.php
-%%WWWDIR%%/admin/language/russian/payment/chronopay.php
-%%WWWDIR%%/admin/language/russian/payment/cod.php
-%%WWWDIR%%/admin/language/russian/payment/egold.php
-%%WWWDIR%%/admin/language/russian/payment/eway.php
-%%WWWDIR%%/admin/language/russian/payment/hsbc.php
-%%WWWDIR%%/admin/language/russian/payment/linkpoint.php
-%%WWWDIR%%/admin/language/russian/payment/malse.php
-%%WWWDIR%%/admin/language/russian/payment/moneybookers.php
-%%WWWDIR%%/admin/language/russian/payment/nochex.php
-%%WWWDIR%%/admin/language/russian/payment/payjunction.php
-%%WWWDIR%%/admin/language/russian/payment/paymate.php
-%%WWWDIR%%/admin/language/russian/payment/paypal.php
-%%WWWDIR%%/admin/language/russian/payment/protx.php
-%%WWWDIR%%/admin/language/russian/payment/psigate.php
-%%WWWDIR%%/admin/language/russian/payment/secpay.php
-%%WWWDIR%%/admin/language/russian/payment/verisign.php
-%%WWWDIR%%/admin/language/russian/payment/worldpay.php
-%%WWWDIR%%/admin/language/russian/report/purchased.php
-%%WWWDIR%%/admin/language/russian/report/sale.php
-%%WWWDIR%%/admin/language/russian/report/viewed.php
-%%WWWDIR%%/admin/language/russian/russian.php
-%%WWWDIR%%/admin/language/russian/setting/mail.php
-%%WWWDIR%%/admin/language/russian/setting/setting.php
-%%WWWDIR%%/admin/language/russian/shipping/flat.php
-%%WWWDIR%%/admin/language/russian/shipping/item.php
-%%WWWDIR%%/admin/language/russian/shipping/zone.php
-%%WWWDIR%%/admin/language/russian/tool/backup.php
-%%WWWDIR%%/admin/language/russian/total/coupon.php
-%%WWWDIR%%/admin/language/russian/total/low_order_fee.php
-%%WWWDIR%%/admin/language/russian/total/shipping.php
-%%WWWDIR%%/admin/language/russian/total/sub_total.php
-%%WWWDIR%%/admin/language/russian/total/tax.php
-%%WWWDIR%%/admin/language/russian/total/total.php
-%%WWWDIR%%/admin/language/russian/user/user.php
-%%WWWDIR%%/admin/language/russian/user/user_group.php
 %%WWWDIR%%/admin/model/catalog/category.php
 %%WWWDIR%%/admin/model/catalog/download.php
 %%WWWDIR%%/admin/model/catalog/information.php
@@ -683,23 +244,25 @@
 %%WWWDIR%%/admin/model/setting/extension.php
 %%WWWDIR%%/admin/model/setting/setting.php
 %%WWWDIR%%/admin/model/tool/backup.php
+%%WWWDIR%%/admin/model/tool/seo_url.php
 %%WWWDIR%%/admin/model/user/user.php
 %%WWWDIR%%/admin/model/user/user_group.php
 %%WWWDIR%%/admin/php.ini
 %%WWWDIR%%/admin/view/image/add.png
+%%WWWDIR%%/admin/view/image/animated.gif
 %%WWWDIR%%/admin/view/image/arrow_right.png
 %%WWWDIR%%/admin/view/image/asc.png
 %%WWWDIR%%/admin/view/image/background.png
 %%WWWDIR%%/admin/view/image/button_back.png
+%%WWWDIR%%/admin/view/image/button_backup.png
 %%WWWDIR%%/admin/view/image/button_cancel.png
 %%WWWDIR%%/admin/view/image/button_delete.png
-%%WWWDIR%%/admin/view/image/button_export.png
-%%WWWDIR%%/admin/view/image/button_import.png
 %%WWWDIR%%/admin/view/image/button_insert.png
 %%WWWDIR%%/admin/view/image/button_invoice.png
 %%WWWDIR%%/admin/view/image/button_login.png
 %%WWWDIR%%/admin/view/image/button_middle.png
 %%WWWDIR%%/admin/view/image/button_print.png
+%%WWWDIR%%/admin/view/image/button_restore.png
 %%WWWDIR%%/admin/view/image/button_right.png
 %%WWWDIR%%/admin/view/image/button_save.png
 %%WWWDIR%%/admin/view/image/button_send.png
@@ -955,6 +518,10 @@
 %%WWWDIR%%/admin/view/image/login.png
 %%WWWDIR%%/admin/view/image/login_bottom.png
 %%WWWDIR%%/admin/view/image/login_top.png
+%%WWWDIR%%/admin/view/image/payment/moneybookers.png
+%%WWWDIR%%/admin/view/image/payment/nochex.png
+%%WWWDIR%%/admin/view/image/payment/paypal.png
+%%WWWDIR%%/admin/view/image/payment/sagepay.png
 %%WWWDIR%%/admin/view/image/start.png
 %%WWWDIR%%/admin/view/image/tab_1.png
 %%WWWDIR%%/admin/view/image/tab_2.png
@@ -1435,9 +1002,9 @@
 %%WWWDIR%%/admin/view/javascript/fckeditor/fcktemplates.xml
 %%WWWDIR%%/admin/view/javascript/fckeditor/fckutils.cfm
 %%WWWDIR%%/admin/view/javascript/fckeditor/license.txt
-%%WWWDIR%%/admin/view/javascript/jquery/jquery-1.3.min.js
+%%WWWDIR%%/admin/view/javascript/jquery/ajaxupload.3.1.js
+%%WWWDIR%%/admin/view/javascript/jquery/jquery-1.3.2.min.js
 %%WWWDIR%%/admin/view/javascript/jquery/jquery.form.js
-%%WWWDIR%%/admin/view/javascript/jquery/jquery.ocupload-1.1.2.js
 %%WWWDIR%%/admin/view/javascript/jquery/superfish/changelog.txt
 %%WWWDIR%%/admin/view/javascript/jquery/superfish/css/superfish-navbar.css
 %%WWWDIR%%/admin/view/javascript/jquery/superfish/css/superfish-vertical.css
@@ -1541,11 +1108,11 @@
 %%WWWDIR%%/admin/view/template/common/layout.tpl
 %%WWWDIR%%/admin/view/template/common/login.tpl
 %%WWWDIR%%/admin/view/template/common/menu.tpl
+%%WWWDIR%%/admin/view/template/customer/contact.tpl
 %%WWWDIR%%/admin/view/template/customer/coupon_form.tpl
 %%WWWDIR%%/admin/view/template/customer/coupon_list.tpl
 %%WWWDIR%%/admin/view/template/customer/customer_form.tpl
 %%WWWDIR%%/admin/view/template/customer/customer_list.tpl
-%%WWWDIR%%/admin/view/template/customer/mail.tpl
 %%WWWDIR%%/admin/view/template/customer/order_form.tpl
 %%WWWDIR%%/admin/view/template/customer/order_invoice.tpl
 %%WWWDIR%%/admin/view/template/customer/order_list.tpl
@@ -1580,9 +1147,9 @@
 %%WWWDIR%%/admin/view/template/module/currency.tpl
 %%WWWDIR%%/admin/view/template/module/information.tpl
 %%WWWDIR%%/admin/view/template/module/manufacturer.tpl
-%%WWWDIR%%/admin/view/template/payment/2checkout.tpl
 %%WWWDIR%%/admin/view/template/payment/asiapay.tpl
-%%WWWDIR%%/admin/view/template/payment/authorizenet.tpl
+%%WWWDIR%%/admin/view/template/payment/authorizenet_aim.tpl
+%%WWWDIR%%/admin/view/template/payment/authorizenet_sim.tpl
 %%WWWDIR%%/admin/view/template/payment/bank_transfer.tpl
 %%WWWDIR%%/admin/view/template/payment/bluepay.tpl
 %%WWWDIR%%/admin/view/template/payment/ccavenue.tpl
@@ -1600,22 +1167,41 @@
 %%WWWDIR%%/admin/view/template/payment/nochex.tpl
 %%WWWDIR%%/admin/view/template/payment/payjunction.tpl
 %%WWWDIR%%/admin/view/template/payment/paymate.tpl
-%%WWWDIR%%/admin/view/template/payment/paypal.tpl
-%%WWWDIR%%/admin/view/template/payment/protx.tpl
+%%WWWDIR%%/admin/view/template/payment/paypoint.tpl
+%%WWWDIR%%/admin/view/template/payment/pp_direct.tpl
+%%WWWDIR%%/admin/view/template/payment/pp_direct_uk.tpl
+%%WWWDIR%%/admin/view/template/payment/pp_express.tpl
+%%WWWDIR%%/admin/view/template/payment/pp_express_uk.tpl
+%%WWWDIR%%/admin/view/template/payment/pp_standard.tpl
 %%WWWDIR%%/admin/view/template/payment/psigate.tpl
-%%WWWDIR%%/admin/view/template/payment/secpay.tpl
+%%WWWDIR%%/admin/view/template/payment/sagepay.tpl
+%%WWWDIR%%/admin/view/template/payment/twocheckout.tpl
 %%WWWDIR%%/admin/view/template/payment/verisign.tpl
 %%WWWDIR%%/admin/view/template/payment/worldpay.tpl
 %%WWWDIR%%/admin/view/template/report/purchased.tpl
 %%WWWDIR%%/admin/view/template/report/sale.tpl
 %%WWWDIR%%/admin/view/template/report/viewed.tpl
 %%WWWDIR%%/admin/view/template/setting/setting.tpl
+%%WWWDIR%%/admin/view/template/shipping/citylink.tpl
 %%WWWDIR%%/admin/view/template/shipping/flat.tpl
 %%WWWDIR%%/admin/view/template/shipping/free.tpl
 %%WWWDIR%%/admin/view/template/shipping/item.tpl
-%%WWWDIR%%/admin/view/template/shipping/zone.tpl
+%%WWWDIR%%/admin/view/template/shipping/parcelforce_48.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_1st_class_recorded.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_1st_class_standard.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_2nd_class_recorded.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_2nd_class_standard.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_airmail.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_airsure.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_international_signed.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_special_delivery.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_standard_parcels.tpl
+%%WWWDIR%%/admin/view/template/shipping/royal_mail_surface.tpl
+%%WWWDIR%%/admin/view/template/shipping/ups.tpl
+%%WWWDIR%%/admin/view/template/shipping/weight.tpl
 %%WWWDIR%%/admin/view/template/tool/backup.tpl
 %%WWWDIR%%/admin/view/template/total/coupon.tpl
+%%WWWDIR%%/admin/view/template/total/handling.tpl
 %%WWWDIR%%/admin/view/template/total/low_order_fee.tpl
 %%WWWDIR%%/admin/view/template/total/shipping.tpl
 %%WWWDIR%%/admin/view/template/total/sub_total.tpl
@@ -1625,6 +1211,7 @@
 %%WWWDIR%%/admin/view/template/user/user_group_form.tpl
 %%WWWDIR%%/admin/view/template/user/user_group_list.tpl
 %%WWWDIR%%/admin/view/template/user/user_list.tpl
+%%WWWDIR%%/cache/index.html
 %%WWWDIR%%/catalog/controller/account/account.php
 %%WWWDIR%%/catalog/controller/account/address.php
 %%WWWDIR%%/catalog/controller/account/create.php
@@ -1641,7 +1228,6 @@
 %%WWWDIR%%/catalog/controller/checkout/address.php
 %%WWWDIR%%/catalog/controller/checkout/cart.php
 %%WWWDIR%%/catalog/controller/checkout/confirm.php
-%%WWWDIR%%/catalog/controller/checkout/failure.php
 %%WWWDIR%%/catalog/controller/checkout/payment.php
 %%WWWDIR%%/catalog/controller/checkout/shipping.php
 %%WWWDIR%%/catalog/controller/checkout/success.php
@@ -1651,6 +1237,7 @@
 %%WWWDIR%%/catalog/controller/common/language.php
 %%WWWDIR%%/catalog/controller/common/layout.php
 %%WWWDIR%%/catalog/controller/common/search.php
+%%WWWDIR%%/catalog/controller/common/seo_url.php
 %%WWWDIR%%/catalog/controller/error/not_found.php
 %%WWWDIR%%/catalog/controller/information/contact.php
 %%WWWDIR%%/catalog/controller/information/information.php
@@ -1661,9 +1248,9 @@
 %%WWWDIR%%/catalog/controller/module/currency.php
 %%WWWDIR%%/catalog/controller/module/information.php
 %%WWWDIR%%/catalog/controller/module/manufacturer.php
-%%WWWDIR%%/catalog/controller/payment/2checkout.php
 %%WWWDIR%%/catalog/controller/payment/asiapay.php
-%%WWWDIR%%/catalog/controller/payment/authorizenet.php
+%%WWWDIR%%/catalog/controller/payment/authorizenet_aim.php
+%%WWWDIR%%/catalog/controller/payment/authorizenet_sim.php
 %%WWWDIR%%/catalog/controller/payment/bank_transfer.php
 %%WWWDIR%%/catalog/controller/payment/bluepay.php
 %%WWWDIR%%/catalog/controller/payment/ccavenue.php
@@ -1681,10 +1268,15 @@
 %%WWWDIR%%/catalog/controller/payment/nochex.php
 %%WWWDIR%%/catalog/controller/payment/payjunction.php
 %%WWWDIR%%/catalog/controller/payment/paymate.php
-%%WWWDIR%%/catalog/controller/payment/paypal.php
-%%WWWDIR%%/catalog/controller/payment/protx.php
+%%WWWDIR%%/catalog/controller/payment/paypoint.php
+%%WWWDIR%%/catalog/controller/payment/pp_direct.php
+%%WWWDIR%%/catalog/controller/payment/pp_direct_uk.php
+%%WWWDIR%%/catalog/controller/payment/pp_express.php
+%%WWWDIR%%/catalog/controller/payment/pp_express_uk.php
+%%WWWDIR%%/catalog/controller/payment/pp_standard.php
 %%WWWDIR%%/catalog/controller/payment/psigate.php
-%%WWWDIR%%/catalog/controller/payment/secpay.php
+%%WWWDIR%%/catalog/controller/payment/sagepay.php
+%%WWWDIR%%/catalog/controller/payment/twocheckout.php
 %%WWWDIR%%/catalog/controller/payment/verisign.php
 %%WWWDIR%%/catalog/controller/payment/worldpay.php
 %%WWWDIR%%/catalog/controller/product/category.php
@@ -1692,75 +1284,6 @@
 %%WWWDIR%%/catalog/controller/product/product.php
 %%WWWDIR%%/catalog/controller/product/search.php
 %%WWWDIR%%/catalog/controller/product/special.php
-%%WWWDIR%%/catalog/language/dutch/account/account.php
-%%WWWDIR%%/catalog/language/dutch/account/address.php
-%%WWWDIR%%/catalog/language/dutch/account/create.php
-%%WWWDIR%%/catalog/language/dutch/account/download.php
-%%WWWDIR%%/catalog/language/dutch/account/edit.php
-%%WWWDIR%%/catalog/language/dutch/account/forgotten.php
-%%WWWDIR%%/catalog/language/dutch/account/history.php
-%%WWWDIR%%/catalog/language/dutch/account/invoice.php
-%%WWWDIR%%/catalog/language/dutch/account/login.php
-%%WWWDIR%%/catalog/language/dutch/account/logout.php
-%%WWWDIR%%/catalog/language/dutch/account/newsletter.php
-%%WWWDIR%%/catalog/language/dutch/account/password.php
-%%WWWDIR%%/catalog/language/dutch/account/success.php
-%%WWWDIR%%/catalog/language/dutch/checkout/address.php
-%%WWWDIR%%/catalog/language/dutch/checkout/cart.php
-%%WWWDIR%%/catalog/language/dutch/checkout/confirm.php
-%%WWWDIR%%/catalog/language/dutch/checkout/email.php
-%%WWWDIR%%/catalog/language/dutch/checkout/failure.php
-%%WWWDIR%%/catalog/language/dutch/checkout/payment.php
-%%WWWDIR%%/catalog/language/dutch/checkout/shipping.php
-%%WWWDIR%%/catalog/language/dutch/checkout/success.php
-%%WWWDIR%%/catalog/language/dutch/common/home.php
-%%WWWDIR%%/catalog/language/dutch/dutch.php
-%%WWWDIR%%/catalog/language/dutch/error/not_found.php
-%%WWWDIR%%/catalog/language/dutch/information/contact.php
-%%WWWDIR%%/catalog/language/dutch/information/information.php
-%%WWWDIR%%/catalog/language/dutch/information/sitemap.php
-%%WWWDIR%%/catalog/language/dutch/module/cart.php
-%%WWWDIR%%/catalog/language/dutch/module/category.php
-%%WWWDIR%%/catalog/language/dutch/module/currency.php
-%%WWWDIR%%/catalog/language/dutch/module/footer.php
-%%WWWDIR%%/catalog/language/dutch/module/header.php
-%%WWWDIR%%/catalog/language/dutch/module/information.php
-%%WWWDIR%%/catalog/language/dutch/module/language.php
-%%WWWDIR%%/catalog/language/dutch/module/manufacturer.php
-%%WWWDIR%%/catalog/language/dutch/module/popular.php
-%%WWWDIR%%/catalog/language/dutch/module/search.php
-%%WWWDIR%%/catalog/language/dutch/payment/2checkout.php
-%%WWWDIR%%/catalog/language/dutch/payment/asiapay.php
-%%WWWDIR%%/catalog/language/dutch/payment/authorizenet.php
-%%WWWDIR%%/catalog/language/dutch/payment/bluepay.php
-%%WWWDIR%%/catalog/language/dutch/payment/ccavenue.php
-%%WWWDIR%%/catalog/language/dutch/payment/ccnow.php
-%%WWWDIR%%/catalog/language/dutch/payment/chronopay.php
-%%WWWDIR%%/catalog/language/dutch/payment/cod.php
-%%WWWDIR%%/catalog/language/dutch/payment/egold.php
-%%WWWDIR%%/catalog/language/dutch/payment/eway.php
-%%WWWDIR%%/catalog/language/dutch/payment/hsbc.php
-%%WWWDIR%%/catalog/language/dutch/payment/linkpoint.php
-%%WWWDIR%%/catalog/language/dutch/payment/malse.php
-%%WWWDIR%%/catalog/language/dutch/payment/moneybookers.php
-%%WWWDIR%%/catalog/language/dutch/payment/nochex.php
-%%WWWDIR%%/catalog/language/dutch/payment/payjunction.php
-%%WWWDIR%%/catalog/language/dutch/payment/paymate.php
-%%WWWDIR%%/catalog/language/dutch/payment/paypal.php
-%%WWWDIR%%/catalog/language/dutch/payment/protx.php
-%%WWWDIR%%/catalog/language/dutch/payment/psigate.php
-%%WWWDIR%%/catalog/language/dutch/payment/secpay.php
-%%WWWDIR%%/catalog/language/dutch/payment/verisign.php
-%%WWWDIR%%/catalog/language/dutch/payment/worldpay.php
-%%WWWDIR%%/catalog/language/dutch/product/category.php
-%%WWWDIR%%/catalog/language/dutch/product/manufacturer.php
-%%WWWDIR%%/catalog/language/dutch/product/product.php
-%%WWWDIR%%/catalog/language/dutch/product/search.php
-%%WWWDIR%%/catalog/language/dutch/shipping/flat.php
-%%WWWDIR%%/catalog/language/dutch/shipping/item.php
-%%WWWDIR%%/catalog/language/dutch/shipping/zone.php
-%%WWWDIR%%/catalog/language/dutch/total/coupon.php
-%%WWWDIR%%/catalog/language/dutch/total/shipping.php
 %%WWWDIR%%/catalog/language/english/account/account.php
 %%WWWDIR%%/catalog/language/english/account/address.php
 %%WWWDIR%%/catalog/language/english/account/create.php
@@ -1797,9 +1320,9 @@
 %%WWWDIR%%/catalog/language/english/module/currency.php
 %%WWWDIR%%/catalog/language/english/module/information.php
 %%WWWDIR%%/catalog/language/english/module/manufacturer.php
-%%WWWDIR%%/catalog/language/english/payment/2checkout.php
 %%WWWDIR%%/catalog/language/english/payment/asiapay.php
-%%WWWDIR%%/catalog/language/english/payment/authorizenet.php
+%%WWWDIR%%/catalog/language/english/payment/authorizenet_aim.php
+%%WWWDIR%%/catalog/language/english/payment/authorizenet_sim.php
 %%WWWDIR%%/catalog/language/english/payment/bank_transfer.php
 %%WWWDIR%%/catalog/language/english/payment/bluepay.php
 %%WWWDIR%%/catalog/language/english/payment/ccavenue.php
@@ -1811,15 +1334,21 @@
 %%WWWDIR%%/catalog/language/english/payment/eway.php
 %%WWWDIR%%/catalog/language/english/payment/hsbc.php
 %%WWWDIR%%/catalog/language/english/payment/linkpoint.php
+%%WWWDIR%%/catalog/language/english/payment/liqpay.php
 %%WWWDIR%%/catalog/language/english/payment/malse.php
 %%WWWDIR%%/catalog/language/english/payment/moneybookers.php
 %%WWWDIR%%/catalog/language/english/payment/nochex.php
 %%WWWDIR%%/catalog/language/english/payment/payjunction.php
 %%WWWDIR%%/catalog/language/english/payment/paymate.php
-%%WWWDIR%%/catalog/language/english/payment/paypal.php
-%%WWWDIR%%/catalog/language/english/payment/protx.php
+%%WWWDIR%%/catalog/language/english/payment/pp_direct.php
+%%WWWDIR%%/catalog/language/english/payment/pp_direct_uk.php
+%%WWWDIR%%/catalog/language/english/payment/pp_express.php
+%%WWWDIR%%/catalog/language/english/payment/pp_express_uk.php
+%%WWWDIR%%/catalog/language/english/payment/pp_standard.php
 %%WWWDIR%%/catalog/language/english/payment/psigate.php
+%%WWWDIR%%/catalog/language/english/payment/sagepay.php
 %%WWWDIR%%/catalog/language/english/payment/secpay.php
+%%WWWDIR%%/catalog/language/english/payment/twocheckout.php
 %%WWWDIR%%/catalog/language/english/payment/verisign.php
 %%WWWDIR%%/catalog/language/english/payment/worldpay.php
 %%WWWDIR%%/catalog/language/english/product/category.php
@@ -1827,410 +1356,29 @@
 %%WWWDIR%%/catalog/language/english/product/product.php
 %%WWWDIR%%/catalog/language/english/product/search.php
 %%WWWDIR%%/catalog/language/english/product/special.php
+%%WWWDIR%%/catalog/language/english/shipping/citylink.php
+%%WWWDIR%%/catalog/language/english/shipping/fedex.php
 %%WWWDIR%%/catalog/language/english/shipping/flat.php
 %%WWWDIR%%/catalog/language/english/shipping/free.php
 %%WWWDIR%%/catalog/language/english/shipping/item.php
-%%WWWDIR%%/catalog/language/english/shipping/zone.php
+%%WWWDIR%%/catalog/language/english/shipping/parcelforce_48.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_1st_class_recorded.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_1st_class_standard.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_2nd_class_recorded.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_2nd_class_standard.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_airmail.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_airsure.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_international_signed.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_special_delivery.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_standard_parcels.php
+%%WWWDIR%%/catalog/language/english/shipping/royal_mail_surface.php
+%%WWWDIR%%/catalog/language/english/shipping/ups.php
+%%WWWDIR%%/catalog/language/english/shipping/usps.php
+%%WWWDIR%%/catalog/language/english/shipping/weight.php
+%%WWWDIR%%/catalog/language/english/total/handling.php
 %%WWWDIR%%/catalog/language/english/total/low_order_fee.php
 %%WWWDIR%%/catalog/language/english/total/sub_total.php
 %%WWWDIR%%/catalog/language/english/total/total.php
-%%WWWDIR%%/catalog/language/french/account/account.php
-%%WWWDIR%%/catalog/language/french/account/address.php
-%%WWWDIR%%/catalog/language/french/account/create.php
-%%WWWDIR%%/catalog/language/french/account/download.php
-%%WWWDIR%%/catalog/language/french/account/edit.php
-%%WWWDIR%%/catalog/language/french/account/forgotten.php
-%%WWWDIR%%/catalog/language/french/account/history.php
-%%WWWDIR%%/catalog/language/french/account/invoice.php
-%%WWWDIR%%/catalog/language/french/account/login.php
-%%WWWDIR%%/catalog/language/french/account/logout.php
-%%WWWDIR%%/catalog/language/french/account/newsletter.php
-%%WWWDIR%%/catalog/language/french/account/password.php
-%%WWWDIR%%/catalog/language/french/account/success.php
-%%WWWDIR%%/catalog/language/french/checkout/address.php
-%%WWWDIR%%/catalog/language/french/checkout/cart.php
-%%WWWDIR%%/catalog/language/french/checkout/confirm.php
-%%WWWDIR%%/catalog/language/french/checkout/email.php
-%%WWWDIR%%/catalog/language/french/checkout/failure.php
-%%WWWDIR%%/catalog/language/french/checkout/payment.php
-%%WWWDIR%%/catalog/language/french/checkout/shipping.php
-%%WWWDIR%%/catalog/language/french/checkout/success.php
-%%WWWDIR%%/catalog/language/french/common/home.php
-%%WWWDIR%%/catalog/language/french/error/not_found.php
-%%WWWDIR%%/catalog/language/french/french.php
-%%WWWDIR%%/catalog/language/french/information/contact.php
-%%WWWDIR%%/catalog/language/french/information/information.php
-%%WWWDIR%%/catalog/language/french/information/sitemap.php
-%%WWWDIR%%/catalog/language/french/module/cart.php
-%%WWWDIR%%/catalog/language/french/module/category.php
-%%WWWDIR%%/catalog/language/french/module/currency.php
-%%WWWDIR%%/catalog/language/french/module/footer.php
-%%WWWDIR%%/catalog/language/french/module/header.php
-%%WWWDIR%%/catalog/language/french/module/information.php
-%%WWWDIR%%/catalog/language/french/module/language.php
-%%WWWDIR%%/catalog/language/french/module/manufacturer.php
-%%WWWDIR%%/catalog/language/french/module/popular.php
-%%WWWDIR%%/catalog/language/french/module/search.php
-%%WWWDIR%%/catalog/language/french/payment/2checkout.php
-%%WWWDIR%%/catalog/language/french/payment/asiapay.php
-%%WWWDIR%%/catalog/language/french/payment/authorizenet.php
-%%WWWDIR%%/catalog/language/french/payment/bluepay.php
-%%WWWDIR%%/catalog/language/french/payment/ccavenue.php
-%%WWWDIR%%/catalog/language/french/payment/ccnow.php
-%%WWWDIR%%/catalog/language/french/payment/chronopay.php
-%%WWWDIR%%/catalog/language/french/payment/cod.php
-%%WWWDIR%%/catalog/language/french/payment/egold.php
-%%WWWDIR%%/catalog/language/french/payment/eway.php
-%%WWWDIR%%/catalog/language/french/payment/hsbc.php
-%%WWWDIR%%/catalog/language/french/payment/linkpoint.php
-%%WWWDIR%%/catalog/language/french/payment/malse.php
-%%WWWDIR%%/catalog/language/french/payment/moneybookers.php
-%%WWWDIR%%/catalog/language/french/payment/nochex.php
-%%WWWDIR%%/catalog/language/french/payment/payjunction.php
-%%WWWDIR%%/catalog/language/french/payment/paymate.php
-%%WWWDIR%%/catalog/language/french/payment/paypal.php
-%%WWWDIR%%/catalog/language/french/payment/protx.php
-%%WWWDIR%%/catalog/language/french/payment/psigate.php
-%%WWWDIR%%/catalog/language/french/payment/secpay.php
-%%WWWDIR%%/catalog/language/french/payment/verisign.php
-%%WWWDIR%%/catalog/language/french/payment/worldpay.php
-%%WWWDIR%%/catalog/language/french/product/category.php
-%%WWWDIR%%/catalog/language/french/product/manufacturer.php
-%%WWWDIR%%/catalog/language/french/product/product.php
-%%WWWDIR%%/catalog/language/french/product/search.php
-%%WWWDIR%%/catalog/language/french/shipping/flat.php
-%%WWWDIR%%/catalog/language/french/shipping/item.php
-%%WWWDIR%%/catalog/language/french/shipping/zone.php
-%%WWWDIR%%/catalog/language/french/total/low_order_fee.php
-%%WWWDIR%%/catalog/language/french/total/sub_total.php
-%%WWWDIR%%/catalog/language/french/total/total.php
-%%WWWDIR%%/catalog/language/hungarian/account/account.php
-%%WWWDIR%%/catalog/language/hungarian/account/address.php
-%%WWWDIR%%/catalog/language/hungarian/account/create.php
-%%WWWDIR%%/catalog/language/hungarian/account/download.php
-%%WWWDIR%%/catalog/language/hungarian/account/edit.php
-%%WWWDIR%%/catalog/language/hungarian/account/forgotten.php
-%%WWWDIR%%/catalog/language/hungarian/account/history.php
-%%WWWDIR%%/catalog/language/hungarian/account/invoice.php
-%%WWWDIR%%/catalog/language/hungarian/account/login.php
-%%WWWDIR%%/catalog/language/hungarian/account/logout.php
-%%WWWDIR%%/catalog/language/hungarian/account/newsletter.php
-%%WWWDIR%%/catalog/language/hungarian/account/password.php
-%%WWWDIR%%/catalog/language/hungarian/account/success.php
-%%WWWDIR%%/catalog/language/hungarian/checkout/address.php
-%%WWWDIR%%/catalog/language/hungarian/checkout/cart.php
-%%WWWDIR%%/catalog/language/hungarian/checkout/confirm.php
-%%WWWDIR%%/catalog/language/hungarian/checkout/email.php
-%%WWWDIR%%/catalog/language/hungarian/checkout/failure.php
-%%WWWDIR%%/catalog/language/hungarian/checkout/payment.php
-%%WWWDIR%%/catalog/language/hungarian/checkout/shipping.php
-%%WWWDIR%%/catalog/language/hungarian/checkout/success.php
-%%WWWDIR%%/catalog/language/hungarian/common/home.php
-%%WWWDIR%%/catalog/language/hungarian/error/not_found.php
-%%WWWDIR%%/catalog/language/hungarian/hungarian.php
-%%WWWDIR%%/catalog/language/hungarian/information/contact.php
-%%WWWDIR%%/catalog/language/hungarian/information/information.php
-%%WWWDIR%%/catalog/language/hungarian/information/sitemap.php
-%%WWWDIR%%/catalog/language/hungarian/module/cart.php
-%%WWWDIR%%/catalog/language/hungarian/module/category.php
-%%WWWDIR%%/catalog/language/hungarian/module/currency.php
-%%WWWDIR%%/catalog/language/hungarian/module/footer.php
-%%WWWDIR%%/catalog/language/hungarian/module/header.php
-%%WWWDIR%%/catalog/language/hungarian/module/information.php
-%%WWWDIR%%/catalog/language/hungarian/module/language.php
-%%WWWDIR%%/catalog/language/hungarian/module/manufacturer.php
-%%WWWDIR%%/catalog/language/hungarian/module/popular.php
-%%WWWDIR%%/catalog/language/hungarian/module/search.php
-%%WWWDIR%%/catalog/language/hungarian/payment/asiapay.php
-%%WWWDIR%%/catalog/language/hungarian/payment/authorizenet.php
-%%WWWDIR%%/catalog/language/hungarian/payment/bluepay.php
-%%WWWDIR%%/catalog/language/hungarian/payment/ccavenue.php
-%%WWWDIR%%/catalog/language/hungarian/payment/ccnow.php
-%%WWWDIR%%/catalog/language/hungarian/payment/chronopay.php
-%%WWWDIR%%/catalog/language/hungarian/payment/cod.php
-%%WWWDIR%%/catalog/language/hungarian/payment/egold.php
-%%WWWDIR%%/catalog/language/hungarian/payment/eway.php
-%%WWWDIR%%/catalog/language/hungarian/payment/hsbc.php
-%%WWWDIR%%/catalog/language/hungarian/payment/linkpoint.php
-%%WWWDIR%%/catalog/language/hungarian/payment/malse.php
-%%WWWDIR%%/catalog/language/hungarian/payment/moneybookers.php
-%%WWWDIR%%/catalog/language/hungarian/payment/nochex.php
-%%WWWDIR%%/catalog/language/hungarian/payment/payjunction.php
-%%WWWDIR%%/catalog/language/hungarian/payment/paymate.php
-%%WWWDIR%%/catalog/language/hungarian/payment/paypal.php
-%%WWWDIR%%/catalog/language/hungarian/payment/protx.php
-%%WWWDIR%%/catalog/language/hungarian/payment/psigate.php
-%%WWWDIR%%/catalog/language/hungarian/payment/secpay.php
-%%WWWDIR%%/catalog/language/hungarian/payment/verisign.php
-%%WWWDIR%%/catalog/language/hungarian/payment/worldpay.php
-%%WWWDIR%%/catalog/language/hungarian/product/category.php
-%%WWWDIR%%/catalog/language/hungarian/product/manufacturer.php
-%%WWWDIR%%/catalog/language/hungarian/product/product.php
-%%WWWDIR%%/catalog/language/hungarian/product/search.php
-%%WWWDIR%%/catalog/language/hungarian/shipping/flat.php
-%%WWWDIR%%/catalog/language/hungarian/shipping/item.php
-%%WWWDIR%%/catalog/language/hungarian/shipping/zone.php
-%%WWWDIR%%/catalog/language/hungarian/total/low_order_fee.php
-%%WWWDIR%%/catalog/language/hungarian/total/sub_total.php
-%%WWWDIR%%/catalog/language/hungarian/total/total.php
-%%WWWDIR%%/catalog/language/italian/account/account.php
-%%WWWDIR%%/catalog/language/italian/account/address.php
-%%WWWDIR%%/catalog/language/italian/account/create.php
-%%WWWDIR%%/catalog/language/italian/account/download.php
-%%WWWDIR%%/catalog/language/italian/account/edit.php
-%%WWWDIR%%/catalog/language/italian/account/forgotten.php
-%%WWWDIR%%/catalog/language/italian/account/history.php
-%%WWWDIR%%/catalog/language/italian/account/invoice.php
-%%WWWDIR%%/catalog/language/italian/account/login.php
-%%WWWDIR%%/catalog/language/italian/account/logout.php
-%%WWWDIR%%/catalog/language/italian/account/newsletter.php
-%%WWWDIR%%/catalog/language/italian/account/password.php
-%%WWWDIR%%/catalog/language/italian/account/success.php
-%%WWWDIR%%/catalog/language/italian/checkout/address.php
-%%WWWDIR%%/catalog/language/italian/checkout/cart.php
-%%WWWDIR%%/catalog/language/italian/checkout/confirm.php
-%%WWWDIR%%/catalog/language/italian/checkout/email.php
-%%WWWDIR%%/catalog/language/italian/checkout/failure.php
-%%WWWDIR%%/catalog/language/italian/checkout/payment.php
-%%WWWDIR%%/catalog/language/italian/checkout/shipping.php
-%%WWWDIR%%/catalog/language/italian/checkout/success.php
-%%WWWDIR%%/catalog/language/italian/common/home.php
-%%WWWDIR%%/catalog/language/italian/error/not_found.php
-%%WWWDIR%%/catalog/language/italian/information/contact.php
-%%WWWDIR%%/catalog/language/italian/information/information.php
-%%WWWDIR%%/catalog/language/italian/information/sitemap.php
-%%WWWDIR%%/catalog/language/italian/italian.php
-%%WWWDIR%%/catalog/language/italian/module/cart.php
-%%WWWDIR%%/catalog/language/italian/module/category.php
-%%WWWDIR%%/catalog/language/italian/module/currency.php
-%%WWWDIR%%/catalog/language/italian/module/footer.php
-%%WWWDIR%%/catalog/language/italian/module/header.php
-%%WWWDIR%%/catalog/language/italian/module/information.php
-%%WWWDIR%%/catalog/language/italian/module/language.php
-%%WWWDIR%%/catalog/language/italian/module/manufacturer.php
-%%WWWDIR%%/catalog/language/italian/module/popular.php
-%%WWWDIR%%/catalog/language/italian/module/search.php
-%%WWWDIR%%/catalog/language/italian/payment/2checkout.php
-%%WWWDIR%%/catalog/language/italian/payment/asiapay.php
-%%WWWDIR%%/catalog/language/italian/payment/authorizenet.php
-%%WWWDIR%%/catalog/language/italian/payment/bluepay.php
-%%WWWDIR%%/catalog/language/italian/payment/ccavenue.php
-%%WWWDIR%%/catalog/language/italian/payment/ccnow.php
-%%WWWDIR%%/catalog/language/italian/payment/chronopay.php
-%%WWWDIR%%/catalog/language/italian/payment/cod.php
-%%WWWDIR%%/catalog/language/italian/payment/egold.php
-%%WWWDIR%%/catalog/language/italian/payment/eway.php
-%%WWWDIR%%/catalog/language/italian/payment/hsbc.php
-%%WWWDIR%%/catalog/language/italian/payment/linkpoint.php
-%%WWWDIR%%/catalog/language/italian/payment/malse.php
-%%WWWDIR%%/catalog/language/italian/payment/moneybookers.php
-%%WWWDIR%%/catalog/language/italian/payment/nochex.php
-%%WWWDIR%%/catalog/language/italian/payment/payjunction.php
-%%WWWDIR%%/catalog/language/italian/payment/paymate.php
-%%WWWDIR%%/catalog/language/italian/payment/paypal.php
-%%WWWDIR%%/catalog/language/italian/payment/protx.php
-%%WWWDIR%%/catalog/language/italian/payment/psigate.php
-%%WWWDIR%%/catalog/language/italian/payment/secpay.php
-%%WWWDIR%%/catalog/language/italian/payment/verisign.php
-%%WWWDIR%%/catalog/language/italian/payment/worldpay.php
-%%WWWDIR%%/catalog/language/italian/product/category.php
-%%WWWDIR%%/catalog/language/italian/product/manufacturer.php
-%%WWWDIR%%/catalog/language/italian/product/product.php
-%%WWWDIR%%/catalog/language/italian/product/search.php
-%%WWWDIR%%/catalog/language/italian/shipping/flat.php
-%%WWWDIR%%/catalog/language/italian/shipping/item.php
-%%WWWDIR%%/catalog/language/italian/shipping/zone.php
-%%WWWDIR%%/catalog/language/italian/total/coupon.php
-%%WWWDIR%%/catalog/language/italian/total/shipping.php
-%%WWWDIR%%/catalog/language/japanese/account/account.php
-%%WWWDIR%%/catalog/language/japanese/account/address.php
-%%WWWDIR%%/catalog/language/japanese/account/create.php
-%%WWWDIR%%/catalog/language/japanese/account/download.php
-%%WWWDIR%%/catalog/language/japanese/account/edit.php
-%%WWWDIR%%/catalog/language/japanese/account/forgotten.php
-%%WWWDIR%%/catalog/language/japanese/account/history.php
-%%WWWDIR%%/catalog/language/japanese/account/invoice.php
-%%WWWDIR%%/catalog/language/japanese/account/login.php
-%%WWWDIR%%/catalog/language/japanese/account/logout.php
-%%WWWDIR%%/catalog/language/japanese/account/newsletter.php
-%%WWWDIR%%/catalog/language/japanese/account/password.php
-%%WWWDIR%%/catalog/language/japanese/account/success.php
-%%WWWDIR%%/catalog/language/japanese/checkout/address.php
-%%WWWDIR%%/catalog/language/japanese/checkout/cart.php
-%%WWWDIR%%/catalog/language/japanese/checkout/confirm.php
-%%WWWDIR%%/catalog/language/japanese/checkout/email.php
-%%WWWDIR%%/catalog/language/japanese/checkout/failure.php
-%%WWWDIR%%/catalog/language/japanese/checkout/payment.php
-%%WWWDIR%%/catalog/language/japanese/checkout/shipping.php
-%%WWWDIR%%/catalog/language/japanese/checkout/success.php
-%%WWWDIR%%/catalog/language/japanese/common/home.php
-%%WWWDIR%%/catalog/language/japanese/error/not_found.php
-%%WWWDIR%%/catalog/language/japanese/information/contact.php
-%%WWWDIR%%/catalog/language/japanese/information/information.php
-%%WWWDIR%%/catalog/language/japanese/information/sitemap.php
-%%WWWDIR%%/catalog/language/japanese/japanese.php
-%%WWWDIR%%/catalog/language/japanese/module/cart.php
-%%WWWDIR%%/catalog/language/japanese/module/category.php
-%%WWWDIR%%/catalog/language/japanese/module/currency.php
-%%WWWDIR%%/catalog/language/japanese/module/footer.php
-%%WWWDIR%%/catalog/language/japanese/module/header.php
-%%WWWDIR%%/catalog/language/japanese/module/information.php
-%%WWWDIR%%/catalog/language/japanese/module/language.php
-%%WWWDIR%%/catalog/language/japanese/module/manufacturer.php
-%%WWWDIR%%/catalog/language/japanese/module/popular.php
-%%WWWDIR%%/catalog/language/japanese/module/search.php
-%%WWWDIR%%/catalog/language/japanese/payment/2checkout.php
-%%WWWDIR%%/catalog/language/japanese/payment/asiapay.php
-%%WWWDIR%%/catalog/language/japanese/payment/authorizenet.php
-%%WWWDIR%%/catalog/language/japanese/payment/bluepay.php
-%%WWWDIR%%/catalog/language/japanese/payment/ccavenue.php
-%%WWWDIR%%/catalog/language/japanese/payment/ccnow.php
-%%WWWDIR%%/catalog/language/japanese/payment/chronopay.php
-%%WWWDIR%%/catalog/language/japanese/payment/cod.php
-%%WWWDIR%%/catalog/language/japanese/payment/egold.php
-%%WWWDIR%%/catalog/language/japanese/payment/eway.php
-%%WWWDIR%%/catalog/language/japanese/payment/hsbc.php
-%%WWWDIR%%/catalog/language/japanese/payment/linkpoint.php
-%%WWWDIR%%/catalog/language/japanese/payment/malse.php
-%%WWWDIR%%/catalog/language/japanese/payment/moneybookers.php
-%%WWWDIR%%/catalog/language/japanese/payment/nochex.php
-%%WWWDIR%%/catalog/language/japanese/payment/payjunction.php
-%%WWWDIR%%/catalog/language/japanese/payment/paymate.php
-%%WWWDIR%%/catalog/language/japanese/payment/paypal.php
-%%WWWDIR%%/catalog/language/japanese/payment/protx.php
-%%WWWDIR%%/catalog/language/japanese/payment/psigate.php
-%%WWWDIR%%/catalog/language/japanese/payment/secpay.php
-%%WWWDIR%%/catalog/language/japanese/payment/verisign.php
-%%WWWDIR%%/catalog/language/japanese/payment/worldpay.php
-%%WWWDIR%%/catalog/language/japanese/product/category.php
-%%WWWDIR%%/catalog/language/japanese/product/manufacturer.php
-%%WWWDIR%%/catalog/language/japanese/product/product.php
-%%WWWDIR%%/catalog/language/japanese/product/search.php
-%%WWWDIR%%/catalog/language/japanese/shipping/flat.php
-%%WWWDIR%%/catalog/language/japanese/shipping/item.php
-%%WWWDIR%%/catalog/language/japanese/shipping/zone.php
-%%WWWDIR%%/catalog/language/japanese/total/coupon.php
-%%WWWDIR%%/catalog/language/japanese/total/shipping.php
-%%WWWDIR%%/catalog/language/persian/account/account.php
-%%WWWDIR%%/catalog/language/persian/account/address.php
-%%WWWDIR%%/catalog/language/persian/account/create.php
-%%WWWDIR%%/catalog/language/persian/account/download.php
-%%WWWDIR%%/catalog/language/persian/account/edit.php
-%%WWWDIR%%/catalog/language/persian/account/forgotten.php
-%%WWWDIR%%/catalog/language/persian/account/history.php
-%%WWWDIR%%/catalog/language/persian/account/invoice.php
-%%WWWDIR%%/catalog/language/persian/account/login.php
-%%WWWDIR%%/catalog/language/persian/account/logout.php
-%%WWWDIR%%/catalog/language/persian/account/newsletter.php
-%%WWWDIR%%/catalog/language/persian/account/password.php
-%%WWWDIR%%/catalog/language/persian/account/success.php
-%%WWWDIR%%/catalog/language/persian/checkout/address.php
-%%WWWDIR%%/catalog/language/persian/checkout/cart.php
-%%WWWDIR%%/catalog/language/persian/checkout/confirm.php
-%%WWWDIR%%/catalog/language/persian/checkout/email.php
-%%WWWDIR%%/catalog/language/persian/checkout/failure.php
-%%WWWDIR%%/catalog/language/persian/checkout/payment.php
-%%WWWDIR%%/catalog/language/persian/checkout/shipping.php
-%%WWWDIR%%/catalog/language/persian/checkout/success.php
-%%WWWDIR%%/catalog/language/persian/common/home.php
-%%WWWDIR%%/catalog/language/persian/error/not_found.php
-%%WWWDIR%%/catalog/language/persian/information/contact.php
-%%WWWDIR%%/catalog/language/persian/information/information.php
-%%WWWDIR%%/catalog/language/persian/information/sitemap.php
-%%WWWDIR%%/catalog/language/persian/module/cart.php
-%%WWWDIR%%/catalog/language/persian/module/category.php
-%%WWWDIR%%/catalog/language/persian/module/currency.php
-%%WWWDIR%%/catalog/language/persian/module/footer.php
-%%WWWDIR%%/catalog/language/persian/module/header.php
-%%WWWDIR%%/catalog/language/persian/module/information.php
-%%WWWDIR%%/catalog/language/persian/module/language.php
-%%WWWDIR%%/catalog/language/persian/module/manufacturer.php
-%%WWWDIR%%/catalog/language/persian/module/popular.php
-%%WWWDIR%%/catalog/language/persian/module/search.php
-%%WWWDIR%%/catalog/language/persian/payment/cod.php
-%%WWWDIR%%/catalog/language/persian/payment/paypal.php
-%%WWWDIR%%/catalog/language/persian/persian.php
-%%WWWDIR%%/catalog/language/persian/product/category.php
-%%WWWDIR%%/catalog/language/persian/product/manufacturer.php
-%%WWWDIR%%/catalog/language/persian/product/product.php
-%%WWWDIR%%/catalog/language/persian/product/search.php
-%%WWWDIR%%/catalog/language/persian/shipping/flat.php
-%%WWWDIR%%/catalog/language/persian/shipping/item.php
-%%WWWDIR%%/catalog/language/persian/shipping/zone.php
-%%WWWDIR%%/catalog/language/persian/total/coupon.php
-%%WWWDIR%%/catalog/language/persian/total/shipping.php
-%%WWWDIR%%/catalog/language/russian/account/account.php
-%%WWWDIR%%/catalog/language/russian/account/address.php
-%%WWWDIR%%/catalog/language/russian/account/create.php
-%%WWWDIR%%/catalog/language/russian/account/download.php
-%%WWWDIR%%/catalog/language/russian/account/edit.php
-%%WWWDIR%%/catalog/language/russian/account/forgotten.php
-%%WWWDIR%%/catalog/language/russian/account/history.php
-%%WWWDIR%%/catalog/language/russian/account/invoice.php
-%%WWWDIR%%/catalog/language/russian/account/login.php
-%%WWWDIR%%/catalog/language/russian/account/logout.php
-%%WWWDIR%%/catalog/language/russian/account/newsletter.php
-%%WWWDIR%%/catalog/language/russian/account/password.php
-%%WWWDIR%%/catalog/language/russian/account/success.php
-%%WWWDIR%%/catalog/language/russian/checkout/address.php
-%%WWWDIR%%/catalog/language/russian/checkout/cart.php
-%%WWWDIR%%/catalog/language/russian/checkout/confirm.php
-%%WWWDIR%%/catalog/language/russian/checkout/email.php
-%%WWWDIR%%/catalog/language/russian/checkout/failure.php
-%%WWWDIR%%/catalog/language/russian/checkout/payment.php
-%%WWWDIR%%/catalog/language/russian/checkout/shipping.php
-%%WWWDIR%%/catalog/language/russian/checkout/success.php
-%%WWWDIR%%/catalog/language/russian/common/home.php
-%%WWWDIR%%/catalog/language/russian/error/not_found.php
-%%WWWDIR%%/catalog/language/russian/information/contact.php
-%%WWWDIR%%/catalog/language/russian/information/information.php
-%%WWWDIR%%/catalog/language/russian/information/sitemap.php
-%%WWWDIR%%/catalog/language/russian/module/cart.php
-%%WWWDIR%%/catalog/language/russian/module/category.php
-%%WWWDIR%%/catalog/language/russian/module/currency.php
-%%WWWDIR%%/catalog/language/russian/module/footer.php
-%%WWWDIR%%/catalog/language/russian/module/header.php
-%%WWWDIR%%/catalog/language/russian/module/information.php
-%%WWWDIR%%/catalog/language/russian/module/language.php
-%%WWWDIR%%/catalog/language/russian/module/manufacturer.php
-%%WWWDIR%%/catalog/language/russian/module/popular.php
-%%WWWDIR%%/catalog/language/russian/module/search.php
-%%WWWDIR%%/catalog/language/russian/payment/2checkout.php
-%%WWWDIR%%/catalog/language/russian/payment/asiapay.php
-%%WWWDIR%%/catalog/language/russian/payment/authorizenet.php
-%%WWWDIR%%/catalog/language/russian/payment/bluepay.php
-%%WWWDIR%%/catalog/language/russian/payment/ccavenue.php
-%%WWWDIR%%/catalog/language/russian/payment/ccnow.php
-%%WWWDIR%%/catalog/language/russian/payment/chronopay.php
-%%WWWDIR%%/catalog/language/russian/payment/cod.php
-%%WWWDIR%%/catalog/language/russian/payment/egold.php
-%%WWWDIR%%/catalog/language/russian/payment/eway.php
-%%WWWDIR%%/catalog/language/russian/payment/hsbc.php
-%%WWWDIR%%/catalog/language/russian/payment/linkpoint.php
-%%WWWDIR%%/catalog/language/russian/payment/malse.php
-%%WWWDIR%%/catalog/language/russian/payment/moneybookers.php
-%%WWWDIR%%/catalog/language/russian/payment/nochex.php
-%%WWWDIR%%/catalog/language/russian/payment/payjunction.php
-%%WWWDIR%%/catalog/language/russian/payment/paymate.php
-%%WWWDIR%%/catalog/language/russian/payment/paypal.php
-%%WWWDIR%%/catalog/language/russian/payment/protx.php
-%%WWWDIR%%/catalog/language/russian/payment/psigate.php
-%%WWWDIR%%/catalog/language/russian/payment/secpay.php
-%%WWWDIR%%/catalog/language/russian/payment/verisign.php
-%%WWWDIR%%/catalog/language/russian/payment/worldpay.php
-%%WWWDIR%%/catalog/language/russian/product/category.php
-%%WWWDIR%%/catalog/language/russian/product/manufacturer.php
-%%WWWDIR%%/catalog/language/russian/product/product.php
-%%WWWDIR%%/catalog/language/russian/product/search.php
-%%WWWDIR%%/catalog/language/russian/russian.php
-%%WWWDIR%%/catalog/language/russian/shipping/flat.php
-%%WWWDIR%%/catalog/language/russian/shipping/item.php
-%%WWWDIR%%/catalog/language/russian/shipping/zone.php
-%%WWWDIR%%/catalog/language/russian/total/coupon.php
-%%WWWDIR%%/catalog/language/russian/total/low_order_fee.php
-%%WWWDIR%%/catalog/language/russian/total/shipping.php
-%%WWWDIR%%/catalog/language/russian/total/sub_total.php
-%%WWWDIR%%/catalog/language/russian/total/total.php
 %%WWWDIR%%/catalog/model/account/address.php
 %%WWWDIR%%/catalog/model/account/customer.php
 %%WWWDIR%%/catalog/model/account/download.php
@@ -2240,6 +1388,7 @@
 %%WWWDIR%%/catalog/model/catalog/manufacturer.php
 %%WWWDIR%%/catalog/model/catalog/product.php
 %%WWWDIR%%/catalog/model/catalog/review.php
+%%WWWDIR%%/catalog/model/checkout/cart.php
 %%WWWDIR%%/catalog/model/checkout/coupon.php
 %%WWWDIR%%/catalog/model/checkout/extension.php
 %%WWWDIR%%/catalog/model/checkout/order.php
@@ -2247,9 +1396,9 @@
 %%WWWDIR%%/catalog/model/localisation/currency.php
 %%WWWDIR%%/catalog/model/localisation/language.php
 %%WWWDIR%%/catalog/model/localisation/zone.php
-%%WWWDIR%%/catalog/model/payment/2checkout.php
 %%WWWDIR%%/catalog/model/payment/asiapay.php
-%%WWWDIR%%/catalog/model/payment/authorizenet.php
+%%WWWDIR%%/catalog/model/payment/authorizenet_aim.php
+%%WWWDIR%%/catalog/model/payment/authorizenet_sim.php
 %%WWWDIR%%/catalog/model/payment/bank_transfer.php
 %%WWWDIR%%/catalog/model/payment/bluepay.php
 %%WWWDIR%%/catalog/model/payment/ccavenue.php
@@ -2268,23 +1417,45 @@
 %%WWWDIR%%/catalog/model/payment/nochex.php
 %%WWWDIR%%/catalog/model/payment/payjunction.php
 %%WWWDIR%%/catalog/model/payment/paymate.php
-%%WWWDIR%%/catalog/model/payment/paypal.php
-%%WWWDIR%%/catalog/model/payment/protx.php
+%%WWWDIR%%/catalog/model/payment/paypoint.php
+%%WWWDIR%%/catalog/model/payment/pp_direct.php
+%%WWWDIR%%/catalog/model/payment/pp_direct_uk.php
+%%WWWDIR%%/catalog/model/payment/pp_express.php
+%%WWWDIR%%/catalog/model/payment/pp_express_uk.php
+%%WWWDIR%%/catalog/model/payment/pp_standard.php
 %%WWWDIR%%/catalog/model/payment/psigate.php
-%%WWWDIR%%/catalog/model/payment/secpay.php
+%%WWWDIR%%/catalog/model/payment/sagepay.php
+%%WWWDIR%%/catalog/model/payment/twocheckout.php
 %%WWWDIR%%/catalog/model/payment/verisign.php
 %%WWWDIR%%/catalog/model/payment/worldpay.php
+%%WWWDIR%%/catalog/model/shipping/citylink.php
+%%WWWDIR%%/catalog/model/shipping/fedex.php
 %%WWWDIR%%/catalog/model/shipping/flat.php
 %%WWWDIR%%/catalog/model/shipping/free.php
 %%WWWDIR%%/catalog/model/shipping/item.php
-%%WWWDIR%%/catalog/model/shipping/zone.php
+%%WWWDIR%%/catalog/model/shipping/parcelforce_48.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_1st_class_recorded.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_1st_class_standard.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_2nd_class_recorded.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_2nd_class_standard.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_airmail.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_airsure.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_international_signed.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_special_delivery.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_standard_parcels.php
+%%WWWDIR%%/catalog/model/shipping/royal_mail_surface.php
+%%WWWDIR%%/catalog/model/shipping/ups.php
+%%WWWDIR%%/catalog/model/shipping/usps.php
+%%WWWDIR%%/catalog/model/shipping/weight.php
+%%WWWDIR%%/catalog/model/tool/seo_url.php
 %%WWWDIR%%/catalog/model/total/coupon.php
+%%WWWDIR%%/catalog/model/total/handling.php
 %%WWWDIR%%/catalog/model/total/low_order_fee.php
 %%WWWDIR%%/catalog/model/total/shipping.php
 %%WWWDIR%%/catalog/model/total/sub_total.php
 %%WWWDIR%%/catalog/model/total/tax.php
 %%WWWDIR%%/catalog/model/total/total.php
-%%WWWDIR%%/catalog/view/javascript/jquery/jquery-1.3.min.js
+%%WWWDIR%%/catalog/view/javascript/jquery/jquery-1.3.2.min.js
 %%WWWDIR%%/catalog/view/javascript/jquery/superfish/changelog.txt
 %%WWWDIR%%/catalog/view/javascript/jquery/superfish/css/superfish-navbar.css
 %%WWWDIR%%/catalog/view/javascript/jquery/superfish/css/superfish-vertical.css
@@ -2301,8 +1472,6 @@
 %%WWWDIR%%/catalog/view/javascript/jquery/thickbox/loadingAnimation.gif
 %%WWWDIR%%/catalog/view/javascript/jquery/thickbox/thickbox-compressed.js
 %%WWWDIR%%/catalog/view/javascript/jquery/thickbox/thickbox.css
-%%WWWDIR%%/catalog/view/javascript/png/blank.gif
-%%WWWDIR%%/catalog/view/javascript/png/iepngfix.htc
 %%WWWDIR%%/catalog/view/theme/default/image/arrow_down.png
 %%WWWDIR%%/catalog/view/theme/default/image/arrow_right.png
 %%WWWDIR%%/catalog/view/theme/default/image/box_bottom.png
@@ -2314,246 +1483,6 @@
 %%WWWDIR%%/catalog/view/theme/default/image/button_right.png
 %%WWWDIR%%/catalog/view/theme/default/image/content_bottom.png
 %%WWWDIR%%/catalog/view/theme/default/image/content_top.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/Thumbs.db
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ad.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ae.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/af.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ag.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ai.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/al.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/am.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/an.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ao.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ar.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/as.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/at.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/au.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/aw.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ax.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/az.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ba.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bb.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bd.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/be.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bf.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bg.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bh.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bi.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bj.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bo.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/br.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bs.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bt.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bv.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bw.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/by.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/bz.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ca.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cc.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cd.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cf.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cg.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ch.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ci.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ck.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cl.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/co.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cs.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cu.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cv.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cx.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cy.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/cz.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/de.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/dj.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/dk.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/dm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/do.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/dz.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ec.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ee.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/eg.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/eh.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/england.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/er.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/es.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/et.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/fam.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/fi.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/fj.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/fk.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/fm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/fo.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/fr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ga.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gb.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gd.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ge.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gh.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gi.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gl.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gp.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gq.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gs.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gt.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gu.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gw.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/gy.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/hk.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/hn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/hr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ht.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/hu.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/id.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ie.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/il.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/in.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/io.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/iq.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ir.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/is.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/it.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/jm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/jo.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/jp.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ke.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/kg.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/kh.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ki.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/km.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/kn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/kp.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/kr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/kw.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ky.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/kz.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/la.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/lb.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/lc.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/li.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/lk.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/lr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ls.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/lt.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/lu.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/lv.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ly.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ma.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mc.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/md.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mg.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mh.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mk.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ml.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mo.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mp.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mq.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ms.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mt.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mu.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mv.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mw.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mx.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/my.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/mz.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/na.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/nc.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ne.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/nf.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ng.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ni.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/nl.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/no.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/np.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/nr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/nu.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/nz.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/om.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pa.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pe.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pf.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pg.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ph.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pk.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pl.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ps.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pt.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/pw.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/py.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/qa.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ro.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ru.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/rw.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sa.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sb.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sc.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/scotland.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sd.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/se.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sg.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sh.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/si.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sk.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sl.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/so.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/st.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sv.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sy.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/sz.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tc.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/td.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tf.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tg.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/th.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tj.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tk.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tl.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/to.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tr.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tt.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tv.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tw.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/tz.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ua.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ug.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/um.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/us.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/uy.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/uz.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/va.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/vc.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ve.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/vg.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/vi.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/vn.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/vu.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/wales.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/wf.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ws.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/ye.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/yt.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/za.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/zm.png
-%%WWWDIR%%/catalog/view/theme/default/image/flags/zw.png
 %%WWWDIR%%/catalog/view/theme/default/image/header.png
 %%WWWDIR%%/catalog/view/theme/default/image/icon_account.png
 %%WWWDIR%%/catalog/view/theme/default/image/icon_basket.png
@@ -2567,8 +1496,7 @@
 %%WWWDIR%%/catalog/view/theme/default/image/icon_login.png
 %%WWWDIR%%/catalog/view/theme/default/image/icon_logout.png
 %%WWWDIR%%/catalog/view/theme/default/image/icon_special.png
-%%WWWDIR%%/catalog/view/theme/default/image/loading.gif
-%%WWWDIR%%/catalog/view/theme/default/image/logo.png
+%%WWWDIR%%/catalog/view/theme/default/image/loading_1.gif
 %%WWWDIR%%/catalog/view/theme/default/image/payment.png
 %%WWWDIR%%/catalog/view/theme/default/image/search.png
 %%WWWDIR%%/catalog/view/theme/default/image/stars_1.png
@@ -2577,6 +1505,7 @@
 %%WWWDIR%%/catalog/view/theme/default/image/stars_4.png
 %%WWWDIR%%/catalog/view/theme/default/image/stars_5.png
 %%WWWDIR%%/catalog/view/theme/default/image/tab.png
+%%WWWDIR%%/catalog/view/theme/default/stylesheet/ie6.css
 %%WWWDIR%%/catalog/view/theme/default/stylesheet/stylesheet.css
 %%WWWDIR%%/catalog/view/theme/default/template/account/account.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/account/address.tpl
@@ -2595,7 +1524,6 @@
 %%WWWDIR%%/catalog/view/theme/default/template/checkout/confirm.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/checkout/payment.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/checkout/shipping.tpl
-%%WWWDIR%%/catalog/view/theme/default/template/common/failure.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/common/footer.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/common/header.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/common/home.tpl
@@ -2614,16 +1542,24 @@
 %%WWWDIR%%/catalog/view/theme/default/template/module/information.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/module/manufacturer.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/asiapay.tpl
-%%WWWDIR%%/catalog/view/theme/default/template/payment/authorizenet.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/authorizenet_aim.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/authorizenet_sim.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/bank_transfer.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/cheque.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/cod.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/liqpay.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/moneybookers.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/nochex.tpl
-%%WWWDIR%%/catalog/view/theme/default/template/payment/paypal.tpl
-%%WWWDIR%%/catalog/view/theme/default/template/payment/protx.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/pp_direct.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/pp_direct_uk.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/pp_express.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/pp_standard.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/sagepay.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/twocheckout.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/verisign.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/worldpay.tpl
-%%WWWDIR%%/catalog/view/theme/default/template/payment/worldpay_callback.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/worldpay_failure.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/worldpay_success.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/product/category.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/product/manufacturer.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/product/product.tpl
@@ -2632,6 +1568,7 @@
 %%WWWDIR%%/catalog/view/theme/default/template/product/special.tpl
 %%WWWDIR%%/config.php
 %%WWWDIR%%/download/index.html
+%%WWWDIR%%/htaccess.txt
 %%WWWDIR%%/image/apple_cinema_30.jpg
 %%WWWDIR%%/image/apple_logo.jpg
 %%WWWDIR%%/image/canon_eos_5d_1.jpg
@@ -2639,6 +1576,246 @@
 %%WWWDIR%%/image/canon_eos_5d_3.jpg
 %%WWWDIR%%/image/canon_logo.jpg
 %%WWWDIR%%/image/compaq_presario.jpg
+%%WWWDIR%%/image/flags/Thumbs.db
+%%WWWDIR%%/image/flags/ad.png
+%%WWWDIR%%/image/flags/ae.png
+%%WWWDIR%%/image/flags/af.png
+%%WWWDIR%%/image/flags/ag.png
+%%WWWDIR%%/image/flags/ai.png
+%%WWWDIR%%/image/flags/al.png
+%%WWWDIR%%/image/flags/am.png
+%%WWWDIR%%/image/flags/an.png
+%%WWWDIR%%/image/flags/ao.png
+%%WWWDIR%%/image/flags/ar.png
+%%WWWDIR%%/image/flags/as.png
+%%WWWDIR%%/image/flags/at.png
+%%WWWDIR%%/image/flags/au.png
+%%WWWDIR%%/image/flags/aw.png
+%%WWWDIR%%/image/flags/ax.png
+%%WWWDIR%%/image/flags/az.png
+%%WWWDIR%%/image/flags/ba.png
+%%WWWDIR%%/image/flags/bb.png
+%%WWWDIR%%/image/flags/bd.png
+%%WWWDIR%%/image/flags/be.png
+%%WWWDIR%%/image/flags/bf.png
+%%WWWDIR%%/image/flags/bg.png
+%%WWWDIR%%/image/flags/bh.png
+%%WWWDIR%%/image/flags/bi.png
+%%WWWDIR%%/image/flags/bj.png
+%%WWWDIR%%/image/flags/bm.png
+%%WWWDIR%%/image/flags/bn.png
+%%WWWDIR%%/image/flags/bo.png
+%%WWWDIR%%/image/flags/br.png
+%%WWWDIR%%/image/flags/bs.png
+%%WWWDIR%%/image/flags/bt.png
+%%WWWDIR%%/image/flags/bv.png
+%%WWWDIR%%/image/flags/bw.png
+%%WWWDIR%%/image/flags/by.png
+%%WWWDIR%%/image/flags/bz.png
+%%WWWDIR%%/image/flags/ca.png
+%%WWWDIR%%/image/flags/cc.png
+%%WWWDIR%%/image/flags/cd.png
+%%WWWDIR%%/image/flags/cf.png
+%%WWWDIR%%/image/flags/cg.png
+%%WWWDIR%%/image/flags/ch.png
+%%WWWDIR%%/image/flags/ci.png
+%%WWWDIR%%/image/flags/ck.png
+%%WWWDIR%%/image/flags/cl.png
+%%WWWDIR%%/image/flags/cm.png
+%%WWWDIR%%/image/flags/cn.png
+%%WWWDIR%%/image/flags/co.png
+%%WWWDIR%%/image/flags/cr.png
+%%WWWDIR%%/image/flags/cs.png
+%%WWWDIR%%/image/flags/cu.png
+%%WWWDIR%%/image/flags/cv.png
+%%WWWDIR%%/image/flags/cx.png
+%%WWWDIR%%/image/flags/cy.png
+%%WWWDIR%%/image/flags/cz.png
+%%WWWDIR%%/image/flags/de.png
+%%WWWDIR%%/image/flags/dj.png
+%%WWWDIR%%/image/flags/dk.png
+%%WWWDIR%%/image/flags/dm.png
+%%WWWDIR%%/image/flags/do.png
+%%WWWDIR%%/image/flags/dz.png
+%%WWWDIR%%/image/flags/ec.png
+%%WWWDIR%%/image/flags/ee.png
+%%WWWDIR%%/image/flags/eg.png
+%%WWWDIR%%/image/flags/eh.png
+%%WWWDIR%%/image/flags/england.png
+%%WWWDIR%%/image/flags/er.png
+%%WWWDIR%%/image/flags/es.png
+%%WWWDIR%%/image/flags/et.png
+%%WWWDIR%%/image/flags/fam.png
+%%WWWDIR%%/image/flags/fi.png
+%%WWWDIR%%/image/flags/fj.png
+%%WWWDIR%%/image/flags/fk.png
+%%WWWDIR%%/image/flags/fm.png
+%%WWWDIR%%/image/flags/fo.png
+%%WWWDIR%%/image/flags/fr.png
+%%WWWDIR%%/image/flags/ga.png
+%%WWWDIR%%/image/flags/gb.png
+%%WWWDIR%%/image/flags/gd.png
+%%WWWDIR%%/image/flags/ge.png
+%%WWWDIR%%/image/flags/gh.png
+%%WWWDIR%%/image/flags/gi.png
+%%WWWDIR%%/image/flags/gl.png
+%%WWWDIR%%/image/flags/gm.png
+%%WWWDIR%%/image/flags/gn.png
+%%WWWDIR%%/image/flags/gp.png
+%%WWWDIR%%/image/flags/gq.png
+%%WWWDIR%%/image/flags/gr.png
+%%WWWDIR%%/image/flags/gs.png
+%%WWWDIR%%/image/flags/gt.png
+%%WWWDIR%%/image/flags/gu.png
+%%WWWDIR%%/image/flags/gw.png
+%%WWWDIR%%/image/flags/gy.png
+%%WWWDIR%%/image/flags/hk.png
+%%WWWDIR%%/image/flags/hn.png
+%%WWWDIR%%/image/flags/hr.png
+%%WWWDIR%%/image/flags/ht.png
+%%WWWDIR%%/image/flags/hu.png
+%%WWWDIR%%/image/flags/id.png
+%%WWWDIR%%/image/flags/ie.png
+%%WWWDIR%%/image/flags/il.png
+%%WWWDIR%%/image/flags/in.png
+%%WWWDIR%%/image/flags/io.png
+%%WWWDIR%%/image/flags/iq.png
+%%WWWDIR%%/image/flags/ir.png
+%%WWWDIR%%/image/flags/is.png
+%%WWWDIR%%/image/flags/it.png
+%%WWWDIR%%/image/flags/jm.png
+%%WWWDIR%%/image/flags/jo.png
+%%WWWDIR%%/image/flags/jp.png
+%%WWWDIR%%/image/flags/ke.png
+%%WWWDIR%%/image/flags/kg.png
+%%WWWDIR%%/image/flags/kh.png
+%%WWWDIR%%/image/flags/ki.png
+%%WWWDIR%%/image/flags/km.png
+%%WWWDIR%%/image/flags/kn.png
+%%WWWDIR%%/image/flags/kp.png
+%%WWWDIR%%/image/flags/kr.png
+%%WWWDIR%%/image/flags/kw.png
+%%WWWDIR%%/image/flags/ky.png
+%%WWWDIR%%/image/flags/kz.png
+%%WWWDIR%%/image/flags/la.png
+%%WWWDIR%%/image/flags/lb.png
+%%WWWDIR%%/image/flags/lc.png
+%%WWWDIR%%/image/flags/li.png
+%%WWWDIR%%/image/flags/lk.png
+%%WWWDIR%%/image/flags/lr.png
+%%WWWDIR%%/image/flags/ls.png
+%%WWWDIR%%/image/flags/lt.png
+%%WWWDIR%%/image/flags/lu.png
+%%WWWDIR%%/image/flags/lv.png
+%%WWWDIR%%/image/flags/ly.png
+%%WWWDIR%%/image/flags/ma.png
+%%WWWDIR%%/image/flags/mc.png
+%%WWWDIR%%/image/flags/md.png
+%%WWWDIR%%/image/flags/mg.png
+%%WWWDIR%%/image/flags/mh.png
+%%WWWDIR%%/image/flags/mk.png
+%%WWWDIR%%/image/flags/ml.png
+%%WWWDIR%%/image/flags/mm.png
+%%WWWDIR%%/image/flags/mn.png
+%%WWWDIR%%/image/flags/mo.png
+%%WWWDIR%%/image/flags/mp.png
+%%WWWDIR%%/image/flags/mq.png
+%%WWWDIR%%/image/flags/mr.png
+%%WWWDIR%%/image/flags/ms.png
+%%WWWDIR%%/image/flags/mt.png
+%%WWWDIR%%/image/flags/mu.png
+%%WWWDIR%%/image/flags/mv.png
+%%WWWDIR%%/image/flags/mw.png
+%%WWWDIR%%/image/flags/mx.png
+%%WWWDIR%%/image/flags/my.png
+%%WWWDIR%%/image/flags/mz.png
+%%WWWDIR%%/image/flags/na.png
+%%WWWDIR%%/image/flags/nc.png
+%%WWWDIR%%/image/flags/ne.png
+%%WWWDIR%%/image/flags/nf.png
+%%WWWDIR%%/image/flags/ng.png
+%%WWWDIR%%/image/flags/ni.png
+%%WWWDIR%%/image/flags/nl.png
+%%WWWDIR%%/image/flags/no.png
+%%WWWDIR%%/image/flags/np.png
+%%WWWDIR%%/image/flags/nr.png
+%%WWWDIR%%/image/flags/nu.png
+%%WWWDIR%%/image/flags/nz.png
+%%WWWDIR%%/image/flags/om.png
+%%WWWDIR%%/image/flags/pa.png
+%%WWWDIR%%/image/flags/pe.png
+%%WWWDIR%%/image/flags/pf.png
+%%WWWDIR%%/image/flags/pg.png
+%%WWWDIR%%/image/flags/ph.png
+%%WWWDIR%%/image/flags/pk.png
+%%WWWDIR%%/image/flags/pl.png
+%%WWWDIR%%/image/flags/pm.png
+%%WWWDIR%%/image/flags/pn.png
+%%WWWDIR%%/image/flags/pr.png
+%%WWWDIR%%/image/flags/ps.png
+%%WWWDIR%%/image/flags/pt.png
+%%WWWDIR%%/image/flags/pw.png
+%%WWWDIR%%/image/flags/py.png
+%%WWWDIR%%/image/flags/qa.png
+%%WWWDIR%%/image/flags/ro.png
+%%WWWDIR%%/image/flags/ru.png
+%%WWWDIR%%/image/flags/rw.png
+%%WWWDIR%%/image/flags/sa.png
+%%WWWDIR%%/image/flags/sb.png
+%%WWWDIR%%/image/flags/sc.png
+%%WWWDIR%%/image/flags/scotland.png
+%%WWWDIR%%/image/flags/sd.png
+%%WWWDIR%%/image/flags/se.png
+%%WWWDIR%%/image/flags/sg.png
+%%WWWDIR%%/image/flags/sh.png
+%%WWWDIR%%/image/flags/si.png
+%%WWWDIR%%/image/flags/sk.png
+%%WWWDIR%%/image/flags/sl.png
+%%WWWDIR%%/image/flags/sm.png
+%%WWWDIR%%/image/flags/sn.png
+%%WWWDIR%%/image/flags/so.png
+%%WWWDIR%%/image/flags/sr.png
+%%WWWDIR%%/image/flags/st.png
+%%WWWDIR%%/image/flags/sv.png
+%%WWWDIR%%/image/flags/sy.png
+%%WWWDIR%%/image/flags/sz.png
+%%WWWDIR%%/image/flags/tc.png
+%%WWWDIR%%/image/flags/td.png
+%%WWWDIR%%/image/flags/tf.png
+%%WWWDIR%%/image/flags/tg.png
+%%WWWDIR%%/image/flags/th.png
+%%WWWDIR%%/image/flags/tj.png
+%%WWWDIR%%/image/flags/tk.png
+%%WWWDIR%%/image/flags/tl.png
+%%WWWDIR%%/image/flags/tm.png
+%%WWWDIR%%/image/flags/tn.png
+%%WWWDIR%%/image/flags/to.png
+%%WWWDIR%%/image/flags/tr.png
+%%WWWDIR%%/image/flags/tt.png
+%%WWWDIR%%/image/flags/tv.png
+%%WWWDIR%%/image/flags/tw.png
+%%WWWDIR%%/image/flags/tz.png
+%%WWWDIR%%/image/flags/ua.png
+%%WWWDIR%%/image/flags/ug.png
+%%WWWDIR%%/image/flags/um.png
+%%WWWDIR%%/image/flags/us.png
+%%WWWDIR%%/image/flags/uy.png
+%%WWWDIR%%/image/flags/uz.png
+%%WWWDIR%%/image/flags/va.png
+%%WWWDIR%%/image/flags/vc.png
+%%WWWDIR%%/image/flags/ve.png
+%%WWWDIR%%/image/flags/vg.png
+%%WWWDIR%%/image/flags/vi.png
+%%WWWDIR%%/image/flags/vn.png
+%%WWWDIR%%/image/flags/vu.png
+%%WWWDIR%%/image/flags/wales.png
+%%WWWDIR%%/image/flags/wf.png
+%%WWWDIR%%/image/flags/ws.png
+%%WWWDIR%%/image/flags/ye.png
+%%WWWDIR%%/image/flags/yt.png
+%%WWWDIR%%/image/flags/za.png
+%%WWWDIR%%/image/flags/zm.png
+%%WWWDIR%%/image/flags/zw.png
 %%WWWDIR%%/image/hp_1.jpg
 %%WWWDIR%%/image/hp_2.jpg
 %%WWWDIR%%/image/hp_3.jpg
@@ -2650,6 +1827,7 @@
 %%WWWDIR%%/image/imac_1.jpg
 %%WWWDIR%%/image/imac_2.jpg
 %%WWWDIR%%/image/imac_3.jpg
+%%WWWDIR%%/image/index.html
 %%WWWDIR%%/image/iphone_1.jpg
 %%WWWDIR%%/image/iphone_2.jpg
 %%WWWDIR%%/image/iphone_3.jpg
@@ -2677,6 +1855,7 @@
 %%WWWDIR%%/image/ipod_touch_5.jpg
 %%WWWDIR%%/image/ipod_touch_6.jpg
 %%WWWDIR%%/image/ipod_touch_7.jpg
+%%WWWDIR%%/image/logo.png
 %%WWWDIR%%/image/macbook_1.jpg
 %%WWWDIR%%/image/macbook_2.jpg
 %%WWWDIR%%/image/macbook_3.jpg
@@ -2707,33 +1886,86 @@
 %%WWWDIR%%/image/sony_vaio_3.jpg
 %%WWWDIR%%/image/sony_vaio_4.jpg
 %%WWWDIR%%/image/sony_vaio_5.jpg
+%%WWWDIR%%/image/templates/default.png
+%%WWWDIR%%/image/userfiles/image/index.html
+%%WWWDIR%%/image/userfiles/index.html
 %%WWWDIR%%/index.php
+%%WWWDIR%%/install/controller/layout.php
+%%WWWDIR%%/install/controller/step_1.php
+%%WWWDIR%%/install/controller/step_2.php
+%%WWWDIR%%/install/controller/step_3.php
 %%WWWDIR%%/install/index.php
+%%WWWDIR%%/install/model/install.php
 %%WWWDIR%%/install/opencart.sql
 %%WWWDIR%%/install/php.ini
-%%WWWDIR%%/install/stylesheet.css
+%%WWWDIR%%/install/view/image/bad.png
+%%WWWDIR%%/install/view/image/content_bottom.png
+%%WWWDIR%%/install/view/image/content_top.png
+%%WWWDIR%%/install/view/image/good.png
+%%WWWDIR%%/install/view/image/logo.png
+%%WWWDIR%%/install/view/stylesheet/stylesheet.css
+%%WWWDIR%%/install/view/template/layout.tpl
+%%WWWDIR%%/install/view/template/step_1.tpl
+%%WWWDIR%%/install/view/template/step_2.tpl
+%%WWWDIR%%/install/view/template/step_3.tpl
 %%WWWDIR%%/php.ini
 %%WWWDIR%%/system/database/mysql.php
-%%WWWDIR%%/system/engine/action.php
 %%WWWDIR%%/system/engine/controller.php
 %%WWWDIR%%/system/engine/front.php
+%%WWWDIR%%/system/engine/loader.php
 %%WWWDIR%%/system/engine/model.php
 %%WWWDIR%%/system/engine/registry.php
 %%WWWDIR%%/system/engine/router.php
+%%WWWDIR%%/system/engine/url.php
+%%WWWDIR%%/system/external/fpdf/font/courier.php
+%%WWWDIR%%/system/external/fpdf/font/desktop.ini
+%%WWWDIR%%/system/external/fpdf/font/helvetica.php
+%%WWWDIR%%/system/external/fpdf/font/helveticab.php
+%%WWWDIR%%/system/external/fpdf/font/helveticabi.php
+%%WWWDIR%%/system/external/fpdf/font/helveticai.php
+%%WWWDIR%%/system/external/fpdf/font/makefont/cp1250.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/cp1251.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/cp1252.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/cp1253.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/cp1254.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/cp1255.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/cp1257.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/cp1258.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/cp874.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/iso-8859-1.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/iso-8859-11.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/iso-8859-15.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/iso-8859-16.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/iso-8859-2.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/iso-8859-4.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/iso-8859-5.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/iso-8859-7.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/iso-8859-9.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/koi8-r.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/koi8-u.map
+%%WWWDIR%%/system/external/fpdf/font/makefont/makefont.php
+%%WWWDIR%%/system/external/fpdf/font/symbol.php
+%%WWWDIR%%/system/external/fpdf/font/times.php
+%%WWWDIR%%/system/external/fpdf/font/timesb.php
+%%WWWDIR%%/system/external/fpdf/font/timesbi.php
+%%WWWDIR%%/system/external/fpdf/font/timesi.php
+%%WWWDIR%%/system/external/fpdf/font/zapfdingbats.php
+%%WWWDIR%%/system/external/fpdf/fpdf.php
+%%WWWDIR%%/system/external/ups/upsRate.php
+%%WWWDIR%%/system/external/ups/upsTrack.php
 %%WWWDIR%%/system/helper/image.php
-%%WWWDIR%%/system/helper/json.php
 %%WWWDIR%%/system/library/cache.php
+%%WWWDIR%%/system/library/captcha.php
 %%WWWDIR%%/system/library/cart.php
 %%WWWDIR%%/system/library/config.php
 %%WWWDIR%%/system/library/currency.php
 %%WWWDIR%%/system/library/customer.php
 %%WWWDIR%%/system/library/db.php
 %%WWWDIR%%/system/library/document.php
-%%WWWDIR%%/system/library/download.php
 %%WWWDIR%%/system/library/encryption.php
 %%WWWDIR%%/system/library/image.php
+%%WWWDIR%%/system/library/json.php
 %%WWWDIR%%/system/library/language.php
-%%WWWDIR%%/system/library/loader.php
 %%WWWDIR%%/system/library/mail.php
 %%WWWDIR%%/system/library/pagination.php
 %%WWWDIR%%/system/library/request.php
@@ -2741,9 +1973,7 @@
 %%WWWDIR%%/system/library/session.php
 %%WWWDIR%%/system/library/tax.php
 %%WWWDIR%%/system/library/template.php
-%%WWWDIR%%/system/library/url.php
 %%WWWDIR%%/system/library/user.php
-%%WWWDIR%%/system/library/verification.php
 %%WWWDIR%%/system/library/weight.php
 %%WWWDIR%%/system/startup.php
 @dirrm %%WWWDIR%%/admin/controller/catalog
@@ -2762,22 +1992,6 @@
 @dirrm %%WWWDIR%%/admin/controller/total
 @dirrm %%WWWDIR%%/admin/controller/user
 @dirrm %%WWWDIR%%/admin/controller
-@dirrm %%WWWDIR%%/admin/language/dutch/catalog
-@dirrm %%WWWDIR%%/admin/language/dutch/common
-@dirrm %%WWWDIR%%/admin/language/dutch/customer
-@dirrm %%WWWDIR%%/admin/language/dutch/error
-@dirrm %%WWWDIR%%/admin/language/dutch/extension
-@dirrm %%WWWDIR%%/admin/language/dutch/google
-@dirrm %%WWWDIR%%/admin/language/dutch/localisation
-@dirrm %%WWWDIR%%/admin/language/dutch/module
-@dirrm %%WWWDIR%%/admin/language/dutch/payment
-@dirrm %%WWWDIR%%/admin/language/dutch/report
-@dirrm %%WWWDIR%%/admin/language/dutch/setting
-@dirrm %%WWWDIR%%/admin/language/dutch/shipping
-@dirrm %%WWWDIR%%/admin/language/dutch/tool
-@dirrm %%WWWDIR%%/admin/language/dutch/total
-@dirrm %%WWWDIR%%/admin/language/dutch/user
-@dirrm %%WWWDIR%%/admin/language/dutch
 @dirrm %%WWWDIR%%/admin/language/english/catalog
 @dirrm %%WWWDIR%%/admin/language/english/common
 @dirrm %%WWWDIR%%/admin/language/english/customer
@@ -2794,99 +2008,6 @@
 @dirrm %%WWWDIR%%/admin/language/english/total
 @dirrm %%WWWDIR%%/admin/language/english/user
 @dirrm %%WWWDIR%%/admin/language/english
-@dirrm %%WWWDIR%%/admin/language/french/catalog
-@dirrm %%WWWDIR%%/admin/language/french/common
-@dirrm %%WWWDIR%%/admin/language/french/customer
-@dirrm %%WWWDIR%%/admin/language/french/error
-@dirrm %%WWWDIR%%/admin/language/french/extension
-@dirrm %%WWWDIR%%/admin/language/french/localisation
-@dirrm %%WWWDIR%%/admin/language/french/module
-@dirrm %%WWWDIR%%/admin/language/french/payment
-@dirrm %%WWWDIR%%/admin/language/french/report
-@dirrm %%WWWDIR%%/admin/language/french/setting
-@dirrm %%WWWDIR%%/admin/language/french/shipping
-@dirrm %%WWWDIR%%/admin/language/french/tool
-@dirrm %%WWWDIR%%/admin/language/french/total
-@dirrm %%WWWDIR%%/admin/language/french/user
-@dirrm %%WWWDIR%%/admin/language/french
-@dirrm %%WWWDIR%%/admin/language/hungarian/catalog
-@dirrm %%WWWDIR%%/admin/language/hungarian/common
-@dirrm %%WWWDIR%%/admin/language/hungarian/customer
-@dirrm %%WWWDIR%%/admin/language/hungarian/error
-@dirrm %%WWWDIR%%/admin/language/hungarian/extension
-@dirrm %%WWWDIR%%/admin/language/hungarian/localisation
-@dirrm %%WWWDIR%%/admin/language/hungarian/module
-@dirrm %%WWWDIR%%/admin/language/hungarian/payment
-@dirrm %%WWWDIR%%/admin/language/hungarian/report
-@dirrm %%WWWDIR%%/admin/language/hungarian/setting
-@dirrm %%WWWDIR%%/admin/language/hungarian/shipping
-@dirrm %%WWWDIR%%/admin/language/hungarian/tool
-@dirrm %%WWWDIR%%/admin/language/hungarian/total
-@dirrm %%WWWDIR%%/admin/language/hungarian/user
-@dirrm %%WWWDIR%%/admin/language/hungarian
-@dirrm %%WWWDIR%%/admin/language/italian/catalog
-@dirrm %%WWWDIR%%/admin/language/italian/common
-@dirrm %%WWWDIR%%/admin/language/italian/customer
-@dirrm %%WWWDIR%%/admin/language/italian/error
-@dirrm %%WWWDIR%%/admin/language/italian/extension
-@dirrm %%WWWDIR%%/admin/language/italian/google
-@dirrm %%WWWDIR%%/admin/language/italian/localisation
-@dirrm %%WWWDIR%%/admin/language/italian/module
-@dirrm %%WWWDIR%%/admin/language/italian/payment
-@dirrm %%WWWDIR%%/admin/language/italian/report
-@dirrm %%WWWDIR%%/admin/language/italian/setting
-@dirrm %%WWWDIR%%/admin/language/italian/shipping
-@dirrm %%WWWDIR%%/admin/language/italian/tool
-@dirrm %%WWWDIR%%/admin/language/italian/total
-@dirrm %%WWWDIR%%/admin/language/italian/user
-@dirrm %%WWWDIR%%/admin/language/italian
-@dirrm %%WWWDIR%%/admin/language/japanese/catalog
-@dirrm %%WWWDIR%%/admin/language/japanese/common
-@dirrm %%WWWDIR%%/admin/language/japanese/customer
-@dirrm %%WWWDIR%%/admin/language/japanese/error
-@dirrm %%WWWDIR%%/admin/language/japanese/extension
-@dirrm %%WWWDIR%%/admin/language/japanese/google
-@dirrm %%WWWDIR%%/admin/language/japanese/localisation
-@dirrm %%WWWDIR%%/admin/language/japanese/module
-@dirrm %%WWWDIR%%/admin/language/japanese/payment
-@dirrm %%WWWDIR%%/admin/language/japanese/report
-@dirrm %%WWWDIR%%/admin/language/japanese/setting
-@dirrm %%WWWDIR%%/admin/language/japanese/shipping
-@dirrm %%WWWDIR%%/admin/language/japanese/tool
-@dirrm %%WWWDIR%%/admin/language/japanese/total
-@dirrm %%WWWDIR%%/admin/language/japanese/user
-@dirrm %%WWWDIR%%/admin/language/japanese
-@dirrm %%WWWDIR%%/admin/language/persian/catalog
-@dirrm %%WWWDIR%%/admin/language/persian/common
-@dirrm %%WWWDIR%%/admin/language/persian/customer
-@dirrm %%WWWDIR%%/admin/language/persian/error
-@dirrm %%WWWDIR%%/admin/language/persian/extension
-@dirrm %%WWWDIR%%/admin/language/persian/localisation
-@dirrm %%WWWDIR%%/admin/language/persian/module
-@dirrm %%WWWDIR%%/admin/language/persian/payment
-@dirrm %%WWWDIR%%/admin/language/persian/report
-@dirrm %%WWWDIR%%/admin/language/persian/setting
-@dirrm %%WWWDIR%%/admin/language/persian/shipping
-@dirrm %%WWWDIR%%/admin/language/persian/tool
-@dirrm %%WWWDIR%%/admin/language/persian/total
-@dirrm %%WWWDIR%%/admin/language/persian/user
-@dirrm %%WWWDIR%%/admin/language/persian
-@dirrm %%WWWDIR%%/admin/language/russian/catalog
-@dirrm %%WWWDIR%%/admin/language/russian/common
-@dirrm %%WWWDIR%%/admin/language/russian/customer
-@dirrm %%WWWDIR%%/admin/language/russian/error
-@dirrm %%WWWDIR%%/admin/language/russian/extension
-@dirrm %%WWWDIR%%/admin/language/russian/google
-@dirrm %%WWWDIR%%/admin/language/russian/localisation
-@dirrm %%WWWDIR%%/admin/language/russian/module
-@dirrm %%WWWDIR%%/admin/language/russian/payment
-@dirrm %%WWWDIR%%/admin/language/russian/report
-@dirrm %%WWWDIR%%/admin/language/russian/setting
-@dirrm %%WWWDIR%%/admin/language/russian/shipping
-@dirrm %%WWWDIR%%/admin/language/russian/tool
-@dirrm %%WWWDIR%%/admin/language/russian/total
-@dirrm %%WWWDIR%%/admin/language/russian/user
-@dirrm %%WWWDIR%%/admin/language/russian
 @dirrm %%WWWDIR%%/admin/language
 @dirrm %%WWWDIR%%/admin/model/catalog
 @dirrm %%WWWDIR%%/admin/model/customer
@@ -2897,6 +2018,7 @@
 @dirrm %%WWWDIR%%/admin/model/user
 @dirrm %%WWWDIR%%/admin/model
 @dirrm %%WWWDIR%%/admin/view/image/flags
+@dirrm %%WWWDIR%%/admin/view/image/payment
 @dirrm %%WWWDIR%%/admin/view/image
 @dirrm %%WWWDIR%%/admin/view/javascript/fckeditor/editor/_source/classes
 @dirrm %%WWWDIR%%/admin/view/javascript/fckeditor/editor/_source/commandclasses
@@ -2998,17 +2120,6 @@
 @dirrm %%WWWDIR%%/catalog/controller/payment
 @dirrm %%WWWDIR%%/catalog/controller/product
 @dirrm %%WWWDIR%%/catalog/controller
-@dirrm %%WWWDIR%%/catalog/language/dutch/account
-@dirrm %%WWWDIR%%/catalog/language/dutch/checkout
-@dirrm %%WWWDIR%%/catalog/language/dutch/common
-@dirrm %%WWWDIR%%/catalog/language/dutch/error
-@dirrm %%WWWDIR%%/catalog/language/dutch/information
-@dirrm %%WWWDIR%%/catalog/language/dutch/module
-@dirrm %%WWWDIR%%/catalog/language/dutch/payment
-@dirrm %%WWWDIR%%/catalog/language/dutch/product
-@dirrm %%WWWDIR%%/catalog/language/dutch/shipping
-@dirrm %%WWWDIR%%/catalog/language/dutch/total
-@dirrm %%WWWDIR%%/catalog/language/dutch
 @dirrm %%WWWDIR%%/catalog/language/english/account
 @dirrm %%WWWDIR%%/catalog/language/english/checkout
 @dirrm %%WWWDIR%%/catalog/language/english/common
@@ -3020,72 +2131,6 @@
 @dirrm %%WWWDIR%%/catalog/language/english/shipping
 @dirrm %%WWWDIR%%/catalog/language/english/total
 @dirrm %%WWWDIR%%/catalog/language/english
-@dirrm %%WWWDIR%%/catalog/language/french/account
-@dirrm %%WWWDIR%%/catalog/language/french/checkout
-@dirrm %%WWWDIR%%/catalog/language/french/common
-@dirrm %%WWWDIR%%/catalog/language/french/error
-@dirrm %%WWWDIR%%/catalog/language/french/information
-@dirrm %%WWWDIR%%/catalog/language/french/module
-@dirrm %%WWWDIR%%/catalog/language/french/payment
-@dirrm %%WWWDIR%%/catalog/language/french/product
-@dirrm %%WWWDIR%%/catalog/language/french/shipping
-@dirrm %%WWWDIR%%/catalog/language/french/total
-@dirrm %%WWWDIR%%/catalog/language/french
-@dirrm %%WWWDIR%%/catalog/language/hungarian/account
-@dirrm %%WWWDIR%%/catalog/language/hungarian/checkout
-@dirrm %%WWWDIR%%/catalog/language/hungarian/common
-@dirrm %%WWWDIR%%/catalog/language/hungarian/error
-@dirrm %%WWWDIR%%/catalog/language/hungarian/information
-@dirrm %%WWWDIR%%/catalog/language/hungarian/module
-@dirrm %%WWWDIR%%/catalog/language/hungarian/payment
-@dirrm %%WWWDIR%%/catalog/language/hungarian/product
-@dirrm %%WWWDIR%%/catalog/language/hungarian/shipping
-@dirrm %%WWWDIR%%/catalog/language/hungarian/total
-@dirrm %%WWWDIR%%/catalog/language/hungarian
-@dirrm %%WWWDIR%%/catalog/language/italian/account
-@dirrm %%WWWDIR%%/catalog/language/italian/checkout
-@dirrm %%WWWDIR%%/catalog/language/italian/common
-@dirrm %%WWWDIR%%/catalog/language/italian/error
-@dirrm %%WWWDIR%%/catalog/language/italian/information
-@dirrm %%WWWDIR%%/catalog/language/italian/module
-@dirrm %%WWWDIR%%/catalog/language/italian/payment
-@dirrm %%WWWDIR%%/catalog/language/italian/product
-@dirrm %%WWWDIR%%/catalog/language/italian/shipping
-@dirrm %%WWWDIR%%/catalog/language/italian/total
-@dirrm %%WWWDIR%%/catalog/language/italian
-@dirrm %%WWWDIR%%/catalog/language/japanese/account
-@dirrm %%WWWDIR%%/catalog/language/japanese/checkout
-@dirrm %%WWWDIR%%/catalog/language/japanese/common
-@dirrm %%WWWDIR%%/catalog/language/japanese/error
-@dirrm %%WWWDIR%%/catalog/language/japanese/information
-@dirrm %%WWWDIR%%/catalog/language/japanese/module
-@dirrm %%WWWDIR%%/catalog/language/japanese/payment
-@dirrm %%WWWDIR%%/catalog/language/japanese/product
-@dirrm %%WWWDIR%%/catalog/language/japanese/shipping
-@dirrm %%WWWDIR%%/catalog/language/japanese/total
-@dirrm %%WWWDIR%%/catalog/language/japanese
-@dirrm %%WWWDIR%%/catalog/language/persian/account
-@dirrm %%WWWDIR%%/catalog/language/persian/checkout
-@dirrm %%WWWDIR%%/catalog/language/persian/common
-@dirrm %%WWWDIR%%/catalog/language/persian/error
-@dirrm %%WWWDIR%%/catalog/language/persian/information
-@dirrm %%WWWDIR%%/catalog/language/persian/module
-@dirrm %%WWWDIR%%/catalog/language/persian/payment
-@dirrm %%WWWDIR%%/catalog/language/persian/product
-@dirrm %%WWWDIR%%/catalog/language/persian/shipping
-@dirrm %%WWWDIR%%/catalog/language/persian/total
-@dirrm %%WWWDIR%%/catalog/language/persian
-@dirrm %%WWWDIR%%/catalog/language/russian/account
-@dirrm %%WWWDIR%%/catalog/language/russian/checkout
-@dirrm %%WWWDIR%%/catalog/language/russian/common
-@dirrm %%WWWDIR%%/catalog/language/russian/error
-@dirrm %%WWWDIR%%/catalog/language/russian/information
-@dirrm %%WWWDIR%%/catalog/language/russian/module
-@dirrm %%WWWDIR%%/catalog/language/russian/payment
-@dirrm %%WWWDIR%%/catalog/language/russian/product
-@dirrm %%WWWDIR%%/catalog/language/russian/shipping
-@dirrm %%WWWDIR%%/catalog/language/russian/total
-@dirrm %%WWWDIR%%/catalog/language/russian
 @dirrm %%WWWDIR%%/catalog/language
 @dirrm %%WWWDIR%%/catalog/model/account
 @dirrm %%WWWDIR%%/catalog/model/catalog
@@ -3093,6 +2138,7 @@
 @dirrm %%WWWDIR%%/catalog/model/localisation
 @dirrm %%WWWDIR%%/catalog/model/payment
 @dirrm %%WWWDIR%%/catalog/model/shipping
+@dirrm %%WWWDIR%%/catalog/model/tool
 @dirrm %%WWWDIR%%/catalog/model/total
 @dirrm %%WWWDIR%%/catalog/model
 @dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish/css
@@ -3101,9 +2147,7 @@
 @dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish
 @dirrm %%WWWDIR%%/catalog/view/javascript/jquery/thickbox
 @dirrm %%WWWDIR%%/catalog/view/javascript/jquery
-@dirrm %%WWWDIR%%/catalog/view/javascript/png
 @dirrm %%WWWDIR%%/catalog/view/javascript
-@dirrm %%WWWDIR%%/catalog/view/theme/default/image/flags
 @dirrm %%WWWDIR%%/catalog/view/theme/default/image
 @dirrm %%WWWDIR%%/catalog/view/theme/default/stylesheet
 @dirrm %%WWWDIR%%/catalog/view/theme/default/template/account
@@ -3121,13 +2165,26 @@
 @dirrm %%WWWDIR%%/catalog
 @dirrm %%WWWDIR%%/download
 @dirrm %%WWWDIR%%/image/cache
+@dirrm %%WWWDIR%%/image/flags
+@dirrm %%WWWDIR%%/image/templates
 @dirrm %%WWWDIR%%/image/userfiles/image
 @dirrm %%WWWDIR%%/image/userfiles
 @dirrm %%WWWDIR%%/image
+@dirrm %%WWWDIR%%/install/controller
+@dirrm %%WWWDIR%%/install/model
+@dirrm %%WWWDIR%%/install/view/image
+@dirrm %%WWWDIR%%/install/view/stylesheet
+@dirrm %%WWWDIR%%/install/view/template
+@dirrm %%WWWDIR%%/install/view
 @dirrm %%WWWDIR%%/install
 @dirrm %%WWWDIR%%/system/config
 @dirrm %%WWWDIR%%/system/database
 @dirrm %%WWWDIR%%/system/engine
+@dirrm %%WWWDIR%%/system/external/fpdf/font/makefont
+@dirrm %%WWWDIR%%/system/external/fpdf/font
+@dirrm %%WWWDIR%%/system/external/fpdf
+@dirrm %%WWWDIR%%/system/external/ups
+@dirrm %%WWWDIR%%/system/external
 @dirrm %%WWWDIR%%/system/helper
 @dirrm %%WWWDIR%%/system/library
 @dirrm %%WWWDIR%%/system
