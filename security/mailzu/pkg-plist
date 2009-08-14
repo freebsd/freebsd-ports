@@ -1,0 +1,206 @@
+@unexec if [ -f %D/%%WWWDIR%%/config/config.php ] && cmp -s %D%/%%WWWDIR%%/config/config.php %D%/%%WWWDIR%%/config/config.php.sample; then rm -f %D%/%%WWWDIR%%/config/config.php; fi
+%%WWWDIR%%/config/config.php.sample
+%%WWWDIR%%/config/constants.php
+%%WWWDIR%%/config/index.html
+%%WWWDIR%%/config/init.php
+%%WWWDIR%%/config/langs.php
+%%WWWDIR%%/contrib/additional_indexes.sql
+%%WWWDIR%%/contrib/mysql/mysql4.0_compat.diff
+%%WWWDIR%%/css.css
+%%WWWDIR%%/functions.js
+%%WWWDIR%%/help.php
+%%WWWDIR%%/img/blocked_img.png
+%%WWWDIR%%/img/en.blocked_img.png
+%%WWWDIR%%/img/favicon.ico
+%%WWWDIR%%/img/it.blocked_img.png
+%%WWWDIR%%/img/mailzu.gif
+%%WWWDIR%%/index.php
+%%WWWDIR%%/lang/cs.help.php
+%%WWWDIR%%/lang/cs.lang.php
+%%WWWDIR%%/lang/en.help.php
+%%WWWDIR%%/lang/en_GB.lang.php
+%%WWWDIR%%/lang/en_US.lang.php
+%%WWWDIR%%/lang/es.help.php
+%%WWWDIR%%/lang/es.lang.php
+%%WWWDIR%%/lang/fr.help.php
+%%WWWDIR%%/lang/fr.lang.php
+%%WWWDIR%%/lang/it.help.php
+%%WWWDIR%%/lang/it.lang.php
+%%WWWDIR%%/lang/pt_BR.lang.php
+%%WWWDIR%%/lib/AmavisdEngine.class.php
+%%WWWDIR%%/lib/Auth.class.php
+%%WWWDIR%%/lib/CmnFns.class.php
+%%WWWDIR%%/lib/DBAuth.class.php
+%%WWWDIR%%/lib/DBEngine.class.php
+%%WWWDIR%%/lib/ExchAuth.class.php
+%%WWWDIR%%/lib/IMAPAuth.class.php
+%%WWWDIR%%/lib/LDAPEngine.class.php
+%%WWWDIR%%/lib/Link.class.php
+%%WWWDIR%%/lib/MailEngine.class.php
+%%WWWDIR%%/lib/MailMime.class.php
+%%WWWDIR%%/lib/PHPMailer.class.php
+%%WWWDIR%%/lib/Pager.class.php
+%%WWWDIR%%/lib/Quarantine.lib.php
+%%WWWDIR%%/lib/Smtp.class.php
+%%WWWDIR%%/lib/Template.class.php
+%%WWWDIR%%/lib/htmlfilter.php
+%%WWWDIR%%/lib/index.html
+%%WWWDIR%%/lib/pear/DB.php
+%%WWWDIR%%/lib/pear/DB/common.php
+%%WWWDIR%%/lib/pear/DB/dbase.php
+%%WWWDIR%%/lib/pear/DB/fbsql.php
+%%WWWDIR%%/lib/pear/DB/ibase.php
+%%WWWDIR%%/lib/pear/DB/ifx.php
+%%WWWDIR%%/lib/pear/DB/msql.php
+%%WWWDIR%%/lib/pear/DB/mssql.php
+%%WWWDIR%%/lib/pear/DB/mysql.php
+%%WWWDIR%%/lib/pear/DB/mysqli.php
+%%WWWDIR%%/lib/pear/DB/oci8.php
+%%WWWDIR%%/lib/pear/DB/odbc.php
+%%WWWDIR%%/lib/pear/DB/pgsql.php
+%%WWWDIR%%/lib/pear/DB/sqlite.php
+%%WWWDIR%%/lib/pear/DB/storage.php
+%%WWWDIR%%/lib/pear/DB/sybase.php
+%%WWWDIR%%/lib/pear/Mail/mime.php
+%%WWWDIR%%/lib/pear/Mail/mimeDecode.php
+%%WWWDIR%%/lib/pear/Mail/mimePart.php
+%%WWWDIR%%/lib/pear/Net/Socket.php
+%%WWWDIR%%/lib/pear/OS/Guess.php
+%%WWWDIR%%/lib/pear/PEAR.php
+%%WWWDIR%%/lib/pear/PEAR/Autoloader.php
+%%WWWDIR%%/lib/pear/PEAR/Builder.php
+%%WWWDIR%%/lib/pear/PEAR/ChannelFile.php
+%%WWWDIR%%/lib/pear/PEAR/ChannelFile/Parser.php
+%%WWWDIR%%/lib/pear/PEAR/Command.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Auth.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Auth.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Build.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Build.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Channels.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Channels.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Common.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Config.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Config.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Install.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Install.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Mirror.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Mirror.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Package.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Package.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Pickle.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Pickle.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Registry.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Registry.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Remote.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Remote.xml
+%%WWWDIR%%/lib/pear/PEAR/Command/Test.php
+%%WWWDIR%%/lib/pear/PEAR/Command/Test.xml
+%%WWWDIR%%/lib/pear/PEAR/Common.php
+%%WWWDIR%%/lib/pear/PEAR/Config.php
+%%WWWDIR%%/lib/pear/PEAR/Dependency.php
+%%WWWDIR%%/lib/pear/PEAR/Dependency2.php
+%%WWWDIR%%/lib/pear/PEAR/DependencyDB.php
+%%WWWDIR%%/lib/pear/PEAR/Downloader.php
+%%WWWDIR%%/lib/pear/PEAR/Downloader/Package.php
+%%WWWDIR%%/lib/pear/PEAR/ErrorStack.php
+%%WWWDIR%%/lib/pear/PEAR/Exception.php
+%%WWWDIR%%/lib/pear/PEAR/Frontend.php
+%%WWWDIR%%/lib/pear/PEAR/Frontend/CLI.php
+%%WWWDIR%%/lib/pear/PEAR/Installer.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Common.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Data.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Data.xml
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Doc.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Doc.xml
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Ext.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Ext.xml
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Php.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Php.xml
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Script.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Script.xml
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Src.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Src.xml
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Test.php
+%%WWWDIR%%/lib/pear/PEAR/Installer/Role/Test.xml
+%%WWWDIR%%/lib/pear/PEAR/PackageFile.php
+%%WWWDIR%%/lib/pear/PEAR/PackageFile/Generator/v1.php
+%%WWWDIR%%/lib/pear/PEAR/PackageFile/Generator/v2.php
+%%WWWDIR%%/lib/pear/PEAR/PackageFile/Parser/v1.php
+%%WWWDIR%%/lib/pear/PEAR/PackageFile/Parser/v2.php
+%%WWWDIR%%/lib/pear/PEAR/PackageFile/v1.php
+%%WWWDIR%%/lib/pear/PEAR/PackageFile/v2.php
+%%WWWDIR%%/lib/pear/PEAR/PackageFile/v2/Validator.php
+%%WWWDIR%%/lib/pear/PEAR/PackageFile/v2/rw.php
+%%WWWDIR%%/lib/pear/PEAR/Packager.php
+%%WWWDIR%%/lib/pear/PEAR/REST.php
+%%WWWDIR%%/lib/pear/PEAR/REST/10.php
+%%WWWDIR%%/lib/pear/PEAR/REST/11.php
+%%WWWDIR%%/lib/pear/PEAR/Registry.php
+%%WWWDIR%%/lib/pear/PEAR/Remote.php
+%%WWWDIR%%/lib/pear/PEAR/RunTest.php
+%%WWWDIR%%/lib/pear/PEAR/Task/Common.php
+%%WWWDIR%%/lib/pear/PEAR/Task/Postinstallscript.php
+%%WWWDIR%%/lib/pear/PEAR/Task/Postinstallscript/rw.php
+%%WWWDIR%%/lib/pear/PEAR/Task/Replace.php
+%%WWWDIR%%/lib/pear/PEAR/Task/Replace/rw.php
+%%WWWDIR%%/lib/pear/PEAR/Task/Unixeol.php
+%%WWWDIR%%/lib/pear/PEAR/Task/Unixeol/rw.php
+%%WWWDIR%%/lib/pear/PEAR/Task/Windowseol.php
+%%WWWDIR%%/lib/pear/PEAR/Task/Windowseol/rw.php
+%%WWWDIR%%/lib/pear/PEAR/Validate.php
+%%WWWDIR%%/lib/pear/PEAR/Validator/PECL.php
+%%WWWDIR%%/lib/pear/PEAR/XMLParser.php
+%%WWWDIR%%/lib/pear/System.php
+%%WWWDIR%%/lib/pear/license.txt
+%%WWWDIR%%/messagesAdmin.php
+%%WWWDIR%%/messagesIndex.php
+%%WWWDIR%%/messagesPending.php
+%%WWWDIR%%/messagesPendingAdmin.php
+%%WWWDIR%%/messagesProcessing.php
+%%WWWDIR%%/messagesSummary.php
+%%WWWDIR%%/read_mail.php
+%%WWWDIR%%/read_original.php
+%%WWWDIR%%/scripts/mz_db_clean.pl
+%%WWWDIR%%/sendErrorReport.php
+%%WWWDIR%%/send_mail.php
+%%WWWDIR%%/summary.php
+%%WWWDIR%%/templates/auth.template.php
+%%WWWDIR%%/templates/common.template.php
+%%WWWDIR%%/templates/index.html
+%%WWWDIR%%/templates/quarantine.template.php
+%%WWWDIR%%/templates/sendmail.template.php
+%%WWWDIR%%/templates/summary.template.php
+%%WWWDIR%%/templates/viewmail.template.php
+@dirrmtry %%WWWDIR%%/config
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Validator
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Windowseol
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Unixeol
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Replace
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Postinstallscript
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task
+@dirrm %%WWWDIR%%/lib/pear/PEAR/REST
+@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile/v2
+@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile/Parser
+@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile/Generator
+@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Installer/Role
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Installer
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Frontend
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Downloader
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Command
+@dirrm %%WWWDIR%%/lib/pear/PEAR/ChannelFile
+@dirrm %%WWWDIR%%/lib/pear/PEAR
+@dirrm %%WWWDIR%%/lib/pear/OS
+@dirrm %%WWWDIR%%/lib/pear/Net
+@dirrm %%WWWDIR%%/lib/pear/Mail
+@dirrm %%WWWDIR%%/lib/pear/DB
+@dirrm %%WWWDIR%%/lib/pear
+@dirrm %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/contrib/mysql
+@dirrm %%WWWDIR%%/contrib
+@dirrm %%WWWDIR%%/img
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/scripts
+@dirrm %%WWWDIR%%/templates
+@dirrmtry %%WWWDIR%%

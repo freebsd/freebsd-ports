@@ -274,6 +274,7 @@
     SUBDIR += lynis
     SUBDIR += mac-robber
     SUBDIR += maia
+    SUBDIR += mailzu
     SUBDIR += makepasswd
     SUBDIR += manipulate_data
     SUBDIR += matrixssl
