@@ -1,0 +1,6 @@
+This module does not provide any methods. Simply loading it changes the default
+naming policy for the loading class so that accessors are separated into get
+and set methods. The get methods have the same name as the accessor, while set
+methods are prefixed with "set_".
+
+WWW: http://search.cpan.org/dist/MooseX-SemiAffordanceAccessor/
