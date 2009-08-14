@@ -18,5 +18,6 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix gnomehack pygnome
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-pygtk-includes=${LOCALBASE}/include/pygtk
 
 .include <bsd.port.mk>
