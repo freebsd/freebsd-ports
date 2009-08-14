@@ -1,0 +1,30 @@
+--- ./nss/exports.freebsd.orig	2007-12-31 16:49:01.000000000 +0000
++++ ./nss/exports.freebsd	2009-08-02 22:32:27.000000000 +0000
+@@ -78,6 +78,27 @@
+     _nss_ldap_getspent_r;
+     _nss_ldap_endspent;
+ 
++    # compat 4 bsd 
++    __nss_compat_getgrnam_r;
++    __nss_compat_getgrgid_r;
++    __nss_compat_getgrent_r;
++    __nss_compat_setgrent;
++    __nss_compat_endgrent;
++
++    __nss_compat_getpwnam_r;
++    __nss_compat_getpwuid_r;
++    __nss_compat_getpwent_r;
++    __nss_compat_setpwent;
++    __nss_compat_endpwent;
++
++    __nss_compat_gethostbyname;
++    __nss_compat_gethostbyname2;
++    __nss_compat_gethostbyaddr;
++    
++    # module init
++    nss_module_register;
++
++
+   # everything else should not be exported
+   local:
+     *;

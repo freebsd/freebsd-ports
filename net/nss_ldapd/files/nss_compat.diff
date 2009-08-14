@@ -1,0 +1,75 @@
+--- nslcd/cfg.c.orig	2009-06-19 16:03:14.000000000 +0400
++++ nslcd/cfg.c	2009-08-10 20:41:31.000000000 +0400
+@@ -33,6 +33,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
++#include <libgen.h>
+ #include <errno.h>
+ #include <netdb.h>
+ #include <sys/socket.h>
+@@ -649,13 +650,31 @@
+ {
+   FILE *fp;
+   int lnr=0;
+-  char linebuf[MAX_LINE_LENGTH];
++  char linebuf[MAX_LINE_LENGTH], secret_path[512];
+   char *line;
+   char keyword[32];
+   char token[64];
+   int i;
+   int rc;
+   char *value;
++
++  /* get secret password */
++  snprintf(secret_path, sizeof(secret_path), "%s/nss_ldap.secret", dirname(filename));
++  if ((fp=fopen(secret_path,"r"))==NULL)
++  {
++    log_log(LOG_ERR,"cannot open secret file (%s): %s",secret_path,strerror(errno));
++    /* exit(EXIT_FAILURE); */
++  }
++  else if (fgets(linebuf,MAX_LINE_LENGTH,fp)!=NULL)
++  {
++    i=strlen(linebuf);
++    if (i>0)
++      linebuf[i-1]='\0';
++    cfg->ldc_bindpw=strdup(linebuf);
++  }
++  if (fp!=NULL)
++    fclose(fp);
++
+   /* open config file */
+   if ((fp=fopen(filename,"r"))==NULL)
+   {
+@@ -724,13 +743,14 @@
+       get_int(filename,lnr,keyword,&line,&cfg->ldc_version);
+       get_eol(filename,lnr,keyword,&line);
+     }
+-    else if (strcasecmp(keyword,"binddn")==0)
++    else if (strcasecmp(keyword,"rootbinddn")==0)
+     {
+       get_restdup(filename,lnr,keyword,&line,&cfg->ldc_binddn);
+     }
+     else if (strcasecmp(keyword,"bindpw")==0)
+     {
+-      get_restdup(filename,lnr,keyword,&line,&cfg->ldc_bindpw);
++      if (cfg->ldc_bindpw == NULL)
++        get_restdup(filename,lnr,keyword,&line,&cfg->ldc_bindpw);
+     }
+     /* SASL authentication options */
+     else if (strcasecmp(keyword,"sasl_authcid")==0)
+@@ -931,12 +951,14 @@
+       get_int(filename,lnr,keyword,&line,&cfg->ldc_pagesize);
+       get_eol(filename,lnr,keyword,&line);
+     }
++#if 0    
+     /* fallthrough */
+     else
+     {
+       log_log(LOG_ERR,"%s:%d: unknown keyword: '%s'",filename,lnr,keyword);
+       exit(EXIT_FAILURE);
+     }
++#endif    
+   }
+   /* we're done reading file, close */
+   fclose(fp);

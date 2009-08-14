@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nslcd
+# REQUIRE: DAEMON ldconfig resolv
+#
+# Add the following line to /etc/rc.conf to enable the nslcd daemon:
+#
+# nslcd_enable="YES"
+#
+
+nslcd_enable=${nslcd_enable-"NO"}
+
+. %%RC_SUBR%%
+
+name=nslcd
+rcvar=$(set_rcvar)
+
+command="%%PREFIX%%/sbin/%{name}"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config ${name}
+run_rc_command "$1"
