@@ -1,0 +1,123 @@
+
+
+Patch attached with submission follows:
+
+--- bin/Makefile.orig	2008-10-11 18:05:45.000000000 +0400
++++ bin/Makefile	2009-06-30 22:04:35.000000000 +0400
+@@ -5,9 +5,8 @@
+ SRCS= db.c db.h file_sky.c file_sky.h parse_http.c parse_http.h skyfish.h skyfish.c my_types.h \
+ 	interface.h interface.c sky_node.c sky_node.h sky_conf.c sky_conf.h sky_shm.c sky_shm.h convert.h convert.c
+ PROG= skyfish
+-PREFIX=/usr/local
+ NO_MAN=
+-BINDIR= /usr/local/bin
++BINDIR= ${PREFIX}/bin
+ BINOWN= root
+ BINGRP= wheel
+ BINMODE= 4550
+--- doc/Makefile.orig	2008-09-16 09:24:53.000000000 +0400
++++ doc/Makefile	2009-06-30 22:04:47.000000000 +0400
+@@ -1,14 +1,12 @@
+ 
+ NO_MAN=
+ 
+-PREFIX=/usr/local/share/doc/skyfish
+-
+ install:
+-	mkdir -p ${PREFIX}
+-	cp -f README ${PREFIX}
+-	cp -f README.rus ${PREFIX}
+-	cp -f COPYRIGHT ${PREFIX}	
+-	cp -f CREDITS ${PREFIX}	
+-	cp -f CHANGES ${PREFIX}
++	mkdir -p ${PREFIX}/share/doc/skyfish
++	cp -f README ${PREFIX}/share/doc/skyfish
++	cp -f README.rus ${PREFIX}/share/doc/skyfish
++	cp -f COPYRIGHT ${PREFIX}/share/doc/skyfish	
++	cp -f CREDITS ${PREFIX}/share/doc/skyfish
++	cp -f CHANGES ${PREFIX}/share/doc/skyfish
+ 
+ .include<bsd.prog.mk>
+--- etc/Makefile.orig	2008-09-16 09:24:56.000000000 +0400
++++ etc/Makefile	2009-06-30 22:04:53.000000000 +0400
+@@ -1,9 +1,7 @@
+ 
+-PREFIX=/usr/local/etc
+-
+ NO_MAN=
+ 
+ install:
+-	cp -f skyfish.conf.dist ${PREFIX}
++	cp -f skyfish.conf.dist ${PREFIX}/etc
+ 
+-.include<bsd.prog.mk>
+\ No newline at end of file
++.include<bsd.prog.mk>
+--- bin/interface.c.orig	2008-10-14 16:38:48.000000000 +0400
++++ bin/interface.c	2009-06-30 22:19:27.000000000 +0400
+@@ -862,7 +862,14 @@
+ 		
+ 		bzero(&tmp2[0],320);
+ 	    traf=db[i].rspeed;
+-		if (traf == 0 && db[i].deltatime > 10) sprintf(tmp2,"|-[%4lu]s",db[i].deltatime);
++		if (traf == 0 && db[i].deltatime > 10) {
++			if (db[i].deltatime >= 3600)  
++				sprintf(tmp2,"|-[%4lu]h",db[i].deltatime/3600);
++			if (db[i].deltatime >= 60 && db[i].deltatime < 3600)
++				sprintf(tmp2,"|-[%4lu]m",db[i].deltatime/60);
++			else
++				sprintf(tmp2,"|-[%4lu]s",db[i].deltatime);
++			}
+ 		else if (traf > GB) 		sprintf(tmp2,"|%4.0f G/s",traf/GBYTE);	
+ 	    else if (traf > MB) 	sprintf(tmp2,"|%4.0f M/s",traf/MBYTE);
+ 	    else if (traf > KB) 	sprintf(tmp2,"|%4.0f K/s",traf/KBYTE);
+--- man/Makefile.orig	2008-09-16 09:24:57.000000000 +0400
++++ man/Makefile	2009-06-28 23:33:36.000000000 +0400
+@@ -1,6 +1,6 @@
+ #
+ 
+ MAN1= skyfish.1
+-MANDIR = /usr/local/man/man
++MANDIR = ${PREFIX}/man/man
+ 
+-.include<bsd.prog.mk>
+\ No newline at end of file
++.include<bsd.prog.mk>
+--- bin/my_types.h.orig	2008-10-13 09:33:00.000000000 +0400
++++ bin/my_types.h	2009-06-28 23:52:19.000000000 +0400
+@@ -46,7 +46,7 @@
+ #define CP1251	2
+ 
+ 
+-static char VERSION[] = "0.90";
++static char VERSION[] = "0.91";
+ 
+ #define	LENTMP 320
+ #define	LENPATH 300
+--- bin/skyfish.c.orig	2008-10-14 16:30:21.000000000 +0400
++++ bin/skyfish.c	2009-06-28 23:51:59.000000000 +0400
+@@ -92,7 +92,7 @@
+ 		fclose(fd);
+ 		}
+ 
+-	while ((ch = getopt(argc, argv, "rdsi")) != -1)
++	while ((ch = getopt(argc, argv, "rdsiv")) != -1)
+ 		switch (ch) {
+ 		case 'd': /* daemon mode */
+ 			if (rpid > 0) {printf("Daemon already running\n");return 1;}
+@@ -119,8 +119,13 @@
+ 			runmode=CLIENT;
+ 			if (rpid == 0) {printf("No running daemon\n");return 1;}
+ 			break;
++		case 'v':
++			printf("Skyfish version %s\n",VERSION);
++			return 1;
++			break;
+ 		default:
+ 			printf("read man skyfish\n");
++			return 1;
+ 			break;
+ 		}
+ 	if (argc < 2 && rpid > 0) {printf("Daemon already running\n");return 1;} 
+
+
