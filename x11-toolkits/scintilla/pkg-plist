@@ -2,13 +2,12 @@ include/scintilla/Accessor.h
 include/scintilla/KeyWords.h
 include/scintilla/Platform.h
 include/scintilla/PropSet.h
-include/scintilla/SString.h
 include/scintilla/SciLexer.h
 include/scintilla/Scintilla.h
 include/scintilla/ScintillaWidget.h
 include/scintilla/WindowAccessor.h
 lib/libscintilla.so
-lib/libscintilla.so.1
+lib/libscintilla.so.2
 lib/libscintilla_lexers.so
-lib/libscintilla_lexers.so.1
+lib/libscintilla_lexers.so.2
 @dirrm include/scintilla
