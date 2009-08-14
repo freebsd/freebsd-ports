@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfwd
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/old/
 PKGNAMEPREFIX=	postfix-
@@ -23,13 +23,19 @@ PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample
 
 SUB_FILES=	pkg-message
 
-USE_RC_SUBR=	${PORTNAME}	
+USE_RC_SUBR=	${PORTNAME}
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 MAN8=		${PORTNAME}.8
 
+OPTIONS=	MRCPT	"Sahil's patch for max recipients per time window"	off
+
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MRCPT)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-sbin-postfwd
+.endif
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/sbin/${PORTNAME} ${PREFIX}/bin/
@@ -46,5 +52,18 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
+.if !defined(WITHOUT_MRCPT)
+	@${ECHO_MSG}
+	@${ECHO_MSG} The mrcpt\(\) command works like the rate\(\) command,
+	@${ECHO_MSG} except that the rate counter is incremented by the
+	@${ECHO_MSG} request\'s recipient_count. To do this reliably,
+	@${ECHO_MSG} call postfwd from smtpd_data_restrictions.
+	@${ECHO_MSG}
+	@${ECHO_MSG} Example:
+	@${ECHO_MSG} " id=MAX_RECIPIENTS; protocol_state=DATA; \\				"
+	@${ECHO_MSG} "   client_address==192.168.1.1; \\					"
+	@${ECHO_MSG} "   action==mrcpt(\$$\$$client_address/5/3600/450 4.7.1 max 5 recip/hour)	"
+	@${ECHO_MSG}
+.endif
 
 .include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 
 # %%PREFIX%%/etc/rc.d/postfwd start
 
-* Integrate thusly in: %%PREFIX%%/etc/postfix/main.cf
+* Integrate thusly in: %%LOCALBASE%%/etc/postfix/main.cf
 
 127.0.0.1:10040_time_limit   = 3600
 
