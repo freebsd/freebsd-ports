@@ -20,6 +20,8 @@ LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain \
 		iconv:${PORTSDIR}/converters/libiconv
 
+BROKEN=		does not build
+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 libgnomecanvas
