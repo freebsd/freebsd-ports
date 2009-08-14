@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
