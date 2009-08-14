@@ -25,7 +25,7 @@ case "$2" in
 	USER=bacula
 	GROUP=${USER}
 	if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	    echo "To delete Bacula user  permanently, use 'pw userdel  ${USER}'"
+	    echo "To delete Bacula user permanently, use 'pw userdel  ${USER}'"
 	    echo "To delete Bacula group permanently, use 'pw groupdel ${GROUP}'"
 	fi
         ;;

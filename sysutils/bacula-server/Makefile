@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.2
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -195,7 +195,6 @@ RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 .endif
 .endif
 
-
 .if defined(WITH_OPENSSL)
 CONFIGURE_ARGS+=	--with-openssl
 .endif
@@ -265,7 +264,6 @@ pre-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
-
 
 .if !target(post-install)
 post-install:

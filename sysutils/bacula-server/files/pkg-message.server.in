@@ -4,12 +4,12 @@ NOTE:
 An auto-changer manipulation script based on FreeBSDs
 chio command is included and installed at
 
-  ${PREFIX}/sbin/chio-bacula
+  %%PREFIX%%/sbin/chio-bacula
 
 Please have a look at it if you want to use an
 autochanger. You have to configure the usage in
 
-  ${PREFIX}/etc/bacula-dir.conf
+  %%PREFIX%%/etc/bacula-dir.conf
 
 Take care of correct permissions for changer and
 tape device (e.g. /dev/ch0 and /dev/n[r]sa0) i.e.
@@ -43,7 +43,7 @@ the user bacula.  Check your permissions.
 For USB support read the bacula manual. It could be necessary
 to configure/compile a new kernel.
 
-Look at ${PREFIX}/share/bacula/update_bacula_tables for
+Look at %%PREFIX%%/share/bacula/update_bacula_tables for
 database update procedure. Details can be found in the
 ReleaseNotes
 
@@ -60,4 +60,6 @@ upgraded.
 
 Read the ReleaseNotes for further information.
 
+If you are using sqlite you need to run the make_sqlite_tables script as
+the bacula user. Do this using 'sudo su -m bacula'.
 ################################################################################
