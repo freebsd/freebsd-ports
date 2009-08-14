@@ -1,0 +1,9 @@
+This module provides an API for creating a File::ChangeNotify::Watcher subclass
+that will work on your platform.
+
+A File::ChangeNotify::Watcher class monitors a directory for changes made to
+any file. You can provide a regular expression to filter out files you are not
+interested in. It handles the addition of new subdirectories by adding them to
+the watch list.
+
+WWW: http://search.cpan.org/dist/File-ChangeNotify/
