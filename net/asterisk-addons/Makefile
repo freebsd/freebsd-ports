@@ -9,7 +9,8 @@ PORTNAME=	asterisk-addons
 PORTVERSION=	1.4.6
 PORTREVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
+		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	GPL modules for the Asterisk Open Source PBX
