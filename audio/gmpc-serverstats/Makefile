@@ -9,7 +9,8 @@ PORTNAME=	gmpc-serverstats
 PORTVERSION=	0.17.0
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Serverstats plugin for gmpc
