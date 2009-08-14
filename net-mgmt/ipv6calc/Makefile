@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipv6calc
-PORTVERSION=	0.72.2
+PORTVERSION=	0.73.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
