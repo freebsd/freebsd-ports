@@ -21,6 +21,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
 
+BROKEN=		checksum mismatch
+
 USE_FORTRAN=	yes
 
 .include <bsd.port.pre.mk>
