@@ -7,10 +7,9 @@
 
 PORTNAME=	lightning
 PORTVERSION=	${ARCH_PORTVERSION}
-PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ahze
+MASTER_SITE_SUBDIR=	beat
 PKGNAMESUFFIX=	-xpi
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tb-FreeBSD${OS_VER}-${ARCH}
 EXTRACT_SUFX=	.xpi
@@ -25,21 +24,22 @@ EXTRACT_AFTER_ARGS=	 -d ${WRKSRC}
 PLIST?=		${WRKDIR}/plist
 LIGHTNING_DIR=	lib/thunderbird/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}
 USE_GECKO=	thunderbird
-_IGNORE_MSG=	precompiled binaries, contact ahze@FreeBSD.org for build information
+_IGNORE_MSG=	precompiled binaries, contact gecko@FreeBSD.org for build information.
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
-ARCH_PORTVERSION?=	0.7
+ARCH_PORTVERSION?=	0.9
 
 .if ${ARCH}=="i386"
 . if ${OSVERSION} < 600000
 OS_VER=	5
+ARCH_PORTVERSION=	0.7
 . elif ${OSVERSION} >= 600000 && ${OSVERSION} < 700000
 OS_VER=	6
-WRKSRC:=	${WRKSRC}/${WRKSRC:S/${WRKDIR}//}
-. elif ${OSVERSION} >= 700000
+. elif ${OSVERSION} >= 700000 && ${OSVERSION} < 800000
 OS_VER=	7
+. elif ${OSVERSION} >= 800000
+OS_VER=	8
 . else
 IGNORE=	${_IGNORE_MSG}
 . endif
@@ -56,11 +56,13 @@ IGNORE=	${_IGNORE_MSG}
 .elif ${ARCH}=="amd64"
 . if ${OSVERSION} < 600000
 OS_VER=	5
+ARCH_PORTVERSION=	0.7
 . elif ${OSVERSION} >= 600000 && ${OSVERSION} < 700000
 OS_VER=	6
-. elif ${OSVERSION} >= 700000
-ARCH_PORTVERSION=	0.8
+. elif ${OSVERSION} >= 700000 && ${OSVERSION} < 800000
 OS_VER=	7
+. elif ${OSVERSION} >= 800000
+OS_VER=	8
 . endif
 .else
 IGNORE=	${_IGNORE_MSG}
