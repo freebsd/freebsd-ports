@@ -177,7 +177,7 @@ lib/libgeos.so.0
 lib/libgeos_c.a
 lib/libgeos_c.la
 lib/libgeos_c.so
-lib/libgeos_c.so.6
+lib/libgeos_c.so.7
 @dirrm include/geos/util
 @dirrm include/geos/simplify
 @dirrm include/geos/precision
