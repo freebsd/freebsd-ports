@@ -1,36 +1,48 @@
 @comment $FreeBSD$
 @dirrmtry include/dovecot
 lib/dovecot/imap/lib01_acl_plugin.so
+lib/dovecot/imap/lib02_imap_acl_plugin.so
+lib/dovecot/imap/lib02_imap_acl_plugin.la
+lib/dovecot/imap/lib02_imap_acl_plugin.a
 lib/dovecot/imap/lib02_lazy_expunge_plugin.so
 lib/dovecot/imap/lib10_quota_plugin.so
 lib/dovecot/imap/lib11_imap_quota_plugin.a
 lib/dovecot/imap/lib11_imap_quota_plugin.la
 lib/dovecot/imap/lib11_imap_quota_plugin.so
 lib/dovecot/imap/lib11_trash_plugin.so
+lib/dovecot/imap/lib20_autocreate_plugin.so
 lib/dovecot/imap/lib20_convert_plugin.so
 lib/dovecot/imap/lib20_expire_plugin.so
 lib/dovecot/imap/lib20_fts_plugin.so
+lib/dovecot/imap/lib20_listescape_plugin.so
 lib/dovecot/imap/lib20_mail_log_plugin.so
 lib/dovecot/imap/lib20_mbox_snarf_plugin.so
+lib/dovecot/imap/lib20_virtual_plugin.so
 lib/dovecot/imap/lib20_zlib_plugin.so
 lib/dovecot/imap/lib21_fts_squat_plugin.so
 @dirrm lib/dovecot/imap
 lib/dovecot/lda/lib01_acl_plugin.so
 lib/dovecot/lda/lib10_quota_plugin.so
 lib/dovecot/lda/lib11_trash_plugin.so
+lib/dovecot/lda/lib20_autocreate_plugin.so
 lib/dovecot/lda/lib20_convert_plugin.so
 lib/dovecot/lda/lib20_expire_plugin.so
 lib/dovecot/lda/lib20_fts_plugin.so
+lib/dovecot/lda/lib20_listescape_plugin.so
 lib/dovecot/lda/lib20_mail_log_plugin.so
+lib/dovecot/lda/lib20_virtual_plugin.so
 lib/dovecot/lda/lib21_fts_squat_plugin.so
 @dirrmtry lib/dovecot/lda
+lib/dovecot/pop3/lib20_autocreate_plugin.so
 lib/dovecot/pop3/lib02_lazy_expunge_plugin.so
 lib/dovecot/pop3/lib10_quota_plugin.so
 lib/dovecot/pop3/lib20_convert_plugin.so
 lib/dovecot/pop3/lib20_expire_plugin.so
 lib/dovecot/pop3/lib20_fts_plugin.so
+lib/dovecot/pop3/lib20_listescape_plugin.so
 lib/dovecot/pop3/lib20_mail_log_plugin.so
 lib/dovecot/pop3/lib20_mbox_snarf_plugin.so
+lib/dovecot/pop3/lib20_virtual_plugin.so
 lib/dovecot/pop3/lib20_zlib_plugin.so
 lib/dovecot/pop3/lib21_fts_squat_plugin.so
 @dirrm lib/dovecot/pop3
@@ -48,6 +60,9 @@ lib/dovecot/lib10_quota_plugin.so
 lib/dovecot/lib11_trash_plugin.a
 lib/dovecot/lib11_trash_plugin.la
 lib/dovecot/lib11_trash_plugin.so
+lib/dovecot/lib20_autocreate_plugin.so
+lib/dovecot/lib20_autocreate_plugin.la
+lib/dovecot/lib20_autocreate_plugin.a
 lib/dovecot/lib20_convert_plugin.a
 lib/dovecot/lib20_convert_plugin.la
 lib/dovecot/lib20_convert_plugin.so
@@ -57,12 +72,18 @@ lib/dovecot/lib20_expire_plugin.so
 lib/dovecot/lib20_fts_plugin.a
 lib/dovecot/lib20_fts_plugin.la
 lib/dovecot/lib20_fts_plugin.so
+lib/dovecot/lib20_listescape_plugin.so
+lib/dovecot/lib20_listescape_plugin.la
+lib/dovecot/lib20_listescape_plugin.a
 lib/dovecot/lib20_mail_log_plugin.a
 lib/dovecot/lib20_mail_log_plugin.la
 lib/dovecot/lib20_mail_log_plugin.so
 lib/dovecot/lib20_mbox_snarf_plugin.a
 lib/dovecot/lib20_mbox_snarf_plugin.la
 lib/dovecot/lib20_mbox_snarf_plugin.so
+lib/dovecot/lib20_virtual_plugin.so
+lib/dovecot/lib20_virtual_plugin.la
+lib/dovecot/lib20_virtual_plugin.a
 lib/dovecot/lib20_zlib_plugin.so
 lib/dovecot/lib20_zlib_plugin.a
 lib/dovecot/lib20_zlib_plugin.la
@@ -80,6 +101,7 @@ libexec/dovecot/gdbhelper
 libexec/dovecot/idxview
 libexec/dovecot/imap
 libexec/dovecot/imap-login
+libexec/dovecot/imap-utf7
 libexec/dovecot/listview
 libexec/dovecot/logview
 libexec/dovecot/maildirlock
@@ -87,6 +109,7 @@ libexec/dovecot/maildirlock
 %%POP3%%libexec/dovecot/pop3-login
 libexec/dovecot/rawlog
 libexec/dovecot/ssl-build-param
+libexec/dovecot/threadview
 @dirrmtry libexec/dovecot
 sbin/dovecot
 sbin/dovecotpw
@@ -96,6 +119,9 @@ sbin/dovecotpw
 %%BDB%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-db.conf %D/etc/dovecot-db.conf; then rm -f %D/etc/dovecot-db.conf; fi
 %%EXAMPLESDIR%%/dovecot-db.conf
 %%BDB%%@exec if [ ! -f %D/etc/dovecot-db.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-db.conf %D/etc/dovecot-db.conf; fi
+%%SQL%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-dict-sql.conf %D/etc/dovecot-dict-sql.conf; then rm -f %D/etc/dovecot-dict-sql.conf; fi
+%%EXAMPLESDIR%%/dovecot-dict-sql.conf
+%%SQL%%@exec if [ ! -f %D/etc/dovecot-dict-sql.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-dict-sql.conf %D/etc/dovecot-dict-sql.conf; fi
 %%LDAP%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-ldap.conf %D/etc/dovecot-ldap.conf; then rm -f %D/etc/dovecot-ldap.conf; fi
 %%EXAMPLESDIR%%/dovecot-ldap.conf
 %%LDAP%%@exec if [ ! -f %D/etc/dovecot-ldap.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-ldap.conf %D/etc/dovecot-ldap.conf; fi
