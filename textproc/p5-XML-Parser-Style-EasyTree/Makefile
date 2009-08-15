@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Parser-Style-EasyTree
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	XML
@@ -21,6 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	XML::Parser::Style::EasyTree.3
+MAN3=	XML::Parser::Style::EasyTree.3 XML::Parser::Style::ETree.3
 
 .include <bsd.port.mk>
