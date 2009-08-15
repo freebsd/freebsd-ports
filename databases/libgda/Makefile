@@ -32,5 +32,6 @@ CONFIGURE_ARGS=	--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lgdbm"
 PLIST_SUB=	VERSION=${PORTVERSION}
+MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.mk>
