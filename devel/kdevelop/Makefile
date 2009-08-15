@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	3.5.3
-PORTREVISION=	2
+PORTVERSION=	3.5.4
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -26,8 +25,21 @@ RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gmake:${PORTSDIR}/devel/gmake
 
 .if defined(WITH_OPTIONAL_DEPENDS)
+
+PAPERSIZE?=	letter
+
+.if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
+.BEGIN:
+	@${ECHO_CMD}
+	@${ECHO_CMD} "PAPERSIZE incorrect value: ${PAPERSIZE}."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Must specify PAPERSIZE as one of a4, letter, or letterdj."
+	@${ECHO_CMD} "letterdj allows a slightly larger margins for DeskJets."
+	@${FALSE}
+.endif
+
 RUN_DEPENDS+=	ark:${PORTSDIR}/misc/kdeutils3 \
-		a2ps:${PORTSDIR}/print/a2ps-letter \
+		a2ps:${PORTSDIR}/print/a2ps-${PAPERSIZE} \
 		dot:${PORTSDIR}/graphics/graphviz \
 		glimpse:${PORTSDIR}/textproc/glimpse \
 		kiconedit:${PORTSDIR}/graphics/kdegraphics3
@@ -40,7 +52,7 @@ USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BDB=	yes
-USE_AUTOTOOLS=  libtool:22 autotools:run
+USE_AUTOTOOLS=	libtool:22 autotools:run
 _NO_KDE_FINAL=	yes
 CONFIGURE_ARGS+=--with-qtdoc-dir=${LOCALBASE}/share/doc/qt/html \
 		--with-db-includedir=${BDB_INCLUDE_DIR} \
