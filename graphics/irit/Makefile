@@ -19,6 +19,8 @@ LIB_DEPENDS=	rle.1:${PORTSDIR}/graphics/urt
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
 		${LOCALBASE}/lib/libungif.a:${PORTSDIR}/graphics/libungif
 
+BROKEN=		checksum mismatch
+
 USE_ZIP=	yes
 USE_GMAKE=	yes
 .ifdef (WITH_MOTIF)
