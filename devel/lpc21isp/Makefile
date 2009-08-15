@@ -20,4 +20,10 @@ PLIST_FILES=	bin/lpc21isp
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
+.include <bsd.port.post.mk>
