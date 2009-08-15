@@ -42,7 +42,7 @@ MAKE_ENV+=	HB_ARCHITECTURE=${HB_ARCHITECTURE} \
 			HB_WITHOUT_X11=${HB_WITHOUT_X11}
 
 .if !defined(NOPORTDOCS)
-MAKE_ENV+= HB_DOC_INSTALL=${HB_DOC_INSTALL} 
+MAKE_ENV+= HB_DOC_INSTALL=${HB_DOC_INSTALL}
 .endif
 
 PORTDOCS= *.txt genhtm.bat genhtm.lnk genhtm.rsp
@@ -55,4 +55,12 @@ pre-install:
 	${MKDIR} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Leaves files behind on deinstall
+.elif ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: assertion failed
+.endif
+
+.include <bsd.port.post.mk>
