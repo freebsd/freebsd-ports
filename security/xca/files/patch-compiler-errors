@@ -1,0 +1,138 @@
+diff --git ./configure ./configure
+index fd1dde7..7c79eaa 100755
+--- ./configure
++++ ./configure
+@@ -141,8 +141,8 @@ cat >conftest.c <<EOF
+ #include <Qt/qglobal.h>
+ 
+ int main(){
+-  printf("\nThe Versions of the used libraries are:\n\t%s\n\tQT: %s\n",
+-	 OPENSSL_VERSION_TEXT, QT_VERSION_STR );
++  printf("\nThe Versions of the used libraries are:\n\t%s 0x%lxL\n\tQT: %s\n",
++	 OPENSSL_VERSION_TEXT, OPENSSL_VERSION_NUMBER, QT_VERSION_STR );
+   if (QT_VERSION < 0x040001) {
+ 	printf("You need Qt 4 or higher\n");
+ 	return 1;
+diff --git ./lib/pki_x509.cpp ./lib/pki_x509.cpp
+index 9b21a27..84d8513 100644
+--- ./lib/pki_x509.cpp
++++ ./lib/pki_x509.cpp
+@@ -339,8 +339,9 @@ void pki_x509::writeDefault(const QString fname)
+ void pki_x509::writeCert(const QString fname, bool PEM, bool append)
+ {
+ 	FILE *fp;
+-	char *_a = "a", *_w="w", *p = _w;
+-	if (append) p=_a;
++	const char *p = "w";
++	if (append)
++		p = "a";
+ 	fp = fopen(fname.toAscii(), p);
+ 	if (fp != NULL) {
+ 		if (cert){
+diff --git ./lib/x509rev.cpp ./lib/x509rev.cpp
+index 3af4b44..aa60dee 100644
+--- ./lib/x509rev.cpp
++++ ./lib/x509rev.cpp
+@@ -7,16 +7,23 @@
+ 
+ #include "x509rev.h"
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x00908000L
+-#define X509_REVOKED_dup(x5r) \
+-	ASN1_dup_of (X509_REVOKED, i2d_X509_REVOKED, d2i_X509_REVOKED, x5r)
+ 
+-#else
+-#define X509_REVOKED_dup(x5r) (X509_REVOKED *)ASN1_dup( \
+-	(int (*)(...))i2d_X509_REVOKED, \
+-	(char *(*)(...))d2i_X509_REVOKED, \
+-	(char *)x5r)
+-#endif
++static X509_REVOKED *X509_REVOKED_dup(const X509_REVOKED *n)
++{
++        int len;
++        X509_REVOKED *ret;
++	unsigned char *buf, *p;
++	const unsigned char *cp;
++
++        len = i2d_X509_REVOKED((X509_REVOKED *)n, NULL);
++	buf = (unsigned char *)OPENSSL_malloc(len);
++        p = buf;
++        i2d_X509_REVOKED((X509_REVOKED *)n, &p);
++        cp = buf;
++        ret = d2i_X509_REVOKED(NULL, &cp, len);
++        OPENSSL_free(buf);
++        return(ret);
++}
+ 
+ x509rev::x509rev()
+ {
+@@ -25,7 +32,7 @@ x509rev::x509rev()
+ 
+ x509rev::x509rev(const X509_REVOKED *n)
+ {
+-	rev = X509_REVOKED_dup((X509_REVOKED *)n);
++	rev = X509_REVOKED_dup(n);
+ }
+ 
+ x509rev::x509rev(const x509rev &n)
+@@ -43,7 +50,7 @@ x509rev &x509rev::set(const X509_REVOKED *n)
+ {
+ 	if (rev != NULL)
+ 		X509_REVOKED_free(rev);
+-	rev = X509_REVOKED_dup((X509_REVOKED *)n);
++	rev = X509_REVOKED_dup(n);
+ 	return *this;
+ }
+ 
+diff --git ./widgets/ExportCert.cpp ./widgets/ExportCert.cpp
+index 1069e4b..6159dcc 100644
+--- ./widgets/ExportCert.cpp
++++ ./widgets/ExportCert.cpp
+@@ -46,7 +46,7 @@ void ExportCert::on_fileBut_clicked()
+ 
+ void ExportCert::on_exportFormat_activated(int)
+ {
+-	char *suffix[] = { "crt", "crt", "crt", "crt", "cer",
++	const char *suffix[] = { "crt", "crt", "crt", "crt", "cer",
+ 		"p7b", "p7b", "p7b", "p7b", "p12", "p12", "pem", "pem" };
+ 	int selected = exportFormat->currentIndex();
+ 	QString fn = filename->text();
+diff --git ./widgets/ExportDer.cpp ./widgets/ExportDer.cpp
+index 8826b7e..f03c686 100644
+--- ./widgets/ExportDer.cpp
++++ ./widgets/ExportDer.cpp
+@@ -39,7 +39,7 @@ void ExportDer::on_fileBut_clicked()
+ 
+ void ExportDer::on_exportFormat_activated(int)
+ {
+-	char *suffix[] = { "pem", "der" };
++	const char *suffix[] = { "pem", "der" };
+ 	int selected = exportFormat->currentIndex();
+ 	QString fn = filename->text();
+ 	QString nfn = fn.left(fn.lastIndexOf('.')+1) + suffix[selected];
+diff --git ./widgets/ExportKey.cpp ./widgets/ExportKey.cpp
+index ecf0598..f2e7de1 100644
+--- ./widgets/ExportKey.cpp
++++ ./widgets/ExportKey.cpp
+@@ -65,7 +65,7 @@ void ExportKey::canEncrypt()
+ 
+ void ExportKey::on_exportFormat_activated(int c)
+ {
+-	char *suffix[] = { "pem", "der" };
++	const char *suffix[] = { "pem", "der" };
+ 
+ 	QString fn = filename->text();
+ 	QString nfn = fn.left(fn.lastIndexOf('.')+1) + suffix[c];
+diff --git ./widgets/hashBox.cpp ./widgets/hashBox.cpp
+index cb4fa3a..3a22a82 100644
+--- ./widgets/hashBox.cpp
++++ ./widgets/hashBox.cpp
+@@ -17,7 +17,7 @@ int hashBox::default_md = 2; /* SHA1 */
+ #endif
+ 
+ static struct {
+-	char *name;
++	const char *name;
+ 	const EVP_MD *md;
+ } hashalgos[] = {
+ 	{ "MD 2", EVP_md2() },
