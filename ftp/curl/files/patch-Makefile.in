@@ -2,8 +2,8 @@ Build and install the documentation as usual, no special handling.
 
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -273,9 +273,9 @@
-  libcurl.pc.in vc6curl.dsw
+@@ -297,9 +297,9 @@
+  libcurl.pc.in vc6curl.dsw MacOSX-Framework Android.mk $(CMAKE_DIST)
  
  bin_SCRIPTS = curl-config
 -SUBDIRS = lib src
@@ -15,7 +15,7 @@ Build and install the documentation as usual, no special handling.
  pkgconfig_DATA = libcurl.pc
  all: all-recursive
  
-@@ -835,12 +835,10 @@
+@@ -859,12 +859,10 @@
  # We extend the standard install with a custom hook:
  install-data-hook:
  	cd include && $(MAKE) install

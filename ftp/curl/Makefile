@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.19.5
-PORTREVISION=	1
+PORTVERSION=	7.19.6
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -68,7 +67,8 @@ OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		LIBSSH2 "SCP/SFTP support via libssh2" off \
 		NTLM "NTLM authentication" off \
 		OPENSSL "OpenSSL support" on \
-		PROXY "Proxy support" on
+		PROXY "Proxy support" on \
+		TRACKMEMORY "Enable curl memory diagnostic output" off
 
 .include <bsd.port.pre.mk>
 
@@ -169,6 +169,10 @@ CONFIGURE_ARGS+=	--without-libssh2
 
 .if defined(WITH_CURL_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.if defined(WITH_TRACKMEMORY)
+CONFIGURE_ARGS+=	--enable-curldebug
 .endif
 
 .if defined(WITH_NTLM)
