@@ -5451,6 +5451,7 @@ iftop                           ports/net-mgmt/iftop
 ifxetex                         ports/print/ifxetex
 igal                            ports/www/igal
 igal2                           ports/www/igal2
+igbinary                        ports/converters/igbinary
 iglooftp                        ports/ftp/IglooFTP
 igmpproxy                       ports/net/igmpproxy
 igraph                          ports/math/igraph
@@ -6301,6 +6302,7 @@ jmf                             ports/java/jmf
 jmk-x11-fonts                   ports/x11-fonts/jmk-x11-fonts
 jmol                            ports/science/jmol
 jmp                             ports/java/jmp
+jmref                           ports/multimedia/jmref
 jmusic                          ports/audio/jmusic
 jnettop                         ports/net-mgmt/jnettop
 jode                            ports/java/jode
@@ -12884,6 +12886,7 @@ p5-Statistics-TTest             ports/math/p5-Statistics-TTest
 p5-Storable                     ports/devel/p5-Storable
 p5-Storable-AMF                 ports/converters/p5-Storable-AMF
 p5-Stream                       ports/devel/p5-Stream
+p5-Stream-Reader                ports/devel/p5-Stream-Reader
 p5-String-Approx                ports/devel/p5-String-Approx
 p5-String-BufferStack           ports/textproc/p5-String-BufferStack
 p5-String-CRC32                 ports/devel/p5-String-CRC32
@@ -13421,6 +13424,7 @@ p5-WebService-Basecamp          ports/www/p5-WebService-Basecamp
 p5-WebService-Bloglines         ports/www/p5-WebService-Bloglines
 p5-WebService-BuzzurlAPI        ports/www/p5-WebService-BuzzurlAPI
 p5-WebService-CIA               ports/www/p5-WebService-CIA
+p5-WebService-Google-Sets       ports/www/p5-WebService-Google-Sets
 p5-WebService-ISBNDB            ports/www/p5-WebService-ISBNDB
 p5-WebService-MusicBrainz       ports/www/p5-WebService-MusicBrainz
 p5-WebService-NoPaste           ports/www/p5-WebService-NoPaste
@@ -16425,6 +16429,7 @@ p5-statistics-ttest             ports/math/p5-Statistics-TTest
 p5-storable                     ports/devel/p5-Storable
 p5-storable-amf                 ports/converters/p5-Storable-AMF
 p5-stream                       ports/devel/p5-Stream
+p5-stream-reader                ports/devel/p5-Stream-Reader
 p5-string-approx                ports/devel/p5-String-Approx
 p5-string-bufferstack           ports/textproc/p5-String-BufferStack
 p5-string-camelcase             ports/textproc/p5-String-CamelCase
@@ -16933,6 +16938,7 @@ p5-webservice-basecamp          ports/www/p5-WebService-Basecamp
 p5-webservice-bloglines         ports/www/p5-WebService-Bloglines
 p5-webservice-buzzurlapi        ports/www/p5-WebService-BuzzurlAPI
 p5-webservice-cia               ports/www/p5-WebService-CIA
+p5-webservice-google-sets       ports/www/p5-WebService-Google-Sets
 p5-webservice-isbndb            ports/www/p5-WebService-ISBNDB
 p5-webservice-musicbrainz       ports/www/p5-WebService-MusicBrainz
 p5-webservice-nopaste           ports/www/p5-WebService-NoPaste
@@ -19463,6 +19469,7 @@ py-reportlab                    ports/print/py-reportlab
 py-reportlab2                   ports/print/py-reportlab2
 py-repoze.tm2                   ports/devel/py-repoze.tm2
 py-repoze.what                  ports/devel/py-repoze.what
+py-repoze.what-pylons           ports/devel/py-repoze.what-pylons
 py-repoze.who                   ports/devel/py-repoze.who
 py-repoze.who-testutil          ports/devel/py-repoze.who-testutil
 py-resourcepackage              ports/devel/py-resourcepackage
@@ -20291,6 +20298,7 @@ rotix                           ports/textproc/rotix
 rotorouter                      ports/net-mgmt/rotorouter
 rottdc                          ports/games/rottdc
 roundcube                       ports/mail/roundcube
+roundcube-air                   ports/mail/roundcube-air
 roundcube-groupvice             ports/mail/roundcube-groupvice
 roundcube-mvision2              ports/mail/roundcube-mvision2
 roundup                         ports/www/roundup
