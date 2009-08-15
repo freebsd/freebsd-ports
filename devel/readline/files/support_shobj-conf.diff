@@ -4,8 +4,8 @@
  
  # FreeBSD-3.x ELF
  freebsd[3-9]*|freebsdelf[3-9]*|freebsdaout[3-9]*|dragonfly*)
--	SHOBJ_CFLAGS=-fpic
-+	# SHOBJ_CFLAGS=-fpic
+-	SHOBJ_CFLAGS=-fPIC
++	# SHOBJ_CFLAGS=-fPIC
 +	# This breaks shared lib linking with FreeBSD 6.2RC1/SPARC64 with
 +	# gcc version 3.4.6 [FreeBSD] 20060305 - gcc bug?
 +	# Submitted By: John Wood <john-freebsd@charpa.org>
