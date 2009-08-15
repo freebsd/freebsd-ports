@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	misc kde
-MASTER_SITES=	http://www.periapsis.org/tellico/download/
+MASTER_SITES=	http://tellico-project.org/files/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Collection manager for KDE
