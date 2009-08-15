@@ -1,0 +1,11 @@
+--- docs/reference/Makefile.in.orig	2009-08-09 02:49:17.000000000 +0200
++++ docs/reference/Makefile.in	2009-08-09 02:54:54.000000000 +0200
+@@ -418,8 +418,6 @@
+ 
+ html/index.html:
+ 	-rm -rf html
+-	-doxygen $(doxygen_configfile) \
+-	2> doxygen-warnings.txt | tee doxygen-output.txt && cat doxygen-warnings.txt
+ 
+ gnome-mag-reference-html.tar.gz: html/index.html
+ 	tar cf - html | gzip -c --best >$@
