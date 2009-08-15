@@ -123,6 +123,7 @@ PATCHFILES+=		dovecot-${PORTVERSION}-managesieve-${MANAGESIEVEVERSION}.diff.gz
 PATCH_DIST_STRIP=	-p1
 PROTOCOLS+=		managesieve
 DOCS+=			README.managesieve
+BROKEN=	Managesieve port needs to be updated.
 .endif
 
 ## GSSAPI support
