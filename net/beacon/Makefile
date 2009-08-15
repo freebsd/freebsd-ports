@@ -7,7 +7,7 @@
 
 PORTNAME=	beacon
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	http://dast.nlanr.net/Projects/Beacon/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -22,6 +22,7 @@ WWW_DIR?=	${PREFIX}/www/
 PLIST_SUB+=	VERSION=${PORTVERSION}
 USE_PERL5=	yes
 USE_AUTOTOOLS=	autoconf:262
+USE_RC_SUBR=	beacon
 
 .ifdef(WITHOUT_IPV6)
 CONFIGURE_ARGS=
@@ -37,11 +38,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .if ${ARCH} != "i386"
 BROKEN=		Does not compile on !i386
 .endif
-
-pre-build:
-	cd ${WRKSRC}/Net-Multicast-Beacon && \
-		make Makefile.perl && \
-		${REINPLACE_CMD} -E 's,doc_\$$\(INSTALLDIRS\)_install$$,,g' Makefile.perl
 
 post-install:
 	@${ECHO} "Sample config installed at \
