@@ -4,3 +4,6 @@ SIZE (bind-9.4.3-P3.tar.gz) = 6544968
 MD5 (bind-9.4.3-P3.tar.gz.asc) = 69fff246b46d78ff1b4f6a89ad516bb6
 SHA256 (bind-9.4.3-P3.tar.gz.asc) = 26fe58193633b7402a0e01a2502ee6cac52f6a41879198429979f09fde221bc7
 SIZE (bind-9.4.3-P3.tar.gz.asc) = 481
+MD5 (bind-9.4.1-geodns-patch.tar.gz) = d3d515bdef525f9a31787b36a105e690
+SHA256 (bind-9.4.1-geodns-patch.tar.gz) = 352413037e4779519c0a5b70aef801c8f84bcf15d1d485b16096d75f83644a65
+SIZE (bind-9.4.1-geodns-patch.tar.gz) = 2057

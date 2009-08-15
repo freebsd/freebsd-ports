@@ -1,0 +1,11 @@
+The most popular use of this patch is to send web site visitors to their
+nearest web server. Suppose you have a site called www.example555.com with
+two web servers: one in the US and one in England. You can use this patch
+in order for visitors from Europe to connect to the server in England and
+all other visitors to the server in the US. This is just one example of
+its usage. There are probably many others.
+
+WWW: http://www.caraytech.com/geodns/
+
+- Doug Barton
+DougB@FreeBSD.org

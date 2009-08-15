@@ -88,6 +88,26 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 BIND_DESTETC=	${PREFIX}/etc
 .endif
 
+# For this feature please use the slave port: ../bind94-geoip
+.if defined(WITH_GEOIP)
+PKGNAMESUFFIX=	-geoip
+LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
+
+CONFIGURE_ENV+=	 CFLAGS="-I${LOCALBASE}/include" \
+		 LDFLAGS="-L${LOCALBASE}/lib" \
+		 LIBS="-L${LOCALBASE}/lib -lGeoIP"
+
+GEOIP_PATCH=	${WRKDIR}/bind-${GEOIP_PATCH_VER}-geodns-patch/patch.diff
+GEOIP_PATCH_VER=	9.4.1
+
+DISTFILES+=	bind-${GEOIP_PATCH_VER}-geodns-patch.tar.gz:geodns
+MASTER_SITES+=	http://www.caraytech.com/geodns/:geodns
+EXTRACT_ONLY+=	bind-${GEOIP_PATCH_VER}-geodns-patch.tar.gz
+EXTRA_PATCHES+=	${GEOIP_PATCH}
+.else
+CONFLICTS+=	bind94-geoip-9.4.*
+.endif
+
 PLIST_SUB=	BIND_DESTETC="${BIND_DESTETC}"
 
 MAN1=	dig.1 host.1 nslookup.1 nsupdate.1
@@ -131,6 +151,13 @@ MLINKS=	named-checkzone.8 named-compilezone.8
 
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
+
+pre-patch:
+.if defined(WITH_GEOIP)
+	@${CP} ${GEOIP_PATCH} ${GEOIP_PATCH}.presed
+	@${SED} -e 's#bind-9.4.1-P1[^/]*/##g' ${GEOIP_PATCH}.presed > \
+	    ${GEOIP_PATCH}
+.endif
 
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
