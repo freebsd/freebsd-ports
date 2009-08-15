@@ -25,4 +25,10 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042
+QTCFGLIBS+=	${PTHREAD_LIBS}
+.endif
+
+.include <bsd.port.post.mk>
