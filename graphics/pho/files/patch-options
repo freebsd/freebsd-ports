@@ -8,20 +8,20 @@
      /* Initialize some defaults from environment variables,
       * before reading cmdline args.
       */
-@@ -681,8 +682,11 @@
+@@ -877,8 +877,11 @@
  
      while (argc > 1)
      {
--        if (argv[1][0] == '-') {
--            CheckArg(argv[1][1]);
-+        if (argv[1][0] == '-' && options) {
-+	    if (argv[1][1] != '-')
-+                CheckArg(argv[1][1]);
-+	    else
-+		options = 0;
-         }
+-        if (argv[1][0] == '-')
+-            CheckArg(argv[1]);
++        if (argv[1][0] == '-' && options)
++            if (strcmp(argv[1], "--"))
++                CheckArg(argv[1]);
++            else
++                options = 0;
          else {
-             PhoImage* img = NewPhoImage(argv[1]);
+             AddImage(argv[1]);
+         }
 --- pho.c.orig	Mon Mar 21 07:28:03 2005
 +++ pho.c	Mon Sep 11 16:05:05 2006
 @@ -439,6 +439,7 @@
