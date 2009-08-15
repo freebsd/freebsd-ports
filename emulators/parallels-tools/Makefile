@@ -16,6 +16,8 @@ COMMENT=	Parallels Desktop Tools for FreeBSD
 
 USE_BZIP2=	yes
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
