@@ -32,7 +32,7 @@ MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 BROKEN=		incomplete pkg-plist
 .endif
 
