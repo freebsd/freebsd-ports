@@ -1,5 +1,16 @@
 --- lib/Makefile.in.orig	2009-03-25 22:14:26.000000000 -0400
 +++ lib/Makefile.in	2009-06-06 15:26:31.000000000 -0400
+@@ -26,8 +26,8 @@
+ -Dset_relocation_prefix=libiconv_set_relocation_prefix \
+ -Drelocate=libiconv_relocate @DEFS@
+ LIBTOOL = @LIBTOOL@
+-LIBTOOL_COMPILE = $(LIBTOOL) --mode=compile
+-LIBTOOL_LINK = $(LIBTOOL) --mode=link
++LIBTOOL_COMPILE = $(LIBTOOL) --mode=compile --tag=CC
++LIBTOOL_LINK = $(LIBTOOL) --mode=link --tag=CC
+ LIBTOOL_INSTALL = $(LIBTOOL) --mode=install
+ LIBTOOL_UNINSTALL = $(LIBTOOL) --mode=uninstall
+ # Windows resource compiler (windres). Used via libtool.
 @@ -50,7 +50,7 @@ SHELL = /bin/sh
  
  # Before making a release, change this according to the libtool documentation,
