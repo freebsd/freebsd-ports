@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: beacon
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable beacon.
+#
+# beacon_enable="YES"
+
+beacon_enable=${beacon_enable-"NO"}
+
+. %%RC_SUBR%%
+
+name="beacon"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/${name}"
+
+conffile=%%PREFIX%%/etc/beacon.conf
+if [ -f $conffile ]; then
+        piddir=`grep OUTPUTDIR $conffile | awk '{print $3}'`
+fi
+pidfile=${piddir}/multicastbeacon.PID
+
+load_rc_config $name
+
+run_rc_command "$1"
