@@ -25,7 +25,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INFO=		pinentry
 
-CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .if !defined(PINENTRY_SLAVE)
 OPTIONS=	NCURSES "Curses frontend" on \
@@ -56,6 +58,7 @@ BUILD_DEPENDS+=	moc-qt4:${PORTSDIR}/devel/qt4-moc
 LIB_DEPENDS+=	QtGui.4:${PORTSDIR}/x11-toolkits/qt4-gui
 PLIST_SUB+=	WITH_QT4=""
 MOC4=		${LOCALBASE}/bin/moc-qt4
+LDFLAGS+=	${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=--disable-pinentry-qt4
 PLIST_SUB+=	WITH_QT4="@comment "
