@@ -1,0 +1,13 @@
+--- scripts/xdg-open.orig        2009-08-15 13:22:26.000000000 -0400
++++ scripts/xdg-open        2009-08-15 13:26:02.000000000 -0400
+@@ -364,7 +364,9 @@ open_generic()
+     for browser in $BROWSER; do
+         if [ x"$browser" != x"" ]; then
+ 
+-            browser_with_arg=`echo "$browser" | sed s#%s#"$1"#`
++            browser_with_args=`printf "$browser" "$1" 2>/dev/null`
++            if [ $? -ne 0 ]; then browser_with_args=$browser;
++            fi
+ 
+             if [ x"$browser_with_arg" = x"$browser" ]; then "$browser" "$1";
+             else $browser_with_arg;
