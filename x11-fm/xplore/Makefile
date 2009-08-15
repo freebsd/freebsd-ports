@@ -17,6 +17,7 @@ COMMENT=	Yet another Motif file manager
 USE_IMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xpm
+MAKE_JOBS_UNSAFE=yes
 
 MAN1=		xplore.1 xploretype.1
 
