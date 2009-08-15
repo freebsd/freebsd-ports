@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+200908015:
+  AFFECTS: users of mail/dovecot
+  AUTHOR: wxs@FreeBSD.org
+
+  Dovecot has been updated to 1.2.3. The configuration file has
+  changed significantly. Please see http://wiki.dovecot.org/Upgrading/1.2
+  for details of what this means.
+
 20090804:
   AFFECTS: users of multimedia/phonon*, x11/kdebase4*, deskutils/kdepim4
   AUTHOR: kde@FreeBSD.org
