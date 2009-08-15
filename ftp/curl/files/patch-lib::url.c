@@ -2,9 +2,9 @@ Different handling of signals and threads.
 
 --- a/lib/url.c
 +++ b/lib/url.c
-@@ -719,6 +719,10 @@
-     data->set.httpauth = CURLAUTH_BASIC;  /* defaults to basic */
-     data->set.proxyauth = CURLAUTH_BASIC; /* defaults to basic */
+@@ -792,6 +792,10 @@
+     data->progress.flags |= PGRS_HIDE;
+     data->state.current_speed = -1; /* init to negative == impossible */
  
 +#if defined(__FreeBSD_version)
 +    data->set.no_signal = TRUE; /* different handling of signals and threads */
