@@ -30,6 +30,7 @@ USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--enable-static --with-libiconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
