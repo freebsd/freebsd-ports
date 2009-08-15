@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jdom
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES=	java textproc
 MASTER_SITES=	http://www.jdom.org/dist/source/
@@ -18,7 +17,7 @@ COMMENT=	Java library for accessing and manipulating XML documents
 RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.3+
 USE_ANT=	yes
 
 ALL_TARGET=	package
@@ -27,6 +26,8 @@ ALL_TARGET+=	javadoc
 OTHERDOCS=	README.txt TODO.txt CHANGES.txt COMMITTERS.txt LICENSE.txt
 PORTDOCS=	apidocs ${OTHERDOCS}
 .endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ENV+=	CLASSPATH=${JAVALIBDIR}/jaxen-jdom.jar
 
