@@ -165,6 +165,7 @@
     SUBDIR += mediainfo
     SUBDIR += mencoder
     SUBDIR += mimms
+    SUBDIR += minitube
     SUBDIR += miro
     SUBDIR += mjpegtools
     SUBDIR += mkvtoolnix
