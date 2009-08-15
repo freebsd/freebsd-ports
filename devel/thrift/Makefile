@@ -44,6 +44,10 @@ CONFIGURE_ARGS+= \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 #
 # To roll snapshot: as bms: env BOOTSTRAP=defined make fetch
 #
