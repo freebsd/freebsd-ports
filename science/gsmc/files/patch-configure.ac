@@ -1,0 +1,13 @@
+--- configure.ac.orig	2004-07-28 04:34:01.000000000 -0400
++++ configure.ac	2009-08-14 20:51:30.000000000 -0400
+@@ -9,7 +9,9 @@
+ # Checks for programs.
+ AC_PROG_CC
+ pkg_modules="gtk+-2.0"
+-PKG_CHECK_MODULES(PACKAGE,[$pkg_modules])
++PACKAGE_CFLAGS=`pkg-config --cflags ${pkg_modules}`
++PACKAGE_LIBS=`pkg-config --libs ${pkg_modules}`
++#PKG_CHECK_MODULES(PACKAGE,[$pkg_modules])
+ AC_SUBST(PACKAGE_CFLAGS)
+ AC_SUBST(PACKAGE_LIBS)
+ 

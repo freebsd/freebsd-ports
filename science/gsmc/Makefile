@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gsmc
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	science hamradio
 MASTER_SITES=	http://www.qsl.net/ik5nax/
 
@@ -16,7 +15,11 @@ COMMENT=	Smith chart program for impedance matching
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262
+AUTOMAKE_ARGS=	-i --add-missing --foreign --copy
 
 MAN1=		gsmc.1
 PLIST_FILES=	bin/gsmc
