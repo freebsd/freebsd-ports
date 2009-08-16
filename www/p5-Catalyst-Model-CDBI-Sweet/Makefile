@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CDBI model class for Catalyst that makes things sweeter
 
 BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \

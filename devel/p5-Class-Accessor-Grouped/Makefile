@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lets you build groups of accessors
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

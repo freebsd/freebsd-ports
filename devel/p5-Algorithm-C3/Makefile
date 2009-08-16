@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module for merging hierarchies using the C3 algorithm
 
 PERL_MODBUILD=	5.8.0+

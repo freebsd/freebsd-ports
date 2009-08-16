@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Recursively merge two or more hashes, simply
 
 RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone

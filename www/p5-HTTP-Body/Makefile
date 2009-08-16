@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTTP Body Parser
 
 RUN_DEPENDS=	p5-File-Temp>=0.14:${PORTSDIR}/devel/p5-File-Temp \

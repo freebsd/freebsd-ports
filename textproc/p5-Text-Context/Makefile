@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Handle highlighting search result context snippets
 
 RUN_DEPENDS=	p5-Text-Context-EitherSide>=1.1:${PORTSDIR}/textproc/p5-Text-Context-EitherSide \

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DM/DMAKI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dynamic definition of Class::DBI sub classes
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \

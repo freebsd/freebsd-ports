@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML Widget And Validation Framework
 
 RUN_DEPENDS=	p5-HTML-Tree>=3.22:${PORTSDIR}/www/p5-HTML-Tree \

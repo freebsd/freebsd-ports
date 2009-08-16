@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Like FromForm but with DBIx::Class and HTML::Widget
 
 RUN_DEPENDS=	p5-HTML-Widget>=1.10:${PORTSDIR}/www/p5-HTML-Widget \

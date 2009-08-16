@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stores a Catalyst Session in a Cookie
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7010:${PORTSDIR}/www/p5-Catalyst-Runtime \
