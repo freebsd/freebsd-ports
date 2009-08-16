@@ -7,15 +7,13 @@
 
 PORTNAME=	Terminal
 PORTVERSION=	0.2.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Terminal emulator for the X windowing system
-
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
