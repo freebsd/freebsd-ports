@@ -1,0 +1,27 @@
+bin/rekonq
+share/applications/kde4/rekonq.desktop
+share/apps/rekonq/defaultbookmarks.xbel
+share/apps/rekonq/htmls/notfound.html
+share/apps/rekonq/pics/hi64-actions-download.png
+share/apps/rekonq/pics/loading.mng
+share/apps/rekonq/pics/webkit-icon.png
+share/apps/rekonq/rekonqui.rc
+share/config.kcfg/rekonq.kcfg
+share/icons/hicolor/16x16/apps/rekonq.png
+share/icons/hicolor/32x32/apps/rekonq.png
+share/icons/hicolor/64x64/apps/rekonq.png
+share/locale/da/LC_MESSAGES/rekonq.mo
+share/locale/de/LC_MESSAGES/rekonq.mo
+share/locale/et/LC_MESSAGES/rekonq.mo
+share/locale/hu/LC_MESSAGES/rekonq.mo
+share/locale/is/LC_MESSAGES/rekonq.mo
+share/locale/pl/LC_MESSAGES/rekonq.mo
+share/locale/pt/LC_MESSAGES/rekonq.mo
+share/locale/pt_BR/LC_MESSAGES/rekonq.mo
+share/locale/ru/LC_MESSAGES/rekonq.mo
+share/locale/sv/LC_MESSAGES/rekonq.mo
+share/locale/tr/LC_MESSAGES/rekonq.mo
+share/locale/uk/LC_MESSAGES/rekonq.mo
+@dirrm share/apps/rekonq/pics
+@dirrm share/apps/rekonq/htmls
+@dirrm share/apps/rekonq
