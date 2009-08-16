@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	A C++ library for symbolic mathematical calculations
 
-LIB_DEPENDS=	cln.5:${PORTSDIR}/math/cln
+LIB_DEPENDS=	cln.6:${PORTSDIR}/math/cln
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
