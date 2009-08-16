@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -46,7 +47,7 @@ CONFIGURE_ARGS+=--with-jabber=${LOCALBASE}
 .ifndef WITHOUT_LDAP
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls \
 		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 

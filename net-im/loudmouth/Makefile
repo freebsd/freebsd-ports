@@ -7,6 +7,7 @@
 
 PORTNAME=	loudmouth
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	http://ftp.imendio.com/pub/imendio/loudmouth/src/ \
 		GNOME
@@ -30,7 +31,7 @@ OPTIONS=	GNUTLS "Enable SSL (via GnuTLS) support" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GNUTLS)
-LIB_DEPENDS+=		gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.40:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	spserver
 PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -37,7 +37,7 @@ PLIST_SUB+=	WITH_MATRIXSSL="@comment "
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 ALL_TARGET+=	build_gnutls
 PLIST_SUB+=	WITH_GNUTLS=""
 .else

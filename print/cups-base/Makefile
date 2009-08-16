@@ -8,7 +8,7 @@
 PORTNAME=	cups
 PORTVERSION=	1.3.10
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
@@ -99,7 +99,7 @@ PLIST_SUB+=		OVERWRITE="@comment "
 
 .if !defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=	--enable-gnutls --disable-openssl
-LIB_DEPENDS+=		gnutls-openssl.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls-openssl.40:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"

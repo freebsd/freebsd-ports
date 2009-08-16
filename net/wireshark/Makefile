@@ -7,7 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.2.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
     		http://wireshark.osmirror.nl/download/src/ \
@@ -148,7 +148,7 @@ CONFIGURE_ARGS+=	--with-geoip=no
 .endif
 
 .if exists(${LOCALBASE}/lib/libgnutls.so) || defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--with-libgnutls-prefix=${LOCALBASE}
 .endif
 

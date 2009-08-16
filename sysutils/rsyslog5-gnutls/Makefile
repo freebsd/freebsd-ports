@@ -9,7 +9,7 @@ COMMENT=	GNUTLS module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog4
 
 MNAME=	gnutls
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 
 CONFIGURE_ARGS+=--enable-gnutls
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.9.1s.20080620
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://bellard.org/qemu/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \

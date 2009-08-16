@@ -7,7 +7,7 @@
 
 PORTNAME=	gloox
 PORTVERSION=	0.9.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
@@ -15,7 +15,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Jabber/XMPP client library
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
-		gnutls.26:${PORTSDIR}/security/gnutls
+		gnutls.40:${PORTSDIR}/security/gnutls
 
 USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes

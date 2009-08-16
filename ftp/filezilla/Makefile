@@ -7,7 +7,7 @@
 
 PORTNAME=	filezilla
 PORTVERSION=	3.2.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -15,7 +15,7 @@ DISTNAME=	FileZilla_${PORTVERSION}_src
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Fast and reliable cross-platform FTP, FTPS and SFTP client
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
 		idn.16:${PORTSDIR}/dns/libidn
 
 INSTALLS_ICONS=	yes

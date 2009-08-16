@@ -7,7 +7,7 @@
 
 PORTNAME=	wwwoffle
 PORTVERSION=	2.9d
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.gedanken.demon.co.uk/download-wwwoffle/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A caching proxy server for HTTP and FTP designed for dial-up hosts
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

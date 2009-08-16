@@ -7,6 +7,7 @@
 
 PORTNAME=	bitlbee-otr
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://wahjava.googlepages.com/
 
@@ -85,7 +86,7 @@ CONFIGURE_ARGS+=--yahoo=0
 CONFIGURE_ARGS+=--ssl=openssl
 .else
 CONFIGURE_ARGS+=--ssl=gnutls
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 .endif
 
 .if defined(WITH_DEBUG)

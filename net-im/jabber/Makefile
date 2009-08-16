@@ -7,7 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/ \
@@ -23,7 +23,7 @@ LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth-hard \
 		idn.16:${PORTSDIR}/dns/libidn \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
-		gnutls.26:${PORTSDIR}/security/gnutls
+		gnutls.40:${PORTSDIR}/security/gnutls
 
 OPTIONS=	IPV6 "Enable IPv6 support" off \
 		MYSQL "Build with MySQL support" off \
