@@ -9,7 +9,8 @@ PORTNAME=	djvulibre
 PORTVERSION=	3.5.22
 PORTREVISION=	1
 CATEGORIES=	graphics www
-MASTER_SITES=	SF/djvu
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
+		SFP/djvu/DjVuLibre/${PORTVERSION}/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	DjVu viewers and browser plugin
