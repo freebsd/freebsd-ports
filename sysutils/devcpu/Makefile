@@ -42,6 +42,10 @@ MAN8=		cpu_microcode_tool.8
 IGNORE=		not supported
 .endif
 
+.if ${OSVERSION} > 720000
+IGNORE=		already included into base system
+.endif
+
 .if defined(WITH_EXTRACTOR)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mmap.so:${PORTSDIR}/devel/ruby-mmap \
 		${RUBY_SITEARCHLIBDIR}/lhalib.so:${PORTSDIR}/archivers/ruby-lha
