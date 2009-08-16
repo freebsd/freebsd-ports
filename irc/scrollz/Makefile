@@ -7,6 +7,7 @@
 
 PORTNAME=	scrollz
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://scrollz.lysergide.net/ScrollZ/source/ \
 		http://mirror.inf.udec.cl/ftp.scrollz.com/ScrollZ/source/

@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -53,7 +53,7 @@ USE_GETTEXT=	yes
 .endif
 USE_XORG=	x11 sm
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls-openssl.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls-openssl.40:${PORTSDIR}/security/gnutls
 MAKE_ENV+=	GNUTLSINC=${LOCALBASE}/include GNUTLSLIB=${LOCALBASE}/lib \
 		without-ssl=1
 .elif defined(WITH_OPENSSL)

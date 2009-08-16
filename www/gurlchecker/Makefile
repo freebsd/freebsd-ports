@@ -7,7 +7,7 @@
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.10.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	547
@@ -16,7 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Gnome program to check a page/website for broken links
 
 LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2 \
-		gnutls.26:${PORTSDIR}/security/gnutls
+		gnutls.40:${PORTSDIR}/security/gnutls
 
 OPTIONS=	CROCO "Use CROCO library for CSS2 validation" off \
 		TIDY "Use TIDY library for HTML w3c validation" off \

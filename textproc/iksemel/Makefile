@@ -7,14 +7,14 @@
 
 PORTNAME=	iksemel
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	XML parser library mainly designed for Jabber applications
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes

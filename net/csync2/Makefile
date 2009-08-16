@@ -7,7 +7,7 @@
 
 PORTNAME=	csync2
 PORTVERSION=	1.34
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://oss.linbit.com/csync2/ \
 		http://people.freebsd.org/~aaron/distfiles/
@@ -17,7 +17,7 @@ COMMENT=	A cluster synchronization tool
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
-		gnutls.26:${PORTSDIR}/security/gnutls \
+		gnutls.40:${PORTSDIR}/security/gnutls \
 		sqlite.2:${PORTSDIR}/databases/sqlite2 \
 		gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error

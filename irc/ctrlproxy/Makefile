@@ -8,7 +8,7 @@
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	3.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ctrlproxy.org/releases/ \
 		LOCAL/chinsan/ctrlproxy/
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.ctrlproxy.org/releases/ \
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	Flexible IRC proxy
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
 USE_GNOME=	glib20 gnometarget
 USE_LDCONFIG=	yes

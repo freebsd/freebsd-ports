@@ -7,6 +7,7 @@
 
 PORTNAME=	pokerth
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	PokerTH-${PORTVERSION}-src
@@ -16,7 +17,7 @@ COMMENT=	A poker game written in C++/QT4
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		mikmod.2:${PORTSDIR}/audio/libmikmod \
-		gnutls.26:${PORTSDIR}/security/gnutls \
+		gnutls.40:${PORTSDIR}/security/gnutls \
 		curl.5:${PORTSDIR}/ftp/curl
 
 USE_ICONV=	yes

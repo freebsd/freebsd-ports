@@ -7,6 +7,7 @@
 
 PORTNAME=	wput
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -31,7 +32,7 @@ MAN1=		wdel.1 wput.1
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_TLS)
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl
 .else
 CONFIGURE_ARGS+=	--without-ssl
