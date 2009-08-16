@@ -5,8 +5,8 @@
          if [ x"$browser" != x"" ]; then
  
 -            browser_with_arg=`echo "$browser" | sed s#%s#"$1"#`
-+            browser_with_args=`printf "$browser" "$1" 2>/dev/null`
-+            if [ $? -ne 0 ]; then browser_with_args=$browser;
++            browser_with_arg=`printf "$browser" "$1" 2>/dev/null`
++            if [ $? -ne 0 ]; then browser_with_arg=$browser;
 +            fi
  
              if [ x"$browser_with_arg" = x"$browser" ]; then "$browser" "$1";
