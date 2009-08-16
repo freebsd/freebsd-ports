@@ -8,6 +8,7 @@
 
 PORTNAME=	GiNaC
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -39,5 +40,9 @@ BROKEN=		Does not build on alpha
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
+
+.if ${ARCH} != "i386"
+	@${REINPLACE_CMD} -e 's|unsigned|size_t|g' ${WRKSRC}/ginac/parser/parser.cpp
+.endif
 
 .include <bsd.port.post.mk>
