@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	lacaml
-PORTVERSION=	4.3.3
+PORTVERSION=	5.4.1
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
+MASTER_SITES=	http://hg.ocaml.info/release/lacaml/archive/
+DISTNAME=	release-${PORTVERSION}
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	stas@FreeBSD.org
@@ -25,11 +26,12 @@ USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 USE_OCAML_LDCONFIG=yes
 USE_OCAML_WASH=	yes
+WRKSRC=		${WRKDIR}/lacaml-${DISTNAME}
 
 CFLAGS+=	-fPIC
 MAKE_ENV+=	OCAMLMKLIB_FLAGS="-L${LOCALBASE}/lib"
 
-DOCS=		README TODO
+DOCS=		README.txt TODO
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
