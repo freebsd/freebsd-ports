@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08107
+PORTVERSION=	0.08108
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,22 +14,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
-BUILD_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
-		p5-SQL-Abstract>=1.56:${PORTSDIR}/databases/p5-SQL-Abstract \
-		p5-SQL-Abstract-Limit>=0.141:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
-		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
-		p5-Carp-Clan>=6.00:${PORTSDIR}/devel/p5-Carp-Clan \
-		p5-DBI>=1.40:${PORTSDIR}/databases/p5-DBI \
-		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
-		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
+BUILD_DEPENDS=	p5-Carp-Clan>=6:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Class-Accessor-Grouped>=0.08003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
-		p5-JSON-Any>=1.17:${PORTSDIR}/converters/p5-JSON-Any \
-		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
-		p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
+		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
+		p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI \
+		p5-JSON-Any>=1.18:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite
+		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
+		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
+		p5-SQL-Abstract>=1.56:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-SQL-Abstract-Limit>=0.13:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
+		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SQLT "SQL::Translator (generate DDL from schema)" Off
@@ -88,7 +87,6 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::ResultSourceHandle.3 \
 	DBIx::Class::ResultSourceProxy::Table.3 \
 	DBIx::Class::Row.3 \
-	DBIx::Class::SQLAHacks.3 \
 	DBIx::Class::SQLAHacks::OracleJoins.3 \
 	DBIx::Class::Schema.3 \
 	DBIx::Class::Schema::Versioned.3 \
@@ -96,6 +94,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::StartupCheck.3 \
 	DBIx::Class::Storage.3 \
 	DBIx::Class::Storage::DBI.3 \
+	DBIx::Class::Storage::DBI::AmbiguousGlob.3 \
 	DBIx::Class::Storage::DBI::Cursor.3 \
 	DBIx::Class::Storage::DBI::DB2.3 \
 	DBIx::Class::Storage::DBI::MSSQL.3 \
@@ -115,11 +114,11 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Replicated::Balancer::Random.3 \
 	DBIx::Class::Storage::DBI::Replicated::Pool.3 \
 	DBIx::Class::Storage::DBI::Replicated::Replicant.3 \
-	DBIx::Class::Storage::DBI::Replicated::Types.3 \
 	DBIx::Class::Storage::DBI::Replicated::WithDSN.3 \
 	DBIx::Class::Storage::DBI::Role::QueryCounter.3 \
 	DBIx::Class::Storage::DBI::SQLite.3 \
 	DBIx::Class::Storage::DBI::Sybase.3 \
+	DBIx::Class::Storage::DBI::Sybase::Base.3 \
 	DBIx::Class::Storage::DBI::Sybase::MSSQL.3 \
 	DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server.3 \
 	DBIx::Class::Storage::DBI::mysql.3 \
