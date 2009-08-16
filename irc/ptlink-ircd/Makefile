@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircd/
 PKGNAMEPREFIX=	PTlink-
 DISTNAME=	PTlink${PORTVERSION}
 
-MAINTAINER=	freebsd@rootxs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PTlink IRC daemon
 
 GNU_CONFIGURE=	yes

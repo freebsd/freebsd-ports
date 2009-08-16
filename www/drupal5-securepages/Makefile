@@ -10,7 +10,7 @@ DISTVERSION=	5.x-1.6
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
-MAINTAINER=	freebsd@rootxs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set which pages are always going to be used in secure mode (SSL)
 
 DRUPAL5_MODULE=	yes

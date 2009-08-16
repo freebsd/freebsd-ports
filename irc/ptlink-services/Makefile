@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircsvs3/
 PKGNAMEPREFIX=	PTlink-
 DISTNAME=	PTlinkIRC.${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	freebsd@rootxs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PTlink IRC services
 
 GNU_CONFIGURE=	yes

@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		all_locales-1.5.1-20060409${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	freebsd@rootxs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A webmail system which accesses mail over IMAP
 
 USE_PHP=	session mhash gettext mbstring pcre openssl xml
