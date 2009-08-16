@@ -5,7 +5,7 @@ It is highly configurable, with nearly all options being set in a config
 that can be rehashed rather than set at compile time. As well as supporting
 standard database backends like PostgreSQL, its default is to use
 the SQLite database backend, which works as a database interface to a normal
-file, meaning no seperate database software must be running.
+file, meaning no separate database software must be running.
 
 Features:
 	- User, nick and channel services

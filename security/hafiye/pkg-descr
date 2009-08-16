@@ -1,5 +1,5 @@
 When I looked at the source code for various famous sniffers, I've noticed
-that they all had all seperate .C files for interpreting various protocols.
+that they all had all separate .C files for interpreting various protocols.
 Why not have a sniffer that can understand user-supplied protocol details?
 Here it is.
 

@@ -5,6 +5,6 @@ simple tasks.
 
 Granted, the functionality needed to do this is quite simple, but the Perl
 distribution MANIFEST specification contains a couple of little idiosyncracies,
-such as line comments and space-seperated inline comments.
+such as line comments and space-separated inline comments.
 
 WWW: http://search.cpan.org/dist/Module-Manifest/

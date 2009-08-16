@@ -7,6 +7,6 @@ less or redirected to a file.
 Fanterm, on the other hand, allows you to run interactive text mode 
 commands on multiple machines at the same time. Your keystrokes are sent 
 to a shell or application running on each of the target systems. The 
-output from each system is shown in a seperate xterm.
+output from each system is shown in a separate xterm.
 
 WWW: http://www.stearns.org/fanout/

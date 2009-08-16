@@ -20,5 +20,5 @@ improvement over xedit. Built around the Athena Text Widget it features:
    o both brief and comprehensive (hypertext) on-line help
    o server mode with cooperating client programs
    o optional extension language using Tcl
-   o optional Xaw3d widget set compatability
+   o optional Xaw3d widget set compatibility
    o collection of reusable widgets that embody the functionality of aXe

@@ -1,6 +1,6 @@
 Normally if a part of a pipe fails, depending on the location, it won't
 be detected. This breaks down a command involving pipes and runs each
-command seperately.
+command separately.
 
 It uses open3 to run each chunk of the pipe.
 

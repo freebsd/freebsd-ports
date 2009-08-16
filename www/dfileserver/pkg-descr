@@ -4,7 +4,7 @@ sharing files easy.
 By default, it shares whatever folder it was executed from on port 2000.
 While simple, a good deal of flexibility is exposed when you read the
 documentation and look at the optional configuration files, provided
-seperately here:
+separately here:
 http://harpy.soarwitheagles.net/~dashy/DFileServer-1.1.2-documentation.tar.gz
 
 - Chris Laverdure

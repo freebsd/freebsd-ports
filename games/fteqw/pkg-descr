@@ -1,5 +1,5 @@
 The intentions to the FTE QuakeWorld mod are to add some cool features to
-QuakeWorld, without loosing any (backwards) compatability.
+QuakeWorld, without loosing any (backwards) compatibility.
 
 All QuakeWorld clients should be able to connect to an FTE server, and all FTE
 clients should connect to any other QW server.
