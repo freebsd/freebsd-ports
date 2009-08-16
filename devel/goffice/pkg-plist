@@ -16,6 +16,22 @@ include/libgoffice-%%SHORT_VER%%/goffice/app/goffice-app.h
 include/libgoffice-%%SHORT_VER%%/goffice/app/io-context-priv.h
 include/libgoffice-%%SHORT_VER%%/goffice/app/io-context.h
 include/libgoffice-%%SHORT_VER%%/goffice/app/module-plugin-defs.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-canvas.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-circle.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-ellipse.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-graph.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-group.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-item.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-line.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-pixbuf.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-polygon.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-rectangle.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-structs.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-styled-item.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-text.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-utils.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-widget.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goffice-canvas.h
 include/libgoffice-%%SHORT_VER%%/goffice/component/go-component-factory.h
 include/libgoffice-%%SHORT_VER%%/goffice/component/go-component.h
 include/libgoffice-%%SHORT_VER%%/goffice/component/goffice-component.h
@@ -372,7 +388,7 @@ share/locale/ro/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/sr@Latn/LC_MESSAGES/goffice-%%VERSION%%.mo
+share/locale/sr@latin/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/goffice-%%VERSION%%.mo
@@ -524,6 +540,7 @@ share/pixmaps/goffice/%%VERSION%%/surface.xpm
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/component
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/canvas
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/app
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice
 @dirrm include/libgoffice-%%SHORT_VER%%

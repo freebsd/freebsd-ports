@@ -9,8 +9,7 @@
 #     math/gnumeric science/gchemutils
 
 PORTNAME=	goffice
-PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTVERSION=	0.7.9
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -21,8 +20,8 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprint libglade2 \
-		libgsf_gnome libgnomeui ltverhack
+USE_GNOME=	gnomeprefix gnomehack intlhack libgsf libglade2 gconf2 \
+		ltverhack
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
@@ -31,6 +30,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		SHORT_VER=0.8
-#		SHORT_VER=${PORTVERSION:R} 
-		
+#		SHORT_VER=${PORTVERSION:R}
+
 .include <bsd.port.mk>
