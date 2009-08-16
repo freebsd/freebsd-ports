@@ -33,4 +33,10 @@ pre-patch:
 		-e 's, html dvi ps,,' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
+.include <bsd.port.post.mk>
