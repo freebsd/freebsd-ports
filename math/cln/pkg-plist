@@ -1,3 +1,4 @@
+bin/pi
 include/cln/GV.h
 include/cln/GV_complex.h
 include/cln/GV_integer.h
@@ -31,7 +32,7 @@ include/cln/float.h
 include/cln/float_class.h
 include/cln/float_io.h
 include/cln/floatformat.h
-include/cln/floatparam.h
+include/cln/host_cpu.h
 include/cln/input.h
 include/cln/integer.h
 include/cln/integer_class.h
@@ -79,31 +80,6 @@ include/cln/version.h
 lib/libcln.a
 lib/libcln.la
 lib/libcln.so
-lib/libcln.so.5
+lib/libcln.so.6
 libdata/pkgconfig/cln.pc
-%%PORTDOCS%%%%DOCSDIR%%/dvi/cln.dvi
-%%PORTDOCS%%%%DOCSDIR%%/html/cln.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_10.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_11.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_12.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_13.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_14.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_15.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_16.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_4.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_5.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_9.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_abt.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_fot.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/cln/
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/dvi/
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/cln
