@@ -1,6 +1,9 @@
 bin/ginac-excompiler
 bin/ginsh
 bin/viewgar
+include/ginac/factor.h
+include/ginac/parse_context.h
+include/ginac/parser.h
 include/ginac/add.h
 include/ginac/archive.h
 include/ginac/assertion.h
@@ -47,7 +50,7 @@ include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.la
 lib/libginac.so
-lib/libginac-1.4.so
-lib/libginac-1.4.so.0
+lib/libginac-1.5.so
+lib/libginac-1.5.so.0
 libdata/pkgconfig/ginac.pc
 @dirrm include/ginac
