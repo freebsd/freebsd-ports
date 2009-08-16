@@ -51,8 +51,8 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=3D gnutls:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=3D--with-gnutls
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-gnutls
 .endif
 
 .if defined(WITH_IODBC)
