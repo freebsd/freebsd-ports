@@ -5,7 +5,7 @@ DNS zones, or for transferring DNS zones to other servers. If you want to
 generate an XML-friendly version of your zone files, it is easy to use
 XML::Simple with this module once you have parsed the zonefile.
 
-DNS::ZoneParse scans the DNS zonefile - removes comments and seperates the file
+DNS::ZoneParse scans the DNS zonefile - removes comments and separates the file
 into it's constituent records. It then parses each record and stores the
 records internally. See below for information on the accessor methods.
 

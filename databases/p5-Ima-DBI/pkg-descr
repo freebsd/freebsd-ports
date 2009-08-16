@@ -1,6 +1,6 @@
 Ima::DBI attempts to organize and facilitate caching and more efficient
 use of database connections and statement handles by storing DBI and SQL
-information with your class (instead of as seperate objects).  This
+information with your class (instead of as separate objects).  This
 allows you to pass around just one object without worrying about a trail
 of DBI handles behind it.
 

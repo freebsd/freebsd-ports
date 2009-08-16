@@ -6,7 +6,7 @@ Xscreensaver will make use of any installed OpenGL libraries, such as
 Mesa (also in the ports collection).
 
 The client-server model employed by xscreensaver make it a superior choice
-to xlock, since no seperate auto-locking program is needed.  It's also
+to xlock, since no separate auto-locking program is needed.  It's also
 extremely easy to add new programs like xearth, or any other program that
 can fill the root window as additional screensavers.
 

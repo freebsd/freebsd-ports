@@ -1,5 +1,5 @@
 Scim-bridge is wrapper library for SCIM, written in C. Scim-bridge
-is seperated in two parts, the agent and the clients. The agent is
+is separated in two parts, the agent and the clients. The agent is
 the IME server which communicates with SCIM. The clients are IMModules
 which communicate only with the agent so that there is no binary
 dependency between the clients and SCIM.

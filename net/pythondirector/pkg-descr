@@ -10,7 +10,7 @@ Features:
       client that failed to connect gets transparently failed over to a 
       new host.
     * xml based configuration file
-    * seperate management thread that periodically re-adds failed hosts 
+    * separate management thread that periodically re-adds failed hosts 
       if they've come back up.
     * optional builtin webserver for admin (sample of the running 
       screen)
