@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	cln
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.ginac.de/CLN/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
@@ -30,6 +29,7 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 INFO=		cln
+MAN1=		pi.1
 
 STRIP=		# none
 
@@ -49,16 +49,6 @@ post-patch:
 pre-build:
 .if exists(${LOCALBASE}/lib/libcln.so.3)
 BROKEN=		Does not compile when older version is installed. Please pkg_delete old cln first
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/dvi
-	${INSTALL_DATA} ${WRKSRC}/doc/*.dvi ${DOCSDIR}/dvi/
-	@${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html/
-	@${MKDIR} ${DOCSDIR}/html/cln
-	${INSTALL_DATA} ${WRKSRC}/doc/cln/*.html ${DOCSDIR}/html/cln/
 .endif
 
 .include <bsd.port.post.mk>
