@@ -1,0 +1,64 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE:	microcode_update
+# REQUIRE:	root mountcritlocal
+# KEYWORD:	nojail
+
+#
+# Add the following line to /etc/rc.conf to enable flow-capture:
+# microcode_update_enable (bool):	Set it to "YES" to update microcode on startup
+#					Set to "NO" by default.
+# microcode_update_datadir (str):	Directory, microcode updates stored in.
+#					Default is "%%DATADIR%%"
+# microcode_update_cpus (str):		A list of cpus to update on startup, or "ALL" for all.
+#					Example: microcode_update_cpus_cpus="0 CPU0"
+#					Set to "ALL" by default. 
+
+. /etc/rc.subr
+
+name="microcode_update"
+rcvar=`set_rcvar`
+stop_cmd=":"
+start_precmd="microcode_update_prepare"
+start_cmd="microcode_update_start"
+requires_modules="cpuctl"
+
+CMT="/usr/sbin/cpucontrol"
+
+microcode_update_prepare()
+{
+	if ! kldstat -q -m cpuctl; then
+		if ! kldload cpuctl > /dev/null 2>&1; then
+			warn "Can't load cpuctl module."
+			return 1
+		fi
+	fi
+}
+
+microcode_update_start()
+{
+	echo "Updating cpucodes..."
+	if [ "${microcode_cpus}" = "ALL" ]; then
+		ncpu=`/sbin/sysctl -n hw.ncpu`
+		cpus=`jot ${ncpu} 0`;
+	else
+		cpus=${microcode_cpus}
+	fi
+	for i in ${cpus}; do
+		${CMT} -u -d "${microcode_update_datadir}" /dev/cpuctl${i} || \
+		    (echo "Failed." && exit 1)
+	done
+	echo "Done."
+}
+
+load_rc_config $name
+
+# Set default values
+: ${microcode_update_enable="NO"}
+: ${microcode_update_datadir="%%DATADIR%%"}
+: ${microcode_cpus="ALL"}
+
+run_rc_command "$1"
