@@ -1349,6 +1349,7 @@
     SUBDIR += red5
     SUBDIR += redmine
     SUBDIR += rejik
+    SUBDIR += rekonq
     SUBDIR += reportmagic
     SUBDIR += resin2
     SUBDIR += resin3
