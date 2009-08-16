@@ -43,9 +43,9 @@ lib/gchemutils/%%VER%%/plugins/paint/text.la
 lib/gchemutils/%%VER%%/plugins/paint/text.so
 lib/gchemutils/%%VER%%/plugins/paint/wikipedia.la
 lib/gchemutils/%%VER%%/plugins/paint/wikipedia.so
-lib/goffice/0.7.8/plugins/gchemutils/gchemutils.la
-lib/goffice/0.7.8/plugins/gchemutils/gchemutils.so
-lib/goffice/0.7.8/plugins/gchemutils/plugin.xml
+lib/goffice/0.7.9/plugins/gchemutils/gchemutils.la
+lib/goffice/0.7.9/plugins/gchemutils/gchemutils.so
+lib/goffice/0.7.9/plugins/gchemutils/plugin.xml
 %%XUL%%lib/xulrunner/plugins/libmozgcu.la
 %%XUL%%lib/xulrunner/plugins/libmozgcu.so
 %%XUL%%libexec/chem-viewer
@@ -341,7 +341,7 @@ share/mime/packages/gchemutils.xml
 @dirrmtry share/mime/chemical
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
-@dirrm lib/goffice/0.7.8/plugins/gchemutils
+@dirrm lib/goffice/0.7.9/plugins/gchemutils
 @dirrm lib/gchemutils/%%VER%%/plugins/paint
 @dirrm lib/gchemutils/%%VER%%/plugins/cdxml
 @dirrm lib/gchemutils/%%VER%%/plugins/cdx
