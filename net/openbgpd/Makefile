@@ -24,6 +24,10 @@ OPTIONS=	IPV6LLPEER \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not build
+.endif
+
 WRKSRC=		${WRKDIR}
 MANCOMPRESSED=	yes
 USE_RC_SUBR=	${PORTNAME}.sh
