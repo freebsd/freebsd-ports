@@ -3,4 +3,3 @@ SNESAPU emulation core. Currently on runs on x86 only, due SNESAPU
 being written in NASM x86 assembly.
 
 WWW: http://www.sourceforge.net/projects/sexyspc/
-

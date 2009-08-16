@@ -1,0 +1,11 @@
+--- src/SNESAPU/Makefile.orig	2006-05-18 18:15:02.000000000 -0400
++++ src/SNESAPU/Makefile	2008-11-06 20:16:51.000000000 -0500
+@@ -4,7 +4,7 @@
+ 
+ # Compiler and Linker Defines
+ ASM	   = nasm
+-AFLAGS	   = -O1 -f elf
++AFLAGS	   = -O2 -f elf
+ RM	   = rm -f
+ 
+ %.o: %.Asm

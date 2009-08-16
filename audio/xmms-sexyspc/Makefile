@@ -7,7 +7,7 @@
 
 PORTNAME=	sexyspc
 PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	xmms-
@@ -22,8 +22,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 PLIST_FILES=	lib/xmms/Input/libsexyspc.a \
 		lib/xmms/Input/libsexyspc.la \
 		lib/xmms/Input/libsexyspc.so
-
-BROKEN=		fails to build
 
 ONLY_FOR_ARCHS=	i386	# contains x86 assembler code
 USE_LDCONFIG=	yes
