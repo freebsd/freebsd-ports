@@ -88,6 +88,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/StartupCheck.pm
 %%SITE_PERL%%/DBIx/Class/Storage.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/AmbiguousGlob.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/MSSQL.pm
@@ -112,11 +113,13 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Role/QueryCounter.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/Base.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/Microsoft_SQL_Server.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/mysql.pm
 %%SITE_PERL%%/DBIx/Class/Storage/Statistics.pm
 %%SITE_PERL%%/DBIx/Class/Storage/TxnScopeGuard.pm
+%%SITE_PERL%%/DBIx/Class/SQLAHacks/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/UTF8Columns.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class/File.pm
