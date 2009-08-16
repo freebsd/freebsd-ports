@@ -22,6 +22,7 @@ USE_SDL=	sdl mixer
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-firebird"
+BROKEN=		does not install
 USE_FIREBIRD=	yes
 
 CONFIGURE_ARGS+=	--with-firebird-includes=${LOCALBASE}/include \
@@ -29,6 +30,7 @@ CONFIGURE_ARGS+=	--with-firebird-includes=${LOCALBASE}/include \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-mysql"
+BROKEN=		does not install
 USE_MYSQL=	yes
 
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
@@ -36,6 +38,7 @@ CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-postgresql"
+BROKEN=		does not install
 USE_PGSQL=	yes
 
 CONFIGURE_ARGS+=	--with-postgresql-includes="${PGSQL_INCLUDES}" \
@@ -47,6 +50,7 @@ PGSQL_INCLUDES=		${LOCALBASE}/include/postgresql \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-odbc"
+BROKEN=		does not install
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 
 CONFIGURE_ARGS+=	--with-odbc-includes=${LOCALBASE}/include \
@@ -54,6 +58,7 @@ CONFIGURE_ARGS+=	--with-odbc-includes=${LOCALBASE}/include \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-sqlite2"
+BROKEN=		does not install
 USE_SQLITE=	2
 
 CONFIGURE_ARGS+=	--with-sqlite2-includes=${LOCALBASE}/include \
@@ -61,6 +66,7 @@ CONFIGURE_ARGS+=	--with-sqlite2-includes=${LOCALBASE}/include \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-sqlite3"
+BROKEN=		does not install
 USE_SQLITE=	yes
 
 CONFIGURE_ARGS+=	--with-sqlite3-includes=${LOCALBASE}/include \
