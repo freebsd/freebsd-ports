@@ -29,11 +29,13 @@ include/libspreadsheet-1.10/spreadsheet/func-builtin.h
 include/libspreadsheet-1.10/spreadsheet/func.h
 include/libspreadsheet-1.10/spreadsheet/gnm-command-impl.h
 include/libspreadsheet-1.10/spreadsheet/gnm-commands-slicer.h
+include/libspreadsheet-1.10/spreadsheet/gnm-data-cache-source.h
 include/libspreadsheet-1.10/spreadsheet/gnm-datetime.h
 include/libspreadsheet-1.10/spreadsheet/gnm-format.h
 include/libspreadsheet-1.10/spreadsheet/gnm-graph-window.h
 include/libspreadsheet-1.10/spreadsheet/gnm-pane.h
 include/libspreadsheet-1.10/spreadsheet/gnm-plugin.h
+include/libspreadsheet-1.10/spreadsheet/gnm-sheet-slicer.h
 include/libspreadsheet-1.10/spreadsheet/gnm-so-filled.h
 include/libspreadsheet-1.10/spreadsheet/gnm-so-line.h
 include/libspreadsheet-1.10/spreadsheet/gnm-so-polygon.h
@@ -41,6 +43,12 @@ include/libspreadsheet-1.10/spreadsheet/gnm-style-impl.h
 include/libspreadsheet-1.10/spreadsheet/gnumeric-gconf.h
 include/libspreadsheet-1.10/spreadsheet/gnumeric-simple-canvas.h
 include/libspreadsheet-1.10/spreadsheet/gnumeric.h
+include/libspreadsheet-1.10/spreadsheet/go-data-cache-field.h
+include/libspreadsheet-1.10/spreadsheet/go-data-cache-source.h
+include/libspreadsheet-1.10/spreadsheet/go-data-cache.h
+include/libspreadsheet-1.10/spreadsheet/go-data-slicer-field.h
+include/libspreadsheet-1.10/spreadsheet/go-data-slicer.h
+include/libspreadsheet-1.10/spreadsheet/go-val.h
 include/libspreadsheet-1.10/spreadsheet/graph.h
 include/libspreadsheet-1.10/spreadsheet/gui-clipboard.h
 include/libspreadsheet-1.10/spreadsheet/gui-file.h
@@ -245,9 +253,9 @@ lib/gnumeric/%%VERSION%%/plugins/uihello/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.la
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
-lib/goffice/0.7.8/plugins/gnumeric/gnumeric.la
-lib/goffice/0.7.8/plugins/gnumeric/gnumeric.so
-lib/goffice/0.7.8/plugins/gnumeric/plugin.xml
+lib/goffice/0.7.9/plugins/gnumeric/gnumeric.la
+lib/goffice/0.7.9/plugins/gnumeric/gnumeric.so
+lib/goffice/0.7.9/plugins/gnumeric/plugin.xml
 lib/libspreadsheet-%%VERSION%%.so
 lib/libspreadsheet.la
 lib/libspreadsheet.so
@@ -939,7 +947,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnumeric/%%VERSION%%/autoformat-templates
 @dirrm share/gnumeric/%%VERSION%%
 @dirrm share/gnumeric
-@dirrm lib/goffice/0.7.8/plugins/gnumeric
+@dirrm lib/goffice/0.7.9/plugins/gnumeric
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xbase
 @dirrm lib/gnumeric/%%VERSION%%/plugins/uihello
 @dirrm lib/gnumeric/%%VERSION%%/plugins/sylk
