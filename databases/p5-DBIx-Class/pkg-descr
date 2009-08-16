@@ -1,10 +1,10 @@
-This is an SQL to OO mapper with an object API inspired by Class::DBI (and a
+This is an SQL to OO mapper with an object API inspired by Class::DBI (with a
 compatibility layer as a springboard for porting) and a resultset API that
 allows abstract encapsulation of database operations. It aims to make
 representing queries in your code as perl-ish as possible while still providing
 access to as many of the capabilities of the database as possible, including
 retrieving related records from multiple tables in a single query, JOIN, LEFT
-JOIN, COUNT, DISTINCT, GROUP BY and HAVING support. 
+JOIN, COUNT, DISTINCT, GROUP BY, ORDER BY and HAVING support.
 
 DBIx::Class can handle multi-column primary and foreign keys, complex queries
 and database-level paging, and does its best to only query the database in

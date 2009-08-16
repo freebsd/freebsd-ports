@@ -15,20 +15,21 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
 BUILD_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
-		p5-SQL-Abstract>=1.51:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-SQL-Abstract>=1.56:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.141:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
-		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
+		p5-Carp-Clan>=6.00:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-DBI>=1.40:${PORTSDIR}/databases/p5-DBI \
-		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
-		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
+		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Class-Accessor-Grouped>=0.08003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-JSON-Any>=1.17:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
 		p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat
+		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SQLT "SQL::Translator (generate DDL from schema)" Off
@@ -134,7 +135,7 @@ post-extract:
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_SQLT)
-RUN_DEPENDS+=	p5-SQL-Translator>=0.09004:${PORTSDIR}/databases/p5-SQL-Translator
+RUN_DEPENDS+=	p5-SQL-Translator>=0.09.004:${PORTSDIR}/databases/p5-SQL-Translator
 .endif
 
 .include <bsd.port.post.mk>
