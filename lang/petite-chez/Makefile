@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	petite-chez
-PORTVERSION=	7.4
+PORTVERSION=	7.4d
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://www.scheme.com/download/
+MASTER_SITES=	http://www.scheme.com/download/ \
+		http://tx97.net/pub/distfiles/
 DISTNAME=	pcsv${PORTVERSION}-${CHEZ_MACHTYPE}
 
 MAINTAINER=	vmagerya@gmail.com
