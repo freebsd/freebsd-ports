@@ -27,4 +27,10 @@ USE_SQLITE=	3
 MAKE_ARGS+=	-DWITH_SQL
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not link on sparc64
+.endif
+
+.include <bsd.port.post.mk>
