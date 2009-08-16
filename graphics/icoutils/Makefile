@@ -29,4 +29,10 @@ PLIST_FILES=	\
 		bin/icotool \
 		bin/wrestool
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not link on sparc64
+.endif
+
+.include <bsd.port.post.mk>
