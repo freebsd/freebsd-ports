@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication/.packlist
 %%SITE_PERL%%/Catalyst/Authentication/Credential/Password.pm
+%%SITE_PERL%%/Catalyst/Authentication/Credential/Remote.pm
 %%SITE_PERL%%/Catalyst/Authentication/Realm.pm
 %%SITE_PERL%%/Catalyst/Authentication/Realm/Compatibility.pm
 %%SITE_PERL%%/Catalyst/Authentication/Realm/Progressive.pm
