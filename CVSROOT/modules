@@ -998,6 +998,7 @@ bind9                           ports/dns/bind9
 bind9-sdb-ldap                  ports/dns/bind9-sdb-ldap
 bind9-sdb-postgresql            ports/dns/bind9-sdb-postgresql
 bind94                          ports/dns/bind94
+bind94-geoip                    ports/dns/bind94-geoip
 bind95                          ports/dns/bind95
 bind96                          ports/dns/bind96
 bindgraph                       ports/dns/bindgraph
@@ -7612,6 +7613,7 @@ libpwstor                       ports/security/libpwstor
 libqalculate                    ports/math/libqalculate
 libqglviewer                    ports/graphics/libqglviewer
 libqrencode                     ports/graphics/libqrencode
+libquantum                      ports/science/libquantum
 libquicktime                    ports/multimedia/libquicktime
 libquicktime-lame               ports/multimedia/libquicktime-lame
 libranlib                       ports/math/libranlib
@@ -8416,6 +8418,7 @@ mailscanner-devel               ports/mail/mailscanner-devel
 mailscanner-mrtg                ports/mail/mailscanner-mrtg
 mailsync                        ports/mail/mailsync
 mailx                           ports/mail/mailx
+mailzu                          ports/security/mailzu
 maint                           ports/sysutils/maint
 mairix                          ports/mail/mairix
 maitretarot                     ports/games/maitretarot
@@ -8688,6 +8691,7 @@ minimalist                      ports/mail/minimalist
 minirsyslogd                    ports/sysutils/minirsyslogd
 minisapserver                   ports/net/minisapserver
 minised                         ports/textproc/minised
+minitube                        ports/multimedia/minitube
 miniupnpc                       ports/net/miniupnpc
 miniupnpd                       ports/net/miniupnpd
 minivmac                        ports/emulators/minivmac
@@ -11293,6 +11297,7 @@ p5-File-BasicFlock              ports/devel/p5-File-BasicFlock
 p5-File-Binary                  ports/devel/p5-File-Binary
 p5-File-Cache                   ports/devel/p5-File-Cache
 p5-File-Cat                     ports/devel/p5-File-Cat
+p5-File-ChangeNotify            ports/devel/p5-File-ChangeNotify
 p5-File-Copy-Recursive          ports/devel/p5-File-Copy-Recursive
 p5-File-CounterFile             ports/misc/p5-File-CounterFile
 p5-File-CreationTime            ports/devel/p5-File-CreationTime
@@ -12157,6 +12162,7 @@ p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
 p5-MooseX-Policy-SemiAffordanceAccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
+p5-MooseX-SemiAffordanceAccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
 p5-MooseX-Storage               ports/devel/p5-MooseX-Storage
@@ -14817,6 +14823,7 @@ p5-file-basicflock              ports/devel/p5-File-BasicFlock
 p5-file-binary                  ports/devel/p5-File-Binary
 p5-file-cache                   ports/devel/p5-File-Cache
 p5-file-cat                     ports/devel/p5-File-Cat
+p5-file-changenotify            ports/devel/p5-File-ChangeNotify
 p5-file-chdir                   ports/devel/p5-File-chdir
 p5-file-chmod                   ports/devel/p5-File-chmod
 p5-file-copy-recursive          ports/devel/p5-File-Copy-Recursive
@@ -15694,6 +15701,7 @@ p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-policy-semiaffordanceaccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
+p5-moosex-semiaffordanceaccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
 p5-moosex-storage               ports/devel/p5-MooseX-Storage
@@ -17921,6 +17929,7 @@ pecl-esmtp                      ports/mail/pecl-esmtp
 pecl-expect                     ports/devel/pecl-expect
 pecl-fileinfo                   ports/sysutils/pecl-fileinfo
 pecl-fribidi                    ports/converters/pecl-fribidi
+pecl-gearman                    ports/devel/pecl-gearman
 pecl-geoip                      ports/net/pecl-geoip
 pecl-gnupg                      ports/security/pecl-gnupg
 pecl-haru                       ports/print/pecl-haru
