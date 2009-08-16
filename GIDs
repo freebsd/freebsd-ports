@@ -87,8 +87,6 @@ tnc:*:241:
 prosody:*:242:
 fcron:*:247:
 _tor:*:256:
-_dns-proxy-tor:*:257:
-_trans-proxy-tor:*:258:
 meta1s:*:260:
 meta1q:*:261:
 meta1c:*:262:

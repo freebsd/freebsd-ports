@@ -97,8 +97,6 @@ tnc:*:241:241::0:0:aprsd:/nonexistent:/bin/sh
 prosody:*:242:242::0:0:Prosody Jabber Server:/nonexistent:/usr/sbin/nologin
 fcron:*:247:247::0:0:fcron pseudo-user:/nonexistent:/usr/sbin/nologin
 _tor:*:256:256::0:0:Tor anonymising router:/var/db/tor:/bin/sh
-_dns-proxy-tor:*:257:257::0:0:dns-proxy-tor user:/nonexistent:/usr/sbin/nologin
-_trans-proxy-tor:*:258:258::0:0:dns-proxy-tor user:/nonexistent:/usr/sbin/nologin
 meta1s:*:260:260::0:0:MeTA1 SMTPS:/nonexistent:/usr/sbin/nologin
 meta1q:*:261:261::0:0:MeTA1 QMGR:/nonexistent:/usr/sbin/nologin
 meta1c:*:262:262::0:0:MeTA1 SMTPC:/nonexistent:/usr/sbin/nologin
