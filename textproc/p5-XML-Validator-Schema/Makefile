@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for validating XML documents against a W3C XML Schema
 
 BUILD_DEPENDS=	${SITE_PERL}/Tree/DAG_Node.pm:${PORTSDIR}/devel/p5-Tree-DAG_Node \

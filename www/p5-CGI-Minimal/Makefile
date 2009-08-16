@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extremely lightweight CGI processing package
 
 PERL_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read / write PHP session files
 
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0.03:${PORTSDIR}/devel/p5-UNIVERSAL-require

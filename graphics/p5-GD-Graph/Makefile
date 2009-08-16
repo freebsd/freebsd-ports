@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/B/BW/BWARFIELD
 PKGNAMEPREFIX=	p5-
 DISTNAME=	GDGraph-${DISTVERSION}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Graph plotting module for perl5
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \

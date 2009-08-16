@@ -8,6 +8,3 @@ modify. Like GIFgraph, Chart::* uses Lincoln Stein's GD module for all
 of its graphics primitives calls.
 
 WWW: http://search.cpan.org/dist/Chart/
-
-- Vanilla
-vanilla@FreeBSD.ORG

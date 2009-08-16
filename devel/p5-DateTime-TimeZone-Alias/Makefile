@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create aliases for DateTime timezones
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert Date::Manip dates and durations to DateTimes and vice versa
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

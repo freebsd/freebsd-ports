@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Class/DMAKI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensions to Class::DBI for PostgreSQL
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \

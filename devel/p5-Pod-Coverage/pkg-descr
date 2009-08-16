@@ -6,6 +6,3 @@ This module provides a mechanism for determining if the pod for a given module
 is comprehensive.
 
 WWW: http://search.cpan.org/dist/Pod-Coverage/
-
--- 
-Mathieu Arnold

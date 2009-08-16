@@ -13,7 +13,7 @@ MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 DISTNAME=		Mail-Cclient-${PORTVERSION}
 
-MAINTAINER=		mat@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Perl interface to the c-client mailbox API
 
 LIB_DEPENDS=		c-client4.9:${PORTSDIR}/mail/cclient

@@ -11,7 +11,7 @@ MASTER_SITES=	CPAN \
 		http://hacks.dlux.hu/Parallel-ForkManager/download/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A simple parallel processing fork manager
 
 PERL_CONFIGURE=	YES

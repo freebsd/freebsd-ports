@@ -11,7 +11,7 @@ CATEGORIES=		devel perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		mat@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Attribute::Persistent - Really lazy persistence
 
 BUILD_DEPENDS=		${SITE_PERL}/Attribute/Handlers/Prospective.pm:${PORTSDIR}/devel/p5-Attribute-Handlers-Prospective \

@@ -8,6 +8,3 @@ with each template. It also provides easy logging mechanisms, graceful fatal
 error handling, including special templates and emails to admins.
 
 WWW: http://search.cpan.org/dist/CGI-Framework/
-
--- 
-mat

@@ -11,7 +11,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for exact currency math with formatting and rounding
 
 BUILD_DEPENDS=	${SITE_PERL}/Math/FixedPrecision.pm:${PORTSDIR}/math/p5-Math-FixedPrecision \
