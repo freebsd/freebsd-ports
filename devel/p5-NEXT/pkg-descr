@@ -3,7 +3,3 @@ m calls $self-NEXT::m()>, the call to m is redispatched as if the calling
 method had not originally been found.
 
 WWW: http://search.cpan.org/dist/NEXT/
-
--- 
-Mathieu Arnold
-mat@FreeBSD.org

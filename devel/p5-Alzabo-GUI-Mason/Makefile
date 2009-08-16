@@ -12,7 +12,7 @@ CATEGORIES=	devel databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A GUI for Alzabo using Mason
 
 BUILD_DEPENDS=	${SITE_PERL}/Alzabo.pm:${PORTSDIR}/devel/p5-Alzabo \

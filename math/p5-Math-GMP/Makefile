@@ -12,7 +12,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides an interface to the GMP library
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4

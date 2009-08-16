@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=mat
 DISTNAME=	ConfigKit.${PORTVERSION:C/0.4.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A somewhat prototypical facility for generating CLI interfaces
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libphk.a:${PORTSDIR}/devel/libphk

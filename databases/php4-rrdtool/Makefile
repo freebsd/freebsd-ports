@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	mat
 PKGNAMEPREFIX=	php4-
 DISTNAME=	${UNIQUENAME}-${PORTVERSION}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A php/rrdtool glue
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool

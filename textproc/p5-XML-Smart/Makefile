@@ -10,7 +10,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Smart, easy and powerful way to access/create XML files/data
 
 BUILD_DEPENDS=	${SITE_PERL}/Object/MultiType.pm:${PORTSDIR}/devel/p5-Object-MultiType \

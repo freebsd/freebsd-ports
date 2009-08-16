@@ -11,7 +11,7 @@ CATEGORIES=	dns textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse and manipulate DNS Zone Files
 
 PERL_CONFIGURE=	yes

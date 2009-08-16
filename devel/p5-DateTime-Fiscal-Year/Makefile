@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculate the day or week of the Fiscal Year with an arbitrary start date
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

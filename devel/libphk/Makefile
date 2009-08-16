@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=mat
 DISTNAME=	Libphk.${PORTVERSION:C/0.3.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PHK's utilities functions
 
 WRKSRC=		${WRKDIR}/Libphk

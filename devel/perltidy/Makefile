@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/%SUBDIR%/Perl/} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Perl-Tidy-${PORTVERSION}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Indents and reformats Perl scripts to make them easier to read
 
 PERL_CONFIGURE=	yes

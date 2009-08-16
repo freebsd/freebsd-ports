@@ -11,7 +11,7 @@ CATEGORIES=	mail devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for reading procmail logfiles
 
 PERL_CONFIGURE=	yes

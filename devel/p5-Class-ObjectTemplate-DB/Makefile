@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An optimized template builder base class with lookup capability
 
 RUN_DEPENDS=	${SITE_PERL}/Class/ObjectTemplate.pm:${PORTSDIR}/devel/p5-Class-ObjectTemplate

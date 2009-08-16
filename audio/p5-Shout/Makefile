@@ -11,7 +11,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	http://downloads.us.xiph.org/releases/libshout/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl glue for libshout MP3 streaming source library
 
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2

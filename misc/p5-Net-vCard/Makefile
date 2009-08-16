@@ -11,7 +11,7 @@ CATEGORIES=		misc perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		mat@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Read and write vCard files (RFC 2426)
 
 PERL_CONFIGURE=		5.8.0+

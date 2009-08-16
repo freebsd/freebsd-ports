@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Process CGI input parameters
 
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0.01:${PORTSDIR}/devel/p5-UNIVERSAL-require

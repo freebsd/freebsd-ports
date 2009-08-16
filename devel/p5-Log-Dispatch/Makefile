@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A suite of OO modules for logging messages to multiple outputs
 
 RUN_DEPENDS=	p5-Params-Validate>=0.15:${PORTSDIR}/devel/p5-Params-Validate

@@ -14,7 +14,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Text/DCONWAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manual text wrapping and reformatting
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version

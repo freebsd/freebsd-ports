@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Glue Apache::Session with PHP::Session
 
 BUILD_DEPENDS=	${SITE_PERL}/PHP/Session.pm:${PORTSDIR}/www/p5-PHP-Session \

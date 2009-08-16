@@ -11,7 +11,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides a way to write/read ID3 v2.3 tags
 
 PERL_CONFIGURE=	yes

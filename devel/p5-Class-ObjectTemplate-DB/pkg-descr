@@ -8,6 +8,3 @@ Later if data is accessed and it is not currently present in the object,
 it can be retrieved on an as-need basis.
 
 WWW: http://search.cpan.org/dist/Class-ObjectTemplate-DB/
-
---
-Tony Maher <tonym@biolateral.com.au>

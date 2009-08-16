@@ -11,6 +11,3 @@ Subclassing is only needed to send a message to a different output, not
 to change the message format.
 
 WWW: http://search.cpan.org/dist/Log-Dispatch/
-
--Anton
-<tobez@FreeBSD.org>

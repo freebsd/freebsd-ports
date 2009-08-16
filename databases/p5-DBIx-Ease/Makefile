@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	mat/:local DBIx/:cpan
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:local,cpan
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Less-code DBI interactions for all drivers
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
