@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	openbsm
-DISTVERSION=	1.1-p1
+DISTVERSION=	1.1-p2
 CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/
-DISTFILES=	openbsm-${DISTVERSION}.tgz
+DISTNAME=	openbsm-${DISTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Open Source Basic Security Module (BSM) Audit Implementation
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
