@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Visitor style traversal of Perl data structures
 
 BUILD_DEPENDS=	p5-Any-Moose>=0.07:${PORTSDIR}/devel/p5-Any-Moose \

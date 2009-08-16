@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate cryptographic signatures for objects
 
 BUILD_DEPENDS=	p5-Storable>=2.11:${PORTSDIR}/devel/p5-Storable \

@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Path::Class type library for Moose
 
 RUN_DEPENDS=	p5-Class-MOP>=0:${PORTSDIR}/devel/p5-Class-MOP \

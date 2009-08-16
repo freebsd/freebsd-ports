@@ -12,7 +12,7 @@ MASTER_SITES=		CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LY/LYOKATO
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		lbr@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Validation with simple chains of constraints
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \

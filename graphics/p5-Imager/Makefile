@@ -13,7 +13,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl module for manipulating gray, color and rgba format images
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \

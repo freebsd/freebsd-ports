@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lbr@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Getopt::Long with usage text
 
 RUN_DEPENDS=	p5-Params-Validate>=0.74:${PORTSDIR}/devel/p5-Params-Validate \
