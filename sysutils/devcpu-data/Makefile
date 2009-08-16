@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	devcpu-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	Microcode data file to be used with sysutils/devcpu port
+COMMENT=	Intel and AMD CPUs microcode updates
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
@@ -22,6 +22,8 @@ NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 DATADIR=	${PREFIX}/share/devcpu
+
+USE_RC_SUBR=	microcode_update
 
 do-install:
 	${MKDIR} ${DATADIR}/
