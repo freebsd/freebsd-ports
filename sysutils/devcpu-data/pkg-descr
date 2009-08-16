@@ -1,4 +1,5 @@
-This port supplies microcode updates for use with sysutils/devcpu port.
-These could be used to keep your processor microcode up-to-date.
+This port supplies microcode updates for use with cpuctl(4) microcode
+update facility.  These could be used to keep your processor's firmware
+up-to-date.
 
 Author:	Stanislav Sedov <stas@FreeBSD.org>
