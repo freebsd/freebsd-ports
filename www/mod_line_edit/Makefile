@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/mod_line_edit/
 DISTFILES=	mod_line_edit.c
 
-MAINTAINER=	dom@helenmarks.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for simple text rewriting
 
 MAKE_JOBS_SAFE=  yes

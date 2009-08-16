@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/svn/apache/filters/xmlns/
 DISTFILES=	xmlns.h mod_proxy_xml.c
 
-MAINTAINER=	dom@helenmarks.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for rewriting URI references in XML
 
 MAKE_JOBS_SAFE=  yes
