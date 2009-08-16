@@ -4139,3 +4139,4 @@ misc/xenmenu||2009-08-08|Removed: Project abandoned in 1998
 security/dns-proxy-tor||2009-08-09|Removed
 security/trans-proxy-tor||2009-08-09|Removed: trans-proxy-tor is rendered obsolete by Tor\'s TransPort option  (currently only available in tor-devel)
 science/dft++||2009-08-11|Removed
+devel/p5-MooseX-Policy-SemiAffordanceAccessor|devel/p5-MooseX-SemiAffordanceAccessor|2009-08-18|Renamed
