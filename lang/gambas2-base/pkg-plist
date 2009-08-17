@@ -39,6 +39,9 @@ lib/gambas2/gb.gui.so.0
 lib/gambas2/gb.gui.so
 lib/gambas2/gb.gui.la
 lib/gambas2/gb.component
+share/icons/hicolor/64x64/mimetypes/application-x-gambas.png
+share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-gambas.png
+share/mimelnk/application/x-gambas.desktop
 %%DATADIR%%/icons/application-x-gambas.png
 %%DATADIR%%/info/gb.debug.info
 %%DATADIR%%/info/gb.debug.list
@@ -57,6 +60,12 @@ lib/gambas2/gb.component
 %%DATADIR%%/info/gb.info
 %%DATADIR%%/info/gb.list
 @dirrmtry lib/gambas2
+@dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
 @dirrmtry %%DATADIR%%/icons
 @dirrmtry %%DATADIR%%/info
 @dirrmtry %%DATADIR%%
