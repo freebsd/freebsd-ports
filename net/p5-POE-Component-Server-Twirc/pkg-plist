@@ -1,5 +1,8 @@
 bin/twirc
 %%SITE_PERL%%/App/Twirc/Manual.pod
+%%SITE_PERL%%/App/Twirc/Plugin/BangCommands.pm
+%%SITE_PERL%%/App/Twirc/Plugin/SecondaryAccount.pm
+%%SITE_PERL%%/App/Twirc/Plugin/SquashWhiteSpace.pm
 %%SITE_PERL%%/App/Twirc.pm
 %%SITE_PERL%%/POE/Component/Server/Twirc/State.pm
 %%SITE_PERL%%/POE/Component/Server/Twirc/LogAppender.pm
@@ -9,6 +12,7 @@ bin/twirc
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/App/Twirc/Plugin
 @dirrmtry %%SITE_PERL%%/App/Twirc
 @dirrmtry %%SITE_PERL%%/App
 @dirrmtry %%SITE_PERL%%/POE/Component/Server/Twirc
