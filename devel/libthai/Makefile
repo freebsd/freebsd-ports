@@ -33,4 +33,10 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC} && ${SH} autogen.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 800000
+ALL_TARGET=	all
+.endif
+
+.include <bsd.port.post.mk>
