@@ -515,6 +515,62 @@ share/locale/uk/LC_MESSAGES/celestia_constellations.mo
 share/locale/zh_CN/LC_MESSAGES/celestia.mo
 share/locale/zh_CN/LC_MESSAGES/celestia_constellations.mo
 share/pixmaps/celestia.png
+%%KDE%%share/applnk/Edutainment/Science/celestia.desktop
+%%KDE%%share/apps/celestia
+%%KDE%%share/celestia/bookmarks.xml
+%%KDE%%share/celestia/celestiaui.rc
+%%KDE%%share/celestia/favicons/celestia_20020830192652097.png
+%%KDE%%share/celestia/favicons/celestia_20020830192655186.png
+%%KDE%%share/celestia/favicons/celestia_20021210223316001.png
+%%KDE%%share/celestia/favicons/celestia_20021212191412299.png
+%%KDE%%share/celestia/favicons/celestia_20021215164511359.png
+%%KDE%%share/celestia/favicons/celestia_20021215164726547.png
+%%KDE%%share/celestia/favicons/celestia_20021215170159036.png
+%%KDE%%share/celestia/favicons/celestia_20030106235954721.png
+%%KDE%%share/config/celestiarc
+%%KDE%%share/doc/HTML/en/celestia/fig1.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig10.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig11.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig12.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig13.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig14.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig15.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig16.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig17.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig18.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig19.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig2.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig20.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig21.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig22.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig221.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig23.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig24.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig25.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig26.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig27.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig28.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig29.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig3.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig30.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig4.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig5.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig6.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig7.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig8.jpg
+%%KDE%%share/doc/HTML/en/celestia/fig9.jpg
+%%KDE%%share/doc/HTML/en/celestia/index.cache.bz2
+%%KDE%%share/doc/HTML/en/celestia/index.docbook
+%%KDE%%share/doc/HTML/en/celestia/common
+%%KDE%%share/icons/hicolor/16x16/apps/celestia.png
+%%KDE%%share/icons/hicolor/22x22/apps/celestia.png
+%%KDE%%share/icons/hicolor/32x32/apps/celestia.png
+%%KDE%%share/icons/hicolor/48x48/apps/celestia.png
+%%KDE%%share/mimelnk/application/x-celestia-script.desktop
+%%KDE%%share/services/celestia.protocol
+%%KDE%%@dirrm share/doc/HTML/en/celestia
+%%KDE%%@dirrm share/celestia/favicons
+%%KDE%%@dirrm share/applnk/Edutainment/Science
 @dirrm share/celestia/textures/medres
 @dirrm share/celestia/textures/lores
 @dirrm share/celestia/textures/hires
