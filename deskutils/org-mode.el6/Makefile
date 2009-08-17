@@ -13,7 +13,7 @@ MASTER_SITES=	http://orgmode.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	org-${PORTVERSION}
 
-MAINTAINER=	thinker@branda.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs mode for notes and project planning
 
 USE_EMACS=	yes
