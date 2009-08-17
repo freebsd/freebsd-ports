@@ -13,7 +13,7 @@ MASTER_SITES=	http://software.decisionsoft.com/software/ \
 		http://www.it.ca/~paul/src/
 DISTFILES=	xmldiff.pl
 
-MAINTAINER=	paul+ports@it.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display meaningful differences between XML files
 
 RUN_DEPENDS=	xmlprpr:${PORTSDIR}/textproc/xmlprpr

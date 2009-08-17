@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
 EXTRACT_ONLY=	# defined
 
-MAINTAINER=	paul+ports@it.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test remote system for unsecured mail proxies
 
 USE_PERL5=	yes

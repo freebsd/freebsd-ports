@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/:0 \
 		http://www.it.ca/~paul/src/:0
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}:0
 
-MAINTAINER=	paul+ports@it.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast DNS daemon especially for DNSBL zones
 
 .if !defined(NOPORTDOCS)

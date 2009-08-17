@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.corpit.ru/mjt/proxycheck/ \
 		http://www.it.ca/~paul/src/
 
-MAINTAINER=	paul+ports@it.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check for open proxy servers
 
 MAN1=		proxycheck.1
