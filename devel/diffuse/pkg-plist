@@ -5,6 +5,7 @@ etc/diffuserc
 %%DATADIR%%/syntax/csh.syntax
 %%DATADIR%%/syntax/csharp.syntax
 %%DATADIR%%/syntax/css.syntax
+%%DATADIR%%/syntax/fortran.syntax
 %%DATADIR%%/syntax/gettext.syntax
 %%DATADIR%%/syntax/glsl.syntax
 %%DATADIR%%/syntax/html.syntax
