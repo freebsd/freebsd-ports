@@ -21,7 +21,6 @@
     SUBDIR += bbjd
     SUBDIR += bdelta
     SUBDIR += bestfit
-    SUBDIR += bibletime-devel
     SUBDIR += bibletime-kde3
     SUBDIR += bibletime-kde4
     SUBDIR += biblical-curse
