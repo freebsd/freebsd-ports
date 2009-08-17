@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-08-15 14:59:45.000000000 -0300
++++ Makefile.in	2009-08-15 15:00:14.000000000 -0300
+@@ -217,7 +217,7 @@
+ ACLOCAL_AMFLAGS = -I m4
+ SUBDIRS = contrib src doc m4 . 
+ EXTRA_DIST = acinclude.m4 libmicrohttpd.pc.in
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = /usr/local/libdata/pkgconfig
+ pkgconfig_DATA = libmicrohttpd.pc
+ all: MHD_config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
