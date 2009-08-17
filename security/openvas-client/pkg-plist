@@ -1,3 +1,5 @@
 @comment $FreeBSD$
 bin/OpenVAS-Client
 bin/openvasclient-mkcert
+lib/openvas/openvas-ssh-client-rpm-creator.sh
+@dirrmtry lib/openvas

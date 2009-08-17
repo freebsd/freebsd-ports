@@ -1,11 +1,14 @@
---- nessus.tmpl.in.orig	2008-04-27 11:39:30.000000000 +0900
-+++ nessus.tmpl.in	2008-04-27 11:39:47.000000000 +0900
-@@ -37,7 +37,7 @@
+
+$FreeBSD$
+
+--- nessus.tmpl.in.orig
++++ nessus.tmpl.in
+@@ -38,7 +38,7 @@
  make_bindir=${rootdir}/bin
  libsdir=${rootdir}/libs
  top_builddir = @PWDD@
--include= -I. -I$(rootdir)/include  
-+include= -I. -I$(rootdir)/include -I$(includedir) 
+-include= -I. -I$(rootdir)/include
++include= -I. -I$(rootdir)/include -I$(includedir)
  INSTALL=@INSTALL@
  INSTALL_DIR=@INSTALL_DIR@
  installuser=@installuser@
