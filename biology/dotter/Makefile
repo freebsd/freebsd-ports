@@ -9,7 +9,7 @@
 PORTNAME=	dotter
 PORTVERSION=	20021204 # last modified date in FTP server
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.cgb.ki.se/pub/esr/dotter/
+MASTER_SITES=	http://sonnhammer.sbc.su.se/download/software/dotter/
 DISTNAME=	${PORTNAME}.LIN
 EXTRACT_SUFX=	#
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
