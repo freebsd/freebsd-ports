@@ -60,10 +60,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64: missing pthread
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
