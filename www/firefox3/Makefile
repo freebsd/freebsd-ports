@@ -59,6 +59,10 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: invokes i386 assembler
+.endif
+
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
