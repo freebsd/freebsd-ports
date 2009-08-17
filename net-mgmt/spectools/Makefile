@@ -57,6 +57,10 @@ IGNORE=	is unsupported on systems prior to FreeBSD v700027
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .endif
 
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 800000
+BROKEN=		Does not build on sparc64-8: duplicate definition of malloc
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spectool_net ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/spectool_raw ${PREFIX}/bin
