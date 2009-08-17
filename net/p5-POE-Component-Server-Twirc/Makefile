@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Server-Twirc
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Twitter/IRC gateway
 
 RUN_DEPENDS=	p5-MooseX-POE>=0:${PORTSDIR}/devel/p5-MooseX-POE \
-		p5-Net-Twitter>=1.22:${PORTSDIR}/net/p5-Net-Twitter \
+		p5-Net-Twitter>=3.04002:${PORTSDIR}/net/p5-Net-Twitter \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-POE-Component-Server-IRC>=0.02005:${PORTSDIR}/irc/p5-POE-Component-Server-IRC \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
@@ -35,6 +35,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		App::Twirc.3 \
 		App::Twirc::Manual.3 \
+		App::Twirc::Plugin::SquashWhiteSpace.3 \
+		App::Twirc::Plugin::BangCommands.3 \
+		App::Twirc::Plugin::SecondaryAccount.3 \
 		POE::Component::Server::Twirc.3
 
 post-patch:
