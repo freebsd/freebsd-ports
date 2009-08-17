@@ -1,5 +1,8 @@
---- libopenvas/pcap.c.orig	2008-03-21 06:25:01.000000000 +0900
-+++ libopenvas/pcap.c	2008-04-26 23:47:15.000000000 +0900
+
+$FreeBSD$
+
+--- libopenvas/pcap.c.orig
++++ libopenvas/pcap.c
 @@ -16,9 +16,7 @@
   * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   */
@@ -7,10 +10,10 @@
 -#include <resolv.h>
  #include <pcap.h>
 -#include <net/if.h>
+ #include <netinet/in.h>
  #include <arpa/inet.h>
  #include <sys/ioctl.h>
- #include <netdb.h>
-@@ -28,6 +26,10 @@
+@@ -29,6 +27,10 @@
  #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>

@@ -1,3 +1,8 @@
-CONFIGURE_ARGS+=	--includedir=${PREFIX}/include \
-					--localstatedir=${PREFIX}/openvas \
-					--sharedstatedir=${PREFIX}/openvas/com
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include \
+		--libdir=${PREFIX}/lib \
+		--localstatedir=${PREFIX}/openvas \
+		--sharedstatedir=${PREFIX}/openvas/com
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${PREFIX}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
