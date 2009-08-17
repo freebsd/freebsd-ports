@@ -4,7 +4,19 @@ bin/gambas2-database-manager.gambas
 bin/gambas2.gambas
 bin/gbs2.gambas
 bin/gbs2
+share/icons/hicolor/64x64/mimetypes/application-x-gambasscript.png
+share/icons/hicolor/64x64/mimetypes/application-x-gambasserverpage.png
+share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-gambasscript.png
+share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-gambasserverpage.png
+share/mimelnk/application/x-gambasscript.desktop
+share/mimelnk/application/x-gambasserverpage.desktop
 %%DATADIR%%/icons/application-x-gambasscript.png
 %%DATADIR%%/icons/application-x-gambasserverpage.png
+@dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
 @dirrmtry %%DATADIR%%/icons
 @dirrmtry %%DATADIR%%
