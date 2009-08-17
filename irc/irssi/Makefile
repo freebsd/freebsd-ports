@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.14
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	irc
 MASTER_SITES=	http://mirror.irssi.org/
 
