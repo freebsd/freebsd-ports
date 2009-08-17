@@ -112,7 +112,12 @@
 %%WWWDIR%%/languages/index.html
 %%WWWDIR%%/languages/installer_lang.php
 %%WWWDIR%%/languages/installer_lang_default.php
-%%WWWDIR%%/languages/lang_english.conf
+%%WWWDIR%%/languages/lang_arabic.conf.default
+%%WWWDIR%%/languages/lang_chinese_simplified.conf.default
+%%WWWDIR%%/languages/lang_english.conf.default
+%%WWWDIR%%/languages/lang_german.conf.default
+%%WWWDIR%%/languages/lang_russian.conf.default
+%%WWWDIR%%/languages/lang_thai.conf.default
 %%WWWDIR%%/languages/readme_thai.html
 %%WWWDIR%%/languages/translit.txt
 %%WWWDIR%%/libs/admin_config.php
@@ -256,6 +261,7 @@
 %%WWWDIR%%/modules/admin_language/js/index.html
 %%WWWDIR%%/modules/admin_language/js/simpleedit.js
 %%WWWDIR%%/modules/admin_language/lang.conf
+%%WWWDIR%%/modules/admin_language/lang_russian.conf
 %%WWWDIR%%/modules/admin_language/templates/admin_language_admin_link.tpl
 %%WWWDIR%%/modules/admin_language/templates/admin_language_admin_main_link.tpl
 %%WWWDIR%%/modules/admin_language/templates/admin_language_javascript.tpl
@@ -268,6 +274,7 @@
 %%WWWDIR%%/modules/admin_snippet/admin_snippet_settings.php
 %%WWWDIR%%/modules/admin_snippet/index.html
 %%WWWDIR%%/modules/admin_snippet/lang.conf
+%%WWWDIR%%/modules/admin_snippet/lang_russian.conf
 %%WWWDIR%%/modules/admin_snippet/templates/admin_snippet_admin_link.tpl
 %%WWWDIR%%/modules/admin_snippet/templates/admin_snippet_admin_main_link.tpl
 %%WWWDIR%%/modules/admin_snippet/templates/admin_snippet_edit.tpl
@@ -290,6 +297,7 @@
 %%WWWDIR%%/modules/akismet/images/wrench.png
 %%WWWDIR%%/modules/akismet/index.html
 %%WWWDIR%%/modules/akismet/lang.conf
+%%WWWDIR%%/modules/akismet/lang_russian.conf
 %%WWWDIR%%/modules/akismet/libs/Akismet.class_4.php
 %%WWWDIR%%/modules/akismet/libs/Akismet.class_5.php
 %%WWWDIR%%/modules/akismet/libs/akismet.class.php
@@ -310,6 +318,7 @@
 %%WWWDIR%%/modules/anonymous/anonymous_settings.php
 %%WWWDIR%%/modules/anonymous/index.html
 %%WWWDIR%%/modules/anonymous/lang.conf
+%%WWWDIR%%/modules/anonymous/lang_russian.conf
 %%WWWDIR%%/modules/anonymous/templates/anonymous.tpl
 %%WWWDIR%%/modules/anonymous/templates/index.html
 %%WWWDIR%%/modules/anonymous_comments/anonymous_comments_init.php
@@ -319,6 +328,7 @@
 %%WWWDIR%%/modules/anonymous_comments/anonymous_comments_settings.php
 %%WWWDIR%%/modules/anonymous_comments/index.html
 %%WWWDIR%%/modules/anonymous_comments/lang.conf
+%%WWWDIR%%/modules/anonymous_comments/lang_russian.conf
 %%WWWDIR%%/modules/anonymous_comments/templates/anonymous_comments.tpl
 %%WWWDIR%%/modules/anonymous_comments/templates/index.html
 %%WWWDIR%%/modules/anonymous_story/anonymous_story_init.php
@@ -327,6 +337,7 @@
 %%WWWDIR%%/modules/anonymous_story/anonymous_story_readme.htm
 %%WWWDIR%%/modules/anonymous_story/anonymous_story_settings.php
 %%WWWDIR%%/modules/anonymous_story/lang.conf
+%%WWWDIR%%/modules/anonymous_story/lang_russian.conf
 %%WWWDIR%%/modules/anonymous_story/templates/anonymous_story.tpl
 %%WWWDIR%%/modules/blocker/blocker_init.php
 %%WWWDIR%%/modules/blocker/blocker_install.php
@@ -369,6 +380,38 @@
 %%WWWDIR%%/modules/captcha/templates/captcha_home.tpl
 %%WWWDIR%%/modules/captcha/templates/index.html
 %%WWWDIR%%/modules/captcha/templates/show_register_captcha.tpl
+%%WWWDIR%%/modules/codemirror/codemirror_init.php
+%%WWWDIR%%/modules/codemirror/codemirror_install.php
+%%WWWDIR%%/modules/codemirror/codemirror_readme.htm
+%%WWWDIR%%/modules/codemirror/codemirror_settings.php
+%%WWWDIR%%/modules/codemirror/index.html
+%%WWWDIR%%/modules/codemirror/source/codemirror.js
+%%WWWDIR%%/modules/codemirror/source/csscolors.css
+%%WWWDIR%%/modules/codemirror/source/editor.js
+%%WWWDIR%%/modules/codemirror/source/highlight.js
+%%WWWDIR%%/modules/codemirror/source/index.html
+%%WWWDIR%%/modules/codemirror/source/jscolors.css
+%%WWWDIR%%/modules/codemirror/source/mirrorframe.js
+%%WWWDIR%%/modules/codemirror/source/parsecss.js
+%%WWWDIR%%/modules/codemirror/source/parsedummy.js
+%%WWWDIR%%/modules/codemirror/source/parsehtmlmixed.js
+%%WWWDIR%%/modules/codemirror/source/parsejavascript.js
+%%WWWDIR%%/modules/codemirror/source/parsephp.js
+%%WWWDIR%%/modules/codemirror/source/parsephphtmlmixed.js
+%%WWWDIR%%/modules/codemirror/source/parsesparql.js
+%%WWWDIR%%/modules/codemirror/source/parsexml.js
+%%WWWDIR%%/modules/codemirror/source/phpcolors.css
+%%WWWDIR%%/modules/codemirror/source/select.js
+%%WWWDIR%%/modules/codemirror/source/stringstream.js
+%%WWWDIR%%/modules/codemirror/source/tokenize.js
+%%WWWDIR%%/modules/codemirror/source/tokenizejavascript.js
+%%WWWDIR%%/modules/codemirror/source/tokenizephp.js
+%%WWWDIR%%/modules/codemirror/source/undo.js
+%%WWWDIR%%/modules/codemirror/source/util.js
+%%WWWDIR%%/modules/codemirror/source/xmlcolors.css
+%%WWWDIR%%/modules/codemirror/templates/codemirror_end.tpl
+%%WWWDIR%%/modules/codemirror/templates/codemirror_start.tpl
+%%WWWDIR%%/modules/codemirror/templates/index.html
 %%WWWDIR%%/modules/friends_activity/friends_activity_init.php
 %%WWWDIR%%/modules/friends_activity/friends_activity_install.php
 %%WWWDIR%%/modules/friends_activity/friends_activity_main.php
@@ -376,6 +419,7 @@
 %%WWWDIR%%/modules/friends_activity/friends_activity_settings.php
 %%WWWDIR%%/modules/friends_activity/index.html
 %%WWWDIR%%/modules/friends_activity/lang.conf
+%%WWWDIR%%/modules/friends_activity/lang_russian.conf
 %%WWWDIR%%/modules/friends_activity/templates/background.gif
 %%WWWDIR%%/modules/friends_activity/templates/friend.gif
 %%WWWDIR%%/modules/friends_activity/templates/friends_activity.tpl
@@ -394,6 +438,17 @@
 %%WWWDIR%%/modules/hello_world/templates/index.html
 %%WWWDIR%%/modules/hello_world/templates/smiley.png
 %%WWWDIR%%/modules/index.html
+%%WWWDIR%%/modules/links/index.html
+%%WWWDIR%%/modules/links/lang.conf
+%%WWWDIR%%/modules/links/links_init.php
+%%WWWDIR%%/modules/links/links_install.php
+%%WWWDIR%%/modules/links/links_main.php
+%%WWWDIR%%/modules/links/links_readme.htm
+%%WWWDIR%%/modules/links/links_settings.php
+%%WWWDIR%%/modules/links/templates/index.html
+%%WWWDIR%%/modules/links/templates/links_admin_link.tpl
+%%WWWDIR%%/modules/links/templates/links_admin_main_link.tpl
+%%WWWDIR%%/modules/links/templates/links_main.tpl
 %%WWWDIR%%/modules/modules_init.php
 %%WWWDIR%%/modules/modules_libs.php
 %%WWWDIR%%/modules/multibox_admin/css/images/close.png
@@ -418,14 +473,16 @@
 %%WWWDIR%%/modules/multibox_admin/templates/index.html
 %%WWWDIR%%/modules/multibox_admin/templates/multibox_admin_body_end.tpl
 %%WWWDIR%%/modules/multibox_admin/templates/multibox_admin_head_start.tpl
-%%WWWDIR%%/modules/pligg_chat/images/20x16icon_chat.gif
-%%WWWDIR%%/modules/pligg_chat/lang.conf
-%%WWWDIR%%/modules/pligg_chat/pligg_chat_init.php
-%%WWWDIR%%/modules/pligg_chat/pligg_chat_install.php
-%%WWWDIR%%/modules/pligg_chat/pligg_chat_readme.htm
-%%WWWDIR%%/modules/pligg_chat/pligg_chat_settings.php
-%%WWWDIR%%/modules/pligg_chat/templates/pligg_chat_index.tpl
-%%WWWDIR%%/modules/pligg_chat/templates/pligg_dedicated_server_gadget.html
+%%WWWDIR%%/modules/pligg_update/cache_end.php
+%%WWWDIR%%/modules/pligg_update/cache_start.php
+%%WWWDIR%%/modules/pligg_update/curl.php
+%%WWWDIR%%/modules/pligg_update/curl_test.php
+%%WWWDIR%%/modules/pligg_update/lang.conf
+%%WWWDIR%%/modules/pligg_update/pligg_update_init.php
+%%WWWDIR%%/modules/pligg_update/pligg_update_install.php
+%%WWWDIR%%/modules/pligg_update/pligg_update_readme.htm
+%%WWWDIR%%/modules/pligg_update/pligg_update_settings.php
+%%WWWDIR%%/modules/pligg_update/templates/pligg_update.tpl
 %%WWWDIR%%/modules/rss_import/admin_rss_import.php
 %%WWWDIR%%/modules/rss_import/class.rssimport.php
 %%WWWDIR%%/modules/rss_import/create_feed_tables.php
@@ -439,6 +496,7 @@
 %%WWWDIR%%/modules/rss_import/js/EditInPlace.js
 %%WWWDIR%%/modules/rss_import/js/pligg_effects.js
 %%WWWDIR%%/modules/rss_import/lang.conf
+%%WWWDIR%%/modules/rss_import/lang_russian.conf
 %%WWWDIR%%/modules/rss_import/magpierss/extlib/Snoopy.class.inc
 %%WWWDIR%%/modules/rss_import/magpierss/extlib/index.html
 %%WWWDIR%%/modules/rss_import/magpierss/index.html
@@ -494,6 +552,12 @@
 %%WWWDIR%%/modules/sidebar_saved/sidebar_saved_readme.htm
 %%WWWDIR%%/modules/sidebar_saved/sidebar_saved_settings.php
 %%WWWDIR%%/modules/sidebar_saved/templates/sidebar_saved_index.tpl
+%%WWWDIR%%/modules/sidebar_stats/lang.conf
+%%WWWDIR%%/modules/sidebar_stats/sidebar_stats_init.php
+%%WWWDIR%%/modules/sidebar_stats/sidebar_stats_install.php
+%%WWWDIR%%/modules/sidebar_stats/sidebar_stats_readme.htm
+%%WWWDIR%%/modules/sidebar_stats/sidebar_stats_settings.php
+%%WWWDIR%%/modules/sidebar_stats/templates/sidebar_stats.tpl
 %%WWWDIR%%/modules/sidebar_stories/lang.conf
 %%WWWDIR%%/modules/sidebar_stories/sidebar_stories_init.php
 %%WWWDIR%%/modules/sidebar_stories/sidebar_stories_install.php
@@ -521,6 +585,7 @@
 %%WWWDIR%%/modules/simple_messaging/images/yes.png
 %%WWWDIR%%/modules/simple_messaging/index.html
 %%WWWDIR%%/modules/simple_messaging/lang.conf
+%%WWWDIR%%/modules/simple_messaging/lang_russian.conf
 %%WWWDIR%%/modules/simple_messaging/simple_messaging_init.php
 %%WWWDIR%%/modules/simple_messaging/simple_messaging_install.php
 %%WWWDIR%%/modules/simple_messaging/simple_messaging_main.php
@@ -547,6 +612,7 @@
 %%WWWDIR%%/modules/social_bookmark/images/yahoomyweb.png
 %%WWWDIR%%/modules/social_bookmark/index.html
 %%WWWDIR%%/modules/social_bookmark/lang.conf
+%%WWWDIR%%/modules/social_bookmark/lang_russian.conf
 %%WWWDIR%%/modules/social_bookmark/social_bookmark_init.php
 %%WWWDIR%%/modules/social_bookmark/social_bookmark_install.php
 %%WWWDIR%%/modules/social_bookmark/social_bookmark_readme.htm
@@ -792,15 +858,115 @@
 %%WWWDIR%%/templates/admin/user_view_links_center.tpl
 %%WWWDIR%%/templates/blank.tpl
 %%WWWDIR%%/templates/bookmarklet.tpl
-%%WWWDIR%%/templates/faq-en_center.tpl
 %%WWWDIR%%/templates/htaccess.default
 %%WWWDIR%%/templates/index.html
 %%WWWDIR%%/templates/meta.tpl
 %%WWWDIR%%/templates/no_database.tpl
-%%WWWDIR%%/templates/switchcontent.js
 %%WWWDIR%%/templates/templates.tpl
+%%WWWDIR%%/templates/thestandard/LICENSE.txt
+%%WWWDIR%%/templates/thestandard/README.txt
+%%WWWDIR%%/templates/thestandard/blank.tpl
+%%WWWDIR%%/templates/thestandard/comment_errors.tpl
+%%WWWDIR%%/templates/thestandard/comment_form.tpl
+%%WWWDIR%%/templates/thestandard/comment_show.tpl
+%%WWWDIR%%/templates/thestandard/css/categories.css
+%%WWWDIR%%/templates/thestandard/css/index.html
+%%WWWDIR%%/templates/thestandard/css/star_rating/alt_star.gif
+%%WWWDIR%%/templates/thestandard/css/star_rating/star.css
+%%WWWDIR%%/templates/thestandard/css/style.css
+%%WWWDIR%%/templates/thestandard/css/wick.css
+%%WWWDIR%%/templates/thestandard/edit_comment_center.tpl
+%%WWWDIR%%/templates/thestandard/edit_group_center.tpl
+%%WWWDIR%%/templates/thestandard/editlink_edit_center.tpl
+%%WWWDIR%%/templates/thestandard/footer.tpl
+%%WWWDIR%%/templates/thestandard/group_center.tpl
+%%WWWDIR%%/templates/thestandard/group_story_center.tpl
+%%WWWDIR%%/templates/thestandard/header.tpl
+%%WWWDIR%%/templates/thestandard/images/add.gif
+%%WWWDIR%%/templates/thestandard/images/arrow_down.gif
+%%WWWDIR%%/templates/thestandard/images/arrow_down_voted.gif
+%%WWWDIR%%/templates/thestandard/images/arrow_up.gif
+%%WWWDIR%%/templates/thestandard/images/arrow_up_voted.gif
+%%WWWDIR%%/templates/thestandard/images/bg-shine.jpg
+%%WWWDIR%%/templates/thestandard/images/bg.jpg
+%%WWWDIR%%/templates/thestandard/images/comment-bottom-main.gif
+%%WWWDIR%%/templates/thestandard/images/comment-bottom.gif
+%%WWWDIR%%/templates/thestandard/images/comment-left-main.gif
+%%WWWDIR%%/templates/thestandard/images/comment-left.gif
+%%WWWDIR%%/templates/thestandard/images/comment-top-main.gif
+%%WWWDIR%%/templates/thestandard/images/comment-top.gif
+%%WWWDIR%%/templates/thestandard/images/delete.gif
+%%WWWDIR%%/templates/thestandard/images/dropdown_linkbg.gif
+%%WWWDIR%%/templates/thestandard/images/edit.gif
+%%WWWDIR%%/templates/thestandard/images/folder_images.gif
+%%WWWDIR%%/templates/thestandard/images/friends.png
+%%WWWDIR%%/templates/thestandard/images/friends2.png
+%%WWWDIR%%/templates/thestandard/images/green_check.gif
+%%WWWDIR%%/templates/thestandard/images/group_large.gif
+%%WWWDIR%%/templates/thestandard/images/group_small.gif
+%%WWWDIR%%/templates/thestandard/images/index.html
+%%WWWDIR%%/templates/thestandard/images/join.gif
+%%WWWDIR%%/templates/thestandard/images/l1_down.gif
+%%WWWDIR%%/templates/thestandard/images/l1_over.gif
+%%WWWDIR%%/templates/thestandard/images/nav_bg.png
+%%WWWDIR%%/templates/thestandard/images/nav_bg_hover.png
+%%WWWDIR%%/templates/thestandard/images/rss.gif
+%%WWWDIR%%/templates/thestandard/images/sidebar_headline.gif
+%%WWWDIR%%/templates/thestandard/images/subnav_btn.gif
+%%WWWDIR%%/templates/thestandard/images/topnav_bg.gif
+%%WWWDIR%%/templates/thestandard/images/topnav_hover.gif
+%%WWWDIR%%/templates/thestandard/images/unjoin.gif
+%%WWWDIR%%/templates/thestandard/images/user_add.png
+%%WWWDIR%%/templates/thestandard/images/user_delete.png
+%%WWWDIR%%/templates/thestandard/images/user_message.png
+%%WWWDIR%%/templates/thestandard/index.html
+%%WWWDIR%%/templates/thestandard/index_center.tpl
+%%WWWDIR%%/templates/thestandard/js/index.html
+%%WWWDIR%%/templates/thestandard/js/tag_data.js
+%%WWWDIR%%/templates/thestandard/js/wick.js
+%%WWWDIR%%/templates/thestandard/link_summary.tpl
+%%WWWDIR%%/templates/thestandard/live_center.tpl
+%%WWWDIR%%/templates/thestandard/live_comments_center.tpl
+%%WWWDIR%%/templates/thestandard/live_js.tpl
+%%WWWDIR%%/templates/thestandard/live_published_center.tpl
+%%WWWDIR%%/templates/thestandard/live_unpublished_center.tpl
+%%WWWDIR%%/templates/thestandard/login_center.tpl
+%%WWWDIR%%/templates/thestandard/page_center.tpl
+%%WWWDIR%%/templates/thestandard/pligg.tpl
+%%WWWDIR%%/templates/thestandard/profile_center.tpl
+%%WWWDIR%%/templates/thestandard/recommend_small.tpl
+%%WWWDIR%%/templates/thestandard/register_center.tpl
+%%WWWDIR%%/templates/thestandard/register_step_1.tpl
+%%WWWDIR%%/templates/thestandard/rssfeeds.tpl
+%%WWWDIR%%/templates/thestandard/search_advanced_center.tpl
+%%WWWDIR%%/templates/thestandard/search_center.tpl
+%%WWWDIR%%/templates/thestandard/settemplate_center.tpl
+%%WWWDIR%%/templates/thestandard/sidebar.tpl
+%%WWWDIR%%/templates/thestandard/sidebar2.tpl
+%%WWWDIR%%/templates/thestandard/sidebar_modules/about_box.tpl
+%%WWWDIR%%/templates/thestandard/sidebar_modules/categories.tpl
+%%WWWDIR%%/templates/thestandard/sidebar_modules/index.html
+%%WWWDIR%%/templates/thestandard/sidebar_modules/login.tpl
+%%WWWDIR%%/templates/thestandard/sidebar_modules/tags.tpl
+%%WWWDIR%%/templates/thestandard/sidebar_modules/wrapper.tpl
+%%WWWDIR%%/templates/thestandard/sidebar_modules/wrapper2.tpl
+%%WWWDIR%%/templates/thestandard/story_center.tpl
+%%WWWDIR%%/templates/thestandard/submit_errors.tpl
+%%WWWDIR%%/templates/thestandard/submit_extra_fields.tpl
+%%WWWDIR%%/templates/thestandard/submit_groups.tpl
+%%WWWDIR%%/templates/thestandard/submit_step_1.tpl
+%%WWWDIR%%/templates/thestandard/submit_step_2.tpl
+%%WWWDIR%%/templates/thestandard/submit_step_3.tpl
+%%WWWDIR%%/templates/thestandard/tag_cloud_center.tpl
+%%WWWDIR%%/templates/thestandard/template_details.php
+%%WWWDIR%%/templates/thestandard/topusers_center.tpl
+%%WWWDIR%%/templates/thestandard/topusers_data.tpl
+%%WWWDIR%%/templates/thestandard/upcoming_center.tpl
+%%WWWDIR%%/templates/thestandard/user_center.tpl
+%%WWWDIR%%/templates/thestandard/validation.tpl
 %%WWWDIR%%/templates/wistie/README.txt
 %%WWWDIR%%/templates/wistie/blank.tpl
+%%WWWDIR%%/templates/wistie/comment_errors.tpl
 %%WWWDIR%%/templates/wistie/comment_form.tpl
 %%WWWDIR%%/templates/wistie/comment_show.tpl
 %%WWWDIR%%/templates/wistie/css/dropdown-default.css
@@ -956,18 +1122,22 @@
 @dirrm %%WWWDIR%%/modules/captcha/images
 @dirrm %%WWWDIR%%/modules/captcha/templates
 @dirrm %%WWWDIR%%/modules/captcha
+@dirrm %%WWWDIR%%/modules/codemirror/source
+@dirrm %%WWWDIR%%/modules/codemirror/templates
+@dirrm %%WWWDIR%%/modules/codemirror
 @dirrm %%WWWDIR%%/modules/friends_activity/templates
 @dirrm %%WWWDIR%%/modules/friends_activity
 @dirrm %%WWWDIR%%/modules/hello_world/templates
 @dirrm %%WWWDIR%%/modules/hello_world
+@dirrm %%WWWDIR%%/modules/links/templates
+@dirrm %%WWWDIR%%/modules/links
 @dirrm %%WWWDIR%%/modules/multibox_admin/css/images
 @dirrm %%WWWDIR%%/modules/multibox_admin/css
 @dirrm %%WWWDIR%%/modules/multibox_admin/js
 @dirrm %%WWWDIR%%/modules/multibox_admin/templates
 @dirrm %%WWWDIR%%/modules/multibox_admin
-@dirrm %%WWWDIR%%/modules/pligg_chat/images
-@dirrm %%WWWDIR%%/modules/pligg_chat/templates
-@dirrm %%WWWDIR%%/modules/pligg_chat
+@dirrm %%WWWDIR%%/modules/pligg_update/templates
+@dirrm %%WWWDIR%%/modules/pligg_update
 @dirrm %%WWWDIR%%/modules/rss_import/images
 @dirrm %%WWWDIR%%/modules/rss_import/js
 @dirrm %%WWWDIR%%/modules/rss_import/magpierss/extlib
@@ -984,6 +1154,8 @@
 @dirrm %%WWWDIR%%/modules/sidebar_comments
 @dirrm %%WWWDIR%%/modules/sidebar_saved/templates
 @dirrm %%WWWDIR%%/modules/sidebar_saved
+@dirrm %%WWWDIR%%/modules/sidebar_stats/templates
+@dirrm %%WWWDIR%%/modules/sidebar_stats
 @dirrm %%WWWDIR%%/modules/sidebar_stories/templates
 @dirrm %%WWWDIR%%/modules/sidebar_stories
 @dirrm %%WWWDIR%%/modules/sidebar_stories_u/templates
@@ -1015,6 +1187,12 @@
 @dirrm %%WWWDIR%%/templates/admin/images
 @dirrm %%WWWDIR%%/templates/admin/js
 @dirrm %%WWWDIR%%/templates/admin
+@dirrm %%WWWDIR%%/templates/thestandard/css/star_rating
+@dirrm %%WWWDIR%%/templates/thestandard/css
+@dirrm %%WWWDIR%%/templates/thestandard/images
+@dirrm %%WWWDIR%%/templates/thestandard/js
+@dirrm %%WWWDIR%%/templates/thestandard/sidebar_modules
+@dirrm %%WWWDIR%%/templates/thestandard
 @dirrm %%WWWDIR%%/templates/wistie/css/images
 @dirrm %%WWWDIR%%/templates/wistie/css/star_rating
 @dirrm %%WWWDIR%%/templates/wistie/css
