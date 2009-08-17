@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	oleg@ht-systems.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python library to parse and manage gettext catalogs
 
 USE_PYTHON=	yes

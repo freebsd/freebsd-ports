@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	stripogram-1-4
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	oleg@ht-systems.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converting HTML to Plain Text and stripping specified tags from HTML
 
 WRKSRC=		${WRKDIR}/stripogram
