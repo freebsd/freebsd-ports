@@ -24,7 +24,7 @@ PROJECTHOST=	googleappengine
 
 NO_BUILD=	yes
 
-USE_PYTHON=	2.5-2.6
+USE_PYTHON=	2.5
 USE_ZIP=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
