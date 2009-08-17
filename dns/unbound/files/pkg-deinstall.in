@@ -8,10 +8,10 @@ POST-DEINSTALL)
 	echo "===> post-deinstallation information for $1:"
 	echo ""
 	echo "     Note:"
-	echo "     Unbound related user accounts and groups were not removed."
+	echo "     Unbound related user account were not removed."
 	echo ""
-	echo "     To remove the 'unbound' user and the 'unbound' group which were"
-	echo "     created by a default installation of this package, run"
+	echo "     To remove the 'unbound' user which were created by"
+	echo "     a default installation of this package, run"
 	echo ""
 	echo "     pw userdel -n unbound"
 	;;
