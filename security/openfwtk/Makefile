@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	toxa@toxahost.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application proxy toolkit which inherits the ideology of TIS fwtk
 
 WRKSRC=	${WRKDIR}/fwtk
