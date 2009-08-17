@@ -30,7 +30,7 @@ USE_GNOME=	glib20
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000 && ${ARCH} == "amd64"
+.if ${OSVERSION} >= 800000 && ( ${ARCH} == "amd64" || ${ARCH} == "sparc64" )
 BROKEN=		incomplete build
 .endif
 
