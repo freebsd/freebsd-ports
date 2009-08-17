@@ -16,6 +16,8 @@ COMMENT=	Software-based interactive video-effect system
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		does not build
+
 OPTIONS=	SDL	"Turn on SDL support"		on \
 		AALIB	"Turn on AALIB support"		on \
 		FFMPEG	"Turn on FFMPEG support"	on \
