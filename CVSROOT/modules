@@ -12161,7 +12161,6 @@ p5-MooseX-MethodAttributes      ports/devel/p5-MooseX-MethodAttributes
 p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
-p5-MooseX-Policy-SemiAffordanceAccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-MooseX-SemiAffordanceAccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
@@ -15700,7 +15699,6 @@ p5-moosex-methodattributes      ports/devel/p5-MooseX-MethodAttributes
 p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
-p5-moosex-policy-semiaffordanceaccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-moosex-semiaffordanceaccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
@@ -20184,6 +20182,7 @@ regexxer                        ports/devel/regexxer
 regm                            ports/mail/regm
 rej                             ports/sysutils/rej
 rejik                           ports/www/rejik
+rekonq                          ports/www/rekonq
 relaxconf                       ports/sysutils/relaxconf
 relay                           ports/net/relay
 relay-ctrl                      ports/mail/relay-ctrl
