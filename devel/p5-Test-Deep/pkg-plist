@@ -31,6 +31,7 @@
 %%SITE_PERL%%/Test/Deep/RefType.pm
 %%SITE_PERL%%/Test/Deep/Regexp.pm
 %%SITE_PERL%%/Test/Deep/RegexpMatches.pm
+%%SITE_PERL%%/Test/Deep/RegexpVersion.pm
 %%SITE_PERL%%/Test/Deep/RegexpOnly.pm
 %%SITE_PERL%%/Test/Deep/RegexpRef.pm
 %%SITE_PERL%%/Test/Deep/RegexpRefOnly.pm
