@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="86ada694-8b30-11de-b9d0-000c6e274733">
+    <topic>memcached -- memcached stats maps Information Disclosure Weakness</topic>
+    <affects>
+      <package>
+	<name>memcached</name>
+	<range><lt>1.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/34915/">
+	  <p>A weakness has been reported in memcached, which can be exploited
+	    by malicious people to disclose system information.</p>
+	  <p>The weakness is caused due to the application disclosing the
+	    content of /proc/self/maps if a stats maps command is received.
+	    This can be exploited to disclose e.g. the addresses of allocated
+	    memory regions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-1255</cvename>
+      <url>http://secunia.com/advisories/34915/</url>
+    </references>
+    <dates>
+      <discovery>2009-04-29</discovery>
+      <entry>2009-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2430e9c3-8741-11de-938e-003048590f9e">
     <topic>wordpress -- remote admin password reset vulnerability</topic>
     <affects>
