@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	thinker@branda.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Knowledge Engine
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=2.3:${PORTSDIR}/devel/py-ply
@@ -19,5 +19,4 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=2.3:${PORTSDIR}/devel/py-ply
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -12,7 +12,7 @@ MASTER_SITES=	https://opensvn.csie.org/traccgi/PumperWeb/raw-attachment/wiki/sql
 		http://master.branda.to/downloads/pythk/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	thinker@branda.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of Python functions
 
 USE_PYTHON=	yes

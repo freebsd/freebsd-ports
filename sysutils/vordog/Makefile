@@ -7,10 +7,10 @@
 
 PORTNAME=	vordog
 PORTVERSION=	20080708
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils kld
 MASTER_SITES=	http://www.assembla.com/spaces/vordog/documents/dcR7vqtqyr3AMlab7jnrAJ/download/
 
-MAINTAINER=	thinker@branda.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Watchdog(9) driver for watchdog timer of Vortex86
 
 KMODDIR=	/boot/modules

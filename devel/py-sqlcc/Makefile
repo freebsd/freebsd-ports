@@ -11,8 +11,8 @@ CATEGORIES=	devel databases python
 MASTER_SITES=	http://master.branda.to/downloads/sqlcc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	thinker@branda.to
-COMMENT=	The sqlcc is a Python SQL Command Composer
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Python SQL Command Composer
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pythk/__init__.py:${PORTSDIR}/devel/pythk
 

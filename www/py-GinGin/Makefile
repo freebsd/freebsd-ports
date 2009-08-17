@@ -11,8 +11,8 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	thinker@branda.to
-COMMENT=	GinGin is a hybrid of WIKI and BLOG system
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A hybrid of WIKI and BLOG system
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mez_xml/__init__.py:${PORTSDIR}/devel/py-mez_xml
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mez_xml/__init__.py:${PORTSDIR}/devel/py-mez_xml

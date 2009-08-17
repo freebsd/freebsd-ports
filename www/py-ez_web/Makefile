@@ -11,8 +11,8 @@ CATEGORIES=	www devel python
 MASTER_SITES=	http://master.branda.to/downloads/ez_web/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	thinker@branda.to
-COMMENT=	Ez_web is a tiny and designed for modify web framework
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tiny and designed for modification web framework
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ez_xml/__init__.py:${PORTSDIR}/devel/py-ez_xml
 
