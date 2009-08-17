@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	jabref
-PORTVERSION=	2.2
-PORTREVISION=	2
+PORTVERSION=	2.5
 PORTEPOCH=	1
 CATEGORIES=	print java editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,7 +18,7 @@ MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A (BibTeX native) bibliographic reference manager
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
