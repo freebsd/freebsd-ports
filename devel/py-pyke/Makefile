@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Python Knowledge Engine
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=2.3:${PORTSDIR}/devel/py-ply
