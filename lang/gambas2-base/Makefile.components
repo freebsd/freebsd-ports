@@ -22,7 +22,8 @@ USE_SDL=	sdl mixer
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-firebird"
-BROKEN=		does not install
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
 USE_FIREBIRD=	yes
 
 CONFIGURE_ARGS+=	--with-firebird-includes=${LOCALBASE}/include \
@@ -30,7 +31,8 @@ CONFIGURE_ARGS+=	--with-firebird-includes=${LOCALBASE}/include \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-mysql"
-BROKEN=		does not install
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
 USE_MYSQL=	yes
 
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
@@ -38,7 +40,7 @@ CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-postgresql"
-BROKEN=		does not install
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
 USE_PGSQL=	yes
 
 CONFIGURE_ARGS+=	--with-postgresql-includes="${PGSQL_INCLUDES}" \
@@ -50,7 +52,7 @@ PGSQL_INCLUDES=		${LOCALBASE}/include/postgresql \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-odbc"
-BROKEN=		does not install
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 
 CONFIGURE_ARGS+=	--with-odbc-includes=${LOCALBASE}/include \
@@ -58,7 +60,8 @@ CONFIGURE_ARGS+=	--with-odbc-includes=${LOCALBASE}/include \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-sqlite2"
-BROKEN=		does not install
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
 USE_SQLITE=	2
 
 CONFIGURE_ARGS+=	--with-sqlite2-includes=${LOCALBASE}/include \
@@ -66,7 +69,8 @@ CONFIGURE_ARGS+=	--with-sqlite2-includes=${LOCALBASE}/include \
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-db-sqlite3"
-BROKEN=		does not install
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
 USE_SQLITE=	yes
 
 CONFIGURE_ARGS+=	--with-sqlite3-includes=${LOCALBASE}/include \

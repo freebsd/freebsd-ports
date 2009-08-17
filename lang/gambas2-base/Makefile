@@ -15,6 +15,7 @@ DIST_SUBDIR=	${PORTNAME:S/2//g}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	A basic language with object extensions
 
+BUILD_DEPENDS=	xdg-mime:${PORTSDIR}/devel/xdg-utils
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
 
 USE_AUTOTOOLS=		autoconf:262:env automake:19:env
