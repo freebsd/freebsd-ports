@@ -30,6 +30,9 @@ bin/unsort
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/mathutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/memutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/nummedobj.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/odict.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/odict.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/odict.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/observer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/observer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/observer.pyo
@@ -154,6 +157,12 @@ bin/unsort
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_time_format.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_xor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_zlibutil.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_fileutil.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_fileutil.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_fileutil.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_odict.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_odict.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_odict.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/_version.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/assertutil.pyo
@@ -187,7 +196,6 @@ bin/unsort
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/stdeb.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/stdeb.cfg~
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/benchmarks/
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/xor
