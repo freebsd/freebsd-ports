@@ -15,7 +15,6 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Displays current conditions and forecasts with icons and text
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		wraster:${PORTSDIR}/x11-wm/windowmaker \
 		pcre:${PORTSDIR}/devel/pcre \
 		tiff:${PORTSDIR}/graphics/tiff \
 		Hermes:${PORTSDIR}/graphics/Hermes \
@@ -33,9 +32,19 @@ CONFIGURE_ARGS+=	--with-libwraster=${LOCALBASE} \
 			--with-xpm-includes=${LOCALBASE} \
 			--with-xpm-libraries=${LOCALBASE}
 
+OPTIONS=	WM "Depend on Window Maker port (otherwise only libwraster)" on
+
 MAN1=		wmweather+.1
 
 PLIST_FILES=	bin/wmweather+
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_WM)
+LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/windowmaker
+.else
+LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/libwraster
+.endif
 
 post-patch:
 	@${CP} ${WRKSRC}/wmweather+.c ${WRKSRC}/wmweather+.c.dist
@@ -69,4 +78,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
