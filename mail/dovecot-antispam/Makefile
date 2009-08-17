@@ -30,6 +30,8 @@ OPTIONS+=	MAILTRAIN "send mail to special addresses for training" off
 OPTIONS+=	DEBUG "Turn on debug information (syslog)" off
 OPTIONS+=	DEBUG_VERBOSE "Turn on verbose debug" off
 
+BROKEN=	Needs updating to reflect new mail/dovecot version.
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib90_antispam_plugin.so \
 		${PREFIX}/lib/dovecot/imap/

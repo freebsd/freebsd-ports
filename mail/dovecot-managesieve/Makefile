@@ -21,6 +21,8 @@ RUN_DEPENDS=	dovecot>=1.1.*:${PORTSDIR}/mail/dovecot \
 
 DOVECOTVERSION=	1.1
 
+BROKEN=	Needs updating to reflect new mail/dovecot version.
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-dovecot=`${MAKE} -C ${PORTSDIR}/mail/dovecot -V WRKSRC` \
