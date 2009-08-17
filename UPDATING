@@ -1,17 +1,26 @@
-This file documents some of the problems you may encounter when
-upgrading your ports. We try our best to minimize these disruptions,
-but sometimes they are unavoidable.
+This file documents some of the problems you may encounter when upgrading
+your ports.  We try our best to minimize these disruptions, but sometimes
+they are unavoidable.
 
-You should get into the habit of checking this file for changes each
-time you update your ports collection, before attempting any port
-upgrades.
+You should get into the habit of checking this file for changes each time
+you update your ports collection, before attempting any port upgrades.
 
-200908015:
+20090816:
+  AFFECTS: users of astro/celestia and KDE
+  AUTHOR: danfe@FreeBSD.org
+
+  Celestia can now be compiled with KDE3 frontend (you can enable it with
+  CELESTIA_UI=kde when building).  It is very feature-rich, as it offers
+  contextual menus, toolbars, KDE integration, internationalization,
+  bookmarks, etc.  If you use Celestia and KDE as your desktop, you might
+  want to rebuild the port so it integrates into your environment better.
+
+20090815:
   AFFECTS: users of mail/dovecot
   AUTHOR: wxs@FreeBSD.org
 
-  Dovecot has been updated to 1.2.3. The configuration file has
-  changed significantly. Please see http://wiki.dovecot.org/Upgrading/1.2
+  Dovecot has been updated to version 1.2.3.  The configuration file has
+  changed significantly.  Please see http://wiki.dovecot.org/Upgrading/1.2
   for details of what this means.
 
 20090804:
@@ -23,7 +32,7 @@ upgrades.
   favor of their qt4 equivalents.  You can still use multimedia/phonon-xine
   however.  A number of files have been moved between packages.  The
   recommended update procedure is to delete phonon, phonon-gstreamer,
-  kdebase-\*4\*, kdepim-4\*, then update ports as usual and install
+  kdebase-*4*, kdepim-4*, then update ports as usual and install
   desirable KDE4 ports:
 
   # pkg_delete -f phonon-4\* phonon-gstreamer\* kdebase-\*4\* kdepim-4\*
