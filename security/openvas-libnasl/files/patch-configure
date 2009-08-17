@@ -1,12 +1,41 @@
-remove obsolete objformat
---- configure.orig	2008-06-06 11:23:51.000000000 +0900
-+++ configure	2008-06-06 11:24:15.000000000 +0900
-@@ -6339,7 +6339,7 @@
- 
- freebsd*)
-   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -7990,7 +7990,7 @@
+     *) objformat=elf ;;
+     esac
+   fi
 -  version_type=freebsd-$objformat
 +  version_type=freebsd-elf
    case $version_type in
      freebsd-elf*)
-       library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so $libname.so'
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -11900,7 +11900,7 @@
+     *) objformat=elf ;;
+     esac
+   fi
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -14472,7 +14472,7 @@
+     *) objformat=elf ;;
+     esac
+   fi
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -17051,7 +17051,7 @@
+     *) objformat=elf ;;
+     esac
+   fi
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'

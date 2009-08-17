@@ -1,9 +1,8 @@
-@comment $FreeBSD$
-bin/openvas-nasl
 bin/openvas-libnasl-config
-lib/libopenvasnasl.so.1
-lib/libopenvasnasl.so
-lib/libopenvasnasl.la
-lib/libopenvasnasl.a
+bin/openvas-nasl
 include/openvas/nasl.h
-@dirrmtry openvas
+lib/libopenvasnasl.a
+lib/libopenvasnasl.la
+lib/libopenvasnasl.so
+lib/libopenvasnasl.so.2
+@dirrmtry include/openvas
