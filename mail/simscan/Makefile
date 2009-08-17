@@ -12,7 +12,7 @@ CATEGORIES=	mail security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Fast Content/Anti-virus Scanner for qmail Written in C
 
 USE_QMAIL_BUILD=	yes
