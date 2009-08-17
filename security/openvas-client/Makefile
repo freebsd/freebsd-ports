@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	openvas-client
-PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTVERSION=	2.0.4
 CATEGORIES=	security
-MASTER_SITES=	http://wald.intevation.org/frs/download.php/420/
+MASTER_SITES=	http://wald.intevation.org/frs/download.php/595/
 
 MAINTAINER=	cherry@trombik.org
 COMMENT=	A GUI client for OpenVAS
 
-MAN1=		OpenVAS-Client.1 openvasclient-mkcert.1 openvasclient-mkrand.1
+MAN1=		OpenVAS-Client.1 openvasclient-mkcert.1
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
