@@ -1,12 +1,15 @@
---- openvas-nvt-sync.in.orig	2008-01-17 20:48:45.000000000 +0900
-+++ openvas-nvt-sync.in	2008-06-12 11:04:05.000000000 +0900
+
+$FreeBSD$
+
+--- openvas-nvt-sync.in.orig
++++ openvas-nvt-sync.in
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  #
  # OpenVAS
  # $Id$
-@@ -60,16 +60,20 @@
+@@ -62,16 +62,20 @@
  chk_system_tools(){
  echo "Searching for required system tools ..."
  
@@ -33,22 +36,24 @@
    exit -1
  fi
  }
-@@ -78,14 +82,14 @@
+@@ -80,15 +84,15 @@
    echo "Synchonizing NVTs via RSYNC ..."
  
-   mkdir -p \"$NVT_DIR\"
--  eval "rsync -avrP \"$FEED\" \"$NVT_DIR\""
-+  eval "$RSYNC -avrP \"$FEED\" \"$NVT_DIR\""
+   mkdir -p "$NVT_DIR"
+-  eval "rsync -ltvrP \"$FEED\" \"$NVT_DIR\""
++  eval "$RSYNC -ltvrP \"$FEED\" \"$NVT_DIR\""
    if [ $? -ne 0 ] ; then
 -    echo "Error: rsync failed. Your NVT collection might be broken now."
 +    echo "Error: rsync failed. Your NVT collection might be broken now." 1>&2
      exit 1
    fi
--  eval "cd \"$NVT_DIR\" ; md5sum -c \"$NVT_DIR/md5sums\""
-+  eval "cd \"$NVT_DIR\" ; $MD5SUM -c \"$NVT_DIR/md5sums\""
+-  eval "cd \"$NVT_DIR\" ; md5sum -c --status \"$NVT_DIR/md5sums\""
++  eval "cd \"$NVT_DIR\" ; $MD5SUM -c --status \"$NVT_DIR/md5sums\""
    if [ $? -ne 0 ] ; then
 -    echo "Error: md5sums not correct. Your NVT collection might be broken now."
+-    echo "Please try this for details: cd \"$NVT_DIR\" ; md5sum -c \"$NVT_DIR/md5sums\" | less"
 +    echo "Error: md5sums not correct. Your NVT collection might be broken now." 1>&2
++    echo "Please try this for details: cd \"$NVT_DIR\" ; md5sum -c \"$NVT_DIR/md5sums\" | less" 1>&2
      exit 1
    fi
  
