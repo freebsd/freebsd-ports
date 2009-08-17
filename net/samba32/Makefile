@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.2.13
+PORTVERSION?=		3.2.14
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -15,7 +15,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		*samba-3.[03].* samba4* tdb-1.*
+CONFLICTS?=		*samba-3.[03].* samba4* tdb-1.* talloc-1.*
 
 USE_GMAKE=		yes
 USE_ICONV=		yes
