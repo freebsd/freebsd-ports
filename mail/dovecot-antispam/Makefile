@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dovecot-antispam
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://johannes.sipsolutions.net/download/dovecot-antispam/ \
@@ -29,8 +28,6 @@ OPTIONS+=	DSPAM "direct dspam training" on
 OPTIONS+=	MAILTRAIN "send mail to special addresses for training" off
 OPTIONS+=	DEBUG "Turn on debug information (syslog)" off
 OPTIONS+=	DEBUG_VERBOSE "Turn on verbose debug" off
-
-BROKEN=	Needs updating to reflect new mail/dovecot version.
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib90_antispam_plugin.so \
