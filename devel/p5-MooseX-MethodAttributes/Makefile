@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-MethodAttributes
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Code attribute introspection
 
 BUILD_DEPENDS=	p5-Moose>=0.79:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.06:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
