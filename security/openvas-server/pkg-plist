@@ -1,13 +1,6 @@
-@comment $FreeBSD$
 bin/openvas-mkcert-client
-bin/openvasd-config
 bin/openvas-mkrand
-sbin/openvasd
-sbin/openvas-check-signature
-sbin/openvas-adduser
-sbin/openvas-rmuser
-sbin/openvas-mkcert
-openvas/lib/openvas/openvas-services
+bin/openvasd-config
 include/openvas/config.h
 include/openvas/includes.h
 include/openvas/nessusicmp.h
@@ -15,21 +8,27 @@ include/openvas/nessusip.h
 include/openvas/nessusraw.h
 include/openvas/nessustcp.h
 include/openvas/nessusudp.h
-include/openvas/openvas-devel.h
 include/openvas/threadcompat.h
+openvas/lib/openvas/openvas-services
+sbin/openvas-adduser
+sbin/openvas-mkcert
+sbin/openvas-rmuser
+sbin/openvasd
 @dirrmtry openvas/run
 @dirrmtry openvas/log/openvas
 @dirrmtry openvas/log
 @dirrmtry openvas/lib/openvas/users
 @dirrmtry openvas/lib/openvas/tmp
+@dirrmtry openvas/lib/openvas/private/CA
+@dirrmtry openvas/lib/openvas/private
 @dirrmtry openvas/lib/openvas/logs
 @dirrmtry openvas/lib/openvas/jobs
 @dirrmtry openvas/lib/openvas/CA
 @dirrmtry openvas/lib/openvas
 @dirrmtry openvas/lib
-@dirrmtry openvas/com/openvas/CA
-@dirrmtry openvas/com/openvas
-@dirrmtry openvas/com
+@dirrmtry openvas/cache/openvas
+@dirrmtry openvas/cache
 @dirrmtry openvas
+@dirrmtry include/openvas
 @dirrmtry etc/openvas/gnupg
 @dirrmtry etc/openvas

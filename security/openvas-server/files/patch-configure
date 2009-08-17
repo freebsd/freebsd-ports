@@ -1,11 +1,14 @@
---- configure.orig	2008-04-27 14:15:10.000000000 +0900
-+++ configure	2008-04-27 14:15:27.000000000 +0900
-@@ -12073,7 +12073,7 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -12815,7 +12815,7 @@
  
  OPENVASD_CONFDIR='${sysconfdir}'
  OPENVASD_STATEDIR='${localstatedir}/lib/openvas'
 -OPENVASD_PIDDIR='${localstatedir}/run'
 +OPENVASD_PIDDIR='/var/run'
- OPENVASD_SHAREDSTATEDIR='${sharedstatedir}/lib/openvas'
+ OPENVASD_SHAREDSTATEDIR='${localstatedir}/lib/openvas'
  OPENVASD_DATADIR='${sysconfdir}/openvas'
  OPENVASD_LIBDIR='${libdir}/openvas'
