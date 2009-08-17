@@ -24,6 +24,7 @@
 %%SITE_PERL%%/Catalyst/Manual.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual
