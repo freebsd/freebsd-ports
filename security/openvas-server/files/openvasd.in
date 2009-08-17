@@ -9,6 +9,8 @@
 # KEYWORD: shutdown
 #
 
+prefix=%%PREFIX%%
+
 # Define these openvasd_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
@@ -17,16 +19,16 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 [ -z "$openvasd_enable" ] && openvasd_enable="NO"	# Disable openvasd
-#openvasd_program="%%PREFIX%%/sbin/openvasd"	# Location of openvasd
+#openvasd_program="${prefix}/sbin/openvasd"	# Location of openvasd
 openvasd_flags="-D -q"				# Flags to openvasd program
 
 . %%RC_SUBR%%
 
 name="openvasd"
 rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/openvasd"
+command="${prefix}/sbin/openvasd"
 pidfile="/var/run/openvasd.pid"
-required_files="%%PREFIX%%/etc/openvas/openvasd.conf"
+required_files="${prefix}/etc/openvas/openvasd.conf"
 
 load_rc_config $name
 run_rc_command "$1"
