@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 PORTEPOCH=	2
 CATEGORIES=	security devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.libssh2.org/download/ \
+		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A library implementing the SSH2 protocol
@@ -27,40 +27,99 @@ PLIST_FILES=	include/libssh2.h \
 		lib/libssh2.la \
 		lib/libssh2.a
 
-MAN3=	libssh2_banner_set.3 libssh2_channel_close.3 \
-	libssh2_channel_direct_tcpip_ex.3 libssh2_channel_eof.3 \
-	libssh2_channel_flush_ex.3 libssh2_channel_forward_accept.3 \
-	libssh2_channel_forward_cancel.3 libssh2_channel_forward_listen_ex.3 \
-	libssh2_channel_free.3 libssh2_channel_get_exit_status.3 \
+MAN3=	libssh2_banner_set.3 \
+	libssh2_base64_decode.3 \
+	libssh2_channel_close.3 \
+	libssh2_channel_direct_tcpip_ex.3 \
+	libssh2_channel_eof.3 \
+	libssh2_channel_flush_ex.3 \
+	libssh2_channel_forward_accept.3 \
+	libssh2_channel_forward_cancel.3 \
+	libssh2_channel_forward_listen_ex.3 \
+	libssh2_channel_free.3 \
+	libssh2_channel_get_exit_status.3 \
 	libssh2_channel_handle_extended_data.3 \
-	libssh2_channel_handle_extended_data2.3 libssh2_channel_open_ex.3 \
-	libssh2_channel_process_startup.3 libssh2_channel_read_ex.3 \
+	libssh2_channel_handle_extended_data2.3 \
+	libssh2_channel_open_ex.3 \
+	libssh2_channel_process_startup.3 \
+	libssh2_channel_read_ex.3 \
 	libssh2_channel_receive_window_adjust.3 \
 	libssh2_channel_receive_window_adjust2.3 \
-	libssh2_channel_request_pty_ex.3 libssh2_channel_send_eof.3 \
-	libssh2_channel_set_blocking.3 libssh2_channel_setenv_ex.3 \
-	libssh2_channel_wait_eof.3 libssh2_channel_window_read_ex.3 \
-	libssh2_channel_window_write_ex.3 libssh2_channel_x11_req_ex.3 \
-	libssh2_hostkey_hash.3 libssh2_scp_recv.3 libssh2_scp_send_ex.3 \
-	libssh2_session_abstract.3 libssh2_session_free.3 \
-	libssh2_session_callback_set.3 libssh2_session_disconnect_ex.3 \
-	libssh2_session_init_ex.3 libssh2_session_last_errno.3 \
-	libssh2_session_last_error.3 libssh2_session_method_pref.3 \
-	libssh2_session_methods.3 libssh2_session_set_blocking.3 \
-	libssh2_session_startup.3 libssh2_poll.3 libssh2_poll_channel_read.3 \
-	libssh2_sftp_close_handle.3 libssh2_sftp_fstat_ex.3 \
-	libssh2_sftp_last_error.3 libssh2_sftp_init.3 libssh2_sftp_open_ex.3 \
-	libssh2_sftp_mkdir_ex.3 libssh2_sftp_read.3 libssh2_sftp_readdir_ex.3 \
-	libssh2_sftp_rename_ex.3 libssh2_sftp_rmdir_ex.3 libssh2_sftp_seek.3 \
-	libssh2_sftp_shutdown.3 libssh2_sftp_stat_ex.3 \
-	libssh2_sftp_symlink_ex.3 libssh2_sftp_tell.3 \
-	libssh2_sftp_unlink_ex.3 libssh2_sftp_write.3 \
-	libssh2_userauth_authenticated.3 libssh2_userauth_list.3 \
-	libssh2_userauth_password_ex.3 libssh2_userauth_publickey_fromfile_ex.3 \
-	libssh2_channel_wait_closed.3 libssh2_channel_write_ex.3 \
-	libssh2_session_block_directions.3 libssh2_trace.3 \
-	libssh2_sftp_tell64.3 libssh2_userauth_keyboard_interactive_ex.3 \
-	libssh2_base64_decode.3 libssh2_version.3
+	libssh2_channel_request_pty_ex.3 \
+	libssh2_channel_request_pty_size_ex.3 \
+	libssh2_channel_send_eof.3 \
+	libssh2_channel_set_blocking.3 \
+	libssh2_channel_setenv_ex.3 \
+	libssh2_channel_wait_closed.3 \
+	libssh2_channel_wait_eof.3 \
+	libssh2_channel_window_read_ex.3 \
+	libssh2_channel_window_write_ex.3 \
+	libssh2_channel_write_ex.3 \
+	libssh2_channel_x11_req_ex.3 \
+	libssh2_free_host_entry.3 \
+	libssh2_host_entry_match.3 \
+	libssh2_hostkey_hash.3 \
+	libssh2_knownhost_add.3 \
+	libssh2_knownhost_check.3 \
+	libssh2_knownhost_del.3 \
+	libssh2_knownhost_get.3 \
+	libssh2_knownhost_init.3 \
+	libssh2_knownhost_readfile.3 \
+	libssh2_knownhost_readline.3 \
+	libssh2_knownhost_writefile.3 \
+	libssh2_knownhost_writeline.3 \
+	libssh2_new_host_entry.3 \
+	libssh2_poll.3 \
+	libssh2_poll_channel_read.3 \
+	libssh2_publickey_add_ex.3 \
+	libssh2_publickey_init.3 \
+	libssh2_publickey_list_fetch.3 \
+	libssh2_publickey_list_free.3 \
+	libssh2_publickey_remove_ex.3 \
+	libssh2_publickey_shutdown.3 \
+	libssh2_scp_recv.3 \
+	libssh2_scp_send_ex.3 \
+	libssh2_session_abstract.3 \
+	libssh2_session_block_directions.3 \
+	libssh2_session_callback_set.3 \
+	libssh2_session_disconnect_ex.3 \
+	libssh2_session_flag.3 \
+	libssh2_session_free.3 \
+	libssh2_session_get_blocking.3 \
+	libssh2_session_hostkey.3 \
+	libssh2_session_init_ex.3 \
+	libssh2_session_last_errno.3 \
+	libssh2_session_last_error.3 \
+	libssh2_session_method_pref.3 \
+	libssh2_session_methods.3 \
+	libssh2_session_set_blocking.3 \
+	libssh2_session_startup.3 \
+	libssh2_sftp_close_handle.3 \
+	libssh2_sftp_fstat_ex.3 \
+	libssh2_sftp_init.3 \
+	libssh2_sftp_last_error.3 \
+	libssh2_sftp_mkdir_ex.3 \
+	libssh2_sftp_open_ex.3 \
+	libssh2_sftp_read.3 \
+	libssh2_sftp_readdir_ex.3 \
+	libssh2_sftp_rename_ex.3 \
+	libssh2_sftp_rmdir_ex.3 \
+	libssh2_sftp_seek.3 \
+	libssh2_sftp_shutdown.3 \
+	libssh2_sftp_stat_ex.3 \
+	libssh2_sftp_symlink_ex.3 \
+	libssh2_sftp_tell.3 \
+	libssh2_sftp_tell64.3 \
+	libssh2_sftp_unlink_ex.3 \
+	libssh2_sftp_write.3 \
+	libssh2_trace.3 \
+	libssh2_userauth_authenticated.3 \
+	libssh2_userauth_hostbased_fromfile_ex.3 \
+	libssh2_userauth_keyboard_interactive_ex.3 \
+	libssh2_userauth_list.3 \
+	libssh2_userauth_password_ex.3 \
+	libssh2_userauth_publickey_fromfile_ex.3 \
+	libssh2_version.3
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ssh2_sample\.o/d' ${WRKSRC}/Makefile.in
