@@ -1,11 +1,11 @@
---- Makefile.in.orig	2007-12-25 10:11:59.000000000 +0300
-+++ Makefile.in	2008-01-21 14:39:26.649768099 +0300
-@@ -149,7 +149,7 @@
+--- Makefile.in.orig	2009-08-09 16:33:08.000000000 +0400
++++ Makefile.in	2009-08-17 18:56:33.497493279 +0400
+@@ -213,7 +213,7 @@
+ 	     ev.3 ev.pod
  
  man_MANS = ev.3
- 
 -include_HEADERS = ev.h ev++.h event.h
-+include_HEADERS = ev.h ev++.h 
- 
++include_HEADERS = ev.h ev++.h
  lib_LTLIBRARIES = libev.la
- 
+ libev_la_SOURCES = ev.c event.c
+ libev_la_LDFLAGS = -version-info $(VERSION_INFO)
