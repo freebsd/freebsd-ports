@@ -15,7 +15,7 @@ DISTFILES=	download.php\?package=01\&release=25\&file=01\&dummy=gwenhywfar-${POR
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform helper library for networking and security applications
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
 OPTIONS=	MEMDEBUG "Enable memory debugger statistic" off \
 		PORTDOCS "Install documentation (requires doxygen)" off
