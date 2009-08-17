@@ -14,7 +14,7 @@ MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	paul+ports@it.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell scripts to manipulate PDF files
 
 RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base

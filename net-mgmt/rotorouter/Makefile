@@ -14,7 +14,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	# nada
 DISTFILES=	# nil
 
-MAINTAINER=	paul+ports@it.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traceroute attempt logger and result spoofer
 
 NO_WRKSUBDIR=	yes

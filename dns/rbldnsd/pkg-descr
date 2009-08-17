@@ -5,5 +5,3 @@ zones.  It was inspired by Dan J. Bernstein's rbldns program, found in
 rbldnsd was written by Michael Tokarev.
 
 WWW: http://www.corpit.ru/mjt/rbldnsd.html
-
-- Paul Chvostek <paul+ports@it.ca>

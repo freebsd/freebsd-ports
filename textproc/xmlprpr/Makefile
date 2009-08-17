@@ -13,7 +13,7 @@ MASTER_SITES=	http://software.decisionsoft.com/software/ \
 		http://www.it.ca/~paul/src/
 DISTFILES=	xmlpp.pl
 
-MAINTAINER=	paul+ports@it.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML pretty printer
 
 USE_PERL5=	yes

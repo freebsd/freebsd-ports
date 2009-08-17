@@ -9,6 +9,4 @@ simple interface to some of the functionality of the excellent pdfpages package
  * pdf90, which rotates the pages of one or more PDF files through 90 degrees
    (anti-clockwise).
 
-- Paul Chvostek <paul+ports@it.ca>
-
 WWW: http://www.warwick.ac.uk/go/pdfjam
