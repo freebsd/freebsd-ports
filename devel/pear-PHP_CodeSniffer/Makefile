@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_CodeSniffer
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	wenheping@gmail.com
@@ -39,6 +39,7 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Generic/Docs/PHP/DisallowShortOpenTagStandard.xml \
 	CodeSniffer/Standards/Generic/Docs/PHP/LowerCaseConstantStandard.xml \
 	CodeSniffer/Standards/Generic/Docs/PHP/UpperCaseConstantStandard.xml \
+	CodeSniffer/Standards/Generic/Sniffs/Classes/DuplicateClassNameSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/EmptyStatementSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/ForLoopShouldBeWhileLoopSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/ForLoopWithTestFunctionCallSniff.php \
@@ -47,6 +48,7 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/UnnecessaryFinalModifierSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/UnusedFunctionParameterSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/UselessOverridingMethodSniff.php \
+	CodeSniffer/Standards/Generic/Sniffs/Commenting/TodoSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/ControlStructures/InlineControlStructureSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/Files/LineEndingsSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/Files/LineLengthSniff.php \
@@ -58,13 +60,20 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Generic/Sniffs/Functions/OpeningFunctionBraceKernighanRitchieSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/Metrics/CyclomaticComplexitySniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/Metrics/NestingLevelSniff.php \
+	CodeSniffer/Standards/Generic/Sniffs/NamingConventions/ConstructorNameSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/NamingConventions/UpperCaseConstantNameSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/PHP/DisallowShortOpenTagSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/PHP/ForbiddenFunctionsSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/PHP/LowerCaseConstantSniff.php \
+	CodeSniffer/Standards/Generic/Sniffs/PHP/NoSilencedErrorsSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/PHP/UpperCaseConstantSniff.php \
+	CodeSniffer/Standards/Generic/Sniffs/Strings/UnnecessaryStringConcatSniff.php \
+	CodeSniffer/Standards/Generic/Sniffs/VersionControl/SubversionPropertiesSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/WhiteSpace/DisallowTabIndentSniff.php \
 	CodeSniffer/Standards/Generic/Sniffs/WhiteSpace/ScopeIndentSniff.php \
+	CodeSniffer/Standards/Generic/Tests/Classes/DuplicateClassNameUnitTest.1.inc \
+	CodeSniffer/Standards/Generic/Tests/Classes/DuplicateClassNameUnitTest.2.inc \
+	CodeSniffer/Standards/Generic/Tests/Classes/DuplicateClassNameUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/CodeAnalysis/EmptyStatementUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/CodeAnalysis/EmptyStatementUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/CodeAnalysis/ForLoopShouldBeWhileLoopUnitTest.inc \
@@ -81,10 +90,15 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Generic/Tests/CodeAnalysis/UnusedFunctionParameterUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/CodeAnalysis/UselessOverridingMethodUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/CodeAnalysis/UselessOverridingMethodUnitTest.php \
+	CodeSniffer/Standards/Generic/Tests/Commenting/TodoUnitTest.inc \
+	CodeSniffer/Standards/Generic/Tests/Commenting/TodoUnitTest.js \
+	CodeSniffer/Standards/Generic/Tests/Commenting/TodoUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/ControlStructures/InlineControlStructureUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/ControlStructures/InlineControlStructureUnitTest.js \
 	CodeSniffer/Standards/Generic/Tests/ControlStructures/InlineControlStructureUnitTest.php \
+	CodeSniffer/Standards/Generic/Tests/Files/LineEndingsUnitTest.css \
 	CodeSniffer/Standards/Generic/Tests/Files/LineEndingsUnitTest.inc \
+	CodeSniffer/Standards/Generic/Tests/Files/LineEndingsUnitTest.js \
 	CodeSniffer/Standards/Generic/Tests/Files/LineEndingsUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/Files/LineLengthUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/Files/LineLengthUnitTest.php \
@@ -105,6 +119,8 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Generic/Tests/Metrics/CyclomaticComplexityUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/Metrics/NestingLevelUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/Metrics/NestingLevelUnitTest.php \
+	CodeSniffer/Standards/Generic/Tests/NamingConventions/ConstructorNameUnitTest.inc \
+	CodeSniffer/Standards/Generic/Tests/NamingConventions/ConstructorNameUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/NamingConventions/UpperCaseConstantNameUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/NamingConventions/UpperCaseConstantNameUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/PHP/DisallowShortOpenTagUnitTest.inc \
@@ -114,34 +130,52 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Generic/Tests/PHP/LowerCaseConstantUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/PHP/LowerCaseConstantUnitTest.js \
 	CodeSniffer/Standards/Generic/Tests/PHP/LowerCaseConstantUnitTest.php \
+	CodeSniffer/Standards/Generic/Tests/PHP/NoSilencedErrorsUnitTest.inc \
+	CodeSniffer/Standards/Generic/Tests/PHP/NoSilencedErrorsUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/PHP/UpperCaseConstantUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/PHP/UpperCaseConstantUnitTest.php \
+	CodeSniffer/Standards/Generic/Tests/Strings/UnnecessaryStringConcatUnitTest.inc \
+	CodeSniffer/Standards/Generic/Tests/Strings/UnnecessaryStringConcatUnitTest.js \
+	CodeSniffer/Standards/Generic/Tests/Strings/UnnecessaryStringConcatUnitTest.php \
+	CodeSniffer/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.css \
 	CodeSniffer/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.js \
 	CodeSniffer/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.php \
 	CodeSniffer/Standards/Generic/Tests/WhiteSpace/ScopeIndentUnitTest.inc \
 	CodeSniffer/Standards/Generic/Tests/WhiteSpace/ScopeIndentUnitTest.php \
 	CodeSniffer/Standards/Generic/GenericCodingStandard.php \
+	CodeSniffer/Standards/MySource/Sniffs/Channels/DisallowSelfActionsSniff.php \
 	CodeSniffer/Standards/MySource/Sniffs/Channels/IncludeSystemSniff.php \
 	CodeSniffer/Standards/MySource/Sniffs/Channels/UnusedSystemSniff.php \
+	CodeSniffer/Standards/MySource/Sniffs/Debug/DebugCodeSniff.php \
 	CodeSniffer/Standards/MySource/Sniffs/Debug/FirebugConsoleSniff.php \
 	CodeSniffer/Standards/MySource/Sniffs/Objects/AssignThisSniff.php \
+	CodeSniffer/Standards/MySource/Sniffs/Objects/CreateWidgetTypeCallbackSniff.php \
 	CodeSniffer/Standards/MySource/Sniffs/Objects/DisallowNewWidgetSniff.php \
 	CodeSniffer/Standards/MySource/Sniffs/PHP/EvalObjectFactorySniff.php \
+	CodeSniffer/Standards/MySource/Sniffs/PHP/GetRequestDataSniff.php \
 	CodeSniffer/Standards/MySource/Sniffs/PHP/ReturnFunctionValueSniff.php \
 	CodeSniffer/Standards/MySource/Sniffs/Strings/JoinStringsSniff.php \
+	CodeSniffer/Standards/MySource/Tests/Channels/DisallowSelfActionsUnitTest.inc \
+	CodeSniffer/Standards/MySource/Tests/Channels/DisallowSelfActionsUnitTest.php \
 	CodeSniffer/Standards/MySource/Tests/Channels/IncludeSystemUnitTest.inc \
 	CodeSniffer/Standards/MySource/Tests/Channels/IncludeSystemUnitTest.php \
 	CodeSniffer/Standards/MySource/Tests/Channels/UnusedSystemUnitTest.inc \
 	CodeSniffer/Standards/MySource/Tests/Channels/UnusedSystemUnitTest.php \
+	CodeSniffer/Standards/MySource/Tests/Debug/DebugCodeUnitTest.inc \
+	CodeSniffer/Standards/MySource/Tests/Debug/DebugCodeUnitTest.php \
 	CodeSniffer/Standards/MySource/Tests/Debug/FirebugConsoleUnitTest.js \
 	CodeSniffer/Standards/MySource/Tests/Debug/FirebugConsoleUnitTest.php \
 	CodeSniffer/Standards/MySource/Tests/Objects/AssignThisUnitTest.js \
 	CodeSniffer/Standards/MySource/Tests/Objects/AssignThisUnitTest.php \
+	CodeSniffer/Standards/MySource/Tests/Objects/CreateWidgetTypeCallbackUnitTest.js \
+	CodeSniffer/Standards/MySource/Tests/Objects/CreateWidgetTypeCallbackUnitTest.php \
 	CodeSniffer/Standards/MySource/Tests/Objects/DisallowNewWidgetUnitTest.inc \
 	CodeSniffer/Standards/MySource/Tests/Objects/DisallowNewWidgetUnitTest.php \
 	CodeSniffer/Standards/MySource/Tests/PHP/EvalObjectFactoryUnitTest.inc \
 	CodeSniffer/Standards/MySource/Tests/PHP/EvalObjectFactoryUnitTest.php \
+	CodeSniffer/Standards/MySource/Tests/PHP/GetRequestDataUnitTest.inc \
+	CodeSniffer/Standards/MySource/Tests/PHP/GetRequestDataUnitTest.php \
 	CodeSniffer/Standards/MySource/Tests/PHP/ReturnFunctionValueUnitTest.inc \
 	CodeSniffer/Standards/MySource/Tests/PHP/ReturnFunctionValueUnitTest.php \
 	CodeSniffer/Standards/MySource/Tests/Strings/JoinStringsUnitTest.js \
@@ -161,15 +195,18 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/PEAR/Sniffs/Commenting/InlineCommentSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/ControlStructures/ControlSignatureSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/ControlStructures/InlineControlStructureSniff.php \
+	CodeSniffer/Standards/PEAR/Sniffs/ControlStructures/MultiLineConditionSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/Files/LineEndingsSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/Files/IncludingFileSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/Files/LineLengthSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/Functions/FunctionCallArgumentSpacingSniff.php \
+	CodeSniffer/Standards/PEAR/Sniffs/Functions/FunctionDeclarationSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/Functions/FunctionCallSignatureSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/Functions/ValidDefaultValueSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/NamingConventions/ValidClassNameSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/NamingConventions/ValidFunctionNameSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/NamingConventions/ValidVariableNameSniff.php \
+	CodeSniffer/Standards/PEAR/Sniffs/WhiteSpace/ObjectOperatorIndentSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/WhiteSpace/ScopeClosingBraceSniff.php \
 	CodeSniffer/Standards/PEAR/Sniffs/WhiteSpace/ScopeIndentSniff.php \
 	CodeSniffer/Standards/PEAR/Tests/Classes/ClassDeclarationUnitTest.inc \
@@ -184,12 +221,18 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/PEAR/Tests/Commenting/InlineCommentUnitTest.php \
 	CodeSniffer/Standards/PEAR/Tests/ControlStructures/ControlSignatureUnitTest.inc \
 	CodeSniffer/Standards/PEAR/Tests/ControlStructures/ControlSignatureUnitTest.php \
+	CodeSniffer/Standards/PEAR/Tests/ControlStructures/MultiLineConditionUnitTest.inc \
+	CodeSniffer/Standards/PEAR/Tests/ControlStructures/MultiLineConditionUnitTest.php \
 	CodeSniffer/Standards/PEAR/Tests/Files/IncludingFileUnitTest.inc \
 	CodeSniffer/Standards/PEAR/Tests/Files/IncludingFileUnitTest.php \
+	CodeSniffer/Standards/PEAR/Tests/Formatting/MultiLineAssignmentUnitTest.inc \
+	CodeSniffer/Standards/PEAR/Tests/Formatting/MultiLineAssignmentUnitTest.php \
 	CodeSniffer/Standards/PEAR/Tests/Functions/FunctionCallArgumentSpacingUnitTest.inc \
 	CodeSniffer/Standards/PEAR/Tests/Functions/FunctionCallArgumentSpacingUnitTest.php \
 	CodeSniffer/Standards/PEAR/Tests/Functions/FunctionCallSignatureUnitTest.inc \
 	CodeSniffer/Standards/PEAR/Tests/Functions/FunctionCallSignatureUnitTest.php \
+	CodeSniffer/Standards/PEAR/Tests/Functions/FunctionDeclarationUnitTest.inc \
+	CodeSniffer/Standards/PEAR/Tests/Functions/FunctionDeclarationUnitTest.php \
 	CodeSniffer/Standards/PEAR/Tests/Functions/ValidDefaultValueUnitTest.inc \
 	CodeSniffer/Standards/PEAR/Tests/Functions/ValidDefaultValueUnitTest.php \
 	CodeSniffer/Standards/PEAR/Tests/NamingConventions/ValidClassNameUnitTest.inc \
@@ -198,6 +241,8 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/PEAR/Tests/NamingConventions/ValidFunctionNameUnitTest.php \
 	CodeSniffer/Standards/PEAR/Tests/NamingConventions/ValidVariableNameUnitTest.inc \
 	CodeSniffer/Standards/PEAR/Tests/NamingConventions/ValidVariableNameUnitTest.php \
+	CodeSniffer/Standards/PEAR/Tests/WhiteSpace/ObjectOperatorIndentUnitTest.inc \
+	CodeSniffer/Standards/PEAR/Tests/WhiteSpace/ObjectOperatorIndentUnitTest.php \
 	CodeSniffer/Standards/PEAR/Tests/WhiteSpace/ScopeClosingBraceUnitTest.inc \
 	CodeSniffer/Standards/PEAR/Tests/WhiteSpace/ScopeClosingBraceUnitTest.php \
 	CodeSniffer/Standards/PEAR/Tests/WhiteSpace/ScopeIndentUnitTest.inc \
@@ -209,6 +254,7 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Arrays/ArrayDeclarationSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Classes/ClassDeclarationSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Classes/ClassFileNameSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/Classes/DuplicatePropertySniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Classes/LowercaseClassKeywordsSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Classes/SelfMemberReferenceSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Classes/ValidClassNameSniff.php \
@@ -231,7 +277,23 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Sniffs/ControlStructures/InlineIfDeclarationSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/ControlStructures/LowercaseDeclarationSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/ControlStructures/SwitchDeclarationSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/ClassDefinitionClosingBraceSpaceSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/ClassDefinitionNameSpacingSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/ClassDefinitionOpeningBraceSpaceSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/ColonSpacingSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/ColourDefinitionSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/DisallowMultipleStyleDefinitionsSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/DuplicateClassDefinitionSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/EmptyClassDefinitionSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/EmptyStyleDefinitionSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/ForbiddenStylesSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/IndentationSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/OpacitySniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/LowercaseStyleDefinitionSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/MissingColonSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/CSS/SemicolonSpacingSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Debug/JavaScriptLintSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/Debug/JSLintSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Files/LineEndingsSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Files/FileExtensionSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Files/LineLengthSniff.php \
@@ -242,10 +304,12 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Functions/FunctionDeclarationSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Functions/FunctionDuplicateArgumentSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Functions/GlobalFunctionSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/Functions/MultiLineFunctionDeclarationSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Functions/LowercaseFunctionKeywordsSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/NamingConventions/ConstantCaseSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/NamingConventions/ValidFunctionNameSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/NamingConventions/ValidVariableNameSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/Objects/DisallowObjectStringIndexSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Objects/ObjectInstantiationSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Objects/ObjectMemberCommaSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/Operators/ComparisonOperatorUsageSniff.php \
@@ -256,6 +320,7 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Sniffs/PHP/DisallowMultipleAssignmentsSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/PHP/DisallowObEndFlushSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/PHP/DisallowSizeFunctionsInLoopsSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/PHP/DiscouragedFunctionsSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/PHP/EmbeddedPhpSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/PHP/EvalSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/PHP/ForbiddenFunctionsSniff.php \
@@ -279,6 +344,7 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/MemberVarSpacingSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/ObjectOperatorSpacingSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/OperatorSpacingSniff.php \
+	CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/PropertyLabelSpacingSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/ScopeClosingBraceSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/ScopeIndentSniff.php \
 	CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/ScopeKeywordSpacingSniff.php \
@@ -292,12 +358,16 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Tests/Classes/ClassDeclarationUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Classes/ClassFileNameUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Classes/ClassFileNameUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/Classes/DuplicatePropertyUnitTest.js \
+	CodeSniffer/Standards/Squiz/Tests/Classes/DuplicatePropertyUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Classes/LowercaseClassKeywordsUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Classes/LowercaseClassKeywordsUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Classes/SelfMemberReferenceUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Classes/SelfMemberReferenceUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Classes/ValidClassNameUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Classes/ValidClassNameUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CodeAnalysis/EmptyStatementUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/CodeAnalysis/EmptyStatementUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/BlockCommentUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/BlockCommentUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/ClassCommentUnitTest.inc \
@@ -317,8 +387,10 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/InlineCommentUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/InlineCommentUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/LongConditionClosingCommentUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/Commenting/LongConditionClosingCommentUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/LongConditionClosingCommentUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/PostStatementCommentUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/Commenting/PostStatementCommentUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/PostStatementCommentUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/VariableCommentUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Commenting/VariableCommentUnitTest.php \
@@ -337,9 +409,42 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Tests/ControlStructures/LowercaseDeclarationUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/ControlStructures/LowercaseDeclarationUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/ControlStructures/SwitchDeclarationUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/ControlStructures/SwitchDeclarationUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/ControlStructures/SwitchDeclarationUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ClassDefinitionClosingBraceSpaceUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ClassDefinitionClosingBraceSpaceUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ClassDefinitionNameSpacingUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ClassDefinitionNameSpacingUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ClassDefinitionOpeningBraceSpaceUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ClassDefinitionOpeningBraceSpaceUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ColonSpacingUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ColonSpacingUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ColourDefinitionUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ColourDefinitionUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/DisallowMultipleStyleDefinitionsUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/DisallowMultipleStyleDefinitionsUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/DuplicateClassDefinitionUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/DuplicateClassDefinitionUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/EmptyClassDefinitionUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/EmptyClassDefinitionUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/EmptyStyleDefinitionUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/EmptyStyleDefinitionUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ForbiddenStylesUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/ForbiddenStylesUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/IndentationUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/IndentationUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/LowercaseStyleDefinitionUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/LowercaseStyleDefinitionUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/MissingColonUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/MissingColonUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/OpacityUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/OpacityUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/CSS/SemicolonSpacingUnitTest.css \
+	CodeSniffer/Standards/Squiz/Tests/CSS/SemicolonSpacingUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Debug/JavaScriptLintUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/Debug/JavaScriptLintUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/Debug/JSLintUnitTest.js \
+	CodeSniffer/Standards/Squiz/Tests/Debug/JSLintUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Files/FileExtensionUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Files/FileExtensionUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Formatting/OperatorBracketUnitTest.inc \
@@ -357,11 +462,17 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Tests/Functions/GlobalFunctionUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Functions/LowercaseFunctionKeywordsUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Functions/LowercaseFunctionKeywordsUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/Functions/MultiLineFunctionDeclarationUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/Functions/MultiLineFunctionDeclarationUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/NamingConventions/ConstantCaseUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/NamingConventions/ConstantCaseUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/NamingConventions/ConstantCaseUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/NamingConventions/ValidFunctionNameUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/NamingConventions/ValidFunctionNameUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/NamingConventions/ValidVariableNameUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/NamingConventions/ValidVariableNameUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/Objects/DisallowObjectStringIndexUnitTest.js \
+	CodeSniffer/Standards/Squiz/Tests/Objects/DisallowObjectStringIndexUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Objects/ObjectInstantiationUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Objects/ObjectInstantiationUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Objects/ObjectMemberCommaUnitTest.js \
@@ -373,6 +484,7 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Tests/Operators/IncrementDecrementUsageUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/Operators/ValidLogicalOperatorsUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/Operators/ValidLogicalOperatorsUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/PHP/CommentedOutCodeUnitTest.css \
 	CodeSniffer/Standards/Squiz/Tests/PHP/CommentedOutCodeUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/PHP/CommentedOutCodeUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/PHP/DisallowInlineIfUnitTest.inc \
@@ -382,7 +494,10 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Tests/PHP/DisallowObEndFlushUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/PHP/DisallowObEndFlushUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/PHP/DisallowSizeFunctionsInLoopsUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/PHP/DisallowSizeFunctionsInLoopsUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/PHP/DisallowSizeFunctionsInLoopsUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/PHP/DiscouragedFunctionsUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/PHP/DiscouragedFunctionsUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/PHP/EmbeddedPhpUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/PHP/EmbeddedPhpUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/PHP/EvalUnitTest.inc \
@@ -414,10 +529,13 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/CastSpacingUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/CastSpacingUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/ControlStructureSpacingUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/ControlStructureSpacingUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/ControlStructureSpacingUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/FunctionClosingBraceSpaceUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/FunctionClosingBraceSpaceUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/FunctionClosingBraceSpaceUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/FunctionOpeningBraceSpaceUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/FunctionOpeningBraceSpaceUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/FunctionOpeningBraceSpaceUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/FunctionSpacingUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/FunctionSpacingUnitTest.php \
@@ -428,6 +546,7 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/ObjectOperatorSpacingUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/ObjectOperatorSpacingUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/OperatorSpacingUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/OperatorSpacingUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/OperatorSpacingUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/ScopeClosingBraceUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/ScopeClosingBraceUnitTest.php \
@@ -436,8 +555,11 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/ScopeKeywordSpacingUnitTest.inc \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/ScopeKeywordSpacingUnitTest.php \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/SemicolonSpacingUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/SemicolonSpacingUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/SemicolonSpacingUnitTest.php \
+	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/SuperfluousWhitespaceUnitTest.css \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/SuperfluousWhitespaceUnitTest.inc \
+	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/SuperfluousWhitespaceUnitTest.js \
 	CodeSniffer/Standards/Squiz/Tests/WhiteSpace/SuperfluousWhitespaceUnitTest.php \
 	CodeSniffer/Standards/Squiz/SquizCodingStandard.php \
 	CodeSniffer/Standards/Zend/Sniffs/Debug/CodeAnalyzerSniff.php \
@@ -456,11 +578,13 @@ FILES=		CodeSniffer.php \
 	CodeSniffer/Standards/AbstractVariableSniff.php \
 	CodeSniffer/Standards/CodingStandard.php \
 	CodeSniffer/Standards/IncorrectPatternException.php \
+	CodeSniffer/Tokenizers/CSS.php \
 	CodeSniffer/Tokenizers/JS.php \
 	CodeSniffer/Tokenizers/PHP.php \
 	CodeSniffer/CLI.php \
 	CodeSniffer/Exception.php \
 	CodeSniffer/File.php \
+	CodeSniffer/MultiFileSniff.php \
 	CodeSniffer/Sniff.php \
 	CodeSniffer/Tokens.php
 
