@@ -12,6 +12,8 @@
 %%SITE_PERL%%/REST/Google/Search/Images.pod
 %%SITE_PERL%%/REST/Google/Search/Local.pm
 %%SITE_PERL%%/REST/Google/Search/Local.pod
+%%SITE_PERL%%/REST/Google/Search/Patent.pm
+%%SITE_PERL%%/REST/Google/Search/Patent.pod
 %%SITE_PERL%%/REST/Google/Search/News.pm
 %%SITE_PERL%%/REST/Google/Search/News.pod
 %%SITE_PERL%%/REST/Google/Search/Video.pm

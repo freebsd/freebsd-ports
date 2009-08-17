@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	REST-Google
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/E/EJ/EJS/
@@ -34,6 +34,7 @@ MAN3=	REST::Google.3 \
 	REST::Google::Search::Images.3 \
 	REST::Google::Search::Local.3 \
 	REST::Google::Search::News.3 \
+	REST::Google::Search::Patent.3 \
 	REST::Google::Search::Video.3 \
 	REST::Google::Search::Web.3 \
 	REST::Google::Translate.3
