@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Release
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	5.8.0+
 
 MAN1=		release.1
-MAN3=		Module::Release.3 Module::Release::SVN.3
+MAN3=		Module::Release.3 Module::Release::FTP.3 Module::Release::Kwalitee.3 \
+		Module::Release::PAUSE.3 Module::Release::Prereq.3 Module::Release::SVN.3
 
 .include <bsd.port.mk>
