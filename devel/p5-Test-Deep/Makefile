@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Deep
-PORTVERSION=	0.104
+PORTVERSION=	0.106
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,4 +23,3 @@ PERL_CONFIGURE=	yes
 MAN3=		Test::Deep.3 Test::Deep::NoTest.3
 
 .include <bsd.port.mk>
-
