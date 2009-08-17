@@ -12,8 +12,8 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	thinker@branda.to
-COMMENT=	PumperWeb is a meta project that creates a WEB framework
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A meta project that creates a WEB framework
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ez_web/ez_user_auth.py:${PORTSDIR}/www/py-ez_web \
 		${PYTHON_SITELIBDIR}/sqlcc/__init__.py:${PORTSDIR}/devel/py-sqlcc
