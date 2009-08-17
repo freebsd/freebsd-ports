@@ -1,6 +1,6 @@
---- ../coreconf/FreeBSD.mk.orig	Sat Jan 21 03:36:11 2006
-+++ ../coreconf/FreeBSD.mk	Tue Jan 30 21:13:41 2007
-@@ -37,9 +37,9 @@
+--- ../coreconf/FreeBSD.mk.orig	2006-01-21 02:36:11.000000000 +0000
++++ ../coreconf/FreeBSD.mk	2009-08-17 17:17:41.235006000 +0000
+@@ -37,16 +37,20 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
  
@@ -13,7 +13,18 @@
  RANLIB			= ranlib
  
  ifeq ($(OS_TEST),alpha)
-@@ -60,20 +66,18 @@
+ CPU_ARCH		= alpha
+ else
++ifeq ($(OS_TEST),powerpc)
++CPU_ARCH		= powerpc
++else
+ CPU_ARCH		= x86
+ endif
++endif
+ 
+ OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
+ 
+@@ -60,20 +64,18 @@ ifndef CLASSIC_NSPR
  USE_PTHREADS		= 1
  DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
  OS_LIBS			+= -pthread
@@ -39,7 +50,8 @@
  ifdef MAPFILE
  	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
-@@ -83,4 +87,5 @@
+@@ -82,4 +84,5 @@ PROCESS_MAP_FILE = grep -v ';-' $< | \
+ 
  G++INCLUDES		= -I/usr/include/g++
  
 -INCLUDES		+= -I/usr/X11R6/include
