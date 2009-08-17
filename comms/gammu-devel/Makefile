@@ -43,7 +43,7 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "amd64")
+.if (${ARCH} == "amd64" || ${ARCH} == "sparc64")
 USE_GCC=	4.3
 .endif
 
