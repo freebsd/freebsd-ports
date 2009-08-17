@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-client
 
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (client)
 
+BROKEN=		does not build
+
 MASTERDIR=	${.CURDIR}/../firebird-server
 
 PLIST=		${PKGDIR}/pkg-plist.client
