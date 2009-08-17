@@ -36,4 +36,10 @@ post-extract:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 800000
+BROKEN=		Does not build on sparc64-8
+.endif
+
+.include <bsd.port.post.mk>
