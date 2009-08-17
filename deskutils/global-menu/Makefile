@@ -42,4 +42,10 @@ post-install:
 			${LOCALBASE}/libdata/bonobo/servers
 		@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Leaves files behind on deinstall on sparc64
+.endif
+
+.include <bsd.port.post.mk>
