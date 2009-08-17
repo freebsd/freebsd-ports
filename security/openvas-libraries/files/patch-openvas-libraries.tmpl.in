@@ -1,14 +1,15 @@
-honor CPPFLAGS and LDFLAGS
---- openvas-libraries.tmpl.in.orig	2008-03-21 06:00:30.000000000 +0900
-+++ openvas-libraries.tmpl.in	2008-04-27 17:27:45.000000000 +0900
-@@ -62,8 +62,9 @@
+
+$FreeBSD$
+
+--- openvas-libraries.tmpl.in.orig
++++ openvas-libraries.tmpl.in
+@@ -61,7 +61,8 @@
  DEBUG_SSL = @debug_ssl@
  
  # Some defines you may want to modify
+-DEFS=@DEFS@ $(DEBUG_SSL) $(DEBUG)
 +CPPFLAGS=@CPPFLAGS@
- DEFS=@DEFS@ $(DEBUG_SSL) $(USE_CIPHER) $(DEBUG)
--LDFLAGS=
-+LDFLAGS=@LDFLAGS@
++DEFS=@DEFS@ $(CFLAGS) $(CPPFLAGS)
+ LDFLAGS=@LDFLAGS@
  
  # Your C compiler
- CC=@CC@

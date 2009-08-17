@@ -1,105 +1,14 @@
-honor CPPFLAGS and CFLAGS
 
---- libopenvas/Makefile.orig	2008-04-27 17:29:09.000000000 +0900
-+++ libopenvas/Makefile	2008-04-27 17:29:32.000000000 +0900
-@@ -46,76 +46,76 @@
+$FreeBSD$
+
+--- libopenvas/Makefile.orig
++++ libopenvas/Makefile
+@@ -48,7 +48,7 @@
+ CFLAGS+=-g -Wall
+ INCLUDE = $(include) $(GLIB_CFLAGS) $(DEFS) -I../libopenvascommon
+ CIPHER = -I../$(CIPHER_SUBDIR)
+-COMPILE = $(LIBTOOL) --mode=compile $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS)
++COMPILE = $(LIBTOOL) --mode=compile $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS)
+ LINK = $(LIBTOOL) --mode=link $(CC) $(LDFLAGS)
+ all : libopenvas.la
  
- 
- getopt.o : getopt.c
--	 $(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c getopt.c
-+	 $(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c getopt.c
- 
- getopt1.o : getopt1.c
--	 $(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c getopt1.c
-+	 $(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c getopt1.c
- 
- plugutils.o : plugutils.c
--	 $(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c plugutils.c
-+	 $(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c plugutils.c
- 
- resolve.o : resolve.c resolve.h
--	$(LIBTOOL) $(CC)  $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c resolve.c
-+	$(LIBTOOL) $(CC)  $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c resolve.c
- 
- share_fd.o : share_fd.c 
--	$(LIBTOOL) $(CC)  $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c share_fd.c
-+	$(LIBTOOL) $(CC)  $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c share_fd.c
- 
- system.o : system.c system_internal.h
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c system.c 
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c system.c 
- 
- arglists.o : arglists.c 
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c arglists.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c arglists.c
- 
- network.o : network.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c network.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c network.c
- 
- scanners_utils.o : scanners_utils.c scanners_utils.h
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c scanners_utils.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c scanners_utils.c
- 
- ftp_funcs.o : ftp_funcs.c ftp_funcs.h
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c ftp_funcs.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c ftp_funcs.c
- www_funcs.o : www_funcs.c 
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c www_funcs.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c www_funcs.c
- 	
- pcap.o : pcap.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c pcap.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c pcap.c
- 
- hlst.o : hlst.c hlst.h
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c hlst.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c hlst.c
- 
- ptycall.o : ptycall.c 
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c ptycall.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c ptycall.c
- 
- harglists.o : harglists.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c harglists.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c harglists.c
- 
- ids_send.o : ids_send.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c ids_send.c 
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c ids_send.c 
- 
- bpf_share.o: bpf_share.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c bpf_share.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c bpf_share.c
- 
- rand.o: rand.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c rand.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c rand.c
- 
- popen.o: popen.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c popen.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c popen.c
- 
- services.o: services.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -DNESSUS_STATE_DIR=\"$(localstatedir)\" -c services.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -DNESSUS_STATE_DIR=\"$(localstatedir)\" -c services.c
- 
- services1.o: services1.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -DNESSUS_STATE_DIR=\"$(localstatedir)\" -DCONF_DIR=\"$(sysconfdir)\" -c services1.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -DNESSUS_STATE_DIR=\"$(localstatedir)\" -DCONF_DIR=\"$(sysconfdir)\" -c services1.c
- 
- proctitle.o: proctitle.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c proctitle.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c proctitle.c
- 
- store.o: store.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -DNESSUS_STATE_DIR=\"$(localstatedir)\" -c store.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -DNESSUS_STATE_DIR=\"$(localstatedir)\" -c store.c
- 	
- 	
- kb.o: kb.c
--	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CFLAGS) -c kb.c
-+	$(LIBTOOL) $(CC) $(CIPHER) $(DEFS) $(INCLUDE) $(CPPFLAGS) $(CFLAGS) -c kb.c
- 
- 
- libopenvas.la: $(OBJS)

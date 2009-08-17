@@ -1,16 +1,45 @@
---- configure.orig	2008-03-27 03:57:28.000000000 +0900
-+++ configure	2008-06-06 09:42:17.000000000 +0900
-@@ -6343,7 +6343,8 @@
- 
- freebsd*)
-   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -8282,7 +8282,7 @@
+     *) objformat=elf ;;
+     esac
+   fi
 -  version_type=freebsd-$objformat
-+  # recent FreeBSD only supports elf. objformat was removed from FreeBSD 7
 +  version_type=freebsd-elf
    case $version_type in
      freebsd-elf*)
-       library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so $libname.so'
-@@ -8136,7 +8137,7 @@
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -12192,7 +12192,7 @@
+     *) objformat=elf ;;
+     esac
+   fi
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -14764,7 +14764,7 @@
+     *) objformat=elf ;;
+     esac
+   fi
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -17343,7 +17343,7 @@
+     *) objformat=elf ;;
+     esac
+   fi
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -19078,7 +19078,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +48,25 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8192,7 +8193,7 @@
+@@ -19134,7 +19134,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_dn_expand" >&5
+ echo "${ECHO_T}$ac_cv_lib_resolv_dn_expand" >&6; }
+ if test $ac_cv_lib_resolv_dn_expand = yes; then
+-  LIBS="-lresolv $LIBS"
++  LIBS="$LIBS"
+ else
+   { echo "$as_me:$LINENO: checking for __dn_expand in -lresolv" >&5
+ echo $ECHO_N "checking for __dn_expand in -lresolv... $ECHO_C" >&6; }
+@@ -19142,7 +19142,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lresolv  $LIBS"
++LIBS="$LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -19198,7 +19198,7 @@
  { echo "$as_me:$LINENO: result: $ac_cv_lib_resolv___dn_expand" >&5
  echo "${ECHO_T}$ac_cv_lib_resolv___dn_expand" >&6; }
  if test $ac_cv_lib_resolv___dn_expand = yes; then
@@ -28,7 +75,7 @@
  else
    { { echo "$as_me:$LINENO: error: you need to install resolve library with development files" >&5
  echo "$as_me: error: you need to install resolve library with development files" >&2;}
-@@ -8290,11 +8291,11 @@
+@@ -19298,11 +19298,11 @@
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -42,7 +89,7 @@
    ;
    return 0;
  }
-@@ -12909,7 +12910,7 @@
+@@ -23773,7 +23773,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
