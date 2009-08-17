@@ -1,30 +1,30 @@
-%%SITE_PERL%%/Catalyst/Manual.pm
-%%SITE_PERL%%/Catalyst/Manual/About.pod
-%%SITE_PERL%%/Catalyst/Manual/Actions.pod
-%%SITE_PERL%%/Catalyst/Manual/Cookbook.pod
-%%SITE_PERL%%/Catalyst/Manual/DevelopmentProcess.pod
-%%SITE_PERL%%/Catalyst/Manual/ExtendingCatalyst.pod
-%%SITE_PERL%%/Catalyst/Manual/Internals.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormFu.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/04_BasicCRUD.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/01_Intro.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/02_CatalystBasics.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/05_Authentication.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/10_Appendices.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/07_Debugging.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/03_MoreCatalystBasics.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/08_Testing.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/06_Authorization.pod
 %%SITE_PERL%%/Catalyst/Manual/Intro.pod
 %%SITE_PERL%%/Catalyst/Manual/Plugins.pod
+%%SITE_PERL%%/Catalyst/Manual/DevelopmentProcess.pod
+%%SITE_PERL%%/Catalyst/Manual/Cookbook.pod
+%%SITE_PERL%%/Catalyst/Manual/Actions.pod
+%%SITE_PERL%%/Catalyst/Manual/ExtendingCatalyst.pod
+%%SITE_PERL%%/Catalyst/Manual/Internals.pod
+%%SITE_PERL%%/Catalyst/Manual/About.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/AdvancedCRUD/FormBuilder.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/AdvancedCRUD/FormFu.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Appendices.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Authentication.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Authorization.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/BasicCRUD.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/CatalystBasics.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Debugging.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Intro.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/MoreCatalystBasics.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Testing.pod
+%%SITE_PERL%%/Catalyst/Manual/CatalystAndMoose.pod
 %%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
+%%SITE_PERL%%/Catalyst/Manual.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial/AdvancedCRUD
+@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual
 @dirrmtry %%SITE_PERL%%/Catalyst
