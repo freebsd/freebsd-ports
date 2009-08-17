@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.nazgul.ch/dev/
 
-MAINTAINER=	toxa@toxahost.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ssh through https proxy tunnel
 
 MAN8=		gotthard.8
