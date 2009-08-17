@@ -45,7 +45,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
-.if ${GECKO} == "thunderbird" && ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+.if ${GECKO} == "thunderbird" && ${OSVERSION} >= 700000 && ( ${ARCH} == "amd64" || ${ARCH} == "sparc64" )
 USE_GCC=	3.4
 .endif
 
