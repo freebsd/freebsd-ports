@@ -939,6 +939,11 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlahqr.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlahrd.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlaln2.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlamc1.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlamc2.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlamc3.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlamc4.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlamc5.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlamch.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlamrg.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/dlange.lisp
