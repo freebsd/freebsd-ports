@@ -180,11 +180,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/glossary.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/index.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/installation.xml
-%%PORTDOCS%%%%DOCSDIR%%/en/xml/integration.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/introduction.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/modules.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/patches.xml
-%%PORTDOCS%%%%DOCSDIR%%/en/xml/requiredsoftware.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/security.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/troubleshooting.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/using.xml
@@ -288,7 +286,6 @@
 %%BUGZILLADIR%%/Bugzilla/WebService/Server/XMLRPC.pm
 %%BUGZILLADIR%%/Bugzilla/WebService/User.pm
 %%BUGZILLADIR%%/Bugzilla/WebService/Util.pm
-%%BUGZILLADIR%%/QUICKSTART
 %%BUGZILLADIR%%/README
 %%BUGZILLADIR%%/admin.cgi
 %%BUGZILLADIR%%/attachment.cgi
