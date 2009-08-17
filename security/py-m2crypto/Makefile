@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m2crypto
-PORTVERSION=	0.19.1
+PORTVERSION=	0.20
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP \
 		http://chandlerproject.org/pub/Projects/MeTooCrypto/
