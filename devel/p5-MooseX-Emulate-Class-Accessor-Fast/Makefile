@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Emulate-Class-Accessor-Fast
-PORTVERSION=	0.00901
+PORTVERSION=	0.00902
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Emulate Class::Accessor::Fast behavior using Moose attributes
 
-BUILD_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=0.84:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
