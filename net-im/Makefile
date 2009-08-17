@@ -89,6 +89,7 @@
     SUBDIR += naim
     SUBDIR += newsbot
     SUBDIR += openfire
+    SUBDIR += p5-AnyEvent-XMPP
     SUBDIR += p5-DJabberd
     SUBDIR += p5-Jabber-Connection
     SUBDIR += p5-Jabber-Lite

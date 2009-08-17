@@ -1,0 +1,58 @@
+%%SITE_PERL%%/AnyEvent/XMPP.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Client.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Component.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Connection.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/Exception.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/IQ.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/IQAuth.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/MUC.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/Message.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/Parser.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/Presence.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/Register.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/SASL.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/Stanza.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error/Stream.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/DataForm.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco/Info.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco/Items.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC/Message.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC/Room.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC/RoomInfo.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC/User.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/OOB.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/Ping.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/Pubsub.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/RegisterForm.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/Registration.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/VCard.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/Version.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Extendable.pm
+%%SITE_PERL%%/AnyEvent/XMPP/IM/Account.pm
+%%SITE_PERL%%/AnyEvent/XMPP/IM/Connection.pm
+%%SITE_PERL%%/AnyEvent/XMPP/IM/Contact.pm
+%%SITE_PERL%%/AnyEvent/XMPP/IM/Delayed.pm
+%%SITE_PERL%%/AnyEvent/XMPP/IM/Message.pm
+%%SITE_PERL%%/AnyEvent/XMPP/IM/Presence.pm
+%%SITE_PERL%%/AnyEvent/XMPP/IM/Roster.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Namespaces.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Node.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Parser.pm
+%%SITE_PERL%%/AnyEvent/XMPP/SimpleConnection.pm
+%%SITE_PERL%%/AnyEvent/XMPP/TestClient.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Util.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Writer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/XMPP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/XMPP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+@dirrm %%SITE_PERL%%/AnyEvent/XMPP/Error
+@dirrm %%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco
+@dirrm %%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC
+@dirrm %%SITE_PERL%%/AnyEvent/XMPP/Ext
+@dirrm %%SITE_PERL%%/AnyEvent/XMPP/IM
+@dirrm %%SITE_PERL%%/AnyEvent/XMPP
+@dirrmtry %%SITE_PERL%%/AnyEvent
