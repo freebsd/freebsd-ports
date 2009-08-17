@@ -35,10 +35,6 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		does not link
-.endif
-
 post-patch:
 	@cd ${WRKSRC}/addons && for addon in *; do \
 		if ! ${ECHO_CMD} ${DEFAULT_ADDONS} | ${GREP} $$addon > /dev/null; then \
@@ -51,6 +47,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/CC = gcc/ d' \
 		${WRKSRC}/libs/basekit/source/simd_cph/test/Makefile
 	@${REINPLACE_CMD} -e '/cp _build\/dll\/.*\/bin/ d' ${WRKSRC}/Makefile
+.if ${ARCH} == "amd64"
+	@${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS = -fPIC|' \
+	    ${WRKSRC}/Makefile.lib \
+	    ${WRKSRC}/libs/basekit/Makefile.lib
+.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/include/io
