@@ -22,4 +22,4 @@ NOTE: Some ports with GNU configure do not know that Motif 2.1 requires -lXp.
 In that case, you need to edit Makefile after configure, or, hack
 configure(.in) before configure.
 
-WWW: http://www.openmotif.org/
+WWW: http://www.opengroup.org/openmotif/
