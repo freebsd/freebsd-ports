@@ -7,7 +7,7 @@
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.10.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.10
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack libglade2 gnomedocutils
+USE_GNOME=	gnomehack intlhack libglade2 gnomedocutils libgnomecanvas
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
