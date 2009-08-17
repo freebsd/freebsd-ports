@@ -9,11 +9,14 @@ PORTNAME=	mod_auth_mysql41_ap2
 PORTVERSION=	1.00
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.maske.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	# no longer accessible
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	maske@maske.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL 4.1 and Apache 2 port of mod_auth_mysql
+
+DEPRECATED=		distfile no longer fetchable
+EXPIRATION_DATE=	2009-10-17
 
 MAKE_JOBS_SAFE=  yes
 
