@@ -33,4 +33,10 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 800000
+BROKEN=		Does not compile on sparc64-8: duplicate definition of strlen
+.endif
+
+.include <bsd.port.post.mk>
