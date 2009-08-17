@@ -363,6 +363,10 @@
 %%SITE_PERL%%/DateTime/TimeZone/MST7MDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/OffsetOnly.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB.pm
+%%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Change.pm
+%%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Observance.pm
+%%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Rule.pm
+%%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Zone.pm
 %%SITE_PERL%%/DateTime/TimeZone/PST8PDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Apia.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Auckland.pm
@@ -404,19 +408,20 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Wallis.pm
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
 %%SITE_PERL%%/DateTime/TimeZone/WET.pm
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/Pacific
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/Local
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/Indian
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/Europe
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/Australia
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/Atlantic
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/Asia
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/Antarctica
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/America/Kentucky
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/America/Indiana
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/America/Argentina
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/America
-@dirrm %%SITE_PERL%%/DateTime/TimeZone/Africa
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Pacific
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/OlsonDB
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Local
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Indian
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Europe
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Australia
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Atlantic
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Asia
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Antarctica
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/America/Kentucky
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/America/Indiana
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/America/Argentina
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/America
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Africa
 @dirrmtry %%SITE_PERL%%/DateTime/TimeZone
 @dirrmtry %%SITE_PERL%%/DateTime
