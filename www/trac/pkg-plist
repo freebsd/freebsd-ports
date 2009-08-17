@@ -99,6 +99,7 @@ bin/tracd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/htdocs/css/wiki.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/htdocs/desc.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/htdocs/dots.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/htdocs/download.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/htdocs/draft.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/htdocs/edit_toolbar.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/htdocs/editedticket.png
@@ -238,6 +239,9 @@ bin/tracd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/tests/functional/compat.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/tests/functional/compat.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/tests/functional/compat.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/tests/functional/svntestenv.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/tests/functional/svntestenv.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/tests/functional/svntestenv.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/tests/functional/testcases.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/tests/functional/testcases.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/tests/functional/testcases.pyo
@@ -409,6 +413,9 @@ bin/tracd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/versioncontrol/svn_fs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/versioncontrol/svn_fs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/versioncontrol/svn_fs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/versioncontrol/svn_prop.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/versioncontrol/svn_prop.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/versioncontrol/svn_prop.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/versioncontrol/templates/browser.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/versioncontrol/templates/changeset.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/versioncontrol/templates/diff_form.html
