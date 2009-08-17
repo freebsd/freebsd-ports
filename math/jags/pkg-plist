@@ -256,7 +256,9 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/asia/asia2.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/asia/bench-test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/asia/bench-test2.R
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/asia/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/asia/test1.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/asia/test2.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/asia/test2.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/beetles-cloglog.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/beetles-data.R
@@ -266,14 +268,18 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/bench-test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/bench-test2.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/bench-test3.R
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/test1.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/test2.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/test2.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/test3.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/beetles/test3.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/biops/ReadMe
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/biops/bench-test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/biops/biops-data.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/biops/biops-inits.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/biops/biops.bug
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/biops/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/biops/test1.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/bench-test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/bench-test2.R
@@ -285,9 +291,13 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/birats2.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/birats3.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/birats4.bug
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/test1.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/test2.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/test2.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/test3.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/test3.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/test4.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/birats/test4.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/cervix/ReadMe
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/cervix/cervix-data.R
@@ -298,6 +308,7 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/dugongs/dugongs-data.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/dugongs/dugongs-inits.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/dugongs/dugongs.bug
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/dugongs/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/dugongs/test1.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/eyes/ReadMe
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/eyes/bench-test2.R
@@ -307,12 +318,14 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/eyes/eyes.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/eyes/eyes2.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/eyes/notest1.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/eyes/test2.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/eyes/test2.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/hearts/bench-test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/hearts/hearts-data.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/hearts/hearts-inits.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/hearts/hearts.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/hearts/hearts.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/hearts/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/hearts/test1.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/ice/ReadMe
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/ice/bench-test1.R
@@ -330,8 +343,11 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/jaw/jaw-inits.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/jaw/jaw-linear.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/jaw/jaw-quadratic.bug
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/jaw/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/jaw/test1.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/jaw/test2.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/jaw/test2.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/jaw/test3.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/jaw/test3.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/orange/bench-test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/orange/bench-test2.R
@@ -343,12 +359,15 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/orange/otree.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/orange/otree.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/orange/otree.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/orange/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/orange/test1.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/orange/test2.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/orange/test2.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/pigs/bench-test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/pigs/pigs-data.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/pigs/pigs-inits.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/pigs/pigs.bug
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/pigs/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/pigs/test1.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/schools/bench-test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/schools/schools-data.R
@@ -356,6 +375,7 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/schools/schools.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/schools/schools.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/schools/test.bug
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/schools/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/schools/test1.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/stagnant/ReadMe
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/stagnant/bench-test3.R
@@ -369,7 +389,9 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant-inits4.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant.bug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant2.bug
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/stagnant/test3.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/stagnant/test3.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/stagnant/test4.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/stagnant/test4.cmd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vol2/stagnant
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vol2/schools
