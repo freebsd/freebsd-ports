@@ -1,0 +1,28 @@
+--- configure.orig	2009-08-17 03:50:55.000000000 -0400
++++ configure	2009-08-17 03:50:59.000000000 -0400
+@@ -21983,12 +21983,14 @@ fi
+   if test x$libgnutls_config_prefix != x ; then
+      libgnutls_config_args="$libgnutls_config_args --prefix=$libgnutls_config_prefix"
+      if test x${LIBGNUTLS_CONFIG+set} != xset ; then
+-        LIBGNUTLS_CONFIG=$libgnutls_config_prefix/bin/libgnutls-config
++        LIBGNUTLS_CONFIG=pkg-config
+      fi
+   fi
+ 
++  libgnutls_config_args="$libgnutls_config_args gnutls"
++
+   # Extract the first word of "libgnutls-config", so it can be a program name with args.
+-set dummy libgnutls-config; ac_word=$2
++set dummy pkg-config; ac_word=$2
+ { echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
+ if test "${ac_cv_path_LIBGNUTLS_CONFIG+set}" = set; then
+@@ -22037,7 +22039,7 @@ echo $ECHO_N "checking for libgnutls - v
+   else
+     LIBGNUTLS_CFLAGS=`$LIBGNUTLS_CONFIG $libgnutls_config_args --cflags`
+     LIBGNUTLS_LIBS=`$LIBGNUTLS_CONFIG $libgnutls_config_args --libs`
+-    libgnutls_config_version=`$LIBGNUTLS_CONFIG $libgnutls_config_args --version`
++    libgnutls_config_version=`$LIBGNUTLS_CONFIG $libgnutls_config_args --modversion`
+ 
+ 
+       ac_save_CFLAGS="$CFLAGS"
