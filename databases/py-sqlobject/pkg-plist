@@ -23,6 +23,10 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/joins.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/hashcol.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/hashcol.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/hashcol.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/pydispatch/saferef.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/pydispatch/dispatcher.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/pydispatch/robustapply.py
@@ -41,7 +45,6 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/pydispatch/errors.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/pydispatch/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/pydispatch/robust.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/include/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/boundattributes.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/converters.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/conftest.pyc
