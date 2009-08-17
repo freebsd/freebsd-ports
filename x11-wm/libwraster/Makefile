@@ -19,6 +19,7 @@ COMMENT=	libwraster from Window Maker
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 MAKE_JOBS_SAFE=	yes
 
