@@ -9,6 +9,7 @@ PORTVERSION=	2.112
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.tundraware.com/Software/tconfpy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tconfpy@tundraware.com
 COMMENT=	A Python Configuration File Parser
