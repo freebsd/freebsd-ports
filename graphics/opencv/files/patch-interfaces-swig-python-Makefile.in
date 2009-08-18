@@ -1,0 +1,21 @@
+--- interfaces/swig/python/Makefile.in.orig	2009-08-17 13:05:42.767591162 +0200
++++ interfaces/swig/python/Makefile.in	2009-08-17 13:12:40.803413956 +0200
+@@ -338,16 +338,14 @@
+ 
+ @BUILD_PYTHON_WRAPPERS_TRUE@_cv_la_CXXFLAGS = $(PYTHON_CSPEC)
+ @BUILD_PYTHON_WRAPPERS_TRUE@_cv_la_LIBADD = $(top_builddir)/cv/src/libcv.la
+-@BUILD_PYTHON_WRAPPERS_TRUE@_cv_la_LDFLAGS = -module -avoid-version -no-undefined $(PYTHON_LSPEC) \
+-@BUILD_PYTHON_WRAPPERS_TRUE@                    -L$(SWIG_PYTHON_LIBS)
++@BUILD_PYTHON_WRAPPERS_TRUE@_cv_la_LDFLAGS = -module -avoid-version -no-undefined $(PYTHON_LSPEC)
+ 
+ @BUILD_PYTHON_WRAPPERS_TRUE@_highgui_la_SOURCES = _highgui.cpp pyhelpers.cpp pyhelpers.h \
+ @BUILD_PYTHON_WRAPPERS_TRUE@                         highgui.i
+ 
+ @BUILD_PYTHON_WRAPPERS_TRUE@_highgui_la_CXXFLAGS = $(PYTHON_CSPEC)
+ @BUILD_PYTHON_WRAPPERS_TRUE@_highgui_la_LIBADD = $(top_builddir)/otherlibs/highgui/libhighgui.la
+-@BUILD_PYTHON_WRAPPERS_TRUE@_highgui_la_LDFLAGS = -module -avoid-version -no-undefined $(PYTHON_LSPEC) \
+-@BUILD_PYTHON_WRAPPERS_TRUE@                           -L$(SWIG_PYTHON_LIBS)
++@BUILD_PYTHON_WRAPPERS_TRUE@_highgui_la_LDFLAGS = -module -avoid-version -no-undefined $(PYTHON_LSPEC)
+ 
+ all: all-am
+ 
