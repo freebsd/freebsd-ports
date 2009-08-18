@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	py-MySQL
+PORTNAME=	MySQL
 PORTVERSION=	1.4
 CATEGORIES=	databases python
 MASTER_SITES=	http://mysql.osuosl.org/Downloads/Contrib/Old-Versions/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MySQLmodule-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

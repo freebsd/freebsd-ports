@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	py-libmpdclient
+PORTNAME=	libmpdclient
 PORTVERSION=	0.10.0
 CATEGORIES=	audio python
 MASTER_SITES=	http://mercury.chem.pitt.edu/~shank/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tim@n2it.net
 COMMENT=	Python bindings for libmpdclient

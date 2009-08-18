@@ -5,12 +5,13 @@
 # $FreeBSD$
 #    $MCom: ports/x11-toolkits/py-gtkscintilla/Makefile,v 1.1 2006/10/07 15:53:59 ahze Exp $
 
-PORTNAME=	py-gtkscintilla
+PORTNAME=	gtkscintilla
 PORTVERSION=	0.8.2
 PORTREVISION=	6
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moleskine
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyGtkScintilla-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

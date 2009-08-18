@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=		SQLDict
-PORTVERSION=		1.0.0
-CATEGORIES=		databases python
-MASTER_SITES=		http://dustman.net/andy/python/SQLDict/1.0.0/
-PKGNAMEPREFIX=		py-
+PORTNAME=	SQLDict
+PORTVERSION=	1.0.0
+CATEGORIES=	databases python
+MASTER_SITES=	http://dustman.net/andy/python/SQLDict/1.0.0/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python dictionary wrapper around a SQL database
 
-USE_PYTHON=		yes
-NO_WRKSUBDIR=		yes
+USE_PYTHON=	yes
+NO_WRKSUBDIR=	yes
 
 do-build:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -c 'import SQLDict'

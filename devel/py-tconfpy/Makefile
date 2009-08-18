@@ -4,10 +4,11 @@
 #
 # $FreeBSD$
 
-PORTNAME=	py-tconfpy
+PORTNAME=	tconfpy
 PORTVERSION=	2.112
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.tundraware.com/Software/tconfpy/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tconfpy@tundraware.com
 COMMENT=	A Python Configuration File Parser

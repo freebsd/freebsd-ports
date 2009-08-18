@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=		HyperText
-PORTVERSION=		1.0.1
-CATEGORIES=		textproc python
-MASTER_SITES=		http://dustman.net/andy/python/HyperText/1.0.1/
-PKGNAMEPREFIX=		py-
+PORTNAME=	HyperText
+PORTVERSION=	1.0.1
+CATEGORIES=	textproc python
+MASTER_SITES=	http://dustman.net/andy/python/HyperText/1.0.1/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight HTML/XHTML generator for Python
 
-USE_PYTHON=		yes
-WRKSRC=			${WRKDIR}/HyperText
+USE_PYTHON=	yes
+WRKSRC=		${WRKDIR}/HyperText
 
 # get rid of pre-compiled stuff: it may not work for the installed
 # version of Python
