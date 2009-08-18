@@ -7,6 +7,7 @@
 %%SITE_PERL%%/CSS/DOM/Interface.pm
 %%SITE_PERL%%/CSS/DOM/MediaList.pm
 %%SITE_PERL%%/CSS/DOM/Parser.pm
+%%SITE_PERL%%/CSS/DOM/PropertyParser.pm
 %%SITE_PERL%%/CSS/DOM/Rule.pm
 %%SITE_PERL%%/CSS/DOM/Rule/Charset.pm
 %%SITE_PERL%%/CSS/DOM/Rule/FontFace.pm
