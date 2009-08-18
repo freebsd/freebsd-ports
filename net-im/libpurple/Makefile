@@ -8,7 +8,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.5.8
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pidgin
@@ -49,8 +49,8 @@ PRPL_MODULES=
 
 OPTIONS=	BONJOUR "Enable mDNS support" on \
 		DBUS "Enable DBUS bindings" on \
-		GNUTLS "GNUTLS encryption support" on \
-		NSS "Mozilla NSS encryption support" off \
+		GNUTLS "GNUTLS encryption support" off \
+		NSS "Mozilla NSS encryption support" on \
 		SASL "Cyrus SASL support (for jabberd)" off \
 		PERL "Perl scripting" off \
 		TCLTK "Tcl/Tk scripting" off \
@@ -113,7 +113,7 @@ CONFIGURE_ARGS+=--disable-cap
 PLIST_SUB+=	CAP="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_GNUTLS)
+.if defined(WITH_GNUTLS)
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls=yes
 PLIST_SUB+=		GNUTLS=""
@@ -122,7 +122,7 @@ CONFIGURE_ARGS+=	--enable-gnutls=no
 PLIST_SUB+=		GNUTLS="@comment "
 .endif
 
-.if defined(WITH_NSS)
+.if !defined(WITHOUT_NSS)
 LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
 CONFIGURE_ARGS+=	--enable-nss=yes \
 			--with-nspr-includes=${LOCALBASE}/include/nspr \
