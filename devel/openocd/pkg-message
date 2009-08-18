@@ -2,7 +2,7 @@
 
 Now You can use OpenOCD. Handbook is at: http://openocd.berlios.de/doc/html/
 
-To allow an ordinary user acces to the hotplug USB interface add him
+To allow an ordinary user to acces the hotplug USB interface add him
 to the operator group and add these lines to the following files:
 
 /etc/devfs.rules:

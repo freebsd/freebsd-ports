@@ -1,129 +1,182 @@
 bin/openocd
-lib/openocd/board/arm_evaluator7t.cfg
-lib/openocd/board/at91rm9200-dk.cfg
-lib/openocd/board/eir.cfg
-lib/openocd/board/hammer.cfg
-lib/openocd/board/iar_str912_sk.cfg
-lib/openocd/board/imx27ads.cfg
-lib/openocd/board/imx31pdk.cfg
-lib/openocd/board/logicpd_imx27.cfg
-lib/openocd/board/olimex_sam7_ex256.cfg
-lib/openocd/board/pic-p32mx.cfg
-lib/openocd/board/stm3210e_eval.cfg
-lib/openocd/board/stm32f10x_128k_eval.cfg
-lib/openocd/board/x300t.cfg
+@exec install-info %D/info/openocd.info %D/info/dir
+@unexec install-info --delete %D/info/openocd.info %D/info/dir
+lib/libopenocd.a
+lib/libopenocd.la
 lib/openocd/ecos/at91eb40a.elf
-lib/openocd/interface/arm-usb-ocd.cfg
-lib/openocd/interface/at91rm9200.cfg
-lib/openocd/interface/calao-usb-a9260-c01.cfg
-lib/openocd/interface/calao-usb-a9260-c02.cfg
-lib/openocd/interface/calao-usb-a9260.cfg
-lib/openocd/interface/chameleon.cfg
-lib/openocd/interface/dummy.cfg
-lib/openocd/interface/flyswatter.cfg
-lib/openocd/interface/jlink.cfg
-lib/openocd/interface/jtagkey-tiny.cfg
-lib/openocd/interface/jtagkey.cfg
-lib/openocd/interface/luminary-libftdi.cfg
-lib/openocd/interface/luminary-lm3s811.cfg
-lib/openocd/interface/luminary.cfg
-lib/openocd/interface/olimex-arm-usb-ocd.cfg
-lib/openocd/interface/olimex-jtag-tiny-a.cfg
-lib/openocd/interface/openocd-usb.cfg
-lib/openocd/interface/parport.cfg
-lib/openocd/interface/parport_dlc5.cfg
-lib/openocd/interface/rlink.cfg
-lib/openocd/interface/signalyzer.cfg
-lib/openocd/interface/stm32-stick.cfg
-lib/openocd/interface/str9-comstick.cfg
-lib/openocd/interface/turtelizer2.cfg
-lib/openocd/target/aduc702x.cfg
-lib/openocd/target/at91eb40a.cfg
-lib/openocd/target/at91r40008.cfg
-lib/openocd/target/at91rm9200.cfg
-lib/openocd/target/at91sam9260.cfg
-lib/openocd/target/at91sam9260minimal.cfg
-lib/openocd/target/epc9301.cfg
-lib/openocd/target/imote2.cfg
-lib/openocd/target/imx27.cfg
-lib/openocd/target/imx31.cfg
-lib/openocd/target/ipx42x.cfg
-lib/openocd/target/is5114.cfg
-lib/openocd/target/lm3s3748.cfg
-lib/openocd/target/lm3s6965.cfg
-lib/openocd/target/lm3s811.cfg
-lib/openocd/target/lpc2129.cfg
-lib/openocd/target/lpc2148.cfg
-lib/openocd/target/lpc2148_2mhz.cfg
-lib/openocd/target/lpc2148_rclk.cfg
-lib/openocd/target/lpc2294.cfg
-lib/openocd/target/netx500.cfg
-lib/openocd/target/nslu2.cfg
-lib/openocd/target/omap5912.cfg
-lib/openocd/target/pic32mx.cfg
-lib/openocd/target/pxa255.cfg
-lib/openocd/target/pxa255_sst.cfg
-lib/openocd/target/pxa270.cfg
-lib/openocd/target/sam7se512.cfg
-lib/openocd/target/sam7x256.cfg
-lib/openocd/target/samsung_s3c2410.cfg
-lib/openocd/target/samsung_s3c2440.cfg
-lib/openocd/target/samsung_s3c4510.cfg
-lib/openocd/target/samsung_s3c6410.cfg
-lib/openocd/target/sharp_lh79532.cfg
-lib/openocd/target/smdk6410.cfg
-lib/openocd/target/smp8634.cfg
-lib/openocd/target/stm32.cfg
-lib/openocd/target/stm32stick.cfg
-lib/openocd/target/str710.cfg
-lib/openocd/target/str730.cfg
-lib/openocd/target/str750.cfg
-lib/openocd/target/str910-eval.cfg
-lib/openocd/target/str912.cfg
-lib/openocd/target/str9comstick.cfg
-lib/openocd/target/test_reset_syntax_error.cfg
-lib/openocd/target/test_syntax_error.cfg
-lib/openocd/target/wi-9c.cfg
-lib/openocd/target/xba_revA3.cfg
-lib/openocd/target/zy1000.cfg
-lib/openocd/tcl/bitsbytes.tcl
-lib/openocd/tcl/chip/atmel/at91/aic.tcl
-lib/openocd/tcl/chip/atmel/at91/at91sam7x128.tcl
-lib/openocd/tcl/chip/atmel/at91/at91sam7x256.tcl
-lib/openocd/tcl/chip/atmel/at91/pmc.tcl
-lib/openocd/tcl/chip/atmel/at91/rtt.tcl
-lib/openocd/tcl/chip/atmel/at91/usarts.tcl
-lib/openocd/tcl/chip/st/stm32/stm32.tcl
-lib/openocd/tcl/chip/st/stm32/stm32_rcc.tcl
-lib/openocd/tcl/chip/st/stm32/stm32_regs.tcl
-lib/openocd/tcl/cpu/arm/arm7tdmi.tcl
-lib/openocd/tcl/cpu/arm/arm920.tcl
-lib/openocd/tcl/cpu/arm/arm946.tcl
-lib/openocd/tcl/cpu/arm/arm966.tcl
-lib/openocd/tcl/cpu/arm/cortex_m3.tcl
-lib/openocd/tcl/memory.tcl
-lib/openocd/tcl/mmr_helpers.tcl
-lib/openocd/tcl/readable.tcl
 lib/openocd/xscale/debug_handler.bin
-share/openocd/contrib/libdcc/README
-share/openocd/contrib/libdcc/dcc_stdio.c
-share/openocd/contrib/libdcc/dcc_stdio.h
-share/openocd/contrib/libdcc/example.c
-share/openocd/contrib/openocd.udev
-@dirrm share/openocd/contrib/libdcc
-@dirrm share/openocd/contrib
-@dirrm share/openocd
+%%DATADIR%%/contrib/libdcc/README
+%%DATADIR%%/contrib/libdcc/dcc_stdio.c
+%%DATADIR%%/contrib/libdcc/dcc_stdio.h
+%%DATADIR%%/contrib/libdcc/example.c
+%%DATADIR%%/contrib/openocd.udev
+%%DATADIR%%/scripts/bitsbytes.tcl
+%%DATADIR%%/scripts/board/arm_evaluator7t.cfg
+%%DATADIR%%/scripts/board/at91rm9200-dk.cfg
+%%DATADIR%%/scripts/board/atmel_sam3u_ek.cfg
+%%DATADIR%%/scripts/board/crossbow_tech_imote2.cfg
+%%DATADIR%%/scripts/board/csb337.cfg
+%%DATADIR%%/scripts/board/digi_connectcore_wi-9c.cfg
+%%DATADIR%%/scripts/board/dm355evm.cfg
+%%DATADIR%%/scripts/board/eir.cfg
+%%DATADIR%%/scripts/board/ek-lm3s3748.cfg
+%%DATADIR%%/scripts/board/ek-lm3s9b9x.cfg
+%%DATADIR%%/scripts/board/hammer.cfg
+%%DATADIR%%/scripts/board/hitex_stm32-performancestick.cfg
+%%DATADIR%%/scripts/board/hitex_str9-comstick.cfg
+%%DATADIR%%/scripts/board/iar_str912_sk.cfg
+%%DATADIR%%/scripts/board/imx27ads.cfg
+%%DATADIR%%/scripts/board/imx27lnst.cfg
+%%DATADIR%%/scripts/board/imx31pdk.cfg
+%%DATADIR%%/scripts/board/keil_mcb2140.cfg
+%%DATADIR%%/scripts/board/linksys_nslu2.cfg
+%%DATADIR%%/scripts/board/logicpd_imx27.cfg
+%%DATADIR%%/scripts/board/olimex_LPC2378STK.cfg
+%%DATADIR%%/scripts/board/olimex_lpc_h2148.cfg
+%%DATADIR%%/scripts/board/olimex_sam7_ex256.cfg
+%%DATADIR%%/scripts/board/olimex_sam9_l9260.cfg
+%%DATADIR%%/scripts/board/olimex_stm32_h103.cfg
+%%DATADIR%%/scripts/board/omap2420_h4.cfg
+%%DATADIR%%/scripts/board/osk5912.cfg
+%%DATADIR%%/scripts/board/pic-p32mx.cfg
+%%DATADIR%%/scripts/board/pxa255_sst.cfg
+%%DATADIR%%/scripts/board/sheevaplug.cfg
+%%DATADIR%%/scripts/board/stm3210e_eval.cfg
+%%DATADIR%%/scripts/board/stm32f10x_128k_eval.cfg
+%%DATADIR%%/scripts/board/str910-eval.cfg
+%%DATADIR%%/scripts/board/ti_beagleboard.cfg
+%%DATADIR%%/scripts/board/unknown-board-atmel-at91sam9260.cfg
+%%DATADIR%%/scripts/board/x300t.cfg
+%%DATADIR%%/scripts/board/zy1000.cfg
+%%DATADIR%%/scripts/chip/atmel/at91/aic.tcl
+%%DATADIR%%/scripts/chip/atmel/at91/at91sam7x128.tcl
+%%DATADIR%%/scripts/chip/atmel/at91/at91sam7x256.tcl
+%%DATADIR%%/scripts/chip/atmel/at91/pmc.tcl
+%%DATADIR%%/scripts/chip/atmel/at91/rtt.tcl
+%%DATADIR%%/scripts/chip/atmel/at91/usarts.tcl
+%%DATADIR%%/scripts/chip/st/stm32/stm32.tcl
+%%DATADIR%%/scripts/chip/st/stm32/stm32_rcc.tcl
+%%DATADIR%%/scripts/chip/st/stm32/stm32_regs.tcl
+%%DATADIR%%/scripts/cpu/arm/arm7tdmi.tcl
+%%DATADIR%%/scripts/cpu/arm/arm920.tcl
+%%DATADIR%%/scripts/cpu/arm/arm946.tcl
+%%DATADIR%%/scripts/cpu/arm/arm966.tcl
+%%DATADIR%%/scripts/cpu/arm/cortex_m3.tcl
+%%DATADIR%%/scripts/interface/arm-jtag-ew.cfg
+%%DATADIR%%/scripts/interface/arm-usb-ocd.cfg
+%%DATADIR%%/scripts/interface/at91rm9200.cfg
+%%DATADIR%%/scripts/interface/axm0432.cfg
+%%DATADIR%%/scripts/interface/calao-usb-a9260-c01.cfg
+%%DATADIR%%/scripts/interface/calao-usb-a9260-c02.cfg
+%%DATADIR%%/scripts/interface/calao-usb-a9260.cfg
+%%DATADIR%%/scripts/interface/chameleon.cfg
+%%DATADIR%%/scripts/interface/cortino.cfg
+%%DATADIR%%/scripts/interface/dummy.cfg
+%%DATADIR%%/scripts/interface/flyswatter.cfg
+%%DATADIR%%/scripts/interface/hitex_str9-comstick.cfg
+%%DATADIR%%/scripts/interface/icebear.cfg
+%%DATADIR%%/scripts/interface/jlink.cfg
+%%DATADIR%%/scripts/interface/jtagkey-tiny.cfg
+%%DATADIR%%/scripts/interface/jtagkey.cfg
+%%DATADIR%%/scripts/interface/luminary-icdi.cfg
+%%DATADIR%%/scripts/interface/luminary-lm3s811.cfg
+%%DATADIR%%/scripts/interface/luminary.cfg
+%%DATADIR%%/scripts/interface/olimex-arm-usb-ocd.cfg
+%%DATADIR%%/scripts/interface/olimex-jtag-tiny.cfg
+%%DATADIR%%/scripts/interface/oocdlink.cfg
+%%DATADIR%%/scripts/interface/openocd-usb.cfg
+%%DATADIR%%/scripts/interface/parport.cfg
+%%DATADIR%%/scripts/interface/parport_dlc5.cfg
+%%DATADIR%%/scripts/interface/rlink.cfg
+%%DATADIR%%/scripts/interface/sheevaplug.cfg
+%%DATADIR%%/scripts/interface/signalyzer.cfg
+%%DATADIR%%/scripts/interface/stm32-stick.cfg
+%%DATADIR%%/scripts/interface/turtelizer2.cfg
+%%DATADIR%%/scripts/interface/usbprog.cfg
+%%DATADIR%%/scripts/interface/vsllink.cfg
+%%DATADIR%%/scripts/memory.tcl
+%%DATADIR%%/scripts/mmr_helpers.tcl
+%%DATADIR%%/scripts/readable.tcl
+%%DATADIR%%/scripts/target/aduc702x.cfg
+%%DATADIR%%/scripts/target/at91eb40a.cfg
+%%DATADIR%%/scripts/target/at91r40008.cfg
+%%DATADIR%%/scripts/target/at91rm9200.cfg
+%%DATADIR%%/scripts/target/at91sam3u1c.cfg
+%%DATADIR%%/scripts/target/at91sam3u1e.cfg
+%%DATADIR%%/scripts/target/at91sam3u2c.cfg
+%%DATADIR%%/scripts/target/at91sam3u2e.cfg
+%%DATADIR%%/scripts/target/at91sam3u4c.cfg
+%%DATADIR%%/scripts/target/at91sam3u4e.cfg
+%%DATADIR%%/scripts/target/at91sam3uXX.cfg
+%%DATADIR%%/scripts/target/at91sam9260.cfg
+%%DATADIR%%/scripts/target/at91sam9260_ext_RAM_ext_flash.cfg
+%%DATADIR%%/scripts/target/cs351x.cfg
+%%DATADIR%%/scripts/target/davinci.cfg
+%%DATADIR%%/scripts/target/epc9301.cfg
+%%DATADIR%%/scripts/target/feroceon.cfg
+%%DATADIR%%/scripts/target/icepick.cfg
+%%DATADIR%%/scripts/target/imx21.cfg
+%%DATADIR%%/scripts/target/imx27.cfg
+%%DATADIR%%/scripts/target/imx31.cfg
+%%DATADIR%%/scripts/target/imx35.cfg
+%%DATADIR%%/scripts/target/is5114.cfg
+%%DATADIR%%/scripts/target/ixp42x.cfg
+%%DATADIR%%/scripts/target/lm3s3748.cfg
+%%DATADIR%%/scripts/target/lm3s6965.cfg
+%%DATADIR%%/scripts/target/lm3s811.cfg
+%%DATADIR%%/scripts/target/lm3s9b9x.cfg
+%%DATADIR%%/scripts/target/lpc2103.cfg
+%%DATADIR%%/scripts/target/lpc2124.cfg
+%%DATADIR%%/scripts/target/lpc2129.cfg
+%%DATADIR%%/scripts/target/lpc2148.cfg
+%%DATADIR%%/scripts/target/lpc2294.cfg
+%%DATADIR%%/scripts/target/lpc2378.cfg
+%%DATADIR%%/scripts/target/lpc2478.cfg
+%%DATADIR%%/scripts/target/mega128.cfg
+%%DATADIR%%/scripts/target/netx500.cfg
+%%DATADIR%%/scripts/target/omap2420.cfg
+%%DATADIR%%/scripts/target/omap3530.cfg
+%%DATADIR%%/scripts/target/omap5912.cfg
+%%DATADIR%%/scripts/target/pic32mx.cfg
+%%DATADIR%%/scripts/target/pxa255.cfg
+%%DATADIR%%/scripts/target/pxa270.cfg
+%%DATADIR%%/scripts/target/sam7se512.cfg
+%%DATADIR%%/scripts/target/sam7x256.cfg
+%%DATADIR%%/scripts/target/samsung_s3c2410.cfg
+%%DATADIR%%/scripts/target/samsung_s3c2440.cfg
+%%DATADIR%%/scripts/target/samsung_s3c4510.cfg
+%%DATADIR%%/scripts/target/samsung_s3c6410.cfg
+%%DATADIR%%/scripts/target/sharp_lh79532.cfg
+%%DATADIR%%/scripts/target/smdk6410.cfg
+%%DATADIR%%/scripts/target/smp8634.cfg
+%%DATADIR%%/scripts/target/stm32.cfg
+%%DATADIR%%/scripts/target/str710.cfg
+%%DATADIR%%/scripts/target/str730.cfg
+%%DATADIR%%/scripts/target/str750.cfg
+%%DATADIR%%/scripts/target/str912.cfg
+%%DATADIR%%/scripts/target/test_reset_syntax_error.cfg
+%%DATADIR%%/scripts/target/test_syntax_error.cfg
+%%DATADIR%%/scripts/target/ti_dm355.cfg
+%%DATADIR%%/scripts/target/ti_dm365.cfg
+%%DATADIR%%/scripts/target/ti_dm6446.cfg
+%%DATADIR%%/scripts/target/xba_revA3.cfg
+%%DATADIR%%/scripts/test/selftest.cfg
+%%DATADIR%%/scripts/test/syntax1.cfg
+@dirrm %%DATADIR%%/scripts/test
+@dirrm %%DATADIR%%/scripts/target
+@dirrm %%DATADIR%%/scripts/interface
+@dirrm %%DATADIR%%/scripts/cpu/arm
+@dirrm %%DATADIR%%/scripts/cpu
+@dirrm %%DATADIR%%/scripts/chip/st/stm32
+@dirrm %%DATADIR%%/scripts/chip/st
+@dirrm %%DATADIR%%/scripts/chip/atmel/at91
+@dirrm %%DATADIR%%/scripts/chip/atmel
+@dirrm %%DATADIR%%/scripts/chip
+@dirrm %%DATADIR%%/scripts/board
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/contrib/libdcc
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%
 @dirrm lib/openocd/xscale
-@dirrm lib/openocd/tcl/cpu/arm
-@dirrm lib/openocd/tcl/cpu
-@dirrm lib/openocd/tcl/chip/st/stm32
-@dirrm lib/openocd/tcl/chip/st
-@dirrm lib/openocd/tcl/chip/atmel/at91
-@dirrm lib/openocd/tcl/chip/atmel
-@dirrm lib/openocd/tcl/chip
-@dirrm lib/openocd/tcl
-@dirrm lib/openocd/target
-@dirrm lib/openocd/interface
 @dirrm lib/openocd/ecos
-@dirrm lib/openocd/board
 @dirrm lib/openocd
