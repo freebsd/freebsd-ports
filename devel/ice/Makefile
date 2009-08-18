@@ -7,14 +7,15 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.3/
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A modern alternative to object middleware such as CORBA/COM/DCOM/COM+
 
-BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		mcpp.3:${PORTSDIR}/devel/mcpp
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
