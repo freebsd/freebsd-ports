@@ -416,6 +416,7 @@
     SUBDIR += nph
     SUBDIR += ns
     SUBDIR += nss_ldap
+    SUBDIR += nss_ldapd
     SUBDIR += nstxd
     SUBDIR += ntalk
     SUBDIR += ntlmaps
