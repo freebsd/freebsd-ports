@@ -154,6 +154,7 @@
     SUBDIR += ng_ipacct
     SUBDIR += nipper
     SUBDIR += nitpicker
+    SUBDIR += noc
     SUBDIR += nocol
     SUBDIR += nrg
     SUBDIR += nrpe2

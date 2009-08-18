@@ -1,0 +1,33 @@
+--- scripts/post-install.orig	2009-07-29 18:22:59.000000000 +0700
++++ scripts/post-install	2009-07-29 18:25:16.000000000 +0700
+@@ -5,7 +5,7 @@
+ ## Copyright (C) 2007-2009 The NOC Project
+ ## See LICENSE for details
+ ##----------------------------------------------------------------------
+-PREFIX=/opt/noc
++PREFIX=/usr/local/noc
+ 
+ cd $PREFIX
+ 
+@@ -15,7 +15,7 @@ cd $PREFIX
+ sed_script=`mktemp tmp.XXXXXX`
+ rm $sed_script
+ for cmd in telnet ssh rsync pg_dump tar gzip smidump smilint fping dig; do
+-    echo 's@^\\($cmd *\\)=.*\$@\\1 = '`which $cmd`'@' >> $sed_script
++    echo "s@^\\($cmd *\\)=.*\$@\\1 = "`which $cmd`'@' >> $sed_script
+ done
+ 
+ ##
+@@ -30,10 +30,11 @@ done
+ rm $sed_script
+ chmod 640 etc/*.conf
+ chown noc:noc etc/*.conf
++chmod -R +r share/mibs/
+ ##
+ ## Create required directories
+ ##
+-for d in local static/doc /var/repo /var/backup /var/log/noc; do
++for d in local static/doc /var/db/noc /var/db/noc/repo /var/db/noc/backup /var/log/noc; do
+     [ ! -d $d ] && mkdir $d
+     chown noc:noc $d
+ done

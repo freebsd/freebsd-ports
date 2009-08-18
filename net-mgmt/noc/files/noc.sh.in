@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: noc
+# REQUIRE: DAEMON %%RCLDCONFIG%%
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable noc:
+#  noc_enable (bool):    Set to "NO" by default.
+#                       Set it to "YES" to enable noc.
+#
+# You may also wish to use the following variables to fine-tune startup:
+#  noc_daemons="activator classifier correlator fcgi sae"
+#
+
+. %%RC_SUBR%%
+
+name="noc"
+rcvar=`set_rcvar`
+
+# set defaults
+
+load_rc_config $name
+
+: ${noc_enable="NO"}
+: ${noc_config="%%NOCDIR%%/etc/noc-launcher.conf"}
+: ${noc_flags="-c ${noc_config}"}
+
+noc_chdir=%%NOCDIR%%
+command=%%NOCDIR%%/scripts/noc-launcher.py
+command_interpreter=python
+pidfile=%%LOCALSTATE_DIR%%/noc-launcher.pid
+required_files=${noc_config}
+
+command_args=$1
+
+case "$command_args" in
+    force*)
+	command_args=${command_args#force};
+	;;
+    fast*)
+	command_args=${command_args#fast};
+	;;
+    restart)
+	command_args="stop"
+	run_rc_command "stop"
+	command_args="start"
+	run_rc_command "start"
+	exit 0
+	;;
+esac
+
+run_rc_command "$1"

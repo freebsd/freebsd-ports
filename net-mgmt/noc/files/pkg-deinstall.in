@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+NOCDIR=%%NOCDIR%%
+NOCDBDIR=%%NOCDBDIR%%
+NOCUSER=%%NOCUSER%%
+NOCGROUP=%%NOCGROUP%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+    if /usr/sbin/pw group show "${NOCGROUP}" 2>&1 >/dev/null; then
+	echo "You should manually remove the \"${NOCGROUP}\" group."
+    fi
+
+    if /usr/sbin/pw user show "${NOCUSER}" 2>&1 >/dev/null; then
+	echo "You should manually remove the \"${NOCUSER}\" user."
+    fi
+
+    ##
+    ## Remove created directories
+    ##
+    for d in ${NOCDIR}/local ${NOCDIR}/static/doc ${NOCDIR} ${NOCDBDIR}/repo ${NOCDBDIR}/backup ${NOCDBDIR} /var/log/noc; do
+	if [ -e $d ]; then
+	    echo "You should manually remove the \"${d}\" directory."
+	fi
+    done
+fi
