@@ -1,20 +1,15 @@
-from the Web page:
- 
-   SpiralLoops is an experimental loop-based sampler for Linux or
-   FreeBSD.
+SpiralLoops is an experimental loop-based sampler for Linux and FreeBSD.
 
-   The idea of SpiralLoops is to provide a simple, visual tool for
-   looping and layering of sounds; which can be sourced from either wav
-   files on disk, or from sound-generating plugins.
+The idea of SpiralLoops is to provide a simple, visual tool for looping
+and layering of sounds; which can be sourced from either WAV files on disk,
+or from sound-generating plugins.
 
-   SpiralLoops allows you to create loop based compositions with the
-   minimum feedback time between the decisions you make and your ears.
-   The looping mechanism is very flexible, you can lock the timing of
-   loops together, or offset them for creating complex sequences, such as
-   polyrhythms.
+SpiralLoops allows you to create loop-based compositions with the minimum
+feedback time between the decisions you make and your ears.  The looping
+mechanism is very flexible; you can lock the timing of loops together, or
+offset them for creating complex sequences, such as polyrhythms.
 
-Instructions for using the program are on its home page.
+Loop triggers can be used to cause interaction between the loops, and as
+an experimental way of creating music.
 
-WWW:  http://www.pawfal.org/Software/SpiralLoops/
-
-Trevor Johnson
+WWW: http://www.pawfal.org/Software/SpiralLoops/
