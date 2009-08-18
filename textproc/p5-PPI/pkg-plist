@@ -7,6 +7,7 @@
 %%SITE_PERL%%/PPI/Dumper.pm
 %%SITE_PERL%%/PPI/Element.pm
 %%SITE_PERL%%/PPI/Exception.pm
+%%SITE_PERL%%/PPI/Exception/ParserRejection.pm
 %%SITE_PERL%%/PPI/Exception/ParserTimeout.pm
 %%SITE_PERL%%/PPI/Find.pm
 %%SITE_PERL%%/PPI/Lexer.pm
@@ -19,6 +20,7 @@
 %%SITE_PERL%%/PPI/Statement/Data.pm
 %%SITE_PERL%%/PPI/Statement/End.pm
 %%SITE_PERL%%/PPI/Statement/Expression.pm
+%%SITE_PERL%%/PPI/Statement/Given.pm
 %%SITE_PERL%%/PPI/Statement/Include.pm
 %%SITE_PERL%%/PPI/Statement/Include/Perl6.pm
 %%SITE_PERL%%/PPI/Statement/Null.pm
@@ -28,17 +30,21 @@
 %%SITE_PERL%%/PPI/Statement/Unknown.pm
 %%SITE_PERL%%/PPI/Statement/UnmatchedBrace.pm
 %%SITE_PERL%%/PPI/Statement/Variable.pm
+%%SITE_PERL%%/PPI/Statement/When.pm
 %%SITE_PERL%%/PPI/Structure.pm
 %%SITE_PERL%%/PPI/Structure/Block.pm
 %%SITE_PERL%%/PPI/Structure/Condition.pm
 %%SITE_PERL%%/PPI/Structure/Constructor.pm
-%%SITE_PERL%%/PPI/Structure/ForLoop.pm
+%%SITE_PERL%%/PPI/Structure/For.pm
+%%SITE_PERL%%/PPI/Structure/Given.pm
 %%SITE_PERL%%/PPI/Structure/List.pm
 %%SITE_PERL%%/PPI/Structure/Subscript.pm
 %%SITE_PERL%%/PPI/Structure/Unknown.pm
+%%SITE_PERL%%/PPI/Structure/When.pm
 %%SITE_PERL%%/PPI/Token.pm
 %%SITE_PERL%%/PPI/Token/ArrayIndex.pm
 %%SITE_PERL%%/PPI/Token/Attribute.pm
+%%SITE_PERL%%/PPI/Token/BOM.pm
 %%SITE_PERL%%/PPI/Token/Cast.pm
 %%SITE_PERL%%/PPI/Token/Comment.pm
 %%SITE_PERL%%/PPI/Token/DashedWord.pm
@@ -83,7 +89,9 @@
 %%SITE_PERL%%/PPI/Token/_QuoteEngine/Simple.pm
 %%SITE_PERL%%/PPI/Tokenizer.pm
 %%SITE_PERL%%/PPI/Transform.pm
+%%SITE_PERL%%/PPI/Transform/UpdateCopyright.pm
 %%SITE_PERL%%/PPI/Util.pm
+%%SITE_PERL%%/PPI/XSAccessor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/.packlist
 @dirrm %%SITE_PERL%%/PPI/Token/_QuoteEngine
 @dirrm %%SITE_PERL%%/PPI/Token/QuoteLike
@@ -98,4 +106,5 @@
 @dirrmtry %%SITE_PERL%%/PPI/Document
 @dirrmtry %%SITE_PERL%%/PPI/Normal
 @dirrmtry %%SITE_PERL%%/PPI/Token
+@dirrmtry %%SITE_PERL%%/PPI/Transform
 @dirrmtry %%SITE_PERL%%/PPI
