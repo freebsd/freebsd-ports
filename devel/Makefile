@@ -2522,6 +2522,7 @@
     SUBDIR += py-yaml
     SUBDIR += py-ydbf
     SUBDIR += py-zconfig
+    SUBDIR += py-zope.exceptions
     SUBDIR += py-zopeInterface
     SUBDIR += py-zopetesting
     SUBDIR += py_otp_interface
