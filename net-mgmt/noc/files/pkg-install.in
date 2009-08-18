@@ -1,0 +1,114 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+NOCDIR=%%NOCDIR%%
+NOCDBDIR=%%NOCDBDIR%%
+NOCUSER=%%NOCUSER%%
+NOCGROUP=%%NOCGROUP%%
+NOCUID=%%NOCUID%%
+NOCGID=%%NOCGID%%
+LOCALSTATE_DIR=%%LOCALSTATE_DIR%%
+
+ask() {
+  local question default answer
+
+  question=$1
+  default=$2
+  if [ -z "${PACKAGE_BUILDING}" ]; then
+    read -p "${question} [${default}]? " answer
+  fi
+  if [ "x${answer}" = "x" ]; then
+    answer=${default}
+  fi
+  echo ${answer}
+}
+
+yesno() {
+  local default question answer
+
+  question=$1
+  default=$2
+  while :; do
+    answer=$(ask "${question}" "${default}")
+    case "${answer}" in
+      [Yy][Ee][Ss]|[Yy])
+        return 0
+        ;;
+      [Nn][Oo]|[Nn])
+        return 1
+        ;;
+    esac
+    echo "Please answer yes or no."
+   done
+}
+
+if [ "$2" = "PRE-INSTALL" ]; then
+  if /usr/sbin/pw group show "${NOCGROUP}" 2>&1 >/dev/null; then
+    echo "You already have a \"${NOCGROUP}\" group, so I will use it."
+  else
+    echo "You need a \"${NOCGROUP}\" group."
+    if yesno "Would you like me to create it" "YES"; then
+      /usr/sbin/pw groupadd "${NOCGROUP}" -g "${NOCGID}" -h - || \
+        /usr/sbin/pw groupadd "${NOCGROUP}" -h - || exit
+      echo "Done."
+    else
+      echo "Please create the \"${NOCGROUP}\" group manually and try again."
+      exit 1
+    fi
+  fi
+
+  if /usr/sbin/pw user show "${NOCUSER}" 2>&1 >/dev/null; then
+    echo "You already have a \"${NOCUSER}\" user, so I will use it."
+  else
+    echo "You need a \"${NOCUSER}\" user."
+    if yesno "Would you like me to create it" "YES"; then
+      /usr/sbin/pw useradd "${NOCUSER}" -u "${NOCUID}" -g "${NOCGROUP}" -h - -d "${NOCDIR}" \
+        -c "NOC pseudo-user" || \
+        /usr/sbin/pw useradd "${NOCUSER}" -g "${NOCGROUP}" -h - -d "${NOCDIR}" \
+        -c "NOC pseudo-user" || exit
+    else
+      echo "Please create the \"${NOCUSER}\" user manually and try again."
+      exit 1
+    fi
+  fi
+
+  if ! [ -x ${NOCDIR} ] ; then
+      mkdir -p ${NOCDIR};
+      chown ${NOCUSER}:${NOCGROUP} ${NOCDIR}
+  fi
+
+  mkdir -p ${LOCALSTATE_DIR}
+  if [ ! -d ${LOCALSTATE_DIR} ] ; then
+      echo "Creating \"${LOCALSTATE_DIR}\" failed."
+      exit 1
+  fi
+
+  chown -R ${NOCUSER}:${NOCGROUP} ${LOCALSTATE_DIR}
+fi
+
+if [ "$2" = "POST-INSTALL" ]; then
+    ##
+    ## Copy default config files
+    ##
+    for d in ${NOCDIR}/etc/*.defaults; do
+	conf=${d%%.defaults}.conf
+	if [ ! -f $conf ]; then
+	    cp $d $conf
+	fi
+    done
+    ##
+    ## Fix privileges
+    ##
+    chmod 640 ${NOCDIR}/etc/*.conf
+    chown ${NOCUSER}:${NOCGROUP} ${NOCDIR}/etc/*.conf
+    chmod -R +r ${NOCDIR}/share/mibs/
+    ##
+    ## Create required directories
+    ##
+    for d in ${NOCDIR}/local ${NOCDIR}/static/doc ${NOCDBDIR}/repo ${NOCDBDIR}/backup /var/log/noc; do
+	[ ! -d $d ] && mkdir -p $d
+	chown -R ${NOCUSER}:${NOCGROUP} $d
+    done
+fi

@@ -1,0 +1,21 @@
+NOC Project is an Operation Support System (OSS) for the Telco, 
+Service provider and Enterprise Network Operation Centers (NOC).
+
+Areas covered by NOC:
+    * Fault Management
+    * Service Activation/Provisioning
+    * Knowledge Base
+    * Multi-VRF Address space management
+    * Virtual Circuits management (VLAN, DLCI, etc)
+    * Configuration Management
+    * DNS provisioning
+    * Peering management, RPSL and BGP filters generator, integrated 
+      looking glass
+    * Reporting 
+
+NOC Project is distributed under the term of BSD-like LICENSE.
+
+Enjoy!
+The NOC Project Team 
+
+WWW: http://www.nocproject.org/
