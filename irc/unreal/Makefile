@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Unreal
-PORTVERSION=	3.2.7
-PORTREVISION=	3
+PORTVERSION=	3.2.8.1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://unrealircd.pimpmylinux.org/ \
 		http://unrealircd.icedslash.com/
@@ -18,7 +17,7 @@ COMMENT=	Unreal - the next generation ircd
 
 LIB_DEPENDS=	cares.2:${PORTSDIR}/dns/c-ares
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}3.2
 
 MODULESDIR=	${PREFIX}/lib/${PORTNAME}
 CONFIGDIR=	${PREFIX}/etc/${PORTNAME}
