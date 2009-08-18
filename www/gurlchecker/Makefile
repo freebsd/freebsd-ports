@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	547
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Gnome program to check a page/website for broken links
 
-LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2 \
-		gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2
 
 OPTIONS=	CROCO "Use CROCO library for CSS2 validation" off \
 		TIDY "Use TIDY library for HTML w3c validation" off \
@@ -59,7 +58,7 @@ CONFIGURE_ARGS+=	--disable-clamav
 .if defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=	--disable-gnutls
 .else
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 .endif
 
 post-patch:
