@@ -1,13 +1,19 @@
-TurboGears brings together four major pieces to create an easy to install, easy
-to use web megaframework. It covers everything from front end (MochiKit
-JavaScript for the browser, Kid for templates in Python) to the controllers
-(CherryPy) to the back end (SQLObject).
+TurboGears 2 is a reinvention of the TurboGears project to take
+advantage of new components, and to provide a fully customizable
+WSGI (Web Server Gateway Interface) stack. From the beginning
+TurboGears was designed to be a Full Stack framework built from
+best-of-breed components. New components have been released which
+improved on the ones in the original TGstack, and the Python web
+world has been increasingly designed around WSGI.
 
-The TurboGears project is focused on providing documentation and integration
-with these tools without losing touch with the communities that already exist
-around those tools.
+This has enabled a whole new world of reuse, and TG2 is designed
+to take advantage of this fact in order to make a framework which
+provides easy to use, productive defaults, while still providing
+flexibility where it is useful.
 
-TurboGears is easy to use for a wide range of web applications.
+TG2 represents a change from some of the components in TurboGears 1,
+but we have now invested in a set of components that we think will
+continue to be at the center of python web development for years to
+come.
 
-Author:	Kevin Dangoor et alii
 WWW:	http://www.turbogears.org/
