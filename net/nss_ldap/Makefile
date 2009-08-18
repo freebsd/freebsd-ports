@@ -7,7 +7,7 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
@@ -36,6 +36,11 @@ CONFIGURE_ARGS=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf \
 
 MAN5=	nss_ldap.5
 
+.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_KERBEROS)
+CONFIGURE_ARGS+=--enable-configurable-krb5-ccname-env
+.endif
+
 post-extract:
 	${CP} ${FILESDIR}/bsdnss.c ${WRKSRC}
 
@@ -47,4 +52,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${MAN5PREFIX}/man/man5
 	${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
