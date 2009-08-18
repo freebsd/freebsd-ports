@@ -1325,6 +1325,7 @@
     SUBDIR += py-tgwebservices
     SUBDIR += py-turbodjango
     SUBDIR += py-turbogears
+    SUBDIR += py-turbogears2
     SUBDIR += py-turbosetup
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2

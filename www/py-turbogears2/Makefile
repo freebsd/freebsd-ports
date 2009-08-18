@@ -1,72 +1,29 @@
-# New ports collection makefile for:	turbogears
-# Date created:		2006-01-08
-# Whom:			Nicola Vitale	<nivit@email.it>
+# New ports collection makefile for:	turbogears2
+# Date created:		9 Aug, 2009
+# Whom:			Wen Heping	<wenheping@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	TurboGears
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTNAME=	TurboGears2
+PORTVERSION=	2.0.1
 CATEGORIES=	www python
-MASTER_SITES=	http://files.turbogears.org/eggs/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.turbogears.org/2.0/downloads/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Python-Based Framework for Rapid Web Development
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy-old>=2.3:${PORTSDIR}/www/py-cherrypy-old \
-		${PYTHON_PKGNAMEPREFIX}configobj>=4.5.3:${PORTSDIR}/devel/py-configobj \
-		${PYTHON_PKGNAMEPREFIX}formencode>=0.6_1:${PORTSDIR}/www/py-formencode \
-		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.7.3:${PORTSDIR}/www/py-pastescript \
-		${PYTHON_PKGNAMEPREFIX}RuleDispatch>=0.5.a0.r2303:${PORTSDIR}/devel/py-ruledispatch \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=1.4:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}TurboCheetah>=1.0:${PORTSDIR}/devel/py-turbocheetah \
-		${PYTHON_PKGNAMEPREFIX}TurboKid>=1.0.4:${PORTSDIR}/devel/py-turbokid \
-		${PYTHON_PKGNAMEPREFIX}TurboJson>=1.1.4:${PORTSDIR}/devel/py-turbojson11
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0.9.4:${PORTSDIR}/devel/py-ToscaWidgets \
+		${PYTHON_PKGNAMEPREFIX}Genshi>=0.5.1:${PORTSDIR}/textproc/py-genshi \
+		${PYTHON_PKGNAMEPREFIX}WebFlash>=0.1a8:${PORTSDIR}/www/py-WebFlash \
+		${PYTHON_PKGNAMEPREFIX}WebError>=0.10.1:${PORTSDIR}/www/py-WebError \
+		${PYTHON_PKGNAMEPREFIX}repoze.tm2>=0:${PORTSDIR}/devel/py-repoze.tm2 \
+		${PYTHON_PKGNAMEPREFIX}TurboJson>=1.2.1:${PORTSDIR}/devel/py-turbojson \
+		${PYTHON_PKGNAMEPREFIX}repoze.who>=1.0.0:${PORTSDIR}/devel/py-repoze.who \
+		${PYTHON_PKGNAMEPREFIX}repoze.what-pylons>=1.0:${PORTSDIR}/devel/py-repoze.what-pylons
 
-USE_GETTEXT=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-OPTIONS+=	ELIXIR	"Use Elixir as plugin" off \
-		GENSHI	"Use Genshi as plugin TG[future]" off \
-		NOSE	"Use nose TG[testtools]" off \
-		PYSQLITE	"Use SQLite as DB backend" off \
-		SQLOBJECT	"Use SQLObject as DB backend" on \
-		SQLALCHEMY	"Use SQLAlchemy as DB backend TG[future]" off
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 250
-PYEASYINSTALL_UNINSTALLARGS=	-q -m -N -S ${PYTHON_SITELIBDIR} -d ${PYEASYINSTALL_SITELIBDIR} -s ${PYEASYINSTALL_BINDIR} ${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
-.endif
-
-.if defined (WITH_ELIXIR)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Elixir>=0.6.1:${PORTSDIR}/databases/py-Elixir
-.endif
-
-.if defined (WITH_GENSHI)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.3.6:${PORTSDIR}/textproc/py-genshi
-.endif
-
-.if defined (WITH_NOSE)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>=0.9.1:${PORTSDIR}/devel/py-nose
-.endif
-
-# Python 2.5 already includes SQLite
-.if defined (WITH_PYSQLITE) && (${PYTHON_REL} < 250)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pysqlite>=2.0.7_1:${PORTSDIR}/databases/py-pysqlite22
-.endif
-
-.if defined (WITH_SQLOBJECT)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlobject>=0.10.1:${PORTSDIR}/databases/py-sqlobject
-.endif
-
-.if defined (WITH_SQLALCHEMY)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.3.4:${PORTSDIR}/databases/py-sqlalchemy
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
