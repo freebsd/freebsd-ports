@@ -17,30 +17,12 @@ otrs/bin/PostMasterDaemon.pl
 otrs/bin/PostMasterMailbox.pl
 otrs/bin/PostMasterPOP3.pl
 otrs/bin/RebuildTicketIndex.pl
+otrs/bin/SetPermissions.pl
 otrs/bin/SetPermissions.sh
 otrs/bin/StatsExportToOPM.pl
 otrs/bin/UnitTest.pl
 otrs/bin/UnlockTickets.pl
 otrs/bin/XMLMaster.pl
-otrs/bin/mkStats.pl
-otrs/bin/opm.pl
-otrs/bin/otrs.CreateNewTranslationFile
-otrs/bin/otrs.RebuildConfig.pl
-otrs/bin/otrs.RebuildEscalationIndex.pl
-otrs/bin/otrs.RebuildFulltextIndex.pl
-otrs/bin/otrs.addGroup
-otrs/bin/otrs.addQueue
-otrs/bin/otrs.addStdResponse2Queue
-otrs/bin/otrs.addUser
-otrs/bin/otrs.addUser2Group
-otrs/bin/otrs.checkModules
-otrs/bin/otrs.cleanup
-otrs/bin/otrs.getConfig
-otrs/bin/otrs.getGroupID
-otrs/bin/otrs.getTicketThread
-otrs/bin/otrs.getUserID
-otrs/bin/otrs.setPassword
-otrs/bin/xml2sql.pl
 otrs/bin/cgi-bin/customer.pl
 otrs/bin/cgi-bin/index.pl
 otrs/bin/cgi-bin/installer.pl
@@ -49,7 +31,25 @@ otrs/bin/cgi-bin/rpc.pl
 otrs/bin/fcgi-bin/customer.fpl
 otrs/bin/fcgi-bin/index.fpl
 otrs/bin/fcgi-bin/public.fpl
-otrs/scripts/DBUpdate-to-2.3.pl
+otrs/bin/mkStats.pl
+otrs/bin/opm.pl
+otrs/bin/otrs.ArticleStorageSwitch.pl
+otrs/bin/otrs.CacheDelete.pl
+otrs/bin/otrs.CreateNewTranslationFile
+otrs/bin/otrs.RebuildConfig.pl
+otrs/bin/otrs.RebuildEscalationIndex.pl
+otrs/bin/otrs.RebuildFulltextIndex.pl
+otrs/bin/otrs.addGroup
+otrs/bin/otrs.addQueue
+otrs/bin/otrs.addRole
+otrs/bin/otrs.addUser
+otrs/bin/otrs.addUser2Group
+otrs/bin/otrs.checkModules
+otrs/bin/otrs.cleanup
+otrs/bin/otrs.getConfig
+otrs/bin/otrs.getTicketThread
+otrs/bin/otrs.setPassword
+otrs/bin/xml2sql.pl
 otrs/scripts/DBUpdate-to-1.0.mysql.sql
 otrs/scripts/DBUpdate-to-1.0.postgresql.sql
 otrs/scripts/DBUpdate-to-1.1.mysql.sql
@@ -69,6 +69,7 @@ otrs/scripts/DBUpdate-to-2.2.mssql.sql
 otrs/scripts/DBUpdate-to-2.2.mysql.sql
 otrs/scripts/DBUpdate-to-2.2.oracle.sql
 otrs/scripts/DBUpdate-to-2.2.postgresql.sql
+otrs/scripts/DBUpdate-to-2.3.pl
 otrs/scripts/DBUpdate-to-2.3-post.db2.sql
 otrs/scripts/DBUpdate-to-2.3-post.maxdb.sql
 otrs/scripts/DBUpdate-to-2.3-post.mssql.sql
@@ -81,6 +82,20 @@ otrs/scripts/DBUpdate-to-2.3.mssql.sql
 otrs/scripts/DBUpdate-to-2.3.mysql.sql
 otrs/scripts/DBUpdate-to-2.3.oracle.sql
 otrs/scripts/DBUpdate-to-2.3.postgresql.sql
+otrs/scripts/DBUpdate-to-2.4.pl
+otrs/scripts/DBUpdate-to-2.4-post.db2.sql
+otrs/scripts/DBUpdate-to-2.4-post.ingres.sql
+otrs/scripts/DBUpdate-to-2.4-post.maxdb.sql
+otrs/scripts/DBUpdate-to-2.4-post.mssql.sql
+otrs/scripts/DBUpdate-to-2.4-post.mysql.sql
+otrs/scripts/DBUpdate-to-2.4-post.oracle.sql
+otrs/scripts/DBUpdate-to-2.4-post.postgresql.sql
+otrs/scripts/DBUpdate-to-2.4.db2.sql
+otrs/scripts/DBUpdate-to-2.4.ingres.sql
+otrs/scripts/DBUpdate-to-2.4.mssql.sql
+otrs/scripts/DBUpdate-to-2.4.mysql.sql
+otrs/scripts/DBUpdate-to-2.4.oracle.sql
+otrs/scripts/DBUpdate-to-2.4.postgresql.sql
 otrs/scripts/SystemStatsGeneric.pm
 otrs/scripts/apache-httpd.conf
 otrs/scripts/apache-httpd.include.conf
@@ -92,7 +107,6 @@ otrs/scripts/auto_docbuild.sh
 otrs/scripts/backup.pl
 otrs/scripts/database/otrs-initial_insert.db2.sql
 otrs/scripts/database/otrs-initial_insert.ingres.sql
-otrs/scripts/database/otrs-initial_insert.maxdb.sql
 otrs/scripts/database/otrs-initial_insert.mssql.sql
 otrs/scripts/database/otrs-initial_insert.mysql.sql
 otrs/scripts/database/otrs-initial_insert.oracle.sql
@@ -100,14 +114,12 @@ otrs/scripts/database/otrs-initial_insert.postgresql.sql
 otrs/scripts/database/otrs-initial_insert.xml
 otrs/scripts/database/otrs-schema-post.db2.sql
 otrs/scripts/database/otrs-schema-post.ingres.sql
-otrs/scripts/database/otrs-schema-post.maxdb.sql
 otrs/scripts/database/otrs-schema-post.mssql.sql
 otrs/scripts/database/otrs-schema-post.mysql.sql
 otrs/scripts/database/otrs-schema-post.oracle.sql
 otrs/scripts/database/otrs-schema-post.postgresql.sql
 otrs/scripts/database/otrs-schema.db2.sql
 otrs/scripts/database/otrs-schema.ingres.sql
-otrs/scripts/database/otrs-schema.maxdb.sql
 otrs/scripts/database/otrs-schema.mssql.sql
 otrs/scripts/database/otrs-schema.mysql.sql
 otrs/scripts/database/otrs-schema.oracle.sql
@@ -116,6 +128,8 @@ otrs/scripts/database/otrs-schema.xml
 otrs/scripts/database/update/otrs-upgrade-to-2.2.xml
 otrs/scripts/database/update/otrs-upgrade-to-2.3-post.xml
 otrs/scripts/database/update/otrs-upgrade-to-2.3.xml
+otrs/scripts/database/update/otrs-upgrade-to-2.4-post.xml
+otrs/scripts/database/update/otrs-upgrade-to-2.4.xml
 otrs/scripts/login.php
 otrs/scripts/login.pl
 otrs/scripts/restore.pl
@@ -133,9 +147,11 @@ otrs/scripts/test/CustomerUserService.t
 otrs/scripts/test/DB.t
 otrs/scripts/test/Email.t
 otrs/scripts/test/EmailParser.t
+otrs/scripts/test/Encode.t
 otrs/scripts/test/FileTemp.t
 otrs/scripts/test/GenericAgent.t
 otrs/scripts/test/Group.t
+otrs/scripts/test/HTMLUtils.t
 otrs/scripts/test/Layout.t
 otrs/scripts/test/LinkObject.t
 otrs/scripts/test/MailAccount.t
@@ -181,6 +197,10 @@ otrs/var/cron/postmaster_mailbox.dist
 otrs/var/cron/rebuild_ticket_index.dist
 otrs/var/cron/session.dist
 otrs/var/cron/unlock.dist
+otrs/var/httpd/htdocs/css/Lite/agent.css
+otrs/var/httpd/htdocs/css/Lite/customer.css
+otrs/var/httpd/htdocs/css/Standard/agent.css
+otrs/var/httpd/htdocs/css/Standard/customer.css
 otrs/var/httpd/htdocs/index.html
 otrs/var/httpd/htdocs/images/Standard/admin.png
 otrs/var/httpd/htdocs/images/Standard/attach-small.png
@@ -189,19 +209,23 @@ otrs/var/httpd/htdocs/images/Standard/back.png
 otrs/var/httpd/htdocs/images/Standard/calendar-small.png
 otrs/var/httpd/htdocs/images/Standard/checkbox_arrow_left_up.png
 otrs/var/httpd/htdocs/images/Standard/close.png
+otrs/var/httpd/htdocs/images/Standard/collapse-up.png
 otrs/var/httpd/htdocs/images/Standard/collapse.png
 otrs/var/httpd/htdocs/images/Standard/contents.png
+otrs/var/httpd/htdocs/images/Standard/dashboard.png
 otrs/var/httpd/htdocs/images/Standard/desktop.png
 otrs/var/httpd/htdocs/images/Standard/disk-s.png
 otrs/var/httpd/htdocs/images/Standard/disk.png
 otrs/var/httpd/htdocs/images/Standard/down-big.png
 otrs/var/httpd/htdocs/images/Standard/down-small.png
 otrs/var/httpd/htdocs/images/Standard/down.png
+otrs/var/httpd/htdocs/images/Standard/edit-setting.png
 otrs/var/httpd/htdocs/images/Standard/edit.png
 otrs/var/httpd/htdocs/images/Standard/edittrash.png
 otrs/var/httpd/htdocs/images/Standard/empty.png
 otrs/var/httpd/htdocs/images/Standard/error.png
 otrs/var/httpd/htdocs/images/Standard/exit.png
+otrs/var/httpd/htdocs/images/Standard/expand-down.png
 otrs/var/httpd/htdocs/images/Standard/expand.png
 otrs/var/httpd/htdocs/images/Standard/fileopen.png
 otrs/var/httpd/htdocs/images/Standard/folder.png
@@ -249,6 +273,12 @@ otrs/var/httpd/htdocs/images/Standard/note.png
 otrs/var/httpd/htdocs/images/Standard/notready-sw.png
 otrs/var/httpd/htdocs/images/Standard/notready.png
 otrs/var/httpd/htdocs/images/Standard/overview.png
+otrs/var/httpd/htdocs/images/Standard/overviewmedium-selected.png
+otrs/var/httpd/htdocs/images/Standard/overviewmedium.png
+otrs/var/httpd/htdocs/images/Standard/overviewpreview-selected.png
+otrs/var/httpd/htdocs/images/Standard/overviewpreview.png
+otrs/var/httpd/htdocs/images/Standard/overviewsmall-selected.png
+otrs/var/httpd/htdocs/images/Standard/overviewsmall.png
 otrs/var/httpd/htdocs/images/Standard/pdf.png
 otrs/var/httpd/htdocs/images/Standard/personal.png
 otrs/var/httpd/htdocs/images/Standard/phone-new.png
@@ -282,8 +312,329 @@ otrs/var/httpd/htdocs/images/Standard/xing.png
 otrs/var/httpd/htdocs/images/Standard/yellowled-small.png
 otrs/var/httpd/htdocs/images/Standard/yellowled.png
 otrs/var/httpd/htdocs/images/Standard/zoom.png
-otrs/var/httpd/htdocs/prototype.js
-otrs/var/packages/Support-1.0.13.opm
+otrs/var/httpd/htdocs/js/accordion.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/License-fckeditor.txt
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckcontextmenu.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdataprocessor.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdocumentfragment_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdocumentfragment_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdomrange.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdomrange_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdomrange_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdomrangeiterator.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckeditingarea.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckelementpath.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckenterkey.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckevents.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckhtmliterator.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckicon.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckiecleanup.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckimagepreloader.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckkeystrokehandler.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckmenublock.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckmenublockpanel.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckmenuitem.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckpanel.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckplugin.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckspecialcombo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckstyle.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbar.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarbreak_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarbreak_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarbutton.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarbuttonui.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarfontformatcombo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarfontscombo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarfontsizecombo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarpanelbutton.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarspecialcombo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarstylecombo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckw3crange.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckxml.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckxml_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckxml_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fck_othercommands.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckblockquotecommand.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckcorestylecommand.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckfitwindow.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckindentcommands.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckjustifycommands.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fcklistcommands.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fcknamedcommand.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckpasteplaintextcommand.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckpastewordcommand.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckremoveformatcommand.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckshowblocks.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckspellcheckcommand_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckspellcheckcommand_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckstylecommand.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fcktablecommand.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fcktextcolorcommand.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/fckconstants.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/fckeditorapi.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/fckjscoreextensions.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/fckscriptloader.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fck.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fck_contextmenu.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fck_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fck_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckbrowserinfo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckcodeformatter.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckcommands.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckconfig.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdebug.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdebug_empty.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdialog.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdocumentprocessor.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdomtools.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcklanguagemanager.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcklisthandler.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcklistslib.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckplugins.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckregexlib.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckselection.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckselection_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckselection_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckstyles.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktablehandler.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktablehandler_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktablehandler_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktoolbaritems.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktoolbarset.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktools.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktools_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktools_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckundo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckurlparams.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckxhtml.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckxhtml_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckxhtml_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckxhtmlentities.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/behaviors/disablehandles.htc
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/behaviors/showtableborders.htc
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/fck_editorarea.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/fck_internal.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/fck_showtableborders_gecko.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_address.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_blockquote.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_div.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h1.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h2.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h3.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h4.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h5.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h6.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_p.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_pre.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_anchor.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_flashlogo.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_hiddenfield.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_pagebreak.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_plugin.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/fck_dialog_common.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/fck_dialog_common.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/images/locked.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/images/reset.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/images/unlocked.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about/logo_fckeditor.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about/logo_fredck.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about/sponsors/spellchecker_net.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_anchor.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_button.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_checkbox.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_colorselector.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_div.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_docprops.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_docprops/fck_document_preview.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_flash.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_flash/fck_flash.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_flash/fck_flash_preview.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_form.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_hiddenfield.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_image.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_image/fck_image.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_image/fck_image_preview.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_link.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_link/fck_link.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_listprop.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_paste.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_radiobutton.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_replace.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_select.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_select/fck_select.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_smiley.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_source.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_specialchar.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/blank.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/controls.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/spellChecker.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/wordWindow.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_table.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_tablecell.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template/images/template1.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template/images/template2.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template/images/template3.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_textarea.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_textfield.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/fckdebug.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/fckdialog.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/fckeditor.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/fckeditor.original.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/anchor.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/arrow_ltr.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/arrow_rtl.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/angel_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/angry_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/broken_heart.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/cake.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/confused_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/cry_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/devil_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/embaressed_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/envelope.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/heart.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/kiss.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/lightbulb.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/omg_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/regular_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/sad_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/shades_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/teeth_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/thumbs_down.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/thumbs_up.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/tounge_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/whatchutalkingabout_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/wink_smile.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/spacer.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/js/fckadobeair.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/js/fckeditorcode_gecko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/js/fckeditorcode_ie.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/af.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ar.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/bg.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/bn.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/bs.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ca.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/cs.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/da.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/de.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/el.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/en-au.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/en-ca.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/en-uk.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/en.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/eo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/es.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/et.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/eu.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fa.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fi.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fo.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fr-ca.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fr.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/gl.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/gu.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/he.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/hi.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/hr.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/hu.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/is.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/it.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ja.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/km.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ko.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/lt.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/lv.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/mn.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ms.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/nb.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/nl.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/no.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/pl.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/pt-br.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/pt.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ro.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ru.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sk.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sl.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sr-latn.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sr.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sv.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/th.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/tr.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/uk.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/vi.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/zh.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/_fckviewstrips.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/fck_dialog.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/fck_dialog_ie6.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/fck_editor.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/fck_strip.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/dialog.sides.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/dialog.sides.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/dialog.sides.rtl.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/sprites.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/sprites.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.arrowright.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.buttonarrow.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.collapse.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.end.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.expand.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.separator.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.start.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/fck_dialog.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/fck_dialog_ie6.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/fck_editor.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/fck_strip.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/dialog.sides.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/dialog.sides.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/dialog.sides.rtl.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/sprites.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/sprites.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.arrowright.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.bg.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.buttonarrow.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.collapse.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.end.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.expand.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.separator.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.start.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/fck_dialog.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/fck_dialog_ie6.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/fck_editor.css
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/fck_strip.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/dialog.sides.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/dialog.sides.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/dialog.sides.rtl.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/sprites.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/sprites.png
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.arrowright.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.buttonarrow.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.buttonbg.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.collapse.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.end.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.expand.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.separator.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.start.gif
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc/ciframe.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc/tmpFrameset.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc/w.html
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/fckconfig.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/fckeditor.js
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/fckstyles.xml
+otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/fcktemplates.xml
+otrs/var/httpd/htdocs/js/otrs.js
+otrs/var/httpd/htdocs/js/prototype.js
+otrs/var/httpd/htdocs/js/yui-image-uploader.js
+otrs/var/packages/Support-1.0.92.opm
 @unexec [ -s %D/otrs/var/log/TicketCounter.log ] || rm -f %D/otrs/var/log/TicketCounter.log
 @unexec if cmp -s %D/otrs/Kernel/Config.pm %D/otrs/Kernel/Config.pm.dist; then rm -f %D/otrs/Kernel/Config.pm; fi
 otrs/Kernel/Config.pm.dist
@@ -297,7 +648,6 @@ otrs/Kernel/Config/Files/Framework.xml
 otrs/Kernel/Config/Files/Ticket.xml
 otrs/Kernel/Language.pm
 otrs/Kernel/Language/ar_SA.pm
-otrs/Kernel/Language/bb.pm
 otrs/Kernel/Language/bg.pm
 otrs/Kernel/Language/ct.pm
 otrs/Kernel/Language/cz.pm
@@ -305,6 +655,8 @@ otrs/Kernel/Language/da.pm
 otrs/Kernel/Language/de.pm
 otrs/Kernel/Language/el.pm
 otrs/Kernel/Language/en.pm
+otrs/Kernel/Language/en_CA.pm
+otrs/Kernel/Language/en_GB.pm
 otrs/Kernel/Language/es.pm
 otrs/Kernel/Language/et.pm
 otrs/Kernel/Language/fa.pm
@@ -312,6 +664,7 @@ otrs/Kernel/Language/fi.pm
 otrs/Kernel/Language/fr.pm
 otrs/Kernel/Language/hu.pm
 otrs/Kernel/Language/it.pm
+otrs/Kernel/Language/lv.pm
 otrs/Kernel/Language/nb_NO.pm
 otrs/Kernel/Language/nl.pm
 otrs/Kernel/Language/pl.pm
@@ -325,6 +678,7 @@ otrs/Kernel/Language/vi_VN.pm
 otrs/Kernel/Language/xx_AgentZoom.pm
 otrs/Kernel/Language/xx_Custom.pm
 otrs/Kernel/Language/zh_CN.pm
+otrs/Kernel/Language/zh_TW.pm
 otrs/Kernel/Modules/Admin.pm
 otrs/Kernel/Modules/AdminAttachment.pm
 otrs/Kernel/Modules/AdminAutoResponse.pm
@@ -339,11 +693,12 @@ otrs/Kernel/Modules/AdminInit.pm
 otrs/Kernel/Modules/AdminLog.pm
 otrs/Kernel/Modules/AdminMailAccount.pm
 otrs/Kernel/Modules/AdminNotification.pm
+otrs/Kernel/Modules/AdminNotificationEvent.pm
 otrs/Kernel/Modules/AdminPGP.pm
 otrs/Kernel/Modules/AdminPackageManager.pm
 otrs/Kernel/Modules/AdminPerformanceLog.pm
-otrs/Kernel/Modules/AdminPriority.pm
 otrs/Kernel/Modules/AdminPostMasterFilter.pm
+otrs/Kernel/Modules/AdminPriority.pm
 otrs/Kernel/Modules/AdminQueue.pm
 otrs/Kernel/Modules/AdminQueueAutoResponse.pm
 otrs/Kernel/Modules/AdminQueueResponses.pm
@@ -366,6 +721,12 @@ otrs/Kernel/Modules/AdminType.pm
 otrs/Kernel/Modules/AdminUser.pm
 otrs/Kernel/Modules/AdminUserGroup.pm
 otrs/Kernel/Modules/AgentBook.pm
+otrs/Kernel/Modules/AgentCustomerSearch.pm
+otrs/Kernel/Modules/AgentDashboard.pm
+otrs/Kernel/Modules/AgentTicketLockedView.pm
+otrs/Kernel/Modules/AgentTicketResponsibleView.pm
+otrs/Kernel/Modules/AgentTicketWatchView.pm
+otrs/Kernel/Modules/PictureUpload.pm
 otrs/Kernel/Modules/AgentCalendarSmall.pm
 otrs/Kernel/Modules/AgentInfo.pm
 otrs/Kernel/Modules/AgentLinkObject.pm
@@ -379,7 +740,6 @@ otrs/Kernel/Modules/AgentTicketBulk.pm
 otrs/Kernel/Modules/AgentTicketClose.pm
 otrs/Kernel/Modules/AgentTicketCompose.pm
 otrs/Kernel/Modules/AgentTicketCustomer.pm
-otrs/Kernel/Modules/AgentTicketCustomerFollowUp.pm
 otrs/Kernel/Modules/AgentTicketEmail.pm
 otrs/Kernel/Modules/AgentTicketEscalationView.pm
 otrs/Kernel/Modules/AgentTicketForward.pm
@@ -427,6 +787,13 @@ otrs/Kernel/Output/HTML/ArticleComposeSign.pm
 otrs/Kernel/Output/HTML/CustomerNewTicketQueueSelectionGeneric.pm
 otrs/Kernel/Output/HTML/CustomerUserGeneric.pm
 otrs/Kernel/Output/HTML/CustomerUserGenericTicket.pm
+otrs/Kernel/Output/HTML/DashboardCalendar.pm
+otrs/Kernel/Output/HTML/DashboardImage.pm
+otrs/Kernel/Output/HTML/DashboardProductNotify.pm
+otrs/Kernel/Output/HTML/DashboardRSS.pm
+otrs/Kernel/Output/HTML/DashboardTicketGeneric.pm
+otrs/Kernel/Output/HTML/DashboardTicketStatsGeneric.pm
+otrs/Kernel/Output/HTML/DashboardUserOnline.pm
 otrs/Kernel/Output/HTML/HeaderMetaRefresh.pm
 otrs/Kernel/Output/HTML/HeaderMetaTicketSearch.pm
 otrs/Kernel/Output/HTML/Layout.pm
@@ -436,7 +803,6 @@ otrs/Kernel/Output/HTML/LayoutTicket.pm
 otrs/Kernel/Output/HTML/LinkObjectTicket.pm
 otrs/Kernel/Output/HTML/Lite/AgentNavigationBar.dtl
 otrs/Kernel/Output/HTML/Lite/AgentTicketQueue.dtl
-otrs/Kernel/Output/HTML/Lite/Copyright.dtl
 otrs/Kernel/Output/HTML/Lite/Footer.dtl
 otrs/Kernel/Output/HTML/Lite/FooterSmall.dtl
 otrs/Kernel/Output/HTML/Lite/Header.dtl
@@ -444,12 +810,10 @@ otrs/Kernel/Output/HTML/Lite/HeaderSmall.dtl
 otrs/Kernel/Output/HTML/Lite/Motd.dtl
 otrs/Kernel/Output/HTML/Lite/Notify.dtl
 otrs/Kernel/Output/HTML/Lite/Warning.dtl
-otrs/Kernel/Output/HTML/Lite/css.dtl
-otrs/Kernel/Output/HTML/Lite/customer-css.dtl
 otrs/Kernel/Output/HTML/NavBarCustomerCompany.pm
 otrs/Kernel/Output/HTML/NavBarLockedTickets.pm
 otrs/Kernel/Output/HTML/NavBarModuleAdmin.pm
-otrs/Kernel/Output/HTML/NavBarTicketBulkAction.pm
+otrs/Kernel/Output/HTML/NavBarTicketSearchFulltext.pm
 otrs/Kernel/Output/HTML/NavBarTicketSearchProfile.pm
 otrs/Kernel/Output/HTML/NavBarTicketWatcher.pm
 otrs/Kernel/Output/HTML/NotificationAgentOnline.pm
@@ -459,17 +823,21 @@ otrs/Kernel/Output/HTML/NotificationAgentTicketSeen.pm
 otrs/Kernel/Output/HTML/NotificationCharsetCheck.pm
 otrs/Kernel/Output/HTML/NotificationCustomerOnline.pm
 otrs/Kernel/Output/HTML/NotificationUIDCheck.pm
-otrs/Kernel/Output/HTML/OutputFilterActiveElement.pm
+otrs/Kernel/Output/HTML/OutputFilterTextAutoLink.pm
 otrs/Kernel/Output/HTML/OutputFilterTextURL.pm
 otrs/Kernel/Output/HTML/PreferencesCustomQueue.pm
 otrs/Kernel/Output/HTML/PreferencesGeneric.pm
 otrs/Kernel/Output/HTML/PreferencesLanguage.pm
+otrs/Kernel/Output/HTML/PreferencesOutOfOffice.pm
 otrs/Kernel/Output/HTML/PreferencesPGP.pm
 otrs/Kernel/Output/HTML/PreferencesPassword.pm
 otrs/Kernel/Output/HTML/PreferencesSMIME.pm
 otrs/Kernel/Output/HTML/PreferencesTheme.pm
+otrs/Kernel/Output/HTML/PreferencesTicketWatcher.pm
 otrs/Kernel/Output/HTML/PreferencesTimeZone.pm
 otrs/Kernel/Output/HTML/QueuePreferencesGeneric.pm
+otrs/Kernel/Output/HTML/SLAPreferencesGeneric.pm
+otrs/Kernel/Output/HTML/ServicePreferencesGeneric.pm
 otrs/Kernel/Output/HTML/Standard/AAABase.dtl
 otrs/Kernel/Output/HTML/Standard/AAAMonth.dtl
 otrs/Kernel/Output/HTML/Standard/AAANavBar.dtl
@@ -491,6 +859,7 @@ otrs/Kernel/Output/HTML/Standard/AdminGroupForm.dtl
 otrs/Kernel/Output/HTML/Standard/AdminLog.dtl
 otrs/Kernel/Output/HTML/Standard/AdminMailAccount.dtl
 otrs/Kernel/Output/HTML/Standard/AdminNavigationBar.dtl
+otrs/Kernel/Output/HTML/Standard/AdminNotificationEventForm.dtl
 otrs/Kernel/Output/HTML/Standard/AdminNotificationForm.dtl
 otrs/Kernel/Output/HTML/Standard/AdminPGPForm.dtl
 otrs/Kernel/Output/HTML/Standard/AdminPackageManager.dtl
@@ -512,6 +881,7 @@ otrs/Kernel/Output/HTML/Standard/AdminRoleUserForm.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSLA.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSMIMEForm.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSalutationForm.dtl
+otrs/Kernel/Output/HTML/Standard/AdminSecureMode.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSelectBoxForm.dtl
 otrs/Kernel/Output/HTML/Standard/AdminService.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSession.dtl
@@ -527,7 +897,16 @@ otrs/Kernel/Output/HTML/Standard/AdminUserGroupForm.dtl
 otrs/Kernel/Output/HTML/Standard/AgentBook.dtl
 otrs/Kernel/Output/HTML/Standard/AgentCalendarSmall.dtl
 otrs/Kernel/Output/HTML/Standard/AgentCalendarSmallIcon.dtl
+otrs/Kernel/Output/HTML/Standard/AgentCustomerSearch.dtl
 otrs/Kernel/Output/HTML/Standard/AgentCustomerTableView.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboard.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardCalendarOverview.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardImage.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardProductNotify.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardRSSOverview.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardTicketGeneric.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardTicketStats.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardUserOnline.dtl
 otrs/Kernel/Output/HTML/Standard/AgentInfo.dtl
 otrs/Kernel/Output/HTML/Standard/AgentLinkObject.dtl
 otrs/Kernel/Output/HTML/Standard/AgentLookup.dtl
@@ -548,17 +927,22 @@ otrs/Kernel/Output/HTML/Standard/AgentTicketBulk.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketClose.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketCompose.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketCustomer.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketCustomerMessage.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketEmail.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketEscalationView.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketEscalation.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketForward.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketFreeText.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketHistory.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketLocked.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketMailbox.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketMerge.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketMove.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketNote.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewMedium.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewMediumMeta.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewNavBar.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewNavBarSmall.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewPreview.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewPreviewMeta.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewSmall.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketOwner.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketPending.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketPhone.dtl
@@ -567,16 +951,13 @@ otrs/Kernel/Output/HTML/Standard/AgentTicketPlain.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketPrint.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketPriority.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketQueue.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketQueueTicketView.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketQueueTicketViewLite.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketResponsible.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketSearch.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketSearchOpenSearchDescription.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketSearchResult.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketSearchOpenSearchDescriptionFulltext.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketSearchOpenSearchDescriptionTicketNumber.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketSearchResultPrint.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketSearchResultShort.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketStatusView.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketZoom.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketZoomArticleFilterDialog.dtl
 otrs/Kernel/Output/HTML/Standard/AgentWindowTab.dtl
 otrs/Kernel/Output/HTML/Standard/Copyright.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerAccept.dtl
@@ -605,8 +986,8 @@ otrs/Kernel/Output/HTML/Standard/FooterSmall.dtl
 otrs/Kernel/Output/HTML/Standard/Header.dtl
 otrs/Kernel/Output/HTML/Standard/HeaderSmall.dtl
 otrs/Kernel/Output/HTML/Standard/Installer.dtl
-otrs/Kernel/Output/HTML/Standard/Login.dtl
 otrs/Kernel/Output/HTML/Standard/LinkObject.dtl
+otrs/Kernel/Output/HTML/Standard/Login.dtl
 otrs/Kernel/Output/HTML/Standard/Motd.dtl
 otrs/Kernel/Output/HTML/Standard/NoPermission.dtl
 otrs/Kernel/Output/HTML/Standard/Notify.dtl
@@ -614,19 +995,22 @@ otrs/Kernel/Output/HTML/Standard/PrintFooter.dtl
 otrs/Kernel/Output/HTML/Standard/PrintHeader.dtl
 otrs/Kernel/Output/HTML/Standard/PublicDefault.dtl
 otrs/Kernel/Output/HTML/Standard/Redirect.dtl
+otrs/Kernel/Output/HTML/Standard/RichTextEditor.dtl
 otrs/Kernel/Output/HTML/Standard/Test.dtl
 otrs/Kernel/Output/HTML/Standard/Warning.dtl
-otrs/Kernel/Output/HTML/Standard/css.dtl
-otrs/Kernel/Output/HTML/Standard/customer-css.dtl
 otrs/Kernel/Output/HTML/TicketMenuGeneric.pm
 otrs/Kernel/Output/HTML/TicketMenuLock.pm
 otrs/Kernel/Output/HTML/TicketMenuResponsible.pm
 otrs/Kernel/Output/HTML/TicketMenuTicketWatcher.pm
+otrs/Kernel/Output/HTML/TicketOverviewMedium.pm
+otrs/Kernel/Output/HTML/TicketOverviewPreview.pm
+otrs/Kernel/Output/HTML/TicketOverviewSmall.pm
 otrs/Kernel/System/Auth.pm
 otrs/Kernel/System/Auth/DB.pm
 otrs/Kernel/System/Auth/HTTPBasicAuth.pm
 otrs/Kernel/System/Auth/LDAP.pm
 otrs/Kernel/System/Auth/Radius.pm
+otrs/Kernel/System/Auth/Sync/LDAP.pm
 otrs/Kernel/System/AuthSession.pm
 otrs/Kernel/System/AuthSession/DB.pm
 otrs/Kernel/System/AuthSession/FS.pm
@@ -654,7 +1038,6 @@ otrs/Kernel/System/CustomerUser/Preferences/DB.pm
 otrs/Kernel/System/DB.pm
 otrs/Kernel/System/DB/db2.pm
 otrs/Kernel/System/DB/ingres.pm
-otrs/Kernel/System/DB/maxdb.pm
 otrs/Kernel/System/DB/mssql.pm
 otrs/Kernel/System/DB/mysql.pm
 otrs/Kernel/System/DB/oracle.pm
@@ -662,6 +1045,7 @@ otrs/Kernel/System/DB/postgresql.pm
 otrs/Kernel/System/Email.pm
 otrs/Kernel/System/Email/DoNotSendEmail.pm
 otrs/Kernel/System/Email/SMTP.pm
+otrs/Kernel/System/Email/SMTPS.pm
 otrs/Kernel/System/Email/Sendmail.pm
 otrs/Kernel/System/EmailParser.pm
 otrs/Kernel/System/Encode.pm
@@ -671,27 +1055,29 @@ otrs/Kernel/System/GenericAgent/AutoPriorityIncrease.pm
 otrs/Kernel/System/GenericAgent/NotifyAgentGroupOfCustomQueue.pm
 otrs/Kernel/System/GenericAgent/NotifyAgentGroupWithWritePermission.pm
 otrs/Kernel/System/Group.pm
+otrs/Kernel/System/HTMLUtils.pm
 otrs/Kernel/System/LinkObject.pm
 otrs/Kernel/System/LinkObject/Ticket.pm
 otrs/Kernel/System/Lock.pm
 otrs/Kernel/System/Log.pm
 otrs/Kernel/System/Log/File.pm
 otrs/Kernel/System/Log/SysLog.pm
-otrs/Kernel/System/Main.pm
 otrs/Kernel/System/MailAccount.pm
-otrs/Kernel/System/MailAccount/IMAPS.pm
 otrs/Kernel/System/MailAccount/IMAP.pm
-otrs/Kernel/System/MailAccount/POP3S.pm
+otrs/Kernel/System/MailAccount/IMAPS.pm
 otrs/Kernel/System/MailAccount/POP3.pm
+otrs/Kernel/System/MailAccount/POP3S.pm
+otrs/Kernel/System/Main.pm
 otrs/Kernel/System/Notification.pm
+otrs/Kernel/System/NotificationEvent.pm
 otrs/Kernel/System/PDF.pm
 otrs/Kernel/System/PID.pm
 otrs/Kernel/System/Package.pm
 otrs/Kernel/System/PostMaster.pm
 otrs/Kernel/System/PostMaster/DestQueue.pm
 otrs/Kernel/System/PostMaster/Filter.pm
-otrs/Kernel/System/PostMaster/Filter/AgentInterface.pm
 otrs/Kernel/System/PostMaster/Filter/CMD.pm
+otrs/Kernel/System/PostMaster/Filter/FollowUpArticleTypeCheck.pm
 otrs/Kernel/System/PostMaster/Filter/Match.pm
 otrs/Kernel/System/PostMaster/Filter/MatchDBSource.pm
 otrs/Kernel/System/PostMaster/Filter/NewTicketReject.pm
@@ -705,17 +1091,24 @@ otrs/Kernel/System/Priority.pm
 otrs/Kernel/System/Queue.pm
 otrs/Kernel/System/Queue/PreferencesDB.pm
 otrs/Kernel/System/SLA.pm
+otrs/Kernel/System/SLA/PreferencesDB.pm
 otrs/Kernel/System/Salutation.pm
 otrs/Kernel/System/SearchProfile.pm
 otrs/Kernel/System/Service.pm
+otrs/Kernel/System/Service/PreferencesDB.pm
 otrs/Kernel/System/Signature.pm
 otrs/Kernel/System/Spelling.pm
 otrs/Kernel/System/State.pm
 otrs/Kernel/System/Stats.pm
 otrs/Kernel/System/Stats/Dynamic/Ticket.pm
+otrs/Kernel/System/Stats/Dynamic/TicketAccountedTime.pm
+otrs/Kernel/System/Stats/Dynamic/TicketList.pm
+otrs/Kernel/System/Stats/Dynamic/TicketSolutionResponseTime.pm
+otrs/Kernel/System/Stats/Static/StateAction.pm
 otrs/Kernel/System/StdAttachment.pm
 otrs/Kernel/System/StdResponse.pm
 otrs/Kernel/System/SystemAddress.pm
+otrs/Kernel/System/TemplateGenerator.pm
 otrs/Kernel/System/Ticket.pm
 otrs/Kernel/System/Ticket/Acl/CloseParentAfterClosedChilds.pm
 otrs/Kernel/System/Ticket/Article.pm
@@ -728,11 +1121,13 @@ otrs/Kernel/System/Ticket/CustomerPermission/CustomerIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/CustomerUserIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/GroupCheck.pm
 otrs/Kernel/System/Ticket/Event/ArticleSearchIndex.pm
-otrs/Kernel/System/Ticket/Event/ResponsibleAutoSet.pm
 otrs/Kernel/System/Ticket/Event/ForceOwnerReset.pm
 otrs/Kernel/System/Ticket/Event/ForceState.pm
 otrs/Kernel/System/Ticket/Event/ForceUnlock.pm
+otrs/Kernel/System/Ticket/Event/NotificationEvent.pm
+otrs/Kernel/System/Ticket/Event/ResponsibleAutoSet.pm
 otrs/Kernel/System/Ticket/Event/Test.pm
+otrs/Kernel/System/Ticket/Event/TicketAcceleratorUpdate.pm
 otrs/Kernel/System/Ticket/Event/TicketEscalationIndex.pm
 otrs/Kernel/System/Ticket/Event/TicketFreeFieldDefault.pm
 otrs/Kernel/System/Ticket/IndexAccelerator/RuntimeDB.pm
@@ -744,6 +1139,7 @@ otrs/Kernel/System/Ticket/Number/Random.pm
 otrs/Kernel/System/Ticket/Permission/GroupCheck.pm
 otrs/Kernel/System/Ticket/Permission/OwnerCheck.pm
 otrs/Kernel/System/Ticket/Permission/ResponsibleCheck.pm
+otrs/Kernel/System/Ticket/Permission/WatcherCheck.pm
 otrs/Kernel/System/Time.pm
 otrs/Kernel/System/Type.pm
 otrs/Kernel/System/UnitTest.pm
@@ -757,11 +1153,9 @@ otrs/Kernel/System/Web/Request.pm
 otrs/Kernel/System/Web/UploadCache.pm
 otrs/Kernel/System/Web/UploadCache/DB.pm
 otrs/Kernel/System/Web/UploadCache/FS.pm
+otrs/Kernel/System/WebUserAgent.pm
 otrs/Kernel/System/XML.pm
 otrs/Kernel/System/XMLMaster.pm
-otrs/Kernel/cpan-lib/HTML/Safe.pm
-@dirrm otrs/Kernel/cpan-lib/HTML
-@dirrm otrs/Kernel/cpan-lib
 @dirrm otrs/Kernel/System/XMLMaster
 @dirrm otrs/Kernel/System/Web/UploadCache
 @dirrm otrs/Kernel/System/Web
@@ -819,8 +1213,52 @@ otrs/Kernel/cpan-lib/HTML/Safe.pm
 @dirrm otrs/var/pics
 @dirrmtry otrs/var/log
 @dirrm otrs/var/packages
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/plugins
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/js
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/filemanager
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dtd
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template/images
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/server-scripts
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_select
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_link
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_image
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_flash
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_docprops
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about/sponsors
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/images
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/behaviors
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor
+@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1
+@dirrm otrs/var/httpd/htdocs/js
 @dirrm otrs/var/httpd/htdocs/images/Standard
 @dirrm otrs/var/httpd/htdocs/images
+@dirrm otrs/var/httpd/htdocs/css/Standard
+@dirrm otrs/var/httpd/htdocs/css/Lite
+@dirrm otrs/var/httpd/htdocs/css
 @dirrm otrs/var/httpd/htdocs
 @dirrm otrs/var/httpd
 @dirrm otrs/var/cron

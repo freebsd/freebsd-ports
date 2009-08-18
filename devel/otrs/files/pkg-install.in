@@ -35,8 +35,11 @@ PRE-INSTALL)
 ;;
 
 POST-INSTALL)
-	${PKG_PREFIX}/otrs/bin/SetPermissions.sh ${PKG_PREFIX}/otrs \
-		${OTRS_USER} ${WWWOWN} ${OTRS_GROUP} ${WWWGRP}
+	${PKG_PREFIX}/otrs/bin/SetPermissions.pl \
+		--web-user=${WWWOWN} --web-group=${WWWGRP} \
+		--otrs-user=${OTRS_USER} --otrs-group=${OTRS_GROUP} \
+		--admin-user=root --admin-group=wheel \
+		${PKG_PREFIX}/otrs
 ;;
 
 esac

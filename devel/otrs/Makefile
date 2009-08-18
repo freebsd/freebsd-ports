@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.3.4
+PORTVERSION=	2.4.3
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -16,32 +16,32 @@ MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Open Ticket Request System
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+BUILD_DEPENDS=	p5-CGI.pm>=3.33:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date-Pcalc \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-MIME-Tools>=5.427:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Net/POP3.pm:${PORTSDIR}/net/p5-Net \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
+		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-MIME-Tools>=5.427:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
-		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	MYSQL "MySQL database support" on \
 		PGSQL "PostgreSQL database support" off \
 		REPORTS_MODULES "Reports support" on \
 		SMTP "Send email via SMTP" on \
+		POP3 "Fetch email via POP3" on \
+		IMAP "Fetch email via IMAP" on \
 		LDAP "Enable LDAP support" off \
+		PDF "Enable PDF output" on \
 		ISPELL "Enable spell checking" on \
 		GNUPG "Use GnuPG" off
 
@@ -63,7 +63,6 @@ DOCS_DIRS_LIST=	"" manual/en/pdf
 DOCS_FILES_LIST=	C* INSTALL RE* TODO UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
-CLEAN_CPAN_DIRS=	Algorithm Authen Crypt Date Email File IO Mail MIME Net Text XML auto
 CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/yui
 
@@ -90,11 +89,26 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 
 .ifdef WITH_SMTP
 RUN_DEPENDS+=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+		p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
 		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
+.endif
+
+.ifdef WITH_POP3
+RUN_DEPENDS+=	${SITE_PERL}/Net/POP3.pm:${PORTSDIR}/net/p5-Net \
+		${SITE_PERL}/Mail/POP3Client.pm:${PORTSDIR}/mail/p5-Mail-POP3Client
+.endif
+
+.ifdef WITH_IMAP
+RUN_DEPENDS+=	${SITE_PERL}/Net/IMAP/Simple.pm:${PORTSDIR}/mail/p5-Net-IMAP-Simple
 .endif
 
 .ifdef WITH_LDAP
 RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+.endif
+
+.ifdef WITH_PDF
+RUN_DEPENDS+=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
+		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 .endif
 
 .ifdef WITH_ISPELL
@@ -109,7 +123,7 @@ do-build:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${FIND} ${WRKSRC}/Kernel -type d | ${XARGS} ${CHMOD} 0755
 	@${FIND} ${WRKSRC}/Kernel -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-	@${RM} -rf ${CLEAN_CPAN_DIRS:S!^!${WRKSRC}/Kernel/cpan-lib/!} \
+	@${RM} -rf ${WRKSRC}/Kernel/cpan-lib/ \
 		${CLEAN_FILES:S!^!${WRKSRC}/!}
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
 		-e "s=/opt/=${PREFIX}/=g;s=wwwrun=${WWWOWN}=g;"
