@@ -1,0 +1,30 @@
+bin/creox
+share/doc/HTML/en/creox/common
+share/doc/HTML/en/creox/index.docbook
+share/doc/HTML/en/creox/index.cache.bz2
+share/locale/ru/LC_MESSAGES/creox.mo
+share/apps/creox/icons/hicolor/16x16/actions/distortion.png
+share/apps/creox/icons/hicolor/16x16/actions/echo.png
+share/apps/creox/icons/hicolor/16x16/actions/flanger.png
+share/apps/creox/icons/hicolor/16x16/actions/phaser.png
+share/apps/creox/icons/hicolor/16x16/actions/preset_chain.png
+share/apps/creox/icons/hicolor/16x16/actions/preset_nochain.png
+share/apps/creox/icons/hicolor/16x16/actions/tremolo.png
+share/apps/creox/icons/hicolor/48x48/actions/sound_card_properties.png
+share/apps/creox/pics/sound_card_properties.png
+share/apps/creox/pics/crsplash.png
+share/apps/creox/creoxui.rc
+share/applnk/Applications/creox.desktop
+share/icons/hicolor/16x16/apps/creox.png
+share/icons/hicolor/32x32/apps/creox.png
+share/icons/hicolor/48x48/apps/creox.png
+share/icons/hicolor/64x64/apps/creox.png
+@dirrm share/apps/creox/icons/hicolor/48x48/actions
+@dirrm share/apps/creox/icons/hicolor/48x48
+@dirrm share/apps/creox/icons/hicolor/16x16/actions
+@dirrm share/apps/creox/icons/hicolor/16x16
+@dirrm share/apps/creox/icons/hicolor
+@dirrm share/apps/creox/icons
+@dirrm share/apps/creox/pics
+@dirrm share/apps/creox
+@dirrm share/doc/HTML/en/creox
