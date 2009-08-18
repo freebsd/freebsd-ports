@@ -9,11 +9,3 @@
  #include <sasl/sasl.h>
  #elif defined(HAVE_SASL_H)
  #include <sasl.h>
-@@ -84,7 +84,7 @@
- #include <gssapi/gssapi.h>
- #include <gssapi/gssapi_krb5.h>
- #endif
--#ifdef CONFIGURE_KRB5_CCNAME
-+#if defined(CONFIGURE_KRB5_CCNAME) && defined(HAVE_KRB5_H)
- #include <krb5.h>
- #endif
