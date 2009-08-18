@@ -8,7 +8,7 @@
 PORTNAME=	megarc
 PORTVERSION=	1.51
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.lsi.com/files/support/rsa/beta/drivers/
+MASTER_SITES=	http://www.lsi.com/DistributionSystem/AssetDocument/files/support/rsa/beta/drivers/
 DISTNAME=	dr_freebsd_${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -34,10 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Release\ History.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		only works in FreeBSD 6.x and earlier
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
