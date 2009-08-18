@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Dec  5 15:59:38 2006
-+++ Makefile.in	Tue Dec  5 15:59:53 2006
+--- Makefile.in	2009-04-13 13:03:55.000000000 +0200
++++ Makefile.in	2009-08-18 16:14:35.000000000 +0200
 @@ -38,7 +38,7 @@
  CRYPTOLIB=@CRYPTOLIB@
  OPENSSLINCLUDES=

@@ -1,5 +1,5 @@
---- networks/makenet	Sun Apr 25 01:19:28 2004
-+++ networks/makenet	Mon Feb  7 04:24:00 2005
+--- networks/makenet	2004-04-25 01:19:28.000000000 +0200
++++ networks/makenet	2009-08-18 16:21:50.000000000 +0200
 @@ -241,10 +241,10 @@
  __EOF__
  

@@ -87,6 +87,7 @@ libexec/ircd
 lib/Unreal/cloak.so
 lib/Unreal/commands.so
 lib/Unreal/m_addline.so
+lib/Unreal/m_addmotd.so
 lib/Unreal/m_addomotd.so
 lib/Unreal/m_admin.so
 lib/Unreal/m_adminchat.so
@@ -155,6 +156,7 @@ lib/Unreal/m_stats.so
 lib/Unreal/m_svsfline.so
 lib/Unreal/m_svsjoin.so
 lib/Unreal/m_svskill.so
+lib/Unreal/m_svslusers.so
 lib/Unreal/m_svsmode.so
 lib/Unreal/m_svsmotd.so
 lib/Unreal/m_svsnick.so
