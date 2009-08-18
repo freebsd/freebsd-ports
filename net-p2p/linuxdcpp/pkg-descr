@@ -1,13 +1,13 @@
-LinuxDC++ is a Linux port of the Direct Connect client DC++. Though it is
+LinuxDC++ is a Linux port of the Direct Connect client DC++.  Though it is
 primarily aimed at Linux, it has been shown to work on other Unix-based
-operating systems as well. It is written in C++ and makes use of GTK+ for the
-user-interface. LinuxDC++ is free and open source software licensed under the
-GPL.
+operating systems as well.  It is written in C++ and makes use of GTK+ for
+the user interface.  LinuxDC++ is free and open source software licensed
+under the GPL.
 
-Direct connect is a peer-to-peer file-sharing protocol. The most popular
-Windows client implementing this protocol currently is DC++. Direct connect
+Direct Connect is a peer-to-peer file-sharing protocol.  The most popular
+Windows client implementing this protocol currently is DC++.  Direct Connect
 clients connect to a central hub where they can view a list of clients or
-users connected to them. Users can search for files and download them from
+users connected to them.  Users can search for files and download them from
 other clients, as well as chat with other users.
 
 WWW: http://launchpad.net/linuxdcpp
