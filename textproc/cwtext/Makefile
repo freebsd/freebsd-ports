@@ -8,7 +8,7 @@
 
 PORTNAME=	cwtext
 PORTVERSION=	0.96
-CATEGORIES=	textproc
+CATEGORIES=	textproc hamradio
 MASTER_SITES=	SF
 
 MAINTAINER=	db@FreeBSD.org
