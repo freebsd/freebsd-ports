@@ -1,0 +1,7 @@
+pg_filedump is a utility to format PostgreSQL heap, index, and control
+files into a human-readable form. You can format/dump the files
+several ways as well as dumping straight binary. This utility is
+intended to aid in the understanding of the internal contents of a
+PostgreSQL block.
+
+WWW: http://sources.redhat.com/rhdb/utilities.html

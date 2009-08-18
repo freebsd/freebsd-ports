@@ -443,6 +443,7 @@
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
     SUBDIR += pecl-sqlite
+    SUBDIR += pg_filedump
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgadmin3-12
