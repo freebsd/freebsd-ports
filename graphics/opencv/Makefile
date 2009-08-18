@@ -8,12 +8,12 @@
 
 PORTNAME=	opencv
 PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/opencvlibrary
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Open Source Computer Vision Library from Intel
+MAINTAINER=	villa.alberto@gmail.com
+COMMENT=	Open Source Computer Vision library from Intel
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 
@@ -26,21 +26,24 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-v4l --without-quicktime --without-carbon \
-				--without-1394libs \
-				--without-swig # I don't know anything about swig ...
+		--without-1394libs \
+		--without-swig # I don't know anything about swig ...
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
-				png:${PORTSDIR}/graphics/png \
-				tiff:${PORTSDIR}/graphics/tiff \
-				jasper:${PORTSDIR}/graphics/jasper \
-				IlmImf:${PORTSDIR}/graphics/OpenEXR
+		png:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff \
+		jasper:${PORTSDIR}/graphics/jasper \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR
 USE_GNOME=
 
-OPTIONS=	GTK "Enable GTK+-2.0 support" Off \
-			XINE "Enable XINE support" Off \
-			FFMPEG "Enable FFMPEG support" Off \
-			PYTHON "Enable PYTHON support" Off \
-			DEBUG "Build debugging symbols" Off \
-			DEMO "Build demo apps" Off
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64
+
+OPTIONS=	DEBUG "Build debugging symbols" off \
+		DEMO "Build demo apps" off \
+		FFMPEG "Enable FFMPEG support" off \
+		GTK "Enable GTK+-2.0 support" off \
+		PYTHON "Enable PYTHON support" off \
+		XINE "Enable XINE support" off
 # XXX:
 # I cannot disable the following features if they have been installed,
 # thus they should be enable now ...
@@ -122,8 +125,11 @@ CONFIGURE_ARGS+=--disable-apps
 PLIST_SUB+=	DEMO="@comment "
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
+pre-configure:
+	@${REINPLACE_CMD} -e 's/-pthread/-pthread|${PTHREAD_LIBS}/' \
+		${WRKSRC}/autotools/ltmain.sh
+	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/Makefile.*
 
 .include <bsd.port.post.mk>
