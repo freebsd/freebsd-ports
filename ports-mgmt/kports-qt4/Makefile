@@ -7,6 +7,7 @@
 
 PORTNAME=	kports
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt kde
 MASTER_SITES=	SF
 
@@ -34,7 +35,8 @@ OPTIONS=	DEBUG "Add Debugging Symbols" off \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_KDE)
-RUN_DEPENDS+=   ${LOCALBASE}/kde4/lib/kde4/libexec/kdesu:${PORTSDIR}/x11/kdebase4-runtime
+RUN_DEPENDS+=	${LOCALBASE}/kde4/lib/kde4/libexec/kdesu:${PORTSDIR}/x11/kdebase4-runtime \
+		${LOCALBASE}/kde4/share/icons/oxygen/index.theme:${PORTSDIR}/x11-themes/kde4-icons-oxygen
 .else
 PKGMESSAGE=	pkg-message.nokdebase
 .endif
