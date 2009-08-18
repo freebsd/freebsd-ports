@@ -1074,11 +1074,9 @@ MASTER_SITE_QMAIL+= \
 
 .if !defined(IGNORE_MASTER_SITE_QT)
 MASTER_SITE_QT+= \
-	ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/%SUBDIR%/ \
-	ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/%SUBDIR%/ \
-	ftp://ftp.tu-chemnitz.de/pub/Qt/qt/source/%SUBDIR%/ \
-	ftp://ftp.silug.org/mirrors/ftp.trolltech.com/qt/source/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/unix/X11/gui/Qt/source/%SUBDIR%/ \
+	http://mi.mirror.garr.it/mirrors/qt/%SUBDIR%/ \
+	ftp://ftp.heanet.ie/mirrors/trolltech/pub/qt/source/%SUBDIR%/ \
+	http://download.qt.nokia.com/qt/source/%SUBDIR%/ \
 	ftp://ftp.trolltech.com/qt/source/%SUBDIR%/
 .endif
 
