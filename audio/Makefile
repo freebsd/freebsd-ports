@@ -105,6 +105,7 @@
     SUBDIR += cpige
     SUBDIR += cplay
     SUBDIR += cpp-xmms2
+    SUBDIR += creox
     SUBDIR += crip
     SUBDIR += cripple
     SUBDIR += csound

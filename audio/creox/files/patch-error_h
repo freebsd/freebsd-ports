@@ -1,0 +1,60 @@
+--- creox/dsp_flow/threadeffector.cpp.orig	2009-08-18 22:37:58.000000000 +0700
++++ creox/dsp_flow/threadeffector.cpp	2009-08-18 22:38:37.000000000 +0700
+@@ -22,6 +22,7 @@
+ #include <cmath>
+ #include <cstring>
+ #include <iostream>
++#include <errno.h>
+ #include <klocale.h>
+ #include <kapplication.h>
+ #include <kglobal.h>
+--- creox/effects_dsp/distortionprocessor.cpp.orig	2009-08-18 22:37:58.000000000 +0700
++++ creox/effects_dsp/distortionprocessor.cpp	2009-08-18 22:01:18.000000000 +0700
+@@ -25,6 +25,7 @@
+ #include <cassert>
+ #include <cstring>
+ #include <iostream>
++#include <errno.h>
+ #include "crdatastream.h"
+ #include "distortionprocessor.h"
+ 
+--- creox/effects_dsp/echoprocessor.cpp.orig	2009-08-18 22:37:58.000000000 +0700
++++ creox/effects_dsp/echoprocessor.cpp	2009-08-18 21:57:41.000000000 +0700
+@@ -22,6 +22,7 @@
+ #include <cmath>
+ #include <cstring>
+ #include <iostream>
++#include <errno.h>
+ #include "crdatastream.h"
+ #include "echoprocessor.h"
+ 
+--- creox/effects_dsp/flangerprocessor.cpp.orig	2009-08-18 22:37:58.000000000 +0700
++++ creox/effects_dsp/flangerprocessor.cpp	2009-08-18 21:56:44.000000000 +0700
+@@ -21,6 +21,7 @@
+ #include <cstring>
+ #include <cmath>
+ #include <iostream>
++#include <errno.h>
+ #include "crdatastream.h"
+ #include "flangerprocessor.h"
+ 
+--- creox/effects_dsp/phaserprocessor.cpp.orig	2009-08-18 22:37:58.000000000 +0700
++++ creox/effects_dsp/phaserprocessor.cpp	2009-08-18 21:55:01.000000000 +0700
+@@ -26,6 +26,7 @@
+ #include <cstring>
+ #include <cmath>
+ #include <iostream>
++#include <errno.h>
+ #include "crdatastream.h"
+ #include "phaserprocessor.h"
+ 
+--- creox/effects_dsp/tremoloprocessor.cpp.orig	2009-08-18 22:37:58.000000000 +0700
++++ creox/effects_dsp/tremoloprocessor.cpp	2009-08-18 21:28:37.000000000 +0700
+@@ -21,6 +21,7 @@
+ #include <cassert>
+ #include <cmath>
+ #include <iostream>
++#include <errno.h>
+ #include "crdatastream.h"
+ #include "tremoloprocessor.h"
+ 
