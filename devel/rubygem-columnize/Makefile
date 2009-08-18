@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	columnize
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	rocky-hacks
