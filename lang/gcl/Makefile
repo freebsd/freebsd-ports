@@ -44,6 +44,10 @@ PLIST_SUB=	GCL_VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Gcl compiled with gcc42 dumps core
+.endif
+
 pre-configure:
 	${SED} -i '' \
 		-e 's|@@CFLAGS@@|${CFLAGS} -I${LOCALBASE}/include|' \
