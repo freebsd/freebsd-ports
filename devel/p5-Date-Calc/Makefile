@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Date-Calc
-PORTVERSION=	5.5.1
+PORTVERSION=	5.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/T/TC/TCHATZI
+MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STBEY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hideo@lastamericanempire.com
