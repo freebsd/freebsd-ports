@@ -3,7 +3,7 @@ OTRS is now installed.
 
 The rest of installation must be completed manually.
 
-Please see http://doc.otrs.org/2.3/en/html/ and/or documentation in 
+Please see http://doc.otrs.org/2.4/en/html/ and/or documentation in 
 %%DOCSDIR%% for further instructions, particularly regarding 
 configuring your web server, database, cron scripts, and receiving emails.
 
