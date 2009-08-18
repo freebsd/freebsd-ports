@@ -1,0 +1,28 @@
+--- Makefile.orig	2008-02-28 23:12:21.000000000 +0900
++++ Makefile	2009-08-17 23:37:15.000000000 +0900
+@@ -3,10 +3,10 @@
+ CC=gcc
+ CFLAGS=-g -O -Wall -Wmissing-prototypes -Wmissing-declarations
+ 
+-INCLUDE=/usr/include/pgsql/server
++INCLUDE=${LOCALBASE}/include/postgresql/server
+ 
+ # PGSQL MUST POINT TO pgsql SOURCE DIRECTORY
+-PGSQL=../../../../postgres/pgsql
++PGSQL=../../../postgresql83-client/work/postgresql-8.3.7
+ 
+ CRC_SRC=${PGSQL}/src/backend/utils/hash
+ CRC_INCLUDE=${PGSQL}/src
+@@ -17,10 +17,10 @@
+ 	${CC} ${CFLAGS} -o pg_filedump pg_filedump.o pg_crc.o
+ 
+ pg_filedump.o: pg_filedump.c
+-	${CC} ${CFLAGS} -I${INCLUDE} pg_filedump.c -c
++	${CC} ${CFLAGS} -I${INCLUDE} -I${LOCALBASE}/include pg_filedump.c -c
+ 
+ pg_crc.o: ${CRC_SRC}/pg_crc.c
+-	${CC} ${CFLAGS} -I${CRC_INCLUDE} -I${INCLUDE} ${CRC_SRC}/pg_crc.c -c 
++	${CC} ${CFLAGS} -I${CRC_INCLUDE} -I${INCLUDE} -I${LOCALBASE}/include ${CRC_SRC}/pg_crc.c -c 
+ 
+ clean:
+ 	rm -rf *.o pg_filedump

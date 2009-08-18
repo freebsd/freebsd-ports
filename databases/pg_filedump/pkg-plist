@@ -1,0 +1,4 @@
+bin/pg_filedump
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README.pg_filedump
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
