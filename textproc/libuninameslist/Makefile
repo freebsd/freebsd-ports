@@ -23,4 +23,6 @@ USE_AUTOTOOLS=	libtool:22
 ALL_TARGET=	both
 USE_LDCONFIG=	yes
 
+BROKEN=		checksum mismatch
+
 .include <bsd.port.mk>
