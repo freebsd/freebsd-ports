@@ -10,7 +10,7 @@ PORTVERSION=	3.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.3/ \
 		http://www.dirk.sh/dirk/Ice/
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Ice-${PORTVERSION}
 
 MAINTAINER=	dirk.ye@gmail.com

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Python bindings for version control system

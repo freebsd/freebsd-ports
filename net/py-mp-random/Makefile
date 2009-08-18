@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	4
 CATEGORIES=	net python
 MASTER_SITES=	http://mirrorproject.com/widget/
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MirrorProjectRandomImageWidget-src-${PORTVERSION}
 
 MAINTAINER=	randomimage-widget@mirrorproject.com

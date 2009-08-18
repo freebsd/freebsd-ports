@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	py-gnuplot
+PORTNAME=	gnuplot
 PORTVERSION=	1.8
 CATEGORIES=	math python
 MASTER_SITES=	SF/gnuplot-py
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gnuplot-py-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

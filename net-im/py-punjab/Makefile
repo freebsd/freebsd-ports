@@ -9,7 +9,7 @@ PORTNAME=	punjab
 PORTVERSION=	0.12
 CATEGORIES=	net-im python
 MASTER_SITES=	http://butterfat.net/punjab/
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	HTTP-polling and HTTP-binding gateway for Jabber
