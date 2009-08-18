@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI
-PORTVERSION=	1.203
+PORTVERSION=	1.206
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -16,13 +16,13 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Analyze and manipulate Perl code without using perl itself
 
 BUILD_DEPENDS=	\
-		p5-Clone>=0.22:${PORTSDIR}/devel/p5-Clone \
-		p5-Scalar-List-Utils>=0.17:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
+		p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-List-MoreUtils>=0.13:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Params-Util>=0.10:${PORTSDIR}/devel/p5-Params-Util \
+		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util \
 		p5-IO-stringy>=2.105:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-Digest-MD5>=2.27:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Storable>=2.14:${PORTSDIR}/devel/p5-Storable \
+		p5-Digest-MD5>=2.35:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-Storable>=2.17:${PORTSDIR}/devel/p5-Storable \
 		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-ClassAPI>=1.02:${PORTSDIR}/devel/p5-Test-ClassAPI \
 		p5-Test-SubCalls>=0.01:${PORTSDIR}/devel/p5-Test-SubCalls \
@@ -51,6 +51,7 @@ MAN3=	PPI.3 \
 	PPI::Statement::Data.3 \
 	PPI::Statement::End.3 \
 	PPI::Statement::Expression.3 \
+	PPI::Statement::Given.3 \
 	PPI::Statement::Include.3 \
 	PPI::Statement::Include::Perl6.3 \
 	PPI::Statement::Null.3 \
@@ -60,17 +61,21 @@ MAN3=	PPI.3 \
 	PPI::Statement::Unknown.3 \
 	PPI::Statement::UnmatchedBrace.3 \
 	PPI::Statement::Variable.3 \
+	PPI::Statement::When.3 \
 	PPI::Structure.3 \
 	PPI::Structure::Block.3 \
 	PPI::Structure::Condition.3 \
 	PPI::Structure::Constructor.3 \
-	PPI::Structure::ForLoop.3 \
+	PPI::Structure::For.3 \
+	PPI::Structure::Given.3 \
 	PPI::Structure::List.3 \
 	PPI::Structure::Subscript.3 \
 	PPI::Structure::Unknown.3 \
+	PPI::Structure::When.3 \
 	PPI::Token.3 \
 	PPI::Token::ArrayIndex.3 \
 	PPI::Token::Attribute.3 \
+	PPI::Token::BOM.3 \
 	PPI::Token::Cast.3 \
 	PPI::Token::Comment.3 \
 	PPI::Token::DashedWord.3 \
@@ -114,6 +119,7 @@ MAN3=	PPI.3 \
 	PPI::Token::_QuoteEngine::Full.3 \
 	PPI::Token::_QuoteEngine::Simple.3 \
 	PPI::Tokenizer.3 \
-	PPI::Transform.3
+	PPI::Transform.3 \
+	PPI::Transform::UpdateCopyright.3
 
 .include <bsd.port.mk>
