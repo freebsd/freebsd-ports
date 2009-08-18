@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
 MAINTAINER=	r.gruyters@snow.nl
 COMMENT=	Framework library for Prelude NIDS
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
 OPTIONS=	PERL "Include Perl bindings" off \
 		PYTHON "Include Python bindings" off
