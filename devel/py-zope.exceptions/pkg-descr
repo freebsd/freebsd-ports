@@ -1,0 +1,5 @@
+zope.exceptions contains exception interfaces and implementations
+which are so general purpose that they don't belong in Zope
+application-specific packages.
+
+WWW: http://www.python.org/pypi/zope.exceptions
