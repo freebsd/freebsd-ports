@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	callsign
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	comms net hamradio
 MASTER_SITES=	RF
 DISTNAME=	callsign-${PORTVERSION}
