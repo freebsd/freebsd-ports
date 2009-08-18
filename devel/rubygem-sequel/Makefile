@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sequel
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
