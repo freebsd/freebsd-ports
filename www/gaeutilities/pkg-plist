@@ -1,0 +1,71 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/appengine_utilities/__init__.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/__init__.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/__init__.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/cache.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/cache.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/cache.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/cron.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/cron.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/cron.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/django-middleware/__init__.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/django-middleware/__init__.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/django-middleware/__init__.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/django-middleware/middleware.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/django-middleware/middleware.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/django-middleware/middleware.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/event.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/event.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/event.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/flash.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/flash.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/flash.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/__init__.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/__init__.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/__init__.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssbase/base-context-min.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssbase/base-context.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssbase/base-min.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssbase/base.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssfonts/fonts-context-min.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssfonts/fonts-context.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssfonts/fonts-min.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssfonts/fonts.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssgrids/grids-context-min.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssgrids/grids-context.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssgrids/grids-min.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssgrids/grids.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssreset/reset-context-min.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssreset/reset-context.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssreset/reset-min.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssreset/reset.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/main.css
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/main.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/main.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/main.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/templates/404.html
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/templates/base.html
+%%PYTHON_SITELIBDIR%%/appengine_utilities/interface/templates/scheduler_form.html
+%%PYTHON_SITELIBDIR%%/appengine_utilities/paginator.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/paginator.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/paginator.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/rotmodel.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/rotmodel.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/rotmodel.pyo
+%%PYTHON_SITELIBDIR%%/appengine_utilities/sessions.py
+%%PYTHON_SITELIBDIR%%/appengine_utilities/sessions.pyc
+%%PYTHON_SITELIBDIR%%/appengine_utilities/sessions.pyo
+%%PORTDOCS%%%%DOCSDIR%%/cache.txt
+%%PORTDOCS%%%%DOCSDIR%%/event.txt
+%%PORTDOCS%%%%DOCSDIR%%/flash.txt
+%%PORTDOCS%%%%DOCSDIR%%/sessions.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/templates
+@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssreset
+@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssgrids
+@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssfonts
+@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssbase
+@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css
+@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface
+@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/django-middleware
+@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities

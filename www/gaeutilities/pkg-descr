@@ -1,0 +1,17 @@
+gaeutilities is a collection of classes to aid in development
+on Google Appengine.
+
+The stable version includes the following classes:
+
+Session: An http session class to preserve identity across http requests.
+         It uses both BigTable and Memcache for performance and reliability.
+         It also includes middleware to plug in with django.
+Cache: A BigTable and Memcache caching class. Any object that can be pickled
+       can be stored in cache.
+Event: A subscribe/fire event system that gives developers the ability to set
+       callback functions.
+Flash: A cookie based messaging library. Using json, data structures can be
+       stored as a cookie in the browser and retrieved on the next request.
+       Useful for messages such as "Thank you for logging in." 
+
+WWW:	http://code.google.com/p/gaeutilities/

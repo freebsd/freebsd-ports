@@ -236,6 +236,7 @@
     SUBDIR += g-cows
     SUBDIR += g-gcl
     SUBDIR += gaeo
+    SUBDIR += gaeutilities
     SUBDIR += galeon
     SUBDIR += gallery
     SUBDIR += gallery2
