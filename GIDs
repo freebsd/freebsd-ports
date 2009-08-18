@@ -76,6 +76,7 @@ polipo:*:173:
 flowtools:*:174:
 rt:*:180:
 nagios:*:181:
+noc:*:182:
 moinmoin:*:192:
 cups:*:193:
 sympa:*:200:
