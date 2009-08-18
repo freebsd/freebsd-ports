@@ -20,7 +20,6 @@ NO_WRKSUBDIR=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 RESTRICTED=	Must be downloaded directly from the manufacturer
-BROKEN=		Running megarc seems to cause memory corruption
 
 PLIST_FILES=	sbin/megarc
 PORTDOCS=	*
@@ -35,4 +34,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Release\ History.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		only works in FreeBSD 6.x and earlier
+.endif
+
+.include <bsd.port.post.mk>
