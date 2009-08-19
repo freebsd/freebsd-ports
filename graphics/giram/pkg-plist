@@ -37,29 +37,29 @@ lib/giram/0.3/user_install
 libexec/giram/plug-ins/Box
 libexec/giram/plug-ins/Rotate
 libexec/giram/plug-ins/Spheres
-%%DOCSDIR%%/Tutorial
-%%PORTDOCS%%%%EXAMPLESDIR%%/Cone.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/Disc.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/Giram.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/IntSphereBox1.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/IntSphereBox2.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/IntSphereBox3.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/IntSpherePlane1.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/IntSpherePlane2.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/IntSpherePlane3.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/Triangle.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/basicvue.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/basicvue2.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/basicvue3.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/basicvue4.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/box.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/checker.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/lollipop.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/superel1.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/superel2.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/superel3.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/test.pov
-%%PORTDOCS%%%%EXAMPLESDIR%%/torus.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Cone.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Disc.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Giram.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IntSphereBox1.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IntSphereBox2.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IntSphereBox3.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IntSpherePlane1.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IntSpherePlane2.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IntSpherePlane3.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Triangle.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basicvue.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basicvue2.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basicvue3.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basicvue4.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/box.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/checker.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lollipop.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/superel1.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/superel2.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/superel3.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.pov
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/torus.pov
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 share/locale/ca/LC_MESSAGES/giram.mo
 share/locale/cs/LC_MESSAGES/giram.mo
 share/locale/da/LC_MESSAGES/giram.mo
@@ -88,8 +88,6 @@ share/locale/tr/LC_MESSAGES/giram.mo
 share/locale/uk/LC_MESSAGES/giram.mo
 share/locale/zh_CN/LC_MESSAGES/giram.mo
 share/locale/zh_TW/LC_MESSAGES/giram.mo
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
 @dirrm libexec/giram/plug-ins
 @dirrm libexec/giram
 @dirrm lib/giram/0.3/tips
