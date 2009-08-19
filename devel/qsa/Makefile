@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=../../qsa/source
 DISTNAME=	${PORTNAME}-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform scripting toolkit for Qt applications
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

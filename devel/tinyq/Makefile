@@ -14,7 +14,7 @@ PORTEPOCH=	0
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.uwyn.com/download/tinyq/
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A stripped down version of Qt 3 for use as a utility library
 
 USE_BZIP2=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://user-dirs.freedesktop.org/releases/
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Tool to help manage personal user directories
 
 GNU_CONFIGURE=	yes

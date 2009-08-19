@@ -11,7 +11,7 @@ CATEGORIES=	audio
 DISTNAME=	# none
 EXTRACT_SUFX=	# none
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Setuid wrapper for arts
 
 NO_WRKSUBDIR=	yes
