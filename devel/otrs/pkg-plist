@@ -1212,6 +1212,7 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/var/pics/images
 @dirrm otrs/var/pics
 @dirrmtry otrs/var/log
+@dirrmtry otrs/var/stats
 @dirrm otrs/var/packages
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images
