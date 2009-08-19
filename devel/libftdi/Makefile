@@ -9,7 +9,7 @@ PORTNAME=	libftdi
 PORTVERSION=	0.14
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.intra2net.com/de/produkte/opensource/ftdi/TGZ/
+MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
 MAINTAINER=	o.davydenko@gmail.com
 COMMENT=	A library (using libusb) to talk to FTDI chips
