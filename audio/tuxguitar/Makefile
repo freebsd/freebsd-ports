@@ -24,8 +24,7 @@ COMMENT=	A Multitrack tablature editor and player
 BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill \
-		ant:${PORTSDIR}/devel/apache-ant \
-		gcj42:${PORTSDIR}/lang/gcc42-withgcjawt
+		ant:${PORTSDIR}/devel/apache-ant
 RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill
@@ -39,7 +38,7 @@ USE_GECKO=	xulrunner firefox mozilla
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.4+
-JAVA_VENDOR=	bsdjava sun blackdown
+JAVA_VENDOR=	freebsd bsdjava sun blackdown
 NOCCACHE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
