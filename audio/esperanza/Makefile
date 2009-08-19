@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	esperanza
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.0.20090708
+DISTVERSIONSUFFIX=.87360cd
 CATEGORIES=	audio
-MASTER_SITES=	http://exodus.xmms.se/~tru/esperanza/0.4/
+#MASTER_SITES=	http://exodus.xmms.se/~tru/esperanza/0.4/
+MASTER_SITES=	ftp://ftp.lissyara.su/users/Guest/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced QT4 XMMS2 client
