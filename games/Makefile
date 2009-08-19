@@ -613,12 +613,12 @@
     SUBDIR += pathological
     SUBDIR += pcgen
     SUBDIR += pear-Games_Chess
+    SUBDIR += peg-e
     SUBDIR += pengpong
     SUBDIR += penguin-command
     SUBDIR += pengupop
     SUBDIR += pentix
     SUBDIR += pets
-    SUBDIR += peg-e
     SUBDIR += phalanx
     SUBDIR += phpua-bf
     SUBDIR += phpua-cod
