@@ -9,10 +9,10 @@ PORTNAME=	giram
 PORTVERSION=	0.3.5
 PORTREVISION=	12
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.giram.org/downloads/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
+		#http://www.giram.org/downloads/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A POV-Ray oriented modeller
 
 LIB_DEPENDS=	3ds-1.3:${PORTSDIR}/graphics/lib3ds
@@ -43,6 +43,7 @@ RUN_DEPENDS+=	povray:${PORTSDIR}/graphics/povray
 .endif
 
 MAN1=		giram.1
+PORTDOCS=	Tutorial
 
 post-patch:
 	@${REINPLACE_CMD} -e '36s,static ,,' ${WRKSRC}/src/tools/tool_disc.c
@@ -50,7 +51,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/*.pov ${EXAMPLESDIR}
 .endif
