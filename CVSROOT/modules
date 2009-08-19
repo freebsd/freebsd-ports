@@ -1413,6 +1413,7 @@ cegui                           ports/graphics/cegui
 celestia                        ports/astro/celestia
 celestia-gnome                  ports/astro/celestia-gnome
 celestia-gtk                    ports/astro/celestia-gtk
+celestia-kde                    ports/astro/celestia-kde
 celt                            ports/audio/celt
 cenon                           ports/graphics/cenon
 centericq                       ports/net-im/centericq
@@ -1825,6 +1826,7 @@ crawl                           ports/www/crawl
 cre                             ports/games/cre
 cream                           ports/editors/cream
 createtorrent                   ports/net-p2p/createtorrent
+creox                           ports/audio/creox
 crescendo                       ports/net/crescendo
 crf++                           ports/science/crf++
 cricket                         ports/net-mgmt/cricket
@@ -3860,6 +3862,7 @@ gaa                             ports/devel/gaa
 gaddr                           ports/deskutils/gaddr
 gadfly                          ports/databases/gadfly
 gaeo                            ports/www/gaeo
+gaeutilities                    ports/www/gaeutilities
 gai                             ports/x11-toolkits/gai
 gai-leds                        ports/sysutils/gai-leds
 gaia                            ports/astro/gaia
@@ -7757,6 +7760,7 @@ libwpcg                         ports/graphics/libwpcg
 libwpd                          ports/textproc/libwpd
 libwpg                          ports/graphics/libwpg
 libwps                          ports/textproc/libwps
+libwraster                      ports/x11-wm/libwraster
 libwww                          ports/www/libwww
 libx11                          ports/x11/libX11
 libx3dtk                        ports/graphics/libx3dtk
@@ -9547,6 +9551,7 @@ no-acroread8                    ports/print/no-acroread8
 no-login                        ports/sysutils/no-login
 noattach                        ports/mail/noattach
 noatun-plugins                  ports/multimedia/noatun-plugins
+noc                             ports/net-mgmt/noc
 nocatauth-gateway               ports/net/nocatauth-gateway
 nocatauth-server                ports/net/nocatauth-server
 nocatsplash                     ports/net/nocatsplash
@@ -10151,6 +10156,7 @@ p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
+p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
 p5-Apache-AddHostPath           ports/www/p5-Apache-AddHostPath
 p5-Apache-Admin-Config          ports/www/p5-Apache-Admin-Config
@@ -12153,6 +12159,7 @@ p5-MooseX-Declare               ports/devel/p5-MooseX-Declare
 p5-MooseX-Emulate-Class-Accessor-Fast  ports/devel/p5-MooseX-Emulate-Class-Accessor-Fast
 p5-MooseX-Getopt                ports/devel/p5-MooseX-Getopt
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
+p5-MooseX-LazyRequire           ports/devel/p5-MooseX-LazyRequire
 p5-MooseX-Log-Log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-MooseX-Meta-TypeConstraint-ForceCoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
 p5-MooseX-Method-Signatures     ports/devel/p5-MooseX-Method-Signatures
@@ -13656,6 +13663,7 @@ p5-anydata                      ports/devel/p5-AnyData
 p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
+p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
 p5-apache-admin-config          ports/www/p5-Apache-Admin-Config
 p5-apache-antispam              ports/www/p5-Apache-AntiSpam
@@ -15691,6 +15699,7 @@ p5-moosex-declare               ports/devel/p5-MooseX-Declare
 p5-moosex-emulate-class-accessor-fast  ports/devel/p5-MooseX-Emulate-Class-Accessor-Fast
 p5-moosex-getopt                ports/devel/p5-MooseX-Getopt
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
+p5-moosex-lazyrequire           ports/devel/p5-MooseX-LazyRequire
 p5-moosex-log-log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-moosex-meta-typeconstraint-forcecoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
 p5-moosex-method-signatures     ports/devel/p5-MooseX-Method-Signatures
@@ -18039,6 +18048,7 @@ pftop                           ports/sysutils/pftop
 pftpd                           ports/ftp/pftpd
 pftpx                           ports/ftp/pftpx
 pfw                             ports/security/pfw
+pg_filedump                     ports/databases/pg_filedump
 pgaccess                        ports/databases/pgaccess
 pgadmin3                        ports/databases/pgadmin3
 pgadmin3-12                     ports/databases/pgadmin3-12
@@ -19360,6 +19370,7 @@ py-pg8000                       ports/databases/py-pg8000
 py-pg_pqueue                    ports/databases/py-pg_pqueue
 py-phpserialize                 ports/devel/py-phpserialize
 py-pip                          ports/devel/py-pip
+py-pisa                         ports/converters/py-pisa
 py-plastex                      ports/math/py-plastex
 py-plex                         ports/devel/py-plex
 py-ply                          ports/devel/py-ply
@@ -19695,6 +19706,7 @@ py-yenc                         ports/news/py-yenc
 py-yolk                         ports/misc/py-yolk
 py-zconfig                      ports/devel/py-zconfig
 py-zdaemon                      ports/sysutils/py-zdaemon
+py-zope.exceptions              ports/devel/py-zope.exceptions
 py-zopeInterface                ports/devel/py-zopeInterface
 py-zopeinterface                ports/devel/py-zopeInterface
 py-zopeproxy                    ports/net/py-zopeproxy
