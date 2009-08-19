@@ -21,6 +21,7 @@ libexec/genius-readline-helper-fifo
 share/application-registry/genius.applications
 share/applications/gnome-genius.desktop
 %%DATADIR%%/gel/calculus/differentiation.gel
+%%DATADIR%%/gel/calculus/fourier.gel
 %%DATADIR%%/gel/calculus/integration.gel
 %%DATADIR%%/gel/calculus/limits.gel
 %%DATADIR%%/gel/calculus/loader.gel
