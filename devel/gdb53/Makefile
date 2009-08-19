@@ -33,6 +33,8 @@ USE_GCC=	3.4
 
 .if ${ARCH} == "sparc64" && ${OSVERSION} >= 700042
 BROKEN=		Does not install: reports Unknown Architecture
+.elif ${OSVERSION} >= 800000
+BROKEN=		unsupported FreeBSD version
 .endif
 
 pre-configure:
