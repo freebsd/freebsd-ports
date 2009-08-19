@@ -8,14 +8,14 @@
 PORTNAME=	hlstatsx
 DISTVERSION=	1.20RC2
 CATEGORIES=	games www
-MASTER_SITES=	http://www.users.on.net/~tarek_abouzeid/cstrike/HLstats/
+MASTER_SITES=	http://striker.interhact.net/hlstatsx/
 DISTNAME=	HLstatsX_V${DISTVERSION}
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 
 NO_BUILD=	yes
-USE_APACHE=	1.3
+USE_APACHE=	2.0+
 USE_PHP=	gd mysql
 USE_PERL5_RUN=	yes
 USE_ZIP=	yes
@@ -31,8 +31,6 @@ do-install:
 	@ ${ECHO_MSG} "*"
 	@ ${ECHO_MSG} "* Files have been installed in"
 	@ ${ECHO_MSG} "* ${PREFIX}/${HLSTATSX}"
-	@ ${ECHO_MSG} "*"
-	@ ${ECHO_MSG} "* Visit http://www.hlstatsx.com/installation/ for instructions on getting it running."
 	@ ${ECHO_MSG} "*"
 
 .include <bsd.port.mk>
