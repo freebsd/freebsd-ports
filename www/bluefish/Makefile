@@ -11,7 +11,6 @@ PORTVERSION=	1.0.7
 PORTREVISION=	6
 CATEGORIES=	www editors
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	HTML editor designed for the experienced web designer
