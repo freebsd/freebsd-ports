@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	pdfjam
-PORTVERSION=	1.20
-PORTREVISION=	4
+PORTVERSION=	1.21
 CATEGORIES=	print
 MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/software/pdfjam/ \
 		http://www.it.ca/~paul/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Shell scripts to manipulate PDF files
 
-RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base \
+		bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -28,17 +27,16 @@ PORTDOCS=	PDFjam-README.html pdfdroplets.png
 NO_BUILD=	yes
 
 post-patch:
-	@${LN} -s scripts ${WRKSRC}/bin
-.for FILE in ${PLIST_FILES}
-	@${REINPLACE_CMD} -e"s|__LOCALBASE__|${LOCALBASE}|g" ${WRKSRC}/${FILE}
-.endfor
+	cd ${WRKSRC} && \
+	${REINPLACE_CMD} -e"s,^#!/bin/bash,#!${LOCALBASE}/bin/bash," \
+		${PLIST_FILES:C/bin/scripts/}
 
 do-install:
 .for FILE in ${PLIST_FILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${FILE:C/bin/scripts/} ${PREFIX}/bin
 .endfor
 .for FILE in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man1/${FILE} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man1/${FILE} ${MAN1PREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
