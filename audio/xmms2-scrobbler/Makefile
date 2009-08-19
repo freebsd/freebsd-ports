@@ -6,7 +6,7 @@
 
 PORTNAME=	xmms2-scrobbler
 PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://exodus.xmms.se/~tilman/
 
