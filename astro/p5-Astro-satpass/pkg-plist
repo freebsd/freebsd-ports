@@ -2,7 +2,7 @@ bin/satpass
 %%SITE_PERL%%/Astro/Coord/ECI.pm
 %%SITE_PERL%%/Astro/Coord/ECI/Utils.pm
 %%SITE_PERL%%/Astro/Coord/ECI/TLE.pm
-%%SITE_PERL%%/Astro/Coord/ECI/Overview.pod
+%%SITE_PERL%%/Astro/Coord/ECI/OVERVIEW.pod
 %%SITE_PERL%%/Astro/Coord/ECI/Star.pm
 %%SITE_PERL%%/Astro/Coord/ECI/Moon.pm
 %%SITE_PERL%%/Astro/Coord/ECI/Sun.pm

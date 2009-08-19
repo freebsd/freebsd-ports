@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Astro-satpass
-PORTVERSION=	0.023
+PORTVERSION=	0.024
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,7 @@ MAN3=	Astro::Coord::ECI::Utils.3 \
 	Astro::Coord::ECI::TLE::Set.3 \
 	Astro::Coord::ECI::TLE.3 \
 	Astro::Coord::ECI::Star.3 \
-	Astro::Coord::ECI::Overview.3 \
+	Astro::Coord::ECI::OVERVIEW.3 \
 	Astro::Coord::ECI::Moon.3 \
 	Astro::Coord::ECI::Sun.3 \
 	Astro::Coord::ECI.3
