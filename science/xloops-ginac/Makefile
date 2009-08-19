@@ -8,14 +8,14 @@
 
 PORTNAME=	xloops-ginac
 PORTVERSION=	0.1.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science
 MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~xloops/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program calculating Feynman diagrams
 
-LIB_DEPENDS=	ginac-1.4.0:${PORTSDIR}/math/GiNaC
+LIB_DEPENDS=	ginac-1.5.3:${PORTSDIR}/math/GiNaC
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
