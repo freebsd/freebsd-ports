@@ -12,7 +12,7 @@ MASTER_SITES=	http://hackage.haskell.org/packages/archive/stringsearch/${PORTVER
 		http://kerneled.org/tmp/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	sbahra@kerneled.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Boyer-Moore/Knuth-Morris-Pratt string search library
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

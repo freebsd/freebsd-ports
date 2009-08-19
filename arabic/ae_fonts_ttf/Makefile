@@ -13,7 +13,7 @@ MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	arabeyes
 DISTNAME=		ae_fonts1_ttf_${PORTVERSION}
 
-MAINTAINER=	sbahra@gwu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of truetype Arabic fonts created by Arabeyes.org
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir

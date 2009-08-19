@@ -11,7 +11,7 @@ CATEGORIES=	arabic
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arabeyes
 
-MAINTAINER=	sbahra@gwu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An API abstraction to common Islamic calculations
 
 GNU_CONFIGURE=	yes

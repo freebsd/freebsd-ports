@@ -15,6 +15,3 @@ symtab merging support), disassembly (with good resolving) on
 i386 binaries with libasm, and much more. 
 
  WWW: http://elfsh.asgardlabs.org/
-
-- Samy Al Bahra
-samy@kerneled.com

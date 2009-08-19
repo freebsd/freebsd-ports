@@ -12,7 +12,7 @@ MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERS
 		http://carte.kerneled.org/mirror/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	sbahra@kerneled.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Parse CSV formatted data efficiently with Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc		\

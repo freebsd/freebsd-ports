@@ -12,7 +12,7 @@ MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERS
 		http://kerneled.org/tmp/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	sbahra@kerneled.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Pure Haskell interface to the C zlib library
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

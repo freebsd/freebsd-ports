@@ -12,7 +12,7 @@ CATEGORIES=		arabic
 MASTER_SITES=		SF/arabeyes
 DISTNAME=		kacst_fonts_${PORTVERSION}
 
-MAINTAINER=	sbahra@gwu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Truetype Arabic fonts created by KACST
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nvclock
 DISTNAME=	nvclock${DISTVERSION}
 
-MAINTAINER=	sbahra@gwu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The nVidia graphic card status and overclocking tool
 
 USE_GMAKE=	yes
