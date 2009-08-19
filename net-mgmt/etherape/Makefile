@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sbahra@gwu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical network traffic visualization tool for gnome
 
 USE_GETTEXT=	yes

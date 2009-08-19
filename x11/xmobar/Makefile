@@ -11,8 +11,8 @@ CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmobar/${PORTVERSION}/ \
 		http://carte.kerneled.org/mirror/
 
-MAINTAINER=	sbahra@kerneled.org
-COMMENT=	Xmobar is a minimalistic text based status bar
+MAINTAINER=	haskell@FreeBSD.org
+COMMENT=	A minimalistic text based status bar
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-x11-ghc>=1.4.1:${PORTSDIR}/x11/hs-x11-ghc

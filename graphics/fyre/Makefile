@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://samy.kerneled.org/ports/ \
 		http://www.felinemenace.org/~nemo/
 
-MAINTAINER=	sbahra@gwu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chaos map rendering system with GTK+-2 interface
 
 BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils

@@ -13,8 +13,8 @@ MASTER_SITES=	#
 DISTFILES=	#
 EXTRACT_ONLY=	#
 
-MAINTAINER=	sbahra@gwu.edu
-COMMENT=	A meta-port of the most popular font packages
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A meta-port of the most popular Arabic font packages
 
 .if !defined(WITHOUT_MONO)
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/ae_fonts_mono/fonts.dir:${PORTSDIR}/arabic/ae_fonts_mono

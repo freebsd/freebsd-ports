@@ -13,7 +13,7 @@ MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	arabeyes
 DISTNAME=		ae_fonts_mono
 
-MAINTAINER=	sbahra@gwu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of PCF fonts that include Arabic glyphs
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \

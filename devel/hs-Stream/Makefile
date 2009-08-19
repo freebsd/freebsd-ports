@@ -12,7 +12,7 @@ MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERS
 		http://carte.kerneled.org/mirror/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	sbahra@kerneled.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for manipulating infinite lists
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
