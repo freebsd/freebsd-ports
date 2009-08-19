@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	zh-
 
-MAINTAINER=	yuanjue@yuanjue.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QTerm is a BBS client for BSD/Linux
 
 USE_XORG=	x11 ice xext xt xaw xpm xi xproto xextproto

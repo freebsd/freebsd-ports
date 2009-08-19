@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	print kde
 MASTER_SITES=	http://www.yuanjue.net/download/
 
-MAINTAINER=	yuanjue@yuanjue.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to ease your PDF related work
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
