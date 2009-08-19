@@ -84,8 +84,7 @@ post-patch:
 		${WRKSRC}/TuxGuitar-gervill/build.xml
 
 	${REINPLACE_CMD} -e 's|CFLAGS?|CFLAGS+|g;\
-	    s|gcj|${LOCALBASE}/bin/gcj42|;\
-	    s|-I|-I${JAVA_HOME}/include -I${LOCALBASE}/include -I|;\
+	    s|$$(shell gcj -print-file-name=include/)|${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd -I${LOCALBASE}/include|;\
 	    s|/usr/lib|${LOCALBASE}/lib|' \
 	    ${WRKSRC}/TuxGuitar-oss/jni/GNUmakefile \
 	    ${WRKSRC}/TuxGuitar-fluidsynth/jni/GNUmakefile
