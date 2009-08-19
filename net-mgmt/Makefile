@@ -52,6 +52,7 @@
     SUBDIR += cowpatty
     SUBDIR += cricket
     SUBDIR += darkstat
+    SUBDIR += dhcdrop
     SUBDIR += disco
     SUBDIR += docsis
     SUBDIR += driftnet
