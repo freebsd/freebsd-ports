@@ -59,10 +59,6 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 .if ${OSVERSION} < 700000
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio

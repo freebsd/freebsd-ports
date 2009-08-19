@@ -1,0 +1,13 @@
+--- js/src/configure.orig	2009-06-23 23:44:34.000000000 +0200
++++ js/src/configure	2009-06-23 23:44:46.000000000 +0200
+@@ -6916,10 +6916,6 @@
+     ENABLE_JIT=1
+     NANOJIT_ARCH=ARM
+     ;;
+-sparc*-*)
+-    ENABLE_JIT=1
+-    NANOJIT_ARCH=Sparc
+-    ;;
+ esac
+ 
+ # Check whether --enable-jit or --disable-jit was given.
