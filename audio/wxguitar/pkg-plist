@@ -1,0 +1,15 @@
+bin/wxguitar
+share/applications/wxGuitar.desktop
+%%NLS%%share/locale/ru/LC_MESSAGES/wxguitar.mo
+%%DATADIR%%/pixmaps/gitara.png
+%%DATADIR%%/pixmaps/gitara_icon_64.ico
+%%DATADIR%%/sounds/A1.wav
+%%DATADIR%%/sounds/D1.wav
+%%DATADIR%%/sounds/E1.wav
+%%DATADIR%%/sounds/E2.wav
+%%DATADIR%%/sounds/G1.wav
+%%DATADIR%%/sounds/H1.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
