@@ -81,6 +81,7 @@ include/telepathy-1.0/telepathy-glib/svc-media-interfaces.h
 include/telepathy-1.0/telepathy-glib/svc-properties-interface.h
 include/telepathy-1.0/telepathy-glib/text-mixin.h
 include/telepathy-1.0/telepathy-glib/util.h
+include/telepathy-1.0/telepathy-glib/verify.h
 lib/libtelepathy-glib.a
 lib/libtelepathy-glib.la
 lib/libtelepathy-glib.so
