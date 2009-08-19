@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=53
 
+BROKEN=		does not build
 ONLY_FOR_ARCHS=	i386 alpha sparc64
 
 USE_GCC=	3.4
@@ -33,8 +34,6 @@ USE_GCC=	3.4
 
 .if ${ARCH} == "sparc64" && ${OSVERSION} >= 700042
 BROKEN=		Does not install: reports Unknown Architecture
-.elif ${OSVERSION} >= 800000
-BROKEN=		unsupported FreeBSD version
 .endif
 
 pre-configure:
