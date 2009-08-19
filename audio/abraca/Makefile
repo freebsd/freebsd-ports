@@ -6,29 +6,23 @@
 #
 
 PORTNAME=	abraca
-PORTVERSION=	0.2
-PORTREVISION=	3
+PORTVERSION=	0.4
+DISTVERSIONSUFFIX=-pre2
 CATEGORIES=	audio
-MASTER_SITES=	http://nooms.de/media/abraca/
+MASTER_SITES=	http://abraca.xmms.se/attachments/download/100/
 
 MAINTAINER=	olivier@gid0.org
 COMMENT=	Abraca is a GTK2 client for the XMMS2 music player
 
-LIB_DEPENDS=	xmmsclient.4:${PORTSDIR}/audio/xmms2 \
-		xmmsclient-glib.1:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS=	xmmsclient.5:${PORTSDIR}/audio/xmms2
 
-USE_BZIP2=	yes
-USE_PYTHON_BUILD=	yes
+USE_GMAKE=	yes
+ALL_TARGET=	# defined
+USE_GNOME=	gtk20
 
-USE_GNOME=	pkgconfig libglade2 glib20 gtk20
-
-do-configure:
-	cd ${WRKSRC} && env HOME=${WRKSRC} ./waf configure --prefix=${PREFIX}
-
-do-build:
-	cd ${WRKSRC} && ./waf build
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	cd ${WRKSRC} && ./waf install
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
