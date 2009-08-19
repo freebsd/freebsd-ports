@@ -9,8 +9,8 @@ PORTNAME=	libtunepimp-old
 PORTVERSION=	0.4.4
 PORTEPOCH=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
-		ftp://ftp.au.musicbrainz.org/pub/musicbrainz/
+MASTER_SITES=	http://ftp.osuosl.org/pub/musicbrainz/ \
+		http://ns.ael.ru/~fluffy.khv/
 DISTNAME=	libtunepimp-${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
