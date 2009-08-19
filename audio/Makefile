@@ -348,6 +348,7 @@
     SUBDIR += libgpod
     SUBDIR += libid3tag
     SUBDIR += libjackasyn
+    SUBDIR += liblastfm
     SUBDIR += liblo
     SUBDIR += liblscp
     SUBDIR += libmad
@@ -356,7 +357,6 @@
     SUBDIR += libmp3splt
     SUBDIR += libmpcdec
     SUBDIR += libmpd
-    SUBDIR += liblastfm
     SUBDIR += libmtp
     SUBDIR += libmusicbrainz
     SUBDIR += libmusicbrainz3
