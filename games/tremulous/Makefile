@@ -1,6 +1,6 @@
-# New ports collection makefile for:	tremulous
+# New ports collection makefile for:	Tremulous
 # Date created:				3 Jun 2006
-# Whom:					alepulver
+# Whom:				Alejandro Pulver <alepulver@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -9,12 +9,11 @@ PORTNAME=	tremulous
 PORTVERSION=	1.1.0
 PORTREVISION=	6
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|${PORTNAME}/|} \
-		http://0day.icculus.org/mirrors/tremulous/ \
+MASTER_SITES=	SF http://0day.icculus.org/mirrors/tremulous/ \
 		ftp://ftp.wireplay.co.uk/pub/quake3arena/mods/tremulous/ \
 		http://www.planetgloom.com/trem/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Free FPS game featuring two opposing teams, humans and aliens
 
 USE_ZIP=	yes
@@ -22,17 +21,17 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/${DISTNAME}-src
 
-OPTIONS=	CLIENT "Build client" on \
-		GAMELIBS "Build game libraries (when not mandatory)" off \
-		DEDICATED "Build dedicated server" on \
-		MASTER_SERVER "Build master server" off \
-		OPENAL "Enable OpenAL (3D sound) support" off \
-		OPENAL_DLOPEN "Enable dynamic loading of OpenAL" off \
+OPTIONS=	CLIENT		"Build client" on \
+		GAMELIBS	"Build game libraries (when not mandatory)" off \
+		DEDICATED	"Build dedicated server" on \
+		MASTER_SERVER	"Build master server" off \
+		OPENAL		"Enable OpenAL (3D sound) support" off \
+		OPENAL_DLOPEN	"Enable dynamic loading of OpenAL" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL_AUDIO "Use SDL for audio" off \
-		SDL_VIDEO "Use SDL for video" off \
-		SMP "Build SMP (threaded) client" on \
-		VORBIS "Enable Ogg Vorbis codec support" off
+		SDL_AUDIO	"Use SDL for audio" off \
+		SDL_VIDEO	"Use SDL for video" off \
+		SMP		"Build SMP (threaded) client" on \
+		VORBIS		"Enable Ogg Vorbis codec support" off
 
 MAKE_ENV+=	DEFAULT_BASEDIR="${DATADIR}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -43,7 +42,7 @@ VM_ARCHS=	amd64 i386 powerpc
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
     defined(WITHOUT_SMP)
-IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
+IGNORE=		needs at least one of CLIENT, DEDICATED, or SMP options
 .endif
 
 .for i in ${ARCH}
