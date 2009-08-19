@@ -757,6 +757,7 @@
     SUBDIR += workman
     SUBDIR += wsoundprefs
     SUBDIR += wsoundserver
+    SUBDIR += wxguitar
     SUBDIR += x11amp
     SUBDIR += xanalyser
     SUBDIR += xaylet
