@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slib
-PORTVERSION=	3b1
+PORTVERSION=	3b2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
