@@ -9,14 +9,14 @@
 #
 
 PORTNAME=	filtermail
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SFP \
 		http://home.in.tum.de/baueran/%SUBDIR%/
-MASTER_SITE_SUBDIR=	mailfilter
+MASTER_SITE_SUBDIR=	mailfilter/Mailfilter/${PORTVERSION}
 DISTNAME=	mailfilter-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Filter mail on a pop3 server: saves downloading spam
 
 # This port is filtermail, but the author called it mailfilter. To avoid a
@@ -40,6 +40,9 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/filtermail
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|filtermail.sourceforge|mailfilter.sourceforge|g' ${WRKSRC}/README
 
 post-extract:
 	@${RM} -f ${WRKSRC}/src/getopt.h
