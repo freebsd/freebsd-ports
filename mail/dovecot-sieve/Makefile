@@ -6,18 +6,23 @@
 #
 
 PORTNAME=	dovecot-sieve
-PORTVERSION=	1.1.6
+PORTVERSION=	${DOVECOTVERSION}+${DISTVERSION}
+DISTVERSION=	0.1.11
 CATEGORIES=	mail
-MASTER_SITES=	http://www.dovecot.org/releases/sieve/ \
-		http://www.is-root.com/myports/
+MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
+DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	A Sieve plugin for the Dovecot 'deliver' LDA
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:build
-RUN_DEPENDS=	dovecot>=1.1.*:${PORTSDIR}/mail/dovecot
+RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}.*:${PORTSDIR}/mail/dovecot
+
+DOVECOTVERSION=	1.2
 
 USE_LDCONFIG=	${PREFIX}/lib/dovecot/lda
+
+MAN1=	sieve-test.1 sievec.1 sieved.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -26,15 +31,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 SUB_FILES=	pkg-message
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS COPYING COPYING.LGPL INSTALL NEWS README \
-		AUTHORS.CMU COPYING.CMU NEWS.CMU README.CMU
+PORTDOCS=	AUTHORS COPYING COPYING.LGPL INSTALL NEWS README TODO
 .endif
-
-post-extract:
-	@${LN} -f ${WRKSRC}/src/libsieve/AUTHORS	${WRKSRC}/AUTHORS.CMU
-	@${LN} -f ${WRKSRC}/src/libsieve/COPYING	${WRKSRC}/COPYING.CMU
-	@${LN} -f ${WRKSRC}/src/libsieve/NEWS		${WRKSRC}/NEWS.CMU
-	@${LN} -f ${WRKSRC}/src/libsieve/README		${WRKSRC}/README.CMU
 
 post-install:
 .if !defined(NOPORTDOCS)

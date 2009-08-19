@@ -6,7 +6,9 @@
  You can enable the plugin with this directive in your dovecot.conf:
 
      protocol lda {
-  	mail_plugins = cmusieve
+       # Support for dynamically loadable plugins. mail_plugins is
+       # a space separated list of plugins to load.
+       mail_plugins = sieve # ... other plugins like quota
      }
 
  Further information on configuration can be found at:
