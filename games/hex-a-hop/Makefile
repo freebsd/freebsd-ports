@@ -22,7 +22,7 @@ ALL_TARGET=	${PORTNAME}
 
 MAKE_ARGS+=	SYSTEM_INSTALL_DIR="${DATADIR}/"
 DESKTOP_ENTRIES="Hex-a-Hop" "A puzzle game based on hexagonal tiles" \
-		"${PREFIX}/games/hex-a-hop/graphics/icon.bmp" \
+		"${DATADIR}/graphics/icon.bmp" \
 		"hex-a-hop" "Application;LogicGame;Game;" false
 
 do-install:
