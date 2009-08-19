@@ -16,6 +16,8 @@ COMMENT=	Tool to ease your PDF related work
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
+BROKEN=		checksum mismatch
+
 USE_GMAKE=	yes
 USE_QT_VER=	3
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
