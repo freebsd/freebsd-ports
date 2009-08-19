@@ -1,10 +1,7 @@
-NVClock is a small utility that allows users to 
-overclock NVIDIA based video cards running on
-*nix platforms. The original code used in building 
-this application was borrowed from the nvcs 
-application. That code has been extensively reworked 
-in order to make the utility much more user friendly 
-and to make it play nice with current distros and 
-drivers.
+NVClock is a small utility that allows users to overclock NVidia based
+video cards running on *nix platforms.  The original code used in building
+this application was borrowed from the nvcs application.  That code has
+been extensively reworked in order to make the utility much more user
+friendly and to make it play nice with current distros and drivers.
 
 WWW: http://www.linuxhardware.org/nvclock/
