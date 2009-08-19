@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${LOCALBASE} \
 		--disable-growl --disable-ghbnr --disable-bundled-qca \
 		--verbose
 
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/psi
