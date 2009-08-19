@@ -8,15 +8,19 @@
 PORTNAME=	dovecot
 PORTVERSION=	1.2.3
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.dovecot.org/releases/1.2/
+MASTER_SITES=	http://www.dovecot.org/releases/${DOVECOTVERSION}/ \
+		http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	Secure and compact IMAP and POP3 servers
+
+DOVECOTVERSION=	1.2
 
 ######################################################################
 # Anytime PORTVERSION changes please bump PORTREVISION of            #
 # mail/dovecot-antispam. Please see ports/135311 for an explanation. #
 ######################################################################
+
 USE_ICONV=	yes
 USE_RC_SUBR=	dovecot.sh
 
@@ -123,7 +127,6 @@ PATCHFILES+=		dovecot-${PORTVERSION}-managesieve-${MANAGESIEVEVERSION}.diff.gz
 PATCH_DIST_STRIP=	-p1
 PROTOCOLS+=		managesieve
 DOCS+=			README.managesieve
-BROKEN=	Managesieve port needs to be updated.
 .endif
 
 ## GSSAPI support
