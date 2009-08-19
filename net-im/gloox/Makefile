@@ -25,6 +25,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|libgnutls-config|pkg-config gnutls|' ${WRKSRC}/configure
 post-install:
 	@${FIND} ${PREFIX}/include/gloox ! -type d | \
 		${SED} "s,${PREFIX}/,," >> ${TMPPLIST}
