@@ -6,32 +6,32 @@
 #
 
 PORTNAME=	txamqp
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3
 CATEGORIES=	net python
-MASTER_SITES=	http://launchpadlibrarian.net/20320545/ \
+MASTER_SITES=	http://launchpadlibrarian.net/30388120/ \
 		# http://launchpad.net/txamqp/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
+DISTNAME=	python-${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Twisted Python library for the AMQP messaging protocol
 
-USE_BZIP2=	yes
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/thrift/__init__.py:${PORTSDIR}/devel/py-thrift
+
 USE_PYTHON=	2.5+
-USE_PYDISTUTILS= yes
+USE_PYDISTUTILS= easy_install
 USE_TWISTED=	yes
 
+WRKSRC=		${WRKDIR}/python-${PORTNAME}-${PORTVERSION}
+
 PYDISTUTILS_PKGNAME=	txAMQP
-PYDISTUTILS_PKGVERSION=	0.2
+PYDISTUTILS_PKGVERSION=	0.3
 PLIST_SUB=	PORTNAME="${PORTNAME}"
 
-# TODO: Install AMQP spec files in a separate leaf port.
 # TODO: Install txAMQP examples.
-# TODO: Build and re-introduce Thrift runtime dependencies.
 
-post-install:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Note: Thrift is not yet supported, Python bindings need fixed."
-	@${ECHO_MSG}
+# Don't try to install Twisted yourself, txAMQP. thx!
+do-patch:
+	@${REINPLACE_CMD} -e '/install_requires/s/^/#/' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
