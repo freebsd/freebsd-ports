@@ -8,7 +8,8 @@
 PORTNAME=	snort
 PORTVERSION=	2.8.4.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.snort.org/dl/
+MASTER_SITES=	http://www.snort.org/dl/ \
+		http://dl.snort.org/snort-current/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system

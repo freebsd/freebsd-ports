@@ -9,7 +9,8 @@ PORTNAME=	hdf5
 PORTVERSION=	1.8.2
 PORTREVISION=	1
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current/src/
+MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current/src/ \
+		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-1.8.2/src/
 
 MAINTAINER=	koziol@hdfgroup.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
