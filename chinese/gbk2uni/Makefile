@@ -11,7 +11,7 @@ CATEGORIES=		chinese converters
 MASTER_SITES=		http://www.yuanjue.net/download/
 PKGNAMEPREFIX=		zh-
 
-MAINTAINER=		yuanjue@yuanjue.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		TeX applet used to generate correct Chinese PDF bookmarks
 
 BROKEN=	does not fetch
