@@ -1,7 +1,0 @@
-GCC, the GNU Compiler Collection includes C, C++, Java with AWT peer for
-gtk.
-
-This port installs the various front ends as gcc42, g++42, gcj42,
-like master port, *AND* installs gcj+AWT peer for gtk as well.
-
-WWW: http://gcc.gnu.org/
