@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	generate
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.druid.net/pub/distrib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
