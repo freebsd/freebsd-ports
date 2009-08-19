@@ -8,7 +8,7 @@
 PORTNAME=	anyremote
 PORTVERSION=	4.18.1
 CATEGORIES=	comms
-MASTER_SITES=	SF
+MASTER_SITES=	SFP/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Remote control service over Bluetooth, infrared or tcp/ip networking
