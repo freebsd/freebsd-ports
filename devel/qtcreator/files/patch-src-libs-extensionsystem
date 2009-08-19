@@ -1,0 +1,13 @@
+--- src/libs/extensionsystem/extensionsystem.pro.o	2009-05-07 23:27:49.000000000 -0400
++++ src/libs/extensionsystem/extensionsystem.pro	2009-05-07 23:28:03.000000000 -0400
+@@ -5,10 +5,6 @@
+ include(../../qworkbenchlibrary.pri)
+ include(extensionsystem_dependencies.pri)
+ 
+-unix:!macx {
+-  LIBS += -ldl
+-}
+-
+ DEFINES += IDE_TEST_DIR=\\\"$$IDE_SOURCE_TREE\\\"
+ 
+ HEADERS += pluginerrorview.h \
