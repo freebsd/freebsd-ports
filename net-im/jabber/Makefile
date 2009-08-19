@@ -7,7 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/ \
@@ -57,7 +57,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--libdir=${PREFIX}/lib/jabber
 
 CPPFLAGS+=	-I${LOCALBASE}/include/pth -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib -ltasn1
 
 SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 SUB_LIST+=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
