@@ -12,7 +12,7 @@ CATEGORIES?=	devel
 MASTER_SITES=	http://download.qt.nokia.com/qtcreator/
 DISTNAME=	qt-creator-${PORTVERSION}-src
 
-MAINTAINER=	kris@pcbsd.org
+MAINTAINER=	kmoore@freebsd.org
 COMMENT=	Qt4 IDE
 
 LIB_DEPENDS=	Imath.6:${PORTSDIR}/graphics/ilmbase \
@@ -45,18 +45,13 @@ do-configure:
 		${QMAKE} -unix CONFIG+="configure" ${QMAKE_PRO}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/qtcreator \ 
-	    ${PREFIX}/bin/qtcreator
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/qtcreator.bin \
-	    ${PREFIX}/bin/qtcreator.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/qtcreator_process_stub \
-	     ${PREFIX}/bin/qtcreator_process_stub
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/qtcreator ${PREFIX}/bin/qtcreator
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/qtcreator.bin ${PREFIX}/bin/qtcreator.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/qtcreator_process_stub ${PREFIX}/bin/qtcreator_process_stub
 	${MKDIR} ${PREFIX}/lib/
-	cd ${WRKSRC}/lib/ && ${FIND} -d qtcreator | ${CPIO} -dumpl \
-	    ${PREFIX}/lib/ >/dev/null
+	cd ${WRKSRC}/lib/ && ${FIND} -d qtcreator | ${CPIO} -dumpl ${PREFIX}/lib/ >/dev/null
 	${MKDIR} ${PREFIX}/share/
-	cd ${WRKSRC}/share && ${COPYTREE_SHARE} qtcreator \
-	    ${PREFIX}/share/
+	cd ${WRKSRC}/share && ${COPYTREE_SHARE} qtcreator ${PREFIX}/share/
 	${MKDIR} ${PREFIX}/share/doc
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${PREFIX}/share/doc/qtcreator/
 
