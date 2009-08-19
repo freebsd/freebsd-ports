@@ -36,6 +36,11 @@ OPTIONS=	7ZIP "Enable support for 7-Zip (.cb7) comic book archives" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700042
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
+.endif
+
 # 7-Zip (.cb7) support
 .if !defined(WITHOUT_7ZIP)
 RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
