@@ -37,6 +37,7 @@ lib/giram/0.3/user_install
 libexec/giram/plug-ins/Box
 libexec/giram/plug-ins/Rotate
 libexec/giram/plug-ins/Spheres
+%%DOCSDIR%%/Tutorial
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Cone.pov
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Disc.pov
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Giram.pov
@@ -88,6 +89,7 @@ share/locale/tr/LC_MESSAGES/giram.mo
 share/locale/uk/LC_MESSAGES/giram.mo
 share/locale/zh_CN/LC_MESSAGES/giram.mo
 share/locale/zh_TW/LC_MESSAGES/giram.mo
+@dirrm %%DOCSDIR%%
 @dirrm libexec/giram/plug-ins
 @dirrm libexec/giram
 @dirrm lib/giram/0.3/tips

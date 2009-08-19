@@ -43,7 +43,6 @@ RUN_DEPENDS+=	povray:${PORTSDIR}/graphics/povray
 .endif
 
 MAN1=		giram.1
-PORTDOCS=	Tutorial
 
 post-patch:
 	@${REINPLACE_CMD} -e '36s,static ,,' ${WRKSRC}/src/tools/tool_disc.c
