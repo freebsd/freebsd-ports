@@ -18,6 +18,8 @@ RESTRICTED=	May be covered by patents
 
 LIB_DEPENDS=	gdiplus:${PORTSDIR}/x11-toolkits/libgdiplus
 
+CONFLICTS=	autopano-sift-C-[0-9]*
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 SUB_FILES=	autopano
 
