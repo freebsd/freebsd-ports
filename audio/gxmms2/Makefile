@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	gxmms2
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.7.0.20090608
+DISTVERSIONSUFFIX=.795a77a
 CATEGORIES=	audio
-MASTER_SITES=	http://wejp.k.vu/projects/xmms2/
+#MASTER_SITES=	http://wejp.k.vu/projects/xmms2/
+MASTER_SITES=	ftp://ftp.lissyara.su/users/Guest/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK2 based XMMS2 client, written in C
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS=	xmmsclient.5:${PORTSDIR}/audio/xmms2
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
