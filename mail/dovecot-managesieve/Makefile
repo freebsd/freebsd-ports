@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot-managesieve
-PORTVERSION=	0.10.6
+PORTVERSION=	0.11.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
@@ -16,12 +16,10 @@ COMMENT=	Dovecot ManageSieve Server daemon
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:build \
 		${NONEXISTENT}:${PORTSDIR}/mail/dovecot-sieve:build
-RUN_DEPENDS=	dovecot>=1.1.*:${PORTSDIR}/mail/dovecot \
-		dovecot-sieve>=1.1.*:${PORTSDIR}/mail/dovecot-sieve
+RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}.*:${PORTSDIR}/mail/dovecot \
+		dovecot-sieve>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot-sieve
 
-DOVECOTVERSION=	1.1
-
-BROKEN=	Needs updating to reflect new mail/dovecot version.
+DOVECOTVERSION=	1.2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
