@@ -10,10 +10,10 @@ PORTNAME=	bluefish
 PORTVERSION=	1.0.7
 PORTREVISION=	6
 CATEGORIES=	www editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	HTML editor designed for the experienced web designer
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
@@ -27,7 +27,6 @@ RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
 .endif
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -69,6 +68,14 @@ pre-install:
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
 .endif
 
 .include <bsd.port.post.mk>
