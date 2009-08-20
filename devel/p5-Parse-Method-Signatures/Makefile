@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Parse-Method-Signatures
-PORTVERSION=	1.003010
+PORTVERSION=	1.003011
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Perl6 like method signature parser
 
 BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Traits>=0.06:${PORTSDIR}/devel/p5-MooseX-Traits \
-		p5-MooseX-Types>=0.10:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-MooseX-Types>=0.17:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-MooseX-Types-Structured>=0:${PORTSDIR}/devel/p5-MooseX-Types-Structured \
 		p5-namespace-clean>=0.10:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-PPI>=1.203:${PORTSDIR}/textproc/p5-PPI
