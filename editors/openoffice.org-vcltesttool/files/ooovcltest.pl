@@ -126,7 +126,7 @@ close(TESTTOOLRC);
 
 ###########
 #checking hid.lst (generated and QUASTe)
-system ("cat $path_to_ooo/../../hid.lst | sort > hid.lst.genrated\n");
-system ("sed 's/\r//' hid.lst | sort > hid.lst.quaste\n");
-system ("diff -u hid.lst.genrated hid.lst.quaste > hid.lst.diff\n");
-system ("cat hid.lst.diff\n");
+system ("cat $path_to_ooo/../../hid.lst | sort > hid.lst.$ooo_tag.genrated\n");
+system ("sed 's/\r//' hid.lst | sort > hid.lst.$ooo_tag.quaste\n");
+system ("diff -u hid.lst.$ooo_tag.genrated hid.lst.$ooo_tag.quaste > hid.lst.$ooo_tag.diff\n");
+system ("cat hid.lst.$ooo_tag.diff\n");
