@@ -2216,6 +2216,7 @@ dgd-net                         ports/net/dgd-net
 dgen-sdl                        ports/emulators/dgen-sdl
 dgpsip                          ports/astro/dgpsip
 dgs                             ports/x11/dgs
+dhcdrop                         ports/net-mgmt/dhcdrop
 dhcp6                           ports/net/dhcp6
 dhcpcd                          ports/net/dhcpcd
 dhcpdump                        ports/net/dhcpdump
@@ -3964,7 +3965,6 @@ gcb                             ports/x11/gcb
 gcc295                          ports/lang/gcc295
 gcc34                           ports/lang/gcc34
 gcc42                           ports/lang/gcc42
-gcc42-withgcjawt                ports/lang/gcc42-withgcjawt
 gcc43                           ports/lang/gcc43
 gcc44                           ports/lang/gcc44
 gcc45                           ports/lang/gcc45
@@ -8545,7 +8545,7 @@ mediainfo                       ports/multimedia/mediainfo
 mediaproxy                      ports/net/mediaproxy
 mediatomb                       ports/net/mediatomb
 mediawiki                       ports/www/mediawiki
-mediawiki12                     ports/www/mediawiki12
+mediawiki112                    ports/www/mediawiki112
 mediawiki16                     ports/www/mediawiki16
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
@@ -9612,6 +9612,7 @@ nspmod                          ports/audio/nspmod
 nspr                            ports/devel/nspr
 nss                             ports/security/nss
 nss_ldap                        ports/net/nss_ldap
+nss_ldapd                       ports/net/nss_ldapd
 nss_mdns                        ports/dns/nss_mdns
 nss_resinit                     ports/dns/nss_resinit
 nstreams                        ports/net-mgmt/nstreams
@@ -19596,6 +19597,7 @@ py-trustedpickle                ports/security/py-trustedpickle
 py-turbocheetah                 ports/devel/py-turbocheetah
 py-turbodjango                  ports/www/py-turbodjango
 py-turbogears                   ports/www/py-turbogears
+py-turbogears2                  ports/www/py-turbogears2
 py-turbojinja                   ports/devel/py-TurboJinja
 py-turbojson                    ports/devel/py-turbojson
 py-turbojson11                  ports/devel/py-turbojson11
@@ -19972,6 +19974,7 @@ qt4-xml                         ports/textproc/qt4-xml
 qt4-xmlpatterns                 ports/textproc/qt4-xmlpatterns
 qt4-xmlpatterns-tool            ports/textproc/qt4-xmlpatterns-tool
 qt4pas                          ports/x11-toolkits/qt4pas
+qtcreator                       ports/devel/qtcreator
 qtcurve-gtk2                    ports/x11-themes/qtcurve-gtk2
 qtcurve-kde3                    ports/x11-themes/qtcurve-kde3
 qtcurve-kde4                    ports/x11-themes/qtcurve-kde4
