@@ -7,13 +7,14 @@
 
 PORTNAME=	pidgin-sipe
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SFP/sipe/sipe/${DISTNAME}
 
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	A plugin for Pidgin to provide LCS/OCS connectivity
 
-LIB_DEPENDS=	purple.5:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.6:${PORTSDIR}/net-im/libpurple
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
