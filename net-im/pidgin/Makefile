@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	pidgin
-PORTREVISION=	1
+PORTREVISION=	0
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		purple.5:${PORTSDIR}/net-im/libpurple
+		purple.6:${PORTSDIR}/net-im/libpurple
 
 MASTERDIR=	${.CURDIR}/../libpurple
 BUILD_WRKSRC=	${WRKSRC}/pidgin

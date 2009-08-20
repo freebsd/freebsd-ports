@@ -3,6 +3,8 @@ include/pidgin/eggtrayicon.h
 include/pidgin/pidgincombobox.h
 include/pidgin/pidginstock.h
 include/pidgin/gtkaccount.h
+include/pidgin/gtkblist-theme-loader.h
+include/pidgin/gtkblist-theme.h
 include/pidgin/gtkblist.h
 include/pidgin/gtkcelllayout.h
 include/pidgin/gtkcellrendererexpander.h
@@ -21,10 +23,13 @@ include/pidgin/gtkeventloop.h
 include/pidgin/gtkexpander.h
 include/pidgin/gtkft.h
 include/pidgin/gtkgaim-compat.h
+include/pidgin/gtkicon-theme-loader.h
+include/pidgin/gtkicon-theme.h
 include/pidgin/gtkidle.h
 include/pidgin/gtkimhtml.h
 include/pidgin/gtkimhtmltoolbar.h
 include/pidgin/gtklog.h
+include/pidgin/gtkmedia.h
 include/pidgin/gtkmenutray.h
 include/pidgin/gtknickcolors.h
 include/pidgin/gtknotify.h
@@ -43,6 +48,7 @@ include/pidgin/gtksound.h
 include/pidgin/gtksourceiter.h
 include/pidgin/gtksourceundomanager.h
 include/pidgin/gtksourceview-marshal.h
+include/pidgin/gtkstatus-icon-theme.h
 include/pidgin/gtkstatusbox.h
 include/pidgin/gtkthemes.h
 include/pidgin/gtkutils.h
@@ -80,6 +86,8 @@ lib/pidgin/sendbutton.la
 lib/pidgin/sendbutton.so
 lib/pidgin/spellchk.la
 lib/pidgin/spellchk.so
+lib/pidgin/themeedit.la
+lib/pidgin/themeedit.so
 lib/pidgin/ticker.la
 lib/pidgin/ticker.so
 lib/pidgin/timestamp.la
@@ -88,8 +96,11 @@ lib/pidgin/timestamp_format.la
 lib/pidgin/timestamp_format.so
 lib/pidgin/xmppconsole.la
 lib/pidgin/xmppconsole.so
+lib/pidgin/xmppdisco.la
+lib/pidgin/xmppdisco.so
 libdata/pkgconfig/pidgin.pc
 share/applications/pidgin.desktop
+share/icons/hicolor/scalable/apps/pidgin.svg
 share/pixmaps/pidgin/animations/16/connect0.png
 share/pixmaps/pidgin/animations/16/connect1.png
 share/pixmaps/pidgin/animations/16/connect2.png
@@ -157,6 +168,13 @@ share/pixmaps/pidgin/dialogs/64/info.png
 share/pixmaps/pidgin/dialogs/64/mail.png
 share/pixmaps/pidgin/dialogs/64/question.png
 share/pixmaps/pidgin/dialogs/64/warning.png
+share/pixmaps/pidgin/dialogs/scalable/auth.svg
+share/pixmaps/pidgin/dialogs/scalable/cool.svg
+share/pixmaps/pidgin/dialogs/scalable/dialog.svg
+share/pixmaps/pidgin/dialogs/scalable/error.svg
+share/pixmaps/pidgin/dialogs/scalable/info.svg
+share/pixmaps/pidgin/dialogs/scalable/question.svg
+share/pixmaps/pidgin/dialogs/scalable/warning.svg
 share/pixmaps/pidgin/emblems/16/aol-client.png
 share/pixmaps/pidgin/emblems/16/birthday.png
 share/pixmaps/pidgin/emblems/16/blocked.png
@@ -178,6 +196,22 @@ share/pixmaps/pidgin/emblems/16/secure.png
 share/pixmaps/pidgin/emblems/16/unavailable.png
 share/pixmaps/pidgin/emblems/16/video.png
 share/pixmaps/pidgin/emblems/16/voice.png
+share/pixmaps/pidgin/emblems/scalable/aol-client.svg
+share/pixmaps/pidgin/emblems/scalable/blocked.svg
+share/pixmaps/pidgin/emblems/scalable/bot.svg
+share/pixmaps/pidgin/emblems/scalable/external.svg
+share/pixmaps/pidgin/emblems/scalable/female.svg
+share/pixmaps/pidgin/emblems/scalable/free-for-chat.svg
+share/pixmaps/pidgin/emblems/scalable/game.svg
+share/pixmaps/pidgin/emblems/scalable/male.svg
+share/pixmaps/pidgin/emblems/scalable/mobile.svg
+share/pixmaps/pidgin/emblems/scalable/music.svg
+share/pixmaps/pidgin/emblems/scalable/not-authorized.svg
+share/pixmaps/pidgin/emblems/scalable/qq-member.svg
+share/pixmaps/pidgin/emblems/scalable/secure.svg
+share/pixmaps/pidgin/emblems/scalable/unavailable.svg
+share/pixmaps/pidgin/emblems/scalable/video.svg
+share/pixmaps/pidgin/emblems/scalable/voice.svg
 share/pixmaps/pidgin/emotes/default/act-up.png
 share/pixmaps/pidgin/emotes/default/airplane.png
 share/pixmaps/pidgin/emotes/default/alien.png
@@ -460,6 +494,21 @@ share/pixmaps/pidgin/protocols/48/silc.png
 share/pixmaps/pidgin/protocols/48/simple.png
 share/pixmaps/pidgin/protocols/48/yahoo.png
 share/pixmaps/pidgin/protocols/48/zephyr.png
+share/pixmaps/pidgin/protocols/scalable/aim.svg
+share/pixmaps/pidgin/protocols/scalable/bonjour.svg
+share/pixmaps/pidgin/protocols/scalable/gadu-gadu.svg
+share/pixmaps/pidgin/protocols/scalable/google-talk.svg
+share/pixmaps/pidgin/protocols/scalable/icq.svg
+share/pixmaps/pidgin/protocols/scalable/irc.svg
+share/pixmaps/pidgin/protocols/scalable/jabber.svg
+share/pixmaps/pidgin/protocols/scalable/meanwhile.svg
+share/pixmaps/pidgin/protocols/scalable/msn.svg
+share/pixmaps/pidgin/protocols/scalable/novell.svg
+share/pixmaps/pidgin/protocols/scalable/qq.svg
+share/pixmaps/pidgin/protocols/scalable/silc.svg
+share/pixmaps/pidgin/protocols/scalable/simple.svg
+share/pixmaps/pidgin/protocols/scalable/yahoo.svg
+share/pixmaps/pidgin/protocols/scalable/zephyr.svg
 share/pixmaps/pidgin/status/11/available.png
 share/pixmaps/pidgin/status/11/away.png
 share/pixmaps/pidgin/status/11/busy.png
@@ -525,6 +574,8 @@ share/pixmaps/pidgin/status/48/rtl/extended-away.png
 share/pixmaps/pidgin/status/48/invisible.png
 share/pixmaps/pidgin/status/48/rtl/log-in.png
 share/pixmaps/pidgin/status/48/rtl/log-out.png
+share/pixmaps/pidgin/toolbar/11/message-new.png
+share/pixmaps/pidgin/toolbar/16/audio-call.png
 share/pixmaps/pidgin/toolbar/16/change-bgcolor.png
 share/pixmaps/pidgin/toolbar/16/change-fgcolor.png
 share/pixmaps/pidgin/toolbar/16/emote-select.png
@@ -539,7 +590,14 @@ share/pixmaps/pidgin/toolbar/16/plugins.png
 share/pixmaps/pidgin/toolbar/16/send-file.png
 share/pixmaps/pidgin/toolbar/16/transfer.png
 share/pixmaps/pidgin/toolbar/16/unblock.png
+share/pixmaps/pidgin/toolbar/16/video-call.png
 share/pixmaps/pidgin/toolbar/22/select-avatar.png
+share/pixmaps/pidgin/toolbar/22/video-call.png
+share/pixmaps/pidgin/toolbar/22/voice-call.png
+share/pixmaps/pidgin/toolbar/32/video-call.png
+share/pixmaps/pidgin/toolbar/32/voice-call.png
+share/pixmaps/pidgin/toolbar/48/video-call.png
+share/pixmaps/pidgin/toolbar/48/voice-call.png
 share/pixmaps/pidgin/tray/16/available_4bit.ico
 share/pixmaps/pidgin/tray/16/away_4bit.ico
 share/pixmaps/pidgin/tray/16/busy_4bit.ico
@@ -571,6 +629,7 @@ share/pixmaps/pidgin/tray/32/tray-busy.png
 share/pixmaps/pidgin/tray/32/tray-connecting.png
 share/pixmaps/pidgin/tray/32/tray-extended-away.png
 share/pixmaps/pidgin/tray/32/tray-invisible.png
+share/pixmaps/pidgin/tray/32/tray-message.png
 share/pixmaps/pidgin/tray/32/tray-new-im.png
 share/pixmaps/pidgin/tray/32/tray-offline.png
 share/pixmaps/pidgin/tray/32/tray-online.png
@@ -579,6 +638,7 @@ share/pixmaps/pidgin/tray/48/tray-busy.png
 share/pixmaps/pidgin/tray/48/tray-connecting.png
 share/pixmaps/pidgin/tray/48/tray-extended-away.png
 share/pixmaps/pidgin/tray/48/tray-invisible.png
+share/pixmaps/pidgin/tray/48/tray-message.png
 share/pixmaps/pidgin/tray/48/tray-new-im.png
 share/pixmaps/pidgin/tray/48/tray-offline.png
 share/pixmaps/pidgin/tray/48/tray-online.png
@@ -592,8 +652,11 @@ share/icons/hicolor/48x48/apps/pidgin.png
 @dirrm share/pixmaps/pidgin/tray/22
 @dirrm share/pixmaps/pidgin/tray/16
 @dirrm share/pixmaps/pidgin/tray
+@dirrm share/pixmaps/pidgin/toolbar/48
+@dirrm share/pixmaps/pidgin/toolbar/32
 @dirrm share/pixmaps/pidgin/toolbar/22
 @dirrm share/pixmaps/pidgin/toolbar/16
+@dirrm share/pixmaps/pidgin/toolbar/11
 @dirrm share/pixmaps/pidgin/toolbar
 @dirrm share/pixmaps/pidgin/status/48/rtl
 @dirrm share/pixmaps/pidgin/status/48
@@ -606,6 +669,7 @@ share/icons/hicolor/48x48/apps/pidgin.png
 @dirrm share/pixmaps/pidgin/status/11/rtl
 @dirrm share/pixmaps/pidgin/status/11
 @dirrm share/pixmaps/pidgin/status
+@dirrm share/pixmaps/pidgin/protocols/scalable
 @dirrm share/pixmaps/pidgin/protocols/48
 @dirrm share/pixmaps/pidgin/protocols/22
 @dirrm share/pixmaps/pidgin/protocols/16
@@ -614,8 +678,10 @@ share/icons/hicolor/48x48/apps/pidgin.png
 @dirrm share/pixmaps/pidgin/emotes/none
 @dirrm share/pixmaps/pidgin/emotes/default
 @dirrm share/pixmaps/pidgin/emotes
+@dirrm share/pixmaps/pidgin/emblems/scalable
 @dirrm share/pixmaps/pidgin/emblems/16
 @dirrm share/pixmaps/pidgin/emblems
+@dirrm share/pixmaps/pidgin/dialogs/scalable
 @dirrm share/pixmaps/pidgin/dialogs/64
 @dirrm share/pixmaps/pidgin/dialogs/16
 @dirrm share/pixmaps/pidgin/dialogs
