@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="59e7af2d-8db7-11de-883b-001e3300a30d">
+    <topic>pidgin -- MSN overflow parsing SLP messages </topic>
+    <affects>
+      <package>
+	<name>pidgin</name>
+	<name>libpurple</name>
+	<name>finch</name>
+	<range><lt>2.5.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/36384">
+	  <p>A vulnerability has been reported in Pidgin, which can be
+	    exploited by malicious people to potentially compromise a user's
+	    system.</p>
+	  <p>The vulnerability is caused due to an error in the
+	    "msn_slplink_process_msg()" function when processing MSN SLP
+	    messages and can be exploited to corrupt memory.</p>
+	  <p>Successful exploitation may allow execution of arbitrary
+	    code.</p>
+	  <p>The vulnerability is reported in versions 2.5.8 and prior.
+	    Other versions may also be affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-2694</cvename>
+      <url>http://secunia.com/advisories/36384/</url>
+      <url>http://www.pidgin.im/news/security/?id=34</url>
+    </references>
+    <dates>
+      <discovery>2009-08-18</discovery>
+      <entry>2009-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b31a1088-460f-11de-a11a-0022156e8794">
     <topic>GnuTLS -- multiple vulnerabilities</topic>
     <affects>
