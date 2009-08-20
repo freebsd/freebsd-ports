@@ -7,6 +7,7 @@
 
 PORTNAME=	fetion
 PORTVERSION=	0.98.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/
 PKGNAMEPREFIX=	pidgin-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	pidgin-
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Fetion protocol plugin for libpurple
 
-LIB_DEPENDS=	purple.5:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.6:${PORTSDIR}/net-im/libpurple
 
 MAKE_JOBS_SAFE=	yes
 
