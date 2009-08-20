@@ -31,6 +31,10 @@ include/libpurple/gaim-compat.h
 include/libpurple/idle.h
 include/libpurple/imgstore.h
 include/libpurple/log.h
+include/libpurple/marshallers.h
+include/libpurple/media-gst.h
+include/libpurple/media.h
+include/libpurple/mediamanager.h
 include/libpurple/mime.h
 include/libpurple/nat-pmp.h
 include/libpurple/network.h
@@ -51,12 +55,18 @@ include/libpurple/server.h
 include/libpurple/signals.h
 include/libpurple/smiley.h
 include/libpurple/sound.h
+include/libpurple/sound-theme-loader.h
+include/libpurple/sound-theme.h
 include/libpurple/sslconn.h
 include/libpurple/status.h
 include/libpurple/stringref.h
 include/libpurple/stun.h
+include/libpurple/theme-loader.h
+include/libpurple/theme-manager.h
+include/libpurple/theme.h
 include/libpurple/upnp.h
 include/libpurple/util.h
+include/libpurple/valgrind.h
 include/libpurple/value.h
 include/libpurple/version.h
 include/libpurple/whiteboard.h
@@ -105,6 +115,11 @@ lib/purple-2/joinpart.so
 %%JABBER%%lib/purple-2/libxmpp.so
 %%YAHOO%%lib/purple-2/libyahoo.la
 %%YAHOO%%lib/purple-2/libyahoo.so
+%%YAHOO%%lib/purple-2/libyahoojp.la
+%%YAHOO%%lib/purple-2/libyahoojp.so
+%%YAHOO%%lib/purple-2/libymsg.la
+%%YAHOO%%lib/purple-2/libymsg.so
+%%YAHOO%%lib/purple-2/libymsg.so.0
 %%ZEPHYR%%lib/purple-2/libzephyr.la
 %%ZEPHYR%%lib/purple-2/libzephyr.so
 lib/purple-2/log_reader.la
@@ -134,10 +149,10 @@ lib/purple-2/statenotify.so
 %%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Purple.pm
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
-%%DBUS%%lib/libpurple-client.so.5
+%%DBUS%%lib/libpurple-client.so.6
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.5
+lib/libpurple.so.6
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
 share/locale/af/LC_MESSAGES/pidgin.mo
@@ -171,6 +186,7 @@ share/locale/gu/LC_MESSAGES/pidgin.mo
 share/locale/he/LC_MESSAGES/pidgin.mo
 share/locale/hi/LC_MESSAGES/pidgin.mo
 share/locale/hu/LC_MESSAGES/pidgin.mo
+share/locale/hy/LC_MESSAGES/pidgin.mo
 share/locale/id/LC_MESSAGES/pidgin.mo
 share/locale/it/LC_MESSAGES/pidgin.mo
 share/locale/ja/LC_MESSAGES/pidgin.mo
@@ -203,6 +219,7 @@ share/locale/sq/LC_MESSAGES/pidgin.mo
 share/locale/sr/LC_MESSAGES/pidgin.mo
 share/locale/sr@latin/LC_MESSAGES/pidgin.mo
 share/locale/sv/LC_MESSAGES/pidgin.mo
+share/locale/sw/LC_MESSAGES/pidgin.mo
 share/locale/ta/LC_MESSAGES/pidgin.mo
 share/locale/te/LC_MESSAGES/pidgin.mo
 share/locale/th/LC_MESSAGES/pidgin.mo
@@ -219,12 +236,17 @@ share/purple/ca-certs/America_Online_Root_Certification_Authority_1.pem
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
 share/purple/ca-certs/Equifax_Secure_CA.pem
+share/purple/ca-certs/Equifax_Secure_Global_eBusiness_CA-1.pem
 share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
 share/purple/ca-certs/Microsoft_Internet_Authority.pem
 share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
+share/purple/ca-certs/StartCom_Certification_Authority.pem
 share/purple/ca-certs/StartCom_Free_SSL_CA.pem
+share/purple/ca-certs/Thawte_Premium_Server_CA.pem
+share/purple/ca-certs/VeriSign_Class3_Extended_Validation_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
 share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5_2.pem
 share/purple/ca-certs/VeriSign_International_Server_Class_3_CA.pem
 share/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
 share/sounds/purple/alert.wav
@@ -244,6 +266,8 @@ share/sounds/purple/send.wav
 @dirrmtry share/locale/ur
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sw/LC_MESSAGES
+@dirrmtry share/locale/sw
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
@@ -260,6 +284,8 @@ share/sounds/purple/send.wav
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

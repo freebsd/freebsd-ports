@@ -7,11 +7,11 @@
 #
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.5.8
-PORTREVISION?=	2
+PORTVERSION=	2.6.1
+PORTREVISION?=	0
 CATEGORIES?=	net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pidgin
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_PROJECT}
+MASTER_SITE_SUBDIR=	pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
 
 MAINTAINER?=	marcus@FreeBSD.org
@@ -52,6 +52,8 @@ OPTIONS=	BONJOUR "Enable mDNS support" on \
 		GNUTLS "GNUTLS encryption support" off \
 		NSS "Mozilla NSS encryption support" on \
 		SASL "Cyrus SASL support (for jabberd)" off \
+		GSTREAMER "Use GStreamer for playing sounds" on \
+		VV "Enable video and voice support" on \
 		PERL "Perl scripting" off \
 		TCLTK "Tcl/Tk scripting" off \
 		SAMETIME "The Lotus Sametime chat protocol" off \
@@ -70,7 +72,6 @@ OPTIONS=	BONJOUR "Enable mDNS support" on \
 
 .if defined(WITH_GTKUI)
 OPTIONS+=	GTKSPELL "Spell checking support" on \
-		GSTREAMER "Use GStreamer for playing sounds" on \
 		CAP "Enable Contact Availability Prediction plugin" on
 .endif
 
@@ -98,10 +99,16 @@ CONFIGURE_ARGS+=	--disable-gevolution
 PLIST_SUB+=		EVO="@comment not installed: "
 .endif
 
-.if defined(WITH_GTKUI) && !defined(WITHOUT_GSTREAMER)
+.if !defined(WITHOUT_GSTREAMER)
 USE_GSTREAMER+=	core good
 .else
 CONFIGURE_ARGS+=--disable-gstreamer
+.endif
+
+.if !defined(WITHOUT_VV)
+LIB_DEPENDS+=	gstfarsight-0.10.0:${PORTSDIR}/net-im/farsight2
+.else
+CONFIGURE_ARGS+=--disable-vv
 .endif
 
 .if defined(WITH_GTKUI) && !defined(WITHOUT_CAP)
