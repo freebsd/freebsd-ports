@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	CHI
-PORTVERSION=	0.250
+PORTVERSION=	0.260
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/J/JS/JSWARTZ
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.25
+DISTNAME=	${PORTNAME}-0.26
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for unified cache interface
@@ -24,6 +24,7 @@ RUN_DEPENDS=	\
 	p5-Hash-MoreUtils>0:${PORTSDIR}/devel/p5-Hash-MoreUtils \
 	p5-List-MoreUtils>=0.13:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Moose>=0.66:${PORTSDIR}/devel/p5-Moose \
+	p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
 	p5-Time-Duration>=1.06:${PORTSDIR}/devel/p5-Time-Duration \
 	p5-Time-Duration-Parse>=0.03:${PORTSDIR}/devel/p5-Time-Duration-Parse
 

@@ -21,6 +21,7 @@
 %%SITE_PERL%%/CHI/Test/Class.pm
 %%SITE_PERL%%/CHI/Test/Driver/NonMoose.pm
 %%SITE_PERL%%/CHI/Test/Driver/Readonly.pm
+%%SITE_PERL%%/CHI/Test/Driver/Role/CheckKeyValidity.pm
 %%SITE_PERL%%/CHI/Test/Driver/Writeonly.pm
 %%SITE_PERL%%/CHI/Test/InternalOnly.pm
 %%SITE_PERL%%/CHI/Test/Logger.pm
@@ -51,6 +52,7 @@
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver/File
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver
 @dirrmtry %%SITE_PERL%%/CHI/t
+@dirrmtry %%SITE_PERL%%/CHI/Test/Driver/Role
 @dirrmtry %%SITE_PERL%%/CHI/Test/Driver
 @dirrmtry %%SITE_PERL%%/CHI/Test
 @dirrmtry %%SITE_PERL%%/CHI/Serializer
