@@ -8,7 +8,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.6.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_PROJECT}
 MASTER_SITE_SUBDIR=	pidgin/Pidgin/${PORTVERSION}
@@ -54,6 +54,7 @@ OPTIONS=	BONJOUR "Enable mDNS support" on \
 		SASL "Cyrus SASL support (for jabberd)" off \
 		GSTREAMER "Use GStreamer for playing sounds" on \
 		VV "Enable video and voice support" on \
+		IDN "Enable support for international domains" on
 		PERL "Perl scripting" off \
 		TCLTK "Tcl/Tk scripting" off \
 		SAMETIME "The Lotus Sametime chat protocol" off \
@@ -109,6 +110,12 @@ CONFIGURE_ARGS+=--disable-gstreamer
 LIB_DEPENDS+=	gstfarsight-0.10.0:${PORTSDIR}/net-im/farsight2
 .else
 CONFIGURE_ARGS+=--disable-vv
+.endif
+
+.if !defined(WITHOUT_IDN)
+LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
+.else
+CONFIGURE_ARGS+=--disable-idn
 .endif
 
 .if defined(WITH_GTKUI) && !defined(WITHOUT_CAP)
