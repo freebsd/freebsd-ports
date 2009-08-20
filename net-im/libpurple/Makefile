@@ -54,7 +54,7 @@ OPTIONS=	BONJOUR "Enable mDNS support" on \
 		SASL "Cyrus SASL support (for jabberd)" off \
 		GSTREAMER "Use GStreamer for playing sounds" on \
 		VV "Enable video and voice support" on \
-		IDN "Enable support for international domains" on
+		IDN "Enable support for international domains" on \
 		PERL "Perl scripting" off \
 		TCLTK "Tcl/Tk scripting" off \
 		SAMETIME "The Lotus Sametime chat protocol" off \
