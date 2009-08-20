@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Method-Signatures
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Moose>=0.63:${PORTSDIR}/devel/p5-Moose \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-B-Hooks-EndOfScope>=0.07:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-Context-Preserve>=0:${PORTSDIR}/devel/p5-Context-Preserve \
-		p5-Parse-Method-Signatures>=1.003010:${PORTSDIR}/devel/p5-Parse-Method-Signatures \
+		p5-Parse-Method-Signatures>=1.003011:${PORTSDIR}/devel/p5-Parse-Method-Signatures \
 		p5-Devel-Declare>=0.005011:${PORTSDIR}/devel/p5-Devel-Declare \
 		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
