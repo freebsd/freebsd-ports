@@ -30,6 +30,8 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg			\
 #		shout:${PORTSDIR}/audio/libshout		\
 #		lirc_client:${PORTSDIR}/comms/lirc
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	lthack libxml2	# lthack + autotools stuff below? To verify!
