@@ -16,6 +16,8 @@ COMMENT=	An Ada-binding to the X Window System and *tif
 
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
+BROKEN=		does not build
+
 USE_MOTIF=	yes
 USE_XORG=	x11
 
