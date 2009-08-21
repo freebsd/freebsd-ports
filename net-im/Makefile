@@ -135,6 +135,7 @@
     SUBDIR += pymsn
     SUBDIR += qq
     SUBDIR += qutim
+    SUBDIR += qutim-plugin-icq
     SUBDIR += qwit
     SUBDIR += qwit-devel
     SUBDIR += rubygem-termtter
