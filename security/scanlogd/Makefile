@@ -7,6 +7,7 @@
 
 PORTNAME=	scanlogd
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://openwall.com/scanlogd/ \
 		ftp://ftp.openwall.com/pub/projects/scanlogd/ \
@@ -15,7 +16,7 @@ MASTER_SITES=	http://openwall.com/scanlogd/ \
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	TCP port scan detection tool
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	${PORTNAME}
 
 .if defined(WITH_LIBNIDS)
 BUILD_DEPENDS+= ${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
@@ -26,20 +27,13 @@ ALL_TARGET=	libpcap
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c" LD="${CC}"
 
 MAN8=		scanlogd.8
-PLIST_FILES=	bin/scanlogd \
-		etc/rc.d/scanlogd.sh
-
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
+PLIST_FILES=	bin/scanlogd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanlogd ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/scanlogd.8 ${MANPREFIX}/man/man8
 
 post-install:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/scanlogd.sh > ${PREFIX}/etc/rc.d/scanlogd.sh
-	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/scanlogd.sh
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
