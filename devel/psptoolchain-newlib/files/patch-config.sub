@@ -1,0 +1,29 @@
+--- config.sub.orig	2006-12-11 06:12:46.000000000 +0200
++++ config.sub	2007-06-01 12:22:26.000000000 +0300
+@@ -267,6 +267,7 @@
+ 	| mipsisa64sb1 | mipsisa64sb1el \
+ 	| mipsisa64sr71k | mipsisa64sr71kel \
+ 	| mipstx39 | mipstx39el \
++	| mipsallegrex | mipsallegrexel \
+ 	| mn10200 | mn10300 \
+ 	| mt \
+ 	| msp430 \
+@@ -348,6 +349,7 @@
+ 	| mipsisa64sb1-* | mipsisa64sb1el-* \
+ 	| mipsisa64sr71k-* | mipsisa64sr71kel-* \
+ 	| mipstx39-* | mipstx39el-* \
++	| mipsallegrex-* | mipsallegrexel-* \
+ 	| mmix-* \
+ 	| mt-* \
+ 	| msp430-* \
+@@ -690,6 +692,10 @@
+ 		basic_machine=m68k-atari
+ 		os=-mint
+ 		;;
++	psp)
++		basic_machine=mipsallegrexel-psp
++		os=-elf
++		;;
+ 	mips3*-*)
+ 		basic_machine=`echo $basic_machine | sed -e 's/mips3/mips64/'`
+ 		;;

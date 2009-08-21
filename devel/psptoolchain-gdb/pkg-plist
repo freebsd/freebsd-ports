@@ -1,0 +1,6 @@
+lib/libpsp-sim.a
+bin/psp-run
+bin/psp-gdbtui
+bin/psp-gdb
+@dirrmtry psp/lib
+@dirrmtry psp

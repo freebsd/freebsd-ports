@@ -1,0 +1,19 @@
+--- newlib/libc/sys/psp/README.orig	1970-01-01 02:00:00.000000000 +0200
++++ newlib/libc/sys/psp/README	2007-06-01 12:22:26.000000000 +0300
+@@ -0,0 +1,16 @@
++Newlib for PSP
++--
++
++This sys/psp directory depends on PSPSDK headers.  It expects them to live in
++${prefix}/psp/sdk/include (see newlib/configure.host).
++
++I used automake 1.4-p6 to generate aclocal.m4 and Makefile.in:
++
++	aclocal -I ../../..
++	automake --cygnus
++
++Autoconf refused to work for me, so I copied configure from sys/sh and modified
++$ac_unique_file to point libcglue.c.
++
++--
++Marcus R. Brown <mrbrown@ocgnet.org>

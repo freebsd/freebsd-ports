@@ -1,0 +1,13 @@
+--- bfd/configure.orig	2009-02-26 14:37:44.000000000 +0100
++++ bfd/configure	2009-02-26 14:38:23.000000000 +0100
+@@ -4366,8 +4366,8 @@
+   bfdlibdir='$(libdir)'
+   bfdincludedir='$(includedir)'
+   if test "${host}" != "${target}"; then
+-    bfdlibdir='$(exec_prefix)/$(host_noncanonical)/$(target_noncanonical)/lib'
+-    bfdincludedir='$(exec_prefix)/$(host_noncanonical)/$(target_noncanonical)/include'
++    bfdlibdir='$(exec_prefix)/$(target_noncanonical)/lib'
++    bfdincludedir='$(exec_prefix)/$(target_noncanonical)/include'
+   fi
+ 
+ 

@@ -1,0 +1,11 @@
+--- bfd/Makefile.in.orig	2005-06-12 19:58:55.000000000 +0100
++++ bfd/Makefile.in	2006-05-09 02:55:36.000000000 +0100
+@@ -250,7 +250,7 @@
+ AUTOMAKE_OPTIONS = 1.9 cygnus
+ 
+ # Uncomment the following line when doing a release.
+-RELEASE=y
++#RELEASE=y
+ INCDIR = $(srcdir)/../include
+ CSEARCH = -I. -I$(srcdir) -I$(INCDIR)
+ MKDEP = gcc -MM

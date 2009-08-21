@@ -1,0 +1,12 @@
+--- gas/configure.orig	2005-03-01 00:43:51.000000000 +0000
++++ gas/configure	2006-05-09 02:55:36.000000000 +0100
+@@ -4537,6 +4537,9 @@
+ 	  mips64vr | mips64vrel)
+ 	    mips_cpu=vr4100
+ 	    ;;
++	  mipsallegrex | mipsallegrexel)
++	    mips_cpu=allegrex
++	    ;;
+ 	  mipsisa32r2* | mipsisa64r2*)
+ 	    mips_cpu=`echo $target_cpu | sed -e 's/[a-z]*..r2//' -e 's/el$//'`
+ 	    ;;

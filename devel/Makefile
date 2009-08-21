@@ -2299,6 +2299,14 @@
     SUBDIR += protobuf
     SUBDIR += prototype
     SUBDIR += pstreams
+    SUBDIR += psptoolchain
+    SUBDIR += psptoolchain-binutils
+    SUBDIR += psptoolchain-gcc-stage1
+    SUBDIR += psptoolchain-gcc-stage2
+    SUBDIR += psptoolchain-gdb
+    SUBDIR += psptoolchain-newlib
+    SUBDIR += psptoolchainpspsdk-stage1
+    SUBDIR += psptoolchainpspsdk-stage2
     SUBDIR += psvn
     SUBDIR += pth
     SUBDIR += pth-hard

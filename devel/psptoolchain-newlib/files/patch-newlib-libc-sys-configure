@@ -1,0 +1,21 @@
+--- newlib/libc/sys/configure.orig	2006-12-19 00:21:54.000000000 +0200
++++ newlib/libc/sys/configure	2007-06-01 12:22:26.000000000 +0300
+@@ -284,6 +284,7 @@
+ ac_subdirs_all="$ac_subdirs_all mmixware"
+ ac_subdirs_all="$ac_subdirs_all netware"
+ ac_subdirs_all="$ac_subdirs_all rdos"
++ac_subdirs_all="$ac_subdirs_all psp"
+ ac_subdirs_all="$ac_subdirs_all rtems"
+ ac_subdirs_all="$ac_subdirs_all sh"
+ ac_subdirs_all="$ac_subdirs_all sparc64"
+@@ -4925,6 +4926,10 @@
+ 
+ subdirs="$subdirs netware"
+  ;;
++	psp)
++
++subdirs="$subdirs psp"
++ ;;
+ 	rdos)
+ 
+ subdirs="$subdirs rdos"
