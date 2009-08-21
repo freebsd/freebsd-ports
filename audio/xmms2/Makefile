@@ -7,6 +7,7 @@
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.6
+PORTREVISION=	1
 DISTVERSIONSUFFIX=DrMattDestruction
 CATEGORIES?=	audio
 MASTER_SITES=	SF
@@ -233,7 +234,8 @@ PLIST_SUB+=	MODPLUG="@comment "
 .endif
 
 .if !defined(WITHOUT_MPG123)
-LIB_DEPENDS+=	mpg123.11:${PORTSDIR}/audio/mpg123
+LIB_DEPENDS+=	mpg123.20
+:${PORTSDIR}/audio/mpg123
 PLIST_SUB+=	MPG123=""
 .else
 EXCLUDE+=	--without-plugins="mpg123"
