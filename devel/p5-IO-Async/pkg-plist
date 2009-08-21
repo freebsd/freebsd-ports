@@ -12,6 +12,7 @@
 %%SITE_PERL%%/IO/Async/Listener.pm
 %%SITE_PERL%%/IO/Async/Loop.pm
 %%SITE_PERL%%/IO/Async/Loop/IO_Poll.pm
+%%SITE_PERL%%/IO/Async/Loop/Poll.pm
 %%SITE_PERL%%/IO/Async/Loop/Select.pm
 %%SITE_PERL%%/IO/Async/MergePoint.pm
 %%SITE_PERL%%/IO/Async/Notifier.pm
