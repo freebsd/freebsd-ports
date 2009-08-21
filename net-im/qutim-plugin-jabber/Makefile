@@ -36,7 +36,7 @@ OPTIONS=	GNUTLS "Use GNUTLS (required for GMail)" on
 
 .if defined(WITH_GNUTLS)
 CMAKE_ARGS+=	-DGNUTLS=1
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 .endif
 
 do-install:
