@@ -22,8 +22,4 @@ LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-BROKEN=		does not compile with subversion-1.6
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2009-09-09
-
 .include <bsd.port.mk>
