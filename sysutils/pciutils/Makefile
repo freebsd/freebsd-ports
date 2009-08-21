@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		ftp://metalab.unc.edu/pub/Linux/hardware/
 MASTER_SITE_SUBDIR=	software/utils/pciutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	PCI configuration utilities
 
 USE_GMAKE=	yes
