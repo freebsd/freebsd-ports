@@ -1,0 +1,67 @@
+patch attached
+
+Patch attached with submission follows:
+
+--- resources/OCF/IPaddr.orig	2009-08-06 13:08:35.000000000 +0200
++++ resources/OCF/IPaddr	2009-08-06 13:12:35.000000000 +0200
+@@ -298,9 +298,56 @@
+   return $OCF_ERR_GENERIC
+ }
+ 
++#
++#      Find out which alias serves the given IP address
++#      The argument is an IP address, and its output
++#      is an interface name (e.g., "em0").
++#
++#      parse the output of ifconfig and find the interface
++#      that holds ip address $ip (multiple may exist, but
++#      only one with flag UP)
++#      Try to find an interface with flag UP. If we don't find
++#      such an interface, try to find one with flag DOWN
++
+ find_interface_bsd() {
+-    #$IFCONFIG $IFCONFIG_A_OPT | grep "inet.*[: ]$OCF_RESKEY_ip "
+-    $IFCONFIG | grep "$ipaddr" -B20 | grep "UP," | tail -n 1 | cut -d ":" -f 1
++
++    ipaddr="$1";
++
++    /sbin/ifconfig \
++       | /usr/bin/perl -w -e '
++
++            my $ip = $ARGV[0];
++
++            if (! $ip) {
++                exit(255);
++            }
++
++            my $if_name = "";
++            my $if_status = 0;
++
++            my $down_if_name = "";
++
++            while (<STDIN>) {
++                chomp();
++                if ( /^(\w+):\s+flags=/ ) {
++                    $if_name = $1;
++                    $if_status = ( /UP/ ) ? 1 : 0;
++                }
++                if ( /^\s+inet\s+${ip}/ ) {
++                    if ( $if_status ) {
++                        print $if_name;
++                        exit(0)
++                    } else {
++                        $down_if_name = $if_name;
++                    }
++                }
++            }
++
++            if ($down_if_name) {
++                print $down_if_name;
++            }
++
++         ' $ipaddr
+ }
+ 
+ #
+
+
