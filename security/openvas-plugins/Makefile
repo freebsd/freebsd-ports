@@ -7,6 +7,7 @@
 
 PORTNAME=	openvas-plugins
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/588/
 
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
 		openvasd:${PORTSDIR}/security/openvas-server
 LIB_DEPENDS=	openvas.2:${PORTSDIR}/security/openvas-libraries \
 		openvasnasl.2:${PORTSDIR}/security/openvas-libnasl \
-		gnutls.26:${PORTSDIR}/security/gnutls
+		gnutls.40:${PORTSDIR}/security/gnutls
 RUN_DEPENDS=	openvasd:${PORTSDIR}/security/openvas-server \
 		${LOCALBASE}/bin/gmd5sum:${PORTSDIR}/sysutils/coreutils \
 		${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
