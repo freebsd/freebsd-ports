@@ -6,28 +6,43 @@
 #
 
 PORTNAME=	qutim
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2b
 CATEGORIES=	net-im
 MASTER_SITES=	http://qutim.org/download/ \
 		http://dl.kibab.com/distfiles/qutim/ \
-		ftp://ftp.inferra.ru/pub/qutIM/
-DISTNAME=	qutim_${PORTVERSION}
+		ftp://ftp.inferra.ru/pub/qutim/
+DISTNAME=	qutim_${PORTVERSION}_svn326
 
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	A Qt4-based lightweight ICQ client with advanced features
 
-BROKEN=		doesn't build with new QT 4.5
-
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build uic_build
+QT_COMPONENTS=	gui designer_build script_build network webkit xml moc_build qmake_build rcc_build uic_build
+USE_XORG=	xscrnsaver
 
-PLIST_FILES=	bin/qutIM
+MAKE_JOBS_SAFE=	yes
 
-pre-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o Makefile qutIM.pro
+USE_CMAKE=	yes
+CMAKE_BUILD_TYPE=	DEBUG
+CMAKE_USE_PTHREAD=	yes
+CMAKE_VERBOSE=	yes
+CMAKE_ARGS+=	-DUNIX:BOOL=1 -DBSD:BOOL=1
+
+PLIST_FILES=	bin/qutim \
+		include/qutim/plugininterface.h \
+		include/qutim/protocolinterface.h \
+		include/qutim/iconmanagerinterface.h
+PLIST_DIRS=	include/qutim
+
+WRKSRC=		${WRKDIR}/qutim
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/build/bin/qutIM ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/include/qutim
+	@${INSTALL_PROGRAM} ${WRKSRC}/qutim ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/include/qutim/plugininterface.h ${PREFIX}/include/qutim
+	@${INSTALL_DATA} ${WRKSRC}/include/qutim/protocolinterface.h ${PREFIX}/include/qutim
+	@${INSTALL_DATA} ${WRKSRC}/include/qutim/iconmanagerinterface.h ${PREFIX}/include/qutim
+	@${STRIP_CMD} ${PREFIX}/bin/qutim
 
 .include <bsd.port.mk>
