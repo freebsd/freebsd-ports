@@ -11,10 +11,14 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.parseerror.com/lanmap/rev/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lanmap sits quietly on a network and builds a picture of what it sees
 
 RUN_DEPENDS=	twopi:${PORTSDIR}/graphics/graphviz
+
+BROKEN=		distfile no longer available
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2009-09-21
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
