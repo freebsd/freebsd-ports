@@ -185,6 +185,7 @@
     SUBDIR += notecase
     SUBDIR += notification-daemon
     SUBDIR += ontv
+    SUBDIR += opengoo
     SUBDIR += openproj
     SUBDIR += orage
     SUBDIR += org-mode.el
