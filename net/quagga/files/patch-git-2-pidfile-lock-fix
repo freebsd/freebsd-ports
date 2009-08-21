@@ -1,0 +1,59 @@
+diff --git a/zebra/main.c b/zebra/main.c
+index 14b0273..2d6a4ac 100644
+--- zebra/main.c
++++ zebra/main.c
+@@ -382,6 +382,9 @@ main (int argc, char **argv)
+   /* Needed for BSD routing socket. */
+   pid = getpid ();
+ 
++  /* This must be done only after locking pidfile (bug #403). */
++  zebra_zserv_socket_init ();
++
+   /* Make vty server socket. */
+   vty_serv_sock (vty_addr, vty_port, ZEBRA_VTYSH_PATH);
+ 
+diff --git a/zebra/zserv.c b/zebra/zserv.c
+index a566e6d..cb5e411 100644
+--- zebra/zserv.c
++++ zebra/zserv.c
+@@ -1704,13 +1704,6 @@ zebra_init (void)
+   /* Client list init. */
+   zebrad.client_list = list_new ();
+ 
+-  /* Make zebra server socket. */
+-#ifdef HAVE_TCP_ZEBRA
+-  zebra_serv ();
+-#else
+-  zebra_serv_un (ZEBRA_SERV_PATH);
+-#endif /* HAVE_TCP_ZEBRA */
+-
+   /* Install configuration write function. */
+   install_node (&table_node, config_write_table);
+   install_node (&forwarding_node, config_write_forwarding);
+@@ -1737,3 +1730,14 @@ zebra_init (void)
+   /* Route-map */
+   zebra_route_map_init ();
+ }
++
++/* Make zebra server socket, wiping any existing one (see bug #403). */
++void
++zebra_zserv_socket_init (void)
++{
++#ifdef HAVE_TCP_ZEBRA
++  zebra_serv ();
++#else
++  zebra_serv_un (ZEBRA_SERV_PATH);
++#endif /* HAVE_TCP_ZEBRA */
++}
+diff --git a/zebra/zserv.h b/zebra/zserv.h
+index 87a33a4..a737183 100644
+--- zebra/zserv.h
++++ zebra/zserv.h
+@@ -89,6 +89,7 @@ struct zebra_t
+ /* Prototypes. */
+ extern void zebra_init (void);
+ extern void zebra_if_init (void);
++extern void zebra_zserv_socket_init (void);
+ extern void hostinfo_get (void);
+ extern void rib_init (void);
+ extern void interface_list (void);
