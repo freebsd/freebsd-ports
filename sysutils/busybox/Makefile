@@ -25,6 +25,8 @@ PLIST_FILES=	bin/busybox
 
 .if ${ARCH} == "amd64"
 BROKEN=		does not compile
+.elif ${OSVERSION} >= 800000
+BROKEN=		does not compile
 .endif
 
 do-configure:
