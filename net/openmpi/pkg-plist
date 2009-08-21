@@ -1,9 +1,9 @@
-%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfaux
-%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfcompress
-%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfconfig
-%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfdump
-%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfinfo
-%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfmerge
+%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfaux
+%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfcompress
+%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfconfig
+%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfdump
+%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfinfo
+%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfmerge
 %%MPIDIR%%/bin/ompi-server
 %%MPIDIR%%/bin/ompi_info
 %%MPIDIR%%/bin/opal_wrapper

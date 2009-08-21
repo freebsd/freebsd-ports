@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
 
+PLIST_SUB+=	CONFIGURE_TARGET=${CONFIGURE_TARGET}
 PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
 
@@ -86,10 +87,12 @@ CONFIGURE_ARGS+=	--without-tm
 build-plist:
 	${RM} -f ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -name man -prune -o -type f -print | \
-	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' | \
+	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' \
+	        -e 's|${CONFIGURE_TARGET}|%%CONFIGURE_TARGET%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -name man -prune -o -type l -print | \
-	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' | \
+	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' \
+	        -e 's|${CONFIGURE_TARGET}|%%CONFIGURE_TARGET%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -type d | \
 	    ${EGREP} -v "${PREFIX}/${MPIDIR}$$" | \
@@ -104,7 +107,7 @@ build-plist:
 	@echo "#" >> ${.CURDIR}/Makefile.man
 	@echo "MLINKS=mpic++.1 mpiCC.1" >> ${.CURDIR}/Makefile.man
 	${FIND} ${PREFIX}/${MPIDIR}/man -type f | \
-	    ${SED} -e 's|.*man\([0-9LN]\)/\(.*\)|MAN\1+=\2|' -e 's/\.gz$$//' \
-	    >> ${.CURDIR}/Makefile.man
+	    ${SED} -e 's|.*man\([0-9LN]\)/\(.*\)|MAN\1+=\2|' -e 's/\.gz$$//' | \
+	    ${SORT} >> ${.CURDIR}/Makefile.man
 
 .include <bsd.port.post.mk>
