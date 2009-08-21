@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crf++
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	science math
 MASTER_SITES=	SF \
 		${MASTER_SITE_LOCAL}
@@ -18,5 +18,6 @@ COMMENT=	Yet Another CRF toolkit
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.mk>
