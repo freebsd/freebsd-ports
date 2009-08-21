@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-QueryLog
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ MAINTAINER=	andrey@kostenko.name
 COMMENT=	Log queries for later analysis
 
 RUN_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class	\
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes	\
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
