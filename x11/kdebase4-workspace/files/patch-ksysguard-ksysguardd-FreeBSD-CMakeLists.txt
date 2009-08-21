@@ -1,0 +1,12 @@
+--- ksysguard/ksysguardd/FreeBSD/CMakeLists.txt.orig	2009-08-20 20:01:27.000000000 +0200
++++ ksysguard/ksysguardd/FreeBSD/CMakeLists.txt	2009-08-20 20:01:45.000000000 +0200
+@@ -8,7 +8,8 @@
+             logfile.c
+             Memory.c
+             netdev.c
+-            ProcessList.c)
++            ProcessList.c
++            uptime.c)
+ 
+ TARGET_LINK_LIBRARIES(libksysguardd kvm)
+ 
