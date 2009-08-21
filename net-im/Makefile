@@ -136,6 +136,7 @@
     SUBDIR += qq
     SUBDIR += qutim
     SUBDIR += qutim-plugin-icq
+    SUBDIR += qutim-plugin-jabber
     SUBDIR += qwit
     SUBDIR += qwit-devel
     SUBDIR += rubygem-termtter
