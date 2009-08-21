@@ -52,6 +52,10 @@ LATEST_LINK=		${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not support FreeBSD 8.x
+.endif
+
 srcdir=			${WRKDIR}/gcc-${PORTVERSION}
 gcc_suffix=		42
 fsf_mans=		fsf-funding gfdl gpl
