@@ -20,6 +20,8 @@ COMMENT=		The Business Shell
 BUILD_DEPENDS=		gnatmake:${PORTSDIR}/lang/gnat	\
 			bash:${PORTSDIR}/shells/bash
 
+BROKEN=		does not build
+
 USE_PGSQL=		yes
 
 HAS_CONFIGURE=		yes
