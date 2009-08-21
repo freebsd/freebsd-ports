@@ -42,7 +42,7 @@ umask 022
 version () {
 	local rcs cvs
 
-	rcs='$Id: portmaster,v 2.44 2009/08/06 17:00:01 dougb Exp $'
+	rcs='$Id: portmaster,v 2.46 2009/08/21 03:35:28 dougb Exp $'
 	cvs='$FreeBSD$'
 
 	rcs="${rcs#*,v }" ; rcs="${rcs%% *}"
@@ -201,6 +201,8 @@ safe_exit () {
 		if [ -z "$CONFIG_ONLY" ]; then
 			echo "DISPLAY_LIST='$DISPLAY_LIST'" >> $IPC_SAVE
 			echo "INSTALLED_LIST='$INSTALLED_LIST'" >> $IPC_SAVE
+		elif [ -z "$NO_DEP_UPDATES" ]; then
+			echo 'unset NO_DEP_UPDATES' >> $IPC_SAVE
 		fi
 		[ -z "$NO_BACKUP" -a -z "$BACKUP" ] &&
 			echo "NB_DELETE='$NB_DELETE'" >> $IPC_SAVE
@@ -620,12 +622,7 @@ read_distinfos () {
 globstrip () {
 	local in
 
-	in=$1
-
-	case "$in" in
-	*\*) in=`echo $in | sed s/.$//`
-	esac
-
+	in=${1%[*]}
 	in=${in%\\}
 
 	echo $in
@@ -1508,6 +1505,10 @@ update_port () {
 
 	[ -n "$DEPTH" ] && echo "	$DEPTH >> ${1#$pd/}"
 
+	[ -n "$doing_dep_check" -o \
+	    \( -n "$UPDATE_ALL" -a -n "$CONFIG_ONLY" \) ] &&
+		unset NO_DEP_UPDATES
+
 	if [ -z "$NO_ACTION" -o -n "$CONFIG_ONLY" ]; then
 		($0 $ARGS $1) || fail "Update for $1 failed"
 		. $IPC_SAVE
@@ -1522,7 +1523,6 @@ update_port () {
 	elif [ -n "$UPDATE_REQ_BYS" ]; then
 		return 0
 	elif [ -n "$CONFIG_ONLY" ]; then
-		[ -e "$NO_DEP_UPDATES" ] || unset NO_DEP_UPDATES
 	echo "===>>> Continuing 'make config' dependency check for $portdir"
 	else
 		echo "===>>> Returning to dependency check for $portdir"
@@ -1531,6 +1531,8 @@ update_port () {
 }
 
 dependency_check () {
+	# Global: doing_dep_check
+
 	local d_port_list
 
 	# Print a message here because sometimes list generation takes
@@ -1554,6 +1556,8 @@ dependency_check () {
 
 	local d_port origin iport conflicts glob confl_p udf
 
+	# Do not export, for THIS parent process only
+	[ -n "$CONFIG_ONLY" ] && doing_dep_check=doing_dep_check
 	for d_port in $d_port_list; do
 		origin="${d_port#$pd/}"
 		if [ -n "$SHOW_WORK" ]; then
@@ -1632,6 +1636,7 @@ dependency_check () {
 			update_port $d_port
 		fi
 	done
+	[ -n "$CONFIG_ONLY" ] && unset doing_dep_check
 
 	if [ -n "$SHOW_WORK" ]; then
 		safe_exit
@@ -1681,9 +1686,11 @@ multiport () {
 				portlist="${portlist}\t${port}\n"
 				PM_MULTI_PORTS="${PM_MULTI_PORTS}${port}:"
 			else
-				local globlist dir
-		globlist=`find $pdb -maxdepth 1 -type d -name ${port%\*}\*`
-				case "$globlist" in
+				# Keep synched with code in MAIN
+				local glob_dirs dir
+				port=`globstrip $port`
+		glob_dirs=`find $pdb -maxdepth 1 -type d -name ${port}\*`
+				case "$glob_dirs" in
 				*\*|'') fail "$pdb/$port does not exist" ;;
 				*)	for dir in $globlist; do
 				worklist="$worklist ${dir#$pdb/}"
@@ -1710,6 +1717,8 @@ multiport () {
 		echo "===>>> Starting build for multiple ports <<<==="
 		echo ''
 	fi
+
+	export PM_BUILDING=pmbuildingmultiport
 	for port in $worklist; do
 		case "$PM_MULTI_BUILT" in *:${port}:*) continue ;; esac
 
@@ -1773,7 +1782,8 @@ if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" ]; then
 
 	if [ -z "$NO_RECURSIVE_CONFIG" ]; then
 		CONFIG_SEEN_LIST=':' ; CONFIG_ONLY=config_only
-		export CONFIG_SEEN_LIST CONFIG_ONLY
+		NO_DEP_UPDATES=no_dep_updates
+		export CONFIG_SEEN_LIST CONFIG_ONLY NO_DEP_UPDATES
 	fi
 
 	[ -n "$NO_BACKUP" -a -z "$MAKE_PACKAGE" ] || init_packages
@@ -1787,9 +1797,6 @@ if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" ]; then
 	if [ $# -gt 1 -a -z "$REPLACE_ORIGIN" ]; then
 		multiport $@
 	fi
-	# Does not make sense to do this for multi-ports
-	[ -n "$CONFIG_ONLY" ] &&
-		export NO_DEP_UPDATES=`pm_mktemp NO_DEP_UPDATES`
 elif [ -z "$SHOW_WORK" ]; then
 	# Zero out this file so that we can save our data to it safely
 	> $IPC_SAVE
@@ -1816,7 +1823,6 @@ all_config () {
 
 		DEPTH=
 		check_for_updates $iport $origin || fail 'Update failed'
-		[ -e "$NO_DEP_UPDATES" ] || unset NO_DEP_UPDATES
 
 		CONFIG_SEEN_LIST="${CONFIG_SEEN_LIST}${origin}:"
 	done
@@ -1856,7 +1862,7 @@ all_config () {
 		echo ''
 	fi
 
-	export PM_BUILDING=building
+	export PM_BUILDING=pmbuildingall
 
 	for iport in $roots $trunks $branches $leaves; do
 		# Probably got updated as a dependency for something else
@@ -1913,6 +1919,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
 	esac
 
 	if [ -z "$portdir" -a -z "$upg_port" ]; then
+		# Keep synched with code in multiport()
 		glob_dirs=`find $pdb -maxdepth 1 -type d -name ${argv}\*`
 		case "$glob_dirs" in
 		*\*|'')	echo '' ; no_valid_port ;;
@@ -2114,7 +2121,6 @@ if [ -n "$CONFIG_ONLY" ]; then
 	if [ ! "$$" -eq "$PARENT_PID" ]; then
 		# Save state for the parent process to read back in
 		echo "CONFIG_SEEN_LIST='$CONFIG_SEEN_LIST'" > $IPC_SAVE
-		[ -n "$NO_DEP_UPDATES" ] && pm_unlink $NO_DEP_UPDATES
 		safe_exit
 	elif [ -n "$UPDATE_REQ_BYS" ]; then
 		export URB_YES=urb_yes
@@ -2158,7 +2164,7 @@ if [ -n "$CONFIG_ONLY" ]; then
 	echo ''
 fi
 
-export PM_BUILDING=building2
+[ -z "$PM_BUILDING" ] && export PM_BUILDING=pmbuildingmain
 
 cd $pd/$portdir
 
