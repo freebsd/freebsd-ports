@@ -15,6 +15,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tiny C Compiler
 
 ONLY_FOR_ARCHS=	i386
+#ONLY_FOR_ARCHS=	i386 amd64 arm alpha mips powerpc
+
 CONFLICTS=	TenDRA-*
 
 USE_BZIP2=	yes
@@ -25,7 +27,15 @@ MAKE_ARGS+=	CONFIG_NOLDL=1
 MAN1=	tcc.1
 
 .if defined(NOPORTDOCS)
-MAKE_ARGS+=	NOPORTDOCS=1
+MAKE_ARGS+=	NOPORTDOCS=1 CFLAGS="${CFLAGS}"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == i386)
+PLIST_SUB+=	WITH_I386=""
+.else
+PLIST_SUB+=	WITH_I386="@comment "
+.endif
+
+.include <bsd.port.post.mk>

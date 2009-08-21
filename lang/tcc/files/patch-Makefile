@@ -1,6 +1,47 @@
 --- Makefile.orig	2009-05-18 16:27:06.000000000 +0200
-+++ Makefile	2009-05-21 06:39:33.000000000 +0200
-@@ -210,8 +210,10 @@
++++ Makefile	2009-07-03 07:40:15.000000000 +0200
+@@ -28,6 +28,9 @@
+ ifeq ($(ARCH),x86-64)
+ CFLAGS+=-Wno-pointer-sign
+ endif
++ifeq ($(ARCH),amd64)
++CFLAGS+=-Wno-pointer-sign
++endif
+ 
+ ifndef CONFIG_WIN32
+ LIBS=-lm
+@@ -53,6 +56,11 @@
+ ifeq ($(ARCH),x86-64)
+ NATIVE_TARGET=-DTCC_TARGET_X86_64
+ LIBTCC1=libtcc1.a
++else
++ifeq ($(ARCH),amd64)
++NATIVE_TARGET=-DTCC_TARGET_X86_64
++LIBTCC1=libtcc1.a
++endif
+ endif
+ endif
+ endif
+@@ -99,6 +107,10 @@
+ NATIVE_FILES=$(X86_64_FILES)
+ PROGS_CROSS=$(I386_CROSS) $(WIN32_CROSS) $(ARM_CROSS) $(C67_CROSS)
+ else
++ifeq ($(ARCH),amd64)
++NATIVE_FILES=$(X86_64_FILES)
++PROGS_CROSS=$(I386_CROSS) $(WIN32_CROSS) $(ARM_CROSS) $(C67_CROSS)
++else
+ ifeq ($(ARCH),arm)
+ NATIVE_FILES=$(ARM_FILES)
+ PROGS_CROSS=$(I386_CROSS) $(X64_CROSS) $(WIN32_CROSS) $(C67_CROSS)
+@@ -106,6 +118,7 @@
+ endif
+ endif
+ endif
++endif
+ 
+ ifdef CONFIG_CROSS
+ PROGS+=$(PROGS_CROSS)
+@@ -210,8 +223,10 @@
  	$(INSTALL) -m644 $(BCHECK_O) "$(tccdir)"
  endif
  	$(INSTALL) -m644 $(addprefix include/,$(TCC_INCLUDES)) "$(tccdir)/include"

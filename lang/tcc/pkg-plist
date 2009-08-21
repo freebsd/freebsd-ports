@@ -1,7 +1,7 @@
 bin/tcc
 include/libtcc.h
 lib/libtcc.a
-lib/tcc/bcheck.o
+%%WITH_I386%%lib/tcc/bcheck.o
 lib/tcc/include/float.h
 lib/tcc/include/stdarg.h
 lib/tcc/include/stdbool.h
