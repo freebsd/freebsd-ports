@@ -23513,6 +23513,7 @@ wxgtk28-contrib                 ports/x11-toolkits/wxgtk28-contrib
 wxgtk28-contrib-common          ports/x11-toolkits/wxgtk28-contrib-common
 wxgtk28-unicode                 ports/x11-toolkits/wxgtk28-unicode
 wxgtk28-unicode-contrib         ports/x11-toolkits/wxgtk28-unicode-contrib
+wxguitar                        ports/audio/wxguitar
 wxmaxima                        ports/math/wxMaxima
 wxsvg                           ports/graphics/wxsvg
 wy60                            ports/comms/wy60
