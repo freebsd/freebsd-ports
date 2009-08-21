@@ -1,0 +1,416 @@
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/wlan/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/wlan/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/systemparam/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/systemparam/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/osk/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/osk/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/netdialog/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/netdialog/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/netconf/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/netconf/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/msgdialog/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/msgdialog/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/htmlviewer/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/htmlviewer/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/gamesharing/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/gamesharing/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/usb/storage/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/usb/storage/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/prx_template/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/prx_template/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/lib_template/template.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/lib_template/template.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/lib_template/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/kprx_template/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/kprx_template/exports.exp
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/kprx_template/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/elf_template/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/elf_template/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/utility/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/utility/data.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/utility/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt/psf.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt/psf.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt/hash.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt/hash.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt/encrypt.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt/encrypt.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt/README.txt
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/decrypt/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/decrypt/decrypt.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/decrypt/decrypt.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/decrypt/README.txt
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/decrypt/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/prx/testprx/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/prx/testprx/exports.exp
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/prx/testprx/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/prx/prx_loader/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/prx/prx_loader/MyLib.S
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/prx/prx_loader/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/power/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/power/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/wlanscan_elf/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/wlanscan_elf/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/wlanscan/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/wlanscan/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/simple_prx/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/simple_prx/exports.exp
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/simple_prx/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/simple/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/simple/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/resolver/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/resolver/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/nand/dumpipl/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/nand/dumpipl/README
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/nand/dumpipl/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ms/callback/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ms/callback/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/mp3/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/mp3/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/me/basic/me.S
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/me/basic/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/me/basic/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/threadstatus/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/threadstatus/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/systimer/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/systimer/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/sysevent/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/sysevent/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/registry/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/registry/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/regenum/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/regenum/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/messagebox/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/messagebox/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/loadmodule/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/loadmodule/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/kdumper/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/kdumper/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/idstorage/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/idstorage/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/fileio/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/fileio/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/cwd/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/cwd/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ir/sircs/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ir/sircs/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ir/irda/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ir/irda/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/zbufferfog/zbufferfog.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/zbufferfog/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/vertex/vertex.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/vertex/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/timing/timing.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/timing/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/text/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/text/font.raw
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/text/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/sprite/sprite.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/sprite/ball.raw
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/sprite/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/splinesurface/splinesurface.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/splinesurface/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/spharm.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/readme
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/mt19937.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/mt19937.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/logo.raw
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/disablefpu.S
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/cube.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/Image2.raw
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm/Image1.raw
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/speed/speed.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/speed/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/skinning/skinning.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/skinning/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/signals/signals.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/signals/ball.raw
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/signals/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/shadowprojection/shadowprojection.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/shadowprojection/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/rendertarget/rendertarget.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/rendertarget/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/reflection/reflection.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/reflection/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/ortho/ortho.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/ortho/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/morphskin/morphskin.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/morphskin/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/morph/morph.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/morph/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/logic/logic.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/logic/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/lines/lines.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/lines/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/lights/lights.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/lights/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/integerdrawing/integerdrawing.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/integerdrawing/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/envmap/envmap.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/envmap/env0.raw
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/envmap/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/cube/logo.raw
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/cube/cube.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/cube/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/copy/copy.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/copy/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/common/vram.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/common/vram.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/common/menu.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/common/menu.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/common/geometry.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/common/geometry.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/common/callbacks.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/common/callbacks.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/clut/clut.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/clut/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/celshading/lightmap.raw
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/celshading/celshading.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/celshading/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/blit/blit.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/blit/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/blend/blend.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/blend/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/beginobject/beginobject.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/beginobject/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/sio/readme.txt
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/sio/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/sio/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/prxdecrypt/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/prxdecrypt/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/profiler/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/profiler/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/kprintf/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/kprintf/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/gdb/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/gdb/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/exception/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/exception/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/debugkb/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/debugkb/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/controller/basic/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/controller/basic/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/audio/wavegen/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/audio/wavegen/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/audio/polyphonic/main.c
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/audio/polyphonic/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/lib/prxspecs
+%%PSP_SDK_STAGE_PREFIX%%/sdk/lib/linkfile.prx
+%%PSP_SDK_STAGE_PREFIX%%/sdk/lib/build_prx.mak
+%%PSP_SDK_STAGE_PREFIX%%/sdk/lib/build.mak
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspwlan.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspvideocodec.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspvfpu.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputilsforkernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputils.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_usbmodules.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_sysparam.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_savedata.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_osk.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_netparam.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_netmodules.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_netconf.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_msgdialog.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_modules.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_htmlviewer.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_gamesharing.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility_avmodules.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psputility.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspuser.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspusbstor.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspusbcam.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspusbbus.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspusbacc.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspusb.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspumd.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psptypes.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspthreadman_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspthreadman.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsystimer.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsysreg.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsysmem_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsysmem.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsysevent.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsyscon.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsysclib.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsuspend.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspstub.s
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspstdio_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspstdio.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspssl.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsircs.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspsdk.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psprtc.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspreg.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspprof.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psppower.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspopenpsid.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspnet_resolver.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspnet_inet.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspnet_apctl.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspnet_adhocmatching.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspnet_adhocctl.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspnet_adhoc.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspnet.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspnand_driver.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspmscm.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspmpegbase.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspmpeg.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspmp3.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspmodulemgr_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspmodulemgr.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspmoduleinfo.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspmoduleexport.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psploadexec_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psploadexec.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psploadcore.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspkerror.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspkerneltypes.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspkernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspkdebug.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspjpeg.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspiofilemgr_stat.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspiofilemgr_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspiofilemgr_fcntl.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspiofilemgr_dirent.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspiofilemgr.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspintrman_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspintrman.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspinit.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspimpose_driver.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspimport.s
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspidstorage.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psphttp.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/psphprm.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspgum.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspgu.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspge.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspfpu.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspexception.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspdisplay_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspdisplay.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspdebugkb.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspdebug.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspctrl_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspctrl.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspchnnlsv.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspaudiorouting.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspaudiolib.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspaudiocodec.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspaudio_kernel.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspaudio.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/pspatrac3.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc/unistd.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc/time.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc/string.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc/stdlib.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc/stdio.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc/malloc.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc/ctype.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc/assert.h
+%%PSP_SDK_STAGE_PREFIX%%/sdk/include/as_reg_compat.h
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/wlan
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/systemparam
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/osk
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/netdialog
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/netconf
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/msgdialog
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/htmlviewer
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility/gamesharing
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/utility
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/usb/storage
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/usb
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/prx_template
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/lib_template
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/kprx_template
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template/elf_template
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/template
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/utility
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/encrypt
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata/decrypt
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/savedata
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/prx/testprx
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/prx/prx_loader
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/prx
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/power
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/wlanscan_elf
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/wlanscan
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/simple_prx
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/simple
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net/resolver
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/net
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/nand/dumpipl
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/nand
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ms/callback
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ms
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/mp3
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/me/basic
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/me
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/threadstatus
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/systimer
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/sysevent
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/registry
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/regenum
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/messagebox
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/loadmodule
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/kdumper
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/idstorage
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/fileio
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel/cwd
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/kernel
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ir/sircs
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ir/irda
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/ir
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/zbufferfog
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/vertex
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/timing
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/text
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/sprite
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/splinesurface
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/spharm
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/speed
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/skinning
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/signals
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/shadowprojection
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/rendertarget
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/reflection
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/ortho
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/morphskin
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/morph
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/logic
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/lines
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/lights
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/integerdrawing
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/envmap
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/cube
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/copy
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/common
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/clut
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/celshading
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/blit
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/blend
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/beginobject
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/sio
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/prxdecrypt
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/profiler
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/kprintf
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/gdb
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/exception
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/debugkb
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/controller/basic
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/controller
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/audio/wavegen
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/audio/polyphonic
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/audio
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples
+@dirrmtry %%PSP_SDK_STAGE_PREFIX%%/sdk/lib
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/include
+@dirrmtry %%PSP_SDK_STAGE_PREFIX%%/sdk
+@dirrmtry %%PSP_SDK_STAGE_PREFIX%%
+@dirrmtry psp

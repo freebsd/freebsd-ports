@@ -1,0 +1,27 @@
+--- newlib/configure.host.orig	2006-12-18 23:49:14.000000000 +0200
++++ newlib/configure.host	2007-06-01 12:22:26.000000000 +0300
+@@ -510,7 +510,7 @@
+ #  NOTE: When newlib malloc uses a semaphore, RTEMS will switch to that.
+   *-*-rtems*)
+ 	default_newlib_io_long_long="yes"
+-	newlib_cflags="${newlib_cflags} -DMALLOC_PROVIDED -DEXIT_PROVIDED -DMISSING_SYSCALL_NAMES -DSIGNAL_PROVIDED -DREENTRANT_SYSCALLS_PROVIDED -DHAVE_OPENDIR -DNO_EXEC -DHAVE_FCNTL"
++	newlib_cflags="${newlib_cflags} -DMALLOC_PROVIDED -DEXIT_PROVIDED -DMISSING_SYSCALL_NAMES -DSIGNAL_PROVIDED -DREENTRANT_SYSCALLS_PROVIDED -DHAVE_OPENDIR -DNO_EXEC -DHAVE_FCNTL -DHAVE_RENAME -DHAVE_NANOSLEEP"
+ 	;;
+ # VxWorks supplies its own version of malloc, and the newlib one
+ # doesn't work because VxWorks does not have sbrk.
+@@ -632,7 +632,14 @@
+ 	;;
+   mips*-*-elf*)
+ 	default_newlib_io_long_long="yes"
+-	newlib_cflags="${newlib_cflags} -DMISSING_SYSCALL_NAMES"
++	case "${host}" in
++	  mipsallegrex*-psp-*)
++		sys_dir=psp
++		syscall_dir=syscalls
++		newlib_cflags="${newlib_cflags} -G0 -mno-explicit-relocs -DCOMPACT_CTYPE -DCLOCK_PROVIDED -DHAVE_FCNTL -DMALLOC_ALIGNMENT=16 -I${prefix}/psp/sdk/include" ;;
++	  *)
++		newlib_cflags="${newlib_cflags} -DMISSING_SYSCALL_NAMES" ;;
++	esac
+ 	;;
+   mmix-*)
+ 	syscall_dir=syscalls

@@ -1,0 +1,20 @@
+--- ld/Makefile.in.orig	2005-01-23 05:36:37.000000000 +0000
++++ ld/Makefile.in	2006-05-09 02:55:36.000000000 +0100
+@@ -315,6 +315,7 @@
+ 	eelf_i386_chaos.o \
+ 	eelf_i386_fbsd.o \
+ 	eelf_i386_ldso.o \
++	eelf_mipsallegrexel_psp.o \
+ 	eelf_s390.o \
+ 	egld960.o \
+ 	egld960coff.o \
+@@ -1601,6 +1602,9 @@
+ eelf_i386_ldso.c: $(srcdir)/emulparams/elf_i386_ldso.sh \
+   $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} elf_i386_ldso "$(tdir_elf_i386_ldso)"
++eelf_mipsallegrexel_psp.c: $(srcdir)/emulparams/elf_mipsallegrexel_psp.sh \
++  $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf_psp.sc ${GEN_DEPENDS}
++	${GENSCRIPTS} elf_mipsallegrexel_psp "$(tdir_elf_mipsallegrexel_psp)"
+ eelf_s390.c: $(srcdir)/emulparams/elf_s390.sh \
+   $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} elf_s390 "$(tdir_elf_s390)"

@@ -1,0 +1,63 @@
+%%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.1.0/install-tools/mkheaders
+%%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.1.0/install-tools/fixproto
+%%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.1.0/install-tools/fixincl
+%%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.1.0/install-tools/fixinc.sh
+%%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.1.0/install-tools/fix-header
+%%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.1.0/collect2
+%%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.1.0/cc1
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/libgcov.a
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/libgcc.a
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/mkheaders.conf
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/macro_list
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include/varargs.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include/unwind.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include/stddef.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include/stdbool.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include/stdarg.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include/limits.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include/iso646.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include/float.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include/README
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/gsyslimits.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/varargs.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/unwind.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/syslimits.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/stddef.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/stdbool.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/stdarg.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/limits.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/iso646.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/float.h
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/fixed
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include/README
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/crtn.o
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/crti.o
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/crtend.o
+%%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/crtbegin.o
+%%PSP_GCC_STAGE_PREFIX%%/bin/psp-gcov
+%%PSP_GCC_STAGE_PREFIX%%/bin/psp-gccbug
+%%PSP_GCC_STAGE_PREFIX%%/bin/psp-gcc-4.1.0
+%%PSP_GCC_STAGE_PREFIX%%/bin/psp-gcc
+%%PSP_GCC_STAGE_PREFIX%%/bin/psp-cpp
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.1.0/install-tools
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.1.0
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools/include
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/install-tools
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0/include
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.1.0
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp
+@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/psp/lib
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/psp
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/include
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/lib
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/libexec
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/bin
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/share
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/info
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/man/man7
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/man/man1
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/man
+@dirrmtry %%PSP_GCC_STAGE_PREFIX%%

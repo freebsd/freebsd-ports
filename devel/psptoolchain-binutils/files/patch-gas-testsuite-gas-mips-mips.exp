@@ -1,0 +1,12 @@
+--- gas/testsuite/gas/mips/mips.exp.orig	2005-04-19 18:09:45.000000000 +0100
++++ gas/testsuite/gas/mips/mips.exp	2006-05-09 02:55:36.000000000 +0100
+@@ -382,6 +382,9 @@
+ mips_arch_create sb1 	64	mips64	{ mips3d } \
+ 			{ -march=sb1 -mtune=sb1 } { -mmips:sb1 } \
+ 			{ mipsisa64sb1-*-* mipsisa64sb1el-*-* }
++mips_arch_create allegrex 32	mips2	{ ror } \
++			{ -march=allegrex -mtune=allegrex } { -mmips:allegrex } \
++			{ mipsallegrex-*-* mipsallegrexel-*-* }
+ 
+ 
+ #

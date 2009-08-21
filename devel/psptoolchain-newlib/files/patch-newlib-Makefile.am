@@ -1,0 +1,21 @@
+--- newlib/Makefile.am.orig	2006-06-05 20:42:57.000000000 +0300
++++ newlib/Makefile.am	2007-06-01 12:22:26.000000000 +0300
+@@ -267,6 +267,18 @@
+ 	     $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/machine/`basename $$i`; \
+ 	    else true; fi ; \
+ 	  done; \
++	  $(mkinstalldirs) $(DESTDIR)$(tooldir)/include/netinet; \
++	  for i in $(srcdir)/libc/sys/$(sys_dir)/netinet/*.h; do \
++	    if [ -f $$i ]; then \
++	     $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/netinet/`basename $$i`; \
++	    else true; fi ; \
++	  done ; \
++	  $(mkinstalldirs) $(DESTDIR)$(tooldir)/include/arpa; \
++	  for i in $(srcdir)/libc/sys/$(sys_dir)/arpa/*.h; do \
++	    if [ -f $$i ]; then \
++	     $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/arpa/`basename $$i`; \
++	    else true; fi ; \
++	  done ; \
+ 	  $(mkinstalldirs) $(DESTDIR)$(tooldir)/include/sys; \
+ 	  for i in $(srcdir)/libc/include/sys/*.h; do \
+ 	   $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/sys/`basename $$i`; \

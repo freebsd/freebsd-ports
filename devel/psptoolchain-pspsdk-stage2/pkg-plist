@@ -1,0 +1,493 @@
+psp/sdk/samples/wlan/main.c
+psp/sdk/samples/wlan/Makefile
+psp/sdk/samples/utility/systemparam/main.c
+psp/sdk/samples/utility/systemparam/Makefile
+psp/sdk/samples/utility/osk/main.c
+psp/sdk/samples/utility/osk/Makefile
+psp/sdk/samples/utility/netdialog/main.c
+psp/sdk/samples/utility/netdialog/Makefile
+psp/sdk/samples/utility/netconf/main.c
+psp/sdk/samples/utility/netconf/Makefile
+psp/sdk/samples/utility/msgdialog/main.c
+psp/sdk/samples/utility/msgdialog/Makefile
+psp/sdk/samples/utility/htmlviewer/main.c
+psp/sdk/samples/utility/htmlviewer/Makefile
+psp/sdk/samples/utility/gamesharing/main.c
+psp/sdk/samples/utility/gamesharing/Makefile
+psp/sdk/samples/usb/storage/main.c
+psp/sdk/samples/usb/storage/Makefile
+psp/sdk/samples/template/prx_template/main.c
+psp/sdk/samples/template/prx_template/Makefile
+psp/sdk/samples/template/lib_template/template.h
+psp/sdk/samples/template/lib_template/template.c
+psp/sdk/samples/template/lib_template/Makefile
+psp/sdk/samples/template/kprx_template/main.c
+psp/sdk/samples/template/kprx_template/exports.exp
+psp/sdk/samples/template/kprx_template/Makefile
+psp/sdk/samples/template/elf_template/main.c
+psp/sdk/samples/template/elf_template/Makefile
+psp/sdk/samples/savedata/utility/main.c
+psp/sdk/samples/savedata/utility/data.h
+psp/sdk/samples/savedata/utility/Makefile
+psp/sdk/samples/savedata/encrypt/psf.h
+psp/sdk/samples/savedata/encrypt/psf.c
+psp/sdk/samples/savedata/encrypt/main.c
+psp/sdk/samples/savedata/encrypt/hash.h
+psp/sdk/samples/savedata/encrypt/hash.c
+psp/sdk/samples/savedata/encrypt/encrypt.h
+psp/sdk/samples/savedata/encrypt/encrypt.c
+psp/sdk/samples/savedata/encrypt/README.txt
+psp/sdk/samples/savedata/encrypt/Makefile
+psp/sdk/samples/savedata/decrypt/main.c
+psp/sdk/samples/savedata/decrypt/decrypt.h
+psp/sdk/samples/savedata/decrypt/decrypt.c
+psp/sdk/samples/savedata/decrypt/README.txt
+psp/sdk/samples/savedata/decrypt/Makefile
+psp/sdk/samples/prx/testprx/main.c
+psp/sdk/samples/prx/testprx/exports.exp
+psp/sdk/samples/prx/testprx/Makefile
+psp/sdk/samples/prx/prx_loader/main.c
+psp/sdk/samples/prx/prx_loader/MyLib.S
+psp/sdk/samples/prx/prx_loader/Makefile
+psp/sdk/samples/power/main.c
+psp/sdk/samples/power/Makefile
+psp/sdk/samples/net/wlanscan_elf/main.c
+psp/sdk/samples/net/wlanscan_elf/Makefile
+psp/sdk/samples/net/wlanscan/main.c
+psp/sdk/samples/net/wlanscan/Makefile
+psp/sdk/samples/net/simple_prx/main.c
+psp/sdk/samples/net/simple_prx/exports.exp
+psp/sdk/samples/net/simple_prx/Makefile
+psp/sdk/samples/net/simple/main.c
+psp/sdk/samples/net/simple/Makefile
+psp/sdk/samples/net/resolver/main.c
+psp/sdk/samples/net/resolver/Makefile
+psp/sdk/samples/nand/dumpipl/main.c
+psp/sdk/samples/nand/dumpipl/README
+psp/sdk/samples/nand/dumpipl/Makefile
+psp/sdk/samples/ms/callback/main.c
+psp/sdk/samples/ms/callback/Makefile
+psp/sdk/samples/mp3/main.c
+psp/sdk/samples/mp3/Makefile
+psp/sdk/samples/me/basic/me.S
+psp/sdk/samples/me/basic/main.c
+psp/sdk/samples/me/basic/Makefile
+psp/sdk/samples/kernel/threadstatus/main.c
+psp/sdk/samples/kernel/threadstatus/Makefile
+psp/sdk/samples/kernel/systimer/main.c
+psp/sdk/samples/kernel/systimer/Makefile
+psp/sdk/samples/kernel/sysevent/main.c
+psp/sdk/samples/kernel/sysevent/Makefile
+psp/sdk/samples/kernel/registry/main.c
+psp/sdk/samples/kernel/registry/Makefile
+psp/sdk/samples/kernel/regenum/main.c
+psp/sdk/samples/kernel/regenum/Makefile
+psp/sdk/samples/kernel/messagebox/main.c
+psp/sdk/samples/kernel/messagebox/Makefile
+psp/sdk/samples/kernel/loadmodule/main.c
+psp/sdk/samples/kernel/loadmodule/Makefile
+psp/sdk/samples/kernel/kdumper/main.c
+psp/sdk/samples/kernel/kdumper/Makefile
+psp/sdk/samples/kernel/idstorage/main.c
+psp/sdk/samples/kernel/idstorage/Makefile
+psp/sdk/samples/kernel/fileio/main.c
+psp/sdk/samples/kernel/fileio/Makefile
+psp/sdk/samples/kernel/cwd/main.c
+psp/sdk/samples/kernel/cwd/Makefile
+psp/sdk/samples/ir/sircs/main.c
+psp/sdk/samples/ir/sircs/Makefile
+psp/sdk/samples/ir/irda/main.c
+psp/sdk/samples/ir/irda/Makefile
+psp/sdk/samples/gu/zbufferfog/zbufferfog.c
+psp/sdk/samples/gu/zbufferfog/Makefile
+psp/sdk/samples/gu/vertex/vertex.c
+psp/sdk/samples/gu/vertex/Makefile
+psp/sdk/samples/gu/timing/timing.c
+psp/sdk/samples/gu/timing/Makefile
+psp/sdk/samples/gu/text/main.c
+psp/sdk/samples/gu/text/font.raw
+psp/sdk/samples/gu/text/Makefile
+psp/sdk/samples/gu/sprite/sprite.c
+psp/sdk/samples/gu/sprite/ball.raw
+psp/sdk/samples/gu/sprite/Makefile
+psp/sdk/samples/gu/splinesurface/splinesurface.c
+psp/sdk/samples/gu/splinesurface/Makefile
+psp/sdk/samples/gu/spharm/spharm.c
+psp/sdk/samples/gu/spharm/readme
+psp/sdk/samples/gu/spharm/mt19937.h
+psp/sdk/samples/gu/spharm/mt19937.c
+psp/sdk/samples/gu/spharm/logo.raw
+psp/sdk/samples/gu/spharm/disablefpu.S
+psp/sdk/samples/gu/spharm/cube.c
+psp/sdk/samples/gu/spharm/Makefile
+psp/sdk/samples/gu/spharm/Image2.raw
+psp/sdk/samples/gu/spharm/Image1.raw
+psp/sdk/samples/gu/speed/speed.c
+psp/sdk/samples/gu/speed/Makefile
+psp/sdk/samples/gu/skinning/skinning.c
+psp/sdk/samples/gu/skinning/Makefile
+psp/sdk/samples/gu/signals/signals.c
+psp/sdk/samples/gu/signals/ball.raw
+psp/sdk/samples/gu/signals/Makefile
+psp/sdk/samples/gu/shadowprojection/shadowprojection.c
+psp/sdk/samples/gu/shadowprojection/Makefile
+psp/sdk/samples/gu/rendertarget/rendertarget.c
+psp/sdk/samples/gu/rendertarget/Makefile
+psp/sdk/samples/gu/reflection/reflection.c
+psp/sdk/samples/gu/reflection/Makefile
+psp/sdk/samples/gu/ortho/ortho.c
+psp/sdk/samples/gu/ortho/Makefile
+psp/sdk/samples/gu/morphskin/morphskin.c
+psp/sdk/samples/gu/morphskin/Makefile
+psp/sdk/samples/gu/morph/morph.c
+psp/sdk/samples/gu/morph/Makefile
+psp/sdk/samples/gu/logic/logic.c
+psp/sdk/samples/gu/logic/Makefile
+psp/sdk/samples/gu/lines/lines.c
+psp/sdk/samples/gu/lines/Makefile
+psp/sdk/samples/gu/lights/lights.c
+psp/sdk/samples/gu/lights/Makefile
+psp/sdk/samples/gu/integerdrawing/integerdrawing.c
+psp/sdk/samples/gu/integerdrawing/Makefile
+psp/sdk/samples/gu/envmap/envmap.c
+psp/sdk/samples/gu/envmap/env0.raw
+psp/sdk/samples/gu/envmap/Makefile
+psp/sdk/samples/gu/cube/logo.raw
+psp/sdk/samples/gu/cube/cube.c
+psp/sdk/samples/gu/cube/Makefile
+psp/sdk/samples/gu/copy/copy.c
+psp/sdk/samples/gu/copy/Makefile
+psp/sdk/samples/gu/common/vram.h
+psp/sdk/samples/gu/common/vram.c
+psp/sdk/samples/gu/common/menu.h
+psp/sdk/samples/gu/common/menu.c
+psp/sdk/samples/gu/common/geometry.h
+psp/sdk/samples/gu/common/geometry.c
+psp/sdk/samples/gu/common/callbacks.h
+psp/sdk/samples/gu/common/callbacks.c
+psp/sdk/samples/gu/clut/clut.c
+psp/sdk/samples/gu/clut/Makefile
+psp/sdk/samples/gu/celshading/lightmap.raw
+psp/sdk/samples/gu/celshading/celshading.c
+psp/sdk/samples/gu/celshading/Makefile
+psp/sdk/samples/gu/blit/blit.c
+psp/sdk/samples/gu/blit/Makefile
+psp/sdk/samples/gu/blend/blend.c
+psp/sdk/samples/gu/blend/Makefile
+psp/sdk/samples/gu/beginobject/beginobject.c
+psp/sdk/samples/gu/beginobject/Makefile
+psp/sdk/samples/debug/sio/readme.txt
+psp/sdk/samples/debug/sio/main.c
+psp/sdk/samples/debug/sio/Makefile
+psp/sdk/samples/debug/prxdecrypt/main.c
+psp/sdk/samples/debug/prxdecrypt/Makefile
+psp/sdk/samples/debug/profiler/main.c
+psp/sdk/samples/debug/profiler/Makefile
+psp/sdk/samples/debug/kprintf/main.c
+psp/sdk/samples/debug/kprintf/Makefile
+psp/sdk/samples/debug/gdb/main.c
+psp/sdk/samples/debug/gdb/Makefile
+psp/sdk/samples/debug/exception/main.c
+psp/sdk/samples/debug/exception/Makefile
+psp/sdk/samples/debug/debugkb/main.c
+psp/sdk/samples/debug/debugkb/Makefile
+psp/sdk/samples/controller/basic/main.c
+psp/sdk/samples/controller/basic/Makefile
+psp/sdk/samples/audio/wavegen/main.c
+psp/sdk/samples/audio/wavegen/Makefile
+psp/sdk/samples/audio/polyphonic/main.c
+psp/sdk/samples/audio/polyphonic/Makefile
+psp/sdk/lib/prxspecs
+psp/sdk/lib/prxexports.o
+psp/sdk/lib/linkfile.prx
+psp/sdk/lib/libpspwlan.a
+psp/sdk/lib/libpspvshbridge.a
+psp/sdk/lib/libpspvideocodec.a
+psp/sdk/lib/libpspvfpu.a
+psp/sdk/lib/libpsputility.a
+psp/sdk/lib/libpspuser.a
+psp/sdk/lib/libpspusbstor.a
+psp/sdk/lib/libpspusbcam.a
+psp/sdk/lib/libpspusbbus_driver.a
+psp/sdk/lib/libpspusb_driver.a
+psp/sdk/lib/libpspusb.a
+psp/sdk/lib/libpspumd_driver.a
+psp/sdk/lib/libpspumd.a
+psp/sdk/lib/libpspssl.a
+psp/sdk/lib/libpspsircs.a
+psp/sdk/lib/libpspsdk.a
+psp/sdk/lib/libpsprtc_driver.a
+psp/sdk/lib/libpsprtc.a
+psp/sdk/lib/libpspreg_driver.a
+psp/sdk/lib/libpspreg.a
+psp/sdk/lib/libpspprof.a
+psp/sdk/lib/libpsppower_driver.a
+psp/sdk/lib/libpsppower.a
+psp/sdk/lib/libpsppaf.a
+psp/sdk/lib/libpspopenpsid.a
+psp/sdk/lib/libpspnet_resolver.a
+psp/sdk/lib/libpspnet_inet.a
+psp/sdk/lib/libpspnet_apctl.a
+psp/sdk/lib/libpspnet_adhocmatching.a
+psp/sdk/lib/libpspnet_adhocctl.a
+psp/sdk/lib/libpspnet_adhoc.a
+psp/sdk/lib/libpspnet.a
+psp/sdk/lib/libpspnand_driver.a
+psp/sdk/lib/libpspmpegbase_driver.a
+psp/sdk/lib/libpspmpegbase.a
+psp/sdk/lib/libpspmpeg.a
+psp/sdk/lib/libpspmp3.a
+psp/sdk/lib/libpsplibc.a
+psp/sdk/lib/libpspkernel.a
+psp/sdk/lib/libpspjpeg.a
+psp/sdk/lib/libpsphttp.a
+psp/sdk/lib/libpsphprm_driver.a
+psp/sdk/lib/libpsphprm.a
+psp/sdk/lib/libpspgum_vfpu.a
+psp/sdk/lib/libpspgum.a
+psp/sdk/lib/libpspgu.a
+psp/sdk/lib/libpspge_driver.a
+psp/sdk/lib/libpspge.a
+psp/sdk/lib/libpspgdb_user.a
+psp/sdk/lib/libpspgdb_kernel.a
+psp/sdk/lib/libpspgdb.a
+psp/sdk/lib/libpspfpu.a
+psp/sdk/lib/libpspdisplay_driver.a
+psp/sdk/lib/libpspdisplay.a
+psp/sdk/lib/libpspdebugkb.a
+psp/sdk/lib/libpspdebug.a
+psp/sdk/lib/libpspctrl_driver.a
+psp/sdk/lib/libpspctrl.a
+psp/sdk/lib/libpspchnnlsv.a
+psp/sdk/lib/libpspaudiolib.a
+psp/sdk/lib/libpspaudiocodec.a
+psp/sdk/lib/libpspaudio_driver.a
+psp/sdk/lib/libpspaudio.a
+psp/sdk/lib/libpspatrac3.a
+psp/sdk/lib/build_prx.mak
+psp/sdk/lib/build.mak
+psp/sdk/include/pspwlan.h
+psp/sdk/include/pspvideocodec.h
+psp/sdk/include/pspvfpu.h
+psp/sdk/include/psputilsforkernel.h
+psp/sdk/include/psputils.h
+psp/sdk/include/psputility_usbmodules.h
+psp/sdk/include/psputility_sysparam.h
+psp/sdk/include/psputility_savedata.h
+psp/sdk/include/psputility_osk.h
+psp/sdk/include/psputility_netparam.h
+psp/sdk/include/psputility_netmodules.h
+psp/sdk/include/psputility_netconf.h
+psp/sdk/include/psputility_msgdialog.h
+psp/sdk/include/psputility_modules.h
+psp/sdk/include/psputility_htmlviewer.h
+psp/sdk/include/psputility_gamesharing.h
+psp/sdk/include/psputility_avmodules.h
+psp/sdk/include/psputility.h
+psp/sdk/include/pspuser.h
+psp/sdk/include/pspusbstor.h
+psp/sdk/include/pspusbcam.h
+psp/sdk/include/pspusbbus.h
+psp/sdk/include/pspusbacc.h
+psp/sdk/include/pspusb.h
+psp/sdk/include/pspumd.h
+psp/sdk/include/psptypes.h
+psp/sdk/include/pspthreadman_kernel.h
+psp/sdk/include/pspthreadman.h
+psp/sdk/include/pspsystimer.h
+psp/sdk/include/pspsysreg.h
+psp/sdk/include/pspsysmem_kernel.h
+psp/sdk/include/pspsysmem.h
+psp/sdk/include/pspsysevent.h
+psp/sdk/include/pspsyscon.h
+psp/sdk/include/pspsysclib.h
+psp/sdk/include/pspsuspend.h
+psp/sdk/include/pspstub.s
+psp/sdk/include/pspstdio_kernel.h
+psp/sdk/include/pspstdio.h
+psp/sdk/include/pspssl.h
+psp/sdk/include/pspsircs.h
+psp/sdk/include/pspsdk.h
+psp/sdk/include/psprtc.h
+psp/sdk/include/pspreg.h
+psp/sdk/include/pspprof.h
+psp/sdk/include/psppower.h
+psp/sdk/include/pspopenpsid.h
+psp/sdk/include/pspnet_resolver.h
+psp/sdk/include/pspnet_inet.h
+psp/sdk/include/pspnet_apctl.h
+psp/sdk/include/pspnet_adhocmatching.h
+psp/sdk/include/pspnet_adhocctl.h
+psp/sdk/include/pspnet_adhoc.h
+psp/sdk/include/pspnet.h
+psp/sdk/include/pspnand_driver.h
+psp/sdk/include/pspmscm.h
+psp/sdk/include/pspmpegbase.h
+psp/sdk/include/pspmpeg.h
+psp/sdk/include/pspmp3.h
+psp/sdk/include/pspmodulemgr_kernel.h
+psp/sdk/include/pspmodulemgr.h
+psp/sdk/include/pspmoduleinfo.h
+psp/sdk/include/pspmoduleexport.h
+psp/sdk/include/psploadexec_kernel.h
+psp/sdk/include/psploadexec.h
+psp/sdk/include/psploadcore.h
+psp/sdk/include/pspkerror.h
+psp/sdk/include/pspkerneltypes.h
+psp/sdk/include/pspkernel.h
+psp/sdk/include/pspkdebug.h
+psp/sdk/include/pspjpeg.h
+psp/sdk/include/pspiofilemgr_stat.h
+psp/sdk/include/pspiofilemgr_kernel.h
+psp/sdk/include/pspiofilemgr_fcntl.h
+psp/sdk/include/pspiofilemgr_dirent.h
+psp/sdk/include/pspiofilemgr.h
+psp/sdk/include/pspintrman_kernel.h
+psp/sdk/include/pspintrman.h
+psp/sdk/include/pspinit.h
+psp/sdk/include/pspimpose_driver.h
+psp/sdk/include/pspimport.s
+psp/sdk/include/pspidstorage.h
+psp/sdk/include/psphttp.h
+psp/sdk/include/psphprm.h
+psp/sdk/include/pspgum.h
+psp/sdk/include/pspgu.h
+psp/sdk/include/pspge.h
+psp/sdk/include/pspfpu.h
+psp/sdk/include/pspexception.h
+psp/sdk/include/pspdisplay_kernel.h
+psp/sdk/include/pspdisplay.h
+psp/sdk/include/pspdebugkb.h
+psp/sdk/include/pspdebug.h
+psp/sdk/include/pspctrl_kernel.h
+psp/sdk/include/pspctrl.h
+psp/sdk/include/pspchnnlsv.h
+psp/sdk/include/pspaudiorouting.h
+psp/sdk/include/pspaudiolib.h
+psp/sdk/include/pspaudiocodec.h
+psp/sdk/include/pspaudio_kernel.h
+psp/sdk/include/pspaudio.h
+psp/sdk/include/pspatrac3.h
+psp/sdk/include/libc/unistd.h
+psp/sdk/include/libc/time.h
+psp/sdk/include/libc/string.h
+psp/sdk/include/libc/stdlib.h
+psp/sdk/include/libc/stdio.h
+psp/sdk/include/libc/malloc.h
+psp/sdk/include/libc/ctype.h
+psp/sdk/include/libc/assert.h
+psp/sdk/include/as_reg_compat.h
+psp/lib/crt0_prx.o
+bin/unpack-pbp
+bin/psp-prxgen
+bin/psp-fixup-imports
+bin/psp-config
+bin/psp-build-exports
+bin/pack-pbp
+bin/mksfoex
+bin/mksfo
+bin/bin2s
+bin/bin2o
+bin/bin2c
+@dirrm psp/sdk/samples/wlan
+@dirrm psp/sdk/samples/utility/systemparam
+@dirrm psp/sdk/samples/utility/osk
+@dirrm psp/sdk/samples/utility/netdialog
+@dirrm psp/sdk/samples/utility/netconf
+@dirrm psp/sdk/samples/utility/msgdialog
+@dirrm psp/sdk/samples/utility/htmlviewer
+@dirrm psp/sdk/samples/utility/gamesharing
+@dirrm psp/sdk/samples/utility
+@dirrm psp/sdk/samples/usb/storage
+@dirrm psp/sdk/samples/usb
+@dirrm psp/sdk/samples/template/prx_template
+@dirrm psp/sdk/samples/template/lib_template
+@dirrm psp/sdk/samples/template/kprx_template
+@dirrm psp/sdk/samples/template/elf_template
+@dirrm psp/sdk/samples/template
+@dirrm psp/sdk/samples/savedata/utility
+@dirrm psp/sdk/samples/savedata/encrypt
+@dirrm psp/sdk/samples/savedata/decrypt
+@dirrm psp/sdk/samples/savedata
+@dirrm psp/sdk/samples/prx/testprx
+@dirrm psp/sdk/samples/prx/prx_loader
+@dirrm psp/sdk/samples/prx
+@dirrm psp/sdk/samples/power
+@dirrm psp/sdk/samples/net/wlanscan_elf
+@dirrm psp/sdk/samples/net/wlanscan
+@dirrm psp/sdk/samples/net/simple_prx
+@dirrm psp/sdk/samples/net/simple
+@dirrm psp/sdk/samples/net/resolver
+@dirrm psp/sdk/samples/net
+@dirrm psp/sdk/samples/nand/dumpipl
+@dirrm psp/sdk/samples/nand
+@dirrm psp/sdk/samples/ms/callback
+@dirrm psp/sdk/samples/ms
+@dirrm psp/sdk/samples/mp3
+@dirrm psp/sdk/samples/me/basic
+@dirrm psp/sdk/samples/me
+@dirrm psp/sdk/samples/kernel/threadstatus
+@dirrm psp/sdk/samples/kernel/systimer
+@dirrm psp/sdk/samples/kernel/sysevent
+@dirrm psp/sdk/samples/kernel/registry
+@dirrm psp/sdk/samples/kernel/regenum
+@dirrm psp/sdk/samples/kernel/messagebox
+@dirrm psp/sdk/samples/kernel/loadmodule
+@dirrm psp/sdk/samples/kernel/kdumper
+@dirrm psp/sdk/samples/kernel/idstorage
+@dirrm psp/sdk/samples/kernel/fileio
+@dirrm psp/sdk/samples/kernel/cwd
+@dirrm psp/sdk/samples/kernel
+@dirrm psp/sdk/samples/ir/sircs
+@dirrm psp/sdk/samples/ir/irda
+@dirrm psp/sdk/samples/ir
+@dirrm psp/sdk/samples/gu/zbufferfog
+@dirrm psp/sdk/samples/gu/vertex
+@dirrm psp/sdk/samples/gu/timing
+@dirrm psp/sdk/samples/gu/text
+@dirrm psp/sdk/samples/gu/sprite
+@dirrm psp/sdk/samples/gu/splinesurface
+@dirrm psp/sdk/samples/gu/spharm
+@dirrm psp/sdk/samples/gu/speed
+@dirrm psp/sdk/samples/gu/skinning
+@dirrm psp/sdk/samples/gu/signals
+@dirrm psp/sdk/samples/gu/shadowprojection
+@dirrm psp/sdk/samples/gu/rendertarget
+@dirrm psp/sdk/samples/gu/reflection
+@dirrm psp/sdk/samples/gu/ortho
+@dirrm psp/sdk/samples/gu/morphskin
+@dirrm psp/sdk/samples/gu/morph
+@dirrm psp/sdk/samples/gu/logic
+@dirrm psp/sdk/samples/gu/lines
+@dirrm psp/sdk/samples/gu/lights
+@dirrm psp/sdk/samples/gu/integerdrawing
+@dirrm psp/sdk/samples/gu/envmap
+@dirrm psp/sdk/samples/gu/cube
+@dirrm psp/sdk/samples/gu/copy
+@dirrm psp/sdk/samples/gu/common
+@dirrm psp/sdk/samples/gu/clut
+@dirrm psp/sdk/samples/gu/celshading
+@dirrm psp/sdk/samples/gu/blit
+@dirrm psp/sdk/samples/gu/blend
+@dirrm psp/sdk/samples/gu/beginobject
+@dirrm psp/sdk/samples/gu
+@dirrm psp/sdk/samples/debug/sio
+@dirrm psp/sdk/samples/debug/prxdecrypt
+@dirrm psp/sdk/samples/debug/profiler
+@dirrm psp/sdk/samples/debug/kprintf
+@dirrm psp/sdk/samples/debug/gdb
+@dirrm psp/sdk/samples/debug/exception
+@dirrm psp/sdk/samples/debug/debugkb
+@dirrm psp/sdk/samples/debug
+@dirrm psp/sdk/samples/controller/basic
+@dirrm psp/sdk/samples/controller
+@dirrm psp/sdk/samples/audio/wavegen
+@dirrm psp/sdk/samples/audio/polyphonic
+@dirrm psp/sdk/samples/audio
+@dirrm psp/sdk/samples
+@dirrm psp/sdk/include/libc
+@dirrm psp/sdk/include
+@dirrmtry psp/sdk/lib
+@dirrmtry psp/sdk
+@dirrmtry psp/lib
+@dirrmtry psp

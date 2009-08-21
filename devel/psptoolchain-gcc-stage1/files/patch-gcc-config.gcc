@@ -1,0 +1,46 @@
+--- gcc/config.gcc.orig	2006-02-06 16:07:46.000000000 +0000
++++ gcc/config.gcc	2006-05-07 13:27:40.000000000 +0100
+@@ -406,12 +406,6 @@
+       tm_defines="${tm_defines} FBSD_MAJOR=5" ;;
+     *-*-freebsd6 | *-*-freebsd[6].*)
+       tm_defines="${tm_defines} FBSD_MAJOR=6" ;;
+-    *-*-freebsd7 | *-*-freebsd[7].*)
+-      tm_defines="${tm_defines} FBSD_MAJOR=7" ;;
+-    *-*-freebsd8 | *-*-freebsd[8].*)
+-      tm_defines="${tm_defines} FBSD_MAJOR=8" ;;
+-    *-*-freebsd9 | *-*-freebsd[9].*)
+-      tm_defines="${tm_defines} FBSD_MAJOR=9" ;;
+     *)
+       echo 'Please update *-*-freebsd* in gcc/config.gcc'
+       exit 1
+@@ -756,11 +750,6 @@
+         tmake_file=bfin/t-bfin-elf
+         use_collect2=no
+         ;;
+-bfin*-uclinux*)
+-	tm_file="${tm_file} dbxelf.h elfos.h bfin/elf.h bfin/uclinux.h"
+-        tmake_file=bfin/t-bfin-elf
+-        use_collect2=no
+-        ;;
+ bfin*-*)
+ 	tm_file="${tm_file} dbxelf.h elfos.h bfin/elf.h"
+         tmake_file=bfin/t-bfin
+@@ -1584,6 +1573,18 @@
+ 	tmake_file=mips/t-r3900
+ 	use_fixproto=yes
+ 	;;
++mipsallegrex-*-elf* | mipsallegrexel-*-elf*)
++	tm_file="elfos.h ${tm_file} mips/elf.h"
++	tmake_file=mips/t-allegrex
++	target_cpu_default="MASK_SINGLE_FLOAT|MASK_DIVIDE_BREAKS"
++	tm_defines="MIPS_ISA_DEFAULT=2 MIPS_CPU_STRING_DEFAULT=\\\"allegrex\\\" MIPS_ABI_DEFAULT=ABI_EABI"
++	case ${target} in
++	mipsallegrex*-psp-elf*)	
++		tm_file="${tm_file} mips/psp.h"
++		;;
++	esac
++	use_fixproto=yes
++	;;
+ mmix-knuth-mmixware)
+ 	need_64bit_hwint=yes
+ 	;;

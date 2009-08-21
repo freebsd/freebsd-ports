@@ -1,0 +1,11 @@
+--- ld/configure.tgt.orig	2005-02-08 19:54:27.000000000 +0000
++++ ld/configure.tgt	2006-05-09 02:55:36.000000000 +0100
+@@ -428,6 +428,8 @@
+ mips*vr4100-*-elf*)	targ_emul=elf32b4300 ;;
+ mips*vr5000el-*-elf*)	targ_emul=elf32l4300 ;;
+ mips*vr5000-*-elf*)	targ_emul=elf32b4300 ;;
++mips*allegrexel-psp-elf*) targ_emul=elf_mipsallegrexel_psp
++			targ_extra_emuls="elf32elmip" ;;
+ mips*el-*-elf*)		targ_emul=elf32elmip ;;
+ mips*-*-elf*)		targ_emul=elf32ebmip ;;
+ mips*el-*-rtems*)	targ_emul=elf32elmip ;;

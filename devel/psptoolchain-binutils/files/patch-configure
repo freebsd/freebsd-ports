@@ -1,0 +1,20 @@
+--- configure.orig	2005-02-28 14:06:59.000000000 +0000
++++ configure	2006-05-09 02:55:10.000000000 +0100
+@@ -1034,7 +1034,7 @@
+ 
+ # Some tools are only suitable for building in a "native" situation.
+ # Remove these if host!=target.  
+-native_only="autoconf automake libtool fileutils find gawk gettext gzip hello indent m4 rcs recode sed shellutils tar textutils uudecode wdiff gprof target-groff guile perl time ash bash bzip2 prms gnuserv target-gperf"
++native_only="autoconf automake libtool fileutils find gawk gettext gzip hello indent m4 rcs recode sed shellutils tar textutils uudecode wdiff target-groff guile perl time ash bash bzip2 prms gnuserv target-gperf"
+ 
+ # Similarly, some are only suitable for cross toolchains.
+ # Remove these if host=target.
+@@ -1516,7 +1516,7 @@
+     noconfigdirs="$noconfigdirs target-newlib target-libgloss"
+     ;;
+   mips*-*-*)
+-    noconfigdirs="$noconfigdirs gprof ${libgcj}"
++    noconfigdirs="$noconfigdirs ${libgcj}"
+     ;;
+   romp-*-*)
+     noconfigdirs="$noconfigdirs bfd binutils ld gas opcodes target-libgloss ${libgcj}"
