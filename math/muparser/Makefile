@@ -7,6 +7,7 @@
 
 PORTNAME=	muparser
 PORTVERSION=	1.30
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_v130
@@ -28,6 +29,12 @@ USE_GMAKE=	yes
 
 WRKSRC=	${WRKDIR}/muparser
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.endif
+
 # taken from audio/taglib
 post-patch:
 	@${REINPLACE_CMD} -e "s#\$$(libdir)/pkgconfig#${PREFIX}/libdata/pkgconfig#g" \
@@ -47,4 +54,4 @@ post-install:
 	${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
