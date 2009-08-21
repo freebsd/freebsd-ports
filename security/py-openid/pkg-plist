@@ -31,9 +31,15 @@
 %%PYTHON_SITELIBDIR%%/openid/extensions/ax.py
 %%PYTHON_SITELIBDIR%%/openid/extensions/ax.pyc
 %%PYTHON_SITELIBDIR%%/openid/extensions/ax.pyo
-%%PYTHON_SITELIBDIR%%/openid/extensions/pape.py
-%%PYTHON_SITELIBDIR%%/openid/extensions/pape.pyc
-%%PYTHON_SITELIBDIR%%/openid/extensions/pape.pyo
+%%PYTHON_SITELIBDIR%%/openid/extensions/draft/__init__.py
+%%PYTHON_SITELIBDIR%%/openid/extensions/draft/__init__.pyc
+%%PYTHON_SITELIBDIR%%/openid/extensions/draft/__init__.pyo
+%%PYTHON_SITELIBDIR%%/openid/extensions/draft/pape2.py
+%%PYTHON_SITELIBDIR%%/openid/extensions/draft/pape2.pyc
+%%PYTHON_SITELIBDIR%%/openid/extensions/draft/pape2.pyo
+%%PYTHON_SITELIBDIR%%/openid/extensions/draft/pape5.py
+%%PYTHON_SITELIBDIR%%/openid/extensions/draft/pape5.pyc
+%%PYTHON_SITELIBDIR%%/openid/extensions/draft/pape5.pyo
 %%PYTHON_SITELIBDIR%%/openid/extensions/sreg.py
 %%PYTHON_SITELIBDIR%%/openid/extensions/sreg.pyc
 %%PYTHON_SITELIBDIR%%/openid/extensions/sreg.pyo
@@ -118,6 +124,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/openid/yadis
 @dirrm %%PYTHON_SITELIBDIR%%/openid/store
 @dirrm %%PYTHON_SITELIBDIR%%/openid/server
+@dirrm %%PYTHON_SITELIBDIR%%/openid/extensions/draft
 @dirrm %%PYTHON_SITELIBDIR%%/openid/extensions
 @dirrm %%PYTHON_SITELIBDIR%%/openid/consumer
 @dirrm %%PYTHON_SITELIBDIR%%/openid

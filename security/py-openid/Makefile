@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openid
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.4
 CATEGORIES=	security python
 MASTER_SITES=	http://openidenabled.com/files/python-openid/packages/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
