@@ -17,6 +17,8 @@ COMMENT=	Python bindings for the Poppler PDF rendering library
 
 LIB_DEPENDS=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
 
+BROKEN=		does not fetch
+
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
