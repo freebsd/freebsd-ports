@@ -28,6 +28,10 @@ TENDRA_ARCH=	${ARCH:S/i386/80x86/}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not build
+.endif
+
 .if ${ARCH} == "i386"
 PLIST_SUB+=	ONLY_FOR_I386=""
 .else
