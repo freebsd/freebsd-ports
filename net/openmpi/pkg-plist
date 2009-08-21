@@ -1,17 +1,24 @@
-%%FORTRAN%%%%MPIDIR%%/lib/libmpi_f77.la
-%%FORTRAN%%%%MPIDIR%%/lib/libmpi_f77.so.0
-%%FORTRAN%%%%MPIDIR%%/lib/libmpi_f90.la
-%%FORTRAN%%%%MPIDIR%%/lib/libmpi_f90.so.0
-%%FORTRAN%%%%MPIDIR%%/share/openmpi/mpif77-wrapper-data.txt
-%%FORTRAN%%%%MPIDIR%%/share/openmpi/mpif90-wrapper-data.txt
+%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfaux
+%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfcompress
+%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfconfig
+%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfdump
+%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfinfo
+%%MPIDIR%%/bin/amd64-portbld-freebsd8.0-otfmerge
 %%MPIDIR%%/bin/ompi-server
 %%MPIDIR%%/bin/ompi_info
 %%MPIDIR%%/bin/opal_wrapper
+%%MPIDIR%%/bin/opari
 %%MPIDIR%%/bin/orte-clean
 %%MPIDIR%%/bin/orte-iof
 %%MPIDIR%%/bin/orte-ps
 %%MPIDIR%%/bin/orted
 %%MPIDIR%%/bin/orterun
+%%MPIDIR%%/bin/vtcc
+%%MPIDIR%%/bin/vtcxx
+%%MPIDIR%%/bin/vtf77
+%%MPIDIR%%/bin/vtf90
+%%MPIDIR%%/bin/vtfilter
+%%MPIDIR%%/bin/vtunify
 %%MPIDIR%%/etc/openmpi-default-hostfile
 %%MPIDIR%%/etc/openmpi-mca-params.conf
 %%MPIDIR%%/etc/openmpi-totalview.tcl
@@ -51,16 +58,51 @@
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/topology_inln.h
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/win.h
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/win_inln.h
+%%MPIDIR%%/include/vampirtrace/OTF_CopyHandler.h
+%%MPIDIR%%/include/vampirtrace/OTF_Definitions.h
+%%MPIDIR%%/include/vampirtrace/OTF_File.h
+%%MPIDIR%%/include/vampirtrace/OTF_FileManager.h
+%%MPIDIR%%/include/vampirtrace/OTF_Filenames.h
+%%MPIDIR%%/include/vampirtrace/OTF_HandlerArray.h
+%%MPIDIR%%/include/vampirtrace/OTF_MasterControl.h
+%%MPIDIR%%/include/vampirtrace/OTF_RBuffer.h
+%%MPIDIR%%/include/vampirtrace/OTF_RStream.h
+%%MPIDIR%%/include/vampirtrace/OTF_Reader.h
+%%MPIDIR%%/include/vampirtrace/OTF_WBuffer.h
+%%MPIDIR%%/include/vampirtrace/OTF_WStream.h
+%%MPIDIR%%/include/vampirtrace/OTF_Writer.h
+%%MPIDIR%%/include/vampirtrace/OTF_inttypes.h
+%%MPIDIR%%/include/vampirtrace/OTF_inttypes_unix.h
+%%MPIDIR%%/include/vampirtrace/opari_omp.h
+%%MPIDIR%%/include/vampirtrace/otf.h
+%%MPIDIR%%/include/vampirtrace/pomp_lib.h
+%%MPIDIR%%/include/vampirtrace/vt_user.h
+%%MPIDIR%%/include/vampirtrace/vt_user.inc
+%%MPIDIR%%/include/vampirtrace/vt_user_comment.h
+%%MPIDIR%%/include/vampirtrace/vt_user_comment.inc
+%%MPIDIR%%/include/vampirtrace/vt_user_count.h
+%%MPIDIR%%/include/vampirtrace/vt_user_count.inc
 %%MPIDIR%%/lib/libmca_common_sm.la
 %%MPIDIR%%/lib/libmca_common_sm.so.0
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so.0
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so.0
+%%MPIDIR%%/lib/libmpi_f77.la
+%%MPIDIR%%/lib/libmpi_f77.so.0
+%%MPIDIR%%/lib/libmpi_f90.la
+%%MPIDIR%%/lib/libmpi_f90.so.0
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so.0
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so.0
+%%MPIDIR%%/lib/libotf.a
+%%MPIDIR%%/lib/libotf.la
+%%MPIDIR%%/lib/libvt.a
+%%MPIDIR%%/lib/libvt.fmpi.a
+%%MPIDIR%%/lib/libvt.mpi.a
+%%MPIDIR%%/lib/libvt.omp.a
+%%MPIDIR%%/lib/libvt.ompi.a
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.la
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.so
@@ -90,6 +132,8 @@
 %%MPIDIR%%/lib/openmpi/mca_coll_self.so
 %%MPIDIR%%/lib/openmpi/mca_coll_sm.la
 %%MPIDIR%%/lib/openmpi/mca_coll_sm.so
+%%MPIDIR%%/lib/openmpi/mca_coll_sync.la
+%%MPIDIR%%/lib/openmpi/mca_coll_sync.so
 %%MPIDIR%%/lib/openmpi/mca_coll_tuned.la
 %%MPIDIR%%/lib/openmpi/mca_coll_tuned.so
 %%MPIDIR%%/lib/openmpi/mca_crs_none.la
@@ -138,10 +182,14 @@
 %%MPIDIR%%/lib/openmpi/mca_osc_pt2pt.so
 %%MPIDIR%%/lib/openmpi/mca_osc_rdma.la
 %%MPIDIR%%/lib/openmpi/mca_osc_rdma.so
+%%MPIDIR%%/lib/openmpi/mca_paffinity_posix.la
+%%MPIDIR%%/lib/openmpi/mca_paffinity_posix.so
 %%MPIDIR%%/lib/openmpi/mca_plm_rsh.la
 %%MPIDIR%%/lib/openmpi/mca_plm_rsh.so
 %%MPIDIR%%/lib/openmpi/mca_pml_cm.la
 %%MPIDIR%%/lib/openmpi/mca_pml_cm.so
+%%MPIDIR%%/lib/openmpi/mca_pml_csum.la
+%%MPIDIR%%/lib/openmpi/mca_pml_csum.so
 %%MPIDIR%%/lib/openmpi/mca_pml_ob1.la
 %%MPIDIR%%/lib/openmpi/mca_pml_ob1.so
 %%MPIDIR%%/lib/openmpi/mca_pml_v.la
@@ -169,6 +217,7 @@
 %%MPIDIR%%/lib/openmpi/mca_vprotocol_pessimist.la
 %%MPIDIR%%/lib/openmpi/mca_vprotocol_pessimist.so
 %%MPIDIR%%/share/openmpi/amca-param-sets/example.conf
+%%MPIDIR%%/share/openmpi/help-coll-sync.txt
 %%MPIDIR%%/share/openmpi/help-dash-host.txt
 %%MPIDIR%%/share/openmpi/help-ess-base.txt
 %%MPIDIR%%/share/openmpi/help-hostfile.txt
@@ -192,6 +241,7 @@
 %%MPIDIR%%/share/openmpi/help-opal-crs-base.txt
 %%MPIDIR%%/share/openmpi/help-opal-crs-none.txt
 %%MPIDIR%%/share/openmpi/help-opal-runtime.txt
+%%MPIDIR%%/share/openmpi/help-opal-util.txt
 %%MPIDIR%%/share/openmpi/help-opal-wrapper.txt
 %%MPIDIR%%/share/openmpi/help-orte-clean.txt
 %%MPIDIR%%/share/openmpi/help-orte-filem-base.txt
@@ -210,27 +260,70 @@
 %%MPIDIR%%/share/openmpi/help-plm-rsh.txt
 %%MPIDIR%%/share/openmpi/help-ras-base.txt
 %%MPIDIR%%/share/openmpi/help-rmaps_rank_file.txt
+%%MPIDIR%%/share/openmpi/mpic++-vt-wrapper-data.txt
 %%MPIDIR%%/share/openmpi/mpic++-wrapper-data.txt
+%%MPIDIR%%/share/openmpi/mpicc-vt-wrapper-data.txt
 %%MPIDIR%%/share/openmpi/mpicc-wrapper-data.txt
-%%FORTRAN%%%%MPIDIR%%/bin/mpif77
-%%FORTRAN%%%%MPIDIR%%/bin/mpif90
-%%FORTRAN%%%%MPIDIR%%/lib/libmpi_f77.so
-%%FORTRAN%%%%MPIDIR%%/lib/libmpi_f90.so
+%%MPIDIR%%/share/openmpi/mpif77-vt-wrapper-data.txt
+%%MPIDIR%%/share/openmpi/mpif77-wrapper-data.txt
+%%MPIDIR%%/share/openmpi/mpif90-vt-wrapper-data.txt
+%%MPIDIR%%/share/openmpi/mpif90-wrapper-data.txt
+%%MPIDIR%%/share/vampirtrace/FILTER.SPEC
+%%MPIDIR%%/share/vampirtrace/GROUPS.SPEC
+%%MPIDIR%%/share/vampirtrace/METRICS.SPEC
+%%MPIDIR%%/share/vampirtrace/doc/ChangeLog
+%%MPIDIR%%/share/vampirtrace/doc/LICENSE
+%%MPIDIR%%/share/vampirtrace/doc/UserManual.html
+%%MPIDIR%%/share/vampirtrace/doc/UserManual.pdf
+%%MPIDIR%%/share/vampirtrace/doc/opari/ChangeLog
+%%MPIDIR%%/share/vampirtrace/doc/opari/LICENSE
+%%MPIDIR%%/share/vampirtrace/doc/opari/Readme.html
+%%MPIDIR%%/share/vampirtrace/doc/opari/lacsi01.pdf
+%%MPIDIR%%/share/vampirtrace/doc/opari/lacsi01.ps.gz
+%%MPIDIR%%/share/vampirtrace/doc/opari/opari-logo-100.gif
+%%MPIDIR%%/share/vampirtrace/doc/otf/ChangeLog
+%%MPIDIR%%/share/vampirtrace/doc/otf/LICENSE
+%%MPIDIR%%/share/vampirtrace/doc/otf/otftools.pdf
+%%MPIDIR%%/share/vampirtrace/doc/otf/specification.pdf
+%%MPIDIR%%/share/vampirtrace/vtcc-wrapper-data.txt
+%%MPIDIR%%/share/vampirtrace/vtcxx-wrapper-data.txt
+%%MPIDIR%%/share/vampirtrace/vtf77-wrapper-data.txt
+%%MPIDIR%%/share/vampirtrace/vtf90-wrapper-data.txt
 %%MPIDIR%%/bin/mpiCC
+%%MPIDIR%%/bin/mpiCC-vt
 %%MPIDIR%%/bin/mpic++
+%%MPIDIR%%/bin/mpic++-vt
 %%MPIDIR%%/bin/mpicc
+%%MPIDIR%%/bin/mpicc-vt
 %%MPIDIR%%/bin/mpicxx
+%%MPIDIR%%/bin/mpicxx-vt
 %%MPIDIR%%/bin/mpiexec
+%%MPIDIR%%/bin/mpif77
+%%MPIDIR%%/bin/mpif77-vt
+%%MPIDIR%%/bin/mpif90
+%%MPIDIR%%/bin/mpif90-vt
 %%MPIDIR%%/bin/mpirun
+%%MPIDIR%%/bin/ompi-checkpoint
 %%MPIDIR%%/bin/ompi-clean
+%%MPIDIR%%/bin/ompi-iof
 %%MPIDIR%%/bin/ompi-ps
+%%MPIDIR%%/bin/ompi-restart
+%%MPIDIR%%/bin/otfdecompress
 %%MPIDIR%%/lib/libmca_common_sm.so
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi_cxx.so
+%%MPIDIR%%/lib/libmpi_f77.so
+%%MPIDIR%%/lib/libmpi_f90.so
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-rte.so
+%%MPIDIR%%/share/openmpi/mpiCC-vt-wrapper-data.txt
 %%MPIDIR%%/share/openmpi/mpiCC-wrapper-data.txt
+%%MPIDIR%%/share/openmpi/mpicxx-vt-wrapper-data.txt
 %%MPIDIR%%/share/openmpi/mpicxx-wrapper-data.txt
+@dirrm %%MPIDIR%%/share/vampirtrace/doc/otf
+@dirrm %%MPIDIR%%/share/vampirtrace/doc/opari
+@dirrm %%MPIDIR%%/share/vampirtrace/doc
+@dirrm %%MPIDIR%%/share/vampirtrace
 @dirrm %%MPIDIR%%/share/openmpi/amca-param-sets
 @dirrm %%MPIDIR%%/share/openmpi
 @dirrm %%MPIDIR%%/share
@@ -240,6 +333,7 @@
 @dirrm %%MPIDIR%%/man
 @dirrm %%MPIDIR%%/lib/openmpi
 @dirrm %%MPIDIR%%/lib
+@dirrm %%MPIDIR%%/include/vampirtrace
 @dirrm %%MPIDIR%%/include/openmpi/ompi/mpi/cxx
 @dirrm %%MPIDIR%%/include/openmpi/ompi/mpi
 @dirrm %%MPIDIR%%/include/openmpi/ompi

@@ -9,7 +9,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.3
+DISTVERSION=	1.3.3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.3/downloads/
 
@@ -38,8 +38,7 @@ USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 MANPREFIX=	${PREFIX}/${MPIDIR}
 .include "${.CURDIR}/Makefile.man"
 
-OPTIONS=	FORTRAN "Enable Fortran support" on \
-		TORQUE "Enable Torque support" off \
+OPTIONS=	TORQUE "Enable Torque support" off \
 		SGE "Enable SGE support" off
 
 .include <bsd.port.pre.mk>
@@ -48,17 +47,11 @@ OPTIONS=	FORTRAN "Enable Fortran support" on \
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if defined(WITH_FORTRAN)
 USE_FORTRAN=	yes
-PLIST_SUB+=	FORTRAN=""
-.else
-CONFIGURE_ARGS+=	--disable-mpi-f77 --disable-mpi-f90
-PLIST_SUB+=	FORTRAN="@comment "
-.endif
 
 .if defined(WITH_SGE)
-SGE_BASE?=      sge
-SGE_ROOT=       ${LOCALBASE}/${SGE_BASE}
+SGE_BASE?=	sge
+SGE_ROOT=	${LOCALBASE}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
 RUN_DEPENDS+=	${SGE_ROOT}/fbsd-${ARCH}/qrsh:${PORTSDIR}/sysutils/sge62
 CONFIGURE_ARGS+=	--with-sge
@@ -90,17 +83,13 @@ CONFIGURE_ARGS+=	--without-tm
 # XXX: we should generate MLINKS programaticaly, but it would take    #
 # some effort and there's only one entry at this time.                #
 #######################################################################
-build-plist: Makefile
+build-plist:
 	${RM} -f ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -name man -prune -o -type f -print | \
-	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' \
-		-e 's|^\(.*f77.*\)|%%FORTRAN%%\1|' \
-		-e 's|^\(.*f90.*\)|%%FORTRAN%%\1|' | \
+	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -name man -prune -o -type l -print | \
-	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' \
-		-e 's|^\(.*f77.*\)|%%FORTRAN%%\1|' \
-		-e 's|^\(.*f90.*\)|%%FORTRAN%%\1|' | \
+	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -type d | \
 	    ${EGREP} -v "${PREFIX}/${MPIDIR}$$" | \
