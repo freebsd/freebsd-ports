@@ -27,7 +27,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|; s|%%DATADIR%%|${DATADIR}|' \
 	    ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '341,348d' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e '342,349d' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.post.mk>
