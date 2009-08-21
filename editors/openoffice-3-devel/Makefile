@@ -205,10 +205,9 @@ pre-configure:
 #Workaround for gperf. #i85469#
 	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
 
-#see #i103782# for the reason of TMP
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput -- -P${MAKE_JOBS_NUMBER}"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMPDIR ${WRKSRC} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput -- -P${MAKE_JOBS_NUMBER}"
 
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
