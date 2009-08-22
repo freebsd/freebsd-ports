@@ -9,7 +9,7 @@ PORTNAME=	tilem
 PORTVERSION=	0.973
 PORTREVISION=	4
 CATEGORIES=	emulators
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An emulator for the Z80 series of Texas Instruments calculators

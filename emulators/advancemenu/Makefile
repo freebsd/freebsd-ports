@@ -8,8 +8,7 @@
 PORTNAME=	advancemenu
 PORTVERSION=	2.4.14
 CATEGORIES=	emulators
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	advancemame
+MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	AdvanceMENU is a frontend for AdvanceMAME, MAME, MESS, RAINE

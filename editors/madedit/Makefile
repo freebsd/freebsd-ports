@@ -9,7 +9,7 @@ PORTNAME=	madedit
 PORTVERSION=	0.2.9
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/MadEdit/MadEdit-${PORTVERSION}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	An open-source and cross-platform text/hex editor

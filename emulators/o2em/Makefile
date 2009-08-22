@@ -9,7 +9,7 @@ PORTNAME=		o2em
 PORTVERSION=		1.17
 PORTREVISION=		2
 CATEGORIES=		emulators games
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/o2em/:S/$/:1/} \
+MASTER_SITES=		SF/${PORTNAME}/OldFiles:1 \
 			http://o2em.sourceforge.net/files/:2
 DISTFILES=		o2em117src.zip:1 \
 			o2mainsamp.zip:2

@@ -9,7 +9,7 @@ PORTNAME=	the
 PORTVERSION=	3.2
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	SF/hessling-editor
+MASTER_SITES=	SF/hessling-editor/hessling-editor/${PORTVERSION}
 DISTNAME=	THE-${PORTVERSION}
 
 PATCH_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/

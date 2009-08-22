@@ -8,7 +8,7 @@ PORTNAME=	conglomerate
 PORTVERSION=	0.9.1
 PORTREVISION=	8
 CATEGORIES=	editors
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Conglomerate%20XML%20Editor/${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	GNOME2 visual XML editor with emphasis on DocBook editing

@@ -8,9 +8,9 @@
 PORTNAME=	smbftpd
 PORTVERSION=	2.2
 CATEGORIES=	ftp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
+MASTER_SITES=	SF/${PORTNAME}/SmbFTPD/${PORTVERSION}	\
 		http://www.twbsd.org/download/download.php?file=smbftpd/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	FTP daemon using Samba-like share management mechanism

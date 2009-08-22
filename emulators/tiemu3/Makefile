@@ -9,8 +9,7 @@ PORTNAME=	tiemu3
 PORTVERSION=	3.02
 PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	gtktiemu
+MASTER_SITES=	SF/gtktiemu/tiemu-linux/TiEmu%20${PORTVERSION}
 DISTNAME=	tiemu-${PORTVERSION}
 
 MAINTAINER=	cyberbotx@cyberbotx.com

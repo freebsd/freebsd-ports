@@ -7,8 +7,7 @@ PORTNAME=	alphabet_sounds_fr
 PORTVERSION=	0.3
 PORTREVISION=	7
 CATEGORIES=	french games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	childsplay
+MASTER_SITES=	SF/childsplay/OldFiles
 DISTNAME=	alphabet_sounds_fr
 
 MAINTAINER=	bruno@tinkerbox.org

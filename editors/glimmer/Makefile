@@ -9,7 +9,7 @@ PORTNAME=	glimmer
 PORTVERSION=	1.2.1
 PORTREVISION=	9
 CATEGORIES=	editors gnome python
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A full featured code editor for GNOME with many advanced features

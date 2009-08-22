@@ -9,8 +9,7 @@ PORTNAME=	xtrader
 PORTVERSION=	0.99.9
 PORTREVISION=	4
 CATEGORIES=	finance
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Technical analysis program for financial instruments

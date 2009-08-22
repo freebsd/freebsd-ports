@@ -9,8 +9,7 @@ PORTNAME=	xmlcopyeditor
 PORTVERSION=	1.2.0.4
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=xml-copy-editor
+MASTER_SITES=	SF/xml-copy-editor/${PORTNAME}-linux/${PORTVERSION}
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Fast validating XML editor

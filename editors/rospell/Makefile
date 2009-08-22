@@ -8,7 +8,7 @@ PORTNAME=	rospell
 DISTVERSION=	2007.02.rc1
 PORTREVISION=	2
 CATEGORIES=	editors textproc # this should/will be romanian ;)
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	QT-based editor with support for romanian charsets and spell checking

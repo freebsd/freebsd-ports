@@ -7,8 +7,7 @@
 PORTNAME=	omegaT
 PORTVERSION=	1.8.1.5
 CATEGORIES=	editors java x11
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	omegat
+MASTER_SITES=	SF/${PORTNAME:L}/OmegaT%201.8%20%28Current%29/OmegaT%201.8.1%20update%205
 DISTNAME=	OmegaT_1.8.1_05_Source
 
 MAINTAINER=	rodrigo@bebik.net

@@ -8,8 +8,7 @@
 PORTNAME=	led
 PORTVERSION=	2.0
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}-editor
+MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny text editor, with a number of useful programming features

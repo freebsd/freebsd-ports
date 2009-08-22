@@ -9,7 +9,7 @@ PORTNAME=	cream
 PORTVERSION=	0.41
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Cream/${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Gvim extension with many features

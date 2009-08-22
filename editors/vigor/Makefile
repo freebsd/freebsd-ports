@@ -9,8 +9,7 @@ PORTNAME=	vigor
 PORTVERSION=	0.016
 PORTREVISION=	4
 CATEGORIES=	editors tcl tk
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vi clone inspired by the userfriendly comic strip

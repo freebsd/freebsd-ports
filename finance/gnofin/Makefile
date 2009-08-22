@@ -9,8 +9,7 @@ PORTNAME=	gnofin
 PORTVERSION=	0.8.4
 PORTREVISION=	6
 CATEGORIES=	finance deskutils gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Light-weight GNOME based financial management program

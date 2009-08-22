@@ -9,7 +9,7 @@ PORTNAME=	qtstalker
 PORTVERSION=	0.36
 PORTREVISION=	1
 CATEGORIES=	finance kde
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Commodity and stock market charting and technical analysis
