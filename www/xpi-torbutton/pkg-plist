@@ -1,10 +1,201 @@
-%%XPI_XPIDIR%%/CHANGELOG
-%%XPI_XPIDIR%%/chrome/torbutton.jar
-%%XPI_XPIDIR%%/chrome.manifest
-%%XPI_XPIDIR%%/CREDITS
+%%XPI_XPIDIR%%/chrome/locale/fa/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/fa/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/ro/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/ro/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/ar/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/ar/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/mt/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/mt/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/bms/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/bms/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/da/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/da/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/gl/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/gl/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/ko/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/af/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/af/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/ka/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/ka/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/hu/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/ku/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/ku/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/it/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/hi/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/hi/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/pt/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/gu/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/gu/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/nl/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/ca/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/ca/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/sw/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/sw/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/es/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/es/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/ja/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/nb/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/nb/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/pa/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/pa/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/id/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/id/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/ru/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/hr/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/hr/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/en/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/en/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/eu/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/eu/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/cs/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/cs/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/uk/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/sv/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/pl/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/fi/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/bo/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/bo/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/de/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/sq/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/sq/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/th/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/th/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/is/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/is/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-HK/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-HK/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/sl/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/sl/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/fur/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/fur/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/el/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/el/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/bg/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/tr/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/tr/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/fr/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/he/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/he/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/vi/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/locale/km/torbutton.properties
+%%XPI_XPIDIR%%/chrome/locale/km/torbutton.dtd
+%%XPI_XPIDIR%%/chrome/content/pref-connection.xul
+%%XPI_XPIDIR%%/chrome/content/contents.rdf
+%%XPI_XPIDIR%%/chrome/content/pref-connection-info.xul
+%%XPI_XPIDIR%%/chrome/content/torbutton_util.js
+%%XPI_XPIDIR%%/chrome/content/torbutton.js
+%%XPI_XPIDIR%%/chrome/content/torbutton_tb.xul
+%%XPI_XPIDIR%%/chrome/content/torbutton.xul
+%%XPI_XPIDIR%%/chrome/content/popup.xul
+%%XPI_XPIDIR%%/chrome/content/preferences.js
+%%XPI_XPIDIR%%/chrome/content/preferences.xul
+%%XPI_XPIDIR%%/chrome/content/about.xul
+%%XPI_XPIDIR%%/chrome/content/jshooks.js
+%%XPI_XPIDIR%%/chrome/skin/tor-enabled-16.png
+%%XPI_XPIDIR%%/chrome/skin/contents.rdf
+%%XPI_XPIDIR%%/chrome/skin/tor-24.png
+%%XPI_XPIDIR%%/chrome/skin/poff.png
+%%XPI_XPIDIR%%/chrome/skin/punknown.png
+%%XPI_XPIDIR%%/chrome/skin/tor-disabled-16.png
+%%XPI_XPIDIR%%/chrome/skin/p.png
+%%XPI_XPIDIR%%/chrome/skin/torbutton.css
+%%XPI_XPIDIR%%/chrome/skin/tor-enabled-24.png
+%%XPI_XPIDIR%%/chrome/skin/tor.png
+%%XPI_XPIDIR%%/chrome/skin/tor-disabled-24.png
+%%XPI_XPIDIR%%/chrome/skin/tor-16.png
 %%XPI_XPIDIR%%/defaults/preferences/preferences.js
-%%XPI_XPIDIR%%/LICENSE
+%%XPI_XPIDIR%%/components/torbutton-logger.js
+%%XPI_XPIDIR%%/components/cssblocker.js
+%%XPI_XPIDIR%%/components/crash-observer.js
+%%XPI_XPIDIR%%/components/cookie-jar-selector.js
+%%XPI_XPIDIR%%/components/nsSessionStore3.js
+%%XPI_XPIDIR%%/components/ignore-history.js
+%%XPI_XPIDIR%%/components/certDialogsOverride.js
+%%XPI_XPIDIR%%/components/window-mapper.js
+%%XPI_XPIDIR%%/components/nsSessionStore2.js
+%%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/CREDITS
+%%XPI_XPIDIR%%/chrome.manifest.nojar
+%%XPI_XPIDIR%%/CHANGELOG
+%%XPI_XPIDIR%%/LICENSE
+%%XPI_XPIDIR%%/chrome.manifest.jar
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fa
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ro
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ar
+@dirrm %%XPI_XPIDIR%%/chrome/locale/mt
+@dirrm %%XPI_XPIDIR%%/chrome/locale/bms
+@dirrm %%XPI_XPIDIR%%/chrome/locale/da
+@dirrm %%XPI_XPIDIR%%/chrome/locale/gl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ko
+@dirrm %%XPI_XPIDIR%%/chrome/locale/af
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ka
+@dirrm %%XPI_XPIDIR%%/chrome/locale/hu
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ku
+@dirrm %%XPI_XPIDIR%%/chrome/locale/it
+@dirrm %%XPI_XPIDIR%%/chrome/locale/hi
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pt
+@dirrm %%XPI_XPIDIR%%/chrome/locale/gu
+@dirrm %%XPI_XPIDIR%%/chrome/locale/nl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ca
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sw
+@dirrm %%XPI_XPIDIR%%/chrome/locale/es
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ja
+@dirrm %%XPI_XPIDIR%%/chrome/locale/nb
+@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pa
+@dirrm %%XPI_XPIDIR%%/chrome/locale/id
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ru
+@dirrm %%XPI_XPIDIR%%/chrome/locale/hr
+@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en
+@dirrm %%XPI_XPIDIR%%/chrome/locale/eu
+@dirrm %%XPI_XPIDIR%%/chrome/locale/cs
+@dirrm %%XPI_XPIDIR%%/chrome/locale/uk
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sv
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fi
+@dirrm %%XPI_XPIDIR%%/chrome/locale/bo
+@dirrm %%XPI_XPIDIR%%/chrome/locale/de
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sq
+@dirrm %%XPI_XPIDIR%%/chrome/locale/th
+@dirrm %%XPI_XPIDIR%%/chrome/locale/is
+@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-HK
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fur
+@dirrm %%XPI_XPIDIR%%/chrome/locale/el
+@dirrm %%XPI_XPIDIR%%/chrome/locale/bg
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tr
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fr
+@dirrm %%XPI_XPIDIR%%/chrome/locale/he
+@dirrm %%XPI_XPIDIR%%/chrome/locale/vi
+@dirrm %%XPI_XPIDIR%%/chrome/locale/km
+@dirrm %%XPI_XPIDIR%%/chrome/locale
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/skin
 @dirrm %%XPI_XPIDIR%%/chrome
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/components
