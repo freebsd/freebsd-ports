@@ -9,7 +9,7 @@ PORTNAME=	shaaft
 PORTVERSION=	0.5.0
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	SF/criticalmass
+MASTER_SITES=	SF/criticalmass/OldFiles
 DISTNAME=	Shaaft-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

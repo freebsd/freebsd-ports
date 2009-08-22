@@ -9,7 +9,7 @@ PORTNAME=	ufraw
 PORTVERSION=	0.15
 PORTREVISION=	3
 CATEGORIES=	graphics gnome
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Read and manipulate raw images from digital cameras

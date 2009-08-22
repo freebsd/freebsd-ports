@@ -9,7 +9,7 @@ PORTNAME=		etracer
 PORTVERSION=		0.4
 PORTREVISION=		3
 CATEGORIES=		games
-MASTER_SITES=		SF/extremetuxracer
+MASTER_SITES=		SF/extremetuxracer/extreme-tuxracer/${PORTVERSION}
 DISTNAME=		extremetuxracer-${PORTVERSION}
 
 MAINTAINER=		peter_dunning@dsl.pipex.com

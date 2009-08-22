@@ -8,8 +8,9 @@
 PORTNAME=	warzone2100
 PORTVERSION=	2.2.0
 CATEGORIES=	games
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Warzone%202100%20${PORTVERSION} \
 		http://download.gna.org/warzone/releases/${PORTVERSION:C/^([0-9]+\.[0-9]+)\..*$/\1/}/
+
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game

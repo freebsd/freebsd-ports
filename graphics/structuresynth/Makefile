@@ -8,7 +8,7 @@
 PORTNAME=	structuresynth
 PORTVERSION=	1.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Structure%20Synth/Version%201.0%20%28Potemkin%29
 DISTNAME=	StructureSynth-Source-v${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

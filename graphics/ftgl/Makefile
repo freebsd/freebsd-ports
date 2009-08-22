@@ -9,7 +9,7 @@ PORTNAME=	ftgl
 DISTVERSION=	2.1.3-rc5
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/FTGL%20Source/2.1.3%7Erc5
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An OpenGL FreeType fonts rendering library

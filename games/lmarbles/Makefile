@@ -9,8 +9,7 @@ PORTNAME=	lmarbles
 PORTVERSION=	1.0.7
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lgames
+MASTER_SITES=	SF/lgames/marbles/1.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A challenging puzzle game similar to Atomix

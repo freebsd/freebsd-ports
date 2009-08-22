@@ -8,7 +8,7 @@
 PORTNAME=	hlstats
 PORTVERSION=	1.38
 CATEGORIES=	games www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/HLstats/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time stats parser for Half Life & its mods

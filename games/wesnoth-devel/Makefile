@@ -10,9 +10,9 @@ PORTVERSION=	1.5.14
 PORTREVISION=	1
 CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://www.wesnoth.org/files/
-MASTER_SITE_SUBDIR=	wesnoth
+
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game

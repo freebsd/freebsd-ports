@@ -9,8 +9,7 @@ PORTNAME=	bubbros
 PORTVERSION=	1.6
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bub-n-bros
+MASTER_SITES=	SF/bub-n-bros/bub-n-bros/${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Multiplayer clone of the famous Bubble Bobble game

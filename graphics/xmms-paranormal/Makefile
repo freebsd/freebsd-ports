@@ -9,8 +9,7 @@ PORTNAME=	xmms-paranormal
 PORTVERSION=	0.2.0
 PORTREVISION=	10
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	paranormal
+MASTER_SITES=	SF/paranormal/old-paranormal-xmms/${PORTVERSION}
 DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org

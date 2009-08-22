@@ -8,8 +8,7 @@
 PORTNAME=	libdungeonmaker
 PORTVERSION=	2.05
 CATEGORIES=	games devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	dungeonmaker
+MASTER_SITES=	SF/dungeonmaker/dungeonmaker/${PORTVERSION}
 DISTNAME=	dungeonmaker-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

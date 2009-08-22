@@ -10,8 +10,8 @@ PORTVERSION=	0.3.2
 PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ggi
+		SF/ggi/misc/${PORTNAME}-${PORTVERSION}		
+
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	antoine.brodin@laposte.net

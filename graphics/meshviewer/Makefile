@@ -8,7 +8,7 @@
 PORTNAME=	meshviewer
 PORTVERSION=	0.3.2
 CATEGORIES=	graphics
-MASTER_SITES=	SF/mview
+MASTER_SITES=	SF/mview/mview/${PORTVERSION}
 DISTNAME=	mview-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

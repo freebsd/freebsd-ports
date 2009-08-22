@@ -9,8 +9,7 @@ PORTNAME=	tuxpaint-config
 PORTVERSION=	0.0.11
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tuxpaint
+MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Graphical tool to change TuxPaint settings

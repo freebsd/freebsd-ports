@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://tobias.eyedacor.org/typespeed/
 
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test your typing speed, and get your fingers\' CPS
 

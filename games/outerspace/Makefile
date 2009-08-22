@@ -8,8 +8,7 @@
 PORTNAME=	outerspace
 PORTVERSION=	0.2.2
 CATEGORIES=	games
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	ospace
+MASTER_SITES=	SF/ospace/OSLauncher/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	On-line strategy game

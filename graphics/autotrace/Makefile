@@ -9,7 +9,7 @@ PORTNAME=	autotrace
 PORTVERSION=	0.31.1
 PORTREVISION=	15
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/AutoTrace/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap to vector graphics

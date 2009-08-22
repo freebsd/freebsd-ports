@@ -8,7 +8,7 @@
 PORTNAME=	geoserver
 PORTVERSION=	1.7.4
 CATEGORIES=	graphics geography java
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	wenheping@gmail.com

@@ -8,7 +8,7 @@
 PORTNAME=	openjump
 PORTVERSION=	1.3
 CATEGORIES=	graphics java geography
-MASTER_SITES=	SF/jump-pilot
+MASTER_SITES=	SF/jump-pilot/OldFiles
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An open source GIS software written in Java

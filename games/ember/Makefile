@@ -9,9 +9,9 @@ PORTNAME=	ember
 PORTVERSION=	0.5.6
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
-MASTER_SITE_SUBDIR=worldforge
+
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-media-${PORTVERSION}${EXTRACT_SUFX}
 

@@ -8,7 +8,7 @@
 PORTNAME=	quesoglc
 PORTVERSION=	0.7.2
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/QuesoGLC/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free implementation of the OpenGL Character Renderer

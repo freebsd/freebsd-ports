@@ -8,7 +8,7 @@
 PORTNAME=	libwpg
 PORTVERSION=	0.1.3
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library for importing and converting Corel WordPerfect(tm) Graphics images

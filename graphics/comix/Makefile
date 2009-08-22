@@ -10,7 +10,7 @@ PORTNAME=	comix
 PORTVERSION=	4.0.4
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A GTK2 comic book viewer for .cbz, .cbr and .cbt files

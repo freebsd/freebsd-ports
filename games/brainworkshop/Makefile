@@ -8,7 +8,7 @@
 PORTNAME=	brainworkshop
 PORTVERSION=	4.4
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Brain%20Workshop%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free open-source version of the Dual N-Back mental exercise

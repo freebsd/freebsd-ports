@@ -8,8 +8,7 @@
 PORTNAME=	imgtops
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	Create efficient Encapsulated Postscript files from images

@@ -8,8 +8,7 @@
 PORTNAME=	tsito
 PORTVERSION=	0.8.4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xiangqi-engine
+MASTER_SITES=	SF/xiangqi-engine/xiangqi-engine/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Chinese chess (Xiangqi) program

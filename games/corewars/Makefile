@@ -9,8 +9,7 @@ PORTNAME=	corewars
 PORTVERSION=	0.9.13
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%2C%20tar.gz%29/${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A simulation game where the goal is to crash each other's programs

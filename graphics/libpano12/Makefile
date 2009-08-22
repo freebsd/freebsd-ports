@@ -12,8 +12,7 @@ PORTNAME=	libpano12
 PORTVERSION=	2.8.6
 PORTREVISION=	3
 CATEGORIES=	graphics java
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	panotools
+MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Panorama Tools to make panorama pictures

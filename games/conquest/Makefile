@@ -8,7 +8,7 @@
 PORTNAME=	conquest
 PORTVERSION=	7.2
 CATEGORIES=	games
-MASTER_SITES=	SF/conq
+MASTER_SITES=	SF/conq/Conquest/Conquest%20${PORTVERSION}
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org

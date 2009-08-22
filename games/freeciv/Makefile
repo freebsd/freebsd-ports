@@ -9,7 +9,7 @@ PORTNAME=	freeciv
 PORTVERSION=	2.1.9
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/freeciv/Freeciv%202.1/${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy

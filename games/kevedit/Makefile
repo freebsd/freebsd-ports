@@ -9,8 +9,7 @@ PORTNAME=		kevedit
 PORTVERSION=		0.5.1
 PORTREVISION=	1
 CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kevedit
+MASTER_SITES=		SF
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Modern ZZT editor with necessary features

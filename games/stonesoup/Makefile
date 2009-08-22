@@ -8,7 +8,7 @@
 PORTNAME=	stonesoup
 PORTVERSION=	0.5.1
 CATEGORIES=	games
-MASTER_SITES=	SF/crawl-ref
+MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-src
 EXTRACT_SUFX=	.tbz2
 

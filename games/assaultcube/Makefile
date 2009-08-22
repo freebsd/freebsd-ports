@@ -9,7 +9,7 @@ PORTNAME=	assaultcube
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/actiongame
+MASTER_SITES=	SF/actiongame/AssaultCube/1.0
 DISTNAME=	AssaultCube_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

@@ -9,7 +9,7 @@ PORTNAME=	frontline
 PORTVERSION=	0.5.4
 PORTREVISION=	8
 CATEGORIES=	graphics gnome
-MASTER_SITES=	SF/autotrace
+MASTER_SITES=	SF/autotrace/FrontLine/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An autotrace GUI FRONTend like streamLINE(TM)

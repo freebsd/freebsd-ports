@@ -9,8 +9,7 @@ PORTNAME=	freedroid
 PORTVERSION=	1.0.2
 PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freedroid
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}Classic/FreedroidClassic-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Freedroid is a clone of the classic game "Paradroid"

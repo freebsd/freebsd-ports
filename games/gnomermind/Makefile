@@ -9,7 +9,7 @@ PORTNAME=	gnomermind
 PORTVERSION=	1.0.1
 PORTREVISION=	7
 CATEGORIES=	games gnome
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/GnomerMind/${PORTVERSION}%20_Dreaming%20clovers_
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle game for Gnome, loosely based on the classic MasterMind game

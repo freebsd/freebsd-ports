@@ -8,8 +8,7 @@
 PORTNAME=	gemrb
 PORTVERSION=	0.5.0
 CATEGORIES=	games emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION}%20Sources
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	GemRB (Game engine made with preRendered Background)

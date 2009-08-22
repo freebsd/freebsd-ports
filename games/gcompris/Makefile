@@ -10,7 +10,7 @@ PORTNAME=	gcompris
 DISTVERSION=	8.4.12
 PORTREVISION=	1
 CATEGORIES=	games gnome
-MASTER_SITES=	SF/gcompris
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome2 educational games and activities for kids ages 2 to 10

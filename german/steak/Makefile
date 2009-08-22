@@ -9,9 +9,9 @@ PORTNAME=	steak
 PORTVERSION=	1.7.3
 PORTREVISION=	6
 CATEGORIES=	german
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Steak%20${PORTVERSION} \
 		http://www.tm.informatik.uni-frankfurt.de/%7Erazi/steak/program/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 DISTNAME=	Steak.${PORTVERSION}
 
 MAINTAINER=	h.eichmann@gmx.de

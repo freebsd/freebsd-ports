@@ -9,7 +9,7 @@ PORTNAME=	darknock
 DISTVERSION=	0.3.0
 PORTREVISION=	1
 CATEGORIES=	graphics kde
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that can detect edges in images

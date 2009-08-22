@@ -9,7 +9,7 @@ PORTNAME=	daimonin_client
 PORTVERSION=	0.9.7.1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF/daimonin
+MASTER_SITES=	SF/daimonin/Client%20Sources/Client%20Source%20${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Free open source Massively Multiplayer On-line Role-playing Game (MMORPG)

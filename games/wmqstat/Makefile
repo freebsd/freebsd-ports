@@ -9,7 +9,7 @@ PORTNAME=	wmqstat
 PORTVERSION=	0.0.4
 PORTREVISION=	2
 CATEGORIES=	games windowmaker
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/wmQStat%20${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A dockapp for monitoring of various Internet game servers

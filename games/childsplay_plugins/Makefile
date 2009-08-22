@@ -9,8 +9,7 @@ PORTNAME=	childsplay_plugins
 PORTVERSION=	0.80.1.1
 PORTREVISION=	6
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	childsplay
+MASTER_SITES=	SF/childsplay/OldFiles
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bruno@tinkerbox.org

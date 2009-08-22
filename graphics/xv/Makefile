@@ -10,8 +10,8 @@ PORTVERSION=	3.10a
 PORTREVISION=	10
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/:base \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	png-mng
+		SF/png-mng/XV%20jumbo%20patches/20070520
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:base \
 		${DISTNAME}-jumbo-patches-20070520.tar.gz
 DIST_SUBDIR=	${PORTNAME}

@@ -9,7 +9,7 @@ PORTNAME=	freedroidrpg
 PORTVERSION=	0.12.1
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/freedroid
+MASTER_SITES=	SF/freedroid/freedroidRPG/freedroidRPG-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG

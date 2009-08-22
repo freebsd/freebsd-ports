@@ -9,7 +9,7 @@ PORTNAME=	falconseye
 PORTVERSION=	1.9.3
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	SF/falconseye
+MASTER_SITES=	SF/${PORTNAME}/NetHack-Falcon_s%20Eye%20%28source%29/${PORTVERSION}
 DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}
 
 MAINTAINER=	kris@FreeBSD.org

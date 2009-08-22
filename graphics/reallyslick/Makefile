@@ -9,7 +9,7 @@ PORTNAME=	reallyslick
 PORTVERSION=	0.9.0
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/rss-glx
+MASTER_SITES=	SF/rss-glx/rss-glx/${PORTVERSION}
 DISTNAME=	rss-glx_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

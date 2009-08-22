@@ -9,7 +9,7 @@ PORTNAME=	libvisual-plugins
 PORTVERSION=	0.2.0
 PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	SF/libvisual
+MASTER_SITES=	SF/libvisual/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of plugins for the libvisual framework

@@ -9,8 +9,7 @@ PORTNAME=	libpano13
 PORTVERSION=	2.9.14
 PORTREVISION=	2
 CATEGORIES=	graphics java
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	panotools
+MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Cross-platform library behind Panorama Tools and other photo stitchers

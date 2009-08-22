@@ -9,9 +9,9 @@ PORTNAME=	xpaint
 PORTVERSION=	2.7.8.1
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		ftp://ftp.ac-grenoble.fr/Office/
-MASTER_SITE_SUBDIR=	sf-${PORTNAME}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple paint program

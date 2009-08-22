@@ -9,8 +9,7 @@ PORTNAME=	rockdodger
 PORTVERSION=	0.6.0a
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	spacerocks
+MASTER_SITES=	SF/spacerocks/spacerocks/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addictive rock-dodging greeblie-killing platform game

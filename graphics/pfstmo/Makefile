@@ -8,8 +8,7 @@ PORTNAME=	pfstmo
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	pfstools
+MASTER_SITES=	SF/pfstools/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Tone mapping operators

@@ -9,7 +9,7 @@ PORTNAME=		libboard
 DISTVERSION=		0.8.6b-2
 PORTREVISION=		1
 CATEGORIES=		graphics
-MASTER_SITES=		SF
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/0.8.6b
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		A vector graphics C++ library

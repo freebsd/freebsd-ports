@@ -9,7 +9,7 @@ PORTNAME=	doom
 PORTVERSION=	1.10
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	SF/source
+MASTER_SITES=	# none known, please fix
 DISTNAME=	doomsrc
 
 MAINTAINER=	ports@FreeBSD.org

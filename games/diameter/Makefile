@@ -9,8 +9,7 @@ PORTNAME=	diameter
 PORTVERSION=	0.4.0.3
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	gamediameter
+MASTER_SITES=	SF/game${PORTNAME}/game${PORTNAME}/${PORTNAME}-0.4.0
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style game with elements of economy and adventure

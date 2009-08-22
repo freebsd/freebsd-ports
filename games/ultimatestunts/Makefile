@@ -11,7 +11,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	srcdata-
 DISTVERSION=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/sourcecode/0.7.5%20release%201
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Racing game with elaborate stunts

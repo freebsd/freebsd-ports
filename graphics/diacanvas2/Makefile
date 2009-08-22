@@ -10,7 +10,7 @@ PORTNAME=	diacanvas2
 PORTVERSION=	0.14.4
 PORTREVISION=	3
 CATEGORIES=	graphics gnome
-MASTER_SITES=	SF
+MASTER_SITES=	SF/diacanvas/DiaCanvas2/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general drawing canvas from dia dialog editor

@@ -10,7 +10,7 @@ PORTNAME=	cbrpager
 PORTVERSION=	0.9.19
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for cbr (comic book archive) files

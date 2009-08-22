@@ -9,7 +9,7 @@ PORTNAME=	makehuman
 DISTVERSION=	0.9.1-rc1a
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/MakeHuman%20Source/MakeHuman_091
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Application for parametrical modeling of 3D humanoid characters

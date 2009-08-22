@@ -9,7 +9,7 @@ PORTNAME=	btanks
 PORTVERSION=	0.7.5800
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes

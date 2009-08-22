@@ -9,7 +9,7 @@ PORTNAME=	libgnomecanvasmm
 PORTVERSION=	2.0.1
 PORTREVISION=	9
 CATEGORIES=	graphics gnome
-MASTER_SITES=	SF/gtkmm
+MASTER_SITES=	SF/gtkmm/OldFiles
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org

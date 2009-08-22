@@ -8,7 +8,7 @@ PORTNAME=	stroq
 PORTVERSION=	0.2
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20sources
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flip tiles to make rows of the same color

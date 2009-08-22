@@ -9,7 +9,7 @@ PORTNAME=	blinkensisters
 PORTVERSION=	0.5.3
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Blinkensisters%20-%20Lost%20Pixels/LostPixels%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Parallax-style 2D scrolling platform game

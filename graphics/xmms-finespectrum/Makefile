@@ -9,8 +9,7 @@ PORTNAME=	xmms-finespectrum
 PORTVERSION=	1.0.1.a
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	finespectrum
+MASTER_SITES=	SF/finespectrum/finespectrum/1.0.1alpha
 DISTNAME=	finespectrum-1.0.1alpha
 
 MAINTAINER=	ports@FreeBSD.org

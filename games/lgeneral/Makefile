@@ -9,8 +9,7 @@ PORTNAME=	lgeneral
 PORTVERSION=	1.1.1
 PORTREVISION=	6
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lgeneral
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-engine/1.1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn-based strategy engine inspired by Panzer General
