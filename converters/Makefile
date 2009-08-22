@@ -70,6 +70,7 @@
     SUBDIR += p5-JSON-XS
     SUBDIR += p5-MIME-Base32
     SUBDIR += p5-MIME-Base64
+    SUBDIR += p5-MIME-Base64-URLSafe
     SUBDIR += p5-Number-Nary
     SUBDIR += p5-Number-RecordLocator
     SUBDIR += p5-Storable-AMF

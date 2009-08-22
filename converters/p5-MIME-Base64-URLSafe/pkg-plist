@@ -1,0 +1,7 @@
+%%SITE_PERL%%/MIME/Base64/URLSafe.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64/URLSafe/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64/URLSafe
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
+@dirrmtry %%SITE_PERL%%/MIME/Base64
+@dirrmtry %%SITE_PERL%%/MIME
