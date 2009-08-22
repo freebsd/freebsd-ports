@@ -8,7 +8,7 @@
 PORTNAME=	heirloom-sh
 PORTVERSION=	050706
 CATEGORIES=	shells
-MASTER_SITES=	SF/heirloom
+MASTER_SITES=	SF/heirloom/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	danielt@pilgerer.org
 COMMENT=	Portable version of OpenSolaris' Bourne Shell

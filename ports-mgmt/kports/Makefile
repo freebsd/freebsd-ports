@@ -9,8 +9,7 @@ PORTNAME=	kports
 PORTVERSION=	0.6.1
 PORTREVISION=	5
 CATEGORIES=	ports-mgmt kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	kports@soulrebel.in-berlin.de
 COMMENT=	KDE3-Version of your favorite frontend to the Ports

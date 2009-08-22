@@ -8,8 +8,7 @@
 PORTNAME=	checkpassword-pam
 PORTVERSION=	0.99
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	checkpasswd-pam
+MASTER_SITES=	SF/checkpasswd-pam/checkpasswd-pam/${PORTVERSION}
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Implementation of checkpassword authentication program

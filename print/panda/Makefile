@@ -9,10 +9,11 @@ PORTNAME=	panda
 PORTVERSION=	0.5.4
 PORTREVISION=	2
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		${MASTER_SITE_SAVANNAH} \
+
 		http://www.stillhq.com/panda/source/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PDF generation library

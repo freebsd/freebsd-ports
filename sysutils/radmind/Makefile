@@ -8,7 +8,7 @@
 PORTNAME=	radmind
 PORTVERSION=	1.13.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	paul@aps.org
 COMMENT=	Utility for administering filesystem changes

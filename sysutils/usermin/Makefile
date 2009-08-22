@@ -9,10 +9,9 @@ PORTNAME=	usermin
 PORTVERSION=	1.410
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
-		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
+		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
 		${MASTER_SITE_LOCAL:S/$/:up/}
-MASTER_SITE_SUBDIR=	webadmin/:sf \
-			olgeni/:up
+MASTER_SITE_SUBDIR=	olgeni/:up
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${USERMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

@@ -8,8 +8,7 @@
 PORTNAME=		fswatch
 DISTVERSION=		0.02beta5
 CATEGORIES=		security sysutils
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fswatch
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.02beta5
 
 MAINTAINER=		dominik@karczmarski.com
 COMMENT=		File system checksum checker

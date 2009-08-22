@@ -7,7 +7,7 @@
 PORTNAME=	luckybackup
 PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/source
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	QT4 frontend to the backup utility rsync

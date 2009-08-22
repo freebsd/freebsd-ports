@@ -9,8 +9,7 @@ PORTNAME=	klineakconfig
 PORTVERSION=	0.9
 PORTREVISION=	3
 CATEGORIES=	sysutils kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lineak
+MASTER_SITES=	SF/lineak/Klineakconfig/Klineakconfig-${PORTVERSION}
 DIST_SUBDIR=	lineak
 
 MAINTAINER=	ports@FreeBSD.org

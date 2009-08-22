@@ -9,8 +9,7 @@ PORTNAME=	newpki-server
 DISTVERSION=	2.0.0-beta4
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	newpki
+MASTER_SITES=	SF/newpki/${PORTNAME}/2.0.0-beta4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ PKI server from newpki project

@@ -8,8 +8,7 @@
 PORTNAME=	lcdproc
 PORTVERSION=	0.5.3
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	bsdfan@nurfuerspam.de
 COMMENT=	A client/server suite for LCD devices

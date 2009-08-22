@@ -9,8 +9,7 @@ PORTNAME=	conky
 PORTVERSION=	1.7.1.1
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER?=	ntarmos@cs.uoi.gr
 COMMENT?=	An advanced, highly configurable system monitor for X

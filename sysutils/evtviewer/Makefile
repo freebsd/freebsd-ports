@@ -8,9 +8,9 @@
 PORTNAME=	evtViewer
 PORTVERSION=	0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.com/evtViewer/
-MASTER_SITE_SUBDIR=	evtviewer
+
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ganael.laplanche@martymac.com

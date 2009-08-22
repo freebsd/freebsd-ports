@@ -8,8 +8,7 @@
 PORTNAME=		pamtester
 PORTVERSION=		0.1.2
 CATEGORIES=		security
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A command line pam authentication tester

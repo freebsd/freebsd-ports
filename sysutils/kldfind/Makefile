@@ -8,7 +8,7 @@
 PORTNAME=	kldfind
 PORTVERSION=	0.61
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ricardo.areis@gmail.com
 COMMENT=	Find kernel modules by string

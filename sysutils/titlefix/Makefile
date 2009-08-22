@@ -8,7 +8,7 @@
 PORTNAME=	titlefix
 PORTVERSION=	0.5.3
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Renames files in a proper English title format

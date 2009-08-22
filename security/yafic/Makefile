@@ -8,8 +8,7 @@
 PORTNAME=	yafic
 PORTVERSION=	1.2.2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	allan@saddi.com
 COMMENT=	Yet Another File Integrity Checker, similar to Tripwire

@@ -9,7 +9,7 @@ PORTNAME=		kkbswitch
 PORTVERSION=		1.4.3
 PORTREVISION=	5
 CATEGORIES=		sysutils kde
-MASTER_SITES=		SF/kkbswitch
+MASTER_SITES=		SF
 
 MAINTAINER=		citycat4@ngs.ru
 COMMENT=		Keyboard layout switcher and indicator for KDE 3.x

@@ -8,8 +8,7 @@
 PORTNAME=	fetchlog
 PORTVERSION=	1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fetchlog
+MASTER_SITES=	SF
 
 MAINTAINER=	alexander.haderer@loescap.de
 COMMENT=	Fetch and convert new messages of a logfile

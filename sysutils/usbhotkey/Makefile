@@ -9,7 +9,7 @@ PORTNAME=		usbhotkey
 PORTVERSION=		0.3.1
 PORTREVISION=	3
 CATEGORIES=		sysutils
-MASTER_SITES=		SF/usbhotkey
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		ntarmos@cs.uoi.gr
 COMMENT=		A utility to remap USB keyboards under X11

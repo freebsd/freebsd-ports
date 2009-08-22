@@ -9,8 +9,7 @@ PORTNAME=	pam_fprint
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fprint
+MASTER_SITES=	SF/fprint/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PAM module offering finger print authentication using libfprint

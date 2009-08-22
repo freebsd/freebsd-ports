@@ -10,8 +10,7 @@ PORTNAME=	oinkmaster
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	question+fbsdports@closedsrc.org
 COMMENT=	Help you update your snort rules after each update

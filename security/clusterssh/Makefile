@@ -8,8 +8,7 @@
 PORTNAME=	clusterssh
 PORTVERSION=	3.26
 CATEGORIES=	security net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/1.%20ClusterSSH%20Series%203/${PORTVERSION}
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Controls multiple hosts simultaneously via xterms and ssh

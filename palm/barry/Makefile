@@ -9,7 +9,7 @@ PORTNAME=	barry
 PORTVERSION=	0.12
 PORTREVISION=	1
 CATEGORIES=	palm
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	meitolake@gmail.com
 COMMENT=	C++ library for interfacing with the BlackBerry Handheld

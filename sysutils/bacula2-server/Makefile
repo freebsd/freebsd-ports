@@ -8,8 +8,7 @@
 PORTNAME=	bacula2
 DISTVERSION=	2.4.4
 CATEGORIES?=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bacula
+MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 
 MAINTAINER=	v.haisman@sh.cvut.cz
 COMMENT?=	The network backup solution (server)

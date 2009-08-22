@@ -9,11 +9,10 @@ PORTNAME=	apcupsd
 PORTVERSION=	3.14.5
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20Stable/${PORTVERSION}:src_sf \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
 		http://apcupsd.sourceforge.net/manual/:doc_sf \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:doc_bk
-MASTER_SITE_SUBDIR=	${PORTNAME}/:src_sf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src_sf,src_bk \
 		${PORTNAME}.pdf:doc_sf,doc_bk
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

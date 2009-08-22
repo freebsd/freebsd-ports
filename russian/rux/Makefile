@@ -9,7 +9,7 @@ PORTNAME=	rux
 PORTVERSION=	0.79
 PORTREVISION=	1
 CATEGORIES=	russian
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	anikinsl@gmail.com
 COMMENT=	The best cyrillic text viewer and code page converter

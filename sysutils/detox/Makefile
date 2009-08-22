@@ -8,8 +8,7 @@
 PORTNAME=	detox
 PORTVERSION=	1.1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	purgedhalo@users.sourceforge.net
 COMMENT=	Removes non-standard characters from filenames

@@ -7,7 +7,7 @@
 PORTNAME=	powerman
 PORTVERSION=	2.3.5
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	SF/powerman
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerMan is a tool for doing remote power control

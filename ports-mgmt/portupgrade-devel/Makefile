@@ -8,8 +8,7 @@
 PORTNAME=	portupgrade-devel
 PORTVERSION=	2.4.6
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	portupgrade
+MASTER_SITES=	SF/portupgrade/pkgtools/${PORTVERSION}
 DISTNAME=	pkgtools-${DISTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org

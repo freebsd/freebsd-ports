@@ -8,8 +8,7 @@
 PORTNAME=	Hyperlatex
 DISTVERSION=	2.9a
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=hyperlatex
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/2.9a
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce HTML and printed documents from LaTeX source

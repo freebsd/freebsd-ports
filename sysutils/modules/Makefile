@@ -8,8 +8,7 @@
 PORTNAME=	modules
 PORTVERSION=	3.1.6
 CATEGORIES=	sysutils tcl
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/Modules/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hokan@me.umn.edu
 COMMENT=	Dynamic modification of a user's environment

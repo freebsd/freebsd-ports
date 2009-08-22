@@ -9,8 +9,7 @@ PORTNAME=	afterglow
 PORTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	security graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	afterglow
+MASTER_SITES=	SF/${PORTNAME}/AfterGlow%201.x/${PORTVERSION}
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	A collection of graph-generating scripts

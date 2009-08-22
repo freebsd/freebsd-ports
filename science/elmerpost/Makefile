@@ -9,7 +9,7 @@ PORTNAME=	elmerpost
 PORTVERSION=	5.4.0
 PORTREVISION=	6
 CATEGORIES=	science
-MASTER_SITES=	SF/elmerfem
+MASTER_SITES=	# none known, please fix
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Visualization of Numerical Results in the ELMER FEM package

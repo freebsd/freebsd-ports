@@ -8,7 +8,7 @@
 PORTNAME=	phpdeadlock
 PORTVERSION=	1.01
 CATEGORIES=	security www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Deadlock/${PORTVERSION}%20Stable
 DISTNAME=	Deadlock-${PORTVERSION}-Stable
 
 MAINTAINER=	glarkin@FreeBSD.org

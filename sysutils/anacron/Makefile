@@ -9,8 +9,7 @@ PORTNAME=	anacron
 PORTVERSION=	2.3
 PORTREVISION=	4
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	anacron
+MASTER_SITES=	SF
 
 MAINTAINER=	dz@426.ch
 COMMENT=	Schedules periodic jobs on systems that are not permanently up

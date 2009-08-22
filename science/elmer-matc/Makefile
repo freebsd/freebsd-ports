@@ -9,7 +9,7 @@ PORTNAME=	matc
 PORTVERSION=	5.4.0
 PORTREVISION=	4
 CATEGORIES=	science
-MASTER_SITES=	SF/elmerfem
+MASTER_SITES=	# none known, please fix
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	scjamorim@bsd.com.br

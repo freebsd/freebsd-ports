@@ -8,8 +8,7 @@
 PORTNAME=	knocker
 PORTVERSION=	0.7.1
 CATEGORIES=	security net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	sbrabez@gmail.com
 COMMENT=	A simple and easy to use TCP only port scanner (Console version)

@@ -9,7 +9,7 @@ PORTNAME=	courier-authlib
 PORTVERSION=	0.62.4
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
 MASTER_SITE_SUBDIR=	courier
 .else
 MASTER_SITES=	# empty

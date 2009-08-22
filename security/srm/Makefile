@@ -8,8 +8,7 @@
 PORTNAME=	srm
 PORTVERSION=	1.2.8
 CATEGORIES=	security sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	srm
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	kjones@antihackertoolkit.com
 COMMENT=	Secure rm, a utility which destroys file contents before unlinking

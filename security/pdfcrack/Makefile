@@ -6,7 +6,7 @@
 PORTNAME=	pdfcrack
 PORTVERSION=	0.11
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A command line, password recovery tool for PDF-files

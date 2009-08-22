@@ -9,8 +9,8 @@ PORTVERSION=	0.84
 PORTREVISION=	3
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://ftp1.sourceforge.net/wmtop/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		SF		
+
 
 MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Windowmaker dock app to display top 3 CPU consuming processes

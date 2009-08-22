@@ -9,8 +9,7 @@ PORTNAME=	npadmin
 PORTVERSION=	0.8.7
 PORTREVISION=	1
 CATEGORIES=	sysutils print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SNMP based command line network printer management tool

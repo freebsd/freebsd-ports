@@ -8,8 +8,7 @@ PORTNAME=	gpkgdep
 PORTVERSION=	0.0
 PORTREVISION=	9
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gpkgdep
+MASTER_SITES=	SF
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	Shows package dependencies in tree views

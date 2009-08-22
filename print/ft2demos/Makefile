@@ -8,13 +8,12 @@
 PORTNAME=	ft2demos
 PORTVERSION=	2.3.9
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
-		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
-		http://www.funet.fi/pub/mirrors/ftp.freetype.org/%SUBDIR%/ \
-		http://ftp.sunet.se/pub/text-processing/freetype/%SUBDIR%/ \
+MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
+		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \
+		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/ \
+		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,} \
-		ftp://ftp.freetype.org/freetype/%SUBDIR%/
-MASTER_SITE_SUBDIR=	freetype2
+		ftp://ftp.freetype.org/freetype/freetype2/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Demo programs for FreeType2

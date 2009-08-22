@@ -9,8 +9,7 @@ PORTNAME=	ssh-gui
 PORTVERSION=	0.7.1
 PORTREVISION=	5
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A front-end for ssh which can open multiple xterms

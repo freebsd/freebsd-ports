@@ -8,8 +8,7 @@
 PORTNAME=	dvips2ascii
 PORTVERSION=	1.3
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	srezic
+MASTER_SITES=	SF/srezic/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	slaven@rezic.de
 COMMENT=	PostScript (created by dvips) to ascii converter

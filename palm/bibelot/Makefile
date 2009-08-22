@@ -9,8 +9,7 @@
 PORTNAME=	bibelot
 PORTVERSION=	0.9.4
 CATEGORIES=	palm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/Bibelot/${PORTVERSION}
 
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Formats and converts text documents into compressed PalmDoc .pdb files

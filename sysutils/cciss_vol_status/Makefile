@@ -8,8 +8,7 @@
 PORTNAME=	cciss_vol_status
 PORTVERSION=	1.03
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	cciss
+MASTER_SITES=	SF/cciss/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Reports status of logical drives on ciss(4) controllers

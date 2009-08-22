@@ -10,7 +10,8 @@ PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP \
-		SF
+		SF/${PORTNAME}/Brian/${PORTVERSION}
+
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A clock-driven simulator for spiking neural networks

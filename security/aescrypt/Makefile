@@ -9,7 +9,7 @@ PORTNAME=	aescrypt
 PORTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 
 PATCH_SITES=	http://devel.ringlet.net/security/aescrypt/patches/ \
 		http://people.FreeBSD.org/~roam/ports/patches/security/aescrypt/

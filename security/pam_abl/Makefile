@@ -8,8 +8,7 @@
 PORTNAME=	pam_abl
 PORTVERSION=	0.2.3
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
+MASTER_SITES=	SF/pam-abl/pam-abl/${PORTVERSION}
 
 MAINTAINER=	prehor@gmail.com
 COMMENT=	Blacklisting responsible for repeated failed authentication attempts

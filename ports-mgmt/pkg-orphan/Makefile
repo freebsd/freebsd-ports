@@ -8,8 +8,7 @@
 PORTNAME=	pkg-orphan
 PORTVERSION=	0.1.1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	vsemionov@gmail.com
 COMMENT=	A console utility for managing unreferenced FreeBSD packages

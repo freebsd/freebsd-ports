@@ -8,8 +8,7 @@
 PORTNAME=		raincoat
 PORTVERSION=		0.11
 CATEGORIES=		sysutils
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xbox-linux
+MASTER_SITES=		SF/xbox-linux/Other/Raincoat
 EXTRACT_SUFX=		.tbz2
 
 MAINTAINER=		ed@FreeBSD.org

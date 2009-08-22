@@ -9,8 +9,7 @@ PORTNAME=	InsightToolkit
 PORTVERSION=	2.8.1
 PORTREVISION=	2
 CATEGORIES=	science biology
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	itk
+MASTER_SITES=	SF/itk/itk/2.8
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Insight Toolkit

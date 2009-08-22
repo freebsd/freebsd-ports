@@ -7,7 +7,7 @@ PORTNAME=	rarcrack
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/%5BUnnamed%20release%5D
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Rarcrack guesses the passwords of encrypted RAR, ZIP, and 7Z archives

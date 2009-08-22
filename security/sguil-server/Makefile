@@ -9,8 +9,7 @@ PORTNAME=	sguil-server
 PORTVERSION=	0.7.0
 PORTREVISION=	3
 CATEGORIES=	security
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sguil
+MASTER_SITES=	SF/sguil/sguil/sguil-${PORTVERSION}
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Sguil is a network security monitoring program

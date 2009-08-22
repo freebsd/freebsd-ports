@@ -9,8 +9,7 @@ PORTNAME=	portmanager
 PORTVERSION=	0.4.1
 PORTREVISION=	9
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	portmanager
+MASTER_SITES=	SF
 
 MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	FreeBSD installed ports status and safe update utility
