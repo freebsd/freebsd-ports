@@ -2416,7 +2416,7 @@ _PATCH_SITES_DEFAULT?=
 # Organize _{MASTER,PATCH}_SITES_{DEFAULT,[^/:]+} according to grouping
 # rules (:something)
 .for _S in ${MASTER_SITES}
-_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
+_S_TEMP=	${_S:S/^${_S:C@/?:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}

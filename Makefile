@@ -75,7 +75,7 @@ index:
 
 fetchindex: ${INDEXDIR}/${INDEXFILE}.bz2
 	@bunzip2 < ${INDEXDIR}/${INDEXFILE}.bz2 > ${INDEXDIR}/${INDEXFILE} && \
-	chmod a+r ${INDEXDIR}/${INDEXFILE}
+	chmod a+r ${INDEXDIR}/${INDEXFILE} && ${RM} -f ${INDEXDIR}/${INDEXFILE}.bz2
 
 ${INDEXDIR}/${INDEXFILE}.bz2: .PHONY
 	@${FETCHINDEX} ${INDEXDIR}/${INDEXFILE}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
