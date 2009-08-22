@@ -9,8 +9,7 @@ PORTNAME=	mod_blosxom
 PORTVERSION=	0.05
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
+MASTER_SITES=	SF/mod-blosxom/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Apache module to build the extremely lightweight Weblog environment

@@ -8,7 +8,7 @@ PORTNAME=	phpSysInfo
 DISTVERSION=	3.0-RC6
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/3.0-RC6
 
 MAINTAINER=	walt@relnor.com
 COMMENT=	A PHP script for displaying system information

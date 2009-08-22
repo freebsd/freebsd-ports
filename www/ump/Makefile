@@ -9,12 +9,11 @@ PORTNAME=	ump
 PORTVERSION=	1.10
 PORTREVISION=	12
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:timidity/} \
+MASTER_SITES=	SF/timidity/TiMidity%2B%2B/TiMidity%2B%2B-${TIMIDITY_VERSION}:timidity \
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/:ump \
 		http://pubweb.bnl.gov/people/hoff/midi/1.10/:ump \
 		ftp://ftp.fu-berlin.de/unix/network/www/netscape/sdk/plugin/unix/:plugin \
 		ftp://ftp.fh-wolfenbuettel.de/pub/www/netscape/sdk/plugin/unix/:plugin
-MASTER_SITE_SUBDIR=	timidity/:timidity
 DISTFILES=	${BZ2DIST} ${ZDIST}
 EXTRACT_ONLY=	${BZ2DIST:C/:.*$//}
 

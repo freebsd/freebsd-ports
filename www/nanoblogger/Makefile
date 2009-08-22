@@ -9,7 +9,7 @@
 PORTNAME=	nanoblogger
 PORTVERSION=	3.4
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Small weblog engine written in Bash for the command line

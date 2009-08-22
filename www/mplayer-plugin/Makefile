@@ -9,7 +9,7 @@ PORTNAME=	mplayerplug-in
 PORTVERSION=	3.55
 PORTREVISION=	3
 CATEGORIES=	www multimedia
-MASTER_SITES=	SF/mplayerplug-in
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player

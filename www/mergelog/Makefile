@@ -9,8 +9,7 @@ PORTNAME=	mergelog
 PORTVERSION=	4.5
 PORTREVISION=	1
 CATEGORIES=	www textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A tool to merge and sort by date http log files

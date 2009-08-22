@@ -8,7 +8,7 @@
 PORTNAME=	rnews
 PORTVERSION=	0.92
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	as@bsdgroup.de
 COMMENT=	A server-side rss aggregator written in php with mysql

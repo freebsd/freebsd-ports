@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	3.1
 PKGNAMESUFFIX=	-libxml2
 
 MAINTAINER=	frank@fenor.de

@@ -10,7 +10,7 @@ PORTNAME=	swish++
 PORTVERSION=	6.1.5
 PORTREVISION=	1
 CATEGORIES=	www textproc
-MASTER_SITES=	SF/swishplusplus
+MASTER_SITES=	SF/swishplusplus/swishplusplus/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Web Indexing System for Humans: C++ version

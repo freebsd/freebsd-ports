@@ -8,8 +8,7 @@
 PORTNAME=	openbravoerp
 PORTVERSION=	2.40
 CATEGORIES=	www java
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:S/erp//}
+MASTER_SITES=	SF/openbravo/09-openbravo-old-installers/${PORTVERSION}
 DISTNAME=	OpenbravoERP_${PORTVERSION}-freebsd6${PLATFORM}-installer
 EXTRACT_SUFX=	.bin
 EXTRACT_ONLY=	#

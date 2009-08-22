@@ -9,8 +9,7 @@ PORTNAME=	mod_security
 PORTVERSION=	2.5.9
 PORTREVISION=	1
 CATEGORIES=	www security
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	mod-security
+MASTER_SITES=	SF/mod-security/modsecurity-apache/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org

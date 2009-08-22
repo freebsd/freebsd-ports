@@ -8,8 +8,7 @@
 PORTNAME=	placelesstranslationservice
 PORTVERSION=	1.0r8
 CATEGORIES=	www zope
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	collective
+MASTER_SITES=	SF/collective/PlacelessTranslationService/PTS-1.0rc8
 PKGNAMEPREFIX=	zope-
 DISTNAME=	PlacelessTranslationService-1.0-rc8
 

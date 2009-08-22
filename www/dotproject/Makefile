@@ -8,7 +8,7 @@
 PORTNAME=	dotproject
 PORTVERSION=	2.1.2
 CATEGORIES=	www devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/dotProject%20Version%20${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Open Source Project Management tool

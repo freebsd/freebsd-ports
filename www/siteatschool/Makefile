@@ -8,7 +8,7 @@
 PORTNAME=	siteatschool
 PORTVERSION=	2.4.10
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Site%40School/Site%40School%20${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	CMS to manage and maintain a school website

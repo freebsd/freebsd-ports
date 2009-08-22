@@ -8,8 +8,8 @@
 PORTNAME=	tdiary
 PORTVERSION=	2.2.1
 CATEGORIES?=	www ruby
-MASTER_SITES=	SF \
-		http://www.tdiary.org/download/
+MASTER_SITES=	http://www.tdiary.org/download/ \
+		SF
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 MAINTAINER=	tota@rtfm.jp

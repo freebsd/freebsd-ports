@@ -9,8 +9,7 @@ PORTNAME=	mod_accounting
 PORTVERSION=	0.5
 PORTREVISION=	6
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mod-acct
+MASTER_SITES=	SF/mod-acct/mod-acct/${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that records traffic statistics into a database

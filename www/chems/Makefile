@@ -8,7 +8,7 @@
 PORTNAME=	chems
 DISTVERSION=	0x04
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0x04
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	The geekest content helper management system

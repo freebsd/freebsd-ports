@@ -8,7 +8,7 @@
 PORTNAME=	phprecipebook
 PORTVERSION=	2.39
 CATEGORIES=	www deskutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Small php webapp to manage your recipes

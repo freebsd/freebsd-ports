@@ -8,8 +8,7 @@
 PORTNAME=	entrans
 PORTVERSION=	0.3.2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Entrans is an online, collaborative translation tool

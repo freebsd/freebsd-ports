@@ -8,7 +8,7 @@ PORTNAME=	ilias
 PORTVERSION=	3.10.7
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/1.%20ILIAS%203.10/ILIAS%20${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A poweful, dynamic, PHP and MySQL based e-learning platform

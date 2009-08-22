@@ -8,8 +8,7 @@
 PORTNAME=	flat-frog
 PORTVERSION=	2.2.13
 CATEGORIES=	www
-MASTER_SITES=	SOURCEFORGE
-MASTER_SITE_SUBDIR=	flatfrog
+MASTER_SITES=	SF/flatfrog/flatfrog/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A templating engine working in php

@@ -9,7 +9,7 @@ PORTNAME=	orangehrm
 PORTVERSION=	2.4.2
 PORTREVISION=	1
 CATEGORIES=	www misc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Open Source Human Resource Management

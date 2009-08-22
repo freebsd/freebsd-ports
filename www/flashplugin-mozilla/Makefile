@@ -9,7 +9,7 @@ PORTNAME?=	flashplugin-mozilla
 PORTVERSION=	0.4.13
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	SF/gplflash
+MASTER_SITES=	SF/gplflash/gplflash/${PORTVERSION}
 DISTNAME=	gplflash-${PORTVERSION}
 
 MAINTAINER=	llwang@infor.org

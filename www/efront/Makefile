@@ -8,7 +8,7 @@
 PORTNAME=	efront
 DISTVERSION=	3.5.2
 CATEGORIES=	www
-MASTER_SITES=	SF/efrontlearning
+MASTER_SITES=	SF/${PORTNAME}learning/${PORTNAME}learning/eFront%20v${PORTVERSION}%20build%203470
 DISTNAME=	${PORTNAME}_${PORTVERSION}_build3470
 
 MAINTAINER=	wenheping@gmail.com

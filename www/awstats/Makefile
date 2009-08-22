@@ -9,7 +9,7 @@ PORTNAME=	awstats
 PORTVERSION=	6.9
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics

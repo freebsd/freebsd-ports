@@ -8,8 +8,7 @@
 PORTNAME=	serendipity
 PORTVERSION=	1.4.1
 CATEGORIES=	www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	php-blog
+MASTER_SITES=	SF/php-blog/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP based weblog software
