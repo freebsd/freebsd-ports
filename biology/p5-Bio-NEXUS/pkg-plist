@@ -1,0 +1,35 @@
+bin/nex2text_tree.pl
+bin/nexplot.pl
+bin/nextool.pl
+%%SITE_PERL%%/Bio/NEXUS.pm
+%%SITE_PERL%%/Bio/NEXUS/DataBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/._Functions.pm
+%%SITE_PERL%%/Bio/NEXUS/CodonsBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/NotesBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/NHXCmd.pm
+%%SITE_PERL%%/Bio/NEXUS/HistoryBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/TaxUnit.pm
+%%SITE_PERL%%/Bio/NEXUS/CharactersBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/SpanBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/UnalignedBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/TaxUnitSet.pm
+%%SITE_PERL%%/Bio/NEXUS/DistancesBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/UnknownBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/Node.pm
+%%SITE_PERL%%/Bio/NEXUS/Matrix.pm
+%%SITE_PERL%%/Bio/NEXUS/Tree.pm
+%%SITE_PERL%%/Bio/NEXUS/WeightSet.pm
+%%SITE_PERL%%/Bio/NEXUS/SetsBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/TaxaBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/TreesBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/AssumptionsBlock.pm
+%%SITE_PERL%%/Bio/NEXUS/Block.pm
+%%SITE_PERL%%/Bio/NEXUS/Functions.pm
+%%SITE_PERL%%/Bio/NEXUS/Util/Exceptions.pm
+%%SITE_PERL%%/Bio/NEXUS/Util/Logger.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/NEXUS/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/NEXUS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
+@dirrmtry %%SITE_PERL%%/Bio/NEXUS/Util
+@dirrmtry %%SITE_PERL%%/Bio/NEXUS
+@dirrmtry %%SITE_PERL%%/Bio

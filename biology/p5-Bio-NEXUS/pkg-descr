@@ -1,0 +1,14 @@
+Bio::NEXUS package provides an object-oriented, Perl-based
+applications programming interface (API) to the NEXUS file
+format of Maddison, et al., 1997 (Syst. Biol. 46:590-621).
+NEXUS is a powerful and extensible format designed for use
+in evolutionary analysis, including the analysis of molecular
+sequence data as well as classical morphological and life-history
+data. NEXUS is the input or output format for software such as
+PAUP*, MacClade, Mesquite, SIMMAP, MrBayes, Nexplorer, and
+so on.  This package also contains the demonstration applications
+nexplot.pl (plot character data with a tree) and nextool.pl
+(allowing programmatic editing, e.g., selecting particular
+clades or subsets of data). 
+
+WWW: http://search.cpan.org/dist/Bio-NEXUS/
