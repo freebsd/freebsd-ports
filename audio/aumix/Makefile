@@ -11,10 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://jpj.net/~trevor/aumix/ \
-
 		http://jpj.net/~trevor/aumix/old/
-
-
 MAINTAINER=	unix4all@gulic.org
 COMMENT=	Audio mixer for X11, terminal, or command line
 
