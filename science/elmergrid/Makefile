@@ -9,7 +9,7 @@ PORTNAME=	elmergrid
 PORTVERSION=	5.4.0
 PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	# none known, please fix
+MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A Mesh Manipulation Utility for use with the ELMER FEM package

@@ -9,7 +9,7 @@ PORTNAME=	meshgen2d
 PORTVERSION=	5.0.0
 PORTREVISION=	5
 CATEGORIES=	science
-MASTER_SITES=	# none known, please fix
+MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	scjamorim@bsd.com.br
