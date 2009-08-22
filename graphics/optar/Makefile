@@ -8,11 +8,9 @@
 PORTNAME=	optar
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://ronja.twibright.com/:main \
-		http://ronja.twibright.com/grx/optar/:header
-#EXTRACT_SUFX=	.tgz
-DISTFILES=	optar.tgz:main \
-		font.h:header
+MASTER_SITES=	http://xps.crucible.gr/
+DISTFILES=	optar.tgz \
+		font.h
 EXTRACT_ONLY=	optar.tgz
 
 MAINTAINER=	antonakis@gmail.com
