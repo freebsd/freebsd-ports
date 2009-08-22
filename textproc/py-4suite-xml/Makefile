@@ -9,8 +9,8 @@ PORTNAME=	4Suite-XML
 PORTVERSION=	1.0.2
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	foursuite
+		SF/foursuite/4Suite/XML-${PORTVERSION}		
+
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mike@skew.org

@@ -9,8 +9,7 @@ PORTNAME=	cbedic
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=kbedic
+MASTER_SITES=	SF/kbedic/CBE%20Dictionary/${PORTVERSION}
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary

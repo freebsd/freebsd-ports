@@ -8,7 +8,7 @@
 PORTNAME=	apertium
 PORTVERSION=	3.1.1
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/3.1
 
 MAINTAINER=	freebsd@levsha.org.ua
 COMMENT=	A toolbox to build shallow-transfer machine translation systems

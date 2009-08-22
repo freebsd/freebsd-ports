@@ -9,7 +9,7 @@ PORTNAME=	xaira
 PORTVERSION=	1.23
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	XML Aware Indexing and Retrieval Architecture

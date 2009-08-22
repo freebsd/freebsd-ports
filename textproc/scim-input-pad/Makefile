@@ -9,8 +9,7 @@ PORTNAME=	scim-input-pad
 PORTVERSION=	0.1.1
 PORTREVISION=	7
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=scim
+MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	SCIM add-on to input various symbols with on-screen pad

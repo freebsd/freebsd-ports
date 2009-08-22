@@ -9,8 +9,7 @@ PORTNAME=	scim-bridge
 PORTVERSION=	0.4.15
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	scim
+MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Scim-bridge agent (server)

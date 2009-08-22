@@ -8,7 +8,7 @@
 PORTNAME=	rnv
 PORTVERSION=	1.7.10
 CATEGORIES=	textproc devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Relax NG Compact Syntax validator

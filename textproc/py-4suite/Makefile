@@ -10,8 +10,8 @@ PORTVERSION=	1.0.b1
 PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	foursuite
+		SF/foursuite/4Suite/1.0b1		
+
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	4Suite-1.0b1
 

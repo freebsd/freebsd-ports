@@ -12,8 +12,7 @@
 PORTNAME=	slides
 PORTVERSION=	3.3.1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	docbook
+MASTER_SITES=	SF/docbook/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doctype and stylesheets for making slides

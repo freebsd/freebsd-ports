@@ -9,8 +9,7 @@ PORTNAME=	sgmltools-lite
 PORTVERSION=	3.0.3
 PORTREVISION=	4
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sgmltools-lite
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents

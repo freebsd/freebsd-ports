@@ -8,8 +8,7 @@
 PORTNAME=	csv2xml
 PORTVERSION=	0.6
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple but effective csv to xml converter

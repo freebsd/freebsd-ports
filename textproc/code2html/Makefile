@@ -8,9 +8,9 @@
 PORTNAME=	code2html
 PORTVERSION=	0.9.1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://www.palfrader.org/code2html/all/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sourcecode to HTML converter

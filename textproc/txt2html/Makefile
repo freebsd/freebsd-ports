@@ -8,7 +8,7 @@
 PORTNAME=	txt2html
 PORTVERSION=	2.51
 CATEGORIES=	textproc perl5
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Convert raw text to something with a little HTML formatting

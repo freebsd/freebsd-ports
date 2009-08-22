@@ -8,7 +8,7 @@
 PORTNAME=	soothsayer
 PORTVERSION=	0.6.3
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	# none known, please fix
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent predictive text entry platform

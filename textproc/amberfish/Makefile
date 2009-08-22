@@ -8,8 +8,9 @@
 PORTNAME=	amberfish
 PORTVERSION=	1.6.4
 CATEGORIES=	textproc databases
-MASTER_SITES=	SF	\
+MASTER_SITES=	SF/${PORTNAME}/Amberfish%20source%20-%20stable/${PORTVERSION}	\
 		http://etymon.com/software/amberfish/stable/
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose text retrieval Software

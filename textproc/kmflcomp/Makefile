@@ -8,9 +8,9 @@
 PORTNAME=	kmflcomp
 PORTVERSION=	0.9.8
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
-MASTER_SITE_SUBDIR=	kmfl
+
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		KMFL-Compiler.sxw
 DIST_SUBDIR=	kmfl

@@ -9,9 +9,9 @@ PORTNAME=	scim-m17n
 PORTVERSION=	0.2.3
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
-MASTER_SITE_SUBDIR=scim
+
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	A SCIM IMEngine module which uses m17n library as the backend

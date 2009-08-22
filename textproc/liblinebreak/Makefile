@@ -8,8 +8,7 @@
 PORTNAME=	liblinebreak
 PORTVERSION=	1.2
 CATEGORIES=	textproc
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	vimgadgets
+MASTER_SITES=	SF/vimgadgets/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	Implementation of the line breaking algorithm for Unicode

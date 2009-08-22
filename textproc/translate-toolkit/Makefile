@@ -8,8 +8,9 @@
 PORTNAME=	translate-toolkit
 PORTVERSION=	1.4.0
 CATEGORIES=	textproc
-MASTER_SITES=	SF/translate \
+MASTER_SITES=	SF/translate/Translate%20Toolkit/${PORTVERSION} \
 		http://freebsd.unixfreunde.de/sources/
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts between many translation formats
