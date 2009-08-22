@@ -398,6 +398,7 @@
     SUBDIR += mod_access_referer
     SUBDIR += mod_accesscookie
     SUBDIR += mod_accounting
+    SUBDIR += mod_antiloris
     SUBDIR += mod_auth_any
     SUBDIR += mod_auth_cookie_mysql
     SUBDIR += mod_auth_cookie_mysql2

@@ -1,0 +1,14 @@
+
+The mod_antiloris configuration file has been installed here:
+
+  %%PREFIX%%/%%APACHEETCDIR%%/Includes/mod_antiloris.conf
+
+To activate the module:
+
+       1. find the line bellow in file %%PREFIX%%/%%APACHEETCDIR%%/httpd.conf,
+          remove the hash sign (#) in front of it and save the file
+
+          #LoadModule antiloris_module   libexec/apache2/mod_antiloris.so
+
+       2. restart your Apache server
+

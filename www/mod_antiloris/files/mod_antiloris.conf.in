@@ -1,0 +1,4 @@
+<IfModule mod_antiloris.c>
+    IPReadLimit 5
+</IfModule>
+
