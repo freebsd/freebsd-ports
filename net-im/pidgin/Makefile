@@ -30,7 +30,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gtk20
 USE_XORG=	xscrnsaver sm
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--disable-consoleui \
-		--disable-nm
+		--disable-nm \
+		--with-dynamic_prpls=${PRPL_MODULES:S/,$//}
 
 MAN1=		pidgin.1
 
