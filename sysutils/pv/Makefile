@@ -9,8 +9,7 @@ PORTNAME=	pv
 PORTVERSION=	1.1.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	pipeviewer
+MASTER_SITES=	SF/pipeviewer/pipeviewer/${PORTVERSION}
 
 MAINTAINER=	daniel@roe.ch
 COMMENT=	A pipe throughput monitor

@@ -8,8 +8,7 @@
 PORTNAME=	nifticlib
 PORTVERSION=	1.1.0
 CATEGORIES=	science graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	niftilib
+MASTER_SITES=	SF/niftilib/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Neuroimaging Infoirmatics Technology Initiative data format

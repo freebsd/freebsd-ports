@@ -9,8 +9,7 @@ PORTNAME=	relaxconf
 PORTVERSION=	1.1.1
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	relaxbsd
+MASTER_SITES=	SF/relaxbsd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of text menu based utilities for configuring RelaxBSD LiveCD

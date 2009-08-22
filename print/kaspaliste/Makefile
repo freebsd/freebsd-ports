@@ -9,8 +9,7 @@ PORTNAME=		kaspaliste
 PORTVERSION=		0.96
 PORTREVISION=	7
 CATEGORIES=		print kde
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kaspaliste
+MASTER_SITES=		SF
 
 MAINTAINER=		jaapb@kerguelen.org
 COMMENT=		Bibliography tool for KDE/Postgres/BibTeX

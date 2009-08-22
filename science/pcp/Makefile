@@ -8,8 +8,7 @@
 PORTNAME=	pcp
 PORTVERSION=	2.2
 CATEGORIES=	science math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Machine learning program for pattern classification

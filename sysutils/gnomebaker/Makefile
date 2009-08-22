@@ -9,8 +9,7 @@ PORTNAME=		gnomebaker
 PORTVERSION=		0.6.4
 PORTREVISION=	1
 CATEGORIES=		sysutils gnome
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnomebaker
+MASTER_SITES=		SF
 DIST_SUBDIR=		gnome2
 
 MAINTAINER=		dominique.goncalves@gmail.com

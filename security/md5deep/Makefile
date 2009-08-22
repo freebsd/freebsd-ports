@@ -8,7 +8,7 @@
 PORTNAME=	md5deep
 PORTVERSION=	3.3
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Program to compute various message digests recursively

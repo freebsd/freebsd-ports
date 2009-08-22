@@ -9,8 +9,7 @@ PORTNAME=	fileschanged
 PORTVERSION=	0.6.5
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility that reports when files have been altered

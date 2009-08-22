@@ -7,8 +7,7 @@
 PORTNAME=	bodr
 PORTVERSION=	8
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bodr
+MASTER_SITES=	SF
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Chemistry data like element and isotope properties, atomic radii, etc

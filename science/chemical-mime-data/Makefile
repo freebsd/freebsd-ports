@@ -8,8 +8,7 @@ PORTNAME=	chemical-mime-data
 PORTVERSION=	0.1.94
 PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	chemical-mime
+MASTER_SITES=	SF/chemical-mime/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A collection of chemical MIME types for UNIX desktops

@@ -8,8 +8,7 @@
 PORTNAME=	scanbuttond
 PORTVERSION=	0.2.3
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	dthiele@gmx.net
 COMMENT=	A daemon to monitor and configure modern scanner's buttons

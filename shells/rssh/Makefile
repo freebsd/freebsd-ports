@@ -8,8 +8,7 @@
 PORTNAME=	rssh
 PORTVERSION=	2.3.2
 CATEGORIES=	shells security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A Restricted Secure SHell only for sftp or/and scp

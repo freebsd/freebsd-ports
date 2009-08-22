@@ -8,7 +8,7 @@
 PORTNAME=	fstyp
 PORTVERSION=	0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF http://thegaul.org/src/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} http://thegaul.org/src/
 
 MAINTAINER=	sacchi@gmail.com
 COMMENT=	Detect which filesystem type a device/partition contains

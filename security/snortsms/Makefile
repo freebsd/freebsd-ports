@@ -8,7 +8,7 @@
 PORTNAME=	snortsms
 PORTVERSION=	1.7.8
 CATEGORIES=	security www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/SnortSMS%20Suite%20%28Console_Agent%29/${PORTVERSION}-Release
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A remote management and monitoring interface for Snort based IDS

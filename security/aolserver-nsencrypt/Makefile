@@ -9,8 +9,7 @@ PORTNAME=	aolserver-nsencrypt
 PORTVERSION=	0.4
 PORTREVISION=	2
 CATEGORIES=	security www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	aolserver
+MASTER_SITES=	SF/aolserver/nsencrypt/${PORTVERSION}
 DISTFILES=	nsencrypt-${PORTVERSION}-src.tar.gz
 DIST_SUBDIR=	aolserver
 

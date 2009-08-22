@@ -10,8 +10,7 @@ PORTNAME=	vis5d+
 PORTVERSION=	1.2.1
 PORTREVISION=	12
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	vis5d
+MASTER_SITES=	SF/vis5d/vis5d/${PORTVERSION}
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	OpenGL-based volumetric visualization program for scientific datasets

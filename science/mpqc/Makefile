@@ -9,8 +9,7 @@ PORTNAME=	mpqc
 PORTVERSION=	2.3.1
 PORTREVISION=	6
 CATEGORIES=	science parallel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mpqc
+MASTER_SITES=	SF
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The massively parallel quantum computing library and program

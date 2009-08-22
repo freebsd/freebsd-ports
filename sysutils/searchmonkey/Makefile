@@ -9,7 +9,7 @@ PORTNAME=	searchmonkey
 PORTVERSION=	0.8.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20%5Bstable%5D
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search using regexes for file names and text

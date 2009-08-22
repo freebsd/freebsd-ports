@@ -8,7 +8,7 @@
 PORTNAME=	amavisd-milter
 PORTVERSION=	1.4.0
 CATEGORIES=	security mail
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	prehor@gmail.com
 COMMENT=	Milter for amavisd-new

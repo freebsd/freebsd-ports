@@ -9,8 +9,7 @@ PORTNAME=	aolserver-nsopenssl
 PORTVERSION=	3.0.b26
 PORTREVISION=	1
 CATEGORIES=	security www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	aolserver
+MASTER_SITES=	SF/aolserver/nsopenssl/3.0
 DISTFILES=	nsopenssl-3.0beta26-src.tar.gz
 DIST_SUBDIR=	aolserver
 

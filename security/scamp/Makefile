@@ -7,7 +7,7 @@
 PORTNAME=	scamp
 PORTVERSION=	5.2d
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gerard@seibercom.net
 COMMENT=	Download & Install additional definition files for Clamav

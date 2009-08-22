@@ -8,8 +8,7 @@
 PORTNAME=	usrinfo
 PORTVERSION=	.10
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER?=	aaron@snaphat.com
 COMMENT=	Displays information about a user using either "<br>" or "\n" breaks

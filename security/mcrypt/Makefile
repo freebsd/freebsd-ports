@@ -10,11 +10,13 @@
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.8
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/MCrypt/${PORTVERSION} \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
+
 		ftp://ftp.ntua.gr/pub/security/mcrypt/ \
+
 		ftp://mcrypt.hellug.gr/pub/mcrypt/attic/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Replacement for crypt(1)

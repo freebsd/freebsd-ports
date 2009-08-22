@@ -9,13 +9,12 @@ PORTNAME=	freetype-tools
 PORTVERSION=	1.3.1
 PORTREVISION=	6
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
-		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
-		http://www.funet.fi/pub/mirrors/ftp.freetype.org/%SUBDIR%/ \
-		http://ftp.sunet.se/pub/text-processing/freetype/%SUBDIR%/ \
+MASTER_SITES=   SF/freetype/freetype/${PORTVERSION} \
+		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype1/ \
+		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype1/ \
+		http://ftp.sunet.se/pub/text-processing/freetype/freetype1/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,} \
-		ftp://ftp.freetype.org/freetype/%SUBDIR%/
-MASTER_SITE_SUBDIR=	freetype1
+		ftp://ftp.freetype.org/freetype/freetupe1/
 DISTNAME=	freetype-${PORTVERSION}
 
 MAINTAINER=	rafan@FreeBSD.org

@@ -9,8 +9,7 @@ PORTNAME?=	muttprint
 PORTVERSION=	0.72d
 PORTREVISION=	3
 CATEGORIES?=	print mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	muttprint
+MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Utility to print mail for most any mail client

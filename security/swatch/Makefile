@@ -9,8 +9,7 @@ PORTNAME=	swatch
 PORTVERSION=	3.2.1
 PORTREVISION=	2
 CATEGORIES=	security sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	swatch
+MASTER_SITES=	SF
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	The Simple WATCHer and filter

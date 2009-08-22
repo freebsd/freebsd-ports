@@ -9,8 +9,7 @@
 PORTNAME=	sec
 PORTVERSION=	2.5.1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	simple-evcorr
+MASTER_SITES=	SF/simple-evcorr/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Simple event (logs) correlator

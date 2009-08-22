@@ -9,8 +9,7 @@ PORTNAME=	oidentd
 PORTVERSION=	2.0.8
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ojnk
+MASTER_SITES=	SF/ojnk/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ident server that supports user-defined ident strings

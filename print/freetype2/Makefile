@@ -10,13 +10,12 @@ PORTNAME=	freetype2
 PORTVERSION=	2.3.9
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
-		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
-		http://www.funet.fi/pub/mirrors/ftp.freetype.org/%SUBDIR%/ \
-		http://ftp.sunet.se/pub/text-processing/freetype/%SUBDIR%/ \
+MASTER_SITES=	SF/freetype/${PORTNAME}/${PORTVERSION} \
+		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \
+		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/ \
+		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,} \
-		ftp://ftp.freetype.org/freetype/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		ftp://ftp.freetype.org/freetype/freetype2/
 DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

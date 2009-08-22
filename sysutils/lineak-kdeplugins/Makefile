@@ -9,8 +9,7 @@ PORTNAME=	lineak-kdeplugins
 PORTVERSION=	0.9
 PORTREVISION=	3
 CATEGORIES=	sysutils deskutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lineak
+MASTER_SITES=	SF/lineak/lineak_kdeplugins/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	lineak
 
 MAINTAINER=	ports@FreeBSD.org

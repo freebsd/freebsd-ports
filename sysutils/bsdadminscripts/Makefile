@@ -8,8 +8,7 @@
 PORTNAME=	bsdadminscripts
 PORTVERSION=	6.1.1
 CATEGORIES=	sysutils ports-mgmt
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	A collection of administration scripts

@@ -9,9 +9,9 @@ PORTNAME=	aide
 PORTVERSION=	0.13.1
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://www.cs.tut.fi/~rammer/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A replacement and extension for Tripwire

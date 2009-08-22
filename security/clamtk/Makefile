@@ -8,7 +8,7 @@
 PORTNAME=	clamtk
 PORTVERSION=	4.16
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK front-end for Clam Antivirus

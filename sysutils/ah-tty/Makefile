@@ -8,8 +8,7 @@
 PORTNAME=	ah-tty
 PORTVERSION=	0.3.12
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Ah-tty is an automatic helper for command prompts and shells

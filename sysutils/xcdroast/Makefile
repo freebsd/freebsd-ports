@@ -9,9 +9,9 @@ PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.16
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.98alpha16 \
 		http://www.xcdroast.org/download/
-MASTER_SITE_SUBDIR=	xcdroast
+
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
 
 MAINTAINER=	oliver@FreeBSD.org

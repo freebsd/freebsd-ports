@@ -9,7 +9,7 @@ PORTNAME=	quicksynergy
 PORTVERSION=	0.9.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Linux/${PORTVERSION}
 
 MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	A graphical interface for easily configuring Synergy2

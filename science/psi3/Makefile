@@ -8,9 +8,9 @@
 PORTNAME=	psi3
 PORTVERSION=	3.4.0
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/psicode/psi/${PORTVERSION} \
 		http://www.psicode.org/doc/:doc
-MASTER_SITE_SUBDIR=     psicode
+
 DISTNAME=	psi-${PORTVERSION}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} installation.pdf:doc userman.pdf:doc progman.pdf:doc

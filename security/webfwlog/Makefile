@@ -9,7 +9,7 @@ PORTNAME=	webfwlog
 PORTVERSION=	0.93
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	zeus@ix.netcom.com
 COMMENT=	A web-based firewall log analyzer

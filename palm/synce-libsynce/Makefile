@@ -7,7 +7,7 @@
 PORTNAME=	libsynce
 PORTVERSION=	0.13
 CATEGORIES=	palm
-MASTER_SITES=	SF/synce
+MASTER_SITES=	SF/synce/SynCE/${PORTVERSION}
 PKGNAMEPREFIX=	synce-
 
 MAINTAINER=	webmaster@kibab.com

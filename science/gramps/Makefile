@@ -8,7 +8,7 @@ PORTNAME=	gramps
 PORTVERSION=	3.0.4
 PORTREVISION=	3
 CATEGORIES=	science gnome python
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
 MAINTAINER=	freebsd@troback.com
 COMMENT=	A GTK/GNOME-based genealogy program

@@ -13,6 +13,7 @@ CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
 
+
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A comprehensive desktop publishing program
 

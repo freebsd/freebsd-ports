@@ -8,7 +8,7 @@
 PORTNAME=	IExtract
 PORTVERSION=	0.9.20
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Extract meta-information from files

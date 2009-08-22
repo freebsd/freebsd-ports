@@ -9,7 +9,7 @@ PORTNAME=	synce-gvfs
 PORTVERSION=	0.2.2
 PORTREVISION=	1
 CATEGORIES=	palm
-MASTER_SITES=	SF/synce
+MASTER_SITES=	SF/synce/SynCE-GNOME/0.13
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GVFS module for access Windows Mobile devices

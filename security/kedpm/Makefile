@@ -9,8 +9,7 @@ PORTNAME=	kedpm
 PORTVERSION=	0.4.0
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kedpm
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@thepentagon.org
 COMMENT=	A simple application for managing personal data

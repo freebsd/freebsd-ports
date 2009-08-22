@@ -8,7 +8,7 @@ PORTNAME=	kshutdown
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	sysutils kde
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/KShutdown/${PORTVERSION}%20for%20KDE%203
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Advanced shutdown utility for KDE

@@ -11,8 +11,7 @@ CATEGORIES=	security
 .if defined(BUILD)
 MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-3.0/build-${BUILD}/
 .else
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fwbuilder
+MASTER_SITES=	SF/fwbuilder/Current_Packages/${PORTVERSION}
 .endif
 
 MAINTAINER=	cy@FreeBSD.org

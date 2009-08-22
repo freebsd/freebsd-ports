@@ -9,7 +9,7 @@ PORTNAME=	gtkpasman
 PORTVERSION=	0.9
 PORTREVISION=	5
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTVERSION}
 
 MAINTAINER=	phil@teaser.fr
 COMMENT=	A GTK+ passwords manager for system and network administrators

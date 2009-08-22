@@ -8,7 +8,7 @@
 PORTNAME=	switzerland
 PORTVERSION=	0.1.0
 CATEGORIES=	security python
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/zero%20point%20one
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beat@FreeBSD.org

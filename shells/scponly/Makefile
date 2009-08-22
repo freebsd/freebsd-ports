@@ -73,8 +73,8 @@ PORTNAME=	scponly
 PORTVERSION=	4.8
 CATEGORIES=	shells security
 MASTER_SITES=	http://www.sublimation.org/scponly/ \
-		SF
-MASTER_SITE_SUBDIR=	scponly
+		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

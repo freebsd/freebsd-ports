@@ -8,8 +8,7 @@
 PORTNAME=	ntfsprogs
 PORTVERSION=	2.0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	linux-ntfs
+MASTER_SITES=	SF/linux-ntfs/NTFS%20Tools%20and%20Library/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate NTFS partitions

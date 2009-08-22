@@ -10,7 +10,7 @@ DISTVERSION=		1.1.4p1
 PORTREVISION=	4
 PORTEPOCH=		1
 CATEGORIES=		sysutils multimedia
-MASTER_SITES=		SF
+MASTER_SITES=		SF/${PORTNAME}/OldFiles
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Capture your X display to individual frames or MPEG video

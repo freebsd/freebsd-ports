@@ -9,8 +9,7 @@ PORTNAME=	hplip
 PORTVERSION=	2.8.2
 PORTREVISION=	5
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	hplip
+MASTER_SITES=	SF
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices

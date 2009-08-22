@@ -8,7 +8,7 @@
 PORTNAME=	blocksshd
 PORTVERSION=	1.3
 CATEGORIES=	security sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BlockSSHD%20${PORTVERSION}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Protects computers from SSH brute force attacks

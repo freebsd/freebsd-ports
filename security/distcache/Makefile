@@ -9,9 +9,9 @@ PORTNAME=	distcache
 PORTVERSION=	1.4.5
 PORTREVISION=	1
 CATEGORIES=	security www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/2.%20${PORTNAME}-stable/${PORTVERSION} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	marcel.prisi@virtua.ch
 COMMENT=	Distributed OpenSSL session caching tools

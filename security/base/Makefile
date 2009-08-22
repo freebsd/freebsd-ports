@@ -8,7 +8,7 @@
 PORTNAME=	base
 PORTVERSION=	1.4.3.1
 CATEGORIES=	security
-MASTER_SITES=	SF/secureideas
+MASTER_SITES=	SF/secureideas/BASE/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Basic Analysis and Security Engine - analyzing Snort alerts

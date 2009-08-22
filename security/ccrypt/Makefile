@@ -9,9 +9,9 @@
 PORTNAME=	ccrypt
 PORTVERSION=	1.8
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 				http://www.mathstat.dal.ca/~selinger/ccrypt/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	A command-line utility for encrypting and decrypting files and streams

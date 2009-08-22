@@ -8,7 +8,7 @@
 PORTNAME=       libpwstor
 PORTVERSION=    0.1
 CATEGORIES=     security devel
-MASTER_SITES=   SF/kageki
+MASTER_SITES=   SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=     ports@FreeBSD.org
 COMMENT=        A password storage library for C programmers

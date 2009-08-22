@@ -9,8 +9,7 @@
 PORTNAME=	integrit
 PORTVERSION=	4.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	jos@catnook.com
 COMMENT=	A file integrity verification program

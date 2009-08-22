@@ -7,8 +7,7 @@
 PORTNAME=	synce-serial
 PORTVERSION=	0.11
 CATEGORIES=	palm
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	synce
+MASTER_SITES=	SF/synce/SynCE/${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Wrapper for pppd to initiate communications with Windows Mobile devices

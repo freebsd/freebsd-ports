@@ -8,8 +8,7 @@
 PORTNAME=	libmcrypt
 PORTVERSION=	2.5.8
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S/lib//}
+MASTER_SITES=	SF/mcrypt/Libmcrypt/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-cipher cryptographic library (used in PHP)

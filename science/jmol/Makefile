@@ -8,7 +8,7 @@
 PORTNAME=	jmol
 PORTVERSION=	11.6.17
 CATEGORIES=	science java
-MASTER_SITES=	SF:source1 \
+MASTER_SITES=	SF/${PORTNAME}/Jmol/Version%20${PORTVERSION}:source1 \
 		http://jmol.svn.sourceforge.net/viewvc/jmol/trunk/Jmol/selfSignedCertificate/:source2
 DISTFILES=	${PORTNAME}-${PORTVERSION}-full.tar.gz:source1 \
 		selfSignedCertificate.cer:source2 \

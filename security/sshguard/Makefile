@@ -8,7 +8,7 @@
 PORTNAME=	sshguard
 PORTVERSION=	1.3
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/sshguard/sshguard/sshguard-${PORTVERSION}
 
 MAINTAINER=	mij@bitchx.it
 COMMENT?=	Protect hosts from brute force attacks against ssh and other services

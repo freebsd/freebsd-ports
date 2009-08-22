@@ -8,8 +8,7 @@
 PORTNAME=	portsentry
 PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sentrytools
+MASTER_SITES=	SF/sentrytools/${PORTNAME}%201.x/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	Port scan detection and active defense

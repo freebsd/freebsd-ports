@@ -9,8 +9,7 @@ PORTNAME=	libppd
 PORTVERSION=	0.10
 PORTREVISION=	2
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lpr
+MASTER_SITES=	SF/lpr/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	e-masson@kisoft-services.com
 COMMENT=	A library providing routines for ppd files

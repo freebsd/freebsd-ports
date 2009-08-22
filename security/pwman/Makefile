@@ -8,7 +8,7 @@
 PORTNAME=	pwman
 PORTVERSION=	0.3.9
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Console password management application based on gpg(me)

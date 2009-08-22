@@ -8,8 +8,7 @@ PORTNAME=	komparator
 PORTVERSION=	0.5
 PORTREVISION=	3
 CATEGORIES=	sysutils kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	triosoft@triosoft.com.ua
 COMMENT=	KDE app that searches and synchronizes two directories

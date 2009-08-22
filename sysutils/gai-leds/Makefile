@@ -9,8 +9,7 @@ PORTNAME=	gai-leds
 PORTVERSION=	0.6
 PORTREVISION=	4
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gai
+MASTER_SITES=	SF/gai/GAI%20-%20Applets/${PORTNAME}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	A GAI applet that displays the keyboard status leds

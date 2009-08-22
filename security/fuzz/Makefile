@@ -9,8 +9,7 @@ PORTNAME=	fuzz
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fuzz
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for testing software by bombarding the program with random data

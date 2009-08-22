@@ -9,8 +9,7 @@ PORTNAME=		jadetex
 PORTVERSION=		3.13
 PORTREVISION=	3
 CATEGORIES=		print
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jadetex
+MASTER_SITES=		SF
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A TeX backend for Jade, for typesetting SGML documents

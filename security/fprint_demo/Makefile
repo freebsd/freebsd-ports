@@ -9,8 +9,7 @@ PORTNAME=	fprint_demo
 PORTVERSION=	0.4
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fprint
+MASTER_SITES=	SF/fprint/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Demo and test application for libfprint

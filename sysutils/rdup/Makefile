@@ -9,8 +9,7 @@
 PORTNAME=	rdup
 PORTVERSION=	1.0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://miek.nl/projects/rdup/
+MASTER_SITES=	http://miek.nl/projects/rdup/
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	A tool to generate an (incremental) backup file list

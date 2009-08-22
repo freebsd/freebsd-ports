@@ -9,7 +9,7 @@ PORTNAME=	barnyard
 PORTVERSION=	0.2.0
 PORTREVISION=	5
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/barnyard/barnyard-0.2/${PORTVERSION}
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT?=	An output system for Snort

@@ -8,8 +8,7 @@
 PORTNAME=	webfrontend
 PORTVERSION=	3.1.1
 CATEGORIES=	sysutils net parallel www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ganglia
+MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}%20%28Wien%29
 PKGNAMEPREFIX=	ganglia-
 DISTNAME=	ganglia-${PORTVERSION}
 

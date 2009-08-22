@@ -8,8 +8,7 @@ PORTNAME=	synce-trayicon
 PORTVERSION=	0.13
 PORTREVISION=	1
 CATEGORIES=	palm
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	synce
+MASTER_SITES=	SF/synce/SynCE-GNOME/${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GNOME system tray app for monitoring connected WinCE based devices

@@ -8,8 +8,7 @@
 PORTNAME=	bubblegum
 PORTVERSION=	1.12
 CATEGORIES=	security
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	bjk
+MASTER_SITES=	SF/bjk/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Watch a file for changes

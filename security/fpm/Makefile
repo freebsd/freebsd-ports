@@ -9,8 +9,7 @@ PORTNAME=	fpm
 PORTVERSION=	0.60
 PORTREVISION=	5
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Figaro's Password Manager, an app to securely store your passwords
