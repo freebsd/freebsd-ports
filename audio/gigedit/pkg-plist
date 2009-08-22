@@ -1,5 +1,5 @@
 bin/gigedit
-lib/gigedit/libgigedit.so.1
+lib/gigedit/libgigedit.so.2
 lib/gigedit/libgigedit.so
 lib/gigedit/libgigedit.la
 lib/gigedit/libgigedit.a
