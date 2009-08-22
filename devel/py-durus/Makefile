@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	durus
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.mems-exchange.org/software/durus/ \
-		${MASTER_SITE_LOCAL} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	dryice
+MASTER_SITES=	http://www.mems-exchange.org/software/durus/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Durus-${PORTVERSION}
 
