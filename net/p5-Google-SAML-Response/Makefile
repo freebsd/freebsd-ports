@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Google-SAML-Response
-PORTVERSION=	0.07
-PORTREVISION=	1
+PORTVERSION=	0.08
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SAML responses for Google\'s SSO implementation
 
 RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Bignum \
