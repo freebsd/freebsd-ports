@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grsync
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		GENTOO/distfiles \
@@ -40,5 +39,8 @@ post-patch:
 	@${REINPLACE_CMD} 's/^ALL_LINGUAS=.*/ALL_LINGUAS=""/' \
 		${WRKSRC}/configure
 .endif
+
+pre-install:
+	@${CHMOD} u+x ${WRKSRC}/install-sh
 
 .include <bsd.port.mk>
