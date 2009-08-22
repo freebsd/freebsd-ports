@@ -12,11 +12,8 @@ PORTREVISION=	3
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/gnucash/${PORTNAME}/${PORTVERSION} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/ \
-
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
-
 		http://www.linas.org/pub/
-
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Documentation for gnucash
