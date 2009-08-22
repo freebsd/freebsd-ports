@@ -2,6 +2,8 @@ bin/grsync
 bin/grsync-batch
 share/applications/grsync.desktop
 share/pixmaps/grsync.png
+share/grsync/grsync.glade
+@dirrm share/grsync
 %%NLS%%share/locale/cs_CZ/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/grsync.mo
