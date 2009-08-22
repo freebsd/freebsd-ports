@@ -8,7 +8,7 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		fribidi.0:${PORTSDIR}/converters/fribidi \
+		fribidi.3:${PORTSDIR}/converters/fribidi \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		paper.2:${PORTSDIR}/print/libpaper \
 		poppler-qt.2:${PORTSDIR}/graphics/poppler-qt

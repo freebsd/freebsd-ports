@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--with-png --with-png-includes=${LOCALBASE}/include \
 .if defined(WITHOUT_BIDI)
 CONFIGURE_ARGS+=	--disable-bidi
 .else
-LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 .endif
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"

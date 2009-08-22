@@ -37,7 +37,7 @@ OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
 
 .if defined(WITH_FRIBIDI)
 CONFIGURE_ARGS+=	--enable-fribidi
-LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 .else
 CONFIGURE_ARGS+=	--disable-fribidi
 .endif

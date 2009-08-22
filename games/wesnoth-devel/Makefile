@@ -7,7 +7,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.5.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
@@ -105,7 +105,7 @@ PLIST_SUB+=		TOOLS=""
 .endif
 
 .if defined(WITH_FRIBIDI) || exists(${LOCALBASE}/bin/fribidi-config)
-LIB_DEPENDS+=		fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
 .endif
 
 .if (defined(WITH_CAMPAIGN) || defined(WITH_SERVER) || defined(WITH_TOOLS)) && defined(WITHOUT_NLS)

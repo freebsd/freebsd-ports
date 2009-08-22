@@ -7,6 +7,7 @@
 
 PORTNAME=	Text-Bidi
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Perl interface to the libfribidi
 
-LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi
 
 PERL_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
