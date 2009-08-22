@@ -1276,6 +1276,7 @@
     SUBDIR += p5-DateTime-Format-MySQL
     SUBDIR += p5-DateTime-Format-Natural
     SUBDIR += p5-DateTime-Format-Pg
+    SUBDIR += p5-DateTime-Format-RFC3339
     SUBDIR += p5-DateTime-Format-Roman
     SUBDIR += p5-DateTime-Format-SQLite
     SUBDIR += p5-DateTime-Format-Strptime
