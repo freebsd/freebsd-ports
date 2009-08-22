@@ -1,5 +1,5 @@
 --- src/modules.c	2009-04-13 13:03:58.000000000 +0200
-+++ src/modules.c	2009-08-18 16:29:34.000000000 +0200
++++ src/modules.c	2009-08-20 15:32:56.000000000 +0200
 @@ -177,12 +177,12 @@
  {
  	char tempbuf[PATH_MAX+1];
@@ -47,3 +47,12 @@
  		strcat(tempbuf, hData.cFileName);
  		remove(tempbuf);
  	}
+@@ -323,7 +323,7 @@
+ 	path = path_;
+ 
+ 	
+-	tmppath = unreal_mktemp("tmp", unreal_getfilename(path));
++	tmppath = unreal_mktemp("%%RUNDIR%%/tmp", unreal_getfilename(path));
+ 	if (!tmppath)
+ 		return "Unable to create temporary file!";
+ #ifndef _WIN32
