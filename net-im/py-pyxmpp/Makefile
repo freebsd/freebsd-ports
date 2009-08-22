@@ -27,8 +27,8 @@ post-patch:
 	@${GREP} -lr '/usr/bin/python' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e "s!/usr/bin/python!${PYTHON_CMD}!"
 	@${REINPLACE_CMD} -e '/include_dirs =/s|]|,"${LOCALBASE}/include"]|' \
-		-e '/library_dirs =/s|]|"${LOCALBASE}/lib"]|' ${WRKSRC}/setup.py
-
+		-e '/library_dirs =/s|]|"${LOCALBASE}/lib"]|' \
+		-e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/setup.py
 post-install:
 	@${ECHO} "pyxmpp" > ${PYTHON_SITELIBDIR}/pyxmpp.pth
 
