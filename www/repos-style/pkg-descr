@@ -1,20 +1,7 @@
-net2ftp is a web-based FTP client written in PHP
+A free open source stylesheet for the Subversion index web page.
+The XSLT and CSS is fully customizable. There is icons for folders
+and many different filetypes. Install Repos Style as it is or use
+is as a sample XSLT to design your own. A simple log viewer is also
+included.
 
-User features
- - Navigate the FTP server
- - Upload files
- - Download files
- - Zip files
- - Unzip files
- - Install software
- - Copy, move and delete
- - Copy or move to a 2nd FTP server
- - Rename and chmod
- - View code with syntax highlighting
- - Plain text editor
- - HTML editors
- - Code editor
- - Search for words or phrases
- - Calculate size
-
-WWW: http://www.net2ftp.com/
+WWW:	http://www.reposstyle.com/
