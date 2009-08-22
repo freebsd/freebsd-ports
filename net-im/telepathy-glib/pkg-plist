@@ -43,6 +43,7 @@ include/telepathy-1.0/telepathy-glib/connection-manager.h
 include/telepathy-1.0/telepathy-glib/connection.h
 include/telepathy-1.0/telepathy-glib/contacts-mixin.h
 include/telepathy-1.0/telepathy-glib/contact.h
+include/telepathy-1.0/telepathy-glib/dbus-daemon.h
 include/telepathy-1.0/telepathy-glib/dbus-properties-mixin.h
 include/telepathy-1.0/telepathy-glib/dbus.h
 include/telepathy-1.0/telepathy-glib/debug-ansi.h
