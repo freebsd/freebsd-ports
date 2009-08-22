@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hugin
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +19,8 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		exiv2:${PORTSDIR}/graphics/exiv2 \
 		pano13:${PORTSDIR}/graphics/libpano13 \
-		boost_date_time:${PORTSDIR}/devel/boost-libs
+		boost_date_time:${PORTSDIR}/devel/boost-libs \
+		GLEW:${PORTSDIR}/graphics/glew
 RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		gmake:${PORTSDIR}/devel/gmake
@@ -41,7 +41,20 @@ USE_WX=		2.8+
 
 USE_GETTEXT=	yes
 
-MAN1=		fulla.1
+MAN1=		\
+		PTBatcherGUI.1 \
+		align_image_stack.1 \
+		autooptimiser.1 \
+		celeste_standalone.1 \
+		fulla.1 \
+		hugin.1 \
+		hugin_hdrmerge.1 \
+		hugin_stitch_project.1 \
+		nona.1 \
+		nona_gui.1 \
+		pto2mk.1 \
+		tca_correct.1 \
+		vig_optimize.1
 
 #DOCSDIR=	${PREFIX}/share/hugin/xrc/data
 
@@ -57,6 +70,10 @@ post-configure:
 		${WRKSRC}/src/hugin1/hugin/CMakeFiles/hugin.dir/link.txt \
 		${WRKSRC}/src/hugin1/nona_gui/CMakeFiles/nona_gui.dir/flags.make \
 		${WRKSRC}/src/hugin1/nona_gui/CMakeFiles/nona_gui.dir/link.txt \
+		${WRKSRC}/src/hugin1/ptbatcher/CMakeFiles/PTBatcher.dir/flags.make \
+		${WRKSRC}/src/hugin1/ptbatcher/CMakeFiles/PTBatcher.dir/link.txt \
+		${WRKSRC}/src/hugin1/ptbatcher/CMakeFiles/PTBatcherGUI.dir/flags.make \
+		${WRKSRC}/src/hugin1/ptbatcher/CMakeFiles/PTBatcherGUI.dir/link.txt \
 		${WRKSRC}/src/hugin1/stitch_project/CMakeFiles/hugin_stitch_project.dir/flags.make \
 		${WRKSRC}/src/hugin1/stitch_project/CMakeFiles/hugin_stitch_project.dir/link.txt
 
@@ -69,5 +86,13 @@ RUN_DEPENDS+=	panomatic:${PORTSDIR}/graphics/panomatic
 .if defined(WITH_AUTOPANOSIFT)
 RUN_DEPENDS+=	autopanog:${PORTSDIR}/graphics/autopano-sift
 .endif
+
+# the lapack library from math/lapack seems broken:
+# /usr/local/lib/liblapack.so: undefined reference to `cexp'
+#.if defined(WITH_LAPACK)
+#LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack	\
+#		blas:${PORTSDIR}/math/blas
+#CMAKE_ARGS+=	-DENABLE_LAPACK=YES
+#.endif
 
 .include <bsd.port.post.mk>
