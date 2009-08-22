@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Libenchant Binder that Support Near All Spelling Tools
 
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant

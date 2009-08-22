@@ -9,7 +9,7 @@ PORTNAME=	Net_IPv6
 DISTVERSION=	1.1.0RC4
 CATEGORIES=	net pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Check and validate IPv6 addresses
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

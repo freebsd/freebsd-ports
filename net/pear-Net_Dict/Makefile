@@ -9,7 +9,7 @@ PORTNAME=	Net_Dict
 PORTVERSION=	1.0.6
 CATEGORIES=	net www pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR interface to the DICT protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \

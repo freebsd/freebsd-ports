@@ -9,7 +9,7 @@ PORTNAME=	Services_Blogging
 PORTVERSION=	0.2.3
 CATEGORIES=	www pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to Blog
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

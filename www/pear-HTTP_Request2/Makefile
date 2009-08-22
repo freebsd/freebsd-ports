@@ -9,7 +9,7 @@ PORTNAME=	HTTP_Request2
 PORTVERSION=	0.4.0
 CATEGORIES=	www pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR classes providing an easy way to perform HTTP requests
 
 BUILD_DEPENDS=	${PEARDIR}/Net/URL2.php:${PORTSDIR}/net/pear-Net_URL2

@@ -9,7 +9,7 @@ PORTNAME=	PHP_CodeSniffer
 PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PHP Script Tokenises and Sniffs PHP and JavaScript code
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -9,7 +9,7 @@ PORTNAME=	PHP_UML
 PORTVERSION=	1.0.0
 CATEGORIES=	devel
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PEAR Class to Create UML Representation of PHP Code
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

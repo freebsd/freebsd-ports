@@ -9,7 +9,7 @@ PORTNAME=	Services_Amazon
 PORTVERSION=	0.8.0
 CATEGORIES=	www pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to Amazon Product Advertising API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

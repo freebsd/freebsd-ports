@@ -9,7 +9,7 @@ PORTNAME=	Services_Facebook
 PORTVERSION=	0.2.8
 CATEGORIES=	www pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to Facebook's API
 
 BUILD_DEPENDS=	${PEARDIR}/Validate.php:${PORTSDIR}/devel/pear-Validate

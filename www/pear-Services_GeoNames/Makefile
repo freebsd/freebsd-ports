@@ -9,7 +9,7 @@ PORTNAME=	Services_GeoNames
 PORTVERSION=	0.2.3
 CATEGORIES=	www pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PHP5 Interface to the GeoNames Public API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

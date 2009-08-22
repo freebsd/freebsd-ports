@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 PORTREVISION=	2
 CATEGORIES=	net pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Parser for URI Templates
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
