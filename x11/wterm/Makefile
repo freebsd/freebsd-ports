@@ -9,7 +9,7 @@ PORTNAME=	wterm
 PORTVERSION=	6.2.9
 PORTREVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	A color vt102 terminal emulator with transparency support

@@ -9,8 +9,7 @@ PORTNAME=	xfree86_xkb_xml
 PORTVERSION=	0.4
 PORTREVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	gswitchit
+MASTER_SITES=	SF/gswitchit/OldFiles
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A little set of XML files useful for dealing with XKB rules

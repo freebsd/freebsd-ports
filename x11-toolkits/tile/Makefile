@@ -9,7 +9,7 @@ PORTNAME=	tile
 PORTVERSION=	0.8.2
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk
-MASTER_SITES=	SF/tktable
+MASTER_SITES=	SF/tktable/${PORTNAME}/${PORTNAME}-0-8-2
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Themed widget set for Tk

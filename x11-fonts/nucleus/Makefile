@@ -9,8 +9,7 @@ PORTNAME=	nucleus
 PORTVERSION=	0.77
 PORTREVISION=	4
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	xfonts
+MASTER_SITES=	SF/xfonts/OldFiles
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Another font package for X

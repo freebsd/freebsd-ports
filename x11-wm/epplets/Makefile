@@ -9,8 +9,7 @@ PORTNAME=	epplets
 PORTVERSION=	0.12
 PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A collection of Enlightenment dock applications

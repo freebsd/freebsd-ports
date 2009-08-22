@@ -8,7 +8,7 @@
 PORTNAME=	obpager
 PORTVERSION=	1.8
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A lightweight pager for netwm compatible window managers

@@ -10,8 +10,8 @@ PORTVERSION=	0.99.17
 PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtkextra.sourceforge.net/src/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	scigraphica
+		SF/scigraphica/scigraphica-0.x/0.8.0-source		
+
 DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

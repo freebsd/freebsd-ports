@@ -10,7 +10,6 @@ PORTVERSION=	4.2.0
 PORTREVISION=	6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=qwt
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qwt widget library for technical purposes (old version)

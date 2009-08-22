@@ -9,8 +9,7 @@ PORTNAME=	lxappearance
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	lxde
+MASTER_SITES=	SF/lxde/LXAppearance/LXAppearance%20${PORTVERSION}.0
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A desktop-independent theme switcher for GTK+

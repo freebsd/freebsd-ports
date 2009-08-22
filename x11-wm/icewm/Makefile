@@ -9,7 +9,7 @@ PORTNAME=	icewm
 PORTVERSION=	1.2.37
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	eitanadlerlist@gmail.com
 COMMENT=	Window Manager designed for speed, usability and consistency

@@ -8,7 +8,7 @@
 PORTNAME=	wxgtk_doc
 PORTVERSION=	2.6.4
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SF/wxwindows
+MASTER_SITES=	SF/wxwindows/Documents/${PORTVERSION}
 DISTNAME=	wxWidgets-${PORTVERSION}-HTML
 
 MAINTAINER=	m.sund@arcor.de

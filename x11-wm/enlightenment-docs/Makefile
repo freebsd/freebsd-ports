@@ -9,7 +9,7 @@ PORTNAME=	enlightenment-docs
 PORTVERSION=	0.16.8.0.2
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF/enlightenment
+MASTER_SITES=	SF/enlightenment/e16-docs/${PORTVERSION}
 DISTNAME=	e16-docs-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org

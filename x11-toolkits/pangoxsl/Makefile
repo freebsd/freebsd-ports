@@ -9,8 +9,7 @@ PORTNAME=	pangoxsl
 PORTVERSION=	1.6.0.3
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pangopdf
+MASTER_SITES=	SF/pangopdf/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implements Pango library with a PDF backend for PDF output

@@ -9,8 +9,7 @@ PORTNAME=	lfpfonts-var
 PORTVERSION=	0.83
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	xfonts
+MASTER_SITES=	SF/xfonts/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Variable width fonts from the Linux Font Project

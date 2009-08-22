@@ -8,8 +8,7 @@ PORTNAME=		artwiz-aleczapka-de
 PORTVERSION=		1.3
 PORTREVISION=	2
 CATEGORIES=		x11-fonts
-MASTER_SITES=		SF
-MASTER_SITE_SUBDIR=	artwizaleczapka
+MASTER_SITES=		SF/artwizaleczapka/iso-8859-1/${PORTVERSION}
 
 MAINTAINER=	herbert.skuhra@gmx.at
 COMMENT=	A set of (improved) artwiz fonts

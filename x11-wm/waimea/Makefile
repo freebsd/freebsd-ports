@@ -9,7 +9,7 @@ PORTNAME=	waimea
 PORTVERSION=	0.4.0
 PORTREVISION=	7
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An X11 window manager designed for maximum efficiency

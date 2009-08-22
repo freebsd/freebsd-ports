@@ -9,8 +9,7 @@ PORTNAME=	bbpager
 DISTVERSION=	0.4.7
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	bbtools
+MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	A pager for the Blackbox window manager

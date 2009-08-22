@@ -8,7 +8,7 @@
 PORTNAME=	e16-themes
 PORTVERSION=	1.0.0
 CATEGORIES=	x11-themes
-MASTER_SITES=	SF/enlightenment
+MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A set of themes for the e16 window manager
