@@ -10,7 +10,7 @@ PORTVERSION=	1.0.5
 PORTREVISION=	1
 CATEGORIES=	net devel pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	XML-RPC client/server library
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

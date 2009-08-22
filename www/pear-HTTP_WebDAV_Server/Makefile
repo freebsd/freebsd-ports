@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0.r4
 CATEGORIES=	www devel pear
 DISTNAME=	${PORTNAME}-1.0.0RC4
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	WebDAV Server Baseclass
 
 CATEGORY=	HTTP/WebDAV

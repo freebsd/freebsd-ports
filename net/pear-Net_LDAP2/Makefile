@@ -10,7 +10,7 @@ PORTVERSION=	2.0.6
 PORTEPOCH=	1
 CATEGORIES=	net pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	OO interface for searching and manipulating LDAP-entries
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

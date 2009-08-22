@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL Extension for Interface the MCVE/Monetra API
 
 LIB_DEPENDS=	monetra.7:${PORTSDIR}/devel/libmonetra

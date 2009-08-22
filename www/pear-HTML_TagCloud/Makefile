@@ -9,7 +9,7 @@ PORTNAME=	HTML_TagCloud
 PORTVERSION=	0.2.3
 CATEGORIES=	www devel pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Generate TagCloud in HTML And Visualize Tags
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

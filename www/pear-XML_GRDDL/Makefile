@@ -9,7 +9,7 @@ PORTNAME=	XML_GRDDL
 PORTVERSION=	0.1.1
 CATEGORIES=	www pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PHP library for dealing with GRDDL
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

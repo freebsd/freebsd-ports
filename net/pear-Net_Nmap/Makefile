@@ -9,7 +9,7 @@ PORTNAME=	Net_Nmap
 PORTVERSION=	1.0.2
 CATEGORIES=	net pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A Simple Wrapper Class for the Nmap Utility
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser

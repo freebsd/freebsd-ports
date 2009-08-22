@@ -9,7 +9,7 @@ PORTNAME=	Services_JSON
 PORTVERSION=	1.0.0
 CATEGORIES=	converters www pear
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP implementaion of json_encode/decode
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

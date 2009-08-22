@@ -9,7 +9,7 @@ PORTNAME=	PHP_Archive
 PORTVERSION=	0.11.4
 CATEGORIES=	archivers
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Create and Use PHP Archive files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
