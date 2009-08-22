@@ -1,5 +1,8 @@
 bin/%%APP_NAME%%
 share/applications/%%APP_NAME%%.desktop
+lib/%%APP_NAME%%/libnssdbm3.so
+lib/%%APP_NAME%%/libnssutil3.so
+lib/%%APP_NAME%%/libsqlite3.so
 lib/%%APP_NAME%%/LICENSE.txt
 lib/%%APP_NAME%%/README.txt
 lib/%%APP_NAME%%/chrome/US.jar
