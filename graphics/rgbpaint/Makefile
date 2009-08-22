@@ -9,7 +9,7 @@ PORTNAME=	rgbpaint
 PORTVERSION=	0.8.7
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	SF/mtpaint
+MASTER_SITES=	SF/mtpaint/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very basic painting program

@@ -9,8 +9,7 @@ PORTNAME=	phpua-plugin_ut
 PORTVERSION=	1.1.0b
 PORTREVISION=	1
 CATEGORIES=	games www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	phpua
+MASTER_SITES=	SF/phpua/Plug-in_%20Unreal%20Tournament/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Unreal Tournament plugin for phpUA

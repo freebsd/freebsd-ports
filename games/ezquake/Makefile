@@ -10,8 +10,9 @@ PORTVERSION=	1.9
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	games
-MASTER_SITES=	SF:ezquake \
+MASTER_SITES=	SF/${PORTNAME}/A%29%20Official%20releases/ezQuake%20${PORTVERSION}:ezquake \
 		http://www.winimage.com/zLibDll/:minizip
+
 DISTFILES=	${PORTNAME}_source_${PORTVERSION}.7z:ezquake \
 		${PORTNAME}_linux-x86_${PORTVERSION}${EXTRACT_SUFX}:ezquake \
 		unzip101e.zip:minizip

@@ -9,8 +9,7 @@ PORTNAME=	gsnapshot
 PORTVERSION=	1.0
 PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	gould
+MASTER_SITES=	SF/gould/${PORTNAME}/release%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk+ based screen capture

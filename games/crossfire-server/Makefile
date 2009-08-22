@@ -9,8 +9,9 @@ PORTNAME=	crossfire
 PORTVERSION=	1.11.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-server/${PORTVERSION} \
 		ftp://ftp.real-time.com/pub/games/crossfire/
+
 PKGNAMESUFFIX=	-server
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}.maps${EXTRACT_SUFX}

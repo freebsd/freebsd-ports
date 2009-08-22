@@ -9,7 +9,7 @@ PORTNAME=	gnomeiconedit
 PORTVERSION=	1.2.0
 PORTREVISION=	7
 CATEGORIES=	graphics gnome
-MASTER_SITES=	SF/giconedit
+MASTER_SITES=	SF/giconedit/giconedit-${PORTVERSION}/tar.gz
 DISTNAME=	gnome-iconedit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

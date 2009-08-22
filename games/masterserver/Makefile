@@ -8,8 +8,7 @@
 PORTNAME=	masterserver
 PORTVERSION=	0.4.1
 CATEGORIES=	games
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	lasange-system
+MASTER_SITES=	SF/lasange-system/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Masterserver for IdSoftware games (D3, EF, H2, Q2, Q3, QW)

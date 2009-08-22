@@ -8,8 +8,7 @@
 PORTNAME=	photopc
 PORTVERSION=	3.05
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to manage an Epson PhotoPC 500 digital camera

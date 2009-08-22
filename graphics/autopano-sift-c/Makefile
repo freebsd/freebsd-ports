@@ -9,7 +9,7 @@ PORTNAME=	autopano-sift-C
 PORTVERSION=	2.5.0
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	SF/hugin
+MASTER_SITES=	SF/hugin/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Automatic panorama control point generation tool, C port

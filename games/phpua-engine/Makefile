@@ -9,8 +9,7 @@ PORTNAME=	phpua-engine
 PORTVERSION=	1.1.0b
 PORTREVISION=	4
 CATEGORIES=	games www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:S/-.*//}
+MASTER_SITES=	SF/phpua/phpUA%20Engine/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game server monitor & admin tool

@@ -9,8 +9,8 @@ PORTNAME=	unix-connect
 PORTVERSION=	0.95
 CATEGORIES=	german comms news mail
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/unix-connect/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		SF		
+
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Unix-Connect - mail+news-gateway for Zconnect (tm)

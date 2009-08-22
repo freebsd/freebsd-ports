@@ -9,7 +9,7 @@ PORTNAME=	openglad
 PORTVERSION=	0.98
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	SF/snowstorm
+MASTER_SITES=	SF/snowstorm/OpenGlad/Openglad-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL port of an old DOS game called Gladiator

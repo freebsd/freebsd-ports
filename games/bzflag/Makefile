@@ -8,7 +8,7 @@
 PORTNAME=	bzflag
 PORTVERSION=	2.0.12
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTVERSION}
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	A multiplayer 3D tank battle game

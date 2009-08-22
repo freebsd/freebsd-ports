@@ -9,7 +9,7 @@ PORTNAME=	xmedcon
 PORTVERSION=	0.10.4
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A medical image conversion utility and library

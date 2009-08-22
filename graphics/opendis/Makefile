@@ -9,9 +9,9 @@ PORTNAME=	opendis
 PORTVERSION=	0.0.3
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/ods/ods/${PORTVERSION} \
 		http://ods.sourceforge.net/dl/
-MASTER_SITE_SUBDIR=	ods
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access Flashpoint Digita-based cameras, download images and more

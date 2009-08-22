@@ -9,7 +9,7 @@ PORTNAME=	pushover
 PORTVERSION=	0.0.1
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Pushover/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Pushover Screenshot Pushover a lot of dominos

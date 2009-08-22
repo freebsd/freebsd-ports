@@ -9,7 +9,7 @@ PORTNAME=	pencil
 PORTVERSION=	0.4.4b
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/pencil-planner
+MASTER_SITES=	SF/${PORTNAME}-planner/Pencil/${PORTVERSION}eta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFFIX}
 
 MAINTAINER=	ganael.laplanche@martymac.com

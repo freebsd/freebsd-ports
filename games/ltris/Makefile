@@ -10,7 +10,7 @@ PORTVERSION=	1.0.12
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/lgames
+MASTER_SITES=	SF/lgames/${PORTNAME}/1.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An another tetris clone but a good one with bunch of cool features

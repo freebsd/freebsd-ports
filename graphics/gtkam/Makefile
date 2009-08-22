@@ -9,7 +9,7 @@ PORTNAME=	gtkam
 PORTVERSION=	0.1.16.1
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/gphoto
+MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras

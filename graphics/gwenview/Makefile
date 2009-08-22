@@ -9,8 +9,7 @@ PORTNAME=	gwenview
 PORTVERSION=	1.4.2
 PORTREVISION=	5
 CATEGORIES=	graphics kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	An image viewer and browser for the KDE environment

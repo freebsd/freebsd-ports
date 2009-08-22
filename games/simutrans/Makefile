@@ -8,7 +8,7 @@
 PORTNAME=	simutrans
 PORTVERSION=	102.0
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/102-0
 DISTFILES=	simutrans-src-102-0.zip \
 		simulinux-102-0.zip \
 		pak64-102-0.zip

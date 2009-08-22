@@ -10,10 +10,12 @@ DISTVERSION=	6.5.4-10
 PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
-		${MASTER_SITE_SOURCEFORGE} \
+		SF/${PORTNAME:L}/${PORTNAME}/00-6.5.4		 \
+
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
+
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/
-MASTER_SITE_SUBDIR=	imagemagick
+
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Image processing tools

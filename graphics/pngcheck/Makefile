@@ -8,8 +8,7 @@
 PORTNAME=	pngcheck
 PORTVERSION=	2.3.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	png-mng
+MASTER_SITES=	SF/png-mng/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks the integrity of PNG images

@@ -9,7 +9,7 @@ PORTNAME=	synfigstudio
 DISTVERSION=	0.61.09
 PORTREVISION=	1
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	SF/synfig
+MASTER_SITES=	SF/synfig/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Vector-based 2D animation software package

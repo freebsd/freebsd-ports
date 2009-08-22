@@ -10,8 +10,7 @@ PORTVERSION=	0.8.3
 PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION}/:noegnud	\
-		${MASTER_SITE_SOURCEFORGE:S/$/:nethack/}
-MASTER_SITE_SUBDIR=	nethack/:nethack
+		SF/nethack/nethack/3.4.3:nethack
 PKGNAMESUFFIX=	-nethack
 DISTFILES=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}:noegnud	\
 		nethack-343-src.tgz:nethack

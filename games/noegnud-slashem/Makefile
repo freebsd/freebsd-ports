@@ -10,8 +10,7 @@ PORTVERSION=	0.8.3
 PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION}/:noegnud	\
-		${MASTER_SITE_SOURCEFORGE:S/$/:slashem/}
-MASTER_SITE_SUBDIR=	slashem/:slashem
+		SF/slashem/slashem-source/0.0.6E4F8:slashem
 PKGNAMESUFFIX=	-slashem
 DISTFILES=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}:noegnud \
 		se006e4f8.tar.gz:slashem

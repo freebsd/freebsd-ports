@@ -9,9 +9,9 @@ PORTNAME=	libmng
 PORTVERSION=	1.0.10
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION} \
 		http://www.libmng.com/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multiple-image Network Graphics (MNG) reference library

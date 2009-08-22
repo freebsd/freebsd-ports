@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.2/
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
+
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick

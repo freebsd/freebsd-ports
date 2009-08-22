@@ -9,8 +9,7 @@ PORTNAME=	danpei
 PORTVERSION=	2.9.7
 PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	danpei
+MASTER_SITES=	SF
 
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	Image Viewer for X Window System with thumbnail preview feature

@@ -9,7 +9,7 @@ PORTNAME=	qonk
 PORTVERSION=	0.3.1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Small space build and conquer strategy game

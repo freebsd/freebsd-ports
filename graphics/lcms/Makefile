@@ -10,9 +10,9 @@ PORTVERSION=	1.18a
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.18 \
 		http://www.littlecms.com/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library

@@ -9,7 +9,7 @@ PORTNAME=	panoglview
 PORTVERSION=	0.2.1
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	SF/hugin
+MASTER_SITES=	SF/hugin/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Panorama viewer using OpenGL

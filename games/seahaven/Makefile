@@ -9,9 +9,7 @@ PORTNAME=	seahaven
 PORTVERSION=	1.44
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://seahaven.sourceforge.net/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	http://seahaven.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	imp@FreeBSD.org

@@ -8,8 +8,7 @@ PORTNAME=	libkexif
 PORTVERSION=	0.2.5
 PORTREVISION=	5
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kipi
+MASTER_SITES=	SF/kipi/OldFiles
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Library for manipulating EXIF information embedded in images

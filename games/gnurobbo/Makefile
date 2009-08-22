@@ -8,7 +8,7 @@
 PORTNAME=	gnurobbo
 PORTVERSION=	0.61
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Reimplementation of LK Avalon's Robbo for the Atari XE/XL

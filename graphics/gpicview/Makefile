@@ -9,8 +9,7 @@ PORTNAME=	gpicview
 PORTVERSION=	0.1.11
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	lxde
+MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/GPicView%20${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A Simple and Fast Image Viewer for X

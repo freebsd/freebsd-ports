@@ -8,7 +8,7 @@
 PORTNAME=	pngcrush
 PORTVERSION=	1.7.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/pmt
+MASTER_SITES=	SF/pmt/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An optimizer for PNG files

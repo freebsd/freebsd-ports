@@ -9,7 +9,7 @@ PORTNAME=	openyahtzee
 PORTVERSION=	1.8.1
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Open%20Yahtzee/Open%20Yahtzee%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured classic dice game Yahtzee

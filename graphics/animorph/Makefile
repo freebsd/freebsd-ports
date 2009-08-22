@@ -8,8 +8,7 @@
 PORTNAME=	animorph
 PORTVERSION=	0.3
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	makehuman
+MASTER_SITES=	SF/makehuman/MakeHuman%20Source/MakeHuman_091
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Morphing engine for MakeHuman

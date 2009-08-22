@@ -9,8 +9,7 @@ PORTNAME=	libwmf
 PORTVERSION=	0.2.8.4
 PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wvware
+MASTER_SITES=	SF/wvware/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)

@@ -9,7 +9,7 @@ PORTNAME=	fnlib
 PORTVERSION=	0.5
 PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	SF/enlightenment
+MASTER_SITES=	SF/enlightenment/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fonts and font libraries necessary for Enlightenment

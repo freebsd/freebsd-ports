@@ -8,8 +8,7 @@
 PORTNAME=	secretmaryochronicles-music
 PORTVERSION=	4.0
 CATEGORIES=	games
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	smclone
+MASTER_SITES=	SF/smclone/Addon%20-%20Music/${PORTVERSION}
 DISTNAME=	SMC_music_${PORTVERSION}_high
 
 MAINTAINER=	adamw@FreeBSD.org

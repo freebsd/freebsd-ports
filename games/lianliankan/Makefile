@@ -9,8 +9,7 @@ PORTNAME=	lianliankan
 DISTVERSION=	2.3beta1
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	llk-linux
+MASTER_SITES=	SF/llk-linux/llk-linux-source/2.3beta1
 DISTNAME=	llk_linux-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

@@ -9,8 +9,7 @@ PORTNAME=	cthumb
 PORTVERSION=	4.2
 PORTREVISION=	1
 CATEGORIES=	graphics www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	cthumb
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A themable web picture album generator

@@ -9,8 +9,7 @@ PORTNAME=	libgphoto2
 PORTVERSION=	2.4.6
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gphoto
+MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A universal digital camera picture control tool

@@ -8,9 +8,9 @@
 PORTNAME=	wesnoth
 PORTVERSION=	1.6.4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.6/${PORTNAME}-${PORTVERSION} \
 		http://www.wesnoth.org/files/
-MASTER_SITE_SUBDIR=	wesnoth
+
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game

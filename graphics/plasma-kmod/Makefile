@@ -9,7 +9,7 @@ PORTNAME=	plasma
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	graphics kld
-MASTER_SITES=	SF/futurebsd
+MASTER_SITES=	SF/futurebsd/futurebsd/${PORTNAME}
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	ports@FreeBSD.org

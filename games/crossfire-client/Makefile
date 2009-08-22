@@ -9,10 +9,11 @@ PORTNAME=	crossfire-client
 PORTVERSION=	1.8.0
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/crossfire/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
+
 		ftp://ftp.real-time.com/pub/games/crossfire/
-MASTER_SITE_SUBDIR=	${PORTNAME:S/-client//}
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-images-1.7.1${EXTRACT_SUFX} \
 		${PORTNAME}-sounds-1.4.0${EXTRACT_SUFX}

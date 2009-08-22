@@ -9,8 +9,7 @@ PORTNAME=	nurbs++
 PORTVERSION=	3.0.11
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libnurbs
+MASTER_SITES=	SF/libnurbs/nurbs%2B%2B/nurbs%2B%2B-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A C++ library for representing curves or surfaces

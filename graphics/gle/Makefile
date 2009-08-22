@@ -9,11 +9,13 @@ PORTNAME=	gle
 PORTVERSION=	3.1.0
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	SF\
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}\
 		http://linas.org/gle/pub/ \
+
 		http://metalab.unc.edu/pub/Linux/libs/X/ \
+
 		ftp://tsx-11.mit.edu/pub/linux/sources/libs/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	ports@dclg.ca
 COMMENT=	A GL Tubing and Extrusion Library

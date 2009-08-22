@@ -8,8 +8,7 @@
 PORTNAME=	scale2x
 PORTVERSION=	2.2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Real-time graphics effect able to increase the size of small bitmaps

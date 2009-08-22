@@ -10,7 +10,7 @@ PORTNAME=	opencv
 PORTVERSION=	1.0.0
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	SF/opencvlibrary
+MASTER_SITES=	SF/${PORTNAME}library/${PORTNAME}-linux/1.0
 
 MAINTAINER=	villa.alberto@gmail.com
 COMMENT=	Open Source Computer Vision library from Intel

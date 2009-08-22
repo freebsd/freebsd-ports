@@ -8,8 +8,7 @@
 PORTNAME=	libiptcdata
 PORTVERSION=	1.0.3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Library for manipulating IPTC metadata stored in image files

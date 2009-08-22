@@ -9,7 +9,7 @@ PORTNAME=	blobby
 PORTVERSION=	0.6a
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/Alpha%206
 DISTNAME=	blobby2-linux-${PORTVERSION}
 
 MAINTAINER=	ganael.laplanche@martymac.com

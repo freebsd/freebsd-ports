@@ -8,8 +8,7 @@ PORTNAME=	corona
 PORTVERSION=	1.0.2
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphics library that supports most image formats

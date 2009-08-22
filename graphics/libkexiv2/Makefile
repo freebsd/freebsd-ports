@@ -8,8 +8,7 @@ PORTNAME=	libkexiv2
 PORTVERSION=	0.1.9
 PORTREVISION=	2
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kipi
+MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A wrapper library to manipulate pictures metadata

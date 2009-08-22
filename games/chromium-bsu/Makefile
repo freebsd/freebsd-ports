@@ -9,7 +9,7 @@ PORTNAME=	chromium-bsu
 PORTVERSION=	0.9.14
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter

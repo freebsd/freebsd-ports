@@ -8,7 +8,7 @@
 PORTNAME=	geeqie
 DISTVERSION=	1.0beta2
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.0beta2
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image viewer forked from GQview

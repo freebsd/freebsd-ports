@@ -8,9 +8,9 @@
 PORTNAME=	mesagl
 PORTVERSION=	5.0.2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/mesa3d/MesaLib/${PORTVERSION} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
-MASTER_SITE_SUBDIR=	mesa3d
+
 PKGNAMESUFFIX=	-mangled
 DISTNAME=	MesaLib-${PORTVERSION}
 

@@ -18,10 +18,10 @@
 #
 
 MESAVERSION=	7.4.4
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
+MASTER_SITES?=	SF/mesa3d/MesaLib/${PORTVERSION}:mesa \
+		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/:mesa,glut,demos
 MASTER_SITE_SUBDIR=	mesa3d
-DISTFILES=	MesaLib-${MESAVERSION}${EXTRACT_SUFX}
+DISTFILES=	MesaLib-${MESAVERSION}${EXTRACT_SUFX}:mesa
 MAINTAINER?=	x11@FreeBSD.org
 
 USE_BZIP2=	yes
@@ -60,7 +60,8 @@ CONFIGURE_ARGS+=	--disable-glu --disable-glut
 CONFIGURE_ARGS+=	--disable-glut
 . endif
 .else
-DISTFILES+=	MesaGLUT-${MESAVERSION}${EXTRACT_SUFX}
+MASTER_SITES+=	SF/mesa3d/MesaGLUT/${MESAVERSION}:glut
+DISTFILES+=	MesaGLUT-${MESAVERSION}${EXTRACT_SUFX}:glut
 .endif
 
 .if ${COMPONENT:Mglw} == ""
@@ -72,7 +73,8 @@ CONFIGURE_ARGS+=	--enable-motif
 .if ${COMPONENT:Mdemos} == ""
 CONFIGURE_ARGS+=	--with-demos=no
 .else
-DISTFILES+=	MesaDemos-${MESAVERSION}${EXTRACT_SUFX}
+MASTER_SITES+=	SF/mesa3d/MesaDemos/${MESAVERSION}:demos
+DISTFILES+=	MesaDemos-${MESAVERSION}${EXTRACT_SUFX}:demos
 CONFIGURE_ARGS+=	--with-demos=demos,xdemos
 .endif
 

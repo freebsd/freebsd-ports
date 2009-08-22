@@ -9,7 +9,7 @@ PORTNAME=	pmars
 PORTVERSION=	0.9.2
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF/corewar
+MASTER_SITES=	SF/corewar/pMARS/${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A portable corewar system with ICWS'94 extensions

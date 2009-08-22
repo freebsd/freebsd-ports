@@ -10,8 +10,7 @@ PORTNAME=	ray++
 PORTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	raypp
+MASTER_SITES=	SF/raypp/raypp/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of C++ classes needed for ray tracing

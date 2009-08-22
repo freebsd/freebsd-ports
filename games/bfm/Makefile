@@ -9,7 +9,7 @@ PORTNAME=	bfm
 PORTVERSION=	0.0.6.2
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	SF/battle4mandicor
+MASTER_SITES=	SF/battle4mandicor/Battle%20for%20Mandicor/${PORTVERSION}.1
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	alepulver@FreeBSD.org

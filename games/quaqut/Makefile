@@ -8,7 +8,7 @@
 PORTNAME=	quaqut
 PORTVERSION=	0.2.0
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20C%20sources/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Queries information from Unreal Tournament 2004 game servers

@@ -8,8 +8,7 @@ PORTNAME=	pfscalibration
 PORTVERSION=	1.3
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	pfstools
+MASTER_SITES=	SF/pfstools/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Photometric calibration of cameras and recovery HDR images from the set of LDR exposures

@@ -9,8 +9,9 @@ PORTNAME=	vavoom
 PORTVERSION=	1.25
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF:sf \
+MASTER_SITES=	SF/${PORTNAME}/vmodels-doom/1.4.2:sf \
 		http://doomtextures.freelanzer.com/:dt
+
 PKGNAMESUFFIX=	-extras
 DISTFILES=	#
 

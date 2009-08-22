@@ -9,7 +9,7 @@ PORTNAME=	xpilot
 PORTVERSION=	4.5.4
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	SF/xpilotgame
+MASTER_SITES=	SF/${PORTNAME}game/${PORTNAME}-4/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Xpilot(client) and xpilots(server)

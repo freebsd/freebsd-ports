@@ -9,8 +9,7 @@ PORTNAME=	mhgui
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	makehuman
+MASTER_SITES=	SF/makehuman/MakeHuman%20Source/MakeHuman_091
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GUI widget library for MakeHuman

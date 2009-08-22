@@ -9,8 +9,7 @@ PORTNAME=	sharpconstruct
 PORTVERSION=	0.11
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sharp3d
+MASTER_SITES=	SF/sharp3d/SharpConstruct/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D modeller for organic shapes

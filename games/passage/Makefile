@@ -8,7 +8,7 @@
 PORTNAME=	passage
 PORTVERSION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF/hcsoftware
+MASTER_SITES=	SF/hcsoftware/Passage/v${PORTVERSION}
 DISTNAME=	Passage_v${PORTVERSION}_UnixSource
 
 MAINTAINER=	amdmi3@FreeBSD.org

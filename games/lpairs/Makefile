@@ -8,7 +8,7 @@
 PORTNAME=	lpairs
 PORTVERSION=	1.0.4
 CATEGORIES=	games
-MASTER_SITES=	SF/lgames
+MASTER_SITES=	SF/lgames/${PORTNAME}/1.0
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Classical memory game

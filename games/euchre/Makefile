@@ -9,7 +9,7 @@ PORTNAME=	euchre
 PORTVERSION=	0.7
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very popular card game with variable skill levels

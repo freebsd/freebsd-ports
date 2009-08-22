@@ -9,8 +9,7 @@ PORTNAME=	lbreakout2
 DISTVERSION=	2.6beta-3
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lgames
+MASTER_SITES=	SF/lgames/${PORTNAME}/2.6
 
 MAINTAINER=	mmendez@gmail.com
 COMMENT=	The polished successor to LBreakout

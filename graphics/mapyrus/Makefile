@@ -9,8 +9,7 @@ PORTNAME=	mapyrus
 PORTVERSION=	0.807
 #PORTREVISION=	0
 CATEGORIES=	graphics print java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A software for creating plots of points, lines, etc

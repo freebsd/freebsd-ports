@@ -8,7 +8,7 @@
 PORTNAME=	wrogue
 PORTVERSION=	0.8.0
 CATEGORIES=	games
-MASTER_SITES=	SF/todoom
+MASTER_SITES=	SF/todoom/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	A gothic science fantasy roguelike game

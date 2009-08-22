@@ -10,7 +10,7 @@ PORTNAME=	libafterimage
 PORTVERSION=	1.18
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/afterstep
+MASTER_SITES=	SF/afterstep/libAfterImage/${PORTVERSION}
 DISTNAME=	libAfterImage-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

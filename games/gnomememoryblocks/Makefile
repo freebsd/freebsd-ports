@@ -9,8 +9,7 @@ PORTNAME=	gnomememoryblocks
 PORTVERSION=	0.2
 PORTREVISION=	6
 CATEGORIES=	games gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnome-memblocks
+MASTER_SITES=	SF/gnome-memblocks/gnome-memblocks/${PORTVERSION}
 DISTNAME=	gnome-memblocks-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

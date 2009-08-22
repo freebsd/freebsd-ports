@@ -8,7 +8,7 @@
 PORTNAME=	prboom
 PORTVERSION=	2.5.0
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer-capable and modified version of ID's classic DOOM game
