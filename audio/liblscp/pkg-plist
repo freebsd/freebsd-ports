@@ -5,7 +5,7 @@ include/lscp/client.h
 include/lscp/device.h
 include/lscp/event.h
 @dirrm include/lscp
-lib/liblscp.so.5
+lib/liblscp.so.6
 lib/liblscp.so
 lib/liblscp.la
 lib/liblscp.a
