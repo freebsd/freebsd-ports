@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	TestU01
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	math
 MASTER_SITES=	http://www.iro.umontreal.ca/~simardr/testu01/:0 \
 		http://www.iro.umontreal.ca/~lecuyer/myftp/papers/:1
