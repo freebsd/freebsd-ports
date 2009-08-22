@@ -9,7 +9,7 @@ PORTNAME=	aqualung
 DISTVERSION=	0.9beta10
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9beta10
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Music player with rich features

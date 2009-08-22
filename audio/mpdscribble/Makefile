@@ -8,7 +8,7 @@
 PORTNAME=	mpdscribble
 PORTVERSION=	0.18
 CATEGORIES=	audio
-MASTER_SITES=	SF/musicpd
+MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kimelto@gmail.com
 COMMENT=	Musicpd last.fm client

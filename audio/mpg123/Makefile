@@ -8,7 +8,7 @@
 PORTNAME=	mpg123
 PORTVERSION=	1.9.0
 CATEGORIES=	audio ipv6
-MASTER_SITES=	SFP/mpg123/mpg123/${PORTVERSION} \
+MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
 
 MAINTAINER=	novel@FreeBSD.org

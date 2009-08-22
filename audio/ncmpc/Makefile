@@ -9,7 +9,7 @@ PORTNAME=	ncmpc
 PORTVERSION=	0.14
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/musicpd
+MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	Ncurses client for the musicpd

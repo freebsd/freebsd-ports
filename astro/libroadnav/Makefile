@@ -10,8 +10,7 @@ PORTNAME=	libroadnav
 PORTVERSION=	0.19
 PORTREVISION=	1
 CATEGORIES=	astro geography
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=roadnav
+MASTER_SITES=	SF/roadnav/LibRoadnav/${PORTVERSION}
 
 MAINTAINER=	bahamasfranks@gmail.com
 COMMENT=	Helper library for Roadnav: A 3D GPS Mapping program

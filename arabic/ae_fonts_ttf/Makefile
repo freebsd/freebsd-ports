@@ -9,8 +9,7 @@ PORTNAME=		ae_fonts1_ttf
 PORTVERSION=		1.1
 PORTREVISION=	2
 CATEGORIES=		arabic x11-fonts
-MASTER_SITES=		SF
-MASTER_SITE_SUBDIR=	arabeyes
+MASTER_SITES=		SF/arabeyes/Fonts/ae_fonts
 DISTNAME=		ae_fonts1_ttf_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

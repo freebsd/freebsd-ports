@@ -9,7 +9,7 @@ PORTNAME=	stellarium
 PORTVERSION=	0.10.2
 PORTREVISION=	1
 CATEGORIES=	astro
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A 3D photo-realistic sky renderer

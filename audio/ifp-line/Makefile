@@ -9,8 +9,7 @@
 PORTNAME=	ifp-line
 PORTVERSION=	0.2.4.6
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ifp-driver
+MASTER_SITES=	SF/ifp-driver/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Command line interface to iRiver music players

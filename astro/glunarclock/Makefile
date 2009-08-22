@@ -10,8 +10,7 @@ PORTNAME=	glunarclock
 PORTVERSION=	0.32.4
 PORTREVISION=	8
 CATEGORIES=	astro gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME applet that displays the current phase of the Moon

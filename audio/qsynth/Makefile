@@ -9,8 +9,7 @@ PORTNAME=	qsynth
 DISTVERSION=	0.3.2
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	qsynth
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	lazyklimm@gmail.com
 COMMENT=	Qt fluidsynth front-end application

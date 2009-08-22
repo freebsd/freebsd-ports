@@ -9,7 +9,7 @@ PORTNAME=	tclgeomap
 PORTVERSION=	2.11.5
 PORTREVISION=	1
 CATEGORIES=	astro tcl
-MASTER_SITES=	SF/tkgeomap
+MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read, manipulate and display geo data

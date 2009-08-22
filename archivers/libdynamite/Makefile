@@ -8,8 +8,7 @@
 PORTNAME=	libdynamite
 PORTVERSION=	0.1.1
 CATEGORIES=	archivers
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	synce
+MASTER_SITES=	SF/synce/Dynamite/${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Decompress data compressed with PKWARE Data Compression Library

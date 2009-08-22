@@ -11,8 +11,8 @@ PORTVERSION=	0.3.0
 PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.midimountain.com/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		SF/${PORTNAME}/MidiMountain-linux/Version%20${PORTVERSION}		
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI sequencer

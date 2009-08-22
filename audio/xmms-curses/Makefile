@@ -9,7 +9,7 @@ PORTNAME=	xmms-curses
 PORTVERSION=	0.2.2
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	A ncurses program for (remote) controlling multimedia/xmms

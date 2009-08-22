@@ -9,8 +9,7 @@ PORTNAME=	jack-smf-utils
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jack-smf-utils
+MASTER_SITES=	SF
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Standard MIDI File file player and recorder for JACK MIDI

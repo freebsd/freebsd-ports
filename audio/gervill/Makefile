@@ -8,7 +8,7 @@
 PORTNAME=	gervill
 PORTVERSION=	1.0
 CATEGORIES=	audio java
-MASTER_SITES=	SF/rasmusdsp
+MASTER_SITES=	SF/rasmusdsp/${PORTNAME}/Gervill%20${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A generic sound synthesizer for Java

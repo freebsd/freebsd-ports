@@ -7,8 +7,7 @@
 PORTNAME=	accrete
 PORTVERSION=	1.0
 CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	Accrete is a physical simulation of solar system planet formation

@@ -9,7 +9,7 @@ PORTNAME=	extace
 PORTVERSION=	1.9.9
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/eXtace/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Audio Visualization plugin for the X Window System

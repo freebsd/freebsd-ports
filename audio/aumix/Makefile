@@ -9,10 +9,11 @@ PORTNAME=	aumix
 PORTVERSION=	2.8
 PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://jpj.net/~trevor/aumix/ \
+
 		http://jpj.net/~trevor/aumix/old/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	unix4all@gulic.org
 COMMENT=	Audio mixer for X11, terminal, or command line

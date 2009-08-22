@@ -10,7 +10,7 @@ PORTNAME=		musicbox-tag-editor
 PORTVERSION=		0.2.3
 PORTREVISION=	11
 CATEGORIES=		audio
-MASTER_SITES=		SF/musicbox
+MASTER_SITES=		SF/musicbox/musicbox/${PORTVERSION}
 DISTNAME=		musicbox-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org

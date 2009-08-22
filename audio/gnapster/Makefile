@@ -9,7 +9,7 @@ PORTNAME=	gnapster
 PORTVERSION=	1.5.0
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	SF/gnapster
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME client for the online mp3 community called napster

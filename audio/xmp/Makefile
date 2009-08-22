@@ -8,8 +8,7 @@
 PORTNAME=	xmp
 PORTVERSION=	2.5.1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A player for many different Amiga and PC module formats

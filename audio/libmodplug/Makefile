@@ -8,8 +8,7 @@
 PORTNAME=	libmodplug
 PORTVERSION=	0.8.7
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	modplug-xmms
+MASTER_SITES=	SF/modplug-xmms/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries

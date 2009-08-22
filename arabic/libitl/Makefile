@@ -8,8 +8,7 @@
 PORTNAME=	libitl
 PORTVERSION=	0.6.3
 CATEGORIES=	arabic
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	arabeyes
+MASTER_SITES=	SF/arabeyes/ITL%20Library%20%28${PORTNAME}%29/lib-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An API abstraction to common Islamic calculations

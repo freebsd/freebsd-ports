@@ -9,7 +9,7 @@ PORTNAME=	mumble
 PORTVERSION=	1.1.7
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
 MAINTAINER=	marius@nuenneri.ch
 COMMENT=	A voice chat software primarily intended for use while gaming

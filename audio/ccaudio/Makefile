@@ -8,8 +8,7 @@
 PORTNAME=	ccaudio
 PORTVERSION=	1.2.0
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnutelephony
+MASTER_SITES=	SF/gnutelephony/production/1.2.16
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files

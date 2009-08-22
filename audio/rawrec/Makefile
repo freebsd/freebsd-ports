@@ -9,11 +9,8 @@
 PORTNAME=	rawrec
 PORTVERSION=	0.9.991
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE:S/$/:sun/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
-MASTER_SITE_SUBDIR=	apps/sound/recorders/:sun \
-		${PORTNAME}/:sf
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sun,sf
+MASTER_SITES=	${MASTER_SITE_SUNSITE:S/%SUBDIR%/apps\/sound\/recorders/} \
+		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to record and playback raw audio data

@@ -8,7 +8,7 @@
 PORTNAME=	libaiff
 PORTVERSION=	5.0
 CATEGORIES=	audio
-MASTER_SITES=	SF/aifftools
+MASTER_SITES=	SF/aifftools/${PORTNAME}/LibAiff%20${PORTVERSION}
 DISTNAME=	libaiff-5.0-release
 
 MAINTAINER=	gahr@FreeBSD.org
