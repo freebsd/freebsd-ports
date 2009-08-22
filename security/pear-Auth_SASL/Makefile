@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth_SASL
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	security www pear
 
 MAINTAINER=	amistry@am-productions.biz
@@ -15,9 +15,10 @@ COMMENT=	PEAR abstraction of various SASL mechanism responses
 BUILD_DEPENDS=	${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Auth
-FILES=		SASL.php SASL/Anonymous.php SASL/Common.php SASL/CramMD5.php \
-		SASL/DigestMD5.php SASL/Login.php SASL/Plain.php
+FILES=		Auth/SASL.php Auth/SASL/Anonymous.php \
+		Auth/SASL/Common.php Auth/SASL/CramMD5.php \
+		Auth/SASL/External.php Auth/SASL/DigestMD5.php \
+		Auth/SASL/Login.php Auth/SASL/Plain.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
