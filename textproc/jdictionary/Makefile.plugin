@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jdictionary
 EXTRACT_SUFX=	#
 
 MAINTAINER?=	janos.mohacsi@bsd.hu

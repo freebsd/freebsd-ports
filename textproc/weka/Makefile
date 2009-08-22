@@ -8,7 +8,7 @@
 PORTNAME=	weka
 DISTVERSION=	3-4-14
 CATEGORIES=	textproc java
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3-4/${PORTVERSION}
 
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Data Mining Software in Java

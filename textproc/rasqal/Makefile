@@ -10,9 +10,9 @@ PORTNAME=	redland
 PORTVERSION=	1.0.7
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
 		http://librdf.org/dist/source/
-MASTER_SITE_SUBDIR=	librdf
+
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	A high-level interface for RDF

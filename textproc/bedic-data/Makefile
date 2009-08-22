@@ -8,8 +8,7 @@
 PORTNAME=	bedic-data
 PORTVERSION=	0.1.b1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=kbedic
+MASTER_SITES=	SF/kbedic/Dictionary%20Data/1.0
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	todorov@freebsd-bg.org

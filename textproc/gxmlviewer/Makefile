@@ -10,8 +10,7 @@ PORTNAME=	gxmlviewer
 PORTVERSION=	1.3.3
 PORTREVISION=	9
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xmlviewer with a netscape plugin, and now a bonobo control as well

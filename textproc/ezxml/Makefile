@@ -8,9 +8,9 @@
 PORTNAME=	ezxml
 PORTVERSION=	0.8.6
 CATEGORIES=	textproc devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/ezXML/ezXML%20${PORTVERSION} \
 		http://www.yazzy.org/ports/ezxml/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use C library for parsing XML documents

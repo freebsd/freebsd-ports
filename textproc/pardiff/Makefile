@@ -8,8 +8,7 @@
 PORTNAME=	pardiff
 PORTVERSION=	0.9.4
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pardiff
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallelizing diff Filter, converts diff output to paralleled format

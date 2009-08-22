@@ -9,9 +9,9 @@ PORTNAME=	estraier
 PORTVERSION=	1.2.29
 PORTREVISION=	4
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://estraier.sourceforge.net/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A full-text search system for personal use

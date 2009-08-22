@@ -9,7 +9,7 @@ PORTNAME=	libwps
 PORTVERSION=	0.1.2
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A Microsoft file word processor format import filter library

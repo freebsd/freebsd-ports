@@ -8,8 +8,7 @@
 PORTNAME=	wbxml2
 PORTVERSION=	0.10.6
 CATEGORIES=	textproc devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	libwbxml
+MASTER_SITES=	SF/libwbxml/libwbxml/${PORTVERSION}
 DISTNAME=	libwbxml-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

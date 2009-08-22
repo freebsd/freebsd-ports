@@ -8,8 +8,7 @@ PORTNAME=	sdcv
 PORTVERSION=	0.4.2
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A text-based utility for work with dictionaries in StarDict's format

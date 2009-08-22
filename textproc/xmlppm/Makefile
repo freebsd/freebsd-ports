@@ -9,9 +9,9 @@
 PORTNAME=	xmlppm
 PORTVERSION=	0.98.3
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 		http://www.cs.cornell.edu/People/jcheney/xmlppm/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	hsmtkk@gmail.com
 COMMENT=	XML-Conscious PPM Compression

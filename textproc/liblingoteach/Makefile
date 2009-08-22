@@ -9,8 +9,7 @@ PORTNAME=	liblingoteach
 PORTVERSION=	0.2.1
 PORTREVISION=	3
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lingoteach
+MASTER_SITES=	SF/lingoteach/OldFiles
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A library for parsing lesson files based on the LingoTeach DTD

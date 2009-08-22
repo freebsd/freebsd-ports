@@ -9,7 +9,7 @@ PORTNAME=	libwpd
 PORTVERSION=	0.8.14
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents

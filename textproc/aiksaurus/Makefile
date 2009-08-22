@@ -9,8 +9,7 @@ PORTNAME=	aiksaurus
 PORTVERSION=	1.2.1
 PORTREVISION?=	2
 CATEGORIES?=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	aiksaurus
+MASTER_SITES=	SF
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A set of libraries and applications which provide a thesaurus

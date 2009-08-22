@@ -8,8 +8,7 @@
 PORTNAME=	rman
 PORTVERSION=	3.2
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	polyglotman
+MASTER_SITES=	SF/polyglotman/polyglotman/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reverse compile man pages from formatted form

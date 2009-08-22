@@ -9,11 +9,9 @@ PORTNAME=	XML-XSH
 PORTVERSION=	1.8.2
 PORTREVISION=	1
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/}
-MASTER_SITE_SUBDIR=	XML/:cpan xsh/:sourceforge
+MASTER_SITES=	CPAN/XML \
+		SF/xsh/xsh/${PORTNAME}-${PORTVERSION}%20%28linux_unix%29
 PKGNAMEPREFIX=	p5-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:cpan,sourceforge
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This is xsh - an XML Editing Shell

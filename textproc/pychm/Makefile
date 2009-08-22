@@ -8,7 +8,7 @@
 PORTNAME=	pychm
 PORTVERSION=	0.8.4
 CATEGORIES=	textproc python
-MASTER_SITES=	SF/gnochm
+MASTER_SITES=	SF/gnochm/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	radek@raadradd.com
 COMMENT=	Bindings for CHMLIB library

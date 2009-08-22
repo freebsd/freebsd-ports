@@ -9,9 +9,7 @@ PORTNAME=	wv
 PORTVERSION=	1.2.5
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.abisource.com/downloads/wv/${PORTVERSION}/ \
-		SF
-MASTER_SITE_SUBDIR=	wvware
+MASTER_SITES=	http://www.abisource.com/downloads/wv/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library and executables to access Microsoft Word files

@@ -8,7 +8,7 @@
 PORTNAME=	lttoolbox
 PORTVERSION=	3.1.1
 CATEGORIES=	textproc
-MASTER_SITES=	SF/apertium
+MASTER_SITES=	SF/apertium/${PORTNAME}/3.1
 
 MAINTAINER=	freebsd@levsha.org.ua
 COMMENT=	A tool for lexical, morphological analysis and generation of words

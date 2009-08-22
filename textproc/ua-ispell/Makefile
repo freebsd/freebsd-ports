@@ -9,8 +9,7 @@ PORTNAME=	ispell-uk
 PORTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=     textproc ukrainian
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ispell-uk
+MASTER_SITES=   SF/${PORTNAME}/OldFiles
 
 MAINTAINER=     mi@aldan.algebra.com
 COMMENT=	Ukrainian (KOI8-U) dictionary for ISPELL

@@ -9,9 +9,9 @@
 PORTNAME=	raptor
 PORTVERSION=	1.4.18
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
 		http://download.librdf.org/source/
-MASTER_SITE_SUBDIR=	librdf
+
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	RDF Parser Toolkit for Redland

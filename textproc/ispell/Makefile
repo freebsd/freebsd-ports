@@ -154,15 +154,14 @@ EXTRA_DICT+=	${FIDICTFILE}:fi ${FIAFFIXFILE}:fi
 .endif
 .if defined(ISPELL_PL)
 PLDISTFILE=	ispell-pl-20021127.tar.gz
-MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:pl/}
-MASTER_SITE_SUBDIR+=	ispell-pl/:pl
+MASTER_SITES+=	SF/ispell-pl/ispell-pl/20021127:pl
 MASKBITS?=	64
 EXTRA_DICT+=	${PLDISTFILE}:pl
 EXTRACT_ONLY+=	${PLDISTFILE}
 BUILDHASH=	${WRKDIR}/${PLDISTFILE:S=.tar.gz==}/zbuduj.slownik.sh
 .endif
 .if defined(ISPELL_BG)
-MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:bg/}
+MASTER_SITES+=	SF/bgoffice/Ispell%20BG/2.1:bg
 MASTER_SITE_SUBDIR+=	bgoffice/:bg
 BGDISTFILE=	ispell-bg-2.1.tar.gz
 MASKBITS?=	64
