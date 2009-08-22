@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samesame
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://samesame.kruijff.org/ \
 		${MASTER_SITE_LOCAL}
