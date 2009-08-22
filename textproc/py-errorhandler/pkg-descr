@@ -1,0 +1,11 @@
+A logging framework handler that tracks when messages above a certain
+level have been logged.
+
+This is a handler for the python standard logging framework that can
+be used to tell whether messages have been logged at or above a certain
+level.
+
+This can be useful when wanting to ensure that no errors have been
+logged before committing data back to a database.
+
+WWW: http://pypi.python.org/pypi/errorhandler/1.0.0
