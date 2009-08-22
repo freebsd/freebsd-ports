@@ -6,6 +6,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
@@ -37,9 +38,11 @@ OPTIONS=	AVFORMAT	"Avformat module" on \
 		GTK2	"GTK2 module" on \
 		JACKRACK	"JACK Rack module" on \
 		KINO	"Kino module" on \
+		MMX	"MMX support (might cause problems on x86-64)" off \
 		QIMAGE	"Qimage module" on \
 		RESAMPLE	"Secret Rabbit Code module" on \
 		SOX	"Sound eXchange module" on \
+		SSE	"SSE support (requires MMX, caution on x86-64)" off \
 		VORBIS	"Vorbis module" on
 
 .include <bsd.port.pre.mk>
@@ -101,6 +104,12 @@ CONFIGURE+ARGS+=	--disable-kino
 PLIST_SUB+=	KINO="@comment "
 .endif
 
+.ifdef(WITH_MMX)
+CONFIGURE_ARGS+=	--enable-mmx
+.else
+CONFIGURE_ARGS+=	--disable-mmx
+.endif
+
 .ifdef(WITH_QIMAGE)
 CONFIGURE_ARGS+=	--enable-qimage \
 			--qimage-includedir="${QT_INCDIR}" \
@@ -130,6 +139,12 @@ CONFIGURE_ARGS+=	--disable-sox
 PLIST_SUB+=	SOX="@comment "
 .endif
 
+.ifdef(WITH_SSE)
+CONFIGURE_ARGS+=	--enable-sse
+.else
+CONFIGURE_ARGS+=	--disable-sse
+.endif
+
 .ifdef(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--enable-vorbis
@@ -147,7 +162,6 @@ pre-configure:
 		${WRKSRC}/src/framework/Makefile \
 		${WRKSRC}/src/melt/Makefile \
 		${WRKSRC}/src/modules/*/Makefile
-	# required by FreeBSD 6
 	@${REINPLACE_CMD} -E -e 's|^(LDFLAGS.*)|\1 -lthr|' \
 	    ${WRKSRC}/src/framework/Makefile \
 	    ${WRKSRC}/src/modules/avformat/Makefile \
