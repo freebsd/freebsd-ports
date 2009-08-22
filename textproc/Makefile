@@ -915,6 +915,7 @@
     SUBDIR += py-dsv
     SUBDIR += py-empy
     SUBDIR += py-enchant
+    SUBDIR += py-errorhandler
     SUBDIR += py-excelerator
     SUBDIR += py-expat
     SUBDIR += py-feedparser
