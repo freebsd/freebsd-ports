@@ -17,9 +17,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/jcecrypto.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/jcecrypto.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/jcecrypto.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/pbkdf2.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/pbkdf2.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/pbkdf2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/pycrypto.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/pycrypto.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/pycrypto.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/exceptions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/exceptions.pyo
