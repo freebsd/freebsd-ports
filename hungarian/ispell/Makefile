@@ -9,8 +9,7 @@ PORTNAME=	ispell
 PORTVERSION=	1.4
 CATEGORIES=	hungarian textproc
 #MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	magyarispell
+MASTER_SITES=	SF/magyar${PORTNAME}/Magyar%20Ispell/${PORTVERSION}
 DISTNAME=	magyarispell-${PORTVERSION:S/.R.1/-RC1/}
 
 MAINTAINER=	janos.mohacsi@bsd.hu

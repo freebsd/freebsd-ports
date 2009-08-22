@@ -9,8 +9,7 @@ PORTNAME=	aterm
 PORTVERSION=	0.4.2
 PORTREVISION=	5
 CATEGORIES+=	japanese x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 PATCH_SITES=	http://www.jaist.ac.jp/~amatsus/linux/src/xfree86/aterm/
 PATCHFILES=	${DISTNAME}-xim.patch.gz \

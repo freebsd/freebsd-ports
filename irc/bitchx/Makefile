@@ -9,7 +9,7 @@ PORTNAME=	BitchX
 PORTVERSION=	1.1.0.1
 PORTREVISION=	4
 CATEGORIES+=	irc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/bitchx/ircii-pana/ircii-pana-1.1
 DISTNAME=	ircii-pana-1.1-final
 
 MAINTAINER?=	beech@FreeBSD.org

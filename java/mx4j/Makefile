@@ -9,7 +9,7 @@ PORTNAME=	mx4j
 PORTVERSION=	3.0.2
 PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/MX4J%20Binary/${PORTVERSION}
 
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Open Source implementation of the Java Management Extensions (JMX)

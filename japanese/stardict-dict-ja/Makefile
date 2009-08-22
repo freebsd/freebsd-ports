@@ -8,8 +8,7 @@ PORTNAME=	stardict2-dict-ja
 PORTVERSION=	2.4.2
 PORTREVISION=	7
 CATEGORIES=	japanese textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	stardict
+MASTER_SITES=	SF/stardict/stardict-dictionaries-ja/${PORTVERSION}
 DISTFILES=	stardict-jmdict-en-ja-${PORTVERSION}.tar.bz2 \
 		stardict-jmdict-ja-en-${PORTVERSION}.tar.bz2
 DIST_SUBDIR=	stardict

@@ -8,7 +8,7 @@
 PORTNAME=	znc-extra
 PORTVERSION=	0.070
 CATEGORIES=	irc
-MASTER_SITES=	SF/znc
+MASTER_SITES=	SF/znc/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	terry@sucked-in.com
 COMMENT=	ZNC-Extra package for ZNC Bouner

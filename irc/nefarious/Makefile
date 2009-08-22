@@ -8,8 +8,7 @@
 PORTNAME=	Nefarious
 PORTVERSION=	1.2.0
 CATEGORIES=	irc
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	evilnet
+MASTER_SITES=	SF/evilnet/${PORTNAME}%20IRCu/${PORTVERSION}
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	IRC server used by evilnet based off of Undernet\'s ircu

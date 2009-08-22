@@ -8,9 +8,9 @@
 PORTNAME=	ircd
 PORTVERSION=	7.2.2
 CATEGORIES=	irc russian
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru-${PORTVERSION} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	ircd-hybrid-ru
+
 PKGNAMESUFFIX=	-hybrid-ru
 DISTNAME=	ircd-hybrid-ru-${PORTVERSION}
 

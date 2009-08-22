@@ -9,9 +9,9 @@ PORTNAME=	scim-uim
 PORTVERSION=	0.2.0
 PORTREVISION=	2
 CATEGORIES=	japanese
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
 		http://freedesktop.org/~suzhe/sources/
-MASTER_SITE_SUBDIR=scim
+
 
 MAINTAINER=	s_yanagita@ybb.ne.jp
 COMMENT=	SCIM IMEngine module using UIM input method library

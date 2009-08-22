@@ -8,7 +8,7 @@
 PORTNAME=	anope
 PORTVERSION=	1.8.2
 CATEGORIES=	irc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/Anope%20${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A set of IRC services for IRC networks

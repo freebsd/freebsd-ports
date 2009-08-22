@@ -7,7 +7,7 @@
 PORTNAME=	springframework
 PORTVERSION=	2.5.5
 CATEGORIES=	java devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-2/${PORTVERSION}
 DISTNAME=	spring-framework-${PORTVERSION}-with-dependencies
 
 MAINTAINER=	gerrit.beine@gmx.de

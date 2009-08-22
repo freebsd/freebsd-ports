@@ -9,7 +9,7 @@ PORTNAME=	gauche
 PORTVERSION=	0.8.13	# Keep databases/gauche-gdbm in sync with this
 PORTREVISION=	2
 CATEGORIES=	lang scheme
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Gauche/${PORTVERSION}
 DISTNAME=	Gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 

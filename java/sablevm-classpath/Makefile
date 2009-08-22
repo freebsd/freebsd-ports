@@ -10,8 +10,7 @@ PORTNAME=	sablevm-classpath
 PORTVERSION=	1.13
 PORTREVISION=	6
 CATEGORIES=	java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sablevm
+MASTER_SITES=	SF/sablevm/sablevm/${PORTVERSION}
 
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Classpath of SableVM

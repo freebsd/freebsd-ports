@@ -10,7 +10,6 @@ PORTVERSION=	0.90.0
 PORTREVISION=	1
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	librep
 
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	An Emacs Lisp like runtime library
