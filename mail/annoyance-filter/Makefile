@@ -8,9 +8,9 @@
 PORTNAME=	annoyance-filter
 PORTVERSION=	1.0d
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/annoyancefilter/annoyancefilter/${PORTVERSION} \
 		http://www.fourmilab.ch/annoyance-filter/
-MASTER_SITE_SUBDIR=	${PORTNAME:S/-//}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive Bayesian Junk Mail Filter

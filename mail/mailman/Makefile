@@ -8,8 +8,9 @@
 PORTNAME=	mailman
 DISTVERSION=	2.1.12
 CATEGORIES?=	mail
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
 		http://www.list.org/
+
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 

@@ -10,7 +10,7 @@ PORTNAME=	kaffeine-mozilla
 PORTVERSION=	0.2
 PORTREVISION=	10
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/kaffeine
+MASTER_SITES=	SF/kaffeine/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kaffeine Mozilla plugin

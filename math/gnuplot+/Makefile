@@ -9,10 +9,11 @@ PORTNAME=	gnuplot371+
 PORTVERSION=	1.2.0
 PORTREVISION=	6
 CATEGORIES=	math japanese graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/gnuplot/gnuplot/3.7.1 \
 		http://www.yama-ga.com/gnuplot/:patch \
+
 		http://www.h2.dion.ne.jp/~yamaga/gnuplot/:patch
-MASTER_SITE_SUBDIR=	gnuplot
+
 DISTFILES=	gnuplot-3.7.1.tar.gz \
 		gnuplot3.7.1+${PORTVERSION}.patch.tar.gz:patch
 EXTRACT_ONLY=	gnuplot-3.7.1.tar.gz

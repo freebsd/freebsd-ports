@@ -9,7 +9,7 @@ PORTNAME=	iriverter
 PORTVERSION=	0.16
 PORTREVISION=	5
 CATEGORIES=	multimedia java
-MASTER_SITES=	SOURCEFORGE
+MASTER_SITES=	SF
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Cross-platform frontend to mencoder

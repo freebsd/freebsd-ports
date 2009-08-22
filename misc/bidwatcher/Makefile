@@ -10,8 +10,7 @@ PORTNAME=	bidwatcher
 PORTVERSION=	1.3.17
 PORTREVISION?=	8
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 #PATCH_SITES=	http://sourceforge.net/tracker/download.php?group_id=2973&atid=302973&file_id=112451&aid=1085302
 #PATCHFILES=	bidwatcher-1.3.16-SSL_with_libcurl.02.patch

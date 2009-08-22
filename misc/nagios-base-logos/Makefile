@@ -8,8 +8,7 @@
 PORTNAME=	nagios-base-logos
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=nagios
+MASTER_SITES=	SF/nagios/OldFiles
 DISTNAME=	imagepak-base
 
 MAINTAINER=	demon@FreeBSD.org

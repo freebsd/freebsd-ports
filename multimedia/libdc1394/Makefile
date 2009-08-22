@@ -8,7 +8,7 @@
 PORTNAME=	libdc1394
 PORTVERSION=	2.1.1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	1394-based DC Control Library

@@ -8,7 +8,7 @@
 PORTNAME=	calc
 PORTVERSION=	2.12.4.0
 CATEGORIES=	math
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.12.4
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Arbitrary precision calculator

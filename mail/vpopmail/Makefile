@@ -8,8 +8,7 @@
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.27
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Easy virtual domain and authentication package for use with qmail

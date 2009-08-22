@@ -8,8 +8,7 @@
 PORTNAME=	libxspf
 PORTVERSION=	1.2.0
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=libspiff
+MASTER_SITES=	SF/libspiff/Sources/${PORTVERSION}
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	An XSPF parsing library

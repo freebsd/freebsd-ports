@@ -8,7 +8,7 @@
 PORTNAME=	smplayer-themes
 PORTVERSION=	0.1.19
 CATEGORIES=	multimedia audio kde
-MASTER_SITES=	SF/smplayer
+MASTER_SITES=	SF/smplayer/SMPlayer-themes/${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Themes for smplayer

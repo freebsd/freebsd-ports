@@ -12,8 +12,7 @@ CATEGORIES=	mail
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
 #		http://www.lerctr.org/~ler/
 # This is for release versions, leave it in please:
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	courier
+MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Console based mail client with POP3/IMAP/SMAP support

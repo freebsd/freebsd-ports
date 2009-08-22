@@ -9,7 +9,7 @@ PORTNAME=	ump
 PORTVERSION=	0.8.6
 PORTREVISION=	4
 CATEGORIES=	math
-MASTER_SITES=	SF/u-m-p
+MASTER_SITES=	SF/u-m-p/u-m-p/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A graphical, easy to use math program

@@ -10,7 +10,8 @@ PORTVERSION=	2.1.r3
 PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/qsheff/ \
-		SF/qsheff
+		SF/qsheff/qsheff/II-2.1-r3
+
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 
 MAINTAINER=	ozkan@enderunix.org

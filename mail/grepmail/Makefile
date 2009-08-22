@@ -8,8 +8,7 @@
 PORTNAME=	grepmail
 PORTVERSION=	5.3033
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search mailboxes for a given regexp and display matching emails

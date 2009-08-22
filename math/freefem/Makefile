@@ -9,7 +9,7 @@ PORTNAME=	freefem
 PORTVERSION=	3.5.8
 PORTREVISION=	1
 CATEGORIES=	math science
-MASTER_SITES=	SF/kfem
+MASTER_SITES=	SF/kfem/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A language for the Finite Element Method

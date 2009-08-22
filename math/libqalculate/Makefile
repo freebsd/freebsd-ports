@@ -9,7 +9,7 @@ PORTNAME=	libqalculate
 PORTVERSION=	0.9.6
 PORTREVISION=	5
 CATEGORIES=	math
-MASTER_SITES=	SF/qalculate
+MASTER_SITES=	SF/qalculate/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A a multi-purpose desktop calculator (backend library)

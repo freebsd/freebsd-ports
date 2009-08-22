@@ -9,7 +9,7 @@
 PORTNAME=	tvmet
 PORTVERSION=	1.7.2
 CATEGORIES=	math
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Tar.Gz_Bz2%20Archive/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny Vector and Matrix template library

@@ -8,8 +8,7 @@
 PORTNAME=	policyd2
 PORTVERSION=	2.0.7
 CATEGORIES=	mail
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	policyd
+MASTER_SITES=	SF/policyd/2.0.x%20%28Stable%29/v${PORTVERSION}
 DISTNAME=	cluebringer-${PORTVERSION}
 
 MAINTAINER?=	chifeng@gmail.com

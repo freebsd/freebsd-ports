@@ -9,8 +9,7 @@ PORTNAME=	gxine
 PORTVERSION=	0.5.904
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	xine
+MASTER_SITES=	SF/xine/${PORTNAME}%20%28GTK%20front%20end%29/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	An alternative GUI for the Xine media player

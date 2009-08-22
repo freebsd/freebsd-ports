@@ -10,8 +10,7 @@ PORTNAME=	freeguide
 PORTVERSION=	0.10.5
 PORTREVISION=	1
 CATEGORIES=	misc java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freeguide-tv
+MASTER_SITES=	SF/${PORTNAME}-tv/${PORTNAME}-source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive TV guide which will create personalized TV listings

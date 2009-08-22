@@ -9,8 +9,7 @@ PORTNAME=	qmailadmin
 PORTVERSION=	1.2.13
 PORTEPOCH=	1
 CATEGORIES=	mail www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	ismail.yenigul@endersys.com.tr
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail

@@ -8,9 +8,9 @@
 PORTNAME=	lapack++
 PORTVERSION=	2.5.3
 CATEGORIES=	math
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=   SF/lapackpp/lapackpp/${PORTVERSION} \
 		http://math.nist.gov/lapack++/:doc
-MASTER_SITE_SUBDIR=	lapackpp
+
 DISTNAME=	lapackpp-${PORTVERSION}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} lapack++.ps.gz:doc lapackpp1_1.ps.gz:doc \

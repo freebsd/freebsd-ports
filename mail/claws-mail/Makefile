@@ -9,7 +9,7 @@ PORTNAME=	claws-mail
 PORTVERSION=	3.7.2
 PORTREVISION=	2
 CATEGORIES=	mail news ipv6
-MASTER_SITES=	SF/sylpheed-claws
+MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client

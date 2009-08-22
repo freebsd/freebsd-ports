@@ -9,8 +9,7 @@ PORTNAME=	libmovtar
 PORTVERSION=	0.1.3
 PORTREVISION=	7
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mjpeg
+MASTER_SITES=	SF/mjpeg/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supports reading/writing of MJPEG video in YUV 4:2:2 JPEG

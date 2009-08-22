@@ -9,8 +9,7 @@ PORTNAME=	gwenview-i18n
 PORTVERSION=	1.4.2
 PORTREVISION=	2
 CATEGORIES=	misc kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S/-i18n//}
+MASTER_SITES=	SF/gwenview/gwenview/${PORTVERSION}
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Localized messages and documentation for Gwenview

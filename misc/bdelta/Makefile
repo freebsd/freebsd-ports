@@ -8,8 +8,7 @@
 PORTNAME=	bdelta
 PORTVERSION=	0.1.0
 CATEGORIES=	misc devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	deltup
+MASTER_SITES=	SF/deltup/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An advanced delta creator, patcher, and library

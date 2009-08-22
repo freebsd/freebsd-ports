@@ -9,8 +9,7 @@ PORTNAME=	courier-imap
 PORTVERSION=	4.5.1
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	courier
+MASTER_SITES=	SF/courier/imap/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes

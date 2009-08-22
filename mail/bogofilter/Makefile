@@ -9,7 +9,7 @@ PORTNAME=	bogofilter
 PORTVERSION=	1.2.0
 PORTREVISION?=	2
 CATEGORIES?=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	SF/bogofilter/bogofilter-stable/bogofilter-${PORTVERSION}
 
 MAINTAINER?=	matthias.andree@gmx.de
 COMMENT=	Fast, teachable, learning spam detector

@@ -9,7 +9,7 @@ PORTNAME=	wxMaxima
 PORTVERSION=	0.8.2
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A wxWidgets GUI for the computer algebra system maxima

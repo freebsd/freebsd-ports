@@ -8,8 +8,7 @@
 PORTNAME=	speak_freely
 PORTVERSION=	7.6a
 CATEGORIES=	mbone audio security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
+MASTER_SITES=	SF/speak-freely/speak-freely/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voice communication over data networks

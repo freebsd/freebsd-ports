@@ -9,7 +9,7 @@ PORTNAME=	libmpeg3
 PORTVERSION=	1.8
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/heroines
+MASTER_SITES=	SF/heroines/releases/081108
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced editing and manipulation of MPEG streams

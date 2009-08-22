@@ -8,7 +8,7 @@
 PORTNAME=	gavl
 PORTVERSION=	1.1.1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/gmerlin
+MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A library for handling uncompressed video and audio data

@@ -10,7 +10,7 @@ PORTNAME=	pdfmap
 PORTVERSION=	2.00
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate maps in PDF format and place clickable objects on them

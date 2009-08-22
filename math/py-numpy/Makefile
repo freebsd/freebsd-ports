@@ -11,8 +11,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
-		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
-MASTER_SITE_SUBDIR=	numpy/:source
+		SF/${PORTNAME}/NumPy/${PORTVERSION}:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
 		numpybook.pdf:doc

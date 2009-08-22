@@ -8,7 +8,7 @@
 PORTNAME=	motion
 PORTVERSION=	3.2.11.1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%203.2/${PORTVERSION}
 
 PATCH_SITES=	http://www.lavrsen.dk/twiki/pub/Motion/FreeBSDPatch/
 PATCHFILES=	motion-3.2.11.1.port-freebsd.diff.gz

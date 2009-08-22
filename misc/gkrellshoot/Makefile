@@ -9,8 +9,7 @@ PORTNAME=	gkrellshoot
 PORTVERSION=	0.3.2
 PORTREVISION=	6
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	elitetek@tekrealm.net
 COMMENT=	A screen locking and screen capture plugin for GKrellM

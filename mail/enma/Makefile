@@ -8,7 +8,7 @@
 PORTNAME=	enma
 PORTVERSION=	1.1.0
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/ENMA/${PORTVERSION}
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A sender authentication milter supporting SPF and Sender ID

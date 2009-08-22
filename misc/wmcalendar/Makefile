@@ -9,8 +9,7 @@ PORTNAME=	wmcalendar
 PORTVERSION=	0.5.2
 PORTREVISION=	8
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A dockable calendar with interface to iCalendar based calendars

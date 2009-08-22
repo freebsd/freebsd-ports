@@ -8,7 +8,7 @@
 PORTNAME=	dk-milter
 PORTVERSION=	1.0.2
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/DomainKeys%20Milter/${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail

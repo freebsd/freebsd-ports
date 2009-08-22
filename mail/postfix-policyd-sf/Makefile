@@ -9,8 +9,9 @@ PORTNAME=	policyd
 PORTVERSION=	1.82
 PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/1.x%20%28Old%20Stable%29/v${PORTVERSION} \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
+
 PKGNAMEPREFIX=	postfix-
 PKGNAMESUFFIX=	-sf
 

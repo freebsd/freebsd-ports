@@ -9,8 +9,7 @@ PORTNAME=	gnuplot
 PORTVERSION=	4.2.5
 PORTREVISION=	1
 CATEGORIES=	math graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A command-driven interactive function plotting program

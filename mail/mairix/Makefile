@@ -9,8 +9,7 @@ PORTNAME=	mairix
 PORTVERSION=	0.21
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mairix
+MASTER_SITES=	SF
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Indexing and searching in Maildir, MH or mbox folders
