@@ -11,7 +11,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RUBYFORGE/sqlite-ruby
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the SQLite DB engine version 3
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
