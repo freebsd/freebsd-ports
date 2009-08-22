@@ -8,8 +8,7 @@ PORTNAME=	aterm
 PORTVERSION=	0.4.2
 PORTREVISION=	2
 CATEGORIES=	chinese x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	gugod@gugod.org
 COMMENT=	A color vt102 terminal emulator with transparency support

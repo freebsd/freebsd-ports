@@ -9,8 +9,7 @@ PORTNAME=	scmxx
 PORTVERSION=	0.9.0
 PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Data exchange utility for Siemens mobile phones

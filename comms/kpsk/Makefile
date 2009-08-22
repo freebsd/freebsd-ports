@@ -8,8 +8,7 @@ PORTNAME=	kpsk
 PORTVERSION=	1.0
 PORTREVISION=	7
 CATEGORIES=	comms kde hamradio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kpsk
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/_.tar.bz2%20files
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	A PSK31 digital radio communications application for the KDE

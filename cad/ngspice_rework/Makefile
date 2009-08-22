@@ -8,8 +8,7 @@
 PORTNAME=	ngspice_rework
 PORTVERSION=	18
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ngspice
+MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ng-spice-rework-${PORTVERSION}
 
 MAINTAINER=	amakawa@jp.FreeBSD.org

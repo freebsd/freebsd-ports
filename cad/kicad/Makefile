@@ -15,7 +15,7 @@ CATEGORIES=		cad
 #			ftp://iut-tice.ujf-grenoble.fr/cao/:src		\
 #			ftp://ftp.lis.inpg.fr/uploads/kicad/:src	\
 #			http://iut-tice.ujf-grenoble.fr/cao/:src
-MASTER_SITES=		SF
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}%20src/${PORTVERSION}
 DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}		\
 			${PORTNAME}-library-${LIBVERSION}${EXTRACT_SUFX}	\
 			${PORTNAME}-doc-${LIBVERSION}${EXTRACT_SUFX}

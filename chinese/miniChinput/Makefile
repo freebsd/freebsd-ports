@@ -9,7 +9,7 @@ PORTNAME=	miniChinput
 PORTVERSION=	0.1.9
 PORTREVISION=	3
 CATEGORIES=	chinese
-MASTER_SITES=	SF/minichinput
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/0-1-9
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny version of Chinput

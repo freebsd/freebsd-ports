@@ -8,8 +8,7 @@ PORTNAME=	stardict2-dict-zh_CN
 PORTVERSION=	2.4.2
 PORTREVISION=	8
 CATEGORIES=	chinese textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	stardict
+MASTER_SITES=	SF/stardict/stardict-dictionaries-zh_CN/${PORTVERSION}
 DISTFILES=	stardict-cdict-gb-${PORTVERSION}.tar.bz2 \
 		stardict-cedict-gb-${PORTVERSION}.tar.bz2 \
 		stardict-oxford-gb-${PORTVERSION}.tar.bz2 \

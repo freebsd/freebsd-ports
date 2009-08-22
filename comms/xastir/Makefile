@@ -9,8 +9,7 @@ PORTNAME=	xastir
 PORTVERSION=	1.9.4
 PORTREVISION=	4
 CATEGORIES=	comms hamradio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xastir
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	X Amateur Station Tracking and Information Reporting

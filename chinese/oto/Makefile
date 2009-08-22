@@ -8,8 +8,7 @@
 PORTNAME=	oto
 PORTVERSION=	0.5
 CATEGORIES=	chinese print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show you font info and add new 'name' and 'cmap' tables

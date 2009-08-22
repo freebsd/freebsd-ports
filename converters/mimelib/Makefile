@@ -9,8 +9,7 @@ PORTNAME=	mimelib
 PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	converters
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	icqmail
+MASTER_SITES=	SF/icqmail/libs/${PORTVERSION}
 
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	C++ class library for manipulating messages in MIME format

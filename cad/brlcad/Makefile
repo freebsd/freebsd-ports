@@ -9,7 +9,7 @@ PORTNAME=	brlcad
 PORTVERSION=	7.12.6
 PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/BRL-CAD%20Source/${PORTVERSION}
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory

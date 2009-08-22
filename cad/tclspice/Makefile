@@ -9,8 +9,7 @@ PORTNAME=	tclspice
 PORTVERSION=	0.2.18
 PORTREVISION=	4
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tclspice
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Improved version on SPICE3 suite with TCL scripting features

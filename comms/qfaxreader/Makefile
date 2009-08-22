@@ -11,8 +11,7 @@ PORTNAME=	qfaxreader
 DISTVERSION=	0.3.1
 PORTREVISION=	3
 CATEGORIES=	comms graphics print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Mono/color multipage tiff/fax files visualisation/printing utility

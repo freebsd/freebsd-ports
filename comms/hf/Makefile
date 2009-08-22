@@ -9,8 +9,7 @@ PORTNAME=	hf
 PORTVERSION=	0.8
 PORTREVISION=	5
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	hfterm
+MASTER_SITES=	SF/${PORTNAME}term/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio soundcard fsk, pactor 1, amtor, gtor, mt63
