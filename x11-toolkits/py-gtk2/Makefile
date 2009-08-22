@@ -25,6 +25,7 @@ RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
 
+LATEST_LINK=	py-gtk2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libglade2
