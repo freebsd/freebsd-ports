@@ -9,6 +9,7 @@
     SUBDIR += adodb5
     SUBDIR += adstudio
     SUBDIR += akonadi
+    SUBDIR += akonadi-googledata
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
     SUBDIR += aolserver-nsmysql

@@ -1,0 +1,26 @@
+bin/akonadi_gcal_resource
+bin/akonadi_googledata_resource
+share/akonadi/agents/gcalresource.desktop
+share/akonadi/agents/googledataresource.desktop
+share/locale/de/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/en_GB/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/es/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/et/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/fr/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/gl/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/km/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/lt/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/nds/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/nl/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/pt/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/pt_BR/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/sk/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/sv/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/tr/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/uk/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/zh_CN/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/zh_TW/LC_MESSAGES/akonadi_gcal_resource.mo
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/akonadi/agents
+@dirrmtry share/akonadi
+@dirrmtry include/KDE
