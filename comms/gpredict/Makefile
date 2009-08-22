@@ -8,8 +8,7 @@ PORTNAME=	gpredict
 PORTVERSION=	0.9.0
 PORTREVISION=	4
 CATEGORIES=	comms hamradio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	groundstation
+MASTER_SITES=	SF/groundstation/Gpredict/${PORTVERSION}
 
 MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio satellite tracking and prediction

@@ -9,8 +9,7 @@ PORTNAME=	fix-mime-charset
 PORTVERSION=	0.5.3
 PORTREVISION=	1
 CATEGORIES=	converters textproc russian ukrainian
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fix-mime-chr
+MASTER_SITES=	SF/fix-mime-chr/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Fix incorrect Content-Type MIME headers of e-mail messages

@@ -8,8 +8,7 @@
 PORTNAME=	cascade
 PORTVERSION=	1.4
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/rfcascade/}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/rfcascade/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple tool to analyze noise and distortion of a RF system

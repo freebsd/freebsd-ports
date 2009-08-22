@@ -9,8 +9,7 @@ PORTNAME=	grig
 PORTVERSION=	0.7.2
 PORTREVISION=	3
 CATEGORIES=	comms hamradio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	groundstation
+MASTER_SITES=	SF/groundstation/Grig/${PORTVERSION}
 
 MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio control front-end

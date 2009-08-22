@@ -10,7 +10,7 @@ PORTVERSION=	3.0.a9
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	benchmarks
-MASTER_SITES=	SF http://thegaul.org/src/
+MASTER_SITES=	SF/${PORTNAME}/development/${PORTNAME}-3.0-a9 http://thegaul.org/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.a9/-a9/}
 EXTRACT_SUFX=	.tgz
 

@@ -8,8 +8,7 @@
 PORTNAME=	sysbench
 PORTVERSION=	0.4.12
 CATEGORIES=	benchmarks databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool

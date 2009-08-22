@@ -9,8 +9,7 @@ PORTNAME=	libticables
 PORTVERSION=	3.9.7
 PORTREVISION=	2
 CATEGORIES=	comms
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tilp
+MASTER_SITES=		SF/tilp/OldFiles
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator link cables library
