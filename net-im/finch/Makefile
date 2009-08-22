@@ -25,7 +25,8 @@ WITH_CONSOLEUI=	yes
 
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtkui \
-		--disable-nm
+		--disable-nm \
+		--with-dynamic_prpls=${PRPL_MODULES:S/,$//}
 
 MAN1=		finch.1
 
