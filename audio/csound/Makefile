@@ -10,7 +10,7 @@ PORTNAME=	csound
 PORTVERSION=	5.07
 PORTREVISION=	1
 CATEGORIES=	audio lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src/} \
+MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/csound/:src \
 		${MASTER_SITE_LOCAL:S/$/:manual/}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/$/:src/} wxs/:manual
 DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}.0
