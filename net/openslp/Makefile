@@ -9,8 +9,7 @@ PORTNAME=	openslp
 PORTVERSION=	1.2.1
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	openslp
+MASTER_SITES=	SF/${PORTNAME}/OpenSLP/${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open-source implementation of the Service Location Protocol

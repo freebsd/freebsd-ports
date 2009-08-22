@@ -8,8 +8,7 @@
 PORTNAME=	tcpreplay
 PORTVERSION=	3.4.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to replay saved packet capture files

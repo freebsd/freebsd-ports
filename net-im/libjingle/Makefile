@@ -8,8 +8,7 @@
 PORTNAME=	libjingle
 PORTVERSION=	0.4.0
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio

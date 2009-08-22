@@ -10,7 +10,7 @@ PORTVERSION=	1.6.5
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/ZABBIX%20Latest%20Stable/${PORTVERSION}
 
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Application and network monitoring solution

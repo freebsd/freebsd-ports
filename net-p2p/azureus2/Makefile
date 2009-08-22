@@ -9,8 +9,7 @@ PORTNAME=	azureus2
 PORTVERSION=	2.5.0.4
 PORTREVISION=	2
 CATEGORIES=	net-p2p java
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	azureus
+MASTER_SITES=	SF/azureus/x_obsolete/azureus-${PORTVERSION}
 DISTNAME=	azureus_${PORTVERSION}_source
 
 MAINTAINER=	rnoland@2hip.net

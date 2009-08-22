@@ -9,7 +9,7 @@ PORTNAME=	ap-utils
 PORTVERSION=	1.4.1
 PORTREVISION=	3
 CATEGORIES=	net-mgmt
-MASTER_SITES=`	SF
+MASTER_SITES=` SF
 
 MAINTAINER=	david@catwhisker.org
 COMMENT=	A set of utilities to configure and monitor wireless access points

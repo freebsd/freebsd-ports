@@ -9,7 +9,9 @@ PORTNAME=	base
 PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	news mail
-DISTFILES=	huskybase-${PORTVERSION}-tar.gz
+MASTER_SITES=	SF/husky/huskybase/1.4%20RC4
+DISTNAME=	huskybase-${PORTVERSION}
+EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	os@rsu.ru
 COMMENT=	Common files for Husky Fidosoft Project. Development version

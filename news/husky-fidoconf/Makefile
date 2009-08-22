@@ -9,6 +9,7 @@ PORTNAME=	fidoconf
 PORTVERSION=	0.14.4
 PORTREVISION=	1
 CATEGORIES=	news mail
+MASTER_SITES=	SF/husky/fidoconfig/0.14-release
 DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 
 MAINTAINER=	fjoe@FreeBSD.org

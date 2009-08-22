@@ -8,8 +8,7 @@
 PORTNAME=	tcpxtract
 PORTVERSION=	1.0.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	nobutaka@freebsd.org
 COMMENT=	A tool for extracting files from network traffic

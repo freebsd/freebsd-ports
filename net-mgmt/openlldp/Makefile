@@ -9,7 +9,7 @@ PORTNAME=	openlldp
 DISTVERSION=	0.3alpha
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.3alpha
 
 MAINTAINER=	roar.pettersen@it.uib.no
 COMMENT=	Link Layer Discovery Protocol daemon

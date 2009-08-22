@@ -9,6 +9,7 @@ PORTNAME=	base
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	news mail
+MASTER_SITES=	SF/husky/huskybase/${PORTVERSION}
 DISTNAME=	huskybase-${PORTVERSION}-src
 
 MAINTAINER=	fjoe@FreeBSD.org

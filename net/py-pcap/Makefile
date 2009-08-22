@@ -8,9 +8,9 @@
 PORTNAME=	pcap
 PORTVERSION=	0.6.2
 CATEGORIES=	net python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/pylib${PORTNAME}/pylib${PORTNAME}/${PORTVERSION} \
 		http://people.freebsd.org/~perky/distfiles/:local
-MASTER_SITE_SUBDIR=	pylibpcap
+
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pylibpcap-${PORTVERSION}
 

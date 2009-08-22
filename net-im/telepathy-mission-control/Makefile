@@ -9,7 +9,7 @@ PORTNAME=	telepathy-mission-control
 PORTVERSION=	4.67
 PORTREVISION=	1
 CATEGORIES=	net-im devel
-MASTER_SITES=	SF/mission-control
+MASTER_SITES=	SF/mission-control/mission-control/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Telepathy component to apps to abstract details of connection managers

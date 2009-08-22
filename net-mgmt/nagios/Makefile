@@ -9,7 +9,7 @@ PORTNAME=	nagios
 PORTVERSION=	3.0.6
 PORTREVISION=	3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Extremely powerful network monitoring system

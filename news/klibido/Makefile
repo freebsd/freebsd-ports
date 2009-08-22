@@ -9,8 +9,7 @@ PORTNAME=		klibido
 PORTVERSION=		0.2.5
 PORTREVISION=	5
 CATEGORIES=		news
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A very fast and efficient KDE/QT-based downloader for Usenet binaries

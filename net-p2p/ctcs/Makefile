@@ -8,7 +8,7 @@
 PORTNAME=	ctcs
 PORTVERSION=	1.4.1
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF/dtorrent
+MASTER_SITES=	SF/dtorrent/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	CTorrent monitoring and managing interface

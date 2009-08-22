@@ -10,7 +10,9 @@ PORTVERSION=	0.7.4
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	http://mirror.i2p2.de/:i2p \
 		${MASTER_SITE_GOOGLE_CODE}:i2p \
-		SF/jetty:jetty
+
+		SF/jetty/OldFiles:jetty
+
 DISTFILES=	\
 		i2psource_${PORTVERSION}${EXTRACT_SUFX}:i2p \
 		${JETTY_DISTFILE}:jetty

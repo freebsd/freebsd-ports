@@ -6,8 +6,7 @@
 PORTNAME=	proxychains
 PORTVERSION=	3.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	proxychains
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/version%20${PORTVERSION}
 
 MAINTAINER=	mycroft@virgaria.org
 COMMENT=	Redirect connection through proxy servers

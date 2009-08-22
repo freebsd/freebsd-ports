@@ -8,7 +8,7 @@
 PORTNAME=	snmp4-apps
 PORTVERSION=	0.2.7a
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	SF/pysnmp
+MASTER_SITES=	SF/pysnmp/pysnmp-apps-devel/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysnmp-apps-${PORTVERSION}
 

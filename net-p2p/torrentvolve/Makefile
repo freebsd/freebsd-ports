@@ -9,7 +9,7 @@ PORTNAME=	torrentvolve
 DISTVERSION=	1.4-beta
 PORTREVISION=	2
 CATEGORIES=	net-p2p java www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Beta%201.4
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Cross-platform PHP-driven web-based BitTorrent client

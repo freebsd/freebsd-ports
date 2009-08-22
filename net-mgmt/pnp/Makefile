@@ -8,7 +8,7 @@
 PORTNAME=	pnp
 PORTVERSION=	0.4.14
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/pnp4nagios
+MASTER_SITES=	SF/${PORTNAME}4nagios/PNP/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Nagios performance data collector and grapher

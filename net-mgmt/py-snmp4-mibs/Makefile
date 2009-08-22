@@ -8,7 +8,7 @@
 PORTNAME=	snmp4-mibs
 PORTVERSION=	0.0.6a
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	SF/pysnmp
+MASTER_SITES=	SF/pysnmp/pysnmp-mibs-devel/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysnmp-mibs-${PORTVERSION}
 

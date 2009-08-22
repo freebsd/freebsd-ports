@@ -9,9 +9,9 @@
 PORTNAME=	mmail
 PORTVERSION=	0.49
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/multimail/MultiMail/${PORTVERSION} \
 		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	multimail \
+
 			system/bbs/mail
 
 MAINTAINER=	chinsan@FreeBSD.org

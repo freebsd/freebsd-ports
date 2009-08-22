@@ -8,7 +8,7 @@
 PORTNAME=	sabnzbdplus
 PORTVERSION=	0.4.11
 CATEGORIES=	news
-MASTER_SITES=	SF/sabnzbdplus
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
 
 MAINTAINER=	daniel@netwalk.org

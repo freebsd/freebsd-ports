@@ -8,7 +8,7 @@
 PORTNAME=	qbittorrent
 PORTVERSION=	1.3.4
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bittorrent client written in C++ / Qt4 using libtorrent

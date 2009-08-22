@@ -9,10 +9,11 @@ PORTNAME=	ipcad
 PORTVERSION=	3.7.3
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 	\
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} 	\
 		http://ipcad.sourceforge.net/	\
+
 		http://lionet.info/soft/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export

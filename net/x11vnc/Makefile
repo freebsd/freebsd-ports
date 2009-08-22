@@ -9,8 +9,7 @@ PORTNAME=	x11vnc
 PORTVERSION=	0.9.6
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=libvncserver
+MASTER_SITES=	SF/libvncserver/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	VNC server for use with real X displays

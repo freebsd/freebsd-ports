@@ -8,8 +8,7 @@
 PORTNAME=	netclasses
 PORTVERSION=	1.06
 CATEGORIES=	net gnustep
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Objective-C framework for socket programming with GNUstep

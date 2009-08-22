@@ -9,8 +9,7 @@ PORTNAME=		ccxstream
 PORTVERSION=		1.0.15
 PORTREVISION=		1
 CATEGORIES=		net
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xbplayer
+MASTER_SITES=		SF/xbplayer/XStream%20Servers/ccXStream%20${PORTVERSION}%20for%20Linux
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Stream media files to XBox Media Center via XBMSP

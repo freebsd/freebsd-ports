@@ -8,9 +8,9 @@
 PORTNAME=	ldapscripts
 PORTVERSION=	1.9.0
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.com/ldapscripts/
-MASTER_SITE_SUBDIR=	ldapscripts
+
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ganael.laplanche@martymac.com

@@ -9,8 +9,7 @@ PORTNAME=	ipacco
 PORTVERSION=	0.2.0.1
 PORTREVISION=	5
 CATEGORIES=	net-mgmt www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ipacco
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based tool to analyze Cisco IP accounting data

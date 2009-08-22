@@ -8,7 +8,7 @@
 PORTNAME=	msn-proxy
 PORTVERSION=	0.7
 CATEGORIES=	net-im
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	loos.br@gmail.com
 COMMENT=	Messenger proxy/control daemon

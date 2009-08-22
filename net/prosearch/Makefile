@@ -9,8 +9,7 @@ PORTNAME=	prosearch
 PORTVERSION=	0.18.2
 PORTREVISION=	3
 CATEGORIES=	net www
-MASTER_SITES=	http://pro.setun.net/search/download/ SF
-MASTER_SITE_SUBDIR=	pro-search
+MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	Powerful file search

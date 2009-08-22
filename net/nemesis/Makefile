@@ -10,8 +10,7 @@ PORTVERSION=	1.4
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	molter@tin.it
 COMMENT=	Command-line network packet creation and injection suite

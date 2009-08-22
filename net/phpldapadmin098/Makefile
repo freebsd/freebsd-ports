@@ -9,8 +9,7 @@ PORTNAME=	phpldapadmin098
 PORTVERSION=	0.9.8.5
 PORTEPOCH=	1
 CATEGORIES=	net www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	phpldapadmin
+MASTER_SITES=	SF/phpldapadmin/phpldapadmin/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/098//}-${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk

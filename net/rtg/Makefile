@@ -9,8 +9,7 @@ PORTNAME=	rtg
 PORTVERSION=	0.7.4
 PORTREVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	rtg
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible, high-performance SNMP statistics monitoring system

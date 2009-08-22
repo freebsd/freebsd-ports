@@ -8,8 +8,7 @@ PORTNAME=	PenguinTV
 PORTVERSION=	4.0.0
 PORTREVISION=	1
 CATEGORIES=	net audio multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	penguintv
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/4.0
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical RSS feed reader with incorperated playback functions - development version

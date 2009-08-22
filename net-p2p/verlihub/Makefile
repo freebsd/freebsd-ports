@@ -10,7 +10,7 @@ DISTVERSION=	0.9.8d-RC2
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Verlihub/${DISTVERSION}
 
 MAINTAINER=	skylord@vt.net.ru
 COMMENT=	A Direct Connect protocol server (Hub)

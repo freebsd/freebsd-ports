@@ -8,8 +8,7 @@
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.2.7.1
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	net-snmp
+MASTER_SITES=	SF/net-snmp/${PORTNAME}/${PORTVERSION}%20source%20code
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extendable SNMP implementation

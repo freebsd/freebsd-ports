@@ -9,7 +9,7 @@ PORTNAME=	tork
 PORTVERSION=	0.30
 PORTREVISION=	1
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/TorK%20Source%20Tarball/TorK-${PORTVERSION}
 
 MAINTAINER=	thomas.sander@gmx.de
 COMMENT=	TorK is an Anonymity Manager for the KDE Desktop

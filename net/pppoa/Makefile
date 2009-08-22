@@ -10,8 +10,7 @@ PORTVERSION=		1.3.1
 PORTEPOCH=		2
 CATEGORIES=		net
 MASTER_SITES=		http://www.oracle-base.com/articles/misc/:mngt \
-			${MASTER_SITE_SOURCEFORGE:S/$/:src/}
-MASTER_SITE_SUBDIR=	speedtouch/:src
+			SF/speedtouch/speedtouch%20driver/Release%20${PORTVERSION}:src
 DISTFILES=		${SPEEDTOUCH}.tar.bz2:src ${ALCATELDRIVER}:mngt
 EXTRACT_ONLY=		${SPEEDTOUCH}.tar.bz2
 

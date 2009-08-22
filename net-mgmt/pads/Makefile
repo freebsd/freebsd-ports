@@ -9,7 +9,7 @@ PORTNAME=	pads
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/passive
+MASTER_SITES=	SF/passive/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passively detect network assets

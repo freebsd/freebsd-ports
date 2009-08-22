@@ -8,8 +8,7 @@
 PORTNAME=	slbd
 PORTVERSION=	1.3
 CATEGORIES=	net sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Server load balancing daemon for *BSD pf

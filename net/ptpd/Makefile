@@ -10,7 +10,6 @@ DISTVERSION=	1.0.0
 PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	An implementation of the precision time protocol IEEE 1588

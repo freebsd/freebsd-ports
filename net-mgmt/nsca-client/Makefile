@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nsca
 PKGNAMESUFFIX=	-client
 
 MASTERDIR=	${.CURDIR}/../nsca
