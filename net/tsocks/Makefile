@@ -10,10 +10,8 @@ PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.8%20beta%205 \
 		http://ftp1.sourceforge.net/tsocks/ \
-
 		http://www.yazzy.org/ports/tsocks/
-
-DISTNAME=${PORTNAME}-${PORTVERSION:C/.b/beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.b/beta/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow non SOCKS aware applications to use SOCKS without modification

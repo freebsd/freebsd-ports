@@ -9,11 +9,10 @@ PORTNAME=	tremulous
 PORTVERSION=	1.1.0
 PORTREVISION=	6
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1 http://0day.icculus.org/mirrors/tremulous/ \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1 \
+		http://0day.icculus.org/mirrors/tremulous/ \
 		ftp://ftp.wireplay.co.uk/pub/quake3arena/mods/tremulous/ \
-
 		http://www.planetgloom.com/trem/
-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Free FPS game featuring two opposing teams, humans and aliens
