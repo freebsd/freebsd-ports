@@ -7,6 +7,7 @@
 
 PORTNAME=	genius
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
