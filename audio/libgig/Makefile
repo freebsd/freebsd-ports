@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgig
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 

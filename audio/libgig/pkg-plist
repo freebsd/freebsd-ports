@@ -5,7 +5,7 @@ bin/gigextract
 include/RIFF.h
 include/DLS.h
 include/gig.h
-lib/libgig.so.9
+lib/libgig.so.10
 lib/libgig.so
 lib/libgig.la
 lib/libgig.a
