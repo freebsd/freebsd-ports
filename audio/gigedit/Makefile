@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gigedit
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
@@ -15,7 +14,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	An instrument editor for gig files
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	gig.9:${PORTSDIR}/audio/libgig \
+LIB_DEPENDS=	gig.10:${PORTSDIR}/audio/libgig \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
 GNU_CONFIGURE=	yes
