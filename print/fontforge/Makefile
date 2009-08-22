@@ -32,7 +32,8 @@ EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 
 .if !defined(NOPORTDOCS)
 DOC_VERSION=	${PORTVERSION}
-DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
+MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-docs/${DOC_VERSION}:docs
+DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2:docs
 .endif
 
 USE_BZIP2=	yes
