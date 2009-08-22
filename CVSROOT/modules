@@ -18879,6 +18879,14 @@ psmark                          ports/print/psmark
 psmisc                          ports/sysutils/psmisc
 pspp                            ports/math/pspp
 pspresent                       ports/misc/pspresent
+psptoolchain                    ports/devel/psptoolchain
+psptoolchain-binutils           ports/devel/psptoolchain-binutils
+psptoolchain-gcc-stage1         ports/devel/psptoolchain-gcc-stage1
+psptoolchain-gcc-stage2         ports/devel/psptoolchain-gcc-stage2
+psptoolchain-gdb                ports/devel/psptoolchain-gdb
+psptoolchain-newlib             ports/devel/psptoolchain-newlib
+psptoolchain-pspsdk-stage1      ports/devel/psptoolchain-pspsdk-stage1
+psptoolchain-pspsdk-stage2      ports/devel/psptoolchain-pspsdk-stage2
 pssh                            ports/security/pssh
 pstack                          ports/sysutils/pstack
 pstoedit                        ports/graphics/pstoedit
@@ -20058,6 +20066,8 @@ quoted                          ports/net/quoted
 quotes                          ports/misc/quotes
 quranref                        ports/misc/quranref
 qutim                           ports/net-im/qutim
+qutim-plugin-icq                ports/net-im/qutim-plugin-icq
+qutim-plugin-jabber             ports/net-im/qutim-plugin-jabber
 qvplay                          ports/graphics/qvplay
 qvwm                            ports/x11-wm/qvwm
 qwdtools                        ports/games/qwdtools
