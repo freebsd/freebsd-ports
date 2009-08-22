@@ -1,0 +1,4 @@
+An ANSI C library allowing communication with google calendar and contacts,
+useful if you need to support this in a C or C++ application.
+
+WWW:	http://code.google.com/p/libgcal/

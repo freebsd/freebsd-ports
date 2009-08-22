@@ -1,0 +1,14 @@
+include/atom_parser.h
+include/gcal.h
+include/gcal_parser.h
+include/gcal_status.h
+include/gcalendar.h
+include/gcont.h
+include/gcontact.h
+include/internal_gcal.h
+include/xml_aux.h
+lib/libgcal.a
+lib/libgcal.la
+lib/libgcal.so
+lib/libgcal.so.0
+libdata/pkgconfig/libgcal.pc
