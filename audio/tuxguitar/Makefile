@@ -10,10 +10,13 @@ PORTNAME=	tuxguitar
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	audio java
-MASTER_SITES=	SF:src \
+MASTER_SITES=	SF/${PORTNAME}/TuxGuitar/TuxGuitar-${PORTVERSION}:src \
 		${MASTER_SITE_LOCAL}/gahr/:fluid \
+
 		http://people.freebsd.org/~gahr/distfiles/:fluid \
+
 		http://www.alsa-project.org/~james/sound-fonts/:fluid
+
 DISTFILES=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}:src \
 		8MBGMSFX.SF2:fluid
 EXTRACT_ONLY=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}

@@ -10,7 +10,7 @@ PORTNAME=	roadnav
 PORTVERSION=	0.19
 PORTREVISION=	1
 CATEGORIES=	astro geography
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Roadnav/${PORTVERSION}
 
 MAINTAINER=	bahamasfranks@gmail.com
 COMMENT=	A 3D GPS Mapping program

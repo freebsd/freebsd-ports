@@ -9,8 +9,7 @@ PORTNAME=	zynaddsubfx
 PORTVERSION=	2.2.1
 PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	zynaddsubfx
+MASTER_SITES=	SF
 DISTNAME=	ZynAddSubFX-${PORTVERSION}
 
 PATCH_SITES=	http://www.student.nada.kth.se/~d00-llu/code_patches/

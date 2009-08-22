@@ -8,8 +8,7 @@
 PORTNAME=		sectar
 PORTVERSION=		1.02
 CATEGORIES=		archivers
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	star
+MASTER_SITES=		SF/star/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A program to create encrypted tar archives

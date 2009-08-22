@@ -9,7 +9,7 @@ PORTNAME=	flac123
 PORTVERSION=	0.0.11
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	SF/flac-tools
+MASTER_SITES=	SF/flac-tools/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command-line player for flac audio files

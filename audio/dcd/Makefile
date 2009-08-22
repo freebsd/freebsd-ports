@@ -9,7 +9,7 @@ PORTNAME=	dcd
 PORTVERSION=	0.99.2
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/dcdplayer
+MASTER_SITES=	SF/${PORTNAME}player/${PORTNAME}player/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A simple, programmable, intelligent CD player

@@ -9,8 +9,7 @@ PORTNAME=	glurp
 PORTVERSION=	0.11.6
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Nice and clean GTK+-2.x based graphical client for musicpd

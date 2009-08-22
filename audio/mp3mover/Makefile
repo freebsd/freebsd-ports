@@ -9,8 +9,7 @@
 PORTNAME=	mp3mover
 PORTVERSION=	2.1.1
 CATEGORIES=	audio perl5
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mediamover
+MASTER_SITES=	SF/mediamover/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename mp3s and manipulate them

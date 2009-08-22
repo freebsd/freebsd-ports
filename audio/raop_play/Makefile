@@ -9,8 +9,7 @@ PORTNAME=	raop_play
 PORTVERSION=	0.5.1
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	raop-play
+MASTER_SITES=	SF/raop-play/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A music file player for Apple Airport Express

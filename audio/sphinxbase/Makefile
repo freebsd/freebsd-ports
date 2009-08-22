@@ -9,8 +9,7 @@ PORTNAME=	sphinxbase
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	audio accessibility
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	cmusphinx
+MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	CMU SPhinx Speech recognition system base

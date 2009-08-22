@@ -9,9 +9,9 @@ PORTNAME=	yamt
 PORTVERSION=	0.5
 PORTREVISION=	8
 CATEGORIES=	audio gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Yet Another Mp3 Tool which helps you to organize your mp3s

@@ -10,7 +10,7 @@ PORTVERSION=	3.0.2
 PORTREVISION=	3
 DISTVERSIONSUFFIX=	-testing.src
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Testing%20%28unstable%29/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files

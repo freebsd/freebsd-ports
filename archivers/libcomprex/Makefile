@@ -10,8 +10,7 @@ PORTNAME=	libcomprex
 PORTVERSION=	0.3.3
 PORTREVISION=	7
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnupdate
+MASTER_SITES=	SF/gnupdate/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparently handles automatic compression and decompression of files

@@ -9,7 +9,7 @@ PORTNAME=	gqradio
 PORTVERSION=	1.9.2
 PORTREVISION=	7
 CATEGORIES=	audio
-MASTER_SITES=	SF/gqmpeg
+MASTER_SITES=	SF/gqmpeg/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 COMMENT=	GTK2 based FM tuner

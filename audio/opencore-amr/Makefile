@@ -8,7 +8,7 @@
 PORTNAME=	opencore-amr
 PORTVERSION=	0.1.1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	# none knwon, please fix
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	OpenCORE implementation of AMR Narrowband & Wideband speech codec

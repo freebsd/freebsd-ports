@@ -9,8 +9,7 @@ PORTNAME=	fluidsynth-dssi
 PORTVERSION=	1.0.0
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	dssi
+MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Wrapper for FluidSynth allowing it to function as a DSSI plugin

@@ -9,9 +9,9 @@ PORTNAME=	madplay
 PORTVERSION=	0.15.2b
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.mars.org/pub/mpeg/
-MASTER_SITE_SUBDIR=	mad
+
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Madplay MP3 player (part of MAD project)

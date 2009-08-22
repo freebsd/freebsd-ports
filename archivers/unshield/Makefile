@@ -8,8 +8,7 @@
 PORTNAME=	unshield
 PORTVERSION=	0.5.1
 CATEGORIES=	archivers
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=synce
+MASTER_SITES=	SF/synce/Unshield/${PORTVERSION}
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Extract data from InstallShield CAB files

@@ -9,8 +9,7 @@ PORTNAME=	wmalbum
 PORTVERSION=	0.1.5
 PORTREVISION=	4
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wmalbum
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A dockapp to display album covers for xmms

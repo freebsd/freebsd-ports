@@ -8,8 +8,7 @@
 PORTNAME=	tardy
 PORTVERSION=	1.17
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Manipulate the file headers in tar archive files in various ways

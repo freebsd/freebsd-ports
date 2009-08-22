@@ -8,8 +8,7 @@
 PORTNAME=	librtfcomp
 PORTVERSION=	1.1
 CATEGORIES?=	archivers
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	synce
+MASTER_SITES=	SF/synce/SynCE/0.10.0
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT?=	LZRTF compression library

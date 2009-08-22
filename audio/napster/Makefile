@@ -8,8 +8,7 @@
 PORTNAME=	nap
 PORTVERSION=	1.5.4
 CATEGORIES+=	audio net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nap
+MASTER_SITES=	SF/nap/nap/${PORTVERSION}
 
 MAINTAINER?=	araujo@FreeBSD.org
 COMMENT?=	An MP3 sharing, search, and chat client for the OpenNAP network

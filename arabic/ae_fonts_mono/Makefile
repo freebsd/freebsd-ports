@@ -9,8 +9,7 @@ PORTNAME=		ae_fonts_mono
 PORTVERSION=		1.0
 PORTREVISION=	2
 CATEGORIES=		arabic
-MASTER_SITES=		SF
-MASTER_SITE_SUBDIR=	arabeyes
+MASTER_SITES=		SF/arabeyes/Fonts/ae_fonts
 DISTNAME=		ae_fonts_mono
 
 MAINTAINER=	ports@FreeBSD.org

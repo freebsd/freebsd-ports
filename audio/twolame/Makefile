@@ -8,9 +8,9 @@
 PORTNAME=	twolame
 PORTVERSION=	0.3.12
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://www.ecs.soton.ac.uk/~njh/twolame/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG Audio Layer 2 encoder

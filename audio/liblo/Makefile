@@ -8,8 +8,7 @@
 PORTNAME=	liblo
 PORTVERSION=	0.26
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	liblo
+MASTER_SITES=	SF
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Lightweight Open Sound Control implementation

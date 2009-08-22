@@ -8,9 +8,9 @@
 PORTNAME=	libid3tag
 PORTVERSION=	0.15.1b
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.mars.org/pub/mpeg/
-MASTER_SITE_SUBDIR=	mad
+
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	ID3 tags library (part of MAD project)

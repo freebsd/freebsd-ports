@@ -8,7 +8,7 @@
 PORTNAME=		icegenerator
 DISTVERSION=		0.5.5-pre2
 CATEGORIES=		audio net
-MASTER_SITES=		SF
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/0.5.5-pre2
 
 MAINTAINER=		funkblaster@mail.ru
 COMMENT=		Direct streaming generator for Icecast/Shoutcast

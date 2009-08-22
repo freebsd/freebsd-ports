@@ -9,7 +9,7 @@ PORTNAME=	hydrogen
 PORTVERSION=	0.9.3
 PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Hydrogen/${PORTVERSION}%20-%20stable
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced drum machine

@@ -8,7 +8,7 @@
 PORTNAME=	libgpod
 PORTVERSION=	0.7.2
 CATEGORIES=	audio
-MASTER_SITES=	SF/gtkpod
+MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A library for direct access of iPod's contents

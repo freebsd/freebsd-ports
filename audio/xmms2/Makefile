@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 PORTREVISION=	1
 DISTVERSIONSUFFIX=DrMattDestruction
 CATEGORIES?=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20DrMattDestruction
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)

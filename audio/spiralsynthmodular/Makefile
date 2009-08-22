@@ -9,8 +9,7 @@ PORTNAME=	spiralsynthmodular
 PORTVERSION=	0.2.2a
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	spiralmodular
+MASTER_SITES=	SF/spiralmodular/spiralmodular/${PORTVERSION}%20%28Latest%20Version%29
 DISTNAME=	spiralmodular-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

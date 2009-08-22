@@ -8,7 +8,7 @@
 PORTNAME=	mpc
 PORTVERSION=	0.15
 CATEGORIES=	audio ipv6
-MASTER_SITES=	SF/musicpd
+MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Command line client for the musicpd

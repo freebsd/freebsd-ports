@@ -8,7 +8,7 @@
 PORTNAME=	qlandkartegt
 PORTVERSION=	0.14.1
 CATEGORIES=	astro
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarteGT%20${PORTVERSION}
 
 MAINTAINER=	freebsd@levsha.org.ua
 COMMENT=	The ultimate outdoor aficionado's tool

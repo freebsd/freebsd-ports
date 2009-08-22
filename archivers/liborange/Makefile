@@ -8,8 +8,7 @@
 PORTNAME=	liborange
 PORTVERSION=	0.4
 CATEGORIES=	archivers
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	synce
+MASTER_SITES=	SF/synce/Orange/${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Library to extract CAB files from self-extracting installers

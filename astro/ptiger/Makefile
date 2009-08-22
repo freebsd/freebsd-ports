@@ -9,8 +9,7 @@ PORTNAME=	ptiger
 PORTVERSION=	2.2
 PORTREVISION=	3
 CATEGORIES=	astro tk
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	tkgeomap
+MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays U.S. Census Burea populated places on a map

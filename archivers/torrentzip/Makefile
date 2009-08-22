@@ -9,8 +9,7 @@ PORTNAME=	torrentzip
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	trrntzip
+MASTER_SITES=	SF/trrntzip/trrntzip/TorrentZip%20v${PORTVERSION}
 DISTNAME=	trrntzip_v${PORTVERSION:S/.//}_src
 
 MAINTAINER=	swhetzel@gmail.com

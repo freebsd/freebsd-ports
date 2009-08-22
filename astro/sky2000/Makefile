@@ -9,8 +9,7 @@
 PORTNAME=	sky2000
 PORTVERSION=	0.2
 CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nova
+MASTER_SITES=	SF/nova/catalogs/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A binary representation of the Sky2000 star catalog

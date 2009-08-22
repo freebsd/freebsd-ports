@@ -8,8 +8,7 @@
 PORTNAME=	mp3ck
 PORTVERSION=	0.04
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	yar@FreeBSD.org
 COMMENT=	A consistency check utility for MPEG Layer 2 or 3 files or streams

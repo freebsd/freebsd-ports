@@ -8,8 +8,7 @@
 PORTNAME=	advancecomp
 PORTVERSION=	1.15
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	advancemame
+MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG and .GZ files

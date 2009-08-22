@@ -10,8 +10,8 @@ PORTVERSION=	1.0.6
 PORTREVISION=	5
 CATEGORIES=	astro geography
 MASTER_SITES=	http://roadmap.digitalomaha.net/roadmap/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		SF/${PORTNAME}/OldFiles		
+
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/:S/./_/g}_src
 
 MAINTAINER=	ports@FreeBSD.org

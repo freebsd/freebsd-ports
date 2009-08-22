@@ -9,8 +9,7 @@ PORTNAME=	umix
 PORTVERSION=	1.0.2
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
