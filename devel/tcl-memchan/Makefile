@@ -9,9 +9,8 @@ PORTNAME=	memchan
 PORTVERSION=	2.2.1
 PORTREVISION=	1
 CATEGORIES=	devel tcl
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	tcl-
-MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Two new channel types for in-memory channels in TCL8

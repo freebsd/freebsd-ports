@@ -9,8 +9,7 @@ PORTNAME=	kluje
 PORTVERSION=	0.8
 PORTREVISION=	3
 CATEGORIES=	deskutils kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE client for the popular online journal site LiveJournal

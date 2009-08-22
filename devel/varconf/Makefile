@@ -8,8 +8,7 @@
 PORTNAME=	varconf
 PORTVERSION=	0.6.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=worldforge
+MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28config%20lib%29/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A Configuration System for the STAGE Server

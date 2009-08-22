@@ -8,9 +8,9 @@
 PORTNAME=	libmpcbdm
 PORTVERSION=	0.0.3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/libmpc8xx/libmpc8xx/${PORTVERSION} \
 		http://mbsd.msk.ru/dist/
-MASTER_SITE_SUBDIR=	libmpc8xx
+
 DISTNAME=	mpc8xx-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org

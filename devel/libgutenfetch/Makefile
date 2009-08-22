@@ -9,8 +9,7 @@ PORTNAME=	libgutenfetch
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libgutenfetch
+MASTER_SITES=	SF
 
 MAINTAINER=	johntabularasa@users.sf.net
 COMMENT=	A library that allows application developers to connect to PG

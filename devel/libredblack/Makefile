@@ -9,8 +9,7 @@ PORTNAME=	libredblack
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that provides the red-black balanced tree algorithm

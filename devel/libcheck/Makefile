@@ -8,7 +8,7 @@
 PORTNAME=	libcheck
 PORTVERSION=	0.9.6
 CATEGORIES=	devel
-MASTER_SITES=	SF/check
+MASTER_SITES=	SF/check/check/${PORTVERSION}
 DISTNAME=	check-${PORTVERSION}
 
 MAINTAINER=	sunpoet@sunpoet.net

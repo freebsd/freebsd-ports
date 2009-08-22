@@ -9,7 +9,7 @@ PORTNAME=	dmucs
 PORTVERSION=	0.6.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Distributed Multi-User Compilation System (for use with distcc)

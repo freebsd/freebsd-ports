@@ -10,7 +10,7 @@ PORTNAME=	libafterbase
 PORTVERSION=	0.92
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	SF/afterstep
+MASTER_SITES=	SF/afterstep/libAfterBase/${PORTVERSION}
 DISTNAME=	libAfterBase-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

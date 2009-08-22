@@ -8,7 +8,7 @@
 PORTNAME=	doxygenfilter
 PORTVERSION=	1.01
 CATEGORIES=	devel
-MASTER_SITES=	SF/bigsister
+MASTER_SITES=	SF/bigsister/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svvord@spline-studio.ru

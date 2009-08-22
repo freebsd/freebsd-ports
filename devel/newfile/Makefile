@@ -9,8 +9,7 @@ PORTNAME=	newfile
 PORTVERSION=	1.0.14
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A tool for creating starter files in various languages

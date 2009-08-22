@@ -9,9 +9,9 @@ PORTNAME=	qdbm
 PORTVERSION=	1.8.77
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/qdbm/qdbm/${PORTVERSION} \
 		http://qdbm.sourceforge.net/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT?=	Quick Database Manager

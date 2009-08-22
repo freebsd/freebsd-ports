@@ -9,8 +9,7 @@ PORTNAME=		kmatrix3d
 PORTVERSION=		0.1
 PORTREVISION=	5
 CATEGORIES=		deskutils
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		gustau.perez@gmail.com
 COMMENT=		Eye candy for KDE, a new Matrix screensaver

@@ -9,7 +9,7 @@ PORTNAME=	guiloader
 PORTVERSION=	2.15.0
 PORTREVISION=	1
 CATEGORIES=	devel gnome
-MASTER_SITES=	SF/crow-designer
+MASTER_SITES=	SF/crow-designer/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance and compact GuiXml loader library

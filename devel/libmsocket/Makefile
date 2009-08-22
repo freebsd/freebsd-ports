@@ -8,7 +8,7 @@
 PORTNAME=	libmsocket
 PORTVERSION=	0.4
 CATEGORIES=	devel net
-MASTER_SITES=	SF/kageki
+MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A socket abstraction library for C programmers

@@ -9,8 +9,7 @@ PORTNAME=	tclxml
 PORTVERSION=	3.1
 PORTREVISION=	1
 CATEGORIES=	devel tcl
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	tclxml
+MASTER_SITES=	SF/tclxml/TclXML/${PORTVERSION}
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	API for parsing XML documents using Tcl

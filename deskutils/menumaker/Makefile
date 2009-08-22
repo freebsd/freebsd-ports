@@ -8,7 +8,7 @@
 PORTNAME=	menumaker
 PORTVERSION=	0.99.7
 CATEGORIES=	deskutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/MenuMaker/${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Menu generator for X Window Managers and desktop environments

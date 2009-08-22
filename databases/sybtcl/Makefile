@@ -9,8 +9,7 @@ PORTNAME=	sybtcl
 PORTVERSION=	3.0rc2
 PORTREVISION=	2
 CATEGORIES=	databases devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL extension to connect to Sybase servers

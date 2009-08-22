@@ -9,8 +9,7 @@ PORTNAME=	qssl
 PORTVERSION=	2.0
 PORTREVISION=	4
 CATEGORIES=	devel security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	psi
+MASTER_SITES=	SF/psi/Common/Common
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	QSSL is a Qt plugin that helps applications use OpenSSL

@@ -10,9 +10,8 @@ PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S/$/:gnome/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0/:gnome \
-		libsigc/:sf
+		SFP/libsigc/OldFiles:sf
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0/:gnome
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf,gnome
 
 MAINTAINER=	gnome@FreeBSD.org

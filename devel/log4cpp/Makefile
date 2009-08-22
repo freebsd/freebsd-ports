@@ -9,7 +9,7 @@
 PORTNAME=	log4cpp
 DISTVERSION=	1.0
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}.x%20%28current%29/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging

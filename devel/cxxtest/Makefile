@@ -8,8 +8,7 @@
 PORTNAME=	cxxtest
 PORTVERSION=	3.10.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	drewish@katherinehouse.com
 COMMENT=	Simple and powerful JUnit/CppUnit/xUnit-like framework for C++

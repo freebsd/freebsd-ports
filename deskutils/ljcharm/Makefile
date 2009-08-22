@@ -8,8 +8,7 @@
 PORTNAME=	charm
 PORTVERSION=	1.9.1
 CATEGORIES=	deskutils net
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	ljcharm
+MASTER_SITES=	SF/lj${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	seawolf@marinewolf.net
 COMMENT=	A menu-driven python-based livejournal client

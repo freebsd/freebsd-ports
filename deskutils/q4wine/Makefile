@@ -7,7 +7,7 @@
 PORTNAME=	q4wine
 DISTVERSION=	0.112-r1
 CATEGORIES=	deskutils emulators
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.112-r1
 
 MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	QT4 front-end for WINE

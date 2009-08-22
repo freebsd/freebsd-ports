@@ -8,8 +8,7 @@
 PORTNAME=	xlslib
 PORTVERSION=	0.2.5
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	sergey@network-asp.biz
 COMMENT=	A C++ library for generation of Excel(TM) files

@@ -9,8 +9,7 @@ PORTNAME=		regexxer
 PORTVERSION=		0.9
 PORTREVISION=	4
 CATEGORIES=		devel textproc gnome
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		bg1tpt@gmail.com
 COMMENT=		An interactive tool for performing search and replace operations

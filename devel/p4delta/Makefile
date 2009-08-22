@@ -9,8 +9,7 @@
 PORTNAME=	p4delta
 PORTVERSION=	1.3.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Summarizes and manages differences between local files and Perforce

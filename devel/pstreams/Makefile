@@ -7,7 +7,7 @@
 PORTNAME=	pstreams
 PORTVERSION=	0.6.0
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Release%200.6.x
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	C++ utility for simple IOStream-based IPC

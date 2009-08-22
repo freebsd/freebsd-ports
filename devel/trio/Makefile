@@ -9,7 +9,7 @@
 PORTNAME=	trio
 PORTVERSION=	1.13
 CATEGORIES=	devel
-MASTER_SITES=	SF/ctrio
+MASTER_SITES=	SF/c${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A fully matured and stable set of printf and string functions

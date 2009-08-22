@@ -8,7 +8,7 @@
 PORTNAME=	openproj
 PORTVERSION=	1.4
 CATEGORIES=	deskutils editors java
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/OpenProj%20Binaries/${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A free, open source Project Manager

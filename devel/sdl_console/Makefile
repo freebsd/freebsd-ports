@@ -8,8 +8,7 @@
 PORTNAME=	sdl_console
 PORTVERSION=	2.1
 CATEGORIES=	devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sdlconsole
+MASTER_SITES=	SF/sdlconsole/sdlconsole-source/sdlconsole-${PORTVERSION}
 DISTNAME=	sdlconsole-${PORTVERSION}
 
 MAINTAINER=	leeym@FreeBSD.org

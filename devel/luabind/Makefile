@@ -8,7 +8,7 @@
 PORTNAME=	luabind
 PORTVERSION=	0.7
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library that helps you create bindings between C++ and Lua

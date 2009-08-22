@@ -9,7 +9,7 @@ PORTNAME=	parcellite
 PORTVERSION=	0.9.1
 PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	joey@mingrone.org
 COMMENT=	A lightweight GTK+ clipboard manager

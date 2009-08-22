@@ -9,8 +9,7 @@ PORTNAME=	checkrdf
 PORTVERSION=	39.4444
 PORTREVISION=	2
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	checkrdf
+MASTER_SITES=	SF
 
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A tool for RDF site summaries based news-check

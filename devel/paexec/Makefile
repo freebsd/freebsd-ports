@@ -8,7 +8,7 @@
 PORTNAME=	paexec
 PORTVERSION=	0.13.0
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Parallel executor, distributes tasks over network

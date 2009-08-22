@@ -9,7 +9,7 @@ PORTNAME=	crow
 PORTVERSION=	2.15.0
 PORTREVISION=	1
 CATEGORIES=	devel gnome
-MASTER_SITES=	SF/crow-designer
+MASTER_SITES=	SF/${PORTNAME}-designer/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern GUI builder for the GTK+ toolkit

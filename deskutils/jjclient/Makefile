@@ -8,9 +8,9 @@
 PORTNAME=	jjclient
 PORTVERSION=	1.0.2
 CATEGORIES=	deskutils
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/justjournal/JustJournal%20UNIX%20Client/${PORTVERSION} \
 		http://www.justjournal.com/software/unix/
-MASTER_SITE_SUBDIR=	justjournal
+
 
 MAINTAINER=	luke@justjournal.com
 COMMENT=	A command line client for posting JustJournal entries

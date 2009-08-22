@@ -10,7 +10,7 @@ PORTVERSION=	1.19
 PORTREVISION=	3
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	devel tcl tk
-MASTER_SITES=	SF/otcl-tclcl
+MASTER_SITES=	SF/otcl-${PORTNAME}/TclCL/${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tcl/C++ interface used by ns and nam

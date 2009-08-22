@@ -8,8 +8,9 @@
 PORTNAME=	cil
 PORTVERSION=	1.3.7
 CATEGORIES=	devel lang
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://hal.cs.berkeley.edu/cil/distrib/
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infrastructure for C Program Analysis and Transformation

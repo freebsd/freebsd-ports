@@ -8,7 +8,7 @@
 PORTNAME=	mysql-udf
 PORTVERSION=	0.3
 CATEGORIES=	databases
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Set of user-defined functions for the MySQL server

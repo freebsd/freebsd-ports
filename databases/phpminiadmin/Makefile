@@ -8,8 +8,7 @@
 PORTNAME=	phpminiadmin
 DISTVERSION=	1.4.080217
 CATEGORIES=	databases www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	phpminiadmin
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	Lightweight alternative to phpMyAdmin

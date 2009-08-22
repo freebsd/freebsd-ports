@@ -9,8 +9,7 @@ PORTNAME=	boaconstructor
 PORTVERSION=	0.4.4
 PORTREVISION=	4
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	boa-constructor
+MASTER_SITES=	SF/boa-constructor/Boa-Constructor/${PORTVERSION}-alpha
 DISTNAME=	boa-constructor-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

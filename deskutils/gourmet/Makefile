@@ -9,7 +9,7 @@ PORTNAME=	gourmet
 PORTVERSION=	0.13.4
 PORTREVISION=	1
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	SF/grecipe-manager
+MASTER_SITES=	SF/grecipe-manager/grecipe-manager/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	ahze@FreeBSD.org

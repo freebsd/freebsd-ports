@@ -9,7 +9,7 @@ PORTNAME=	libdbi-drivers
 DISTVERSION=	0.8.3-1
 PORTREVISION=	2
 CATEGORIES=	databases devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.8.3-1
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Drivers for libdbi

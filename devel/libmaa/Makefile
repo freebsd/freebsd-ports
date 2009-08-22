@@ -9,8 +9,7 @@ PORTNAME=	libmaa
 PORTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	dict
+MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Provides a few data structures and helpful functions

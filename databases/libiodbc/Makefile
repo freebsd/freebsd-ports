@@ -12,7 +12,8 @@ PORTNAME=	libiodbc
 PORTVERSION=	3.52.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/iODBC/ \
-		SF/iodbc
+		SF/iodbc/iodbc/${PORTVERSION}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ODBC 3.x driver manager, for universal data source access

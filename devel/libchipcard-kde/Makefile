@@ -9,8 +9,7 @@ PORTNAME=		libchipcard-kde
 PORTVERSION=		0.9
 PORTREVISION=	4
 CATEGORIES=		devel kde
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libchipcard
+MASTER_SITES=		SF/libchipcard/libchipcard/${PORTVERSION}
 
 MAINTAINER=		martin@libchipcard.de
 COMMENT=		KDE tools for LibChipCard

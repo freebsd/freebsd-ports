@@ -9,8 +9,7 @@ PORTNAME=	rrdman
 PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	rrfw
+MASTER_SITES=	SF/rrfw/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Apply Holt-Winters prediction parameters to RRD data

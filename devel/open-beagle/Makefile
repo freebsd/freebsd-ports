@@ -9,7 +9,7 @@
 PORTNAME=	open-beagle
 PORTVERSION=	3.0.3
 CATEGORIES=	devel
-MASTER_SITES=	SF/beagle
+MASTER_SITES=	SF/beagle/beagle/${PORTVERSION}
 DISTNAME=	beagle-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

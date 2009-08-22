@@ -9,7 +9,7 @@ PORTNAME=	guiloader-c++
 PORTVERSION=	2.15.0
 PORTREVISION=	1
 CATEGORIES=	devel gnome
-MASTER_SITES=	SF/crow-designer
+MASTER_SITES=	SF/crow-designer/guiloader-c%2B%2B/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ binding to the GuiLoader library

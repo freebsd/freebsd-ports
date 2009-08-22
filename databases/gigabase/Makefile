@@ -8,7 +8,7 @@
 PORTNAME=	gigabase
 PORTVERSION=	3.70
 CATEGORIES=	databases
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Object-Relational Database Management System

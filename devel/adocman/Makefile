@@ -8,8 +8,7 @@
 PORTNAME=	adocman
 PORTVERSION=	0.13
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sitedocs
+MASTER_SITES=	SF/sitedocs/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated sourceforge administration tool

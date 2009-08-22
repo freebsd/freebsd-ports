@@ -8,8 +8,7 @@
 PORTNAME=	objectivelib
 PORTVERSION=	1.0.0
 CATEGORIES=	devel gnustep
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Object containers and generic algorithms for Objective-C

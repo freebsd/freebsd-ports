@@ -8,7 +8,7 @@
 PORTNAME=	st
 PORTVERSION=	1.8
 CATEGORIES=	devel
-MASTER_SITES=	SF/state-threads
+MASTER_SITES=	SF/${PORTNAME}ate-threads/${PORTNAME}ate-threads/${PORTVERSION}
 
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	State Threads Library for Internet Applications
