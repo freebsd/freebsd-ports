@@ -1,0 +1,4 @@
+This module protects Apache 2.x from the Slowloris HTTP DoS attack by
+limiting the number of allowed connections.
+
+WWW: http://modules.apache.org/search.php?id=1783
