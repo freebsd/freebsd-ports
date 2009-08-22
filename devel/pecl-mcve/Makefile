@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcve
-PORTVERSION=	7.0.1
+PORTVERSION=	7.0.2
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
