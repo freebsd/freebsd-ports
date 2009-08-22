@@ -9,7 +9,7 @@ PORTNAME=	xclasses
 PORTVERSION=	1.4.0
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SF/xcmail
+MASTER_SITES=	SF/xcmail/Xclasses%20lib/${PORTVERSION}
 DISTNAME=	Xclasses-public-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org

@@ -8,8 +8,7 @@
 PORTNAME=	movingmotif
 PORTVERSION=	2.3.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_2_1/movingmotiv-2.3.1
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Display scientific data as dynamic plot

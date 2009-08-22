@@ -9,8 +9,7 @@ PORTNAME=	bbappconf
 PORTVERSION=	0.0.2
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bbtools
+MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Application configuring tool for the blackbox window manager

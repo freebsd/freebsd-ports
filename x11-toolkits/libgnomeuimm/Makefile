@@ -9,7 +9,7 @@ PORTNAME=	libgnomeuimm
 PORTVERSION=	2.0.0
 PORTREVISION=	10
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	SF/gtkmm
+MASTER_SITES=	SF/gtkmm/OldFiles
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org

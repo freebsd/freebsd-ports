@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF \
 		http://joewing.net/programs/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Joe's Window Manager

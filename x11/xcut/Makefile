@@ -9,9 +9,9 @@ PORTNAME=	xcut
 PORTVERSION=	0.2
 PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 		http://acsys.anu.edu.au/~tpot/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Manipulate X cut buffers from the commandline

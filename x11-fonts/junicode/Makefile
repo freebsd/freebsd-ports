@@ -8,8 +8,9 @@
 PORTNAME=	junicode
 PORTVERSION=	0.6.17
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0-6-17 \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
+
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|g}
 
 MAINTAINER=	nikola.lecic@anthesphoria.net

@@ -10,7 +10,7 @@ PORTNAME?=	clearlooks
 PORTVERSION=	0.6.2
 PORTREVISION=	8
 CATEGORIES=	x11-themes
-MASTER_SITES=	SF
+MASTER_SITES=	SF/clearlooks/clearlooks/clearlooks%20${PORTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT?=	GTK+ 2.x engine based on Bluecurve

@@ -9,8 +9,7 @@ PORTNAME=	bbdate
 PORTVERSION=	0.2.4
 PORTREVISION=	2
 CATEGORIES=	x11-clocks
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	bbtools
+MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool made for Blackbox that displays the date in a decorated window

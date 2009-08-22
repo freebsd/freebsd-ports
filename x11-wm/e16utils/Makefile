@@ -9,9 +9,9 @@ PORTNAME=	e16utils
 PORTVERSION=	0.16
 PORTREVISION=	7
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/enlightenment/e16menuedit/e16menuedit \
 		http://public.planetmirror.com/pub/enlightenment/e16utils/
-MASTER_SITE_SUBDIR=	enlightenment
+
 DISTFILES=	e16menuedit-0.1.tar.gz e16keyedit-0.2.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org

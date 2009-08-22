@@ -9,9 +9,9 @@ PORTNAME=	wqy-fonts
 PORTVERSION=	20081102
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/wqy/wqy-bitmapfont/0.9.9 \
 		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	wqy
+
 DISTFILES=	wqy-bitmapfont-pcf-0.9.9-0.tar.gz \
 		wqy-unibit-bdf-1.1.0-1.tar.gz \
 		wqy-zenhei-0.8.34-cvs20081027.tar.gz

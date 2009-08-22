@@ -9,11 +9,10 @@ PORTNAME=	input-wacom
 PORTVERSION=	${KLD_VERSION}.${WACOM_VERSION:C/-/./g}
 PORTREVISION=	3
 CATEGORIES=	x11-drivers kld
-MASTER_SITES=	http://www.chillt.de/bsdwacom/ \
-		SF
-MASTER_SITE_SUBDIR=	linuxwacom
-DISTFILES=	${BSDWACOM}.tbz \
-		${LINUXWACOM}.tar.bz2
+MASTER_SITES=	http://www.chillt.de/bsdwacom/:bsdwacom \
+		SF/linuxwacom/linuxwacom/${WACOM_VERSION}:linuxwacom
+DISTFILES=	${BSDWACOM}.tbz:bsdwacom \
+		${LINUXWACOM}.tar.bz2:linuxwacom
 EXTRACT_ONLY=	${BSDWACOM}.tbz
 
 MAINTAINER=	kamikaze@bsdforen.de

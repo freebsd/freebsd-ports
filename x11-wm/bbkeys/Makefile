@@ -8,8 +8,7 @@
 PORTNAME=	bbkeys
 PORTVERSION=	0.9.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	A keygrabber for the Blackbox window manager

@@ -9,7 +9,7 @@ PORTNAME=	clementine
 PORTVERSION=	0.0.7
 PORTREVISION=	3
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Source/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Has title bars, iconizing, and styles (unstable)

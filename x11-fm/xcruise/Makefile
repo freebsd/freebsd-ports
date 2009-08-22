@@ -10,7 +10,7 @@ PORTNAME=	xcruiser
 PORTVERSION=	0.30
 PORTREVISION=	2
 CATEGORIES=	x11-fm
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Navigate through a three-dimensional view of a file system

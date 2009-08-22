@@ -10,8 +10,7 @@ PORTNAME=	libxklavier
 PORTVERSION=	3.9
 PORTEPOCH=	1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	gswitchit
+MASTER_SITES=	SF/gswitchit/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An utility library to make XKB stuff easier

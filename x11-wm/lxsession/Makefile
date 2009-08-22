@@ -9,8 +9,7 @@ PORTNAME=	lxsession
 PORTVERSION=	0.3.2
 PORTREVISION=	1
 CATEGORIES=	x11-wm gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	lxde
+MASTER_SITES=	SF/lxde/LXSession%20%28deprecated%20old%20ver%29/LXSession%20${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	LXDE Session Manager

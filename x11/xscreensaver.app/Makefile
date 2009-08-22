@@ -9,7 +9,7 @@ PORTNAME=	XScreenSaver.App
 PORTVERSION=	2.3
 PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	SF/xscreensaverapp
+MASTER_SITES=	SF/xscreensaverapp/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	WindowMaker dockapp to control XScreenSaver

@@ -8,9 +8,8 @@
 PORTNAME=	wmappl
 PORTVERSION=	0.71
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:main/} \
+MASTER_SITES=	SF/wmappl/wmappl/wmappl-${PORTVERSION}:main \
 		http://www.upl.cs.wisc.edu/~charkins/wmappl/:icons
-MASTER_SITE_SUBDIR=${PORTNAME}/:main
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main \
 		16x16xpms.tar.gz:icons icons_16x16.tar.gz:icons smallicons.tar.gz:icons
 

@@ -9,7 +9,7 @@ PORTNAME=	xrsi
 PORTVERSION=	0.9
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A minimalist break enforcer for linux/unix for the prevention of RSI

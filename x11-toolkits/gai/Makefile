@@ -10,7 +10,7 @@ PORTNAME=	gai
 PORTVERSION=	0.5.10
 PORTREVISION=	8
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/GAI%20-%20Library/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	General Applet Interface Library

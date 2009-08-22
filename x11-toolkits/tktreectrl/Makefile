@@ -8,7 +8,7 @@
 PORTNAME=	tktreectrl
 PORTVERSION=	2.2.9
 CATEGORIES=	x11-toolkits tk
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Multi-column hierarchical listbox widget

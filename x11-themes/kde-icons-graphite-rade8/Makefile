@@ -7,8 +7,7 @@
 
 PORTNAME=	graphite-rade8
 PORTVERSION=	1.03
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	graphitekde
+MASTER_SITES=	SF/graphitekde/OldFiles
 DISTNAME=	Graphite-Rade8-${PORTVERSION}
 
 COMMENT=	KDE Mac OS X like iconset, most from rad-e8 design
