@@ -9,7 +9,7 @@ PORTNAME=	hutiter
 PORTVERSION=	5.4.0
 PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	# none known, please fix
+MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	scjamorim@bsd.com.br

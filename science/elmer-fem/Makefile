@@ -9,7 +9,7 @@ PORTNAME=	fem
 PORTVERSION=	5.4.0
 PORTREVISION=	5
 CATEGORIES=	science tk
-MASTER_SITES=	# none known, please fix
+MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	scjamorim@bsd.com.br
