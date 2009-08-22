@@ -24,6 +24,8 @@ LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 
 MAN1=	csync2.1
 
+BROKEN=		does not compile with new gnuTLS
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
