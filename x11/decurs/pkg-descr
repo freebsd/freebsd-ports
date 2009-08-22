@@ -1,5 +1,3 @@
-DeCurs is a GTK+ based program that lets you edit you XFree86 mouse
-cursors.  It reads them from "bdf"-formatted font files.  Now don't
-worry, DeCurs comes with one handy.
-
-WWW: http://varg.dyndns.org/psi/pub/code/decurs/
+DeCurs is a GTK+ based program that lets you edit you X11 mouse cursors.
+It reads them from BDF-formatted font files.  Now don't worry, it comes
+with one handy.
