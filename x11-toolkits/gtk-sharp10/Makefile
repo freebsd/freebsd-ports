@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	1.0.10
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
