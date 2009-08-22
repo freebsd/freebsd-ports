@@ -10,9 +10,8 @@ PORTNAME=	mmail
 PORTVERSION=	0.49
 CATEGORIES=	news
 MASTER_SITES=	SF/multimail/MultiMail/${PORTVERSION} \
-		${MASTER_SITE_SUNSITE}
-
-			system/bbs/mail
+		${MASTER_SITE_SUNSITE} \
+		system/bbs/mail
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Offline BBS mail packet reader supporting QWK/OMEN/SOUP/OPX/BLUEWAVE
