@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Database
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,6 +28,7 @@ MAN3=		Test::Database.3 Test::Database::Driver.3 \
 		Test::Database::Driver::DBM.3 \
 		Test::Database::Driver::SQLite.3 \
 		Test::Database::Driver::SQLite2.3 \
+		Test::Database::Driver::mysql.3 \
 		Test::Database::Handle.3 \
 		Test::Database::Util.3
 
