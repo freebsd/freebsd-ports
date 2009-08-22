@@ -24,6 +24,8 @@ USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 USE_GETTEXT=	yes
 
+BROKEN=	needs update for libpurple-2.6.1
+
 CFLAGS+=	"-I/${LOCALBASE}/include"
 LIBS+=		"-L/${LOCALBASE}/lib"
 
