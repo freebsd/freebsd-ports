@@ -8,8 +8,7 @@
 PORTNAME=	mod_authn_sasl
 PORTVERSION=	1.0.2
 CATEGORIES=	www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/g}
+MASTER_SITES=	SF/mod-authn-sasl/mod-authn-sasl/${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows user authentication based on libsasl2 mechanisms on apache 2.2

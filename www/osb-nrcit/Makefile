@@ -9,8 +9,7 @@ PORTNAME=	osb-nrcit
 PORTVERSION=	0.5.2
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtk-webcore
+MASTER_SITES=	SF/gtk-webcore/gtk-webcore/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ WebCore embeddable web browser component

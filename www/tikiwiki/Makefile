@@ -8,7 +8,7 @@
 PORTNAME=	tikiwiki
 PORTVERSION=	2.4
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/TikiWiki%202.x%20-Arcturus-/${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware

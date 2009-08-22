@@ -9,8 +9,7 @@ PORTNAME=	neowebscript
 PORTVERSION=	3.3
 PORTREVISION=	3
 CATEGORIES=	www tcl
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=nws
+MASTER_SITES=	SF/nws/nws/${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server

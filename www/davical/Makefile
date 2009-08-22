@@ -8,7 +8,7 @@
 PORTNAME=	davical
 PORTVERSION=	0.9.7
 CATEGORIES?=	www
-MASTER_SITES=	SF/rscds
+MASTER_SITES=	SF/rscds/${PORTNAME}/${PORTVERSION}
 DISTNAME=	davical_${PORTVERSION}-0
 
 MAINTAINER=	maurice@castro.aus.net

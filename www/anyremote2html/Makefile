@@ -8,8 +8,7 @@
 PORTNAME=	anyremote2html
 PORTVERSION=	1.0
 CATEGORIES=	www deskutils
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	anyremote
+MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A web interface for anyRemote

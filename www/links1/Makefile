@@ -10,8 +10,8 @@ PORTVERSION=	0.98
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	links
+		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}		
+
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser

@@ -8,9 +8,9 @@
 PORTNAME=	pyblosxom
 PORTVERSION=	1.4.3
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	A lightweight weblog system

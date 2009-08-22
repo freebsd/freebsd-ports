@@ -8,8 +8,7 @@
 PORTNAME=	gallery3
 PORTVERSION=	3.0
 CATEGORIES=	www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	gallery
+MASTER_SITES=	SF/gallery/${PORTNAME}/${PORTVERSION}-beta-1
 DISTNAME=	gallery-${PORTVERSION}-beta-1
 
 MAINTAINER=	appleboy.tw@gmail.com

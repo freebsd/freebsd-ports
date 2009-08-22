@@ -9,7 +9,7 @@ PORTNAME=	campsite
 PORTVERSION=	2.6.7
 PORTREVISION=	6
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	koutek@o-k.cz
 COMMENT=	The free and open multilingual web publishing tool for news sites

@@ -8,8 +8,7 @@
 PORTNAME=	jericho-html
 PORTVERSION=	2.6
 CATEGORIES=	www java
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:S,-,,}
+MASTER_SITES=	SF/jerichohtml/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A java library to analyse and manipulate HTML

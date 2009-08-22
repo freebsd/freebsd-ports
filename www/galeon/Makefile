@@ -10,8 +10,7 @@ PORTNAME=	galeon
 PORTVERSION=	2.0.7
 PORTREVISION=	1
 CATEGORIES=	www gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%202.x/Galeon%20${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME 2 Web browser based on gecko (the Mozilla rendering engine)

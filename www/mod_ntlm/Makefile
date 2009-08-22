@@ -8,8 +8,7 @@
 PORTNAME=	mod_ntlm
 PORTVERSION=	0.4
 CATEGORIES=	www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	modntlm
+MASTER_SITES=	SF/modntlm/modntlm/${PORTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	NTLM authentication module for the Apache webserver

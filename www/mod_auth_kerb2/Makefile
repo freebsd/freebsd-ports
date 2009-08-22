@@ -11,8 +11,7 @@
 PORTNAME=	mod_auth_kerb
 PORTVERSION=	5.4
 CATEGORIES=	www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=modauthkerb
+MASTER_SITES=	SF/modauthkerb/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module for authenticating users with Kerberos v5

@@ -9,7 +9,7 @@
 PORTNAME=	nanoblogger-extra
 PORTVERSION=	3.4
 CATEGORIES=	www
-MASTER_SITES=	SF/nanoblogger
+MASTER_SITES=	SF/nanoblogger/${PORTNAME}/Version%20${PORTVERSION}
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Extras for nanoblogger, a small weblog engine

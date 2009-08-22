@@ -8,8 +8,7 @@
 PORTNAME=	hypermail
 PORTVERSION=	2.2.0
 CATEGORIES=	www mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	dan@langille.org
 COMMENT=	A program to generate a cross-referenced HTML mail archive

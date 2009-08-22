@@ -8,8 +8,7 @@ PORTNAME=	netoffice
 PORTVERSION=	2.6.0b2
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	netoffice
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	NetOffice is a free web based project-management environment

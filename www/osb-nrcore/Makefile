@@ -9,7 +9,7 @@ PORTNAME=	osb-nrcore
 PORTVERSION=	0.5.2
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	SF/gtk-webcore
+MASTER_SITES=	SF/gtk-webcore/gtk-webcore/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ WebCore html rendering engine

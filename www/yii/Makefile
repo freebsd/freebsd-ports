@@ -9,7 +9,8 @@ PORTNAME=	yii
 PORTVERSION=	1.0.7.r1212
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		SF
+		SF/${PORTNAME}/${PORTNAME}/1.0.7
+
 
 MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A high-performance component-based PHP framework

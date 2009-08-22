@@ -8,7 +8,7 @@
 PORTNAME=	checkbot
 PORTVERSION=	1.80
 CATEGORIES=	www perl5
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Checkbot%20${PORTVERSION}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A WWW link verifier, similar to momspider

@@ -8,7 +8,7 @@ PORTNAME=		ziproxy
 PORTVERSION=		2.7.0
 PORTREVISION=	1
 CATEGORIES=		www
-MASTER_SITES=		SF
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		pankov_p@mail.ru
 COMMENT=		A forwarding, non-caching, compressing proxy server

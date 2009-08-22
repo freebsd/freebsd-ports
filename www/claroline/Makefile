@@ -8,7 +8,7 @@
 PORTNAME=	claroline
 PORTVERSION=	1.9.0
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Claroline/Claroline%20${PORTVERSION}
 DISTNAME=	claroline190
 
 MAINTAINER=	wenheping@gmail.com

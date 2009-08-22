@@ -8,7 +8,7 @@
 PORTNAME=	html2wml
 PORTVERSION=	0.4.11
 CATEGORIES=	www
-MASTER_SITES=	SF/htmlwml http://maddingue.free.fr/softwares/download/Html2Wml/
+MASTER_SITES=	SF/htmlwml/Html2Wml/${PORTVERSION} http://maddingue.free.fr/softwares/download/Html2Wml/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CGI that can do on-the-fly HTML to WML conversion

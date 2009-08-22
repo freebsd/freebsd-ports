@@ -9,7 +9,7 @@ PORTNAME=	aria
 PORTVERSION=	1.0.0
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	SF/aria-rpm
+MASTER_SITES=	SF/${PORTNAME}-rpm/Aria%20Sources/${PORTVERSION}-official
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Yet another download tool

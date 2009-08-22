@@ -8,7 +8,7 @@
 PORTNAME=	AutoIndex
 PORTVERSION=	2.2.4
 CATEGORIES=	www
-MASTER_SITES=	SF/autoindex
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}%20PHP%20Script%202.x/${PORTNAME}%20PHP%20${PORTVERSION}
 
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	PHP 5.x script that makes a table that lists the files in a directory

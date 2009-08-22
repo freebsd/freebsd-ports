@@ -8,7 +8,7 @@
 PORTNAME=	typolight
 PORTVERSION=	2.7.2
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/TYPOlight/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Powerful web content management system
