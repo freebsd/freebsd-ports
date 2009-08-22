@@ -4097,6 +4097,7 @@ www/ilias/setup/templates/tpl.table.html
 www/ilias/setup/templates/tpl.tabs.html
 www/ilias/setup/test/test.jpg
 www/ilias/shib_login.php
+www/ilias/shib_logout.php
 www/ilias/start.php
 www/ilias/studip_referrer.php
 www/ilias/templates/default/buttons.js
@@ -4633,7 +4634,7 @@ www/ilias/templates/default/images/scorm/running.gif
 www/ilias/templates/default/images/scorm/running_s.gif
 www/ilias/templates/default/images/search-filter-locked.png
 www/ilias/templates/default/images/search-filter.png
-www/ilias/templates/default/images/shib_login_button.gif
+www/ilias/templates/default/images/shib_login_button.png
 www/ilias/templates/default/images/skypeoffline.gif
 www/ilias/templates/default/images/skypeonline.gif
 www/ilias/templates/default/images/spacer.gif
