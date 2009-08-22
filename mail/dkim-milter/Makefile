@@ -15,7 +15,7 @@
 PORTNAME=	dkim-milter
 PORTVERSION=	2.8.3
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/DKIM%20Milter/${PORTVERSION}
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Domainkeys Identified Mail (DKIM) milter

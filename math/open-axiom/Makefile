@@ -8,7 +8,7 @@
 PORTNAME=	open-axiom
 PORTVERSION=	1.3.0
 CATEGORIES=	math
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	A computer algebra system

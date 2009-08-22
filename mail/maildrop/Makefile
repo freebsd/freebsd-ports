@@ -20,8 +20,7 @@
 PORTNAME=	maildrop
 PORTVERSION=	2.2.0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	courier
+MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Mail delivery agent (MDA) with filtering abilities

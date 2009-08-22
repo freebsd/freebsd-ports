@@ -8,8 +8,7 @@
 PORTNAME=	pop-before-smtp
 PORTVERSION=	1.42
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	popbsmtp
+MASTER_SITES=	SF/popbsmtp/Source%20tar/${PORTVERSION}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A log parser to identify valid POP/IMAP logins for later smtp

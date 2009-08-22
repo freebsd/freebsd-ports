@@ -9,8 +9,7 @@
 PORTNAME=	basemap-data
 PORTVERSION=	0.9
 CATEGORIES=	math python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	matplotlib
+MASTER_SITES=	SF/matplotlib/matplotlib-toolkits/basemap-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mainland@apeiron.net

@@ -8,7 +8,7 @@
 PORTNAME=	bbmail
 PORTVERSION=	0.9.3
 CATEGORIES=	mail
-MASTER_SITES=	SF/bbtools
+MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool intended for Blackbox that checks for new mail

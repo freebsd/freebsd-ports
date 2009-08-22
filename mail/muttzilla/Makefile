@@ -9,8 +9,7 @@
 PORTNAME=	muttzilla
 PORTVERSION=	0.40
 CATEGORIES=	mail www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mutt MUA plugin for Netscape for use on "mailto:" URLs

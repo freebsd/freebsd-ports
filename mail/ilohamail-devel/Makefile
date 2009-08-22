@@ -8,8 +8,7 @@
 PORTNAME=	ilohamail-devel
 PORTVERSION=	0.9.20050415
 CATEGORIES=	mail www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ilohamail
+MASTER_SITES=	SF/ilohamail/IlohaMail-devel/0.9-20050415
 DISTNAME=	IlohaMail-0.9-20050415
 
 MAINTAINER=	craig001@lerwick.hopto.org

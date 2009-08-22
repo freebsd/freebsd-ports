@@ -8,8 +8,7 @@
 PORTNAME=	jts
 PORTVERSION=	1.10
 CATEGORIES=	math databases
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	jts-topo-suite
+MASTER_SITES=	SF/${PORTNAME}-topo-suite/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	JTS Topology Suite

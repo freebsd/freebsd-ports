@@ -10,8 +10,7 @@ PORTVERSION=	24.2
 PORTREVISION=	3
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
-		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
-MASTER_SITE_SUBDIR=	numpy/:source
+		SF/numpy/Old%20Numeric/${PORTVERSION}:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	Numeric-${PORTVERSION}${EXTRACT_SUFX}:source \
 		numpy.pdf:doc

@@ -8,8 +8,7 @@
 PORTNAME=	libsieve
 PORTVERSION=	2.2.6
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libsieve
+MASTER_SITES=	SF
 
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	A library for parsing, sorting and filtering mail

@@ -9,7 +9,7 @@ PORTNAME=	vchkuser
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	loos.br@gmail.com
 COMMENT=	Qmail-smtpd+vpopmail check rcpt to on the fly

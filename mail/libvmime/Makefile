@@ -9,8 +9,7 @@ PORTNAME=	libvmime
 PORTVERSION=	0.9.0
 PORTREVISION=	4
 CATEGORIES=	mail
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	vmime
+MASTER_SITES=	SF/vmime/vmime/0.9
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	An all-in-one Internet mail library

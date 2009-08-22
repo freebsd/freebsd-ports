@@ -8,7 +8,7 @@
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	1.0.1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/gmerlin
+MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	General purpose media decoding library

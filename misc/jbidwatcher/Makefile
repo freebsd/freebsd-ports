@@ -8,8 +8,7 @@
 PORTNAME=	jbidwatcher
 DISTVERSION=	2.0.1
 CATEGORIES=	misc java
-MASTER_SITES=	http://www.jbidwatcher.com/rdl/ \
-		SF
+MASTER_SITES=	http://www.jbidwatcher.com/rdl/
 DISTNAME=	JBidwatcher-${DISTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=

@@ -9,7 +9,7 @@ PORTNAME=	lifelines
 PORTVERSION=	3.0.50
 PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20beta%20versions/${PORTVERSION}
 
 MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	An advanced genealogical system

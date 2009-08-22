@@ -10,8 +10,7 @@ PORTVERSION=	0.5.1
 PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	cserv
+MASTER_SITES=	SF/cserv/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Camserv is a free program to do streaming video via the web

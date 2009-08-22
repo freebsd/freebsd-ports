@@ -8,8 +8,7 @@
 PORTNAME=	pfqueue
 PORTVERSION=	0.5.6
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A console-based tool for handling Postfix 1, Postfix 2 and Exim queues

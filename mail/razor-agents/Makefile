@@ -8,8 +8,7 @@
 PORTNAME=	razor-agents
 PORTVERSION=	2.84
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	razor
+MASTER_SITES=	SF/razor/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A distributed, collaborative, spam detection and filtering network

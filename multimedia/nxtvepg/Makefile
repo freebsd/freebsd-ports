@@ -9,7 +9,7 @@ PORTNAME=	nxtvepg
 PORTVERSION=	2.7.6
 PORTREVISION=	2
 CATEGORIES=	multimedia tcl tk
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for Nextview Electronic TV Programme Guide (needs bktr driver)

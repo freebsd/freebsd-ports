@@ -8,9 +8,9 @@
 PORTNAME=	milter
 PORTVERSION=	0.8.7
 CATEGORIES=	mail python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/py${PORTNAME}/OldFiles \
 		http://www.bmsi.com/python/
-MASTER_SITE_SUBDIR=	pymilter
+
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	georg@graf.priv.at

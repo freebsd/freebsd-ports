@@ -8,7 +8,7 @@
 PORTNAME=	libhome
 PORTVERSION=	0.10.2
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.oav.net/pll/ SF/pll
+MASTER_SITES=	ftp://ftp.oav.net/pll/ SF/pll/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Library providing a getpwname() emulation

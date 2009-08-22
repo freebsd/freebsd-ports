@@ -8,8 +8,7 @@ PORTNAME=		wmweather+
 PORTVERSION=		2.11
 PORTREVISION=		2
 CATEGORIES=		misc windowmaker geography
-MASTER_SITES=		SF
-MASTER_SITE_SUBDIR=	wmweatherplus
+MASTER_SITES=		SF/wmweatherplus/wmweather%2B/wmweather%2B-${PORTVERSION}
 
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Displays current conditions and forecasts with icons and text

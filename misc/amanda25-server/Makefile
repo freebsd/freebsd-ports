@@ -11,8 +11,7 @@ PORTREVISION?=	5
 PKGNAMESUFFIX?=	-server
 PORTEPOCH=	1
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	amanda
+MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)

@@ -9,8 +9,7 @@
 PORTNAME=	gracetmpl
 PORTVERSION=	0.3.2
 CATEGORIES=	math print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide an easy way to use existing grace-files as a template

@@ -9,8 +9,7 @@ PORTNAME=	fortune-mod-bible
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fortunebible
+MASTER_SITES=	SF/fortunebible/fortunebible/Genesis
 DISTNAME=	bible
 
 MAINTAINER=	doug@polands.org

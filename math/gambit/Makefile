@@ -10,7 +10,7 @@ PORTNAME=	gambit
 PORTVERSION=	0.2007.12.04
 PORTREVISION=	2
 CATEGORIES=	math
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A library of tools for doing computation in game theory

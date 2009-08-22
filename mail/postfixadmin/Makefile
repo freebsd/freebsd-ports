@@ -8,8 +8,7 @@
 PORTNAME=	postfixadmin
 PORTVERSION=	2.2.1.1
 CATEGORIES=	mail www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	postfixadmin
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	terry@sucked-in.com
 COMMENT=	PHP web-based management tool for Postfix virtual domains and users

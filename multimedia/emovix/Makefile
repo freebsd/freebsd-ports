@@ -8,8 +8,7 @@
 PORTNAME=	emovix
 PORTVERSION=	0.9.0
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	movix
+MASTER_SITES=	SF/movix/eMoviX/0.9
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A mini linux distro to create bootable video CDs

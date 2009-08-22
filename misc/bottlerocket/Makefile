@@ -9,8 +9,7 @@ PORTNAME=	bottlerocket
 PORTVERSION=	0.04c
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	futurebsd
+MASTER_SITES=	SF/futurebsd/futurebsd/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Home Automation Software for the X10 FireCracker kit

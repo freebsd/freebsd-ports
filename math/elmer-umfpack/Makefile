@@ -10,7 +10,7 @@ PORTVERSION=	4.4
 PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	math
-MASTER_SITES=	SF/elmerfem
+MASTER_SITES=	# none know, please fix
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	scjamorim@bsd.com.br

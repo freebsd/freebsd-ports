@@ -8,8 +8,7 @@
 PORTNAME=	freevo
 PORTVERSION=	1.9.0
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	freevo
+MASTER_SITES=	SF/${PORTNAME}/Freevo%20releases/${PORTVERSION}
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Open source digital jukebox

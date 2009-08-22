@@ -8,8 +8,7 @@
 PORTNAME=	sqwebmail
 PORTVERSION=	5.3.2
 CATEGORIES=	mail www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	courier
+MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs

@@ -8,7 +8,7 @@
 PORTNAME=	sqlgrey
 PORTVERSION=	1.7.6
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.7%20%28devel%29/${PORTVERSION}
 
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Greylisting policy server for Postfix using an SQL backend

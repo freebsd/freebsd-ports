@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE/Qt based frontend for various audio transcoding tools

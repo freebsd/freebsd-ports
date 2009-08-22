@@ -8,7 +8,7 @@
 PORTNAME=	posixtestsuite
 PORTVERSION=	1.5.2
 CATEGORIES=	misc
-MASTER_SITES=	SF/posixtest
+MASTER_SITES=	SF/posixtest/posixtest/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open POSIX Test Suite

@@ -9,8 +9,7 @@ PORTNAME=	subtitlecomposer
 PORTVERSION=	0.4.3
 PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=subcomposer
+MASTER_SITES=	SF/subcomposer/subcomposer/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Subtitle editor for KDE

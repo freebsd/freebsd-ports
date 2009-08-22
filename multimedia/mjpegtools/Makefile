@@ -9,7 +9,7 @@ PORTNAME=	mjpegtools
 DISTVERSION=	1.9.0rc3
 PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/mjpeg
+MASTER_SITES=	SF/mjpeg/OldFiles
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format

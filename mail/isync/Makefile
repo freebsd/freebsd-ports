@@ -8,8 +8,7 @@
 PORTNAME=	isync
 PORTVERSION=	1.0.4
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags

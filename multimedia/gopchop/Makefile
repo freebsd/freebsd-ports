@@ -10,9 +10,9 @@ PORTNAME=	gopchop
 PORTVERSION=	1.0.0
 PORTREVISION=	6
 CATEGORIES=	multimedia
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/GOPchop%20-%20Stable/${PORTVERSION} \
 		http://outflux.net/unix/software/GOPchop/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 DISTNAME=	GOPchop-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

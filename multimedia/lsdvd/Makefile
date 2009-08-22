@@ -9,7 +9,7 @@ PORTNAME=	lsdvd
 PORTVERSION=	0.16
 PORTREVISION=	4
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20I%20hate%20James%20Blunt
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Print information about the contents and structure of a DVD

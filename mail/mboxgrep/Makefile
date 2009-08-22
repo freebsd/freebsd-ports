@@ -9,8 +9,7 @@ PORTNAME=	mboxgrep
 PORTVERSION=	0.7.9
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Utility to scan mailboxes for messages matching a regular expression
