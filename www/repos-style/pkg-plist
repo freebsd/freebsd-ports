@@ -1,0 +1,72 @@
+%%WWWDIR%%/Cezanne-LICENSE.txt
+%%WWWDIR%%/LICENSE-2.0.txt
+@unexec if cmp -s %D/%%WWWDIR%%/open/log/index.dist.php %D/%%WWWDIR%%/open/log/index.php; then rm -f %D/%%WWWDIR%%/open/log/index.php; fi
+%%WWWDIR%%/open/log/index.dist.php
+@exec if [ ! -f %D/%%WWWDIR%%/open/log/index.php ]; then cp -p %D/%%WWWDIR%%/open/log/index.dist.php %D/%%WWWDIR%%/open/log/index.php; fi
+%%WWWDIR%%/style/commands/16x16/back.png
+%%WWWDIR%%/style/commands/16x16/download.png
+%%WWWDIR%%/style/commands/16x16/history.png
+%%WWWDIR%%/style/commands/16x16/home.png
+%%WWWDIR%%/style/commands/16x16/parent.png
+%%WWWDIR%%/style/commands/16x16/refresh.png
+%%WWWDIR%%/style/commands/16x16/repository.png
+%%WWWDIR%%/style/commands/16x16/user.png
+%%WWWDIR%%/style/global.css
+%%WWWDIR%%/style/log/16x16/a.png
+%%WWWDIR%%/style/log/16x16/copiedfrom.png
+%%WWWDIR%%/style/log/16x16/d.png
+%%WWWDIR%%/style/log/16x16/m.png
+%%WWWDIR%%/style/log/16x16/message.png
+%%WWWDIR%%/style/log/log.css
+%%WWWDIR%%/style/repository/16x16/binary.png
+%%WWWDIR%%/style/repository/16x16/file.png
+%%WWWDIR%%/style/repository/16x16/folder.png
+%%WWWDIR%%/style/repository/16x16/folder_branches.png
+%%WWWDIR%%/style/repository/16x16/folder_tags.png
+%%WWWDIR%%/style/repository/16x16/folder_trunk.png
+%%WWWDIR%%/style/repository/filetypes/16x16/ai.png
+%%WWWDIR%%/style/repository/filetypes/16x16/bmp.png
+%%WWWDIR%%/style/repository/filetypes/16x16/chm.png
+%%WWWDIR%%/style/repository/filetypes/16x16/doc.png
+%%WWWDIR%%/style/repository/filetypes/16x16/exe.png
+%%WWWDIR%%/style/repository/filetypes/16x16/gif.png
+%%WWWDIR%%/style/repository/filetypes/16x16/gz.png
+%%WWWDIR%%/style/repository/filetypes/16x16/htm.png
+%%WWWDIR%%/style/repository/filetypes/16x16/html.png
+%%WWWDIR%%/style/repository/filetypes/16x16/ics.png
+%%WWWDIR%%/style/repository/filetypes/16x16/jar.png
+%%WWWDIR%%/style/repository/filetypes/16x16/java.png
+%%WWWDIR%%/style/repository/filetypes/16x16/jpg.png
+%%WWWDIR%%/style/repository/filetypes/16x16/log.png
+%%WWWDIR%%/style/repository/filetypes/16x16/mpg.png
+%%WWWDIR%%/style/repository/filetypes/16x16/pdf.png
+%%WWWDIR%%/style/repository/filetypes/16x16/php.png
+%%WWWDIR%%/style/repository/filetypes/16x16/png.png
+%%WWWDIR%%/style/repository/filetypes/16x16/ps.png
+%%WWWDIR%%/style/repository/filetypes/16x16/psd.png
+%%WWWDIR%%/style/repository/filetypes/16x16/qt.png
+%%WWWDIR%%/style/repository/filetypes/16x16/sh.png
+%%WWWDIR%%/style/repository/filetypes/16x16/sit.png
+%%WWWDIR%%/style/repository/filetypes/16x16/sxw.png
+%%WWWDIR%%/style/repository/filetypes/16x16/tif.png
+%%WWWDIR%%/style/repository/filetypes/16x16/tmp.png
+%%WWWDIR%%/style/repository/filetypes/16x16/txt.png
+%%WWWDIR%%/style/repository/filetypes/16x16/vcf.png
+%%WWWDIR%%/style/repository/filetypes/16x16/zip.png
+%%WWWDIR%%/style/repository/repository.css
+%%WWWDIR%%/style/rowbackground.png
+%%WWWDIR%%/view/log.xsl
+%%WWWDIR%%/view/repos.xsl
+@dirrmtry %%WWWDIR%%/view
+@dirrmtry %%WWWDIR%%/style/repository/filetypes/16x16
+@dirrmtry %%WWWDIR%%/style/repository/filetypes
+@dirrmtry %%WWWDIR%%/style/repository/16x16
+@dirrmtry %%WWWDIR%%/style/repository
+@dirrmtry %%WWWDIR%%/style/log/16x16
+@dirrmtry %%WWWDIR%%/style/log
+@dirrmtry %%WWWDIR%%/style/commands/16x16
+@dirrmtry %%WWWDIR%%/style/commands
+@dirrmtry %%WWWDIR%%/style
+@dirrmtry %%WWWDIR%%/open/log
+@dirrmtry %%WWWDIR%%/open
+@dirrmtry %%WWWDIR%%/
