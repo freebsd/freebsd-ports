@@ -143,6 +143,7 @@
     SUBDIR += kuake
     SUBDIR += labyrinth
     SUBDIR += launchy
+    SUBDIR += libgcal
     SUBDIR += libopensync-plugin-evolution2
     SUBDIR += libopensync-plugin-evolution2-devel
     SUBDIR += libopensync-plugin-file
