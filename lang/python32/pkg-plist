@@ -745,9 +745,9 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/lib-dynload/unicodedata.so
 %%PYTHON_LIBDIR%%/lib-dynload/zlib.so
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar3.1.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar3.1.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.1.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.1.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
@@ -782,6 +782,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_next.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_nonzero.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_numliterals.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_operator.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_paren.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_print.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_raise.py
