@@ -1139,6 +1139,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository/test_iter_reverse_revision_history.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository/test_iter_reverse_revision_history.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository/test_iter_reverse_revision_history.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository/test_merge_directive.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository/test_merge_directive.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository/test_merge_directive.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository/test_pack.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository/test_pack.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository/test_pack.pyo
@@ -1196,6 +1199,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_fetch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_fetch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_fetch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_get_record_stream.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_get_record_stream.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_get_record_stream.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_get_rev_id_for_revno.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_get_rev_id_for_revno.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_get_rev_id_for_revno.pyo
@@ -1274,6 +1280,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_changes_from.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_changes_from.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_changes_from.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_check.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_check.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_check.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_commit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_commit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_commit.pyo
