@@ -118,6 +118,9 @@
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Contacts.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Contacts.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Contacts.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Location.py
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Location.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Location.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Presence.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Presence.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Presence.pyo
@@ -130,6 +133,9 @@
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Manager.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Manager.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Manager.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Debug.py
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Debug.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Debug.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Media_Session_Handler.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Media_Session_Handler.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Media_Session_Handler.pyo
@@ -199,6 +205,9 @@
 %%PYTHON_SITELIBDIR%%/telepathy/server/connmgr.py
 %%PYTHON_SITELIBDIR%%/telepathy/server/connmgr.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/server/connmgr.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/server/debug.py
+%%PYTHON_SITELIBDIR%%/telepathy/server/debug.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/server/debug.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/server/handle.py
 %%PYTHON_SITELIBDIR%%/telepathy/server/handle.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/server/handle.pyo
