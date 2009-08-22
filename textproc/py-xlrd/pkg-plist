@@ -1,0 +1,40 @@
+bin/runxlrd.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd-0.7.1-py2.6.egg-info
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/biffh.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/biffh.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/biffh.pyo
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/compdoc.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/compdoc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/compdoc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/doc/compdoc.html
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/doc/xlrd.html
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples/namesdemo.xls
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples/xlrdnameAPIdemo.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples/xlrdnameAPIdemo.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples/xlrdnameAPIdemo.pyo
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/formatting.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/formatting.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/formatting.pyo
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/formula.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/formula.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/formula.pyo
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/licences.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/licences.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/licences.pyo
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/sheet.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/sheet.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/sheet.pyo
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/timemachine.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/timemachine.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/timemachine.pyo
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/xldate.py
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/xldate.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xlrd/xldate.pyo
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/xlrd/doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/xlrd
+@dirrm lib/%%PYTHON_VERSION%%/site-packages
+@dirrm lib/%%PYTHON_VERSION%%
