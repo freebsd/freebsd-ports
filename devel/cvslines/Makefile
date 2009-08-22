@@ -8,8 +8,7 @@
 PORTNAME=		cvslines
 PORTVERSION=		1.6.9
 CATEGORIES=		devel
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wrapper to ease merging of changes between CVS branches

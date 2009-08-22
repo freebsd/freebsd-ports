@@ -8,7 +8,7 @@
 PORTNAME=	jrrd
 PORTVERSION=	1.0.3
 CATEGORIES=	databases java
-MASTER_SITES=	SF/opennms
+MASTER_SITES=	SF/opennms/JRRD/stable-1.0
 
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	A Java native interface (JNI) to RRDtool

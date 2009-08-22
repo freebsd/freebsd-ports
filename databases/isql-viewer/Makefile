@@ -9,7 +9,7 @@ PORTNAME=	isql-viewer
 PORTVERSION=	2.1.8
 PORTREVISION=	3
 CATEGORIES=	databases java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:isql/} \
+MASTER_SITES=	SF/isql/Stand%20Alone%20Jars/Version%20${PORTVERSION}:isql \
 		${MASTER_SITE_APACHE:S/$/:bsf/}
 MASTER_SITE_SUBDIR=	isql/:isql \
 			ws/soap/version-2.2/:bsf

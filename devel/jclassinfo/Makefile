@@ -9,8 +9,7 @@
 PORTNAME=	jclassinfo
 PORTVERSION=	0.19.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows information about Java class, dependencies and more

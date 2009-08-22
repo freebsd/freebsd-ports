@@ -8,7 +8,7 @@
 PORTNAME=	qtm
 PORTVERSION=	1.1.1
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/catkin
+MASTER_SITES=	SF/catkin/${PORTNAME}-1.1/${PORTNAME}-1.1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blog management application based on Qt 4

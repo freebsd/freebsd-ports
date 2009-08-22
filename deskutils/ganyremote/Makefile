@@ -9,8 +9,7 @@ PORTNAME=	ganyremote
 PORTVERSION=	5.10
 PORTREVISION=	1
 CATEGORIES=	deskutils comms gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	anyremote
+MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GNOME frontend for anyRemote

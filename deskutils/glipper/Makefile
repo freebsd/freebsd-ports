@@ -9,7 +9,7 @@ PORTNAME=	glipper
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	Clipboard manager for the GNOME panel

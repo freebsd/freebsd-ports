@@ -9,8 +9,7 @@ PORTNAME=	gmcal
 PORTVERSION=	0.0.1
 PORTREVISION=	4
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libmcal
+MASTER_SITES=	SF/libmcal/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	GMCAL is a GTK+ frontend for the libmcal package

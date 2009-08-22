@@ -8,8 +8,7 @@
 PORTNAME=	eric
 PORTVERSION=	3.9.5
 CATEGORIES=	devel python
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	eric-ide
+MASTER_SITES=	SF/${PORTNAME}-ide/${PORTNAME}3/${PORTVERSION}
 
 MAINTAINER=	leafy7382@gmail.com
 COMMENT=	A Python IDE implemented using PyQt and QScintilla

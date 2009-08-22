@@ -8,9 +8,9 @@
 PORTNAME=	dotconfpp
 PORTVERSION=	0.0.5
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://voodoo.com.ua/dotconfpp/
-MASTER_SITE_SUBDIR=	dotconfpp
+
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mark_sf@kikg.ifmo.ru

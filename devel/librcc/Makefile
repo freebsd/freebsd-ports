@@ -9,8 +9,7 @@ PORTNAME=	librcc
 PORTVERSION=	0.2.6
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	rusxmms
+MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION}
 
 MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Library used by rusxmms for language autodetection

@@ -8,7 +8,7 @@
 PORTNAME=	libbobcat
 PORTVERSION=	2.02.02
 CATEGORIES=	devel
-MASTER_SITES=	SF/bobcat
+MASTER_SITES=	SF/bobcat/bobcat/${PORTVERSION}
 DISTNAME=	bobcat_${PORTVERSION}
 EXTRACT_SUFX=	.orig.tar.gz
 

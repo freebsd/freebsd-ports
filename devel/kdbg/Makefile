@@ -9,7 +9,7 @@ PORTNAME=	kdbg
 PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	devel kde
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Source%20Code/${PORTVERSION}
 
 MAINTAINER=	thomas.sander@gmx.de
 COMMENT=	A graphical user interface around gdb using KDE

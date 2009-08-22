@@ -8,8 +8,7 @@
 PORTNAME=	pychecker
 PORTVERSION=	0.8.18
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Python source code checking tool to help hunting common bugs

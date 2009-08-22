@@ -10,7 +10,6 @@ PORTVERSION=	${SQLRELAY_PORTVERSION}
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sqlrelay
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A persistent DB connection pooling/proxying/load balancing system

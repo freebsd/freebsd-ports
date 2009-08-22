@@ -9,8 +9,7 @@ PORTNAME=	libodbc++
 PORTVERSION=	0.2.3
 PORTREVISION=	7
 CATEGORIES=	databases devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libodbcxx
+MASTER_SITES=	SF/libodbcxx/libodbc%2B%2B/${PORTVERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C++ class library and toolset for ODBC access to data sources

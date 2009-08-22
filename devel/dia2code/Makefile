@@ -9,8 +9,7 @@
 PORTNAME=	dia2code
 PORTVERSION=	0.8.3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small utility used to generate code from a Dia diagram

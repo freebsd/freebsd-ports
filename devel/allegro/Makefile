@@ -9,8 +9,7 @@ PORTNAME=	allegro
 DISTVERSION=	4.2.2
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	alleg
+MASTER_SITES=	SF/alleg/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	EitanAdlerList@gmail.com
 COMMENT=	A cross-platform library for games and multimedia programming

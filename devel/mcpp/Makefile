@@ -8,7 +8,7 @@
 PORTNAME=	mcpp
 PORTVERSION=	2.7.2
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/V.${PORTVERSION}
 
 MAINTAINER=	kmatsui@t3.rim.or.jp
 COMMENT=	Alternative C/C++ preprocessor

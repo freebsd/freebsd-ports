@@ -9,8 +9,7 @@ PORTNAME=	aap
 PORTVERSION=	1.090
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	a-a-p
+MASTER_SITES=	SF/a-a-p/Aap/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A build tool alternative to make with internet access and CVS support

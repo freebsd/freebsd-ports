@@ -6,7 +6,7 @@
 PORTNAME=	php-libawl
 PORTVERSION=	0.37
 CATEGORIES=	devel
-MASTER_SITES=	SF/rscds
+MASTER_SITES=	SF/rscds/awl/${PORTVERSION}
 DISTNAME=	awl_${PORTVERSION}
 
 MAINTAINER=	cristianorolim@hotmail.com

@@ -8,9 +8,9 @@
 PORTNAME=	libstrfunc
 PORTVERSION=	8.3
 CATEGORIES=	devel www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}	\
 		http://lionet.info/soft/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	Handles CGI forms, MIME, templates, date conversions, etc

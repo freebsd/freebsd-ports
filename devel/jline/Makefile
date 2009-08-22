@@ -9,8 +9,7 @@ PORTNAME=		jline
 PORTVERSION=		0.9.91
 PORTREVISION=	1
 CATEGORIES=		devel java
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	JLine is a Java library for handling console input

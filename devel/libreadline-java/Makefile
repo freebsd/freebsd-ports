@@ -10,8 +10,7 @@ PORTVERSION=		0.8.0
 DISTVERSIONSUFFIX=	-src
 PORTREVISION=	1
 CATEGORIES=		devel java
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	java-readline
+MASTER_SITES=		SF/java-readline/java-readline/${PORTVERSION}
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	JNI wrapper around GNU Readline / libedit / libgetline

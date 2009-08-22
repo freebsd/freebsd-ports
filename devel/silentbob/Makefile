@@ -8,7 +8,7 @@
 PORTNAME=	silentbob
 PORTVERSION=	1.7.6
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Yet another sourcecode indexing tool

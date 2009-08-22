@@ -11,9 +11,9 @@ PORTNAME=	kodos
 PORTVERSION=	2.4.9
 PORTREVISION=	2
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	The Python Regular Expression Debugger

@@ -9,8 +9,7 @@ PORTNAME=	libassetml
 PORTVERSION=	1.2.1
 PORTREVISION=	9
 CATEGORIES=	devel gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	ofset
+MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Devel Library to share image and audio files between projects

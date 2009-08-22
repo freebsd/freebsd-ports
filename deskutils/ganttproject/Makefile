@@ -8,7 +8,7 @@
 PORTNAME=	ganttproject
 DISTVERSION=	2.1-m3
 CATEGORIES=	deskutils java
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-development/Loire%20M3
 EXTRACT_SUFX=	-src.zip
 
 MAINTAINER=	gahr@FreeBSD.org

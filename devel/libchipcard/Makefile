@@ -8,8 +8,7 @@
 PORTNAME=	libchipcard
 PORTVERSION=	0.9.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libchipcard
+MASTER_SITES=	SF
 
 MAINTAINER=	martin@libchipcard.de
 COMMENT=	A library for easy access to chipcards

@@ -8,7 +8,7 @@
 PORTNAME=	buzhug
 PORTVERSION=	1.5
 CATEGORIES=	databases python
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A pure-Python database engine

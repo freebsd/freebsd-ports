@@ -8,8 +8,7 @@
 PORTNAME=	ftjam
 PORTVERSION=	2.5.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freetype
+MASTER_SITES=	SF/freetype/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small build tool that can be used as a replacement for make(1)

@@ -8,8 +8,7 @@
 PORTNAME=		tcllib
 PORTVERSION=		1.11
 CATEGORIES=		devel tcl
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tcllib
+MASTER_SITES=		SF
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A collection of utility modules for Tcl

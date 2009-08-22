@@ -8,8 +8,7 @@ PORTNAME=	hk_classes
 PORTVERSION=	0.8.1
 PORTREVISION=	3
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	hk-classes
+MASTER_SITES=	SF/hk-classes/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Library for rapid development of database applications

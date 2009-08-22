@@ -9,8 +9,7 @@ PORTNAME=	snotes
 PORTVERSION=	1.1.5
 PORTREVISION=	3
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	s-notes
+MASTER_SITES=	SF/s-notes/s-notes/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight, configurable sticky notes utility

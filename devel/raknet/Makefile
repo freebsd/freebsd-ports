@@ -10,8 +10,8 @@ PORTVERSION=	3.5.2
 PORTEPOCH=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \
-		SF
-MASTER_SITE_SUBDIR=	raknetjenkinsso
+		SF/${PORTNAME}jenkinsso/${PORTNAME}jenkinsso/3.52
+
 DISTNAME=	RakNet-3.52
 
 MAINTAINER=	ganael.laplanche@martymac.com

@@ -8,8 +8,7 @@ PORTNAME=		kickpim
 PORTVERSION=		0.5.3
 PORTREVISION=	8
 CATEGORIES=		deskutils kde
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20_Society_
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Panel applet for editing and accessing the KDE addressbook

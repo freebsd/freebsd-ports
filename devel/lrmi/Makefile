@@ -8,8 +8,7 @@
 PORTNAME=	lrmi
 PORTVERSION=	0.10
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lrmi
+MASTER_SITES=	SF
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	LRMI is a library for calling real mode BIOS routines

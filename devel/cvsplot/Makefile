@@ -10,8 +10,7 @@ PORTNAME=	cvsplot
 PORTVERSION=	1.7.4
 PORTREVISION=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	A perl script which analyses the history of a CVS-managed project

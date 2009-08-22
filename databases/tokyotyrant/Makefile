@@ -8,8 +8,7 @@
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.1.33
 CATEGORIES=	databases
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	tokyocabinet
+MASTER_SITES=	SF/tokyocabinet/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Network interface of Tokyo Cabinet

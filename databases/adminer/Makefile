@@ -8,7 +8,7 @@
 PORTNAME=	adminer
 PORTVERSION=	1.11.1
 CATEGORIES=	databases www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Adminer/Adminer%20${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A full-featured MySQL management tool written in PHP

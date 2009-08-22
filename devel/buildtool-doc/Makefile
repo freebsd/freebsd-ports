@@ -8,8 +8,7 @@
 PORTNAME=	buildtool-doc
 PORTVERSION=	0.16
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	buildtool
+MASTER_SITES=	SF/buildtool/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Buildtool User's and Developer's manuals

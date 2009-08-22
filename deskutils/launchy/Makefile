@@ -9,7 +9,7 @@ PORTNAME=	launchy
 PORTVERSION=	2.1.2
 PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/Launchy%20on%20Linux/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Access applications, files, and bookmarks with just a few keystrokes

@@ -8,7 +8,7 @@
 PORTNAME=	mantis
 PORTVERSION=	1.1.8
 CATEGORIES=	databases www
-MASTER_SITES=	SF/mantisbt
+MASTER_SITES=	SF/${PORTNAME}bt/${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	mantisbt-${PORTVERSION}
 
 MAINTAINER=	dan@langille.org

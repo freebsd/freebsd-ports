@@ -9,8 +9,7 @@ PORTNAME=	libical
 PORTVERSION=	0.43
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freeassociation
+MASTER_SITES=	SF/freeassociation/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	An implementation of the IETF's Calendaring and Scheduling protocols

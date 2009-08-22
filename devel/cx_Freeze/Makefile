@@ -8,8 +8,7 @@
 PORTNAME=	cx_Freeze
 PORTVERSION=	4.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	cx-freeze
+MASTER_SITES=	SF/cx-freeze/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	The cx_Freeze is a set of utilities for freezing Python scripts

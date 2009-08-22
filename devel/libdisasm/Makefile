@@ -8,8 +8,7 @@
 PORTNAME=	libdisasm
 PORTVERSION=	0.23
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bastard
+MASTER_SITES=	SF/bastard/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	bf1783@gmail.com
 COMMENT=	The Bastard Disassembly Environment x86 disassembler library and CLI
