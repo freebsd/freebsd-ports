@@ -1,0 +1,27 @@
+bin/voipong
+bin/voipctl
+etc/voipong/voipong.conf
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/book.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/compilation.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/config-netfile.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/config.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/docbook.css
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/dsom.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/examples-msnetmeeting.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/features.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/installports.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/thanks.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/usage-livecd.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/usage-nonpriv.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/usage-voipctl.html
+%%PORTDOCS%%%%DOCSDIR%%/users-manual/usage.html
+lib/voipong/modvocoder_pcma.so
+lib/voipong/modvocoder_pcmu.so
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-manual
+@dirrm etc/voipong
+@dirrm lib/voipong

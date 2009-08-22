@@ -1,7 +1,0 @@
----------------------------------------------------------------------
-You should now copy
-  %%PREFIX%%/etc/voipong.conf-dist
-to
-  %%PREFIX%%/etc/voipong.conf
-and edit it as appropriate.
----------------------------------------------------------------------

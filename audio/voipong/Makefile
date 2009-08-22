@@ -6,31 +6,28 @@
 #
 
 PORTNAME=	voipong
-PORTVERSION=	1.1
+PORTVERSION=	2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.enderunix.org/voipong/
 
 MAINTAINER=	siseci@EnderUNIX.org
 COMMENT=	Detect Voice Over IP calls and dump them to separate wave files
 
-GNU_CONFIGURE=	yes
-
-SUB_FILES=	pkg-message
-PLIST_FILES=	bin/voipong etc/voipong.conf-dist
-PORTDOCS=	AUTHORS INSTALL README THANKS
+USE_LDCONFIG=	yes
+PORTDOCS=	ALGORITHMS AUTHORS ChangeLog COPYING INSTALL KNOWN_BUGS \
+		LICENSE  NEWS README THANKS TODO
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=""||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|$${prefix}/share/voipong|${DOCSDIR}|; \
-		 s|COPYING||; s|LICENSE||' \
-		${WRKSRC}/Makefile.in
-.ifdef NOPORTDOCS
-	${REINPLACE_CMD} '/install-data-am:/s/install-${PORTNAME}dataDATA//' \
-		${WRKSRC}/Makefile.in
-.endif
+	${MV} ${WRKSRC}/Makefile.bsd ${WRKSRC}/Makefile
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
-
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/users-manual
+	${INSTALL_DATA} ${WRKSRC}/docs/users-manual/*.html ${DOCSDIR}/users-manual/
+	${INSTALL_DATA} ${WRKSRC}/docs/users-manual/*.css ${DOCSDIR}/users-manual/
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
 .include <bsd.port.mk>
