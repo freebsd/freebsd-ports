@@ -7,13 +7,14 @@
 
 PORTNAME=	quesoglc
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/QuesoGLC/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free implementation of the OpenGL Character Renderer
 
-LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi \
+LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 

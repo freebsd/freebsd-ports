@@ -7,7 +7,7 @@
 
 PORTNAME=	m17n-lib
 PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -16,7 +16,7 @@ MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	A library for the multilingual text handling
 
 BUILD_DEPENDS=	m17n-db>=1.5.4:${PORTSDIR}/devel/m17n-db
-LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi \
+LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi \
 		gd.4:${PORTSDIR}/graphics/gd \
 		otf.0:${PORTSDIR}/print/libotf
 RUN_DEPENDS=	m17n-db>=1.5.4:${PORTSDIR}/devel/m17n-db

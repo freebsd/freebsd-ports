@@ -7,6 +7,7 @@
 
 PORTNAME=	fribidi
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	converters pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension for the unicode Bidi algorithm
 
-LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

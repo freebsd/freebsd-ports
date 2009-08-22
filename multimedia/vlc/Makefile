@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -323,7 +323,7 @@ CONFLGIRE_ARGS+=--disable-flac
 .endif
 
 .if (defined(WITH_FRIBIDI) || exists(${LOCALBASE}/bin/fribidi-config)) && !defined(WITHOUT_FRIBIDI)
-LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=--enable-fribidi
 .else
 CONFIGURE_ARGS+=--disable-fribidi

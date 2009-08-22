@@ -7,6 +7,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.6/${PORTNAME}-${PORTVERSION} \
 		http://www.wesnoth.org/files/
@@ -70,7 +71,7 @@ PLIST_SUB+=		EDITOR=""
 .if defined(WITHOUT_FRIBIDI)
 CONFIGURE_ARGS+=	--without-fribidi
 .else
-LIB_DEPENDS+=		fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
 .endif
 
 .if defined(WITHOUT_NLS)

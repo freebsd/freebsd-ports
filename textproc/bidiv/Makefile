@@ -7,6 +7,7 @@
 
 PORTNAME=	bidiv
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.ivrix.org.il/pub/ivrix/src/cmdline/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	onatan@gmail.com
 COMMENT=	A bidirectional text filter
 
-LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi
 
 WRKSRC=		${WRKDIR}/bidiv
 MAN1=		bidiv.1

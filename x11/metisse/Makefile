@@ -71,7 +71,7 @@ LIB_DEPENDS+=	rplay.1:${PORTSDIR}/audio/rplay
 .endif
 
 .if defined(WITH_BIDI)
-LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 .endif
 
 .if ${HAVE_GNOME:Mgtk12} || defined(WITH_GTK)

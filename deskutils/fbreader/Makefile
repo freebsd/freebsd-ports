@@ -8,7 +8,7 @@
 PORTNAME=	fbreader
 PORTVERSION=	0.10.7
 DISTVERSIONPREFIX=	sources-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,7 @@ COMMENT=	Powerful e-book reader
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2 \
-		fribidi.0:${PORTSDIR}/converters/fribidi \
+		fribidi.3:${PORTSDIR}/converters/fribidi \
 		linebreak.1:${PORTSDIR}/textproc/liblinebreak
 
 .if defined(WITH_GTK2)

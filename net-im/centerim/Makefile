@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
 
 .if defined(WITH_FRIBIDI)
-LIB_DEPENDS+=		fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--with-fribidi
 .endif
 

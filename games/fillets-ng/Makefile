@@ -7,6 +7,7 @@
 
 PORTNAME=	fillets-ng
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -35,7 +36,7 @@ OPTIONS=	FRIBIDI	"Enable fribidi support" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_FRIBIDI)
-LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 .endif
 
 post-patch:
