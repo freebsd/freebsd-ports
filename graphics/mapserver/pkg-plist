@@ -8,6 +8,7 @@ bin/shptreetst
 bin/shptreevis
 bin/sortshp
 %%WITH_MAPSERV%%www/cgi-bin/mapserv
+%%WITH_MAPSERV%%@dirrm www/cgi-bin
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/.packlist
