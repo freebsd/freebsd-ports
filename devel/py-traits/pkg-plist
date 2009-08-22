@@ -243,6 +243,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/date_editor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/date_editor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/date_editor.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/default_override.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/default_override.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/default_override.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/directory_editor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/directory_editor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/directory_editor.pyo
@@ -288,6 +291,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/null_editor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/null_editor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/null_editor.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/progress_editor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/progress_editor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/progress_editor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/popup_editor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/popup_editor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/popup_editor.pyo
@@ -300,6 +306,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/scrubber_editor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/scrubber_editor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/scrubber_editor.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/search_editor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/search_editor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/search_editor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/set_editor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/set_editor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/set_editor.pyo
@@ -321,6 +330,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/title_editor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/title_editor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/title_editor.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tests/test_default_override.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tests/test_default_override.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tests/test_default_override.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tree_editor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tree_editor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tree_editor.pyo
@@ -348,6 +363,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/extras/edit_column.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/extras/edit_column.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/extras/edit_column.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/extras/saving.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/extras/saving.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/extras/saving.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/file_dialog.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/file_dialog.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/file_dialog.pyo
@@ -466,6 +484,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/editors
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/extras
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/ui/null
@@ -549,6 +568,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/File Dialog/File_Open_with_TextInfo_Extension.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/FileEditor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/FontEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/HTMLEditor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/ImageEnumEditor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/InstanceEditor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/ListEditor_demo.py
