@@ -7,6 +7,7 @@
 
 PORTNAME=	pdfjam
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/software/pdfjam/ \
 		http://www.it.ca/~paul/src/
@@ -15,8 +16,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	johans@stack.nl
 COMMENT=	Shell scripts to manipulate PDF files
 
-RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -28,7 +28,7 @@ NO_BUILD=	yes
 
 post-patch:
 	cd ${WRKSRC} && \
-	${REINPLACE_CMD} -e"s,^#!/bin/bash,#!${LOCALBASE}/bin/bash," \
+	${REINPLACE_CMD} -e"s,^#!/bin/bash,#!/bin/sh," \
 		${PLIST_FILES:C/bin/scripts/}
 
 do-install:
