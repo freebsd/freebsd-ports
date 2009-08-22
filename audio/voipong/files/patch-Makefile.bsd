@@ -1,0 +1,21 @@
+--- Makefile.bsd.orig	2009-08-21 22:13:38.000000000 -0300
++++ Makefile.bsd	2009-08-21 22:15:08.000000000 -0300
+@@ -55,15 +55,15 @@
+ 
+ install:
+ 	mkdir -p /usr/local/etc/voipong
+-	mkdir -p /usr/local/etc/voipong/modules
++	mkdir -p /usr/local/lib/voipong
+ 	cp voipong /usr/local/bin/
+ 	cp voipctl /usr/local/bin/
+ 	cp etc/voipong.conf /usr/local/etc/voipong/
+ 	chmod 750 /usr/local/bin/voipong
+ 	chmod 750 /usr/local/bin/voipctl
+ 	chmod 600 /usr/local/etc/voipong/voipong.conf
+-	cp modvocoder_*.so /usr/local/etc/voipong/modules/
+-	chmod 500 /usr/local/etc/voipong/modules/*
++	cp modvocoder_*.so /usr/local/lib/voipong/
++	chmod 500 /usr/local/lib/voipong/*
+ 
+ cls:
+ 	$(CLEARX)
