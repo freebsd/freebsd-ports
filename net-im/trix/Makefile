@@ -9,7 +9,7 @@ PORTNAME=	trix
 PORTVERSION=	0.94
 PORTREVISION=	3
 CATEGORIES=	net-im
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pascalamsg@gmail.com
 COMMENT=	TriX is a chat compatible with 2.0 protocol of the Vypress Chat

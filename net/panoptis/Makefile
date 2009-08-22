@@ -10,7 +10,6 @@ PORTVERSION=	0.1.4
 PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Detect and block DoS/DDoS attacks

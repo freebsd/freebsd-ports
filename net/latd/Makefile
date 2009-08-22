@@ -8,8 +8,7 @@
 PORTNAME=	latd
 PORTVERSION=	1.25
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	linux-decnet
+MASTER_SITES=	SF/linux-decnet/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	tillman@seekingfire.com
 COMMENT=	The linux-decnet project LAT protocol suite

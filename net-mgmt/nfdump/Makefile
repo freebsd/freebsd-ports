@@ -8,8 +8,7 @@
 PORTNAME=	nfdump
 PORTVERSION=	1.5.8
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Command-line tools to collect and process NetFlow data

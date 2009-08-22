@@ -8,8 +8,7 @@
 PORTNAME=	mldonkey
 PORTVERSION=	0.2
 CATEGORIES=	net-p2p perl5
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	remotefilesync
+MASTER_SITES=	SF/remotefilesync/perlreactor/perlreactor%20${PORTVERSION}
 PKGNAMESUFFIX=	-perlreactor
 DISTNAME=	perlreactor_${PORTVERSION}
 

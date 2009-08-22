@@ -8,8 +8,7 @@
 PORTNAME=	libnetdude
 PORTVERSION=	0.10a
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	netdude
+MASTER_SITES=	SF/netdude/${PORTNAME}/0.10
 
 MAINTAINER=	brenton.chang@gmail.com
 COMMENT=	A library for manipulating libpcap/tcpdump trace files

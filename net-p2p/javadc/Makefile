@@ -9,8 +9,7 @@ PORTNAME=	javadc
 PORTVERSION=	0.20
 PORTREVISION=	2
 CATEGORIES=	net-p2p java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	# none known, please fix
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Java DirectConnect (TM) command-line client

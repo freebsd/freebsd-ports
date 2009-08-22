@@ -8,8 +8,7 @@
 PORTNAME=	libpcapnav
 PORTVERSION=	0.8
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	netdude
+MASTER_SITES=	SF/netdude/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	brenton.chang@gmail.com
 COMMENT=	A libpcap wrapper library

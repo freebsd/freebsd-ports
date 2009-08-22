@@ -8,7 +8,7 @@
 PORTNAME=	sblim-wbemcli
 PORTVERSION=	1.6.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,sblim,}
+MASTER_SITES=	SF/sblim/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	CLI for Web Based Enterprise Management by SBLIM

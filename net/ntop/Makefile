@@ -9,8 +9,7 @@ PORTNAME=	ntop
 PORTVERSION=	3.3.9
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces

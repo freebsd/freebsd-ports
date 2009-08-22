@@ -8,8 +8,7 @@
 PORTNAME=	tmsnc
 PORTVERSION=	0.3.2
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/Source%20code%20and%20binaries/${PORTVERSION}
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	A textbased (console) MSN client

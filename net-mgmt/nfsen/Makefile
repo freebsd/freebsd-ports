@@ -8,9 +8,9 @@
 PORTNAME=	nfsen
 PORTVERSION=	1.3.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Web based frontend to nfdump netflow collector

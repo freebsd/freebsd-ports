@@ -9,8 +9,7 @@ PORTNAME=	kojoney
 PORTVERSION=	0.0.4.1
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=kojoney
+MASTER_SITES=	SF/${PORTNAME}/Kojoney%20New%20Way/Kojoney%20${PORTVERSION}
 
 MAINTAINER=	systemoperator@gmail.com
 COMMENT=	A low level interaction honeypot that emulates an SSH server

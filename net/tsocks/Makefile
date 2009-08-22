@@ -8,10 +8,11 @@ PORTNAME=	tsocks
 PORTVERSION=	1.8.b5
 PORTREVISION=	4
 CATEGORIES=	net security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.8%20beta%205 \
 		http://ftp1.sourceforge.net/tsocks/ \
+
 		http://www.yazzy.org/ports/tsocks/
-MASTER_SITE_SUBDIR=	tsocks
+
 DISTNAME=${PORTNAME}-${PORTVERSION:C/.b/beta/}
 
 MAINTAINER=	ports@FreeBSD.org

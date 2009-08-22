@@ -9,8 +9,7 @@ PORTNAME=	tapidbus
 PORTVERSION=	0.2.1
 PORTREVISION=	5
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tapioca-voip
+MASTER_SITES=	SF/tapioca-voip/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction layer for interprocess communication

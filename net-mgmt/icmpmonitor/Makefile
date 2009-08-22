@@ -8,8 +8,7 @@
 PORTNAME=	icmpmonitor
 PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	icmpmonitor
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiple host icmp monitoring tool

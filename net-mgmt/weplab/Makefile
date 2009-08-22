@@ -8,7 +8,7 @@
 PORTNAME=	weplab
 PORTVERSION=	0.1.5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WepLab is a tool designed to teach how WEP works

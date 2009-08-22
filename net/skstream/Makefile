@@ -9,8 +9,7 @@ PORTNAME=	skstream
 PORTVERSION=	0.3.6
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	worldforge
+MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28network%20lib%29/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An iostream based C++ socket library

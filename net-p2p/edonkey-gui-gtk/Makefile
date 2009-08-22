@@ -10,7 +10,7 @@ PORTNAME=	edonkey
 PORTVERSION=	0.6.4
 PORTREVISION=	7
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF/ed2k-gtk-gui
+MASTER_SITES=	SF/ed2k-gtk-gui/ed2k-gtk-gui/${PORTVERSION}
 PKGNAMESUFFIX=	-gui-gtk
 DISTNAME=	ed2k-gtk-gui-${PORTVERSION}
 

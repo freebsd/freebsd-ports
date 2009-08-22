@@ -8,8 +8,7 @@
 PORTNAME=	mknbi
 PORTVERSION=	1.4.4
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	etherboot
+MASTER_SITES=	SF/etherboot/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates tagged boot images for net/ether boot

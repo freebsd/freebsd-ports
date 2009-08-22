@@ -8,12 +8,15 @@
 PORTNAME=	slrn
 PORTVERSION=	0.9.9p1
 CATEGORIES=	news ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		ftp://angel.sovam.com/pub/tools/net/news/ \
+
 		ftp://ftp.fu-berlin.de/pub/unix/news/slrn/ \
+
 		ftp://ftp.ntua.gr/pub/lang/slang/slrn/ \
+
 		ftp://ftp.plig.org/pub/slrn/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	SLang-based newsreader

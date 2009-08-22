@@ -9,8 +9,7 @@ PORTNAME=	fruity
 DISTVERSION=	1.0-rc2
 PORTREVISION=	3
 CATEGORIES=	net-mgmt www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fruity
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.0-rc2
 
 MAINTAINER=	dan@langille.org
 COMMENT=	Fruity is a PHP based web-frontend to your Nagios configuration

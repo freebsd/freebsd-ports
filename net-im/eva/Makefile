@@ -9,8 +9,7 @@ PORTNAME=	eva
 PORTVERSION=	0.4.1
 PORTREVISION=	6
 CATEGORIES=	net-im kde
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	evaq
+MASTER_SITES=	SF/${PORTNAME}q/${PORTNAME}-0.4/Eva%20${PORTVERSION}
 
 PATCH_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 PATCHFILES=	eva-0.4.1_20070504.patch.gz

@@ -7,8 +7,7 @@
 PORTNAME=	jabber.el
 PORTVERSION=	0.7.1
 CATEGORIES=	net-im elisp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	emacs-jabber
+MASTER_SITES=	SF/emacs-jabber/emacs-jabber/${PORTVERSION}
 DISTNAME=		emacs-jabber-${PORTVERSION}
 
 MAINTAINER=	m.boyarov@bsd.by

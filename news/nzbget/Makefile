@@ -8,7 +8,7 @@
 PORTNAME=	nzbget
 PORTVERSION=	0.6.0
 CATEGORIES=	news
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	toxic@doobie.com
 COMMENT=	A binary newsreader supporting NZB files

@@ -9,8 +9,7 @@
 PORTNAME=	libsocketcpp
 PORTVERSION=	1.0.7
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libsocket
+MASTER_SITES=	SF/libsocket/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper library to the sockets

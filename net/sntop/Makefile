@@ -8,8 +8,7 @@
 PORTNAME=	sntop
 PORTVERSION=	1.4.3
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Monitor status of network nodes using fping

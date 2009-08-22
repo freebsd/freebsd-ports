@@ -9,7 +9,7 @@
 PORTNAME=	libmsn
 DISTVERSION=	4.0-beta6
 CATEGORIES=	net-im
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/4.0%20beta%206
 
 MAINTAINER=	decept0@gmail.com
 COMMENT=	A library for connecting to MSN Messenger service

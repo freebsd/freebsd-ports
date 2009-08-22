@@ -9,8 +9,7 @@ PORTNAME=	lyntin
 PORTVERSION=	4.1.1
 PORTREVISION=	1
 CATEGORIES=	net games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	stefan@aeschbacher.ch
 COMMENT=	A highly configurable client program to help playing muds

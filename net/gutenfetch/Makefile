@@ -8,8 +8,7 @@
 PORTNAME=	gutenfetch
 PORTVERSION=	1.5
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gutenfetch
+MASTER_SITES=	SF
 
 MAINTAINER=	johntabularasa@users.sf.net
 COMMENT=	Fetch listings and books from Project Gutenberg

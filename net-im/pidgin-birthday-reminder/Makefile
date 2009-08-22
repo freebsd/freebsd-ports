@@ -9,7 +9,7 @@ PORTNAME=	birthday_reminder
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	net-im
-MASTER_SITES=	SF/pidgin-birthday
+MASTER_SITES=	SF/pidgin-birthday/pidgin-birthday/${PORTVERSION}
 PKGNAMEPREFIX=	pidgin-
 
 MAINTAINER=	avl@FreeBSD.org

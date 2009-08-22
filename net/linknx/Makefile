@@ -9,7 +9,7 @@ PORTNAME=	linknx
 PORTVERSION=	0.0.1.25
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Rule-based event handling in a KNX installation

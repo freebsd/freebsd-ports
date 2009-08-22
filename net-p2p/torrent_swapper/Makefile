@@ -9,8 +9,7 @@ PORTNAME=	torrent_swapper
 PORTVERSION=	1.0
 PORTREVISION=	4
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	bit-torrent
+MASTER_SITES=	SF/bit-torrent/bit-torrent/Torrent%20Swapper
 DISTNAME=	swapper
 
 MAINTAINER=	alepulver@FreeBSD.org

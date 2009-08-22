@@ -9,7 +9,7 @@ PORTNAME=	docsis
 PORTVERSION=	0.9.5
 PORTREVISION=	3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jflemer@alum.rpi.edu
 COMMENT=	DOCSIS(tm) binary configuration file encoder/decoder

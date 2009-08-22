@@ -9,8 +9,7 @@ PORTNAME=	etherape
 PORTVERSION=	0.9.6
 PORTREVISION=	5
 CATEGORIES=	net-mgmt gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical network traffic visualization tool for gnome

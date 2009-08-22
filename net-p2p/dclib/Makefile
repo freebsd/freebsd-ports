@@ -11,8 +11,7 @@ PORTNAME=	dclib
 PORTVERSION=	0.3.23
 PORTREVISION=	1
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	wxdcgui
+MASTER_SITES=	SF/wxdcgui/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Direct connect interface library for valknut

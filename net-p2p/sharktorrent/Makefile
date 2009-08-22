@@ -9,7 +9,7 @@ PORTNAME=	sharktorrent
 PORTVERSION=	0.1.1
 PORTREVISION=	4
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	C++ Bittorrent client using wxWidgets, libtorrent and boost

@@ -9,9 +9,9 @@ PORTNAME=	lopster
 PORTVERSION=	1.2.2
 PORTREVISION=	6
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://lopster.sourceforge.net/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ client for Napster

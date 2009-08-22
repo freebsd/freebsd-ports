@@ -8,8 +8,7 @@
 PORTNAME=	libnids
 PORTVERSION=	1.23
 CATEGORIES=	net security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Network monitoring library with TCP/IP reassembly

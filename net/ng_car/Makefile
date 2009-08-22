@@ -8,8 +8,7 @@
 PORTNAME=	ng_car
 PORTVERSION=	0.6
 CATEGORIES=	net kld
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	mpd
+MASTER_SITES=	SF/mpd/misc/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mav@FreeBSD.org
 COMMENT=	Netgraph committed access rate node

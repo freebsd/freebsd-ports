@@ -8,8 +8,7 @@
 PORTNAME=	netams
 DISTVERSION=	3.4.1rc1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.netams.com/files/ \
-		SF
+MASTER_SITES=	http://www.netams.com/files/
 
 MAINTAINER=	jura@netams.com
 COMMENT=	Network Traffic Accounting and Monitoring Software

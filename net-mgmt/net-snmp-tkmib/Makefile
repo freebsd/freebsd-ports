@@ -8,8 +8,7 @@
 PORTNAME=	ucd-snmp-tkmib
 PORTVERSION=	4.2.7.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	net-snmp
+MASTER_SITES=	SF/net-snmp/ucd-snmp/${PORTVERSION}%20source%20code
 DISTNAME=	ucd-snmp-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org

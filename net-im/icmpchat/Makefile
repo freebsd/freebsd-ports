@@ -8,8 +8,7 @@
 PORTNAME=	icmpchat
 PORTVERSION=	0.6
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	icmpchat
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple console-based chat that uses ICMP protocol

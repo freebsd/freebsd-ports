@@ -8,8 +8,7 @@
 PORTNAME=	yydecode
 PORTVERSION=	0.2.10
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	yydecode
+MASTER_SITES=	SF
 
 MAINTAINER=	miki@ceti.pl
 COMMENT=	Tool to decode yEnc encoded files

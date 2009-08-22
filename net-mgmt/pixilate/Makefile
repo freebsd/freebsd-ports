@@ -8,8 +8,7 @@ PORTNAME=	pixilate
 PORTVERSION=	0.4.1
 PORTREVISION=	4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	winfingerprint
+MASTER_SITES=	SF/winfingerprint/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates packets to match a list of Cisco PIX access lists

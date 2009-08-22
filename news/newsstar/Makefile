@@ -8,8 +8,7 @@
 PORTNAME=	newsstar
 PORTVERSION=	1.3.2
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)

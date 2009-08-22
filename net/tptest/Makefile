@@ -8,8 +8,7 @@
 PORTNAME=	tptest
 PORTVERSION=	3.1.7
 CATEGORIES=	net benchmarks
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTNAME}%203.1
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Software suite for testing network throughput and Internet services

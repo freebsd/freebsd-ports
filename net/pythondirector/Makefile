@@ -8,8 +8,7 @@
 PORTNAME=	pydirector
 PORTVERSION=	1.0.0
 CATEGORIES=	net python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pythondirector
+MASTER_SITES=	SF/pythondirector/pythondirector/pythondirector-${PORTVERSION}
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A TCP load balancer written in Python

@@ -9,7 +9,7 @@ PORTNAME=	libdnet
 PORTVERSION=	1.11
 PORTREVISION?=	3
 CATEGORIES?=	net
-MASTER_SITES=	SF
+MASTER_SITES=	SF/libdnet/libdnet/libdnet-${PORTVERSION}
 
 MAINTAINER?=	onatan@gmail.com
 COMMENT=	A simple interface to low level networking routines

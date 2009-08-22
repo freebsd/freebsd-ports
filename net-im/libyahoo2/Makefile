@@ -9,8 +9,7 @@
 PORTNAME=	libyahoo2
 PORTVERSION=	0.7.7
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A C library that handles the new Yahoo! Messenger protocol

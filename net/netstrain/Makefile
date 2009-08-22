@@ -8,8 +8,7 @@
 PORTNAME=	netstrain
 PORTVERSION=	3.0
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Tool to measure practical TCP throughput between two machines

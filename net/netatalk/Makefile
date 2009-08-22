@@ -9,8 +9,7 @@ PORTNAME=	netatalk
 PORTVERSION=	2.0.4
 PORTEPOCH=	1
 CATEGORIES=	net print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	netatalk
+MASTER_SITES=	SF
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File and print server for AppleTalk networks

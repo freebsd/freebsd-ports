@@ -9,8 +9,7 @@ PORTNAME=	nrpe
 DISTVERSION=	2.12
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	nagios
+MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Nagios Remote Plugin Executor

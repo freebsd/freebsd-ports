@@ -6,8 +6,7 @@
 PLUGIN_NAME?=	${PORTNAME}
 
 PKGNAMEPREFIX=	verlihub-plugins-
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	verlihub
+MASTER_SITES=	SF/verlihub/OldFiles
 DISTNAME=	${PLUGIN_NAME}
 
 COMMENT?=	${PLUGIN_DESC} plugin for the VerliHub - a Direct Connect protocol server

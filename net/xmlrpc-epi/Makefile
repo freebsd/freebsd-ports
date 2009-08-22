@@ -8,7 +8,7 @@
 PORTNAME=	xmlrpc-epi
 PORTVERSION=	0.54
 CATEGORIES=	net
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-base/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose implementation of the xmlrpc specification in C

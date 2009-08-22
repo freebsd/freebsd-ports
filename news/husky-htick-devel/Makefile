@@ -8,6 +8,8 @@
 PORTNAME=	htick
 DISTVERSION=	1.4-rc5
 CATEGORIES=	news mail
+MASTER_SITES=	SF/husky/${PORTNAME}/1.4-RC5
+
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mail@ozzmosis.com
