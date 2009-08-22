@@ -9,7 +9,7 @@ PORTNAME=	q
 PORTVERSION=	7.11
 PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	SF/q-lang
+MASTER_SITES=	SF/${PORTNAME}-lang/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Q -- equational programming language

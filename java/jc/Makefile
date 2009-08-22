@@ -9,8 +9,7 @@ PORTNAME=	jc
 PORTVERSION=	1.4.7
 PORTREVISION=	4
 CATEGORIES=	java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=jcvm/
+MASTER_SITES=	SF/${PORTNAME}vm/JC%20source%20distribution/Release%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JVM that converts class files to C source and compiles them with GCC

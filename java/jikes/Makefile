@@ -9,8 +9,7 @@ PORTNAME=	jikes
 PORTVERSION=	1.22
 PORTREVISION=	1
 CATEGORIES=	java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=jikes/
+MASTER_SITES=	SF/${PORTNAME}/Jikes/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very fast Java source to byte-code compiler made available by IBM

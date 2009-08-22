@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese net
 MASTER_SITES=	SF\
 		ftp://ftp.leo.chubu.ac.jp/pub/network/mnews/:MN
+
 DISTNAME=	LambdaMOO-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mnews122.tar.gz:MN

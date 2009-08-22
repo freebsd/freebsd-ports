@@ -8,8 +8,7 @@
 PORTNAME=	solid-ircd
 PORTVERSION=	3.4.8
 CATEGORIES=	irc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=solidircd
+MASTER_SITES=	SF/solidircd/Solid-Stable/solidircd-stable.${PORTVERSION}
 DISTNAME=	solidircd-stable3.4.8
 
 MAINTAINER=	systemoperator@gmail.com

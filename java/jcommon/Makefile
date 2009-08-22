@@ -9,8 +9,7 @@
 PORTNAME=	jcommon
 PORTVERSION=	1.0.16
 CATEGORIES=	java devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	jfreechart
+MASTER_SITES=	SF/jfreechart/3.%20JCommon/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of useful classes used by JFreeChart and JFreeReport

@@ -11,8 +11,9 @@ PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/release/110.0.7/ \
 		ftp://flint.cs.yale.edu/pub/smlnj/release/110.0.7/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
+		SF/${PORTNAME}/${PORTNAME}-release/${PORTVERSION}		
+
 DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
 		config.tar.Z eXene.tar.Z \
 		ml-burg.tar.Z ml-lex.tar.Z \

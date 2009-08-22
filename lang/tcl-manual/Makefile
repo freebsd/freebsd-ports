@@ -8,8 +8,7 @@
 PORTNAME=	tcl-manual
 PORTVERSION=	20041118
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tcl
+MASTER_SITES=	SF/tcl/Tcl/8.3.5
 DISTFILES=	tcl8.3.5-html.tar.gz tcl8.4.7-html.tar.gz tcl8.5a1-html.tar.gz
 
 MAINTAINER=	edwin@mavetju.org

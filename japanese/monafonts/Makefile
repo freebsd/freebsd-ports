@@ -10,7 +10,7 @@ PORTVERSION=	2.90
 PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	SF/monafont
+MASTER_SITES=	SF/monafont/monafont/monafont-${PORTVERSION}
 DISTNAME=	monafont-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org

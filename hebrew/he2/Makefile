@@ -9,7 +9,7 @@ PORTNAME=	he2
 PORTVERSION=	0.61
 PORTREVISION=	2
 CATEGORIES=	hebrew editors
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/HebrewEditor/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An editor for editing (primarily LaTeX) Hebrew files

@@ -8,8 +8,7 @@
 PORTNAME=	harbour
 PORTVERSION=	1.0.1
 CATEGORIES=	lang
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}-project
+MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	An open source Clipper-compatible compiler

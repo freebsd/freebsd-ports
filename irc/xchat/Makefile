@@ -10,9 +10,9 @@ PORTNAME=	xchat
 PORTVERSION=	2.8.6
 PORTREVISION=	3
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://xchat.org/files/source/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An X11 IRC client using the GTK+ 2 toolkit

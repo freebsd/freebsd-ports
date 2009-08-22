@@ -9,8 +9,7 @@ PORTNAME=	jgrapht
 PORTVERSION=	0.7.3
 PORTREVISION=	1
 CATEGORIES=	java math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/JGraphT/Version%20${PORTVERSION}
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java package for mathematical graph-theory objects and algorithms

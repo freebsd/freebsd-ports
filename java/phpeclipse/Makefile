@@ -8,7 +8,7 @@
 PORTNAME=	phpeclipse
 PORTVERSION=	1.2.1
 CATEGORIES=	java editors devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/a%29%20Eclipse%203.3.x/PHPEclipse-${PORTVERSION}
 DISTNAME=	PHPEclipse_${PORTVERSION}_src
 
 MAINTAINER=	kamikaze@bsdforen.de

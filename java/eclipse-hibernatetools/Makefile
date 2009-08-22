@@ -8,8 +8,7 @@
 PORTNAME=	hibernatetools
 DISTVERSION=	3.2.3.GA
 CATEGORIES=	java devel databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jboss
+MASTER_SITES=	SF/jboss/JBossTools/JBossTools%202.1.2.GA
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	HibernateTools-${DISTVERSION}
 DIST_SUBDIR=	eclipse

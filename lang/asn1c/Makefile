@@ -8,9 +8,9 @@
 PORTNAME=	asn1c
 PORTVERSION=	0.9.21
 CATEGORIES=	lang converters security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://lionet.info/soft/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	Modern ASN.1 to C compiler

@@ -9,8 +9,7 @@ PORTNAME=	gruftistats
 PORTVERSION=	0.2.4
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gruftistats
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces a web page of statistics and quotes from IRC channel logs

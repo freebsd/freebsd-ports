@@ -8,8 +8,8 @@
 PORTNAME=	hunspell
 PORTVERSION=	1.2.8
 CATEGORIES=	hungarian textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S@$@:code@:S@%SUBDIR%@${PORTNAME}@} \
-		${MASTER_SITE_SOURCEFORGE:S@$@:data@:S@%SUBDIR%@magyarispell@}
+MASTER_SITES=	SF/${PORTNAME}/Hunspell/${PORTVERSION}:code \
+		SF/magyarispell/Magyar%20Ispell/${DICTVERSION}:data
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:code	\
 		hu_HU-${DICTVERSION}${EXTRACT_SUFX}:data
 

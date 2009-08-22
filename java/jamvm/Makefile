@@ -8,7 +8,7 @@ PORTNAME=	jamvm
 PORTVERSION=	1.5.1
 PORTREVISION=	2
 CATEGORIES=	java devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JamVM%20${PORTVERSION}
 
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	A compact Java virtual machine

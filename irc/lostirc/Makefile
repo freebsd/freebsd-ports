@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	irc
 MASTER_SITES=	SF \
 		http://demian.dyndns.org/src/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and minimal IRC client for X

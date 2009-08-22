@@ -8,8 +8,7 @@
 PORTNAME=	libHX
 PORTVERSION=	2.8
 CATEGORIES=	lang
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	libhx
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Library C with some additional C++ bindings available
