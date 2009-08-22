@@ -8,7 +8,7 @@
 PORTNAME=	treeform
 PORTVERSION=	1.0.3
 CATEGORIES=	editors java
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/TreeForm%20Unified/TreeForm%20${PORTVERSION}
 DISTNAME=	TreeForm_1_0_3
 
 MAINTAINER=	buganini@gmail.com

@@ -8,8 +8,7 @@
 PORTNAME=	libstocks
 PORTVERSION=	0.5.0
 CATEGORIES=	finance devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A C library which can be used to fetch stocks quotes

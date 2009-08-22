@@ -10,15 +10,23 @@ PORTVERSION=	1.0.22
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
+
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
+
 		ftp://ftp3.fr.pureftpd.org/pure-ftpd/releases/ \
+
 		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
+
 		ftp://ftp.es.pureftpd.org/mirror/pureftpd/latest/releases/ \
+
 		ftp://ftp.nl.pureftpd.org/pub/pure-ftpd/releases/ \
+
 		ftp://ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
+
 		ftp://ftp.cn.pureftpd.org/pub/pureftpd/pure-ftpd/releases/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pureftpd
+
+		SF/pureftpd/Pure-FTPd/${PORTVERSION}		
+
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server

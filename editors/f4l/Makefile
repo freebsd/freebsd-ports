@@ -9,8 +9,7 @@ PORTNAME=	f4l
 PORTVERSION=	0.2.1
 PORTREVISION=	3
 CATEGORIES=	editors multimedia www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_beta_swfExport/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source development environment for Macromedia Flash

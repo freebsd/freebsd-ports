@@ -9,7 +9,7 @@ PORTNAME=	multiget
 PORTVERSION=	1.1.3
 PORTREVISION=	3
 CATEGORIES=	ftp www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An http/ftp downloader with a nice GUI

@@ -9,7 +9,7 @@ PORTNAME=	cingb
 PORTVERSION=	0.29
 PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/V029A
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another Nintendo GameBoy(tm) emulator

@@ -10,11 +10,13 @@ PORTNAME=	gnucash-docs
 PORTVERSION=	2.2.0
 PORTREVISION=	3
 CATEGORIES=	finance gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/gnucash/${PORTNAME}/${PORTVERSION} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/ \
+
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
+
 		http://www.linas.org/pub/
-MASTER_SITE_SUBDIR=	gnucash
+
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Documentation for gnucash

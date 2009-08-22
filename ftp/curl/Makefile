@@ -10,7 +10,6 @@ PORTVERSION=	7.19.6
 PORTREVISION=	1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
-		${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/curl/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/

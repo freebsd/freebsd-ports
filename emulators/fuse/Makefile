@@ -9,8 +9,7 @@ PORTNAME=	fuse
 PORTVERSION=	0.10.0.2
 PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	fuse-emulator
+MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator

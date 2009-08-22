@@ -8,7 +8,7 @@
 PORTNAME=	ledgersmb
 PORTVERSION=	1.2.17
 CATEGORIES=	finance perl5
-MASTER_SITES=	SF/ledger-smb
+MASTER_SITES=	SF/ledger-smb/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	A double entry accounting system

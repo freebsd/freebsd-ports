@@ -10,8 +10,7 @@ PORTNAME=	pureadmin
 PORTVERSION=	0.4
 PORTREVISION=	2
 CATEGORIES=	ftp
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	purify
+MASTER_SITES=	SF/purify/Default/${PORTVERSION}
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Management utility for the PureFTPd

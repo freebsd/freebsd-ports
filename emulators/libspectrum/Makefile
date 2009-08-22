@@ -8,8 +8,7 @@
 PORTNAME=	libspectrum
 PORTVERSION=	0.5.0.1
 CATEGORIES=	emulators devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	fuse-emulator
+MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	Handling of ZX-Spectrum emulator files formats

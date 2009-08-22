@@ -9,9 +9,9 @@ PORTNAME=	doxymacs
 PORTVERSION=	1.8.0
 PORTREVISION=	1
 CATEGORIES=	editors elisp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Doxymacs is Doxygen + {X}Emacs

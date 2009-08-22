@@ -9,9 +9,9 @@ PORTNAME=	vmips
 PORTVERSION=	1.3.2
 PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://www.dgate.org/vmips/releases/vmips-${PORTVERSION}/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
 
 MAINTAINER=	brg@dgate.org
 COMMENT=	MIPS R3000 simulator

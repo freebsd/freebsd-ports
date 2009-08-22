@@ -9,7 +9,7 @@ PORTNAME=	tuxnes
 PORTVERSION=	0.75
 PORTREVISION=	4
 CATEGORIES=	emulators
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/TuxNES/TuxNES%20v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Nintendo Entertainment System 8-bit emulator

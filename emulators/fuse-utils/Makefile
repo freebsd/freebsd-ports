@@ -8,8 +8,7 @@
 PORTNAME=	fuse-utils
 PORTVERSION=	0.10.0.1
 CATEGORIES=	emulators
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	fuse-emulator
+MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Utilities from the Free Unix Spectrum Emulator

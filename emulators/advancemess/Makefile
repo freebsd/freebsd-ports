@@ -9,8 +9,7 @@ PORTNAME=	advancemess
 PORTVERSION=	0.102.0.1
 PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	advancemame
+MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDL MESS port with advanced TV and monitor video support

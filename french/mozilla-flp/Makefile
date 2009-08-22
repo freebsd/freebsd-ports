@@ -10,9 +10,9 @@ PORTVERSION=	${MOZVERSION}
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	french www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
+MASTER_SITES=	SF/frenchmozilla/French%20SeaMonkey/${PORTVERSION}	\
 		http://frenchmozilla.sourceforge.net/FTP/${PORTVERSION}${DISTURL}/
-MASTER_SITE_SUBDIR=	frenchmozilla
+
 DISTNAME=	${GECKO}-${PORTVERSION}.fr-FR.langpack
 
 MAINTAINER=	thierry@FreeBSD.org

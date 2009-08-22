@@ -8,8 +8,7 @@
 PORTNAME=	joe
 PORTVERSION=	2.9.8
 CATEGORIES+=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}-editor
+MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${PORTVERSION}
 
 MAINTAINER?=	toasty@dragondata.com
 COMMENT?=	Joe's Own Editor

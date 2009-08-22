@@ -7,8 +7,7 @@
 PORTNAME=		aqmoney
 PORTVERSION=		0.6.3
 CATEGORIES=		finance
-MASTER_SITES=	 	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	 	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage your credit institute accounts using openhbci

@@ -10,9 +10,9 @@ PORTNAME=	gnucash
 PORTVERSION=	2.2.9
 PORTREVISION=	3
 CATEGORIES=	finance gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
-MASTER_SITE_SUBDIR=	gnucash
+
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Quicken-like money and finance manager

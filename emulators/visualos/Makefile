@@ -9,8 +9,7 @@ PORTNAME=	VisualOS
 PORTVERSION=	1.0.5
 PORTREVISION=	6
 CATEGORIES=	emulators gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual simulator of an operating system to help understand how OSes work

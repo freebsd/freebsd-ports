@@ -9,7 +9,7 @@ PORTNAME=	wily
 PORTVERSION=	0.13.42
 PORTREVISION=	2
 CATEGORIES=	editors plan9
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/baseline/${PORTVERSION}
 
 MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	A clone of the Plan9 editor `acme'

@@ -9,8 +9,7 @@ PORTNAME=	fceu-server
 PORTVERSION=	0.0.5
 PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fceultra
+MASTER_SITES=	SF/fceultra/OldFiles
 
 MAINTAINER=	ninjin@kth.se
 COMMENT=	The network play server for the NES/Famicom emulator fceu

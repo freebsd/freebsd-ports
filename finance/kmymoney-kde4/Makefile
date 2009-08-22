@@ -9,7 +9,7 @@ PORTNAME=	kmymoney2
 PORTVERSION=	0.8.9
 PORTREVISION=	3
 CATEGORIES=	finance
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/KMyMoney/${PORTVERSION}
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	KDE-based personal finance assistant

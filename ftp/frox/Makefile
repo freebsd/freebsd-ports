@@ -11,8 +11,9 @@ PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.hollo.org/frox/download/ \
 		http://frox.sourceforge.net/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+
+		SF		
+
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Transparent FTP proxy with caching support
