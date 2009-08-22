@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liblscp
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
