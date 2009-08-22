@@ -11,7 +11,6 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/crossfire/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
-
 		ftp://ftp.real-time.com/pub/games/crossfire/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

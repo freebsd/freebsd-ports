@@ -11,9 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF \
 		${MASTER_SITE_SAVANNAH} \
-
 		http://www.stillhq.com/panda/source/
-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PDF generation library

@@ -10,13 +10,9 @@ PORTVERSION=	0.9.9p1
 CATEGORIES=	news ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		ftp://angel.sovam.com/pub/tools/net/news/ \
-
 		ftp://ftp.fu-berlin.de/pub/unix/news/slrn/ \
-
 		ftp://ftp.ntua.gr/pub/lang/slang/slrn/ \
-
 		ftp://ftp.plig.org/pub/slrn/
-
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	SLang-based newsreader

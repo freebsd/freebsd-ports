@@ -11,9 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	math gnome
 MASTER_SITES=	http://scigraphica.sourceforge.net/src/ \
 		SF/${PORTNAME}/${PORTNAME}-0.x/${PORTVERSION}-source \
-
 		http://magnet.fsu.edu/~feiguin/scigraphica/src/
-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific application for data analysis and technical graphics

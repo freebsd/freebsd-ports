@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.X/${PORTVERSION} \
 		http://www1.corest.com/download/msyslog/
-
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org

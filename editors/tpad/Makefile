@@ -11,11 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	editors tcl tk
 MASTER_SITES=	SF/tclpad/tclpad/${PORTVERSION} \
 		http://monitor.deis.unical.it/ant/tpad/ \
-
 		http://queen.rett.polimi.it/~ant/tcl/script/ \
-
 		http://sarovar.org/download.php/382/
-
 
 MAINTAINER=	ant@monitor.deis.unical.it
 COMMENT=	Windows XP (TM) enhanced Notepad clone written in Tcl/Tk
