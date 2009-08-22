@@ -1353,6 +1353,7 @@
     SUBDIR += rejik
     SUBDIR += rekonq
     SUBDIR += reportmagic
+    SUBDIR += repos-style
     SUBDIR += resin2
     SUBDIR += resin3
     SUBDIR += retawq
