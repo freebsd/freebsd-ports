@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	octave-forge-communications
-PORTVERSION=	1.0.8
-PORTREVISION=	1
-CATEGORIES=     math
+PORTVERSION=	1.0.10
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
 

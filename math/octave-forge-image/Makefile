@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	octave-forge-image
-PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTVERSION=	1.0.10
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
-LIB_DEPENDS+=	MagickCore:${PORTSDIR}/graphics/ImageMagick
+#LIB_DEPENDS+=	MagickCore:${PORTSDIR}/graphics/ImageMagick
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
