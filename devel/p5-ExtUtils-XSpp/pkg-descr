@@ -1,0 +1,6 @@
+XS++ is just a thin layer over plain XS, hence to use it you are
+supposed to know, at the very least, C++ and XS.  This means that
+you will need typemaps for both the normal XS pre-processor xsubpp
+and the XS++ pre-processor xspp.
+
+WWW: http://search.cpan.org/dist/ExtUtils-XSpp/
