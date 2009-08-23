@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge-linear-algebra
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
