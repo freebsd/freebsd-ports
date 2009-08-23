@@ -1,5 +1,4 @@
 bin/wxperl_overload
-bin/wxperl_xspp
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/AUI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Api.pod
@@ -34,13 +33,6 @@ bin/wxperl_xspp
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Timer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Wx_Exp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/XRC.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Driver.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Grammar.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Node.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Typemap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/XSP.yp
-%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/XSpp.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Any_OS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Any_wx_config.pm

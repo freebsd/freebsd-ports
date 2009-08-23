@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Wx
-PORTVERSION=	0.91
-PORTREVISION=	2
+PORTVERSION=	0.92
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 interface to the wxWidgets cross-platform GUI toolkit
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Alien/wxWidgets.pm:${PORTSDIR}/x11-toolkits/p5-Alien-wxWidgets
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Alien/wxWidgets.pm:${PORTSDIR}/x11-toolkits/p5-Alien-wxWidgets
+BUILD_DEPENDS=	p5-Alien-wxWidgets>=0.25:${PORTSDIR}/x11-toolkits/p5-Alien-wxWidgets \
+		p5-ExtUtils-XSpp>=0.04:${PORTSDIR}/devel/p5-ExtUtils-XSpp
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS=	UNICODE "Build with Unicode support"    on
 
@@ -34,14 +34,10 @@ WX_UNICODE=	yes
 
 ALIEN_UNICODE=	${PERL} -MAlien::wxWidgets -e 'print Alien::wxWidgets->key' | ${GREP} "_uni_"
 
-MAN1=		wxperl_overload.1 \
-		wxperl_xspp.1
+MAN1=		wxperl_overload.1
 MAN3=		Wx::Perl::TextValidator.3 \
 		Wx::Perl::Carp.3 \
-		Wx::XSP::Node.3 \
 		Wx::Socket.3 \
-		Wx::XSP::Typemap.3 \
-		Wx::XSP::XSpp.3 \
 		Wx::Api.3 \
 		Wx::build::Utils.3 \
 		Wx::build::Options.3 \
@@ -49,7 +45,6 @@ MAN3=		Wx::Perl::TextValidator.3 \
 		Wx::build::MakeMaker::Win32_MSVC.3 \
 		Wx::build::MakeMaker.3 \
 		Wx::Thread.3 \
-		Wx::XSP::Parser.3 \
 		Wx.3
 
 .if defined(WITH_UNICODE)
