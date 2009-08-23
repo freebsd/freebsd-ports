@@ -117,7 +117,6 @@
     SUBDIR += hexcalc
     SUBDIR += igraph
     SUBDIR += isabelle
-    SUBDIR += it++
     SUBDIR += itl
     SUBDIR += jacal
     SUBDIR += jags
