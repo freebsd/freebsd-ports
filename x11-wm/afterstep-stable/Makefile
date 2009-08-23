@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.2.8
-PORTREVISION=	6
+PORTVERSION=	2.2.9
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		SF/${PORTNAME}/AfterStep/${PORTVERSION}		
@@ -35,7 +34,7 @@ USE_XORG+=	ice sm x11 xcursor xext xfixes xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-ascp \
-                --enable-i18n \
+		--enable-i18n \
 		--disable-send-postcard-to-developer \
 		--with-helpcommand="xterm -e man" \
 		--with-jpeg-includes="${LOCALBASE}/include" \
@@ -60,6 +59,12 @@ CONFIGURE_ARGS+=	--enable-different-looknfeels
 
 .if !defined(WITH_SAVEWINDOWS)
 CONFIGURE_ARGS+=	--disable-savewindows
+.endif
+
+.if exists(${PREFIX}/share/gnome/wm-properties)
+PLIST_SUB+=	GNOME=""
+.else
+PLIST_SUB+=	GNOME="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
