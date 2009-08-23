@@ -202,7 +202,7 @@ CONFIGURE_ARGS+=	--disable-smb
 .endif
 
 .if defined(WITH_FRIBIDI)
-LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--enable-fribidi
 .else
 CONFIGURE_ARGS+=	--disable-fribidi
