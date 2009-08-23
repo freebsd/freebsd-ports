@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i3
-DISTVERSION=	3.b
+DISTVERSION=	3.c
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3.zekjur.net/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -16,7 +16,6 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	An improved dynamic tiling window manager
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		readlink:${PORTSDIR}/sysutils/readlink \
 		xmlto:${PORTSDIR}/textproc/xmlto
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		xcb-event.1:${PORTSDIR}/x11/xcb-util \
@@ -34,6 +33,12 @@ PLIST_DIRS=	etc/i3
 
 MAN1=	i3.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=	Does not compile on FreeBSD 6.X
+.endif
+
 post-extract:
 	@cd ${WRKSRC} && ${CP} i3.config config.sample
 
@@ -41,11 +46,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/src/config.c
 	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/config.sample
 	@${REINPLACE_CMD} -e 's|PREFIX|${PREFIX}/|g' ${WRKSRC}/man/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/man/i3.man
-
-# Create the manpage
-post-build:
-	@cd ${WRKSRC} && ${GMAKE} -C man
+	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/man/i3.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
@@ -61,4 +62,4 @@ do-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "======================================================================================"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
