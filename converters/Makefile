@@ -106,6 +106,7 @@
     SUBDIR += py-iconvcodec
     SUBDIR += py-pisa
     SUBDIR += py-svglib
+    SUBDIR += rcctools
     SUBDIR += recode
     SUBDIR += ruby-dump.rb
     SUBDIR += ruby-iconv
