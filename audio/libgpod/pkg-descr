@@ -1,11 +1,11 @@
-libgpod is a shared library to access the contents of an iPod.  This
-library is based on code used in the gtkpod project.  Starting with
-V0.96.CVS gtkpod depends on this library.
+libgpod is a shared library to access the contents of an iPod.  This library
+is based on code used in the gtkpod project.  Starting with V0.96.CVS gtkpod
+depends on this library.
 
-This code was originally part of gtkpod itself.  When the parsing code
-was made self-contained with gtkpod V0.93, decision was made to put
-this code in a separate library so that other projects can benefit from
-it without duplicating code.
+This code was originally part of gtkpod itself.  When the parsing code was
+made self-contained with gtkpod V0.93, decision was made to put this code in
+a separate library so that other projects can benefit from it without
+duplicating code.
 
 libgpod supports playlists, smart playlists, playcounts, ratings, podcasts,
 cover art, audio and video.  Photo support is implemented as well.  Python
