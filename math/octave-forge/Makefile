@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20090607
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -20,9 +21,11 @@ COMMENT=	Octave-forge metaport for math/octave
 #    work on these, I would appreciate it.
 #  * vrml builds, but is non functional, as it depends on freewrl, which is
 #    not yet available on FreeBSD.
+#  * ann, fixed, ftp, parallel, vrml, graceplot, triangular do not build with
+#    octave-3.2.2.
 
 OPTIONS=	\
-	ANN "Install package: ann" On \
+	ANN "Install package: ann" Off \
 	AUDIO "Install package: audio" On \
 	BENCHMARK "Install package: benchmark" On \
 	BIOINFO "Install package: bioinfo" On \
@@ -33,8 +36,8 @@ OPTIONS=	\
 	DATABASE "Install package: database (do not select)" Off \
 	ECONOMETRICS "Install package: econometrics" On \
 	FINANCIAL "Install package: financial" On \
-	FIXED "Install package: fixed" On \
-	FTP "Install package: ftp" On \
+	FIXED "Install package: fixed" Off \
+	FTP "Install package: ftp" Off \
 	GA "Install package: ga" On \
 	GENERAL "Install package: general" On \
 	GSL "Install package: gsl" On \
@@ -54,8 +57,9 @@ OPTIONS=	\
 	OPTIM "Install package: optim" On \
 	OPTIMINTERP "Install package: optiminterp" On \
 	OUTLIERS "Install package: outliers" On \
-	PARALLEL "Install package: parallel" On \
+	PARALLEL "Install package: parallel" Off \
 	PHYSICALCONSTANTS "Install package: physicalconstants" On \
+	QUATERNION "Install package: quaternion" On \
 	PLOT "Install package: plot" On \
 	SIGNAL "Install package: signal" On \
 	SIMP "Install package: simp" On \
@@ -69,7 +73,7 @@ OPTIONS=	\
 	SYMBOLIC "Install package: symbolic" On \
 	TIME "Install package: time" On \
 	VIDEO "Install package: video" On \
-	VRML "Install package: vrml" On \
+	VRML "Install package: vrml" Off \
 	ZENITY "Install package: zenity" On \
 	\
 	AD "Install package: ad" On \
@@ -78,7 +82,7 @@ OPTIONS=	\
 	ENGINE "Install package: engine" On \
 	FPL "Install package: fpl" On \
 	GENERATE_HTML "Install package: generate_html" On \
-	GRACEPLOT "Install package: graceplot" On \
+	GRACEPLOT "Install package: graceplot" Off \
 	INTEGRATION "Install package: integration" On \
 	JAVA "Install package: java (do not select)" Off \
 	JHANDLES "Install package: jhandles (do not select)" Off \
@@ -95,9 +99,8 @@ OPTIONS=	\
 	SECS2D "Install package: secs2d" On \
 	SYMBAND "Install package: symband" On \
 	TCL_OCTAVE "Install package: tcl-octave" On \
-	TRIANGULAR "Install package: triangular" On \
+	TRIANGULAR "Install package: triangular" Off \
 	TSA "Install package: tsa" On \
-	WINDOWS "Install package: windows" On \
 	XRAYLIB "Install package: xraylib" On \
 	\
 	SPANISH "Install package: spanish" On \
@@ -209,6 +212,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/parallel.tar.gz:${PORTSDIR}/math/octave-forge-para
 .endif
 .if defined(WITH_PHYSICALCONSTANTS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/physicalconstants.tar.gz:${PORTSDIR}/math/octave-forge-physicalconstants
+.endif
+.if defined(WITH_QUATERNION)
+RUN_DEPENDS+=	${TARBALLS_DIR}/quaternion.tar.gz:${PORTSDIR}/math/octave-forge-quaternion
 .endif
 .if defined(WITH_PLOT)
 RUN_DEPENDS+=	${TARBALLS_DIR}/plot.tar.gz:${PORTSDIR}/math/octave-forge-plot
@@ -330,9 +336,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/triangular.tar.gz:${PORTSDIR}/math/octave-forge-tr
 .endif
 .if defined(WITH_TSA)
 RUN_DEPENDS+=	${TARBALLS_DIR}/tsa.tar.gz:${PORTSDIR}/math/octave-forge-tsa
-.endif
-.if defined(WITH_WINDOWS)
-RUN_DEPENDS+=	${TARBALLS_DIR}/windows.tar.gz:${PORTSDIR}/math/octave-forge-windows
 .endif
 .if defined(WITH_XRAYLIB)
 RUN_DEPENDS+=	${TARBALLS_DIR}/xraylib.tar.gz:${PORTSDIR}/math/octave-forge-xraylib
