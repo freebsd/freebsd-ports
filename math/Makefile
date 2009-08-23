@@ -82,7 +82,6 @@
     SUBDIR += fpc-fftw
     SUBDIR += fpc-numlib
     SUBDIR += freefem
-    SUBDIR += freefem++
     SUBDIR += freemat
     SUBDIR += freemat-mpi
     SUBDIR += fricas
