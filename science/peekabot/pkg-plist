@@ -7,6 +7,8 @@ include/peekabot/Matrix.hh
 include/peekabot/PathIdentifier.hh
 include/peekabot/Types.hh
 include/peekabot/Vector.hh
+include/peekabot/Visibility.hh
+include/peekabot/Version.hh
 include/peekabot/client/DelayedDispatch.hh
 include/peekabot/client/Exceptions.hh
 include/peekabot/client/OperationResult.hh
@@ -34,14 +36,13 @@ include/peekabot/client/proxies/PeekabotProxyBase.hh
 include/peekabot/client/proxies/PointCloudProxy.hh
 include/peekabot/client/proxies/PolygonProxy.hh
 include/peekabot/client/proxies/ScalableProxy.hh
-include/peekabot/client/proxies/SensorProxy.hh
 include/peekabot/client/proxies/SliderProxy.hh
 include/peekabot/client/proxies/SphereProxy.hh
 include/peekabot/client/proxies/VertexBasedProxy.hh
 lib/libpeekabot.a
 lib/libpeekabot.la
 lib/libpeekabot.so
-lib/libpeekabot.so.4
+lib/libpeekabot.so.5
 %%DATADIR%%/data/default_scene.xml
 %%DATADIR%%/fonts/COPYING
 %%DATADIR%%/fonts/FreeSerif.ttf
@@ -74,7 +75,6 @@ lib/libpeekabot.so.4
 %%DATADIR%%/images/polyline_object.png
 %%DATADIR%%/images/polyline_object_aa.png
 %%DATADIR%%/images/rotate.png
-%%DATADIR%%/images/sensor_object.png
 %%DATADIR%%/images/snapshot.png
 %%DATADIR%%/images/snapshot_disabled.png
 %%DATADIR%%/images/sphere_object.png
@@ -98,7 +98,6 @@ lib/libpeekabot.so.4
 %%DATADIR%%/schemas/property_types.xsd
 %%DATADIR%%/schemas/scene.xsd
 %%DATADIR%%/schemas/scene_object.xsd
-%%DATADIR%%/schemas/sensor.xsd
 %%DATADIR%%/schemas/slider.xsd
 %%DATADIR%%/schemas/sphere.xsd
 @dirrm %%DATADIR%%/schemas
