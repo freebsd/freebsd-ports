@@ -9,7 +9,7 @@ validate_env() {
     branch=$2
 
     case ${arch} in
-	amd64|i386|sparc64)
+	amd64|i386|ia64|sparc64)
 	    continue
 	    ;;
 	*)
@@ -19,7 +19,7 @@ validate_env() {
     esac
 
     case ${branch} in
-	6|6-exp|7|7-exp|8|8-exp)
+	6|6-exp|7|7-exp|8|8-exp|9|9-exp)
 	    continue
 	    ;;
 	*)
@@ -99,6 +99,12 @@ buildenv () {
 	    ;;
 	x8-exp)
 	export INDEXFILE=INDEX-8
+	    ;;
+	x9)
+	export INDEXFILE=INDEX-9
+	    ;;
+	x9-exp)
+	export INDEXFILE=INDEX-9
 	    ;;
 	*)
 	    echo "buildenv: invalid branch"

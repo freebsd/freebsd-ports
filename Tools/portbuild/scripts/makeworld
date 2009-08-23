@@ -34,7 +34,10 @@ case "$branch" in
 	export SRCBRANCH="-r RELENG_7"
 	;;
     8*)
-	export SRCBRANCH=
+	export SRCBRANCH="-r RELENG_8"
+	;;
+    9*)
+    	export SRCBRANCH=
 	;;
     *)
 	echo "Invalid branch ${branch}"
