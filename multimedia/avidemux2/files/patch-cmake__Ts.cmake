@@ -5,7 +5,7 @@
  MACRO(FIND_LRELEASE)
      IF(NOT LRELEASE_EXECUTABLE AND NOT LRELEASE_NOT_FOUND)
 -		FIND_PROGRAM(LRELEASE_EXECUTABLE lrelease PATHS
-+		FIND_PROGRAM(LRELEASE_EXECUTABLE lrelease lrelease-qt4 PATHS
++		FIND_PROGRAM(LRELEASE_EXECUTABLE lrelease-qt4 PATHS
  			"[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
  			"[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
  			$ENV{QTDIR}/bin)
@@ -14,7 +14,7 @@
              SET(qm_files ${qm_files} ${_outXml} ${_out})
  
 -			INSTALL(FILES ${_out} DESTINATION "${CMAKE_INSTALL_PREFIX}/bin/i18n")
-+			INSTALL(FILES ${_out} DESTINATION "/var/tmp/avidemux2/share/avidemux2")
++			INSTALL(FILES ${_out} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/avidemux2")
          ENDFOREACH(ts_input ${ts_files})
  
          SET(${_sources} ${${_sources}} ${qm_files})
@@ -23,7 +23,7 @@
              SET(qm_files ${qm_files} ${_out})
  
 -			INSTALL(FILES ${_out} DESTINATION "${CMAKE_INSTALL_PREFIX}/bin/i18n")
-+			INSTALL(FILES ${_out} DESTINATION "/var/tmp/avidemux2/share/avidemux2")
++			INSTALL(FILES ${_out} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/avidemux2")
          ENDFOREACH(ts_input ${ts_files})
  
          SET(${_sources} ${${_sources}} ${qm_files})

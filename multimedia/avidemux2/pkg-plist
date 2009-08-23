@@ -29,5 +29,6 @@ bin/avidemux2_cli
 %%QT_NLS%%share/avidemux2/avidemux_sr.qm
 %%QT_NLS%%share/avidemux2/avidemux_sr@latin.qm
 %%QT_NLS%%share/avidemux2/avidemux_tr.qm
+%%QT_NLS%%share/avidemux2/qt_cs.qm
 %%QT_NLS%%share/avidemux2/qt_fr.qm
 %%QT_NLS%%share/avidemux2/qt_it.qm
