@@ -29,13 +29,11 @@ TARBALLS_DIR=	${LOCALBASE}/share/octave/tarballs
 
 MAKE_ENV+=	PACKAGE=${WRKDIR}/${DISTNAME}.tar.gz
 
-BROKEN=		does not compile
-
 do-install:
 	${MKDIR} ${TARBALLS_DIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}.tar.gz ${TARBALLS_DIR}/.
 	${RM} -f ${TARBALLS_DIR}/${OCTAVE_PKGNAME}.tar.gz
-	octave -H -q --no-site-file --eval "pkg('install','${TARBALLS_DIR}/${DISTNAME}.tar.gz')"
+	PATH=${PREFIX}/bin:/usr/bin octave -H -q --no-site-file --eval "pkg('install','${TARBALLS_DIR}/${DISTNAME}.tar.gz')"
 	${LN} -s ${DISTNAME}.tar.gz ${TARBALLS_DIR}/${OCTAVE_PKGNAME}.tar.gz
 
 post-install:
