@@ -8,6 +8,7 @@
 
 PORTNAME=	fribidi
 PORTVERSION=	0.19.2
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://fribidi.org/download/
 
@@ -40,5 +41,12 @@ MAN3=		fribidi_charset_to_unicode.3 fribidi_debug_status.3 \
 .if !defined(WITH_DEBUG)
 CONFIGURE_ARGS=	--disable-debug
 .endif
+
+post-patch:
+	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' < \
+	    	${FILESDIR}/fribidi-config > ${WRKDIR}/fribidi-config
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/fribidi-config ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

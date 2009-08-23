@@ -1,0 +1,19 @@
+#!/bin/sh
+
+pkgconfig="%%LOCALBASE%%/bin/pkg-config"
+args=""
+
+while [ $# -gt 0 ]; do
+    case "x$1" in
+        x--version)
+	    ${pkgconfig} --modversion fribidi
+	    exit 0
+	    ;;
+	x*)
+	    args="${args} $1"
+	    shift
+	    ;;
+    esac
+done
+
+${pkgconfig} fribidi ${args}
