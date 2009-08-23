@@ -5,8 +5,8 @@
 # accessible to the web server.
 #
 
-# alpha is obsolete; ia64 is not current
-SUPPORTED_ARCHS="amd64 i386 sparc64"
+# alpha is obsolete
+SUPPORTED_ARCHS="amd64 i386 ia64 sparc64"
 ROOT_DIRECTORY=/var/portbuild
 
 OUTFILE=`basename $0 | sed -e "s/^do//"`".html"
@@ -36,7 +36,8 @@ write_table_begin () {
   echo "<tr>" >> ${TMPFILE}
   echo "<td align='left' width='100' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
   echo "<th width='60' bgcolor='$THCOLOR'>cvs date</th>" >> ${TMPFILE}
-  echo "<th width='60' bgcolor='$THCOLOR'>latest log</th>" >> ${TMPFILE}
+  # MCL removed 20090808 -- this takes way too long
+  # echo "<th width='60' bgcolor='$THCOLOR'>latest log</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>INDEX</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>build logs</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>packages</th>" >> ${TMPFILE}
@@ -53,7 +54,7 @@ write_row () {
 
     arch=$1
     build=$2
-    # XXX MCL 20080916
+    # MCL 20080916
     directory=${ROOT_DIRECTORY}/${arch}/${build}/builds/latest
 
     branch=`echo $build | sed -e "s/-exp//"`
@@ -85,13 +86,14 @@ write_row () {
     # column: datestamp and URL of latest log
     have_latest=0
     latest=""
-    if [ -d $directory/logs ]; then
-      latest_suffix="$(cd $directory/logs 2> /dev/null && ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s\">%s %s</a>\n",$10,$6,$7)}')"
-      if [ "$latest_suffix" ]; then
-        latest="<a href=\"http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs/$latest_suffix"
-        have_latest=1
-      fi
-    fi
+# MCL removed 20090808 -- this takes way too long
+#    if [ -d $directory/logs ]; then
+#      latest_suffix="$(cd $directory/logs 2> /dev/null && ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s\">%s %s</a>\n",$10,$6,$7)}')"
+#      if [ "$latest_suffix" ]; then
+#        latest="<a href=\"http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs/$latest_suffix"
+#        have_latest=1
+#      fi
+#    fi
 
     # column: INDEX count
     have_index=0
@@ -113,7 +115,9 @@ write_row () {
     have_packages=0
     n_packages=0
     if [ -d $directory/packages/All ]; then
-      n_packages=`find $directory/packages/All -name \*.tbz -or -name \*.tgz |wc -l`
+      # MCL removed 20090808 -- this takes way too long
+      # n_packages=`find $directory/packages/All -name \*.tbz -or -name \*.tgz |wc -l`
+      n_packages=`ls $directory/packages/All | grep -v CHECKSUM.MD5 | wc -l`
       have_packages=1
     fi
 
@@ -145,7 +149,7 @@ write_row () {
     fi
 
     # column: not yet built count
-    # XXX MCL 20080916 use n_packages, not n_logs; individual logs can be stale.
+    # MCL 20080916 use n_packages, not n_logs; individual logs can be stale.
     # (OTOH, so can packages (see sparc64-5) but this is possibly obsolete)
     have_not_yet_built=0
     n_not_yet_built=0
@@ -202,13 +206,14 @@ write_row () {
     fi
     echo "</td>" >> ${TMPFILE}
 
-    echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ $have_latest ]; then
-      echo "$latest" >> ${TMPFILE}
-    else
-      echo "&nbsp;" >> ${TMPFILE}
-    fi
-    echo "</td>" >> ${TMPFILE}
+# MCL removed 20090808 -- this takes way too long
+#    echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
+#    if [ $have_latest ]; then
+#      echo "$latest" >> ${TMPFILE}
+#    else
+#      echo "&nbsp;" >> ${TMPFILE}
+#    fi
+#    echo "</td>" >> ${TMPFILE}
 
     # note: ports/INDEX-n is copied to a file called errorlogs/INDEX
     echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
@@ -278,7 +283,8 @@ write_table_end () {
 write_footer () {
   echo "<p>explanation of columns:</p>" >> ${TMPFILE}
   echo "<ul>" >> ${TMPFILE}
-  echo "<li><b>latest log</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
+  # MCL removed 20090808 -- this takes way too long
+  #echo "<li><b>latest log</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
   echo "<li><b>cvs date</b> is the date of the latest CVS checkout done by the script.  It may be inaccurate if a manual checkout was done later.</li>" >> ${TMPFILE}
   echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the latest cvs checkout.</li>" >> ${TMPFILE}
   echo "<li><b>build logs</b> is number of packages attempted.  Note: if a run was restarted, you may see duplicates here.</li>" >> ${TMPFILE}
