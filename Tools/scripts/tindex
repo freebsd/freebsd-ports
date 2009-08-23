@@ -36,6 +36,7 @@ export PORTSDIR=${BASEDIR}/ports
 export SRCDIR6=${BASEDIR}/src.6
 export SRCDIR7=${BASEDIR}/src.7
 export SRCDIR8=${BASEDIR}/src.8
+export SRCDIR9=${BASEDIR}/src.9
 
 # Target architecture if not set in the environment
 if [ "${ARCH}" = "" ]; then
@@ -172,14 +173,18 @@ cvs -Rq update -PdA -r RELENG_7 param.h
 OSVERSION7=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR7}/sys/sys/param.h)
 
 cd ${SRCDIR8}/sys/sys
-cvs -Rq update -PdA param.h
+cvs -Rq update -PdA -r RELENG_8 param.h
 OSVERSION8=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR8}/sys/sys/param.h)
+
+cd ${SRCDIR9}/sys/sys
+cvs -Rq update -PdA param.h
+OSVERSION9=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR9}/sys/sys/param.h)
 
 
 cd ${PORTSDIR}
-rm -f INDEX-6 INDEX-6.bz2 INDEX-7 INDEX-7.bz2 INDEX-8 INDEX-8.bz2 
+rm -f INDEX-6 INDEX-6.bz2 INDEX-7 INDEX-7.bz2 INDEX-8 INDEX-8.bz2 INDEX-9 INDEX-9.bz2
 
-for branch in 6.x 7.x 8.x; do
+for branch in 6.x 7.x 8.x 9.x; do
     release=$(echo $branch | sed -e 's,.x,,')
 
     eval _osver=\$OSVERSION${release}
