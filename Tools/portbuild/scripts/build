@@ -160,7 +160,7 @@ do_srcupdate() {
     
 
     case ${branch} in
-	8|8-exp)
+	9|9-exp)
 	    srcbranch=HEAD
 	    ;;
 	*-exp)
