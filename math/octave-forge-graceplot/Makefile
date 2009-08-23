@@ -16,6 +16,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:${PORTSDIR}/math/octave-forge-io
 RUN_DEPENDS+=	${TARBALLS_DIR}/general.tar.gz:${PORTSDIR}/math/octave-forge-general
 
+BROKEN=		Does not compile with octave-3.2.2
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 .include <bsd.port.post.mk>

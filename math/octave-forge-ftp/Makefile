@@ -16,6 +16,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LIB_DEPENDS+=	ftp:${PORTSDIR}/ftp/ftplib
 RUN_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
 
+BROKEN=		Does not build with octave-3.2.2
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 .include <bsd.port.post.mk>

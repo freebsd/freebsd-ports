@@ -15,6 +15,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
 
+BROKEN=		Does not compile with octave-3.2.2
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 .include <bsd.port.post.mk>

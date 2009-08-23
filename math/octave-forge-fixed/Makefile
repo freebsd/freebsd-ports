@@ -13,6 +13,8 @@ CATEGORIES=     math
 MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
+BROKEN=		Does not compile with octave-3.2.2
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 .include <bsd.port.post.mk>
