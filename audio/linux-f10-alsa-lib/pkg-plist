@@ -82,12 +82,12 @@ usr/share/alsa/pcm/surround51.conf
 usr/share/alsa/pcm/surround71.conf
 usr/share/alsa/smixer.conf
 usr/share/alsa/sndo-mixer.alisp
-usr/share/doc/alsa-lib-1.0.19/COPYING
-usr/share/doc/alsa-lib-1.0.19/ChangeLog
-usr/share/doc/alsa-lib-1.0.19/TODO
-usr/share/doc/alsa-lib-1.0.19/asoundrc.txt
+usr/share/doc/alsa-lib-1.0.20/COPYING
+usr/share/doc/alsa-lib-1.0.20/ChangeLog
+usr/share/doc/alsa-lib-1.0.20/TODO
+usr/share/doc/alsa-lib-1.0.20/asoundrc.txt
 @comment non-empty directory listing in revers order
-@dirrm usr/share/doc/alsa-lib-1.0.19
+@dirrm usr/share/doc/alsa-lib-1.0.20
 @dirrm usr/share/alsa/pcm
 @dirrm usr/share/alsa/cards/SI7018
 @dirrm usr/share/alsa/cards
