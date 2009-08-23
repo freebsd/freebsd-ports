@@ -10,8 +10,7 @@ PORTVERSION=	2.4.4
 PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
-		SF/avidemux/avidemux/${PORTVERSION}		
-
+		SF/avidemux/avidemux/${PORTVERSION}
 DISTNAME=	avidemux_${PORTVERSION}
 
 MAINTAINER=	amistry@am-productions.biz
@@ -27,8 +26,6 @@ CONFLICTS=	avidemux2-2.[0-35-9].*
 # Necessary for CMake to find libs
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-
-BROKEN=		need a update for Qt 4.5
 
 USE_GNOME=	libxml2
 USE_QT_VER=	4
