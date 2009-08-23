@@ -1,0 +1,9 @@
+Command line interface to devel/librcc library. It is a highly
+configurable tool (supports almost all library functionality) which
+allows to recode standard input on the per-line basis. Additionally,
+there is a special mode providing a way to bring the names of all
+files in the specified directory to appropriate form (to the specified
+encoding, transliterate all names to english, translate all names
+to english, etc.)
+
+WWW:	http://rusxmms.sourceforge.net
