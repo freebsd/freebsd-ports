@@ -1,8 +1,0 @@
---- man/Makefile.orig	2009-06-29 20:42:52.000000000 +0200
-+++ man/Makefile	2009-06-29 20:43:13.000000000 +0200
-@@ -1,4 +1,4 @@
- all:
--	a2x -f manpage --asciidoc-opts="-f asciidoc.conf" i3.man
-+	PATH=PREFIX/bin:/usr/bin /usr/local/bin/a2x -f manpage --asciidoc-opts="-f asciidoc.conf" i3.man
- clean:
- 	rm -f i3.xml i3.1 i3.html
