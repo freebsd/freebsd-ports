@@ -1,6 +1,7 @@
 bin/msntest
 include/msn/authdata.h
 include/msn/buddy.h
+include/msn/config.h
 include/msn/connection.h
 include/msn/errorcodes.h
 include/msn/externals.h
