@@ -31,21 +31,77 @@ bin/opera-devel
 %%DATADIR%%/java/opera.jar
 %%DATADIR%%/java/opera.policy
 %%DATADIR%%/lngcode.txt
+%%DATADIR%%/locale/be/be.lng
+%%DATADIR%%/locale/bg/bg.lng
+%%DATADIR%%/locale/cs/cs.lng
+%%DATADIR%%/locale/da/bookmarks.adr
+%%DATADIR%%/locale/da/da.lng
+%%DATADIR%%/locale/de/bookmarks.adr
+%%DATADIR%%/locale/de/de.lng
+%%DATADIR%%/locale/de/search.ini
+%%DATADIR%%/locale/el/el.lng
+%%DATADIR%%/locale/en-GB/en-GB.lng
 %%DATADIR%%/locale/en/bookmarks.adr
 %%DATADIR%%/locale/en/en.lng
 %%DATADIR%%/locale/en/en.zip
 %%DATADIR%%/locale/en/license.txt
 %%DATADIR%%/locale/en/search.ini
 %%DATADIR%%/locale/en/standard_speeddial.ini
-%%DATADIR%%/locale/zh-tw/browser.js
-%%DATADIR%%/locale/zh-tw/turbosettings.xml
+%%DATADIR%%/locale/es-ES/es-ES.lng
+%%DATADIR%%/locale/es-LA/es-LA.lng
+%%DATADIR%%/locale/et/et.lng
+%%DATADIR%%/locale/fi/fi.lng
+%%DATADIR%%/locale/fr-CA/fr-CA.lng
+%%DATADIR%%/locale/fr/fr.lng
+%%DATADIR%%/locale/fy/fy.lng
+%%DATADIR%%/locale/hi/hi.lng
+%%DATADIR%%/locale/hi/standard_speeddial.ini
+%%DATADIR%%/locale/hr/hr.lng
+%%DATADIR%%/locale/hu/hu.lng
+%%DATADIR%%/locale/id/id.lng
+%%DATADIR%%/locale/it/it.lng
+%%DATADIR%%/locale/ja/bookmarks.adr
+%%DATADIR%%/locale/ja/ja.lng
+%%DATADIR%%/locale/ja/license.txt
+%%DATADIR%%/locale/ja/search.ini
+%%DATADIR%%/locale/ja/standard_speeddial.ini
+%%DATADIR%%/locale/ka/ka.lng
+%%DATADIR%%/locale/ko/ko.lng
+%%DATADIR%%/locale/lt/lt.lng
+%%DATADIR%%/locale/mk/mk.lng
+%%DATADIR%%/locale/nb/nb.lng
+%%DATADIR%%/locale/nl/nl.lng
+%%DATADIR%%/locale/nn/nn.lng
+%%DATADIR%%/locale/pl/bookmarks.adr
+%%DATADIR%%/locale/pl/pl.lng
+%%DATADIR%%/locale/pl/search.ini
+%%DATADIR%%/locale/pt-BR/pt-BR.lng
+%%DATADIR%%/locale/pt/pt.lng
+%%DATADIR%%/locale/ro/ro.lng
+%%DATADIR%%/locale/ru/bookmarks.adr
+%%DATADIR%%/locale/ru/ru.lng
+%%DATADIR%%/locale/ru/search.ini
+%%DATADIR%%/locale/sk/sk.lng
+%%DATADIR%%/locale/sr/sr.lng
+%%DATADIR%%/locale/sv/sv.lng
+%%DATADIR%%/locale/ta/ta.lng
+%%DATADIR%%/locale/te/te.lng
+%%DATADIR%%/locale/tr/tr.lng
+%%DATADIR%%/locale/uk/uk.lng
+%%DATADIR%%/locale/zh-cn/bookmarks.adr
 %%DATADIR%%/locale/zh-cn/browser.js
+%%DATADIR%%/locale/zh-cn/search.ini
 %%DATADIR%%/locale/zh-cn/turbosettings.xml
+%%DATADIR%%/locale/zh-cn/zh-cn.lng
 %%DATADIR%%/locale/zh-hk/browser.js
 %%DATADIR%%/locale/zh-hk/turbosettings.xml
+%%DATADIR%%/locale/zh-tw/browser.js
+%%DATADIR%%/locale/zh-tw/turbosettings.xml
+%%DATADIR%%/locale/zh-tw/zh-tw.lng
 %%DATADIR%%/scripts/common.js
 %%DATADIR%%/scripts/substance.js
 %%DATADIR%%/skin/standard_skin.zip
+%%DATADIR%%/styles/Inconsolata.otf
 %%DATADIR%%/styles/about.css
 %%DATADIR%%/styles/cache.css
 %%DATADIR%%/styles/certinfo.css
@@ -83,6 +139,7 @@ bin/opera-devel
 %%DATADIR%%/styles/images/warning.png
 %%DATADIR%%/styles/info.css
 %%DATADIR%%/styles/m2_welcome_message.mbs
+%%DATADIR%%/styles/mail.css
 %%DATADIR%%/styles/mathml.css
 %%DATADIR%%/styles/message.css
 %%DATADIR%%/styles/mime.css
@@ -124,7 +181,46 @@ bin/opera-devel
 @dirrm %%DATADIR%%/defaults
 @dirrm %%DATADIR%%/extra
 @dirrm %%DATADIR%%/java
+@dirrm %%DATADIR%%/locale/be
+@dirrm %%DATADIR%%/locale/bg
+@dirrm %%DATADIR%%/locale/cs
+@dirrm %%DATADIR%%/locale/da
+@dirrm %%DATADIR%%/locale/de
+@dirrm %%DATADIR%%/locale/el
 @dirrm %%DATADIR%%/locale/en
+@dirrm %%DATADIR%%/locale/en-GB
+@dirrm %%DATADIR%%/locale/es-ES
+@dirrm %%DATADIR%%/locale/es-LA
+@dirrm %%DATADIR%%/locale/et
+@dirrm %%DATADIR%%/locale/fi
+@dirrm %%DATADIR%%/locale/fr
+@dirrm %%DATADIR%%/locale/fr-CA
+@dirrm %%DATADIR%%/locale/fy
+@dirrm %%DATADIR%%/locale/hi
+@dirrm %%DATADIR%%/locale/hr
+@dirrm %%DATADIR%%/locale/hu
+@dirrm %%DATADIR%%/locale/id
+@dirrm %%DATADIR%%/locale/it
+@dirrm %%DATADIR%%/locale/ja
+@dirrm %%DATADIR%%/locale/ka
+@dirrm %%DATADIR%%/locale/ko
+@dirrm %%DATADIR%%/locale/lt
+@dirrm %%DATADIR%%/locale/mk
+@dirrm %%DATADIR%%/locale/nb
+@dirrm %%DATADIR%%/locale/nl
+@dirrm %%DATADIR%%/locale/nn
+@dirrm %%DATADIR%%/locale/pl
+@dirrm %%DATADIR%%/locale/pt
+@dirrm %%DATADIR%%/locale/pt-BR
+@dirrm %%DATADIR%%/locale/ro
+@dirrm %%DATADIR%%/locale/ru
+@dirrm %%DATADIR%%/locale/sk
+@dirrm %%DATADIR%%/locale/sr
+@dirrm %%DATADIR%%/locale/sv
+@dirrm %%DATADIR%%/locale/ta
+@dirrm %%DATADIR%%/locale/te
+@dirrm %%DATADIR%%/locale/tr
+@dirrm %%DATADIR%%/locale/uk
 @dirrm %%DATADIR%%/locale/zh-cn
 @dirrm %%DATADIR%%/locale/zh-hk
 @dirrm %%DATADIR%%/locale/zh-tw
