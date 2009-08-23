@@ -391,6 +391,7 @@ akode-plugins-pulseaudio        ports/audio/akode-plugins-pulseaudio
 akode-plugins-resampler         ports/audio/akode-plugins-resampler
 akode-plugins-xiph              ports/audio/akode-plugins-xiph
 akonadi                         ports/databases/akonadi
+akonadi-googledata              ports/databases/akonadi-googledata
 akpop3d                         ports/mail/akpop3d
 alabastra                       ports/devel/alabastra
 alac                            ports/audio/alac
@@ -3706,6 +3707,7 @@ freeride                        ports/devel/freeride
 freesbie                        ports/sysutils/freesbie
 freesci                         ports/games/freesci
 freesweep                       ports/games/freesweep
+freeswitch                      ports/net/freeswitch
 freesynd                        ports/games/freesynd
 freetalk                        ports/net-im/freetalk
 freetar                         ports/archivers/freetar
@@ -7330,6 +7332,7 @@ libgail-gnome                   ports/x11-toolkits/libgail-gnome
 libgal                          ports/astro/libgal
 libgalago                       ports/devel/libgalago
 libgamepad                      ports/devel/libgamepad
+libgcal                         ports/deskutils/libgcal
 libgconf-java                   ports/devel/libgconf-java
 libgcrypt                       ports/security/libgcrypt
 libgda                          ports/databases/libgda
@@ -9938,6 +9941,7 @@ openfts                         ports/textproc/openfts
 openfwtk                        ports/security/openfwtk
 opengl-man                      ports/graphics/opengl-man
 openglad                        ports/games/openglad
+opengoo                         ports/deskutils/opengoo
 openh323                        ports/net/openh323
 openhbci                        ports/finance/openhbci
 openjade                        ports/textproc/openjade
