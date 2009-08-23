@@ -12,7 +12,7 @@ MASTER_SITES=	http://mercury.chem.pitt.edu/~shank/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	tim@n2it.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for libmpdclient
 
 USE_PYTHON=	yes
