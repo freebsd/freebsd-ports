@@ -15,21 +15,21 @@ share/applications/www.octave.org-octave.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @comment octave diggs some empty directories
 @exec mkdir -p %D/share/octave/site/m/startup/octaverc 2>/dev/null || true
-@exec mkdir -p %D/share/octave/site/api-v32/m 2>/dev/null || true
-@exec mkdir -p %D/share/octave/site/api-v32 2>/dev/null || true
+@exec mkdir -p %D/share/octave/site/api-v37/m 2>/dev/null || true
+@exec mkdir -p %D/share/octave/site/api-v37 2>/dev/null || true
 @exec mkdir -p %D/share/octave/%%OCTAVE_VERSION%%/site/m 2>/dev/null || true
 @exec mkdir -p %D/share/octave/%%OCTAVE_VERSION%%/site 2>/dev/null || true
 @exec mkdir -p %D/libexec/octave/site/oct/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site/oct/api-v32/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site/oct/api-v32 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/oct/api-v37/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/oct/api-v37 2>/dev/null || true
 @exec mkdir -p %D/libexec/octave/site/oct 2>/dev/null || true
 @exec mkdir -p %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
 @exec mkdir -p %D/libexec/octave/site/exec 2>/dev/null || true
 @exec mkdir -p %D/libexec/octave/site 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/api-v32/site/exec/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/api-v32/site/exec 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/api-v32/site 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/api-v32 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/api-v37/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/api-v37/site/exec 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/api-v37/site 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/api-v37 2>/dev/null || true
 @exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%% 2>/dev/null || true
 @exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/oct 2>/dev/null || true
 @exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%% 2>/dev/null || true
