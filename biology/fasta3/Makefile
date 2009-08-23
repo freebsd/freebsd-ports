@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fasta3
-PORTVERSION=	35.4.7
+PORTVERSION=	35.4.9
 CATEGORIES=	biology
 MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta3/
 DISTNAME=	fasta-${PORTVERSION}
