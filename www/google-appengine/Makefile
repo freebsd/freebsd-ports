@@ -20,6 +20,8 @@ COMMENT=	Development tools for Google App Engine (SDK)
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging
 
+BROKEN=		leaves files behind on deinstallation
+
 PROJECTHOST=	googleappengine
 
 NO_BUILD=	yes
