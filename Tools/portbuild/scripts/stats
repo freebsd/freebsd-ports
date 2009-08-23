@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SUPPORTED_ARCHS="amd64 i386 ia64 sparc64"
+
 if [ $# -ne 1 ]; then
 	echo "usage: <branch>"
 	exit 1
@@ -7,7 +9,7 @@ fi
 
 branch=$1
 
-for i in i386 sparc64 amd64; do
+for i in ${SUPPORTED_ARCHS}; do
 	if [ -d /var/portbuild/$i/${branch}/builds/latest/packages/All ]; then
 		count=$(find /var/portbuild/$i/${branch}/builds/latest/packages/All -name \*.tbz -o -name \*.tgz |wc -l)
 		echo -n "$i: ${count}  "
