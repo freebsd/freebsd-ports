@@ -17,8 +17,6 @@ COMMENT=	An open source implementation of .NET Development Framework
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
-BROKEN=		does not build
-
 USE_BZIP2=	yes
 USE_BISON=	build
 USE_GNOME=	gnomehack glib20
