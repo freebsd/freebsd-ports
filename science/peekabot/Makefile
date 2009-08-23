@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	peekabot
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	science
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7.x/ \
+		http://distfiles.officialunix.com/
 
 MAINTAINER=	chris@officialunix.com
 COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
