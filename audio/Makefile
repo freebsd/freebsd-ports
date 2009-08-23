@@ -413,6 +413,7 @@
     SUBDIR += linux-sdl_mixer
     SUBDIR += linux-shoutcast
     SUBDIR += linux-vsound
+    SUBDIR += linuxsampler
     SUBDIR += listener
     SUBDIR += liteamp
     SUBDIR += lmms

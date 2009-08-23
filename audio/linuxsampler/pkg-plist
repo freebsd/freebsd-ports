@@ -1,0 +1,43 @@
+bin/linuxsampler
+include/linuxsampler/engines/Engine.h
+include/linuxsampler/engines/EngineChannel.h
+include/linuxsampler/engines/FxSend.h
+include/linuxsampler/engines/InstrumentManager.h
+include/linuxsampler/common/lsatomic.h
+include/linuxsampler/common/Exception.h
+include/linuxsampler/common/Thread.h
+include/linuxsampler/common/global.h
+include/linuxsampler/common/optional.h
+include/linuxsampler/common/Mutex.h
+include/linuxsampler/common/SynchronizedConfig.h
+include/linuxsampler/common/Condition.h
+include/linuxsampler/drivers/audio/AudioChannel.h
+include/linuxsampler/drivers/audio/AudioOutputDevice.h
+include/linuxsampler/drivers/midi/midi.h
+include/linuxsampler/drivers/midi/MidiInputPort.h
+include/linuxsampler/drivers/midi/MidiInputDevice.h
+include/linuxsampler/drivers/midi/MidiInstrumentMapper.h
+include/linuxsampler/drivers/midi/VirtualMidiDevice.h
+include/linuxsampler/drivers/Device.h
+include/linuxsampler/drivers/DeviceParameter.h
+include/linuxsampler/plugins/InstrumentEditor.h
+include/linuxsampler/plugins/InstrumentEditorFactory.h
+include/linuxsampler/effects/Effect.h
+include/linuxsampler/effects/EffectChain.h
+include/linuxsampler/Sampler.h
+include/linuxsampler/EventListeners.h
+@dirrm include/linuxsampler/engines
+@dirrm include/linuxsampler/common
+@dirrm include/linuxsampler/drivers/audio
+@dirrm include/linuxsampler/drivers/midi
+@dirrm include/linuxsampler/drivers
+@dirrm include/linuxsampler/plugins
+@dirrm include/linuxsampler/effects
+@dirrm include/linuxsampler
+lib/linuxsampler/liblinuxsampler.so.3
+lib/linuxsampler/liblinuxsampler.so
+lib/linuxsampler/liblinuxsampler.la
+lib/linuxsampler/liblinuxsampler.a
+libdata/pkgconfig/linuxsampler.pc
+@dirrm lib/linuxsampler/plugins
+@dirrm lib/linuxsampler
