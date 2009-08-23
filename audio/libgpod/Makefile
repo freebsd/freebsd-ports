@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A library for direct access of iPod's contents
+COMMENT=	A library for direct access of iPod contents
 
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
@@ -20,18 +20,41 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-# Disable python bindings for now, something does not work there
-CONFIGURE_ARGS=	--without-python
+CONFIGURE_ARGS=	--without-hal --with-html-dir="${PREFIX}/share/doc"
 
-.if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share/doc"
+OPTIONS=	PYTHON	"Enable Python bindings"		off \
+		TOOLS	"Build SysInfo detection utility"	off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
+		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen \
+		swig:${PORTSDIR}/devel/swig13
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=	--without-python
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+# SysInfo detection utility is required in order to support iPod classic
+# and nano 3G
+.if defined(WITH_TOOLS) || exists(${LOCALBASE}/lib/libsgutils.so)
+LIB_DEPENDS+=	sgutils.1:${PORTSDIR}/sysutils/sg3_utils
+PLIST_FILES+=	bin/ipod-read-sysinfo-extended
 .endif
 
 pre-patch: .SILENT
 # Adjust pkgconfigdir to the FreeBSD world
 	${REINPLACE_CMD} -e \
 		's,libdir)/pkgconfig,prefix)/libdata/pkgconfig,' \
-		${WRKSRC}/Makefile.in
+			${WRKSRC}/Makefile.in
+# Allow to build tools without HAL
+	${REINPLACE_CMD} -e \
+		'/noinst_PROGRAMS =/s,^,@HAVE_HAL_TRUE@,' \
+			${WRKSRC}/tools/Makefile.in
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's, docs,,' ${WRKSRC}/Makefile.in
 .endif

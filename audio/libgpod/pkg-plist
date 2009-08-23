@@ -6,6 +6,22 @@ lib/libgpod.so
 lib/libgpod.la
 lib/libgpod.a
 libdata/pkgconfig/libgpod-1.0.pc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/_gpod.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/_gpod.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/_gpod.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/gpod.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/gpod.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/gpod.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/gtkpod.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/gtkpod.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/gtkpod.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/ipod.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/ipod.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/ipod.pyo
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/gpod
 share/locale/de/LC_MESSAGES/libgpod.mo
 share/locale/es/LC_MESSAGES/libgpod.mo
 share/locale/fr/LC_MESSAGES/libgpod.mo
