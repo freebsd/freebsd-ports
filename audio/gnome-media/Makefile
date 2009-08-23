@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-media
 PORTVERSION=	2.26.0
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,7 +27,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 libgnomeui
+USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 libgnomeui libxml2 \
+		gconf2
 USE_GSTREAMER=	gconf good
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
