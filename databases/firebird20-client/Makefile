@@ -16,4 +16,6 @@ PLIST=		${PKGDIR}/pkg-plist.client
 
 CLIENT_ONLY=	yes
 
+MANUAL_PACKAGE_BUILD=	yes
+
 .include "${MASTERDIR}/Makefile"
