@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	crystal
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-windeco-
