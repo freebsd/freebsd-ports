@@ -1,0 +1,21 @@
+--- scripts/pdfjoin.orig	2009-08-21 14:49:42.000000000 +0400
++++ scripts/pdfjoin	2009-08-21 14:53:57.000000000 +0400
+@@ -8,8 +8,16 @@
+ echo "This is pdfjoin version ""$version"
+ ##
+ ##
+-shopt -u xpg_echo ## mainly to cope with Mac OS 10.5 "Leopard"
+-                  ## -- and this is why we need /bin/bash as interpreter
++## Inhibit interpretation of backslashed characters inside echo
++## arguments.  Needed mainly to cope with Mac OS 10.5 "Leopard".
++
++## This is why we need /bin/bash as interpreter; but do a check
++## if the interpretation is really here -- people on systems
++## with conformant /bin/sh might want to run this script
++## without Bash -- don't trouble them with 'shopt' stuff.
++if [ "`echo '\n'`" != '\n' ]; then
++	shopt -u xpg_echo
++fi
+ ##
+ ##
+ ##  Relies on pdflatex and the 'pdfpages' package (version 0.2e 
