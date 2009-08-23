@@ -18,4 +18,6 @@ LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi
 
 GNU_CONFIGURE=	yes
 
+BROKEN=	needs update for the new fribidi paragraph API
+
 .include <bsd.port.mk>

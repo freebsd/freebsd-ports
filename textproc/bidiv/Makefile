@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/bidiv
 MAN1=		bidiv.1
 MAKE_ENV+=	CC_OPT_FLAGS="${CFLAGS}"
 
+BROKEN=	needs update for the new fribidi paragraph API
+
 post-patch:
 	${REINPLACE_CMD} -E "s/^(PREFIX|CC_OPT_FLAGS).+//g;" ${WRKSRC}/Makefile
 
