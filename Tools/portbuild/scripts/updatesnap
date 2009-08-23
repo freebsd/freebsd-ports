@@ -60,4 +60,11 @@ echo ${fulldate} > cvsdone
 snapdate=$(stamp ${fulldate})
 zfs snapshot ${zbase}/src-7@${snapdate}
 
+cd $base/src-8
+fulldate=$(date)
+cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_8
+echo ${fulldate} > cvsdone
+snapdate=$(stamp ${fulldate})
+zfs snapshot ${zbase}/src-8@${snapdate}
+
 finish 0
