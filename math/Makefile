@@ -269,7 +269,6 @@
     SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-video
     SUBDIR += octave-forge-vrml
-    SUBDIR += octave-forge-windows
     SUBDIR += octave-forge-xraylib
     SUBDIR += octave-forge-zenity
     SUBDIR += oleo

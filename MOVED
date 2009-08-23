@@ -4143,3 +4143,4 @@ devel/p5-MooseX-Policy-SemiAffordanceAccessor|devel/p5-MooseX-SemiAffordanceAcce
 misc/bibletime-devel||2009-08-17|Has expired
 www/mediawiki12|mediawiki112|2009-08-19|Renamed
 lang/gcc42-withgcjawt|lang/gcc42|2009-08-19|Not needed any longer, still an option for the regular lang/gcc ports
+math/octave-forge-windows|2009-08-23|Abandoned upstream
