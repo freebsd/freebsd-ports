@@ -1,0 +1,5 @@
+bin/qsampler
+share/applications/qsampler.desktop
+share/locale/qsampler_ru.qm
+share/pixmaps/qsampler.png
+@dirrmtry share/applications

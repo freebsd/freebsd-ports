@@ -597,6 +597,7 @@
     SUBDIR += q-audio
     SUBDIR += qjackctl
     SUBDIR += qmpdclient
+    SUBDIR += qsampler
     SUBDIR += qsynth
     SUBDIR += raop_play
     SUBDIR += raproxy
