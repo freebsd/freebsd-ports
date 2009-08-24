@@ -45,7 +45,6 @@ OPTIONS=	ESOUND "Enable the EsounD module" on \
 .if defined(WITH_ESOUND)
 USE_GSTREAMER+=	esound
 PLIST_SUB+=	VUMETER=""
-CONFIGURE_ARGS+=--enable-gstmix
 .else
 CONFIGURE_ARGS+=--disable-esound --disable-esdtest
 PLIST_SUB+=	VUMETER="@comment "
