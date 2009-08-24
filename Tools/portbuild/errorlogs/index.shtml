@@ -70,6 +70,12 @@ failures on 8.x-current:
 <a href="i386-8-failure.html">i386</a>
 <a href="sparc64-8-failure.html">sparc64</a>
 <br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build
+failures on 9.x-current:
+<a href="amd64-9-failure.html">amd64</a>
+<a href="i386-9-failure.html">i386</a>
+<a href="sparc64-9-failure.html">sparc64</a>
+<br>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 6.x-stable with experimental port patches:
 <a href="amd64-6-exp-failure.html">amd64</a>
@@ -82,6 +88,10 @@ failures on 8.x-current:
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 8.x-current with experimental port patches:
 <a href="amd64-8-exp-failure.html">amd64</a>
 <a href="i386-8-exp-failure.html">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 9.x-current with experimental port patches:
+<a href="amd64-9-exp-failure.html">amd64</a>
+<a href="i386-9-exp-failure.html">i386</a>
 <br>
 </dd>
 </dl>
@@ -132,6 +142,18 @@ on 8.x-current:
 <a href="i386-8-latest/">i386</a>
 <a href="sparc64-8-latest/">sparc64</a>
 <br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
+on 9.x-current:
+<a href="amd64-9-full/">amd64</a>
+<a href="i386-9-full/">i386</a>
+<a href="sparc64-9-full/">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
+on 9.x-current:
+<a href="amd64-9-latest/">amd64</a>
+<a href="i386-9-latest/">i386</a>
+<a href="sparc64-9-latest/">sparc64</a>
+<br>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
 on 6.x-stable with experimental port patches:
@@ -162,6 +184,16 @@ on 8.x-current with experimental port patches:
 on 8.x-current with experimental port patches:
 <a href="amd64-8-exp-latest/">amd64</a>
 <a href="i386-8-exp-latest/">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
+on 9.x-current with experimental port patches:
+<a href="amd64-9-exp-full/">amd64</a>
+<a href="i386-9-exp-full/">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
+on 9.x-current with experimental port patches:
+<a href="amd64-9-exp-latest/">amd64</a>
+<a href="i386-9-exp-latest/">i386</a>
 </dd>
 </dl>
 
@@ -207,6 +239,18 @@ on 8.x-current:
 <a href="i386-8-latest-logs">i386</a>
 <a href="sparc64-8-latest-logs">sparc64</a>
 <br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
+on 9.x-current:
+<a href="amd64-9-full-logs">amd64</a>
+<a href="i386-9-full-logs">i386</a>
+<a href="sparc64-9-full-logs">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
+9.x-current:
+<a href="amd64-9-latest-logs">amd64</a>
+<a href="i386-9-latest-logs">i386</a>
+<a href="sparc64-9-latest-logs">sparc64</a>
+<br>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
 on 6.x-stable with experimental port patches
@@ -236,6 +280,16 @@ on 8.x-current with experimental port patches:
 <a href="amd64-8-exp-latest-logs">amd64</a>
 <a href="i386-8-exp-latest-logs">i386</a>
 <br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
+on 9.x-current with experimental port patches:
+<a href="amd64-9-exp-full-logs">amd64</a>
+<a href="i386-9-exp-full-logs">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
+9.x-current with experimental port patches:
+<a href="amd64-9-exp-latest-logs">amd64</a>
+<a href="i386-9-exp-latest-logs">i386</a>
+<br>
 </dd>
 </dl>
 
@@ -263,6 +317,12 @@ latest run on 8-current:
 <a href="i386-8-packages-latest/">i386</a>
 <a href="sparc64-8-packages-latest/">sparc64</a>
 <br>
+<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
+latest run on 9-current:
+<a href="amd64-9-packages-latest/">amd64</a>
+<a href="i386-9-packages-latest/">i386</a>
+<a href="sparc64-9-packages-latest/">sparc64</a>
+<br>
 <br>
 <img alt="*" src="/errorlogs/images/purple-ball.gif"> Package
 <a href="packagestats.html">building statistics</a> (current state of all package builds)
@@ -278,12 +338,14 @@ Archive
 logs:
 <a href="amd64-errorlogs/">amd64</a>
 <a href="i386-errorlogs/">i386</a>
+<a href="ia64-errorlogs/">ia64</a>
 <a href="sparc64-errorlogs/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/red-ball.gif"> All portbuild
 logs:
 <a href="amd64-buildlogs/">amd64</a>
 <a href="i386-buildlogs/">i386</a>
+<a href="ia64-buildlogs/">ia64</a>
 <a href="sparc64-buildlogs/">sparc64</a>
 </dd>
 </dl>
@@ -309,11 +371,16 @@ put on a CDROM.</p>
 <p>Notes on the building process:</p>
 
 <ul>
-<li><em>Every</em> port is built in its own chroot environment (
+<li><em>Every</em> port is built in its own chroot environment
+<!-- MCL 20090823 broken links
+(
 <a href="i386-6-bindist.tar">tarball for 6.x-stable</a>
 |<a href="i386-7-bindist.tar">tarball for 7.x-stable</a>
 |<a href="i386-8-bindist.tar">tarball for 8.x-current</a>
-), starting with an
+|<a href="i386-9-bindist.tar">tarball for 9.x-current</a>
+)
+-->
+, starting with an
 empty <tt>/usr/local</tt> and <tt>/usr/X11R6</tt>. <a name=
 "pkgadd">The dependencies are installed as packages</a> just before
 the build. You can see the list of dependencies on the third line
