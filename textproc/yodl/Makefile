@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	yodl
-PORTVERSION=	2.14.3
-PORTREVISION=	1
+PORTVERSION=	2.15.1
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.orig.tar.gz
 
@@ -26,7 +25,7 @@ USE_PERL5_BUILD=	yes
 
 MANCOMPRESSED=	no
 MAN1=		yodl.1 yodlpost.1 yodlconverters.1 yodlverbinsert.1 yodlstriproff.1
-MAN7=		yodlmanpage.7 yodlletter.7 yodlmacros.7
+MAN7=		yodlbuiltins.7 yodlmanpage.7 yodlletter.7 yodlmacros.7
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
@@ -61,6 +60,7 @@ post-patch:
 		${WRKSRC}/scripts/yodl2whatever.in \
 		${WRKSRC}/scripts/configreplacements \
 		${WRKSRC}/scripts/createmacros \
+		${WRKSRC}/scripts/hrefnotmpinstall \
 		${WRKSRC}/macros/rawmacros/separator \
 		${WRKSRC}/macros/rawmacros/keepdiff \
 		${WRKSRC}/macros/rawmacros/repairs \
