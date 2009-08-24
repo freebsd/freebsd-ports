@@ -111,10 +111,6 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 #
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800064
-BROKEN=		does not build
-.endif
-
 .if defined(WITH_ASM68K)
 ASM_COMMENT=
 .else
@@ -194,7 +190,6 @@ do-configure:
 		-e "s@/share/man@/man@g" \
 		-e "s@^MY_CPU.*@MY_CPU = ${ARCH}@g" \
 		-e "s@^ARCH.*@ARCH = freebsd@g" \
-		-e "s@# JOY_USB@JOY_USB@g" \
 		-e "s@# SOUND_ESOUND@${ESOUNDCOMMENT}SOUND_ESOUND@g" \
 		-e "s@# SOUND_SDL@${SDLSOUNDCOMMENT}SOUND_SDL@g" \
 		-e "s@^DISPLAY_METHOD.*@DISPLAY_METHOD = ${DISPLAY_METHOD}@g" \
@@ -203,6 +198,10 @@ do-configure:
 		-e "s@^SDL_CONFIG.*@SDL_CONFIG = ${SDL_CONFIG}@g" \
 		-e "s@^GLLIBS += .*@GLLIBS += ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix
+.if ${OSVERSION} < 800064
+	${REINPLACE_CMD} -e "s@# JOY_USB@JOY_USB@g" ${WRKSRC}/makefile.unix
+.endif
+
 .if defined(WITH_SDL) || !defined(WITHOUT_SDL)
 		${REINPLACE_CMD} -e "s@# JOY_SDL = 1@JOY_SDL = 1@g" ${WRKSRC}/makefile.unix
 .endif
