@@ -39,13 +39,12 @@ MAKE_ARGS+=	PREFIX=${PREFIX} PREFIX_PYTHON=${LOCALBASE} PYTHON=${PYTHON_CMD} \
 		LDFLAGS+=-L${LOCALBASE}/lib PYTHON_INC=${PYTHON_INCLUDEDIR} \
 		PYTHON_SITE=${PYTHON_SITELIBDIR}
 
-pre-build:
-		${CP} -R ${WRKDIR}/../../lucene/work/lucene-${LUCENE_VER} ${WRKSRC}/lucene-java-${LUCENE_VER}
-
 .include <bsd.port.pre.mk>
 
+pre-build:
+		${CP} -R ${WRKDIR}/../../lucene/work/lucene-${LUCENE_VER} ${WRKSRC}/lucene-java-${LUCENE_VER}
 .if ${PYTHON_REL} > 250
-BROKEN=		Doesn't build with ${PYTHON_VERSION}
+		@${REINPLACE_CMD} -e 's,-m jcc,-m jcc.__main__,' ${WRKSRC}/Makefile
 .endif
 
 #regression-test:
