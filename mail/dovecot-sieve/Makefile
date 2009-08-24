@@ -7,7 +7,7 @@
 
 PORTNAME=	dovecot-sieve
 PORTVERSION=	${DOVECOTVERSION}+${DISTVERSION}
-DISTVERSION=	0.1.11
+DISTVERSION=	0.1.12
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
@@ -42,5 +42,5 @@ post-install:
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
- 
+
 .include <bsd.port.mk>
