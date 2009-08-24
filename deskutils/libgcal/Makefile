@@ -19,6 +19,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GCC=	4.2+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
