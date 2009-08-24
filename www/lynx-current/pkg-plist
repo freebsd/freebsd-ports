@@ -27,9 +27,11 @@ etc/lynx.lss
 %%DOCSDIR%%/docs/OS-390.announce.gz
 %%DOCSDIR%%/docs/README.TRST
 %%DOCSDIR%%/docs/README.chartrans
+%%DOCSDIR%%/docs/README.cookies
 %%DOCSDIR%%/docs/README.defines
 %%DOCSDIR%%/docs/README.jp
 %%DOCSDIR%%/docs/README.metrics
+%%DOCSDIR%%/docs/README.options
 %%DOCSDIR%%/docs/README.rootcerts
 %%DOCSDIR%%/docs/README.ssl
 %%DOCSDIR%%/docs/README.sslcerts
@@ -55,6 +57,7 @@ etc/lynx.lss
 %%DOCSDIR%%/samples/lynx-keymaps
 %%DOCSDIR%%/samples/lynx.bat
 %%DOCSDIR%%/samples/lynx.com
+%%DOCSDIR%%/samples/lynx.ico
 %%DOCSDIR%%/samples/lynx.lss
 %%DOCSDIR%%/samples/lynx_bookmarks.htm
 %%DOCSDIR%%/samples/lynxdump
@@ -69,10 +72,15 @@ etc/lynx.lss
 %%DOCSDIR%%/test/ISO_LATIN1_test.html
 %%DOCSDIR%%/test/README.txt
 %%DOCSDIR%%/test/TestComment.html
+%%DOCSDIR%%/test/bad-html.html
 %%DOCSDIR%%/test/c1.html
+%%DOCSDIR%%/test/cp-1252.html
+%%DOCSDIR%%/test/cp-1252a.html
 %%DOCSDIR%%/test/index.html
 %%DOCSDIR%%/test/iso-8859-1.html
+%%DOCSDIR%%/test/iso-8859-1a.html
 %%DOCSDIR%%/test/iso-8859-2.html
+%%DOCSDIR%%/test/iso-8859-2a.html
 %%DOCSDIR%%/test/koi8-r.html
 %%DOCSDIR%%/test/quickbrown.html
 %%DOCSDIR%%/test/raw8bit.html
