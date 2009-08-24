@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Action-REST
-PORTVERSION=	0.73
+PORTVERSION=	0.76
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,11 +17,11 @@ COMMENT=	Automated REST Method Dispatching for Catalyst
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7001:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-YAML-Syck>=0.67:${PORTSDIR}/textproc/p5-YAML-Syck \
-		${SITE_PERL}/Module/Pluggable/Object.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Data/Serializer.pm:${PORTSDIR}/devel/p5-Data-Serializer \
-		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
-		${SITE_PERL}/URI/Find.pm:${PORTSDIR}/textproc/p5-URI-Find
+		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-libwww>=2.033:${PORTSDIR}/www/p5-libwww \
+		p5-Data-Serializer>=0.36:${PORTSDIR}/devel/p5-Data-Serializer \
+		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
