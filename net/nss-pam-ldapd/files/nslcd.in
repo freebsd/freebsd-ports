@@ -17,7 +17,7 @@ nslcd_enable=${nslcd_enable-"NO"}
 name=nslcd
 rcvar=$(set_rcvar)
 
-command="%%PREFIX%%/sbin/%{name}"
+command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 
 load_rc_config ${name}
