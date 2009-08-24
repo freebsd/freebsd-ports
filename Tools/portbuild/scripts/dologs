@@ -1,27 +1,25 @@
 #!/bin/sh
+# $FreeBSD$
+
+arch=$1
+versions="latest full"
 
 pb=/var/portbuild
-arch=$1
 
 . ${pb}/${arch}/portbuild.conf
 
 home=${pb}/errorlogs
 scripts=${pb}/scripts
 
-for ver in latest full; do
-  for num in 6 6-exp 7 7-exp 8 8-exp; do
-    dir=$home/$arch-$num-$ver
+for version in ${versions}; do
+  for branch in ${branches}; do
+    dir=$home/$arch-$branch-$version
     test -d $dir && cd $dir && ${scripts}/processlogs ${arch}
-    dir=${pb}/${arch}/${num}
-    test -d $dir && cd $dir && ${scripts}/processfail ${arch} ${num}
+    dir=${pb}/${arch}/${branch}
+    test -d $dir && cd $dir && ${scripts}/processfail ${arch} ${branch}
   done
-  for num in 6 6-exp 7 7-exp 8 8-exp; do
-    dir=$home/$arch-$num-$ver-logs
+  for branch in ${branches}; do
+    dir=$home/$arch-$branch-$version-logs
     test -d $dir && cd $dir && ${scripts}/processlogs2
   done
-#  for num in 6 6-exp 7; do
-#    cd $home && ${scripts}/comparelogs ${arch} $num-$ver 4-$ver
-#    cd $home && ${scripts}/comparelogs ${arch} 4-$ver $num-$ver
-#  done
-#  cd $home && ${scripts}/bothlogs ${arch} 4-$ver 5-$ver
 done
