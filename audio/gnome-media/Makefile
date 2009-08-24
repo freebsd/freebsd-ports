@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-media
 PORTVERSION=	2.26.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -45,8 +45,10 @@ OPTIONS=	ESOUND "Enable the EsounD module" on \
 .if defined(WITH_ESOUND)
 USE_GSTREAMER+=	esound
 PLIST_SUB+=	VUMETER=""
+CONFIGURE_ARGS+=--enable-gstmix
+GCONF_SCHEMAS+=	gnome-volume-control.schemas
 .else
-CONFIGURE_ARGS+=--disable-esound --disable-esdtest
+CONFIGURE_ARGS+=--disable-esound --disable-esdtest --disable-gstmix
 PLIST_SUB+=	VUMETER="@comment "
 .endif
 
@@ -61,9 +63,7 @@ CONFIGURE_ARGS+=--disable-pulse
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[$$][(]CDROM_HOST[)]|freebsd|g' \
-		${WRKSRC}/gnome-cd/Makefile.in
-	@${REINPLACE_CMD} -e 's|acd0c|acd0|g ; s|== "xyes|= "xyes|g' \
+	@${REINPLACE_CMD} -e 's|== "xyes|= "xyes|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
