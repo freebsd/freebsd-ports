@@ -7,8 +7,10 @@
 
 PORTNAME=		nss_ldapd
 PORTVERSION=		0.6.11
+PORTREVISION=		1
 CATEGORIES=		net
-MASTER_SITES=		http://arthurdejong.org/nss-ldapd/
+MASTER_SITES=		http://arthurdejong.org/nss-ldapd/ \
+			http://static.ipfw.ru/files/
 DISTNAME=		nss-ldapd-${PORTVERSION}
 
 MAINTAINER=		melifaro@ipfw.ru
