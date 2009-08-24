@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	protobuf
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GNOME=	gnomehack pkgconfig
 
 tests: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
