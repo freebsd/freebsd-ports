@@ -371,7 +371,7 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://mirrors.hpcf.upr.edu/pub/Mirrors/redhat/download.fedora.redhat.com/%SUBDIR%/ \
 	http://ftp.astral.ro/mirrors/fedora/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.astral.ro/mirrors/fedora/pub/fedora/linux/core/%SUBDIR%/ \
-	http://ftp.iasi.roedu.net/mirrors/fedora.redhat.com/core/%SUBDIR%/ \
+	http://ftp.iasi.roedu.net/mirrors/fedora.redhat.com/fedora/%SUBDIR%/ \
 	ftp://ftp.rdsor.ro/pub/Linux/Distributions/Fedora/%SUBDIR%/ \
 	http://ftp.chg.ru/pub/Linux/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/fedora/linux/core/%SUBDIR%/ \
@@ -1137,7 +1137,6 @@ MASTER_SITE_RUBY+= \
 # See http://rubyforge.org/credits/
 .if !defined(IGNORE_MASTER_SITE_RUBYFORGE)
 MASTER_SITE_RUBYFORGE+= \
-	http://rubyforge.iasi.roedu.net/files/%SUBDIR%/ \
 	http://files.rubyforge.mmmultiworks.com/%SUBDIR%/ \
 	http://files.rubyforge.vm.bytemark.co.uk/%SUBDIR%/
 .endif
