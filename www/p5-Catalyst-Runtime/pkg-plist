@@ -21,8 +21,6 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Engine/CGI.pm
 %%SITE_PERL%%/Catalyst/Engine/FastCGI.pm
 %%SITE_PERL%%/Catalyst/Engine/HTTP.pm
-%%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter.pm
-%%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter/Watcher.pm
 %%SITE_PERL%%/Catalyst/Exception.pm
 %%SITE_PERL%%/Catalyst/Exception/Detach.pm
 %%SITE_PERL%%/Catalyst/Exception/Go.pm
@@ -44,7 +42,6 @@ bin/catalyst.pl
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual/Installation
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual
 @dirrmtry %%SITE_PERL%%/Catalyst/Exception
-@dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine
 @dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
