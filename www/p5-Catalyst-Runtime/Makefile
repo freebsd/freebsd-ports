@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.80007
-PORTREVISION=	1
+PORTVERSION=	5.80011
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,15 +20,15 @@ BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfSco
 		p5-Class-MOP>=0.83:${PORTSDIR}/devel/p5-Class-MOP \
 		p5-Class-C3-Adopt-NEXT>=0.07:${PORTSDIR}/devel/p5-Class-C3-Adopt-NEXT \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
-		p5-File-Modified>=0:${PORTSDIR}/devel/p5-File-Modified \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTTP-Body>=1.04:${PORTSDIR}/www/p5-HTTP-Body \
 		p5-HTTP-Request-AsCGI>=0.8:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Module-Pluggable>=3.01:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-Module-Pluggable>=3.9:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Moose>=0.78:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00801:${PORTSDIR}/devel/p5-MooseX-Emulate-Class-Accessor-Fast \
-		p5-MooseX-MethodAttributes>=0.12:${PORTSDIR}/devel/p5-MooseX-MethodAttributes \
+		p5-MooseX-MethodAttributes>=0.15:${PORTSDIR}/devel/p5-MooseX-MethodAttributes \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean \
@@ -45,7 +44,7 @@ BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfSco
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	5.8.6+
 
 MAN1=	catalyst.pl.1
 MAN3=	Catalyst.3 \
@@ -70,8 +69,6 @@ MAN3=	Catalyst.3 \
 	Catalyst::Engine::CGI.3 \
 	Catalyst::Engine::FastCGI.3 \
 	Catalyst::Engine::HTTP.3 \
-	Catalyst::Engine::HTTP::Restarter.3 \
-	Catalyst::Engine::HTTP::Restarter::Watcher.3 \
 	Catalyst::Exception.3 \
 	Catalyst::Exception::Detach.3 \
 	Catalyst::Exception::Go.3 \
