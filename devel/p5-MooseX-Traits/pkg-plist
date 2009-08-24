@@ -1,5 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Traits/.packlist
 %%SITE_PERL%%/MooseX/Traits.pm
+%%SITE_PERL%%/MooseX/Traits/Util.pm
+@dirrm %%SITE_PERL%%/MooseX/Traits
 @dirrmtry %%SITE_PERL%%/MooseX
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Traits
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
