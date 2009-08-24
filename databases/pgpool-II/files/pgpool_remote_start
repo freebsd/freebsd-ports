@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+DEST=pgsql@$1
+
+logger="logger -t pgpool -p local0.info"
+
+/bin/sh <<EOF | ${logger} 2>&1
+
+ssh $DEST '/usr/local/etc/rc.d/postgresql start'
+
+EOF

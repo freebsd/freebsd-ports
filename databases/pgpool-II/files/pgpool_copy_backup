@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+SRC=pgsql@$(hostname)
+SRCDIR=$1
+DEST=pgsql@$2
+DESTDIR=$3
+ARCLOG=$1/archive_log
+
+logger="logger -t pgpool -p local0.info"
+rsync="/usr/local/bin/rsync -av --delete --checksum"
+excl="--exclude=pg_log --exclude=archive_log --exclude=postmaster.pid"
+psql=/usr/local/bin/psql
+
+/bin/sh <<EOF | ${logger} 2>&1
+
+$psql -c "select pg_start_backup('pgpool-recovery')" template1
+
+ssh $DEST "
+/usr/local/etc/rc.d/postgresql stop;
+rm -rf $DESTDIR/pg_xlog;
+rm -f $DESTDIR/backup_label"
+
+echo "restore_command = 'scp $SRC:$ARCLOG/%f %p'" > $SRCDIR/recovery.conf
+
+$rsync $SRCDIR/ $excl $DEST:/$DESTDIR/
+
+ssh $DEST "
+mkdir -p $DESTDIR/pg_xlog/archive_status;
+mkdir -p $DESTDIR/pg_log"
+
+rm -f $SRCDIR/recovery.conf
+
+$psql -c 'select pg_stop_backup()' template1
+
+EOF
