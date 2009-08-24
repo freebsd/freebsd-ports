@@ -3,6 +3,9 @@ lib/gigedit/libgigedit.so.2
 lib/gigedit/libgigedit.so
 lib/gigedit/libgigedit.la
 lib/gigedit/libgigedit.a
+lib/linuxsampler/plugins/libgigeditlinuxsamplerplugin.so
+lib/linuxsampler/plugins/libgigeditlinuxsamplerplugin.la
+lib/linuxsampler/plugins/libgigeditlinuxsamplerplugin.a
 %%DOCSDIR%%/gigedit_quickstart.html
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/shot_whole_app.png
