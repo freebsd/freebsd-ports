@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${DOVECOTVERSION}/ \
 		http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
@@ -19,6 +19,11 @@ DOVECOTVERSION=	1.2
 ######################################################################
 # Anytime PORTVERSION changes please bump PORTREVISION of            #
 # mail/dovecot-antispam. Please see ports/135311 for an explanation. #
+#                                                                    #
+# Please be careful when updating this port as changes to this port  #
+# can break mail/dovecot-sieve and mail/dovecot-managesieve. In      #
+# to ensure the least amount of breakage possible please consult     #
+# the maintainer of those ports before updating this one.            #
 ######################################################################
 
 USE_ICONV=	yes
