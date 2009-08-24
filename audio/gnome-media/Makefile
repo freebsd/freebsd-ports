@@ -46,9 +46,8 @@ OPTIONS=	ESOUND "Enable the EsounD module" on \
 USE_GSTREAMER+=	esound
 PLIST_SUB+=	VUMETER=""
 CONFIGURE_ARGS+=--enable-gstmix
-GCONF_SCHEMAS+=	gnome-volume-control.schemas
 .else
-CONFIGURE_ARGS+=--disable-esound --disable-esdtest --disable-gstmix
+CONFIGURE_ARGS+=--disable-esound --disable-esdtest
 PLIST_SUB+=	VUMETER="@comment "
 .endif
 
@@ -58,8 +57,25 @@ CONFIGURE_ARGS+=--disable-ipv6
 
 .if defined(WITH_PULSEAUDIO)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+PLIST_SUB+=	PULSE=""
 .else
-CONFIGURE_ARGS+=--disable-pulse
+CONFIGURE_ARGS+=--disable-pulseaudio
+PLIST_SUB+=	PULSE="@comment "
+.endif
+
+.if defined(WITH_ESOUND) && defined(WITHOUT_PULSEAUDIO)
+CONFIGURE_ARGS+=--enable-gstmix
+PLIST_SUB+=	GSTMIX=""
+GCONF_SCHEMAS+=	gnome-volume-control.schemas
+.else
+CONFIGURE_ARGS+=--disable-gstmix
+PLIST_SUB+=	GSTMIX="@comment "
+.endif
+
+.if defined(WITH_ESOUND) || defined(WITH_PULSEAUDIO)
+PLIST_SUB+=	GVC=""
+.else
+PLIST_SUB+=	GVC="@comment "
 .endif
 
 post-patch:
