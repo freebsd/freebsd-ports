@@ -1,27 +1,60 @@
 bin/gtkpod
-%%DATADIR%%/data/gtkpod.glade
-%%DATADIR%%/data/cdshine.png
-%%DATADIR%%/data/cdshine_main.png
 %%DATADIR%%/data/default-cover.png
-%%DATADIR%%/data/gphoto_album_menuitem-32.png
-%%DATADIR%%/data/gphoto_album_menuitem-48.png
-%%DATADIR%%/data/gphoto_images_menuitem-32.png
-%%DATADIR%%/data/gphoto_images_menuitem-48.png
-%%DATADIR%%/data/gphoto_tools_menuitem-32.png
-%%DATADIR%%/data/gphoto_tools_menuitem-48.png
-%%DATADIR%%/data/gphoto_playlist_icon-48.png
 %%DATADIR%%/data/gtkpod-add-dirs.png
 %%DATADIR%%/data/gtkpod-add-files.png
 %%DATADIR%%/data/gtkpod-add-playlists.png
-%%DATADIR%%/data/gtkpod-icon-32.png
 %%DATADIR%%/data/gtkpod-icon-32-2.png
+%%DATADIR%%/data/gtkpod-icon-32.png
 %%DATADIR%%/data/gtkpod-icon-48.png
 %%DATADIR%%/data/gtkpod-logo.png
-%%DATADIR%%/data/gtkpod-new-playlist.png
-%%DATADIR%%/data/gtkpod-read.png
 %%DATADIR%%/data/gtkpod-read-16.png
-%%DATADIR%%/data/gtkpod-sync.png
-%%DATADIR%%/data/tunes_playlist_icon-48.png
+%%DATADIR%%/data/gtkpod-read.png
+%%DATADIR%%/data/gtkpod.glade
+%%DATADIR%%/data/photo-toolbar-album.png
+%%DATADIR%%/data/photo-toolbar-photos.png
+%%DATADIR%%/doc/adding-cover-art-from-a-browser.html
+%%DATADIR%%/doc/adding-files-and-folders.html
+%%DATADIR%%/doc/advanced-features.html
+%%DATADIR%%/doc/copying-content-to-the-ipod.html
+%%DATADIR%%/doc/cover-art.html
+%%DATADIR%%/doc/exporting-files-from-the-ipod.html
+%%DATADIR%%/doc/figures/add-folders.png
+%%DATADIR%%/doc/figures/cover-fullsize.png
+%%DATADIR%%/doc/figures/cover-popupmenu.png
+%%DATADIR%%/doc/figures/cover-setfromfile.png
+%%DATADIR%%/doc/figures/coverart.png
+%%DATADIR%%/doc/figures/edit-track-details.png
+%%DATADIR%%/doc/figures/gtkpod.png
+%%DATADIR%%/doc/getting-started.html
+%%DATADIR%%/doc/gtkpod-info.html
+%%DATADIR%%/doc/gtkpod.html
+%%DATADIR%%/doc/gtkpod.xml
+%%DATADIR%%/doc/hooking-up-the-ipod.html
+%%DATADIR%%/doc/ipod-and-content.html
+%%DATADIR%%/doc/ipod-file-recovery.html
+%%DATADIR%%/doc/layout-of-gtkpod.html
+%%DATADIR%%/doc/managing-playlists.html
+%%DATADIR%%/doc/playcounts-and-ratings.html
+%%DATADIR%%/doc/playlists-podcasts-and-photos.html
+%%DATADIR%%/doc/setting-ipod-properties.html
+%%DATADIR%%/doc/the-sysinfo-file.html
+%%DATADIR%%/doc/troubleshooting-faq.html
+%%DATADIR%%/doc/view-and-edit-track-details.html
+%%DATADIR%%/icons/hicolor/16x16/places/playlist-photo.png
+%%DATADIR%%/icons/hicolor/16x16/places/playlist.png
+%%DATADIR%%/icons/hicolor/16x16/status/star-none.png
+%%DATADIR%%/icons/hicolor/16x16/status/star-set.png
+%%DATADIR%%/icons/hicolor/16x16/status/star-unset.png
+%%DATADIR%%/icons/hicolor/22x22/places/playlist-photo.png
+%%DATADIR%%/icons/hicolor/22x22/places/playlist.png
+%%DATADIR%%/icons/hicolor/24x24/places/playlist-photo.png
+%%DATADIR%%/icons/hicolor/24x24/places/playlist.png
+%%DATADIR%%/icons/hicolor/32x32/places/playlist-photo.png
+%%DATADIR%%/icons/hicolor/32x32/places/playlist.png
+%%DATADIR%%/icons/hicolor/48x48/places/playlist-photo.png
+%%DATADIR%%/icons/hicolor/48x48/places/playlist.png
+%%DATADIR%%/icons/hicolor/scalable/places/playlist-photo.svg
+%%DATADIR%%/icons/hicolor/scalable/places/playlist.svg
 %%DATADIR%%/scripts/convert-2m4a.sh
 %%DATADIR%%/scripts/convert-2mp3.sh
 %%DATADIR%%/scripts/gtkpod-convert-common.sh
@@ -36,26 +69,38 @@ bin/gtkpod
 %%DATADIR%%/scripts/sync-ldif.sh
 %%DATADIR%%/scripts/sync-notes.sh
 %%DATADIR%%/scripts/sync-palm-jppy.py
-%%DATADIR%%/scripts/sync-thunderbird.sh
 %%DATADIR%%/scripts/sync-thunderbird-nano.sh
+%%DATADIR%%/scripts/sync-thunderbird.sh
 %%DATADIR%%/scripts/sync-tomboy.sh
 %%DATADIR%%/scripts/sync-webcalendar.sh
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/icons/hicolor/scalable/places
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/48x48/places
+@dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor/32x32/places
+@dirrm %%DATADIR%%/icons/hicolor/32x32
+@dirrm %%DATADIR%%/icons/hicolor/24x24/places
+@dirrm %%DATADIR%%/icons/hicolor/24x24
+@dirrm %%DATADIR%%/icons/hicolor/22x22/places
+@dirrm %%DATADIR%%/icons/hicolor/22x22
+@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16/places
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/doc/figures
+@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+share/icons/hicolor/16x16/apps/gtkpod.png
+share/icons/hicolor/22x22/apps/gtkpod.png
+share/icons/hicolor/24x24/apps/gtkpod.png
 share/icons/hicolor/32x32/apps/gtkpod.png
 share/icons/hicolor/48x48/apps/gtkpod.png
 share/icons/hicolor/64x64/apps/gtkpod.png
+share/icons/hicolor/scalable/apps/gtkpod.svg
 share/applications/gtkpod.desktop
-@dirrmtry share/applications
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 share/locale/de/LC_MESSAGES/gtkpod.mo
 share/locale/es/LC_MESSAGES/gtkpod.mo
 share/locale/fr/LC_MESSAGES/gtkpod.mo
@@ -65,8 +110,4 @@ share/locale/ja/LC_MESSAGES/gtkpod.mo
 share/locale/ro/LC_MESSAGES/gtkpod.mo
 share/locale/ru/LC_MESSAGES/gtkpod.mo
 share/locale/sv/LC_MESSAGES/gtkpod.mo
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
-%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/locale/zh_CN/LC_MESSAGES/gtkpod.mo
