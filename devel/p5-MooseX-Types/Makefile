@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Organise your Moose types in libraries
 
 BUILD_DEPENDS=	p5-Moose>=0.61:${PORTSDIR}/devel/p5-Moose \
 		p5-Sub-Install>=0.924:${PORTSDIR}/devel/p5-Sub-Install \
+		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-Carp-Clan>=6.00:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
