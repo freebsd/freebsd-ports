@@ -32,6 +32,8 @@ bin/createmap
 bin/log2time
 bin/mailq
 bin/mailq.sh
+bin/metaconf
+bin/metaqueue
 bin/qmgrctl
 bin/qmgrctl.sh
 bin/rcvrenvfromlog.sh
