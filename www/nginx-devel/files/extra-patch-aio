@@ -1,0 +1,640 @@
+Index: src/http/ngx_http_copy_filter_module.c
+===================================================================
+--- src/http/ngx_http_copy_filter_module.c	(revision 2356)
++++ src/http/ngx_http_copy_filter_module.c	(working copy)
+@@ -11,9 +11,18 @@
+ 
+ typedef struct {
+     ngx_bufs_t  bufs;
++#if (NGX_HAVE_FILE_AIO)
++    ngx_flag_t  aio;
++#endif
+ } ngx_http_copy_filter_conf_t;
+ 
+ 
++#if (NGX_HAVE_FILE_AIO)
++static void ngx_http_copy_aio_handler(ngx_output_chain_ctx_t *ctx,
++    ngx_file_t *file);
++static void ngx_http_copy_aio_event_handler(ngx_event_t *ev);
++#endif
++
+ static void *ngx_http_copy_filter_create_conf(ngx_conf_t *cf);
+ static char *ngx_http_copy_filter_merge_conf(ngx_conf_t *cf,
+     void *parent, void *child);
+@@ -29,6 +38,17 @@
+       offsetof(ngx_http_copy_filter_conf_t, bufs),
+       NULL },
+ 
++#if (NGX_HAVE_FILE_AIO)
++
++    { ngx_string("aio"),
++      NGX_HTTP_MAIN_CONF|NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_CONF_FLAG,
++      ngx_conf_set_flag_slot,
++      NGX_HTTP_LOC_CONF_OFFSET,
++      offsetof(ngx_http_copy_filter_conf_t, aio),
++      NULL },
++
++#endif
++
+       ngx_null_command
+ };
+ 
+@@ -104,6 +124,12 @@
+         ctx->output_filter = (ngx_output_chain_filter_pt) ngx_http_next_filter;
+         ctx->filter_ctx = r;
+ 
++#if (NGX_HAVE_FILE_AIO)
++        if (conf->aio) {
++            ctx->aio = ngx_http_copy_aio_handler;
++        }
++#endif
++
+         r->request_output = 1;
+     }
+ 
+@@ -125,6 +151,37 @@
+ }
+ 
+ 
++#if (NGX_HAVE_FILE_AIO)
++
++static void
++ngx_http_copy_aio_handler(ngx_output_chain_ctx_t *ctx, ngx_file_t *file)
++{
++    ngx_http_request_t *r;
++
++    r = ctx->filter_ctx;
++
++    file->aio->event->data = r;
++    file->aio->event->handler = ngx_http_copy_aio_event_handler;
++
++    r->connection->write->blocked = 1;
++}
++
++
++static void
++ngx_http_copy_aio_event_handler(ngx_event_t *ev)
++{
++    ngx_http_request_t  *r;
++
++    r = ev->data;
++
++    r->connection->write->blocked = 0;
++
++    r->connection->write->handler(r->connection->write);
++}
++
++#endif
++
++
+ static void *
+ ngx_http_copy_filter_create_conf(ngx_conf_t *cf)
+ {
+@@ -136,6 +193,9 @@
+     }
+ 
+     conf->bufs.num = 0;
++#if (NGX_HAVE_FILE_AIO)
++    conf->aio = NGX_CONF_UNSET;
++#endif
+ 
+     return conf;
+ }
+@@ -148,6 +208,9 @@
+     ngx_http_copy_filter_conf_t *conf = child;
+ 
+     ngx_conf_merge_bufs_value(conf->bufs, prev->bufs, 1, 32768);
++#if (NGX_HAVE_FILE_AIO)
++    ngx_conf_merge_value(conf->aio, prev->aio, 0);
++#endif
+ 
+     return NULL;
+ }
+Index: src/http/ngx_http_request.c
+===================================================================
+--- src/http/ngx_http_request.c	(revision 2356)
++++ src/http/ngx_http_request.c	(working copy)
+@@ -1868,6 +1868,11 @@
+             return;
+         }
+ 
++        if (c->write->blocked) {
++            (void) ngx_http_set_write_handler(r);
++            return;
++        }
++
+         ngx_http_close_request(r, 0);
+         return;
+     }
+@@ -1966,7 +1971,7 @@
+         return;
+     }
+ 
+-    if (r->buffered || c->buffered || r->postponed) {
++    if (r->buffered || c->buffered || r->postponed || c->write->blocked) {
+ 
+         if (ngx_http_set_write_handler(r) != NGX_OK) {
+             ngx_http_close_request(r, 0);
+@@ -2100,7 +2105,7 @@
+         }
+ 
+     } else {
+-        if (wev->delayed) {
++        if (wev->delayed || wev->blocked) {
+             ngx_log_debug0(NGX_LOG_DEBUG_HTTP, wev->log, 0,
+                            "http writer delayed");
+ 
+Index: src/event/ngx_event.h
+===================================================================
+--- src/event/ngx_event.h	(revision 2356)
++++ src/event/ngx_event.h	(working copy)
+@@ -67,6 +67,7 @@
+     unsigned         timer_set:1;
+ 
+     unsigned         delayed:1;
++    unsigned         blocked:1;
+ 
+     unsigned         read_discarded:1;
+ 
+Index: src/os/unix/ngx_file_aio_read.c
+===================================================================
+--- src/os/unix/ngx_file_aio_read.c	(revision 0)
++++ src/os/unix/ngx_file_aio_read.c	(revision 0)
+@@ -0,0 +1,116 @@
++
++/*
++ * Copyright (C) Igor Sysoev
++ */
++
++
++#include <ngx_config.h>
++#include <ngx_core.h>
++#include <ngx_event.h>
++
++#if (NGX_HAVE_KQUEUE)
++#include <ngx_kqueue_module.h>
++#endif
++
++
++ssize_t
++ngx_file_aio_read(ngx_file_t *file, u_char *buf, size_t size, off_t offset)
++{
++    int                    n;
++    ngx_event_t           *ev;
++    ngx_file_aio_ident_t  *aio;
++
++    aio = file->aio;
++    ev = aio->event;
++
++    if (!ev->ready) {
++        ngx_log_error(NGX_LOG_ALERT, file->log, 0, "second aio post");
++        return NGX_AGAIN;
++    }
++
++    ngx_log_debug2(NGX_LOG_DEBUG_CORE, file->log, 0,
++                   "complete:%d size:%z", ev->complete, size);
++
++    if (!ev->complete) {
++        aio->aiocb.aio_fildes = file->fd;
++        aio->aiocb.aio_offset = offset;
++        aio->aiocb.aio_buf = buf;
++        aio->aiocb.aio_nbytes = size;
++
++#if (NGX_HAVE_KQUEUE)
++        aio->aiocb.aio_sigevent.sigev_notify_kqueue = ngx_kqueue;
++        aio->aiocb.aio_sigevent.sigev_notify = SIGEV_KEVENT;
++        aio->aiocb.aio_sigevent.sigev_value.sigval_ptr = ev;
++#endif
++
++        n = aio_read(&aio->aiocb);
++
++        if (n == -1) {
++            n = ngx_errno;
++
++            if (n == NGX_EAGAIN || n == NGX_ENOSYS) {
++                return NGX_BUSY;
++            }
++
++            ngx_log_error(NGX_LOG_CRIT, file->log, n, "aio_read() failed");
++            return NGX_ERROR;
++        }
++
++        ngx_log_debug2(NGX_LOG_DEBUG_CORE, file->log, 0,
++                       "aio_read: fd:%d %d", file->fd, n);
++
++        ev->active = 1;
++        ev->ready = 0;
++    }
++
++    ev->complete = 0;
++
++    n = aio_error(&aio->aiocb);
++
++    ngx_log_debug2(NGX_LOG_DEBUG_CORE, file->log, 0,
++                   "aio_error: fd:%d %d", file->fd, n);
++
++    if (n == -1) {
++        ngx_log_error(NGX_LOG_ALERT, file->log, ngx_errno,
++                      "aio_error() failed");
++        return NGX_ERROR;
++    }
++
++    if (n != 0) {
++        if (n == NGX_EINPROGRESS) {
++            if (ev->ready) {
++                ngx_log_error(NGX_LOG_ALERT, file->log, n,
++                              "aio_read() still in progress");
++                ev->ready = 0;
++            }
++            return NGX_AGAIN;
++        }
++
++        ngx_log_error(NGX_LOG_CRIT, file->log, n, "aio_read() failed");
++        ev->ready = 0;
++        return NGX_ERROR;
++    }
++
++    n = aio_return(&aio->aiocb);
++
++    if (n == -1) {
++        ngx_log_error(NGX_LOG_ALERT, file->log, ngx_errno,
++                      "aio_return() failed");
++        ev->ready = 0;
++        return NGX_ERROR;
++    }
++
++    ngx_log_debug2(NGX_LOG_DEBUG_CORE, file->log, 0,
++                   "aio_return: fd:%d %d", file->fd, n);
++
++    if (n == 0) {
++        ev->ready = 0;
++
++    } else {
++        ev->ready = 1;
++    }
++
++    ev->active = 0;
++
++    return n;
++}
+Index: src/os/unix/ngx_posix_config.h
+===================================================================
+--- src/os/unix/ngx_posix_config.h	(revision 2356)
++++ src/os/unix/ngx_posix_config.h	(working copy)
+@@ -112,6 +112,11 @@
+ #endif
+ 
+ 
++#if (NGX_HAVE_FILE_AIO)
++#include <aio.h>
++#endif
++
++
+ #define NGX_LISTEN_BACKLOG  511
+ 
+ 
+Index: src/os/unix/ngx_linux_config.h
+===================================================================
+--- src/os/unix/ngx_linux_config.h	(revision 2356)
++++ src/os/unix/ngx_linux_config.h	(working copy)
+@@ -81,6 +81,11 @@
+ #endif
+ 
+ 
++#if (NGX_HAVE_FILE_AIO)
++#include <aio.h>
++#endif
++
++
+ #define NGX_LISTEN_BACKLOG        511
+ 
+ 
+Index: src/os/unix/ngx_freebsd_config.h
+===================================================================
+--- src/os/unix/ngx_freebsd_config.h	(revision 2356)
++++ src/os/unix/ngx_freebsd_config.h	(working copy)
+@@ -73,13 +73,13 @@
+ #endif
+ 
+ 
+-#if (NGX_HAVE_AIO)
+-#include <aio.h>
++#if (NGX_HAVE_KQUEUE)
++#include <sys/event.h>
+ #endif
+ 
+ 
+-#if (NGX_HAVE_KQUEUE)
+-#include <sys/event.h>
++#if (NGX_HAVE_FILE_AIO || NGX_HAVE_AIO)
++#include <aio.h>
+ #endif
+ 
+ 
+Index: src/os/unix/ngx_solaris_config.h
+===================================================================
+--- src/os/unix/ngx_solaris_config.h	(revision 2356)
++++ src/os/unix/ngx_solaris_config.h	(working copy)
+@@ -62,24 +62,24 @@
+ #endif
+ 
+ 
+-#if (NGX_HAVE_SENDFILE)
+-#include <sys/sendfile.h>
++#if (NGX_HAVE_DEVPOLL)
++#include <sys/ioctl.h>
++#include <sys/devpoll.h>
+ #endif
+ 
+ 
+-#if (NGX_HAVE_AIO)
+-#include <aio.h>
++#if (NGX_HAVE_EVENTPORT)
++#include <port.h>
+ #endif
+ 
+ 
+-#if (NGX_HAVE_DEVPOLL)
+-#include <sys/ioctl.h>
+-#include <sys/devpoll.h>
++#if (NGX_HAVE_SENDFILE)
++#include <sys/sendfile.h>
+ #endif
+ 
+ 
+-#if (NGX_HAVE_EVENTPORT)
+-#include <port.h>
++#if (NGX_HAVE_FILE_AIO)
++#include <aio.h>
+ #endif
+ 
+ 
+Index: src/os/unix/ngx_files.h
+===================================================================
+--- src/os/unix/ngx_files.h	(revision 2356)
++++ src/os/unix/ngx_files.h	(working copy)
+@@ -287,4 +287,12 @@
+ #define ngx_set_stderr_n         "dup2(STDERR_FILENO)"
+ 
+ 
++#if (NGX_HAVE_FILE_AIO)
++
++ssize_t ngx_file_aio_read(ngx_file_t *file, u_char *buf, size_t size,
++    off_t offset);
++
++#endif
++
++
+ #endif /* _NGX_FILES_H_INCLUDED_ */
+Index: src/core/ngx_output_chain.c
+===================================================================
+--- src/core/ngx_output_chain.c	(revision 2356)
++++ src/core/ngx_output_chain.c	(working copy)
+@@ -28,6 +28,11 @@
+ #define NGX_NONE            1
+ 
+ 
++#if (NGX_HAVE_FILE_AIO)
++static ssize_t ngx_aio_read_file(ngx_output_chain_ctx_t *ctx, ngx_buf_t *src,
++    ngx_buf_t *dst, size_t size);
++#endif
++
+ static ngx_inline ngx_int_t
+     ngx_output_chain_as_is(ngx_output_chain_ctx_t *ctx, ngx_buf_t *buf);
+ static ngx_int_t ngx_output_chain_add_copy(ngx_pool_t *pool,
+@@ -519,8 +524,30 @@
+ 
+ #endif
+ 
++#if (NGX_HAVE_FILE_AIO)
++
++        if (ctx->aio) {
++            n = ngx_aio_read_file(ctx, src, dst, size);
++
++            if (n == NGX_AGAIN) {
++                return (ngx_int_t) n;
++            }
++
++        } else {
++            n = NGX_BUSY;
++        }
++
++        if (n == NGX_BUSY) {
++            n = ngx_read_file(src->file, dst->pos, (size_t) size,
++                              src->file_pos);
++        }
++
++#else
++
+         n = ngx_read_file(src->file, dst->pos, (size_t) size, src->file_pos);
+ 
++#endif
++
+ #if (NGX_HAVE_ALIGNED_DIRECTIO)
+ 
+         if (ctx->unaligned) {
+@@ -545,12 +572,6 @@
+             return (ngx_int_t) n;
+         }
+ 
+-#if (NGX_FILE_AIO_READ)
+-        if (n == NGX_AGAIN) {
+-            return (ngx_int_t) n;
+-        }
+-#endif
+-
+         if (n != size) {
+             ngx_log_error(NGX_LOG_ALERT, ctx->pool->log, 0,
+                           ngx_read_file_n " read only %z of %O from \"%s\"",
+@@ -585,6 +606,45 @@
+ }
+ 
+ 
++#if (NGX_HAVE_FILE_AIO)
++
++static ssize_t
++ngx_aio_read_file(ngx_output_chain_ctx_t *ctx, ngx_buf_t *src, ngx_buf_t *dst,
++    size_t size)
++{
++    ssize_t      n;
++    ngx_file_t  *file;
++
++    file = src->file;
++
++    if (file->aio == NULL) {
++        file->aio = ngx_pcalloc(ctx->pool, sizeof(ngx_file_aio_ident_t));
++        if (file->aio == NULL) {
++            return NGX_ERROR;
++        }
++
++        file->aio->event = ngx_pcalloc(ctx->pool, sizeof(ngx_event_t));
++        if (file->aio->event == NULL) {
++            return NGX_ERROR;
++        }
++
++        file->aio->event->ready = 1;
++        file->aio->event->log = file->log;
++        file->aio->fd = file->fd;
++    }
++
++    n = ngx_file_aio_read(src->file, dst->pos, size, src->file_pos);
++
++    if (n == NGX_AGAIN) {
++        ctx->aio(ctx, src->file);
++    }
++
++    return n;
++}
++
++#endif
++
++
+ ngx_int_t
+ ngx_chain_writer(void *data, ngx_chain_t *in)
+ {
+Index: src/core/ngx_buf.h
+===================================================================
+--- src/core/ngx_buf.h	(revision 2356)
++++ src/core/ngx_buf.h	(working copy)
+@@ -67,9 +67,16 @@
+ } ngx_bufs_t;
+ 
+ 
++typedef struct ngx_output_chain_ctx_s  ngx_output_chain_ctx_t;
++
+ typedef ngx_int_t (*ngx_output_chain_filter_pt)(void *ctx, ngx_chain_t *in);
+ 
+-typedef struct {
++#if (NGX_HAVE_FILE_AIO)
++typedef void (*ngx_output_chain_aio_pt)(ngx_output_chain_ctx_t *ctx,
++    ngx_file_t *file);
++#endif
++
++struct ngx_output_chain_ctx_s {
+     ngx_buf_t                   *buf;
+     ngx_chain_t                 *in;
+     ngx_chain_t                 *free;
+@@ -90,9 +97,13 @@
+ 
+     ngx_output_chain_filter_pt   output_filter;
+     void                        *filter_ctx;
+-} ngx_output_chain_ctx_t;
+ 
++#if (NGX_HAVE_FILE_AIO)
++    ngx_output_chain_aio_pt      aio;
++#endif
++};
+ 
++
+ typedef struct {
+     ngx_chain_t                 *out;
+     ngx_chain_t                **last;
+Index: src/core/ngx_file.h
+===================================================================
+--- src/core/ngx_file.h	(revision 2356)
++++ src/core/ngx_file.h	(working copy)
+@@ -12,6 +12,22 @@
+ #include <ngx_core.h>
+ 
+ 
++#if (NGX_HAVE_FILE_AIO)
++
++typedef struct {
++    ngx_connection_t          *connection;
++
++    /* STUB: event is pointer because ngx_event_s definition is incomplete */
++    ngx_event_t               *event;
++    void                      *dummy;
++    ngx_fd_t                   fd;
++
++    struct aiocb               aiocb;
++} ngx_file_aio_ident_t;
++
++#endif
++
++
+ struct ngx_file_s {
+     ngx_fd_t                   fd;
+     ngx_str_t                  name;
+@@ -22,10 +38,15 @@
+ 
+     ngx_log_t                 *log;
+ 
++#if (NGX_HAVE_FILE_AIO)
++    ngx_file_aio_ident_t      *aio;
++#endif
++
+     unsigned                   valid_info:1;
+     unsigned                   directio:1;
+ };
+ 
++
+ #define NGX_MAX_PATH_LEVEL  3
+ 
+ 
+Index: auto/os/features
+===================================================================
+--- auto/os/features	(revision 2356)
++++ auto/os/features	(working copy)
+@@ -274,3 +274,21 @@
+         CORE_LIBS="$CORE_LIBS -lrt"
+     fi
+ fi
++
++
++if [ $NGX_FILE_AIO = YES ]; then
++    ngx_feature="kqueue AIO support"
++    ngx_feature_name="NGX_HAVE_FILE_AIO"
++    ngx_feature_run=no
++    ngx_feature_incs="#include <aio.h>"
++    ngx_feature_path=
++    ngx_feature_libs=
++    ngx_feature_test="int  n; struct aiocb  iocb;
++                      iocb.aio_sigevent.sigev_notify = SIGEV_KEVENT;
++                      n = aio_read(&iocb)"
++    . auto/feature
++
++    if [ $ngx_found = yes ]; then
++        CORE_SRCS="$CORE_SRCS $FILE_AIO_SRCS"
++    fi
++fi
+Index: auto/sources
+===================================================================
+--- auto/sources	(revision 2356)
++++ auto/sources	(working copy)
+@@ -125,6 +125,7 @@
+           src/os/unix/ngx_aio_read_chain.c \
+           src/os/unix/ngx_aio_write_chain.c"
+ 
++FILE_AIO_SRCS="src/os/unix/ngx_file_aio_read.c"
+ 
+ UNIX_INCS="$CORE_INCS $EVENT_INCS src/os/unix"
+ 
+Index: auto/options
+===================================================================
+--- auto/options	(revision 2356)
++++ auto/options	(working copy)
+@@ -43,6 +43,7 @@
+ 
+ USE_THREADS=NO
+ 
++NGX_FILE_AIO=NO
+ NGX_IPV6=NO
+ 
+ HTTP=YES
+@@ -170,6 +171,7 @@
+         #--with-threads=*)                USE_THREADS="$value"       ;;
+         #--with-threads)                  USE_THREADS="pthreads"     ;;
+ 
++        --with-file-aio)                 NGX_FILE_AIO=YES           ;;
+         --with-ipv6)                     NGX_IPV6=YES               ;;
+ 
+         --without-http)                  HTTP=NO                    ;;
+@@ -305,6 +307,7 @@
+   --with-poll_module                 enable poll module
+   --without-poll_module              disable poll module
+ 
++  --with-file-aio                    enable file aio support
+   --with-ipv6                        enable ipv6 support
+ 
+   --with-http_ssl_module             enable ngx_http_ssl_module
