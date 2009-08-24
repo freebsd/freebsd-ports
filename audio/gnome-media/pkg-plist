@@ -41,8 +41,8 @@ share/applications/gstreamer-properties.desktop
 %%VUMETER%%%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-low.svg
 %%VUMETER%%%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-medium.svg
 %%VUMETER%%%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-muted.svg
-%%DATADIR%%/pixmaps/chain-broken.png
-%%DATADIR%%/pixmaps/chain.png
+%%VUMETER%%%%DATADIR%%/pixmaps/chain-broken.png
+%%VUMETER%%%%DATADIR%%/pixmaps/chain.png
 %%DATADIR%%/sounds/gnome-sounds-default.xml
 share/gnome-sound-recorder/ui/ui.xml
 share/gnome/help/gnome-sound-recorder/C/figures/grecord_window.png
@@ -68,6 +68,25 @@ share/gnome/help/gnome-sound-recorder/sv/figures/grecord_window.png
 share/gnome/help/gnome-sound-recorder/sv/gnome-sound-recorder.xml
 share/gnome/help/gnome-sound-recorder/uk/figures/grecord_window.png
 share/gnome/help/gnome-sound-recorder/uk/gnome-sound-recorder.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/C/figures/gnome-volume-control_window.png
+%%VUMETER%%share/gnome/help/gnome-volume-control/C/gnome-volume-control.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/C/legal.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/ca/figures/gnome-volume-control_window.png
+%%VUMETER%%share/gnome/help/gnome-volume-control/ca/gnome-volume-control.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/de/figures/gnome-volume-control_window.png
+%%VUMETER%%share/gnome/help/gnome-volume-control/de/gnome-volume-control.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/es/figures/gnome-volume-control_window.png
+%%VUMETER%%share/gnome/help/gnome-volume-control/es/gnome-volume-control.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/fr/figures/gnome-volume-control_window.png
+%%VUMETER%%share/gnome/help/gnome-volume-control/fr/gnome-volume-control.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/it/figures/gnome-volume-control_window.png
+%%VUMETER%%share/gnome/help/gnome-volume-control/it/gnome-volume-control.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/oc/figures/gnome-volume-control_window.png
+%%VUMETER%%share/gnome/help/gnome-volume-control/oc/gnome-volume-control.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/ru/figures/gnome-volume-control_window.png
+%%VUMETER%%share/gnome/help/gnome-volume-control/ru/gnome-volume-control.xml
+%%VUMETER%%share/gnome/help/gnome-volume-control/sv/figures/gnome-volume-control_window.png
+%%VUMETER%%share/gnome/help/gnome-volume-control/sv/gnome-volume-control.xml
 share/gnome/help/gstreamer-properties/C/figures/gstreamer_properties_window.png
 share/gnome/help/gstreamer-properties/C/gstreamer-properties.xml
 share/gnome/help/gstreamer-properties/C/legal.xml
@@ -96,6 +115,11 @@ share/gstreamer-properties/icons/gstreamer-properties.png
 share/icons/hicolor/16x16/apps/gnome-sound-recorder.png
 %%VUMETER%%share/icons/hicolor/16x16/apps/gnome-volume-control.png
 %%VUMETER%%share/icons/hicolor/16x16/apps/gnome-volume-control.svg
+%%VUMETER%%share/icons/hicolor/16x16/devices/gvc-3d-sound.png
+%%VUMETER%%share/icons/hicolor/16x16/devices/gvc-headphones.png
+%%VUMETER%%share/icons/hicolor/16x16/devices/gvc-line-in.png
+%%VUMETER%%share/icons/hicolor/16x16/devices/gvc-tone.png
+%%VUMETER%%share/icons/hicolor/16x16/status/audio-input-microphone-muted.png
 share/icons/hicolor/22x22/apps/gnome-sound-recorder.png
 %%VUMETER%%share/icons/hicolor/22x22/apps/gnome-volume-control.png
 %%VUMETER%%share/icons/hicolor/22x22/apps/gnome-volume-control.svg
@@ -201,6 +225,15 @@ share/omf/gnome-sound-recorder/gnome-sound-recorder-oc.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-ru.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-sv.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-uk.omf
+%%VUMETER%%share/omf/gnome-volume-control/gnome-volume-control-C.omf
+%%VUMETER%%share/omf/gnome-volume-control/gnome-volume-control-ca.omf
+%%VUMETER%%share/omf/gnome-volume-control/gnome-volume-control-de.omf
+%%VUMETER%%share/omf/gnome-volume-control/gnome-volume-control-es.omf
+%%VUMETER%%share/omf/gnome-volume-control/gnome-volume-control-fr.omf
+%%VUMETER%%share/omf/gnome-volume-control/gnome-volume-control-it.omf
+%%VUMETER%%share/omf/gnome-volume-control/gnome-volume-control-oc.omf
+%%VUMETER%%share/omf/gnome-volume-control/gnome-volume-control-ru.omf
+%%VUMETER%%share/omf/gnome-volume-control/gnome-volume-control-sv.omf
 share/omf/gstreamer-properties/gstreamer-properties-C.omf
 share/omf/gstreamer-properties/gstreamer-properties-ca.omf
 share/omf/gstreamer-properties/gstreamer-properties-de.omf
@@ -220,6 +253,7 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrm share/sounds/gnome/default
 @dirrm share/sounds/gnome
 @dirrm share/omf/gstreamer-properties
+%%VUMETER%%@dirrm share/omf/gnome-volume-control
 @dirrm share/omf/gnome-sound-recorder
 @dirrm share/gstreamer-properties/icons
 @dirrm share/gstreamer-properties/glade
@@ -247,6 +281,25 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrm share/gnome/help/gstreamer-properties/C/figures
 @dirrm share/gnome/help/gstreamer-properties/C
 @dirrm share/gnome/help/gstreamer-properties
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/sv/figures
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/sv
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/ru/figures
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/ru
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/oc/figures
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/oc
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/it/figures
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/it
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/fr/figures
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/fr
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/es/figures
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/es
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/de/figures
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/de
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/ca/figures
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/ca
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/C/figures
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control/C
+%%VUMETER%%@dirrm share/gnome/help/gnome-volume-control
 @dirrm share/gnome/help/gnome-sound-recorder/uk/figures
 @dirrm share/gnome/help/gnome-sound-recorder/uk
 @dirrm share/gnome/help/gnome-sound-recorder/sv/figures
@@ -272,7 +325,6 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrm share/gnome/help/gnome-sound-recorder
 @dirrm share/gnome-sound-recorder/ui
 @dirrm share/gnome-sound-recorder
-@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/sounds
 %%VUMETER%%@dirrm %%DATADIR%%/icons/hicolor/scalable/status
 %%VUMETER%%@dirrm %%DATADIR%%/icons/hicolor/scalable
@@ -286,6 +338,7 @@ share/sounds/gnome/default/alerts/sonar.ogg
 %%VUMETER%%@dirrm %%DATADIR%%/icons/hicolor/16x16
 %%VUMETER%%@dirrm %%DATADIR%%/icons/hicolor
 %%VUMETER%%@dirrm %%DATADIR%%/icons
+%%VUMETER%%@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
