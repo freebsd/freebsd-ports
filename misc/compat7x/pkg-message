@@ -1,0 +1,9 @@
+*******************************************************************************
+*                                                                             *
+* Do not forget to add COMPAT_FREEBSD7 into                                   *
+* your kernel configuration (enabled by default).                             *
+*                                                                             *
+* To configure and recompile your kernel see:                                 *
+* http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/kernelconfig.html *
+*                                                                             *
+*******************************************************************************
