@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.154
-diff -u -r1.117 -r1.154
+retrieving revision 1.155
+diff -u -r1.117 -r1.155
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	26 Jul 2006 03:36:05 -0000	1.154
++++ webmagick.in	24 Aug 2009 02:31:29 -0000	1.155
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.154 2006/07/26 03:36:05 ache Exp $
++# $Id: webmagick.in,v 1.155 2009/08/24 02:31:29 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -1294,6 +1294,15 @@ diff -u -r1.117 -r1.154
  
  	# Table image labels
      print( PERLVARS "\n# table image titles\n", plHash( 'tableImageLabels', \%tableImageLabels ) );
+@@ -3062,7 +3268,7 @@
+ 		# Copy image so we can play with it without effecting original
+ 		print( STDERR "Copying montage to scratch ...\n" )
+ 		    if $opt_debug;
+-		$image = $montage->Copy();
++		$image = $montage->Clone();
+ 		handleMagickError( __FILE__, __LINE__, "", $image) unless ref($image);
+ 		last MONTAGE unless ref($image);
+ 	
 @@ -3465,6 +3671,10 @@
  sub sortDir {
      if(defined($dirOrder{$a}) && defined($dirOrder{$b})) {
