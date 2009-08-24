@@ -18,6 +18,7 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
 OPTIONS=	DEBUG			"Enable nginx debugging" off \
+		FILE_AIO		"Enable file aio (experimental)" off \
 		IPV6			"Enable IPv6" off \
 		GOOGLE_PERFTOOLS	"Enable google perftools module" off \
 		HTTP_MODULE		"Enable HTTP module" on \
@@ -48,6 +49,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_MOGILEFS_MODULE	"3rd party mogilefs module" off \
 		HTTP_MP4_H264_MODULE	"3rd party mp4/h264 module" off \
 		HTTP_NOTICE_MODULE	"3rd party notice module" off \
+		HTTP_REDIS_MODULE	"3rd party http_redis module" off \
 		HTTP_RESPONSE_MODULE	"3rd party http_response module" off \
 		HTTP_UPLOAD_MODULE	"3rd party upload module" off \
 		HTTP_UPLOAD_PROGRESS	"3rd party upload_progress module" off \
@@ -100,6 +102,10 @@ IGNORE=		requires at least HTTP_MODULE or MAIL_MODULE to \
 CFLAGS+=	-g -DNGX_DEBUG_MALLOC
 CONFIGURE_ARGS+=--with-debug
 STRIP=		#do not strip if nginx with debug information
+.endif
+
+.if defined(WITH_FILE_AIO)
+CONFIGURE_ARGS+=--with-file-aio
 .endif
 
 .if defined(WITH_IPV6)
@@ -198,6 +204,14 @@ CONFIGURE_ARGS+=--with-http_random_index_module
 
 .if defined(WITH_HTTP_REALIP_MODULE)
 CONFIGURE_ARGS+=--with-http_realip_module
+.endif
+
+.if defined(WITH_HTTP_REDIS_MODULE)
+NGINX_REDIS_MODULE_VERSION=	0.1
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:redis/}
+MASTER_SITE_SUBDIR+=	osa/:redis
+DISTFILES+=	ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}.tar.gz:redis
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_RESPONSE_MODULE)
@@ -331,6 +345,9 @@ post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
 		${WRKSRC}/conf/nginx.conf
+.if defined(WITH_FILE_AIO)
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-aio
+.endif
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
