@@ -22,8 +22,8 @@ DOVECOTVERSION=	1.2
 #                                                                    #
 # Please be careful when updating this port as changes to this port  #
 # can break mail/dovecot-sieve and mail/dovecot-managesieve. In      #
-# to ensure the least amount of breakage possible please consult     #
-# the maintainer of those ports before updating this one.            #
+# order to ensure the least amount of breakage possible please       #
+# consult the maintainer of those ports before updating this one.    #
 ######################################################################
 
 USE_ICONV=	yes
