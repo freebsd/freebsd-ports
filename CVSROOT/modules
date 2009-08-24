@@ -8788,6 +8788,7 @@ mod_access_identd               ports/www/mod_access_identd
 mod_access_referer              ports/www/mod_access_referer
 mod_accesscookie                ports/www/mod_accesscookie
 mod_accounting                  ports/www/mod_accounting
+mod_antiloris                   ports/www/mod_antiloris
 mod_auth_any                    ports/www/mod_auth_any
 mod_auth_cookie_mysql           ports/www/mod_auth_cookie_mysql
 mod_auth_cookie_mysql2          ports/www/mod_auth_cookie_mysql2
@@ -9805,6 +9806,7 @@ octave-forge-pdb                ports/math/octave-forge-pdb
 octave-forge-physicalconstants  ports/math/octave-forge-physicalconstants
 octave-forge-plot               ports/math/octave-forge-plot
 octave-forge-pt_br              ports/math/octave-forge-pt_br
+octave-forge-quaternion         ports/math/octave-forge-quaternion
 octave-forge-secs1d             ports/math/octave-forge-secs1d
 octave-forge-secs2d             ports/math/octave-forge-secs2d
 octave-forge-signal             ports/math/octave-forge-signal
@@ -9826,7 +9828,6 @@ octave-forge-triangular         ports/math/octave-forge-triangular
 octave-forge-tsa                ports/math/octave-forge-tsa
 octave-forge-video              ports/math/octave-forge-video
 octave-forge-vrml               ports/math/octave-forge-vrml
-octave-forge-windows            ports/math/octave-forge-windows
 octave-forge-xraylib            ports/math/octave-forge-xraylib
 octave-forge-zenity             ports/math/octave-forge-zenity
 odamex                          ports/games/odamex
@@ -10353,6 +10354,7 @@ p5-Bio-Das                      ports/biology/p5-Bio-Das
 p5-Bio-Glite                    ports/biology/p5-Bio-Glite
 p5-Bio-Graphics                 ports/biology/p5-Bio-Graphics
 p5-Bio-MAGETAB                  ports/biology/p5-Bio-MAGETAB
+p5-Bio-NEXUS                    ports/biology/p5-Bio-NEXUS
 p5-Bio-Phylo                    ports/biology/p5-Bio-Phylo
 p5-Bit-ShiftReg                 ports/math/p5-Bit-ShiftReg
 p5-Bit-Vector                   ports/math/p5-Bit-Vector
@@ -11105,6 +11107,7 @@ p5-DateTime-Format-Mail         ports/devel/p5-DateTime-Format-Mail
 p5-DateTime-Format-MySQL        ports/devel/p5-DateTime-Format-MySQL
 p5-DateTime-Format-Natural      ports/devel/p5-DateTime-Format-Natural
 p5-DateTime-Format-Pg           ports/devel/p5-DateTime-Format-Pg
+p5-DateTime-Format-RFC3339      ports/devel/p5-DateTime-Format-RFC3339
 p5-DateTime-Format-Roman        ports/devel/p5-DateTime-Format-Roman
 p5-DateTime-Format-SQLite       ports/devel/p5-DateTime-Format-SQLite
 p5-DateTime-Format-Strptime     ports/devel/p5-DateTime-Format-Strptime
@@ -11939,6 +11942,7 @@ p5-MD5                          ports/security/p5-MD5
 p5-MIDI                         ports/audio/p5-MIDI
 p5-MIME-Base32                  ports/converters/p5-MIME-Base32
 p5-MIME-Base64                  ports/converters/p5-MIME-Base64
+p5-MIME-Base64-URLSafe          ports/converters/p5-MIME-Base64-URLSafe
 p5-MIME-Charset                 ports/mail/p5-MIME-Charset
 p5-MIME-EncWords                ports/mail/p5-MIME-EncWords
 p5-MIME-Explode                 ports/mail/p5-MIME-Explode
@@ -12872,6 +12876,7 @@ p5-Sort-Maker                   ports/devel/p5-Sort-Maker
 p5-Sort-Naturally               ports/textproc/p5-Sort-Naturally
 p5-Sort-Tree                    ports/devel/p5-Sort-Tree
 p5-Sort-Versions                ports/devel/p5-Sort-Versions
+p5-Sphinx-Search                ports/textproc/p5-Sphinx-Search
 p5-Spiffy                       ports/devel/p5-Spiffy
 p5-Spoon                        ports/devel/p5-Spoon
 p5-Spork                        ports/textproc/p5-Spork
@@ -13859,6 +13864,7 @@ p5-bio-das                      ports/biology/p5-Bio-Das
 p5-bio-glite                    ports/biology/p5-Bio-Glite
 p5-bio-graphics                 ports/biology/p5-Bio-Graphics
 p5-bio-magetab                  ports/biology/p5-Bio-MAGETAB
+p5-bio-nexus                    ports/biology/p5-Bio-NEXUS
 p5-bio-phylo                    ports/biology/p5-Bio-Phylo
 p5-bioperl                      ports/biology/p5-bioperl
 p5-bioperl-run                  ports/biology/p5-bioperl-run
@@ -14541,6 +14547,7 @@ p5-datetime-format-mail         ports/devel/p5-DateTime-Format-Mail
 p5-datetime-format-mysql        ports/devel/p5-DateTime-Format-MySQL
 p5-datetime-format-natural      ports/devel/p5-DateTime-Format-Natural
 p5-datetime-format-pg           ports/devel/p5-DateTime-Format-Pg
+p5-datetime-format-rfc3339      ports/devel/p5-DateTime-Format-RFC3339
 p5-datetime-format-roman        ports/devel/p5-DateTime-Format-Roman
 p5-datetime-format-sqlite       ports/devel/p5-DateTime-Format-SQLite
 p5-datetime-format-strptime     ports/devel/p5-DateTime-Format-Strptime
@@ -15626,6 +15633,7 @@ p5-method-alias                 ports/devel/p5-Method-Alias
 p5-midi                         ports/audio/p5-MIDI
 p5-mime-base32                  ports/converters/p5-MIME-Base32
 p5-mime-base64                  ports/converters/p5-MIME-Base64
+p5-mime-base64-urlsafe          ports/converters/p5-MIME-Base64-URLSafe
 p5-mime-charset                 ports/mail/p5-MIME-Charset
 p5-mime-encwords                ports/mail/p5-MIME-EncWords
 p5-mime-explode                 ports/mail/p5-MIME-Explode
@@ -16407,6 +16415,7 @@ p5-sort-maker                   ports/devel/p5-Sort-Maker
 p5-sort-naturally               ports/textproc/p5-Sort-Naturally
 p5-sort-tree                    ports/devel/p5-Sort-Tree
 p5-sort-versions                ports/devel/p5-Sort-Versions
+p5-sphinx-search                ports/textproc/p5-Sphinx-Search
 p5-spiffy                       ports/devel/p5-Spiffy
 p5-spoon                        ports/devel/p5-Spoon
 p5-spops                        ports/devel/p5-SPOPS
@@ -17201,6 +17210,7 @@ p65                             ports/devel/p65
 p7zip                           ports/archivers/p7zip
 pa-aspell                       ports/textproc/pa-aspell
 pachi                           ports/games/pachi
+packddir                        ports/archivers/packddir
 packit                          ports/net-mgmt/packit
 pacpl                           ports/audio/pacpl
 pad                             ports/security/pad
@@ -19133,6 +19143,7 @@ py-empy                         ports/textproc/py-empy
 py-enchant                      ports/textproc/py-enchant
 py-enthoughtbase                ports/devel/py-EnthoughtBase
 py-epsilon                      ports/devel/py-epsilon
+py-errorhandler                 ports/textproc/py-errorhandler
 py-event                        ports/devel/py-event
 py-excelerator                  ports/textproc/py-excelerator
 py-exif                         ports/graphics/py-exif
@@ -19698,7 +19709,9 @@ py-wxpython28-unicode           ports/x11-toolkits/py-wxPython28-unicode
 py-xattr                        ports/devel/py-xattr
 py-xdg                          ports/devel/py-xdg
 py-xlib                         ports/x11-toolkits/py-xlib
+py-xlrd                         ports/textproc/py-xlrd
 py-xlwriter                     ports/textproc/py-xlwriter
+py-xlwt                         ports/textproc/py-xlwt
 py-xml                          ports/textproc/py-xml
 py-xmlrpc                       ports/net/py-xmlrpc
 py-xmlrpclib                    ports/net/py-xmlrpclib
@@ -20163,6 +20176,7 @@ rbtools                         ports/devel/rbtools
 rc                              ports/shells/rc
 rc5pipe                         ports/security/rc5pipe
 rc_subr                         ports/sysutils/rc_subr
+rcctools                        ports/converters/rcctools
 rclean                          ports/sysutils/rclean
 rclock                          ports/x11-clocks/rclock
 rcpd                            ports/net-mgmt/rcpd
@@ -20238,6 +20252,7 @@ replex                          ports/multimedia/replex
 reply-o-matic                   ports/mail/reply-o-matic
 repng2jpeg                      ports/graphics/repng2jpeg
 reportmagic                     ports/www/reportmagic
+repos-style                     ports/www/repos-style
 resid                           ports/audio/resid
 resin2                          ports/www/resin2
 resin3                          ports/www/resin3
