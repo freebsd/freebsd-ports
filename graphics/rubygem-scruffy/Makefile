@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	scruffy
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
