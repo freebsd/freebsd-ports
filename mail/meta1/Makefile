@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.PreAlpha29.0
+PORTVERSION=	1.0.PreAlpha30.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.prealpha/nohouse/
+MASTER_SITES=	http://www.MeTA1.org/download/.prealpha/waiting/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
