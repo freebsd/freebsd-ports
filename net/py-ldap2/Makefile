@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.3.8
+PORTVERSION=	2.3.9
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,7 @@ USE_OPENLDAP=	yes
 PYDISTUTILS_PKGNAME=	python-ldap
 PYEASYINSTALL_ARCHDEP=	yes
 
-REPLACE_ARGS=	-e 's,/usr/local/openldap-2.3/lib,${LOCALBASE}/lib,' \
-		-e 's,/usr/local/openldap-2.3/include,${LOCALBASE}/include,'
+REPLACE_ARGS=	-e 's,/opt/openldap-RE24,${LOCALBASE},'
 
 .if defined(WITH_SASL)
 WANT_OPENLDAP_SASL=	yes
