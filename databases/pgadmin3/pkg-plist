@@ -1,8 +1,124 @@
 bin/pgadmin3
-bin/pgagent
 %%DATADIR%%/branding/branding.ini
 %%DATADIR%%/docs/Docs.vcproj
 %%DATADIR%%/docs/builddocs.bat
+%%DATADIR%%/docs/cs_CZ/appendices.html
+%%DATADIR%%/docs/cs_CZ/backup.html
+%%DATADIR%%/docs/cs_CZ/bugreport.html
+%%DATADIR%%/docs/cs_CZ/commandline.html
+%%DATADIR%%/docs/cs_CZ/connect-error.html
+%%DATADIR%%/docs/cs_CZ/connect.html
+%%DATADIR%%/docs/cs_CZ/control-server.html
+%%DATADIR%%/docs/cs_CZ/debugger.html
+%%DATADIR%%/docs/cs_CZ/default-xsl.html
+%%DATADIR%%/docs/cs_CZ/editgrid.html
+%%DATADIR%%/docs/cs_CZ/export.html
+%%DATADIR%%/docs/cs_CZ/extend.html
+%%DATADIR%%/docs/cs_CZ/gqb.html
+%%DATADIR%%/docs/cs_CZ/grantwiz.html
+%%DATADIR%%/docs/cs_CZ/gridopts.html
+%%DATADIR%%/docs/cs_CZ/guruhints.html
+%%DATADIR%%/docs/cs_CZ/hints/autovacuum.html
+%%DATADIR%%/docs/cs_CZ/hints/conn-hba.html
+%%DATADIR%%/docs/cs_CZ/hints/conn-ident.html
+%%DATADIR%%/docs/cs_CZ/hints/conn-listen.html
+%%DATADIR%%/docs/cs_CZ/hints/encoding-ascii.html
+%%DATADIR%%/docs/cs_CZ/hints/encoding-unicode.html
+%%DATADIR%%/docs/cs_CZ/hints/fki.html
+%%DATADIR%%/docs/cs_CZ/hints/instrumentation.html
+%%DATADIR%%/docs/cs_CZ/hints/multiple.html
+%%DATADIR%%/docs/cs_CZ/hints/object-editing.html
+%%DATADIR%%/docs/cs_CZ/hints/pk.html
+%%DATADIR%%/docs/cs_CZ/hints/saving-passwords.html
+%%DATADIR%%/docs/cs_CZ/hints/vacuum.html
+%%DATADIR%%/docs/cs_CZ/hints/view-without-pk.html
+%%DATADIR%%/docs/cs_CZ/images/backup.png
+%%DATADIR%%/docs/cs_CZ/images/debugger.png
+%%DATADIR%%/docs/cs_CZ/images/editgrid.png
+%%DATADIR%%/docs/cs_CZ/images/export.png
+%%DATADIR%%/docs/cs_CZ/images/gqb.png
+%%DATADIR%%/docs/cs_CZ/images/grantwiz.png
+%%DATADIR%%/docs/cs_CZ/images/gridopt-filter.png
+%%DATADIR%%/docs/cs_CZ/images/gridopt-sort.png
+%%DATADIR%%/docs/cs_CZ/images/guru-connect.png
+%%DATADIR%%/docs/cs_CZ/images/main.png
+%%DATADIR%%/docs/cs_CZ/images/maintenance.png
+%%DATADIR%%/docs/cs_CZ/images/manage-macros.png
+%%DATADIR%%/docs/cs_CZ/images/no-hba.png
+%%DATADIR%%/docs/cs_CZ/images/not-running.png
+%%DATADIR%%/docs/cs_CZ/images/options-display.png
+%%DATADIR%%/docs/cs_CZ/images/options-general.png
+%%DATADIR%%/docs/cs_CZ/images/options-logging.png
+%%DATADIR%%/docs/cs_CZ/images/options-pref.png
+%%DATADIR%%/docs/cs_CZ/images/options-query.png
+%%DATADIR%%/docs/cs_CZ/images/password.png
+%%DATADIR%%/docs/cs_CZ/images/pgagent-jobdetails.png
+%%DATADIR%%/docs/cs_CZ/images/pgagent-jobproperties.png
+%%DATADIR%%/docs/cs_CZ/images/pgagent-jobstats.png
+%%DATADIR%%/docs/cs_CZ/images/pgagent-scheduledetails1.png
+%%DATADIR%%/docs/cs_CZ/images/pgagent-scheduledetails2.png
+%%DATADIR%%/docs/cs_CZ/images/pgagent-scheduledetails3.png
+%%DATADIR%%/docs/cs_CZ/images/pgagent-scheduleproperties.png
+%%DATADIR%%/docs/cs_CZ/images/pgagent-stepdetails.png
+%%DATADIR%%/docs/cs_CZ/images/pgagent-stepstats.png
+%%DATADIR%%/docs/cs_CZ/images/query-analyze.png
+%%DATADIR%%/docs/cs_CZ/images/query-connect.png
+%%DATADIR%%/docs/cs_CZ/images/query.png
+%%DATADIR%%/docs/cs_CZ/images/reporttool-html.png
+%%DATADIR%%/docs/cs_CZ/images/reporttool-xml.png
+%%DATADIR%%/docs/cs_CZ/images/restore.png
+%%DATADIR%%/docs/cs_CZ/images/server.png
+%%DATADIR%%/docs/cs_CZ/images/slony-create.png
+%%DATADIR%%/docs/cs_CZ/images/slony-execute.png
+%%DATADIR%%/docs/cs_CZ/images/slony-join.png
+%%DATADIR%%/docs/cs_CZ/images/slony-listen.png
+%%DATADIR%%/docs/cs_CZ/images/slony-overview.png
+%%DATADIR%%/docs/cs_CZ/images/slony-path.png
+%%DATADIR%%/docs/cs_CZ/images/slony-sequence.png
+%%DATADIR%%/docs/cs_CZ/images/slony-set.png
+%%DATADIR%%/docs/cs_CZ/images/slony-subscription.png
+%%DATADIR%%/docs/cs_CZ/images/slony-table.png
+%%DATADIR%%/docs/cs_CZ/images/slony-upgrade.png
+%%DATADIR%%/docs/cs_CZ/images/status.png
+%%DATADIR%%/docs/cs_CZ/index.html
+%%DATADIR%%/docs/cs_CZ/kerberos.html
+%%DATADIR%%/docs/cs_CZ/licence.html
+%%DATADIR%%/docs/cs_CZ/macros.html
+%%DATADIR%%/docs/cs_CZ/main.html
+%%DATADIR%%/docs/cs_CZ/maintenance.html
+%%DATADIR%%/docs/cs_CZ/openssl.html
+%%DATADIR%%/docs/cs_CZ/options-tab1.html
+%%DATADIR%%/docs/cs_CZ/options-tab2.html
+%%DATADIR%%/docs/cs_CZ/options-tab3.html
+%%DATADIR%%/docs/cs_CZ/options-tab4.html
+%%DATADIR%%/docs/cs_CZ/options-tab5.html
+%%DATADIR%%/docs/cs_CZ/options.html
+%%DATADIR%%/docs/cs_CZ/password.html
+%%DATADIR%%/docs/cs_CZ/pgadmin3.css
+%%DATADIR%%/docs/cs_CZ/pgadmin3.hhc
+%%DATADIR%%/docs/cs_CZ/pgadmin3.hhp
+%%DATADIR%%/docs/cs_CZ/pgagent-install.html
+%%DATADIR%%/docs/cs_CZ/pgagent-jobs.html
+%%DATADIR%%/docs/cs_CZ/pgagent-schedules.html
+%%DATADIR%%/docs/cs_CZ/pgagent-steps.html
+%%DATADIR%%/docs/cs_CZ/pgagent.html
+%%DATADIR%%/docs/cs_CZ/pgscript.html
+%%DATADIR%%/docs/cs_CZ/query.html
+%%DATADIR%%/docs/cs_CZ/reports.html
+%%DATADIR%%/docs/cs_CZ/restore.html
+%%DATADIR%%/docs/cs_CZ/sample-xml.html
+%%DATADIR%%/docs/cs_CZ/slony-example.html
+%%DATADIR%%/docs/cs_CZ/slony-execute.html
+%%DATADIR%%/docs/cs_CZ/slony-functions.html
+%%DATADIR%%/docs/cs_CZ/slony-install.html
+%%DATADIR%%/docs/cs_CZ/slony-overview.html
+%%DATADIR%%/docs/cs_CZ/slony-path.html
+%%DATADIR%%/docs/cs_CZ/slony-set.html
+%%DATADIR%%/docs/cs_CZ/slony.html
+%%DATADIR%%/docs/cs_CZ/status.html
+%%DATADIR%%/docs/cs_CZ/team.html
+%%DATADIR%%/docs/cs_CZ/translation_team.html
+%%DATADIR%%/docs/cs_CZ/using.html
 %%DATADIR%%/docs/de_DE/hints/autovacuum.html
 %%DATADIR%%/docs/de_DE/hints/conn-hba.html
 %%DATADIR%%/docs/de_DE/hints/conn-ident.html
@@ -15,7 +131,6 @@ bin/pgagent
 %%DATADIR%%/docs/de_DE/hints/pk.html
 %%DATADIR%%/docs/de_DE/hints/vacuum.html
 %%DATADIR%%/docs/de_DE/hints/view-without-pk.html
-%%DATADIR%%/docs/de_DE/tips.txt
 %%DATADIR%%/docs/en_US/appendices.html
 %%DATADIR%%/docs/en_US/backup.html
 %%DATADIR%%/docs/en_US/bugreport.html
@@ -28,6 +143,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/editgrid.html
 %%DATADIR%%/docs/en_US/export.html
 %%DATADIR%%/docs/en_US/extend.html
+%%DATADIR%%/docs/en_US/gqb.html
 %%DATADIR%%/docs/en_US/grantwiz.html
 %%DATADIR%%/docs/en_US/gridopts.html
 %%DATADIR%%/docs/en_US/guruhints.html
@@ -50,6 +166,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/images/debugger.png
 %%DATADIR%%/docs/en_US/images/editgrid.png
 %%DATADIR%%/docs/en_US/images/export.png
+%%DATADIR%%/docs/en_US/images/gqb.png
 %%DATADIR%%/docs/en_US/images/grantwiz.png
 %%DATADIR%%/docs/en_US/images/gridopt-filter.png
 %%DATADIR%%/docs/en_US/images/gridopt-sort.png
@@ -120,6 +237,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pgagent-schedules.html
 %%DATADIR%%/docs/en_US/pgagent-steps.html
 %%DATADIR%%/docs/en_US/pgagent.html
+%%DATADIR%%/docs/en_US/pgscript.html
 %%DATADIR%%/docs/en_US/query.html
 %%DATADIR%%/docs/en_US/reports.html
 %%DATADIR%%/docs/en_US/restore.html
@@ -134,7 +252,6 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony.html
 %%DATADIR%%/docs/en_US/status.html
 %%DATADIR%%/docs/en_US/team.html
-%%DATADIR%%/docs/en_US/tips.txt
 %%DATADIR%%/docs/en_US/translation_team.html
 %%DATADIR%%/docs/en_US/using.html
 %%DATADIR%%/docs/es_ES/hints/autovacuum.html
@@ -150,7 +267,6 @@ bin/pgagent
 %%DATADIR%%/docs/es_ES/hints/pk.html
 %%DATADIR%%/docs/es_ES/hints/vacuum.html
 %%DATADIR%%/docs/es_ES/hints/view-without-pk.html
-%%DATADIR%%/docs/es_ES/tips.txt
 %%DATADIR%%/docs/fi_FI/hints/autovacuum.html
 %%DATADIR%%/docs/fi_FI/hints/conn-hba.html
 %%DATADIR%%/docs/fi_FI/hints/conn-ident.html
@@ -165,8 +281,22 @@ bin/pgagent
 %%DATADIR%%/docs/fi_FI/hints/saving-passwords.html
 %%DATADIR%%/docs/fi_FI/hints/vacuum.html
 %%DATADIR%%/docs/fi_FI/hints/view-without-pk.html
-%%DATADIR%%/docs/fi_FI/tips.txt
+%%DATADIR%%/docs/fr_FR/appendices.html
+%%DATADIR%%/docs/fr_FR/backup.html
 %%DATADIR%%/docs/fr_FR/bugreport.html
+%%DATADIR%%/docs/fr_FR/commandline.html
+%%DATADIR%%/docs/fr_FR/connect-error.html
+%%DATADIR%%/docs/fr_FR/connect.html
+%%DATADIR%%/docs/fr_FR/control-server.html
+%%DATADIR%%/docs/fr_FR/debugger.html
+%%DATADIR%%/docs/fr_FR/default-xsl.html
+%%DATADIR%%/docs/fr_FR/editgrid.html
+%%DATADIR%%/docs/fr_FR/export.html
+%%DATADIR%%/docs/fr_FR/extend.html
+%%DATADIR%%/docs/fr_FR/gqb.html
+%%DATADIR%%/docs/fr_FR/grantwiz.html
+%%DATADIR%%/docs/fr_FR/gridopts.html
+%%DATADIR%%/docs/fr_FR/guruhints.html
 %%DATADIR%%/docs/fr_FR/hints/autovacuum.html
 %%DATADIR%%/docs/fr_FR/hints/conn-hba.html
 %%DATADIR%%/docs/fr_FR/hints/conn-ident.html
@@ -179,8 +309,98 @@ bin/pgagent
 %%DATADIR%%/docs/fr_FR/hints/pk.html
 %%DATADIR%%/docs/fr_FR/hints/vacuum.html
 %%DATADIR%%/docs/fr_FR/hints/view-without-pk.html
-%%DATADIR%%/docs/fr_FR/tips.txt
-%%DATADIR%%/docs/it_IT/tips.txt
+%%DATADIR%%/docs/fr_FR/images/backup.png
+%%DATADIR%%/docs/fr_FR/images/connect.png
+%%DATADIR%%/docs/fr_FR/images/debugger.png
+%%DATADIR%%/docs/fr_FR/images/editgrid.png
+%%DATADIR%%/docs/fr_FR/images/export.png
+%%DATADIR%%/docs/fr_FR/images/gqb.png
+%%DATADIR%%/docs/fr_FR/images/grantwiz.png
+%%DATADIR%%/docs/fr_FR/images/gridopt-filter.png
+%%DATADIR%%/docs/fr_FR/images/gridopt-sort.png
+%%DATADIR%%/docs/fr_FR/images/guru-connect.png
+%%DATADIR%%/docs/fr_FR/images/locks.png
+%%DATADIR%%/docs/fr_FR/images/logfile.png
+%%DATADIR%%/docs/fr_FR/images/main.png
+%%DATADIR%%/docs/fr_FR/images/maintenance.png
+%%DATADIR%%/docs/fr_FR/images/manage-macros.png
+%%DATADIR%%/docs/fr_FR/images/no-hba.png
+%%DATADIR%%/docs/fr_FR/images/not-running.png
+%%DATADIR%%/docs/fr_FR/images/options-display.png
+%%DATADIR%%/docs/fr_FR/images/options-general.png
+%%DATADIR%%/docs/fr_FR/images/options-logging.png
+%%DATADIR%%/docs/fr_FR/images/options-pref.png
+%%DATADIR%%/docs/fr_FR/images/options-query.png
+%%DATADIR%%/docs/fr_FR/images/password.png
+%%DATADIR%%/docs/fr_FR/images/pgagent-jobdetails.png
+%%DATADIR%%/docs/fr_FR/images/pgagent-jobproperties.png
+%%DATADIR%%/docs/fr_FR/images/pgagent-jobstats.png
+%%DATADIR%%/docs/fr_FR/images/pgagent-scheduledetails1.png
+%%DATADIR%%/docs/fr_FR/images/pgagent-scheduledetails2.png
+%%DATADIR%%/docs/fr_FR/images/pgagent-scheduledetails3.png
+%%DATADIR%%/docs/fr_FR/images/pgagent-scheduleproperties.png
+%%DATADIR%%/docs/fr_FR/images/pgagent-stepdetails.png
+%%DATADIR%%/docs/fr_FR/images/pgagent-stepstats.png
+%%DATADIR%%/docs/fr_FR/images/query-analyze.png
+%%DATADIR%%/docs/fr_FR/images/query-connect.png
+%%DATADIR%%/docs/fr_FR/images/query.png
+%%DATADIR%%/docs/fr_FR/images/reporttool-html.png
+%%DATADIR%%/docs/fr_FR/images/reporttool-xml.png
+%%DATADIR%%/docs/fr_FR/images/restore-content.png
+%%DATADIR%%/docs/fr_FR/images/restore.png
+%%DATADIR%%/docs/fr_FR/images/server.png
+%%DATADIR%%/docs/fr_FR/images/slony-create.png
+%%DATADIR%%/docs/fr_FR/images/slony-execute.png
+%%DATADIR%%/docs/fr_FR/images/slony-join.png
+%%DATADIR%%/docs/fr_FR/images/slony-listen.png
+%%DATADIR%%/docs/fr_FR/images/slony-overview.png
+%%DATADIR%%/docs/fr_FR/images/slony-path.png
+%%DATADIR%%/docs/fr_FR/images/slony-sequence.png
+%%DATADIR%%/docs/fr_FR/images/slony-set.png
+%%DATADIR%%/docs/fr_FR/images/slony-subscription.png
+%%DATADIR%%/docs/fr_FR/images/slony-table.png
+%%DATADIR%%/docs/fr_FR/images/slony-upgrade.png
+%%DATADIR%%/docs/fr_FR/images/status.png
+%%DATADIR%%/docs/fr_FR/images/transaction.png
+%%DATADIR%%/docs/fr_FR/index.html
+%%DATADIR%%/docs/fr_FR/kerberos.html
+%%DATADIR%%/docs/fr_FR/licence.html
+%%DATADIR%%/docs/fr_FR/macros.html
+%%DATADIR%%/docs/fr_FR/main.html
+%%DATADIR%%/docs/fr_FR/maintenance.html
+%%DATADIR%%/docs/fr_FR/openssl.html
+%%DATADIR%%/docs/fr_FR/options-tab1.html
+%%DATADIR%%/docs/fr_FR/options-tab2.html
+%%DATADIR%%/docs/fr_FR/options-tab3.html
+%%DATADIR%%/docs/fr_FR/options-tab4.html
+%%DATADIR%%/docs/fr_FR/options-tab5.html
+%%DATADIR%%/docs/fr_FR/options.html
+%%DATADIR%%/docs/fr_FR/password.html
+%%DATADIR%%/docs/fr_FR/pgadmin3.css
+%%DATADIR%%/docs/fr_FR/pgadmin3.hhc
+%%DATADIR%%/docs/fr_FR/pgadmin3.hhp
+%%DATADIR%%/docs/fr_FR/pgagent-install.html
+%%DATADIR%%/docs/fr_FR/pgagent-jobs.html
+%%DATADIR%%/docs/fr_FR/pgagent-schedules.html
+%%DATADIR%%/docs/fr_FR/pgagent-steps.html
+%%DATADIR%%/docs/fr_FR/pgagent.html
+%%DATADIR%%/docs/fr_FR/pgscript.html
+%%DATADIR%%/docs/fr_FR/query.html
+%%DATADIR%%/docs/fr_FR/reports.html
+%%DATADIR%%/docs/fr_FR/restore.html
+%%DATADIR%%/docs/fr_FR/sample-xml.html
+%%DATADIR%%/docs/fr_FR/slony-example.html
+%%DATADIR%%/docs/fr_FR/slony-execute.html
+%%DATADIR%%/docs/fr_FR/slony-functions.html
+%%DATADIR%%/docs/fr_FR/slony-install.html
+%%DATADIR%%/docs/fr_FR/slony-overview.html
+%%DATADIR%%/docs/fr_FR/slony-path.html
+%%DATADIR%%/docs/fr_FR/slony-set.html
+%%DATADIR%%/docs/fr_FR/slony.html
+%%DATADIR%%/docs/fr_FR/status.html
+%%DATADIR%%/docs/fr_FR/team.html
+%%DATADIR%%/docs/fr_FR/translation_team.html
+%%DATADIR%%/docs/fr_FR/using.html
 %%DATADIR%%/docs/sl_SI/hints/autovacuum.html
 %%DATADIR%%/docs/sl_SI/hints/conn-hba.html
 %%DATADIR%%/docs/sl_SI/hints/conn-ident.html
@@ -193,7 +413,6 @@ bin/pgagent
 %%DATADIR%%/docs/sl_SI/hints/pk.html
 %%DATADIR%%/docs/sl_SI/hints/vacuum.html
 %%DATADIR%%/docs/sl_SI/hints/view-without-pk.html
-%%DATADIR%%/docs/sl_SI/tips.txt
 %%DATADIR%%/docs/zh_CN/hints/autovacuum.html
 %%DATADIR%%/docs/zh_CN/hints/conn-hba.html
 %%DATADIR%%/docs/zh_CN/hints/conn-ident.html
@@ -208,7 +427,6 @@ bin/pgagent
 %%DATADIR%%/docs/zh_CN/hints/saving-passwords.html
 %%DATADIR%%/docs/zh_CN/hints/vacuum.html
 %%DATADIR%%/docs/zh_CN/hints/view-without-pk.html
-%%DATADIR%%/docs/zh_CN/tips.txt
 %%DATADIR%%/docs/zh_TW/hints/autovacuum.html
 %%DATADIR%%/docs/zh_TW/hints/conn-hba.html
 %%DATADIR%%/docs/zh_TW/hints/conn-ident.html
@@ -223,13 +441,14 @@ bin/pgagent
 %%DATADIR%%/docs/zh_TW/hints/saving-passwords.html
 %%DATADIR%%/docs/zh_TW/hints/vacuum.html
 %%DATADIR%%/docs/zh_TW/hints/view-without-pk.html
-%%DATADIR%%/docs/zh_TW/tips.txt
 %%DATADIR%%/i18n/af_ZA/pgadmin3.mo
 %%DATADIR%%/i18n/af_ZA/wxstd.mo
 %%DATADIR%%/i18n/bg_BG/pgadmin3.mo
 %%DATADIR%%/i18n/bg_BG/wxstd.mo
 %%DATADIR%%/i18n/ca_ES/pgadmin3.mo
 %%DATADIR%%/i18n/ca_ES/wxstd.mo
+%%DATADIR%%/i18n/cs_CZ/pgadmin3.mo
+%%DATADIR%%/i18n/cs_CZ/wxstd.mo
 %%DATADIR%%/i18n/de_DE/pgadmin3.mo
 %%DATADIR%%/i18n/de_DE/wxstd.mo
 %%DATADIR%%/i18n/es_ES/pgadmin3.mo
@@ -246,6 +465,8 @@ bin/pgagent
 %%DATADIR%%/i18n/ja_JP/wxstd.mo
 %%DATADIR%%/i18n/ko_KR/pgadmin3.mo
 %%DATADIR%%/i18n/ko_KR/wxstd.mo
+%%DATADIR%%/i18n/lv_LV/pgadmin3.mo
+%%DATADIR%%/i18n/lv_LV/wxstd.mo
 %%DATADIR%%/i18n/nl_NL/pgadmin3.mo
 %%DATADIR%%/i18n/nl_NL/wxstd.mo
 %%DATADIR%%/i18n/pg_settings.csv
@@ -258,22 +479,24 @@ bin/pgagent
 %%DATADIR%%/i18n/pt_PT/wxstd.mo
 %%DATADIR%%/i18n/ru_RU/pgadmin3.mo
 %%DATADIR%%/i18n/ru_RU/wxstd.mo
-%%DATADIR%%/i18n/sr_YU/pgadmin3.mo
-%%DATADIR%%/i18n/sr_YU/wxstd.mo
+%%DATADIR%%/i18n/sr_RS/pgadmin3.mo
+%%DATADIR%%/i18n/sr_RS/wxstd.mo
 %%DATADIR%%/i18n/wxstd.mo
 %%DATADIR%%/i18n/zh_CN/pgadmin3.mo
 %%DATADIR%%/i18n/zh_CN/wxstd.mo
 %%DATADIR%%/i18n/zh_TW/pgadmin3.mo
 %%DATADIR%%/i18n/zh_TW/wxstd.mo
-%%DATADIR%%/pgagent.sql
+%%DATADIR%%/plugins.ini
+%%DATADIR%%/settings.ini
 @dirrm %%DATADIR%%/i18n/zh_TW
 @dirrm %%DATADIR%%/i18n/zh_CN
-@dirrm %%DATADIR%%/i18n/sr_YU
+@dirrm %%DATADIR%%/i18n/sr_RS
 @dirrm %%DATADIR%%/i18n/ru_RU
 @dirrm %%DATADIR%%/i18n/pt_PT
 @dirrm %%DATADIR%%/i18n/pt_BR
 @dirrm %%DATADIR%%/i18n/pl_PL
 @dirrm %%DATADIR%%/i18n/nl_NL
+@dirrm %%DATADIR%%/i18n/lv_LV
 @dirrm %%DATADIR%%/i18n/ko_KR
 @dirrm %%DATADIR%%/i18n/ja_JP
 @dirrm %%DATADIR%%/i18n/it_IT
@@ -282,6 +505,7 @@ bin/pgagent
 @dirrm %%DATADIR%%/i18n/fi_FI
 @dirrm %%DATADIR%%/i18n/es_ES
 @dirrm %%DATADIR%%/i18n/de_DE
+@dirrm %%DATADIR%%/i18n/cs_CZ
 @dirrm %%DATADIR%%/i18n/ca_ES
 @dirrm %%DATADIR%%/i18n/bg_BG
 @dirrm %%DATADIR%%/i18n/af_ZA
@@ -292,7 +516,7 @@ bin/pgagent
 @dirrm %%DATADIR%%/docs/zh_CN
 @dirrm %%DATADIR%%/docs/sl_SI/hints
 @dirrm %%DATADIR%%/docs/sl_SI
-@dirrm %%DATADIR%%/docs/it_IT
+@dirrm %%DATADIR%%/docs/fr_FR/images
 @dirrm %%DATADIR%%/docs/fr_FR/hints
 @dirrm %%DATADIR%%/docs/fr_FR
 @dirrm %%DATADIR%%/docs/fi_FI/hints
@@ -304,6 +528,9 @@ bin/pgagent
 @dirrm %%DATADIR%%/docs/en_US
 @dirrm %%DATADIR%%/docs/de_DE/hints
 @dirrm %%DATADIR%%/docs/de_DE
+@dirrm %%DATADIR%%/docs/cs_CZ/images
+@dirrm %%DATADIR%%/docs/cs_CZ/hints
+@dirrm %%DATADIR%%/docs/cs_CZ
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/branding
 @dirrm %%DATADIR%%
