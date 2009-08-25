@@ -42,7 +42,7 @@ umask 022
 version () {
 	local rcs cvs
 
-	rcs='$Id: portmaster,v 2.46 2009/08/21 03:35:28 dougb Exp $'
+	rcs='$Id: portmaster,v 2.47 2009/08/24 23:45:48 dougb Exp $'
 	cvs='$FreeBSD$'
 
 	rcs="${rcs#*,v }" ; rcs="${rcs%% *}"
@@ -1692,7 +1692,7 @@ multiport () {
 		glob_dirs=`find $pdb -maxdepth 1 -type d -name ${port}\*`
 				case "$glob_dirs" in
 				*\*|'') fail "$pdb/$port does not exist" ;;
-				*)	for dir in $globlist; do
+				*)	for dir in $glob_dirs; do
 				worklist="$worklist ${dir#$pdb/}"
 				portlist="${portlist}\t${dir#$pdb/}\n"
 				PM_MULTI_PORTS="${PM_MULTI_PORTS}${dir#$pdb/}:"
