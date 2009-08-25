@@ -251,6 +251,7 @@
     SUBDIR += geronimo
     SUBDIR += getleft
     SUBDIR += gforge
+    SUBDIR += gist
     SUBDIR += glibwww
     SUBDIR += glpi
     SUBDIR += gnome-user-share
