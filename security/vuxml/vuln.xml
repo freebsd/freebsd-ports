@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>apache</name>
-	<range><lt>2.2.12</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.12</lt></range>
       </package>
     </affects>
     <description>
@@ -55,13 +55,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CVE-2009-1891</cvename>
-      <cvename>CVE-2009-1195</cvename>
-      <cvename>CVE-2009-1890</cvename>
-      <cvename>CVE-2009-1191</cvename>
-      <cvename>CVE-2009-0023</cvename>
-      <cvename>CVE-2009-1955</cvename>
-      <cvename>CVE-2009-1956</cvename>
+      <cvename>CVE-2009-1891</cvename><!-- vul: 2.2.11 -->
+      <cvename>CVE-2009-1195</cvename><!-- vul: 2.2.x to 2.2.11 -->
+      <cvename>CVE-2009-1890</cvename><!-- ok: 2.3.3 -->
+      <cvename>CVE-2009-1191</cvename><!-- vul: 2.2.11 -->
+      <cvename>CVE-2009-0023</cvename><!-- ok: apr 1.3.5 -->
+      <cvename>CVE-2009-1955</cvename><!-- ok: apr-util 1.3.7 -->
+      <cvename>CVE-2009-1956</cvename><!-- ok: apr-util 1.3.5 -->
     </references>
     <dates>
       <discovery>2009-07-28</discovery><!-- release date of 2.2.12 -->
