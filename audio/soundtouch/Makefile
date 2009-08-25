@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	soundtouch
-DISTVERSION=	1.3.1
-PORTREVISION=	3
+DISTVERSION=	1.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open-source audio processing library
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=yes
-USE_AUTOTOOLS=	autoconf:262 automake:19:env libtool:22
 USE_LDCONFIG=	yes
+PORTDOCS=	README.html
 
-pre-configure:
-	cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog && ${AUTORECONF} -i
-	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g; \
-		s|-O3[^I]*|${CXXFLAGS} -|; s|$$(prefix)/doc|$$(datadir)/doc|; \
-		s|COPYING.TXT||'
-# Fix for GCC 4.x
-	${REINPLACE_CMD} -e 's|SoundTouch::||' ${WRKSRC}/include/SoundTouch.h
-# Better SSE detection
-	${REINPLACE_CMD} -e '135s|__x86_64__|&) \&\& defined(__SSE__|' \
+post-patch: .SILENT
+# Adjust some paths for FreBSD, respect CFLAGS, and get rid of GPL
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E \
+		's|\(libdir\)/pkgconfig|(prefix)/libdata/pkgconfig|g; \
+		s| -O3( -[mf][[:graph:]]*)*||; \
+		s|\(prefix\)/doc|(datadir)/doc|; s|COPYING\.TXT||'
+# Fix SSE detection
+	${REINPLACE_CMD} -e 's|__x86_64__|&) \&\& defined(__SSE__|' \
 		${WRKSRC}/include/STTypes.h
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|[[:blank:]]install-pkgdocDATA$$||' \

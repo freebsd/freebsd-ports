@@ -6,15 +6,9 @@ include/soundtouch/STTypes.h
 include/soundtouch/SoundTouch.h
 include/soundtouch/soundtouch_config.h
 @dirrm include/soundtouch
-lib/libBPM.a
-lib/libBPM.la
-lib/libBPM.so.0
-lib/libBPM.so
 lib/libSoundTouch.a
 lib/libSoundTouch.la
 lib/libSoundTouch.so.0
 lib/libSoundTouch.so
 share/aclocal/soundtouch.m4
-libdata/pkgconfig/soundtouch-1.0.pc
-%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+libdata/pkgconfig/soundtouch-1.4.pc
