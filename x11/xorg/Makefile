@@ -58,7 +58,7 @@ DEPENDS_TARGET="package"
 .endif
 .endif
 
-.if ${ARCH} != "alpha" && ${ARCH} != "ia64"
+.if ${ARCH} != "alpha"
 RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server
 .endif
 
