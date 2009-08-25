@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd July 29, 2009
+.Dd August 24, 2009
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -93,12 +93,18 @@ and/or multiple globs from /var/db/pkg
 .Fl h|--help
 .Nm
 .Fl -version
-.Pp
+.Sh QUICK START GUIDE
+This manual contains a lot of valuable information about
+.Nm ,
+and you should read the entire manual to give you a better
+idea about how it works and what choices are available to you.
+However in the interests of getting you started quickly
+please see the EXAMPLES section at the end of the manual.
 .Sh DESCRIPTION
 The
 .Nm
 utility is a tool for updating your ports.
-It uses no external database to track what you
+It does not use an external database to track what you
 have installed.
 Rather it uses the existing ports infrastructure,
 including what is located in
@@ -487,7 +493,8 @@ update the port anyway.
 .Pp
 .It Pa /var/db/pkg/*/PM_UPGRADE_DONE_FLAG
 Indicates to a subsequent
-.Fl f
+.Fl a ,
+.Fl f ,
 or
 .Fl r
 run which includes the
@@ -579,11 +586,23 @@ of the
 .Nm
 command:
 .Pp
+Update one port:
 .Dl "portmaster fooport-1.23"
 .Dl "portmaster fooport"
-.Dl "portmaster fooport-1.23 barport-4.56"
-.Dl "portmaster -p /usr/ports/foo/fooport"
 .Dl "portmaster foo/fooport"
+.Pp
+Update multiple ports:
+.Dl "portmaster fooport-1.23 barport baz/blahport"
+.Pp
+Update all ports that need updating:
+.Dl "portmaster -a"
+.Pp
+Update all ports that need updating, and delete stale
+distfiles after the update is done:
+.Dl "portmaster -aD"
+.Dl "portmaster --clean-distfiles"
+.Pp
+More complex tasks (please see the details for these options above):
 .Dl "portmaster -r fooport-1.23"
 .Dl "portmaster -o emulators/linux_base-fc4 linux_base-8-8.0_15"
 .Dl "portmaster -x cvsup -f -a"
