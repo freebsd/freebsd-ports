@@ -27,6 +27,8 @@ PLIST_FILES=	bin/fiked
 MAN1=		fiked.1
 PORTDOCS=	README NEWS
 
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|=-g|=|' ${WRKSRC}/${MAKEFILE}
 
