@@ -114,9 +114,9 @@ post-patch:
 .endif
 
 post-configure:
-	@{ECHO_CMD} "#define F77_FUNC(name,NAME) name ## _" >>${WRKSRC}/config.h
-	@{ECHO_CMD} "#define F77_FUNC_(name,NAME) name ## _" >>${WRKSRC}/config.h
-	@{ECHO_CMD} "#define F77_FUNC_EQUIV 1" >>${WRKSRC}/config.h
+	@echo "#define F77_FUNC(name,NAME) name ## _" >>${WRKSRC}/config.h
+	@echo "#define F77_FUNC_(name,NAME) name ## _" >>${WRKSRC}/config.h
+	@echo "#define F77_FUNC_EQUIV 1" >>${WRKSRC}/config.h
 
 .if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}!="default"
 post-install:
