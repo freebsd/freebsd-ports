@@ -1013,6 +1013,7 @@
 %%LIB32DIR%%/webmin/virtual-server/wizard-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/wizard.cgi
 %%LIB32DIR%%/webmin/virtual-server/writelogs.pl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.73
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.72
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.71
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.70
@@ -1035,6 +1036,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.53
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.73
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.72
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.71
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.70
