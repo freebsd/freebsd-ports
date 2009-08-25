@@ -1705,6 +1705,7 @@ compat3x                        ports/misc/compat3x
 compat4x                        ports/misc/compat4x
 compat5x                        ports/misc/compat5x
 compat6x                        ports/misc/compat6x
+compat7x                        ports/misc/compat7x
 compiz                          ports/x11-wm/compiz
 compiz-bcop                     ports/devel/compiz-bcop
 compiz-fusion                   ports/x11-wm/compiz-fusion
@@ -3680,7 +3681,6 @@ freedroid                       ports/games/freedroid
 freedroidrpg                    ports/games/freedroidrpg
 freedt                          ports/sysutils/freedt
 freefem                         ports/math/freefem
-freefem++                       ports/math/freefem++
 freefont-ttf                    ports/x11-fonts/freefont-ttf
 freefonts                       ports/x11-fonts/freefonts
 freeglut                        ports/graphics/freeglut
@@ -5678,7 +5678,6 @@ isql-viewer                     ports/databases/isql-viewer
 isreal                          ports/graphics/isreal
 istgt                           ports/net/istgt
 isync                           ports/mail/isync
-it++                            ports/math/it++
 it-acroread8                    ports/print/it-acroread8
 it-aspell                       ports/textproc/it-aspell
 it-ispell                       ports/textproc/it-ispell
@@ -8188,6 +8187,7 @@ linuxfdisk                      ports/sysutils/linuxfdisk
 linuxigd                        ports/net/linuxigd
 linuxlibertine                  ports/x11-fonts/linuxlibertine
 linuxpluginwrapper              ports/www/linuxpluginwrapper
+linuxsampler                    ports/audio/linuxsampler
 linuxthreads                    ports/devel/linuxthreads
 linwarrior                      ports/games/linwarrior
 lion                            ports/devel/lion
@@ -11290,6 +11290,7 @@ p5-ExtUtils-Manifest            ports/devel/p5-ExtUtils-Manifest
 p5-ExtUtils-ParseXS             ports/devel/p5-ExtUtils-ParseXS
 p5-ExtUtils-PkgConfig           ports/devel/p5-ExtUtils-PkgConfig
 p5-ExtUtils-XSBuilder           ports/devel/p5-ExtUtils-XSBuilder
+p5-ExtUtils-XSpp                ports/devel/p5-ExtUtils-XSpp
 p5-F77                          ports/lang/p5-F77
 p5-FAQ-OMatic                   ports/www/p5-FAQ-OMatic
 p5-FCGI-Async                   ports/www/p5-FCGI-Async
@@ -14823,6 +14824,7 @@ p5-extutils-manifest            ports/devel/p5-ExtUtils-Manifest
 p5-extutils-parsexs             ports/devel/p5-ExtUtils-ParseXS
 p5-extutils-pkgconfig           ports/devel/p5-ExtUtils-PkgConfig
 p5-extutils-xsbuilder           ports/devel/p5-ExtUtils-XSBuilder
+p5-extutils-xspp                ports/devel/p5-ExtUtils-XSpp
 p5-f77                          ports/lang/p5-F77
 p5-faq-omatic                   ports/www/p5-FAQ-OMatic
 p5-fastcgi                      ports/www/p5-FastCGI
@@ -19928,6 +19930,7 @@ qrfcview                        ports/deskutils/qrfcview
 qrq                             ports/comms/qrq
 qrupdate                        ports/math/qrupdate
 qsa                             ports/devel/qsa
+qsampler                        ports/audio/qsampler
 qscan                           ports/mail/qscan
 qscanplot                       ports/math/qscanplot
 qscheme                         ports/lang/qscheme
