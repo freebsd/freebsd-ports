@@ -39,6 +39,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAS_SA_LEN" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-lm" \
 		GTKDOC="false"
 
 SUB_FILES+=	gdm.pam
