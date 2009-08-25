@@ -8,8 +8,7 @@
 PORTNAME=	eris
 PORTVERSION=	1.3.14
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	worldforge
+MASTER_SITES=	SF/worldforge/Eris%201.4%20%28client%20lib%29/${PORTVERSION}/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	WorldForge client entity library
