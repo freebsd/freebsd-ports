@@ -32,6 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 MAN1=		galeon.1
 GCONF_SCHEMAS=	galeon.schemas
 
+DEPRECATED=	requires legacy Gecko; switch to www/epiphany instead
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
