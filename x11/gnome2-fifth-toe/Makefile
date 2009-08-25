@@ -6,7 +6,7 @@
 #   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.92 2007/10/18 23:45:20 marcus Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-fifth-toe
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		gthumb:${PORTSDIR}/graphics/gthumb \
 		pidgin:${PORTSDIR}/net-im/pidgin \
 		tsclient:${PORTSDIR}/net/tsclient \
-		galeon:${PORTSDIR}/www/galeon \
 		${LOCALBASE}/share/icons/Foxtrot/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		bluefish:${PORTSDIR}/www/bluefish \
 		gossip:${PORTSDIR}/net-im/gossip \
