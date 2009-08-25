@@ -521,6 +521,7 @@
     SUBDIR += ming
     SUBDIR += mingplot
     SUBDIR += mirage
+    SUBDIR += mmrecover
     SUBDIR += morpheus
     SUBDIR += moth
     SUBDIR += mtpaint
