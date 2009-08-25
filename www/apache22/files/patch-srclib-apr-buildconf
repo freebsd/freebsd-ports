@@ -4,12 +4,12 @@
  #
  build/buildcheck.sh || exit 1
  
--libtoolize=`build/PrintPath glibtoolize libtoolize15 libtoolize14 libtoolize`
+-libtoolize=`build/PrintPath glibtoolize1 glibtoolize libtoolize15 libtoolize14 libtoolize`
 +libtoolize="${LIBTOOLIZE}"
  if [ "x$libtoolize" = "x" ]; then
      echo "libtoolize not found in path"
      exit 1
-@@ -52,7 +52,7 @@
+@@ -60,7 +60,7 @@
     # Expecting the code above to be very portable, but just in case...
     if [ -z "$ltfile" -o ! -f "$ltfile" ]; then
       ltpath=`dirname $libtoolize`
@@ -18,7 +18,7 @@
     fi
  fi
    
-@@ -87,8 +87,11 @@
+@@ -95,8 +95,11 @@
  # Remove autoconf 2.5x's cache directory
  rm -rf autom4te*.cache
  
