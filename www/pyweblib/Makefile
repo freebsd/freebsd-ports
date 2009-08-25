@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyweblib
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/ \
 		ftp://ftp.ipt.ru/pub/download/
