@@ -7,7 +7,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	3.2.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
@@ -40,14 +40,6 @@ INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off
 
-.if defined(FORTRAN_SHIM)
-USE_FORTRAN=	yes
-CONFLICTS=	fftw3-3*
-.else
-CONFIGURE_ARGS+=	--disable-fortran
-CONFLICTS=	fftw3-*fortran-3*
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
@@ -76,33 +68,22 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS_3DNOW}"
 .if defined(FFTW3_FLAVOR)
 .if ${FFTW3_FLAVOR}=="float"
 FFTW3_SUFX=	f
-.if defined(FORTRAN_SHIM)
-FFTW3_PKGNAMESUFFIX=	-float-fortran
-.else
 FFTW3_PKGNAMESUFFIX=	-float
-.endif
 CONFIGURE_ARGS+=--enable-float
 .else
 .if ${FFTW3_FLAVOR}=="long"
 . if ${OSVERSION} < 800000
-ONLY_FOR_ARCHS=        i386 sparc64
+ONLY_FOR_ARCHS= i386 sparc64
 LIB_DEPENDS+=	ml.0:${PORTSDIR}/math/ldouble
 . endif
 FFTW3_SUFX=	l
-.if defined(FORTRAN_SHIM)
-FFTW3_PKGNAMESUFFIX=	-long-fortran
-.else
 FFTW3_PKGNAMESUFFIX=	-long
-.endif
 CONFIGURE_ARGS+=--enable-long-double
 .endif
 .endif
 .endif
 
 .if ${FFTW3_FLAVOR}=="default"
-.if defined(FORTRAN_SHIM)
-FFTW3_PKGNAMESUFFIX=	-fortran
-.endif
 PLIST_SUB+=	DEF=""
 .else
 PLIST_SUB+=	DEF="@comment "
@@ -131,6 +112,11 @@ post-patch:
 		's|@LIBS@|-lml @LIBS@|'
 .endif
 .endif
+
+post-configure:
+	@{ECHO_CMD} "#define F77_FUNC(name,NAME) name ## _" >>${WRKSRC}/config.h
+	@{ECHO_CMD} "#define F77_FUNC_(name,NAME) name ## _" >>${WRKSRC}/config.h
+	@{ECHO_CMD} "#define F77_FUNC_EQUIV 1" >>${WRKSRC}/config.h
 
 .if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}!="default"
 post-install:
