@@ -1,0 +1,29 @@
+--- watermark.html.orig	2009-08-25 11:17:44.000000000 +0400
++++ watermark.html	2009-08-25 11:17:48.000000000 +0400
+@@ -1,11 +1,12 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
++  <title></title>
+ </head>
+-<body style="background-color:#ffffff;">
+-
+-<div style="margin:10px auto; text-align:center">
++<body style="background-color:#F2F2F2; width: expression((parseInt(document.documentElement.clientWidth)-20)+'px');">
+ 
++<div style="margin:20px auto; text-align:center">
++<img src="/skins/default/images/watermark.gif" width="260" height="228" alt="" />
+ </div>
+ 
+ </body>
+--- templates/mail.html.orig	2008-11-13 21:54:14.000000000 +0300
++++ templates/mail.html	2009-08-25 11:20:52.000000000 +0400
+@@ -122,7 +122,7 @@
+   rcmail.add_onload('mailviewsplit.init()');
+ </script>
+ <div id="mailpreviewframe">
+-<roundcube:object name="messagecontentframe" id="messagecontframe" width="100%" height="100%" frameborder="0" src="/templates/mailhints.html" />
++<roundcube:object name="messagecontentframe" id="messagecontframe" width="100%" height="100%" frameborder="0" src="/watermark.html" />
+ </div>
+ 
+ <style type="text/css">

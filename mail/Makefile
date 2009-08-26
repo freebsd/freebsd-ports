@@ -571,6 +571,7 @@
     SUBDIR += roundcube-air
     SUBDIR += roundcube-groupvice
     SUBDIR += roundcube-mvision2
+    SUBDIR += roundcube-umich
     SUBDIR += rss2email
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
