@@ -1,18 +1,25 @@
---- Makefile.orig	Tue Jun 19 10:19:01 2007
-+++ Makefile	Fri Jun 22 23:30:42 2007
-@@ -1,12 +1,12 @@
- PREFIX = /usr/local
+--- Makefile.orig	2009-07-31 15:12:45.000000000 +0200
++++ Makefile	2009-08-26 18:39:34.000000000 +0200
+@@ -1,9 +1,8 @@
+-PREFIX = /usr/local
  
 -CC = g++
--OPTS = -O2 -ffast-math -funroll-loops -Wall -fPIC -DPIC
 +CC = $(CXX)
+ 
+ # only use -ffast-math if you're feeling mighty adventurous.  (g++ issues)
+-OPTS = -O2 -funroll-loops -Wall -fPIC -DPIC
 +OPTS = -Wall -fPIC -DPIC
  #OPTS = -g -DDEBUG 
+ 
+ _LDFLAGS = -nostartfiles -shared 
+@@ -13,8 +12,8 @@
  
  -include defines.make
  
 -CFLAGS = $(OPTS) $(_CFLAGS)
-+CFLAGS += $(OPTS)
+-LDFLAGS = $(_LDFLAGS) $(CFLAGS)
++CFLAGS += $(OPTS) $(_CFLAGS)
++LDFLAGS += $(_LDFLAGS) $(CFLAGS)
  
  PLUG = caps
- VERSION = 0.4.2
+ VERSION = 0.4.3
