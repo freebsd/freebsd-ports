@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION=	1.3.5.3
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/sawmill/${PORTNAME}/${PORTVERSION}
@@ -17,7 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Lisp configurable window manager
 
-LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep \
+		cairo.2:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 
@@ -26,15 +26,13 @@ PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
 USE_XORG=	x11
 USE_GMAKE=	yes
-USE_GNOME=	esound
+USE_GNOME=	pango gtk20 glib20
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
-		--datadir=${PREFIX}/share \
-		--disable-gnome-widgets \
-		--with-esd
+		--datadir=${PREFIX}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
