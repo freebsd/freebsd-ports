@@ -6,8 +6,7 @@
 #    $MCom: ports/x11-toolkits/rep-gtk2/Makefile,v 1.8 2006/07/18 16:50:28 ahze Exp $
 
 PORTNAME=	rep-gtk2
-PORTVERSION=	0.18.6
-PORTREVISION=	1
+PORTVERSION=	0.18.6r2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/rep-gtk/rep-gtk/${PORTVERSION}
