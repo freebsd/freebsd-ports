@@ -1,6 +1,6 @@
---- setup.py.orig	2009-01-26 22:51:22.000000000 +0100
-+++ setup.py	2009-01-26 22:52:37.000000000 +0100
-@@ -344,8 +344,6 @@
+--- setup.py.orig	2009-08-03 23:53:01.000000000 +0200
++++ setup.py	2009-08-26 15:56:00.000000000 +0200
+@@ -364,17 +361,14 @@
  if os.name == 'nt':
      # windows does not have unistd.h
      define_macros.append(('YY_NO_UNISTD_H', None))
@@ -9,16 +9,18 @@
  
  myname = "Bastian Kleineidam"
  myemail = "calvin@users.sourceforge.net"
-@@ -353,7 +351,7 @@
+ 
  data_files = [
      ('share/linkchecker',
-         ['config/linkcheckerrc', 'config/logging.conf', ]),
+-        ['config/linkcheckerrc', 'config/logging.conf',
+-        'doc/html/lccollection.qhc', 'doc/html/lcdoc.qch']),
 -    ('share/linkchecker/examples',
++        ['config/linkcheckerrc', 'config/logging.conf']),
 +    ('share/examples/linkchecker',
          ['cgi-bin/lconline/leer.html.en',
           'cgi-bin/lconline/leer.html.de',
           'cgi-bin/lconline/index.html',
-@@ -367,11 +365,9 @@
+@@ -388,11 +382,9 @@
  ]
  
  if os.name == 'posix':
