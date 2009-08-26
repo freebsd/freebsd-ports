@@ -8,7 +8,7 @@
 PORTNAME=	ttbudget
 PORTVERSION=	5.3
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net kld
 MASTER_SITES=	http://paradox.lissyara.su/ \
 		http://lissyara.su/patch/skystar3/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}

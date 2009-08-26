@@ -8,7 +8,7 @@
 PORTNAME=	skystar2
 PORTVERSION=	1.31
 PORTEPOCH=	1
-CATEGORIES=	net
+CATEGORIES=	net kld
 MASTER_SITES=	http://paradox.lissyara.su/ \
 		http://lissyara.su/patch/skystar2/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}

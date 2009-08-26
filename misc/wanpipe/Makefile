@@ -9,7 +9,7 @@
 PORTNAME=	wanpipe
 PORTVERSION=	3.3.1
 PORTREVISION=	1
-CATEGORIES=	misc net
+CATEGORIES=	misc net kld
 MASTER_SITES=	ftp://ftp.sangoma.com/FreeBSD/wanpipe/ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
