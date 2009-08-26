@@ -6,9 +6,9 @@
 #    $MCom: ports/x11-toolkits/scintilla/Makefile,v 1.3 2006/09/17 21:58:56 marcus Exp $
 
 PORTNAME=	scintilla
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SFP/scintilla/SciTE/${PORTVERSION}
+MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
