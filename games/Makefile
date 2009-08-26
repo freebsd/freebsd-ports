@@ -1060,6 +1060,7 @@
     SUBDIR += yamsweeper
     SUBDIR += zangband
     SUBDIR += zatacka
+    SUBDIR += zaz
     SUBDIR += zephulor
     SUBDIR += znibbles
     SUBDIR += zoom
