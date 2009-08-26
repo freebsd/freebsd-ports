@@ -8,7 +8,7 @@
 PORTNAME=	libixp
 PORTVERSION=	0.5
 CATEGORIES=	devel
-MASTER_SITES=	http://code.suckless.org/dl/libs/
+MASTER_SITES=	http://dl.suckless.org/libs/
 
 MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Standalone client/server 9P library
