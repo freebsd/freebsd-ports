@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dma
-PORTVERSION=	20090208
-PORTREVISION=	2
+PORTVERSION=	20090825
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://mirror.roe.ch/dist/dma/
 
