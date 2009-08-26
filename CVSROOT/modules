@@ -4188,6 +4188,7 @@ gini                            ports/net/gini
 gio-fam-backend                 ports/devel/gio-fam-backend
 giram                           ports/graphics/giram
 gish-demo                       ports/games/gish-demo
+gist                            ports/www/gist
 git                             ports/devel/git
 gittrac                         ports/devel/gittrac
 gj                              ports/java/gj
@@ -8776,6 +8777,7 @@ mmore                           ports/sysutils/mmore
 mmosaic                         ports/www/mmosaic
 mmpython                        ports/multimedia/mmpython
 mmr                             ports/mail/mmr
+mmrecover                       ports/graphics/mmrecover
 mmsclient                       ports/multimedia/mmsclient
 mmsrip                          ports/multimedia/mmsrip
 mmucl                           ports/net/mmucl
