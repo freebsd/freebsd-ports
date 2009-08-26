@@ -29,7 +29,7 @@ DISTFILES=		HandBrake-${PORTVERSION}.tar.gz:main \
 				xvidcore-1.1.3.tar.gz:contrib
 DIST_SUBDIR=	handbrake
 
-MAINTAINER=		jonathan@kc8onw.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A DVD to MPEG-4 ripper and encoder
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
