@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tbb
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.threadingbuildingblocks.org/uploads/77/111/2.1/
-DISTNAME=	tbb21_20080605oss_src
+MASTER_SITES=	http://www.threadingbuildingblocks.org/uploads/78/140/2.2/
+DISTNAME=	tbb22_004oss_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ganael.laplanche@martymac.com
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
 
-WRKSRC=	${WRKDIR}/tbb21_20080605oss
+WRKSRC=	${WRKDIR}/tbb22_004oss
 
 post-extract:
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
