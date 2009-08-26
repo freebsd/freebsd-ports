@@ -7,9 +7,9 @@
 
 PORTNAME=	rezound
 DISTVERSION=	0.12.3beta
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/ReZound/0.12.3beta
+MASTER_SITES=	SF/${PORTNAME}/ReZound/${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical audio file editor
@@ -18,24 +18,22 @@ LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox14
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--disable-alsa
 
-OPTIONS=	LARGEFILE	"Enable 64-bit file I/O support (BROKEN!)" off \
-		JACK		"Enable Jack audio server support" on \
-		AUDIOFILE	"Enable Audio File Library support" on \
-		PORTAUDIO	"Enable PortAudio support" on \
-		OGG		"Enable OGG support" on \
-		VORBIS		"Enable Vorbis support" on \
-		FLAC		"Enable FLAC support" on \
-		FFTW		"Enable FFTW support" on \
-		SOUNDTOUCH	"Enable SoundTouch features" on \
-		LADSPA		"Enable LADSPA plugin support" on \
-		LAME		"Enable loading and saving MP3s" on \
-		CDRDAO		"Enable burning audio files to CD" on \
-		NLS		"Enable National Language Support" on
+OPTIONS=	LARGEFILE	"Enable 64-bit I/O support (not yet!)"	off \
+		JACK		"Enable Jack audio server support"	on \
+		AUDIOFILE	"Enable Audio File Library support"	on \
+		PORTAUDIO	"Enable PortAudio support"		on \
+		OGG		"Enable OGG support"			on \
+		VORBIS		"Enable Vorbis support"			on \
+		FLAC		"Enable FLAC support"			on \
+		FFTW		"Enable FFTW support"			on \
+		SOUNDTOUCH	"Enable SoundTouch features"		on \
+		LADSPA		"Enable LADSPA plugin support"		on \
+		LAME		"Enable loading and saving MP3s"	on \
+		CDRDAO		"Enable burning audio files to CD"	on \
+		NLS		"Enable National Language Support"	on
 
 .include <bsd.port.pre.mk>
 
@@ -47,7 +45,7 @@ BROKEN=		Does not compile with GCC 4.2
 
 .if defined(WITH_LARGEFILE)
 CONFIGURE_ARGS+=	--enable-largefile
-BROKEN=		no expl(), logl(), nearbyintl(), et al
+BROKEN=		no expl(), logl(), nearbyintl(), etc
 .endif
 
 .if defined(WITH_JACK)
@@ -75,11 +73,11 @@ LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 .endif
 
 .if defined(WITH_FFTW)
-BUILD_DEPENDS+=	${LOCALBASE}/include/fftw.h:${PORTSDIR}/math/fftw
+LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
 .endif
 
 .if defined(WITH_SOUNDTOUCH)
-BUILD_DEPENDS+=	${LOCALBASE}/include/soundtouch/SoundTouch.h:${PORTSDIR}/audio/soundtouch
+LIB_DEPENDS+=	SoundTouch.0:${PORTSDIR}/audio/soundtouch
 .endif
 
 .if defined(WITH_LADSPA)
@@ -109,7 +107,9 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/atoll/d' ${WRKSRC}/config/platform/bsd.h
 	${REINPLACE_CMD} -e '/round/d' ${WRKSRC}/config/platform/bsd.h
 	${REINPLACE_CMD} -e '/nearbyint/d' ${WRKSRC}/config/platform/bsd.h
-	${REINPLACE_CMD} -E 's,(_nl_expand_alias \()\),\1...),' ${WRKSRC}/configure
+	${REINPLACE_CMD} -E 's,(_nl_expand_alias \()\),\1...), ; \
+		/^C(XX)?FLAGS=/d ; /CXXFLAGS="\$$CXXFLAGS -[gW]/d' \
+			${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,$$(prefix)/doc,$$(datadir)/doc,' \
 		${WRKSRC}/config/am_include.mk ${WRKSRC}/Makefile.in \
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/src/misc/Makefile.in \
