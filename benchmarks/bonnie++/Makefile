@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	bonnie++
-PORTVERSION=	1.93.04		# a=01, b=02, c=03, ..., z=26, etc...
+PORTVERSION=	1.96
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
-DISTNAME=	${PORTNAME}-1.93d
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ganael.laplanche@martymac.com

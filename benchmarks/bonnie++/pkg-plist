@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bon_csv2html
 bin/bon_csv2txt
 bin/generate_randfile
