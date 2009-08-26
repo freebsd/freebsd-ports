@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	d2x-xl
-PORTVERSION=	1.14.94
+PORTVERSION=	1.14.99
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|sourceforge/%SUBDIR%/$|project/${PORTNAME}/Linux/|}:source \
 		${MASTER_SITE_SOURCEFORGE:S|sourceforge/%SUBDIR%/$|project/${PORTNAME}/Data/|}:data \
 		http://www.descent2.de/downloads/:source,data
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}.rar:source \
-		${PORTNAME}-data-1.14.0.rar:data
+		${PORTNAME}-data-1.14.1.rar:data
 
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	Community Unix port of Descent 2 Game
@@ -69,7 +69,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${DATADIR} && \
-		unrar x -o+ ${DISTDIR}/${PORTNAME}-data-1.14.0.rar >/dev/null
+		unrar x -o+ ${DISTDIR}/${PORTNAME}-data-1.14.1.rar >/dev/null
 	${INSTALL_PROGRAM} ${WRKSRC}/d2x-xl ${PREFIX}/bin/d2x-xl
 	@${CAT} ${PKGMESSAGE}
 
