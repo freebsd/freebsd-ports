@@ -9,8 +9,7 @@ PORTNAME=	gmsh
 PORTVERSION=	2.3.1
 PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://www.sfr-fresh.com/unix/privat/ \
-				http://www.geuz.org/gmsh/src/
+MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 EXTRACT_SUFX=	.tgz
 
