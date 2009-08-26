@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	whysynth
-PORTVERSION=	20070418
-PORTREVISION=	5
+PORTVERSION=	20090608
 CATEGORIES=	audio
-MASTER_SITES=	http://home.jps.net/~musound/
+MASTER_SITES=	http://smbolton.com/whysynth/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Versatile softsynth implemented as a DSSI plugin
