@@ -5,4 +5,4 @@ lines of code (including ixpc).
 libixp's server API is based heavily on that of Plan 9's lib9p, and the
 two libraries export virtually identical data structures.
 
-WWW: http://www.suckless.org/libs/libixp.html
+WWW: http://libs.suckless.org/libixp
