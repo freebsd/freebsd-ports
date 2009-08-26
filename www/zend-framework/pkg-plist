@@ -3907,6 +3907,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Paginator/Adapter/Interface.php
 %%DATADIR%%/library/Zend/Paginator/Adapter/Iterator.php
 %%DATADIR%%/library/Zend/Paginator/Adapter/Null.php
+%%DATADIR%%/library/Zend/Paginator/AdapterAggregate.php
 %%DATADIR%%/library/Zend/Paginator/Exception.php
 %%DATADIR%%/library/Zend/Paginator/ScrollingStyle/All.php
 %%DATADIR%%/library/Zend/Paginator/ScrollingStyle/Elastic.php
@@ -5110,9 +5111,12 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/controllers/.placeholder
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers/ErrorController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers/IndexController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Autoloaded.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Baz.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Foo.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Foobar.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/zf-6679-1.inc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/zf-6679-2.inc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/DbTable/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/DbTable/BasicSqliteTest.php
