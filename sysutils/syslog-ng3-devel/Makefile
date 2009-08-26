@@ -7,7 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 PKGNAMESUFFIX=	3
@@ -27,13 +27,18 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
 SUB_LIST=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+USE_OPENSSL=	yes
+
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin
-CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags`" \
-		LDFLAGS="`${LIBNET_CONFIG} --libs`"
+CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags` ${CFLAGS}" \
+		LDFLAGS="`${LIBNET_CONFIG} --libs` ${LDFLAGS}" \
+		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
+		OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
+
 
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=--enable-tcp-wrapper
