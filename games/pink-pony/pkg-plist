@@ -1,5 +1,6 @@
-bin/Pony
-etc/pink-pony.conf
+bin/pink-pony
+libexec/Pony
+share/applications/pink-pony.desktop
 %%DATADIR%%/GLSL/draw_particles.frag
 %%DATADIR%%/GLSL/draw_particles.geom
 %%DATADIR%%/GLSL/draw_particles.vert
@@ -9,6 +10,7 @@ etc/pink-pony.conf
 %%DATADIR%%/GLSL/heart.vert
 %%DATADIR%%/GLSL/heightmap.frag
 %%DATADIR%%/GLSL/heightmap.vert
+%%DATADIR%%/GLSL/nop.frag
 %%DATADIR%%/GLSL/pony.frag
 %%DATADIR%%/GLSL/pony.vert
 %%DATADIR%%/GLSL/step_particles.frag
@@ -16,26 +18,45 @@ etc/pink-pony.conf
 %%DATADIR%%/GLSL/step_particles.vert
 %%DATADIR%%/GLSL/water.frag
 %%DATADIR%%/GLSL/water.vert
+%%DATADIR%%/fonts/DaveDS_-_Sketchy.ttf
+%%DATADIR%%/levels.xml
+%%DATADIR%%/levels.xml.bak
 %%DATADIR%%/levels/heart.png
+%%DATADIR%%/levels/long.png
 %%DATADIR%%/levels/ring.png
 %%DATADIR%%/levels/skull.png
+%%DATADIR%%/levels/strange.png
 %%DATADIR%%/models/Heart.pmesh
 %%DATADIR%%/models/Pony-animated.pmesh
 %%DATADIR%%/models/Pony-animated.pskeleton
 %%DATADIR%%/music/To be happy.mp3
+%%DATADIR%%/pony.options
+%%DATADIR%%/textures/back.png
+%%DATADIR%%/textures/computer.png
+%%DATADIR%%/textures/down.png
 %%DATADIR%%/textures/four.png
 %%DATADIR%%/textures/grass.png
 %%DATADIR%%/textures/heart-particle.png
+%%DATADIR%%/textures/human.png
+%%DATADIR%%/textures/left.png
+%%DATADIR%%/textures/logo.png
 %%DATADIR%%/textures/noise.png
 %%DATADIR%%/textures/one.png
 %%DATADIR%%/textures/pony.png
+%%DATADIR%%/textures/quit.png
+%%DATADIR%%/textures/right.png
 %%DATADIR%%/textures/sand.png
+%%DATADIR%%/textures/settings.png
 %%DATADIR%%/textures/sky.png
 %%DATADIR%%/textures/three.png
 %%DATADIR%%/textures/two.png
+%%DATADIR%%/textures/up.png
+share/pixmaps/pink-pony.png
 @dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/models
 @dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/GLSL
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
