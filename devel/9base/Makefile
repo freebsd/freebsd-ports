@@ -8,7 +8,7 @@
 PORTNAME=	9base
 DISTVERSION=	b20090309
 CATEGORIES=	devel
-MASTER_SITES=	http://code.suckless.org/dl/misc/
+MASTER_SITES=	http://dl.suckless.org/tools/
 DISTNAME=	${PORTNAME}-2
 
 MAINTAINER=	sbrabez@gmail.com
