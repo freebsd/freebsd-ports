@@ -1,12 +1,13 @@
 The DragonFly Mail Agent is a small Mail Transport Agent (MTA),
-designed for home and office use.  It accepts mails from locally
-installed Mail User Agents (MUA) and delivers the mails either
-locally or to a remote destination.  Remote delivery includes
-several features like TLS/SSL support and SMTP authentication,
-but not MX record lookups.  Therefore, dma is currently not
-suitable for direct remote delivery.  However, it works very
-well for handling local mail plus secure mail submission to a
-remote smarthost (e.g. for travelling mobile computers).
+designed for home and office use.  It accepts e-mail messages
+from locally installed Mail User Agents (MUA) and delivers the
+messages either locally or to a remote destination.  Remote
+delivery includes several features like TLS/SSL support and
+SMTP authentication, but not MX record lookups.  Therefore,
+dma is currently not suitable for direct remote delivery.
+However, it works very well for handling local mail plus
+secure mail submission to a remote smarthost (e.g. for
+travelling mobile computers).
 
 Since dma is not intended as a replacement for real, big MTAs
 like sendmail(8) or postfix(1), it does not listen on port 25
