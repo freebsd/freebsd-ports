@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	linkchecker
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1
 CATEGORIES=	www python
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}/
 DISTNAME=	LinkChecker-${PORTVERSION}
 
 MAINTAINER=	beat@FreeBSD.org
@@ -34,13 +34,8 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 .if !defined(WITHOUT_NLS)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/nls-patch-setup.py
-.endif
-
-.if !defined(WITHOUT_NLS)
-post-install:
-	${CP} ${WRKSRC}/build/share/locale/de/LC_MESSAGES/LinkChecker.mo ${PREFIX}/share/locale/de/LC_MESSAGES/
-	${CP} ${WRKSRC}/build/share/locale/es/LC_MESSAGES/LinkChecker.mo ${PREFIX}/share/locale/es/LC_MESSAGES/
-	${CP} ${WRKSRC}/build/share/locale/fr/LC_MESSAGES/LinkChecker.mo ${PREFIX}/share/locale/fr/LC_MESSAGES/
+.else
+	@${RM} ${WRKSRC}/po/*.po
 .endif
 
 .include <bsd.port.mk>
