@@ -1,8 +1,7 @@
 bin/sawfish
 bin/sawfish-client
 bin/sawfish-ui
-libexec/rep/%%GNUHOST%%/sawfish/client.la
-libexec/rep/%%GNUHOST%%/sawfish/client.so
+libdata/pkgconfig/sawfish.pc
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/DOC
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/gradient.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/gradient.so
@@ -23,59 +22,6 @@ libexec/sawfish/%%VERSION%%/%%GNUHOST%%/selection.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/selection.so
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.so
-share/applications/sawfish.desktop
-share/locale/am/LC_MESSAGES/sawfish.mo
-share/locale/ar/LC_MESSAGES/sawfish.mo
-share/locale/az/LC_MESSAGES/sawfish.mo
-share/locale/be/LC_MESSAGES/sawfish.mo
-share/locale/bg/LC_MESSAGES/sawfish.mo
-share/locale/bs/LC_MESSAGES/sawfish.mo
-share/locale/ca/LC_MESSAGES/sawfish.mo
-share/locale/cs/LC_MESSAGES/sawfish.mo
-share/locale/da/LC_MESSAGES/sawfish.mo
-share/locale/de/LC_MESSAGES/sawfish.mo
-share/locale/dz/LC_MESSAGES/sawfish.mo
-share/locale/el/LC_MESSAGES/sawfish.mo
-share/locale/en_CA/LC_MESSAGES/sawfish.mo
-share/locale/en_GB/LC_MESSAGES/sawfish.mo
-share/locale/es/LC_MESSAGES/sawfish.mo
-share/locale/et/LC_MESSAGES/sawfish.mo
-share/locale/eu/LC_MESSAGES/sawfish.mo
-share/locale/fi/LC_MESSAGES/sawfish.mo
-share/locale/fr/LC_MESSAGES/sawfish.mo
-share/locale/ga/LC_MESSAGES/sawfish.mo
-share/locale/gl/LC_MESSAGES/sawfish.mo
-share/locale/hu/LC_MESSAGES/sawfish.mo
-share/locale/it/LC_MESSAGES/sawfish.mo
-share/locale/ja/LC_MESSAGES/sawfish.mo
-share/locale/ko/LC_MESSAGES/sawfish.mo
-share/locale/lv/LC_MESSAGES/sawfish.mo
-share/locale/mk/LC_MESSAGES/sawfish.mo
-share/locale/ms/LC_MESSAGES/sawfish.mo
-share/locale/nb/LC_MESSAGES/sawfish.mo
-share/locale/ne/LC_MESSAGES/sawfish.mo
-share/locale/nl/LC_MESSAGES/sawfish.mo
-share/locale/nn/LC_MESSAGES/sawfish.mo
-share/locale/no/LC_MESSAGES/sawfish.mo
-share/locale/oc/LC_MESSAGES/sawfish.mo
-share/locale/pa/LC_MESSAGES/sawfish.mo
-share/locale/pl/LC_MESSAGES/sawfish.mo
-share/locale/pt/LC_MESSAGES/sawfish.mo
-share/locale/pt_BR/LC_MESSAGES/sawfish.mo
-share/locale/ro/LC_MESSAGES/sawfish.mo
-share/locale/ru/LC_MESSAGES/sawfish.mo
-share/locale/rw/LC_MESSAGES/sawfish.mo
-share/locale/sk/LC_MESSAGES/sawfish.mo
-share/locale/sl/LC_MESSAGES/sawfish.mo
-share/locale/sr/LC_MESSAGES/sawfish.mo
-share/locale/sr@Latn/LC_MESSAGES/sawfish.mo
-share/locale/sv/LC_MESSAGES/sawfish.mo
-share/locale/tr/LC_MESSAGES/sawfish.mo
-share/locale/uk/LC_MESSAGES/sawfish.mo
-share/locale/vi/LC_MESSAGES/sawfish.mo
-share/locale/wa/LC_MESSAGES/sawfish.mo
-share/locale/zh_CN/LC_MESSAGES/sawfish.mo
-share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/anim-outline.jl
 %%DATADIR%%/%%VERSION%%/lisp/anim-outline.jlc
@@ -119,10 +65,14 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/grow-pack.jlc
 %%DATADIR%%/%%VERSION%%/lisp/gtkrc.jl
 %%DATADIR%%/%%VERSION%%/lisp/gtkrc.jlc
+%%DATADIR%%/%%VERSION%%/lisp/infinite-desktop.jl
+%%DATADIR%%/%%VERSION%%/lisp/infinite-desktop.jlc
 %%DATADIR%%/%%VERSION%%/lisp/keymap.jl
 %%DATADIR%%/%%VERSION%%/lisp/keymap.jlc
 %%DATADIR%%/%%VERSION%%/lisp/make-theme.jl
 %%DATADIR%%/%%VERSION%%/lisp/make-theme.jlc
+%%DATADIR%%/%%VERSION%%/lisp/marks.jl
+%%DATADIR%%/%%VERSION%%/lisp/marks.jlc
 %%DATADIR%%/%%VERSION%%/lisp/match-window.jl
 %%DATADIR%%/%%VERSION%%/lisp/match-window.jlc
 %%DATADIR%%/%%VERSION%%/lisp/maximize.jl
@@ -137,6 +87,8 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/prompt.jlc
 %%DATADIR%%/%%VERSION%%/lisp/rects.jl
 %%DATADIR%%/%%VERSION%%/lisp/rects.jlc
+%%DATADIR%%/%%VERSION%%/lisp/sawfish-defaults.jl
+%%DATADIR%%/%%VERSION%%/lisp/sawfish-defaults.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk/color-preview.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk/color-preview.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk/stock.jl
@@ -224,6 +176,8 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/commands/move-resize.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/commands/raise-commands.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/commands/raise-commands.jlc
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/commands/shrink-yank.jl
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/commands/shrink-yank.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/commands/size-window.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/commands/size-window.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/commands/slide-window.jl
@@ -260,6 +214,8 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/ext/error-handler.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/ext/hide-dialogs.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/ext/hide-dialogs.jlc
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/ext/infinite-desktop.jl
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/ext/infinite-desktop.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/ext/match-window.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/ext/match-window.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/ext/old-window-menu.jl
@@ -332,6 +288,10 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/state/wm-spec.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/swapper.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/swapper.jlc
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/tabs/tab.jl
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/tabs/tab.jlc
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/tabs/tabgroup.jl
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/tabs/tabgroup.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/theming/make-theme-preview.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/theming/make-theme-preview.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/theming/make-theme.jl
@@ -358,6 +318,8 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util/keymap-diff.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util/keymap.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util/keymap.jlc
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util/marks.jl
+%%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util/marks.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util/nokogiri.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util/nokogiri.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util/ping.jl
@@ -392,12 +354,16 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/windows.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/workspace.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/workspace.jlc
-%%DATADIR%%/%%VERSION%%/lisp/sawmill-defaults.jl
-%%DATADIR%%/%%VERSION%%/lisp/sawmill-defaults.jlc
 %%DATADIR%%/%%VERSION%%/lisp/shade-hover.jl
 %%DATADIR%%/%%VERSION%%/lisp/shade-hover.jlc
 %%DATADIR%%/%%VERSION%%/lisp/shading.jl
 %%DATADIR%%/%%VERSION%%/lisp/shading.jlc
+%%DATADIR%%/%%VERSION%%/lisp/shrink-yank.jl
+%%DATADIR%%/%%VERSION%%/lisp/shrink-yank.jlc
+%%DATADIR%%/%%VERSION%%/lisp/tab.jl
+%%DATADIR%%/%%VERSION%%/lisp/tab.jlc
+%%DATADIR%%/%%VERSION%%/lisp/tabgroup.jl
+%%DATADIR%%/%%VERSION%%/lisp/tabgroup.jlc
 %%DATADIR%%/%%VERSION%%/lisp/tooltips.jl
 %%DATADIR%%/%%VERSION%%/lisp/tooltips.jlc
 %%DATADIR%%/%%VERSION%%/lisp/viewport-linear.jl
@@ -413,11 +379,20 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/x-cycle.jl
 %%DATADIR%%/%%VERSION%%/lisp/x-cycle.jlc
 %%DATADIR%%/%%VERSION%%/monitor.png
-%%DATADIR%%/%%VERSION%%/sounds/activate.wav
-%%DATADIR%%/%%VERSION%%/sounds/clicked.wav
-%%DATADIR%%/%%VERSION%%/sounds/gameover.wav
-%%DATADIR%%/%%VERSION%%/sounds/slide.wav
-%%DATADIR%%/%%VERSION%%/sounds/toggled.wav
+%%DATADIR%%/%%VERSION%%/sounds/focused.wav
+%%DATADIR%%/%%VERSION%%/sounds/iconify.wav
+%%DATADIR%%/%%VERSION%%/sounds/map-transient.wav
+%%DATADIR%%/%%VERSION%%/sounds/map.wav
+%%DATADIR%%/%%VERSION%%/sounds/maximize.wav
+%%DATADIR%%/%%VERSION%%/sounds/move-viewport.wav
+%%DATADIR%%/%%VERSION%%/sounds/shade.wav
+%%DATADIR%%/%%VERSION%%/sounds/switch-workspace.wav
+%%DATADIR%%/%%VERSION%%/sounds/unfocused.wav
+%%DATADIR%%/%%VERSION%%/sounds/uniconify.wav
+%%DATADIR%%/%%VERSION%%/sounds/unmap-transient.wav
+%%DATADIR%%/%%VERSION%%/sounds/unmap.wav
+%%DATADIR%%/%%VERSION%%/sounds/unmaximize.wav
+%%DATADIR%%/%%VERSION%%/sounds/unshade.wav
 %%DATADIR%%/%%VERSION%%/themes/Crux.tar.gz
 %%DATADIR%%/%%VERSION%%/themes/Elberg-tabbed.tar.gz
 %%DATADIR%%/%%VERSION%%/themes/absolute-e.tar.gz
@@ -430,8 +405,16 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/themes/mxflat.tar.gz
 %%DATADIR%%/%%VERSION%%/themes/simple.tar.gz
 %%DATADIR%%/%%VERSION%%/themes/smaker.tar.gz
+share/gnome/wm-properties/sawfish-wm.desktop
+share/applications/sawfish.desktop
+share/xsessions/sawfish.desktop
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/%%VERSION%%/themes
+@dirrm %%DATADIR%%/%%VERSION%%/sounds
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/theming
+@dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/tabs
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/state
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/session
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/placement
@@ -447,17 +430,11 @@ share/pixmaps/sawfish-logo.png
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish
 @dirrm %%DATADIR%%/%%VERSION%%/lisp
-@dirrmtry %%DATADIR%%/%%VERSION%%/themes
-@dirrmtry %%DATADIR%%/%%VERSION%%/sounds
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%/%%VERSION%%
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%/%%VERSION%%
+@dirrm %%DATADIR%%
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm/util
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/sawfish/%%VERSION%%
 @dirrm libexec/sawfish
-@dirrm libexec/rep/%%GNUHOST%%/sawfish
-@dirrmtry share/applications
