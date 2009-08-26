@@ -1,6 +1,7 @@
 lib/dssi/whysynth.so
 lib/dssi/whysynth.la
 lib/dssi/whysynth/WhySynth_gtk
+%%DATADIR%%/current_default_patches.WhySynth
 %%DATADIR%%/more_K4_interpretations.WhySynth
 %%DATADIR%%/version_20051005_patches.WhySynth
 %%DATADIR%%/version_20051231_patches.WhySynth
