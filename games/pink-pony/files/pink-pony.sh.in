@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$#" -ge 1 ]; then
+    exec %%PREFIX%%/libexec/Pony "$*"
+else
+    if [ ! -f ~/.config/pony.options ]; then
+	mkdir -p ~/.config/
+	cp %%DATADIR%%/pony.options ~/.config/pony.options
+	chmod u+w ~/.config/pony.options
+    fi
+    exec %%PREFIX%%/libexec/Pony ~/.config/pony.options
+fi
