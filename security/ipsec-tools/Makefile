@@ -10,7 +10,7 @@
 #       - $LOCALBASE/sbin/setkey Vs /usr/sbin/setkey
 
 PORTNAME=	ipsec-tools
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
