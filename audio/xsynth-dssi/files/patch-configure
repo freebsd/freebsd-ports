@@ -1,0 +1,11 @@
+--- configure.orig	2009-08-26 20:26:01.000000000 +0200
++++ configure	2009-08-26 20:26:09.000000000 +0200
+@@ -13000,7 +13000,7 @@
+ echo "GTK support: $with_gtk"
+ 
+ case "${host_os}" in
+-darwin*)
++darwin* | freebsd*)
+   darwin=yes
+ 
+ 
