@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.13.2
+PORTVERSION=	2.13.3
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/:src \
     		${MASTER_SITE_LOCAL}/gahr/:fonts \
@@ -56,7 +56,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
 BUILD_DEPENDS+=	pbmpscale:${PORTSDIR}/graphics/netpbm
-ALL_TARGET+=	web
+ALL_TARGET+=	doc
 PLIST_SUB+=	DOCS=""
 .else
 PLIST_SUB+=	DOCS="@comment "
