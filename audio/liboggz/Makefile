@@ -9,7 +9,7 @@ PORTNAME=	liboggz
 DISTVERSION=	0.9.6
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.annodex.net/software/liboggz/download/ CENKES
+MASTER_SITES=	http://downloads.xiph.org/releases/liboggz//
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Simple Ogg API
