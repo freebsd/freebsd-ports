@@ -9,7 +9,7 @@ PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
 PORTREVISION=	13
 PORTEPOCH=	1
-CATEGORIES=	emulators linux
+CATEGORIES=	emulators linux kld
 MASTER_SITES=	http://download3.vmware.com/software/wkst/:vmware \
 		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}

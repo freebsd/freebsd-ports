@@ -7,7 +7,7 @@
 
 PORTNAME=	skyfish
 PORTVERSION=	0.91
-CATEGORIES=	net
+CATEGORIES=	net kld
 MASTER_SITES=	ftp://ftp.lissyara.su/users/nsand/skyfish/
 
 MAINTAINER=	nsand@sura.ru

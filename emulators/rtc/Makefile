@@ -8,7 +8,7 @@
 PORTNAME=	rtc
 PORTVERSION=	2004.02.24.1
 PORTREVISION=	8
-CATEGORIES=	emulators linux
+CATEGORIES=	emulators linux kld
 MASTER_SITES=	# none
 DISTFILES=	# none
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	parallels-tools
 PORTVERSION=	0.1.0
-CATEGORIES=	emulators
+CATEGORIES=	emulators kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bland
 
