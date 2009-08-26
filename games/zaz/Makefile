@@ -18,6 +18,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ftgl.2:${PORTSDIR}/graphics/ftgl
 
+NO_CDROM=	Includes music under non-commercial license (CC-BY-NC-SA)
+
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image
 USE_GL=		gl glu
