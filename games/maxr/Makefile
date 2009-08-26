@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maxr
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.maxr.org/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -19,6 +19,13 @@ USE_SDL=	sdl mixer net
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 MAKE_JOBS_SAFE=	yes
+
+DESKTOP_ENTRIES="M.A.X.R." \
+		"Mechanized Assault and Exploration Reloaded" \
+		"${DATADIR}/maxr.png" \
+		"maxr" \
+		"Game;StrategyGame;" \
+		false
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^LIBS=/ s|-lSDL_|`${SDL_CONFIG} --libs` &|' \
