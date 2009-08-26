@@ -48,55 +48,55 @@ include/pygtk/pygtk.h
 %%PYTHON_SITELIBDIR%%/pygtk.pyc
 %%PYTHON_SITELIBDIR%%/pygtk.pyo
 %%PORTDOCS%%%%DOCSDIR%%/MAPPING
-%%PORTDOCS%%%%EXAMPLESDIR%%/gl/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/gl/cone.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/gl/dots.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/gl/gears.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/glade/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/glade/glade.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/glade/test.glade
-%%PORTDOCS%%%%EXAMPLESDIR%%/glade/test2.glade
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/break.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/browse.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/continue.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/edit.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/edit.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/gtkcons.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/gtkdb.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/gtkprof.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/minibreak.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/next.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/pyide.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/quit.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/return.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/run.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/ide/step.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/imlib/view.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/TAppli.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/TAppli2.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/TAppli3.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/TAppli4.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/TAppli5.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/bomb.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/gtk-logo.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/notebook.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/neil/question.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/dnd.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/dndpixmap.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/hello1.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/hello2.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/scribble.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/simple1.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/simple2.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/tooltip1.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/tooltip2.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/testgtk/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/testgtk/test.xpm
-%%PORTDOCS%%%%EXAMPLESDIR%%/testgtk/testgtk.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/testgtk/testgtkrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl/cone.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl/dots.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl/gears.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glade/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glade/glade.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glade/test.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glade/test2.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/break.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/browse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/continue.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/edit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/edit.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/gtkcons.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/gtkdb.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/gtkprof.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/minibreak.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/next.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/pyide.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/quit.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/return.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/run.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ide/step.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imlib/view.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/TAppli.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/TAppli2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/TAppli3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/TAppli4.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/TAppli5.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/bomb.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/gtk-logo.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/notebook.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neil/question.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/dnd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/dndpixmap.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/hello1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/hello2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/scribble.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/tooltip1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/tooltip2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testgtk/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testgtk/test.xpm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testgtk/testgtk.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testgtk/testgtkrc
 share/pygtk/1.2/codegen/generate.py
 share/pygtk/1.2/codegen/generate.pyc
 share/pygtk/1.2/codegen/generate.pyo
@@ -120,14 +120,14 @@ share/pygtk/1.2/defs/libglade.defs
 @dirrm share/pygtk/1.2/codegen
 @dirrm share/pygtk/1.2
 @dirrm share/pygtk
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testgtk
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/neil
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/imlib
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ide
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/glade
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testgtk
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/neil
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/imlib
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ide
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/glade
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2
