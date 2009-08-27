@@ -301,6 +301,7 @@
     SUBDIR += libgweather
     SUBDIR += libmms
     SUBDIR += libmxp
+    SUBDIR += libnatpmp
     SUBDIR += libnet
     SUBDIR += libnet-devel
     SUBDIR += libnet10

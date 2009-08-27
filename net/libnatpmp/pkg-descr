@@ -1,0 +1,6 @@
+libnatpmp is an attempt to make a portable and fully compliant implementation 
+of the protocol for the client side. It is based on non blocking sockets and 
+all calls of the API are asynchronous. It is therefore very easy to integrate 
+the NAT-PMP code to any event driven code. 
+
+WWW:	http://miniupnp.free.fr/
