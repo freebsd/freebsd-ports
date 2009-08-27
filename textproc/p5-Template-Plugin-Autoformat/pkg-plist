@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Template/Plugin/Autoformat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template-Plugin-Autoformat/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template-Plugin-Autoformat
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
