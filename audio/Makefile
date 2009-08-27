@@ -79,6 +79,7 @@
     SUBDIR += bonk
     SUBDIR += boodler
     SUBDIR += btc
+    SUBDIR += calf
     SUBDIR += cam
     SUBDIR += cantus
     SUBDIR += cantus_3
