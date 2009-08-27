@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: murmur
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# murmur_enable (bool):		Set to NO by default.
+#				Set it to YES to enable murmur.
+#
+
+. %%RC_SUBR%%
+
+# Set some defaults
+murmur_user=${murmur_user:-"murmur"}
+
+name=murmur
+rcvar=${name}_enable
+
+command="%%PREFIX%%/bin/murmurd"
+command_args="-ini %%PREFIX%%/etc/murmur.ini"
+pidfile="/var/run/murmur/murmur.pid"
+
+load_rc_config $name
+
+: ${murmur_enable="NO"}
+
+run_rc_command "$1"

@@ -478,6 +478,7 @@
     SUBDIR += mt-daapd
     SUBDIR += muine
     SUBDIR += mumble
+    SUBDIR += murmur
     SUBDIR += muse
     SUBDIR += musepack
     SUBDIR += musica
