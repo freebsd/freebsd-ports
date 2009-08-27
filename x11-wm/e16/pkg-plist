@@ -3,6 +3,7 @@ bin/edox
 bin/eesh
 bin/epp
 bin/starte16
+%%NLS%%share/locale/ar/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/it/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/e16.mo
@@ -21,6 +22,7 @@ bin/starte16
 %%NLS%%share/locale/pt/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/e16.mo
@@ -407,21 +409,7 @@ share/xsessions/e16.desktop
 share/xsessions/e16-gnome.desktop
 share/xsessions/e16-kde.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s02.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s03.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s04.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s05.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s06.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s07.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s08.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s09.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s10.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s11.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s12.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s13.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s14.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s15.html
-%%PORTDOCS%%%%DOCSDIR%%/ar01s16.html
+%%PORTDOCS%%%%DOCSDIR%%/e16-docs.html
 @dirrm lib/e16
 @dirrm %%DATADIR%%/E-docs
 @dirrm %%DATADIR%%/config/menus
