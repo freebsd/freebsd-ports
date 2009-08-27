@@ -1,0 +1,62 @@
+#!/bin/sh
+# $FreeBSD$
+
+PATH=/bin:/usr/sbin
+USER=murmur
+GROUP=murmur
+HOME=/nonexistent
+LOGDIR=/var/log/murmur
+RUNDIR=/var/run/murmur
+DBDIR=/var/db/murmur
+
+case $2 in
+	PRE-INSTALL)
+		if pw group show ${GROUP} 2> /dev/null; then
+		else
+			if pw groupadd ${GROUP}; then
+				echo "Added group \"${GROUP}\"."
+			else
+				echo "Adding group \"${GROUP}\" failed..."
+				exit 1
+			fi
+		fi
+
+		if pw user show ${USER} 2> /dev/null; then
+		else
+			if pw useradd ${USER} -g ${GROUP} -h - \
+				-d ${HOME} -c "Murmur"
+			then
+				echo "Added user \"${USER}\"."
+			else
+				echo "Adding user \"${USER}\" failed..."
+				exit 1
+			fi
+		fi
+
+		mkdir -m 750 ${LOGDIR} ${DBDIR} ${RUNDIR} 2> /dev/null
+		chown -R ${USER}:${GROUP} ${LOGDIR} ${DBDIR} ${RUNDIR}
+
+		;;
+
+	POST-DEINSTALL)
+		if pw group show ${GROUP} 2> /dev/null; then
+			if pw group del ${GROUP}; then
+				echo "Removed group \"${GROUP}\"."
+			else
+				echo "Removing group \"${GROUP}\" failed..."
+				exit 1
+			fi
+		fi
+
+		if pw user show ${USER} 2> /dev/null; then
+			if pw userdel ${USER}; then
+				echo "Removed user \"${USER}\"."
+			else
+				echo "Removing user \"${USER}\" failed..."
+				exit 1
+			fi
+		fi
+
+		rm -Rf ${PIDDIR}
+		;;
+esac
