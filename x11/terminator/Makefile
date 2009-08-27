@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	terminator
-PORTVERSION=	0.12
-PORTREVISION=	2
+PORTVERSION=	0.13
 CATEGORIES=	x11 python
 MASTER_SITES=	https://launchpad.net/terminator/trunk/${PORTVERSION}/+download/ \
+		https://launchpadlibrarian.net/28258738/ \
 		http://hur.st/mirror/terminator/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -19,7 +19,7 @@ COMMENT=	Multiple GNOME terminals in one window
 OPTIONS=	NLS	"Native language support" 	on \
 		GCONF	"Use GNOME Terminal settings"	on
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTVERSION}
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Terminator
