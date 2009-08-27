@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 PKGNAMESUFFIX=	-kde4
@@ -21,7 +21,7 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 
 USE_OPENSSL=	yes
 KDE4_BUILDENV=	yes
-USE_KDE4=	kdeprefix runtime workspace automoc4
+USE_KDE4=	kdeprefix runtime workspace oxygen automoc4
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
