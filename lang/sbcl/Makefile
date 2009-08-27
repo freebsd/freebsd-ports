@@ -12,7 +12,7 @@ PORTNAME=	sbcl
 PORTVERSION=	1.0.30.0
 PORTREVISION=	0
 CATEGORIES=	lang lisp
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+#MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
 #		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries

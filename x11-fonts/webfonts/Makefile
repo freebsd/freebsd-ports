@@ -10,7 +10,7 @@ PORTVERSION=	0.30
 PORTREVISION=	6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_NETBSD:S/%SUBDIR%/ms-ttf/}:group1 \
-		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/corefonts/}:group1 \
+		SF/corefonts/the%20fonts/final:group1 \
 		ftp://ftp.uni-koeln.de/pc/win32/msoft/:group1 \
 		ftp://ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
 		ftp://ftp.sinn.ru/pub/win95/fonts/:group1 \

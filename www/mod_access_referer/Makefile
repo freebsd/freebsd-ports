@@ -12,8 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/accessreferer/accessreferer/${PORTVERSION}
 DIST_SUBDIR=	apache
 
-PATCH_SITES=    ${MASTER_SITE_SOURCEFORGE}
-PATCH_SITE_SUBDIR=	accessreferer
+PATCH_SITES=    ${MASTER_SITE_SOURCEFORGE:C/%SUBDIR%/accessreferer\/accessreferer\/1.0.2-third-part-patch/}
 PATCHFILES=	mod_access_referer_1.0.2_third_part_patch.txt
 PATCH_DIST_STRIP=	-l
 
