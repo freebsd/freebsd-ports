@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	e16
-DISTVERSION=	1.0.0.001
-PORTREVISION=	1
+DISTVERSION=	1.0.0.901
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots
+MASTER_SITES=	SFP/enlightenment/${PORTNAME}/Snapshots
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager
-
-E16_REVISION=	000
 
 USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
 		xext xfixes xft xinerama xrandr xrender xxf86vm
@@ -23,7 +20,9 @@ USE_GMAKE=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-esdtest --disable-dependency-tracking \
-		--disable-rpath
+		--disable-rpath --enable-mans
+
+MAN1=		e16.1
 
 .if !defined(WITHOUT_ESOUND)
 USE_GNOME=	esound
@@ -40,7 +39,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto
 CONFIGURE_ARGS+=--enable-docs=yes
 .else
 CONFIGURE_ARGS+=--enable-docs=no
