@@ -4,9 +4,9 @@
 # $FreeBSD$
 
 PORTNAME=	spatialindex
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.edu-linux.org/down/
+MASTER_SITES=	http://download.osgeo.org/libspatialindex/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A General Framework for Developing Spatial Indices
@@ -15,8 +15,5 @@ USE_AUTOTOOLS=	libtool:22:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\(objformat=\).*|\1elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
