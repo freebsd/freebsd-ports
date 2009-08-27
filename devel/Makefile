@@ -2682,6 +2682,7 @@
     SUBDIR += rubygem-crack
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-deeptest
+    SUBDIR += rubygem-deprecated
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-echoe
     SUBDIR += rubygem-eventmachine
