@@ -10,9 +10,9 @@ PORTVERSION=	1.12.0
 PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
-DISTNAME=	openh323/ptlib-v${PORTVERSION:S/./_/g}-src.
-EXTRACT_SUFX=	tar.gz
+MASTER_SITES= 	SF/openh323/${PORTNAME}/${PORTVERSION}
+DISTNAME=	ptlib-v${PORTVERSION:S/./_/g}-src
+DIST_SUBDIR=	openh323
 
 MAINTAINER=	steve@energistic.com
 COMMENT=	A cross platform C++ library, used by OpenH323
@@ -29,6 +29,7 @@ WANT_GNOME=	yes
 WANT_SDL=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
