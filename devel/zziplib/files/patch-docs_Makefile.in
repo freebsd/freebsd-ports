@@ -1,6 +1,6 @@
---- docs/Makefile.in.orig	Sun Apr 22 09:27:39 2007
-+++ docs/Makefile.in	Sun Apr 22 09:27:53 2007
-@@ -431,7 +431,7 @@
+--- docs/Makefile.in.orig	2009-08-27 16:33:21.000000000 +0200
++++ docs/Makefile.in	2009-08-27 16:33:21.000000000 +0200
+@@ -451,7 +451,7 @@ uninstall-am:
  
  
  all : all-am default

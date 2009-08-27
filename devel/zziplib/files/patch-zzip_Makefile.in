@@ -1,11 +1,11 @@
---- zzip/Makefile.in.orig	Wed Apr 26 09:44:19 2006
-+++ zzip/Makefile.in	Wed Apr 26 09:47:10 2006
-@@ -589,7 +589,7 @@ info-am:
- install-data-am: install-data-local install-pkgconfigHEADERS \
- 	install-zzipHEADERS
+--- zzip/Makefile.in.orig	2009-08-27 16:33:21.000000000 +0200
++++ zzip/Makefile.in	2009-08-27 16:33:21.000000000 +0200
+@@ -648,7 +648,7 @@ install-data-am: install-data-local inst
+ 
+ install-dvi: install-dvi-am
  
 -install-exec-am: install-exec-local install-libLTLIBRARIES
 +install-exec-am: install-libLTLIBRARIES
  
- install-info: install-info-am
+ install-html: install-html-am
  
