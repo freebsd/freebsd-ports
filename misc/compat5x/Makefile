@@ -11,7 +11,7 @@
 
 PORTNAME=	compat5x
 PORTVERSION=	5.4.0.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lesi/compat5x
@@ -67,9 +67,17 @@ post-extract:
 
 do-install:
 	@${MKDIR} ${TARGET_DIR}
+.if ${OSVERSION} >= 800105
+	${RM} -f ${WRKSRC}/libpthread.so.1
+	(cd ${TARGET_DIR} && ${LN} -s /usr/lib/libpthr.so ./libpthread.so.1)
+.endif
 	(cd ${WRKSRC} && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
 .if ${ARCH} == amd64
 	@${MKDIR} ${TARGET32_DIR}
+. if ${OSVERSION} >= 800105
+	${RM} -f ${WRKSRC}/lib32/libpthread.so.1
+	(cd ${TARGET32_DIR} && ${LN} -s /usr/lib32/libpthr.so ./libpthread.so.1)
+. endif
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
 .endif
 
