@@ -1,0 +1,22 @@
+Given the header files and shared objects corresponding to two different shared
+library versions, and a simple description of each of the shared libraries in
+XML format, abi-compliance-checker searches for the following kinds of binary
+compatibility problems:
+
+--Added/withdrawn interfaces (functions, global variables)
+--Problems in Data Types:
+	--Classes: added/withdrawn virtual functions (changes in layout of
+		virtual table), virtual function positions, virtual function
+		redefinitions
+	--Structural data types: added/withdrawn members (changes in layout of
+		type structure),
+		changes in members, size changes
+	--Enumerations: member value changes
+--Interface problems:
+	--Parameters and return type changes
+	--Static property changes
+
+The checker then generates a report that assesses the risks of any potential
+problems detected.
+
+WWW: http://ispras.linux-foundation.org/index.php/ABI_compliance_checker
