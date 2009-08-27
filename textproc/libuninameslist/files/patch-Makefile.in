@@ -1,32 +1,15 @@
---- Makefile.in.orig	2004-07-07 12:28:59.000000000 -0500
-+++ Makefile.in	2009-07-11 23:21:23.000000000 -0500
-@@ -23,23 +23,23 @@
- both: libuninameslist.la libuninameslist-fr.la
- 
- libuninameslist.la: nameslist.lo
--	$(LIBTOOL) $(CC) $(CFLAGS) -o libuninameslist.la nameslist.lo \
-+	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libuninameslist.la nameslist.lo \
- 	    -rpath $(libdir) -version-info $(UN_VERSION):$(UN_REVISION):$(UN_AGE)
- 
- libuninameslist-fr.la: nameslist-fr.lo
--	$(LIBTOOL) $(CC) $(CFLAGS) -o libuninameslist-fr.la nameslist-fr.lo \
-+	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libuninameslist-fr.la nameslist-fr.lo \
- 	    -rpath $(libdir) -version-info $(UN_VERSION):$(UN_REVISION):$(UN_AGE)
- 
- 
- %.lo: %.c
--	$(LIBTOOL) $(CC) $(CFLAGS) -c $<
-+	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c $<
- 
+--- Makefile.in.orig	2008-04-09 23:44:33.000000000 +0200
++++ Makefile.in	2009-08-27 11:52:44.563429892 +0200
+@@ -38,9 +38,9 @@
  install: both
  # You may need to be root to do the install
- 	mkdir -p $(libdir)
--	$(LIBTOOL) $(INSTALL) -c libuninameslist.la $(libdir)/libuninameslist.la
--	$(LIBTOOL) $(INSTALL) -c libuninameslist-fr.la $(libdir)/libuninameslist-fr.la
--	$(LIBTOOL) --finish $(libdir)
-+	$(LIBTOOL) --mode=install $(INSTALL) -c libuninameslist.la $(libdir)/libuninameslist.la
-+	$(LIBTOOL) --mode=install $(INSTALL) -c libuninameslist-fr.la $(libdir)/libuninameslist-fr.la
-+	$(LIBTOOL) --mode=finish $(libdir)
- 	mkdir -p $(incdir)
- 	$(INSTALL_DATA) nameslist.h $(incdir)/uninameslist.h
+ 	mkdir -p $(DESTDIR)$(libdir)
+-	$(LIBTOOL) $(INSTALL) -c libuninameslist.la $(DESTDIR)$(libdir)/libuninameslist.la
+-	$(LIBTOOL) $(INSTALL) -c libuninameslist-fr.la $(DESTDIR)$(libdir)/libuninameslist-fr.la
+-	$(LIBTOOL) --finish $(DESTDIR)$(libdir)
++	$(LIBTOOL) --mode=install $(INSTALL) -c libuninameslist.la $(DESTDIR)$(libdir)/libuninameslist.la
++	$(LIBTOOL) --mode=install $(INSTALL) -c libuninameslist-fr.la $(DESTDIR)$(libdir)/libuninameslist-fr.la
++	$(LIBTOOL) --mode=finish $(DESTDIR)$(libdir)
+ 	mkdir -p $(DESTDIR)$(incdir)
+ 	$(INSTALL_DATA) nameslist.h $(DESTDIR)$(incdir)/uninameslist.h
  

@@ -4,13 +4,12 @@
 #
 # $FreeBSD$
 #
-
 PORTNAME=	libuninameslist
-PORTVERSION=	20060907
+PORTVERSION=	20080409
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20sources/Unicode%205%2C%20${PORTVERSION}
-DISTNAME=	${PORTNAME}_src-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20sources/${PORTVERSION}/
+
+USE_BZIP2=	yes
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of Unicode annotation data
@@ -22,7 +21,5 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 ALL_TARGET=	both
 USE_LDCONFIG=	yes
-
-BROKEN=		checksum mismatch
 
 .include <bsd.port.mk>
