@@ -9,10 +9,10 @@ include/spatialindex/SpatialIndex.h
 include/spatialindex/TPRTree.h
 include/spatialindex/TimePoint.h
 include/spatialindex/TimeRegion.h
+include/spatialindex/Version.h
 include/spatialindex/tools/PointerPool.h
 include/spatialindex/tools/PoolPointer.h
 include/spatialindex/tools/SmartPointer.h
-include/spatialindex/tools/TemporaryFile.h
 include/spatialindex/tools/Tools.h
 include/spatialindex/tools/rand48.h
 lib/libspatialindex.a
