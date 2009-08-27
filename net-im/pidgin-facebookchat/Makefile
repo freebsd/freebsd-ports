@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	pidgin-facebookchat
-PORTVERSION=	1.50
-PORTREVISION=	1
+PORTVERSION=	1.60
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PROJECTHOST}-source-${PORTVERSION}
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Facebook Chat for Pidgin
 
+LIB_DEPENDS=	json-glib-1.0.0:${PORTSDIR}/devel/json-glib
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
@@ -25,7 +25,10 @@ USE_BZIP2=	yes
 PIXMAPS_DIR=	${PREFIX}/share/pixmaps/pidgin/protocols
 
 do-patch:
-	${REINPLACE_CMD} -e "s#i686-pc-freebsd6.0-gcc#${CC}#; s#/usr/local/#${LOCALBASE}/#g" \
+	${REINPLACE_CMD} -e "s#i686-pc-freebsd6.0-gcc#${CC}#; \
+	s#/usr/local/#${LOCALBASE}/#g; \
+	s#/usr/include/json-glib-1.0#${LOCALBASE}/include/json-glib-1.0 \
+	-L${LOCALBASE}/lib/#g" \
 		${WRKSRC}/Makefile
 
 do-build:
