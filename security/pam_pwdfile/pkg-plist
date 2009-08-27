@@ -1,5 +1,0 @@
-%%PORTDOCS%%share/doc/pam_pwdfile/README
-%%PORTDOCS%%share/doc/pam_pwdfile/INSTALL
-%%PORTDOCS%%share/doc/pam_pwdfile/changelog
-%%PORTDOCS%%@dirrm share/doc/pam_pwdfile
-lib/pam_pwdfile.so

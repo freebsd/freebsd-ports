@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pam_pwdfile
-PORTVERSION=	0.95
-PORTREVISION=	1
+PORTVERSION=	0.99
 CATEGORIES=	security
 MASTER_SITES=	http://cpbotha.net/files/pam_pwdfile/
 
@@ -16,11 +15,18 @@ COMMENT=	A pam module for authenticating with flat passwd files
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
+PLIST_FILES=	lib/pam_pwdfile.so
+PORTDOCS=	README INSTALL changelog
+
+post-patch:
+	${REINPLACE_CMD} -e 's|#include <features.h>||g' ${WRKSRC}/pam_pwdfile.c
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/changelog \
-		${WRKSRC}/INSTALL  ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
