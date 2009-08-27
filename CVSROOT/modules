@@ -3269,10 +3269,7 @@ fftw                            ports/math/fftw
 fftw-float                      ports/math/fftw-float
 fftw3                           ports/math/fftw3
 fftw3-float                     ports/math/fftw3-float
-fftw3-float-fortran             ports/math/fftw3-float-fortran
-fftw3-fortran                   ports/math/fftw3-fortran
 fftw3-long                      ports/math/fftw3-long
-fftw3-long-fortran              ports/math/fftw3-long-fortran
 fga                             ports/devel/fga
 fget                            ports/ftp/fget
 fgkicker                        ports/games/fgkicker
@@ -20357,6 +20354,7 @@ roundcube                       ports/mail/roundcube
 roundcube-air                   ports/mail/roundcube-air
 roundcube-groupvice             ports/mail/roundcube-groupvice
 roundcube-mvision2              ports/mail/roundcube-mvision2
+roundcube-umich                 ports/mail/roundcube-umich
 roundup                         ports/www/roundup
 routers2                        ports/net-mgmt/routers2
 routers2-extensions             ports/net-mgmt/routers2-extensions
@@ -24616,6 +24614,7 @@ zabit                           ports/mail/zabit
 zangband                        ports/games/zangband
 zaptel                          ports/misc/zaptel
 zatacka                         ports/games/zatacka
+zaz                             ports/games/zaz
 zbase32                         ports/converters/zbase32
 zccron                          ports/sysutils/zccron
 zebedee                         ports/security/zebedee
