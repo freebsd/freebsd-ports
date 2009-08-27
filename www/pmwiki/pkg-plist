@@ -117,6 +117,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Forms
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Functions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Glossary
+%%PMWIKIDIR%%/wikilib.d/PmWiki.GroupCustomizations
 %%PMWIKIDIR%%/wikilib.d/PmWiki.GroupFooter
 %%PMWIKIDIR%%/wikilib.d/PmWiki.GroupHeader
 %%PMWIKIDIR%%/wikilib.d/PmWiki.GroupHeaders
