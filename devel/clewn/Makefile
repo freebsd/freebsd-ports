@@ -8,7 +8,7 @@
 PORTNAME=	clewn
 PORTVERSION=	1.14
 CATEGORIES=	devel editors
-MASTER_SITES=	SFE
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	giacomomariani@yahoo.it
 COMMENT=	Clewn provides Gdb support within Vim
