@@ -1,6 +1,6 @@
---- configure.orig	Thu Sep  7 08:18:30 2006
-+++ configure	Thu Sep  7 08:19:44 2006
-@@ -1651,7 +1651,7 @@
+--- configure.orig	2009-08-27 16:33:21.000000000 +0200
++++ configure	2009-08-27 16:33:21.000000000 +0200
+@@ -2271,7 +2271,7 @@ $as_echo "$as_me: toplevel srcdir alread
    else
      test ".$ax_enable_builddir" = "."  && ax_enable_builddir="."
      test ".$ax_enable_builddir" = ".no"  && ax_enable_builddir="."
@@ -8,17 +8,17 @@
 +    test ".$BUILD" = "." && BUILD=./build
      test ".$ax_enable_builddir" = ".yes" && ax_enable_builddir="$BUILD"
      if test ".$ax_enable_builddir" != ".." ; then    # we know where to go and
-       { if $as_mkdir_p; then
-@@ -19477,7 +19477,7 @@
+       { as_dir=$ax_enable_builddir
+@@ -12133,7 +12133,7 @@ $as_echo_n "checking out linker version 
    if test "_$MICRO_VERSION" = "_" ; then MICRO_VERSION="0" ; fi
    if test "_$MINOR_VERSION" = "_" ; then MINOR_VERSION="$MAJOR_VERSION" ; MAJOR_VERSION="0" ; fi
    MINOR_VERSION=`echo "$MINOR_VERSION" | sed -e 's/[^0-9].*//'`
 -  RELEASE_INFO="-release $MAJOR_VERSION"
 +  RELEASE_INFO=""
    VERSION_INFO="-version-info $MINOR_VERSION:$MICRO_VERSION"
- echo "$as_me:$LINENO: result: /$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&5
- echo "${ECHO_T}/$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&6
-@@ -25249,7 +25249,7 @@
+ { $as_echo "$as_me:$LINENO: result: /$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&5
+ $as_echo "/$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&6; }
+@@ -19280,7 +19280,7 @@ s/:.*/:/
  _EOF
      test ".$USE_MAINTAINER_MODE" = ".no" || \
    	cp "$tmp/conftemp.sed" "$ac_top_srcdir/makefile.sed~"            ## DEBUGGING
