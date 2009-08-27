@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://clay.ll.pl/download/
 
-MAINTAINER=	shanali@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple hiragana/katakana drill tool
 
 USE_GMAKE=	yes

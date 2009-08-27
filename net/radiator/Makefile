@@ -12,7 +12,7 @@ MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	shanali@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Radiator Radius Server by Open System Consultants
 
 OPTIONS=        MYSQL "MySQL Support" off
