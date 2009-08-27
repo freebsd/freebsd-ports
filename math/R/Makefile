@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	2.9.0
-PORTREVISION=	1
+PORTVERSION=	2.9.2
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -57,8 +56,8 @@ ALL_TARGET=	all
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
-
-CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
+CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
+		FCFLAGS="${FFLAGS}"
 CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
 		rdocdir=${DOCSDIR}
 
@@ -125,9 +124,12 @@ CONFIGURE_ARGS+=--with-libpng
 CONFIGURE_ARGS+=--without-tcltk
 PLIST_SUB+=	TCLTK="@comment "
 .else
+USE_TK_NO_THREADS=	yes
 USE_TK =	83+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
-CONFIGURE_ARGS+=--with-tcltk
+CONFIGURE_ARGS+=--with-tcltk \
+		--with-tcl-config=${TCL_LIBDIR}/tclConfig.sh \
+		--with-tk-config=${TK_LIBDIR}/tkConfig.sh
 PLIST_SUB+=	TCLTK=""
 .endif
 
@@ -147,7 +149,7 @@ PLIST_SUB+=	X11=""
 .endif
 
 .if defined(WITH_DVI_MANUALS) && !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS+=	texi2dvi:${PORTSDIR}/print/teTeX-base
 ALL_TARGET+=	dvi
 INSTALL_TARGET+=install-dvi
 PLIST_SUB+=	DVI_MANUAL=""
@@ -173,9 +175,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/src/nmath/standalone/Makefile.in \
 		${WRKSRC}/src/unix/Makefile.in
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/configure \
+		${WRKSRC}/src/scripts/javareconf
+	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" \
+		${WRKSRC}/configure \
+		${WRKSRC}/config.site \
+		${WRKSRC}/src/extra/tzone/tzfile.h \
+		${WRKSRC}/src/library/base/man/Startup.Rd \
+		${WRKSRC}/src/library/profile/Rprofile.unix \
+		${WRKSRC}/src/scripts/javareconf
 .if defined(WITHOUT_NLS)
-	(cd ${WRKSRC}/src/library/Recommended; \
+	@(cd ${WRKSRC}/src/library/Recommended; \
 	for tarfile in *.tgz *.tar.gz ; do \
 	${TAR} -czf temptgz --exclude='*/po/*' @$$tarfile ; \
 	${MV} temptgz $$tarfile ; \
@@ -192,7 +203,7 @@ post-install:
 	${MV} ${PREFIX}/lib/libR.so ${PREFIX}/lib/libR.so.0
 	${LN} -sf ${PREFIX}/lib/libR.so.0 ${PREFIX}/lib/libR.so
 .if defined(WITH_INFO_MANUALS) && !defined(NOPORTDOCS)
-	(cd ${WRKSRC}/doc/manual; \
+	@(cd ${WRKSRC}/doc/manual; \
 	for infofile in ${INFO}; do \
 		${INSTALL_DATA} $${infofile}.info* ${PREFIX}/${INFO_PATH}/; \
 	done)

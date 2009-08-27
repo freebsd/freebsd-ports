@@ -1,0 +1,12 @@
+#extra linker flags for threaded tk
+--- configure.orig	2009-06-03 19:08:21.000000000 -0400
++++ configure	2009-06-03 19:48:48.000000000 -0400
+@@ -43400,7 +43400,7 @@
+     ## Part 2.  Try finding the tk library.
+     if test -n "${TK_CONFIG}"; then
+       . ${TK_CONFIG}
+-      TCLTK_LIBS="${TCLTK_LIBS} ${TK_LIB_SPEC} ${TK_XLIBSW}"
++      TCLTK_LIBS="${TCLTK_LIBS} ${TK_LIB_SPEC} ${TK_XLIBSW} ${TCL_LD_FLAGS}"
+     else
+ 
+ { echo "$as_me:$LINENO: checking for Tk_Init in -ltk" >&5
