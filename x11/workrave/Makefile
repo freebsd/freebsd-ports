@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gnome RSI prevention tool
 
 OPTIONS=	GNOME "Build with Gnome support" on \
