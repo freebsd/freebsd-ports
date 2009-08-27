@@ -8,9 +8,7 @@
 PORTNAME=	ayttm
 PORTVERSION=	0.5.0.111
 CATEGORIES=	net-im
-.for mirror in nchc kent ufpr heanet switch puzzle osdn ovh
-MASTER_SITES+=http://${mirror}.dl.sourceforge.net/project/ayttm/ayttm/${PORTVERSION:R}-${PORTVERSION:E}/
-.endfor
+MASTER_SITES=	SF/ayttm/ayttm/${PORTVERSION:R}-${PORTVERSION:E}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	unixmania@gmail.com
