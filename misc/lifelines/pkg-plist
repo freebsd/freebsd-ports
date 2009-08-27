@@ -17,7 +17,8 @@ bin/llines
 %%PORTDOCS%%%%DOCSDIR%%/README.MAINTAINERS
 %%PORTDOCS%%%%DOCSDIR%%/lines.cfg
 %%PORTDOCS%%%%DOCSDIR%%/lines.cfg.input
-%%PORTDOCS%%%%DOCSDIR%%/listops.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ll-devguide.html
+%%PORTDOCS%%%%DOCSDIR%%/ll-devguide.xml
 %%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.html
 %%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.sv.html
@@ -143,10 +144,9 @@ bin/llines
 %%DATADIR%%/infant_mortality.ll
 %%DATADIR%%/interestset.li
 %%DATADIR%%/ldsgedcom.li
-%%DATADIR%%/least_related.ll
 %%DATADIR%%/line.ll
-%%DATADIR%%/listops.jpg
 %%DATADIR%%/listsour.ll
+%%DATADIR%%/ll-devguide.html
 %%DATADIR%%/ll-reportmanual.html
 %%DATADIR%%/ll-reportmanual.pdf
 %%DATADIR%%/ll-reportmanual.sv.html
@@ -210,7 +210,6 @@ bin/llines
 %%DATADIR%%/register1-dot.ll
 %%DATADIR%%/register1.ll
 %%DATADIR%%/regvital.ll
-%%DATADIR%%/regvital1.ll
 %%DATADIR%%/relate.ll
 %%DATADIR%%/related_spouses.ll
 %%DATADIR%%/relation.ll
@@ -221,6 +220,7 @@ bin/llines
 %%DATADIR%%/rslgen.ll
 %%DATADIR%%/rtflib.li
 %%DATADIR%%/sealing_line.ll
+%%DATADIR%%/search_source.ll
 %%DATADIR%%/select.ll
 %%DATADIR%%/setup.tex
 %%DATADIR%%/sgsgen.ll
@@ -242,13 +242,10 @@ bin/llines
 %%DATADIR%%/st_all.ll
 %%DATADIR%%/stats.ll
 %%DATADIR%%/surname1.ll
-%%DATADIR%%/timeline1.ll
-%%DATADIR%%/timeline2.ll
 %%DATADIR%%/tinytafel1.ll
 %%DATADIR%%/tools.li
 %%DATADIR%%/tree.tex
 %%DATADIR%%/tree_density.ll
-%%DATADIR%%/trigtest.ll
 %%DATADIR%%/ttable.ll
 %%DATADIR%%/upl2.li
 %%DATADIR%%/verify.ll
