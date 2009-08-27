@@ -1,0 +1,4 @@
+Template Toolkit plugin interface to Text::Autoformat module.  This is
+a separate distribution as of Template-Toolkit 2.22.
+
+WWW: http://search.cpan.org/dist/Template-Plugin-Autoformat
