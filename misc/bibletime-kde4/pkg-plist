@@ -698,7 +698,6 @@ share/applications/bibletime.desktop
 %%DATADIR%%/locale/bibletime_ui_zh_TW.qm
 %%DATADIR%%/pics/startuplogo.png
 share/icons/bibletime.svg
-@dirrmtry share/icons
 @dirrm %%DATADIR%%/pics
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/license
