@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090827:
+  AFFECTS: users of www/mediawiki
+  AUTHOR: miwi@FreeBSD.org
+
+  www/mediawiki version is 1.15.1 now.  1.14.1 version was preserved as
+  www/mediawiki114 port.
+
 20090818:
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
