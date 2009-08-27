@@ -6,16 +6,24 @@
 #
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.0.4.1
+PORTVERSION=	1.0.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/:source1 \
 		http://dl.getdropbox.com/u/152504/:source2 \
 		http://www.freeswitch.org/eg/:source3
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	pizza_gram.tar.gz:source1 \
-		freeswitch-1.0.4.1.tar.gz:source2 \
-		pizza_sounds.tar.gz:source3
-EXTRACT_ONLY=	freeswitch-1.0.4.1.tar.gz
+		freeswitch-1.0.4.2.tar.gz:source2 \
+		pizza_sounds.tar.gz:source3 \
+		freeswitch-sounds-en-us-callie-8000-1.0.11.tar.gz:source1 \
+		freeswitch-sounds-en-us-callie-16000-1.0.11.tar.gz:source1 \
+		freeswitch-sounds-en-us-callie-32000-1.0.11.tar.gz:source1 \
+		freeswitch-sounds-en-us-callie-48000-1.0.11.tar.gz:source1 \
+		freeswitch-sounds-music-8000-1.0.8.tar.gz:source1 \
+		freeswitch-sounds-music-16000-1.0.8.tar.gz:source1 \
+		freeswitch-sounds-music-32000-1.0.8.tar.gz:source1 \
+		freeswitch-sounds-music-48000-1.0.8.tar.gz:source1
+EXTRACT_ONLY=	freeswitch-1.0.4.2.tar.gz
 
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch SoftSwitch Port
@@ -32,6 +40,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_AUTOTOOLS=	autoconf:262:env automake:110:env libtool:22:env
 
 USE_GMAKE=	yes
+SUB_FILES=	pkg-message
 USE_RC_SUBR=	freeswitch
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/${PORTNAME} --with-libgnutls-prefix=${LOCALBASE} \
@@ -63,6 +72,7 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODCELT		"Enable mod_celt (celt codec)" on \
 		MODOPENZAP	"Enable mod_openzap (zaptel support)" on \
 		MODMULTICAST	"Enable mod_event_multicast" on \
+		MODNIBBLEBILL   "Enable mod_nibblebill(billing)" on \
 		MODPORTAUDIO	"Enable mod_portaudio" on \
 		MODSPDRMNKYODBC	"Enable mod_spidermonkey_odbc (req odbc)" on \
 		MODPERL		"Enable mod_perl (perl support)" on \
@@ -76,8 +86,11 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODSAYZH	"Enable mod_say_zh (Chinese support)" on \
 		SAMPLES		"Install Sample Config Files" on \
 		SOUNDS		"Install 8k Sound Files" on \
+		HDSOUNDS	"Install 16k Sound (req 8k Sounds) " off \
+		UHDSOUNDS	"Install 32k Sound (req 8k 16k Sounds)" off \
+		CDSOUNDS	"Install CD Quality Sound (req 8k Sounds)" off \
 		PIZZADEMO	"Install Pizza Demo (req mod_pcoketsphinx)" on \
-		FAXUTILS        "Install Extra Fax Utils (MOD FAX)" on
+		FAXUTILS        "Install Extra Fax Utils (Req MOD FAX)" on
 
 .include <bsd.port.pre.mk>
 
@@ -276,6 +289,24 @@ PLIST_SUB+=	WITH_SOUNDS="@comment "
 PLIST_SUB+=	WITH_SOUNDS=""
 .endif
 
+.if !defined(WITH_HDSOUNDS)
+PLIST_SUB+=	WITH_HDSOUNDS="@comment "
+.else
+PLIST_SUB+=	WITH_HDSOUNDS=""
+.endif
+
+.if !defined(WITH_UHDSOUNDS)
+PLIST_SUB+=	WITH_UHDSOUNDS="@comment "
+.else
+PLIST_SUB+=	WITH_UHDSOUNDS=""
+.endif
+
+.if !defined(WITH_CDSOUNDS)
+PLIST_SUB+=	WITH_CDSOUNDS="@comment "
+.else
+PLIST_SUB+=	WITH_CDSOUNDS=""
+.endif
+
 .if !defined(WITH_PIZZADEMO)
 PLIST_SUB+=	WITH_PIZZADEMO="@comment "
 .else
@@ -287,6 +318,12 @@ PLIST_SUB+=	WITH_FAXUTILS="@comment "
 .else
 PLIST_SUB+=	WITH_FAXUTILS=""
 RUN_DEPENDS+=	tiff2png:${PORTSDIR}/graphics/tiff2png
+.endif
+
+.if !defined(WITH_MODNIBBLEBILL)
+PLIST_SUB+=	WITH_MODNIBBLEBILL="@comment "
+.else
+PLIST_SUB+=	WITH_MODNIBBLEBILL=""
 .endif
 
 pre-configure:
@@ -412,8 +449,8 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|#say/mod_say_zh|say/mod_say_zh|g' ${WRKSRC}/modules.conf
 .endif
 
-.if ${OSVERSION} < 700000
-IGNORE=		it's to unsupported before FreeBSD 7.X
+.if defined(WITH_MODNIBBLEBILL)
+	@${REINPLACE_CMD} -e 's|#applications/mod_nibblebill|applications/mod_nibblebill|g' ${WRKSRC}/modules.conf
 .endif
 
 post-patch:
@@ -421,13 +458,30 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g'
 
 post-install:
-.if defined(WITH_SAMPLES)
-	@cd ${WRKSRC} && ${GMAKE} samples
-.endif
+	@${MKDIR} ${PREFIX}/${PORTNAME}/sounds
 
 .if defined(WITH_SOUNDS)
-	@cd ${WRKSRC} && ${GMAKE} sounds-install
-	@cd ${WRKSRC} && ${GMAKE} moh-install
+	@${TAR} -xzvf ${DISTDIR}/freeswitch-sounds-en-us-callie-8000-1.0.11.tar.gz -C ${PREFIX}/${PORTNAME}/sounds/
+	@${TAR} -xzvf ${DISTDIR}/freeswitch-sounds-music-8000-1.0.8.tar.gz -C ${PREFIX}/${PORTNAME}/sounds/
+.endif
+
+.if defined(WITH_HDSOUNDS)
+	@${TAR} -xzvf ${DISTDIR}/freeswitch-sounds-en-us-callie-16000-1.0.11.tar.gz -C ${PREFIX}/${PORTNAME}/sounds/
+	@${TAR} -xzvf ${DISTDIR}/freeswitch-sounds-music-16000-1.0.8.tar.gz -C ${PREFIX}/${PORTNAME}/sounds/
+.endif
+
+.if defined(WITH_UHDSOUNDS)
+	@${TAR} -xzvf ${DISTDIR}/freeswitch-sounds-en-us-callie-32000-1.0.11.tar.gz -C ${PREFIX}/${PORTNAME}/sounds/
+	@${TAR} -xzvf ${DISTDIR}/freeswitch-sounds-music-32000-1.0.8.tar.gz -C ${PREFIX}/${PORTNAME}/sounds/
+.endif
+
+.if defined(WITH_CDSOUNDS)
+	@${TAR} -xzvf ${DISTDIR}/freeswitch-sounds-en-us-callie-48000-1.0.11.tar.gz -C ${PREFIX}/${PORTNAME}/sounds/
+	@${TAR} -xzvf ${DISTDIR}/freeswitch-sounds-music-48000-1.0.8.tar.gz -C ${PREFIX}/${PORTNAME}/sounds/
+.endif
+
+.if defined(WITH_SAMPLES)
+	@cd ${WRKSRC} && ${GMAKE} samples
 .endif
 
 .if defined(WITH_PIZZADEMO)
@@ -437,6 +491,10 @@ post-install:
 	@${CP} -r ${WRKSRC}/scripts/javascript ${LOCALBASE}/${PORTNAME}/scripts/
 	@${TAR} -xvzf ${DISTDIR}/pizza_gram.tar.gz -C ${LOCALBASE}/${PORTNAME}/grammar
 	@${TAR} -xzvf ${DISTDIR}/pizza_sounds.tar.gz -C ${LOCALBASE}/${PORTNAME}/sounds/en/us
+.endif
+
+.if ${OSVERSION} < 700000
+IGNORE=		it's to unsupported before FreeBSD 7.X
 .endif
 
 .include <bsd.port.post.mk>
