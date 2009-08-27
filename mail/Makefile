@@ -342,6 +342,7 @@
     SUBDIR += p5-Email-Sender
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Simple-Creator
+    SUBDIR += p5-Email-Stuff
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-Email-Valid-Loose
     SUBDIR += p5-FuzzyOcr
