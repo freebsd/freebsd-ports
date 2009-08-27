@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.13.5
+PORTVERSION=	1.15.1
 CATEGORIES=	www
-MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.13/
+MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.15/
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.[0-9].* mediawiki-1.1[0-24-9].*
+CONFLICTS=	mediawiki-1.[0-9].* mediawiki-1.1[0-46-9].*
 
 USE_PHP=	iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=	4
