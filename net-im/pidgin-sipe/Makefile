@@ -9,7 +9,7 @@ PORTNAME=	pidgin-sipe
 PORTVERSION=	1.6.1
 PORTREVISION=	1
 CATEGORIES=	net-im
-MASTER_SITES=	SFP/sipe/sipe/${DISTNAME}
+MASTER_SITES=	SF/sipe/sipe/${DISTNAME}
 
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	A plugin for Pidgin to provide LCS/OCS connectivity

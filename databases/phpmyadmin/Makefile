@@ -8,7 +8,7 @@
 PORTNAME=	phpMyAdmin
 DISTVERSION=	3.2.1
 CATEGORIES=	databases www
-MASTER_SITES=	SFP/phpmyadmin/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
