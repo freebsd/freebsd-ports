@@ -8,7 +8,7 @@
 PORTNAME=	maxima
 PORTVERSION=	5.19.1
 CATEGORIES=	math tk
-MASTER_SITES=	SFP/maxima/Maxima-source/${PORTVERSION}-source
+MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
 MAINTAINER=	bf1783@gmail.com
 COMMENT=	Symbolic mathematics program

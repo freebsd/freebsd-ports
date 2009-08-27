@@ -8,7 +8,7 @@
 PORTNAME=	diffuse
 PORTVERSION=	0.4.0
 CATEGORIES=	devel python
-MASTER_SITES=	SFP/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 
 MAINTAINER=	marco.broeder@gmx.eu
 COMMENT=	A graphical N-way diff and merge tool written in python

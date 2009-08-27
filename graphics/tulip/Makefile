@@ -9,7 +9,7 @@
 PORTNAME=	tulip
 PORTVERSION=	3.1.2
 CATEGORIES=	graphics
-MASTER_SITES=	SFP/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}/:src \
+MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}:src \
     		http://tulip.labri.fr/userHandbook/:doc
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
     		userManual.pdf:doc

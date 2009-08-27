@@ -10,7 +10,7 @@ PORTVERSION=	8.4.5
 PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
-		SFP/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+		SF
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A text document format for writing short documents and man pages

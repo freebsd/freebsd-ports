@@ -10,7 +10,7 @@ PORTVERSION=	3.5.22
 PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
-		SFP/djvu/DjVuLibre/${PORTVERSION}/
+		SF/djvu/DjVuLibre/${PORTVERSION}
 PKGNAMESUFFIX=	-nox11
 
 MAINTAINER=	stas@FreeBSD.org

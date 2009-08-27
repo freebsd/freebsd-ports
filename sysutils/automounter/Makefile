@@ -8,7 +8,7 @@
 PORTNAME=	automounter
 PORTVERSION=	1.3.4
 CATEGORIES=	sysutils
-MASTER_SITES=	SFP/bsdadminscripts/${PORTNAME}/
+MASTER_SITES=	SF/bsdadminscripts/${PORTNAME}
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Provides scripts to dynamically configure amd

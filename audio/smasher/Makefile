@@ -8,7 +8,7 @@
 PORTNAME=	smasher
 PORTVERSION=	1.1.0
 CATEGORIES=	audio
-MASTER_SITES=	SFP/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ \
+MASTER_SITES=	SF \
 		http://distfiles.officialunix.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
