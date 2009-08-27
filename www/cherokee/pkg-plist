@@ -38,6 +38,7 @@ include/cherokee/mime.h
 include/cherokee/mime_entry.h
 include/cherokee/module.h
 include/cherokee/nonce.h
+include/cherokee/nullable.h
 include/cherokee/plugin.h
 include/cherokee/plugin_loader.h
 include/cherokee/post.h
@@ -142,6 +143,8 @@ lib/cherokee/libplugin_request.la
 lib/cherokee/libplugin_request.so
 lib/cherokee/libplugin_round_robin.la
 lib/cherokee/libplugin_round_robin.so
+lib/cherokee/libplugin_rrd.so
+lib/cherokee/libplugin_rrd.la
 lib/cherokee/libplugin_scgi.la
 lib/cherokee/libplugin_scgi.so
 lib/cherokee/libplugin_secdownload.la
@@ -152,6 +155,8 @@ lib/cherokee/libplugin_ssi.la
 lib/cherokee/libplugin_ssi.so
 lib/cherokee/libplugin_streaming.la
 lib/cherokee/libplugin_streaming.so
+lib/cherokee/libplugin_target_ip.so
+lib/cherokee/libplugin_target_ip.la
 lib/cherokee/libplugin_wildcard.la
 lib/cherokee/libplugin_wildcard.so
 lib/libcherokee-base.la
@@ -183,6 +188,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/Entry.pyc
 %%ADMIN%%%%DATADIR%%/admin/Form.py
 %%ADMIN%%%%DATADIR%%/admin/Form.pyc
+%%ADMIN%%%%DATADIR%%/admin/GraphManager.py
+%%ADMIN%%%%DATADIR%%/admin/GraphManager.pyc
 %%ADMIN%%%%DATADIR%%/admin/Module.py
 %%ADMIN%%%%DATADIR%%/admin/Module.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleAdmin.py
@@ -263,6 +270,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/ModuleRequest.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleRoundRobin.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleRoundRobin.pyc
+%%ADMIN%%%%DATADIR%%/admin/ModuleRrd.py
+%%ADMIN%%%%DATADIR%%/admin/ModuleRrd.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleScgi.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleScgi.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleSecdownload.py
@@ -273,6 +282,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/ModuleSsi.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleStreaming.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleStreaming.pyc
+%%ADMIN%%%%DATADIR%%/admin/ModuleTargetIp.py
+%%ADMIN%%%%DATADIR%%/admin/ModuleTargetIp.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleWildcard.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleWildcard.pyc
 %%ADMIN%%%%DATADIR%%/admin/Page.py
@@ -315,12 +326,16 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/Theme.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard.pyc
+%%ADMIN%%%%DATADIR%%/admin/Wizard_CommonStatic.py
+%%ADMIN%%%%DATADIR%%/admin/Wizard_CommonStatic.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Django.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Django.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Drupal.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Drupal.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_HotLinking.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_HotLinking.pyc
+%%ADMIN%%%%DATADIR%%/admin/Wizard_Icons.py
+%%ADMIN%%%%DATADIR%%/admin/Wizard_Icons.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Mailman.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Mailman.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_PHP.py
@@ -364,6 +379,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/dialog-warning.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/expanded.gif
 %%ADMIN%%%%DATADIR%%/admin/static/images/favicon.ico
+%%ADMIN%%%%DATADIR%%/admin/static/images/feedback.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/flags/ad.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/flags/ae.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/flags/af.png
@@ -619,14 +635,16 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/menu-sep.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/offline.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/online.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/proud.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/rulestable-th.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/tab.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/tick.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/top-bar.png
-%%ADMIN%%%%DATADIR%%/admin/static/images/web_proud.jpg
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/common_static.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/django.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/drupal.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/hotlinking.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/icons.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/mailman.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/php.jpg
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/redirect.jpg
@@ -634,6 +652,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/wordpress.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/workarea.png
 %%ADMIN%%%%DATADIR%%/admin/static/js/common.js
+%%ADMIN%%%%DATADIR%%/admin/static/js/graphs.js
 %%ADMIN%%%%DATADIR%%/admin/static/js/icons.js
 %%ADMIN%%%%DATADIR%%/admin/static/js/jquery-1.2.6.min.js
 %%ADMIN%%%%DATADIR%%/admin/static/js/jquery.cookie.js
