@@ -8,8 +8,7 @@
 PORTNAME=	rcctools
 PORTVERSION=	0.1.1
 CATEGORIES=	converters
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	rusxmms
+MASTER_SITES=	SF/rusxmms/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Charset conversion utility with language and encoding autodetection

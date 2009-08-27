@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:sourc
 		ftp://freepascal.stack.nl/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://ftp.no.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://ftp.us.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
-		${MASTER_SITE_SOURCEFORGE:S|$|freepascal/|}:source \
+		SF/freepascal/Source/${PORTVERSION}:source \
 		${MASTER_SITE_GOOGLE_CODE}:bin \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bin|}
 DISTNAME=	${PORTNAME}-${PORTVERSION}

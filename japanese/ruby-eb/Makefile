@@ -9,9 +9,8 @@ PORTNAME=	eb
 PORTVERSION=	2.6
 PORTREVISION=	3
 CATEGORIES=	japanese ruby
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	ruby${PORTNAME}
-MASTER_SITES=	http://ruby${PORTNAME}.sourceforge.net/
+MASTER_SITES=	http://rubyeb.sourceforge.net/ \
+		SF/rubyeb/rubyeb/rubyeb-${PORTVERSION}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 

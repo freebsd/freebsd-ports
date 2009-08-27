@@ -10,9 +10,8 @@ PORTNAME=	echolot
 PORTVERSION=	0.1.0
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITES=	http://echolot.sourceforge.net/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://echolot.sourceforge.net/download/ \
+		SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A packet sniffer that grabs ARP packets on any ethernet devices

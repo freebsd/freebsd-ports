@@ -10,9 +10,7 @@ PORTNAME=	trophy
 PORTVERSION=	1.1.4
 PORTREVISION=	1
 CATEGORIES=	games
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	${PORTNAME}
-MASTER_SITES=	http://trophy.sourceforge.net/archives/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A single player racing game
