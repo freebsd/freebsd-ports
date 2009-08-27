@@ -1,0 +1,17 @@
+The Calf project aims at providing a set of high quality open source
+audio plugins for musicians. All the included plugins are designed
+to be used with multitrack software, as software replacement for
+instruments and guitar stomp boxes.
+
+The plugins are available in following formats:
+
+ - DSSI (both synthesizers and effects, GTK+ GUI is included)
+
+ - Standalone JACK client application with GTK+-based GUI
+
+ - LADSPA (only effect plugins, GUI not available unless host supports
+   DSSI-style GUI for LADSPA), with LRDF. Note that use of LADSPA
+   is strongly discouraged, as the limitations of the standard may cause
+   serious inconvenience.
+
+WWW:	http://calf.sourceforge.net/

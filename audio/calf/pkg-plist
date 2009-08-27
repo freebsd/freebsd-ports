@@ -1,0 +1,30 @@
+bin/calfjackhost
+lib/ladspa/calf.so
+lib/dssi/calf/calf_gtk
+lib/dssi/calf.so
+share/calf/presets.xml
+share/calf/knob.png
+share/calf/gui-filter.xml
+share/calf/gui-filterclavier.xml
+share/calf/gui-flanger.xml
+share/calf/gui-reverb.xml
+share/calf/gui-monosynth.xml
+share/calf/gui-vintagedelay.xml
+share/calf/gui-organ.xml
+share/calf/gui-rotaryspeaker.xml
+share/calf/gui-phaser.xml
+share/calf/gui-multichorus.xml
+share/calf/gui-compressor.xml
+share/calf/calf.glade
+share/ladspa/rdf/calf.rdf
+share/icons/hicolor/16x16/apps/calf.png
+share/icons/hicolor/24x24/apps/calf.png
+share/icons/hicolor/32x32/apps/calf.png
+share/icons/hicolor/48x48/apps/calf.png
+share/icons/hicolor/icon-theme.cache
+share/applications/calf.desktop
+@dirrm lib/dssi/calf
+@dirrm share/calf
+@dirrmtry share/ladspa/rdf
+@dirrmtry share/ladspa
+@dirrmtry share/applications
