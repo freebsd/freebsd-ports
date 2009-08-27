@@ -1,0 +1,46 @@
+bin/pastorize
+%%SITE_PERL%%/XML/Pastor.pm
+%%SITE_PERL%%/XML/Pastor/Builtin.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/List.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/Numeric.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/Scalar.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/SimpleType.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/Union.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/base64Binary.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/boolean.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/date.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/dateTime.pm
+%%SITE_PERL%%/XML/Pastor/Builtin/hexBinary.pm
+%%SITE_PERL%%/XML/Pastor/ComplexType.pm
+%%SITE_PERL%%/XML/Pastor/Element.pm
+%%SITE_PERL%%/XML/Pastor/Generator.pm
+%%SITE_PERL%%/XML/Pastor/Meta.pm
+%%SITE_PERL%%/XML/Pastor/NodeArray.pm
+%%SITE_PERL%%/XML/Pastor/Pastorize.pm
+%%SITE_PERL%%/XML/Pastor/Schema.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Attribute.pm
+%%SITE_PERL%%/XML/Pastor/Schema/AttributeGroup.pm
+%%SITE_PERL%%/XML/Pastor/Schema/ComplexType.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Context.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Documentation.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Element.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Group.pm
+%%SITE_PERL%%/XML/Pastor/Schema/List.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Model.pm
+%%SITE_PERL%%/XML/Pastor/Schema/NamespaceInfo.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Object.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Parser.pm
+%%SITE_PERL%%/XML/Pastor/Schema/SimpleType.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Type.pm
+%%SITE_PERL%%/XML/Pastor/Schema/Union.pm
+%%SITE_PERL%%/XML/Pastor/SimpleType.pm
+%%SITE_PERL%%/XML/Pastor/Stack.pm
+%%SITE_PERL%%/XML/Pastor/Type.pm
+%%SITE_PERL%%/XML/Pastor/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Pastor/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Pastor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrm %%SITE_PERL%%/XML/Pastor/Schema
+@dirrm %%SITE_PERL%%/XML/Pastor/Builtin
+@dirrm %%SITE_PERL%%/XML/Pastor
+@dirrmtry %%SITE_PERL%%/XML

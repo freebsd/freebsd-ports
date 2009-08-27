@@ -1,0 +1,7 @@
+Java has Castor, and now Perl has XML::Pastor!
+
+If you know what Castor does in the Java world, then XML::Pastor
+should be familiar to you. If you have a W3C XSD schema, you can
+generate Perl classes with roundtrip XML bindings.
+
+WWW:    http://search.cpan.org/dist/XML-Pastor/
