@@ -123,6 +123,7 @@
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
     SUBDIR += rbllookup-ng
+    SUBDIR += rubygem-dnsruby
     SUBDIR += scavenge
     SUBDIR += sheerdns
     SUBDIR += skadns
