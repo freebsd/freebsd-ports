@@ -1,0 +1,5 @@
+Data::HashArray is an array of hashes or hash-based objects. This
+class has some magical properties that make it easier to deal with
+multiplicity.
+
+WWW:    http://search.cpan.org/dist/Data-HashArray/

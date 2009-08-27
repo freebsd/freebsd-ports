@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Data/HashArray.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/HashArray/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/HashArray
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data
