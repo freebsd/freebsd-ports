@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	z80asm
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	devel
-MASTER_SITES=	http://download.savannah.nongnu.org/releases/z80asm/
+MASTER_SITES=	http://nongnu.mirror.ironie.org/releases/${PORTNAME}/ \
+		http://savannah.c3sl.ufpr.br/${PORTNAME}/
 
 MAINTAINER=	sigma.zx@gmail.com
 COMMENT=	Assembler for the Z80 microprcessor
