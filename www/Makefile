@@ -381,6 +381,8 @@
     SUBDIR += mathopd
     SUBDIR += mediawiki
     SUBDIR += mediawiki112
+    SUBDIR += mediawiki113
+    SUBDIR += mediawiki114
     SUBDIR += mediawiki16
     SUBDIR += mergelog
     SUBDIR += metacafe_dl
