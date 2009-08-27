@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netaddr
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.2
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		CHEESESHOP
@@ -20,8 +20,8 @@ USE_PYDISTUTILS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-PORTDOCS=	AUTHORS CHANGELOG GLOSSARY README
-TESTFILES=	ut_netaddr.py
+PORTDOCS=	AUTHORS CHANGELOG README
+TESTFILES=	__init__.py
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -29,9 +29,9 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-regression-test:
+x-regression-test:
 .for f in ${TESTFILES}
-	(cd ${WRKSRC}/tests && ${PYTHON_CMD} $f)
+	(cd ${WRKSRC}/netaddr/tests && ${PYTHON_CMD} $f)
 .endfor
 
 .include <bsd.port.mk>
