@@ -6,55 +6,97 @@
 #
 
 PORTNAME=	Services_Twitter
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to Twitter's API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/Validate.php:${PORTSDIR}/devel/pear-Validate
+		${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PHP=	curl
+USE_PHP=	json simplexml
 
 CATEGORY=	Net
-FILES=		Services/Twitter.php Services/Twitter/Account.php \
-		Services/Twitter/Common.php \
-		Services/Twitter/DirectMessages.php \
-		Services/Twitter/Exception.php \
-		Services/Twitter/Favorites.php \
-		Services/Twitter/Friendships.php \
-		Services/Twitter/Notifications.php \
-		Services/Twitter/Search.php \
-		Services/Twitter/Statuses.php \
-		Services/Twitter/Users.php
-TESTS=		005-services-twitter-statuses-public-timeline.phpt \
-		006-services-twitter-statuses-friends-timeline.phpt \
-		007-services-twitter-statuses-user-timeline.phpt \
-		010-services-twitter-statuses-show.phpt \
-		015-services-twitter-statuses-replies.phpt \
-		020-services-twitter-statuses-update.phpt \
-		025-services-twitter-statuses-destroy.phpt \
-		026-services-twitter-statuses-friends.phpt \
-		027-services-twitter-statuses-followers.phpt \
-		028-services-twitter-statuses-featured.phpt \
-		030-services-twitter-exception.phpt \
-		100-services-twitter-users-show.phpt \
-		200-services-twitter-direct-messages.phpt \
-		205-services-twitter-direct-messages-sent.phpt \
-		210-services-twitter-direct-messages-new.phpt \
-		215-services-twitter-direct-messages-destroy.phpt \
-		300-services-twitter-friendships-create.phpt \
-		305-services-twitter-friendships-destroy.phpt \
-		400-services-twitter-account-verify-credentials.phpt \
-		405-services-twitter-account-end-session.phpt \
-		410-services-twitter-account-archive.phpt \
-		500-services-twitter-favorites.phpt \
-		505-services-twitter-favorites-create.phpt \
-		510-services-twitter-favorites-destroy.phpt \
-		600-services-twitter-notifications-leave.phpt \
-		605-services-twitter-notifications-follow.phpt \
+FILES=		Services/Twitter.php Services/Twitter/Exception.php
+DATA=		api.rng api.xml
+TESTS=		000-statuses-public_timeline.phpt \
+		010-statuses-friends_timeline.phpt \
+		020-statuses-user_timeline.phpt \
+		030-statuses-show.phpt \
+		040-statuses-update-destroy.phpt \
+		060-statuses-friends.phpt \
+		070-statuses-followers.phpt \
+		100-users-show.phpt \
+		200-direct_messages.phpt \
+		210-direct_messages-sent.phpt \
+		220-direct_messages-new-destroy.phpt \
+		300-friendships-create-destroy.phpt \
+		310-friendships-exists.phpt \
+		400-account-verify_credentials.phpt \
+		410-account-end_session.phpt \
+		430-account-update_delivery_device.phpt \
+		440-account-rate_limit_status.phpt \
+		450-account-update_profile_colors.phpt \
+		460-account-update_profile_image.phpt \
+		470-account-update_profile_background_image.phpt \
+		480-account-update_profile.phpt \
+		500-favorites.phpt \
+		510-favorites-create-destroy.phpt \
+		600-notifications-follow-leave.phpt \
+		700-blocks-create-destroy.phpt \
+		800-help-test.phpt \
+		810-search.phpt \
+		820-trends-daily.phpt \
+		830-trends-weekly.phpt \
+		900-exceptions.phpt \
+		910-options.phpt \
+		920-utf8.phpt \
+		930-validation.phpt \
+		AllTests.php \
+		data/account/end_session.dat \
+		data/account/rate_limit_status.dat \
+		data/account/update_delivery_device.dat \
+		data/account/update_location.dat \
+		data/account/update_profile.dat \
+		data/account/update_profile_background_image.dat \
+		data/account/update_profile_colors.dat \
+		data/account/update_profile_image.dat \
+		data/account/verify_credentials.dat \
+		data/background.jpg \
+		data/blocks/create_destroy.dat \
+		data/direct_messages/destroy_new.dat \
+		data/direct_messages/direct_messages.dat \
+		data/direct_messages/sent.dat \
+		data/favorites/create.dat \
+		data/favorites/destroy.dat \
+		data/favorites/favorites.dat \
+		data/friendships/create_destroy.dat \
+		data/friendships/exists1.dat \
+		data/friendships/exists2.dat \
+		data/friendships/exists3.dat \
+		data/friendships/exists4.dat \
+		data/help/downtime_schedule.dat \
+		data/help/test.dat \
+		data/notifications/follow_leave.dat \
+		data/options.dat \
+		data/profile.png \
+		data/search/search.dat \
+		data/statuses/destroy.dat \
+		data/statuses/followers.dat \
+		data/statuses/friends.dat \
+		data/statuses/friends_timeline.dat \
+		data/statuses/public_timeline.dat \
+		data/statuses/replies.dat \
+		data/statuses/show.dat \
+		data/statuses/update.dat \
+		data/statuses/user_timeline.dat \
+		data/trends/daily.dat \
+		data/trends/weekly.dat \
+		data/users/show.dat \
+		data/utf8.dat \
+		setup.php \
 		tests-config.php.example
 
 .include <bsd.port.pre.mk>
