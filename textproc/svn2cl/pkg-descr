@@ -3,4 +3,4 @@ a classic GNU-style ChangeLog from a subversion repository log. It is made
 from several changelog-like scripts using common xslt constructs found in
 different places.
 
-WWW: http://ch.tudelft.nl/~arthur/svn2cl/
+WWW: http://arthurdejong.org/svn2cl/

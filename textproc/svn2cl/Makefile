@@ -8,7 +8,7 @@
 PORTNAME=	svn2cl
 PORTVERSION=	0.11
 CATEGORIES=	textproc
-MASTER_SITES=	http://ch.tudelft.nl/~arthur/svn2cl/
+MASTER_SITES=	http://arthurdejong.org/svn2cl/
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Subversion ChangeLog generator
