@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tikiwiki
-PORTVERSION=	2.4
+PORTVERSION=	3.1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/TikiWiki%202.x%20-Arcturus-/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/TikiWiki%203.x%20-Betelgeuse-/Tiki%203.1/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
@@ -16,7 +16,6 @@ COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 USE_PHP=	gettext pcre posix session xml zlib
 
 NO_BUILD=	YES
-USE_BZIP2=	YES
 
 do-install:
 	@-${MKDIR} ${WWWDIR}
