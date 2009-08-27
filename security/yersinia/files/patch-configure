@@ -1,6 +1,6 @@
---- ./configure.orig	Sun Jun 18 12:24:36 2006
-+++ ./configure	Fri Sep 29 15:04:21 2006
-@@ -2971,7 +2971,8 @@
+--- configure.orig	2007-01-27 04:22:30.000000000 +0900
++++ configure	2009-08-19 22:35:11.000000000 +0900
+@@ -3470,7 +3470,8 @@
  
  
  if test -n "$GCC"; then
@@ -10,7 +10,7 @@
  else
       { echo "$as_me:$LINENO: WARNING: Ouch!! Only gcc is supported..." >&5
  echo "$as_me: WARNING: Ouch!! Only gcc is supported..." >&2;}
-@@ -3817,7 +3818,7 @@
+@@ -4462,7 +4463,7 @@
            echo  $pcap_dir
            echo  $dir
            echo; echo please wipe out all unused pcap installations
@@ -19,12 +19,14 @@
         else
            pcap_dir="$dir"
         fi
-@@ -3997,62 +3998,8 @@
+@@ -4636,64 +4637,8 @@
  
+ fi
  
- 
--echo "$as_me:$LINENO: checking for a complete set of libnet headers" >&5
--echo $ECHO_N "checking for a complete set of libnet headers... $ECHO_C" >&6
+-
+-
+-{ echo "$as_me:$LINENO: checking for a complete set of libnet headers" >&5
+-echo $ECHO_N "checking for a complete set of libnet headers... $ECHO_C" >&6; }
 -
 -possible_dirs="`eval echo -n ${includedir}` \
 -	       /usr/include /usr/include/libnet \
@@ -34,13 +36,13 @@
 -possible_libnet_config_dirs="/usr /usr/local /opt"
 -
 -
--# Check whether --with-libnet-includes or --without-libnet-includes was given.
+-# Check whether --with-libnet-includes was given.
 -if test "${with_libnet_includes+set}" = set; then
--  withval="$with_libnet_includes"
--  LIBNET_DIR=$withval LIBNET_CONFIG_DIR=$withval
+-  withval=$with_libnet_includes; LIBNET_DIR=$withval LIBNET_CONFIG_DIR=$withval
 -else
 -  LIBNET_DIR=$possible_dirs LIBNET_CONFIG_DIR=$possible_libnet_config_dirs
--fi;
+-fi
+-
 -
 -libnet_dir=""
 -for dir in $LIBNET_DIR ; do
@@ -84,7 +86,7 @@
  
  if test "$LIBNET_LINK" != "-L/usr/lib" ; then
    LIBS="$LIBS $LIBNET_LINK"
-@@ -4067,7 +4014,7 @@
+@@ -4708,7 +4653,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS

@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	yersinia
-PORTVERSION=	0.7
-PORTREVISION=	2
+PORTVERSION=	0.7.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.yersinia.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ayu@commun.jp
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
@@ -26,7 +25,7 @@ USE_GNOME+=	pkgconfig gtk20
 PKGNAMESUFFIX=	-gtk
 CONFLICTS=	yersinia-[0-9]*
 .else
-CONFIGURE_ARGS+= --disable-gtk
+CONFIGURE_ARGS+=	--disable-gtk
 CONFLICTS=	yersinia-gtk-[0-9]*
 .endif
 GNU_CONFIGURE=	yes
@@ -43,7 +42,7 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${PREFIX}/sbin/
-		${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${PREFIX}/man/man8/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${MAN8PREFIX}/man/man8/
 
 .include <bsd.port.mk>
