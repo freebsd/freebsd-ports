@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozplugger
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13.0
 CATEGORIES=	www
 MASTER_SITES=	http://mozplugger.mozdev.org/files/
 
@@ -26,6 +26,7 @@ WEBPLUGINS_FILES=mozplugger.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 post-patch:
+
 	@${REINPLACE_CMD} -e 's|"/etc|"${PREFIX}/etc|g' \
 		${WRKSRC}/mozplugger.c
 

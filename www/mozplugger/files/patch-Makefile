@@ -1,5 +1,5 @@
---- Makefile.orig	2008-10-04 16:12:18.000000000 -0500
-+++ Makefile	2008-10-04 16:14:19.000000000 -0500
+--- Makefile.orig	2009-08-23 15:36:38.000000000 -0300
++++ Makefile	2009-08-23 15:49:33.000000000 -0300
 @@ -1,5 +1,5 @@
  # Where is your Xwindows located?
 -X11=/usr/X11R6
@@ -7,15 +7,16 @@
  
  #
  # For building rpms
-@@ -7,14 +7,14 @@
+@@ -7,7 +7,7 @@
  
  #
  # For installing
 -prefix=/usr
 +prefix=${PREFIX}
  
- #
- #
+ # On 64 bit arch change libprefix to lib64
+ libprefix=/lib
+@@ -18,7 +18,7 @@
  RPMDIR=/usr/src/RPM
  
  # Choose compiler
@@ -24,8 +25,12 @@
  LD=gcc
  BINFORMAT=bin
  
-@@ -70,7 +70,7 @@
- 	${MAKE} all CC=gcc XCFLAGS='-fPIC -aout' LD=gcc XLDFLAGS='-shared -aout'
+@@ -71,10 +71,10 @@
+ 	${MAKE} all CC=cc LD=ld XLDFLAGS='-expect_unresolved "*" -shared -msym -O3'
+ 
+ freebsd-aout:
+-	${MAKE} all CC=gcc XCFLAGS='-fPIC -aout' LD=gcc XLDFLAGS='-shared -aout'
++	${MAKE} all CC=${CC} XCFLAGS='-fPIC -aout' LD=gcc XLDFLAGS='-shared -aout'
  
  freebsd:
 -	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/
@@ -33,7 +38,7 @@
  
  openbsd:
  	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/
-@@ -114,7 +114,7 @@
+@@ -119,7 +119,7 @@
  	  mozplugger-controller \
  	  mozplugger-linker
  
@@ -42,23 +47,23 @@
  INCLUDES= -Inpapi/include -I$(X11)/include
  RPM_OPT_FLAGS ?= -O2
  COMMON_CFLAGS=$(RPM_OPT_FLAGS) $(INCLUDES) $(DEFINES)
-@@ -185,15 +185,15 @@
+@@ -190,15 +190,15 @@
  
  install:
  	-@mkdir -p $(root)$(prefix)/bin
--	-@mkdir -p $(root)$(prefix)/lib/mozilla/plugins
+-	-@mkdir -p $(root)$(prefix)$(libprefix)/mozilla/plugins
 -	-@mkdir -p $(root)$(prefix)/share/man/man7
 -	-@mkdir -p $(root)/etc
 +	-@mkdir -p $(root)${WEBPLUGINS_DIR}
 +	-@mkdir -p $(root)$(prefix)/man/man7
-+	-@mkdir -p $(root)$(prefix)/etc
++	-@mkdir -p $(root)${prefix}/etc
  	cp mozplugger-helper $(root)$(prefix)/bin/
  	cp mozplugger-controller $(root)$(prefix)/bin/
  	cp mozplugger-linker $(root)$(prefix)/bin/
--	cp mozplugger.so $(root)$(prefix)/lib/mozilla/plugins/
+-	cp mozplugger.so $(root)$(prefix)$(libprefix)/mozilla/plugins/
 -	cp mozpluggerrc $(root)/etc/
 -	cp mozplugger.7 $(root)$(prefix)/share/man/man7/
-+	cp mozplugger.so $(root)${WEBPLUGINS_DIR}/
++	cp mozplugger.so $(root)${WEBPLUGINS_DIR}
 +	cp mozpluggerrc $(root)$(prefix)/etc/
 +	cp mozplugger.7 $(root)$(prefix)/man/man7/
  
