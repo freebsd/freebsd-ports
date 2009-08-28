@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	mummer
-PORTVERSION=	3.20
+PORTVERSION=	3.21
 CATEGORIES=	biology
 MASTER_SITES=	SF
 DISTNAME=	MUMmer${PORTVERSION}
 
-MAINTAINER=	Anthony.Maher@uts.edu.au
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A modular system for rapid whole genome alignment
 
 USE_GMAKE=	yes
