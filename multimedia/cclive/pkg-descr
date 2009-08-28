@@ -1,6 +1,9 @@
-cclive is a command line video extraction utility similar to clive but
-with lower requirements. Its features are few and essential. cclive
-supports Youtube, GoogleVideo, Break, Liveleak, Sevenload, EvisorTV and
-Dailymotion.
+cclive is a lightweight command line video extraction tool for Youtube and
+other similar video websites. It is a rewrite of the clive software in C++
+with lower system footprint and fewer dependencies.
 
-WWW: http://code.google.com/p/cclive/
+cclive is primarily a "video download tool" but it can also be used along side
+with video player software, like "mplayer", for viewing streamed videos instead
+of the Adobe flash player.
+
+WWW: http://cclive.googlecode.com/
