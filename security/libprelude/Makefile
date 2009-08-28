@@ -14,6 +14,8 @@ COMMENT=	Framework library for Prelude NIDS
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
+BROKEN=		does not configure
+
 OPTIONS=	PERL "Include Perl bindings" off \
 		PYTHON "Include Python bindings" off
 
