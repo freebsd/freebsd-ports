@@ -17,4 +17,4 @@ it is possible to limit the amount of "damage" cvs can do if it is exploited.
 It is generally a good idea to run cvsd without any write permissions to any
 directory on the system.
 
-WWW: http://ch.tudelft.nl/~arthur/cvsd/
+WWW: http://arthurdejong.org/cvsd
