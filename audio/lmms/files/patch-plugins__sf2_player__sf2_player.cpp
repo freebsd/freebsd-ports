@@ -1,7 +1,7 @@
---- plugins/sf2_player/sf2_player.cpp.orig	2009-02-24 07:34:26.000000000 +0900
-+++ plugins/sf2_player/sf2_player.cpp	2009-04-09 05:11:15.000000000 +0900
+--- plugins/sf2_player/sf2_player.cpp.orig	2009-08-12 01:52:18.000000000 +0900
++++ plugins/sf2_player/sf2_player.cpp	2009-08-26 04:36:42.000000000 +0900
 @@ -45,6 +45,9 @@
- #undef SINGLE_SOURCE_COMPILE
+ 
  #include "embed.cpp"
  
 +#if defined(__FreeBSD__)
