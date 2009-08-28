@@ -12,7 +12,7 @@ MASTER_SITES=	http://t3.dotgnu.info/code/ LOCAL/chinsan/PECL
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Inclued gives you a Clue for PHP inclusion check
 
 USE_PHP=	yes
