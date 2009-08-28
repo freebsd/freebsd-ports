@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.169
+PORTVERSION=	4.170
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -22,12 +22,12 @@ OPTIONS=	SQL  "include SQLite interface"  on
 
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_SQL)
 USE_SQLITE=	3
 MAKE_ARGS+=	-DWITH_SQL
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not link on sparc64
