@@ -9,8 +9,7 @@ PORTNAME=	weechat
 PORTVERSION=	0.2.6.3
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://flashcode.free.fr/flashtux/weechat/ \
-		http://weechat.flashtux.org/download/
+MASTER_SITES=	http://weechat.flashtux.org/download/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A lightweight and user friendly ncurse based IRC client
