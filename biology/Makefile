@@ -65,6 +65,7 @@
     SUBDIR += p5-Bio-MAGETAB
     SUBDIR += p5-Bio-NEXUS
     SUBDIR += p5-Bio-Phylo
+    SUBDIR += p5-Bio-SCF
     SUBDIR += p5-bioperl
     SUBDIR += p5-bioperl-run
     SUBDIR += paml
