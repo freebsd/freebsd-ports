@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.10
+PORTVERSION=	0.8.11
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -18,7 +18,7 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
 OPTIONS=	DEBUG			"Enable nginx debugging" off \
-		FILE_AIO		"Enable file aio (experimental)" off \
+		FILE_AIO		"Enable file aio" off \
 		IPV6			"Enable IPv6" off \
 		GOOGLE_PERFTOOLS	"Enable google perftools module" off \
 		HTTP_MODULE		"Enable HTTP module" on \
@@ -345,9 +345,6 @@ post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
 		${WRKSRC}/conf/nginx.conf
-.if defined(WITH_FILE_AIO)
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-aio
-.endif
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
