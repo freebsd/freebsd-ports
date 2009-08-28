@@ -1,5 +1,7 @@
 bin/zaz
 share/applications/zaz.desktop
+%%NLS%%share/locale/es/LC_MESSAGES/zaz.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/zaz.mo
 share/pixmaps/zaz.xpm
 %%DATADIR%%/FreeMonoBold.ttf
 %%DATADIR%%/FreeSans.ttf

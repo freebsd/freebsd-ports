@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zaz
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -29,6 +29,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PORTDOCS=	*
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^zazdocdir =/ s|$${prefix}/doc|$${prefix}/share/doc|' \
