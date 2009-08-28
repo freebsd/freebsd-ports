@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsnes
-PORTVERSION=	0.48
+PORTVERSION=	0.50
 CATEGORIES=	emulators
 MASTER_SITES=	http://byuusan.kuro-hitsuji.net/ \
 		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
