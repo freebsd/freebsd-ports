@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Moose role for processing command line options
 
-RUN_DEPENDS=	p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose \
-		p5-Getopt-Long>=2.37:${PORTSDIR}/devel/p5-Getopt-Long \
-		p5-Getopt-Long-Descriptive>=0:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive
+RUN_DEPENDS=	p5-Getopt-Long-Descriptive>=0:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
+		p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	5.8.0+
 
@@ -33,4 +33,10 @@ MAN3=	MooseX::Getopt.3 \
 post-extract:
 	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Getopt-Long>=2.37:${PORTSDIR}/devel/p5-Getopt-Long
+.endif
+
+.include <bsd.port.post.mk>
