@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	net2ftp
-PORTVERSION=	0.97
+PORTVERSION=	0.98
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.net2ftp.com/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	avk@vl.ru
-COMMENT=	 PHP scripts to work with ftp
+COMMENT=	PHP scripts to work with ftp
 
-USE_ZIP=	 YES
+USE_ZIP=	YES
 NO_BUILD=	YES
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	 ftp mysql pcre session zlib
+USE_PHP=	ftp mysql pcre session zlib
 .endif
 #USE_DOS2UNIX=	YES
 
