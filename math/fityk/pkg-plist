@@ -21,47 +21,14 @@ include/fityk.h
 lib/libfityk.a
 lib/libfityk.la
 lib/libfityk.so
-lib/libfityk.so.1
+lib/libfityk.so.2
 lib/libxy.a
 lib/libxy.la
 lib/libxy.so
 lib/libxy.so.1
 share/applications/fityk.desktop
-%%DATADIR%%/fitykhelp.html
-%%DATADIR%%/fitykhelp_img/2theta.png
-%%DATADIR%%/fitykhelp_img/LoweMa.png
-%%DATADIR%%/fitykhelp_img/a3pearson.png
-%%DATADIR%%/fitykhelp_img/a3psvoigt.png
-%%DATADIR%%/fitykhelp_img/chi2.png
-%%DATADIR%%/fitykhelp_img/doniachs.png
-%%DATADIR%%/fitykhelp_img/emg.png
-%%DATADIR%%/fitykhelp_img/gauss_example.png
-%%DATADIR%%/fitykhelp_img/gaussian.png
-%%DATADIR%%/fitykhelp_img/gaussiana.png
-%%DATADIR%%/fitykhelp_img/lorentzian.png
-%%DATADIR%%/fitykhelp_img/lorentziana.png
-%%DATADIR%%/fitykhelp_img/modtchpv.png
-%%DATADIR%%/fitykhelp_img/note.png
-%%DATADIR%%/fitykhelp_img/pearson7.png
-%%DATADIR%%/fitykhelp_img/pearson7a.png
-%%DATADIR%%/fitykhelp_img/polynom5.png
-%%DATADIR%%/fitykhelp_img/pseudo_voigt.png
-%%DATADIR%%/fitykhelp_img/pseudo_voigta.png
-%%DATADIR%%/fitykhelp_img/sigma.png
-%%DATADIR%%/fitykhelp_img/splitgaussian.png
-%%DATADIR%%/fitykhelp_img/splitpearson7.png
-%%DATADIR%%/fitykhelp_img/sum_f.png
-%%DATADIR%%/fitykhelp_img/sum_f_x_z.png
-%%DATADIR%%/fitykhelp_img/voigt.png
-%%DATADIR%%/fitykhelp_img/voigt2.png
-%%DATADIR%%/fitykhelp_img/voigta.png
-%%DATADIR%%/fitykhelp_img/w_1_sigma.png
-%%DATADIR%%/fitykhelp_img/z_x_a.png
-%%DATADIR%%/html.css
 share/mime/packages/fityk.xml
 share/pixmaps/fityk.png
-@dirrm %%DATADIR%%/fitykhelp_img
-@dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm include/fityk
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
