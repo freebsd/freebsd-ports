@@ -1,4 +1,13 @@
 bin/lmms
+include/lmms/Controller.h
+include/lmms/ControllerConnection.h
+include/lmms/ControllerConnectionDialog.h
+include/lmms/ControllerDialog.h
+include/lmms/ControllerRackView.h
+include/lmms/ControllerView.h
+include/lmms/LfoController.h
+include/lmms/MidiController.h
+include/lmms/PeakController.h
 include/lmms/about_dialog.h
 include/lmms/aeffectx.h
 include/lmms/atomic_int.h
@@ -33,12 +42,6 @@ include/lmms/clipboard.h
 include/lmms/combobox.h
 include/lmms/combobox_model.h
 include/lmms/config_mgr.h
-include/lmms/controller.h
-include/lmms/controller_connection.h
-include/lmms/controller_connection_dialog.h
-include/lmms/controller_dialog.h
-include/lmms/controller_rack_view.h
-include/lmms/controller_view.h
 include/lmms/cpuload_widget.h
 include/lmms/custom_events.h
 include/lmms/debug.h
@@ -96,7 +99,6 @@ include/lmms/ladspa_control_view.h
 include/lmms/ladspa_manager.h
 include/lmms/lcd_spinbox.h
 include/lmms/led_checkbox.h
-include/lmms/lfo_controller.h
 include/lmms/lmms_basics.h
 include/lmms/lmms_constants.h
 include/lmms/lmms_math.h
@@ -110,7 +112,6 @@ include/lmms/midi.h
 include/lmms/midi_alsa_raw.h
 include/lmms/midi_alsa_seq.h
 include/lmms/midi_client.h
-include/lmms/midi_controller.h
 include/lmms/midi_dummy.h
 include/lmms/midi_event_processor.h
 include/lmms/midi_oss.h
@@ -129,7 +130,6 @@ include/lmms/panning.h
 include/lmms/panning_constants.h
 include/lmms/pattern.h
 include/lmms/pch.h
-include/lmms/peak_controller.h
 include/lmms/piano.h
 include/lmms/piano_roll.h
 include/lmms/pixmap_button.h
@@ -1875,8 +1875,11 @@ share/applications/lmms.desktop
 %%DATADIR%%/themes/default/plugins.png
 %%DATADIR%%/themes/default/ports.png
 %%DATADIR%%/themes/default/pr_black_key.png
+%%DATADIR%%/themes/default/pr_black_key_pressed.png
 %%DATADIR%%/themes/default/pr_white_key_big.png
+%%DATADIR%%/themes/default/pr_white_key_big_pressed.png
 %%DATADIR%%/themes/default/pr_white_key_small.png
+%%DATADIR%%/themes/default/pr_white_key_small_pressed.png
 %%DATADIR%%/themes/default/preset_file.png
 %%DATADIR%%/themes/default/project_export.png
 %%DATADIR%%/themes/default/project_file.png

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lmms
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An all-in-one sequencer, drum machine, sampler and more
@@ -41,6 +40,7 @@ QT_COMPONENTS=	corelib gui xml moc_build uic_build rcc_build \
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
 CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
+		-DWANT_CALF:BOOL=OFF \
 		-DWANT_CAPS:BOOL=OFF \
 		-DWANT_CMT:BOOL=OFF \
 		-DWANT_SWH:BOOL=OFF \
