@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icoutils
-PORTVERSION=	0.27.0
+PORTVERSION=	0.28.0
 CATEGORIES=	graphics
 MASTER_SITES=	SAVANNAH
 
@@ -16,9 +16,9 @@ COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
-USE_GETTEXT=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
