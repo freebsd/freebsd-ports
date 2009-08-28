@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcache
-DISTVERSION=	1.2.2
+DISTVERSION=	1.3.0
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${DISTVERSION}/
 
@@ -29,7 +29,7 @@ ADMINFILES=	common-en.lang.php common-zh-simplified-utf-8.lang.php \
 		edit.php edit.tpl.php footer.tpl.php header.tpl.php \
 		help-en.lang.php help-zh-simplified-utf-8.lang.php \
 		help-zh-traditional-utf-8.lang.php help.php index.php \
-		tablesort.js xcache.css xcache.php xcache.tpl.php
+		mkpassword.php tablesort.js xcache.css xcache.php xcache.tpl.php
 
 COVERAGERFILES=	common-en.lang.php common-zh-simplified-gb2312.lang.php \
 		common-zh-simplified-utf-8.lang.php common.php config.php.example \
