@@ -1,3 +1,8 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/__init__.pyo
@@ -13,6 +18,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/content.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/content.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/content.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/thrift/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/thrift/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/thrift/__init__.pyo
@@ -76,8 +84,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/xmlutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/xmlutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/xmlutil.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/test
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/test
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/thrift
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
