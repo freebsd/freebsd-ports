@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		LOCAL/beech
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	beech@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
 USE_BZIP2=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/ \
 		LOCAL/beech
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${BINVER}-${DIST_ARCH}-export
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commercial FTP daemon with a 30-day evaluation license
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	mail www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	E-mail auto-responder
 
 #-----------------------------------------------------------------------

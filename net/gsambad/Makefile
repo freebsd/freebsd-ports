@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://mange.dynalias.org/linux/${PORTNAME}/
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2 Frontend for samba daemon
 
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3

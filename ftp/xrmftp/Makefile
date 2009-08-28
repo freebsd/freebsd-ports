@@ -12,7 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www-users.mat.uni.torun.pl/~rafmet/xrmftp/
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical FTP client based on the xforms library
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms

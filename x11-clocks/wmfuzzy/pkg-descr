@@ -7,5 +7,3 @@ it's 3:27.  The granularity of the approximation can be set via
 commandline switches.
 
 WWW: http://www.manicai.net/comp/wmfuzzy
-
--Adam Weinberger <adamw@FreeBSD.org>

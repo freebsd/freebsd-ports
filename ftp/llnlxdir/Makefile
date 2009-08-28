@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.llnl.gov/pub/ia/llnlxdir/
 DISTNAME=	latest_xdir
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif FTP client with drag-and-drop file transfer
 
 PLIST_FILES=	bin/xdir lib/X11/app-defaults/XDir

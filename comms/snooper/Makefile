@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.alaskaparadise.com/freebsd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serial line protocol analyzer (need two serial interfaces)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build

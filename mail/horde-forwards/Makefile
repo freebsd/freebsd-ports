@@ -10,7 +10,7 @@ PORTVERSION=	3.1
 CATEGORIES=	mail www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	E-mail forward
 
 #-----------------------------------------------------------------------

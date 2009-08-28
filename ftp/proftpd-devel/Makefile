@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	beech@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Highly configurable ftp daemon
 
 IGNORE=		Please use ftp/proftpd

@@ -33,7 +33,7 @@ MASTER_SITES=	http://www.cherokee-project.com/download/0.99/${PORTVERSION}/ \
 		http://mirror.yandex.ru/mirrors/cherokee-project.com/0.99/\${PORTVERSION}/ \
 		http://sunsite.rediris.es/mirror/cherokee/0.99/\${PORTVERSION}/
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely fast and flexible web server
 
 CONFLICTS=	cherokee-devel-[0-9]*

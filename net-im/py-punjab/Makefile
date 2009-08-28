@@ -11,7 +11,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	http://butterfat.net/punjab/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP-polling and HTTP-binding gateway for Jabber
 
 USE_PYTHON=	2.4+

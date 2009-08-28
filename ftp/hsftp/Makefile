@@ -11,7 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://la-samhna.de/hsftp/ \
 		http://www.alaskaparadise.com/freebsd/
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP emulator that uses ssh to transport commands/data
 
 GNU_CONFIGURE=	yes

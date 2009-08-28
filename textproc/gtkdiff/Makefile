@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	textproc gnome
 MASTER_SITES=	TUCOWS
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A frontend for diff(1)
 
 USE_GNOME=	gnomehack gnomeprefix gnomelibs

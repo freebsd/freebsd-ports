@@ -14,7 +14,7 @@ MASTER_SITES=	https://signal-lost.homeip.net/files/ \
 			http://www.alaskaparadise.com/freebsd/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read information about mp3s and oggs bitstream
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

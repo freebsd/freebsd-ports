@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 WRKSRC=	${WRKDIR}/${PORTNAME}

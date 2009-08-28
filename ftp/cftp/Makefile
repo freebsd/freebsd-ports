@@ -12,7 +12,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/ \
 		ftp://sunsite.univie.ac.at/pub/nih/cftp/
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comfortable FTP, a full screen ftp client
 
 GNU_CONFIGURE=	yes

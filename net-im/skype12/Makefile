@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	NETBSD
 DISTNAME=	skype_staticQT-${PORTVERSION}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Legacy version P2P VoIP software
 
 USE_BZIP2=	yes

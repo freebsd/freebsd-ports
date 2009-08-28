@@ -12,7 +12,7 @@ CATEGORIES=	ftp kde
 MASTER_SITES=	http://www.kpage.de/download/
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE frontend to wget
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget

@@ -13,7 +13,7 @@ MASTER_SITES=	http://sourcefiles.org/Productivity_Tools/Diary/ \
 		LOCAL/beech
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+-2 journal/diary
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20 \

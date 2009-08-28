@@ -12,7 +12,7 @@ CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.alaskaparadise.com/freebsd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IP Subnet Calculator
 
 BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${.CURDIR}/../prips:build

@@ -11,7 +11,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://cs-people.bu.edu/dbera/projects/mget/
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithreaded commandline web-download manager
 
 CFLAGS+=	-DHAS_HERROR -DHAVE_GETOPT_LONG -DHAVE_INET_NTOP -DHAVE_IPV6 \

@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.skype.com/linux/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	skype_static-${DISTVERSION}-oss
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	P2P VoIP software
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \

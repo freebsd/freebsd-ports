@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	mnemosyne-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash-card tool which optimises your learning process
 
 USE_PYTHON=	2.4+

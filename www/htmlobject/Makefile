@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	SF
 DISTNAME=	lib${PORTNAME}-perl-${PORTVERSION}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML Document Object
 
 BUILD_DEPENDS=	${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \

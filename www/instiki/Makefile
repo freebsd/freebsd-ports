@@ -13,7 +13,7 @@ MASTER_SITES=	RF
 #DISTNAME=	${PORTNAME}-0.12.0
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to set up wiki clone implemented in ruby
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3

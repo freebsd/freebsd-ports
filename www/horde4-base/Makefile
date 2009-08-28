@@ -12,7 +12,7 @@ CATEGORIES=	www
 PKGNAMEPREFIX=
 PKGNAMESUFFIX=	-base
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common code-base used by Horde applications
 
 #----------------------------------------------------------------------------

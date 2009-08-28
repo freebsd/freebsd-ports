@@ -13,7 +13,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.oook.cz/bsd/distfiles/ \
 		LOCAL/beech
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eggdrop.conf creator
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
