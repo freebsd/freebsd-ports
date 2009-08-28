@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.10.4
-PORTREVISION=	2
+PORTVERSION=	0.10.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
@@ -28,7 +27,6 @@ OPTIONS=	X11 "With X11" on \
 		PNG "With PNG" on
 
 WANT_GNOME=	yes
-USE_GNOME=	gnometarget
 USE_SUBMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -101,6 +99,8 @@ LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-lpng12|-lpng|g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|etc||g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^configheadersdir/s|=.*$$|= $$(includedir)|g' \
