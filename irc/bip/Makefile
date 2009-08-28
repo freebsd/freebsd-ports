@@ -12,7 +12,7 @@ MASTER_SITES=	http://bip.t1r.net/downloads/ \
 		http://distfiles.gentoo.org/distfiles/ \
 		LOCAL/beech
 
-MAINTAINER=	chess@chessgriffin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple IRC proxy with SSL support
 
 GNU_CONFIGURE=	yes

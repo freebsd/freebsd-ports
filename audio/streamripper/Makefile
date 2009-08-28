@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		cdk-${CDK_VERSION}.tgz:cdk
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	chess@chessgriffin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \

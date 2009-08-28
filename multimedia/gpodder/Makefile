@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gpodder
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	chess@chessgriffin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
