@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Device and library agnostic graphic primitives
 
 BUILD_DEPENDS=	p5-Geometry-Primitive>=0.13:${PORTSDIR}/graphics/p5-Geometry-Primitive \

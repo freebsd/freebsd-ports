@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME manpages editor
 
 USE_GNOME=	gnomehack gnometarget libgnomeui

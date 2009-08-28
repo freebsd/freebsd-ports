@@ -12,7 +12,7 @@ CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF/vietunicode/VietFonts-Web1/Web1%20Package%20v2004
 DISTNAME=	VietFontsWeb1_ttf
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	100% Viet Unicode & Viet Phan/Pali-Sanskrit compatible
 
 USE_ZIP=	yes

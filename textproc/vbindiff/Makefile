@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.cjmweb.net/vbindiff/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b1/_beta1/}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual binary diff, visually compare binary files
 
 GNU_CONFIGURE=	yes

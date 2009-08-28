@@ -10,7 +10,7 @@ PORTVERSION=	0.2.6
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan/chinese
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast Console Chinese System which supports framebuffer device
 
 PORTSCOUT=	limit:^0\.2.[0-9]*

@@ -14,7 +14,7 @@ MASTER_SITES=	http://people.freebsd.org/~chinsan/PECL/ \
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Caches the parsed XSL stylesheet between sessions
 
 DEFAULT_PHP_VER=5

@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
 RUN_DEPENDS=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \

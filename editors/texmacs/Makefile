@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.texmacs.org/Download/ftp/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	targz old-targz
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free WYSIWYG scientific text editor
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	SF
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of writing tools in Chinese
 
 USE_AUTOTOOLS=	libtool:22

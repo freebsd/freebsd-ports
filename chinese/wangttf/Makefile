@@ -25,7 +25,7 @@ DISTFILES=	wp010-05.ttf:main wp010-08.ttf:main wp110-05.ttf:main \
 		wcl-10.ttf:another
 EXTRACT_ONLY=
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Many Chinese Big5 TrueType fonts, made by Dr. Hann-Tzong Wang
 
 NO_PACKAGE=	Package will be 216MB, set FORCE_PACKAGE if you really want to build it

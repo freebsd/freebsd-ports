@@ -12,7 +12,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Thumbnail maker for GD
 
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD

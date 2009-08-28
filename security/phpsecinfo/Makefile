@@ -10,7 +10,7 @@ PORTVERSION=	0.2.1
 CATEGORIES=	security www
 MASTER_SITES=	LOCAL/chinsan
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP environment security auditing toool
 
 USE_ZIP=	yes

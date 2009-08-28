@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Statistics
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculates a future value
 
 PERL_CONFIGURE=	yes

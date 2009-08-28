@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides a few data structures and helpful functions
 
 GNU_CONFIGURE=	yes

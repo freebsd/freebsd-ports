@@ -11,7 +11,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Slims (dynamically created) PNGs
 
 RUN_DEPENDS=	p5-Compress-Zlib>=2.003:${PORTSDIR}/archivers/p5-Compress-Zlib \

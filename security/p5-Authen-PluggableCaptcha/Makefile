@@ -12,7 +12,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A pluggable Captcha framework for Perl
 
 BUILD_DEPENDS=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \

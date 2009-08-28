@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM add-on to input various symbols with on-screen pad
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim

@@ -12,7 +12,7 @@ CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF/vietunicode/hannom/hannom%20v2005
 DISTNAME=	hannom
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNICODE Han Nom Font Set
 
 USE_ZIP=	yes

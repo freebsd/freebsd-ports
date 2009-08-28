@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple PHP/MySQL script for generating lil? URLs
 
 USE_PHP=	mysql pcre

@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${DIST_VER}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
 
 DIST_VER=	${PORTNAME}-2007-07-23

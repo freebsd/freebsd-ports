@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text-based utility for work with dictionaries in StarDict's format
 
 USE_BZIP2=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.coker.com.au/logtools/ \
   		LOCAL/chinsan/logtools/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tools to deal with CLF files (Common Log File format)
 
 GNU_CONFIGURE=	yes

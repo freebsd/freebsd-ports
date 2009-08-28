@@ -12,7 +12,7 @@ CATEGORIES=	security databases
 MASTER_SITES=	SF
 DISTNAME=	libpam-pgsql-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pam module for authenticating with PostgreSQL
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash

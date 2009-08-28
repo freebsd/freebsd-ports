@@ -12,7 +12,7 @@ CATEGORIES=	chinese x11-fonts
 MASTER_SITES?=	ftp://ftp.opendesktop.org.tw/odp/ODOFonts/OpenFonts/ \
 		LOCAL/chinsan/fonts
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ming and Kai face of OpenDesktop fonts
 
 CONFLICTS=	zh-fireflyttf-*

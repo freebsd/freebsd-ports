@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio chinese gnome
 MASTER_SITES=	http://pcman.sayya.org/gtkhirad/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hinet Radio player using GTK
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \

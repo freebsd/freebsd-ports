@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.nickg.me.uk/files/ LOCAL/chinsan/games
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical configurable talking cow
 
 GNU_CONFIGURE=	yes

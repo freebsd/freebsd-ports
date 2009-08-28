@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time graphics effect able to increase the size of small bitmaps
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

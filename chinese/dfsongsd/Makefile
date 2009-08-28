@@ -13,7 +13,7 @@ MASTER_SITES=	# empty
 DISTNAME=	DFSongSd.ttf
 EXTRACT_SUFX=
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese (HKSCS-2001 + CJK A) TrueType fonts
 
 RESTRICTED=	"No redistribution or commercial use is allowed."

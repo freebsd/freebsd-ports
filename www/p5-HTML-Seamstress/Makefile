@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML::Tree subclass for HTML templating via tree rewriting
 
 BUILD_DEPENDS=	p5-Class-Prototyped>=0:${PORTSDIR}/devel/p5-Class-Prototyped \

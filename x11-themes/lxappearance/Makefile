@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lxde/LXAppearance/LXAppearance%20${PORTVERSION}.0
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A desktop-independent theme switcher for GTK+
 
 USE_GNOME=	gtk20 intlhack

@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
 OPTIONS=	DEBUG "Compile with debugging information" off \

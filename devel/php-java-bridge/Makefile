@@ -11,7 +11,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP module wich connects the PHP object with the Java/ECMA 335 object
 
 USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:22:env

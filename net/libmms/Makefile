@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 
 USE_GNOME=	gnomehack gnometarget pkgconfig glib20

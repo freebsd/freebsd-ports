@@ -13,7 +13,7 @@ CATEGORIES=	net devel
 MASTER_SITES=	SF
 DISTNAME=	LibVNCServer-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide an easy API to write one's own vnc server
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg

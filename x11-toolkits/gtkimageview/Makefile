@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	LOCAL/chinsan http://people.freebsd.org/~chinsan/
 # http://trac.bjourne.webfactional.com/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer widget
 
 GNU_CONFIGURE=	yes

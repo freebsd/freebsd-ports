@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm gnome
 MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%20Lite%20${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Lite Session Manager
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal

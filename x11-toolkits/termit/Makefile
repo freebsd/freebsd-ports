@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GOOGLE_CODE \
 		LOCAL/chinsan/${PORTNAME}/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small terminal emulator
 
 MAKE_JOBS_SAFE=	yes
