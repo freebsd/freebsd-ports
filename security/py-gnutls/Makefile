@@ -19,6 +19,8 @@ COMMENT=	Python wrapper for the GNUTLS library
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 RUN_DEPENDS=	${PYCTYPES}
 
+BROKEN=		does not compile
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python_gnutls
