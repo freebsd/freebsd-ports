@@ -222,6 +222,7 @@
     SUBDIR += kovpn
     SUBDIR += krb4
     SUBDIR += krb5
+    SUBDIR += krb5-17
     SUBDIR += kripp
     SUBDIR += kssh
     SUBDIR += l0pht-watch
