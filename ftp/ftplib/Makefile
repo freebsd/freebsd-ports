@@ -16,7 +16,7 @@ PATCH_SITES=	http://www.nbpfaus.net/~pfau/ftplib/
 PATCHFILES=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.patch
 PATCH_DIST_STRIP=	-p3
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of routines that implement the FTP protocol
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/linux

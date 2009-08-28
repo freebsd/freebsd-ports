@@ -13,7 +13,7 @@ CATEGORIES=	ftp java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A non interactive, non graphical, batch download manager
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

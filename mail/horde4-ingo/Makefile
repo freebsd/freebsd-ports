@@ -12,7 +12,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail www
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email-filter management application
 
 #-----------------------------------------------------------------------

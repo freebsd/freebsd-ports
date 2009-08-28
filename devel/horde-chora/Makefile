@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	devel www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS web-viewer
 
 #-----------------------------------------------------------------------

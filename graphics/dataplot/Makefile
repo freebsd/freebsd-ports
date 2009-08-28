@@ -18,7 +18,7 @@ DISTFILES=	dpsrc.02_25_2008${EXTRACT_SUFX}:source \
 DIST_SUBDIR=	dataplot
 EXTRACT_ONLY=	dpsrc.02_25_2008${EXTRACT_SUFX}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \

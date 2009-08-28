@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	# Empty
 DISTFILES=	# None
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta port for the horde framework
 
 NO_BUILD=	yes

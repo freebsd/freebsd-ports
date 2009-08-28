@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://mark.tranchant.co.uk/files/
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Upload queue manager for non-permanent connections
 
 USE_GMAKE=	yes

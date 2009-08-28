@@ -12,7 +12,7 @@ CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.gizmolabs.org/~dhelder/junglemonkey/src/
 DISTNAME=	jm-${PORTVERSION}
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A distributed file sharing program for GNOME
 
 LIB_DEPENDS=	gnet.7:${PORTSDIR}/net/gnet

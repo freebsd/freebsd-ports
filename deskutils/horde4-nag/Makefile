@@ -12,7 +12,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils www
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple multiuser task list manager
 
 USE_HORDE=	base

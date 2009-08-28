@@ -12,7 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://duncanthrax.net/profxp/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/p/-pre/}-src
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FXP (server-to-server FTP) client
 
 USE_PERL5=	yes

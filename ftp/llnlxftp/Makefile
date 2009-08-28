@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.llnl.gov/pub/ia/llnlxftp/
 DISTNAME=	latest_xftp
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif FTP client
 
 PLIST_FILES=	bin/xftp lib/X11/app-defaults/XFtp
