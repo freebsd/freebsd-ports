@@ -12,7 +12,7 @@ PATCH_SITE_SUBDIR=	chinsan
 PATCHFILES=	zh-joe-2.9.8.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LATEST_LINK=	${PKGNAMEPREFIX}joe2
 

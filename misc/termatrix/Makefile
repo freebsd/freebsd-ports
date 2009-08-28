@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	LOCAL/chinsan \
 		http://lightless.org/files/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulates Matrix terminal's "green tears" effect
 
 PLIST_FILES=	bin/termatrix

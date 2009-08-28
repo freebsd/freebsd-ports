@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://rlehy.free.fr/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX equation editor
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

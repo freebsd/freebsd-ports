@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Process multiple HTTP requests in parallel without blocking
 
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \

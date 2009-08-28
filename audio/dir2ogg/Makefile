@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/0.11/ \
 		LOCAL/chinsan/dir2ogg
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line {wav,mp3,m4a} to ogg converter
 
 RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad \

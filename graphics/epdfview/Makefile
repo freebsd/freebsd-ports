@@ -12,7 +12,7 @@ CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://trac.emma-soft.com/epdfview/chrome/site/releases/ \
 		LOCAL/chinsan
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight PDF document viewer
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit

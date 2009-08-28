@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/ \
 		LOCAL/chinsan/${PORTNAME}/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator based on GTK and VTE
 
 USE_CMAKE=	yes

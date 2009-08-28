@@ -11,7 +11,7 @@ CATEGORIES=	security net
 MASTER_SITES=	http://michael.bacarella.com/projects/ident2/
 DISTNAME=	ident2-v${PORTVERSION}_FINAL
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RFC1413 identification server which also supports random replies
 
 USE_BZIP2=	yes

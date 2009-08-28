@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/ LOCAL/chinsan/games
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but challenging abstract shoot-em-up game
 
 USE_SDL=	sdl gfx

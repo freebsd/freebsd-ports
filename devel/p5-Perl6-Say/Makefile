@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 6 say (print, but no newline needed) function
 
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.07:${PORTSDIR}/lang/p5-Scalar-List-Utils \

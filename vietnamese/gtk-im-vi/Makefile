@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	vietnamese textproc gnome
 MASTER_SITES=	http://dev.gentoo.org/~pclouds/files/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK+ input methods for Vietnamese(VNI and TELEX)
 
 GNU_CONFIGURE=	YES

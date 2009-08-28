@@ -13,7 +13,7 @@ MASTER_SITES=	LOCAL/chinsan/fonts/ \
 PKGNAMEPREFIX=	zh-
 DISTFILES=	TW-Kai-95_1_3.ttf TW-Sung-95_1_3.ttf
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A combine of Kai and Sung with CNS11643 TrueType Fonts
 
 DIST_SUBDIR=	${PORTNAME}

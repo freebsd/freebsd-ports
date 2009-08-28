@@ -14,7 +14,7 @@ MASTER_SITES=	http://thgodef.nerim.net/xdialog/ \
   		LOCAL/chinsan
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes

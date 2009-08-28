@@ -12,7 +12,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 
 .include <bsd.port.mk>

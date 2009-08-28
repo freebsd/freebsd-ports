@@ -11,7 +11,7 @@ CATEGORIES=	misc perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert Taiwan Datum (TWD67/TM2, TWD97/TM2) to/from Lat and Long
 
 BUILD_DEPENDS=	p5-Geography-NationalGrid>=0:${PORTSDIR}/misc/p5-Geography-NationalGrid

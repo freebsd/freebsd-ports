@@ -12,7 +12,7 @@ MASTER_SITES=	LOCAL/chinsan \
 		http://chinsan2.twbbs.org/distfiles/
 DISTNAME=	zh-fortunetw-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very classic fortune file in Taiwan
 
 NO_BUILD=	yes

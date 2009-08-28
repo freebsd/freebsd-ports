@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve TV information from http://www.niotv.com/
 
 RUN_DEPENDS=	p5-HTML-SimpleLinkExtor>=1.19:${PORTSDIR}/www/p5-HTML-SimpleLinkExtor \

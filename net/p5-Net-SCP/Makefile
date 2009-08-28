@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to access and use scp protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/SSH.pm:${PORTSDIR}/net/p5-Net-SSH \

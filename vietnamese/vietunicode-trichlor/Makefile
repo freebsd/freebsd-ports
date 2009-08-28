@@ -12,7 +12,7 @@ CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF/vietunicode/VietFonts-TriChlor/TrichlorSet%20v2004
 DISTNAME=	VietFonts_TriChlor_ttf
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	100% Viet Unicode compatible
 
 USE_ZIP=	yes

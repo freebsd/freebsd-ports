@@ -13,6 +13,3 @@ quickstart instructions and example configuration files in
 "${PREFIX}/share/examples/pptpclient".
 
 WWW: http://pptpclient.sourceforge.net/
-
-Port currently maintained by:
-Thomas Quinot <thomas@cuivre.fr.eu.org>

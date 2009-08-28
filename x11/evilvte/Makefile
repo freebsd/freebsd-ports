@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
 		LOCAL/chinsan/${PORTNAME}/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A VTE based, super lightweight terminal emulator
 
 USE_GMAKE=	yes

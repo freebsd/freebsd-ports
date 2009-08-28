@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan
 DISTNAME=	zh-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The automatic localization for Traditional Chinese zh_TW.Big5 locale
 
 RUN_DEPENDS=	${FASTEST_CVSUP}:${PORTSDIR}/sysutils/fastest_cvsup

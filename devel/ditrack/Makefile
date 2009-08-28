@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.ditrack.org/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tracking system based on Subversion repository
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion

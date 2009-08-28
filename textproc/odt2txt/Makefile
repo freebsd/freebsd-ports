@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://stosberg.net/odt2txt/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple (and stupid) converter from OpenDocument Text to plain text
 
 USE_GMAKE=	yes

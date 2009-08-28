@@ -10,7 +10,7 @@ PORTVERSION=	0.41
 CATEGORIES=	audio
 MASTER_SITES=	http://royale.zerezo.com/${PORTNAME}/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Audio Playlist Generator
 
 LIB_DEPENDS=	uriparser:${PORTSDIR}/net/uriparser

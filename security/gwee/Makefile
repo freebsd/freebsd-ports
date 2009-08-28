@@ -10,7 +10,7 @@ PORTVERSION=	1.36
 CATEGORIES=	security www
 MASTER_SITES=	http://tigerteam.se/dl/gwee/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to exploit command execution vulnerabilities in web scripts
 
 USE_OPENSSL=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-clocks net gnome
 MASTER_SITES=	http://macslow.thepimp.net/projects/cairo-clock/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MacSlow's Cairo-Clock
 
 USE_BZIP2=	yes

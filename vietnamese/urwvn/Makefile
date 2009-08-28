@@ -12,7 +12,7 @@ CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	http://vntex.org/urwvn/download/ LOCAL/chinsan
 DISTNAME=	urwvn-${PORTVERSION}-ttf
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vietnamese version of the standard PostScript fonts from URW++
 
 USE_BZIP2=	yes

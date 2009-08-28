@@ -11,7 +11,7 @@ CATEGORIES=	misc perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create an object for a point and to transform coordinate systems
 
 PERL_CONFIGURE=	yes

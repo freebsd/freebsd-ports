@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Proc/NICOLAW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple interface to create and store data in RRD files
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/Deep.pm:${PORTSDIR}/devel/p5-Test-Deep \

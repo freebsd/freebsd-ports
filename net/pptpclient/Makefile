@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/pptp/pptp-${PORTVERSION}
 DISTNAME=	pptp-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
 
 USE_PERL5=	yes

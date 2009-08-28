@@ -13,7 +13,7 @@ MASTER_SITES=	http://pcmanx.csie.net/release/ \
 		LOCAL/chinsan
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BBS client using GTK+ 2.x
 
 USE_BZIP2=	yes

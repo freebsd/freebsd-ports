@@ -13,7 +13,7 @@ MASTER_SITES?=	http://firefly.idv.tw/apt/firefly-font/ \
 		http://www.study-area.org/apt/firefly-font/
 DISTNAME?=	fireflysung-${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefly TrueType Font is combine of two arphic sung fonts
 
 CONFLICTS=	zh-opendesktop-fonts-*
