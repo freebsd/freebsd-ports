@@ -252,6 +252,7 @@ abcm2ps                         ports/print/abcm2ps
 abcmidi                         ports/audio/abcmidi
 abcselect                       ports/audio/abcselect
 abe                             ports/games/abe
+abi-compliance-checker          ports/devel/abi-compliance-checker
 abills                          ports/net/abills
 abinit                          ports/science/abinit
 abiword                         ports/editors/abiword
@@ -1314,6 +1315,7 @@ calcoo                          ports/math/calcoo
 calctool                        ports/math/calctool
 calculix                        ports/cad/calculix
 calcurse                        ports/deskutils/calcurse
+calf                            ports/audio/calf
 calibrator                      ports/devel/calibrator
 calife                          ports/security/calife
 calife-devel                    ports/security/calife-devel
@@ -7518,6 +7520,7 @@ libmusicbrainz                  ports/audio/libmusicbrainz
 libmusicbrainz3                 ports/audio/libmusicbrainz3
 libmxp                          ports/net/libmxp
 libnaji                         ports/devel/libnaji
+libnatpmp                       ports/net/libnatpmp
 libnet                          ports/net/libnet
 libnet-devel                    ports/net/libnet-devel
 libnet10                        ports/net/libnet10
@@ -8547,6 +8550,8 @@ mediaproxy                      ports/net/mediaproxy
 mediatomb                       ports/net/mediatomb
 mediawiki                       ports/www/mediawiki
 mediawiki112                    ports/www/mediawiki112
+mediawiki113                    ports/www/mediawiki113
+mediawiki114                    ports/www/mediawiki114
 mediawiki16                     ports/www/mediawiki16
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
@@ -11003,6 +11008,7 @@ p5-Data-Flow                    ports/devel/p5-Data-Flow
 p5-Data-FormValidator           ports/textproc/p5-Data-FormValidator
 p5-Data-FormValidator-Constraints-DateTime  ports/textproc/p5-Data-FormValidator-Constraints-DateTime
 p5-Data-GUID                    ports/devel/p5-Data-GUID
+p5-Data-HashArray               ports/devel/p5-Data-HashArray
 p5-Data-HexDump                 ports/devel/p5-Data-HexDump
 p5-Data-Hexdumper               ports/devel/p5-Data-Hexdumper
 p5-Data-Hierarchy               ports/devel/p5-Data-Hierarchy
@@ -11249,6 +11255,7 @@ p5-Email-Send                   ports/mail/p5-Email-Send
 p5-Email-Sender                 ports/mail/p5-Email-Sender
 p5-Email-Simple                 ports/mail/p5-Email-Simple
 p5-Email-Simple-Creator         ports/mail/p5-Email-Simple-Creator
+p5-Email-Stuff                  ports/mail/p5-Email-Stuff
 p5-Email-Valid                  ports/mail/p5-Email-Valid
 p5-Email-Valid-Loose            ports/mail/p5-Email-Valid-Loose
 p5-Encode                       ports/converters/p5-Encode
@@ -13040,6 +13047,7 @@ p5-Test-Class                   ports/devel/p5-Test-Class
 p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
 p5-Test-Cmd                     ports/devel/p5-Test-Cmd
 p5-Test-Compile                 ports/devel/p5-Test-Compile
+p5-Test-Cukes                   ports/databases/p5-Test-Cukes
 p5-Test-Data                    ports/devel/p5-Test-Data
 p5-Test-Database                ports/databases/p5-Test-Database
 p5-Test-DatabaseRow             ports/databases/p5-Test-DatabaseRow
@@ -14444,6 +14452,7 @@ p5-data-flow                    ports/devel/p5-Data-Flow
 p5-data-formvalidator           ports/textproc/p5-Data-FormValidator
 p5-data-formvalidator-constraints-datetime  ports/textproc/p5-Data-FormValidator-Constraints-DateTime
 p5-data-guid                    ports/devel/p5-Data-GUID
+p5-data-hasharray               ports/devel/p5-Data-HashArray
 p5-data-hexdump                 ports/devel/p5-Data-HexDump
 p5-data-hexdumper               ports/devel/p5-Data-Hexdumper
 p5-data-hierarchy               ports/devel/p5-Data-Hierarchy
@@ -14779,6 +14788,7 @@ p5-email-send                   ports/mail/p5-Email-Send
 p5-email-sender                 ports/mail/p5-Email-Sender
 p5-email-simple                 ports/mail/p5-Email-Simple
 p5-email-simple-creator         ports/mail/p5-Email-Simple-Creator
+p5-email-stuff                  ports/mail/p5-Email-Stuff
 p5-email-valid                  ports/mail/p5-Email-Valid
 p5-email-valid-loose            ports/mail/p5-Email-Valid-Loose
 p5-encode                       ports/converters/p5-Encode
@@ -16622,6 +16632,7 @@ p5-test-class                   ports/devel/p5-Test-Class
 p5-test-classapi                ports/devel/p5-Test-ClassAPI
 p5-test-cmd                     ports/devel/p5-Test-Cmd
 p5-test-compile                 ports/devel/p5-Test-Compile
+p5-test-cukes                   ports/databases/p5-Test-Cukes
 p5-test-data                    ports/devel/p5-Test-Data
 p5-test-database                ports/databases/p5-Test-Database
 p5-test-databaserow             ports/databases/p5-Test-DatabaseRow
@@ -20790,8 +20801,10 @@ rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-data_objects            ports/databases/rubygem-data_objects
 rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-deeptest                ports/devel/rubygem-deeptest
+rubygem-deprecated              ports/devel/rubygem-deprecated
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-ditz                    ports/devel/rubygem-ditz
+rubygem-dnsruby                 ports/dns/rubygem-dnsruby
 rubygem-do_mysql                ports/databases/rubygem-do_mysql
 rubygem-do_postgres             ports/databases/rubygem-do_postgres
 rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
@@ -20902,7 +20915,6 @@ rubygem-rightflexiscale         ports/net/rubygem-rightflexiscale
 rubygem-rightgogrid             ports/net/rubygem-rightgogrid
 rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
 rubygem-rightslicehost          ports/net/rubygem-rightslicehost
-rubygem-rmagick                 ports/graphics/rubygem-rmagick
 rubygem-rparsec                 ports/devel/rubygem-rparsec
 rubygem-rscm                    ports/devel/rubygem-rscm
 rubygem-rspec                   ports/devel/rubygem-rspec
