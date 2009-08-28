@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090828:
+  AFFECTS: users of mail/dovecot and mail/dovecot-sieve
+  AUTHOR: yds@CoolRat.org
+
+  dovecot-sieve has been updated to a new implementation compatible with
+  dovecot 1.2.x. For details of what this means please see:
+  http://wiki.dovecot.org/LDA/Sieve/Dovecot#Migration_from_CMUSieve
+
 20090827:
   AFFECTS: users of www/mediawiki
   AUTHOR: miwi@FreeBSD.org
