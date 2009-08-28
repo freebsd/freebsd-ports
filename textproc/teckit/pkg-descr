@@ -1,0 +1,22 @@
+TECkit (Text Encoding Conversion toolkit) is a toolkit for converting data
+between 8-bit legacy encodings and Unicode. It can also be used for
+transliteration of Unicode between different scripts.
+
+TECkit uses a mapping description language (mapping byte encodings to Unicode). 
+Mapping rules can be extended by (1) the use of character sequences rather than
+single characters on either side; (2) by the addition of contextual constraints
+(environments) determining when a rule should apply; (3) and by the use of
+character classes, optional and repeatable elements, grouping and alternation
+to express more complex patterns to be matched and processed.
+
+TECkit is particularly useful with XeTeX (Unicode-aware derivate of TeX).
+
+The following binaries are provided:
+
+  teckit_compile  mapping compiler that allows binary mapping tables (.tec)
+                  to be built from TECkit description files (.map)
+  sfconv          a tool for converting Standard Format (SF) files
+  txtconv         a utility to apply TECkit mappings to plain-text files
+
+WWW: http://scripts.sil.org/TECkit
+     http://scripts.sil.org/TECkitDownloads#5b6cf869

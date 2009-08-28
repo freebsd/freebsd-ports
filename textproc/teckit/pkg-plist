@@ -1,0 +1,23 @@
+bin/sfconv
+bin/teckit_compile
+bin/txtconv
+include/teckit/TECkit_Common.h
+include/teckit/TECkit_Compiler.h
+include/teckit/TECkit_Engine.h
+lib/libTECkit.a
+lib/libTECkit.la
+lib/libTECkit.so
+lib/libTECkit.so.0
+lib/libTECkit_Compiler.a
+lib/libTECkit_Compiler.la
+lib/libTECkit_Compiler.so
+lib/libTECkit_Compiler.so.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSING.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TECkit_Binary_Format.doc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/TECkit_Language_2.1.doc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/TECkit_version_2.1.doc.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/teckit

@@ -1120,6 +1120,7 @@
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
     SUBDIR += te-aspell
+    SUBDIR += teckit
     SUBDIR += tei-guidelines-p3
     SUBDIR += tei-guidelines-p4
     SUBDIR += tei-lite
