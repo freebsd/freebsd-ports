@@ -329,8 +329,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # PERL_VERSION	- Full version of perl5 (see below for current value).
 # PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
 #				  M is major version, N is minor version, and P is
-#				  the patch level. E.g., PERL_VERSION=5.6.1 would give
-#				  a PERL_LEVEL of 500601. This can be used in comparisons
+#				  the patch level. E.g., PERL_VERSION=5.8.1 would give
+#				  a PERL_LEVEL of 500801. This can be used in comparisons
 #				  to determine if the version of perl is high enough,
 #				  whether a particular dependency is needed, etc.
 # PERL_ARCH		- Directory name of architecture dependent libraries
@@ -367,10 +367,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  new features: 'build', 'run', 'both', implying build,
 #				  runtime, and both build/run dependencies
 ##
-# USE_IMAKE		- If set, this port uses imake.  Implies USE_X_PREFIX.
+# USE_IMAKE		- If set, this port uses imake.
 # XMKMF			- Set to path of `xmkmf' if not in $PATH
 #				  Default: xmkmf -a
-# USE_X_PREFIX	- If set, this port installs in ${X11BASE}.  Implies USE_XLIB.
 # USE_XLIB		- If set, this port uses the X libraries. In the USE_LINUX
 #				  case the linux X libraries are referenced.
 # USE_DISPLAY	- If set, this ports requires a (virtual) X11 environment
@@ -551,8 +550,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # LINUXBASE		- Where Linux ports install things.
 #				  Default: /compat/linux
 # PREFIX		- Where *this* port installs its files.
-#				  Default: ${X11BASE} if USE_X_PREFIX is set,
-#				  ${LINUXBASE} if  USE_LINUX_PREFIX is set,
+#				  Default: ${LINUXBASE} if USE_LINUX_PREFIX is set,
 #				  otherwise ${LOCALBASE}
 #
 # IGNORE_PATH_CHECKS
@@ -1319,6 +1317,19 @@ WITHOUT_${W}:=	true
 
 DOS2UNIX_REGEX?=	.*
 
+# At least KDE needs TMPDIR for the package building,
+# so we're setting it to the known default value.
+.if defined(PACKAGE_BUILDING)
+TMPDIR?=	/tmp
+.endif # defined(PACKAGE_BUILDING)
+
+# Respect TMPDIR passed via make.conf or similar and pass it down
+# to configure and make.
+.if defined(TMPDIR)
+MAKE_ENV+=	TMPDIR="${TMPDIR}"
+CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
+.endif # defined(TMPDIR)
+
 
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK) && !defined(INOPTIONSMK)
@@ -1416,18 +1427,7 @@ FILESDIR?=		${MASTERDIR}/files
 SCRIPTDIR?=		${MASTERDIR}/scripts
 PKGDIR?=		${MASTERDIR}
 
-.if defined(USE_IMAKE) && !defined(USE_X_PREFIX) && !defined(USE_XORG)
-USE_X_PREFIX=	yes
-.endif
-.if defined(USE_X_PREFIX) && ${USE_X_PREFIX} == "no"
-.undef USE_X_PREFIX
-.endif
-.if defined(USE_X_PREFIX)
-USE_XLIB=		yes
-.endif
-.if defined(USE_X_PREFIX)
-PREFIX?=		${X11BASE}
-.elif defined(USE_LINUX_PREFIX)
+.if defined(USE_LINUX_PREFIX)
 PREFIX?=		${LINUXBASE}
 NO_MTREE=		yes
 .else
@@ -1472,10 +1472,8 @@ PERL_ARCH?=		mach
 
 .if   ${PERL_LEVEL} >= 501000
 PERL_PORT?=	perl5.10
-.elif ${PERL_LEVEL} >= 500800
-PERL_PORT?=	perl5.8
 .else
-PERL_PORT?=	perl5.6
+PERL_PORT?=	perl5.8
 .endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
@@ -1966,7 +1964,11 @@ USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
 .	else
 .		if ${USE_LINUX:L} == "yes"
+.			if ${OSVERSION} < 800076
 LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-fc4
+.			else
+LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-f10
+.			endif
 .		else
 IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT
 .		endif
@@ -2603,20 +2605,6 @@ PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 
 
-.if exists(${LOCALBASE}/sbin/pkg_info)
-PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
-PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
-PKG_DELETE?=	${LOCALBASE}/sbin/pkg_delete
-PKG_INFO?=		${LOCALBASE}/sbin/pkg_info
-PKG_VERSION?=		${LOCALBASE}/sbin/pkg_version
-.else
-PKG_CMD?=		/usr/sbin/pkg_create
-PKG_ADD?=		/usr/sbin/pkg_add
-PKG_DELETE?=	/usr/sbin/pkg_delete
-PKG_INFO?=		/usr/sbin/pkg_info
-PKG_VERSION?=		/usr/sbin/pkg_version
-.endif
-
 .if !defined(PKG_ARGS)
 PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} actual-package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u -t : -k 2`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
 .if !defined(NO_MTREE)
@@ -2660,7 +2648,7 @@ _PATCH_SITES_DEFAULT?=
 # Organize _{MASTER,PATCH}_SITES_{DEFAULT,[^/:]+} according to grouping
 # rules (:something)
 .for _S in ${MASTER_SITES}
-_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
+_S_TEMP=	${_S:S/^${_S:C@/?:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
