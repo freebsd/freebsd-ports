@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PHP extension for expect library
 
 LIB_DEPENDS=	expect543:${PORTSDIR}/lang/expect
