@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ircproxy
-PORTVERSION=	1.3.3c
-PORTREVISION=	1
+PORTVERSION=	1.3.4c
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jonas@night-light.net
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	An IRC proxy/bouncer daemon
 
 LIB_DEPENDS=	cares.2:${PORTSDIR}/dns/c-ares
