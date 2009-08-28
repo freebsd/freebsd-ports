@@ -22,7 +22,7 @@ CONFLICTS=	WebCalendar-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-WCURL?=		${MASTER_SITE_SUBDIR}
+WCURL?=		webcalendar
 WCDIR?=		www/${WCURL}
 PLIST=		${WRKDIR}/pkg-plist
 
