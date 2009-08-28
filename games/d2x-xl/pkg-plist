@@ -1,81 +1,15 @@
 bin/d2x-xl
+%%DATADIR%%/config/d2x-default.ini
+%%DATADIR%%/data/d2x-xl.hog
 %%DATADIR%%/data/descent.tex.eng
 %%DATADIR%%/data/descent.tex.ger
-%%DATADIR%%/data/d2x-xl.hog
 %%DATADIR%%/data/exit.ham
-%%DATADIR%%/config/d2x-default.ini
-%%DATADIR%%/profiles/default.plr
-%%DATADIR%%/profiles/default.plx
-%%DATADIR%%/textures/monsterball.tga
-%%DATADIR%%/textures/bullettime#0.tga
-%%DATADIR%%/textures/slowmotion#0.tga
-%%DATADIR%%/textures/cockpit.tga
-%%DATADIR%%/textures/cockpitb.tga
-%%DATADIR%%/textures/status.tga
-%%DATADIR%%/textures/statusb.tga
-%%DATADIR%%/textures/d2x-xl/blast.tga
-%%DATADIR%%/textures/d2x-xl/bubble.tga
-%%DATADIR%%/textures/d2x-xl/bullcase.tga
-%%DATADIR%%/textures/d2x-xl/corona.tga
-%%DATADIR%%/textures/d2x-xl/deadzone.tga
-%%DATADIR%%/textures/d2x-xl/fire.tga
-%%DATADIR%%/textures/d2x-xl/glare.tga
-%%DATADIR%%/textures/d2x-xl/halfhalo.tga
-%%DATADIR%%/textures/d2x-xl/halo.tga
-%%DATADIR%%/textures/d2x-xl/joymouse.tga
-%%DATADIR%%/textures/d2x-xl/pwupicon.tga
-%%DATADIR%%/textures/d2x-xl/rboticon.tga
-%%DATADIR%%/textures/d2x-xl/shield.tga
-%%DATADIR%%/textures/d2x-xl/smoke.tga
-%%DATADIR%%/textures/d2x-xl/sparks.tga
-%%DATADIR%%/textures/d2x-xl/thrust2d.tga
-%%DATADIR%%/textures/d2x-xl/thrust3d.tga
-%%DATADIR%%/textures/d2x-xl/smoke-hard.tga
-%%DATADIR%%/textures/d2x-xl/smoke-medium.tga
-%%DATADIR%%/textures/d2x-xl/smoke-soft.tga
-%%DATADIR%%/textures/d2x-xl/scope.tga
-%%DATADIR%%/textures/d2x-xl/aimdmg.tga
-%%DATADIR%%/textures/d2x-xl/drivedmg.tga
-%%DATADIR%%/textures/d2x-xl/gundmg.tga
-%%DATADIR%%/textures/d2x-xl/original/blast.tga
-%%DATADIR%%/textures/d2x-xl/original/bubble.tga
-%%DATADIR%%/textures/d2x-xl/original/bullcase.tga
-%%DATADIR%%/textures/d2x-xl/original/corona.tga
-%%DATADIR%%/textures/d2x-xl/original/deadzone.tga
-%%DATADIR%%/textures/d2x-xl/original/fire.tga
-%%DATADIR%%/textures/d2x-xl/original/glare.tga
-%%DATADIR%%/textures/d2x-xl/original/halfhalo.tga
-%%DATADIR%%/textures/d2x-xl/original/halo.tga
-%%DATADIR%%/textures/d2x-xl/original/joymouse.tga
-%%DATADIR%%/textures/d2x-xl/original/pwupicon.tga
-%%DATADIR%%/textures/d2x-xl/original/rboticon.tga
-%%DATADIR%%/textures/d2x-xl/original/shield.tga
-%%DATADIR%%/textures/d2x-xl/original/smoke.tga
-%%DATADIR%%/textures/d2x-xl/original/sparks.tga
-%%DATADIR%%/textures/d2x-xl/original/thrust2d.tga
-%%DATADIR%%/textures/d2x-xl/original/thrust3d.tga
-%%DATADIR%%/textures/d2x-xl/thrust2d-blue.tga
-%%DATADIR%%/textures/d2x-xl/thrust2d-red.tga
-%%DATADIR%%/textures/d2x-xl/thrust3d-blue.tga
-%%DATADIR%%/textures/d2x-xl/thrust3d-red.tga
 %%DATADIR%%/models/bullet.ase
 %%DATADIR%%/models/bullet.tga
-%%DATADIR%%/sounds2/gatling-slowdown.wav
-%%DATADIR%%/sounds2/gatling-speedup.wav
-%%DATADIR%%/sounds2/gauss-firing.wav
-%%DATADIR%%/sounds2/vulcan-firing.wav
-%%DATADIR%%/sounds2/missileflight-big.wav
-%%DATADIR%%/sounds2/missileflight-small.wav
+%%DATADIR%%/profiles/default.plr
+%%DATADIR%%/profiles/default.plx
 %%DATADIR%%/sounds2/afbr_1.wav
 %%DATADIR%%/sounds2/airbubbles.wav
-%%DATADIR%%/sounds2/highping.wav
-%%DATADIR%%/sounds2/lowping.wav
-%%DATADIR%%/sounds2/slowdown.wav
-%%DATADIR%%/sounds2/speedup.wav
-%%DATADIR%%/sounds2/lightning.wav
-%%DATADIR%%/sounds2/headlight.wav
-%%DATADIR%%/sounds2/zoom1.wav
-%%DATADIR%%/sounds2/zoom2.wav
 %%DATADIR%%/sounds2/d1/gatling-slowdown.wav
 %%DATADIR%%/sounds2/d1/gatling-speedup.wav
 %%DATADIR%%/sounds2/d1/headlight.wav
@@ -83,16 +17,69 @@ bin/d2x-xl
 %%DATADIR%%/sounds2/d1/lowping.wav
 %%DATADIR%%/sounds2/d1/missileflight-big.wav
 %%DATADIR%%/sounds2/d1/missileflight-small.wav
+%%DATADIR%%/sounds2/d1/vulcan-firing.wav
 %%DATADIR%%/sounds2/d1/zoom1.wav
 %%DATADIR%%/sounds2/d1/zoom2.wav
-%%DATADIR%%/sounds2/d1/vulcan-firing.wav
-@dirrm %%DATADIR%%/sounds2/d1
-@dirrm %%DATADIR%%/sounds2
-@dirrm %%DATADIR%%/models
+%%DATADIR%%/sounds2/gatling-slowdown.wav
+%%DATADIR%%/sounds2/gatling-speedup.wav
+%%DATADIR%%/sounds2/gauss-firing.wav
+%%DATADIR%%/sounds2/headlight.wav
+%%DATADIR%%/sounds2/highping.wav
+%%DATADIR%%/sounds2/lightning.wav
+%%DATADIR%%/sounds2/lowping.wav
+%%DATADIR%%/sounds2/missileflight-big.wav
+%%DATADIR%%/sounds2/missileflight-small.wav
+%%DATADIR%%/sounds2/slowdown.wav
+%%DATADIR%%/sounds2/speedup.wav
+%%DATADIR%%/sounds2/vulcan-firing.wav
+%%DATADIR%%/sounds2/zoom1.wav
+%%DATADIR%%/sounds2/zoom2.wav
+%%DATADIR%%/textures/bullettime#0.tga
+%%DATADIR%%/textures/cockpit.tga
+%%DATADIR%%/textures/cockpitb.tga
+%%DATADIR%%/textures/d2x-xl/aimdmg.tga
+%%DATADIR%%/textures/d2x-xl/blast-hard.tga
+%%DATADIR%%/textures/d2x-xl/blast-medium.tga
+%%DATADIR%%/textures/d2x-xl/blast-soft.tga
+%%DATADIR%%/textures/d2x-xl/blast.tga
+%%DATADIR%%/textures/d2x-xl/bubble.tga
+%%DATADIR%%/textures/d2x-xl/bullcase.tga
+%%DATADIR%%/textures/d2x-xl/corona.tga
+%%DATADIR%%/textures/d2x-xl/deadzone.tga
+%%DATADIR%%/textures/d2x-xl/drivedmg.tga
+%%DATADIR%%/textures/d2x-xl/fire.tga
+%%DATADIR%%/textures/d2x-xl/glare.tga
+%%DATADIR%%/textures/d2x-xl/gundmg.tga
+%%DATADIR%%/textures/d2x-xl/halfhalo.tga
+%%DATADIR%%/textures/d2x-xl/halo.tga
+%%DATADIR%%/textures/d2x-xl/joymouse.tga
+%%DATADIR%%/textures/d2x-xl/original/blast.tga
+%%DATADIR%%/textures/d2x-xl/pwupicon.tga
+%%DATADIR%%/textures/d2x-xl/rboticon.tga
+%%DATADIR%%/textures/d2x-xl/scope.tga
+%%DATADIR%%/textures/d2x-xl/shield.tga
+%%DATADIR%%/textures/d2x-xl/smoke-hard.tga
+%%DATADIR%%/textures/d2x-xl/smoke-medium.tga
+%%DATADIR%%/textures/d2x-xl/smoke-soft.tga
+%%DATADIR%%/textures/d2x-xl/smoke.tga
+%%DATADIR%%/textures/d2x-xl/sparks.tga
+%%DATADIR%%/textures/d2x-xl/thrust2d-blue.tga
+%%DATADIR%%/textures/d2x-xl/thrust2d-red.tga
+%%DATADIR%%/textures/d2x-xl/thrust2d.tga
+%%DATADIR%%/textures/d2x-xl/thrust3d-blue.tga
+%%DATADIR%%/textures/d2x-xl/thrust3d-red.tga
+%%DATADIR%%/textures/d2x-xl/thrust3d.tga
+%%DATADIR%%/textures/monsterball.tga
+%%DATADIR%%/textures/slowmotion#0.tga
+%%DATADIR%%/textures/status.tga
+%%DATADIR%%/textures/statusb.tga
 @dirrm %%DATADIR%%/textures/d2x-xl/original
 @dirrm %%DATADIR%%/textures/d2x-xl
 @dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%/sounds2/d1
+@dirrm %%DATADIR%%/sounds2
 @dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/models
 @dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
