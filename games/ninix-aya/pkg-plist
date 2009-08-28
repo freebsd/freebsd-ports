@@ -44,7 +44,6 @@ libexec/ninix/ninix/communicate.py
 libexec/ninix/ninix/config.py
 libexec/ninix/ninix/dll.py
 libexec/ninix/ninix/entry_db.py
-libexec/ninix/ninix/ghost.py
 libexec/ninix/ninix/home.py
 libexec/ninix/ninix/keymap.py
 libexec/ninix/ninix/kinoko.py
@@ -68,7 +67,6 @@ libexec/ninix/ninix/balloon.pyc
 libexec/ninix/ninix/communicate.pyc
 libexec/ninix/ninix/config.pyc
 libexec/ninix/ninix/dll.pyc
-libexec/ninix/ninix/ghost.pyc
 libexec/ninix/ninix/home.pyc
 libexec/ninix/ninix/keymap.pyc
 libexec/ninix/ninix/kinoko.pyc
