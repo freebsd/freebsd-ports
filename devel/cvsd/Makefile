@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	cvsd
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.16
 CATEGORIES=	devel
-MASTER_SITES=	http://ch.tudelft.nl/~arthur/cvsd/
+MASTER_SITES=	http://arthurdejong.org/cvsd/ \
+		http://wiftp.com/
 
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	CVS pserver daemon
@@ -25,7 +26,7 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 
 MAN5=		cvsd.conf.5
 MAN8=		cvsd.8 cvsd-buginfo.8 cvsd-buildroot.8 cvsd-passwd.8
-PORTDOCS=	README
+PORTDOCS=	FAQ NEWS README
 PLIST_FILES=	etc/cvsd/cvsd.conf.sample sbin/cvsd sbin/cvsd-buginfo \
 		sbin/cvsd-buildroot sbin/cvsd-passwd
 PLIST_DIRS=	etc/cvsd
@@ -46,7 +47,9 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
