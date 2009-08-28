@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.45
-PORTREVISION=	3
+PORTVERSION=	3.50
 CATEGORIES=	graphics print
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
@@ -21,7 +20,7 @@ OPTIONS=	IMAGEMAGICK "Enable magick++ interface" on \
 		MING "Enable swf interface" on \
 		PLOTUTILS "Enable libplot interface" on
 
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_GHOSTSCRIPT=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -29,6 +28,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		pstoedit.1
 
+CFLAGS+=	-DHAVE_LIBGD
 CPPFLAGS=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
