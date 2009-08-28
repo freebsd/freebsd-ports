@@ -15,14 +15,3 @@
  
  	addrlen = sizeof (his_addr);
  	if (getpeername(0, (struct sockaddr *)&his_addr, &addrlen) < 0) {
-@@ -2312,6 +2318,10 @@
- 		if ((length = krb_mk_safe((u_char *)&cksum, out_buf, sizeof(cksum),
- 					  &kdata.session,&ctrl_addr, &his_addr)) == -1) {
- 			secure_error("ADAT: krb_mk_safe failed");
-+			return(0);
-+		}
-+		if (length >= (FTP_BUFSIZ - sizeof("ADAT=")) / 4 * 3) {
-+			secure_error("ADAT: reply too long");
- 			return(0);
- 		}
- 		if (length >= (FTP_BUFSIZ - sizeof("ADAT=")) / 4 * 3) {
