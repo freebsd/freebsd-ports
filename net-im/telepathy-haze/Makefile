@@ -6,8 +6,7 @@
 #    $MCom: ports/net-im/telepathy-haze/Makefile,v 1.3 2008/03/02 19:50:45 marcus Exp $
 
 PORTNAME=	haze
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-haze/
 PKGNAMEPREFIX=	telepathy-
