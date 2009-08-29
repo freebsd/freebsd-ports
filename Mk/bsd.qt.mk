@@ -101,7 +101,7 @@ _QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \
 			dbus designer doc help help-tools gui iconengines imageformats \
 			inputmethods linguist l10n makeqpf moc network opengl \
-			pixeltool porting  phonon phonon-gst qdbusviewer \
+			pixeltool porting phonon phonon-gst qdbusviewer qdoc3 \
 			qmake qt3support qtconfig qtestlib qvfb rcc script scripttools \
 			sql svg uic uic3 webkit xml xmlpatterns xmlpatterns-tool
 
@@ -136,6 +136,7 @@ phonon_DEPENDS=		multimedia/qt4-phonon
 phonon-gst_DEPENDS=	multimedia/qt4-phonon-gst
 porting_DEPENDS=	devel/qt4-porting
 qdbusviewer_DEPENDS=	devel/qt4-qdbusviewer
+qdoc3_DEPENDS=		devel/qt4-qdoc3
 qmake_DEPENDS=		devel/qmake4
 qt3support_DEPENDS=	devel/qt4-qt3support
 qtconfig_DEPENDS=	misc/qt4-qtconfig
