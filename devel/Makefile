@@ -177,6 +177,7 @@
     SUBDIR += clint
     SUBDIR += clisp-hyperspec
     SUBDIR += cmake
+    SUBDIR += cmake-gui
     SUBDIR += cmunge
     SUBDIR += cobf
     SUBDIR += cocktail
