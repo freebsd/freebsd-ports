@@ -13,7 +13,7 @@ PORTNAME=	gstreamer
 PORTVERSION=	1.0.7
 PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.diracvideo.org/download/%SUBDIR%/
+MASTER_SITES=	http://diracvideo.org/download/schroedinger/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 .if defined(_BUILDING_GSTREAMER_PLUGIN)
 PKGNAMESUFFIX=	-schroedinger
