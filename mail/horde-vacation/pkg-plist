@@ -3,6 +3,7 @@
 %%HORDIR%%/files/empty.btree.bin
 %%HORDIR%%/files/empty.empty.bin
 %%HORDIR%%/files/empty.gdbm.bin
+%%HORDIR%%/files/empty.gdbmb.bin
 %%HORDIR%%/files/empty.hash.bin
 %%HORDIR%%/files/empty.hash3.bin
 %%HORDIR%%/files/empty.hash4.bin
@@ -13,8 +14,10 @@
 %%HORDIR%%/lib/AliasDriver/none.php
 %%HORDIR%%/lib/AliasDriver.php
 %%HORDIR%%/lib/Block/summary.php
+%%HORDIR%%/lib/Driver/customsql.php
 %%HORDIR%%/lib/Driver/forwards.php
 %%HORDIR%%/lib/Driver/ldap.php
+%%HORDIR%%/lib/Driver/plesk.php
 %%HORDIR%%/lib/Driver/qmail.php
 %%HORDIR%%/lib/Driver/sql.php
 %%HORDIR%%/lib/Driver.php
@@ -44,6 +47,7 @@
 %%HORDIR%%/locale/ro_RO/LC_MESSAGES/vacation.mo
 %%HORDIR%%/locale/sl_SI/LC_MESSAGES/vacation.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/tr_TR/LC_MESSAGES/vacation.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/vacation.mo
 %%HORDIR%%/main.php
 %%HORDIR%%/po/.htaccess
@@ -67,6 +71,7 @@
 %%HORDIR%%/po/ro_RO.po
 %%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/tr_TR.po
 %%HORDIR%%/po/vacation.pot
 %%HORDIR%%/po/zh_TW.po
 %%HORDIR%%/scripts/.htaccess
@@ -122,6 +127,8 @@
 @dirrm %%HORDIR%%/locale/sl_SI
 @dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/tr_TR
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/zh_TW
 @dirrm %%HORDIR%%/locale
