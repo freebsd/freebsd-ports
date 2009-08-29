@@ -31,6 +31,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+BROKEN=		checksum mismatch
+
 do-install:
 	@${MKDIR} ${PREFIX}/lib/dict
 	@${INSTALL_DATA} ${WRKDIR}/*.index ${PREFIX}/lib/dict
