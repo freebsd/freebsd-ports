@@ -7,18 +7,22 @@
 
 PORTNAME=	txt2tags
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-DOCS=		ChangeLog README TODO doc/userguide.pdf
+PORTDOCS=	ChangeLog README TODO userguide.pdf
 SAMPLE_DIRS=	css img module
+
+post-patch:
+	@${MV} ${WRKSRC}/doc/userguide.pdf ${WRKSRC}/
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/txt2tags ${PREFIX}/bin
@@ -31,7 +35,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/extras/* ${EXAMPLESDIR}/extras
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

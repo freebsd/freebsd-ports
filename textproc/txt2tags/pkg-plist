@@ -1,10 +1,4 @@
-@comment $FreeBSD$
 bin/txt2tags
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/userguide.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/css/color.css
 %%EXAMPLESDIR%%/css/color.html
 %%EXAMPLESDIR%%/css/modern.css
