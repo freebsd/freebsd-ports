@@ -1,9 +1,10 @@
 bin/gscan2pdf
-bin/scanadf.pl
-bin/scanimage.pl
+bin/scanadf-perl
+bin/scanimage-perl
 %%SITE_PERL%%/Gscan2pdf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf/.packlist
 share/applications/gscan2pdf.desktop
+share/pixmaps/gscan2pdf.svg
 %%DATADIR%%/gscan2pdf.svg
 %%DATADIR%%/pdf.svg
 %%DATADIR%%/scanner.svg
@@ -22,6 +23,7 @@ share/applications/gscan2pdf.desktop
 %%NLS%%share/locale/fa/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/gscan2pdf.mo
+%%NLS%%share/locale/he/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gscan2pdf.mo
