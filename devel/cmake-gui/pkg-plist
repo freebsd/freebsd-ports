@@ -1,0 +1,7 @@
+bin/cmake-gui
+share/applications/CMake.desktop
+share/mime/packages/cmakecache.xml
+share/pixmaps/CMakeSetup.png
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/applications
