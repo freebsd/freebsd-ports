@@ -8,7 +8,9 @@
 PORTNAME=	simpleirc
 PORTVERSION=	1.0
 CATEGORIES=	irc
-MASTER_SITES=	http://code.suckless.org/dl/tools/
+MASTER_SITES=	http://dl.suckless.org/tools/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dhn
 DISTNAME=	sic-${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
