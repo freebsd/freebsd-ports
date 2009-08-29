@@ -1,0 +1,7 @@
+Qt is a C++ toolkit for application development.  It lets application
+developers target all major operating systems with a single application
+source code.
+
+qdoc3 is the tool used to generate the Qt reference documentation.
+
+WWW: http://www.trolltech.com/products/qt/index.html
