@@ -2576,6 +2576,7 @@
     SUBDIR += qt4-moc
     SUBDIR += qt4-porting
     SUBDIR += qt4-qdbusviewer
+    SUBDIR += qt4-qdoc3
     SUBDIR += qt4-qt3support
     SUBDIR += qt4-qtestlib
     SUBDIR += qt4-qvfb
