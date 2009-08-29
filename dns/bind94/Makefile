@@ -36,10 +36,17 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 CONFLICTS=	bind9*-9.[356].* bind9-sdb-* host-*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
+		LINKS "Create conf file symlinks in ${PREFIX}" on \
 		REPLACE_BASE "Replace base BIND with this version" off \
 		LARGE_FILE "64-bit file support" off \
 		SIGCHASE "dig/host/nslookup will do DNSSEC validation" off \
-		IPV6 "IPv6 Support (autodetected by default)" off
+		IPV6 "IPv6 Support (autodetected by default)" off \
+		DLZ_POSTGRESQL "DLZ Postgres driver" off \
+		DLZ_MYSQL "DLZ MySQL driver (single-threaded BIND)" off \
+		DLZ_BDB "DLZ BDB driver" off \
+		DLZ_LDAP "DLZ LDAP driver" off \
+		DLZ_FILESYSTEM "DLZ filesystem driver" off \
+		DLZ_STUB "DLZ stub driver" off
 
 # Just in case
 USE_OPENSSL=	yes
@@ -60,6 +67,12 @@ CONFIGURE_ARGS+=	--disable-openssl-version-check
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
+.if !defined(WITHOUT_LINKS)
+PLIST_SUB+=	LINKS=""
+.else
+PLIST_SUB+=	LINKS="@comment "
+.endif
+
 .if defined(WITH_LARGE_FILE)
 CONFIGURE_ARGS+=	--enable-largefile
 .endif
@@ -72,6 +85,36 @@ CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
+.if defined(WITH_DLZ_POSTGRESQL)
+CONFIGURE_ARGS+=	--with-dlz-postgres=yes
+USE_PGSQL=		yes
+.endif
+
+.if defined(WITH_DLZ_MYSQL)
+CONFIGURE_ARGS+=	--with-dlz-mysql=yes
+USE_MYSQL=		yes
+WITHOUT_THREADS=	yes
+.endif
+
+.if defined(WITH_DLZ_BDB)
+CONFIGURE_ARGS+=	--with-dlz-bdb=yes
+USE_BDB=		yes
+.endif
+
+.if defined(WITH_DLZ_LDAP)
+CONFIGURE_ARGS+=	--with-dlz-ldap=yes
+USE_OPENLDAP=		yes
+.endif
+
+.if defined(WITH_DLZ_FILESYSTEM)
+CONFIGURE_ARGS+=	--with-dlz-filesystem=yes
+.endif
+
+.if defined(WITH_DLZ_STUB)
+CONFIGURE_ARGS+=	--with-dlz-stub=yes
+.endif
+
+# Has to be after the DLZ_MYSQL option
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 .else
@@ -108,7 +151,7 @@ EXTRA_PATCHES+=	${GEOIP_PATCH}
 CONFLICTS+=	bind94-geoip-9.4.*
 .endif
 
-PLIST_SUB=	BIND_DESTETC="${BIND_DESTETC}"
+PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 
 MAN1=	dig.1 host.1 nslookup.1 nsupdate.1
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
@@ -178,6 +221,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/README ${DOCSDIR}/
+.endif
+.if !defined(WITHOUT_LINKS)
+	${MKDIR} /var/named${PREFIX}/etc
+.for DIR in ${PREFIX}/etc /var/named${PREFIX}/etc
+.for FILE in named.conf rndc.key
+	${LN} -sf /etc/namedb/${FILE} ${DIR}/${FILE}
+.endfor
+.endfor
 .endif
 
 	@${CAT} ${PKGMESSAGE}
