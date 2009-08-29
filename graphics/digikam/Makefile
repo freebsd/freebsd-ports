@@ -8,7 +8,7 @@
 PORTNAME=	digikam
 DISTVERSION=	0.9.6
 CATEGORIES=	graphics kde
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An advanced digital photo management application for KDE
