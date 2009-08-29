@@ -9165,6 +9165,7 @@ mupen64plus-rice                ports/emulators/mupen64plus-rice
 mupen64plus-rsp                 ports/emulators/mupen64plus-rsp
 mupen64plus-sdlaudio            ports/emulators/mupen64plus-sdlaudio
 mupen64plus-sdlinput            ports/emulators/mupen64plus-sdlinput
+murmur                          ports/audio/murmur
 murrine-configurator            ports/x11-themes/murrine-configurator
 musca                           ports/x11-wm/musca
 muscle                          ports/biology/muscle
@@ -12999,6 +13000,7 @@ p5-Template-GD                  ports/www/p5-Template-GD
 p5-Template-Iterator-AlzaboWrapperCursor  ports/www/p5-Template-Iterator-AlzaboWrapperCursor
 p5-Template-Magic               ports/textproc/p5-Template-Magic
 p5-Template-Multilingual        ports/www/p5-Template-Multilingual
+p5-Template-Plugin-Autoformat   ports/textproc/p5-Template-Plugin-Autoformat
 p5-Template-Plugin-Class        ports/www/p5-Template-Plugin-Class
 p5-Template-Plugin-Clickable    ports/www/p5-Template-Plugin-Clickable
 p5-Template-Plugin-Clickable-Email  ports/www/p5-Template-Plugin-Clickable-Email
@@ -13550,6 +13552,7 @@ p5-XML-Parser-EasyTree          ports/textproc/p5-XML-Parser-EasyTree
 p5-XML-Parser-Lite-Tree         ports/textproc/p5-XML-Parser-Lite-Tree
 p5-XML-Parser-Style-EasyTree    ports/textproc/p5-XML-Parser-Style-EasyTree
 p5-XML-Parser-Style-Elemental   ports/textproc/p5-XML-Parser-Style-Elemental
+p5-XML-Pastor                   ports/devel/p5-XML-Pastor
 p5-XML-Quote                    ports/textproc/p5-XML-Quote
 p5-XML-RAI                      ports/textproc/p5-XML-RAI
 p5-XML-RPC                      ports/net/p5-XML-RPC
@@ -16584,6 +16587,7 @@ p5-template-gd                  ports/www/p5-Template-GD
 p5-template-iterator-alzabowrappercursor  ports/www/p5-Template-Iterator-AlzaboWrapperCursor
 p5-template-magic               ports/textproc/p5-Template-Magic
 p5-template-multilingual        ports/www/p5-Template-Multilingual
+p5-template-plugin-autoformat   ports/textproc/p5-Template-Plugin-Autoformat
 p5-template-plugin-class        ports/www/p5-Template-Plugin-Class
 p5-template-plugin-clickable    ports/www/p5-Template-Plugin-Clickable
 p5-template-plugin-clickable-email  ports/www/p5-Template-Plugin-Clickable-Email
@@ -17147,6 +17151,7 @@ p5-xml-parser-easytree          ports/textproc/p5-XML-Parser-EasyTree
 p5-xml-parser-lite-tree         ports/textproc/p5-XML-Parser-Lite-Tree
 p5-xml-parser-style-easytree    ports/textproc/p5-XML-Parser-Style-EasyTree
 p5-xml-parser-style-elemental   ports/textproc/p5-XML-Parser-Style-Elemental
+p5-xml-pastor                   ports/devel/p5-XML-Pastor
 p5-xml-quote                    ports/textproc/p5-XML-Quote
 p5-xml-rai                      ports/textproc/p5-XML-RAI
 p5-xml-regexp                   ports/textproc/p5-XML-RegExp
