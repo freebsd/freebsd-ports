@@ -397,6 +397,7 @@ bin/tkabber
 %%DATADIR%%/tclxmpp/tclxml/xmltcl.tcl
 %%DATADIR%%/tclxmpp/xmpp/annotations.tcl
 %%DATADIR%%/tclxmpp/xmpp/auth.tcl
+%%DATADIR%%/tclxmpp/xmpp/blocking.tcl
 %%DATADIR%%/tclxmpp/xmpp/bob.tcl
 %%DATADIR%%/tclxmpp/xmpp/bookmarks.tcl
 %%DATADIR%%/tclxmpp/xmpp/component.tcl
@@ -414,6 +415,7 @@ bin/tkabber
 %%DATADIR%%/tclxmpp/xmpp/pconnect.tcl
 %%DATADIR%%/tclxmpp/xmpp/pep.tcl
 %%DATADIR%%/tclxmpp/xmpp/pkgIndex.tcl
+%%DATADIR%%/tclxmpp/xmpp/ping.tcl
 %%DATADIR%%/tclxmpp/xmpp/poll.tcl
 %%DATADIR%%/tclxmpp/xmpp/private.tcl
 %%DATADIR%%/tclxmpp/xmpp/pubsub.tcl
