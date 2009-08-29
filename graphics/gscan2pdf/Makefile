@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.27
-PORTREVISION=	3
+PORTVERSION=	0.9.28
 CATEGORIES=	graphics
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Produce PDF from scanned documents
 
 RUN_DEPENDS=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
@@ -34,7 +33,7 @@ RUN_DEPENDS=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 USE_GMAKE=	yes
 USE_GNOME=	librsvg2
 PERL_CONFIGURE=	yes
-MAN1=		${PORTNAME}.1 scanadf.pl.1 scanimage.pl.1
+MAN1=		${PORTNAME}.1 scanadf-perl.1 scanimage-perl.1
 PORT_VERBS=	${PORTNAME} Gscan2pdf
 
 .if !defined(WITHOUT_NLS)
