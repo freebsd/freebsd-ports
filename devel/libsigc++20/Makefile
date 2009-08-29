@@ -19,6 +19,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 LATEST_LINK=	libsigc++20
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
