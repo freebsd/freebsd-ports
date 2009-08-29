@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 CONFLICTS=	bind9*-9.[456].* bind9-sdb-* host-*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
+		LINKS "Create conf file symlinks in ${PREFIX}" on \
 		REPLACE_BASE "Replace base BIND with this version" off \
 		THREADS	"Compile with thread support (NOT RECOMMENDED!)" off
 
@@ -49,6 +50,12 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--disable-openssl-version-check
 CONFIGURE_ARGS+=	--without-openssl
+.endif
+
+.if !defined(WITHOUT_LINKS)
+PLIST_SUB+=	LINKS=""
+.else
+PLIST_SUB+=	LINKS="@comment "
 .endif
 
 # ISC staff has informed me that for 9.3.x, threads are always a bad idea.
@@ -69,7 +76,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 BIND_DESTETC=	${PREFIX}/etc
 .endif
 
-PLIST_SUB=	BIND_DESTETC="${BIND_DESTETC}"
+PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 
 MAN1=	dig.1 host.1 nslookup.1 nsupdate.1
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
@@ -138,6 +145,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/README ${DOCSDIR}/
+.endif
+.if !defined(WITHOUT_LINKS)
+	${MKDIR} /var/named${PREFIX}/etc
+.for DIR in ${PREFIX}/etc /var/named${PREFIX}/etc
+.for FILE in named.conf rndc.key
+	${LN} -sf /etc/namedb/${FILE} ${DIR}/${FILE}
+.endfor
+.endfor
 .endif
 
 	@${CAT} ${PKGMESSAGE}

@@ -3,6 +3,8 @@ bin/host
 bin/isc-config.sh
 bin/nslookup
 bin/nsupdate
+%%LINKS%%etc/named.conf
+%%LINKS%%etc/rndc.key
 include/bind9/check.h
 include/bind9/getaddresses.h
 include/bind9/version.h
@@ -242,6 +244,10 @@ sbin/rndc-confgen
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/arm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%LINKS%%@unexec rm -f /var/named/%D/etc/named.conf
+%%LINKS%%@unexec rm -f /var/named/%D/etc/rndc.key
+%%LINKS%%@unexec rm -rf /var/named/%D
+%%LINKS%%@unexec rmdir /var/named/usr 2>/dev/null || true
 @unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
 @dirrm include/bind9
 @dirrm include/dns
