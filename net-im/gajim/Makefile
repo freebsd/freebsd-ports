@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.12.3
-PORTREVISION=	2
+PORTVERSION=	0.12.5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/ \
 		http://ports.internal.vlink.ru/distfiles/

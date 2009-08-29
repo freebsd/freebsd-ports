@@ -35,6 +35,7 @@ lib/gajim/trayicon.so
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
 share/applications/gajim.desktop
 share/pixmaps/gajim.png
+share/pixmaps/gajim.svg
 share/pixmaps/gajim_about.png
 %%DATADIR%%/data/activities/default/doing_chores/buying_groceries.png
 %%DATADIR%%/data/activities/default/doing_chores/category.png
@@ -614,6 +615,22 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/aim/32x32/xa.png
 %%DATADIR%%/data/iconsets/transports/aim/48x48/offline.png
 %%DATADIR%%/data/iconsets/transports/aim/48x48/online.png
+%%DATADIR%%/data/iconsets/transports/facebook/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/facebook/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/facebook/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/facebook/16x16/not_in_roster.png
+%%DATADIR%%/data/iconsets/transports/facebook/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/facebook/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/facebook/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/facebook/32x32/away.png
+%%DATADIR%%/data/iconsets/transports/facebook/32x32/chat.png
+%%DATADIR%%/data/iconsets/transports/facebook/32x32/dnd.png
+%%DATADIR%%/data/iconsets/transports/facebook/32x32/not_in_roster.png
+%%DATADIR%%/data/iconsets/transports/facebook/32x32/offline.png
+%%DATADIR%%/data/iconsets/transports/facebook/32x32/online.png
+%%DATADIR%%/data/iconsets/transports/facebook/32x32/xa.png
+%%DATADIR%%/data/iconsets/transports/facebook/48x48/offline.png
+%%DATADIR%%/data/iconsets/transports/facebook/48x48/online.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/away.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/chat.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/dnd.png
@@ -842,6 +859,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/agents/conference.png
 %%DATADIR%%/data/pixmaps/agents/disc.png
 %%DATADIR%%/data/pixmaps/agents/error.png
+%%DATADIR%%/data/pixmaps/agents/facebook.png
 %%DATADIR%%/data/pixmaps/agents/gadu-gadu.png
 %%DATADIR%%/data/pixmaps/agents/http-ws.png
 %%DATADIR%%/data/pixmaps/agents/icq.png
@@ -872,6 +890,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/events/unsubscribed.png
 %%DATADIR%%/data/pixmaps/gajim.ico
 %%DATADIR%%/data/pixmaps/gajim.png
+%%DATADIR%%/data/pixmaps/gajim.svg
 %%DATADIR%%/data/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/kbd_input.png
 %%DATADIR%%/data/pixmaps/muc_separator.png
@@ -1296,6 +1315,10 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/iconsets/transports/aim/32x32
 @dirrm %%DATADIR%%/data/iconsets/transports/aim/48x48
 @dirrm %%DATADIR%%/data/iconsets/transports/aim
+@dirrm %%DATADIR%%/data/iconsets/transports/facebook/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/facebook/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/facebook/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/facebook
 @dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16
 @dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32
 @dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/48x48
