@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_CHAP
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	security www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
