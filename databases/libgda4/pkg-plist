@@ -77,31 +77,31 @@ include/libgda-%%VERSION%%/libgda/handlers/gda-handler-string.h
 include/libgda-%%VERSION%%/libgda/handlers/gda-handler-time.h
 include/libgda-%%VERSION%%/libgda/handlers/gda-handler-type.h
 include/libgda-%%VERSION%%/libgda/libgda.h
+include/libgda-%%VERSION%%/libgda/providers-support/gda-data-select-priv.h
+include/libgda-%%VERSION%%/libgda/providers-support/gda-pstmt.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-sql-parser-enum-types.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-sql-parser.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-sql-statement.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-compound.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-decl.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-delete.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-insert.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-parts.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-pspec.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-select.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-trans.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-unknown.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-update.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct-util.h
+include/libgda-%%VERSION%%/libgda/sql-parser/gda-statement-struct.h
 include/libgda-%%VERSION%%/libgda/sqlite/gda-sqlite-provider.h
-include/libgda-%%VERSION%%/providers-support/gda-data-select-priv.h
-include/libgda-%%VERSION%%/providers-support/gda-pstmt.h
-include/libgda-%%VERSION%%/sql-parser/gda-sql-parser.h
-include/libgda-%%VERSION%%/sql-parser/gda-sql-parser-enum-types.h
-include/libgda-%%VERSION%%/sql-parser/gda-sql-statement.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-compound.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-decl.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-delete.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-insert.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-parts.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-pspec.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-select.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-trans.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-unknown.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-update.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-util.h
-include/libgda-%%VERSION%%/sql-parser/gda-statement-struct.h
-include/libgda-%%VERSION%%/virtual/gda-vconnection-data-model.h
-include/libgda-%%VERSION%%/virtual/gda-vconnection-hub.h
-include/libgda-%%VERSION%%/virtual/gda-virtual-connection.h
-include/libgda-%%VERSION%%/virtual/gda-virtual-provider.h
-include/libgda-%%VERSION%%/virtual/gda-vprovider-data-model.h
-include/libgda-%%VERSION%%/virtual/gda-vprovider-hub.h
-include/libgda-%%VERSION%%/virtual/libgda-virtual.h
+include/libgda-%%VERSION%%/libgda/virtual/gda-vconnection-data-model.h
+include/libgda-%%VERSION%%/libgda/virtual/gda-vconnection-hub.h
+include/libgda-%%VERSION%%/libgda/virtual/gda-virtual-connection.h
+include/libgda-%%VERSION%%/libgda/virtual/gda-virtual-provider.h
+include/libgda-%%VERSION%%/libgda/virtual/gda-vprovider-data-model.h
+include/libgda-%%VERSION%%/libgda/virtual/gda-vprovider-hub.h
+include/libgda-%%VERSION%%/libgda/virtual/libgda-virtual.h
 lib/libgda-%%VERSION%%.a
 lib/libgda-%%VERSION%%.la
 lib/libgda-%%VERSION%%.so
@@ -198,12 +198,12 @@ share/locale/zh_TW/LC_MESSAGES/libgda-%%VERSION%%.mo
 @dirrm share/libgda-%%VERSION%%/
 @dirrm lib/libgda-%%VERSION%%/providers
 @dirrm lib/libgda-%%VERSION%%
-@dirrm include/libgda-%%VERSION%%/virtual
-@dirrm include/libgda-%%VERSION%%/sql-parser/
-@dirrm include/libgda-%%VERSION%%/providers-support
-@dirrm include/libgda-%%VERSION%%/libgda/sqlite/
+@dirrm include/libgda-%%VERSION%%/libgda/virtual
+@dirrm include/libgda-%%VERSION%%/libgda/sqlite
+@dirrm include/libgda-%%VERSION%%/libgda/sql-parser
+@dirrm include/libgda-%%VERSION%%/libgda/providers-support
 @dirrm include/libgda-%%VERSION%%/libgda/handlers
-@dirrm include/libgda-%%VERSION%%/libgda-xslt/
+@dirrm include/libgda-%%VERSION%%/libgda-xslt
 @dirrm include/libgda-%%VERSION%%/libgda-report
 @dirrm include/libgda-%%VERSION%%/libgda
 @dirrm include/libgda-%%VERSION%%
