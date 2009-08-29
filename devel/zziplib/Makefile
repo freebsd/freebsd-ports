@@ -7,6 +7,7 @@
 
 PORTNAME=	zziplib
 PORTVERSION=	0.13.58
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}13/${PORTVERSION}
 
@@ -26,7 +27,7 @@ MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open
 		zzip_dir_alloc_ext_io.3 zzip_dir_close.3 zzip_dir_fdopen.3 \
 		zzip_dir_fdopen_ext_io.3 zzip_dir_free.3 zzip_dir_open.3 \
 		zzip_dir_open_ext_io.3 zzip_dir_read.3 zzip_dir_real.3 zzip_dir_stat.3 \
-		zzip_dirfd.3 zzip_dirhandle.3 zzip_disk_close.3 zzip_disk_entry_fopen.3 \
+		zzip_dirfd.3 zzip_dirhandle.3 zzip_disk_buffer.3 zzip_disk_close.3 zzip_disk_entry_fopen.3 \
 		zzip_disk_entry_strdup_comment.3 zzip_disk_entry_strdup_name.3 \
 		zzip_disk_entry_to_data.3 zzip_disk_entry_to_file_header.3 \
 		zzip_disk_fclose.3 zzip_disk_feof.3 zzip_disk_findfile.3 \
