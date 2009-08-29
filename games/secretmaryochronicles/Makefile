@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	secretmaryochronicles
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	games
 MASTER_SITES=	SF/smclone/Secret%20Maryo%20Chronicles/${PORTVERSION}
 DISTNAME=	smc-${PORTVERSION}
