@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blogd
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
