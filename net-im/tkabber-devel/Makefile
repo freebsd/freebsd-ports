@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.11.1.a.20090410
-PORTREVISION=	1
+PORTVERSION=	0.11.1.a.20090817
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -28,6 +27,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 USE_TCL_RUN=	85+
 USE_TK_RUN=	85+
+
+DESKTOP_ENTRIES=	"${PORTNAME}" \
+		"${COMMENT}" \
+		"" \
+		"tkabber" \
+		"Network;InstantMessaging;" \
+		false
 
 SUBDIRS=	emoticons ifacetk mclistbox msgs pixmaps plugins sounds \
 		tclxmpp trans
