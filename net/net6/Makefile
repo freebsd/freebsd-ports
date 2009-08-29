@@ -18,6 +18,8 @@ COMMENT=	Network access framework for IPv4/IPv6
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		gnutls.40:${PORTSDIR}/security/gnutls
 
+BROKEN=		does not build
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
