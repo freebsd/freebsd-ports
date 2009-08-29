@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	net6
-PORTVERSION=	1.3.9
-PORTREVISION=	1
+PORTVERSION=	1.3.10
 CATEGORIES=	net devel
 MASTER_SITES=	http://releases.0x539.de/net6/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -18,11 +17,9 @@ COMMENT=	Network access framework for IPv4/IPv6
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		gnutls.40:${PORTSDIR}/security/gnutls
 
-BROKEN=		does not build
-
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USE_AUTOTOOLS=	autoconf:262
+USE_GNOME=	gnomehack pkgconfig
 MAKE_JOBS_SAFE=	yes
 
 .if !defined(WITHOUT_NLS)
