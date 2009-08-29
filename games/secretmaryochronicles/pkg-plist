@@ -223,6 +223,8 @@ bin/smc
 %%DATADIR%%/pixmaps/blocks/brick/2_1.settings
 %%DATADIR%%/pixmaps/blocks/brick/2_2.png
 %%DATADIR%%/pixmaps/blocks/brick/2_2.settings
+%%DATADIR%%/pixmaps/blocks/cloud/1.png
+%%DATADIR%%/pixmaps/blocks/cloud/1.settings
 %%DATADIR%%/pixmaps/blocks/extra/blue_x.png
 %%DATADIR%%/pixmaps/blocks/extra/blue_x.settings
 %%DATADIR%%/pixmaps/blocks/extra/corded.png
@@ -311,8 +313,12 @@ bin/smc
 %%DATADIR%%/pixmaps/blocks/pipe/connection/plastic_1/red/up.settings
 %%DATADIR%%/pixmaps/blocks/sand/1.png
 %%DATADIR%%/pixmaps/blocks/sand/1.settings
+%%DATADIR%%/pixmaps/blocks/sand/2.png
+%%DATADIR%%/pixmaps/blocks/sand/2.settings
 %%DATADIR%%/pixmaps/blocks/screw/1.png
 %%DATADIR%%/pixmaps/blocks/screw/1.settings
+%%DATADIR%%/pixmaps/blocks/slime/1.png
+%%DATADIR%%/pixmaps/blocks/slime/1.settings
 %%DATADIR%%/pixmaps/blocks/stone/1.png
 %%DATADIR%%/pixmaps/blocks/stone/1.settings
 %%DATADIR%%/pixmaps/blocks/stone/2.png
@@ -550,6 +556,24 @@ bin/smc
 %%DATADIR%%/pixmaps/enemy/spika/grey.settings
 %%DATADIR%%/pixmaps/enemy/spika/orange.png
 %%DATADIR%%/pixmaps/enemy/spika/orange.settings
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/turn.png
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/turn.settings
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_1.png
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_1.settings
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_2.png
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_2.settings
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_3.png
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_3.settings
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_4.png
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_4.settings
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_5.png
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_5.settings
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_6.png
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_6.settings
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_7.png
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_7.settings
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_8.png
+%%DATADIR%%/pixmaps/enemy/spikeball/grey/walk_8.settings
 %%DATADIR%%/pixmaps/enemy/static/blocks/desert/1.png
 %%DATADIR%%/pixmaps/enemy/static/blocks/desert/1.settings
 %%DATADIR%%/pixmaps/enemy/static/blocks/spike_1/1_grey.png
@@ -560,6 +584,7 @@ bin/smc
 %%DATADIR%%/pixmaps/enemy/static/blocks/spike_1/2_grey.settings
 %%DATADIR%%/pixmaps/enemy/static/metal_1/1.png
 %%DATADIR%%/pixmaps/enemy/static/metal_1/1.settings
+%%DATADIR%%/pixmaps/enemy/static/metal_1/1_up.settings
 %%DATADIR%%/pixmaps/enemy/static/saw/default.png
 %%DATADIR%%/pixmaps/enemy/static/saw/default.settings
 %%DATADIR%%/pixmaps/enemy/static/saw/face_1.png
@@ -1799,6 +1824,9 @@ bin/smc
 %%DATADIR%%/pixmaps/signs/default_1/1_ending_big.settings
 %%DATADIR%%/pixmaps/signs/default_1/1_ending_big_left.settings
 %%DATADIR%%/pixmaps/signs/default_1/1_ending_left.settings
+%%DATADIR%%/pixmaps/signs/default_1/1_ending_left_up.settings
+%%DATADIR%%/pixmaps/signs/default_1/1_ending_right_up.png
+%%DATADIR%%/pixmaps/signs/default_1/1_ending_right_up.settings
 %%DATADIR%%/pixmaps/windows/castle/1.png
 %%DATADIR%%/pixmaps/windows/castle/1.settings
 %%DATADIR%%/pixmaps/windows/castle/2.png
@@ -1958,8 +1986,8 @@ bin/smc
 %%DATADIR%%/sounds/audio_on.ogg
 %%DATADIR%%/sounds/babble/long_1.ogg
 %%DATADIR%%/sounds/babble/long_1.txt
-%%DATADIR%%/sounds/death_box.ogg
 %%DATADIR%%/sounds/death_box.txt
+%%DATADIR%%/sounds/death_box.wav
 %%DATADIR%%/sounds/editor/enter.ogg
 %%DATADIR%%/sounds/editor/enter.txt
 %%DATADIR%%/sounds/editor/leave.ogg
@@ -2024,10 +2052,10 @@ bin/smc
 %%DATADIR%%/sounds/item/goldpiece_1.txt
 %%DATADIR%%/sounds/item/goldpiece_red.txt
 %%DATADIR%%/sounds/item/goldpiece_red.wav
-%%DATADIR%%/sounds/item/ice_kill.ogg
 %%DATADIR%%/sounds/item/ice_kill.txt
-%%DATADIR%%/sounds/item/iceball.ogg
+%%DATADIR%%/sounds/item/ice_kill.wav
 %%DATADIR%%/sounds/item/iceball.txt
+%%DATADIR%%/sounds/item/iceball.wav
 %%DATADIR%%/sounds/item/live_up.ogg
 %%DATADIR%%/sounds/item/live_up.txt
 %%DATADIR%%/sounds/item/live_up_2.ogg
@@ -2036,8 +2064,8 @@ bin/smc
 %%DATADIR%%/sounds/item/moon.txt
 %%DATADIR%%/sounds/item/mushroom.ogg
 %%DATADIR%%/sounds/item/mushroom.txt
-%%DATADIR%%/sounds/item/mushroom_blue.ogg
 %%DATADIR%%/sounds/item/mushroom_blue.txt
+%%DATADIR%%/sounds/item/mushroom_blue.wav
 %%DATADIR%%/sounds/item/mushroom_ghost.ogg
 %%DATADIR%%/sounds/item/mushroom_ghost.txt
 %%DATADIR%%/sounds/item/star_kill.ogg
@@ -2091,6 +2119,8 @@ bin/smc
 %%DATADIR%%/translations/de/LC_MESSAGES/Secret Maryo Chronicles.po
 %%DATADIR%%/translations/el/LC_MESSAGES/Secret Maryo Chronicles.mo
 %%DATADIR%%/translations/el/LC_MESSAGES/Secret Maryo Chronicles.po
+%%DATADIR%%/translations/es/LC_MESSAGES/Secret Maryo Chronicles.mo
+%%DATADIR%%/translations/es/LC_MESSAGES/Secret Maryo Chronicles.po
 %%DATADIR%%/translations/fr/LC_MESSAGES/Secret Maryo Chronicles.mo
 %%DATADIR%%/translations/fr/LC_MESSAGES/Secret Maryo Chronicles.po
 %%DATADIR%%/translations/pl/LC_MESSAGES/Secret Maryo Chronicles.mo
@@ -2134,6 +2164,8 @@ bin/smc
 @dirrm %%DATADIR%%/translations/pl
 @dirrm %%DATADIR%%/translations/fr/LC_MESSAGES
 @dirrm %%DATADIR%%/translations/fr
+@dirrm %%DATADIR%%/translations/es/LC_MESSAGES
+@dirrm %%DATADIR%%/translations/es
 @dirrm %%DATADIR%%/translations/el/LC_MESSAGES
 @dirrm %%DATADIR%%/translations/el
 @dirrm %%DATADIR%%/translations/de/LC_MESSAGES
@@ -2327,6 +2359,8 @@ bin/smc
 @dirrm %%DATADIR%%/pixmaps/enemy/static/blocks/desert
 @dirrm %%DATADIR%%/pixmaps/enemy/static/blocks
 @dirrm %%DATADIR%%/pixmaps/enemy/static
+@dirrm %%DATADIR%%/pixmaps/enemy/spikeball/grey
+@dirrm %%DATADIR%%/pixmaps/enemy/spikeball
 @dirrm %%DATADIR%%/pixmaps/enemy/spika
 @dirrm %%DATADIR%%/pixmaps/enemy/rokko
 @dirrm %%DATADIR%%/pixmaps/enemy/krush
@@ -2356,6 +2390,7 @@ bin/smc
 @dirrm %%DATADIR%%/pixmaps/blocks/wood
 @dirrm %%DATADIR%%/pixmaps/blocks/toy
 @dirrm %%DATADIR%%/pixmaps/blocks/stone
+@dirrm %%DATADIR%%/pixmaps/blocks/slime
 @dirrm %%DATADIR%%/pixmaps/blocks/screw
 @dirrm %%DATADIR%%/pixmaps/blocks/sand
 @dirrm %%DATADIR%%/pixmaps/blocks/pipe/connection/plastic_1/red
@@ -2370,6 +2405,7 @@ bin/smc
 @dirrm %%DATADIR%%/pixmaps/blocks/metal
 @dirrm %%DATADIR%%/pixmaps/blocks/ice
 @dirrm %%DATADIR%%/pixmaps/blocks/extra
+@dirrm %%DATADIR%%/pixmaps/blocks/cloud
 @dirrm %%DATADIR%%/pixmaps/blocks/brick
 @dirrm %%DATADIR%%/pixmaps/blocks
 @dirrm %%DATADIR%%/pixmaps/animation/particles
