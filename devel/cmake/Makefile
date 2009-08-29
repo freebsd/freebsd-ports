@@ -37,8 +37,14 @@ MAN1=		ccmake.1 \
 		ctest.1
 
 post-patch:
-	@${GREP} -rl '/usr/X11R6' ${WRKSRC}/Modules ${WRKSRC}/Tests | \
-		${XARGS} ${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'
+	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
+		${FIND} ${WRKSRC}/Tests -name "CMakeLists.txt" -print0 ) | \
+		${XARGS} -0 -n 100 ${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g; \
+			s,/usr/X11R6,${LOCALBASE},g'
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/Source/cmLocalGenerator.cxx \
+		${WRKSRC}/Source/CPack/cmCPackGenerator.cxx \
+		${WRKSRC}/bootstrap
 	@${REINPLACE_CMD} -e 's,/opt/kde4,${LOCALBASE}/kde4,g' \
 		${WRKSRC}/Modules/FindKDE4.cmake
 
