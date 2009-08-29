@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_MINVER}.${OPERA_REL}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 #MASTER_SITES=	http://snapshot.opera.com/${MASTER_SITES_VER_PATH}/ \
@@ -52,6 +53,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 USE_BZIP2=	yes
 USE_QT_VER=	3
 
+MAN1=		${PORTNAME}.1
+
 NO_BUILD=	yes
 
 OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on
@@ -70,6 +73,10 @@ OPERA_TYPE=	6
 OPERA_LIB=	shared
 .endif
 
+.if ${OSVERSION} >= 800105
+RUN_DEPENDS+=	compat7x-${ARCH}>=0:${PORTSDIR}/misc/compat7x
+.endif
+
 .if !defined(WITHOUT_ASPELL)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .endif
@@ -84,6 +91,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${PATCHDIR}/operapluginwrapper ${DATADIR}/bin
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/usr/share/man/man1/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 	@${CAT} ${PKGMESSAGE}
 
 # maintainer
