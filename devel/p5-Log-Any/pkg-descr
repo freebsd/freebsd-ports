@@ -1,0 +1,5 @@
+Log::Any allows CPAN modules to safely and efficiently log messages,
+while letting the application choose (or decline to choose) a logging
+mechanism such as Log::Dispatch or Log::Log4perl.
+
+WWW: http://search.cpan.org/dist/Log-Any/
