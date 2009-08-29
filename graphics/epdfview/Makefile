@@ -10,9 +10,9 @@ PORTVERSION=	0.1.7
 PORTREVISION=	3
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://trac.emma-soft.com/epdfview/chrome/site/releases/ \
-		LOCAL/chinsan
+		http://mirror.slitaz.org/sources/packages/e/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A lightweight PDF document viewer
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
