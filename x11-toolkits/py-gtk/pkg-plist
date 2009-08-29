@@ -47,7 +47,6 @@ include/pygtk/pygtk.h
 %%PYTHON_SITELIBDIR%%/pygtk.py
 %%PYTHON_SITELIBDIR%%/pygtk.pyc
 %%PYTHON_SITELIBDIR%%/pygtk.pyo
-%%PORTDOCS%%%%DOCSDIR%%/MAPPING
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl/cone.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl/dots.py
@@ -128,7 +127,6 @@ share/pygtk/1.2/defs/libglade.defs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/glade
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2
 @dirrm include/pygtk

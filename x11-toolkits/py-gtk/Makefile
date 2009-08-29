@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	0.6.11
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	GNOME
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,8 +30,8 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 
+PORTDOCS=	MAPPING
 EG_SRC_DIR=	${WRKSRC}/examples
-EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
 
 CONFLICTS=	py*-gtk-2* py*-gobject-[0-9]*
 
@@ -40,15 +40,15 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/py-gtk
-	${INSTALL_DATA} ${WRKSRC}/MAPPING ${PREFIX}/share/doc/py-gtk
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/MAPPING ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EG_DST_DIR}
-	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xvf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
-	${FIND} ${EG_DST_DIR} -type d -print | ${XARGS} ${CHMOD} 0555
-	${FIND} ${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
+	${MKDIR} ${EXAMPLESDIR}
+	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EXAMPLESDIR} -xvf -
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${EXAMPLESDIR}
+	${FIND} ${EXAMPLESDIR} -type d -print | ${XARGS} ${CHMOD} 0555
+	${FIND} ${EXAMPLESDIR} -type f -print | ${XARGS} ${CHMOD} 0444
 .endif
 
 .include <bsd.port.mk>
