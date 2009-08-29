@@ -1,11 +1,14 @@
 %%HORDIR%%/config/.htaccess
 %%HORDIR%%/config/backends.php.dist
 %%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/hooks.php.dist
 %%HORDIR%%/index.php
 %%HORDIR%%/lib/.htaccess
 %%HORDIR%%/lib/Driver/adsi.php
 %%HORDIR%%/lib/Driver/composite.php
 %%HORDIR%%/lib/Driver/expect.php
+%%HORDIR%%/lib/Driver/expectpecl.php
+%%HORDIR%%/lib/Driver/http.php
 %%HORDIR%%/lib/Driver/kolab.php
 %%HORDIR%%/lib/Driver/ldap.php
 %%HORDIR%%/lib/Driver/pine.php
@@ -15,6 +18,7 @@
 %%HORDIR%%/lib/Driver/servuftp.php
 %%HORDIR%%/lib/Driver/smbldap.php
 %%HORDIR%%/lib/Driver/smbpasswd.php
+%%HORDIR%%/lib/Driver/soap.php
 %%HORDIR%%/lib/Driver/sql.php
 %%HORDIR%%/lib/Driver/vmailmgr.php
 %%HORDIR%%/lib/Driver/vpopmail.php
@@ -31,6 +35,7 @@
 %%HORDIR%%/locale/de_DE/help.xml
 %%HORDIR%%/locale/en_US/help.xml
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/es_ES/help.xml
 %%HORDIR%%/locale/et_EE/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/fa_IR/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/fa_IR/help.xml
@@ -56,6 +61,7 @@
 %%HORDIR%%/locale/sk_SK/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/sl_SI/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/tr_TR/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/zh_CN/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/passwd.mo
 %%HORDIR%%/main.php
@@ -89,6 +95,7 @@
 %%HORDIR%%/po/sk_SK.po
 %%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/tr_TR.po
 %%HORDIR%%/po/zh_CN.po
 %%HORDIR%%/po/zh_TW.po
 %%HORDIR%%/scripts/.htaccess
@@ -100,6 +107,10 @@
 %%HORDIR%%/test.php
 %%HORDIR%%/themes/graphics/favicon.ico
 %%HORDIR%%/themes/graphics/passwd.png
+%%HORDIR%%/themes/screen.css
+%%HORDIR%%/themes/silver/graphics/favicon.ico
+%%HORDIR%%/themes/silver/graphics/passwd.png
+%%HORDIR%%/themes/silver/themed_graphics
 @dirrmtry %%HORDIR%%/config
 @dirrm %%HORDIR%%/lib/Driver
 @dirrm %%HORDIR%%/lib
@@ -158,6 +169,8 @@
 @dirrm %%HORDIR%%/locale/sl_SI
 @dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/tr_TR
 @dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/zh_CN
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
@@ -168,6 +181,8 @@
 @dirrm %%HORDIR%%/templates/main
 @dirrm %%HORDIR%%/templates
 @dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes/silver/graphics
+@dirrm %%HORDIR%%/themes/silver
 @dirrm %%HORDIR%%/themes
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
