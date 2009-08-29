@@ -11,10 +11,10 @@ PORTVERSION=	2.3.1
 PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://thgodef.nerim.net/xdialog/ \
-  		LOCAL/chinsan
+		http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes
