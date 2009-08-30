@@ -18,6 +18,8 @@ COMMENT=	IIIMF xcin language engine, a traditional Chinese input method
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	iiimd:${PORTSDIR}/textproc/iiimf-server
 
+BROKEN=		does not build
+
 USE_XORG=	x11 xproto
 WRKSRC=		${WRKDIR}/iiimf-xcin
 USE_BZIP2=	yes
@@ -43,10 +45,4 @@ post-patch:
 pre-configure:
 	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I acfiles
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=	does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
