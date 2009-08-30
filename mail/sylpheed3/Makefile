@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=--disable-gtkspell
 .endif
 
 .if defined(WITH_ONIGURUMA)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libonig.a:${PORTSDIR}/devel/oniguruma
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libonig.a:${PORTSDIR}/devel/oniguruma5
 CONFIGURE_ARGS+=--enable-oniguruma
 .else
 CONFIGURE_ARGS+=--disable-oniguruma
