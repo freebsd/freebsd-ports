@@ -15,6 +15,7 @@ MAINTAINER=	proler@gmail.com
 COMMENT=	Powerful file search
 
 USE_BZIP2=	yes
+WANT_PERL=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	SEARCHDIR=${SEARCHDIR}
 NO_BUILD=	yes

@@ -37,6 +37,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--without-libtoolfix
+WANT_PERL=	yes
 
 OPTIONS=	PTHREADS "Enable pthreads support" off \
 		IPV6 "Enable IPv6 support" on \
