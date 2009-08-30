@@ -1,7 +1,7 @@
---- Makefile.orig	2009-01-04 01:11:33.000000000 +0800
-+++ Makefile	2009-01-04 01:13:51.000000000 +0800
-@@ -1,22 +1,16 @@
- # Makefile for Fonteditfs.
+--- Makefile.orig	2003-09-20 12:17:34.000000000 -0300
++++ Makefile	2009-08-29 14:56:21.000000000 -0300
+@@ -2,12 +2,7 @@
+ # - TODO: MAKE NEATER ONE 
  # This makefile should work under most POSIX OSes (at least FreeBSD)
  
 -BINDIR = /usr/local/bin
@@ -11,12 +11,11 @@
 -CFLAGS = -O2 -pipe -Wall
 -
 +all: fnteditfs
- fnteditfs: fnteditfs.o font.o
- 	gcc -o fnteditfs fnteditfs.o font.o -lcurses
+ fnteditfs: fnteditfs.o font.o stack.o
+ 	gcc -o fnteditfs fnteditfs.o font.o stack.o -lcurses
  	strip fnteditfs
- 
--fnteditfs.o: fnteditfs.c font.h
- font.o:	font.c font.h
+@@ -17,8 +12,8 @@
+ stack.o: stack.c stack.h
  
  install: fnteditfs fnteditfs.1
 -	cp fnteditfs $(BINDIR)
