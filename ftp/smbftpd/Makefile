@@ -24,10 +24,10 @@ HAS_CONFIGURE=	yes
 MAKE_ENV=	OSTYPE=FreeBSD
 CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 
-.include <bsd.port.pre.mk>
-
 USE_PERL5=	yes
 USE_RC_SUBR=	smbftpd.sh
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
