@@ -1013,31 +1013,17 @@
 %%LIB32DIR%%/webmin/virtual-server/wizard-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/wizard.cgi
 %%LIB32DIR%%/webmin/virtual-server/writelogs.pl
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.73
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.72
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.71
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.70
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.69
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.68
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.67
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.66
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.65
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.64
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.63
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.62
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.61
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.60
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.59
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.58
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.57
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.56
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.54
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.53
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.73
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.72
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.71
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.70
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.69
@@ -1052,7 +1038,6 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.60
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.59
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.58
-@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.57
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.56
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.55
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.54
