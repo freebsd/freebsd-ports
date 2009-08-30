@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-SVN-Notify>=2.70:${PORTSDIR}/devel/p5-SVN-Notify \
 		p5-YAML>=0.62:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PERL_MODBUILD=	yes
+
 OPTIONS=	CONFIG "Enable YAML syntax for post-commit hook" Off \
 		SSH "Enable SSH for remote working copy update" Off \
 		RSYNC "Enable rsync for remote working copy update" Off
@@ -36,8 +38,6 @@ BUILD_DEPENDS+=	p5-Net-SSH>=0.08:${PORTSDIR}/net/p5-Net-SSH
 .if defined(WITH_RSYNC)
 BUILD_DEPENDS+=	p5-File-Rsync>=0.42:${PORTSDIR}/net/p5-File-Rsync
 .endif
-
-PERL_MODBUILD=	yes
 
 MAN3=		SVN::Notify::Mirror.3 SVN::Notify::Mirror::ConfigData.3 \
 		SVN::Notify::Mirror::Rsync.3 SVN::Notify::Mirror::SSH.3
