@@ -1639,6 +1639,7 @@ clutter-gtk                     ports/graphics/clutter-gtk
 cm-super                        ports/print/cm-super
 cmail                           ports/mail/cmail
 cmake                           ports/devel/cmake
+cmake-gui                       ports/devel/cmake-gui
 cmatrix                         ports/misc/cmatrix
 cmd5checkpw                     ports/security/cmd5checkpw
 cmdftp                          ports/ftp/cmdftp
@@ -5557,6 +5558,7 @@ io                              ports/lang/io
 iodine                          ports/net/iodine
 iog                             ports/net-mgmt/iog
 iograph                         ports/sysutils/iograph
+iolib                           ports/biology/iolib
 ion                             ports/x11-wm/ion
 ion-2                           ports/x11-wm/ion-2
 ioquake3                        ports/games/ioquake3
@@ -6934,6 +6936,7 @@ kqemu-kmod-devel                ports/emulators/kqemu-kmod-devel
 kradview                        ports/graphics/kradview
 krb4                            ports/security/krb4
 krb5                            ports/security/krb5
+krb5-17                         ports/security/krb5-17
 krdesktop                       ports/net/krdesktop
 krecipes                        ports/misc/krecipes
 krefty                          ports/deskutils/krefty
@@ -10361,6 +10364,7 @@ p5-Bio-Graphics                 ports/biology/p5-Bio-Graphics
 p5-Bio-MAGETAB                  ports/biology/p5-Bio-MAGETAB
 p5-Bio-NEXUS                    ports/biology/p5-Bio-NEXUS
 p5-Bio-Phylo                    ports/biology/p5-Bio-Phylo
+p5-Bio-SCF                      ports/biology/p5-Bio-SCF
 p5-Bit-ShiftReg                 ports/math/p5-Bit-ShiftReg
 p5-Bit-Vector                   ports/math/p5-Bit-Vector
 p5-Bit-Vector-Minimal           ports/math/p5-Bit-Vector-Minimal
@@ -13877,6 +13881,7 @@ p5-bio-graphics                 ports/biology/p5-Bio-Graphics
 p5-bio-magetab                  ports/biology/p5-Bio-MAGETAB
 p5-bio-nexus                    ports/biology/p5-Bio-NEXUS
 p5-bio-phylo                    ports/biology/p5-Bio-Phylo
+p5-bio-scf                      ports/biology/p5-Bio-SCF
 p5-bioperl                      ports/biology/p5-bioperl
 p5-bioperl-run                  ports/biology/p5-bioperl-run
 p5-bit-shiftreg                 ports/math/p5-Bit-ShiftReg
@@ -19998,6 +20003,7 @@ qt4-phonon-gst                  ports/multimedia/qt4-phonon-gst
 qt4-pixeltool                   ports/graphics/qt4-pixeltool
 qt4-porting                     ports/devel/qt4-porting
 qt4-qdbusviewer                 ports/devel/qt4-qdbusviewer
+qt4-qdoc3                       ports/devel/qt4-qdoc3
 qt4-qt3support                  ports/devel/qt4-qt3support
 qt4-qtconfig                    ports/misc/qt4-qtconfig
 qt4-qtdemo                      ports/misc/qt4-qtdemo
@@ -22199,6 +22205,7 @@ teamspeak_server                ports/audio/teamspeak_server
 teapop                          ports/mail/teapop
 teapop-devel                    ports/mail/teapop-devel
 teapot                          ports/deskutils/teapot
+teckit                          ports/textproc/teckit
 tecnoballz                      ports/games/tecnoballz
 teco                            ports/editors/teco
 ted                             ports/editors/ted
