@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	bip
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	irc
 MASTER_SITES=	http://bip.t1r.net/downloads/ \
 		http://distfiles.gentoo.org/distfiles/ \
 		LOCAL/beech
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A simple IRC proxy with SSL support
 
 GNU_CONFIGURE=	yes
