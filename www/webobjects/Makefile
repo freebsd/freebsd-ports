@@ -26,6 +26,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	wotaskd.sh JavaMonitor.sh
 USE_JAVA=	1.4+
+USE_PERL5_BUILD=yes
 
 .include <bsd.port.pre.mk>
 .include "${MASTERDIR}/Makefile.plist"
@@ -48,8 +49,6 @@ SUB_FILES+=	pkg-message pkg-install pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-
-USE_PERL5_BUILD=yes
 
 EXTRACT_AFTER_ARGS=| ${TAR} -xpf -
 COPYTREE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
