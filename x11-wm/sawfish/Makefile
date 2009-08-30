@@ -8,6 +8,7 @@
 
 PORTNAME=	sawfish
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/sawmill/${PORTNAME}/${PORTVERSION}
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x1
 GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
-USE_XORG=	x11
+USE_XORG=	ice sm x11 xft xinerama xrandr
 USE_GMAKE=	yes
 USE_GNOME=	pango gtk20 glib20
 USE_BZIP2=	yes
