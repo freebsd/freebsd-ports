@@ -20,6 +20,8 @@ BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
+USE_PERL5_BUILD=yes
+
 OPTIONS=	AO2 "Variant of letter 'a'" off \
 		DV1 "Variant of cyrillic letters 'de' and 've'" off \
 		GE1 "Variant of cyrillic letter 'ge'" off \
@@ -30,7 +32,6 @@ OPTIONS=	AO2 "Variant of letter 'a'" off \
 
 .include <bsd.port.pre.mk>
 
-USE_PERL5_BUILD=yes
 ALL_TARGET=	pcf
 FONTDIR=	lib/X11/fonts/${PORTNAME}
 PLIST_SUB+=	FONTDIR=${FONTDIR}
