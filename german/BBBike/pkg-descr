@@ -4,6 +4,24 @@ BBBike is now ported to 92 other cities around the world - thanks to
 the OpenStreetMap  project. For more information see the BBBike @ World 
 homepage http://bbbike.elsif.de/
 
+------------------------------------------------------------------------
+
+BBBike is an information system for cyclists in Berlin and 
+Brandenburg (Germany). It has the following features:
+
+* Displays a map with streets, railways, rivers, parks, altitude, and 
+  other features 
+
+* Finds and shows routes between two points
+
+* Route-finder can be customized to match the cyclist's preferences: 
+  fastest/nicest route, take wind directions and hills into account, etc.)
+
+* Bike power calculator 
+
+* Automatically fetches the current Berlin weather data
+
+------------------------------------------------------------------------
 
 Mit BBBike koennen Fahrrad-Routen in Berlin und Umgebung automatisch
 oder manuell erstellt werden.
