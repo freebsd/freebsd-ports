@@ -45,6 +45,10 @@ WRKSRC=		${WRKDIR}/gcin-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 700000
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_ANTHY)
 BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 .endif
