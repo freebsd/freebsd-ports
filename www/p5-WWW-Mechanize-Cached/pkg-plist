@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Cached/.packlist
+%%SITE_PERL%%/WWW/Mechanize/Cached.pm
+@dirrmtry %%SITE_PERL%%/WWW/Mechanize
+@dirrmtry %%SITE_PERL%%/WWW
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Cached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
