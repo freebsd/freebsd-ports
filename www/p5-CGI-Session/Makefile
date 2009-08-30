@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	CGI-Session
-PORTVERSION=	4.41
+PORTVERSION=	4.42
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MARKSTOS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for persistent session management
 
 PERL_CONFIGURE=	yes
