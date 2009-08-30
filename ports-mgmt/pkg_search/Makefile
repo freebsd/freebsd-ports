@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg_search
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.mathematik.uni-marburg.de/~schmidtm/pkg_search/ \
 		LOCAL/chinsan
