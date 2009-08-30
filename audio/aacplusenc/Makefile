@@ -13,8 +13,6 @@ MASTER_SITES=	http://teknoraver.net/software/mp4tools/
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	aacPlus v2 command-line encoder
 
-BROKEN=		does not fetch
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
