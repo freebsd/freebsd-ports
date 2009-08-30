@@ -1,0 +1,4 @@
+Uses the Cache::Cache hierarchy to implement a caching Mech.  This lets
+one perform repeated requests without hammering a server impolitely.
+
+WWW: http://search.cpan.org/dist/WWW-Mechanize-Cached/
