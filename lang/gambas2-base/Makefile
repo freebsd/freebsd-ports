@@ -10,6 +10,7 @@ PORTVERSION=	2.15.2
 CATEGORIES?=	lang kde
 MASTER_SITES=	SF/${PORTNAME:S/2//g}/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
+DIST_SUBDIR=	${PORTNAME:S/2//g}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	A basic language with object extensions
