@@ -23,8 +23,6 @@
 %%SITE_PERL%%/CHI/Test/Driver/Readonly.pm
 %%SITE_PERL%%/CHI/Test/Driver/Role/CheckKeyValidity.pm
 %%SITE_PERL%%/CHI/Test/Driver/Writeonly.pm
-%%SITE_PERL%%/CHI/Test/InternalOnly.pm
-%%SITE_PERL%%/CHI/Test/Logger.pm
 %%SITE_PERL%%/CHI/Test/Util.pm
 %%SITE_PERL%%/CHI/Types.pm
 %%SITE_PERL%%/CHI/Util.pm
