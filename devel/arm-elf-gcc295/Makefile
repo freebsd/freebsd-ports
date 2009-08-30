@@ -25,6 +25,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 
 ONLY_FOR_ARCHS=	i386
+BROKEN=		does not support current versions of FreeBSD
 
 GCC_REV=	${DISTNAME:S/gcc-//g}
 PLIST_SUB+=	GCC_REV=${GCC_REV}
