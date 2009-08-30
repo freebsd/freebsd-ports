@@ -26,6 +26,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier \
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
+WANT_PERL=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gnome

@@ -23,6 +23,7 @@ MAN1=		pppclient.1
 MAN5=		ssltunnelrc.5
 
 WANT_GNOME=	yes
+WANT_PERL=	yes
 
 .if defined(PACKAGE_BUILDING)
 WITHOUT_GNOME=	yes

@@ -16,6 +16,7 @@ COMMENT=	An advanced IRC bouncer
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
+WANT_PERL=	yes
 CONFIGURE_ARGS=	--disable-c-ares
 
 OPTIONS=	DEBUG		"Enable debugging" off \

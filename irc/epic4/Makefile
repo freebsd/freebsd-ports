@@ -29,6 +29,7 @@ USE_OPENSSL=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 USE_BZIP2=	yes
+WANT_PERL=	yes
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
 OPTIONS=	IPV6	"IPv6 support"		on \
