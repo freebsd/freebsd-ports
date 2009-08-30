@@ -30,6 +30,7 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd.sh snmptrapd.sh
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+WANT_PERL=	yes
 
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
 CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
