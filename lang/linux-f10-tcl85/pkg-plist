@@ -923,6 +923,9 @@ usr/share/tcl8/8.4/platform-1.0.3.tm
 usr/share/tcl8/8.4/platform/shell-1.1.3.tm
 usr/share/tcl8/8.5/msgcat-1.4.2.tm
 usr/share/tcl8/8.5/tcltest-2.3.0.tm
+@comment create empty directories needed for dependent ports
+@exec /bin/mkdir -p %D/usr/lib/tcl8.5
+@exec /bin/mkdir -p %D/usr/share/tcl8/8.3
 @comment non-empty directory listing in revers order
 @dirrm usr/share/tcl8/8.5
 @dirrm usr/share/tcl8/8.4/platform
