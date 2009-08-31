@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.8.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -207,7 +208,7 @@ CONFIGURE_ARGS+=--with-http_realip_module
 .endif
 
 .if defined(WITH_HTTP_REDIS_MODULE)
-NGINX_REDIS_MODULE_VERSION=	0.1
+NGINX_REDIS_MODULE_VERSION=	0.1.1
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:redis/}
 MASTER_SITE_SUBDIR+=	osa/:redis
 DISTFILES+=	ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}.tar.gz:redis
@@ -239,7 +240,7 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_MODULE)
-NGINX_UPLOAD_MODULE_VERSION=	2.0.9
+NGINX_UPLOAD_MODULE_VERSION=	2.0.10
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
