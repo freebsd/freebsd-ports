@@ -1,0 +1,6 @@
+The BLT Toolkit is an extension to Tcl and Tk. It adds new commands
+and widgets to the Tcl interpreter. Included widgets are 2D graph,
+barchart, stripchart, tab notebook, and tree viewer.
+
+NOTE: This kit requires as a pre-requisite the Tcl and Tk binary kits.
+This version uses Linux shared libraries.
