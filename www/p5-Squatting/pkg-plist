@@ -7,7 +7,6 @@ bin/squatting
 %%SITE_PERL%%/Squatting/On/Catalyst.pm
 %%SITE_PERL%%/Squatting/On/CGI.pm
 %%SITE_PERL%%/Squatting/On/Continuity.pm
-%%SITE_PERL%%/Squatting/On/Jifty.pm
 %%SITE_PERL%%/Squatting/On/MP13.pm
 %%SITE_PERL%%/Squatting/On/MP20.pm
 %%SITE_PERL%%/Squatting/View.pm
