@@ -7,6 +7,7 @@ opt/ibm/systemsim-cell/bin/emitter/sti-annoperf
 opt/ibm/systemsim-cell/bin/emitter/sti-annotext
 opt/ibm/systemsim-cell/bin/emitter/sti-stripstats
 opt/ibm/systemsim-cell/bin/emitter/stripstats_live
+opt/ibm/systemsim-cell/bin/parse_dwarf.pl
 opt/ibm/systemsim-cell/bin/snif
 opt/ibm/systemsim-cell/bin/systemsim
 opt/ibm/systemsim-cell/bin/systemsim-cell
@@ -52,6 +53,7 @@ opt/ibm/systemsim-cell/include/it_codes.h
 opt/ibm/systemsim-cell/include/mambo_iss.h
 opt/ibm/systemsim-cell/include/mpid_t.h
 opt/ibm/systemsim-cell/include/mtrace_t.h
+opt/ibm/systemsim-cell/include/library_sim.h
 opt/ibm/systemsim-cell/include/plugin_api.h
 opt/ibm/systemsim-cell/include/trans_id.h
 opt/ibm/systemsim-cell/include/trans_id_t.h
@@ -145,27 +147,27 @@ opt/ibm/systemsim-cell/lib/BWidget-1.7.0/utils.tcl
 opt/ibm/systemsim-cell/lib/BWidget-1.7.0/widget.tcl
 opt/ibm/systemsim-cell/lib/BWidget-1.7.0/wizard.tcl
 opt/ibm/systemsim-cell/lib/BWidget-1.7.0/xpm2image.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/NEWS
-opt/ibm/systemsim-cell/lib/blt2.4/PROBLEMS
-opt/ibm/systemsim-cell/lib/blt2.4/README
-opt/ibm/systemsim-cell/lib/blt2.4/bltCanvEps.pro
-opt/ibm/systemsim-cell/lib/blt2.4/bltGraph.pro
-opt/ibm/systemsim-cell/lib/blt2.4/dd_protocols/dd-color.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/dd_protocols/dd-file.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/dd_protocols/dd-number.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/dd_protocols/dd-text.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/dd_protocols/tclIndex
-opt/ibm/systemsim-cell/lib/blt2.4/dnd.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/dragdrop.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/graph.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/hierbox.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/pkgIndex.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/tabnotebook.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/tabset.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/tclIndex
-opt/ibm/systemsim-cell/lib/blt2.4/treeview.tcl
-opt/ibm/systemsim-cell/lib/blt2.4/treeview.xbm
-opt/ibm/systemsim-cell/lib/blt2.4/treeview_m.xbm
+opt/ibm/systemsim-cell/lib/blt2.4z/NEWS
+opt/ibm/systemsim-cell/lib/blt2.4z/PROBLEMS
+opt/ibm/systemsim-cell/lib/blt2.4z/README
+opt/ibm/systemsim-cell/lib/blt2.4z/bltCanvEps.pro
+opt/ibm/systemsim-cell/lib/blt2.4z/bltGraph.pro
+opt/ibm/systemsim-cell/lib/blt2.4z/dd_protocols/dd-color.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/dd_protocols/dd-file.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/dd_protocols/dd-number.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/dd_protocols/dd-text.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/dd_protocols/tclIndex
+opt/ibm/systemsim-cell/lib/blt2.4z/dnd.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/dragdrop.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/graph.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/hierbox.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/pkgIndex.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/tabnotebook.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/tabset.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/tclIndex
+opt/ibm/systemsim-cell/lib/blt2.4z/treeview.tcl
+opt/ibm/systemsim-cell/lib/blt2.4z/treeview.xbm
+opt/ibm/systemsim-cell/lib/blt2.4z/treeview_m.xbm
 opt/ibm/systemsim-cell/lib/cell/Makefile
 opt/ibm/systemsim-cell/lib/cell/axon_dev_tree.tcl
 opt/ibm/systemsim-cell/lib/cell/cell_util.tcl
@@ -197,10 +199,14 @@ opt/ibm/systemsim-cell/lib/cell/systemsim.tcl
 opt/ibm/systemsim-cell/lib/cell/tclIndex
 opt/ibm/systemsim-cell/lib/common/Makefile
 opt/ibm/systemsim-cell/lib/common/bogusnet.tcl
+opt/ibm/systemsim-cell/lib/common/bcast.tcl
 opt/ibm/systemsim-cell/lib/common/checkpoint.tcl
 opt/ibm/systemsim-cell/lib/common/config.tcl
 opt/ibm/systemsim-cell/lib/common/debug_utils.tcl
+opt/ibm/systemsim-cell/lib/common/dts.tcl
 opt/ibm/systemsim-cell/lib/common/gdbsniff.tcl
+opt/ibm/systemsim-cell/lib/common/osinfo.tcl
+opt/ibm/systemsim-cell/lib/common/pkgIndex.tcl
 opt/ibm/systemsim-cell/lib/common/gui/Makefile
 opt/ibm/systemsim-cell/lib/common/gui/_error_dialog.tcl
 opt/ibm/systemsim-cell/lib/common/gui/common_oo.tcl
@@ -271,11 +277,15 @@ opt/ibm/systemsim-cell/lib/ppc/801TM_util.tcl
 opt/ibm/systemsim-cell/lib/ppc/Makefile
 opt/ibm/systemsim-cell/lib/ppc/aix.old.tcl
 opt/ibm/systemsim-cell/lib/ppc/aix.tcl
+opt/ibm/systemsim-cell/lib/ppc/aix_track.tcl
+opt/ibm/systemsim-cell/lib/ppc/aix_utils.tcl
 opt/ibm/systemsim-cell/lib/ppc/bet_util.tcl
 opt/ibm/systemsim-cell/lib/ppc/bogus_disk.tcl
 opt/ibm/systemsim-cell/lib/ppc/debug.tcl
 opt/ibm/systemsim-cell/lib/ppc/emitter_readers.tcl
+opt/ibm/systemsim-cell/lib/ppc/erat.tcl
 opt/ibm/systemsim-cell/lib/ppc/linux.tcl
+opt/ibm/systemsim-cell/lib/ppc/linux_track.tcl
 opt/ibm/systemsim-cell/lib/ppc/pkgIndex.tcl
 opt/ibm/systemsim-cell/lib/ppc/profiler/_choose_from_list.tcl
 opt/ibm/systemsim-cell/lib/ppc/profiler/_error_dialog.tcl
@@ -291,6 +301,7 @@ opt/ibm/systemsim-cell/lib/ppc/syscalls/Makefile
 opt/ibm/systemsim-cell/lib/ppc/syscalls/sys.pl
 opt/ibm/systemsim-cell/lib/ppc/syscalls/syscalls.txt
 opt/ibm/systemsim-cell/lib/ppc/tclIndex
+opt/ibm/systemsim-cell/lib/ppc/tlb.tcl
 opt/ibm/systemsim-cell/lib/ppc/util.tcl
 opt/ibm/systemsim-cell/run/cell/linux/regress.simple.ok
 opt/ibm/systemsim-cell/run/cell/linux/regress.simple.tcl
@@ -332,8 +343,8 @@ opt/ibm/systemsim-cell/sample/gdb/systemsim_gdb-6.3.diff
 @dirrm opt/ibm/systemsim-cell/lib/common
 @dirrm opt/ibm/systemsim-cell/lib/cell/gui
 @dirrm opt/ibm/systemsim-cell/lib/cell
-@dirrm opt/ibm/systemsim-cell/lib/blt2.4/dd_protocols
-@dirrm opt/ibm/systemsim-cell/lib/blt2.4
+@dirrm opt/ibm/systemsim-cell/lib/blt2.4z/dd_protocols
+@dirrm opt/ibm/systemsim-cell/lib/blt2.4z
 @dirrm opt/ibm/systemsim-cell/lib/BWidget-1.7.0/tests
 @dirrm opt/ibm/systemsim-cell/lib/BWidget-1.7.0/lang
 @dirrm opt/ibm/systemsim-cell/lib/BWidget-1.7.0/images
