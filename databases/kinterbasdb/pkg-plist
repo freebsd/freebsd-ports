@@ -9,9 +9,13 @@
 %%INSTALLDIR%%/typeconv_datetime_stdlib.py
 %%INSTALLDIR%%/typeconv_datetime_mx.py
 %%INSTALLDIR%%/typeconv_text_unicode.py
-%%INSTALLDIR%%/typeconv_util_isinstance.py
-%%INSTALLDIR%%/_py21incompat.py
 %%INSTALLDIR%%/services.py
+%%INSTALLDIR%%/_array_descriptor.py
+%%INSTALLDIR%%/_connection_timeout.py
+%%INSTALLDIR%%/_request_buffer_builder.py
+%%INSTALLDIR%%/typeconv_23plus_lowmem.py
+%%INSTALLDIR%%/typeconv_24plus.py
+%%INSTALLDIR%%/typeconv_fixed_decimal.py
 %%INSTALLDIR%%/_kinterbasdb.so
 %%INSTALLDIR%%/_kiservices.so
 %%INSTALLDIR%%/__init__.pyc
@@ -25,9 +29,13 @@
 %%INSTALLDIR%%/typeconv_datetime_stdlib.pyc
 %%INSTALLDIR%%/typeconv_datetime_mx.pyc
 %%INSTALLDIR%%/typeconv_text_unicode.pyc
-%%INSTALLDIR%%/typeconv_util_isinstance.pyc
-%%INSTALLDIR%%/_py21incompat.pyc
 %%INSTALLDIR%%/services.pyc
+%%INSTALLDIR%%/_array_descriptor.pyc
+%%INSTALLDIR%%/_connection_timeout.pyc
+%%INSTALLDIR%%/_request_buffer_builder.pyc
+%%INSTALLDIR%%/typeconv_23plus_lowmem.pyc
+%%INSTALLDIR%%/typeconv_24plus.pyc
+%%INSTALLDIR%%/typeconv_fixed_decimal.pyc
 %%INSTALLDIR%%/__init__.pyo
 %%INSTALLDIR%%/k_exceptions.pyo
 %%INSTALLDIR%%/typeconv_naked.pyo
@@ -39,9 +47,13 @@
 %%INSTALLDIR%%/typeconv_datetime_stdlib.pyo
 %%INSTALLDIR%%/typeconv_datetime_mx.pyo
 %%INSTALLDIR%%/typeconv_text_unicode.pyo
-%%INSTALLDIR%%/typeconv_util_isinstance.pyo
-%%INSTALLDIR%%/_py21incompat.pyo
 %%INSTALLDIR%%/services.pyo
+%%INSTALLDIR%%/_array_descriptor.pyo
+%%INSTALLDIR%%/_connection_timeout.pyo
+%%INSTALLDIR%%/_request_buffer_builder.pyo
+%%INSTALLDIR%%/typeconv_23plus_lowmem.pyo
+%%INSTALLDIR%%/typeconv_24plus.pyo
+%%INSTALLDIR%%/typeconv_fixed_decimal.pyo
 %%INSTALLDIR%%/docs/index.html
 %%INSTALLDIR%%/docs/installation-source.html
 %%INSTALLDIR%%/docs/installation-binary.html
@@ -52,5 +64,6 @@
 %%INSTALLDIR%%/docs/links.html
 %%INSTALLDIR%%/docs/global.css
 %%INSTALLDIR%%/docs/w3c.png
+%%INSTALLDIR%%/docs/firebird-client-library-thread-safety-overview.html
 @dirrm %%INSTALLDIR%%/docs
 @dirrm %%INSTALLDIR%%
