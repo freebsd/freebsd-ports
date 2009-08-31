@@ -121,6 +121,7 @@
     SUBDIR += libwnck-reference
     SUBDIR += libxfce4gui
     SUBDIR += libzvt
+    SUBDIR += linux-f10-blt
     SUBDIR += linux-f10-gtk
     SUBDIR += linux-f10-gtk2
     SUBDIR += linux-f10-openmotif
