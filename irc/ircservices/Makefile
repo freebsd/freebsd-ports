@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ircservices
-PORTVERSION=	5.0.63
+PORTVERSION=	5.1.18
 CATEGORIES=	irc
-MASTER_SITES=	http://www.ircservices.za.net/download/old/ \
-	http://banana.irc.gr/ircservices/old/ \
-	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/old/
+MASTER_SITES=	http://www.ircservices.za.net/download/ \
+		http://banana.irc.gr/ircservices/ \
+		ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/
 
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	A system of IRC services for IRC networks
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	ircservices
 
 DIST_SUBDIR=	${PORTNAME}
-CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
+CONFIGURE_ARGS=	-bindest ${PREFIX}/sbin -datdest ${PREFIX}/etc/ircservices -cflags "${CFLAGS}" -cc "${CC}"
 
 IRCSERVICES_LANG?=	EN_US
 
@@ -41,7 +41,7 @@ pre-patch:
 	@${ECHO_MSG} "communicating with users:"
 	@${ECHO_MSG} "(Be aware of the capitalization!)"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "DE EN_US ES FR HU IT JA_EUC JA_SJIS NL PT RU TR"
+	@${ECHO_MSG} "DE EN_US ES FR HU IT JA_EUC JA_SJIS NL PT TR"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|LANG_EN_US|LANG_${IRCSERVICES_LANG}|' \
@@ -50,8 +50,13 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Changes ${WRKSRC}/KnownBugs ${DOCSDIR}
+	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "**********          IMPORTANT           **********"
+	@${ECHO_MSG} "The configuration directory has changed to ${PREFIX}/etc/ircservices"
+	@${ECHO_MSG} "Please copy your old config files there if updating"
+	@${ECHO_MSG} "**********          IMPORTANT           *********"
+	@${ECHO_MSG} ""
 .endif
 
 .include <bsd.port.post.mk>
