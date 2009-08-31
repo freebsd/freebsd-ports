@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Catalyst/Plugin/RunAfterRequest.pm
+%%SITE_PERL%%/Catalyst/Model/Role/RunAfterRequest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/RunAfterRequest/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/RunAfterRequest
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Model/Role
+@dirrmtry %%SITE_PERL%%/Catalyst/Model
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
