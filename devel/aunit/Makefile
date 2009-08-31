@@ -17,6 +17,8 @@ COMMENT=	AUnit is an adaption of the Java JUnit unit test framework
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 RUN_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
