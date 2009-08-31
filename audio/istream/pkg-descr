@@ -1,0 +1,7 @@
+iStream is a simple GNOME panel applet that lets you play internet radio
+streams (local files work too).  It uses Gstreamer for playback.  Written in C
+using Gtk+.
+
+Configure your streams in ~/.istream file.
+
+WWW: http://www.gnomefiles.org/app.php/iStream
