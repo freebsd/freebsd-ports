@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	dhn
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	An improved dynamic tiling window manager
 
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xmlto:${PORTSDIR}/textproc/xmlto
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		xcb-event.1:${PORTSDIR}/x11/xcb-util \
 		ev.3:${PORTSDIR}/devel/libev
@@ -28,6 +26,7 @@ USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/i3 \
+		bin/i3-msg \
 		etc/i3/config.sample
 PLIST_DIRS=	etc/i3
 
@@ -50,6 +49,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-msg/${PORTNAME}-msg ${PREFIX}/bin/
 	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/config.sample ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MANPREFIX}/man/man1
