@@ -3,6 +3,7 @@
 
     COMMENT = Multimedia software
 
+    SUBDIR += 2mandvd
     SUBDIR += abby
     SUBDIR += acidrip
     SUBDIR += arista
