@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to display 3D data using OpenGL, GLU, GLUT, and GLX
 
-USE_XORG=	glut
+USE_GL=		glut
 PERL_CONFIGURE=	yes
 
 post-patch:
