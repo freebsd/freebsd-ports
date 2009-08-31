@@ -15,6 +15,7 @@ bin/codelite_kill_children
 %%DATADIR%%/images/plugin_ok.png
 %%DATADIR%%/images/splashscreen.png
 %%DATADIR%%/index.html
+%%DATADIR%%/lexers/BlackTheme/lexer_asm.xml
 %%DATADIR%%/lexers/BlackTheme/lexer_cpp.xml
 %%DATADIR%%/lexers/BlackTheme/lexer_default.xml
 %%DATADIR%%/lexers/BlackTheme/lexer_diff.xml
@@ -25,8 +26,10 @@ bin/codelite_kill_children
 %%DATADIR%%/lexers/BlackTheme/lexer_makefile.xml
 %%DATADIR%%/lexers/BlackTheme/lexer_perl.xml
 %%DATADIR%%/lexers/BlackTheme/lexer_properties.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_python.xml
 %%DATADIR%%/lexers/BlackTheme/lexer_script.xml
 %%DATADIR%%/lexers/BlackTheme/lexer_xml.xml
+%%DATADIR%%/lexers/Default/lexer_asm.xml
 %%DATADIR%%/lexers/Default/lexer_cpp.xml
 %%DATADIR%%/lexers/Default/lexer_default.xml
 %%DATADIR%%/lexers/Default/lexer_diff.xml
@@ -37,6 +40,7 @@ bin/codelite_kill_children
 %%DATADIR%%/lexers/Default/lexer_makefile.xml
 %%DATADIR%%/lexers/Default/lexer_perl.xml
 %%DATADIR%%/lexers/Default/lexer_properties.xml
+%%DATADIR%%/lexers/Default/lexer_python.xml
 %%DATADIR%%/lexers/Default/lexer_script.xml
 %%DATADIR%%/lexers/Default/lexer_xml.xml
 %%DATADIR%%/plugins/CodeFormatter.so
@@ -55,12 +59,22 @@ bin/codelite_kill_children
 %%DATADIR%%/plugins/resources/abbreviation.accelerators
 %%DATADIR%%/plugins/resources/compfile.png
 %%DATADIR%%/plugins/resources/external_tools.accelerators
+%%DATADIR%%/plugins/resources/qt24_preferences.png
+%%DATADIR%%/plugins/resources/qt24_new.png
+%%DATADIR%%/plugins/resources/qt16_preferences.png
+%%DATADIR%%/plugins/resources/qt16_new.png
 %%DATADIR%%/plugins/resources/svn_diff.png
 %%DATADIR%%/plugins/resources/svn_settings.png
 %%DATADIR%%/plugins/resources/svn_ssh.png
 %%DATADIR%%/plugins/resources/wxfb_conflict.png
 %%DATADIR%%/plugins/resources/wxfb_modified.png
 %%DATADIR%%/plugins/resources/wxfb_ok.png
+%%DATADIR%%/plugins/libwxsqlite3u.so
+%%DATADIR%%/plugins/libwxscintillau.so
+%%DATADIR%%/plugins/libwxpropgridu.so
+%%DATADIR%%/plugins/libpluginu.so
+%%DATADIR%%/plugins/libcodeliteu.so
+%%DATADIR%%/plugins/QmakePlugin.so
 %%DATADIR%%/plugins/wxformbuilder.so
 %%DATADIR%%/rc/menu.xrc
 %%DATADIR%%/src/unittest++1.3.tar.gz
@@ -132,6 +146,7 @@ bin/codelite_kill_children
 %%DATADIR%%/templates/projects/vc-executable/vc-executable.project
 %%DATADIR%%/templates/projects/vc-static-lib/icon.png
 %%DATADIR%%/templates/projects/vc-static-lib/vc-static-lib.project
+%%DATADIR%%/templates/qmake/qmake.project
 share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates/projects/vc-static-lib
 @dirrm %%DATADIR%%/templates/projects/vc-executable
@@ -152,6 +167,7 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates/projects/custom-makefile
 @dirrm %%DATADIR%%/templates/projects/UnitTest++
 @dirrm %%DATADIR%%/templates/projects
+@dirrm %%DATADIR%%/templates/qmake
 @dirrm %%DATADIR%%/templates/gizmos
 @dirrm %%DATADIR%%/templates/formbuilder
 @dirrm %%DATADIR%%/templates
