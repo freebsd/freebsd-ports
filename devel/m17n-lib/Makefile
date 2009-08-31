@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-lib
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
@@ -15,11 +15,11 @@ MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	A library for the multilingual text handling
 
-BUILD_DEPENDS=	m17n-db>=1.5.4:${PORTSDIR}/devel/m17n-db
+BUILD_DEPENDS=	m17n-db>=1.5.5:${PORTSDIR}/devel/m17n-db
 LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi \
 		gd.4:${PORTSDIR}/graphics/gd \
 		otf.0:${PORTSDIR}/print/libotf
-RUN_DEPENDS=	m17n-db>=1.5.4:${PORTSDIR}/devel/m17n-db
+RUN_DEPENDS=	m17n-db>=1.5.5:${PORTSDIR}/devel/m17n-db
 
 MAKE_JOBS_UNSAFE=	yes
 
