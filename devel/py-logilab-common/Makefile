@@ -8,9 +8,7 @@
 PORTNAME=	logilab-common
 PORTVERSION=	0.42.0
 CATEGORIES=	devel python
-MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dryice
+MASTER_SITES=	LOGILAB/common
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mva@FreeBSD.org

@@ -743,6 +743,13 @@ MASTER_SITE_KDE+=	\
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,}
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_LOGILAB)
+MASTER_SITE_LOGILAB+=	\
+	http://ftp.logilab.org/pub/%SUBDIR%/ \
+	ftp://ftp.logilab.org/pub/%SUBDIR%/ \
+	ftp://ftp.logilab.fr/pub/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_MOZDEV)
 MASTER_SITE_MOZDEV+= \
 	http://ftp.scarlet.be/pub/mozdev/%SUBDIR%/ \
@@ -1503,6 +1510,7 @@ MASTER_SITES_SUBDIRS=	\
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			GNU:${PORTNAME} \
 			HORDE:${PORTNAME} \
+			LOGILAB:${PORTNAME} \
 			MOZDEV:${PORTNAME:L} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \
 			PNET:${PNET_MASTER_SITE_SUBDIR} \

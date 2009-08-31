@@ -8,8 +8,7 @@
 PORTNAME=	pylint
 PORTVERSION=	0.18.0
 CATEGORIES=	devel python
-MASTER_SITES=	ftp://ftp.logilab.org/pub/pylint/	\
-		http://ftp.logilab.org/pub/pylint/
+MASTER_SITES=	LOGILAB
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	mva@FreeBSD.org
