@@ -11926,6 +11926,8 @@ p5-Log-Accounting-SVK           ports/devel/p5-Log-Accounting-SVK
 p5-Log-Accounting-SVN           ports/devel/p5-Log-Accounting-SVN
 p5-Log-Agent                    ports/devel/p5-Log-Agent
 p5-Log-Agent-Logger             ports/devel/p5-Log-Agent-Logger
+p5-Log-Any                      ports/devel/p5-Log-Any
+p5-Log-Any-Adapter-Dispatch     ports/devel/p5-Log-Any-Adapter-Dispatch
 p5-Log-Dispatch                 ports/devel/p5-Log-Dispatch
 p5-Log-Dispatch-Colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-Log-Dispatch-Config          ports/devel/p5-Log-Dispatch-Config
@@ -15475,6 +15477,8 @@ p5-log-accounting-svk           ports/devel/p5-Log-Accounting-SVK
 p5-log-accounting-svn           ports/devel/p5-Log-Accounting-SVN
 p5-log-agent                    ports/devel/p5-Log-Agent
 p5-log-agent-logger             ports/devel/p5-Log-Agent-Logger
+p5-log-any                      ports/devel/p5-Log-Any
+p5-log-any-adapter-dispatch     ports/devel/p5-Log-Any-Adapter-Dispatch
 p5-log-dispatch                 ports/devel/p5-Log-Dispatch
 p5-log-dispatch-colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-log-dispatch-config          ports/devel/p5-Log-Dispatch-Config
