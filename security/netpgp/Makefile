@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netpgp
-PORTVERSION=	20090525
+PORTVERSION=	20090611
 CATEGORIES=	security
 MASTER_SITES=	NETBSD/LOCAL_PORTS
 
@@ -18,7 +18,9 @@ GNU_CONFIGURE=	yes
 
 CFLAGS+=	-DOPENSSL_NO_IDEA
 
-MAN1+=		netpgp.1
+MAN1+=		netpgp.1 \
+		netpgpkeys.1 \
+		netpgpverify.1
 MAN3+=		libnetpgp.3
 
 .include <bsd.port.pre.mk>
