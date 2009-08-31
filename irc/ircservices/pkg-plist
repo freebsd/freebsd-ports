@@ -1,66 +1,17 @@
-lib/services/convert-db
-lib/services/example-ircservices.conf
-lib/services/example-modules.conf
-lib/services/helpfiles/help
-lib/services/languages/de
-lib/services/languages/en_us
-lib/services/languages/es
-lib/services/languages/fr
-lib/services/languages/hu
-lib/services/languages/it
-lib/services/languages/ja_euc
-lib/services/languages/ja_sjis
-lib/services/languages/nl
-lib/services/languages/pt
-lib/services/languages/ru
-lib/services/languages/tr
-lib/services/modules/chanserv/access-levels.so
-lib/services/modules/chanserv/access-xop.so
-lib/services/modules/chanserv/main.so
-lib/services/modules/chanserv/sendpass.so
-lib/services/modules/database/version4.so
-lib/services/modules/encryption/md5.so
-lib/services/modules/httpd/auth-ip.so
-lib/services/modules/httpd/auth-password.so
-lib/services/modules/httpd/dbaccess.so
-lib/services/modules/httpd/debug.so
-lib/services/modules/httpd/main.so
-lib/services/modules/httpd/redirect.so
-lib/services/modules/httpd/top-page.so
-lib/services/modules/mail/main.so
-lib/services/modules/mail/sendmail.so
-lib/services/modules/mail/smtp.so
-lib/services/modules/memoserv/forward.so
-lib/services/modules/memoserv/ignore.so
-lib/services/modules/memoserv/main.so
-lib/services/modules/misc/devnull.so
-lib/services/modules/misc/helpserv.so
-lib/services/modules/misc/xml-export.so
-lib/services/modules/misc/xml-import.so
-lib/services/modules/nickserv/access.so
-lib/services/modules/nickserv/autojoin.so
-lib/services/modules/nickserv/link.so
-lib/services/modules/nickserv/mail-auth.so
-lib/services/modules/nickserv/main.so
-lib/services/modules/nickserv/oldlink.so
-lib/services/modules/nickserv/sendpass.so
-lib/services/modules/operserv/akill.so
-lib/services/modules/operserv/main.so
-lib/services/modules/operserv/news.so
-lib/services/modules/operserv/sessions.so
-lib/services/modules/operserv/sline.so
-lib/services/modules/protocol/bahamut.so
-lib/services/modules/protocol/dalnet.so
-lib/services/modules/protocol/dreamforge.so
-lib/services/modules/protocol/hybrid.so
-lib/services/modules/protocol/monkey.so
-lib/services/modules/protocol/ptlink.so
-lib/services/modules/protocol/rfc1459.so
-lib/services/modules/protocol/trircd.so
-lib/services/modules/protocol/ts8.so
-lib/services/modules/protocol/undernet-p9.so
-lib/services/modules/protocol/unreal.so
-lib/services/modules/statserv/main.so
+%%ETCDIR%%/convert-db
+%%ETCDIR%%/example-ircservices.conf
+%%ETCDIR%%/example-modules.conf
+%%ETCDIR%%/helpfiles/help
+%%ETCDIR%%/languages/de
+%%ETCDIR%%/languages/en_us
+%%ETCDIR%%/languages/es
+%%ETCDIR%%/languages/fr
+%%ETCDIR%%/languages/hu
+%%ETCDIR%%/languages/ja_euc
+%%ETCDIR%%/languages/ja_sjis
+%%ETCDIR%%/languages/nl
+%%ETCDIR%%/languages/ru
+%%ETCDIR%%/languages/tr
 sbin/ircservices
 sbin/ircservices-chk
 %%PORTDOCS%%%%DOCSDIR%%/0.html
@@ -70,30 +21,41 @@ sbin/ircservices-chk
 %%PORTDOCS%%%%DOCSDIR%%/4.html
 %%PORTDOCS%%%%DOCSDIR%%/5.html
 %%PORTDOCS%%%%DOCSDIR%%/6.html
-%%PORTDOCS%%%%DOCSDIR%%/7.html
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/Changes.old
+%%PORTDOCS%%%%DOCSDIR%%/FDL.html
+%%PORTDOCS%%%%DOCSDIR%%/GPL.html
+%%PORTDOCS%%%%DOCSDIR%%/WhatsNew
 %%PORTDOCS%%%%DOCSDIR%%/a.html
 %%PORTDOCS%%%%DOCSDIR%%/b.html
 %%PORTDOCS%%%%DOCSDIR%%/c.html
+%%PORTDOCS%%%%DOCSDIR%%/convert-db.8
 %%PORTDOCS%%%%DOCSDIR%%/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/d.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ircservices-chk.8
+%%PORTDOCS%%%%DOCSDIR%%/ircservices.8
+%%PORTDOCS%%%%DOCSDIR%%/tech/1.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/10.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/11.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/2.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/3.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/4.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/5.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/6.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/7.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/8.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/9.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/a.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/b.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/c.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/d.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/style.css
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
-%%PORTDOCS%%%%DOCSDIR%%/Changes
-%%PORTDOCS%%%%DOCSDIR%%/KnownBugs
-@dirrm lib/services/helpfiles
-@dirrm lib/services/languages
-@dirrm lib/services/modules/chanserv
-@dirrm lib/services/modules/database
-@dirrm lib/services/modules/encryption
-@dirrm lib/services/modules/httpd
-@dirrm lib/services/modules/mail
-@dirrm lib/services/modules/memoserv
-@dirrm lib/services/modules/misc
-@dirrm lib/services/modules/nickserv
-@dirrm lib/services/modules/operserv
-@dirrm lib/services/modules/protocol
-@dirrm lib/services/modules/statserv
-@dirrm lib/services/modules
-@dirrm lib/services
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%ETCDIR%%/languages
+@dirrm %%ETCDIR%%/helpfiles
+@dirrm %%ETCDIR%%

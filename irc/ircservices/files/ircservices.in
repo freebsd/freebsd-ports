@@ -11,9 +11,10 @@ name=ircservices
 rcvar=${name}_enable
 
 command="%%PREFIX%%/sbin/${name}"
-pidfile="%%PREFIX%%/lib/services/${name}.pid"
-required_files="%%PREFIX%%/lib/services/ircservices.conf \
-		%%PREFIX%%/lib/services/modules.conf"
+command_args="-dir=%%PREFIX%%/etc/ircservices"
+pidfile="/var/run/${name}.pid"
+required_files="%%PREFIX%%/etc/ircservices/ircservices.conf \
+		%%PREFIX%%/etc/ircservices/modules.conf"
 
 load_rc_config ${name}
 
