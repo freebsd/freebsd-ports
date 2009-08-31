@@ -70,7 +70,7 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl dri esound expat fon
 _LINUX_APPS_ALL+=
 
 # 2.6.16 components
-_LINUX_26_APPS=		cyrus-sasl2 dbusglib dbuslibs libidn libssh2 nspr nss openldap \
+_LINUX_26_APPS=		blt cyrus-sasl2 dbusglib dbuslibs libidn libssh2 nspr nss openldap \
 			sqlite3 tcl84 tk84
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
@@ -124,6 +124,11 @@ atk_f8_FILE=		${LINUXBASE}/usr/lib/libatk-1.0.so.0.2009.1
 atk_f10_FILE=		${LINUXBASE}/usr/lib/libatk-1.0.so.0.2409.1
 atk_DETECT=			${atk${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 atk_PORT=			${PORTSDIR}/accessibility/linux${LINUX_DIST_SUFFIX}-atk
+
+blt_f10_FILE=		${LINUXBASE}/usr/lib/libBLT24.so
+blt_DETECT=		${blt${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+blt_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-blt
+blt_DEPENDS=		tcl84 tk84 xorglibs
 
 cairo_FILE=			${LINUXBASE}/usr/lib/libcairo.so.2.2.3
 cairo_f8_FILE=		${LINUXBASE}/usr/lib/libcairo.so.2.11.7
