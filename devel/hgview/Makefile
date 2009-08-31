@@ -8,7 +8,7 @@
 PORTNAME=	hgview
 PORTVERSION=	1.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.logilab.org/pub/hgview/
+MASTER_SITES=	LOGILAB
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fast Mercurial log navigator written in pyqt4
