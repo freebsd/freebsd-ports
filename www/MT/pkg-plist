@@ -798,14 +798,9 @@
 %%DATADIR%%/mt-static/styles.css
 %%DATADIR%%/mt-static/styles_ja.css
 %%DATADIR%%/mt-static/mt.js
-%%DATADIR%%/mt-static/mt_fr.js
 %%DATADIR%%/mt-static/styles_es.css
 %%DATADIR%%/mt-static/styles_de.css
-%%DATADIR%%/mt-static/mt_es.js
 %%DATADIR%%/mt-static/styles_fr.css
-%%DATADIR%%/mt-static/mt_nl.js
-%%DATADIR%%/mt-static/mt_ja.js
-%%DATADIR%%/mt-static/mt_de.js
 %%DATADIR%%/mt-static/styles_nl.css
 %%CGIDIR%%/tmpl/comment/register.tmpl
 %%CGIDIR%%/tmpl/comment/login.tmpl
@@ -879,6 +874,7 @@
 %%CGIDIR%%/tmpl/cms/include/pagination.tmpl
 %%CGIDIR%%/tmpl/cms/include/display_options.tmpl
 %%CGIDIR%%/tmpl/cms/include/overview-left-nav.tmpl
+%%CGIDIR%%/tmpl/cms/include/rpt_log_table.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/adjust_sitepath.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/asset_options.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/comment_reply.tmpl
@@ -901,6 +897,7 @@
 %%CGIDIR%%/tmpl/cms/dialog/restore_start.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/asset_list.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/select_weblog.tmpl
+%%CGIDIR%%/tmpl/cms/dialog/clone_blog.tmpl
 %%CGIDIR%%/tmpl/cms/popup/rebuild_confirm.tmpl
 %%CGIDIR%%/tmpl/cms/popup/pinged_urls.tmpl
 %%CGIDIR%%/tmpl/cms/popup/rebuilt.tmpl
@@ -972,6 +969,7 @@
 %%CGIDIR%%/tmpl/cms/edit_asset.tmpl
 %%CGIDIR%%/tmpl/cms/list_notification.tmpl
 %%CGIDIR%%/tmpl/cms/edit_author.tmpl
+%%CGIDIR%%/tmpl/cms/view_rpt_log.tmpl
 %%CGIDIR%%/tmpl/wizard/packages.tmpl
 %%CGIDIR%%/tmpl/wizard/cfg_dir.tmpl
 %%CGIDIR%%/tmpl/wizard/configure.tmpl
@@ -1312,6 +1310,8 @@
 %%CGIDIR%%/extlib/TheSchwartz.pm
 %%CGIDIR%%/extlib/Jcode.pm
 %%CGIDIR%%/extlib/URI.pm
+%%CGIDIR%%/default_templates/comment_detail.mtml
+%%CGIDIR%%/default_templates/comment_listing.mtml
 %%CGIDIR%%/default_templates/search_results.mtml
 %%CGIDIR%%/default_templates/recent_comments.mtml
 %%CGIDIR%%/default_templates/page.mtml
@@ -1417,6 +1417,7 @@
 %%CGIDIR%%/lib/MT/CMS/Plugin.pm
 %%CGIDIR%%/lib/MT/CMS/BanList.pm
 %%CGIDIR%%/lib/MT/CMS/Log.pm
+%%CGIDIR%%/lib/MT/CMS/RptLog.pm
 %%CGIDIR%%/lib/MT/App/Search/TagSearch.pm
 %%CGIDIR%%/lib/MT/App/Search/Legacy.pm
 %%CGIDIR%%/lib/MT/App/Search/FreeText.pm
@@ -1430,7 +1431,6 @@
 %%CGIDIR%%/lib/MT/App/Upgrader.pm
 %%CGIDIR%%/lib/MT/L10N/en_us.pm
 %%CGIDIR%%/lib/MT/L10N/de-iso-8859-1.pm
-%%CGIDIR%%/lib/MT/L10N/nl-iso-8859-1.pm
 %%CGIDIR%%/lib/MT/L10N/ja.pm
 %%CGIDIR%%/lib/MT/L10N/fr-iso-8859-1.pm
 %%CGIDIR%%/lib/MT/L10N/es.pm
@@ -1447,6 +1447,8 @@
 %%CGIDIR%%/lib/MT/Util/ReqTimer.pm
 %%CGIDIR%%/lib/MT/Worker/Publish.pm
 %%CGIDIR%%/lib/MT/Worker/Sync.pm
+%%CGIDIR%%/lib/MT/Worker/Summarize.pm
+%%CGIDIR%%/lib/MT/Worker/SummaryWatcher.pm
 %%CGIDIR%%/lib/MT/Cache/Negotiate.pm
 %%CGIDIR%%/lib/MT/Cache/Session.pm
 %%CGIDIR%%/lib/MT/Cache/Null.pm
@@ -1478,6 +1480,10 @@
 %%CGIDIR%%/lib/MT/Auth/Hatena.pm
 %%CGIDIR%%/lib/MT/Auth/WordPress.pm
 %%CGIDIR%%/lib/MT/Auth/MT.pm
+%%CGIDIR%%/lib/MT/Summary/Author.pm
+%%CGIDIR%%/lib/MT/Summary/Entry.pm
+%%CGIDIR%%/lib/MT/Summary/Proxy.pm
+%%CGIDIR%%/lib/MT/Summary/Triggers.pm
 %%CGIDIR%%/lib/MT/TheSchwartz/Job.pm
 %%CGIDIR%%/lib/MT/TheSchwartz/FuncMap.pm
 %%CGIDIR%%/lib/MT/TheSchwartz/ExitStatus.pm
@@ -1561,6 +1567,7 @@
 %%CGIDIR%%/lib/MT/ArchiveType.pm
 %%CGIDIR%%/lib/MT/ObjectScore.pm
 %%CGIDIR%%/lib/MT/WeblogPublisher.pm
+%%CGIDIR%%/lib/MT/Summary.pm
 %%CGIDIR%%/lib/MT.pm
 %%CGIDIR%%/search_templates/results_feed.tmpl
 %%CGIDIR%%/search_templates/results_feed_rss2.tmpl
@@ -1648,7 +1655,6 @@
 %%CGIDIR%%/plugins/Markdown/License.text
 %%CGIDIR%%/plugins/Markdown/SmartyPants.pl
 %%CGIDIR%%/plugins/Markdown/Readme.txt
-%%CGIDIR%%/plugins/Cloner/cloner.pl
 %%CGIDIR%%/php/tmpl/missing.tpl
 %%CGIDIR%%/php/tmpl/error.tpl
 %%CGIDIR%%/php/tmpl/header-popup.tpl
@@ -2371,7 +2377,6 @@
 @dirrm %%CGIDIR%%/plugins/MultiBlog
 @dirrm %%CGIDIR%%/plugins/Markdown/php
 @dirrm %%CGIDIR%%/plugins/Markdown
-@dirrm %%CGIDIR%%/plugins/Cloner
 @dirrm %%CGIDIR%%/plugins
 @dirrm %%CGIDIR%%/php/tmpl
 @dirrm %%CGIDIR%%/php/lib
@@ -2395,6 +2400,7 @@
 @dirrm %%CGIDIR%%/lib/MT/TheSchwartz
 @dirrm %%CGIDIR%%/lib/MT/Template/Context
 @dirrm %%CGIDIR%%/lib/MT/Template
+@dirrm %%CGIDIR%%/lib/MT/Summary
 @dirrm %%CGIDIR%%/lib/MT/Plugin
 @dirrm %%CGIDIR%%/lib/MT/ObjectDriver/SQL
 @dirrm %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBD
