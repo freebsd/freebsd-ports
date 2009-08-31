@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cdrkit
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.1.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cdrkit.org/releases/ \
 		http://debburn.alioth.debian.org/
@@ -24,7 +23,7 @@ MAN1=		cdda2ogg.1 devdump.1 dirsplit.1 genisoimage.1 icedax.1 \
 		pitchplay.1 readmult.1 readom.1 wodim.1
 MAN5=		genisoimagerc.5
 
-CONFLICTS=	cdrtools-* cjk-cdrtools-*
+CONFLICTS=	cdrtools-[0-9]* cjk-cdrtools-[0-9]*
 
 .include <bsd.port.pre.mk>
 
