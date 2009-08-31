@@ -7,6 +7,7 @@
 
 PORTNAME=	JSON-XS
 PORTVERSION=	2.25
+PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	JSON serialising/deserialising, done correctly and fast
+
+RUN_DEPENDS=	p5-common-sense>0:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 MAN1=		json_xs.1
