@@ -307,6 +307,7 @@
     SUBDIR += id3tool
     SUBDIR += id3v2
     SUBDIR += ifp-line
+    SUBDIR += istream
     SUBDIR += jack
     SUBDIR += jack-keyboard
     SUBDIR += jack-rack

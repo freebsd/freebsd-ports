@@ -1,0 +1,5 @@
+libdata/bonobo/servers/GNOME_istreamApplet.server
+libexec/istream
+share/pixmaps/istream.png
+share/pixmaps/istream_background.png
+share/pixmaps/istream_menu.png
