@@ -18,6 +18,7 @@ COMMENT=	The Ada Unicode and XML Library
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
 CONFLICTS=	xmlada-[0-9]*
+BROKEN=		does not build
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
