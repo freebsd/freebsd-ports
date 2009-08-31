@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090831:
+  AFFECTS: users of emulators/linux-systemsimcell
+  AUTHOR: stast@bsdportal.ru
+
+  The port emulators/linux-systemsimcell has been updated to 3.1.25.
+  Systemsimcell emulator now has a new dependency: x11-toolkits/linux-f10-blt.
+  So you need to switch to linux-f10 ports in order to use 3.1.25 version.
+
 20090828:
   AFFECTS: users of mail/dovecot and mail/dovecot-sieve
   AUTHOR: yds@CoolRat.org
