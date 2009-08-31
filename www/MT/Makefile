@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	4.261
+PORTVERSION=	4.310
 CATEGORIES=	www
 MASTER_SITES=	http://www.movabletype.org/downloads/stable/
-DISTNAME=	MTOS-${PORTVERSION}-en
+DISTNAME=	MTOS-4.31-en
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A web-based personal publishing system for weblogs
