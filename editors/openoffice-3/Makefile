@@ -1,4 +1,3 @@
-
 # New ports collection makefile for: OpenOffice.org
 # Date created:		28 February 2002
 # Whom:                 Martin Blapp
@@ -8,7 +7,6 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
-PORTREVISION=	2
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
@@ -24,7 +22,7 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
-OOOVERSION=	3.1.0
+OOOVERSION=	3.1.1
 NO_LATEST_LINK=	yes
 USE_GNOME=	desktopfileutils gtk20
 MOZILLA_VERSION=	1.7.5
@@ -49,7 +47,7 @@ MAKE_JOBS_SAFE=	yes
 
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
-JAVA_VENDOR=	freebsd bsdjava
+JAVA_VENDOR=	freebsd bsdjava openjdk
 .if (${OSVERSION} >= 700000)
 JAVA_VERSION=	1.5 1.6
 .else
@@ -66,7 +64,7 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		11
+MILESTONE?=		19
 OOOTAG?=		OOO310_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
@@ -134,7 +132,18 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-crashdump=yes				\
 			--with-system-zlib				\
 			--with-system-stdlibs				\
-			--with-epm=internal
+			--with-epm=internal				\
+			--enable-minimizer 				\
+			--enable-presenter-console			\
+			--enable-pdfimport				\
+			--enable-wiki-publisher				\
+			--enable-report-builder
+
+OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
+OOOEXTENSIONS+=		presenter/presenter-screen.oxt
+OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
+OOOEXTENSIONS+=		swext/wiki-publisher.oxt
+OOOEXTENSIONS+=		sun-report-builder.oxt
 
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
@@ -166,7 +175,7 @@ pre-everything::
 .endif
 
 #issue XXXXXX not raised yet...
-CRLFFILES=curl/curl*patch neon/neon*patch
+CRLFFILES=curl/curl*patch neon/neon*patch jfreereport/patches/*.patch
 
 post-extract:
 	for i in ${CRLFFILES};  do \
@@ -221,6 +230,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .endif
+	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/310/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
