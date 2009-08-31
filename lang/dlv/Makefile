@@ -7,7 +7,8 @@
 PORTNAME=	dlv
 PORTVERSION=	20071011
 CATEGORIES=	lang
-MASTER_SITES=	http://www.dbai.tuwien.ac.at/proj/dlv/
+MASTER_SITES=	http://www.dbai.tuwien.ac.at/research/project/dlv/ \
+		http://www.dbai.tuwien.ac.at/proj/dlv/
 DISTNAME=	dlv.i386-linux-elf-static.bin
 EXTRACT_SUFX=
 
