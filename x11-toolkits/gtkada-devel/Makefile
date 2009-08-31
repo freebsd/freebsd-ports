@@ -20,6 +20,7 @@ COMMENT=	Gtk2 binding for Ada
 BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 CONFLICTS=	gtkada-[0-9]* gtkada-gcc-[0-9]*
+BROKEN=		does not build
 
 WRKSRC=		${WRKDIR}/GtkAda
 
