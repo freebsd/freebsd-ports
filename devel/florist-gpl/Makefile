@@ -16,6 +16,8 @@ COMMENT=	The POSIX Ada Binding
 
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
