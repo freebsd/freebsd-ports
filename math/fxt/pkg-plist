@@ -855,6 +855,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-kincr-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-maxincr-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-maxincr-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/root-sums-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/root-sums-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/ruler-func-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/ruler-func-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/schroeder-tree-demo.cc
