@@ -18,6 +18,7 @@ BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 RUN_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 CONFLICTS=	asis-3.15*
+BROKEN=		does not build
 
 USE_GMAKE=	yes
 
