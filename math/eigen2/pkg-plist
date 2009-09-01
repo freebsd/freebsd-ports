@@ -13,23 +13,21 @@ include/eigen2/Eigen/src/Array/BooleanRedux.h
 include/eigen2/Eigen/src/Array/CwiseOperators.h
 include/eigen2/Eigen/src/Array/Functors.h
 include/eigen2/Eigen/src/Array/Norms.h
+include/eigen2/Eigen/src/Array/PartialRedux.h
 include/eigen2/Eigen/src/Array/Random.h
-include/eigen2/Eigen/src/Array/Replicate.h
-include/eigen2/Eigen/src/Array/Reverse.h
 include/eigen2/Eigen/src/Array/Select.h
-include/eigen2/Eigen/src/Array/VectorwiseOp.h
 include/eigen2/Eigen/src/Cholesky/LDLT.h
 include/eigen2/Eigen/src/Cholesky/LLT.h
 include/eigen2/Eigen/src/Core/Assign.h
 include/eigen2/Eigen/src/Core/Block.h
+include/eigen2/Eigen/src/Core/CacheFriendlyProduct.h
 include/eigen2/Eigen/src/Core/Coeffs.h
 include/eigen2/Eigen/src/Core/CommaInitializer.h
 include/eigen2/Eigen/src/Core/Cwise.h
 include/eigen2/Eigen/src/Core/CwiseBinaryOp.h
 include/eigen2/Eigen/src/Core/CwiseNullaryOp.h
 include/eigen2/Eigen/src/Core/CwiseUnaryOp.h
-include/eigen2/Eigen/src/Core/CwiseUnaryView.h
-include/eigen2/Eigen/src/Core/Diagonal.h
+include/eigen2/Eigen/src/Core/DiagonalCoeffs.h
 include/eigen2/Eigen/src/Core/DiagonalMatrix.h
 include/eigen2/Eigen/src/Core/DiagonalProduct.h
 include/eigen2/Eigen/src/Core/Dot.h
@@ -49,18 +47,14 @@ include/eigen2/Eigen/src/Core/NestByValue.h
 include/eigen2/Eigen/src/Core/NumTraits.h
 include/eigen2/Eigen/src/Core/Part.h
 include/eigen2/Eigen/src/Core/Product.h
-include/eigen2/Eigen/src/Core/ReturnByValue.h
 include/eigen2/Eigen/src/Core/Redux.h
 include/eigen2/Eigen/src/Core/SolveTriangular.h
+include/eigen2/Eigen/src/Core/Sum.h
 include/eigen2/Eigen/src/Core/Swap.h
 include/eigen2/Eigen/src/Core/Transpose.h
 include/eigen2/Eigen/src/Core/Visitor.h
 include/eigen2/Eigen/src/Core/arch/AltiVec/PacketMath.h
-include/eigen2/Eigen/src/Core/arch/SSE/MathFunctions.h
 include/eigen2/Eigen/src/Core/arch/SSE/PacketMath.h
-include/eigen2/Eigen/src/Core/products/GeneralMatrixMatrix.h
-include/eigen2/Eigen/src/Core/products/GeneralMatrixVector.h
-include/eigen2/Eigen/src/Core/products/SelfadjointMatrixVector.h
 include/eigen2/Eigen/src/Core/util/Constants.h
 include/eigen2/Eigen/src/Core/util/DisableMSVCWarnings.h
 include/eigen2/Eigen/src/Core/util/EnableMSVCWarnings.h
@@ -73,7 +67,6 @@ include/eigen2/Eigen/src/Core/util/XprHelper.h
 include/eigen2/Eigen/src/Geometry/AlignedBox.h
 include/eigen2/Eigen/src/Geometry/AngleAxis.h
 include/eigen2/Eigen/src/Geometry/EulerAngles.h
-include/eigen2/Eigen/src/Geometry/Homogeneous.h
 include/eigen2/Eigen/src/Geometry/Hyperplane.h
 include/eigen2/Eigen/src/Geometry/OrthoMethods.h
 include/eigen2/Eigen/src/Geometry/ParametrizedLine.h
@@ -83,12 +76,9 @@ include/eigen2/Eigen/src/Geometry/RotationBase.h
 include/eigen2/Eigen/src/Geometry/Scaling.h
 include/eigen2/Eigen/src/Geometry/Transform.h
 include/eigen2/Eigen/src/Geometry/Translation.h
-include/eigen2/Eigen/src/Geometry/Umeyama.h
-include/eigen2/Eigen/src/Geometry/arch/Geometry_SSE.h
 include/eigen2/Eigen/src/LU/Determinant.h
 include/eigen2/Eigen/src/LU/Inverse.h
 include/eigen2/Eigen/src/LU/LU.h
-include/eigen2/Eigen/src/LU/PartialLU.h
 include/eigen2/Eigen/src/LeastSquares/LeastSquares.h
 include/eigen2/Eigen/src/QR/EigenSolver.h
 include/eigen2/Eigen/src/QR/HessenbergDecomposition.h
@@ -120,34 +110,16 @@ include/eigen2/Eigen/src/Sparse/SparseMatrixBase.h
 include/eigen2/Eigen/src/Sparse/SparseProduct.h
 include/eigen2/Eigen/src/Sparse/SparseRedux.h
 include/eigen2/Eigen/src/Sparse/SparseTranspose.h
-include/eigen2/Eigen/src/Sparse/SparseTriangular.h
 include/eigen2/Eigen/src/Sparse/SparseUtil.h
 include/eigen2/Eigen/src/Sparse/SparseVector.h
 include/eigen2/Eigen/src/Sparse/SuperLUSupport.h
 include/eigen2/Eigen/src/Sparse/TaucsSupport.h
 include/eigen2/Eigen/src/Sparse/TriangularSolver.h
 include/eigen2/Eigen/src/Sparse/UmfPackSupport.h
-include/eigen2/unsupported/Eigen/AdolcForward
-include/eigen2/unsupported/Eigen/AlignedVector3
-include/eigen2/unsupported/Eigen/AutoDiff
-include/eigen2/unsupported/Eigen/BVH
 include/eigen2/unsupported/Eigen/IterativeSolvers
-include/eigen2/unsupported/Eigen/MatrixFunctions
-include/eigen2/unsupported/Eigen/MoreVectorization
-include/eigen2/unsupported/Eigen/src/AutoDiff/AutoDiffJacobian.h
-include/eigen2/unsupported/Eigen/src/AutoDiff/AutoDiffScalar.h
-include/eigen2/unsupported/Eigen/src/AutoDiff/AutoDiffVector.h
-include/eigen2/unsupported/Eigen/src/BVH/BVAlgorithms.h
-include/eigen2/unsupported/Eigen/src/BVH/KdBVH.h
 include/eigen2/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h
 include/eigen2/unsupported/Eigen/src/IterativeSolvers/IterationController.h
-include/eigen2/unsupported/Eigen/src/MoreVectorization/MathFunctions.h
-libdata/pkgconfig/eigen2.pc
-@dirrm include/eigen2/unsupported/Eigen/src/MoreVectorization
-@dirrm include/eigen2/unsupported/Eigen/src/MatrixFunctions
 @dirrm include/eigen2/unsupported/Eigen/src/IterativeSolvers
-@dirrm include/eigen2/unsupported/Eigen/src/BVH
-@dirrm include/eigen2/unsupported/Eigen/src/AutoDiff
 @dirrm include/eigen2/unsupported/Eigen/src
 @dirrm include/eigen2/unsupported/Eigen
 @dirrm include/eigen2/unsupported
@@ -156,10 +128,8 @@ libdata/pkgconfig/eigen2.pc
 @dirrm include/eigen2/Eigen/src/QR
 @dirrm include/eigen2/Eigen/src/LeastSquares
 @dirrm include/eigen2/Eigen/src/LU
-@dirrm include/eigen2/Eigen/src/Geometry/arch
 @dirrm include/eigen2/Eigen/src/Geometry
 @dirrm include/eigen2/Eigen/src/Core/util
-@dirrm include/eigen2/Eigen/src/Core/products
 @dirrm include/eigen2/Eigen/src/Core/arch/SSE
 @dirrm include/eigen2/Eigen/src/Core/arch/AltiVec
 @dirrm include/eigen2/Eigen/src/Core/arch
