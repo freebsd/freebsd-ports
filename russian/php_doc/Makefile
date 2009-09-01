@@ -21,4 +21,7 @@ COMMENT?=	PHP documentation in HTML (outdated version)
 MD5_FILE?=	${.CURDIR}/distinfo
 WRK_SRC=	${WRKDIR}
 
+DEPRECATED=	Support for the Russian translation of the PHP manual seems to have stopped
+EXPIRATION_DATE=	2009-12-31
+
 .include "${MASTERDIR}/Makefile"
