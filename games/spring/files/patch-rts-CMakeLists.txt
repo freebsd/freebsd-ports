@@ -1,0 +1,11 @@
+--- rts/CMakeLists.txt.orig	2009-08-25 19:54:09.000000000 +0400
++++ rts/CMakeLists.txt	2009-08-25 19:54:18.000000000 +0400
+@@ -63,6 +63,8 @@
+ INCLUDE_DIRECTORIES(${FREETYPE_INCLUDE_DIR})
+ LIST(APPEND spring_libraries ${FREETYPE_LIBRARIES})
+ 
++LIST(APPEND spring_libraries execinfo)
++
+ ### Find include directories and add platform specific libraries
+ IF (MINGW)
+ 	FIND_PACKAGE(Win32Libs REQUIRED)
