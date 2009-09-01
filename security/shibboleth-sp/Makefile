@@ -15,6 +15,8 @@ COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
 LIB_DEPENDS=	saml.5:${PORTSDIR}/security/opensaml
 
+BROKEN=		does not build
+
 OPTIONS=	APACHE22 "Use Apache version 2.2 instead of version 2.0"  on
 
 USE_GMAKE=	yes
