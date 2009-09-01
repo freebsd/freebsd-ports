@@ -47,9 +47,9 @@ include/ptclib/random.h
 include/ptclib/rfc1155.h
 include/ptclib/shttpsvc.h
 include/ptclib/snmp.h
-include/ptclib/sockagg.h
 include/ptclib/socks.h
 include/ptclib/telnet.h
+include/ptclib/threadpool.h
 include/ptclib/url.h
 include/ptclib/vsdl.h
 include/ptclib/vxml.h
@@ -77,7 +77,6 @@ include/ptlib/indchan.h
 include/ptlib/int64.h
 include/ptlib/ipdsock.h
 include/ptlib/ipsock.h
-include/ptlib/ipxsock.h
 include/ptlib/lists.h
 include/ptlib/mail.h
 include/ptlib/mutex.h
@@ -105,7 +104,6 @@ include/ptlib/smartptr.h
 include/ptlib/socket.h
 include/ptlib/sockets.h
 include/ptlib/sound.h
-include/ptlib/spxsock.h
 include/ptlib/svcproc.h
 include/ptlib/syncpoint.h
 include/ptlib/syncthrd.h
@@ -161,8 +159,8 @@ include/ptlib/videoio1394dc.h
 lib/libpt.so
 lib/libpt.so.2
 lib/libpt_s.a
-lib/ptlib-2.6.1/devices/sound/oss_pwplugin.so
-lib/ptlib-2.6.1/devices/videoinput/bsdvideo_pwplugin.so
+lib/ptlib-2.6.4/devices/sound/oss_pwplugin.so
+%%BSDVIDEO%%lib/ptlib-2.6.4/devices/videoinput/bsdvideo_pwplugin.so
 libdata/pkgconfig/ptlib.pc
 %%DATADIR%%/make/common.mak
 %%DATADIR%%/make/lib.mak
@@ -173,10 +171,10 @@ libdata/pkgconfig/ptlib.pc
 %%DATADIR%%/make/unix.mak
 @dirrm %%DATADIR%%/make
 @dirrm %%DATADIR%%
-@dirrm lib/ptlib-2.6.1/devices/videoinput
-@dirrm lib/ptlib-2.6.1/devices/sound
-@dirrm lib/ptlib-2.6.1/devices
-@dirrm lib/ptlib-2.6.1
+%%BSDVIDEO%%@dirrm lib/ptlib-2.6.4/devices/videoinput
+@dirrm lib/ptlib-2.6.4/devices/sound
+@dirrm lib/ptlib-2.6.4/devices
+@dirrm lib/ptlib-2.6.4
 @dirrm include/ptlib/unix/ptlib
 @dirrm include/ptlib/unix
 @dirrm include/ptlib
