@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-ClassAttribute
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Declare class attributes Moose-style
 
-BUILD_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=0.89:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-AttributeHelpers>=0.13:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
