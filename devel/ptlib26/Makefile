@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ptlib
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ptlib/2.6
@@ -41,10 +41,10 @@ ALL_TARGET=	optshared
 # if explicitely asked for, depend upon it
 .if defined(WITH_SDL)
 USE_SDL+=	sdl
-CONFIGURE_ENV+=	SDL_CFLAGS="`sdl-config --cflags`" \
-		SDL_LIBS="`sdl-config --libs`"
-MAKE_ENV+=	SDL_CFLAGS="`sdl-config --cflags`" \
-		SDL_LIBS="`sdl-config --libs`"
+CONFIGURE_ENV+=	SDL_CFLAGS="`${SDL_CONFIG} --cflags`" \
+		SDL_LIBS="`${SDL_CONFIG} --libs`"
+MAKE_ENV+=	SDL_CFLAGS="`${SDL_CONFIG} --cflags`" \
+		SDL_LIBS="`${SDL_CONFIG} --libs`"
 .endif
 
 .if defined(WITH_ODBC)
@@ -135,6 +135,8 @@ PLIST_SUB+=	V4L="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|SDL11/|SDL/|' ${WRKSRC}/src/ptclib/vsdl.cxx \
+		${WRKSRC}/include/ptclib/vsdl.h
 .if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
 	@${REINPLACE_CMD} -e 's|P_PTHREADS_XPG6|0|' ${WRKSRC}/src/ptlib/unix/tlibthrd.cxx
 .endif
