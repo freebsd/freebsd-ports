@@ -97,7 +97,8 @@ lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/A-A-SBetaPack1.9B.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/AA3.2.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/AA5.0project.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/AAIA10.cfg
-lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BA692.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BA695.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BA696.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BA_Installer_Version.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BOTA_13.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/BOTA_14.cfg
@@ -111,6 +112,7 @@ lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/OTA_Shiny_TA.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/OTA_with_Evolva_models.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/OTA_with_UTASP_BP.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/PURE0.51.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/S44Lyuban_v106.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/S44_Installer_Version.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/SmallMod.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/SpringWD5B65.cfg
@@ -120,6 +122,7 @@ lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/TBT12.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/TLLv104.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/XTAPE.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/XTAPEV958.cfg
+lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/XTAPEV9585.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/XTA_Installer_Version.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/gundam_1.1_epic.cfg
 lib/spring/AI/Skirmish/AAI/0.9/cfg/mod/gundam_1.1_tiny.cfg
@@ -127,9 +130,6 @@ lib/spring/AI/Skirmish/AAI/0.9/libSkirmishAI.so
 lib/spring/AI/Skirmish/KAIK/0.13/AIInfo.lua
 lib/spring/AI/Skirmish/KAIK/0.13/AIOptions.lua
 lib/spring/AI/Skirmish/KAIK/0.13/libSkirmishAI.so
-lib/spring/AI/Skirmish/NTai/XE9.81/AIInfo.lua
-lib/spring/AI/Skirmish/NTai/XE9.81/AIOptions.lua
-lib/spring/AI/Skirmish/NTai/XE9.81/libSkirmishAI.so
 lib/spring/AI/Skirmish/NullAI/0.1/AIInfo.lua
 lib/spring/AI/Skirmish/NullAI/0.1/libSkirmishAI.so
 lib/spring/AI/Skirmish/NullLegacyCppAI/0.1/AIInfo.lua
@@ -256,8 +256,6 @@ share/pixmaps/spring.png
 @dirrm lib/spring/AI/Skirmish/NullLegacyCppAI
 @dirrm lib/spring/AI/Skirmish/NullAI/0.1
 @dirrm lib/spring/AI/Skirmish/NullAI
-@dirrm lib/spring/AI/Skirmish/NTai/XE9.81
-@dirrm lib/spring/AI/Skirmish/NTai
 @dirrm lib/spring/AI/Skirmish/KAIK/0.13
 @dirrm lib/spring/AI/Skirmish/KAIK
 @dirrm lib/spring/AI/Skirmish/AAI/0.9/cfg/mod

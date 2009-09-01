@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spring
-PORTVERSION=	0.79.1.2
+PORTVERSION=	0.80.2
 CATEGORIES=	games
 MASTER_SITES=	http://springrts.com/dl/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -21,7 +21,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		IL.2:${PORTSDIR}/graphics/devil \
 		ogg.6:${PORTSDIR}/audio/libogg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -53,6 +54,8 @@ post-patch:
 		${WRKSRC}/rts/System/FileSystem/DataDirLocater.cpp
 	@${REINPLACE_CMD} -e 's|x1F3F|x0F3F|g' \
 		${WRKSRC}/rts/System/FPUCheck.h
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/rts/build/cmake/*.cmake
 
 post-install:
 .if !defined(NOPORTDOCS)
