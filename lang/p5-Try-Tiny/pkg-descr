@@ -1,0 +1,6 @@
+This module provides bare bones try/catch statements that are designed
+to minimize common mistakes done with eval blocks (for instance assuming
+that $@ is set to a true value on error, or clobbering previous values
+of $@, and NOTHING else.
+
+WWW: http://search.cpan.org/dist/Try-Tiny/
