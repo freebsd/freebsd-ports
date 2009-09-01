@@ -400,6 +400,7 @@
     SUBDIR += linux-f8-libogg
     SUBDIR += linux-f8-libvorbis
     SUBDIR += linux-f8-mikmod
+    SUBDIR += linux-f8-nas-libs
     SUBDIR += linux-f8-openal
     SUBDIR += linux-f8-sdl_mixer
     SUBDIR += linux-freealut
