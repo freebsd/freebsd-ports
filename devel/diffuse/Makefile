@@ -7,6 +7,7 @@
 
 PORTNAME=	diffuse
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
@@ -60,6 +61,8 @@ post-patch:
 		${WRKSRC}/src/etc/${PORTNAME}rc
 	${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
 		${WRKSRC}/src/etc/${PORTNAME}rc
+	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
+		${WRKSRC}/src/usr/share/omf/${PORTNAME}/${PORTNAME}-C.omf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/usr/bin/${PORTNAME} \
