@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ounit
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 PKGNAMEPREFIX=	ocaml-
