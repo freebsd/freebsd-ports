@@ -1,3 +1,4 @@
+share/locale/is/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/is/LC_MESSAGES/akregator.mo
 share/locale/is/LC_MESSAGES/amor.mo
 share/locale/is/LC_MESSAGES/ark.mo
@@ -63,6 +64,7 @@ share/locale/is/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/is/LC_MESSAGES/kcm_emoticons.mo
 share/locale/is/LC_MESSAGES/kcm_krfb.mo
 share/locale/is/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/is/LC_MESSAGES/kcm_lirc.mo
 share/locale/is/LC_MESSAGES/kcm_memory.mo
 share/locale/is/LC_MESSAGES/kcm_partition.mo
 share/locale/is/LC_MESSAGES/kcm_pci.mo
@@ -109,7 +111,6 @@ share/locale/is/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/is/LC_MESSAGES/kcmkwm.mo
 share/locale/is/LC_MESSAGES/kcmlaunch.mo
 share/locale/is/LC_MESSAGES/kcmlilo.mo
-share/locale/is/LC_MESSAGES/kcmlirc.mo
 share/locale/is/LC_MESSAGES/kcmlocale.mo
 share/locale/is/LC_MESSAGES/kcmnic.mo
 share/locale/is/LC_MESSAGES/kcmnotify.mo
@@ -420,6 +421,7 @@ share/locale/is/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/is/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/is/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/is/LC_MESSAGES/plasma_applet_incomingmsg.mo
+share/locale/is/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/is/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/is/LC_MESSAGES/plasma_applet_kolourpicker.mo
 share/locale/is/LC_MESSAGES/plasma_applet_launcher.mo
@@ -465,6 +467,7 @@ share/locale/is/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/is/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/is/LC_MESSAGES/plasma_engine_network.mo
 share/locale/is/LC_MESSAGES/plasma_engine_notifications.mo
+share/locale/is/LC_MESSAGES/plasma_engine_nowplaying.mo
 share/locale/is/LC_MESSAGES/plasma_engine_ocs.mo
 share/locale/is/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/is/LC_MESSAGES/plasma_engine_weather.mo

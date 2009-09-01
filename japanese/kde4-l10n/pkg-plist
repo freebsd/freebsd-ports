@@ -104,6 +104,7 @@ share/locale/ja/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/ja/LC_MESSAGES/kcm_emoticons.mo
 share/locale/ja/LC_MESSAGES/kcm_krfb.mo
 share/locale/ja/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/ja/LC_MESSAGES/kcm_lirc.mo
 share/locale/ja/LC_MESSAGES/kcm_memory.mo
 share/locale/ja/LC_MESSAGES/kcm_partition.mo
 share/locale/ja/LC_MESSAGES/kcm_pci.mo
@@ -149,7 +150,6 @@ share/locale/ja/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/ja/LC_MESSAGES/kcmkwm.mo
 share/locale/ja/LC_MESSAGES/kcmlaunch.mo
 share/locale/ja/LC_MESSAGES/kcmlilo.mo
-share/locale/ja/LC_MESSAGES/kcmlirc.mo
 share/locale/ja/LC_MESSAGES/kcmlocale.mo
 share/locale/ja/LC_MESSAGES/kcmnic.mo
 share/locale/ja/LC_MESSAGES/kcmnotify.mo
@@ -520,15 +520,14 @@ share/locale/ja/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/ja/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_kalzium.mo
-share/locale/ja/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_network.mo
+share/locale/ja/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_converterrunner.mo
-share/locale/ja/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_konsolesessions.mo

@@ -1268,6 +1268,7 @@ share/locale/da/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/da/LC_MESSAGES/kcm_emoticons.mo
 share/locale/da/LC_MESSAGES/kcm_krfb.mo
 share/locale/da/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/da/LC_MESSAGES/kcm_lirc.mo
 share/locale/da/LC_MESSAGES/kcm_memory.mo
 share/locale/da/LC_MESSAGES/kcm_partition.mo
 share/locale/da/LC_MESSAGES/kcm_pci.mo
@@ -1314,7 +1315,6 @@ share/locale/da/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/da/LC_MESSAGES/kcmkwm.mo
 share/locale/da/LC_MESSAGES/kcmlaunch.mo
 share/locale/da/LC_MESSAGES/kcmlilo.mo
-share/locale/da/LC_MESSAGES/kcmlirc.mo
 share/locale/da/LC_MESSAGES/kcmlocale.mo
 share/locale/da/LC_MESSAGES/kcmnic.mo
 share/locale/da/LC_MESSAGES/kcmnotify.mo
@@ -1767,7 +1767,6 @@ share/locale/da/LC_MESSAGES/umbrello.mo
 share/locale/da/LC_MESSAGES/useraccount.mo
 share/locale/da/LC_MESSAGES/xml_mimetypes.mo
 share/locale/da/entry.desktop
-@dirrmtry share/pixmaps
 @dirrm share/doc/HTML/da/xsldbg
 @dirrm share/doc/HTML/da/umbrello
 @dirrm share/doc/HTML/da/superkaramba

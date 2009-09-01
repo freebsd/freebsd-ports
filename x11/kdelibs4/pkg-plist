@@ -2707,6 +2707,7 @@ share/apps/ksgmltools2/customization/pl/lang.entities
 share/apps/ksgmltools2/customization/pl/strings.entities
 share/apps/ksgmltools2/customization/pl/user.entities
 share/apps/ksgmltools2/customization/pt-BR/catalog.xml
+share/apps/ksgmltools2/customization/pt-BR/contributor.entities
 share/apps/ksgmltools2/customization/pt-BR/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/gpl-notice.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/help-menu.docbook

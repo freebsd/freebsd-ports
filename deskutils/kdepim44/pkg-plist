@@ -422,6 +422,10 @@ share/apps/kaddressbook/printing/mike-style.png
 share/apps/kaddressbook/printing/ringbinder-style.png
 share/apps/kaddressbook/vcard_xxportui.rc
 share/apps/kaddressbook/zone.tab
+share/apps/kalarm/icons/oxygen/16x16/actions/document-new-from-template.png
+share/apps/kalarm/icons/oxygen/22x22/actions/document-new-from-template.png
+share/apps/kalarm/icons/oxygen/22x22/actions/kalarm.png
+share/apps/kalarm/icons/oxygen/22x22/actions/new-command-alarm.png
 share/apps/kalarm/kalarmui.rc
 share/apps/kconf_update/kalarm-1.2.1-general.pl
 share/apps/kconf_update/kalarm-1.9.5-defaults.pl
@@ -1037,7 +1041,6 @@ share/icons/hicolor/scalable/apps/kmail.svgz
 share/icons/hicolor/scalable/apps/korganizer.svgz
 share/icons/oxygen/128x128/apps/kalarm.png
 share/icons/oxygen/128x128/apps/kleopatra.png
-share/icons/oxygen/16x16/actions/document-new-from-template.png
 share/icons/oxygen/16x16/actions/edit-delete-page.png
 share/icons/oxygen/16x16/actions/ldap_lookup.png
 share/icons/oxygen/16x16/actions/mail-forwarded-replied.png
@@ -1058,11 +1061,8 @@ share/icons/oxygen/16x16/status/mail-task.png
 share/icons/oxygen/22x22/actions/button_fewer.png
 share/icons/oxygen/22x22/actions/button_more.png
 share/icons/oxygen/22x22/actions/checkmark.png
-share/icons/oxygen/22x22/actions/document-new-from-template.png
 share/icons/oxygen/22x22/actions/edit-delete-page.png
-share/icons/oxygen/22x22/actions/kalarm.png
 share/icons/oxygen/22x22/actions/mail-reply-custom.png
-share/icons/oxygen/22x22/actions/new-command-alarm.png
 share/icons/oxygen/22x22/apps/kalarm.png
 share/icons/oxygen/22x22/apps/kleopatra.png
 share/icons/oxygen/22x22/mimetypes/x-mail-distribution-list.png
@@ -1335,6 +1335,12 @@ share/kde4/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/kjots
 @dirrm share/apps/kdepimwidgets/pics
 @dirrm share/apps/kdepimwidgets
+@dirrm share/apps/kalarm/icons/oxygen/22x22/actions
+@dirrm share/apps/kalarm/icons/oxygen/22x22
+@dirrm share/apps/kalarm/icons/oxygen/16x16/actions
+@dirrm share/apps/kalarm/icons/oxygen/16x16
+@dirrm share/apps/kalarm/icons/oxygen
+@dirrm share/apps/kalarm/icons
 @dirrm share/apps/kalarm
 @dirrm share/apps/kaddressbook/printing
 @dirrm share/apps/kaddressbook/pics

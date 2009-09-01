@@ -631,6 +631,7 @@ share/locale/en_GB/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/en_GB/LC_MESSAGES/kcm_emoticons.mo
 share/locale/en_GB/LC_MESSAGES/kcm_krfb.mo
 share/locale/en_GB/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/en_GB/LC_MESSAGES/kcm_lirc.mo
 share/locale/en_GB/LC_MESSAGES/kcm_memory.mo
 share/locale/en_GB/LC_MESSAGES/kcm_partition.mo
 share/locale/en_GB/LC_MESSAGES/kcm_pci.mo
@@ -677,7 +678,6 @@ share/locale/en_GB/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/en_GB/LC_MESSAGES/kcmkwm.mo
 share/locale/en_GB/LC_MESSAGES/kcmlaunch.mo
 share/locale/en_GB/LC_MESSAGES/kcmlilo.mo
-share/locale/en_GB/LC_MESSAGES/kcmlirc.mo
 share/locale/en_GB/LC_MESSAGES/kcmlocale.mo
 share/locale/en_GB/LC_MESSAGES/kcmnic.mo
 share/locale/en_GB/LC_MESSAGES/kcmnotify.mo
@@ -1236,5 +1236,3 @@ share/locale/en_GB/entry.desktop
 @dirrm share/apps/klettres/en_GB/alpha
 @dirrm share/apps/klettres/en_GB
 @dirrm share/apps/klettres
-@dirrm share/apps/katepart/syntax
-@dirrm share/apps/katepart

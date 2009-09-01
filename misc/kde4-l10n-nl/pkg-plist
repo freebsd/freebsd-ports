@@ -89,9 +89,6 @@ share/apps/kvtml/nl/animals.kvtml
 share/apps/kvtml/nl/easy.kvtml
 share/apps/kvtml/nl/hard.kvtml
 share/apps/kvtml/nl/medium.kvtml
-share/doc/HTML/nl/amor/common
-share/doc/HTML/nl/amor/index.cache.bz2
-share/doc/HTML/nl/amor/index.docbook
 share/doc/HTML/nl/irkick/common
 share/doc/HTML/nl/irkick/index.cache.bz2
 share/doc/HTML/nl/irkick/index.docbook
@@ -624,9 +621,6 @@ share/doc/HTML/nl/kmahjongg/index.docbook
 share/doc/HTML/nl/kmenuedit/common
 share/doc/HTML/nl/kmenuedit/index.cache.bz2
 share/doc/HTML/nl/kmenuedit/index.docbook
-share/doc/HTML/nl/kmoon/common
-share/doc/HTML/nl/kmoon/index.cache.bz2
-share/doc/HTML/nl/kmoon/index.docbook
 share/doc/HTML/nl/kmousetool/common
 share/doc/HTML/nl/kmousetool/index.cache.bz2
 share/doc/HTML/nl/kmousetool/index.docbook
@@ -884,9 +878,6 @@ share/doc/HTML/nl/kuser/common
 share/doc/HTML/nl/kuser/index.cache.bz2
 share/doc/HTML/nl/kuser/index.docbook
 share/doc/HTML/nl/kuser/kuser.png
-share/doc/HTML/nl/kworldclock/common
-share/doc/HTML/nl/kworldclock/index.cache.bz2
-share/doc/HTML/nl/kworldclock/index.docbook
 share/doc/HTML/nl/kxkb/common
 share/doc/HTML/nl/kxkb/index.cache.bz2
 share/doc/HTML/nl/kxkb/index.docbook
@@ -1026,6 +1017,7 @@ share/locale/nl/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/nl/LC_MESSAGES/kcm_emoticons.mo
 share/locale/nl/LC_MESSAGES/kcm_krfb.mo
 share/locale/nl/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/nl/LC_MESSAGES/kcm_lirc.mo
 share/locale/nl/LC_MESSAGES/kcm_memory.mo
 share/locale/nl/LC_MESSAGES/kcm_partition.mo
 share/locale/nl/LC_MESSAGES/kcm_pci.mo
@@ -1072,7 +1064,6 @@ share/locale/nl/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/nl/LC_MESSAGES/kcmkwm.mo
 share/locale/nl/LC_MESSAGES/kcmlaunch.mo
 share/locale/nl/LC_MESSAGES/kcmlilo.mo
-share/locale/nl/LC_MESSAGES/kcmlirc.mo
 share/locale/nl/LC_MESSAGES/kcmlocale.mo
 share/locale/nl/LC_MESSAGES/kcmnic.mo
 share/locale/nl/LC_MESSAGES/kcmnotify.mo
@@ -1533,7 +1524,6 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/marble
 @dirrm share/doc/HTML/nl/lskat
 @dirrm share/doc/HTML/nl/kxkb
-@dirrm share/doc/HTML/nl/kworldclock
 @dirrm share/doc/HTML/nl/kuser
 @dirrm share/doc/HTML/nl/kturtle
 @dirrm share/doc/HTML/nl/kttsd
@@ -1557,7 +1547,6 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kmplot
 @dirrm share/doc/HTML/nl/kmouth
 @dirrm share/doc/HTML/nl/kmousetool
-@dirrm share/doc/HTML/nl/kmoon
 @dirrm share/doc/HTML/nl/kmenuedit
 @dirrm share/doc/HTML/nl/kmahjongg
 @dirrm share/doc/HTML/nl/kmag
@@ -1684,7 +1673,6 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kalgebra
 @dirrm share/doc/HTML/nl/juk
 @dirrm share/doc/HTML/nl/irkick
-@dirrm share/doc/HTML/nl/amor
 @dirrm share/apps/kvtml/nl
 @dirrm share/apps/kvtml
 @dirrm share/apps/kturtle/examples/nl
@@ -1698,8 +1686,6 @@ share/locale/nl/entry.desktop
 @dirrm share/apps/klettres/nl/alpha
 @dirrm share/apps/klettres/nl
 @dirrm share/apps/klettres
-@dirrmtry share/apps/katepart/syntax
-@dirrmtry share/apps/katepart
 @dirrmtry man/nl/man6
 @dirrmtry man/nl/man1
 @dirrmtry man/nl

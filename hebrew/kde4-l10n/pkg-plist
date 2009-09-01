@@ -107,6 +107,7 @@ share/locale/he/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/he/LC_MESSAGES/kcm_emoticons.mo
 share/locale/he/LC_MESSAGES/kcm_krfb.mo
 share/locale/he/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/he/LC_MESSAGES/kcm_lirc.mo
 share/locale/he/LC_MESSAGES/kcm_memory.mo
 share/locale/he/LC_MESSAGES/kcm_partition.mo
 share/locale/he/LC_MESSAGES/kcm_phonon.mo
@@ -147,7 +148,6 @@ share/locale/he/LC_MESSAGES/kcmkwinrules.mo
 share/locale/he/LC_MESSAGES/kcmkwm.mo
 share/locale/he/LC_MESSAGES/kcmlaunch.mo
 share/locale/he/LC_MESSAGES/kcmlilo.mo
-share/locale/he/LC_MESSAGES/kcmlirc.mo
 share/locale/he/LC_MESSAGES/kcmlocale.mo
 share/locale/he/LC_MESSAGES/kcmnic.mo
 share/locale/he/LC_MESSAGES/kcmnotify.mo

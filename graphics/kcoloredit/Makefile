@@ -21,8 +21,9 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 APP_VER=	2.0.0
-EXTRA_VER=	4.3.0
+EXTRA_VER=	4.3.1
 
 .include <bsd.port.mk>

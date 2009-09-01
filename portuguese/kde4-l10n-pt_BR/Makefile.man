@@ -45,6 +45,7 @@ MAN1=	adddebug.1 \
 	swappo.1 \
 	transxx.1 \
 	xml2pot.1 \
+	xsldbg.1 \
 	zonetab2pot.py.1
 MAN6=	amor.6 \
 	khangman.6 \

@@ -90,6 +90,7 @@ share/locale/fi/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/fi/LC_MESSAGES/kcm_emoticons.mo
 share/locale/fi/LC_MESSAGES/kcm_krfb.mo
 share/locale/fi/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/fi/LC_MESSAGES/kcm_lirc.mo
 share/locale/fi/LC_MESSAGES/kcm_memory.mo
 share/locale/fi/LC_MESSAGES/kcm_partition.mo
 share/locale/fi/LC_MESSAGES/kcm_phonon.mo
@@ -130,7 +131,6 @@ share/locale/fi/LC_MESSAGES/kcmkwinrules.mo
 share/locale/fi/LC_MESSAGES/kcmkwm.mo
 share/locale/fi/LC_MESSAGES/kcmlaunch.mo
 share/locale/fi/LC_MESSAGES/kcmlilo.mo
-share/locale/fi/LC_MESSAGES/kcmlirc.mo
 share/locale/fi/LC_MESSAGES/kcmlocale.mo
 share/locale/fi/LC_MESSAGES/kcmnic.mo
 share/locale/fi/LC_MESSAGES/kcmnotify.mo
@@ -378,6 +378,7 @@ share/locale/fi/LC_MESSAGES/libkpimutils.mo
 share/locale/fi/LC_MESSAGES/libkscreensaver.mo
 share/locale/fi/LC_MESSAGES/libksieve.mo
 share/locale/fi/LC_MESSAGES/libkworkspace.mo
+share/locale/fi/LC_MESSAGES/libmailtransport.mo
 share/locale/fi/LC_MESSAGES/libphonon.mo
 share/locale/fi/LC_MESSAGES/libplasma.mo
 share/locale/fi/LC_MESSAGES/libplasmaclock.mo
@@ -417,6 +418,7 @@ share/locale/fi/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_frame.mo
+share/locale/fi/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_kolourpicker.mo

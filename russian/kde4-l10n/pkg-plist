@@ -963,6 +963,7 @@ share/locale/ru/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/ru/LC_MESSAGES/kcm_emoticons.mo
 share/locale/ru/LC_MESSAGES/kcm_krfb.mo
 share/locale/ru/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/ru/LC_MESSAGES/kcm_lirc.mo
 share/locale/ru/LC_MESSAGES/kcm_memory.mo
 share/locale/ru/LC_MESSAGES/kcm_partition.mo
 share/locale/ru/LC_MESSAGES/kcm_pci.mo
@@ -1008,7 +1009,6 @@ share/locale/ru/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/ru/LC_MESSAGES/kcmkwm.mo
 share/locale/ru/LC_MESSAGES/kcmlaunch.mo
 share/locale/ru/LC_MESSAGES/kcmlilo.mo
-share/locale/ru/LC_MESSAGES/kcmlirc.mo
 share/locale/ru/LC_MESSAGES/kcmlocale.mo
 share/locale/ru/LC_MESSAGES/kcmnic.mo
 share/locale/ru/LC_MESSAGES/kcmnotify.mo
@@ -1626,8 +1626,6 @@ share/locale/ru/entry.desktop
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data
 @dirrm share/apps/kturtle
-@dirrm share/apps/katepart/syntax
-@dirrm share/apps/katepart
 @dirrmtry man/ru/man6
 @dirrmtry man/ru/man1
 @dirrmtry man/ru

@@ -1585,6 +1585,7 @@ share/locale/fr/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/fr/LC_MESSAGES/kcm_emoticons.mo
 share/locale/fr/LC_MESSAGES/kcm_krfb.mo
 share/locale/fr/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/fr/LC_MESSAGES/kcm_lirc.mo
 share/locale/fr/LC_MESSAGES/kcm_memory.mo
 share/locale/fr/LC_MESSAGES/kcm_partition.mo
 share/locale/fr/LC_MESSAGES/kcm_pci.mo
@@ -1631,7 +1632,6 @@ share/locale/fr/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/fr/LC_MESSAGES/kcmkwm.mo
 share/locale/fr/LC_MESSAGES/kcmlaunch.mo
 share/locale/fr/LC_MESSAGES/kcmlilo.mo
-share/locale/fr/LC_MESSAGES/kcmlirc.mo
 share/locale/fr/LC_MESSAGES/kcmlocale.mo
 share/locale/fr/LC_MESSAGES/kcmnic.mo
 share/locale/fr/LC_MESSAGES/kcmnotify.mo
@@ -1820,6 +1820,7 @@ share/locale/fr/LC_MESSAGES/kres_remote.mo
 share/locale/fr/LC_MESSAGES/kres_scalix.mo
 share/locale/fr/LC_MESSAGES/kres_tvanytime.mo
 share/locale/fr/LC_MESSAGES/kres_xmlrpc.mo
+share/locale/fr/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/fr/LC_MESSAGES/kreversi.mo
 share/locale/fr/LC_MESSAGES/krfb.mo
 share/locale/fr/LC_MESSAGES/kruler.mo

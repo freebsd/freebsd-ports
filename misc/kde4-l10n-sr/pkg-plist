@@ -748,35 +748,56 @@ share/icons/hicolor/scalable/actions/l10n/sr/approved.svgz
 share/icons/hicolor/scalable/actions/l10n/sr@latin/approved.svgz
 share/icons/oxygen/128x128/apps/l10n/sr/preferences-desktop-keyboard.png
 share/icons/oxygen/128x128/apps/l10n/sr/preferences-desktop-user.png
+share/icons/oxygen/128x128/apps/l10n/sr@latin/preferences-desktop-keyboard.png
+share/icons/oxygen/128x128/apps/l10n/sr@latin/preferences-desktop-user.png
 share/icons/oxygen/128x128/status/l10n/sr/dialog-information.png
+share/icons/oxygen/128x128/status/l10n/sr@latin/dialog-information.png
+share/icons/oxygen/16x16/actions/l10n/sr/help-about.png
 share/icons/oxygen/16x16/actions/l10n/sr/tools-check-spelling.png
+share/icons/oxygen/16x16/actions/l10n/sr@latin/help-about.png
+share/icons/oxygen/16x16/actions/l10n/sr@latin/tools-check-spelling.png
 share/icons/oxygen/16x16/apps/l10n/sr/preferences-desktop-keyboard.png
 share/icons/oxygen/16x16/apps/l10n/sr/preferences-desktop-user.png
+share/icons/oxygen/16x16/apps/l10n/sr@latin/preferences-desktop-keyboard.png
+share/icons/oxygen/16x16/apps/l10n/sr@latin/preferences-desktop-user.png
 share/icons/oxygen/16x16/status/l10n/sr/dialog-information.png
+share/icons/oxygen/16x16/status/l10n/sr@latin/dialog-information.png
+share/icons/oxygen/22x22/actions/l10n/sr/help-about.png
 share/icons/oxygen/22x22/actions/l10n/sr/tools-check-spelling.png
+share/icons/oxygen/22x22/actions/l10n/sr@latin/help-about.png
+share/icons/oxygen/22x22/actions/l10n/sr@latin/tools-check-spelling.png
 share/icons/oxygen/22x22/apps/l10n/sr/preferences-desktop-keyboard.png
 share/icons/oxygen/22x22/apps/l10n/sr/preferences-desktop-user.png
+share/icons/oxygen/22x22/apps/l10n/sr@latin/preferences-desktop-keyboard.png
+share/icons/oxygen/22x22/apps/l10n/sr@latin/preferences-desktop-user.png
 share/icons/oxygen/22x22/status/l10n/sr/dialog-information.png
+share/icons/oxygen/22x22/status/l10n/sr@latin/dialog-information.png
+share/icons/oxygen/32x32/actions/l10n/sr/help-about.png
 share/icons/oxygen/32x32/actions/l10n/sr/tools-check-spelling.png
+share/icons/oxygen/32x32/actions/l10n/sr@latin/help-about.png
+share/icons/oxygen/32x32/actions/l10n/sr@latin/tools-check-spelling.png
 share/icons/oxygen/32x32/apps/l10n/sr/preferences-desktop-keyboard.png
 share/icons/oxygen/32x32/apps/l10n/sr/preferences-desktop-user.png
+share/icons/oxygen/32x32/apps/l10n/sr@latin/preferences-desktop-keyboard.png
+share/icons/oxygen/32x32/apps/l10n/sr@latin/preferences-desktop-user.png
 share/icons/oxygen/32x32/status/l10n/sr/dialog-information.png
+share/icons/oxygen/32x32/status/l10n/sr@latin/dialog-information.png
+share/icons/oxygen/48x48/actions/l10n/sr/help-about.png
 share/icons/oxygen/48x48/actions/l10n/sr/tools-check-spelling.png
+share/icons/oxygen/48x48/actions/l10n/sr@latin/help-about.png
+share/icons/oxygen/48x48/actions/l10n/sr@latin/tools-check-spelling.png
 share/icons/oxygen/48x48/apps/l10n/sr/preferences-desktop-keyboard.png
 share/icons/oxygen/48x48/apps/l10n/sr/preferences-desktop-user.png
+share/icons/oxygen/48x48/apps/l10n/sr@latin/preferences-desktop-keyboard.png
+share/icons/oxygen/48x48/apps/l10n/sr@latin/preferences-desktop-user.png
 share/icons/oxygen/48x48/status/l10n/sr/dialog-information.png
+share/icons/oxygen/48x48/status/l10n/sr@latin/dialog-information.png
 share/icons/oxygen/64x64/apps/l10n/sr/preferences-desktop-keyboard.png
 share/icons/oxygen/64x64/apps/l10n/sr/preferences-desktop-user.png
+share/icons/oxygen/64x64/apps/l10n/sr@latin/preferences-desktop-keyboard.png
+share/icons/oxygen/64x64/apps/l10n/sr@latin/preferences-desktop-user.png
 share/icons/oxygen/64x64/status/l10n/sr/dialog-information.png
-share/icons/oxygen/scalable/actions/l10n/sr/tools-check-spelling.svgz
-share/icons/oxygen/scalable/apps/l10n/sr/preferences-desktop-keyboard.svgz
-share/icons/oxygen/scalable/apps/l10n/sr/preferences-desktop-user.svgz
-share/icons/oxygen/scalable/apps/small/16x16/l10n/sr/preferences-desktop-user.svgz
-share/icons/oxygen/scalable/apps/small/32x32/l10n/sr/preferences-desktop-user.svgz
-share/icons/oxygen/scalable/status/l10n/sr/dialog-information.svgz
-share/icons/oxygen/scalable/status/small/16x16/l10n/sr/dialog-information.svgz
-share/icons/oxygen/scalable/status/small/22x22/l10n/sr/dialog-information.svgz
-share/icons/oxygen/scalable/status/small/48x48/l10n/sr/dialog-information.svgz
+share/icons/oxygen/64x64/status/l10n/sr@latin/dialog-information.png
 share/locale/sr/LC_MESSAGES/amor.mo
 share/locale/sr/LC_MESSAGES/ark.mo
 share/locale/sr/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -844,6 +865,7 @@ share/locale/sr/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/sr/LC_MESSAGES/kcm_emoticons.mo
 share/locale/sr/LC_MESSAGES/kcm_krfb.mo
 share/locale/sr/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/sr/LC_MESSAGES/kcm_lirc.mo
 share/locale/sr/LC_MESSAGES/kcm_memory.mo
 share/locale/sr/LC_MESSAGES/kcm_partition.mo
 share/locale/sr/LC_MESSAGES/kcm_pci.mo
@@ -886,7 +908,6 @@ share/locale/sr/LC_MESSAGES/kcmkwinrules.mo
 share/locale/sr/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/sr/LC_MESSAGES/kcmkwm.mo
 share/locale/sr/LC_MESSAGES/kcmlaunch.mo
-share/locale/sr/LC_MESSAGES/kcmlirc.mo
 share/locale/sr/LC_MESSAGES/kcmlocale.mo
 share/locale/sr/LC_MESSAGES/kcmnic.mo
 share/locale/sr/LC_MESSAGES/kcmnotify.mo
@@ -1241,57 +1262,53 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/locale/sr/LC_SCRIPTS/kfontinst
 @dirrm share/locale/sr/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/sr/LC_SCRIPTS
-@dirrm share/icons/oxygen/scalable/status/small/48x48/l10n/sr
-@dirrm share/icons/oxygen/scalable/status/small/48x48/l10n
-@dirrm share/icons/oxygen/scalable/status/small/48x48
-@dirrm share/icons/oxygen/scalable/status/small/22x22/l10n/sr
-@dirrm share/icons/oxygen/scalable/status/small/22x22/l10n
-@dirrm share/icons/oxygen/scalable/status/small/22x22
-@dirrm share/icons/oxygen/scalable/status/small/16x16/l10n/sr
-@dirrm share/icons/oxygen/scalable/status/small/16x16/l10n
-@dirrm share/icons/oxygen/scalable/status/small/16x16
-@dirrm share/icons/oxygen/scalable/status/l10n/sr
-@dirrm share/icons/oxygen/scalable/status/l10n
-@dirrm share/icons/oxygen/scalable/apps/small/32x32/l10n/sr
-@dirrm share/icons/oxygen/scalable/apps/small/32x32/l10n
-@dirrm share/icons/oxygen/scalable/apps/small/32x32
-@dirrm share/icons/oxygen/scalable/apps/small/16x16/l10n/sr
-@dirrm share/icons/oxygen/scalable/apps/small/16x16/l10n
-@dirrm share/icons/oxygen/scalable/apps/small/16x16
-@dirrm share/icons/oxygen/scalable/apps/l10n/sr
-@dirrm share/icons/oxygen/scalable/apps/l10n
-@dirrm share/icons/oxygen/scalable/actions/l10n/sr
-@dirrm share/icons/oxygen/scalable/actions/l10n
+@dirrm share/icons/oxygen/64x64/status/l10n/sr@latin
 @dirrm share/icons/oxygen/64x64/status/l10n/sr
 @dirrm share/icons/oxygen/64x64/status/l10n
+@dirrm share/icons/oxygen/64x64/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/64x64/apps/l10n/sr
 @dirrm share/icons/oxygen/64x64/apps/l10n
+@dirrm share/icons/oxygen/48x48/status/l10n/sr@latin
 @dirrm share/icons/oxygen/48x48/status/l10n/sr
 @dirrm share/icons/oxygen/48x48/status/l10n
+@dirrm share/icons/oxygen/48x48/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/48x48/apps/l10n/sr
 @dirrm share/icons/oxygen/48x48/apps/l10n
+@dirrm share/icons/oxygen/48x48/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/48x48/actions/l10n/sr
 @dirrm share/icons/oxygen/48x48/actions/l10n
+@dirrm share/icons/oxygen/32x32/status/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/status/l10n/sr
 @dirrm share/icons/oxygen/32x32/status/l10n
+@dirrm share/icons/oxygen/32x32/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/apps/l10n/sr
 @dirrm share/icons/oxygen/32x32/apps/l10n
+@dirrm share/icons/oxygen/32x32/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/actions/l10n/sr
 @dirrm share/icons/oxygen/32x32/actions/l10n
+@dirrm share/icons/oxygen/256x256
+@dirrm share/icons/oxygen/22x22/status/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/status/l10n/sr
 @dirrm share/icons/oxygen/22x22/status/l10n
+@dirrm share/icons/oxygen/22x22/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/apps/l10n/sr
 @dirrm share/icons/oxygen/22x22/apps/l10n
+@dirrm share/icons/oxygen/22x22/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/actions/l10n/sr
 @dirrm share/icons/oxygen/22x22/actions/l10n
+@dirrm share/icons/oxygen/16x16/status/l10n/sr@latin
 @dirrm share/icons/oxygen/16x16/status/l10n/sr
 @dirrm share/icons/oxygen/16x16/status/l10n
+@dirrm share/icons/oxygen/16x16/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/16x16/apps/l10n/sr
 @dirrm share/icons/oxygen/16x16/apps/l10n
+@dirrm share/icons/oxygen/16x16/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/16x16/actions/l10n/sr
 @dirrm share/icons/oxygen/16x16/actions/l10n
+@dirrm share/icons/oxygen/128x128/status/l10n/sr@latin
 @dirrm share/icons/oxygen/128x128/status/l10n/sr
 @dirrm share/icons/oxygen/128x128/status/l10n
+@dirrm share/icons/oxygen/128x128/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/128x128/apps/l10n/sr
 @dirrm share/icons/oxygen/128x128/apps/l10n
 @dirrm share/icons/hicolor/scalable/actions/l10n/sr@latin
