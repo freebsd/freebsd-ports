@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Edit all trac.ini option via the WebAdminPlugin
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/TracWebAdmin-0.1.2dev-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-webadmin
+RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 USE_PYTHON=	2.3+
