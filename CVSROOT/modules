@@ -139,6 +139,7 @@ ports_x11_wm                    ports/x11-wm
 2bsd-vi                         ports/editors/2bsd-vi
 2d-rewriter                     ports/science/2d-rewriter
 2dhf                            ports/science/2dhf
+2mandvd                         ports/multimedia/2mandvd
 3dc                             ports/games/3dc
 3ddesktop                       ports/x11/3ddesktop
 3dm                             ports/sysutils/3dm
@@ -5679,6 +5680,7 @@ ispman                          ports/sysutils/ispman
 isql-viewer                     ports/databases/isql-viewer
 isreal                          ports/graphics/isreal
 istgt                           ports/net/istgt
+istream                         ports/audio/istream
 isync                           ports/mail/isync
 it-acroread8                    ports/print/it-acroread8
 it-aspell                       ports/textproc/it-aspell
@@ -7929,6 +7931,7 @@ linux-f10-alsa-lib              ports/audio/linux-f10-alsa-lib
 linux-f10-arts                  ports/audio/linux-f10-arts
 linux-f10-aspell                ports/textproc/linux-f10-aspell
 linux-f10-atk                   ports/accessibility/linux-f10-atk
+linux-f10-blt                   ports/x11-toolkits/linux-f10-blt
 linux-f10-cairo                 ports/graphics/linux-f10-cairo
 linux-f10-curl                  ports/ftp/linux-f10-curl
 linux-f10-cyrus-sasl2           ports/security/linux-f10-cyrus-sasl2
@@ -13409,6 +13412,7 @@ p5-WWW-IMDb                     ports/www/p5-WWW-IMDb
 p5-WWW-Link                     ports/www/p5-WWW-Link
 p5-WWW-Mechanize                ports/www/p5-WWW-Mechanize
 p5-WWW-Mechanize-CGI            ports/www/p5-WWW-Mechanize-CGI
+p5-WWW-Mechanize-Cached         ports/www/p5-WWW-Mechanize-Cached
 p5-WWW-Mechanize-DecodedContent  ports/www/p5-WWW-Mechanize-DecodedContent
 p5-WWW-Mechanize-FormFiller     ports/www/p5-WWW-Mechanize-FormFiller
 p5-WWW-Mechanize-GZip           ports/www/p5-WWW-Mechanize-GZip
@@ -17031,6 +17035,7 @@ p5-www-hotmail                  ports/mail/p5-WWW-Hotmail
 p5-www-imdb                     ports/www/p5-WWW-IMDb
 p5-www-link                     ports/www/p5-WWW-Link
 p5-www-mechanize                ports/www/p5-WWW-Mechanize
+p5-www-mechanize-cached         ports/www/p5-WWW-Mechanize-Cached
 p5-www-mechanize-cgi            ports/www/p5-WWW-Mechanize-CGI
 p5-www-mechanize-decodedcontent  ports/www/p5-WWW-Mechanize-DecodedContent
 p5-www-mechanize-formfiller     ports/www/p5-WWW-Mechanize-FormFiller
