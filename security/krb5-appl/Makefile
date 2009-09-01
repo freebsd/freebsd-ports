@@ -18,9 +18,9 @@ COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
-CONFLICTS=		krb4-[0-9]* heimdal-[0-9]* srp-[0-9]*
+CONFLICTS=		krb[45]-[0-9]* heimdal-[0-9]* srp-[0-9]*
 
-LATEST_LINK=		${PORTNAME}
+LATEST_LINK=		${PORTNAME}-17
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_OPENSSL=		yes
 WITH_OPENSSL_PORT=	yes
