@@ -1,3 +1,4 @@
+@unexec if cmp -s %D/etc/ldapdiff.conf %D/etc/ldapdiff.conf.sample; then rm -f %D/etc/ldapdiff.conf; fi
 bin/ldapdiff
 etc/ldapdiff.conf.sample
 %%DATADIR%%/samples/addentry
@@ -6,8 +7,3 @@ etc/ldapdiff.conf.sample
 %%DATADIR%%/samples/webtomware.user.ldif
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
