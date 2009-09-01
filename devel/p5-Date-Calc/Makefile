@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date-Calc
-PORTVERSION=	5.6
+PORTVERSION=	5.7
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STBEY
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Gregorian calendar date calculations
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Bit/Vector.pm:${PORTSDIR}/math/p5-Bit-Vector
+BUILD_DEPENDS=	p5-Bit-Vector>=7.0:${PORTSDIR}/math/p5-Bit-Vector
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
