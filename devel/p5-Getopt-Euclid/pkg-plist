@@ -1,7 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Euclid/.packlist
 %%SITE_PERL%%/Getopt/Euclid.pm
 %%SITE_PERL%%/Getopt/Euclid/HierDemo.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Euclid
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
 @dirrmtry %%SITE_PERL%%/Getopt/Euclid
 @dirrmtry %%SITE_PERL%%/Getopt
