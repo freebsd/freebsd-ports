@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	afflib
-PORTVERSION=	3.2.5
-PORTREVISION=	2
+PORTVERSION=	3.3.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.afflib.org/downloads/
 
@@ -30,6 +29,8 @@ CONFIGURE_ARGS=	--enable-s3=yes --libdir=${PREFIX}
 CONFIGURE_ENV=	CPPFLAGS='-DFUSE_USE_VERSION=26' \
 		LDFLAGS='${PTHREAD_LIBS}'
 CFLAGS+=	${PTHREAD_LIBS}
+
+MAN1=		afcat.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
