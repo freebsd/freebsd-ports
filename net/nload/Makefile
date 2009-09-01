@@ -8,8 +8,7 @@
 PORTNAME=	nload
 PORTVERSION=	0.7.2
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Console application which monitors network traffic in real time
