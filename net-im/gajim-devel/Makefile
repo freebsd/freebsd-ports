@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20090608
-PORTREVISION=	1
+PORTVERSION=	20090829
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2009-06-08
+DISTNAME=	${PORTNAME}-2009-08-29
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -36,9 +35,9 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.12.1.5-svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.12.3.1-dev
 
-MAN1=		gajim.1
+MAN1=		gajim.1 gajim-remote.1
 
 ACTIVITIES=	default
 EMOTICONS=	animated static static-big
