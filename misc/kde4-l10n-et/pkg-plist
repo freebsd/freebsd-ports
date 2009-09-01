@@ -343,6 +343,9 @@ share/doc/HTML/et/kdesu/common
 share/doc/HTML/et/kdesu/index.cache.bz2
 share/doc/HTML/et/kdesu/index.docbook
 share/doc/HTML/et/kdesu/man-kdesu.1.docbook
+share/doc/HTML/et/kdesvn-build/common
+share/doc/HTML/et/kdesvn-build/index.cache.bz2
+share/doc/HTML/et/kdesvn-build/index.docbook
 share/doc/HTML/et/kdf/common
 share/doc/HTML/et/kdf/index.cache.bz2
 share/doc/HTML/et/kdf/index.docbook
@@ -508,6 +511,9 @@ share/doc/HTML/et/kig/common
 share/doc/HTML/et/kig/index.cache.bz2
 share/doc/HTML/et/kig/index.docbook
 share/doc/HTML/et/kig/man-kig.1.docbook
+share/doc/HTML/et/killbots/common
+share/doc/HTML/et/killbots/index.cache.bz2
+share/doc/HTML/et/killbots/index.docbook
 share/doc/HTML/et/kimagemapeditor/common
 share/doc/HTML/et/kimagemapeditor/index.cache.bz2
 share/doc/HTML/et/kimagemapeditor/index.docbook
@@ -905,6 +911,9 @@ share/doc/HTML/et/kscd/index.docbook
 share/doc/HTML/et/kshisen/common
 share/doc/HTML/et/kshisen/index.cache.bz2
 share/doc/HTML/et/kshisen/index.docbook
+share/doc/HTML/et/ksirkskineditor/common
+share/doc/HTML/et/ksirkskineditor/index.cache.bz2
+share/doc/HTML/et/ksirkskineditor/index.docbook
 share/doc/HTML/et/ksnapshot/common
 share/doc/HTML/et/ksnapshot/index.cache.bz2
 share/doc/HTML/et/ksnapshot/index.docbook
@@ -1224,6 +1233,7 @@ share/locale/et/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/et/LC_MESSAGES/kcm_emoticons.mo
 share/locale/et/LC_MESSAGES/kcm_krfb.mo
 share/locale/et/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/et/LC_MESSAGES/kcm_lirc.mo
 share/locale/et/LC_MESSAGES/kcm_memory.mo
 share/locale/et/LC_MESSAGES/kcm_partition.mo
 share/locale/et/LC_MESSAGES/kcm_pci.mo
@@ -1270,7 +1280,6 @@ share/locale/et/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/et/LC_MESSAGES/kcmkwm.mo
 share/locale/et/LC_MESSAGES/kcmlaunch.mo
 share/locale/et/LC_MESSAGES/kcmlilo.mo
-share/locale/et/LC_MESSAGES/kcmlirc.mo
 share/locale/et/LC_MESSAGES/kcmlocale.mo
 share/locale/et/LC_MESSAGES/kcmnic.mo
 share/locale/et/LC_MESSAGES/kcmnotify.mo
@@ -1760,6 +1769,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/ksquares
 @dirrm share/doc/HTML/et/kspaceduel
 @dirrm share/doc/HTML/et/ksnapshot
+@dirrm share/doc/HTML/et/ksirkskineditor
 @dirrm share/doc/HTML/et/kshisen
 @dirrm share/doc/HTML/et/kscd
 @dirrm share/doc/HTML/et/ksame
@@ -1857,6 +1867,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kinfocenter/devices
 @dirrm share/doc/HTML/et/kinfocenter
 @dirrm share/doc/HTML/et/kimagemapeditor
+@dirrm share/doc/HTML/et/killbots
 @dirrm share/doc/HTML/et/kig
 @dirrm share/doc/HTML/et/khelpcenter/visualdict
 @dirrm share/doc/HTML/et/khelpcenter/userguide
@@ -1877,6 +1888,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kdm
 @dirrm share/doc/HTML/et/kdiamond
 @dirrm share/doc/HTML/et/kdf
+@dirrm share/doc/HTML/et/kdesvn-build
 @dirrm share/doc/HTML/et/kdesu
 @dirrm share/doc/HTML/et/kdepasswd
 @dirrm share/doc/HTML/et/kdebugdialog

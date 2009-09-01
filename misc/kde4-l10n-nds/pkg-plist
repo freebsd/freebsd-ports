@@ -278,8 +278,8 @@ share/locale/nds/LC_MESSAGES/kbruch.mo
 share/locale/nds/LC_MESSAGES/kbugbuster.mo
 share/locale/nds/LC_MESSAGES/kcachegrind.mo
 share/locale/nds/LC_MESSAGES/kcachegrind_qt.mo
-share/locale/nds/LC_MESSAGES/kcalc.mo
 share/locale/nds/LC_MESSAGES/kcal_akonadi.mo
+share/locale/nds/LC_MESSAGES/kcalc.mo
 share/locale/nds/LC_MESSAGES/kcertpart.mo
 share/locale/nds/LC_MESSAGES/kcharselect.mo
 share/locale/nds/LC_MESSAGES/kcm_akonadi.mo
@@ -288,6 +288,7 @@ share/locale/nds/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/nds/LC_MESSAGES/kcm_emoticons.mo
 share/locale/nds/LC_MESSAGES/kcm_krfb.mo
 share/locale/nds/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/nds/LC_MESSAGES/kcm_lirc.mo
 share/locale/nds/LC_MESSAGES/kcm_memory.mo
 share/locale/nds/LC_MESSAGES/kcm_partition.mo
 share/locale/nds/LC_MESSAGES/kcm_pci.mo
@@ -334,7 +335,6 @@ share/locale/nds/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/nds/LC_MESSAGES/kcmkwm.mo
 share/locale/nds/LC_MESSAGES/kcmlaunch.mo
 share/locale/nds/LC_MESSAGES/kcmlilo.mo
-share/locale/nds/LC_MESSAGES/kcmlirc.mo
 share/locale/nds/LC_MESSAGES/kcmlocale.mo
 share/locale/nds/LC_MESSAGES/kcmnic.mo
 share/locale/nds/LC_MESSAGES/kcmnotify.mo

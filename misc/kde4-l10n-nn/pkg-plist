@@ -9,6 +9,9 @@ share/doc/HTML/nn/kaddressbook/index.docbook
 share/doc/HTML/nn/kcontrol/bell/common
 share/doc/HTML/nn/kcontrol/bell/index.cache.bz2
 share/doc/HTML/nn/kcontrol/bell/index.docbook
+share/doc/HTML/nn/kinfocenter/usb/common
+share/doc/HTML/nn/kinfocenter/usb/index.cache.bz2
+share/doc/HTML/nn/kinfocenter/usb/index.docbook
 share/doc/HTML/nn/kollision/common
 share/doc/HTML/nn/kollision/index.cache.bz2
 share/doc/HTML/nn/kollision/index.docbook
@@ -121,6 +124,7 @@ share/locale/nn/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/nn/LC_MESSAGES/kcm_emoticons.mo
 share/locale/nn/LC_MESSAGES/kcm_krfb.mo
 share/locale/nn/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/nn/LC_MESSAGES/kcm_lirc.mo
 share/locale/nn/LC_MESSAGES/kcm_memory.mo
 share/locale/nn/LC_MESSAGES/kcm_partition.mo
 share/locale/nn/LC_MESSAGES/kcm_pci.mo
@@ -167,7 +171,6 @@ share/locale/nn/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/nn/LC_MESSAGES/kcmkwm.mo
 share/locale/nn/LC_MESSAGES/kcmlaunch.mo
 share/locale/nn/LC_MESSAGES/kcmlilo.mo
-share/locale/nn/LC_MESSAGES/kcmlirc.mo
 share/locale/nn/LC_MESSAGES/kcmlocale.mo
 share/locale/nn/LC_MESSAGES/kcmnic.mo
 share/locale/nn/LC_MESSAGES/kcmnotify.mo
@@ -620,7 +623,6 @@ share/locale/nn/LC_MESSAGES/umbrello.mo
 share/locale/nn/LC_MESSAGES/useraccount.mo
 share/locale/nn/LC_MESSAGES/xml_mimetypes.mo
 share/locale/nn/LC_SCRIPTS/kdelibs4/kdelibs4.js
-share/locale/nn/LC_SCRIPTS/kdelibs4/oppdater.sh
 share/locale/nn/LC_SCRIPTS/kdelibs4/skjermelement.pmap
 share/locale/nn/LC_SCRIPTS/step/step.js
 share/locale/nn/entry.desktop
@@ -628,6 +630,8 @@ share/locale/nn/entry.desktop
 @dirrm share/locale/nn/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/nn/LC_SCRIPTS
 @dirrm share/doc/HTML/nn/kollision
+@dirrm share/doc/HTML/nn/kinfocenter/usb
+@dirrm share/doc/HTML/nn/kinfocenter
 @dirrm share/doc/HTML/nn/kcontrol/bell
 @dirrm share/doc/HTML/nn/kcontrol
 @dirrm share/doc/HTML/nn/kaddressbook

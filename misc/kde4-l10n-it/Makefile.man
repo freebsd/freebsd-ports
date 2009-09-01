@@ -24,12 +24,18 @@ MAN1=	adddebug.1 \
 	kdesu.1 \
 	kfind.1 \
 	kig.1 \
+	kjs.1 \
+	kjscmd.1 \
 	kmag.1 \
 	kmousetool.1 \
 	kmouth.1 \
 	kmplot.1 \
+	kross.1 \
 	ktouch.1 \
+	makekdewidgets.1 \
+	plasmaengineexplorer.1 \
 	po2xml.1 \
+	preparetips.1 \
 	pruneemptydirs.1 \
 	qtdoc.1 \
 	reportview.1 \
@@ -44,4 +50,7 @@ MAN6=	amor.6 \
 	kpat.6
 MAN7=	kdeoptions.7 \
 	qtoptions.7
-MAN8=	kbuildsycoca4.8
+MAN8=	kbuildsycoca4.8 \
+	meinproc4.8 \
+	nepomukserver.8 \
+	nepomukservicestub.8

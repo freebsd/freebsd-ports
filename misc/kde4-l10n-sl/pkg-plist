@@ -129,7 +129,6 @@ share/doc/HTML/sl/kppp/kppp-faq.docbook
 share/doc/HTML/sl/kppp/security.docbook
 share/doc/HTML/sl/kppp/tricks.docbook
 share/doc/HTML/sl/kppp/wizard.docbook
-share/locale/sl/LC_MESSAGES/akonaditray.mo
 share/locale/sl/LC_MESSAGES/akonadi-kcal.mo
 share/locale/sl/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_distlist_resource.mo
@@ -139,6 +138,7 @@ share/locale/sl/LC_MESSAGES/akonadi_kcal_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_kolabproxy_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_localbookmarks_resource.mo
+share/locale/sl/LC_MESSAGES/akonaditray.mo
 share/locale/sl/LC_MESSAGES/akregator.mo
 share/locale/sl/LC_MESSAGES/amor.mo
 share/locale/sl/LC_MESSAGES/ark.mo
@@ -218,6 +218,7 @@ share/locale/sl/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/sl/LC_MESSAGES/kcm_emoticons.mo
 share/locale/sl/LC_MESSAGES/kcm_krfb.mo
 share/locale/sl/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/sl/LC_MESSAGES/kcm_lirc.mo
 share/locale/sl/LC_MESSAGES/kcm_memory.mo
 share/locale/sl/LC_MESSAGES/kcm_partition.mo
 share/locale/sl/LC_MESSAGES/kcm_pci.mo
@@ -264,7 +265,6 @@ share/locale/sl/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/sl/LC_MESSAGES/kcmkwm.mo
 share/locale/sl/LC_MESSAGES/kcmlaunch.mo
 share/locale/sl/LC_MESSAGES/kcmlilo.mo
-share/locale/sl/LC_MESSAGES/kcmlirc.mo
 share/locale/sl/LC_MESSAGES/kcmlocale.mo
 share/locale/sl/LC_MESSAGES/kcmnic.mo
 share/locale/sl/LC_MESSAGES/kcmnotify.mo
@@ -528,6 +528,7 @@ share/locale/sl/LC_MESSAGES/libkmime.mo
 share/locale/sl/LC_MESSAGES/libkonq.mo
 share/locale/sl/LC_MESSAGES/libkpgp.mo
 share/locale/sl/LC_MESSAGES/libkpimidentities.mo
+share/locale/sl/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sl/LC_MESSAGES/libkpimutils.mo
 share/locale/sl/LC_MESSAGES/libkresources.mo
 share/locale/sl/LC_MESSAGES/libksane.mo
@@ -544,7 +545,6 @@ share/locale/sl/LC_MESSAGES/libplasma.mo
 share/locale/sl/LC_MESSAGES/libplasmaclock.mo
 share/locale/sl/LC_MESSAGES/libplasmaweather.mo
 share/locale/sl/LC_MESSAGES/libtaskmanager.mo
-share/locale/sl/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sl/LC_MESSAGES/lokalize.mo
 share/locale/sl/LC_MESSAGES/lskat.mo
 share/locale/sl/LC_MESSAGES/marble.mo
@@ -690,10 +690,10 @@ share/locale/sl/LC_MESSAGES/solidcontrol.mo
 share/locale/sl/LC_MESSAGES/soliduiserver.mo
 share/locale/sl/LC_MESSAGES/spy.mo
 share/locale/sl/LC_MESSAGES/strigila_diff.mo
-share/locale/sl/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/sl/LC_MESSAGES/superkaramba.mo
 share/locale/sl/LC_MESSAGES/svgpart.mo
 share/locale/sl/LC_MESSAGES/sweeper.mo
+share/locale/sl/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/sl/LC_MESSAGES/systemsettings.mo
 share/locale/sl/LC_MESSAGES/timezones4.mo
 share/locale/sl/LC_MESSAGES/umbrello.mo
@@ -736,5 +736,3 @@ share/locale/sl/entry.desktop
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
 @dirrm share/apps/khangman
-@dirrm share/apps/katepart/syntax
-@dirrm share/apps/katepart

@@ -23,7 +23,7 @@
 #
 # $FreeBSD$
 
-CMAKE_MAINTAINER=  kde@FreeBSD.org
+CMAKE_MAINTAINER=	kde@FreeBSD.org
 
 #
 # CMAKE_BIN is the location where the cmake port installs the cmake

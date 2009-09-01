@@ -494,6 +494,9 @@ share/doc/HTML/es/kcontrol/khtml/common
 share/doc/HTML/es/kcontrol/khtml/index.cache.bz2
 share/doc/HTML/es/kcontrol/khtml/index.docbook
 share/doc/HTML/es/kcontrol/khtml/nsplugin.docbook
+share/doc/HTML/es/kcontrol/knetworkconf/common
+share/doc/HTML/es/kcontrol/knetworkconf/index.cache.bz2
+share/doc/HTML/es/kcontrol/knetworkconf/index.docbook
 share/doc/HTML/es/kcontrol/kresources/common
 share/doc/HTML/es/kcontrol/kresources/index.cache.bz2
 share/doc/HTML/es/kcontrol/kresources/index.docbook
@@ -506,6 +509,9 @@ share/doc/HTML/es/kcontrol/kxkb/index.docbook
 share/doc/HTML/es/kcontrol/language/common
 share/doc/HTML/es/kcontrol/language/index.cache.bz2
 share/doc/HTML/es/kcontrol/language/index.docbook
+share/doc/HTML/es/kcontrol/mouse/common
+share/doc/HTML/es/kcontrol/mouse/index.cache.bz2
+share/doc/HTML/es/kcontrol/mouse/index.docbook
 share/doc/HTML/es/kcontrol/netpref/common
 share/doc/HTML/es/kcontrol/netpref/index.cache.bz2
 share/doc/HTML/es/kcontrol/netpref/index.docbook
@@ -804,6 +810,12 @@ share/doc/HTML/es/kinfocenter/xserver/index.docbook
 share/doc/HTML/es/kioslave/audiocd/common
 share/doc/HTML/es/kioslave/audiocd/index.cache.bz2
 share/doc/HTML/es/kioslave/audiocd/index.docbook
+share/doc/HTML/es/kioslave/bookmarks/common
+share/doc/HTML/es/kioslave/bookmarks/index.cache.bz2
+share/doc/HTML/es/kioslave/bookmarks/index.docbook
+share/doc/HTML/es/kioslave/bzip2/common
+share/doc/HTML/es/kioslave/bzip2/index.cache.bz2
+share/doc/HTML/es/kioslave/bzip2/index.docbook
 share/doc/HTML/es/kioslave/cgi/common
 share/doc/HTML/es/kioslave/cgi/index.cache.bz2
 share/doc/HTML/es/kioslave/cgi/index.docbook
@@ -825,6 +837,9 @@ share/doc/HTML/es/kioslave/floppy/index.docbook
 share/doc/HTML/es/kioslave/ftp/common
 share/doc/HTML/es/kioslave/ftp/index.cache.bz2
 share/doc/HTML/es/kioslave/ftp/index.docbook
+share/doc/HTML/es/kioslave/gzip/common
+share/doc/HTML/es/kioslave/gzip/index.cache.bz2
+share/doc/HTML/es/kioslave/gzip/index.docbook
 share/doc/HTML/es/kioslave/help/common
 share/doc/HTML/es/kioslave/help/index.cache.bz2
 share/doc/HTML/es/kioslave/help/index.docbook
@@ -876,9 +891,15 @@ share/doc/HTML/es/kioslave/tar/index.docbook
 share/doc/HTML/es/kioslave/telnet/common
 share/doc/HTML/es/kioslave/telnet/index.cache.bz2
 share/doc/HTML/es/kioslave/telnet/index.docbook
+share/doc/HTML/es/kioslave/thumbnail/common
+share/doc/HTML/es/kioslave/thumbnail/index.cache.bz2
+share/doc/HTML/es/kioslave/thumbnail/index.docbook
 share/doc/HTML/es/kioslave/webdav/common
 share/doc/HTML/es/kioslave/webdav/index.cache.bz2
 share/doc/HTML/es/kioslave/webdav/index.docbook
+share/doc/HTML/es/kioslave/xz/common
+share/doc/HTML/es/kioslave/xz/index.cache.bz2
+share/doc/HTML/es/kioslave/xz/index.docbook
 share/doc/HTML/es/kiriki/common
 share/doc/HTML/es/kiriki/index.cache.bz2
 share/doc/HTML/es/kiriki/index.docbook
@@ -1517,6 +1538,7 @@ share/locale/es/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/es/LC_MESSAGES/kcm_emoticons.mo
 share/locale/es/LC_MESSAGES/kcm_krfb.mo
 share/locale/es/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/es/LC_MESSAGES/kcm_lirc.mo
 share/locale/es/LC_MESSAGES/kcm_memory.mo
 share/locale/es/LC_MESSAGES/kcm_partition.mo
 share/locale/es/LC_MESSAGES/kcm_pci.mo
@@ -1563,7 +1585,6 @@ share/locale/es/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/es/LC_MESSAGES/kcmkwm.mo
 share/locale/es/LC_MESSAGES/kcmlaunch.mo
 share/locale/es/LC_MESSAGES/kcmlilo.mo
-share/locale/es/LC_MESSAGES/kcmlirc.mo
 share/locale/es/LC_MESSAGES/kcmlocale.mo
 share/locale/es/LC_MESSAGES/kcmnic.mo
 share/locale/es/LC_MESSAGES/kcmnotify.mo
@@ -2093,7 +2114,9 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kjots
 @dirrm share/doc/HTML/es/kiten
 @dirrm share/doc/HTML/es/kiriki
+@dirrm share/doc/HTML/es/kioslave/xz
 @dirrm share/doc/HTML/es/kioslave/webdav
+@dirrm share/doc/HTML/es/kioslave/thumbnail
 @dirrm share/doc/HTML/es/kioslave/telnet
 @dirrm share/doc/HTML/es/kioslave/tar
 @dirrm share/doc/HTML/es/kioslave/smtp
@@ -2111,6 +2134,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kioslave/imap
 @dirrm share/doc/HTML/es/kioslave/http
 @dirrm share/doc/HTML/es/kioslave/help
+@dirrm share/doc/HTML/es/kioslave/gzip
 @dirrm share/doc/HTML/es/kioslave/ftp
 @dirrm share/doc/HTML/es/kioslave/floppy
 @dirrm share/doc/HTML/es/kioslave/fish
@@ -2118,6 +2142,8 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kioslave/file
 @dirrm share/doc/HTML/es/kioslave/data
 @dirrm share/doc/HTML/es/kioslave/cgi
+@dirrm share/doc/HTML/es/kioslave/bzip2
+@dirrm share/doc/HTML/es/kioslave/bookmarks
 @dirrm share/doc/HTML/es/kioslave/audiocd
 @dirrm share/doc/HTML/es/kioslave
 @dirrm share/doc/HTML/es/kinfocenter/xserver
@@ -2177,10 +2203,12 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kcontrol/panelappearance
 @dirrm share/doc/HTML/es/kcontrol/panel
 @dirrm share/doc/HTML/es/kcontrol/netpref
+@dirrm share/doc/HTML/es/kcontrol/mouse
 @dirrm share/doc/HTML/es/kcontrol/language
 @dirrm share/doc/HTML/es/kcontrol/kxkb
 @dirrm share/doc/HTML/es/kcontrol/kwindecoration
 @dirrm share/doc/HTML/es/kcontrol/kresources
+@dirrm share/doc/HTML/es/kcontrol/knetworkconf
 @dirrm share/doc/HTML/es/kcontrol/khtml
 @dirrm share/doc/HTML/es/kcontrol/keys
 @dirrm share/doc/HTML/es/kcontrol/keyboard

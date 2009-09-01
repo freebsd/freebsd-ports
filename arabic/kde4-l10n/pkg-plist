@@ -27,16 +27,15 @@ share/apps/klettres/ar/alpha/a-26.ogg
 share/apps/klettres/ar/alpha/a-27.ogg
 share/apps/klettres/ar/alpha/a-28.ogg
 share/apps/klettres/ar/sounds.xml
+share/locale/ar/LC_MESSAGES/akonadi-kcal.mo
 share/locale/ar/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_distlist_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_ical_resource.mo
-share/locale/ar/LC_MESSAGES/akonadi-kcal.mo
 share/locale/ar/LC_MESSAGES/akonadi_kabc_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_kcal_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_kolabproxy_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_localbookmarks_resource.mo
-share/locale/ar/LC_MESSAGES/akonaditray.mo
 share/locale/ar/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_next.mo
 share/locale/ar/LC_MESSAGES/akonadi_nntp_resource.mo
@@ -44,6 +43,7 @@ share/locale/ar/LC_MESSAGES/akonadi_openchange_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_vcarddir_resource.mo
+share/locale/ar/LC_MESSAGES/akonaditray.mo
 share/locale/ar/LC_MESSAGES/akregator.mo
 share/locale/ar/LC_MESSAGES/amor.mo
 share/locale/ar/LC_MESSAGES/ark.mo
@@ -126,6 +126,7 @@ share/locale/ar/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/ar/LC_MESSAGES/kcm_emoticons.mo
 share/locale/ar/LC_MESSAGES/kcm_krfb.mo
 share/locale/ar/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/ar/LC_MESSAGES/kcm_lirc.mo
 share/locale/ar/LC_MESSAGES/kcm_memory.mo
 share/locale/ar/LC_MESSAGES/kcm_partition.mo
 share/locale/ar/LC_MESSAGES/kcm_pci.mo
@@ -172,7 +173,6 @@ share/locale/ar/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/ar/LC_MESSAGES/kcmkwm.mo
 share/locale/ar/LC_MESSAGES/kcmlaunch.mo
 share/locale/ar/LC_MESSAGES/kcmlilo.mo
-share/locale/ar/LC_MESSAGES/kcmlirc.mo
 share/locale/ar/LC_MESSAGES/kcmlocale.mo
 share/locale/ar/LC_MESSAGES/kcmnic.mo
 share/locale/ar/LC_MESSAGES/kcmnotify.mo

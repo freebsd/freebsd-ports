@@ -1,5 +1,3 @@
-man/it/man8/nepomukserver.8
-man/it/man8/nepomukservicestub.8
 share/apps/klettres/it/alpha/a.ogg
 share/apps/klettres/it/alpha/b.ogg
 share/apps/klettres/it/alpha/c.ogg
@@ -148,6 +146,13 @@ share/apps/step/objinfo/l10n/it/Particle.html
 share/apps/step/objinfo/l10n/it/Polygon.html
 share/apps/step/objinfo/l10n/it/Spring.html
 share/apps/step/objinfo/l10n/it/World.html
+share/doc/HTML/it/PolicyKit-kde/authorization.docbook
+share/doc/HTML/it/PolicyKit-kde/authorizationagent.docbook
+share/doc/HTML/it/PolicyKit-kde/common
+share/doc/HTML/it/PolicyKit-kde/howitworks.docbook
+share/doc/HTML/it/PolicyKit-kde/index.cache.bz2
+share/doc/HTML/it/PolicyKit-kde/index.docbook
+share/doc/HTML/it/PolicyKit-kde/introduction.docbook
 share/doc/HTML/it/akregator/common
 share/doc/HTML/it/akregator/index.cache.bz2
 share/doc/HTML/it/akregator/index.docbook
@@ -247,6 +252,19 @@ share/doc/HTML/it/kate-plugins/openheader.docbook
 share/doc/HTML/it/kate-plugins/textfilter.docbook
 share/doc/HTML/it/kate-plugins/xmlcheck.docbook
 share/doc/HTML/it/kate-plugins/xmltools.docbook
+share/doc/HTML/it/kate/advanced.docbook
+share/doc/HTML/it/kate/common
+share/doc/HTML/it/kate/configuring.docbook
+share/doc/HTML/it/kate/fundamentals.docbook
+share/doc/HTML/it/kate/highlighting.docbook
+share/doc/HTML/it/kate/index.cache.bz2
+share/doc/HTML/it/kate/index.docbook
+share/doc/HTML/it/kate/man-kate.1.docbook
+share/doc/HTML/it/kate/mdi.docbook
+share/doc/HTML/it/kate/menus.docbook
+share/doc/HTML/it/kate/part.docbook
+share/doc/HTML/it/kate/plugins.docbook
+share/doc/HTML/it/kate/regular-expressions.docbook
 share/doc/HTML/it/katomic/common
 share/doc/HTML/it/katomic/index.cache.bz2
 share/doc/HTML/it/katomic/index.docbook
@@ -318,6 +336,9 @@ share/doc/HTML/it/kcontrol/desktop/index.docbook
 share/doc/HTML/it/kcontrol/desktopbehavior/common
 share/doc/HTML/it/kcontrol/desktopbehavior/index.cache.bz2
 share/doc/HTML/it/kcontrol/desktopbehavior/index.docbook
+share/doc/HTML/it/kcontrol/desktopthemedetails/common
+share/doc/HTML/it/kcontrol/desktopthemedetails/index.cache.bz2
+share/doc/HTML/it/kcontrol/desktopthemedetails/index.docbook
 share/doc/HTML/it/kcontrol/ebrowsing/common
 share/doc/HTML/it/kcontrol/ebrowsing/index.cache.bz2
 share/doc/HTML/it/kcontrol/ebrowsing/index.docbook
@@ -1230,6 +1251,9 @@ share/doc/HTML/it/step/tutorials.docbook
 share/doc/HTML/it/superkaramba/common
 share/doc/HTML/it/superkaramba/index.cache.bz2
 share/doc/HTML/it/superkaramba/index.docbook
+share/doc/HTML/it/systemsettings/common
+share/doc/HTML/it/systemsettings/index.cache.bz2
+share/doc/HTML/it/systemsettings/index.docbook
 share/doc/HTML/it/umbrello/authors.docbook
 share/doc/HTML/it/umbrello/code_import_and_generation.docbook
 share/doc/HTML/it/umbrello/common
@@ -1357,6 +1381,7 @@ share/locale/it/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/it/LC_MESSAGES/kcm_emoticons.mo
 share/locale/it/LC_MESSAGES/kcm_krfb.mo
 share/locale/it/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/it/LC_MESSAGES/kcm_lirc.mo
 share/locale/it/LC_MESSAGES/kcm_memory.mo
 share/locale/it/LC_MESSAGES/kcm_partition.mo
 share/locale/it/LC_MESSAGES/kcm_pci.mo
@@ -1403,7 +1428,6 @@ share/locale/it/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/it/LC_MESSAGES/kcmkwm.mo
 share/locale/it/LC_MESSAGES/kcmlaunch.mo
 share/locale/it/LC_MESSAGES/kcmlilo.mo
-share/locale/it/LC_MESSAGES/kcmlirc.mo
 share/locale/it/LC_MESSAGES/kcmlocale.mo
 share/locale/it/LC_MESSAGES/kcmnic.mo
 share/locale/it/LC_MESSAGES/kcmnotify.mo
@@ -1858,6 +1882,7 @@ share/locale/it/LC_MESSAGES/xml_mimetypes.mo
 share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/xsldbg
 @dirrm share/doc/HTML/it/umbrello
+@dirrm share/doc/HTML/it/systemsettings
 @dirrm share/doc/HTML/it/superkaramba
 @dirrm share/doc/HTML/it/step
 @dirrm share/doc/HTML/it/sonnet
@@ -2058,6 +2083,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kcontrol/emoticons
 @dirrm share/doc/HTML/it/kcontrol/email
 @dirrm share/doc/HTML/it/kcontrol/ebrowsing
+@dirrm share/doc/HTML/it/kcontrol/desktopthemedetails
 @dirrm share/doc/HTML/it/kcontrol/desktopbehavior
 @dirrm share/doc/HTML/it/kcontrol/desktop
 @dirrm share/doc/HTML/it/kcontrol/crypto
@@ -2083,6 +2109,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kbattleship
 @dirrm share/doc/HTML/it/katomic
 @dirrm share/doc/HTML/it/kate-plugins
+@dirrm share/doc/HTML/it/kate
 @dirrm share/doc/HTML/it/kapptemplate
 @dirrm share/doc/HTML/it/kapman
 @dirrm share/doc/HTML/it/kanagram
@@ -2102,6 +2129,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/ark
 @dirrm share/doc/HTML/it/amor
 @dirrm share/doc/HTML/it/akregator
+@dirrm share/doc/HTML/it/PolicyKit-kde
 @dirrm share/apps/step/objinfo/l10n/it
 @dirrm share/apps/step/objinfo/l10n
 @dirrm share/apps/step/objinfo

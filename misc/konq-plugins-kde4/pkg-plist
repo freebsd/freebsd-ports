@@ -55,6 +55,7 @@ share/apps/konqueror/icons/oxygen/64x64/actions/google.png
 share/apps/konqueror/icons/oxygen/scalable/actions/google.svgz
 share/apps/konqueror/kpartplugins/searchbar.desktop
 share/apps/konqueror/kpartplugins/searchbar.rc
+share/apps/konqueror/opensearch/google.xml
 share/apps/webkitpart/kpartplugins/autorefresh.desktop
 share/apps/webkitpart/kpartplugins/autorefresh.rc
 share/apps/webkitpart/kpartplugins/crashesplugin.desktop
@@ -969,6 +970,7 @@ share/locale/hu/LC_MESSAGES/searchbarplugin.mo
 share/locale/hu/LC_MESSAGES/uachangerplugin.mo
 share/locale/hu/LC_MESSAGES/validatorsplugin.mo
 share/locale/hu/LC_MESSAGES/webarchiver.mo
+share/locale/is/LC_MESSAGES/adblock.mo
 share/locale/is/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/is/LC_MESSAGES/autorefresh.mo
 share/locale/is/LC_MESSAGES/babelfish.mo
@@ -1062,6 +1064,7 @@ share/locale/km/LC_MESSAGES/searchbarplugin.mo
 share/locale/km/LC_MESSAGES/uachangerplugin.mo
 share/locale/km/LC_MESSAGES/validatorsplugin.mo
 share/locale/km/LC_MESSAGES/webarchiver.mo
+share/locale/ko/LC_MESSAGES/adblock.mo
 share/locale/ko/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ko/LC_MESSAGES/autorefresh.mo
 share/locale/ko/LC_MESSAGES/babelfish.mo
@@ -1853,6 +1856,7 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 @dirrm share/doc/HTML/ca/konq-plugins
 @dirrm share/apps/webkitpart/kpartplugins
 @dirrm share/apps/webkitpart
+@dirrm share/apps/konqueror/opensearch
 @dirrm share/apps/konqueror/kpartplugins
 @dirrm share/apps/konqueror/icons/oxygen/scalable/actions
 @dirrm share/apps/konqueror/icons/oxygen/scalable

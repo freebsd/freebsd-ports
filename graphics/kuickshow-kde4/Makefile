@@ -23,10 +23,11 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	${PORTNAME}-kde4
 
 APP_VER=	0.9.1
-EXTRA_VER=	4.3.0
+EXTRA_VER=	4.3.1
 
 .include <bsd.port.mk>
