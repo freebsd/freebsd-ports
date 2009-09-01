@@ -51,6 +51,7 @@
     SUBDIR += nvi-euc-kr
     SUBDIR += nvi-iso-2022-kr
     SUBDIR += pgp.language
+    SUBDIR += php_doc
     SUBDIR += pinetreefonts
     SUBDIR += qt4-codecs-kr
     SUBDIR += scim-hangul

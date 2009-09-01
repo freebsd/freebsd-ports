@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	20090514
+PORTVERSION?=	20090901
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	PHP documentation in HTML
+COMMENT?=	PHP documentation in HTML
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
 SLAVEDIRS=	french/php_doc \
 		german/php_doc \
 		japanese/php_doc \
-		polish/php_doc \
-		russian/php_doc
+		korean/php_doc \
+		polish/php_doc
 
 PHP_LANG?=	en
-PHP_LANGS=	${PHP_WRKDIR} ${PHP_WRKSRC}
-PHP_WRKDIR=	br de en fr pl ru
+PHP_LANGS?=	${PHP_WRKDIR} ${PHP_WRKSRC}
+PHP_WRKDIR=	bg br de en fr kr pl ro tr
 PHP_WRKSRC=	ja
 PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
 PLIST=		${WRKDIR}/pkg-plist
@@ -48,13 +48,10 @@ PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "You may set PHP_LANG to"
-	@${ECHO} "	br (brazillian),"
-	@${ECHO} "	de (german),"
-	@${ECHO} "	en (english),"
-	@${ECHO} "	fr (french) or"
-	@${ECHO} "	ja (japanese)"
-	@${ECHO} "	pl (polish)"
-	@${ECHO} "	ru (russian)"
+	@${ECHO} "	bg (bulgarian), br (brazillian), de (german),"
+	@${ECHO} "	en (english), fr (french), ja (japanese),"
+	@${ECHO} "	kr (korean), pl (polish), ro (romian),"
+	@${ECHO} "	tr (turkey)"
 	@${ECHO} "to get a different language than the default one (english)."
 	@${ECHO}
 .endif
