@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBS="${LDFLAGS}"
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS=	TLS "Enable TLS support" On \
 		NLS "Native Language Support with gettext" On
