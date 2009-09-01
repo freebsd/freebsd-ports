@@ -6,60 +6,73 @@
 #
 
 PORTNAME=	wsjt
-PORTVERSION=	5.9.7
-PORTREVISION=	2
+PORTVERSION=	7.04
 CATEGORIES=	comms hamradio
-MASTER_SITES=	${MASTER_SITE_BERLIOS:S/%SUBDIR%/wsjt/} \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/db/}
-DISTNAME=	wsjt-5.9.7.r386
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
+DISTNAME=	wsjt-r${SVN_REV}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
 
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter/ \
+		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
+LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
+		samplerate:${PORTSDIR}/audio/libsamplerate
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter/ \
-		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
-LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate
 
+ALL_TARGET=	build
+USE_BZIP2=	yes
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-portaudio-include-dir=${LOCALBASE}/include/portaudio2 \
+CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
+		--with-portaudio-include-dir=${LOCALBASE}/include/portaudio2 \
 		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
-USE_GMAKE=	yes
+CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 USE_PYTHON=	2.4+
 USE_AUTOTOOLS=	libtool:22
+PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
+		PORTVERSION=${PORTVERSION}
 
-post-patch:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	${WRKSRC}/configure
+.include <bsd.port.pre.mk>
 
-do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/CALL3.TXT ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/wsjt.py ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/wsjt ${PREFIX}/bin
-.for d in ${WRKSRC}/Audio.so ${WRKSRC}/Pmw.py \
-	${WRKSRC}/PmwBlt.py ${WRKSRC}/palettes.py \
-	${WRKSRC}/PmwColor.py ${WRKSRC}/go.py \
-	${WRKSRC}/specjt.py ${WRKSRC}/astro.py \
-	${WRKSRC}/options.py ${WRKSRC}/smeter.py ${WRKSRC}/g.py
-	@${INSTALL_DATA} ${WRKSRC}/${d} ${PYTHON_SITELIBDIR}
-.endfor
+post-install:
 .if	!defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for d in ${WRKSRC}/WSJT_Quick_Reference.pdf  ${WRKSRC}/WSJT_Source_Code.txt \
 	${WRKSRC}/WSJT_User_600.pdf ${WRKSRC}/UpdateHistory.txt \
 	${WRKSRC}/WSJT_Source_Code.txt ${WRKSRC}/LICENSE.TXT
-	@${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
 .endfor
-	@${ECHO} ""
+	@${ECHO}
 	@${ECHO} "docs installed in ${DOCSDIR}"
-	@${ECHO} ""
+	@${ECHO}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.if defined(BOOTSTRAP)
+SVN_REV!=	svn info http://svn.berlios.de/svnroot/repos/wsjt/trunk/ | ${GREP} Revision | cut -d' ' -f2
+.else
+.include "Makefile.svn_rev"
+.endif
+
+.if defined(BOOTSTRAP)
+FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+
+do-fetch:
+	${MKDIR} ${WRKDIR}
+	svn export -r ${SVN_REV} \
+	    http://svn.berlios.de/svnroot/repos/wsjt/trunk ${WRKSRC}
+	cd ${WRKDIR};rm -f ${DISTNAME}/*.a ${DISTNAME}/*.lib ${DISTNAME}/*.dll;\
+		tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
+	echo "SVN_REV=	${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
+.if ${USER} == db
+	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
+	    freefall.freebsd.org:public_distfiles/
+.endif
+.endif
+
+.include <bsd.port.post.mk>
