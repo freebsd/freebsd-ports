@@ -6,6 +6,8 @@
 %%SITE_PERL%%/MooseX/Storage/Engine.pm
 %%SITE_PERL%%/MooseX/Storage/Engine/IO/AtomicFile.pm
 %%SITE_PERL%%/MooseX/Storage/Engine/IO/File.pm
+%%SITE_PERL%%/MooseX/Storage/Engine/Trait/DisableCycleDetection.pm
+%%SITE_PERL%%/MooseX/Storage/Engine/Trait/OnlyWhenBuilt.pm
 %%SITE_PERL%%/MooseX/Storage/Format/JSON.pm
 %%SITE_PERL%%/MooseX/Storage/Format/Storable.pm
 %%SITE_PERL%%/MooseX/Storage/Format/YAML.pm
@@ -14,15 +16,19 @@
 %%SITE_PERL%%/MooseX/Storage/IO/StorableFile.pm
 %%SITE_PERL%%/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
 %%SITE_PERL%%/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm
+%%SITE_PERL%%/MooseX/Storage/Traits/DisableCycleDetection.pm
+%%SITE_PERL%%/MooseX/Storage/Traits/OnlyWhenBuilt.pm
 %%SITE_PERL%%/MooseX/Storage/Util.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Storage
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/Storage/Traits
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Meta/Attribute/Trait
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Meta/Attribute
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/IO
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Format
+@dirrmtry %%SITE_PERL%%/MooseX/Storage/Engine/Trait
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Engine/IO
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Engine
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Base
 @dirrmtry %%SITE_PERL%%/MooseX/Storage
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Storage
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
