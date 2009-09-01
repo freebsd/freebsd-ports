@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jailutils
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://memberwebs.com/stef/freebsd/jails/jailutils/
 
