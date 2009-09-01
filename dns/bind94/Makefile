@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-openssl-version-check
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
-.if !defined(WITHOUT_LINKS)
+.if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
 PLIST_SUB+=	LINKS=""
 .else
 PLIST_SUB+=	LINKS="@comment "
@@ -222,7 +222,7 @@ post-install:
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/README ${DOCSDIR}/
 .endif
-.if !defined(WITHOUT_LINKS)
+.if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
 	${MKDIR} /var/named${PREFIX}/etc
 .for DIR in ${PREFIX}/etc /var/named${PREFIX}/etc
 .for FILE in named.conf rndc.key

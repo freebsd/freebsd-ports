@@ -88,7 +88,7 @@ LIB_DEPENDS+=		idnkit.1:${PORTSDIR}/dns/idnkit
 CONFIGURE_ARGS+=	--without-idn
 .endif
 
-.if !defined(WITHOUT_LINKS)
+.if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
 PLIST_SUB+=	LINKS=""
 .else
 PLIST_SUB+=	LINKS="@comment "
@@ -217,7 +217,7 @@ post-install:
 	${WRKSRC}/README ${WRKSRC}/README.idnkit \
 	    ${DOCSDIR}/
 .endif
-.if !defined(WITHOUT_LINKS)
+.if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
 	${MKDIR} /var/named${PREFIX}/etc
 .for DIR in ${PREFIX}/etc /var/named${PREFIX}/etc
 .for FILE in named.conf rndc.key
