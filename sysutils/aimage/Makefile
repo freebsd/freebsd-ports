@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aimage
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.afflib.org/downloads/
 
