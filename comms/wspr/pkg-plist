@@ -1,0 +1,19 @@
+bin/wspr
+bin/wspr.py
+%%PYTHON_SITELIBDIR%%/WsprMod/w.so
+%%PYTHON_SITELIBDIR%%/WsprMod/__init__.py
+%%PYTHON_SITELIBDIR%%/WsprMod/__init__.pyc
+%%PYTHON_SITELIBDIR%%/WsprMod/Pmw.py
+%%PYTHON_SITELIBDIR%%/WsprMod/Pmw.pyc
+%%PYTHON_SITELIBDIR%%/WsprMod/PmwBlt.py
+%%PYTHON_SITELIBDIR%%/WsprMod/PmwBlt.pyc
+%%PYTHON_SITELIBDIR%%/WsprMod/PmwColor.py
+%%PYTHON_SITELIBDIR%%/WsprMod/PmwColor.pyc
+%%PYTHON_SITELIBDIR%%/WsprMod/g.py
+%%PYTHON_SITELIBDIR%%/WsprMod/g.pyc
+%%PYTHON_SITELIBDIR%%/WsprMod/options.py
+%%PYTHON_SITELIBDIR%%/WsprMod/options.pyc
+%%PYTHON_SITELIBDIR%%/WsprMod/palettes.py
+%%PYTHON_SITELIBDIR%%/WsprMod/palettes.pyc
+%%PYTHON_SITELIBDIR%%/Wspr-WSPR.Version.%%PORTVERSION%%_.by.K1JT-py%%PYVER%%.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/WsprMod

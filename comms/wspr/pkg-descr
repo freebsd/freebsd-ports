@@ -1,0 +1,6 @@
+WSPR (pronounced "whisper") stands for "Weak Signal Propagation Reporter."
+This program is designed for sending and receiving low-power transmissions
+to test propagation paths on the MF and HF bands.  Users with internet access
+can watch results in real time at WSPRnet.
+
+WWW: http://physics.princeton.edu/pulsar/K1JT
