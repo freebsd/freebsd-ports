@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	templater
-PORTVERSION=	0.5.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
