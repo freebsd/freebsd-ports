@@ -132,6 +132,7 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/SSL1/Connection1.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/SSL1/Connection1.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/SSL1/Connection1.pyo
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/absimport.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/descriptor_crash.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/import_package_subpackage_module.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/__init__.py
