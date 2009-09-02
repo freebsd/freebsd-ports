@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	EPIC
-PORTVERSION=	0.6.13
-PORTREVISION=	1
+PORTVERSION=	0.6.35
 CATEGORIES=	java editors devel
 MASTER_SITES=	SF/e-p-i-c/e-p-i-c/${PORTNAME}%20${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	${EPIC}_${PORTVERSION}_20070808
+DISTNAME=	${EPIC}_${PORTVERSION}_20090521
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	EPIC adds Perl support to the Eclipse IDE Framework
@@ -25,11 +24,11 @@ WRKSRC=		${WRKDIR}/${EPIC}
 EPIC=		org.epic.updatesite
 ECLIPSE=	${PREFIX}/eclipse
 EPICFILES=	features/org.epic.feature.main_${PORTVERSION} \
-		plugins/org.epic.debug_${PORTVERSION} \
-		plugins/org.epic.doc_0.6.1 \
-		plugins/org.epic.lib_0.6.0 \
-		plugins/org.epic.perleditor_0.6.6 \
-		plugins/org.epic.regexp_0.6.0 \
+		plugins/org.epic.debug_0.6.27 \
+		plugins/org.epic.doc_0.6.2 \
+		plugins/org.epic.lib_0.6.1 \
+		plugins/org.epic.perleditor_0.6.24 \
+		plugins/org.epic.regexp_0.6.1 \
 		plugins/org.epic.source_${PORTVERSION}
 
 post-extract:
