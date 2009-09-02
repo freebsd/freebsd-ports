@@ -706,9 +706,8 @@ dhcpd_checkconfig ()
         setup_flags
 	rc_flags_mod="$rc_flags"
         # Eliminate '-q' flag if it is present
-	echo $rc_flags
 	case "$rc_flags" in
-	*-q*)	rc_flags_mod=`echo "$(rc_flags)" | sed -Ee 's/(^-q | -q | -q$)'//` ;;
+	*-q*)	rc_flags_mod=`echo "${rc_flags}" | sed -Ee 's/(^-q | -q | -q$)//'` ;;
 	esac
         if ! ${command} -t -q ${rc_flags_mod}; then
                 err 1 "`${command} -t ${rc_flags_mod}` Configuration file sanity check failed"
