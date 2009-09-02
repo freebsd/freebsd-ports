@@ -1,0 +1,5 @@
+The libraries in the Color-Palette distribution are meant to make it
+easy to build sets of named colors, and to write applications that can
+define and validate the color names they required.
+
+WWW: http://search.cpan.org/dist/Color-Palette/
