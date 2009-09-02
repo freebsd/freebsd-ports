@@ -1,0 +1,16 @@
+This is a set of two keyboards that provides a single implementation for many
+Roman writing systems across Africa, based on results compiled from data from
+Benin, Burkina Faso, Cameroon, Chad, Cote d'Ivoire, Nigeria, Senegal and Togo.
+
+The keyboards are written in Keyman keyboard language and developed by SIL
+Non-Roman Script Initiative (NRSI). The software is distributed under the
+X11-style license (http://scripts.sil.org/X11License).
+
+This port installs the keyboards so that they can be used through SCIM KMFL
+IMEngine (textproc/scim-kmfl-imengine). Two layouts are provided:
+
+  * mnemonic layout for any keyboard (using deadkeys);
+  * positional layout for US keyboard (using deadkeys and/or shift-states, i.e.
+    RALT and LALT keys).
+                         
+WWW: http://scripts.sil.org/AfricanKeyboard1

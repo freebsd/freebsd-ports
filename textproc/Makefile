@@ -1069,6 +1069,7 @@
     SUBDIR += scim-kmfl-imengine
     SUBDIR += scim-kmfl-sil-ezra
     SUBDIR += scim-kmfl-sil-ipa-unicode5
+    SUBDIR += scim-kmfl-sil-panafrican-latin
     SUBDIR += scim-m17n
     SUBDIR += scim-openvanilla
     SUBDIR += scim-table-imengine
