@@ -4,6 +4,7 @@ include/wbxml.h
 include/wbxml_base64.h
 include/wbxml_buffers.h
 include/wbxml_charset.h
+include/wbxml_config.h
 include/wbxml_conv.h
 include/wbxml_elt.h
 include/wbxml_encoder.h
@@ -17,20 +18,16 @@ include/wbxml_tables.h
 include/wbxml_tree.h
 include/wbxml_tree_clb_wbxml.h
 include/wbxml_tree_clb_xml.h
-include/wbxml_config.h
 lib/libwbxml2.so
 lib/libwbxml2.so.0
-lib/libwbxml2.so.0.0.15
+lib/libwbxml2.so.0.0.16
 libdata/pkgconfig/libwbxml2.pc
-%%PORTDOCS%%share/doc/libwbxml/AUTHORS
-%%PORTDOCS%%share/doc/libwbxml/BUGS
-%%PORTDOCS%%share/doc/libwbxml/COPYING
-%%PORTDOCS%%share/doc/libwbxml/ChangeLog
-%%PORTDOCS%%share/doc/libwbxml/GNU-LGPL
-%%PORTDOCS%%share/doc/libwbxml/INSTALL
-%%PORTDOCS%%share/doc/libwbxml/NEWS
-%%PORTDOCS%%share/doc/libwbxml/README
-%%PORTDOCS%%share/doc/libwbxml/References
-%%PORTDOCS%%share/doc/libwbxml/THANKS
-%%PORTDOCS%%share/doc/libwbxml/TODO
-%%PORTDOCS%%@dirrm share/doc/libwbxml
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/References
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

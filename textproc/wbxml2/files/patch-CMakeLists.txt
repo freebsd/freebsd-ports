@@ -1,11 +1,20 @@
---- CMakeLists.txt.orig	2009-04-24 14:49:51.000000000 +0000
-+++ CMakeLists.txt	2009-04-26 09:57:23.953012704 +0000
-@@ -174,7 +174,7 @@
- ENDIF( ENABLE_INSTALL_DOC )
+--- CMakeLists.txt.orig	2009-05-12 20:43:10.000000000 +0900
++++ CMakeLists.txt	2009-08-12 05:53:35.000000000 +0900
+@@ -36,7 +36,7 @@
  
- # todo: add requires in pc file
--INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/libwbxml2.pc" DESTINATION "${LIBDATA_INSTALL_DIR}/pkgconfig/" )
-+INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/libwbxml2.pc" DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig/" )
- # status output
- INCLUDE( ShowStatus )
- MESSAGE( STATUS "==================================================" )
+ SET( LIB_SUFFIX "" CACHE STRING "The library directory suffix. 32bit empty string, 64 for 64bit." )
+ SET( LIB_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}" CACHE INTERNAL "libary location" )
+-SET( LIBDATA_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}" CACHE PATH "The library data directory" )
++SET( LIBDATA_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/libdata" CACHE PATH "The library data directory" )
+ SET( BIN_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/bin" CACHE INTERNAL "binary location" )
+ SET( SHARE_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/share" CACHE INTERNAL "data location" )
+ SET( INCLUDE_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/include" CACHE INTERNAL "headers location" )
+@@ -176,7 +176,7 @@
+ #	ADD_CUSTOM_TARGET( DoxygenDoc )
+ #	ADD_DEPENDENCIES( DoxygenDoc DoxygenDocLibrary DoxygenDocTools )
+ #ENDIF ( BUILD_DOCUMENTATION )
+-OPTION( ENABLE_INSTALL_DOC "install documentation" ON )
++OPTION( ENABLE_INSTALL_DOC "install documentation" OFF )
+ IF( ENABLE_INSTALL_DOC )
+ 	ADD_DOCUMENTATION( TEXT FILE ${CMAKE_SOURCE_DIR}/AUTHORS )
+ 	ADD_DOCUMENTATION( TEXT FILE ${CMAKE_SOURCE_DIR}/BUGS )
