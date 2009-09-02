@@ -8,7 +8,7 @@ PORTNAME=	mlt
 PORTVERSION=	0.4.4
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	villa.alberto@gmail.com
 COMMENT=	A multimedia framework and video playout server for TV broadcasting

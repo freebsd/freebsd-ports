@@ -7,7 +7,7 @@
 PORTNAME=	kdenlive
 PORTVERSION=	0.7.5
 CATEGORIES=	multimedia kde
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	villa.alberto@gmail.com
 COMMENT=	A professional quality non-linear video editing suite for KDE

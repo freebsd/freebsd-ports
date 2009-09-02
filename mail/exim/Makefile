@@ -23,7 +23,7 @@ COMMENT?=	High performance MTA for Unix systems on the Internet
 
 .if defined(WITH_SA_EXIM)
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
-		${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sa_exim/}
+		SF/sa-exim/sa-exim/${SA_EXIM_VERSION}:sa_exim
 MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif

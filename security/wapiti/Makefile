@@ -6,8 +6,7 @@
 PORTNAME=	wapiti
 PORTVERSION=	1.1.6
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	wapiti
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Wapiti is a vulnerability scanner for web applications

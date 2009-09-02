@@ -9,9 +9,8 @@ PORTNAME=	mixmaster
 PORTVERSION=	2.9.1
 PORTREVISION=	1
 CATEGORIES=	mail security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
+MASTER_SITES=	SF/${PORTNAME}/Mixmaster/${PORTVERSION} \
 		ftp://ftp.erisiandiscord.de/pub/misc/
-MASTER_SITE_SUBDIR=	mixmaster
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mixmaster-update.pl.gz allpingers.txt.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

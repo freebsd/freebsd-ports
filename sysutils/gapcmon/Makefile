@@ -9,7 +9,7 @@ PORTNAME=	gapcmon
 PORTVERSION=	0.8.9
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Monitor apcupsd with GTK+2 GUI

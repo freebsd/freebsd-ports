@@ -10,9 +10,8 @@ PORTNAME=	wine
 DISTVERSION=	1.1.28
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	SFE \
+MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility layer for Unix-like systems

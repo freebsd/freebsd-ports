@@ -8,8 +8,7 @@
 PORTNAME=	mac-robber
 PORTVERSION=	1.00
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	A tool for listing Modify, Access, Create timestamps from files

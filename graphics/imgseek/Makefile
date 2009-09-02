@@ -9,7 +9,7 @@ PORTNAME=	imgSeek
 PORTVERSION=	0.8.6
 PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	alfredoj69@gmail.com
 COMMENT=	A photo manager and viewer with content-based search

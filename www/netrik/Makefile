@@ -10,7 +10,7 @@
 PORTNAME=	netrik
 PORTVERSION=	1.16.1
 CATEGORIES=	www
-MASTER_SITES=	SFE
+MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}%20%28beta%29
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A text web browser, very ambitious, in active development

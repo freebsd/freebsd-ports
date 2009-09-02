@@ -9,7 +9,7 @@ PORTNAME=	ledger
 PORTVERSION=	2.6.1
 PORTREVISION=	1
 CATEGORIES=	finance
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	woodycarey@hotmail.com
 COMMENT=	John Wiegley's command line accounting program

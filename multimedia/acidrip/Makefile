@@ -9,7 +9,7 @@ PORTNAME=	acidrip
 PORTVERSION=	0.14
 PORTREVISION=	6
 CATEGORIES=	multimedia
-MASTER_SITES=	SFE
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20Your%20two-wheeled%20knife
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2::Perl wrapper for MPlayer and MEncoder for ripping DVDs

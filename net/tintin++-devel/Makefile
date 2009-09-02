@@ -8,7 +8,7 @@
 PORTNAME=	tintin
 PORTVERSION=	1.99.6
 CATEGORIES+=	net games
-MASTER_SITES=	SFE
+MASTER_SITES=	SF/${PORTNAME}/TinTin%2B%2B%20Source%20Code/${PORTVERSION}
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A client program to help playing MUDs (devel version)

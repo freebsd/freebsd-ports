@@ -8,8 +8,7 @@
 PORTNAME=	potrace
 PORTVERSION=	1.8
 CATEGORIES=	graphics
-MASTER_SITES=	SFE
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	smyru@heron.pl
 COMMENT=	Transforms bitmaps into vector graphics

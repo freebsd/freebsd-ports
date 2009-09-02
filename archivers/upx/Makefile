@@ -9,7 +9,7 @@ PORTNAME=	upx
 PORTVERSION=	3.03
 CATEGORIES=	archivers
 MASTER_SITES=	http://upx.sourceforge.net/download/\
-		SFE/sevenzip:lzma
+		SF/sevenzip/7-Zip/4.57:lzma
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}\
 		7z${LZMA_VER:S/.//g}${EXTRACT_SUFX}:lzma
 

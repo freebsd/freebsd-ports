@@ -8,9 +8,8 @@
 PORTNAME=	scsh
 PORTVERSION=	0.6.7
 CATEGORIES=	lang scheme
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
+MASTER_SITES=	SF \
 		ftp://ftp.scsh.net/pub/scsh/0.6/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Unix shell embedded into Scheme, with access to all Posix calls

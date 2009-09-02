@@ -9,9 +9,9 @@ PORTNAME=	nasm
 PORTVERSION=	2.05.01
 PORTEPOCH=	1
 CATEGORIES=	devel lang
-MASTER_SITES=	SFE http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20sources/${PORTVERSION} \
+		http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-xdoc${EXTRACT_SUFX}
-
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 and x86-64 assembler
