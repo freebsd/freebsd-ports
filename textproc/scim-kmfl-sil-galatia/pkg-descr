@@ -1,0 +1,15 @@
+This is a keyboard for typesetting Ancient Greek with precomposed Unicode
+characters. It is written in Keyman Keyboard Language by SIL Non-Roman Script
+Initiative (NRSI).
+
+The main purpose of the keyboards is to provide a wide range of keying options,
+so many characters can be entered in multiple ways. The features include:
+
+  * preserving the context when deleting;
+  * choosing the correct code for the sigma depending upon the encoding and
+    the context (so the correct final form is used when appropriate);
+  * understanding the context of gamma so that it can be typed as 'n' before
+    kappa, xi or chi and as 'ng' before another gamma.
+  * support for Greek punctuation.
+
+WWW: http://scripts.sil.org/KeymanKeyboardLinks#e9f80714

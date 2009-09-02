@@ -1,0 +1,37 @@
+--- GrkPolyComp.KMN.orig	2009-08-24 13:49:16.000000000 +0200
++++ GrkPolyComp.KMN	2009-08-24 14:03:17.000000000 +0200
+@@ -24,9 +24,9 @@
+ c                   See REVISION.TXT
+ c ----------------------------------------------------------------------------
+    
+-NAME "Greek (polytonic precomposed) Unicode 1.02"
++NAME "Galatia Greek (polytonic precomposed) Unicode 1.02"
+ VERSION 6.0
+-BITMAP ALPHA
++BITMAP ALPHA.bmp
+ HOTKEY "^+G"
+ COPYRIGHT "© 2002-2008 SIL International"
+ MESSAGE "The Greek (polytonic precomposed) Unicode keyboard is distributed under the X11 free software license (http://scripts.sil.org/X11License)."
+@@ -520,9 +520,9 @@
+ any(vUIoSm0)            + any(K_Io) > index(vUIoSm,1)                c >A_
+ any(vUIo2)              + any(K_Ro) > index(vUIoRo,1)                c A_<
+ any(vUIoRo0)            + any(K_Io) > index(vUIoRo,1)                c <A_
+-any(vUIoSm)             + any(K_Gr) > index(vUIoSmGr,1)              c A_>\ 
++any(vUIoSm)             + any(K_Gr) > index(vUIoSmGr,1)              c A_>\ c
+ any(vUIoSmGr0)          + any(K_Io) > index(vUIoSmGr,1)              c >\A_
+-any(vUIoRo)             + any(K_Gr) > index(vUIoRoGr,1)              c A_<\ 
++any(vUIoRo)             + any(K_Gr) > index(vUIoRoGr,1)              c A_<\ c
+ any(vUIoRoGr0)          + any(K_Io) > index(vUIoRoGr,1)              c <\A_
+ any(vUIoSm)             + any(K_Ac) > index(vUIoSmAc,1)              c A_>/
+ any(vUIoSmAc0)          + any(K_Io) > index(vUIoSmAc,1)              c >/A_
+@@ -668,8 +668,8 @@
+ any(GC_Ci)                + any(K_Gr) > index(GC_Gr,1)          c a^  + \  a\.  
+ any(Ac)                   + any(K_Gr) > outs(Gr)                c /   + \  \.   
+ any(Ci)                   + any(K_Gr) > outs(Gr)                c ^   + \  \.   
+-any(lowvRo)               + any(K_Gr) > index(lowvRoGr,1)       c >a   + \ a>\ 
+-any(lowvSm)               + any(K_Gr) > index(lowvSmGr,1)       c <a   + \ a<\ 
++any(lowvRo)               + any(K_Gr) > index(lowvRoGr,1)       c >a   + \ a>\ c 
++any(lowvSm)               + any(K_Gr) > index(lowvSmGr,1)       c <a   + \ a<\ c 
+ any(upV)                  + any(K_Gr) > index(upVGr,1)          c A   + \  >A
+ any(upVSm_Sm)             + any(K_Gr) > index(upVSmGr,1)         c >A  + \  >\A 
+ any(upVSm_Gr)             + any(K_Sm) > index(upVSmGr,1)         c >A  + \  >\A 
