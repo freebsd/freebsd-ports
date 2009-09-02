@@ -30,6 +30,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/checkers/imports.py
 %%PYTHON_SITELIBDIR%%/pylint/checkers/imports.pyc
 %%PYTHON_SITELIBDIR%%/pylint/checkers/imports.pyo
+%%PYTHON_SITELIBDIR%%/pylint/checkers/logging.py
+%%PYTHON_SITELIBDIR%%/pylint/checkers/logging.pyc
+%%PYTHON_SITELIBDIR%%/pylint/checkers/logging.pyo
 %%PYTHON_SITELIBDIR%%/pylint/checkers/misc.py
 %%PYTHON_SITELIBDIR%%/pylint/checkers/misc.pyc
 %%PYTHON_SITELIBDIR%%/pylint/checkers/misc.pyo
