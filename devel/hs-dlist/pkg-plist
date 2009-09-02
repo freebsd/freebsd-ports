@@ -1,13 +1,14 @@
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSdlist-%%PORTVERSION%%.a
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/HSdlist-%%PORTVERSION%%.o
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Data/DList.hi
-%%SUBDIR%%/register.sh
-share/doc/dlist-%%PORTVERSION%%/LICENSE
-@dirrm share/doc/dlist-%%PORTVERSION%%
-@dirrm lib/dlist-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Data
-@dirrm lib/dlist-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
-@dirrm lib/dlist-%%PORTVERSION%%
-@exec /bin/sh %D/%%SUBDIR%%/register.sh
+@comment $FreeBSD$
+%%DLIST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/DList.hi
+%%DLIST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSdlist-%%DLIST_VERSION%%.o
+%%DLIST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSdlist-%%DLIST_VERSION%%.a
+%%DLIST_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%DLIST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%DLIST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%DLIST_LIBDIR_REL%%
+@exec /bin/sh %D/%%DLIST_LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister dlist
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

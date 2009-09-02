@@ -1,4 +1,4 @@
-Bindings to the Xft, X Free Type interface library, and 
-some Xrender parts.
+Bindings to the Xft, X Free Type interface library, and some Xrender parts.
 
-WWW:	http://hackage.haskell.org/cgi-bin/hackage-scripts/package/X11-xft
+WWW: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/X11-xft
+

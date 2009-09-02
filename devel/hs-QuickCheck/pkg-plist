@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSQuickCheck-%%QUICKCHECK_VERSION%%.o
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Arbitrary.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Exception.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Function.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Gen.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Monadic.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Poly.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Property.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/State.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Test.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Text.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSQuickCheck-%%QUICKCHECK_VERSION%%.a
+%%QUICKCHECK_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck
+@dirrm %%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test
+@dirrm %%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%QUICKCHECK_LIBDIR_REL%%
+@exec /bin/sh %D/%%QUICKCHECK_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister QuickCheck-%%QUICKCHECK_VERSION%%
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -7,7 +7,7 @@
 
 PORTNAME=	c2hs
 PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -20,34 +20,56 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
-.include <bsd.port.pre.mk>
+GHC_VERSION=	6.10.4
+C2HS_VERSION=	${PORTVERSION}
 
-GHC_VERSION=	6.8.3
+GHC_CMD=	${LOCALBASE}/bin/ghc
+SETUP_CMD=	./setup
 
-# 'owned' by lang/ghc:
-CABALDIR=	${PREFIX}/${SUBDIR}
-CABALCMD=	${LOCALBASE}/bin/runghc Setup.hs
-SUBDIR=		lib/ghc-${GHC_VERSION}/cabal
+DATADIR=	${PREFIX}/share/${DISTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
+C2HS_LIBDIR_REL=	lib/${DISTNAME}
 
-PLIST_FILES=	bin/c2hs ${SUBDIR}/${PORTNAME}/C2HS.hs \
-			${SUBDIR}/${PORTNAME}/doc/c2hs-${PORTVERSION}/COPYING
-PLIST_DIRS=	${SUBDIR}/${PORTNAME}/doc/c2hs-${PORTVERSION} ${SUBDIR}/${PORTNAME}/doc \
-			${SUBDIR}/${PORTNAME}
+PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
+		C2HS_VERSION=${C2HS_VERSION} \
+		C2HS_LIBDIR_REL=${C2HS_LIBDIR_REL}
 
-CONFIGURE_ARGS=	--ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
-			--datadir=${CABALDIR}/${PORTNAME} \
-			--libsubdir='' --datasubdir=''
+MAN1=		c2hs.1
+
+.if defined(NOPORTDOCS)
+PLIST_SUB+=		NOPORTDOCS=""
+.else
+PLIST_SUB+=		NOPORTDOCS="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
+USE_GMAKE=	yes
+PORTDOCS=	COPYING users_guide
+.endif
+
+.SILENT:
 
 do-configure:
-	cd ${WRKSRC} && ${CABALCMD} configure ${CONFIGURE_ARGS}
+	cd ${WRKSRC} && ${GHC_CMD} --make Setup.hs -o setup -package Cabal \
+		     && ${SETUP_CMD} configure --prefix=${PREFIX}
 
 do-build:
-	cd ${WRKSRC} && ${CABALCMD} build
+	cd ${WRKSRC} && ${SETUP_CMD} build
+
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
+.endif
 
 do-install:
-	cd ${WRKSRC} && ${CABALCMD} install
+	cd ${WRKSRC} && ${SETUP_CMD} install \
+		     && ${INSTALL_MAN} ${WRKSRC}/doc/man1/c2hs.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC}/doc && ${CP} -R users_guide ${DOCSDIR})
+.endif
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/c2hs
+	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

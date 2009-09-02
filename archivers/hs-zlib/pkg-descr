@@ -3,6 +3,6 @@ streams of data represented as lazy ByteStrings. It uses the zlib C
 library so it has high performance. It supports the "zlib",  "gzip" and
 "raw" compression formats. It provides a convenient high level api suitable
 for most tasks and for the few cases where more control is needed it provides
-access to the full zlib feature set. 
+access to the full zlib feature set.
 
 WWW: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/zlib

@@ -5,20 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=	hscolour-docs
-PORTVERSION=	1.12
+PORTNAME=	hscolour
+PORTVERSION=	1.13
 CATEGORIES=	print haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/ \
 		http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
-DISTNAME=	hscolour-${PORTVERSION}
+PKGNAMESUFFIX=	-doc
 
 MAINTAINER=	jacula@gmail.com
 COMMENT=	Documentation for HsColour
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
-		haddock:${PORTSDIR}/devel/hs-haddock \
 		HsColour:${PORTSDIR}/print/hs-hscolour
+RUN_DEPENDS=	hs-hscolour=${PORTVERSION}:${PORTSDIR}/print/hs-hscolour
+
+PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
+.if !empty(PORT_HADDOCK:M?0)
+BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+.endif
 
 HSCOLOUR_VERSION=	${PORTVERSION}
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}

@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	haddock-docs
-PORTVERSION=	2.1.0
-PORTREVISION=	4
+PORTNAME=	haddock
+PORTVERSION=	2.4.2
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.haskell.org/haddock/dist/
+MASTER_SITES=	http://www.haskell.org/haddock/dist/ \
+		http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
-DISTNAME=	haddock-${PORTVERSION}
+PKGNAMESUFFIX=	-doc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation for Haddock
@@ -19,22 +19,29 @@ COMMENT=	Documentation for Haddock
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262:env
 
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
-		haddock:${PORTSDIR}/devel/hs-haddock \
-		HsColour:${PORTSDIR}/print/hs-hscolour
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+		HsColour:${PORTSDIR}/print/hs-hscolour \
+		hs-ghc-paths>=0.1.0.5:${PORTSDIR}/devel/hs-ghc-paths
 
-BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		docbook<2:${PORTSDIR}/textproc/docbook \
-		${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
-		${LOCALBASE}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310 \
-		${LOCALBASE}/share/xsl/docbook/catalog:${PORTSDIR}/textproc/docbook-xsl \
-		jade:${PORTSDIR}/textproc/jade \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
+.if ${PORT_HADDOCK} == 11
+ECHO_MSG=	${PRINTF} "%b"
+IGNORE+=	\n\t The ${LOCALBASE}/bin/haddock executable was already installed\n
+IGNORE+=	\t by the lang/ghc port, setting the option WITH_HADDOCK.\n
+IGNORE+=	\t You have to reinstall this last one with the right option\n
+IGNORE+=	\t WITHOUT_HADDOCK.\n\c
+.else
+BUILD_DEPENDS+=	hs-haddock=${PORTVERSION}:${PORTSDIR}/devel/hs-haddock
+RUN_DEPENDS=	hs-haddock=${PORTVERSION}:${PORTSDIR}/devel/hs-haddock
+.endif
+
+BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-HSCOLOUR_VERSION=	1.12
+HSCOLOUR_VERSION=	1.13
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 CABAL_CMD=	runghc Setup.lhs
@@ -53,7 +60,7 @@ do-configure:
 	cd ${WRKSRC}/doc && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS}
 
 do-build:
-	cd ${WRKSRC} && ${CABAL_CMD} haddock --executables --hyperlink-source \
+	cd ${WRKSRC} && ${CABAL_CMD} haddock --executables --hyperlink-source --executables \
 					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 	cd ${WRKSRC}/doc && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html

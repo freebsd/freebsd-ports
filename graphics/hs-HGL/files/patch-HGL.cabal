@@ -1,0 +1,11 @@
+--- HGL.cabal.orig	2009-07-14 16:55:20.000000000 +0000
++++ HGL.cabal	2009-07-14 16:56:13.000000000 +0000
+@@ -22,7 +22,7 @@
+ 
+ library
+   if flag(split-base)
+-    build-depends: base >= 3, array
++    build-depends: base < 4, array
+   else
+     build-depends: base < 2
+   exposed-modules:

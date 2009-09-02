@@ -1,0 +1,11 @@
+--- lazysmallcheck.cabal.orig	2009-07-15 09:45:12.000000000 +0000
++++ lazysmallcheck.cabal	2009-07-15 09:45:44.000000000 +0000
+@@ -16,7 +16,7 @@
+   significantly fewer test-cases to verify a property for all inputs up 
+   to a given depth.
+ Category:           Testing
+-Build-Depends:      base, haskell98
++Build-Depends:      base < 4, haskell98
+ Build-Type:         Simple
+ Extra-Source-Files:
+   examples/Catch.hs

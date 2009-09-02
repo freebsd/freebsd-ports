@@ -5,16 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.18.2
+PORTVERSION=	1.18.4
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An LALR(1) parser generator for the functional language Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
@@ -23,7 +23,6 @@ PLIST_SUB+=	RMLIC="@comment "
 PLIST_SUB+=	RMLIC=""
 .endif
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
 PLIST_SUB+=	SUBDIR=share/${PORTNAME}-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	LICENSE html

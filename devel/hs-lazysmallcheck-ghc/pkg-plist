@@ -1,14 +1,16 @@
 @comment $FreeBSD$
-%%SUBDIR%%/Test/LazySmallCheck.hi
-%%SUBDIR%%/Test/LazySmallCheck/Generic.hi
-%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
-%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
-%%SUBDIR%%/%%PORTNAME%%-register.sh
-@dirrm    %%SUBDIR%%/Test/LazySmallCheck
-@dirrmtry %%SUBDIR%%/Test
-%%RMLIC%%%%DOCSDIR%%/LICENSE
-%%RMLIC%%@dirrm %%DOCSDIR%%
-@exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
-@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec ghc-pkg unregister %%PORTNAME%%
-@unexec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+%%LAZYSMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSlazysmallcheck-%%LAZYSMALLCHECK_VERSION%%.o
+%%LAZYSMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/LazySmallCheck.hi
+%%LAZYSMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/LazySmallCheck/Generic.hi
+%%LAZYSMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSlazysmallcheck-%%LAZYSMALLCHECK_VERSION%%.a
+%%LAZYSMALLCHECK_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LAZYSMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/LazySmallCheck
+@dirrm %%LAZYSMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test
+@dirrm %%LAZYSMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LAZYSMALLCHECK_LIBDIR_REL%%
+@exec /bin/sh %D/%%LAZYSMALLCHECK_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister lazysmallcheck
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

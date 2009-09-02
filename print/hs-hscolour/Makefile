@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hscolour
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.13
 CATEGORIES=	print haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/ \
 		http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
@@ -16,15 +15,15 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	jacula@gmail.com
 COMMENT=	Colourise Haskell code
 
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
-
 .if !defined(SLAVE)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 .else
 NO_PKG_REGISTER=
 .endif
 
-GHC_VERSION=	6.8.3
+GHC_VERSION=		6.10.4
 HSCOLOUR_VERSION=	${PORTVERSION}
 
 CABAL_CMD=	runghc Setup.hs

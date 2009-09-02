@@ -5,7 +5,7 @@ visually non-imposing when displaying the source in a text editor. Interface
 documentation is rendered in standard markup languages (currently, only HTML is
 supported). IDoc has been designed to be simple to use and install.
 
-WWW:	http://www.cse.unsw.edu.au/~chak/haskell/idoc/
+WWW: http://www.cse.unsw.edu.au/~chak/haskell/idoc/
 
 -- Oliver Braun
 obraun@FreeBSD.org

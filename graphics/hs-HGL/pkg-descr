@@ -1,23 +1,10 @@
-A simple graphics library, designed to give the programmer access
-to most interesting parts of the Win32 Graphics Device Interface
-and X11 library without exposing the programmer to the pain and
-anguish usually associated with using these interfaces.
-The library also includes a module Graphics.SOE providing the
-interface used in "The Haskell School of Expression", by Paul
-Hudak, cf <http://www.haskell.org/soe/>.
+A simple graphics library, designed to give the programmer access to most
+interesting parts of the Win32 Graphics Device Interface and X11 library
+without exposing the programmer to the pain and anguish usually associated with
+using these interfaces.
 
-author: 	Alastair Reid
-maintainer:	<libraries@haskell.org>
-license:	BSD3
-WWW:		http://www.haskell.org/graphics/index.html
-package-url:	http://hackage.haskell.org/packages/archive/HGL
+The library also includes a module Graphics.SOE providing the interface used
+in "The Haskell School of Expression", by Paul Hudak,
+cf <http://www.haskell.org/soe/>.
 
-exposed-modules:
-      Graphics.HGL.Core,	Graphics.HGL.Draw,
-      Graphics.HGL.Units,	Graphics.HGL.Key,
-      Graphics.HGL.Run,		Graphics.HGL.Draw.Brush,
-      Graphics.HGL.Draw.Font,	Graphics.HGL.Draw.Monad,
-      Graphics.HGL.Draw.Pen,	Graphics.HGL.Draw.Picture,
-      Graphics.HGL.Draw.Region,	Graphics.HGL.Draw.Text,
-      Graphics.HGL.Utils,	Graphics.HGL.Window,
-      Graphics.HGL,		Graphics.SOE
+WWW: http://www.haskell.org/graphics/index.html

@@ -1,3 +1,3 @@
-MD5 (ghc-6.8.3-src-extralibs.tar.bz2) = 5ac72f5d5433151cf6b718dc6601dc41
-SHA256 (ghc-6.8.3-src-extralibs.tar.bz2) = ee2f5ba6a46157fc53eae515cb6fa1ed3c5023e7eac15981d92af0af00ee2ba2
-SIZE (ghc-6.8.3-src-extralibs.tar.bz2) = 1912647
+MD5 (OpenGL-2.2.3.0.tar.gz) = f4e3ccb471034a6a74921d4dab9dd32d
+SHA256 (OpenGL-2.2.3.0.tar.gz) = a75c3277bb20fda9a4ac1eb0e838fe4b5baf92f5539466b92bd255626afb0502
+SIZE (OpenGL-2.2.3.0.tar.gz) = 189240

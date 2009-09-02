@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/xmobar
 %%RMLIC%%%%DOCSDIR%%/LICENSE
 %%RMLIC%%@dirrm %%DOCSDIR%%

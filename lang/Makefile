@@ -97,7 +97,6 @@
     SUBDIR += gdc
     SUBDIR += gforth
     SUBDIR += ghc
-    SUBDIR += ghc-doc
     SUBDIR += gnat
     SUBDIR += gnat-doc-html
     SUBDIR += gnat-doc-info

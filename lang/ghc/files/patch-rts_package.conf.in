@@ -1,0 +1,11 @@
+--- rts/package.conf.in.orig	2009-07-14 19:10:52.000000000 +0200
++++ rts/package.conf.in	2009-08-13 22:09:10.000000000 +0200
+@@ -156,6 +156,8 @@
+ 	 , "-u", "base_GHCziConc_ensureIOManagerIsRunning_closure"
+ #endif
+ 
++	 , "-L%%LOCALBASE%%/lib"
++
+ /*  Pick up static libraries in preference over dynamic if in earlier search
+  *  path.  This is important to use the static gmp in preference on Mac OS.
+  *  The used option is specific to the Darwin linker.

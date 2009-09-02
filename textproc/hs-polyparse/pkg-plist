@@ -1,29 +1,24 @@
-%%SUBDIR%%/Text/Parse.hi
-%%SUBDIR%%/Text/ParserCombinators/HuttonMeijer.hi
-%%SUBDIR%%/Text/ParserCombinators/HuttonMeijerWallace.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly.hi
-%%SUBDIR%%/Text/ParserCombinators/PolyLazy.hi
-%%SUBDIR%%/Text/ParserCombinators/PolyState.hi
-%%SUBDIR%%/Text/ParserCombinators/PolyStateLazy.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly/Base.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly/Lazy.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly/Plain.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly/State.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly/StateLazy.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly/NoLeak/Lazy.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly/NoLeak/Plain.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly/NoLeak/State.hi
-%%SUBDIR%%/Text/ParserCombinators/Poly/NoLeak/StateLazy.hi
-%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
-%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
-%%SUBDIR%%/%%PORTNAME%%-register.sh
-%%RMLIC%%%%DOCSDIR%%/COPYRIGHT
-%%RMLIC%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SUBDIR%%/Text/ParserCombinators/Poly/NoLeak
-@dirrmtry %%SUBDIR%%/Text/ParserCombinators/Poly
-@dirrmtry %%SUBDIR%%/Text/ParserCombinators
-@dirrmtry %%SUBDIR%%/Text
-@exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
-@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec ghc-pkg unregister %%PORTNAME%%
-@unexec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@comment $FreeBSD$
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSpolyparse-%%POLY_VERSION%%.o
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Parse.hi
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/HuttonMeijer.hi
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/HuttonMeijerWallace.hi
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Poly.hi
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Poly/Base.hi
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Poly/Lazy.hi
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Poly/Plain.hi
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Poly/State.hi
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Poly/StateLazy.hi
+%%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSpolyparse-%%POLY_VERSION%%.a
+%%POLY_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Poly
+@dirrm %%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators
+@dirrm %%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%POLY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%POLY_LIBDIR_REL%%
+@exec /bin/sh %D/%%POLY_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister polyparse
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,36 +1,39 @@
-%%SUBDIR%%/Graphics/UI/GLUT/Callbacks/Global.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Callbacks/Window.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Callbacks/Registration.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Begin.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Callbacks.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Colormap.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Debugging.hi
-%%SUBDIR%%/Graphics/UI/GLUT/DeviceControl.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Fonts.hi
-%%SUBDIR%%/Graphics/UI/GLUT/GameMode.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Initialization.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Menu.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Objects.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Overlay.hi
-%%SUBDIR%%/Graphics/UI/GLUT/State.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Window.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Constants.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Extensions.hi
-%%SUBDIR%%/Graphics/UI/GLUT/QueryUtils.hi
-%%SUBDIR%%/Graphics/UI/GLUT/Types.hi
-%%SUBDIR%%/Graphics/UI/GLUT.hi
-%%SUBDIR%%/libHSGLUT-%%PORTVERSION%%.a
-%%SUBDIR%%/HSGLUT-%%PORTVERSION%%.o
-%%SUBDIR%%/include/HsGLUT.h
-%%SUBDIR%%/%%PORTNAME%%-register.sh
-%%RMLIC%%%%DOCSDIR%%/LICENSE
-%%RMLIC%%@dirrm %%DOCSDIR%%
-@dirrm %%SUBDIR%%/Graphics/UI/GLUT/Callbacks
-@dirrm %%SUBDIR%%/Graphics/UI/GLUT
-@dirrmtry %%SUBDIR%%/Graphics/UI
-@dirrmtry %%SUBDIR%%/Graphics
-@dirrmtry %%SUBDIR%%/include
-@exec /bin/sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
+@comment $FreeBSD$
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Begin.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Callbacks.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Callbacks/Global.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Callbacks/Registration.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Callbacks/Window.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Colormap.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Constants.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Debugging.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/DeviceControl.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Extensions.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Fonts.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/GameMode.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Initialization.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Menu.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Objects.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Overlay.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/QueryUtils.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/State.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Types.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Window.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSGLUT-%%HSGLUT_VERSION%%.o
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsGLUT.h
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSGLUT-%%HSGLUT_VERSION%%.a
+%%HSGLUT_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
+@dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Callbacks
+@dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT
+@dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI
+@dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
+@dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%HSGLUT_LIBDIR_REL%%
+@exec /bin/sh %D/%%HSGLUT_LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister GLUT
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

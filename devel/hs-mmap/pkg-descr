@@ -1,0 +1,6 @@
+This library provides a wrapper to mmap(2) or MapViewOfFile, allowing files or
+devices to be lazily loaded into memory as strict or lazy ByteStrings,
+ForeignPtrs or plain Ptrs, using the virtual memory subsystem to do on-demand
+loading.
+
+WWW: http://hackage.haskell.org/packages/archive/mmap

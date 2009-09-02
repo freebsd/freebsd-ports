@@ -1,0 +1,11 @@
+--- QuickCheck.cabal.orig	2009-07-15 09:22:34.000000000 +0000
++++ QuickCheck.cabal	2009-07-15 09:22:38.000000000 +0000
+@@ -30,7 +30,7 @@
+ library
+   Build-depends: mtl
+   if flag(splitBase)
+-    Build-depends: base >= 3, random
++    Build-depends: base >= 3, base < 4, random
+   else
+     Build-depends: base < 3
+   Exposed-Modules:

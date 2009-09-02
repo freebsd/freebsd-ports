@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL.hi
 %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Core.hi
 %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw.hi

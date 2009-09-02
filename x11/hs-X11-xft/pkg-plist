@@ -1,11 +1,16 @@
-%%SUBDIR%%/Graphics/X11/Xft.hi
-%%SUBDIR%%/Graphics/X11/Xrender.hi
-%%SUBDIR%%/HSX11-xft-0.3.o
-%%SUBDIR%%/libHSX11-xft-0.3.a
-%%SUBDIR%%/x11-xft-register.sh
-@dirrmtry %%SUBDIR%%/Graphics/X11
-@dirrmtry %%SUBDIR%%/Graphics
-@exec /bin/sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
+@comment $FreeBSD$
+%%HSX11XFT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xft.hi
+%%HSX11XFT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xrender.hi
+%%HSX11XFT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSX11-xft-%%HSX11XFT_VERSION%%.o
+%%HSX11XFT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSX11-xft-%%HSX11XFT_VERSION%%.a
+%%HSX11XFT_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%HSX11XFT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11
+@dirrm %%HSX11XFT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
+@dirrm %%HSX11XFT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%HSX11XFT_LIBDIR_REL%%
+@exec /bin/sh %D/%%HSX11XFT_LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec ghc-pkg unregister X11-xft
+@unexec %D/bin/ghc-pkg unregister X11-xft
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
