@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trytond
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/1.2/
 
