@@ -14,4 +14,4 @@ JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" \
         ${SVNKIT_OPTS} \
         -Djava.util.logging.config.file="${SVNKIT_HOME}/logging.properties" \
         -cp "${SVNKIT_CP}" \
-        org.tmatesoft.svn.cli.svn.SVN "$@"
+        org.tmatesoft.svn.cli.svndumpfilter.SVNDumpFilter "$@"
