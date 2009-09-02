@@ -1,0 +1,14 @@
+bin/kuklomenos
+%%DATADIR%%/fonts/10x20.fnt
+%%DATADIR%%/fonts/7x13.fnt
+%%VORBIS%%%%DATADIR%%/sounds/hum.ogg
+%%VORBIS%%%%DATADIR%%/sounds/invdie.ogg
+%%VORBIS%%%%DATADIR%%/sounds/invhit.ogg
+%%VORBIS%%%%DATADIR%%/sounds/mutilation.ogg
+%%VORBIS%%%%DATADIR%%/sounds/primed.ogg
+%%VORBIS%%%%DATADIR%%/sounds/shield.ogg
+%%VORBIS%%%%DATADIR%%/sounds/shot.ogg
+%%VORBIS%%%%DATADIR%%/sounds/spark.ogg
+%%VORBIS%%@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%
