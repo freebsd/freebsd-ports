@@ -85,12 +85,15 @@ bin/mnemosyne
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/import_frm.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_XX.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_cs.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_da.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_de.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_eo.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_es.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_fa.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_fr.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_he.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_ja.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_nb_no.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_nl.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_pl.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_pt_BR.qm
@@ -98,14 +101,20 @@ bin/mnemosyne
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_zh_HK.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_zh_SG.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/mnemosyne_zh_TW.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_ar.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_ca.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_cs.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_de.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_es.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_fr.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_he.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_it.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_ja.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_nb.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_pl.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_pt-br.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_ru.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_sk.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_zh-cn.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale/qt_zh-tw.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/main_dlg.py
@@ -135,6 +144,9 @@ bin/mnemosyne
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/qtextedit2.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/qtextedit2.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/qtextedit2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/scrolllabel.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/scrolllabel.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/scrolllabel.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/sound.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/sound.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/sound.pyo
@@ -158,9 +170,9 @@ share/icons/mnemosyne.png
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui/locale
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/pyqt_ui
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne/core
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mnemosyne
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-@dirrmtry share/applications
 @dirrmtry share/icons
+@dirrmtry share/applications
