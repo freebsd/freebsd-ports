@@ -19,7 +19,7 @@ COMMENT=	A fantasy turn-based strategy game
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-CONFLICTS=	wesnoth-1.5*
+CONFLICTS=	wesnoth-1.5* wesnoth-1.7*
 
 USE_SDL=	image mixer net ttf
 USE_GNOME=	gnometarget pango
