@@ -8,8 +8,7 @@
 PORTNAME=	libnaji
 PORTVERSION=	0.6.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	najitool
+MASTER_SITES=	SF/najitool/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library that generates, converts, and filters files

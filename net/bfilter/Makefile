@@ -8,7 +8,7 @@
 PORTNAME=	bfilter
 PORTVERSION=	1.1.4
 CATEGORIES=	net
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smart filtering HTTP proxy

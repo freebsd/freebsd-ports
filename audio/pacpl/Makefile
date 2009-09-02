@@ -8,7 +8,7 @@
 PORTNAME=	pacpl
 PORTVERSION=	4.0.5
 CATEGORIES=	audio
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Perl Audio Converter

@@ -9,7 +9,7 @@ PORTNAME=	subtools
 PORTVERSION=	20060508
 DISTVERSIONSUFFIX=	alpha
 CATEGORIES=	multimedia
-MASTER_SITES=	SFE
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}alpha
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tools for movie subtitles in SubRipper format

@@ -9,8 +9,7 @@ PORTNAME=		hastymail
 PORTVERSION=		1.5
 PORTREVISION=		3
 CATEGORIES=		www
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	hastymail
+MASTER_SITES=		SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast and secure yet powerful IMAP webmail

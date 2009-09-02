@@ -8,8 +8,7 @@
 PORTNAME=	archmbox
 PORTVERSION=	4.10.0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	adc-archmbox
+MASTER_SITES=	SF/adc-${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	tad@vif.com
 COMMENT=	Email archiver written in perl; parses mailboxes and performs actions

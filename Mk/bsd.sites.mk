@@ -1176,21 +1176,13 @@ MASTER_SITE_SAVANNAH+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-.for mirror in garr superb-east nchc kent easynews ufpr mesh heanet
+.for mirror in heanet sunet iweb switch surfnet kent freefr \
+		voxel jaist osdn nchc transact softlayer \
+		internode biznetnetworks upfr
+#		garr dfn ovh (redirect as of 2009-Sep-02)
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
 .endfor
-.endif
-
-# official sf.net mirrors that don't mirror all projects, check
-# http://prdownloads.sourceforge.net/%SUBDIR%/
-.if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_EXTENDED)
-.for mirror in easynews switch puzzle belnet osdn ovh keihanna
-MASTER_SITE_SOURCEFORGE_EXTENDED+= \
-	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
-.endfor
-#MASTER_SITE_SOURCEFORGE_EXTENDED+= \
-#	${MASTER_SITE_SOURCEFORGE}
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_JP)
@@ -1497,8 +1489,10 @@ MASTER_SITE_KERNEL_ORG+= \
 
 # Macro magic
 
-MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN SF:SOURCEFORGE SFE:SOURCEFORGE_EXTENDED \
-			SFJP:SOURCEFORGE_JP RF:RUBYFORGE
+MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
+			SF:SOURCEFORGE \
+			SFJP:SOURCEFORGE_JP \
+			RF:RUBYFORGE
 MASTER_SITES_SUBDIRS=	\
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			BERLIOS:${PORTNAME:L} \
@@ -1519,7 +1513,6 @@ MASTER_SITES_SUBDIRS=	\
 			RUBY_GNOME:${RUBY_GNOME_MASTER_SITE_SUBDIR} \
 			SAVANNAH:${PORTNAME:L} \
 			SOURCEFORGE:${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION} \
-			SOURCEFORGE_EXTENDED:${PORTNAME:L} \
 			RUBYFORGE:${PORTNAME:L}
 
 .if defined(MASTER_SITES) && ${MASTER_SITES:N*\:/*}

@@ -8,13 +8,9 @@
 PORTNAME=	leafnode
 DISTVERSION=	1.11.7
 CATEGORIES=	news ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
+MASTER_SITES=	SF \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
-		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
-MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
-			./:DEFAULT \
-			system/news/transport/:sunsite
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
+		SUNSITE/system/news/transport
 #MASTER_SITES=	http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
 #		http://homepages.uni-paderborn.de/mandree/
 

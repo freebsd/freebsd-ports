@@ -9,7 +9,7 @@ PORTNAME=	libquicktime
 PORTVERSION=	1.1.3
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files

@@ -8,7 +8,7 @@
 PORTNAME=	vifm
 PORTVERSION=	0.4
 CATEGORIES=	misc
-MASTER_SITES=	SFE
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Ncurses based file manager with vi like keybindings

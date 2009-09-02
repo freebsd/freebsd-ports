@@ -8,7 +8,7 @@
 PORTNAME=	ffe
 PORTVERSION=	0.2.8
 CATEGORIES=	textproc
-MASTER_SITES=	SFE/ff-extractor
+MASTER_SITES=	SF/ff-extractor/ff-extractor/${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Flat file extractor

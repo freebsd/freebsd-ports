@@ -10,7 +10,7 @@ PORTVERSION=	0.10.0
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 
 MAINTAINER=	datahead4@gmail.com
 COMMENT=	An advanced digital photo management application for KDE4

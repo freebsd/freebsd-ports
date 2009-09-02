@@ -9,9 +9,7 @@ PORTNAME=	balance
 PORTVERSION=	3.42
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.inlab.de/ \
-		${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	balance
+MASTER_SITES=	http://www.inlab.de/
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Simple but powerful generic tcp proxy with round robin features

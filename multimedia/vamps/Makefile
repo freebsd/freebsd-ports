@@ -9,8 +9,7 @@ PORTNAME=	vamps
 PORTVERSION=	0.99.2
 PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	vamps
+MASTER_SITES=	SF/${PORTNAME}/Vamps/${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	High performance tool to transcode DVD videos to a smaller size

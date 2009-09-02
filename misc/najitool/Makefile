@@ -8,8 +8,7 @@
 PORTNAME=	najitool
 PORTVERSION=	0.8.1
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	najitool
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool that generates, converts, and filters files

@@ -8,7 +8,7 @@
 PORTNAME=	nload
 PORTVERSION=	0.7.2
 CATEGORIES=	net
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	CRITICAL SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Console application which monitors network traffic in real time

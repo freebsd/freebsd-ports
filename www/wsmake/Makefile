@@ -8,7 +8,7 @@
 PORTNAME=	wsmake
 PORTVERSION=	0.7.901
 CATEGORIES=	www
-MASTER_SITES=	SFE
+MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Software for production and maintenance of web sites

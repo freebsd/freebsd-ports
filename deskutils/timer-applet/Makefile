@@ -9,7 +9,7 @@ PORTNAME=	timer-applet
 PORTVERSION=	2.1.2
 PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	SFE/timerapplet
+MASTER_SITES=	SF/timerapplet/timerapplet/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A timer applet for the GNOME panel

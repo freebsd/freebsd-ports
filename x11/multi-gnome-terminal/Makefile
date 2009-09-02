@@ -10,8 +10,7 @@ PORTNAME=	multi-gnome-terminal
 PORTVERSION=	1.6.2
 PORTREVISION=	8
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	multignometerm
+MASTER_SITES=	SF/multignometerm/multignometerm/mgt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome tabbed terminal emulator

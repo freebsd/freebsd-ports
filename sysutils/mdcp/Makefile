@@ -8,7 +8,7 @@
 PORTNAME=	mdcp
 PORTVERSION=	0.1.2.2
 CATEGORIES=	sysutils
-MASTER_SITES=	SFE
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/shine
 
 MAINTAINER=	wamonzyne@hotmail.com
 COMMENT=	A fastest utility for copy from a disk device for many

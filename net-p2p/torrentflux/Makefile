@@ -8,8 +8,7 @@
 PORTNAME=		torrentflux
 DISTVERSION=		2.0beta1
 CATEGORIES=		net-p2p www
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/TorrentFlux%202.0%20beta1
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A PHP based BitTorrent client that runs on a web server
