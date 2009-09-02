@@ -27,7 +27,7 @@ WITH_OPENSSL_PORT=	yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:22
 CONFIGURE_ARGS?=	--enable-shared
 # CONFIGURE_ARGS+=	--disable-thread-support
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
