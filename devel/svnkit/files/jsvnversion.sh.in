@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 SVNKIT_HOME=${SVNKIT_HOME:-"%%DATADIR%%"}
-SVNKIT_CP=${SVNKIT_HOME}/svnkit.jar:${SVNKIT_HOME}/svnkit-cli.jar:${SVNKIT_HOME}/ganymed.jar
+SVNKIT_CP=${SVNKIT_HOME}/svnkit.jar:${SVNKIT_HOME}/svnkit-cli.jar:${SVNKIT_HOME}/trilead.jar:${SVNKIT_HOME}/jna.jar
 SVNKIT_LOGDIR=${SVNKIT_LOGDIR:-"${HOME}/.svnkit"}
 
 if [ ! -d ${SVNKIT_LOGDIR} ]; then
@@ -14,4 +14,4 @@ JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" \
         ${SVNKIT_OPTS} \
         -Djava.util.logging.config.file="${SVNKIT_HOME}/logging.properties" \
         -cp "${SVNKIT_CP}" \
-        org.tmatesoft.svn.cli.SVNVersion "$@"
+        org.tmatesoft.svn.cli.svnversion.SVNVersion "$@"

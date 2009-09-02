@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	svnkit
-PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	devel java
 MASTER_SITES=	http://svnkit.com/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
@@ -20,22 +19,24 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.4142
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.5847
 
 DATA_FILES=	COPYING \
 		JNA-LICENSE JAVAHL-LICENSE SEQUENCE-LICENSE TRILEAD-LICENSE \
-		changelog.txt logging.properties.disabled svnkitsrc.zip \
+		changelog.txt logging.properties.disabled \
+		svnkitclisrc.zip svnkitsrc.zip \
 		jna.jar svnkit-cli.jar svnkit-javahl.jar svnkit.jar trilead.jar \
-		README.txt THIRD-PARTY.txt
+		README.txt
 
 PLIST_FILES=	bin/jsvn bin/jsvnadmin bin/jsvnlook \
 		bin/jsvnsync bin/jsvnversion \
+		bin/jsvndumpfilter \
 		${DATA_FILES:S,^,%%DATADIR%%/,}
 PLIST_DIRS=	%%DATADIR%%
 
-SUB_FILES=	javasvn.sh svnsync.sh jsvnadmin.sh jsvnlook.sh jsvnversion.sh
+SUB_FILES=	javasvn.sh svnsync.sh jsvnadmin.sh jsvnlook.sh jsvnversion.sh jsvndumpfilter.sh
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -51,6 +52,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jsvnadmin.sh ${PREFIX}/bin/jsvnadmin
 	${INSTALL_SCRIPT} ${WRKDIR}/jsvnlook.sh ${PREFIX}/bin/jsvnlook
 	${INSTALL_SCRIPT} ${WRKDIR}/jsvnversion.sh ${PREFIX}/bin/jsvnversion
+	${INSTALL_SCRIPT} ${WRKDIR}/jsvndumpfilter.sh ${PREFIX}/bin/jsvndumpfilter
 
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc/javadoc && \
