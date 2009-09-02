@@ -26,6 +26,12 @@ lib/meld/melddoc.pyo
 lib/meld/misc.py
 lib/meld/misc.pyc
 lib/meld/misc.pyo
+lib/meld/msgarea.py
+lib/meld/msgarea.pyc
+lib/meld/msgarea.pyo
+lib/meld/notebooklabel.py
+lib/meld/notebooklabel.pyc
+lib/meld/notebooklabel.pyo
 lib/meld/paths.py
 lib/meld/paths.pyc
 lib/meld/paths.pyo
@@ -77,6 +83,9 @@ lib/meld/vc/monotone.pyo
 lib/meld/vc/rcs.py
 lib/meld/vc/rcs.pyc
 lib/meld/vc/rcs.pyo
+lib/meld/vc/svk.py
+lib/meld/vc/svk.pyc
+lib/meld/vc/svk.pyo
 lib/meld/vc/svn.py
 lib/meld/vc/svn.pyc
 lib/meld/vc/svn.pyo
@@ -86,7 +95,6 @@ lib/meld/vc/tla.pyo
 lib/meld/vcview.py
 lib/meld/vcview.pyc
 lib/meld/vcview.pyo
-share/application-registry/meld.applications
 share/applications/meld.desktop
 share/gnome/help/meld/C/figures/dirdiff.png
 share/gnome/help/meld/C/figures/filediff.png
@@ -97,10 +105,6 @@ share/gnome/help/meld/es/meld.xml
 share/gnome/help/meld/fr/figures/dirdiff.png
 share/gnome/help/meld/fr/figures/filediff.png
 share/gnome/help/meld/fr/meld.xml
-share/omf/meld/meld-C.omf
-share/omf/meld/meld-es.omf
-share/omf/meld/meld-fr.omf
-share/pixmaps/meld.png
 share/locale/ar/LC_MESSAGES/meld.mo
 share/locale/bg/LC_MESSAGES/meld.mo
 share/locale/ca/LC_MESSAGES/meld.mo
@@ -113,6 +117,7 @@ share/locale/en_GB/LC_MESSAGES/meld.mo
 share/locale/es/LC_MESSAGES/meld.mo
 share/locale/fi/LC_MESSAGES/meld.mo
 share/locale/fr/LC_MESSAGES/meld.mo
+share/locale/gl/LC_MESSAGES/meld.mo
 share/locale/hu/LC_MESSAGES/meld.mo
 share/locale/it/LC_MESSAGES/meld.mo
 share/locale/ja/LC_MESSAGES/meld.mo
@@ -133,33 +138,30 @@ share/locale/sv/LC_MESSAGES/meld.mo
 share/locale/vi/LC_MESSAGES/meld.mo
 share/locale/zh_CN/LC_MESSAGES/meld.mo
 share/locale/zh_TW/LC_MESSAGES/meld.mo
-%%DATADIR%%/glade2/dirdiff.glade
 %%DATADIR%%/glade2/dirdiff-ui.xml
+%%DATADIR%%/glade2/dirdiff.glade
 %%DATADIR%%/glade2/filediff-ui.xml
 %%DATADIR%%/glade2/filediff.glade
 %%DATADIR%%/glade2/findbar.glade
-%%DATADIR%%/glade2/meldapp.glade
 %%DATADIR%%/glade2/meldapp-ui.xml
+%%DATADIR%%/glade2/meldapp.glade
 %%DATADIR%%/glade2/pixmaps/button_apply0.xpm
 %%DATADIR%%/glade2/pixmaps/button_apply1.xpm
 %%DATADIR%%/glade2/pixmaps/button_copy0.xpm
 %%DATADIR%%/glade2/pixmaps/button_copy1.xpm
 %%DATADIR%%/glade2/pixmaps/button_delete.xpm
-%%DATADIR%%/glade2/pixmaps/close.xpm
-%%DATADIR%%/glade2/pixmaps/cvs-icon-small.png
-%%DATADIR%%/glade2/pixmaps/cvs-icon.png
 %%DATADIR%%/glade2/pixmaps/filter-ignored-24.png
 %%DATADIR%%/glade2/pixmaps/filter-modified-24.png
 %%DATADIR%%/glade2/pixmaps/filter-nonvc-24.png
 %%DATADIR%%/glade2/pixmaps/filter-normal-24.png
 %%DATADIR%%/glade2/pixmaps/icon.png
-%%DATADIR%%/glade2/pixmaps/svn-icon-small.png
-%%DATADIR%%/glade2/pixmaps/svn-icon.png
 %%DATADIR%%/glade2/pixmaps/tree-file-changed.png
+%%DATADIR%%/glade2/pixmaps/tree-file-missing.png
 %%DATADIR%%/glade2/pixmaps/tree-file-new.png
 %%DATADIR%%/glade2/pixmaps/tree-file-newer.png
 %%DATADIR%%/glade2/pixmaps/tree-file-normal.png
 %%DATADIR%%/glade2/pixmaps/tree-folder-changed.png
+%%DATADIR%%/glade2/pixmaps/tree-folder-missing.png
 %%DATADIR%%/glade2/pixmaps/tree-folder-new.png
 %%DATADIR%%/glade2/pixmaps/tree-folder-normal.png
 %%DATADIR%%/glade2/pixmaps/vc-add-24.png
@@ -167,15 +169,18 @@ share/locale/zh_TW/LC_MESSAGES/meld.mo
 %%DATADIR%%/glade2/pixmaps/vc-commit-24.png
 %%DATADIR%%/glade2/pixmaps/vc-icon.png
 %%DATADIR%%/glade2/pixmaps/vc-remove-24.png
+%%DATADIR%%/glade2/pixmaps/vc-resolve-24.png
 %%DATADIR%%/glade2/pixmaps/vc-update-24.png
-%%DATADIR%%/glade2/vcview.glade
 %%DATADIR%%/glade2/vcview-ui.xml
+%%DATADIR%%/glade2/vcview.glade
+share/omf/meld/meld-C.omf
+share/omf/meld/meld-es.omf
+share/omf/meld/meld-fr.omf
+share/pixmaps/meld.png
+@dirrm share/omf/meld
 @dirrm %%DATADIR%%/glade2/pixmaps
 @dirrm %%DATADIR%%/glade2
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrm share/omf/meld
 @dirrm share/gnome/help/meld/fr/figures
 @dirrm share/gnome/help/meld/fr
 @dirrm share/gnome/help/meld/es/figures
@@ -183,8 +188,8 @@ share/locale/zh_TW/LC_MESSAGES/meld.mo
 @dirrm share/gnome/help/meld/C/figures
 @dirrm share/gnome/help/meld/C
 @dirrm share/gnome/help/meld
-@exec mkdir -p %%DOCSDIR%%
-@dirrm %%DOCSDIR%%
 @dirrm lib/meld/vc
 @dirrm lib/meld
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrmtry share/applications

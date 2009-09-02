@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	meld
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -27,8 +26,18 @@ INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "${MAKEFILE}" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(localstatedir)/lib/scrollkeeper|/var/db/scrollkeeper|g'
+.for file in GNUmakefile
+	@${REINPLACE_CMD} -e '/docdir_/d' ${WRKSRC}/${file}
+.endfor 
+.for file in help/GNUmakefile
+	@${REINPLACE_CMD} -e '/^LANGUAGES/s|de||g' ${WRKSRC}/${file}
+.endfor 
+.for file in help/C/GNUmakefile help/es/GNUmakefile help/fr/GNUmakefile
+	@${REINPLACE_CMD} -e \
+		's|$$(localstatedir)/lib/scrollkeeper|/var/db/scrollkeeper|g ; \
+		 s|^LANG :=|LANG_ :=|g ; \
+		 s|$$(LANG)|$$(LANG_)|g' ${WRKSRC}/${file}
+.endfor 
 
 .include <bsd.port.pre.mk>
 
