@@ -1,0 +1,11 @@
+This is an interactive shell for Perl, commonly known as a REPL -
+Read, Evaluate, Print, Loop. The shell provides for rapid development
+or testing of code without the need to create a temporary source code
+file.
+
+Through a plugin system, many features are available on demand. You
+can also tailor the environment through the use of profiles and run
+control files, for example to pre-load certain Perl modules when
+working on a particular project.
+
+WWW:	http://search.cpan.org/dist/Devel-REPL/

@@ -1,0 +1,48 @@
+bin/re.pl
+%%SITE_PERL%%/Devel/REPL.pm
+%%SITE_PERL%%/Devel/REPL/Error.pm
+%%SITE_PERL%%/Devel/REPL/Meta/Plugin.pm
+%%SITE_PERL%%/Devel/REPL/Plugin.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/B/Concise.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Colors.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Commands.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Completion.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver/Globals.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver/INC.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver/Keywords.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver/LexEnv.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver/Methods.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver/Turtles.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/DDS.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/DumpHistory.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/FancyPrompt.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/FindVariable.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/History.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Interrupt.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/LexEnv.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/MultiLine/PPI.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/NewlineHack.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Nopaste.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/OutputCache.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/PPI.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Packages.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Peek.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/ReadLineHistory.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Refresh.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/ShowClass.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Timing.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/Turtles.pm
+%%SITE_PERL%%/Devel/REPL/Profile.pm
+%%SITE_PERL%%/Devel/REPL/Profile/Default.pm
+%%SITE_PERL%%/Devel/REPL/Script.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/REPL/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/REPL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/Devel/REPL/Profile
+@dirrmtry %%SITE_PERL%%/Devel/REPL/Plugin/MultiLine
+@dirrmtry %%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver
+@dirrmtry %%SITE_PERL%%/Devel/REPL/Plugin/B
+@dirrmtry %%SITE_PERL%%/Devel/REPL/Plugin
+@dirrmtry %%SITE_PERL%%/Devel/REPL/Meta
+@dirrmtry %%SITE_PERL%%/Devel/REPL
+@dirrmtry %%SITE_PERL%%/Devel
