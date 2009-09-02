@@ -6,79 +6,123 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.5.14
-PORTREVISION=	2
+PORTVERSION=	1.7.4
 CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://www.wesnoth.org/files/
 
-
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=	wesnoth-1.4* wesnoth-1.6*
+CONFLICTS=	wesnoth-1.[4-6]*
 
 USE_SDL=	image mixer net ttf
-USE_GNOME=	gnometarget pango
+USE_GNOME=	gnometarget pango desktopfileutils
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_LUA=	5.1
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
+ACLOCAL_ARGS=	-Im4
+AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-icondir=${PREFIX}/share/pixmaps \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
 
-MANLANG=	"" cs da de en_GB es fi fr gl hu it ja
-MANLANG+=	lt nl pl racv sk sr sr@latin sv tr zh_CN zh_TW
+MANLANG_GAME=	gl sk zh_TW
+MANLANG=	"" cs de en_GB es et fi fr hu it lt pl sr sr@latin tr \
+		zh_CN
 
-MAN6_CS=	wesnoth.6
-MAN6_DE=	wesnoth.6
-MAN6_EN=	wesnoth.6
-MAN6_EN_GB=	wesnoth.6
-MAN6_ES=	wesnoth.6
-MAN6_FI=	wesnoth.6
-MAN6_GL=	wesnoth.6
-MAN6_HU=	wesnoth.6
-MAN6_IT=	wesnoth.6
-MAN6_LT=	wesnoth.6
-MAN6_PL=	wesnoth.6
-MAN6_SK=	wesnoth.6
-MAN6_TR=	wesnoth.6
-MAN6_ZH_CN=	wesnoth.6
+MAN6=		wesnoth.6
 
-OPTIONS=	CAMPAIGN "Enable campaign server" On \
-		EDITOR	"Enable map editor"  On \
-		NLS	"Enable localization" On \
-		SERVER "Enable server" On \
-		TOOLS "Enable extra tools for artists and translators" On
+OPTIONS=	CAMPAIGN "Enable campaign server"	On \
+		DUMMYLOCALES "Enable wesnoth own locales" Off \
+		EDITOR	 "Enable map editor"		On \
+		FRIBIDI	 "Enable bidirectional support"	On \
+		LOWMEM	 "Reduce memory usage (disables animations)" Off \
+		NLS	 "Enable localization"		On \
+		NOTIFY	 "Enable desktop notifications"	On \
+		POOLALLOC "Use wesnoth own memory allocator" Off \
+		PYTHON	 "Enable python developer tools" On \
+		SERVER	 "Enable server"		On \
+		TESTS	 "Enable unit tests"		Off \
+		TINYGUI	 "Enable tiny gui (down to 320x200)" Off \
+		TOOLS	 "Enable extra tools for artists and translators" On
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
+# workaround: compress and add to plist disobedient man pages
+.for manlang in ${MANLANG_GAME}
+MAN6_${manlang:U}=	wesnoth.6
+
+.if defined(NOMANCOMPRESS)
+PLIST_FILES+=	man/${manlang}/man6/wesnoth.6
+.else
+PLIST_FILES+=	man/${manlang}/man6/wesnoth.6.gz
 .endif
+.endfor
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+.if defined(WITH_PROFILE)
+CONFIGURE_ARGS+=	--enable-profile
+.endif
+
+# XXX: breaks compilation because of -Werror
+.if !defined(WITH_STRICT)
+CONFIGURE_ARGS+=	--disable-strict-compilation
+.endif
+
 .if defined(WITHOUT_CAMPAIGN)
+CONFIGURE_ARGS+=	--disable-campaign-server
 PLIST_SUB+=		CAMPAIGN="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-campaign-server
 PLIST_SUB+=		CAMPAIGN=""
 .endif
 
-.if defined(WITHOUT_EDITOR)
-PLIST_SUB+=		EDITOR="@comment "
-CONFIGURE_ARGS+=	--disable-editor
+.if defined(WITHOUT_DUMMYLOCALES)
+CONFIGURE_ARGS+=	--disable-dummy-locales
+PLIST_SUB+=		DUMMYLOCALES="@comment "
 .else
+CONFIGURE_ARGS+=	--enable-dummy-locales
+PLIST_SUB+=		DUMMYLOCALES=""
+.endif
+
+.if defined(WITHOUT_EDITOR)
+CONFIGURE_ARGS+=	--disable-editor
+PLIST_SUB+=		EDITOR="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-editor
 PLIST_SUB+=		EDITOR=""
+.endif
+
+.if defined(WITHOUT_FRIBIDI)
+CONFIGURE_ARGS+=	--without-fribidi
+.else
+CONFIGURE_ARGS+=	--with-fribidi
+LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
+.endif
+
+.if defined(WITHOUT_LOWMEM)
+CONFIGURE_ARGS+=	--disable-lowmem
+.else
+CONFIGURE_ARGS+=	--enable-lowmem
+.endif
+
+.if defined(WITHOUT_NOTIFY)
+CONFIGURE_ARGS+=	--disable-notifications
+.else
+CONFIGURE_ARGS+=	--enable-notifications --enable-dbus
+LIB_DEPENDS+=		dbus-1.3:${PORTSDIR}/devel/dbus
 .endif
 
 .if defined(WITHOUT_NLS)
@@ -86,10 +130,30 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .else
 USE_GETTEXT=		yes
+CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""
 .endif
 
+.if defined(WITHOUT_POOLALLOC)
+CONFIGURE_ARGS+=	--disable-pool-alloc
+.else
+CONFIGURE_ARGS+=	--enable-pool-alloc
+.endif
+
+.if defined(WITHOUT_PYTHON)
+CONFIGURE_ARGS+=	--disable-python-install
+PLIST_SUB+=		PYTHON="@comment "
+.else
+USE_PYTHON=		yes
+CONFIGURE_ENV+=		PYTHON_PREFIX=${PREFIX} \
+			PYTHON_VERSION=${PYTHON_VERSION:S/python//}
+CONFIGURE_ARGS+=	--enable-python-install
+PLIST_SUB+=		PYTHON=""
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+.endif
+
 .if defined(WITHOUT_SERVER)
+CONFIGURE_ARGS+=	--disable-server
 PLIST_SUB+=		SERVER="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-server
@@ -97,23 +161,40 @@ MAN6+=			wesnothd.6
 PLIST_SUB+=		SERVER=""
 .endif
 
+.if defined(WITHOUT_TESTS)
+CONFIGURE_ARGS+=	--disable-tests
+PLIST_SUB+=		TESTS="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-tests
+PLIST_SUB+=		TESTS=""
+.endif
+
+.if defined(WITHOUT_TINYGUI)
+CONFIGURE_ARGS+=	--disable-tinygui
+.else
+BUILD_DEPENDS+=		convert:${PORTSDIR}/graphics/ImageMagick
+CONFIGURE_ARGS+=	--enable-tinygui
+.endif
+
 .if defined(WITHOUT_TOOLS)
+CONFIGURE_ARGS+=	--disable-tools
 PLIST_SUB+=		TOOLS="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-tools
 PLIST_SUB+=		TOOLS=""
 .endif
 
-.if defined(WITH_FRIBIDI) || exists(${LOCALBASE}/bin/fribidi-config)
-LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
-.endif
-
 .if (defined(WITH_CAMPAIGN) || defined(WITH_SERVER) || defined(WITH_TOOLS)) && defined(WITHOUT_NLS)
 BROKEN=		you need NLS support for `campaignd' or `wesnothd' or tools to link against gettext
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|[$$][{]datarootdir[}]/icons|${LOCALBASE}/share/pixmaps|' \
-			${WRKSRC}/icons/Makefile
+post-install:	.SILENT
+	-update-desktop-database
+
+.if !defined(NOMANCOMPRESS)
+.	for manlang in ${MANLANG_GAME}
+		${GZIP_CMD} ${PREFIX}/man/${manlang}/man6/wesnoth.6
+.	endfor
+.endif
 
 .include <bsd.port.post.mk>
