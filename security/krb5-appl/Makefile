@@ -27,6 +27,7 @@ WITH_OPENSSL_PORT=	yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
+BROKEN=			Will not build with libtool 2.2.
 USE_AUTOTOOLS=		libtool:22
 CONFIGURE_ARGS?=	--enable-shared
 # CONFIGURE_ARGS+=	--disable-thread-support
