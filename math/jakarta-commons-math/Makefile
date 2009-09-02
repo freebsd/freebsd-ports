@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-math
-PORTVERSION=	1.2
+PORTVERSION=	2.0
 CATEGORIES=	math java
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -29,10 +29,12 @@ ALL_TARGET=	jar
 MAKE_ARGS=	-Dlibdir=${WRKDIR} -Dnoget=true \
 		-Dcommons-logging.jar="file://${JAVAJARDIR}/commons-logging.jar" \
 		-Dcommons-discovery.jar="file://${JAVAJARDIR}/commons-discovery.jar"
+
 COMMONS_LOGGING_API=	${LOCALBASE}/share/doc/commons-logging/api
 .if exists(${COMMONS_LOGGING_API})
 MAKE_ARGS+=	-Dcommons-logging.api=${COMMONS_LOGGING_API}
 .endif
+
 COMMONS_DISCOVERY_API=	${LOCALBASE}/share/doc/commons-discovery/api
 .if exists(${COMMONS_DISCOVERY_API})
 MAKE_ARGS+=	-Dcommons-logging.api=${COMMONS_DISCOVERY_API}
@@ -41,7 +43,7 @@ MAKE_ARGS+=	-Dcommons-logging.api=${COMMONS_DISCOVERY_API}
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadoc
 OTHERDOCS=	LICENSE.txt NOTICE.txt
-PORTDOCS=	api ${OTHERDOCS}
+PORTDOCS=	apidocs ${OTHERDOCS}
 .endif
 JARFILE=	${PORTNAME}-${PORTVERSION}.jar
 DESTJARFILE=	${PORTNAME}.jar
@@ -63,9 +65,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/dist/docs \
-	  && ${FIND} -s api -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} -s api -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/target \
+	  && ${FIND} -s apidocs -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} -s apidocs -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
