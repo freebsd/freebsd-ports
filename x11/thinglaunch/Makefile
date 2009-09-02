@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	thinglaunch
-PORTVERSION=	1.03
-PORTREVISION=	3
+PORTVERSION=	1.8
 CATEGORIES=	x11
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A very fast launcher program for X
 
-USE_XORG=	x11
+USE_XORG=	x11 xproto
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -lX11
