@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	robocode
-PORTVERSION=	1.6.0.1
-PORTREVISION=	2
+PORTVERSION=	1.6.2
+PORTREVISION=	3
 CATEGORIES=	games java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-setup-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	A game for learning Java[tm] programming language
 
 USE_JAVA=	yes
