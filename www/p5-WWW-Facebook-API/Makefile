@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Facebook-API
-PORTVERSION=	0.4.14
+PORTVERSION=	0.4.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,19 +29,30 @@ MAN3=		WWW::Facebook::API.3 \
 		WWW::Facebook::API::Application.3 \
 		WWW::Facebook::API::Auth.3 \
 		WWW::Facebook::API::Canvas.3 \
+		WWW::Facebook::API::Comments.3 \
+		WWW::Facebook::API::Connect.3 \
 		WWW::Facebook::API::Data.3 \
 		WWW::Facebook::API::Events.3 \
+		WWW::Facebook::API::Exception.3 \
 		WWW::Facebook::API::FBML.3 \
 		WWW::Facebook::API::FQL.3 \
 		WWW::Facebook::API::Feed.3 \
 		WWW::Facebook::API::Friends.3 \
 		WWW::Facebook::API::Groups.3 \
-		WWW::Facebook::API::Marketplace.3 \
+		WWW::Facebook::API::Intl.3 \
+		WWW::Facebook::API::Links.3 \
+		WWW::Facebook::API::LiveMessage.3 \
+		WWW::Facebook::API::Message.3 \
+		WWW::Facebook::API::Notes.3 \
 		WWW::Facebook::API::Notifications.3 \
 		WWW::Facebook::API::Pages.3 \
+		WWW::Facebook::API::Permissions.3 \
 		WWW::Facebook::API::Photos.3 \
 		WWW::Facebook::API::Profile.3 \
 		WWW::Facebook::API::SMS.3 \
-		WWW::Facebook::API::Users.3
+		WWW::Facebook::API::Status.3 \
+		WWW::Facebook::API::Stream.3 \
+		WWW::Facebook::API::Users.3 \
+		WWW::Facebook::API::Video.3
 
 .include <bsd.port.mk>
