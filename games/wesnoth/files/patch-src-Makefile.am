@@ -1,0 +1,34 @@
+--- src/Makefile.am~
++++ src/Makefile.am
+@@ -400,7 +400,7 @@ game_config.o: revision.hpp 
+ REVISION = $(shell LC_ALL=C svnversion -n $(topdir) 2>/dev/null)
+ .PRECIOUS: revision.hpp
+ revision.hpp: FORCE
+-	if [ "$(REVISION)" == "" ] || [ "$(REVISION)" == "exported" ]; then echo '' >/tmp/westemp$$$$; \
++	if [ "$(REVISION)" = "" ] || [ "$(REVISION)" = "exported" ]; then echo '' >/tmp/westemp$$$$; \
+ 	else echo '#define REVISION    "$(REVISION)"' >/tmp/westemp$$$$; fi;\
+ 	if cmp -s revision.hpp /tmp/westemp$$$$ 2>/dev/null; then :; else cp /tmp/westemp$$$$ revision.hpp; fi; \
+ 	if [ -e /tmp/westemp$$$$ ]; then rm /tmp/westemp$$$$; fi
+Index: src/Makefile.am
+===================================================================
+--- src/Makefile.am	(revision 37393)
++++ src/Makefile.am	(revision 37394)
+@@ -485,10 +485,16 @@
+ 	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR)
+ 
+ if FRIBIDI
+-    AM_CXXFLAGS += -DHAVE_FRIBIDI @FRIBIDI_CFLAGS@
+-    AM_CFLAGS += -DHAVE_FRIBIDI @FRIBIDI_CFLAGS@
++if OLD_FRIBIDI
++    CXXFLAGS += -DOLD_FRIBIDI @FRIBIDI_CFLAGS@
++    CFLAGS += -DOLD_FRIBIDI @FRIBIDI_CFLAGS@
+     THELIBS += @FRIBIDI_LIBS@
++else
++    CXXFLAGS += -DHAVE_FRIBIDI @FRIBIDI2_CFLAGS@
++    CFLAGS += -DHAVE_FRIBIDI @FRIBIDI2_CFLAGS@
++    THELIBS += @FRIBIDI2_LIBS@
+ endif
++endif
+ 
+ if X11
+     CXXFLAGS += -D_X11 @X_CFLAGS@
