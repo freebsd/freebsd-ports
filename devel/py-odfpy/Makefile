@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	odfpy
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://opendocumentfellowship.com/files/
