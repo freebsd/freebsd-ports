@@ -7,6 +7,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://ftp.pdc.kth.se/pub/heimdal/src/ \
 		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
