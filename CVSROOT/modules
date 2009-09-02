@@ -6833,6 +6833,7 @@ ko-nhpf                         ports/korean/nhpf
 ko-nvi-euc-kr                   ports/korean/nvi-euc-kr
 ko-nvi-iso-2022-kr              ports/korean/nvi-iso-2022-kr
 ko-pgp.language                 ports/korean/pgp.language
+ko-php_doc                      ports/korean/php_doc
 ko-pinetreefonts                ports/korean/pinetreefonts
 ko-qt4-codecs-kr                ports/korean/qt4-codecs-kr
 ko-scim-hangul                  ports/korean/scim-hangul
@@ -7962,6 +7963,7 @@ linux-f10-libvorbis             ports/audio/linux-f10-libvorbis
 linux-f10-libxml                ports/textproc/linux-f10-libxml
 linux-f10-libxml2               ports/textproc/linux-f10-libxml2
 linux-f10-mikmod                ports/audio/linux-f10-mikmod
+linux-f10-nas-libs              ports/audio/linux-f10-nas-libs
 linux-f10-nspr                  ports/devel/linux-f10-nspr
 linux-f10-nss                   ports/security/linux-f10-nss
 linux-f10-openal                ports/audio/linux-f10-openal
@@ -8020,6 +8022,7 @@ linux-f8-libvorbis              ports/audio/linux-f8-libvorbis
 linux-f8-libxml                 ports/textproc/linux-f8-libxml
 linux-f8-libxml2                ports/textproc/linux-f8-libxml2
 linux-f8-mikmod                 ports/audio/linux-f8-mikmod
+linux-f8-nas-libs               ports/audio/linux-f8-nas-libs
 linux-f8-nspr                   ports/devel/linux-f8-nspr
 linux-f8-nss                    ports/security/linux-f8-nss
 linux-f8-openal                 ports/audio/linux-f8-openal
@@ -8090,6 +8093,7 @@ linux-megamgr                   ports/sysutils/linux-megamgr
 linux-mikmod                    ports/audio/linux-mikmod
 linux-mozilla                   ports/www/linux-mozilla
 linux-mplayer-plugin            ports/www/linux-mplayer-plugin
+linux-nas-libs                  ports/audio/linux-nas-libs
 linux-nero                      ports/sysutils/linux-nero
 linux-nerodigitalaudio          ports/audio/linux-nerodigitalaudio
 linux-nerogame                  ports/games/linux-nerogame
@@ -10588,6 +10592,7 @@ p5-Catalyst-Plugin-PageCache    ports/www/p5-Catalyst-Plugin-PageCache
 p5-Catalyst-Plugin-Params-Nested  ports/www/p5-Catalyst-Plugin-Params-Nested
 p5-Catalyst-Plugin-Pluggable    ports/www/p5-Catalyst-Plugin-Pluggable
 p5-Catalyst-Plugin-Prototype    ports/www/p5-Catalyst-Plugin-Prototype
+p5-Catalyst-Plugin-RunAfterRequest  ports/www/p5-Catalyst-Plugin-RunAfterRequest
 p5-Catalyst-Plugin-Scheduler    ports/www/p5-Catalyst-Plugin-Scheduler
 p5-Catalyst-Plugin-Server       ports/www/p5-Catalyst-Plugin-Server
 p5-Catalyst-Plugin-Session      ports/www/p5-Catalyst-Plugin-Session
@@ -13321,6 +13326,7 @@ p5-Tree-Simple                  ports/devel/p5-Tree-Simple
 p5-Tree-Simple-View             ports/devel/p5-Tree-Simple-View
 p5-Tree-Simple-VisitorFactory   ports/devel/p5-Tree-Simple-VisitorFactory
 p5-Tree-Suffix                  ports/textproc/p5-Tree-Suffix
+p5-Try-Tiny                     ports/lang/p5-Try-Tiny
 p5-UI-Dialog                    ports/devel/p5-UI-Dialog
 p5-UML-Class-Simple             ports/textproc/p5-UML-Class-Simple
 p5-UML-Sequence                 ports/textproc/p5-UML-Sequence
@@ -14038,6 +14044,7 @@ p5-catalyst-plugin-pagecache    ports/www/p5-Catalyst-Plugin-PageCache
 p5-catalyst-plugin-params-nested  ports/www/p5-Catalyst-Plugin-Params-Nested
 p5-catalyst-plugin-pluggable    ports/www/p5-Catalyst-Plugin-Pluggable
 p5-catalyst-plugin-prototype    ports/www/p5-Catalyst-Plugin-Prototype
+p5-catalyst-plugin-runafterrequest  ports/www/p5-Catalyst-Plugin-RunAfterRequest
 p5-catalyst-plugin-scheduler    ports/www/p5-Catalyst-Plugin-Scheduler
 p5-catalyst-plugin-server       ports/www/p5-Catalyst-Plugin-Server
 p5-catalyst-plugin-session      ports/www/p5-Catalyst-Plugin-Session
@@ -16916,6 +16923,7 @@ p5-tree-simple                  ports/devel/p5-Tree-Simple
 p5-tree-simple-view             ports/devel/p5-Tree-Simple-View
 p5-tree-simple-visitorfactory   ports/devel/p5-Tree-Simple-VisitorFactory
 p5-tree-suffix                  ports/textproc/p5-Tree-Suffix
+p5-try-tiny                     ports/lang/p5-Try-Tiny
 p5-type1inst                    ports/x11-fonts/p5-type1inst
 p5-ui-dialog                    ports/devel/p5-UI-Dialog
 p5-uml-class-simple             ports/textproc/p5-UML-Class-Simple
