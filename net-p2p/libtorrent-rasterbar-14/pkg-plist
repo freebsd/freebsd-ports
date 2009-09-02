@@ -1,8 +1,6 @@
 include/libtorrent/GeoIP.h
 include/libtorrent/alert.hpp
 include/libtorrent/alert_types.hpp
-include/libtorrent/assert.hpp
-include/libtorrent/asio.hpp
 include/libtorrent/asio/basic_datagram_socket.hpp
 include/libtorrent/asio/basic_deadline_timer.hpp
 include/libtorrent/asio/basic_io_object.hpp
@@ -191,6 +189,8 @@ include/libtorrent/asio/windows/stream_handle.hpp
 include/libtorrent/asio/windows/stream_handle_service.hpp
 include/libtorrent/asio/write.hpp
 include/libtorrent/asio/write_at.hpp
+include/libtorrent/asio.hpp
+include/libtorrent/assert.hpp
 include/libtorrent/aux_/session_impl.hpp
 include/libtorrent/bandwidth_limit.hpp
 include/libtorrent/bandwidth_manager.hpp
@@ -290,7 +290,7 @@ include/libtorrent/xml_parse.hpp
 lib/libtorrent-rasterbar.a
 lib/libtorrent-rasterbar.la
 lib/libtorrent-rasterbar.so
-lib/libtorrent-rasterbar.so.3
+lib/libtorrent-rasterbar.so.5
 libdata/pkgconfig/libtorrent-rasterbar.pc
 @dirrm include/libtorrent/kademlia
 @dirrm include/libtorrent/extensions
