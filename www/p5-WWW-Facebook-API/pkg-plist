@@ -3,20 +3,31 @@
 %%SITE_PERL%%/WWW/Facebook/API/Application.pm
 %%SITE_PERL%%/WWW/Facebook/API/Auth.pm
 %%SITE_PERL%%/WWW/Facebook/API/Canvas.pm
+%%SITE_PERL%%/WWW/Facebook/API/Comments.pm
+%%SITE_PERL%%/WWW/Facebook/API/Connect.pm
 %%SITE_PERL%%/WWW/Facebook/API/Data.pm
 %%SITE_PERL%%/WWW/Facebook/API/Events.pm
+%%SITE_PERL%%/WWW/Facebook/API/Exception.pm
 %%SITE_PERL%%/WWW/Facebook/API/FBML.pm
 %%SITE_PERL%%/WWW/Facebook/API/FQL.pm
 %%SITE_PERL%%/WWW/Facebook/API/Feed.pm
 %%SITE_PERL%%/WWW/Facebook/API/Friends.pm
 %%SITE_PERL%%/WWW/Facebook/API/Groups.pm
-%%SITE_PERL%%/WWW/Facebook/API/Marketplace.pm
+%%SITE_PERL%%/WWW/Facebook/API/Intl.pm
+%%SITE_PERL%%/WWW/Facebook/API/Links.pm
+%%SITE_PERL%%/WWW/Facebook/API/LiveMessage.pm
+%%SITE_PERL%%/WWW/Facebook/API/Message.pm
+%%SITE_PERL%%/WWW/Facebook/API/Notes.pm
 %%SITE_PERL%%/WWW/Facebook/API/Notifications.pm
 %%SITE_PERL%%/WWW/Facebook/API/Pages.pm
+%%SITE_PERL%%/WWW/Facebook/API/Permissions.pm
 %%SITE_PERL%%/WWW/Facebook/API/Photos.pm
 %%SITE_PERL%%/WWW/Facebook/API/Profile.pm
 %%SITE_PERL%%/WWW/Facebook/API/SMS.pm
+%%SITE_PERL%%/WWW/Facebook/API/Status.pm
+%%SITE_PERL%%/WWW/Facebook/API/Stream.pm
 %%SITE_PERL%%/WWW/Facebook/API/Users.pm
+%%SITE_PERL%%/WWW/Facebook/API/Video.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook/API/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook/API
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook
