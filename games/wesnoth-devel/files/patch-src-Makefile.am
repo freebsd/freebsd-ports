@@ -1,0 +1,31 @@
+--- src/Makefile.am~
++++ src/Makefile.am
+@@ -16,7 +16,7 @@ bin_PROGRAMS += campaignd
+ endif
+ 
+ if TESTS
+-bin_PROGRAMS += test
++bin_PROGRAMS += wesnoth_test
+ endif
+ 
+ CLEANFILES = revision.hpp
+@@ -342,7 +342,7 @@ cutter_DEPENDENCIES=libwesnoth-core.a
+ #    Unit tests                                                             #
+ #############################################################################
+ 
+-test_SOURCES =  \
++wesnoth_test_SOURCES =  \
+ 	tests/main.cpp \
+ 	tests/utils/fake_display.cpp \
+ 	tests/utils/fake_event_source.cpp \
+@@ -362,8 +362,8 @@ test_SOURCES =  \
+ 	tests/gui/test_save_dialog.cpp \
+ 	$(wesnoth_source)
+ 
+-test_LDADD = $(INTERNALLIBS) $(THELIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIBS) $(PANGO_LIBS) $(FONTCONFIG_LIBS)
+-test_DEPENDENCIES=libwesnoth-core.a libwesnoth.a
++wesnoth_test_LDADD = $(INTERNALLIBS) $(THELIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIBS) $(PANGO_LIBS) $(FONTCONFIG_LIBS)
++wesnoth_test_DEPENDENCIES=libwesnoth-core.a libwesnoth.a
+ 
+ #############################################################################
+ #    Headers                                                                #

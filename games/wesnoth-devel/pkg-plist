@@ -3,14 +3,39 @@
 %%TOOLS%%bin/exploder
 bin/wesnoth
 %%TOOLS%%bin/wesnoth_addon_manager
+%%TESTS%%bin/wesnoth_test
 %%SERVER%%bin/wesnothd
 %%TOOLS%%bin/wmlindent
 %%TOOLS%%bin/wmllint
 %%TOOLS%%bin/wmlscope
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/campaignserver_client.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/campaignserver_client.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/campaignserver_client.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/libsvn.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/libsvn.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/libsvn.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wescamp.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wescamp.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wescamp.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmldata.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmldata.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmldata.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmliterator.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmliterator.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmliterator.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmlparser.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmlparser.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmlparser.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmltools.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmltools.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmltools.pyo
 share/applications/wesnoth.desktop
-share/pixmaps/wesnoth-icon.png
-share/pixmaps/wesnoth_editor-icon.png
 %%EDITOR%%share/applications/wesnoth_editor.desktop
+share/pixmaps/wesnoth-icon.png
+%%EDITOR%%share/pixmaps/wesnoth_editor-icon.png
 %%DOCSDIR%%/manual/CMakeLists.txt
 %%DOCSDIR%%/manual/images/de/game-screen-1.5.7.jpg
 %%DOCSDIR%%/manual/images/de/main-menu-1.5.11.jpg
@@ -60,6 +85,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DOCSDIR%%/manual/manual.hu.html
 %%DOCSDIR%%/manual/manual.it.html
 %%DOCSDIR%%/manual/manual.pl.html
+%%DOCSDIR%%/manual/manual.pt_BR.html
 %%DOCSDIR%%/manual/manual.ru.html
 %%DOCSDIR%%/manual/manual.sv.html
 %%DOCSDIR%%/manual/manual.tr.html
@@ -69,13 +95,34 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DOCSDIR%%/manual/styles/manual.css
 %%DATADIR%%/data/COPYING.txt
 %%DATADIR%%/data/_main.cfg
+%%DATADIR%%/data/advanced_preferences.cfg
+%%DATADIR%%/data/ai/ais/default_ai.cfg
+%%DATADIR%%/data/ai/ais/formula_ai.cfg
+%%DATADIR%%/data/ai/aliases/stable_singleplayer.cfg
+%%DATADIR%%/data/ai/dev/formula_ai.cfg
+%%DATADIR%%/data/ai/dev/formula_ai_poisoning.cfg
+%%DATADIR%%/data/ai/dev/idle_ai.cfg
+%%DATADIR%%/data/ai/dev/mapcontrol_ai.cfg
+%%DATADIR%%/data/ai/dev/testing_ai_default.cfg
 %%DATADIR%%/data/ai/formula/level_up_attack_eval.fai
 %%DATADIR%%/data/ai/formula/level_up_attack_move.fai
+%%DATADIR%%/data/ai/formula/lib/map_evaluation.fai
+%%DATADIR%%/data/ai/formula/lib/recruitment.fai
+%%DATADIR%%/data/ai/formula/lib/util.fai
+%%DATADIR%%/data/ai/formula/new_recruitment.fai
 %%DATADIR%%/data/ai/formula/opening.fai
 %%DATADIR%%/data/ai/formula/patrol.fai
+%%DATADIR%%/data/ai/formula/poisoner_attack.fai
+%%DATADIR%%/data/ai/formula/poisoner_eval.fai
 %%DATADIR%%/data/ai/formula/recruitment.fai
 %%DATADIR%%/data/ai/formula/scouting_eval.fai
 %%DATADIR%%/data/ai/formula/scouting_move.fai
+%%DATADIR%%/data/ai/maps/scenario-AI_Arena_small.map
+%%DATADIR%%/data/ai/scenarios/ai_arena_small/0001-healing.cfg
+%%DATADIR%%/data/ai/scenarios/ai_arena_small/0002-poisoning.cfg
+%%DATADIR%%/data/ai/scenarios/ai_arena_small/0003-simple_combat.cfg
+%%DATADIR%%/data/ai/scenarios/scenario-AI_Arena_small.cfg
+%%DATADIR%%/data/ai/utils/default_config.cfg
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/_main.cfg
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/images/an-orcish-incursion-map.png
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/maps/1_Defend_the_forest.map
@@ -93,6 +140,119 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/scenarios/6_A_Detour_through_the_Swamp.cfg
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/scenarios/7_Showdown.cfg
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/utils/journey.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/HISTORY
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/TODO
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/WALKTHROUGH
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/_main.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/LandOfTheDead.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/LandOfTheDeadIllum.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-ranged-halo1.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-ranged-halo2.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-ranged-halo3.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-ranged-halo4.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-stationary-halo1.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-stationary-halo2.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-stationary-halo3.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-stationary-halo4.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-stationary-halo5.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-stationary-halo6.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-stationary-halo7.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo/wose-stationary-halo8.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/items/ward-circle.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/README
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/chantal-druid.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/chantal-shyde.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/eldred.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/garard.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/kalenz.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/lionel.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/methor.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/old_delfador.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/tomb-guardian.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/ur-thorodor.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/young_delfador.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits/zorlan.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/story/httt_story2.jpg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/story/httt_story3.jpg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/story/portraits/garard-large.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/story/portraits/lionel-large.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/story/portraits/sagus.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/story/portraits/young_delfador-large.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/terrain/ethereal-abyss1.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/terrain/ethereal-abyss2.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/terrain/ethereal-abyss3.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/terrain/ethereal-abyss4.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/terrain/ethereal-abyss5.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/terrain/ethereal-abyss6.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/terrain/ethereal-abyss7.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/units/wose-shaman-attack-1.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/units/wose-shaman-attack-2.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/units/wose-shaman.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/young_delfador.png
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/dead1.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/dead2.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/face.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/four_oracles.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/home.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/island.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/leollyn.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/manor.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/new_ally.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/parthyn_ford.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/plains.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/portal.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/prince.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/return.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/road1.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/save_the_prince.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/shadows.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/showdown.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/swamp.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/swamp2.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/wasteland.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps/weldyn.map
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/01_overture.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/02_this_valley_belongs_to_me.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/03_road_to_weldyn.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/04_leollyn.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/05_council_in_weldyn.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/06_swamps_of_illuven.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/07_night_in_the_swamp.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/08_ur_thorodor.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/09_houses_of_the_dead.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/10_the_gate_between_worlds.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/11_wasteland.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/12_terror_at_the_ford_of_parthyn.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/13_the_return_of_trouble.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/14_shadows.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/15_save_the_king.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/16_dark_sky_over_weldyn.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/17_a_new_ally.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/18_the_portal_of_doom.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/19_showdown_in_the_northern_swamp.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/20_prince_of_wesnoth.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/21_clash_at_the_manor.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/22_face_of_the_enemy.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios/23_epilogue.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/sounds/rumble.wav
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/terrain-graphics/_final.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/terrain.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/timeline.txt
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/units/Journeyman_Mage.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/units/King_of_Wesnoth.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/units/Mage_Commander.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/units/Mage_Leader.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/units/Mage_Magister.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/units/Wose_Shaman.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils/characters.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils/deaths.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils/dm-macros.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils/generators.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils/items.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils/journey.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils/misc.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils/schedules.cfg
+%%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils/sides.cfg
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/_main.cfg
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/misc/book-icon.png
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/misc/descent-into-darkness.png
@@ -440,8 +600,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/olurf.png
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/uradredia.png
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/velon.png
-%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/Thoria.jpeg
-%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/Thoria0.jpeg
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/aldar.png
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/cleodil.png
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/crelanu.png
@@ -454,8 +612,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/lord.png
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/olurf.png
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/uradredia.png
-%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/hostmountains.jpeg
-%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/snow.jpeg
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/02_Hostile_mountains.map
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/04_Elvish_Treasury.map
 %%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/06_Acquaintance_in_Need.map
@@ -612,18 +768,18 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/_main.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/campaign_image.jpg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/hatchling.png
-%%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Anita.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Arthian.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Camerin.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Elenia.png
-%%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Father_Marcus.png
+%%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Eryssa.png
+%%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Father_Morvin.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Hamel.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Hidel.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Malifor.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Rakshas.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Ro_Sothian.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Sisal.png
-%%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Sister_Theta.png
+%%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Sister_Thera.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Stalrag.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Tallin-Evil.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/portraits/Tallin.png
@@ -665,6 +821,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/campaigns/Northern_Rebirth/scenarios/12a_Get_the_Gold.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/scenarios/13a_Showdown.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/scenarios/14a_Epilogue.cfg
+%%DATADIR%%/data/campaigns/Northern_Rebirth/units/Cave_Serpent.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/utils/herodeaths.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/utils/journey.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/utils/utils.cfg
@@ -1088,9 +1245,13 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/noble-youth-attack2.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/noble-youth-defend.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/noble-youth.png
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-attack.png
+%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-bite-1.png
+%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-bite-2.png
+%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-bite-3.png
+%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-bite-4.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-defend.png
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-range.png
+%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-magic-1.png
+%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-magic-2.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/wesfolk-lady-defend-1-1.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/wesfolk-lady-defend-1-2.png
@@ -1303,8 +1464,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/campaigns/The_South_Guard/utils/sg_story.cfg
 %%DATADIR%%/data/campaigns/The_South_Guard/utils/sg_utils.cfg
 %%DATADIR%%/data/campaigns/Two_Brothers/_main.cfg
-%%DATADIR%%/data/campaigns/Two_Brothers/images/arne.png
-%%DATADIR%%/data/campaigns/Two_Brothers/images/bjarn.png
 %%DATADIR%%/data/campaigns/Two_Brothers/images/campaign_image.png
 %%DATADIR%%/data/campaigns/Two_Brothers/images/story/Two_Brothers_M1P1.png
 %%DATADIR%%/data/campaigns/Two_Brothers/images/story/Two_Brothers_M1P2.png
@@ -1401,32 +1560,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/alien/orb-small-ranged2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/alien/orb-small.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/alien/spire.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer-attack3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer-attack4.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer-ranged1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer-ranged2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer-ranged3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer-ranged4.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/explorer.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/pathfinder-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/pathfinder-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/pathfinder-attack3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/pathfinder-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/pathfinder-ranged1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/pathfinder-ranged2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/pathfinder-ranged3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/pathfinder-ranged4.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/pathfinder.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout-ranged1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout-ranged2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout-ranged3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-bow-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-bow-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-bow-attack3.png
@@ -1914,9 +2047,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Divine_Avatar.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Divine_Incarnation.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Dust_Devil.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Dwarvish_Explorer.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Dwarvish_Pathfinder.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Dwarvish_Scout.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Ethereal_Ghost.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Ethereal_Nightgaunt.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Ethereal_Shadow.cfg
@@ -1987,7 +2117,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/editor/terrain-groups.cfg
 %%DATADIR%%/data/core/editor/time-of-day.cfg
 %%DATADIR%%/data/core/editor/tool-hints.cfg
-%%DATADIR%%/data/core/fonts.cfg
 %%DATADIR%%/data/core/help.cfg
 %%DATADIR%%/data/core/hotkeys.cfg
 %%DATADIR%%/data/core/images/attacks/axe-crude.png
@@ -2031,6 +2160,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/attacks/entangle.png
 %%DATADIR%%/data/core/images/attacks/faerie-fire.png
 %%DATADIR%%/data/core/images/attacks/fangs-animal.png
+%%DATADIR%%/data/core/images/attacks/fangs-snake.png
 %%DATADIR%%/data/core/images/attacks/fangs-spider.png
 %%DATADIR%%/data/core/images/attacks/fangs.png
 %%DATADIR%%/data/core/images/attacks/fire-breath-drake.png
@@ -2107,6 +2237,10 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/attacks/web.png
 %%DATADIR%%/data/core/images/attacks/whip.png
 %%DATADIR%%/data/core/images/attacks/woodensword.png
+%%DATADIR%%/data/core/images/editor/brush-1.png
+%%DATADIR%%/data/core/images/editor/brush-2.png
+%%DATADIR%%/data/core/images/editor/brush-3.png
+%%DATADIR%%/data/core/images/editor/brush-nw-se.png
 %%DATADIR%%/data/core/images/halo/elven/druid-healing1.png
 %%DATADIR%%/data/core/images/halo/elven/druid-healing2.png
 %%DATADIR%%/data/core/images/halo/elven/druid-healing3.png
@@ -2231,7 +2365,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/halo/saurian-magic-halo-5.png
 %%DATADIR%%/data/core/images/halo/saurian-magic-halo-6.png
 %%DATADIR%%/data/core/images/halo/saurian-magic-halo-7.png
-%%DATADIR%%/data/core/images/halo/siren-naia-touch-halo.png
 %%DATADIR%%/data/core/images/halo/teleport-1.png
 %%DATADIR%%/data/core/images/halo/teleport-2.png
 %%DATADIR%%/data/core/images/halo/teleport-3.png
@@ -2321,6 +2454,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/items/grain-sheaf.png
 %%DATADIR%%/data/core/images/items/hammer-runic.png
 %%DATADIR%%/data/core/images/items/holy-water.png
+%%DATADIR%%/data/core/images/items/leather-pack.png
 %%DATADIR%%/data/core/images/items/orcish-flag.png
 %%DATADIR%%/data/core/images/items/ornate1.png
 %%DATADIR%%/data/core/images/items/ornate2.png
@@ -2344,6 +2478,27 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/items/storm-trident.png
 %%DATADIR%%/data/core/images/items/straw-bale1.png
 %%DATADIR%%/data/core/images/items/straw-bale2.png
+%%DATADIR%%/data/core/images/items/sword.png
+%%DATADIR%%/data/core/images/lobby/group-expanded.png
+%%DATADIR%%/data/core/images/lobby/group-folded.png
+%%DATADIR%%/data/core/images/lobby/sort-az-off.png
+%%DATADIR%%/data/core/images/lobby/sort-az.png
+%%DATADIR%%/data/core/images/lobby/sort-friend-off.png
+%%DATADIR%%/data/core/images/lobby/sort-friend.png
+%%DATADIR%%/data/core/images/lobby/status-idle-f.png
+%%DATADIR%%/data/core/images/lobby/status-idle-i.png
+%%DATADIR%%/data/core/images/lobby/status-idle-n.png
+%%DATADIR%%/data/core/images/lobby/status-idle-s.png
+%%DATADIR%%/data/core/images/lobby/status-lobby-f.png
+%%DATADIR%%/data/core/images/lobby/status-lobby-i.png
+%%DATADIR%%/data/core/images/lobby/status-lobby-n.png
+%%DATADIR%%/data/core/images/lobby/status-lobby-s.png
+%%DATADIR%%/data/core/images/lobby/status-obs-f.png
+%%DATADIR%%/data/core/images/lobby/status-obs-i.png
+%%DATADIR%%/data/core/images/lobby/status-obs-n.png
+%%DATADIR%%/data/core/images/lobby/status-playing-f.png
+%%DATADIR%%/data/core/images/lobby/status-playing-i.png
+%%DATADIR%%/data/core/images/lobby/status-playing-n.png
 %%DATADIR%%/data/core/images/maps/EDITING-HOWTO
 %%DATADIR%%/data/core/images/maps/wesnoth.png
 %%DATADIR%%/data/core/images/misc/blank-hex.png
@@ -2354,9 +2509,14 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/misc/flag-white.png
 %%DATADIR%%/data/core/images/misc/hero-icon.png
 %%DATADIR%%/data/core/images/misc/icon-amla-tough.png
+%%DATADIR%%/data/core/images/misc/key.png
+%%DATADIR%%/data/core/images/misc/laurel.png
 %%DATADIR%%/data/core/images/misc/logo.png
 %%DATADIR%%/data/core/images/misc/new-battle.png
 %%DATADIR%%/data/core/images/misc/new-journey.png
+%%DATADIR%%/data/core/images/misc/qmark.png
+%%DATADIR%%/data/core/images/misc/red-x.png
+%%DATADIR%%/data/core/images/misc/reloaded.png
 %%DATADIR%%/data/core/images/misc/schedule-afternoon.png
 %%DATADIR%%/data/core/images/misc/schedule-dawn.png
 %%DATADIR%%/data/core/images/misc/schedule-dusk.png
@@ -2366,25 +2526,39 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/misc/schedule-underground-illum.png
 %%DATADIR%%/data/core/images/misc/schedule-underground.png
 %%DATADIR%%/data/core/images/misc/tod-schedule-24hrs.png
+%%DATADIR%%/data/core/images/misc/ums.png
+%%DATADIR%%/data/core/images/misc/vision-fog-shroud.png
+%%DATADIR%%/data/core/images/misc/vision-fog.png
+%%DATADIR%%/data/core/images/misc/vision-none.png
+%%DATADIR%%/data/core/images/misc/vision-shroud.png
 %%DATADIR%%/data/core/images/portraits/ARTISTS
 %%DATADIR%%/data/core/images/portraits/drakes/burner.png
 %%DATADIR%%/data/core/images/portraits/drakes/clasher.png
 %%DATADIR%%/data/core/images/portraits/drakes/fighter.png
 %%DATADIR%%/data/core/images/portraits/drakes/glider.png
+%%DATADIR%%/data/core/images/portraits/drakes/transparent/burner.png
+%%DATADIR%%/data/core/images/portraits/drakes/transparent/clasher.png
+%%DATADIR%%/data/core/images/portraits/drakes/transparent/fighter.png
+%%DATADIR%%/data/core/images/portraits/drakes/transparent/glider.png
 %%DATADIR%%/data/core/images/portraits/dwarves/dragonguard.png
+%%DATADIR%%/data/core/images/portraits/dwarves/explorer.png
 %%DATADIR%%/data/core/images/portraits/dwarves/fighter.png
 %%DATADIR%%/data/core/images/portraits/dwarves/gryphon-rider.png
 %%DATADIR%%/data/core/images/portraits/dwarves/guard.png
 %%DATADIR%%/data/core/images/portraits/dwarves/lord.png
 %%DATADIR%%/data/core/images/portraits/dwarves/runemaster.png
+%%DATADIR%%/data/core/images/portraits/dwarves/scout.png
 %%DATADIR%%/data/core/images/portraits/dwarves/sentinel.png
 %%DATADIR%%/data/core/images/portraits/dwarves/thunderer.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/dragonguard.png
+%%DATADIR%%/data/core/images/portraits/dwarves/transparent/explorer.png
+%%DATADIR%%/data/core/images/portraits/dwarves/transparent/fighter-2.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/fighter.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/gryphon-rider.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/guard.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/lord.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/runemaster.png
+%%DATADIR%%/data/core/images/portraits/dwarves/transparent/scout.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/sentinel.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/thunderer.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/ulfserker.png
@@ -2425,19 +2599,37 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/elves/transparent/shyde.png
 %%DATADIR%%/data/core/images/portraits/elves/transparent/sorceress.png
 %%DATADIR%%/data/core/images/portraits/elves/transparent/sylph.png
+%%DATADIR%%/data/core/images/portraits/goblins/direwolver.png
+%%DATADIR%%/data/core/images/portraits/goblins/impaler.png
+%%DATADIR%%/data/core/images/portraits/goblins/pillager.png
+%%DATADIR%%/data/core/images/portraits/goblins/rouser.png
+%%DATADIR%%/data/core/images/portraits/goblins/spearman.png
+%%DATADIR%%/data/core/images/portraits/goblins/transparent/direwolver.png
+%%DATADIR%%/data/core/images/portraits/goblins/transparent/impaler.png
+%%DATADIR%%/data/core/images/portraits/goblins/transparent/pillager.png
+%%DATADIR%%/data/core/images/portraits/goblins/transparent/rouser-2.png
+%%DATADIR%%/data/core/images/portraits/goblins/transparent/rouser.png
+%%DATADIR%%/data/core/images/portraits/goblins/transparent/spearman.png
+%%DATADIR%%/data/core/images/portraits/goblins/transparent/wolf-rider.png
+%%DATADIR%%/data/core/images/portraits/goblins/wolf-rider.png
 %%DATADIR%%/data/core/images/portraits/humans/assassin+female.png
 %%DATADIR%%/data/core/images/portraits/humans/assassin.png
 %%DATADIR%%/data/core/images/portraits/humans/bandit.png
 %%DATADIR%%/data/core/images/portraits/humans/bowman.png
+%%DATADIR%%/data/core/images/portraits/humans/cavalier.png
 %%DATADIR%%/data/core/images/portraits/humans/cavalryman.png
 %%DATADIR%%/data/core/images/portraits/humans/dark-adept+female.png
 %%DATADIR%%/data/core/images/portraits/humans/dark-adept.png
+%%DATADIR%%/data/core/images/portraits/humans/duelist.png
+%%DATADIR%%/data/core/images/portraits/humans/fencer.png
+%%DATADIR%%/data/core/images/portraits/humans/footpad+female.png
+%%DATADIR%%/data/core/images/portraits/humans/footpad.png
 %%DATADIR%%/data/core/images/portraits/humans/general.png
 %%DATADIR%%/data/core/images/portraits/humans/grand-knight.png
 %%DATADIR%%/data/core/images/portraits/humans/halberdier.png
 %%DATADIR%%/data/core/images/portraits/humans/heavy-infantry.png
-%%DATADIR%%/data/core/images/portraits/humans/highwayman.png
 %%DATADIR%%/data/core/images/portraits/humans/horseman.png
+%%DATADIR%%/data/core/images/portraits/humans/huntsman.png
 %%DATADIR%%/data/core/images/portraits/humans/iron-mauler.png
 %%DATADIR%%/data/core/images/portraits/humans/javelineer.png
 %%DATADIR%%/data/core/images/portraits/humans/knight.png
@@ -2457,14 +2649,18 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/humans/mage-white.png
 %%DATADIR%%/data/core/images/portraits/humans/mage.png
 %%DATADIR%%/data/core/images/portraits/humans/marshal.png
+%%DATADIR%%/data/core/images/portraits/humans/master-at-arms.png
 %%DATADIR%%/data/core/images/portraits/humans/master-bowman.png
 %%DATADIR%%/data/core/images/portraits/humans/necromancer+female.png
 %%DATADIR%%/data/core/images/portraits/humans/necromancer.png
+%%DATADIR%%/data/core/images/portraits/humans/outlaw+female.png
+%%DATADIR%%/data/core/images/portraits/humans/outlaw.png
 %%DATADIR%%/data/core/images/portraits/humans/paladin.png
 %%DATADIR%%/data/core/images/portraits/humans/peasant.png
 %%DATADIR%%/data/core/images/portraits/humans/pikeman.png
-%%DATADIR%%/data/core/images/portraits/humans/poacher.png
+%%DATADIR%%/data/core/images/portraits/humans/ranger.png
 %%DATADIR%%/data/core/images/portraits/humans/royal-guard.png
+%%DATADIR%%/data/core/images/portraits/humans/ruffian.png
 %%DATADIR%%/data/core/images/portraits/humans/sergeant.png
 %%DATADIR%%/data/core/images/portraits/humans/spearman.png
 %%DATADIR%%/data/core/images/portraits/humans/swordsman.png
@@ -2473,14 +2669,25 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/humans/thug.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/assassin+female.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/assassin.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/bandit.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/bowman.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/cavalier.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/cavalryman.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/dark-adept+female.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/dark-adept.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/duelist.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/fencer.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/footpad+female.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/footpad.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/general.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/grand-knight.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/halberdier.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/heavy-infantry.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/horseman.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/huntsman.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/iron-mauler.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/javelineer.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/knight.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/lieutenant.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/longbowman.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/mage+female.png
@@ -2497,31 +2704,57 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/mage.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/marshal-2.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/marshal.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/master-at-arms.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/master-bowman.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/necromancer+female.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/necromancer.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/outlaw+female.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/outlaw.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/paladin.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/peasant.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/pikeman.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/ranger.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/royal-guard.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/ruffian.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/sergeant.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/spearman.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/swordsman.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/thief+female.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/thief.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/thug.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/trapper.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/woodsman.png
+%%DATADIR%%/data/core/images/portraits/humans/trapper.png
 %%DATADIR%%/data/core/images/portraits/humans/woodsman.png
+%%DATADIR%%/data/core/images/portraits/merfolk/enchantress.png
 %%DATADIR%%/data/core/images/portraits/merfolk/fighter.png
+%%DATADIR%%/data/core/images/portraits/merfolk/hoplite.png
 %%DATADIR%%/data/core/images/portraits/merfolk/hunter.png
 %%DATADIR%%/data/core/images/portraits/merfolk/initiate.png
+%%DATADIR%%/data/core/images/portraits/merfolk/priestess.png
+%%DATADIR%%/data/core/images/portraits/merfolk/transparent/enchantress.png
+%%DATADIR%%/data/core/images/portraits/merfolk/transparent/fighter.png
+%%DATADIR%%/data/core/images/portraits/merfolk/transparent/hoplite.png
+%%DATADIR%%/data/core/images/portraits/merfolk/transparent/hunter.png
 %%DATADIR%%/data/core/images/portraits/merfolk/transparent/initiate.png
+%%DATADIR%%/data/core/images/portraits/merfolk/transparent/priestess.png
+%%DATADIR%%/data/core/images/portraits/merfolk/transparent/triton.png
+%%DATADIR%%/data/core/images/portraits/merfolk/triton.png
 %%DATADIR%%/data/core/images/portraits/monsters/gryphon.png
+%%DATADIR%%/data/core/images/portraits/monsters/ogre.png
 %%DATADIR%%/data/core/images/portraits/monsters/scorpion.png
 %%DATADIR%%/data/core/images/portraits/monsters/sea-serpent.png
 %%DATADIR%%/data/core/images/portraits/monsters/transparent/gryphon.png
+%%DATADIR%%/data/core/images/portraits/monsters/transparent/ogre.png
 %%DATADIR%%/data/core/images/portraits/monsters/transparent/scorpion.png
 %%DATADIR%%/data/core/images/portraits/nagas/fighter+female.png
 %%DATADIR%%/data/core/images/portraits/nagas/fighter.png
+%%DATADIR%%/data/core/images/portraits/nagas/myrmidon.png
+%%DATADIR%%/data/core/images/portraits/nagas/transparent/fighter.png
+%%DATADIR%%/data/core/images/portraits/nagas/transparent/myrmidon.png
 %%DATADIR%%/data/core/images/portraits/orcs/assassin.png
+%%DATADIR%%/data/core/images/portraits/orcs/grunt.png
+%%DATADIR%%/data/core/images/portraits/orcs/transparent/grunt.png
 %%DATADIR%%/data/core/images/portraits/orcs/warlord.png
 %%DATADIR%%/data/core/images/portraits/orcs/warlord2.png
 %%DATADIR%%/data/core/images/portraits/orcs/warlord3.png
@@ -2531,15 +2764,26 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/saurians/skirmisher.png
 %%DATADIR%%/data/core/images/portraits/saurians/transparent/augur.png
 %%DATADIR%%/data/core/images/portraits/saurians/transparent/skirmisher.png
+%%DATADIR%%/data/core/images/portraits/trolls/transparent/troll.png
 %%DATADIR%%/data/core/images/portraits/trolls/transparent/whelp.png
 %%DATADIR%%/data/core/images/portraits/trolls/troll.png
 %%DATADIR%%/data/core/images/portraits/trolls/whelp.png
 %%DATADIR%%/data/core/images/portraits/undead/brown-lich.png
 %%DATADIR%%/data/core/images/portraits/undead/death-knight.png
+%%DATADIR%%/data/core/images/portraits/undead/deathblade.png
+%%DATADIR%%/data/core/images/portraits/undead/ghost.png
 %%DATADIR%%/data/core/images/portraits/undead/ghoul.png
 %%DATADIR%%/data/core/images/portraits/undead/lich.png
+%%DATADIR%%/data/core/images/portraits/undead/revenant.png
+%%DATADIR%%/data/core/images/portraits/undead/skeleton.png
 %%DATADIR%%/data/core/images/portraits/undead/transparent/death-knight.png
+%%DATADIR%%/data/core/images/portraits/undead/transparent/deathblade.png
+%%DATADIR%%/data/core/images/portraits/undead/transparent/ghost.png
 %%DATADIR%%/data/core/images/portraits/undead/transparent/lich.png
+%%DATADIR%%/data/core/images/portraits/undead/transparent/revenant.png
+%%DATADIR%%/data/core/images/portraits/undead/transparent/skeleton.png
+%%DATADIR%%/data/core/images/portraits/woses/ancient-wose.png
+%%DATADIR%%/data/core/images/portraits/woses/transparent/ancient-wose.png
 %%DATADIR%%/data/core/images/projectiles/bolas-n.png
 %%DATADIR%%/data/core/images/projectiles/bolas-ne.png
 %%DATADIR%%/data/core/images/projectiles/bone-n.png
@@ -2786,8 +3030,11 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/scenery/windmill-18.png
 %%DATADIR%%/data/core/images/scenery/wreck.png
 %%DATADIR%%/data/core/images/story/landscape-battlefield.jpg
+%%DATADIR%%/data/core/images/story/landscape-battlefield_nohumans.jpg
 %%DATADIR%%/data/core/images/story/landscape-bridge.jpg
+%%DATADIR%%/data/core/images/story/landscape-bridge_sun.jpg
 %%DATADIR%%/data/core/images/story/landscape-castle.jpg
+%%DATADIR%%/data/core/images/story/landscape-plain.jpg
 %%DATADIR%%/data/core/images/terrain/alpha.png
 %%DATADIR%%/data/core/images/terrain/alphamask.png
 %%DATADIR%%/data/core/images/terrain/bridge-deep-n-s-tile.png
@@ -2822,6 +3069,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/bridge-swamp-n-s-tile.png
 %%DATADIR%%/data/core/images/terrain/bridge-swamp-ne-sw-tile.png
 %%DATADIR%%/data/core/images/terrain/bridge-swamp-se-nw-tile.png
+%%DATADIR%%/data/core/images/terrain/castle-overlay-editor.png
 %%DATADIR%%/data/core/images/terrain/castle/castle-concave-bl.png
 %%DATADIR%%/data/core/images/terrain/castle/castle-concave-br.png
 %%DATADIR%%/data/core/images/terrain/castle/castle-concave-l.png
@@ -2905,6 +3153,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/castle/elven/keep-castle-ccw-r.png
 %%DATADIR%%/data/core/images/terrain/castle/elven/keep-castle-ccw-tl.png
 %%DATADIR%%/data/core/images/terrain/castle/elven/keep-castle-ccw-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/elven/keep-castle-concave-tr.png
 %%DATADIR%%/data/core/images/terrain/castle/elven/keep-castle-convex-bl.png
 %%DATADIR%%/data/core/images/terrain/castle/elven/keep-castle-convex-br.png
 %%DATADIR%%/data/core/images/terrain/castle/elven/keep-castle-convex-l.png
@@ -2953,6 +3202,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/castle/keep-castle-ccw-r.png
 %%DATADIR%%/data/core/images/terrain/castle/keep-castle-ccw-tl.png
 %%DATADIR%%/data/core/images/terrain/castle/keep-castle-ccw-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/keep-castle-concave-tr.png
 %%DATADIR%%/data/core/images/terrain/castle/keep-castle-convex-bl.png
 %%DATADIR%%/data/core/images/terrain/castle/keep-castle-convex-br.png
 %%DATADIR%%/data/core/images/terrain/castle/keep-castle-convex-l.png
@@ -2978,6 +3228,52 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/castle/keep-convex-tl.png
 %%DATADIR%%/data/core/images/terrain/castle/keep-convex-tr.png
 %%DATADIR%%/data/core/images/terrain/castle/keep-tile.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-concave-bl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-concave-br.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-concave-l.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-concave-r.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-concave-tl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-concave-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-convex-bl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-convex-br.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-convex-l.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-convex-r.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-convex-tl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/fort-convex-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/ground.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-concave-bl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-concave-br.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-concave-l.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-concave-r.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-concave-tl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-concave-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-convex-bl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-convex-br.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-convex-l.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-convex-r.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-convex-tl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-convex-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-ccw-bl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-ccw-br.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-ccw-l.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-ccw-r.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-ccw-tl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-ccw-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-convex-bl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-convex-br.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-convex-l.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-convex-r.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-convex-tl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-convex-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-cw-bl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-cw-br.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-cw-l.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-cw-r.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-cw-tl.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-fort-cw-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep-tile.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/keep.png
+%%DATADIR%%/data/core/images/terrain/castle/orcish/tile.png
 %%DATADIR%%/data/core/images/terrain/castle/ruin-tile.png
 %%DATADIR%%/data/core/images/terrain/castle/ruin1-concave-bl.png
 %%DATADIR%%/data/core/images/terrain/castle/ruin1-concave-br.png
@@ -3189,6 +3485,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/castle/sunkenkeep-castle-ccw-r.png
 %%DATADIR%%/data/core/images/terrain/castle/sunkenkeep-castle-ccw-tl.png
 %%DATADIR%%/data/core/images/terrain/castle/sunkenkeep-castle-ccw-tr.png
+%%DATADIR%%/data/core/images/terrain/castle/sunkenkeep-castle-concave-tr.png
 %%DATADIR%%/data/core/images/terrain/castle/sunkenkeep-castle-convex-bl.png
 %%DATADIR%%/data/core/images/terrain/castle/sunkenkeep-castle-convex-br.png
 %%DATADIR%%/data/core/images/terrain/castle/sunkenkeep-castle-convex-l.png
@@ -3650,36 +3947,36 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/fog.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-2.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-3.png
-%%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-small.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-sparse-2.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-sparse-3.png
-%%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-sparse-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-fall-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-fall.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-2.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-3.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-4.png
-%%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-small.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-sparse-2.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-sparse-3.png
-%%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-sparse-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-summer-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-summer.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-2.png
-%%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-small.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow-2.png
-%%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow-small.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow-sparse-2.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow-sparse-3.png
-%%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow-sparse-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-snow.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-sparse-2.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-sparse-3.png
-%%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-sparse-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/deciduous-winter.png
@@ -3727,30 +4024,30 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/forest/great-tree2.png
 %%DATADIR%%/data/core/images/terrain/forest/great-tree3.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-fall-2.png
-%%DATADIR%%/data/core/images/terrain/forest/mixed-fall-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/mixed-fall-small.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-fall-sparse-2.png
-%%DATADIR%%/data/core/images/terrain/forest/mixed-fall-sparse-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/mixed-fall-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-fall-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-fall-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-fall.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-summer-2.png
-%%DATADIR%%/data/core/images/terrain/forest/mixed-summer-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/mixed-summer-small.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-summer-sparse-2.png
-%%DATADIR%%/data/core/images/terrain/forest/mixed-summer-sparse-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/mixed-summer-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-summer-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-summer-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-summer.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter-2.png
-%%DATADIR%%/data/core/images/terrain/forest/mixed-winter-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/mixed-winter-small.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter-snow-2.png
-%%DATADIR%%/data/core/images/terrain/forest/mixed-winter-snow-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/mixed-winter-snow-small.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter-snow-sparse-2.png
-%%DATADIR%%/data/core/images/terrain/forest/mixed-winter-snow-sparse-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/mixed-winter-snow-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter-snow-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter-snow-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter-snow.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter-sparse-2.png
-%%DATADIR%%/data/core/images/terrain/forest/mixed-winter-sparse-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/mixed-winter-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/mixed-winter.png
@@ -3771,49 +4068,30 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-2.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-3.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-4.png
-%%DATADIR%%/data/core/images/terrain/forest/pine-castle-n.png
-%%DATADIR%%/data/core/images/terrain/forest/pine-castle-ne.png
-%%DATADIR%%/data/core/images/terrain/forest/pine-castle-nw.png
-%%DATADIR%%/data/core/images/terrain/forest/pine-castle-s.png
-%%DATADIR%%/data/core/images/terrain/forest/pine-castle-se.png
-%%DATADIR%%/data/core/images/terrain/forest/pine-castle-small.png
-%%DATADIR%%/data/core/images/terrain/forest/pine-castle-sw.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-small-2.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-small.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-sparse-2.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-sparse-3.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-sparse-4.png
+%%DATADIR%%/data/core/images/terrain/forest/pine-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/pine.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-2.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-3.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-4.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-n-ne.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-n.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-ne.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-nw-n-ne.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-nw-n.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-nw.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-s.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-se.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-small.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-sw-nw.png
-%%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-sw.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-small.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-sparse-2.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-sparse-3.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-sparse-4.png
+%%DATADIR%%/data/core/images/terrain/forest/snow-forest-sparse-small.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest.png
 %%DATADIR%%/data/core/images/terrain/forest/tropical-2.png
 %%DATADIR%%/data/core/images/terrain/forest/tropical-3.png
 %%DATADIR%%/data/core/images/terrain/forest/tropical-4.png
-%%DATADIR%%/data/core/images/terrain/forest/tropical-castle-n.png
-%%DATADIR%%/data/core/images/terrain/forest/tropical-castle-ne.png
-%%DATADIR%%/data/core/images/terrain/forest/tropical-castle-nw.png
-%%DATADIR%%/data/core/images/terrain/forest/tropical-castle-small.png
+%%DATADIR%%/data/core/images/terrain/forest/tropical-small.png
 %%DATADIR%%/data/core/images/terrain/forest/tropical-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/tropical.png
 %%DATADIR%%/data/core/images/terrain/forested-deciduous-fall-hills-tile.png
@@ -3877,6 +4155,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/ice5.png
 %%DATADIR%%/data/core/images/terrain/ice6.png
 %%DATADIR%%/data/core/images/terrain/impassable-editor.png
+%%DATADIR%%/data/core/images/terrain/keep-overlay-editor.png
 %%DATADIR%%/data/core/images/terrain/lava-chasm-ccw-bl.png
 %%DATADIR%%/data/core/images/terrain/lava-chasm-ccw-br.png
 %%DATADIR%%/data/core/images/terrain/lava-chasm-ccw-l.png
@@ -3914,19 +4193,21 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/lava-convex-r.png
 %%DATADIR%%/data/core/images/terrain/lava-convex-tl.png
 %%DATADIR%%/data/core/images/terrain/lava-convex-tr.png
-%%DATADIR%%/data/core/images/terrain/lava-n-ne-nw-s.png
-%%DATADIR%%/data/core/images/terrain/lava-n-ne-nw.png
+%%DATADIR%%/data/core/images/terrain/lava-n-ne-se-s.png
+%%DATADIR%%/data/core/images/terrain/lava-n-ne-se.png
 %%DATADIR%%/data/core/images/terrain/lava-n-ne.png
 %%DATADIR%%/data/core/images/terrain/lava-n.png
-%%DATADIR%%/data/core/images/terrain/lava-ne-nw-s.png
+%%DATADIR%%/data/core/images/terrain/lava-ne-se-s.png
 %%DATADIR%%/data/core/images/terrain/lava-ne-se.png
 %%DATADIR%%/data/core/images/terrain/lava-ne.png
+%%DATADIR%%/data/core/images/terrain/lava-nw-n-ne.png
 %%DATADIR%%/data/core/images/terrain/lava-nw-n.png
 %%DATADIR%%/data/core/images/terrain/lava-nw.png
-%%DATADIR%%/data/core/images/terrain/lava-s-nw-ne-n.png
+%%DATADIR%%/data/core/images/terrain/lava-s-sw-nw-n.png
 %%DATADIR%%/data/core/images/terrain/lava-s-sw-nw.png
 %%DATADIR%%/data/core/images/terrain/lava-s-sw.png
 %%DATADIR%%/data/core/images/terrain/lava-s.png
+%%DATADIR%%/data/core/images/terrain/lava-se-s-sw.png
 %%DATADIR%%/data/core/images/terrain/lava-se-s.png
 %%DATADIR%%/data/core/images/terrain/lava-se.png
 %%DATADIR%%/data/core/images/terrain/lava-sw-nw-n.png
@@ -4085,6 +4366,12 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/snow-hills2.png
 %%DATADIR%%/data/core/images/terrain/snow-hills3.png
 %%DATADIR%%/data/core/images/terrain/snow-mountain-tile.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain5_1.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain5_2.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain5_3.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain6_1.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain6_2.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain6_3.png
 %%DATADIR%%/data/core/images/terrain/snow-mountains.png
 %%DATADIR%%/data/core/images/terrain/snow-mountains2.png
 %%DATADIR%%/data/core/images/terrain/snow-mountains3.png
@@ -4205,6 +4492,19 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/village/desert.png
 %%DATADIR%%/data/core/images/terrain/village/desert2.png
 %%DATADIR%%/data/core/images/terrain/village/desert3.png
+%%DATADIR%%/data/core/images/terrain/village/drake-tile.png
+%%DATADIR%%/data/core/images/terrain/village/drake1-1.png
+%%DATADIR%%/data/core/images/terrain/village/drake1-2.png
+%%DATADIR%%/data/core/images/terrain/village/drake1-3.png
+%%DATADIR%%/data/core/images/terrain/village/drake1.png
+%%DATADIR%%/data/core/images/terrain/village/drake2-1.png
+%%DATADIR%%/data/core/images/terrain/village/drake2-2.png
+%%DATADIR%%/data/core/images/terrain/village/drake2-3.png
+%%DATADIR%%/data/core/images/terrain/village/drake2-4.png
+%%DATADIR%%/data/core/images/terrain/village/drake2.png
+%%DATADIR%%/data/core/images/terrain/village/drake3.png
+%%DATADIR%%/data/core/images/terrain/village/drake4.png
+%%DATADIR%%/data/core/images/terrain/village/drake5.png
 %%DATADIR%%/data/core/images/terrain/village/dwarven-tile.png
 %%DATADIR%%/data/core/images/terrain/village/dwarven.png
 %%DATADIR%%/data/core/images/terrain/village/dwarven2.png
@@ -4248,6 +4548,22 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/village/hut-tile.png
 %%DATADIR%%/data/core/images/terrain/village/hut.png
 %%DATADIR%%/data/core/images/terrain/village/hut2.png
+%%DATADIR%%/data/core/images/terrain/village/log-cabin-snow-tile.png
+%%DATADIR%%/data/core/images/terrain/village/log-cabin-snow.png
+%%DATADIR%%/data/core/images/terrain/village/log-cabin-tile.png
+%%DATADIR%%/data/core/images/terrain/village/log-cabin.png
+%%DATADIR%%/data/core/images/terrain/village/orc-hills-tile.png
+%%DATADIR%%/data/core/images/terrain/village/orc-snow-hills-tile.png
+%%DATADIR%%/data/core/images/terrain/village/orc-snow-tile.png
+%%DATADIR%%/data/core/images/terrain/village/orc-snow1.png
+%%DATADIR%%/data/core/images/terrain/village/orc-snow2.png
+%%DATADIR%%/data/core/images/terrain/village/orc-snow3.png
+%%DATADIR%%/data/core/images/terrain/village/orc-snow4.png
+%%DATADIR%%/data/core/images/terrain/village/orc-tile.png
+%%DATADIR%%/data/core/images/terrain/village/orc1.png
+%%DATADIR%%/data/core/images/terrain/village/orc2.png
+%%DATADIR%%/data/core/images/terrain/village/orc3.png
+%%DATADIR%%/data/core/images/terrain/village/orc4.png
 %%DATADIR%%/data/core/images/terrain/village/snow-tile.png
 %%DATADIR%%/data/core/images/terrain/village/swamp-merfolk-tile.png
 %%DATADIR%%/data/core/images/terrain/village/swampwater-tile.png
@@ -4358,7 +4674,9 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/windmill-18.png
 %%DATADIR%%/data/core/images/terrain/windmill-tile.png
 %%DATADIR%%/data/core/images/themes/experimental-rightside.png
+%%DATADIR%%/data/core/images/themes/gold-t.png
 %%DATADIR%%/data/core/images/themes/gold.png
+%%DATADIR%%/data/core/images/themes/income-t.png
 %%DATADIR%%/data/core/images/themes/income.png
 %%DATADIR%%/data/core/images/themes/minimap.png
 %%DATADIR%%/data/core/images/themes/rightside-bg.png
@@ -4366,14 +4684,41 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/themes/rightside-editor.png
 %%DATADIR%%/data/core/images/themes/rightside-small.png
 %%DATADIR%%/data/core/images/themes/rightside.png
+%%DATADIR%%/data/core/images/themes/sand-clock-t.png
 %%DATADIR%%/data/core/images/themes/sand-clock.png
 %%DATADIR%%/data/core/images/themes/status-bg.png
 %%DATADIR%%/data/core/images/themes/timeofday.png
 %%DATADIR%%/data/core/images/themes/top-bg.png
 %%DATADIR%%/data/core/images/themes/unit.png
+%%DATADIR%%/data/core/images/themes/units-t.png
 %%DATADIR%%/data/core/images/themes/units.png
+%%DATADIR%%/data/core/images/themes/upkeep-t.png
 %%DATADIR%%/data/core/images/themes/upkeep.png
 %%DATADIR%%/data/core/images/themes/villages.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-blade-s-4.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-blade-s-5.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-blade-s-6.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-blade-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-blade-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-blade-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-blade-se-4.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-blade-se-5.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-blade-se-6.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-s-4.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-s-5.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-s-6.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-s-7.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-se-4.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-se-5.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-se-6.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter-pierce-se-7.png
+%%DATADIR%%/data/core/images/units/drakes/arbiter.png
 %%DATADIR%%/data/core/images/units/drakes/armageddon-attack-melee1.png
 %%DATADIR%%/data/core/images/units/drakes/armageddon-attack-melee2.png
 %%DATADIR%%/data/core/images/units/drakes/armageddon-attack-melee3.png
@@ -4403,68 +4748,146 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/drakes/blademaster-die-7.png
 %%DATADIR%%/data/core/images/units/drakes/blademaster-flying.png
 %%DATADIR%%/data/core/images/units/drakes/blademaster.png
-%%DATADIR%%/data/core/images/units/drakes/burner-attack-close.png
-%%DATADIR%%/data/core/images/units/drakes/burner-attack-ranged1.png
-%%DATADIR%%/data/core/images/units/drakes/burner-attack-ranged2.png
-%%DATADIR%%/data/core/images/units/drakes/burner-defend.png
-%%DATADIR%%/data/core/images/units/drakes/burner-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/burner-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/burner-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/burner-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/burner-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/burner-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/burner-flying.png
+%%DATADIR%%/data/core/images/units/drakes/burner-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/burner-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-inhale-1.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-inhale-2.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-inhale-3.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-inhale-4.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-s-1.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fire-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fly-1.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fly-2-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fly-2.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fly-3-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fly-3.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fly-4.png
+%%DATADIR%%/data/core/images/units/drakes/burner-fly-5.png
+%%DATADIR%%/data/core/images/units/drakes/burner-melee-1.png
+%%DATADIR%%/data/core/images/units/drakes/burner-melee-2.png
+%%DATADIR%%/data/core/images/units/drakes/burner-melee-3.png
+%%DATADIR%%/data/core/images/units/drakes/burner-melee-4.png
+%%DATADIR%%/data/core/images/units/drakes/burner-melee-5.png
+%%DATADIR%%/data/core/images/units/drakes/burner-melee-6.png
+%%DATADIR%%/data/core/images/units/drakes/burner-takeoff-1.png
+%%DATADIR%%/data/core/images/units/drakes/burner-takeoff-2.png
+%%DATADIR%%/data/core/images/units/drakes/burner-takeoff-3.png
+%%DATADIR%%/data/core/images/units/drakes/burner-takeoff-4.png
 %%DATADIR%%/data/core/images/units/drakes/burner.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-attack-spear.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-attack-sword.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-defend.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-10.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-8.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-die-9.png
-%%DATADIR%%/data/core/images/units/drakes/clasher-flying.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-blade-1.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-blade-2.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-blade-3.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-blade-4.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-blade-5.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-blade-6.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-blade-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-blade-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-blade.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-s-4.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-s-5.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-s-6.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-se-4.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-se-5.png
+%%DATADIR%%/data/core/images/units/drakes/clasher-spear-se-6.png
 %%DATADIR%%/data/core/images/units/drakes/clasher.png
-%%DATADIR%%/data/core/images/units/drakes/enforcer-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/enforcer-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/enforcer-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/enforcer-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/enforcer-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/enforcer-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/enforcer-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/enforcer-die-8.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-blade-1.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-blade-2.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-blade-3.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-blade-4.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-blade-5.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-blade-6.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-blade-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-blade-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-blade.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-impact-1.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-impact-2.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-impact-3.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-impact-4.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-impact-5.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-s-4.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-s-5.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-s-6.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-se-4.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-se-5.png
+%%DATADIR%%/data/core/images/units/drakes/enforcer-spear-se-6.png
 %%DATADIR%%/data/core/images/units/drakes/enforcer.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-attack-close1.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-attack-close2.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-attack-ranged1.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-attack-ranged2.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-defend.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-die-8.png
-%%DATADIR%%/data/core/images/units/drakes/fighter-flying.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-inhale-1.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-inhale-2.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-inhale-3.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-inhale-4.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-s-1.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fire-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fly-1.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fly-2-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fly-2.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fly-3-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fly-3.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fly-4.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-fly-5.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-melee-1.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-melee-2.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-melee-3.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-melee-4.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-melee-5.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-melee-6.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-takeoff-1.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-takeoff-2.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-takeoff-3.png
+%%DATADIR%%/data/core/images/units/drakes/fighter-takeoff-4.png
 %%DATADIR%%/data/core/images/units/drakes/fighter.png
-%%DATADIR%%/data/core/images/units/drakes/fire-attack-close.png
-%%DATADIR%%/data/core/images/units/drakes/fire-attack-ranged.png
-%%DATADIR%%/data/core/images/units/drakes/fire-defend.png
-%%DATADIR%%/data/core/images/units/drakes/fire-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/fire-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/fire-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/fire-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/fire-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/fire-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/fire-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/fire-flying.png
+%%DATADIR%%/data/core/images/units/drakes/fire-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/fire-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-inhale-1.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-inhale-2.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-inhale-3.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-inhale-4.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-s-1.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fire-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fly-1.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fly-2-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fly-2.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fly-3-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fly-3.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fly-4.png
+%%DATADIR%%/data/core/images/units/drakes/fire-fly-5.png
+%%DATADIR%%/data/core/images/units/drakes/fire-melee-1.png
+%%DATADIR%%/data/core/images/units/drakes/fire-melee-2.png
+%%DATADIR%%/data/core/images/units/drakes/fire-melee-3.png
+%%DATADIR%%/data/core/images/units/drakes/fire-melee-4.png
+%%DATADIR%%/data/core/images/units/drakes/fire-melee-5.png
+%%DATADIR%%/data/core/images/units/drakes/fire-melee-6.png
+%%DATADIR%%/data/core/images/units/drakes/fire-takeoff-1.png
+%%DATADIR%%/data/core/images/units/drakes/fire-takeoff-2.png
+%%DATADIR%%/data/core/images/units/drakes/fire-takeoff-3.png
+%%DATADIR%%/data/core/images/units/drakes/fire-takeoff-4.png
 %%DATADIR%%/data/core/images/units/drakes/fire.png
 %%DATADIR%%/data/core/images/units/drakes/flameheart-attack-close1.png
 %%DATADIR%%/data/core/images/units/drakes/flameheart-attack-close2.png
@@ -4494,114 +4917,204 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/drakes/flare-flying.png
 %%DATADIR%%/data/core/images/units/drakes/flare-lead.png
 %%DATADIR%%/data/core/images/units/drakes/flare.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-attack-mace.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-attack-spear.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-attack-sword.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-defend.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-die-8.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator-flying.png
-%%DATADIR%%/data/core/images/units/drakes/gladiator.png
-%%DATADIR%%/data/core/images/units/drakes/glider-attack-close1.png
-%%DATADIR%%/data/core/images/units/drakes/glider-attack-close2.png
-%%DATADIR%%/data/core/images/units/drakes/glider-attack-ranged.png
-%%DATADIR%%/data/core/images/units/drakes/glider-defend.png
-%%DATADIR%%/data/core/images/units/drakes/glider-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/glider-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/glider-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/glider-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/glider-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/glider-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/glider-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/glider-die-8.png
-%%DATADIR%%/data/core/images/units/drakes/glider-flying.png
+%%DATADIR%%/data/core/images/units/drakes/glider-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/glider-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-inhale-1.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-inhale-2.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-inhale-3.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-inhale-4.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-s-1.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fire-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fly-1.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fly-2-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fly-2.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fly-3-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fly-3.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fly-4.png
+%%DATADIR%%/data/core/images/units/drakes/glider-fly-5.png
+%%DATADIR%%/data/core/images/units/drakes/glider-kick-1.png
+%%DATADIR%%/data/core/images/units/drakes/glider-kick-2.png
+%%DATADIR%%/data/core/images/units/drakes/glider-kick-3.png
+%%DATADIR%%/data/core/images/units/drakes/glider-kick-4.png
+%%DATADIR%%/data/core/images/units/drakes/glider-kick-5.png
+%%DATADIR%%/data/core/images/units/drakes/glider-kick-6.png
+%%DATADIR%%/data/core/images/units/drakes/glider-takeoff-1.png
+%%DATADIR%%/data/core/images/units/drakes/glider-takeoff-2.png
+%%DATADIR%%/data/core/images/units/drakes/glider-takeoff-3.png
+%%DATADIR%%/data/core/images/units/drakes/glider-takeoff-4.png
 %%DATADIR%%/data/core/images/units/drakes/glider.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-attack-melee1.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-attack-melee2.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-attack-ranged-fire1.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-attack-ranged-fire2.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-die-8.png
-%%DATADIR%%/data/core/images/units/drakes/hurricane-flying.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-inhale-1.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-inhale-2.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-inhale-3.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-inhale-4.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-s-1.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fire-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fly-1.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fly-2-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fly-2.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fly-3-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fly-3.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fly-4.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-fly-5.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-kick-1.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-kick-2.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-kick-3.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-kick-4.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-kick-5.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-kick-6.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-takeoff-1.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-takeoff-2.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-takeoff-3.png
+%%DATADIR%%/data/core/images/units/drakes/hurricane-takeoff-4.png
 %%DATADIR%%/data/core/images/units/drakes/hurricane.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-attack-close.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-attack-ranged.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-defend.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/inferno-flying.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fire-inhale-1.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fire-inhale-2.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fire-inhale-3.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fire-inhale-4.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fire-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fire-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fire-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fly-1.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fly-2-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fly-2.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fly-3-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fly-3.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fly-4.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-fly-5.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-melee-1.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-melee-2.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-melee-3.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-melee-4.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-melee-5.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-melee-6.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-takeoff-1.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-takeoff-2.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-takeoff-3.png
+%%DATADIR%%/data/core/images/units/drakes/inferno-takeoff-4.png
 %%DATADIR%%/data/core/images/units/drakes/inferno.png
-%%DATADIR%%/data/core/images/units/drakes/sky-attack-melee1.png
-%%DATADIR%%/data/core/images/units/drakes/sky-attack-melee2.png
-%%DATADIR%%/data/core/images/units/drakes/sky-attack-ranged-fire.png
-%%DATADIR%%/data/core/images/units/drakes/sky-attack-ranged-impact.png
-%%DATADIR%%/data/core/images/units/drakes/sky-defend.png
-%%DATADIR%%/data/core/images/units/drakes/sky-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/sky-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/sky-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/sky-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/sky-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/sky-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/sky-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/sky-die-8.png
+%%DATADIR%%/data/core/images/units/drakes/sky-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/sky-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-inhale-1.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-inhale-2.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-inhale-3.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-inhale-4.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-s-1.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fire-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fly-1.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fly-2-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fly-2.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fly-3-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fly-3.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fly-4.png
+%%DATADIR%%/data/core/images/units/drakes/sky-fly-5.png
+%%DATADIR%%/data/core/images/units/drakes/sky-kick-1.png
+%%DATADIR%%/data/core/images/units/drakes/sky-kick-2.png
+%%DATADIR%%/data/core/images/units/drakes/sky-kick-3.png
+%%DATADIR%%/data/core/images/units/drakes/sky-kick-4.png
+%%DATADIR%%/data/core/images/units/drakes/sky-kick-5.png
+%%DATADIR%%/data/core/images/units/drakes/sky-kick-6.png
+%%DATADIR%%/data/core/images/units/drakes/sky-takeoff-1.png
+%%DATADIR%%/data/core/images/units/drakes/sky-takeoff-2.png
+%%DATADIR%%/data/core/images/units/drakes/sky-takeoff-3.png
+%%DATADIR%%/data/core/images/units/drakes/sky-takeoff-4.png
 %%DATADIR%%/data/core/images/units/drakes/sky.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-defend.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-die-8.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-flying.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-pierce.png
-%%DATADIR%%/data/core/images/units/drakes/slasher-slash.png
 %%DATADIR%%/data/core/images/units/drakes/slasher.png
-%%DATADIR%%/data/core/images/units/drakes/warden-defend.png
-%%DATADIR%%/data/core/images/units/drakes/warden-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/warden-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/warden-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/warden-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/warden-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/warden-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/warden-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/warden-die-8.png
-%%DATADIR%%/data/core/images/units/drakes/warden-die-9.png
-%%DATADIR%%/data/core/images/units/drakes/warden-flying.png
-%%DATADIR%%/data/core/images/units/drakes/warden-pierce.png
-%%DATADIR%%/data/core/images/units/drakes/warden-slash.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-blade-1.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-blade-2.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-blade-3.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-blade-4.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-blade-5.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-blade-6.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-blade-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-blade-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-blade.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-impact-1.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-impact-2.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-impact-3.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-impact-4.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-impact-5.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-s-4.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-s-5.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-s-6.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-se-4.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-se-5.png
+%%DATADIR%%/data/core/images/units/drakes/thrasher-spear-se-6.png
+%%DATADIR%%/data/core/images/units/drakes/warden-blade-s-4.png
+%%DATADIR%%/data/core/images/units/drakes/warden-blade-s-5.png
+%%DATADIR%%/data/core/images/units/drakes/warden-blade-s-6.png
+%%DATADIR%%/data/core/images/units/drakes/warden-blade-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/warden-blade-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/warden-blade-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/warden-blade-se-4.png
+%%DATADIR%%/data/core/images/units/drakes/warden-blade-se-5.png
+%%DATADIR%%/data/core/images/units/drakes/warden-blade-se-6.png
+%%DATADIR%%/data/core/images/units/drakes/warden-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/warden-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-s-4.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-s-5.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-s-6.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-s-7.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-se-4.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-se-5.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-se-6.png
+%%DATADIR%%/data/core/images/units/drakes/warden-pierce-se-7.png
 %%DATADIR%%/data/core/images/units/drakes/warden.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-attack-close1.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-attack-close2.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-attack-ranged.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-defend.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-die-1.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-die-2.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-die-3.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-die-4.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-die-5.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-die-6.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-die-7.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-die-8.png
-%%DATADIR%%/data/core/images/units/drakes/warrior-flying.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-defend-1.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-defend-2.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-inhale-1.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-inhale-2.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-inhale-3.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-inhale-4.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-s-1.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-s-2.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-s-3.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-se-1.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-se-2.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fire-se-3.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fly-1.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fly-2-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fly-2.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fly-3-upstroke.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fly-3.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fly-4.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-fly-5.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-melee-1.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-melee-2.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-melee-3.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-melee-4.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-melee-5.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-melee-6.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-takeoff-1.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-takeoff-2.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-takeoff-3.png
+%%DATADIR%%/data/core/images/units/drakes/warrior-takeoff-4.png
 %%DATADIR%%/data/core/images/units/drakes/warrior.png
 %%DATADIR%%/data/core/images/units/dwarves/berserker-attack-1.png
 %%DATADIR%%/data/core/images/units/dwarves/berserker-attack-2.png
@@ -4636,10 +5149,30 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/dwarves/dragonguard-attack-ranged-ne.png
 %%DATADIR%%/data/core/images/units/dwarves/dragonguard-attack-ranged-s.png
 %%DATADIR%%/data/core/images/units/dwarves/dragonguard-attack-ranged-se.png
+%%DATADIR%%/data/core/images/units/dwarves/dragonguard-blade-1.png
+%%DATADIR%%/data/core/images/units/dwarves/dragonguard-blade-2.png
+%%DATADIR%%/data/core/images/units/dwarves/dragonguard-blade-3.png
+%%DATADIR%%/data/core/images/units/dwarves/dragonguard-blade-4.png
+%%DATADIR%%/data/core/images/units/dwarves/dragonguard-blade-5.png
+%%DATADIR%%/data/core/images/units/dwarves/dragonguard-blade-defend-1.png
+%%DATADIR%%/data/core/images/units/dwarves/dragonguard-blade-defend-2.png
+%%DATADIR%%/data/core/images/units/dwarves/dragonguard-blade.png
 %%DATADIR%%/data/core/images/units/dwarves/dragonguard-defend.png
 %%DATADIR%%/data/core/images/units/dwarves/dragonguard-melee1.png
 %%DATADIR%%/data/core/images/units/dwarves/dragonguard-melee2.png
 %%DATADIR%%/data/core/images/units/dwarves/dragonguard.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-defend-1.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-defend-2.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-melee-1.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-melee-2.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-melee-3.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-melee-4.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-melee-5.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-melee-6.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-ranged-1.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-ranged-2.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer-ranged-3.png
+%%DATADIR%%/data/core/images/units/dwarves/explorer.png
 %%DATADIR%%/data/core/images/units/dwarves/fighter-axe-1.png
 %%DATADIR%%/data/core/images/units/dwarves/fighter-axe-2.png
 %%DATADIR%%/data/core/images/units/dwarves/fighter-axe-3.png
@@ -4707,6 +5240,21 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/dwarves/lord-defend-2.png
 %%DATADIR%%/data/core/images/units/dwarves/lord-ranged.png
 %%DATADIR%%/data/core/images/units/dwarves/lord.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-melee-1.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-melee-2.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-melee-3.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-melee-4.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-melee-5.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-melee-6.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-melee-defend-1.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-melee-defend-2.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-melee.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-ranged-1.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-ranged-2.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-ranged-3.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-ranged-defend-1.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder-ranged-defend-2.png
+%%DATADIR%%/data/core/images/units/dwarves/pathfinder.png
 %%DATADIR%%/data/core/images/units/dwarves/runemaster-attack1.png
 %%DATADIR%%/data/core/images/units/dwarves/runemaster-attack2.png
 %%DATADIR%%/data/core/images/units/dwarves/runemaster-attack3.png
@@ -4719,6 +5267,20 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/dwarves/runemaster-idle-6.png
 %%DATADIR%%/data/core/images/units/dwarves/runemaster-idle-7.png
 %%DATADIR%%/data/core/images/units/dwarves/runemaster.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-defend-1.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-defend-2.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-melee-1.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-melee-2.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-melee-3.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-melee-4.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-melee-5.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-melee-6.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-melee-7.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-melee-8.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-ranged-1.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-ranged-2.png
+%%DATADIR%%/data/core/images/units/dwarves/scout-ranged-3.png
+%%DATADIR%%/data/core/images/units/dwarves/scout.png
 %%DATADIR%%/data/core/images/units/dwarves/sentinel-attack.png
 %%DATADIR%%/data/core/images/units/dwarves/sentinel-defend-1.png
 %%DATADIR%%/data/core/images/units/dwarves/sentinel-defend-2.png
@@ -4755,6 +5317,14 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderer-attack-ne.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderer-attack-s.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderer-attack-se.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderer-blade-1.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderer-blade-2.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderer-blade-3.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderer-blade-4.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderer-blade-5.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderer-blade-defend-1.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderer-blade-defend-2.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderer-blade.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderer-defend.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderer-die1.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderer-die2.png
@@ -4774,6 +5344,14 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderguard-attack-ranged-se.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderguard-attack1.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderguard-attack2.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderguard-blade-1.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderguard-blade-2.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderguard-blade-3.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderguard-blade-4.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderguard-blade-5.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderguard-blade-defend-1.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderguard-blade-defend-2.png
+%%DATADIR%%/data/core/images/units/dwarves/thunderguard-blade.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderguard-defend.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderguard.png
 %%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack-1.png
@@ -5933,13 +6511,21 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/human-outlaws/thief-idle-8.png
 %%DATADIR%%/data/core/images/units/human-outlaws/thief-idle-9.png
 %%DATADIR%%/data/core/images/units/human-outlaws/thief.png
-%%DATADIR%%/data/core/images/units/human-outlaws/thug-attack.png
-%%DATADIR%%/data/core/images/units/human-outlaws/thug-defend.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-defend-1.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-defend-2.png
 %%DATADIR%%/data/core/images/units/human-outlaws/thug-idle-1.png
 %%DATADIR%%/data/core/images/units/human-outlaws/thug-idle-2.png
 %%DATADIR%%/data/core/images/units/human-outlaws/thug-idle-3.png
 %%DATADIR%%/data/core/images/units/human-outlaws/thug-idle-4.png
 %%DATADIR%%/data/core/images/units/human-outlaws/thug-idle-5.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-melee-1.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-melee-2.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-melee-3.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-melee-4.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-melee-5.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-melee-6.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-melee-7.png
+%%DATADIR%%/data/core/images/units/human-outlaws/thug-melee-8.png
 %%DATADIR%%/data/core/images/units/human-outlaws/thug.png
 %%DATADIR%%/data/core/images/units/human-outlaws/trapper-attack-melee-2.png
 %%DATADIR%%/data/core/images/units/human-outlaws/trapper-attack-melee.png
@@ -5974,31 +6560,17 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/human-peasants/ruffian-melee-1.png
 %%DATADIR%%/data/core/images/units/human-peasants/ruffian-melee-2.png
 %%DATADIR%%/data/core/images/units/human-peasants/ruffian.png
-%%DATADIR%%/data/core/images/units/human-peasants/woodsman-bow-1.png
-%%DATADIR%%/data/core/images/units/human-peasants/woodsman-bow-2.png
-%%DATADIR%%/data/core/images/units/human-peasants/woodsman-bow-3.png
+%%DATADIR%%/data/core/images/units/human-peasants/woodsman-bow-attack-1.png
+%%DATADIR%%/data/core/images/units/human-peasants/woodsman-bow-attack-2.png
+%%DATADIR%%/data/core/images/units/human-peasants/woodsman-bow-attack-3.png
+%%DATADIR%%/data/core/images/units/human-peasants/woodsman-bow-attack-4.png
+%%DATADIR%%/data/core/images/units/human-peasants/woodsman-bow-defend.png
+%%DATADIR%%/data/core/images/units/human-peasants/woodsman-bow.png
 %%DATADIR%%/data/core/images/units/human-peasants/woodsman-defend.png
 %%DATADIR%%/data/core/images/units/human-peasants/woodsman-melee-1.png
 %%DATADIR%%/data/core/images/units/human-peasants/woodsman-melee-2.png
 %%DATADIR%%/data/core/images/units/human-peasants/woodsman.png
-%%DATADIR%%/data/core/images/units/merfolk/diviner-defend.png
-%%DATADIR%%/data/core/images/units/merfolk/diviner-magic1.png
-%%DATADIR%%/data/core/images/units/merfolk/diviner-magic2.png
-%%DATADIR%%/data/core/images/units/merfolk/diviner-magic3.png
-%%DATADIR%%/data/core/images/units/merfolk/diviner-magic4.png
-%%DATADIR%%/data/core/images/units/merfolk/diviner-magic5.png
-%%DATADIR%%/data/core/images/units/merfolk/diviner-magic6.png
-%%DATADIR%%/data/core/images/units/merfolk/diviner-staff-attack.png
 %%DATADIR%%/data/core/images/units/merfolk/diviner.png
-%%DATADIR%%/data/core/images/units/merfolk/enchantress-defend.png
-%%DATADIR%%/data/core/images/units/merfolk/enchantress-staff-attack.png
-%%DATADIR%%/data/core/images/units/merfolk/enchantress-water-attack1.png
-%%DATADIR%%/data/core/images/units/merfolk/enchantress-water-attack2.png
-%%DATADIR%%/data/core/images/units/merfolk/enchantress-water-attack3.png
-%%DATADIR%%/data/core/images/units/merfolk/enchantress-water-attack4.png
-%%DATADIR%%/data/core/images/units/merfolk/enchantress-water-attack5.png
-%%DATADIR%%/data/core/images/units/merfolk/enchantress-water-attack6.png
-%%DATADIR%%/data/core/images/units/merfolk/enchantress-water-attack7.png
 %%DATADIR%%/data/core/images/units/merfolk/enchantress.png
 %%DATADIR%%/data/core/images/units/merfolk/entangler.png
 %%DATADIR%%/data/core/images/units/merfolk/fighter.png
@@ -6013,27 +6585,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/merfolk/initiate.png
 %%DATADIR%%/data/core/images/units/merfolk/javelineer.png
 %%DATADIR%%/data/core/images/units/merfolk/netcaster.png
-%%DATADIR%%/data/core/images/units/merfolk/priestess-defend.png
-%%DATADIR%%/data/core/images/units/merfolk/priestess-magic1.png
-%%DATADIR%%/data/core/images/units/merfolk/priestess-magic2.png
-%%DATADIR%%/data/core/images/units/merfolk/priestess-magic3.png
-%%DATADIR%%/data/core/images/units/merfolk/priestess-magic4.png
-%%DATADIR%%/data/core/images/units/merfolk/priestess-magic5.png
-%%DATADIR%%/data/core/images/units/merfolk/priestess-magic6.png
-%%DATADIR%%/data/core/images/units/merfolk/priestess-staff-attack.png
 %%DATADIR%%/data/core/images/units/merfolk/priestess.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-defend.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-naia-touch-attack1.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-naia-touch-attack2.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-naia-touch-attack3.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-naia-touch-attack4.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-water-attack1.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-water-attack2.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-water-attack3.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-water-attack4.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-water-attack5.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-water-attack6.png
-%%DATADIR%%/data/core/images/units/merfolk/siren-water-attack7.png
 %%DATADIR%%/data/core/images/units/merfolk/siren.png
 %%DATADIR%%/data/core/images/units/merfolk/spearman.png
 %%DATADIR%%/data/core/images/units/merfolk/triton.png
@@ -6125,6 +6677,24 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/monsters/skeletal-dragon-attack-jaw2.png
 %%DATADIR%%/data/core/images/units/monsters/skeletal-dragon-defend.png
 %%DATADIR%%/data/core/images/units/monsters/skeletal-dragon.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-n-5.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-n-6.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-ne-1.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-ne-2.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-ne-3.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-ne-4.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-ne-5.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-ne-6.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-s-5.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-s-6.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-se-1.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-se-2.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-se-3.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-se-4.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-se-5.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-attack-se-6.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent-n.png
+%%DATADIR%%/data/core/images/units/monsters/water-serpent.png
 %%DATADIR%%/data/core/images/units/monsters/wolf-attack.png
 %%DATADIR%%/data/core/images/units/monsters/wolf-defend.png
 %%DATADIR%%/data/core/images/units/monsters/wolf-moving.png
@@ -6195,45 +6765,27 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/ogres/young-ogre-idle-3.png
 %%DATADIR%%/data/core/images/units/ogres/young-ogre-idle-4.png
 %%DATADIR%%/data/core/images/units/ogres/young-ogre.png
-%%DATADIR%%/data/core/images/units/orcs/archer-death-1.png
-%%DATADIR%%/data/core/images/units/orcs/archer-death-2.png
-%%DATADIR%%/data/core/images/units/orcs/archer-death-3.png
-%%DATADIR%%/data/core/images/units/orcs/archer-death-4.png
-%%DATADIR%%/data/core/images/units/orcs/archer-death-5.png
-%%DATADIR%%/data/core/images/units/orcs/archer-death-6.png
-%%DATADIR%%/data/core/images/units/orcs/archer-death-7.png
-%%DATADIR%%/data/core/images/units/orcs/archer-death-8.png
-%%DATADIR%%/data/core/images/units/orcs/archer-death-9.png
-%%DATADIR%%/data/core/images/units/orcs/archer-defend.png
+%%DATADIR%%/data/core/images/units/orcs/archer-bow-attack-1.png
+%%DATADIR%%/data/core/images/units/orcs/archer-bow-attack-2.png
+%%DATADIR%%/data/core/images/units/orcs/archer-bow-attack-3.png
+%%DATADIR%%/data/core/images/units/orcs/archer-bow-attack-4.png
+%%DATADIR%%/data/core/images/units/orcs/archer-bow-defend.png
+%%DATADIR%%/data/core/images/units/orcs/archer-bow.png
+%%DATADIR%%/data/core/images/units/orcs/archer-defend-1.png
+%%DATADIR%%/data/core/images/units/orcs/archer-defend-2.png
 %%DATADIR%%/data/core/images/units/orcs/archer-idle-1.png
 %%DATADIR%%/data/core/images/units/orcs/archer-idle-2.png
 %%DATADIR%%/data/core/images/units/orcs/archer-idle-3.png
 %%DATADIR%%/data/core/images/units/orcs/archer-idle-4.png
 %%DATADIR%%/data/core/images/units/orcs/archer-idle-5.png
 %%DATADIR%%/data/core/images/units/orcs/archer-idle-6.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-01.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-02.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-03.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-04.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-05.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-06.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-07.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-08.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-09.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-10.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-11.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-12.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-13.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-14.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-15.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-16.png
-%%DATADIR%%/data/core/images/units/orcs/archer-melee-17.png
-%%DATADIR%%/data/core/images/units/orcs/archer-ranged-1.png
-%%DATADIR%%/data/core/images/units/orcs/archer-ranged-2.png
-%%DATADIR%%/data/core/images/units/orcs/archer-ranged-3.png
-%%DATADIR%%/data/core/images/units/orcs/archer-ranged-4.png
-%%DATADIR%%/data/core/images/units/orcs/archer-ranged-5.png
-%%DATADIR%%/data/core/images/units/orcs/archer-ranged-6.png
+%%DATADIR%%/data/core/images/units/orcs/archer-melee-1.png
+%%DATADIR%%/data/core/images/units/orcs/archer-melee-2.png
+%%DATADIR%%/data/core/images/units/orcs/archer-melee-3.png
+%%DATADIR%%/data/core/images/units/orcs/archer-melee-4.png
+%%DATADIR%%/data/core/images/units/orcs/archer-melee-5.png
+%%DATADIR%%/data/core/images/units/orcs/archer-melee-6.png
+%%DATADIR%%/data/core/images/units/orcs/archer-melee.png
 %%DATADIR%%/data/core/images/units/orcs/archer.png
 %%DATADIR%%/data/core/images/units/orcs/assassin-attack-1.png
 %%DATADIR%%/data/core/images/units/orcs/assassin-attack-2.png
@@ -6282,19 +6834,34 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/orcs/grunt-die-7.png
 %%DATADIR%%/data/core/images/units/orcs/grunt-die-8.png
 %%DATADIR%%/data/core/images/units/orcs/grunt.png
-%%DATADIR%%/data/core/images/units/orcs/leader-attack.png
-%%DATADIR%%/data/core/images/units/orcs/leader-bow-1.png
-%%DATADIR%%/data/core/images/units/orcs/leader-bow-defend.png
-%%DATADIR%%/data/core/images/units/orcs/leader-bow.png
-%%DATADIR%%/data/core/images/units/orcs/leader-defend.png
-%%DATADIR%%/data/core/images/units/orcs/leader-leading.png
+%%DATADIR%%/data/core/images/units/orcs/leader-attack-1.png
+%%DATADIR%%/data/core/images/units/orcs/leader-attack-2.png
+%%DATADIR%%/data/core/images/units/orcs/leader-attack-3.png
+%%DATADIR%%/data/core/images/units/orcs/leader-attack-4.png
+%%DATADIR%%/data/core/images/units/orcs/leader-attack-5.png
+%%DATADIR%%/data/core/images/units/orcs/leader-defend-1.png
+%%DATADIR%%/data/core/images/units/orcs/leader-defend-2.png
+%%DATADIR%%/data/core/images/units/orcs/leader-lead-1.png
+%%DATADIR%%/data/core/images/units/orcs/leader-lead-2.png
+%%DATADIR%%/data/core/images/units/orcs/leader-ranged-attack-1.png
+%%DATADIR%%/data/core/images/units/orcs/leader-ranged-attack-2.png
+%%DATADIR%%/data/core/images/units/orcs/leader-ranged-defend.png
+%%DATADIR%%/data/core/images/units/orcs/leader-ranged.png
 %%DATADIR%%/data/core/images/units/orcs/leader.png
-%%DATADIR%%/data/core/images/units/orcs/ruler-attack.png
-%%DATADIR%%/data/core/images/units/orcs/ruler-bow-defend.png
-%%DATADIR%%/data/core/images/units/orcs/ruler-defend.png
-%%DATADIR%%/data/core/images/units/orcs/ruler-leading.png
-%%DATADIR%%/data/core/images/units/orcs/ruler-ranged-1.png
-%%DATADIR%%/data/core/images/units/orcs/ruler-ranged-2.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-attack-sword-1.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-attack-sword-2.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-attack-sword-3.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-attack-sword-4.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-attack-sword-5.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-attack-sword-6.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-defend-1.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-defend-2.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-lead-1.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-lead-2.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-ranged-attack-1.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-ranged-attack-2.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-ranged-defend.png
+%%DATADIR%%/data/core/images/units/orcs/ruler-ranged.png
 %%DATADIR%%/data/core/images/units/orcs/ruler.png
 %%DATADIR%%/data/core/images/units/orcs/slayer-attack-1.png
 %%DATADIR%%/data/core/images/units/orcs/slayer-attack-10.png
@@ -6330,23 +6897,32 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/orcs/slurbow-ranged-defend.png
 %%DATADIR%%/data/core/images/units/orcs/slurbow-ranged.png
 %%DATADIR%%/data/core/images/units/orcs/slurbow.png
-%%DATADIR%%/data/core/images/units/orcs/sovereign-attack1.png
-%%DATADIR%%/data/core/images/units/orcs/sovereign-attack2.png
-%%DATADIR%%/data/core/images/units/orcs/sovereign-bow-defend.png
-%%DATADIR%%/data/core/images/units/orcs/sovereign-defend.png
-%%DATADIR%%/data/core/images/units/orcs/sovereign-leading.png
-%%DATADIR%%/data/core/images/units/orcs/sovereign-ranged-1.png
-%%DATADIR%%/data/core/images/units/orcs/sovereign-ranged-2.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-attack-1.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-attack-2.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-attack-3.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-attack-4.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-attack-5.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-defend-1.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-defend-2.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-lead-1.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-lead-2.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-ranged-attack-1.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-ranged-attack-2.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-ranged-defend.png
+%%DATADIR%%/data/core/images/units/orcs/sovereign-ranged.png
 %%DATADIR%%/data/core/images/units/orcs/sovereign.png
 %%DATADIR%%/data/core/images/units/orcs/warlord-attack-sword-1.png
 %%DATADIR%%/data/core/images/units/orcs/warlord-attack-sword-2.png
 %%DATADIR%%/data/core/images/units/orcs/warlord-attack-sword-3.png
 %%DATADIR%%/data/core/images/units/orcs/warlord-attack-sword-4.png
-%%DATADIR%%/data/core/images/units/orcs/warlord-bow-1.png
-%%DATADIR%%/data/core/images/units/orcs/warlord-bow-2.png
-%%DATADIR%%/data/core/images/units/orcs/warlord-bow-3.png
-%%DATADIR%%/data/core/images/units/orcs/warlord-bow-4.png
+%%DATADIR%%/data/core/images/units/orcs/warlord-attack-sword-5.png
+%%DATADIR%%/data/core/images/units/orcs/warlord-attack-sword-6.png
+%%DATADIR%%/data/core/images/units/orcs/warlord-bow-attack-1.png
+%%DATADIR%%/data/core/images/units/orcs/warlord-bow-attack-2.png
+%%DATADIR%%/data/core/images/units/orcs/warlord-bow-attack-3.png
+%%DATADIR%%/data/core/images/units/orcs/warlord-bow-attack-4.png
 %%DATADIR%%/data/core/images/units/orcs/warlord-bow-defend.png
+%%DATADIR%%/data/core/images/units/orcs/warlord-bow.png
 %%DATADIR%%/data/core/images/units/orcs/warlord-defend-1.png
 %%DATADIR%%/data/core/images/units/orcs/warlord-defend-2.png
 %%DATADIR%%/data/core/images/units/orcs/warlord.png
@@ -6458,6 +7034,18 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/trolls/shaman-ranged-2.png
 %%DATADIR%%/data/core/images/units/trolls/shaman-ranged-3.png
 %%DATADIR%%/data/core/images/units/trolls/shaman.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-attack-s-4.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-attack-s-5.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-attack-s-6.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-attack-se-1.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-attack-se-2.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-attack-se-3.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-attack-se-4.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-attack-se-5.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-attack-se-6.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-defend-1.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero-defend-2.png
+%%DATADIR%%/data/core/images/units/trolls/troll-hero.png
 %%DATADIR%%/data/core/images/units/trolls/warrior-attack-1.png
 %%DATADIR%%/data/core/images/units/trolls/warrior-attack-2.png
 %%DATADIR%%/data/core/images/units/trolls/warrior-attack-3.png
@@ -6777,6 +7365,20 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/undead/soulless-attack-n.png
 %%DATADIR%%/data/core/images/units/undead/soulless-attack-s.png
 %%DATADIR%%/data/core/images/units/undead/soulless-attack.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-die-1.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-die-2.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-die-3.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-die-4.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-ne-1.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-ne-2.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-ne-3.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-ne-4.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-ne-5.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-se-1.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-se-2.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-se-3.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-se-4.png
+%%DATADIR%%/data/core/images/units/undead/soulless-bat-se-5.png
 %%DATADIR%%/data/core/images/units/undead/soulless-defend.png
 %%DATADIR%%/data/core/images/units/undead/soulless-die-1.png
 %%DATADIR%%/data/core/images/units/undead/soulless-die-10.png
@@ -6897,6 +7499,10 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/undead/zombie-drake-attack-s.png
 %%DATADIR%%/data/core/images/units/undead/zombie-drake-attack.png
 %%DATADIR%%/data/core/images/units/undead/zombie-drake-defend.png
+%%DATADIR%%/data/core/images/units/undead/zombie-drake-die-1.png
+%%DATADIR%%/data/core/images/units/undead/zombie-drake-die-2.png
+%%DATADIR%%/data/core/images/units/undead/zombie-drake-die-3.png
+%%DATADIR%%/data/core/images/units/undead/zombie-drake-die-4.png
 %%DATADIR%%/data/core/images/units/undead/zombie-drake.png
 %%DATADIR%%/data/core/images/units/undead/zombie-dwarf-attack-n.png
 %%DATADIR%%/data/core/images/units/undead/zombie-dwarf-attack-s.png
@@ -6911,6 +7517,10 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/undead/zombie-mounted-attack-s.png
 %%DATADIR%%/data/core/images/units/undead/zombie-mounted-attack.png
 %%DATADIR%%/data/core/images/units/undead/zombie-mounted-defend.png
+%%DATADIR%%/data/core/images/units/undead/zombie-mounted-die-1.png
+%%DATADIR%%/data/core/images/units/undead/zombie-mounted-die-2.png
+%%DATADIR%%/data/core/images/units/undead/zombie-mounted-die-3.png
+%%DATADIR%%/data/core/images/units/undead/zombie-mounted-die-4.png
 %%DATADIR%%/data/core/images/units/undead/zombie-mounted.png
 %%DATADIR%%/data/core/images/units/undead/zombie-saurian-attack-n.png
 %%DATADIR%%/data/core/images/units/undead/zombie-saurian-attack-s.png
@@ -7016,9 +7626,9 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/units/woses/wose-elder-die-fall-9.png
 %%DATADIR%%/data/core/images/units/woses/wose-elder.png
 %%DATADIR%%/data/core/images/units/woses/wose.png
-%%DATADIR%%/data/core/images/wesnoth-icon-small.png
 %%DATADIR%%/data/core/images/wesnoth-icon.png
 %%DATADIR%%/data/core/macros/abilities.cfg
+%%DATADIR%%/data/core/macros/ai.cfg
 %%DATADIR%%/data/core/macros/ai_controller.cfg
 %%DATADIR%%/data/core/macros/amla.cfg
 %%DATADIR%%/data/core/macros/animation-utils.cfg
@@ -7042,18 +7652,21 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/macros/utils.cfg
 %%DATADIR%%/data/core/music/battle.ogg
 %%DATADIR%%/data/core/music/breaking_the_chains.ogg
+%%DATADIR%%/data/core/music/casualties_of_war.ogg
 %%DATADIR%%/data/core/music/defeat.ogg
 %%DATADIR%%/data/core/music/defeat2.ogg
 %%DATADIR%%/data/core/music/elf-land.ogg
 %%DATADIR%%/data/core/music/elvish-theme.ogg
 %%DATADIR%%/data/core/music/frantic.ogg
 %%DATADIR%%/data/core/music/heroes_rite.ogg
+%%DATADIR%%/data/core/music/journeys_end.ogg
 %%DATADIR%%/data/core/music/knalgan_theme.ogg
 %%DATADIR%%/data/core/music/knolls.ogg
 %%DATADIR%%/data/core/music/legends_of_the_north.ogg
 %%DATADIR%%/data/core/music/love_theme.ogg
 %%DATADIR%%/data/core/music/loyalists.ogg
 %%DATADIR%%/data/core/music/main_menu.ogg
+%%DATADIR%%/data/core/music/northern_mountains.ogg
 %%DATADIR%%/data/core/music/northerners.ogg
 %%DATADIR%%/data/core/music/nunc_dimittis.ogg
 %%DATADIR%%/data/core/music/revelation.ogg
@@ -7151,6 +7764,14 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/sounds/hiss-die.wav
 %%DATADIR%%/data/core/sounds/hiss-hit.wav
 %%DATADIR%%/data/core/sounds/hiss.wav
+%%DATADIR%%/data/core/sounds/horn-signals/horn-1.ogg
+%%DATADIR%%/data/core/sounds/horn-signals/horn-2.ogg
+%%DATADIR%%/data/core/sounds/horn-signals/horn-3.ogg
+%%DATADIR%%/data/core/sounds/horn-signals/horn-4.ogg
+%%DATADIR%%/data/core/sounds/horn-signals/horn-5.ogg
+%%DATADIR%%/data/core/sounds/horn-signals/horn-6.ogg
+%%DATADIR%%/data/core/sounds/horn-signals/horn-7.ogg
+%%DATADIR%%/data/core/sounds/horn-signals/horn-8.ogg
 %%DATADIR%%/data/core/sounds/horse-canter.wav
 %%DATADIR%%/data/core/sounds/horse-die.ogg
 %%DATADIR%%/data/core/sounds/horse-elf-canter.wav
@@ -7242,8 +7863,10 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/sounds/orc-small-hit-2.ogg
 %%DATADIR%%/data/core/sounds/orc-small-hit-3.ogg
 %%DATADIR%%/data/core/sounds/orc-small-hit-4.ogg
+%%DATADIR%%/data/core/sounds/petrified.ogg
 %%DATADIR%%/data/core/sounds/pincers.ogg
 %%DATADIR%%/data/core/sounds/poison.ogg
+%%DATADIR%%/data/core/sounds/potion.ogg
 %%DATADIR%%/data/core/sounds/rumble.ogg
 %%DATADIR%%/data/core/sounds/skeleton-big-die.ogg
 %%DATADIR%%/data/core/sounds/skeleton-big-hit-1.ogg
@@ -7266,7 +7889,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/sounds/squishy-miss.wav
 %%DATADIR%%/data/core/sounds/squishy-strike.wav
 %%DATADIR%%/data/core/sounds/staff.wav
-%%DATADIR%%/data/core/sounds/stoned.ogg
 %%DATADIR%%/data/core/sounds/sword-1.ogg
 %%DATADIR%%/data/core/sounds/tail.ogg
 %%DATADIR%%/data/core/sounds/throw-1.wav
@@ -7340,6 +7962,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/units/boats/Galleon.cfg
 %%DATADIR%%/data/core/units/boats/Pirate_Galleon.cfg
 %%DATADIR%%/data/core/units/boats/Transport_Galleon.cfg
+%%DATADIR%%/data/core/units/drakes/Arbiter.cfg
 %%DATADIR%%/data/core/units/drakes/Armageddon.cfg
 %%DATADIR%%/data/core/units/drakes/Blademaster.cfg
 %%DATADIR%%/data/core/units/drakes/Burner.cfg
@@ -7349,20 +7972,22 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/units/drakes/Fire.cfg
 %%DATADIR%%/data/core/units/drakes/Flameheart.cfg
 %%DATADIR%%/data/core/units/drakes/Flare.cfg
-%%DATADIR%%/data/core/units/drakes/Gladiator.cfg
 %%DATADIR%%/data/core/units/drakes/Glider.cfg
 %%DATADIR%%/data/core/units/drakes/Hurricane.cfg
 %%DATADIR%%/data/core/units/drakes/Inferno.cfg
 %%DATADIR%%/data/core/units/drakes/Sky.cfg
-%%DATADIR%%/data/core/units/drakes/Slasher.cfg
+%%DATADIR%%/data/core/units/drakes/Thrasher.cfg
 %%DATADIR%%/data/core/units/drakes/Warden.cfg
 %%DATADIR%%/data/core/units/drakes/Warrior.cfg
 %%DATADIR%%/data/core/units/dwarves/Berserker.cfg
 %%DATADIR%%/data/core/units/dwarves/Dragonguard.cfg
+%%DATADIR%%/data/core/units/dwarves/Explorer.cfg
 %%DATADIR%%/data/core/units/dwarves/Fighter.cfg
 %%DATADIR%%/data/core/units/dwarves/Guardsman.cfg
 %%DATADIR%%/data/core/units/dwarves/Lord.cfg
+%%DATADIR%%/data/core/units/dwarves/Pathfinder.cfg
 %%DATADIR%%/data/core/units/dwarves/Runemaster.cfg
+%%DATADIR%%/data/core/units/dwarves/Scout.cfg
 %%DATADIR%%/data/core/units/dwarves/Sentinel.cfg
 %%DATADIR%%/data/core/units/dwarves/Stalwart.cfg
 %%DATADIR%%/data/core/units/dwarves/Steelclad.cfg
@@ -7477,6 +8102,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/units/monsters/Sea_Serpent.cfg
 %%DATADIR%%/data/core/units/monsters/Skeletal_Dragon.cfg
 %%DATADIR%%/data/core/units/monsters/Tentacle.cfg
+%%DATADIR%%/data/core/units/monsters/Water_Serpent.cfg
 %%DATADIR%%/data/core/units/monsters/Wolf.cfg
 %%DATADIR%%/data/core/units/monsters/Yeti.cfg
 %%DATADIR%%/data/core/units/nagas/Fighter.cfg
@@ -7548,12 +8174,16 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/gui/default/widget/listbox_wml_message.cfg
 %%DATADIR%%/data/gui/default/widget/menubar_default.cfg
 %%DATADIR%%/data/gui/default/widget/minimap_default.cfg
+%%DATADIR%%/data/gui/default/widget/multi_page_default.cfg
 %%DATADIR%%/data/gui/default/widget/panel_default.cfg
+%%DATADIR%%/data/gui/default/widget/panel_title_screen.cfg
 %%DATADIR%%/data/gui/default/widget/panel_wml_message.cfg
 %%DATADIR%%/data/gui/default/widget/scroll_label_default.cfg
 %%DATADIR%%/data/gui/default/widget/scroll_label_wml_message.cfg
+%%DATADIR%%/data/gui/default/widget/scrollbar_panel_default.cfg
 %%DATADIR%%/data/gui/default/widget/slider_default.cfg
 %%DATADIR%%/data/gui/default/widget/spacer_default.cfg
+%%DATADIR%%/data/gui/default/widget/stacked_widget_default.cfg
 %%DATADIR%%/data/gui/default/widget/text_box_default.cfg
 %%DATADIR%%/data/gui/default/widget/toggle_button_default.cfg
 %%DATADIR%%/data/gui/default/widget/toggle_button_icon.cfg
@@ -7571,7 +8201,16 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/gui/default/window/editor_new_map.cfg
 %%DATADIR%%/data/gui/default/window/editor_resize_map.cfg
 %%DATADIR%%/data/gui/default/window/editor_settings.cfg
+%%DATADIR%%/data/gui/default/window/formula_debugger.cfg
+%%DATADIR%%/data/gui/default/window/game_delete.cfg
+%%DATADIR%%/data/gui/default/window/game_load.cfg
+%%DATADIR%%/data/gui/default/window/game_save.cfg
+%%DATADIR%%/data/gui/default/window/game_save_message.cfg
+%%DATADIR%%/data/gui/default/window/game_save_oos.cfg
+%%DATADIR%%/data/gui/default/window/game_save_overwrite.cfg
 %%DATADIR%%/data/gui/default/window/language_selection.cfg
+%%DATADIR%%/data/gui/default/window/lobby_main.cfg
+%%DATADIR%%/data/gui/default/window/lobby_player_info.cfg
 %%DATADIR%%/data/gui/default/window/message.cfg
 %%DATADIR%%/data/gui/default/window/mp_cmd_wrapper.cfg
 %%DATADIR%%/data/gui/default/window/mp_connect.cfg
@@ -7580,6 +8219,8 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/gui/default/window/mp_method_selection.cfg
 %%DATADIR%%/data/gui/default/window/mp_server_list.cfg
 %%DATADIR%%/data/gui/default/window/title_screen.cfg
+%%DATADIR%%/data/gui/default/window/transient_message.cfg
+%%DATADIR%%/data/gui/default/window/unit_create.cfg
 %%DATADIR%%/data/gui/default/window/wml_message.cfg
 %%DATADIR%%/data/hardwired/WARNING
 %%DATADIR%%/data/hardwired/english.cfg
@@ -7610,6 +8251,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/languages/hr_HR.cfg
 %%DATADIR%%/data/languages/hu_HU.cfg
 %%DATADIR%%/data/languages/id_ID.cfg
+%%DATADIR%%/data/languages/is_IS.cfg
 %%DATADIR%%/data/languages/it_IT.cfg
 %%DATADIR%%/data/languages/ja_JP.cfg
 %%DATADIR%%/data/languages/ko_KR.cfg
@@ -7635,6 +8277,8 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/languages/tr_TR.cfg
 %%DATADIR%%/data/languages/zh_CN.cfg
 %%DATADIR%%/data/languages/zh_TW.cfg
+%%DATADIR%%/data/lua/helper.lua
+%%DATADIR%%/data/lua/wml-tags.lua
 %%DATADIR%%/data/multiplayer/_main.cfg
 %%DATADIR%%/data/multiplayer/eras.cfg
 %%DATADIR%%/data/multiplayer/factions/drakes-aoh.cfg
@@ -7676,11 +8320,11 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/multiplayer/maps/4p_Morituri.map
 %%DATADIR%%/data/multiplayer/maps/4p_Paths_of_Daggers.map
 %%DATADIR%%/data/multiplayer/maps/4p_Siege_Castles.map
-%%DATADIR%%/data/multiplayer/maps/4p_The_Wilderlands.map
 %%DATADIR%%/data/multiplayer/maps/4p_Underworld.map
 %%DATADIR%%/data/multiplayer/maps/4p_Xanthe_Chaos.map
 %%DATADIR%%/data/multiplayer/maps/5p_Auction-X.map
 %%DATADIR%%/data/multiplayer/maps/5p_Forest_of_Fear.map
+%%DATADIR%%/data/multiplayer/maps/5p_The_Wilderlands.map
 %%DATADIR%%/data/multiplayer/maps/6p_Crusaders_Field.map
 %%DATADIR%%/data/multiplayer/maps/6p_Hexcake.map
 %%DATADIR%%/data/multiplayer/maps/6p_The_Manzivan_Traps.map
@@ -7722,11 +8366,11 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/multiplayer/scenarios/4p_Morituri.cfg
 %%DATADIR%%/data/multiplayer/scenarios/4p_Paths_of_Daggers.cfg
 %%DATADIR%%/data/multiplayer/scenarios/4p_Siege_Castles.cfg
-%%DATADIR%%/data/multiplayer/scenarios/4p_The_Wilderlands.cfg
 %%DATADIR%%/data/multiplayer/scenarios/4p_Underworld.cfg
 %%DATADIR%%/data/multiplayer/scenarios/4p_Xanthe_Chaos.cfg
 %%DATADIR%%/data/multiplayer/scenarios/5p_Auction-X.cfg
 %%DATADIR%%/data/multiplayer/scenarios/5p_Forest_of_Fear.cfg
+%%DATADIR%%/data/multiplayer/scenarios/5p_The_Wilderlands.cfg
 %%DATADIR%%/data/multiplayer/scenarios/6p_Crusaders_Field.cfg
 %%DATADIR%%/data/multiplayer/scenarios/6p_Hexcake.cfg
 %%DATADIR%%/data/multiplayer/scenarios/6p_Team_Survival.cfg
@@ -7751,11 +8395,21 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/multiplayer/scenarios/Wesbench_Shroud_Walk.cfg
 %%DATADIR%%/data/scenario-formula-recruitment.cfg
 %%DATADIR%%/data/scenario-formula.cfg
+%%DATADIR%%/data/scenario-leaders.cfg
+%%DATADIR%%/data/scenario-lua.cfg
+%%DATADIR%%/data/scenario-poisoning.cfg
 %%DATADIR%%/data/scenario-test.cfg
 %%DATADIR%%/data/temp-file_send_data_strings.cfg
+%%DATADIR%%/data/test/_main.cfg
+%%DATADIR%%/data/test/macros/readme.txt
+%%DATADIR%%/data/test/scenarios/_main.cfg
+%%DATADIR%%/data/test/scenarios/readme.txt
+%%DATADIR%%/data/test/test/_main.cfg
+%%DATADIR%%/data/test/test/leading_space.cfg
+%%DATADIR%%/data/test/test/umc.cfg
 %%DATADIR%%/data/themes/default.cfg
 %%DATADIR%%/data/themes/dfool.cfg
-%%DATADIR%%/data/themes/editor2.cfg
+%%DATADIR%%/data/themes/editor.cfg
 %%DATADIR%%/data/themes/experimental.cfg
 %%DATADIR%%/data/themes/macros.cfg
 %%DATADIR%%/data/tools/README
@@ -7811,6 +8465,8 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/tools/extractbindings
 %%DATADIR%%/data/tools/helpheader.xhtml
 %%DATADIR%%/data/tools/helptrailer.xhtml
+%%DATADIR%%/data/tools/hexometer/alphamask.png
+%%DATADIR%%/data/tools/hexometer/hexometer
 %%DATADIR%%/data/tools/journeylifter
 %%DATADIR%%/data/tools/scoutDefault.py
 %%DATADIR%%/data/tools/terrain2wiki.rb
@@ -7840,6 +8496,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/tools/wmlscope
 %%DATADIR%%/data/tools/wmltest
 %%DATADIR%%/data/tools/wmlunits
+%%DATADIR%%/data/tools/wmlxgettext
 %%DATADIR%%/fonts/COPYING
 %%DATADIR%%/fonts/DejaVuSans.ttf
 %%DATADIR%%/fonts/wqy-zenhei.ttc
@@ -8170,10 +8827,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/images/dialogs/translucent65-border-top.png
 %%DATADIR%%/images/dialogs/translucent65-border-topleft.png
 %%DATADIR%%/images/dialogs/translucent65-border-topright.png
-%%DATADIR%%/images/editor/brush-1.png
-%%DATADIR%%/images/editor/brush-2.png
-%%DATADIR%%/images/editor/brush-3.png
-%%DATADIR%%/images/editor/brush-nw-se.png
 %%DATADIR%%/images/editor/selection-overlay.png
 %%DATADIR%%/images/editor/tool-overlay-select-brush.png
 %%DATADIR%%/images/editor/tool-overlay-select-wand.png
@@ -8286,6 +8939,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/images/misc/logo.png
 %%DATADIR%%/images/misc/missing-image.png
 %%DATADIR%%/images/misc/no_observer.png
+%%DATADIR%%/images/misc/petrified.png
 %%DATADIR%%/images/misc/poisoned.png
 %%DATADIR%%/images/misc/selection-background.png
 %%DATADIR%%/images/misc/selection-border-botleft.png
@@ -8321,10 +8975,10 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/images/misc/status-ignore.png
 %%DATADIR%%/images/misc/status-neutral.png
 %%DATADIR%%/images/misc/status-self.png
-%%DATADIR%%/images/misc/stone.png
 %%DATADIR%%/images/misc/tod-bright.png
 %%DATADIR%%/images/misc/topleft-corner.png
 %%DATADIR%%/images/misc/topright-corner.png
+%%DATADIR%%/images/misc/waypoint.png
 %%DATADIR%%/images/misc/zoc.png
 %%DATADIR%%/images/tools/chasm-convex.png
 %%DATADIR%%/images/tools/chasm-exploded-concave.png
@@ -8336,54 +8990,55 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/images/tools/exploder/mask-castle-w.png
 %%DATADIR%%/images/tools/magenta_team_color_palette.png
 %%DATADIR%%/images/wesnoth-icon-small.png
-%%DATADIR%%/locales/C@wesnoth
-%%DATADIR%%/locales/af_ZA@wesnoth
-%%DATADIR%%/locales/ar_AR@wesnoth
-%%DATADIR%%/locales/bg_BG@wesnoth
-%%DATADIR%%/locales/ca_ES@valencia@wesnoth
-%%DATADIR%%/locales/ca_ES@wesnoth
-%%DATADIR%%/locales/cs_CZ@wesnoth
-%%DATADIR%%/locales/da_DK@wesnoth
-%%DATADIR%%/locales/de_DE@wesnoth
-%%DATADIR%%/locales/el_GR@wesnoth
-%%DATADIR%%/locales/en_GB@wesnoth
-%%DATADIR%%/locales/eo_XX@wesnoth
-%%DATADIR%%/locales/es_ES@wesnoth
-%%DATADIR%%/locales/et_EE@wesnoth
-%%DATADIR%%/locales/eu_ES@wesnoth
-%%DATADIR%%/locales/fi_FI@wesnoth
-%%DATADIR%%/locales/fr_FR@wesnoth
-%%DATADIR%%/locales/fur_IT@wesnoth
-%%DATADIR%%/locales/gl_ES@wesnoth
-%%DATADIR%%/locales/he_IL@wesnoth
-%%DATADIR%%/locales/hr_HR@wesnoth
-%%DATADIR%%/locales/hu_HU@wesnoth
-%%DATADIR%%/locales/id_ID@wesnoth
-%%DATADIR%%/locales/it_IT@wesnoth
-%%DATADIR%%/locales/ja_JP@wesnoth
-%%DATADIR%%/locales/ko_KR@wesnoth
-%%DATADIR%%/locales/la_IT@wesnoth
-%%DATADIR%%/locales/lt_LT@wesnoth
-%%DATADIR%%/locales/lv_LV@wesnoth
-%%DATADIR%%/locales/mk_MK@wesnoth
-%%DATADIR%%/locales/mr_IN@wesnoth
-%%DATADIR%%/locales/nb_NO@wesnoth
-%%DATADIR%%/locales/nl_NL@wesnoth
-%%DATADIR%%/locales/pl_PL@wesnoth
-%%DATADIR%%/locales/pt_BR@wesnoth
-%%DATADIR%%/locales/pt_PT@wesnoth
-%%DATADIR%%/locales/racv@wesnoth
-%%DATADIR%%/locales/ro_RO@wesnoth
-%%DATADIR%%/locales/ru_RU@wesnoth
-%%DATADIR%%/locales/sk_SK@wesnoth
-%%DATADIR%%/locales/sl_SI@wesnoth
-%%DATADIR%%/locales/sr_RS@latin@wesnoth
-%%DATADIR%%/locales/sr_RS@wesnoth
-%%DATADIR%%/locales/sv_SE@wesnoth
-%%DATADIR%%/locales/tl_PH@wesnoth
-%%DATADIR%%/locales/tr_TR@wesnoth
-%%DATADIR%%/locales/zh_CN@wesnoth
-%%DATADIR%%/locales/zh_TW@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/C@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/af_ZA@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/ar_AR@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/bg_BG@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/ca_ES@valencia@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/ca_ES@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/cs_CZ@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/da_DK@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/de_DE@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/el_GR@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/en_GB@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/eo_XX@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/es_ES@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/et_EE@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/eu_ES@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/fi_FI@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/fr_FR@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/fur_IT@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/gl_ES@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/he_IL@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/hr_HR@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/hu_HU@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/id_ID@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/is_IS@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/it_IT@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/ja_JP@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/ko_KR@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/la_IT@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/lt_LT@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/lv_LV@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/mk_MK@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/mr_IN@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/nb_NO@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/nl_NL@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/pl_PL@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/pt_BR@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/pt_PT@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/racv@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/ro_RO@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/ru_RU@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/sk_SK@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/sl_SI@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/sr_RS@latin@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/sr_RS@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/sv_SE@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/tl_PH@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/tr_TR@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/zh_CN@wesnoth
+%%DUMMYLOCALES%%%%DATADIR%%/locales/zh_TW@wesnoth
 %%DATADIR%%/sounds/README
 %%DATADIR%%/sounds/arrive.wav
 %%DATADIR%%/sounds/bell.wav
@@ -8406,6 +9061,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/af/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-httt.mo
@@ -8428,6 +9084,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-httt.mo
@@ -8450,6 +9107,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-httt.mo
@@ -8472,6 +9130,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-httt.mo
@@ -8494,6 +9153,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-httt.mo
@@ -8516,6 +9176,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-httt.mo
@@ -8538,6 +9199,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/da/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-httt.mo
@@ -8560,6 +9222,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/de/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-httt.mo
@@ -8582,6 +9245,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/el/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-httt.mo
@@ -8604,6 +9268,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-httt.mo
@@ -8626,6 +9291,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-httt.mo
@@ -8648,6 +9314,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/es/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-httt.mo
@@ -8670,6 +9337,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/et/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-httt.mo
@@ -8692,6 +9360,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-httt.mo
@@ -8714,6 +9383,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-httt.mo
@@ -8736,6 +9406,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-httt.mo
@@ -8758,6 +9429,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-httt.mo
@@ -8780,6 +9452,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-httt.mo
@@ -8802,6 +9475,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/he/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-httt.mo
@@ -8824,6 +9498,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-httt.mo
@@ -8846,6 +9521,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-httt.mo
@@ -8868,6 +9544,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/id/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-httt.mo
@@ -8887,9 +9564,33 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-anl.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-low.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-test.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/it/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-httt.mo
@@ -8912,6 +9613,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-httt.mo
@@ -8934,6 +9636,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-httt.mo
@@ -8956,6 +9659,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/la/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-httt.mo
@@ -8978,6 +9682,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-httt.mo
@@ -9000,6 +9705,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-httt.mo
@@ -9022,6 +9728,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-httt.mo
@@ -9044,6 +9751,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-httt.mo
@@ -9066,6 +9774,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-httt.mo
@@ -9088,6 +9797,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-httt.mo
@@ -9110,6 +9820,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-httt.mo
@@ -9132,6 +9843,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-httt.mo
@@ -9154,6 +9866,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-httt.mo
@@ -9176,6 +9889,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-httt.mo
@@ -9198,6 +9912,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-httt.mo
@@ -9220,6 +9935,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-httt.mo
@@ -9242,6 +9958,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-httt.mo
@@ -9264,6 +9981,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-httt.mo
@@ -9286,6 +10004,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-httt.mo
@@ -9308,6 +10027,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-httt.mo
@@ -9330,6 +10050,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-httt.mo
@@ -9352,6 +10073,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-httt.mo
@@ -9374,6 +10096,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-httt.mo
@@ -9396,6 +10119,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-httt.mo
@@ -9418,6 +10142,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-dm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-httt.mo
@@ -9437,13 +10162,37 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/wesnoth
+@dirrm %%DATADIR%%/data/ai/ais
+@dirrm %%DATADIR%%/data/ai/aliases
+@dirrm %%DATADIR%%/data/ai/dev
+@dirrm %%DATADIR%%/data/ai/formula/lib
 @dirrm %%DATADIR%%/data/ai/formula
+@dirrm %%DATADIR%%/data/ai/maps
+@dirrm %%DATADIR%%/data/ai/scenarios/ai_arena_small
+@dirrm %%DATADIR%%/data/ai/scenarios
+@dirrm %%DATADIR%%/data/ai/utils
 @dirrm %%DATADIR%%/data/ai
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion/images
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion/maps
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion/scenarios
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion/utils
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/halo
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/items
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/portraits
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/story/portraits
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/story
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/terrain
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/images/units
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/images
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/maps
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/scenarios
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/sounds
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/terrain-graphics
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/units
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs/utils
+@dirrm %%DATADIR%%/data/campaigns/Delfadors_Memoirs
 @dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/misc
 @dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/portraits
 @dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/story
@@ -9501,6 +10250,7 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/campaigns/Northern_Rebirth/images
 @dirrm %%DATADIR%%/data/campaigns/Northern_Rebirth/maps
 @dirrm %%DATADIR%%/data/campaigns/Northern_Rebirth/scenarios
+@dirrm %%DATADIR%%/data/campaigns/Northern_Rebirth/units
 @dirrm %%DATADIR%%/data/campaigns/Northern_Rebirth/utils
 @dirrm %%DATADIR%%/data/campaigns/Northern_Rebirth
 @dirrm %%DATADIR%%/data/campaigns/Sceptre_of_Fire/images/items
@@ -9570,7 +10320,6 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/projectiles
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/terrain
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/alien
-@dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/humans
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/monsters
@@ -9594,6 +10343,7 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/campaigns
 @dirrm %%DATADIR%%/data/core/editor
 @dirrm %%DATADIR%%/data/core/images/attacks
+@dirrm %%DATADIR%%/data/core/images/editor
 @dirrm %%DATADIR%%/data/core/images/halo/elven
 @dirrm %%DATADIR%%/data/core/images/halo/holy
 @dirrm %%DATADIR%%/data/core/images/halo/merfolk
@@ -9601,20 +10351,26 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/core/images/halo
 @dirrm %%DATADIR%%/data/core/images/help
 @dirrm %%DATADIR%%/data/core/images/items
+@dirrm %%DATADIR%%/data/core/images/lobby
 @dirrm %%DATADIR%%/data/core/images/maps
 @dirrm %%DATADIR%%/data/core/images/misc
+@dirrm %%DATADIR%%/data/core/images/portraits/drakes/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/drakes
 @dirrm %%DATADIR%%/data/core/images/portraits/dwarves/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/dwarves
 @dirrm %%DATADIR%%/data/core/images/portraits/elves/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/elves
+@dirrm %%DATADIR%%/data/core/images/portraits/goblins/transparent
+@dirrm %%DATADIR%%/data/core/images/portraits/goblins
 @dirrm %%DATADIR%%/data/core/images/portraits/humans/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/humans
 @dirrm %%DATADIR%%/data/core/images/portraits/merfolk/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/merfolk
 @dirrm %%DATADIR%%/data/core/images/portraits/monsters/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/monsters
+@dirrm %%DATADIR%%/data/core/images/portraits/nagas/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/nagas
+@dirrm %%DATADIR%%/data/core/images/portraits/orcs/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/orcs
 @dirrm %%DATADIR%%/data/core/images/portraits/saurians/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/saurians
@@ -9622,11 +10378,14 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/core/images/portraits/trolls
 @dirrm %%DATADIR%%/data/core/images/portraits/undead/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/undead
+@dirrm %%DATADIR%%/data/core/images/portraits/woses/transparent
+@dirrm %%DATADIR%%/data/core/images/portraits/woses
 @dirrm %%DATADIR%%/data/core/images/portraits
 @dirrm %%DATADIR%%/data/core/images/projectiles
 @dirrm %%DATADIR%%/data/core/images/scenery
 @dirrm %%DATADIR%%/data/core/images/story
 @dirrm %%DATADIR%%/data/core/images/terrain/castle/elven
+@dirrm %%DATADIR%%/data/core/images/terrain/castle/orcish
 @dirrm %%DATADIR%%/data/core/images/terrain/castle
 @dirrm %%DATADIR%%/data/core/images/terrain/cave
 @dirrm %%DATADIR%%/data/core/images/terrain/flat
@@ -9664,6 +10423,7 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/core/macros
 @dirrm %%DATADIR%%/data/core/music
 @dirrm %%DATADIR%%/data/core/sounds/ambient
+@dirrm %%DATADIR%%/data/core/sounds/horn-signals
 @dirrm %%DATADIR%%/data/core/sounds
 @dirrm %%DATADIR%%/data/core/terrain-graphics
 @dirrm %%DATADIR%%/data/core/units/bats
@@ -9693,17 +10453,23 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/gui
 @dirrm %%DATADIR%%/data/hardwired
 @dirrm %%DATADIR%%/data/languages
+@dirrm %%DATADIR%%/data/lua
 @dirrm %%DATADIR%%/data/multiplayer/factions
 @dirrm %%DATADIR%%/data/multiplayer/maps
 @dirrm %%DATADIR%%/data/multiplayer/scenarios/ANL_utils
 @dirrm %%DATADIR%%/data/multiplayer/scenarios
 @dirrm %%DATADIR%%/data/multiplayer
+@dirrm %%DATADIR%%/data/test/macros
+@dirrm %%DATADIR%%/data/test/scenarios
+@dirrm %%DATADIR%%/data/test/test
+@dirrm %%DATADIR%%/data/test
 @dirrm %%DATADIR%%/data/themes
 @dirrm %%DATADIR%%/data/tools/addon_manager
 @dirrm %%DATADIR%%/data/tools/castle-cutter
 @dirrm %%DATADIR%%/data/tools/emacs_mode
 @dirrm %%DATADIR%%/data/tools/exploder/models
 @dirrm %%DATADIR%%/data/tools/exploder
+@dirrm %%DATADIR%%/data/tools/hexometer
 @dirrm %%DATADIR%%/data/tools/unit_tree
 @dirrm %%DATADIR%%/data/tools/vim
 @dirrm %%DATADIR%%/data/tools/wesnoth
@@ -9723,7 +10489,7 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/images/tools/exploder
 @dirrm %%DATADIR%%/images/tools
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/locales
+%%DUMMYLOCALES%%@dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/manual/images/de
@@ -9744,6 +10510,8 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrmtry man/en_GB
 @dirrmtry man/es/man6
 @dirrmtry man/es
+@dirrmtry man/et/man6
+@dirrmtry man/et
 @dirrmtry man/fi/man6
 @dirrmtry man/fi
 @dirrmtry man/fr/man6
@@ -9762,6 +10530,8 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrmtry man/pl
 @dirrmtry man/racv/man6
 @dirrmtry man/racv
+@dirrmtry man/ru/man6
+@dirrmtry man/ru
 @dirrmtry man/sk/man6
 @dirrmtry man/sk
 @dirrmtry man/sr/man6
@@ -9794,3 +10564,5 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tl
 %%SERVER%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
