@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Color/Scheme.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Scheme/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Scheme
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color
+@dirrmtry %%SITE_PERL%%/Color
