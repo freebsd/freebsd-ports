@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.36
+PORTVERSION=	2.42
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +14,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Powerful, extensible charting
 
-BUILD_DEPENDS=	p5-Moose>=0.57:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-AttributeHelpers>=0.13:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
-		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
-		p5-DateTime-Set>=0.25:${PORTSDIR}/devel/p5-DateTime-Set \
+BUILD_DEPENDS=	p5-Color-Palette>=0.091400:${PORTSDIR}/graphics/p5-Color-Palette \
+		p5-Color-Scheme>=1.02:${PORTSDIR}/graphics/p5-Color-Scheme \
+		p5-Moose>=0.76:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-AttributeHelpers>=0.17:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
+		p5-DateTime>=0.47:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Set>=0.27:${PORTSDIR}/devel/p5-DateTime-Set \
 		p5-Geometry-Primitive>=0.13:${PORTSDIR}/graphics/p5-Geometry-Primitive \
-		p5-Graphics-Primitive>=0.38:${PORTSDIR}/graphics/p5-Graphics-Primitive \
-		p5-Graphics-Primitive-Driver-Cairo>=0.33:${PORTSDIR}/graphics/p5-Graphics-Primitive-Driver-Cairo \
-		p5-Layout-Manager>=0.20:${PORTSDIR}/graphics/p5-Layout-Manager
+		p5-Graphics-Color>=0.20:${PORTSDIR}/graphics/p5-Graphics-Color \
+		p5-Graphics-Primitive>=0.42:${PORTSDIR}/graphics/p5-Graphics-Primitive \
+		p5-Graphics-Primitive-Driver-Cairo>=0.39:${PORTSDIR}/graphics/p5-Graphics-Primitive-Driver-Cairo \
+		p5-Layout-Manager>=0.29:${PORTSDIR}/graphics/p5-Layout-Manager
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
@@ -42,7 +45,7 @@ MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Decoration::Glass.3 \
 		Chart::Clicker::Decoration::Grid.3 \
 		Chart::Clicker::Decoration::Legend.3 \
-		Chart::Clicker::Decoration::LegendItem.3 \
+		Chart::Clicker::Decoration::Legend::Tabular.3 \
 		Chart::Clicker::Decoration::MarkerOverlay.3 \
 		Chart::Clicker::Decoration::OverAxis.3 \
 		Chart::Clicker::Decoration::Plot.3 \
@@ -57,6 +60,7 @@ MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Renderer::Pie.3 \
 		Chart::Clicker::Renderer::Point.3 \
 		Chart::Clicker::Renderer::StackedArea.3 \
-		Chart::Clicker::Renderer::StackedBar.3
+		Chart::Clicker::Renderer::StackedBar.3 \
+		Chart::Clicker::Tutorial.3
 
 .include <bsd.port.mk>
