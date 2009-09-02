@@ -13,6 +13,6 @@ As of version 1.5, Happy is capable of parsing full Haskell. We have a
 Haskell parser that uses Happy, which will shortly be part of the
 library collection distributed with GHC.
 
-WWW:	http://www.haskell.org/happy/
+WWW: http://www.haskell.org/happy/
 
 -- Simon Marlow <simonmar@microsoft.com>

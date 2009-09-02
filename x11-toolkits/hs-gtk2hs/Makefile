@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2hs
 PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	SF
@@ -29,14 +29,51 @@ USE_GMAKE=	yes
 SUB_FILES=	pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 
-GHC_VERSION=	6.8.3
-PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
+GHC_VERSION=	6.10.4
+GTK2HS_VERSION=	${PORTVERSION}
+
+GTK2HS_LIBDIR_REL=	lib/${PORTNAME}
+
+PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
+		GTK2HS_VERSION=${GTK2HS_VERSION} \
+		GTK2HS_LIBDIR_REL=${GTK2HS_LIBDIR_REL}
+
 SUB_LIST+=	GHC_VERSION="${GHC_VERSION}" \
 		PORTVERSION=${PORTVERSION} \
 		PKGS="${PKGS}"
 
-PKGS=		glib gio gtk glade cairo svgcairo gtkglext gconf \
-		gtksourceview2 mozembed soegtk gstreamer \
-		gnomevfs
+PKGS=		glib cairo gstreamer gnomevfs gio \
+		gtk glade svgcairo gtkglext gconf \
+		gtksourceview2 mozembed soegtk
+
+CONFIGURE_ENV+=	GIO_CFLAGS="-I${LOCALBASE}/include/gio-unix-2.0"
+
+.if defined(NOPORTDOCS)
+PLIST_SUB+=		NOPORTDOCS=""
+.else
+PLIST_SUB+=		NOPORTDOCS="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+
+PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
+.if !empty(PORT_HADDOCK:M?0)
+BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+.endif
+
+CONFIGURE_ARGS+=	--enable-docs
+
+PORTDOCS=	*
+.endif
+
+post-install:
+.if defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.endif
+	@${INSTALL_DATA} ${WRKSRC}/docs/prologue.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/COPYING.GPLv3 ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/COPYING.LGPLv3 ${DOCSDIR}
 
 .include <bsd.port.mk>

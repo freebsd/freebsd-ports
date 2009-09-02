@@ -1,19 +1,20 @@
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSzlib-%%PORTVERSION%%.a
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/HSzlib-%%PORTVERSION%%.o
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Codec/Compression/GZip.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib/Internal.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib/Raw.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib/Stream.hi
-%%SUBDIR%%/register.sh
-share/doc/zlib-%%PORTVERSION%%/LICENSE
-@dirrm share/doc/zlib-%%PORTVERSION%%
-@dirrm lib/zlib-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib
-@dirrm lib/zlib-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Codec/Compression
-@dirrm lib/zlib-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Codec
-@dirrm lib/zlib-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
-@dirrm lib/zlib-%%PORTVERSION%%
-@exec /bin/sh %D/%%SUBDIR%%/register.sh
+@comment $FreeBSD$
+%%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSzlib-%%ZLIB_VERSION%%.a
+%%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSzlib-%%ZLIB_VERSION%%.o
+%%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Compression/GZip.hi
+%%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib.hi
+%%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib/Internal.hi
+%%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib/Raw.hi
+%%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib/Stream.hi
+%%ZLIB_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Compression/Zlib
+@dirrm %%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Compression
+@dirrm %%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec
+@dirrm %%ZLIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%ZLIB_LIBDIR_REL%%
+@exec /bin/sh %D/%%ZLIB_LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister zlib
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

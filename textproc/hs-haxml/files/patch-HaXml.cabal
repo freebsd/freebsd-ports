@@ -1,0 +1,11 @@
+--- HaXml.cabal.orig	2009-07-14 10:01:24.000000000 +0000
++++ HaXml.cabal	2009-07-14 10:02:19.000000000 +0000
+@@ -52,7 +52,7 @@
+         Text.XML.HaXml.Xtract.Lex,
+         Text.XML.HaXml.Xtract.Parse
+   hs-source-dirs: src
+-  build-depends: base, haskell98, polyparse==1.2, filepath
++  build-depends: base, haskell98, polyparse >=1.2, filepath
+   if flag(splitBase)
+     build-depends: base >= 3, pretty, random, containers
+   else

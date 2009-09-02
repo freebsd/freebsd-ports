@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/darcs
 etc/bash_completion.d/darcs
 %%SERVER%%%%CGIDIR%%/darcs.cgi

@@ -1,13 +1,14 @@
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSStream-%%PORTVERSION%%.a
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/HSStream-%%PORTVERSION%%.o
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Data/Stream.hi
-%%SUBDIR%%/register.sh
-share/doc/Stream-%%PORTVERSION%%/LICENSE
-@dirrm share/doc/Stream-%%PORTVERSION%%
-@dirrm lib/Stream-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Data
-@dirrm lib/Stream-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
-@dirrm lib/Stream-%%PORTVERSION%%
-@exec /bin/sh %D/%%SUBDIR%%/register.sh
+@comment $FreeBSD$
+%%STREAM_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Stream.hi
+%%STREAM_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSStream-%%STREAM_VERSION%%.o
+%%STREAM_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSStream-%%STREAM_VERSION%%.a
+%%STREAM_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%STREAM_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%STREAM_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%STREAM_LIBDIR_REL%%
+@exec /bin/sh %D/%%STREAM_LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister Stream
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

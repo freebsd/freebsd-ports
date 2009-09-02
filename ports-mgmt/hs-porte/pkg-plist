@@ -1,16 +1,17 @@
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSporte-%%PORTVERSION%%.a
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/HSporte-%%PORTVERSION%%.o
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Porte/Ports.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Porte/Statistics.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Porte/Tool.hi
+@comment $FreeBSD$
 bin/porte
-%%SUBDIR%%/register.sh
-share/doc/porte-%%PORTVERSION%%/LICENSE
-@dirrm share/doc/porte-%%PORTVERSION%%
-@dirrm lib/porte-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Porte
-@dirrm lib/porte-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
-@dirrm lib/porte-%%PORTVERSION%%
-@exec /bin/sh %D/%%SUBDIR%%/register.sh
+%%PORTE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSporte-%%PORTE_VERSION%%.o
+%%PORTE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Porte/Ports.hi
+%%PORTE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Porte/Statistics.hi
+%%PORTE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Porte/Tool.hi
+%%PORTE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSporte-%%PORTE_VERSION%%.a
+%%PORTE_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%PORTE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Porte
+@dirrm %%PORTE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%PORTE_LIBDIR_REL%%
+@exec /bin/sh %D/%%PORTE_LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister porte
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -8,7 +8,7 @@
 
 PORTNAME=	lhs2tex
 PORTVERSION=	1.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://people.cs.uu.nl/andres/${PORTNAME}/
 
@@ -31,16 +31,18 @@ PORTDOCS=	*
 DATADIR=${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 PORTDATA=	*
 
+BROKEN=	Does not compile with GHC 6.10
+
 .include <bsd.port.pre.mk>
 
-INSTALL_TARGET=  install
+INSTALL_TARGET=	install
 
 .if !defined(NOPORTDOCS)
-INSTALL_TARGET+= install-doc
+INSTALL_TARGET+=	install-doc
 .endif
 
 .if !defined(NOPORTDATA)
-INSTALL_TARGET+= install-data
+INSTALL_TARGET+=	install-data
 .endif
 
 MAN1=		lhs2TeX.1

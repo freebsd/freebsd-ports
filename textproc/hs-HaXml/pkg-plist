@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/Canonicalise
 bin/CanonicaliseLazy
 bin/DtdToHaskell
@@ -5,52 +6,52 @@ bin/MkOneOf
 bin/Validate
 bin/Xtract
 bin/XtractLazy
-%%SUBDIR%%/HaXml.pkgconf
-%%SUBDIR%%/Text/XML/HaXml/DtdToHaskell/Convert.hi
-%%SUBDIR%%/Text/XML/HaXml/DtdToHaskell/Instance.hi
-%%SUBDIR%%/Text/XML/HaXml/DtdToHaskell/TypeDef.hi
-%%SUBDIR%%/Text/XML/HaXml/Html/Generate.hi
-%%SUBDIR%%/Text/XML/HaXml/Html/Parse.hi
-%%SUBDIR%%/Text/XML/HaXml/Html/ParseLazy.hi
-%%SUBDIR%%/Text/XML/HaXml/Html/Pretty.hi
-%%SUBDIR%%/Text/XML/HaXml/XmlContent/Parser.hi
-%%SUBDIR%%/Text/XML/HaXml/XmlContent/Haskell.hi
-%%SUBDIR%%/Text/XML/HaXml/Xtract/Combinators.hi
-%%SUBDIR%%/Text/XML/HaXml/Xtract/Lex.hi
-%%SUBDIR%%/Text/XML/HaXml/Xtract/Parse.hi
-%%SUBDIR%%/Text/XML/HaXml/ByteStringPP.hi
-%%SUBDIR%%/Text/XML/HaXml/Combinators.hi
-%%SUBDIR%%/Text/XML/HaXml/Escape.hi
-%%SUBDIR%%/Text/XML/HaXml/Lex.hi
-%%SUBDIR%%/Text/XML/HaXml/OneOfN.hi
-%%SUBDIR%%/Text/XML/HaXml/Parse.hi
-%%SUBDIR%%/Text/XML/HaXml/ParseLazy.hi
-%%SUBDIR%%/Text/XML/HaXml/Posn.hi
-%%SUBDIR%%/Text/XML/HaXml/Pretty.hi
-%%SUBDIR%%/Text/XML/HaXml/SAX.hi
-%%SUBDIR%%/Text/XML/HaXml/ShowXmlLazy.hi
-%%SUBDIR%%/Text/XML/HaXml/TypeMapping.hi
-%%SUBDIR%%/Text/XML/HaXml/Types.hi
-%%SUBDIR%%/Text/XML/HaXml/Util.hi
-%%SUBDIR%%/Text/XML/HaXml/Validate.hi
-%%SUBDIR%%/Text/XML/HaXml/Verbatim.hi
-%%SUBDIR%%/Text/XML/HaXml/Wrappers.hi
-%%SUBDIR%%/Text/XML/HaXml/XmlContent.hi
-%%SUBDIR%%/Text/XML/HaXml.hi
-%%SUBDIR%%/HSHaXml-%%PORTVERSION%%.o
-%%SUBDIR%%/libHSHaXml-%%PORTVERSION%%.a
-@dirrm %%SUBDIR%%/Text/XML/HaXml/DtdToHaskell
-@dirrm %%SUBDIR%%/Text/XML/HaXml/Html
-@dirrm %%SUBDIR%%/Text/XML/HaXml/XmlContent
-@dirrm %%SUBDIR%%/Text/XML/HaXml/Xtract
-@dirrm %%SUBDIR%%/Text/XML/HaXml
-@dirrmtry %%SUBDIR%%/Text/XML
-@dirrmtry %%SUBDIR%%/Text
-@dirrm %%HAXMLDIR%%/%%GHCDIR%%
-@dirrm %%HAXMLDIR%%
-%%RMLIC%%%%DOCSDIR%%/COPYRIGHT
-%%RMLIC%%@dirrm %%DOCSDIR%%
-@exec ghc-pkg register %D/%%SUBDIR%%/HaXml.pkgconf
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSHaXml-%%HAXML_VERSION%%.o
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/ByteStringPP.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Combinators.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/DtdToHaskell/Convert.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/DtdToHaskell/Instance.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/DtdToHaskell/TypeDef.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Escape.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Html/Generate.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Html/Parse.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Html/ParseLazy.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Html/Pretty.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Lex.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/OneOfN.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Parse.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/ParseLazy.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Posn.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Pretty.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/SAX.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/ShowXmlLazy.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/TypeMapping.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Types.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Util.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Validate.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Verbatim.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Wrappers.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/XmlContent.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/XmlContent/Haskell.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/XmlContent/Parser.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Xtract/Combinators.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Xtract/Lex.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Xtract/Parse.hi
+%%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSHaXml-%%HAXML_VERSION%%.a
+%%HAXML_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Xtract
+@dirrm %%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/XmlContent
+@dirrm %%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Html
+@dirrm %%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/DtdToHaskell
+@dirrm %%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml
+@dirrm %%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML
+@dirrm %%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%HAXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%HAXML_LIBDIR_REL%%
+@exec /bin/sh %D/%%HAXML_LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec ghc-pkg unregister HaXml
+@unexec %D/bin/ghc-pkg unregister HaXml
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

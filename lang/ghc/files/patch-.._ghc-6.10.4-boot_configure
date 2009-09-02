@@ -1,0 +1,11 @@
+--- ../ghc-6.10.4-boot/configure.orig
++++ ../ghc-6.10.4-boot/configure
+@@ -1989,6 +1989,8 @@
+         TargetPlatform=x86_64-unknown-linux;;
+ x86_64-*-freebsd*)
+ 	TargetPlatform=x86_64-unknown-freebsd;;
++amd64-*-freebsd*)
++	TargetPlatform=x86_64-unknown-freebsd;;
+ x86_64-*-openbsd*)
+ 	TargetPlatform=x86_64-unknown-openbsd;;
+ x86_64-*-netbsd*)

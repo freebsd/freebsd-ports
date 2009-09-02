@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/happy
 %%SUBDIR%%/GLR_Base
 %%SUBDIR%%/GLR_Lib

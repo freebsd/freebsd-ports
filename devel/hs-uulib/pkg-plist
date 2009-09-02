@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSuulib-%%UULIB_VERSION%%.o
 %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntBag.hi
 %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntMap.hi
@@ -37,8 +38,8 @@
 %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/Utils.hi
 %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSuulib-%%UULIB_VERSION%%.a
 %%UULIB_LIBDIR_REL%%/register.sh
-%%DOCSDIR%%/COPYRIGHT
-@dirrm %%DOCSDIR%%
+%%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util
 @dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner
 @dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty
@@ -48,6 +49,6 @@
 @dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
 @dirrm %%UULIB_LIBDIR_REL%%
 @exec /bin/sh %D/%%UULIB_LIBDIR_REL%%/register.sh
-@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec if [ -x %D/bin/ghc-pkg ]; then %D/bin/ghc-pkg unregister uulib || /usr/bin/true; fi
-@unexec if [ -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old ]; then rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old || /usr/bin/true; fi
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister uulib
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

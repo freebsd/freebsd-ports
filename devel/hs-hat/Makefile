@@ -7,6 +7,7 @@
 
 PORTNAME=	hat
 PORTVERSION=	2.06
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 PKGNAMEPREFIX=	hs-
@@ -18,8 +19,8 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_GNOME=	glib12
 
-OPTIONS=	GHC   "Build with GHC"   on \
-		NHC98 "Build with NHC98" off
+OPTIONS=	GHC   "Build with GHC"   off \
+		NHC98 "Build with NHC98" on
 
 .include <bsd.port.pre.mk>
 
@@ -32,7 +33,11 @@ IGNORE= can be compiled only with one of the compilers.  Please (re)run 'make co
 .endif
 
 .if defined(WITH_NHC98) && ${ARCH} == "amd64"
-IGNORE= on AMD64 is only supported by GHC.  Please (re)run 'make config' and choose GHC
+IGNORE= is not supported on AMD64 by NHC98.
+.endif
+
+.if defined(WITH_GHC)
+IGNORE= is only supported by NHC98.  Please (re)run 'make config' and choose NHC98
 .endif
 
 .if ${ARCH} == "i386"
@@ -76,7 +81,7 @@ PLIST_SUB+=	GHC="@comment "
 .endif
 
 .if defined(WITH_GHC)
-GHC_VERSION=	6.8.3
+GHC_VERSION=	6.10.4
 PLIST_SUB+=	NHC98="@comment "
 PLIST_SUB+=	GHC=""
 PLIST_SUB+=	GHC_VER="608"

@@ -10,9 +10,10 @@ Bibtex, C, Cmake, Coldfusion, Commonlisp, Cpp, Css, D, Djangotemplate,
 Doxygen, Dtd, Eiffel, Erlang, Fortran, Haskell, Html, Java, Javadoc,
 Javascript, Json, Latex, Lex, LiterateHaskell, Lua, Makefile, Matlab,
 Mediawiki, Modula3, Nasm, Objectivec, Ocaml, Pascal, Perl, Php,
-Postscript, Prolog, Python, Rhtml, Ruby, Scala, Scheme, Sgml, Sql,
-SqlMysql, SqlPostgresql, Tcl, Texinfo, Xml, Xslt, Yacc.
+Postscript, Prolog, Python, RelaxNG compact, Rhtml, Ruby, Scala, Scheme,
+Sgml, Sql, SqlMysql, SqlPostgresql, Tcl, Texinfo, Xml, Xslt, Yacc Ada,
+Asp, Awk, Bash,
 
-[1] http://kate-editor.org
+[1] <http://kate-editor.org>
 
 WWW: http://johnmacfarlane.net/highlighting-kate

@@ -1,9 +1,0 @@
-===============================================================
-
-  WARNING: Haddock doesn't like swimming in circles, so can't
-  handle mutually recursive modules currently, then the
-  documentation for the HSghc libraries isn't been compiled
-  and the paths haddock-interfaces and haddock-html about
-  ghc are fake (you can view ghc-pkg describe ghc).
-
-===============================================================

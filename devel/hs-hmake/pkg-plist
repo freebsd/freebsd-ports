@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/harch
 bin/hi
 bin/hmake

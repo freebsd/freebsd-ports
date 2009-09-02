@@ -1,16 +1,17 @@
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSstringsearch-%%PORTVERSION%%.a
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/HSstringsearch-%%PORTVERSION%%.o
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/BoyerMoore.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/KnuthMorrisPratt.hi
-%%SUBDIR%%/register.sh
-share/doc/stringsearch-%%PORTVERSION%%/LICENSE
-@dirrm share/doc/stringsearch-%%PORTVERSION%%
-@dirrm lib/stringsearch-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search
-@dirrm lib/stringsearch-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString
-@dirrm lib/stringsearch-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Data
-@dirrm lib/stringsearch-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
-@dirrm lib/stringsearch-%%PORTVERSION%%
-@exec /bin/sh %D/%%SUBDIR%%/register.sh
+@comment $FreeBSD$
+%%STRINGSEARCH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/BoyerMoore.hi
+%%STRINGSEARCH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/KnuthMorrisPratt.hi
+%%STRINGSEARCH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSstringsearch-%%STRINGSEARCH_VERSION%%.o
+%%STRINGSEARCH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSstringsearch-%%STRINGSEARCH_VERSION%%.a
+%%STRINGSEARCH_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%STRINGSEARCH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search
+@dirrm %%STRINGSEARCH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString
+@dirrm %%STRINGSEARCH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%STRINGSEARCH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%STRINGSEARCH_LIBDIR_REL%%
+@exec /bin/sh %D/%%STRINGSEARCH_LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister stringsearch 
+@unexec %D/bin/ghc-pkg unregister stringsearch
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

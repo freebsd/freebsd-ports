@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/uuagc
 %%DOCSDIR%%/LICENSE
 @dirrm %%DOCSDIR%%

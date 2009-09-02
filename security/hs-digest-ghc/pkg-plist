@@ -1,14 +1,16 @@
 @comment $FreeBSD$
-%%SUBDIR%%/Data/Digest/Adler32.hi
-%%SUBDIR%%/Data/Digest/CRC32.hi
-%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
-%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
-%%SUBDIR%%/%%PORTNAME%%-register.sh
-%%RMLIC%%%%DOCSDIR%%/LICENSE
-%%RMLIC%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SUBDIR%%/Data/Digest
-@dirrmtry %%SUBDIR%%/Data
-@exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
-@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec ghc-pkg unregister %%PORTNAME%%
-@unexec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+%%DIGEST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest/Adler32.hi
+%%DIGEST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest/CRC32.hi
+%%DIGEST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSdigest-%%DIGEST_VERSION%%.o
+%%DIGEST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSdigest-%%DIGEST_VERSION%%.a
+%%DIGEST_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%DIGEST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest
+@dirrm %%DIGEST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%DIGEST_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%DIGEST_LIBDIR_REL%%
+@exec /bin/sh %D/%%DIGEST_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister digest
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

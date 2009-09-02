@@ -6,6 +6,7 @@
 
 PORTNAME=	drift
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://repetae.net/computer/haskell/DrIFT/drop/
 PKGNAMEPREFIX=	hs-
@@ -21,6 +22,7 @@ OPTIONS=	NHC98 "Build with nhc98" off \
 
 .if !defined(WITH_NHC98)
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 .else
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 BROKEN=		Does not build

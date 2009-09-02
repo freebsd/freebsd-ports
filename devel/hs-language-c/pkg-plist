@@ -1,49 +1,51 @@
 @comment $FreeBSD$
-%%SUBDIR%%/Language/C.hi
-%%SUBDIR%%/Language/C/Analysis/AstAnalysis.hi
-%%SUBDIR%%/Language/C/Analysis/Debug.hi
-%%SUBDIR%%/Language/C/Analysis/DeclAnalysis.hi
-%%SUBDIR%%/Language/C/Analysis/DefTable.hi
-%%SUBDIR%%/Language/C/Analysis/Export.hi
-%%SUBDIR%%/Language/C/Analysis/NameSpaceMap.hi
-%%SUBDIR%%/Language/C/Analysis/SemError.hi
-%%SUBDIR%%/Language/C/Analysis/SemRep.hi
-%%SUBDIR%%/Language/C/Analysis/TravMonad.hi
-%%SUBDIR%%/Language/C/Data/Error.hi
-%%SUBDIR%%/Language/C/Data/Ident.hi
-%%SUBDIR%%/Language/C/Data/InputStream.hi
-%%SUBDIR%%/Language/C/Data/Name.hi
-%%SUBDIR%%/Language/C/Data/Node.hi
-%%SUBDIR%%/Language/C/Data/Position.hi
-%%SUBDIR%%/Language/C/Data/RList.hi
-%%SUBDIR%%/Language/C/Parser/Builtin.hi
-%%SUBDIR%%/Language/C/Parser/Lexer.hi
-%%SUBDIR%%/Language/C/Parser/Parser.hi
-%%SUBDIR%%/Language/C/Parser/ParserMonad.hi
-%%SUBDIR%%/Language/C/Parser/Tokens.hi
-%%SUBDIR%%/Language/C/Syntax/AST.hi
-%%SUBDIR%%/Language/C/Syntax/Constants.hi
-%%SUBDIR%%/Language/C/Syntax/Ops.hi
-%%SUBDIR%%/Language/C/System/GCC.hi
-%%SUBDIR%%/Language/C/System/Preprocess.hi
-%%SUBDIR%%/Language/C/Analysis.hi
-%%SUBDIR%%/Language/C/Data.hi
-%%SUBDIR%%/Language/C/Parser.hi
-%%SUBDIR%%/Language/C/Pretty.hi
-%%SUBDIR%%/Language/C/Syntax.hi
-%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
-%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
-%%SUBDIR%%/%%PORTNAME%%-register.sh
-@dirrm %%SUBDIR%%/Language/C/Analysis
-@dirrm %%SUBDIR%%/Language/C/Data
-@dirrm %%SUBDIR%%/Language/C/Parser
-@dirrm %%SUBDIR%%/Language/C/Syntax
-@dirrm %%SUBDIR%%/Language/C/System
-@dirrm %%SUBDIR%%/Language/C
-@dirrmtry %%SUBDIR%%/Language
-%%RMLIC%%%%DOCSDIR%%/LICENSE
-%%RMLIC%%@dirrm %%DOCSDIR%%
-@exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
-@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec ghc-pkg unregister %%PORTNAME%%
-@unexec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSlanguage-c-%%LANGUAGEC_VERSION%%.o
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/AstAnalysis.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/Debug.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/DeclAnalysis.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/DefTable.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/Export.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/NameSpaceMap.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/SemError.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/SemRep.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/TravMonad.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Error.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Ident.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/InputStream.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Name.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Node.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Position.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/RList.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Builtin.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Lexer.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Parser.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/ParserMonad.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Tokens.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Pretty.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax/AST.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax/Constants.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax/Ops.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/System/GCC.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/System/Preprocess.hi
+%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSlanguage-c-%%LANGUAGEC_VERSION%%.a
+%%LANGUAGEC_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/System
+@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax
+@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser
+@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data
+@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis
+@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C
+@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LANGUAGEC_LIBDIR_REL%%
+@exec /bin/sh %D/%%LANGUAGEC_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister language-c
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

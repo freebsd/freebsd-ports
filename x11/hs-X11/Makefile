@@ -6,7 +6,7 @@
 
 PORTNAME=	x11
 PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,60 +16,77 @@ DISTNAME=	X11-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	X11 bindings for Haskell programs
 
-# include the version verbatim. This will require a revision bump
-# on updates, but the correct quoting of `ghc --numeric-version` in the various
-# places is a real nightmare.
-GHC_VERSION=	6.8.3
-PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
-		PORTVERSION=${PORTVERSION} \
-		PORTNAME=${PORTNAME} \
-		SUBDIR=lib/ghc-${GHC_VERSION}/cabal
-
-OPTIONS=	XINERAMA "Build with Xinerama support" off
-
-.include <bsd.port.pre.mk>
-
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
 USE_XORG=	x11 xext sm
 
+GHC_VERSION=	6.10.4
+HSX11_VERSION=	${PORTVERSION}
+
+GHC_CMD=	${LOCALBASE}/bin/ghc
+SETUP_CMD=	./setup
+
+DOCSDIR=		${PREFIX}/share/doc/${DISTNAME}
+HSX11_LIBDIR_REL=	lib/${DISTNAME}
+
+PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
+		HSX11_VERSION=${HSX11_VERSION} \
+		HSX11_LIBDIR_REL=${HSX11_LIBDIR_REL}
+
+OPTIONS=	XINERAMA "Build with Xinerama support" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_XINERAMA)
 USE_XORG+=	xinerama
 .endif
 
-# 'owned' by lang/ghc:
-CABALDIR=	${PREFIX}/lib/ghc-${GHC_VERSION}/cabal
-CABALCMD=	${LOCALBASE}/bin/runghc Setup.hs
-DOCSDIR=	${PREFIX}/share/doc/X11-${PORTVERSION}
-PORTDOCS=	LICENSE html
-SUBDIR=		${PORTNAME}${PKGNAMESUFFIX}
+.if defined(NOPORTDOCS)
+PLIST_SUB+=		NOPORTDOCS=""
+.else
+PLIST_SUB+=		NOPORTDOCS="@comment "
+.endif
 
 .if !defined(NOPORTDOCS)
+
+PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
+.if !empty(PORT_HADDOCK:M?0)
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
-PLIST_SUB+=	RMLIC="@comment "
-.else
-PLIST_SUB+=	RMLIC=""
 .endif
+BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
+
+HSCOLOUR_VERSION=	1.13
+HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
+
+PORTDOCS=	*
+.endif
+
+.SILENT:
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local/include|${LOCALBASE}/include|g' \
 		${WRKSRC}/configure
 
 do-configure:
-	cd ${WRKSRC} && ${CABALCMD} configure --ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
-	 --libsubdir='' --datasubdir=''
+	cd ${WRKSRC} && ${GHC_CMD} --make Setup.hs -o setup -package Cabal \
+		     && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX}
 
 do-build:
-	cd ${WRKSRC} && ${CABALCMD} build \
-	 && ${CABALCMD} --gen-script register
+	cd ${WRKSRC} && ${SETUP_CMD} build \
+		     && ${SETUP_CMD} register --gen-script
+
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${CABALCMD} haddock
+	cd ${WRKSRC} && ${SETUP_CMD} haddock --hyperlink-source \
+					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 .endif
 
 do-install:
-	cd ${WRKSRC} && ${CABALCMD} install \
-	 && ${INSTALL_SCRIPT} ${WRKSRC}/register.sh ${CABALDIR}/${PORTNAME}-register.sh
+	cd ${WRKSRC} && ${SETUP_CMD} install \
+		     && ${INSTALL_SCRIPT} register.sh ${PREFIX}/${HSX11_LIBDIR_REL}/register.sh
+
+post-install:
+	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.post.mk>

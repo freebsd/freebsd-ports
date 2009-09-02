@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmobar
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmobar/${PORTVERSION}/ \
 		http://carte.kerneled.org/mirror/

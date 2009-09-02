@@ -6,7 +6,7 @@
 
 PORTNAME=	alex
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/alex/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -15,6 +15,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Alex is a tool for generating lexical analysers in Haskell
 
 BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \

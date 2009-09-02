@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Candy exit with Ctrl+C
+trap 'echo -e "\a"; echo -e "WoW! Bye.\n"; exit 2' 2
+
+sumtest="%%WRKDIR%%/sumtest.txt"
+testdir="%%WRKDIR%%/testsuite-%%GHC_VERSION%%/tests/ghc-regress"
+
+%%GMAKE%% -C ${testdir} EXTRA_RUNTEST_OPTS="--output-summary=${sumtest}" TEST_HC="%%PREFIX%%/bin/ghc" fast || echo -e "\aThe testsuite failed"

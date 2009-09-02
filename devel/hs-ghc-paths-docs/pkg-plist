@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/html/GHC-Paths.html
+%%DOCSDIR%%/html/doc-index.html
+%%DOCSDIR%%/html/frames.html
+%%DOCSDIR%%/html/ghc-paths.haddock
+%%DOCSDIR%%/html/haddock-util.js
+%%DOCSDIR%%/html/haddock.css
+%%DOCSDIR%%/html/haskell_icon.gif
+%%DOCSDIR%%/html/index-frames.html
+%%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/mini_GHC-Paths.html
+%%DOCSDIR%%/html/minus.gif
+%%DOCSDIR%%/html/plus.gif
+%%DOCSDIR%%/html/src/GHC-Paths.html
+%%DOCSDIR%%/html/src/hscolour.css
+@dirrm %%DOCSDIR%%/html/src
+@dirrm %%DOCSDIR%%/html
+@dirrmtry %%DOCSDIR%%

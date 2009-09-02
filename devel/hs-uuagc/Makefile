@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uuagc
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -19,7 +18,7 @@ BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		hs-uulib>=0.9.5:${PORTSDIR}/devel/hs-uulib
 LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 
-GHC_VERSION=	6.8.3
+GHC_VERSION=	6.10.4
 
 GHC_CMD=	${LOCALBASE}/bin/ghc
 SETUP_CMD=	./setup

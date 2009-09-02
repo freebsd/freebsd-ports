@@ -7,7 +7,7 @@
 
 PORTNAME=	hmake
 PORTVERSION=	3.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/hmake/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
@@ -17,11 +17,10 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Intelligent compilation management tool for Haskell programs
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-.if exists(${LOCALBASE}/lib/libreadline.so)
-LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline
-.endif
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+		hs-readline>=1.0.1.0:${PORTSDIR}/devel/hs-readline
 RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
@@ -33,6 +32,10 @@ USE_GMAKE=	YES
 PLIST_SUB+=	ARCH=ix86
 .elif ${ARCH} == "amd64"
 PLIST_SUB+=	ARCH=amd64
+.endif
+
+.if exists(${LOCALBASE}/lib/libreadline.so)
+LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 do-install:

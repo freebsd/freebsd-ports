@@ -1,0 +1,11 @@
+--- libraries/Makefile.orig	2009-07-14 19:10:53.000000000 +0200
++++ libraries/Makefile	2009-08-14 02:48:44.000000000 +0200
+@@ -153,7 +153,7 @@
+ 	cd Cabal    && $(CABAL) build     --distpref=dist-bootstrapping
+ 	cd Cabal    && $(CABAL) install   --distpref=dist-bootstrapping --inplace
+ 	-cd hpc    && $(CABAL) clean     --distpref=dist-bootstrapping
+-	cd hpc    && $(CABAL) configure --distpref=dist-bootstrapping --with-compiler=$(GHC) --with-hc-pkg=$(GHC_PKG) --package-db=$(HERE_ABS)/$@.tmp
++	cd hpc    && $(CABAL) configure --distpref=dist-bootstrapping --with-compiler=$(GHC) --with-hc-pkg=$(GHC_PKG) --with-hsc2hs=${BSD_PATH_TO_HSC2HS} --package-db=$(HERE_ABS)/$@.tmp --extra-include-dirs=%%LOCALBASE%%/include --extra-lib-dirs=%%LOCALBASE%%/lib
+ 	cd hpc    && $(CABAL) build     --distpref=dist-bootstrapping
+ 	cd hpc    && $(CABAL) install   --distpref=dist-bootstrapping --inplace
+ 	mv $@.tmp $@

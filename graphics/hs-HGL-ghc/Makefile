@@ -7,7 +7,7 @@
 
 PORTNAME=	HGL
 PORTVERSION=	3.2.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,10 +16,12 @@ PKGNAMESUFFIX=	-ghc
 MAINTAINER=	jacula@gmail.com
 COMMENT=	A simple graphics library based on X11 or Win32
 
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+		hs-x11-ghc>=1.2.1:${PORTSDIR}/x11/hs-x11-ghc
+RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-x11-ghc>=1.2.1:${PORTSDIR}/x11/hs-x11-ghc
 
-GHC_VERSION=	6.8.3
+GHC_VERSION=	6.10.4
 HGL_VERSION=	${PORTVERSION}
 
 CABAL_CMD=	${LOCALBASE}/bin/runghc Setup.hs
@@ -38,10 +40,14 @@ PLIST_SUB+=		NOPORTDOCS="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock \
-		HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.12
+PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
+.if !empty(PORT_HADDOCK:M?0)
+BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+.endif
+BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
+
+HSCOLOUR_VERSION=	1.13
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 PORTDOCS=	*

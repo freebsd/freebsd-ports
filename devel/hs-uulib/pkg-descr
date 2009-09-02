@@ -1,24 +1,4 @@
-Fast Parser Combinators and Pretty Printing Combinators
-libraries by the Utrecht University.
+Fast Parser Combinators and Pretty Printing Combinators libraries by the
+Utrecht University.
 
-author:
-maintainer:	Arie Middelkoop <ariem@cs.uu.nl>
-license:	LGPL-2.1
-WWW:		http://www.cs.uu.nl/wiki/HUT/AttributeGrammarSystem
-package-url:	http://nix.cs.uu.nl/dist/hut/
-
-exposed-modules:
-	UU.Parsing.CharParser UU.Parsing.Derived
-	UU.Parsing.Interface UU.Parsing.MachineInterface
-	UU.Parsing.Merge UU.Parsing.Offside UU.Parsing.Perms
-	UU.Parsing.StateParser UU.Parsing UU.DData.IntBag 
-	UU.DData.Map UU.DData.MultiSet UU.DData.Queue
-	UU.DData.Scc UU.DData.Seq UU.DData.Set UU.PPrint
-	UU.Pretty.Ext UU.Pretty UU.Scanner.GenToken UU.Scanner.GenTokenOrd
-	UU.Scanner.GenTokenParser UU.Scanner.GenTokenSymbol
-	UU.Scanner.Position UU.Scanner.Scanner
-	UU.Scanner.Token UU.Scanner.TokenParser UU.Scanner.TokenShow
-	UU.Scanner UU.Util.BinaryTrees UU.Util.PermTree UU.Util.Utils
-	UU.Pretty.Basic UU.Parsing.Machine    
-	UU.DData.IntMap  
-	UU.DData.IntSet        
+WWW: http://www.cs.uu.nl/wiki/HUT/AttributeGrammarSystem

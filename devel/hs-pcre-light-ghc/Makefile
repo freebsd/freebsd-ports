@@ -7,7 +7,7 @@
 
 PORTNAME=	pcre-light
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -20,38 +20,61 @@ BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
 
-GHC_VERSION=	6.8.3
-CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
-CABALDIR=	lib/ghc-${GHC_VERSION}/cabal
+GHC_VERSION=		6.10.4
+PCRELIGHT_VERSION=	${PORTVERSION}
 
-SUBDIR=		lib/${PORTNAME}-${PORTVERSION}
-PLIST_SUB=	GHC_VERSION=${GHC_VERSION}		\
-		PORTNAME=${PORTNAME}			\
-		PORTVERSION=${PORTVERSION}		\
-		SUBDIR=${CABALDIR}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	LICENSE html
+GHC_CMD=	${LOCALBASE}/bin/ghc
+SETUP_CMD=	./setup
 
-CONFIGURE_ARGS=	--ghc --prefix=${PREFIX} --libdir=${PREFIX}/${CABALDIR} --libsubdir='' --datasubdir=''
+DOCSDIR=		${PREFIX}/share/doc/${DISTNAME}
+PCRELIGHT_LIBDIR_REL=	lib/${DISTNAME}
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
+		PCRELIGHT_VERSION=${PCRELIGHT_VERSION} \
+		PCRELIGHT_LIBDIR_REL=${PCRELIGHT_LIBDIR_REL}
+
+.if defined(NOPORTDOCS)
+PLIST_SUB+=		NOPORTDOCS=""
 .else
-PLIST_DIRS+=	%%DOCSDIR%%
-PLIST_FILES+=	%%DOCSDIR%%/LICENSE
+PLIST_SUB+=		NOPORTDOCS="@comment "
 .endif
 
+.if !defined(NOPORTDOCS)
+
+PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
+.if !empty(PORT_HADDOCK:M?0)
+BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+.endif
+BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
+
+HSCOLOUR_VERSION=	1.13
+HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
+
+PORTDOCS=	*
+.endif
+
+.SILENT:
+
 do-configure:
-	cd ${WRKSRC} && ${CABALCMD} configure ${CONFIGURE_ARGS}
+	cd ${WRKSRC} && ${GHC_CMD} --make Setup.lhs -o setup -package Cabal \
+		     && ${SETUP_CMD} configure --haddock-options=-w \
+		     			       --extra-include-dirs=${LOCALBASE}/include \
+					       --extra-lib-dirs=${LOCALBASE}/lib  --prefix=${PREFIX}
 
 do-build:
-	cd ${WRKSRC} && ${CABALCMD} build && ${CABALCMD} --gen-script register
+	cd ${WRKSRC} && ${SETUP_CMD} build \
+		     && ${SETUP_CMD} register --gen-script
+
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${CABALCMD} haddock
+	cd ${WRKSRC} && ${SETUP_CMD} haddock --hyperlink-source \
+					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 .endif
 
 do-install:
-	cd ${WRKSRC} && ${CABALCMD} install
-	${INSTALL_SCRIPT} ${WRKSRC}/register.sh ${PREFIX}/${CABALDIR}/${PORTNAME}-register.sh
+	cd ${WRKSRC} && ${SETUP_CMD} install \
+		     && ${INSTALL_SCRIPT} register.sh ${PREFIX}/${PCRELIGHT_LIBDIR_REL}/register.sh
+
+post-install:
+	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.mk>
