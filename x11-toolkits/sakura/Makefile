@@ -6,37 +6,26 @@
 #
 
 PORTNAME=	sakura
-PORTVERSION=	2.3.3
-PORTREVISION=	4
+PORTVERSION=	2.3.4
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/ \
-		LOCAL/chinsan/${PORTNAME}/
+MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator based on GTK and VTE
 
-USE_CMAKE=	yes
 USE_GNOME=	vte
-CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
-
-.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
+USE_CMAKE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/NOT MATCHES "Debug"/d ; \
+		 /"-O2"/d ; \
+		 /FILES INSTALL/d' ${WRKSRC}/CMakeLists.txt
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
 .endif
-
-do-build:
-	@(cd ${BUILD_WRKSRC}; \
-	cmake ${CMAKE_ARGS} .; \
-	${MAKE})
-
-do-install:
-	@(cd ${BUILD_WRKSRC}; \
-	${MAKE} install)
 
 .include <bsd.port.mk>
