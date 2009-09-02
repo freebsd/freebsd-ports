@@ -13,11 +13,10 @@ bin/robocode
 %%DATADIR%%/javadoc/overview-tree.html
 %%DATADIR%%/javadoc/package-list
 %%DATADIR%%/javadoc/resources/inherit.gif
-%%DATADIR%%/javadoc/robocode/_AdvancedRadiansRobot.html
-%%DATADIR%%/javadoc/robocode/_AdvancedRobot.html
-%%DATADIR%%/javadoc/robocode/_Robot.html
-%%DATADIR%%/javadoc/robocode/_RobotBase.html
 %%DATADIR%%/javadoc/robocode/AdvancedRobot.html
+%%DATADIR%%/javadoc/robocode/BattleEndedEvent.html
+%%DATADIR%%/javadoc/robocode/BattleResults.html
+%%DATADIR%%/javadoc/robocode/BattleRules.html
 %%DATADIR%%/javadoc/robocode/Bullet.html
 %%DATADIR%%/javadoc/robocode/BulletHitBulletEvent.html
 %%DATADIR%%/javadoc/robocode/BulletHitEvent.html
@@ -31,12 +30,80 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/HitByBulletEvent.html
 %%DATADIR%%/javadoc/robocode/HitRobotEvent.html
 %%DATADIR%%/javadoc/robocode/HitWallEvent.html
+%%DATADIR%%/javadoc/robocode/JuniorRobot.html
+%%DATADIR%%/javadoc/robocode/KeyEvent.html
+%%DATADIR%%/javadoc/robocode/KeyPressedEvent.html
+%%DATADIR%%/javadoc/robocode/KeyReleasedEvent.html
+%%DATADIR%%/javadoc/robocode/KeyTypedEvent.html
 %%DATADIR%%/javadoc/robocode/MessageEvent.html
+%%DATADIR%%/javadoc/robocode/MouseClickedEvent.html
+%%DATADIR%%/javadoc/robocode/MouseDraggedEvent.html
+%%DATADIR%%/javadoc/robocode/MouseEnteredEvent.html
+%%DATADIR%%/javadoc/robocode/MouseEvent.html
+%%DATADIR%%/javadoc/robocode/MouseExitedEvent.html
+%%DATADIR%%/javadoc/robocode/MouseMovedEvent.html
+%%DATADIR%%/javadoc/robocode/MousePressedEvent.html
+%%DATADIR%%/javadoc/robocode/MouseReleasedEvent.html
+%%DATADIR%%/javadoc/robocode/MouseWheelMovedEvent.html
 %%DATADIR%%/javadoc/robocode/MoveCompleteCondition.html
+%%DATADIR%%/javadoc/robocode/PaintEvent.html
 %%DATADIR%%/javadoc/robocode/RadarTurnCompleteCondition.html
+%%DATADIR%%/javadoc/robocode/Robocode.html
+%%DATADIR%%/javadoc/robocode/RobocodeFileOutputStream.html
+%%DATADIR%%/javadoc/robocode/RobocodeFileWriter.html
+%%DATADIR%%/javadoc/robocode/Robot.html
+%%DATADIR%%/javadoc/robocode/RobotDeathEvent.html
+%%DATADIR%%/javadoc/robocode/RobotStatus.html
+%%DATADIR%%/javadoc/robocode/Rules.html
+%%DATADIR%%/javadoc/robocode/ScannedRobotEvent.html
+%%DATADIR%%/javadoc/robocode/SkippedTurnEvent.html
+%%DATADIR%%/javadoc/robocode/StatusEvent.html
+%%DATADIR%%/javadoc/robocode/TeamRobot.html
+%%DATADIR%%/javadoc/robocode/TurnCompleteCondition.html
+%%DATADIR%%/javadoc/robocode/WinEvent.html
+%%DATADIR%%/javadoc/robocode/control/BattleSpecification.html
+%%DATADIR%%/javadoc/robocode/control/BattlefieldSpecification.html
+%%DATADIR%%/javadoc/robocode/control/RobocodeEngine.html
+%%DATADIR%%/javadoc/robocode/control/RobocodeListener.html
+%%DATADIR%%/javadoc/robocode/control/RobotResults.html
+%%DATADIR%%/javadoc/robocode/control/RobotSpecification.html
+%%DATADIR%%/javadoc/robocode/control/events/BattleAdaptor.html
+%%DATADIR%%/javadoc/robocode/control/events/BattleCompletedEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/BattleErrorEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/BattleEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/BattleFinishedEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/BattleMessageEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/BattlePausedEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/BattleResumedEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/BattleStartedEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/IBattleListener.html
+%%DATADIR%%/javadoc/robocode/control/events/RoundEndedEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/RoundStartedEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/TurnEndedEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/TurnStartedEvent.html
+%%DATADIR%%/javadoc/robocode/control/events/package-frame.html
+%%DATADIR%%/javadoc/robocode/control/events/package-summary.html
+%%DATADIR%%/javadoc/robocode/control/events/package-tree.html
+%%DATADIR%%/javadoc/robocode/control/package-frame.html
+%%DATADIR%%/javadoc/robocode/control/package-summary.html
+%%DATADIR%%/javadoc/robocode/control/package-tree.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/BulletState.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/IBulletSnapshot.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/IDebugProperty.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/IRobotSnapshot.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/IScoreSnapshot.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/ITurnSnapshot.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/RobotState.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/package-frame.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/package-summary.html
+%%DATADIR%%/javadoc/robocode/control/snapshot/package-tree.html
+%%DATADIR%%/javadoc/robocode/package-frame.html
+%%DATADIR%%/javadoc/robocode/package-summary.html
+%%DATADIR%%/javadoc/robocode/package-tree.html
 %%DATADIR%%/javadoc/robocode/robotinterfaces/IAdvancedEvents.html
 %%DATADIR%%/javadoc/robocode/robotinterfaces/IAdvancedRobot.html
 %%DATADIR%%/javadoc/robocode/robotinterfaces/IBasicEvents.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IBasicEvents2.html
 %%DATADIR%%/javadoc/robocode/robotinterfaces/IBasicRobot.html
 %%DATADIR%%/javadoc/robocode/robotinterfaces/IInteractiveEvents.html
 %%DATADIR%%/javadoc/robocode/robotinterfaces/IInteractiveRobot.html
@@ -56,37 +123,11 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/robotinterfaces/peer/package-frame.html
 %%DATADIR%%/javadoc/robocode/robotinterfaces/peer/package-summary.html
 %%DATADIR%%/javadoc/robocode/robotinterfaces/peer/package-tree.html
-%%DATADIR%%/javadoc/robocode/Robocode.html
-%%DATADIR%%/javadoc/robocode/RobocodeFileOutputStream.html
-%%DATADIR%%/javadoc/robocode/RobocodeFileWriter.html
-%%DATADIR%%/javadoc/robocode/Robot.html
-%%DATADIR%%/javadoc/robocode/RobotDeathEvent.html
-%%DATADIR%%/javadoc/robocode/Rules.html
-%%DATADIR%%/javadoc/robocode/ScannedRobotEvent.html
-%%DATADIR%%/javadoc/robocode/SkippedTurnEvent.html
-%%DATADIR%%/javadoc/robocode/TeamRobot.html
-%%DATADIR%%/javadoc/robocode/TurnCompleteCondition.html
-%%DATADIR%%/javadoc/robocode/WinEvent.html
-%%DATADIR%%/javadoc/robocode/control/BattleSpecification.html
-%%DATADIR%%/javadoc/robocode/control/BattlefieldSpecification.html
-%%DATADIR%%/javadoc/robocode/control/RobocodeEngine.html
-%%DATADIR%%/javadoc/robocode/control/RobocodeListener.html
-%%DATADIR%%/javadoc/robocode/control/RobotResults.html
-%%DATADIR%%/javadoc/robocode/control/RobotSpecification.html
-%%DATADIR%%/javadoc/robocode/control/package-frame.html
-%%DATADIR%%/javadoc/robocode/control/package-summary.html
-%%DATADIR%%/javadoc/robocode/control/package-tree.html
-%%DATADIR%%/javadoc/robocode/package-frame.html
-%%DATADIR%%/javadoc/robocode/package-summary.html
-%%DATADIR%%/javadoc/robocode/package-tree.html
-%%DATADIR%%/javadoc/robocode/JuniorRobot.html
-%%DATADIR%%/javadoc/robocode/RobotStatus.html
-%%DATADIR%%/javadoc/robocode/StatusEvent.html
-%%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/robocode/util/Utils.html
 %%DATADIR%%/javadoc/robocode/util/package-frame.html
 %%DATADIR%%/javadoc/robocode/util/package-summary.html
 %%DATADIR%%/javadoc/robocode/util/package-tree.html
+%%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/libs/cachecleaner.jar
 %%DATADIR%%/libs/codesize.jar
@@ -94,12 +135,6 @@ bin/robocode
 %%DATADIR%%/libs/roborumble.jar
 %%DATADIR%%/license/cpl-v10.html
 %%DATADIR%%/robocode.ico
-%%DATADIR%%/robots/sample/Interactive.java
-%%DATADIR%%/robots/sample/Interactive.properties
-%%DATADIR%%/robots/sample/MyFirstJuniorRobot.java
-%%DATADIR%%/robots/sample/MyFirstJuniorRobot.properties
-%%DATADIR%%/robots/sample/Interactive.class
-%%DATADIR%%/robots/sample/MyFirstJuniorRobot.class
 %%DATADIR%%/robots/sample/Corners.class
 %%DATADIR%%/robots/sample/Corners.java
 %%DATADIR%%/robots/sample/Corners.properties
@@ -109,12 +144,18 @@ bin/robocode
 %%DATADIR%%/robots/sample/Fire.class
 %%DATADIR%%/robots/sample/Fire.java
 %%DATADIR%%/robots/sample/Fire.properties
+%%DATADIR%%/robots/sample/Interactive.class
+%%DATADIR%%/robots/sample/Interactive.java
+%%DATADIR%%/robots/sample/Interactive.properties
+%%DATADIR%%/robots/sample/MyFirstJuniorRobot.class
+%%DATADIR%%/robots/sample/MyFirstJuniorRobot.java
+%%DATADIR%%/robots/sample/MyFirstJuniorRobot.properties
 %%DATADIR%%/robots/sample/MyFirstRobot.class
 %%DATADIR%%/robots/sample/MyFirstRobot.java
 %%DATADIR%%/robots/sample/MyFirstRobot.properties
 %%DATADIR%%/robots/sample/PaintingRobot.class
-%%DATADIR%%/robots/sample/PaintingRobot.properties
 %%DATADIR%%/robots/sample/PaintingRobot.java
+%%DATADIR%%/robots/sample/PaintingRobot.properties
 %%DATADIR%%/robots/sample/RamFire.class
 %%DATADIR%%/robots/sample/RamFire.java
 %%DATADIR%%/robots/sample/RamFire.properties
@@ -172,11 +213,13 @@ bin/robocode
 @dirrm %%DATADIR%%/robots/sampleex
 @dirrm %%DATADIR%%/robots/sample
 @dirrm %%DATADIR%%/robots
-@dirrm %%DATADIR%%/libs
 @dirrm %%DATADIR%%/license
+@dirrm %%DATADIR%%/libs
+@dirrm %%DATADIR%%/javadoc/robocode/util
 @dirrm %%DATADIR%%/javadoc/robocode/robotinterfaces/peer
 @dirrm %%DATADIR%%/javadoc/robocode/robotinterfaces
-@dirrm %%DATADIR%%/javadoc/robocode/util
+@dirrm %%DATADIR%%/javadoc/robocode/control/snapshot
+@dirrm %%DATADIR%%/javadoc/robocode/control/events
 @dirrm %%DATADIR%%/javadoc/robocode/control
 @dirrm %%DATADIR%%/javadoc/robocode
 @dirrm %%DATADIR%%/javadoc/resources
