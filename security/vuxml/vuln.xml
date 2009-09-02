@@ -57,8 +57,8 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>36121</bid>
       <bid>36120</bid>
-      <cvename>2009-2957</cvename>
-      <cvename>2009-2958</cvename>
+      <cvename>CVE-2009-2957</cvename>
+      <cvename>CVE-2009-2958</cvename>
       <url>http://www.coresecurity.com/content/dnsmasq-vulnerabilities</url>
       <url>https://rhn.redhat.com/errata/RHSA-2009-1238.html</url>
     </references>
