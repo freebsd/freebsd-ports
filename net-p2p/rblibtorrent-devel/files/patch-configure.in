@@ -1,6 +1,6 @@
---- configure.in.orig	2009-02-11 15:43:19.000000000 +0900
-+++ configure.in	2009-04-19 02:16:36.000000000 +0900
-@@ -67,19 +67,6 @@
+--- configure.in.orig	2009-08-05 11:29:42.000000000 +0900
++++ configure.in	2009-08-29 03:28:28.000000000 +0900
+@@ -65,19 +65,6 @@
  AM_CONDITIONAL([ENABLE_SHIPPED_ASIO], false)
  
  dnl Check for boost libraries.
@@ -20,7 +20,7 @@
     AX_BOOST_BASE([1.34],[
  
     dnl the user can choose which Asio library to use
-@@ -123,7 +110,6 @@
+@@ -121,7 +108,6 @@
      esac
      AM_CONDITIONAL([ENABLE_SHIPPED_ASIO], [test x$enable_shipped_asio = "xyes"])
  ])
@@ -28,7 +28,16 @@
  
  AC_MSG_NOTICE([BOOST_CPPFLAGS=$BOOST_CPPFLAGS])
  AC_MSG_NOTICE([BOOST_LDFLAGS=$BOOST_LDFLAGS])
-@@ -408,7 +394,7 @@
+@@ -351,7 +337,7 @@
+ esac
+ 
+ dnl Use possibly specific python install params
+-if [[ "x$PYTHON_INSTALL_PARAMS" == "x" ]]; then
++if [[ "x$PYTHON_INSTALL_PARAMS" = "x" ]]; then
+ 	PYTHON_INSTALL_PARAMS='--prefix=$(DESTDIR)$(prefix)'
+ fi
+ AC_SUBST(PYTHON_INSTALL_PARAMS)
+@@ -413,7 +399,7 @@
  esac
  
  dnl Set some defines if we are building a shared library
@@ -37,3 +46,21 @@
  	AC_DEFINE(TORRENT_BUILDING_SHARED,,[Make sure the functions and classes are exported.])
  	COMPILETIME_OPTIONS+="-DTORRENT_LINKING_SHARED "
  fi
+@@ -425,7 +411,7 @@
+ 	[case "$enableval" in
+ 		no)
+ 			AC_DEFINE(NDEBUG,,[Define to disable debugging])
+-			DEBUGFLAGS="-Os"
++			DEBUGFLAGS=""
+ #			COMPILETIME_OPTIONS+="-DNDEBUG "
+ 			;;
+ 		yes)
+@@ -438,7 +424,7 @@
+ 			AC_MSG_ERROR([Unknown --enable-debug option "$enableval". Use either "yes" or "no".])
+ 			;;
+ 	esac],
+-	[DEBUGFLAGS="-Os"
++	[DEBUGFLAGS=""
+ 	AC_DEFINE(NDEBUG,,[Define to disable debugging])
+ #	COMPILETIME_OPTIONS+="-DNDEBUG "
+ 	]
