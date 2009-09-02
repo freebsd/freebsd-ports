@@ -44,7 +44,7 @@ lib/librstuff.so
 lib/librverline.so
 lib/libsmetric.so
 lib/libstd32.so
-lib/libwindummy.so
+lib/libcfcompat.so
 %%DATADIR%%/cube16pd.dat
 %%DATADIR%%/cube16pl.dat
 %%DATADIR%%/cube16pr.dat

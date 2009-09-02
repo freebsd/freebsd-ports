@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cuneiform
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/cuneiform-linux/${PORTVERSION:R}/${PORTVERSION:R}/+download/
-DISTNAME=	${PORTNAME}-linux-${PORTVERSION:R}
+DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	OCR system developed and open sourced by Cognitive technologies
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-linux-${PORTVERSION:R}/build
+WRKSRC=		${WRKDIR}/${PORTNAME}-linux-${PORTVERSION}/build
 CMAKE_SOURCE_PATH=..
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -49,7 +49,7 @@ post-patch:
 .endif
 .if ${OSVERSION} < 700000
 	@${REINPLACE_CMD} -e 's|malloc_np.h|dlmalloc/malloc.h|' \
-		${WRKSRC}/../cuneiform_src/Kern/windummy.c \
+		${WRKSRC}/../cuneiform_src/Kern/cfcompat/cfcompat.c \
 		${WRKSRC}/../cuneiform_src/Kern/rbal/src/statsearchbl.cpp
 .endif
 
