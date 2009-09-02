@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mapnik
-PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTVERSION=	0.6.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	${MASTER_SITE_BERLIOS}/${PORTNAME}/
 
@@ -35,6 +34,10 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
+		${WRKSRC}/SConstruct
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} scons/scons.py install
