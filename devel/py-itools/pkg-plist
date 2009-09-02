@@ -1,3 +1,4 @@
+bin/iodf-greek.py
 bin/igettext-build.py
 bin/igettext-extract.py
 bin/igettext-merge.py
@@ -7,8 +8,6 @@ bin/ipkg-copyright.py
 bin/ipkg-info.py
 bin/ipkg-install.py
 bin/ipkg-quality.py
-bin/ipkg-register.py
-bin/ipkg-release.py
 bin/ipkg-update-locale.py
 bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/.gitignore
@@ -19,6 +18,7 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.0
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.1
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.2
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.3
 %%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.60.0
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
@@ -304,6 +304,7 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/odf/schema.py
 %%PYTHON_SITELIBDIR%%/itools/odf/schema.pyc
 %%PYTHON_SITELIBDIR%%/itools/odf/schema.pyo
+%%PYTHON_SITELIBDIR%%/itools/odf/square.svm
 %%PYTHON_SITELIBDIR%%/itools/office/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/office/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/office/__init__.pyo
@@ -351,9 +352,6 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/pkg/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/pkg/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/pkg/__init__.pyo
-%%PYTHON_SITELIBDIR%%/itools/pkg/commands.py
-%%PYTHON_SITELIBDIR%%/itools/pkg/commands.pyc
-%%PYTHON_SITELIBDIR%%/itools/pkg/commands.pyo
 %%PYTHON_SITELIBDIR%%/itools/pkg/distribution.py
 %%PYTHON_SITELIBDIR%%/itools/pkg/distribution.pyc
 %%PYTHON_SITELIBDIR%%/itools/pkg/distribution.pyo
@@ -540,6 +538,9 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/xml/parser.h
 %%PYTHON_SITELIBDIR%%/itools/xml/parser.so
 %%PYTHON_SITELIBDIR%%/itools/xml/pyparser.c
+%%PYTHON_SITELIBDIR%%/itools/xml/utils.py
+%%PYTHON_SITELIBDIR%%/itools/xml/utils.pyc
+%%PYTHON_SITELIBDIR%%/itools/xml/utils.pyo
 %%PYTHON_SITELIBDIR%%/itools/xml/xml.py
 %%PYTHON_SITELIBDIR%%/itools/xml/xml.pyc
 %%PYTHON_SITELIBDIR%%/itools/xml/xml.pyo
