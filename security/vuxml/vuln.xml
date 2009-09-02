@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="80aa98e0-97b4-11de-b946-0030843d3802">
+    <topic>dnsmasq -- TFTP server remote code injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>dnsmasq</name>
+	<range><lt>2.50</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Kelley reports:</p>
+	<blockquote cite="http://www.thekelleys.org.uk/dnsmasq/CHANGELOG">
+	  <p>Fix security problem which allowed any host permitted to
+	    do TFTP to possibly compromise dnsmasq by remote buffer
+	    overflow when TFTP enabled.</p>
+	  <p>Fix a problem which allowed a malicious TFTP client to
+	    crash dnsmasq.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>36121</bid>
+      <bid>36120</bid>
+      <cvename>2009-2957</cvename>
+      <cvename>2009-2958</cvename>
+      <url>http://www.coresecurity.com/content/dnsmasq-vulnerabilities</url>
+      <url>https://rhn.redhat.com/errata/RHSA-2009-1238.html</url>
+    </references>
+    <dates>
+      <discovery>2009-08-31</discovery>
+      <entry>2009-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e15f2356-9139-11de-8f42-001aa0166822">
     <topic>apache22 -- several vulnerability</topic>
     <affects>
