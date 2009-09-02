@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wbxml2
-PORTVERSION=	0.10.6
+PORTVERSION=	0.10.7
 CATEGORIES=	textproc devel
 MASTER_SITES=	SF/libwbxml/libwbxml/${PORTVERSION}
 DISTNAME=	libwbxml-${PORTVERSION}
@@ -16,20 +16,27 @@ COMMENT=	Library & tools for converting wbxml<->xml
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_BZIP2=	YES
-USE_CMAKE=	YES
+WRKSRC=			${WRKDIR}/libwbxml-${PORTVERSION}
+CONFIGURE_WRKSRC=	${WRKDIR}/libwbxml-${PORTVERSION}/build
+BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 
-WRKSRC=		${WRKDIR}/libwbxml-${PORTVERSION}/build
-CMAKE_SOURCE_PATH=..
-PATCH_WRKSRC=	${WRKDIR}/libwbxml-${PORTVERSION}
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES=	${FILESDIR}/noportdocs-CMakeLists.txt.diff
-.endif
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+CMAKE_SOURCE_PATH=	..
+USE_LDCONFIG=	yes
 
-pre-patch:
-	@cd ${PATCH_WRKSRC}
+DOCSDIR=	${PREFIX}/share/doc/libwbxml
 
 post-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${CONFIGURE_WRKSRC}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS BUGS ChangeLog NEWS README References THANKS TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
