@@ -70,6 +70,7 @@ dislin/chf/bmpfnt.chf
 dislin/chf/bmpmod.chf
 dislin/chf/box2d.chf
 dislin/chf/box3d.chf
+dislin/chf/bufmod.chf
 dislin/chf/center.chf
 dislin/chf/cgmbgd.chf
 dislin/chf/cgmpic.chf
@@ -263,6 +264,7 @@ dislin/chf/hwfont.chf
 dislin/chf/hworig.chf
 dislin/chf/hwpage.chf
 dislin/chf/hwscal.chf
+dislin/chf/hwmode.chf
 dislin/chf/imgbox.chf
 dislin/chf/imgclp.chf
 dislin/chf/imgfin.chf
@@ -408,6 +410,9 @@ dislin/chf/polar.chf
 dislin/chf/polclp.chf
 dislin/chf/polcrv.chf
 dislin/chf/polmod.chf
+dislin/chf/pieval.chf
+dislin/chf/pierot.chf
+dislin/chf/piecbk.chf
 dislin/chf/pos2pt.chf
 dislin/chf/pos3pt.chf
 dislin/chf/posifl.chf
