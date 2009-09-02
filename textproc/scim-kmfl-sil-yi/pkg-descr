@@ -1,0 +1,13 @@
+This is a keyboard for input of the standardized Yi script of southwestern
+China with Unicode Yi fonts. It is written in Keyman keyboard language and
+developed by SIL Non-Roman Script Initiative (NRSI).
+
+To keyboard a Yi syllable, you should type the Pinyin romanization for that
+syllable, followed by a space. For keyboarding punctuation, use the usual
+punctuation keystrokes.
+
+The keyboard is compatible with Yi range as defined in Unicode 3.0 and it does
+not provide keystrokes for the Yi Radicals which were added to Unicode 3.2
+(U+A4A2..U+A4A3, U+A4B4, U+A4C1, U+A4C5).
+
+WWW: http://scripts.sil.org/SILYI_home
