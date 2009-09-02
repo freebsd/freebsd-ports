@@ -24,6 +24,7 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/en/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Windows
 %%PORTDOCS%%%%DOCSDIR%%/en/shortrules.tex
+%%PORTDOCS%%%%DOCSDIR%%/freedoko.sgml
 %%PORTDOCS%%%%DOCSDIR%%/hpux.required_libs.txt
 %%DATADIR%%/backgrounds/table.png
 %%DATADIR%%/cardsets/xskat/COPYRIGHT
@@ -106,10 +107,10 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.diamond.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.heart.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.spade.png
-%%DATADIR%%/cardsets/xskat/french/icons/swines.heart.png
-%%DATADIR%%/cardsets/xskat/french/icons/swines.spade.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines.club.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines.diamond.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines.heart.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines.spade.png
 %%DATADIR%%/cardsets/xskat/german/COPYRIGHT
 %%DATADIR%%/cardsets/xskat/german/backs/christmas/candle.png
 %%DATADIR%%/cardsets/xskat/german/backs/christmas/christmasdog.png
@@ -198,7 +199,6 @@ bin/freedoko
 %%DATADIR%%/rules/beginner
 %%DATADIR%%/rules/standard
 %%DATADIR%%/rules/tournament
-%%DATADIR%%/translations/de-alt/text
 %%DATADIR%%/translations/de/aiconfig
 %%DATADIR%%/translations/de/aiconfig.heuristics.description
 %%DATADIR%%/translations/de/basistypes
@@ -214,6 +214,7 @@ bin/freedoko
 %%DATADIR%%/translations/de/settings
 %%DATADIR%%/translations/de/text
 %%DATADIR%%/translations/de/versions
+%%DATADIR%%/translations/de-alt/text
 %%DATADIR%%/translations/en/aiconfig
 %%DATADIR%%/translations/en/aiconfig.heuristics.description
 %%DATADIR%%/translations/en/basistypes
@@ -244,37 +245,6 @@ bin/freedoko
 %%DATADIR%%/translations/fr/settings
 %%DATADIR%%/translations/fr/text
 %%DATADIR%%/translations/fr/versions
-%%DATADIR%%/translations/t/fr/rules
-%%DATADIR%%/translations/t/fr/cards
-%%DATADIR%%/translations/t/fr/basistypes
-%%DATADIR%%/translations/t/fr/messages
-%%DATADIR%%/translations/t/fr/menu
-%%DATADIR%%/translations/t/fr/gui
-%%DATADIR%%/translations/t/fr/chat
-%%DATADIR%%/translations/t/fr/versions
-%%DATADIR%%/translations/t/fr/settings
-%%DATADIR%%/translations/t/fr/network
-%%DATADIR%%/translations/t/fr/bug_report
-%%DATADIR%%/translations/t/fr/text
-%%DATADIR%%/translations/t/fr/help
-%%DATADIR%%/translations/t/fr/aiconfig
-%%DATADIR%%/translations/t/fr2/rules
-%%DATADIR%%/translations/t/fr2/cards
-%%DATADIR%%/translations/t/fr2/basistypes
-%%DATADIR%%/translations/t/fr2/messages
-%%DATADIR%%/translations/t/fr2/menu
-%%DATADIR%%/translations/t/fr2/gui
-%%DATADIR%%/translations/t/fr2/chat
-%%DATADIR%%/translations/t/fr2/versions
-%%DATADIR%%/translations/t/fr2/settings
-%%DATADIR%%/translations/t/fr2/network
-%%DATADIR%%/translations/t/fr2/bug_report
-%%DATADIR%%/translations/t/fr2/text
-%%DATADIR%%/translations/t/fr2/help
-%%DATADIR%%/translations/t/fr2/aiconfig
-@dirrm %%DATADIR%%/translations/t/fr2
-@dirrm %%DATADIR%%/translations/t/fr
-@dirrm %%DATADIR%%/translations/t
 @dirrm %%DATADIR%%/translations/fr
 @dirrm %%DATADIR%%/translations/en
 @dirrm %%DATADIR%%/translations/de-alt

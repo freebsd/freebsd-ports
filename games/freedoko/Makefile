@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freedoko
-PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTVERSION=	0.7.6b
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/FreeDoko%20source/${PORTVERSION}
 DISTNAME=	FreeDoko_${PORTVERSION}.src
@@ -22,21 +21,25 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}"
+MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\.\./data|$$(DATADIR)|g ; \
+		 s|\.\./doc/manual|$$(DOCSDIR)/manual|g ; \
 		 s|@echo $$(CXX)|@true $$(CXX)|g ; \
 		 s|@$$(CXX)|$$(CXX)|g ; \
 		 s|make -C|$$(MAKE) -C|g'
-	@${RM} -rf ${WRKSRC}/../data/translations/fr/bak
+	@${REINPLACE_CMD} -e '/\/X11\//d ; \
+		 s|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/misc/setting.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/FreeDoko ${PREFIX}/bin
 	${LN} -sf FreeDoko ${PREFIX}/bin/freedoko
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/icon.png ${WRKSRC}/logo.png ${DATADIR}
+.for file in icon.png logo.png
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
+.endfor
 .for dir in backgrounds cardsets rules translations
 	@cd ${WRKSRC}/../data && ${FIND} ${dir} ! -name "*Makefile*" | \
 		${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
