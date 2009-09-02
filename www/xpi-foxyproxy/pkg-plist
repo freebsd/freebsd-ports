@@ -159,10 +159,6 @@
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/torwizhelp.dtd
-%%XPI_XPIDIR%%/chrome/locale/vi-VN/amo.properties
-%%XPI_XPIDIR%%/chrome/locale/vi-VN/foxyproxy.dtd
-%%XPI_XPIDIR%%/chrome/locale/vi-VN/foxyproxy.properties
-%%XPI_XPIDIR%%/chrome/locale/vi-VN/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/foxyproxy.properties
@@ -174,6 +170,7 @@
 %%XPI_XPIDIR%%/chrome/skin/overlay.css
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/components/autoconf.js
+%%XPI_XPIDIR%%/components/commandlinehandler.js
 %%XPI_XPIDIR%%/components/common.js
 %%XPI_XPIDIR%%/components/foxyproxy.js
 %%XPI_XPIDIR%%/components/match.js
@@ -214,7 +211,6 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/th-TH
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tr-TR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/uk-UA
-@dirrm %%XPI_XPIDIR%%/chrome/locale/vi-VN
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/chrome/locale
