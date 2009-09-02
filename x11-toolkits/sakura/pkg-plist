@@ -1,16 +1,18 @@
 bin/sakura
-%%NLS%%share/locale/ca/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/de/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/es/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/it/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/sakura.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/sakura.mo
-share/pixmaps/terminal-tango.svg
 share/applications/sakura.desktop
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+share/locale/ca/LC_MESSAGES/sakura.mo
+share/locale/cs/LC_MESSAGES/sakura.mo
+share/locale/de/LC_MESSAGES/sakura.mo
+share/locale/es/LC_MESSAGES/sakura.mo
+share/locale/fr/LC_MESSAGES/sakura.mo
+share/locale/hr/LC_MESSAGES/sakura.mo
+share/locale/hu/LC_MESSAGES/sakura.mo
+share/locale/it/LC_MESSAGES/sakura.mo
+share/locale/ja/LC_MESSAGES/sakura.mo
+share/locale/pt_BR/LC_MESSAGES/sakura.mo
+share/locale/ru/LC_MESSAGES/sakura.mo
+share/locale/zh_CN/LC_MESSAGES/sakura.mo
+share/pixmaps/terminal-tango.svg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
