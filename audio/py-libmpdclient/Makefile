@@ -18,4 +18,6 @@ COMMENT=	Python bindings for libmpdclient
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+BROKEN=		does not build
+
 .include <bsd.port.mk>
