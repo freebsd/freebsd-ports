@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Color/Palette.pm
+%%SITE_PERL%%/Color/Palette/Schema.pm
+%%SITE_PERL%%/Color/Palette/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Palette/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Palette
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color
+@dirrmtry %%SITE_PERL%%/Color/Palette
+@dirrmtry %%SITE_PERL%%/Color
