@@ -1664,6 +1664,7 @@
     SUBDIR += p5-MooseX-Method-Signatures
     SUBDIR += p5-MooseX-MethodAttributes
     SUBDIR += p5-MooseX-MultiInitArg
+    SUBDIR += p5-MooseX-Object-Pluggable
     SUBDIR += p5-MooseX-POE
     SUBDIR += p5-MooseX-Params-Validate
     SUBDIR += p5-MooseX-SemiAffordanceAccessor
