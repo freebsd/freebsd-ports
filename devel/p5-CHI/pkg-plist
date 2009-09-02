@@ -26,6 +26,7 @@
 %%SITE_PERL%%/CHI/Test/Util.pm
 %%SITE_PERL%%/CHI/Types.pm
 %%SITE_PERL%%/CHI/Util.pm
+%%SITE_PERL%%/CHI/t/Bugs.pm
 %%SITE_PERL%%/CHI/t/Constants.pm
 %%SITE_PERL%%/CHI/t/Driver.pm
 %%SITE_PERL%%/CHI/t/Driver/CacheCache.pm
