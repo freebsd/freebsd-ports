@@ -26,5 +26,5 @@ share/locale/sv/LC_MESSAGES/gigedit.mo
 @dirrm %%DOCSDIR%%
 @dirrm share/gigedit
 @dirrm lib/gigedit
-$dirrm lib/linuxsampler/plugins
-$dirrm lib/linuxsampler
+@dirrm lib/linuxsampler/plugins
+@dirrm lib/linuxsampler
