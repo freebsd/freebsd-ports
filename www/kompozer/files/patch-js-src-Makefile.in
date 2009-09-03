@@ -1,0 +1,11 @@
+--- js/src/Makefile.in.orig	2009-05-02 18:40:20.000000000 +0200
++++ js/src/Makefile.in	2009-09-02 12:20:39.000000000 +0200
+@@ -260,7 +260,7 @@
+ endif # WINNT
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+-LDFLAGS		+= -pthread
++LDFLAGS		+= -pthread -lc
+ endif
+ ifeq ($(OS_ARCH),IRIX)
+ ifdef USE_N32
