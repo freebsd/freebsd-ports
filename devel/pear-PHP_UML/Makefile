@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	PHP_UML
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PEAR Class to Create UML Representation of PHP Code
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
+		${PEARDIR}/Console/CommandLine.php:${PORTSDIR}/devel/pear-Console_CommandLine
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 DEFAULT_PHP_VER=	5
 USE_PHP=		spl
-
-OPTIONS=	PEAR_CONSOLE_COMMANDLINE "PEAR::Console_CommandLine support" off
 
 CATEGORY=	PHP
 FILES=		UML.php \
@@ -134,9 +133,5 @@ post-extract:
 		@${MV} ${WRKSRC}/scripts/phpuml ${WRKSRC}/pear-phpuml
 
 .include <bsd.port.pre.mk>
-.if defined(WITH_PEAR_CONSOLE_COMMANDLINE)
-RUN_DEPENDS+=	${PEARDIR}/Console/CommandLine.php:${PORTSDIR}/devel/pear-Console_CommandLine
-.endif
-
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
