@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDe
 		clamscan:${PORTSDIR}/security/clamav
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_LDCONFIG=	yes
 
 PERL_CONFIGURE=	yes
