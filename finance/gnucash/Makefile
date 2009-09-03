@@ -29,8 +29,6 @@ RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
 		${LOCALBASE}/share/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 
-BROKEN=		does not build
-
 OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off	\
 		OFX		"OFX support"				off	\
 		POSTGRESQL	"Enable Postgresql as Backend"		off
