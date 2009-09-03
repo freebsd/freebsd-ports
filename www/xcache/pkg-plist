@@ -14,6 +14,7 @@ lib/php/%%PHP_EXT_DIR%%/xcache.so
 %%EXAMPLESDIR%%/admin/help-zh-traditional-utf-8.lang.php
 %%EXAMPLESDIR%%/admin/help.php
 %%EXAMPLESDIR%%/admin/index.php
+%%EXAMPLESDIR%%/admin/mkpassword.php
 %%EXAMPLESDIR%%/admin/tablesort.js
 %%EXAMPLESDIR%%/admin/xcache.css
 %%EXAMPLESDIR%%/admin/xcache.php
