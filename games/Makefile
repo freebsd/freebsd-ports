@@ -795,6 +795,7 @@
     SUBDIR += spicetrade
     SUBDIR += spider
     SUBDIR += spring
+    SUBDIR += springlobby
     SUBDIR += starlanes
     SUBDIR += stepbill
     SUBDIR += stepmania-devel
