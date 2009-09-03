@@ -62,7 +62,6 @@ lib/compat/libpanelw.so.4
 lib/compat/libpcap.so.5
 lib/compat/libpmc.so.4
 lib/compat/libproc.so.1
-lib/compat/libpthread.so
 lib/compat/libradius.so.3
 lib/compat/libreadline.so.7
 lib/compat/libroken.so.9
@@ -177,7 +176,6 @@ lib32/compat/libpanelw.so.4
 lib32/compat/libpcap.so.5
 lib32/compat/libpmc.so.4
 lib32/compat/libproc.so.1
-lib32/compat/libpthread.so
 lib32/compat/libradius.so.3
 lib32/compat/libreadline.so.7
 lib32/compat/libroken.so.9

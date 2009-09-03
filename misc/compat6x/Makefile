@@ -7,7 +7,7 @@
 
 PORTNAME=	compat6x
 PORTVERSION=	6.4.604000.200810
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~${MASTER_SITE_SUBDIR}/
@@ -41,14 +41,14 @@ do-install:
 	@${MKDIR} ${TARGET_DIR}
 .if ${OSVERSION} >= 800105
 	${RM} -f ${WRKSRC}/lib/libpthread.so.2
-	(cd ${TARGET_DIR} && ${LN} -sf /usr/lib/libpthr.so ./libpthread.so.2)
+	(cd ${TARGET_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
 .endif
 	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
 .if ${ARCH} == amd64
 	@${MKDIR} ${TARGET32_DIR}
 . if ${OSVERSION} >= 800105
 	${RM} -f ${WRKSRC}/lib32/libpthread.so.2
-	(cd ${TARGET32_DIR} && ${LN} -sf /usr/lib32/libpthr.so ./libpthread.so.2)
+	(cd ${TARGET32_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
 . endif
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
 .endif
