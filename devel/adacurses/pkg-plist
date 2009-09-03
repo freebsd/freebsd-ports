@@ -52,7 +52,6 @@ lib/adacurses/terminal_interface-curses-text_io.ads
 lib/adacurses/terminal_interface-curses-forms.adb
 lib/adacurses/terminal_interface-curses-menus-item_user_data.adb
 lib/adacurses/terminal_interface-curses-menus-menu_user_data.adb
-lib/adacurses/terminal_interface-curses.adb
 lib/adacurses/terminal_interface-curses-putwin.adb
 lib/adacurses/terminal_interface-curses-termcap.adb
 lib/adacurses/terminal_interface-curses-text_io-integer_io.adb
