@@ -13,7 +13,7 @@ MASTER_SITES=	SF/firebird/OldFiles
 PKGNAMESUFFIX?=	-server
 DISTNAME=	Firebird-2.0.3.12981-1
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
 
 LATEST_LINK=	${PORTNAME}20${PKGNAMESUFFIX}
