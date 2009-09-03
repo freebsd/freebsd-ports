@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	compat7x
-PORTVERSION=	7.2.702000.200906
-PORTREVISION=	1
+PORTVERSION=	7.2.702000.200906.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	garga/compat
@@ -39,10 +38,10 @@ USE_LDCONFIG32=	${TARGET32_DIR}
 do-install:
 	@${MKDIR} ${TARGET_DIR}
 	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
-	(cd ${TARGET_DIR} && ${LN} -s /usr/lib/libpthr.so ./libpthread.so)
+	(cd ${TARGET_DIR} && ${LN} -sf /lib/libthr.so.3 libkse.so.3)
 .if ${ARCH} == amd64
 	@${MKDIR} ${TARGET32_DIR}
-	(cd ${TARGET32_DIR} && ${LN} -s /usr/lib32/libpthr.so ./libpthread.so)
+	(cd ${TARGET32_DIR} && ${LN} -sf /usr/lib32/libthr.so.3 libkse.so.3)
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
 .endif
 
