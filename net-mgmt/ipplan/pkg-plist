@@ -30,8 +30,10 @@
 %%IPPLANDIR%%/admin/importip.php
 %%IPPLANDIR%%/admin/importipform.php
 %%IPPLANDIR%%/admin/install.php
+%%IPPLANDIR%%/admin/install.php.rej
 %%IPPLANDIR%%/admin/maintenance.php
 %%IPPLANDIR%%/admin/schemacreate.php
+%%IPPLANDIR%%/admin/schemacreate.php.rej
 %%IPPLANDIR%%/admin/usermanager.php
 %%IPPLANDIR%%/adodb/adodb-csvlib.inc.php
 %%IPPLANDIR%%/adodb/adodb-datadict.inc.php

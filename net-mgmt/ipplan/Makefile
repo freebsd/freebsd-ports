@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ipplan
-PORTVERSION=	4.92
+PORTVERSION=	4.92a
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%20${PORTVERSION}
+MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%204.92
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	IP address management and tracking
