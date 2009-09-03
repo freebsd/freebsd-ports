@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	geany
-PORTVERSION=	0.17
-PORTREVISION=	2
+PORTVERSION=	0.18
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	http://download.geany.org/ SF
 
 MAINTAINER=	ar@null.lv
 COMMENT=	A fast and lightweight GTK+ IDE

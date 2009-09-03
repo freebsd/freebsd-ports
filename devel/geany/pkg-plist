@@ -6,6 +6,7 @@ include/geany/encodings.h
 include/geany/filetypes.h
 include/geany/geany.h
 include/geany/geanyfunctions.h
+include/geany/geanyplugin.h
 include/geany/highlighting.h
 include/geany/keybindings.h
 include/geany/main.h
@@ -56,7 +57,9 @@ share/icons/hicolor/16x16/apps/classviewer-namespace.png
 share/icons/hicolor/16x16/apps/classviewer-other.png
 share/icons/hicolor/16x16/apps/classviewer-struct.png
 share/icons/hicolor/16x16/apps/classviewer-var.png
-share/pixmaps/geany.png
+share/icons/hicolor/16x16/apps/geany.png
+share/icons/hicolor/48x48/apps/geany.png
+share/icons/hicolor/scalable/apps/geany.svg
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -87,6 +90,7 @@ share/pixmaps/geany.png
 %%DATADIR%%/GPL-2
 %%DATADIR%%/filetype_extensions.conf
 %%DATADIR%%/filetypes.actionscript
+%%DATADIR%%/filetypes.ada
 %%DATADIR%%/filetypes.asm
 %%DATADIR%%/filetypes.c
 %%DATADIR%%/filetypes.caml
@@ -151,22 +155,35 @@ share/pixmaps/geany.png
 %%NLS%%share/locale/it/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/lb/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/geany.mo
+%%NLS%%@dirrmtry share/locale/lb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lb
 @dirrm lib/geany
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
 @dirrm include/geany/tagmanager
 @dirrm include/geany/scintilla
