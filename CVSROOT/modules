@@ -4130,7 +4130,6 @@ ggz-sdl-games                   ports/games/ggz-sdl-games
 ggz-txt-client                  ports/games/ggz-txt-client
 ghasher                         ports/sysutils/ghasher
 ghc                             ports/lang/ghc
-ghc-doc                         ports/lang/ghc-doc
 ghemical                        ports/science/ghemical
 ghex                            ports/editors/ghex
 ghfaxviewer                     ports/comms/ghfaxviewer
@@ -5229,6 +5228,7 @@ hptools                         ports/devel/hptools
 hr-aspell                       ports/textproc/hr-aspell
 hrktorrent                      ports/net-p2p/hrktorrent
 hs-HGL-ghc                      ports/graphics/hs-HGL-ghc
+hs-QuickCheck                   ports/devel/hs-QuickCheck
 hs-Stream                       ports/devel/hs-Stream
 hs-alex                         ports/devel/hs-alex
 hs-binary-ghc                   ports/devel/hs-binary-ghc
@@ -5239,11 +5239,14 @@ hs-digest-ghc                   ports/security/hs-digest-ghc
 hs-dlist                        ports/devel/hs-dlist
 hs-drift                        ports/devel/hs-drift
 hs-frantk                       ports/x11-toolkits/hs-frantk
+hs-ghc-paths                    ports/devel/hs-ghc-paths
+hs-ghc-paths-docs               ports/devel/hs-ghc-paths-docs
 hs-glut-ghc                     ports/x11-toolkits/hs-glut-ghc
 hs-gtk2hs                       ports/x11-toolkits/hs-gtk2hs
 hs-haddock                      ports/devel/hs-haddock
 hs-haddock-docs                 ports/devel/hs-haddock-docs
 hs-happy                        ports/devel/hs-happy
+hs-haskeline                    ports/devel/hs-haskeline
 hs-hat                          ports/devel/hs-hat
 hs-haxml                        ports/textproc/hs-haxml
 hs-hdoc                         ports/devel/hs-hdoc
@@ -5256,9 +5259,12 @@ hs-hscolour-docs                ports/print/hs-hscolour-docs
 hs-idoc                         ports/devel/hs-idoc
 hs-language-c-ghc               ports/devel/hs-language-c-ghc
 hs-lazysmallcheck-ghc           ports/devel/hs-lazysmallcheck-ghc
+hs-mmap                         ports/devel/hs-mmap
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
 hs-pcre-light-ghc               ports/devel/hs-pcre-light-ghc
 hs-polyparse-ghc                ports/textproc/hs-polyparse-ghc
+hs-quickcheck                   ports/devel/hs-QuickCheck
+hs-readline                     ports/devel/hs-readline
 hs-stream                       ports/devel/hs-Stream
 hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-utf8-string-ghc              ports/devel/hs-utf8-string-ghc
@@ -6588,6 +6594,7 @@ kde4-l10n-gl                    ports/misc/kde4-l10n-gl
 kde4-l10n-gu                    ports/misc/kde4-l10n-gu
 kde4-l10n-hi                    ports/misc/kde4-l10n-hi
 kde4-l10n-hne                   ports/misc/kde4-l10n-hne
+kde4-l10n-hr                    ports/misc/kde4-l10n-hr
 kde4-l10n-is                    ports/misc/kde4-l10n-is
 kde4-l10n-it                    ports/misc/kde4-l10n-it
 kde4-l10n-kk                    ports/misc/kde4-l10n-kk
@@ -10772,7 +10779,9 @@ p5-Clone-More                   ports/devel/p5-Clone-More
 p5-Clone-PP                     ports/devel/p5-Clone-PP
 p5-Code-Perl                    ports/devel/p5-Code-Perl
 p5-Color-Library                ports/graphics/p5-Color-Library
+p5-Color-Palette                ports/graphics/p5-Color-Palette
 p5-Color-Rgb                    ports/graphics/p5-Color-Rgb
+p5-Color-Scheme                 ports/graphics/p5-Color-Scheme
 p5-Commands-Guarded             ports/devel/p5-Commands-Guarded
 p5-CommitBit                    ports/devel/p5-CommitBit
 p5-Compress-Bzip2               ports/archivers/p5-Compress-Bzip2
@@ -11177,6 +11186,7 @@ p5-Devel-PartialDump            ports/devel/p5-Devel-PartialDump
 p5-Devel-Pointer                ports/devel/p5-Devel-Pointer
 p5-Devel-Profile                ports/devel/p5-Devel-Profile
 p5-Devel-Profiler               ports/devel/p5-Devel-Profiler
+p5-Devel-REPL                   ports/devel/p5-Devel-REPL
 p5-Devel-Required               ports/devel/p5-Devel-Required
 p5-Devel-RingBuffer             ports/devel/p5-Devel-RingBuffer
 p5-Devel-STrace                 ports/devel/p5-Devel-STrace
@@ -12196,6 +12206,7 @@ p5-MooseX-Meta-TypeConstraint-ForceCoercion  ports/devel/p5-MooseX-Meta-TypeCons
 p5-MooseX-Method-Signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-MooseX-MethodAttributes      ports/devel/p5-MooseX-MethodAttributes
 p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
+p5-MooseX-Object-Pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
 p5-MooseX-SemiAffordanceAccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
@@ -14293,7 +14304,9 @@ p5-clone-pp                     ports/devel/p5-Clone-PP
 p5-clutter                      ports/graphics/p5-clutter
 p5-code-perl                    ports/devel/p5-Code-Perl
 p5-color-library                ports/graphics/p5-Color-Library
+p5-color-palette                ports/graphics/p5-Color-Palette
 p5-color-rgb                    ports/graphics/p5-Color-Rgb
+p5-color-scheme                 ports/graphics/p5-Color-Scheme
 p5-commands-guarded             ports/devel/p5-Commands-Guarded
 p5-commitbit                    ports/devel/p5-CommitBit
 p5-common-sense                 ports/devel/p5-common-sense
@@ -14711,6 +14724,7 @@ p5-devel-ppport                 ports/devel/p5-Devel-PPPort
 p5-devel-profile                ports/devel/p5-Devel-Profile
 p5-devel-profiler               ports/devel/p5-Devel-Profiler
 p5-devel-ptkdb                  ports/devel/p5-Devel-ptkdb
+p5-devel-repl                   ports/devel/p5-Devel-REPL
 p5-devel-required               ports/devel/p5-Devel-Required
 p5-devel-ringbuffer             ports/devel/p5-Devel-RingBuffer
 p5-devel-simpletrace            ports/devel/p5-Devel-SimpleTrace
@@ -15752,6 +15766,7 @@ p5-moosex-meta-typeconstraint-forcecoercion  ports/devel/p5-MooseX-Meta-TypeCons
 p5-moosex-method-signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-moosex-methodattributes      ports/devel/p5-MooseX-MethodAttributes
 p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
+p5-moosex-object-pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-semiaffordanceaccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
@@ -21133,7 +21148,10 @@ scim-input-pad                  ports/textproc/scim-input-pad
 scim-kmfl-european-latin        ports/textproc/scim-kmfl-european-latin
 scim-kmfl-imengine              ports/textproc/scim-kmfl-imengine
 scim-kmfl-sil-ezra              ports/textproc/scim-kmfl-sil-ezra
+scim-kmfl-sil-galatia           ports/textproc/scim-kmfl-sil-galatia
 scim-kmfl-sil-ipa-unicode5      ports/textproc/scim-kmfl-sil-ipa-unicode5
+scim-kmfl-sil-panafrican-latin  ports/textproc/scim-kmfl-sil-panafrican-latin
+scim-kmfl-sil-yi                ports/textproc/scim-kmfl-sil-yi
 scim-m17n                       ports/textproc/scim-m17n
 scim-openvanilla                ports/textproc/scim-openvanilla
 scim-table-imengine             ports/textproc/scim-table-imengine
@@ -23547,6 +23565,7 @@ wsjt                            ports/comms/wsjt
 wsmake                          ports/www/wsmake
 wsoundprefs                     ports/audio/wsoundprefs
 wsoundserver                    ports/audio/wsoundserver
+wspr                            ports/comms/wspr
 wtail                           ports/sysutils/wtail
 wterm                           ports/x11/wterm
 wtf                             ports/games/wtf
