@@ -1,0 +1,12 @@
+--- xpfe/components/Makefile.in.orig	2009-09-01 17:52:59.000000000 +0200
++++ xpfe/components/Makefile.in	2009-09-01 17:53:27.000000000 +0200
+@@ -126,9 +126,6 @@
+ DIRS += winhooks
+ endif
+ 
+-# build2 should be last
+-DIRS += build2
+-
+ endif
+ 
+ ifndef MOZ_XUL_APP

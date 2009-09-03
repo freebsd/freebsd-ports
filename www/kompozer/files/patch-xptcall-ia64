@@ -17,8 +17,8 @@
          .prologue
          .save ar.pfs, r37
  // allocate 4 input args, 6 local args, and 8 output args
---- xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ipf64.s.orig	Sun Jul 20 00:02:02 2003
-+++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ipf64.s	Sun Jul 20 00:02:40 2003
+--- xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ipf64.s.orig	2009-05-02 18:43:37.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ipf64.s	2009-08-31 15:05:05.000000000 +0200
 @@ -6,6 +6,7 @@
  // Section has executable code
          .section .text, "ax","progbits"
@@ -33,6 +33,6 @@
  
 -SharedStub::
 +SharedStub:
- // 9 arguments, first 8 are the input arguments of previous
- // function call.  The last one is methodIndex, and is passed in memory
-         .prologue
+ // 10 arguments, first 8 are the input arguments of previous
+ // function call.  The 9th one is methodIndex and the 10th is the
+ // pointer to the remaining input arguments.  The last two arguments

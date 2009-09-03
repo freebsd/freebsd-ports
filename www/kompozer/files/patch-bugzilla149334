@@ -226,26 +226,26 @@ Index: gfx/src/ps/nsFontMetricsPS.h
 RCS file: /cvsroot/mozilla/gfx/src/ps/nsFontMetricsPS.h,v
 retrieving revision 1.25
 diff -u -3 -p -r1.25 nsFontMetricsPS.h
---- gfx/src/ps/nsFontMetricsPS.h	17 Apr 2004 21:52:31 -0000	1.25
-+++ gfx/src/ps/nsFontMetricsPS.h	26 May 2004 10:01:03 -0000
-@@ -319,7 +319,7 @@ protected:
+--- gfx/src/ps/nsFontMetricsPS.h.orig	2009-05-02 18:42:46.000000000 +0200
++++ gfx/src/ps/nsFontMetricsPS.h	2009-08-31 14:44:11.000000000 +0200
+@@ -424,7 +424,7 @@
    nsCOMPtr<nsITrueTypeFontCatalogEntry> mFaceID;
    nsCOMPtr<nsIFreeType2> mFt2;
    PRUint16        mPixelSize;
 -  FTC_Image_Desc  mImageDesc;
 +  FTC_ImageType   mImageDesc;
+   nsCString       mFontNameBase;   // the base name of type 1 (sub) fonts
+   nscoord         mHeight; 
  
- 
-   static PRBool AddUserPref(nsIAtom *aLang, const nsFont& aFont,
-@@ -362,7 +362,7 @@ public:
+@@ -493,7 +493,7 @@
  protected:
    nsCOMPtr<nsITrueTypeFontCatalogEntry> mEntry;
    nsCOMPtr<nsIFreeType2> mFt2;
 -  FTC_Image_Desc  mImageDesc;
 +  FTC_ImageType   mImageDesc;
  };
- #endif
- 
+ #endif   // MOZ_ENABLE_FREETYPE2
+ #endif   // MOZ_ENABLE_XFT
 Index: gfx/src/x11shared/nsFontFreeType.cpp
 ===================================================================
 RCS file: /cvsroot/mozilla/gfx/src/x11shared/nsFontFreeType.cpp,v
@@ -329,9 +329,9 @@ Index: gfx/src/x11shared/nsFontFreeType.h
 RCS file: /cvsroot/mozilla/gfx/src/x11shared/nsFontFreeType.h,v
 retrieving revision 1.10
 diff -u -3 -p -r1.10 nsFontFreeType.h
---- gfx/src/x11shared/nsFontFreeType.h	17 Apr 2004 21:52:34 -0000	1.10
-+++ gfx/src/x11shared/nsFontFreeType.h	26 May 2004 10:01:03 -0000
-@@ -110,7 +110,7 @@ protected:
+--- gfx/src/x11shared/nsFontFreeType.h.orig	2009-05-02 18:42:44.000000000 +0200
++++ gfx/src/x11shared/nsFontFreeType.h	2009-08-31 14:38:12.000000000 +0200
+@@ -110,7 +110,7 @@
    XImage *GetXImage(PRUint32 width, PRUint32 height);
    nsITrueTypeFontCatalogEntry *mFaceID;
    PRUint16        mPixelSize;
