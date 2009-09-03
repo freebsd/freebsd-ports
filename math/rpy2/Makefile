@@ -8,7 +8,7 @@
 
 PORTNAME=	rpy
 PORTVERSION=	1.0.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -22,8 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib/R/modules -L${LOCALBASE}/lib/R/lib"
-
-#BROKEN=		Does not compile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^statichere ,,' ${WRKSRC}/src/rpymodule.c
