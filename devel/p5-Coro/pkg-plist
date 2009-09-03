@@ -1,3 +1,14 @@
+%%EXAMPLESDIR%%/attributes
+%%EXAMPLESDIR%%/bench
+%%EXAMPLESDIR%%/dns
+%%EXAMPLESDIR%%/event
+%%EXAMPLESDIR%%/lwp
+%%EXAMPLESDIR%%/myhttpd
+%%EXAMPLESDIR%%/prodcons1
+%%EXAMPLESDIR%%/prodcons2
+%%EXAMPLESDIR%%/prodcons3
+%%EXAMPLESDIR%%/readline
+%%PORTDOCS%%%%DOCSDIR%%/cede-vs-schedule
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/AIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/AnyEvent.pm
@@ -5,8 +16,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Channel.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/CoroAPI.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Debug.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Event.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/EV.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Event.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Handle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Intro.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/LWP.pm
@@ -23,23 +34,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Timer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/EV/EV.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/EV/EV.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event/Event.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event/Event.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/EV/EV.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/EV/EV.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State/State.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State/State.so
-%%PORTDOCS%%%%DOCSDIR%%/cede-vs-schedule
-%%EXAMPLESDIR%%/attributes
-%%EXAMPLESDIR%%/bench
-%%EXAMPLESDIR%%/dns
-%%EXAMPLESDIR%%/event
-%%EXAMPLESDIR%%/lwp
-%%EXAMPLESDIR%%/myhttpd
-%%EXAMPLESDIR%%/prodcons1
-%%EXAMPLESDIR%%/prodcons2
-%%EXAMPLESDIR%%/prodcons3
-%%EXAMPLESDIR%%/readline
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State
