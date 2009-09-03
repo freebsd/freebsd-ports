@@ -1,0 +1,24 @@
+bin/springlobby
+bin/springsettings
+share/applications/springlobby.desktop
+%%NLS%%share/locale/ar/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/da/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/de/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/el/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/en_US/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/es/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/it/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/springlobby.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/springlobby.mo
+%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_US
+share/pixmaps/springlobby.svg
+@dirrmtry share/applications
