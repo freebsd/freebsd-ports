@@ -111,3 +111,4 @@ share/locale/ro/LC_MESSAGES/gtkpod.mo
 share/locale/ru/LC_MESSAGES/gtkpod.mo
 share/locale/sv/LC_MESSAGES/gtkpod.mo
 share/locale/zh_CN/LC_MESSAGES/gtkpod.mo
+@dirrmtry share/applications
