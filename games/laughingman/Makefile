@@ -20,6 +20,8 @@ COMMENT=	A real-time face hijacking program made by the ultimate hacker Aoi
 LIB_DEPENDS=	cv.1:${PORTSDIR}/graphics/opencv
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 
+BROKEN=		does not link
+
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=xiq2
 EXTRACT_AFTER_ARGS=
