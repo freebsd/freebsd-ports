@@ -9,7 +9,7 @@
 #     math/gnumeric science/gchemutils
 
 PORTNAME=	goffice
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.11
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgsf libglade2 gconf2 \
+USE_GNOME=	gnomeprefix gnomehack intlhack libgsf gconf2 \
 		ltverhack
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:22

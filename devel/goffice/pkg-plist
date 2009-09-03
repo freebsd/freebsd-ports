@@ -25,6 +25,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-item.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-line.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-pixbuf.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-polygon.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-polyline.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-rectangle.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-structs.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-styled-item.h
@@ -35,15 +36,6 @@ include/libgoffice-%%SHORT_VER%%/goffice/canvas/goffice-canvas.h
 include/libgoffice-%%SHORT_VER%%/goffice/component/go-component-factory.h
 include/libgoffice-%%SHORT_VER%%/goffice/component/go-component.h
 include/libgoffice-%%SHORT_VER%%/goffice/component/goffice-component.h
-include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-line.h
-include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-pixbuf.h
-include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-polygon.h
-include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-rect-ellipse.h
-include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-text.h
-include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-util.h
-include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-widget.h
-include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas.h
-include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/libfoocanvas.h
 include/libgoffice-%%SHORT_VER%%/goffice/data/go-data-impl.h
 include/libgoffice-%%SHORT_VER%%/goffice/data/go-data-simple.h
 include/libgoffice-%%SHORT_VER%%/goffice/data/go-data.h
@@ -72,7 +64,6 @@ include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-chart-map-3d.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-chart-map.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-chart.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-child-button.h
-include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-control-foocanvas.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-data-allocator.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-data-set.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-error-bar.h
@@ -172,40 +163,40 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/regutf8.h
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.a
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.la
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.so
-lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-barcol-prefs.glade
-lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-minmax-prefs.glade
+lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-barcol-prefs.ui
+lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-minmax-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.a
 lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.la
 lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.so
-lib/goffice/%%VERSION%%/plugins/plot_distrib/gog-boxplot-prefs.glade
+lib/goffice/%%VERSION%%/plugins/plot_distrib/gog-boxplot-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_distrib/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_distrib/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_pie/gog-pie-prefs.glade
-lib/goffice/%%VERSION%%/plugins/plot_pie/gog-pie-series.glade
-lib/goffice/%%VERSION%%/plugins/plot_pie/gog-ring-prefs.glade
+lib/goffice/%%VERSION%%/plugins/plot_pie/gog-pie-prefs.ui
+lib/goffice/%%VERSION%%/plugins/plot_pie/gog-pie-series.ui
+lib/goffice/%%VERSION%%/plugins/plot_pie/gog-ring-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_pie/pie.a
 lib/goffice/%%VERSION%%/plugins/plot_pie/pie.la
 lib/goffice/%%VERSION%%/plugins/plot_pie/pie.so
 lib/goffice/%%VERSION%%/plugins/plot_pie/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_pie/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_radar/gog-color-polar-prefs.xml
+lib/goffice/%%VERSION%%/plugins/plot_radar/gog-color-polar-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_radar/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.a
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.la
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.so
-lib/goffice/%%VERSION%%/plugins/plot_surface/gog-xyz-prefs.glade
-lib/goffice/%%VERSION%%/plugins/plot_surface/gog-xyz-surface-prefs.glade
+lib/goffice/%%VERSION%%/plugins/plot_surface/gog-xyz-prefs.ui
+lib/goffice/%%VERSION%%/plugins/plot_surface/gog-xyz-surface-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_surface/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_surface/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.a
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.la
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.so
-lib/goffice/%%VERSION%%/plugins/plot_xy/gog-bubble-prefs.glade
-lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-color-prefs.glade
-lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-series-prefs.glade
+lib/goffice/%%VERSION%%/plugins/plot_xy/gog-bubble-prefs.ui
+lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-color-prefs.ui
+lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-series-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_xy/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_xy/xy.a
@@ -221,8 +212,8 @@ lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.la
 lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.so
 lib/goffice/%%VERSION%%/plugins/reg_logfit/plugin.xml
 lib/goffice/%%VERSION%%/plugins/reg_logfit/reg-types.xml
-lib/goffice/%%VERSION%%/plugins/smoothing/gog-exp-smooth.glade
-lib/goffice/%%VERSION%%/plugins/smoothing/gog-moving-avg.glade
+lib/goffice/%%VERSION%%/plugins/smoothing/gog-exp-smooth.ui
+lib/goffice/%%VERSION%%/plugins/smoothing/gog-moving-avg.ui
 lib/goffice/%%VERSION%%/plugins/smoothing/plugin.xml
 lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.a
 lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.la
@@ -233,23 +224,23 @@ lib/libgoffice-%%SHORT_VER%%.la
 lib/libgoffice-%%SHORT_VER%%.so
 lib/libgoffice-%%SHORT_VER%%.so.7
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
-%%DOCSDIR%%-%%SHORT_VER%%/GOComboBox.html
-%%DOCSDIR%%-%%SHORT_VER%%/GOComponent.html
-%%DOCSDIR%%-%%SHORT_VER%%/GOOptionMenu.html
-%%DOCSDIR%%-%%SHORT_VER%%/GOPalette.html
-%%DOCSDIR%%-%%SHORT_VER%%/GOPersist.html
-%%DOCSDIR%%-%%SHORT_VER%%/GOPluginLoader.html
-%%DOCSDIR%%-%%SHORT_VER%%/GOSelector.html
-%%DOCSDIR%%-%%SHORT_VER%%/GOStyledObject.html
-%%DOCSDIR%%-%%SHORT_VER%%/GOUndoUnary.html
-%%DOCSDIR%%-%%SHORT_VER%%/GogDataAllocator.html
-%%DOCSDIR%%-%%SHORT_VER%%/GogDataset.html
-%%DOCSDIR%%-%%SHORT_VER%%/GogObject.html
-%%DOCSDIR%%-%%SHORT_VER%%/GogOutlinedView.html
-%%DOCSDIR%%-%%SHORT_VER%%/GogRegCurve.html
-%%DOCSDIR%%-%%SHORT_VER%%/GogSmoothedCurve.html
-%%DOCSDIR%%-%%SHORT_VER%%/GogStyledObject.html
-%%DOCSDIR%%-%%SHORT_VER%%/GogView.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOComboBox.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOComponent.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOOptionMenu.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOPalette.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOPersist.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOPluginLoader.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOSelector.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOStyledObject.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOUndoUnary.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogDataAllocator.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogDataset.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogObject.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogOutlinedView.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogRegCurve.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogSmoothedCurve.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogStyledObject.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogView.html
 %%DOCSDIR%%-%%SHORT_VER%%/ch01.html
 %%DOCSDIR%%-%%SHORT_VER%%/ch02.html
 %%DOCSDIR%%-%%SHORT_VER%%/ch03.html
@@ -330,24 +321,25 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/right.png
 %%DOCSDIR%%-%%SHORT_VER%%/style.css
 %%DOCSDIR%%-%%SHORT_VER%%/up.png
-%%DATADIR%%/%%VERSION%%/glade/go-3d-rotation-sel.glade
-%%DATADIR%%/%%VERSION%%/glade/go-font-sel.glade
-%%DATADIR%%/%%VERSION%%/glade/go-format-sel.glade
-%%DATADIR%%/%%VERSION%%/glade/go-image-save-dialog-extra.glade
-%%DATADIR%%/%%VERSION%%/glade/go-image-sel.glade
-%%DATADIR%%/%%VERSION%%/glade/go-rotation-sel.glade
-share/goffice/%%VERSION%%/glade/go-style-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-3d-box-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-axis-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-error-bar-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-graph-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-guru-type-selector.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-guru.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-object-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-plot-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-reg-curve-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-reg-eqn-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-series-prefs.glade
+%%DATADIR%%/%%VERSION%%/ui/go-3d-rotation-sel.ui
+%%DATADIR%%/%%VERSION%%/ui/go-font-sel.ui
+%%DATADIR%%/%%VERSION%%/ui/go-format-sel.ui
+%%DATADIR%%/%%VERSION%%/ui/go-image-save-dialog-extra.ui
+%%DATADIR%%/%%VERSION%%/ui/go-image-sel.ui
+%%DATADIR%%/%%VERSION%%/ui/go-rotation-sel.ui
+%%DATADIR%%/%%VERSION%%/ui/go-style-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-3d-box-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-axis-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-equation-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-error-bar-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-graph-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-guru-type-selector.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-guru.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-object-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-plot-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-reg-curve-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-reg-eqn-prefs.ui
+%%DATADIR%%/%%VERSION%%/ui/gog-series-prefs.ui
 %%DATADIR%%/%%VERSION%%/patterns/svg-patterns.xml
 share/locale/am/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/goffice-%%VERSION%%.mo
@@ -514,7 +506,7 @@ share/pixmaps/goffice/%%VERSION%%/surface.xpm
 @dirrm share/pixmaps/goffice/%%VERSION%%
 @dirrmtry share/pixmaps/goffice
 @dirrm %%DATADIR%%/%%VERSION%%/patterns
-@dirrm %%DATADIR%%/%%VERSION%%/glade
+@dirrm %%DATADIR%%/%%VERSION%%/ui
 @dirrm %%DATADIR%%/%%VERSION%%
 @dirrmtry %%DATADIR%%
 @dirrm %%DOCSDIR%%-%%SHORT_VER%%
@@ -537,8 +529,6 @@ share/pixmaps/goffice/%%VERSION%%/surface.xpm
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/graph
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/drawing
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/data
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/component
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/canvas
 @dirrm include/libgoffice-%%SHORT_VER%%/goffice/app
