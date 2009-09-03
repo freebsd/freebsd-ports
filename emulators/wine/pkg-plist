@@ -331,6 +331,9 @@ include/wine/windows/mscoree.h
 include/wine/windows/mscoree.idl
 include/wine/windows/msctf.h
 include/wine/windows/msctf.idl
+include/wine/windows/msdadc.h
+include/wine/windows/msdadc.idl
+include/wine/windows/msdaguid.h
 include/wine/windows/mshtmcid.h
 include/wine/windows/mshtmdid.h
 include/wine/windows/mshtmhst.h
@@ -687,6 +690,7 @@ lib/wine/dsound.dll.so
 lib/wine/dssenh.dll.so
 lib/wine/dswave.dll.so
 lib/wine/dwmapi.dll.so
+lib/wine/dxdiag.exe.so
 lib/wine/dxdiagn.dll.so
 lib/wine/dxgi.dll.so
 lib/wine/eject.exe.so
@@ -790,6 +794,7 @@ lib/wine/fakedlls/dsound.dll
 lib/wine/fakedlls/dssenh.dll
 lib/wine/fakedlls/dswave.dll
 lib/wine/fakedlls/dwmapi.dll
+lib/wine/fakedlls/dxdiag.exe
 lib/wine/fakedlls/dxdiagn.dll
 lib/wine/fakedlls/dxgi.dll
 lib/wine/fakedlls/eject.exe
@@ -910,6 +915,7 @@ lib/wine/fakedlls/oleacc.dll
 lib/wine/fakedlls/oleaut32.dll
 lib/wine/fakedlls/olecli.dll16
 lib/wine/fakedlls/olecli32.dll
+lib/wine/fakedlls/oledb32.dll
 lib/wine/fakedlls/oledlg.dll
 lib/wine/fakedlls/olepro32.dll
 lib/wine/fakedlls/olesvr.dll16
@@ -1031,7 +1037,6 @@ lib/wine/fakedlls/winejack.drv
 lib/wine/fakedlls/winejoystick.drv
 lib/wine/fakedlls/winemenubuilder.exe
 lib/wine/fakedlls/winemine.exe
-lib/wine/fakedlls/winemp3.acm
 lib/wine/fakedlls/winenas.drv
 lib/wine/fakedlls/wineoss.drv
 lib/wine/fakedlls/winepath.exe
@@ -1336,6 +1341,7 @@ lib/wine/oleacc.dll.so
 lib/wine/oleaut32.dll.so
 lib/wine/olecli.dll16.so
 lib/wine/olecli32.dll.so
+lib/wine/oledb32.dll.so
 lib/wine/oledlg.dll.so
 lib/wine/olepro32.dll.so
 lib/wine/olesvr.dll16.so
@@ -1462,7 +1468,6 @@ lib/wine/winejack.drv.so
 lib/wine/winejoystick.drv.so
 lib/wine/winemenubuilder.exe.so
 lib/wine/winemine.exe.so
-lib/wine/winemp3.acm.so
 lib/wine/winenas.drv.so
 lib/wine/wineoss.drv.so
 lib/wine/winepath.exe.so
