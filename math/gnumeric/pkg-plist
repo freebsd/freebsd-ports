@@ -59,10 +59,8 @@ include/libspreadsheet-1.10/spreadsheet/history.h
 include/libspreadsheet-1.10/spreadsheet/hlink-impl.h
 include/libspreadsheet-1.10/spreadsheet/hlink.h
 include/libspreadsheet-1.10/spreadsheet/input-msg.h
-include/libspreadsheet-1.10/spreadsheet/item-acetate.h
 include/libspreadsheet-1.10/spreadsheet/item-bar.h
 include/libspreadsheet-1.10/spreadsheet/item-cursor.h
-include/libspreadsheet-1.10/spreadsheet/item-debug.h
 include/libspreadsheet-1.10/spreadsheet/item-edit.h
 include/libspreadsheet-1.10/spreadsheet/item-grid.h
 include/libspreadsheet-1.10/spreadsheet/libgnumeric.h
@@ -98,6 +96,7 @@ include/libspreadsheet-1.10/spreadsheet/sheet-object-graph.h
 include/libspreadsheet-1.10/spreadsheet/sheet-object-image.h
 include/libspreadsheet-1.10/spreadsheet/sheet-object-impl.h
 include/libspreadsheet-1.10/spreadsheet/sheet-object-widget.h
+include/libspreadsheet-1.10/spreadsheet/sheet-object-widget-impl.h
 include/libspreadsheet-1.10/spreadsheet/sheet-object.h
 include/libspreadsheet-1.10/spreadsheet/sheet-private.h
 include/libspreadsheet-1.10/spreadsheet/sheet-style.h
@@ -133,9 +132,6 @@ lib/gnumeric/%%VERSION%%/include/gnumeric-features.h
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.la
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.so
 lib/gnumeric/%%VERSION%%/plugins/applix/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/derivatives/derivatives.la
-lib/gnumeric/%%VERSION%%/plugins/derivatives/derivatives.so
-lib/gnumeric/%%VERSION%%/plugins/derivatives/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/dif/dif.la
 lib/gnumeric/%%VERSION%%/plugins/dif/dif.so
 lib/gnumeric/%%VERSION%%/plugins/dif/plugin.xml
@@ -151,6 +147,9 @@ lib/gnumeric/%%VERSION%%/plugins/fn-database/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-date/plugin.la
 lib/gnumeric/%%VERSION%%/plugins/fn-date/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-date/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/fn-derivatives/plugin.la
+lib/gnumeric/%%VERSION%%/plugins/fn-derivatives/plugin.so
+lib/gnumeric/%%VERSION%%/plugins/fn-derivatives/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-eng/plugin.la
 lib/gnumeric/%%VERSION%%/plugins/fn-eng/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-eng/plugin.xml
@@ -172,6 +171,9 @@ lib/gnumeric/%%VERSION%%/plugins/fn-lookup/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-math/plugin.la
 lib/gnumeric/%%VERSION%%/plugins/fn-math/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-math/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/fn-numtheory/plugin.la
+lib/gnumeric/%%VERSION%%/plugins/fn-numtheory/plugin.so
+lib/gnumeric/%%VERSION%%/plugins/fn-numtheory/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-r/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-r/rstat.la
 lib/gnumeric/%%VERSION%%/plugins/fn-r/rstat.so
@@ -207,9 +209,6 @@ lib/gnumeric/%%VERSION%%/plugins/lotus/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/mps/mps.la
 lib/gnumeric/%%VERSION%%/plugins/mps/mps.so
 lib/gnumeric/%%VERSION%%/plugins/mps/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/numtheory/numtheory.la
-lib/gnumeric/%%VERSION%%/plugins/numtheory/numtheory.so
-lib/gnumeric/%%VERSION%%/plugins/numtheory/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/oleo/oleo.la
 lib/gnumeric/%%VERSION%%/plugins/oleo/oleo.so
 lib/gnumeric/%%VERSION%%/plugins/oleo/plugin.xml
@@ -253,9 +252,9 @@ lib/gnumeric/%%VERSION%%/plugins/uihello/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.la
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
-lib/goffice/0.7.9/plugins/gnumeric/gnumeric.la
-lib/goffice/0.7.9/plugins/gnumeric/gnumeric.so
-lib/goffice/0.7.9/plugins/gnumeric/plugin.xml
+lib/goffice/%%GOFFICE%%/plugins/gnumeric/gnumeric.la
+lib/goffice/%%GOFFICE%%/plugins/gnumeric/gnumeric.so
+lib/goffice/%%GOFFICE%%/plugins/gnumeric/plugin.xml
 lib/libspreadsheet-%%VERSION%%.so
 lib/libspreadsheet.la
 lib/libspreadsheet.so
@@ -350,7 +349,6 @@ share/gnumeric/%%VERSION%%/glade/sampling.glade
 share/gnumeric/%%VERSION%%/glade/scenario-add.glade
 share/gnumeric/%%VERSION%%/glade/scenario-manager.glade
 share/gnumeric/%%VERSION%%/glade/search-replace.glade
-share/gnumeric/%%VERSION%%/glade/search.glade
 share/gnumeric/%%VERSION%%/glade/sheet-order.glade
 share/gnumeric/%%VERSION%%/glade/sheet-resize.glade
 share/gnumeric/%%VERSION%%/glade/shuffle.glade
@@ -369,6 +367,7 @@ share/gnumeric/%%VERSION%%/templates/invoice.gnumeric
 share/gnumeric/%%VERSION%%/templates/loan.gnumeric
 share/gnumeric/%%VERSION%%/templates/mileage.gnumeric
 share/gnumeric/%%VERSION%%/templates/purchase_order.gnumeric
+share/gnumeric/%%VERSION%%/ui/search.ui
 share/gnome/help/gnumeric/C/about-authors.xml
 share/gnome/help/gnumeric/C/about-history.xml
 share/gnome/help/gnumeric/C/about-license.xml
@@ -936,6 +935,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnome/help/gnumeric/C/figures
 @dirrm share/gnome/help/gnumeric/C
 @dirrm share/gnome/help/gnumeric
+@dirrm share/gnumeric/%%VERSION%%/ui
 @dirrm share/gnumeric/%%VERSION%%/templates
 @dirrm share/gnumeric/%%VERSION%%/glade
 @dirrm share/gnumeric/%%VERSION%%/autoformat-templates/List
@@ -947,7 +947,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnumeric/%%VERSION%%/autoformat-templates
 @dirrm share/gnumeric/%%VERSION%%
 @dirrm share/gnumeric
-@dirrm lib/goffice/0.7.9/plugins/gnumeric
+@dirrm lib/goffice/%%GOFFICE%%/plugins/gnumeric
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xbase
 @dirrm lib/gnumeric/%%VERSION%%/plugins/uihello
 @dirrm lib/gnumeric/%%VERSION%%/plugins/sylk
@@ -962,7 +962,6 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 %%PERL%%@dirrm lib/gnumeric/%%VERSION%%/plugins/perl-func
 @dirrm lib/gnumeric/%%VERSION%%/plugins/openoffice
 @dirrm lib/gnumeric/%%VERSION%%/plugins/oleo
-@dirrm lib/gnumeric/%%VERSION%%/plugins/numtheory
 @dirrm lib/gnumeric/%%VERSION%%/plugins/mps
 @dirrm lib/gnumeric/%%VERSION%%/plugins/lotus
 @dirrm lib/gnumeric/%%VERSION%%/plugins/html
@@ -974,6 +973,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-stat
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-random
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-r
+@dirrm lib/gnumeric/%%VERSION%%/plugins/fn-numtheory
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-math
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-lookup
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-logical
@@ -981,12 +981,12 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-financial
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-erlang
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-eng
+@dirrm lib/gnumeric/%%VERSION%%/plugins/fn-derivatives
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-date
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-database
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-complex
 @dirrm lib/gnumeric/%%VERSION%%/plugins/excel
 @dirrm lib/gnumeric/%%VERSION%%/plugins/dif
-@dirrm lib/gnumeric/%%VERSION%%/plugins/derivatives
 @dirrm lib/gnumeric/%%VERSION%%/plugins/applix
 @dirrm lib/gnumeric/%%VERSION%%/plugins
 @dirrm lib/gnumeric/%%VERSION%%/include
