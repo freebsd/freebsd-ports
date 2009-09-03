@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bzr-gtk
-PORTVERSION=	0.94.0
-PORTREVISION=	2
+PORTVERSION=	0.97.0
 CATEGORIES=	devel
-MASTER_SITES=	http://samba.org/~jelmer/bzr/
+MASTER_SITES=	http://launchpadlibrarian.net/30817826/
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	GTK interface to Bazaar-NG VCS
 
+BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
 		bzr:${PORTSDIR}/devel/bazaar-ng
 
