@@ -1,0 +1,5 @@
+%%SITE_PERL%%/AnyEvent/AIO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/AIO/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/AIO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+@dirrmtry %%SITE_PERL%%/AnyEvent
