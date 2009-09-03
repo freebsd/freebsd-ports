@@ -59,7 +59,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
 		${PATCH_WRKSRC}/src/mimetypes/CMakeLists.txt
 	# avoid a crash when kdenlive_render is not in $PATH
-	${REINPLACE_CMD} -e 's|QCoreApplication::applicationDirPath()|QStrin    g("${PREFIX}/bin")|g' \
+	${REINPLACE_CMD} -e 's|QCoreApplication::applicationDirPath()|QString("${PREFIX}/bin")|g' \
 		${PATCH_WRKSRC}/src/renderwidget.cpp
 
 post-install:
