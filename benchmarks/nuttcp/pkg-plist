@@ -1,0 +1,11 @@
+%%NUTTSCP%%bin/nuttrcp
+%%NUTTSCP%%bin/nuttscp
+bin/nuttcp
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README
+%%DATADIR%%/examples.txt
+etc/xinetd.d/nuttcp
+etc/xinetd.d/nuttcp4
+etc/xinetd.d/nuttcp6
+@dirrm %%DATADIR%%
+@dirrmtry etc/xinetd.d
