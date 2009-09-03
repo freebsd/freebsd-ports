@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tornado
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	games
-MASTER_SITES=	http://kiza.kcore.de/software/tornado/download/
+MASTER_SITES=	http://kiza.kcore.de/media/software/${PORTNAME}/
 
 MAINTAINER=	minter@lunenburg.org
 COMMENT=	A curses-based game of weather destruction
@@ -18,6 +17,6 @@ MAN6=		tornado.6
 MANLANG=	"" de fr it nl no ru
 
 USE_GETTEXT=	yes
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 
 .include <bsd.port.mk>
