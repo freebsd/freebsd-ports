@@ -1,0 +1,6 @@
+Loading this module will install the necessary magic to seamlessly
+integrate IO::AIO into AnyEvent, i.e. you no longer need to concern
+yourself with calling IO::AIO::poll_cb or any of that stuff (you still
+can, but this module will do it in case you don't).
+
+WWW: http://search.cpan.org/dist/AnyEvent-AIO/
