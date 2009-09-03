@@ -7,6 +7,7 @@
 
 PORTNAME=	Color-Palette
 PORTVERSION=	0.091400
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Color
@@ -18,7 +19,7 @@ COMMENT=	Handle sets of named colors in Perl
 BUILD_DEPENDS=	p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Graphics-Color>=0.21:${PORTSDIR}/graphics/p5-Graphics-Color \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Moose.pm>=0:${PORTSDIR}/devel/p5-Moose
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
