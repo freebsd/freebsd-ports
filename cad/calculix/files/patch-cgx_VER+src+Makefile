@@ -1,27 +1,26 @@
---- cgx_1.8/src/Makefile.orig	2007-08-25 07:37:49.000000000 +0900
-+++ cgx_1.8/src/Makefile	2007-09-22 07:28:34.000000000 +0900
-@@ -1,13 +1,13 @@
--CFLAGS = -O2 -Wall \
-+CFLAGS += -O2 -Wall \
+--- cgx_2.0/src/Makefile.orig	2009-08-11 12:01:35.000000000 +0900
++++ cgx_2.0/src/Makefile	2009-09-03 15:05:58.000000000 +0900
+@@ -1,14 +1,14 @@
+ CFLAGS = -O3 -Wall \
    -I./ \
    -I/usr/include \
 -  -I/usr/include/GL \
 +  -I$(LOCALBASE)/include/GL \
    -I../../libSNL/src \
+   -I../../glut-3.5/src \
 -  -I/usr/X11/include 
 +  -I$(LOCALBASE)/include 
  
--LFLAGS = \
--  -L/usr/lib -lGL -lGLU -lglut \
--  -L/usr/X11/lib -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
-+LFLAGS += \
+ LFLAGS = \
+-  -L/usr/lib64 -lGL -lGLU \
+-  -L/usr/X11R6/lib64 -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
 +  -L$(LOCALBASE)/lib -lGL -lGLU -lglut \
 +  -L$(LOCALBASE)/lib -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
    -lm 
  
- # -L/usr/X11/lib64 -lpthread -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
-@@ -122,42 +122,6 @@
-  writefbd.c \
+ # on 32bit systems change lib64 to lib
+@@ -126,49 +126,13 @@
+  writebp.c \
   contact.c \
   makeTriFromElems.c \
 - ../../glut-3.5/src/layerutil.c \
@@ -63,7 +62,6 @@
   uselibSNL.cpp \
   ../../libSNL/src/*.cpp
  
-@@ -165,7 +129,7 @@
  OLIB = $(SLIB:.c=.o)
  
  cgx: $(OLIB)
