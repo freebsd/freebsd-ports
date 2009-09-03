@@ -7,6 +7,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${DOVECOTVERSION}/ \
 		http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
@@ -58,7 +59,7 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 		IPV6		"IPv6 support"		on  \
 		POP3		"POP3 support"		on  \
 		LDA		"LDA support"		on  \
-		MANAGESIEVE	"ManageSieve support"	off  \
+		MANAGESIEVE	"ManageSieve support"	on  \
 		GSSAPI		"GSSAPI support"	off \
 		VPOPMAIL	"VPopMail support"	off \
 		BDB		"BerkleyDB support"	off \
