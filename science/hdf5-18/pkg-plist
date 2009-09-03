@@ -116,9 +116,9 @@ include/hdf5.h
 %%FORTRAN%%lib/libhdf5hl_fortran.la
 %%FORTRAN%%lib/libhdf5hl_fortran.a
 lib/libhdf5_cpp.so
-lib/libhdf5_cpp.so.0
+lib/libhdf5_cpp.so.6
 lib/libhdf5_hl_cpp.so
-lib/libhdf5_hl_cpp.so.0
+lib/libhdf5_hl_cpp.so.6
 lib/libhdf5_hl_cpp.la
 lib/libhdf5_hl_cpp.a
 lib/libhdf5.a
@@ -133,7 +133,7 @@ lib/libhdf5_cpp.la
 lib/libhdf5_hl.a
 lib/libhdf5_hl.la
 lib/libhdf5_hl.so
-lib/libhdf5_hl.so.0
+lib/libhdf5_hl.so.6
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Attributes.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am

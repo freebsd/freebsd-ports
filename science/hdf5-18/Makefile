@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-1.8.2/src/
