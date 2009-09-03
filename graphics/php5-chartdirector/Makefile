@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chartdirector
-PORTVERSION=	5.0
+PORTVERSION=	5.0.1
 CATEGORIES?=	graphics
 MASTER_SITES=	http://download.advsofteng.com/ \
 		http://download2.advsofteng.com/
