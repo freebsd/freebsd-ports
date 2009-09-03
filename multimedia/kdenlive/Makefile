@@ -6,6 +6,7 @@
 
 PORTNAME=	kdenlive
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 
@@ -51,11 +52,15 @@ RUN_DEPENDS+=	recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 .endif
 
 post-patch:
+	# do not install the icon and the menu entry
 	${REINPLACE_CMD} -E -e '/${PORTNAME}.(menu|xpm)/d' \
 		${PATCH_WRKSRC}/data/CMakeLists.txt
 	# prevent updating mime during build
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
 		${PATCH_WRKSRC}/src/mimetypes/CMakeLists.txt
+	# avoid a crash when kdenlive_render is not in $PATH
+	${REINPLACE_CMD} -e 's|QCoreApplication::applicationDirPath()|QStrin    g("${PREFIX}/bin")|g' \
+		${PATCH_WRKSRC}/src/renderwidget.cpp
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime
