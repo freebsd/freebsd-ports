@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Controller-HTML-FormFu
 PORTVERSION=	0.05000
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,7 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	Catalyst FormFu Base Controller
 
 RUN_DEPENDS=	p5-HTML-FormFu>=0.04001:${PORTSDIR}/www/p5-HTML-FormFu \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean \
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-Catalyst-Runtime>=5.7:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Component-InstancePerContext>=0:${PORTSDIR}/www/p5-Catalyst-Component-InstancePerContext \
 		p5-Catalyst-Plugin-ConfigLoader>=0.23:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
