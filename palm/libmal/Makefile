@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	libmal
-PORTVERSION=	0.44
+PORTVERSION=	0.44.1
 CATEGORIES=	palm
-MASTER_SITES=	http://jasonday.home.att.net/code/libmal/
+MASTER_SITES=	http://www.jlogday.com/code/libmal/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A library encapsulating malsync
 
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
