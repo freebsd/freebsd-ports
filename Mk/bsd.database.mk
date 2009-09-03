@@ -462,8 +462,6 @@ FIREBIRD_VER=	${USE_FIREBIRD}
 LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird20-client
 .elif ${FIREBIRD_VER} == "20"
 LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird20-client
-.elif ${FIREBIRD_VER} == "1"
-LIB_DEPENDS+=	fbclient.1:${PORTSDIR}/databases/firebird-client
 .else
 IGNORE=		cannot install: unknown Firebird version: ${FIREBIRD_VER}
 .endif
