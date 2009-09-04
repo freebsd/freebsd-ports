@@ -48,7 +48,6 @@ Note:  Please add new entries to the beginning of this file.
          <p>Opera reports several security issues related to the user
          interface:</p>
          <blockquote cite="http://www.opera.com/docs/changelogs/freebsd/1000/">
-           <p>
              <ul>
                <li>Issue where sites using revoked intermediate certificates might be shown as secure</li>
                <li>Issue where the collapsed address bar didn't show the current domain</li>
@@ -56,7 +55,6 @@ Note:  Please add new entries to the beginning of this file.
                <li>Some IDNA characters not correctly displaying in the address bar</li>
                <li>Issue where Opera accepts nulls and invalid wild-cards in certificates</li>
              </ul>
-           </p>
          </blockquote>
        </body>
      </description>
