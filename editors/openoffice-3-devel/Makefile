@@ -10,15 +10,11 @@ PORTVERSION?=	3.2.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
-		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/misc/moz/:mozsrc \
 		${MASTER_SITE_MOZILLA_EXTENDED:S/$/:mozsrc/} \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 MASTER_SITE_SUBDIR+=	seamonkey/releases/${SEAMONKEY_VERSION}/:mozsrc
 DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
-.if defined(WITH_GPC)
-DISTFILES+=	gpc231.tar.Z:gpc
-.endif
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
@@ -74,11 +70,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		56
+MILESTONE?=		57
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20090826
+SNAPDATE=		20090905
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -125,9 +121,6 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		ant:${PORTSDIR}/devel/apache-ant
 #see #i85469# for gperf
-.if !defined(WITH_GPC)
-LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
-.endif
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
@@ -192,11 +185,6 @@ post-extract:
 		cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's###g' $$i ; \
 	done
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
-.if defined(WITH_GPC)
-	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
-	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
-	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
-.endif
 .if !defined(WITHOUT_MOZILLA)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${SEAMONKEY_SOURCE} ${WRKSRC}/moz/download
 .endif
