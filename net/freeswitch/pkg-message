@@ -1,0 +1,11 @@
+IF you need mod_erlang_event. For right now you have to 
+
+manualy install erlang-lite  in /usr/ports/lang/erlang-lite.
+
+then come back to freeswitch and make the port and choose 
+
+mod_erlang_event in the menu options.
+
+Once the erlang port is fixed to build with other ports this
+
+will be done automaticly.

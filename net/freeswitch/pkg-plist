@@ -301,12 +301,16 @@ freeswitch/mod/mod_dialplan_asterisk.so
 %%WITH_MODDPDIRECTORY%%freeswitch/mod/mod_dialplan_directory.so
 freeswitch/mod/mod_dialplan_xml.la
 freeswitch/mod/mod_dialplan_xml.so
+%%WITH_MODDINGALING%%freeswitch/mod/mod_dingaling.la
+%%WITH_MODDINGALING%%freeswitch/mod/mod_dingaling.so
 freeswitch/mod/mod_dptools.la
 freeswitch/mod/mod_dptools.so
 %%WITH_MODEASYROUTE%%freeswitch/mod/mod_easyroute.la
 %%WITH_MODEASYROUTE%%freeswitch/mod/mod_easyroute.so
 freeswitch/mod/mod_enum.la
 freeswitch/mod/mod_enum.so
+%%WITH_MODERLANGEVENT%%freeswitch/mod/mod_erlang_event.la
+%%WITH_MODERLANGEVENT%%freeswitch/mod/mod_erlang_event.so
 freeswitch/mod/mod_esf.la
 freeswitch/mod/mod_esf.so
 %%WITH_MODMULTICAST%%freeswitch/mod/mod_event_multicast.la
