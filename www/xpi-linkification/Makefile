@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	linkification
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.6
 CATEGORIES=	www
-MASTER_SITES=	CENKES
+MASTER_SITES=	http://yellow5.us/firefox/
+DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Converts text links into genuine, clickable links
