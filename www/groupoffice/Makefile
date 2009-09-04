@@ -8,7 +8,7 @@ PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
 DISTVERSION=	2.18-stable-21
 CATEGORIES=	www
-MASTER_SITES=	SF/group-office/Group-Office%20stable/2.18-stable-21
+MASTER_SITES=	SF/group-office/2.18
 
 MAINTAINER=	as@bsdgroup.de
 COMMENT=	A modular web application framework vor office
