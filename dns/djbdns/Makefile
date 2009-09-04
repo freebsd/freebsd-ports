@@ -32,7 +32,7 @@ OPTIONS=	DUMPCACHE	"persistent cache for dnscache" off \
 
 .if defined(WITH_JUMBO)
 .if defined(WITH_IPV6) || defined(WITH_IGNOREIP) || defined(WITH_SRV)
-BROKEN=		The jumbo patch currently conflicts with the IPv6 and ignoreip2 patches
+BROKEN=		The jumbo patch currently conflicts with the IPv6, ignoreip2, and SRV patches
 .endif
 
 PATCH_SITES+=	http://people.FreeBSD.org/~roam/ports/dns/djbdns/:jumbo \
@@ -65,7 +65,7 @@ PORTVERSION=	${DJBDNS_VER}.${DJBDNS_V6_VER:S/test/b/:S/diff//}
 PATCH_SITES+=	http://www.fefe.de/dns/:ipv6
 PATCHFILES+=	${PORTNAME}-${DJBDNS_VER}-${DJBDNS_V6_VER}.diff.bz2:ipv6
 PATCH_DIST_STRIP=	-p1
-EXTRA_PATCHES+=	${FILESDIR}/uint32.patch
+EXTRA_PATCHES+=	${FILESDIR}/uint32.patch ${FILESDIR}/djbdns-ipv6-ooyama.patch
 .endif
 
 .if defined(WITH_DUMPCACHE) && !defined(WITH_JUMBO)
@@ -79,6 +79,9 @@ CFLAGS+=	-DDUMPCACHE
 .endif
 
 .if defined(WITH_IGNOREIP)
+.if defined(WITH_IPV6)
+BROKEN=		The IPv6 patch already includes the ignoreip2 functionality
+.endif
 PATCH_SITES+=	http://tinydns.org/:ignoreip
 PATCHFILES+=	djbdns-1.05-ignoreip2.patch:ignoreip
 PATCH_DIST_STRIP=	-p1
@@ -97,7 +100,7 @@ PATCH_DIST_STRIP=	-p1
 .endif
 
 DJBDNS_VER=	1.05
-DJBDNS_V6_VER=	test14
+DJBDNS_V6_VER=	test23
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check

@@ -1,0 +1,128 @@
+# http://hasiru.net/djbdns-ipv6-ooyama.patch
+
+diff -puNr dns_transmit.c dns_transmit.c
+--- dns_transmit.c	2008-07-12 14:10:52.000000000 +0900
++++ dns_transmit.c	2008-07-11 15:35:23.000000000 +0900
+@@ -104,6 +104,14 @@ static int thisudp(struct dns_transmit *
+   while (d->udploop < 4) {
+     for (;d->curserver < 16;++d->curserver) {
+       ip = d->servers + 16 * d->curserver;
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
++      if (!fromserver) {
++        if (ip6_isv4mapped(ip))
++          noipv6 = 1;
++        else
++          noipv6 = 0;
++      }
++#endif
+       if (byte_diff(ip,16,V6any)) {
+ 	d->query[2] = dns_random(256);
+ 	d->query[3] = dns_random(256);
+@@ -155,6 +163,14 @@ static int thistcp(struct dns_transmit *
+ 
+   for (;d->curserver < 16;++d->curserver) {
+     ip = d->servers + 16 * d->curserver;
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
++    if (!fromserver) {
++      if (ip6_isv4mapped(ip))
++        noipv6 = 1;
++      else
++        noipv6 = 0;
++    }
++#endif
+     if (byte_diff(ip,16,V6any)) {
+       d->query[2] = dns_random(256);
+       d->query[3] = dns_random(256);
+diff -puNr dnscache.c dnscache.c
+--- dnscache.c	2008-07-12 14:10:52.000000000 +0900
++++ dnscache.c	2008-07-11 15:32:00.000000000 +0900
+@@ -59,6 +59,7 @@ uint64 numqueries = 0;
+ 
+ static int udp53;
+ 
++
+ #define MAXUDP 200
+ static struct udpclient {
+   struct query q;
+@@ -408,11 +409,12 @@ int main()
+   if (!ip6_scan(x,myipincoming))
+     strerr_die3x(111,FATAL,"unable to parse IP address ",x);
+ 
+-#if 0
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
+   /* if if IP is a mapped-IPv4 address, disable IPv6 functionality */
+   /* this is actually a bad idea */
+   if (ip6_isv4mapped(myipincoming))
+     noipv6 = 1;
++  fromserver = 1;
+ #endif
+ 
+   udp53 = socket_udp6();
+diff -puNr server.c server.c
+--- server.c	2008-07-12 14:10:52.000000000 +0900
++++ server.c	2008-07-11 15:33:18.000000000 +0900
+@@ -92,6 +92,9 @@ int main()
+ {
+   char *x;
+   int *udp53;
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
++  int *noipv6s;
++#endif
+   unsigned int off;
+   unsigned int cnt;
+   iopause_fd *iop;
+@@ -116,6 +119,11 @@ int main()
+   }
+   udp53=(int *) alloc(sizeof(int) *cnt);
+   if (!udp53) nomem();
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
++  noipv6s=(int *) alloc(sizeof(int) *cnt);
++  if (!noipv6s) nomem();
++  fromserver = 1;
++#endif
+   iop=(iopause_fd *) alloc(sizeof(*iop) * cnt);
+   if (!iop) nomem();
+ 
+@@ -124,6 +132,12 @@ int main()
+     unsigned int l;
+     uint32 ifid=0;
+     l=ip6_scan(x+off,ip);
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
++    if (ip6_isv4mapped(ip))
++      noipv6 = noipv6s[cnt] = 1;
++    else
++      noipv6 = noipv6s[cnt] = 0;
++#endif
+     udp53[cnt] = socket_udp6();
+     if (udp53[cnt] == -1)
+       strerr_die2sys(111,fatal,"unable to create UDP socket: ");
+@@ -165,6 +179,9 @@ int main()
+     iopause(iop,cnt,&deadline,&stamp);
+     for (i=0;i<cnt;i++)
+       if (iop[i].revents) {
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
++        noipv6 = noipv6s[i];
++#endif
+ 	len = socket_recv6(udp53[i],buf,sizeof buf,ip,&port,&ifid);
+ 	if (len < 0) continue;
+ 	if (!doit()) continue;
+diff -puNr socket.h socket.h
+--- socket.h	2008-07-12 14:10:52.000000000 +0900
++++ socket.h	2008-07-11 15:44:14.000000000 +0900
+@@ -34,5 +34,6 @@ extern const char* socket_getifname(uint
+ extern uint32 socket_getifidx(const char *ifname);
+ 
+ extern int noipv6;
++extern int fromserver;
+ 
+ #endif
+diff -puNr socket_noipv6.c socket_noipv6.c
+--- socket_noipv6.c	2008-07-12 14:10:52.000000000 +0900
++++ socket_noipv6.c	2008-07-11 15:30:12.000000000 +0900
+@@ -1,5 +1,6 @@
+ #include "haveip6.h"
+ 
++int fromserver=0;
+ #ifdef LIBC_HAS_IP6
+ int noipv6=0;
+ #else
