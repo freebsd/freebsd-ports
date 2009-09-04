@@ -4149,3 +4149,12 @@ math/it++||2009-08-23|Has expired: unmaintained and consistently unportable
 graphics/rubygem-rmagick||2009-08-27|Duplicate of graphics/ruby-rmagick
 databases/firebird-client||2009-09-03|Removed: no longer under development
 databases/firebird-server||2009-09-03|Removed: no longer under development
+audio/slimserver|audio/squeezecenter|2009-09-4|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-dynamicplaylist|audio/squeezecenter-dynamicplaylist|2009-09-4|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-dynamictransition||2009-09-4|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-lastfm||2009-09-4|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-lazysearch|audio/squeezecenter-lazysearch|2009-09-4|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-slimscrobbler||2009-09-04|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-sqlplaylist|audio/squeezecenter-sqlplaylist|2009-09-04|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-superdatetime|audio/squeezecenter-superdatetime|2009-09-4|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-trackstat|audio/squeezecenter-trackstat|2009-09-4|SlimServer has been superseded by SqueezeCenter

@@ -654,15 +654,6 @@
     SUBDIR += sidplay2
     SUBDIR += sidplayer
     SUBDIR += simplemod
-    SUBDIR += slimserver
-    SUBDIR += slimserver-dynamicplaylist
-    SUBDIR += slimserver-dynamictransition
-    SUBDIR += slimserver-lastfm
-    SUBDIR += slimserver-lazysearch
-    SUBDIR += slimserver-slimscrobbler
-    SUBDIR += slimserver-sqlplaylist
-    SUBDIR += slimserver-superdatetime
-    SUBDIR += slimserver-trackstat
     SUBDIR += slv2
     SUBDIR += smasher
     SUBDIR += snack
