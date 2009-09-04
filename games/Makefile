@@ -84,6 +84,7 @@
     SUBDIR += bloboats
     SUBDIR += block
     SUBDIR += blockade
+    SUBDIR += blockout
     SUBDIR += blokish
     SUBDIR += blue
     SUBDIR += bogged

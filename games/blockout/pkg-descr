@@ -1,0 +1,6 @@
+BlockOut II is an adaptation of the original Blockout DOS game
+edited by California Dreams(1989). It uses Direct3D on Win32 and
+OpenGL on Linux/Unix. BL II has the same features than the original game.
+Score calculation is also nearly similar to the original.
+
+WWW: http://sourceforge.net/projects/blockout/
