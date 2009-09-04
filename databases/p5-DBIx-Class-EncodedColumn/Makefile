@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-EncodedColumn
-PORTVERSION=	0.00002
+PORTVERSION=	0.00004
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatically encode columns
 
 RUN_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class \
-		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name
+		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-SQL-Translator>=0.09.003:${PORTSDIR}/databases/p5-SQL-Translator
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
