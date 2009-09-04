@@ -36,7 +36,7 @@ RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 
 post-patch:
 .if ${ARCH} == "amd64"
-	${REINPLACE_CMD} -e '58s|=|= -fPIC|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e '66s|=|= -fPIC|' ${WRKSRC}/configure
 .endif
 	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' ${WRKSRC}/configure
 #	Configure script does not respect --prefix
