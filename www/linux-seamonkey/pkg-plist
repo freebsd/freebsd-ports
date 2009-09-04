@@ -475,6 +475,9 @@ lib/%%APP_NAME%%/xpicleanup
 lib/%%APP_NAME%%/xpidl
 lib/%%APP_NAME%%/xpt_dump
 lib/%%APP_NAME%%/xpt_link
+lib/%%APP_NAME%%/libsqlite3.so
+lib/%%APP_NAME%%/libnssdbm3.so
+lib/%%APP_NAME%%/libnssutil3.so
 @exec /bin/cp -R %%LOCALBASE%%/lib/npapi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/plugins/ 2>/dev/null || true
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
