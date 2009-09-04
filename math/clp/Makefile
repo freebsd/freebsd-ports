@@ -7,7 +7,7 @@
 
 PORTNAME=	Clp
 PORTVERSION=	1.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Clp/ \
 		http://www.mavetju.org/download/adopted/
@@ -18,7 +18,7 @@ COMMENT=	Linear Programming Solver
 
 LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack
 .ifdef WITH_GMPL
-LIB_DEPENDS+=	glpk.23:${PORTSDIR}/math/glpk
+LIB_DEPENDS+=	glpk.24:${PORTSDIR}/math/glpk
 .endif
 
 USE_FORTRAN=	yes
