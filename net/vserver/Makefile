@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	vserver
-PORTVERSION=	2.43a
+PORTVERSION=	2.43c
 CATEGORIES=	net
 MASTER_SITES=	http://www.enforcer.cc/vchat/filez/
 
-MAINTAINER=	mickey@netassembly.de
+MAINTAINER=	mickey@enforcer.cc
 COMMENT=	Server software of the VChat conference system
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--prefix="${PREFIX}" --mandir="${PREFIX}/man"
 USE_RC_SUBR=	vserver
 
 MAN8=		vchatctl.8 vserver.8
@@ -28,12 +29,6 @@ SUB_LIST+=	VCHATUSER=${VCHATUSER} \
 PLIST_FILES=	sbin/vserver sbin/vchatctl \
 		"@dirrmtry etc/vchat"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -42,4 +37,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
