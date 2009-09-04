@@ -4,5 +4,5 @@ simplicity of the declarative programming style, that is
 only otherwise available when one employs threads,
 coroutines, or co-processes.
 
-WWW: http://search.cpan.org/~karasik/IO-Lambda-0.36/
+WWW: http://search.cpan.org/~karasik/IO-Lambda
 Author: Dmitry Karasik <dmitry@karasik.eu.org>
