@@ -19,6 +19,7 @@
     SUBDIR += gscommander
     SUBDIR += heirloom-sh
     SUBDIR += ibsh
+    SUBDIR += jailkit
     SUBDIR += ksh93
     SUBDIR += lshell
     SUBDIR += mksh
