@@ -274,10 +274,10 @@ CONFIGURE_ARGS+=--with-http_xslt_module
 .endif
 
 .if defined(WITH_HTTP_ZIP_MODULE)
-NGINX_ZIP_MODULE_VERSION=	1.1.4
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:zip/}
-MASTER_SITE_SUBDIR+=	osa/:zip
-DISTFILES+=	nginx_mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
+NGINX_ZIP_MODULE_VERSION=	1.1.5
+MASTER_SITES+=	${MASTER_SITE_GOOGLE_CODE}:zip
+PROJECTHOST=	mod-zip
+DISTFILES+=	mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 .endif
 
@@ -291,7 +291,7 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	2.2.4
+PASSENGER_VERSION=	2.2.5
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
