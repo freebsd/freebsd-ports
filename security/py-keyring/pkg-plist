@@ -1,0 +1,12 @@
+%%GNOME_KEYRING%%%%PYTHON_SITELIBDIR%%/gnome_keyring.so
+%%KDE_KWALLET%%%%PYTHON_SITELIBDIR%%/kde_kwallet.so
+%%PYTHON_SITELIBDIR%%/keyring/__init__.py
+%%PYTHON_SITELIBDIR%%/keyring/__init__.pyc
+%%PYTHON_SITELIBDIR%%/keyring/__init__.pyo
+%%PYTHON_SITELIBDIR%%/keyring/backend.py
+%%PYTHON_SITELIBDIR%%/keyring/backend.pyc
+%%PYTHON_SITELIBDIR%%/keyring/backend.pyo
+%%PYTHON_SITELIBDIR%%/keyring/core.py
+%%PYTHON_SITELIBDIR%%/keyring/core.pyc
+%%PYTHON_SITELIBDIR%%/keyring/core.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/keyring
