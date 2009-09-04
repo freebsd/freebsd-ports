@@ -482,6 +482,9 @@ Note:  Please add new entries to the beginning of this file.
       <package>
         <name>seamonkey</name>
 	<name>linux-seamonkey</name>
+	<range><lt>1.1.18</lt></range>
+      </package>
+      <package>
 	<name>linux-seamonkey-devel</name>
 	<range><gt>0</gt></range>
       </package>
@@ -523,7 +526,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-08-03</discovery>
       <entry>2009-08-04</entry>
-      <modified>2009-08-22</modified>
+      <modified>2009-09-04</modified>
     </dates>
   </vuln>
 
