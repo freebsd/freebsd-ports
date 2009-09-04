@@ -33,7 +33,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Note:  Please add new entries to the beginning of this file.
 
 -->
-   <vuln vid="4582948a-9716-11de-83a5-001999392805">
+
+<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4582948a-9716-11de-83a5-001999392805">
      <topic>opera -- Multiple security issues in user interface</topic>
      <affects>
        <package>
@@ -71,7 +73,6 @@ Note:  Please add new entries to the beginning of this file.
      </dates>
    </vuln>
 
-<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="80aa98e0-97b4-11de-b946-0030843d3802">
     <topic>dnsmasq -- TFTP server remote code injection vulnerability</topic>
     <affects>
