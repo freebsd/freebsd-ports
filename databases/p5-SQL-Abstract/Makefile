@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	SQL-Abstract
-PORTVERSION=	1.57
+PORTVERSION=	1.58
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to generate SQL from Perl data structures
-
-RUN_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 
 PERL_CONFIGURE=	yes
 
