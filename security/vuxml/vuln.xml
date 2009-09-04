@@ -36,17 +36,17 @@ Note:  Please add new entries to the beginning of this file.
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="4582948a-9716-11de-83a5-001999392805">
-     <topic>opera -- Multiple security issues in user interface</topic>
+     <topic>opera -- multiple vulnerabilities</topic>
      <affects>
        <package>
          <name>opera</name>
+         <name>linux-opera</name>
          <range><lt>10.00.20090830</lt></range>
        </package>
      </affects>
      <description>
        <body xmlns="http://www.w3.org/1999/xhtml">
-         <p>Opera reports several security issues related to the user
-         interface:</p>
+         <p>Opera Team Reports:</p>
          <blockquote cite="http://www.opera.com/docs/changelogs/freebsd/1000/">
              <ul>
                <li>Issue where sites using revoked intermediate certificates might be shown as secure</li>
@@ -68,6 +68,7 @@ Note:  Please add new entries to the beginning of this file.
      <dates>
        <discovery>2009-09-01</discovery>
        <entry>2009-09-04</entry>
+       <modified>2009-09-04</modified>
      </dates>
    </vuln>
 
