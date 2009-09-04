@@ -7,48 +7,45 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
-PORTREVISION=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		http://ftp.ucr.ac.cr/WWW/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		http://www.microrpm.ca/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		http://opera.eurenet.net/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		ftp://opera.ftp.fu-berlin.de/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		http://ftp.ntua.gr/pub/www/Opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		ftp://ftp.wayne.edu/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		http://mirrors.dedipower.com/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.opera.com/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		http://opera.nedmirror.nl/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/&,} \
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH} \
+		ftp://opera.inode.at/${MASTER_SITES_VER_PATH} \
+		http://gd.tuwien.ac.at/infosys/browsers/opera/${MASTER_SITES_VER_PATH} \
+		http://ftp.ucr.ac.cr/WWW/opera/${MASTER_SITES_VER_PATH} \
+		http://www.microrpm.ca/pub/opera/${MASTER_SITES_VER_PATH} \
+		http://opera.eurenet.net/${MASTER_SITES_VER_PATH} \
+		ftp://opera.ftp.fu-berlin.de/${MASTER_SITES_VER_PATH} \
+		http://ftp.ntua.gr/pub/www/Opera/${MASTER_SITES_VER_PATH} \
+		ftp://ftp.wayne.edu/opera/${MASTER_SITES_VER_PATH} \
+		http://mirrors.dedipower.com/opera/${MASTER_SITES_VER_PATH} \
+		ftp://ftp.mirror.ac.uk/sites/ftp.opera.com/${MASTER_SITES_VER_PATH} \
+		http://opera.nedmirror.nl/${MASTER_SITES_VER_PATH} \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/${MASTER_SITES_VER_PATH} \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/${MASTER_SITES_VER_PATH}&,} \
 		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/
-#		http://www.opera.mirroarrr.de/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_LIB}/ \
 DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
 
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-OPERA_VER=	9.64
+OPERA_VER=	10.00
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20090302
-OPERA_BUILD=	2480
+OPERA_DATE=	20090830
+OPERA_BUILD=	4585
 OPERA_LIB=	shared
+MASTER_SITES_VER_PATH=	unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/
+WRKSRC=		${WRKDIR}/${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
 USE_QT_VER=	3
 
-MAN1=		opera.1
+MAN1=		${PORTNAME}.1
 
 NO_BUILD=	yes
-
-OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on
 
 .include <bsd.port.pre.mk>
 
@@ -62,17 +59,17 @@ OPERA_TYPE=	7
 OPERA_TYPE=	6
 .endif
 
-.if !defined(WITHOUT_ASPELL)
-LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${LOCALBASE}/lib/browser_plugins/symlinks/opera|g' \
-		${WRKSRC}/usr/local/share/opera/ini/pluginpath.ini
+#post-patch:
+#	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${LOCALBASE}/lib/browser_plugins/symlinks/${PORTNAME}${PKGNAMESUFFIX}|g' \
+#		${WRKSRC}/usr/local/share/opera/defaults/pluginpath.ini
 
 do-install:
 	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX} --docdir=${DOCSDIR} --sharedir=${DATADIR} --exec_prefix=${DATADIR}/bin --plugindir=${DATADIR}/plugins)
 	@${CP} ${DATADIR}/bin/operapluginwrapper ${DATADIR}/bin/operapluginwrapper.freebsd
 	@${INSTALL_SCRIPT} ${PATCHDIR}/operapluginwrapper ${DATADIR}/bin
+	@${INSTALL_DATA} ${WRKSRC}/usr/local/share/opera/defaults/pluginpath.ini ${DATADIR}/defaults
+	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${LOCALBASE}/lib/browser_plugins/symlinks/opera|g' \
+		${DATADIR}/defaults/pluginpath.ini
+	@${RM} ${DATADIR}/defaults/pluginpath.ini.bak
 
 .include <bsd.port.post.mk>
