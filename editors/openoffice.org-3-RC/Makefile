@@ -23,6 +23,8 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
+IGNORE=		Now release version is available
+
 NO_LATEST_LINK=	yes
 USE_GNOME=	desktopfileutils gtk20
 MOZILLA_VERSION=	1.7.5
