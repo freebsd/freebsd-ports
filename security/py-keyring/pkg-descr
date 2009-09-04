@@ -1,0 +1,7 @@
+The Python keyring lib provides an easy way to access the system keyring
+service from Python. It can be used in any application that needs safe password
+storage. It supports OSX, KDE, Gnome and Windows's native password storing
+services. Besides this, it is shipped with kinds of Python implemented keyring
+for the left environments.
+
+WWW: http://pypi.python.org/pypi/keyring
