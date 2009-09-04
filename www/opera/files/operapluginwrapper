@@ -13,6 +13,8 @@ WRAPPER="freebsd"
 case "${ELFTYPE}" in
 	*SVR4*|*Linux*)
 		if [ -x "$0.linux" ]; then
+			LD_LIBRARY_PATH=
+			export LD_LIBRARY_PATH
 			WRAPPER="linux"
 		fi
 	;;
