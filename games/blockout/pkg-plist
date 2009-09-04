@@ -1,0 +1,39 @@
+bin/blockout
+lib/libimagelib.a
+%%DATADIR%%/images/allPieces.png
+%%DATADIR%%/images/background.png
+%%DATADIR%%/images/background2.png
+%%DATADIR%%/images/background3.png
+%%DATADIR%%/images/font.png
+%%DATADIR%%/images/gameover.png
+%%DATADIR%%/images/gameovera.png
+%%DATADIR%%/images/marble.png
+%%DATADIR%%/images/marbleg.png
+%%DATADIR%%/images/menuback.png
+%%DATADIR%%/images/menucredits.png
+%%DATADIR%%/images/menufont.png
+%%DATADIR%%/images/menufont2.png
+%%DATADIR%%/images/menupit.png
+%%DATADIR%%/images/online.png
+%%DATADIR%%/images/onlinea.png
+%%DATADIR%%/images/spark.png
+%%DATADIR%%/images/sparka.png
+%%DATADIR%%/images/sprites.png
+%%DATADIR%%/images/spritesa.png
+%%DATADIR%%/images/star_crystal_grid.png
+%%DATADIR%%/sounds/blub.wav
+%%DATADIR%%/sounds/empty.wav
+%%DATADIR%%/sounds/empty2.wav
+%%DATADIR%%/sounds/hit.wav
+%%DATADIR%%/sounds/level.wav
+%%DATADIR%%/sounds/level2.wav
+%%DATADIR%%/sounds/line.wav
+%%DATADIR%%/sounds/line2.wav
+%%DATADIR%%/sounds/music.mp3
+%%DATADIR%%/sounds/tchh.wav
+%%DATADIR%%/sounds/welldone.wav
+%%DATADIR%%/sounds/welldone2.wav
+%%DATADIR%%/sounds/wozz.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
