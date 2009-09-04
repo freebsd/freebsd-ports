@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.4.9
-PORTREVISION=	2
+PORTVERSION=	1.4.10
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -24,7 +23,7 @@ GNU_CONFIGURE=	YES
 MACHINE_ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
-MAN1=		gpg.1 gpgv.1 gpg.ru.1
+MAN1=		gpg.1 gpgv.1 gpg.ru.1 gpg-zip.1
 MAN7=		gnupg.7
 INFO=		gnupg1
 DOCSDIR=	${PREFIX}/share/doc/gnupg1
