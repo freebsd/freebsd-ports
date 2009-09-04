@@ -635,6 +635,28 @@ otrs/var/httpd/htdocs/js/otrs.js
 otrs/var/httpd/htdocs/js/prototype.js
 otrs/var/httpd/htdocs/js/yui-image-uploader.js
 otrs/var/packages/Support-1.0.92.opm
+otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.de.xml
+otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.en.xml
+otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.de.xml
+otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.en.xml
+otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilSolutionDeadlineExpires.de.xml
+otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilSolutionDeadlineExpires.en.xml
+otrs/var/stats/ListOfTheMostTimeConsumingTickets.de.xml
+otrs/var/stats/ListOfTheMostTimeConsumingTickets.en.xml
+otrs/var/stats/ListOfTicketsClosedLastMonth.de.xml
+otrs/var/stats/ListOfTicketsClosedLastMonth.en.xml
+otrs/var/stats/ListOfTicketsClosedSortedByResponseTime.de.xml
+otrs/var/stats/ListOfTicketsClosedSortedByResponseTime.en.xml
+otrs/var/stats/ListOfTicketsClosedSortedBySolutionTime.de.xml
+otrs/var/stats/ListOfTicketsClosedSortedBySolutionTime.en.xml
+otrs/var/stats/ListOfTicketsCreatedLastMonth.de.xml
+otrs/var/stats/ListOfTicketsCreatedLastMonth.en.xml
+otrs/var/stats/Stats.NewTickets.de.xml
+otrs/var/stats/Stats.NewTickets.en.xml
+otrs/var/stats/Stats.StatusActionOverview.de.xml
+otrs/var/stats/Stats.StatusActionOverview.en.xml
+otrs/var/stats/Stats.TicketOverview.de.xml
+otrs/var/stats/Stats.TicketOverview.en.xml
 @unexec [ -s %D/otrs/var/log/TicketCounter.log ] || rm -f %D/otrs/var/log/TicketCounter.log
 @unexec if cmp -s %D/otrs/Kernel/Config.pm %D/otrs/Kernel/Config.pm.dist; then rm -f %D/otrs/Kernel/Config.pm; fi
 otrs/Kernel/Config.pm.dist
@@ -1276,6 +1298,7 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrmtry otrs
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING-Third-Party
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
