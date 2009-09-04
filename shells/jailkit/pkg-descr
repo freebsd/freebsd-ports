@@ -1,0 +1,7 @@
+Jailkit is a set of utilities to limit user accounts to specific
+files using chroot() and or specific commands.
+Setting up a chroot shell, a shell limited to some specific
+command, or a daemon inside a chroot jail is a lot easier and
+can be automated using these utilities.
+
+WWW:	http://olivier.sessink.nl/jailkit/

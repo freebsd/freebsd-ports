@@ -1,0 +1,24 @@
+--- Makefile.in.orig	2009-08-20 20:46:11.000000000 -0300
++++ Makefile.in	2009-08-20 20:46:51.000000000 -0300
+@@ -67,15 +67,6 @@
+ 	@cd src/ && $(MAKE) install
+ 	@cd py/ && $(MAKE) install
+ 	@cd man/ && $(MAKE) install
+-	# test if the jk_chrootsh is already in /etc/shells
+-	# this previously had @echo but that fails on FreeBSD
+-	if test -w /etc/shells; then \
+-		if ! grep ${prefix}/sbin/jk_chrootsh /etc/shells ; then \
+-			echo "appending ${prefix}/sbin/jk_chroots to /etc/shells";\
+-			echo ${prefix}/sbin/jk_chrootsh >> /etc/shells ;\
+-		fi \
+-	fi
+-
+ 
+ uninstall:
+ 	rm -f ${iniprefix}/*.ini
+@@ -83,5 +74,3 @@
+ 	@cd man/ && $(MAKE) uninstall
+ 	@cd src/ && $(MAKE) uninstall
+ 	-rmdir --ignore-fail-on-non-empty ${DESTDIR}${iniprefix}
+-	@echo "You must manually remove jk_chrootsh from /etc/shells"
+-# remove jk_chrootsh from /etc/shells

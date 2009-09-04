@@ -1,0 +1,24 @@
+bin/jk_uchroot
+etc/jailkit/jk_check.ini
+etc/jailkit/jk_init.ini
+etc/jailkit/jk_lsh.ini
+etc/jailkit/jk_socketd.ini
+etc/jailkit/jk_chrootsh.ini
+etc/jailkit/jk_update.ini
+sbin/jk_chrootlaunch
+sbin/jk_chrootsh
+sbin/jk_cp
+sbin/jk_init
+sbin/jk_check
+sbin/jk_addjailuser
+sbin/jk_jailuser
+sbin/jk_list
+sbin/jk_update
+sbin/jk_lsh
+sbin/jk_socketd
+@exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v jk_chrootsh /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+@unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v jk_chrootsh /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+%%DATADIR%%/jk_lib.py
+%%DATADIR%%/jk_lib.pyc
+@dirrm %%DATADIR%%
+@dirrmtry etc/jailkit
