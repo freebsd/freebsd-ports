@@ -21,7 +21,6 @@
 %%XPI_XPIDIR%%/chrome/content/Common/Util.js
 %%XPI_XPIDIR%%/chrome/content/Common/nsDragAndDrop.js
 %%XPI_XPIDIR%%/chrome/content/Common/nsTransferable.js
-%%XPI_XPIDIR%%/chrome/content/Common/pImageLoader.js
 %%XPI_XPIDIR%%/chrome/content/Definition/CollectionManager.js
 %%XPI_XPIDIR%%/chrome/content/Definition/Geometry.js
 %%XPI_XPIDIR%%/chrome/content/Definition/ShapeDef.js
