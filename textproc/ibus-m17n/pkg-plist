@@ -1,0 +1,6 @@
+libexec/ibus-engine-m17n
+share/ibus/component/m17n.xml
+%%DATADIR%%/icons/ibus-m17n.svg
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-m17n.mo
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
