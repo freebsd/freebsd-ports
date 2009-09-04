@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://ispras.linux-foundation.org/images/c/c1/
+MASTER_SITES=	http://ispras.linux-foundation.org/images/0/0e/
 DISTFILES=	${PORTNAME:S/^a/A/}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	bf1783@gmail.com
@@ -30,7 +30,7 @@ post-patch:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
 
-regression-test: build
+test: build
 	@(cd ${WRKSRC} && ./${PORTNAME}.pl -test )
 
 .include <bsd.port.mk>
