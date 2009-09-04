@@ -7,6 +7,7 @@
 
 PORTNAME=	qbittorrent
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	ccext2-1.6.0:${PORTSDIR}/devel/commoncpp \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		zzip.13:${PORTSDIR}/devel/zziplib \
 		curl.5:${PORTSDIR}/ftp/curl \
-		torrent-rasterbar.3:${PORTSDIR}/net-p2p/rblibtorrent-devel
+		torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network xml \
