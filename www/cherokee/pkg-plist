@@ -117,8 +117,6 @@ lib/cherokee/libplugin_libssl.la
 lib/cherokee/libplugin_libssl.so
 lib/cherokee/libplugin_method.la
 lib/cherokee/libplugin_method.so
-lib/cherokee/libplugin_mirror.la
-lib/cherokee/libplugin_mirror.so
 %%MYSQL%%lib/cherokee/libplugin_mysql.la
 %%MYSQL%%lib/cherokee/libplugin_mysql.so
 lib/cherokee/libplugin_ncsa.la
@@ -157,6 +155,8 @@ lib/cherokee/libplugin_streaming.la
 lib/cherokee/libplugin_streaming.so
 lib/cherokee/libplugin_target_ip.so
 lib/cherokee/libplugin_target_ip.la
+lib/cherokee/libplugin_uwsgi.so
+lib/cherokee/libplugin_uwsgi.la
 lib/cherokee/libplugin_wildcard.la
 lib/cherokee/libplugin_wildcard.so
 lib/libcherokee-base.la
@@ -252,8 +252,6 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/ModuleLdap.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleMethod.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleMethod.pyc
-%%ADMIN%%%%DATADIR%%/admin/ModuleMirror.py
-%%ADMIN%%%%DATADIR%%/admin/ModuleMirror.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleMysql.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleMysql.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModulePam.py
@@ -284,6 +282,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/ModuleStreaming.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleTargetIp.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleTargetIp.pyc
+%%ADMIN%%%%DATADIR%%/admin/ModuleUwsgi.py
+%%ADMIN%%%%DATADIR%%/admin/ModuleUwsgi.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleWildcard.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleWildcard.pyc
 %%ADMIN%%%%DATADIR%%/admin/Page.py
@@ -326,6 +326,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/Theme.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard.pyc
+%%ADMIN%%%%DATADIR%%/admin/Wizard_rTorrent.py
+%%ADMIN%%%%DATADIR%%/admin/Wizard_rTorrent.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_CommonStatic.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_CommonStatic.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Django.py
@@ -344,6 +346,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Redirect.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_RoR.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_RoR.pyc
+%%ADMIN%%%%DATADIR%%/admin/Wizard_Streaming.py
+%%ADMIN%%%%DATADIR%%/admin/Wizard_Streaming.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_WordPress.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_WordPress.pyc
 %%ADMIN%%%%DATADIR%%/admin/config.py
@@ -649,6 +653,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/php.jpg
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/redirect.jpg
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/ror.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/rtorrent.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/streaming.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/wordpress.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/workarea.png
 %%ADMIN%%%%DATADIR%%/admin/static/js/common.js
@@ -658,6 +664,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/js/jquery.cookie.js
 %%ADMIN%%%%DATADIR%%/admin/static/js/jquery.dimensions.js
 %%ADMIN%%%%DATADIR%%/admin/static/js/jquery.easing.js
+%%ADMIN%%%%DATADIR%%/admin/static/js/jquery.form-defaults.js
 %%ADMIN%%%%DATADIR%%/admin/static/js/jquery.tablednd.js
 %%ADMIN%%%%DATADIR%%/admin/static/js/thickbox.js
 %%ADMIN%%%%DATADIR%%/admin/static/js/ui.core.js
@@ -681,6 +688,7 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/deps/scgi.deps
 %%DATADIR%%/deps/secdownload.deps
 %%DATADIR%%/deps/streaming.deps
+%%DATADIR%%/deps/uwsgi.deps
 %%DATADIR%%/icons/README.txt
 %%DATADIR%%/icons/arrow_turn_left.png
 %%DATADIR%%/icons/blank.png
