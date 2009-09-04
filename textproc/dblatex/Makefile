@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dblatex
-PORTVERSION=	0.2.9
-PORTREVISION=	1
+PORTVERSION=	0.2.12
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -25,14 +24,13 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
 				--catalogs=${PREFIX}/share/xml/catalog.ports
 
-PORTDOCS=	manual.pdf
-
 MAN1=		dblatex.1
 MANCOMPRESSED=	yes
 
 post-patch:
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "/manual.pdf/d" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '/pdfdocs),/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '/docs\/html/d' ${WRKSRC}/setup.py
 .endif
 	@${REINPLACE_CMD} -e "s,share/man/man1,man/man1,g" ${WRKSRC}/setup.py
 
