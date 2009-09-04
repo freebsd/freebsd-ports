@@ -37,6 +37,8 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}.${OPERA_MINVER}-${OPERA_REL}-freebsd${OPERA_T
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
+IGNORE=		Use www/opera which is at the latest version
+
 OPERA_VER=	10
 OPERA_MINVER=	00
 OPERA_REL=	b3
