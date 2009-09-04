@@ -24,9 +24,6 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/axes.py
 %%PYTHON_SITELIBDIR%%/matplotlib/axes.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/axes.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/axes3d.py
-%%PYTHON_SITELIBDIR%%/matplotlib/axes3d.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/axes3d.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/axis.py
 %%PYTHON_SITELIBDIR%%/matplotlib/axis.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/axis.pyo
@@ -167,6 +164,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/fontconfig_pattern.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/fontconfig_pattern.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/ft2font.so
+%%PYTHON_SITELIBDIR%%/matplotlib/hatch.py
+%%PYTHON_SITELIBDIR%%/matplotlib/hatch.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/hatch.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/image.py
 %%PYTHON_SITELIBDIR%%/matplotlib/image.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/image.pyo
@@ -340,12 +340,6 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/__init__.py
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/__init__.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/__init__.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/numerix/_na_imports.py
-%%PYTHON_SITELIBDIR%%/matplotlib/numerix/_na_imports.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/numerix/_na_imports.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/numerix/_nc_imports.py
-%%PYTHON_SITELIBDIR%%/matplotlib/numerix/_nc_imports.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/numerix/_nc_imports.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/_sp_imports.py
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/_sp_imports.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/_sp_imports.pyo
@@ -361,9 +355,6 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/mlab/__init__.py
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/mlab/__init__.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/mlab/__init__.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/numerix/npyma/__init__.py
-%%PYTHON_SITELIBDIR%%/matplotlib/numerix/npyma/__init__.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/numerix/npyma/__init__.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/random_array/__init__.py
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/random_array/__init__.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/random_array/__init__.pyo
@@ -404,6 +395,21 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/scale.py
 %%PYTHON_SITELIBDIR%%/matplotlib/scale.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/scale.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/__init__.py
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/__init__.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/mathmpl.py
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/mathmpl.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/mathmpl.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/only_directives.py
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/only_directives.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/only_directives.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/plot_directive.py
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/plot_directive.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/plot_directive.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/spines.py
+%%PYTHON_SITELIBDIR%%/matplotlib/spines.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/spines.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/table.py
 %%PYTHON_SITELIBDIR%%/matplotlib/table.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/table.pyo
@@ -416,6 +422,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/ticker.py
 %%PYTHON_SITELIBDIR%%/matplotlib/ticker.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/ticker.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tight_bbox.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tight_bbox.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tight_bbox.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/transforms.py
 %%PYTHON_SITELIBDIR%%/matplotlib/transforms.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/transforms.pyo
@@ -446,20 +455,76 @@
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/linear_algebra
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/ma
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/mlab
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/npyma
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/random_array
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/projections
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/sphinxext
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/__init__.py
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/__init__.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/__init__.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/anchored_artists.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/anchored_artists.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/anchored_artists.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/angle_helper.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/angle_helper.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/angle_helper.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_divider.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_divider.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_divider.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_grid.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_grid.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_grid.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_rgb.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_rgb.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_rgb.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_size.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_size.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axes_size.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axislines.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axislines.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/axislines.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/clip_path.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/clip_path.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/clip_path.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/grid_finder.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/grid_finder.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/grid_finder.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/grid_helper_curvelinear.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/grid_helper_curvelinear.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/grid_helper_curvelinear.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/inset_locator.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/inset_locator.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/inset_locator.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/parasite_axes.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/parasite_axes.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid/parasite_axes.pyo
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/exceltools.py
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/exceltools.pyc
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/exceltools.pyo
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/gtktools.py
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/gtktools.pyc
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/gtktools.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/__init__.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/__init__.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/art3d.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/art3d.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/art3d.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/axes3d.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/axes3d.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/axes3d.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/axis3d.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/axis3d.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/axis3d.pyo
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/proj3d.py
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/proj3d.pyc
+%%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d/proj3d.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid
+@dirrm %%PYTHON_SITELIBDIR%%/mpl_toolkits/mplot3d
 @dirrm %%PYTHON_SITELIBDIR%%/mpl_toolkits
 %%PYTHON_SITELIBDIR%%/pylab.py
 %%PYTHON_SITELIBDIR%%/pylab.pyc
@@ -468,6 +533,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_fltk.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_gtk.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_gtk2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_qt.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_qt4.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_tk.py
@@ -486,18 +552,22 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/agg_oo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/barchart_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/bbox_intersect.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/clippath_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/collections_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/color_cycle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/colorbar_only.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/compound_path.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/custom_projection_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/custom_scale_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/date_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/date_index_formatter.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/donut_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/fahrenheit_celcius_scales.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/font_family_rc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/font_file.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/histogram_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/image_zcoord.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/joinstyle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/legend_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/line_with_text.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/logo2.py
@@ -505,16 +575,43 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/patch_collection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/path_patch_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/quad_bezier.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/radar_chart.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/scatter_piecharts.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/span_regions.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/two_scales.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/unicode_minus.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/watermark_image.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/watermark_text.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_rgb.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_axes_grid.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_axes_rgb.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_curvelinear_grid.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_fixed_size_axes.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_floating_axis.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_image.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_parasite_axes.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_parasite_axes2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/inset_locator_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/inset_locator_demo2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/parasite_simple.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/parasite_simple2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/scatter_hist.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_anchored_artists.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_axes_divider1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_axes_divider2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_axes_divider3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_axesgrid.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_axesgrid2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_axisline.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_axisline2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_axisline3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/simple_axisline4.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_axes_divider.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/AAPL.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/INTC.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/aapl.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/ct.raw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/data_x_x2_x3.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/demodata.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/eeg.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/embedding_in_wx3.xrc
@@ -536,37 +633,65 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/path_editor.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/pick_event_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/pick_event_demo2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/pipong.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/pong_gtk.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/pong_qt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/viewlims.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/poly_editor.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/zoom_window.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/rasterization_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/font_indexing.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/ftface_props.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/image_thumbnail.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/longshort.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/multiprocess.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/rc_traits.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/rec_groupby_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/rec_join_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/svg_filter_line.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/svg_filter_pie.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/tight_bbox_test.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/wire3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/bars3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/contour3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/contour3d_demo2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/contourf3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/hist3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/lines3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/polys3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/scatter3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/surface3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/surface3d_demo2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/text3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/2dcollections3d_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/accented_text.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/agg_buffer_to_array.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/alignment_test.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/anchored_artists.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/annotation_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/annotation_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/anscombe.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/arctest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/arrow_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/aspect_loglog.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axes_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axes_props.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axes_zoom_effect.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axhspan_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axis_equal_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/bar_stacked.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/barb_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/barchart_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/barchart_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/barcode_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/barh_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/boxplot_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/boxplot_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/break.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/broken_barh.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/centered_ticklabels.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/clippedline.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/cohere_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/color_by_yvalue.py
@@ -595,6 +720,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/date_demo_convert.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/date_demo_rrule.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/date_index_formatter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/demo_text_rotation_mode.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/dolphin.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/ellipse_collection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/ellipse_demo.py
@@ -609,7 +735,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/figimage_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/figlegend_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/figure_title.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_between.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_between_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_betweenx_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_spiral.py
@@ -651,6 +778,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/legend_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/legend_demo3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/legend_scatter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/legend_translucent.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/line_collection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/line_collection2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/line_styles.py
@@ -673,6 +801,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/mri_with_eeg.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/multi_image.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/multiline.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/multipage_pdf.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/multiple_figs_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/nan_test.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/newscalarformatter_demo.py
@@ -691,6 +820,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/psd_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/psd_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/psd_demo3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/psd_demo_complex.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pstest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pythonic_matplotlib.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/quadmesh_demo.py
@@ -698,16 +828,20 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/scatter_custom_symbol.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/scatter_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/scatter_demo2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/scatter_hist.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/scatter_masked.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/scatter_profile.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/scatter_star_poly.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/set_and_get.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/shading_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/shared_axis_across_figures.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/shared_axis_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/show_colormaps.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/simple_plot.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/simple_plot_fps.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/simplification_clipping_test.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/specgram_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/spine_placement_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/spy_demos.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/stem_plot.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/step_demo.py
@@ -729,6 +863,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/toggle_images.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/transoffset.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/unicode_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/usetex_baseline_test.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/usetex_fonteffects.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/usetex_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/vertical_ticklabels.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/vline_demo.py
@@ -763,7 +899,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/date_support.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/ellipse_with_units.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/evans_test.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/evans_test2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/radian_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/units_sample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/units_scatter.py
@@ -780,6 +915,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_wx3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_wx4.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_wx5.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/fourier_demo_wx.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/gtk_spreadsheet.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/histogram_demo_canvasagg.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/interactive.py
@@ -805,9 +941,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/span_selector.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/axes_grid
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/event_handling
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mplot3d
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pylab_examples
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/pngsuite
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
