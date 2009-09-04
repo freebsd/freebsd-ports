@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.0.4.2
+PORTVERSION=	1.0.4.3
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/:source1 \
 		http://dl.getdropbox.com/u/152504/:source2 \
 		http://www.freeswitch.org/eg/:source3
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	pizza_gram.tar.gz:source1 \
-		freeswitch-1.0.4.2.tar.gz:source2 \
+		${PORTNAME}-${PORTVERSION}.tar.gz:source2 \
 		pizza_sounds.tar.gz:source3 \
-		freeswitch-sounds-en-us-callie-8000-1.0.11.tar.gz:source1 \
-		freeswitch-sounds-en-us-callie-16000-1.0.11.tar.gz:source1 \
-		freeswitch-sounds-en-us-callie-32000-1.0.11.tar.gz:source1 \
-		freeswitch-sounds-en-us-callie-48000-1.0.11.tar.gz:source1 \
-		freeswitch-sounds-music-8000-1.0.8.tar.gz:source1 \
-		freeswitch-sounds-music-16000-1.0.8.tar.gz:source1 \
-		freeswitch-sounds-music-32000-1.0.8.tar.gz:source1 \
-		freeswitch-sounds-music-48000-1.0.8.tar.gz:source1
-EXTRACT_ONLY=	freeswitch-1.0.4.2.tar.gz
+		${PORTNAME}-sounds-en-us-callie-8000-1.0.11.tar.gz:source1 \
+		${PORTNAME}-sounds-en-us-callie-16000-1.0.11.tar.gz:source1 \
+		${PORTNAME}-sounds-en-us-callie-32000-1.0.11.tar.gz:source1 \
+		${PORTNAME}-sounds-en-us-callie-48000-1.0.11.tar.gz:source1 \
+		${PORTNAME}-sounds-music-8000-1.0.8.tar.gz:source1 \
+		${PORTNAME}-sounds-music-16000-1.0.8.tar.gz:source1 \
+		${PORTNAME}-sounds-music-32000-1.0.8.tar.gz:source1 \
+		${PORTNAME}-sounds-music-48000-1.0.8.tar.gz:source1
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch SoftSwitch Port
@@ -59,7 +59,9 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODPOCKETSPHINX	"Enable mod_pockectsphinx (voice control)" on \
 		MODCIDLOOKUP	"Enable mod_cidlookup" on \
 		MODDPDIRECTORY	"Enable mod_dialplan_directory" on \
+		MODDINGALING    "Enable mod_dingaling(google talk)" on \
 		MODEASYROUTE	"Enable mod_easyroute(routeing tool)" on \
+		MODERLANGEVENT  "Enable mod_erlang_event (Call Center Dist)" off \
 		MODFAX		"Enable mod_fax" on \
 		MODLCR		"Enable mod_lcr (least cost routing)" on \
 		MODSOUNDTOUCH	"Enable mod_soundtouch" on \
@@ -326,6 +328,18 @@ PLIST_SUB+=	WITH_MODNIBBLEBILL="@comment "
 PLIST_SUB+=	WITH_MODNIBBLEBILL=""
 .endif
 
+.if !defined(WITH_MODDINGALING)
+ PLIST_SUB+=	WITH_MODDINGALING="@comment "
+.else
+PLIST_SUB+=	WITH_MODDINGALING=""
+.endif
+
+.if !defined(WITH_MODERLANGEVENT)
+PLIST_SUB+=	WITH_MODERLANGEVENT="@comment "
+.else
+PLIST_SUB+=	WITH_MODERLANGEVENT=""
+.endif
+
 pre-configure:
 	@cd ${WRKSRC} && ./bootstrap.sh
 	@${CP} ${WRKSRC}/build/modules.conf.in ${WRKSRC}/modules.conf
@@ -453,6 +467,14 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|#applications/mod_nibblebill|applications/mod_nibblebill|g' ${WRKSRC}/modules.conf
 .endif
 
+.if defined(WITH_MODDINGALING)
+	${REINPLACE_CMD} -e 's|#endpoints/mod_dingaling|endpoints/mod_dingaling|g' ${WRKSRC}/modules.conf
+.endif
+
+.if defined(WITH_MODERLANGEVENT)
+	@${REINPLACE_CMD} -e 's|#event_handlers/mod_erlang_event|event_handlers/mod_erlang_event|g' ${WRKSRC}/modules.conf
+.endif
+
 post-patch:
 	@${GREP} -Rl '/bin/bash' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g'
@@ -492,6 +514,8 @@ post-install:
 	@${TAR} -xvzf ${DISTDIR}/pizza_gram.tar.gz -C ${LOCALBASE}/${PORTNAME}/grammar
 	@${TAR} -xzvf ${DISTDIR}/pizza_sounds.tar.gz -C ${LOCALBASE}/${PORTNAME}/sounds/en/us
 .endif
+
+	@${CAT} ${PKGMESSAGE}
 
 .if ${OSVERSION} < 700000
 IGNORE=		it's to unsupported before FreeBSD 7.X
