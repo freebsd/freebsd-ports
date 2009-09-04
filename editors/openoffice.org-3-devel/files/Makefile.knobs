@@ -89,11 +89,6 @@ pre-fetch:
 	@${ECHO} "You can compile OOo to use Qt/KDE vclplug with"
 	@${ECHO} "make -DWITH_KDE"
 .endif
-.if !defined(WITH_GPC)
-	@${ECHO}
-	@${ECHO} "You can compile OOo with gpc instead of libart by"
-	@${ECHO} "make -DWITH_GPC"
-.endif
 .if !defined(WITH_EVOLUTION2)
 	@${ECHO}
 	@${ECHO} "You can compile OOo with evolution2 support by"
