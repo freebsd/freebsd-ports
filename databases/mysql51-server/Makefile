@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.37
+PORTVERSION=	5.1.38
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -22,8 +22,6 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
-		--infodir=${PREFIX}/info \
-		--mandir=${PREFIX}/man \
 		--without-debug \
 		--without-readline \
 		--without-libedit \
@@ -43,13 +41,21 @@ CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .endif
 .if defined(WITH_OPENSSL)
+.if !defined(WITHOUT_YASSL)
 CONFIGURE_ARGS+=--with-ssl=bundled
+.else
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
+.endif
 .endif
 .if defined(WITH_FAST_MUTEXES)
 CONFIGURE_ARGS+=--with-fast-mutexes
 .endif
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
+PLIST_SUB+=	PLUGINS="@comment "
+.else
+PLIST_SUB+=	PLUGINS=""
 .endif
 .if defined(WITH_NDB)
 CONFIGURE_ARGS+=--with-plugins=max
@@ -127,7 +133,8 @@ pre-fetch:
 	@${ECHO} "	WITH_CHARSET=charset	Define the primary built-in charset (latin1)."
 	@${ECHO} "	WITH_XCHARSET=list	Define other built-in charsets (may be 'all')."
 	@${ECHO} "	WITH_COLLATION=collate	Define default collation (latin1_swedish_ci)."
-	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections."
+	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections"
+	@${ECHO} "				(define WITHOUT_YASSL for backward compatibility)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
 	@${ECHO} "				(try it if you use libpthread)."
@@ -219,7 +226,7 @@ post-patch:
 post-extract:
 	@${CP} /usr/include/tcpd.h ${WRKSRC}/include/my_tcpd.h
 
-.if defined(WITH_OPENSSL) && defined(BUILD_STATIC)
+.if defined(WITH_OPENSSL) && defined(WITHOUT_YASSL) && defined(BUILD_STATIC)
 pre-configure:
 	@${ECHO} "You can't use the BUILD_STATIC option when using OpenSSL."
 	@${FALSE}
