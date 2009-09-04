@@ -2,21 +2,12 @@ bin/yapet
 %%CSV2YAPET%%bin/csv2yapet
 share/applications/yapet.desktop
 %%NOPORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%NOPORTDOCS%%%%DOCSDIR%%/COPYING
 %%NOPORTDOCS%%%%DOCSDIR%%/DESIGN
-%%NOPORTDOCS%%%%DOCSDIR%%/README
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
-%%NOPORTDOCS%%%%DOCSDIR%%/html/DESIGN.html
-%%NOPORTDOCS%%%%DOCSDIR%%/html/README.html
-%%NOPORTDOCS%%%%DOCSDIR%%/html/yapet.html
-%%NOPORTDOCS%%%%CSV2YAPET%%%%DOCSDIR%%/html/csv2yapet.html
-%%NLS%%share/locale/de_AT/LC_MESSAGES/yapet.mo
-%%NLS%%share/locale/de_CH/LC_MESSAGES/yapet.mo
-%%NLS%%share/locale/de_DE/LC_MESSAGES/yapet.mo
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrmtry share/locale/de_CH/LC_MESSAGES
-@dirrmtry share/locale/de_CH
-%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%NOPORTDOCS%%%%DOCSDIR%%/README
+%%NOPORTDOCS%%%%DOCSDIR%%/THANKS
+%%NLS%%share/locale/de/LC_MESSAGES/yapet.mo
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
 %%NOPORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications

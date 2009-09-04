@@ -6,14 +6,9 @@
 #
 
 PORTNAME=	yapet
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.guengel.ch/myapps/yapet/downloads/ http://homepage.hispeed.ch/rostertag/yapet/
-
-PATCH_SITES=	http://www.guengel.ch/myapps/yapet/downloads/patches/ http://homepage.hispeed.ch/rostertag/yapet/patches/
-PATCHFILES=	yapet_cfgfile-0.4.diff yapet_csv2yapet-0.4.diff
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rafi@guengel.ch
 COMMENT=	A curses based password manager
@@ -23,18 +18,27 @@ MANCOMPRESSED=	no
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 automake:110 aclocal:110
-ACLOCAL_ARGS=	-I m4
 
 OPTIONS=	TTITLE "Enable Terminal Title" ON \
+		PWGEN "Enable Password Generator" ON \
 		CSV2YAPET "Build csv2yapet" ON
 
 .include <bsd.port.pre.mk>
+
+# --enable-silent-rules:  will make the build quiet
+# --disable-install-doc:  I take care of installing docs
+CONFIGURE_ARGS+=	--enable-silent-rules --disable-install-doc
 
 .if defined(WITH_TTITLE)
 CONFIGURE_ARGS+=	--enable-terminal-title
 .else
 CONFIGURE_ARGS+=	--disable-terminal-title
+.endif
+
+.if defined(WITH_PWGEN)
+CONFIGURE_ARGS+=	--enable-pwgen
+.else
+CONFIGURE_ARGS+=	--disable-pwgen
 .endif
 
 .if defined(WITH_CSV2YAPET)
@@ -48,9 +52,10 @@ PLIST_SUB+=		CSV2YAPET="@comment "
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=		NLS=""
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-PLIST_SUB+=		NLS=""
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 .else
@@ -59,13 +64,21 @@ PLIST_SUB+=		NLS="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--enable-install-doc
 PLIST_SUB+=		NOPORTDOCS=""
 .else
-CONFIGURE_ARGS+=	--disable-install-doc
 PLIST_SUB+=		NOPORTDOCS="@comment "
-.undef MAN1
-.undef MANCOMPRESSED
+.endif
+
+# Taking care of installing docs due to --disable-install-doc
+# configure switch.
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/DESIGN ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/THANKS ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
