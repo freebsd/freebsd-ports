@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Visitor
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Visitor style traversal of Perl data structures
 
-BUILD_DEPENDS=	p5-Any-Moose>=0.07:${PORTSDIR}/devel/p5-Any-Moose \
+BUILD_DEPENDS=	p5-Moose>=0.89:${PORTSDIR}/devel/p5-Moose \
+		p5-Data-Alias>=0:${PORTSDIR}/devel/p5-Data-Alias \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-Tie-ToObject>=0.01:${PORTSDIR}/devel/p5-Tie-ToObject \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
