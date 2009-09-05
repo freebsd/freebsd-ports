@@ -2044,6 +2044,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.E4XML.XMLMessageDialog.html
 %%DOCSDIR%%/Source/eric4.E4XML.XMLUtilities.html
 %%DOCSDIR%%/Source/eric4.E4XML.XMLWriterBase.html
+%%DOCSDIR%%/Source/eric4.Globals.__init__.html
 %%DOCSDIR%%/Source/eric4.Graphics.ApplicationDiagram.html
 %%DOCSDIR%%/Source/eric4.Graphics.AssociationItem.html
 %%DOCSDIR%%/Source/eric4.Graphics.ClassItem.html
