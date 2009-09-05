@@ -13,6 +13,12 @@ sub parse_option {
                         } elsif ($_ eq '-tag') {
 				$ooo_tag_flag=1;
                                 $ooo_tag = shift;
+                        } elsif ($_ eq '-returnaddress') {
+				$ooo_returnaddress_flag=1;
+                                $ooo_returnaddress = shift;
+                        } elsif ($_ eq '-pcname') {
+				$ooo_pcname_flag=1;
+                                $ooo_pcname = shift;
                         } else {
                                 die "Invalid option: \"$_\"\n";
                         }
@@ -22,6 +28,10 @@ sub parse_option {
 
 #main
 $ooo_tag_flag=0;
+$ooo_email_flag=0;
+$ooo_pcname_flag=0;
+$ooo_returnaddress="dummy\@openoffice.org";
+$ooo_pcname="dummy";
 parse_option(@ARGV);
 split('_',$ooo_tag);
 $ooo_codeline=@_[0];
@@ -99,7 +109,7 @@ print TESTTOOLRC "UseProxy=false\n";
 print TESTTOOLRC "ProxyServer=none\n";
 print TESTTOOLRC "ProxyPort=8080\n";
 print TESTTOOLRC "AllowContact=false\n";
-print TESTTOOLRC "ReturnAddress=\n";
+print TESTTOOLRC "ReturnAddress=$ooo_returnaddress\n";
 print TESTTOOLRC "\n";
 print TESTTOOLRC "[_profile_Default]\n";
 print TESTTOOLRC "BaseDir=$location/\n";
@@ -121,6 +131,8 @@ print TESTTOOLRC "WinParams=180,74,920,875;1;0,0,0,0;\n";
 print TESTTOOLRC "\n";
 print TESTTOOLRC "[LRU]\n";
 print TESTTOOLRC "MaxLRU=4\n";
+print TESTTOOLRC "[Others]\n";
+print TESTTOOLRC "PCname=$ooo_pcname\n";
 
 close(TESTTOOLRC);
 
@@ -128,5 +140,25 @@ close(TESTTOOLRC);
 #checking hid.lst (generated and QUASTe)
 system ("cat $path_to_ooo/../../hid.lst | sort > hid.lst.$ooo_tag.genrated\n");
 system ("sed 's/\r//' hid.lst | sort > hid.lst.$ooo_tag.quaste\n");
+#see http://www.openoffice.org/issues/show_bug.cgi?id=104359
+system ("sed -i.bak '/^HID_EXPIRED.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^HID_LICENSING_DIALOG.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^HID_TP_LICENSE.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^HID_TP_PURCHASE.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^HID_TP_SUMMARY.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^HID_TP_UNLOCK.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^HID_WILL_EXPIRE.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:Edit:TP_UNLOCK:ED_UNLOCK_A.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:Edit:TP_UNLOCK:ED_UNLOCK_B.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:Edit:TP_UNLOCK:ED_UNLOCK_C.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:MultiLineEdit:TP_LICENSE:ML_LICENSE.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:PushButton:DLG_EXPIRED:PB_EXPIRED_EXIT.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:PushButton:DLG_EXPIRED:PB_EXPIRED_PURCHASE.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:PushButton:DLG_WILL_EXPIRE:PB_EXPIRE_CONTINUE.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:PushButton:DLG_WILL_EXPIRE:PB_EXPIRE_PURCHASE.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:PushButton:TP_LICENSE:PB_LICENSE_DOWN.*/d' hid.lst.$ooo_tag.quaste\n");
+system ("sed -i.bak '/^tab:PushButton:TP_PURCHASE:PB_PURCHASE_GET.*/d' hid.lst.$ooo_tag.quaste\n");
 system ("diff -u hid.lst.$ooo_tag.genrated hid.lst.$ooo_tag.quaste > hid.lst.$ooo_tag.diff\n");
+print "hid.lst diff...\n";
 system ("cat hid.lst.$ooo_tag.diff\n");
+print "hid.lst diff...done\n";
