@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.7b11
+DISTVERSION=	3.7b13
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
