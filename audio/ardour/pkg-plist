@@ -76,23 +76,12 @@ share/ardour2/pixmaps/hslider01.xpm
 share/ardour2/pixmaps/vslider00.xpm
 share/ardour2/pixmaps/zoom_in.xpm
 @dirrm share/ardour2/pixmaps
-share/ardour2/icons/crossfade_out_dipped.png
-share/ardour2/icons/crossfade_in_transition.png
 share/ardour2/icons/tool_stretch.png
-share/ardour2/icons/crossfade_in_constant.png
 share/ardour2/icons/zoom_full.png
-share/ardour2/icons/crossfade_in_dipped.png
 share/ardour2/icons/tool_object.png
 share/ardour2/icons/transport_play.png
 share/ardour2/icons/fader_belt.png
-share/ardour2/icons/crossfade_in_fast-cut.png
-share/ardour2/icons/crossfade_out_fast-cut.png
 share/ardour2/icons/record_normal_red.png
-share/ardour2/icons/crossfade_out_transition.png
-share/ardour2/icons/crossfade_out_slow-cut.png
-share/ardour2/icons/crossfade_in_slow-cut.png
-share/ardour2/icons/crossfade_in_default.png
-share/ardour2/icons/crossfade_out_default.png
 share/ardour2/icons/transport_loop.png
 share/ardour2/icons/tool_audition.png
 share/ardour2/icons/transport_end.png
@@ -102,15 +91,12 @@ share/ardour2/icons/tool_zoom.png
 share/ardour2/icons/transport_range.png
 share/ardour2/icons/zoom_out.png
 share/ardour2/icons/zoom_in.png
-share/ardour2/icons/crossfade_out_constant.png
 share/ardour2/icons/tool_gain.png
-share/ardour2/icons/crossfade_in_slow-fade.png
 share/ardour2/icons/strip_width.png
 share/ardour2/icons/transport_start.png
 share/ardour2/icons/transport_stop.png
 share/ardour2/icons/nudge_left.png
 share/ardour2/icons/transport_record.png
-share/ardour2/icons/crossfade_out_slow-fade.png
 share/ardour2/icons/nudge_right.png
 share/ardour2/icons/ardour_icon_22px.png
 share/ardour2/icons/ardour_icon_48px.png
@@ -126,10 +112,23 @@ share/ardour2/icons/application-x-ardour_32px.png
 share/ardour2/icons/application-x-ardour_48px.png
 share/ardour2/icons/application-x-ardour_16px.png
 share/ardour2/icons/computer_keyboard.png
-share/ardour2/icons/poweron.png
 share/ardour2/icons/computer_keyboard_active.png
-share/ardour2/icons/poweroff.png
-share/ardour2/icons/ardour-sae.png
+share/ardour2/icons/crossfade-out-linear.png
+share/ardour2/icons/crossfade-out-long-cut.png
+share/ardour2/icons/crossfade-in-S2.png
+share/ardour2/icons/crossfade-out-short-cut.png
+share/ardour2/icons/crossfade-in-long-cut.png
+share/ardour2/icons/crossfade-out-slow-cut.png
+share/ardour2/icons/crossfade-in-fast-cut.png
+share/ardour2/icons/crossfade-in-linear.png
+share/ardour2/icons/crossfade-in-short-cut.png
+share/ardour2/icons/crossfade-out-S1.png
+share/ardour2/icons/crossfade-in-S1.png
+share/ardour2/icons/crossfade-out-constant-power.png
+share/ardour2/icons/crossfade-in-constant-power.png
+share/ardour2/icons/crossfade-in-slow-cut.png
+share/ardour2/icons/crossfade-out-S2.png
+share/ardour2/icons/crossfade-out-fast-cut.png
 @dirrm share/ardour2/icons
 share/ardour2/templates/16 Tracks.template
 share/ardour2/templates/2 Track.template
@@ -158,6 +157,10 @@ share/locale/de_DE/LC_MESSAGES/gtk2_ardour.mo
 share/locale/pl_PL/LC_MESSAGES/libardour2.mo
 share/locale/pl_PL/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/pl_PL/LC_MESSAGES/gtk2_ardour.mo
+share/locale/es_ES/LC_MESSAGES/libardour2.mo
+share/locale/fr_FR/LC_MESSAGES/libardour2.mo
+share/locale/cs_CZ/LC_MESSAGES/gtk2_ardour.mo
+share/locale/nn_NO/LC_MESSAGES/gtk2_ardour.mo
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
 @dirrmtry share/locale/it_IT/LC_MESSAGES
@@ -170,3 +173,11 @@ share/locale/pl_PL/LC_MESSAGES/gtk2_ardour.mo
 @dirrmtry share/locale/ru_RU
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
+@dirrmtry share/locale/es_ES/LC_MESSAGES
+@dirrmtry share/locale/es_ES
+@dirrmtry share/locale/fr_FR/LC_MESSAGES
+@dirrmtry share/locale/fr_FR
+@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+@dirrmtry share/locale/cs_CZ
+@dirrmtry share/locale/nn_NO/LC_MESSAGES
+@dirrmtry share/locale/nn_NO
