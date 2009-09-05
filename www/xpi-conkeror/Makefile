@@ -6,30 +6,50 @@
 #
 
 PORTNAME=	conkeror
-PORTVERSION=	0.42
-PORTREVISION=	2
-DISTVERSIONPREFIX=	firefox-
+PORTVERSION=	20090821
 CATEGORIES=	www
-MASTER_SITES=	MOZDEV
-PKGNAMEPREFIX?=
+MASTER_SITES=	http://mirror.4bit.ws/ \
+		${MASTER_SITE_LOCAL} \
+		${MASTER_SITE_FREEBSD}
+MASTER_SITE_SUBDIR=	dhn
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wahjava@gmail.com
 COMMENT=	A completely keyboard driven browser based on firefox
 
-RUN_DEPENDS=	${CONK_APP}:${PORTSDIR}/www/${CONK_APP}
+WRKSRC=	${WRKDIR}/conkeror
+USE_GECKO=	libxul
 
-CONK_ARGS=	-chrome chrome://conkeror/content
-CONK_APP?=	${PKGNAMEPREFIX}firefox
-CONK_EXEC?=	${PKGNAMEPREFIX}${PORTNAME}
-USE_XPI=	${CONK_APP}
-PLIST_FILES=	bin/${CONK_EXEC}
-XPI_ID=		{a79fe89b-6662-4ff4-8e88-09950ad4dfde}
-XPI_FILES=	chrome/conkeror.jar components/nsCrank.js install.rdf chrome.manifest
-XPI_DIRS=	chrome components
+BUILD_ID=echo -n `whoami`@`hostname`_`date +%s`
+
+post-patch:
+	cd ${WRKSRC} && \
+		${REINPLACE_CMD} -e "s/%%PREFIX%%/${PREFIX:S/\//\\\//g}/g" \
+			${WRKSRC}/conkeror && \
+		${MV} debian/conkeror.desktop . && \
+		${RM} -rf debian tests && \
+		${MKDIR} share  && \
+		${MV} branding chrome components content \
+			contrib defaults locale modules search-engines help style share
+
+do-build:
+	${MAKE} -C ${WRKSRC}
+
+do-install:
+	${MKDIR} ${PREFIX}/libexec/conkeror
+	${MKDIR} ${DESKTOPDIR}
+	cd ${WRKSRC}/share && ${COPYTREE_SHARE} . ${DATADIR}
+	${SED} -e "s/BuildID=git/BuildID=$$(${BUILD_ID})/g" \
+		-e "s/^Version=\(.*\)$$/Version=\1 (FreeBSD-${OSREL})/g" \
+		<${WRKSRC}/application.ini >${DATADIR}/application.ini
+	${REINPLACE_CMD} -e "s/\\\$$CONKEROR_VERSION\\$$/`${GREP} \
+		'^Version=' ${WRKSRC}/application.ini |${SED} \
+		-e 's/^Version=//'` (FreeBSD-${OSREL})/g" ${DATADIR}/components/application.js
+	${INSTALL_SCRIPT} ${WRKSRC}/conkeror ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/conkeror.desktop ${DESKTOPDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/conkeror-spawn-helper ${PREFIX}/libexec/conkeror/
+	${LN} -sf ${PREFIX}/libexec/conkeror/conkeror-spawn-helper ${DATADIR}/
 
 post-install:
-	@${ECHO_CMD} exec `${WHICH} ${CONK_APP}` ${CONK_ARGS} > ${PREFIX}/bin/${CONK_EXEC}
-	@${CHMOD} 555 ${PREFIX}/bin/${CONK_EXEC}
+	@-update-desktop-database
 
-.include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

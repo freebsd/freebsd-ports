@@ -101,7 +101,6 @@
     SUBDIR += codeigniter
     SUBDIR += comclear
     SUBDIR += commonist
-    SUBDIR += conkeror
     SUBDIR += contenido
     SUBDIR += coppermine
     SUBDIR += crawl
@@ -1671,6 +1670,7 @@
     SUBDIR += xpi-clearfields
     SUBDIR += xpi-close-all-tabs
     SUBDIR += xpi-colorfultabs
+    SUBDIR += xpi-conkeror
     SUBDIR += xpi-cookiesafe
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-customizegoogle

@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- conkeror.orig
++++ conkeror
+@@ -0,0 +1,12 @@
++#!/bin/sh
++
++XULRUNNER=$(which xulrunner)
++
++if [ -z "${XULRUNNER}" ]; then 
++	echo Unable to locate xulrunner binary.
++elif [ ! -x "${XULRUNNER}" ]; then
++	echo ${XULRUNNER} is not executable.
++else
++	exec ${XULRUNNER} /usr/local/share/conkeror/application.ini
++fi
++
