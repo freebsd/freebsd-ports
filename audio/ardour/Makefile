@@ -12,7 +12,7 @@ MASTER_SITES=	http://releases.ardour.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trasz
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Ardour - a digital audio workstation
 
 LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
