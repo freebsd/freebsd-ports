@@ -8,6 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -35,6 +36,7 @@ LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		lzma.0:${PORTSDIR}/archivers/lzmautils-devel \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+		showrgb:${PORTSDIR}/x11/rgb \
 		iceauth:${PORTSDIR}/x11/iceauth \
 		xauth:${PORTSDIR}/x11/xauth
 
@@ -94,11 +96,16 @@ post-patch:
 		${PATCH_WRKSRC}/kio/kssl/kopenssl.cpp \
 		${PATCH_WRKSRC}/kio/kio/ksambashare.cpp \
 		${PATCH_WRKSRC}/kjsembed/qtonly/FindQJSInternal.cmake
+#Fix rgb named colors database path.
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/kdeui/colors/kcolordialog.cpp
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+			 -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/cmake/modules/*.cmake \
-		${PATCH_WRKSRC}/ConfigureChecks.cmake
+		${PATCH_WRKSRC}/ConfigureChecks.cmake \
+		${PATCH_WRKSRC}/doc/api/doxygen.sh
 #	FindBerkeleyDB.cmake should be rewritten to support multiple version
 #	provided by ports, instead of hardcoding one of them
 # 	${REINPLACE_CMD} -e 's|/usr/local/include/db4|${BDB_INCLUDE_DIR}|' \
