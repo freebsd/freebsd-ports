@@ -1070,6 +1070,7 @@ blobby                          ports/games/blobby
 bloboats                        ports/games/bloboats
 block                           ports/games/block
 blockade                        ports/games/blockade
+blockout                        ports/games/blockout
 blocksolve95                    ports/math/blocksolve95
 blocksshd                       ports/security/blocksshd
 blogbench                       ports/benchmarks/blogbench
@@ -5378,6 +5379,7 @@ ib-kmod                         ports/comms/ib-kmod
 ibp                             ports/comms/ibp
 ibsh                            ports/shells/ibsh
 ibus                            ports/textproc/ibus
+ibus-m17n                       ports/textproc/ibus-m17n
 ical                            ports/deskutils/ical
 ical2html                       ports/converters/ical2html
 icb                             ports/net-im/icb
@@ -6157,6 +6159,7 @@ jailadmin                       ports/sysutils/jailadmin
 jailaudit                       ports/ports-mgmt/jailaudit
 jailctl                         ports/sysutils/jailctl
 jailer                          ports/sysutils/jailer
+jailkit                         ports/shells/jailkit
 jailme                          ports/sysutils/jailme
 jailuser                        ports/sysutils/jailuser
 jailutils                       ports/sysutils/jailutils
@@ -9663,6 +9666,7 @@ numptyphysics-npcomplete        ports/games/numptyphysics-npcomplete
 nunnimcax                       ports/textproc/nunnimcax
 nurbs++                         ports/graphics/nurbs++
 nusoap                          ports/net/nusoap
+nuttcp                          ports/benchmarks/nuttcp
 nux                             ports/textproc/nux
 nvclock                         ports/sysutils/nvclock
 nvi-devel                       ports/editors/nvi-devel
@@ -19323,6 +19327,7 @@ py-kaa-metadata                 ports/multimedia/py-kaa-metadata
 py-karaoke                      ports/audio/py-karaoke
 py-kde                          ports/x11-toolkits/py-kde
 py-kenosis                      ports/net-p2p/py-kenosis
+py-keyring                      ports/security/py-keyring
 py-kid                          ports/devel/py-kid
 py-kiwi                         ports/x11-toolkits/py-kiwi
 py-kjbuckets                    ports/devel/py-kjbuckets
