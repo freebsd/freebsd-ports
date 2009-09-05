@@ -100,6 +100,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-install.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-ports-knobs.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-troubleshooting.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/configuring-ports-gcc.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/performance-imparct.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/prerequisites.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/first-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/freebsdspecific.html

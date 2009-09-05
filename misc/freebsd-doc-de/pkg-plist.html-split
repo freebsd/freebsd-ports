@@ -260,6 +260,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-naming.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-virtual.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace-enable.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace-implementation.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace-language.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/editors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-email.html

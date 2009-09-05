@@ -11,6 +11,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/article.txt
