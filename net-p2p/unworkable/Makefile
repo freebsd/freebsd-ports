@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unworkable
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://p2presearch.com/unworkable/dist/
 
