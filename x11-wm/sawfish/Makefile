@@ -8,7 +8,7 @@
 
 PORTNAME=	sawfish
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/sawmill/${PORTNAME}/${PORTVERSION}
@@ -18,6 +18,7 @@ MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Lisp configurable window manager
 
 LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep \
+		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		cairo.2:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
@@ -27,7 +28,7 @@ PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
 USE_XORG=	ice sm x11 xft xinerama xrandr
 USE_GMAKE=	yes
-USE_GNOME=	pango gtk20 glib20
+USE_GNOME=	pango gtk20 glib20 esound
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
