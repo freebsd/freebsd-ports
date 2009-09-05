@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/svn/apache/filters/xmlns/
 DISTFILES=	xmlns.h mod_xmlns.c
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for XML namespaces
 
 MAKE_JOBS_SAFE=  yes
