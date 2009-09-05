@@ -15,6 +15,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/docbook.css

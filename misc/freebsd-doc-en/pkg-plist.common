@@ -79,6 +79,7 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cups
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributors
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports
