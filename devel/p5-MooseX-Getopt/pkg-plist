@@ -1,5 +1,7 @@
 %%SITE_PERL%%/MooseX/Getopt.pm
+%%SITE_PERL%%/MooseX/Getopt/Basic.pm
 %%SITE_PERL%%/MooseX/Getopt/Dashes.pm
+%%SITE_PERL%%/MooseX/Getopt/GLD.pm
 %%SITE_PERL%%/MooseX/Getopt/Meta/Attribute.pm
 %%SITE_PERL%%/MooseX/Getopt/Meta/Attribute/NoGetopt.pm
 %%SITE_PERL%%/MooseX/Getopt/Meta/Attribute/Trait.pm
