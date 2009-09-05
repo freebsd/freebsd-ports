@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spring
-PORTVERSION=	0.80.4
+PORTVERSION=	0.80.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://springrts.com/dl/ \
 		http://mirror.amdmi3.ru/distfiles/
