@@ -9,15 +9,6 @@
      BoolOption('SURFACES', 'Build support for control surfaces', 1),
      BoolOption('WIIMOTE', 'Build the wiimote control surface', 0),
      BoolOption('SYSLIBS', 'USE AT YOUR OWN RISK: CANCELS ALL SUPPORT FROM ARDOUR AUTHORS: Use existing system versions of various libraries instead of internal ones', 0),
-@@ -398,7 +398,7 @@
- # Make sure they know what they are doing
- #
- 
--if env['VST']:
-+if False:
-     if os.path.isfile('.personal_use_only'):
-         print "Enabling VST support. Note that distributing a VST-enabled ardour\nis a violation of several different licences.\nBuild with VST=false if you intend to distribute ardour to others."
-     else:
 @@ -702,9 +702,9 @@
      opt_flags.extend (["-mhard-float", "-mpowerpc-gfxopt"])
      opt_flags.extend (["-Os"])

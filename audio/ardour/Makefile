@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	ardour
-PORTVERSION=	2.7.1
-PORTREVISION=	2
+PORTVERSION=	2.8.2
 CATEGORIES=	audio
-MASTER_SITES=	http://releases.ardour.org/
-DISTFILES=	ardour-${DISTVERSION}.tar.bz2
-EXTRACT_ONLY=	ardour-${DISTVERSION}.tar.bz2
+MASTER_SITES=	http://releases.ardour.org/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trasz
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Ardour - a digital audio workstation
 
 LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
@@ -62,20 +61,11 @@ BROKEN=		does not compile
 .endif
 
 .if defined(WITH_VST)
-# Yes, 'PlugIns' is not a typo.
-VST_DIST+=	vst_sdk2_3.zip
-RESTRICTED=	Redistribution of the VST PlugIns SDK is not allowed
-RESTRICTED_FILES=	${VST_DIST}
-DISTFILES+=	${VST_DIST}
 SCONS_ENV+=	VST=yes
 BUILD_DEPENDS+=	winegcc:${PORTSDIR}/emulators/wine \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS+=	wine.1:${PORTSDIR}/emulators/wine
-
-.if !exists(${DISTDIR}/${VST_DIST})
-IGNORE=		download the VST 2.3 SDK from Steinberg (http://www.steinberg.de/331+M52087573ab0.html) and copy ${VST_DIST} into ${DISTDIR}
-.endif
 
 PLIST_SUB+=	NO_VST="@comment "
 PLIST_SUB+=	VST=""
@@ -112,9 +102,6 @@ CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 post-patch:
 	${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/SConstruct
 	${REINPLACE_CMD} -e "s|alsa_pcm|oss|g" ${WRKSRC}/templates/*.template
-.if defined(WITH_VST)
-	${CP} ${DISTDIR}/${VST_DIST} ${WRKSRC}/libs/fst/
-.endif
 
 post-install:
 	${CHOWN} -R 0:0 ${PREFIX}/lib/ardour2/
