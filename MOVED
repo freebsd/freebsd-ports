@@ -4158,3 +4158,4 @@ audio/slimserver-slimscrobbler||2009-09-04|SlimServer has been superseded by Squ
 audio/slimserver-sqlplaylist|audio/squeezecenter-sqlplaylist|2009-09-04|SlimServer has been superseded by SqueezeCenter
 audio/slimserver-superdatetime|audio/squeezecenter-superdatetime|2009-09-4|SlimServer has been superseded by SqueezeCenter
 audio/slimserver-trackstat|audio/squeezecenter-trackstat|2009-09-4|SlimServer has been superseded by SqueezeCenter
+www/conkeror|www/xpi-conkeror|2009-09-05|Please use www/xpi-conkeror
