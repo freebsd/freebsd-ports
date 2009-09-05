@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	LOCAL/chinsan
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A http IRIs module for Apache 2
 
 MAKE_JOBS_SAFE=  yes
