@@ -1,0 +1,16 @@
+Index: qemu/net.c
+@@ -788,11 +788,11 @@
+ {
+     TAPState *s = vc->opaque;
+ 
+-    if (s->down_script[0])
+-        launch_script(s->down_script, s->down_script_arg, s->fd);
+-
+     qemu_set_fd_handler(s->fd, NULL, NULL, NULL);
+     close(s->fd);
++
++    if (s->down_script[0])
++        launch_script(s->down_script, s->down_script_arg, -1);
+     qemu_free(s);
+ }
+ 
