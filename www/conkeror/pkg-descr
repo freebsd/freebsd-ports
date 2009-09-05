@@ -1,8 +1,0 @@
-Conkeror is a mozilla based web browser designed to be
-completely keyboard driven, no compromises. It also
-strives to behave as much like Emacs as possible. This
-means all the keybindings and to-die-for features of
-Emacs that can be imitated by a javascript/XUL web
-browser Just Work.
-
-WWW: http://conkeror.mozdev.org/
