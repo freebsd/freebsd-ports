@@ -218,7 +218,9 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/014shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/015shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/016shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/017shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/018shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/019shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/2ddemo.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/Faerie5.BMP
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/IrrlichtTheme.ogg
