@@ -8,7 +8,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.15
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -40,6 +40,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-lirc # untested
+
+USERS=		pulse
+GROUPS=		pulse pulse-access pulse-rt
 
 OPTIONS=	JACK "JACK audio support" Off \
 		AVAHI "Enable Avahi mDNS support" On \
@@ -114,9 +117,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
 		${PREFIX}/etc/pulse/${ii}-dist
 .endfor
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
