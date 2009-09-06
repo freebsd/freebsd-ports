@@ -427,10 +427,6 @@ post-install: install-ldconfig-file
 		${INSTALL_DATA} ${PDOCS_TXT} ${DOCSDIR}/ && \
 		${INSTALL_DATA} ${PDOCS_PDF} ${DOCSDIR}/pdf/ && \
 		${INSTALL_DATA} ${PDOCS_HTML} ${DOCSDIR}/html/
-.	for i in neato.pdf twopi.pdf fdp.pdf circo.pdf
-		cd ${DOCSDIR}/pdf && ${LN} -fs dot.pdf ${i}
-.	endfor
-	cd ${DOCSDIR}/pdf && ${LN} -fs gxl2dot.pdf dot2gxl.pdf
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${ECHO_MSG} "Installing demo data..."
