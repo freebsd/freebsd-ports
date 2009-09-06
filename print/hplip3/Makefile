@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	3.9.6b
+PORTVERSION=	3.9.8
 CATEGORIES=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	chris@officialunix.com
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
-
-LATEST_LINK=	${PORTNAME}3
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		sane.1:${PORTSDIR}/graphics/sane-backends \
@@ -23,8 +21,10 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 BUILD_DEPENDS=	ppdc:${PORTSDIR}/print/cupsddk
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2 \
 		espgs:${PORTSDIR}/print/cups-pstoraster \
-		foomatic-rip:${PORTSDIR}/print/foomatic-filters
+		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
+		mDNSClientPosix:${PORTSDIR}/net/mDNSResponder
 
+LATEST_LINK=	${PORTNAME}3
 CONFLICTS=	hpijs-[0-9]* hplip-2*
 
 GNU_CONFIGURE=	yes
