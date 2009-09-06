@@ -729,6 +729,7 @@
     SUBDIR += umodplayer
     SUBDIR += vagalume
     SUBDIR += ventrilo-server
+    SUBDIR += vitunes
     SUBDIR += voipong
     SUBDIR += volumecontrol.app
     SUBDIR += vorbis-tools
