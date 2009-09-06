@@ -131,6 +131,7 @@ ircdru:*:555:555::0:0:Russian hybrid IRC server:/nonexistent:/bin/sh
 messagebus:*:556:556::0:0:D-BUS Daemon User:/nonexistent:/usr/sbin/nologin
 avahi:*:558:558::0:0:Avahi Daemon User:/nonexistent:/usr/sbin/nologin
 tacacs:*:559:559::0:0:TACACS+ Daemon User:/nonexistent:/usr/sbin/nologin
+haldaemon:*:560:560::0:0:HAL Daemon User:/nonexistent:/usr/sbin/nologin
 distcc:*:561:561::0:0:Distcc user:/nonexistent:/usr/sbin/nologin
 polkit:*:562:562::0:0:PolicyKit User:/nonexistent:/usr/sbin/nologin
 pulse:*:563:563::0:0:PulseAudio System User:/nonexistent:/usr/sbin/nologin
