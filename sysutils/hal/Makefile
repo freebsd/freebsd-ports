@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 DISTVERSION=	0.5.11
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -49,6 +49,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_CK_0_3" \
 
 #HALVERSION=	0.5.10
 #SNAPVERSION=	20080218
+
+USERS=		haldaemon
+GROUPS=		haldaemon
 
 USE_RC_SUBR=	hald
 USE_GNOME_SUBR=	yes

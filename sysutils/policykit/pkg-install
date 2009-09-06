@@ -4,33 +4,6 @@ case $2 in
 POST-INSTALL)
 	USER=polkit
 	GROUP=${USER}
-	UID=562
-	GID=${UID}
-	PW=/usr/sbin/pw
-
-	if ${PW} group show "${GROUP}" 2>/dev/null; then
-		echo "You already have a group \"${GROUP}\", so I will use it."
-	else
-		if ${PW} groupadd ${GROUP} -g ${GID}; then
-			echo "Added group \"${GROUP}\"."
-		else
-			echo "Adding group \"${GROUP}\" failed..."
-			exit 1
-		fi
-	fi
-
-	if ${PW} user show "${USER}" 2>/dev/null; then
-		echo "You already have a user \"${USER}\", so I will use it."
-	else
-		if ${PW} useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-			-d "/nonexistent" -s /sbin/nologin -c "PolicyKit Daemon User"
-		then
-			echo "Added user \"${USER}\"."
-		else
-			echo "Adding user \"${USER}\" failed..."
-			exit 1
-		fi
-	fi
 
 	/usr/bin/install -d -o root -m 0770 -g ${GROUP} /var/run/PolicyKit
 	/usr/bin/install -d -o root -m 0770 -g ${GROUP} /var/lib/PolicyKit

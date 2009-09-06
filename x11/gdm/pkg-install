@@ -4,40 +4,10 @@ case $2 in
 POST-INSTALL)
 	USER=gdm
 	GROUP=${USER}
-	UID=92
-	GID=${UID}
-	PW=/usr/sbin/pw
 	CHMOD=/bin/chmod
 	CHOWN=/usr/sbin/chown
 	MKDIR=/bin/mkdir
 
-	if ${PW} group show "${GROUP}" 2>/dev/null; then
-		echo "You already have a group \"${GROUP}\", so I will use it."
-	else
-		if ${PW} groupadd ${GROUP} -g ${GID}; then
-			echo "Added group \"${GROUP}\"."
-		else
-			echo "Adding group \"${GROUP}\" failed..."
-			exit 1
-		fi
-	fi
-
-	if ${PW} user show "${USER}" 2>/dev/null; then
-		echo "You already have a user \"${USER}\", so I will use it."
-		uhome=`${PW} user show ${USER} | awk -F: '{print $9}'`
-		if [ x"${uhome}" = x"/nonexistent" -o x"${uhome}" = x"/var/gdm" ]; then
-		    ${PW} usermod ${USER} -d "${PKG_PREFIX}/etc/gdm/home"
-		fi
-	else
-		if ${PW} useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-			-d "${PKG_PREFIX}/etc/gdm/home" -s /sbin/nologin -c "GNOME Display Manager"
-		then
-			echo "Added user \"${USER}\"."
-		else
-			echo "Adding user \"${USER}\" failed..."
-			exit 1
-		fi
-	fi
 	${MKDIR} -p /var/gdm
 	${MKDIR} -p /var/log/gdm
 	${CHMOD} 0755 /var/log/gdm

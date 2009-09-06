@@ -8,7 +8,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.26.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -23,6 +23,9 @@ LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit \
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gnome-session:${PORTSDIR}/x11/gnome-session
+
+USERS=		gdm
+GROUPS=		gdm
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
