@@ -7,6 +7,7 @@
 
 PORTNAME=	pgadmin3
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	pgadmin3/release/v${PORTVERSION}/src
@@ -31,5 +32,6 @@ WX_UNICODE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/wx-config,/${WX_CONFIG:T},' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,/usr/bin/xterm,${LOCALBASE}/bin/xterm,' ${WRKSRC}/pgadmin/plugins.ini
 
 .include <bsd.port.mk>
