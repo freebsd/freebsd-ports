@@ -320,14 +320,12 @@ libdata/pkgconfig/libgvc.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/cdt.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/cgraph.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/circo.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/circo.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/dijkstra.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/dot.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/dotguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/dotty.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/dottyguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/fdp.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/fdp.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gc.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gdtclft.3tcl.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/graph.3.pdf
@@ -350,14 +348,12 @@ libdata/pkgconfig/libgvc.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gvpack.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gvpr.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gxl2gv.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/dot2gxl.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/lefty.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/leftyguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/libguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/lneato.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/mm2gv.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/neato.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/neato.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/neatoguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/nop.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/osage.1.pdf
@@ -368,7 +364,6 @@ libdata/pkgconfig/libgvc.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/tkspline.3tk.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/tred.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/twopi.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/twopi.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/unflatten.1.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.tcl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.tcl.README
