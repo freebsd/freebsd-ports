@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	json-c
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	devel
 MASTER_SITES=	http://oss.metaparadigm.com/json-c/
 
