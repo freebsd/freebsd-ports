@@ -45,6 +45,7 @@ MASTER_SITES=	SF/netpbm/archive_of_old_release_system/${PORTVERSION}
 NETPBM_PORTVERSION=	${DEVEL_PORTVERSION}
 NETPBM_SUFFIX=	-devel
 CONFLICTS+=	netpbm-10.26.*
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 PATCHDIR?=	${MASTERDIR}/../netpbm-devel/files
 CFLAGS+=	-Iutil
 PLIST_SUB+=	DEVEL=""
@@ -53,7 +54,6 @@ MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
 NETPBM_PORTVERSION=	${STABLE_PORTVERSION}
 CONFLICTS+=	netpbm-devel-10.26.*
 PORTSCOUT=	limit:^10\.26\.
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 PLIST_SUB+=	DEVEL="@comment "
 .endif
 
