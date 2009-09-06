@@ -9,7 +9,7 @@ PORTNAME=	afterstep
 PORTVERSION=	2.2.9
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
-		SF/${PORTNAME}/AfterStep/${PORTVERSION}		
+		SF/${PORTNAME}/AfterStep/${PORTVERSION}
 
 DISTNAME=	AfterStep-${PORTVERSION}
 
@@ -61,13 +61,13 @@ CONFIGURE_ARGS+=	--enable-different-looknfeels
 CONFIGURE_ARGS+=	--disable-savewindows
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if exists(${PREFIX}/share/gnome/wm-properties)
 PLIST_SUB+=	GNOME=""
 .else
 PLIST_SUB+=	GNOME="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	${CP} ${FILESDIR}/monitor_bsd.xpm \
