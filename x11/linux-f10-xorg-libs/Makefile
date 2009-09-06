@@ -12,7 +12,7 @@ PKGNAMEPREFIX=		linux-f10-
 DISTFILES=	libICE-1.0.4-4.fc10.${LINUX_RPM_ARCH}.rpm \
 		libFS-1.0.1-2.fc10.${LINUX_RPM_ARCH}.rpm \
 		libSM-1.1.0-2.fc10.${LINUX_RPM_ARCH}.rpm \
-		libX11-1.1.5-3.fc10.${LINUX_RPM_ARCH}.rpm \
+		libX11-1.1.5-4.fc10.${LINUX_RPM_ARCH}.rpm \
 		libXScrnSaver-1.1.3-1.fc10.${LINUX_RPM_ARCH}.rpm \
 		libXTrap-1.0.0-6.fc10.${LINUX_RPM_ARCH}.rpm \
 		libXau-1.0.4-1.fc10.${LINUX_RPM_ARCH}.rpm \
@@ -50,7 +50,7 @@ DISTFILES=	libICE-1.0.4-4.fc10.${LINUX_RPM_ARCH}.rpm \
 SRC_DISTFILES=	libICE-1.0.4-4.fc10.src.rpm \
 		libFS-1.0.1-2.fc10.src.rpm \
 		libSM-1.1.0-2.fc10.src.rpm \
-		libX11-1.1.5-3.fc10.src.rpm \
+		libX11-1.1.5-4.fc10.src.rpm \
 		libXScrnSaver-1.1.3-1.fc10.src.rpm \
 		libXTrap-1.0.0-6.fc10.src.rpm \
 		libXau-1.0.4-1.fc10.src.rpm \
