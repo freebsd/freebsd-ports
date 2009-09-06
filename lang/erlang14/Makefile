@@ -90,7 +90,7 @@ NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 PLIST_SUB+=	ERTS_VSN=${ERTS_VSN} TOOLS_VSN=${TOOLS_VSN}
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
