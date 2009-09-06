@@ -8,18 +8,18 @@
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
-		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
-		ftp://ftp.ntua.gr/pub/www/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
-		http://mirrors.pmmf.hu/mirror/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
-		ftp://ftp.task.gda.pl/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
-		ftp://ftp.planetmirror.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/&,}
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
+		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
+		ftp://ftp.ntua.gr/pub/www/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
+		http://mirrors.pmmf.hu/mirror/opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
+		ftp://ftp.task.gda.pl/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
+		ftp://ftp.planetmirror.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
+		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/linux/${OPERA_VER:S/.//}/final/en/i386/&,}
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${OPERA_VER}.gcc4-static-qt3.i386
+DISTNAME=	${PORTNAME}-${OPERA_VER}.gcc4-bundled-qt4.i386
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
@@ -27,13 +27,13 @@ COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.gcc/-${OPERA_BUILD}.gcc/}
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	aspell xorglibs
+USE_LINUX_APPS=	aspell naslibs xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
 NO_BUILD=	yes
 
-OPERA_VER=	9.64
-OPERA_BUILD=	2480
+OPERA_VER=	10.00
+OPERA_BUILD=	4585
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
@@ -48,7 +48,7 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%LINUXBASE%%|${LINUXBASE}|g' \
 			${WRKSRC}/install.sh \
-			${WRKSRC}/usr/share/opera/ini/pluginpath.ini
+			${WRKSRC}/usr/share/opera/defaults/pluginpath.ini
 	@${REINPLACE_CMD} -e 's|man1/opera.1|man1/${UNIQUENAME}.1|g' \
 		${WRKSRC}/Manifest.md5
 	@${FIND} ${WRKSRC} -name '*.orig' -delete

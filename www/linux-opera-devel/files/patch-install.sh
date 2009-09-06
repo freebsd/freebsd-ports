@@ -1,8 +1,8 @@
---- install.sh.orig	2008-06-11 15:33:00.000000000 -0500
-+++ install.sh	2008-07-02 22:49:18.000000000 -0500
+--- install.sh.orig	2009-08-30 14:25:11.000000000 -0500
++++ install.sh	2009-08-30 16:51:54.000000000 -0500
 @@ -832,10 +832,9 @@
      case "${machine}:${os}" in
- 	x86:Linux|x86_64:Linux|x86:AnyBSD|x86_64:AnyBSD|x86:OpenBSD|x86:QNX)
+ 	x86:Linux|x86_64:Linux|x86:AnyBSD|x86_64:AnyBSD|x86:OpenBSD|x86_64:OpenBSD|x86:QNX)
  	    wrapper_ibmjava="
 -	    IBMJava2-142/jre \\
 -	    IBMJava2-141/jre \\
@@ -15,7 +15,7 @@
  	;;
  
 @@ -865,10 +864,19 @@
- 		error 'os'
+ 		error os
  	;;
      esac
 -    wrapper_file="${wrapper_dir}/opera"
@@ -49,7 +49,7 @@
  do if test -f \"\$d/javapath.txt\"
     then
        INIJAVA=\`cat \"\$d/javapath.txt\"\`
-@@ -950,85 +962,17 @@
+@@ -950,88 +962,17 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"
  then
@@ -133,6 +133,9 @@
 -	jdk1.6.0/jre \\
 -	diablo-jre1.5.0 \\
 -	diablo-jdk1.5.0/jre \\
+-	diablo-jre1.6.0 \\
+-	diablo-jdk1.6.0/jre \\
+-	openjdk6/jre \\
 +	linux-blackdown-jdk1.3.1/jre \\
 +	linux-blackdown-jdk1.4.1/jre \\
 +	linux-blackdown-jdk1.4.2/jre \\
@@ -144,7 +147,7 @@
  	; do
  	for PREFIX in \${PREFIXES}
  	do d=\"\$PREFIX/\$SUNJAVA/lib/$wrapper_sunjava_machine\"
-@@ -1082,11 +1026,7 @@
+@@ -1085,11 +1026,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -153,11 +156,12 @@
 -    /usr/X11R6/lib/Acrobat[45]/bin \\
 -    /opt/Acrobat[45]/bin \\
 -    /usr/Acrobat[45]/bin \\
-+    %%LOCALBASE%%/Acrobat5/bin \\
++    %%LOCALBASE%%/Adobe/Reader8/ENU/Adobe/Reader8/Reader/intellinux/bin \\
++    %%LOCALBASE%%/Adobe/Reader9/ENU/Adobe/Reader9/Reader/intellinux/bin \\
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1099,8 +1039,7 @@
+@@ -1102,8 +1040,7 @@
  
  # Spellchecker needs to find libaspell.so.15
  for LIBASPELL_DIR in \\
@@ -167,7 +171,7 @@
  ; do
      if ls \$LIBASPELL_DIR/libaspell.so.1[5-9] >/dev/null 2>&1
      then LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:\${LIBASPELL_DIR}\"
-@@ -1108,13 +1047,6 @@
+@@ -1111,13 +1048,6 @@
  done"
  
  case "${os}" in
@@ -181,7 +185,7 @@
      SunOS)
  wrapper_contain="${wrapper_contain}
  
-@@ -1143,7 +1075,7 @@
+@@ -1146,7 +1076,7 @@
  };
  
  // Opera package classes get all permissions
@@ -190,7 +194,7 @@
  	permission java.security.AllPermission;
  };
  
-@@ -1260,12 +1192,12 @@
+@@ -1263,12 +1193,12 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -205,7 +209,7 @@
  
      share_src="`manifest_path 'html40_entities\.dtd'`"
      part_install "$share_src" "$share_dir" "Shared resources"
-@@ -1274,76 +1206,20 @@
+@@ -1277,84 +1207,20 @@
      mkdir $mkdirv $mkdirp $plugin_dir/
  
      # Wrapper
@@ -228,8 +232,8 @@
 -	then
 -	    warn
 -	    warn "System wide configuration files:"
--	    warn "  $config_dir/opera6rc"
--	    warn "  $config_dir/opera6rc.fixed"
+-	    warn "  $config_dir/operaprefs_default.ini"
+-	    warn "  $config_dir/operaprefs_fixed.ini"
 -	    warn " would be ignored if installed with the prefix \"$prefix\"."
 -	    bool_config=1
 -	    if [ "$flag_mode" = '--interactive' ]
@@ -239,31 +243,39 @@
 -
 -	    if [ $bool_config -eq 1 ]
 -	    then
--		if [ -f "$config_dir/opera6rc" ]
--		then
--		    if [ "$flag_mode" = '--interactive' ] && con_firm "$config_dir/opera6rc exists: over-write it ?"
--		    then
--			backup $config_dir/opera6rc opera6rc config
--			cp $cpv $cpf etc/opera6rc $config_dir
--		    fi
--		else cp $cpv $cpf etc/opera6rc $config_dir
--		fi
--		if [ -f "$config_dir/opera6rc.fixed" ]
--		then
--		    if [ "$flag_mode" = '--interactive' ] && con_firm "$config_dir/opera6rc.fixed exists: over-write it ?"
--		    then
--			backup $config_dir/opera6rc.fixed opera6rc.fixed config
--			cp $cpv $cpf etc/opera6rc.fixed $config_dir
--		    fi
--		else cp $cpv $cpf etc/opera6rc.fixed $config_dir
--		fi
+-			if [ -f "$config_dir/opera6rc" ]
+-			then
+-				mv -f "$config_dir/opera6rc" "$config_dir/operaprefs_default.ini"
+-			fi
+-			if [ -f "$config_dir/opera6rc.fixed" ]
+-			then
+-				mv -f "$config_dir/opera6rc.fixed" "$config_dir/operaprefs_fixed.ini"
+-			fi
+-			if [ -f "$config_dir/operaprefs_default.ini" ]
+-			then
+-				if [ "$flag_mode" = '--interactive' ] && con_firm "$config_dir/operaprefs_default.ini exists: over-write it ?"
+-				then
+-					backup $config_dir/operaprefs_default.ini operaprefs_default.ini config
+-					cp $cpv $cpf etc/operaprefs_default.ini $config_dir
+-				fi
+-			else cp $cpv $cpf etc/operaprefs_default.ini $config_dir
+-			fi
+-			if [ -f "$config_dir/operaprefs_fixed.ini" ]
+-			then
+-				if [ "$flag_mode" = '--interactive' ] && con_firm "$config_dir/operaprefs_fixed.ini exists: over-write it ?"
+-				then
+-					backup $config_dir/operaprefs_fixed.ini operaprefs_fixed.ini config
+-					cp $cpv $cpf etc/operaprefs_fixed.ini $config_dir
+-				fi
+-			else cp $cpv $cpf etc/operaprefs_fixed.ini $config_dir
+-			fi
 -	    fi
 -	else
 -	    warn
 -	    warn "User \"${USERNAME}\" does not have write access to $config_dir"
 -	    warn " System wide configuration files:"
--	    warn "  $config_dir/opera6rc"
--	    warn "  $config_dir/opera6rc.fixed"
+-	    warn "  $config_dir/operaprefs_default.ini"
+-	    warn "  $config_dir/operaprefs_fixed.ini"
 -	    warn " were not installed."
 -	fi
 -
@@ -285,7 +297,7 @@
  	fi
  
      fi # OPERADESTDIR
-@@ -1392,21 +1268,21 @@
+@@ -1403,24 +1269,24 @@
      echo '[Desktop Entry]'
      if test -z "$1"
      then cat <<EOF
@@ -308,11 +320,17 @@
  	cat <<EOF
  Encoding=UTF-8
 -Name=Opera
+-Name[af]=opera
+-Name[eo]=Opero
+-Name[zu]=I Opera
 +Name=Opera (linux version)
- Name[af]=opera
- Name[eo]=Opero
- Name[zu]=I Opera
-@@ -1430,7 +1306,7 @@
++Name[af]=opera (linux version)
++Name[eo]=Opero (linux version)
++Name[zu]=I Opera (linux version)
+ GenericName=Web browser
+ GenericName[bs]=Web preglednik
+ GenericName[de]=Web-Browser
+@@ -1441,7 +1307,7 @@
  GenericName[ven]=Buronza ya Webu
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
@@ -321,7 +339,7 @@
  Terminal=false
  EOF
  
-@@ -1446,15 +1322,16 @@
+@@ -1457,15 +1323,16 @@
  	if test "$1" = "xdg"
  	then cat <<EOF
  Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
@@ -340,7 +358,7 @@
  EOF
  }
  
-@@ -1462,7 +1339,7 @@
+@@ -1473,7 +1340,7 @@
  {
      # arg1 = location
      # arg2 = type
@@ -349,7 +367,7 @@
  }
  
  generate_mdk_menu()
-@@ -1487,51 +1364,26 @@
+@@ -1498,51 +1365,26 @@
  
      debug_msg 0 "in icons()"
  
