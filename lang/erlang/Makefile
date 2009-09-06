@@ -86,12 +86,15 @@ ERLANG_PLIST=	${WRKDIR}/pkg-plist
 # net_kernel:start([node_name, shortnames]) invoked repeatedly
 
 CONFIGURE_ARGS+=	--enable-threads --enable-dynamic-ssl-lib --enable-sctp --enable-smp-support
-NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 PLIST_SUB+=	ERTS_VSN=${ERTS_VSN} TOOLS_VSN=${TOOLS_VSN}
+
+.if ${ARCH} == i386
+MAKE_ARGS+=	ARCH=x86
+.endif
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
 # subdir. This is to avoid cluttering up the man page name space. Also the
