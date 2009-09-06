@@ -196,6 +196,15 @@ post-install:
 	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	@cd ${WRKDIR} ; ex < ex.script
 
+buildplt:
+	@${ECHO_CMD} =====================================================
+	@${ECHO_CMD} WARNING: building a full PLT may literally take hours
+	@${ECHO_CMD}
+	@${ECHO_CMD} You may wish to settle for the standard PLT built by
+	@${ECHO_CMD} dialyzer on the first run.
+	@${ECHO_CMD} =====================================================
+	@cd ${PREFIX}/lib/erlang/lib ; ${PREFIX}/bin/dialyzer --verbose --build_plt --output_plt ${HOME}/.dialyzer_plt -c $$(find ${OTP_LIBS} -name ebin -maxdepth 1) || true
+
 .include "Makefile.lib"
 .include "Makefile.man"
 
