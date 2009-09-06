@@ -10,8 +10,23 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20090906:
+AUTHOR: flz@FreeBSD.org
+
+  * There is now a unified way to create users and groups
+    in your ports. First, make sure they are added to both
+    ports/GIDs and ports/UIDs, then add the following in
+    your port:
+
+    USERS=	foo
+    GROUPS=	foo
+
+    ... if you want your port to create the foo user and
+    group.
+
 20090812:
 AUTHOR: portmgr@FreeBSD.org
+
   * sourceforge.net has changed their URL layout to be more
     flexible for their users.  A new bsd.sites.mk macro SFP
     has been added for projects that moved from
@@ -327,7 +342,7 @@ The following functional changes were made to bsd.port.mk:
 
 20060914:
 AUTHOR: portmgr@FreeBSD.org
-The following functional changes were made to bsd.port.mk:
+ The following functional changes were made to bsd.port.mk:
 
   * PKGVERSION was introduced as an intermediate variable refactored out of
     PKGNAME.
