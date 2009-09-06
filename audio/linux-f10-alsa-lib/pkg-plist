@@ -49,6 +49,7 @@ usr/share/alsa/cards/PMacToonie.conf
 usr/share/alsa/cards/PS3.conf
 usr/share/alsa/cards/RME9636.conf
 usr/share/alsa/cards/RME9652.conf
+usr/share/alsa/cards/SB-XFi.conf
 usr/share/alsa/cards/SI7018.conf
 usr/share/alsa/cards/SI7018/sndoc-mixer.alisp
 usr/share/alsa/cards/SI7018/sndop-mixer.alisp
@@ -82,12 +83,12 @@ usr/share/alsa/pcm/surround51.conf
 usr/share/alsa/pcm/surround71.conf
 usr/share/alsa/smixer.conf
 usr/share/alsa/sndo-mixer.alisp
-usr/share/doc/alsa-lib-1.0.20/COPYING
-usr/share/doc/alsa-lib-1.0.20/ChangeLog
-usr/share/doc/alsa-lib-1.0.20/TODO
-usr/share/doc/alsa-lib-1.0.20/asoundrc.txt
+usr/share/doc/alsa-lib-1.0.21/COPYING
+usr/share/doc/alsa-lib-1.0.21/ChangeLog
+usr/share/doc/alsa-lib-1.0.21/TODO
+usr/share/doc/alsa-lib-1.0.21/asoundrc.txt
 @comment non-empty directory listing in revers order
-@dirrm usr/share/doc/alsa-lib-1.0.20
+@dirrm usr/share/doc/alsa-lib-1.0.21
 @dirrm usr/share/alsa/pcm
 @dirrm usr/share/alsa/cards/SI7018
 @dirrm usr/share/alsa/cards
