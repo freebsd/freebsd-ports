@@ -1,7 +1,7 @@
 --- Makefile.in.old	2009-06-22 23:34:25.000000000 -0500
 +++ Makefile.in	2009-06-22 23:41:26.000000000 -0500
-@@ -1980,22 +1980,11 @@
- 	data/rules/56-hpmud_support.rules
+@@ -2006,22 +2006,11 @@
+ 	data/rules/40-hplip.rules data/rules/55-hpmud.rules
  dist_rulesDATA_INSTALL = $(INSTALL_DATA)
  dist_unrelDATA_INSTALL = $(INSTALL_DATA)
 -am__dist_www0_DATA_DIST = $(wwwsrc)/index.html \
@@ -26,19 +26,21 @@
  dist_www4DATA_INSTALL = $(INSTALL_DATA)
  docDATA_INSTALL = $(INSTALL_DATA)
  hplip_confDATA_INSTALL = $(INSTALL_DATA)
-@@ -3635,10 +3624,11 @@
- @HPLIP_BUILD_TRUE@hp_mkuri_LDADD =  libhpmud.la
+@@ -3679,11 +3668,12 @@
+ @HPLIP_BUILD_TRUE@hp_mkuri_LDADD = -ldl libhpmud.la
  
  # hpmud.rules
 -@HPLIP_BUILD_TRUE@rulesdir = /etc/udev/rules.d
--@HPLIP_BUILD_TRUE@dist_rules_DATA = data/rules/55-hpmud.rules data/rules/56-hpmud_support.rules
+-@HPLIP_BUILD_TRUE@dist_rules_DATA = data/rules/56-hpmud_support.rules \
+-@HPLIP_BUILD_TRUE@	$(am__append_2) $(am__append_3)
 -@HPLIP_BUILD_TRUE@halpredir = /usr/share/hal/fdi/preprobe/10osvendor
 -@HPLIP_BUILD_TRUE@dist_halpre_DATA = data/rules/20-hplip-devices.fdi
 +# same applys here.
 +#@HPLIP_BUILD_TRUE@rulesdir = /etc/udev/rules.d
-+#@HPLIP_BUILD_TRUE@dist_rules_DATA = data/rules/55-hpmud.rules data/rules/56-hpmud_support.rules
++#@HPLIP_BUILD_TRUE@dist_rules_DATA = data/rules/56-hpmud_support.rules \
++#@HPLIP_BUILD_TRUE@	$(am__append_2) $(am__append_3)
 +#@HPLIP_BUILD_TRUE@halpredir = /usr/share/hal/fdi/preprobe/10osvendor
 +#@HPLIP_BUILD_TRUE@dist_halpre_DATA = data/rules/20-hplip-devices.fdi
  
  # hplip.conf
- @HPLIP_BUILD_TRUE@hplip_confdir = /usr/local/etc/hp
+ @HPLIP_BUILD_TRUE@hplip_confdir = /etc/hp

@@ -59,40 +59,40 @@ libexec/cups/backend/hp
 libexec/cups/backend/hpfax
 libexec/cups/driver/hpcups.drv
 libexec/cups/filter/foomatic-rip-hplip
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/COPYING
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/README_LIBJPG
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/commandline.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/copying.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/copyright
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/devicemanager.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/faxtrouble.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/gettinghelp.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/hpscan.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/images/favicon.ico
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/images/print.png
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/images/toolbox_actions.png
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/images/toolbox_fax.png
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/images/toolbox_print_control.png
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/images/toolbox_print_settings.png
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/images/toolbox_status.png
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/images/toolbox_supplies.png
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/images/xsane.png
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/index.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/mainttask.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/plugins.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/print.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/printing.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/printoptions.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/printtroubleshooting.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/scanning.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/scantrouble.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/sendfax.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/setup.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/styles/css.css
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/systray.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/troubleshooting.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/uninstalling.html
-%%PORTDOCS%%%%DOCSDIR%%-3.9.6b/upgrading.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/COPYING
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/README_LIBJPG
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/commandline.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/copying.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/copyright
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/devicemanager.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/faxtrouble.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/gettinghelp.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/hpscan.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/images/favicon.ico
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/images/print.png
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/images/toolbox_actions.png
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/images/toolbox_fax.png
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/images/toolbox_print_control.png
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/images/toolbox_print_settings.png
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/images/toolbox_status.png
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/images/toolbox_supplies.png
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/images/xsane.png
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/index.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/mainttask.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/plugins.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/print.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/printing.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/printoptions.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/printtroubleshooting.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/scanning.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/scantrouble.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/sendfax.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/setup.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/styles/css.css
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/systray.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/troubleshooting.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/uninstalling.html
+%%PORTDOCS%%%%DOCSDIR%%-3.9.8/upgrading.html
 %%DATADIR%%/__init__.py
 %%DATADIR%%/align.py
 %%DATADIR%%/base/__init__.py
@@ -1108,7 +1108,6 @@ share/ppd/HP/hp-laserjet_p3004-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_p3004-ps.ppd.gz
 share/ppd/HP/hp-laserjet_p3005-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_p3005-ps.ppd.gz
-share/ppd/HP/hp-laserjet_p3010_series-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_p4014-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_p4014-ps.ppd.gz
 share/ppd/HP/hp-laserjet_p4014dn-hpijs.ppd.gz
@@ -1347,6 +1346,16 @@ share/ppd/HP/hp-psc_950vr-hpijs.ppd.gz
 share/ppd/HP/hp-psc_950xi-hpijs.ppd.gz
 share/ppd/HP/HP-Fax-hpijs.ppd.gz
 share/ppd/HP/HP-Fax2-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_p3010_series-ps.ppd.gz
+share/ppd/HP/hp-laserjet_p3010_series-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-officejet_7000_e809a-hpijs.ppd.gz
+share/ppd/HP/hp-deskjet_ink_advant_k109a-z-hpijs.ppd.gz
+share/ppd/HP/hp-deskjet_ink_advant_k209a-z-hpijs.ppd.gz
+share/ppd/HP/hp-photosmart_plus_b209a-m-hpijs.ppd.gz
+share/ppd/HP/hp-photosmart_c4700_series-hpijs.ppd.gz
+share/ppd/HP/hp-deskjet_670c-hpijs.ppd.gz
+share/ppd/HP/hp-deskjet_d1600_series-hpijs.ppd.gz
+share/ppd/HP/hp-deskjet_d5500_series-hpijs.ppd.gz
 share/applications/hplip.desktop
 @dirrmtry share/ppd/HP
 @dirrmtry share/ppd
@@ -1376,9 +1385,9 @@ share/applications/hplip.desktop
 @dirrm %%DATADIR%%/copier
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-3.9.6b/styles
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-3.9.6b/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-3.9.6b
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-3.9.8/styles
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-3.9.8/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-3.9.8
 @dirrmtry share/applications
 @dirrmtry lib/sane
 @dirrmtry lib/python2.5/site-packages

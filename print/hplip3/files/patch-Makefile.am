@@ -15,17 +15,27 @@
  endif
  
  if HPLIP_BUILD
-@@ -89,10 +89,11 @@
+@@ -89,15 +89,16 @@
  hp_mkuri_LDADD = -ldl libhpmud.la
  
  # hpmud.rules
 -rulesdir = /etc/udev/rules.d
--dist_rules_DATA = data/rules/55-hpmud.rules data/rules/56-hpmud_support.rules
+-dist_rules_DATA = data/rules/56-hpmud_support.rules
+-if UDEV_ACL_RULES
+-dist_rules_DATA += data/rules/40-hplip.rules
+-else
+-dist_rules_DATA += data/rules/55-hpmud.rules
+-endif
 -halpredir = /usr/share/hal/fdi/preprobe/10osvendor
 -dist_halpre_DATA = data/rules/20-hplip-devices.fdi
 +# FreeBSD doesn't use udev so why install the rules?
 +#rulesdir = /etc/udev/rules.d
-+#dist_rules_DATA = data/rules/55-hpmud.rules data/rules/56-hpmud_support.rules
++#dist_rules_DATA = data/rules/56-hpmud_support.rules
++#if UDEV_ACL_RULES
++#dist_rules_DATA += data/rules/40-hplip.rules
++#else
++#dist_rules_DATA += data/rules/55-hpmud.rules
++#endif
 +#halpredir = /usr/share/hal/fdi/preprobe/10osvendor
 +#dist_halpre_DATA = data/rules/20-hplip-devices.fdi
  
