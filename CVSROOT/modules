@@ -1732,7 +1732,6 @@ configkit                       ports/devel/configkit
 confman                         ports/sysutils/confman
 confregdecode                   ports/net-mgmt/confregdecode
 conglomerate                    ports/editors/conglomerate
-conkeror                        ports/www/conkeror
 conky                           ports/sysutils/conky
 conky-awesome                   ports/sysutils/conky-awesome
 connect4                        ports/games/connect4
@@ -21502,15 +21501,6 @@ slige                           ports/games/slige
 slim                            ports/x11/slim
 slim-themes                     ports/x11-themes/slim-themes
 slime                           ports/editors/slime
-slimserver                      ports/audio/slimserver
-slimserver-dynamicplaylist      ports/audio/slimserver-dynamicplaylist
-slimserver-dynamictransition    ports/audio/slimserver-dynamictransition
-slimserver-lastfm               ports/audio/slimserver-lastfm
-slimserver-lazysearch           ports/audio/slimserver-lazysearch
-slimserver-slimscrobbler        ports/audio/slimserver-slimscrobbler
-slimserver-sqlplaylist          ports/audio/slimserver-sqlplaylist
-slimserver-superdatetime        ports/audio/slimserver-superdatetime
-slimserver-trackstat            ports/audio/slimserver-trackstat
 slingshot                       ports/x11-toolkits/slingshot
 slirc                           ports/irc/slirc
 slirp                           ports/net/slirp
@@ -24303,6 +24293,7 @@ xpi-bookmarkdd                  ports/www/xpi-bookmarkdd
 xpi-clearfields                 ports/www/xpi-clearfields
 xpi-close-all-tabs              ports/www/xpi-close-all-tabs
 xpi-colorfultabs                ports/www/xpi-colorfultabs
+xpi-conkeror                    ports/www/xpi-conkeror
 xpi-cookiesafe                  ports/www/xpi-cookiesafe
 xpi-cssviewer                   ports/www/xpi-cssviewer
 xpi-customizegoogle             ports/www/xpi-customizegoogle
