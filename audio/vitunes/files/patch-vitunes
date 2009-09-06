@@ -1,0 +1,125 @@
+--- Makefile.orig	2009-03-11 22:39:03.000000000 +0100
++++ Makefile	2009-09-02 13:26:25.000000000 +0200
+@@ -3,7 +3,7 @@
+ LDFLAGS_DEPS=-L/usr/local/lib -lid3tag -lmp4v2 -logg -lvorbis -lvorbisfile
+ 
+ CC=/usr/bin/gcc
+-CFLAGS=-c -Wall -ansi -O2 -DDEBUG -g $(CFLAGS_DEPS)
++CFLAGS=-c -Wall -O2 -DDEBUG -g $(CFLAGS_DEPS) -std=c99
+ LDFLAGS=-lncurses -lm $(LDFLAGS_DEPS)
+ 
+ 
+--- meta_info.c.orig	2009-03-11 23:00:31.000000000 +0100
++++ meta_info.c	2009-09-02 13:26:25.000000000 +0200
+@@ -260,10 +260,12 @@
+     */
+    if (mi->cinfo[MI_CINFO_GENRE] != NULL)
+    {  long long gindex;
+-      const char *errstr;
++      const char *errstr = NULL;
+ 
+       /* note that the range is here what libid3tag can handle */
+-      gindex = strtonum(mi->cinfo[MI_CINFO_GENRE], 0, 147, &errstr);
++      /* gindex = strtonum(mi->cinfo[MI_CINFO_GENRE], 0, 147, &errstr);*/
++      gindex = atoll(mi->cinfo[MI_CINFO_GENRE]);
++
+       if (errstr != NULL)  /* check for invalid genre number */
+       {  free(mi->cinfo[MI_CINFO_GENRE]);
+          mi->cinfo[MI_CINFO_GENRE] = NULL;
+--- meta_info.h.orig	2009-03-13 00:54:02.000000000 +0100
++++ meta_info.h	2009-09-02 13:26:25.000000000 +0200
+@@ -3,6 +3,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#include <strings.h>
+ #include <limits.h>
+ #include <time.h>
+ #include <err.h>
+--- meta_info_db.c.orig	2009-03-05 00:49:50.000000000 +0100
++++ meta_info_db.c	2009-09-02 13:26:25.000000000 +0200
+@@ -312,7 +312,7 @@
+             if (index != -1)  /* file DOES exist in DB... */
+             {
+                /* check if the file has been modified since it was added */
+-               if (ftsent->fts_statp->st_mtim.tv_sec >
++               if (ftsent->fts_statp->st_mtime >
+                    midb->files[index]->last_updated)
+                {  /* it has been modified... update the record */
+                   mi = meta_extract(ftsent->fts_accpath);
+@@ -399,7 +399,7 @@
+ 
+       } else
+       {  /* file still exists... check if it has been modified */
+-         if (sb.st_mtim.tv_sec > midb->files[i]->last_updated)
++         if (sb.st_mtime > midb->files[i]->last_updated)
+          {  meta_info *mi = meta_extract(filename);
+             if (mi == NULL)
+             {  midb_remove_record(midb, i);
+--- meta_info_db.h.orig	2009-03-18 17:44:59.000000000 +0100
++++ meta_info_db.h	2009-09-02 13:26:25.000000000 +0200
+@@ -1,9 +1,15 @@
+ #ifndef META_INFO_DB
+ #define META_INFO_DB
+ 
++#include <limits.h>
++#include <stdlib.h>
+ #include <sys/errno.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <unistd.h>
++
++typedef unsigned short u_short;
++
+ #include <fts.h>
+ 
+ #include "meta_info.h"
+--- uinterface.h.orig	2009-05-08 03:22:43.000000000 +0200
++++ uinterface.h	2009-09-02 13:26:25.000000000 +0200
+@@ -2,11 +2,12 @@
+ #define UINTERFACE_H
+ 
+ #include <sys/ioctl.h>
+-#include <sys/ioctl_compat.h>
++/* #include <sys/ioctl_compat.h> */
+ #include <ncurses.h>
+ #include <ctype.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <stdint.h>
+ #include <string.h>
+ #include <termios.h>
+ #include <unistd.h>
+--- vitunes.c.orig	2009-05-08 17:13:19.000000000 +0200
++++ vitunes.c	2009-09-02 13:26:25.000000000 +0200
+@@ -1,10 +1,13 @@
+ 
++#include <signal.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <math.h>
+ #include <pwd.h>
++#include <unistd.h>
++#include <getopt.h>
+ 
+ #include "vitunes.h"
+ 
+@@ -304,12 +307,12 @@
+       printf("\tcommand \"updatedb\" instead.\n");
+       printf("Do you wish to continue? [y/n] ");
+ 
+-      char  *response;
++      char  response[5];
+       size_t res_size;
+-      if ((response = fgetln(stdin, &res_size)) == NULL)
+-         err(1, "fgetln");
++      if (fgets(response, 5, stdin) == NULL)
++         err(1, "fgets");
+ 
+-      response[res_size] = '\0';
++      /* response[res_size] = '\0'; */
+       if (strcasecmp(response, "yes") != 0 && strcasecmp(response, "y") != 0)
+       {  printf("creatdb cancelled.\n");
+          return 1;
