@@ -1,0 +1,88 @@
+$FreeBSD$
+
+--- default.build.orig	2009-09-06 14:21:30.000000000 -0700
++++ default.build	2009-09-06 14:21:40.000000000 -0700
+@@ -21,19 +21,25 @@
+ 	
+ 	<property name="build.dir" value="build" dynamic="True"/>
+ 	<property name="distrobuild.dir" value="distrobuild"/>
++	<property name="docs.dir" value="docs"/>
++	<property name="examples.dir" value="examples"/>
+ 
+-	<property name="install.prefix" value="/usr/local" />
++	<property name="install.prefix" value="%%PREFIX%%" />
+ 	<property name="install.destdir" value="/" />
+ 
+ 	<property name="install.share" value="${path::combine(install.prefix,'share')}" />
+ 	<property name="install.bindir" value="${path::combine(install.prefix,'bin')}" />
+ 	<property name="install.libdir" value="${path::combine(install.prefix,'lib')}" />
++	<property name="install.libdatadir" value="${path::combine(install.prefix,'libdata')}" />
+ 	<property name="install.boolib" value="${path::combine(install.libdir,'boo')}" />
+ 
+ 	<property name="fakeroot.boolib" value="${install.destdir}/${install.boolib}" />
+ 	<property name="fakeroot.bindir" value="${install.destdir}/${install.bindir}" />
+ 	<property name="fakeroot.libdir" value="${install.destdir}/${install.libdir}" />
++	<property name="fakeroot.libdatadir" value="${install.destdir}/${install.libdatadir}" />
+ 	<property name="fakeroot.share" value="${install.destdir}/${install.share}" />
++	<property name="fakeroot.docsdir" value="%%DOCSDIR%%" />
++	<property name="fakeroot.examplesdir" value="%%EXAMPLESDIR%%" />
+ 
+ 	<!-- set gendarme.dir in your build.properties to enable Gendarme report after build -->
+ 	<property name="gendarme.dir" value=""/>
+@@ -71,7 +77,7 @@
+ 		<property name="nosign" value="true" overwrite="true" />
+ 	</target>
+ 
+-	<target name="all" depends="booc, booi, booish, boo-pkgconfig, Boo.Lang.CodeDom, Boo.Lang.Useful, boo, Boo.Microsoft.Build.Tasks, update-vs2005-env, Boo.Lang.PatternMatching">
++	<target name="all" depends="booc, booi, booish, boo-pkgconfig, Boo.Lang.CodeDom, Boo.Lang.Useful, boo, Boo.Microsoft.Build.Tasks, Boo.Lang.PatternMatching">
+ 		<call target="gendarme" if="${gendarme.dir != ''}" />
+ 	</target>
+ 
+@@ -538,7 +544,7 @@
+ 		<call target="install-linux" if="${not(platform::is-win32())}"/>
+ 	</target>
+ 
+-	<target name="install-linux" depends="booc, booish, booi">
++	<target name="install-linux" depends="%%INSTALLDOCS%%%%INSTALLEXAMPLES%%booc, booish, booi">
+ 		<!--
+ 		Use pkg-config to find the proper locations for several
+ 		key files for mime detection, etc
+@@ -602,7 +608,7 @@
+ 		</copy>
+ 		
+ 		<copy file="extras/boo.lang" todir="${fakeroot.gsv}/share/gtksourceview-1.0/language-specs/" />
+-		<copy file="${build.dir}/boo.pc" todir="${fakeroot.libdir}/pkgconfig/" />
++		<copy file="${build.dir}/boo.pc" todir="${fakeroot.libdatadir}/pkgconfig/" />
+ 		<copy file="extras/boo-mime-info.xml" todir="${fakeroot.sharedmime}/share/mime/packages/" />
+ 
+ 		<exec program="chmod" commandline="+x ${fakeroot.bindir}/booc" />
+@@ -645,7 +651,28 @@
+ 		</foreach>
+ 
+ 	</target>
+-	
++
++	<target name="install-docs">
++		<copy todir="${fakeroot.docsdir}">
++			<fileset basedir="${docs.dir}">
++				<include name="*.sxw"/>
++			</fileset>
++		</copy>
++		<copy todir="${fakeroot.docsdir}">
++			<fileset basedir=".">
++				<include name="*.txt"/>
++			</fileset>
++		</copy>
++	</target>
++
++	<target name="install-examples">
++		<copy todir="${fakeroot.examplesdir}">
++			<fileset basedir="${examples.dir}">
++				<include name="**"/>
++			</fileset>
++		</copy>
++	</target>
++
+ 	<target name="uninstall">
+ 		<call target="uninstall-linux" if="${not(platform::is-win32())}"/>
+ 		<call target="uninstall-win32" if="${platform::is-win32()}"/>

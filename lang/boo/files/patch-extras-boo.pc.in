@@ -1,0 +1,10 @@
+--- extras/boo.pc.in.orig	Mon Oct  1 17:53:29 2007
++++ extras/boo.pc.in	Mon Oct  1 17:53:56 2007
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${prefix}/lib
++libdir=${prefix}/lib/mono
+ 
+ 
+ Name: Boo
