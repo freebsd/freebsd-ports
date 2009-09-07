@@ -11,9 +11,9 @@ bin/gphoto2
 %%NLS%%share/locale/fi/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gphoto2.mo
+%%NLS%%share/locale/id/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gphoto2.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gphoto2.mo
@@ -24,7 +24,6 @@ bin/gphoto2
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
 %%NLS%%share/locale/sk/LC_MESSAGES/gphoto2.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gphoto2.mo

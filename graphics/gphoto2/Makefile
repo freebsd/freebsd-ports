@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.4.7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
@@ -15,8 +14,6 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A command-line frontend to libgphoto2
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		aa.1:${PORTSDIR}/graphics/aalib \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
 USE_GNOME=	gnometarget
@@ -31,6 +28,17 @@ MAN1=		gphoto2.1
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+OPTIONS=	AALIB "Enable command line capture preview (aalib)" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_AALIB)
+LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib \
+		jpeg.10:${PORTSDIR}/graphics/jpeg
+.else
+CONFIGURE_ARGS+=--without-aalib --without-jpeg
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -51,4 +59,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
