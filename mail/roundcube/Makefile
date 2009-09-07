@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.2.2
+DISTVERSION=	0.3
 PORTEPOCH=	1
 CATEGORIES=	mail www
-MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${PORTVERSION}
-DISTNAME=	${PORTNAME}mail-${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${PORTVERSION}-stable
+DISTNAME=	${PORTNAME}mail-${DISTVERSION}-stable
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
 NO_BUILD=	yes
 
-RCUBECOMP=	SQL bin config index.php logs program robots.txt skins temp
+RCUBECOMP=	SQL bin config index.php logs plugins program robots.txt skins temp
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADING
 
 SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
@@ -90,6 +90,7 @@ post-patch:
 .endif
 .if defined(WITH_REPLACE_MAIL_URL)
 	@${REINPLACE_CMD} "s/'mail'/'${MAIL}'/g" ${WRKSRC}/index.php \
+		${WRKSRC}/plugins/*/*.php \
 		${WRKSRC}/program/include/rcmail.php \
 		${WRKSRC}/program/localization/*/labels.inc \
 		${WRKSRC}/program/steps/addressbook/mailto.inc
@@ -99,14 +100,14 @@ post-patch:
 		${WRKSRC}/program/js/app.js \
 		${WRKSRC}/skins/default/includes/header.html \
 		${WRKSRC}/skins/default/includes/taskbar.html
-	@${REINPLACE_CMD} "s/mail.gif/${MAIL}.gif/g" \
-		${WRKSRC}/skins/default/common.css
-	@${REINPLACE_CMD} "s/mail.css/${MAIL}.css/g" \
-		${WRKSRC}/skins/default/templates/*.html
+	@${REINPLACE_CMD} "s/mail_toolbar/${MAIL}_toolbar/g" \
+		${WRKSRC}/skins/default/*.css
 	@${MV} ${WRKSRC}/program/steps/mail \
 		${WRKSRC}/program/steps/${MAIL}
-	@${MV} ${WRKSRC}/skins/default/images/buttons/mail.gif \
-		${WRKSRC}/skins/default/images/buttons/${MAIL}.gif
+	@${MV} ${WRKSRC}/skins/default/images/mail_toolbar.gif \
+		${WRKSRC}/skins/default/images/${MAIL}_toolbar.gif
+	@${MV} ${WRKSRC}/skins/default/images/mail_toolbar.png \
+		${WRKSRC}/skins/default/images/${MAIL}_toolbar.png
 	@${MV} ${WRKSRC}/skins/default/mail.css \
 		${WRKSRC}/skins/default/${MAIL}.css
 	@${MV} ${WRKSRC}/skins/default/templates/mail.html \
