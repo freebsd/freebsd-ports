@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	poker-eval
-PORTVERSION=	0.135
+PORTVERSION=	0.136
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION:E}.0
