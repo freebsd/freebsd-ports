@@ -1,0 +1,22 @@
+--- bin/vboxgtk.orig	2009-09-04 21:39:38.000000000 +1000
++++ bin/vboxgtk	2009-09-04 21:41:14.000000000 +1000
+@@ -47,7 +47,7 @@
+                     vbox_install_path = line.lstrip(head).rstrip('\n')
+                     break
+     else:
+-        dir_list = ('/usr/lib/virtualbox-ose',
++        dir_list = ('%%LOCALBASE%%/lib/virtualbox',
+                     '/opt/VirtualBox')
+         for d in dir_list:
+             if os.path.isdir(d):
+@@ -56,8 +56,8 @@
+     if vbox_install_path is not None:
+         vbox_install_path = os.path.abspath(vbox_install_path)
+         sys.path.insert(0, vbox_install_path)
+-        sdk_dir = 'sdk/bindings/xpcom/python'
+-        sys.path.insert(0, os.path.join(vbox_install_path, sdk_dir))
++        sdk_dir = '%%PYTHON_SITELIBDIR%%/virtualbox'
++        sys.path.insert(0, sdk_dir)
+     base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+     if os.path.isdir(os.path.join(base_path, 'vboxgtk')):
+         sys.path.insert(0, base_path)
