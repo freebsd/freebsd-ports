@@ -2,10 +2,8 @@ bin/ldrdf
 bin/nasm
 bin/ndisasm
 bin/rdf2bin
-bin/rdf2com
-bin/rdf2ihx
+@unexec rm -f %B/rdf2com %B/rdf2ith %B/rdf2ihx %B/rdf2srec
+@exec for b in com ith ihx srec ; do ln -s %D/%F %B/rdf2$b ; done
 bin/rdfdump
 bin/rdflib
 bin/rdx
-%%PORTDOCS%%%%DOCSDIR%%/nasmdoc.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
