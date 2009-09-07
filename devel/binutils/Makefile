@@ -7,7 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.19.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/libgmp4 \
 		${LOCALBASE}/lib/libmpfr.so:${PORTSDIR}/math/mpfr
+
+OPTIONS=	NLS "Enable National Language Support" off
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
@@ -55,15 +57,15 @@ INFO=		as \
 		configure \
 		ld
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
 PLIST_SUB+=	POST7="@comment " PRE7=""
