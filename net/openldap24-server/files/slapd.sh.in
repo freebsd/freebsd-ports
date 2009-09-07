@@ -63,7 +63,7 @@ if checkyesno slapd_cn_config; then
 else
   required_dirs="%%LDAP_RUN_DIR%%"
   required_files="%%PREFIX%%/etc/openldap/slapd.conf"
-  DATABASEDIR=`awk '$1 == "directory" { print $2 }' "%%PREFIX%%etc/openldap/slapd.conf" 2>&1 /dev/null`
+  DATABASEDIR=`awk '$1 == "directory" { print $2 }' "%%PREFIX%%/etc/openldap/slapd.conf" 2>&1 /dev/null`
 fi
 
 start_precmd=start_precmd
