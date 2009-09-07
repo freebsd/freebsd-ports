@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	poker-engine
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.4
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 
