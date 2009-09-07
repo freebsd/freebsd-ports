@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.4.6
-PORTREVISION=	1
+PORTVERSION=	2.4.7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -51,7 +50,8 @@ post-patch:
 .for file in configure libgphoto2_port/configure
 	@${REINPLACE_CMD} -e \
 		's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g ; \
-		 s|-g -O2||g' ${WRKSRC}/${file}
+		 s|-g -O2||g ; \
+		 /grep -i linux/s|; fi ; then|; else false; fi ; then|' ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e '/test.*udevscriptdir/d ; s| "$$(DESTDIR)$$(udevscriptdir)"||' ${WRKSRC}/libgphoto2_port/usb/Makefile.in ${WRKSRC}/packaging/generic/Makefile.in
 	@${REINPLACE_CMD} -e 's|linux-hotplug ||' ${WRKSRC}/packaging/Makefile.in
