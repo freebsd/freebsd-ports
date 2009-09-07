@@ -103,7 +103,6 @@ bin/xscreensaver-hacks/interference
 bin/xscreensaver-hacks/intermomentary
 bin/xscreensaver-hacks/jigglypuff
 bin/xscreensaver-hacks/jigsaw
-bin/xscreensaver-hacks/juggle
 bin/xscreensaver-hacks/juggler3d
 bin/xscreensaver-hacks/julia
 bin/xscreensaver-hacks/kaleidescope
@@ -158,6 +157,7 @@ bin/xscreensaver-hacks/rocks
 bin/xscreensaver-hacks/rorschach
 bin/xscreensaver-hacks/rotzoomer
 bin/xscreensaver-hacks/rubik
+bin/xscreensaver-hacks/rubikblocks
 bin/xscreensaver-hacks/sballs
 bin/xscreensaver-hacks/shadebobs
 bin/xscreensaver-hacks/sierpinski
@@ -178,6 +178,7 @@ bin/xscreensaver-hacks/stonerview
 bin/xscreensaver-hacks/strange
 bin/xscreensaver-hacks/substrate
 bin/xscreensaver-hacks/superquadrics
+bin/xscreensaver-hacks/surfaces
 bin/xscreensaver-hacks/swirl
 bin/xscreensaver-hacks/tangram
 bin/xscreensaver-hacks/thornbird
@@ -302,7 +303,6 @@ share/xscreensaver/config/interference.xml
 share/xscreensaver/config/intermomentary.xml
 share/xscreensaver/config/jigglypuff.xml
 share/xscreensaver/config/jigsaw.xml
-share/xscreensaver/config/juggle.xml
 share/xscreensaver/config/juggler3d.xml
 share/xscreensaver/config/julia.xml
 share/xscreensaver/config/kaleidescope.xml
@@ -356,6 +356,7 @@ share/xscreensaver/config/rocks.xml
 share/xscreensaver/config/rorschach.xml
 share/xscreensaver/config/rotzoomer.xml
 share/xscreensaver/config/rubik.xml
+share/xscreensaver/config/rubikblocks.xml
 share/xscreensaver/config/sballs.xml
 share/xscreensaver/config/shadebobs.xml
 share/xscreensaver/config/sierpinski.xml
@@ -376,6 +377,7 @@ share/xscreensaver/config/stonerview.xml
 share/xscreensaver/config/strange.xml
 share/xscreensaver/config/substrate.xml
 share/xscreensaver/config/superquadrics.xml
+share/xscreensaver/config/surfaces.xml
 share/xscreensaver/config/swirl.xml
 share/xscreensaver/config/tangram.xml
 share/xscreensaver/config/thornbird.xml

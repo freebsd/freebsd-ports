@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	xscreensaver-gnome
-PORTVERSION=	5.08
-PORTREVISION?=	1
+PORTVERSION=	5.09
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -64,7 +64,7 @@ MAN6?=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	glslideshow.6 glsnake.6 gltext.6 goop.6 grav.6 greynetic.6 halftone.6 \
 	halo.6 helix.6 hopalong.6 hyperball.6 hypercube.6 hypertorus.6 ifs.6 \
 	imsmap.6 interaggregate.6 interference.6 intermomentary.6 jigglypuff.6 \
-	jigsaw.6 juggle.6 juggler3d.6 julia.6 kaleidescope.6 klein.6 kumppa.6 \
+	jigsaw.6 juggler3d.6 julia.6 kaleidescope.6 klein.6 kumppa.6 \
 	lament.6 lavalite.6 ljlatest.6 \
 	loop.6 maze.6 memscroller.6 menger.6 metaballs.6 mirrorblob.6 \
 	moebius.6 moire.6 moire2.6 molecule.6 morph3d.6 mountain.6 \
@@ -82,7 +82,7 @@ MAN6?=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	xanalogtv.6 xflame.6 xjack.6 xlyap.6 xmatrix.6 xrayswarm.6 \
 	xspirograph.6 zoom.6 cwaves.6 glcells.6 voronoi.6 \
 	abstractile.6 moebiusgears.6 lockward.6 cubicgrid.6 hypnowheel.6 \
-	lcdscrub.6 skytentacles.6 \
+	lcdscrub.6 skytentacles.6 rubikblocks.6 surfaces.6 \
 	xscreensaver-gl-helper.6
 
 .include <bsd.port.pre.mk>
@@ -129,6 +129,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|install-xml install-pam|install-xml|' \
 	    	${WRKSRC}/driver/Makefile.in
 .endif
+
+pre-build:
+	@(cd ${WRKSRC}/hacks && ./m6502.sh m6502.h images/m6502/*.asm)
+	@(cd ${WRKSRC}/hacks/glx && ./molecules.sh molecules.h ../images/molecules/*.pdb)
 
 pre-install:
 .if defined(WITH_PAM)
