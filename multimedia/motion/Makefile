@@ -22,6 +22,8 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+BROKEN=		checksum mismatch
+
 MAN1=		motion.1
 
 USE_AUTOTOOLS=	autoconf:262
