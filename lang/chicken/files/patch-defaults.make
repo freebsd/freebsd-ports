@@ -1,21 +1,19 @@
---- ./defaults.make.orig	2008-06-28 23:24:06.000000000 +0900
-+++ ./defaults.make	2008-07-17 01:19:10.000000000 +0900
-@@ -47,6 +47,7 @@
- PREFIX ?= c:/devtools
- else
+--- ./defaults.make.orig	2009-07-31 19:13:36.000000000 -0300
++++ ./defaults.make	2009-09-06 19:03:43.000000000 -0300
+@@ -43,6 +43,7 @@
+ SRCDIR ?= .$(SEP)
+ DESTDIR ?=
  PREFIX ?= /usr/local
 +LOCALBASE ?= /usr/local
- endif
- endif
  
-@@ -146,8 +147,8 @@
- # options
+ BINDIR = $(PREFIX)/bin
+ LIBDIR = $(PREFIX)/lib
+@@ -51,7 +52,7 @@
+ TOPMANDIR = $(SHAREDIR)/man
+ MANDIR = $(TOPMANDIR)/man1
+ INCDIR = $(PREFIX)/include
+-DOCDIR = $(DATADIR)/doc
++DOCDIR = $(SHAREDIR)/doc/chicken
+ CHICKENLIBDIR = $(LIBDIR)/chicken
+ EGGDIR = $(CHICKENLIBDIR)/$(BINARYVERSION)
  
- ifneq ($(USE_HOST_PCRE),)
--LIBRARIES += -lpcre
--PCRE_INCLUDES =
-+LIBRARIES += -L$(LOCALBASE)/lib -lpcre
-+PCRE_INCLUDES = -I$(LOCALBASE)/include
- C_COMPILER_PCRE_OPTIONS =
- PCRE_OBJECTS_1 =
- else

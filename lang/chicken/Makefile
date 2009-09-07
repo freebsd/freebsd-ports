@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	3.4.0
+PORTVERSION=	4.1.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/ \
 		http://chicken.wiki.br/releases/${PORTVERSION}/
@@ -16,37 +16,26 @@ COMMENT=	A Scheme-to-C compiler
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_ARGS+=	PLATFORM=bsd PREFIX=${PREFIX} TOPMANDIR="${PREFIX}/man"
+MAKE_ARGS+=	PLATFORM=bsd PREFIX=${PREFIX} TOPMANDIR=${PREFIX}/man
+MAKE_FLAGS+=	HOST=${HOST} PREFIX=${PREFIX} PLATFORM=${PLATFORM}
+
 PLATFORM=	bsd
+NEW_ARCH=	${ARCH:S/i386/x86/:S/amd64/x86-64/}
 
-OPTIONS=	PCRE "Enable PCRE support" off
-
-MAN1=		chicken-bug.1 chicken-profile.1 chicken-setup.1 chicken.1 csc.1 csi.1
-INFO=		chicken
-INFODIR=	${PREFIX}/${INFO_PATH}
+MAN1=		chicken.1 chicken-bug.1 chicken-install.1 chicken-profile.1 \
+		chicken-status.1 chicken-uninstall.1 csc.1 csi.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-MAKE_ARGS+=	USE_HOST_PCRE=yes
-.endif
-
-MAKE_FLAGS+=	HOST=${HOST} PREFIX=${PREFIX} PLATFORM=${PLATFORM} INFODIR=${PREFIX}/info
-
+.if ${ARCH} != ${NEW_ARCH}
 post-patch:
-	${MV} ${WRKSRC}/apply-hack.x86.s ${WRKSRC}/apply-hack.i386.s
-	${MV} ${WRKSRC}/apply-hack.x86-64.s ${WRKSRC}/apply-hack.amd64.s
+	${MV} ${WRKSRC}/apply-hack.${NEW_ARCH}.s ${WRKSRC}/apply-hack.${ARCH}.s
+.endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} LICENSE NEWS README \
-		${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}/benchmarks
 	${CP} -R ${WRKSRC}/benchmarks/* ${EXAMPLESDIR}/benchmarks/
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.post.mk>

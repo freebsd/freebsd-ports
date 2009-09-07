@@ -1,130 +1,136 @@
-@exec mkdir -p %D/lib/chicken
 bin/chicken
 bin/chicken-bug
+bin/chicken-install
 bin/chicken-profile
 bin/chicken-setup
+bin/chicken-status
+bin/chicken-uninstall
 bin/csc
 bin/csi
 include/chicken-config.h
 include/chicken.h
+lib/chicken/4/chicken.import.so
+lib/chicken/4/csi.import.so
+lib/chicken/4/data-structures.import.so
+lib/chicken/4/extras.import.so
+lib/chicken/4/files.import.so
+lib/chicken/4/foreign.import.so
+lib/chicken/4/irregex.import.so
+lib/chicken/4/lolevel.import.so
+lib/chicken/4/modules.db
+lib/chicken/4/ports.import.so
+lib/chicken/4/posix.import.so
+lib/chicken/4/regex.import.so
+lib/chicken/4/scheme.import.so
+lib/chicken/4/setup-api.import.so
+lib/chicken/4/setup-api.so
+lib/chicken/4/setup-download.import.so
+lib/chicken/4/setup-download.so
+lib/chicken/4/srfi-1.import.so
+lib/chicken/4/srfi-13.import.so
+lib/chicken/4/srfi-14.import.so
+lib/chicken/4/srfi-18.import.so
+lib/chicken/4/srfi-4.import.so
+lib/chicken/4/srfi-69.import.so
+lib/chicken/4/tcp.import.so
+lib/chicken/4/types.db
+lib/chicken/4/utils.import.so
 lib/libchicken.a
 lib/libchicken.so
 lib/libuchicken.a
 lib/libuchicken.so
-%%DATADIR%%/chicken-ffi-macros.scm
-%%DATADIR%%/chicken-more-macros.scm
-%%DATADIR%%/chicken-sys-macros.scm
-%%DATADIR%%/data-structures.exports
-%%DATADIR%%/eval.exports
-%%DATADIR%%/extras.exports
-%%DATADIR%%/files.exports
-%%DATADIR%%/library.exports
-%%DATADIR%%/lolevel.exports
-%%DATADIR%%/ports.exports
-%%DATADIR%%/posix.exports
-%%DATADIR%%/regex.exports
-%%DATADIR%%/scheduler.exports
-%%DATADIR%%/srfi-1.exports
-%%DATADIR%%/srfi-13.exports
-%%DATADIR%%/srfi-14.exports
-%%DATADIR%%/srfi-18.exports
-%%DATADIR%%/srfi-4.exports
-%%DATADIR%%/srfi-69.exports
-%%DATADIR%%/tcp.exports
-%%DATADIR%%/utils.exports
-%%DATADIR%%/doc/LICENSE
-%%DATADIR%%/doc/README
-%%DATADIR%%/doc/chicken.pdf
-%%DATADIR%%/doc/html/accessing-external-objects.html
-%%DATADIR%%/doc/html/acknowledgements.html
-%%DATADIR%%/doc/html/basic-mode-of-operation.html
-%%DATADIR%%/doc/html/bibliography.html
-%%DATADIR%%/doc/html/bugs-and-limitations.html
-%%DATADIR%%/doc/html/c-interface.html
-%%DATADIR%%/doc/html/callbacks.html
-%%DATADIR%%/doc/html/chicken-setup.html
-%%DATADIR%%/doc/html/data-representation.html
-%%DATADIR%%/doc/html/declarations.html
-%%DATADIR%%/doc/html/deviations-from-the-standard.html
-%%DATADIR%%/doc/html/embedding.html
-%%DATADIR%%/doc/html/extensions-to-the-standard.html
-%%DATADIR%%/doc/html/faq.html
-%%DATADIR%%/doc/html/foreign-type-specifiers.html
-%%DATADIR%%/doc/html/getting-started.html
-%%DATADIR%%/doc/html/index.html
-%%DATADIR%%/doc/html/interface-to-external-functions-and-variables.html
-%%DATADIR%%/doc/html/locations.html
-%%DATADIR%%/doc/html/non-standard-macros-and-special-forms.html
-%%DATADIR%%/doc/html/non-standard-read-syntax.html
-%%DATADIR%%/doc/html/other-support-procedures.html
-%%DATADIR%%/doc/html/parameters.html
-%%DATADIR%%/doc/html/pattern-matching.html
-%%DATADIR%%/doc/html/supported-language.html
-%%DATADIR%%/doc/html/unit-data-structures.html
-%%DATADIR%%/doc/html/unit-eval.html
-%%DATADIR%%/doc/html/unit-extras.html
-%%DATADIR%%/doc/html/unit-files.html
-%%DATADIR%%/doc/html/unit-library.html
-%%DATADIR%%/doc/html/unit-lolevel.html
-%%DATADIR%%/doc/html/unit-match.html
-%%DATADIR%%/doc/html/unit-ports.html
-%%DATADIR%%/doc/html/unit-posix.html
-%%DATADIR%%/doc/html/unit-regex.html
-%%DATADIR%%/doc/html/unit-srfi-1.html
-%%DATADIR%%/doc/html/unit-srfi-13.html
-%%DATADIR%%/doc/html/unit-srfi-14.html
-%%DATADIR%%/doc/html/unit-srfi-18.html
-%%DATADIR%%/doc/html/unit-srfi-4.html
-%%DATADIR%%/doc/html/unit-srfi-69.html
-%%DATADIR%%/doc/html/unit-tcp.html
-%%DATADIR%%/doc/html/unit-utils.html
-%%DATADIR%%/doc/html/using-the-compiler.html
-%%DATADIR%%/doc/html/using-the-interpreter.html
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/boyer.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/browse.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/conform.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/cpstak.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/ctak.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/dderiv.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/deriv.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/destructive.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/div-iter.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/div-rec.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/dynamic.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/earley.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/fft.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/fib.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/fibc.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/fprint.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/fread.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/hanoi.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/lattice.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/maze.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/nqueens.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/except.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/except2.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/exception.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/results.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/setlongjmp.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/puzzle.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/scheme.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/tak.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/takl.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/takr.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/traverse.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/travinit.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/triangl.scm
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/benchmarks/others
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/benchmarks
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/doc/html
-@dirrm %%DATADIR%%/doc
-@dirrmtry %%DATADIR%%/examples
-@dirrmtry %%DATADIR%%
-@dirrmtry lib/chicken/3
-@dirrmtry lib/chicken
+%%DATADIR%%/setup.defaults
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/html/Accessing external objects.html
+%%DOCSDIR%%/html/Acknowledgements.html
+%%DOCSDIR%%/html/Basic mode of operation.html
+%%DOCSDIR%%/html/Bibliography.html
+%%DOCSDIR%%/html/Bugs and limitations.html
+%%DOCSDIR%%/html/C interface.html
+%%DOCSDIR%%/html/Callbacks.html
+%%DOCSDIR%%/html/Data representation.html
+%%DOCSDIR%%/html/Declarations.html
+%%DOCSDIR%%/html/Deviations from the standard.html
+%%DOCSDIR%%/html/Embedding.html
+%%DOCSDIR%%/html/Extensions to the standard.html
+%%DOCSDIR%%/html/Extensions.html
+%%DOCSDIR%%/html/Foreign type specifiers.html
+%%DOCSDIR%%/html/Interface to external functions and variables.html
+%%DOCSDIR%%/html/Locations.html
+%%DOCSDIR%%/html/Modules and macros.html
+%%DOCSDIR%%/html/Non-standard macros and special forms.html
+%%DOCSDIR%%/html/Non-standard read syntax.html
+%%DOCSDIR%%/html/Other support procedures.html
+%%DOCSDIR%%/html/Parameters.html
+%%DOCSDIR%%/html/Supported language.html
+%%DOCSDIR%%/html/The User's Manual.html
+%%DOCSDIR%%/html/Unit data-structures.html
+%%DOCSDIR%%/html/Unit eval.html
+%%DOCSDIR%%/html/Unit expand.html
+%%DOCSDIR%%/html/Unit extras.html
+%%DOCSDIR%%/html/Unit files.html
+%%DOCSDIR%%/html/Unit library.html
+%%DOCSDIR%%/html/Unit lolevel.html
+%%DOCSDIR%%/html/Unit ports.html
+%%DOCSDIR%%/html/Unit posix.html
+%%DOCSDIR%%/html/Unit regex.html
+%%DOCSDIR%%/html/Unit srfi-1.html
+%%DOCSDIR%%/html/Unit srfi-13.html
+%%DOCSDIR%%/html/Unit srfi-14.html
+%%DOCSDIR%%/html/Unit srfi-18.html
+%%DOCSDIR%%/html/Unit srfi-4.html
+%%DOCSDIR%%/html/Unit tcp.html
+%%DOCSDIR%%/html/Unit utils.html
+%%DOCSDIR%%/html/Using the compiler.html
+%%DOCSDIR%%/html/Using the interpreter.html
+%%DOCSDIR%%/html/faq.html
+%%DOCSDIR%%/html/manual.css
+%%EXAMPLESDIR%%/benchmarks/0.scm
+%%EXAMPLESDIR%%/benchmarks/binarytrees.scm
+%%EXAMPLESDIR%%/benchmarks/boyer.scm
+%%EXAMPLESDIR%%/benchmarks/browse.scm
+%%EXAMPLESDIR%%/benchmarks/conform.scm
+%%EXAMPLESDIR%%/benchmarks/cpstak.scm
+%%EXAMPLESDIR%%/benchmarks/cscbench.scm
+%%EXAMPLESDIR%%/benchmarks/ctak.scm
+%%EXAMPLESDIR%%/benchmarks/dderiv.scm
+%%EXAMPLESDIR%%/benchmarks/deriv.scm
+%%EXAMPLESDIR%%/benchmarks/destructive.scm
+%%EXAMPLESDIR%%/benchmarks/div-iter.scm
+%%EXAMPLESDIR%%/benchmarks/div-rec.scm
+%%EXAMPLESDIR%%/benchmarks/dynamic.scm
+%%EXAMPLESDIR%%/benchmarks/earley.scm
+%%EXAMPLESDIR%%/benchmarks/fft.scm
+%%EXAMPLESDIR%%/benchmarks/fib.scm
+%%EXAMPLESDIR%%/benchmarks/fibc.scm
+%%EXAMPLESDIR%%/benchmarks/fprint.scm
+%%EXAMPLESDIR%%/benchmarks/fread.scm
+%%EXAMPLESDIR%%/benchmarks/hanoi.scm
+%%EXAMPLESDIR%%/benchmarks/lattice.scm
+%%EXAMPLESDIR%%/benchmarks/maze.scm
+%%EXAMPLESDIR%%/benchmarks/nbody.scm
+%%EXAMPLESDIR%%/benchmarks/nqueens.scm
+%%EXAMPLESDIR%%/benchmarks/others/Makefile
+%%EXAMPLESDIR%%/benchmarks/others/except.scm
+%%EXAMPLESDIR%%/benchmarks/others/except2.scm
+%%EXAMPLESDIR%%/benchmarks/others/exception.cpp
+%%EXAMPLESDIR%%/benchmarks/others/results.txt
+%%EXAMPLESDIR%%/benchmarks/others/setlongjmp.c
+%%EXAMPLESDIR%%/benchmarks/puzzle.scm
+%%EXAMPLESDIR%%/benchmarks/scheme.scm
+%%EXAMPLESDIR%%/benchmarks/tak.scm
+%%EXAMPLESDIR%%/benchmarks/takl.scm
+%%EXAMPLESDIR%%/benchmarks/takr.scm
+%%EXAMPLESDIR%%/benchmarks/traverse.scm
+%%EXAMPLESDIR%%/benchmarks/travinit.scm
+%%EXAMPLESDIR%%/benchmarks/triangl.scm
+@dirrm %%EXAMPLESDIR%%/benchmarks/others
+@dirrm %%EXAMPLESDIR%%/benchmarks
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+@dirrm lib/chicken/4
+@dirrm lib/chicken
