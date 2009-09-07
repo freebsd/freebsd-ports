@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cwp
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.12
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
+QT_COMPONENTS=	gui dbus network opengl svg phonon webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
