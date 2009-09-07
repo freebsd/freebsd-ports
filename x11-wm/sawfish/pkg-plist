@@ -2,6 +2,8 @@ bin/sawfish
 bin/sawfish-client
 bin/sawfish-ui
 libdata/pkgconfig/sawfish.pc
+libexec/rep/%%GNUHOST%%/sawfish/client.la
+libexec/rep/%%GNUHOST%%/sawfish/client.so
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/DOC
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/gradient.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/gradient.so
@@ -432,9 +434,14 @@ share/xsessions/sawfish.desktop
 @dirrm %%DATADIR%%/%%VERSION%%/lisp
 @dirrm %%DATADIR%%/%%VERSION%%
 @dirrm %%DATADIR%%
+@dirrmtry share/xsessions
+@dirrmtry share/gnome/wm-properties
+@dirrmtry share/gnome
+@dirrmtry share/applications
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm/util
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/sawfish/%%VERSION%%
 @dirrm libexec/sawfish
+@dirrm libexec/rep/%%GNUHOST%%/sawfish
