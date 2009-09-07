@@ -24,6 +24,7 @@ include/telepathy-1.0/telepathy-glib/_gen/tp-svc-channel.h
 include/telepathy-1.0/telepathy-glib/_gen/tp-svc-client.h
 include/telepathy-1.0/telepathy-glib/_gen/tp-svc-connection-manager.h
 include/telepathy-1.0/telepathy-glib/_gen/tp-svc-connection.h
+include/telepathy-1.0/telepathy-glib/_gen/tp-svc-debug.h
 include/telepathy-1.0/telepathy-glib/_gen/tp-svc-generic.h
 include/telepathy-1.0/telepathy-glib/_gen/tp-svc-media-session-handler.h
 include/telepathy-1.0/telepathy-glib/_gen/tp-svc-media-stream-handler.h
@@ -47,6 +48,7 @@ include/telepathy-1.0/telepathy-glib/dbus-daemon.h
 include/telepathy-1.0/telepathy-glib/dbus-properties-mixin.h
 include/telepathy-1.0/telepathy-glib/dbus.h
 include/telepathy-1.0/telepathy-glib/debug-ansi.h
+include/telepathy-1.0/telepathy-glib/debug-sender.h
 include/telepathy-1.0/telepathy-glib/debug.h
 include/telepathy-1.0/telepathy-glib/defs.h
 include/telepathy-1.0/telepathy-glib/enums.h
@@ -77,6 +79,7 @@ include/telepathy-1.0/telepathy-glib/svc-channel.h
 include/telepathy-1.0/telepathy-glib/svc-client.h
 include/telepathy-1.0/telepathy-glib/svc-connection-manager.h
 include/telepathy-1.0/telepathy-glib/svc-connection.h
+include/telepathy-1.0/telepathy-glib/svc-debug.h
 include/telepathy-1.0/telepathy-glib/svc-generic.h
 include/telepathy-1.0/telepathy-glib/svc-media-interfaces.h
 include/telepathy-1.0/telepathy-glib/svc-properties-interface.h
@@ -145,6 +148,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-contact.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-dbus-properties-mixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-dbus.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-debug-ansi.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-debug-sender.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-debug.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-defs.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-enums.html
@@ -176,6 +180,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-client.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-connection-manager.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-connection.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-debug.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-generic.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-media-interfaces.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc.html
