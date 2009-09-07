@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	poker-eval
-PORTVERSION=	0.136
+PORTVERSION=	0.137
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
