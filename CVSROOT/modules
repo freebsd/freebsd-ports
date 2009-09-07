@@ -23151,6 +23151,7 @@ visprint                        ports/graphics/visprint
 visualos                        ports/emulators/visualos
 visualworks                     ports/lang/visualworks
 vitetris                        ports/games/vitetris
+vitunes                         ports/audio/vitunes
 viz                             ports/misc/viz
 vizone                          ports/dns/vizone
 vlc                             ports/multimedia/vlc
