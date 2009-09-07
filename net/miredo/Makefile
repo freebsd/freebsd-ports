@@ -40,7 +40,7 @@ PLIST_SUB=		NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
+.if ${OSVERSION} >= 700000
 BROKEN=		does not build
 .endif
 
