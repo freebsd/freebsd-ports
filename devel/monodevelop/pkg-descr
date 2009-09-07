@@ -1,0 +1,14 @@
+MonoDevelop is a free GNOME integrated development environment (IDE) 
+primarily designed for C# and other .NET languages. 
+
+It was originally a port of SharpDevelop 0.98.
+
+The main features of MonoDevelop are:
+
+	* Code Completion
+	* Class Management
+	* Built-in Help
+	* Project Support
+	* Add-ins
+
+WWW: http://monodevelop.com/
