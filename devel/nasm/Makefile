@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nasm
-PORTVERSION=	2.05.01
+PORTVERSION=	2.07
 PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20sources/${PORTVERSION} \
@@ -22,12 +22,15 @@ INSTALL_TARGET=	install install_rdf
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		nasm.1 ndisasm.1 \
-		ldrdf.1 rdf2bin.1 rdf2com.1 rdfdump.1 rdflib.1 rdx.1
+		ldrdf.1 rdf2bin.1 rdf2com.1 rdf2ihx.1 rdf2ith.1 rdf2srec.1 rdfdump.1 rdflib.1 rdx.1
+PORTDOCS=	nasmdoc.txt
 
 post-install:
 .ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/nasmdoc.txt ${DOCSDIR}
+.	for d in ${PORTDOCS}
+		${MKDIR} ${DOCSDIR}
+		${INSTALL_MAN} ${WRKSRC}/doc/$d ${DOCSDIR}
+.	endfor
 .endif
 
 .include <bsd.port.mk>
