@@ -869,6 +869,7 @@
     SUBDIR += mob
     SUBDIR += mono-addins
     SUBDIR += mono-tools
+    SUBDIR += monodevelop
     SUBDIR += monotone
     SUBDIR += monotone-viz
     SUBDIR += motor

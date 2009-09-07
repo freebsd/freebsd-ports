@@ -1,0 +1,26 @@
+
+$FreeBSD$
+
+--- theme-icons/icon-theme-installer.orig
++++ theme-icons/icon-theme-installer
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ # icon-theme-installer
+ # Copyright (C) 2006 Novell, Inc.
+@@ -101,12 +101,12 @@
+ 	exit 1
+ fi
+ 
+-if test ! -x $(echo "$MKINSTALLDIRS_EXEC" | cut -f1 -d' '); then
++if ! which $(echo "$MKINSTALLDIRS_EXEC" | cut -f1 -d' '); then
+ 	echo "Cannot find '$MKINSTALLDIRS_EXEC'; You probably want to pass -m \$(mkinstalldirs)"
+ 	exit 1
+ fi
+ 
+-if test ! -x $(echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '); then
++if ! which $(echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '); then
+ 	echo "Cannot find '$INSTALL_DATA_EXEC'; You probably want to pass -x \$(INSTALL_DATA)"
+ 	exit 1
+ fi
