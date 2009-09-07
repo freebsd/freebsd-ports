@@ -17,6 +17,7 @@
     SUBDIR += bas2tap
     SUBDIR += bf2c
     SUBDIR += bigloo
+    SUBDIR += boo
     SUBDIR += bsh
     SUBDIR += bwbasic
     SUBDIR += caml-light

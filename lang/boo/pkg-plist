@@ -1,0 +1,60 @@
+@comment $FreeBSD$
+bin/booc
+bin/booi
+bin/booish
+lib/boo/Boo.NAnt.Tasks.dll
+lib/boo/boo.exe
+lib/boo/booc.exe
+lib/boo/booc.exe.config
+lib/boo/booc.rsp
+lib/boo/booi.exe
+lib/boo/booi.exe.config
+lib/boo/booish.exe
+lib/boo/booish.exe.config
+lib/mono/boo/Boo.Lang.CodeDom.dll
+lib/mono/boo/Boo.Lang.Compiler.dll
+lib/mono/boo/Boo.Lang.Extensions.dll
+lib/mono/boo/Boo.Lang.Interpreter.dll
+lib/mono/boo/Boo.Lang.Parser.dll
+lib/mono/boo/Boo.Lang.PatternMatching.dll
+lib/mono/boo/Boo.Lang.Useful.dll
+lib/mono/boo/Boo.Lang.dll
+lib/mono/gac/Boo.Lang.CodeDom/2.0.9.2__32c39770e9a21a67/Boo.Lang.CodeDom.dll
+lib/mono/gac/Boo.Lang.CodeDom/2.0.9.2__32c39770e9a21a67/Boo.Lang.CodeDom.dll.mdb
+lib/mono/gac/Boo.Lang.Compiler/2.0.9.2__32c39770e9a21a67/Boo.Lang.Compiler.dll
+lib/mono/gac/Boo.Lang.Compiler/2.0.9.2__32c39770e9a21a67/Boo.Lang.Compiler.dll.mdb
+lib/mono/gac/Boo.Lang.Extensions/2.0.9.2__32c39770e9a21a67/Boo.Lang.Extensions.dll
+lib/mono/gac/Boo.Lang.Extensions/2.0.9.2__32c39770e9a21a67/Boo.Lang.Extensions.dll.mdb
+lib/mono/gac/Boo.Lang.Interpreter/2.0.9.2__32c39770e9a21a67/Boo.Lang.Interpreter.dll
+lib/mono/gac/Boo.Lang.Interpreter/2.0.9.2__32c39770e9a21a67/Boo.Lang.Interpreter.dll.mdb
+lib/mono/gac/Boo.Lang.Parser/2.0.9.2__32c39770e9a21a67/Boo.Lang.Parser.dll
+lib/mono/gac/Boo.Lang.Parser/2.0.9.2__32c39770e9a21a67/Boo.Lang.Parser.dll.mdb
+lib/mono/gac/Boo.Lang.PatternMatching/2.0.9.2__32c39770e9a21a67/Boo.Lang.PatternMatching.dll
+lib/mono/gac/Boo.Lang.PatternMatching/2.0.9.2__32c39770e9a21a67/Boo.Lang.PatternMatching.dll.mdb
+lib/mono/gac/Boo.Lang.Useful/2.0.9.2__32c39770e9a21a67/Boo.Lang.Useful.dll
+lib/mono/gac/Boo.Lang.Useful/2.0.9.2__32c39770e9a21a67/Boo.Lang.Useful.dll.mdb
+lib/mono/gac/Boo.Lang/2.0.9.2__32c39770e9a21a67/Boo.Lang.dll
+lib/mono/gac/Boo.Lang/2.0.9.2__32c39770e9a21a67/Boo.Lang.dll.mdb
+libdata/pkgconfig/boo.pc
+share/mime/packages/boo-mime-info.xml
+share/mime/text/x-boo.xml
+share/mime-info/boo.keys
+share/mime-info/boo.mime
+@dirrm lib/mono/gac/Boo.Lang/2.0.9.2__32c39770e9a21a67
+@dirrm lib/mono/gac/Boo.Lang.Useful/2.0.9.2__32c39770e9a21a67
+@dirrm lib/mono/gac/Boo.Lang.Useful
+@dirrm lib/mono/gac/Boo.Lang.PatternMatching/2.0.9.2__32c39770e9a21a67
+@dirrm lib/mono/gac/Boo.Lang.PatternMatching
+@dirrm lib/mono/gac/Boo.Lang.Parser/2.0.9.2__32c39770e9a21a67
+@dirrm lib/mono/gac/Boo.Lang.Parser
+@dirrm lib/mono/gac/Boo.Lang.Interpreter/2.0.9.2__32c39770e9a21a67
+@dirrm lib/mono/gac/Boo.Lang.Interpreter
+@dirrm lib/mono/gac/Boo.Lang.Extensions/2.0.9.2__32c39770e9a21a67
+@dirrm lib/mono/gac/Boo.Lang.Extensions
+@dirrm lib/mono/gac/Boo.Lang.Compiler/2.0.9.2__32c39770e9a21a67
+@dirrm lib/mono/gac/Boo.Lang.Compiler
+@dirrm lib/mono/gac/Boo.Lang.CodeDom/2.0.9.2__32c39770e9a21a67
+@dirrm lib/mono/gac/Boo.Lang.CodeDom
+@dirrm lib/mono/gac/Boo.Lang
+@dirrm lib/mono/boo
+@dirrm lib/boo
