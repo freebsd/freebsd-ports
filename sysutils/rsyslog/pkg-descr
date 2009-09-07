@@ -6,4 +6,7 @@ Its advanced features make it suitable for enterprise-class, encryption
 protected syslog relay chains while at the same time being very easy to
 setup for the novice user.
 
+Rsyslog v2 is deprecated and is no longer supported. It operates with some
+limitations under FreeBSD. Consider using Rsyslog v3 or v4.
+
 WWW: http://www.rsyslog.com/
