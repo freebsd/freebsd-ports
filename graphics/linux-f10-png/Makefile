@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.2.35
+PORTVERSION=	1.2.37
 CATEGORIES=	graphics linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
@@ -24,12 +24,12 @@ RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/lib/libpng.so.3 \
-		usr/lib/libpng.so.3.35.0 \
+		usr/lib/libpng.so.3.37.0 \
 		usr/lib/libpng12.so.0 \
-		usr/lib/libpng12.so.0.35.0 \
+		usr/lib/libpng12.so.0.37.0 \
 		usr/share/man/man5/png.5.gz
 DOCSDIR=	${PREFIX}/usr/share/doc/libpng-${PORTVERSION}
-PORTDOCS=	CHANGES LICENSE README TODO example.c libpng-1.2.35.txt
+PORTDOCS=	CHANGES LICENSE README TODO example.c libpng-1.2.37.txt
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

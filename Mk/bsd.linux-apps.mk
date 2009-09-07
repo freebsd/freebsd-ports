@@ -388,7 +388,7 @@ pango_DEPENDS=		cairo expat fontconfig xorglibs
 
 png_FILE=			${LINUXBASE}/usr/lib/libpng.so.3.1.2.8
 png_f8_FILE=		${LINUXBASE}/usr/lib/libpng.so.3.22.0
-png_f10_FILE=		${LINUXBASE}/usr/lib/libpng.so.3.35.0
+png_f10_FILE=		${LINUXBASE}/usr/lib/libpng.so.3.37.0
 png_DETECT=			${png${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 png_PORT=			${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-png
 
