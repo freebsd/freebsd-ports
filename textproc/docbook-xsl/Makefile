@@ -8,8 +8,9 @@
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.75.1
 CATEGORIES=	textproc
-MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}:src \
+		http://sourceforge.net/projects/docbook/files/:doc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	XSL DocBook stylesheets
@@ -17,7 +18,7 @@ COMMENT=	XSL DocBook stylesheets
 RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook:${PORTSDIR}/textproc/docbook
 
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
 .endif
 
 USE_BZIP2=	yes
