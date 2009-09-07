@@ -1,17 +1,39 @@
 bin/vboxgtk
-%%VBOXGTKDIR%%/pixmaps/16x16.png
-%%VBOXGTKDIR%%/pixmaps/32x32.png
-%%VBOXGTKDIR%%/pixmaps/48x48.png
-%%VBOXGTKDIR%%/util.py
-%%VBOXGTKDIR%%/vboxdao_vboxmanage.py
-%%VBOXGTKDIR%%/vboxdao_xml.py
-%%VBOXGTKDIR%%/vboxgtk
-%%VBOXGTKDIR%%/vboxgtk.glade
-%%VBOXGTKDIR%%/vboxiface.py
-%%VBOXGTKDIR%%/vboxmgr.py
-%%VBOXGTKDIR%%/vboxrunner_sdl_cs.py
-%%VBOXGTKDIR%%/vboxrunner_sdl_thr.py
-%%VBOXGTKDIR%%/vmvdi.py
-share/pixmaps/vboxgtk.png
-@dirrm %%VBOXGTKDIR%%/pixmaps
-@dirrm %%VBOXGTKDIR%%
+%%PYTHON_SITELIBDIR%%/vboxgtk/vboxdao_xpcom.py
+%%PYTHON_SITELIBDIR%%/vboxgtk/__init__.py
+%%PYTHON_SITELIBDIR%%/vboxgtk/util.py
+%%PYTHON_SITELIBDIR%%/vboxgtk/paths.py
+%%PYTHON_SITELIBDIR%%/vboxgtk/vboxgtk_iface.py
+%%PYTHON_SITELIBDIR%%/vboxgtk/vboxdao_xpcom.pyc
+%%PYTHON_SITELIBDIR%%/vboxgtk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/vboxgtk/util.pyc
+%%PYTHON_SITELIBDIR%%/vboxgtk/paths.pyc
+%%PYTHON_SITELIBDIR%%/vboxgtk/vboxgtk_iface.pyc
+%%PYTHON_SITELIBDIR%%/vboxgtk/vboxdao_xpcom.pyo
+%%PYTHON_SITELIBDIR%%/vboxgtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/vboxgtk/util.pyo
+%%PYTHON_SITELIBDIR%%/vboxgtk/paths.pyo
+%%PYTHON_SITELIBDIR%%/vboxgtk/vboxgtk_iface.pyo
+share/applications/vboxgtk.desktop
+%%NLS%%share/locale/es/LC_MESSAGES/vboxgtk.mo
+share/icons/hicolor/16x16/apps/vboxgtk.png
+share/icons/hicolor/22x22/apps/vboxgtk.png
+share/icons/hicolor/24x24/apps/vboxgtk.png
+share/icons/hicolor/32x32/apps/vboxgtk.png
+share/icons/hicolor/scalable/apps/vboxgtk.svg
+%%DATADIR%%/xml/vboxgtk-actions.xml
+%%DATADIR%%/xml/vboxgtk.xml
+@dirrm %%PYTHON_SITELIBDIR%%/vboxgtk
+@dirrm %%DATADIR%%/xml
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable

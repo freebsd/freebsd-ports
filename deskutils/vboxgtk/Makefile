@@ -6,44 +6,34 @@
 #
 
 PORTNAME=	vboxgtk
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	deskutils emulators gnome
-MASTER_SITES=	http://www.xente.mundo-r.com/narf/vboxgtk/releases/ \
-		LOCAL/avl
+MASTER_SITES=	SF
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GTK frontend for VirtualBox
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject \
-		VBoxManage:${PORTSDIR}/emulators/virtualbox
+		${PYTHON_SITELIBDIR}/virtualbox/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtualbox
 
-USE_BZIP2=	yes
-NO_BUILD=	yes
-USE_PYTHON_RUN=	yes
+USE_PYTHON=	yes
 USE_GNOME=	pygtk2
-VBOXGTKDIR=	${PREFIX}/libexec/${PORTNAME}
-DESKTOP_ENTRIES="Sun VirtualBox" \
-		"Run several virtual systems on a single host computer" \
-		"${PORTNAME}.png" \
-		"${PORTNAME}" \
-		"Application;System;Emulator;" \
-		true
-PLIST_SUB=	VBOXGTKDIR="${VBOXGTKDIR:S,^${PREFIX}/,,}"
+USE_PYDISTUTILS=	yes
+INSTALLS_ICONS=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\([^#]self.base_path = \).*|\1\"${VBOXGTKDIR}/\"|' \
-			-e 's|/usr/bin|${PREFIX}/bin|' ${WRKSRC}/${PORTNAME}
-	@${REINPLACE_CMD} -e 's|createvdi|createhd|' -e 's|(hd_size|(int(hd_size)|' \
-			${WRKSRC}/vboxdao_vboxmanage.py
-
-do-install:
-	${MKDIR} ${VBOXGTKDIR}/pixmaps
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${VBOXGTKDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.py ${VBOXGTKDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.glade ${VBOXGTKDIR}
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.png ${VBOXGTKDIR}/pixmaps
-	${LN} -sf ${VBOXGTKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${LN} -sf ${VBOXGTKDIR}/pixmaps/48x48.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e '/self.add_mo_files/d' \
+		-e '/os.system("intltool/d' ${WRKSRC}/setup.py
+.endif
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		s|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' ${WRKSRC}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
