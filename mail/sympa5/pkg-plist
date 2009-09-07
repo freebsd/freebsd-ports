@@ -50,7 +50,6 @@ lib/sympa/admin.pm
 lib/sympa/bounce-lib.pl
 lib/sympa/cookielib.pm
 lib/sympa/mail.pm
-lib/sympa/parser.pl
 lib/sympa/report.pm
 lib/sympa/sympasoap.pm
 lib/sympa/time_utils.pl
