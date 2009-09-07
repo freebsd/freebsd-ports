@@ -24,7 +24,6 @@ COMMENT=	A network file distribution/synchronization utility
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	rsyncd.sh
 SUB_LIST=	NAME=rsyncd
-USE_PERL5_BUILD=yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
