@@ -1,0 +1,11 @@
+--- doc/misc/Makefile.in.orig	Tue Jun 23 07:39:39 2009 +0300
++++ doc/misc/Makefile.in	Tue Jun 23 07:39:41 2009 +0300
+@@ -34,7 +34,7 @@
+ 
+ # The makeinfo program is part of the Texinfo distribution.
+ # Use --force so that it generates output even if there are errors.
+-MAKEINFO = makeinfo --force
++MAKEINFO = makeinfo --force --no-split
+ 
+ # Also add new entries to INFO_FILES in the top-level Makefile.in.
+ INFO_TARGETS = \
