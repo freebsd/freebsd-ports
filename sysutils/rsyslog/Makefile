@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.7
 CATEGORIES=	sysutils
-MASTER_SITES=	CENKES http://download.rsyslog.com/rsyslog/
+MASTER_SITES=	http://download.rsyslog.com/rsyslog/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Enhanced syslog daemon
 
 LIB_DEPENDS=	logging.0:${PORTSDIR}/devel/liblogging
+
 .ifndef PKGNAMESUFFIX
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
@@ -21,8 +22,11 @@ MAN8=	rfc3195d.8 rklogd.8 rsyslogd.8
 MAN5=	rsyslog.conf.5
 .endif
 
+DEPRECATED=	Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
+EXPIRATION_DATE=	2009-11-07
+
 NO_LATEST_LINK=	yes
-CONFLICTS=	rsyslog-3.[0-9]*
+CONFLICTS=	rsyslog-[3-4].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
