@@ -22,7 +22,7 @@ to your httpd.conf:
         AllowOverride Options FileInfo
     </Directory>
 
-Then restart Apache: 'apachectl graceful'
+Then reload Apache: 'apachectl graceful'
 
 Please visit 'http://{host.domain}/%%GLPIDIR%%/' in a
 web-browser and follow the configuration instructions.

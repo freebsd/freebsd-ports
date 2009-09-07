@@ -382,7 +382,7 @@ www/glpi/index.php
 www/glpi/install/index.php
 www/glpi/install/install.php
 www/glpi/install/mysql/.htaccess
-www/glpi/install/mysql/glpi-0.72-empty.sql
+www/glpi/install/mysql/glpi-0.72.2-empty.sql
 www/glpi/install/update.php
 www/glpi/install/update_031_04.php
 www/glpi/install/update_042_05.php
@@ -396,6 +396,8 @@ www/glpi/install/update_06_065.php
 www/glpi/install/update_0712_0713.php
 www/glpi/install/update_0713_072.php
 www/glpi/install/update_071_0712.php
+www/glpi/install/update_0721_0722.php
+www/glpi/install/update_072_0721.php
 www/glpi/install/update_07_071.php
 www/glpi/install/update_content.php
 www/glpi/install/update_to_031.php
