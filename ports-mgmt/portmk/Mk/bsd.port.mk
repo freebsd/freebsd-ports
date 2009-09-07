@@ -592,6 +592,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${MASTERDIR}/files
 # PKGDIR		- A directory containing any package creation files.
 #				  Default: ${MASTERDIR}
+# UID_FILES		- A list of files containing information about registered UIDs.
+# 				  Note that files have decreasing priority.
+# GID_FILES		- A list of files containing information about registered GIDs.
+# 				  Note that files have decreasing priority.
 #
 # Variables that serve as convenient "aliases" for your *-install targets.
 # Use these like: "${INSTALL_PROGRAM} ${WRKSRC}/prog ${PREFIX}/bin".
@@ -1026,6 +1030,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${PREFIX}/www/${PORTNAME}
 # WWWDIR_REL	- The WWWDIR relative to ${PREFIX}
 #
+# USERS			- List of users to create at install time. Each login must have a
+# 				  corresponding entry in ${UID_FILES}.
+# GROUPS		- List of groups to create at install time. Each group must have a
+# 				  corresponding entry in ${GID_FILES}.
+#
 # DESKTOPDIR	- Name of the directory to install ${DESKTOP_ENTRIES} in.
 #				  Default: ${PREFIX}/share/applications
 # DESKTOP_ENTRIES
@@ -1264,6 +1273,11 @@ USE_SUBMAKE=	yes
 # where 'make config' records user configuration options
 PORT_DBDIR?=	/var/db/ports
 
+UID_FILES?=	${PORTSDIR}/UIDs
+GID_FILES?=	${PORTSDIR}/GIDs
+UID_OFFSET?=	0
+GID_OFFSET?=	0
+
 LDCONFIG_DIR=	libdata/ldconfig
 LDCONFIG32_DIR=	libdata/ldconfig32
 
@@ -1448,6 +1462,7 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 # XXX to remain undefined until all ports that require Perl are fixed
 # to set one of the conditionals that force the inclusion of bsd.perl.mk
+_PERL_REFACTORING_COMPLETE=	BEING_TESTED
 .if !defined(_PERL_REFACTORING_COMPLETE)
 
 PERL_VERSION?=	5.8.9
@@ -1516,13 +1531,23 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
-.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
+.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(WANT_PERL) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.perl.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.perl.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.perl.mk"
 .endif
 .endif
+
+# fallbacks for ports that are still missing USE_PERL*, PERL_CONFIGURE, or
+# PERL_MODBUILD but try to use perl anyway.  Hitting any of these implies
+# a defective port Makefile.
+PERL_VERSION?=	"MISSING_PERL_VERSION_DEFINE"
+PERL_LEVEL?=	"MISSING_PERL_LEVEL_DEFINE"
+PERL_PORT?=		"MISSING_PERL_PORT_DEFINE"
+SITE_PERL?=		"MISSING_SITE_PERL_DEFINE"
+PERL5?=			"MISSING_PERL5_DEFINE"
+PERL?=			"MISSING_PERL_DEFINE_${.CURDIR}"
 
 .if defined(USE_PHP)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.php.mk)
@@ -2173,7 +2198,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 .endif
 
-.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
+.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(WANT_PERL) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.perl.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.perl.mk"
 .else
@@ -4235,6 +4260,78 @@ install-ldconfig-file:
 .endif
 .endif
 
+.if !target(create-users-groups)
+create-users-groups:
+.if defined(GROUPS) || defined(USERS)
+.if defined(GROUPS)
+.for _file in ${GID_FILES}
+.if !exists(${_file})
+	@${ECHO_CMD} "** ${_file} doesn't exist. Exiting."; exit 1
+.endif
+.endfor
+	@${ECHO_MSG} "===> Creating users and/or groups."
+.for _group in ${GROUPS}
+# _bgpd:*:130:
+	@if ! ${GREP} -h ^${_group}: ${GID_FILES} >/dev/null 2>&1; then \
+		${ECHO_CMD} "** Cannot find any information about group \`${_group}' in ${GID_FILES}."; \
+		exit 1; \
+	fi
+	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
+		gid=$$(($$gid+${GID_OFFSET}));\
+		if ! ${PW} groupshow $$group >/dev/null 2>&1; then \
+			${ECHO_MSG} "Creating group \`$$group' with gid \`$$gid'."; \
+			${PW} groupadd $$group -g $$gid; \
+		else \
+			${ECHO_MSG} "Using existing group \`$$group'."; \
+		fi; \
+		${ECHO_CMD} "@exec if ! ${PW} groupshow $$group >/dev/null 2>&1; then ${PW} groupadd $$group -g $$gid; fi" >> ${TMPPLIST}; \
+	done
+.endfor
+.endif
+.if defined(USERS)
+.for _file in ${UID_FILES}
+.if !exists(${_file})
+	@${ECHO_CMD} "** ${_file} doesn't exist. Exiting."; exit 1
+.endif
+.endfor
+.for _user in ${USERS}
+# _bgpd:*:130:130:BGP Daemon:/var/empty:/sbin/nologin
+	@if ! ${GREP} -h ^${_user}: ${UID_FILES} >/dev/null 2>&1; then \
+		${ECHO_CMD} "** Cannot find any information about user \`${_user}' in ${UID_FILES}."; \
+		exit 1; \
+	fi
+	@IFS=":"; ${GREP} -h ^${_user}: ${UID_FILES} | head -n 1 | while read login passwd uid gid class change expire gecos homedir shell; do \
+		uid=$$(($$uid+${UID_OFFSET}));\
+		gid=$$(($$gid+${GID_OFFSET}));\
+		if ! ${PW} usershow $$login >/dev/null 2>&1; then \
+			${ECHO_MSG}  "Creating user \`$$login' with uid \`$$uid'."; \
+			${PW} useradd $$login -u $$uid -g $$gid -c "$$gecos" -d $$homedir -s $$shell; \
+		else \
+			${ECHO_MSG} "Using existing user \`$$login'."; \
+		fi; \
+		${ECHO_CMD} "@exec if ! ${PW} usershow $$login >/dev/null 2>&1; then ${PW} useradd $$login -u $$uid -g $$gid -c \"$$gecos\" -d $$homedir -s $$shell; fi" >> ${TMPPLIST}; \
+	done
+.endfor
+.if defined(GROUPS)
+.for _group in ${GROUPS}
+# _bgpd:*:130:
+	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
+		gid=$$(($$gid+${GID_OFFSET}));\
+		IFS=","; for _login in $$members; do \
+			list=`${PW} usershow $${_login} -P | ${SED} -ne 's/.*Groups: //p'`; \
+			${ECHO_MSG} "Setting \`$${_login}' groups to \`$$list$${list:+,}${_group}'."; \
+			${PW} usermod $${_login} -G $$list$${list:+,}${_group}; \
+			${ECHO_CMD} "@exec list=\`${PW} usershow $${_login} -P | ${SED} -ne 's/.*Groups: //p'\`; ${PW} usermod $${_login} -G \$${list},${_group}" >> ${TMPPLIST}; \
+		done; \
+	done
+.endfor
+.endif
+.endif
+.else
+	@${DO_NADA}
+.endif
+.endif
+
 .if !defined(DISABLE_SECURITY_CHECK)
 .if !target(security-check)
 .if !defined(OLD_SECURITY_CHECK)
@@ -4419,8 +4516,8 @@ _INSTALL_SEQ=	install-message check-conflicts \
 				pre-install-script generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script do-install install-desktop-entries \
-				post-install post-install-script add-plist-info \
-				add-plist-docs add-plist-examples add-plist-data \
+				create-users-groups post-install post-install-script \
+				add-plist-info add-plist-docs add-plist-examples add-plist-data \
 				add-plist-post install-rc-script compress-man \
 				install-ldconfig-file fake-pkg security-check
 _PACKAGE_DEP=	install
