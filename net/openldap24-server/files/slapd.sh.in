@@ -23,23 +23,53 @@
 #
 #slapd_owner="DEFAULT"
 #
+# To use the cn=config style configuration add the following
+# line to /etc/rc.conf:
+#
+#slapd_cn_config="YES"
+#
+# To specify alternative Kerberos 5 Key Table, add the following
+# rc.conf(5) configuration:
+#
+#slapd_krb5_ktname="/path/to/ldap.keytab"
+#
 
 . "%%RC_SUBR%%"
 
 name="slapd"
 rcvar=`set_rcvar`
 
+# read settings, set defaults
+load_rc_config ${name}
+
+: ${slapd_enable="NO"}
+if [ -n "${slapd_args+set}" ]; then
+  warn "slapd_args is deprecated, use slapd_flags"
+  : ${slapd_flags="$slapd_args"}
+fi
+: ${slapd_owner="ldap:ldap"}
+: ${slapd_sockets_mode="666"}
+: ${slapd_cn_config="NO"}
+: ${slapd_krb5_ktname=""}
+
 command="%%PREFIX%%/libexec/slapd"
 pidfile="%%LDAP_RUN_DIR%%/slapd.pid"
-required_dirs="%%LDAP_RUN_DIR%%"
-required_files="%%PREFIX%%/etc/openldap/slapd.conf"
+
+# set required_dirs, required_files and DATABASEDIR
+if checkyesno slapd_cn_config; then
+  required_dirs="%%PREFIX%%/etc/openldap/slapd.d"
+  required_files="%%PREFIX%%/etc/openldap/slapd.d/cn=config.ldif"
+  DATABASEDIR=`grep olcDbDirectory %%PREFIX%%/etc/openldap/slapd.d/cn=config/olcDatabase=* | awk '{ print $2 }'`
+else
+  required_dirs="%%LDAP_RUN_DIR%%"
+  required_files="%%PREFIX%%/etc/openldap/slapd.conf"
+  DATABASEDIR=`awk '$1 == "directory" { print $2 }' "%%PREFIX%%etc/openldap/slapd.conf" 2>&1 /dev/null`
+fi
 
 start_precmd=start_precmd
 start_postcmd=start_postcmd
 
 # extract user and group, adjust ownership of directories and database
-
-DATABASEDIR=`awk '$1 == "directory" {print $2}' "%%PREFIX%%/etc/openldap/slapd.conf"`
 
 start_precmd()
 {
@@ -59,7 +89,12 @@ start_precmd()
        chmod 700 "${DBDIR}"
     done
     chown "$slapd_owner" "%%LDAP_RUN_DIR%%"
-    chown "$slapd_owner" "%%PREFIX%%/etc/openldap/slapd.conf"
+
+    if checkyesno slapd_cn_config; then
+        chown -R $slapd_owner "%%PREFIX%%/etc/openldap/slapd.d"
+    else
+        chown $slapd_owner "%%PREFIX%%/etc/openldap/slapd.conf"
+    fi
 
     slapd_ownername="${slapd_owner%:*}"
     slapd_groupname="${slapd_owner#*:}"
@@ -69,6 +104,9 @@ start_precmd()
     fi
     if [ -n "$slapd_groupname" ]; then
       rc_flags="$rc_flags -g $slapd_groupname"
+    fi
+    if [ -n "${slapd_krb5_ktname}" ]; then
+      export KRB5_KTNAME=${slapd_krb5_ktname}
     fi
     ;;
   esac
@@ -99,15 +137,5 @@ start_postcmd()
     fi
   done
 }
-
-# read settings, set defaults
-load_rc_config $name
-: ${slapd_enable="NO"}
-if [ -n "${slapd_args+set}" ]; then
-  warn "slapd_args is deprecated, use slapd_flags"
-  : ${slapd_flags="$slapd_args"}
-fi
-: ${slapd_owner="ldap:ldap"}
-: ${slapd_sockets_mode="666"}
 
 run_rc_command "$1"
