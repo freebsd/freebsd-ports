@@ -1,0 +1,5 @@
+Test::Requires checks to see if the module can be loaded.
+
+If this fails rather than failing tests this skips all tests.
+
+WWW: http://search.cpan.org/dist/Test-Requires/
