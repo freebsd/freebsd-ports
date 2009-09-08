@@ -7,6 +7,7 @@
 
 PORTNAME=	roundcube
 DISTVERSION=	0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${PORTVERSION}-stable
@@ -25,7 +26,7 @@ SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
 		WWWDIR=${WWWDIR}
 
 WANT_PHP_WEB=	yes
-USE_PHP=	pcre mbstring session iconv dom
+USE_PHP=	pcre mbstring session iconv dom xml
 IGNORE_WITH_PHP=4
 
 SUB_FILES=	pkg-install
@@ -43,7 +44,9 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off \
 		SQLITE "Use SQLite backend" off \
 		SSL "Enable SSL support (imaps or google spellcheck)" off \
-		LOCALCHECK "Install internal spellchecker" off \
+		LDAP "Enable LDAP support (address book)" off \
+		PSPELL "Enable PSpell support (internal spellcheck)" off \
+		NSC "Install network spellchecker" off \
 		AUTOCOMP "Enable autocomplete in login form" off
 
 .include <bsd.port.pre.mk>
@@ -68,15 +71,23 @@ USE_PHP+=	sqlite
 USE_PHP+=	openssl
 .endif
 
-.if defined(WITH_LOCALCHECK)
+.if defined(WITH_LDAP)
+USE_PHP+=	ldap
+.endif
+
+.if defined(WITH_PSPELL) || defined(WITH_NSC)
+USE_PHP+=	pspell
+.endif
+
+.if defined(WITH_NSC)
 RCUBECOMP+=	spellchecker.php
-USE_PHP+=	pspell simplexml
+USE_PHP+=	simplexml
 PLIST_SUB+=	SPELLCHECK=""
 .else
 PLIST_SUB+=	SPELLCHECK="@comment "
 .endif
 
-.if defined(WITH_LOCALCHECK)
+.if defined(WITH_NSC)
 post-extract:
 	@${CP} ${FILESDIR}/spellchecker.php ${WRKSRC}
 .endif
