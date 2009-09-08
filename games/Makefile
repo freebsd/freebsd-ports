@@ -97,6 +97,7 @@
     SUBDIR += braincurses
     SUBDIR += brainworkshop
     SUBDIR += brickshooter
+    SUBDIR += brikx
     SUBDIR += briquolo
     SUBDIR += brutalchess
     SUBDIR += bs
