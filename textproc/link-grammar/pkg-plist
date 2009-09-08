@@ -17,9 +17,11 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/4.0.biolg.batch
 %%DATADIR%%/en/4.0.constituent-knowledge
 %%DATADIR%%/en/4.0.dict
+%%DATADIR%%/en/4.0.enwiki.batch
 %%DATADIR%%/en/4.0.fixes.batch
 %%DATADIR%%/en/4.0.knowledge
 %%DATADIR%%/en/4.0.regex
+%%DATADIR%%/en/4.0.voa.batch
 %%DATADIR%%/en/tiny.dict
 %%DATADIR%%/en/words/currency
 %%DATADIR%%/en/words/currency.p
@@ -31,8 +33,10 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/entities.organizations.sing
 %%DATADIR%%/en/words/entities.us-states.sing
 %%DATADIR%%/en/words/units.1
-%%DATADIR%%/en/words/units.2
+%%DATADIR%%/en/words/units.1.dot
 %%DATADIR%%/en/words/units.3
+%%DATADIR%%/en/words/units.4
+%%DATADIR%%/en/words/units.4.dot
 %%DATADIR%%/en/words/words-medical.adv.1
 %%DATADIR%%/en/words/words-medical.prep.1
 %%DATADIR%%/en/words/words-medical.v.4.1

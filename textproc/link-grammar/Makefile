@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	link-grammar
-PORTVERSION=	4.5.4
+PORTVERSION=	4.5.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
@@ -17,6 +17,8 @@ USE_GNOME=	gnomehack gnometarget ltverhack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
+USE_DOS2UNIX=	yes
+USE_CSTD=	gnu99
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--enable-pthreads \
 		--disable-java-bindings
