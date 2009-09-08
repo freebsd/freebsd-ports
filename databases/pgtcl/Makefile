@@ -26,7 +26,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 EXTRACT_ONLY=	${_DISTFILES:M*tar.gz}
 DISTFILES+=	pgtcldocs-20070115.zip:doc
 MASTER_SITES+=	http://pgfoundry.org/frs/download.php/1228/:doc
-BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 
 post-configure:
