@@ -1,6 +1,6 @@
---- ../coreconf/FreeBSD.mk.orig	2006-01-21 02:36:11.000000000 +0000
-+++ ../coreconf/FreeBSD.mk	2009-08-17 17:17:41.235006000 +0000
-@@ -37,16 +37,20 @@
+--- ../coreconf/FreeBSD.mk.orig	2008-07-12 16:28:59.000000000 +0200
++++ ../coreconf/FreeBSD.mk	2009-08-31 10:20:16.000000000 +0200
+@@ -37,16 +37,23 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
  
@@ -18,13 +18,16 @@
 +ifeq ($(OS_TEST),powerpc)
 +CPU_ARCH		= powerpc
 +else
++ifeq ($(OS_TEST),amd64)
++USE_64			= 1
++endif
  CPU_ARCH		= x86
  endif
 +endif
  
- OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
+ OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
-@@ -60,20 +64,18 @@ ifndef CLASSIC_NSPR
+@@ -60,20 +67,18 @@
  USE_PTHREADS		= 1
  DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
  OS_LIBS			+= -pthread
@@ -34,7 +37,7 @@
  
  ARCH			= freebsd
  
--MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
+-MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo elf)
 +DLL_SUFFIX		= so.1
  
 -ifeq ($(MOZ_OBJFORMAT),elf)
@@ -50,7 +53,7 @@
  ifdef MAPFILE
  	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
-@@ -82,4 +84,5 @@ PROCESS_MAP_FILE = grep -v ';-' $< | \
+@@ -82,4 +87,5 @@
  
  G++INCLUDES		= -I/usr/include/g++
  

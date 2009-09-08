@@ -1,36 +1,53 @@
---- lib/softoken/cdbhdl.h	Sun Apr 25 11:03:16 2004
-+++ lib/softoken/cdbhdl.h	Fri Jul 22 00:25:16 2005
-@@ -43,6 +43,6 @@
+--- lib/softoken/legacydb/cdbhdl.h.orig	2009-08-31 12:33:12.000000000 +0200
++++ lib/softoken/legacydb/cdbhdl.h	2009-08-31 12:33:36.000000000 +0200
+@@ -43,7 +43,8 @@
  #define _CDBHDL_H_
  
--#include "nspr.h"
+ #include "nspr.h"
 -#include "mcom_db.h"
-+#include <nspr.h>
 +#include <db.h>
++#include <fcntl.h>
  #include "pcertt.h"
- --- lib/softoken/dbmshim.c	Tue Mar 29 13:21:18 2005
-+++ lib/softoken/dbmshim.c	Fri Jul 22 00:35:33 2005
-@@ -40,5 +40,6 @@
-  * $Id: dbmshim.c,v 1.11 2005/03/29 18:21:18 nelsonb%netscape.com Exp $
+ #include "prtypes.h"
+ 
+
+--- lib/softoken/legacydb/dbmshim.c.orig	2009-08-31 10:40:23.000000000 +0200
++++ lib/softoken/legacydb/dbmshim.c	2009-08-31 10:40:35.000000000 +0200
+@@ -39,7 +39,8 @@
+  *
+  * $Id: dbmshim.c,v 1.2 2007/06/13 00:24:57 rrelyea%redhat.com Exp $
   */
 -#include "mcom_db.h"
 +#include <db.h>
 +#include <fcntl.h>
  #include "secitem.h"
- #include "secder.h"
---- lib/softoken/keydb.c	Fri Jun  4 20:50:32 2004
-+++ lib/softoken/keydb.c	Fri Jul 22 00:37:01 2005
-@@ -46,5 +46,6 @@
+ #include "nssb64.h"
+ #include "blapi.h"
+--- lib/softoken/legacydb/keydb.c.orig	2009-08-31 10:40:04.000000000 +0200
++++ lib/softoken/legacydb/keydb.c	2009-08-31 10:40:08.000000000 +0200
+@@ -43,7 +43,6 @@
+ #include "blapi.h"
  #include "secitem.h"
  #include "pcert.h"
 -#include "mcom_db.h"
-+#include <db.h>
-+#include <fcntl.h>
- #include "lowpbe.h"
  #include "secerr.h"
---- lib/softoken/pcertdb.c	Tue Mar 29 13:21:18 2005
-+++ lib/softoken/pcertdb.c	Fri Jul 22 00:40:00 2005
-@@ -44,5 +44,6 @@
+ 
+ #include "keydbi.h"
+--- lib/softoken/legacydb/keydbi.h.orig	2009-08-31 12:33:17.000000000 +0200
++++ lib/softoken/legacydb/keydbi.h	2009-08-31 12:34:13.000000000 +0200
+@@ -43,5 +43,5 @@
+ 
+ #include "nspr.h"
+ #include "seccomon.h"
+-#include "mcom_db.h"
++#include <db.h>
+ 
+ /*
+  * Handle structure for open key databases
+--- lib/softoken/legacydb/pcertdb.c.orig	2009-08-31 10:40:52.000000000 +0200
++++ lib/softoken/legacydb/pcertdb.c	2009-08-31 10:41:26.000000000 +0200
+@@ -41,7 +41,8 @@
+  */
  #include "lowkeyti.h"
  #include "pcert.h"
 -#include "mcom_db.h"
@@ -38,138 +55,84 @@
 +#include <fcntl.h>
  #include "pcert.h"
  #include "secitem.h"
---- lib/softoken/pk11db.c	Fri Apr  1 19:46:13 2005
-+++ lib/softoken/pk11db.c	Fri Jul 22 00:42:01 2005
-@@ -42,5 +42,6 @@
+ #include "secder.h"
+--- lib/softoken/legacydb/pk11db.c.orig	2009-08-31 10:40:57.000000000 +0200
++++ lib/softoken/legacydb/pk11db.c	2009-08-31 10:41:55.000000000 +0200
+@@ -41,7 +41,8 @@
+ 
  #include "pk11pars.h"
- #include "pkcs11i.h"
+ #include "lgdb.h"
 -#include "mcom_db.h"
 +#include <db.h>
 +#include <fcntl.h>
- #include "cdbhdl.h"
- #include "secerr.h"
---- lib/softoken/keydbi.h	Tue Apr 27 19:04:38 2004
-+++ lib/softoken/keydbi.h	Fri Jul 22 00:43:24 2005
-@@ -42,7 +42,7 @@
- #define _KEYDBI_H_
- 
--#include "nspr.h"
-+#include <nspr.h>
- #include "seccomon.h"
--#include "mcom_db.h"
-+#include <db.h>
- 
- /*
---- lib/softoken/config.mk	Mon May 24 20:13:11 2004
-+++ lib/softoken/config.mk	Fri Jul 22 00:55:20 2005
-@@ -47,5 +47,4 @@
- 	$(CRYPTOLIB) \
- 	$(DIST)/lib/$(LIB_PREFIX)secutil.$(LIB_SUFFIX) \
--	$(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) \
- 	$(NULL)
- 
---- lib/certdb/certdb.c	Sat Mar  5 03:03:03 2005
-+++ lib/certdb/certdb.c	Fri Jul 22 01:02:11 2005
-@@ -53,5 +53,4 @@
- #include "keyhi.h"
- #include "secitem.h"
--#include "mcom_db.h"
- #include "certdb.h"
- #include "prprf.h"
---- lib/certdb/genname.c	Sun Apr 25 11:03:03 2004
-+++ lib/certdb/genname.c	Fri Jul 22 01:02:59 2005
-@@ -39,5 +39,4 @@
- #include "secitem.h"
- #include "secoidt.h"
--#include "mcom_db.h"
- #include "secasn1.h"
- #include "secder.h"
---- lib/certdb/stanpcertdb.c	Thu Dec  2 16:34:15 2004
-+++ lib/certdb/stanpcertdb.c	Fri Jul 22 01:03:19 2005
-@@ -38,5 +38,4 @@
- 
- #include "cert.h"
--#include "mcom_db.h"
- #include "certdb.h"
- #include "secitem.h"
---- lib/certdb/xauthkid.c	Sun Apr 25 11:03:03 2004
-+++ lib/certdb/xauthkid.c	Fri Jul 22 01:03:54 2005
-@@ -40,6 +40,5 @@
-  */
- 
--#include "prtypes.h"
--#include "mcom_db.h"
-+#include <prtypes.h>
- #include "seccomon.h"
- #include "secdert.h"
---- lib/certdb/xbsconst.c	Sun Apr 25 11:03:03 2004
-+++ lib/certdb/xbsconst.c	Fri Jul 22 01:05:41 2005
-@@ -39,6 +39,6 @@
-  */
- 
--#include "prtypes.h"
--#include "mcom_db.h"
-+#include <limits.h>	/* LONG_MAX */
-+#include <prtypes.h>
- #include "seccomon.h"
- #include "secdert.h"
-@@ -48,5 +48,5 @@
- #include "certt.h"
- #include "secder.h"
--#include "prprf.h"
-+#include <prprf.h>
  #include "secerr.h"
  
---- lib/certdb/xconst.c	Tue Nov  9 01:13:32 2004
-+++ lib/certdb/xconst.c	Fri Jul 22 01:06:20 2005
-@@ -39,6 +39,5 @@
-  */
- 
--#include "prtypes.h"
--#include "mcom_db.h"
-+#include <prtypes.h>
- #include "seccomon.h"
- #include "secdert.h"
-@@ -48,5 +47,5 @@
- #include "cert.h"
- #include "secder.h"
--#include "prprf.h"
-+#include <prprf.h>
- #include "xconst.h"
- #include "genname.h"
---- lib/ckfw/dbm/ckdbm.h	Wed Jan 19 21:25:47 2005
-+++ lib/ckfw/dbm/ckdbm.h	Fri Jul 22 01:06:58 2005
-@@ -57,5 +57,5 @@
+ #define FREE_CLEAR(p) if (p) { PORT_Free(p); p = NULL; }
+--- lib/ckfw/dbm/ckdbm.h.orig	2009-08-31 10:46:00.000000000 +0200
++++ lib/ckfw/dbm/ckdbm.h	2009-08-31 10:46:22.000000000 +0200
+@@ -59,7 +59,7 @@
+ #include "ckt.h"
  #endif /* CKT_H */
  
 -#include "mcom_db.h"
 +#include <db.h>
  
  NSS_EXTERN_DATA NSSCKMDInstance nss_dbm_mdInstance;
---- lib/freebl/mac_rand.c	Sun Apr 25 11:03:08 2004
-+++ lib/freebl/mac_rand.c	Fri Jul 22 01:08:19 2005
-@@ -40,5 +40,4 @@
- #endif
- #include "secrng.h"
--#include "mcom_db.h"
- #ifdef XP_MAC
- #include <Events.h>
---- lib/pk11wrap/secmodi.h	Mon Mar 28 15:45:37 2005
-+++ lib/pk11wrap/secmodi.h	Fri Jul 22 01:08:47 2005
-@@ -42,5 +42,5 @@
- #include "pkcs11.h"
- #include "nssilock.h"
--#include "mcom_db.h"
-+#include <db.h>
- #include "secoidt.h"
- #include "secdert.h"
---- lib/softoken/dbinit.c.orig	2008-03-12 08:43:36.000000000 -0400
-+++ lib/softoken/dbinit.c	2008-03-12 08:44:10.000000000 -0400
-@@ -39,6 +39,7 @@
- /* $Id: dbinit.c,v 1.28.2.1 2006/09/22 00:21:03 julien.pierre.bugs%sun.com Exp $ */
  
- #include <ctype.h>
-+#include <fcntl.h>
+--- lib/softoken/legacydb/config.mk.orig	2009-08-31 12:39:49.000000000 +0200
++++ lib/softoken/legacydb/config.mk	2009-08-31 12:40:03.000000000 +0200
+@@ -40,10 +40,6 @@
+ 
+ EXTRA_LIBS +=	$(CRYPTOLIB) 
+ 
+-ifndef NSS_DISABLE_DBM
+-EXTRA_LIBS +=	$(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) 
+-endif
+-
+ # can't do this in manifest.mn because OS_TARGET isn't defined there.
+ ifeq (,$(filter-out WIN%,$(OS_TARGET)))
+ 
+--- lib/certdb/xauthkid.c.orig	2009-08-31 12:43:13.000000000 +0200
++++ lib/certdb/xauthkid.c	2009-08-31 12:44:21.000000000 +0200
+@@ -39,7 +39,7 @@
+  *
+  */
+ 
+-#include "prtypes.h"
++#include <prtypes.h>
  #include "seccomon.h"
- #include "prinit.h"
- #include "prprf.h"
+ #include "secdert.h"
+ #include "secoidt.h"
+--- lib/certdb/xbsconst.c.orig	2009-08-31 12:43:22.000000000 +0200
++++ lib/certdb/xbsconst.c	2009-08-31 12:44:41.000000000 +0200
+@@ -38,7 +38,7 @@
+  * X.509 v3 Basic Constraints Extension 
+  */
+ 
+-#include "prtypes.h"
++#include <prtypes.h>
+ #include <limits.h>     /* for LONG_MAX */
+ #include "seccomon.h"
+ #include "secdert.h"
+--- lib/certdb/xconst.c.orig	2009-08-31 12:43:46.000000000 +0200
++++ lib/certdb/xconst.c	2009-08-31 12:44:50.000000000 +0200
+@@ -38,7 +38,7 @@
+  * X.509 Extension Encoding  
+  */
+ 
+-#include "prtypes.h"
++#include <prtypes.h>
+ #include "seccomon.h"
+ #include "secdert.h"
+ #include "secoidt.h"
+--- cmd/platlibs.mk.orig	2009-08-31 12:57:13.000000000 +0200
++++ cmd/platlibs.mk	2009-08-31 12:57:29.000000000 +0200
+@@ -85,7 +85,7 @@
+ ifdef NSS_DISABLE_DBM
+ DBMLIB = $(NULL)
+ else
+-DBMLIB = $(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) 
++DBMLIB = $(NULL)
+ endif
+ 
+ ifdef USE_STATIC_LIBS

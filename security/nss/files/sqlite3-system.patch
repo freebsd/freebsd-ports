@@ -1,0 +1,13 @@
+--- lib/softoken/manifest.mn.orig	2009-08-31 18:15:14.000000000 +0200
++++ lib/softoken/manifest.mn	2009-08-31 18:15:30.000000000 +0200
+@@ -47,9 +47,7 @@
+ 
+ DEFINES += -DSHLIB_SUFFIX=\"$(DLL_SUFFIX)\" -DSHLIB_PREFIX=\"$(DLL_PREFIX)\" -DSOFTOKEN_LIB_NAME=\"$(notdir $(SHARED_LIBRARY))\" -DSHLIB_VERSION=\"$(LIBRARY_VERSION)\"
+ 
+-ifdef MOZILLA_CLIENT
+-INCLUDES += -I$(DIST)/include/sqlite3
+-endif
++INCLUDES += -I/usr/local/include
+ 
+ EXPORTS = \
+ 	secmodt.h \
