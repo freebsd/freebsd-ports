@@ -1142,6 +1142,7 @@ bonnie                          ports/benchmarks/bonnie
 bonnie++                        ports/benchmarks/bonnie++
 bonobo                          ports/devel/bonobo
 bonobo-conf                     ports/devel/bonobo-conf
+boo                             ports/lang/boo
 boodler                         ports/audio/boodler
 bookmarkbridge                  ports/www/bookmarkbridge
 bookreader                      ports/deskutils/bookreader
@@ -8962,6 +8963,7 @@ mono-basic                      ports/lang/mono-basic
 mono-kmod                       ports/sysutils/mono-kmod
 mono-tools                      ports/devel/mono-tools
 mono-zeroconf                   ports/net/mono-zeroconf
+monodevelop                     ports/devel/monodevelop
 monopd                          ports/games/monopd
 monotone                        ports/devel/monotone
 monotone-viz                    ports/devel/monotone-viz
