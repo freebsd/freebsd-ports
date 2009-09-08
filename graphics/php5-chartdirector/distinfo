@@ -1,3 +1,6 @@
 MD5 (chartdir_php_freebsd.tar.gz) = fb4e05a0f3e3bdc31bdbf7d4d55a22fa
 SHA256 (chartdir_php_freebsd.tar.gz) = f58b77ffde7f6089c918af69623871411bf3b144d999a3f2966e0103f7f1d0ae
 SIZE (chartdir_php_freebsd.tar.gz) = 7223141
+MD5 (chartdir_php_freebsd_64.tar.gz) = 5e6da0483bc5acb09c1151e89f75a90e
+SHA256 (chartdir_php_freebsd_64.tar.gz) = 0cd14e23193dd9e18a2b541b5f238b0beaaaaee21b612f327c5d2c9717e5babc
+SIZE (chartdir_php_freebsd_64.tar.gz) = 6785653
