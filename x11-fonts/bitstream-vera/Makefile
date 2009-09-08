@@ -24,8 +24,6 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
-
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
 MSG_FILE=	${PKGDIR}/pkg-message
