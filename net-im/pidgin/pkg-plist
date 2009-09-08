@@ -94,6 +94,8 @@ lib/pidgin/timestamp.la
 lib/pidgin/timestamp.so
 lib/pidgin/timestamp_format.la
 lib/pidgin/timestamp_format.so
+%%VV%%lib/pidgin/vvconfig.la
+%%VV%%lib/pidgin/vvconfig.so
 lib/pidgin/xmppconsole.la
 lib/pidgin/xmppconsole.so
 lib/pidgin/xmppdisco.la
@@ -591,13 +593,13 @@ share/pixmaps/pidgin/toolbar/16/send-file.png
 share/pixmaps/pidgin/toolbar/16/transfer.png
 share/pixmaps/pidgin/toolbar/16/unblock.png
 share/pixmaps/pidgin/toolbar/16/video-call.png
+share/pixmaps/pidgin/toolbar/22/audio-call.png
 share/pixmaps/pidgin/toolbar/22/select-avatar.png
 share/pixmaps/pidgin/toolbar/22/video-call.png
-share/pixmaps/pidgin/toolbar/22/voice-call.png
+share/pixmaps/pidgin/toolbar/32/audio-call.png
 share/pixmaps/pidgin/toolbar/32/video-call.png
-share/pixmaps/pidgin/toolbar/32/voice-call.png
+share/pixmaps/pidgin/toolbar/48/audio-call.png
 share/pixmaps/pidgin/toolbar/48/video-call.png
-share/pixmaps/pidgin/toolbar/48/voice-call.png
 share/pixmaps/pidgin/tray/16/available_4bit.ico
 share/pixmaps/pidgin/tray/16/away_4bit.ico
 share/pixmaps/pidgin/tray/16/busy_4bit.ico

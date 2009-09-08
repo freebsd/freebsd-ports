@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.6.1
-PORTREVISION?=	1
+PORTVERSION=	2.6.2
+PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -107,8 +107,10 @@ CONFIGURE_ARGS+=--disable-gstreamer
 
 .if !defined(WITHOUT_VV)
 LIB_DEPENDS+=	gstfarsight-0.10.0:${PORTSDIR}/net-im/farsight2
+PLIST_SUB+=	VV=""
 .else
 CONFIGURE_ARGS+=--disable-vv
+PLIST_SUB+=	VV="@comment "
 .endif
 
 .if !defined(WITHOUT_IDN)
