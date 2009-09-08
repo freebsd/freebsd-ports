@@ -104,7 +104,6 @@ CONFIGURE_ARGS+=--disable-sdl
 .if defined(WITH_NVTT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
 RUN_DEPENDS+=	${LOCALBASE}/lib/libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
-LDFLAGS+=	${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=--without-nvtt
 .endif
