@@ -1,7 +1,7 @@
 %%SITE_PERL%%/POE/Component/Server/SimpleHTTP.pm
 %%SITE_PERL%%/POE/Component/Server/SimpleHTTP/Connection.pm
-%%SITE_PERL%%/POE/Component/Server/SimpleHTTP/PreFork.pm
 %%SITE_PERL%%/POE/Component/Server/SimpleHTTP/Response.pm
+%%SITE_PERL%%/POE/Component/Server/SimpleHTTP/State.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/SimpleHTTP/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/SimpleHTTP
 @dirrm %%SITE_PERL%%/POE/Component/Server/SimpleHTTP
