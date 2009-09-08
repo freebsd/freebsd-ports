@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
+PORTREVISION=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
@@ -20,7 +20,7 @@ COMMENT=	Development tools for Google App Engine (SDK)
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging
 
-BROKEN=		leaves files behind on deinstallation
+MANUAL_PACKAGE_BUILD=		uses Python 2.5
 
 PROJECTHOST=	googleappengine
 
