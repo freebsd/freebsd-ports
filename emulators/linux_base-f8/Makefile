@@ -7,7 +7,7 @@
 
 PORTNAME=		f8
 PORTVERSION=		8
-PORTREVISION=		11
+PORTREVISION=		12
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages \
@@ -130,7 +130,7 @@ IGNORE=			linuxulator is not (kld)loaded
 IGNORE=			compat.linux.osrelease: 2.4.2 is not supported
 .endif
 
-REMOVE_DIRS=		boot dev etc/fonts home initrd root tmp var/log var/run var/tmp \
+REMOVE_DIRS=		boot dev etc/fonts home initrd media root tmp var/log var/run var/tmp \
 			usr/local usr/tmp
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
