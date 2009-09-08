@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	devel ipv6 net security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
