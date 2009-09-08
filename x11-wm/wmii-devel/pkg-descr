@@ -1,0 +1,11 @@
+WMII is a small, dynamic window manager for X11.  It supports both classic
+and tiling (acme-like) window management with extended keyboard, mouse, and
+9p filesystem based remote control.  It replaces the workspace paradigm with
+a new tagging approach and is highly scriptable (with plain shell or Python
+and even Chicken).
+
+Its minimalist philosophy attempts to not exceed 10.000 lines of code
+(including all shipped utilities and libraries), to enforce simplicity and
+clarity (read: it is hackable and beautiful).
+
+WWW: http://wmii.suckless.org/
