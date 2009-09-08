@@ -35,6 +35,34 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="24aa9970-9ccd-11de-af10-000c29a67389">
+    <topic>silc-toolkit -- Format string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>silc-toolkit</name>
+	<range><lt>1.1.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SILC Changlog reports:</p>
+	<blockquote cite="http://silcnet.org/docs/changelog/SILC%20Toolkit%201.1.10">
+	  <p>An unspecified format string vulnerability exists in
+            silc-toolkit.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3051</cvename>
+       <url>http://silcnet.org/docs/changelog/SILC%20Toolkit%201.1.10</url>
+       <url>http://www.openwall.com/lists/oss-security/2009/09/03/5</url>
+    </references>
+    <dates>
+      <discovery>2009-08-07</discovery>
+      <entry>2009-09-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4582948a-9716-11de-83a5-001999392805">
      <topic>opera -- multiple vulnerabilities</topic>
      <affects>
