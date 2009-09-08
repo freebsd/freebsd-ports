@@ -1,8 +1,8 @@
---- ./Makefile.PL.orig	2009-03-17 10:45:12.000000000 +0100
-+++ ./Makefile.PL	2009-03-17 10:46:05.000000000 +0100
-@@ -20,28 +20,6 @@ requires    'Socket'           =>    0;
- requires    'HTTP::Request'    =>    0;
- requires    'HTTP::Response'   =>    0;
+--- ./Makefile.PL.orig	2009-09-08 10:45:38.000000000 +0200
++++ ./Makefile.PL	2009-09-08 10:46:38.000000000 +0200
+@@ -24,19 +24,6 @@ requires    'Moose'	       =>    0.81;
+ requires    'MooseX::AttributeHelpers' => 0;
+ requires    'MooseX::POE'      =>    0.205;
  
 -build_requires   'Test::More'                   => 0.47;
 -build_requires	 'POE::Filter::HTTP::Parser'	=> 0.02;
@@ -17,15 +17,6 @@
 -# Add to the prereqs PoCo::SSLify?
 -requires 'POE::Component::SSLify' => '0.04' if $value =~ /^Y$/i;
 -
--# Ask users if they want PreFork support
--$value = prompt( 'Do you want PreFork support ( requires IPC::Shareable ) [y/N]?', 'N' );
--
--# Add to the prereqs IPC::Shareable?
--if ( $value =~ /^Y$/i ) {
--   requires 'IPC::Shareable' => '0';
--   build_requires   'POE::Component::Client::HTTP' => 0.82;
--}
--
- # Sanity check
- eval { require IPC::Shareable; };
- build_requires 'POE::Component::Client::HTTP' => 0.82 unless $@;
+ # Thanks to Matt Trout for this tip
+ #makemaker_args(dist => { PREOP => "$^X ./tools/svn-log.perl > ./Changes" });
+ makemaker_args(dist => { PREOP => "git --no-pager log --tags > ./Changes" });
