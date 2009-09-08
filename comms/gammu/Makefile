@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.26.0
+PORTVERSION=	1.26.1
 CATEGORIES=	comms
-MASTER_SITES=	ftp://dl.cihar.com/gammu/releases/ \
-		http://dl.cihar.com/gammu/releases/
+MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
+		http://dl.cihar.com.nyud.net/gammu/releases/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities
