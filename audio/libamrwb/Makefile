@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	3GPP Adaptive Multi-Rate - Wideband (AMR-WB) Speech Codec
 
-BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 RESTRICTED=	license prohibits redistribution
 RESTRICTED_FILES=	${SRC3GPP}
