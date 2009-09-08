@@ -1,0 +1,12 @@
+--- data/en/4.0.affix.orig	2009-08-29 12:22:29.000000000 -0400
++++ data/en/4.0.affix	2009-08-29 12:23:50.000000000 -0400
+@@ -19,6 +19,8 @@
+ † †† ‡ § ¶ © № "#": LPUNC+;
+ 
+ /en/words/units.1: UNITS+;
+-/en/words/units.2: UNITS+;
++/en/words/units.1.dot: UNITS+;
+ /en/words/units.3: UNITS+;
++/en/words/units.4: UNITS+;
++/en/words/units.4.dot: UNITS+;
+ 
