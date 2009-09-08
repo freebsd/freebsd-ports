@@ -61,6 +61,7 @@ include/ImageMagick/magick/fx.h
 include/ImageMagick/magick/gem.h
 include/ImageMagick/magick/geometry.h
 include/ImageMagick/magick/hashmap.h
+include/ImageMagick/magick/histogram.h
 include/ImageMagick/magick/identify.h
 include/ImageMagick/magick/image.h
 include/ImageMagick/magick/layer.h
@@ -1322,6 +1323,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/enhance.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/exception.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/fx.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/histogram.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/image.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/layer.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/list.html
