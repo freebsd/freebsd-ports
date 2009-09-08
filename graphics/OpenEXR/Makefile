@@ -7,7 +7,7 @@
 
 PORTNAME=	OpenEXR
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -25,6 +25,10 @@ USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS+=--enable-imfexamples
+
+# must be explicitely linked with -l{thr|pthread}
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+PTHREAD_LIBS+=	`${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}`
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
