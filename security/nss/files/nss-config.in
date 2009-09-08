@@ -20,6 +20,7 @@ Options:
 	[--cflags]
 Dynamic Libraries:
 	nss
+	nssutil
 	ssl
 	smime
 EOF
@@ -33,6 +34,7 @@ fi
 lib_ssl=yes
 lib_smime=yes
 lib_nss=yes
+lib_nssutil=yes
 
 while test $# -gt 0; do
   case "$1" in
@@ -83,6 +85,9 @@ while test $# -gt 0; do
     nss)
       lib_nss=yes
       ;;
+    nssutil)
+      lib_nssutil=yes
+      ;;
     *)
       usage 1 1>&2
       ;;
@@ -131,6 +136,9 @@ if test "$echo_libs" = "yes"; then
       fi
       if test -n "$lib_nss"; then
 	libdirs="$libdirs -lnss${major_version}"
+      fi
+      if test -n "$lib_nssutil"; then
+	libdirs="$libdirs -lnssutil${major_version}"
       fi
       echo $libdirs
 fi      

@@ -7,7 +7,6 @@
 
 PORTNAME=	nss
 PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
-PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -19,8 +18,10 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 
 _MAJOR=	3
-_MINOR=	11
-_PATCH=	9
+_MINOR=	12
+_PATCH=	4
+
+OPTIONS=	SYSSQLITE3 "Use system SQLite3 (slower)" Off
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
@@ -36,6 +37,16 @@ CFLAGS+=	-I${LOCALBASE}/include/nspr -L${LOCALBASE}/lib
 DIST=		${WRKSRC:H:H}/dist
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SYSSQLITE3)
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+EXTRA_PATCHES+=	${FILESDIR}/sqlite3-system.patch
+MAKE_ENV+=	NSS_USE_SYSTEM_SQLITE=1
+PLIST_SUB+=	SYSSQLITE3="@comment "
+.else
+EXTRA_PATCHES+=	${FILESDIR}/sqlite3-builtin.patch
+PLIST_SUB+=	SYSSQLITE3=""
+.endif
 
 EXTERNALS=	CVS dbm security/nss/cmd/zlib nsprpub security/dbm
 EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
@@ -74,6 +85,12 @@ post-patch:
 .for i in MAJOR MINOR PATCH
 	@${SED} -i.${i} -e 's|@${i}@|${_${i}}|' ${WRKDIR}/nss-config
 .endfor
+	@cd ${WRKSRC} && \
+		${FIND} . -name "*.c" -o -name "*.h" | \
+		${XARGS} ${REINPLACE_CMD} -e 's|"nspr.h"|<nspr.h>|'
+.if !defined(WITH_SYSSQLITE3)
+	@${MV} ${WRKSRC}/lib/sqlite/sqlite.def ${WRKSRC}/lib/sqlite/nsssqlite.def
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nss ${PREFIX}/lib/nss
