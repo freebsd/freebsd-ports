@@ -7,7 +7,7 @@
 
 PORTNAME=	plib
 PORTVERSION=	1.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
@@ -28,10 +28,7 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800064
-CONFIGURE_ARGS+=--disable-js
-PLIST_SUB+=	JS="@comment "
-.else
-PLIST_SUB+=     JS=""
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-js-jsBSD.cxx
 .endif
 
 post-patch:

@@ -1,6 +1,6 @@
 bin/plib-jscal
 include/plib/fnt.h
-%%JS%%include/plib/js.h
+include/plib/js.h
 include/plib/net.h
 include/plib/netBuffer.h
 include/plib/netChannel.h
@@ -40,7 +40,7 @@ include/plib/ssgconf.h
 include/plib/ul.h
 include/plib/ulRTTI.h
 lib/libplibfnt.a
-%%JS%%lib/libplibjs.a
+lib/libplibjs.a
 lib/libplibnet.a
 lib/libplibpsl.a
 lib/libplibpu.a
