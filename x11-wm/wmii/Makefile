@@ -9,7 +9,7 @@ PORTNAME=	wmii
 DISTVERSION=	3.6
 PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://code.suckless.org/dl/${PORTNAME}/
+MASTER_SITES=	http://dl.suckless.org/wmii/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A dynamic, minimalist window manager for X11
@@ -17,6 +17,8 @@ COMMENT=	A dynamic, minimalist window manager for X11
 LIB_DEPENDS=	ixp.1:${PORTSDIR}/devel/libixp
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu \
 		${LOCALBASE}/9/bin/rc:${PORTSDIR}/devel/9base
+
+CONFLICTS=	wmii-s*
 
 USE_ICONV=	yes
 USE_XORG=	x11 xextproto xt xext
@@ -35,7 +37,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's| -g( -O0)?||' ${WRKSRC}/config.mk
 	${REINPLACE_CMD} -e 's|CFLAGS += -DIXPlint|& -DIXP_NEEDAPI=89|' \
 		${WRKSRC}/config.mk
-# Make actual compile/link command appear in the build log
+# Make actual compile/link commands appear in the build log
 	${REINPLACE_CMD} -e 's|^COMPILE=|& noisycc=yes | ; \
 		s|^LINK=|& noisycc=yes |' ${WRKSRC}/mk/hdr.mk
 
