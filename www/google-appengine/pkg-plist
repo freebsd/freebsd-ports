@@ -421,6 +421,9 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/api/user_service_stub.py
 %%DATADIR%%/google/appengine/api/users.py
 %%DATADIR%%/google/appengine/api/validation.py
+%%DATADIR%%/google/appengine/api/xmpp/__init__.py
+%%DATADIR%%/google/appengine/api/xmpp/xmpp_service_pb.py
+%%DATADIR%%/google/appengine/api/xmpp/xmpp_service_stub.py
 %%DATADIR%%/google/appengine/api/yaml_builder.py
 %%DATADIR%%/google/appengine/api/yaml_errors.py
 %%DATADIR%%/google/appengine/api/yaml_listener.py
@@ -436,6 +439,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/datastore/action_pb.py
 %%DATADIR%%/google/appengine/datastore/datastore_index.py
 %%DATADIR%%/google/appengine/datastore/datastore_pb.py
+%%DATADIR%%/google/appengine/datastore/datastore_v3_pb.py
 %%DATADIR%%/google/appengine/datastore/entity_pb.py
 %%DATADIR%%/google/appengine/dist/__init__.py
 %%DATADIR%%/google/appengine/dist/_library.py
@@ -457,26 +461,38 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/admin/templates/css/cron.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/datastore.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/form.css
+%%DATADIR%%/google/appengine/ext/admin/templates/css/inboundmail.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/memcache.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/nav.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/pager.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/queues.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/tasks.css
+%%DATADIR%%/google/appengine/ext/admin/templates/css/xmpp.css
 %%DATADIR%%/google/appengine/ext/admin/templates/datastore.html
 %%DATADIR%%/google/appengine/ext/admin/templates/datastore_edit.html
 %%DATADIR%%/google/appengine/ext/admin/templates/images/google.gif
+%%DATADIR%%/google/appengine/ext/admin/templates/inboundmail.html
 %%DATADIR%%/google/appengine/ext/admin/templates/interactive-output.html
 %%DATADIR%%/google/appengine/ext/admin/templates/interactive.html
+%%DATADIR%%/google/appengine/ext/admin/templates/js/multipart_form_data.js
+%%DATADIR%%/google/appengine/ext/admin/templates/js/rfc822_date.js
 %%DATADIR%%/google/appengine/ext/admin/templates/js/webhook.js
 %%DATADIR%%/google/appengine/ext/admin/templates/memcache.html
 %%DATADIR%%/google/appengine/ext/admin/templates/pager.html
 %%DATADIR%%/google/appengine/ext/admin/templates/queues.html
 %%DATADIR%%/google/appengine/ext/admin/templates/tasks.html
+%%DATADIR%%/google/appengine/ext/admin/templates/xmpp.html
 %%DATADIR%%/google/appengine/ext/bulkload/__init__.py
 %%DATADIR%%/google/appengine/ext/bulkload/constants.py
 %%DATADIR%%/google/appengine/ext/db/__init__.py
 %%DATADIR%%/google/appengine/ext/db/djangoforms.py
 %%DATADIR%%/google/appengine/ext/db/polymodel.py
+%%DATADIR%%/google/appengine/ext/deferred/__init__.py
+%%DATADIR%%/google/appengine/ext/deferred/deferred.py
+%%DATADIR%%/google/appengine/ext/ereporter/__init__.py
+%%DATADIR%%/google/appengine/ext/ereporter/ereporter.py
+%%DATADIR%%/google/appengine/ext/ereporter/report_generator.py
+%%DATADIR%%/google/appengine/ext/ereporter/templates/report.html
 %%DATADIR%%/google/appengine/ext/gql/__init__.py
 %%DATADIR%%/google/appengine/ext/key_range/__init__.py
 %%DATADIR%%/google/appengine/ext/preload/__init__.py
@@ -487,8 +503,10 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/remote_api/throttle.py
 %%DATADIR%%/google/appengine/ext/search/__init__.py
 %%DATADIR%%/google/appengine/ext/webapp/__init__.py
+%%DATADIR%%/google/appengine/ext/webapp/mail_handlers.py
 %%DATADIR%%/google/appengine/ext/webapp/template.py
 %%DATADIR%%/google/appengine/ext/webapp/util.py
+%%DATADIR%%/google/appengine/ext/webapp/xmpp_handlers.py
 %%DATADIR%%/google/appengine/ext/zipserve/__init__.py
 %%DATADIR%%/google/appengine/runtime/__init__.py
 %%DATADIR%%/google/appengine/runtime/apiproxy.py
@@ -540,7 +558,7 @@ bin/dev_appserver.py
 %%DATADIR%%/lib/django/AUTHORS
 %%DATADIR%%/lib/django/INSTALL
 %%DATADIR%%/lib/django/LICENSE
-%%DATADIR%%/lib/django/MANIFEST.in
+%%DATADIR%%/lib/django/PKG-INFO
 %%DATADIR%%/lib/django/README
 %%DATADIR%%/lib/django/django/__init__.py
 %%DATADIR%%/lib/django/django/bin/__init__.py
@@ -867,7 +885,6 @@ bin/dev_appserver.py
 %%DATADIR%%/lib/django/django/contrib/contenttypes/models.py
 %%DATADIR%%/lib/django/django/contrib/csrf/__init__.py
 %%DATADIR%%/lib/django/django/contrib/csrf/middleware.py
-%%DATADIR%%/lib/django/django/contrib/flatpages/README.TXT
 %%DATADIR%%/lib/django/django/contrib/flatpages/__init__.py
 %%DATADIR%%/lib/django/django/contrib/flatpages/middleware.py
 %%DATADIR%%/lib/django/django/contrib/flatpages/models.py
@@ -875,8 +892,6 @@ bin/dev_appserver.py
 %%DATADIR%%/lib/django/django/contrib/flatpages/views.py
 %%DATADIR%%/lib/django/django/contrib/formtools/__init__.py
 %%DATADIR%%/lib/django/django/contrib/formtools/preview.py
-%%DATADIR%%/lib/django/django/contrib/formtools/templates/formtools/form.html
-%%DATADIR%%/lib/django/django/contrib/formtools/templates/formtools/preview.html
 %%DATADIR%%/lib/django/django/contrib/humanize/__init__.py
 %%DATADIR%%/lib/django/django/contrib/humanize/templatetags/__init__.py
 %%DATADIR%%/lib/django/django/contrib/humanize/templatetags/humanize.py
@@ -889,7 +904,6 @@ bin/dev_appserver.py
 %%DATADIR%%/lib/django/django/contrib/markup/__init__.py
 %%DATADIR%%/lib/django/django/contrib/markup/templatetags/__init__.py
 %%DATADIR%%/lib/django/django/contrib/markup/templatetags/markup.py
-%%DATADIR%%/lib/django/django/contrib/redirects/README.TXT
 %%DATADIR%%/lib/django/django/contrib/redirects/__init__.py
 %%DATADIR%%/lib/django/django/contrib/redirects/middleware.py
 %%DATADIR%%/lib/django/django/contrib/redirects/models.py
@@ -1001,7 +1015,6 @@ bin/dev_appserver.py
 %%DATADIR%%/lib/django/django/dispatch/__init__.py
 %%DATADIR%%/lib/django/django/dispatch/dispatcher.py
 %%DATADIR%%/lib/django/django/dispatch/errors.py
-%%DATADIR%%/lib/django/django/dispatch/license.txt
 %%DATADIR%%/lib/django/django/dispatch/robust.py
 %%DATADIR%%/lib/django/django/dispatch/robustapply.py
 %%DATADIR%%/lib/django/django/dispatch/saferef.py
@@ -1058,7 +1071,6 @@ bin/dev_appserver.py
 %%DATADIR%%/lib/django/django/utils/html.py
 %%DATADIR%%/lib/django/django/utils/images.py
 %%DATADIR%%/lib/django/django/utils/itercompat.py
-%%DATADIR%%/lib/django/django/utils/simplejson/LICENSE.txt
 %%DATADIR%%/lib/django/django/utils/simplejson/__init__.py
 %%DATADIR%%/lib/django/django/utils/simplejson/decoder.py
 %%DATADIR%%/lib/django/django/utils/simplejson/encoder.py
@@ -1139,179 +1151,9 @@ bin/dev_appserver.py
 %%DATADIR%%/lib/django/docs/tutorial03.txt
 %%DATADIR%%/lib/django/docs/tutorial04.txt
 %%DATADIR%%/lib/django/docs/url_dispatch.txt
-%%DATADIR%%/lib/django/examples/__init__.py
-%%DATADIR%%/lib/django/examples/hello/__init__.py
-%%DATADIR%%/lib/django/examples/hello/urls.py
-%%DATADIR%%/lib/django/examples/hello/views.py
-%%DATADIR%%/lib/django/examples/manage.py
-%%DATADIR%%/lib/django/examples/settings.py
-%%DATADIR%%/lib/django/examples/urls.py
-%%DATADIR%%/lib/django/examples/views.py
-%%DATADIR%%/lib/django/extras/README.TXT
-%%DATADIR%%/lib/django/extras/django_bash_completion
 %%DATADIR%%/lib/django/scripts/rpm-install.sh
 %%DATADIR%%/lib/django/setup.cfg
 %%DATADIR%%/lib/django/setup.py
-%%DATADIR%%/lib/django/tests/modeltests/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/basic/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/basic/models.py
-%%DATADIR%%/lib/django/tests/modeltests/choices/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/choices/models.py
-%%DATADIR%%/lib/django/tests/modeltests/custom_columns/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/custom_columns/models.py
-%%DATADIR%%/lib/django/tests/modeltests/custom_managers/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/custom_managers/models.py
-%%DATADIR%%/lib/django/tests/modeltests/custom_methods/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/custom_methods/models.py
-%%DATADIR%%/lib/django/tests/modeltests/custom_pk/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/custom_pk/models.py
-%%DATADIR%%/lib/django/tests/modeltests/empty/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/empty/models.py
-%%DATADIR%%/lib/django/tests/modeltests/field_defaults/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/field_defaults/models.py
-%%DATADIR%%/lib/django/tests/modeltests/fixtures/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/fixtures/fixtures/fixture1.json
-%%DATADIR%%/lib/django/tests/modeltests/fixtures/fixtures/fixture2.json
-%%DATADIR%%/lib/django/tests/modeltests/fixtures/fixtures/fixture2.xml
-%%DATADIR%%/lib/django/tests/modeltests/fixtures/fixtures/fixture3.xml
-%%DATADIR%%/lib/django/tests/modeltests/fixtures/fixtures/initial_data.json
-%%DATADIR%%/lib/django/tests/modeltests/fixtures/models.py
-%%DATADIR%%/lib/django/tests/modeltests/generic_relations/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/generic_relations/models.py
-%%DATADIR%%/lib/django/tests/modeltests/get_latest/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/get_latest/models.py
-%%DATADIR%%/lib/django/tests/modeltests/get_object_or_404/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/get_object_or_404/models.py
-%%DATADIR%%/lib/django/tests/modeltests/get_or_create/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/get_or_create/models.py
-%%DATADIR%%/lib/django/tests/modeltests/invalid_models/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/invalid_models/models.py
-%%DATADIR%%/lib/django/tests/modeltests/lookup/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/lookup/models.py
-%%DATADIR%%/lib/django/tests/modeltests/m2m_and_m2o/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/m2m_and_m2o/models.py
-%%DATADIR%%/lib/django/tests/modeltests/m2m_intermediary/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/m2m_intermediary/models.py
-%%DATADIR%%/lib/django/tests/modeltests/m2m_multiple/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/m2m_multiple/models.py
-%%DATADIR%%/lib/django/tests/modeltests/m2m_recursive/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/m2m_recursive/models.py
-%%DATADIR%%/lib/django/tests/modeltests/m2o_recursive/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/m2o_recursive/models.py
-%%DATADIR%%/lib/django/tests/modeltests/m2o_recursive2/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/m2o_recursive2/models.py
-%%DATADIR%%/lib/django/tests/modeltests/manipulators/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/manipulators/models.py
-%%DATADIR%%/lib/django/tests/modeltests/many_to_many/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/many_to_many/models.py
-%%DATADIR%%/lib/django/tests/modeltests/many_to_one/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/many_to_one/models.py
-%%DATADIR%%/lib/django/tests/modeltests/many_to_one_null/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/many_to_one_null/models.py
-%%DATADIR%%/lib/django/tests/modeltests/model_forms/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/model_forms/models.py
-%%DATADIR%%/lib/django/tests/modeltests/model_inheritance/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/model_inheritance/models.py
-%%DATADIR%%/lib/django/tests/modeltests/mutually_referential/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/mutually_referential/models.py
-%%DATADIR%%/lib/django/tests/modeltests/one_to_one/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/one_to_one/models.py
-%%DATADIR%%/lib/django/tests/modeltests/or_lookups/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/or_lookups/models.py
-%%DATADIR%%/lib/django/tests/modeltests/ordering/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/ordering/models.py
-%%DATADIR%%/lib/django/tests/modeltests/pagination/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/pagination/models.py
-%%DATADIR%%/lib/django/tests/modeltests/properties/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/properties/models.py
-%%DATADIR%%/lib/django/tests/modeltests/reserved_names/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/reserved_names/models.py
-%%DATADIR%%/lib/django/tests/modeltests/reverse_lookup/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/reverse_lookup/models.py
-%%DATADIR%%/lib/django/tests/modeltests/save_delete_hooks/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/save_delete_hooks/models.py
-%%DATADIR%%/lib/django/tests/modeltests/select_related/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/select_related/models.py
-%%DATADIR%%/lib/django/tests/modeltests/serializers/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/serializers/models.py
-%%DATADIR%%/lib/django/tests/modeltests/str/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/str/models.py
-%%DATADIR%%/lib/django/tests/modeltests/test_client/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/test_client/fixtures/testdata.json
-%%DATADIR%%/lib/django/tests/modeltests/test_client/models.py
-%%DATADIR%%/lib/django/tests/modeltests/test_client/urls.py
-%%DATADIR%%/lib/django/tests/modeltests/test_client/views.py
-%%DATADIR%%/lib/django/tests/modeltests/transactions/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/transactions/models.py
-%%DATADIR%%/lib/django/tests/modeltests/validation/__init__.py
-%%DATADIR%%/lib/django/tests/modeltests/validation/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/bug639/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/bug639/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/bug639/test.jpg
-%%DATADIR%%/lib/django/tests/regressiontests/bug639/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/cache/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/cache/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/cache/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/datastructures/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/datastructures/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/datastructures/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/dateformat/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/dateformat/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/dateformat/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/db_typecasts/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/db_typecasts/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/db_typecasts/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/defaultfilters/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/defaultfilters/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/defaultfilters/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/dispatch/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/dispatch/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/dispatch/tests/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/dispatch/tests/test_dispatcher.py
-%%DATADIR%%/lib/django/tests/regressiontests/dispatch/tests/test_robustapply.py
-%%DATADIR%%/lib/django/tests/regressiontests/dispatch/tests/test_saferef.py
-%%DATADIR%%/lib/django/tests/regressiontests/forms/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/forms/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/forms/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/httpwrappers/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/httpwrappers/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/httpwrappers/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/humanize/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/humanize/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/humanize/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/initial_sql_regress/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/initial_sql_regress/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/initial_sql_regress/sql/simple.sql
-%%DATADIR%%/lib/django/tests/regressiontests/invalid_admin_options/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/invalid_admin_options/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/many_to_one_regress/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/many_to_one_regress/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/markup/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/markup/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/markup/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/null_queries/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/null_queries/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/one_to_one_regress/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/one_to_one_regress/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/serializers_regress/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/serializers_regress/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/serializers_regress/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/string_lookup/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/string_lookup/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/templates/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/templates/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/templates/tests.py
-%%DATADIR%%/lib/django/tests/regressiontests/templates/urls.py
-%%DATADIR%%/lib/django/tests/regressiontests/templates/views.py
-%%DATADIR%%/lib/django/tests/regressiontests/urlpatterns_reverse/__init__.py
-%%DATADIR%%/lib/django/tests/regressiontests/urlpatterns_reverse/models.py
-%%DATADIR%%/lib/django/tests/regressiontests/urlpatterns_reverse/tests.py
-%%DATADIR%%/lib/django/tests/runtests.py
-%%DATADIR%%/lib/django/tests/templates/404.html
-%%DATADIR%%/lib/django/tests/templates/500.html
-%%DATADIR%%/lib/django/tests/templates/login.html
-%%DATADIR%%/lib/django/tests/urls.py
 %%DATADIR%%/lib/webob/LICENSE
 %%DATADIR%%/lib/webob/PKG-INFO
 %%DATADIR%%/lib/webob/WebOb.egg-info/PKG-INFO
@@ -1409,80 +1251,7 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/lib/webob/docs
 @dirrm %%DATADIR%%/lib/webob/WebOb.egg-info
 @dirrm %%DATADIR%%/lib/webob
-@dirrm %%DATADIR%%/lib/django/tests/templates
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/urlpatterns_reverse
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/templates
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/string_lookup
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/serializers_regress
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/one_to_one_regress
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/null_queries
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/markup
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/many_to_one_regress
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/invalid_admin_options
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/initial_sql_regress/sql
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/initial_sql_regress
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/humanize
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/httpwrappers
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/forms
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/dispatch/tests
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/dispatch
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/defaultfilters
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/db_typecasts
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/dateformat
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/datastructures
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/cache
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests/bug639
-@dirrm %%DATADIR%%/lib/django/tests/regressiontests
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/validation
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/transactions
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/test_client/fixtures
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/test_client
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/str
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/serializers
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/select_related
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/save_delete_hooks
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/reverse_lookup
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/reserved_names
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/properties
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/pagination
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/ordering
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/or_lookups
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/one_to_one
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/mutually_referential
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/model_inheritance
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/model_forms
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/many_to_one_null
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/many_to_one
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/many_to_many
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/manipulators
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/m2o_recursive2
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/m2o_recursive
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/m2m_recursive
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/m2m_multiple
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/m2m_intermediary
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/m2m_and_m2o
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/lookup
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/invalid_models
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/get_or_create
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/get_object_or_404
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/get_latest
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/generic_relations
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/fixtures/fixtures
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/fixtures
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/field_defaults
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/empty
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/custom_pk
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/custom_methods
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/custom_managers
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/custom_columns
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/choices
-@dirrm %%DATADIR%%/lib/django/tests/modeltests/basic
-@dirrm %%DATADIR%%/lib/django/tests/modeltests
-@dirrm %%DATADIR%%/lib/django/tests
 @dirrm %%DATADIR%%/lib/django/scripts
-@dirrm %%DATADIR%%/lib/django/extras
-@dirrm %%DATADIR%%/lib/django/examples/hello
-@dirrm %%DATADIR%%/lib/django/examples
 @dirrm %%DATADIR%%/lib/django/docs
 @dirrm %%DATADIR%%/lib/django/django/views/generic
 @dirrm %%DATADIR%%/lib/django/django/views/decorators
@@ -1533,8 +1302,6 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/lib/django/django/contrib/localflavor
 @dirrm %%DATADIR%%/lib/django/django/contrib/humanize/templatetags
 @dirrm %%DATADIR%%/lib/django/django/contrib/humanize
-@dirrm %%DATADIR%%/lib/django/django/contrib/formtools/templates/formtools
-@dirrm %%DATADIR%%/lib/django/django/contrib/formtools/templates
 @dirrm %%DATADIR%%/lib/django/django/contrib/formtools
 @dirrm %%DATADIR%%/lib/django/django/contrib/flatpages
 @dirrm %%DATADIR%%/lib/django/django/contrib/csrf
@@ -1667,6 +1434,9 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/google/appengine/ext/preload
 @dirrm %%DATADIR%%/google/appengine/ext/key_range
 @dirrm %%DATADIR%%/google/appengine/ext/gql
+@dirrm %%DATADIR%%/google/appengine/ext/ereporter/templates
+@dirrm %%DATADIR%%/google/appengine/ext/ereporter
+@dirrm %%DATADIR%%/google/appengine/ext/deferred
 @dirrm %%DATADIR%%/google/appengine/ext/db
 @dirrm %%DATADIR%%/google/appengine/ext/bulkload
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/js
@@ -1679,6 +1449,7 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/google/appengine/datastore
 @dirrm %%DATADIR%%/google/appengine/cron
 @dirrm %%DATADIR%%/google/appengine/base
+@dirrm %%DATADIR%%/google/appengine/api/xmpp
 @dirrm %%DATADIR%%/google/appengine/api/namespace_manager
 @dirrm %%DATADIR%%/google/appengine/api/memcache
 @dirrm %%DATADIR%%/google/appengine/api/labs/taskqueue
