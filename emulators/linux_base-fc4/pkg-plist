@@ -10066,7 +10066,6 @@ var/mail
 @dirrmtry proc
 @dirrm opt
 @dirrm mnt
-@dirrm media
 @dirrm lib/tls/i686
 @dirrm lib/tls/i586
 @dirrm lib/tls/i486

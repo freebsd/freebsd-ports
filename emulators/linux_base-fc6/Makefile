@@ -8,7 +8,7 @@
 
 PORTNAME=		fc6
 PORTVERSION=		6
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -125,7 +125,7 @@ IGNORE=			linuxulator is not (kld)loaded
 IGNORE=			compat.linux.osrelease: 2.4.2 is not supported
 .endif
 
-REMOVE_DIRS=		boot dev home initrd root tmp var/log var/run var/tmp \
+REMOVE_DIRS=		boot dev home initrd media root tmp var/log var/run var/tmp \
 			usr/local usr/tmp
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		f9
-PORTVERSION=		9
+PORTVERSION=		10
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../updates/${PORTVERSION}/${LINUX_RPM_ARCH}.newkey \
@@ -136,7 +136,7 @@ IGNORE=			linuxulator is not (kld)loaded
 IGNORE=			compat.linux.osrelease: 2.4.2 is not supported, please use 2.6.16
 .endif
 
-REMOVE_DIRS=		boot dev etc/fonts home initrd root tmp var/log var/run var/tmp \
+REMOVE_DIRS=		boot dev etc/fonts home initrd media root tmp var/log var/run var/tmp \
 			usr/local usr/tmp
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \

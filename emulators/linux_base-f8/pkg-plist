@@ -5030,7 +5030,6 @@ var/cache/ldconfig/aux-cache
 @exec /bin/mkdir -p %D/proc
 @exec /bin/mkdir -p %D/opt
 @exec /bin/mkdir -p %D/mnt
-@exec /bin/mkdir -p %D/media
 @exec /bin/mkdir -p %D/lib/tls
 @exec /bin/mkdir -p %D/lib/modules
 @exec /bin/mkdir -p %D/etc/xinetd.d
@@ -5565,7 +5564,6 @@ var/cache/ldconfig/aux-cache
 @dirrmtry proc
 @dirrm opt
 @dirrm mnt
-@dirrm media
 @dirrm lib/tls
 @dirrm lib/modules
 @dirrm etc/xinetd.d

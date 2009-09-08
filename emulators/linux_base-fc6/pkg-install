@@ -1066,7 +1066,6 @@ POST-INSTALL)
 	mkdir -p ${PKG_PREFIX}/proc
 	mkdir -p ${PKG_PREFIX}/opt
 	mkdir -p ${PKG_PREFIX}/mnt
-	mkdir -p ${PKG_PREFIX}/media
 	mkdir -p ${PKG_PREFIX}/lib/tls
 	mkdir -p ${PKG_PREFIX}/lib/modules
 	mkdir -p ${PKG_PREFIX}/etc/xinetd.d
