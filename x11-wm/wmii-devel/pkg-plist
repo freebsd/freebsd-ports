@@ -1,0 +1,14 @@
+bin/wihack
+bin/wimenu
+bin/wmii
+bin/wmii.rc
+bin/wmii.sh
+bin/wmii9menu
+bin/wmii9rc
+bin/wmiir
+bin/wmiistartrc
+etc/wmii-hg/rc.wmii
+etc/wmii-hg/welcome
+etc/wmii-hg/wmiirc
+@dirrm etc/wmii-hg
+lib/libwmii_hack.so
