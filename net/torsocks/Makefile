@@ -6,6 +6,7 @@
 
 PORTNAME=	torsocks
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	GOOGLE_CODE \
 		http://tor.reactor-xg.kiev.ua/files/
