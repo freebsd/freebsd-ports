@@ -11,6 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.11
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://homepages.uni-paderborn.de/mandree/fetchmail/:ma \
