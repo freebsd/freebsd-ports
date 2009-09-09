@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	vifm
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	misc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Ncurses based file manager with vi like keybindings
@@ -27,6 +27,9 @@ PLIST_FILES=	bin/pauseme \
 		share/vifm/vifm.txt \
 		share/vifm/vifm.vim
 PLIST_DIRS=	share/vifm
+
+MAN1=		vifm.1
+MANCOMPRESSED=	no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/resize_term/resizeterm/g' \
