@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	hrktorrent
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://50hz.ws/hrktorrent/
 
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	A light console torrent client using rasterbar's libtorrent
 
-LIB_DEPENDS=	torrent.1:${PORTSDIR}/net-p2p/rblibtorrent
+LIB_DEPENDS=	torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
 
 USE_GNOME=	pkgconfig
 USE_BZIP2=	yes
