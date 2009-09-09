@@ -1,5 +1,4 @@
 %%SITE_PERL%%/Config/General.pm
-%%SITE_PERL%%/Config/General/i
 %%SITE_PERL%%/Config/General/Extended.pm
 %%SITE_PERL%%/Config/General/Interpolated.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/General/.packlist
