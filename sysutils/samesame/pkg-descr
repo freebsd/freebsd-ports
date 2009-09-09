@@ -1,4 +1,4 @@
-Samesame is a collection of tools that fall in to the category of file
+SameSame is a collection of tools that fall in to the category of file
 management software. These tools will prevent that you need to delete
 files or buy more disk space. Instead they solve low disk space problems
 by linking identical files together and thus free up waisted disk space.
@@ -7,17 +7,17 @@ This collection was inspired by the application samefile written by Jens
 Schweikhardt. The collection comes with its own version of samefile that
 is noticeable faster and is able to process a much larger file list.
 
-This port contains the applications: samefile, samelink and samearchive.
-The latter does the same as samefile but for file-based archives. The
-port also contains a version that uses just 10% of the resources compared
-to samearchive. The application samelink hard link identical files for you.
+This port containt two set of application: the first are duplicate files
+finder search for identical files and the second are duplicate file
+removers perform some kind of action based on those results.
 
-Typical usage would be:
-
-   find / | samefile -i | samelink
+Typical usage would be: find / | samefile -i | sameln
 
 This would search for identical files and clean up wasted disk space by
-linking them together. Add the option -vn after samelink for a verbose
-dry-run.
+linking them together. If you prefer removing one of the identical file,
+then you should replace sameln with samerm. You can add the option -vn
+after both application for a verbose dry-run.
 
-WWW:	http://samesame.kruijff.org/
+Please see the man page samesame for a introduction to all applications.
+
+WWW: http://samesame.kruijff.org/

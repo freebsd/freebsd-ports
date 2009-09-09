@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samesame
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://samesame.kruijff.org/ \
 		${MASTER_SITE_LOCAL}
@@ -16,12 +16,13 @@ COMMENT=	Find identical files and optionally link them together
 
 CONFLICTS=	samefile-[0-9]*
 
-MAN1=	samearchive.1 samearchive-lite.1 samefile.1 samelink.1
+MAN1=	samesame.1 samearchive.1 samearchive-lite.1 samefile.1 sameln.1 \
+	samecp.1 samemv.1 samerm.1
 MANCOMPRESSED=	no
 
-PLIST_FILES=	bin/samearchive		bin/samefile \
-		bin/samearchive-lite	bin/samelink \
-		etc/rc.d/samesame.sh
+PLIST_FILES=	bin/samearchive		bin/samefile 	bin/samecp \
+		bin/samearchive-lite	bin/sameln 	bin/samemv \
+		etc/rc.d/samesame.sh	bin/samerm
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --prefix="${PREFIX}" \
@@ -47,10 +48,10 @@ CONFIGURE_ARGS+=	--enable-disk-storage
 CONFIGURE_ARGS+=	--disable-logic
 .endif
 
-test: build
+regression-test: build
 	@cd ${WRKSRC}; ${MAKE} check
 
-pre-install:
+post-build:
 .if defined(WITH_TEST)
 	@cd ${WRKSRC}; ${MAKE} check
 .endif
@@ -58,12 +59,17 @@ pre-install:
 post-install:
 .if defined(WITHOUT_DEBUG)
 	${STRIP_CMD} ${PREFIX}/bin/samefile
-	${STRIP_CMD} ${PREFIX}/bin/samelink
 	${STRIP_CMD} ${PREFIX}/bin/samearchive
 	${STRIP_CMD} ${PREFIX}/bin/samearchive-lite
+	${STRIP_CMD} ${PREFIX}/bin/samecp
+	${STRIP_CMD} ${PREFIX}/bin/sameln
+	${STRIP_CMD} ${PREFIX}/bin/samemv
+	${STRIP_CMD} ${PREFIX}/bin/samerm
 .endif
 
 	${INSTALL_SCRIPT} ${FILESDIR}/samesame.sh ${PREFIX}/etc/rc.d/
+	@${ECHO}
 	@${CAT} pkg-message
+	@${ECHO}
 
 .include <bsd.port.post.mk>
