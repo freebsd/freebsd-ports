@@ -8,8 +8,8 @@
 PORTNAME=	blockout
 PORTVERSION=	2.4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	blockout
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BlockOut%20${PORTVERSION}/ \
+		http://www.stasyan.com/devel/distfiles/
 DISTNAME=	bl24-src-linux-i586
 
 MAINTAINER=	stast@bsdportal.ru
