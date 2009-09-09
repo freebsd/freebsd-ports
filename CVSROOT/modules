@@ -1183,6 +1183,7 @@ brickshooter                    ports/games/brickshooter
 bricolage                       ports/www/bricolage
 bricons                         ports/x11/bricons
 brightside                      ports/x11/brightside
+brikx                           ports/games/brikx
 briquolo                        ports/games/briquolo
 british-ispell                  ports/textproc/british-ispell
 brlcad                          ports/cad/brlcad
@@ -12162,6 +12163,7 @@ p5-Module-Info-File             ports/devel/p5-Module-Info-File
 p5-Module-Inspector             ports/devel/p5-Module-Inspector
 p5-Module-Install               ports/devel/p5-Module-Install
 p5-Module-Install-AuthorTests   ports/devel/p5-Module-Install-AuthorTests
+p5-Module-Install-Repository    ports/devel/p5-Module-Install-Repository
 p5-Module-List                  ports/devel/p5-Module-List
 p5-Module-Load                  ports/devel/p5-Module-Load
 p5-Module-Load-Conditional      ports/devel/p5-Module-Load-Conditional
@@ -13128,6 +13130,7 @@ p5-Test-Pod-Coverage            ports/devel/p5-Test-Pod-Coverage
 p5-Test-Portability-Files       ports/devel/p5-Test-Portability-Files
 p5-Test-RandomResults           ports/devel/p5-Test-RandomResults
 p5-Test-Reporter                ports/devel/p5-Test-Reporter
+p5-Test-Requires                ports/devel/p5-Test-Requires
 p5-Test-Script                  ports/devel/p5-Test-Script
 p5-Test-SharedFork              ports/devel/p5-Test-SharedFork
 p5-Test-Simple                  ports/devel/p5-Test-Simple
@@ -15722,6 +15725,7 @@ p5-module-info-file             ports/devel/p5-Module-Info-File
 p5-module-inspector             ports/devel/p5-Module-Inspector
 p5-module-install               ports/devel/p5-Module-Install
 p5-module-install-authortests   ports/devel/p5-Module-Install-AuthorTests
+p5-module-install-repository    ports/devel/p5-Module-Install-Repository
 p5-module-list                  ports/devel/p5-Module-List
 p5-module-load                  ports/devel/p5-Module-Load
 p5-module-load-conditional      ports/devel/p5-Module-Load-Conditional
@@ -16726,6 +16730,7 @@ p5-test-poe-server-tcp          ports/devel/p5-Test-POE-Server-TCP
 p5-test-portability-files       ports/devel/p5-Test-Portability-Files
 p5-test-randomresults           ports/devel/p5-Test-RandomResults
 p5-test-reporter                ports/devel/p5-Test-Reporter
+p5-test-requires                ports/devel/p5-Test-Requires
 p5-test-script                  ports/devel/p5-Test-Script
 p5-test-sharedfork              ports/devel/p5-Test-SharedFork
 p5-test-simple                  ports/devel/p5-Test-Simple
@@ -23454,6 +23459,7 @@ wmgrabimage                     ports/graphics/wmgrabimage
 wmhm                            ports/sysutils/wmhm
 wmicons                         ports/graphics/wmicons
 wmii                            ports/x11-wm/wmii
+wmii-devel                      ports/x11-wm/wmii-devel
 wminet                          ports/sysutils/wminet
 wminfo                          ports/misc/wminfo
 wmitime                         ports/x11-clocks/wmitime
