@@ -87,12 +87,4 @@ RUN_DEPENDS+=	panomatic:${PORTSDIR}/graphics/panomatic
 RUN_DEPENDS+=	autopanog:${PORTSDIR}/graphics/autopano-sift
 .endif
 
-# the lapack library from math/lapack seems broken:
-# /usr/local/lib/liblapack.so: undefined reference to `cexp'
-#.if defined(WITH_LAPACK)
-#LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack	\
-#		blas:${PORTSDIR}/math/blas
-#CMAKE_ARGS+=	-DENABLE_LAPACK=YES
-#.endif
-
 .include <bsd.port.post.mk>
