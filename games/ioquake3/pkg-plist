@@ -1,12 +1,12 @@
-%%DEDICATED%%bin/ioq3ded
-%%CLIENT%%bin/ioquake3
-%%SMP%%bin/ioquake3-smp
-%%GAMELIBS%%%%LIBDIR%%/baseq3/cgame.so
-%%GAMELIBS%%%%LIBDIR%%/baseq3/qagame.so
-%%GAMELIBS%%%%LIBDIR%%/baseq3/ui.so
-%%GAMELIBS%%%%LIBDIR%%/missionpack/cgame.so
-%%GAMELIBS%%%%LIBDIR%%/missionpack/qagame.so
-%%GAMELIBS%%%%LIBDIR%%/missionpack/ui.so
+%%DEDICATED%%bin/ioq3ded%%BINSUFFIX%%
+%%CLIENT%%bin/ioquake3%%BINSUFFIX%%
+%%SMP%%bin/ioquake3-smp%%BINSUFFIX%%
+%%GAMELIBS%%%%LIBDIR%%/baseq3/cgame%%ARCH%%.so
+%%GAMELIBS%%%%LIBDIR%%/baseq3/qagame%%ARCH%%.so
+%%GAMELIBS%%%%LIBDIR%%/baseq3/ui%%ARCH%%.so
+%%GAMELIBS%%%%LIBDIR%%/missionpack/cgame%%ARCH%%.so
+%%GAMELIBS%%%%LIBDIR%%/missionpack/qagame%%ARCH%%.so
+%%GAMELIBS%%%%LIBDIR%%/missionpack/ui%%ARCH%%.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%GAMELIBS%%@dirrm %%LIBDIR%%/missionpack
 %%GAMELIBS%%@dirrm %%LIBDIR%%/baseq3
