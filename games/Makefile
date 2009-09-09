@@ -813,6 +813,7 @@
     SUBDIR += sudsol
     SUBDIR += super_methane_brothers
     SUBDIR += supertux
+    SUBDIR += supertuxkart
     SUBDIR += sxsame
     SUBDIR += tads
     SUBDIR += taipan
