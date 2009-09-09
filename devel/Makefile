@@ -1624,6 +1624,7 @@
     SUBDIR += p5-Module-Info-File
     SUBDIR += p5-Module-Inspector
     SUBDIR += p5-Module-Install
+    SUBDIR += p5-Module-Install-AuthorRequires
     SUBDIR += p5-Module-Install-AuthorTests
     SUBDIR += p5-Module-Install-Repository
     SUBDIR += p5-Module-List
