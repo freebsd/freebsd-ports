@@ -69,8 +69,9 @@ CONFIGURE_ARGS+=	--disable-xmpp --enable-ssl=openssl
 .else
 CFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-xmpp --enable-ssl=gnutls \
-			--with-libgnutls-prefix=${LOCALBASE} \
 			--with-libgcrypt-prefix=${LOCALBASE}
+CONFIGURE_ENV+=		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
+BUILD_DEPENDS+=		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel \
 			gnutls:${PORTSDIR}/security/gnutls \
 			gcrypt:${PORTSDIR}/security/libgcrypt \
@@ -79,7 +80,9 @@ LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel \
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc//' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/ac_lib/s/tcl8\./tcl8/g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/ac_lib/s/tcl8\./tcl8/g' \
+		-e '/libgnutls_config_version=/s/--version/--modversion/' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/climm.1 ${MANPREFIX}/man/man1
