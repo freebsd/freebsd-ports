@@ -1,12 +1,12 @@
 --- pwc.c.orig	2007-10-09 09:14:01.000000000 +0200
-+++ pwc.c	2009-05-27 20:22:49.147289211 +0200
++++ pwc.c	2009-09-09 10:33:33.000000000 +0200
 @@ -28,7 +28,8 @@
  #include "pwc-dec1.h"
  #include "pwc-dec23.h"
  
 -static void pwc_isoc_handler(usbd_xfer_handle xfer, usbd_private_handle addr,usbd_status status);
-+static void pwc_isoc_rx_callback(struct usb2_xfer *xfer);
-+static void pwc_isoc_handler(struct usb2_xfer *xfer, void *addr);
++static void pwc_isoc_rx_callback(struct usb_xfer *xfer, usb_error_t err);
++static void pwc_isoc_handler(struct usb_xfer *xfer, void *addr);
  static void pwc_reset_buffers(struct pwc_softc *sc);
  static void pwc_free_buffers(struct pwc_softc *sc, int detach);
  
@@ -20,7 +20,7 @@
 -	int			type;
 -	char			*name;
 +
-+static const struct usb2_config pwc_config[MAX_ISO_BUFS] = {
++static const struct usb_config pwc_config[MAX_ISO_BUFS] = {
 +	[0] = {
 +		.type = UE_ISOCHRONOUS,
 +		.endpoint = UE_ADDR_ANY,
@@ -73,7 +73,7 @@
 -	{{ 0x0d81, 0x1910 }, 740, "Visionite VCS-UC300" }, 
 -	{{ 0x0d81, 0x1900 }, 730, "Visionite VCS-UM100" },
 +
-+static const struct usb2_device_id pwc_devs[] = {
++static const struct usb_device_id pwc_devs[] = {
 +  {USB_VPI(0x0471, 0x0302, 645)}, /* Philips PCA645VC */
 +  {USB_VPI(0x0471, 0x0303, 646)}, /* Philips PCA646VC */
 +  {USB_VPI(0x0471, 0x0304, 646)}, /* Askey VC010 type 2 */
@@ -121,7 +121,7 @@
  	DEVMETHOD(device_attach, pwc_attach),
  	DEVMETHOD(device_detach, pwc_detach),
  	{0,0},
-@@ -120,85 +136,52 @@
+@@ -120,41 +136,25 @@
  MODULE_DEPEND(pwc, usb, 1, 1, 1);
  
  static int
@@ -130,7 +130,7 @@
  {
 -        struct usb_attach_arg *uaa = device_get_ivars(self);
 -	usb_interface_descriptor_t *id;
-+	struct usb2_attach_arg *uaa = device_get_ivars(self);
++	struct usb_attach_arg *uaa = device_get_ivars(self);
  
 -	Trace(TRACE_PROBE,"pwc_match: vendor=0x%x, product=0x%x release=%04x\n",uaa->vendor, uaa->product,uaa->release);
 -	
@@ -169,20 +169,19 @@
 +	if (uaa->info.bIfaceIndex != 0)
 +		return (ENXIO);
 +
-+	return (usb2_lookup_id_by_uaa(pwc_devs, sizeof(pwc_devs), uaa));
++	return (usbd_lookup_id_by_uaa(pwc_devs, sizeof(pwc_devs), uaa));
 +
 +	return (0); /* success */
  }
  
  static int
- pwc_attach(device_t self)
+@@ -162,43 +162,26 @@
  {
  	struct pwc_softc *sc = device_get_softc(self);
--	struct usb_attach_arg *uaa = device_get_ivars(self);
+ 	struct usb_attach_arg *uaa = device_get_ivars(self);
 -	char devinfo[1024];
 -	const char *tmpstr;
 -	const struct pwc_info *info;
-+	struct usb2_attach_arg *uaa = device_get_ivars(self);
  	char *sizenames[PSZ_MAX] = { "sqcif", "qsif", "qcif", "sif", "cif", "vga" };
 -	int i, err;
 +	const char *tmpstr;
@@ -194,7 +193,7 @@
 -			device_get_nameunit(sc->sc_dev),uaa->vendor,uaa->product);
 -		return ENXIO;
 -	}
-+	device_set_usb2_desc(self);
++	device_set_usb_desc(self);
  
 -	usbd_devinfo(uaa->device, 0, devinfo);
  	sc->sc_dev = self;
@@ -265,7 +264,7 @@
 -		sc->sc_videopipe = NULL;
 -	}
 +
-+	usb2_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
++	usbd_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
  
  	sc->error_status = EPIPE;
  
@@ -348,7 +347,7 @@
 -		
 -		usbd_set_interface(sc->sc_iface, 0);
 +
-+		usb2_set_alt_interface_index(sc->udev, sc->sc_iface_index, 0);
++		usbd_set_alt_interface_index(sc->udev, sc->sc_iface_index, 0);
 +
  		pwc_set_leds(sc,0,0);
  		
@@ -371,6 +370,15 @@
  	if (sc->error_status)
  		return sc->error_status;
  
+@@ -565,7 +515,7 @@
+ 	if(count + sc->image_read_pos > bytes_to_read)
+ 		count = bytes_to_read - sc->image_read_pos;
+ 	
+-	Trace(TRACE_READ_VERBOSE, "pwc_read: wants: %d bytes, reading: %d bytes\n",uio->uio_resid,count);
++	Trace(TRACE_READ_VERBOSE, "pwc_read: wants: %d bytes, reading: %d bytes\n",(int)uio->uio_resid,count);
+ 
+ 	err = uiomove(sc->images[sc->fill_image].bufmem + sc->image_read_pos,count,uio);
+ 	if(err)
 @@ -583,10 +533,9 @@
  int
  pwc_ioctl(struct cdev *dev, u_long cmd, caddr_t addr, int flag, struct thread *p)
@@ -429,7 +437,7 @@
 -	
 +	int i, err, ret;
 +
-+	usb2_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
++	usbd_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
 +
  	pwc_reset_buffers(sc);
  	
@@ -440,7 +448,7 @@
  
 -	err = usbd_set_interface(sc->sc_iface,sc->valternate);
 -	if(err != USBD_NORMAL_COMPLETION) {
-+	err = usb2_set_alt_interface_index(sc->udev, sc->sc_iface_index, sc->valternate);
++	err = usbd_set_alt_interface_index(sc->udev, sc->sc_iface_index, sc->valternate);
 +	if(err != USB_ERR_NORMAL_COMPLETION) {
  		printf("%s: Failed to set alternate interface to: %d (%d)\n",device_get_nameunit(sc->sc_dev),sc->valternate,err);
  		return -err;
@@ -472,7 +480,7 @@
 -	if(err != USBD_NORMAL_COMPLETION) {
 -		printf("%s: Failed to open videopipe (%d)\n",device_get_nameunit(sc->sc_dev),err);
 +	/* Allocate iso transfers */
-+	if (usb2_transfer_setup(sc->udev, &sc->sc_iface_index, sc->sc_xfer,
++	if (usbd_transfer_setup(sc->udev, &sc->sc_iface_index, sc->sc_xfer,
 +	    pwc_config, MAX_ISO_BUFS, sc, &Giant)) {
 +		printf("%s: Failed to setup USB transfers\n", device_get_nameunit(sc->sc_dev));
  		return -err;
@@ -490,7 +498,7 @@
 -				     pwc_isoc_handler);
 -		
 -		usbd_transfer(sc->sbuf[i].xfer);
-+		usb2_transfer_start(sc->sc_xfer[i]);
++		usbd_transfer_start(sc->sc_xfer[i]);
  	}
  	
  	if(sc->state & PWC_INIT)
@@ -499,7 +507,7 @@
  
  static void
 -pwc_isoc_handler(usbd_xfer_handle xfer, usbd_private_handle addr,usbd_status status)
-+pwc_isoc_rx_callback(struct usb2_xfer *xfer)
++pwc_isoc_rx_callback(struct usb_xfer *xfer, usb_error_t err)
  {
 -   	struct pwc_iso_buf *req = addr;
 -	struct pwc_softc *sc = req->sc;
@@ -517,7 +525,7 @@
 +			xfer->frlengths[i] = xfer->max_frame_size;
 +
 +		xfer->nframes = xfer->max_frame_count;
-+		usb2_start_hardware(xfer);
++		usbd_transfer_submit(xfer);
 +		break;
 +	default:
 +		if (xfer->error != USB_ERR_CANCELLED)
@@ -527,7 +535,7 @@
 +}
 +
 +static void
-+pwc_isoc_handler(struct usb2_xfer *xfer, void *addr)
++pwc_isoc_handler(struct usb_xfer *xfer, void *addr)
 +{
 +	struct pwc_softc *sc = addr;
  	struct pwc_frame_buf *fbuf;
@@ -577,7 +585,7 @@
  				}
  				else {
 -					memcpy(fillptr, iso_buf, flen);
-+					usb2_copy_out(xfer->frbuffers, iso_buf, fillptr, flen);
++					usbd_copy_out(xfer->frbuffers, iso_buf, fillptr, flen);
  					fillptr += flen;
  				}
  			}
@@ -611,7 +619,7 @@
  	int i;
  	Trace(TRACE_MEMORY, "Entering free_buffers(%p).\n", sc);
 +
-+	usb2_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
++	usbd_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
 +
  	if (sc->fbuf != NULL) {
  		for (i = 0; i < sc->pwc_fbufs; i++) {

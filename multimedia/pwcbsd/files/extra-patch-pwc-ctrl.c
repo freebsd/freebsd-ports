@@ -1,11 +1,11 @@
 --- pwc-ctrl.c.orig	2007-07-02 08:54:19.000000000 +0200
-+++ pwc-ctrl.c	2009-05-27 20:22:49.137318240 +0200
++++ pwc-ctrl.c	2009-09-09 10:34:41.000000000 +0200
 @@ -130,7 +130,7 @@
  static void pwc_set_image_buffer_size(struct pwc_softc *pdev);
  
  /****************************************************************************/
 -static int usb_control_msg(usbd_device_handle udev,u_int pipe,u_int8_t request,u_int8_t requesttype,
-+static int usb_control_msg(struct usb2_device *udev,u_int pipe,u_int8_t request,u_int8_t requesttype,
++static int usb_control_msg(struct usb_device *udev,u_int pipe,u_int8_t request,u_int8_t requesttype,
  			   u_int16_t value, u_int16_t index, void *data, u_int16_t size,int timeout)
  {
  	usb_device_request_t req;
@@ -14,7 +14,7 @@
  	USETW(req.wIndex, index);
  	USETW(req.wLength,size);
 -	return  -usbd_do_request(udev, &req, data);
-+	return  -usb2_do_request(udev, NULL, &req, data);
++	return  -usbd_do_request(udev, NULL, &req, data);
  }
 -      
 +
@@ -26,7 +26,7 @@
  		&buf, buflen, 500)
  
 -static int send_video_command(usbd_device_handle udev, int index, void *buf, int buflen)
-+static int send_video_command(struct usb2_device *udev, int index, void *buf, int buflen)
++static int send_video_command(struct usb_device *udev, int index, void *buf, int buflen)
  {
  	return usb_control_msg(udev,
  		0,
