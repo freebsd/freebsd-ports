@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090909:
+  AFFECTS: gstreamer-plugins-bad gstreamer-plugins-good
+  AUTHOR: kwm@FreeBSD.org
+
+  Due to the move of several plugins from gstreamer-plugins-bad to
+  gstreamer-plugins-good, it is necessary to update gstreamer-plugins-bad first:
+
+        portupgrade -R gstreamer-plugins-bad
+
+  or, using portmaster:
+
+        portmaster gstreamer-plugins-bad
+
+  After this step, the normal upgrade procedure can be used.
+
 20090831:
   AFFECTS: users of emulators/linux-systemsimcell
   AUTHOR: stast@bsdportal.ru
