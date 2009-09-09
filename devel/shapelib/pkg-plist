@@ -13,10 +13,12 @@ bin/dbfinfo
 bin/shpcat
 bin/shpdxf
 bin/shpfix
+bin/Shape_PointInPoly
 %%PROJ4%%bin/shpcentrd
 %%PROJ4%%bin/shpdata
 %%PROJ4%%bin/shpinfo
 %%PROJ4%%bin/shpproj
+%%PROJ4%%bin/shpsort
 %%PROJ4%%bin/shpwkb
 include/shapefil.h
 lib/libshp.a
@@ -24,6 +26,10 @@ lib/libshp.la
 lib/libshp.so
 lib/libshp.so.1
 %%PORTDOCS%%%%DOCSDIR%%/dbf_api.html
-%%PORTDOCS%%%%DOCSDIR%%/shapelib.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/manifest.html
+%%PORTDOCS%%%%DOCSDIR%%/release.html
+%%PORTDOCS%%%%DOCSDIR%%/shapelib-tools.html
 %%PORTDOCS%%%%DOCSDIR%%/shp_api.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

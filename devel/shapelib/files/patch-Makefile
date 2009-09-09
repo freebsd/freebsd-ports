@@ -1,11 +1,17 @@
---- Makefile.orig	2003-04-07 21:03:22.000000000 +0800
-+++ Makefile	2008-02-25 13:53:10.000000000 +0800
-@@ -1,10 +1,35 @@
--
--#LINKOPT	=	/usr/local/lib/libdbmalloc.a
--CFLAGS	=	-g
+--- Makefile.orig	2007-12-14 04:27:13.000000000 +0800
++++ Makefile	2009-09-06 05:40:38.000000000 +0800
+@@ -1,7 +1,7 @@
+ 
+-#LINKOPT	=	/usr/local/lib/libdbmalloc.a 
+-#LINKOPT = 	/usr/local/lib/cpl.a
+-CFLAGS	=	-g -Wall
 +#LINKOPT	=	%%PREFIX%%/lib/libdbmalloc.a
-+CFLAGS	+=	-g
++#LINKOPT = 	%%PREFIX%%/lib/cpl.a
++CFLAGS	+=	-g -Wall
+ #CFLAGS  =       -g -DUSE_CPL
+ INSTALL = /usr/bin/install
+ LD = /usr/bin/ld
+@@ -9,7 +9,33 @@
  
  default:	all
  
@@ -40,14 +46,14 @@
  
  shpopen.o:	shpopen.c shapefil.h
  	$(CC) $(CFLAGS) -c shpopen.c
-@@ -92,51 +117,18 @@
+@@ -100,51 +126,19 @@
  
  
  # -----------------------------------------------------------------------------
 -# The following is contributed by Jan-Oliver Wagner, and should allow for
 -# creating shared libraries on most platforms with gcc, and libtool installed.
 +# A truly insane amount of hackery to make things actually work with
-+# libtool-1.5.x -- you'd not believe the garbage that was here before.
++# libtool-2.2.x -- you'd not believe the garbage that was here before.
  
 -SHPLIB_VERSION=1.2.9
 -LIBSHP_VERSION=1.0.1 # still once to be changed manually (see for 1:1:0), sorry
@@ -73,7 +79,7 @@
 -	rm -fr .libs/libshp.la .libs/libshp.* .libs/libshp.*
 -	rm -fr .libs/libshp.lax
 -	mkdir .libs/libshp.lax
--	/usr/bin/ld -G -h libshp.so.1 -o .libs/libshp.so.$(LIBSHP_VERSION)  shpopen.lo shptree.lo dbfopen.lo  -lc
+-	$(LD) -G -h libshp.so.1 -o .libs/libshp.so.$(LIBSHP_VERSION)  shpopen.lo shptree.lo dbfopen.lo  -lc
 -
 -	(cd .libs && rm -f libshp.so.1 && ln -s libshp.so.$(LIBSHP_VERSION) libshp.so.1)
 -	(cd .libs && rm -f libshp.so && ln -s libshp.so.$(LIBSHP_VERSION) libshp.so)
@@ -84,21 +90,22 @@
 +	%%LIBTOOL%% --mode=compile --tag=CXX $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1 -I. -I%%PREFIX%%/include $(CFLAGS) -c shpopen.c
 +	%%LIBTOOL%% --mode=compile --tag=CXX $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1 -I. -I%%PREFIX%%/include $(CFLAGS) -c shptree.c
 +	%%LIBTOOL%% --mode=compile --tag=CXX $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1 -I. -I%%PREFIX%%/include $(CFLAGS) -c dbfopen.c
-+	%%LIBTOOL%% --mode=link --tag=CXX $(CC) $(CFLAGS) -o libshp.la -rpath %%PREFIX%%/lib -version-info 1:1:0 shpopen.lo shptree.lo dbfopen.lo
++	%%LIBTOOL%% --mode=compile --tag=CXX $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1 -I. -I%%PREFIX%%/include $(CFLAGS) -c safileio.c
++	%%LIBTOOL%% --mode=link --tag=CXX $(CC) $(CFLAGS) -o libshp.la -rpath %%PREFIX%%/lib -version-info 1:1:0 shpopen.lo shptree.lo dbfopen.lo safileio.lo
  
  lib_install:
 -	cp .libs/libshp.la .libs/libshp.lai
 -	/bin/sh ./mkinstalldirs /usr/local/lib
--	/bin/sh ./libtool  --mode=install /usr/bin/install -c libshp.la /usr/local/lib/libshp.la
--	/usr/bin/install -c .libs/libshp.so.$(LIBSHP_VERSION) /usr/local/lib/libshp.so.$(LIBSHP_VERSION)
+-	/bin/sh ./libtool  --mode=install $(INSTALL) -c libshp.la /usr/local/lib/libshp.la
+-	$(INSTALL) -c .libs/libshp.so.$(LIBSHP_VERSION) /usr/local/lib/libshp.so.$(LIBSHP_VERSION)
 -	(cd /usr/local/lib && rm -f libshp.so.1 && ln -s libshp.so.$(LIBSHP_VERSION) libshp.so.1)
 -	(cd /usr/local/lib && rm -f libshp.so && ln -s libshp.so.$(LIBSHP_VERSION) libshp.so)
 -	chmod +x /usr/local/lib/libshp.so.$(LIBSHP_VERSION)
--	/usr/bin/install -c .libs/libshp.la /usr/local/lib/libshp.la
--	/usr/bin/install -c .libs/libshp.a /usr/local/lib/libshp.a
+-	$(INSTALL) -c .libs/libshp.la /usr/local/lib/libshp.la
+-	$(INSTALL) -c .libs/libshp.a /usr/local/lib/libshp.a
 -	ranlib /usr/local/lib/libshp.a
 -	chmod 644 /usr/local/lib/libshp.a
 -	/bin/sh ./mkinstalldirs /usr/local/include/libshp
--	/usr/bin/install -c -m 644 shapefil.h /usr/local/include/libshp/shapefil.h
+-	$(INSTALL) -c -m 644 shapefil.h /usr/local/include/libshp/shapefil.h
 +	%%LIBTOOL%% --mode=install %%INSTALL%% -c libshp.la %%PREFIX%%/lib/libshp.la
 +	%%INSTALL%% -c -m 644 shapefil.h %%PREFIX%%/include/shapefil.h
