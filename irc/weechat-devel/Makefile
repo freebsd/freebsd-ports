@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.2.6.3
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	irc
-MASTER_SITES=	http://weechat.flashtux.org/download/
+MASTER_SITES=	http://weechat.org/files/src/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A lightweight and user friendly ncurse based IRC client
@@ -19,12 +18,14 @@ USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:262
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-lua
+CONFIGURE_ARGS=	--disable-lua --disable-doc
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"\
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 USE_PYTHON=	yes
 USE_RUBY=	yes
 USE_GETTEXT=	yes
-
-MAN1=	weechat-curses.1
+WANT_GNOME=	yes
+USE_GNOME=	gnomehack
 
 OPTIONS=	RUBY "Ruby scripting support." off \
 		PYTHON "Python scripting support." off \
@@ -75,6 +76,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if !defined(WITHOUT_RUBY)
+BROKEN=		Ruby support is broken
 CONFIGURE_ARGS+=	--enable-ruby
 PLIST_SUB+=	RUBY=""
 .else

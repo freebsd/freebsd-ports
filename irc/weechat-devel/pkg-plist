@@ -1,45 +1,48 @@
 bin/weechat-curses
-%%ASPELL%%lib/weechat/plugins/aspell.so.0
-%%ASPELL%%lib/weechat/plugins/aspell.so
-%%ASPELL%%lib/weechat/plugins/aspell.la
+include/weechat/weechat-plugin.h
+lib/weechat/plugins/alias.a
+lib/weechat/plugins/alias.la
+lib/weechat/plugins/alias.so
+lib/weechat/plugins/alias.so.0
 %%ASPELL%%lib/weechat/plugins/aspell.a
-%%CHARSET%%lib/weechat/plugins/charset.so.0
-%%CHARSET%%lib/weechat/plugins/charset.so
-%%CHARSET%%lib/weechat/plugins/charset.la
+%%ASPELL%%lib/weechat/plugins/aspell.la
+%%ASPELL%%lib/weechat/plugins/aspell.so
+%%ASPELL%%lib/weechat/plugins/aspell.so.0
 %%CHARSET%%lib/weechat/plugins/charset.a
-%%DOCSDIR%%/html/en/weechat-doc.css
-%%DOCSDIR%%/html/fr/weechat-doc.css
-%%DOCSDIR%%/html/de/weechat-doc.css
-%%DOCSDIR%%/weechat_quickstart.en.txt
-%%DOCSDIR%%/weechat_quickstart.fr.txt
-%%DOCSDIR%%/weechat_quickstart.de.txt
-%%DOCSDIR%%/weechat_quickstart.ru.txt
-%%DOCSDIR%%/weechat_quickstart.pl.txt
-%%DOCSDIR%%/weechat_quickstart.cs.txt
-%%DOCSDIR%%/weechat_quickstart.sco.txt
-%%DOCSDIR%%/weechat_quickstart.sv.txt
+%%CHARSET%%lib/weechat/plugins/charset.la
+%%CHARSET%%lib/weechat/plugins/charset.so
+%%CHARSET%%lib/weechat/plugins/charset.so.0
+lib/weechat/plugins/fifo.a
+lib/weechat/plugins/fifo.la
+lib/weechat/plugins/fifo.so
+lib/weechat/plugins/fifo.so.0
+lib/weechat/plugins/irc.a
+lib/weechat/plugins/irc.la
+lib/weechat/plugins/irc.so
+lib/weechat/plugins/irc.so.0
+lib/weechat/plugins/logger.a
+lib/weechat/plugins/logger.la
+lib/weechat/plugins/logger.so
+lib/weechat/plugins/logger.so.0
 %%NLS%%share/locale/de/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/es/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/weechat.mo
-%%PYTHON%%lib/weechat/plugins/python.so.0
-%%PYTHON%%lib/weechat/plugins/python.so
-%%PYTHON%%lib/weechat/plugins/python.la
 %%PYTHON%%lib/weechat/plugins/python.a
-%%PERL%%lib/weechat/plugins/perl.so.0
-%%PERL%%lib/weechat/plugins/perl.so
-%%PERL%%lib/weechat/plugins/perl.la
+%%PYTHON%%lib/weechat/plugins/python.la
+%%PYTHON%%lib/weechat/plugins/python.so
+%%PYTHON%%lib/weechat/plugins/python.so.0
 %%PERL%%lib/weechat/plugins/perl.a
-%%RUBY%%lib/weechat/plugins/ruby.so.0
-%%RUBY%%lib/weechat/plugins/ruby.so
-%%RUBY%%lib/weechat/plugins/ruby.la
-%%RUBY%%lib/weechat/plugins/ruby.a
-@dirrmtry %%DOCSDIR%%/html/fr
-@dirrmtry %%DOCSDIR%%/html/en
-@dirrmtry %%DOCSDIR%%/html/de
-@dirrmtry %%DOCSDIR%%/html
-@dirrmtry %%DOCSDIR%%
+%%PERL%%lib/weechat/plugins/perl.la
+%%PERL%%lib/weechat/plugins/perl.so
+%%PERL%%lib/weechat/plugins/perl.so.0
+lib/weechat/plugins/xfer.a
+lib/weechat/plugins/xfer.la
+lib/weechat/plugins/xfer.so
+lib/weechat/plugins/xfer.so.0
+libdata/pkgconfig/weechat.pc
 @dirrmtry lib/weechat/plugins
 @dirrmtry lib/weechat
+@dirrm include/weechat
