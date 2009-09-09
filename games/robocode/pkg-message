@@ -1,0 +1,10 @@
+
+	*****************************************************
+	This port requires a java compiler.  By default, 
+	robocode will look for the IBM Jikes compiler.
+
+	You can override this in the robocode compiler
+	preferences menu: 
+
+	Robot -> Editor -> Compiler -> Options -> Preferences
+	*****************************************************

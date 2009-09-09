@@ -8,9 +8,11 @@ bin/robocode
 %%DATADIR%%/javadoc/help-doc.html
 %%DATADIR%%/javadoc/index-all.html
 %%DATADIR%%/javadoc/index.html
+%%DATADIR%%/javadoc/options
 %%DATADIR%%/javadoc/overview-frame.html
 %%DATADIR%%/javadoc/overview-summary.html
 %%DATADIR%%/javadoc/overview-tree.html
+%%DATADIR%%/javadoc/packages
 %%DATADIR%%/javadoc/package-list
 %%DATADIR%%/javadoc/resources/inherit.gif
 %%DATADIR%%/javadoc/robocode/AdvancedRobot.html
@@ -48,6 +50,7 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/MoveCompleteCondition.html
 %%DATADIR%%/javadoc/robocode/PaintEvent.html
 %%DATADIR%%/javadoc/robocode/RadarTurnCompleteCondition.html
+%%DATADIR%%/javadoc/robocode/RateControlRobot.html
 %%DATADIR%%/javadoc/robocode/Robocode.html
 %%DATADIR%%/javadoc/robocode/RobocodeFileOutputStream.html
 %%DATADIR%%/javadoc/robocode/RobocodeFileWriter.html
@@ -63,6 +66,8 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/WinEvent.html
 %%DATADIR%%/javadoc/robocode/control/BattleSpecification.html
 %%DATADIR%%/javadoc/robocode/control/BattlefieldSpecification.html
+%%DATADIR%%/javadoc/robocode/control/IRobocodeEngine.html
+%%DATADIR%%/javadoc/robocode/control/RandomFactory.html
 %%DATADIR%%/javadoc/robocode/control/RobocodeEngine.html
 %%DATADIR%%/javadoc/robocode/control/RobocodeListener.html
 %%DATADIR%%/javadoc/robocode/control/RobotResults.html
@@ -129,9 +134,16 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/util/package-tree.html
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
-%%DATADIR%%/libs/cachecleaner.jar
-%%DATADIR%%/libs/codesize.jar
+%%DATADIR%%/libs/codesize-1.1.jar
+%%DATADIR%%/libs/picocontainer-2.6.jar
 %%DATADIR%%/libs/robocode.jar
+%%DATADIR%%/libs/robocode.battle-1.7.1.3.jar
+%%DATADIR%%/libs/robocode.core-1.7.1.3.jar
+%%DATADIR%%/libs/robocode.host-1.7.1.3.jar
+%%DATADIR%%/libs/robocode.repository-1.7.1.3.jar
+%%DATADIR%%/libs/robocode.sound-1.7.1.3.jar
+%%DATADIR%%/libs/robocode.ui-1.7.1.3.jar
+%%DATADIR%%/libs/robocode.ui.editor-1.7.1.3.jar
 %%DATADIR%%/libs/roborumble.jar
 %%DATADIR%%/license/cpl-v10.html
 %%DATADIR%%/robocode.ico
@@ -160,7 +172,8 @@ bin/robocode
 %%DATADIR%%/robots/sample/RamFire.java
 %%DATADIR%%/robots/sample/RamFire.properties
 %%DATADIR%%/robots/sample/SittingDuck.class
-%%DATADIR%%/robots/sample/SittingDuck.html
+%%DATADIR%%/robots/sample/SittingDuck.data
+%%DATADIR%%/robots/sample/SittingDuck.data/count.dat
 %%DATADIR%%/robots/sample/SittingDuck.java
 %%DATADIR%%/robots/sample/SittingDuck.properties
 %%DATADIR%%/robots/sample/SpinBot.class
@@ -176,6 +189,9 @@ bin/robocode
 %%DATADIR%%/robots/sample/Tracker.class
 %%DATADIR%%/robots/sample/Tracker.java
 %%DATADIR%%/robots/sample/Tracker.properties
+%%DATADIR%%/robots/sample/VelociRobot.class
+%%DATADIR%%/robots/sample/VelociRobot.java
+%%DATADIR%%/robots/sample/VelociRobot.properties
 %%DATADIR%%/robots/sample/Walls.class
 %%DATADIR%%/robots/sample/Walls.java
 %%DATADIR%%/robots/sample/Walls.properties
@@ -195,7 +211,9 @@ bin/robocode
 %%DATADIR%%/robots/sampleex/ProxyOfGreyEminence.java
 %%DATADIR%%/robots/sampleex/ProxyOfGreyEminence.properties
 %%DATADIR%%/robots/sampleex/RegullarMonk.class
+%%DATADIR%%/robots/sampleex/RegullarMonk.java
 %%DATADIR%%/robots/sampleex/Slave.class
+%%DATADIR%%/robots/sampleex/Slave.java
 %%DATADIR%%/robots/sampleteam/MyFirstDroid.class
 %%DATADIR%%/robots/sampleteam/MyFirstDroid.java
 %%DATADIR%%/robots/sampleteam/MyFirstLeader.class
@@ -209,6 +227,7 @@ bin/robocode
 %%DATADIR%%/templates/newrobot.tpt
 %%DATADIR%%/versions.txt
 @dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/robots/sample/SittingDuck.data
 @dirrm %%DATADIR%%/robots/sampleteam
 @dirrm %%DATADIR%%/robots/sampleex
 @dirrm %%DATADIR%%/robots/sample
@@ -224,5 +243,9 @@ bin/robocode
 @dirrm %%DATADIR%%/javadoc/robocode
 @dirrm %%DATADIR%%/javadoc/resources
 @dirrm %%DATADIR%%/javadoc
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/compilers
 @dirrm %%DATADIR%%/battles
 @dirrm %%DATADIR%%
+@exec mkdir -p %D/%%DATADIR%%/config
+@exec mkdir -p %D/%%DATADIR%%/compilers
