@@ -16,6 +16,7 @@ cyrus/bin/ctl_deliver
 cyrus/bin/ctl_mboxlist
 cyrus/bin/cvt_cyrusdb
 cyrus/bin/cyr_dbtool
+cyrus/bin/cyr_df
 cyrus/bin/cyr_expire
 cyrus/bin/cyr_synclog
 cyrus/bin/cyrdump
