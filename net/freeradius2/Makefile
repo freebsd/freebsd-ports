@@ -51,6 +51,8 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 		FIREBIRD	"With Firebird database support (EXPERIMENTAL)" off \
 		PERL		"With Perl support" on \
 		PYTHON		"With Python support" on \
+		OCI8		"With Oracle support (currently experimental)" off \
+		DEVELOPER	"With developer support" off \
 		RUBY		"With Ruby support (EXPERIMENTAL)" off \
 		DHCP		"With DHCP support (EXPERIMENTAL)" off \
 		EXPERIMENTAL	"Build experimental modules" off
@@ -201,6 +203,23 @@ PLIST_SUB+=	SMB="@comment "
 WITH_EXPERIMENTAL=	yes
 .endif
 
+.ifdef(WITH_DEVELOPER)
+CONFIGURE_ARGS+=	--enable-developer
+.endif
+
+# Oracle support is experimental under FreeBSD
+.ifdef(WITH_OCI8)
+EXTRA_PATCHES+=	files/extra-patch-exec.c
+CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}"
+ORACLE_HOME?=	${LOCALBASE}/oracle8-client
+BUILD_DEPENDS+=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
+CONFIGURE_ARGS+=--with-oracle-home-dir=${ORACLE_HOME}/rdbms/demo
+PLIST_SUB+=	OCI8=""
+.else
+CONFIGURE_ARGS+=--without-rlm_sql_oracle
+PLIST_SUB+=	OCI8="@comment "
+.endif
+
 .ifdef(WITH_EXPERIMENTAL)
 CONFIGURE_ARGS+=--with-experimental-modules
 PLIST_SUB+=	EXPM=""
@@ -255,7 +274,6 @@ CONFIGURE_ARGS+=--without-rlm_eap_ikev2 \
 		--without-rlm_opendirectory \
 		--without-rlm_sql_db2 \
 		--without-rlm_sql_iodbc \
-		--without-rlm_sql_oracle \
 		--without-rlm_sql_sqlite \
 		--without-rlm_sql_sybase \
 		--with-vmps

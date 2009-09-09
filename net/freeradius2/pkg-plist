@@ -429,6 +429,11 @@ bin/smbencrypt
 %%MYSQL%%%%LIBDIR%%/rlm_sql_mysql.a
 %%MYSQL%%%%LIBDIR%%/rlm_sql_mysql.la
 %%MYSQL%%%%LIBDIR%%/rlm_sql_mysql.so
+%%OCI8%%%%LIBDIR%%/rlm_sql_oracle-%%PORTVERSION%%.la
+%%OCI8%%%%LIBDIR%%/rlm_sql_oracle-%%PORTVERSION%%.so
+%%OCI8%%%%LIBDIR%%/rlm_sql_oracle.a
+%%OCI8%%%%LIBDIR%%/rlm_sql_oracle.la
+%%OCI8%%%%LIBDIR%%/rlm_sql_oracle.so
 %%PGSQL%%%%LIBDIR%%/rlm_sql_postgresql-%%PORTVERSION%%.la
 %%PGSQL%%%%LIBDIR%%/rlm_sql_postgresql-%%PORTVERSION%%.so
 %%PGSQL%%%%LIBDIR%%/rlm_sql_postgresql.a
