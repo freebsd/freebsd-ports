@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.franken.de/pub/crypt/misc/ \
 		http://ftp.tugraz.at/mirror/crypto/programs/hpack/
 DISTNAME=	hpack79src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Multi-System Archiver with open keys PGP-based security
 
 NO_WRKSUBDIR=	yes
@@ -27,6 +27,6 @@ post-patch:
 .endfor
 
 post-install:
-	@${CP} ${WRKSRC}/docs/hpack.cfg ${PREFIX}/etc/hpack.cfg.dist
+	@${INSTALL_DATA} ${WRKSRC}/docs/hpack.cfg ${PREFIX}/etc/hpack.cfg.dist
 
 .include <bsd.port.mk>
