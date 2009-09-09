@@ -1,0 +1,8 @@
+The lockfile module exports a FileLock class which provides a simple
+API for locking files. Unlike the Windows msvcrt.locking function, the
+Unix fcntl.flock, fcntl.lockf and the deprecated posixfile module, the
+API is identical across both Unix (including Linux and Mac) and Windows
+platforms. The lock mechanism relies on the atomic nature of the link
+(on Unix) and mkdir (on Windows) system calls.
+
+WWW:	http://pypi.python.org/pypi/lockfile/
