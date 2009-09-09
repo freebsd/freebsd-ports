@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.04
+PORTVERSION=	0.6.05
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://code.launchpad.net/duplicity/0.6-series/0.6.05/+download/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	peter.schuller@infidyne.com
@@ -18,6 +17,9 @@ COMMENT=	Untrusted backup using rsync algorithm (development/unstable version)
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		ncftp>=3.2.2:${PORTSDIR}/ftp/ncftp3
+
+# fetch claims "Moved temporarily" without this - why? (inspired by deskutils/gtg)
+FETCH_ARGS=	-pRr
 
 CONFLICTS=	duplicity-[0-9]*
 
