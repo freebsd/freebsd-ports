@@ -1,0 +1,14 @@
+************************************************************************
+ 
+Read the notes in the barnyard2.conf file for how to configure 
+%%PREFIX%%/etc/barnyard2.conf after installation.  For addtional information
+see the Securixlive FAQ at http://www.securixlive.com/barnyard2/faq.php.
+
+In order to enable barnyard2 to start on boot, you must edit /etc/rc.conf 
+with the appropriate flags, etc.  See the FreeBSD Handbook for syntax:
+http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/configtuning-rcng.html
+
+For the various options available, type % barnyard2 -h after install or read
+the options in the startup script - in %%PREFIX%%/etc/rc.d.
+
+************************************************************************

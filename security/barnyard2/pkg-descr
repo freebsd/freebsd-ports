@@ -1,0 +1,24 @@
+Barnyard is a critical tool for the parsing of Snort's unified binary files,
+processing and on-forwarding to a variety of output plugins. Unfortunately
+it has not seen an updated in over 4 years and is not going to be maintained
+by the original developers. With the new version of the unified format
+(ie. unified2) arriving we need something to bridge this gap.
+
+The SXL team love barnyard. So much so that we want it to stay and have been
+tinkering around with the code to give it a breath of new life. Here is what
+we have achieved to far for this reinvigorated code base:
+
+    * Parsing of the new unified2 log files.
+    * Maintaining majority of the command syntax of barnyard.
+    * Addressed all associated bug reports and feature requests arising since
+		barnyard-0.2.0.
+    * Completely rewritten code based on the GPLv2 Snort making it entirely
+		GPLv2.
+
+This is an effort to fuse the awesome work of Snort and the original concept
+of barnyard giving it a fresh update along the way. We've come a long way so
+far and have a very stable build that we've integrated into our NSMnow
+framework.  If you have any feature requests, bugs or gripes then send them
+our way.
+
+WWW: http://www.securixlive.com/barnyard2/

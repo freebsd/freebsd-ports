@@ -1,0 +1,4 @@
+bin/barnyard2
+@unexec if [ -f %D/etc/barnyard2.conf ] && cmp -s %D/etc/barnyard2.conf %D/etc/barnyard2.conf-sample; then rm -f %D/etc/barnyard2.conf; fi
+etc/barnyard2.conf-sample
+@exec if [ ! -f %D/etc/barnyard2.conf ] ; then cp -p %D/%F %B/barnyard2.conf; fi
