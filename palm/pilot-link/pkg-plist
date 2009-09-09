@@ -74,6 +74,9 @@ include/pi-util.h
 include/pi-veo.h
 include/pi-versamail.h
 include/pi-version.h
+include/pi-blob.h
+include/pi-calendar.h
+include/pi-location.h
 lib/libpisock.a
 lib/libpisock.so
 lib/libpisock.so.9
