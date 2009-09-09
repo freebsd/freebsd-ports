@@ -39,6 +39,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(datadir)/games|$$(datadir)|g; \
 		 s|$$(prefix)/games|$$(prefix)/bin|g'
+	@${REINPLACE_CMD} -e 's|PREFIX/games|PREFIX/bin|' \
+		${WRKSRC}/data/supertuxkart_desktop.template
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_pkgdataDATA||' \
 		${WRKSRC}/Makefile.in
