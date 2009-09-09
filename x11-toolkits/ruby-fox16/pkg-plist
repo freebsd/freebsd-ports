@@ -1,3 +1,4 @@
+%%RUBY_SITELIBDIR%%/fox16/accel_table.rb
 %%RUBY_SITELIBDIR%%/fox16/aliases.rb
 %%RUBY_SITELIBDIR%%/fox16/bitmapview.rb
 %%RUBY_SITELIBDIR%%/fox16/calendar.rb
