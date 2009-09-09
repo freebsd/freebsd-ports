@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Model-DBIC-Schema
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	\
 	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 	p5-Moose-Autobox>=0:${PORTSDIR}/devel/p5-Moose-Autobox \
 	p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
-	p5-DBIx-Class>=0.08107:${PORTSDIR}/databases/p5-DBIx-Class \
+	p5-DBIx-Class>=0.08111:${PORTSDIR}/databases/p5-DBIx-Class \
 	p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
