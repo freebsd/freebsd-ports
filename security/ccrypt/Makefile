@@ -3,23 +3,23 @@
 # Date created:			Feb 7, 2002
 # Whom:				ijliao
 #
+
 # $FreeBSD$
 #
 
 PORTNAME=	ccrypt
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	security
 MASTER_SITES=	SF \
-				http://www.mathstat.dal.ca/~selinger/ccrypt/download/
-
+		http://www.mathstat.dal.ca/~selinger/ccrypt/download/
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	A command-line utility for encrypting and decrypting files and streams
 
 .if !defined(WITHOUT_NLS)
-USE_GNOME=		intltool
+USE_GNOME=	intltool
 USE_GETTEXT=	yes
-PLIST_SUB+=		NLS=""
+PLIST_SUB+=	NLS=""
 .else
 USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS+=	--disable-nls

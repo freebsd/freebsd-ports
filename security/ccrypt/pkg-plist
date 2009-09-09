@@ -8,4 +8,3 @@ bin/ccrypt
 %%PORTDOCS%%share/doc/ccrypt/ccrypt.html
 %%PORTDOCS%%share/doc/ccrypt/cypfaq01.txt
 %%PORTDOCS%%@dirrm share/doc/ccrypt
-
