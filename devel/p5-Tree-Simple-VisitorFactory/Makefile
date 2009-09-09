@@ -7,6 +7,7 @@
 
 PORTNAME=	Tree-Simple-VisitorFactory
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of visitor objects for traversing Tree::Simple hierarchies
 
-BUILD_DEPENDS=	${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+BUILD_DEPENDS=	${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=		Tree::Simple::Visitor::BreadthFirstTraversal.3 \
@@ -40,4 +39,10 @@ MAN3=		Tree::Simple::Visitor::BreadthFirstTraversal.3 \
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+BUILD_DEPENDS+=	p5-Scalar-Util>=1.10:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
