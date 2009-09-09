@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08109
-PORTREVISION=	1
+PORTVERSION=	0.08111
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,6 +38,7 @@ CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
 MAN1=	dbicadmin.1
 MAN3=	DBIx::Class.3 \
 	DBIx::Class::AccessorGroup.3 \
+	DBIx::Class::Storage::DBI::AutoCast.3 \
 	DBIx::Class::CDBICompat.3 \
 	DBIx::Class::CDBICompat::AbstractSearch.3 \
 	DBIx::Class::CDBICompat::ColumnsAsHash.3 \

@@ -90,6 +90,7 @@
 %%SITE_PERL%%/DBIx/Class/Storage.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/AmbiguousGlob.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/AutoCast.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/MSSQL.pm
