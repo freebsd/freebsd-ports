@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pilot-link
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
 PORTEPOCH=	1
 CATEGORIES=	palm comms
-MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
-		http://katerina.frederic.k12.wi.us/mirror/pilot-link/
+MASTER_SITES=	http://downloads.pilot-link.org/ \
+		ftp://ftp.estpak.ee/pub/archlinux/sources/
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Suite of tools used to connect and sync your Palm handled
