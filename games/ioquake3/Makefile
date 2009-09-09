@@ -5,38 +5,45 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ioquake3
-DISTVERSION=	1.34-rc3
-PORTREVISION=	7
+PORTNAME?=	ioquake3
+DISTVERSION?=	1.36
 CATEGORIES=	games
-MASTER_SITES=	http://ioquake3.org/files/
-DISTNAME=	${PORTNAME}_${DISTVERSION}
+MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 
-MAINTAINER=	alepulver@FreeBSD.org
-COMMENT=	Cleaned-up and enhaced version of Quake 3
+MAINTAINER?=	kamikaze@bsdforen.de
+COMMENT?=	Cleaned-up and enhaced version of Quake 3
 
-USE_BZIP2=	yes
+USE_ZIP?=	yes
+# Allow slave ports to turn off zip.
+.if ${USE_ZIP} == "no"
+.undef USE_ZIP
+.endif
 USE_GMAKE=	yes
 
 OPTIONS=	CLIENT "Build client" on \
-		CELLSHADING "Enable Cell Shading effect" off \
-		GAMELIBS "Build game libraries (when not mandatory)" off \
+		GAMELIBS "Build game libraries (when not mandatory)" on \
 		DEDICATED "Build dedicated server" on \
-		MP3 "Enable MP3 support" off \
-		OPENAL "Enable OpenAL (3D sound) support" off \
-		OPENAL_DLOPEN "Enable dynamic loading of OpenAL" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL_AUDIO "Use SDL for audio" off \
-		SDL_VIDEO "Use SDL for video" off \
 		SMP "Build SMP (threaded) client" on \
-		VORBIS "Enable Ogg Vorbis codec support" off
+		VORBIS "Enable Ogg Vorbis support" on
 
-MAKE_ENV=	DEFAULT_BASEDIR="${Q3DIR}" LIBDIR="${LIBDIR}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+MAKE_ARGS+=	DEFAULT_BASEDIR="${Q3DIR}" \
+		DEFAULT_LIBDIR="${LIBDIR}" \
+		HOMEPATH="/.${PORTNAME}" \
+		ARCH="${LINUX_ARCH}"
+PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" \
+		ARCH="${LINUX_ARCH}" \
+		BINSUFFIX="${BINSUFFIX}"
+ALL_TARGET=	release
+MAKE_JOBS_SAFE=	yes
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
-VM_ARCHS=	amd64 i386 powerpc
+BUILDDIR=	${WRKSRC}/build/release-${OPSYS:L}-${LINUX_ARCH}
+LINUX_ARCH=	${ARCH:C/amd64/x86_64/:C/i386/x86/}
+BINSUFFIX?=
+
+# Make sure TARGET and CFLAGS fit together.
+MACHINE_ARCH=	${ARCH}
+.include <bsd.cpu.mk>
 
 .include <bsd.port.pre.mk>
 
@@ -45,102 +52,59 @@ VM_ARCHS=	amd64 i386 powerpc
 IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .endif
 
-.for i in ${ARCH}
-.   if ${VM_ARCHS:M${i}} != ""
-HAVE_VM_COMPILED=	yes
-.   endif
-.endfor
-
-.if defined(HAVE_VM_COMPILED)
-MAKE_ENV+=	HAVE_VM_COMPILED=true
-.endif
-
-.if defined(WITH_CELLSHADING)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cellshading
-.endif
-
-.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
+.if defined(WITH_CLIENT) || defined(WITH_SMP)
 # OpenAL
-.   if defined(WITH_OPENAL)
 LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
-MAKE_ENV+=	USE_OPENAL=1
-.       if defined(WITH_OPENAL_DLOPEN)
-MAKE_ENV+=	USE_OPENAL_DLOPEN=1
-.       endif
-.   endif
 # SDL
-.   if defined(WITH_SDL_AUDIO)
 USE_SDL=	sdl
-MAKE_ENV+=	USE_SDL_AUDIO=1
-.   endif
-.   if defined(WITH_SDL_VIDEO)
-USE_SDL=	sdl
-MAKE_ENV+=	USE_SDL_VIDEO=1
-.   else
-USE_GL=		yes
-USE_XORG=	xxf86dga
-.   endif
 # Vorbis
-.   if defined(WITH_VORBIS)
+.if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
-MAKE_ENV+=	USE_CODEC_VORBIS=1
-.   endif
+MAKE_ARGS+=	USE_CODEC_VORBIS=1
+.endif
 .endif
 
-.if !defined(WITHOUT_CLIENT)
-MAKE_ENV+=	BUILD_CLIENT=1
+# SMP is only built with CLIENT.
+.if defined(WITH_CLIENT) || defined(WITH_SMP)
+MAKE_ARGS+=	BUILD_CLIENT=1
 PLIST_SUB+=	CLIENT=""
 Q3BIN+=		ioquake3
 .else
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
-MAKE_ENV+=	BUILD_SERVER=1
+.if defined(WITH_DEDICATED)
+MAKE_ARGS+=	BUILD_SERVER=1
 PLIST_SUB+=	DEDICATED=""
 Q3BIN+=		ioq3ded
 .else
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
-MAKE_ENV+=	BUILD_GAME_SO=1
+.if defined(WITH_GAMELIBS)
+MAKE_ARGS+=	BUILD_GAME_SO=1
 PLIST_SUB+=	GAMELIBS=""
 .else
 PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
-.if defined(WITH_MP3)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mp3
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
-MAKE_ENV+=	USE_CODEC_MP3=1
-.endif
-
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=1
-.endif
-
-.if !defined(WITHOUT_SMP)
-MAKE_ENV+=	BUILD_CLIENT_SMP=1
+.if defined(WITH_SMP)
+MAKE_ARGS+=	BUILD_CLIENT_SMP=1
 PLIST_SUB+=	SMP=""
 Q3BIN+=		ioquake3-smp
 .else
 PLIST_SUB+=	SMP="@comment "
 .endif
 
-post-patch:
-# There are new variables in the config files, so keep them in another dir.
-	@${REINPLACE_CMD} -E 's|/\.q3a|/.${PORTNAME}|' \
-		${WRKSRC}/code/unix/unix_shared.c
-
 do-install:
 .for bin in ${Q3BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILDDIR}/${bin}.${LINUX_ARCH} \
+		${PREFIX}/bin/${bin}${BINSUFFIX}
 .endfor
-.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
+.if defined(WITH_GAMELIBS)
 .for dir in baseq3 missionpack
 	${MKDIR} ${LIBDIR}/${dir}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${dir}/*.so ${LIBDIR}/${dir}
+	${INSTALL_PROGRAM} ${BUILDDIR}/${dir}/*.so ${LIBDIR}/${dir}
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
