@@ -1,0 +1,11 @@
+--- configure.orig	2009-02-09 06:07:02.000000000 +0100
++++ configure	2009-02-09 06:09:27.000000000 +0100
+@@ -4113,7 +4113,7 @@
+ 
+ 
+ case "$host_cpu" in
+-	x86_64|amd64)
++	x86_64|amd64|ia64)
+ 		{ echo "$as_me:$LINENO: result: SSE2_on_x86_64 is enabled" >&5
+ echo "${ECHO_T}SSE2_on_x86_64 is enabled" >&6; }
+ 		 if true; then

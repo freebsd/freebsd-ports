@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	par2cmdline-tbb
-PORTVERSION=	20080420
+PORTVERSION=	20090203
 CATEGORIES=	archivers
 MASTER_SITES=	http://chuchusoft.com/par2_tbb/
 DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
@@ -14,22 +14,21 @@ DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Tools for using Parity v2 Archive files (tbb version)
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libtbb.so:${PORTSDIR}/devel/tbb \
-		${NONEXISTENT}:${PORTSDIR}/devel/tbb:extract
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtbb.so:${PORTSDIR}/devel/tbb
 
+ONLY_FOR_ARCHS=	i386 amd64 ia64
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262
+USE_GCC=	4.2+
 
 PORTDOCS=	README
 CONFLICTS=	par2cmdline-[0-9]*
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
 
-TBBWRKSRC=	`(cd ${PORTSDIR}/devel/tbb && ${MAKE} -V WRKSRC)`
-
-post-configure:
-	@${CP} ${TBBWRKSRC}/src/tbb/tbb_misc.h ${WRKSRC}/tbb_misc.h
-	@${REINPLACE_CMD} -e 's|#include "tbb/tbb_misc\.h"|#include "tbb_misc.h"|' ${WRKSRC}/par2cmdline.h
+post-extract:
+	@${CHMOD} u+x ${WRKSRC}/install-sh
 
 post-install:
 .if !defined(NOPORTDOCS)
