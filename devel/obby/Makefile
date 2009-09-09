@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/ \
 		http://www.atarininja.org/~wxs/distfiles/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for synced document buffers
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \

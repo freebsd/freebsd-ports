@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/ \
 		http://www.atarininja.org/~wxs/distfiles/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free collaborative editor
 
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \

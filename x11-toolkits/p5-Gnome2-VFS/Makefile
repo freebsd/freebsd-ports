@@ -13,7 +13,7 @@ CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	SF/gtk2-perl/Gnome2_VFS/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to use the GNOME Virtual File System library from Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \

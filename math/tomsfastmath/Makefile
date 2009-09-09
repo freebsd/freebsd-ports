@@ -14,7 +14,7 @@ MASTER_SITES=	http://libtom.org/files/ \
 MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	tfm-${PORTVERSION}
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable fixed precision math library for fast exponentiations
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

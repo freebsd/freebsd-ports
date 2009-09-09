@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skamphausen.de/software/cdargs/ \
 		http://www.atarininja.org/~wxs/distfiles/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Navigate the filesystem using a menu interface or a bookmark system
 
 GNU_CONFIGURE=	yes
