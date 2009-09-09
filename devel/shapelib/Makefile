@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	shapelib
-PORTVERSION=	1.2.10
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
-MASTER_SITES=	http://dl.maptools.org/dl/shapelib/ \
+MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		http://sunpoet.net/distfiles/
+DISTNAME=	${PORTNAME}-${SHAPELIB_VER}
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
 USE_AUTOTOOLS=	libtool:22:env
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${SHAPELIB_VER}
 
 OPTIONS=	PROJ4 "Cartographic Projections library" off
+
+SHAPELIB_VER=	${PORTVERSION}a2
 
 .include <bsd.port.pre.mk>
 
@@ -49,7 +52,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/web/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
