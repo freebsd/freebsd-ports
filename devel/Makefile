@@ -2522,6 +2522,7 @@
     SUBDIR += py-testgears
     SUBDIR += py-testoob
     SUBDIR += py-thrift
+    SUBDIR += py-timelib
     SUBDIR += py-trace2html
     SUBDIR += py-traits
     SUBDIR += py-transaction
