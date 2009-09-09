@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	watch
-DISTVERSION=	3.2.7
+DISTVERSION=	3.2.8
 CATEGORIES=	misc
 MASTER_SITES=	http://procps.sourceforge.net/ \
 		CRITICAL
