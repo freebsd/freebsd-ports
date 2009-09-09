@@ -1,8 +1,0 @@
---- build/unix/mozilla-xpcom.pc.in.orig	Thu Jun 24 12:23:09 2004
-+++ build/unix/mozilla-xpcom.pc.in	Thu Jun 24 12:23:18 2004
-@@ -8,4 +8,4 @@
- Version: %MOZILLA_VERSION%
- Requires: mozilla-nspr = %MOZILLA_VERSION%
- Libs: -L${libdir} -lxpcom
--Cflags: -I${includedir}/xpcom -I${includedir}/string
-+Cflags: -I${includedir}/xpcom -I${includedir}/string -I${includedir}
