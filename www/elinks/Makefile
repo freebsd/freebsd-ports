@@ -121,8 +121,8 @@ CONFIGURE_ARGS+=	--disable-smb
 .endif
 
 .if defined(WITH_FSP)
-RUN_DEPENDS+=	${LOCALBASE}/lib/libfsp.a:${PORTSDIR}/net/fsplib
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libfsp.a:${PORTSDIR}/net/fsplib
+RUN_DEPENDS+=	${LOCALBASE}/lib/libfsplib.a:${PORTSDIR}/net/fsplib
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libfsplib.a:${PORTSDIR}/net/fsplib
 CONFIGURE_ARGS+=	--enable-fsp
 .else
 CONFIGURE_ARGS+=	--disable-fsp
