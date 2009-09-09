@@ -130,18 +130,19 @@ bin/s9
 %%DATADIR%%/help/display-to-string
 %%DATADIR%%/help/do
 %%DATADIR%%/help/draw-tree
+%%DATADIR%%/help/dump-image
 %%DATADIR%%/help/eof-objectp
 %%DATADIR%%/help/eq
 %%DATADIR%%/help/eqp
 %%DATADIR%%/help/equalp
 %%DATADIR%%/help/eqvp
+%%DATADIR%%/help/error
 %%DATADIR%%/help/evenp
 %%DATADIR%%/help/exact
 %%DATADIR%%/help/exact-to-inexact
 %%DATADIR%%/help/exists
 %%DATADIR%%/help/exp
 %%DATADIR%%/help/expand-macro
-%%DATADIR%%/help/expand-quasiquote
 %%DATADIR%%/help/explode
 %%DATADIR%%/help/exponent
 %%DATADIR%%/help/expt
@@ -282,6 +283,7 @@ bin/s9
 %%DATADIR%%/help/starlibrary-pathstar
 %%DATADIR%%/help/starloadingstar
 %%DATADIR%%/help/starstar
+%%DATADIR%%/help/stats
 %%DATADIR%%/help/string
 %%DATADIR%%/help/string-append
 %%DATADIR%%/help/string-ci-contains
@@ -323,6 +325,7 @@ bin/s9
 %%DATADIR%%/help/union
 %%DATADIR%%/help/unquote
 %%DATADIR%%/help/unquote-splicing
+%%DATADIR%%/help/unsort
 %%DATADIR%%/help/vector
 %%DATADIR%%/help/vector-fillb
 %%DATADIR%%/help/vector-length
@@ -335,7 +338,6 @@ bin/s9
 %%DATADIR%%/help/write
 %%DATADIR%%/help/write-char
 %%DATADIR%%/help/write-to-string
-%%DATADIR%%/help/wrong
 %%DATADIR%%/help/zebra
 %%DATADIR%%/help/zerop
 %%DATADIR%%/hyper.scm
@@ -368,6 +370,7 @@ bin/s9
 %%DATADIR%%/sum.scm
 %%DATADIR%%/transpose.scm
 %%DATADIR%%/union.scm
+%%DATADIR%%/unsort.scm
 %%DATADIR%%/write-to-string.scm
 %%DATADIR%%/zebra.scm
 @dirrm %%DATADIR%%/help
