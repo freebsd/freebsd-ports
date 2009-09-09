@@ -34,6 +34,7 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 
+<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="012b495c-9d51-11de-8d20-001bd3385381">
     <topic>cyrus-imapd -- Potential buffer overflow in Sieve</topic>
     <affects>
@@ -61,7 +62,6 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="24aa9970-9ccd-11de-af10-000c29a67389">
     <topic>silc-toolkit -- Format string vulnerabilities</topic>
     <affects>
