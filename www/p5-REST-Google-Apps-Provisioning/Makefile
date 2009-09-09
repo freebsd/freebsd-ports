@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	REST-Google-Apps-Provisioning
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	REST
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl library to Google\'s RESTful Apps API
 
 RUN_DEPENDS=	p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple \
