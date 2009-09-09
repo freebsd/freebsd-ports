@@ -6,7 +6,7 @@
 #   $MCom: ports/devel/gstreamer-plugins-soup/Makefile,v 1.3 2008/03/19 14:05:33 ahze Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel
 
 COMMENT=	Gstreamer soup http src plugin
