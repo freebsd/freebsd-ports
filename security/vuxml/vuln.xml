@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 
+  <vuln vid="012b495c-9d51-11de-8d20-001bd3385381">
+    <topic>cyrus-imapd -- Potential buffer overflow in Sieve</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd</name>
+	<range><gt>2.2.0</gt><lt>2.2.13_6</lt></range>
+	<range><gt>2.3.0</gt><lt>2.3.14_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Cyrus IMAP Server ChangeLog states:</p>
+	<blockquote cite="http://cyrusimap.web.cmu.edu/imapd/changes.html">
+	  <p>Fixed CERT VU#336053 - Potential buffer overflow in Sieve.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.kb.cert.org/vuls/id/336053</url>
+      <url>http://www.debian.org/security/2009/dsa-1881</url>
+    </references>
+    <dates>
+      <discovery>2009-09-02</discovery>
+      <entry>2005-09-09</entry>
+    </dates>
+  </vuln>
+
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="24aa9970-9ccd-11de-af10-000c29a67389">
     <topic>silc-toolkit -- Format string vulnerabilities</topic>
