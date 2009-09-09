@@ -30,7 +30,6 @@ bin/ilverify
 bin/resgen
 %%I386%%include/ffi.h
 %%I386%%include/ffitarget.h
-%%I386%%include/gc
 %%I386%%include/gc/gc.h
 %%I386%%include/gc/gc_typed.h
 %%I386%%include/gc/gc_inl.h

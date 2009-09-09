@@ -51,7 +51,7 @@ MLINKS=	ilasm.1 al.1 \
 .include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
+.if ${ARCH} != "i386" || ${OSVERSION} < 700000
 CONFIGURE_ARGS+=	--without-libffi \
 			--without-libgc
 PLIST_SUB=	I386="@comment "
