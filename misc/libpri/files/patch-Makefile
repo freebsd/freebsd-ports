@@ -3,33 +3,36 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -27,19 +27,19 @@
+@@ -27,7 +27,7 @@
  # Uncomment if you want libpri to count number of Q921/Q931 sent/received
  #LIBPRI_COUNTERS=-DLIBPRI_COUNTERS
  
 -CC=gcc
 +CC?=gcc
+ GREP=grep
+ AWK=awk
  
- OSARCH=$(shell uname -s)
- PROC?=$(shell uname -m)
+@@ -37,15 +37,15 @@
+ # SONAME version; should be changed on every ABI change
+ # please don't change it needlessly; it's perfectly fine to have a SONAME
+ # of 1.2 and a version of 1.4.x
+-SONAME:=1.4
++SONAME:=1
  
  STATIC_LIBRARY=libpri.a
--DYNAMIC_LIBRARY=libpri.so.1.0
-+DYNAMIC_LIBRARY=libpri.so.1
- STATIC_OBJS=copy_string.o pri.o q921.o prisched.o q931.o pri_facility.o
- DYNAMIC_OBJS=copy_string.lo pri.lo q921.lo prisched.lo q931.lo pri_facility.lo
--CFLAGS=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
+ DYNAMIC_LIBRARY:=libpri.so.$(SONAME)
+ STATIC_OBJS=copy_string.o pri.o q921.o prisched.o q931.o pri_facility.o version.o
+ DYNAMIC_OBJS=copy_string.lo pri.lo q921.lo prisched.lo q931.lo pri_facility.lo version.lo
+-CFLAGS=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC $(ALERTING) $(LIBPRI_COUNTERS)
 -INSTALL_PREFIX=$(DESTDIR)
 -INSTALL_BASE=/usr
--SOFLAGS = -Wl,-hlibpri.so.1.0
 +CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
 +INSTALL_PREFIX=$(PREFIX)
 +INSTALL_BASE=
-+SOFLAGS = -Wl,-hlibpri.so.1
+ libdir?=$(INSTALL_BASE)/lib
+ SOFLAGS:=-Wl,-h$(DYNAMIC_LIBRARY)
  LDCONFIG = /sbin/ldconfig
- ifneq (,$(findstring X$(OSARCH)X, XLinuxX XGNU/kFreeBSDX))
- LDCONFIG_FLAGS=-n
-@@ -47,7 +47,7 @@
+@@ -55,7 +55,7 @@
  ifeq (${OSARCH},FreeBSD)
  LDCONFIG_FLAGS=-m
  CFLAGS += -I../zaptel -I../zapata
@@ -38,32 +41,38 @@ $FreeBSD$
  endif
  endif
  ifeq (${OSARCH},SunOS)
-@@ -80,12 +80,11 @@
- 	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
+@@ -100,12 +100,12 @@
+ 	mkdir -p $(INSTALL_PREFIX)$(libdir)
  	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/include
  ifneq (${OSARCH},SunOS)
 -	install -m 644 libpri.h $(INSTALL_PREFIX)$(INSTALL_BASE)/include
--	install -m 755 $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
--	if [ -x /usr/sbin/sestatus ] && ( /usr/sbin/sestatus | grep "SELinux status:" | grep -q "enabled"); then /sbin/restorecon -v $(INSTALL_PREFIX)$(INSTALL_BASE)/lib/$(DYNAMIC_LIBRARY); fi
--	( cd $(INSTALL_PREFIX)$(INSTALL_BASE)/lib ; ln -sf libpri.so.1.0 libpri.so ; ln -sf libpri.so.1.0 libpri.so.1 )
--	install -m 644 $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
--	if test $$(id -u) = 0; then $(LDCONFIG) $(LDCONFIG_FLAGS) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib; fi
-+	echo installing libpri.h
+-	install -m 755 $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(libdir)
 +	$(BSD_INSTALL_DATA) libpri.h $(INSTALL_PREFIX)$(INSTALL_BASE)/include
-+	$(BSD_INSTALL_PROGRAM) $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
-+	( cd $(INSTALL_PREFIX)$(INSTALL_BASE)/lib ; ln -sf libpri.so.1 libpri.so )
-+	$(BSD_INSTALL_DATA) $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
++	$(BSD_INSTALL_PROGRAM) $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(libdir)
+ 	if [ -x /usr/sbin/sestatus ] && ( /usr/sbin/sestatus | grep "SELinux status:" | grep -q "enabled"); then /sbin/restorecon -v $(INSTALL_PREFIX)$(libdir)/$(DYNAMIC_LIBRARY); fi
+ 	( cd $(INSTALL_PREFIX)$(libdir) ; ln -sf libpri.so.$(SONAME) libpri.so)
+-	install -m 644 $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(libdir)
+-	if test $$(id -u) = 0; then $(LDCONFIG) $(LDCONFIG_FLAGS) $(INSTALL_PREFIX)$(libdir); fi
++	$(BSD_INSTALL_DATA) $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(libdir)
++	#if test $$(id -u) = 0; then $(LDCONFIG) $(LDCONFIG_FLAGS) $(INSTALL_PREFIX)$(libdir); fi
  else
  	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/include -m 644 libpri.h
- 	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/lib -m 755 $(DYNAMIC_LIBRARY)
-@@ -126,10 +125,6 @@
+ 	install -f $(INSTALL_PREFIX)$(libdir) -m 755 $(DYNAMIC_LIBRARY)
+@@ -138,7 +138,7 @@
+ 	$(CC) $(CFLAGS) $(MAKE_DEPS) -c -o $@ $<
+ 
+ %.lo: %.c
+-	$(CC) $(CFLAGS) $(MAKE_DEPS) -c -o $@ $<
++	$(CC) $(CFLAGS) $(MAKE_DEPS) -fPIC -c -o $@ $<
+ 
+ $(STATIC_LIBRARY): $(STATIC_OBJS)
+ 	ar rcs $(STATIC_LIBRARY) $(STATIC_OBJS)
+@@ -146,7 +146,7 @@
  
  $(DYNAMIC_LIBRARY): $(DYNAMIC_OBJS)
  	$(CC) -shared $(SOFLAGS) -o $@ $(DYNAMIC_OBJS)
 -	$(LDCONFIG) $(LDCONFIG_FLAGS) .
--	ln -sf libpri.so.1.0 libpri.so
--	ln -sf libpri.so.1.0 libpri.so.1
--	$(SOSLINK)
++	#$(LDCONFIG) $(LDCONFIG_FLAGS) .
+ 	ln -sf libpri.so.$(SONAME) libpri.so
  
- clean:
- 	rm -f *.o *.so *.lo *.so.1 *.so.1.0
+ version.c: FORCE
