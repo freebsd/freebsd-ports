@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	robocode
-PORTVERSION=	1.6.2
-PORTREVISION=	3
+PORTVERSION=	1.7.1.3
+PORTREVISION=	4
 CATEGORIES=	games java
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-setup-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-setup
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	glen.j.barber@gmail.com
@@ -32,14 +32,15 @@ INSTFILES=	battles javadoc license robocode.ico \
 
 SUB_FILES=	robocode.sh
 
-post-extract:
-	@cd ${WRKSRC} && ${JAR} xf ${WRKSRC}/extract.jar
-
 do-install:
 	@cd ${WRKSRC} && \
 		${FIND} ${INSTFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \;
 	@cd ${WRKSRC} && \
 		${FIND} ${INSTFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	@${INSTALL_SCRIPT} ${WRKDIR}/robocode.sh ${PREFIX}/bin/robocode
+
+post-install:
+	${MKDIR} -m a+rwx ${DATADIR}/compilers ${DATADIR}/config
+	${CAT} pkg-message
 
 .include <bsd.port.mk>
