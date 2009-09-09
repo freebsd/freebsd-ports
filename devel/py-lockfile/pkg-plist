@@ -1,0 +1,3 @@
+%%PYTHON_SITELIBDIR%%/lockfile.py
+%%PYTHON_SITELIBDIR%%/lockfile.pyc
+%%PYTHON_SITELIBDIR%%/lockfile.pyo
