@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libpri
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.10.1
 CATEGORIES=	misc
-MASTER_SITES=	http://downloads.digium.com/pub/libpri/old/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/libpri/releases/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A C implementation of the Primary Rate ISDN specification
