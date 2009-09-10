@@ -1653,6 +1653,7 @@
     SUBDIR += p5-Moose
     SUBDIR += p5-Moose-Autobox
     SUBDIR += p5-Moose-Policy
+    SUBDIR += p5-MooseX-Aliases
     SUBDIR += p5-MooseX-Async
     SUBDIR += p5-MooseX-AttributeHelpers
     SUBDIR += p5-MooseX-ClassAttribute
