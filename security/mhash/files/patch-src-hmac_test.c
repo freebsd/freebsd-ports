@@ -1,6 +1,10 @@
-diff -urN -x .svn ../../branches/vendor/mhash/src/hmac_test.c ./src/hmac_test.c
---- ../../branches/vendor/mhash/src/hmac_test.c	2008-01-16 14:34:18.000000000 +0200
-+++ ./src/hmac_test.c	2008-01-16 15:33:23.000000000 +0200
+Description: Add some failure checks and fix a couple of memory leaks.
+Author: Peter Pentchev <roam@FreeBSD.org>
+Forwarded: http://sourceforge.net/mailarchive/message.php?msg_name=20090910102100.GA26539%40straylight.m.ringlet.net
+Last-Update: 2009-09-10
+
+--- src/hmac_test.c.orig
++++ src/hmac_test.c
 @@ -45,10 +45,23 @@
  
  	passlen=sizeof(KEY1) - 1;

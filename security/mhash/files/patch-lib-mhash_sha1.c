@@ -1,6 +1,10 @@
-diff -urN -x .svn ../../branches/vendor/mhash/lib/mhash_sha1.h ./lib/mhash_sha1.h
---- ../../branches/vendor/mhash/lib/mhash_sha1.h	2008-01-16 14:26:51.000000000 +0200
-+++ ./lib/mhash_sha1.h	2008-01-16 15:01:05.000000000 +0200
+Description: Protect some macro parameters with parentheses.
+Author: Peter Pentchev <roam@FreeBSD.org>
+Forwarded: http://sourceforge.net/mailarchive/message.php?msg_name=20090910102100.GA26539%40straylight.m.ringlet.net
+Last-Update: 2009-09-10
+
+--- lib/mhash_sha1.h.orig
++++ lib/mhash_sha1.h
 @@ -39,9 +39,9 @@
  #endif
  

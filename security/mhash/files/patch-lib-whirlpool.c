@@ -1,6 +1,10 @@
-diff -urN -x .svn ../../branches/vendor/mhash/lib/whirlpool.c ./lib/whirlpool.c
---- ../../branches/vendor/mhash/lib/whirlpool.c	2008-01-16 14:26:51.000000000 +0200
-+++ ./lib/whirlpool.c	2008-01-16 15:13:06.000000000 +0200
+Description: Protect some macro parameters with parentheses.
+Author: Peter Pentchev <roam@FreeBSD.org>
+Forwarded: http://sourceforge.net/mailarchive/message.php?msg_name=20090910102100.GA26539%40straylight.m.ringlet.net
+Last-Update: 2009-09-10
+
+--- lib/whirlpool.c.orig
++++ lib/whirlpool.c
 @@ -883,10 +883,10 @@
   * Increment the block counter by step
   */

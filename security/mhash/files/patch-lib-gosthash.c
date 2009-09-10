@@ -1,6 +1,10 @@
-diff -urN -x .svn ../../branches/vendor/mhash/lib/gosthash.c ./lib/gosthash.c
---- ../../branches/vendor/mhash/lib/gosthash.c	2008-01-16 14:26:51.000000000 +0200
-+++ ./lib/gosthash.c	2008-01-16 15:12:01.000000000 +0200
+Description: Protect some macro parameters with parentheses.
+Author: Peter Pentchev <roam@FreeBSD.org>
+Forwarded: http://sourceforge.net/mailarchive/message.php?msg_name=20090910102100.GA26539%40straylight.m.ringlet.net
+Last-Update: 2009-09-10
+
+--- lib/gosthash.c.orig
++++ lib/gosthash.c
 @@ -273,22 +273,22 @@
   */
  
