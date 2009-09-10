@@ -873,6 +873,7 @@ barcode                         ports/graphics/barcode
 bareftp                         ports/ftp/bareftp
 barnyard                        ports/security/barnyard
 barnyard-sguil                  ports/security/barnyard-sguil
+barnyard2                       ports/security/barnyard2
 barrage                         ports/games/barrage
 bas2tap                         ports/lang/bas2tap
 base                            ports/security/base
@@ -12162,6 +12163,7 @@ p5-Module-Info                  ports/devel/p5-Module-Info
 p5-Module-Info-File             ports/devel/p5-Module-Info-File
 p5-Module-Inspector             ports/devel/p5-Module-Inspector
 p5-Module-Install               ports/devel/p5-Module-Install
+p5-Module-Install-AuthorRequires  ports/devel/p5-Module-Install-AuthorRequires
 p5-Module-Install-AuthorTests   ports/devel/p5-Module-Install-AuthorTests
 p5-Module-Install-Repository    ports/devel/p5-Module-Install-Repository
 p5-Module-List                  ports/devel/p5-Module-List
@@ -15724,6 +15726,7 @@ p5-module-info                  ports/devel/p5-Module-Info
 p5-module-info-file             ports/devel/p5-Module-Info-File
 p5-module-inspector             ports/devel/p5-Module-Inspector
 p5-module-install               ports/devel/p5-Module-Install
+p5-module-install-authorrequires  ports/devel/p5-Module-Install-AuthorRequires
 p5-module-install-authortests   ports/devel/p5-Module-Install-AuthorTests
 p5-module-install-repository    ports/devel/p5-Module-Install-Repository
 p5-module-list                  ports/devel/p5-Module-List
@@ -19355,6 +19358,7 @@ py-lightbox                     ports/www/py-Lightbox
 py-lirc                         ports/comms/py-lirc
 py-ll-core                      ports/devel/py-ll-core
 py-lock_file                    ports/devel/py-lock_file
+py-lockfile                     ports/devel/py-lockfile
 py-log4py                       ports/devel/py-log4py
 py-logilab-common               ports/devel/py-logilab-common
 py-ltxml                        ports/textproc/py-ltxml
@@ -19672,6 +19676,7 @@ py-textile                      ports/www/py-textile
 py-texttable                    ports/textproc/py-texttable
 py-tgwebservices                ports/www/py-tgwebservices
 py-thrift                       ports/devel/py-thrift
+py-timelib                      ports/devel/py-timelib
 py-timeoutsocket                ports/net/py-timeoutsocket
 py-tkinter                      ports/x11-toolkits/py-tkinter
 py-tktreectrl                   ports/x11-toolkits/py-tktreectrl
@@ -21990,6 +21995,7 @@ superlu                         ports/math/superlu
 superlu_mt                      ports/math/superlu_mt
 superswitcher                   ports/deskutils/superswitcher
 supertux                        ports/games/supertux
+supertuxkart                    ports/games/supertuxkart
 suphp                           ports/www/suphp
 surblhost                       ports/mail/surblhost
 surf                            ports/math/surf
