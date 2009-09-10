@@ -1,6 +1,6 @@
---- Makefile.orig	2008-12-02 16:53:56.000000000 -0800
-+++ Makefile	2009-02-14 12:36:45.000000000 -0800
-@@ -117,7 +117,7 @@
+--- Makefile.orig	2009-08-04 07:54:00.000000000 -0700
++++ Makefile	2009-09-09 17:10:46.000000000 -0700
+@@ -111,7 +111,7 @@
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -9,7 +9,7 @@
  
  
  # Define standard directories for various platforms
-@@ -147,7 +147,7 @@
+@@ -141,7 +141,7 @@
    ASTMANDIR=$(mandir)
  ifneq ($(findstring BSD,$(OSARCH)),)
    ASTVARLIBDIR=$(prefix)/share/asterisk
@@ -18,28 +18,28 @@
    ASTDBDIR=$(localstatedir)/db/asterisk
  else
    ASTVARLIBDIR=$(localstatedir)/lib/asterisk
-@@ -242,9 +242,11 @@
-   ASTLDFLAGS+=-L/usr/local/lib
+@@ -241,9 +241,11 @@
+   _ASTCFLAGS+=-isystem /usr/local/include
  endif
  
 +ifneq ($(OSARCH),FreeBSD)
  ifneq ($(PROC),ultrasparc)
-   ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+   _ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
  endif
 +endif
  
  ifeq ($(PROC),ppc)
-   ASTCFLAGS+=-fsigned-char
-@@ -252,7 +254,7 @@
+   _ASTCFLAGS+=-fsigned-char
+@@ -251,7 +253,7 @@
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
 -  BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
 +  BSDVERSION=$(OSVERSION)
-   ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
+   _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
  endif
  
-@@ -461,21 +463,21 @@
+@@ -458,21 +460,21 @@
  # Should static HTTP be installed during make samples or even with its own target ala
  # webvoicemail?  There are portions here that *could* be customized but might also be
  # improved a lot.  I'll put it here for now.
@@ -68,7 +68,7 @@
  	$(MAKE) -C sounds install
  
  update: 
-@@ -499,47 +501,47 @@
+@@ -496,47 +498,47 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  installdirs:
@@ -148,7 +148,7 @@
  	fi
  
  $(SUBDIRS_INSTALL):
-@@ -573,7 +575,7 @@
+@@ -570,7 +572,7 @@
  	@exit 1
  endif
  
@@ -157,7 +157,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -605,38 +607,25 @@
+@@ -602,38 +604,25 @@
  # XXX why *.adsi is installed first ?
  adsi:
  	@echo Installing adsi config files...
@@ -204,7 +204,7 @@
  		echo "Creating asterisk.conf"; \
  		( \
  		echo "[directories](!) ; remove the (!) to enable this" ; \
-@@ -692,13 +681,16 @@
+@@ -689,13 +678,16 @@
  		echo "pbx_realtime=1.6" ; \
  		echo "res_agi=1.6" ; \
  		echo "app_set=1.6" ; \
@@ -224,7 +224,7 @@
  	@for x in phoneprov/*; do \
  		dst="$(DESTDIR)$(ASTDATADIR)/$$x" ;	\
  		if [ -f $${dst} ]; then \
-@@ -714,14 +706,14 @@
+@@ -711,14 +703,14 @@
  			fi ;\
  		fi ; \
  		echo "Installing file $$x"; \
