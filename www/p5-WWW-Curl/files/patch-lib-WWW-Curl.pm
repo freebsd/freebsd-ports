@@ -1,4 +1,7 @@
-Fix a grammatical error.
+Description: Fix a grammatical error.
+Author: Peter Pentchev <roam@FreeBSD.org>
+Bug: http://rt.cpan.org/Public/Bug/Display.html?id=49593
+Last-Update: 2009-09-10
 
 --- lib/WWW/Curl.pm.orig
 +++ lib/WWW/Curl.pm
