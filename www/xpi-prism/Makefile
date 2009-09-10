@@ -7,6 +7,7 @@
 
 PORTNAME=	prism
 DISTVERSION=	1.0b1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
