@@ -1,0 +1,15 @@
+Description: Complete the Bulgarian translation by adding three strings.
+ I've already committed this change upstream.
+Author: Peter Pentchev <roam@FreeBSD.org>
+Forwarded: http://qmailadmin.cvs.sourceforge.net/viewvc/qmailadmin/qmailadmin/lang/bg?r1=1.1.2.1&r2=1.1.2.2&diff_format=u
+Last-Update: 2009-09-10
+
+--- lang/bg.orig
++++ lang/bg
+@@ -283,3 +283,6 @@
+ 315 Потребителят е изтрит. Невъзможно е да назнача препратка до '%s'.
+ 316 Смени парола
+ 317 Не можете да изтриете акаунта postmaster.
++318 Неуспешна смяна на групата чрез setgid(), нататък е твърде опасно
++319 Неуспешна смяна на потребителя чрез setuid(), нататък е твърде опасно
++320 Невалидна парола, може да бъде отгатната лесно чрез потребителското име
