@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090910:
+  AFFECTS: users of www/rubygem-rails
+  AUTHOR: pgollucci@FreeBSD.org
+
+  Rails has been updated to 2.3.4.  As always, make sure you check the
+  changes at http://weblog.rubyonrails.org/.
+
 20090909:
   AFFECTS: gstreamer-plugins-bad gstreamer-plugins-good
   AUTHOR: kwm@FreeBSD.org
