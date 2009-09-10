@@ -1,14 +1,14 @@
-bin/VBoxBFE
+%%X11%%bin/VBoxBFE
 bin/VBoxHeadless
 bin/VBoxManage
 bin/VBoxNetDHCP
-bin/VBoxSDL
+%%X11%%bin/VBoxSDL
 bin/VBoxSVC
-bin/VBoxTestOGL
+%%X11%%bin/VBoxTestOGL
 bin/VBoxXPCOMIPCD
 %%QT4%%bin/VirtualBox
-lib/virtualbox/VBoxBFE
-lib/virtualbox/VBoxBFE.so
+%%X11%%lib/virtualbox/VBoxBFE
+%%X11%%lib/virtualbox/VBoxBFE.so
 lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
 lib/virtualbox/VBoxDDU.so
@@ -19,20 +19,20 @@ lib/virtualbox/VBoxHeadless.so
 lib/virtualbox/VBoxManage
 lib/virtualbox/VBoxNetDHCP
 lib/virtualbox/VBoxNetDHCP.so
-lib/virtualbox/VBoxOGLhostcrutil.so
-lib/virtualbox/VBoxOGLhosterrorspu.so
-lib/virtualbox/VBoxOGLrenderspu.so
+%%X11%%lib/virtualbox/VBoxOGLhostcrutil.so
+%%X11%%lib/virtualbox/VBoxOGLhosterrorspu.so
+%%X11%%lib/virtualbox/VBoxOGLrenderspu.so
 lib/virtualbox/VBoxPython.so
 lib/virtualbox/VBoxREM.so
-lib/virtualbox/VBoxTestOGL
+%%X11%%lib/virtualbox/VBoxTestOGL
 %%I386%%lib/virtualbox/VBoxREM32.so
 %%I386%%lib/virtualbox/VBoxREM64.so
 lib/virtualbox/VBoxRT.so
-lib/virtualbox/VBoxSDL
-lib/virtualbox/VBoxSDL.so
+%%X11%%lib/virtualbox/VBoxSDL
+%%X11%%lib/virtualbox/VBoxSDL.so
 lib/virtualbox/VBoxSVC
 lib/virtualbox/VBoxSharedClipboard.so
-lib/virtualbox/VBoxSharedCrOpenGL.so
+%%X11%%lib/virtualbox/VBoxSharedCrOpenGL.so
 lib/virtualbox/VBoxSharedFolders.so
 lib/virtualbox/VBoxVMM.so
 lib/virtualbox/VBoxXPCOM.so
@@ -47,8 +47,8 @@ lib/virtualbox/tstMicroGC.gc
 lib/virtualbox/VBoxDD2R0.r0
 lib/virtualbox/VBoxDDR0.r0
 %%GUESTADDITIONS%%lib/virtualbox/VBoxGuestAdditions.iso
-%%GUESTADDITIONS%%lib/virtualbox/VBoxGuestAdditions_3.0.4.iso
-lib/virtualbox/VBoxPython2_6.so
+%%GUESTADDITIONS%%lib/virtualbox/VBoxGuestAdditions_%%GUEST_VER%%.iso
+lib/virtualbox/VBoxPython%%PYTHON_VERU%%.so
 lib/virtualbox/VMMR0.r0
 lib/virtualbox/components/VirtualBox_XPCOM.xpt
 lib/virtualbox/components/VBoxXPCOMIPCC.so
@@ -533,25 +533,45 @@ include/virtualbox/xpcom/nsTraceRefcnt.h
 include/virtualbox/xpcom/nsWeakReference.h
 include/virtualbox/xpcom/nsXPCOMGlue.h
 include/virtualbox/xpcom/xpcom-config.h
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/vboxxpcom.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/components.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/file.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/__init__.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/nsError.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/primitives.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/xpcom_consts.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/xpt.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/client/__init__.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/server/__init__.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/server/enumerator.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/server/factory.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/server/loader.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/server/module.py
-%%PYTHON_SITELIBDIR%%/virtualbox/xpcom/server/policy.py
-@dirrm %%PYTHON_SITELIBDIR%%/virtualbox/xpcom/server
-@dirrm %%PYTHON_SITELIBDIR%%/virtualbox/xpcom/client
-@dirrm %%PYTHON_SITELIBDIR%%/virtualbox/xpcom
-@dirrm %%PYTHON_SITELIBDIR%%/virtualbox
+%%PYTHON_SITELIBDIR%%/vboxapi/__init__.py
+%%PYTHON_SITELIBDIR%%/vboxapi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/vboxapi/VirtualBox_constants.py
+%%PYTHON_SITELIBDIR%%/vboxapi/VirtualBox_constants.pyc
+%%PYTHON_SITELIBDIR%%/vboxapi-1.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/xpcom/__init__.py
+%%PYTHON_SITELIBDIR%%/xpcom/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/components.py
+%%PYTHON_SITELIBDIR%%/xpcom/components.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/file.py
+%%PYTHON_SITELIBDIR%%/xpcom/file.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/nsError.py
+%%PYTHON_SITELIBDIR%%/xpcom/nsError.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/primitives.py
+%%PYTHON_SITELIBDIR%%/xpcom/primitives.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/vboxxpcom.py
+%%PYTHON_SITELIBDIR%%/xpcom/vboxxpcom.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/xpcom_consts.py
+%%PYTHON_SITELIBDIR%%/xpcom/xpcom_consts.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/xpt.py
+%%PYTHON_SITELIBDIR%%/xpcom/xpt.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/client/__init__.py
+%%PYTHON_SITELIBDIR%%/xpcom/client/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/server/__init__.py
+%%PYTHON_SITELIBDIR%%/xpcom/server/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/server/enumerator.py
+%%PYTHON_SITELIBDIR%%/xpcom/server/enumerator.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/server/factory.py
+%%PYTHON_SITELIBDIR%%/xpcom/server/factory.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/server/loader.py
+%%PYTHON_SITELIBDIR%%/xpcom/server/loader.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/server/module.py
+%%PYTHON_SITELIBDIR%%/xpcom/server/module.pyc
+%%PYTHON_SITELIBDIR%%/xpcom/server/policy.py
+%%PYTHON_SITELIBDIR%%/xpcom/server/policy.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/xpcom/server
+@dirrm %%PYTHON_SITELIBDIR%%/xpcom/client
+@dirrm %%PYTHON_SITELIBDIR%%/xpcom
+@dirrm %%PYTHON_SITELIBDIR%%/vboxapi
 @dirrm include/virtualbox/xpcom
 @dirrm include/virtualbox/string
 @dirrm include/virtualbox/nsprpub/private
@@ -568,7 +588,7 @@ include/virtualbox/xpcom/xpcom-config.h
 %%QT4%%@dirrmtry share/icons/hicolor
 %%QT4%%@dirrmtry share/icons
 %%QT4%%@dirrmtry share/applications
-@dirrm lib/virtualbox/nls
+%%NLS%%@dirrm lib/virtualbox/nls
 @dirrm lib/virtualbox/components
 @dirrm lib/virtualbox
 @cwd /
