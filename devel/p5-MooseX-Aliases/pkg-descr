@@ -1,0 +1,6 @@
+The MooseX::Aliases module will allow you to quickly alias methods in
+Moose.  It provides an alias parameter for has() to generate aliased
+accessors as well as the standard ones. Attributes can also be
+initialized in the constructor via their aliased names.
+
+WWW: http://search.cpan.org/dist/MooseX-Aliases/
