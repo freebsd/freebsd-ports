@@ -1,6 +1,10 @@
-diff -urN -x .svn ../../branches/vendor/mhash/lib/sha1.c ./lib/sha1.c
---- ../../branches/vendor/mhash/lib/sha1.c	2008-01-16 14:26:51.000000000 +0200
-+++ ./lib/sha1.c	2008-01-16 15:00:01.000000000 +0200
+Description: Protect some macro parameters with parentheses.
+Author: Peter Pentchev <roam@FreeBSD.org>
+Forwarded: http://sourceforge.net/mailarchive/message.php?msg_name=20090910102100.GA26539%40straylight.m.ringlet.net
+Last-Update: 2009-09-10
+
+--- lib/sha1.c.orig
++++ lib/sha1.c
 @@ -59,10 +59,10 @@
     save one boolean operation each - thanks to Rich Schroeppel,
     rcs@cs.arizona.edu for discovering this */

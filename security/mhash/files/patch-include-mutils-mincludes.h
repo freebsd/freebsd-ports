@@ -1,7 +1,11 @@
-diff -urN -x .svn ../../branches/mhash-dist/include/mutils/mincludes.h ./include/mutils/mincludes.h
---- ../../branches/mhash-dist/include/mutils/mincludes.h	2008-01-16 02:34:17.000000000 +0200
-+++ ./include/mutils/mincludes.h	2008-01-16 02:35:49.000000000 +0200
-@@ -100,20 +100,28 @@
+Description: Define the min and max INT constants as needed.
+Author: Peter Pentchev <roam@FreeBSD.org>
+Forwarded: http://sourceforge.net/mailarchive/message.php?msg_name=20090910102100.GA26539%40straylight.m.ringlet.net
+Last-Update: 2009-09-10
+
+--- include/mutils/mincludes.h.orig
++++ include/mutils/mincludes.h
+@@ -102,20 +102,28 @@
  #include <stdint.h>
  #endif
  

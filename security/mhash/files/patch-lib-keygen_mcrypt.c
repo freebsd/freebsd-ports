@@ -1,6 +1,11 @@
-diff -urN -x .svn ../../branches/vendor/mhash/lib/keygen_mcrypt.c ./lib/keygen_mcrypt.c
---- ../../branches/vendor/mhash/lib/keygen_mcrypt.c	2008-01-16 14:34:18.000000000 +0200
-+++ ./lib/keygen_mcrypt.c	2008-01-16 15:26:44.000000000 +0200
+Description: Fix two minor memory leaks.
+Author: Peter Pentchev <roam@FreeBSD.org>
+Forwarded: http://sourceforge.net/mailarchive/message.php?msg_name=20090910102100.GA26539%40straylight.m.ringlet.net
+Last-Update: 2009-09-10
+
+
+--- lib/keygen_mcrypt.c.orig
++++ lib/keygen_mcrypt.c
 @@ -52,8 +52,10 @@
  	
  	while (1) {

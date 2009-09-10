@@ -1,6 +1,12 @@
---- doc/Makefile.in.orig	Fri Apr 22 11:43:32 2005
-+++ doc/Makefile.in	Fri Apr 22 11:44:46 2005
-@@ -391,13 +391,13 @@
+Description: Fix the GNU-isms in Makefile.in.
+ This is a BSD-specific patch, the upstream source works fine with GNU make.
+Author: Vasil Dimov <vd@datamax.bg>
+Forwarded: not-needed
+Last-Update: 2009-09-10
+
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -394,13 +394,13 @@
  mhash-doc: $(dist_targets)
  
  $(srcdir)/mhash.html: $(srcdir)/mhash.pod

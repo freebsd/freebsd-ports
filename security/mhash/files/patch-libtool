@@ -1,6 +1,12 @@
---- ltmain.sh.orig	Tue May 21 20:44:59 2002
-+++ ltmain.sh	Tue May 21 20:45:32 2002
-@@ -4247,10 +4247,12 @@
+Description: Do not install the useless .la file.
+ This is a FreeBSD-specific patch, upstream doesn't really need it.
+Author: Ying-Chieh Liao <ijliao@FreeBSD.org>
+Forwarded: not-needed
+Last-Update: 2009-09-10
+
+--- ltmain.sh.orig
++++ ltmain.sh
+@@ -6003,10 +6003,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
