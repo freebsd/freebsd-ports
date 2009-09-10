@@ -45,6 +45,10 @@ ARGS=		-b ${PREFIX}/bin\
 .include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_DEBUG)
 ARGS+=		--debug
 .endif
