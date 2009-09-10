@@ -7,6 +7,7 @@
 
 PORTNAME=	Template-Toolkit
 PORTVERSION=	2.22
+PORTREVISION=	1
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensive Toolkit for template processing
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
-		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
+BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=IMAGE_INFO	"With Image::Info Plugin"		off \
