@@ -30,6 +30,10 @@ MAKE_ARGS=	PREFIX="${PREFIX}" INCLUDE="${LOCALBASE}/include" \
 
 MAN1=		wmii.1 wmiiloop.1 wmiir.1
 
+OPTIONS=	LAYOUT_BOXES "Show layout boxes (some people hate them)" on
+
+.include <bsd.port.options.mk>
+
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|-lfmt -lutf|$${LIBX11} & -lX11|' \
 		${WRKSRC}/cmd/Makefile
@@ -38,7 +42,10 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|CFLAGS += -DIXPlint|& -DIXP_NEEDAPI=89|' \
 		${WRKSRC}/config.mk
 # Make actual compile/link commands appear in the build log
-	${REINPLACE_CMD} -e 's|^COMPILE=|& noisycc=yes | ; \
-		s|^LINK=|& noisycc=yes |' ${WRKSRC}/mk/hdr.mk
+	${REINPLACE_CMD} -e 's|^COMPILE=|& noisycc=yes| ; \
+		s|^LINK=|& noisycc=yes|' ${WRKSRC}/mk/hdr.mk
+.if defined(WITHOUT_LAYOUT_BOXES)
+	${REINPLACE_CMD} -e '102,104d' ${WRKSRC}/cmd/wmii/column.c
+.endif
 
 .include <bsd.port.mk>
