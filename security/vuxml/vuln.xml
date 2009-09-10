@@ -35,6 +35,55 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="922d2398-9e2d-11de-a998-0030843d3802">
+    <topic>mozilla firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.5.*,1</gt><lt>3.5.3,1</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.13,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Foundation reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/">
+	  <p>MFSA 2009-51  Chrome privilege escalation with FeedWriter</p>
+	  <p>MFSA 2009-50  Location bar spoofing via tall line-height Unicode
+	    characters</p>
+	  <p>MFSA 2009-49  TreeColumns dangling pointer vulnerability</p>
+	  <p>MFSA 2009-48  Insufficient warning for PKCS11 module installation
+	    and removal</p>
+	  <p>MFSA 2009-47 Crashes with evidence of memory corruption
+	    (rv:1.9.1.3/1.9.0.14)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3069</cvename>
+      <cvename>CVE-2009-3070</cvename>
+      <cvename>CVE-2009-3071</cvename>
+      <cvename>CVE-2009-3072</cvename>
+      <cvename>CVE-2009-3073</cvename>
+      <cvename>CVE-2009-3074</cvename>
+      <cvename>CVE-2009-3075</cvename>
+      <cvename>CVE-2009-3076</cvename>
+      <cvename>CVE-2009-3077</cvename>
+      <cvename>CVE-2009-3078</cvename>
+      <cvename>CVE-2009-3079</cvename>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-47.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-48.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-49.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-50.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-51.html</url>
+      <url>http://secunia.com/advisories/36671/2/</url>
+    </references>
+    <dates>
+      <discovery>2009-09-10</discovery>
+      <entry>2009-09-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="012b495c-9d51-11de-8d20-001bd3385381">
     <topic>cyrus-imapd -- Potential buffer overflow in Sieve</topic>
     <affects>
