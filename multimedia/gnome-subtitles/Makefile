@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	gnome-subtitles
-PORTVERSION=	0.8
-PORTREVISION=	2
+PORTVERSION=	0.9.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor with video preview
 
-LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
-		${LOCALBASE}/lib/sublib/sublib.dll:${PORTSDIR}/multimedia/sublib
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
-		${LOCALBASE}/lib/sublib/sublib.dll:${PORTSDIR}/multimedia/sublib
+LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
+		gtkspell.0:${PORTSDIR}/textproc/gtkspell
+BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
+RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils
