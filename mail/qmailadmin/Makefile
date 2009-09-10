@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.2.12
-PORTEPOCH=	2
+PORTVERSION=	1.2.13
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
@@ -68,6 +67,9 @@ WANT_QMAIL=	yes
 #			  do not forget the "|" at the start
 # WITH_SPAM_NEEDS_EMAIL	- append the user's e-mail address as the last
 #			  argument to the spam command
+# WITHOUT_CATCHALL	- disable the catch-all mailbox commands
+# WITHOUT_TRIVIAL_PASSWORD	- disable the check for a password containing
+#				  the username
 #
 
 CGIBINDIR?=	www/cgi-bin.default
@@ -130,6 +132,14 @@ CONFIGURE_ARGS+=	--enable-spamcmd-needs-email
 .else
 CONFIGURE_ARGS+=	--disable-spamcmd-needs-email
 .endif
+.endif
+
+.if defined(WITHOUT_CATCHALL)
+CONFIGURE_ARGS+=	--disable-catchall
+.endif
+
+.if defined(WITHOUT_TRIVIAL_PASSWORD)
+CONFIGURE_ARGS+=	--disable-trivial-password
 .endif
 
 .include <bsd.port.post.mk>
