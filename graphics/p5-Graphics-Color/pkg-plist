@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Graphics/Color/HSL.pm
 %%SITE_PERL%%/Graphics/Color/HSV.pm
 %%SITE_PERL%%/Graphics/Color/RGB.pm
+%%SITE_PERL%%/Graphics/Color/Types.pm
 %%SITE_PERL%%/Graphics/Color/YIQ.pm
 %%SITE_PERL%%/Graphics/Color/YUV.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Color
