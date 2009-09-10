@@ -71,11 +71,6 @@ PLIST_SUB+=	INSIGHT='@comment '
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-
-.if ${OSVERSION} >= 800000
-BROKEN=		does not compile
-.endif
-
 .endif
 
 post-patch:
