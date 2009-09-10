@@ -1,0 +1,196 @@
+bin/eiskaltdc
+share/applications/eiskaltdc.desktop
+%%DATADIR%%/COPYING
+%%DATADIR%%/icons/appl/default/back.png
+%%DATADIR%%/icons/appl/default/ball_green.png
+%%DATADIR%%/icons/appl/default/ball_red.png
+%%DATADIR%%/icons/appl/default/ball_yellow.png
+%%DATADIR%%/icons/appl/default/bookmark_add.png
+%%DATADIR%%/icons/appl/default/bookmark_folder.png
+%%DATADIR%%/icons/appl/default/chat.png
+%%DATADIR%%/icons/appl/default/choose-language.png
+%%DATADIR%%/icons/appl/default/clear.png
+%%DATADIR%%/icons/appl/default/client.png
+%%DATADIR%%/icons/appl/default/colors.png
+%%DATADIR%%/icons/appl/default/configure.png
+%%DATADIR%%/icons/appl/default/configure_22x22.png
+%%DATADIR%%/icons/appl/default/configure_32x32.png
+%%DATADIR%%/icons/appl/default/connect.png
+%%DATADIR%%/icons/appl/default/connect_creating.png
+%%DATADIR%%/icons/appl/default/connect_no.png
+%%DATADIR%%/icons/appl/default/connected.png
+%%DATADIR%%/icons/appl/default/debug.png
+%%DATADIR%%/icons/appl/default/down.png
+%%DATADIR%%/icons/appl/default/download.png
+%%DATADIR%%/icons/appl/default/download_as.png
+%%DATADIR%%/icons/appl/default/edit.png
+%%DATADIR%%/icons/appl/default/editadd.png
+%%DATADIR%%/icons/appl/default/editcopy.png
+%%DATADIR%%/icons/appl/default/editdelete.png
+%%DATADIR%%/icons/appl/default/emoticon.png
+%%DATADIR%%/icons/appl/default/exit.png
+%%DATADIR%%/icons/appl/default/fileclose.png
+%%DATADIR%%/icons/appl/default/filefind.png
+%%DATADIR%%/icons/appl/default/filetype-application.png
+%%DATADIR%%/icons/appl/default/filetype-archive.png
+%%DATADIR%%/icons/appl/default/filetype-audio.png
+%%DATADIR%%/icons/appl/default/filetype-document.png
+%%DATADIR%%/icons/appl/default/filetype-picture.png
+%%DATADIR%%/icons/appl/default/filetype-unknown.png
+%%DATADIR%%/icons/appl/default/filetype-video.png
+%%DATADIR%%/icons/appl/default/filter.png
+%%DATADIR%%/icons/appl/default/find.png
+%%DATADIR%%/icons/appl/default/find_22x22.png
+%%DATADIR%%/icons/appl/default/find_32x32.png
+%%DATADIR%%/icons/appl/default/flag_bosnia.png
+%%DATADIR%%/icons/appl/default/flag_brazil.png
+%%DATADIR%%/icons/appl/default/flag_britain.png
+%%DATADIR%%/icons/appl/default/flag_czech.png
+%%DATADIR%%/icons/appl/default/flag_denmark.png
+%%DATADIR%%/icons/appl/default/flag_finland.png
+%%DATADIR%%/icons/appl/default/flag_france.png
+%%DATADIR%%/icons/appl/default/flag_germany.png
+%%DATADIR%%/icons/appl/default/flag_greece.png
+%%DATADIR%%/icons/appl/default/flag_hungary.png
+%%DATADIR%%/icons/appl/default/flag_iceland.png
+%%DATADIR%%/icons/appl/default/flag_italy.png
+%%DATADIR%%/icons/appl/default/flag_latvia.png
+%%DATADIR%%/icons/appl/default/flag_netherlands.png
+%%DATADIR%%/icons/appl/default/flag_norway.png
+%%DATADIR%%/icons/appl/default/flag_poland.png
+%%DATADIR%%/icons/appl/default/flag_romania.png
+%%DATADIR%%/icons/appl/default/flag_russia.png
+%%DATADIR%%/icons/appl/default/flag_serbia.png
+%%DATADIR%%/icons/appl/default/flag_slovakia.png
+%%DATADIR%%/icons/appl/default/flag_spain.png
+%%DATADIR%%/icons/appl/default/flag_sweden.png
+%%DATADIR%%/icons/appl/default/folder_blue.png
+%%DATADIR%%/icons/appl/default/folder_blue_open.png
+%%DATADIR%%/icons/appl/default/folder_red.png
+%%DATADIR%%/icons/appl/default/globe.png
+%%DATADIR%%/icons/appl/default/gui.png
+%%DATADIR%%/icons/appl/default/help.png
+%%DATADIR%%/icons/appl/default/icon_22x22.png
+%%DATADIR%%/icons/appl/default/icons.png
+%%DATADIR%%/icons/appl/default/info.png
+%%DATADIR%%/icons/appl/default/inotify.png
+%%DATADIR%%/icons/appl/default/isaway.png
+%%DATADIR%%/icons/appl/default/log.png
+%%DATADIR%%/icons/appl/default/menu.png
+%%DATADIR%%/icons/appl/default/message.png
+%%DATADIR%%/icons/appl/default/next.png
+%%DATADIR%%/icons/appl/default/notconnected.png
+%%DATADIR%%/icons/appl/default/onlinemanual.png
+%%DATADIR%%/icons/appl/default/open.png
+%%DATADIR%%/icons/appl/default/other.png
+%%DATADIR%%/icons/appl/default/player_pause.png
+%%DATADIR%%/icons/appl/default/player_play.png
+%%DATADIR%%/icons/appl/default/quickoptions.png
+%%DATADIR%%/icons/appl/default/reload.png
+%%DATADIR%%/icons/appl/default/reload_22x22.png
+%%DATADIR%%/icons/appl/default/reload_32x32.png
+%%DATADIR%%/icons/appl/default/reload_plugins.png
+%%DATADIR%%/icons/appl/default/save.png
+%%DATADIR%%/icons/appl/default/server.png
+%%DATADIR%%/icons/appl/default/sort-down-arrow.png
+%%DATADIR%%/icons/appl/default/spam.png
+%%DATADIR%%/icons/appl/default/splash.png
+%%DATADIR%%/icons/appl/default/spy.png
+%%DATADIR%%/icons/appl/default/ssl_no.png
+%%DATADIR%%/icons/appl/default/ssl_yes.png
+%%DATADIR%%/icons/appl/default/support.png
+%%DATADIR%%/icons/appl/default/text-select-all.png
+%%DATADIR%%/icons/appl/default/transfer.png
+%%DATADIR%%/icons/appl/default/translate.png
+%%DATADIR%%/icons/appl/default/up.png
+%%DATADIR%%/icons/appl/default/update.png
+%%DATADIR%%/icons/appl/default/users.png
+%%DATADIR%%/icons/appl/default/users_22x22.png
+%%DATADIR%%/icons/appl/default/users_32x32.png
+%%DATADIR%%/icons/appl/default/view_sidetree.png
+%%DATADIR%%/icons/appl/default/vru.png
+%%DATADIR%%/icons/appl/default/windows_cl_all.png
+%%DATADIR%%/icons/appl/default/windows_cl_find.png
+%%DATADIR%%/icons/appl/default/windows_cl_hubs.png
+%%DATADIR%%/icons/appl/default/windows_cl_lists.png
+%%DATADIR%%/icons/appl/default/windows_cl_offline.png
+%%DATADIR%%/icons/appl/default/windows_horiz.png
+%%DATADIR%%/icons/appl/default/windows_icon.png
+%%DATADIR%%/icons/appl/default/windows_lists.png
+%%DATADIR%%/icons/appl/default/windows_tiled.png
+%%DATADIR%%/icons/appl/default/windows_undock.png
+%%DATADIR%%/icons/appl/default/windows_vert.png
+%%DATADIR%%/icons/appl/default/zoom-in.png
+%%DATADIR%%/icons/appl/default/zoom-out.png
+%%DATADIR%%/icons/emot/default/default.png
+%%DATADIR%%/icons/emot/default/emoticons-v2.xml
+%%DATADIR%%/icons/emot/flylink/emoticons-v2.xml
+%%DATADIR%%/icons/emot/flylink/flylink.png
+%%DATADIR%%/icons/emot/kolobok/emoticons-v2.xml
+%%DATADIR%%/icons/emot/kolobok/kolobok.png
+%%DATADIR%%/icons/emot/simple-gnome/emoticons-v2.xml
+%%DATADIR%%/icons/emot/simple-gnome/simple-gnome.png
+%%DATADIR%%/icons/user/default/usericons.png
+%%DATADIR%%/icons/user/valknut/usericons.png
+%%DATADIR%%/translation/eiskaltdc.bs.qm
+%%DATADIR%%/translation/eiskaltdc.cs.qm
+%%DATADIR%%/translation/eiskaltdc.da.qm
+%%DATADIR%%/translation/eiskaltdc.de.qm
+%%DATADIR%%/translation/eiskaltdc.el.qm
+%%DATADIR%%/translation/eiskaltdc.en.qm
+%%DATADIR%%/translation/eiskaltdc.es.qm
+%%DATADIR%%/translation/eiskaltdc.fi.qm
+%%DATADIR%%/translation/eiskaltdc.fr.qm
+%%DATADIR%%/translation/eiskaltdc.hu.qm
+%%DATADIR%%/translation/eiskaltdc.is.qm
+%%DATADIR%%/translation/eiskaltdc.it.qm
+%%DATADIR%%/translation/eiskaltdc.lv.qm
+%%DATADIR%%/translation/eiskaltdc.nb.qm
+%%DATADIR%%/translation/eiskaltdc.nl.qm
+%%DATADIR%%/translation/eiskaltdc.pl.qm
+%%DATADIR%%/translation/eiskaltdc.pt_br.qm
+%%DATADIR%%/translation/eiskaltdc.ro.qm
+%%DATADIR%%/translation/eiskaltdc.ru.qm
+%%DATADIR%%/translation/eiskaltdc.sr.qm
+%%DATADIR%%/translation/eiskaltdc.sr@latin.qm
+%%DATADIR%%/translation/eiskaltdc.sv.qm
+share/icons/hicolor/128x128/apps/eiskaltdc.png
+share/icons/hicolor/16x16/apps/eiskaltdc.png
+share/icons/hicolor/22x22/apps/eiskaltdc.png
+share/icons/hicolor/24x24/apps/eiskaltdc.png
+share/icons/hicolor/32x32/apps/eiskaltdc.png
+share/icons/hicolor/48x48/apps/eiskaltdc.png
+share/icons/hicolor/64x64/apps/eiskaltdc.png
+share/pixmaps/eiskaltdc.png
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/translation
+@dirrm %%DATADIR%%/sounds/default
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/icons/user/valknut
+@dirrm %%DATADIR%%/icons/user/default
+@dirrm %%DATADIR%%/icons/user
+@dirrm %%DATADIR%%/icons/emot/simple-gnome
+@dirrm %%DATADIR%%/icons/emot/kolobok
+@dirrm %%DATADIR%%/icons/emot/flylink
+@dirrm %%DATADIR%%/icons/emot/default
+@dirrm %%DATADIR%%/icons/emot
+@dirrm %%DATADIR%%/icons/appl/default
+@dirrm %%DATADIR%%/icons/appl
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
