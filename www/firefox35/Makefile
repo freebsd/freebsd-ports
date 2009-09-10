@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.5.2
+DISTVERSION=	3.5.3
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}-source
+DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -40,7 +40,7 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 NO_MOZPKGINSTALL=yes
-CONFLICTS=      firefox-3.0.*
+CONFLICTS=	firefox-3.0.*
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
