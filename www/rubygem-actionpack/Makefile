@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Action Controller and Action View of Rails MVC Framework
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-2.3.3.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
   				rubygem-rack>=1.0.0:${PORTSDIR}/www/rubygem-rack
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
