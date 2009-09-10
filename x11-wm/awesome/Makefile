@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		gperf>=3.0.3:${PORTSDIR}/devel/gperf \
 		pango>=1.19.3:${PORTSDIR}/x11-toolkits/pango \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		xcb-util>=0.3.4:${PORTSDIR}/x11/xcb-util \
+		xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		ev.3:${PORTSDIR}/devel/libev \
