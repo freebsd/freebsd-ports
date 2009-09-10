@@ -1,0 +1,76 @@
+--- Makefile.am.orig	2009-09-10 02:36:08.000000000 +0200
++++ Makefile.am	2009-09-10 02:36:29.000000000 +0200
+@@ -59,12 +59,12 @@
+ 
+ if MINGW32
+ if USE_NETWORK
+-d2x_sdl_LDADD = ${d2x_LDADD} -lwinmm -lwsock32 -lcurl -lXm -lXt -lX11
++d2x_sdl_LDADD = ${d2x_LDADD} -lwinmm -lwsock32 -lXm -lXt -lX11
+ else
+-d2x_sdl_LDADD = ${d2x_LDADD} -lwinmm -lcurl -lXm -lXt -lX11
++d2x_sdl_LDADD = ${d2x_LDADD} -lwinmm -lXm -lXt -lX11
+ endif
+ else
+-d2x_sdl_LDADD = ${d2x_LDADD} -lm -lcurl -lXm -lXt -lX11
++d2x_sdl_LDADD = ${d2x_LDADD} -lm -lXm -lXt -lX11
+ endif
+ d2x_xl_LDADD = ${d2x_sdl_LDADD} ${OGL_LIBS}
+ 
+--- main/gamefolders.cpp.orig	2009-09-10 02:36:46.000000000 +0200
++++ main/gamefolders.cpp	2009-09-10 02:38:18.000000000 +0200
+@@ -871,7 +871,7 @@
+ 
+ // ----------------------------------------------------------------------------
+ 
+-#if defined(__unix__)
++#if 0
+ 
+ #	define FILEEXT		"rar"
+ #	define FILETYPE		"src"
+@@ -928,7 +928,7 @@
+ 
+ #endif
+ 
+-#if defined(_WIN32) || defined(__unix__)
++#if 0
+ 
+ int CheckForUpdate (void)
+ {
+--- menus/mainmenu.cpp.orig	2009-09-10 02:39:20.000000000 +0200
++++ menus/mainmenu.cpp	2009-09-10 02:40:21.000000000 +0200
+@@ -87,7 +87,7 @@
+ 	int	nOrder;
+ 	int	nHelp;
+ 	int	nChoice;
+-#if defined(_WIN32) || defined(__unix__)
++#if 0
+ 	int	nUpdate;
+ #endif
+ } mainOpts;
+@@ -101,7 +101,7 @@
+ //returns the number of demo files on the disk
+ int NDCountDemos (void);
+ 
+-#if defined(_WIN32) || defined(__unix__)
++#if 0
+ int CheckForUpdate (void);
+ #endif
+ 
+@@ -180,7 +180,7 @@
+ if (!gameStates.app.bNostalgia)
+ 	mainOpts.nSongs = m.AddMenu (TXT_PLAY_SONGS, KEY_S, HTX_MAIN_SONGS);
+ mainOpts.nCredits = m.AddMenu (TXT_CREDITS, KEY_C, HTX_MAIN_CREDITS);
+-#if defined(_WIN32) || defined(__unix__)
++#if 0
+ mainOpts.nUpdate = m.AddMenu (TXT_CHECK_FOR_UPDATE, KEY_U, HTX_CHECK_FOR_UPDATE);
+ #endif
+ mainOpts.nQuit = m.AddMenu (TXT_QUIT, KEY_Q, HTX_MAIN_QUIT);
+@@ -369,7 +369,7 @@
+ 	}
+ else if (nChoice == mainOpts.nOrder) 
+ 	ShowOrderForm ();
+-#if defined(_WIN32) || defined(__unix__)
++#if 0
+ else if (nChoice == mainOpts.nUpdate)
+ 	CheckForUpdate ();
+ #endif

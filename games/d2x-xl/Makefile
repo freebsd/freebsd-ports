@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	d2x-xl
-PORTVERSION=	1.14.108
+PORTVERSION=	1.14.121
 CATEGORIES=	games
-MASTER_SITES=	SF/d2x-xl/Linux:source \
+MASTER_SITES=	SF/d2x-xl/Linux/Archive:source \
+		SF/d2x-xl/Linux:source \
 		SF/d2x-xl/Data:data \
 		http://www.descent2.de/downloads/:source,data
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}.rar:source \
@@ -26,10 +27,9 @@ CONFIGURE_ARGS=	--disable-debug --enable-release=yes \
 		--with-sharepath=${PREFIX}/share/d2x-xl
 USE_SDL=	sdl mixer image
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	aclocal:110 \
-		autoheader:262 \
-		automake:110 \
-		autoconf:262
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
+USE_MOTIF=	yes
+MAKE_JOBS_SAFE=	yes
 AUTOMAKE_ARGS=	--add-missing --copy
 
 USE_DOS2UNIX=	missing depcomp
