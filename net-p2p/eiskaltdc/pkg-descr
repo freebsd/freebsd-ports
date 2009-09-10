@@ -1,0 +1,6 @@
+EiskaltDC++ is a fork of Valknut client for the Direct Connect
+network. It is compatible with other DC clients, such as the original
+DC from Neomodus, DC++ and derivatives. EiskaltDC++ also interoperates
+with all common DC hub software.
+
+WWW:	http://eiskaltdc.sourceforge.net
