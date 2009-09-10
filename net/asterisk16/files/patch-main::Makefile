@@ -1,32 +1,25 @@
 
 $FreeBSD$
 
---- main/Makefile
+--- main/Makefile.orig
 +++ main/Makefile
-@@ -110,8 +110,8 @@
- 	cd editline && test -f config.h || CFLAGS="$(PTHREAD_CFLAGS) $(subst $(ASTTOPDIR),../../,$(ASTCFLAGS:-Werror=))" LDFLAGS="$(ASTLDFLAGS)" ./configure --build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM) --with-ncurses=$(NCURSES_DIR) --with-curses=$(CURSES_DIR) --with-termcap=$(TERMCAP_DIR) --with-tinfo=$(TINFO_DIR)
+@@ -101,8 +101,8 @@
+ 	cd editline && test -f config.h || CFLAGS="$(PTHREAD_CFLAGS) $(subst $(ASTTOPDIR),../../,$(_ASTCFLAGS:-Werror=) $(ASTCFLAGS))" LDFLAGS="$(ASTLDFLAGS)" ./configure --build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM) --with-ncurses=$(NCURSES_DIR) --with-curses=$(CURSES_DIR) --with-termcap=$(TERMCAP_DIR) --with-tinfo=$(TINFO_DIR)
  	$(MAKE) -C editline libedit.a
  
 -db1-ast/libdb1.a: CHECK_SUBDIR
--	CFLAGS="$(subst $(ASTTOPDIR),../../,$(ASTCFLAGS))" LDFLAGS="$(ASTLDFLAGS)" $(MAKE) -C db1-ast libdb1.a
+-	_ASTCFLAGS="$(_ASTCFLAGS)" ASTCFLAGS="$(ASTCFLAGS) -Wno-strict-aliasing" $(MAKE) -C db1-ast libdb1.a
 +#db1-ast/libdb1.a: CHECK_SUBDIR
-+#	CFLAGS="$(subst $(ASTTOPDIR),../../,$(ASTCFLAGS))" LDFLAGS="$(ASTLDFLAGS)" $(MAKE) -C db1-ast libdb1.a
++#	_ASTCFLAGS="$(_ASTCFLAGS)" ASTCFLAGS="$(ASTCFLAGS) -Wno-strict-aliasing" $(MAKE) -C db1-ast libdb1.a
  
  ast_expr2.c ast_expr2.h:
  	bison -o $@ -d --name-prefix=ast_yy ast_expr2.y
-@@ -168,13 +168,13 @@
+@@ -159,7 +159,7 @@
  GMIMELDFLAGS+=$(GMIME_LIB)
  endif
  
 -$(MAIN_TGT): $(OBJS) editline/libedit.a db1-ast/libdb1.a $(AST_EMBED_LDSCRIPTS)
 +$(MAIN_TGT): $(OBJS) editline/libedit.a $(AST_EMBED_LDSCRIPTS)
- 	@$(CC) -c -o buildinfo.o $(ASTCFLAGS) buildinfo.c
+ 	@$(CC) -c -o buildinfo.o $(_ASTCFLAGS) buildinfo.c $(ASTCFLAGS)
  	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"
  ifneq ($(findstring chan_h323,$(MENUSELECT_CHANNELS)),)
- 	$(CMD_PREFIX) $(CC) $(STATIC_BUILD) -o $@ $(ASTLINK) $(AST_EMBED_LDFLAGS) $(ASTLDFLAGS) $^ buildinfo.o $(AST_LIBS) $(AST_EMBED_LIBS) $(GMIMELDFLAGS)
- else
--	$(CMD_PREFIX) $(CXX) $(STATIC_BUILD) -o $@ $(ASTLINK) $(AST_EMBED_LDFLAGS) $(ASTLDFLAGS) $(H323LDFLAGS) $^ buildinfo.o $(AST_LIBS) $(AST_EMBED_LIBS) $(H323LDLIBS) $(GMIMELDFLAGS)
-+	$(CMD_PREFIX) $(CXX) $(STATIC_BUILD) -o $@ $(ASTLINK) $(AST_EMBED_LDFLAGS) $(ASTLDFLAGS) $(H323LDFLAGS) $^ buildinfo.o $(AST_LIBS) $(AST_EMBED_LIBS) $(GMIMELDFLAGS)
- endif
- 	$(CMD_PREFIX) $(ASTTOPDIR)/build_tools/strip_nonapi $@ || rm $@
- 
