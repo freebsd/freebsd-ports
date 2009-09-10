@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox
-DISTVERSION=	3.0.51r22226
+DISTVERSION=	3.0.51r22683
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -29,22 +29,25 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		curl.5:${PORTSDIR}/ftp/curl
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_XORG=	xcursor xmu
 USE_GNOME=	libidl
-USE_SDL=	sdl
 USE_CDRTOOLS=	yes
-USE_PYTHON=	yes
 USE_BZIP2=	yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	vboxapi
+PYDISTUTILS_PKGVERSION=	1.0
+PYDISTUTILS_NOEGGINFO=	yes
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}"
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
 CONFLICTS=	bcc-[0-9]*
 
 VBOXGROUP?=	vboxusers
 VBOXGID?=	920
-VBOX_FRONTENDS=	VBoxBFE VBoxHeadless VBoxSDL
-VBOX_GUEST_VER=	3.0.4
+VBOX_FRONTENDS=	VBoxHeadless
+VBOX_GUEST_VER=	3.0.6
 
 SUB_FILES=	pkg-install
 
@@ -57,22 +60,37 @@ OPTIONS=	QT4 "Build with QT4 Frontend" on \
 		GUESTADDITIONS "Build with Guest Additions" off \
 		DBUS "Build with D-Bus and HAL support" on \
 		PULSEAUDIO "Build with PulseAudio" off \
+		X11 "Build with X11 support" on \
 		NLS "Native language support" on
 
 .include <bsd.port.options.mk>
 
+PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,} \
+		PYTHON_VER=${PYTHON_VER} \
+		PYTHON_VERU=${PYTHON_VER:S/./_/} \
+		GUEST_VER=${VBOX_GUEST_VER}
+
 KMODDIR=	/boot/modules
-PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS=
+
+.if !defined(WITHOUT_X11)
+USE_SDL=	sdl
+USE_XORG=	xcursor xmu
+VBOX_FRONTENDS+=VBoxBFE VBoxSDL VBoxTestOGL
+PLIST_SUB+=	X11=""
+.else
+CONFIGURE_ARGS+=--build-headless
+PLIST_SUB+=	X11="@comment "
+.endif
 
 .if !defined(WITHOUT_QT4)
 USE_QT_VER=	4
 QT_NONSTANDARD=	yes
 QT_COMPONENTS=	gui network moc_build uic_build rcc_build linguist
 INSTALLS_ICONS=	yes
-VBOX_FRONTENDS+=	VirtualBox
+VBOX_FRONTENDS+=VirtualBox
 PLIST_SUB+=	QT4=""
 .else
 CONFIGURE_ARGS+=--disable-qt4
@@ -134,16 +152,15 @@ PLIST_SUB+=	I386="@comment "
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#VBOX_PATH_APP_PRIVATE_ARCH  = /usr/lib/virtualbox|VBOX_PATH_APP_PRIVATE_ARCH = ${PREFIX}/lib/virtualbox|'\
-		${WRKSRC}/Config.kmk
-	@${REINPLACE_CMD} -e 's|#VBOX_PATH_SHARED_LIBS       = /usr/lib|VBOX_PATH_SHARED_LIBS = ${PREFIX}/lib/virtualbox|' \
-		${WRKSRC}/Config.kmk
-	@${REINPLACE_CMD} -e 's|#VBOX_WITH_RUNPATH = /usr/lib/virtualbox|VBOX_WITH_RUNPATH = ${PREFIX}/lib/virtualbox|' \
-		${WRKSRC}/Config.kmk
-	@${REINPLACE_CMD} -e 's|#VBOX_PATH_APP_PRIVATE       = /usr/lib/virtualbox|VBOX_PATH_APP_PRIVATE = ${DATADIR}|' \
-		${WRKSRC}/Config.kmk
-	@${REINPLACE_CMD} -e 's|#VBOX_PATH_APP_DOCS         = /usr/share/doc/virtualbox|VBOX_PATH_APP_DOCS = ${DOCSDIR}|' \
-		${WRKSRC}/Config.kmk
+	@${ECHO} 'VBOX_PATH_APP_PRIVATE_ARCH = ${PREFIX}/lib/virtualbox' > ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_PATH_SHARED_LIBS = ${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_RUNPATH = ${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_PATH_APP_PRIVATE = ${DATADIR}' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_PATH_APP_DOCS = ${DOCSDIR}' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_INSTALLER = 1' >> ${WRKSRC}/LocalConfig.kmk
+.if defined(WITHOUT_X11)
+	@${ECHO} 'VBOX_WITH_X11_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
+.endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 		${WRKSRC}/kBuild/units/qt3.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
@@ -176,7 +193,7 @@ do-install:
 .endif
 
 	${MKDIR} ${PREFIX}/bin
-.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS} VBoxTestOGL
+.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS}
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/$f ${PREFIX}/lib/virtualbox/
 	${LN} -sf ${PREFIX}/lib/virtualbox/${f} ${PREFIX}/bin/
 .endfor
@@ -194,8 +211,12 @@ do-install:
 	${LN} -sf ${PREFIX}/lib/virtualbox/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/VBoxGuestAdditions.iso
 .endif
 
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/virtualbox
-	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/python && ${COPYTREE_SHARE} "*" ${PYTHONPREFIX_SITELIBDIR}/virtualbox)
+	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/installer && \
+	VBOX_INSTALL_PATH="${PREFIX}/lib/virtualbox" ${PYTHON_CMD} vboxapisetup.py install
+
+	@${MKDIR} ${PYTHON_SITELIBDIR}
+	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/python && ${COPYTREE_SHARE} "*" ${PYTHON_SITELIBDIR})
+	${PYTHON_CMD} -mcompileall ${PYTHON_SITELIBDIR}/xpcom/
 
 post-install:
 	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
