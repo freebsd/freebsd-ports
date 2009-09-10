@@ -66,6 +66,14 @@ IGNORE=	does not run, update to 6.2-RELEASE or newer
 
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 
+FORBIDDEN=	too many security issues \
+		http://www.vuxml.org/freebsd/922d2398-9e2d-11de-a998-0030843d3802.html \
+		http://www.vuxml.org/freebsd/49e8f2ee-8147-11de-a994-0030843d3802.html
+		
+DEPRECATED=	The mozilla team has shifted the development branch of mozilla to \
+		seamonkey, this port is outdated and has many vulnerabilities. \
+		Please consider using www/seamonkey or www/firefox35 instead.
+
 post-extract::
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
