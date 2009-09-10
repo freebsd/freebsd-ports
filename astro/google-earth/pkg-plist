@@ -12,7 +12,6 @@ bin/googleearth
 %%DATADIR%%/gpl.txt
 %%DATADIR%%/gpsbabel
 %%DATADIR%%/kh20
-%%DATADIR%%/kvw/default_lt.kvw
 %%DATADIR%%/lang/ar.qm
 %%DATADIR%%/lang/bg.qm
 %%DATADIR%%/lang/ca.qm
@@ -55,12 +54,9 @@ bin/googleearth
 %%DATADIR%%/lang/zh-Hant.qm
 %%DATADIR%%/libGLU.so.1
 %%DATADIR%%/libIGAttrs.so
-%%DATADIR%%/libIGCollision.so
 %%DATADIR%%/libIGCore.so
-%%DATADIR%%/libIGDisplay.so
 %%DATADIR%%/libIGExportCommon.so
 %%DATADIR%%/libIGGfx.so
-%%DATADIR%%/libIGGui.so
 %%DATADIR%%/libIGMath.so
 %%DATADIR%%/libIGOpt.so
 %%DATADIR%%/libIGSg.so
@@ -77,13 +73,11 @@ bin/googleearth
 %%DATADIR%%/libcollada.so
 %%DATADIR%%/libcommon.so
 %%DATADIR%%/libcomponentframework.so
-%%DATADIR%%/libcrypto.so.0.9.8
 %%DATADIR%%/libcurl.so.4
 %%DATADIR%%/libevll.so
 %%DATADIR%%/libflightsim.so
 %%DATADIR%%/libfusioncommon.so
-%%DATADIR%%/libgcc_s.so.1
-%%DATADIR%%/libgdal.so
+%%DATADIR%%/libgdal.so.1
 %%DATADIR%%/libge_net.so
 %%DATADIR%%/libgeobase.so
 %%DATADIR%%/libgeobaseutils.so
@@ -100,13 +94,12 @@ bin/googleearth
 %%DATADIR%%/libminizip.so
 %%DATADIR%%/libmoduleframework.so
 %%DATADIR%%/libnavigate.so
+%%DATADIR%%/libnss_mdns4_minimal.so.2
 %%DATADIR%%/libport.so
 %%DATADIR%%/libproj.so.0
 %%DATADIR%%/librender.so
-%%DATADIR%%/libssl.so.0.9.8
-%%DATADIR%%/libstdc++.so.6
+%%DATADIR%%/libreporting.so
 %%DATADIR%%/libwmsbase.so
-%%DATADIR%%/libz.so.1
 %%DATADIR%%/linux/xdg/xdg-desktop-icon
 %%DATADIR%%/linux/xdg/xdg-desktop-menu
 %%DATADIR%%/linux/xdg/xdg-mime
@@ -115,18 +108,8 @@ bin/googleearth
 %%DATADIR%%/qt.conf
 %%DATADIR%%/resources/16x16.png
 %%DATADIR%%/resources/32x32.png
-%%DATADIR%%/resources/Countries_of_the_world.kml
 %%DATADIR%%/resources/aboutlogo.png
 %%DATADIR%%/resources/ad.country/startinglocation.kml
-%%DATADIR%%/resources/addcontent-md-leftendcap.png
-%%DATADIR%%/resources/addcontent-md-repeating.png
-%%DATADIR%%/resources/addcontent-md-rightendcap.png
-%%DATADIR%%/resources/addcontent-mo-leftendcap.png
-%%DATADIR%%/resources/addcontent-mo-repeating.png
-%%DATADIR%%/resources/addcontent-mo-rightendcap.png
-%%DATADIR%%/resources/addcontent-normal-leftendcap.png
-%%DATADIR%%/resources/addcontent-normal-repeating.png
-%%DATADIR%%/resources/addcontent-normal-rightendcap.png
 %%DATADIR%%/resources/ae.country/startinglocation.kml
 %%DATADIR%%/resources/af.country/startinglocation.kml
 %%DATADIR%%/resources/ag.country/startinglocation.kml
@@ -138,10 +121,7 @@ bin/googleearth
 %%DATADIR%%/resources/ao.country/startinglocation.kml
 %%DATADIR%%/resources/aq.country/startinglocation.kml
 %%DATADIR%%/resources/ar.country/startinglocation.kml
-%%DATADIR%%/resources/ar.locale/back.png
-%%DATADIR%%/resources/ar.locale/panel-anim.png
-%%DATADIR%%/resources/ar.locale/panel-close.png
-%%DATADIR%%/resources/ar.locale/play-forward.png
+%%DATADIR%%/resources/ar.locale/default_myplaces.kml
 %%DATADIR%%/resources/arrow_e_active.png
 %%DATADIR%%/resources/arrow_e_hover.png
 %%DATADIR%%/resources/arrow_e_norm.png
@@ -173,31 +153,7 @@ bin/googleearth
 %%DATADIR%%/resources/ax.country/startinglocation.kml
 %%DATADIR%%/resources/az.country/startinglocation.kml
 %%DATADIR%%/resources/ba.country/startinglocation.kml
-%%DATADIR%%/resources/back.png
-%%DATADIR%%/resources/balloon_center.png
-%%DATADIR%%/resources/balloon_l_mac.png
-%%DATADIR%%/resources/balloon_l_nox_mac.png
-%%DATADIR%%/resources/balloon_l_win.png
-%%DATADIR%%/resources/balloon_ll_mac.png
-%%DATADIR%%/resources/balloon_ll_nox_mac.png
-%%DATADIR%%/resources/balloon_ll_win.png
-%%DATADIR%%/resources/balloon_lo.png
-%%DATADIR%%/resources/balloon_lr_mac.png
-%%DATADIR%%/resources/balloon_lr_nox_win.png
-%%DATADIR%%/resources/balloon_lr_win.png
-%%DATADIR%%/resources/balloon_r_mac.png
-%%DATADIR%%/resources/balloon_r_nox_win.png
-%%DATADIR%%/resources/balloon_r_win.png
-%%DATADIR%%/resources/balloon_ul_mac.png
-%%DATADIR%%/resources/balloon_ul_nox_mac.png
-%%DATADIR%%/resources/balloon_ul_nox_win.png
-%%DATADIR%%/resources/balloon_ul_win.png
-%%DATADIR%%/resources/balloon_up.png
-%%DATADIR%%/resources/balloon_up_nox.png
-%%DATADIR%%/resources/balloon_ur_mac.png
-%%DATADIR%%/resources/balloon_ur_nox_mac.png
-%%DATADIR%%/resources/balloon_ur_nox_win.png
-%%DATADIR%%/resources/balloon_ur_win.png
+%%DATADIR%%/resources/balloons.rcc
 %%DATADIR%%/resources/bang.png
 %%DATADIR%%/resources/bars.png
 %%DATADIR%%/resources/bb.country/startinglocation.kml
@@ -205,6 +161,7 @@ bin/googleearth
 %%DATADIR%%/resources/be.country/startinglocation.kml
 %%DATADIR%%/resources/bf.country/startinglocation.kml
 %%DATADIR%%/resources/bg.country/startinglocation.kml
+%%DATADIR%%/resources/bg.locale/default_myplaces.kml
 %%DATADIR%%/resources/bh.country/startinglocation.kml
 %%DATADIR%%/resources/bi.country/startinglocation.kml
 %%DATADIR%%/resources/bj.country/startinglocation.kml
@@ -216,31 +173,19 @@ bin/googleearth
 %%DATADIR%%/resources/bt.country/startinglocation.kml
 %%DATADIR%%/resources/building.png
 %%DATADIR%%/resources/button-dis-leftendcap-flat.png
-%%DATADIR%%/resources/button-dis-leftendcap.png
 %%DATADIR%%/resources/button-dis-repeating-flat.png
-%%DATADIR%%/resources/button-dis-repeating.png
 %%DATADIR%%/resources/button-dis-rightendcap-flat.png
-%%DATADIR%%/resources/button-dis-rightendcap.png
 %%DATADIR%%/resources/button-md-leftendcap-flat.png
-%%DATADIR%%/resources/button-md-leftendcap.png
 %%DATADIR%%/resources/button-md-repeating-flat.png
-%%DATADIR%%/resources/button-md-repeating.png
 %%DATADIR%%/resources/button-md-rightendcap-flat.png
-%%DATADIR%%/resources/button-md-rightendcap.png
-%%DATADIR%%/resources/button-mo-leftendcap.png
-%%DATADIR%%/resources/button-mo-repeating.png
-%%DATADIR%%/resources/button-mo-rightendcap.png
-%%DATADIR%%/resources/button-normal-leftendcap.png
-%%DATADIR%%/resources/button-normal-repeating.png
-%%DATADIR%%/resources/button-normal-rightendcap.png
 %%DATADIR%%/resources/bv.country/startinglocation.kml
 %%DATADIR%%/resources/bw.country/startinglocation.kml
 %%DATADIR%%/resources/by.country/startinglocation.kml
 %%DATADIR%%/resources/bz.country/startinglocation.kml
 %%DATADIR%%/resources/ca.country/startinglocation.kml
+%%DATADIR%%/resources/ca.locale/default_myplaces.kml
 %%DATADIR%%/resources/camera32.png
 %%DATADIR%%/resources/camera_mode.png
-%%DATADIR%%/resources/cancel.png
 %%DATADIR%%/resources/cc.country/startinglocation.kml
 %%DATADIR%%/resources/cd.country/startinglocation.kml
 %%DATADIR%%/resources/cf.country/startinglocation.kml
@@ -262,10 +207,10 @@ bin/googleearth
 %%DATADIR%%/resources/co.country/startinglocation.kml
 %%DATADIR%%/resources/coffee_house_16.png
 %%DATADIR%%/resources/collapsedtree.png
-%%DATADIR%%/resources/compass.png
-%%DATADIR%%/resources/compasstop.png
 %%DATADIR%%/resources/cr.country/startinglocation.kml
 %%DATADIR%%/resources/crosshair.png
+%%DATADIR%%/resources/cs.country/startinglocation.kml
+%%DATADIR%%/resources/cs.locale/default_myplaces.kml
 %%DATADIR%%/resources/cu.country/startinglocation.kml
 %%DATADIR%%/resources/cursor_crosshair_inverse.png
 %%DATADIR%%/resources/cursor_crosshair_thick.png
@@ -273,6 +218,7 @@ bin/googleearth
 %%DATADIR%%/resources/cx.country/startinglocation.kml
 %%DATADIR%%/resources/cy.country/startinglocation.kml
 %%DATADIR%%/resources/cz.country/startinglocation.kml
+%%DATADIR%%/resources/da.locale/default_myplaces.kml
 %%DATADIR%%/resources/de.country/startinglocation.kml
 %%DATADIR%%/resources/de.locale/default_myplaces.kml
 %%DATADIR%%/resources/decal.png
@@ -288,32 +234,27 @@ bin/googleearth
 %%DATADIR%%/resources/drawpolygon.png
 %%DATADIR%%/resources/drawpolyline.png
 %%DATADIR%%/resources/dz.country/startinglocation.kml
+%%DATADIR%%/resources/earthgroundrayleigh.png
+%%DATADIR%%/resources/earthskyrayleigh.png
 %%DATADIR%%/resources/ec.country/startinglocation.kml
 %%DATADIR%%/resources/ee.country/startinglocation.kml
 %%DATADIR%%/resources/eg.country/startinglocation.kml
 %%DATADIR%%/resources/eh.country/startinglocation.kml
+%%DATADIR%%/resources/el.locale/default_myplaces.kml
 %%DATADIR%%/resources/en.locale/default_myplaces.kml
-%%DATADIR%%/resources/en_AU.locale/default_myplaces.kml
-%%DATADIR%%/resources/en_CA.locale/default_myplaces.kml
-%%DATADIR%%/resources/en_GB.locale/default_myplaces.kml
-%%DATADIR%%/resources/en_NZ.locale/default_myplaces.kml
-%%DATADIR%%/resources/en_US.locale/default_myplaces.kml
 %%DATADIR%%/resources/er.country/startinglocation.kml
+%%DATADIR%%/resources/es-419.locale/default_myplaces.kml
 %%DATADIR%%/resources/es.country/startinglocation.kml
 %%DATADIR%%/resources/es.locale/default_myplaces.kml
 %%DATADIR%%/resources/et.country/startinglocation.kml
 %%DATADIR%%/resources/fast-food.png
 %%DATADIR%%/resources/fi.country/startinglocation.kml
+%%DATADIR%%/resources/fi.locale/default_myplaces.kml
+%%DATADIR%%/resources/fil.locale/default_myplaces.kml
 %%DATADIR%%/resources/find-next-dis.png
-%%DATADIR%%/resources/find-next.png
 %%DATADIR%%/resources/find-prev-dis.png
-%%DATADIR%%/resources/find-prev.png
 %%DATADIR%%/resources/fj.country/startinglocation.kml
 %%DATADIR%%/resources/fk.country/startinglocation.kml
-%%DATADIR%%/resources/flatarrow.png
-%%DATADIR%%/resources/flex_button_active.png
-%%DATADIR%%/resources/flex_button_hover.png
-%%DATADIR%%/resources/flex_button_norm.png
 %%DATADIR%%/resources/flightsim/aircraft/f16.acf
 %%DATADIR%%/resources/flightsim/aircraft/sr22.acf
 %%DATADIR%%/resources/flightsim/controller/generic.ini
@@ -356,7 +297,6 @@ bin/googleearth
 %%DATADIR%%/resources/gm.country/startinglocation.kml
 %%DATADIR%%/resources/gn.country/startinglocation.kml
 %%DATADIR%%/resources/google_earth_splash.png
-%%DATADIR%%/resources/googlelogo.png
 %%DATADIR%%/resources/gp.country/startinglocation.kml
 %%DATADIR%%/resources/gq.country/startinglocation.kml
 %%DATADIR%%/resources/gr.country/startinglocation.kml
@@ -366,19 +306,20 @@ bin/googleearth
 %%DATADIR%%/resources/gw.country/startinglocation.kml
 %%DATADIR%%/resources/gy.country/startinglocation.kml
 %%DATADIR%%/resources/hand.png
-%%DATADIR%%/resources/he.locale/back.png
-%%DATADIR%%/resources/he.locale/panel-anim.png
-%%DATADIR%%/resources/he.locale/panel-close.png
-%%DATADIR%%/resources/he.locale/play-forward.png
+%%DATADIR%%/resources/he.locale/default_myplaces.kml
+%%DATADIR%%/resources/hi.locale/default_myplaces.kml
 %%DATADIR%%/resources/high_res_places.png
 %%DATADIR%%/resources/highway_16.png
 %%DATADIR%%/resources/hk.country/startinglocation.kml
 %%DATADIR%%/resources/hm.country/startinglocation.kml
 %%DATADIR%%/resources/hn.country/startinglocation.kml
 %%DATADIR%%/resources/hr.country/startinglocation.kml
+%%DATADIR%%/resources/hr.locale/default_myplaces.kml
 %%DATADIR%%/resources/ht.country/startinglocation.kml
 %%DATADIR%%/resources/hu.country/startinglocation.kml
+%%DATADIR%%/resources/hu.locale/default_myplaces.kml
 %%DATADIR%%/resources/id.country/startinglocation.kml
+%%DATADIR%%/resources/id.locale/default_myplaces.kml
 %%DATADIR%%/resources/ie.country/startinglocation.kml
 %%DATADIR%%/resources/il.country/startinglocation.kml
 %%DATADIR%%/resources/im.country/startinglocation.kml
@@ -410,6 +351,7 @@ bin/googleearth
 %%DATADIR%%/resources/ki.country/startinglocation.kml
 %%DATADIR%%/resources/km.country/startinglocation.kml
 %%DATADIR%%/resources/kn.country/startinglocation.kml
+%%DATADIR%%/resources/ko.locale/default_myplaces.kml
 %%DATADIR%%/resources/ko.locale/google_earth_splash.png
 %%DATADIR%%/resources/kp.country/startinglocation.kml
 %%DATADIR%%/resources/kr.country/startinglocation.kml
@@ -421,6 +363,8 @@ bin/googleearth
 %%DATADIR%%/resources/layers_16.png
 %%DATADIR%%/resources/lb.country/startinglocation.kml
 %%DATADIR%%/resources/lc.country/startinglocation.kml
+%%DATADIR%%/resources/leftpanel-common.rcc
+%%DATADIR%%/resources/leftpanel-layer.rcc
 %%DATADIR%%/resources/li.country/startinglocation.kml
 %%DATADIR%%/resources/lk.country/startinglocation.kml
 %%DATADIR%%/resources/loading-image.png
@@ -428,16 +372,14 @@ bin/googleearth
 %%DATADIR%%/resources/lr.country/startinglocation.kml
 %%DATADIR%%/resources/ls.country/startinglocation.kml
 %%DATADIR%%/resources/lt.country/startinglocation.kml
+%%DATADIR%%/resources/lt.locale/default_myplaces.kml
 %%DATADIR%%/resources/lu.country/startinglocation.kml
 %%DATADIR%%/resources/lv.country/startinglocation.kml
+%%DATADIR%%/resources/lv.locale/default_myplaces.kml
 %%DATADIR%%/resources/ly.country/startinglocation.kml
 %%DATADIR%%/resources/ma.country/startinglocation.kml
-%%DATADIR%%/resources/mail-md.png
-%%DATADIR%%/resources/mail-mo.png
-%%DATADIR%%/resources/mail-pl.png
-%%DATADIR%%/resources/maps-md.png
-%%DATADIR%%/resources/maps-mo.png
-%%DATADIR%%/resources/maps-pl.png
+%%DATADIR%%/resources/marsgroundrayleigh.png
+%%DATADIR%%/resources/marsskyrayleigh.png
 %%DATADIR%%/resources/mc.country/startinglocation.kml
 %%DATADIR%%/resources/md.country/startinglocation.kml
 %%DATADIR%%/resources/me.country/startinglocation.kml
@@ -464,32 +406,9 @@ bin/googleearth
 %%DATADIR%%/resources/mysavedplaces_open.png
 %%DATADIR%%/resources/mz.country/startinglocation.kml
 %%DATADIR%%/resources/na.country/startinglocation.kml
-%%DATADIR%%/resources/nav_background.png
+%%DATADIR%%/resources/navcontrols.rcc
 %%DATADIR%%/resources/nc.country/startinglocation.kml
 %%DATADIR%%/resources/ne.country/startinglocation.kml
-%%DATADIR%%/resources/new_look_background.png
-%%DATADIR%%/resources/new_look_norm.png
-%%DATADIR%%/resources/new_look_spotlight_active.png
-%%DATADIR%%/resources/new_look_spotlight_hover.png
-%%DATADIR%%/resources/new_move_background.png
-%%DATADIR%%/resources/new_move_norm.png
-%%DATADIR%%/resources/new_move_spotlight_active.png
-%%DATADIR%%/resources/new_move_spotlight_hover.png
-%%DATADIR%%/resources/new_ring_active.png
-%%DATADIR%%/resources/new_ring_background.png
-%%DATADIR%%/resources/new_ring_hover.png
-%%DATADIR%%/resources/new_ring_n_active.png
-%%DATADIR%%/resources/new_ring_n_hover.png
-%%DATADIR%%/resources/new_ring_norm.png
-%%DATADIR%%/resources/new_zoom_background.png
-%%DATADIR%%/resources/new_zoom_minus_active.png
-%%DATADIR%%/resources/new_zoom_minus_hover.png
-%%DATADIR%%/resources/new_zoom_norm.png
-%%DATADIR%%/resources/new_zoom_plus_active.png
-%%DATADIR%%/resources/new_zoom_plus_hover.png
-%%DATADIR%%/resources/new_zoombar_active.png
-%%DATADIR%%/resources/new_zoombar_hover.png
-%%DATADIR%%/resources/new_zoombar_norm.png
 %%DATADIR%%/resources/nf.country/startinglocation.kml
 %%DATADIR%%/resources/ng.country/startinglocation.kml
 %%DATADIR%%/resources/ni.country/startinglocation.kml
@@ -504,7 +423,9 @@ bin/googleearth
 %%DATADIR%%/resources/ni_open_fetching_02.png
 %%DATADIR%%/resources/ni_open_fetching_03.png
 %%DATADIR%%/resources/nl.country/startinglocation.kml
+%%DATADIR%%/resources/nl.locale/default_myplaces.kml
 %%DATADIR%%/resources/no.country/startinglocation.kml
+%%DATADIR%%/resources/no.locale/default_myplaces.kml
 %%DATADIR%%/resources/node-closed.png
 %%DATADIR%%/resources/node-open.png
 %%DATADIR%%/resources/note.png
@@ -518,9 +439,6 @@ bin/googleearth
 %%DATADIR%%/resources/openfolder.png
 %%DATADIR%%/resources/opennetworkfolder.png
 %%DATADIR%%/resources/opentree.png
-%%DATADIR%%/resources/overlay-md.png
-%%DATADIR%%/resources/overlay-mo.png
-%%DATADIR%%/resources/overlay-pl.png
 %%DATADIR%%/resources/overlay.png
 %%DATADIR%%/resources/overviewframe.png
 %%DATADIR%%/resources/pa.country/startinglocation.kml
@@ -679,73 +597,22 @@ bin/googleearth
 %%DATADIR%%/resources/paddle/ylw-stars.png
 %%DATADIR%%/resources/paddle/z-lv.png
 %%DATADIR%%/resources/paddle/z.png
-%%DATADIR%%/resources/palette-2.png
-%%DATADIR%%/resources/palette-3.png
-%%DATADIR%%/resources/palette-4.png
-%%DATADIR%%/resources/palette-5.png
-%%DATADIR%%/resources/panel-anim.png
-%%DATADIR%%/resources/panel-bkgd.png
-%%DATADIR%%/resources/panel-close.png
-%%DATADIR%%/resources/panel-down.png
-%%DATADIR%%/resources/panel-edge.png
-%%DATADIR%%/resources/panel-md.png
-%%DATADIR%%/resources/panel-mo.png
-%%DATADIR%%/resources/panel-on-md.png
-%%DATADIR%%/resources/panel-on-mo.png
-%%DATADIR%%/resources/panel-on-pl.png
-%%DATADIR%%/resources/panel-pl.png
-%%DATADIR%%/resources/panel-repeat.png
 %%DATADIR%%/resources/parks.png
-%%DATADIR%%/resources/path-md.png
-%%DATADIR%%/resources/path-mo.png
-%%DATADIR%%/resources/path-pl.png
-%%DATADIR%%/resources/pause-dis.png
-%%DATADIR%%/resources/pause.png
 %%DATADIR%%/resources/pe.country/startinglocation.kml
 %%DATADIR%%/resources/pf.country/startinglocation.kml
 %%DATADIR%%/resources/pg.country/startinglocation.kml
 %%DATADIR%%/resources/ph.country/startinglocation.kml
-%%DATADIR%%/resources/photo_arrows_fade.png
 %%DATADIR%%/resources/photo_icon_64.png
 %%DATADIR%%/resources/photo_listview.png
-%%DATADIR%%/resources/pie_background.png
-%%DATADIR%%/resources/pie_f01.png
-%%DATADIR%%/resources/pie_f02.png
-%%DATADIR%%/resources/pie_f03.png
-%%DATADIR%%/resources/pie_f04.png
-%%DATADIR%%/resources/pie_f05.png
-%%DATADIR%%/resources/pie_f06.png
-%%DATADIR%%/resources/pie_f07.png
-%%DATADIR%%/resources/pie_f08.png
-%%DATADIR%%/resources/pie_f09.png
-%%DATADIR%%/resources/pie_f10.png
-%%DATADIR%%/resources/pie_f11.png
-%%DATADIR%%/resources/pie_f12.png
-%%DATADIR%%/resources/pie_f13.png
-%%DATADIR%%/resources/pie_f14.png
-%%DATADIR%%/resources/pie_f15.png
-%%DATADIR%%/resources/pie_f16.png
-%%DATADIR%%/resources/pie_f17.png
-%%DATADIR%%/resources/pie_f18.png
-%%DATADIR%%/resources/pie_f19.png
-%%DATADIR%%/resources/pin-md.png
-%%DATADIR%%/resources/pin-mo.png
-%%DATADIR%%/resources/pin-pl.png
 %%DATADIR%%/resources/pk.country/startinglocation.kml
 %%DATADIR%%/resources/pl.country/startinglocation.kml
-%%DATADIR%%/resources/play-forward.png
+%%DATADIR%%/resources/pl.locale/default_myplaces.kml
 %%DATADIR%%/resources/pm.country/startinglocation.kml
 %%DATADIR%%/resources/pn.country/startinglocation.kml
-%%DATADIR%%/resources/polygon-md.png
-%%DATADIR%%/resources/polygon-mo.png
-%%DATADIR%%/resources/polygon-pl.png
 %%DATADIR%%/resources/pr.country/startinglocation.kml
 %%DATADIR%%/resources/premium_lock.png
 %%DATADIR%%/resources/premium_locked.png
 %%DATADIR%%/resources/premium_star.png
-%%DATADIR%%/resources/print-md.png
-%%DATADIR%%/resources/print-mo.png
-%%DATADIR%%/resources/print-pl.png
 %%DATADIR%%/resources/printlogo.png
 %%DATADIR%%/resources/progress0.png
 %%DATADIR%%/resources/progress1.png
@@ -756,7 +623,9 @@ bin/googleearth
 %%DATADIR%%/resources/progress6.png
 %%DATADIR%%/resources/progress7.png
 %%DATADIR%%/resources/ps.country/startinglocation.kml
+%%DATADIR%%/resources/pt-PT.locale/default_myplaces.kml
 %%DATADIR%%/resources/pt.country/startinglocation.kml
+%%DATADIR%%/resources/pt.locale/default_myplaces.kml
 %%DATADIR%%/resources/pushpin/blue-pushpin.png
 %%DATADIR%%/resources/pushpin/grn-pushpin.png
 %%DATADIR%%/resources/pushpin/ltblu-pushpin.png
@@ -783,6 +652,7 @@ bin/googleearth
 %%DATADIR%%/resources/ring_n_hover.png
 %%DATADIR%%/resources/ring_norm.png
 %%DATADIR%%/resources/ro.country/startinglocation.kml
+%%DATADIR%%/resources/ro.locale/default_myplaces.kml
 %%DATADIR%%/resources/roundrect_bottom.png
 %%DATADIR%%/resources/roundrect_bottomleft.png
 %%DATADIR%%/resources/roundrect_bottomright.png
@@ -794,13 +664,8 @@ bin/googleearth
 %%DATADIR%%/resources/roundrect_topright.png
 %%DATADIR%%/resources/rs.country/startinglocation.kml
 %%DATADIR%%/resources/ru.country/startinglocation.kml
+%%DATADIR%%/resources/ru.locale/default_myplaces.kml
 %%DATADIR%%/resources/ru.locale/google_earth_splash.png
-%%DATADIR%%/resources/ruler-md.png
-%%DATADIR%%/resources/ruler-mo.png
-%%DATADIR%%/resources/ruler-on-md.png
-%%DATADIR%%/resources/ruler-on-mo.png
-%%DATADIR%%/resources/ruler-on-pl.png
-%%DATADIR%%/resources/ruler-pl.png
 %%DATADIR%%/resources/rw.country/startinglocation.kml
 %%DATADIR%%/resources/sa.country/startinglocation.kml
 %%DATADIR%%/resources/sb.country/startinglocation.kml
@@ -808,11 +673,6 @@ bin/googleearth
 %%DATADIR%%/resources/school_16.png
 %%DATADIR%%/resources/sd.country/startinglocation.kml
 %%DATADIR%%/resources/se.country/startinglocation.kml
-%%DATADIR%%/resources/search-dis.png
-%%DATADIR%%/resources/search-toolbar-md.png
-%%DATADIR%%/resources/search-toolbar-mo.png
-%%DATADIR%%/resources/search-toolbar-norm.png
-%%DATADIR%%/resources/search.png
 %%DATADIR%%/resources/sg.country/startinglocation.kml
 %%DATADIR%%/resources/sh.country/startinglocation.kml
 %%DATADIR%%/resources/shapes/airports.png
@@ -923,15 +783,11 @@ bin/googleearth
 %%DATADIR%%/resources/si.country/startinglocation.kml
 %%DATADIR%%/resources/sj.country/startinglocation.kml
 %%DATADIR%%/resources/sk.country/startinglocation.kml
-%%DATADIR%%/resources/sky-md.png
-%%DATADIR%%/resources/sky-mo.png
-%%DATADIR%%/resources/sky-on-md.png
-%%DATADIR%%/resources/sky-on-mo.png
-%%DATADIR%%/resources/sky-on-pl.png
-%%DATADIR%%/resources/sky-pl.png
+%%DATADIR%%/resources/sk.locale/default_myplaces.kml
 %%DATADIR%%/resources/skyreflectionabove.png
 %%DATADIR%%/resources/skyreflectionbelow.png
 %%DATADIR%%/resources/sl.country/startinglocation.kml
+%%DATADIR%%/resources/sl.locale/default_myplaces.kml
 %%DATADIR%%/resources/sm.country/startinglocation.kml
 %%DATADIR%%/resources/sn.country/startinglocation.kml
 %%DATADIR%%/resources/snowflakes0.png
@@ -941,20 +797,16 @@ bin/googleearth
 %%DATADIR%%/resources/so.country/startinglocation.kml
 %%DATADIR%%/resources/spin_icon.png
 %%DATADIR%%/resources/sr.country/startinglocation.kml
+%%DATADIR%%/resources/sr.locale/default_myplaces.kml
 %%DATADIR%%/resources/st.country/startinglocation.kml
+%%DATADIR%%/resources/statusbar.rcc
 %%DATADIR%%/resources/steering_click_dot.png
 %%DATADIR%%/resources/steering_drag_dot.png
-%%DATADIR%%/resources/stop-dis.png
-%%DATADIR%%/resources/stop.png
 %%DATADIR%%/resources/streamed_layer.png
 %%DATADIR%%/resources/streamed_layers.png
-%%DATADIR%%/resources/sun-md.png
-%%DATADIR%%/resources/sun-mo.png
-%%DATADIR%%/resources/sun-on-md.png
-%%DATADIR%%/resources/sun-on-mo.png
-%%DATADIR%%/resources/sun-on-pl.png
-%%DATADIR%%/resources/sun-pl.png
+%%DATADIR%%/resources/sun.png
 %%DATADIR%%/resources/sv.country/startinglocation.kml
+%%DATADIR%%/resources/sv.locale/default_myplaces.kml
 %%DATADIR%%/resources/swoop_target.png
 %%DATADIR%%/resources/sy.country/startinglocation.kml
 %%DATADIR%%/resources/sz.country/startinglocation.kml
@@ -964,140 +816,23 @@ bin/googleearth
 %%DATADIR%%/resources/tf.country/startinglocation.kml
 %%DATADIR%%/resources/tg.country/startinglocation.kml
 %%DATADIR%%/resources/th.country/startinglocation.kml
+%%DATADIR%%/resources/th.locale/default_myplaces.kml
 %%DATADIR%%/resources/three-dollars.png
 %%DATADIR%%/resources/tile.png
 %%DATADIR%%/resources/timedate_dashed.png
 %%DATADIR%%/resources/tj.country/startinglocation.kml
 %%DATADIR%%/resources/tk.country/startinglocation.kml
 %%DATADIR%%/resources/tl.country/startinglocation.kml
-%%DATADIR%%/resources/tm-md.png
-%%DATADIR%%/resources/tm-mo.png
-%%DATADIR%%/resources/tm-on-md.png
-%%DATADIR%%/resources/tm-on-mo.png
-%%DATADIR%%/resources/tm-on-pl.png
-%%DATADIR%%/resources/tm-pl.png
 %%DATADIR%%/resources/tm.country/startinglocation.kml
-%%DATADIR%%/resources/tm_animate_off_active.png
-%%DATADIR%%/resources/tm_animate_off_bg.png
-%%DATADIR%%/resources/tm_animate_off_hover.png
-%%DATADIR%%/resources/tm_animate_off_norm.png
-%%DATADIR%%/resources/tm_animate_on_active.png
-%%DATADIR%%/resources/tm_animate_on_bg.png
-%%DATADIR%%/resources/tm_animate_on_hover.png
-%%DATADIR%%/resources/tm_animate_on_norm.png
-%%DATADIR%%/resources/tm_bg_center.png
-%%DATADIR%%/resources/tm_bg_left.png
-%%DATADIR%%/resources/tm_bg_right.png
 %%DATADIR%%/resources/tm_ghost_bg.png
-%%DATADIR%%/resources/tm_invisible_date.png
-%%DATADIR%%/resources/tm_next_active.png
-%%DATADIR%%/resources/tm_next_bg.png
-%%DATADIR%%/resources/tm_next_hover.png
-%%DATADIR%%/resources/tm_next_norm.png
-%%DATADIR%%/resources/tm_options_active.png
-%%DATADIR%%/resources/tm_options_hover.png
-%%DATADIR%%/resources/tm_options_norm.png
-%%DATADIR%%/resources/tm_prev_active.png
-%%DATADIR%%/resources/tm_prev_bg.png
-%%DATADIR%%/resources/tm_prev_hover.png
-%%DATADIR%%/resources/tm_prev_norm.png
-%%DATADIR%%/resources/tm_selectdate.png
-%%DATADIR%%/resources/tm_slider_alt_thumb_active.png
-%%DATADIR%%/resources/tm_slider_alt_thumb_hover.png
-%%DATADIR%%/resources/tm_slider_alt_thumb_norm.png
-%%DATADIR%%/resources/tm_slider_bg.png
-%%DATADIR%%/resources/tm_slider_bg_kh.png
-%%DATADIR%%/resources/tm_slider_bg_left_end.png
-%%DATADIR%%/resources/tm_slider_bg_left_end_kh.png
-%%DATADIR%%/resources/tm_slider_bg_left_more.png
-%%DATADIR%%/resources/tm_slider_bg_left_more_kh.png
-%%DATADIR%%/resources/tm_slider_bg_right_end.png
-%%DATADIR%%/resources/tm_slider_bg_right_end_kh.png
-%%DATADIR%%/resources/tm_slider_bg_right_more.png
-%%DATADIR%%/resources/tm_slider_bg_right_more_kh.png
-%%DATADIR%%/resources/tm_slider_callout.png
-%%DATADIR%%/resources/tm_slider_ghost_bg.png
-%%DATADIR%%/resources/tm_slider_ghost_bg_left_end.png
-%%DATADIR%%/resources/tm_slider_ghost_bg_right_end.png
-%%DATADIR%%/resources/tm_slider_thumb_active.png
-%%DATADIR%%/resources/tm_slider_thumb_bg.png
-%%DATADIR%%/resources/tm_slider_thumb_hover.png
-%%DATADIR%%/resources/tm_slider_thumb_norm.png
-%%DATADIR%%/resources/tm_slider_track.png
-%%DATADIR%%/resources/tm_visible_date.png
-%%DATADIR%%/resources/tm_zoomin_active.png
-%%DATADIR%%/resources/tm_zoomin_bg.png
-%%DATADIR%%/resources/tm_zoomin_hover.png
-%%DATADIR%%/resources/tm_zoomin_norm.png
-%%DATADIR%%/resources/tm_zoomout_active.png
-%%DATADIR%%/resources/tm_zoomout_bg.png
-%%DATADIR%%/resources/tm_zoomout_hover.png
-%%DATADIR%%/resources/tm_zoomout_norm.png
+%%DATADIR%%/resources/tmcontrols.rcc
 %%DATADIR%%/resources/tn.country/startinglocation.kml
 %%DATADIR%%/resources/to.country/startinglocation.kml
-%%DATADIR%%/resources/tour-md.png
-%%DATADIR%%/resources/tour-mo.png
-%%DATADIR%%/resources/tour-on-md.png
-%%DATADIR%%/resources/tour-on-mo.png
-%%DATADIR%%/resources/tour-on-pl.png
-%%DATADIR%%/resources/tour-pl.png
+%%DATADIR%%/resources/toolbar.rcc
 %%DATADIR%%/resources/tour16.png
-%%DATADIR%%/resources/tour_bg_center.png
-%%DATADIR%%/resources/tour_bg_left.png
-%%DATADIR%%/resources/tour_bg_rec_center.png
-%%DATADIR%%/resources/tour_bg_rec_left.png
-%%DATADIR%%/resources/tour_bg_rec_right.png
-%%DATADIR%%/resources/tour_bg_right.png
-%%DATADIR%%/resources/tour_slider_thumb_active.png
-%%DATADIR%%/resources/tour_slider_thumb_hover.png
-%%DATADIR%%/resources/tour_slider_thumb_norm.png
-%%DATADIR%%/resources/tour_slider_track.png
-%%DATADIR%%/resources/tourexit_active.png
-%%DATADIR%%/resources/tourexit_hover.png
-%%DATADIR%%/resources/tourexit_norm.png
-%%DATADIR%%/resources/tourloop_off_active.png
-%%DATADIR%%/resources/tourloop_off_hover.png
-%%DATADIR%%/resources/tourloop_off_norm.png
-%%DATADIR%%/resources/tourloop_on_active.png
-%%DATADIR%%/resources/tourloop_on_hover.png
-%%DATADIR%%/resources/tourloop_on_norm.png
-%%DATADIR%%/resources/tourmic_off_active.png
-%%DATADIR%%/resources/tourmic_off_hover.png
-%%DATADIR%%/resources/tourmic_off_norm.png
-%%DATADIR%%/resources/tourmic_on_active.png
-%%DATADIR%%/resources/tourmic_on_hover.png
-%%DATADIR%%/resources/tourmic_on_norm.png
-%%DATADIR%%/resources/tournext_off_active.png
-%%DATADIR%%/resources/tournext_off_hover.png
-%%DATADIR%%/resources/tournext_off_norm.png
-%%DATADIR%%/resources/tournext_on_active.png
-%%DATADIR%%/resources/tournext_on_hover.png
-%%DATADIR%%/resources/tournext_on_norm.png
-%%DATADIR%%/resources/tourplay_off_active.png
-%%DATADIR%%/resources/tourplay_off_hover.png
-%%DATADIR%%/resources/tourplay_off_norm.png
-%%DATADIR%%/resources/tourplay_on_active.png
-%%DATADIR%%/resources/tourplay_on_hover.png
-%%DATADIR%%/resources/tourplay_on_norm.png
-%%DATADIR%%/resources/tourplayfolder.png
-%%DATADIR%%/resources/tourplayline.png
-%%DATADIR%%/resources/tourplaytour.png
-%%DATADIR%%/resources/tourprev_off_active.png
-%%DATADIR%%/resources/tourprev_off_hover.png
-%%DATADIR%%/resources/tourprev_off_norm.png
-%%DATADIR%%/resources/tourprev_on_active.png
-%%DATADIR%%/resources/tourprev_on_hover.png
-%%DATADIR%%/resources/tourprev_on_norm.png
-%%DATADIR%%/resources/tourrecord_off_active.png
-%%DATADIR%%/resources/tourrecord_off_hover.png
-%%DATADIR%%/resources/tourrecord_off_norm.png
-%%DATADIR%%/resources/tourrecord_on_active.png
-%%DATADIR%%/resources/tourrecord_on_hover.png
-%%DATADIR%%/resources/tourrecord_on_norm.png
-%%DATADIR%%/resources/toursave_active.png
-%%DATADIR%%/resources/toursave_hover.png
-%%DATADIR%%/resources/toursave_norm.png
+%%DATADIR%%/resources/tourcontrols.rcc
 %%DATADIR%%/resources/tr.country/startinglocation.kml
+%%DATADIR%%/resources/tr.locale/default_myplaces.kml
 %%DATADIR%%/resources/transp.png
 %%DATADIR%%/resources/transportation.png
 %%DATADIR%%/resources/tt.country/startinglocation.kml
@@ -1107,6 +842,7 @@ bin/googleearth
 %%DATADIR%%/resources/tz.country/startinglocation.kml
 %%DATADIR%%/resources/ua.country/startinglocation.kml
 %%DATADIR%%/resources/ug.country/startinglocation.kml
+%%DATADIR%%/resources/uk.locale/default_myplaces.kml
 %%DATADIR%%/resources/um.country/startinglocation.kml
 %%DATADIR%%/resources/unknown_plugin.png
 %%DATADIR%%/resources/us.country/startinglocation.kml
@@ -1118,6 +854,7 @@ bin/googleearth
 %%DATADIR%%/resources/ve.country/startinglocation.kml
 %%DATADIR%%/resources/vg.country/startinglocation.kml
 %%DATADIR%%/resources/vi.country/startinglocation.kml
+%%DATADIR%%/resources/vi.locale/default_myplaces.kml
 %%DATADIR%%/resources/vn.country/startinglocation.kml
 %%DATADIR%%/resources/vu.country/startinglocation.kml
 %%DATADIR%%/resources/waterbump0.png
@@ -1139,7 +876,9 @@ bin/googleearth
 %%DATADIR%%/resources/ye.country/startinglocation.kml
 %%DATADIR%%/resources/yt.country/startinglocation.kml
 %%DATADIR%%/resources/za.country/startinglocation.kml
+%%DATADIR%%/resources/zh-Hans.locale/default_myplaces.kml
 %%DATADIR%%/resources/zh-Hans.locale/google_earth_splash.png
+%%DATADIR%%/resources/zh-Hant.locale/default_myplaces.kml
 %%DATADIR%%/resources/zh-Hant.locale/google_earth_splash.png
 %%DATADIR%%/resources/zm.country/startinglocation.kml
 %%DATADIR%%/resources/zoom_background.png
@@ -1153,42 +892,42 @@ bin/googleearth
 %%DATADIR%%/resources/zoombar_norm.png
 %%DATADIR%%/resources/zw.country/startinglocation.kml
 %%DATADIR%%/shaders/atmosphere_common.ini
-%%DATADIR%%/shaders/atmosphere_ground.arbfp1
-%%DATADIR%%/shaders/atmosphere_ground.arbvp1
-%%DATADIR%%/shaders/atmosphere_ground.asd
-%%DATADIR%%/shaders/atmosphere_ground.cfg
-%%DATADIR%%/shaders/atmosphere_ground.ps_2_0
-%%DATADIR%%/shaders/atmosphere_ground.vs_2_0
-%%DATADIR%%/shaders/atmosphere_sky_model_space.arbfp1
-%%DATADIR%%/shaders/atmosphere_sky_model_space.arbvp1
-%%DATADIR%%/shaders/atmosphere_sky_model_space.asd
-%%DATADIR%%/shaders/atmosphere_sky_model_space.cfg
-%%DATADIR%%/shaders/atmosphere_sky_model_space.ps_2_0
-%%DATADIR%%/shaders/atmosphere_sky_model_space.vs_2_0
-%%DATADIR%%/shaders/atmosphere_sky_view_space.arbfp1
-%%DATADIR%%/shaders/atmosphere_sky_view_space.arbvp1
-%%DATADIR%%/shaders/atmosphere_sky_view_space.asd
-%%DATADIR%%/shaders/atmosphere_sky_view_space.cfg
-%%DATADIR%%/shaders/atmosphere_sky_view_space.ps_2_0
-%%DATADIR%%/shaders/atmosphere_sky_view_space.vs_2_0
-%%DATADIR%%/shaders/mars_atmosphere_ground.arbfp1
-%%DATADIR%%/shaders/mars_atmosphere_ground.arbvp1
-%%DATADIR%%/shaders/mars_atmosphere_ground.asd
-%%DATADIR%%/shaders/mars_atmosphere_ground.cfg
-%%DATADIR%%/shaders/mars_atmosphere_ground.ps_2_0
-%%DATADIR%%/shaders/mars_atmosphere_ground.vs_2_0
-%%DATADIR%%/shaders/mars_atmosphere_sky_model_space.arbfp1
-%%DATADIR%%/shaders/mars_atmosphere_sky_model_space.arbvp1
-%%DATADIR%%/shaders/mars_atmosphere_sky_model_space.asd
-%%DATADIR%%/shaders/mars_atmosphere_sky_model_space.cfg
-%%DATADIR%%/shaders/mars_atmosphere_sky_model_space.ps_2_0
-%%DATADIR%%/shaders/mars_atmosphere_sky_model_space.vs_2_0
-%%DATADIR%%/shaders/mars_atmosphere_sky_view_space.arbfp1
-%%DATADIR%%/shaders/mars_atmosphere_sky_view_space.arbvp1
-%%DATADIR%%/shaders/mars_atmosphere_sky_view_space.asd
-%%DATADIR%%/shaders/mars_atmosphere_sky_view_space.cfg
-%%DATADIR%%/shaders/mars_atmosphere_sky_view_space.ps_2_0
-%%DATADIR%%/shaders/mars_atmosphere_sky_view_space.vs_2_0
+%%DATADIR%%/shaders/atmosphere_ground_sun_off.arbfp1
+%%DATADIR%%/shaders/atmosphere_ground_sun_off.arbvp1
+%%DATADIR%%/shaders/atmosphere_ground_sun_off.asd
+%%DATADIR%%/shaders/atmosphere_ground_sun_off.cfg
+%%DATADIR%%/shaders/atmosphere_ground_sun_off.ps_2_0
+%%DATADIR%%/shaders/atmosphere_ground_sun_off.vs_2_0
+%%DATADIR%%/shaders/atmosphere_ground_sun_on.arbfp1
+%%DATADIR%%/shaders/atmosphere_ground_sun_on.arbvp1
+%%DATADIR%%/shaders/atmosphere_ground_sun_on.asd
+%%DATADIR%%/shaders/atmosphere_ground_sun_on.cfg
+%%DATADIR%%/shaders/atmosphere_ground_sun_on.ps_2_0
+%%DATADIR%%/shaders/atmosphere_ground_sun_on.vs_2_0
+%%DATADIR%%/shaders/atmosphere_sky_sun_off.arbfp1
+%%DATADIR%%/shaders/atmosphere_sky_sun_off.arbvp1
+%%DATADIR%%/shaders/atmosphere_sky_sun_off.asd
+%%DATADIR%%/shaders/atmosphere_sky_sun_off.cfg
+%%DATADIR%%/shaders/atmosphere_sky_sun_off.ps_2_0
+%%DATADIR%%/shaders/atmosphere_sky_sun_off.vs_2_0
+%%DATADIR%%/shaders/atmosphere_sky_sun_on.arbfp1
+%%DATADIR%%/shaders/atmosphere_sky_sun_on.arbvp1
+%%DATADIR%%/shaders/atmosphere_sky_sun_on.asd
+%%DATADIR%%/shaders/atmosphere_sky_sun_on.cfg
+%%DATADIR%%/shaders/atmosphere_sky_sun_on.ps_2_0
+%%DATADIR%%/shaders/atmosphere_sky_sun_on.vs_2_0
+%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.arbfp1
+%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.arbvp1
+%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.asd
+%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.cfg
+%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.ps_2_0
+%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.vs_2_0
+%%DATADIR%%/shaders/mars_atmosphere_sky_sun_on.arbfp1
+%%DATADIR%%/shaders/mars_atmosphere_sky_sun_on.arbvp1
+%%DATADIR%%/shaders/mars_atmosphere_sky_sun_on.asd
+%%DATADIR%%/shaders/mars_atmosphere_sky_sun_on.cfg
+%%DATADIR%%/shaders/mars_atmosphere_sky_sun_on.ps_2_0
+%%DATADIR%%/shaders/mars_atmosphere_sky_sun_on.vs_2_0
 %%DATADIR%%/shaders/precipitation_double_cone.arbfp1
 %%DATADIR%%/shaders/precipitation_double_cone.arbvp1
 %%DATADIR%%/shaders/precipitation_double_cone.asd
@@ -1201,17 +940,6 @@ bin/googleearth
 %%DATADIR%%/shaders/watersurface.cfg
 %%DATADIR%%/shaders/watersurface.ps_2_0
 %%DATADIR%%/shaders/watersurface.vs_2_0
-%%DATADIR%%/xml/app.module.xml
-%%DATADIR%%/xml/auth.module.xml
-%%DATADIR%%/xml/basicingest.module.xml
-%%DATADIR%%/xml/flightsim.module.xml
-%%DATADIR%%/xml/google.module.xml
-%%DATADIR%%/xml/gps.module.xml
-%%DATADIR%%/xml/input.plugin.xml
-%%DATADIR%%/xml/layer.module.xml
-%%DATADIR%%/xml/measure.module.xml
-%%DATADIR%%/xml/navigate.module.xml
-%%DATADIR%%/xml/render.module.xml
 share/applications/googleearth.desktop
 share/mime/application/earthviewer.xml
 share/mime/application/keyhole.xml
@@ -1219,7 +947,6 @@ share/mime/application/vnd.google-earth.kml+xml.xml
 share/mime/application/vnd.google-earth.kmz.xml
 share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/kvw
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/linux/xdg
 @dirrm %%DATADIR%%/linux
@@ -1249,6 +976,7 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/be.country
 @dirrm %%DATADIR%%/resources/bf.country
 @dirrm %%DATADIR%%/resources/bg.country
+@dirrm %%DATADIR%%/resources/bg.locale
 @dirrm %%DATADIR%%/resources/bh.country
 @dirrm %%DATADIR%%/resources/bi.country
 @dirrm %%DATADIR%%/resources/bj.country
@@ -1263,6 +991,7 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/by.country
 @dirrm %%DATADIR%%/resources/bz.country
 @dirrm %%DATADIR%%/resources/ca.country
+@dirrm %%DATADIR%%/resources/ca.locale
 @dirrm %%DATADIR%%/resources/cc.country
 @dirrm %%DATADIR%%/resources/cd.country
 @dirrm %%DATADIR%%/resources/cf.country
@@ -1275,11 +1004,14 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/cn.country
 @dirrm %%DATADIR%%/resources/co.country
 @dirrm %%DATADIR%%/resources/cr.country
+@dirrm %%DATADIR%%/resources/cs.country
+@dirrm %%DATADIR%%/resources/cs.locale
 @dirrm %%DATADIR%%/resources/cu.country
 @dirrm %%DATADIR%%/resources/cv.country
 @dirrm %%DATADIR%%/resources/cx.country
 @dirrm %%DATADIR%%/resources/cy.country
 @dirrm %%DATADIR%%/resources/cz.country
+@dirrm %%DATADIR%%/resources/da.locale
 @dirrm %%DATADIR%%/resources/de.country
 @dirrm %%DATADIR%%/resources/de.locale
 @dirrm %%DATADIR%%/resources/dj.country
@@ -1291,17 +1023,16 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/ee.country
 @dirrm %%DATADIR%%/resources/eg.country
 @dirrm %%DATADIR%%/resources/eh.country
+@dirrm %%DATADIR%%/resources/el.locale
 @dirrm %%DATADIR%%/resources/en.locale
-@dirrm %%DATADIR%%/resources/en_AU.locale
-@dirrm %%DATADIR%%/resources/en_CA.locale
-@dirrm %%DATADIR%%/resources/en_GB.locale
-@dirrm %%DATADIR%%/resources/en_NZ.locale
-@dirrm %%DATADIR%%/resources/en_US.locale
 @dirrm %%DATADIR%%/resources/er.country
+@dirrm %%DATADIR%%/resources/es-419.locale
 @dirrm %%DATADIR%%/resources/es.country
 @dirrm %%DATADIR%%/resources/es.locale
 @dirrm %%DATADIR%%/resources/et.country
 @dirrm %%DATADIR%%/resources/fi.country
+@dirrm %%DATADIR%%/resources/fi.locale
+@dirrm %%DATADIR%%/resources/fil.locale
 @dirrm %%DATADIR%%/resources/fj.country
 @dirrm %%DATADIR%%/resources/fk.country
 @dirrm %%DATADIR%%/resources/flightsim/aircraft
@@ -1334,13 +1065,17 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/gw.country
 @dirrm %%DATADIR%%/resources/gy.country
 @dirrm %%DATADIR%%/resources/he.locale
+@dirrm %%DATADIR%%/resources/hi.locale
 @dirrm %%DATADIR%%/resources/hk.country
 @dirrm %%DATADIR%%/resources/hm.country
 @dirrm %%DATADIR%%/resources/hn.country
 @dirrm %%DATADIR%%/resources/hr.country
+@dirrm %%DATADIR%%/resources/hr.locale
 @dirrm %%DATADIR%%/resources/ht.country
 @dirrm %%DATADIR%%/resources/hu.country
+@dirrm %%DATADIR%%/resources/hu.locale
 @dirrm %%DATADIR%%/resources/id.country
+@dirrm %%DATADIR%%/resources/id.locale
 @dirrm %%DATADIR%%/resources/ie.country
 @dirrm %%DATADIR%%/resources/il.country
 @dirrm %%DATADIR%%/resources/im.country
@@ -1376,8 +1111,10 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/lr.country
 @dirrm %%DATADIR%%/resources/ls.country
 @dirrm %%DATADIR%%/resources/lt.country
+@dirrm %%DATADIR%%/resources/lt.locale
 @dirrm %%DATADIR%%/resources/lu.country
 @dirrm %%DATADIR%%/resources/lv.country
+@dirrm %%DATADIR%%/resources/lv.locale
 @dirrm %%DATADIR%%/resources/ly.country
 @dirrm %%DATADIR%%/resources/ma.country
 @dirrm %%DATADIR%%/resources/mc.country
@@ -1408,7 +1145,9 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/ng.country
 @dirrm %%DATADIR%%/resources/ni.country
 @dirrm %%DATADIR%%/resources/nl.country
+@dirrm %%DATADIR%%/resources/nl.locale
 @dirrm %%DATADIR%%/resources/no.country
+@dirrm %%DATADIR%%/resources/no.locale
 @dirrm %%DATADIR%%/resources/np.country
 @dirrm %%DATADIR%%/resources/nr.country
 @dirrm %%DATADIR%%/resources/nu.country
@@ -1422,17 +1161,21 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/ph.country
 @dirrm %%DATADIR%%/resources/pk.country
 @dirrm %%DATADIR%%/resources/pl.country
+@dirrm %%DATADIR%%/resources/pl.locale
 @dirrm %%DATADIR%%/resources/pm.country
 @dirrm %%DATADIR%%/resources/pn.country
 @dirrm %%DATADIR%%/resources/pr.country
 @dirrm %%DATADIR%%/resources/ps.country
+@dirrm %%DATADIR%%/resources/pt-PT.locale
 @dirrm %%DATADIR%%/resources/pt.country
+@dirrm %%DATADIR%%/resources/pt.locale
 @dirrm %%DATADIR%%/resources/pushpin
 @dirrm %%DATADIR%%/resources/pw.country
 @dirrm %%DATADIR%%/resources/py.country
 @dirrm %%DATADIR%%/resources/qa.country
 @dirrm %%DATADIR%%/resources/re.country
 @dirrm %%DATADIR%%/resources/ro.country
+@dirrm %%DATADIR%%/resources/ro.locale
 @dirrm %%DATADIR%%/resources/rs.country
 @dirrm %%DATADIR%%/resources/ru.country
 @dirrm %%DATADIR%%/resources/ru.locale
@@ -1448,13 +1191,17 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/si.country
 @dirrm %%DATADIR%%/resources/sj.country
 @dirrm %%DATADIR%%/resources/sk.country
+@dirrm %%DATADIR%%/resources/sk.locale
 @dirrm %%DATADIR%%/resources/sl.country
+@dirrm %%DATADIR%%/resources/sl.locale
 @dirrm %%DATADIR%%/resources/sm.country
 @dirrm %%DATADIR%%/resources/sn.country
 @dirrm %%DATADIR%%/resources/so.country
 @dirrm %%DATADIR%%/resources/sr.country
+@dirrm %%DATADIR%%/resources/sr.locale
 @dirrm %%DATADIR%%/resources/st.country
 @dirrm %%DATADIR%%/resources/sv.country
+@dirrm %%DATADIR%%/resources/sv.locale
 @dirrm %%DATADIR%%/resources/sy.country
 @dirrm %%DATADIR%%/resources/sz.country
 @dirrm %%DATADIR%%/resources/tc.country
@@ -1462,6 +1209,7 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/tf.country
 @dirrm %%DATADIR%%/resources/tg.country
 @dirrm %%DATADIR%%/resources/th.country
+@dirrm %%DATADIR%%/resources/th.locale
 @dirrm %%DATADIR%%/resources/tj.country
 @dirrm %%DATADIR%%/resources/tk.country
 @dirrm %%DATADIR%%/resources/tl.country
@@ -1469,12 +1217,14 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/tn.country
 @dirrm %%DATADIR%%/resources/to.country
 @dirrm %%DATADIR%%/resources/tr.country
+@dirrm %%DATADIR%%/resources/tr.locale
 @dirrm %%DATADIR%%/resources/tt.country
 @dirrm %%DATADIR%%/resources/tv.country
 @dirrm %%DATADIR%%/resources/tw.country
 @dirrm %%DATADIR%%/resources/tz.country
 @dirrm %%DATADIR%%/resources/ua.country
 @dirrm %%DATADIR%%/resources/ug.country
+@dirrm %%DATADIR%%/resources/uk.locale
 @dirrm %%DATADIR%%/resources/um.country
 @dirrm %%DATADIR%%/resources/us.country
 @dirrm %%DATADIR%%/resources/uy.country
@@ -1484,6 +1234,7 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/ve.country
 @dirrm %%DATADIR%%/resources/vg.country
 @dirrm %%DATADIR%%/resources/vi.country
+@dirrm %%DATADIR%%/resources/vi.locale
 @dirrm %%DATADIR%%/resources/vn.country
 @dirrm %%DATADIR%%/resources/vu.country
 @dirrm %%DATADIR%%/resources/wf.country
@@ -1497,7 +1248,6 @@ share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/resources/zw.country
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/shaders
-@dirrm %%DATADIR%%/xml
 @dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
