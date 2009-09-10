@@ -52,7 +52,6 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 		PERL		"With Perl support" on \
 		PYTHON		"With Python support" on \
 		OCI8		"With Oracle support (currently experimental)" off \
-		DEVELOPER	"With developer support" off \
 		RUBY		"With Ruby support (EXPERIMENTAL)" off \
 		DHCP		"With DHCP support (EXPERIMENTAL)" off \
 		EXPERIMENTAL	"Build experimental modules" off
@@ -201,10 +200,6 @@ PLIST_SUB+=	SMB="@comment "
 # SMB module is still experimental
 .if defined(WITH_SMB) && !defined(WITH_EXPERIMENTAL)
 WITH_EXPERIMENTAL=	yes
-.endif
-
-.ifdef(WITH_DEVELOPER)
-CONFIGURE_ARGS+=	--enable-developer
 .endif
 
 # Oracle support is experimental under FreeBSD
