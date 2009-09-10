@@ -2,7 +2,7 @@ Provide the missing definitions for the ELF magic bytes.
 
 --- lib/sys_elf.h.in.orig
 +++ lib/sys_elf.h.in
-@@ -77,6 +77,13 @@
+@@ -80,6 +80,13 @@
   */
  #ifdef __LIBELF_HEADER_ELF_H
  
