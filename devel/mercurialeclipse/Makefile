@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurialeclipse
-PORTVERSION=	1.3.1019
+PORTVERSION=	1.4.1280
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.vectrace.com/eclipse-update/plugins/
 DISTNAME=	com.vectrace.MercurialEclipse_${PORTVERSION}
