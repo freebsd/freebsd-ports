@@ -1,6 +1,6 @@
---- viewer/svutil.cpp.orig	2008-04-22 00:07:25.000000000 +0000
-+++ viewer/svutil.cpp	2009-04-14 12:13:10.000000000 +0000
-@@ -34,10 +34,14 @@
+--- viewer/svutil.cpp.orig	2009-06-03 20:29:38.000000000 +0400
++++ viewer/svutil.cpp	2009-09-10 15:45:19.000000000 +0400
+@@ -40,9 +40,13 @@
  #ifdef __linux__
  #include <sys/prctl.h>
  #endif
@@ -8,9 +8,8 @@
  #endif
  
  #include <iostream>
- #include <string>
-+#include <cstring>
-+#include <cstdio>
++#include <cstring> 
++#include <cstdio> 
 +#include <cstdlib>
  
  const int kBufferSize = 65536;

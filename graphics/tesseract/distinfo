@@ -1,6 +1,6 @@
-MD5 (tesseract-2.03.tar.gz) = 5777b70b11df16c1ac9aa155d7cfc553
-SHA256 (tesseract-2.03.tar.gz) = f39097176b0b0ac83312b5994970d15283ad0e036bc174d98b87500f572acaae
-SIZE (tesseract-2.03.tar.gz) = 1075509
+MD5 (tesseract-2.04.tar.gz) = b44eba1a9f4892ac62e484c807fe0533
+SHA256 (tesseract-2.04.tar.gz) = 62866f283916553e02cebdeb1b485856c6a790f5f8bf86c30b87c6304374bef8
+SIZE (tesseract-2.04.tar.gz) = 1118386
 MD5 (tesseract-2.00.deu.tar.gz) = 609d91b1ae3759a756b819b5d8403653
 SHA256 (tesseract-2.00.deu.tar.gz) = 6083f16373689ef55651f4dd7773426ab4c32a12ebf7f398af982ac2971fe404
 SIZE (tesseract-2.00.deu.tar.gz) = 1373777
@@ -28,3 +28,6 @@ SIZE (tesseract-2.01.por.tar.gz) = 2107696
 MD5 (tesseract-2.01.vie.tar.gz) = 34a05c2ae1ec8524e6b7647bdeecd408
 SHA256 (tesseract-2.01.vie.tar.gz) = 8026240029341d45a6142cfccf6f0f98e5b1f35cae5725f8379ac4a8de34283f
 SIZE (tesseract-2.01.vie.tar.gz) = 964277
+MD5 (tesseract-2.04.eus.tar.gz) = 1f82f6c152dd10b5a7116b0a040a7125
+SHA256 (tesseract-2.04.eus.tar.gz) = 19aa30dda8049fb03e125e3b17d05ae402544e9ec81adcb18964d4a7b125a2fe
+SIZE (tesseract-2.04.eus.tar.gz) = 1207994

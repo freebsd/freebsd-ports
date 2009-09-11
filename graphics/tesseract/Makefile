@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tesseract
-DISTVERSION=	2.03
-PORTREVISION=	1
+DISTVERSION=	2.04
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} CENKES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGFILES}
@@ -20,8 +19,9 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 PROJECTHOST=	tesseract-ocr
 LANGS2_00?=	deu eng fra ita nld spa
 LANGS2_01?=	deu-f por vie
+LANGS2_04?=	eus
 
-.for _N in 2_00 2_01
+.for _N in 2_00 2_01 2_04
 LANGFILES+=	${LANGS${_N}:S|^|${PORTNAME}-${_N:S|_|.|}.|:S|$|${EXTRACT_SUFX}|}
 .endfor
 
