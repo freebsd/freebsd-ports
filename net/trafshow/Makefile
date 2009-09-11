@@ -9,7 +9,8 @@ PORTNAME=	trafshow
 PORTVERSION=	5.2.3
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoftware/
+MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/ \
+		ftp://ftp.nsk.su/pub/RinetSoftware/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alexey@renatasystems.org
