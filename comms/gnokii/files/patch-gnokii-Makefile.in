@@ -1,6 +1,6 @@
---- gnokii/Makefile.in.orig	2009-02-26 17:09:49.000000000 +0100
-+++ gnokii/Makefile.in	2009-02-26 17:20:21.000000000 +0100
-@@ -57,7 +57,7 @@
+--- gnokii/Makefile.in.orig	2009-09-08 23:05:42.870592830 +0200
++++ gnokii/Makefile.in	2009-09-08 23:10:05.004848245 +0200
+@@ -61,12 +61,12 @@
  	gnokii-gnokii-security.$(OBJEXT) \
  	gnokii-gnokii-settings.$(OBJEXT) gnokii-gnokii-sms.$(OBJEXT) \
  	gnokii-gnokii-todo.$(OBJEXT) gnokii-gnokii-utils.$(OBJEXT) \
@@ -9,3 +9,18 @@
  gnokii_OBJECTS = $(am_gnokii_OBJECTS)
  am__DEPENDENCIES_1 =
  gnokii_DEPENDENCIES = $(top_builddir)/common/libgnokii.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1) $(top_builddir)/getopt/libgetopt.a
++	$(am__DEPENDENCIES_1)
+ gnokii_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(gnokii_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+@@ -289,7 +289,7 @@
+ # Compile getopt1.c and getopt.c unconditionally on all platforms, it
+ # has its own magic for the platforms that already have it.
+ gnokii_LDADD = $(top_builddir)/common/libgnokii.la $(INTLLIBS) \
+-	$(TERMLDFLAGS) $(TERMLIBS) $(top_builddir)/getopt/libgetopt.a
++	$(TERMLDFLAGS) $(TERMLIBS)
+ gnokii_CFLAGS = -I$(top_srcdir)/include
+ 
+ #FIXME cross compiling
