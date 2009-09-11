@@ -7,6 +7,7 @@ share/icons/hicolor/24x24/apps/xfce4-notes-plugin.png
 share/icons/hicolor/32x32/apps/xfce4-notes-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-notes-plugin.svg
 share/locale/ar/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/ast/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-notes-plugin.mo
@@ -29,6 +30,7 @@ share/locale/pl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ro/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/sq/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-notes-plugin.mo
@@ -44,5 +46,7 @@ share/xfce4/panel-plugins/xfce4-notes-plugin.desktop
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
