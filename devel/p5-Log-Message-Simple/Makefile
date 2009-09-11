@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Log-Message-Simple
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides standardized logging facilities using the Log::Message module
 
 BUILD_DEPENDS=	${SITE_PERL}/Log/Message.pm:${PORTSDIR}/devel/p5-Log-Message
