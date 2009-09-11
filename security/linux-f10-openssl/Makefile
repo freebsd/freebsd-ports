@@ -18,7 +18,7 @@ CONFLICTS=	linux-openssl-[0-9]* linux-f8-openssl-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10
-RPMVERSION=	12.fc10
+RPMVERSION=	14.fc10
 BRANDELF_FILES=	usr/bin/openssl
 USE_LDCONFIG=	yes
 
