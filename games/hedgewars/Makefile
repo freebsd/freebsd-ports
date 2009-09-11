@@ -29,6 +29,13 @@ QT_COMPONENTS=	corelib gui moc_build network \
 		uic_build
 MAKE_JOBS_SAFE=	yes
 
+DESKTOP_ENTRIES="Hedgewars" \
+		"Worms-like turn based strategy game" \
+		"${DATADIR}/Data/Forts/FlowerhogL.png" \
+		"hedgewars" \
+		"Game;StrategyGame;" \
+		false
+
 post-patch:
 	${ECHO} "include_directories(${LOCALBASE}/include)" >> \
 		${WRKSRC}/QTfrontend/CMakeLists.txt

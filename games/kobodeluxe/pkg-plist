@@ -1,4 +1,5 @@
 bin/kobodl
+share/applications/kobodeluxe.desktop
 %%DATADIR%%/gfx/bigfont3.png
 %%DATADIR%%/gfx/bigship.png
 %%DATADIR%%/gfx/bmr-green.png
@@ -107,8 +108,10 @@ bin/kobodl
 %%DATADIR%%/sfx/trance1.mid
 %%DATADIR%%/sfx/trance1_c.agw
 %%DATADIR%%/sfx/zapp1.agw
+share/pixmaps/kobo-icon.xpm
 @dirrm %%DATADIR%%/sfx
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
 @exec install -d -o root -g games -m 775 %%SCOREDIR%%
 @dirrmtry %%SCOREDIR%%
+@dirrmtry share/applications

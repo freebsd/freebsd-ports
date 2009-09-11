@@ -43,6 +43,13 @@ OPTIONS=	ASIAN_TTF "Use asian TTF font" off
 
 MAN6=		xmoto.6
 
+DESKTOP_ENTRIES="XMoto" \
+		"Motorcross game" \
+		"${DATADIR}/xmoto_icone_x.ico" \
+		"xmoto" \
+		"Game;SportsGame;ArcadeGame;" \
+		false
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ASIAN_TTF)

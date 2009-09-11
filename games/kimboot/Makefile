@@ -25,6 +25,13 @@ NO_BUILD=	yes
 SUB_FILES=	kimboot
 SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"
 
+DESKTOP_ENTRIES="Kimboot" \
+		"A sick and addictive arcade game" \
+		"${PREFIX}/lib/kimboot/data/corpse.gif" \
+		"kimboot" \
+		"Game;ArcadeGame;" \
+		false
+
 do-install:
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}/data

@@ -19,10 +19,18 @@ USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
 PORTDOCS=	README
+
+DESKTOP_ENTRIES="Apricots" \
+		"Fly a little plane around and shoot things and drop bombs" \
+		"" \
+		"apricots" \
+		"Game;ArcadeGame;" \
+		false
 
 OPTIONS=	OPENAL	"Enable OpenAL audio" on
 

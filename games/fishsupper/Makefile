@@ -17,10 +17,18 @@ COMMENT=	Guide a cat across a series of rivers, jumping from log to log
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 PORTDOCS=	README
+
+DESKTOP_ENTRIES="Fish Supper" \
+		"Guide a cat across a series of rivers, jumping from log to log" \
+		"${DATADIR}/images/fs_image_30.png" \
+		"fishsupper" \
+		"Game;ArcadeGame;" \
+		false
 
 .if !defined(NOPORTDOCS)
 post-install:

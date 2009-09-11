@@ -29,7 +29,14 @@ PLIST_SUB=	SCOREDIR="${SCOREDIR}"
 
 DATADIR=	${PREFIX}/share/kobo-deluxe
 
-OPTIONS=	OPENGL	"OpenGL rendering layer" on
+DESKTOP_ENTRIES="Kobo Deluxe" \
+		"An SDL port of the scrolling game XKobo" \
+		"${DATADIR}/" \
+		"kobodeluxe" \
+		"Game;ArcadeGame;" \
+		false
+
+OPTIONS=	OPENGL "OpenGL rendering layer" on
 
 .include <bsd.port.pre.mk>
 
@@ -39,6 +46,9 @@ CONFIGURE_ARGS+=	--enable-opengl
 .else
 CONFIGURE_ARGS+=	--disable-opengl
 .endif
+
+post-extract:
+	@cd ${WRKSRC} && ${TAR} -xzf icons.tar.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(datadir)/games/kobo-deluxe|${DATADIR}|; \
@@ -51,5 +61,10 @@ post-install:
 	${CHGRP} games ${PREFIX}/bin/kobodl
 	${CHMOD} g+s ${PREFIX}/bin/kobodl
 	${INSTALL} -d -o root -g games -m 775 ${SCOREDIR}
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/icons/Ubuntu/kobodeluxe.desktop \
+		${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/icons/Ubuntu/kobo-icon.xpm \
+		${PREFIX}/share/pixmaps/
 
 .include <bsd.port.post.mk>

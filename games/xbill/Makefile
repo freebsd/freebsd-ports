@@ -19,10 +19,18 @@ COMMENT=	Save your computers from the evil clutches of Bill
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--localstatedir=${SCORES_DIR}
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		xbill.6
 
 SCORES_DIR?=	${DATADIR}/scores
+
+DESKTOP_ENTRIES="xBill" \
+		"Save your computers from the evil clutches of Bill" \
+		"${DATADIR}/pixmaps/icon.xpm" \
+		"xbill" \
+		"Game;ArcadeGame;" \
+		false
 
 OPTIONS=	ATHENA	"Build with Athena widget set" off \
 		GTK	"Build with GTK widget set" on \

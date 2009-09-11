@@ -17,19 +17,27 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Avoid running into walls, your own tail, and that of your opponent
 
 USE_XORG=	x11 xpm
+MAKE_JOBS_SAFE=	yes
+
+DESKTOP_ENTRIES="xtron" \
+		"Avoid running into walls, your own tail, and that of your opponent" \
+		"${DATADIR}/Xtron_icon.xpm" \
+		"xtron" \
+		"Game;ArcadeGame;" \
+		false
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/xtronrc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtron ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/xtron
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/share/xtron
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/xtronrc ${PREFIX}/lib/X11/app-defaults/Tron
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

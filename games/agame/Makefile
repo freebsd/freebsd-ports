@@ -9,7 +9,7 @@ PORTNAME=	agame
 PORTVERSION=	1577
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://zevv.nl/code/game/ \
+MASTER_SITES=	http://zevv.nl/play/code/game/ \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 DISTNAME=	game-src-${PORTVERSION}
@@ -20,10 +20,18 @@ COMMENT=	A simple tetris-like game
 
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/game
 
 PORTDOCS=	README.TXT
+
+DESKTOP_ENTRIES="game" \
+		"A simple tetris-like game" \
+		"${DATADIR}/img/icon.png" \
+		"game" \
+		"Game;BlocksGame;" \
+		false
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's,wav/|mp3/|img/,${DATADIR}/&,g' ${WRKSRC}/main.c

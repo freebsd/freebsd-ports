@@ -1,5 +1,6 @@
 %%CLIENT%%bin/teeworlds
 bin/teeworlds_srv
+%%DATADIR%%/Teeworlds.ico
 %%DATADIR%%/audio/foley_body_impact-01.wv
 %%DATADIR%%/audio/foley_body_impact-02.wv
 %%DATADIR%%/audio/foley_body_impact-03.wv

@@ -19,6 +19,14 @@ COMMENT=	Clone of the famous PuyoPuyo
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image
+MAKE_JOBS_SAFE=	yes
+
+DESKTOP_ENTRIES="FloboPuyo" \
+		"Clone of the famous PuyoPuyo" \
+		"${DATADIR}/gfx/Neutral.png" \
+		"flobopuyo" \
+		"Game;BlocksGame;" \
+		false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile

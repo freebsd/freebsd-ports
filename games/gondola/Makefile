@@ -28,6 +28,13 @@ SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"
 
 WRKSRC=		${WRKDIR}/Gondola-${PORTVERSION}
 
+DESKTOP_ENTRIES="Gondola" \
+		"Create and optimize a distribution network of gondolas" \
+		"" \
+		"gondola" \
+		"Game;StrategyGame;" \
+		false
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|g' ${WRKSRC}/gamelib/*.py
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \

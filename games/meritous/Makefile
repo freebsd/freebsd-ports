@@ -25,6 +25,13 @@ MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 
+DESKTOP_ENTRIES="Meritous" \
+		"Action-adventure dungeon crawl game" \
+		"${DATADIR}/i/icon.png" \
+		"meritous" \
+		"Game;ActionGame;AdventureGame;" \
+		false
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|dat/|${DATADIR}/|' ${WRKSRC}/src/*.c
 

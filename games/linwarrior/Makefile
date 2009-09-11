@@ -26,6 +26,13 @@ USE_GCC=	4.2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+DESKTOP_ENTRIES="LinWarrior 3D" \
+		"Mech Simulation Game" \
+		"" \
+		"linwarrior" \
+		"Game;ActionGame;Simulation;" \
+		false
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800007

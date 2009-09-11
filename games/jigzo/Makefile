@@ -22,8 +22,16 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_SDL=	sdl mixer
 USE_GL=		gl
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
+
+DESKTOP_ENTRIES="Jigzo" \
+		"An OpenGL jigsaw puzzle game" \
+		"" \
+		"jigzo" \
+		"Game;LogicGame;KidsGame;" \
+		false
 
 post-patch:
 .for i in font image puzzles sound
