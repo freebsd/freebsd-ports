@@ -7,7 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3026/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -29,7 +29,8 @@ OPTIONS=	USB "USB support" on \
 		NLS "NLS support" on \
 		GPHOTO2 "gPhoto2 support" off \
 		AVAHI "Avahi support" off \
-		IEEE1284 "libieee1284 support" off
+		IEEE1284 "libieee1284 support" off \
+		IPV6 "IPV6 support" off
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -59,6 +60,10 @@ PLIST_SUB+=		NLS="@comment "
 .else
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if defined(WITH_GPHOTO2)
