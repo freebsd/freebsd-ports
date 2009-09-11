@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httpclient
-DISTVERSION=	4.0-beta2
+DISTVERSION=	4.0
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -41,9 +41,10 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${FIND} javadoc \
+	@cd ${WRKSRC} && ${FIND} javadoc tutorial \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${WRKSRC}/NTLM_SUPPORT.txt \
+		${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
 .endif
 
