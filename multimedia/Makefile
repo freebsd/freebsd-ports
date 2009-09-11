@@ -218,7 +218,6 @@
     SUBDIR += p5-Subtitles
     SUBDIR += p5-Video-Info
     SUBDIR += p5-Video-OpenQuicktime
-    SUBDIR += phonon
     SUBDIR += phonon-xine
     SUBDIR += playd
     SUBDIR += playd2
