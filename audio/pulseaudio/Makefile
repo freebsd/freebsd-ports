@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.15
-PORTREVISION=	5
+PORTVERSION=	0.9.17
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -16,7 +15,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound server for UNIX
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		oil-0.3.0:${PORTSDIR}/devel/liboil \
 		speexdsp.1:${PORTSDIR}/audio/speex \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		gdbm.3:${PORTSDIR}/databases/gdbm \

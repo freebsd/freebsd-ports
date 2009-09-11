@@ -4,12 +4,15 @@ bin/pacat
 bin/pacmd
 bin/pactl
 bin/padsp
+bin/pamon
 bin/paplay
 bin/parec
+bin/parecord
 bin/pasuspender
 bin/pax11publish
 bin/pulseaudio
 bin/start-pulseaudio-x11
+etc/dbus-1/system.d/pulseaudio-system.conf
 @unexec if cmp -s %D/etc/pulse/client.conf %D/etc/pulse/client.conf-dist; then rm -f %D/etc/pulse/client.conf; fi
 etc/pulse/client.conf-dist
 @exec [ -f %B/client.conf ] || cp %B/%f %B/client.conf
@@ -39,6 +42,7 @@ include/pulse/mainloop.h
 include/pulse/operation.h
 include/pulse/proplist.h
 include/pulse/pulseaudio.h
+include/pulse/rtclock.h
 include/pulse/sample.h
 include/pulse/scache.h
 include/pulse/simple.h
@@ -137,12 +141,16 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-http-protocol-tcp.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-http-protocol-tcp.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-http-protocol-unix.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-http-protocol-unix.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-intended-roles.a
+lib/pulse-%%PULSE_VERSION%%/modules/module-intended-roles.so
 %%JACK%%lib/pulse-%%PULSE_VERSION%%/modules/module-jack-sink.a
 %%JACK%%lib/pulse-%%PULSE_VERSION%%/modules/module-jack-sink.so
 %%JACK%%lib/pulse-%%PULSE_VERSION%%/modules/module-jack-source.a
 %%JACK%%lib/pulse-%%PULSE_VERSION%%/modules/module-jack-source.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-ladspa-sink.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-ladspa-sink.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-loopback.a
+lib/pulse-%%PULSE_VERSION%%/modules/module-loopback.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-match.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-match.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-native-protocol-fd.a
@@ -173,6 +181,8 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-rtp-recv.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-rtp-recv.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-rtp-send.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-rtp-send.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-rygel-media-server.a
+lib/pulse-%%PULSE_VERSION%%/modules/module-rygel-media-server.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-simple-protocol-tcp.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-simple-protocol-tcp.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-simple-protocol-unix.a
@@ -208,30 +218,35 @@ libdata/pkgconfig/libpulse-mainloop-glib.pc
 libdata/pkgconfig/libpulse-simple.pc
 libdata/pkgconfig/libpulse.pc
 %%GCONF%%libexec/pulse/gconf-helper
-%%HAL%%share/PolicyKit/policy/org.pulseaudio.policy
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
 share/locale/ca/LC_MESSAGES/pulseaudio.mo
 share/locale/cs/LC_MESSAGES/pulseaudio.mo
 share/locale/de/LC_MESSAGES/pulseaudio.mo
+share/locale/de_CH/LC_MESSAGES/pulseaudio.mo
 share/locale/el/LC_MESSAGES/pulseaudio.mo
 share/locale/es/LC_MESSAGES/pulseaudio.mo
 share/locale/fi/LC_MESSAGES/pulseaudio.mo
 share/locale/fr/LC_MESSAGES/pulseaudio.mo
 share/locale/gu/LC_MESSAGES/pulseaudio.mo
+share/locale/hi/LC_MESSAGES/pulseaudio.mo
 share/locale/it/LC_MESSAGES/pulseaudio.mo
+share/locale/ja/LC_MESSAGES/pulseaudio.mo
 share/locale/kn/LC_MESSAGES/pulseaudio.mo
+share/locale/ml/LC_MESSAGES/pulseaudio.mo
 share/locale/mr/LC_MESSAGES/pulseaudio.mo
 share/locale/nl/LC_MESSAGES/pulseaudio.mo
 share/locale/or/LC_MESSAGES/pulseaudio.mo
 share/locale/pa/LC_MESSAGES/pulseaudio.mo
 share/locale/pl/LC_MESSAGES/pulseaudio.mo
+share/locale/pt/LC_MESSAGES/pulseaudio.mo
 share/locale/pt_BR/LC_MESSAGES/pulseaudio.mo
 share/locale/sr/LC_MESSAGES/pulseaudio.mo
 share/locale/sr@latin/LC_MESSAGES/pulseaudio.mo
 share/locale/sv/LC_MESSAGES/pulseaudio.mo
 share/locale/ta/LC_MESSAGES/pulseaudio.mo
 share/locale/te/LC_MESSAGES/pulseaudio.mo
+share/locale/uk/LC_MESSAGES/pulseaudio.mo
 share/locale/zh_CN/LC_MESSAGES/pulseaudio.mo
 %%GCONF%%@dirrm libexec/pulse
 @dirrm lib/pulse-%%PULSE_VERSION%%/modules
@@ -242,6 +257,8 @@ share/locale/zh_CN/LC_MESSAGES/pulseaudio.mo
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/de_CH/LC_MESSAGES
+@dirrmtry share/locale/de_CH
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES
