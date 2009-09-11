@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090911:
+  AFFECTS: users of lang/perl5.10
+  AUTHOR: skv@FreeBSD.org
+
+  lang/perl5.10 has been updated to 5.10.1.  You should update everything
+  that depends on perl.  The easiest way to do that is to use
+  "perl-after-upgrade" script supplied with lang/perl5.10.  Please see its
+  manual page for details.
+
+  If you want switch to lang/perl5.10 from lang/perl5.8 please follow
+  instructions in the entry 20090328 in this file.
+
 20090910:
   AFFECTS: users of www/rubygem-rails
   AUTHOR: pgollucci@FreeBSD.org

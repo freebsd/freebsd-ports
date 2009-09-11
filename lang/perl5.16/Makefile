@@ -7,7 +7,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	4
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -33,12 +32,12 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		SITECUSTOMIZE	"Run-time customization of @INC"	off \
 		USE_PERL	"Rewrite links in /usr/bin"		on
 
-PERL_VERSION=	5.10.0
+PERL_VERSION=	5.10.1
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_SCRIPT=Configure

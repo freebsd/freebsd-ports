@@ -18,7 +18,7 @@ perl-after-upgrade -- fixup FreeBSD packages that depend on perl
 =head1 SYNOPSIS
 
   perl-after-upgrade
-  perl-after-upgrade -f
+  perl-after-upgrade -f [-d] [-q]
   perl-after-upgrade -v
 
 =head1 DESCRIPTION
@@ -109,7 +109,11 @@ perl(1).
 
 =cut
 
-my $debug = 0;
+use strict;
+use warnings;
+use 5.0100;
+
+our $debug = 0;
 
 # |/-\
 my $pchar = "|";
@@ -123,6 +127,9 @@ sub progress
 }
 
 package FreeBSD::Package;
+use strict;
+use warnings;
+
 use IO::File;
 use File::Copy;
 
@@ -184,6 +191,7 @@ sub write_back
 
 package FreeBSD::Package::DB;
 use strict;
+use warnings;
 
 sub new
 {
@@ -217,12 +225,16 @@ sub reset
 }
 
 package main;
+use strict;
+use warnings;
+
 use File::Temp qw/tempfile/;
 use File::Copy;
 
-my $dry_run = 1;
+our $dry_run = 1;
+our $quiet = 0;
 my @tmpl;
-my $VERSION = "1.3";
+our $VERSION = "1.4";
 
 while (@ARGV) {
 	my $opt = shift;
@@ -230,6 +242,8 @@ while (@ARGV) {
 		$dry_run = 0;
 	} elsif ($opt eq "-d") {
 		$debug = 1;
+	} elsif ($opt eq "-q") {
+		$quiet = 1;
 	} elsif ($opt eq "-v") {
 		$_ = $0;
 		s|.*/||;
@@ -247,18 +261,18 @@ while (@ARGV) {
 	}
 }
 
-my $target = '%%PERL_VERSION%%';
-my $new_perl_pkgname = '%%PKGNAME%%';
+our $PERL_VERSION = '%%PERL_VERSION%%';
+our $PERL_PKGNAME = '%%PKGNAME%%';
 
-my $fuzzy_source = qr/5\.10\.\d+/;
-print STDERR "- Fuzzy source re: <$fuzzy_source>\n" if $debug;
+our $PERL_VERSION_REGEX = qr/5\.10\.\d+/;
+print STDERR "- Fuzzy source re: <$PERL_VERSION_REGEX>\n" if $debug;
 
-my @errors;
-my @notes;
+our @errors;
+our @notes;
 
 sub fix_script
 {
-	my ($file, $target) = @_;
+	my ($file) = @_;
 
 	main::progress();
 	return 1 if $dry_run;
@@ -266,7 +280,7 @@ sub fix_script
 	return "" unless $sf;
 	my $line = <$sf>;
 	my $md5 = "";
-	if ($line && $line =~ s|^(\s*#!\s*[\w/]+perl)$fuzzy_source\b|$1$target|) {
+	if ($line && $line =~ s|^(\s*#!\s*[\w/]+perl)$PERL_VERSION_REGEX\b|$1$PERL_VERSION|) {
 		my $dir = $file;
 		$dir =~ s|/[^/]+$||;
 		my ($fh, $fn) = tempfile(DIR=> $dir);
@@ -298,7 +312,7 @@ sub fix_script
 
 sub fix_binary
 {
-	my ($file, $target) = @_;
+	my ($file) = @_;
 
 	main::progress();
 	my $sf = IO::File->new("< $file");
@@ -317,7 +331,7 @@ sub fix_binary
 	}
 
 	while (<$sf>) {
-		s|/lib/perl5/$fuzzy_source/mach/CORE|/lib/perl5/$target/mach/CORE|g;
+		s|/lib/perl5/$PERL_VERSION_REGEX/mach/CORE|/lib/perl5/$PERL_VERSION/mach/CORE|g;
 		print $fh $_;
 	}
 	close $fh;
@@ -370,7 +384,7 @@ sub might_need_to_fix
 		return 1;
 	}
 	for ($pkg->lines) {
-		if (/^\@pkgdep\s+perl-(threaded-)?($fuzzy_source)\S*\s*$/) {
+		if (/^\@pkgdep\s+perl-(threaded-)?($PERL_VERSION_REGEX)\S*\s*$/) {
 			return 1;
 		}
 	}
@@ -387,15 +401,15 @@ sub fixable_binary
 		if (/^\s+libperl\.so\s+=>/) {
 			my $found;
 			for (`strings $file`) {
-				if (m</lib/perl5/($fuzzy_source)/mach/CORE>) {
+				if (m</lib/perl5/($PERL_VERSION_REGEX)/mach/CORE>) {
 					$found++;
-					if (length($1) != length($target)) {
+					if (length($1) != length($PERL_VERSION)) {
 						push @notes, "$name cannot be fixed up (and has to be reinstalled): cannot patch $file due to length difference";
 						print STDERR "- Skipping $name: cannot patch $file due to length difference\n" if $debug;
 						return undef;
 					}
 					print STDERR "- $name: fixable binary $file\n" if $debug && $found < 2;
-					$fixable = 1 if $1 ne $target;
+					$fixable = 1 if $1 ne $PERL_VERSION;
 				}
 			}
 			if (!$found) {
@@ -454,9 +468,9 @@ sub cannot_be_fixed
 		# shared library - can prevent us from being able to upgrade
 		} elsif ($line && $line =~ /^\177ELF.\x01.\x09.{8}\x03\0/) {
 			return 0 unless fixable_shared_lib($file, $pkg_name);
-		} elsif ($line && $line =~ m<^\s*#!\s*[\w/]+perl($fuzzy_source)\b>) {
+		} elsif ($line && $line =~ m<^\s*#!\s*[\w/]+perl($PERL_VERSION_REGEX)\b>) {
 			print STDERR "- $pkg_name: fixable script $file\n" if $debug;
-			push @$scripts, $file if $1 ne $target;
+			push @$scripts, $file if $1 ne $PERL_VERSION;
 		}
 		main::progress();
 	}
@@ -509,14 +523,16 @@ while (my $pkg = $db->next) {
 			$new_md5 = "";
 			unless (-l $from) {  # skip symlinks
 				if ($binaries{$from}) {
-					$new_md5 = fix_binary($from, $target);
+					$new_md5 = fix_binary($from);
 				} elsif ($scripts{$from}) {
-					$new_md5 = fix_script($from, $target);
+					$new_md5 = fix_script($from);
 				}
 				$modified++ if $new_md5;
 			}
 			my $to = $from;
-			if ($to =~ s|/perl5/$fuzzy_source/|/perl5/$target/|g or $to =~ s|/perl5/site_perl/$fuzzy_source/|/perl5/site_perl/$target/|g) {
+			if ($to =~ s|/perl5/$PERL_VERSION_REGEX/|/perl5/$PERL_VERSION/|g 
+			||  $to =~ s|/perl5/site_perl/$PERL_VERSION_REGEX/|/perl5/site_perl/$PERL_VERSION/|g
+			) {
 				if ($to ne $from) {
 					my $dir = $to;
 					$dir =~ s|/[^/]+$||;
@@ -540,14 +556,14 @@ while (my $pkg = $db->next) {
 		}
 		if (/^\@cwd\s+(\S+)\s*$/) {
 			$prefix = $1;
-		} elsif (/^\@pkgdep\s+perl-(threaded-)?($fuzzy_source)\S*\s*$/) {
-			if ($target ne $2) {
+		} elsif (/^\@pkgdep\s+perl-(threaded-)?($PERL_VERSION_REGEX)\S*\s*$/) {
+			if ($PERL_VERSION ne $2) {
 				my $perlver = $2;
-				s|perl-(threaded-)?\Q$perlver\E|$new_perl_pkgname|;
+				s|perl-(threaded-)?\Q$perlver\E\S*|$PERL_PKGNAME|;
 			}
 		}
 		my $old = $_;
-		if (s|/perl5/$fuzzy_source/|/perl5/$target/|g || s|/perl5/site_perl/$fuzzy_source/|/perl5/site_perl/$target/|g) {
+		if (s|/perl5/$PERL_VERSION_REGEX/|/perl5/$PERL_VERSION/|g || s|/perl5/site_perl/$PERL_VERSION_REGEX/|/perl5/site_perl/$PERL_VERSION/|g) {
 			if ($old ne $_) {
 				$adjusted++;
 				print STDERR "- adjust: $_\n" if $debug;
@@ -563,7 +579,8 @@ while (my $pkg = $db->next) {
 	$fixed++ if $moved || $modified || $adjusted;
 	$tot_modified += $modified;
 	$tot_moved += $moved;
-	print "$pkg_name: $moved moved, $modified modified, $adjusted adjusted\n";
+	say "$pkg_name: $moved moved, $modified modified, $adjusted adjusted"
+		if !$quiet || ($moved || $modified || $adjusted);
 }
 print "\n---\n";
 print "Fixed $fixed packages ($tot_moved files moved, $tot_modified files modified)\n";
