@@ -106,19 +106,30 @@ share/applications/gtg.desktop
 %%DATADIR%%/icons/hicolor/32x32/apps/gtg.png
 %%DATADIR%%/icons/hicolor/scalable/apps/gtg.svg
 %%DATADIR%%/icons/hicolor/svg/gtg.svg
-share/locale/de/LC_MESSAGES/gtg.mo
-share/locale/es/LC_MESSAGES/gtg.mo
-share/locale/fr/LC_MESSAGES/gtg.mo
-share/locale/it/LC_MESSAGES/gtg.mo
-share/locale/ms/LC_MESSAGES/gtg.mo
-share/locale/nl/LC_MESSAGES/gtg.mo
-share/locale/ru/LC_MESSAGES/gtg.mo
-share/locale/sv/LC_MESSAGES/gtg.mo
-share/locale/be/LC_MESSAGES/gtg.mo
 share/icons/hicolor/16x16/apps/gtg.png
 share/icons/hicolor/22x22/apps/gtg.png
 share/icons/hicolor/24x24/apps/gtg.png
+share/icons/hicolor/32x32/apps/gtg.png
 share/icons/hicolor/scalable/apps/gtg.svg
+share/locale/af/LC_MESSAGES/gtg.mo
+share/locale/be/LC_MESSAGES/gtg.mo
+share/locale/ca/LC_MESSAGES/gtg.mo
+share/locale/cs/LC_MESSAGES/gtg.mo
+share/locale/da/LC_MESSAGES/gtg.mo
+share/locale/de/LC_MESSAGES/gtg.mo
+share/locale/es/LC_MESSAGES/gtg.mo
+share/locale/fi/LC_MESSAGES/gtg.mo
+share/locale/fr/LC_MESSAGES/gtg.mo
+share/locale/it/LC_MESSAGES/gtg.mo
+share/locale/ms/LC_MESSAGES/gtg.mo
+share/locale/nds/LC_MESSAGES/gtg.mo
+share/locale/nl/LC_MESSAGES/gtg.mo
+share/locale/pl/LC_MESSAGES/gtg.mo
+share/locale/pt/LC_MESSAGES/gtg.mo
+share/locale/ru/LC_MESSAGES/gtg.mo
+share/locale/sv/LC_MESSAGES/gtg.mo
+share/locale/tr/LC_MESSAGES/gtg.mo
+share/locale/zh_CN/LC_MESSAGES/gtg.mo
 @dirrm %%DATADIR%%/icons/hicolor/svg
 @dirrm %%DATADIR%%/icons/hicolor/scalable/apps
 @dirrm %%DATADIR%%/icons/hicolor/scalable
