@@ -270,6 +270,7 @@ lib/libtesseract_viewer.a
 lib/libtesseract_wordrec.a
 share/tessdata/configs/api_config
 share/tessdata/configs/box.train
+share/tessdata/configs/box.train.stderr
 share/tessdata/configs/inter
 share/tessdata/configs/kannada
 share/tessdata/configs/makebox
@@ -299,6 +300,14 @@ share/tessdata/eng.pffmtable
 share/tessdata/eng.unicharset
 share/tessdata/eng.user-words
 share/tessdata/eng.word-dawg
+share/tessdata/eus.DangAmbigs
+share/tessdata/eus.freq-dawg
+share/tessdata/eus.inttemp
+share/tessdata/eus.normproto
+share/tessdata/eus.pffmtable
+share/tessdata/eus.unicharset
+share/tessdata/eus.user-words
+share/tessdata/eus.word-dawg
 share/tessdata/fra.DangAmbigs
 share/tessdata/fra.freq-dawg
 share/tessdata/fra.inttemp
