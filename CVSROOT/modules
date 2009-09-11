@@ -2791,6 +2791,7 @@ eigen                           ports/math/eigen
 eigen2                          ports/math/eigen2
 eights                          ports/games/eights
 einstein                        ports/games/einstein
+eiskaltdc                       ports/net-p2p/eiskaltdc
 eispack                         ports/math/eispack
 ejabberd                        ports/net-im/ejabberd
 eject                           ports/sysutils/eject
@@ -9683,7 +9684,6 @@ nvidia-settings                 ports/x11/nvidia-settings
 nvidia-texture-tools            ports/graphics/nvidia-texture-tools
 nvidia-xconfig                  ports/x11/nvidia-xconfig
 nvtv                            ports/sysutils/nvtv
-nvu                             ports/www/nvu
 nwcc                            ports/lang/nwcc
 nwndata                         ports/games/nwndata
 nwreckdum                       ports/archivers/nwreckdum
@@ -12198,6 +12198,7 @@ p5-Mon                          ports/net-mgmt/p5-Mon
 p5-Moose                        ports/devel/p5-Moose
 p5-Moose-Autobox                ports/devel/p5-Moose-Autobox
 p5-Moose-Policy                 ports/devel/p5-Moose-Policy
+p5-MooseX-Aliases               ports/devel/p5-MooseX-Aliases
 p5-MooseX-Async                 ports/devel/p5-MooseX-Async
 p5-MooseX-AttributeHelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-MooseX-ClassAttribute        ports/devel/p5-MooseX-ClassAttribute
@@ -15762,6 +15763,7 @@ p5-mon                          ports/net-mgmt/p5-Mon
 p5-moose                        ports/devel/p5-Moose
 p5-moose-autobox                ports/devel/p5-Moose-Autobox
 p5-moose-policy                 ports/devel/p5-Moose-Policy
+p5-moosex-aliases               ports/devel/p5-MooseX-Aliases
 p5-moosex-async                 ports/devel/p5-MooseX-Async
 p5-moosex-attributehelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-moosex-classattribute        ports/devel/p5-MooseX-ClassAttribute
