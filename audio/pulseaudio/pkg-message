@@ -1,6 +1,0 @@
-===>
-Pulseaudio is designed to run in realtime, to achieve this pulseaudio is
-marked SUID root by default. To take advantage of pulseaudio's realtime
-functionality you must be a member of the 'pulse-rt' group.
-
-ie: 'pw mod group pulse-rt -m [USERNAME]'
