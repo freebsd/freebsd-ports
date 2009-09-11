@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Sub-Delete
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Sub
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module enabling one to delete subroutines
 
 PERL_CONFIGURE=	yes
@@ -20,5 +20,4 @@ USE_PERL5=	5.8.3+
 
 MAN3=		Sub::Delete.3
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
