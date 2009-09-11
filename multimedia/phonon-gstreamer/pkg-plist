@@ -1,4 +1,0 @@
-lib/kde4/plugins/phonon_backend/phonon_gstreamer.so
-share/kde4/services/phononbackends/gstreamer.desktop
-@dirrmtry share/kde4/services/phononbackends
-@dirrmtry lib/kde4/plugins/phonon_backend
