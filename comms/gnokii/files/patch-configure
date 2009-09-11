@@ -1,6 +1,6 @@
---- configure.orig	2008-10-06 08:57:27.000000000 +0200
-+++ configure	2009-06-06 10:08:00.153654659 +0200
-@@ -1057,7 +1057,7 @@
+--- configure.orig	2009-09-08 22:26:52.251269320 +0200
++++ configure	2009-09-08 22:39:58.432178979 +0200
+@@ -1102,7 +1102,7 @@
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,154 +9,102 @@
  
  ac_prev=
  ac_dashdash=
-@@ -8050,18 +8050,18 @@
+@@ -9685,20 +9685,6 @@
+ 
    fi
  
- 
--{ echo "$as_me:$LINENO: checking if building on FreeBSD" >&5
--echo $ECHO_N "checking if building on FreeBSD... $ECHO_C" >&6; }
+-
+-{ $as_echo "$as_me:$LINENO: checking if building on FreeBSD" >&5
+-$as_echo_n "checking if building on FreeBSD... " >&6; }
 -
 -if test `uname -s` = "FreeBSD" ; then
--	{ echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6; }
+-	{ $as_echo "$as_me:$LINENO: result: yes" >&5
+-$as_echo "yes" >&6; }
 -	CPPFLAGS="$CFLAGS -I/usr/local/include"
 -	LDFLAGS="$LDFLAGS -L/usr/local/lib"
 -else
--	{ echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6; }
+-	{ $as_echo "$as_me:$LINENO: result: no" >&5
+-$as_echo "no" >&6; }
 -fi
-+#{ echo "$as_me:$LINENO: checking if building on FreeBSD" >&5
-+#echo $ECHO_N "checking if building on FreeBSD... $ECHO_C" >&6; }
-+#
-+#if test `uname -s` = "FreeBSD" ; then
-+#	{ echo "$as_me:$LINENO: result: yes" >&5
-+#echo "${ECHO_T}yes" >&6; }
-+#	CPPFLAGS="$CFLAGS -I/usr/local/include"
-+#	LDFLAGS="$LDFLAGS -L/usr/local/lib"
-+#else
-+#	{ echo "$as_me:$LINENO: result: no" >&5
-+#echo "${ECHO_T}no" >&6; }
-+#fi
+-
+ { $as_echo "$as_me:$LINENO: checking if building on NetBSD" >&5
+ $as_echo_n "checking if building on NetBSD... " >&6; }
  
- 
- 
-@@ -24163,13 +24163,15 @@
+@@ -16994,6 +16980,8 @@
  # First of all, check if the user has set any of the PTHREAD_LIBS,
  # etcetera environment variables, and if threads linking works using
  # them:
--if test x"$PTHREAD_LIBS$PTHREAD_CFLAGS" != x; then
-+if test x"-pthread" != x; then
-+	PTHREAD_CFLAGS=""
-+	PTHREAD_LIBS="-pthread"
++PTHREAD_CFLAGS=""
++PTHREAD_LIBS="-pthread"
+ if test x"$PTHREAD_LIBS$PTHREAD_CFLAGS" != x; then
          save_CFLAGS="$CFLAGS"
--        CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
-+        CFLAGS="$CFLAGS "
-         save_LIBS="$LIBS"
--        LIBS="$PTHREAD_LIBS $LIBS"
--        { echo "$as_me:$LINENO: checking for pthread_join in LIBS=$PTHREAD_LIBS with CFLAGS=$PTHREAD_CFLAGS" >&5
--echo $ECHO_N "checking for pthread_join in LIBS=$PTHREAD_LIBS with CFLAGS=$PTHREAD_CFLAGS... $ECHO_C" >&6; }
-+        LIBS="-pthread $LIBS"
-+        { echo "$as_me:$LINENO: checking for pthread_join in LIBS=-pthread with CFLAGS=" >&5
-+echo $ECHO_N "checking for pthread_join in LIBS=-pthread with CFLAGS=... $ECHO_C" >&6; }
-         cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -24533,7 +24535,7 @@
- echo $ECHO_N "checking if more special flags are required for pthreads... $ECHO_C" >&6; }
+         CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+@@ -17380,7 +17368,7 @@
+ $as_echo_n "checking if more special flags are required for pthreads... " >&6; }
          flag=no
          case "${host_cpu}-${host_os}" in
 -                *-aix* | *-freebsd* | *-darwin*) flag="-D_THREAD_SAFE";;
 +                *-aix* | *-darwin*) flag="-D_THREAD_SAFE";;
                  *solaris* | *-osf* | *-hpux*) flag="-D_REENTRANT";;
          esac
-         { echo "$as_me:$LINENO: result: ${flag}" >&5
-@@ -26561,9 +26563,9 @@
- fi
+         { $as_echo "$as_me:$LINENO: result: ${flag}" >&5
+@@ -19174,7 +19162,7 @@
  
- 
--if test "$enable_libical" == "yes"; then
-+if test "$enable_libical" = "yes"; then
+ if test "$enable_libical" = "yes"; then
  	OLD_CFLAGS="$CFLAGS"
 -	LIBS="$LIBS $ICAL_LIBS -lpthread -lical"
 +	LIBS="$LIBS $ICAL_LIBS -pthread -lical"
  	CFLAGS="$CFLAGS $ICAL_CFLAGS"
- 	{ echo "$as_me:$LINENO: checking whether libical is installed" >&5
- echo $ECHO_N "checking whether libical is installed... $ECHO_C" >&6; }
-@@ -26650,7 +26652,7 @@
-   enable_libusb=yes
- fi
- 
--if test "$enable_libusb" == "yes"; then
-+if test "$enable_libusb" = "yes"; then
- 	{ echo "$as_me:$LINENO: checking whether libusb is installed" >&5
- echo $ECHO_N "checking whether libusb is installed... $ECHO_C" >&6; }
- 	cat >conftest.$ac_ext <<_ACEOF
-@@ -26872,7 +26874,7 @@
-   enable_irda=yes
- fi
- 
--if test "$enable_irda" == "yes"; then
-+if test "$enable_irda" = "yes"; then
- 	{ echo "$as_me:$LINENO: checking for linux/irda.h" >&5
- echo $ECHO_N "checking for linux/irda.h... $ECHO_C" >&6; }
- if test "${ac_cv_header_linux_irda_h+set}" = set; then
-@@ -26955,7 +26957,7 @@
-   enable_bluetooth=yes
- fi
- 
--if test "$enable_bluetooth" == "yes"; then
-+if test "$enable_bluetooth" = "yes"; then
- 	{ echo "$as_me:$LINENO: checking for the bluetooth support" >&5
- echo $ECHO_N "checking for the bluetooth support... $ECHO_C" >&6; }
- 	{ echo "$as_me:$LINENO: checking for the struct sockaddr_rc in <bluetooth/rfcomm.h>" >&5
-@@ -27025,7 +27027,7 @@
- 
- 	fi
- fi
--if test "$enable_bluetooth" == "yes"; then
-+if test "$enable_bluetooth" = "yes"; then
- 	{ echo "$as_me:$LINENO: checking for the MacOS X bluetooth support" >&5
- echo $ECHO_N "checking for the MacOS X bluetooth support... $ECHO_C" >&6; }
- 
-@@ -27526,7 +27528,7 @@
- 	fi
- fi
- 
--if test "$enable_bluetooth" == "yes"; then
-+if test "$enable_bluetooth" = "yes"; then
- 	{ echo "$as_me:$LINENO: checking for the FreeBSD/netgraph bluetooth support" >&5
- echo $ECHO_N "checking for the FreeBSD/netgraph bluetooth support... $ECHO_C" >&6; }
- 	{ echo "$as_me:$LINENO: checking for the struct sockaddr_rfcomm in <netgraph/.../ng_btsocket.h>" >&5
-@@ -27602,7 +27604,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+ 	{ $as_echo "$as_me:$LINENO: checking whether libical is installed" >&5
+ $as_echo_n "checking whether libical is installed... " >&6; }
+@@ -20243,7 +20231,7 @@
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lbluetooth  $LIBS"
-+LIBS="-lsdp -lbluetooth $LIBS"
++LIBS="-lsdp -lbluetooth  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -27658,7 +27660,7 @@
- { echo "$as_me:$LINENO: result: $ac_cv_lib_bluetooth_bt_aton" >&5
- echo "${ECHO_T}$ac_cv_lib_bluetooth_bt_aton" >&6; }
- if test $ac_cv_lib_bluetooth_bt_aton = yes; then
--  BLUETOOTH_LIBS="$LIBS -lbluetooth"
-+  BLUETOOTH_LIBS="-lsdp -lbluetooth $LIBS"
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_BT_ATON
- _ACEOF
-@@ -27676,7 +27678,7 @@
-   enable_libpcsclite=yes
+@@ -20303,7 +20291,7 @@
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_bluetooth_bt_aton" >&5
+ $as_echo "$ac_cv_lib_bluetooth_bt_aton" >&6; }
+ if test "x$ac_cv_lib_bluetooth_bt_aton" = x""yes; then
+-  BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes
++  BLUETOOTH_LIBS="-lsdp -lbluetooth" ac_cv_have_bt_lib=yes
+ else
+   ac_cv_have_bt_lib=no
+ fi
+@@ -20375,7 +20363,7 @@
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_sdp_sdp_open" >&5
+ $as_echo "$ac_cv_lib_sdp_sdp_open" >&6; }
+ if test "x$ac_cv_lib_sdp_sdp_open" = x""yes; then
+-  BLUETOOTH_LIBS="$BLUETOOTH_LIBS -lsdp"
++  BLUETOOTH_LIBS="$BLUETOOTH_LIBS"
  fi
  
--if test "$enable_libpcsclite" == "yes"; then
-+if test "$enable_libpcsclite" = "yes"; then
+ 
+@@ -20516,7 +20504,7 @@
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_bluetooth_bt_aton" >&5
+ $as_echo "$ac_cv_lib_bluetooth_bt_aton" >&6; }
+ if test "x$ac_cv_lib_bluetooth_bt_aton" = x""yes; then
+-  BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes
++  BLUETOOTH_LIBS="-lsdp -lbluetooth" ac_cv_have_bt_lib=yes
+ else
+   ac_cv_have_bt_lib=no
+ fi
+@@ -20588,7 +20576,7 @@
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_sdp_sdp_open" >&5
+ $as_echo "$ac_cv_lib_sdp_sdp_open" >&6; }
+ if test "x$ac_cv_lib_sdp_sdp_open" = x""yes; then
+-  BLUETOOTH_LIBS="$BLUETOOTH_LIBS -lsdp"
++  BLUETOOTH_LIBS="$BLUETOOTH_LIBS"
+ fi
  
  
- if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
-@@ -28474,7 +28476,7 @@
- echo "${ECHO_T}$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&6; }
- if test $ac_cv_lib_Xpm_XpmWriteFileFromXpmImage = yes; then
+@@ -21456,7 +21444,7 @@
+ $as_echo "$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&6; }
+ if test "x$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" = x""yes; then
     XPM_CFLAGS="$XINCL"
 -                  XPM_LIBS="$XLIBS -lXpm -lX11"
 +                  XPM_LIBS="$XLIBS -lXpm -lX11 -lroken -lcrypt"

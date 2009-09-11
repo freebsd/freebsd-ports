@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.27
-PORTREVISION=	3
+PORTVERSION=	0.6.28
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -32,7 +31,7 @@ CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		XGETTEXT="${LOCALBASE}/bin/xgettext" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fPIC" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-L../common -L${LOCALBASE}/lib" \
+		LIBS="-L${WRKSRC}/common -L${LOCALBASE}/lib" \
 		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 
 PKGDEINSTALL=	${PKGINSTALL}
@@ -116,20 +115,6 @@ post-patch:
 		-e 's|([[:space:]]+test[[:space:]]+.+)==([[:space:]]+"yes")|\1=\2|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${MV} ${WRKSRC}/Docs/man/xgnokii.1x ${WRKSRC}/Docs/man/xgnokii.1
-
-post-build:
-.if defined(WITH_SMSD)
-.if defined(WITH_MYSQL)
-	@${REINPLACE_CMD} -e 's/^#libsmsd_mysql_la_SOURCES/libsmsd_mysql_la_SOURCES/' ${WRKSRC}/smsd/Makefile.in
-	@${REINPLACE_CMD} -e 's/^#libsmsd_mysql_la_LDFLAGS/libsmsd_mysql_la_LDFLAGS/' ${WRKSRC}/smsd/Makefile.in
-	@${REINPLACE_CMD} -e 's/^#libsmsd_mysql_la_LIBADD/libsmsd_mysql_la_LIBADD/' ${WRKSRC}/smsd/Makefile.in
-.endif
-.if defined(WITH_PGSQL)
-	@${REINPLACE_CMD} -e 's/^#libsmsd_pq_la_SOURCES/libsmsd_pq_la_SOURCES/' ${WRKSRC}/smsd/Makefile.in
-	@${REINPLACE_CMD} -e 's/^#libsmsd_pq_la_LDFLAGS/libsmsd_pq_la_LDFLAGS/' ${WRKSRC}/smsd/Makefile.in
-	@${REINPLACE_CMD} -e 's/^#libsmsd_pq_la_LIBADD/libsmsd_pq_la_LIBADD/' ${WRKSRC}/smsd/Makefile.in
-.endif
-.endif
 
 pre-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
