@@ -89,3 +89,16 @@
  			*ret = list;
  		XFree(prop.value);
  	}
+@@ -653,9 +659,10 @@
+ 	str = nil;
+ 
+ 	n = gettextlistproperty(w, name, &list);
+-	if(n > 0)
++	if(n > 0 && list) {
+ 		str = estrdup(*list);
+-	freestringlist(list);
++		freestringlist(list);
++	}
+ 
+ 	return str;
+ }
