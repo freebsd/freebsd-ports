@@ -11,22 +11,19 @@ PORTVERSION=	2.1.0
 CATEGORIES=	print
 MASTER_SITES=	http://libharu.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	Haru Free PDF Library
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
