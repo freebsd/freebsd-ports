@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psvn
-PORTVERSION=	38472
+PORTVERSION=	38969
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://svn.collab.net/viewvc/svn/trunk/contrib/client-side/emacs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
