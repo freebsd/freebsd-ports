@@ -30,7 +30,7 @@ load_rc_config $name
 
 jabberd_post_stopcmd()
 {
-	for file in c2s resolver router s2s sm; do
+	for file in c2s router s2s sm; do
 		rm -f ${jabberd_chdir}/$file.pid
 	done
 }
@@ -38,7 +38,7 @@ jabberd_post_stopcmd()
 case "$1" in
 	forcestop)
 		echo "Stopping jabberd."
-		killall -u ${jabberd_user} c2s resolver router s2s sm
+		killall -u ${jabberd_user} c2s router s2s sm
 		jabberd_post_stopcmd
 	;;
 	*)
