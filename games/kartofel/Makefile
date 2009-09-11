@@ -21,8 +21,16 @@ USE_GMAKE=	yes
 USE_SDL=	sdl gfx mixer image ttf
 
 ALL_TARGET=	default
+MAKE_JOBS_SAFE=	yes
 
 DATA_DIRS=	sounds fonts music images levels
+
+DESKTOP_ENTRIES="Kartofel" \
+		"A game of skill and logic" \
+		"${DATADIR}/images/icon32x32.png" \
+		"kartofel" \
+		"Game;LogicGame;ArcadeGame;" \
+		false
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXOPTIONS/ d; s|g++|${CXX} ${CXXFLAGS}|; \

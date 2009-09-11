@@ -20,10 +20,19 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image
 USE_GL=		glu
+MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	${PORTNAME}
+MKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README
+
+DESKTOP_ENTRIES="XorGramana" \
+		"Logic word puzzle game set inside a series of mazes" \
+		"${DATADIR}/GFX/x.png" \
+		"xorgramana" \
+		"Game;LogicGame;" \
+		false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GFX/|${DATADIR}/&|' ${WRKSRC}/icons.c

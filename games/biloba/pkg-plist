@@ -1,4 +1,5 @@
 bin/biloba
+%%DATADIR%%/biloba_icon.png
 %%DATADIR%%/en/2play.png
 %%DATADIR%%/en/3play.png
 %%DATADIR%%/en/4play.png

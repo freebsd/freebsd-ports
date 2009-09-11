@@ -23,9 +23,16 @@ USE_BZIP2=	yes
 USE_SDL=	sdl net mixer ttf image
 USE_GMAKE=	yes
 
+MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	"CXX=${CXX}"
 
 DATAVERSION=	2005-12-21
+DESKTOP_ENTRIES="Worms of Prey" \
+		"Real-time Worms game" \
+		"${DATADIR}/images/gui/wop32.png" \
+		"wop" \
+		"Game;ActionGame;" \
+		false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__va_copy|va_copy|g' ${WRKSRC}/src/string.cpp

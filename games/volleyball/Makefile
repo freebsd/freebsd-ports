@@ -23,11 +23,19 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --disable-nls # strangeness in nls support
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README
 MAN6=		volleyball.6
 
 DATAVERSION=	0.8.5
+
+DESKTOP_ENTRIES="Pocket Volleyball" \
+		"A game similar to GNU Arcade Volleyball" \
+		"" \
+		"volleyball" \
+		"Game;SportsGame;ArcadeGame;" \
+		false
 
 post-configure:
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \

@@ -35,6 +35,12 @@ USE_XORG=	x11
 USE_GL=		gl glu
 USE_SDL=	sdl
 PLIST_SUB+=	CLIENT=""
+DESKTOP_ENTRIES="Teeworlds" \
+		"Platform game featuring buggers equipped with weapons" \
+		"${DATADIR}/Teeworlds.ico" \
+		"teeworlds" \
+		"Game;ActionGame;" \
+		false
 .endif
 
 post-patch:
@@ -67,5 +73,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/teeworlds_srv ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/other/icons/Teeworlds.ico ${DATADIR}
 
 .include <bsd.port.post.mk>

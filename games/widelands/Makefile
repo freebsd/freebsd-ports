@@ -34,6 +34,13 @@ SCONS_ARGS=	install_prefix=${PREFIX} bindir=bin datadir=share/widelands \
 		sdlconfig=${SDL_CONFIG}
 MAKE_JOBS_SAFE=	yes
 
+DESKTOP_ENTRIES="Widelands" \
+		"Realtime strategy game inspired by Settlers II" \
+		"${DATADIR}/pics/wl-ico-32.png" \
+		"widelands" \
+		"Game;StrategyGame;" \
+		false
+
 post-patch:
 	@${REINPLACE_CMD} -e '/prefer_localdata/ s|True|False|' \
 		${WRKSRC}/worlds/SConscript

@@ -23,6 +23,13 @@ NO_BUILD=	yes
 
 PORTDOCS=	README
 
+DESKTOP_ENTRIES="Magicor" \
+		"Old-school, puzzle game similar to Solomon's Key" \
+		"" \
+		"magicor" \
+		"Game;LogicGame;" \
+		false
+
 OPTIONS=	EDITOR	"Enable editor"	on
 
 .include <bsd.port.pre.mk>

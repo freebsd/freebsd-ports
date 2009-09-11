@@ -31,6 +31,13 @@ CONFIGURE_ARGS=	--with-boost="${LOCALBASE}" \
 
 PORTDOCS=	*
 
+DESKTOP_ENTRIES="Lunar Lander" \
+		"Lunar Lander clone" \
+		"${DATADIR}/images/ship.png" \
+		"lander" \
+		"Game;ArcadeGame;" \
+		false
+
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBS=/ s|-lSDL_|`${SDL_CONFIG} --libs` &|' \
 		${WRKSRC}/configure

@@ -23,6 +23,13 @@ MAN6=		lmserver.6
 
 OPTIONS=	LM_SERVER_ONLY "Build dedicated server only" off
 
+DESKTOP_ENTRIES="Leges Motus" \
+		"A team-based, networked, 2D shooter set in zero-gravity" \
+		"${DATADIR}/sprites/blue_head32.png" \
+		"legesmotus" \
+		"Game;ActionGame;" \
+		false
+
 .include <bsd.port.options.mk>
 
 .if defined(WITH_LM_SERVER_ONLY)

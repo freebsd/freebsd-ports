@@ -22,6 +22,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include"
+MAKE_JOBS_SAFE=	yes
+
+DESKTOP_ENTRIES="Zatacka" \
+		"Nibbles-like multiplayer game" \
+		"" \
+		"zatacka" \
+		"Game;ArcadeGame;" \
+		false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__linux__|__FreeBSD__|; s|\[30\]|[PATH_MAX]|' \

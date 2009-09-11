@@ -31,6 +31,13 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 MAN6=		fillets.6
 
+DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
+		"A wonderful puzzle game" \
+		"${DATADIR}/images/icon.png" \
+		"fillets-ng" \
+		"Game;LogicGame;" \
+		false
+
 OPTIONS=	FRIBIDI	"Enable fribidi support" on
 
 .include <bsd.port.pre.mk>
