@@ -32,6 +32,7 @@ USE_PERL5=	yes
 .include <bsd.port.pre.mk>
 
 USE_FORTRAN=   yes
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 .if ${ARCH} == "amd64" || ${ARCH} == "alpha" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
 MAKE_FLAGS+=	BINARY64=1
