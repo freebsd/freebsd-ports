@@ -50,6 +50,10 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800105
+LIB_DEPENDS=	z.4:${PORTSDIR}/misc/compat7x
+.endif
+
 .if ${OSVERSION} >= 700000
 JDK_OSREL=	freebsd7
 PLIST_SUB+=	RELEASENOTE="@comment "

@@ -51,6 +51,10 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jre${JRE_VERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800105
+LIB_DEPENDS=	z.4:${PORTSDIR}/misc/compat7x
+.endif
+
 .if ${OSVERSION} >= 700000
 JRE_OSREL=	freebsd7
 PLIST_SUB+=	RELEASENOTE="@comment "
