@@ -73,7 +73,7 @@ _bgpd:*:130:130::0:0:BGP Daemon:/var/empty:/usr/sbin/nologin
 _ospfd:*:131:131::0:0:OSPF Daemon:/var/empty:/usr/sbin/nologin
 _spamd:*:132:132::0:0:Spam Daemon:/var/empty:/usr/sbin/nologin
 freeradius:*:133:133::0:0:FreeRADIUS Daemon:/nonexistent:/usr/sbin/nologin
-undernet:*:134:134::0:0:Undernet ircu Daemon:/nonexistant:/usr/sbin/nologin
+undernet:*:134:134::0:0:Undernet ircu Daemon:/nonexistent:/usr/sbin/nologin
 rabbitmq:*:135:135::0:0:RabbitMQ:/var/db/rabbitmq:/usr/sbin/nologin
 dhcpd:*:136:136::0:0:ISC DHCP daemon:/nonexistent:/usr/sbin/nologin
 cricket:*:141:80::0:0:Cricket Monitoring User:/usr/local/cricket:/usr/sbin/nologin
@@ -84,7 +84,7 @@ agk:*:172:172::0:0:AquaGateKeeper:/nonexistent:/nonexistent
 polipo:*:173:173::0:0:polipo web cache:/nonexistent:/usr/sbin/nologin
 flowtools:*:174:174::0:0:Flow-tools collector pseudo-user:/nonexistent:/usr/sbin/nologin
 nagios:*:181:181::0:0:Nagios pseudo-user:/var/spool/nagios:/usr/sbin/nologin
-noc:*:182:182:NOC pseudo-user:/usr/local/noc:/bin/sh
+noc:*:182:182::0:0:NOC pseudo-user:/usr/local/noc:/bin/sh
 moinmoin:*:192:192::0:0:MoinMoin User:/nonexistent:/usr/sbin/nologin
 cups:*:193:193::0:0:Cups Owner:/nonexistent:/usr/sbin/nologin
 sympa:*:200:200::0:0:Sympa Owner:/nonexistent:/usr/sbin/nologin
