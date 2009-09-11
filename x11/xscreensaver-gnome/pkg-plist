@@ -94,8 +94,6 @@ bin/xscreensaver-hacks/halftone
 bin/xscreensaver-hacks/halo
 bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hopalong
-bin/xscreensaver-hacks/hyperball
-bin/xscreensaver-hacks/hypercube
 bin/xscreensaver-hacks/hypertorus
 bin/xscreensaver-hacks/hypnowheel
 bin/xscreensaver-hacks/ifs
@@ -328,8 +326,6 @@ share/xscreensaver/config/halftone.xml
 share/xscreensaver/config/halo.xml
 share/xscreensaver/config/helix.xml
 share/xscreensaver/config/hopalong.xml
-share/xscreensaver/config/hyperball.xml
-share/xscreensaver/config/hypercube.xml
 share/xscreensaver/config/hypertorus.xml
 share/xscreensaver/config/hypnowheel.xml
 share/xscreensaver/config/ifs.xml
