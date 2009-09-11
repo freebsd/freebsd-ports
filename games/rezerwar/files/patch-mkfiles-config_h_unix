@@ -1,6 +1,0 @@
---- mkfiles/config_h_unix.orig	2009-08-10 16:30:36.000000000 +0400
-+++ mkfiles/config_h_unix	2009-08-11 20:32:00.000000000 +0400
-@@ -1,2 +1,2 @@
--#define DATAPATH	"/usr/share/games/rezerwar/data"
-+#define DATAPATH	"/usr/local/share/rezerwar"
- #define CFGPATH		".rezerwar"
