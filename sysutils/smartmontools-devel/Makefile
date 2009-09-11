@@ -7,7 +7,7 @@
 
 PORTNAME=	smartmontools
 PORTVERSION=	5.38
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -24,7 +24,7 @@ USE_RC_SUBR=	smartd
 MAN5=		smartd.conf.5
 MAN8=		smartd.8 smartctl.8
 
-CFLAGS:=	${CFLAGS:S/-O2/-O/}
+CFLAGS:=	${CFLAGS:S/-O2/-O/} -Wno-write-strings
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-initdDATA | |' ${WRKSRC}/Makefile.in
