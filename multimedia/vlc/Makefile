@@ -10,6 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -21,8 +22,7 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat \
 		${LOCALBASE}/include/X11/xpm.h:${PORTSDIR}/x11/libXpm
-LIB_DEPENDS=	tar.0:${PORTSDIR}/devel/libtar \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
 OPTIONS=	A52 "a52 audio support, many DVDs use this" On \
@@ -183,9 +183,10 @@ CONFIGURE_ARGS+=--disable-notify
 .endif
 
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS) && !defined(WITHOUT_QT4)
-CONFIGURE_ARGS+=--enable-skins2
+LIB_DEPENDS+=	tar.0:${PORTSDIR}/devel/libtar
+CONFIGURE_ARGS+=--enable-skins2 --enable-libtar
 .else
-CONFIGURE_ARGS+=--disable-skins2
+CONFIGURE_ARGS+=--disable-skins2 --disable-libtar
 .endif
 
 .if ${ARCH}=="i386" && defined(WITH_WIN32_CODECS)
