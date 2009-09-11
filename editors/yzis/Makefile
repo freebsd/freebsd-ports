@@ -7,7 +7,7 @@
 
 PORTNAME=	yzis
 PORTVERSION=	1.0.a.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
 		http://contribs.martymac.com/FreeBSD-ports/distfiles/
@@ -44,6 +44,7 @@ OPTIONS=	KYZIS "Build Kyzis and Yzis kpart" off \
 
 .if defined(WITH_KYZIS)
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
+QT_COMPONENTS+=	phonon
 .endif
 
 .include <bsd.port.pre.mk>
@@ -58,7 +59,6 @@ PLIST_SUB+=	PL_NYZIS="@comment "
 .endif
 
 .if defined(WITH_KYZIS)
-LIB_DEPENDS+=	phonon.4:${PORTSDIR}/multimedia/phonon
 CMAKE_ARGS+=	-DENABLE_KYZIS:BOOL=ON \
 		-DENABLE_KPART_YZIS:BOOL=ON
 PLIST_SUB+=	PL_KYZIS=""
