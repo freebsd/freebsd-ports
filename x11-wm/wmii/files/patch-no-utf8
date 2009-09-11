@@ -1,0 +1,91 @@
+--- cmd/wmii/Makefile.orig
++++ cmd/wmii/Makefile
+@@ -8,8 +8,16 @@
+ HFILES=	dat.h fns.h x11.h
+ 
+ LIB =	${LIBIXP}
+-LDFLAGS += -lm ${LIBX11} -lXext ${LIBICONV} -lregexp9 -lbio -lfmt -lutf
+-CFLAGS += ${INCX11} ${INCICONV} -DVERSION=\"${VERSION}\"
++LDFLAGS += -lm ${LIBX11} -lXext -lregexp9 -lbio -lfmt -lutf
++CFLAGS += ${INCX11} -DVERSION=\"${VERSION}\"
++
++.ifdef NO_UTF8
++CFLAGS += -DNO_UTF8
++.else
++LDFLAGS += ${LIBICONV}
++CFLAGS += ${INCICONV}
++.endif
++
+ OBJ =	area	\
+ 	bar	\
+ 	client	\
+--- cmd/wmii/utf.c.orig
++++ cmd/wmii/utf.c
+@@ -1,12 +1,17 @@
+ /* Public Domain --Kris Maglione */
+ #include "dat.h"
+ #include <errno.h>
++#ifndef NO_UTF8
+ #include <iconv.h>
++#endif
+ #include <string.h>
+ #include "fns.h"
+ 
+ char*
+ toutf8n(char *str, size_t nstr) {
++#ifdef NO_UTF8
++	return strndup(str, nstr);
++#else
+ 	static iconv_t cd;
+ 	char *buf, *pos;
+ 	size_t nbuf, bsize;
+@@ -30,6 +35,7 @@
+ 			break;
+ 	*pos = '\0';
+ 	return buf;
++#endif
+ }
+ 
+ char*
+--- cmd/wmii/x11.c.orig
++++ cmd/wmii/x11.c
+@@ -18,6 +18,12 @@
+ static MapEnt *wbucket[137];
+ static MapEnt *abucket[137];
+ 
++#ifdef NO_UTF8
++#define	XTEXT(func)	Xmb##func
++#else
++#define	XTEXT(func)	Xutf8##func
++#endif
++
+ XRectangle
+ XRect(Rectangle r) {
+ 	XRectangle xr;
+@@ -444,7 +450,7 @@
+ 
+ 	setgccol(dst, col);
+ 	if(font->set)
+-		Xutf8DrawString(display, dst->image, 
++		XTEXT(DrawString)(display, dst->image, 
+ 				font->set, dst->gc,
+ 				x, y,
+ 				buf, len);
+@@ -552,7 +558,7 @@
+ 	XRectangle r;
+ 
+ 	if(font->set) {
+-		Xutf8TextExtents(font->set, text, len, &r, nil);
++		XTEXT(TextExtents)(font->set, text, len, &r, nil);
+ 		return r.width;
+ 	}
+ 	return XTextWidth(font->xfont, text, len);
+@@ -638,7 +644,7 @@
+ 
+ 	XGetTextProperty(display, w->w, &prop, xatom(name));
+ 	if(prop.nitems > 0) {
+-		if(Xutf8TextPropertyToTextList(display, &prop, &list, &n) == Success)
++		if(XTEXT(TextPropertyToTextList)(display, &prop, &list, &n) == Success)
+ 			*ret = list;
+ 		XFree(prop.value);
+ 	}
