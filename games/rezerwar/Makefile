@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rezerwar
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	games
 MASTER_SITES=	http://tamentis.com/projects/rezerwar/files/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -19,25 +19,15 @@ USE_SDL=	sdl mixer
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	Unix
 MAKE_JOBS_SAFE=	yes
+CONFIGURE_ENV=	TARGET_BIN=${PREFIX}/bin \
+		TARGET_DOC=${DOCSDIR} \
+		TARGET_DATA=${DATADIR}
 
 PORTDOCS=	*
 
-post-extract:
-	@${FIND} ${WRKSRC}/data -name Makefile -delete
-
+.if defined(NOPORTDOCS)
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
-		${WRKSRC}/mkfiles/config_h_unix
-#	@${REINPLACE_CMD} -e 's|hiscore.dat|.rezerwar.hiscore|' \
-#		${WRKSRC}/src/hiscore.c
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/rezerwar ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
+	@${REINPLACE_CMD} -e '/TARGET_DOC/ d' ${WRKSRC}/mkfiles/Makefile.main
 .endif
 
 .include <bsd.port.mk>

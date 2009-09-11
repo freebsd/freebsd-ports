@@ -11,8 +11,12 @@ bin/rezerwar
 %%DATADIR%%/levels/tuto_04.lvl
 %%DATADIR%%/levels/tuto_05.lvl
 %%DATADIR%%/levels/tuto_06.lvl
-%%DATADIR%%/music/level1.mp3
-%%DATADIR%%/music/menu.mp3
+%%DATADIR%%/levels/tuto_07.lvl
+%%DATADIR%%/levels/tuto_08.lvl
+%%DATADIR%%/levels/tuto_09.lvl
+%%DATADIR%%/levels/tuto_end.lvl
+%%DATADIR%%/music/level1.ogg
+%%DATADIR%%/music/menu.ogg
 %%DATADIR%%/sfx/boom.wav
 %%DATADIR%%/sfx/horn.wav
 %%DATADIR%%/sfx/lazer.wav
