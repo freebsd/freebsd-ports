@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nspr
-PORTVERSION=	4.7.3
+PORTVERSION=	4.7.4
 CATEGORIES=	devel linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
@@ -18,7 +18,7 @@ CONFLICTS=	linux-f8-nspr-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10
-RPMVERSION=	2.fc10
+RPMVERSION=	1.fc10
 
 PLIST_FILES=	lib/libnspr4.so lib/libplc4.so lib/libplds4.so
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
