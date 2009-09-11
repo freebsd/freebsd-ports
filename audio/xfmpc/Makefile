@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xfmpc
-PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTVERSION=	0.2.0
 CATEGORIES=	audio xfce
-MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/0.2/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -25,5 +24,7 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui libutil panel
+
+MAN1=	xfmpc.1
 
 .include <bsd.port.mk>
