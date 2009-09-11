@@ -911,6 +911,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/plat-freebsd7/regen
 %%PYTHON_LIBDIR%%/plat-freebsd8/IN.py
 %%PYTHON_LIBDIR%%/plat-freebsd8/regen
+%%PYTHON_LIBDIR%%/plat-freebsd9/IN.py
+%%PYTHON_LIBDIR%%/plat-freebsd9/regen
 %%PYTHON_LIBDIR%%/platform.py
 %%PYTHON_LIBDIR%%/plistlib.py
 %%PYTHON_LIBDIR%%/popen2.py
@@ -2205,6 +2207,7 @@ lib/libpython2.6.a
 @dirrm %%PYTHON_LIBDIR%%/sqlite3/test
 @dirrm %%PYTHON_LIBDIR%%/sqlite3
 @dirrm %%PYTHON_LIBDIR%%/site-packages
+@dirrm %%PYTHON_LIBDIR%%/plat-freebsd9
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd8
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd7
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd6

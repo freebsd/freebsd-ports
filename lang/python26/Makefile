@@ -6,7 +6,7 @@
 
 PORTNAME=	python26
 PORTVERSION=	2.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -40,7 +40,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
-		plat-freebsd7 plat-freebsd8
+		plat-freebsd7 plat-freebsd8 plat-freebsd9
 
 BIN_SCRIPTS=	2to3 idle pydoc smtpd.py
 BIN_FILES=	python python-shared python-config python-shared-config \
@@ -149,6 +149,8 @@ CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
 pre-patch:
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd9
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 	${LN} ${PATCH_WRKSRC}/Lib/smtpd.py ${PATCH_WRKSRC}/Tools/scripts/
 .for script in ${BIN_SCRIPTS}
