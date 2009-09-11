@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtg
-PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTVERSION=	0.1.2
 CATEGORIES=	deskutils gnome python
 MASTER_SITES=	http://launchpad.net/gtg/trunk/${PORTVERSION}/+download/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -30,6 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/gtg.desktop ${WRKSRC}/GTG/__init__.py
+	${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' ${WRKSRC}/gtg.desktop
 
 post-install:
 	@-update-desktop-database
