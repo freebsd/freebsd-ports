@@ -6,8 +6,8 @@ files anymore. It's been using respectively ~/.ncmpcpp/config and
 ~/.ncmpcpp/keys for this since ver. 0.2.4!
 
 --------------------------------------------------------------------------
-Colors syntax has changed since 0.3 version. See example config file for
-new syntax.
+Attention: Marker for right alignment in song format has changed from %r
+to $R since 0.4 version.
 --------------------------------------------------------------------------
 
 A default config has been installed to:
