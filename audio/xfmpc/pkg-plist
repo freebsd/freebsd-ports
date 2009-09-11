@@ -1,5 +1,4 @@
 bin/xfmpc
-man/man1/xfmpc.1
 share/applications/xfmpc.desktop
 share/locale/ar/LC_MESSAGES/xfmpc.mo
 share/locale/ast/LC_MESSAGES/xfmpc.mo
