@@ -8,8 +8,7 @@
 PORTNAME=	cakephp
 PORTVERSION=	1.2.4.8284
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/724/ \
-		LOCAL/glarkin
+MASTER_SITES=	LOCAL/glarkin
 PKGNAMESUFFIX=	-devel
 DISTNAME=	cake_${PORTVERSION}
 
@@ -17,7 +16,6 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 USE_BZIP2=	yes
-DISTFILE_SUFFIX=/donation=complete
 FETCH_BEFORE_ARGS=	-o -
 TARGET_DISTFILE=${DISTNAME}${EXTRACT_SUFX}
 
