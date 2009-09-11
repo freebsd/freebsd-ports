@@ -13,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/event/address_book.py
 %%PYTHON_SITELIBDIR%%/papyon/event/address_book.pyc
 %%PYTHON_SITELIBDIR%%/papyon/event/address_book.pyo
+%%PYTHON_SITELIBDIR%%/papyon/event/call.py
+%%PYTHON_SITELIBDIR%%/papyon/event/call.pyc
+%%PYTHON_SITELIBDIR%%/papyon/event/call.pyo
 %%PYTHON_SITELIBDIR%%/papyon/event/client.py
 %%PYTHON_SITELIBDIR%%/papyon/event/client.pyc
 %%PYTHON_SITELIBDIR%%/papyon/event/client.pyo
@@ -28,6 +31,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/event/mailbox.py
 %%PYTHON_SITELIBDIR%%/papyon/event/mailbox.pyc
 %%PYTHON_SITELIBDIR%%/papyon/event/mailbox.pyo
+%%PYTHON_SITELIBDIR%%/papyon/event/media.py
+%%PYTHON_SITELIBDIR%%/papyon/event/media.pyc
+%%PYTHON_SITELIBDIR%%/papyon/event/media.pyo
 %%PYTHON_SITELIBDIR%%/papyon/event/offline_messages.py
 %%PYTHON_SITELIBDIR%%/papyon/event/offline_messages.pyc
 %%PYTHON_SITELIBDIR%%/papyon/event/offline_messages.pyo
@@ -106,6 +112,36 @@
 %%PYTHON_SITELIBDIR%%/papyon/gnet/resolver.py
 %%PYTHON_SITELIBDIR%%/papyon/gnet/resolver.pyc
 %%PYTHON_SITELIBDIR%%/papyon/gnet/resolver.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/__init__.py
+%%PYTHON_SITELIBDIR%%/papyon/media/__init__.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/__init__.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/call.py
+%%PYTHON_SITELIBDIR%%/papyon/media/call.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/call.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/candidate.py
+%%PYTHON_SITELIBDIR%%/papyon/media/candidate.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/candidate.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/codec.py
+%%PYTHON_SITELIBDIR%%/papyon/media/codec.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/codec.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/conference.py
+%%PYTHON_SITELIBDIR%%/papyon/media/conference.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/conference.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/constants.py
+%%PYTHON_SITELIBDIR%%/papyon/media/constants.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/constants.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/message.py
+%%PYTHON_SITELIBDIR%%/papyon/media/message.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/message.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/relay.py
+%%PYTHON_SITELIBDIR%%/papyon/media/relay.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/relay.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/session.py
+%%PYTHON_SITELIBDIR%%/papyon/media/session.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/session.pyo
+%%PYTHON_SITELIBDIR%%/papyon/media/stream.py
+%%PYTHON_SITELIBDIR%%/papyon/media/stream.pyc
+%%PYTHON_SITELIBDIR%%/papyon/media/stream.pyo
 %%PYTHON_SITELIBDIR%%/papyon/msnp/__init__.py
 %%PYTHON_SITELIBDIR%%/papyon/msnp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papyon/msnp/__init__.pyo
@@ -128,6 +164,18 @@
 %%PYTHON_SITELIBDIR%%/papyon/msnp/message.pyc
 %%PYTHON_SITELIBDIR%%/papyon/msnp/message.pyo
 %%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.BACKUP.8715.py
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.BACKUP.8715.pyc
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.BACKUP.8715.pyo
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.BASE.8715.py
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.BASE.8715.pyc
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.BASE.8715.pyo
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.LOCAL.8715.py
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.LOCAL.8715.pyc
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.LOCAL.8715.pyo
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.REMOTE.8715.py
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.REMOTE.8715.pyc
+%%PYTHON_SITELIBDIR%%/papyon/msnp/notification.py.REMOTE.8715.pyo
 %%PYTHON_SITELIBDIR%%/papyon/msnp/notification.pyc
 %%PYTHON_SITELIBDIR%%/papyon/msnp/notification.pyo
 %%PYTHON_SITELIBDIR%%/papyon/msnp/switchboard.py
@@ -208,6 +256,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/accept_invite.py
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/accept_invite.pyc
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/accept_invite.pyo
+%%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/allow_contact.py
+%%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/allow_contact.pyc
+%%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/allow_contact.pyo
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/block_contact.py
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/block_contact.pyc
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/block_contact.pyo
@@ -226,12 +277,12 @@
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/decline_invite.py
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/decline_invite.pyc
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/decline_invite.pyo
+%%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/disallow_contact.py
+%%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/disallow_contact.pyc
+%%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/disallow_contact.pyo
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/email_contact_add.py
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/email_contact_add.pyc
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/email_contact_add.pyo
-%%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/external_contact_add.py
-%%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/external_contact_add.pyc
-%%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/external_contact_add.pyo
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/messenger_contact_add.py
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/messenger_contact_add.pyc
 %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts/messenger_contact_add.pyo
@@ -472,9 +523,36 @@
 %%PYTHON_SITELIBDIR%%/papyon/service/description/__init__.py
 %%PYTHON_SITELIBDIR%%/papyon/service/description/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papyon/service/description/__init__.pyo
-%%PYTHON_SITELIBDIR%%/papyon/storage.py
-%%PYTHON_SITELIBDIR%%/papyon/storage.pyc
-%%PYTHON_SITELIBDIR%%/papyon/storage.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/__init__.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/__init__.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/__init__.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/call.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/call.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/call.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/connection.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/connection.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/connection.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/connection_manager.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/connection_manager.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/connection_manager.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/constants.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/constants.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/constants.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/ice.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/ice.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/ice.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/message.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/message.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/message.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/sdp.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/sdp.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/sdp.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/transport.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/transport.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/transport.pyo
+%%PYTHON_SITELIBDIR%%/papyon/sip/turn.py
+%%PYTHON_SITELIBDIR%%/papyon/sip/turn.pyc
+%%PYTHON_SITELIBDIR%%/papyon/sip/turn.pyo
 %%PYTHON_SITELIBDIR%%/papyon/switchboard_manager.py
 %%PYTHON_SITELIBDIR%%/papyon/switchboard_manager.pyc
 %%PYTHON_SITELIBDIR%%/papyon/switchboard_manager.pyo
@@ -493,6 +571,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/util/element_tree.py
 %%PYTHON_SITELIBDIR%%/papyon/util/element_tree.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/element_tree.pyo
+%%PYTHON_SITELIBDIR%%/papyon/util/encoding.py
+%%PYTHON_SITELIBDIR%%/papyon/util/encoding.pyc
+%%PYTHON_SITELIBDIR%%/papyon/util/encoding.pyo
 %%PYTHON_SITELIBDIR%%/papyon/util/guid.py
 %%PYTHON_SITELIBDIR%%/papyon/util/guid.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/guid.pyo
@@ -505,6 +586,12 @@
 %%PYTHON_SITELIBDIR%%/papyon/util/iso8601/test_iso8601.py
 %%PYTHON_SITELIBDIR%%/papyon/util/iso8601/test_iso8601.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/iso8601/test_iso8601.pyo
+%%PYTHON_SITELIBDIR%%/papyon/util/odict.py
+%%PYTHON_SITELIBDIR%%/papyon/util/odict.pyc
+%%PYTHON_SITELIBDIR%%/papyon/util/odict.pyo
+%%PYTHON_SITELIBDIR%%/papyon/util/pyDes.py
+%%PYTHON_SITELIBDIR%%/papyon/util/pyDes.pyc
+%%PYTHON_SITELIBDIR%%/papyon/util/pyDes.pyo
 %%PYTHON_SITELIBDIR%%/papyon/util/queue.py
 %%PYTHON_SITELIBDIR%%/papyon/util/queue.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/queue.pyo
@@ -516,6 +603,7 @@
 %%PYTHON_SITELIBDIR%%/papyon/util/weak.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/util/iso8601
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/util
+@dirrm %%PYTHON_SITELIBDIR%%/papyon/sip
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/Spaces
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/SingleSignOn
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/Sharing
@@ -539,6 +627,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/msnp2p
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/msnp
+@dirrm %%PYTHON_SITELIBDIR%%/papyon/media
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/gnet/proxy
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/gnet/protocol
 @dirrm %%PYTHON_SITELIBDIR%%/papyon/gnet/message
