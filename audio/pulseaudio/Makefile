@@ -115,6 +115,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
 		${PREFIX}/etc/pulse/${ii}-dist
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
