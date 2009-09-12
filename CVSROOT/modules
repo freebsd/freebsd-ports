@@ -18175,8 +18175,6 @@ phex                            ports/net-p2p/phex
 philesight                      ports/sysutils/philesight
 phluid                          ports/x11-wm/phluid
 pho                             ports/graphics/pho
-phonon                          ports/multimedia/phonon
-phonon-gstreamer                ports/multimedia/phonon-gstreamer
 phonon-xine                     ports/multimedia/phonon-xine
 phoon                           ports/astro/phoon
 photo_gallery                   ports/www/photo_gallery
