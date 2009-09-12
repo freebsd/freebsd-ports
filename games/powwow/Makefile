@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powwow
-PORTVERSION=	1.2.13
+PORTVERSION=	1.2.14
 CATEGORIES=	games
 MASTER_SITES=	http://hoopajoo.net/static/projects/ \
 		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
