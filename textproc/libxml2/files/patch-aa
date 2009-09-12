@@ -1,7 +1,7 @@
---- Makefile.in.orig	2008-10-05 07:36:15.299141562 -0400
-+++ Makefile.in	2008-10-05 07:41:11.883687363 -0400
-@@ -513,13 +513,13 @@
- target_alias = @target_alias@
+--- Makefile.in.orig	2009-09-12 14:00:00.000000000 -0400
++++ Makefile.in	2009-09-12 14:01:06.000000000 -0400
+@@ -558,7 +558,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = include . doc example xstc @PYTHON_SUBDIR@
@@ -9,14 +9,16 @@
  DIST_SUBDIRS = include . doc example python xstc
  INCLUDES = -I$(top_builddir)/include -I@srcdir@/include @THREAD_CFLAGS@ @Z_CFLAGS@ 
  bin_SCRIPTS = xml2-config
- lib_LTLIBRARIES = libxml2.la
- libxml2_la_LIBADD = @THREAD_LIBS@ @Z_LIBS@ $(ICONV_LIBS) @M_LIBS@ @WIN32_EXTRA_LIBADD@
--libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -version-info @LIBXML_VERSION_INFO@ @MODULE_PLATFORM_LIBS@
-+libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -version-info 5:0:0 @MODULE_PLATFORM_LIBS@
+@@ -568,7 +568,7 @@ libxml2_la_LIBADD = @THREAD_LIBS@ @Z_LIB
+ @USE_VERSION_SCRIPT_TRUE@LIBXML2_VERSION_SCRIPT = $(VERSION_SCRIPT_FLAGS)$(srcdir)/libxml2.syms
+ libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ \
+                      $(LIBXML2_VERSION_SCRIPT) \
+-		     -version-info @LIBXML_VERSION_INFO@ \
++		     -version-info 5:0:0 \
+ 		     @MODULE_PLATFORM_LIBS@
+ 
  @WITH_TRIO_SOURCES_FALSE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
- @WITH_TRIO_SOURCES_FALSE@		parser.c tree.c hash.c list.c xmlIO.c xmlmemory.c uri.c  \
- @WITH_TRIO_SOURCES_FALSE@		valid.c xlink.c HTMLparser.c HTMLtree.c debugXML.c xpath.c  \
-@@ -633,7 +633,7 @@
+@@ -684,7 +684,7 @@ runxmlconf_LDFLAGS = 
  runxmlconf_DEPENDENCIES = $(DEPS)
  runxmlconf_LDADD = $(LDADDS)
  CLEANFILES = xml2Conf.sh *.gcda *.gcno
@@ -25,7 +27,7 @@
  confexec_DATA = xml2Conf.sh
  CVS_EXTRA_DIST = 
  EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
-@@ -656,8 +656,8 @@
+@@ -707,8 +707,8 @@ pkgconfig_DATA = libxml-2.0.pc
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -36,7 +38,7 @@
  
  #
  # Coverage support, largely borrowed from libvirt
-@@ -1414,7 +1414,7 @@
+@@ -1541,7 +1541,7 @@ distcleancheck: distclean
  	       exit 1; } >&2
  check-am: all-am
  check: check-recursive
