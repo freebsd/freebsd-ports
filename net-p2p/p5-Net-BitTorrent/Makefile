@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-BitTorrent
-PORTVERSION=	0.050
+PORTVERSION=	0.051
 CATEGORIES=	net-p2p perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/SA/SANKO
@@ -24,7 +24,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 CONFIGURE_ARGS=	</dev/null
 PERL_MODBUILD=	yes
 
+MAN1=		net-bittorrent.pl.1
 MAN3=		Net::BitTorrent.3 \
+		Net::BitTorrent::Notes.3 \
 		Net::BitTorrent::ConfigData.3 \
 		Net::BitTorrent::DHT.3 \
 		Net::BitTorrent::Peer.3 \
