@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mwlib.rl
-PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTVERSION=	0.12.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +16,8 @@ COMMENT=	Generate Pdfs from Mediawiki Markup
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/texvc:${PORTSDIR}/print/texvc \
 		${LOCALBASE}/bin/fribidi:${PORTSDIR}/converters/fribidi \
-		${PYTHON_PKGNAMEPREFIX}mwlib>=0.11.1:${PORTSDIR}/devel/py-mwlib \
-		${PYTHON_PKGNAMEPREFIX}mwlib.ext>=0.9.3:${PORTSDIR}/devel/py-mwlib.ext \
+		${PYTHON_PKGNAMEPREFIX}mwlib>=0.12.0:${PORTSDIR}/devel/py-mwlib \
+		${PYTHON_PKGNAMEPREFIX}mwlib.ext>=0.12.0:${PORTSDIR}/devel/py-mwlib.ext \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.0:${PORTSDIR}/textproc/py-pygments
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
