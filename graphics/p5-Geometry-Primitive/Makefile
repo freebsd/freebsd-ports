@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geometry-Primitive
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
