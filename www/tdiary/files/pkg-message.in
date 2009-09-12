@@ -3,9 +3,9 @@
 There is a script to install tDiary in a user directory.
 This script should be run manually.
 
-  # ruby %%EXAMPLESDIR%%/tdiaryinst.rb --user=User
+  # %%PREFIX%%/bin/%%TDIARY_SCRIPT%% --user=User
    or
-  % ruby %%EXAMPLESDIR%%/tdiaryinst.rb
+  % %%PREFIX%%/bin/%%TDIARY_SCRIPT%%
 
  * Option: --suexec Use suExec for CGI execution
 	   --help   Display Help information
@@ -14,6 +14,6 @@ This script should be run manually.
 There are documents in the following directories.
   See ...
   %%DOCSDIR%%
-  %%EXAMPLESDIR%%/misc/i18n/
+  %%WWWDIR%%/misc/i18n
 =============================================================================
 

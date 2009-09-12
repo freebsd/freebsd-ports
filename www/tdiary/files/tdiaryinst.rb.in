@@ -14,9 +14,9 @@ require 'find'
 require 'tempfile'
 
 # 
-$OPT_TDIARYMASTER = "@@@@PREFIX@@@@/share/examples/tdiary"
-$OPT_TDIARYDOCDIR = "@@@@PREFIX@@@@/share/doc/tdiary"
-$OPT_LANG         = '@@@@LANG@@@@'
+$OPT_TDIARYMASTER = "%%WWWDIR%%"
+$OPT_TDIARYDOCDIR = "%%DOCSDIR%%"
+$OPT_LANG         = '%%TDIARY_LANG%%'
 
 def usage
   STDERR.print "Usage: #{File.basename($0)} [options]\n"
@@ -27,9 +27,9 @@ def usage
   STDERR.print "    --httpdir=<httpdir>       Specify apache UserDirectory  default: public_html\n"
   STDERR.print "    --name=<author_name>      Specify author name\n"
   STDERR.print "    --mail=<author_mail>      Specify author mail address\n"
-  STDERR.print "    --tdiarymaster=<dir>      Specify tDiary master directory default: @@@@PREFIX@@@@/share/examples/tdiary\n"
-  STDERR.print "    --tdiarydocdir=<docdir>   Specify tDiary document directory default: @@@@PREFIX@@@@/share/doc/tdiary\n"
-  STDERR.print "    --lang=<language>         Specify your language ('en' or 'ja' or 'zh') default: @@@@LANG@@@@\n"
+  STDERR.print "    --tdiarymaster=<dir>      Specify tDiary master directory default: %%WWWDIR%%\n"
+  STDERR.print "    --tdiarydocdir=<docdir>   Specify tDiary document directory default: %%DOCSDIR%%\n"
+  STDERR.print "    --lang=<language>         Specify your language ('en' or 'ja' or 'zh') default: %%TDIARY_LANG%%\n"
   STDERR.print "    --suexec                  Use suExec for CGI execution\n"
   STDERR.print "    --symlink                 Use symbolic link for tDiary master files\n"
   STDERR.print "    --quiet                   Do not display any information\n"
