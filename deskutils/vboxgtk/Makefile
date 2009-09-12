@@ -14,7 +14,7 @@ MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GTK frontend for VirtualBox
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject \
-		${PYTHON_SITELIBDIR}/virtualbox/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtualbox
+		${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtualbox
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
@@ -27,6 +27,8 @@ PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+IGNORE=		does not work with virtualbox-3.0.51.r22683
 
 post-patch:
 .if defined(WITHOUT_NLS)

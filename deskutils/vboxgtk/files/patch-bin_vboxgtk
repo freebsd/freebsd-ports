@@ -15,8 +15,17 @@
          sys.path.insert(0, vbox_install_path)
 -        sdk_dir = 'sdk/bindings/xpcom/python'
 -        sys.path.insert(0, os.path.join(vbox_install_path, sdk_dir))
-+        sdk_dir = '%%PYTHON_SITELIBDIR%%/virtualbox'
++        sdk_dir = '%%PYTHON_SITELIBDIR%%/xpcom'
 +        sys.path.insert(0, sdk_dir)
      base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
      if os.path.isdir(os.path.join(base_path, 'vboxgtk')):
          sys.path.insert(0, base_path)
+@@ -72,7 +72,7 @@
+     Otherwise this program will not run.
+     """
+     try:
+-        import xpcom.vboxxpcom
++        import vboxxpcom
+     except ImportError as ex:
+         print "ERROR: xpcom package not found\n" + textwrap.dedent(msg)
+         raise ex    
