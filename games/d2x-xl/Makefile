@@ -19,6 +19,7 @@ MAINTAINER=	aragon@phat.za.net
 COMMENT=	Community Unix port of Descent 2 Game
 
 EXTRACT_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
 
 DATAVERSION=	1.14.95
 
