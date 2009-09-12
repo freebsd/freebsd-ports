@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuplot
-PORTVERSION=	4.2.5
-PORTREVISION=	1
+PORTVERSION=	4.2.6
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -117,5 +116,8 @@ post-install:
 		gnuplot.ps ${DOCSDIR}
 	cd ${WRKSRC}/docs/psdoc && ${INSTALL_DATA} README ps_* ${DOCSDIR}/psdoc
 .endif
+
+test: build
+	@( cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check ; )
 
 .include <bsd.port.post.mk>
