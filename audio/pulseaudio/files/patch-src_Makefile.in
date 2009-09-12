@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	2009-09-10 22:40:54.000000000 -0400
-+++ src/Makefile.in	2009-09-10 22:42:31.000000000 -0400
+--- src/Makefile.in.orig	2009-09-11 21:23:13.000000000 -0400
++++ src/Makefile.in	2009-09-11 21:24:41.000000000 -0400
 @@ -2890,7 +2890,7 @@ libpulsecommon_@PA_MAJORMINORMICRO@_la_C
  libpulsecommon_@PA_MAJORMINORMICRO@_la_LDFLAGS = $(AM_LDFLAGS) \
  	-avoid-version $(am__append_14)
@@ -9,3 +9,15 @@
  	$(LIBSNDFILE_LIBS) $(am__append_16) $(am__append_20)
  
  ###################################
+@@ -7745,9 +7745,8 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-alsapathsDATA install-alsaprofilesetsDATA \
+-	install-dbuspolicyDATA install-pulseconfDATA \
+-	install-pulseincludeHEADERS install-udevrulesDATA \
++install-data-am: install-dbuspolicyDATA install-pulseconfDATA \
++	install-pulseincludeHEADERS  \
+ 	install-xdgautostartDATA
+ 
+ install-dvi: install-dvi-am
