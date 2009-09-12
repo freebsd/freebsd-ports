@@ -188,6 +188,7 @@
     SUBDIR += imerge
     SUBDIR += inplace
     SUBDIR += instant-server
+    SUBDIR += ipa_conv
     SUBDIR += ipbt
     SUBDIR += iselect
     SUBDIR += iso-codes
