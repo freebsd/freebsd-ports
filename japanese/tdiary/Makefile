@@ -7,13 +7,9 @@
 
 CATEGORIES=	japanese www ruby
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 
 TDIARY_LANG=	ja
-MASTERDIR?=	${.CURDIR}/../../www/tdiary
-
-CONFLICTS=		tdiary-[0-9]*
-
-MD5_FILE=	${.CURDIR}/../../www/tdiary/distinfo
+MASTERDIR=	${.CURDIR}/../../www/tdiary
 
 .include "${MASTERDIR}/Makefile"
