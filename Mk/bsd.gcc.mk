@@ -19,7 +19,7 @@
 # If your port needs a Fortran compiler, please specify that with the
 # USE_FORTRAN= knob.  Here is the list of options for that knob:
 #
-#   USE_FORTRAN=	yes		# use gfortran43 (lang/gcc43)
+#   USE_FORTRAN=	yes		# use gfortran44 (lang/gcc44)
 #   USE_FORTRAN=	g77		# use g77-34 (lang/gcc34; FreeBSD>=7)
 #							# or system f77 (/usr/bin/f77; FreeBSD<=6)
 #   USE_FORTRAN=	ifort	# use the Intel compiler (lang/ifc)
@@ -64,14 +64,14 @@ GCCVERSION_040400=	999999 999999 4.4
 
 .if defined (USE_FORTRAN)
 
-# gfortran43 from lang/gcc43 is the default for now.
+# The default case, with a current lang/gcc port.
 . if ${USE_FORTRAN} == yes
-BUILD_DEPENDS+=	gfortran43:${PORTSDIR}/lang/gcc43
-RUN_DEPENDS+=	gfortran43:${PORTSDIR}/lang/gcc43
-FC:=	gfortran43
-F77:=	gfortran43
-CC:=	gcc43
-CXX:=	g++43
+BUILD_DEPENDS+=	gfortran44:${PORTSDIR}/lang/gcc44
+RUN_DEPENDS+=	gfortran44:${PORTSDIR}/lang/gcc44
+FC:=	gfortran44
+F77:=	gfortran44
+CC:=	gcc44
+CXX:=	g++44
 
 # Intel Fortran compiler from lang/ifc.
 . elif ${USE_FORTRAN} == ifort
