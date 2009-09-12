@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 @unexec if cmp -s %%PREFIX%%/etc/amavisd-custom.conf %%PREFIX%%/etc/amavisd-custom.conf-dist; then rm %%PREFIX%%/etc/amavisd-custom.conf; fi
 %%PORTDOCS%%%%DOCSDIR%%/AAAREADME.first
+%%PORTDOCS%%%%DOCSDIR%%/AMAVIS-MIB.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LDAP.schema
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -79,3 +80,4 @@ sbin/amavisd-agent
 sbin/amavisd-nanny
 sbin/amavisd-release
 sbin/amavisd-requeue
+sbin/amavisd-snmp-subagent

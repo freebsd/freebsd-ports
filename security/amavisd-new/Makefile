@@ -8,7 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -37,8 +37,8 @@ CONFIGURE_ARGS=	--with-user=${AMAVISUSER} --with-runtime-dir=${AMAVISDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
 BUILD_WRKSRC=	${WRKSRC}/helper-progs
 
-DOCS=	AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES \
-		README_FILES/README.* README_FILES/screen.css \
+DOCS=	AAAREADME.first AMAVIS-MIB.txt INSTALL LDAP.schema LICENSE \
+		RELEASE_NOTES README_FILES/README.* README_FILES/screen.css \
 		README_FILES/amavisd-new-docs.html
 
 AMAVISUSER?=	vscan
@@ -48,6 +48,7 @@ AMAVISQUARANTINE?=	/var/virusmails
 DAEMON?=	/usr/sbin/daemon -p
 
 OPTIONS=	BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
+		SNMP	"Install amavisd snmp subagent"	off \
 		SQLITE	"Use SQLite for lookups"	off \
 		MYSQL	"Use MySQL for lookups/logging/quarantine"		off \
 		PGSQL	"Use PgSQL for lookups/logging/quarantine"		off \
@@ -81,15 +82,21 @@ SUB_LIST+=	AMAVISUSER=${AMAVISUSER} \
 		AMAVISGROUP=${AMAVISGROUP} \
 		AMAVISDIR=${AMAVISDIR} \
 		AMAVISQUARANTINE=${AMAVISQUARANTINE} \
-		DAEMON="${DAEMON}"
+		DAEMON="${DAEMON}" \
+		PERL=${PERL}
 
 PLIST_SUB+=	AMAVIS_NOAMAVIS=${AMAVIS_NOAMAVIS} \
 		AMAVIS_NOMILTER=${AMAVIS_NOMILTER} \
 		AMAVIS_NOP0F=${AMAVIS_NOP0F}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_RC_SUBR+=	amavisd.sh
+
+.if defined(WITH_SNMP) && defined(WITH_BDB)
+USE_RC_SUBR+=	amavisd-snmp.sh
+RUN_DEPENDS+=   ${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+.endif
 
 .if !defined(WITH_MILTER) || (!exists(/usr/lib/libmilter.a) && !exists(${PREFIX}/lib/libmilter.a))
 AMAVIS_NOAMAVIS="@comment "
@@ -239,12 +246,15 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-agent
 	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-nanny
+	@${REINPLACE_CMD} -e "s|/var/amavis/db|${AMAVISDIR}/db|" \
+			-e "s|/usr/bin/perl|${PERL}|" ${WRKSRC}/amavisd-snmp-subagent
 	@${REINPLACE_CMD} "s|/var/amavis/amavisd.sock|${AMAVISDIR}/amavisd.sock|" \
 			${WRKSRC}/amavisd-release
 	@${REINPLACE_CMD} "s|#define HAVE_MKTEMP|#undef HAVE_MKTEMP|" \
 			${WRKSRC}/helper-progs/config.h.in
 	@${REINPLACE_CMD} -e "s|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|" \
 				-e "s|/usr/bin/perl|${PERL}|" \
+				-e "s|/var/amavis|${AMAVISDIR}|g" \
 			${WRKSRC}/amavisd
 
 .if defined(AMAVIS_NOAMAVIS)
@@ -266,7 +276,7 @@ do-install:
 .if defined(WITH_P0F)
 	${INSTALL_SCRIPT} ${WRKSRC}/p0f-analyzer.pl ${PREFIX}/sbin
 .endif
-.for i in amavisd amavisd-agent amavisd-nanny amavisd-release
+.for i in amavisd amavisd-agent amavisd-nanny amavisd-release amavisd-snmp-subagent
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/sbin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
@@ -295,4 +305,4 @@ post-install:
 	${LN} -s ${PREFIX}/sbin/amavisd-release ${PREFIX}/sbin/amavisd-requeue
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
