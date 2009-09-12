@@ -38,7 +38,7 @@ PLIST_SUB+=		NETATALKKRB5="@comment "
 .endif
 
 .if defined(WITH_PAM)
-CONFIGURE_ARGS+=	--with-pam=/etc/pam.d
+CONFIGURE_ARGS+=	--with-pam
 PLIST_SUB+=		NETATALKPAM=""
 .else
 CONFIGURE_ARGS+=	--without-pam
