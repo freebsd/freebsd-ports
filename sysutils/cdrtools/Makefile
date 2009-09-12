@@ -46,11 +46,10 @@ PKGNAMESUFFIX=	-rscsi
 PLIST_SUB=	RSCSI="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+MAKE_ENV=	CCOM=cc LANG=C
+CDRTLSTARGET=	${ARCH}-freebsd-cc
 
-CCOM!=		${BASENAME} ${CC}
-MAKE_ENV=	CCOM=${CCOM} LANG=C
-CDRTLSTARGET=	${ARCH}-freebsd-${CCOM}
+.include <bsd.port.pre.mk>
 
 pre-everything::
 .if !defined(WITH_RSCSI)
