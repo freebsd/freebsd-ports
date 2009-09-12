@@ -1,9 +1,9 @@
-Kile (f/k/a Ktexmaker2) is a LaTeX source editor,
-TeX shell and GnuPlot frontend. It is not (and will
-never be) a WYSIWYG (what you see is what you get)
-interface for LaTeX; instead, its aim is to simplify
-editing LaTeX source code and the use of
-LaTeX-related programs for users who want to retain
-control over their LaTeX documents.
+Kile is an integrated LATEX environment for the KDE desktop. Kile
+gives you the ability to use all the functionalities of LATEX in a
+graphical interface, giving you easy, immediate, and customized
+access to all programs for LATEX codecompletion, compiling,
+postprocessing, debugging, conversion and viewing tools; you also
+get very handy wizards, a LATEX reference and a powerful project
+management.
 
-WWW: http://kile.sourceforge.net
+WWW:	http://kile.sourceforge.net

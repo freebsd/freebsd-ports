@@ -6,34 +6,31 @@
 #
 
 PORTNAME=	kile
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	2.1b2
 CATEGORIES=	editors kde
-MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/unstable/${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A LaTeX source editor for KDE
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		identify:${PORTSDIR}/graphics/ImageMagick
 
-CONFLICTS=	kile-i18n-[0-9]*
-
-USE_KDELIBS_VER=3
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
-USE_GMAKE=	yes
+USE_CMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+USE_KDE4=	kdeprefix kdelibs automoc4
+MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	KPDF "Use KPDF and KDVI for viewing" on
+LATEST_LINK=	${PORTNAME}-kde4
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's| syntax||g' ${WRKSRC}/src/kile/Makefile.in
+OPTIONS=	OKULAR "Use Okular for viewing" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_KPDF)
-RUN_DEPENDS+=	kpdf:${PORTSDIR}/graphics/kdegraphics3
+.if !defined(WITHOUT_OKULAR)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/okular:${PORTSDIR}/graphics/kdegraphics4
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
