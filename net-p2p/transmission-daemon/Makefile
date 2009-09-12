@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-daemon
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A fast and lightweight daemon BitTorrent client
+
+RUN_DEPENDS=	${GEN_RUN_DEPENDS}
 
 DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../transmission-cli
