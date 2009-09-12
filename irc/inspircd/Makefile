@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	inspircd
-PORTVERSION=	1.1.19
-PORTREVISION=	1
+PORTVERSION=	1.1.20
 CATEGORIES=	irc
 MASTER_SITES=	http://www.inspircd.org/downloads/ \
 		http://www.chatspike.net/downloads/
