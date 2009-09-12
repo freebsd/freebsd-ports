@@ -1,0 +1,72 @@
+--- amavisd.orig	2009-06-25 14:39:01.000000000 +0200
++++ amavisd	2009-08-01 13:51:53.000000000 +0200
+@@ -1492,6 +1492,7 @@
+     CC_BANNED,      sub { c('final_banned_destiny') },
+     CC_SPAM,        sub { c('final_spam_destiny') },
+     CC_BADH,        sub { c('final_bad_header_destiny') },
++    CC_MTA.',2',    D_REJECT,
+     CC_OVERSIZED,   D_BOUNCE,
+     CC_CATCHALL,    D_PASS,
+   );
+@@ -11316,6 +11317,32 @@
+         $r->blocking_ccat($blocking_ccat) if !defined($r->blocking_ccat);
+         $msginfo->blocking_ccat($blocking_ccat)
+                                           if !defined($msginfo->blocking_ccat);
++        my($final_destiny) =
++          $r->setting_by_contents_category(cr('final_destiny_by_ccat'));
++        if ($final_destiny == D_PASS) {
++          $final_destiny = D_REJECT;  # impossible to pass, change to reject
++        }
++        local($1,$2);
++        $r->recip_destiny($final_destiny);
++        if ($final_destiny == D_DISCARD && $smtp_resp =~ /^5/) {
++          $smtp_resp =~ s{^5(\d\d) 5(\.\d\.\d)}{250 2$2};  # 5xx -> 250
++        }
++        my($smtp_reason) =  # get the custom smtp response reason text
++          $r->setting_by_contents_category(cr('smtp_reason_by_ccat'));
++        $smtp_reason = '' if !defined $smtp_reason;
++        if ($smtp_reason ne '') {
++          my(%mybuiltins) = %builtins;  # make a local copy
++          $smtp_reason = expand(\$smtp_reason, \%mybuiltins);
++          $smtp_reason = !ref($smtp_reason) ? '' : $$smtp_reason;
++          chomp($smtp_reason); $smtp_reason = sanitize_str($smtp_reason,1);
++          $smtp_reason = substr($smtp_reason,0,100) . "..."
++            if length($smtp_reason) > 100+3;
++        }
++        $smtp_resp =~ /^(\d\d\d(?: \d\.\d\.\d)?)\s*(.*)\z/;
++        my($dis) = $final_destiny == D_DISCARD ? ' Discarded' : '';
++        $r->recip_smtp_response("$1$dis $smtp_reason, $2");
++        $r->recip_done(1); # fake a delivery (confirm delivery to a bit bucket)
++        # note that 5xx status rejects may later be converted to bounces
+       }
+       $msginfo->header_edits($hdr_edits); # restore original edits just in case
+       $elapsed{'TimeElapsedForwarding'} = Time::HiRes::time - $t0_sect;
+@@ -17774,23 +17801,21 @@
+ #
+ sub enhance_smtp_response($$$$$) {
+   my($smtp_resp,$am_id,$mta_id,$dflt_enhcode,$cmd_name) = @_;
+-  local($1,$2,$3); my($resp_shortmsg,$resp_msg);
++  local($1,$2,$3); my($resp_msg);
+   my($resp_code,$resp_enhcode) = ('451', '4.5.0');
+   if (!defined($smtp_resp) || $smtp_resp eq '') {
+-    $resp_shortmsg = 'No resp. to '.$cmd_name;
++    $smtp_resp = sprintf('No resp. to %s', $cmd_name);
+   } elsif ($smtp_resp !~ /^[245]\d{2}/) {
+-    $resp_shortmsg = 'Bad resp. to '.$cmd_name;
++    $smtp_resp = sprintf('Bad resp. to %s: %s', $cmd_name,$smtp_resp);
+   } elsif ($smtp_resp =~ /^ (\d{3}) [ \t]+ ([245] \. \d{1,3} \. \d{1,3})?
+                           \s* (.*) \z/xs) {
+     ($resp_code, $resp_enhcode, $resp_msg) = ($1, $2, $3);
+     my($c) = substr($resp_code,0,1);
+     if ($resp_enhcode eq '' && $resp_code =~ /^[245]/)
+       { $resp_enhcode = $dflt_enhcode; $resp_enhcode =~ s/^\d*/$c/ }
+-    $resp_shortmsg = $c eq '2' ? 'Ok' : $c eq '4' ? 'TempFailed' : 'Failed';
+   }
+-  sprintf("%s %s %s, id=%s, from MTA(%s): %s",
+-          $resp_code, $resp_enhcode, $resp_shortmsg,
+-          $am_id, $mta_id, $smtp_resp);
++  sprintf("%s %s from MTA(%s): %s",
++          $resp_code, $resp_enhcode, $mta_id, $smtp_resp);
+ }
+ 
+ # Send mail using SMTP - single transaction
