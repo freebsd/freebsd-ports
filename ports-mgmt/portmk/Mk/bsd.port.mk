@@ -890,9 +890,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- The name of target to call when GNU_CONFIGURE is
 #				  defined.
 #				  Default: ${ARCH}-portbld-freebsd${OSREL}
+# GNU_CONFIGURE_PREFIX
+#				- The directory passed as prefix to the configure script if
+#				  GNU_CONFIGURE is set.
+#				  Default: ${PREFIX}
 # CONFIGURE_ARGS
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
-#				  Default: "--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
+#				  Default: "--prefix=${GNU_CONFIGURE_PREFIX} --infodir=${PREFIX}/${INFO_PATH}
 #				  --mandir=${MANPREFIX}/man --build=${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CCFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
@@ -3151,7 +3155,8 @@ CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer
 .if !defined(CONFIGURE_MAX_CMD_LEN)
 CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .endif
-CONFIGURE_ARGS+=	--prefix=${PREFIX} $${_LATE_CONFIGURE_ARGS}
+GNU_CONFIGURE_PREFIX?=	${PREFIX}
+CONFIGURE_ARGS+=	--prefix=${GNU_CONFIGURE_PREFIX} $${_LATE_CONFIGURE_ARGS}
 CONFIGURE_ENV+=		lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
 
@@ -4277,7 +4282,7 @@ create-users-groups:
 		exit 1; \
 	fi
 	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
-		gid=$$(($$gid+${GID_OFFSET}));\
+		gid=$$(($$gid+${GID_OFFSET})); \
 		if ! ${PW} groupshow $$group >/dev/null 2>&1; then \
 			${ECHO_MSG} "Creating group \`$$group' with gid \`$$gid'."; \
 			${PW} groupadd $$group -g $$gid; \
@@ -4301,22 +4306,26 @@ create-users-groups:
 		exit 1; \
 	fi
 	@IFS=":"; ${GREP} -h ^${_user}: ${UID_FILES} | head -n 1 | while read login passwd uid gid class change expire gecos homedir shell; do \
-		uid=$$(($$uid+${UID_OFFSET}));\
-		gid=$$(($$gid+${GID_OFFSET}));\
+		uid=$$(($$uid+${UID_OFFSET})); \
+		gid=$$(($$gid+${GID_OFFSET})); \
+		class="$${class:+-L }$$class"; \
+		homedir=$$(echo $$homedir | sed "s|^/usr/local|${PREFIX}|"); \
 		if ! ${PW} usershow $$login >/dev/null 2>&1; then \
 			${ECHO_MSG}  "Creating user \`$$login' with uid \`$$uid'."; \
-			${PW} useradd $$login -u $$uid -g $$gid -c "$$gecos" -d $$homedir -s $$shell; \
+			eval ${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell; \
+			case $$homedir in /nonexistent|/var/empty) ;; *) ${INSTALL} -d -g $$gid -o $$uid $$homedir;; esac; \
 		else \
 			${ECHO_MSG} "Using existing user \`$$login'."; \
 		fi; \
-		${ECHO_CMD} "@exec if ! ${PW} usershow $$login >/dev/null 2>&1; then ${PW} useradd $$login -u $$uid -g $$gid -c \"$$gecos\" -d $$homedir -s $$shell; fi" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@exec if ! ${PW} usershow $$login >/dev/null 2>&1; then ${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell; fi" >> ${TMPPLIST}; \
+		case $$homedir in /nonexistent|/var/empty) ;; *) ${ECHO_CMD} "@exec ${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${TMPPLIST};; esac; \
 	done
 .endfor
 .if defined(GROUPS)
 .for _group in ${GROUPS}
 # _bgpd:*:130:
 	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
-		gid=$$(($$gid+${GID_OFFSET}));\
+		gid=$$(($$gid+${GID_OFFSET})); \
 		IFS=","; for _login in $$members; do \
 			list=`${PW} usershow $${_login} -P | ${SED} -ne 's/.*Groups: //p'`; \
 			${ECHO_MSG} "Setting \`$${_login}' groups to \`$$list$${list:+,}${_group}'."; \
@@ -4515,8 +4524,8 @@ _INSTALL_SEQ=	install-message check-conflicts \
 				run-depends lib-depends apply-slist pre-install \
 				pre-install-script generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
-				pre-su-install-script do-install install-desktop-entries \
-				create-users-groups post-install post-install-script \
+				pre-su-install-script create-users-groups do-install \
+				install-desktop-entries post-install post-install-script \
 				add-plist-info add-plist-docs add-plist-examples add-plist-data \
 				add-plist-post install-rc-script compress-man \
 				install-ldconfig-file fake-pkg security-check
