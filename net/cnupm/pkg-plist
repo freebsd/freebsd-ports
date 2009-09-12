@@ -1,7 +1,5 @@
 sbin/cnupm
 sbin/cnupmstat
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec pw groupshow %%CNUPM_GRP%% 2>/dev/null || pw groupadd -n %%CNUPM_GRP%%
 @exec pw usershow %%CNUPM_OWN%% 2>/dev/null || pw useradd -n %%CNUPM_OWN%% -c 'Cnupm traffic collector' -g %%CNUPM_GRP%% -s /sbin/nologin
 @exec install -o %%CNUPM_OWN%% -g %%CNUPM_GRP%% -m 750 -d %D/var/cnupm
