@@ -29,7 +29,8 @@ MAKE_JOBS_SAFE=	yes
 OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 		CLOCK "Enable clock-screen support" on \
 		UTF8 "Enable UTF8 support" on \
-		TAGLIB "Enable taglib support" off
+		TAGLIB "Enable taglib support" off \
+		VISUALIZER "Enable music visualizer screen" on
 
 .include <bsd.port.pre.mk>
 
@@ -72,6 +73,10 @@ LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib
 .else
 CONFIGURE_ARGS+=	--with-taglib=no
+.endif
+
+.if !defined(WITHOUT_VISUALIZER)
+CONFIGURE_ARGS+=	--enable-visualizer
 .endif
 
 post-patch:
