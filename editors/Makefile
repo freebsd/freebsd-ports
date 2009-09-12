@@ -84,6 +84,7 @@
     SUBDIR += jove
     SUBDIR += kate-plugins
     SUBDIR += kile
+    SUBDIR += kile-kde4
     SUBDIR += klat
     SUBDIR += klat4
     SUBDIR += koffice-i18n
