@@ -51,10 +51,6 @@
 %%PYTHON_SITELIBDIR%%/yaml/tokens.pyc
 %%PYTHON_SITELIBDIR%%/yaml/tokens.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resolver_bug.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_slots.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_yamlobject.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_yamlobject2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygments-lexer/yaml.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygments-lexer/example.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yaml-highlight/yaml_hl.cfg
