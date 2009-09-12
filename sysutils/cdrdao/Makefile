@@ -57,12 +57,10 @@ CONFIGURE_ARGS+=	--without-mp3-support --without-ogg-support
 CONFIGURE_ARGS+=	--with-pcctsbin=${LOCALBASE}/bin \
 			--with-pcctsinc=${LOCALBASE}/include/pccts \
 			--without-posix-threads --with-scglib=pkg
+MAKE_ENV=		CCOM=cc LANG=C
+SCSILIBTARGET=		${ARCH}-freebsd-cc
 
 .include <bsd.port.pre.mk>
-
-CCOM!=		${BASENAME} ${CC}
-MAKE_ENV=	CCOM=${CCOM} LANG=C
-SCSILIBTARGET=	${ARCH}-freebsd-${CCOM}
 
 pre-everything::
 .if ${PORTNAME} != "gcdmaster" && \
