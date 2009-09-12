@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://digitalssg.net/debian/
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	uqs@spoerlein.net
 COMMENT=	Dockapp displaying the signal strength of WiFi connection
 
 GNU_CONFIGURE=	yes

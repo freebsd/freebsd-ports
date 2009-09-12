@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://buzzinhornetz.ath.cx/wmbday/files/
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	uqs@spoerlein.net
 COMMENT=	Window Maker dock app that will remind you of birthdays
 
 BUILD_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage

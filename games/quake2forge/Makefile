@@ -9,7 +9,7 @@ PORTNAME=	quake2forge
 PORTVERSION=	0.3
 PORTREVISION=	6
 CATEGORIES=	games
-MASTER_SITES=	http://www.galgenberg.net/distfiles/
+MASTER_SITES=	https://www.spoerlein.net/pub/
 DISTNAME=	quake2-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
