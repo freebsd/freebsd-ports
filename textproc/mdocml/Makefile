@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
   		https://www.spoerlein.net/pub/mdocml/
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	uqs@spoerlein.net
 COMMENT=	mdoc macro compiler
 
 MAN1=	mandoc.1

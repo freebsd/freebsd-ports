@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.darkops.net/wmtimer/
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	uqs@spoerlein.net
 COMMENT=	Multi-Function timer dockapp for WindowMaker
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtimer
