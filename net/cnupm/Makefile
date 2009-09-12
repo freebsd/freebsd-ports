@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cnupm
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://pdp-11.org.ru/~form/cnupm/files/ \
 		ftp://cvs.1system.ru/pub/local/src/cnupm/
@@ -25,6 +25,8 @@ PW=		/usr/sbin/pw
 
 PLIST_SUB+=	CNUPM_OWN="${CNUPM_OWN}" CNUPM_GRP="${CNUPM_GRP}"
 
+PORTDOCS=	README
+
 post-install:
 	${PW} groupshow ${CNUPM_GRP} 2>/dev/null || ${PW} groupadd \
 		-n ${CNUPM_GRP}
@@ -35,7 +37,9 @@ post-install:
 	${PW} usermod -n ${CNUPM_OWN} -d ${PREFIX}/var/cnupm
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 
 	@${CAT} ${PKGMESSAGE}
