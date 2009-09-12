@@ -10,6 +10,7 @@ include/libHX/option.h
 include/libHX/proc.h
 include/libHX/string.h
 include/libHX/wx_helper.hpp
+lib/libHX.a
 lib/libHX.la
 lib/libHX.so
 lib/libHX.so.22

@@ -13,11 +13,18 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Library C with some additional C++ bindings available
 
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:22
 
 PORTDOCS=	libHX_Documentation.pdf
+
+post-patch:
+	${REINPLACE_CMD} -e 's| -lrt||g' ${WRKSRC}/src/Makefile.in
 
 post-build:
 	@${REINPLACE_CMD} -e 's|doc src|src|g' ${WRKSRC}/Makefile
