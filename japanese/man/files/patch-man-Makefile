@@ -1,0 +1,12 @@
+--- man/Makefile.orig	2001-01-15 20:13:00.000000000 +0900
++++ man/Makefile	2009-09-13 19:12:27.166481760 +0900
+@@ -12,7 +12,9 @@
+ EMAN1=	jman.1.eng.gz
+ BINOWN= man
+ BINMODE=4555
++.if !defined(NO_FSCHG)
+ INSTALLFLAGS+= -fschg
++.endif
+ 
+ CFLAGS+= -I${LIBDESTDIR}
+ DPADD=	${LIBMAN}
