@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/
 .ifdef MNAME
@@ -14,7 +14,7 @@ PKGNAMESUFFIX?=	-${MNAME}
 .endif
 
 MAINTAINER=	cristianorolim@hotmail.com
-COMMENT?=	Syslogd supporting SQL, TCP and TLS
+COMMENT=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=4:${PORTSDIR}/sysutils/rsyslog4
@@ -44,7 +44,7 @@ MAN5=	rsyslog.conf.5
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=--enable-imfile --enable-mail --enable-imtemplate
+CONFIGURE_ARGS+=--enable-imfile --enable-mail --enable-imtemplate --enable-testbench=no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
