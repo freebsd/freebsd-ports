@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmonetra
-PORTVERSION=	7.0.2
+PORTVERSION=	7.0.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.monetra.com/pub/libmonetra/
 DISTNAME=	libmonetra-${PORTVERSION}
