@@ -49,6 +49,7 @@
    SUBDIR += portmanager
    SUBDIR += portmaster
    SUBDIR += portmk
+   SUBDIR += portrac
    SUBDIR += portscout
    SUBDIR += portsearch
    SUBDIR += portsman

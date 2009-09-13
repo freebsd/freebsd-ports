@@ -1,0 +1,7 @@
+portrac is a simple GUI tool for tracking port updates.
+It's based on Qt4 and it integrates with the system tray.
+portrac shows a simple list of the available updates to
+the installed ports on the local machine i.e. shows the
+ports that have updates.
+
+WWW:	http://portrac.e-soul.org/
