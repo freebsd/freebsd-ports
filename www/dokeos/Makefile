@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dokeos
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.dokeos.com/download/
 
