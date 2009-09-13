@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sloccount
-PORTVERSION=	2.22
+PORTVERSION=	2.26
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dwheeler.com/sloccount/
 
@@ -19,7 +19,10 @@ USE_PERL5=	yes
 MAKEFILE=	makefile
 INSTALL_TARGET=	install_programs install_man
 
+PORTDOCS=	ChangeLog README TODO sloccount.html
+
 MAN1=		sloccount.1
+MANCOMPRESSED=	yes
 
 post-install:
 .for file in lexcount1 c_count java_count php_count
@@ -27,8 +30,8 @@ post-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ChangeLog README TODO sloccount.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
 .endif
 
