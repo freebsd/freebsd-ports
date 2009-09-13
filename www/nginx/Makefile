@@ -226,11 +226,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_PROGRESS)
-NGINX_UPLOAD_PROGRESS_MODULE_VERSION=	0.5
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:uploadprogress/}
-MASTER_SITE_SUBDIR+=	osa/:uploadprogress
-DISTFILES+=	nginx_uploadprogress_module-${NGINX_UPLOAD_PROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_uploadprogress_module
+NGINX_UPLOAD_PROGRESS_MODULE_VERSION=	0.6
+MASTER_SITES+=	http://wiki.nginx.org/images/7/70/:uploadprogress
+DISTFILES+=	Nginx-upload-progress-module-${NGINX_UPLOAD_PROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-upload-progress-module
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_FAIR)
@@ -254,10 +253,10 @@ CONFIGURE_ARGS+=--with-http_xslt_module
 .endif
 
 .if defined(WITH_HTTP_ZIP_MODULE)
-NGINX_ZIP_MODULE_VERSION=	1.1.4
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:zip/}
-MASTER_SITE_SUBDIR+=	osa/:zip
-DISTFILES+=	nginx_mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
+NGINX_ZIP_MODULE_VERSION=	1.1.5
+MASTER_SITES+=	${MASTER_SITE_GOOGLE_CODE:}:zip
+PROJECTHOST=	mod-zip
+DISTFILES+=	mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 .endif
 
@@ -271,7 +270,7 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	2.2.4
+PASSENGER_VERSION=	2.2.5
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
@@ -333,10 +332,6 @@ post-patch:
 .if defined(WITH_HTTP_FANCYINDEX_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_fancyindex_module.c
-.endif
-.if defined(WITH_HTTP_UPLOAD_PROGRESS)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
 .endif
 .if defined(WITH_HTTP_NOTICE_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
