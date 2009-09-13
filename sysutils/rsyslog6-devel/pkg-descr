@@ -13,6 +13,4 @@ configuration file syntax. Its advanced features make it suitable for
 enterprise-class, encryption protected syslog relay chains while at the same
 time being very easy to setup for the novice user.
 
-Version 4.x.x is still in devel stage and can show stability issues.
-
 WWW: http://www.rsyslog.com/

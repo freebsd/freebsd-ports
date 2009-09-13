@@ -20,6 +20,8 @@ lib/rsyslog/lmnsd_ptcp.la
 lib/rsyslog/lmnsd_ptcp.so
 lib/rsyslog/lmregexp.la
 lib/rsyslog/lmregexp.so
+lib/rsyslog/lmstrmsrv.la
+lib/rsyslog/lmstrmsrv.so
 lib/rsyslog/lmtcpclt.la
 lib/rsyslog/lmtcpclt.so
 lib/rsyslog/lmtcpsrv.la
@@ -70,6 +72,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic.jpg
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic_small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/queues.html
+%%PORTDOCS%%%%DOCSDIR%%/queues_analogy.html
 %%PORTDOCS%%%%DOCSDIR%%/rainerscript.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionexeconlywhenpreviousissuspended.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionresumeinterval.html
@@ -89,6 +92,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_filecreatemode.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_filegroup.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_fileowner.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_generateconfiggraph.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_gssforwardservicename.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_gsslistenservicename.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_gssmode.html
