@@ -38,8 +38,3 @@ bin/show_filecount
 bin/sloccount
 bin/sql_count
 bin/tcl_count
-%%PORTDOCS%%share/doc/sloccount/ChangeLog
-%%PORTDOCS%%share/doc/sloccount/README
-%%PORTDOCS%%share/doc/sloccount/TODO
-%%PORTDOCS%%share/doc/sloccount/sloccount.html
-%%PORTDOCS%%@dirrm share/doc/sloccount
