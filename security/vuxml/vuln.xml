@@ -35,6 +35,34 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b46f3a1e-a052-11de-a649-000c2955660f">
+    <topic>xapian-omega -- cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>xapian-omega</name>
+	<range><lt>1.0.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Olly Betts reports:</p>
+	<blockquote cite="http://lists.xapian.org/pipermail/xapian-discuss/2009-September/007115.html">
+	  <p>There's a cross-site scripting issue in Omega - exception
+      messages don't currently get HTML entities escaped, but can contain
+      CGI parameter values in some cases.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.xapian.org/pipermail/xapian-discuss/2009-September/007115.html</url>
+      <cvename>CVE-2009-2947</cvename>
+    </references>
+    <dates>
+      <discovery>2009-09-09</discovery>
+      <entry>2009-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="922d2398-9e2d-11de-a998-0030843d3802">
     <topic>mozilla firefox -- multiple vulnerabilities</topic>
     <affects>
