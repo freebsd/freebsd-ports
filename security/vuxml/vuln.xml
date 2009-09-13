@@ -158,12 +158,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-2632</cvename>
+      <bid>36296</bid>
       <url>http://www.kb.cert.org/vuls/id/336053</url>
       <url>http://www.debian.org/security/2009/dsa-1881</url>
     </references>
     <dates>
       <discovery>2009-09-02</discovery>
-      <entry>2005-09-09</entry>
+      <entry>2009-09-09</entry>
+      <modified>2009-09-14</modified>
     </dates>
   </vuln>
 
