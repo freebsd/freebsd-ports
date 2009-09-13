@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	ezstream
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/
+MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/ \
+		http://svn.xiph.org/releases/ezstream/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ayu@commun.jp
 COMMENT=	A command line utility for streaming to icecast servers
 
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
@@ -23,13 +24,13 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		ezstream.1
+MAN1=		ezstream.1 ezstream-file.sh.1
 PORTDOCS=	NEWS README
 PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
 		ezstream_reencode_mp3.xml ezstream_reencode_theora.xml \
 		ezstream_reencode_vorbis.xml ezstream_stdin_vorbis.xml \
 		ezstream_vorbis.xml meta.sh play.sh
-PLIST_FILES=	bin/ezstream
+PLIST_FILES=	bin/ezstream bin/ezstream-file.sh
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
