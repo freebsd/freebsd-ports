@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://pdp-11.org.ru/~form/cnupm/files/ \
 		ftp://cvs.1system.ru/pub/local/src/cnupm/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	The BPF Traffic Collector (IPv4/IPv6)
 
 USE_RC_SUBR=	cnupm.sh
