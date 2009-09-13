@@ -458,6 +458,7 @@
     SUBDIR += mod_fcgid
     SUBDIR += mod_fileiri
     SUBDIR += mod_filter
+    SUBDIR += mod_flickr
     SUBDIR += mod_geoip
     SUBDIR += mod_geoip2
     SUBDIR += mod_gzip
