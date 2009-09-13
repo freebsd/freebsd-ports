@@ -6,6 +6,7 @@ bin/taxsolve_NJ_1040_2008
 bin/taxsolve_NY_IT201_2008
 bin/taxsolve_OH_IT1040_2008
 bin/taxsolve_PA_40_2008
+bin/taxsolve_US_8829
 bin/taxsolve_US_1040_2008
 bin/taxsolve_US_1040_Sched_C_2008
 bin/taxsolve_VA_760_2008
@@ -34,6 +35,7 @@ share/ots/examples_and_templates/PA_40/README_PA_40.txt
 share/ots/examples_and_templates/US_1040/README_US_1040.txt
 share/ots/examples_and_templates/US_1040/US_1040_example.dat
 share/ots/examples_and_templates/US_1040/US_1040_template.dat
+share/ots/examples_and_templates/US_1040_Sched_C/8829_template.dat
 share/ots/examples_and_templates/US_1040_Sched_C/README_US_1040_Sched_C.txt
 share/ots/examples_and_templates/US_1040_Sched_C/US_1040Sched_C_2008_example.dat
 share/ots/examples_and_templates/US_1040_Sched_C/US_1040Sched_C_2008_template.dat
