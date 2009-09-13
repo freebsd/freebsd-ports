@@ -28,7 +28,7 @@ start_cmd="bitlbee_start"
 bitlbee_start()
 {
 	echo "Starting ${name}."
-	su -m ${bitlbee_user} -c "${command} -D -c ${bitlbee_config} ${bitlbee_flags}"
+	${command} -D -u ${bitlbee_user} -c ${bitlbee_config} ${bitlbee_flags}
 }
 
 run_rc_command "$1"
