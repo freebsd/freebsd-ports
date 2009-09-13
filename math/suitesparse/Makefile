@@ -7,6 +7,7 @@
 
 PORTNAME=	suitesparse
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}

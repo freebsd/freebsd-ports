@@ -7,7 +7,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	3.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/	\
 		http://sunpoet.net/distfiles/

@@ -7,7 +7,7 @@
 
 PORTNAME=	femlab
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math science
 # mastersite disappeared in April 2000
 MASTER_SITES=	# ftp://ftp.md.chalmers.se/pub/Femlab/

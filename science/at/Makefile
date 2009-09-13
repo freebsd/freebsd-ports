@@ -6,7 +6,7 @@
 
 PORTNAME=		at
 PORTVERSION=		1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		science
 MASTER_SITES=		http://www.hlsresearch.com/oalib/Modes/AcousticsToolbox/
 DISTNAME=		at_Unix

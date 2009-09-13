@@ -7,6 +7,7 @@
 
 PORTNAME=	lapack
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		http://netlib.org/lapack/ \

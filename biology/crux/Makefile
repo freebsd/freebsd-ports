@@ -7,6 +7,7 @@
 
 PORTNAME=      crux
 PORTVERSION=   1.1.0
+PORTREVISION=	1
 CATEGORIES=    biology python
 MASTER_SITES=  http://www.canonware.com/download/Crux/
 

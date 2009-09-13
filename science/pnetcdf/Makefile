@@ -7,7 +7,7 @@
 
 PORTNAME=	pnetcdf
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science parallel
 MASTER_SITES=	http://www-unix.mcs.anl.gov/parallel-netcdf/
 DISTNAME=	parallel-netcdf-${PORTVERSION}

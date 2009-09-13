@@ -7,7 +7,7 @@
 
 PORTNAME=	feappv
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.ce.berkeley.edu/~rlt/feappv/
 MASTER_SITE_SUBDIR=	feap
