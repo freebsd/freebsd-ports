@@ -1,9 +1,0 @@
-Menu driven binary editor. Dataformats are ascii, unsigned and signed
-integers, float, bitflags, bitfields, labels, ebcdic and time_t. Different
-sizes and byte ordenings are possible. Datatypes can be used in structures.
-Other dataformats, filters and procedures can be defined in plugins. Contains
-copy, past, undo, redo, search, replace, marks, record/play and context
-sensitive help. Linux & FreeBSD: edit block devices (linux limit 1023
-gigabyte).
-
-WWW: http://bedlinux.tripod.com/
