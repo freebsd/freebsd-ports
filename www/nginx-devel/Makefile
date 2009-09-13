@@ -246,11 +246,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_PROGRESS)
-NGINX_UPLOAD_PROGRESS_MODULE_VERSION=	0.5
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:uploadprogress/}
-MASTER_SITE_SUBDIR+=	osa/:uploadprogress
-DISTFILES+=	nginx_uploadprogress_module-${NGINX_UPLOAD_PROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_uploadprogress_module
+NGINX_UPLOAD_PROGRESS_MODULE_VERSION=	0.6
+MASTER_SITES+=	http://wiki.nginx.org/images/7/70/:uploadprogress
+DISTFILES+=	Nginx-upload-progress-module-${NGINX_UPLOAD_PROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-upload-progress-module
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_FAIR)
@@ -349,10 +348,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
-.endif
-.if defined(WITH_HTTP_UPLOAD_PROGRESS)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
 .endif
 .if defined(WITH_HTTP_FANCYINDEX_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
