@@ -34,6 +34,7 @@
     SUBDIR += deskbar-applet
     SUBDIR += displaycalibrator
     SUBDIR += dlume
+    SUBDIR += dolphin-plugins-mplayerthumbs
     SUBDIR += doodle
     SUBDIR += dragstack
     SUBDIR += drivel
