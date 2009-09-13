@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,7 +37,7 @@ BUILD_DEPENDS+=	p5-Test-Pod>0:${PORTSDIR}/devel/p5-Test-Pod \
 PERL_CONFIGURE=	yes
 
 MAN1=	tide_bitstring.pl.1 tide_float.pl.1 \
-	canonical-genetic-algorithm.pl.1
+	canonical-genetic-algorithm.pl.1 rectangle-coverage.pl.1
 MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Experiment.3 \
 	Algorithm::Evolutionary::Fitness::Any.3 \
@@ -52,6 +52,7 @@ MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Fitness::Trap.3 \
 	Algorithm::Evolutionary::Fitness::ZDT1.3 \
 	Algorithm::Evolutionary::Fitness::wP_Peaks.3 \
+	Algorithm::Evolutionary::Hash_Wheel.3 \
 	Algorithm::Evolutionary::Individual::Any.3 \
 	Algorithm::Evolutionary::Individual::Base.3 \
 	Algorithm::Evolutionary::Individual::BitString.3 \
@@ -70,6 +71,7 @@ MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Op::Creator.3 \
 	Algorithm::Evolutionary::Op::Crossover.3 \
 	Algorithm::Evolutionary::Op::DeltaTerm.3 \
+	Algorithm::Evolutionary::Op::EDA_step.3 \
 	Algorithm::Evolutionary::Op::Easy.3 \
 	Algorithm::Evolutionary::Op::Easy_MO.3 \
 	Algorithm::Evolutionary::Op::Eval::General.3 \
