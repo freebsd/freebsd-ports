@@ -7,7 +7,7 @@
 
 PORTNAME=	bihar
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/
 DISTNAME=	${PORTNAME}

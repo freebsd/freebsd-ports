@@ -7,7 +7,7 @@
 
 PORTNAME=	kaskade
 PORTVERSION=	3.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.zib.de/pub/kaskade/3.x/
 DISTNAME=	${PORTVERSION}

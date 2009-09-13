@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	superlu
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSION=	${P_VERSION}.20060201
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \

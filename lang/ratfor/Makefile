@@ -8,7 +8,7 @@
 
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://sepftp.stanford.edu/pub/sep-distr/  \
 		${MASTER_SITE_LOCAL}  \

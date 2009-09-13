@@ -7,7 +7,7 @@
 
 PORTNAME=	nsc2ke
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math science
 MASTER_SITES=	http://www-c.inria.fr/gamma/cdrom/ftp/nsc2ke/
 DISTNAME=	${PORTNAME}

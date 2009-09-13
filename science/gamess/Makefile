@@ -7,6 +7,7 @@
 
 PORTNAME=	gamess
 PORTVERSION=    ${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=   #http://www.msg.ameslab.gov/GAMESS/License_Agreement.html
 DISTNAME=	gamess-current

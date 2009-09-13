@@ -8,7 +8,7 @@
 
 PORTNAME=	mpb
 PORTVERSION=	1.4.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 

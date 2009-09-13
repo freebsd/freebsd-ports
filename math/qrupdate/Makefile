@@ -7,6 +7,7 @@
 
 PORTNAME=	qrupdate
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://downloads.sourceforge.net/project/qrupdate/qrupdate/1.0/ \
 		http://transact.dl.sourceforge.net/project/qrupdate/qrupdate/1.0/

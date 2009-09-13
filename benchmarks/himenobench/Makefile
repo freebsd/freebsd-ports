@@ -7,7 +7,7 @@
 
 PORTNAME=	himenobench
 PORTVERSION=	2004.08.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://accc.riken.jp/HPC/HimenoBMT/Load_module/
 DISTFILES=	himenoBMTxp_xl.lzh himenoBMTxp_l.lzh himenoBMTxp_m.lzh himenoBMTxp_s.lzh \

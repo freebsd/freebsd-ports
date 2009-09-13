@@ -7,7 +7,7 @@
 
 PORTNAME=	pgplot
 PORTVERSION=	5.2.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.astro.caltech.edu/pub/pgplot/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}

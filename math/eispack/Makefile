@@ -7,7 +7,7 @@
 
 PORTNAME=	eispack
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
 		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/eispack/

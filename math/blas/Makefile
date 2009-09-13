@@ -7,7 +7,7 @@
 
 PORTNAME=	blas
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.netlib.org/blas/ \
 		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/blas/ \

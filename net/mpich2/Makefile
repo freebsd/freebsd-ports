@@ -7,6 +7,7 @@
 
 PORTNAME=	mpich2
 DISTVERSION=	1.1.1p1
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/

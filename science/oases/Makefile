@@ -8,7 +8,7 @@
 
 PORTNAME=	oases
 PORTVERSION=	2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	ftp://keel.mit.edu/pub/Oases/
 DISTNAME=	oases_Mar-28-2002
