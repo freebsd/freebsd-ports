@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cowpatty
-PORTVERSION=	4.3
+PORTVERSION=	4.6
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	http://www.willhackforsushi.com/code/cowpatty/4.3/ \
+MASTER_SITES=	http://www.willhackforsushi.com/code/cowpatty/${PORTVERSION}/ \
 		http://mcx2.org/files/
 EXTRACT_SUFX=	.tgz
 
