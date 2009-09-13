@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-DISTVERSION=	1.2.4
-PORTREVISION=	2
+DISTVERSION=	1.4.0
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	dragonsa@highveldmail.co.za
+MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	KDE frontend for Subversion
 
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
