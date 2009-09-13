@@ -47,15 +47,15 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Olly Betts reports:</p>
 	<blockquote cite="http://lists.xapian.org/pipermail/xapian-discuss/2009-September/007115.html">
-	  <p>There's a cross-site scripting issue in Omega - exception
-      messages don't currently get HTML entities escaped, but can contain
-      CGI parameter values in some cases.</p>
+	  <p>There's a cross-site scripting issue in Omega - exception 
+	    messages don't currently get HTML entities escaped, but can contain
+	    CGI parameter values in some cases.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>http://lists.xapian.org/pipermail/xapian-discuss/2009-September/007115.html</url>
       <cvename>CVE-2009-2947</cvename>
+      <url>http://lists.xapian.org/pipermail/xapian-discuss/2009-September/007115.html</url>
     </references>
     <dates>
       <discovery>2009-09-09</discovery>
