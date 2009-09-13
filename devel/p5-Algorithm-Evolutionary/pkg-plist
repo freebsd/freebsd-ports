@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/canonical-genetic-algorithm.pl
+bin/rectangle-coverage.pl
 bin/tide_bitstring.pl
 bin/tide_float.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary/.packlist
@@ -17,6 +18,7 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/Trap.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/ZDT1.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/wP_Peaks.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Hash_Wheel.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/Any.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/Base.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/BitString.pm
@@ -35,6 +37,7 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Creator.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Crossover.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/DeltaTerm.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/EDA_step.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Easy.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Easy_MO.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Eval/General.pm
