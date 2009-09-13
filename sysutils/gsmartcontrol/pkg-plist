@@ -4,6 +4,7 @@ share/applications/gsmartcontrol.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_boost_1_0.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_bsd-ac.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_bsd-ucb.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_gpl2.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_gpl3.txt
