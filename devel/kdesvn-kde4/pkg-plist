@@ -2,11 +2,16 @@ bin/kdesvn
 bin/kdesvnaskpass
 include/svnqt/annotate_line.hpp
 include/svnqt/apr.hpp
+include/svnqt/cache/conversion_check.hpp
 include/svnqt/cache/DatabaseException.hpp
 include/svnqt/cache/LogCache.hpp
+include/svnqt/cache/ReposConfig.hpp
 include/svnqt/cache/ReposLog.hpp
 include/svnqt/check.hpp
 include/svnqt/client.hpp
+include/svnqt/client_annotate_parameter.hpp
+include/svnqt/client_commit_parameter.hpp
+include/svnqt/client_parameter.hpp
 include/svnqt/commititem.hpp
 include/svnqt/conflictdescription.hpp
 include/svnqt/conflictresult.hpp
@@ -22,6 +27,8 @@ include/svnqt/lock_entry.hpp
 include/svnqt/log_entry.hpp
 include/svnqt/path.hpp
 include/svnqt/pool.hpp
+include/svnqt/repoparameter.cpp
+include/svnqt/repoparameter.hpp
 include/svnqt/repository.hpp
 include/svnqt/repositorylistener.hpp
 include/svnqt/revision.hpp
@@ -41,8 +48,8 @@ lib/kde4/kded_kdesvnd.so
 lib/kde4/kdesvnpart.so
 lib/kde4/kio_ksvn.so
 lib/libsvnqt.so
-lib/libsvnqt.so.5
-lib/libsvnqt.so.5.0.1
+lib/libsvnqt.so.6
+lib/libsvnqt.so.6.0.0
 share/applications/kde4/kdesvn.desktop
 share/apps/kconf_update/kdesvn-use-external-update.sh
 share/apps/kconf_update/kdesvnpartrc-use-external.upd
@@ -348,6 +355,7 @@ share/icons/hicolor/scalable/places/kdesvnmodified.svgz
 share/icons/hicolor/scalable/places/kdesvnneedlock.svgz
 share/icons/hicolor/scalable/places/kdesvnupdates.svgz
 share/kde4/services/ServiceMenus/kdesvn_subversion.desktop
+share/kde4/services/ServiceMenus/kdesvn_subversion_toplevel.desktop
 share/kde4/services/kded/kdesvnd.desktop
 share/kde4/services/kdesvnpart.desktop
 share/kde4/services/ksvn+file.protocol
@@ -361,6 +369,7 @@ share/locale/fr/LC_MESSAGES/kdesvn.mo
 share/locale/ja/LC_MESSAGES/kdesvn.mo
 share/locale/lt/LC_MESSAGES/kdesvn.mo
 share/locale/nl/LC_MESSAGES/kdesvn.mo
+share/locale/ro/LC_MESSAGES/kdesvn.mo
 share/locale/ru/LC_MESSAGES/kdesvn.mo
 %%PORTDOCS%%@dirrm share/doc/HTML/en/kdesvn
 %%PORTDOCS%%@dirrm share/doc/HTML/nl/kdesvn
