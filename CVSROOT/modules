@@ -5577,6 +5577,7 @@ iozone                          ports/benchmarks/iozone
 iozone21                        ports/benchmarks/iozone21
 ip4r                            ports/databases/ip4r
 ip6_int                         ports/net/ip6_int
+ipa_conv                        ports/misc/ipa_conv
 ipa_ip6fw                       ports/net/ipa_ip6fw
 ipa_ipfw                        ports/net/ipa_ipfw
 ipa_sdb                         ports/databases/ipa_sdb
@@ -6074,6 +6075,7 @@ ja-t2ps                         ports/japanese/t2ps
 ja-tcl76                        ports/japanese/tcl76
 ja-tcl80                        ports/japanese/tcl80
 ja-tdiary                       ports/japanese/tdiary
+ja-tdiary-devel                 ports/japanese/tdiary-devel
 ja-teTeX                        ports/japanese/teTeX
 ja-tetex                        ports/japanese/teTeX
 ja-texfamily                    ports/japanese/texfamily
@@ -6722,6 +6724,7 @@ kid3                            ports/audio/kid3
 kid3-kde4                       ports/audio/kid3-kde4
 kiki                            ports/games/kiki
 kile                            ports/editors/kile
+kile-kde4                       ports/editors/kile-kde4
 kiltdown                        ports/mail/kiltdown
 kimboot                         ports/games/kimboot
 kimwitu                         ports/devel/kimwitu
@@ -22233,6 +22236,7 @@ tdb                             ports/databases/tdb
 tdetect                         ports/net/tdetect
 tdfsb                           ports/x11-fm/tdfsb
 tdiary                          ports/www/tdiary
+tdiary-devel                    ports/www/tdiary-devel
 tdir                            ports/sysutils/tdir
 tdl                             ports/devel/tdl
 tdom                            ports/www/tdom
