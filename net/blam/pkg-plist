@@ -4,6 +4,7 @@ lib/blam/AtomFeed.dll
 lib/blam/RSSFeed.dll
 lib/blam/blam.exe
 lib/blam/blam.exe.config
+lib/blam/blam.exe.mdb
 share/applications/blam.desktop
 %%DATADIR%%/collection.xml
 %%DATADIR%%/themes/akregator/theme.html
@@ -47,6 +48,7 @@ share/locale/el/LC_MESSAGES/blam.mo
 share/locale/en_CA/LC_MESSAGES/blam.mo
 share/locale/en_GB/LC_MESSAGES/blam.mo
 share/locale/es/LC_MESSAGES/blam.mo
+share/locale/et/LC_MESSAGES/blam.mo
 share/locale/eu/LC_MESSAGES/blam.mo
 share/locale/fi/LC_MESSAGES/blam.mo
 share/locale/fr/LC_MESSAGES/blam.mo
