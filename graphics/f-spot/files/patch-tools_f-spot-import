@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- tools/f-spot-import.orig
++++ tools/f-spot-import
+@@ -1,4 +1,6 @@
+-#!/bin/bash -x
++#!/usr/bin/env bash
++
++set -x
+ 
+ udi="$1"
+ #xmessage $udi

@@ -30,15 +30,10 @@ lib/f-spot/Mono.Tabblo.dll
 lib/f-spot/NDesk.Glitz.dll
 lib/f-spot/SemWeb.dll
 lib/f-spot/SmugMugNet.dll
-lib/f-spot/Tao.OpenGl.ExtensionLoader.dll
-lib/f-spot/Tao.OpenGl.ExtensionLoader.dll.config
-lib/f-spot/Tao.OpenGl.Glu.dll
-lib/f-spot/Tao.OpenGl.Glu.dll.config
-lib/f-spot/Tao.OpenGl.dll
-lib/f-spot/Tao.OpenGl.dll.config
 lib/f-spot/extensions/BeagleService.dll
 lib/f-spot/extensions/CDExport.dll
 lib/f-spot/extensions/ChangePhotoPath.dll
+lib/f-spot/extensions/CoverTransition.dll
 lib/f-spot/extensions/DBusService.dll
 lib/f-spot/extensions/DefaultExporters.addin.xml
 lib/f-spot/extensions/DevelopInUFRaw.dll
@@ -50,6 +45,7 @@ lib/f-spot/extensions/HashJob.dll
 lib/f-spot/extensions/MergeDb.dll
 lib/f-spot/extensions/PicasaWebExport.dll
 lib/f-spot/extensions/RawPlusJpeg.dll
+lib/f-spot/extensions/ScreensaverConfig.dll
 lib/f-spot/extensions/SmugMugExport.dll
 lib/f-spot/extensions/TabbloExport.dll
 lib/f-spot/extensions/ZipExport.dll
@@ -348,6 +344,7 @@ share/locale/sr/LC_MESSAGES/f-spot.mo
 share/locale/sr@latin/LC_MESSAGES/f-spot.mo
 share/locale/sv/LC_MESSAGES/f-spot.mo
 share/locale/ta/LC_MESSAGES/f-spot.mo
+share/locale/te/LC_MESSAGES/f-spot.mo
 share/locale/th/LC_MESSAGES/f-spot.mo
 share/locale/uk/LC_MESSAGES/f-spot.mo
 share/locale/vi/LC_MESSAGES/f-spot.mo
