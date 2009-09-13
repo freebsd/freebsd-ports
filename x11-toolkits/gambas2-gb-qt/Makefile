@@ -12,4 +12,6 @@ COMMENT=	The gambas Qt GUI component
 
 MASTERDIR=	${.CURDIR}/../../lang/gambas2-base
 
+BROKEN=	fails to build
+
 .include "${MASTERDIR}/Makefile"
