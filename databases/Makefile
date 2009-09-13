@@ -651,6 +651,7 @@
     SUBDIR += sqlcached
     SUBDIR += sqlclient
     SUBDIR += sqldeveloper
+    SUBDIR += sqlite-ext-inet
     SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqlite34

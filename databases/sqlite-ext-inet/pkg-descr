@@ -1,0 +1,4 @@
+This library will provide the ipv4 ISINNET, IP2INT, INT2IP,
+NETFROM, NETLENGTH, NETMASKLENGTH functions in SQL queries.
+
+WWW: http://mobigroup.ru/files/sqlite-ext/inet/
