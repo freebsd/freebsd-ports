@@ -16,7 +16,6 @@
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
-    SUBDIR += bed
     SUBDIR += biew
     SUBDIR += bitedit
     SUBDIR += bitmap
