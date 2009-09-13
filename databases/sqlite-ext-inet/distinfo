@@ -1,0 +1,6 @@
+MD5 (sqlite-ext/ipv4-ext.c) = 8165d1320aca2a4b1148984c4b0a1959
+SHA256 (sqlite-ext/ipv4-ext.c) = 024246ca03973cd18700b6c76da59a2f5d8990673e1e998d606aa14725a22229
+SIZE (sqlite-ext/ipv4-ext.c) = 19685
+MD5 (sqlite-ext/ipv4-ext.sql) = fe983bab4600684817e634b82225bb06
+SHA256 (sqlite-ext/ipv4-ext.sql) = e13b3ef729841b7981ae1cf50d0ca24d2244f9c428b2b41efb061f4f519b0413
+SIZE (sqlite-ext/ipv4-ext.sql) = 13449
