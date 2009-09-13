@@ -35,6 +35,34 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6e8f54af-a07d-11de-a649-000c2955660f">
+    <topic>ikiwiki -- insufficient blacklisting in teximg plugin</topic>
+    <affects>
+      <package>
+	<name>ikiwiki</name>
+	<range><lt>3.1415926</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The IkiWiki development team reports:</p>
+	<blockquote cite="http://ikiwiki.info/security/#index35h2">
+	  <p>IkiWikis teximg plugin's blacklisting of insecure TeX commands
+	    is insufficient; it can be bypassed and used to read arbitrary
+	    files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-2944</cvename>
+      <url>http://ikiwiki.info/security/#index35h2</url>
+    </references>
+    <dates>
+      <discovery>2009-08-28</discovery>
+      <entry>2009-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b46f3a1e-a052-11de-a649-000c2955660f">
     <topic>xapian-omega -- cross-site scripting vulnerability</topic>
     <affects>
