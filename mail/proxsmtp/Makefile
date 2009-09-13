@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proxsmtp
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	mail security
 MASTER_SITES=	http://memberwebs.com/stef/software/proxsmtp/
 
@@ -23,15 +23,17 @@ SUB_FILES=	pkg-message
 MAN5=		proxsmtpd.conf.5
 MAN8=		proxsmtpd.8
 
-PORTDOCS=	*
+PORTDOCS=	ChangeLog NEWS README
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/proxsmtpd.conf ${PREFIX}/etc/proxsmtpd.conf-sample
 	@if [ ! -f ${PREFIX}/etc/proxsmtpd.conf ]; then \
 	${CP} -p ${PREFIX}/etc/proxsmtpd.conf-sample ${PREFIX}/etc/proxsmtpd.conf ; fi
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
