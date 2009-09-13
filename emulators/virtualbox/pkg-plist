@@ -1,6 +1,7 @@
 %%X11%%bin/VBoxBFE
 bin/VBoxHeadless
 bin/VBoxManage
+bin/VBoxNetAdpCtl
 bin/VBoxNetDHCP
 %%X11%%bin/VBoxSDL
 bin/VBoxSVC
@@ -17,6 +18,7 @@ lib/virtualbox/VBoxHeadless
 lib/virtualbox/VBoxHeadless.so
 %%QT4%%lib/virtualbox/VBoxKeyboard.so
 lib/virtualbox/VBoxManage
+lib/virtualbox/VBoxNetAdpCtl
 lib/virtualbox/VBoxNetDHCP
 lib/virtualbox/VBoxNetDHCP.so
 %%X11%%lib/virtualbox/VBoxOGLhostcrutil.so
@@ -46,8 +48,8 @@ lib/virtualbox/VMMGC.gc
 lib/virtualbox/tstMicroGC.gc
 lib/virtualbox/VBoxDD2R0.r0
 lib/virtualbox/VBoxDDR0.r0
-%%GUESTADDITIONS%%lib/virtualbox/VBoxGuestAdditions.iso
-%%GUESTADDITIONS%%lib/virtualbox/VBoxGuestAdditions_%%GUEST_VER%%.iso
+%%GUESTADDITIONS%%lib/virtualbox/additions/VBoxGuestAdditions.iso
+%%GUESTADDITIONS%%lib/virtualbox/additions/VBoxGuestAdditions_%%GUEST_VER%%.iso
 lib/virtualbox/VBoxPython%%PYTHON_VERU%%.so
 lib/virtualbox/VMMR0.r0
 lib/virtualbox/components/VirtualBox_XPCOM.xpt
@@ -55,64 +57,64 @@ lib/virtualbox/components/VBoxXPCOMIPCC.so
 lib/virtualbox/components/VBoxSVCM.so
 lib/virtualbox/components/VBoxC.so
 lib/virtualbox/components/VBoxXPCOMBase.xpt
-%%NLS%%lib/virtualbox/nls/VirtualBox_ar.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_bg.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_ca.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_cs.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_de.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_el.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_es.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_eu.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_fi.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_fr.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_hu.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_id.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_it.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_ja.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_km_KH.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_ko.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_nl.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_pl.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_pt.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_pt_BR.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_ro.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_ru.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_sk.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_sr.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_sv.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_tr.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_uk.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_zh_CN.qm
-%%NLS%%lib/virtualbox/nls/VirtualBox_zh_TW.qm
-%%NLS%%lib/virtualbox/nls/qt_ar.qm
-%%NLS%%lib/virtualbox/nls/qt_bg.qm
-%%NLS%%lib/virtualbox/nls/qt_ca.qm
-%%NLS%%lib/virtualbox/nls/qt_cs.qm
-%%NLS%%lib/virtualbox/nls/qt_de.qm
-%%NLS%%lib/virtualbox/nls/qt_el.qm
-%%NLS%%lib/virtualbox/nls/qt_es.qm
-%%NLS%%lib/virtualbox/nls/qt_eu.qm
-%%NLS%%lib/virtualbox/nls/qt_fi.qm
-%%NLS%%lib/virtualbox/nls/qt_fr.qm
-%%NLS%%lib/virtualbox/nls/qt_hu.qm
-%%NLS%%lib/virtualbox/nls/qt_id.qm
-%%NLS%%lib/virtualbox/nls/qt_it.qm
-%%NLS%%lib/virtualbox/nls/qt_ja.qm
-%%NLS%%lib/virtualbox/nls/qt_km_KH.qm
-%%NLS%%lib/virtualbox/nls/qt_ko.qm
-%%NLS%%lib/virtualbox/nls/qt_nl.qm
-%%NLS%%lib/virtualbox/nls/qt_pl.qm
-%%NLS%%lib/virtualbox/nls/qt_pt.qm
-%%NLS%%lib/virtualbox/nls/qt_pt_BR.qm
-%%NLS%%lib/virtualbox/nls/qt_ro.qm
-%%NLS%%lib/virtualbox/nls/qt_ru.qm
-%%NLS%%lib/virtualbox/nls/qt_sk.qm
-%%NLS%%lib/virtualbox/nls/qt_sr.qm
-%%NLS%%lib/virtualbox/nls/qt_sv.qm
-%%NLS%%lib/virtualbox/nls/qt_tr.qm
-%%NLS%%lib/virtualbox/nls/qt_uk.qm
-%%NLS%%lib/virtualbox/nls/qt_zh_CN.qm
-%%NLS%%lib/virtualbox/nls/qt_zh_TW.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_ar.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_bg.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_ca.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_cs.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_de.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_el.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_es.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_eu.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_fi.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_fr.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_hu.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_id.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_it.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_ja.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_km_KH.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_ko.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_nl.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_pl.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_pt.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_pt_BR.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_ro.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_ru.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_sk.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_sr.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_sv.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_tr.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_uk.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_zh_CN.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_zh_TW.qm
+%%NLS%%%%DATADIR%%/nls/qt_ar.qm
+%%NLS%%%%DATADIR%%/nls/qt_bg.qm
+%%NLS%%%%DATADIR%%/nls/qt_ca.qm
+%%NLS%%%%DATADIR%%/nls/qt_cs.qm
+%%NLS%%%%DATADIR%%/nls/qt_de.qm
+%%NLS%%%%DATADIR%%/nls/qt_el.qm
+%%NLS%%%%DATADIR%%/nls/qt_es.qm
+%%NLS%%%%DATADIR%%/nls/qt_eu.qm
+%%NLS%%%%DATADIR%%/nls/qt_fi.qm
+%%NLS%%%%DATADIR%%/nls/qt_fr.qm
+%%NLS%%%%DATADIR%%/nls/qt_hu.qm
+%%NLS%%%%DATADIR%%/nls/qt_id.qm
+%%NLS%%%%DATADIR%%/nls/qt_it.qm
+%%NLS%%%%DATADIR%%/nls/qt_ja.qm
+%%NLS%%%%DATADIR%%/nls/qt_km_KH.qm
+%%NLS%%%%DATADIR%%/nls/qt_ko.qm
+%%NLS%%%%DATADIR%%/nls/qt_nl.qm
+%%NLS%%%%DATADIR%%/nls/qt_pl.qm
+%%NLS%%%%DATADIR%%/nls/qt_pt.qm
+%%NLS%%%%DATADIR%%/nls/qt_pt_BR.qm
+%%NLS%%%%DATADIR%%/nls/qt_ro.qm
+%%NLS%%%%DATADIR%%/nls/qt_ru.qm
+%%NLS%%%%DATADIR%%/nls/qt_sk.qm
+%%NLS%%%%DATADIR%%/nls/qt_sr.qm
+%%NLS%%%%DATADIR%%/nls/qt_sv.qm
+%%NLS%%%%DATADIR%%/nls/qt_tr.qm
+%%NLS%%%%DATADIR%%/nls/qt_uk.qm
+%%NLS%%%%DATADIR%%/nls/qt_zh_CN.qm
+%%NLS%%%%DATADIR%%/nls/qt_zh_TW.qm
 %%QT4%%share/applications/virtualbox.desktop
 %%QT4%%share/icons/hicolor/48x48/apps/VBox.png
 %%DATADIR%%/idl/nsIDebug.idl
@@ -580,6 +582,7 @@ include/virtualbox/xpcom/xpcom-config.h
 @dirrm include/virtualbox/nsprpub
 @dirrm include/virtualbox/ipcd
 @dirrm include/virtualbox
+%%NLS%%@dirrm %%DATADIR%%/nls
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/idl
 @dirrm %%DATADIR%%
@@ -588,8 +591,10 @@ include/virtualbox/xpcom/xpcom-config.h
 %%QT4%%@dirrmtry share/icons/hicolor
 %%QT4%%@dirrmtry share/icons
 %%QT4%%@dirrmtry share/applications
-%%NLS%%@dirrm lib/virtualbox/nls
 @dirrm lib/virtualbox/components
+@dirrm lib/virtualbox/additions
 @dirrm lib/virtualbox
 @cwd /
 %%KMODDIR%%/vboxdrv.ko
+%%KMODDIR%%/vboxnetadp.ko
+%%KMODDIR%%/vboxnetflt.ko
