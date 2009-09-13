@@ -1,9 +1,22 @@
 bin/giFToxic
 share/applications/giFToxic.desktop
-share/giFToxic/logo.png
+%%DATADIR%%/logo.png
 share/pixmaps/giFToxic-48.png
+share/locale/az/LC_MESSAGES/giFToxic.mo
+share/locale/cs/LC_MESSAGES/giFToxic.mo
 share/locale/de/LC_MESSAGES/giFToxic.mo
+share/locale/el/LC_MESSAGES/giFToxic.mo
 share/locale/es/LC_MESSAGES/giFToxic.mo
+share/locale/fr/LC_MESSAGES/giFToxic.mo
+share/locale/hr/LC_MESSAGES/giFToxic.mo
+share/locale/ms/LC_MESSAGES/giFToxic.mo
 share/locale/nl/LC_MESSAGES/giFToxic.mo
+share/locale/no/LC_MESSAGES/giFToxic.mo
+share/locale/pl/LC_MESSAGES/giFToxic.mo
+share/locale/pt/LC_MESSAGES/giFToxic.mo
+share/locale/sk/LC_MESSAGES/giFToxic.mo
+share/locale/sr/LC_MESSAGES/giFToxic.mo
+share/locale/sr@Latn/LC_MESSAGES/giFToxic.mo
+share/locale/sv/LC_MESSAGES/giFToxic.mo
 @dirrm share/giFToxic
 @dirrmtry share/applications
