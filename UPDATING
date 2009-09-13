@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090913:
+  AFFECTS: users of www/ikiwiki
+  AUTHOR: Henrik Brix Andersen <brix@FreeBSD.org>
+
+  In order to fix a performance bug, all wikis need to be rebuilt on
+  upgrade to version 3.1415926.
+
 20090912:
   AFFECTS: users of ports that have set USE_FORTRAN=yes
   AUTHOR: gerald@FreeBSD.org
