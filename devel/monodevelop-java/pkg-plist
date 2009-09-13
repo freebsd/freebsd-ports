@@ -1,0 +1,69 @@
+@comment $FreeBSD$
+lib/monodevelop/AddIns/JavaBinding/JavaBinding.dll.mdb
+lib/monodevelop/AddIns/JavaBinding/JavaBinding.dll
+lib/monodevelop/AddIns/JavaBinding/locale/ca/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/cs/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/da/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/de/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/es/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/fr/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/gl/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/hu/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/id/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/it/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/ja/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/nl/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/pl/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/pt/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/pt_BR/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/ru/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/sl_SI/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/sv/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/tr/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/zh_CN/LC_MESSAGES/monodevelop-java.mo
+lib/monodevelop/AddIns/JavaBinding/locale/zh_TW/LC_MESSAGES/monodevelop-java.mo
+libdata/pkgconfig/monodevelop-java.pc
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/zh_TW/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/zh_TW
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/zh_CN/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/zh_CN
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/tr/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/tr
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/sv/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/sv
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/sl_SI/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/sl_SI
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/ru/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/ru
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/pt_BR/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/pt_BR
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/pt/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/pt
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/pl/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/pl
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/nl/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/nl
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/ja/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/ja
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/it/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/it
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/id/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/id
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/hu/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/hu
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/gl/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/gl
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/fr/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/fr
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/es/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/es
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/de/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/de
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/da/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/da
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/cs/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/cs
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/ca/LC_MESSAGES
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale/ca
+@dirrm lib/monodevelop/AddIns/JavaBinding/locale
+@dirrm lib/monodevelop/AddIns/JavaBinding
