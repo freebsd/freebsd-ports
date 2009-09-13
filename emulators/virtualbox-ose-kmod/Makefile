@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox
-DISTVERSION=	3.0.51r22683
+DISTVERSION=	3.0.51r22902
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -176,7 +176,9 @@ do-build:
 
 do-install:
 	${MKDIR} ${KMODDIR}
-	${INSTALL_KLD} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/vboxdrv.ko ${KMODDIR}
+.for f in vboxdrv.ko vboxnetadp.ko vboxnetflt.ko
+	${INSTALL_KLD} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/${f} ${KMODDIR}
+.endfor
 
 	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom && ${COPYTREE_SHARE} "idl samples" ${DATADIR})
@@ -188,17 +190,17 @@ do-install:
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 components" ${PREFIX}/lib/virtualbox)
 
 .if !defined(WITHOUT_NLS)
-	${MKDIR} ${PREFIX}/lib/virtualbox/nls
-	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/VirtualBox/qtnls && ${COPYTREE_SHARE} "*.qm" ${PREFIX}/lib/virtualbox/nls)
+	${MKDIR} ${DATADIR}/nls
+	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/VirtualBox/qtnls && ${COPYTREE_SHARE} "*.qm" ${DATADIR}/nls)
 .endif
 
 	${MKDIR} ${PREFIX}/bin
-.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS}
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/$f ${PREFIX}/lib/virtualbox/
+.for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/${f} ${PREFIX}/lib/virtualbox/
 	${LN} -sf ${PREFIX}/lib/virtualbox/${f} ${PREFIX}/bin/
 .endfor
 
-.for f in VBoxNetDHCP ${VBOX_FRONTENDS}
+.for f in VBoxNetAdpCtl VBoxNetDHCP ${VBOX_FRONTENDS}
 	${CHMOD} 4511 ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
@@ -207,8 +209,9 @@ do-install:
 .endfor
 
 .if defined(WITH_GUESTADDITIONS)
-	${INSTALL_DATA} ${DISTDIR}/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/
-	${LN} -sf ${PREFIX}/lib/virtualbox/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/VBoxGuestAdditions.iso
+	${MKDIR} ${PREFIX}/lib/virtualbox/additions
+	${INSTALL_DATA} ${DISTDIR}/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/additions/
+	${LN} -sf ${PREFIX}/lib/virtualbox/additions/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/additions/VBoxGuestAdditions.iso
 .endif
 
 	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/installer && \
@@ -224,6 +227,10 @@ post-install:
 .for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS}
 	${CHOWN} root:${VBOXGROUP} ${PREFIX}/lib/virtualbox/${f}
 .endfor
+
+	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${PREFIX}/include/virtualbox -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${PREFIX}/lib/virtualbox -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 .if !defined(WITHOUT_QT4)
 	${MKDIR} ${PREFIX}/share/icons/hicolor/48x48/apps/
