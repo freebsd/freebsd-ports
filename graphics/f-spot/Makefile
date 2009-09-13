@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-spot
-PORTVERSION=	0.6.0.0
+PORTVERSION=	0.6.1.1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -37,7 +37,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-patch:
 	@${REINPLACE_CMD} 's|#!/bin/bash|#!/usr/bin/env bash|g' \
-		${WRKSRC}/src/f-spot.in \
-		${WRKSRC}/tools/f-spot-import
+		${WRKSRC}/src/f-spot.in
 
 .include <bsd.port.mk>
