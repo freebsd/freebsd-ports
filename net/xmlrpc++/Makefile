@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ implementation of the XML-RPC protocol
 
+DEPRECATED=	depends on old version of GCC, no maintainer, not used by any other port, dead upstream
+EXPIRATION_DATE=2009-10-13
+
 USE_GCC=	3.4
 USE_GMAKE=	yes
 
