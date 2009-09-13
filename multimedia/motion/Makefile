@@ -7,6 +7,7 @@
 
 PORTNAME=	motion
 PORTVERSION=	3.2.11.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%203.2/${PORTVERSION}
 
@@ -21,8 +22,6 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		avformat.1:${PORTSDIR}/multimedia/ffmpeg
 
 ONLY_FOR_ARCHS=	i386 amd64
-
-BROKEN=		checksum mismatch
 
 MAN1=		motion.1
 
