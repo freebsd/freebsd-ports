@@ -16,6 +16,9 @@ DISTNAME=	libWPCG-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A basic 2D/3D computer graphics library which uses OpenGL
 
+DEPRECATED=	depends on old version of GCC, no maintainer, not used by any other port
+EXPIRATION_DATE=2009-10-13
+
 USE_GCC=	3.4
 USE_GL=		glut
 GNU_CONFIGURE=	yes
