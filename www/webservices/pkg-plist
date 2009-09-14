@@ -25,6 +25,8 @@ Local/Library/Documentation/WebServices/GWSType.html
 Local/Library/Documentation/WebServices/MainIndex.html
 Local/Library/Documentation/WebServices/TypesAndConstants.gsdoc
 Local/Library/Documentation/WebServices/TypesAndConstants.html
+Local/Library/Documentation/WebServices/WSSUsernameToken.gsdoc
+Local/Library/Documentation/WebServices/WSSUsernameToken.html
 Local/Library/Documentation/WebServices/WebServices.html
 Local/Library/Documentation/WebServices/WebServices.igsdoc
 Local/Library/Documentation/WebServices/dependencies
@@ -40,9 +42,10 @@ Local/Library/Headers/WebServices/GWSPort.h
 Local/Library/Headers/WebServices/GWSPortType.h
 Local/Library/Headers/WebServices/GWSService.h
 Local/Library/Headers/WebServices/GWSType.h
+Local/Library/Headers/WebServices/WSSUsernameToken.h
 Local/Library/Headers/WebServices/WebServices.h
 Local/Library/Libraries/libWebServices.so
 Local/Library/Libraries/libWebServices.so.%%LIBVERSION%%
-Local/Library/Libraries/libWebServices.so.%%LIBVERSION%%.0
+Local/Library/Libraries/libWebServices.so.%%VERSION%%
 @dirrm Local/Library/Headers/WebServices
 @dirrm Local/Library/Documentation/WebServices
