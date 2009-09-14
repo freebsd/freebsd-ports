@@ -26,6 +26,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dssi -L${LOCALBASE}/lib
 
+BROKEN=		Does not compile
+
 MAN1=		calfjackhost.1
 MAN7=		calf.7
 INSTALLS_ICONS=	yes
