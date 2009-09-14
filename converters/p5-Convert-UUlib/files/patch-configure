@@ -1,0 +1,11 @@
+--- uulib/configure.orig	2009-09-14 13:48:25.000000000 +0200
++++ uulib/configure	2009-09-14 13:48:27.000000000 +0200
+@@ -1199,7 +1199,7 @@ done
+ 
+ 
+ CFLAGS="$CFLAGS -D_GNU_SOURCE"
+-for ac_func in gettimeofday fgetc_unlocked strcasecmp strncasecmp strcasestr
++for ac_func in gettimeofday fgetc_unlocked
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:1206: checking for $ac_func" >&5
