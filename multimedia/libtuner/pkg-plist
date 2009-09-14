@@ -1,7 +1,7 @@
 lib/libtuner/libtuner.so
 lib/libtuner/libtuner.so.1
 lib/libtuner/libtuner.so.1.0
-lib/libtuner/libtuner.so.1.0.3
+lib/libtuner/libtuner.so.1.0.4
 include/libtuner/avb_driver.h
 include/libtuner/cx22702.h
 include/libtuner/cx24227.h
@@ -15,6 +15,7 @@ include/libtuner/lgh064f.h
 include/libtuner/mt2131.h
 include/libtuner/or51132.h
 include/libtuner/pll_driver.h
+include/libtuner/s5h1411.h
 include/libtuner/tda9887.h
 include/libtuner/tuner_config.h
 include/libtuner/tuner_device.h
@@ -22,5 +23,11 @@ include/libtuner/tuner_devnode_device.h
 include/libtuner/tuner_driver.h
 include/libtuner/tuner_firmware.h
 include/libtuner/xc3028.h
+include/libtuner/xc5000.h
+%%DATADIR%%/license.txt
+%%DATADIR%%/xc5000-1.6.114.fw
+%%DATADIR%%/or51132_vsb.fw
+%%DATADIR%%/or51132_qam.fw
 @dirrm lib/libtuner
 @dirrm include/libtuner
+@dirrm %%DATADIR%%
