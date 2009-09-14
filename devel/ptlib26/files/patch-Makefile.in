@@ -1,20 +1,21 @@
---- Makefile.in.orig	2009-01-12 06:53:18.000000000 +0800
-+++ Makefile.in	2009-02-23 10:03:52.000000000 +0800
-@@ -85,11 +85,11 @@
+--- Makefile.in.orig	2009-07-05 09:52:57.000000000 +0400
++++ Makefile.in	2009-09-11 01:55:40.000000000 +0400
+@@ -85,11 +85,12 @@
                       $(DESTDIR)$(PREFIX)/share/ptlib/make ; \
  		do mkdir -p $$dir ; chmod 755 $$dir ; \
  	done )
 -	$(INSTALL) -m 444 $(PT_LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
-+	$(INSTALL) -m 444 $(PT_LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@ $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 444 $(PT_LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)/lib$(PTLIB_BASE)-@MAJOR_VERSION@.@MINOR_VERSION@.so@BUILD_TYPE@@BUILD_NUMBER@
  	$(INSTALL) -m 444 $(PT_LIBDIR)/lib$(PTLIB_BASE)_s.a $(DESTDIR)$(LIBDIR)
  	(cd $(DESTDIR)$(LIBDIR) ; \
  		rm -f  $(PTLIB_FILE) ; \
 -		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@ $(PTLIB_FILE) \
-+		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@ $(PTLIB_FILE) \
++		ln -sf lib$(PTLIB_BASE)-@MAJOR_VERSION@.@MINOR_VERSION@.so@BUILD_TYPE@@BUILD_NUMBER@ $(PTLIB_FILE) ; \
++		ln -sf lib$(PTLIB_BASE)-@MAJOR_VERSION@.@MINOR_VERSION@.so@BUILD_TYPE@@BUILD_NUMBER@ lib$(PTLIB_BASE)-@MAJOR_VERSION@.@MINOR_VERSION@.so \
  	)
  ifeq (1, $(HAS_PLUGINS))
  	if test -e $(PT_LIBDIR)/device/; then \
-@@ -120,9 +120,9 @@
+@@ -120,9 +121,9 @@
  	$(INSTALL) -m 755 make/ptlib-config $(DESTDIR)$(PREFIX)/share/ptlib/make/
  	(cd $(DESTDIR)$(PREFIX)/bin; rm -f ptlib-config ; ln -snf ../share/ptlib/make/ptlib-config ptlib-config)
  
@@ -27,7 +28,7 @@
  uninstall:
  	rm -rf $(DESTDIR)$(PREFIX)/include/ptlib \
  	       $(DESTDIR)$(PREFIX)/include/ptclib \
-@@ -130,9 +130,9 @@
+@@ -130,7 +131,7 @@
  	       $(DESTDIR)$(PREFIX)/include/ptbuildopts.h \
  	       $(DESTDIR)$(PREFIX)/share/ptlib \
  	       $(DESTDIR)$(LIBDIR)/$(DEV_PLUGIN_DIR) \
@@ -35,7 +36,4 @@
 +	       $(DESTDIR)$(PREFIX)/libdata/pkgconfig/ptlib.pc
  	rm -f $(DESTDIR)$(LIBDIR)/lib$(PTLIB_BASE)_s.a \
  	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE) \
--	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@
-+	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@
- 
- # End of Makefile.in
+ 	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@

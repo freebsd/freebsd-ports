@@ -156,8 +156,9 @@ include/ptlib/vconvert.h
 include/ptlib/video.h
 include/ptlib/videoio.h
 include/ptlib/videoio1394dc.h
+lib/libpt-2.6.so
+lib/libpt-2.6.so.4
 lib/libpt.so
-lib/libpt.so.2
 lib/libpt_s.a
 lib/ptlib-2.6.4/devices/sound/oss_pwplugin.so
 %%BSDVIDEO%%lib/ptlib-2.6.4/devices/videoinput/bsdvideo_pwplugin.so
