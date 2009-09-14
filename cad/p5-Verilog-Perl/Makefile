@@ -22,6 +22,8 @@ USE_BISON=	build
 
 PERL_CONFIGURE=	yes
 
+BROKEN=		Does not compile
+
 MAN1=	vhier.1 vpassert.1 vppreproc.1 vrename.1
 
 MAN3=	Verilog::EditFiles.3 Verilog::Netlist::Logger.3 \
