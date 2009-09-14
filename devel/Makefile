@@ -870,6 +870,7 @@
     SUBDIR += mono-addins
     SUBDIR += mono-tools
     SUBDIR += monodevelop
+    SUBDIR += monodevelop-database
     SUBDIR += monodevelop-java
     SUBDIR += monotone
     SUBDIR += monotone-viz

@@ -1,0 +1,88 @@
+@comment $FreeBSD$
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.CodeGenerator.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.CodeGenerator.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Components.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Components.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.ConnectionManager.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.ConnectionManager.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Designer.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Designer.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Query.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Query.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.MySql.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.MySql.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.Npgsql.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.Npgsql.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.SqlServer.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.SqlServer.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.Sqlite.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.Sqlite.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Sql.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.Database/MySql.Data.dll
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/ca/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/cs/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/da/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/de/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/es/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/fr/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/gl/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/hu/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/id/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/it/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/ja/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/nl/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/pl/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/pt/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/pt_BR/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/ru/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/sl_SI/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/sv/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/tr/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/zh_CN/LC_MESSAGES/monodevelop-database.mo
+lib/monodevelop/AddIns/MonoDevelop.Database/locale/zh_TW/LC_MESSAGES/monodevelop-database.mo
+libdata/pkgconfig/monodevelop-database.pc
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/zh_TW/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/zh_TW
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/zh_CN/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/zh_CN
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/tr/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/tr
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/sv/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/sv
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/sl_SI/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/sl_SI
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/ru/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/ru
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/pt_BR/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/pt_BR
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/pt/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/pt
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/pl/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/pl
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/nl/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/nl
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/ja/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/ja
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/it/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/it
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/id/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/id
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/hu/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/hu
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/gl/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/gl
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/fr/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/fr
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/es/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/es
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/de/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/de
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/da/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/da
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/cs/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/cs
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/ca/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale/ca
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database/locale
+@dirrmtry lib/monodevelop/AddIns/MonoDevelop.Database
