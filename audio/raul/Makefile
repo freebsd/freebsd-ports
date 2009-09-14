@@ -23,12 +23,14 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+CXXFLAGS+=	${CFLAGS}
+CONFIGURE_ENV=	"-I${LOCALBASE}/include"
 CONFIGURE_ENV=	"CXXFLAGS=${CFLAGS} -I${LOCALBASE}/include"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		triggers gcc segfault on amd64
+.if ${OSVERSION} < 700000
+BROKEN=		Does not compile
 .endif
 
 .include <bsd.port.post.mk>
