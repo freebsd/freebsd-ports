@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://jeremy.zawodny.com/mysql/mytop/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A top clone for MySQL
 
 RUN_DEPENDS=	p5-DBD-mysql>=1.0:${PORTSDIR}/databases/p5-DBD-mysql \
