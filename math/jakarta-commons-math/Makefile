@@ -7,6 +7,7 @@
 
 PORTNAME=	commons-math
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -17,6 +18,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Java library of self-contained mathematics and statistics components
 
 BUILD_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
+		${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit \
 		${JAVAJARDIR}/commons-discovery.jar:${PORTSDIR}/java/jakarta-commons-discovery
 RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVAJARDIR}/commons-discovery.jar:${PORTSDIR}/java/jakarta-commons-discovery
@@ -55,6 +57,12 @@ JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type 
 .if ${JDK_API} != ""
 MAKE_ARGS+=	-Djdk.api=${JDK_API}
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's#4.4##g' \
+			-e 's#junit-#junit#g' \
+			-e 's#/usr/share/junit#${JAVAJARDIR}#g' \
+			${WRKSRC}/build.xml
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
