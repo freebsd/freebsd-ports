@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -46,8 +45,8 @@ PORTDOCS=	API-C-eng.html API-C-rus.html API-CXX-eng.html API-CXX-rus.html \
 		Why-LibRaw-eng.html Why-LibRaw-rus.html corner-scheme.png \
 		index-eng.html index-rus.html index.html
 
-PORTEXAMPLES=	dcraw_emu.cpp dcraw_half.c half_mt.c identify.cpp mem_image.cpp \
-		simple_dcraw.cpp
+PORTEXAMPLES=	4channels.cpp dcraw_emu.cpp dcraw_half.c half_mt.c mem_image.cpp \
+		raw-identify.cpp simple_dcraw.cpp unprocessed_raw.cpp
 
 post-patch:
 	@${REINPLACE_CMD} -i.bak -e 's|-pthread|${PTHREAD_LIBS}|' \
