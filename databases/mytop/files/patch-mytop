@@ -91,3 +91,32 @@
      close P;
  }
  
+--- mytop.orig	2009-09-12 17:20:33.000000000 +0100
++++ mytop	2009-09-12 20:59:45.000000000 +0100
+@@ -156,7 +156,7 @@
+     "idle|i"              => \$config{idle},
+     "resolve|r"           => \$config{resolve},
+     "prompt!"             => \$config{prompt},
+-    "long|!"              => \$config{long_nums},
++    "long!"               => \$config{long_nums},
+     "mode|m=s"            => \$config{mode},
+     "sort=s"              => \$config{sort},
+ );
+@@ -719,7 +719,7 @@
+     ##
+     if ($config{header})
+     {
+-        my @recs = Hashes("show status");
++        my @recs = Hashes("SHOW /*!50002 GLOBAL */ STATUS");
+ 
+         ## if the server died or we lost connectivity
+         if (not @recs)
+@@ -828,7 +828,7 @@
+         $lines_left--;
+ 
+ 
+-        printf " Queries: %-5s  qps: %4.0f Slow: %7s         Se/In/Up/De(%%):    %02.0f/%02.0f/%02.0f/%02.0f \n",
++        printf " Queries: %-6s qps: %4.0f Slow: %7s         Se/In/Up/De(%%):    %02.0f/%02.0f/%02.0f/%02.0f \n",
+                make_short( $STATUS{Questions} ),  # q total
+                $STATUS{Questions} / $STATUS{Uptime},  # qps, average
+                make_short( $STATUS{Slow_queries} ),    # slow
