@@ -6,72 +6,68 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	3.2.6
-PORTREVISION=	3
+DISTVERSION=	4.0rc1
 CATEGORIES=	irc kde
-MASTER_SITES=	ftp://ftp.kvirc.ru/pub/source/dev/
+MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/snapshots/source/ \
+		http://distfiles.officialunix.com/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	chris@officialunix.com
-COMMENT=	IRC client for QT and KDE
+COMMENT=	IRC client for QT4 and KDE4
 
-USE_AUTOTOOLS=	libtool:22
-USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
-INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-CONFIGURE_ENV=	QTDIR="${LOCALBASE}"
-PLIST_SUB=	VER=${PORTVERSION}
-CONFLICTS=	kvirc-3.2.0*
+USE_GETTEXT=	yes
+USE_PERL5=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build \
+		dbus webkit gui network sql xml
+USE_CMAKE=	yes
+CMAKE_ARGS=	-DWITHOUT_ESD=yes -DWITHOUT_DOXYGEN=yes
+INSTALLS_ICONS=	yes
+CONFLICTS=	kvirc-3.4.*
 
 MAN1=	kvirc.1
+MANLANG=	"" de.ISO8859-1 de.UTF-8 it.ISO8859-1 it.UTF-8
 
-BUILD_DEPENDS+=	recode:${PORTSDIR}/converters/recode
-
-OPTIONS=	ARTS "Compile with arts support" on \
-			AUDIOFILE "Compile with libaudiofile support" on \
-			ESOUND "Compile with esound support" off \
-			GSM "Compile with gsm support" off
+OPTIONS=	AUDIOFILE "Compile with libaudiofile dependency" on \
+			DEBUG "Compile with debug support" off \
+			GSM "Compile with gsm support" off \
+			KDE4 "Compile with KDE4 support (broken)" off \
+			PHONON "Compile with phonon support" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ARTS)
-LIB_DEPENDS+=		artsc.0:${PORTSDIR}/audio/arts
-.else
-CONFIGURE_ARGS+=	--without-arts-support
-.endif
-
 .if defined(WITH_AUDIOFILE)
-LIB_DEPENDS+=		audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
-CONFIGURE_ARGS+=	--without-af-support
+CMAKE_ARGS+=	-DWITHOUT_AUDIOFILE=yes
 .endif
 
-.if defined(WITH_ESOUND)
-LIB_DEPENDS+=		esd.2:${PORTSDIR}/audio/esound
-.else
-CONFIGURE_ARGS+=	--without-esd-support
+.if defined(WITH_DEBUG)
+CMAKE_ARGS+=	-DDEBUG=yes -DVERBOSE=yes
 .endif
 
 .if defined(WITH_GSM)
-LIB_DEPENDS+=		gsm.1:${PORTSDIR}/audio/gsm
+LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 .else
-CONFIGURE_ARGS+=	--without-gsm
+CMAKE_ARGS+=	-DWITHOUT_GSM=yes
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" \
-		-e "s,.SS_KDE_GENERAL_DIR/share/icons,${PREFIX}/share/icons," \
-		-e "s,.SS_KDE_GENERAL_DIR/share/applnk,${PREFIX}/share/applnk," \
-		-e "s,.SS_KDE_GENERAL_DIR/share/mimelnk,${PREFIX}/share/mimelnk," \
-		-e "s,kdeservicesdir=\".SS_KDE_SERVICESDIR\",kdeservicesdir=\"${PREFIX}/share/services\"," \
-		-e "s,%%LTMAIN%%,${LTMAIN}," \
-		${WRKSRC}/configure
+.if defined(WITH_KDE4)
+USE_KDE4+=	kdelibs kdeprefix
+CMAKE_ARGS+=	-DWITH_KDE4=yes
+.endif
+
+.if defined(WITH_PHONON)
+QT_COMPONENTS+=	phonon
+CMAKE_ARGS+=	-DKDE4_LIB_INSTALL_DIR=${KDE4_PREFIX}/lib \
+			-DKDE4_INCLUDE_INSTALL_DIR=${KDE4_PREFIX}/include
+.else
+CMAKE_ARGS+=	-DWITHOUT_PHONON=yes
+.endif
+
 post-configure:
 	@${MV} ${WRKSRC}/data/protocols/irc.protocol ${WRKSRC}/data/protocols/kvirc.protocol
 	@${MV} ${WRKSRC}/data/protocols/irc6.protocol ${WRKSRC}/data/protocols/kvirc6.protocol
-	${LOCALBASE}/bin/recode -f ibmpc..latin1 `find ${WRKSRC} -name "*.cpp" -print`
 
 .include <bsd.port.post.mk>

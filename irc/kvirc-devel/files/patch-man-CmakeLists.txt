@@ -1,0 +1,14 @@
+--- data/man/CMakeLists.txt.bak	2009-09-09 13:50:57.000000000 -0500
++++ data/man/CMakeLists.txt	2009-09-09 13:51:29.000000000 -0500
+@@ -16,9 +16,9 @@
+ 			# If the man is in English, it uses the root directory
+ 			STRING(COMPARE EQUAL ${LANGCODE} "en" STREQUAL)
+ 			IF(${STREQUAL})
+-				INSTALL(FILES ${MAN} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1/ RENAME "kvirc.1")
++				INSTALL(FILES ${MAN} DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1/ RENAME "kvirc.1")
+ 			ELSE()
+-				INSTALL(FILES ${MAN} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/${LANGCODE}/man1/ RENAME "kvirc.1")
++				INSTALL(FILES ${MAN} DESTINATION ${CMAKE_INSTALL_PREFIX}/man/${LANGCODE}/man1/ RENAME "kvirc.1")
+ 			ENDIF()
+ 		ENDFOREACH()
+ 	ENDIF()
