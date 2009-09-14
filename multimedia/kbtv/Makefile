@@ -11,7 +11,6 @@ PORTREVISION=	5
 CATEGORIES=	multimedia python kde kld
 MASTER_SITES=	SF \
 		http://freebsd.ricin.com/ports/distfiles/
-
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	danny@ricin.com
@@ -43,6 +42,10 @@ OPTIONS=	PWC                   "Philips and compatible cameras" off \
 		SAA_STD_NTSC_JAPAN    "SAA with NTSC Japan standard" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000
+BROKEN=		does not build on 7.x and greater
+.endif
 
 .if defined(WITH_PWC)
 .if !exists(/usr/src/sys/Makefile)
