@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-Class-Schema-Loader
 PORTVERSION=	0.04006
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -41,6 +42,9 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^\s*(test_requires|auto_install|recommends|configure_requires)/ or /^my/ .. /^}\s*$$/' ${WRKSRC}/Makefile.PL
+
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' -print0 | ${XARGS} -0 ${RM}
 
 OPTIONS=	SQLITE "SQLite Support" Off \
 		MYSQL "MySQL Support" Off \
