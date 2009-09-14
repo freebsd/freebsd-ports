@@ -2412,6 +2412,7 @@ dokuwiki-devel                  ports/www/dokuwiki-devel
 dolly                           ports/sysutils/dolly
 dolly+                          ports/sysutils/dolly+
 dolphin                         ports/x11-fm/dolphin
+dolphin-plugins-mplayerthumbs   ports/deskutils/dolphin-plugins-mplayerthumbs
 dom4j                           ports/textproc/dom4j
 domc                            ports/textproc/domc
 domtools                        ports/dns/domtools
@@ -8874,6 +8875,7 @@ mod_fastcgi                     ports/www/mod_fastcgi
 mod_fcgid                       ports/www/mod_fcgid
 mod_fileiri                     ports/www/mod_fileiri
 mod_filter                      ports/www/mod_filter
+mod_flickr                      ports/www/mod_flickr
 mod_geoip                       ports/www/mod_geoip
 mod_geoip2                      ports/www/mod_geoip2
 mod_gzip                        ports/www/mod_gzip
@@ -18717,6 +18719,7 @@ portmaster                      ports/ports-mgmt/portmaster
 portmk                          ports/ports-mgmt/portmk
 portmon                         ports/net-mgmt/portmon
 portoseguro                     ports/x11/portoseguro
+portrac                         ports/ports-mgmt/portrac
 ports-mgmt_barry                ports/ports-mgmt/barry
 ports_at                        ports/science/at
 ports_binutils                  ports/devel/binutils
@@ -19688,6 +19691,7 @@ py-tofu                         ports/net/py-tofu
 py-toscawidgets                 ports/devel/py-ToscaWidgets
 py-trace2html                   ports/devel/py-trace2html
 py-traits                       ports/devel/py-traits
+py-traitsbackendwx              ports/x11-toolkits/py-traitsbackendwx
 py-transaction                  ports/devel/py-transaction
 py-trustedpickle                ports/security/py-trustedpickle
 py-turbocheetah                 ports/devel/py-turbocheetah
@@ -21758,6 +21762,7 @@ sqlclient                       ports/databases/sqlclient
 sqldeveloper                    ports/databases/sqldeveloper
 sqldjbdns                       ports/dns/sqldjbdns
 sqlgrey                         ports/mail/sqlgrey
+sqlite-ext-inet                 ports/databases/sqlite-ext-inet
 sqlite2                         ports/databases/sqlite2
 sqlite3                         ports/databases/sqlite3
 sqlite34                        ports/databases/sqlite34
