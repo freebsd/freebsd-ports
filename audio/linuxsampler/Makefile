@@ -24,9 +24,13 @@ CFLAGS+=	"-I${LOCALBASE}/include"
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget
 USE_LDCONFIG=	yes
-
-RESTRICTED=	"no commercial use"
-
+RESTRICTED=	no commercial use
 MAN1=		linuxsampler.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		Does not compile
+.endif
+
+.include <bsd.port.post.mk>
