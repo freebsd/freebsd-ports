@@ -7,6 +7,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	7.4
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.ipt.ru/pub/download/ \
 		http://people.freebsd.org/~bsam/download/
@@ -16,7 +17,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Mesa-based DRI libraries, drivers and binaries (Linux Ubuntu 9.0.4)
 
-CONFLICTS=	linux_dri-6.5.2006* linux-libGLU-[0-9]* linux_dri-[0-9]* linux-f8-dri-[0-9]* linux-f10-dri-[0-9]*
+CONFLICTS=	linux_dri-6.5.2006* linux-libGLU-[0-9]* linux_dri-[0-9]* linux-f8-dri-[0-9]* linux-f10-dri-[0-9]* \
+		linux-f10-libGLU-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes

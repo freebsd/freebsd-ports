@@ -7,7 +7,7 @@
 
 PORTNAME=	linux_dri-devel
 PORTVERSION=	6.5.20060624
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
 DISTFILES=	Mesa-linux-bin-20060624.tar.bz2 \
@@ -18,7 +18,8 @@ MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Binary Linux DRI libraries for 3D hardware acceleration of linux apps
 
 CONFLICTS=	linux_dri-6.5 linux-libGLU-[0-9]* linux-f8-dri-[0-9]* \
-		linux-f8-libGLU-[0-9]* linux-f10-dri-[0-9]* linux-dri-[0-9]*
+		linux-f8-libGLU-[0-9]* linux-f10-dri-[0-9]* linux-dri-[0-9]* \
+		linux-f10-libGLU-[0-9]*
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
