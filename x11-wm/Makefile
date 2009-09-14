@@ -80,6 +80,7 @@
     SUBDIR += lxsession
     SUBDIR += lxsession-lite
     SUBDIR += matchbox
+    SUBDIR += matwm2
     SUBDIR += metacity
     SUBDIR += musca
     SUBDIR += nickleby
