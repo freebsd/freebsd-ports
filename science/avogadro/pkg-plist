@@ -4,6 +4,7 @@ include/avogadro/atom.h
 include/avogadro/bond.h
 include/avogadro/camera.h
 include/avogadro/color.h
+include/avogadro/color3f.h
 include/avogadro/colorbutton.h
 include/avogadro/cube.h
 include/avogadro/elementtranslator.h
@@ -98,7 +99,7 @@ lib/avogadro/tools/navigatetool.so
 lib/avogadro/tools/selectrotatetool.so
 lib/libavogadro.so
 lib/libavogadro.so.0
-lib/libavogadro.so.0.9.7
+lib/libavogadro.so.0.9.8
 %%PYTHON_SITELIBDIR%%/Avogadro.so
 %%DATADIR%%/builder/amino/d-ala.zmat
 %%DATADIR%%/builder/amino/d-arg.zmat
@@ -370,6 +371,7 @@ lib/libavogadro.so.0.9.7
 %%DATADIR%%/i18n/avogadro_ca.qm
 %%DATADIR%%/i18n/avogadro_cs.qm
 %%DATADIR%%/i18n/avogadro_de.qm
+%%DATADIR%%/i18n/avogadro_el.qm
 %%DATADIR%%/i18n/avogadro_en_CA.qm
 %%DATADIR%%/i18n/avogadro_en_GB.qm
 %%DATADIR%%/i18n/avogadro_es.qm
@@ -396,6 +398,7 @@ lib/libavogadro.so.0.9.7
 %%DATADIR%%/i18n/libavogadro_ca.qm
 %%DATADIR%%/i18n/libavogadro_cs.qm
 %%DATADIR%%/i18n/libavogadro_de.qm
+%%DATADIR%%/i18n/libavogadro_el.qm
 %%DATADIR%%/i18n/libavogadro_en_CA.qm
 %%DATADIR%%/i18n/libavogadro_en_GB.qm
 %%DATADIR%%/i18n/libavogadro_es.qm
