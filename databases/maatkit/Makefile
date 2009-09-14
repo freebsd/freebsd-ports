@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maatkit
-PORTVERSION=	4047
+PORTVERSION=	4623
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -26,8 +26,10 @@ MAN1=	maatkit.1p \
 		mk-checksum-filter.1p \
 		mk-deadlock-logger.1p \
 		mk-duplicate-key-checker.1p \
+		mk-fifo-split.1p \
 		mk-find.1p \
 		mk-heartbeat.1p \
+		mk-log-player.1p \
 		mk-parallel-dump.1p \
 		mk-parallel-restore.1p \
 		mk-profile-compact.1p \
@@ -35,13 +37,13 @@ MAN1=	maatkit.1p \
 		mk-query-profiler.1p \
 		mk-show-grants.1p \
 		mk-slave-delay.1p \
-		mk-fifo-split.1p \
 		mk-slave-find.1p \
 		mk-slave-move.1p \
 		mk-slave-prefetch.1p \
 		mk-slave-restart.1p \
 		mk-table-checksum.1p \
 		mk-table-sync.1p \
+		mk-upgrade.1p \
 		mk-visual-explain.1p
 
 .include <bsd.port.mk>
