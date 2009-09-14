@@ -469,6 +469,7 @@
     SUBDIR += linux-f10-gdk-pixbuf
     SUBDIR += linux-f10-imlib
     SUBDIR += linux-f10-jpeg
+    SUBDIR += linux-f10-libGLU
     SUBDIR += linux-f10-libmng
     SUBDIR += linux-f10-png
     SUBDIR += linux-f10-png10
