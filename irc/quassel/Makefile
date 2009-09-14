@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quassel
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -20,7 +20,7 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 CMAKE_USE_PTHREAD=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	MONO "Quassel standalone client" on \
 		CORE "Quassel core" on \
@@ -28,8 +28,7 @@ OPTIONS=	MONO "Quassel standalone client" on \
 
 CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
 		-DWANT_CORE=${QUASSEL_CORE} \
-		-DWANT_QTCLIENT=${QUASSEL_CLIENT} \
-		-DWITH_PHONON=OFF
+		-DWANT_QTCLIENT=${QUASSEL_CLIENT}
 
 .include <bsd.port.pre.mk>
 
