@@ -1,0 +1,71 @@
+@comment $FreeBSD$
+lib/monodevelop/AddIns/BooBinding/BooShell.dll.mdb
+lib/monodevelop/AddIns/BooBinding/BooShell.dll
+lib/monodevelop/AddIns/BooBinding/BooBinding.dll.mdb
+lib/monodevelop/AddIns/BooBinding/BooBinding.dll
+lib/monodevelop/AddIns/BooBinding/locale/ca/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/cs/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/da/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/de/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/es/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/fr/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/gl/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/hu/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/id/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/it/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/ja/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/nl/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/pl/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/pt/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/pt_BR/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/ru/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/sl_SI/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/sv/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/tr/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/zh_CN/LC_MESSAGES/monodevelop-boo.mo
+lib/monodevelop/AddIns/BooBinding/locale/zh_TW/LC_MESSAGES/monodevelop-boo.mo
+libdata/pkgconfig/monodevelop-boo.pc
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/zh_TW/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/zh_TW
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/zh_CN/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/zh_CN
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/tr/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/tr
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/sv/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/sv
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/sl_SI/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/sl_SI
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/ru/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/ru
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/pt_BR/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/pt_BR
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/pt/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/pt
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/pl/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/pl
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/nl/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/nl
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/ja/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/ja
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/it/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/it
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/id/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/id
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/hu/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/hu
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/gl/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/gl
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/fr/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/fr
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/es/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/es
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/de/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/de
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/da/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/da
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/cs/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/cs
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/ca/LC_MESSAGES
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale/ca
+@dirrmtry lib/monodevelop/AddIns/BooBinding/locale
+@dirrmtry lib/monodevelop/AddIns/BooBinding
