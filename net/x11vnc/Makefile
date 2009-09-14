@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	x11vnc
-PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTVERSION=	0.9.7
 CATEGORIES=	net
 MASTER_SITES=	SF/libvncserver/${PORTNAME}/${PORTVERSION}
 
@@ -24,7 +23,9 @@ USE_XORG=	x11 xdamage xfixes xrandr xinerama xext xtst xau xrender xdmcp recordp
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_OPENSSL=	yes
 USE_ICONV=	yes
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
