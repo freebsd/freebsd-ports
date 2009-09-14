@@ -1,5 +1,5 @@
---- config.pro.orig	Mon Nov 22 06:08:19 2004
-+++ config.pro	Wed Jun 22 14:30:39 2005
+--- config.pri.orig	2009-07-22 10:39:01.000000000 +0200
++++ config.pri	2009-07-22 10:43:17.000000000 +0200
 @@ -8,7 +8,7 @@
  # Freetype location
  #
@@ -7,17 +7,17 @@
 -FREETYPE_INCLUDE  = /usr/include/freetype2
 +FREETYPE_INCLUDE  = $${LOCALBASE}/include/freetype2
  # Path to "libfreetype.so" (if not in a standard library directory)
- #FREETYPE_LIBS    = /usr/lib
+ #FREETYPE_LIBPATH = /usr/lib
  # --------------------------------------------------------------------
-@@ -53,6 +53,7 @@
+@@ -39,6 +39,7 @@
  #IPEPREFIX  = /usr
  #IPEPREFIX  = /opt/ipe-6.0
  #
 +IPEPREFIX=$${PREFIX}
- isEmpty( IPEPREFIX ) {
+ !win32:isEmpty( IPEPREFIX ) {
    error( "You need to specify IPEPREFIX!")
  }
-@@ -76,7 +77,7 @@
+@@ -62,7 +63,7 @@
  # IPEDOCDIR will contain the Ipe documentation (mostly html files)
  #
  isEmpty( IPEDOCDIR ) {
@@ -26,7 +26,7 @@
  }
  #
  # IPELANGDIR will contain Ipe UI translations (none exist yet)
-@@ -85,15 +86,15 @@
+@@ -71,11 +72,11 @@
  #
  # IPEMANDIR will contain the Ipe manual pages
  #
@@ -38,10 +38,14 @@
 -IPEFONTMAP = $${IPEPREFIX}/share/ipe/$${IPEVERS}/fontmap.xml
 +IPEFONTMAP = $${IPEPREFIX}/share/ipe/fontmap.xml
  #
+ # The standard key assignment of Ipe
+ #
+@@ -84,7 +85,7 @@
+ #
  # The HTML browser started to read the on-line Ipe documentation.
- # (not used if compiled against KDE)
--IPEBROWSER = mozilla
+ #
+-IPEBROWSER = sensible-browser
 +IPEBROWSER = $${WWWBROWSER}
+ #
  # --------------------------------------------------------------------
  # Standard definitions --- don't change
- CONFIG      += warn_on release
