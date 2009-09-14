@@ -487,6 +487,7 @@
     SUBDIR += linux-ut2004-demo
     SUBDIR += linux-virtual-jay-peak
     SUBDIR += linux-warsow
+    SUBDIR += linux-worldofgoo-demo
     SUBDIR += linwarrior
     SUBDIR += liquidwar
     SUBDIR += lm-solve
