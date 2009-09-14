@@ -49,27 +49,25 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>nginx security advisory reports:</p>
+	<p>nginx development team reports:</p>
 	<blockquote cite="http://nginx.net/CHANGES">
-	  <p>Chris Ries discovered that nginx, a high-performance HTTP server,
-	    reverse proxy and IMAP/POP3 proxy server, is vulnerable to a buffer
-	    underflow when processing certain HTTP requests.  An attacker can
-	    use this to execute arbitrary code with the rights of the worker
-	    process or possibly perform denial of service attacks by repeatedly
-	    crashing worker processes via a specially crafted URL in an HTTP
-	    request.</p>
+	  <p>A segmentation fault might occur in worker process while 
+	     specially crafted request handling.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2009-2629</cvename>
       <url>http://nginx.net/CHANGES</url>
+      <mlist msgid="20090914155338.GA2529@ngolde.de">http://lists.debian.org/debian-security-announce/2009/msg00205.html</mlist>
     </references>
     <dates>
       <discovery>2009-09-14</discovery>
       <entry>2009-09-14</entry>
+      <modified>2009-09-15</modified>
     </dates>
   </vuln>
+
   <vuln vid="6e8f54af-a07d-11de-a649-000c2955660f">
     <topic>ikiwiki -- insufficient blacklisting in teximg plugin</topic>
     <affects>
