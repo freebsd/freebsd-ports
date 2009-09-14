@@ -1,0 +1,20 @@
+--- Makefile.orig	2009-09-09 16:21:44.000000000 +0400
++++ Makefile	2009-09-09 18:28:24.000000000 +0400
+@@ -1,6 +1,5 @@
+-prefix  = /usr/local
+-XROOT   = /usr/X11R6
+-CC      = cc
++prefix  = ${PREFIX}
++XROOT   = ${LOCALBASE}
+ 
+ CFLAGS  += -lXext -lX11 -I$(XROOT)/include -L$(XROOT)/lib
+ #CFLAGS  += -DDEBUG -ggdb3 # -DDEBUG_EVENTS -DSYNC
+@@ -17,7 +16,7 @@
+ 		./makeheader *.c > all.h
+ 
+ install:	matwm2
+-		install -s matwm2 $(prefix)/bin
++		${BSD_INSTALL_PROGRAM} matwm2 $(prefix)/bin
+ 
+ deinstall:
+ 		rm -f $(prefix)/bin/matwm2
