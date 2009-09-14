@@ -36,6 +36,7 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/back/red_wht.png
 %%DATADIR%%/data/back/sea_land.png
 %%DATADIR%%/data/back/space.png
+%%DATADIR%%/data/back/volcano.png
 %%DATADIR%%/data/ball/atom/atom-glow
 %%DATADIR%%/data/ball/atom/atom-glow.png
 %%DATADIR%%/data/ball/atom/atom-inner.map
@@ -60,18 +61,6 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/ball/blinky/blinky-outer.sol
 %%DATADIR%%/data/ball/blinky/blinky.obj
 %%DATADIR%%/data/ball/blinky/blinky.png
-%%DATADIR%%/data/ball/bonus-ball/bonus-ball
-%%DATADIR%%/data/ball/bonus-ball/bonus-ball-solid.map
-%%DATADIR%%/data/ball/bonus-ball/bonus-ball-solid.sol
-%%DATADIR%%/data/ball/bonus-ball/bonus-ball.png
-%%DATADIR%%/data/ball/bowling-ball/bowling-ball
-%%DATADIR%%/data/ball/bowling-ball/bowling-ball-solid.map
-%%DATADIR%%/data/ball/bowling-ball/bowling-ball-solid.sol
-%%DATADIR%%/data/ball/bowling-ball/bowling-ball.png
-%%DATADIR%%/data/ball/crystal-ball/crystal-ball
-%%DATADIR%%/data/ball/crystal-ball/crystal-ball-solid.map
-%%DATADIR%%/data/ball/crystal-ball/crystal-ball-solid.sol
-%%DATADIR%%/data/ball/crystal-ball/crystal-ball.png
 %%DATADIR%%/data/ball/earth/earth-atmos
 %%DATADIR%%/data/ball/earth/earth-atmos.png
 %%DATADIR%%/data/ball/earth/earth-cloud
@@ -86,10 +75,6 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/ball/earth/earth-outer.sol
 %%DATADIR%%/data/ball/earth/earth-solid.map
 %%DATADIR%%/data/ball/earth/earth-solid.sol
-%%DATADIR%%/data/ball/eightball/eightball
-%%DATADIR%%/data/ball/eightball/eightball-solid.map
-%%DATADIR%%/data/ball/eightball/eightball-solid.sol
-%%DATADIR%%/data/ball/eightball/eightball.png
 %%DATADIR%%/data/ball/eyeball/eyeball
 %%DATADIR%%/data/ball/eyeball/eyeball-solid.map
 %%DATADIR%%/data/ball/eyeball/eyeball-solid.sol
@@ -131,10 +116,6 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/ball/saturn/saturn-solid.sol
 %%DATADIR%%/data/ball/saturn/saturn-surface
 %%DATADIR%%/data/ball/saturn/saturn-surface.jpg
-%%DATADIR%%/data/ball/smiley/smiley
-%%DATADIR%%/data/ball/smiley/smiley-solid.map
-%%DATADIR%%/data/ball/smiley/smiley-solid.sol
-%%DATADIR%%/data/ball/smiley/smiley.png
 %%DATADIR%%/data/ball/snowglobe/snowglobe-atlas
 %%DATADIR%%/data/ball/snowglobe/snowglobe-atlas.jpg
 %%DATADIR%%/data/ball/snowglobe/snowglobe-inner.map
@@ -164,7 +145,9 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/bgm/track3.ogg
 %%DATADIR%%/data/bgm/track4.ogg
 %%DATADIR%%/data/bgm/track5.ogg
+%%DATADIR%%/data/bgm/track6.ogg
 %%DATADIR%%/data/courses.txt
+%%DATADIR%%/data/gui/ball.nbr
 %%DATADIR%%/data/gui/demo1.nbr
 %%DATADIR%%/data/gui/demo2.nbr
 %%DATADIR%%/data/gui/help1.jpg
@@ -210,6 +193,8 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/map-back/jupiter.sol
 %%DATADIR%%/data/map-back/ocean.map
 %%DATADIR%%/data/map-back/ocean.sol
+%%DATADIR%%/data/map-back/volcano.map
+%%DATADIR%%/data/map-back/volcano.sol
 %%DATADIR%%/data/map-ckk/01.map
 %%DATADIR%%/data/map-ckk/01.sol
 %%DATADIR%%/data/map-ckk/02.map
@@ -815,10 +800,14 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/mtrl/blue-natural.png
 %%DATADIR%%/data/mtrl/blue-sea
 %%DATADIR%%/data/mtrl/blue-sea.png
+%%DATADIR%%/data/mtrl/blue-wave
+%%DATADIR%%/data/mtrl/blue-wave.png
 %%DATADIR%%/data/mtrl/blue.png
 %%DATADIR%%/data/mtrl/border-carpet
 %%DATADIR%%/data/mtrl/border-carpet.jpg
 %%DATADIR%%/data/mtrl/brass
+%%DATADIR%%/data/mtrl/brass-faceted
+%%DATADIR%%/data/mtrl/brass-faceted.jpg
 %%DATADIR%%/data/mtrl/brass.jpg
 %%DATADIR%%/data/mtrl/brick
 %%DATADIR%%/data/mtrl/brick-small
@@ -954,10 +943,10 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/mtrl/goal-special
 %%DATADIR%%/data/mtrl/goal-special.png
 %%DATADIR%%/data/mtrl/goal.png
+%%DATADIR%%/data/mtrl/green
 %%DATADIR%%/data/mtrl/green-gas
 %%DATADIR%%/data/mtrl/green-gas.png
-%%DATADIR%%/data/mtrl/green-glass
-%%DATADIR%%/data/mtrl/green-glass.png
+%%DATADIR%%/data/mtrl/green.png
 %%DATADIR%%/data/mtrl/hole
 %%DATADIR%%/data/mtrl/hole.png
 %%DATADIR%%/data/mtrl/invisible
@@ -1163,14 +1152,21 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/png/hills3.png
 %%DATADIR%%/data/png/io.png
 %%DATADIR%%/data/png/jupiter.png
+%%DATADIR%%/data/png/lava.png
+%%DATADIR%%/data/png/lava_mask3.png
+%%DATADIR%%/data/png/lava_wave.png
 %%DATADIR%%/data/png/loops1.png
 %%DATADIR%%/data/png/loops2.png
 %%DATADIR%%/data/png/loops3.png
+%%DATADIR%%/data/png/meteorite.png
 %%DATADIR%%/data/png/moon.png
 %%DATADIR%%/data/png/mount1.png
 %%DATADIR%%/data/png/mount2.png
 %%DATADIR%%/data/png/part.png
 %%DATADIR%%/data/png/shadow.png
+%%DATADIR%%/data/png/smoke1.png
+%%DATADIR%%/data/png/smoke2.png
+%%DATADIR%%/data/png/smoke3.png
 %%DATADIR%%/data/png/space.png
 %%DATADIR%%/data/png/squiggle.png
 %%DATADIR%%/data/png/stars1.png
@@ -1178,6 +1174,23 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/png/stars3.png
 %%DATADIR%%/data/png/stars4.png
 %%DATADIR%%/data/png/sun.png
+%%DATADIR%%/data/png/v-cloud1.png
+%%DATADIR%%/data/png/v-cloud2.png
+%%DATADIR%%/data/png/v-cloud3.png
+%%DATADIR%%/data/png/v-cloud4.png
+%%DATADIR%%/data/png/v-cloud5.png
+%%DATADIR%%/data/png/v-hill1.png
+%%DATADIR%%/data/png/v-hill2.png
+%%DATADIR%%/data/png/v-hill3.png
+%%DATADIR%%/data/png/v-hill4.png
+%%DATADIR%%/data/png/v-mountains1.png
+%%DATADIR%%/data/png/v-mountains2.png
+%%DATADIR%%/data/png/v-mountains3.png
+%%DATADIR%%/data/png/v-sun.png
+%%DATADIR%%/data/png/volcano1.png
+%%DATADIR%%/data/png/volcano2.png
+%%DATADIR%%/data/png/volcano3.png
+%%DATADIR%%/data/png/volcano4.png
 %%DATADIR%%/data/png/wave.png
 %%DATADIR%%/data/set-easy.txt
 %%DATADIR%%/data/set-fwp.txt
@@ -1383,7 +1396,6 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/snd/time.ogg
 %%DATADIR%%/data/snd/tock.ogg
 %%DATADIR%%/data/ttf/DejaVuSans-Bold.ttf
-%%DATADIR%%/data/ttf/VeraBd.ttf
 share/pixmaps/neverball.png
 share/pixmaps/neverputt.png
 @dirrm %%DATADIR%%/data/ttf
@@ -1422,17 +1434,12 @@ share/pixmaps/neverputt.png
 @dirrm %%DATADIR%%/data/bgm
 @dirrm %%DATADIR%%/data/ball/sootsprite
 @dirrm %%DATADIR%%/data/ball/snowglobe
-@dirrm %%DATADIR%%/data/ball/smiley
 @dirrm %%DATADIR%%/data/ball/saturn
 @dirrm %%DATADIR%%/data/ball/reactor
 @dirrm %%DATADIR%%/data/ball/magic-eightball
 @dirrm %%DATADIR%%/data/ball/lava
 @dirrm %%DATADIR%%/data/ball/eyeball
-@dirrm %%DATADIR%%/data/ball/eightball
 @dirrm %%DATADIR%%/data/ball/earth
-@dirrm %%DATADIR%%/data/ball/crystal-ball
-@dirrm %%DATADIR%%/data/ball/bowling-ball
-@dirrm %%DATADIR%%/data/ball/bonus-ball
 @dirrm %%DATADIR%%/data/ball/blinky
 @dirrm %%DATADIR%%/data/ball/basic-ball
 @dirrm %%DATADIR%%/data/ball/atom

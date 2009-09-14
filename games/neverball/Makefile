@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	neverball
-PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTVERSION=	1.5.3
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/neverball/ \
 		http://offload2.icculus.org:9090/neverball/ \
@@ -19,10 +18,11 @@ COMMENT=	Tilt the floor to guide a ball through an obstacle course
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.10:${PORTSDIR}/graphics/jpeg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
+		physfs.1:${PORTSDIR}/devel/physfs
 
 USE_GL=		gl
-USE_SDL=	ttf
+USE_SDL=	sdl ttf
 USE_GMAKE=	yes
 MAKE_ENV+=	ENABLE_WII=0
 MAKE_JOBS_SAFE=	yes
@@ -41,19 +41,18 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|./data|${DATADIR}/data|g ; \
-		s|./locale|${PREFIX}/share/locale|g' \
-			${WRKSRC}/share/base_config.h
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g ; \
-		s| -O2| ${CFLAGS}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|./data|${DATADIR}/data|g; \
+		s|./locale|${PREFIX}/share/locale|g; \
+		s|sdl-config|${SDL_CONFIG}|g; \
+		s| -O2| ${CFLAGS}|g; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${DATADIR}/data
 	@(cd ${WRKSRC}/data ; ${COPYTREE_SHARE} . ${DATADIR}/data/)
-	@(cd ${WRKSRC}/dist ; ${INSTALL_MAN} ${MAN6} ${MAN1PREFIX}/man/man6/)
+	@(cd ${WRKSRC}/dist ; ${INSTALL_MAN} ${MAN6} ${MAN6PREFIX}/man/man6/)
 	@${MKDIR} ${PREFIX}/share/applications
-	@${MKDIR} ${PREFIX}/share/pixmaps
 .for f in neverball neverputt
 	@${INSTALL_DATA} ${WRKSRC}/dist/${f}.desktop \
 		${PREFIX}/share/applications/
