@@ -6,33 +6,24 @@
 #
 
 PORTNAME=	ipe
-PORTVERSION=	6.0.p23
-PORTREVISION=	4
+DISTVERSION=	6.0pre32patch1
 CATEGORIES=	graphics
-MASTER_SITES=	http://ipe.compgeom.org/ \
-		http://tclab.kaist.ac.kr/~otfried/Ipe/
-DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/pre/}
-EXTRACT_SUFX=	-src.tar.gz
+MASTER_SITES=	http://luaforge.net/frs/download.php/4052/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tkjacobsen@gmail.com
 COMMENT=	Extensible drawing editor
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
-USE_GHOSTSCRIPT_RUN=	yes
-
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-USE_QT_VER=	3
-MAKE_ENV+=	QTDIR=${QTDIR}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
+USE_GHOSTSCRIPT_RUN=	yes
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib
-MAN1=		figtoipe.1 ipe.1 ipe5toxml.1 ipetoipe.1 ipetopng.1
+USE_QT_VER=	4
+QT_COMPONENTS=	gui qt3support qmake_build moc_build uic_build rcc_build
+MAN1=		ipe.1 ipetoipe.1 ipetopng.1
 
 .include <bsd.port.pre.mk>
-
-QTDIR?=		${QT_PREFIX}
-QMAKE?=		${LOCALBASE}/bin/qmake
 
 pre-fetch:
 .if !defined(WITH_TEXMF_PREFIX)
@@ -56,15 +47,13 @@ WITH_TEXMF_PREFIX?=	${PREFIX}/share/texmf-dist
 # If you change a variable, you _must_ reconfigure.
 # If it is not on this list, it will _not_ be propagated.
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	${QMAKE} -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
-		"PREFIX=${PREFIX}"  "WWWBROWSER=${WITH_BROWSER}" \
-		"CC=${CC}" "CXX=${CXX}" "LINK=${CXX}" "LINK_SHLIB=${CXX}" \
-		"LOCALBASE=${LOCALBASE}" main.pro
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} -unix PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
+		WWWBROWSER=${WITH_BROWSER}  main.pro
 
 post-install:
-	cd ${WRKSRC}/.. && mkdir -p ${DATADIR} && \
-	sed s@/usr/share/texmf@${WITH_TEXMF_PREFIX}@ \
+	cd ${WRKSRC}/.. && ${MKDIR} ${DATADIR} && \
+	${SED} s@/usr/share/texmf@${WITH_TEXMF_PREFIX}@ \
 	< tetex-fontmap.xml >  	${DATADIR}/fontmap.xml
 
 .include <bsd.port.post.mk>

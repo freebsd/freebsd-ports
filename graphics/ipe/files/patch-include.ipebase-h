@@ -1,0 +1,11 @@
+--- include/ipebase.h.orig	2009-07-22 14:23:05.000000000 +0200
++++ include/ipebase.h	2009-07-22 14:24:15.000000000 +0200
+@@ -43,7 +43,7 @@
+ 
+ typedef unsigned char uchar;
+ 
+-#if defined(WIN32) || defined(__APPLE__) 
++#if defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__)
+ typedef unsigned short ushort;
+ typedef unsigned int uint;
+ typedef unsigned long int ulong;
