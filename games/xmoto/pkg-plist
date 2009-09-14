@@ -22,6 +22,7 @@ bin/xmoto
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/sk_SK/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/tr_TR/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xmoto.mo
 %%DATADIR%%/Textures/Fonts/DejaVuSans.ttf
 %%DATADIR%%/Textures/Musics/MadeiraStew.ogg
@@ -36,8 +37,8 @@ bin/xmoto
 @dirrm %%DATADIR%%/Textures/Fonts
 @dirrm %%DATADIR%%/Textures
 @dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_TW
+%%NLS%%@dirrmtry share/locale/tr_TR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tr_TR
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv_SE
 %%NLS%%@dirrmtry share/locale/sk_SK/LC_MESSAGES
