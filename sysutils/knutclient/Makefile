@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/ \
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	A visual client for UPS system NUT
 
+MAKE_JOBS_UNSAFE=	yes
+
 BUILD_DEPENDS=	automake>=0:${PORTSDIR}/devel/automake19
 
 USE_KDELIBS_VER=3
