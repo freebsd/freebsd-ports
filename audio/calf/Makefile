@@ -25,15 +25,18 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dssi -L${LOCALBASE}/lib
-
-BROKEN=		Does not compile
-
 MAN1=		calfjackhost.1
 MAN7=		calf.7
 INSTALLS_ICONS=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		Does not compile
+.endif
 
 post-patch:
 		@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} \
 			${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
