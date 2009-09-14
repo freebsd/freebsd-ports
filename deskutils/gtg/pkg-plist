@@ -151,6 +151,8 @@ share/locale/zh_CN/LC_MESSAGES/gtg.mo
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/tools
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/taskeditor
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/taskbrowser

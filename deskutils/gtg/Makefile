@@ -7,9 +7,9 @@
 
 PORTNAME=	gtg
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome python
-MASTER_SITES=	http://launchpad.net/gtg/trunk/${PORTVERSION}/+download/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://launchpad.net/gtg/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	GTD organizer for the GNOME desktop environment
@@ -19,8 +19,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/configobj.py:${PORTSDIR}/devel/py-configobj \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
 FETCH_ARGS=	-pRr
-USE_GNOME=	pygtk2
-USE_PYTHON=	2.5+
+USE_GNOME=	pygtk2 desktopfileutils
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 
 MAN1=		gtg.1
