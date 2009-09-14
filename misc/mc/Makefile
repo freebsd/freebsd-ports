@@ -31,7 +31,7 @@ USE_GNOME=	glib20
 .endif
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:19 automake:19
+USE_AUTOTOOLS=	aclocal:19 autoconf:262 automake:19
 ACLOCAL_ARGS=	-I m4
 AUTOMAKE_ARGS=	-c -a
 
