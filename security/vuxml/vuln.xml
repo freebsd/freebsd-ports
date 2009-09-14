@@ -35,6 +35,31 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ee23aa09-a175-11de-96c0-0011098ad87f">
+    <topic>horde-base -- three vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>horde-base</name>
+	<range><lt>3.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Horde team reports a vulnerability that allows overwriting
+	   of local files and two XSS vulnerabilities.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.horde.org/ticket/?id=8311</url>
+      <url>http://bugs.horde.org/ticket/?id=8399</url>
+      <url>http://cvs.horde.org/diff.php/horde/docs/CHANGES?r1=1.515.2.558&amp;r2=1.515.2.559</url>
+    </references>
+    <dates>
+      <discovery>2009-05-28</discovery>
+      <entry>2009-09-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="152b27f0-a158-11de-990c-e5b1d4c882e0"> 
     <topic>nginx -- remote denial of service vulnerability</topic>
     <affects>
