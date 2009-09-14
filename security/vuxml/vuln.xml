@@ -35,6 +35,41 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="152b27f0-a158-11de-990c-e5b1d4c882e0"> 
+    <topic>nginx -- remote denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><lt>0.7.62</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><lt>0.8.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>nginx security advisory reports:</p>
+	<blockquote cite="http://nginx.net/CHANGES">
+	  <p>Chris Ries discovered that nginx, a high-performance HTTP server,
+	    reverse proxy and IMAP/POP3 proxy server, is vulnerable to a buffer
+	    underflow when processing certain HTTP requests.  An attacker can
+	    use this to execute arbitrary code with the rights of the worker
+	    process or possibly perform denial of service attacks by repeatedly
+	    crashing worker processes via a specially crafted URL in an HTTP
+	    request.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-2629</cvename>
+      <url>http://nginx.net/CHANGES</url>
+    </references>
+    <dates>
+      <discovery>2009-09-14</discovery>
+      <entry>2009-09-14</entry>
+    </dates>
+  </vuln>
   <vuln vid="6e8f54af-a07d-11de-a649-000c2955660f">
     <topic>ikiwiki -- insufficient blacklisting in teximg plugin</topic>
     <affects>
