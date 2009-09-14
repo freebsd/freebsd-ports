@@ -7,6 +7,7 @@
 
 PORTNAME=	ptlib
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ptlib/2.6
@@ -135,6 +136,7 @@ PLIST_SUB+=	V4L="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-lpt|-lpt-${PORTVERSION:C/.[0-9]+$//g}|' ${WRKSRC}/ptlib.pc.in
 	@${REINPLACE_CMD} -e 's|SDL11/|SDL/|' ${WRKSRC}/src/ptclib/vsdl.cxx \
 		${WRKSRC}/include/ptclib/vsdl.h
 .if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
