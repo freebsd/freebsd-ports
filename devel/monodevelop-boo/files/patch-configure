@@ -1,0 +1,8 @@
+--- configure.orig	2008-03-02 11:51:45.000000000 +0100
++++ configure	2008-03-02 11:51:52.000000000 +0100
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ VERSION=0.19
+ PACKAGE=monodevelop-boo
+ prefix=/usr/local

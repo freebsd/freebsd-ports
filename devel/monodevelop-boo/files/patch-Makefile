@@ -1,0 +1,53 @@
+--- Makefile.orig	2008-03-02 14:28:23.000000000 +0100
++++ Makefile	2008-03-02 14:28:43.000000000 +0100
+@@ -26,14 +26,14 @@
+ 	@set . $$MAKEFLAGS; final_exit=:; \
+ 	case $$2 in --unix) shift ;; esac; \
+ 	case $$2 in *=*) dk="exit 1" ;; *k*) dk=: ;; *) dk="exit 1" ;; esac; \
+-	make pre-$*-hook prefix=$(prefix) ; \
++	$(MAKE) pre-$*-hook prefix=$(prefix) ; \
+ 	for dir in $(SUBDIRS); do \
+ 		case $$dir in \
+-		.) make $*-local || { final_exit="exit 1"; $$dk; };;\
+-		*) (cd $$dir && make $*) || { final_exit="exit 1"; $$dk; };;\
++		.) $(MAKE) $*-local || { final_exit="exit 1"; $$dk; };;\
++		*) (cd $$dir && $(MAKE) $*) || { final_exit="exit 1"; $$dk; };;\
+ 		esac \
+ 	done; \
+-	make post-$*-hook prefix=$(prefix) ; \
++	$(MAKE) post-$*-hook prefix=$(prefix) ; \
+ 	$$final_exit
+ 
+ $(CONFIG_MAKE):
+@@ -47,18 +47,18 @@
+ dist: $(CONFIG_MAKE)
+ 	rm -rf $(PACKAGE)-$(VERSION)
+ 	mkdir $(PACKAGE)-$(VERSION)
+-	make pre-dist-hook distdir=$$distdir
++	$(MAKE) pre-dist-hook distdir=$$distdir
+ 	for dir in $(SUBDIRS); do \
+ 		pkgdir=`pwd`/$(PACKAGE)-$(VERSION); \
+ 		mkdir $$pkgdir/$$dir || true; \
+ 		case $$dir in \
+-		.) make dist-local distdir=$$pkgdir || exit 1;; \
+-		*) (cd $$dir; make dist-local distdir=$$pkgdir/$$dir) || exit 1;; \
++		.) $(MAKE) dist-local distdir=$$pkgdir || exit 1;; \
++		*) (cd $$dir; $(MAKE) dist-local distdir=$$pkgdir/$$dir) || exit 1;; \
+ 		esac \
+ 	done
+-	(make dist-local distdir=$(PACKAGE)-$(VERSION))
+-	make
+-	make post-dist-hook distsir=$$distdir
++	($(MAKE) dist-local distdir=$(PACKAGE)-$(VERSION))
++	$(MAKE)
++	$(MAKE) post-dist-hook distsir=$$distdir
+ 	tar czvf $(PACKAGE)-$(VERSION).tar.gz $(PACKAGE)-$(VERSION)
+ 	rm -rf $(PACKAGE)-$(VERSION)
+ 	@echo "=========================================="
+@@ -69,5 +69,5 @@
+ 	(mkdir test; cd test;  \
+ 	tar xzvf ../$(PACKAGE)-$(VERSION).tar.gz; cd $(PACKAGE)-$(VERSION); \
+ 	./configure --prefix=$$(cd `pwd`/..; pwd); \
+-	make && make install && make dist);
++	$(MAKE) && $(MAKE) install && $(MAKE) dist);
+ 	rm -rf test
