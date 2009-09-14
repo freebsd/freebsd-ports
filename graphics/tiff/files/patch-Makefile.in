@@ -1,15 +1,18 @@
---- Makefile.in.orig	Mon Dec 20 20:41:46 2004
-+++ Makefile.in	Wed Dec 22 08:02:37 2004
-@@ -302,13 +302,6 @@
- uninstall-info-am:
+--- Makefile.in.orig	2009-08-21 00:25:16.000000000 +0200
++++ Makefile.in	2009-08-24 22:55:02.000000000 +0200
+@@ -380,16 +380,6 @@
+ 	-rm -f libtool config.lt
  install-dist_docDATA: $(dist_doc_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
--	@list='$(dist_doc_DATA)'; for p in $$list; do \
+-	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
+-	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
+-	for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  f=$(am__strip_dir) \
--	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
--	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
 -	done
  
  uninstall-dist_docDATA:
