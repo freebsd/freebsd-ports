@@ -955,6 +955,7 @@
     SUBDIR += xwpick
     SUBDIR += xzgv
     SUBDIR += yafray
+    SUBDIR += yagf
     SUBDIR += yap
     SUBDIR += zgv
     SUBDIR += zimg

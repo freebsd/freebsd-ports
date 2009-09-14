@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2009-08-16 20:54:20.000000000 +0400
++++ CMakeLists.txt	2009-09-14 13:09:48.000000000 +0400
+@@ -25,12 +25,12 @@
+ #QT4_CREATE_TRANSLATION(yagf_ru.qm src/mainform.cpp ${MOC_SRCS} ${UI_HEADERS} src/yagf_ru.ts)
+ #set(CMAKE_INSTALL_PREFIX /usr/)
+ if (NOT DEFINED  ${CMAKE_INSTALL_PREFIX})
+-set(CPACK_INSTALL_PREFIX /usr/)
+-set (CMAKE_INSTALL_PREFIX /usr/)
++set(CPACK_INSTALL_PREFIX ${PREFIX})
++set(CMAKE_INSTALL_PREFIX ${PREFIX})
+ endif()
+ install_targets(/bin/ yagf)
+ if (CMAKE_SIZEOF_VOID_P EQUAL 8)
+-        set (LIB_PATH_SUFFIX 64)
++        set (LIB_PATH_SUFFIX "")
+         set_property (GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS TRUE)
+ endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
+ install_targets(/lib${LIB_PATH_SUFFIX}/yagf xspreload)
