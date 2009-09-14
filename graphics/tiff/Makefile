@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	tiff
-PORTVERSION=	3.8.2
-PORTREVISION=	4
+PORTVERSION=	3.9.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://dl1.maptools.org/dl/libtiff/
@@ -37,7 +36,7 @@ MAN1=	bmp2tiff.1 tiff2pdf.1 fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 \
 	ppm2tiff.1 ras2tiff.1 raw2tiff.1 rgb2ycbcr.1 sgi2tiff.1 \
 	thumbnail.1 tiff2bw.1 tiff2ps.1 tiff2rgba.1 tiffcmp.1 tiffcp.1 \
 	tiffdither.1 tiffdump.1 tiffgt.1 tiffinfo.1 tiffmedian.1 \
-	tiffset.1 tiffsplit.1 tiffsv.1
+	tiffset.1 tiffsplit.1 tiffsv.1 tiffcrop.1
 MAN3=	TIFFClose.3tiff TIFFDataWidth.3tiff TIFFError.3tiff TIFFFlush.3tiff \
 	TIFFGetField.3tiff TIFFOpen.3tiff TIFFPrintDirectory.3tiff \
 	TIFFRGBAImage.3tiff TIFFReadDirectory.3tiff \

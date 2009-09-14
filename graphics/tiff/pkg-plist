@@ -14,6 +14,7 @@ bin/tiff2ps
 bin/tiff2rgba
 bin/tiffcmp
 bin/tiffcp
+bin/tiffcrop
 bin/tiffdither
 bin/tiffdump
 %%WITH_X11%%bin/tiffgt
@@ -116,6 +117,7 @@ lib/libtiffxx.so.4
 %%PORTDOCS%%%%DOCSDIR%%/man/tiff2rgba.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/tiffcmp.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/tiffcp.1.html
+%%PORTDOCS%%%%DOCSDIR%%/man/tiffcrop.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/tiffdither.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/tiffdump.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/tiffgt.1.html
@@ -159,6 +161,7 @@ lib/libtiffxx.so.4
 %%PORTDOCS%%%%DOCSDIR%%/v3.8.0.html
 %%PORTDOCS%%%%DOCSDIR%%/v3.8.1.html
 %%PORTDOCS%%%%DOCSDIR%%/v3.8.2.html
+%%PORTDOCS%%%%DOCSDIR%%/v3.9.0beta.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
