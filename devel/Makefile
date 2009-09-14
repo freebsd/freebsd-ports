@@ -873,6 +873,7 @@
     SUBDIR += monodevelop-boo
     SUBDIR += monodevelop-database
     SUBDIR += monodevelop-java
+    SUBDIR += monodevelop-vala
     SUBDIR += monotone
     SUBDIR += monotone-viz
     SUBDIR += motor
