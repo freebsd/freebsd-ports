@@ -49,6 +49,10 @@ PLIST_DIRS=	%%DATADIR%%
 USE_GCC=	3.4
 .endif
 
+.if ${GECKO} == "seamonkey" && ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: drops core
+.endif
+
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
