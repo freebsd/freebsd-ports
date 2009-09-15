@@ -2,6 +2,7 @@ bin/g[
 bin/gbase64
 bin/gbasename
 bin/gcat
+bin/gchcon
 bin/gchgrp
 bin/gchmod
 bin/gchown
@@ -29,7 +30,6 @@ bin/gfold
 bin/ggroups
 bin/ghead
 bin/ghostid
-bin/ghostname
 bin/gid
 bin/ginstall
 bin/gjoin
@@ -42,6 +42,7 @@ bin/gmd5sum
 bin/gmkdir
 bin/gmkfifo
 bin/gmknod
+bin/gmktemp
 bin/gmv
 bin/gnice
 bin/gnl
@@ -58,6 +59,7 @@ bin/gpwd
 bin/greadlink
 bin/grm
 bin/grmdir
+bin/gruncon
 bin/gseq
 bin/gsha1sum
 bin/gsha224sum
@@ -70,17 +72,19 @@ bin/gsleep
 bin/gsort
 bin/gsplit
 bin/gstat
+bin/gstdbuf
 bin/gstty
-bin/gsu
 bin/gsum
 bin/gsync
 bin/gtac
 bin/gtail
 bin/gtee
 bin/gtest
+bin/gtimeout
 bin/gtouch
 bin/gtr
 bin/gtrue
+bin/gtruncate
 bin/gtsort
 bin/gtty
 bin/guname
@@ -94,6 +98,7 @@ bin/gwc
 bin/gwho
 bin/gwhoami
 bin/gyes
+lib/coreutils/glibstdbuf.so
 %%NLS%%share/locale/af/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/af/LC_TIME/coreutils.mo
 %%NLS%%share/locale/be/LC_MESSAGES/coreutils.mo
@@ -126,20 +131,22 @@ bin/gyes
 %%NLS%%share/locale/gl/LC_TIME/coreutils.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/hu/LC_TIME/coreutils.mo
+%%NLS%%share/locale/id/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/id/LC_TIME/coreutils.mo
 %%NLS%%share/locale/it/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/it/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/ja/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/ko/LC_TIME/coreutils.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/lt/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/ms/LC_TIME/coreutils.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/nb/LC_TIME/coreutils.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/nl/LC_TIME/coreutils.mo
-%%NLS%%share/locale/no/LC_MESSAGES/coreutils.mo
-%%NLS%%share/locale/no/LC_TIME/coreutils.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/pl/LC_TIME/coreutils.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/coreutils.mo
@@ -148,8 +155,6 @@ bin/gyes
 %%NLS%%share/locale/pt_BR/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/ru/LC_TIME/coreutils.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/coreutils.mo
-%%NLS%%share/locale/rw/LC_TIME/coreutils.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/sk/LC_TIME/coreutils.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/coreutils.mo
@@ -158,19 +163,27 @@ bin/gyes
 %%NLS%%share/locale/sv/LC_TIME/coreutils.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/tr/LC_TIME/coreutils.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/uk/LC_TIME/coreutils.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/vi/LC_TIME/coreutils.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/zh_CN/LC_TIME/coreutils.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/zh_TW/LC_TIME/coreutils.mo
+@dirrm lib/coreutils
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_TIME
 %%NLS%%@dirrmtry share/locale/zh_CN/LC_TIME
+%%NLS%%@dirrmtry share/locale/vi/LC_TIME
+%%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk/LC_TIME
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tr/LC_TIME
 %%NLS%%@dirrmtry share/locale/sv/LC_TIME
 %%NLS%%@dirrmtry share/locale/sl/LC_TIME
 %%NLS%%@dirrmtry share/locale/sk/LC_TIME
 %%NLS%%@dirrmtry share/locale/rw/LC_TIME
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
 %%NLS%%@dirrmtry share/locale/ru/LC_TIME
 %%NLS%%@dirrmtry share/locale/pt_BR/LC_TIME
 %%NLS%%@dirrmtry share/locale/pt/LC_TIME
@@ -179,9 +192,13 @@ bin/gyes
 %%NLS%%@dirrmtry share/locale/nl/LC_TIME
 %%NLS%%@dirrmtry share/locale/nb/LC_TIME
 %%NLS%%@dirrmtry share/locale/ms/LC_TIME
+%%NLS%%@dirrmtry share/locale/lt/LC_TIME
 %%NLS%%@dirrmtry share/locale/ko/LC_TIME
 %%NLS%%@dirrmtry share/locale/ja/LC_TIME
 %%NLS%%@dirrmtry share/locale/it/LC_TIME
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id/LC_TIME
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/hu/LC_TIME
 %%NLS%%@dirrmtry share/locale/gl/LC_TIME
 %%NLS%%@dirrmtry share/locale/ga/LC_TIME
