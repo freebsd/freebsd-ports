@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+PRE-INSTALL)
+	GITUSER=${GITUSER:-git}
+	GITGROUP=${GITGROUP:-git}
+	GITHOME=${GITHOME:-${PKG_PREFIX}/${GITUSER}}
+	UID=211
+	GID=211
+
+	if pw group show "${GITGROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GITGROUP}\", so I will use it."
+	else
+		if pw groupadd ${GITGROUP} -g ${GID}; then
+			echo "Added group \"${GITGROUP}\"."
+		else
+			echo "Adding group \"${GITGROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${GITUSER}" 2>/dev/null; then
+		echo "You already have a user \"${GITUSER}\", so I will use it."
+	else
+		if pw useradd ${GITUSER} -u ${UID} -g ${GITGROUP} -h - -d ${GITHOME} \
+			-c "gitosis user"
+		then
+			echo "Added user \"${GITUSER}\"."
+		else
+			echo "Adding user \"${GITUSER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ! [ -x ~${GITUSER} ] ; then
+		install -m 755 -o ${GITUSER} -g ${GITGROUP} -d ${GITHOME}
+	fi
+	;;
+esac
