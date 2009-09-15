@@ -1,0 +1,42 @@
+--- configure.ac.orig	2008-12-03 00:00:50.000000000 +0100
++++ configure.ac	2009-09-11 01:48:48.000000000 +0200
+@@ -4,18 +4,11 @@
+ 
+ 
+ AC_PREREQ(2.57)
+-AC_INIT(setiathome_enhanced, 6.03, ports@setiathome.ssl.berkeley.edu)
+-svnrev="`svn info | grep Revision:`"
++AC_INIT(setiathome_enhanced, 6.08, ports@setiathome.ssl.berkeley.edu)
+ 
+-if test -n "${svnrev}" ; then
+-  AC_REVISION("${svnrev}") 
+-  AC_DEFINE_UNQUOTED(SVN_REV,"${svnrev}",
++AC_REVISION([$Revision: 412 $])
++AC_DEFINE(SVN_REV,"$Revision: 412 $",
+     [Define to be the subversion revision number])
+-else
+-  AC_REVISION([$Revision: 316 $])
+-  AC_DEFINE(SVN_REV,"$Revision: 316 $",
+-    [Define to be the subversion revision number])
+-fi
+ 
+ AC_CANONICAL_TARGET
+ AM_INIT_AUTOMAKE(dist-zip)
+@@ -320,7 +313,7 @@
+ dnl AC_CHECK_LIB([dl], [dlopen],
+ dnl   AC_DEFINE([HAVE_LIBDL],[1],[Define to 1 if you have the dl library]))
+ AC_LANG(C++)
+-SAH_CHECK_HEALPIX
++dnl SAH_CHECK_HEALPIX
+ 
+ 
+ if test "${ac_cv_cxx_compiler_gnu}" = "yes" ; then
+@@ -408,7 +401,7 @@
+ AM_CONDITIONAL(ENABLE_GUI, [test "${enable_graphics}" = yes])
+ AM_CONDITIONAL(LINUX, [test -n "`echo ${target} | grep linux`"])
+ AM_CONDITIONAL(I386, [test -n "`echo ${target} | grep i.86`"])
+-AM_CONDITIONAL(X86_64, [test -n "`echo ${target} | grep 'x86_64'`"])
++AM_CONDITIONAL(X86_64, [test -n "`echo ${target} | egrep 'x86_64|amd64'`"])
+ AM_CONDITIONAL(PPC, [test -n "`echo ${target} | grep 'powerpc'`" -o -n "`echo ${target} | grep 'ppc'`" ])
+ 
+ AC_CACHE_SAVE
