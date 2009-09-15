@@ -1,0 +1,44 @@
+bin/choqok
+share/applications/kde4/choqok.desktop
+share/apps/choqok/choqok.notifyrc
+share/apps/choqok/choqokui.rc
+@dirrm share/apps/choqok
+share/config.kcfg/choqok.kcfg
+share/icons/hicolor/128x128/apps/choqok.png
+share/icons/hicolor/16x16/actions/retweet.png
+share/icons/hicolor/16x16/apps/choqok.png
+share/icons/hicolor/22x22/apps/choqok.png
+share/icons/hicolor/32x32/apps/choqok.png
+share/icons/hicolor/48x48/apps/choqok.png
+share/icons/hicolor/64x64/apps/choqok.png
+share/locale/bg/LC_MESSAGES/choqok.mo
+share/locale/cs/LC_MESSAGES/choqok.mo
+share/locale/da/LC_MESSAGES/choqok.mo
+share/locale/de/LC_MESSAGES/choqok.mo
+share/locale/el/LC_MESSAGES/choqok.mo
+share/locale/en_GB/LC_MESSAGES/choqok.mo
+share/locale/es/LC_MESSAGES/choqok.mo
+share/locale/et/LC_MESSAGES/choqok.mo
+share/locale/ga/LC_MESSAGES/choqok.mo
+share/locale/gl/LC_MESSAGES/choqok.mo
+share/locale/hu/LC_MESSAGES/choqok.mo
+share/locale/is/LC_MESSAGES/choqok.mo
+share/locale/km/LC_MESSAGES/choqok.mo
+share/locale/lt/LC_MESSAGES/choqok.mo
+share/locale/ms/LC_MESSAGES/choqok.mo
+share/locale/nds/LC_MESSAGES/choqok.mo
+share/locale/nl/LC_MESSAGES/choqok.mo
+share/locale/pt/LC_MESSAGES/choqok.mo
+share/locale/pt_BR/LC_MESSAGES/choqok.mo
+share/locale/ro/LC_MESSAGES/choqok.mo
+share/locale/ru/LC_MESSAGES/choqok.mo
+share/locale/sk/LC_MESSAGES/choqok.mo
+share/locale/sv/LC_MESSAGES/choqok.mo
+share/locale/tr/LC_MESSAGES/choqok.mo
+share/locale/uk/LC_MESSAGES/choqok.mo
+share/locale/zh_CN/LC_MESSAGES/choqok.mo
+share/locale/zh_TW/LC_MESSAGES/choqok.mo
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km

@@ -86,6 +86,7 @@
     SUBDIR += chems
     SUBDIR += cherokee
     SUBDIR += chimera
+    SUBDIR += choqok
     SUBDIR += chpasswd
     SUBDIR += chtml
     SUBDIR += cl-lml
