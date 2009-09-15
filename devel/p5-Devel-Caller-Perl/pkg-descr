@@ -1,0 +1,4 @@
+This module allows a method to get at arguments passed to subroutines
+higher up in the call stack.
+
+WWW: http://search.cpan.org/dist/Devel-Caller-Perl/
