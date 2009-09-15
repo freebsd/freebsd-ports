@@ -6,8 +6,8 @@
 trap trap_exit INT
 
 # Initialize crucial values for the parent, and export them for the children
-if [ -z "$PARENT_PID" ]; then
-	PARENT_PID=$$
+if [ -z "$PM_PARENT_PID" ]; then
+	PM_PARENT_PID=$$
 	: ${TMPDIR:=/tmp}
 	UPGRADE_TOOL=portmaster
 
@@ -19,7 +19,7 @@ if [ -z "$PARENT_PID" ]; then
 			PATH="%%LOCALBASE%%/libexec/ccache:$PATH"
 		fi
 	fi
-	export PARENT_PID TMPDIR UPGRADE_TOOL PATH
+	export PM_PARENT_PID TMPDIR UPGRADE_TOOL PATH
 
 	set -o allexport
 	# Read a global rc file first
@@ -42,7 +42,7 @@ umask 022
 version () {
 	local rcs cvs
 
-	rcs='$Id: portmaster,v 2.47 2009/08/24 23:45:48 dougb Exp $'
+	rcs='$Id: portmaster,v 2.54 2009/09/15 07:50:11 dougb Exp $'
 	cvs='$FreeBSD$'
 
 	rcs="${rcs#*,v }" ; rcs="${rcs%% *}"
@@ -56,7 +56,7 @@ version () {
 
 fail () {
 	echo '' ; echo "===>>> $1" ; echo "===>>> Aborting update"
-	[ "$$" -eq "$PARENT_PID" ] && trap_exit fail
+	[ "$$" -eq "$PM_PARENT_PID" ] && trap_exit fail
 	safe_exit 1
 }
 
@@ -70,7 +70,7 @@ trap_exit () {
 		echo "===>>> Exiting due to signal"
 	fi
 
-	if [ "$$" -eq "$PARENT_PID" ]; then
+	if [ "$$" -eq "$PM_PARENT_PID" ]; then
 		local n=0
 		while ps -axo pid,ppid,command | grep -v egrep | egrep -q "(make -DBATCH checksum|/fetch |\[sh\])"; do
 			# Protect from infinite loop if there is another fetch
@@ -80,7 +80,7 @@ trap_exit () {
 		done
 		if [ -n "$HIDE_BUILD" ]; then
 			local logs file
-			logs=`echo ${TMPDIR}/port_log-${PARENT_PID}-*`
+			logs=`echo ${TMPDIR}/port_log-${PM_PARENT_PID}-*`
 			case "$logs" in *\*) unset logs ;; esac
 			if [ -n "$logs" ]; then
 				echo ''
@@ -98,7 +98,7 @@ trap_exit () {
 kill_bad_children () {
 	local mypgid pid ppid pgid command ; IFS=' '
 
-	mypgid=`ps -o pgid -p $PARENT_PID` ; mypgid=${mypgid##*PGID[^0-9]}
+	mypgid=`ps -o pgid -p $PM_PARENT_PID` ; mypgid=${mypgid##*PGID[^0-9]}
 
 	ps -axo pid,ppid,pgid,command | sed '1d' |
 	    while read pid ppid pgid command; do
@@ -112,7 +112,7 @@ kill_bad_children () {
 			;;
 		*)	[ $pgid -eq $mypgid ] || continue
 			case "$command" in
-			*" $0 "*) [ $pid -ne $PARENT_PID ] && pm_kill $pid ;;
+			*" $0 "*) [ $pid -ne $PM_PARENT_PID ] && pm_kill $pid ;;
 			*'make -DBATCH checksum'*|*'/fetch '*|\[sh\])
 				pm_kill $pid ;;
 			esac
@@ -124,7 +124,7 @@ kill_bad_children () {
 safe_exit () {
 	local files p f show_list
 
-	if [ "$$" -eq "$PARENT_PID" ]; then
+	if [ "$$" -eq "$PM_PARENT_PID" ]; then
 		if [ -s "$DI_FILES" ]; then
 			grep -q '%%%%%%%%%%%%' $DI_FILES || kill_bad_children
 		fi
@@ -159,7 +159,7 @@ safe_exit () {
 			pm_rmdir_s $pbu
 		fi
 
-		for f in ${TMPDIR}/f-${PARENT_PID}-*; do pm_unlink $f ; done
+		for f in ${TMPDIR}/f-${PM_PARENT_PID}-*; do pm_unlink $f ; done
 
 		case "$DISPLAY_LIST" in
 		*' '*)	if [ -n "$TRAP" ]; then
@@ -256,6 +256,8 @@ usage () {
 	echo ''
 	echo "${0##*/} --check-port-dbdir [-v]"
 	echo ''
+	echo "${0##*/} --list-origins"
+	echo ''
 	echo "${0##*/} -h|--help"
 	echo "${0##*/} --version"
 	echo ''
@@ -278,6 +280,7 @@ usage () {
 	echo '-d always clean distfiles'
 	echo "-m <arguments for the 'make' command line>"
 	echo "-x <avoid building or updating ports that match this pattern>"
+	echo '   Can be specified more than once'
 	echo ''
 	echo '--show-work list what ports are and would be installed'
 	echo ''
@@ -301,6 +304,8 @@ usage () {
 	echo ''
 	echo "--check-port-dbdir check for stale entries in $port_dbdir"
 	echo ''
+	echo "--list-origins list directories from $pd for root and leaf ports"
+	echo ''
 	echo '-h|--help display this help message'
 	echo '--version display the version number'
 	echo ''
@@ -310,9 +315,11 @@ usage () {
 
 pm_cd     () { builtin cd $1 2>/dev/null || return 1; }
 pm_kill   () { /bin/kill $* >/dev/null 2>/dev/null; }
-pm_make   () { /usr/bin/make $PM_MAKE_ARGS $*; }
+pm_make   () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH;
+		 unset -v MASTER_RB_LIST CONFIG_SEEN_LIST;
+		 /usr/bin/make $PM_MAKE_ARGS $*; ); }
 pm_make_b () { /usr/bin/make $PM_MAKE_ARGS BEFOREPORTMK=bpm $*; }
-pm_mktemp () { /usr/bin/mktemp -t f-${PARENT_PID}-$1; }
+pm_mktemp () { /usr/bin/mktemp -t f-${PM_PARENT_PID}-$1; }
 pm_unlink () { /bin/test -e $1 && /bin/unlink $1; }
 
 # Superuser versions for commands that need root privileges
@@ -323,7 +330,9 @@ pm_unlink () { /bin/test -e $1 && /bin/unlink $1; }
 pm_find_s         () { $PM_SU_CMD /usr/bin/find $*; }
 pm_install_s      () { $PM_SU_CMD /usr/bin/install -o root \
 			-g wheel -m 644 $1 $2; }
-pm_make_s         () { $PM_SU_CMD /usr/bin/make $PM_MAKE_ARGS $*; }
+pm_make_s         () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH;
+			 unset -v MASTER_RB_LIST CONFIG_SEEN_LIST;
+			 $PM_SU_CMD /usr/bin/make $PM_MAKE_ARGS $*; ); }
 pm_mkdir_s        () { $PM_SU_CMD /bin/mkdir -p $1; }
 pm_pkg_delete_s   () { $PM_SU_CMD /usr/sbin/pkg_delete $*; }
 pm_rm_s           () { $PM_SU_CMD /bin/rm $*; }
@@ -334,7 +343,7 @@ pm_unlink_s       () { /bin/test -e $1 && $PM_SU_CMD /bin/unlink $1; }
 
 # Do this here so it can use the fancy functions above, and default values
 # can be overridden in the rc files
-if [ "$$" -eq "$PARENT_PID" ]; then
+if [ "$$" -eq "$PM_PARENT_PID" ]; then
 	if [ -z "$pd" ]; then
 		pd=`pm_make_b -f/usr/share/mk/bsd.port.mk -V PORTSDIR`
 		[ -n "$pd" ] || fail 'The value of PORTSDIR cannot be empty'
@@ -364,6 +373,7 @@ case "$1" in
 --clean-distfiles-all)	CLEAN_DISTFILES=clean_distfiles_all ; ALL=cda ;;
 --check-depends)	CHECK_DEPENDS=check_depends ;;
 --check-port-dbdir)	CHECK_PORT_DBDIR=check_port_dbdir ;;
+--list-origins)		LIST_ORIGINS=list_origins ;;
 --show-work)		SHOW_WORK=show ; RECURSE_THOROUGH=thorough ; shift ;;
 --force-config)		export FORCE_CONFIG=force_config ; shift ;;
 --*)			echo "Illegal option $1" ; echo ''
@@ -628,6 +638,28 @@ globstrip () {
 	echo $in
 }
 
+ports_by_category () {
+	local pkg
+	[ -n "$PM_VERBOSE" ] && echo "===>>> Sorting ports by category"
+
+	for pkg in $pdb/*; do
+		if [ -s "$pkg/+REQUIRED_BY" ]; then
+			if grep -ql '^@pkgdep ' $pkg/+CONTENTS 2>/dev/null; then
+				branches="$branches ${pkg#$pdb/}"
+			else
+				trunks="$trunks ${pkg#$pdb/}"
+			fi
+		else
+			if grep -ql '^@pkgdep ' $pkg/+CONTENTS 2>/dev/null; then
+				leaves="$leaves ${pkg#$pdb/}"
+			else
+				[ -d "$pkg" ] || continue
+				roots="$roots ${pkg#$pdb/}"
+			fi
+		fi
+	done
+}
+
 #=============== End functions relevant to --features and main ===============
 #=============== Begin code relevant only to --features ===============
 
@@ -763,6 +795,17 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
 	exit 0
 fi
 
+if [ -n "$LIST_ORIGINS" ]; then
+	ports_by_category
+
+	for iport in $roots $leaves; do
+		origin=`origin_from_pdb $iport`
+		echo $origin
+	done
+
+	exit 0
+fi
+
 #=============== End code relevant only to --features ===============
 
 # Save switches for potential child processes
@@ -798,26 +841,26 @@ while getopts 'BCDFGHKLRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
 	u)	echo "===>>> The -u option has been deprecated" ; echo '' ;;
 	v)	PM_VERBOSE=vopt; ARGS="-v $ARGS" ;;
 	w)	SAVE_SHARED=wopt; ARGS="-w $ARGS" ;;
-	x)	EXCL=`globstrip $OPTARG` ;;
+	x)	case "$OPTARG" in
+		-*)	fail 'The -x option requires an argument' ;;
+		esac
+		PM_EXCL="${PM_EXCL}`globstrip ${OPTARG}` " ;;
 	*)	echo '' ; echo "===>>> Try ${0##*/} --help"; exit 1 ;;
 	esac
 done
 shift $(( $OPTIND - 1 ))
 
+[ -n "$PM_EXCL" ] && export PM_EXCL
+
 # Error checking for getopts
-[ -n "$PM_FORCE" ] && unset INTERACTIVE_UPDATE
+[ -n "$PM_FORCE" -a "$INTERACTIVE_UPDATE" ] &&
+	fail "The -f and -i options are mutually exclusive"
 [ -n "$BACKUP" -a -n "$NO_BACKUP" ] &&
 	fail "The -b and -B options are mutually exclusive"
 [ -n "$ALWAYS_SCRUB_DISTFILES" -a -n "$DONT_SCRUB_DISTFILES" ] &&
 	fail "The -d and -D options are mutually exclusive"
 [ -n "$FETCH_ONLY" -a -n "$NO_RECURSIVE_CONFIG" ] &&
 	fail "The -F and -G options are mutually exclusive"
-if [ -n "$EXCL" ]; then
-	case "$EXCL" in
-	-*)	fail 'The -x option requires an argument' ;;
-	*)	ARGS="-x $EXCL $ARGS" ;;
-	esac
-fi
 
 #=============== Begin functions for getopts features and main ===============
 
@@ -946,6 +989,8 @@ check_for_updates () {
 		return 0
 	fi
 
+	# No need for check_exclude here because it is already
+	# run in the places that call check_for_updates().
 	check_interactive $iport $port_ver || return 0
 	update_port $iport $port_ver || return 1
 	return 0
@@ -1250,28 +1295,6 @@ delete_all_distfiles () {
 	find -d $distdir -type d -empty -delete
 }
 
-ports_by_category () {
-	local pkg
-	[ -n "$PM_VERBOSE" ] && echo "===>>> Sorting ports by category"
-
-	for pkg in $pdb/*; do
-		if [ -s "$pkg/+REQUIRED_BY" ]; then
-			if grep -ql '^@pkgdep ' $pkg/+CONTENTS 2>/dev/null; then
-				branches="$branches ${pkg#$pdb/}"
-			else
-				trunks="$trunks ${pkg#$pdb/}"
-			fi
-		else
-			if grep -ql '^@pkgdep ' $pkg/+CONTENTS 2>/dev/null; then
-				leaves="$leaves ${pkg#$pdb/}"
-			else
-				[ -d "$pkg" ] || continue
-				roots="$roots ${pkg#$pdb/}"
-			fi
-		fi
-	done
-}
-
 #=============== End functions for getopts features and main ===============
 #=============== Begin code relevant only to getopts features ===============
 
@@ -1458,16 +1481,22 @@ check_interactive () {
 }
 
 check_exclude () {
-	[ -n "$EXCL" ] || return 0
+	[ -n "$PM_EXCL" ] || return 0
 
-	case "$1" in
-	*${EXCL}*)
-	if [ -n "$PM_VERBOSE" ]; then
-		echo "===>>> Skipping $1"
-		echo "       because it matches the pattern: *${EXCL}*"
-	fi
-	return 1 ;;
-	esac
+	local pat
+
+	for pat in $PM_EXCL; do
+		case "$1" in
+		*${pat}*)
+		if [ -n "$PM_VERBOSE" ]; then
+			echo "===>>> Skipping $1"
+			echo "       because it matches the pattern: *${pat}*"
+			echo ''
+		fi
+		return 1 ;;
+		esac
+	done
+
 	return 0
 }
 
@@ -1478,7 +1507,7 @@ check_fetch_only () {
 
 	echo ''
 	sleep=5
-	while `ls ${TMPDIR}/f-${PARENT_PID}-fetchlog-* >/dev/null 2>&1`; do
+	while `ls ${TMPDIR}/f-${PM_PARENT_PID}-fetchlog-* >/dev/null 2>&1`; do
 		nf=`ps -ax | grep [f]etch | wc -l`
 		nf=${nf##* }
 		fetches=fetches ; [ "$nf" -eq 1 ] && fetches=fetch
@@ -1503,7 +1532,7 @@ update_port () {
 
 	echo "===>>> Launching child to update ${1#$pd/}${update_to}"
 
-	[ -n "$DEPTH" ] && echo "	$DEPTH >> ${1#$pd/}"
+	[ -n "$PM_DEPTH" ] && echo "	$PM_DEPTH >> ${1#$pd/}"
 
 	[ -n "$doing_dep_check" -o \
 	    \( -n "$UPDATE_ALL" -a -n "$CONFIG_ONLY" \) ] &&
@@ -1570,9 +1599,7 @@ dependency_check () {
 		fi
 
 		[ -n "$PM_VERBOSE" ] &&
-		    echo "===>>> Checking dependency: $d_port"
-
-		check_exclude $origin || continue
+		    echo "===>>> Checking dependency: $origin"
 
 		# Do this first to catch out of date dependencies
 		if [ -n "$CONFIG_ONLY" ]; then
@@ -1604,6 +1631,12 @@ dependency_check () {
 		# In case d_port changed above
 		origin="${d_port#$pd/}" ; iport=`iport_from_origin ${origin}`
 
+		if [ -n "$iport" ]; then
+			check_exclude $iport || continue
+		else
+			check_exclude $origin || continue
+		fi
+
 		udf="$pdb/$iport/PM_UPGRADE_DONE_FLAG"
 		if [ -n "$PM_FORCE" -a -n "$iport" ]; then
 			if ! check_restart_and_udf $udf $iport; then
@@ -1630,10 +1663,12 @@ dependency_check () {
 		fi
 
 		if [ -n "$iport" ]; then
+			# No check_interactive here because we want to tell
+			# the user whether or not there is a new version first
 			check_for_updates $iport $origin || fail 'Update failed'
 		else
-			check_interactive $d_port || continue
-			update_port $d_port
+			check_interactive $origin || continue
+			update_port $origin
 		fi
 	done
 	[ -n "$CONFIG_ONLY" ] && unset doing_dep_check
@@ -1642,10 +1677,10 @@ dependency_check () {
 		safe_exit
 	elif [ -n "$CONFIG_ONLY" ]; then
 	echo "===>>> Recursive 'make config' check complete for $portdir"
-		case "$DEPTH" in *\>\>*) echo "	$DEPTH" ;; esac
+		case "$PM_DEPTH" in *\>\>*) echo "	$PM_DEPTH" ;; esac
 	else
 		echo "===>>> Dependency check complete for $portdir"
-		case "$DEPTH" in *\>\>*) echo "	$DEPTH" ;; esac
+		case "$PM_DEPTH" in *\>\>*) echo "	$PM_DEPTH" ;; esac
 	fi
 	echo ''
 }
@@ -1667,7 +1702,7 @@ multiport () {
 	PM_MULTI_PORTS=':' ; PM_MULTI_BUILT=':'
 	export PM_MULTI_PORTS PM_MULTI_BUILT
 
-	local worklist port portlist
+	local port worklist_temp worklist portlist
 
 	# Expand globs and check that the directories exist
 	for port in $@; do
@@ -1675,16 +1710,12 @@ multiport () {
 		case "$port" in
 		*/*)	port=${port#$pd/}
 			if [ -d "$pd/${port}" ]; then
-				worklist="$worklist $port"
-				portlist="${portlist}\t${port}\n"
-				PM_MULTI_PORTS="${PM_MULTI_PORTS}${port}:"
+				worklist_temp="$worklist_temp $port"
 			else
 				fail "$pd/${port} does not exist"
 			fi ;;
 		*)	if [ -d "$pdb/$port" ]; then
-				worklist="$worklist $port"
-				portlist="${portlist}\t${port}\n"
-				PM_MULTI_PORTS="${PM_MULTI_PORTS}${port}:"
+				worklist_temp="$worklist_temp $port"
 			else
 				# Keep synched with code in MAIN
 				local glob_dirs dir
@@ -1693,13 +1724,20 @@ multiport () {
 				case "$glob_dirs" in
 				*\*|'') fail "$pdb/$port does not exist" ;;
 				*)	for dir in $glob_dirs; do
-				worklist="$worklist ${dir#$pdb/}"
-				portlist="${portlist}\t${dir#$pdb/}\n"
-				PM_MULTI_PORTS="${PM_MULTI_PORTS}${dir#$pdb/}:"
+				worklist_temp="$worklist_temp ${dir#$pdb/}"
 					done ;;
 				esac
 			fi ;;
 		esac
+	done
+
+	for port in $worklist_temp; do
+		check_exclude $port || continue
+		check_interactive $port || continue
+
+		worklist="$worklist $port"
+		portlist="${portlist}\t${port}\n"
+		PM_MULTI_PORTS="${PM_MULTI_PORTS}${port}:"
 	done
 
 	echo "===>>> Working on multiple ports:"
@@ -1707,7 +1745,6 @@ multiport () {
 
 	if [ -n "$CONFIG_ONLY" ]; then
 		for port in $worklist; do
-			check_interactive $port || continue
 			($0 $ARGS $port) || fail "Update for $port failed"
 			. $IPC_SAVE
 		done
@@ -1729,7 +1766,6 @@ multiport () {
 			[ -d "$pdb/$port" ] || continue
 			;;
 		esac
-		check_interactive $port || continue
 		($0 $ARGS $port) || fail "Update for $port failed"
 		. $IPC_SAVE
 	done
@@ -1740,10 +1776,10 @@ multiport () {
 
 # INIT Parent
 
-if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" ]; then
+if [ "$$" -eq "$PM_PARENT_PID" -a -z "$SHOW_WORK" ]; then
 	CUR_DEPS=':' ; DISPLAY_LIST='' ; INSTALLED_LIST=''
-	DEPTH='' ; IPC_SAVE=`pm_mktemp IPC_SAVE`
-	export CUR_DEPS DISPLAY_LIST INSTALLED_LIST DEPTH IPC_SAVE
+	PM_DEPTH='' ; IPC_SAVE=`pm_mktemp IPC_SAVE`
+	export CUR_DEPS DISPLAY_LIST INSTALLED_LIST PM_DEPTH IPC_SAVE
 
 	PORTS_LOCALBASE=`pm_make_b -f/usr/share/mk/bsd.port.mk -V LOCALBASE`
 	[ -n "$PORTS_LOCALBASE" ] ||
@@ -1821,7 +1857,7 @@ all_config () {
 
 		check_exclude $iport || continue
 
-		DEPTH=
+		PM_DEPTH=
 		check_for_updates $iport $origin || fail 'Update failed'
 
 		CONFIG_SEEN_LIST="${CONFIG_SEEN_LIST}${origin}:"
@@ -1872,7 +1908,7 @@ all_config () {
 
 		case "$iport" in bsdpan-*) continue ;; esac
 
-		DEPTH=
+		PM_DEPTH=
 		if [ -n "$PM_FORCE" ]; then
 			udf="$pdb/$iport/PM_UPGRADE_DONE_FLAG"
 			if ! check_restart_and_udf $udf $iport; then
@@ -1974,7 +2010,7 @@ if [ ! -d "$pd/$portdir" ]; then
 	[ -n "$moved_npd" ] || no_valid_port
 	[ -d "$pd/$moved_npd" ] || no_valid_port
 
-	if [ "$$" -eq "$PARENT_PID" ]; then
+	if [ "$$" -eq "$PM_PARENT_PID" ]; then
 		$0 $ARGS -o $moved_npd $upg_port
 		safe_exit
 	else
@@ -2025,14 +2061,14 @@ case "$CONFIG_SEEN_LIST" in *:${portdir}:*) safe_exit ;; esac
 
 pm_cd $pd/$portdir || no_valid_port
 
-if [ -z "$DEPTH" ]; then
-	DEPTH=${upg_port:-$portdir}
+if [ -z "$PM_DEPTH" ]; then
+	PM_DEPTH=${upg_port:-$portdir}
 else
-	DEPTH="$DEPTH >> ${upg_port:-$portdir}"
+	PM_DEPTH="$PM_DEPTH >> ${upg_port:-$portdir}"
 fi
 
 echo ''
-[ "$$" -eq "$PARENT_PID" -a -n "$upg_port" ] &&
+[ "$$" -eq "$PM_PARENT_PID" -a -n "$upg_port" ] &&
 	echo "===>>> Currently installed version: $upg_port"
 echo "===>>> Port directory: $pd/$portdir"
 
@@ -2042,8 +2078,8 @@ check_state || {
 	safe_exit 1; }
 
 # Do not start this in the background until we are sure we are going to build
-if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" -a -z "$DONT_SCRUB_DISTFILES" \
-	-a -z "$FETCH_ONLY" ]; then
+if [ "$$" -eq "$PM_PARENT_PID" -a -z "$SHOW_WORK" \
+	-a -z "$DONT_SCRUB_DISTFILES" -a -z "$FETCH_ONLY" ]; then
 	echo ''; (read_distinfos)&
 fi
 
@@ -2053,13 +2089,13 @@ dofetch () {
 	echo "===>>> Launching 'make checksum' for $portdir in background"
 	fetchlog=`pm_mktemp fetchlog-${portdir#*/}`
 	(pm_make -DBATCH checksum >> $fetchlog 2>&1 && {
-	    rm -f ${TMPDIR}/f-${PARENT_PID}-*-${portdir#*/}.*; exit 0; }
+	    rm -f ${TMPDIR}/f-${PM_PARENT_PID}-*-${portdir#*/}.*; exit 0; }
 	    allfiles=`pm_make -V ALLFILES`
 	    pm_make delete-distfiles RESTRICTED_FILES="${allfiles}" \
 		>> $fetchlog 2>&1 &&
 	    echo "===>>> RE-STARTING FETCH <<<===" >> $fetchlog
 	    pm_make -DBATCH checksum >> $fetchlog 2>&1; \
-	    rm -f ${TMPDIR}/f-${PARENT_PID}-*-${portdir#*/}.* )&
+	    rm -f ${TMPDIR}/f-${PM_PARENT_PID}-*-${portdir#*/}.* )&
 }
 
 	# Handle the problem of manual fetching
@@ -2074,7 +2110,7 @@ dofetch () {
 		# Make sure that different ports using the same distfiles
 		# do not clobber each other's fetchs
 		for file in $distfiles; do
-		if ! ls ${TMPDIR}/f-${PARENT_PID}-${file}-* >/dev/null 2>&1
+		if ! ls ${TMPDIR}/f-${PM_PARENT_PID}-${file}-* >/dev/null 2>&1
 			then
 				pm_mktemp ${file}-${portdir#*/} >/dev/null
 			else
@@ -2118,7 +2154,7 @@ if [ -n "$CONFIG_ONLY" ]; then
 	[ -n "$UPDATE_REQ_BYS" -o -n "$URB_YES" ] &&
 		URB_DONE_LIST="${URB_DONE_LIST}${upg_port}:"
 
-	if [ ! "$$" -eq "$PARENT_PID" ]; then
+	if [ ! "$$" -eq "$PM_PARENT_PID" ]; then
 		# Save state for the parent process to read back in
 		echo "CONFIG_SEEN_LIST='$CONFIG_SEEN_LIST'" > $IPC_SAVE
 		safe_exit
@@ -2177,7 +2213,7 @@ if [ -z "$NO_DEP_UPDATES" ]; then
 		dependency_check all-depends-list
 	fi
 	cd $pd/$portdir
-elif [ -z "$NO_RECURSIVE_CONFIG" -a "$$" -eq "$PARENT_PID" ]; then
+elif [ -z "$NO_RECURSIVE_CONFIG" -a "$$" -eq "$PM_PARENT_PID" ]; then
 	echo "===>>> The 'make config' check found no dependencies to update"
 	echo ''
 fi
@@ -2191,7 +2227,7 @@ fi
 	pm_make clean NOCLEANDEPENDS=ncd || fail 'make clean failed'; echo ''; }
 
 sleep=3
-fl_read=`echo ${TMPDIR}/f-${PARENT_PID}-fetchlog-${portdir#*/}.*`
+fl_read=`echo ${TMPDIR}/f-${PM_PARENT_PID}-fetchlog-${portdir#*/}.*`
 while [ -f "$fl_read" ]; do
 	echo "===>>> Waiting on fetch & checksum for $portdir <<<==="
 	tail -10 $fl_read 2>/dev/null
@@ -2207,7 +2243,7 @@ done
 unset sleep
 
 if [ -n "$HIDE_BUILD" ]; then
-	port_log=`mktemp -t port_log-${PARENT_PID}-${portdir#*/}`
+	port_log=`mktemp -t port_log-${PM_PARENT_PID}-${portdir#*/}`
 	port_log_args=">> $port_log 2>&1"
 	echo "===>>> Logging build to $port_log"
 fi
@@ -2353,7 +2389,7 @@ if [ -n "$distfiles" ]; then
 		md5=`grep "^MD5 (${ds}${file})" $distinfo`
 		echo "DISTFILE:${ds}${file}:SIZE=${size##* }:SHA256=${sha256##* }:MD5=${md5##* }" >> $dist_list_temp
 		# Make sure any new distfiles get added to the list
-		[ -z "$DONT_SCRUB_DISTFILES" -a ! "$$" -eq "$PARENT_PID" ] &&
+		[ -z "$DONT_SCRUB_DISTFILES" -a ! "$$" -eq "$PM_PARENT_PID" ] &&
 			echo "${ds}$file" >> $DI_FILES
 	done
 
@@ -2420,7 +2456,7 @@ else
 	ilist="Installation of $portdir ($new_port)"
 fi
 
-if [ "$$" -ne "$PARENT_PID" -o -n "$UPDATE_REQ_BYS" ]; then
+if [ "$$" -ne "$PM_PARENT_PID" -o -n "$UPDATE_REQ_BYS" ]; then
 	echo "===>>> $ilist succeeded" ; echo ''
 fi
 
