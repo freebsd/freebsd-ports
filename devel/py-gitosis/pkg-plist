@@ -1,0 +1,92 @@
+@comment $FreeBSD$
+bin/gitosis-init
+bin/gitosis-run-hook
+bin/gitosis-serve
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/access.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/access.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/access.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/app.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/app.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/app.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/gitdaemon.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/gitdaemon.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/gitdaemon.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/gitweb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/gitweb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/gitweb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/group.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/group.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/group.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/init.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/init.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/init.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/repository.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/repository.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/repository.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/run_hook.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/run_hook.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/run_hook.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/serve.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/serve.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/serve.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/ssh.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/ssh.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/ssh.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/templates/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/templates/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/templates/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/templates/admin/hooks/post-update
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_access.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_access.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_access.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_gitdaemon.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_gitdaemon.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_gitdaemon.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_gitweb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_gitweb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_gitweb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_group.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_group.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_group.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_init.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_init.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_init.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_repository.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_repository.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_repository.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_run_hook.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_run_hook.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_run_hook.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_serve.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_serve.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_serve.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_ssh.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_ssh.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/test_ssh.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/test
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/templates/admin/hooks
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/templates/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gitosis
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+@dirrmtry git

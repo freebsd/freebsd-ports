@@ -1,0 +1,10 @@
+Manage git repositories, provide access to them over SSH, with tight
+access control and not needing shell accounts.
+
+Gitosis aims to make hosting git repos easier and safer. It manages
+multiple repositories under one user account, using SSH keys to
+identify users. End users do not need shell accounts on the server,
+they will talk to one shared account that will not let them run
+arbitrary commands.
+
+WWW: http://eagain.net/gitweb/?p=gitosis.git
