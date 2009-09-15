@@ -71,10 +71,12 @@ post-patch:
 .endif
 
 iotest cintltst intltest:
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
 	-${GMAKE} -C ${WRKSRC}/test
 	cd ${WRKSRC}/test/${.TARGET} && ${SETENV} \
 	    LD_LIBRARY_PATH=${WRKSRC}/lib:${WRKSRC}/tools/ctestfw \
 	    ./${.TARGET}
+.endif
 
 post-build test: iotest cintltst intltest
 
