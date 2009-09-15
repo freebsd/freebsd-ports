@@ -83,6 +83,7 @@ NCURSES			Adds ncurses console graphics support
 NHC98			Prefer/use nhc98 Haskell compiler
 NIS			Support for NIS/YP
 NLS			Native Language Support via gettext utilities
+NVIDIA_GL		Use libGL provided by NVidia binary drivers
 OGG			OGG multimedia container format
 OPENAL			Adds OpenAL support
 OPENGL			Adds OpenGL support
