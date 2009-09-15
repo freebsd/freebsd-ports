@@ -81,6 +81,7 @@ moinmoin:*:192:
 cups:*:193:
 sympa:*:200:
 dspam:*:202:
+git:*:211:
 bs:*:220:
 postgrey:*:225:
 aprsd:*:240:
