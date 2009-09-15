@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pygments
-PORTVERSION=	1.0
-#PORTREVISION=	0
+PORTVERSION=	1.1
+PORTREVISION=	0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
