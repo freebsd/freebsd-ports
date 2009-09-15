@@ -57,6 +57,7 @@ lib/compat/libpanel.so.3
 lib/compat/libpanelw.so.3
 lib/compat/libpcap.so.4
 lib/compat/libpmc.so.3
+lib/compat/libpthread.so.2
 lib/compat/libradius.so.2
 lib/compat/libreadline.so.6
 lib/compat/libroken.so.8
