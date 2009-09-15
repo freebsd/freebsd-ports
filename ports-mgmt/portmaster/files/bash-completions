@@ -1,0 +1,21 @@
+_portmaster () {
+	local cur
+	cur=${COMP_WORDS[COMP_CWORD]}
+
+	case "$cur" in
+	/usr/ports/*)
+		COMPREPLY=( $( compgen -d $cur ) ) ;;
+	*/*)	COMPREPLY=( $( compgen -d /usr/ports/$cur ) ) ;;
+	--*)	COMPREPLY=( $( compgen -W '--force-config --show-work \
+		--clean-distfiles --clean-distfiles-all	--check-depends \
+		--check-port-dbdir --list-origins --help --version' -- $cur ) )
+		;;
+	*)	COMPREPLY=( $( compgen -d /var/db/pkg/$cur ) )
+		COMPREPLY=( ${COMPREPLY[@]#/var/db/pkg/} )
+		COMPREPLY=( ${COMPREPLY[@]:-} $( compgen -d /usr/ports/$cur/ ) )
+		;;
+	esac
+
+	return 0
+}
+complete -F _portmaster portmaster
