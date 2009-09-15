@@ -33,4 +33,8 @@ MAN1=		linuxsampler.1
 BROKEN=		Does not compile
 .endif
 
+.if ${ARCH} == "sparc64"
+IGNORE=		Not yet ported to sparc64
+.endif
+
 .include <bsd.port.post.mk>
