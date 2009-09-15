@@ -22,8 +22,6 @@ USE_BISON=	build
 
 PERL_CONFIGURE=	yes
 
-BROKEN=		Does not compile
-
 MAN1=	vhier.1 vpassert.1 vppreproc.1 vrename.1
 
 MAN3=	Verilog::EditFiles.3 Verilog::Netlist::Logger.3 \
@@ -34,9 +32,16 @@ MAN3=	Verilog::EditFiles.3 Verilog::Netlist::Logger.3 \
 	Verilog::Netlist::File.3 Verilog::Netlist::Subclass.3 \
 	Verilog::Verilog-Perl.3 Verilog::Netlist::Interface.3 Verilog::Std.3
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/ s/ vsplitmodule//' \
 		${WRKSRC}/Makefile.PL
+
+post-configure:
+.if ${OSVERSION} < 700042
+	@${REINPLACE_CMD} -e 's|-O2|-O|g' ${WRKSRC}/Makefile
+.endif
 
 post-build:
 	cd ${WRKSRC} && make test
@@ -44,4 +49,4 @@ post-build:
 test:
 	make post-build
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
