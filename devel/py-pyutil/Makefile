@@ -21,4 +21,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0.8.0:${PORTSDIR}/devel/py-argpa
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=easy_install
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64
+.endif
+
+.include <bsd.port.post.mk>
