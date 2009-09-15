@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	tinymce
-PORTVERSION=	3.2.4.1
+PORTVERSION=	3.2.6
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TinyMCE/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	An open source Javascript HTML WYSIWYG editor for web sites
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
