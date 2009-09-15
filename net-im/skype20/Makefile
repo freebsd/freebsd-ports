@@ -15,7 +15,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_static-${DISTVERSION}-oss
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	P2P VoIP software
 
 .ifdef WITH_NVIDIA_GL
