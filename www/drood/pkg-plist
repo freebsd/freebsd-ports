@@ -1,9 +1,7 @@
 bin/drood
 bin/scgid
-bin/dorrit
 etc/rc.d/drood
 etc/rc.d/scgid
-etc/rc.d/dorrit
 @unexec if cmp -s %D/etc/drood/types.tab %D/etc/drood/types.tab.dist; then rm -f %D/etc/drood/types.tab; fi
 etc/drood/types.tab.dist
 @dirrm /etc/drood
