@@ -46,7 +46,7 @@ sub bumpMakefile {
 
 	foreach my $line (@lines) {
 	    last if ($line =~ /^MAINTAINER/);
-	    $revision += $1 if ($line =~ /PORTREVISION??=[ \t]*(\d+)$/);
+	    $revision += $1 if ($line =~ /PORTREVISION\??=[ \t]*(\d+)$/);
 	}
 
 	my $printedrev = 0;
