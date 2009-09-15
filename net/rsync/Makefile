@@ -105,7 +105,9 @@ CONFIGURE_ARGS+=	--with-rsh=rsh
 
 # guard against CFLAGS damage by MAKE_ENV
 post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS|CONFIGUREDCFLAGS|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|CFLAGS|CONFIGUREDCFLAGS|' \
+		-e 's|perl.*|${DO_NADA}|' \
+			${WRKSRC}/Makefile.in
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's:/etc/:${PREFIX}/etc/:g'  \
