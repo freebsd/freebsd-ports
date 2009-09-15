@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
@@ -17,10 +17,10 @@ COMMENT=	A fantasy turn-based strategy game
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=	wesnoth-1.[4-6]*
+CONFLICTS=	wesnoth-[0-9]*
 
 USE_SDL=	image mixer net ttf
-USE_GNOME=	gnometarget pango desktopfileutils
+USE_GNOME=	desktopfileutils gnometarget pango
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
@@ -41,7 +41,11 @@ MANLANG=	"" cs de en_GB es et fi fr hu it lt pl sr sr@latin tr \
 
 MAN6=		wesnoth.6
 
-OPTIONS=	CAMPAIGN "Enable campaign server"	On \
+PORTDOCS=	*
+PORTDATA=	*
+
+OPTIONS=	BWMON	 "Enable bandwidth monitoring for server" Off \
+		CAMPAIGN "Enable campaign server"	On \
 		DUMMYLOCALES "Enable wesnoth own locales" Off \
 		EDITOR	 "Enable map editor"		On \
 		FRIBIDI	 "Enable bidirectional support"	On \
@@ -50,6 +54,7 @@ OPTIONS=	CAMPAIGN "Enable campaign server"	On \
 		NOTIFY	 "Enable desktop notifications"	On \
 		POOLALLOC "Use wesnoth own memory allocator" Off \
 		PYTHON	 "Enable python developer tools" On \
+		RAWSOCKETS "Use raw receiving sockets in multiplayer" Off \
 		SERVER	 "Enable server"		On \
 		TESTS	 "Enable unit tests"		Off \
 		TINYGUI	 "Enable tiny gui (down to 320x200)" Off \
@@ -81,6 +86,12 @@ CONFIGURE_ARGS+=	--enable-profile
 CONFIGURE_ARGS+=	--disable-strict-compilation
 .endif
 
+.if defined(WITHOUT_BWMON)
+CONFIGURE_ARGS+=	--disable-bandwidth-monitor
+.else
+CONFIGURE_ARGS+=	--enable-bandwidth-monitor
+.endif
+
 .if defined(WITHOUT_CAMPAIGN)
 CONFIGURE_ARGS+=	--disable-campaign-server
 PLIST_SUB+=		CAMPAIGN="@comment "
@@ -91,10 +102,8 @@ PLIST_SUB+=		CAMPAIGN=""
 
 .if defined(WITHOUT_DUMMYLOCALES)
 CONFIGURE_ARGS+=	--disable-dummy-locales
-PLIST_SUB+=		DUMMYLOCALES="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-dummy-locales
-PLIST_SUB+=		DUMMYLOCALES=""
 .endif
 
 .if defined(WITHOUT_EDITOR)
@@ -152,6 +161,12 @@ PLIST_SUB+=		PYTHON=""
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
+.if defined(WITHOUT_RAWSOCKETS)
+CONFIGURE_ARGS+=	--disable-raw-sockets
+.else
+CONFIGURE_ARGS+=	--enable-raw-sockets
+.endif
+
 .if defined(WITHOUT_SERVER)
 CONFIGURE_ARGS+=	--disable-server
 PLIST_SUB+=		SERVER="@comment "
@@ -186,6 +201,10 @@ PLIST_SUB+=		TOOLS=""
 
 .if (defined(WITH_CAMPAIGN) || defined(WITH_SERVER) || defined(WITH_TOOLS)) && defined(WITHOUT_NLS)
 BROKEN=		you need NLS support for `campaignd' or `wesnothd' or tools to link against gettext
+.endif
+
+.if defined(NOPORTDOCS) || defined(NOPORTDATA)
+BROKEN=		NOPORT(DOCS|DATA) is not supported
 .endif
 
 post-install:	.SILENT
