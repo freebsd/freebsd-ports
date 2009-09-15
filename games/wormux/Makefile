@@ -9,7 +9,8 @@ PORTNAME=	wormux
 DISTVERSION=	0.8.3
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://download.gna.org/wormux/
+MASTER_SITES=	http://download.gna.org/wormux/ \
+		http://download.gna.org/wormux/archive/
 
 MAINTAINER=	toha@toha.org.ua
 COMMENT=	Wormux game
