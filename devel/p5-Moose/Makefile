@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.89
+PORTVERSION=	0.90
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -17,10 +17,11 @@ COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	\
 	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-	p5-Class-MOP>=0.92:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.93:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
+	p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
 	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -44,8 +45,6 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Extending::Recipe2.3 \
 	Moose::Cookbook::Extending::Recipe3.3 \
 	Moose::Cookbook::Extending::Recipe4.3 \
-	Moose::Manual::FAQ.3 \
-	Moose::Manual::Unsweetened.3 \
 	Moose::Cookbook::Meta::Recipe1.3 \
 	Moose::Cookbook::Meta::Recipe2.3 \
 	Moose::Cookbook::Meta::Recipe3.3 \
@@ -73,12 +72,29 @@ MAN3=	Moose.3 \
 	Moose::Manual::Contributing.3 \
 	Moose::Manual::Delegation.3 \
 	Moose::Manual::Delta.3 \
+	Moose::Manual::FAQ.3 \
+	Moose::Manual::MOP.3 \
 	Moose::Manual::MethodModifiers.3 \
 	Moose::Manual::MooseX.3 \
-	Moose::Manual::MOP.3 \
 	Moose::Manual::Roles.3 \
 	Moose::Manual::Types.3 \
+	Moose::Manual::Unsweetened.3 \
 	Moose::Meta::Attribute.3 \
+	Moose::Meta::Attribute::Native.3 \
+	Moose::Meta::Attribute::Native::MethodProvider::Array.3 \
+	Moose::Meta::Attribute::Native::MethodProvider::Bool.3 \
+	Moose::Meta::Attribute::Native::MethodProvider::Code.3 \
+	Moose::Meta::Attribute::Native::MethodProvider::Counter.3 \
+	Moose::Meta::Attribute::Native::MethodProvider::Hash.3 \
+	Moose::Meta::Attribute::Native::MethodProvider::String.3 \
+	Moose::Meta::Attribute::Native::Trait.3 \
+	Moose::Meta::Attribute::Native::Trait::Array.3 \
+	Moose::Meta::Attribute::Native::Trait::Bool.3 \
+	Moose::Meta::Attribute::Native::Trait::Code.3 \
+	Moose::Meta::Attribute::Native::Trait::Counter.3 \
+	Moose::Meta::Attribute::Native::Trait::Hash.3 \
+	Moose::Meta::Attribute::Native::Trait::Number.3 \
+	Moose::Meta::Attribute::Native::Trait::String.3 \
 	Moose::Meta::Class.3 \
 	Moose::Meta::Class::Immutable::Trait.3 \
 	Moose::Meta::Instance.3 \

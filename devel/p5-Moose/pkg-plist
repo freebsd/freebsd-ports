@@ -1,3 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/.packlist
 %%SITE_PERL%%/Moose.pm
 %%SITE_PERL%%/Moose/Cookbook.pod
 %%SITE_PERL%%/Moose/Cookbook/Basics/Recipe1.pod
@@ -43,13 +44,28 @@
 %%SITE_PERL%%/Moose/Manual/Delegation.pod
 %%SITE_PERL%%/Moose/Manual/Delta.pod
 %%SITE_PERL%%/Moose/Manual/FAQ.pod
+%%SITE_PERL%%/Moose/Manual/MOP.pod
 %%SITE_PERL%%/Moose/Manual/MethodModifiers.pod
 %%SITE_PERL%%/Moose/Manual/MooseX.pod
-%%SITE_PERL%%/Moose/Manual/MOP.pod
 %%SITE_PERL%%/Moose/Manual/Roles.pod
 %%SITE_PERL%%/Moose/Manual/Types.pod
 %%SITE_PERL%%/Moose/Manual/Unsweetened.pod
 %%SITE_PERL%%/Moose/Meta/Attribute.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/MethodProvider/Array.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/MethodProvider/Bool.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/MethodProvider/Code.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/MethodProvider/Counter.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/MethodProvider/Hash.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/MethodProvider/String.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/Trait.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/Trait/Array.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/Trait/Bool.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/Trait/Code.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/Trait/Counter.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/Trait/Hash.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/Trait/Number.pm
+%%SITE_PERL%%/Moose/Meta/Attribute/Native/Trait/String.pm
 %%SITE_PERL%%/Moose/Meta/Class.pm
 %%SITE_PERL%%/Moose/Meta/Class/Immutable/Trait.pm
 %%SITE_PERL%%/Moose/Meta/Instance.pm
@@ -57,8 +73,8 @@
 %%SITE_PERL%%/Moose/Meta/Method/Accessor.pm
 %%SITE_PERL%%/Moose/Meta/Method/Augmented.pm
 %%SITE_PERL%%/Moose/Meta/Method/Constructor.pm
-%%SITE_PERL%%/Moose/Meta/Method/Destructor.pm
 %%SITE_PERL%%/Moose/Meta/Method/Delegation.pm
+%%SITE_PERL%%/Moose/Meta/Method/Destructor.pm
 %%SITE_PERL%%/Moose/Meta/Method/Overridden.pm
 %%SITE_PERL%%/Moose/Meta/Role.pm
 %%SITE_PERL%%/Moose/Meta/Role/Application.pm
@@ -91,8 +107,6 @@
 %%SITE_PERL%%/Moose/Util/TypeConstraints/OptimizedConstraints.pm
 %%SITE_PERL%%/Test/Moose.pm
 %%SITE_PERL%%/oose.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
 @dirrmtry %%SITE_PERL%%/Test
 @dirrmtry %%SITE_PERL%%/Moose/Util/TypeConstraints
 @dirrmtry %%SITE_PERL%%/Moose/Util
@@ -105,6 +119,10 @@
 @dirrmtry %%SITE_PERL%%/Moose/Meta/Method
 @dirrmtry %%SITE_PERL%%/Moose/Meta/Class/Immutable
 @dirrmtry %%SITE_PERL%%/Moose/Meta/Class
+@dirrmtry %%SITE_PERL%%/Moose/Meta/Attribute/Native/Trait
+@dirrmtry %%SITE_PERL%%/Moose/Meta/Attribute/Native/MethodProvider
+@dirrmtry %%SITE_PERL%%/Moose/Meta/Attribute/Native
+@dirrmtry %%SITE_PERL%%/Moose/Meta/Attribute
 @dirrmtry %%SITE_PERL%%/Moose/Meta
 @dirrmtry %%SITE_PERL%%/Moose/Manual
 @dirrmtry %%SITE_PERL%%/Moose/Error
@@ -115,3 +133,4 @@
 @dirrmtry %%SITE_PERL%%/Moose/Cookbook/Basics
 @dirrmtry %%SITE_PERL%%/Moose/Cookbook
 @dirrmtry %%SITE_PERL%%/Moose
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
