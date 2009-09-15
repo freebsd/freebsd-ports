@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090915:
+  AFFECTS: users of sysutils/gosa
+  AUTHOR: Denis Shaposhnikov <dsh@wizard.volgograd.ru>
+
+  Read
+
+    https://oss.gonicus.de/labs/gosa/wiki/DocumentationInstallingUpdatingGOsa
+
+  before upgrading this port.  And don't forget to check your slapd.conf
+  because gosa scheme files was changed.  If you'll have any troubles during
+  LDAP migration step try to restart your PHP process.
+
 20090913:
   AFFECTS: users of www/ikiwiki
   AUTHOR: Henrik Brix Andersen <brix@FreeBSD.org>
