@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	2.1
+PORTVERSION=	3.3
 CATEGORIES=	converters
 MASTER_SITES=	http://security-hole.info/distfile/
-DISTNAME=	buganini-bsdconv-36bc34d41e81babc57f55d490c962c6452f14ccd
+DISTNAME=	buganini-bsdconv-a500cb452f12d583fd545dc901dfca89c84b987e
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	BSD licensed charset/encoding converter library
 
 USE_LDCONFIG=	yes
-ALL_TARGET=	All
+
+MAKE_ARGS=	PREFIX=${PREFIX}
 
 .include <bsd.port.mk>
