@@ -2,7 +2,7 @@ bin/bsdconv
 bin/bsdconv_mktable
 include/bsdconv.h
 lib/libbsdconv.so
-lib/libbsdconv.so.2
+lib/libbsdconv.so.3
 %%DATADIR%%/from/3F
 %%DATADIR%%/from/ASCII
 %%DATADIR%%/from/ASCII-NAMED-HTML-ENTITY
@@ -10,6 +10,9 @@ lib/libbsdconv.so.2
 %%DATADIR%%/from/ASCII-NUMERIC-HTML-ENTITY.so
 %%DATADIR%%/from/BIG5
 %%DATADIR%%/from/BIG5-5C
+%%DATADIR%%/from/BSDCONV
+%%DATADIR%%/from/BSDCONV.so
+%%DATADIR%%/from/BSDCONV_KEYWORD
 %%DATADIR%%/from/CP936
 %%DATADIR%%/from/CP950
 %%DATADIR%%/from/HTMLENTITY
@@ -18,13 +21,16 @@ lib/libbsdconv.so.2
 %%DATADIR%%/from/NAMED-HTMLENTITY
 %%DATADIR%%/from/UTF-8
 %%DATADIR%%/from/UTF-8.so
+%%DATADIR%%/inter/CHEWING
 %%DATADIR%%/inter/CHS
 %%DATADIR%%/inter/CHT
-%%DATADIR%%/inter/DUMMY
+%%DATADIR%%/inter/HAN_PINYIN
 %%DATADIR%%/inter/MAC
 %%DATADIR%%/inter/NL2BR
 %%DATADIR%%/inter/UNIX
 %%DATADIR%%/inter/WIN
+%%DATADIR%%/inter/ZHTW_NORMALIZE
+%%DATADIR%%/inter/ZH_COMPOUND
 %%DATADIR%%/to/3F
 %%DATADIR%%/to/3F.so
 %%DATADIR%%/to/ASCII
@@ -36,6 +42,9 @@ lib/libbsdconv.so.2
 %%DATADIR%%/to/ASCII-HTML-IMG.so
 %%DATADIR%%/to/ASCII-NAMED-HTML-ENTITY
 %%DATADIR%%/to/BIG5-5C
+%%DATADIR%%/to/BSDCONV
+%%DATADIR%%/to/BSDCONV.so
+%%DATADIR%%/to/BSDCONV_KEYWORD
 %%DATADIR%%/to/CP936
 %%DATADIR%%/to/CP950
 %%DATADIR%%/to/HTML-IMG
