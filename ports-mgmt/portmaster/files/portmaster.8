@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd August 24, 2009
+.Dd September 15, 2009
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -89,6 +89,8 @@ and/or multiple globs from /var/db/pkg
 .Fl -check-depends
 .Nm
 .Fl -check-port-dbdir
+.Nm
+.Fl -list-origins
 .Nm
 .Fl h|--help
 .Nm
@@ -302,7 +304,8 @@ always clean distfiles
 any arguments to supply to
 .Xr make 1
 .It Fl x
-avoid building or updating ports that match this pattern
+avoid building or updating ports that match this pattern.
+Can be specified more than once.
 .It Fl p Ar port directory in /usr/ports
 specify the full path to a port directory
 .It Fl -show-work
@@ -359,6 +362,12 @@ cross-check and update dependency information for all ports
 .It Fl -check-port-dbdir
 check for stale entries in
 .Pa /var/db/ports
+.It Fl -list-origins
+list directories from /usr/ports for root and leaf ports.
+This list is suitable for feeding to
+.Nm
+either on another machine or for reinstalling all ports.
+See EXAMPLES below.
 .It Fl h|--help
 display help message
 .It Fl -version
@@ -606,6 +615,7 @@ More complex tasks (please see the details for these options above):
 .Dl "portmaster -r fooport-1.23"
 .Dl "portmaster -o emulators/linux_base-fc4 linux_base-8-8.0_15"
 .Dl "portmaster -x cvsup -f -a"
+.Dl "portmaster -a -x gstreamer -x linux"
 .Pp
 Print only the ports that have available updates.
 This can be used as an alias in your shell.
@@ -617,7 +627,7 @@ Be sure to fix the line wrapping appropriately.
 Using
 .Nm
 to do a complete reinstallation of all your ports:
-.Dl "1. portmaster -l > ~/installed-port-list"
+.Dl "1. portmaster --list-origins > ~/installed-port-list"
 .Dl "2. Update your ports tree"
 .Dl "3. portmaster --clean-distfiles-all"
 .Dl "4. portmaster --check-port-dbdir"
@@ -626,14 +636,12 @@ to do a complete reinstallation of all your ports:
 .Dl "7. rm -rf /usr/local/lib/compat/pkg"
 .Dl "8. Manually check /usr/local and /var/db/pkg"
 .Dl "   to make sure that they are really empty"
+.Dl "9. portmaster `cat ~/installed-port-list`"
 .Pp
-.Dl "Now look at the list you generated in the first step and install"
-.Dl "the root and leaf ports that you want to have again.  The trunk"
-.Dl "and branch ports are dependencies, and will automatically be"
-.Dl "installed as needed.  You probably want to use the -D option for"
-.Dl "the installations and then run --clean-distfiles[-all] again when"
-.Dl "you are done.  You might also want to consider using the"
-.Dl "--force-config option when installing the new ports."
+You probably want to use the -D option for the installation
+and then run --clean-distfiles[-all] again when you are done.
+You might also want to consider using the --force-config option
+when installing the new ports.
 .Pp
 Alternatively you could use
 .Nm Fl a Fl f Fl D
