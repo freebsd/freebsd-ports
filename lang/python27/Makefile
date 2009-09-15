@@ -62,7 +62,6 @@ OPTIONS=	THREADS "Enable thread support" on \
 
 .if defined(WITH_SEM)
 .if ${OSVERSION} >= 701106
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-setup.py
 SEM_MSG=	""
 .else
 IGNORE=		POSIX semaphore support only works in FreeBSD 7-STABLE and later
@@ -180,6 +179,13 @@ pre-patch:
 .if defined(WITH_FPECTL) && ${ARCH} == i386
 	${MKDIR} ${WRKSRC}/Modules
 	${ECHO} "fpectl fpectlmodule.c" >> ${WRKSRC}/Modules/Setup.dist
+.endif
+
+post-patch:
+.if defined(WITH_SEM)
+.if ${OSVERSION} >= 701106
+	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-setup.py
+.endif
 .endif
 
 post-configure:
