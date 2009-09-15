@@ -942,7 +942,6 @@ beastie                         ports/x11-themes/beastie
 beautifyphp                     ports/devel/beautifyphp
 beav                            ports/editors/beav
 bebocd                          ports/audio/bebocd
-bed                             ports/editors/bed
 bedic-data                      ports/textproc/bedic-data
 beecrypt                        ports/security/beecrypt
 beediff                         ports/textproc/beediff
@@ -7965,10 +7964,12 @@ linux-f10-gtk2                  ports/x11-toolkits/linux-f10-gtk2
 linux-f10-hicolor-icon-theme    ports/x11-themes/linux-f10-hicolor-icon-theme
 linux-f10-imlib                 ports/graphics/linux-f10-imlib
 linux-f10-jpeg                  ports/graphics/linux-f10-jpeg
+linux-f10-libGLU                ports/graphics/linux-f10-libGLU
 linux-f10-libaudiofile          ports/audio/linux-f10-libaudiofile
 linux-f10-libg2c                ports/lang/linux-f10-libg2c
 linux-f10-libglade              ports/devel/linux-f10-libglade
 linux-f10-libglade2             ports/devel/linux-f10-libglade2
+linux-f10-libglu                ports/graphics/linux-f10-libGLU
 linux-f10-libmng                ports/graphics/linux-f10-libmng
 linux-f10-libogg                ports/audio/linux-f10-libogg
 linux-f10-libsigc++20           ports/devel/linux-f10-libsigc++20
@@ -8517,6 +8518,7 @@ mathplanner                     ports/editors/MathPlanner
 matrices                        ports/math/matrices
 matrix                          ports/math/matrix
 matrixssl                       ports/security/matrixssl
+matwm2                          ports/x11-wm/matwm2
 maude                           ports/lang/maude
 mavbiff                         ports/mail/mavbiff
 maven                           ports/devel/maven
@@ -8972,6 +8974,10 @@ mono-kmod                       ports/sysutils/mono-kmod
 mono-tools                      ports/devel/mono-tools
 mono-zeroconf                   ports/net/mono-zeroconf
 monodevelop                     ports/devel/monodevelop
+monodevelop-boo                 ports/devel/monodevelop-boo
+monodevelop-database            ports/devel/monodevelop-database
+monodevelop-java                ports/devel/monodevelop-java
+monodevelop-vala                ports/devel/monodevelop-vala
 monopd                          ports/games/monopd
 monotone                        ports/devel/monotone
 monotone-viz                    ports/devel/monotone-viz
@@ -24629,6 +24635,7 @@ yaf                             ports/net-mgmt/yaf
 yafc                            ports/ftp/yafc
 yafic                           ports/security/yafic
 yafray                          ports/graphics/yafray
+yagf                            ports/graphics/yagf
 yagiuda                         ports/comms/yagiuda
 yahoo-ui                        ports/www/yahoo-ui
 yahtzee                         ports/games/yahtzee
