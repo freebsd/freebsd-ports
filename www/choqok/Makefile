@@ -10,7 +10,7 @@ PORTVERSION=	0.6.6
 CATEGORIES=	www kde
 MASTER_SITES=	http://mirror.umoss.org/download.ospdev.net/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE micro-blogging client
 
 USE_BZIP2=	yes
