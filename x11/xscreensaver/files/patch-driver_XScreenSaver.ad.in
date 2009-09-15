@@ -1,5 +1,5 @@
---- driver/XScreenSaver.ad.in.orig	2008-12-27 23:33:15.000000000 -0800
-+++ driver/XScreenSaver.ad.in	2009-08-03 13:50:03.000000000 -0700
+--- driver/XScreenSaver.ad.in.orig	2009-09-07 21:53:15.000000000 -0700
++++ driver/XScreenSaver.ad.in	2009-09-15 02:10:42.000000000 -0700
 @@ -54,7 +54,7 @@
  *splashDuration:	0:00:05
  *visualID:		default
@@ -28,7 +28,7 @@
  				maze -root				    \n\
  @GL_KLUDGE@ GL: 				superquadrics -root			    \n\
  				attraction -root			    \n\
-@@ -248,7 +260,6 @@
+@@ -246,7 +258,6 @@
  				xspirograph -root			    \n\
  @GL_KLUDGE@ GL: 				circuit -root				    \n\
  @GL_KLUDGE@ GL: 				dangerball -root			    \n\
@@ -36,16 +36,7 @@
  @GL_KLUDGE@ GL: 				engine -root				    \n\
  @GL_KLUDGE@ GL: 				flipscreen3d -root			    \n\
  @GL_KLUDGE@ GL: 				gltext -root				    \n\
-@@ -347,7 +358,7 @@
- @GL_KLUDGE@ GL: 				voronoi -root				    \n\
- @GL_KLUDGE@ GL: 				hypnowheel -root			    \n\
- -				lcdscrub -root				    \n\
--@GL_KLUDGE@ GL: 				photopile -root				    \n\
-+- GL: 				photopile -root				    \n\
- @GL_KLUDGE@ GL: 				skytentacles -root			    \n
- 
- 
-@@ -436,7 +447,6 @@
+@@ -435,7 +446,6 @@
  *hacks.cwaves.name:         CWaves
  *hacks.dangerball.name:     DangerBall
  *hacks.decayscreen.name:    DecayScreen
