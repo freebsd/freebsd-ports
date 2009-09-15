@@ -40,4 +40,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '186s,);,)&,' \
 		${WRKSRC}/creox/effects_dsp/tremoloprocessor.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64: does not find Jack library
+.endif
+
+.include <bsd.port.post.mk>
