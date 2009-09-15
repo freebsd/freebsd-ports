@@ -14,7 +14,7 @@
 -34.05,		151.15,		"edwin"				# Cronulla, Australia
 -33.55,		151.1,		"bde"				# Sydney, Australia
 -37.7,		144.9,		"     jb,benno"			# Melbourne, Vic, Australia
--37.8185,	143.739473	"grog"				# Dereel, VIC, Australia
+-37.8185,	143.739473,	"grog"				# Dereel, VIC, Australia
  35.69,		139.92,		"metal"				# Ichikawa, Chiba, Japan
  35.561,	139.716,	"rushani"			# Tokyo, Japan
  35.65757,	139.69288,	"kuriyama"			# Tokyo, Japan
@@ -42,7 +42,7 @@
  30.2727,	120.1662,	"davidxu"			# HangZhou, ZheJiang, China
  39.550,	116.214,	"nemoliu"			# Beijing, Beijing, China
  -31.97908,	115.81611,	"adrian"			# Crawley, Perth, Western Australia
- 22.1957,	113.549		"vs"				# Macau, Macau SAR
+ 22.1957,	113.549,	"vs"				# Macau, Macau SAR
  47.921386,	106.910153,	"ganbold"			# Ulaanbaatar, Mongolia
  3.167,		101.700,	"ariff"				# Kuala Lumpur, Malaysia
  55.033,	82.917,		"danfe,fjoe"			# Novosibirsk, Russia
@@ -57,9 +57,9 @@
  55.8,		37.6,		"ache,az,bsam,demon,maxim,rik,skv,stas,vsevolod,yar"	# Moscow, Russia
  55.768764,	37.588938,	"sergei"			# Moscow, Russia
  55.7203,	37.4314,	"sat"				# Moscow, Russia
- 55.750799	37.565689	"krion"				# Moscow, Russia
+ 55.750799,	37.565689,	"krion"				# Moscow, Russia
  44.95,		34.1,		"phantom,ru"			# Simferopol, Ukraine
- 50.430417,	30.488262	"kib"				# Kiev, Ukraine
+ 50.430417,	30.488262,	"kib"				# Kiev, Ukraine
  46.28,		30.44,		"anray"				# Odessa, Ukraine
 -25.80974,	28.27731,	"jhay"				# Pretoria, South Africa
  44.420,	26.1371,	"itetcu"			# Bucharest, Romania
@@ -73,7 +73,7 @@
  59.3695,	18.0642,	"snb"				# Stockholm, Sweden
  59.33,		18.05,		"girgen"			# Stockholm, Sweden
  48.204319,	16.982337,	"danger"			# Bratislava, Slovakia
- 48.253,	16.435		"gerald"			# Vienna, Austria
+ 48.253,	16.435,		"gerald"			# Vienna, Austria
  48.213740,	16.385784,	"arved"				# Vienna, Austria
  48.18834,	16.36602,	"jkois"				# Vienna, Austria
  48.2168,	16.3339,	"le"				# Vienna, Austria
@@ -90,7 +90,7 @@
  47.867,	12.333,		"obraun"			# Prien a. Chiemsee, Germany
  49.200270,	12.279196,	"marius"			# Cham, Germany
  48.05,		11.9667,	"gj"				# Munich, Germany
- 45.417,	11.883		"matteo"			# Padova, Italy
+ 45.417,	11.883,		"matteo"			# Padova, Italy
  48.32,		11.67,		"mr"				# Neufahrn, Germany
  48.108055,	11.635277,	"olli"				# Munich, Germany
  48.109752,	11.572466,	"barner"			# Munich, Germany
@@ -100,7 +100,7 @@
  59.9674,	10.8990,	"des"				# Oslo, Norway
  59.92,		10.75,		"eivind,anders"			# Oslo, Norway
  43.71,		10.40,		"luigi"				# Pisa, Italy
- 54.231,	10.291		"miwi"				# Preetz, Germany
+ 54.231,	10.291,		"miwi"				# Preetz, Germany
  56.156,	10.201,		"brix"				# Aarhus, Denmark
  57.2,		10.2,		"sos"				# Klokkerholm, Denmark
  56.14,		10.184,		"lbr"				# Aarhus, Denmark
@@ -115,7 +115,7 @@
  45.488328,	9.164711,	"ale"		align=left	# Milano, Italy
  46.29523,	8.98232,	"gahr"				# Lodrino, Switzerland
  52.05,		8.9,		"lkoeller"			# Lemgo, Germany
- 45.667		8.867,		"nivit"		align=left	# Fagnano Olona, Italy
+ 45.667,	8.867,		"nivit"		align=left	# Fagnano Olona, Italy
  47.1666,	8.5166,		"dhartmei"			# Zug, Switzerland
  47.380458,	8.514722,	"ehaupt"			# Zurich, Switzerland
  49.014958,	8.445214,	"mlaier"			# Rintheim, Germany
@@ -166,15 +166,15 @@
  52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
  51.461916,	-1.011833,	"jesper"			# Reading, United Kingdom
  52.635,	-1.135,		"hmp"				# Leicester, East Midlands, UK
- 48.10927,	-1.61104	"jadawin"			# Cesson-Sevigne, France
+ 48.10927,	-1.61104,	"jadawin"			# Cesson-Sevigne, France
  42.8474,	-2.66976,	"carvay"			# Araba, Vitoria-Gasteiz, Spain
  51.49,		-3.16,		"ceri"				# Cardiff, UK
  53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
  53.286499,	-6.196429,	"flz"				# Stillorgan, Co. Dublin, Ireland
  53.65,		-6.67,		"peadar"	align=above	# Navan, Co. Meath, Ireland
  41.157889,	-8.628699,	"rpaulo"			# Porto, Portugal
--9.603815,	-35.724911	"lippe"				# Maceio, AL, Brazil
--19.917		-43.933,	"jmelo"				# Belo Horizonte, MG, Brazil
+-9.603815,	-35.724911,	"lippe"				# Maceio, AL, Brazil
+-19.917,	-43.933,	"jmelo"				# Belo Horizonte, MG, Brazil
 -15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
 -20.950,	-47.917,	"garga"				# Limeira, SP, Brazil
 -27.583,	-48.765,	"araujo"			# Florianopolis, SC, Brazil
@@ -192,7 +192,7 @@
  42.72915,	-73.68172,	"gad"				# RPI @ Troy, NY, USA
  40.741778,	-73.903098,	"skreuzer"			# Woodside, NY, USA
  40.86004,	-73.98038,	"jkim"				# Leonia, NJ, USA
- 45.366		-75.193,	"db"				# Ottawa, ON, Canada
+ 45.366,	-75.193,	"db"				# Ottawa, ON, Canada
  45.3991,	-75.6942,	"jake"				# Ottawa, ON, Canada
  42.26785,	-76.28954,	"pat"				# Ithaca, NY, USA
  38.836899, -77.113810, "pgollucci"         # Old Town, VA, USA
@@ -205,9 +205,9 @@
  43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
  37.23,		-80.41,		"mikeh"				# Blacksburg, VA, USA
  43.48,		-80.54,		"emaste"			# Waterloo, ON, Canada
- 34.827667,	-82.553759	"laszlof"			# Easley, SC, USA
+ 34.827667,	-82.553759,	"laszlof"			# Easley, SC, USA
  42.28,		-83.75,		"rees"				# Ann Arbor, MI, USA
- 33.833956,	-84.494498	"ahze"				# Smyrna, GA, USA
+ 33.833956,	-84.494498,	"ahze"				# Smyrna, GA, USA
  39.1361,	-84.5030,	"cokane"			# Cincinnati, OH, USA
  33.916601,	-84.641075,	"jhb"				# Marietta, GA, USA
  34.81095,	-86.70977,	"steve"				# Huntsville, AL, USA
@@ -246,7 +246,7 @@
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
  37.40,         -122.07,        "murray"			# (CORE) Mountain View, CA, USA
  37.3905,	-122.0715,	"delphij"			# Mountain View, CA, USA
- 37.39		-122.11		"bakul"				# Los Altos, CA, USA
+ 37.39,		-122.11,	"bakul"				# Los Altos, CA, USA
  47.382689,	-122.227021,	"garys"				# Kent, WA, USA
  37.81875,	-122.2466,	"kientzle"			# Oakland, CA, USA
  37.84,		-122.25,	"jmg"				# Oakland, CA, USA
@@ -262,7 +262,7 @@
  37.80,		-122.43,	"njl"				# Downtown San Francisco, CA, USA
  37.77,		-122.44,	"archie"			# Haight, San Francisco, CA, USA
  45.5,		-122.6,		"dg"				# near Portland, OR, USA
- 47.643,	-122.614	"glewis"			# Bremerton, WA, USA
+ 47.643,	-122.614,	"glewis"			# Bremerton, WA, USA
  42.29,		-122.89,	"ade"				# Medford, OR, USA
  49.27705,	-122.91385,	"cperciva"			# Burnaby, BC, Canada
  49.204533,	-122.919931,	"sobomax"			# New Westminster, BC, Canada
