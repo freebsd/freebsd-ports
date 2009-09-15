@@ -4,6 +4,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Attribute.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable/Trait.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Deprecated.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Instance.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Accessor.pm
