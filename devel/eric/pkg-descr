@@ -3,4 +3,4 @@ QScintilla editor widget. For information on PyQt and QScintilla please
 see Riverbank Computing. Please note, that eric3 needs PyQt 3.6 or newer 
 and QScintilla 1.0 or newer.
 
-WWW: http://www.die-offenbachs.de/detlev/eric3.html
+WWW: http://eric-ide.python-projects.org/
