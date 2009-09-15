@@ -64,6 +64,8 @@ lib/compat/libpcap.so.3
 %%AMD64%%lib/compat/libpthread.so.1
 %%I386%%@unexec chflags noschg %D/lib/compat/libpthread.so.1
 %%I386%%lib/compat/libpthread.so.1
+%%SPARC64%%@unexec chflags noschg %D/lib/compat/libpthread.so.1
+%%SPARC64%%lib/compat/libpthread.so.1
 lib/compat/libradius.so.1
 lib/compat/libreadline.so.5
 lib/compat/libroken.so.7
