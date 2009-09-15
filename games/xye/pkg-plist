@@ -1,8 +1,5 @@
 bin/xye
-
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/format.txt
-%%PORTDOCS%%%%DOCSDIR%%/template.xye.xml
 %%PORTDOCS%%%%DOCSDIR%%/GAMEINTRO.txt
 %%PORTDOCS%%%%DOCSDIR%%/xye.svg
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -11,21 +8,26 @@ bin/xye
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/levels/5levels.xye
+%%DATADIR%%/levels/Mic4.xye
+%%DATADIR%%/levels/cracked.xye
 %%DATADIR%%/levels/kye.xye
 %%DATADIR%%/levels/levels.xye
 %%DATADIR%%/levels/logo.xye
-%%DATADIR%%/levels/Mic4.xye
-%%DATADIR%%/levels/pxlevels.xye
 %%DATADIR%%/levels/microban.xsb
+%%DATADIR%%/levels/oldtutorials.xye
+%%DATADIR%%/levels/pxlevels.xye
+%%DATADIR%%/levels/sphinx.xye
 %%DATADIR%%/levels/tutorials.xye
-%%DATADIR%%/res/default.xml
+%%DATADIR%%/levels/xyester.xye
+%%DATADIR%%/res/DejaVuSans-Bold.ttf
+%%DATADIR%%/res/DejaVuSans.ttf
 %%DATADIR%%/res/classic.xml
-%%DATADIR%%/res/xye.png
-%%DATADIR%%/res/kye.png
+%%DATADIR%%/res/default.xml
 %%DATADIR%%/res/fon.bmp
 %%DATADIR%%/res/fon_bold.bmp
-%%DATADIR%%/res/DejaVuSans.ttf
-%%DATADIR%%/res/DejaVuSans-Bold.ttf
-@dirrm share/xye/levels
-@dirrm share/xye/res
-@dirrm share/xye
+%%DATADIR%%/res/kye.png
+%%DATADIR%%/res/xye.png
+%%DATADIR%%/res/xye_luminosity.png
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/res
+@dirrm %%DATADIR%%
