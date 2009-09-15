@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.6.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.6/${PORTNAME}-${PORTVERSION} \
 		http://www.wesnoth.org/files/
 
-
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=	wesnoth-1.5* wesnoth-1.7*
+CONFLICTS=	wesnoth-devel-[0-9]*
 
 USE_SDL=	image mixer net ttf
-USE_GNOME=	gnometarget pango
+USE_GNOME=	desktopfileutils gnometarget pango
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
@@ -31,17 +28,16 @@ USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
 ACLOCAL_ARGS=	-Im4
 AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-icondir=${PREFIX}/share/pixmaps \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
 
-MANLANG=	"" cs de en_GB es fi fr hu it lt pl sr sr@latin sv tr \
+MANLANG_GAME=	gl sk
+MANLANG=	"" cs de en_GB es et fi fr hu it lt pl sr sr@latin sv tr \
 		zh_CN zh_TW
 
 MAN6=		wesnoth.6
-MAN6_GL=	wesnoth.6
-MAN6_RU=	wesnoth.6
-MAN6_SK=	wesnoth.6
 
 OPTIONS=	CAMPAIGN "Enable campaign server"	On \
 		EDITOR	 "Enable map editor"		On \
@@ -51,6 +47,17 @@ OPTIONS=	CAMPAIGN "Enable campaign server"	On \
 		TOOLS	 "Enable extra tools for artists and translators" On
 
 .include <bsd.port.pre.mk>
+
+# workaround: compress and add to plist disobedient man pages
+.for manlang in ${MANLANG_GAME}
+MAN6_${manlang:U}=	wesnoth.6
+
+.if defined(NOMANCOMPRESS)
+PLIST_FILES+=	man/${manlang}/man6/wesnoth.6
+.else
+PLIST_FILES+=	man/${manlang}/man6/wesnoth.6.gz
+.endif
+.endfor
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -103,8 +110,13 @@ PLIST_SUB+=		TOOLS=""
 BROKEN=		you need NLS support for `campaignd' or `wesnothd' or tools to link against gettext
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|[$$][{]datarootdir[}]/icons|${LOCALBASE}/share/pixmaps|' \
-			${WRKSRC}/icons/Makefile
+post-install:	.SILENT
+	-update-desktop-database
+
+.if !defined(NOMANCOMPRESS)
+.	for manlang in ${MANLANG_GAME}
+		${GZIP_CMD} ${PREFIX}/man/${manlang}/man6/wesnoth.6
+.	endfor
+.endif
 
 .include <bsd.port.post.mk>

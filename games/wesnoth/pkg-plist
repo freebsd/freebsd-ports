@@ -10,7 +10,7 @@ bin/wesnoth
 share/applications/wesnoth.desktop
 %%EDITOR%%share/applications/wesnoth_editor.desktop
 share/pixmaps/wesnoth-icon.png
-share/pixmaps/wesnoth_editor-icon.png
+%%EDITOR%%share/pixmaps/wesnoth_editor-icon.png
 %%DOCSDIR%%/manual/CMakeLists.txt
 %%DOCSDIR%%/manual/images/de/game-screen-1.5.7.jpg
 %%DOCSDIR%%/manual/images/de/main-menu-1.5.11.jpg
@@ -3938,19 +3938,21 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/lava-convex-r.png
 %%DATADIR%%/data/core/images/terrain/lava-convex-tl.png
 %%DATADIR%%/data/core/images/terrain/lava-convex-tr.png
-%%DATADIR%%/data/core/images/terrain/lava-n-ne-nw-s.png
-%%DATADIR%%/data/core/images/terrain/lava-n-ne-nw.png
+%%DATADIR%%/data/core/images/terrain/lava-n-ne-se-s.png
+%%DATADIR%%/data/core/images/terrain/lava-n-ne-se.png
 %%DATADIR%%/data/core/images/terrain/lava-n-ne.png
 %%DATADIR%%/data/core/images/terrain/lava-n.png
-%%DATADIR%%/data/core/images/terrain/lava-ne-nw-s.png
+%%DATADIR%%/data/core/images/terrain/lava-ne-se-s.png
 %%DATADIR%%/data/core/images/terrain/lava-ne-se.png
 %%DATADIR%%/data/core/images/terrain/lava-ne.png
+%%DATADIR%%/data/core/images/terrain/lava-nw-n-ne.png
 %%DATADIR%%/data/core/images/terrain/lava-nw-n.png
 %%DATADIR%%/data/core/images/terrain/lava-nw.png
-%%DATADIR%%/data/core/images/terrain/lava-s-nw-ne-n.png
+%%DATADIR%%/data/core/images/terrain/lava-s-sw-nw-n.png
 %%DATADIR%%/data/core/images/terrain/lava-s-sw-nw.png
 %%DATADIR%%/data/core/images/terrain/lava-s-sw.png
 %%DATADIR%%/data/core/images/terrain/lava-s.png
+%%DATADIR%%/data/core/images/terrain/lava-se-s-sw.png
 %%DATADIR%%/data/core/images/terrain/lava-se-s.png
 %%DATADIR%%/data/core/images/terrain/lava-se.png
 %%DATADIR%%/data/core/images/terrain/lava-sw-nw-n.png
@@ -9711,6 +9713,8 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrmtry man/en_GB
 @dirrmtry man/es/man6
 @dirrmtry man/es
+@dirrmtry man/et/man6
+@dirrmtry man/et
 @dirrmtry man/fi/man6
 @dirrmtry man/fi
 @dirrmtry man/fr/man6
@@ -9763,3 +9767,5 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tl
 %%SERVER%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
