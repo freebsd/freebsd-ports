@@ -710,6 +710,7 @@
     SUBDIR += wmpop3
     SUBDIR += wmpop3lb
     SUBDIR += wmymail
+    SUBDIR += x-face-e21
     SUBDIR += xbuffy
     SUBDIR += xcite
     SUBDIR += xf-spf
