@@ -1,0 +1,16 @@
+--- client/Makefile.am.orig	2008-09-10 00:43:08.000000000 +0200
++++ client/Makefile.am	2009-09-09 22:50:54.000000000 +0200
+@@ -50,12 +50,7 @@
+ 
+ 
+ 
+-noinst_PROGRAMS = seti_boinc hires_timer_test
+-
+-hires_timer_test_SOURCES= vector/hires_timer.cpp
+-hires_timer_test_CXXFLAGS=-DTEST_TIMER $(CXXFLAGS) $(CLIENT_C_FLAGS)
+-hires_timer_test_LDFLAGS=$(CLIENT_LD_FLAGS)
+-hires_timer_test_LDADD=$(CLIENT_LD_ADD)
++noinst_PROGRAMS = seti_boinc
+ 
+ seti_boinc_SOURCES = \
+     main.cpp \

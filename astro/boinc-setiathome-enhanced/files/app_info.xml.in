@@ -1,0 +1,17 @@
+<app_info>
+<app>
+<name>setiathome_enhanced</name>
+</app>
+<file_info>
+<name>%%SETI_BINARY%%</name>
+<executable/>
+</file_info>
+<app_version>
+<app_name>setiathome_enhanced</app_name>
+<version_num>%%SETI_VERSION%%</version_num>
+<file_ref>
+<file_name>%%SETI_BINARY%%</file_name>
+<main_program/>
+</file_ref>
+</app_version>
+</app_info>
