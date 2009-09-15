@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bip
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	irc
 MASTER_SITES=	http://bip.t1r.net/downloads/ \
 		http://distfiles.gentoo.org/distfiles/ \
@@ -37,13 +37,17 @@ post-install:
 	@cd ${WRKSRC} && ${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
 
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 
 .if !defined(NOPORTEXAMPLES)
-	@${INSTALL} -d ${EXAMPLESDIR}
-	@cd ${WRKSRC}/samples && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+.for examples in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/samples/${examples} ${EXAMPLESDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
