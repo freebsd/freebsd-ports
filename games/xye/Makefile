@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xye
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.9.1
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	A puzzle game for X
@@ -19,6 +17,7 @@ USE_SDL=	sdl image ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 .ifdef NOPORTDOCS
 post-patch:
