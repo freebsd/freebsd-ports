@@ -1,5 +1,15 @@
 Choqok is free/open-source micro-blogging client for K Desktop Environment.
-The name comes from an ancient Persian word, means Sparrow.  It currently
-supports Twitter.com and Identi.ca services.
+The name comes from an ancient Persian word, means Sparrow.  Features are:
+
+  - Supports Twitter.com, Identi.ca, and self hosted Laconica websites
+  - Supports user friends' time-lines and @Reply time-lines
+  - Allows to easily send and receive direct messages
+  - Twitpic.com and KWallet integration
+  - Supports multiple accounts simultaneously
+  - Supports search APIs for all services
+  - Users can make quick tweets with global shortcuts
+  - Ability to notify user about new statuses text, with KNotification or
+    Libnotify
+  - Supports URL shortening with more than 30 characters
 
 WWW: http://choqok.gnufolks.org/
