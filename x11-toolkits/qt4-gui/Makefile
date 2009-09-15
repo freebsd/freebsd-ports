@@ -8,7 +8,7 @@
 
 PORTNAME=	gui
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -18,8 +18,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt graphical user interface library
 
-LIB_DEPENDS?=	png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 MAKE_JOBS_SAFE=	yes
 
@@ -34,7 +35,7 @@ USE_XORG=	xrender xrandr xinerama inputproto xfixes \
 		sm xcursor xext x11 ice xi xt
 
 ALL_TARGET=	first
-CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH 
+CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
 
@@ -53,6 +54,9 @@ CONFIGURE_WRKSRC=${WRKSRC}/../../
 PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
 CONFIGURE_ARGS+=	-I../../include/Qt -I../../include
+
+FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf
+FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 
 .include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
 
@@ -73,6 +77,11 @@ LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=-system-nas-sound
 .else
 CONFIGURE_ARGS+=-no-nas-sound
+.endif
+
+.if defined(PACKAGE_BUILDING)
+RUN_DEPENDS+=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
+		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
 .endif
 
 pre-configure:
