@@ -20,6 +20,7 @@ use vars qw(
 	$MAILCMD $MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION $MAIL_TRANSFORM
 	$MINCVSVERSION $MAX_DIFF_SIZE $NO_DOS_LINEBREAKS $PID $PROG_CVS
 	$PROG_MV %TEMPLATE_HEADERS $TMPDIR $TZ $UNEXPAND_RCSID $WARN_HEADERS
+	$FEATURE_FREEZE
 );
 use POSIX qw(tzset);
 
@@ -38,6 +39,9 @@ $PID = getpgrp();
 
 # Debug level, 0 = off, 1 = on.
 $DEBUG = 0;
+
+# Feature freeze, 0 = off, 1 = on.
+$FEATURE_FREEZE = 0;
 
 # Location of temporary directory.
 $TMPDIR = "/tmp/";
@@ -113,7 +117,8 @@ $AVAIL_FILE = "$CVSROOT/CVSROOT/avail";
 #	"Approved by"		=> '.*',
 #	"PR"			=> '.*',
 #	"MFC after"		=> '\d+(\s+(days?|weeks?|months?))?',
-#	"Security"		=> '.*'
+#	"Security"		=> '.*',
+#	"Feature safe"		=> '.*'
 );
 
 
