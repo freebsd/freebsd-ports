@@ -94,8 +94,6 @@ bin/xscreensaver-hacks/halftone
 bin/xscreensaver-hacks/halo
 bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hopalong
-bin/xscreensaver-hacks/hyperball
-bin/xscreensaver-hacks/hypercube
 bin/xscreensaver-hacks/hypertorus
 bin/xscreensaver-hacks/hypnowheel
 bin/xscreensaver-hacks/ifs
@@ -105,7 +103,6 @@ bin/xscreensaver-hacks/interference
 bin/xscreensaver-hacks/intermomentary
 bin/xscreensaver-hacks/jigglypuff
 bin/xscreensaver-hacks/jigsaw
-bin/xscreensaver-hacks/juggle
 bin/xscreensaver-hacks/juggler3d
 bin/xscreensaver-hacks/julia
 bin/xscreensaver-hacks/kaleidescope
@@ -160,6 +157,7 @@ bin/xscreensaver-hacks/rocks
 bin/xscreensaver-hacks/rorschach
 bin/xscreensaver-hacks/rotzoomer
 bin/xscreensaver-hacks/rubik
+bin/xscreensaver-hacks/rubikblocks
 bin/xscreensaver-hacks/sballs
 bin/xscreensaver-hacks/shadebobs
 bin/xscreensaver-hacks/sierpinski
@@ -180,6 +178,7 @@ bin/xscreensaver-hacks/stonerview
 bin/xscreensaver-hacks/strange
 bin/xscreensaver-hacks/substrate
 bin/xscreensaver-hacks/superquadrics
+bin/xscreensaver-hacks/surfaces
 bin/xscreensaver-hacks/swirl
 bin/xscreensaver-hacks/tangram
 bin/xscreensaver-hacks/thornbird
@@ -297,8 +296,6 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/halo.xml
 %%DATADIR%%/config/helix.xml
 %%DATADIR%%/config/hopalong.xml
-%%DATADIR%%/config/hyperball.xml
-%%DATADIR%%/config/hypercube.xml
 %%DATADIR%%/config/hypertorus.xml
 %%DATADIR%%/config/hypnowheel.xml
 %%DATADIR%%/config/ifs.xml
@@ -308,7 +305,6 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/intermomentary.xml
 %%DATADIR%%/config/jigglypuff.xml
 %%DATADIR%%/config/jigsaw.xml
-%%DATADIR%%/config/juggle.xml
 %%DATADIR%%/config/juggler3d.xml
 %%DATADIR%%/config/julia.xml
 %%DATADIR%%/config/kaleidescope.xml
@@ -362,6 +358,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/rorschach.xml
 %%DATADIR%%/config/rotzoomer.xml
 %%DATADIR%%/config/rubik.xml
+%%DATADIR%%/config/rubikblocks.xml
 %%DATADIR%%/config/sballs.xml
 %%DATADIR%%/config/shadebobs.xml
 %%DATADIR%%/config/sierpinski.xml
@@ -382,6 +379,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/strange.xml
 %%DATADIR%%/config/substrate.xml
 %%DATADIR%%/config/superquadrics.xml
+%%DATADIR%%/config/surfaces.xml
 %%DATADIR%%/config/swirl.xml
 %%DATADIR%%/config/tangram.xml
 %%DATADIR%%/config/thornbird.xml
