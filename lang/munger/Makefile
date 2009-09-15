@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.171
+PORTVERSION=	4.172
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Static lisp interpreter with text processing abilities
+LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 
 DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
