@@ -43,12 +43,12 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/js/advlink.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/link.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/compat2x/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/compat2x/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
@@ -191,6 +191,8 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/template/template.htm
 %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/wordcount/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/wordcount/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm
 %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
 %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/attributes.htm
@@ -281,9 +283,9 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/compat2x
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img
@@ -345,6 +347,7 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/wordcount
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/langs
