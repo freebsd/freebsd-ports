@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.4.2
+PORTVERSION=	1.6.4.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -185,7 +185,7 @@ USE_RC_SUBR=	git_daemon
 
 SHELLS=		/etc/shells
 
-OPTIONS=	GUI "Enable building of GUI tools" on \
+OPTIONS=	GUI "Enable building of GUI tools" off \
 		SVN "Enable required dependencies for SVN tools" off \
 		GITWEB "Install gitweb" off \
 		P4  "Enable Perforce support" on \
@@ -202,7 +202,7 @@ PLIST_SUB+=	HTMLDOCS=""
 PLIST_SUB+=	HTMLDOCS="@comment "
 .endif
 
-.if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
+.ifdef (WITH_GUI)
 USE_TK=		84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 MAN1+=		git-citool.1 \
