@@ -7,6 +7,7 @@
 
 PORTNAME=	yagf
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://symmetrica.net/cuneiform-linux/
 
@@ -22,13 +23,14 @@ USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 INSTALLS_ICONS=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui imageformats linguist moc qmake rcc uic
+QT_COMPONENTS=	corelib gui imageformats linguist_build \
+		moc_build qmake_build rcc_build uic_build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION}<700000
-IGNORE=		does not compile at 6.x
+.if ${OSVERSION}<700042
+CMAKE_USE_PTHREAD=	yes
 .endif
 .include <bsd.port.post.mk>
