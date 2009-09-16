@@ -4162,3 +4162,6 @@ multimedia/phonon-gstreamer|multimedia/qt4-phonon-gst|2009-09-11|Superseded by m
 multimedia/phonon|multimedia/qt4-phonon|2009-09-11|Superseded by multimedia/qt4-phonon
 editors/bed||2009-09-13|Removed: marked IGNORE for more than two years, unmaintained
 devel/eric||2009-09-16|Removed: obsoleted by devel/eric4
+devel/p5-Algorithm-MDiff||2009-09-16|Has expired: the module was removed from CPAN
+devel/p5-Data-Postponed||2009-09-16|Has expired: the module was removed from CPAN
+net/asterisk12-addons||2009-09-16|Has expired: does not build
