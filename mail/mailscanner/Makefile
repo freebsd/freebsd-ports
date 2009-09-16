@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.75.11
+PORTVERSION=	4.78.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -106,6 +106,7 @@ RUN_DEPENDS+=	bdc:${PORTSDIR}/security/bdc
 
 DOC_FILES=	INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
+		archives.filename.rules.conf archives.filetype.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
 		spam.lists.conf virus.scanners.conf \
 		phishing.safe.sites.conf \
@@ -161,6 +162,10 @@ do-build:
 		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
 		s,%%RC_SUBR%%,${RC_SUBR},g;' \
 		${WRKSRC}/bin/cron/update_virus_scanners.cron
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
+		${WRKSRC}/bin/update_bad_phishing_emails
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
 		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
@@ -241,6 +246,8 @@ do-install:
 		${PREFIX}/libexec/MailScanner/clean.quarantine
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/mailscanner_create_locks \
 		${PREFIX}/libexec/MailScanner/mailscanner_create_locks
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_bad_phishing_emails \
+		${PREFIX}/libexec/MailScanner/update_bad_phishing_emails
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_phishing_sites \
 		${PREFIX}/libexec/MailScanner/update_phishing_sites
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_bad_phishing_sites \

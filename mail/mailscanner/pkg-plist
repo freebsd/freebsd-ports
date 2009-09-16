@@ -1,4 +1,6 @@
 @comment $FreeBSD$
+etc/MailScanner/archives.filename.rules.conf.sample
+etc/MailScanner/archives.filetype.rules.conf.sample
 etc/MailScanner/country.domains.conf.sample
 etc/MailScanner/MailScanner.conf.sample
 etc/MailScanner/filename.rules.conf.sample
@@ -32,7 +34,9 @@ lib/MailScanner/MailScanner/CustomFunctions/LastSpam.pm
 lib/MailScanner/MailScanner/CustomFunctions/Ruleset-from-Function.pm
 lib/MailScanner/MailScanner/Exim.pm
 lib/MailScanner/MailScanner/EximDiskStore.pm
+lib/MailScanner/MailScanner/FileInto.pm
 lib/MailScanner/MailScanner/GenericSpam.pm
+lib/MailScanner/MailScanner/LinksDump.pm
 lib/MailScanner/MailScanner/Lock.pm
 lib/MailScanner/MailScanner/Log.pm
 lib/MailScanner/MailScanner/MCP.pm
@@ -55,6 +59,7 @@ lib/MailScanner/MailScanner/SweepOther.pm
 lib/MailScanner/MailScanner/SweepViruses.pm
 lib/MailScanner/MailScanner/SystemDefs.pm
 lib/MailScanner/MailScanner/TNEF.pm
+lib/MailScanner/MailScanner/Unzip.pm
 lib/MailScanner/MailScanner/WorkArea.pm
 lib/MailScanner/MailScanner/ZMDiskStore.pm
 lib/MailScanner/MailScanner/ZMailer.pm
@@ -62,6 +67,7 @@ libexec/MailScanner/analyse_SpamAssassin_cache
 libexec/MailScanner/clean.SA.cache
 libexec/MailScanner/clean.quarantine
 libexec/MailScanner/mailscanner_create_locks
+libexec/MailScanner/update_bad_phishing_emails
 libexec/MailScanner/update_phishing_sites
 libexec/MailScanner/update_bad_phishing_sites
 libexec/MailScanner/update_bad_phishing_sites.cron
