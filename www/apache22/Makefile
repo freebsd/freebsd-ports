@@ -46,7 +46,7 @@ USE_PERL5=		yes
 USE_RC_SUBR=		apache22 htcacheclean
 LIBTOOLFILES=		configure
 
-MPM_ITK_VERSION?=	20080727-00
+MPM_ITK_VERSION?=	20090414-00
 
 # for slave ports
 .if !defined(MASTERDIR)
