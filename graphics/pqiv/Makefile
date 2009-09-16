@@ -6,22 +6,13 @@
 #
 
 PORTNAME=	pqiv
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.pberndt.com/raw//Programme/Linux/pqiv/_download/
+MASTER_SITES=	http://www.pberndt.com/raw/Programme/Linux/pqiv/_download/
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pretty Quick Image Viewer
-
-USE_BZIP2=	yes
-USE_GNOME=	gtk20 glib20 pango pkgconfig
-CFLAGS+=	-DNO_INOTIFY
-PLIST_FILES=	bin/pqiv
-PORTDOCS=	README
-MAN1=		pqiv.1
-MANCOMPRESSED=	no
 
 OPTIONS=	SORTING		"Enable sorting of loaded files" on \
 		COMPOSITE	"Enable support for transparent windows" on \
@@ -29,13 +20,21 @@ OPTIONS=	SORTING		"Enable sorting of loaded files" on \
 		COMMANDS	"Enable support for external command execution" on \
 		CONFIG		"Enable support for a configuration file" on
 
+USE_BZIP2=	yes
+USE_GNOME=	gtk20
+CFLAGS+=	-DNO_INOTIFY -DBINARY_NAME=\"${PORTNAME}\"
+
+MAN1=		pqiv.1
+PORTDOCS=	README
+PLIST_FILES=	bin/pqiv
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_SORTING)
 CFLAGS+=	-DNO_SORTING
 SORTFILE=	# Empty
 .else
-SORTFILE=	${WRKSRC}/lib/strnatcmp.c
+SORTFILE=	lib/strnatcmp.c
 .endif
 .if defined(WITHOUT_COMPOSITE)
 CFLAGS+=	-DNO_COMPOSITING
@@ -50,17 +49,19 @@ CFLAGS+=	-DNO_COMMANDS
 CFLAGS+=	-DNO_CONFIG_FILE
 .endif
 
+post-patch:
+	@(cd ${WRKSRC} && ${SED} 's|$$PACKAGE_VERSION|${PORTVERSION}|' \
+		< pqiv.1.template > pqiv.1)
+
 do-build:
-	${CC} ${CFLAGS} `${pkgconfig_DETECT} --libs --cflags gtk+-2.0 gthread-2.0 pango glib-2.0` \
-		${SORTFILE} ${WRKSRC}/pqiv.c -o ${WRKSRC}/pqiv
-	@${REINPLACE_CMD} 's|$$PACKAGE_VERSION|${PORTVERSION}|' \
-		${WRKSRC}/pqiv.1.template
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} `${pkgconfig_DETECT} --libs --cflags gtk+-2.0 gthread-2.0` \
+		${SORTFILE} pqiv.c -o pqiv)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pqiv ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pqiv.1.template ${MAN1PREFIX}/man/man1/pqiv.1
+	${INSTALL_MAN} ${WRKSRC}/pqiv.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
