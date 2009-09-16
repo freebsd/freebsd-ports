@@ -28,7 +28,7 @@ load_rc_config $name
 
 : ${zaptel_enable="NO"}
 
-: ${zaptel_kmod_load="zaptel.ko wctdm.ko wctdm24xxp.ko wct1xxp.ko wct4xxp.ko wcte11xp.ko wcte12xp.ko"}
+: ${zaptel_kmod_load="zaptel.ko qozap.ko wctdm.ko wctdm24xxp.ko wct1xxp.ko wct4xxp.ko wcte11xp.ko wcte12xp.ko"}
 # Reverse list
 zaptel_kmod_unload=""
 for kmod in ${zaptel_kmod_load}

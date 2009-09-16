@@ -12,6 +12,7 @@ include/zaptel/tonezone.h
 include/zaptel/zaptel.h
 lib/libtonezone.a
 lib/zaptel/linker.hints
+lib/zaptel/qozap.ko
 lib/zaptel/wct1xxp.ko
 lib/zaptel/wctdm.ko
 lib/zaptel/wctdm24xxp.ko

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	1.4.11
-PORTREVISION=	1
+PORTVERSION=	1.4.11.2
 CATEGORIES=	misc kld
-MASTER_SITES=	http://people.freebsd.org/~gonzo/zaptel/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fjoe
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A FreeBSD Driver for FXO, FXS, BRI and PRI Telephony Cards
 
 LIB_DEPENDS=	newt.51:${PORTSDIR}/devel/newt
@@ -25,7 +25,7 @@ MAKE_ENV=	KMODDIR=${PREFIX}/lib/zaptel
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	zaptel
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}-bsd
+WRKSRC=         ${WRKDIR}/${PORTNAME}-bsd-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
