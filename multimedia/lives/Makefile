@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -61,6 +61,9 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 		weed-docs/weedspec.txt weed-docs/weedevents.txt
 
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
+
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
