@@ -318,7 +318,6 @@
     SUBDIR += entity
     SUBDIR += epm
     SUBDIR += epydoc
-    SUBDIR += eric
     SUBDIR += eric4
     SUBDIR += eris
     SUBDIR += erlang-thrift
