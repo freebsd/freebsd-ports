@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aft
-PORTVERSION=	5.096
+PORTVERSION=	5.097
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.maplefish.com/todd/
@@ -15,8 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A document preparation system using an Almost Free Text input format
 
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 .if defined(NOPORTDOCS)
 INSTALL_TARGET=	install-binSCRIPTS install-pkgdataDATA install-pkgdataSCRIPTS
