@@ -21,8 +21,6 @@ LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		gd.4:${PORTSDIR}/graphics/gd
 
-CONFLICTS=	prune-[0-9]*
-
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl:22 libtool:22
