@@ -9,7 +9,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=		4
 
 MAINTAINER=		jille@quis.cx
 
@@ -18,8 +18,9 @@ MASTERDIR=		${.CURDIR}/../apache22
 SLAVE_PORT_MPM=		peruser
 EXTRA_PATCHES+=		${.CURDIR}/files/httpd-2.2.3-peruser-0.3.0.patch
 EXTRA_PATCHES+=		${.CURDIR}/files/httpd-2.2.3-peruser-0.3.0-dc3.patch
+EXTRA_PATCHES+=		${.CURDIR}/files/httpd-2.2.3-peruser-0.3.0-dc3-r57.patch
 WITH_MPM=		${SLAVE_PORT_MPM}
-SLAVE_DESIGNED_FOR=	2.2.11	# 2.2.3 to be honest, but works fine on 2.2.11
+SLAVE_DESIGNED_FOR=	2.2.13	# 2.2.3 to be honest, but works fine on 2.2.11
 
 LATEST_LINK=	apache22-peruser-mpm
 DESCR=			${.CURDIR}/pkg-descr

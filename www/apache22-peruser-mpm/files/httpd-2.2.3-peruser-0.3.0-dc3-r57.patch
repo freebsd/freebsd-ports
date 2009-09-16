@@ -1,0 +1,275 @@
+--- server/mpm/experimental/peruser/peruser.c	(revision 55)
++++ server/mpm/experimental/peruser/peruser.c	(revision 57)
+@@ -320,7 +320,7 @@
+  * process.
+  */
+ static apr_size_t child_info_size;
+-static child_info *child_info_image;
++static child_info *child_info_image = NULL;
+ static child_grace_info_t *child_grace_info_table;
+ struct ap_ctable *ap_child_table;
+ 
+@@ -936,7 +936,7 @@
+     msg.msg_iovlen  = 5;
+ 
+     cmsg = apr_palloc(pool, sizeof(*cmsg) + sizeof(sock_fd));
+-    cmsg->cmsg_len   = sizeof(*cmsg) + sizeof(sock_fd);
++    cmsg->cmsg_len   = CMSG_LEN(sizeof(sock_fd));
+     cmsg->cmsg_level = SOL_SOCKET;
+     cmsg->cmsg_type  = SCM_RIGHTS;
+ 
+@@ -1034,9 +1034,10 @@
+         ap_log_error(APLOG_MARK, APLOG_ERR, rv, NULL, "apr_os_sock_get");
+     }
+ 
+-    _DBG("child_num=%d sock=%ld sock_fd=%d\n", my_child_num, sock, sock_fd);
++    _DBG("child_num=%d sock=%ld sock_fd=%d", my_child_num, sock, sock_fd);
+     _DBG("type=%s %d", child_type_string(CHILD_INFO_TABLE[my_child_num].type), my_child_num);
+ 
++#ifdef _OSD_POSIX
+     if (sock_fd >= FD_SETSIZE)
+     {
+         ap_log_error(APLOG_MARK, APLOG_WARNING, 0, NULL,
+@@ -1048,6 +1049,7 @@
+         _DBG("child_num=%d: exiting with error", my_child_num);
+         return;
+     }
++#endif
+ 
+     if (CHILD_INFO_TABLE[my_child_num].sock_fd < 0)
+     {
+@@ -1300,7 +1302,7 @@
+     msg.msg_iovlen  = 5;
+ 
+     cmsg = apr_palloc(r->pool, sizeof(*cmsg) + sizeof(sock_fd));
+-    cmsg->cmsg_len   = sizeof(*cmsg) + sizeof(sock_fd);
++    cmsg->cmsg_len   = CMSG_LEN(sizeof(sock_fd));
+     cmsg->cmsg_level = SOL_SOCKET;
+     cmsg->cmsg_type  = SCM_RIGHTS;
+ 
+@@ -1309,7 +1311,6 @@
+     msg.msg_control    = cmsg;
+     msg.msg_controllen = cmsg->cmsg_len;
+ 
+-
+     if (processor->status == CHILD_STATUS_STANDBY)
+     {
+         _DBG("Activating child #%d", processor->id);
+@@ -1374,7 +1375,7 @@
+     iov[3].iov_len  = HUGE_STRING_LEN;
+ 
+     cmsg = apr_palloc(ptrans, sizeof(*cmsg) + sizeof(trans_sock_fd));
+-    cmsg->cmsg_len = sizeof(*cmsg) + sizeof(trans_sock_fd);
++    cmsg->cmsg_len = CMSG_LEN(sizeof(trans_sock_fd));
+ 
+     msg.msg_name       = NULL;
+     msg.msg_namelen    = 0;
+@@ -1424,32 +1425,32 @@
+     apr_cpystrn(headers, buff, header_len + 1);
+     _DBG("header_len=%d headers=\"%s\"", header_len, headers);
+ 
+-if (header_len) {    
+-    _DBG("header_len > 0, we got a request", 0);
+-    /* -- store received data into an brigade and add
+-          it to the current transaction's pool -- */
+-    bucket = apr_bucket_eos_create(alloc);
+-    APR_BRIGADE_INSERT_HEAD(bb, bucket);
+-    bucket = apr_bucket_socket_create(*trans_sock, alloc);
+-    APR_BRIGADE_INSERT_HEAD(bb, bucket);
+-
+-    if (body_len) {
+-        body = (char*)&buff[header_len + 1];
+-        _DBG("body_len=%d body=\"%s\"", body_len, body);
+-
+-        bucket = apr_bucket_heap_create(body, body_len, NULL, alloc);
++    if (header_len) {    
++        _DBG("header_len > 0, we got a request", 0);
++        /* -- store received data into an brigade and add
++           it to the current transaction's pool -- */
++        bucket = apr_bucket_eos_create(alloc);
+         APR_BRIGADE_INSERT_HEAD(bb, bucket);
++        bucket = apr_bucket_socket_create(*trans_sock, alloc);
++        APR_BRIGADE_INSERT_HEAD(bb, bucket);
++        
++        if (body_len) {
++            body = (char*)&buff[header_len + 1];
++            _DBG("body_len=%d body=\"%s\"", body_len, body);
++            
++            bucket = apr_bucket_heap_create(body, body_len, NULL, alloc);
++            APR_BRIGADE_INSERT_HEAD(bb, bucket);
++        } else {
++            _DBG("There is no body",0);
++        }
++        
++        bucket = apr_bucket_heap_create(headers, header_len, NULL, alloc);
++        
++        APR_BRIGADE_INSERT_HEAD(bb, bucket);
++        apr_pool_userdata_set(bb, "PERUSER_SOCKETS", NULL, ptrans);
+     } else {
+-        _DBG("There is no body",0);
++        _DBG("header_len == 0, we got a socket only", 0);
+     }
+-
+-    bucket = apr_bucket_heap_create(headers, header_len, NULL, alloc);
+-
+-    APR_BRIGADE_INSERT_HEAD(bb, bucket);
+-    apr_pool_userdata_set(bb, "PERUSER_SOCKETS", NULL, ptrans);
+-} else {
+-    _DBG("header_len == 0, we got a socket only", 0);
+-}
+     _DBG("returning 0", 0);
+     return 0;
+ }
+@@ -2608,6 +2609,12 @@
+     ++ap_my_generation;
+     ap_scoreboard_image->global->running_generation = ap_my_generation;
+     
++    /* cleanup sockets */
++    for (i = 0; i < NUM_SENV; i++) {
++        close(SENV[i].input);
++        close(SENV[i].output);
++    }
++
+     if (is_graceful) {
+         char char_of_death = AP_PERUSER_CHAR_OF_DEATH;
+ 
+@@ -2696,14 +2703,6 @@
+         }
+         _DBG("Total children of %d leaving behind for graceful restart (%d living)", 
+                        grace_children, grace_children_alive);
+-
+-       /* destroy server_env_image */
+-        for (i = 0; i < NUM_SENV; i++)
+-        {
+-            close(SENV[i].input);
+-            close(SENV[i].output);
+-        }
+-       cleanup_server_environments(NULL);
+     }
+     else {
+ 	/* Kill 'em off */
+@@ -2861,40 +2860,41 @@
+         return rv;
+     }
+ 
++    if (!child_info_image) {
++        _DBG("Initializing child_info_table", 0);
++        child_info_size = tmp_server_limit * sizeof(child_info_t) + sizeof(apr_size_t);
+ 
+-    _DBG("Initializing child_info_table", 0);
+-    child_info_size = tmp_server_limit * sizeof(child_info_t) + sizeof(apr_size_t);
++        rv = apr_shm_create(&child_info_shm, child_info_size, NULL, global_pool);
+ 
+-    rv = apr_shm_create(&child_info_shm, child_info_size, NULL, global_pool);
++        /*  if ((rv != APR_SUCCESS) && (rv != APR_ENOTIMPL)) { */
++        if (rv != APR_SUCCESS) {
++            _DBG("shared memory creation failed", 0);
+ 
+-/*  if ((rv != APR_SUCCESS) && (rv != APR_ENOTIMPL)) { */
+-    if (rv != APR_SUCCESS) {
+-        _DBG("shared memory creation failed", 0);
++            ap_log_error(APLOG_MARK, APLOG_CRIT, rv, NULL,
++                         "Unable to create shared memory segment "
++                         "(anonymous shared memory failure)");
++        }
++        else if (rv == APR_ENOTIMPL) {
++            _DBG("anonymous shared memory not available", 0);
++            /* TODO: make up a filename and do name-based shmem */
++        }
+ 
+-        ap_log_error(APLOG_MARK, APLOG_CRIT, rv, NULL,
+-                     "Unable to create shared memory segment "
+-                     "(anonymous shared memory failure)");
+-    }
+-    else if (rv == APR_ENOTIMPL) {
+-        _DBG("anonymous shared memory not available", 0);
+-        /* TODO: make up a filename and do name-based shmem */
+-    }
++        if (rv || !(shmem = apr_shm_baseaddr_get(child_info_shm))) {
++            _DBG("apr_shm_baseaddr_get() failed", 0);
++            return HTTP_INTERNAL_SERVER_ERROR;
++        }
+ 
+-    if (rv || !(shmem = apr_shm_baseaddr_get(child_info_shm))) {
+-        _DBG("apr_shm_baseaddr_get() failed", 0);
+-        return HTTP_INTERNAL_SERVER_ERROR;
++        memset(shmem, 0, child_info_size);
++        child_info_image = (child_info*)apr_palloc(global_pool, sizeof(child_info));
++        child_info_image->control = (child_info_control*)shmem;
++        shmem += sizeof(child_info_control);
++        child_info_image->table = (child_info_t*)shmem;
+     }
+ 
+-    memset(shmem, 0, sizeof(child_info_size));
+-    child_info_image = (child_info*)calloc(1, sizeof(child_info_size));
+-    child_info_image->control = (child_info_control*)shmem;
+-    shmem += sizeof(child_info_control*);
+-    child_info_image->table = (child_info_t*)shmem;
+-
++    _DBG("Clearing child_info_table");
+     child_info_image->control->num = 0;
+ 
+-    for (i = 0; i < tmp_server_limit; i++)
+-    {
++    for (i = 0; i < tmp_server_limit; i++) {
+         CHILD_INFO_TABLE[i].pid     = 0;
+         CHILD_INFO_TABLE[i].senv    = (server_env_t*)NULL;
+         CHILD_INFO_TABLE[i].type    = CHILD_TYPE_UNKNOWN;
+@@ -2927,25 +2927,23 @@
+             return HTTP_INTERNAL_SERVER_ERROR;
+         }
+ 
+-        memset(shmem, 0, sizeof(server_env_size));
+-        server_env_image = (server_env*)calloc(1, sizeof(server_env_size));
++        memset(shmem, 0, server_env_size);
++        server_env_image = (server_env*)apr_palloc(global_pool, sizeof(server_env));
+         server_env_image->control = (server_env_control*)shmem;
+-        shmem += sizeof(server_env_control*);
++        shmem += sizeof(server_env_control);
+         server_env_image->table = (server_env_t*)shmem;
+     }
+-
+-    if(restart_num <= 2) {
+-        _DBG("Cleaning server environments table");
+     
+-        server_env_image->control->num = 0;
+-        for (i = 0; i < tmp_server_limit; i++) {
+-            SENV[i].processor_id = -1;
+-            SENV[i].uid          = -1;
+-            SENV[i].gid          = -1;
+-            SENV[i].chroot       = NULL;
+-            SENV[i].input        = -1;
+-            SENV[i].output       = -1;
+-        }
++    _DBG("Clearing server environment table");
++    server_env_image->control->num = 0;    
++
++    for (i = 0; i < tmp_server_limit; i++) {
++        SENV[i].processor_id = -1;
++        SENV[i].uid          = -1;
++        SENV[i].gid          = -1;
++        SENV[i].chroot       = NULL;
++        SENV[i].input        = -1;
++        SENV[i].output       = -1;
+     }
+ 
+     return OK;
+@@ -3196,14 +3194,11 @@
+                             "Error: Directive %s> takes one argument", cmd->cmd->name);
+     }
+ 
+-    /*	Check for existing processors on first launch and between gracefuls */
+-    if (restart_num == 1 || is_graceful) {
+-        server_env_t *old_senv = find_senv_by_name(senv.name);
++    server_env_t *old_senv = find_senv_by_name(senv.name);
+ 
+-        if (old_senv) {
+-            return apr_psprintf(cmd->temp_pool,
+-                                "Error: Processor %s already defined", senv.name);
+-        }
++    if (old_senv) {
++        return apr_psprintf(cmd->temp_pool,
++                            "Error: Processor %s already defined", senv.name);
+     }
+ 
+     senv.nice_lvl 		= 0;
