@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	libpri
-PORTVERSION=	1.2.3
+PORTVERSION=	1.4.3
 CATEGORIES=	misc
-MASTER_SITES=	http://downloads.digium.com/pub/libpri/old/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/libpri/releases/
 PKGNAMESUFFIX=	-bristuff
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	fjoe
 PATCH_DIST_STRIP=	-p1
-BRIVER=		bristuff-0.3.0-PRE-1s
+BRIVER=		bristuff-0.4.0-RC3g
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C implementation of the Primary Rate ISDN specification
@@ -22,10 +22,4 @@ COMMENT=	A C implementation of the Primary Rate ISDN specification
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		Does not compile on alpha
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
