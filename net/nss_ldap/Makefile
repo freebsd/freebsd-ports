@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
 
-MAINTAINER=	kazakov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 2307 NSS module
 
 NSS_LDAP_VERSION=264
