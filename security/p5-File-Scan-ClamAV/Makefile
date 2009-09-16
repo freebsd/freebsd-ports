@@ -12,7 +12,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	j.koopmann@seceidos.de
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the clamav virus scanner
 
 BUILD_DEPENDS=	clamscan:${PORTSDIR}/security/clamav
