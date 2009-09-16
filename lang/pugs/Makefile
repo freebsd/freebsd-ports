@@ -29,6 +29,8 @@ RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
+BROKEN=		does not build
+
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/Perl6-Pugs-${PORTVERSION}
 
