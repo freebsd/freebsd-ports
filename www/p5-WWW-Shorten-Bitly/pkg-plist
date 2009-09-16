@@ -1,3 +1,4 @@
+bin/bitly_url
 %%SITE_PERL%%/WWW/Shorten/Bitly.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/Bitly/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/Bitly

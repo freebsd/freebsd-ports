@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Shorten-Bitly
-PORTVERSION=	1.11
+PORTVERSION=	1.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		bitly_url.1
 MAN3=		WWW::Shorten::Bitly.3
 
 .include <bsd.port.mk>
