@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	j.koopmann@seceidos.de
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the clamav virus scanner
 
 BUILD_DEPENDS=	${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
