@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stumpwm
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	SAVANNAH
 EXTRACT_SUFX=	.tgz
@@ -18,10 +18,9 @@ BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lisp=clisp
-STRIP=
 
-PLIST_FILES=	bin/stumpwm
-INFO=		stumpwm
+PLIST_FILES=	bin/${PORTNAME}
+INFO=		${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -31,7 +30,7 @@ IGNORE=		requires lang/clisp built with CLX_NEW option ON
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/stumpwm ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/stumpwm.info ${PREFIX}/${INFO_PATH}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.info ${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.post.mk>
