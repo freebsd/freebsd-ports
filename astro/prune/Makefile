@@ -7,7 +7,7 @@
 
 PORTNAME=	prune
 PORTVERSION=	7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/prune/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,8 +18,6 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Application for viewing, editing and converting GPS coordinate data
 
-CONFLICTS=	graphviz-[0-9]*
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
@@ -29,11 +27,11 @@ JAVA_VERSION=	1.5+
 SUB_FILES=	prune.sh
 SUB_LIST=	JARNAME=${DISTNAME}
 
-PLIST_FILES=	bin/prune ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
+PLIST_FILES=	bin/prune${PORTVERSION} ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${JAVAJARDIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/prune.sh ${PREFIX}/bin/prune
+	${INSTALL_SCRIPT} ${WRKDIR}/prune.sh ${PREFIX}/bin/prune${PORTVERSION}
 
 .include <bsd.port.mk>
