@@ -7,7 +7,7 @@
 
 PORTNAME=	prayer
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
@@ -45,10 +45,11 @@ pre-patch:
 	@${CP} ${WRKSRC}/defaults/Config ${WRKSRC}/Config
 
 post-patch:
-	# correct chroot
+# correct chroot
 	@${REINPLACE_CMD} "s#\"/chroot/prayer\"#config->var_prefix#" ${WRKSRC}/servers/prayer_chroot.c
-	# change the user in the default config
+# change the user in the default config and cylog util
 	@${REINPLACE_CMD} "s#prayer_user           = \"prayer\"#prayer_user           = \"_prayer\"#" ${WRKSRC}/files/etc/prayer.cf.SRC
+	@${REINPLACE_CMD} "s#\"prayer\" \"prayer\"#\"_prayer\" \"prayer\"#" ${WRKSRC}/utils/prayer-cyclog.SRC
 	@${REINPLACE_CMD} "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/Config
 
 post-configure:
