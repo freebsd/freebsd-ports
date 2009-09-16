@@ -41,4 +41,13 @@
 	Please also always look at the port changelog at
 	%%PREFIX%%/share/doc/MailScanner/CHANGES.port
 
+       ************************************************************
+       Some users have reported problems with this port and a
+       previously upgraded port of perl (5.8.8 > 5.8.9). Please
+       ensure you are taking the correct steps when upgrading perl
+       as described in /usr/ports/UPDATING. If you are still
+       having problems, many people have had success by upgrading
+       to perl 5.10 instead.
+       ************************************************************
+
 *************************************************************************
