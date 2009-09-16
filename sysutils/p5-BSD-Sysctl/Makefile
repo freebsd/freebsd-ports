@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BSD-Sysctl
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,10 +18,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		BSD::Sysctl.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800070
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
