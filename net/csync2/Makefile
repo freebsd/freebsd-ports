@@ -24,12 +24,11 @@ LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 
 MAN1=	csync2.1
 
-BROKEN=		does not compile with new gnuTLS
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
 
 PLIST_FILES=	etc/csync2.cfg-dist \
 		sbin/csync2 \
