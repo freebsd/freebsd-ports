@@ -14,7 +14,7 @@ MASTER_SITES=	http://www2.cs.tum.edu/projects/cup/ \
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-v${PORTVERSION:S|.||}-20050516-sources
 
-MAINTAINER=	ports@mcdermottroe.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An LALR parser generator in Java
 
 USE_JAVA=	yes

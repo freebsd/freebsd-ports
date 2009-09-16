@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	WWW/MACKERS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@mcdermottroe.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A PERL module to replay files recorded with TestGen4Web
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
