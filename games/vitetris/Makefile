@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vitetris
-PORTVERSION=	0.56
+PORTVERSION=	0.57
 CATEGORIES=	games
 MASTER_SITES=	http://victornils.net/tetris/
 
