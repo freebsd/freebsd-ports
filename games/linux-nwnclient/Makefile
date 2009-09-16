@@ -19,18 +19,18 @@ COMMENT=	Neverwinter Nights Linux (x86) Client
 
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/NWNv129.txt:${PORTSDIR}/games/nwndata
 
-.ifdef WITH_NVIDIA_GL
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
-		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux-libGLU
-.else
-USE_LINUX_APPS+=dri
-.endif
-
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
+
+.ifdef WITH_NVIDIA_GL
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+USE_LINUX_APPS+=libglu
+.else
+USE_LINUX_APPS+=dri
+.endif
 
 PLIST_SUB+=	NWNVERSION="${PORTVERSION:S/.//}"
 
