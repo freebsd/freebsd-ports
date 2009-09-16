@@ -1,59 +1,65 @@
---- Makefile.orig	Sun Oct 29 15:38:22 2006
-+++ Makefile	Sun Oct 29 15:39:37 2006
-@@ -34,21 +34,21 @@
- # device sends a RELEASE COMPLETE with cause 17
- #FASTBUSYONBUSY=-DFASTBUSYONBUSY
- 
--CC=gcc
-+CC?=gcc
- 
+--- Makefile.orig	2009-09-09 17:22:54.000000000 +0200
++++ Makefile	2009-09-09 17:23:33.000000000 +0200
+@@ -42,14 +42,14 @@
  OSARCH=$(shell uname -s)
  PROC?=$(shell uname -m)
  
- TOBJS=testpri.o
- T2OBJS=testprilib.o
 -STATIC_LIBRARY=libpri.a
 -DYNAMIC_LIBRARY=libpri.so.1.0
 +STATIC_LIBRARY=libpri-bristuff.a
 +DYNAMIC_LIBRARY=libpri-bristuff.so.1
  STATIC_OBJS=copy_string.o pri.o q921.o prisched.o q931.o pri_facility.o
  DYNAMIC_OBJS=copy_string.lo pri.lo q921.lo prisched.lo q931.lo pri_facility.lo
--CFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS) $(LAYER2ALWAYSUP) $(FASTBUSYONBUSY) -DRELAX_TRB
--INSTALL_PREFIX=$(DESTDIR)
--INSTALL_BASE=/usr
+-CFLAGS=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC $(ALERTING) $(LIBPRI_COUNTERS) $(LAYER2ALWAYSUP) $(FASTBUSYONBUSY) -DRELAX_TRB $(RELAXEDTIMERS)
++CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC $(ALERTING) $(LIBPRI_COUNTERS) $(LAYER2ALWAYSUP) $(FASTBUSYONBUSY) -DRELAX_TRB $(RELAXEDTIMERS)
+ INSTALL_PREFIX=$(DESTDIR)
+ INSTALL_BASE=/usr
 -SOFLAGS = -Wl,-hlibpri.so.1.0
-+CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS) $(LAYER2ALWAYSUP) $(FASTBUSYONBUSY) -DRELAX_TRB
-+INSTALL_PREFIX?=$(PREFIX)
-+INSTALL_BASE=
 +SOFLAGS = -Wl,-hlibpri-bristuff.so.1
  LDCONFIG = /sbin/ldconfig
- ifneq (,$(findstring $(OSARCH), Linux GNU/kFreeBSD))
+ ifneq (,$(findstring X$(OSARCH)X, XLinuxX XGNU/kFreeBSDX))
  LDCONFIG_FLAGS=-n
-@@ -91,12 +91,11 @@
+@@ -57,7 +57,7 @@
+ ifeq (${OSARCH},FreeBSD)
+ LDCONFIG_FLAGS=-m
+ CFLAGS += -I../zaptel -I../zapata
+-INSTALL_BASE=/usr/local
++INSTALL_BASE=$(PREFIX)
+ endif
+ endif
+ ifeq (${OSARCH},SunOS)
+@@ -90,12 +90,11 @@
  	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
  	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/include
  ifneq (${OSARCH},SunOS)
 -	install -m 644 libpri.h $(INSTALL_PREFIX)$(INSTALL_BASE)/include
--	install -m 755 $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
-+	$(BSD_INSTALL_DATA) libpri.h $(INSTALL_PREFIX)$(INSTALL_BASE)/include/libpri-bristuff.h
-+	$(BSD_INSTALL_PROGRAM) $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
- 	if [ -x /usr/sbin/sestatus ] && ( /usr/sbin/sestatus | grep "SELinux status:" | grep -q "enabled"); then  restorecon -v $(INSTALL_PREFIX)$(INSTALL_BASE)/lib/$(DYNAMIC_LIBRARY); fi
++	install -m 644 libpri.h $(INSTALL_PREFIX)$(INSTALL_BASE)/include/libpri-bristuff.h
+ 	install -m 755 $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
+ 	if [ -x /usr/sbin/sestatus ] && ( /usr/sbin/sestatus | grep "SELinux status:" | grep -q "enabled"); then /sbin/restorecon -v $(INSTALL_PREFIX)$(INSTALL_BASE)/lib/$(DYNAMIC_LIBRARY); fi
 -	( cd $(INSTALL_PREFIX)$(INSTALL_BASE)/lib ; ln -sf libpri.so.1.0 libpri.so ; ln -sf libpri.so.1.0 libpri.so.1 )
--	install -m 644 $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
--	if test $$(id -u) = 0; then $(LDCONFIG) $(LDCONFIG_FLAGS) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib; fi
 +	( cd $(INSTALL_PREFIX)$(INSTALL_BASE)/lib ; ln -sf libpri-bristuff.so.1 libpri-bristuff.so )
-+	$(BSD_INSTALL_DATA) $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
+ 	install -m 644 $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
+-	if test $$(id -u) = 0; then $(LDCONFIG) $(LDCONFIG_FLAGS) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib; fi
  else
  	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/include -m 644 libpri.h
  	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/lib -m 755 $(DYNAMIC_LIBRARY)
-@@ -137,9 +136,7 @@
+@@ -111,7 +110,7 @@
+ 	rm -f $(INSTALL_PREFIX)$(INSTALL_BASE)/lib/libpri.a
+ 	rm -f $(INSTALL_PREFIX)$(INSTALL_BASE)/include/libpri.h
+ 
+-pritest: pritest.o
++
+ 	$(CC) -o pritest pritest.o -L. -lpri -lzap $(CFLAGS)
+ 
+ testprilib.o: testprilib.c
+@@ -136,9 +135,7 @@
  
  $(DYNAMIC_LIBRARY): $(DYNAMIC_OBJS)
  	$(CC) -shared $(SOFLAGS) -o $@ $(DYNAMIC_OBJS)
 -	$(LDCONFIG) $(LDCONFIG_FLAGS) .
 -	ln -sf libpri.so.1.0 libpri.so
 -	ln -sf libpri.so.1.0 libpri.so.1
-+	ln -sf libpri.so.1 libpri.so
++	ln -sf libpri-bristuff.so.1 libpri-bristuff.so
  	$(SOSLINK)
  
  clean:
