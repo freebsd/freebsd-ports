@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bird
-PORTVERSION=	1.0.15
+PORTVERSION=	1.1.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
@@ -21,8 +21,8 @@ CONFIGURE_ARGS=	--enable-ipv6
 MAKE_JOBS_UNSAFE=	yes
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/bird.conf ]; then \
-		${CP} -p ${PREFIX}/etc/bird.conf.example ${PREFIX}/etc/bird.conf ; \
+	@if [ ! -f ${PREFIX}/etc/bird6.conf ]; then \
+		${CP} -p ${PREFIX}/etc/bird6.conf.example ${PREFIX}/etc/bird6.conf ; \
 	fi
 
 .include <bsd.port.pre.mk>
