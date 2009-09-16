@@ -1,7 +1,5 @@
-Index: epan/dissectors/packet-ieee80211.c
-===================================================================
---- epan/dissectors/packet-ieee80211.c	(revision 29075)
-+++ epan/dissectors/packet-ieee80211.c	(working copy)
+--- epan/dissectors/packet-ieee80211.c.orig	2009-09-14 21:50:07.000000000 -0400
++++ epan/dissectors/packet-ieee80211.c	2009-09-16 00:50:44.000000000 -0400
 @@ -48,6 +48,9 @@
   * Dutin Johnson - 802.11n and portions of 802.11k and 802.11ma
   * dustin@dustinj.us & dustin.johnson@cacetech.com
@@ -12,7 +10,7 @@ Index: epan/dissectors/packet-ieee80211.c
   * 04/21/2008 - Added dissection for 802.11p 
   * Arada Systems <http://www.aradasystems.com>
   */
-@@ -335,7 +338,12 @@
+@@ -336,6 +339,11 @@ int add_mimo_compressed_beamforming_feed
  #define KEY_EXTIV    0x20
  #define EXTIV_LEN    8
  
@@ -20,24 +18,22 @@ Index: epan/dissectors/packet-ieee80211.c
 + * Bits from the Mesh Flags field
 + */
 +#define MESH_FLAGS_ADDRESS_EXTENSION  0x3
- 
 +
+ 
  /* ************************************************************************* */
  /*              Constants used to identify cooked frame types                */
- /* ************************************************************************* */
-@@ -459,7 +467,11 @@
+@@ -460,6 +468,10 @@ int add_mimo_compressed_beamforming_feed
  #define FIELD_EXTENDED_CHANNEL_SWITCH_ANNOUNCEMENT 0x2E
  #define FIELD_HT_INFORMATION            0x2F
  #define FIELD_HT_ACTION_CODE            0x30
 +#define FIELD_MESH_MGT_ACTION_PS_CODE   0x31    /* Mesh Management action peer link code */
 +#define FIELD_MESH_MGT_ACTION_PL_CODE   0x32    /* Mesh Management action peer link code */
++
++
  
-+
-+
  /* ************************************************************************* */
  /*        Logical field codes (IEEE 802.11 encoding of tags)                 */
- /* ************************************************************************* */
-@@ -484,12 +496,6 @@
+@@ -485,12 +497,6 @@ int add_mimo_compressed_beamforming_feed
  #define TAG_POWER_CAPABILITY      0x21
  #define TAG_TPC_REQUEST           0x22
  #define TAG_TPC_REPORT            0x23
@@ -50,7 +46,7 @@ Index: epan/dissectors/packet-ieee80211.c
  #define TAG_ERP_INFO              0x2A
  #define TAG_TS_DELAY              0x2B
  #define TAG_TCLAS_PROCESS         0x2C
-@@ -499,10 +505,37 @@
+@@ -500,10 +506,37 @@ int add_mimo_compressed_beamforming_feed
  #define TAG_RSN_IE                0x30
  /* Reserved 49 */
  #define TAG_EXT_SUPP_RATES        0x32
@@ -89,7 +85,7 @@ Index: epan/dissectors/packet-ieee80211.c
  #define TAG_20_40_BSS_CO_EX          0x48   /* IEEE P802.11n/D6.0 */
  #define TAG_20_40_BSS_INTOL_CH_REP   0x49   /* IEEE P802.11n/D6.0 */
  #define TAG_OVERLAP_BSS_SCAN_PAR     0x49   /* IEEE P802.11n/D6.0 */
-@@ -652,6 +685,13 @@
+@@ -653,6 +686,13 @@ static const value_string aruba_mgt_type
  #define CAT_DLS                2
  #define CAT_BLOCK_ACK          3
  
@@ -103,7 +99,7 @@ Index: epan/dissectors/packet-ieee80211.c
  #define CAT_RADIO_MEASUREMENT   6
  #define CAT_HT                  7
  #define CAT_MGMT_NOTIFICATION   17
-@@ -687,6 +727,30 @@
+@@ -688,6 +728,30 @@ static const value_string aruba_mgt_type
  #define HT_ACTION_ANT_SEL_FEEDBACK            7
  #define HT_ACTION_HT_INFO_EXCHANGE            8
  
@@ -134,7 +130,7 @@ Index: epan/dissectors/packet-ieee80211.c
  /* Vendor actions */
  /* MARVELL */
  #define MRVL_ACTION_MESH_MANAGEMENT     1
-@@ -858,6 +922,16 @@
+@@ -859,6 +923,16 @@ static int hf_fcs_good = -1;
  static int hf_fcs_bad = -1;
  
  /* ************************************************************************* */
@@ -151,7 +147,7 @@ Index: epan/dissectors/packet-ieee80211.c
  /*                   Header values for reassembly                            */
  /* ************************************************************************* */
  static int hf_fragments = -1;
-@@ -1092,6 +1166,34 @@
+@@ -1093,6 +1167,34 @@ static int ff_psmp_sta_info_psmp_multica
  static int ff_mimo_csi_snr = -1;
  /*** End: MIMO CSI Matrices Report - Dustin Johnson ***/
  
@@ -186,7 +182,7 @@ Index: epan/dissectors/packet-ieee80211.c
  /* ************************************************************************* */
  /*            Flags found in the capability field (fixed field)              */
  /* ************************************************************************* */
-@@ -1520,6 +1622,8 @@
+@@ -1522,6 +1624,8 @@ static gint ett_tagged_parameters = -1;
  static gint ett_qos_parameters = -1;
  static gint ett_qos_ps_buf_state = -1;
  static gint ett_wep_parameters = -1;
@@ -195,7 +191,7 @@ Index: epan/dissectors/packet-ieee80211.c
  
  static gint ett_rsn_cap_tree = -1;
  
-@@ -1722,6 +1826,42 @@
+@@ -1724,6 +1828,42 @@ find_header_length (guint16 fcf, guint16
    }
  }
  
@@ -238,7 +234,7 @@ Index: epan/dissectors/packet-ieee80211.c
  mimo_control_t get_mimo_control (tvbuff_t *tvb, int offset)
  {
    guint16 mimo;
-@@ -1942,7 +2082,7 @@
+@@ -1944,7 +2084,7 @@ capture_ieee80211_common (const guchar *
          packet_counts * ld, gboolean fixed_length_header,
          gboolean datapad, gboolean is_ht)
  {
@@ -247,7 +243,7 @@ Index: epan/dissectors/packet-ieee80211.c
  
    if (!BYTES_ARE_IN_FRAME(offset, len, 2)) {
      ld->other++;
-@@ -1964,12 +2104,19 @@
+@@ -1966,12 +2106,19 @@ capture_ieee80211_common (const guchar *
      case DATA_CF_ACK_POLL:
      case DATA_QOS_DATA:
      {
@@ -271,7 +267,7 @@ Index: epan/dissectors/packet-ieee80211.c
        /* I guess some bridges take Netware Ethernet_802_3 frames,
           which are 802.3 frames (with a length field rather than
           a type field, but with no 802.2 header in the payload),
-@@ -2572,6 +2719,17 @@
+@@ -2574,6 +2721,17 @@ add_fixed_field(proto_tree * tree, tvbuf
          break;
        }
  
@@ -289,7 +285,7 @@ Index: epan/dissectors/packet-ieee80211.c
      case FIELD_DLS_ACTION_CODE:
        proto_tree_add_item (tree, ff_dls_action_code, tvb, offset, 1, TRUE);
        length += 1;
-@@ -3116,7 +3274,89 @@
+@@ -3118,6 +3276,88 @@ add_fixed_field(proto_tree * tree, tvbuf
                    }
                  break;
                }
@@ -305,7 +301,7 @@ Index: epan/dissectors/packet-ieee80211.c
 +                  offset += add_fixed_field (action_tree, tvb, offset, FIELD_CAP_INFO);
 +                  length = offset;
 +                  break;
- 
++
 +                case MESH_PL_PEER_LINK_CONFIRM:
 +                  offset = 0;
 +                  offset += add_fixed_field (action_tree, tvb, offset, FIELD_CATEGORY_CODE);
@@ -375,11 +371,10 @@ Index: epan/dissectors/packet-ieee80211.c
 +                  break;
 +                }
 +              break;
-+
+ 
              case CAT_MGMT_NOTIFICATION:  /* Management notification frame */
                {
-                 guint start = offset;
-@@ -3836,6 +4076,7 @@
+@@ -3838,6 +4078,7 @@ dissect_ht_info_ie_1_1(proto_tree * tree
    }
  }
  
@@ -387,7 +382,7 @@ Index: epan/dissectors/packet-ieee80211.c
  /***  WAVE Service information element Dissection - IEEE 802.11p Draft 4.0 ***/
  static void
  dissect_wsie_ie(proto_tree * tree, tvbuff_t * tvb, int offset, guint32 tag_len _U_)
-@@ -3930,6 +4171,7 @@
+@@ -3932,6 +4173,7 @@ dissect_wsie_ie(proto_tree * tree, tvbuf
  		}
  	}
  }
@@ -395,7 +390,7 @@ Index: epan/dissectors/packet-ieee80211.c
  
  /*** Begin: Secondary Channel Offset Tag - Dustin Johnson ***/
  static void secondary_channel_offset_ie(proto_tree * tree, tvbuff_t * tvb, int offset, guint32 tag_len)
-@@ -4423,10 +4665,14 @@
+@@ -4428,10 +4670,14 @@ static const value_string tag_num_vals[]
    { TAG_TS_DELAY,             "TS Delay"},
    { TAG_TCLAS_PROCESS,        "TCLAS Processing"},
    { TAG_HT_CAPABILITY,        "HT Capabilities (802.11n D1.10)"},
@@ -410,7 +405,7 @@ Index: epan/dissectors/packet-ieee80211.c
    { TAG_20_40_BSS_CO_EX,          "20/40 BSS Coexistence"},
    { TAG_20_40_BSS_INTOL_CH_REP,   "20/40 BSS Intolerant Channel Report"},   /* IEEE P802.11n/D6.0 */
    { TAG_OVERLAP_BSS_SCAN_PAR,     "Overlapping BSS Scan Parameters"},       /* IEEE P802.11n/D6.0 */
-@@ -4442,6 +4688,12 @@
+@@ -4447,6 +4693,12 @@ static const value_string tag_num_vals[]
    { TAG_QUIET,                    "Quiet"},
    { TAG_IBSS_DFS,                 "IBSS DFS"},
    { TAG_EXTENDED_CAPABILITIES,    "Extended Capabilities"},
@@ -423,7 +418,7 @@ Index: epan/dissectors/packet-ieee80211.c
    #if 0 /*Not yet assigned tag numbers by ANA */
    { TAG_EXTENDED_CHANNEL_SWITCH_ANNOUNCEMENT, "Extended Channel Switch Announcement"},
    { TAG_SUPPORTED_REGULATORY_CLASSES, "Supported Regulatory Classes"},
-@@ -4473,10 +4725,13 @@
+@@ -4478,10 +4730,13 @@ add_tagged_field (packet_info * pinfo, p
    guint8 tag_len_len; /* The length of the length parameter in bytes*/
  
    tag_no = tvb_get_guint8(tvb, offset);
@@ -438,7 +433,7 @@ Index: epan/dissectors/packet-ieee80211.c
  	  tag_len_len = 1;
  	  tag_len = tvb_get_guint8(tvb, offset + 1);
    }
-@@ -5049,12 +5304,13 @@
+@@ -5059,12 +5314,13 @@ add_tagged_field (packet_info * pinfo, p
        break;
      /*** End: Secondary Channel Offset Tag - Dustin Johnson ***/
  
@@ -453,7 +448,7 @@ Index: epan/dissectors/packet-ieee80211.c
  	/*** Begin: Power Capability Tag - Dustin Johnson ***/
      case TAG_POWER_CAPABILITY:
        {
-@@ -5088,6 +5344,118 @@
+@@ -5098,6 +5354,118 @@ add_tagged_field (packet_info * pinfo, p
  		proto_tree_add_item(tree, hf_tag_tpc_report_link_mrg, tvb, offset, 1, TRUE);
  		offset++;
  		break;
@@ -572,7 +567,7 @@ Index: epan/dissectors/packet-ieee80211.c
      /*** Begin: Supported Channels Tag - Dustin Johnson ***/
      case TAG_SUPPORTED_CHANNELS:
        {
-@@ -5562,6 +5930,7 @@
+@@ -5572,6 +5940,7 @@ add_tagged_field (packet_info * pinfo, p
      }
      /*** End: Extended Capabilities Tag - Dustin Johnson ***/
      /*** Begin: Neighbor Report Tag - Dustin Johnson ***/
@@ -580,7 +575,7 @@ Index: epan/dissectors/packet-ieee80211.c
      case TAG_NEIGHBOR_REPORT:
      {
        #define SUB_TAG_TSF_INFO                 0x01
-@@ -5668,6 +6037,7 @@
+@@ -5678,6 +6047,7 @@ add_tagged_field (packet_info * pinfo, p
        }
        break;
      }
@@ -588,7 +583,7 @@ Index: epan/dissectors/packet-ieee80211.c
      /*** End: Neighbor Report Tag - Dustin Johnson ***/
  #if 0 /*Not yet assigned tag numbers by ANA */
      /*** Begin: Extended Channel Switch Announcement Tag - Dustin Johnson ***/
-@@ -6999,6 +7369,61 @@
+@@ -7009,6 +7379,61 @@ dissect_ieee80211_common (tvbuff_t * tvb
          }
        }
  
@@ -650,7 +645,7 @@ Index: epan/dissectors/packet-ieee80211.c
        break;
  
      case CONTROL_FRAME:
-@@ -8308,8 +8733,8 @@
+@@ -8318,8 +8743,8 @@ proto_register_ieee80211 (void)
        "From DS: 0)"},
      {FLAG_FROM_DS,            "Frame from DS to a STA via AP(To DS: 0 "
        "From DS: 1)"},
@@ -661,7 +656,7 @@ Index: epan/dissectors/packet-ieee80211.c
      {0, NULL}
    };
  
-@@ -8751,6 +9176,12 @@
+@@ -8761,6 +9186,12 @@ proto_register_ieee80211 (void)
      {CAT_QOS, "Quality of Service (QoS)"},
      {CAT_DLS, "Direct-Link Setup (DLS)"},
      {CAT_BLOCK_ACK, "Block Ack"},
@@ -674,7 +669,7 @@ Index: epan/dissectors/packet-ieee80211.c
      {CAT_RADIO_MEASUREMENT, "Radio Measurement"},
      {CAT_HT, "High Throughput"},
      {CAT_MGMT_NOTIFICATION, "Management Notification"},
-@@ -8804,6 +9235,52 @@
+@@ -8814,6 +9245,52 @@ proto_register_ieee80211 (void)
      {0x00, NULL}
    };
  
@@ -727,12 +722,12 @@ Index: epan/dissectors/packet-ieee80211.c
    static const value_string ack_policy[] = {
      {0x00, "Normal Ack"},
      {0x01, "No Ack"},
-@@ -9375,8 +9852,33 @@
+@@ -9389,8 +9866,33 @@ proto_register_ieee80211 (void)
  
-     {&hf_block_ack_type,
-      {"Block Ack Request Type", "wlan.ba.type",
--      FT_UINT8, BASE_HEX, VALS(&hf_block_ack_type_flags), 0, "Block Ack Request Type", HFILL }}
-+      FT_UINT8, BASE_HEX, VALS(&hf_block_ack_type_flags), 0, "Block Ack Request Type", HFILL }},
+     {&hf_block_ack_bitmap,
+      {"Block Ack Bitmap", "wlan.ba.bm",
+-      FT_BYTES, BASE_NONE, NULL, 0, NULL, HFILL }}
++      FT_BYTES, BASE_NONE, NULL, 0, NULL, HFILL }},
      /*** End: Block Ack Request/Block Ack  - Dustin Johnson***/
 +
 +    {&hf_mesh_flags,
@@ -762,7 +757,7 @@ Index: epan/dissectors/packet-ieee80211.c
    };
  
    static hf_register_info hf_prism[] = {
-@@ -10491,6 +10993,89 @@
+@@ -10505,6 +11007,89 @@ proto_register_ieee80211 (void)
        FT_UINT16, BASE_HEX, VALS (&wme_status_codes), 0,
        "Management notification setup response status code", HFILL }},
  
@@ -852,7 +847,7 @@ Index: epan/dissectors/packet-ieee80211.c
      {&ff_qos_action_code,
       {"Action code", "wlan_mgt.fixed.action_code",
        FT_UINT16, BASE_HEX, VALS (&qos_action_codes), 0,
-@@ -11840,6 +12425,8 @@
+@@ -11854,6 +12439,8 @@ proto_register_ieee80211 (void)
      &ett_qos_parameters,
      &ett_qos_ps_buf_state,
      &ett_wep_parameters,

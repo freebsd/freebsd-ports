@@ -68,6 +68,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/diameter/chargecontrol.xml
 %%DATADIR%%/diameter/dictionary.dtd
 %%DATADIR%%/diameter/dictionary.xml
+%%DATADIR%%/diameter/eap.xml
 %%DATADIR%%/diameter/etsie2e4.xml
 %%DATADIR%%/diameter/gqpolicy.xml
 %%DATADIR%%/diameter/imscxdx.xml
