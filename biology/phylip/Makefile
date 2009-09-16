@@ -6,27 +6,23 @@
 #
 
 PORTNAME=	phylip
-PORTVERSION=	3.68
-PORTREVISION=	1
+PORTVERSION=	3.69
 PORTEPOCH=	1
 CATEGORIES=	biology
-MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/ \
-		http://bioinformatics.weizmann.ac.il/software/linkage_and_mapping/phylip/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	http://evolution.gs.washington.edu/phylip/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Phylogeny Inference Package
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+BUILD_WRKSRC=	${WRKSRC}/src
+INSTALL_WRKSRC=	${WRKSRC}/src
+
 USE_XORG=	x11 xaw xt
 USE_GMAKE=	yes
-BUILD_WRKSRC=	${WRKSRC}/src
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
-CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ARGS=	CC="${CC} ${CFLAGS}" \
-		DC="${CC} -DX ${CFLAGS}" \
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		DFLAGS="${CFLAGS} -DX -I${LOCALBASE}/include" \
 		DLIBS="-L${LOCALBASE}/lib -lX11 -lXaw -lXt -lm"
 
 PORTDOCS=	*
