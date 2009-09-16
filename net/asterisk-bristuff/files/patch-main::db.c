@@ -1,8 +1,8 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/net/asterisk-bristuff/files/Attic/patch-main::db.c,v 1.1 2009-09-16 19:33:37 fjoe Exp $
 
---- db.c.orig	Fri Jan 13 11:05:32 2006
-+++ db.c	Fri Jan 13 11:06:55 2006
+--- main/db.c.orig	Fri Jan 13 11:05:32 2006
++++ main/db.c	Fri Jan 13 11:06:55 2006
 @@ -35,6 +35,7 @@
  #include <errno.h>
  #include <unistd.h>

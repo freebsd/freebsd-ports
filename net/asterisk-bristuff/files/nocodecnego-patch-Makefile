@@ -1,0 +1,219 @@
+--- Makefile.orig	2008-11-29 08:58:29.000000000 -0800
++++ Makefile	2009-02-05 17:05:39.000000000 -0800
+@@ -95,7 +95,7 @@
+ OVERWRITE=y
+ 
+ # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
+-DEBUG=-g3
++#DEBUG=-g3
+ 
+ # Staging directory
+ # Files are copied here temporarily during the install process
+@@ -129,7 +129,7 @@
+   ASTMANDIR=$(mandir)
+ ifneq ($(findstring BSD,$(OSARCH)),)
+   ASTVARLIBDIR=$(prefix)/share/asterisk
+-  ASTVARRUNDIR=$(localstatedir)/run/asterisk
++  ASTVARRUNDIR=$(localstatedir)/run
+ else
+   ASTVARLIBDIR=$(localstatedir)/lib/asterisk
+ endif
+@@ -219,9 +219,11 @@
+   ASTLDFLAGS+=-L/usr/local/lib
+ endif
+ 
++ifneq ($(OSARCH),FreeBSD)
+ ifneq ($(PROC),ultrasparc)
+   ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+ endif
++endif
+ 
+ ifeq ($(PROC),ppc)
+   ASTCFLAGS+=-fsigned-char
+@@ -229,7 +231,7 @@
+ 
+ ifeq ($(OSARCH),FreeBSD)
+   # -V is understood by BSD Make, not by GNU make.
+-  BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
++  BSDVERSION=$(OSVERSION)
+   ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
+   AST_LIBS+=$(shell if test  $(BSDVERSION) -lt 502102 ; then echo "-lc_r"; else echo "-pthread"; fi)
+ endif
+@@ -408,15 +410,15 @@
+ # Should static HTTP be installed during make samples or even with its own target ala
+ # webvoicemail?  There are portions here that *could* be customized but might also be
+ # improved a lot.  I'll put it here for now.
+-	mkdir -p $(DESTDIR)$(ASTDATADIR)/static-http
++	$(MKDIR) $(DESTDIR)$(ASTDATADIR)/static-http
+ 	for x in static-http/*; do \
+-		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTDATADIR)/static-http ; \
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTDATADIR)/static-http ; \
+ 	done
+-	mkdir -p $(DESTDIR)$(ASTDATADIR)/images
++	$(MKDIR) $(DESTDIR)$(ASTDATADIR)/images
+ 	for x in images/*.jpg; do \
+-		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTDATADIR)/images ; \
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTDATADIR)/images ; \
+ 	done
+-	mkdir -p $(DESTDIR)$(AGI_DIR)
++	$(MKDIR) $(DESTDIR)$(AGI_DIR)
+ 	$(MAKE) -C sounds install
+ 
+ update: 
+@@ -437,47 +439,47 @@
+ OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
+ 
+ installdirs:
+-	mkdir -p $(DESTDIR)$(MODULES_DIR)
+-	mkdir -p $(DESTDIR)$(ASTSBINDIR)
+-	mkdir -p $(DESTDIR)$(ASTETCDIR)
+-	mkdir -p $(DESTDIR)$(ASTBINDIR)
+-	mkdir -p $(DESTDIR)$(ASTVARRUNDIR)
+-	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/voicemail
+-	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/dictate
+-	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/system
+-	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/tmp
+-	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/meetme
+-	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/monitor
++	$(MKDIR) $(DESTDIR)$(MODULES_DIR)
++	$(MKDIR) $(DESTDIR)$(ASTSBINDIR)
++	$(MKDIR) $(DESTDIR)$(ASTETCDIR)
++	$(MKDIR) $(DESTDIR)$(ASTBINDIR)
++	$(MKDIR) $(DESTDIR)$(ASTVARRUNDIR)
++	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/voicemail
++	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/dictate
++	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/system
++	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/tmp
++	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/meetme
++	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/monitor
+ 
+ bininstall: _all installdirs $(SUBDIRS_INSTALL)
+-	$(INSTALL) -m 755 main/asterisk $(DESTDIR)$(ASTSBINDIR)/
++	$(BSD_INSTALL_PROGRAM) main/asterisk $(DESTDIR)$(ASTSBINDIR)/
+ 	$(LN) -sf asterisk $(DESTDIR)$(ASTSBINDIR)/rasterisk
+-	$(INSTALL) -m 755 contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
+-	$(INSTALL) -m 755 contrib/scripts/autosupport $(DESTDIR)$(ASTSBINDIR)/
++	$(BSD_INSTALL_SCRIPT) contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
++	$(BSD_INSTALL_SCRIPT) contrib/scripts/autosupport $(DESTDIR)$(ASTSBINDIR)/
+ 	if [ ! -f $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ]; then \
+-		cat contrib/scripts/safe_asterisk | sed 's|__ASTERISK_SBIN_DIR__|$(ASTSBINDIR)|;s|__ASTERISK_VARRUN_DIR__|$(ASTVARRUNDIR)|;' > $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ;\
+-		chmod 755 $(DESTDIR)$(ASTSBINDIR)/safe_asterisk;\
++		cat contrib/scripts/safe_asterisk | sed 's|__ASTERISK_SBIN_DIR__|$(ASTSBINDIR)|;s|__ASTERISK_VARRUN_DIR__|$(ASTVARRUNDIR)|;' > contrib/scripts/safe_asterisk.out;\
++		${BSD_INSTALL_SCRIPT} contrib/scripts/safe_asterisk.out $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ;\
+ 	fi
+-	$(INSTALL) -d $(DESTDIR)$(ASTHEADERDIR)
+-	$(INSTALL) -m 644 include/asterisk.h $(DESTDIR)$(includedir)
+-	$(INSTALL) -m 644 include/asterisk/*.h $(DESTDIR)$(ASTHEADERDIR)
++	$(MKDIR) $(DESTDIR)$(ASTHEADERDIR)
++	$(BSD_INSTALL_DATA) include/asterisk.h $(DESTDIR)$(includedir)
++	$(BSD_INSTALL_DATA) include/asterisk/*.h $(DESTDIR)$(ASTHEADERDIR)
+ 	if [ -n "$(OLDHEADERS)" ]; then \
+ 		rm -f $(addprefix $(DESTDIR)$(ASTHEADERDIR)/,$(OLDHEADERS)) ;\
+ 	fi
+-	mkdir -p $(DESTDIR)$(ASTLOGDIR)/cdr-csv
+-	mkdir -p $(DESTDIR)$(ASTLOGDIR)/cdr-custom
+-	mkdir -p $(DESTDIR)$(ASTDATADIR)/keys
+-	mkdir -p $(DESTDIR)$(ASTDATADIR)/firmware
+-	mkdir -p $(DESTDIR)$(ASTDATADIR)/firmware/iax
+-	mkdir -p $(DESTDIR)$(ASTMANDIR)/man8
+-	$(INSTALL) -m 644 keys/iaxtel.pub $(DESTDIR)$(ASTDATADIR)/keys
+-	$(INSTALL) -m 644 keys/freeworlddialup.pub $(DESTDIR)$(ASTDATADIR)/keys
+-	$(INSTALL) -m 644 doc/asterisk.8 $(DESTDIR)$(ASTMANDIR)/man8
+-	$(INSTALL) -m 644 contrib/scripts/astgenkey.8 $(DESTDIR)$(ASTMANDIR)/man8
+-	$(INSTALL) -m 644 contrib/scripts/autosupport.8 $(DESTDIR)$(ASTMANDIR)/man8
+-	$(INSTALL) -m 644 contrib/scripts/safe_asterisk.8 $(DESTDIR)$(ASTMANDIR)/man8
++	$(MKDIR) $(DESTDIR)$(ASTLOGDIR)/cdr-csv
++	$(MKDIR) $(DESTDIR)$(ASTLOGDIR)/cdr-custom
++	$(MKDIR) $(DESTDIR)$(ASTDATADIR)/keys
++	$(MKDIR) $(DESTDIR)$(ASTDATADIR)/firmware
++	$(MKDIR) $(DESTDIR)$(ASTDATADIR)/firmware/iax
++	$(MKDIR) $(DESTDIR)$(ASTMANDIR)/man8
++	$(BSD_INSTALL_DATA) keys/iaxtel.pub $(DESTDIR)$(ASTDATADIR)/keys
++	$(BSD_INSTALL_DATA) keys/freeworlddialup.pub $(DESTDIR)$(ASTDATADIR)/keys
++	$(BSD_INSTALL_MAN) doc/asterisk.8 $(DESTDIR)$(ASTMANDIR)/man8
++	$(BSD_INSTALL_MAN) contrib/scripts/astgenkey.8 $(DESTDIR)$(ASTMANDIR)/man8
++	$(BSD_INSTALL_MAN) contrib/scripts/autosupport.8 $(DESTDIR)$(ASTMANDIR)/man8
++	$(BSD_INSTALL_MAN) contrib/scripts/safe_asterisk.8 $(DESTDIR)$(ASTMANDIR)/man8
+ 	if [ -f contrib/firmware/iax/iaxy.bin ] ; then \
+-		$(INSTALL) -m 644 contrib/firmware/iax/iaxy.bin $(DESTDIR)$(ASTDATADIR)/firmware/iax/iaxy.bin; \
++		$(BSD_INSTALL_DATA) contrib/firmware/iax/iaxy.bin $(DESTDIR)$(ASTDATADIR)/firmware/iax/iaxy.bin; \
+ 	fi
+ 
+ $(SUBDIRS_INSTALL):
+@@ -513,7 +515,7 @@
+ 	@exit 1
+ endif
+ 
+-install: badshell datafiles bininstall
++install: badshell datafiles bininstall samples
+ 	@if [ -x /usr/sbin/asterisk-post-install ]; then \
+ 		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
+ 	fi
+@@ -551,31 +553,23 @@
+ upgrade: bininstall
+ 
+ adsi:
+-	mkdir -p $(DESTDIR)$(ASTETCDIR)
++	$(MKDIR) $(DESTDIR)$(ASTETCDIR)
+ 	for x in configs/*.adsi; do \
+ 		if [ ! -f $(DESTDIR)$(ASTETCDIR)/$$x ]; then \
+-			$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x` ; \
++			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x` ; \
+ 		fi ; \
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`-dist ; \
+ 	done
+ 
+ samples: adsi
+-	mkdir -p $(DESTDIR)$(ASTETCDIR)
++	$(MKDIR) $(DESTDIR)$(ASTETCDIR)
+ 	for x in configs/*.sample; do \
+-		if [ -f $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample` ]; then \
+-			if [ "$(OVERWRITE)" = "y" ]; then \
+-				if cmp -s $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample` $$x ; then \
+-					echo "Config file $$x is unchanged"; \
+-					continue; \
+-				fi ; \
+-				mv -f $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample` $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`.old ; \
+-			else \
+-				echo "Skipping config file $$x"; \
+-				continue; \
+-			fi ;\
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`-dist ;\
++		if [ ! -f $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample` ]; then \
++			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`;\
+ 		fi ; \
+-		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample` ;\
+ 	done
+-	if [ "$(OVERWRITE)" = "y" ] || [ ! -f $(DESTDIR)$(ASTCONFPATH) ]; then \
++	if true; then \
+ 		( \
+ 		echo "[directories]" ; \
+ 		echo "astetcdir => $(ASTETCDIR)" ; \
+@@ -621,20 +615,23 @@
+ 		echo ";astctlowner = root" ; \
+ 		echo ";astctlgroup = apache" ; \
+ 		echo ";astctl = asterisk.ctl" ; \
+-		) > $(DESTDIR)$(ASTCONFPATH) ; \
++		) > $(DESTDIR)$(ASTCONFPATH)-dist ; \
++		if [ ! -f $(DESTDIR)$(ASTCONFPATH) ]; then \
++			cp $(DESTDIR)$(ASTCONFPATH)-dist $(DESTDIR)$(ASTCONFPATH); \
++		fi; \
+ 	else \
+ 		echo "Skipping asterisk.conf creation"; \
+ 	fi
+-	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX
++	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX
+ 	build_tools/make_sample_voicemail $(DESTDIR)/$(ASTDATADIR) $(DESTDIR)/$(ASTSPOOLDIR)
+ 
+ webvmail:
+ 	@[ -d $(DESTDIR)$(HTTP_DOCSDIR)/ ] || ( printf "http docs directory not found.\nUpdate assignment of variable HTTP_DOCSDIR in Makefile!\n" && exit 1 )
+ 	@[ -d $(DESTDIR)$(HTTP_CGIDIR) ] || ( printf "cgi-bin directory not found.\nUpdate assignment of variable HTTP_CGIDIR in Makefile!\n" && exit 1 )
+ 	$(INSTALL) -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTP_CGIDIR)/vmail.cgi
+-	mkdir -p $(DESTDIR)$(HTTP_DOCSDIR)/_asterisk
++	$(MKDIR) $(DESTDIR)$(HTTP_DOCSDIR)/_asterisk
+ 	for x in images/*.gif; do \
+-		$(INSTALL) -m 644 $$x $(DESTDIR)$(HTTP_DOCSDIR)/_asterisk/; \
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(HTTP_DOCSDIR)/_asterisk/; \
+ 	done
+ 	@echo " +--------- Asterisk Web Voicemail ----------+"  
+ 	@echo " +                                           +"

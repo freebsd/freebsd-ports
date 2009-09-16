@@ -1,0 +1,70 @@
+--- channels/chan_sip.c.orig	2008-09-09 00:10:10.000000000 +0300
++++ channels/chan_sip.c	2008-12-12 17:02:05.000000000 +0200
+@@ -557,6 +557,9 @@
+ static unsigned int global_tos_sip;		/*!< IP type of service for SIP packets */
+ static unsigned int global_tos_audio;		/*!< IP type of service for audio RTP packets */
+ static unsigned int global_tos_video;		/*!< IP type of service for video RTP packets */
++static int global_force_dtmf_relay = 0;
++static int global_force_dtmf_relay_pt = 101;
++
+ static int compactheaders;		/*!< send compact sip headers */
+ static int recordhistory;		/*!< Record SIP history. Off by default */
+ static int dumphistory;			/*!< Dump history to verbose before destroying SIP dialog */
+@@ -5504,6 +5507,13 @@
+ 
+ 	/* Now gather all of the codecs that we are asked for: */
+ 	ast_rtp_get_current_formats(newaudiortp, &peercapability, &peernoncodeccapability);
++	/* Add telephone-event */
++	if (global_force_dtmf_relay && !(peernoncodeccapability & AST_RTP_DTMF)) {
++		ast_rtp_set_m_type(newaudiortp, global_force_dtmf_relay_pt);
++		found_rtpmap_codecs[last_rtpmap_codec++] = global_force_dtmf_relay_pt;
++		ast_rtp_set_rtpmap_type(newaudiortp, global_force_dtmf_relay_pt, "audio", "telephone-event", 0);
++		peernoncodeccapability |= AST_RTP_DTMF;
++	}
+ 	ast_rtp_get_current_formats(newvideortp, &vpeercapability, &vpeernoncodeccapability);
+ 
+ 	newjointcapability = p->capability & (peercapability | vpeercapability);
+@@ -17440,6 +17450,9 @@
+ 
+ 	global_matchexterniplocally = FALSE;
+ 
++	global_force_dtmf_relay = 0;
++	global_force_dtmf_relay_pt = 101;
++
+ 	/* Copy the default jb config over global_jbconf */
+ 	memcpy(&global_jbconf, &default_jbconf, sizeof(struct ast_jb_conf));
+ 
+@@ -17496,6 +17509,18 @@
+ 			}
+ 		} else if (!strcasecmp(v->name, "vmexten")) {
+ 			ast_copy_string(default_vmexten, v->value, sizeof(default_vmexten));
++		} else if (!strcasecmp(v->name, "rtp_force_dtmf_relay")) {
++			if ((global_force_dtmf_relay = ast_true(v->value)))
++				ast_verbose("RTP DTMF relaying will be enforced\n");
++			else
++				ast_verbose("RTP DTMF relaying will not be enforced\n");
++		} else if (!strcasecmp(v->name, "rtp_force_dtmf_relay_pt")) {
++			sscanf(v->value, "%d", &global_force_dtmf_relay_pt);
++			if (global_force_dtmf_relay_pt < 96 || global_force_dtmf_relay_pt > 255) {
++				ast_verbose("RTP forced DTMF relay payload type is not valid: %d. Using default (101)\n", global_force_dtmf_relay_pt);
++				global_force_dtmf_relay_pt = 101;
++			} else
++				ast_log(LOG_WARNING, "RTP forced DTMF relay payload type is %d\n", global_force_dtmf_relay_pt);
+ 		} else if (!strcasecmp(v->name, "rtptimeout")) {
+ 			if ((sscanf(v->value, "%d", &global_rtptimeout) != 1) || (global_rtptimeout < 0)) {
+ 				ast_log(LOG_WARNING, "'%s' is not a valid RTP hold time at line %d.  Using default.\n", v->value, v->lineno);
+--- configs/sip.conf.sample.orig	2008-08-16 01:33:42.000000000 +0300
++++ configs/sip.conf.sample	2008-12-12 17:03:11.000000000 +0200
+@@ -49,6 +49,12 @@
+                                 ; and multiline formatted headers for strict
+                                 ; SIP compatibility (defaults to "no")
+ 
++;rtp_force_dtmf_relay=no	; Enable RFC2833 DTMFs to be sent even if peer 
++				; hasn't announced support for it. Default: no
++
++;rtp_force_dtmf_relay_pt=101	; RTP payload type value for enforced RFC2833
++				; DTMFs. Default: 101
++
+ ; See doc/ip-tos.txt for a description of these parameters.
+ ;tos_sip=cs3                    ; Sets TOS for SIP packets.
+ ;tos_audio=ef                   ; Sets TOS for RTP audio packets.
