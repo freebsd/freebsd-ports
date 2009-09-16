@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2009-05-14 10:23:16.000000000 +0900
++++ ./Makefile.in	2009-05-18 01:12:30.000000000 +0900
+@@ -301,7 +301,7 @@
+ 	html		\
+ 	license
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = \
+ 	milter-core.pc				\
+ 	milter-client.pc			\

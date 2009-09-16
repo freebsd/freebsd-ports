@@ -1,0 +1,156 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: milter-manager
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Define these miltermanager_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/miltermanager
+#
+# miltermanager_enable (bool):    Set to "NO" by default.
+#                                 Set it to "YES" to enable milter-manager
+# miltermanager_cfgdir (str):     Configuration directory. see milter-manager(1)
+# miltermanager_profiles (list):  Set to "" by default.
+#                                 Define your profiles here.
+# miltermanager_debug (str):      Run the milter in debug mode(can run one instance only).
+#
+# miltermanager_${profile}_* :   Variables per profile.
+#
+#  all parameters below now can be set in milter-manager.conf(5).
+# miltermanager_uid (str):        Set username to run milter.
+# miltermanager_gid (str):        Set groupname to run milter.
+# miltermanager_socket_gid (str): Set groupname to access the socket.
+# miltermanager_socket (str):     Path to the milter socket in socketspec.
+#                                 Sockets must be different from each other.
+# miltermanager_flags (str):      Flags passed to start command.
+
+. %%RC_SUBR%%
+
+name="miltermanager"
+rcvar=`set_rcvar`
+
+extra_commands="reload"
+start_precmd="manager_precmd"
+stop_postcmd="manager_postcmd"
+command="%%PREFIX%%/sbin/milter-manager"
+_piddir="/var/run/milter-manager"
+pidfile="${_piddir}/pid"
+
+load_rc_config $name
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${miltermanager_enable="NO"}
+: ${miltermanager_profiles=""}
+: ${miltermanager_cfgdir="%%PREFIX%%/etc/milter-manager"}
+: ${miltermanager_uid="mailnull"}
+: ${miltermanager_gid="mail"}
+: ${miltermanager_socket_gid="mail"}
+: ${miltermanager_socket=""}
+: ${miltermanager_debug="NO"}
+# Options other than above can be set with $miltermanager_flags.
+# see milter-manager documentation for detail.
+
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${miltermanager_profiles}" != "x" ]; then
+	pidfile="${_piddir}/${profile}.pid"
+	eval miltermanager_enable="\${miltermanager_${profile}_enable:-${miltermanager_enable}}"
+	eval miltermanager_cfgdir="\${miltermanager_${profile}_cfgdir:-}"
+	if [ ! -d "${miltermanager_cfgdir}" ];then
+	    echo "You must set config directory for (miltermanager_${profile}_cfgdir)"
+	    exit 1
+	fi
+	eval miltermanager_socket="\${miltermanager_${profile}_socket:-}"
+
+	command_args="--pid-file ${pidfile}"
+
+	if [ -d "${miltermanager_cfgdir}" ];then
+	    command_args="${command_args} --config-dir=${miltermanager_cfgdir}"
+	fi
+	if [ -n "${miltermanager_uid}" ] ; then
+	    command_args="${command_args} --user-name ${miltermanager_uid}"
+	fi
+	if [ -n "${miltermanager_gid}" ] ; then
+	    command_args="${command_args} --group-name ${miltermanager_gid}"
+	fi
+	if [ -n "${miltermanager_socket_gid}" ] ; then
+	    command_args="${command_args} --socket-group-name ${miltermanager_socket_gid}"
+	fi
+	if [ -n "${miltermanager_socket}" ] ; then
+	    command_args="${command_args} --spec ${miltermanager_socket}"
+	fi
+	command_args="${command_args} --daemon"
+    else
+	echo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${miltermanager_profiles}" != "x" -a "x$1" != "x" ]; then
+	if [ "x$1" != "xrestart" ]; then
+	    for profile in ${miltermanager_profiles}; do
+		echo "===> miltermanager profile: ${profile}"
+		%%PREFIX%%/etc/rc.d/milter-manager $1 ${profile}
+		retcode="$?"
+		if [ "0${retcode}" -ne 0 ]; then
+		    failed="${profile} (${retcode}) ${failed:-}"
+		else
+		    success="${profile} ${success:-}"
+		fi
+	    done
+	    exit 0
+	else
+	    restart_precmd=""
+	fi
+    else
+	command_args="--pid-file ${pidfile}"
+
+	if [ -d "${miltermanager_cfgdir}" ];then
+	    command_args="${command_args} --config-dir=${miltermanager_cfgdir}"
+	fi
+	if [ -n "${miltermanager_uid}" ] ; then
+	    command_args="${command_args} --user-name ${miltermanager_uid}"
+	fi
+	if [ -n "${miltermanager_gid}" ] ; then
+	    command_args="${command_args} --group-name ${miltermanager_gid}"
+	fi
+	if [ -n "${miltermanager_socket_gid}" ] ; then
+	    command_args="${command_args} --socket-group-name ${miltermanager_socket_gid}"
+	fi
+	if [ -n "${miltermanager_socket}" ] ; then
+	    command_args="${command_args} --spec ${miltermanager_socket}"
+	fi
+	if checkyesno miltermanager_debug ; then
+	    command_args="${command_args} --verbose"
+	else
+	    command_args="${command_args} --daemon"
+	fi
+    fi
+fi
+
+manager_precmd ()
+{
+    if [ ! -d ${_piddir} ] ; then
+        mkdir -p ${_piddir}
+    fi
+    if [ -n "${miltermanager_uid}" ] ; then
+        chown ${miltermanager_uid} ${_piddir}
+    fi
+    if [ -n "${miltermanager_gid}" ] ; then
+        chgrp ${miltermanager_gid} ${_piddir}
+    fi
+}
+
+manager_postcmd ()
+{
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
+}
+
+run_rc_command "$1"
