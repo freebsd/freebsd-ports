@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:jflexde \
 		java_cup.jar:jflexsf
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@mcdermottroe.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Fast Lexical Analyser Generator for Java[tm]
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit

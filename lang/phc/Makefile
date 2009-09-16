@@ -11,7 +11,7 @@ PORTVERSION=	0.1.7
 CATEGORIES=	lang
 MASTER_SITES=	http://www.phpcompiler.org/src/archive/
 
-MAINTAINER=	ports@mcdermottroe.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A compiler for the PHP language
 
 USE_GMAKE=	yes
