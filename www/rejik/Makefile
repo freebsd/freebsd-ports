@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rejik
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/ \
 				http://bio3k.softboard.ru/uploads/arch/
