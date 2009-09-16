@@ -1,5 +1,5 @@
 --- configure.orig	2009-05-15 19:50:52.000000000 +0200
-+++ configure	2009-05-31 11:46:51.000000000 +0200
++++ configure	2009-09-16 09:49:41.000000000 +0200
 @@ -831,6 +831,7 @@
  # NB: use ANSI C prototype to weed out non-ANSI compilers.
  #
@@ -21,11 +21,11 @@
  if [ "$DISABLE_JBIG" != "yes" ]; then
  	Note "Checking for JBIG library support"
 -	CheckForLibrary jbg_enc_init -ljbig &&
-+	CheckForLibrary jbg_enc_init -L/usr/local/lib -L/usr/local/lib -ljbig &&
++	CheckForLibrary jbg_enc_init -L/usr/local/lib -ljbig &&
  		CheckForIncludeFile jbig.h && {
  			HAVE_JBIG="#define HAVE_JBIG 1"
 -			LIBJBIG="-ljbig"
-+			LIBJBIG="-L/usr/local/lib -L/usr/local/lib -ljbig"
++			LIBJBIG="-L/usr/local/lib -ljbig"
  		}
  	if [ "x$LIBJBIG" = "x" ]; then
  		Note "... not found. Disabling JBIG support"
@@ -125,6 +125,15 @@
  #include "tiffio.h"
  main()
  {
+@@ -2551,7 +2587,7 @@
+ 	if [ ${header_ver} -ge 19960307 ]; then
+ 	    case ${lib_ver} in
+ 		3.4)		tiff_runlen_t="uint16" ;;
+-		3.[5678])	tiff_runlen_t="uint32" ;;
++		3.[56789])	tiff_runlen_t="uint32" ;;
+ 	    esac
+ 	fi
+     else
 @@ -3233,7 +3269,7 @@
      strtoul
      writev
