@@ -1,8 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Algorithm/MDiff.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/MDiff/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/MDiff/MDiff.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/MDiff/MDiff.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/MDiff/autosplit.ix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/MDiff
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm

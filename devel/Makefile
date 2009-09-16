@@ -983,7 +983,6 @@
     SUBDIR += p5-Algorithm-Interval2Prefix
     SUBDIR += p5-Algorithm-LCS
     SUBDIR += p5-Algorithm-LUHN
-    SUBDIR += p5-Algorithm-MDiff
     SUBDIR += p5-Algorithm-MarkovChain
     SUBDIR += p5-Algorithm-Merge
     SUBDIR += p5-Algorithm-MinMax
@@ -1210,7 +1209,6 @@
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-ParseBinary
     SUBDIR += p5-Data-Path
-    SUBDIR += p5-Data-Postponed
     SUBDIR += p5-Data-Properties
     SUBDIR += p5-Data-Random
     SUBDIR += p5-Data-Remember
