@@ -2726,6 +2726,7 @@
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inline
+    SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-linecache

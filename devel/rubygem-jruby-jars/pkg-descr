@@ -1,0 +1,5 @@
+JRuby is an implementation of the Ruby language atop the Java virtual machine.
+
+This port contains JAR files from the JRuby distribution.
+
+WWW: http://rubyforge.org/projects/jruby-extras/
