@@ -3,7 +3,6 @@
 # PROVIDE: asterisk
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
-
 #
 # Add the following lines to /etc/rc.conf to enable asterisk:
 #
@@ -11,6 +10,14 @@
 #
 
 . %%RC_SUBR%%
+
+stop_precmd=asterisk_shutdown
+sig_stop=KILL
+asterisk_shutdown () {
+  %%PREFIX%%/sbin/asterisk -qrx 'stop now'
+  sleep 1
+  return 0
+}
 
 name=asterisk
 rcvar=`set_rcvar`

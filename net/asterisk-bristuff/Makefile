@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.2.13
-PORTREVISION=	9
+PORTVERSION=	1.4.26.2
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 
 PKGNAMESUFFIX=	-bristuff
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	fjoe
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz:bristuff
+PATCH_SITES=	${MASTER_SITE_LOCAL:S,$,:bristuff,}
+PATCH_SITE_SUBDIR=	fjoe:bristuff
 PATCH_DIST_STRIP=	-p1
-BRIVER=		bristuff-0.3.0-PRE-1s
+BRIVER=		bristuff-0.4.0-RC3g
 CONFLICTS=	asterisk-[0-9]*
 
 MAINTAINER=	fjoe@FreeBSD.org
@@ -26,13 +26,17 @@ COMMENT=	An Open Source PBX and telephony toolkit
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.51:${PORTSDIR}/devel/newt \
+		gsm.1:${PORTSDIR}/audio/gsm \
 		curl.5:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-ONLY_FOR_ARCHS=	i386 sparc64 amd64
+ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc
 
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=	${WRKSRC}/editline
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
+CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_RC_SUBR=	asterisk.sh
@@ -41,58 +45,166 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
-		OSVERSION=${OSVERSION}
+		OSVERSION=${OSVERSION} \
+		NOISY_BUILD=YES \
+		ASTCFLAGS="${CFLAGS}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
+CONFLICTS=	asterisk*-1.2* asterisk*-1.6*
+
+OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
+		ODBC		"Enable ODBC support" on \
+		POSTGRES	"Enable PostgreSQL support" on \
+		RADIUS		"Enable RADIUS accounting support" on \
+		SNMP		"Enable SNMP support" on \
+		H323		"Enable H.323 support" on \
+		FREETDS		"Enable FreeTDS support" on \
+		JABBER		"Enable Jabber and Gtalk support" on \
+		SQLITE          "Enable SQLITE support" on \
+		ILBC		"Enable iLBC codec" off \
+		MISC_PATCHES	"Apply additional patches" off
+
+# not yet
+#		CODEC_PATCH	"Apply codec negotiation patch" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-WITHOUT_H323=	1
-WITHOUT_ZAPTEL=	1
-BROKEN=		current does not build
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+OPTIONS+=	ZAPTEL		"Enable Zaptel support" on
+
+# Include this since we have altered OPTIONS.
+.include "$(PORTSDIR)/Mk/bsd.port.options.mk"
 .endif
 
-.if defined(WITHOUT_H323)
+.if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
+CONFIGURE_ARGS+= --without-h323
 .else
-LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib\
-		h323_r.1:${PORTSDIR}/net/openh323
 PLIST_SUB+=	WITH_H323=""
-MAKE_ENV+=	WITH_H323=1
+CONFIGURE_ARGS+= --with-h323=${LOCALBASE}
+LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
+		h323_r.1:${PORTSDIR}/net/openh323
 .endif
 
-.if defined(WITHOUT_ZAPTEL)
+.if !defined(WITH_ZAPTEL)
 PLIST_SUB+=	WITH_ZAPTEL="@comment "
-MAKE_ENV+=	WITHOUT_ZAPTEL=1
+CONFIGURE_ARGS+= --without-zaptel --without-dahdi
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
-LIB_DEPENDS+=	pri-bristuff.1:${PORTSDIR}/misc/libpri-bristuff
-RUN_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 PLIST_SUB+=	WITH_ZAPTEL=""
-MAKE_ENV+=	WITH_ZAPTEL=1
+CONFIGURE_ARGS+= --with-zaptel --without-dahdi
+BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
+LIB_DEPENDS+=	pri-bristuff.1:${PORTSDIR}/misc/libpri
+RUN_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 .endif
 
 #
 # WITH_FREETDS, WITH_PGSQL and WITH_SQLITE can also be added to MAKE_ENV
 # similarly
-.if defined(WITHOUT_ODBC)
+.if !defined(WITH_ODBC)
 PLIST_SUB+=	WITH_ODBC="@comment "
+CONFIGURE_ARGS+= --without-odbc
 .else
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 PLIST_SUB+=	WITH_ODBC=""
-MAKE_ENV+=	WITH_ODBC=1
+CONFIGURE_ARGS+= --with-odbc --with-ltdl
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC \
+		ltdl.7:${PORTSDIR}/devel/libltdl22
 .endif
 
-.if defined(WITHOUT_FAX)
-PLIST_SUB+=	WITH_FAX="@comment "
+.if !defined(WITH_FREETDS)
+PLIST_SUB+=	WITH_FREETDS="@comment "
+CONFIGURE_ARGS+= --without-tds
 .else
-MAKE_ENV+=	WITH_FAX=1
-LIB_DEPENDS+=	spandsp.0:${PORTSDIR}/comms/spandsp
-PLIST_SUB+=	WITH_FAX=""
+PLIST_SUB+=	WITH_FREETDS=""
+CONFIGURE_ARGS+= --with-tds=${LOCALBASE}
+LIB_DEPENDS+=	tds.5:${PORTSDIR}/databases/freetds
 .endif
+
+.if !defined(WITH_POSTGRES)
+PLIST_SUB+=	WITH_POSTGRES="@comment "
+CONFIGURE_ARGS+= --without-postgres
+.else
+PLIST_SUB+=	WITH_POSTGRES=""
+USE_PGSQL=	yes
+CONFIGURE_ARGS+= --with-postgres
+.endif
+
+.if !defined(WITH_OGGVORBIS)
+PLIST_SUB+=	WITH_OGGVORBIS="@comment "
+CONFIGURE_ARGS+= --without-ogg
+.else
+PLIST_SUB+=	WITH_OGGVORBIS=""
+CONFIGURE_ARGS+= --with-ogg
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.endif
+
+.if !defined(WITH_RADIUS)
+PLIST_SUB+=	WITH_RADIUS="@comment "
+CONFIGURE_ARGS+= --without-radius
+.else
+PLIST_SUB+=	WITH_RADIUS=""
+CONFIGURE_ARGS+= --with-radius
+LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
+.endif
+
+.if !defined(WITH_SNMP)
+PLIST_SUB+=	WITH_SNMP="@comment "
+CONFIGURE_ARGS+= --without-netsnmp
+.else
+PLIST_SUB+=	WITH_SNMP=""
+CONFIGURE_ARGS+= --with-netsnmp
+LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+.endif
+
+.if !defined(WITH_JABBER)
+PLIST_SUB+=	WITH_JABBER="@comment "
+CONFIGURE_ARGS+= --without-iksemel
+.else
+PLIST_SUB+=	WITH_JABBER=""
+CONFIGURE_ARGS+= --with-iksemel
+LIB_DEPENDS+=	iksemel.4:${PORTSDIR}/textproc/iksemel
+.endif
+
+.if !defined(WITH_SQLITE)
+PLIST_SUB+=	WITH_SQLITE="@comment "
+CONFIGURE_ARGS+=	--without-sqlite
+.else
+PLIST_SUB+=	WITH_SQLITE=""
+CONFIGURE_ARGS+= --with-sqlite
+LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
+.endif
+
+.if !defined(WITH_ILBC)
+PLIST_SUB+=	WITH_ILBC="@comment "
+.else
+PLIST_SUB+=	WITH_ILBC=""
+EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
+.endif
+
+.if defined(WITH_CODEC_PATCH)
+PATCHFILES+=	asterisk-1.4.25-codec-negotiation-20090526.diff.gz
+PATCH_SITES+=	http://b2bua.org/chrome/site/
+EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
+.else
+EXTRA_PATCHES+=	${PATCHDIR}/nocodecnego-patch-Makefile
+.endif
+
+.if defined(WITH_MISC_PATCHES)
+EXTRA_PATCHES+=	${PATCHDIR}/dtmf_debug.diff
+EXTRA_PATCHES+=	${PATCHDIR}/sip_force_callid.diff
+EXTRA_PATCHES+=	${PATCHDIR}/sip_set_auth.diff
+.if defined(WITH_CODEC_PATCH)
+EXTRA_PATCHES+=	${PATCHDIR}/rtp_force_dtmf-codecnego.diff
+.else
+EXTRA_PATCHES+=	${PATCHDIR}/rtp_force_dtmf-nocodecnego.diff
+.endif
+.endif
+
+post-extract:
+	${MKDIR} ${WRKSRC}/codecs/ilbc
+	${FIND} ${WRKSRC} -name '*.d' -delete
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
-	${REINPLACE_CMD} -e 's,^#include <libpri\.h>,#include <libpri-bristuff.h>,' ${WRKSRC}/channels/chan_zap.c
+	${REINPLACE_CMD} -e 's,^#include <libpri\.h>,#include <libpri-bristuff.h>,' ${WRKSRC}/channels/chan_dahdi.c
+	${REINPLACE_CMD} -e 's,-lpri,-lpri-bristuff,' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

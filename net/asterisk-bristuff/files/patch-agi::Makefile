@@ -1,18 +1,18 @@
---- agi/Makefile.orig	Sat Jun  3 21:39:30 2006
-+++ agi/Makefile	Sat Jun  3 21:41:37 2006
-@@ -11,7 +11,9 @@
- # the GNU General Public License
- #
+--- agi/Makefile.orig	Sat Dec 16 23:14:34 2006
++++ agi/Makefile	Wed Mar 28 11:13:21 2007
+@@ -13,7 +13,9 @@
  
--AGIS=agi-test.agi eagi-test eagi-sphinx-test xagi-test
+ .PHONY: clean all uninstall
+ 
+-AGIS=agi-test.agi eagi-test eagi-sphinx-test jukebox.agi xagi-test
 +AGIS_BIN=eagi-test eagi-sphinx-test xagi-test
-+AGIS_SCR=agi-test.agi
++AGIS_SCR=agi-test.agi jukebox.agi
 +AGIS=$(AGIS_SCR) $(AGIS_BIN)
  
- CFLAGS+=-DNO_AST_MM
- 
-@@ -27,8 +29,9 @@
- all: depend $(AGIS)
+ ifeq ($(OSARCH),SunOS)
+   LIBS+=-lsocket -lnsl
+@@ -31,8 +33,9 @@ eagi-test: eagi-test.o strcompat.o
+ eagi-sphinx-test: eagi-sphinx-test.o
  
  install: all
 -	mkdir -p $(DESTDIR)$(AGI_DIR)
@@ -21,5 +21,5 @@
 +	for x in $(AGIS_BIN); do $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(AGI_DIR) ; done
 +	for x in $(AGIS_SCR); do $(BSD_INSTALL_SCRIPT) $$x $(DESTDIR)$(AGI_DIR) ; done
  
- eagi-test: eagi-test.o
- 	$(CC) $(CFLAGS) -o eagi-test eagi-test.o $(LIBS)
+ uninstall:
+ 	for x in $(AGIS); do rm -f $(DESTDIR)$(AGI_DIR)/$$x ; done
