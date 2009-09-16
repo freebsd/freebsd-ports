@@ -269,6 +269,7 @@
     SUBDIR += milter-bogom
     SUBDIR += milter-greylist
     SUBDIR += milter-greylist-devel
+    SUBDIR += milter-manager
     SUBDIR += milter-regex
     SUBDIR += milter-skem
     SUBDIR += mime4j

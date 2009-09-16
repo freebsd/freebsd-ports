@@ -1,0 +1,5 @@
+milter manager protects you from spam mails and virus mails effectively
+with milter. milter manager has embedded Ruby interpreter to control
+milters flexibly.
+
+WWW:	http://milter-manager.sourceforge.net/
