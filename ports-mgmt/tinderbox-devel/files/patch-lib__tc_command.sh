@@ -1,7 +1,5 @@
-Index: portstools/tinderbox/lib/tc_command.sh
-diff -u portstools/tinderbox/lib/tc_command.sh:1.101.2.14 portstools/tinderbox/lib/tc_command.sh:1.101.2.18
---- portstools/tinderbox/lib/tc_command.sh:1.101.2.14	Sun Feb 15 12:22:28 2009
-+++ portstools/tinderbox/lib/tc_command.sh	Sun May 10 14:02:34 2009
+--- portstools/tinderbox/lib/tc_command.sh.orig	2009-02-24 20:36:38.000000000 +0100
++++ portstools/tinderbox/lib/tc_command.sh	2009-09-17 19:59:26.000000000 +0200
 @@ -24,10 +24,10 @@
  # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  # SUCH DAMAGE.
@@ -104,3 +102,12 @@ diff -u portstools/tinderbox/lib/tc_command.sh:1.101.2.14 portstools/tinderbox/l
  
      # Update the last-built time
      ${tc} updatePortsTreeLastBuilt -p ${portsTreeName}
+@@ -1649,7 +1668,7 @@
+     # Set up the chrooted environment
+     osmajor=$(echo ${jail} | sed -E -e 's|(^[[:digit:]]+).*$|\1|')
+     case ${osmajor} in
+-    6|7|8)	tinderbuild_setup;;
++    6|7|8|9)	tinderbuild_setup;;
+     *)		echo "tinderbuild: unhandled OS version: ${osmajor}"
+ 		tinderbuild_cleanup 1
+ 		;;

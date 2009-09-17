@@ -6,7 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	3.2
-PORTREVISION=	4	# 2009-05-10 18:02:34 UTC
+PORTREVISION=	5	# 2009-09-17 18:02:34 UTC
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
