@@ -1,0 +1,7 @@
+Net::Radius::Server provides an extensible framework to create RADIUS
+servers suitable for non-standard scenarios where authentication
+needs to consider multiple factors. The RADIUS responses may be
+created by arbitrarily complex rules that process the request packet
+as well as any external data accessible to Perl.
+
+WWW:	http://search.cpan.org/dist/Net-Radius-Server/
