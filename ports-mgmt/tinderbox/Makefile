@@ -6,6 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -99,6 +100,8 @@ post-patch:
 			${WRKSRC}/tc
 	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} {} \;
 .endif
+	${RM} ${WRKSRC}/lib/tc_command.sh.orig
+	${RM} ${WRKSRC}/lib/tinderbox.env.orig
 
 do-install:
 	@${MKDIR} ${PREFIX}/tinderbox/scripts
