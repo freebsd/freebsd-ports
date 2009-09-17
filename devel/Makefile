@@ -463,6 +463,7 @@
     SUBDIR += goffice04
     SUBDIR += goffice06
     SUBDIR += goffice1
+    SUBDIR += gold
     SUBDIR += gonzui
     SUBDIR += google-perftools
     SUBDIR += google-sparsehash

@@ -1,0 +1,10 @@
+Gold is a new linker, written from scratch. It really only has one new feature
+compared to the current GNU linker: it's much faster. I've measured it as five
+times faster linking large C++ applications. Since for most programmers the
+linker is nothing more than a roadblock between writing code and running the
+program, I figure that speed and correctness are the only really important
+features of any linker.
+
+LICENSE: GPL3 or later
+
+WWW: http://google-opensource.blogspot.com/2008/04/gold-google-releases-new-and-improved.html
