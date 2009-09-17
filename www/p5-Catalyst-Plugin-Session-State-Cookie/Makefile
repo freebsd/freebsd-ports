@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-State-Cookie
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Stores a Catalyst Session in a Cookie
 
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80005:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Catalyst-Plugin-Session>=0.19:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
+RUN_DEPENDS=	\
+	p5-Catalyst-Runtime>=5.80005:${PORTSDIR}/www/p5-Catalyst-Runtime \
+	p5-Catalyst-Plugin-Session>=0.19:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
+	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
+	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
+	p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
