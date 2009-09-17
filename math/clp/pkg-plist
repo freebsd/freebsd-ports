@@ -83,9 +83,11 @@ include/coin/CoinPresolveZeros.hpp
 include/coin/CoinSearchTree.hpp
 include/coin/CoinShallowPackedVector.hpp
 include/coin/CoinSignal.hpp
+include/coin/CoinSimpFactorization.hpp
 include/coin/CoinSmartPtr.hpp
 include/coin/CoinSnapshot.hpp
 include/coin/CoinSort.hpp
+include/coin/CoinStructuredModel.hpp
 include/coin/CoinTime.hpp
 include/coin/CoinTypes.hpp
 include/coin/CoinUtility.hpp

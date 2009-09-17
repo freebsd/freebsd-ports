@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Clp
-PORTVERSION=	1.8.2
-PORTREVISION=	6
+PORTVERSION=	1.10.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Clp/ \
 		http://www.mavetju.org/download/adopted/
