@@ -1,6 +1,6 @@
 lib/libssh.so
 lib/libssh.so.3
-lib/libssh.so.3.3.0
+lib/libssh.so.3.4.0
 include/libssh/libssh.h
 include/libssh/sftp.h
 include/libssh/crypto.h
