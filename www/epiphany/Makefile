@@ -8,7 +8,7 @@
 
 PORTNAME=	epiphany
 PORTVERSION=	2.26.3
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -52,7 +52,7 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-USE_GECKO+=	firefox libxul
+USE_GECKO+=	libxul firefox
 CONFIGURE_ARGS+=	--with-gecko=${GECKO} \
 			--with-engine=mozilla \
 			--with-gecko-home=${LOCALBASE}/lib/${GECKO}

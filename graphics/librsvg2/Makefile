@@ -8,7 +8,7 @@
 
 PORTNAME=	librsvg2
 PORTVERSION=	2.26.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -46,7 +46,7 @@ OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MOZILLA_PLUGIN)
-USE_GECKO=	firefox mozilla seamonkey libxul xulrunner
+USE_GECKO=	libxul firefox mozilla seamonkey xulrunner
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=libmozsvgdec.so
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
