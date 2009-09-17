@@ -35,6 +35,41 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b9ec7fe3-a38a-11de-9c6b-003048818f40">
+    <topic>bugzilla -- two SQL injections, sensitive data exposure</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><gt>3.3.1</gt><lt>3.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/3.4/">
+	  <ul>
+            <li>It is possible to inject raw SQL into the Bugzilla
+            database via the "Bug.create" and "Bug.search" WebService
+            functions.</li>
+            <li>When a user would change his password, his new password would
+            be exposed in the URL field of the browser if he logged in right
+            after changing his password.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3125</cvename>
+      <cvename>CVE-2009-3165</cvename>
+      <cvename>CVE-2009-3166</cvename>
+      <url>http://www.bugzilla.org/security/3.0.8/</url>
+    </references>
+    <dates>
+      <discovery>2009-09-11</discovery>
+      <entry>2009-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee23aa09-a175-11de-96c0-0011098ad87f">
     <topic>horde-base -- three vulnerabilities</topic>
     <affects>
