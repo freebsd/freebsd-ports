@@ -69,6 +69,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/ci_logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/ci_logo_flame.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/ci_quick_ref.png
+%%PORTDOCS%%%%DOCSDIR%%/images/codeigniter_1.7.1_helper_reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/images/codeigniter_1.7.1_helper_reference.png
+%%PORTDOCS%%%%DOCSDIR%%/images/codeigniter_1.7.1_library_reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/images/codeigniter_1.7.1_library_reference.png
 %%PORTDOCS%%%%DOCSDIR%%/images/file.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/folder.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/nav_bg_darker.jpg
@@ -97,10 +101,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_163.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_170.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_171.html
+%%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_172.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_b11.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrading.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/benchmark.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/calendar.html
+%%PORTDOCS%%%%DOCSDIR%%/libraries/cart.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/config.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/email.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/encryption.html
@@ -133,6 +139,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/nav/user_guide_menu.js
 %%PORTDOCS%%%%DOCSDIR%%/overview/appflow.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/at_a_glance.html
+%%PORTDOCS%%%%DOCSDIR%%/overview/cheatsheets.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/features.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/getting_started.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/goals.html
@@ -278,6 +285,7 @@
 %%WWWDIR%%/system/language/index.html
 %%WWWDIR%%/system/libraries/Benchmark.php
 %%WWWDIR%%/system/libraries/Calendar.php
+%%WWWDIR%%/system/libraries/Cart.php
 %%WWWDIR%%/system/libraries/Config.php
 %%WWWDIR%%/system/libraries/Controller.php
 %%WWWDIR%%/system/libraries/Email.php
