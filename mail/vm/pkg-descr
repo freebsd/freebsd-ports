@@ -8,7 +8,14 @@ advanced commands that do tasks like bursting and creating digests,
 message forwarding, and organizing message presentation according to
 various criteria.
 
-WWW: http://www.wonderworks.com/vm/
+It was written as an alternative to the Emacs RMAIL mail reader.
+VM is highly configurable and easy to use. It supports POP and IMAP
+for mail retrieval, understands MIME, and reads both the standard
+UNIX mailbox format and the BABYL format used by the RMAIL mailer.
 
-- Olivier Tharan
-olive@oban.frmug.org
+Some other features:
+ - thread viewing
+ - virtual folders
+ - gpg integration
+
+WWW: http://www.nongnu.org/viewmail/
