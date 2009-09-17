@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090917:
+  AFFECTS: users of www/epiphany, x11/yelp, graphics/librsvg2,
+           x11/toolkits/py-gnome-extras, and www/epiphany-extensions
+  AUTHOR: gnome@FreeBSD.org
+
+  The default Gecko provider has been changed from www/firefox to
+  www/libxul.  Firefox 2.x is now forbidden for security reasons, and
+  libxul is the new, stable Geck provider.  Libxul uses the same Gecko
+  engine as Firefox 3.0.x.
+
+  Some ports may fail to upgrade or run when both www/firefox and libxul
+  are installed on the same system.  To make sure everything runs smoothly,
+  uninstall www/firefox, then install libxul, then upgrade the affected
+  ports.
+
 20090915:
   AFFECTS: users of sysutils/gosa
   AUTHOR: Denis Shaposhnikov <dsh@wizard.volgograd.ru>
