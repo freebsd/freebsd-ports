@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter-greylist-devel
-DISTVERSION=	4.3.2
+DISTVERSION=	4.3.3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${DISTVERSION}
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Easy-to-use greylist milter for sendmail (development)
 
-MAKE_JOBS_UNSAFE=  yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN5=		greylist.conf.5
 MAN8=		milter-greylist.8
