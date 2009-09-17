@@ -58,7 +58,7 @@
 +	if (retfd == -1)
 +		retfd = fd;
 +	else
-+		close(fd);
++/*		close(fd);  fix for PR=138881 */
  
  	/* close on exec */
  	if (fcntl(retfd, F_SETFD, 1) == -1) {
