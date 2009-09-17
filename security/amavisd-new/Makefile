@@ -222,6 +222,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/ripole:${PORTSDIR}/textproc/ripole
 RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
 
+.include <bsd.port.pre.mk>
+
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} " **** UPGRADE WARNING:  SQL SCHEMA CHANGED ****"
@@ -305,4 +307,4 @@ post-install:
 	${LN} -s ${PREFIX}/sbin/amavisd-release ${PREFIX}/sbin/amavisd-requeue
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
