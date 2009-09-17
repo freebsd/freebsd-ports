@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ladvd
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	net
 MASTER_SITES=	http://blinkenlights.nl/software/ladvd/
 
 MAINTAINER=	sten@blinkenlights.nl
-COMMENT=	A minimal CDP/LLDP sender
+COMMENT=	A minimal CDP/LLDP daemon
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
