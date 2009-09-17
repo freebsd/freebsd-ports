@@ -7,6 +7,7 @@
 
 PORTNAME=	gold
 PORTVERSION=	1.9.0.2009.09.16
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/approved/
 DISTNAME=	binutils-${PORTNAME}-${PORTVERSION}
@@ -23,6 +24,9 @@ USE_PERL5_BUILD=	yes
 WRKSRC=		${WRKDIR}/binutils
 PLIST_FILES=	bin/ld-new
 
+OPTIONS=	PLUGINS	"Support fpr plugins"	on \
+		NLS	"Native language support"	off
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NLS)
@@ -30,6 +34,10 @@ USE_GETTEXT=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 .else
 CONFIGURE_ARGS+=	--disable-nls
+.endif
+
+.if !defined(WITHOUT_PLUGINS)
+CONFIGURE_ARGS+=	 --enable-plugin
 .endif
 
 do-configure:
