@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql_autodoc
-PORTVERSION=	1.31
+PORTVERSION=	1.40
 CATEGORIES=	databases
 MASTER_SITES=	http://www.rbt.ca/autodoc/binaries/
 DIST_SUBDIR=	postgresql
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/mach/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--datadir=${DATADIR}
