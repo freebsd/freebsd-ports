@@ -6,33 +6,25 @@
 #
 
 PORTNAME=	vm
-PORTVERSION=	7.19
-PORTREVISION=	2
+PORTVERSION=	8.0.12
 CATEGORIES=	mail elisp
-MASTER_SITES=	http://www.seanet.com/~kylemonger/vm/ \
-		ftp://ftp.uni-mainz.de/pub/software/gnu/vm/ \
-		ftp://tug.org/vm/ \
-		ftp://psg.com/pub/vm/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/vm/ \
-		ftp://ftp.uu.net/networking/mail/vm/ \
-		http://www.interhack.net/projects/vm/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/VM/ \
-		http://ftp.lip6.fr/pub/unix/mail/vm/ \
-		ftp://ftp.surfnet.nl/pub/mail/vm/ \
-		http://ftp.gwdg.de/pub/gnu2/vm/ \
-		http://ftp.vim.org/pub/mail/vm/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	viewmail
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhein@timing.com
 COMMENT=	A mail reader running inside Emacs or XEmacs
 
+GNU_CONFIGURE=	yes
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+USE_GMAKE=	yes
+CONFIGURE_ARGS+=	--with-emacs=${EMACS_CMD}
 MAKE_ARGS=	prefix=${PREFIX} \
-		INFODIR=${PREFIX}/info \
-		LISPDIR=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME} \
-		PIXMAPDIR=${PREFIX}/${EMACS_LIBDIR_WITH_VER}/etc/vm
+		lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME} \
+		pixmapdir=${PREFIX}/${EMACS_LIBDIR_WITH_VER}/etc/vm
 
-INFO=		vm
+INFO=		vm vm-pcrisis
 
 .include <bsd.port.mk>
