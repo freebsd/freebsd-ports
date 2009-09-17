@@ -6,12 +6,14 @@
 
 PORTNAME=	phplot
 PORTVERSION=	5.0.7
+PORTREVISION=	1
 CATEGORIES=	graphics www
-MASTER_SITES=	SF
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}docs-20090121.zip
+MASTER_SITES=	SF:source1 \
+		SF/${PORTNAME}/Manual/20090614:source2
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source1 \
+		${PORTNAME}docs-20090614.zip:source2
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A PHP class for creating scientific and business charts
 
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
