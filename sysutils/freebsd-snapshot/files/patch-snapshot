@@ -1,11 +1,13 @@
 --- snapshot~    2008-12-06 19:37:53.598862157 -0600
 +++ snapshot    2008-12-06 19:37:53.599877379 -0600
-@@ -29,7 +29,7 @@
+@@ -29,7 +29,9 @@
  ##
 
  #   make sure system tools are used first
 -PATH="/bin:/usr/bin:/sbin:/usr/sbin:$PATH"
 +PATH="/bin:/usr/bin:/sbin:/usr/sbin:%%PREFIX%%/sbin:$PATH"
++LC_ALL=C
++LANG=C
 
  #   option defaults
  fs_subdir=".snap"
