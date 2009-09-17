@@ -1,0 +1,520 @@
+bin/callweaver_cli
+bin/safe_callweaver
+bin/smsq
+bin/streamplayer
+@unexec if cmp -s %D/%%ETCDIR%%/adsi.conf.sample %D/%%ETCDIR%%/adsi.conf; then rm -f %D/%%ETCDIR%%/adsi.conf; fi
+%%ETCDIR%%/adsi.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/adsi.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/adsi.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/adtranvofr.conf.sample %D/%%ETCDIR%%/adtranvofr.conf; then rm -f %D/%%ETCDIR%%/adtranvofr.conf; fi
+%%ETCDIR%%/adtranvofr.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/adtranvofr.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/adtranvofr.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/agents.conf.sample %D/%%ETCDIR%%/agents.conf; then rm -f %D/%%ETCDIR%%/agents.conf; fi
+%%ETCDIR%%/agents.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/agents.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/agents.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/amd.conf.sample %D/%%ETCDIR%%/amd.conf; then rm -f %D/%%ETCDIR%%/amd.conf; fi
+%%ETCDIR%%/amd.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/amd.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/amd.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/callweaver.adsi.sample %D/%%ETCDIR%%/callweaver.adsi; then rm -f %D/%%ETCDIR%%/callweaver.adsi; fi
+%%ETCDIR%%/callweaver.adsi.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/callweaver.adsi ] ; then cp -p %D/%F %B/%%ETCDIR%%/callweaver.adsi; fi
+@unexec if cmp -s %D/%%ETCDIR%%/callweaver.conf.sample %D/%%ETCDIR%%/callweaver.conf; then rm -f %D/%%ETCDIR%%/callweaver.conf; fi
+%%ETCDIR%%/callweaver.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/callweaver.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/callweaver.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/cdr.conf.sample %D/%%ETCDIR%%/cdr.conf; then rm -f %D/%%ETCDIR%%/cdr.conf; fi
+%%ETCDIR%%/cdr.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_custom.conf.sample %D/%%ETCDIR%%/cdr_custom.conf; then rm -f %D/%%ETCDIR%%/cdr_custom.conf; fi
+%%ETCDIR%%/cdr_custom.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_custom.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_custom.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_manager.conf.sample %D/%%ETCDIR%%/cdr_manager.conf; then rm -f %D/%%ETCDIR%%/cdr_manager.conf; fi
+%%ETCDIR%%/cdr_manager.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_manager.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_manager.conf; fi
+%%MYSQL%%@unexec if cmp -s %D/%%ETCDIR%%/cdr_mysql.conf.sample %D/%%ETCDIR%%/cdr_mysql.conf; then rm -f %D/%%ETCDIR%%/cdr_mysql.conf; fi
+%%MYSQL%%%%ETCDIR%%/cdr_mysql.conf.sample
+%%MYSQL%%@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_mysql.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_mysql.conf; fi
+%%PGSQL%%@unexec if cmp -s %D/%%ETCDIR%%/cdr_pgsql.conf.sample %D/%%ETCDIR%%/cdr_pgsql.conf; then rm -f %D/%%ETCDIR%%/cdr_pgsql.conf; fi
+%%PGSQL%%%%ETCDIR%%/cdr_pgsql.conf.sample
+%%PGSQL%%@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_pgsql.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_pgsql.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_tds.conf.sample %D/%%ETCDIR%%/cdr_tds.conf; then rm -f %D/%%ETCDIR%%/cdr_tds.conf; fi
+%%ETCDIR%%/cdr_tds.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_tds.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_tds.conf; fi
+%%ZAPTEL%%@unexec if cmp -s %D/%%ETCDIR%%/chan_dahdi.conf.sample %D/%%ETCDIR%%/chan_dahdi.conf; then rm -f %D/%%ETCDIR%%/chan_dahdi.conf; fi
+%%ZAPTEL%%%%ETCDIR%%/chan_dahdi.conf.sample
+%%ZAPTEL%%@exec if [ ! -f %D/etc/%%ETCDIR%%/chan_dahdi.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/chan_dahdi.conf; fi
+%%FAX%%@unexec if cmp -s %D/%%ETCDIR%%/chan_fax.conf.sample %D/%%ETCDIR%%/chan_fax.conf; then rm -f %D/%%ETCDIR%%/chan_fax.conf; fi
+%%FAX%%%%ETCDIR%%/chan_fax.conf.sample
+%%FAX%%@exec if [ ! -f %D/etc/%%ETCDIR%%/chan_fax.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/chan_fax.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/codecs.conf.sample %D/%%ETCDIR%%/codecs.conf; then rm -f %D/%%ETCDIR%%/codecs.conf; fi
+%%ETCDIR%%/codecs.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/codecs.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/codecs.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/db-memcached.conf.sample %D/%%ETCDIR%%/db-memcached.conf; then rm -f %D/%%ETCDIR%%/db-memcached.conf; fi
+%%ETCDIR%%/db-memcached.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/db-memcached.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/db-memcached.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/dnsmgr.conf.sample %D/%%ETCDIR%%/dnsmgr.conf; then rm -f %D/%%ETCDIR%%/dnsmgr.conf; fi
+%%ETCDIR%%/dnsmgr.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/dnsmgr.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/dnsmgr.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/dundi.conf.sample %D/%%ETCDIR%%/dundi.conf; then rm -f %D/%%ETCDIR%%/dundi.conf; fi
+%%ETCDIR%%/dundi.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/dundi.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/dundi.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/enum.conf.sample %D/%%ETCDIR%%/enum.conf; then rm -f %D/%%ETCDIR%%/enum.conf; fi
+%%ETCDIR%%/enum.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/enum.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/enum.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/extconfig.conf.sample %D/%%ETCDIR%%/extconfig.conf; then rm -f %D/%%ETCDIR%%/extconfig.conf; fi
+%%ETCDIR%%/extconfig.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/extconfig.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/extconfig.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/extensions.ael.sample %D/%%ETCDIR%%/extensions.ael; then rm -f %D/%%ETCDIR%%/extensions.ael; fi
+%%ETCDIR%%/extensions.ael.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/extensions.ael ] ; then cp -p %D/%F %B/%%ETCDIR%%/extensions.ael; fi
+@unexec if cmp -s %D/%%ETCDIR%%/extensions.conf.sample %D/%%ETCDIR%%/extensions.conf; then rm -f %D/%%ETCDIR%%/extensions.conf; fi
+%%ETCDIR%%/extensions.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/extensions.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/extensions.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/features.conf.sample %D/%%ETCDIR%%/features.conf; then rm -f %D/%%ETCDIR%%/features.conf; fi
+%%ETCDIR%%/features.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/features.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/features.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/iax.conf.sample %D/%%ETCDIR%%/iax.conf; then rm -f %D/%%ETCDIR%%/iax.conf; fi
+%%ETCDIR%%/iax.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/iax.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/iax.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/indications.conf.sample %D/%%ETCDIR%%/indications.conf; then rm -f %D/%%ETCDIR%%/indications.conf; fi
+%%ETCDIR%%/indications.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/indications.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/indications.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/logger.conf.sample %D/%%ETCDIR%%/logger.conf; then rm -f %D/%%ETCDIR%%/logger.conf; fi
+%%ETCDIR%%/logger.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/logger.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/logger.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/manager.conf.sample %D/%%ETCDIR%%/manager.conf; then rm -f %D/%%ETCDIR%%/manager.conf; fi
+%%ETCDIR%%/manager.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/manager.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/manager.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/meetme.conf.sample %D/%%ETCDIR%%/meetme.conf; then rm -f %D/%%ETCDIR%%/meetme.conf; fi
+%%ETCDIR%%/meetme.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/meetme.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/meetme.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/mgcp.conf.sample %D/%%ETCDIR%%/mgcp.conf; then rm -f %D/%%ETCDIR%%/mgcp.conf; fi
+%%ETCDIR%%/mgcp.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/mgcp.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/mgcp.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/modem.conf.sample %D/%%ETCDIR%%/modem.conf; then rm -f %D/%%ETCDIR%%/modem.conf; fi
+%%ETCDIR%%/modem.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/modem.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/modem.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/modules.conf.sample %D/%%ETCDIR%%/modules.conf; then rm -f %D/%%ETCDIR%%/modules.conf; fi
+%%ETCDIR%%/modules.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/modules.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/modules.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/musiconhold.conf.sample %D/%%ETCDIR%%/musiconhold.conf; then rm -f %D/%%ETCDIR%%/musiconhold.conf; fi
+%%ETCDIR%%/musiconhold.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/musiconhold.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/musiconhold.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/muted.conf.sample %D/%%ETCDIR%%/muted.conf; then rm -f %D/%%ETCDIR%%/muted.conf; fi
+%%ETCDIR%%/muted.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/muted.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/muted.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/osp.conf.sample %D/%%ETCDIR%%/osp.conf; then rm -f %D/%%ETCDIR%%/osp.conf; fi
+%%ETCDIR%%/osp.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/osp.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/osp.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/privacy.conf.sample %D/%%ETCDIR%%/privacy.conf; then rm -f %D/%%ETCDIR%%/privacy.conf; fi
+%%ETCDIR%%/privacy.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/privacy.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/privacy.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/queues.conf.sample %D/%%ETCDIR%%/queues.conf; then rm -f %D/%%ETCDIR%%/queues.conf; fi
+%%ETCDIR%%/queues.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/queues.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/queues.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/res_snmp.conf.sample %D/%%ETCDIR%%/res_snmp.conf; then rm -f %D/%%ETCDIR%%/res_snmp.conf; fi
+%%ETCDIR%%/res_snmp.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/res_snmp.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/res_snmp.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/rtp.conf.sample %D/%%ETCDIR%%/rtp.conf; then rm -f %D/%%ETCDIR%%/rtp.conf; fi
+%%ETCDIR%%/rtp.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/rtp.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/rtp.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/sip.conf.sample %D/%%ETCDIR%%/sip.conf; then rm -f %D/%%ETCDIR%%/sip.conf; fi
+%%ETCDIR%%/sip.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/sip.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/sip.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/sip_notify.conf.sample %D/%%ETCDIR%%/sip_notify.conf; then rm -f %D/%%ETCDIR%%/sip_notify.conf; fi
+%%ETCDIR%%/sip_notify.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/sip_notify.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/sip_notify.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/udptl.conf.sample %D/%%ETCDIR%%/udptl.conf; then rm -f %D/%%ETCDIR%%/udptl.conf; fi
+%%ETCDIR%%/udptl.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/udptl.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/udptl.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/voicemail.conf.sample %D/%%ETCDIR%%/voicemail.conf; then rm -f %D/%%ETCDIR%%/voicemail.conf; fi
+%%ETCDIR%%/voicemail.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/voicemail.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/voicemail.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/woomera.conf.sample %D/%%ETCDIR%%/woomera.conf; then rm -f %D/%%ETCDIR%%/woomera.conf; fi
+%%ETCDIR%%/woomera.conf.sample
+@exec if [ ! -f %D/etc/%%ETCDIR%%/woomera.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/woomera.conf; fi
+include/callweaver/acl.h
+include/callweaver/adsi.h
+include/callweaver/aes.h
+include/callweaver/alaw.h
+include/callweaver/app.h
+include/callweaver/callweaver_db.h
+include/callweaver/callweaver_expr.h
+include/callweaver/callweaver_hash.h
+include/callweaver/callweaver_keywords.h
+include/callweaver/callweaver_mm.h
+include/callweaver/causes.h
+include/callweaver/cdr.h
+include/callweaver/chan_capi.h
+include/callweaver/chan_capi20.h
+include/callweaver/channel.h
+include/callweaver/chanvars.h
+include/callweaver/cli.h
+include/callweaver/compiler.h
+include/callweaver/config.h
+include/callweaver/crypto.h
+include/callweaver/cwobj.h
+include/callweaver/devicestate.h
+include/callweaver/dlfcn-compat.h
+include/callweaver/dns.h
+include/callweaver/dnsmgr.h
+include/callweaver/dsp.h
+include/callweaver/dundi.h
+include/callweaver/enum.h
+include/callweaver/features.h
+include/callweaver/file.h
+include/callweaver/frame.h
+include/callweaver/generator.h
+include/callweaver/generic_jb.h
+include/callweaver/image.h
+include/callweaver/indications.h
+include/callweaver/inline_api.h
+include/callweaver/io.h
+include/callweaver/linkedlists.h
+include/callweaver/localtime.h
+include/callweaver/lock.h
+include/callweaver/logger.h
+include/callweaver/manager.h
+include/callweaver/module.h
+include/callweaver/monitor.h
+include/callweaver/musiconhold.h
+include/callweaver/netsock.h
+include/callweaver/ogi.h
+include/callweaver/options.h
+include/callweaver/pbx.h
+include/callweaver/phone_no_utils.h
+include/callweaver/poll-compat.h
+include/callweaver/privacy.h
+include/callweaver/res_odbc.h
+include/callweaver/resonator.h
+include/callweaver/rtp.h
+include/callweaver/say.h
+include/callweaver/sched.h
+include/callweaver/slinfactory.h
+include/callweaver/srv.h
+include/callweaver/strings.h
+include/callweaver/stun.h
+include/callweaver/term.h
+include/callweaver/time.h
+include/callweaver/transcap.h
+include/callweaver/translate.h
+include/callweaver/udp.h
+include/callweaver/udpfromto.h
+include/callweaver/udptl.h
+include/callweaver/ulaw.h
+include/callweaver/unaligned.h
+include/callweaver/utils.h
+include/callweaver/xlaw.h
+lib/callweaver/libcallweaver.la
+lib/callweaver/libcallweaver.so
+lib/callweaver/libcallweaver.so.0
+lib/callweaver/libcwjb.la
+lib/callweaver/libcwjb.so
+lib/callweaver/libcwjb.so.0
+lib/callweaver/libcwsqlite3.la
+lib/callweaver/libcwsqlite3.so
+lib/callweaver/libcwsqlite3.so.8
+lib/callweaver/modules/app_adsiprog.la
+lib/callweaver/modules/app_adsiprog.so
+lib/callweaver/modules/app_amd.la
+lib/callweaver/modules/app_amd.so
+lib/callweaver/modules/app_authenticate.la
+lib/callweaver/modules/app_authenticate.so
+lib/callweaver/modules/app_backgrounddetect.la
+lib/callweaver/modules/app_backgrounddetect.so
+lib/callweaver/modules/app_cdr.la
+lib/callweaver/modules/app_cdr.so
+lib/callweaver/modules/app_changrab.la
+lib/callweaver/modules/app_changrab.so
+lib/callweaver/modules/app_chanisavail.la
+lib/callweaver/modules/app_chanisavail.so
+lib/callweaver/modules/app_chanspy.la
+lib/callweaver/modules/app_chanspy.so
+lib/callweaver/modules/app_controlplayback.la
+lib/callweaver/modules/app_controlplayback.so
+lib/callweaver/modules/app_db.la
+lib/callweaver/modules/app_db.so
+lib/callweaver/modules/app_devstate.la
+lib/callweaver/modules/app_devstate.so
+lib/callweaver/modules/app_dial.la
+lib/callweaver/modules/app_dial.so
+lib/callweaver/modules/app_dictate.la
+lib/callweaver/modules/app_dictate.so
+lib/callweaver/modules/app_directed_pickup.la
+lib/callweaver/modules/app_directed_pickup.so
+lib/callweaver/modules/app_directory.la
+lib/callweaver/modules/app_directory.so
+lib/callweaver/modules/app_disa.la
+lib/callweaver/modules/app_disa.so
+lib/callweaver/modules/app_dumpchan.la
+lib/callweaver/modules/app_dumpchan.so
+lib/callweaver/modules/app_echo.la
+lib/callweaver/modules/app_echo.so
+lib/callweaver/modules/app_enumlookup.la
+lib/callweaver/modules/app_enumlookup.so
+lib/callweaver/modules/app_eval.la
+lib/callweaver/modules/app_eval.so
+lib/callweaver/modules/app_exec.la
+lib/callweaver/modules/app_exec.so
+%%FAX%%lib/callweaver/modules/app_faxdetect.la
+%%FAX%%lib/callweaver/modules/app_faxdetect.so
+%%ZAPTEL%%lib/callweaver/modules/app_flash.la
+%%ZAPTEL%%lib/callweaver/modules/app_flash.so
+lib/callweaver/modules/app_forkcdr.la
+lib/callweaver/modules/app_forkcdr.so
+lib/callweaver/modules/app_getcpeid.la
+lib/callweaver/modules/app_getcpeid.so
+lib/callweaver/modules/app_getdevstate.la
+lib/callweaver/modules/app_getdevstate.so
+lib/callweaver/modules/app_getextstate.la
+lib/callweaver/modules/app_getextstate.so
+lib/callweaver/modules/app_groupcount.la
+lib/callweaver/modules/app_groupcount.so
+lib/callweaver/modules/app_hasnewvoicemail.la
+lib/callweaver/modules/app_hasnewvoicemail.so
+lib/callweaver/modules/app_lookupblacklist.la
+lib/callweaver/modules/app_lookupblacklist.so
+lib/callweaver/modules/app_lookupcidname.la
+lib/callweaver/modules/app_lookupcidname.so
+%%MEETME%%lib/callweaver/modules/app_meetme.la
+%%MEETME%%lib/callweaver/modules/app_meetme.so
+lib/callweaver/modules/app_milliwatt.la
+lib/callweaver/modules/app_milliwatt.so
+lib/callweaver/modules/app_muxmon.la
+lib/callweaver/modules/app_muxmon.so
+lib/callweaver/modules/app_nconference.la
+lib/callweaver/modules/app_nconference.so
+lib/callweaver/modules/app_pipe.la
+lib/callweaver/modules/app_pipe.so
+lib/callweaver/modules/app_playback.la
+lib/callweaver/modules/app_playback.so
+lib/callweaver/modules/app_privacy.la
+lib/callweaver/modules/app_privacy.so
+lib/callweaver/modules/app_proc.la
+lib/callweaver/modules/app_proc.so
+lib/callweaver/modules/app_queue.la
+lib/callweaver/modules/app_queue.so
+lib/callweaver/modules/app_random.la
+lib/callweaver/modules/app_random.so
+lib/callweaver/modules/app_read.la
+lib/callweaver/modules/app_read.so
+lib/callweaver/modules/app_record.la
+lib/callweaver/modules/app_record.so
+%%FAX%%lib/callweaver/modules/app_rxfax.la
+%%FAX%%lib/callweaver/modules/app_rxfax.so
+lib/callweaver/modules/app_sayunixtime.la
+lib/callweaver/modules/app_sayunixtime.so
+lib/callweaver/modules/app_senddtmf.la
+lib/callweaver/modules/app_senddtmf.so
+lib/callweaver/modules/app_sendtext.la
+lib/callweaver/modules/app_sendtext.so
+lib/callweaver/modules/app_setcallerpres.la
+lib/callweaver/modules/app_setcallerpres.so
+lib/callweaver/modules/app_setcdruserfield.la
+lib/callweaver/modules/app_setcdruserfield.so
+lib/callweaver/modules/app_setrdnis.la
+lib/callweaver/modules/app_setrdnis.so
+lib/callweaver/modules/app_settransfercapability.la
+lib/callweaver/modules/app_settransfercapability.so
+lib/callweaver/modules/app_sms.la
+lib/callweaver/modules/app_sms.so
+lib/callweaver/modules/app_softhangup.la
+lib/callweaver/modules/app_softhangup.so
+%%MYSQL%%lib/callweaver/modules/app_sql_mysql.la
+%%MYSQL%%lib/callweaver/modules/app_sql_mysql.so
+%%PGSQL%%lib/callweaver/modules/app_sql_postgres.la
+%%PGSQL%%lib/callweaver/modules/app_sql_postgres.so
+lib/callweaver/modules/app_stack.la
+lib/callweaver/modules/app_stack.so
+lib/callweaver/modules/app_system.la
+lib/callweaver/modules/app_system.so
+%%FAX%%lib/callweaver/modules/app_t38gateway.la
+%%FAX%%lib/callweaver/modules/app_t38gateway.so
+lib/callweaver/modules/app_transfer.la
+lib/callweaver/modules/app_transfer.so
+%%FAX%%lib/callweaver/modules/app_txfax.la
+%%FAX%%lib/callweaver/modules/app_txfax.so
+lib/callweaver/modules/app_userevent.la
+lib/callweaver/modules/app_userevent.so
+lib/callweaver/modules/app_verbose.la
+lib/callweaver/modules/app_verbose.so
+lib/callweaver/modules/app_voicemail.la
+lib/callweaver/modules/app_voicemail.so
+lib/callweaver/modules/app_waitfordigits.la
+lib/callweaver/modules/app_waitfordigits.so
+lib/callweaver/modules/app_waitforring.la
+lib/callweaver/modules/app_waitforring.so
+lib/callweaver/modules/app_waitforsilence.la
+lib/callweaver/modules/app_waitforsilence.so
+lib/callweaver/modules/app_while.la
+lib/callweaver/modules/app_while.so
+lib/callweaver/modules/app_zapateller.la
+lib/callweaver/modules/app_zapateller.so
+lib/callweaver/modules/cdr_csv.la
+lib/callweaver/modules/cdr_csv.so
+lib/callweaver/modules/cdr_custom.la
+lib/callweaver/modules/cdr_custom.so
+lib/callweaver/modules/cdr_manager.la
+lib/callweaver/modules/cdr_manager.so
+%%MYSQL%%lib/callweaver/modules/cdr_mysql.la
+%%MYSQL%%lib/callweaver/modules/cdr_mysql.so
+%%PGSQL%%lib/callweaver/modules/cdr_pgsql.la
+%%PGSQL%%lib/callweaver/modules/cdr_pgsql.so
+lib/callweaver/modules/cdr_sqlite3.la
+lib/callweaver/modules/cdr_sqlite3.so
+lib/callweaver/modules/chan_agent.la
+lib/callweaver/modules/chan_agent.so
+%%FAX%%lib/callweaver/modules/chan_fax.la
+%%FAX%%lib/callweaver/modules/chan_fax.so
+lib/callweaver/modules/chan_features.la
+lib/callweaver/modules/chan_features.so
+lib/callweaver/modules/chan_iax2.la
+lib/callweaver/modules/chan_iax2.so
+lib/callweaver/modules/chan_local.la
+lib/callweaver/modules/chan_local.so
+lib/callweaver/modules/chan_mgcp.la
+lib/callweaver/modules/chan_mgcp.so
+lib/callweaver/modules/chan_sip.la
+lib/callweaver/modules/chan_sip.so
+lib/callweaver/modules/chan_woomera.la
+lib/callweaver/modules/chan_woomera.so
+%%ZAPTEL%%lib/callweaver/modules/chan_zap.la
+%%ZAPTEL%%lib/callweaver/modules/chan_zap.so
+lib/callweaver/modules/codec_a_mu.la
+lib/callweaver/modules/codec_a_mu.so
+lib/callweaver/modules/codec_alaw.la
+lib/callweaver/modules/codec_alaw.so
+lib/callweaver/modules/codec_dvi_adpcm.la
+lib/callweaver/modules/codec_dvi_adpcm.so
+lib/callweaver/modules/codec_g722.la
+lib/callweaver/modules/codec_g722.so
+lib/callweaver/modules/codec_g722_16k_8k.la
+lib/callweaver/modules/codec_g722_16k_8k.so
+lib/callweaver/modules/codec_g726.la
+lib/callweaver/modules/codec_g726.so
+lib/callweaver/modules/codec_gsm.la
+lib/callweaver/modules/codec_gsm.so
+lib/callweaver/modules/codec_lpc10.la
+lib/callweaver/modules/codec_lpc10.so
+lib/callweaver/modules/codec_oki_adpcm.la
+lib/callweaver/modules/codec_oki_adpcm.so
+%%SPEEX%%lib/callweaver/modules/codec_speex.la
+%%SPEEX%%lib/callweaver/modules/codec_speex.so
+lib/callweaver/modules/codec_ulaw.la
+lib/callweaver/modules/codec_ulaw.so
+lib/callweaver/modules/format_au.la
+lib/callweaver/modules/format_au.so
+lib/callweaver/modules/format_g723_1.la
+lib/callweaver/modules/format_g723_1.so
+lib/callweaver/modules/format_g726.la
+lib/callweaver/modules/format_g726.so
+lib/callweaver/modules/format_g729.la
+lib/callweaver/modules/format_g729.so
+lib/callweaver/modules/format_gsm.la
+lib/callweaver/modules/format_gsm.so
+lib/callweaver/modules/format_h263.la
+lib/callweaver/modules/format_h263.so
+lib/callweaver/modules/format_jpeg.la
+lib/callweaver/modules/format_jpeg.so
+%%VORBIS%%lib/callweaver/modules/format_ogg_vorbis.la
+%%VORBIS%%lib/callweaver/modules/format_ogg_vorbis.so
+lib/callweaver/modules/format_pcm.la
+lib/callweaver/modules/format_pcm.so
+lib/callweaver/modules/format_pcm_alaw.la
+lib/callweaver/modules/format_pcm_alaw.so
+lib/callweaver/modules/format_sln.la
+lib/callweaver/modules/format_sln.so
+lib/callweaver/modules/format_wav.la
+lib/callweaver/modules/format_wav.so
+lib/callweaver/modules/format_wav_gsm.la
+lib/callweaver/modules/format_wav_gsm.so
+lib/callweaver/modules/func_callerid.la
+lib/callweaver/modules/func_callerid.so
+lib/callweaver/modules/func_cdr.la
+lib/callweaver/modules/func_cdr.so
+lib/callweaver/modules/func_config.la
+lib/callweaver/modules/func_config.so
+lib/callweaver/modules/func_db.la
+lib/callweaver/modules/func_db.so
+lib/callweaver/modules/func_enum.la
+lib/callweaver/modules/func_enum.so
+lib/callweaver/modules/func_env.la
+lib/callweaver/modules/func_env.so
+lib/callweaver/modules/func_fileexists.la
+lib/callweaver/modules/func_fileexists.so
+lib/callweaver/modules/func_groupcount.la
+lib/callweaver/modules/func_groupcount.so
+lib/callweaver/modules/func_language.la
+lib/callweaver/modules/func_language.so
+lib/callweaver/modules/func_logic.la
+lib/callweaver/modules/func_logic.so
+lib/callweaver/modules/func_math.la
+lib/callweaver/modules/func_math.so
+lib/callweaver/modules/func_md5.la
+lib/callweaver/modules/func_md5.so
+lib/callweaver/modules/func_moh.la
+lib/callweaver/modules/func_moh.so
+lib/callweaver/modules/func_strings.la
+lib/callweaver/modules/func_strings.so
+lib/callweaver/modules/func_timeout.la
+lib/callweaver/modules/func_timeout.so
+lib/callweaver/modules/func_uri.la
+lib/callweaver/modules/func_uri.so
+lib/callweaver/modules/pbx_config.la
+lib/callweaver/modules/pbx_config.so
+lib/callweaver/modules/pbx_dundi.la
+lib/callweaver/modules/pbx_dundi.so
+lib/callweaver/modules/pbx_loopback.la
+lib/callweaver/modules/pbx_loopback.so
+lib/callweaver/modules/pbx_realtime.la
+lib/callweaver/modules/pbx_realtime.so
+lib/callweaver/modules/pbx_spool.la
+lib/callweaver/modules/pbx_spool.so
+lib/callweaver/modules/res_adsi.la
+lib/callweaver/modules/res_adsi.so
+lib/callweaver/modules/res_crypto.la
+lib/callweaver/modules/res_crypto.so
+lib/callweaver/modules/res_features.la
+lib/callweaver/modules/res_features.so
+lib/callweaver/modules/res_indications.la
+lib/callweaver/modules/res_indications.so
+lib/callweaver/modules/res_monitor.la
+lib/callweaver/modules/res_monitor.so
+lib/callweaver/modules/res_musiconhold.la
+lib/callweaver/modules/res_musiconhold.so
+lib/callweaver/modules/res_ogi.la
+lib/callweaver/modules/res_ogi.so
+%%SNMP%%lib/callweaver/modules/res_snmp.la
+%%SNMP%%lib/callweaver/modules/res_snmp.so
+sbin/callweaver
+%%TLS%%%%DATADIR%%/keys/dh1024.pem
+%%TLS%%%%DATADIR%%/keys/dh512.pem
+%%TLS%%%%DATADIR%%/keys/servercert.pem
+%%TLS%%%%DATADIR%%/keys/serverkey.pem
+%%TLS%%%%DATADIR%%/keys/trustcerts.pem
+%%DATADIR%%/ogi/eogi-sphinx-test
+%%DATADIR%%/ogi/eogi-test
+%%DATADIR%%/ogi/fastogi-test
+%%DATADIR%%/ogi/ogi-test.ogi
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/ogi
+@dirrm %%DATADIR%%/moh
+@dirrm %%DATADIR%%/keys
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
+@dirrm lib/callweaver/modules/icd
+@dirrm lib/callweaver/modules
+@dirrm lib/callweaver
+@dirrm include/callweaver
+@dirrmtry %%ETCDIR%%
+@exec mkdir -p %D/var/lib/callweaver/core
+@exec mkdir -p %D/%%DATADIR%%/moh
+@exec mkdir -p %D/%%DATADIR%%/keys
+@exec mkdir -p %D/%%DATADIR%%/images
+@exec mkdir -p %D/lib/callweaver/modules/icd
+@cwd /
+%%FAX%%@dirrm var/run/fax
+%%FAX%%@dirrm var/log/callweaver
+@dirrm var/lib/callweaver/core
+@dirrm var/lib/callweaver
