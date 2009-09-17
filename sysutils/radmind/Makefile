@@ -10,7 +10,7 @@ PORTVERSION=	1.13.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	paul@aps.org
+MAINTAINER=	mikeg@bsd-box.net
 COMMENT=	Utility for administering filesystem changes
 
 USE_OPENSSL=	yes
