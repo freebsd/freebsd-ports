@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ogg2mp3
-PORTVERSION=	0.5
-PORTREVISION=	3
+PORTVERSION=	0.6.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.atarininja.org/distfiles/
+MASTER_SITES=	http://jamesa.com/projects/ogg2mp3/releases/
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Perl script that converts Ogg Vorbis files to MP3 format
@@ -24,8 +23,7 @@ USE_PERL5=	yes
 PLIST_FILES=	bin/ogg2mp3
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin|/usr/local/bin|g' \
-		${WRKSRC}/ogg2mp3
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/ogg2mp3
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ogg2mp3 ${PREFIX}/bin
