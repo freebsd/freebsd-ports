@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctpp2
-PORTVERSION=	2.5.9
+PORTVERSION=	2.5.11
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://ctpp.havoc.ru/download/
 
@@ -17,6 +17,8 @@ USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 MAN1=	ctpp2c.1 ctpp2vm.1 ctpp2i.1 ctpp2json.1 ctpp2-config.1
 
