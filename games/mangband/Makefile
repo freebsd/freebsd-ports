@@ -1,38 +1,73 @@
 # New ports collection makefile for:   mangband
-# Date created:        30 Dec 1998
-# Whom: Adam Kranzel (adam@alameda.edu)
+# Date created:         Thu Jun 11 11:40:54 UTC 2009
+# Whom:                 driedfruit
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mangband
-PORTVERSION=	0.7.0
-PORTREVISION=	5
+PORTVERSION=	1.1.2
 CATEGORIES=	games
-MASTER_SITES=	http://mangband.org/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+MASTER_SITES=	http://www.mangband.org/ http://www.mangband.org/download/
 
-MAINTAINER=	adam-ports@blacktabby.org
-COMMENT=	Multiplayer rogue-like game with color, X11 support
+MAINTAINER=	flambard@mangband.org
+COMMENT=	Free online multiplayer real-time roguelike game
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-USE_XORG=	x11
-ALL_TARGET=	install
+ALL_TARGET=	mangclient mangband
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
-MALIB=		${PREFIX}/lib/mangband
+MAKE_ARGS=	"DATADIR=${DATADIR}"
+
+OPTIONS=	GCU "Display module GCU" On \
+		X11 "Display module X11" Off \
+		SDL "Display module SDL" Off \
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GCU)
+#LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
+CONFIGURE_ARGS+=	--with-gcu
+.else
+CONFIGURE_ARGS+=	--without-gcu
+.endif
+
+.if defined(WITH_X11)
+LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/libX11
+CONFIGURE_ARGS+=	--with-x11
+.else
+CONFIGURE_ARGS+=	--without-x11
+.endif
+
+.if defined(WITH_SDL)
+LIB_DEPENDS+=	SDL-1.2:${PORTSDIR}/devel/sdl12
+CONFIGURE_ARGS+=	--with-sdl
+.else
+CONFIGURE_ARGS+=	--without-sdl
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} -o root -g games -m 2550 \
+	@${INSTALL_PROGRAM} -o root -g games -m 2550 \
 		${WRKSRC}/mangband ${PREFIX}/bin
-	${INSTALL_PROGRAM} -o root -g games -m 550 \
-		${WRKSRC}/mangconsole ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/mangclient ${PREFIX}/bin
-	@${MKDIR} ${MALIB}/file
-	@${TOUCH} ${MALIB}/file/wizards.txt
-	cd ${WRKSRC}/../lib && ${PAX} -rw * ${MALIB}
-	${CHMOD} 750 ${MALIB}/*
-	${CHMOD} 755 ${MALIB}/user
-	${CHOWN} -R root:games ${MALIB}/*
-	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${MALIB}
+	@${INSTALL_PROGRAM} ${WRKSRC}/mangclient ${PREFIX}/bin
+	@${CP} ${WRKDIR}/${DISTNAME}/mangband.cfg ${PREFIX}/etc
 
-.include <bsd.port.mk>
+	@echo "# FreeBSD Hacks" >> ${PREFIX}/etc/mangband.cfg
+	@echo "EDIT_DIR = \"${DATADIR}/edit\"" >> ${PREFIX}/etc/mangband.cfg
+	@echo "SAVE_DIR = \"${DATADIR}/save\"" >> ${PREFIX}/etc/mangband.cfg
+	@echo "DATA_DIR = \"${DATADIR}/data\"" >> ${PREFIX}/etc/mangband.cfg
+
+	@${MKDIR} ${EXAMPLESDIR}
+	@echo "[MAngband]" >> ${EXAMPLESDIR}/mangrc
+	@echo "LibDir ${DATADIR}" >> ${EXAMPLESDIR}/mangrc
+
+	@${MKDIR} ${DATADIR}
+	@cd ${WRKSRC}/../lib && ${PAX} -rw * ${DATADIR}
+	@${CHMOD} 750 ${DATADIR}/*
+	@${CHMOD} 755 ${DATADIR}/user
+	@${CHMOD} 755 ${DATADIR}/xtra
+	@${CHOWN} -R root:games ${DATADIR}/*
+	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+
+.include <bsd.port.post.mk>

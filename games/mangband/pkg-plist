@@ -1,50 +1,102 @@
-bin/mangband
 bin/mangclient
-bin/mangconsole
-@exec install -d -o games -g games -m 750 %D/lib/mangband/data
-@exec install -d -o games -g games -m 750 %D/lib/mangband/file
-@exec install -d -o games -g games -m 750 %D/lib/mangband/game
-@exec install -d -o games -g games -m 750 %D/lib/mangband/text
-@exec install -d -o games -g games -m 750 %D/lib/mangband/save
-@exec install -d -o games -g games -m 755 %D/lib/mangband/user
-lib/mangband/file/wizards.txt
-lib/mangband/game/a_info.txt
-lib/mangband/game/e_info.txt
-lib/mangband/game/f_info.txt
-lib/mangband/game/k_info.txt
-lib/mangband/game/r_info.txt
-lib/mangband/game/v_info.txt
-lib/mangband/text/attack.txt
-lib/mangband/text/birth.txt
-lib/mangband/text/command.txt
-lib/mangband/text/dead.txt
-lib/mangband/text/dungeon.txt
-lib/mangband/text/general.txt
-lib/mangband/text/help.hlp
-lib/mangband/text/mangband.hlp
-lib/mangband/text/news.txt
-lib/mangband/text/option.txt
-lib/mangband/text/version.txt
-lib/mangband/user/font-ami.prf
-lib/mangband/user/font-ibm.prf
-lib/mangband/user/font-win.prf
-lib/mangband/user/graf-ami.prf
-lib/mangband/user/graf-win.prf
-lib/mangband/user/options.prf
-lib/mangband/user/pref-acn.prf
-lib/mangband/user/pref-emx.prf
-lib/mangband/user/pref-ibm.prf
-lib/mangband/user/pref-lsl.prf
-lib/mangband/user/pref-mac.prf
-lib/mangband/user/pref-win.prf
-lib/mangband/user/pref-x11.prf
-lib/mangband/user/pref-xaw.prf
-lib/mangband/user/pref.prf
-lib/mangband/user/window.prf
-@dirrm lib/mangband/user
-@dirrm lib/mangband/save
-@dirrm lib/mangband/text
-@dirrm lib/mangband/game
-@dirrm lib/mangband/file
-@dirrm lib/mangband/data
-@dirrm lib/mangband
+bin/mangband
+etc/mangband.cfg
+%%EXAMPLESDIR%%/mangrc
+%%DATADIR%%/data/scores.raw
+%%DATADIR%%/edit/artifact.txt
+%%DATADIR%%/edit/ego_item.txt
+%%DATADIR%%/edit/flavor.txt
+%%DATADIR%%/edit/limits.txt
+%%DATADIR%%/edit/monster.txt
+%%DATADIR%%/edit/object.txt
+%%DATADIR%%/edit/p_class.txt
+%%DATADIR%%/edit/p_hist.txt
+%%DATADIR%%/edit/p_race.txt
+%%DATADIR%%/edit/terrain.txt
+%%DATADIR%%/edit/vault.txt
+%%DATADIR%%/file/delete.me
+%%DATADIR%%/help/delete.me
+%%DATADIR%%/save/server-level-100
+%%DATADIR%%/save/server-level-120
+%%DATADIR%%/save/server-level-20
+%%DATADIR%%/save/server-level-40
+%%DATADIR%%/save/server-level-60
+%%DATADIR%%/save/server-level-80
+%%DATADIR%%/text/attack.txt
+%%DATADIR%%/text/birth.txt
+%%DATADIR%%/text/command.txt
+%%DATADIR%%/text/dead.txt
+%%DATADIR%%/text/dungeon.txt
+%%DATADIR%%/text/general.txt
+%%DATADIR%%/text/help.hlp
+%%DATADIR%%/text/mangband.hlp
+%%DATADIR%%/text/news.txt
+%%DATADIR%%/text/option.txt
+%%DATADIR%%/text/version.txt
+%%DATADIR%%/user/font-ami.prf
+%%DATADIR%%/user/font-ibm.prf
+%%DATADIR%%/user/font-sdl.prf
+%%DATADIR%%/user/font-win.prf
+%%DATADIR%%/user/font-x11.prf
+%%DATADIR%%/user/graf-ami.prf
+%%DATADIR%%/user/graf-win.prf
+%%DATADIR%%/user/grey.prf
+%%DATADIR%%/user/options.prf
+%%DATADIR%%/user/pref-acn.prf
+%%DATADIR%%/user/pref-emx.prf
+%%DATADIR%%/user/pref-ibm.prf
+%%DATADIR%%/user/pref-lsl.prf
+%%DATADIR%%/user/pref-mac.prf
+%%DATADIR%%/user/pref-sdl.prf
+%%DATADIR%%/user/pref-win.prf
+%%DATADIR%%/user/pref-x11.prf
+%%DATADIR%%/user/pref-xaw.prf
+%%DATADIR%%/user/pref.prf
+%%DATADIR%%/user/putty.prf
+%%DATADIR%%/user/user-gcu.prf
+%%DATADIR%%/user/user-x11.prf
+%%DATADIR%%/user/window.prf
+%%DATADIR%%/xtra/Sound/1UNCH.WAV
+%%DATADIR%%/xtra/Sound/BREATH.WAV
+%%DATADIR%%/xtra/Sound/DEATH.WAV
+%%DATADIR%%/xtra/Sound/DESTROY.WAV
+%%DATADIR%%/xtra/Sound/DROP.WAV
+%%DATADIR%%/xtra/Sound/HALLU.WAV
+%%DATADIR%%/xtra/Sound/HIT.WAV
+%%DATADIR%%/xtra/Sound/LEVEL.WAV
+%%DATADIR%%/xtra/Sound/MISS.WAV
+%%DATADIR%%/xtra/Sound/PYDIES.WAV
+%%DATADIR%%/xtra/Sound/TERROR.WAV
+%%DATADIR%%/xtra/Sound/VOMIT.WAV
+%%DATADIR%%/xtra/font/10X20.FON
+%%DATADIR%%/xtra/font/12X24.FON
+%%DATADIR%%/xtra/font/16x16.FON
+%%DATADIR%%/xtra/font/5X8.FON
+%%DATADIR%%/xtra/font/6X10.FON
+%%DATADIR%%/xtra/font/6X12.FON
+%%DATADIR%%/xtra/font/6X13.FON
+%%DATADIR%%/xtra/font/6X13B.FON
+%%DATADIR%%/xtra/font/6X9.FON
+%%DATADIR%%/xtra/font/7X13.FON
+%%DATADIR%%/xtra/font/7X13B.FON
+%%DATADIR%%/xtra/font/8X13.FON
+%%DATADIR%%/xtra/font/8X13B.FON
+%%DATADIR%%/xtra/font/9X15.FON
+%%DATADIR%%/xtra/font/9X15B.FON
+%%DATADIR%%/xtra/font/misc6x13.hex
+%%DATADIR%%/xtra/font/nethack10x19-10.hex
+%%DATADIR%%/xtra/graf/16x16.bmp
+%%DATADIR%%/xtra/graf/mask.bmp
+@dirrm %%DATADIR%%/xtra/graf
+@dirrm %%DATADIR%%/xtra/font
+@dirrm %%DATADIR%%/xtra/Sound
+@dirrm %%DATADIR%%/xtra
+@dirrm %%DATADIR%%/user
+@dirrm %%DATADIR%%/text
+@dirrm %%DATADIR%%/save
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/file
+@dirrm %%DATADIR%%/edit
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
