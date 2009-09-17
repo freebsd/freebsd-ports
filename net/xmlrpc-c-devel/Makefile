@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
 OPTIONS=	DEBUG "Compile with debugging information" off \
@@ -32,7 +32,6 @@ GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
 		CFLAGS_COMMON="${CFLAGS}"
-CONFIGURE_ARGS+=--disable-cplusplus
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
@@ -43,8 +42,10 @@ CFLAGS+=	-DNDEBUG
 
 .if defined(WITH_CPLUSPLUS)
 CONFIGURE_ARGS+=	--enable-cplusplus
+PLIST_SUB+=		CPP=""
 .else
 CONFIGURE_ARGS+=	--disable-cplusplus
+PLIST_SUB+=		CPP="@comment "
 .endif
 
 .if defined(WITHOUT_CURL)
