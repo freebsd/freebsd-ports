@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	2.25.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
 		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 
-USE_GECKO=	firefox libxul xulrunner mozilla
+USE_GECKO=	libxul firefox xulrunner mozilla
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes

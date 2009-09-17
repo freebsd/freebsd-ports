@@ -8,7 +8,7 @@
 
 PORTNAME=	yelp
 PORTVERSION=	2.26.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,7 @@ COMMENT=	A help browser for the GNOME 2 desktop
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
     		rarian.0:${PORTSDIR}/textproc/rarian
 
-USE_GECKO=	firefox libxul
+USE_GECKO=	libxul firefox
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_XORG=	ice
