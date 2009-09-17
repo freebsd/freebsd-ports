@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	cx88
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
 MAINTAINER=	jason.harmening@gmail.com
 COMMENT=	Drivers for Conexant CX23880/1/2/3/5/7/8-based TV/radio capture cards
 
-LIB_DEPENDS=	tuner:${PORTSDIR}/multimedia/libtuner
-BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:${PORTSDIR}/textproc/ezxml
+LIB_DEPENDS=	tuner.1:${PORTSDIR}/multimedia/libtuner
+BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:${PORTSDIR}/textproc/ezxml \
+		libtuner>=1.0.4:${PORTSDIR}/multimedia/libtuner
 
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}

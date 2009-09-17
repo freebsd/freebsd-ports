@@ -1,7 +1,5 @@
 bin/cx88
 %%EXAMPLESDIR%%/cx88.xml.sample
-%%DATADIR%%/or51132_vsb.fw
-%%DATADIR%%/or51132_qam.fw
 %%EXAMPLESDIR%%/cx88_audio_enable.cpp
 %%EXAMPLESDIR%%/remote.cpp
 %%EXAMPLESDIR%%/cx88_mpeg_client.cpp
@@ -18,7 +16,6 @@ include/cx88/cx88_audio_ioctl.h
 @dirrm include/iicdev
 @dirrm include/cx88
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
 @cwd %%KMODDIR%%
 cx88.ko
 cx88i2c.ko
