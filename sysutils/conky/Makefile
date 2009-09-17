@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.7.1.1
-PORTREVISION=	2
+PORTVERSION=	1.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -109,6 +108,8 @@ CONFIGURE_ARGS+=	--disable-double-buffer
 post-patch:
 	@${REINPLACE_CMD} -e 's,lua5\.1,lua-5.1,g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,imlib_context_disconnect_display();,,g' \
+		${WRKSRC}/src/imlib2.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${PREFIX}/bin
