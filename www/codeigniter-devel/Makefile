@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	www
 MASTER_SITES=	http://codeigniter.com/download_files/ \
 		LOCAL/glarkin
@@ -16,7 +16,6 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 USE_ZIP=	yes
-USE_DOS2UNIX=	yes
 
 NO_BUILD=	yes
 USE_PHP=	session pcre
