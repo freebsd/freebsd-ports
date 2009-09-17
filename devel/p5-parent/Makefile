@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	parent
-PORTVERSION=	0.222
+PORTVERSION=	0.223
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CO/CORION
@@ -18,5 +18,8 @@ COMMENT=	Establish an ISA relationship with base classes at compile time
 PERL_CONFIGURE=	yes
 
 MAN3=		parent.3
+
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
