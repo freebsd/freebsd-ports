@@ -1,21 +1,6 @@
 %%XPI_XPIDIR%%/chrome/icons/default/app.png
 %%XPI_XPIDIR%%/chrome/icons/default/install-shortcut.png
 %%XPI_XPIDIR%%/chrome/icons/default/install-shortcut48.png
-%%XPI_XPIDIR%%/chrome/refractor/content/install-advanced.js
-%%XPI_XPIDIR%%/chrome/refractor/content/install-advanced.xul
-%%XPI_XPIDIR%%/chrome/refractor/content/install-shortcut.js
-%%XPI_XPIDIR%%/chrome/refractor/content/install-shortcut.xul
-%%XPI_XPIDIR%%/chrome/refractor/content/refractor-overlay.js
-%%XPI_XPIDIR%%/chrome/refractor/content/refractor-overlay.xul
-%%XPI_XPIDIR%%/chrome/refractor/locale/en-US/install-advanced.dtd
-%%XPI_XPIDIR%%/chrome/refractor/locale/en-US/install-advanced.properties
-%%XPI_XPIDIR%%/chrome/refractor/locale/en-US/install-shortcut.dtd
-%%XPI_XPIDIR%%/chrome/refractor/locale/en-US/install-shortcut.properties
-%%XPI_XPIDIR%%/chrome/refractor/locale/en-US/refractor-overlay.dtd
-%%XPI_XPIDIR%%/chrome/refractor/locale/en-US/refractor-overlay.properties
-%%XPI_XPIDIR%%/chrome/refractor/skin/classic/install-shortcut.css
-%%XPI_XPIDIR%%/chrome/refractor/skin/classic/install-shortcut48.png
-%%XPI_XPIDIR%%/chrome/refractor/skin/classic/refractor.css
 %%XPI_XPIDIR%%/chrome/refractor.jar
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/components/prism.xpt
@@ -26,76 +11,21 @@
 %%XPI_XPIDIR%%/modules/WebAppProperties.jsm
 %%XPI_XPIDIR%%/prism/application.ini
 %%XPI_XPIDIR%%/prism/bloaturls.txt
-%%XPI_XPIDIR%%/prism/chrome/classic/about.css
-%%XPI_XPIDIR%%/prism/chrome/classic/images/gear.png
-%%XPI_XPIDIR%%/prism/chrome/classic/images/secure-broken.png
-%%XPI_XPIDIR%%/prism/chrome/classic/images/secure.png
-%%XPI_XPIDIR%%/prism/chrome/classic/images/toolbar.png
-%%XPI_XPIDIR%%/prism/chrome/classic/install-shortcut.css
-%%XPI_XPIDIR%%/prism/chrome/classic/preferences/Options.png
-%%XPI_XPIDIR%%/prism/chrome/classic/preferences/content.css
-%%XPI_XPIDIR%%/prism/chrome/classic/preferences/preferences.css
-%%XPI_XPIDIR%%/prism/chrome/classic/resources/calendar28.png
-%%XPI_XPIDIR%%/prism/chrome/classic/resources/event28.png
-%%XPI_XPIDIR%%/prism/chrome/classic/resources/help28.png
-%%XPI_XPIDIR%%/prism/chrome/classic/resources/information28.png
-%%XPI_XPIDIR%%/prism/chrome/classic/resources/mail28.png
-%%XPI_XPIDIR%%/prism/chrome/classic/resources/permission28.png
-%%XPI_XPIDIR%%/prism/chrome/classic/resources/warning28.png
-%%XPI_XPIDIR%%/prism/chrome/classic/webrunner.css
 %%XPI_XPIDIR%%/prism/chrome/classic.jar
 %%XPI_XPIDIR%%/prism/chrome/classic.manifest
-%%XPI_XPIDIR%%/prism/chrome/en-US/about.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/browser/browser.properties
-%%XPI_XPIDIR%%/prism/chrome/en-US/browser/sanitize.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/install-advanced.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/install-shortcut.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/install-shortcut.properties
-%%XPI_XPIDIR%%/prism/chrome/en-US/netError.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/preferences/colors.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/preferences/connection.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/preferences/content.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/preferences/fonts.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/preferences/preferences.dtd
-%%XPI_XPIDIR%%/prism/chrome/en-US/preferences/preferences.properties
-%%XPI_XPIDIR%%/prism/chrome/en-US/webrunner.dtd
 %%XPI_XPIDIR%%/prism/chrome/en-US.jar
 %%XPI_XPIDIR%%/prism/chrome/en-US.manifest
 %%XPI_XPIDIR%%/prism/chrome/icons/default/app.png
 %%XPI_XPIDIR%%/prism/chrome/icons/default/install-shortcut.png
 %%XPI_XPIDIR%%/prism/chrome/icons/default/install-shortcut48.png
-%%XPI_XPIDIR%%/prism/chrome/newapp/content/install-advanced.js
-%%XPI_XPIDIR%%/prism/chrome/newapp/content/install-advanced.xul
-%%XPI_XPIDIR%%/prism/chrome/newapp/content/install-shortcut.js
-%%XPI_XPIDIR%%/prism/chrome/newapp/content/install-shortcut.xul
 %%XPI_XPIDIR%%/prism/chrome/newapp.jar
 %%XPI_XPIDIR%%/prism/chrome/newapp.manifest
-%%XPI_XPIDIR%%/prism/chrome/webrunner/branding/brand.dtd
-%%XPI_XPIDIR%%/prism/chrome/webrunner/branding/brand.properties
-%%XPI_XPIDIR%%/prism/chrome/webrunner/branding/icon128.png
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/about.js
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/about.xul
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/browser/sanitize.js
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/browser/sanitize.xul
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences/colors.xul
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences/connection.js
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences/connection.xul
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences/content.js
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences/content.xul
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences/fonts.js
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences/fonts.xul
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences/preferences.js
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences/preferences.xul
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/unknownContentType.xul
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/webrunner.js
-%%XPI_XPIDIR%%/prism/chrome/webrunner/content/webrunner.xul
 %%XPI_XPIDIR%%/prism/chrome/webrunner.jar
 %%XPI_XPIDIR%%/prism/chrome/webrunner.manifest
 %%XPI_XPIDIR%%/prism/components/nsCommandLineHandler.js
 %%XPI_XPIDIR%%/prism/components/nsPlatformGlue.js
 %%XPI_XPIDIR%%/prism/components/prism.xpt
 %%XPI_XPIDIR%%/prism/defaults/preferences/preferences.js
-%%XPI_XPIDIR%%/prism/libjemalloc.so
 %%XPI_XPIDIR%%/prism/modules/FaviconDownloader.jsm
 %%XPI_XPIDIR%%/prism/modules/ImageUtils.jsm
 %%XPI_XPIDIR%%/prism/modules/WebAppInstall.jsm
@@ -106,36 +36,15 @@
 %%XPI_XPIDIR%%/prism/run-mozilla.sh
 @dirrmtry %%XPI_XPIDIR%%/chrome/icons/default
 @dirrmtry %%XPI_XPIDIR%%/chrome/icons
-@dirrmtry %%XPI_XPIDIR%%/chrome/refractor/content
-@dirrmtry %%XPI_XPIDIR%%/chrome/refractor/locale/en-US
-@dirrmtry %%XPI_XPIDIR%%/chrome/refractor/locale
-@dirrmtry %%XPI_XPIDIR%%/chrome/refractor/skin/classic
-@dirrmtry %%XPI_XPIDIR%%/chrome/refractor/skin
-@dirrmtry %%XPI_XPIDIR%%/chrome/refractor
 @dirrmtry %%XPI_XPIDIR%%/chrome
 @dirrmtry %%XPI_XPIDIR%%/components
 @dirrmtry %%XPI_XPIDIR%%/modules
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/classic/images
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/classic/preferences
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/classic/resources
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/classic
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/en-US/browser
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/en-US/preferences
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/en-US
 @dirrmtry %%XPI_XPIDIR%%/prism/chrome/icons/default
 @dirrmtry %%XPI_XPIDIR%%/prism/chrome/icons
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/newapp/content
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/newapp
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/webrunner/branding
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/webrunner/content/browser
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/webrunner/content/preferences
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/webrunner/content
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/webrunner
 @dirrmtry %%XPI_XPIDIR%%/prism/chrome
 @dirrmtry %%XPI_XPIDIR%%/prism/components
 @dirrmtry %%XPI_XPIDIR%%/prism/defaults/preferences
 @dirrmtry %%XPI_XPIDIR%%/prism/defaults
-@dirrmtry %%XPI_XPIDIR%%/prism/extensions
 @dirrmtry %%XPI_XPIDIR%%/prism/modules
 @dirrmtry %%XPI_XPIDIR%%/prism/res
 @dirrmtry %%XPI_XPIDIR%%/prism
