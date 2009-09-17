@@ -12,6 +12,7 @@ include/fontforge/chardata.h
 include/fontforge/charset.h
 include/fontforge/config.h
 include/fontforge/configure-pfaedit.h
+include/fontforge/delta.h
 include/fontforge/dynamic.h
 include/fontforge/edgelist.h
 include/fontforge/edgelist2.h
@@ -39,6 +40,7 @@ include/fontforge/intl.h
 include/fontforge/libffstamp.h
 include/fontforge/lookups.h
 include/fontforge/mm.h
+include/fontforge/namehash.h
 include/fontforge/nonlineartrans.h
 include/fontforge/ofl.h
 include/fontforge/pfaedit.h
@@ -177,6 +179,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/GTextField.png
 %%PORTDOCS%%%%DOCSDIR%%/GenerateFamily.png
 %%PORTDOCS%%%%DOCSDIR%%/GenerateOptions.png
+%%PORTDOCS%%%%DOCSDIR%%/GenerateTTC.png
 %%PORTDOCS%%%%DOCSDIR%%/GlossaryFS.html
 %%PORTDOCS%%%%DOCSDIR%%/GlossaryFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/GradientDlg.png
@@ -197,6 +200,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompCaslon.png
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompGalliard.png
 %%PORTDOCS%%%%DOCSDIR%%/ItalicDlg.png
+%%PORTDOCS%%%%DOCSDIR%%/JustOutside.png
 %%PORTDOCS%%%%DOCSDIR%%/JustifyDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/JustifyExtenderDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/JustifyLangDlg.png
@@ -240,6 +244,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/PfaEdits.gif
 %%PORTDOCS%%%%DOCSDIR%%/PoV.png
 %%PORTDOCS%%%%DOCSDIR%%/Print.png
+%%PORTDOCS%%%%DOCSDIR%%/QGDlg.png
+%%PORTDOCS%%%%DOCSDIR%%/QGList.png
 %%PORTDOCS%%%%DOCSDIR%%/RadialGradient.png
 %%PORTDOCS%%%%DOCSDIR%%/RadialGradientDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/ReviewHints.png
@@ -260,6 +266,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/Sti6.png
 %%PORTDOCS%%%%DOCSDIR%%/Styles.html
 %%PORTDOCS%%%%DOCSDIR%%/SubSuperDlg.png
+%%PORTDOCS%%%%DOCSDIR%%/SuggestDeltas.html
 %%PORTDOCS%%%%DOCSDIR%%/Sxi.png
 %%PORTDOCS%%%%DOCSDIR%%/Sxiti.png
 %%PORTDOCS%%%%DOCSDIR%%/Sxiti2.png
@@ -936,6 +943,24 @@ libdata/pkgconfig/fontforge.pc
 %%DATADIR%%/pixmaps/stylessmallcaps.png
 %%DATADIR%%/pixmaps/stylessubsuper.png
 %%DATADIR%%/pixmaps/styleswireframe.png
+%%DATADIR%%/pixmaps/tools3drotate.png
+%%DATADIR%%/pixmaps/toolselipse.png
+%%DATADIR%%/pixmaps/toolsflip.png
+%%DATADIR%%/pixmaps/toolsfreehand.png
+%%DATADIR%%/pixmaps/toolsknife.png
+%%DATADIR%%/pixmaps/toolsmagnify.png
+%%DATADIR%%/pixmaps/toolspen.png
+%%DATADIR%%/pixmaps/toolsperspective.png
+%%DATADIR%%/pixmaps/toolspointer.png
+%%DATADIR%%/pixmaps/toolspoly.png
+%%DATADIR%%/pixmaps/toolsrect.png
+%%DATADIR%%/pixmaps/toolsrotate.png
+%%DATADIR%%/pixmaps/toolsruler.png
+%%DATADIR%%/pixmaps/toolsscale.png
+%%DATADIR%%/pixmaps/toolsscroll.png
+%%DATADIR%%/pixmaps/toolsskew.png
+%%DATADIR%%/pixmaps/toolsspiro.png
+%%DATADIR%%/pixmaps/toolsstar.png
 %%DATADIR%%/pixmaps/transformfliphor.png
 %%DATADIR%%/pixmaps/transformflipvert.png
 %%DATADIR%%/pixmaps/transformrotate180.png

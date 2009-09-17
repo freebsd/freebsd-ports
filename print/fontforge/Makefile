@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20090622
+PORTVERSION=	20090914
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source
 DISTFILES=	${EXTRACT_ONLY}
 EXTRACT_ONLY=	${PORTNAME}_full-${PORTVERSION}.tar.bz2
 
@@ -32,7 +32,7 @@ EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 
 .if !defined(NOPORTDOCS)
 DOC_VERSION=	${PORTVERSION}
-MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-docs/${DOC_VERSION}:docs
+MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-docs:docs
 DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
 DISTFILES+=	${DOCFILES:C/$/:docs/}
 .endif
@@ -51,9 +51,11 @@ WITH_MULTILAYER=	--disable-type3
 .endif
 
 .if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && defined(FONTFORGE_WITH_TTF_DEBUGGER)
-WITH_FREETYPE_SRC=	--with-freetype-bytecode --with-freetype-src=${WRKDIR}/freetype-${FREETYPE_VERSION}
+WITH_FREETYPE_SRC=	--enable-freetype --with-freetype-bytecode \
+			--with-freetype-src=${WRKDIR}/freetype-${FREETYPE_VERSION}
 .else
-WITH_FREETYPE_SRC=	--without-freetype-bytecode --without-freetype-src
+WITH_FREETYPE_SRC=	--disable-freetype --without-freetype-bytecode \
+			--without-freetype-src
 .endif
 
 CONFIGURE_ARGS=	${WITH_MULTILAYER} --enable-devicetables ${WITH_FREETYPE_SRC} \
