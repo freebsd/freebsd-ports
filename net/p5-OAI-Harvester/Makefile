@@ -12,7 +12,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN/../../authors/id/E/ES/ESUMMERS/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	paul@aps.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module to harvest using the OAI protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
