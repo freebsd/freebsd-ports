@@ -138,7 +138,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/html/reporting.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/sanitycheck.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/security-bugzilla.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/security-mysql.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/security-os.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/security-webserver.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/security.html
@@ -351,6 +350,7 @@
 %%BUGZILLADIR%%/skins/standard/yui/calendar.css
 %%BUGZILLADIR%%/skins/standard/yui/sprite.png
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/README
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla-queue
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla-submit/README
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla-submit/bugdata.txt
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla-submit/bugzilla-submit
