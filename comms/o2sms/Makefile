@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN \
 		http://www.mackers.com/projects/o2sms/releases/
 MASTER_SITE_SUBDIR=	WWW/MACKERS
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Send SMS messages via the websites of Irish mobile operators
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
