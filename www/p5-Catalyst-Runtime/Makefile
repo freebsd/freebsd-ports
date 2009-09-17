@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.80011
-PORTREVISION=	1
+PORTVERSION=	5.80013
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +16,7 @@ COMMENT=	The Elegant MVC Web Application Framework (Runtime)
 
 BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-CGI-Simple>=0:${PORTSDIR}/www/p5-CGI-Simple \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-MooseX-MethodAttributes>=0.16:${PORTSDIR}/devel/p5-MooseX-MethodAttributes \
 		p5-Class-MOP>=0.83:${PORTSDIR}/devel/p5-Class-MOP \
 		p5-Class-C3-Adopt-NEXT>=0.07:${PORTSDIR}/devel/p5-Class-C3-Adopt-NEXT \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
@@ -27,8 +26,8 @@ BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfSco
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Module-Pluggable>=3.9:${PORTSDIR}/devel/p5-Module-Pluggable \
-		p5-Moose>=0.78:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00801:${PORTSDIR}/devel/p5-MooseX-Emulate-Class-Accessor-Fast \
+		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00903:${PORTSDIR}/devel/p5-MooseX-Emulate-Class-Accessor-Fast \
 		p5-MooseX-MethodAttributes>=0.15:${PORTSDIR}/devel/p5-MooseX-MethodAttributes \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
