@@ -62,7 +62,7 @@ CMAKE_ARGS+=	-DWANT_JACK:BOOL=OFF
 .endif
 
 .if defined(WITH_PULSEAUDIO)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pluseaudio
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .else
 CMAKE_ARGS+=	-DWANT_PULSEAUDIO:BOOL=OFF
 .endif
