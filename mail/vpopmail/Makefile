@@ -221,6 +221,7 @@ CONFIGURE_ARGS+=	--enable-onchange-script
 .if defined(WITH_MAILDROP)
 CONFIGURE_ARGS+=	--enable-maildrop=y \
 			--enable-maildrop-prog=${LOCALBASE}/bin/maildrop
+BUILD_DEPENDS+=	maildrop:${PORTSDIR}/${MAILDROP_PORT}
 RUN_DEPENDS+=	maildrop:${PORTSDIR}/${MAILDROP_PORT}
 MAILDROP_FILES=		${WRKSRC}/maildrop/maildroprc.v1 \
 			${WRKSRC}/maildrop/maildroprc.v2
