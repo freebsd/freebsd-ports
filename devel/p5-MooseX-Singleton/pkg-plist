@@ -1,11 +1,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Singleton/.packlist
 %%SITE_PERL%%/MooseX/Singleton.pm
-%%SITE_PERL%%/MooseX/Singleton/Meta/Class.pm
-%%SITE_PERL%%/MooseX/Singleton/Meta/Instance.pm
-%%SITE_PERL%%/MooseX/Singleton/Meta/Method/Constructor.pm
-%%SITE_PERL%%/MooseX/Singleton/Object.pm
-@dirrm %%SITE_PERL%%/MooseX/Singleton/Meta/Method
-@dirrm %%SITE_PERL%%/MooseX/Singleton/Meta
+%%SITE_PERL%%/MooseX/Singleton/Role/Meta/Class.pm
+%%SITE_PERL%%/MooseX/Singleton/Role/Meta/Instance.pm
+%%SITE_PERL%%/MooseX/Singleton/Role/Meta/Method/Constructor.pm
+%%SITE_PERL%%/MooseX/Singleton/Role/Object.pm
+@dirrm %%SITE_PERL%%/MooseX/Singleton/Role/Meta/Method
+@dirrm %%SITE_PERL%%/MooseX/Singleton/Role/Meta
+@dirrm %%SITE_PERL%%/MooseX/Singleton/Role
 @dirrm %%SITE_PERL%%/MooseX/Singleton
 @dirrmtry %%SITE_PERL%%/MooseX
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Singleton
