@@ -29,10 +29,10 @@ share/applnk/System/ScreenSavers/cage.desktop
 share/applnk/System/ScreenSavers/carousel.desktop
 share/applnk/System/ScreenSavers/ccurve.desktop
 share/applnk/System/ScreenSavers/celtic.desktop
+share/applnk/System/ScreenSavers/circuit.desktop
 share/applnk/System/ScreenSavers/cloudlife.desktop
 share/applnk/System/ScreenSavers/compass.desktop
 share/applnk/System/ScreenSavers/coral.desktop
-share/applnk/System/ScreenSavers/circuit.desktop
 share/applnk/System/ScreenSavers/crackberg.desktop
 share/applnk/System/ScreenSavers/crystal.desktop
 share/applnk/System/ScreenSavers/cube21.desktop
@@ -88,8 +88,6 @@ share/applnk/System/ScreenSavers/halftone.desktop
 share/applnk/System/ScreenSavers/halo.desktop
 share/applnk/System/ScreenSavers/helix.desktop
 share/applnk/System/ScreenSavers/hopalong.desktop
-share/applnk/System/ScreenSavers/hyperball.desktop
-share/applnk/System/ScreenSavers/hypercube.desktop
 share/applnk/System/ScreenSavers/hypertorus.desktop
 share/applnk/System/ScreenSavers/ifs.desktop
 share/applnk/System/ScreenSavers/imsmap.desktop
@@ -98,7 +96,6 @@ share/applnk/System/ScreenSavers/interference.desktop
 share/applnk/System/ScreenSavers/intermomentary.desktop
 share/applnk/System/ScreenSavers/jigglypuff.desktop
 share/applnk/System/ScreenSavers/jigsaw.desktop
-share/applnk/System/ScreenSavers/juggle.desktop
 share/applnk/System/ScreenSavers/juggler3d.desktop
 share/applnk/System/ScreenSavers/julia.desktop
 share/applnk/System/ScreenSavers/kaleidescope.desktop
