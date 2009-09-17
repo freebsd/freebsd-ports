@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-Mechanize-Cached
 PORTVERSION=	1.33
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,6 @@ COMMENT=	Perl extension to cache esponse to be polite
 
 RUN_DEPENDS=	\
 	p5-Cache-Cache>=1.02:${PORTSDIR}/devel/p5-Cache-Cache \
-	p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn \
 	p5-WWW-Mechanize>=1.00:${PORTSDIR}/www/p5-WWW-Mechanize
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
