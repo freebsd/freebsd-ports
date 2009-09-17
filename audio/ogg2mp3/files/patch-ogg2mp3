@@ -1,44 +1,23 @@
---- ./ogg2mp3.orig	2005-05-16 18:07:33.000000000 +0000
-+++ ./ogg2mp3	2009-02-08 12:29:27.000000000 +0000
+--- ./ogg2mp3.orig	2009-09-10 19:33:42.000000000 +0200
++++ ./ogg2mp3	2009-09-10 19:34:42.000000000 +0200
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
-+#!/usr/local/bin/perl
++#!%%LOCALBASE%%/bin/perl
  
  # ogg2mp3
- #
-@@ -51,10 +51,10 @@
- print "  Thanks to all who took an interest. Have fun!\n";
+ # Maintained by: James Ausmus <james.ausmus.code@gmail.com>
+@@ -50,10 +50,10 @@
+ print "  This code is released under the General Public License v2.\n";
  print " ------------------------------------------------------------------- \n\n";
  
 -my $MP3ENC  = "/usr/bin/lame";
 -#my $MP3INFO = "/usr/bin/mp3_check";
 -my $OGGINFO = "/usr/bin/ogginfo";
 -my $OGG123  = "/usr/bin/ogg123";
-+my $MP3ENC  = "/usr/local/bin/lame";
-+#my $MP3INFO = "/usr/local/bin/mp3_check";
-+my $OGGINFO = "/usr/local/bin/ogginfo";
-+my $OGG123  = "/usr/local/bin/ogg123";
++my $MP3ENC  = "%%LOCALBASE%%/bin/lame";
++#my $MP3INFO = "%%LOCALBASE%%/bin/mp3_check";
++my $OGGINFO = "%%LOCALBASE%%/bin/ogginfo";
++my $OGG123  = "%%LOCALBASE%%/bin/ogg123";
  
  # check presence of executables
  stat($MP3ENC) or die "Error: $MP3ENC not present!\n";
-@@ -68,7 +68,7 @@
- 
- # build genre hash
- my %genres;
--open(GENRES, "$MP3ENC --genre-list|") or die "Couldn't get genre list with $MP3ENC --genre-list\n";
-+open(GENRES, "$MP3ENC --genre-list 2>&1 |") or die "Couldn't get genre list with $MP3ENC --genre-list\n";
- while(<GENRES>) {
-     chomp;
-     next if /^\s*$/;
-@@ -308,10 +308,8 @@
- 	
- 	$mp3outputfile_escaped = shell_quote($mp3outputfile);
- 	$oggfile_escaped = shell_quote($oggfile);
--	# this took me some time to figure
--	# note that byte order is swapped by lame via -x option
- 	# TODO: somebody please tell me how to supress the "Assuming bla bla" output without devnull
--	$result = system("$OGG123 $decquiet -d raw -f - $oggfile_escaped | $MP3ENC $encquiet -r -x -q $quality -b $bitrate -s $frequency -m $channels $infostring - $mp3outputfile_escaped");
-+	$result = system("$OGG123 $decquiet -d raw -f - $oggfile_escaped | $MP3ENC $encquiet -r -q $quality -b $bitrate -s $frequency -m $channels $infostring - $mp3outputfile_escaped");
- 
- 	# TODO: find some widely used mp3 checker
- 	# disabled the checking due to lack of checker
