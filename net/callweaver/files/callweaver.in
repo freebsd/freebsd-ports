@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: callweaver
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable callweaver:
+#
+# callweaver_enable="YES"
+#
+
+. . %%RC_SUBR%%
+
+stop_precmd=callweaver_shutdown
+sig_stop=KILL
+
+name=callweaver
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=${callweaver_pidfile:-"/var/run/${name}.pid"}
+
+load_rc_config $name
+
+callweaver_enable=${callweaver_enable:-"NO"}
+
+callweaver_shutdown () {
+  %%PREFIX%%/sbin/${name} -qrx 'stop now'
+  sleep 1
+  return 0
+}
+
+run_rc_command "$1"

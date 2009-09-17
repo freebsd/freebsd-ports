@@ -74,6 +74,7 @@
     SUBDIR += bwping
     SUBDIR += c3270
     SUBDIR += callgen323
+    SUBDIR += callweaver
     SUBDIR += cap
     SUBDIR += ccxstream
     SUBDIR += citrix_ica

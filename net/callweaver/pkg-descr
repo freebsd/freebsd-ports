@@ -1,0 +1,5 @@
+Callweaver (formely OpenPBX.org) is an open-source multi-platform PBX project.
+It is based on Asterisk 1.2 code. Callweaver supports analog and digital
+PSTN telephony, IAX/SIP and offers mature T.38 support.
+
+WWW: http://www.callweaver.org

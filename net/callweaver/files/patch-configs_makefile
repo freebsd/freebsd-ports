@@ -1,0 +1,14 @@
+--- configs/Makefile.in.orig	2009-09-10 01:59:38.000000000 +0400
++++ configs/Makefile.in	2009-09-10 02:00:08.000000000 +0400
+@@ -524,9 +524,11 @@
+ 		if test ! -f $(DESTDIR)${cwconfdir}/$${configfile}; \
+ 		then \
+ 			$(INSTALL) -m 0640 $${samplefile} $(DESTDIR)${cwconfdir}/$${configfile}; \
++			$(INSTALL) -m 0640 $${samplefile} $(DESTDIR)${cwconfdir}/$${samplefile}; \
+ 			if test -z "$(DESTDIR)"; \
+ 			then \
+ 				chown ${cwrunuser}:${cwrungroup} $(DESTDIR)${cwconfdir}/$${configfile}; \
++				chown ${cwrunuser}:${cwrungroup} $(DESTDIR)${cwconfdir}/$${samplefile}; \
+ 			fi; \
+ 		fi; \
+ 	done
