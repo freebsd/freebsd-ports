@@ -87,8 +87,7 @@ CONFIGURE_ARGS+=--disable-aac
 .endif
 
 .if defined(WITH_LAME)
-CONFIGURE_ARGS+=--enable-lame-encoder \
-		--enable-shout
+CONFIGURE_ARGS+=--enable-lame-encoder
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 .else
 CONFIGURE_ARGS+=--disable-lame-encoder
@@ -150,7 +149,7 @@ CONFIGURE_ARGS+=--disable-lastfm
 
 .if defined(WITH_MMS)
 CONFIGURE_ARGS+=--enable-mms
-LIBDEPENDS+=	libmms.0:${PORTSDIR}/net/libmms
+LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
 .else
 CONFIGURE_ARGS+=--disable-mms
 .endif
@@ -191,7 +190,7 @@ LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
 CONFIGURE_ARGS+=--enable-vorbis-encoder \
 		--enable-shout
 .else
-CONFIGURE_ARGS+=--disable-vorbis-encoder
+CONFIGURE_ARGS+=--disable-shout
 .endif
 
 .if defined(WITHOUT_SAMPLERATE)
