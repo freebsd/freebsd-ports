@@ -1,4 +1,9 @@
-Hotwayd uses HTTPMail (the same protocol that Outlook Express uses) to access
+NOTE: This port is deprecated as of 9/1/2009.
+The Hotmail and Windows Live servers no longer support DAV, so hotwayd can
+no longer work with those services. Fortunately the servers now support POP3
+directly (via POP3+SSL at pop3.live.com:995) so hotwayd is not needed.
+
+Hotwayd uses HTTPMail (the same protocol that Outlook Express used) to access
 servers such as Hotmail.  The software acts as a proxy mail server, allowing
 you to access e-mail on Hotmail and similar servers using standard POP3 mail
 clients.
