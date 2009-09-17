@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-ScanDeps
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/perl|${PERL}|' ${WRKSRC}/script/scandeps.pl \
 		${WRKSRC}/Makefile.PL
+
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.pre.mk>
 
