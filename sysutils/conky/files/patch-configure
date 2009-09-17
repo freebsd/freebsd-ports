@@ -1,0 +1,10 @@
+--- configure.orig	2009-09-17 09:53:21.000000000 +0300
++++ configure	2009-09-17 10:13:11.000000000 +0300
+@@ -19845,7 +19845,6 @@
+ ac_res=$ac_cv_search_clock_gettime
+ if test "$ac_res" != no; then
+   test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+-  conky_LIBS="$conky_LIBS -lrt"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_CLOCK_GETTIME 1

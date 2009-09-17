@@ -13,12 +13,10 @@ COMMENT=	An advanced, highly configurable system monitor (configured for x11-wm/
 MASTERDIR=	${.CURDIR}/../../sysutils/conky
 DESCR=		${.CURDIR}/pkg-descr
 
-EXTRA_PATCHES=	${.CURDIR}/files/patch-*
-
 CONFLICTS=	conky-[0-9]*
 
 USE_XORG=	# This is a comment
 USE_GNOME=	pkgconfig
-CONFIGURE_ARGS+=	--disable-x11
+CONFIGURE_ARGS+=	--disable-x11 --disable-own-window
 
 .include "${MASTERDIR}/Makefile"
