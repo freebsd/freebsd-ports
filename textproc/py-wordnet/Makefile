@@ -10,8 +10,7 @@ PORTVERSION=	2.0.1
 PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	SF/pywordnet/pywordnet/${PORTVERSION}:pywn \
-		ftp://ftp.cogsci.princeton.edu/pub/wordnet/${WN_VERSION}/:wn \
-		http://www.cogsci.princeton.edu/${WN_VERSION}/:wn \
+		http://wordnetcode.princeton.edu/${WN_VERSION}/:wn \
 		ftp://ftp.ims.uni-stuttgart.de/pub/WordNet/${WN_VERSION}/:wn
 MASTER_SITE_SUBDIR=	pywordnet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
