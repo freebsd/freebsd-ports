@@ -7,6 +7,7 @@
 
 PORTNAME=	openntpd
 PORTVERSION=	4.4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -15,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	OpenBSD's Network Time Protocol daemon
+
+USERS=		_ntp
+GROUPS=		_ntp
 
 USE_RC_SUBR=	openntpd
 
@@ -41,7 +45,6 @@ pre-build:
 	    ${WRKSRC}/ntpd.h ${WRKSRC}/ntpd.conf.5 ${WRKSRC}/ntpd.8
 
 do-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${INSTALL_PROGRAM} ${WRKSRC}/ntpd ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/ntpd.conf.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/ntpd.8 ${PREFIX}/man/man8
