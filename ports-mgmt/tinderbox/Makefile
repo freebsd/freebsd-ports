@@ -98,10 +98,8 @@ post-patch:
 .ifdef WITHOUT_CHECK_FOR_ROOT
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
 			${WRKSRC}/tc
-	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} {} \;
 .endif
-	${RM} ${WRKSRC}/lib/tc_command.sh.orig
-	${RM} ${WRKSRC}/lib/tinderbox.env.orig
+	@cd ${WRKSRC} && ${FIND} -E . -regex '.*(orig|bak)' -exec ${RM} {} \;
 
 do-install:
 	@${MKDIR} ${PREFIX}/tinderbox/scripts
