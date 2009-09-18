@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.1.17-rc
+DISTVERSION=	0.2.2.1-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -18,9 +18,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	An anonymizing overlay network for TCP
 
-RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
+RUN_DEPENDS=	torsocks:${PORTSDIR}/net/torsocks
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
-USE_AUTOTOOLS=	libtool:22 aclocal:110 autoconf:262
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -38,7 +37,7 @@ OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
 
-CONFLICTS=	tor-0.2.0.[0-9]*
+CONFLICTS=	tor-[0-9]*
 
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
