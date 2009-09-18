@@ -86,8 +86,8 @@ do-install:
 	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKSRC}/client/${SETI_BINARY} ${BOINC_HOME}/projects/${SETI_SITE}/
 .if !defined(WITHOUT_X11)
 	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKSRC}/client/seti_graphics ${BOINC_HOME}/projects/${SETI_SITE}/
-	${INSTALL_DATA} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/app_info.xml ${BOINC_HOME}/projects/${SETI_SITE}/
 .endif
+	${INSTALL_DATA} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/app_info.xml ${BOINC_HOME}/projects/${SETI_SITE}/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
