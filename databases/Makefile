@@ -325,6 +325,7 @@
     SUBDIR += p5-DBIx-Class-IntrospectableM2M
     SUBDIR += p5-DBIx-Class-Loader
     SUBDIR += p5-DBIx-Class-QueryLog
+    SUBDIR += p5-DBIx-Class-ResultSet-HashRef
     SUBDIR += p5-DBIx-Class-ResultSet-RecursiveUpdate
     SUBDIR += p5-DBIx-Class-Schema-Loader
     SUBDIR += p5-DBIx-Class-TimeStamp
