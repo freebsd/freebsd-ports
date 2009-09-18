@@ -1,6 +1,15 @@
---- configure.orig	2008-05-24 00:09:57.000000000 -0500
-+++ configure	2008-05-24 00:10:20.000000000 -0500
-@@ -22284,11 +22284,12 @@
+--- configure.orig	2009-09-18 15:31:26.000000000 -0400
++++ configure	2009-09-18 15:35:31.000000000 -0400
+@@ -4770,7 +4770,7 @@ fi
+ if test "${with_html_subdir+set}" = set; then
+   withval=$with_html_subdir; test "x$withval" != "x" && HTML_DIR="$HTML_DIR/$withval"
+ else
+-  HTML_DIR="$HTML_DIR/\$(PACKAGE)-\$(VERSION)/html"
++  HTML_DIR="$HTML_DIR/\$(PACKAGE)"
+ fi
+ 
+ 
+@@ -15572,11 +15572,12 @@ except: print 0"`
      fi
      if test "$PYTHON_VERSION" != ""
      then
