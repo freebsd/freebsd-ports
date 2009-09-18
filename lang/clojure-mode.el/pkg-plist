@@ -1,1 +1,2 @@
 %%EMACS_SITE_LISPDIR%%/clojure-mode.el
+%%EMACS_SITE_LISPDIR%%/clojure-test-mode.el

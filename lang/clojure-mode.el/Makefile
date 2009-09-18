@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clojure-mode.el
-PORTVERSION=	20081222
+PORTVERSION=	20090718
 PORTREVISION=	1
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://distfiles.scode.org/ports/
@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/clojure-mode
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/clojure-mode.el ${PREFIX}/${EMACS_SITE_LISPDIR}/clojure-mode.el
+	${INSTALL_DATA} ${WRKSRC}/clojure-test-mode.el ${PREFIX}/${EMACS_SITE_LISPDIR}/clojure-test-mode.el
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
