@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.24
-PORTREVISION?=	2
+PORTVERSION=	1.1.25
+PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://fr.rpmfind.net/pub/libxml/ \
 		ftp://gd.tuwien.ac.at/pub/libxml/ \
@@ -34,7 +34,8 @@ _SLAVE_PORT=	yes
 MAN3=		libexslt.3 libxslt.3
 MAN1=		xsltproc.1
 
-OPTIONS=	MEM_DEBUG "Enable memory debugging" off
+OPTIONS=	MEM_DEBUG "Enable memory debugging" off \
+		CRYPTO "Enable crypto support for exslt" on
 .endif
 
 .include <bsd.port.pre.mk>
@@ -43,21 +44,10 @@ OPTIONS=	MEM_DEBUG "Enable memory debugging" off
 CONFIGURE_ARGS+=	--with-mem-debug
 .endif
 
-.if !defined(_SLAVE_PORT)
-.if exists(${LOCALBASE}/lib/libgcrypt.so)
-WITH_GCRYPT=	yes
-.endif
-
-.if defined(WITH_GCRYPT)
+.if defined(WITH_CRYPTO)
 LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
-.endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Libxslt has the following additional tunables:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_GCRYPT=yes			Turns on libgcrypt support"
-	@${ECHO_MSG} ""
+.else
+CONFIGURE_ARGS+=--without-crypto
 .endif
 
 post-patch:

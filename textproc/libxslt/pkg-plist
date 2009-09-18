@@ -23,6 +23,7 @@ include/libxslt/xslt.h
 include/libxslt/xsltInternals.h
 include/libxslt/xsltconfig.h
 include/libxslt/xsltexports.h
+include/libxslt/xsltlocale.h
 include/libxslt/xsltutils.h
 lib/libexslt.a
 lib/libexslt.la
