@@ -1,8 +1,8 @@
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
-%%WWWDIR%%/index.php
 %%WWWDIR%%/application/config/config.php
+%%WWWDIR%%/index.php
 %%WWWDIR%%/installer/cli.php
 %%WWWDIR%%/installer/database_config.php
 %%WWWDIR%%/installer/index.php
@@ -16,6 +16,7 @@
 %%WWWDIR%%/installer/views/get_db_info.html.php
 %%WWWDIR%%/installer/views/install.html.php
 %%WWWDIR%%/installer/views/invalid_db_info.html.php
+%%WWWDIR%%/installer/views/invalid_db_version.html.php
 %%WWWDIR%%/installer/views/missing_db.html.php
 %%WWWDIR%%/installer/views/oops.html.php
 %%WWWDIR%%/installer/views/success.html.php
@@ -24,10 +25,17 @@
 %%WWWDIR%%/lib/flowplayer.h264streaming.swf
 %%WWWDIR%%/lib/flowplayer.js
 %%WWWDIR%%/lib/flowplayer.swf
+%%WWWDIR%%/lib/gallery.ajax.js
+%%WWWDIR%%/lib/gallery.common.css
 %%WWWDIR%%/lib/gallery.common.js
 %%WWWDIR%%/lib/gallery.dialog.js
 %%WWWDIR%%/lib/gallery.form.js
 %%WWWDIR%%/lib/gallery.panel.js
+%%WWWDIR%%/lib/gallery.show_full_size.js
+%%WWWDIR%%/lib/images/favicon.ico
+%%WWWDIR%%/lib/images/loading-large.gif
+%%WWWDIR%%/lib/images/loading-small.gif
+%%WWWDIR%%/lib/images/logo.png
 %%WWWDIR%%/lib/jquery-ui.js
 %%WWWDIR%%/lib/jquery.MultiFile.js
 %%WWWDIR%%/lib/jquery.autocomplete.css
@@ -36,6 +44,8 @@
 %%WWWDIR%%/lib/jquery.form.js
 %%WWWDIR%%/lib/jquery.jeditable.js
 %%WWWDIR%%/lib/jquery.js
+%%WWWDIR%%/lib/jquery.localscroll.js
+%%WWWDIR%%/lib/jquery.scrollTo.js
 %%WWWDIR%%/lib/superfish/css/superfish.css
 %%WWWDIR%%/lib/superfish/images/arrows-ffffff.png
 %%WWWDIR%%/lib/superfish/images/shadow.png
@@ -72,7 +82,6 @@
 %%WWWDIR%%/modules/akismet/helpers/akismet.php
 %%WWWDIR%%/modules/akismet/helpers/akismet_event.php
 %%WWWDIR%%/modules/akismet/helpers/akismet_installer.php
-%%WWWDIR%%/modules/akismet/helpers/akismet_menu.php
 %%WWWDIR%%/modules/akismet/module.info
 %%WWWDIR%%/modules/akismet/views/admin_akismet.html.php
 %%WWWDIR%%/modules/akismet/views/admin_akismet_stats.html.php
@@ -82,8 +91,7 @@
 %%WWWDIR%%/modules/comment/helpers/comment_block.php
 %%WWWDIR%%/modules/comment/helpers/comment_event.php
 %%WWWDIR%%/modules/comment/helpers/comment_installer.php
-%%WWWDIR%%/modules/comment/helpers/comment_menu.php
-%%WWWDIR%%/modules/comment/helpers/comment_search.php
+%%WWWDIR%%/modules/comment/helpers/comment_rss.php
 %%WWWDIR%%/modules/comment/helpers/comment_theme.php
 %%WWWDIR%%/modules/comment/js/comment.js
 %%WWWDIR%%/modules/comment/models/comment.php
@@ -91,7 +99,20 @@
 %%WWWDIR%%/modules/comment/views/admin_block_recent_comments.html.php
 %%WWWDIR%%/modules/comment/views/admin_comments.html.php
 %%WWWDIR%%/modules/comment/views/comment.html.php
+%%WWWDIR%%/modules/comment/views/comment.mrss.php
 %%WWWDIR%%/modules/comment/views/comments.html.php
+%%WWWDIR%%/modules/digibug/config/digibug.php
+%%WWWDIR%%/modules/digibug/controllers/admin_digibug.php
+%%WWWDIR%%/modules/digibug/controllers/digibug.php
+%%WWWDIR%%/modules/digibug/helpers/digibug_event.php
+%%WWWDIR%%/modules/digibug/helpers/digibug_installer.php
+%%WWWDIR%%/modules/digibug/helpers/digibug_theme.php
+%%WWWDIR%%/modules/digibug/images/digibug_logo.png
+%%WWWDIR%%/modules/digibug/js/digibug.js
+%%WWWDIR%%/modules/digibug/models/digibug_proxy.php
+%%WWWDIR%%/modules/digibug/module.info
+%%WWWDIR%%/modules/digibug/views/admin_digibug.html.php
+%%WWWDIR%%/modules/digibug/views/digibug_form.html.php
 %%WWWDIR%%/modules/exif/controllers/exif.php
 %%WWWDIR%%/modules/exif/helpers/exif.php
 %%WWWDIR%%/modules/exif/helpers/exif_event.php
@@ -130,11 +151,11 @@
 %%WWWDIR%%/modules/g2_import/helpers/g2_import.php
 %%WWWDIR%%/modules/g2_import/helpers/g2_import_event.php
 %%WWWDIR%%/modules/g2_import/helpers/g2_import_installer.php
-%%WWWDIR%%/modules/g2_import/helpers/g2_import_menu.php
 %%WWWDIR%%/modules/g2_import/helpers/g2_import_task.php
 %%WWWDIR%%/modules/g2_import/models/g2_map.php
 %%WWWDIR%%/modules/g2_import/module.info
 %%WWWDIR%%/modules/g2_import/views/admin_g2_import.html.php
+%%WWWDIR%%/modules/gallery/config/cache.php
 %%WWWDIR%%/modules/gallery/config/cookie.php
 %%WWWDIR%%/modules/gallery/config/database.php
 %%WWWDIR%%/modules/gallery/config/locale.php
@@ -149,25 +170,28 @@
 %%WWWDIR%%/modules/gallery/controllers/admin_languages.php
 %%WWWDIR%%/modules/gallery/controllers/admin_maintenance.php
 %%WWWDIR%%/modules/gallery/controllers/admin_modules.php
-%%WWWDIR%%/modules/gallery/controllers/admin_theme_details.php
+%%WWWDIR%%/modules/gallery/controllers/admin_theme_options.php
 %%WWWDIR%%/modules/gallery/controllers/admin_themes.php
-%%WWWDIR%%/modules/gallery/controllers/after_install.php
 %%WWWDIR%%/modules/gallery/controllers/albums.php
+%%WWWDIR%%/modules/gallery/controllers/combined.php
 %%WWWDIR%%/modules/gallery/controllers/file_proxy.php
 %%WWWDIR%%/modules/gallery/controllers/items.php
 %%WWWDIR%%/modules/gallery/controllers/l10n_client.php
 %%WWWDIR%%/modules/gallery/controllers/maintenance.php
 %%WWWDIR%%/modules/gallery/controllers/move.php
 %%WWWDIR%%/modules/gallery/controllers/movies.php
-%%WWWDIR%%/modules/gallery/controllers/package.php
+%%WWWDIR%%/modules/gallery/controllers/packager.php
 %%WWWDIR%%/modules/gallery/controllers/permissions.php
 %%WWWDIR%%/modules/gallery/controllers/photos.php
 %%WWWDIR%%/modules/gallery/controllers/quick.php
 %%WWWDIR%%/modules/gallery/controllers/rest.php
 %%WWWDIR%%/modules/gallery/controllers/simple_uploader.php
+%%WWWDIR%%/modules/gallery/controllers/upgrader.php
+%%WWWDIR%%/modules/gallery/controllers/welcome_message.php
 %%WWWDIR%%/modules/gallery/css/debug.css
 %%WWWDIR%%/modules/gallery/css/l10n_client.css
-%%WWWDIR%%/modules/gallery/css/quick.css
+%%WWWDIR%%/modules/gallery/css/upgrader.css
+%%WWWDIR%%/modules/gallery/helpers/MY_html.php
 %%WWWDIR%%/modules/gallery/helpers/MY_num.php
 %%WWWDIR%%/modules/gallery/helpers/MY_remote.php
 %%WWWDIR%%/modules/gallery/helpers/MY_url.php
@@ -180,21 +204,19 @@
 %%WWWDIR%%/modules/gallery/helpers/gallery_block.php
 %%WWWDIR%%/modules/gallery/helpers/gallery_event.php
 %%WWWDIR%%/modules/gallery/helpers/gallery_installer.php
-%%WWWDIR%%/modules/gallery/helpers/gallery_menu.php
-%%WWWDIR%%/modules/gallery/helpers/gallery_search.php
+%%WWWDIR%%/modules/gallery/helpers/gallery_rss.php
 %%WWWDIR%%/modules/gallery/helpers/gallery_task.php
 %%WWWDIR%%/modules/gallery/helpers/gallery_theme.php
 %%WWWDIR%%/modules/gallery/helpers/graphics.php
 %%WWWDIR%%/modules/gallery/helpers/item.php
 %%WWWDIR%%/modules/gallery/helpers/l10n_client.php
 %%WWWDIR%%/modules/gallery/helpers/l10n_scanner.php
-%%WWWDIR%%/modules/gallery/helpers/locale.php
+%%WWWDIR%%/modules/gallery/helpers/locales.php
 %%WWWDIR%%/modules/gallery/helpers/log.php
 %%WWWDIR%%/modules/gallery/helpers/message.php
 %%WWWDIR%%/modules/gallery/helpers/model_cache.php
 %%WWWDIR%%/modules/gallery/helpers/module.php
 %%WWWDIR%%/modules/gallery/helpers/movie.php
-%%WWWDIR%%/modules/gallery/helpers/p.php
 %%WWWDIR%%/modules/gallery/helpers/photo.php
 %%WWWDIR%%/modules/gallery/helpers/rest.php
 %%WWWDIR%%/modules/gallery/helpers/site_status.php
@@ -206,12 +228,13 @@
 %%WWWDIR%%/modules/gallery/images/gd.png
 %%WWWDIR%%/modules/gallery/images/graphicsmagick.png
 %%WWWDIR%%/modules/gallery/images/imagemagick.jpg
+%%WWWDIR%%/modules/gallery/images/missing_movie.png
 %%WWWDIR%%/modules/gallery/js/albums_form_add.js
-%%WWWDIR%%/modules/gallery/js/fullsize.js
 %%WWWDIR%%/modules/gallery/js/l10n_client.js
-%%WWWDIR%%/modules/gallery/js/quick.js
 %%WWWDIR%%/modules/gallery/libraries/Admin_View.php
 %%WWWDIR%%/modules/gallery/libraries/Block.php
+%%WWWDIR%%/modules/gallery/libraries/Form_Script.php
+%%WWWDIR%%/modules/gallery/libraries/Gallery_View.php
 %%WWWDIR%%/modules/gallery/libraries/I18n.php
 %%WWWDIR%%/modules/gallery/libraries/MY_Database.php
 %%WWWDIR%%/modules/gallery/libraries/MY_Forge.php
@@ -220,11 +243,14 @@
 %%WWWDIR%%/modules/gallery/libraries/MY_View.php
 %%WWWDIR%%/modules/gallery/libraries/Menu.php
 %%WWWDIR%%/modules/gallery/libraries/ORM_MPTT.php
+%%WWWDIR%%/modules/gallery/libraries/SafeString.php
 %%WWWDIR%%/modules/gallery/libraries/Sendmail.php
 %%WWWDIR%%/modules/gallery/libraries/Task_Definition.php
 %%WWWDIR%%/modules/gallery/libraries/Theme_View.php
+%%WWWDIR%%/modules/gallery/libraries/drivers/Cache/Database.php
 %%WWWDIR%%/modules/gallery/models/access_cache.php
 %%WWWDIR%%/modules/gallery/models/access_intent.php
+%%WWWDIR%%/modules/gallery/models/cache.php
 %%WWWDIR%%/modules/gallery/models/graphics_rule.php
 %%WWWDIR%%/modules/gallery/models/incoming_translation.php
 %%WWWDIR%%/modules/gallery/models/item.php
@@ -252,13 +278,12 @@
 %%WWWDIR%%/modules/gallery/views/admin_graphics_none.html.php
 %%WWWDIR%%/modules/gallery/views/admin_languages.html.php
 %%WWWDIR%%/modules/gallery/views/admin_maintenance.html.php
+%%WWWDIR%%/modules/gallery/views/admin_maintenance_show_log.html.php
 %%WWWDIR%%/modules/gallery/views/admin_maintenance_task.html.php
 %%WWWDIR%%/modules/gallery/views/admin_modules.html.php
-%%WWWDIR%%/modules/gallery/views/admin_theme_details.html.php
+%%WWWDIR%%/modules/gallery/views/admin_theme_options.html.php
 %%WWWDIR%%/modules/gallery/views/admin_themes.html.php
 %%WWWDIR%%/modules/gallery/views/admin_themes_preview.html.php
-%%WWWDIR%%/modules/gallery/views/after_install.html.php
-%%WWWDIR%%/modules/gallery/views/after_install_loader.html.php
 %%WWWDIR%%/modules/gallery/views/form.html.php
 %%WWWDIR%%/modules/gallery/views/kohana_error_page.php
 %%WWWDIR%%/modules/gallery/views/kohana_profiler.php
@@ -266,15 +291,16 @@
 %%WWWDIR%%/modules/gallery/views/maintenance.html.php
 %%WWWDIR%%/modules/gallery/views/move_browse.html.php
 %%WWWDIR%%/modules/gallery/views/move_tree.html.php
+%%WWWDIR%%/modules/gallery/views/movieplayer.html.php
 %%WWWDIR%%/modules/gallery/views/permissions_browse.html.php
 %%WWWDIR%%/modules/gallery/views/permissions_form.html.php
-%%WWWDIR%%/modules/gallery/views/quick_pane.html.php
 %%WWWDIR%%/modules/gallery/views/simple_uploader.html.php
-%%WWWDIR%%/modules/image_block/helpers/image_block_installer.php
+%%WWWDIR%%/modules/gallery/views/upgrader.html.php
+%%WWWDIR%%/modules/gallery/views/welcome_message.html.php
+%%WWWDIR%%/modules/gallery/views/welcome_message_loader.html.php
 %%WWWDIR%%/modules/image_block/helpers/image_block_theme.php
 %%WWWDIR%%/modules/image_block/module.info
 %%WWWDIR%%/modules/image_block/views/image_block_block.html.php
-%%WWWDIR%%/modules/info/helpers/info_installer.php
 %%WWWDIR%%/modules/info/helpers/info_theme.php
 %%WWWDIR%%/modules/info/module.info
 %%WWWDIR%%/modules/info/views/info_block.html.php
@@ -282,7 +308,6 @@
 %%WWWDIR%%/modules/notification/helpers/notification.php
 %%WWWDIR%%/modules/notification/helpers/notification_event.php
 %%WWWDIR%%/modules/notification/helpers/notification_installer.php
-%%WWWDIR%%/modules/notification/helpers/notification_menu.php
 %%WWWDIR%%/modules/notification/models/pending_notification.php
 %%WWWDIR%%/modules/notification/models/subscription.php
 %%WWWDIR%%/modules/notification/module.info
@@ -292,35 +317,25 @@
 %%WWWDIR%%/modules/notification/views/item_updated.html.php
 %%WWWDIR%%/modules/organize/controllers/organize.php
 %%WWWDIR%%/modules/organize/css/organize.css
-%%WWWDIR%%/modules/organize/helpers/organize.php
-%%WWWDIR%%/modules/organize/helpers/organize_installer.php
-%%WWWDIR%%/modules/organize/helpers/organize_menu.php
-%%WWWDIR%%/modules/organize/helpers/organize_task.php
+%%WWWDIR%%/modules/organize/helpers/organize_event.php
 %%WWWDIR%%/modules/organize/helpers/organize_theme.php
 %%WWWDIR%%/modules/organize/js/organize.js
-%%WWWDIR%%/modules/organize/js/organize_init.js
 %%WWWDIR%%/modules/organize/module.info
-%%WWWDIR%%/modules/organize/views/organize.html.php
-%%WWWDIR%%/modules/organize/views/organize_album.html.php
-%%WWWDIR%%/modules/organize/views/organize_button_pane.html.php
-%%WWWDIR%%/modules/organize/views/organize_edit.html.php
+%%WWWDIR%%/modules/organize/views/organize_dialog.html.php
 %%WWWDIR%%/modules/organize/views/organize_thumb_grid.html.php
 %%WWWDIR%%/modules/organize/views/organize_tree.html.php
 %%WWWDIR%%/modules/recaptcha/controllers/admin_recaptcha.php
 %%WWWDIR%%/modules/recaptcha/helpers/recaptcha.php
 %%WWWDIR%%/modules/recaptcha/helpers/recaptcha_event.php
 %%WWWDIR%%/modules/recaptcha/helpers/recaptcha_installer.php
-%%WWWDIR%%/modules/recaptcha/helpers/recaptcha_menu.php
 %%WWWDIR%%/modules/recaptcha/libraries/Form_Recaptcha.php
 %%WWWDIR%%/modules/recaptcha/module.info
 %%WWWDIR%%/modules/recaptcha/views/admin_recaptcha.html.php
 %%WWWDIR%%/modules/recaptcha/views/form_recaptcha.html.php
 %%WWWDIR%%/modules/rss/controllers/rss.php
 %%WWWDIR%%/modules/rss/helpers/rss.php
-%%WWWDIR%%/modules/rss/helpers/rss_installer.php
 %%WWWDIR%%/modules/rss/helpers/rss_theme.php
 %%WWWDIR%%/modules/rss/module.info
-%%WWWDIR%%/modules/rss/views/comment.mrss.php
 %%WWWDIR%%/modules/rss/views/feed.mrss.php
 %%WWWDIR%%/modules/rss/views/rss_block.html.php
 %%WWWDIR%%/modules/search/controllers/search.php
@@ -336,19 +351,18 @@
 %%WWWDIR%%/modules/server_add/controllers/admin_server_add.php
 %%WWWDIR%%/modules/server_add/controllers/server_add.php
 %%WWWDIR%%/modules/server_add/helpers/server_add.php
+%%WWWDIR%%/modules/server_add/helpers/server_add_event.php
 %%WWWDIR%%/modules/server_add/helpers/server_add_installer.php
-%%WWWDIR%%/modules/server_add/helpers/server_add_menu.php
-%%WWWDIR%%/modules/server_add/helpers/server_add_task.php
 %%WWWDIR%%/modules/server_add/helpers/server_add_theme.php
 %%WWWDIR%%/modules/server_add/js/admin.js
 %%WWWDIR%%/modules/server_add/js/server_add.js
+%%WWWDIR%%/modules/server_add/models/server_add_file.php
 %%WWWDIR%%/modules/server_add/module.info
 %%WWWDIR%%/modules/server_add/views/admin_server_add.html.php
 %%WWWDIR%%/modules/server_add/views/server_add_tree.html.php
 %%WWWDIR%%/modules/server_add/views/server_add_tree_dialog.html.php
 %%WWWDIR%%/modules/slideshow/helpers/slideshow_event.php
 %%WWWDIR%%/modules/slideshow/helpers/slideshow_installer.php
-%%WWWDIR%%/modules/slideshow/helpers/slideshow_menu.php
 %%WWWDIR%%/modules/slideshow/helpers/slideshow_theme.php
 %%WWWDIR%%/modules/slideshow/module.info
 %%WWWDIR%%/modules/tag/controllers/admin_tags.php
@@ -356,7 +370,7 @@
 %%WWWDIR%%/modules/tag/helpers/tag.php
 %%WWWDIR%%/modules/tag/helpers/tag_event.php
 %%WWWDIR%%/modules/tag/helpers/tag_installer.php
-%%WWWDIR%%/modules/tag/helpers/tag_menu.php
+%%WWWDIR%%/modules/tag/helpers/tag_rss.php
 %%WWWDIR%%/modules/tag/helpers/tag_theme.php
 %%WWWDIR%%/modules/tag/js/tag.js
 %%WWWDIR%%/modules/tag/models/tag.php
@@ -373,7 +387,6 @@
 %%WWWDIR%%/modules/user/helpers/user.php
 %%WWWDIR%%/modules/user/helpers/user_event.php
 %%WWWDIR%%/modules/user/helpers/user_installer.php
-%%WWWDIR%%/modules/user/helpers/user_menu.php
 %%WWWDIR%%/modules/user/helpers/user_theme.php
 %%WWWDIR%%/modules/user/lib/PasswordHash.php
 %%WWWDIR%%/modules/user/models/group.php
@@ -384,10 +397,11 @@
 %%WWWDIR%%/modules/user/views/login.html.php
 %%WWWDIR%%/modules/user/views/login_ajax.html.php
 %%WWWDIR%%/modules/user/views/reset_password.html.php
+%%WWWDIR%%/modules/user/views/user_languages_block.html.php
 %%WWWDIR%%/modules/watermark/controllers/admin_watermarks.php
 %%WWWDIR%%/modules/watermark/helpers/watermark.php
+%%WWWDIR%%/modules/watermark/helpers/watermark_event.php
 %%WWWDIR%%/modules/watermark/helpers/watermark_installer.php
-%%WWWDIR%%/modules/watermark/helpers/watermark_menu.php
 %%WWWDIR%%/modules/watermark/module.info
 %%WWWDIR%%/modules/watermark/views/admin_watermarks.html.php
 %%WWWDIR%%/system/KohanaLicense.html
@@ -536,7 +550,17 @@
 %%WWWDIR%%/themes/admin_default/css/fix-ie.css
 %%WWWDIR%%/themes/admin_default/css/screen.css
 %%WWWDIR%%/themes/admin_default/images/avatar.jpg
-%%WWWDIR%%/themes/admin_default/js/jquery.dropshadow.js
+%%WWWDIR%%/themes/admin_default/images/ico-album.png
+%%WWWDIR%%/themes/admin_default/images/ico-error.png
+%%WWWDIR%%/themes/admin_default/images/ico-info.png
+%%WWWDIR%%/themes/admin_default/images/ico-print.png
+%%WWWDIR%%/themes/admin_default/images/ico-separator.gif
+%%WWWDIR%%/themes/admin_default/images/ico-success.png
+%%WWWDIR%%/themes/admin_default/images/ico-view-comments.png
+%%WWWDIR%%/themes/admin_default/images/ico-view-fullsize.png
+%%WWWDIR%%/themes/admin_default/images/ico-view-hybrid.png
+%%WWWDIR%%/themes/admin_default/images/ico-view-slideshow.png
+%%WWWDIR%%/themes/admin_default/images/ico-warning.png
 %%WWWDIR%%/themes/admin_default/js/ui.init.js
 %%WWWDIR%%/themes/admin_default/theme.info
 %%WWWDIR%%/themes/admin_default/thumbnail.png
@@ -546,7 +570,6 @@
 %%WWWDIR%%/themes/default/css/fix-ie.css
 %%WWWDIR%%/themes/default/css/screen.css
 %%WWWDIR%%/themes/default/images/avatar.jpg
-%%WWWDIR%%/themes/default/images/favicon.ico
 %%WWWDIR%%/themes/default/images/ico-album.png
 %%WWWDIR%%/themes/default/images/ico-denied-gray.png
 %%WWWDIR%%/themes/default/images/ico-denied-pale.png
@@ -555,33 +578,23 @@
 %%WWWDIR%%/themes/default/images/ico-help.png
 %%WWWDIR%%/themes/default/images/ico-info.png
 %%WWWDIR%%/themes/default/images/ico-lock.png
-%%WWWDIR%%/themes/default/images/ico-notify-add.png
-%%WWWDIR%%/themes/default/images/ico-notify-remove.png
+%%WWWDIR%%/themes/default/images/ico-print.png
 %%WWWDIR%%/themes/default/images/ico-separator.gif
 %%WWWDIR%%/themes/default/images/ico-success-gray.png
 %%WWWDIR%%/themes/default/images/ico-success-pale.png
 %%WWWDIR%%/themes/default/images/ico-success.png
-%%WWWDIR%%/themes/default/images/ico-view-album.png
 %%WWWDIR%%/themes/default/images/ico-view-comments.png
 %%WWWDIR%%/themes/default/images/ico-view-fullsize.png
 %%WWWDIR%%/themes/default/images/ico-view-hybrid.png
 %%WWWDIR%%/themes/default/images/ico-view-slideshow.png
 %%WWWDIR%%/themes/default/images/ico-warning.png
-%%WWWDIR%%/themes/default/images/loading-lg.gif
-%%WWWDIR%%/themes/default/images/loading-sm.gif
-%%WWWDIR%%/themes/default/images/logo.png
 %%WWWDIR%%/themes/default/images/select-photos-backg.png
-%%WWWDIR%%/themes/default/js/jquery.localscroll.js
-%%WWWDIR%%/themes/default/js/jquery.scrollTo.js
 %%WWWDIR%%/themes/default/js/ui.init.js
 %%WWWDIR%%/themes/default/theme.info
 %%WWWDIR%%/themes/default/thumbnail.png
 %%WWWDIR%%/themes/default/views/album.html.php
 %%WWWDIR%%/themes/default/views/block.html.php
 %%WWWDIR%%/themes/default/views/dynamic.html.php
-%%WWWDIR%%/themes/default/views/footer.html.php
-%%WWWDIR%%/themes/default/views/header.html.php
-%%WWWDIR%%/themes/default/views/login_page.html.php
 %%WWWDIR%%/themes/default/views/movie.html.php
 %%WWWDIR%%/themes/default/views/page.html.php
 %%WWWDIR%%/themes/default/views/pager.html.php
@@ -634,6 +647,7 @@
 @dirrm %%WWWDIR%%/modules/slideshow/helpers
 @dirrm %%WWWDIR%%/modules/slideshow
 @dirrm %%WWWDIR%%/modules/server_add/views
+@dirrm %%WWWDIR%%/modules/server_add/models
 @dirrm %%WWWDIR%%/modules/server_add/js
 @dirrm %%WWWDIR%%/modules/server_add/helpers
 @dirrm %%WWWDIR%%/modules/server_add/controllers
@@ -671,6 +685,8 @@
 @dirrm %%WWWDIR%%/modules/image_block
 @dirrm %%WWWDIR%%/modules/gallery/views
 @dirrm %%WWWDIR%%/modules/gallery/models
+@dirrm %%WWWDIR%%/modules/gallery/libraries/drivers/Cache
+@dirrm %%WWWDIR%%/modules/gallery/libraries/drivers
 @dirrm %%WWWDIR%%/modules/gallery/libraries
 @dirrm %%WWWDIR%%/modules/gallery/js
 @dirrm %%WWWDIR%%/modules/gallery/images
@@ -695,6 +711,14 @@
 @dirrm %%WWWDIR%%/modules/exif/helpers
 @dirrm %%WWWDIR%%/modules/exif/controllers
 @dirrm %%WWWDIR%%/modules/exif
+@dirrm %%WWWDIR%%/modules/digibug/views
+@dirrm %%WWWDIR%%/modules/digibug/models
+@dirrm %%WWWDIR%%/modules/digibug/js
+@dirrm %%WWWDIR%%/modules/digibug/images
+@dirrm %%WWWDIR%%/modules/digibug/helpers
+@dirrm %%WWWDIR%%/modules/digibug/controllers
+@dirrm %%WWWDIR%%/modules/digibug/config
+@dirrm %%WWWDIR%%/modules/digibug
 @dirrm %%WWWDIR%%/modules/comment/views
 @dirrm %%WWWDIR%%/modules/comment/models
 @dirrm %%WWWDIR%%/modules/comment/js
@@ -714,6 +738,7 @@
 @dirrm %%WWWDIR%%/lib/superfish/images
 @dirrm %%WWWDIR%%/lib/superfish/css
 @dirrm %%WWWDIR%%/lib/superfish
+@dirrm %%WWWDIR%%/lib/images
 @dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/installer/views
 @dirrm %%WWWDIR%%/installer

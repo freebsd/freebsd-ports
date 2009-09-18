@@ -8,8 +8,8 @@
 PORTNAME=	gallery3
 PORTVERSION=	3.0
 CATEGORIES=	www
-MASTER_SITES=	SF/gallery/${PORTNAME}/${PORTVERSION}-beta-1
-DISTNAME=	gallery-${PORTVERSION}-beta-1
+MASTER_SITES=	SF/gallery/${PORTNAME}/${PORTVERSION}-beta-3
+DISTNAME=	gallery-${PORTVERSION}-beta-3
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	Web based photo album organizer written in PHP
