@@ -6,7 +6,6 @@ bin/cfdg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ciliasun.cfdg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo1.cfdg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo2.cfdg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dong.cfdg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/funky_flower.cfdg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/i_curves.cfdg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/i_pix.cfdg
