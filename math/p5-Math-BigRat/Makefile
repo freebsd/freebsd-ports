@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	Math-BigRat
-PORTVERSION=	0.22
+PORTVERSION=	0.24
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Arbitrary big rational numbers
 
-BUILD_DEPENDS=	p5-Math-BigInt>=1.79:${PORTSDIR}/math/p5-Math-BigInt
+BUILD_DEPENDS=	p5-Math-BigInt>=1.88:${PORTSDIR}/math/p5-Math-BigInt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
