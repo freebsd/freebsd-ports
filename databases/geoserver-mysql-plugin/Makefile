@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geoserver
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.6
 CATEGORIES=	databases geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer%20Extensions/${PORTVERSION}
 PKGNAMESUFFIX=	-mysql-plugin
@@ -22,7 +22,7 @@ NO_BUILD=	yes
 
 GSLIBDIR=	geoserver/webapps/geoserver/WEB-INF/lib
 SUB_FILES=	pkg-message
-PLIST_FILES=	${GSLIBDIR}/gt-mysql-2.5.5.jar \
+PLIST_FILES=	${GSLIBDIR}/gt-mysql-2.5-SNAPSHOT.jar \
 		${GSLIBDIR}/mysql-connector-java-5.1.5.jar
 
 do-install:
