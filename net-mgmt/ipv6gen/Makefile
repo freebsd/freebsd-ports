@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ipv6gen
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://techie.devnull.cz/ipv6/ipv6gen/dist/
 EXTRACT_SUFX=	.tgz
@@ -15,12 +14,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	vlada@devnull.cz
 COMMENT=	IPv6 prefix generator
 
-MAN1=ipv6gen.1
+MAN1=	${PORTNAME}.1
 
 NO_BUILD=
 USE_PERL5_RUN=	yes
-PLIST_FILES=	bin/ipv6gen bin/check-overlap
-WRKSRC=		${WRKDIR}/ipv6gen
+PLIST_FILES=	bin/${PORTNAME} bin/check-overlap
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 0755 \
