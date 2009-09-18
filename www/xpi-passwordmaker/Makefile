@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	passwordmaker
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 DISTVERSIONSUFFIX=	-fx+mz+sm
 CATEGORIES=	www
 
