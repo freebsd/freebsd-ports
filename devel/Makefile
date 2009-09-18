@@ -2068,6 +2068,7 @@
     SUBDIR += p5-UNIVERSAL-moniker
     SUBDIR += p5-UNIVERSAL-require
     SUBDIR += p5-UNIVERSAL-which
+    SUBDIR += p5-UUID-Tiny
     SUBDIR += p5-Unix-Statgrab
     SUBDIR += p5-Unix-Uptime
     SUBDIR += p5-User-Identity
