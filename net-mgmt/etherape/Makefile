@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	etherape
-PORTVERSION=	0.9.6
-PORTREVISION=	5
+PORTVERSION=	0.9.7
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A graphical network traffic visualization tool for gnome
 
 USE_GETTEXT=	yes
