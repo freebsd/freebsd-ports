@@ -4,3 +4,6 @@ SIZE (openssh-5.2p1.tar.gz) = 1016612
 MD5 (openssh-5.2p1+x509-6.2.diff.gz) = 8dbbfb743226864f6bb49b56e77776d9
 SHA256 (openssh-5.2p1+x509-6.2.diff.gz) = 72cfb1e232b6ae0a9df6e8539a9f6b53db7c0a2141cf2e4dd65b407748fa9f34
 SIZE (openssh-5.2p1+x509-6.2.diff.gz) = 153010
+MD5 (openssh-5.2p1-gsskex-all-20090726.patch) = e5c116b4bc3f4b816206e8403dd08af7
+SHA256 (openssh-5.2p1-gsskex-all-20090726.patch) = 6eb297d6fa74be3323c5e4f53df5b6e1f4edf6bf394e3e707c075846886e18e7
+SIZE (openssh-5.2p1-gsskex-all-20090726.patch) = 90959
