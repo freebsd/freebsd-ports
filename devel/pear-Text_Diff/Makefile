@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text_Diff
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	devel pear
 
 MAINTAINER=	joseph@randomnetworks.com
@@ -25,7 +25,7 @@ TESTS=		1.txt 2.txt 3.txt 4.txt 5.txt 6.txt context.patch context.phpt \
 		context2.phpt diff.phpt inline.phpt inline2.phpt \
 		pear_bug12740.phpt pear_bug4879.phpt pear_bug6251.phpt \
 		pear_bug6428.phpt string.phpt unified.patch unified.phpt \
-		unified2.phpt
+		unified2.phpt xdiff.phpt
 EXAMPLES=	1.txt \
 		2.txt \
 		diff.php
