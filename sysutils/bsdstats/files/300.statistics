@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.41 2008-08-19 10:25:06 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.42 2009-09-18 21:19:34 pav Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -21,8 +21,9 @@ fi
 
 oldmask=$(umask)
 umask 066
+timeout=10
 
-version="5.4"
+version="5.5"
 checkin_server=${monthly_statistics_checkin_server:-"rpt.bsdstats.org"}
 bsdstats_log=${monthly_statistics_logfile:-"/var/log/bsdstats"}
 id_token_file='/var/db/bsdstats'
@@ -61,10 +62,10 @@ do_fetch () {
     url="http://$checkin_server/scripts/$1"
     case $(uname) in
 	FreeBSD )	
-		/usr/bin/fetch -q -o - "$url"
+		/usr/bin/fetch -T "$timeout" -q -o - "$url"
 		;;
 	* )
-		/usr/bin/ftp -V -o - "$url"
+		/usr/bin/ftp -q "$timeout" -V -o - "$url"
 		;;
     esac
 }
