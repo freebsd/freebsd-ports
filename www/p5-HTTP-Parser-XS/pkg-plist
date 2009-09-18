@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/HTTP/Parser/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS/XS.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
