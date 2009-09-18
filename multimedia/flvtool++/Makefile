@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flvtool++
-PORTVERSION=	1.1.7
+PORTVERSION=	1.2.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://mirror.facebook.com/facebook/flvtool++/
+MASTER_SITES=	http://mirror.facebook.net/facebook/flvtool++/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Tool for hinting and manipulating the metadata of FLV files
