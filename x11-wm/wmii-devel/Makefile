@@ -26,7 +26,6 @@ USE_ICONV=	yes
 USE_XORG=	x11 xextproto xt xext xft
 
 MAKE_ARGS=	PREFIX="${PREFIX}" INCLUDE="${LOCALBASE}/include" \
-		INCX11="-I${LOCALBASE}/include" LIBX11="-L${LOCALBASE}/lib" \
 		CC="${CC} -c" LD="${CC}" LIBIXP="-lixp" STATIC="" \
 		LIBICONV="-liconv" MAN="${MANPREFIX}/man" \
 		VERS="3.6.${SNAPDATE}"
@@ -40,9 +39,6 @@ post-patch: .SILENT
 		${WRKSRC}/config.mk
 # Mute "hg: not found" messages
 	${REINPLACE_CMD} -e '/^VERS =/d' ${WRKSRC}/mk/wmii.mk
-# Allow it to find freetype2 headers
-	${ECHO_CMD} CFLAGS+= \$$$$\(pkg-config --cflags freetype2\) \
-		>> ${WRKSRC}/cmd/Makefile
 # Make actual compile/link commands appear in the build log; do not try to
 # regenerate manpages
 	${REINPLACE_CMD} -E -e 's|^COMPILE=|& noisycc=yes | ; \
