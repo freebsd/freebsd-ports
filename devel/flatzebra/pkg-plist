@@ -2,9 +2,7 @@ lib/libflatzebra-0.1.so.2
 lib/libflatzebra-0.1.so
 lib/libflatzebra-0.1.la
 lib/libflatzebra-0.1.a
-
 libdata/pkgconfig/flatzebra-0.1.pc
-
 include/flatzebra/Couple.h
 include/flatzebra/RCouple.h
 include/flatzebra/GameEngine.h
@@ -14,13 +12,4 @@ include/flatzebra/Sprite.h
 include/flatzebra/RSprite.h
 include/flatzebra/SoundMixer.h
 include/flatzebra/KeyState.h
-
-share/doc/flatzebra-0.1.1/AUTHORS
-share/doc/flatzebra-0.1.1/COPYING
-share/doc/flatzebra-0.1.1/INSTALL
-share/doc/flatzebra-0.1.1/NEWS
-share/doc/flatzebra-0.1.1/README
-share/doc/flatzebra-0.1.1/TODO
-
-@dirrm share/doc/flatzebra-0.1.1/
 @dirrm include/flatzebra

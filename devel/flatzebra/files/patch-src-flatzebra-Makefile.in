@@ -1,0 +1,11 @@
+--- src/flatzebra/Makefile.in.orig	2009-08-21 08:57:35.167862535 +0000
++++ src/flatzebra/Makefile.in	2009-08-21 08:58:09.594287891 +0000
+@@ -96,7 +96,7 @@
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+-pkgincludedir = $(includedir)/$(PACKAGE)-$(API)/$(PACKAGE)
++pkgincludedir = $(includedir)/$(PACKAGE)
+ ACLOCAL = @ACLOCAL@
+ AMTAR = @AMTAR@
+ API = @API@

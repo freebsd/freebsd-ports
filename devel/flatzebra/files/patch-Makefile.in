@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sun May  2 15:02:56 2004
-+++ Makefile.in	Tue Oct 18 12:55:50 2005
-@@ -152,7 +152,7 @@
- 
+--- Makefile.in.orig	2009-08-21 08:55:05.575153056 +0000
++++ Makefile.in	2009-08-21 08:56:07.604907117 +0000
+@@ -204,7 +204,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  SUBDIRS = src
- 
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = $(PACKAGE)-$(API).pc
- 
- docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
+ doc_DATA = \
+ 	AUTHORS \
