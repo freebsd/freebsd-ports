@@ -22,7 +22,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sahil@tandon.net
 COMMENT=	A secure alternative to widely-used Sendmail
 
-VDAVERSION=	2.6.2
+VDAVERSION=	2.6.5
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
@@ -55,7 +55,7 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	${STATUS_OpenLDAP} \
 		CDB		"CDB maps lookups"					${STATUS_CDB} \
 		NIS		"NIS maps lookups"					${STATUS_NIS} \
-		VDA		"VDA (Virtual Delivery Agent 32Bit)"				${STATUS_VDA} \
+		VDA		"VDA (Virtual Delivery Agent 32Bit)"			${STATUS_VDA} \
 		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test}
 
 .include <bsd.port.options.mk>
