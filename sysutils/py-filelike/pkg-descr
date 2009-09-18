@@ -1,0 +1,8 @@
+filelike is a Python module for building and manipulating file-like
+objects.
+This module takes care of the groundwork for implementing and manipulating
+objects that provide a rich file-like interface, including reading,
+writing, seeking and iteration. It also provides a number of useful
+classes built on top of this functionality.
+
+WWW:	http://www.rfk.id.au/software/filelike/

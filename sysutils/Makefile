@@ -622,6 +622,7 @@
     SUBDIR += pwgen2
     SUBDIR += pwsafe
     SUBDIR += py-bcfg2
+    SUBDIR += py-filelike
     SUBDIR += py-zdaemon
     SUBDIR += pydf
     SUBDIR += pyrenamer
