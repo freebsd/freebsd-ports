@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	rbtools
+PORTNAME=	${ORIGNAME:L}
 DISTVERSION=	0.2beta1
 CATEGORIES=	devel
-MASTER_SITES=	http://downloads.review-board.org/releases/
-DISTNAME=	RBTools-${DISTVERSION}
+MASTER_SITES=	http://downloads.review-board.org/releases/${ORIGNAME}/${DISTVERSION:C/[a-z].*//}/
+DISTNAME=	${ORIGNAME}-${DISTVERSION}
+ORIGNAME=	RBTools
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	ReviewBoard Toolset
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=1.4:${PORTSDIR}/devel/py-simpl
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	RBTools
+PYDISTUTILS_PKGNAME=	${ORIGNAME}
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
 .include <bsd.port.mk>
