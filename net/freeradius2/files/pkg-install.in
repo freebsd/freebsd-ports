@@ -104,7 +104,7 @@ case $2 in
         # Fix the user and group in raddb/radiusd.conf
 	echo "===> Setting user and group in radiusd.conf"
 	for file in ${radius_raddb_work}/radiusd.conf ${radius_raddb}/radiusd.conf; do
-	    if [ -f ${file} ]; then
+	    if [ -w ${file} ]; then
 		if ! sed -Ee "s/^[[:space:]#]*(user[[:space:]]*=[[:space:]]*).*$/\1${radius_user}/" \
 		    -e "s/^[[:space:]#]*(group[[:space:]]*=[[:space:]]*).*$/\1${radius_group}/" \
 		    -i .orig ${file}; then
