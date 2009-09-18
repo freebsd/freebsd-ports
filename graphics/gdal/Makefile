@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--with-expat=no
 .endif
 
 .if defined(WITH_GEOS)
-LIB_DEPENDS+=		geos.7:${PORTSDIR}/graphics/geos
+LIB_DEPENDS+=		geos.0:${PORTSDIR}/graphics/geos
 CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
 .else
 CONFIGURE_ARGS+=	--with-geos=no
