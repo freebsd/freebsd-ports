@@ -3,6 +3,12 @@ To use clojure-mode in Emacs, add the following lines to your ~/.emacs:
   (autoload 'clojure-mode "clojure-mode" "A mode for clojure lisp" t)
   (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 
+And for clojure-test-mode:
+
+  (autoload 'clojure-test-mode "clojure-test-mode" "Clojure test mode" t)
+  (autoload 'clojure-test-maybe-enable "clojure-test-mode" "" t)
+  (add-hook 'clojure-mode-hook 'clojure-test-maybe-enable)
+
 In addition, if you are also using paredit, you may wish to make it
 more clojure aware:
 
