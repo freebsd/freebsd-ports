@@ -1,5 +1,5 @@
---- Makefile.orig	2008-11-29 08:58:29.000000000 -0800
-+++ Makefile	2009-02-05 17:05:39.000000000 -0800
+--- Makefile.orig	2009-06-11 15:20:31.000000000 -0700
++++ Makefile	2009-09-18 02:47:39.000000000 -0700
 @@ -95,7 +95,7 @@
  OVERWRITE=y
  
@@ -39,7 +39,12 @@
    ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
    AST_LIBS+=$(shell if test  $(BSDVERSION) -lt 502102 ; then echo "-lc_r"; else echo "-pthread"; fi)
  endif
-@@ -408,15 +410,15 @@
+@@ -404,19 +406,19 @@
+ 	rm -f build_tools/menuselect-deps
+ 
+ datafiles: _all
+-	if [ x`$(ID) -un` = xroot ]; then CFLAGS="$(ASTCFLAGS)" bash build_tools/mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
++	#if [ x`$(ID) -un` = xroot ]; then CFLAGS="$(ASTCFLAGS)" bash build_tools/mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
  # Should static HTTP be installed during make samples or even with its own target ala
  # webvoicemail?  There are portions here that *could* be customized but might also be
  # improved a lot.  I'll put it here for now.
