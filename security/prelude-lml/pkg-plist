@@ -23,12 +23,10 @@ etc/prelude-lml/ruleset/clamav.rules
 etc/prelude-lml/ruleset/dell-om.rules
 etc/prelude-lml/ruleset/f5-bigip.rules
 etc/prelude-lml/ruleset/grsecurity.rules
-etc/prelude-lml/ruleset/exim.rules
 etc/prelude-lml/ruleset/honeyd.rules
 etc/prelude-lml/ruleset/honeytrap.rules
 etc/prelude-lml/ruleset/httpd.rules
 etc/prelude-lml/ruleset/ipchains.rules
-etc/prelude-lml/ruleset/ipso.rules
 etc/prelude-lml/ruleset/ipfw.rules
 etc/prelude-lml/ruleset/kojoney.rules
 etc/prelude-lml/ruleset/linksys-wap11.rules
@@ -47,6 +45,7 @@ etc/prelude-lml/ruleset/pcanywhere.rules
 etc/prelude-lml/ruleset/pcre.rules
 etc/prelude-lml/ruleset/portsentry.rules
 etc/prelude-lml/ruleset/postfix.rules
+etc/prelude-lml/ruleset/ppp.rules
 etc/prelude-lml/ruleset/proftpd.rules
 etc/prelude-lml/ruleset/qpopper.rules
 etc/prelude-lml/ruleset/rishi.rules
@@ -66,8 +65,6 @@ etc/prelude-lml/ruleset/vigor.rules
 etc/prelude-lml/ruleset/vpopmail.rules
 etc/prelude-lml/ruleset/webmin.rules
 etc/prelude-lml/ruleset/wu-ftp.rules
-etc/prelude-lml/ruleset/zywall.rules
-etc/prelude-lml/ruleset/zyxel.rules
 include/prelude-lml/prelude-lml.h
 lib/prelude-lml/debug.la
 lib/prelude-lml/debug.so
