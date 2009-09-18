@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cosmosmash
-DISTVERSION=	1.4.2
-PORTREVISION=	2
+DISTVERSION=	1.4.3
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
