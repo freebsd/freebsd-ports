@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sox
-PORTVERSION=	14.2.0
-PORTREVISION=	2
+PORTVERSION=	14.3.0
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -25,6 +24,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
 USE_GNOME=	pkgconfig
 
+# Default LAME to off for packages so we don't end up RESTRICTED
 .if defined(PACKAGE_BUILDING)
 _LAME=	off
 .else
@@ -37,11 +37,11 @@ OPTIONS=	AO "Enable libao output" on \
 		FFMPEG "Enable ffmpeg en/decoding" on \
 		FLAC "Enable flac en/decoding with libflac" on \
 		GSM "Use libgsm from ports (else use bundled lib)" on \
+		ID3TAG "Enable mp3 tagging with libid3tag" on \
 		LADSPA "Audio plugin support" off \
 		LAME "Enable mp3 encoding with LAME" ${_LAME} \
 		MAD "Enable mp3 decoding with MAD" on \
 		PNG "Enable PNG spectrogram creation" on \
-		SAMPLERATE "Enable libsamplerate" on \
 		SNDFILE "Enable libsndfile" on \
 		VORBIS "Enable Ogg Vorbis support" on \
 		WAVPACK "Enable Wavpack support" off
@@ -52,65 +52,48 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
-
-.if !defined(WITH_LAME) && !defined(WITH_MAD)
-PLIST_SUB+=	PLIST_MP3="@comment "
-.else
-PLIST_SUB+=	PLIST_MP3=""
-.endif
+CONFIGURE_ARGS+=	--with-distro="${CONFIGURE_TARGET} ${PKGNAME}"
 
 .if defined(WITH_AO)
-CONFIGURE_ARGS+=	--enable-libao
+CONFIGURE_ARGS+=	--with-ao
 LIB_DEPENDS+=		ao.3:${PORTSDIR}/audio/libao
-PLIST_SUB+=		PLIST_AO=""
 .else
-CONFIGURE_ARGS+=	--disable-libao
-PLIST_SUB+=		PLIST_AO="@comment "
+CONFIGURE_ARGS+=	--without-ao
 .endif
 
 .if defined(WITH_AMRNB)
-CONFIGURE_ARGS+=	--with-amr-nb
+CONFIGURE_ARGS+=	--with-amrnb
 LIB_DEPENDS+=		amrnb.3:${PORTSDIR}/audio/libamrnb
-PLIST_SUB+=		PLIST_AMRNB=""
 .else
-CONFIGURE_ARGS+=	--without-amr-nb
-PLIST_SUB+=		PLIST_AMRNB="@comment "
+CONFIGURE_ARGS+=	--without-amrnb
 .endif
 
 .if defined(WITH_AMRWB)
-CONFIGURE_ARGS+=	--with-amr-wb
+CONFIGURE_ARGS+=	--with-amrwb
 LIB_DEPENDS+=		amrwb.3:${PORTSDIR}/audio/libamrwb
-PLIST_SUB+=		PLIST_AMRWB=""
 .else
-CONFIGURE_ARGS+=	--without-amr-wb
-PLIST_SUB+=		PLIST_AMRWB="@comment "
+CONFIGURE_ARGS+=	--without-amrwb
 .endif
 
 .if defined(WITH_FFMPEG)
 CONFIGURE_ARGS+=	--with-ffmpeg
 LIB_DEPENDS+=		avformat:${PORTSDIR}/multimedia/ffmpeg
-PLIST_SUB+=		PLIST_FFMPEG=""
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
-PLIST_SUB+=		PLIST_FFMPEG="@comment "
 .endif
 
 .if defined(WITH_VORBIS)
-CONFIGURE_ARGS+=	--with-ogg
+CONFIGURE_ARGS+=	--with-oggvorbis
 LIB_DEPENDS+=		vorbis.4:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=		PLIST_VORBIS=""
 .else
-CONFIGURE_ARGS+=	--without-ogg
-PLIST_SUB+=		PLIST_VORBIS="@comment "
+CONFIGURE_ARGS+=	--without-oggvorbis
 .endif
 
 .if defined(WITH_SNDFILE)
 CONFIGURE_ARGS+=	--with-sndfile
 LIB_DEPENDS+=		sndfile.1:${PORTSDIR}/audio/libsndfile
-PLIST_SUB+=		PLIST_SNDFILE=""
 .else
 CONFIGURE_ARGS+=	--without-sndfile
-PLIST_SUB+=		PLIST_SNDFILE="@comment "
 .endif
 
 .if defined(WITH_LADSPA)
@@ -131,10 +114,8 @@ CONFIGURE_ARGS+=	--without-lame
 .if defined(WITH_FLAC)
 CONFIGURE_ARGS+=	--with-flac
 LIB_DEPENDS+=		FLAC.10:${PORTSDIR}/audio/flac
-PLIST_SUB+=		PLIST_FLAC=""
 .else
 CONFIGURE_ARGS+=	--without-flac
-PLIST_SUB+=		PLIST_FLAC="@comment "
 .endif
 
 .if defined(WITH_MAD)
@@ -152,30 +133,27 @@ CONFIGURE_ARGS+=	--without-png
 .endif
 
 .if defined(WITH_GSM)
-CONFIGURE_ARGS+=	--with-external-gsm
+CONFIGURE_ARGS+=	--with-gsm
 LIB_DEPENDS+=		gsm.1:${PORTSDIR}/audio/gsm
-PLIST_SUB+=		PLIST_GSM=""
 .else
-CONFIGURE_ARGS+=	--without-external-gsm
-# Above configure flag does not exist, so workaround with the below line
+CONFIGURE_ARGS+=	--with-gsm
+# We cannot ask for gsm to be enabled without it trying to use external gsm,
+# so workaround with the below line
 CONFIGURE_ENV+=		ac_cv_header_gsm_h=no
-PLIST_SUB+=		PLIST_GSM="@comment "
 .endif
 
-.if defined(WITH_SAMPLERATE)
-CONFIGURE_ARGS+=	--with-samplerate
-LIB_DEPENDS+=		samplerate.1:${PORTSDIR}/audio/libsamplerate
+.if defined(WITH_ID3TAG)
+CONFIGURE_ARGS+=	--with-id3tag
+LIB_DEPENDS+=		id3tag.0:${PORTSDIR}/audio/libid3tag
 .else
-CONFIGURE_ARGS+=	--without-samplerate
+CONFIGURE_ARGS+=	--without-id3tag
 .endif
 
 .if defined(WITH_WAVPACK)
 CONFIGURE_ARGS+=	--with-wavpack
 LIB_DEPENDS+=		wavpack.1:${PORTSDIR}/audio/wavpack
-PLIST_SUB+=		PLIST_WAVPACK=""
 .else
 CONFIGURE_ARGS+=	--without-wavpack
-PLIST_SUB+=		PLIST_WAVPACK="@comment "
 .endif
 
 # Tell configure that libgsm's headers are in $LOCALDIR/include
