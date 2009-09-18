@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cfdg
-PORTVERSION=	2.1
+PORTVERSION=	2.2.1
 CATEGORIES=	graphics math
-MASTER_SITES=	http://www.contextfreeart.org/download/
+MASTER_SITES=	http://www.contextfreeart.org/download/ \
+		http://glyphic.s3.amazonaws.com/cfa/download/
 DISTNAME=	ContextFreeSource${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 

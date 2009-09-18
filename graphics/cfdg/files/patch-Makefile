@@ -1,6 +1,6 @@
---- Makefile.orig	2007-04-29 08:51:20.000000000 +0300
-+++ Makefile	2008-03-14 21:17:24.000000000 +0200
-@@ -52,7 +52,7 @@
+--- Makefile.orig
++++ Makefile
+@@ -54,7 +54,7 @@ $(OBJS): $(OBJ_DIR)/Sentry
  # Under Cygwin replace strip $@ with strip $@.exe
  
  cfdg: $(OBJS)
@@ -9,12 +9,12 @@
  	strip $@
  
  
-@@ -103,7 +103,7 @@
+@@ -105,7 +105,7 @@ $(OUTPUT_DIR)/rtest-2k.png: cfdg $(RTEST_CFDG)
  #
  
  CPPFLAGS += $(patsubst %,-I%,$(INC_DIRS))
--CPPFLAGS += -O3
-+CPPFLAGS += `libpng-config --cflags`
+-CPPFLAGS += -O3 -Wall
++CPPFLAGS += -Wall `libpng-config --cflags`
  #CPPFLAGS += -ggdb
  
  $(OBJ_DIR)/%.o : %.cpp
