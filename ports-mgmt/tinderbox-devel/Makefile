@@ -100,7 +100,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
 		${WRKSRC}/tc
 .endif
-	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} {} \;
+	@cd ${WRKSRC} && ${FIND} -E . -regex '.*(orig|bak)' -exec ${RM} {} \;
 
 do-install:
 	@${MKDIR} ${PREFIX}/tinderbox/scripts
