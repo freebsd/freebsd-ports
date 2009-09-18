@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	flatzebra
-PORTVERSION=	0.1.1
-PORTREVISION=	5
+PORTVERSION=	0.1.3
 CATEGORIES=	devel games
-MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	A generic game engine for 2D double-buffering animation
@@ -24,6 +23,11 @@ USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	AUTHORS COPYING INSTALL NEWS README TODO
+PORTDOCS=	AUTHORS COPYING INSTALL NEWS README TODO THANKS
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} 's|^install-data-am: .*|install-data-am: install-pkgconfigDATA|' ${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
