@@ -110,6 +110,7 @@ httptunnel:*:361:
 ldap:*:389:
 tiarra:*:398:
 drweb:*:426:
+callweaver:*:444:
 courier:*:465:
 _bbstored:*:505:
 nullmail:*:522:
