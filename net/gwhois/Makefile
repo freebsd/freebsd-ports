@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gwhois
-PORTVERSION=	20081227
+PORTVERSION=	20090717
 CATEGORIES=	net
 MASTER_SITES=	http://gwhois.de/gwhois/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Flexible whois client and proxy
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
