@@ -371,6 +371,7 @@
 %%WWWDIR%%/config/initializers/20-mime_types.rb
 %%WWWDIR%%/config/initializers/30-redmine.rb
 %%WWWDIR%%/config/initializers/40-email.rb
+%%WWWDIR%%/config/initializers/bigdecimal-segfault-fix.rb
 %%WWWDIR%%/config/routes.rb
 %%WWWDIR%%/config/settings.yml
 %%WWWDIR%%/db/migrate/001_setup.rb
@@ -562,6 +563,7 @@
 %%WWWDIR%%/lib/generators/redmine_plugin_model/templates/unit_test.rb.erb
 %%WWWDIR%%/lib/redcloth3.rb
 %%WWWDIR%%/lib/redmine.rb
+%%WWWDIR%%/lib/redmine/about.rb
 %%WWWDIR%%/lib/redmine/access_control.rb
 %%WWWDIR%%/lib/redmine/access_keys.rb
 %%WWWDIR%%/lib/redmine/activity.rb
@@ -867,6 +869,7 @@
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_attributes.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_cc.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_custom_fields.eml
+%%WWWDIR%%/test/fixtures/mail_handler/ticket_with_spaces_between_attribute_and_separator.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_without_from_header.eml
 %%WWWDIR%%/test/fixtures/members.yml
 %%WWWDIR%%/test/fixtures/messages.yml
@@ -1275,6 +1278,8 @@
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testldif.rb
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testpsw.rb
 %%WWWDIR%%/vendor/rails/.gitignore
+%%WWWDIR%%/vendor/rails/2-1-CVE-2009-3009-diff1.patch
+%%WWWDIR%%/vendor/rails/2-1-CVE-2009-3009-diff2.patch
 %%WWWDIR%%/vendor/rails/actionmailer/CHANGELOG
 %%WWWDIR%%/vendor/rails/actionmailer/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/actionmailer/README
@@ -2212,6 +2217,7 @@
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/multibyte/handlers/passthru_handler.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/multibyte/handlers/utf8_handler.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/multibyte/handlers/utf8_handler_proc.rb
+%%WWWDIR%%/vendor/rails/activesupport/lib/active_support/multibyte/utils.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/option_merger.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/ordered_hash.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/ordered_options.rb
@@ -2454,6 +2460,7 @@
 %%WWWDIR%%/vendor/rails/activesupport/test/multibyte_chars_test.rb
 %%WWWDIR%%/vendor/rails/activesupport/test/multibyte_conformance.rb
 %%WWWDIR%%/vendor/rails/activesupport/test/multibyte_handler_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_utils_test.rb
 %%WWWDIR%%/vendor/rails/activesupport/test/option_merger_test.rb
 %%WWWDIR%%/vendor/rails/activesupport/test/ordered_hash_test.rb
 %%WWWDIR%%/vendor/rails/activesupport/test/ordered_options_test.rb
@@ -3126,7 +3133,7 @@
 @dirrm %%WWWDIR%%/public/themes/alternate
 @dirrmtry %%WWWDIR%%/public/themes
 @dirrm %%WWWDIR%%/public/stylesheets
-@dirrm %%WWWDIR%%/public/plugin_assets
+@dirrmtry %%WWWDIR%%/public/plugin_assets
 @dirrm %%WWWDIR%%/public/javascripts/jstoolbar/lang
 @dirrm %%WWWDIR%%/public/javascripts/jstoolbar
 @dirrm %%WWWDIR%%/public/javascripts/calendar/lang
