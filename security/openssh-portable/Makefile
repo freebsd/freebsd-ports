@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	5.2p1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 .if defined(OPENSSH_SNAPSHOT)
@@ -57,6 +57,7 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 		LIBEDIT		"Enable readline support to sftp(1)"		on \
 		KERBEROS	"Enable kerberos (autodetection)"		on \
 		SUID_SSH	"Enable suid SSH (Recommended off)"		off \
+		BSM		"Enable OpenBSM Auditing"			off \
 		GSSAPI		"Enable GSSAPI support (req: KERBEROS)"		off \
 		KERB_GSSAPI	"Enable Kerberos/GSSAPI patch (req: GSSAPI)"	off \
 		OPENSSH_CHROOT	"Enable CHROOT support"				off \
@@ -68,10 +69,6 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 		OVERWRITE_BASE	"OpenSSH overwrite base"			off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800037
-BROKEN=		does not compile
-.endif
 
 .if defined(WITH_X509) && ( defined(WITH_HPN) || defined(WITH_LPK))
 BROKEN=		X509 patch incompatible with HPN and LPK patches
@@ -97,18 +94,26 @@ CONFIGURE_ARGS+=	--with-libedit
 CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
+.if defined(WITH_BSM)
+CONFIGURE_ARGS+=	--with-audit=bsm
+.endif
+
 .if !defined(WITHOUT_KERBEROS)
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
 .if defined(WITH_KERB_GSSAPI)
-BROKEN=			KERB_GSSAPI patch incompatible with ${PORTNAME}-5.2p1
 PATCH_DIST_STRIP=	-p0
 PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
-PATCHFILES+=		openssh-5.0p1-gsskex-20080404.patch
+PATCHFILES+=		openssh-5.2p1-gsskex-all-20090726.patch
 .endif
 PORTABLE_SUFFIX=	# empty
 GSSAPI_SUFFIX=		-gssapi
 CONFLICTS+=		openssh-portable-*-[0-9]*
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
+.if defined(HEIMDAL_HOME) && defined(KRB5_HOME) && ${HEIMDAL_HOME} == ${LOCALBASE}
+LIB_DEPENDS+=		krb5.23:${PORTSDIR}/security/heimdal
+.elif defined(KRB5_HOME) && defined(LOCALBASE) && ${KRB5_HOME} == ${LOCALBASE}
+LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
+.endif
 .if ${OPENSSLBASE} == "/usr"
 CONFIGURE_ARGS+=	--without-rpath
 LDFLAGS=		# empty
@@ -157,7 +162,7 @@ CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L${LOCALBASE}/lib' \
 # resolve some patches incompatibility between LPK and HPN patches
 
 .if defined(WITH_HPN) && defined(WITH_LPK)
-EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk+hpn-servconf.patch
+EXTRA_PATCHES+=		${FILESDIR}/lpk+hpn-servconf.c.patch
 .elif defined(WITH_HPN) && !defined(WITH_LPK)
 EXTRA_PATCHES+=		${FILESDIR}/openssh-5.2p1-hpn13v6-servconf.c.diff
 .elif defined(WITH_LPK) && !defined(WITH_HPN)
@@ -182,8 +187,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var
 EMPTYDIR=		/var/empty
 PREFIX=			/usr
 ETCSSH=			/etc/ssh
-USE_RC_SUBR=		yes
-SUB_FILES+=		openssh
+USE_RC_SUBR=		openssh
 PLIST_SUB+=		NOTBASE="@comment "
 PLIST_SUB+=		BASE=""
 PLIST_SUB+=		BASEPREFIX="${PREFIX}"
