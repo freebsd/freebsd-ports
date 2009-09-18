@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.9.21.2
+PORTVERSION=	0.9.24.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
@@ -13,8 +13,6 @@ MAINTAINER=	r.gruyters@snow.nl
 COMMENT=	Framework library for Prelude NIDS
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
-
-BROKEN=		does not configure
 
 OPTIONS=	PERL "Include Perl bindings" off \
 		PYTHON "Include Python bindings" off
@@ -29,7 +27,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 MAN1=		prelude-admin.1
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_PERL)
 USE_PERL5=		yes
@@ -42,8 +40,7 @@ PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=     yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
+USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
 .else
@@ -51,9 +48,14 @@ CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -69,7 +71,7 @@ post-install:
 	                ${PREFIX}/etc/prelude/default/tls.conf-dist
 	@${INSTALL_DATA} ${WRKSRC}/idmef-client.conf \
 	                ${PREFIX}/etc/prelude/default/idmef-client.conf-dist
-					
+
 	@if [ ! -f ${PREFIX}/etc/prelude/default/client.conf ]; then \
 	   ${CP} -p ${PREFIX}/etc/prelude/default/client.conf-dist \
 	      ${PREFIX}/etc/prelude/default/client.conf ; \
