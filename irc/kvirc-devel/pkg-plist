@@ -1,8 +1,5 @@
 bin/kvirc
 bin/kvirc-config
-lib/libkvilib.so
-lib/libkvilib.so.4
-lib/libkvilib.so.4.0.0
 lib/kvirc/4.0/modules/libkviabout.so
 lib/kvirc/4.0/modules/libkviaction.so
 lib/kvirc/4.0/modules/libkviactioneditor.so
@@ -38,6 +35,7 @@ lib/kvirc/4.0/modules/libkvimy.so
 lib/kvirc/4.0/modules/libkvinotifier.so
 lib/kvirc/4.0/modules/libkviobjects.so
 lib/kvirc/4.0/modules/libkvioptions.so
+lib/kvirc/4.0/modules/libkviperl.so
 lib/kvirc/4.0/modules/libkviperlcore.so
 lib/kvirc/4.0/modules/libkvipopupeditor.so
 lib/kvirc/4.0/modules/libkviproxydb.so
@@ -56,8 +54,8 @@ lib/kvirc/4.0/modules/libkvisocketspy.so
 lib/kvirc/4.0/modules/libkvispaste.so
 lib/kvirc/4.0/modules/libkvistr.so
 lib/kvirc/4.0/modules/libkvisystem.so
-lib/kvirc/4.0/modules/libkvitexticons.so
 lib/kvirc/4.0/modules/libkviterm.so
+lib/kvirc/4.0/modules/libkvitexticons.so
 lib/kvirc/4.0/modules/libkvitheme.so
 lib/kvirc/4.0/modules/libkvitip.so
 lib/kvirc/4.0/modules/libkvitmphighlight.so
@@ -68,38 +66,40 @@ lib/kvirc/4.0/modules/libkvitrayicon.so
 lib/kvirc/4.0/modules/libkviupnp.so
 lib/kvirc/4.0/modules/libkviurl.so
 lib/kvirc/4.0/modules/libkviwindow.so
-lib/kvirc/4.0/modules/libkviperl.so
+lib/libkvilib.so
+lib/libkvilib.so.4
+lib/libkvilib.so.4.0.0
 share/applications/kvirc.desktop
 share/icons/hicolor/128x128/apps/kvirc.png
-share/icons/hicolor/128x128/mimetypes/text-x-kvs.png
-share/icons/hicolor/128x128/mimetypes/text-x-kvc.png
-share/icons/hicolor/128x128/mimetypes/application-x-kvt.png
 share/icons/hicolor/128x128/mimetypes/application-x-kva.png
+share/icons/hicolor/128x128/mimetypes/application-x-kvt.png
+share/icons/hicolor/128x128/mimetypes/text-x-kvc.png
+share/icons/hicolor/128x128/mimetypes/text-x-kvs.png
 share/icons/hicolor/16x16/apps/kvirc.png
-share/icons/hicolor/16x16/mimetypes/text-x-kvs.png
-share/icons/hicolor/16x16/mimetypes/text-x-kvc.png
-share/icons/hicolor/16x16/mimetypes/application-x-kvt.png
 share/icons/hicolor/16x16/mimetypes/application-x-kva.png
+share/icons/hicolor/16x16/mimetypes/application-x-kvt.png
+share/icons/hicolor/16x16/mimetypes/text-x-kvc.png
+share/icons/hicolor/16x16/mimetypes/text-x-kvs.png
 share/icons/hicolor/32x32/apps/kvirc.png
-share/icons/hicolor/32x32/mimetypes/text-x-kvs.png
-share/icons/hicolor/32x32/mimetypes/text-x-kvc.png
-share/icons/hicolor/32x32/mimetypes/application-x-kvt.png
 share/icons/hicolor/32x32/mimetypes/application-x-kva.png
+share/icons/hicolor/32x32/mimetypes/application-x-kvt.png
+share/icons/hicolor/32x32/mimetypes/text-x-kvc.png
+share/icons/hicolor/32x32/mimetypes/text-x-kvs.png
 share/icons/hicolor/48x48/apps/kvirc.png
-share/icons/hicolor/48x48/mimetypes/text-x-kvs.png
-share/icons/hicolor/48x48/mimetypes/text-x-kvc.png
-share/icons/hicolor/48x48/mimetypes/application-x-kvt.png
 share/icons/hicolor/48x48/mimetypes/application-x-kva.png
+share/icons/hicolor/48x48/mimetypes/application-x-kvt.png
+share/icons/hicolor/48x48/mimetypes/text-x-kvc.png
+share/icons/hicolor/48x48/mimetypes/text-x-kvs.png
 share/icons/hicolor/64x64/apps/kvirc.png
-share/icons/hicolor/64x64/mimetypes/text-x-kvs.png
-share/icons/hicolor/64x64/mimetypes/text-x-kvc.png
-share/icons/hicolor/64x64/mimetypes/application-x-kvt.png
 share/icons/hicolor/64x64/mimetypes/application-x-kva.png
+share/icons/hicolor/64x64/mimetypes/application-x-kvt.png
+share/icons/hicolor/64x64/mimetypes/text-x-kvc.png
+share/icons/hicolor/64x64/mimetypes/text-x-kvs.png
 share/icons/hicolor/scalable/apps/kvirc.svgz
-share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
-share/icons/hicolor/scalable/mimetypes/text-x-kvc.svgz
-share/icons/hicolor/scalable/mimetypes/application-x-kvt.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kva.svgz
+share/icons/hicolor/scalable/mimetypes/application-x-kvt.svgz
+share/icons/hicolor/scalable/mimetypes/text-x-kvc.svgz
+share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 share/kvirc/4.0/config/modules/libkvitip.kvc
 share/kvirc/4.0/config/modules/libkvitip_cs.kvc
 share/kvirc/4.0/config/modules/libkvitip_de.kvc
@@ -108,13 +108,13 @@ share/kvirc/4.0/config/modules/libkvitip_ru.kvc
 share/kvirc/4.0/config/serverdb.kvc
 share/kvirc/4.0/config/texticons.kvc
 share/kvirc/4.0/defscript/aliases.kvs
+share/kvirc/4.0/defscript/classes.kvs
 share/kvirc/4.0/defscript/default.kvs
 share/kvirc/4.0/defscript/events.kvs
 share/kvirc/4.0/defscript/installer.kvs
 share/kvirc/4.0/defscript/popups.kvs
 share/kvirc/4.0/defscript/theme-install.kvs
 share/kvirc/4.0/defscript/toolbars.kvs
-share/kvirc/4.0/defscript/classes.kvs
 share/kvirc/4.0/doc/FAQ
 share/kvirc/4.0/doc/INSTALL
 share/kvirc/4.0/doc/INSTALL-MacOS.txt
@@ -187,6 +187,7 @@ share/kvirc/4.0/help/en/class_button.html
 share/kvirc/4.0/help/en/class_buttongroup.html
 share/kvirc/4.0/help/en/class_checkbox.html
 share/kvirc/4.0/help/en/class_combobox.html
+share/kvirc/4.0/help/en/class_datetimeedit.html
 share/kvirc/4.0/help/en/class_dialog.html
 share/kvirc/4.0/help/en/class_dockwindow.html
 share/kvirc/4.0/help/en/class_file.html
@@ -199,7 +200,10 @@ share/kvirc/4.0/help/en/class_layout.html
 share/kvirc/4.0/help/en/class_lcdnumber.html
 share/kvirc/4.0/help/en/class_lineedit.html
 share/kvirc/4.0/help/en/class_list.html
+share/kvirc/4.0/help/en/class_listbox.html
+share/kvirc/4.0/help/en/class_listview.html
 share/kvirc/4.0/help/en/class_mainwindow.html
+share/kvirc/4.0/help/en/class_memorybuffer.html
 share/kvirc/4.0/help/en/class_menubar.html
 share/kvirc/4.0/help/en/class_multilineedit.html
 share/kvirc/4.0/help/en/class_object.html
@@ -212,6 +216,8 @@ share/kvirc/4.0/help/en/class_radiobutton.html
 share/kvirc/4.0/help/en/class_slider.html
 share/kvirc/4.0/help/en/class_socket.html
 share/kvirc/4.0/help/en/class_spinbox.html
+share/kvirc/4.0/help/en/class_sql.html
+share/kvirc/4.0/help/en/class_tablewidget.html
 share/kvirc/4.0/help/en/class_tabwidget.html
 share/kvirc/4.0/help/en/class_textbrowser.html
 share/kvirc/4.0/help/en/class_toolbar.html
@@ -475,6 +481,7 @@ share/kvirc/4.0/help/en/cmd_squit.html
 share/kvirc/4.0/help/en/cmd_srand.html
 share/kvirc/4.0/help/en/cmd_stats.html
 share/kvirc/4.0/help/en/cmd_switch.html
+share/kvirc/4.0/help/en/cmd_system.runcmd.html
 share/kvirc/4.0/help/en/cmd_system.setclipboard.html
 share/kvirc/4.0/help/en/cmd_system.setenv.html
 share/kvirc/4.0/help/en/cmd_system.setselection.html
@@ -487,6 +494,10 @@ share/kvirc/4.0/help/en/cmd_theme.screenshot.html
 share/kvirc/4.0/help/en/cmd_time.html
 share/kvirc/4.0/help/en/cmd_timer.html
 share/kvirc/4.0/help/en/cmd_tip.open.html
+share/kvirc/4.0/help/en/cmd_tmphighlight.addchannel.html
+share/kvirc/4.0/help/en/cmd_tmphighlight.addnick.html
+share/kvirc/4.0/help/en/cmd_tmphighlight.removechannel.html
+share/kvirc/4.0/help/en/cmd_tmphighlight.removenick.html
 share/kvirc/4.0/help/en/cmd_toolbar.additem.html
 share/kvirc/4.0/help/en/cmd_toolbar.clear.html
 share/kvirc/4.0/help/en/cmd_toolbar.create.html
@@ -881,6 +892,7 @@ share/kvirc/4.0/help/en/event_ondccsessiondestroyed.html
 share/kvirc/4.0/help/en/event_ondechanadmin.html
 share/kvirc/4.0/help/en/event_ondechanowner.html
 share/kvirc/4.0/help/en/event_ondehalfop.html
+share/kvirc/4.0/help/en/event_ondeircop.html
 share/kvirc/4.0/help/en/event_ondeop.html
 share/kvirc/4.0/help/en/event_ondeuserop.html
 share/kvirc/4.0/help/en/event_ondevoice.html
@@ -902,6 +914,7 @@ share/kvirc/4.0/help/en/event_onircconnectionestablished.html
 share/kvirc/4.0/help/en/event_onircconnectionterminated.html
 share/kvirc/4.0/help/en/event_onirccontextcreated.html
 share/kvirc/4.0/help/en/event_onirccontextdestroyed.html
+share/kvirc/4.0/help/en/event_onircop.html
 share/kvirc/4.0/help/en/event_onjoin.html
 share/kvirc/4.0/help/en/event_onkeyset.html
 share/kvirc/4.0/help/en/event_onkeyunset.html
@@ -924,12 +937,14 @@ share/kvirc/4.0/help/en/event_onmechanowner.html
 share/kvirc/4.0/help/en/event_onmedechanadmin.html
 share/kvirc/4.0/help/en/event_onmedechanowner.html
 share/kvirc/4.0/help/en/event_onmedehalfop.html
+share/kvirc/4.0/help/en/event_onmedeircop.html
 share/kvirc/4.0/help/en/event_onmedeop.html
 share/kvirc/4.0/help/en/event_onmedeuserop.html
 share/kvirc/4.0/help/en/event_onmedevoice.html
 share/kvirc/4.0/help/en/event_onmehalfop.html
 share/kvirc/4.0/help/en/event_onmeinviteexception.html
 share/kvirc/4.0/help/en/event_onmeinviteexceptionremove.html
+share/kvirc/4.0/help/en/event_onmeircop.html
 share/kvirc/4.0/help/en/event_onmejoin.html
 share/kvirc/4.0/help/en/event_onmekick.html
 share/kvirc/4.0/help/en/event_onmenickchange.html
@@ -1097,6 +1112,7 @@ share/kvirc/4.0/help/en/fnc_dcc.transferstatus.html
 share/kvirc/4.0/help/en/fnc_dialog.yesno.html
 share/kvirc/4.0/help/en/fnc_false.html
 share/kvirc/4.0/help/en/fnc_features.html
+share/kvirc/4.0/help/en/fnc_file.allsizes.html
 share/kvirc/4.0/help/en/fnc_file.cwd.html
 share/kvirc/4.0/help/en/fnc_file.exists.html
 share/kvirc/4.0/help/en/fnc_file.extractfilename.html
@@ -1139,6 +1155,7 @@ share/kvirc/4.0/help/en/fnc_lang.html
 share/kvirc/4.0/help/en/fnc_language.detect.html
 share/kvirc/4.0/help/en/fnc_length.html
 share/kvirc/4.0/help/en/fnc_lf.html
+share/kvirc/4.0/help/en/fnc_link.html
 share/kvirc/4.0/help/en/fnc_log.file.html
 share/kvirc/4.0/help/en/fnc_mask.hasnumerichost.html
 share/kvirc/4.0/help/en/fnc_mask.host.html
@@ -1218,6 +1235,7 @@ share/kvirc/4.0/help/en/fnc_proxydb.password.html
 share/kvirc/4.0/help/en/fnc_proxydb.port.html
 share/kvirc/4.0/help/en/fnc_proxydb.protocol.html
 share/kvirc/4.0/help/en/fnc_proxydb.username.html
+share/kvirc/4.0/help/en/fnc_python.isavailable.html
 share/kvirc/4.0/help/en/fnc_query.html
 share/kvirc/4.0/help/en/fnc_r.html
 share/kvirc/4.0/help/en/fnc_rand.html
@@ -1249,6 +1267,7 @@ share/kvirc/4.0/help/en/fnc_serverdb.networkdescription.html
 share/kvirc/4.0/help/en/fnc_serverdb.networkencoding.html
 share/kvirc/4.0/help/en/fnc_serverdb.networkexists.html
 share/kvirc/4.0/help/en/fnc_serverdb.networklogincommand.html
+share/kvirc/4.0/help/en/fnc_serverdb.networkname.html
 share/kvirc/4.0/help/en/fnc_serverdb.networknickname.html
 share/kvirc/4.0/help/en/fnc_serverdb.networkrealname.html
 share/kvirc/4.0/help/en/fnc_serverdb.networktextencoding.html
@@ -1322,6 +1341,7 @@ share/kvirc/4.0/help/en/fnc_sw.html
 share/kvirc/4.0/help/en/fnc_system.call.html
 share/kvirc/4.0/help/en/fnc_system.checkmodule.html
 share/kvirc/4.0/help/en/fnc_system.clipboard.html
+share/kvirc/4.0/help/en/fnc_system.dbus.html
 share/kvirc/4.0/help/en/fnc_system.getenv.html
 share/kvirc/4.0/help/en/fnc_system.hostname.html
 share/kvirc/4.0/help/en/fnc_system.osmachine.html
@@ -1334,6 +1354,8 @@ share/kvirc/4.0/help/en/fnc_system.selection.html
 share/kvirc/4.0/help/en/fnc_target.html
 share/kvirc/4.0/help/en/fnc_texticons.get.html
 share/kvirc/4.0/help/en/fnc_this.html
+share/kvirc/4.0/help/en/fnc_tmphighlight.ischannelhighlighted.html
+share/kvirc/4.0/help/en/fnc_tmphighlight.isnickhighlighted.html
 share/kvirc/4.0/help/en/fnc_toolbar.exists.html
 share/kvirc/4.0/help/en/fnc_toolbar.isvisible.html
 share/kvirc/4.0/help/en/fnc_toolbar.items.html
@@ -1390,32 +1412,10 @@ share/kvirc/4.0/help/en/module_log.html
 share/kvirc/4.0/help/en/module_mediaplayer.html
 share/kvirc/4.0/help/en/module_reguser.html
 share/kvirc/4.0/help/en/module_rijndael.html
+share/kvirc/4.0/help/en/module_rot13.html
 share/kvirc/4.0/help/en/module_url.html
 share/kvirc/4.0/help/en/nohelpavailable.html
 share/kvirc/4.0/help/en/widget_ctcpfloodprotectionoptions.html
-share/kvirc/4.0/help/en/event_onircop.html
-share/kvirc/4.0/help/en/event_ondeircop.html
-share/kvirc/4.0/help/en/event_onmeircop.html
-share/kvirc/4.0/help/en/event_onmedeircop.html
-share/kvirc/4.0/help/en/fnc_link.html
-share/kvirc/4.0/help/en/fnc_file.allsizes.html
-share/kvirc/4.0/help/en/class_sql.html
-share/kvirc/4.0/help/en/module_rot13.html
-share/kvirc/4.0/help/en/class_datetimeedit.html
-share/kvirc/4.0/help/en/class_listview.html
-share/kvirc/4.0/help/en/class_tablewidget.html
-share/kvirc/4.0/help/en/class_listbox.html
-share/kvirc/4.0/help/en/class_memorybuffer.html
-share/kvirc/4.0/help/en/fnc_python.isavailable.html
-share/kvirc/4.0/help/en/fnc_system.dbus.html
-share/kvirc/4.0/help/en/cmd_system.runcmd.html
-share/kvirc/4.0/help/en/cmd_tmphighlight.addnick.html
-share/kvirc/4.0/help/en/cmd_tmphighlight.removenick.html
-share/kvirc/4.0/help/en/cmd_tmphighlight.addchannel.html
-share/kvirc/4.0/help/en/cmd_tmphighlight.removechannel.html
-share/kvirc/4.0/help/en/fnc_tmphighlight.isnickhighlighted.html
-share/kvirc/4.0/help/en/fnc_tmphighlight.ischannelhighlighted.html
-share/kvirc/4.0/help/en/fnc_serverdb.networkname.html
 share/kvirc/4.0/license/COPYING
 share/kvirc/4.0/locale/about_bg.mo
 share/kvirc/4.0/locale/about_ca.mo
@@ -1502,6 +1502,8 @@ share/kvirc/4.0/locale/kvirc_pt_BR.mo
 share/kvirc/4.0/locale/kvirc_ru.mo
 share/kvirc/4.0/locale/kvirc_sr.mo
 share/kvirc/4.0/locale/kvirc_uk.mo
+share/kvirc/4.0/locale/kvs_de.mo
+share/kvirc/4.0/locale/kvs_it.mo
 share/kvirc/4.0/locale/logview_bg.mo
 share/kvirc/4.0/locale/logview_ca.mo
 share/kvirc/4.0/locale/logview_cs.mo
@@ -1553,6 +1555,8 @@ share/kvirc/4.0/locale/notifier_pt_BR.mo
 share/kvirc/4.0/locale/notifier_ru.mo
 share/kvirc/4.0/locale/notifier_sr.mo
 share/kvirc/4.0/locale/notifier_uk.mo
+share/kvirc/4.0/locale/objects_de.mo
+share/kvirc/4.0/locale/objects_it.mo
 share/kvirc/4.0/locale/options_bg.mo
 share/kvirc/4.0/locale/options_ca.mo
 share/kvirc/4.0/locale/options_cs.mo
@@ -1587,6 +1591,8 @@ share/kvirc/4.0/locale/perl_pt_BR.mo
 share/kvirc/4.0/locale/perl_ru.mo
 share/kvirc/4.0/locale/perl_sr.mo
 share/kvirc/4.0/locale/perl_uk.mo
+share/kvirc/4.0/locale/register_de.mo
+share/kvirc/4.0/locale/register_it.mo
 share/kvirc/4.0/locale/serverdb_bg.mo
 share/kvirc/4.0/locale/serverdb_ca.mo
 share/kvirc/4.0/locale/serverdb_cs.mo
@@ -1655,21 +1661,15 @@ share/kvirc/4.0/locale/torrent_pt_BR.mo
 share/kvirc/4.0/locale/torrent_ru.mo
 share/kvirc/4.0/locale/torrent_sr.mo
 share/kvirc/4.0/locale/torrent_uk.mo
-share/kvirc/4.0/locale/kvs_de.mo
-share/kvirc/4.0/locale/kvs_it.mo
-share/kvirc/4.0/locale/objects_de.mo
-share/kvirc/4.0/locale/objects_it.mo
-share/kvirc/4.0/locale/register_de.mo
-share/kvirc/4.0/locale/register_it.mo
 share/kvirc/4.0/modules/caps/action/url
-share/kvirc/4.0/modules/caps/crypt/rijndael
 share/kvirc/4.0/modules/caps/crypt/lamerizer
+share/kvirc/4.0/modules/caps/crypt/rijndael
 share/kvirc/4.0/modules/caps/crypt/rot13
 share/kvirc/4.0/modules/caps/serverimport/mircimport
 share/kvirc/4.0/modules/caps/tool/filetransferwindow
 share/kvirc/4.0/modules/caps/tool/iograph
-share/kvirc/4.0/modules/caps/tool/sharedfilewindow
 share/kvirc/4.0/modules/caps/tool/logview
+share/kvirc/4.0/modules/caps/tool/sharedfilewindow
 share/kvirc/4.0/msgcolors/all-black.msgclr
 share/kvirc/4.0/msgcolors/all-gray.msgclr
 share/kvirc/4.0/msgcolors/all-green.msgclr
@@ -1745,6 +1745,7 @@ share/kvirc/4.0/pics/coresmall/kcs_dccvoice.png
 share/kvirc/4.0/pics/coresmall/kcs_deadchannel.png
 share/kvirc/4.0/pics/coresmall/kcs_deadquery.png
 share/kvirc/4.0/pics/coresmall/kcs_default.png
+share/kvirc/4.0/pics/coresmall/kcs_deircop.png
 share/kvirc/4.0/pics/coresmall/kcs_deleteitem.png
 share/kvirc/4.0/pics/coresmall/kcs_demoralized.png
 share/kvirc/4.0/pics/coresmall/kcs_deop.png
@@ -1804,6 +1805,8 @@ share/kvirc/4.0/pics/coresmall/kcs_irc2.png
 share/kvirc/4.0/pics/coresmall/kcs_irc3.png
 share/kvirc/4.0/pics/coresmall/kcs_irc4.png
 share/kvirc/4.0/pics/coresmall/kcs_irc5.png
+share/kvirc/4.0/pics/coresmall/kcs_ircop.png
+share/kvirc/4.0/pics/coresmall/kcs_ircopaway.png
 share/kvirc/4.0/pics/coresmall/kcs_ircview.png
 share/kvirc/4.0/pics/coresmall/kcs_join.png
 share/kvirc/4.0/pics/coresmall/kcs_key.png
@@ -1830,12 +1833,14 @@ share/kvirc/4.0/pics/coresmall/kcs_mechanowner.png
 share/kvirc/4.0/pics/coresmall/kcs_mechanunadmin.png
 share/kvirc/4.0/pics/coresmall/kcs_mechanunowner.png
 share/kvirc/4.0/pics/coresmall/kcs_medehalfop.png
+share/kvirc/4.0/pics/coresmall/kcs_medeircop.png
 share/kvirc/4.0/pics/coresmall/kcs_medeop.png
 share/kvirc/4.0/pics/coresmall/kcs_medeuserop.png
 share/kvirc/4.0/pics/coresmall/kcs_medevoice.png
 share/kvirc/4.0/pics/coresmall/kcs_mehalfop.png
 share/kvirc/4.0/pics/coresmall/kcs_meinviteexcept.png
 share/kvirc/4.0/pics/coresmall/kcs_meinviteunexcept.png
+share/kvirc/4.0/pics/coresmall/kcs_meircop.png
 share/kvirc/4.0/pics/coresmall/kcs_mekick.png
 share/kvirc/4.0/pics/coresmall/kcs_meop.png
 share/kvirc/4.0/pics/coresmall/kcs_message.png
@@ -1974,11 +1979,6 @@ share/kvirc/4.0/pics/coresmall/kcs_whoisuser.png
 share/kvirc/4.0/pics/coresmall/kcs_world.png
 share/kvirc/4.0/pics/coresmall/kcs_xy.png
 share/kvirc/4.0/pics/coresmall/kcs_yellowsquare.png
-share/kvirc/4.0/pics/coresmall/kcs_medeircop.png
-share/kvirc/4.0/pics/coresmall/kcs_deircop.png
-share/kvirc/4.0/pics/coresmall/kcs_ircopaway.png
-share/kvirc/4.0/pics/coresmall/kcs_ircop.png
-share/kvirc/4.0/pics/coresmall/kcs_meircop.png
 share/kvirc/4.0/pics/kvi_activitymeter.png
 share/kvirc/4.0/pics/kvi_bigicon_actioneditor.png
 share/kvirc/4.0/pics/kvi_bigicon_actions.png
@@ -2120,35 +2120,10 @@ share/kvirc/4.0/pics/notifier_right.png
 share/kvirc/4.0/pics/notifier_up.png
 share/kvirc/4.0/themes/YellowIRC-1.0.0/pixmapGlobalTransparencyBackground.png
 share/kvirc/4.0/themes/YellowIRC-1.0.0/pixmapInputBackground.png
-share/kvirc/4.0/themes/YellowIRC-1.0.0/themeinfo.kvc
 share/kvirc/4.0/themes/YellowIRC-1.0.0/themedata.kvc
-@dirrmtry share/applications
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16/mimetypes
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32/mimetypes
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48/mimetypes
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64/mimetypes
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128/mimetypes
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable/mimetypes
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry man/de.UTF-8/man1
-@dirrmtry man/de.UTF-8
-@dirrmtry man/it.ISO8859-1/man1
-@dirrmtry man/it.ISO8859-1
-@dirrmtry man/it.UTF-8/man1
-@dirrmtry man/it.UTF-8
+share/kvirc/4.0/themes/YellowIRC-1.0.0/themeinfo.kvc
+@dirrm share/kvirc/4.0/themes/YellowIRC-1.0.0
+@dirrm share/kvirc/4.0/themes
 @dirrm share/kvirc/4.0/pics/coresmall
 @dirrm share/kvirc/4.0/pics
 @dirrm share/kvirc/4.0/msgcolors
@@ -2158,8 +2133,8 @@ share/kvirc/4.0/themes/YellowIRC-1.0.0/themedata.kvc
 @dirrm share/kvirc/4.0/modules/caps/action
 @dirrm share/kvirc/4.0/modules/caps
 @dirrm share/kvirc/4.0/modules
-@dirrm share/kvirc/4.0/license
 @dirrm share/kvirc/4.0/locale
+@dirrm share/kvirc/4.0/license
 @dirrm share/kvirc/4.0/help/en
 @dirrm share/kvirc/4.0/help
 @dirrm share/kvirc/4.0/doc/scriptexamples/tutorial
@@ -2172,10 +2147,37 @@ share/kvirc/4.0/themes/YellowIRC-1.0.0/themedata.kvc
 @dirrm share/kvirc/4.0/defscript
 @dirrm share/kvirc/4.0/config/modules
 @dirrm share/kvirc/4.0/config
-@dirrm share/kvirc/4.0/themes/YellowIRC-1.0.0
-@dirrm share/kvirc/4.0/themes
 @dirrm share/kvirc/4.0
 @dirrm share/kvirc
+@dirrmtry share/icons/hicolor/scalable/mimetypes
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/mimetypes
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/mimetypes
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/mimetypes
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
+@dirrmtry man/it/man1
+@dirrmtry man/it.UTF-8/man1
+@dirrmtry man/it.UTF-8
+@dirrmtry man/it.ISO8859-1/man1
+@dirrmtry man/it.ISO8859-1
+@dirrmtry man/it
+@dirrmtry man/de.UTF-8/man1
+@dirrmtry man/de.UTF-8
 @dirrm lib/kvirc/4.0/modules
 @dirrm lib/kvirc/4.0
 @dirrm lib/kvirc
