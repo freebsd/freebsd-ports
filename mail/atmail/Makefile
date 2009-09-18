@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	atmail
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	mail
 MASTER_SITES=	http://atmail.org/download/
 DISTNAME=	atmailopen
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source Webmail Client
 
 USE_PHP=	mysql pcre session
@@ -45,7 +45,7 @@ do-install:
 post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
 		>> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
