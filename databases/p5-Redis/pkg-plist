@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Redis/.packlist
+%%SITE_PERL%%/Redis.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Redis

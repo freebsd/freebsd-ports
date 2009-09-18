@@ -1,0 +1,6 @@
+Pure perl bindings for http://code.google.com/p/redis/
+
+This version support git version 0.08 or later of Redis available at
+git://github.com/antirez/redis
+
+WWW:	http://search.cpan.org/dist/Redis/
