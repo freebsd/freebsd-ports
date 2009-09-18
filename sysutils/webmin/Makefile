@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.480
-PORTREVISION=	1
+PORTVERSION=	1.490
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -27,8 +26,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=	webmin.sh
 SUB_LIST=	PERL5=${PERL}
 
-WEBMIN_MODULES=	ldap-useradmin-1.480-1.wbm.gz \
-		mysql-1.480-1.wbm.gz
+WEBMIN_MODULES=
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
