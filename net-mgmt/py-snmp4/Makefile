@@ -15,7 +15,7 @@ DISTNAME=	pysnmp-${PORTVERSION}
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	SNMP framework for Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyasn1/__init__.py:${PORTSDIR}/devel/py-asn1 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1 \
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
 CONFLICTS=	py??-snmp-[0-9]* py??-snmp2-[0-9]*

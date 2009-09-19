@@ -306,14 +306,6 @@ bin/libsmi2pysnmp
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.pyo
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/mibs/PYSNMP-MIB.txt
-%%PORTDOCS%%%%DOCSDIR%%/mibs/PYSNMP-USM-MIB.txt
-%%PORTDOCS%%%%DOCSDIR%%/pysnmp-arch.gif
-%%PORTDOCS%%%%DOCSDIR%%/pysnmp-tutorial.html
 %%EXAMPLESDIR%%/build-pysnmp-mib
 %%EXAMPLESDIR%%/libsmi2pysnmp
 %%EXAMPLESDIR%%/smi/backend.py
@@ -353,8 +345,6 @@ bin/libsmi2pysnmp
 @dirrm %%EXAMPLESDIR%%/v1arch
 @dirrm %%EXAMPLESDIR%%/smi
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mibs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi
