@@ -9,7 +9,8 @@ PORTNAME=	asWedit
 PORTVERSION=	4.0.1
 PORTREVISION=	3
 CATEGORIES=	www editors linux
-MASTER_SITES=	ftp://sunsite.icm.edu.pl/pub/www/asWedit/
+MASTER_SITES=	ftp://sunsite.icm.edu.pl/pub/www/asWedit/ \
+		http://freebsd.eeg3.net/distfiles/
 DISTNAME=	asWedit-4.0-i386.linux
 
 MAINTAINER=	ports@FreeBSD.org
