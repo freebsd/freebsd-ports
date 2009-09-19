@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	fjwcash@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
