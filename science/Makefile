@@ -83,6 +83,7 @@
     SUBDIR += medit
     SUBDIR += minc
     SUBDIR += minc2
+    SUBDIR += mol2ps
     SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
