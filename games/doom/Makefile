@@ -9,7 +9,7 @@ PORTNAME=	doom
 PORTVERSION=	1.10
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	# none known, please fix
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|source/|}
 DISTNAME=	doomsrc
 
 MAINTAINER=	chris@officialunix.com
