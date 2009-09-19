@@ -1,5 +1,9 @@
 bin/thrulay
 sbin/thrulayd
-@unexec if cmp -s %D/etc/rc.d/thrulayd.sh.sample %D/etc/rc.d/thrulayd.sh; then rm -f %D/etc/rc.d/thrulayd.sh; fi
-etc/rc.d/thrulayd.sh.sample
-@exec if [ ! -f %D/etc/rc.d/thrulayd.sh ] ; then cp -p %D/%F %B/thrulayd.sh; fi
+include/thrulay/client.h
+include/thrulay/server.h
+lib/libthrulay.a
+lib/libthrulay.la
+lib/libthrulay.so
+lib/libthrulay.so.0
+@dirrm include/thrulay

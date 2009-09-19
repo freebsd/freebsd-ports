@@ -1,4 +1,9 @@
-The package consists of a client (thrulay) and a daemon (thrulayd).
-The thrulay client is usable immediately.  The thrulayd deamon needs to be
-started, which will happen automatically in the next boot cycle.  You may
-also start it manually by entering thrulayd as root.
+**************************************************************************
+*                                                                        *
+* The package consists of a client (thrulay) and a daemon (thrulayd).    *
+* The thrulay client is usable immediately.                              *
+*                                                                        *
+* To run thrulayd from startup, add thrulayd_enable="YES"                * 
+* in your /etc/rc.conf                                                   *
+*                                                                        *
+**************************************************************************
