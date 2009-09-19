@@ -1,0 +1,69 @@
+--- filters/kword/msword/conversion.cpp.orig	2007-05-31 08:39:22.000000000 +1100
++++ filters/kword/msword/conversion.cpp	2009-09-17 23:26:19.000000000 +1100
+@@ -295,7 +295,7 @@
+ 
+ void Conversion::setBorderAttributes( QDomElement& borderElement, const wvWare::Word97::BRC& brc, const QString& prefix )
+ {
+-    setColorAttributes( borderElement, brc.ico, prefix, false );
++    setColorAttributes( borderElement, brc.cv, prefix, false );
+ 
+     borderElement.setAttribute( prefix.isNull() ? "width" : prefix+"Width",
+                                 (double)brc.dptLineWidth / 8.0 );
+--- filters/kword/msword/document.cpp.orig	2007-05-31 08:39:22.000000000 +1100
++++ filters/kword/msword/document.cpp	2009-09-17 16:10:28.000000000 +1100
+@@ -390,28 +390,28 @@
+ {
+     // Frame borders
+ 
+-    if ( brcTop.ico != 255 && brcTop.dptLineWidth != 255 ) // see tablehandler.cpp
++    if ( brcTop.cv != 255 && brcTop.dptLineWidth != 255 ) // see tablehandler.cpp
+         Conversion::setBorderAttributes( frameElementOut, brcTop, "t" );
+-    if ( brcBottom.ico != 255 && brcBottom.dptLineWidth != 255 ) // see tablehandler.cpp
++    if ( brcBottom.cv != 255 && brcBottom.dptLineWidth != 255 ) // see tablehandler.cpp
+         Conversion::setBorderAttributes( frameElementOut, brcBottom, "b" );
+-    if ( brcLeft.ico != 255 && brcLeft.dptLineWidth != 255 ) // could still be 255, for first column
++    if ( brcLeft.cv != 255 && brcLeft.dptLineWidth != 255 ) // could still be 255, for first column
+         Conversion::setBorderAttributes( frameElementOut, brcLeft, "l" );
+-    if ( brcRight.ico != 255 && brcRight.dptLineWidth != 255 ) // could still be 255, for last column
++    if ( brcRight.cv != 255 && brcRight.dptLineWidth != 255 ) // could still be 255, for last column
+         Conversion::setBorderAttributes( frameElementOut, brcRight, "r" );
+ 
+     // Frame background brush (color and fill style)
+-    if ( shd.icoFore != 0 || shd.icoBack != 0 )
++    if ( shd.cvFore != 0 || shd.cvBack != 0 )
+     {
+-        // If ipat = 0 (solid fill), icoBack is the background color.
+-        // But otherwise, icoFore is the one we need to set as bkColor
+-        // (and icoBack is usually white; it's the other colour of the pattern,
++        // If ipat = 0 (solid fill), cvBack is the background color.
++        // But otherwise, cvFore is the one we need to set as bkColor
++        // (and cvBack is usually white; it's the other colour of the pattern,
+         // something that we can't set in Qt apparently).
+-        int bkColor = shd.ipat ? shd.icoFore : shd.icoBack;
+-        kdDebug(30513) << "generateFrameBorder: " << " icoFore=" << shd.icoFore << " icoBack=" << shd.icoBack << " ipat=" << shd.ipat << " -> bkColor=" << bkColor << endl;
++        int bkColor = shd.ipat ? shd.cvFore : shd.cvBack;
++        kdDebug(30513) << "generateFrameBorder: " << " cvFore=" << shd.cvFore << " cvBack=" << shd.cvBack << " ipat=" << shd.ipat << " -> bkColor=" << bkColor << endl;
+ 
+         // Reverse-engineer MSWord's own hackery: it models various gray levels
+         // using dithering. But this looks crappy with Qt. So we go back to a QColor.
+-        bool grayHack = ( shd.ipat && shd.icoFore == 1 && shd.icoBack == 8 );
++        bool grayHack = ( shd.ipat && shd.cvFore == 1 && shd.cvBack == 8 );
+         if ( grayHack )
+         {
+             bool ok;
+--- filters/kword/msword/tablehandler.cpp.orig	2007-05-31 08:39:22.000000000 +1100
++++ filters/kword/msword/tablehandler.cpp	2009-09-18 00:24:42.000000000 +1100
+@@ -169,11 +169,11 @@
+     const wvWare::Word97::BRC& brcTop = tc.brcTop;
+     const wvWare::Word97::BRC& brcBottom = tc.brcBottom;
+     const wvWare::Word97::BRC& brcLeft =
+-     ( tc.brcLeft.ico == 255 && tc.brcLeft.dptLineWidth == 255 && m_column > 0 ) ?
++     ( tc.brcLeft.cv == 255 && tc.brcLeft.dptLineWidth == 255 && m_column > 0 ) ?
+         m_tap->rgtc[ m_column - 1 ].brcRight
+         : tc.brcLeft;
+     const wvWare::Word97::BRC& brcRight =
+-      ( tc.brcRight.ico == 255 && tc.brcRight.dptLineWidth == 255 && m_column < nbCells - 1 ) ?
++      ( tc.brcRight.cv == 255 && tc.brcRight.dptLineWidth == 255 && m_column < nbCells - 1 ) ?
+         m_tap->rgtc[ m_column + 1 ].brcLeft
+         : tc.brcRight;
+ 
