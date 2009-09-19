@@ -11,12 +11,12 @@ PORTREVISION=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A data compression library with low memory usage
 
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 
 PORTDOCS=	AUTHORS NEWS README THANKS TODO
