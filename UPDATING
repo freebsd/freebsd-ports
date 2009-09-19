@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090919:
+  AFFECTS: users of mail/postfix-postfwd
+  AUTHOR: Sahil Tandon <sahil@tandon.net>
+
+  The recipient rate-limiting feature is now called via rcpt()
+  command instead of with mrcpt() as in previous versions. Make
+  sure to update your postfwd.conf if you use this feature.
+
 20090917:
   AFFECTS: users of www/epiphany, x11/yelp, graphics/librsvg2,
            x11/toolkits/py-gnome-extras, and www/epiphany-extensions
