@@ -1,0 +1,7 @@
+mol2ps is a freely available command-line utility program which reads
+molecular structure files in different formats and generates
+Postscript output for 2D display. The Postscript file can then be used
+e.g. for creating a bitmap file, using a Postscript interpreter like
+Ghostscript.
+
+WWW: http://merian.pch.univie.ac.at/~nhaider/cheminf/mol2ps.html

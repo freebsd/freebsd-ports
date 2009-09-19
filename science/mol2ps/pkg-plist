@@ -1,0 +1,3 @@
+bin/mol2ps
+%%DATADIR%%/color.conf
+@dirrm %%DATADIR%%
