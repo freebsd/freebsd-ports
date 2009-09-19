@@ -1,0 +1,55 @@
+--- ./CMakeLists.txt.orig	2009-08-27 08:46:40.000000000 +1100
++++ ./CMakeLists.txt	2009-09-16 10:21:34.000000000 +1100
+@@ -42,7 +42,7 @@
+ 
+ INCLUDE( CheckIncludeFile )
+ 
+-CHECK_INCLUDE_FILE( sys/iconv.h HAVE_SYS_ICONV_H )
++#CHECK_INCLUDE_FILE( sys/iconv.h HAVE_SYS_ICONV_H )
+ 
+ # Add "COMPILE_DEFINITIONS definitions" to TRY_RUN only if we have compile definitions
+ 
+@@ -59,19 +59,22 @@
+   SET( ICONV_COMPILE_DEFINITIONS ${ICONV_COMPILE_DEFINITIONS} "-DHAVE_SYS_ICONV_H" )
+ ENDIF( HAVE_SYS_ICONV_H )
+ 
+-TRY_RUN( MODERN_ICONV_RUN MODERN_ICONV_COMPILE ${wvWare_BINARY_DIR}/CMakeTmp ${wvWare_SOURCE_DIR}/cmake/TestModernIconv.c COMPILE_DEFINITIONS ${ICONV_COMPILE_DEFINITIONS} )
++#TRY_RUN( MODERN_ICONV_RUN MODERN_ICONV_COMPILE ${wvWare_BINARY_DIR}/CMakeTmp ${wvWare_SOURCE_DIR}/cmake/TestModernIconv.c COMPILE_DEFINITIONS ${ICONV_COMPILE_DEFINITIONS} )
+ 
+-IF( MODERN_ICONV_RUN GREATER 0 OR NOT MODERN_ICONV_COMPILE )
+-  MESSAGE( STATUS "wv2 depends on a modern iconv installation, supporting UNICODELITTLE and" )
+-  MESSAGE( STATUS "UNICODEBIG. The detected iconv version doesn't support these conversions." )
+-  MESSAGE( STATUS "" )
+-  MESSAGE( STATUS "Please get a new libiconv from http://www.gnu.org/software/libiconv/" )
+-  MESSAGE( STATUS "You might want to install the library to some alternative directory, in" )
+-  MESSAGE( STATUS "order not to overwrite your current installation. Please use the options" )
+-  MESSAGE( STATUS "-DICONV_INCLUDE_DIR=DIR and -DICONV_LIBRARIES=DIR to specify the location." )
+-  MESSAGE( STATUS "" )
+-  MESSAGE( FATAL_ERROR "* * * No iconv support - unable to continue. * * *" )
+-ENDIF( MODERN_ICONV_RUN GREATER 0 OR NOT MODERN_ICONV_COMPILE )
++SET( MODERN_ICONV_RUN 1)
++SET( MODERN_ICONV_COMPILE 1 )
++
++#IF( MODERN_ICONV_RUN GREATER 0 OR NOT MODERN_ICONV_COMPILE )
++#  MESSAGE( STATUS "wv2 depends on a modern iconv installation, supporting UNICODELITTLE and" )
++#  MESSAGE( STATUS "UNICODEBIG. The detected iconv version doesn't support these conversions." )
++#  MESSAGE( STATUS "" )
++#  MESSAGE( STATUS "Please get a new libiconv from http://www.gnu.org/software/libiconv/" )
++#  MESSAGE( STATUS "You might want to install the library to some alternative directory, in" )
++#  MESSAGE( STATUS "order not to overwrite your current installation. Please use the options" )
++#  MESSAGE( STATUS "-DICONV_INCLUDE_DIR=DIR and -DICONV_LIBRARIES=DIR to specify the location." )
++#  MESSAGE( STATUS "" )
++#  MESSAGE( FATAL_ERROR "* * * No iconv support - unable to continue. * * *" )
++#ENDIF( MODERN_ICONV_RUN GREATER 0 OR NOT MODERN_ICONV_COMPILE )
+ 
+ #
+ # Various checks
+@@ -157,6 +160,8 @@
+   SET( _WV2_CFLAGS ${_WV2_CFLAGS} ${GLIB2_INCLUDE_DIR} )
+ ENDIF( GLIB2_FOUND )
+ 
++SET( _WV2_CFLAGS "${_WV2_CFLAGS} -I${CMAKE_INSTALL_PREFIX}/include/wv2" )
++
+ #
+ # Clean and prepare
+ #
