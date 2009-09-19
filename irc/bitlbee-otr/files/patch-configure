@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -350,13 +350,11 @@
+ 
+ echo 'SSL_CLIENT=ssl_'$ssl'.o' >> Makefile.settings
+ 
+-for i in $systemlibdirs; do
+-	if [ -f $i/libresolv.a ]; then
++if [ "$arch" = FreeBSD ]; then
++	if [ `strings /lib/libc.so.* |grep res_query |wc -l` -gt 0 ]; then
+ 		echo '#define HAVE_RESOLV_A' >> config.h
+-		echo 'EFLAGS+='$i'/libresolv.a' >> Makefile.settings
+-		break
+ 	fi
+-done
++fi
+ 
+ STORAGES="text xml"
+ 
