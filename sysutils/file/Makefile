@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	4.26
+PORTVERSION=	5.03
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/unix/file/ \
@@ -29,4 +29,7 @@ MAN5=		magic.5
 regression-test: build
 	@( cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check ; )
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|$(datadir)/misc|$(datadir)/${PORTNAME}|g' \
+		${WRKSRC}/configure
 .include <bsd.port.mk>
