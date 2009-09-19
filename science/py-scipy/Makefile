@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scipy
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.7.1
 CATEGORIES=	science python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,16 +16,14 @@ COMMENT=	Scientific tools for Python
 
 BUILD_DEPENDS+=	${PYNUMPY} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
 
 LATEST_LINK=	py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
 
 USE_FORTRAN=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
-USE_WX=		2.4-2.6
-WX_COMPS=	python:build python:run
 OPTIONS=	ATLAS "Use optimized blas library" OFF
 
 post-patch:
