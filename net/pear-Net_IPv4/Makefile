@@ -9,7 +9,7 @@ PORTNAME=	Net_IPv4
 DISTVERSION=	1.3.1
 CATEGORIES=	net pear
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	IPv4 network calculations and validation
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
