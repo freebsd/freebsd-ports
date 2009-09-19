@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hscolour
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	print haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/ \
 		http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
