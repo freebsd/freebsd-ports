@@ -7,14 +7,12 @@
 
 PORTNAME=	libdvdnav
 PORTVERSION=	0.1.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/dvd/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	The library for the xine-dvdnav plugin
-
-LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 CONFLICTS=	libdvdnav-mplayer-[0-9]*
 
@@ -24,6 +22,9 @@ CONFIGURE_ARGS=	--program-transform-name=''
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22 autoconf:262 automake:16
 
+# Internal libdvdread staticly dlopens libdvdcss.so.2
+DVDCSS_LIBVERSION=	3
+
 post-patch:
 	${REINPLACE_CMD} -e \
 		's|THREAD_LIBS="[^"]*"$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
@@ -32,6 +33,8 @@ post-patch:
 		 s|-I/usr/local/include|-I${LOCALBASE}/include|g' \
 		 ${WRKSRC}/configure ${WRKSRC}/configure.ac \
 		 ${WRKSRC}/missing ${WRKSRC}/aclocal.m4 ${WRKSRC}/autogen.sh
+	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
+		${WRKSRC}/src/dvdread/dvd_input.c
 
 post-configure:
 	${REINPLACE_CMD} -e 's|automake[0-9][0-9]|${TRUE}|' \
