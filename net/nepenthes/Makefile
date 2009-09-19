@@ -20,7 +20,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		adns.1:${PORTSDIR}/dns/adns
 
 .if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.19:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		prelude.20:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude
 .endif
 
