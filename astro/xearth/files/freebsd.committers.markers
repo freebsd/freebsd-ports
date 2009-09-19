@@ -31,9 +31,9 @@
  35.36,		139.31,		"                     ,daichi"	# Kawasaki, Kanagawa, Japan
  35.37200,	139.28240,	"sanpei"			# Inagi, Tokyo, Japan
 -34.53,		138.35,		"markp,benjsc"	align=left	# Adelaide, SA, Australia
+ 35.009668,	135.75497,	"takawata"			# Kyoto, Kyoto, Japan
  34.60,		135.51,		"yoichi"			# Osaka, Osaka, Japan
  35.0,		135.47,		"maho"				# Kyoto, Kyoto, Japan
- 35.009668,	135.75497,	"takawata"			# Kyoto, Kyoto, Japan
  34.47,		135.26,		"matusita"			# Ikeda, Osaka, Japan
  48.24138,	135.07563,	"fluffy"			# Khabarovsk, Russia
  33.334370,	130.255625,	"flathill"			# Fukuoka, Fukuoka, Japan
@@ -59,15 +59,15 @@
  48.805,	44.586,		"den"				# Volgograd, Russia
  56.021256,	38.389701,	"makc"				# Chernogolovka, Russia
  55.740978,	37.830851,	"sem"				# Moscow, Russia
+ 55.7,		37.8,		"az"				# Moscow, Russia
  55.795636,	37.691646,	"marck"				# Moscow, Russia
  55.869236,	37.680909,	"amdmi3"			# Moscow, Russia
  55.709525,	37.654288,	"glebius"			# Moscow, Russia
  55.783753,	37.631789,	"osa"				# Moscow, Russia
  55.8,		37.6,		"ache,bsam,demon,maxim,rik,skv,stas,vsevolod,yar"	# Moscow, Russia
- 55.7,		37.8,		"az"				# Moscow, Russia
  55.768764,	37.588938,	"sergei"			# Moscow, Russia
- 55.7203,	37.4314,	"sat"				# Moscow, Russia
  55.750799,	37.565689,	"krion"				# Moscow, Russia
+ 55.7203,	37.4314,	"sat"				# Moscow, Russia
  48.464722,	35.046111,	"mav"				# Dniepropetrovsk, Ukraine
  44.95,		34.1,		"phantom,ru"			# Simferopol, Ukraine
  50.430417,	30.488262,	"kib"				# Kiev, Ukraine
@@ -75,10 +75,10 @@
  46.28,		30.44,		"anray"				# Odessa, Ukraine
 -25.80974,	28.27731,	"jhay"				# Pretoria, South Africa
  44.420,	26.1371,	"itetcu"			# Bucharest, Romania
+ 35.517,	24.033,		"manolis"			# Chania, Crete, Greece
  37.98,		23.73,		"dds"				# Athens, Greece
  42.6333,	23.2964,	"roam,vd,syrinx"		# Sofia, Bulgaria
  65.58,		22.17,		"johan"				# Lulea, Sweden
- 35.517,	24.033,		"manolis"			# Chania, Crete, Greece
  38.218762,	21.742405,	"keramida"			# (CORE) Patras, Greece
  47.533,	21.633,		"pgj"				# Debrecen, Hungary 
  50.034361,	19.942396,	"raj"				# Krakow, Poland
@@ -121,9 +121,9 @@
  57.2,		10.2,		"sos"				# Klokkerholm, Denmark
  56.14,		10.184,		"lbr"				# Aarhus, Denmark
  53.56,		10.02,		"cracauer"			# Hamburg, Germany
- 53.64,		9.84,		"hm"		align=left	# Rellingen, Germany
  54.9091509,	9.8957284,	"xride"				# Hoeruphav, Denmark
  55.98699,	9.89339,	"erwin"				# Tranbjerg J, Denmark
+ 53.64,		9.84,		"hm"		align=left	# Rellingen, Germany
  49.00,		9.5,		"schweikh"			# Weinstadt, Germany
  51.20,		9.20,		"dinoex"			# Habichtswald, Germany
  45.467,	9.200,		"piso"				# Milano, Italy
@@ -147,8 +147,8 @@
  43.6,		7.00,		"clement,bruno"	align=left	# Mougins, France
  49.398056,	6.983889,	"netchild"			# Eppelborn, Germany
  50.9953,	6.9175,		"se"				# Cologne, Germany
- 51.126809,	6.784074,	"oliver"			# Dormagen, Germany
  51.146552,	6.86970,	"lme"				# Duesseldorf, Germany
+ 51.126809,	6.784074,	"oliver"			# Dormagen, Germany
  51.4666,	6.6166,		"ticso"				# Moers, Germany
  50.47,		6.42,		"brueffer"			# Aachen, Germany
  51.12,		6.41,		"andreas"			# Neuss, Germany
@@ -157,6 +157,7 @@
  51.98,		5.96,		"wilko"				# (CORE) Arnhem, The Netherlands
  53.20460,	5.80429,	"kwm"				# Leeuwarden, The Netherlands
  51.758894,	5.739367,	"ed"				# Grave, the Netherlands
+ 51.86,		5.54,		"asmodai"			# Barendrecht, The Netherlands
  51.4748,	5.4792,		"rene"				# Eindhoven, the Netherlands
  45.1116,	5.4337,		"damien"			# Grenoble, France
  43.27357,	5.40153,	"hq"		align=left	# Marseille, France
@@ -166,7 +167,6 @@
  45.636772,	4.949373,	"thierry"	align=left	# Chaponnay, France
  50.936796,	4.564304,	"philip"	align=left	# Kampenhout, Belgium
  51.890,	4.554,		"remko"				# Rotterdam, The Netherlands
- 51.86,		5.54,		"asmodai"			# Barendrecht, The Netherlands
  51.9201,	4.4905,		"marks"				# Rotterdam, The Netherlands
  50.383,	4.36,		"jylefort"	align=left	# Charleroi, Belgium
  50.7323,	3.104,		"vanhu"				# Tourcoing, France
@@ -227,8 +227,8 @@
  38.836899,	-77.113810,	"pgollucci"			# Old Town, VA, USA
  38.882,	-77.171,	"trhodes"			# Falls Church, VA, USA
  39.128555,	-77.203029,	"   ,green"			# Gaithersburg, MD, USA
- 35.791,	-78.781,	"marcus"			# Cary, NC, USA
  35.798,	-78.781,	"wxs"				# Cary, NC, USA
+ 35.791,	-78.781,	"marcus"			# Cary, NC, USA
  35.8072,	-78.7994,	"gallatin"			# Cary, NC, USA
  35.73,		-78.91,		"bsd"				# Apex, NC, USA
  43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
@@ -247,9 +247,9 @@
  43.19,		-89.38,		"jlemon"			# Madison, WI, USA
  43.063,	-89.452,	"nwhitehorn"			# Madison, WI, USA
  41.748,	-92.724,	"brooks"			# (CORE) Grinnell, IA, USA
+ 44.458333,	-93.161111,	"jpaetzel"			# Northfield, MN, USA
  44.99,		-93.25,		"mpp"				# Minneapolis, MN, USA
  42.02,		-93.67,		"ghelmer"			# Ames, IA, USA
- 44.458333,	-93.161111,	"jpaetzel"			# Northfield, MN, USA
  29.834,	-95.00,		"     ,chris"			# Houston, TX, USA
  37.0625,	-95.677068,	"kmacy"				# Palo Alto, CA, USA
  29.7925,	-95.8225,	"dwcjr"				# Katy, TX, USA
@@ -274,9 +274,9 @@
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
  38.54,		-121.76,	"mharo"			# Davis, CA, USA
  37.40,		-121.94,	"alfred"		# Santa Clara, CA, USA
- 37.359394,	-121.992,	"cjc"				# Santa Clara, CA, USA
  37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
  37.37781,	-121.951980,	"seanc"				# Santa Clara, CA, USA
+ 37.359394,	-121.992,	"cjc"				# Santa Clara, CA, USA
  37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
  37.38,		-122.05,	"obrien"			# Sunnyvale, CA, USA
