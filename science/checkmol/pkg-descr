@@ -1,0 +1,27 @@
+Checkmol is a command-line utility program which reads molecular
+structure files in different formats and analyzes the input
+molecule for the presence of various functional groups and structural
+elements. At present, approx. 200 different functional groups are
+recognized. This output can be easily placed into a database table,
+permitting the creation of chemical databases with a functional group
+search option. Checkmol also outputs a set of statistical values derived
+from a given molecule, which can also be used for quick retrieval from a
+database. These values include: the number of atoms, bonds, and rings,
+the number of differently hybridized carbon, oxgen, and nitrogen atoms,
+the number of C=O double bonds, the number of rings of different sizes,
+the number of rings containing nitrogen, oxygen, sulfur, the number of
+aromatic rings, the number of heterocyclic rings, etc. The combination
+of all of these values for a given molecule represents some kind of
+"fingerprint" which is useful for rapid pre-selection in a database
+structure/substructure search prior to a full atom-by-atom match.
+
+Matchmol complements the capabilities of checkmol. It compares two (or
+more) molecular structures and determines whether one of them is a
+substructure of the other one. This is done by a full atom-by-atom
+comparison of the input structures. Thus, matchmol can be used as a
+back-end program for structure/substructure search operations in
+chemical databases.
+
+The port installs both checkmol and matchmol.
+
+WWW: http://merian.pch.univie.ac.at/~nhaider/cheminf/cmmm.html
